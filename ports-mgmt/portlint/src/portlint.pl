@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.162 2008/10/22 22:04:38 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.163 2009/01/18 18:49:03 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_g $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -46,7 +46,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 10;
-my $micro = 1;
+my $micro = 2;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1720,7 +1720,7 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 	}
 
 	#
-	# while file: check for use of paths that have macro replacements
+	# whole file: check for use of paths that have macro replacements
 	#
 	my %pathnames = ();
 	print "OK: checking for paths that have macro replacements.\n"
@@ -1838,7 +1838,6 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 		}
 	}
 
-
 	#
 	# whole file: USE_JAVA check
 	#
@@ -1890,6 +1889,60 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 		$makevar{CONFIGURE_ARGS} =~ /--(man|info)dir/) {
 		&perror("WARN", $file, -1, "--mandir and --infodir are not needed ".
 			"in CONFIGURE_ARGS as they are already set in bsd.port.mk");
+	}
+
+	#
+	# whole file: CONFIGURE_ENV
+	#
+	if ($whole =~ /\nCONFIGURE_ENV[?:]?=\s*([^\\\n]+(\\\n[^\\\n]+)*)/) {
+		my $configure_env = $1;
+		my $cflags = undef;
+		my $cxxflags = undef;
+		if ($configure_env =~ /\bCFLAGS="([^"]+)"/ ||
+			$configure_env =~ /\bCFLAGS='([^']+)'/ ||
+			$configure_env =~ /\bCFLAGS=(\S+)/) {
+			$cflags = $1;
+		}
+		if ($configure_env =~ /\bCXXFLAGS="([^"]+)"/ ||
+			$configure_env =~ /\bCXXFLAGS='([^']+)'/ ||
+			$configure_env =~ /\bCXXFLAGS=(\S+)/) {
+			$cxxflags = $1;
+		}
+
+		if (defined($cflags) || defined($cxxflags)) {
+			&perror("WARN", $file, -1, "CFLAGS/CXXFLAGS are not needed in ".
+				"CONFIGURE_ENV as they are already added there in bsd.port.mk.");
+		}
+
+		if ($makevar{GNU_CONFIGURE} ne '') {
+			if ((defined($cflags) && $cflags =~ /-I/) ||
+				(defined($cxxflags) && $cxxflags =~ /-I/)) {
+				&perror("WARN", $file, -1, "Consider passing include paths ".
+					"to configure via CPPFLAGS environment variable ".
+					"i.e. CPPFLAGS=\"-I...\" in CONFIGURE_ENV)");
+			}
+		}
+
+		if (defined($cflags) && $cflags !~ /\$\{CFLAGS/) {
+			&perror("FATAL", $file, -1, "CFLAGS are clobbered in ".
+				"CONFIGURE_ENV.  Alter CFLAGS in the Makefile with ".
+				"CFLAGS+=... instead");
+		}
+
+		if (defined($cxxflags) && $cflags !~ /\$\{CXXFLAGS/) {
+			&perror("FATAL", $file, -1, "CXXFLAGS are clobbered in ".
+				"CONFIGURE_ENV.  Alter CXXFLAGS in the Makefile with ".
+				"CXXFLAGS+=... instead");
+		}
+
+		if ($configure_env =~ /(FC)=/ ||
+			$configure_env =~ /(F77)=/ ||
+			$configure_env =~ /(FCFLAGS)=/) {
+				&perror("FATAL", $file, -1, "The Fortran flag, $1 is already ".
+					"passed in CONFIGURE_ENV via bsd.gcc.mk.  If you need to ".
+					"override the the default value, alter $1 in the Makefile ".
+					"instead with $1=...");
+		}
 	}
 
 	#
@@ -2747,9 +2800,9 @@ FETCH_DEPENDS DEPENDS_TARGET
 	}
 
 	if ($tmp =~ /^do-build:/m && $use_ant) {
-		&perror("FATAL", $file, -1, "USE_ANT is intended only for ports that ".
-			"build with Ant.  You should not override ``do-build'' when ".
-			"defining USE_ANT");
+		&perror("WARN", $file, -1, "USE_ANT is intended only for ports that ".
+			"build with Ant.  It is recommended not to override the default ".
+			"'do-build:' target when defining USE_ANT");
 	}
 
 	#
