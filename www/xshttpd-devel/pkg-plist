@@ -64,6 +64,9 @@ bin/xspasswd
 %%WWWDIR%%/icons/xs-unknown.gif
 %%WWWDIR%%/icons/xs-video.gif
 %%WWWDIR%%/icons/xs-zip.gif
+%%WWWDIR%%/module/.keepme
+%%PERL%%%%WWWDIR%%/module/mod_perl.so
+%%LDAP%%%%WWWDIR%%/module/mod_ldap.so
 @exec mkdir -p %%WWWDIR%%/htdocs
 @dirrm %%WWWDIR%%/contrib
 @dirrm %%WWWDIR%%/gfxcount
@@ -72,4 +75,5 @@ bin/xspasswd
 @dirrmtry %%WWWDIR%%/htdocs
 @dirrmtry %%WWWDIR%%/icons
 @dirrmtry %%WWWDIR%%/logs
+@dirrmtry %%WWWDIR%%/module
 @dirrmtry %%WWWDIR%%
