@@ -1,22 +1,7 @@
 bin/kchmviewer
-%%KDE%%lib/kde3/kio_msits.a
-%%KDE%%lib/kde3/kio_msits.la
-%%KDE%%lib/kde3/kio_msits.so
-lib/libchmfile.a
-%%KDE%%lib/libkdeextra.a
-share/applications/kchmviewer.desktop
-%%KDE%%share/icons/crystalsvg/128x128/apps/kchmviewer.png
-%%KDE%%share/icons/crystalsvg/48x48/apps/kchmviewer.png
-%%KDE%%share/icons/crystalsvg/64x64/apps/kchmviewer.png
-%%QT%%share/icons/hicolor/128x128/apps/kchmviewer.png
-%%QT%%share/icons/hicolor/48x48/apps/kchmviewer.png
-%%QT%%share/icons/hicolor/64x64/apps/kchmviewer.png
-%%KDE%%share/locale/cs/LC_MESSAGES/kchmviewer.mo
-%%KDE%%share/locale/du/LC_MESSAGES/kchmviewer.mo
-%%KDE%%share/locale/fr/LC_MESSAGES/kchmviewer.mo
-%%KDE%%share/locale/ru/LC_MESSAGES/kchmviewer.mo
-%%KDE%%share/locale/tr/LC_MESSAGES/kchmviewer.mo
-%%KDE%%share/locale/zh_CN/LC_MESSAGES/kchmviewer.mo
-%%KDE%%share/services/msits.protocol
-%%KDE%%@dirrmtry share/locale/du/LC_MESSAGES
-%%KDE%%@dirrmtry share/locale/du
+lib/kde4/kio_msits.so
+share/applications/kde4/kchmviewer.desktop
+share/icons/crystalsvg/128x128/apps/kchmviewer.png
+share/icons/crystalsvg/48x48/apps/kchmviewer.png
+share/icons/crystalsvg/64x64/apps/kchmviewer.png
+share/kde4/services/msits.protocol
