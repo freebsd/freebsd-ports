@@ -53,6 +53,9 @@ lib/meld/vc/cvs.pyo
 lib/meld/vc/darcs.py
 lib/meld/vc/darcs.pyc
 lib/meld/vc/darcs.pyo
+lib/meld/vc/git.py
+lib/meld/vc/git.pyc
+lib/meld/vc/git.pyo
 lib/meld/vc/mercurial.py
 lib/meld/vc/mercurial.pyc
 lib/meld/vc/mercurial.pyo
@@ -76,8 +79,12 @@ share/gnome/help/meld/C/meld.xml
 share/gnome/help/meld/es/figures/dirdiff.png
 share/gnome/help/meld/es/figures/filediff.png
 share/gnome/help/meld/es/meld.xml
+share/gnome/help/meld/fr/figures/dirdiff.png
+share/gnome/help/meld/fr/figures/filediff.png
+share/gnome/help/meld/fr/meld.xml
 share/omf/meld/meld-C.omf
 share/omf/meld/meld-es.omf
+share/omf/meld/meld-fr.omf
 share/pixmaps/meld.png
 share/locale/ar/LC_MESSAGES/meld.mo
 share/locale/bg/LC_MESSAGES/meld.mo
@@ -85,6 +92,7 @@ share/locale/ca/LC_MESSAGES/meld.mo
 share/locale/cs/LC_MESSAGES/meld.mo
 share/locale/de/LC_MESSAGES/meld.mo
 share/locale/dz/LC_MESSAGES/meld.mo
+share/locale/el/LC_MESSAGES/meld.mo
 share/locale/en_CA/LC_MESSAGES/meld.mo
 share/locale/en_GB/LC_MESSAGES/meld.mo
 share/locale/es/LC_MESSAGES/meld.mo
@@ -94,13 +102,16 @@ share/locale/hu/LC_MESSAGES/meld.mo
 share/locale/it/LC_MESSAGES/meld.mo
 share/locale/ja/LC_MESSAGES/meld.mo
 share/locale/ko/LC_MESSAGES/meld.mo
+share/locale/nb/LC_MESSAGES/meld.mo
 share/locale/ne/LC_MESSAGES/meld.mo
 share/locale/nl/LC_MESSAGES/meld.mo
+share/locale/oc/LC_MESSAGES/meld.mo
 share/locale/pa/LC_MESSAGES/meld.mo
 share/locale/pt/LC_MESSAGES/meld.mo
 share/locale/pt_BR/LC_MESSAGES/meld.mo
 share/locale/ru/LC_MESSAGES/meld.mo
 share/locale/rw/LC_MESSAGES/meld.mo
+share/locale/sq/LC_MESSAGES/meld.mo
 share/locale/sr/LC_MESSAGES/meld.mo
 share/locale/sr@Latn/LC_MESSAGES/meld.mo
 share/locale/sv/LC_MESSAGES/meld.mo
@@ -108,8 +119,11 @@ share/locale/vi/LC_MESSAGES/meld.mo
 share/locale/zh_CN/LC_MESSAGES/meld.mo
 share/locale/zh_TW/LC_MESSAGES/meld.mo
 %%DATADIR%%/glade2/dirdiff.glade
+%%DATADIR%%/glade2/dirdiff-ui.xml
+%%DATADIR%%/glade2/filediff-ui.xml
 %%DATADIR%%/glade2/filediff.glade
 %%DATADIR%%/glade2/meldapp.glade
+%%DATADIR%%/glade2/meldapp-ui.xml
 %%DATADIR%%/glade2/pixmaps/button_apply0.xpm
 %%DATADIR%%/glade2/pixmaps/button_apply1.xpm
 %%DATADIR%%/glade2/pixmaps/button_copy0.xpm
@@ -139,12 +153,15 @@ share/locale/zh_TW/LC_MESSAGES/meld.mo
 %%DATADIR%%/glade2/pixmaps/vc-remove-24.png
 %%DATADIR%%/glade2/pixmaps/vc-update-24.png
 %%DATADIR%%/glade2/vcview.glade
+%%DATADIR%%/glade2/vcview-ui.xml
 @dirrm %%DATADIR%%/glade2/pixmaps
 @dirrm %%DATADIR%%/glade2
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrm share/omf/meld
+@dirrm share/gnome/help/meld/fr/figures
+@dirrm share/gnome/help/meld/fr
 @dirrm share/gnome/help/meld/es/figures
 @dirrm share/gnome/help/meld/es
 @dirrm share/gnome/help/meld/C/figures
