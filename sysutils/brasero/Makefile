@@ -34,8 +34,4 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_CAM_LIB_H=1" \
 MAN1=		brasero.1
 GCONF_SCHEMAS=	brasero.schemas
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|blank-cd:|blank-cd;|g' \
-		${WRKSRC}/data/brasero.desktop.in.in
-
 .include <bsd.port.mk>
