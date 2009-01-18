@@ -3753,3 +3753,4 @@ net/fpc-netdb||2008-01-13|This is now part of fpc-fcl-net
 textproc/p5-Text-CSV_PP||2009-01-14|Has expired: textproc/Text-CSV_PP was merged into textproc/p5-Text-CSV
 games/fgfs-base|games/flightgear-data|2009-01-15|Renamed
 lang/gcc41|lang/gcc42|2009-01-17|Abandoned upstream, superseded by gcc42 and, preferrably, gcc43
+devel/apr-svn|devel/apr|2009-01-18|Only needed for FreeBSD 5.2 and below for threading
