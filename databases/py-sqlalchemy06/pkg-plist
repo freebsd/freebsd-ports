@@ -190,63 +190,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/util.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/sql
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adjacencytree/basic_tree.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/association/basic_association.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/association/proxied_association.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/collections/large_collection.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/derived_attributes/attributes.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/elementtree/adjacency_list.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/elementtree/optimized_al.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/elementtree/pickle.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/elementtree/test.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/elementtree/test2.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/elementtree/test3.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphs/graph1.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pickle/custom_pickler.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/poly_assoc/poly_assoc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/poly_assoc/poly_assoc_fk.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/poly_assoc/poly_assoc_generic.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/polymorph/concrete.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/polymorph/polymorph.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/polymorph/single.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sharding/attribute_shard.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/dictlike-polymorphic.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/dictlike.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/vertical.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom_attributes/custom_management.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom_attributes/listen_for_events.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dynamic_dict/dynamic_dict.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nested_sets/nested_sets.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/postgis/postgis.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/query_caching/implicit.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/query_caching/per_session.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/query_caching/query_caching.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/custom_attributes
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dynamic_dict
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nested_sets
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/postgis
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/query_caching
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/adjacencytree
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/association
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/collections
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/derived_attributes
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/elementtree
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pickle
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/poly_assoc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/polymorph
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sharding
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/vertical
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/dbengine.html
 %%PORTDOCS%%%%DOCSDIR%%/genindex.html
@@ -290,9 +233,66 @@
 %%PORTDOCS%%%%DOCSDIR%%/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/session.html
 %%PORTDOCS%%%%DOCSDIR%%/sqlexpression.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/dialects
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/ext
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/orm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adjacencytree/basic_tree.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/association/basic_association.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/association/proxied_association.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/collections/large_collection.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom_attributes/custom_management.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom_attributes/listen_for_events.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/derived_attributes/attributes.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dynamic_dict/dynamic_dict.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/elementtree/adjacency_list.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/elementtree/optimized_al.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/elementtree/pickle.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/elementtree/test.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/elementtree/test2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/elementtree/test3.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphs/graph1.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nested_sets/nested_sets.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pickle/custom_pickler.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/poly_assoc/poly_assoc.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/poly_assoc/poly_assoc_fk.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/poly_assoc/poly_assoc_generic.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/polymorph/concrete.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/polymorph/polymorph.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/polymorph/single.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/postgis/postgis.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/query_caching/implicit.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/query_caching/per_session.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/query_caching/query_caching.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sharding/attribute_shard.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/dictlike-polymorphic.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/dictlike.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/vertical.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/vertical
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sharding
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/query_caching
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/postgis
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/polymorph
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/poly_assoc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pickle
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nested_sets
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/elementtree
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dynamic_dict
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/derived_attributes
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/custom_attributes
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/collections
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/association
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/adjacencytree
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/sqlalchemy
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/orm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/ext
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/dialects
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/reference
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/sql
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
