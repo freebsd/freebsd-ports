@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	polib
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=     oleg@ht-systems.ru
+MAINTAINER=	oleg@ht-systems.ru
 COMMENT=	A python library to parse and manage gettext catalogs
 
 USE_PYTHON=	yes
