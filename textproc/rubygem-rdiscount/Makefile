@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rdiscount
-PORTVERSION=	1.2.11
+PORTVERSION=	1.3.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RF/gems
 
@@ -16,7 +16,8 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 
 post-install:
-	@${ECHO} ${GEM_CACHE} > ${TMPPLIST}
+	@${ECHO} bin/rdiscount > ${TMPPLIST}
+	@${ECHO} ${GEM_CACHE} >> ${TMPPLIST}
 	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},${GEM_DOC_DIR},' >> ${TMPPLIST}
 	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},${GEM_LIB_DIR},' >> ${TMPPLIST}
 	@${ECHO} ${GEM_SPEC} >> ${TMPPLIST}
