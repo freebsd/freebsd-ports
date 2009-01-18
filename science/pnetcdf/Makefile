@@ -24,11 +24,7 @@ OPTIONS=	OPENMPI "Use openmpi instead of mpich2" off
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-
-WANT_FORTRAN=	yes
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 
 MAN1=		ncmpigen.1 ncmpidump.1
 MAN3=		pnetcdf.3
