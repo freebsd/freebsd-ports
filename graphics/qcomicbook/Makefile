@@ -7,7 +7,7 @@
 
 PORTNAME=	qcomicbook
 PORTVERSION=	0.4.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://linux.bydg.org/~yogin/qcomicbook/
 
@@ -30,13 +30,19 @@ DESKTOP_ENTRIES="QComicBook" "Comic Book Viewer" \
 		"${DATADIR}/${PORTNAME}.png" \
 		"qcomicbook" "" false
 
-OPTIONS=	7ZIP "Enable support for 7-Zip (.cb7) comic book archives" on
+OPTIONS=	7ZIP "Enable support for 7-Zip (.cb7) comic book archives" on \
+		ACE "Enable support for ACE (.cba) comic book archives" on
 
 .include <bsd.port.pre.mk>
 
 # 7-Zip (.cb7) support
 .if !defined(WITHOUT_7ZIP)
 RUN_DEPENDS+=	7z:${PORTSDIR}/archivers/p7zip
+.endif
+
+# ACE (.cba) support
+.if !defined(WITHOUT_ACE)
+RUN_DEPENDS+=	unace:${PORTSDIR}/archivers/unace
 .endif
 
 .include <bsd.port.post.mk>
