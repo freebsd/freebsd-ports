@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	1.1.7
-PORTREVISION=	1
+PORTVERSION=	1.1.8
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/1.1/
 
@@ -61,7 +60,7 @@ OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
 _REQUIRE=	LOGIN
 
 # sed script for dovecot.conf
-SED_CONF=	s!%%PROTOCOLS%%!${PROTOCOLS}!g;\
+REINPLACE=	s!%%PROTOCOLS%%!${PROTOCOLS}!g;\
 		s!/usr/!${PREFIX}/!g;\
 		s!=/usr!=${PREFIX}!g;\
 		s!=/etc !=${PREFIX}/etc !g;\
@@ -147,7 +146,7 @@ USE_BDB=		yes
 CONFIGURE_ARGS+=	--with-db
 CFLAGS+=		-I${BDB_INCLUDE_DIR} -L${BDB_LIB_DIR}
 PLIST_SUB+=		BDB=""
-SED_CONF+=		s!^\#(dict_db_config)!\1!;
+REINPLACE+=		s!^\#(dict_db_config)!\1!;
 .else
 PLIST_SUB+=		BDB="@comment "
 .endif
@@ -203,7 +202,7 @@ SUB_LIST+=		REQUIRE="${_REQUIRE}" DOVECOT_UID=${DOVECOT_UID} DOVECOT_GID=${DOVEC
 SUB_FILES+=		pkg-install pkg-deinstall pkg-message
 
 post-patch:
-	@${REINPLACE_CMD} -E -e '${SED_CONF}' \
+	@${REINPLACE_CMD} -E -e '${REINPLACE}' \
 		${WRKSRC}/dovecot-example.conf
 	@${REINPLACE_CMD} -E -e'\
 		s!-example\.conf[[:>:]]!.conf!g;\
