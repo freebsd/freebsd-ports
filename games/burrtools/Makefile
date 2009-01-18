@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	burrtools
-PORTVERSION=	0.4.1
-PORTREVISION=	0
+PORTVERSION=	0.4.2
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -24,9 +23,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
-
-PLIST_FILES=	bin/burrGui bin/burrTxt
-
-PORTDOCS=	*
 
 .include <bsd.port.mk>
