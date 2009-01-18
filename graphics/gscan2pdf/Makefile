@@ -7,6 +7,7 @@
 
 PORTNAME=	gscan2pdf
 PORTVERSION=	0.9.27
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SFE
 
@@ -26,8 +27,8 @@ RUN_DEPENDS=	p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2 \
 		gocr:${PORTSDIR}/graphics/gocr \
 		tesseract:${PORTSDIR}/graphics/tesseract \
 		ImageMagick>=6.3.3.5:${PORTSDIR}/graphics/ImageMagick \
-		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
-#		xdg-email:${PORTSDIR}/devel/xdg-utils
+		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
+		p5-Sane>=0:${PORTSDIR}/graphics/p5-Sane
 
 USE_GMAKE=	yes
 USE_GNOME=	librsvg2
