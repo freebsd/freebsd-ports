@@ -10,10 +10,72 @@ bin/sc_tree
 bin/scid
 bin/scidlet
 bin/scidpgn
+bin/scidt
 bin/scmerge
 bin/spliteco
 bin/tcscid
 bin/tkscid
-share/scid/scid.eco
-share/scid/spelling.ssp
+share/scid/bases/endings.sg3
+share/scid/bases/endings.si3
+share/scid/bases/endings.sn3
+share/scid/bases/matein1.sg3
+share/scid/bases/matein1.si3
+share/scid/bases/matein1.sn3
+share/scid/bases/matein2.sg3
+share/scid/bases/matein2.si3
+share/scid/bases/matein2.sn3
+share/scid/bases/matein3.sg3
+share/scid/bases/matein3.si3
+share/scid/bases/matein3.sn3
+share/scid/bases/matein4andmore.sg3
+share/scid/bases/matein4andmore.si3
+share/scid/bases/matein4andmore.sn3
+share/scid/bases/tactics.sg3
+share/scid/bases/tactics.si3
+share/scid/bases/tactics.sn3
+share/scid/books/Elo2400.bin
+share/scid/books/Performance.bin
+share/scid/books/gm2600.bin
+share/scid/books/readme.txt
+share/scid/books/varied.bin
+share/scid/data/scid.eco
+share/scid/engines/Phalanx-XXII/phalanx
+share/scid/engines/togaII1.2.1a/fruit
+share/scid/html/scid.css
+share/scid/html/scid.js
+share/scid/html/bitmaps/bb.gif
+share/scid/html/bitmaps/bk.gif
+share/scid/html/bitmaps/bn.gif
+share/scid/html/bitmaps/bp.gif
+share/scid/html/bitmaps/bq.gif
+share/scid/html/bitmaps/br.gif
+share/scid/html/bitmaps/sq.gif
+share/scid/html/bitmaps/wb.gif
+share/scid/html/bitmaps/wk.gif
+share/scid/html/bitmaps/wn.gif
+share/scid/html/bitmaps/wp.gif
+share/scid/html/bitmaps/wq.gif
+share/scid/html/bitmaps/wr.gif
+share/scid/html/bitmaps/mini/bb.gif
+share/scid/html/bitmaps/mini/bk.gif
+share/scid/html/bitmaps/mini/bn.gif
+share/scid/html/bitmaps/mini/bp.gif
+share/scid/html/bitmaps/mini/bq.gif
+share/scid/html/bitmaps/mini/br.gif
+share/scid/html/bitmaps/mini/sq.gif
+share/scid/html/bitmaps/mini/wb.gif
+share/scid/html/bitmaps/mini/wk.gif
+share/scid/html/bitmaps/mini/wn.gif
+share/scid/html/bitmaps/mini/wp.gif
+share/scid/html/bitmaps/mini/wq.gif
+share/scid/html/bitmaps/mini/wr.gif
+@dirrm share/scid/books
+@dirrm share/scid/bases
+@dirrm share/scid/data
+@dirrm share/scid/engines/Phalanx-XXII
+@dirrm share/scid/engines/togaII1.2.1a
+@dirrm share/scid/engines
+@dirrm share/scid/html/bitmaps/mini
+@dirrm share/scid/html/bitmaps
+@dirrm share/scid/html
 @dirrm share/scid
