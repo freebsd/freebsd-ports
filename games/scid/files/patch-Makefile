@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Jan 22 03:54:00 2003
-+++ Makefile	Mon Jan 27 17:02:06 2003
+--- Makefile.orig	2008-10-10 10:59:55.000000000 +0200
++++ Makefile	2008-12-26 15:09:52.000000000 +0100
 @@ -9,11 +9,11 @@
  
  # BINDIR: where the Scid programs are copied for "make install".
@@ -7,7 +7,7 @@
 -BINDIR = /usr/local/bin
 +BINDIR = ${PREFIX}/bin
  
- # SHAREDIR: where scid.eco and spelling.ssp are copied for "make install".
+ # SHAREDIR: where scid.eco is copied for "make install".
  #
 -SHAREDIR = /usr/local/share/scid
 +SHAREDIR = ${PREFIX}/share/scid
@@ -16,31 +16,28 @@
  #   installed that you want Scid to use: 8.0, 8.1, 8.2, 8.3, etc.
 @@ -27,9 +27,9 @@
  #
- # You have not run "./configure" yet.  The default settings are:
+ # The settings determined by "./configure" are:
  #
--TCL_INCLUDE = -I/usr/include
--TCL_LIBRARY = -L/usr/lib -ltcl$(TCL_VERSION) -ldl
--TK_LIBRARY  = $(TCL_LIBRARY) -ltk$(TCL_VERSION) -L/usr/X11R6/lib -lX11
-+#TCL_INCLUDE = -I/usr/include
-+#TCL_LIBRARY = -L/usr/lib -ltcl$(TCL_VERSION) -ldl
-+#TK_LIBRARY  = $(TCL_LIBRARY) -ltk$(TCL_VERSION) -L/usr/X11R6/lib -lX11
+-TCL_INCLUDE = -I/usr/local/ActiveTcl8.5/include
+-TCL_LIBRARY = -L/usr/local/ActiveTcl8.5/lib -ltcl$(TCL_VERSION) -ldl
+-TK_LIBRARY  = $(TCL_LIBRARY) -ltk$(TCL_VERSION) -L/usr/lib -lX11
++#TCL_INCLUDE = -I/usr/local/ActiveTcl8.5/include
++#TCL_LIBRARY = -L/usr/local/ActiveTcl8.5/lib -ltcl$(TCL_VERSION) -ldl
++#TK_LIBRARY  = $(TCL_LIBRARY) -ltk$(TCL_VERSION) -L/usr/lib -lX11
  
  ### Here are other commonly used settings for the Tcl/Tk compiler options:
  
-@@ -51,9 +51,9 @@
- 
- # Someone sent me these settings for FreeBSD with Tcl/Tk 8.0:
- ### FreeBSD:
--# TCL_INCLUDE = -I /usr/local/include/tcl8.0 -I /usr/local/include/tk8.0
--# TCL_LIBRARY = -L /usr/local/lib -ltcl80 -ldl
--# TK_LIBRARY  = $(TCL_LIBRARY) -ltk80 -L /usr/X11/lib -lX11
-+TCL_INCLUDE = -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4 -I${LOCALBASE}/include
-+TCL_LIBRARY = -L${LOCALBASE}/lib -ltcl84
-+TK_LIBRARY  = $(TCL_LIBRARY) -ltk84 -L${LOCALBASE}/lib -lX11
+@@ -54,6 +54,9 @@
+ # TCL_INCLUDE = -I /usr/local/include/tcl8.0 -I /usr/local/include/tk8.0
+ # TCL_LIBRARY = -L /usr/local/lib -ltcl80 -ldl
+ # TK_LIBRARY  = $(TCL_LIBRARY) -ltk80 -L /usr/X11/lib -lX11
++TCL_INCLUDE = -I${LOCALBASE}/include/tcl8.5 -I${LOCALBASE}/include/tk8.5 -I${LOCALBASE}/include
++TCL_LIBRARY = -L${LOCALBASE}/lib -ltcl85
++TK_LIBRARY  = $(TCL_LIBRARY) -ltk85 -L${LOCALBASE}/lib -lX11
  
  
  ########################################
-@@ -71,7 +71,7 @@
+@@ -71,7 +74,7 @@
  #      to include the code in the src/zlib directory.
  #      The default is to use the system zlib library.
  #
@@ -49,7 +46,7 @@
  
  ### OPTIMIZE: Optimization options for C++ compiler.
  #      -O4 is the most optimization for g++. I have found -O2 to do
-@@ -80,7 +80,7 @@
+@@ -80,7 +83,7 @@
  #      On some systems, adding "-fno-rtti" and "-fno-exceptions" produces
  #      smaller, faster programs since Scid does not use those C++ features.
  #
@@ -58,7 +55,16 @@
  
  ### DEBUG: Defining the macro ASSERTIONS will turn on assertions, which
  #       helps to track bugs after modifications, but the programs will run 
-@@ -135,15 +135,15 @@
+@@ -91,7 +94,7 @@
+ ### WARNINGS: I always compile with all warnings on (-Wall), and all the
+ #       files should compile warning-free using g++.
+ #
+-WARNINGS = -Wall
++WARNINGS =
+ 
+ ### PROFILE: Set this to "-pg" for profiling in g++ and gcc.
+ #
+@@ -143,15 +146,15 @@
  
  ### ZLIBOBJS: object files in the zlib compression library.
  #
@@ -72,11 +78,11 @@
 +#      src/zlib/zutil.o src/zlib/inflate.o src/zlib/infblock.o \
 +#      src/zlib/inftrees.o src/zlib/infcodes.o src/zlib/infutil.o \
 +#      src/zlib/inffast.o
- 
+        
  ### ZLIB: Should be "-lz" if your system has zlib, "" otherwise.
  #
 -ZLIB = 
-+ZLIB = -lz 
++ZLIB = -lz
  
- ### OBJS: Will be "$(SCIDOBJS)", and also "$(ZLIBOBJS)" if they are
+ ### OBJS: Will be "$(SCIDOBJS)", "$(POLYGLOTOBJS)", and also "$(ZLIBOBJS)" if they are
  #      needed on your system.

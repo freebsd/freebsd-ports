@@ -7,21 +7,22 @@
 #
 
 PORTNAME=	scid
-PORTVERSION=	3.6.1
-PORTREVISION=	2
+PORTVERSION=	3.6.26
 CATEGORIES=	games databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	volkmann@inode.at
+MAINTAINER=	bsd@volki.at
 COMMENT=	A free chess database application
 
-LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
-		tk84:${PORTSDIR}/x11-toolkits/tk84
+LIB_DEPENDS=	tcl85:${PORTSDIR}/lang/tcl85 \
+		tk85:${PORTSDIR}/x11-toolkits/tk85
 
+USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 
 ALL_TARGET=	all strip
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
