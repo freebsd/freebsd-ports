@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-power-manager
-PORTVERSION=	2.24.2
+PORTVERSION=	2.24.3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
