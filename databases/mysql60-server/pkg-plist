@@ -69,16 +69,19 @@ bin/resolveip
 %%NDB%%include/mysql/storage/ndb/ndbapi/ndb_opt_defaults.h
 %%NDB%%include/mysql/storage/ndb/ndbapi/ndberror.h
 lib/mysql/libdbug.a
+lib/mysql/libdbug.la
 lib/mysql/libheap.a
 lib/mysql/libmaria.a
 lib/mysql/libmyisam.a
 lib/mysql/libmyisammrg.a
 lib/mysql/libmystrings.a
+lib/mysql/libmystrings.la
 lib/mysql/libmysys.a
+lib/mysql/libmysys.la
 %%NDB%%lib/mysql/libndbclient.a
 %%NDB%%lib/mysql/libndbclient.la
 %%NDB%%lib/mysql/libndbclient.so
-%%NDB%%lib/mysql/libndbclient.so.3
+%%NDB%%lib/mysql/libndbclient.so.4
 lib/mysql/libvio.a
 lib/mysql/plugin/ha_example.a
 lib/mysql/plugin/ha_example.la
@@ -159,6 +162,32 @@ libexec/mysqld
 %%DATADIR%%/slovak/errmsg.sys
 %%DATADIR%%/spanish/errmsg.sys
 %%DATADIR%%/swedish/errmsg.sys
+%%NDB%%%%DATADIR%%/swig/globals.i
+%%NDB%%%%DATADIR%%/swig/mgmapi/ClusterState.i
+%%NDB%%%%DATADIR%%/swig/mgmapi/NdbLogEvent.i
+%%NDB%%%%DATADIR%%/swig/mgmapi/NdbLogEventManager.i
+%%NDB%%%%DATADIR%%/swig/mgmapi/NdbMgm.i
+%%NDB%%%%DATADIR%%/swig/mgmapi/NdbMgmFactory.i
+%%NDB%%%%DATADIR%%/swig/mgmapi/NdbMgmReply.i
+%%NDB%%%%DATADIR%%/swig/mgmapi/NodeState.i
+%%NDB%%%%DATADIR%%/swig/mgmapi/events.i
+%%NDB%%%%DATADIR%%/swig/mgmapi/listeners.i
+%%NDB%%%%DATADIR%%/swig/mgmapi/mgmglobals.i
+%%NDB%%%%DATADIR%%/swig/ndbapi/Ndb.i
+%%NDB%%%%DATADIR%%/swig/ndbapi/NdbBlob.i
+%%NDB%%%%DATADIR%%/swig/ndbapi/NdbClusterConnection.i
+%%NDB%%%%DATADIR%%/swig/ndbapi/NdbDictionary.i
+%%NDB%%%%DATADIR%%/swig/ndbapi/NdbError.i
+%%NDB%%%%DATADIR%%/swig/ndbapi/NdbEventOperation.i
+%%NDB%%%%DATADIR%%/swig/ndbapi/NdbFactory.i
+%%NDB%%%%DATADIR%%/swig/ndbapi/NdbIndexOperation.i
+%%NDB%%%%DATADIR%%/swig/ndbapi/NdbIndexScanOperation.i
+%%NDB%%%%DATADIR%%/swig/ndbapi/NdbOperation.i
+%%NDB%%%%DATADIR%%/swig/ndbapi/NdbRecAttr.i
+%%NDB%%%%DATADIR%%/swig/ndbapi/NdbScanFilter.i
+%%NDB%%%%DATADIR%%/swig/ndbapi/NdbScanOperation.i
+%%NDB%%%%DATADIR%%/swig/ndbapi/NdbTransaction.i
+%%NDB%%%%DATADIR%%/swig/ndbapi/ndbglobals.i
 %%DATADIR%%/ukrainian/errmsg.sys
 %%NDB%%@dirrm include/mysql/storage/ndb/mgmapi
 %%NDB%%@dirrm include/mysql/storage/ndb/ndbapi
@@ -190,5 +219,8 @@ libexec/mysqld
 @dirrm %%DATADIR%%/slovak
 @dirrm %%DATADIR%%/spanish
 @dirrm %%DATADIR%%/swedish
+%%NDB%%@dirrm %%DATADIR%%/swig/mgmapi
+%%NDB%%@dirrm %%DATADIR%%/swig/ndbapi
+%%NDB%%@dirrm %%DATADIR%%/swig
 @dirrm %%DATADIR%%/ukrainian
 @dirrmtry %%DATADIR%%
