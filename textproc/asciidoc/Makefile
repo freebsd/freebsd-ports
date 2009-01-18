@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asciidoc
-PORTVERSION=	8.3.1
+PORTVERSION=	8.3.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.methods.co.nz/asciidoc/ \
 		SF
@@ -14,56 +14,22 @@ MASTER_SITES=	http://www.methods.co.nz/asciidoc/ \
 MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	A text document format for writing short documents and man pages
 
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
 USE_PYTHON=	2.4+
+USE_GMAKE=	yes
+MAKE_ENV=	INSTALL="${INSTALL}" INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}"
 
-NO_BUILD=	yes
-
+GNU_CONFIGURE=	yes
 MAN1=		a2x.1 asciidoc.1
 
-pre-patch:
-	${REINPLACE_CMD} \
-		-e "s|/bin/bash|/usr/bin/env bash|g" \
-		-e "s|/etc/asciidoc|${PREFIX}/etc/asciidoc|g" \
-		${WRKSRC}/a2x
-	${REINPLACE_CMD} \
-		-e "s|/etc/asciidoc|${PREFIX}/etc/asciidoc|g" \
-		${WRKSRC}/asciidoc.py
-
 # a future improvement to this port is to also install the vim syntax
-# highlighing mode in its proper location.
-#
-# also, starting with 8.3.1 the upstream has a configure script. this port
-# should be converted to use it.
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/asciidoc.py ${PREFIX}/bin/asciidoc
-	${INSTALL_SCRIPT} ${WRKSRC}/a2x ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/etc/asciidoc
-	${INSTALL_DATA} ${WRKSRC}/*.conf ${PREFIX}/etc/asciidoc
-	${MKDIR} ${PREFIX}/etc/asciidoc/filters
-	${INSTALL_DATA} ${WRKSRC}/filters/code-filter.conf \
-		${PREFIX}/etc/asciidoc/filters
-	${INSTALL_SCRIPT} ${WRKSRC}/filters/code-filter.py \
-		${PREFIX}/etc/asciidoc/filters
-	${MKDIR} ${PREFIX}/etc/asciidoc/dblatex
-	${INSTALL_DATA} ${WRKSRC}/dblatex/*.xsl \
-		${PREFIX}/etc/asciidoc/dblatex
-	${INSTALL_DATA} ${WRKSRC}/dblatex/*.sty \
-		${PREFIX}/etc/asciidoc/dblatex
-	${MKDIR} ${PREFIX}/etc/asciidoc/docbook-xsl
-	${INSTALL_DATA} ${WRKSRC}/docbook-xsl/*.xsl \
-		${PREFIX}/etc/asciidoc/docbook-xsl
-	${MKDIR} ${PREFIX}/etc/asciidoc/javascripts
-	${INSTALL_DATA} ${WRKSRC}/javascripts/*.js \
-		${PREFIX}/etc/asciidoc/javascripts
-	${MKDIR} ${PREFIX}/etc/asciidoc/stylesheets
-	${INSTALL_DATA} ${WRKSRC}/stylesheets/*.css \
-		${PREFIX}/etc/asciidoc/stylesheets
-	${MKDIR} ${PREFIX}/etc/asciidoc/images/icons/callouts
-	${INSTALL_DATA} ${WRKSRC}/images/icons/*.png \
-		${PREFIX}/etc/asciidoc/images/icons
-	${INSTALL_DATA} ${WRKSRC}/images/icons/callouts/* \
-		${PREFIX}/etc/asciidoc/images/icons/callouts
-	${INSTALL_MAN} ${WRKSRC}/doc/a2x.1 ${WRKSRC}/doc/asciidoc.1 \
-		${PREFIX}/man/man1
+# highlighing mode which is currently disabled by being patched away in
+# Makefile.in
+
+pre-patch:
+	@${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|g" \
+		${WRKSRC}/a2x ${WRKSRC}/asciidoc.py
 
 .include <bsd.port.mk>
