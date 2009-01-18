@@ -2,9 +2,11 @@
 %%SQUIRRELDIR%%/plugins/password_forget/COPYING
 %%SQUIRRELDIR%%/plugins/password_forget/INSTALL
 %%SQUIRRELDIR%%/plugins/password_forget/README
-%%SQUIRRELDIR%%/plugins/password_forget/config.php.sample
+%%SQUIRRELDIR%%/plugins/password_forget/config_default.php
+%%SQUIRRELDIR%%/plugins/password_forget/config_example.php
 %%SQUIRRELDIR%%/plugins/password_forget/functions.php
 %%SQUIRRELDIR%%/plugins/password_forget/index.php
+%%SQUIRRELDIR%%/plugins/password_forget/make_release.sh
 %%SQUIRRELDIR%%/plugins/password_forget/setup.php
 %%SQUIRRELDIR%%/plugins/password_forget/version
 @dirrmtry %%SQUIRRELDIR%%/plugins/password_forget
