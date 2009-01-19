@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.2.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -63,8 +63,7 @@ OPTIONS= \
 	PGSQL "Enable PostgreSQL support for apr-dbd" Off \
 	SQLITE "Enable SQLite support for apr-dbd" Off \
 	IPV6 "Enable IPv6 support" On \
-	BDB "Enable BerkeleyDB dbm" Off \
-        SVN "Enable Subversion support" Off
+	BDB "Enable BerkeleyDB dbm" Off
 .include "${APACHEDIR}/Makefile.options"
 .endif
 
