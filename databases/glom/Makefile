@@ -3,15 +3,14 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/glom/Makefile,v 1.18 2008/03/20 09:26:48 kwm Exp $
+#   $MCom: ports/databases/glom/Makefile,v 1.21 2009/01/09 11:46:25 kwm Exp $
 #
 
 PORTNAME=	glom
-PORTVERSION=	1.6.17
-PORTREVISION=	1
+PORTVERSION=	1.8.5
 CATEGORIES=	databases gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GNOME database designer and user interface
@@ -19,13 +18,11 @@ COMMENT=	GNOME database designer and user interface
 LIB_DEPENDS=	bakery-2.6:${PORTSDIR}/x11-toolkits/bakery \
 		gdamm-3.0.10:${PORTSDIR}/databases/libgdamm \
 		gtksourceviewmm-2.0.2:${PORTSDIR}/x11-toolkits/libgtksourceviewmm \
-		goocanvas.3:${PORTSDIR}/graphics/goocanvas
+		goocanvasmm-0.1.4:${PORTSDIR}/graphics/goocanvasmm
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/libgda-postgres-3.0.pc:${PORTSDIR}/databases/libgda3-postgresql
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/libgda-postgres-3.0.pc:${PORTSDIR}/databases/libgda3-postgresql
-
-BROKEN=		needs bakery-2.4, but bakery-2.6 is available in portstree
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
@@ -41,17 +38,17 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-postgres-utils=${LOCALBASE}/bin
 INSTALLS_ICONS=	yes
 
-OPTIONS=	SELF_HOSTING "Host the database locally" off
+#OPTIONS=	SELF_HOSTING "Host the database locally" on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SELF_HOSTING)
+#.if defined(WITH_SELF_HOSTING)
 # Note: USE_PGSQL has already been set above.
 BUILD_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 RUN_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
-.else
-CONFIGURE_ARGS+=--enable-client-only
-.endif
+#.else
+#CONFIGURE_ARGS+=--enable-client-only
+#.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-update-mime-database|true|g' \
