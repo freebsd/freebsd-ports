@@ -3827,7 +3827,6 @@ gcc28                           ports/lang/gcc28
 gcc295                          ports/lang/gcc295
 gcc33                           ports/lang/gcc33
 gcc34                           ports/lang/gcc34
-gcc41                           ports/lang/gcc41
 gcc42                           ports/lang/gcc42
 gcc42-withgcjawt                ports/lang/gcc42-withgcjawt
 gcc43                           ports/lang/gcc43
