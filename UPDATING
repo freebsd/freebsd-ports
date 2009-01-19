@@ -7,6 +7,24 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20090118:
+  AFFECTS: users of net-p2p/deluge
+  AUTHOR: mezz@FreeBSD.org
+
+  The Deluge has been updated from 0.5.x to 1.x. The 1.x has been rewritten,
+  so it is recommend for you to make the back up of your ~/.config/deluge. The
+  configuration and plugins of 0.5.x do not work in 1.x. Deluge will picking
+  up the old configuration and try to convert it to the newer format, but I
+  wouldn't trust it to do it without the back up.
+
+  If you prefer to stick with 0.5.x, you can use portmaster:
+
+  	# portmaster -o net-p2p/deluge05 net-p2p/deluge
+
+  or if you use portupgrade:
+
+	# portupgrade -o net-p2p/deluge05 net-p2p/deluge
+
+20090118:
   AFFECTS: users of www/ikiwiki
   AUTHOR: brix@FreeBSD.org
 
