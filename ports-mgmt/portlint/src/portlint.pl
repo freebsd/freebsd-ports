@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.163 2009/01/18 18:49:03 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.164 2009/01/19 06:57:51 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_g $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -1894,7 +1894,7 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 	#
 	# whole file: CONFIGURE_ENV
 	#
-	if ($whole =~ /\nCONFIGURE_ENV[?:]?=\s*([^\\\n]+(\\\n[^\\\n]+)*)/) {
+	if ($whole =~ /\nCONFIGURE_ENV[?:+]?=\s*([^\\\n]+(\\\n[^\\\n]+)*)/) {
 		my $configure_env = $1;
 		my $cflags = undef;
 		my $cxxflags = undef;
@@ -1937,10 +1937,10 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 
 		if ($configure_env =~ /(FC)=/ ||
 			$configure_env =~ /(F77)=/ ||
-			$configure_env =~ /(FCFLAGS)=/) {
-				&perror("FATAL", $file, -1, "The Fortran flag, $1 is already ".
+			$configure_env =~ /(FFLAGS)=/) {
+				&perror("FATAL", $file, -1, "$1 is already ".
 					"passed in CONFIGURE_ENV via bsd.gcc.mk.  If you need to ".
-					"override the the default value, alter $1 in the Makefile ".
+					"override the default value, alter $1 in the Makefile ".
 					"instead with $1=...");
 		}
 	}
