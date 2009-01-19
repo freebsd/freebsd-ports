@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfburn
-PORTVERSION=	0.3.91
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://goodies.xfce.org/releases/xfburn/
 
@@ -16,18 +15,47 @@ COMMENT=	CD/DVD burning tool for Xfce
 
 LIB_DEPENDS=	burn.23:${PORTSDIR}/devel/libburn \
 		isofs.12:${PORTSDIR}/devel/libisofs
-RUN_DEPENDS=	hal-device:${PORTSDIR}/sysutils/hal \
-		cdrdao:${PORTSDIR}/sysutils/cdrdao \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools
+RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GMSGFMT=${PREFIX}/bin/msgfmt DATADIRNAME=share
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
-INSTALLS_ICONS=	yes
 USE_GNOME=	intltool pkgconfig
 USE_XFCE=	configenv libexo libgui
+USE_CDRTOOLS=	yes
+INSTALLS_ICONS=	yes
 
-.include <bsd.port.mk>
+OPTIONS =	DBUS		"Enable dbus support"	on\
+		HAL		"Enable hal support"	on\
+		GSTREAMER	"Enable gstreamer for audio support"	off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+.else
+CONFIGURE_ARGS+=	--disable-nls
+.endif
+
+.if defined(WITH_DBUS)
+LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
+.else
+CONFIGURE_ARGS+=	--disable-dbus
+.endif
+
+.if defined(WITH_HAL)
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+.else
+CONFIGURE_ARGS+=	--disable-hal
+.endif
+
+.if defined(WITH_GSTREAMER)
+USE_GSTREAMER=	core
+.warning	"GSTREAMER support not complete yet"
+.else
+CONFIGURE_ARGS+=	--disable-gstreamer
+.endif
+
+.include <bsd.port.post.mk>

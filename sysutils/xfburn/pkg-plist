@@ -1,6 +1,7 @@
 %%DATADIR%%/xfburn-toolbars.ui
 %%DATADIR%%/xfburn.ui
 bin/xfburn
+share/Thunar/sendto/thunar-sendto-xfburn.desktop
 share/applications/xfburn.desktop
 share/icons/hicolor/16x16/stock/media/stock_xfburn-audio-cd.png
 share/icons/hicolor/16x16/stock/media/stock_xfburn-blank-cdrw.png
@@ -34,7 +35,6 @@ share/icons/hicolor/48x48/stock/media/stock_xfburn-burn-cd.png
 share/icons/hicolor/48x48/stock/media/stock_xfburn-data-copy.png
 share/icons/hicolor/48x48/stock/media/stock_xfburn-import-session.png
 share/icons/hicolor/48x48/stock/media/stock_xfburn-new-data-composition.png
-share/icons/hicolor/icon-theme.cache
 share/icons/hicolor/scalable/stock/media/stock_xfburn-audio-cd.svg
 share/icons/hicolor/scalable/stock/media/stock_xfburn-blank-cdrw.svg
 share/icons/hicolor/scalable/stock/media/stock_xfburn-burn-cd.svg
@@ -72,6 +72,7 @@ share/locale/pt_PT/LC_MESSAGES/xfburn.mo
 share/locale/ru/LC_MESSAGES/xfburn.mo
 share/locale/sq/LC_MESSAGES/xfburn.mo
 share/locale/sv/LC_MESSAGES/xfburn.mo
+share/locale/tr/LC_MESSAGES/xfburn.mo
 share/locale/uk/LC_MESSAGES/xfburn.mo
 share/locale/ur/LC_MESSAGES/xfburn.mo
 share/locale/zh_CN/LC_MESSAGES/xfburn.mo
@@ -139,6 +140,8 @@ share/locale/zh_TW/LC_MESSAGES/xfburn.mo
 @dirrmtry share/locale/sq
 @dirrmtry share/locale/sv/LC_MESSAGES
 @dirrmtry share/locale/sv
+@dirrmtry share/locale/tr/LC_MESSAGES
+@dirrmtry share/locale/tr
 @dirrmtry share/locale/uk/LC_MESSAGES
 @dirrmtry share/locale/uk
 @dirrmtry share/locale/ur/LC_MESSAGES
@@ -147,4 +150,6 @@ share/locale/zh_TW/LC_MESSAGES/xfburn.mo
 @dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
+@dirrmtry share/Thunar/sendto
+@dirrmtry share/Thunar
 @unexec /bin/rm %D/share/icons/hicolor/icon-theme.cache 2>/dev/null || /usr/bin/true
