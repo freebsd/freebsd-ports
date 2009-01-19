@@ -882,7 +882,6 @@
     SUBDIR += py-texttable
     SUBDIR += py-tvgrab
     SUBDIR += py-twistedLore
-    SUBDIR += py-wbxml
     SUBDIR += py-wordnet
     SUBDIR += py-xlwriter
     SUBDIR += py-xml

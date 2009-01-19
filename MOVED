@@ -3755,3 +3755,4 @@ games/fgfs-base|games/flightgear-data|2009-01-15|Renamed
 lang/gcc41|lang/gcc42|2009-01-17|Abandoned upstream, superseded by gcc42 and, preferrably, gcc43
 devel/apr-svn|devel/apr|2009-01-18|Only needed for FreeBSD 5.2 and below for threading
 math/elmer-mathlibs||2009-01-18|Removed
+textproc/py-wbxml|||2009-01-19|Expired: No longer supported by developers
