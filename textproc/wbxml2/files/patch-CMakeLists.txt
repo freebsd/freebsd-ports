@@ -1,0 +1,11 @@
+--- CMakeLists.txt	2008-12-05 16:06:35.000000000 +0200
++++ CMakeLists.txt	2008-12-06 15:09:44.000000000 +0200
+@@ -152,7 +152,7 @@
+ ADD_DOCUMENTATION( TEXT FILE ${CMAKE_SOURCE_DIR}/TODO )
+ 
+ # todo: add requires in pc file
+-INSTALL( FILES "${CMAKE_CURRENT_BINARY_DIR}/libwbxml2.pc" DESTINATION "${LIB_INSTALL_DIR}/pkgconfig/" )
++INSTALL( FILES "${CMAKE_CURRENT_BINARY_DIR}/libwbxml2.pc" DESTINATION "${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig/" )
+ 
+ # status output
+ INCLUDE( ShowStatus )
