@@ -36,7 +36,6 @@ libexec/mlock
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2088.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2177.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2180.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2192.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2193.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2195.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2221.txt
@@ -50,7 +49,6 @@ libexec/mlock
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc3516.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc3656.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc3691.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4234.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4314.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4315.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4422.txt
@@ -65,6 +63,14 @@ libexec/mlock
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4731.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4752.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4790.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4959.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4978.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5032.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5051.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5234.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5092.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5161.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5162.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/draft
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
