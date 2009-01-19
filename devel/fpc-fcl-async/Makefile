@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
-CATEGORIES=	net lang
+PORTREVISION=	1
+CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-async
 
 MAINTAINER=	acm@FreeBSD.org
