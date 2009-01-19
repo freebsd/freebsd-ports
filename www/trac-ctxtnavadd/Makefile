@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	ctxtnavaddplugin
-PORTVERSION=	1.1.r1
-PORTREVISION=	2
+PORTVERSION=	2.0
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-r/}
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Add links to the ctxtnav bar from other plugins
