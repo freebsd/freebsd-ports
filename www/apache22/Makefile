@@ -9,6 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.2.11
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -110,10 +111,6 @@ CONFIGURE_ARGS+=	--enable-exception-hook
 .include <bsd.port.pre.mk>
 
 # OPTIONS fixups
-.if defined(WITH_SVN)
-APR_PORT=	devel/apr-svn
-WITH_BDB=	YES
-.endif
 .if defined (WITH_AUTHNZ_LDAP)
 WITH_LDAP=	yes
 .endif
