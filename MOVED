@@ -3757,3 +3757,4 @@ devel/apr-svn|devel/apr|2009-01-18|Only needed for FreeBSD 5.2 and below for thr
 math/elmer-mathlibs||2009-01-18|Removed
 textproc/py-wbxml|||2009-01-19|Expired: No longer supported by developers
 mail/claws-mail-smime|mail/claws-mail|2009-01-19|The SMIME plugin is included in the main port via the GPGME option now
+www/fpc-httpd||2009-01-19|Splitted to www/fpc-httpd13 www/fpc-httpd20 and www/fpc-httpd22
