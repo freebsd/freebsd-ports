@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mastertickets
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	2.1.3
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
@@ -17,8 +16,7 @@ MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Support for ticket dependencies
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
-		${PYTHON_SITELIBDIR}/TracWebAdmin-0.1.2dev-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-webadmin
+RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin
 NO_BUILD=	yes
