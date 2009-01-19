@@ -3,6 +3,7 @@ bin/consang
 bin/ged2gwb
 bin/gwb2ged
 bin/gwc
+bin/gwc2
 bin/gwd
 bin/gwu
 %%DATADIR%%/a.gwf
@@ -124,15 +125,35 @@ bin/gwu
 %%DATADIR%%/doc/sv/server.htm
 %%DATADIR%%/doc/sv/start.htm
 %%DATADIR%%/doc/sv/update.htm
+%%DATADIR%%/etc/accent.txt
+%%DATADIR%%/etc/anclist.txt
+%%DATADIR%%/etc/ancmenu.txt
+%%DATADIR%%/etc/ancsosa.txt
+%%DATADIR%%/etc/anctree.txt
+%%DATADIR%%/etc/calendar.txt
 %%DATADIR%%/etc/copyr.txt
+%%DATADIR%%/etc/cousmenu.txt
+%%DATADIR%%/etc/dag.txt
+%%DATADIR%%/etc/deslist.txt
+%%DATADIR%%/etc/desmenu.txt
+%%DATADIR%%/etc/forum.txt
 %%DATADIR%%/etc/index.txt
 %%DATADIR%%/etc/moved.txt
+%%DATADIR%%/etc/particles.txt
 %%DATADIR%%/etc/perso.txt
+%%DATADIR%%/etc/random_css.txt
 %%DATADIR%%/etc/redirect.txt
+%%DATADIR%%/etc/relmenu.txt
 %%DATADIR%%/etc/renamed.txt
 %%DATADIR%%/etc/robot.txt
+%%DATADIR%%/etc/robots.txt
+%%DATADIR%%/etc/stats.txt
+%%DATADIR%%/etc/summary.txt
 %%DATADIR%%/etc/updfam.txt
+%%DATADIR%%/etc/updhist.txt
 %%DATADIR%%/etc/updind.txt
+%%DATADIR%%/etc/updmenu.txt
+%%DATADIR%%/etc/welcome.txt
 %%DATADIR%%/images/female.png
 %%DATADIR%%/images/gwback.jpg
 %%DATADIR%%/images/gwlogo.png
@@ -195,8 +216,10 @@ bin/gwu
 %%DATADIR%%/install.sh
 %%DATADIR%%/lang/advanced.txt
 %%DATADIR%%/lang/alias_lg.txt
+%%DATADIR%%/lang/lex_utf8.txt
 %%DATADIR%%/lang/lexicon.txt
 %%DATADIR%%/lang/start.txt
+%%DATADIR%%/lang/start_utf8.txt
 %%DATADIR%%/lang/version.txt
 @dirrm %%DATADIR%%/doc/de
 @dirrm %%DATADIR%%/doc/en
