@@ -80,7 +80,13 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Server-mode/okular.cfg
 %%DATADIR%%/cfg-data/Server-mode/wmctrl.cfg
 %%DATADIR%%/cfg-data/Server-mode/xbmc.cfg
+%%DATADIR%%/cfg-data/Server-mode/alsaplayer.cfg
+%%DATADIR%%/cfg-data/Server-mode/digikam.cfg
+%%DATADIR%%/cfg-data/Server-mode/digikam2.cfg
+%%DATADIR%%/cfg-data/Server-mode/gpicview.cfg
+%%DATADIR%%/cfg-data/Server-mode/xmultimedia.cfg
 %%DATADIR%%/cfg-data/Utils/gradient.png
+%%DATADIR%%/cfg-data/Utils/message.sh
 %%DATADIR%%/cfg-data/Utils/all-in-1.py
 %%DATADIR%%/cfg-data/Utils/xmms_is_playing
 %%DATADIR%%/cfg-data/Bemused-emulation/exaile.cfg
