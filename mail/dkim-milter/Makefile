@@ -13,7 +13,7 @@
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	2.8.0
+PORTVERSION=	2.8.1
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -198,7 +198,7 @@ SITE_SUB+=	-e '/-DQUERY_CACHE/s/^dnl //g'
 .if defined(WITH_VERIFY_DOMAINKEYS) && !defined(WITHOUT_VERIFY_DOMAINKEYS)
 LIBDK_PORT=	mail/dk-milter
 BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/${LIBDK_PORT}:patch
-LIBDK_PATH!=	cd ${PORTSDIR}/${LIBDK_PORT} && ${MAKE} -V WRKSRC
+LIBDK_PATH_CMD=	cd ${PORTSDIR}/${LIBDK_PORT} && ${MAKE} -V WRKSRC
 SITE_SUB+=	-e '\|bld_VERIFY_DOMAINKEYS|s/^dnl //'
 PORTDOCS+=	rfc4870.txt
 .endif
@@ -274,8 +274,8 @@ post-patch:
 
 pre-configure:
 .if defined(WITH_VERIFY_DOMAINKEYS) && !defined(WITHOUT_VERIFY_DOMAINKEYS)
-	${LN} -s ${LIBDK_PATH}/libdk ${WRKSRC}/
-	${CP} ${LIBDK_PATH}/rfc4870.txt ${WRKSRC}/
+	${LN} -s $$(${LIBDK_PATH_CMD})/libdk ${WRKSRC}/
+	${CP} $$(${LIBDK_PATH_CMD})/rfc4870.txt ${WRKSRC}/
 .endif
 
 post-install:
