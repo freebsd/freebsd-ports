@@ -1,0 +1,16 @@
+pip is a replacement for easy_install. It uses mostly the same techniques
+for finding packages, so packages that were made easy_installable should
+be pip-installable as well.
+
+pip is meant to improve on easy_install. Some of the improvements:
+
+    * All packages are downloaded before installation. Partially-completed
+      installation doesn't occur as a result.
+    * Care is taken to present useful output on the console.
+    * The reasons for actions are kept track of. For instance, if a package
+      is being installed, pip keeps track of why that package was required.
+    * Error messages should be useful.
+    * Packages don't have to be installed as egg archives, they can be
+      installed flat (while keeping the egg metadata).
+
+WWW:	http://pip.openplans.org/

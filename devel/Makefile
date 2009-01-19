@@ -2247,6 +2247,7 @@
     SUBDIR += py-pefile
     SUBDIR += py-period
     SUBDIR += py-phpserialize
+    SUBDIR += py-pip
     SUBDIR += py-plex
     SUBDIR += py-ply
     SUBDIR += py-pmock
