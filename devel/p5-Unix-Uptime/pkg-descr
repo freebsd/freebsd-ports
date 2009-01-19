@@ -1,0 +1,6 @@
+This is a rather simple module that abstracts the task of figuring out
+the current system uptime, in seconds. It was born out of a desire to do
+this on non-Linux systems, without SNMP. If you want to use SNMP,
+there are pleanty of modules on CPAN already.
+
+WWW:	http://search.cpan.org/dist/Unix-Uptime/
