@@ -6,22 +6,38 @@
 #
 
 PORTNAME=	optipng
-PORTVERSION=	0.5.4
+PORTVERSION=	0.6.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	freaky@aagh.net
+MAINTAINER=	tom@hur.st
 COMMENT=	An optimizer for PNG files
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+OPTIONS=	BUNDLED_LIBPNG	"Use bundled libpng"	off \
+		BUNDLED_ZLIB	"Use bundled zlib"	off
 
 BUILD_WRKSRC=	${WRKSRC}/src
-MAKEFILE=	scripts/unix-secure.mak
+MAKEFILE=	scripts/unix.mak
 ALL_TARGET=	${PORTNAME}
 PLIST_FILES=	bin/optipng
 MAN1=		optipng.1
-PORTDOCS=	CAVEAT.txt HISTORY.txt TODO.txt USAGE.txt \
-		design.html features.html guide.html thanks.html
+PORTDOCS=	caveat.txt history.txt manual.html manual.pdf manual.txt \
+		png_optimization_guide.html thanks.html todo.txt
+
+.include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS=	#
+.ifndef(WITH_BUNDLED_LIBPNG)
+CONFIGURE_ARGS+=	--with-system-libpng
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+.endif
+
+.ifndef(WITH_BUNDLED_ZLIB)
+CONFIGURE_ARGS+=	--with-system-zlib
+.endif
+
+do-configure:
+	(cd ${WRKSRC} && ./configure ${CONFIGURE_ARGS})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/optipng ${PREFIX}/bin/
@@ -33,4 +49,4 @@ post-install:
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
