@@ -1,6 +1,7 @@
 bin/jags
 include/JAGS/Console.h
-include/JAGS/JAGSVersion.h
+include/JAGS/JRmath.h
+include/JAGS/Module.h
 include/JAGS/compiler/Compiler.h
 include/JAGS/compiler/ConstantFactory.h
 include/JAGS/compiler/Counter.h
@@ -9,16 +10,17 @@ include/JAGS/compiler/LogicalFactory.h
 include/JAGS/compiler/MixtureFactory.h
 include/JAGS/compiler/NodeFactory.h
 include/JAGS/compiler/ParseTree.h
-include/JAGS/compiler/parser.h
-include/JAGS/compiler/parser_extra.h
-include/JAGS/distributions/DistDiscrete.h
-include/JAGS/distributions/DistReal.h
-include/JAGS/distributions/DistTab.h
-include/JAGS/distributions/Distribution.h
-include/JAGS/functions/FuncTab.h
-include/JAGS/functions/Function.h
-include/JAGS/functions/InverseLinkFunc.h
-include/JAGS/functions/ScalarFunc.h
+include/JAGS/distribution/DistScalar.h
+include/JAGS/distribution/DistScalarRmath.h
+include/JAGS/distribution/DistTab.h
+include/JAGS/distribution/Distribution.h
+include/JAGS/distribution/RNG.h
+include/JAGS/distribution/RNGFactory.h
+include/JAGS/distribution/RmathRNG.h
+include/JAGS/function/FuncTab.h
+include/JAGS/function/Function.h
+include/JAGS/function/InverseLinkFunc.h
+include/JAGS/function/ScalarFunc.h
 include/JAGS/graph/AggNode.h
 include/JAGS/graph/ConstantNode.h
 include/JAGS/graph/DeterministicNode.h
@@ -29,32 +31,49 @@ include/JAGS/graph/LogicalNode.h
 include/JAGS/graph/MixtureNode.h
 include/JAGS/graph/Node.h
 include/JAGS/graph/NodeError.h
-include/JAGS/graph/NodeNameTab.h
 include/JAGS/graph/StochasticNode.h
-include/JAGS/matrix/lapack.h
-include/JAGS/matrix/matexp.h
-include/JAGS/matrix/matrix.h
 include/JAGS/model/BUGSModel.h
 include/JAGS/model/Model.h
+include/JAGS/model/Monitor.h
+include/JAGS/model/MonitorFactory.h
 include/JAGS/model/NodeArray.h
 include/JAGS/model/SymTab.h
-include/JAGS/model/TraceMonitor.h
-include/JAGS/sampler/ConjugateFactory.h
-include/JAGS/sampler/DSumFactory.h
-include/JAGS/sampler/FiniteFactory.h
-include/JAGS/sampler/GibbsFactory.h
-include/JAGS/sampler/GibbsSampler.h
+include/JAGS/sampler/DensityMethod.h
+include/JAGS/sampler/DensitySampler.h
+include/JAGS/sampler/Linear.h
+include/JAGS/sampler/Metropolis.h
+include/JAGS/sampler/RWMetropolis.h
 include/JAGS/sampler/Sampler.h
 include/JAGS/sampler/SamplerFactory.h
-include/JAGS/sampler/SliceFactory.h
+include/JAGS/sampler/SingletonFactory.h
 include/JAGS/sampler/Slicer.h
-include/JAGS/sarray/Index.h
 include/JAGS/sarray/Range.h
 include/JAGS/sarray/RangeIterator.h
 include/JAGS/sarray/SArray.h
-lib/libjags.a
+include/JAGS/util/dim.h
+include/JAGS/util/integer.h
+include/JAGS/util/logical.h
+include/JAGS/util/nainf.h
+lib/JAGS/modules/basemod.la
+lib/JAGS/modules/basemod.so
+lib/JAGS/modules/bugs.la
+lib/JAGS/modules/bugs.so
+lib/JAGS/modules/dic.la
+lib/JAGS/modules/dic.so
+lib/JAGS/modules/mix.la
+lib/JAGS/modules/mix.so
+lib/JAGS/modules/msm.la
+lib/JAGS/modules/msm.so
 lib/libjags.la
-%%PORTDOCS%%%%DOCSDIR%%/manual.pdf
+lib/libjags.so
+lib/libjags.so.1
+lib/libjrmath.la
+lib/libjrmath.so
+lib/libjrmath.so.0
+lib/pkgconfig/jags.pc
+libexec/jags-terminal
+%%PORTDOCS%%%%DOCSDIR%%/jags_user_manual.pdf
+%%PORTDOCS%%%%EXAMPLESDIR%%/R/Rcheck.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/R/bench.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/R/check.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/ReadMe
@@ -72,18 +91,20 @@ lib/libjags.la
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/blockht.bug
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/notest2.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/notest3.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/test1.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/bones/bench-test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/bones/bones-data.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/bones/bones-init.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/bones/bones.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/bones/test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/bones/test1.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/dyes/bench-test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/dyes/dyes-data.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/dyes/dyes-init.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/dyes/dyes.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/dyes/test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/dyes/test1.cmd
-%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/epil/.Rhistory
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/epil/BT-data.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/epil/ReadMe
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/epil/bench-test1.R
@@ -103,12 +124,14 @@ lib/libjags.la
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/equiv/equiv-init.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/equiv/equiv.bug
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/equiv/equivmiss-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/equiv/test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/equiv/test1.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/equiv/test2.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/inhaler/inhaler-data.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/inhaler/inhaler-inits.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/inhaler/inhaler.bug
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/inhaler/inhaler.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/inhaler/test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/kidney/ReadMe
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/kidney/bench-test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/kidney/bench.R
@@ -127,46 +150,52 @@ lib/libjags.la
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/leukfr.bug
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/leukfr.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/leukfr.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/test1.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/line/bench-test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/line/line-data.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/line/line-inits.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/line/line.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/line/test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/line/test1.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/litters/ReadMe
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/litters/bench-test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/litters/litters-data.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/litters/litters-init.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/litters/litters.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/litters/test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/litters/test1.cmd
-%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/ReadMe
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/bench-test1.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/bench-test2.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/lsat-data.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/lsat-init.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/lsat.bug
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/lsat.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/lsat2-init.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/lsat2.bug
-%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/notest2.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/test2.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/test2.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/mice/bench-test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/mice/mice-data.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/mice/mice-init.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/mice/mice.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/mice/test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/mice/test1.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/ReadMe
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/bench-test1.R
-%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/old/oxford.bug
-%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/old/test1.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/oxford-data.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/oxford-init.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/oxford.bug
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/oxford.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/test1.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/pump/bench-test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/pump/pump-data.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/pump/pump-init.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/pump/pump.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/pump/test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/pump/test1.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/rats/bench-test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/rats/bench-test2.R
@@ -174,6 +203,7 @@ lib/libjags.la
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/rats/rats-init.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/rats/rats.bug
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/rats/ratsmiss-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/rats/test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/rats/test1.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/rats/test2.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/salm/bench-test1.R
@@ -182,14 +212,14 @@ lib/libjags.la
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/salm/salm-init.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/salm/salm-pareto.bug
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/salm/salm.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/salm/test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/salm/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/salm/test2.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/salm/test2.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/bench-test2.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/bench-test3.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/bench-test4.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/bench-test5.R
-%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/jags2.ind
-%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/jags2.out
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/notest1.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/seeds-data.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/seeds-init.R
@@ -198,9 +228,13 @@ lib/libjags.la
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/seedssig.bug
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/seedsuni.bug
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/seedszro.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/test2.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/test2.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/test3.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/test3.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/test4.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/test4.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/test5.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/test5.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/air/ReadMe
@@ -214,6 +248,7 @@ lib/libjags.la
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/alli/alli-inits.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/alli/alli.bug
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/alli/bench-test1.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/alli/test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/alli/test1.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/asia/asia-data.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/asia/asia.bug
@@ -240,7 +275,6 @@ lib/libjags.la
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/biops/biops-inits.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/biops/biops.bug
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/biops/test1.cmd
-%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/birats/bar.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/birats/bench-test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/birats/bench-test2.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/birats/bench-test3.R
@@ -256,8 +290,6 @@ lib/libjags.la
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/birats/test3.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/birats/test4.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/cervix/ReadMe
-%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/cervix/bar
-%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/cervix/baz
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/cervix/cervix-data.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/cervix/cervix-inits.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/cervix/cervix.bug
@@ -301,18 +333,18 @@ lib/libjags.la
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/jaw/test1.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/jaw/test2.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/jaw/test3.cmd
-%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/ReadMe
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/bench-test1.R
-%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/bench.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/bench-test2.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/mvotree-data.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/mvotree-inits.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/mvotree.bug
-%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/notest1.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/orange-data.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/orange-inits.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/otree.bug
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/otree.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/otree.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/test2.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/pigs/bench-test1.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/pigs/pigs-data.R
 %%PORTDOCS%%%%EXAMPLESDIR%%/vol2/pigs/pigs-inits.R
@@ -360,7 +392,6 @@ lib/libjags.la
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/salm
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/rats
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/pump
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/oxford/old
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/oxford
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/mice
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/lsat
@@ -378,12 +409,14 @@ lib/libjags.la
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/R
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/JAGS/modules
+@dirrm lib/JAGS
+@dirrm include/JAGS/util
 @dirrm include/JAGS/sarray
 @dirrm include/JAGS/sampler
 @dirrm include/JAGS/model
-@dirrm include/JAGS/matrix
 @dirrm include/JAGS/graph
-@dirrm include/JAGS/functions
-@dirrm include/JAGS/distributions
+@dirrm include/JAGS/function
+@dirrm include/JAGS/distribution
 @dirrm include/JAGS/compiler
 @dirrm include/JAGS
