@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pendingticket
-PORTVERSION=	0.0.2
-PORTREVISION=	2
+PORTVERSION=	0.0.4
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
@@ -29,8 +28,11 @@ PYDISTUTILS_NOEGGINFO=	yes
 post-patch:
 	cd ${WRKDIR}/${PORTNAME}plugin && ${PATCH} < ${PATCHDIR}/close_old_pending.py.patch
 	${REINPLACE_CMD} -e "s,%%PYTHON%%,${PYTHON_CMD}," ${WRKDIR}/${PORTNAME}plugin/close_old_pending.py
+	cd ${WRKDIR}/${PORTNAME}plugin && ${PATCH} < ${PATCHDIR}/migrate_pending_attrib_to_status.py.patch
+	${REINPLACE_CMD} -e "s,%%PYTHON%%,${PYTHON_CMD}," ${WRKDIR}/${PORTNAME}plugin/migrate_pending_attrib_to_status.py
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}plugin/close_old_pending.py ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}plugin/migrate_pending_attrib_to_status.py ${PREFIX}/bin
 
 .include <bsd.port.mk>
