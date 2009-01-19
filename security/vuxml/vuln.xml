@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ecad44b9-e663-11dd-afcd-00e0815b8da8">
+    <topic>git -- gitweb privilege escalation</topic>
+    <affects>
+      <package>
+	<name>git</name>
+	<range><lt>1.6.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Git maintainers report:</p>
+	<blockquote cite="http://marc.info/?l=git&amp;m=122975564100860&amp;w=2">
+	  <p>gitweb has a possible local privilege escalation
+	    bug that allows a malicious repository owner to run a command
+	    of his choice by specifying diff.external configuration
+	    variable in his repository and running a crafted gitweb
+	    query.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>32967</bid>
+      <mlist msgid="7vhc4z1gys.fsf@gitster.siamese.dyndns.org">http://marc.info/?l=git&amp;m=122975564100860&amp;w=2</mlist>
+      <url>http://www.kernel.org/pub/software/scm/git/docs/RelNotes-1.6.0.6.txt</url>
+    </references>
+    <dates>
+      <discovery>2008-12-20</discovery>
+      <entry>2009-01-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0809ce7d-f672-4924-9b3b-7c74bc279b83">
     <topic>gtar -- GNU TAR safer_name_suffix Remote Denial of Service Vulnerability</topic>
     <affects>
