@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	addcomment
-PORTVERSION=	0.2
-PORTREVISION=	2
+PORTVERSION=	0.3
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
@@ -18,7 +17,7 @@ COMMENT=	Add formatted comments to wiki pages
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
-		${PYTHON_SITELIBDIR}/TracMacroPost-0.1-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-macropost
+		${PYTHON_SITELIBDIR}/TracMacroPost-0.2-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-macropost
 
 WRKSRC=		${WRKDIR}/${PORTNAME}macro
 NO_BUILD=	yes
