@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tags
-PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTVERSION=	0.6
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
