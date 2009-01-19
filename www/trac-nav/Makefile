@@ -6,9 +6,7 @@
 #
 
 PORTNAME=	nav
-PORTVERSION=	3.92
-PORTREVISION=	2
-PORTEPOCH=	1
+PORTVERSION=	4.1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
