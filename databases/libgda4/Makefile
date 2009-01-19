@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	libgda4
-PORTVERSION?=	3.99.5
-PORTREVISION?=	2
+PORTVERSION?=	3.99.8
+PORTREVISION?=	0
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/4$//}/${PORTVERSION:R}
@@ -43,8 +43,7 @@ VERSION=	4.0
 PLIST_SUB=	VERSION=${VERSION}
 
 .if ${LIBGDA4_SLAVE}=="no"
-#MAN1=		gda-config-tool-3.0.1
-#MAN5=		gda-config-3.0.5
+MAN1=		gda-sql.1 gda-sql-4.0.1
 .else
 USE_GNOME+=	libgda4
 .endif
