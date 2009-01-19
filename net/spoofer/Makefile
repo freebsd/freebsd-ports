@@ -6,24 +6,17 @@
 #
 
 PORTNAME=	spoofer
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	net
 MASTER_SITES=	http://spoofer.csail.mit.edu/ CENKES
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	ANA Spoofer Project testing software
 
 PLIST_FILES=	bin/spoofer
 PORTDOCS=	README CHANGES
 
-SRC=		spoofer.c util.c trace.c net.c
-CFLAGS+=	-D_FBSD
-
-do-build:
-.for f in ${SRC}
-	${CC} ${CFLAGS} -c ${WRKSRC}/${f} -o ${WRKSRC}/${f:C/\.c$/.o/}
-.endfor
-	${CC} ${SRC:C/(.*)\.c$/${WRKSRC}\/\1.o/} -o ${WRKSRC}/${PORTNAME}
+HAS_CONFIGURE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
