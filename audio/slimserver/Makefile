@@ -9,7 +9,7 @@ PORTNAME=	slimserver
 PORTVERSION=	6.5.4
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://downloads.slimdevices.com/downloads/SlimServer_v${PORTVERSION}/
+MASTER_SITES=	http://downloads.slimdevices.com/SlimServer_v${PORTVERSION}/
 DISTNAME=	SlimServer_v${PORTVERSION}.no-cpan-arch
 DIST_SUBDIR=	slimserver
 
@@ -26,6 +26,7 @@ OPTIONS=	APE "Support Monkey's Audio Codec input" on \
 		SHORTEN "Support Shorten input" off \
 		VORBIS "Support OGG Vorbis input (SliMP3 and SB1)" on
 
+DEPRECATED=	Slimserver has been renamed to SqueezeCenter with the 7.0 release
 RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
 WRKSRC=	${WRKDIR}/SlimServer_v${PORTVERSION}
