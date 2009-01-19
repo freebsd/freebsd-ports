@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Math-BaseCalc
-PORTVERSION=	1.012
+PORTVERSION=	1.013
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Convert numbers between various bases
 
 PERL_CONFIGURE=	yes
