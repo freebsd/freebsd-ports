@@ -6,40 +6,25 @@
 #
 
 PORTNAME=	scriptaculous
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.8.1.1
+#PORTREVISION=	0
 CATEGORIES=	www python
-MASTER_SITES=	http://files.turbogears.org/eggs/ \
+MASTER_SITES=	http://static.ossdl.de/tgwidgets/downloads/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PYSCRIPTACULOUS_EGG}
-EXTRACT_SUFX=
+DISTNAME=	Scriptaculous-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Scriptaculous packaged as TurboGears widgets
 
-RUN_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools \
-		${PYTHON_PKGNAMEPREFIX}TurboGears>=1.0.1:${PORTSDIR}/www/py-turbogears
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}TurboGears>=1.0.1:${PORTSDIR}/www/py-turbogears
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-NO_BUILD=	yes
+PYDISTUTILS_PKGNAME=	Scriptaculous
 
 # Use the same version of www/py-turbogears
-USE_PYTHON=	2.4
-
-PLIST_SUB=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
-		PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION} \
-		PYSCRIPTACULOUS_EGG=${PYSCRIPTACULOUS_EGG}
-
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
-EASY_INSTALL_ARGS=	-N
-
-PYSCRIPTACULOUS_EGG=	${PORTNAME:S/^s/S/}-${PORTVERSION}-py${PYTHON_VER}.egg
-
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-
-do-install:
-	@${EASY_INSTALL_CMD} ${EASY_INSTALL_ARGS} ${DISTDIR}/${PYSCRIPTACULOUS_EGG}
+USE_PYTHON=	2.4+
+USE_PYDISTUTILS=	easy_install
+USE_ZIP=	yes
 
 .include <bsd.port.mk>
