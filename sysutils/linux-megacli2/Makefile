@@ -7,6 +7,7 @@
 
 PORTNAME=	megacli
 PORTVERSION=	2.00.12
+PORTREVISION=	1
 CATEGORIES=	sysutils linux
 MASTER_SITES=	http://www.lsi.com/DistributionSystem/AssetDocument/support/downloads/megaraid/miscellaneous/linux/
 PKGNAMEPREFIX=	linux-
@@ -20,9 +21,7 @@ USE_ZIP=	yes
 RESTRICTED=	Redistribution prohibited, see: http://lsi.com/cm/License.do
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
-SUB_FILES=	megacli
-SUB_FILES+=	407.status-mfi-raid
-SUB_FILES+=	mfi_tty_log
+SUB_FILES=	megacli 407.status-mfi-raid mfi_tty_log
 
 CONFLICTS=	linux-megacli-1*
 LATEST_LINK=	megacli2
@@ -40,7 +39,7 @@ do-build:
 	@${BRANDELF} -t Linux ${WRKSRC}/opt/MegaRAID/MegaCli/MegaCli
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/megacli.sh ${PREFIX}/sbin/megacli
+	${INSTALL_SCRIPT} ${WRKSRC}/megacli ${PREFIX}/sbin/megacli
 	${MKDIR} ${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKSRC}/407.status-mfi-raid ${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKSRC}/mfi_tty_log ${PREFIX}/etc/rc.d
