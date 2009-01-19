@@ -9,8 +9,7 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-DISTVERSION=	1.2.6
-PORTREVISION=	2
+DISTVERSION=	1.2.8
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.2/downloads/
 
@@ -22,6 +21,7 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_FORTRAN=	yes
 
 MPIBASE?=	mpi
 MPIDIR?=	${MPIBASE}/${UNIQUENAME}
@@ -41,8 +41,6 @@ MANPREFIX=	${PREFIX}/${MPIDIR}
 
 .include <bsd.port.pre.mk>
 
-USE_FORTRAN=	yes
-CONFIGURE_ENV+=	F77=${F77} FC=${FC}
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
@@ -78,7 +76,7 @@ build-plist: Makefile
 	    ${SED} -e 's|${PREFIX}/${MPIDIR}|%%MPIDIR%%|' | \
 	    ${SORT} >> ${PLIST}
 	${FIND} ${PREFIX}/${MPIDIR} -type d | \
-	    egrep -v "${PREFIX}/${MPIDIR}$$" | \
+	    ${EGREP} -v "${PREFIX}/${MPIDIR}$$" | \
 	    ${SED} -e 's|${PREFIX}/${MPIDIR}|@dirrm %%MPIDIR%%|' | \
 	    ${SORT} -r >> ${PLIST}
 	${ECHO} "@dirrmtry %%MPIDIR%%" \
