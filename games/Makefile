@@ -392,6 +392,7 @@
     SUBDIR += kamikaze
     SUBDIR += kanatest
     SUBDIR += kardsgt
+    SUBDIR += kartofel
     SUBDIR += kbilliards
     SUBDIR += kcheckers
     SUBDIR += kdegames3
