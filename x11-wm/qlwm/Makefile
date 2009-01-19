@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	qlwm
-PORTVERSION=	4.2
-PORTREVISION=	1
+PORTVERSION=	4.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.alinden.mynetcologne.de/qlwm/
 
