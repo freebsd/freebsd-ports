@@ -22,7 +22,6 @@ CONFIGURE_ARGS+=	--enable-cups=yes
 
 .if defined(WITHOUT_MOZILLA)
 CONFIGURE_ARGS+=	--disable-mozilla
-BROKEN=	see i96889 for details, wait until DEV300_m38
 .else
 CONFIGURE_ARGS+=	--enable-build-mozilla
 .endif
