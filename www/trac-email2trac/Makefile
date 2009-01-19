@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	email2trac
-PORTVERSION=	0.10
-PORTREVISION=	2
+PORTVERSION=	0.40
 CATEGORIES=	www devel python
-MASTER_SITES=	ftp://ftp.sara.nl/pub/outgoing/
+MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Convert email to trac tickets
