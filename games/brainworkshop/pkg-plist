@@ -11,9 +11,11 @@ bin/brainworkshop
 %%DATADIR%%/brandenburg.ogg
 %%DATADIR%%/c.wav
 %%DATADIR%%/caribe.ogg
+%%DATADIR%%/cematinla.ogg
 %%DATADIR%%/cornerpocket.ogg
 %%DATADIR%%/dinah.ogg
 %%DATADIR%%/elubechango.ogg
+%%DATADIR%%/femmedargent.ogg
 %%DATADIR%%/frevorasgado.ogg
 %%DATADIR%%/glassworks.ogg
 %%DATADIR%%/h.wav
@@ -122,6 +124,7 @@ bin/brainworkshop
 %%DATADIR%%/r.wav
 %%DATADIR%%/s.wav
 %%DATADIR%%/sarahmencken.ogg
+%%DATADIR%%/spellbound.ogg
 %%DATADIR%%/spr_square_blue.png
 %%DATADIR%%/spr_square_cyan.png
 %%DATADIR%%/spr_square_green.png
