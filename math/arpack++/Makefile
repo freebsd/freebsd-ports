@@ -39,7 +39,6 @@ BLAS=		-lblas
 LAPACK=		-llapack
 .endif
 
-WANT_FORTRAN=yes
 USE_GCC=4.2+
 
 NO_BUILD=	yes
