@@ -17,21 +17,20 @@ include/wbxml_tables.h
 include/wbxml_tree.h
 include/wbxml_tree_clb_wbxml.h
 include/wbxml_tree_clb_xml.h
-lib/libwbxml2.a
+include/wbxml_config.h
 lib/libwbxml2.so
 lib/libwbxml2.so.0
+lib/libwbxml2.so.0.0.10
 libdata/pkgconfig/libwbxml2.pc
-share/doc/wbxml2/AUTHORS
-share/doc/wbxml2/BUGS
-share/doc/wbxml2/COPYING
-share/doc/wbxml2/ChangeLog
-share/doc/wbxml2/GNU-LGPL
-share/doc/wbxml2/INSTALL
-share/doc/wbxml2/NEWS
-share/doc/wbxml2/README
-share/doc/wbxml2/References
-share/doc/wbxml2/THANKS
-share/doc/wbxml2/TODO
-share/doc/wbxml2/bootstrap
-share/doc/wbxml2/doxygen.h
-@dirrm share/doc/wbxml2
+share/doc/libwbxml/AUTHORS
+share/doc/libwbxml/BUGS
+share/doc/libwbxml/COPYING
+share/doc/libwbxml/ChangeLog
+share/doc/libwbxml/GNU-LGPL
+share/doc/libwbxml/INSTALL
+share/doc/libwbxml/NEWS
+share/doc/libwbxml/README
+share/doc/libwbxml/References
+share/doc/libwbxml/THANKS
+share/doc/libwbxml/TODO
+@dirrm share/doc/libwbxml
