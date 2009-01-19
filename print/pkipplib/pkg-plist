@@ -1,0 +1,11 @@
+bin/pksubscribe
+%%PYTHON_SITELIBDIR%%/pkipplib/__init__.py
+%%PYTHON_SITELIBDIR%%/pkipplib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pkipplib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pkipplib/pkipplib.py
+%%PYTHON_SITELIBDIR%%/pkipplib/pkipplib.pyc
+%%PYTHON_SITELIBDIR%%/pkipplib/pkipplib.pyo
+%%PYTHON_SITELIBDIR%%/pkipplib/version.py
+%%PYTHON_SITELIBDIR%%/pkipplib/version.pyc
+%%PYTHON_SITELIBDIR%%/pkipplib/version.pyo
+@dirrmtry %%PYTHON_SITELIBDIR%%/pkipplib

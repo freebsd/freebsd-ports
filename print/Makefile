@@ -269,6 +269,7 @@
     SUBDIR += pkfonts360
     SUBDIR += pkfonts400
     SUBDIR += pkfonts600
+    SUBDIR += pkipplib
     SUBDIR += pkpgcounter
     SUBDIR += pmw
     SUBDIR += pnm2ppa
