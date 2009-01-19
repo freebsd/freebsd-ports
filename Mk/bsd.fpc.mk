@@ -57,15 +57,15 @@ check-makevars::
 
 _FPC_ALL_UNITS=	aspell bfd cairo chm fcl-async fcl-base fcl-db fcl-fpcunit fcl-image \
 		fcl-json fcl-net fcl-passrc fcl-process fcl-registry fcl-web fcl-xml fftw \
-		fpmkunit fpgtk fv gdbint gdbm ggi gnome1 graph gtk1 gtk2 hash httpd \
-		ibase imagemagick imlib libcurl libgd libpng mysql ncurses numlib \
+		fpmkunit fpgtk fv gdbint gdbm ggi gnome1 graph gtk1 gtk2 hash httpd13 httpd20 \
+		httpd22 ibase imagemagick imlib libcurl libgd libpng mysql ncurses numlib \
 		odbc opengl openssl oracle pasjpeg paszlib pcap postgres pthreads pxlib \
 		regexpr sdl sqlite svgalib symbolic syslog tcl unzip users utmp x11 xforms \
 		zlib
 
 .if defined(WANT_FPC_BASE)
 .       if ${WANT_FPC_BASE:L} == "yes"
-USE_FPC=	gdbint graph ibase hash httpd mysql odbc oracle \
+USE_FPC=	gdbint graph ibase hash httpd13 httpd20 httpd22 mysql odbc oracle \
 		pasjpeg paszlib	pthreads postgres regexpr sqlite
 .       else
 IGNORE= unknown value, please use "yes" instead of
@@ -92,10 +92,9 @@ gdbint_UNIT=	devel/fpc-gdbint
 graph_UNIT=	graphics/fpc-graph
 ibase_UNIT=	databases/fpc-ibase
 hash_UNIT=	security/fpc-hash
-httpd_UNIT=	www/fpc-httpd
-#httpd13_UNIT=	www/fpc-httpd13
-#httpd20_UNIT=	www/fpc-httpd20
-#httpd22_UNIT=	www/fpc-httpd22
+httpd13_UNIT=	www/fpc-httpd13
+httpd20_UNIT=	www/fpc-httpd20
+httpd22_UNIT=	www/fpc-httpd22
 mysql_UNIT=	databases/fpc-mysql
 odbc_UNIT=	databases/fpc-odbc
 oracle_UNIT=	databases/fpc-oracle
