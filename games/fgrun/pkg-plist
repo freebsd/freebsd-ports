@@ -1,19 +1,22 @@
 bin/fgrun
-share/locale/de/LC_MESSAGES/fgrun.mo
-share/locale/fr/LC_MESSAGES/fgrun.mo
-share/locale/it/LC_MESSAGES/fgrun.mo
-share/locale/nl/LC_MESSAGES/fgrun.mo
-share/locale/pl/LC_MESSAGES/fgrun.mo
-share/locale/pt/LC_MESSAGES/fgrun.mo
-@dirrmtry share/locale/de/LC_MESSAGES
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/it/LC_MESSAGES
-@dirrmtry share/locale/nl/LC_MESSAGES
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/de
-@dirrmtry share/locale/fr
-@dirrmtry share/locale/it
-@dirrmtry share/locale/nl
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/pt
+%%NLS%%share/locale/de/LC_MESSAGES/fgrun.mo
+%%NLS%%share/locale/es/LC_MESSAGES/fgrun.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/fgrun.mo
+%%NLS%%share/locale/it/LC_MESSAGES/fgrun.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/fgrun.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/fgrun.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/fgrun.mo
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de
+%%NLS%%@dirrmtry share/locale/es
+%%NLS%%@dirrmtry share/locale/fr
+%%NLS%%@dirrmtry share/locale/it
+%%NLS%%@dirrmtry share/locale/nl
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/pt
