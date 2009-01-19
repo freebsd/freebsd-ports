@@ -1,6 +1,9 @@
 bin/gda-list-config-%%VERSION%%
+bin/gda-list-config
 bin/gda-list-server-op-%%VERSION%%
+bin/gda-list-server-op
 bin/gda-sql-%%VERSION%%
+bin/gda-sql
 bin/gda-test-connection-%%VERSION%%
 bin/gda_trml2html/__init__.py
 bin/gda_trml2html/trml2html.py
@@ -46,6 +49,7 @@ include/libgda-%%VERSION%%/libgda/gda-decl.h
 include/libgda-%%VERSION%%/libgda/gda-easy.h
 include/libgda-%%VERSION%%/libgda/gda-enum-types.h
 include/libgda-%%VERSION%%/libgda/gda-enums.h
+include/libgda-%%VERSION%%/libgda/gda-error.h
 include/libgda-%%VERSION%%/libgda/gda-holder.h
 include/libgda-%%VERSION%%/libgda/gda-lockable.h
 include/libgda-%%VERSION%%/libgda/gda-log.h
@@ -134,6 +138,15 @@ share/libgda-%%VERSION%%/sqlite_specs_drop_table.xml
 share/libgda-%%VERSION%%/sqlite_specs_drop_view.xml
 share/libgda-%%VERSION%%/sqlite_specs_dsn.xml
 share/libgda-%%VERSION%%/sqlite_specs_rename_table.xml
+share/libgda-%%VERSION%%/web/cnc.js
+share/libgda-%%VERSION%%/web/gda-print.css
+share/libgda-%%VERSION%%/web/gda.css
+share/libgda-%%VERSION%%/web/irb.css
+share/libgda-%%VERSION%%/web/irb.js
+share/libgda-%%VERSION%%/web/jquery.js
+share/libgda-%%VERSION%%/web/md5.js
+share/libgda-%%VERSION%%/web/mouseapp_2.js
+share/libgda-%%VERSION%%/web/mouseirb_2.js
 share/locale/ar/LC_MESSAGES/libgda-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/libgda-%%VERSION%%.mo
 share/locale/ca/LC_MESSAGES/libgda-%%VERSION%%.mo
@@ -182,6 +195,7 @@ share/locale/vi/LC_MESSAGES/libgda-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/libgda-%%VERSION%%.mo
 share/locale/zh_HK/LC_MESSAGES/libgda-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/libgda-%%VERSION%%.mo
+@dirrm share/libgda-%%VERSION%%/web
 @dirrm share/libgda-%%VERSION%%/dtd
 @dirrm share/libgda-%%VERSION%%/
 @dirrm lib/libgda-%%VERSION%%/providers
