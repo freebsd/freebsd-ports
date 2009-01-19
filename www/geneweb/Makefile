@@ -6,28 +6,27 @@
 #
 
 PORTNAME=	geneweb
-PORTVERSION=	4.10
-PORTREVISION=	4
+PORTVERSION=	5.01
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/geneweb/Src/
-DISTNAME=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}-1${DISTVERSIONSUFFIX}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hubert@frbsd.org
 COMMENT=	An advanced genealogy software
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
+BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
+		camlp5:${PORTSDIR}/devel/ocaml-camlp5
 
-BROKEN=		does not build with new ocaml
-DEPRECATED=	has been broken for more than 6 months
-EXPIRATION_DATE=2009-01-19
+HAS_CONFIGURE=	yes
 
-MAN1=		ged2gwb.1 gwb2ged.1 gwc.1 gwu.1
+MAN1=		ged2gwb.1 gwb2ged.1 gwc.1 gwc2.1 gwu.1 gwd.1 consang.1 gwsetup.1
 
 SUB_FILES+=	pkg-message
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/a.gwf ${PREFIX}/share/geneweb
 	${INSTALL_SCRIPT} ${FILESDIR}/install.sh ${PREFIX}/share/geneweb
+	${CHMOD} -R go+r  ${PREFIX}/share/geneweb ${_MANPAGES}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
