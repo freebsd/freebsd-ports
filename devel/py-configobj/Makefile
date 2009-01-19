@@ -19,9 +19,6 @@ USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-# www/py-turbogears requires (and installs) a Python egg for ConfigObj
-CONFLICTS=	py*-TurboGears-[0-9]*
-
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 post-install:
