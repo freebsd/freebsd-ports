@@ -1,5 +1,5 @@
 # vim: tabstop=8 softtabstop=0 noexpandtab
-# Ports Makefile for:	jags
+# Ports collection Makefile for:	jags
 # Date created:		21 April 2004
 # Whom:			Eric van Gyzen <vangyzen@stat.duke.edu>
 #
@@ -7,17 +7,16 @@
 #
 
 PORTNAME=	jags
-PORTVERSION=	0.90
-PORTREVISION=	3
+PORTVERSION=	1.0.3
 CATEGORIES=	math
 MASTER_SITES=	http://www-fis.iarc.fr/~martyn/software/jags/
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 .if !defined(NOPORTDOCS)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} bugs-examples.tar.gz manual.pdf
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} classic-bugs.tar.gz jags_user_manual.pdf
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	eric+fbports@vangyzen.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Just Another Gibbs Sampler
 
 LIB_DEPENDS=	Rmath.0:${PORTSDIR}/math/libRmath
@@ -34,17 +33,18 @@ CONFIGURE_ARGS=	--with-lapack=-llapack --with-blas=-lblas
 DIST_SUBDIR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include LDFLAGS=-L${PREFIX}/lib F77="${F77}"
+CONFIGURE_ENV=	LDFLAGS=-L${PREFIX}/lib
 USE_FORTRAN=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manual.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/jags_user_manual.pdf \
+		${DOCSDIR}
 	${MKDIR} ${EXAMPLESDIR}
 	( cd ${EXAMPLESDIR}; \
-	  ${PAX} -rzf ${DISTDIR}/${DIST_SUBDIR}/bugs-examples.tar.gz \
-	    -s ':^bugs-examples/*::' )
+	  ${PAX} -rzf ${DISTDIR}/${DIST_SUBDIR}/classic-bugs.tar.gz \
+	    -s ':^classic-bugs/*::' )
 .endif
 
 .include <bsd.port.mk>
