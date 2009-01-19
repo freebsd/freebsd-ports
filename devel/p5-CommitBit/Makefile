@@ -7,6 +7,7 @@
 
 PORTNAME=	CommitBit
 PORTVERSION=	0.02
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/J/JE/JESSE
@@ -26,7 +27,9 @@ MAN3=		CommitBit.3 \
 		CommitBit::Action::ConfirmEmail.3 \
 		CommitBit::Action::Login.3 \
 		CommitBit::Action::Logout.3 \
+		CommitBit::Model::User.3 \
 		CommitBit::Notification::ConfirmAddress.3 \
-		CommitBit::Notification::InviteToProject.3
+		CommitBit::Notification::InviteToProject.3 \
+		CommitBit::Test.3
 
 .include <bsd.port.mk>
