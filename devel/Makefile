@@ -1898,6 +1898,7 @@
     SUBDIR += p5-UNIVERSAL-require
     SUBDIR += p5-UNIVERSAL-which
     SUBDIR += p5-Unix-Statgrab
+    SUBDIR += p5-Unix-Uptime
     SUBDIR += p5-User-Identity
     SUBDIR += p5-VCP
     SUBDIR += p5-VCP-Dest-svk
