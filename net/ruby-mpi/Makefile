@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=	--with-mpi-path=${LOCALBASE}/mpich${MPICH_VER}
 
 .if defined(WITH_MPICH1)
 USE_FORTRAN=	yes
-FORTRANLIBDIR2=	`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``/../../../
+FORTRANLIBDIR2=	`${DIRNAME} \`${FC} -print-libgcc-file-name\``/../../../
 CONFIGURE_ENV+=	LDFLAGS="-L${FORTRANLIBDIR2} -lgfortran"
 .else
 MPICH_VER=	2
