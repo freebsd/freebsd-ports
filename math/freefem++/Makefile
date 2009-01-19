@@ -29,8 +29,8 @@ RUN_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex			\
 RESTRICTED=	No resale or commercial use
 
 USE_FORTRAN=		yes
-FORTRANLIBDIR=		`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``
-FORTRANLIBDIR2=		`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``/../../../
+FORTRANLIBDIR=		`${DIRNAME} \`${FC} -print-libgcc-file-name\``
+FORTRANLIBDIR2=		`${DIRNAME} \`${FC} -print-libgcc-file-name\``/../../../
 USE_BISON=		build
 USE_GL=			yes
 USE_GMAKE=		yes
