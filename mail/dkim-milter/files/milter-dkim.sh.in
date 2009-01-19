@@ -30,22 +30,6 @@
 # milterdkim_selector (str):  Selector to use when signing
 # milterdkim_alg (str):       Algorithm to use when signing
 # milterdkim_flags (str):     Flags passed to start command.
-#
-# DO NOT CHANGE THESE DEFAULT VALUES HERE
-#
-milterdkim_enable=${milterdkim_enable:-"NO"}
-milterdkim_uid=${milterdkim_uid:-"mailnull"}
-milterdkim_profiles=${milterdkim_profiles:-}
-milterdkim_cfgfile=${milterdkim_cfgfile:-"%%PREFIX%%/etc/mail/dkim-filter.conf"}
-
-milterdkim_socket=${milterdkim_socket:-}
-milterdkim_domain=${milterdkim_domain:-}
-milterdkim_key=${milterdkim_key:-}
-milterdkim_selector=${milterdkim_selector:-}
-milterdkim_alg=${milterdkim_alg:-}
-# Options other than above can be set with $milterdkim_flags.
-# see dkim-milter documentation for detail.
-milterdkim_flags=${milterdkim_flags:-}
 
 . %%RC_SUBR%%
 
@@ -59,6 +43,23 @@ _piddir="/var/run/milterdkim"
 pidfile="${_piddir}/pid"
 
 load_rc_config $name
+
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+: ${milterdkim_enable="NO"}
+: ${milterdkim_uid="mailnull"}
+: ${milterdkim_profiles=""}
+: ${milterdkim_cfgfile="%%PREFIX%%/etc/mail/dkim-filter.conf"}
+
+: ${milterdkim_socket=""}
+: ${milterdkim_domain=""}
+: ${milterdkim_key=""}
+: ${milterdkim_selector=""}
+: ${milterdkim_alg=""}
+# Options other than above can be set with $milterdkim_flags.
+# see dkim-milter documentation for detail.
+:milterdkim_flags=${milterdkim_flags=""}
 
 if [ -n "$2" ]; then
     profile="$2"
@@ -84,6 +85,9 @@ if [ -n "$2" ]; then
 	if [ "x${milterdkim_socket}" != "x" ];then
 	    _socket_prefix="-p"
 	fi
+	if [ "x${milterdkim_uid}" != "x" ];then
+	    _uid_prefix="-u"
+	fi
 	if [ "x${milterdkim_domain}" != "x" ];then
 	    milterdkim_domain="-d ${milterdkim_domain}"
 	fi
@@ -96,7 +100,7 @@ if [ -n "$2" ]; then
 	if [ "x${milterdkim_alg}" != "x" ];then
 	    milterdkim_alg="-S ${milterdkim_alg}"
 	fi
-	command_args="-l ${_socket_prefix} ${milterdkim_socket} -u ${milterdkim_uid} -P ${pidfile} ${milterdkim_cfgfile} ${milterdkim_domain} ${milterdkim_key} ${milterdkim_selector} ${milterdkim_alg}"
+	command_args="-l ${_socket_prefix} ${milterdkim_socket} ${_uid_prefix} ${milterdkim_uid} -P ${pidfile} ${milterdkim_cfgfile} ${milterdkim_domain} ${milterdkim_key} ${milterdkim_selector} ${milterdkim_alg}"
     else
 	echo "$0: extra argument ignored"
     fi
@@ -126,6 +130,9 @@ else
 	if [ "x${milterdkim_socket}" != "x" ];then
 	    _socket_prefix="-p"
 	fi
+	if [ "x${milterdkim_uid}" != "x" ];then
+	    _uid_prefix="-u"
+	fi
 	if [ "x${milterdkim_domain}" != "x" ];then
 	    milterdkim_domain="-d ${milterdkim_domain}"
 	fi
@@ -138,7 +145,7 @@ else
 	if [ "x${milterdkim_alg}" != "x" ];then
 	    milterdkim_alg="-S ${milterdkim_alg}"
 	fi
-	command_args="-l ${_socket_prefix} ${milterdkim_socket} -u ${milterdkim_uid} -P ${pidfile} ${milterdkim_cfgfile} ${milterdkim_domain} ${milterdkim_key} ${milterdkim_selector} ${milterdkim_alg}"
+	command_args="-l ${_socket_prefix} ${milterdkim_socket} ${_uid_prefix} ${milterdkim_uid} -P ${pidfile} ${milterdkim_cfgfile} ${milterdkim_domain} ${milterdkim_key} ${milterdkim_selector} ${milterdkim_alg}"
     fi
 fi
 
