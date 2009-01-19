@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2bc960c4-e665-11dd-afcd-00e0815b8da8">
+    <topic>optipng -- arbitrary code execution via crafted BMP image</topic>
+    <affects>
+      <package>
+	<name>optipng</name>
+	<range><lt>0.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/32651">
+	  <p>A vulnerability has been reported in OptiPNG, which
+	    potentially can be exploited by malicious people to compromise
+	    a user's system.</p>
+	    <p>The vulnerability is caused due to a boundary error in
+	    the BMP reader and can be exploited to cause a buffer
+	    overflow by tricking a user into processing a specially
+	    crafted file.</p>
+	    <p>Successful exploitation may allow execution of arbitrary
+	    code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5101</cvename>
+      <url>http://secunia.com/advisories/32651</url>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=505399</url>
+      <url>http://optipng.sourceforge.net/</url>
+    </references>
+    <dates>
+      <discovery>2008-11-11</discovery>
+      <entry>2009-01-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ecad44b9-e663-11dd-afcd-00e0815b8da8">
     <topic>git -- gitweb privilege escalation</topic>
     <affects>
