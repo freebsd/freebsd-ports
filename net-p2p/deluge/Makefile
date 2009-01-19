@@ -6,43 +6,70 @@
 #
 
 PORTNAME=	deluge
-PORTVERSION=	0.5.9.3
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://ftp.osuosl.org/pub/deluge/source/${PORTVERSION}/
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A Bittorrent client, using Python, GTK+2 and Rasterbar libtorrent
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
+BUILD_DEPENDS=	easy_install-${PYTHON_VER}:${PORTSDIR}/devel/py-setuptools
+LIB_DEPENDS=	boost_python.4:${PORTSDIR}/devel/boost-python
+RUN_DEPENDS=	easy_install-${PYTHON_VER}:${PORTSDIR}/devel/py-setuptools \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
-		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify \
 		${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-torrent-${PORTVERSION}
-USE_GNOME=	pygtk2 desktopfileutils librsvg2
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-INSTALLS_ICONS=	yes
 
-DOCS=		LICENSE README
+MAKE_ENV+=	PYTHONPATH=${PYTHONPREFIX_SITELIBDIR}
+
+DOCS=		ChangeLog LICENSE README
+MAN1=		deluge.1 deluged.1
+
+.if !defined(WITHOUT_PYGTK)
+RUN_DEPENDS+=	xdg-open:${PORTSDIR}/devel/xdg-utils \
+		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
+		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify
+USE_GNOME=	pygtk2 desktopfileutils librsvg2
+INSTALLS_ICONS=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64" || ${ARCH} == "ia64" || ${ARCH} == "amd64"
-CFLAGS+=	-DAMD64
+.if (exists(${LOCALBASE}/lib/libboost_iostreams.so) && \
+	!exists(${LOCALBASE}/lib/libboost_python.so))
+IGNORE=	cannot find dependency: The boost exists but not with Python support. Please uninstall boost and install boost-python or reinstall boost with Python support
+.endif
+
+.if !defined(WITHOUT_PYGTK)
+pre-everything::
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "Definable build options"
+	@${ECHO_CMD} "-----------------------"
+	@${ECHO_CMD} "WITHOUT_PYGTK=yes		Do not install pygtk dependency."
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "Keep in mind, choice WITHOUT_PYGTK still will installing a lot of GUI files that are for pygtk. The installation tool does not provide option to disable install the GUI files. These GUI files are harmless as long as you do not touch these or it won't work because it needs pygtk." | ${FMT} 75 75
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' ${WRKSRC}/setup.py
+		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
+			${WRKSRC}/setup.py
+
+do-build:
+	@(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
+		${PYSETUP} build)
+
+do-install:
+	@(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
+		${PYSETUP} install -c -O1 --prefix=${PREFIX})
 
 post-install:
+.if !defined(WITHOUT_PYGTK)
 	@-update-desktop-database
+.endif
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}

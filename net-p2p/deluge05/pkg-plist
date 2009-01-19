@@ -5,12 +5,6 @@ bin/deluge
 %%PYTHON_SITELIBDIR%%/deluge/_dbus.py
 %%PYTHON_SITELIBDIR%%/deluge/_dbus.pyc
 %%PYTHON_SITELIBDIR%%/deluge/_dbus.pyo
-%%PYTHON_SITELIBDIR%%/deluge/bookmark.py
-%%PYTHON_SITELIBDIR%%/deluge/bookmark.pyc
-%%PYTHON_SITELIBDIR%%/deluge/bookmark.pyo
-%%PYTHON_SITELIBDIR%%/deluge/browser.py
-%%PYTHON_SITELIBDIR%%/deluge/browser.pyc
-%%PYTHON_SITELIBDIR%%/deluge/browser.pyo
 %%PYTHON_SITELIBDIR%%/deluge/common.py
 %%PYTHON_SITELIBDIR%%/deluge/common.pyc
 %%PYTHON_SITELIBDIR%%/deluge/common.pyo
@@ -748,6 +742,7 @@ share/locale/hu/LC_MESSAGES/deluge.mo
 share/locale/id/LC_MESSAGES/deluge.mo
 share/locale/is/LC_MESSAGES/deluge.mo
 share/locale/it/LC_MESSAGES/deluge.mo
+share/locale/iu/LC_MESSAGES/deluge.mo
 share/locale/ja/LC_MESSAGES/deluge.mo
 share/locale/ka/LC_MESSAGES/deluge.mo
 share/locale/ko/LC_MESSAGES/deluge.mo
@@ -795,6 +790,8 @@ share/pixmaps/deluge.png
 @dirrmtry share/locale/la
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/iu/LC_MESSAGES
+@dirrmtry share/locale/iu
 @dirrmtry share/locale/fy/LC_MESSAGES
 @dirrmtry share/locale/fy
 @dirrmtry share/locale/ast/LC_MESSAGES
