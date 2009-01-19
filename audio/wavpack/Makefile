@@ -21,4 +21,16 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+OPTIONS=	MMX "Enable MMX optimizations (x86 only)" Off
+
+.include <bsd.port.pre.mk>
+
+# GCC 3.x fails with internal compiler errror
+.if defined(WITH_MMX) && (${ARCH} == "i386" || ${ARCH} == "amd64") && \
+    (${OSVERSION} >= 700042)
+CONFIGURE_ARGS+=	--enable-mmx
+.else
+CONFIGURE_ARGS+=	--disable-mmx
+.endif
+
+.include <bsd.port.post.mk>
