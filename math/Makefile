@@ -53,7 +53,6 @@
     SUBDIR += edenmath
     SUBDIR += eigen
     SUBDIR += eispack
-    SUBDIR += elmer-mathlibs
     SUBDIR += elmer-umfpack
     SUBDIR += emacs-calc
     SUBDIR += emc2
