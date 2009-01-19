@@ -225,6 +225,9 @@
     SUBDIR += fnord
     SUBDIR += formication
     SUBDIR += fpc-httpd
+    SUBDIR += fpc-httpd13
+    SUBDIR += fpc-httpd20
+    SUBDIR += fpc-httpd22
     SUBDIR += free-sa
     SUBDIR += freeway
     SUBDIR += fswiki
