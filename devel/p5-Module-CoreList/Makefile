@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Module-CoreList
-PORTVERSION=	2.15
-PORTREVISION=	2
+PORTVERSION=	2.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -32,9 +31,6 @@ pre-patch:
 	@${MV} ${WRKSRC}/corelist ${WRKSRC}/p5corelist
 	@${PERL} -pi -e 's,^corelist$$,p5corelist,' ${WRKSRC}/MANIFEST
 	@${PERL} -pi -e 's,corelist,p5corelist,' ${WRKSRC}/Makefile.PL ${WRKSRC}/t/pod.t
-
-post-patch:
-	@${RM} ${WRKSRC}/lib/Module/CoreList.pm.orig
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
