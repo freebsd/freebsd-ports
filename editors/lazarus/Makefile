@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	lazarus
-PORTVERSION=	0.9.24
-PORTREVISION=	2
+PORTVERSION=	0.9.26
 CATEGORIES=	editors devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/-0/}
+EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	freepascal
 
 MAINTAINER=	acm@FreeBSD.org
@@ -25,7 +25,7 @@ USE_GNOME=	#
 WANT_FPC_ALL=	yes
 
 MAKE_ENV=	OPT="-Sgic -Fu${UNITSDIR}/* -Fl${LOCALBASE}/lib" LCL_PLATFORM=${LCL_PLATFORM}
-MAN1=		lazbuild.1
+MAN1=		lazarus-ide.1 lazbuild.1 startlazarus.1
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -48,7 +48,9 @@ LAZARUS_TARGET=	bigide lazbuilder
 
 post-extract:
 	@${MKDIR} ${WRKDIR}/man1
-	@${MV} ${WRKSRC}/docs/lazbuild.1 ${WRKDIR}/man1
+	@${MV} ${WRKSRC}/install/man/man1/lazarus-ide.1 ${WRKDIR}/man1/
+	@${MV} ${WRKSRC}/install/man/man1/lazbuild.1 ${WRKDIR}/man1/
+	@${MV} ${WRKSRC}/install/man/man1/startlazarus.1 ${WRKDIR}/man1/
 	@${MV} ${WRKSRC}/examples ${WRKDIR}/examples
 	@${MV} ${WRKSRC}/docs ${WRKDIR}/docs
 
@@ -62,7 +64,7 @@ do-build:
 
 post-build:
 	@cd ${WRKSRC} && \
-		${RM} -Rf COPYING* README* debian localize.bat test *.orig *.bak
+		${RM} -Rf COPYING* README* debian localize.bat test *.orig *.bak startlazarus.app
 
 pre-install:
 	@${ECHO} "#!/bin/sh" > ${WRKDIR}/lazarus-wrapper
@@ -126,7 +128,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/localize.sh ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/lazarus-wrapper ${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA}	${WRKSRC}/Makefile* ${DATADIR}
-	${INSTALL_MAN} ${WRKDIR}/man1/${MAN1} ${MAN1PREFIX}/man/man1
+.for FILE in ${MAN1}
+	${INSTALL_MAN} ${WRKDIR}/man1/${FILE} ${MAN1PREFIX}/man/man1
+.endfor
 	${LN} -s ${DATADIR}/lazbuild ${PREFIX}/bin/lazbuild
 
 .include <bsd.port.post.mk>
