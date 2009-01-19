@@ -45,6 +45,8 @@ CONFIGURE_ARGS+=--enable-examples
 CONFIGURE_ARGS+=--disable-examples
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_FORTRAN)
 USE_FORTRAN=	yes
 MAN3+=		netcdf_f77.3 netcdf_f90.3
@@ -69,4 +71,4 @@ post-install:
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
