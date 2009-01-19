@@ -1,0 +1,25 @@
+--- lib/libpng/scripts/makefile.std.orig	2006-03-06 17:06:28.000000000 +0000
++++ lib/libpng/scripts/makefile.std	2008-11-14 18:00:09.000000000 +0000
+@@ -24,12 +24,16 @@
+ ZLIBLIB=../zlib
+ ZLIBINC=../zlib
+ 
+-CC=cc
+-AR_RC=ar rc
+-MKDIR_P=mkdir
+-LN_SF=ln -sf
+-RANLIB=ranlib
+-RM_F=rm -f
++CC?=cc
++AR?=ar
++AR_RC=${AR} rc
++MKDIR?=mkdir
++MKDIR_P=${MKDIR}
++LN?=ln
++LN_SF=${LN} -sf
++RANLIB?=ranlib
++RM?=rm
++RM_F=${RM} -f
+ 
+ CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=5
+ LDFLAGS=-L. -L$(ZLIBLIB) -lpng -lz -lm

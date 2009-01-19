@@ -1,0 +1,11 @@
+--- configure.orig	2008-07-21 03:32:00.000000000 +0100
++++ configure	2008-11-14 18:58:23.000000000 +0000
+@@ -49,7 +49,7 @@
+ then
+     sed -e "$zlib_inc_del" -e "$libpng_inc_del" \
+         -e "$zlib_lib_del" -e "$libpng_lib_del" \
+-        -e "$zlib_sys_ins" -e "$libpng_sys_ins" \
++        -e "$libpng_sys_ins" -e "$zlib_sys_ins" \
+         src/scripts/unix.mak.in > src/scripts/unix.mak
+     sed -e "$zlib_inc_del" -e "$libpng_inc_del" \
+         -e "$zlib_lib_del" -e "$libpng_lib_del" \
