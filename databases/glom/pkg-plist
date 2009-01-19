@@ -8,11 +8,22 @@ lib/libglom.so.0
 %%PYTHON_SITELIBDIR%%/glom.so
 share/applications/glom.desktop
 %%DATADIR%%/doc/examples/example_film_manager.glom
+%%DATADIR%%/doc/examples/example_lesson_planner.glom
 %%DATADIR%%/doc/examples/example_music_collection.glom
 %%DATADIR%%/doc/examples/example_project_manager.glom
 %%DATADIR%%/doc/examples/example_smallbusiness.glom
+%%DATADIR%%/glade/glom_developer.glade
 %%DATADIR%%/glade/glom.glade
 %%DATADIR%%/glom_document.dtd
+%%DATADIR%%/pixmaps/glom-button.png
+%%DATADIR%%/pixmaps/glom-field.png
+%%DATADIR%%/pixmaps/glom-group.png
+%%DATADIR%%/pixmaps/glom-line-horizontal.png
+%%DATADIR%%/pixmaps/glom-line-vertical.png
+%%DATADIR%%/pixmaps/glom-image.png
+%%DATADIR%%/pixmaps/glom-notebook.png
+%%DATADIR%%/pixmaps/glom-related-records.png
+%%DATADIR%%/pixmaps/glom-text.png
 %%DATADIR%%/xslt/print_details_to_html.xsl
 %%DATADIR%%/xslt/print_report_to_html.xsl
 share/gnome/help/glom/C/figures/glom_data_details.png
@@ -26,6 +37,8 @@ share/gnome/help/glom/C/figures/glom_design_reports_details.png
 share/gnome/help/glom/C/figures/glom_design_reports_group_by.png
 share/gnome/help/glom/C/figures/glom_design_reports_vertical_group.png
 share/gnome/help/glom/C/figures/glom_design_translations.png
+share/gnome/help/glom/C/figures/glom_import.png
+share/gnome/help/glom/C/figures/glom_initial_dialog_local_network.png
 share/gnome/help/glom/C/figures/glom_report_result.png
 share/gnome/help/glom/C/figures/glom_tables.png
 share/gnome/help/glom/C/figures/start.png
@@ -42,6 +55,8 @@ share/gnome/help/glom/de/figures/glom_design_reports_details.png
 share/gnome/help/glom/de/figures/glom_design_reports_group_by.png
 share/gnome/help/glom/de/figures/glom_design_reports_vertical_group.png
 share/gnome/help/glom/de/figures/glom_design_translations.png
+share/gnome/help/glom/de/figures/glom_import.png
+share/gnome/help/glom/de/figures/glom_initial_dialog_local_network.png
 share/gnome/help/glom/de/figures/glom_report_result.png
 share/gnome/help/glom/de/figures/glom_tables.png
 share/gnome/help/glom/de/figures/start.png
@@ -58,6 +73,8 @@ share/gnome/help/glom/en_GB/figures/glom_design_reports_details.png
 share/gnome/help/glom/en_GB/figures/glom_design_reports_group_by.png
 share/gnome/help/glom/en_GB/figures/glom_design_reports_vertical_group.png
 share/gnome/help/glom/en_GB/figures/glom_design_translations.png
+share/gnome/help/glom/en_GB/figures/glom_import.png
+share/gnome/help/glom/en_GB/figures/glom_initial_dialog_local_network.png
 share/gnome/help/glom/en_GB/figures/glom_report_result.png
 share/gnome/help/glom/en_GB/figures/glom_tables.png
 share/gnome/help/glom/en_GB/figures/start.png
@@ -74,11 +91,31 @@ share/gnome/help/glom/es/figures/glom_design_reports_details.png
 share/gnome/help/glom/es/figures/glom_design_reports_group_by.png
 share/gnome/help/glom/es/figures/glom_design_reports_vertical_group.png
 share/gnome/help/glom/es/figures/glom_design_translations.png
+share/gnome/help/glom/es/figures/glom_import.png
+share/gnome/help/glom/es/figures/glom_initial_dialog_local_network.png
 share/gnome/help/glom/es/figures/glom_report_result.png
 share/gnome/help/glom/es/figures/glom_tables.png
 share/gnome/help/glom/es/figures/start.png
 share/gnome/help/glom/es/glom.xml
 share/gnome/help/glom/es/legal.xml
+share/gnome/help/glom/fr/figures/glom_data_details.png
+share/gnome/help/glom/fr/figures/glom_data_list.png
+share/gnome/help/glom/fr/figures/glom_design_fields.png
+share/gnome/help/glom/fr/figures/glom_design_fields_dialog_calculated.png
+share/gnome/help/glom/fr/figures/glom_design_layout_details.png
+share/gnome/help/glom/fr/figures/glom_design_layout_list.png
+share/gnome/help/glom/fr/figures/glom_design_reports.png
+share/gnome/help/glom/fr/figures/glom_design_reports_details.png
+share/gnome/help/glom/fr/figures/glom_design_reports_group_by.png
+share/gnome/help/glom/fr/figures/glom_design_reports_vertical_group.png
+share/gnome/help/glom/fr/figures/glom_design_translations.png
+share/gnome/help/glom/fr/figures/glom_import.png
+share/gnome/help/glom/fr/figures/glom_initial_dialog_local_network.png
+share/gnome/help/glom/fr/figures/glom_report_result.png
+share/gnome/help/glom/fr/figures/glom_tables.png
+share/gnome/help/glom/fr/figures/start.png
+share/gnome/help/glom/fr/glom.xml
+share/gnome/help/glom/fr/legal.xml
 share/gnome/help/glom/sv/figures/glom_data_details.png
 share/gnome/help/glom/sv/figures/glom_data_list.png
 share/gnome/help/glom/sv/figures/glom_design_fields.png
@@ -90,6 +127,8 @@ share/gnome/help/glom/sv/figures/glom_design_reports_details.png
 share/gnome/help/glom/sv/figures/glom_design_reports_group_by.png
 share/gnome/help/glom/sv/figures/glom_design_reports_vertical_group.png
 share/gnome/help/glom/sv/figures/glom_design_translations.png
+share/gnome/help/glom/sv/figures/glom_import.png
+share/gnome/help/glom/sv/figures/glom_initial_dialog_local_network.png
 share/gnome/help/glom/sv/figures/glom_report_result.png
 share/gnome/help/glom/sv/figures/glom_tables.png
 share/gnome/help/glom/sv/figures/start.png
@@ -120,6 +159,7 @@ share/locale/it/LC_MESSAGES/glom.mo
 share/locale/nb/LC_MESSAGES/glom.mo
 share/locale/ne/LC_MESSAGES/glom.mo
 share/locale/nl/LC_MESSAGES/glom.mo
+share/locale/oc/LC_MESSAGES/glom.mo
 share/locale/pa/LC_MESSAGES/glom.mo
 share/locale/pt/LC_MESSAGES/glom.mo
 share/locale/pt_BR/LC_MESSAGES/glom.mo
@@ -134,10 +174,13 @@ share/omf/glom/glom-C.omf
 share/omf/glom/glom-de.omf
 share/omf/glom/glom-en_GB.omf
 share/omf/glom/glom-es.omf
+share/omf/glom/glom-fr.omf
 share/omf/glom/glom-sv.omf
 @dirrm share/omf/glom
 @dirrm share/gnome/help/glom/sv/figures
 @dirrm share/gnome/help/glom/sv
+@dirrm share/gnome/help/glom/fr/figures
+@dirrm share/gnome/help/glom/fr
 @dirrm share/gnome/help/glom/es/figures
 @dirrm share/gnome/help/glom/es
 @dirrm share/gnome/help/glom/en_GB/figures
@@ -148,6 +191,7 @@ share/omf/glom/glom-sv.omf
 @dirrm share/gnome/help/glom/C
 @dirrm share/gnome/help/glom
 @dirrm %%DATADIR%%/xslt
+@dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%/doc/examples
 @dirrm %%DATADIR%%/doc
