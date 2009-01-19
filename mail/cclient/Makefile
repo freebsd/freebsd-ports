@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cclient
-PORTVERSION=	2006j
-PORTREVISION=	1
+PORTVERSION=	2007e
 PORTEPOCH=	1
 CATEGORIES=	mail devel ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
@@ -16,16 +15,9 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 DISTNAME=	imap-${PORTVERSION}
-EXTRACT_SUFX=	.tar.Z
-DISTVERSIONSUFFIX=	2
-DISTFILES=	${DISTNAME}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Mark Crispin's C-client mail access routines
-
-FORBIDDEN=	multiple vulnerabilities \
-		http://www.vuxml.org/freebsd/a6713190-dfea-11dd-a765-0030843d3802.html \
-		http://www.vuxml.org/freebsd/69a20ce4-dfee-11dd-a765-0030843d3802.html
 
 OPTIONS=	SSL "Compile with SSL support" on \
 		SSL_AND_PLAINTEXT "Allow plain text passwords and SSL" off \
