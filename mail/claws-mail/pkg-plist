@@ -160,6 +160,7 @@ include/claws-mail/pine.h
 %%GPGME%%include/claws-mail/plugins/pgpcore/sgpgme.h
 %%GPGME%%include/claws-mail/plugins/pgpinline/pgpinline.h
 %%GPGME%%include/claws-mail/plugins/pgpmime/pgpmime.h
+%%GPGME%%include/claws-mail/plugins/smime/smime.h
 include/claws-mail/pop.h
 include/claws-mail/prefs_account.h
 include/claws-mail/prefs_actions.h
@@ -233,6 +234,10 @@ include/claws-mail/wizard.h
 %%GPGME%%lib/claws-mail/plugins/pgpmime.deps
 %%GPGME%%lib/claws-mail/plugins/pgpmime.la
 %%GPGME%%lib/claws-mail/plugins/pgpmime.so
+%%GPGME%%lib/claws-mail/plugins/smime.a
+%%GPGME%%lib/claws-mail/plugins/smime.la
+%%GPGME%%lib/claws-mail/plugins/smime.so
+%%GPGME%%lib/claws-mail/plugins/smime.deps
 %%SA_PLUG%%lib/claws-mail/plugins/spamassassin.a
 %%SA_PLUG%%lib/claws-mail/plugins/spamassassin.la
 %%SA_PLUG%%lib/claws-mail/plugins/spamassassin.so
@@ -322,6 +327,7 @@ share/pixmaps/claws-mail.png
 %%GPGME%%@dirrm include/claws-mail/plugins/pgpmime
 %%GPGME%%@dirrm include/claws-mail/plugins/pgpinline
 %%GPGME%%@dirrm include/claws-mail/plugins/pgpcore
+%%GPGME%%@dirrm include/claws-mail/plugins/smime
 @dirrm include/claws-mail/gtk
 @dirrm include/claws-mail/etpan
 @dirrm include/claws-mail/common

@@ -7,7 +7,7 @@
 
 PORTNAME=	claws-mail
 PORTVERSION=	3.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	SF/sylpheed-claws
 
@@ -55,7 +55,7 @@ OPTIONS=	ALL		"Enable all options except GNUTLS."			off \
 		DEBUG		"Enable debug support."			off \
 		DILLO		"Enable Dillo HTML viewer."		off \
 		GNOMEPRINT	"Enable extended print support (deprecated)."	off \
-		GPGME		"Enable PGP/GnuPG support using GPGME."	off \
+		GPGME		"Enable PGP/GnuPG/SMIME support using GPGME."	off \
 		IPV6		"Enable ipv6 support."			on \
 		JPILOT		"Enable JPilot support."		off \
 		LDAP		"Enable LDAP support."			off \
@@ -119,14 +119,14 @@ PLIST_SUB+=		SA_PLUG="@comment "
 .if defined(WITH_GPGME) || defined(WITH_ALL)
 PLIST_SUB+=		GPGME=""
 CONFIGURE_ARGS+=	--enable-pgpmime-plugin --enable-pgpcore-plugin \
-			--enable-pgpinline-plugin
+			--enable-pgpinline-plugin --enable-smime-plugin
 LIB_DEPENDS+=		gpgme:${PORTSDIR}/security/gpgme \
 			gpg-error:${PORTSDIR}/security/libgpg-error
 RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 .else
 PLIST_SUB+=		GPGME="@comment "
 CONFIGURE_ARGS+=	--disable-pgpmime-plugin --disable-pgpcore-plugin \
-			--disable-pgpinline-plugin
+			--disable-pgpinline-plugin --disable-smime-plugin
 .endif
 .if defined(WITH_DEBUG) || defined(WITH_ALL)
 CONFIGURE_ARGS+=	--enable-maintainer-mode --enable-crash-dialog
