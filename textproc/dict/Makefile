@@ -7,13 +7,15 @@
 #
 
 PORTNAME=	dict
-PORTVERSION=	1.10.11
+PORTVERSION=	1.11.0
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}d-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Dictionary Server Protocol (RFC2229) client
+
+LIB_DEPENDS=	maa.1:${PORTSDIR}/devel/libmaa
 
 USE_BISON=	build
 GNU_CONFIGURE=	yes
