@@ -1,13 +1,5 @@
 --- ./configure.ac.orig	2008-02-16 14:45:54.000000000 -0500
 +++ ./configure.ac	2008-08-31 19:54:55.000000000 -0400
-@@ -14,7 +14,6 @@
- AC_CHECK_HEADERS(sys/mnttab.h,,,[#include <stdio.h>])
- AC_CHECK_HEADERS(sys/mount.h,,,[#include <stdio.h>])
- AC_CHECK_HEADERS(sys/vmount.h,,,[#include <stdio.h>])
--AC_CHECK_HEADERS(rpc/svc_soc.h,,,[#include <rpc/types.h> #include <rpc/rpc.h>])
- AC_CHECK_HEADERS(linux/ext2_fs.h,,,[#include <unistd.h>])
- AC_CHECK_TYPES(int32,,,[#include <stdio.h> #include <sys/inttypes.h>])
- AC_CHECK_TYPES(uint32,,,[#include <stdio.h> #include <sys/inttypes.h>])
 @@ -29,7 +28,6 @@
  AC_CHECK_FUNCS(vsyslog)
  AC_CHECK_FUNCS(lchown)
