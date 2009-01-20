@@ -7,7 +7,7 @@
 
 PORTNAME=	chillispot
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.chillispot.info/download/ \
 		http://www.geeklan.co.uk/files/ \
@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.chillispot.info/download/ \
 
 MAINTAINER=	venture37@geeklan.co.uk
 COMMENT=	Wireless LAN Access Point Controller
+
+CONFLICTS=	coovachilli-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=-sysconfdir=${PREFIX}/etc
