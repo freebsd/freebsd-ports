@@ -24,8 +24,7 @@ RUN_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools \
 
 NO_BUILD=	yes
 
-# Use the same version of www/py-turbogears
-USE_PYTHON=	2.4
+USE_PYTHON=	yes
 
 PLIST_SUB=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
 		PORTNAME=${PORTNAME} PORTVERSION=${PYTURBODJANGO_VER} \
@@ -45,4 +44,10 @@ do-extract:
 do-install:
 	@${EASY_INSTALL_CMD} ${EASY_INSTALL_ARGS} ${DISTDIR}/${PYTURBODJANGO_EGG}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 240 || ${PYTHON_REL} >= 250
+IGNORE=	the distribution file is available only for Python 2.4
+.endif
+
+.include <bsd.port.post.mk>
