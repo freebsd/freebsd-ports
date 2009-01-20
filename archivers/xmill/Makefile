@@ -25,6 +25,12 @@ PLIST_FILES=	bin/xcmill bin/xdemill bin/xmilltest bin/xmillexample \
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 700043
+BROKEN=		does not compile
+.endif
+
 post-patch:
 # Allow to build with modern GCC
 	@${REINPLACE_CMD} -e 's,friend,& class,' ${WRKSRC}/XMill/*.?pp \
@@ -43,4 +49,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
