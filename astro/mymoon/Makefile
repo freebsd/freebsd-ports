@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mymoon
-PORTREVISION=	1
 DISTVERSION=	1.2a
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://makemebad.net/geek/codes/${PORTNAME}/ \
 		${MASTER_SITE_LOCAL}
