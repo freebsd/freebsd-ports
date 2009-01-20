@@ -1,0 +1,11 @@
+--- configure.ac	2009-01-19 18:15:44.000000000 -0500
++++ configure.ac	2009-01-19 18:16:11.000000000 -0500
+@@ -50,7 +50,7 @@
+                 ARCH_SPECIFIC_CFLAGS=""
+                 ARCH_STRING="X86"
+                 ;;
+-        x86_64-*)
++        x86_64-* | amd64-* )
+                 AC_DEFINE(ARCH_X86_64, 1, [Architecture is x86-64])
+                 ARCH_SPECIFIC_CFLAGS="-DUSE_ADDR64"
+                 ARCH_STRING="X86-64"
