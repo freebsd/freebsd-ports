@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome2
 PORTVERSION=	2.24.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -58,7 +58,7 @@ RUN_DEPENDS?=	${LOCALBASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-apple
 		orca:${PORTSDIR}/accessibility/orca \
 		gnome-mount:${PORTSDIR}/sysutils/gnome-mount \
 		${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon \
-		seahorse:${PORTSDIR}/security/seahorse \
+		seahorse-agent:${PORTSDIR}/security/seahorse-plugins \
 		mousetweaks:${PORTSDIR}/accessibility/mousetweaks \
 		${LOCALBASE}/share/hal/fdi/information/10freedesktop/10-camera-ptp.fdi:${PORTSDIR}/sysutils/hal-info \
 		${LOCALBASE}/share/sounds/freedesktop/index.theme:${PORTSDIR}/audio/freedesktop-sound-theme
