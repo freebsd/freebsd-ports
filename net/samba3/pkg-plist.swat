@@ -203,6 +203,7 @@ share/swat/help/Samba3-HOWTO/type.html
 share/swat/help/Samba3-HOWTO/unicode.html
 share/swat/help/Samba3-HOWTO/upgrading-to-3.0.html
 share/swat/help/Samba3-HOWTO/winbind.html
+share/swat/help/manpages/cifs.upcall.8.html
 share/swat/help/manpages/eventlogadm.8.html
 share/swat/help/manpages/findsmb.1.html
 share/swat/help/manpages/idmap_ad.8.html

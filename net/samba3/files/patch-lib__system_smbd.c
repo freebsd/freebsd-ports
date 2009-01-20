@@ -1,5 +1,5 @@
---- lib/system_smbd.c.orig	Sun Sep 16 04:29:55 2007
-+++ lib/system_smbd.c	Sun Sep 16 04:31:21 2007
+--- ./lib/system_smbd.c.orig	2009-01-19 10:40:09.000000000 +0000
++++ ./lib/system_smbd.c	2009-01-20 15:50:59.000000000 +0000
 @@ -104,12 +104,10 @@
  
  	restore_re_gid();

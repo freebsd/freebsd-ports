@@ -1,5 +1,5 @@
---- lib/system.c.orig	Mon Aug 20 15:04:50 2007
-+++ lib/system.c	Sun Sep 16 04:25:55 2007
+--- ./lib/system.c.orig	2009-01-19 10:40:09.000000000 +0000
++++ ./lib/system.c	2009-01-20 15:50:59.000000000 +0000
 @@ -574,7 +574,11 @@
  {
  	char *wd;
@@ -38,7 +38,7 @@
  os/2 also doesn't have chroot
  ********************************************************************/
  int sys_chroot(const char *dname)
-@@ -871,15 +894,13 @@
+@@ -876,15 +899,13 @@
  }
  
  /**************************************************************************
@@ -58,7 +58,7 @@
  	GID_T gid;
  	GID_T *group_list;
  	int i, ngroups;
-@@ -901,7 +922,7 @@
+@@ -906,7 +927,7 @@
  	if (setlen == 0)
  		setlen = groups_max();
  
@@ -67,7 +67,7 @@
  		DEBUG(0,("sys_getgroups: Malloc fail.\n"));
  		return -1;
  	}
-@@ -918,26 +939,10 @@
+@@ -923,26 +944,10 @@
  
  	SAFE_FREE(group_list);
  	return ngroups;
@@ -95,7 +95,7 @@
  	GID_T *group_list;
  	int i ; 
  
-@@ -954,7 +959,7 @@
+@@ -959,7 +964,7 @@
  	 * GID_T array of size setlen.
  	 */
  
@@ -104,7 +104,7 @@
  		DEBUG(0,("sys_setgroups: Malloc fail.\n"));
  		return -1;    
  	}
-@@ -971,7 +976,105 @@
+@@ -976,7 +981,105 @@
   
  	SAFE_FREE(group_list);
  	return 0 ;
