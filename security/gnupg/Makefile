@@ -7,6 +7,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -45,7 +46,7 @@ OPTIONS=	LDAP "LDAP keyserver interface" off \
 		SCDAEMON "Enable Smartcard daemon (with libusb)" off \
 		CURL "Use the real curl library (worked around if no)" on \
 		GPGSM "Enable GPGSM (require LDAP)" off \
-		CAMELLIA "Enable Camellia algorithm" on \
+		CAMELLIA "Enable Camellia algorithm (for testing only)" off \
 		KDNS "Use DNS CERT helper" off \
 		NLS "National Language Support" off
 
