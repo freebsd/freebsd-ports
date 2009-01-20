@@ -6,7 +6,7 @@
 
 PORTNAME=	tinderbox
 PORTVERSION=	3.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/:SOURCES \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/:SOURCES,FAVICON
@@ -42,6 +42,7 @@ IGNORE=	is useless without a database. Please (re)run 'make config' and choose o
 .endif
 
 .if defined(WITH_WEBUI)
+EXTRA_PATCHES=	${PATCHDIR}/exta-webui-patch-3.1.2_to_20081227.diff
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 WANT_PHP_WEB=	yes
 USE_PHP=	session
