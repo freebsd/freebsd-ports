@@ -30,6 +30,9 @@ bin/ttx
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/arrayTools.py
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/arrayTools.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/arrayTools.pyo
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/bezierTools.py
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/bezierTools.pyc
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/bezierTools.pyo
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/eexec.py
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/eexec.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/eexec.pyo
@@ -37,6 +40,9 @@ bin/ttx
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/homeResFile.py
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/homeResFile.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/homeResFile.pyo
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/macCreatorType.py
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/macCreatorType.pyc
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/macCreatorType.pyo
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/psCharStrings.py
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/psCharStrings.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/psCharStrings.pyo
@@ -49,9 +55,33 @@ bin/ttx
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/textTools.py
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/textTools.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/textTools.pyo
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/transform.py
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/transform.pyc
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc/transform.pyo
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/nfntLib.py
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/nfntLib.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/nfntLib.pyo
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/__init__.py
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/__init__.pyc
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/__init__.pyo
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/basePen.py
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/basePen.pyc
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/basePen.pyo
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/boundsPen.py
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/boundsPen.pyc
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/boundsPen.pyo
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/cocoaPen.py
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/cocoaPen.pyc
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/cocoaPen.pyo
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/pointInsidePen.py
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/pointInsidePen.pyc
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/pointInsidePen.pyo
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/reportLabPen.py
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/reportLabPen.pyc
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/reportLabPen.pyo
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/transformPen.py
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/transformPen.pyc
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens/transformPen.pyo
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/t1Lib.py
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/t1Lib.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/t1Lib.pyo
@@ -82,6 +112,12 @@ bin/ttx
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/G_D_E_F_.py
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/G_D_E_F_.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/G_D_E_F_.pyo
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/G_M_A_P_.py
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/G_M_A_P_.pyc
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/G_M_A_P_.pyo
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/G_P_K_G_.py
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/G_P_K_G_.pyc
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/G_P_K_G_.pyo
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/G_P_O_S_.py
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/G_P_O_S_.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/G_P_O_S_.pyo
@@ -94,9 +130,15 @@ bin/ttx
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/L_T_S_H_.py
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/L_T_S_H_.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/L_T_S_H_.pyo
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/M_E_T_A_.py
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/M_E_T_A_.pyc
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/M_E_T_A_.pyo
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/O_S_2f_2.py
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/O_S_2f_2.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/O_S_2f_2.pyo
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/S_I_N_G_.py
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/S_I_N_G_.pyc
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/S_I_N_G_.pyo
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/T_S_I_B_.py
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/T_S_I_B_.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/T_S_I_B_.pyo
@@ -130,6 +172,9 @@ bin/ttx
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/T_S_I__5.py
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/T_S_I__5.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/T_S_I__5.pyo
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/V_O_R_G_.py
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/V_O_R_G_.pyc
+%%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/V_O_R_G_.pyo
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/__init__.py
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/__init__.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables/__init__.pyo
@@ -223,16 +268,16 @@ bin/ttx
 %%PYTHON_SITELIBDIR%%/FontTools/xmlWriter.py
 %%PYTHON_SITELIBDIR%%/FontTools/xmlWriter.pyc
 %%PYTHON_SITELIBDIR%%/FontTools/xmlWriter.pyo
-%%PORTDOCS%%share/doc/py-fonttools/ChangeLog.txt
-%%PORTDOCS%%share/doc/py-fonttools/bugs.txt
-%%PORTDOCS%%share/doc/py-fonttools/changes.txt
-%%PORTDOCS%%share/doc/py-fonttools/documentation.html
-%%PORTDOCS%%share/doc/py-fonttools/install.txt
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.txt
+%%PORTDOCS%%%%DOCSDIR%%/changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/install.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/test
 @dirrm %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib/tables
 @dirrm %%PYTHON_SITELIBDIR%%/FontTools/fontTools/ttLib
+@dirrm %%PYTHON_SITELIBDIR%%/FontTools/fontTools/pens
 @dirrm %%PYTHON_SITELIBDIR%%/FontTools/fontTools/misc
 @dirrm %%PYTHON_SITELIBDIR%%/FontTools/fontTools/encodings
 @dirrm %%PYTHON_SITELIBDIR%%/FontTools/fontTools
 @dirrm %%PYTHON_SITELIBDIR%%/FontTools
-%%PORTDOCS%%@dirrm share/doc/py-fonttools
