@@ -6,17 +6,12 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.32
-PORTREVISION=	3
+PORTVERSION?=		3.0.34
 PORTEPOCH?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
 DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p/pre/:S/.r/rc/}
-
-PATCH_SITES=		http://us1.samba.org/samba/ftp/patches/security/
-PATCHFILES=		samba-3.0.32-CVE-2008-4314.patch
-PATCH_DIST_STRIP=	-p2
 
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
@@ -169,12 +164,10 @@ CONFIGURE_ARGS+=	--without-utmp
 CONFIGURE_ARGS+=	--with-winbind
 PLIST_SUB+=		WINBIND=""
 SUB_LIST+=		WINBIND=""
-WITH_WINBIND_NSS=	yes
-PLIST_SUB+=		WINBIND_NSS=""
 .else
 CONFIGURE_ARGS+=	--without-winbind
-PLIST_SUB+=		WINBIND="@comment " WINBIND_NSS="@comment "
-SUB_LIST+=		WINBIND="@comment " WINBIND_NSS="@comment "
+PLIST_SUB+=		WINBIND="@comment "
+SUB_LIST+=		WINBIND="@comment "
 .endif
 
 # Add some shared modules
@@ -348,8 +341,8 @@ MAN8+=		vfs_catia.8
 MAN8+=		vfs_commit.8
 .endif
 
-# Off by now
-PLIST_SUB+=	SAMBA_BOOK="@comment "
+# Book is back!
+PLIST_SUB+=	SAMBA_BOOK=""
 
 PLIST_SUB+=	SAMBA_LOGDIR="${SAMBA_LOGDIR}" \
 		SAMBA_LOCKDIR="${SAMBA_LOCKDIR}" \
@@ -369,6 +362,13 @@ SUB_LIST+=	SAMBA_LOGDIR="${SAMBA_LOGDIR}" \
 		SAMBA_SPOOL="${SAMBA_SPOOL}" \
 		SAMBA_PRIVATEDIR="${SAMBA_PRIVATEDIR}" \
 		SAMBA_PRIVATE="${SAMBA_PRIVATE}"
+
+ALL_TARGET=	all
+.if defined(WITH_SMBTORTURE)
+ALL_TARGET+=	smbtorture
+.endif
+
+INSTALL_TARGET=	installservers installbin installscripts installdat installswat installmodules
 
 pre-everything::
 	@${ECHO_CMD} "===>  NOTICE: This version of port has changed location of Samba password"
@@ -404,11 +404,6 @@ pre-build:
 	cd ${WRKSRC} && ${MAKE} pch
 .endif
 
-.if defined(WITH_SMBTORTURE)
-post-build:
-	cd ${WRKSRC} && ${MAKE} smbtorture
-.endif
-
 pre-install:
 	-@${FIND} "${SAMBA_MODULEDIR}" -type f 2>/dev/null | ${SORT} | ${SED} -E 's|^${PREFIX}/?||;' >> ${WRKDIR}/.PLIST.exclude
 	@${CAT} ${PKGDIR}/pkg-plist > ${PLIST}
@@ -432,12 +427,10 @@ post-install:
 	${INSTALL_SCRIPT} "${WRKSRC}/script/mksmbpasswd.sh" "${PREFIX}/bin/make_smbpasswd"
 # Winbind
 .if !defined(WITHOUT_WINBIND)
-.	if defined(WITH_WINBIND_NSS)
-	    ${INSTALL_PROGRAM} "${WRKSRC}/nsswitch/nss_winbind.so" "${SAMBA_LIBDIR}/nss_winbind.so.1"
-	    ${INSTALL_PROGRAM} "${WRKSRC}/nsswitch/nss_wins.so" "${SAMBA_LIBDIR}/nss_wins.so.1"
-	    @${ECHO_CMD} "${SAMBA_LIB}/nss_winbind.so.1" >> ${TMPPLIST};
-	    @${ECHO_CMD} "${SAMBA_LIB}/nss_wins.so.1" >> ${TMPPLIST};
-.	endif
+	${INSTALL_PROGRAM} "${WRKSRC}/nsswitch/nss_winbind.so" "${SAMBA_LIBDIR}/nss_winbind.so.1"
+	${INSTALL_PROGRAM} "${WRKSRC}/nsswitch/nss_wins.so" "${SAMBA_LIBDIR}/nss_wins.so.1"
+	@${ECHO_CMD} "${SAMBA_LIB}/nss_winbind.so.1" >> ${TMPPLIST};
+	@${ECHO_CMD} "${SAMBA_LIB}/nss_wins.so.1" >> ${TMPPLIST};
 	${INSTALL_PROGRAM} "${WRKSRC}/bin/pam_winbind.so" "${SAMBA_LIBDIR}"
 	@${ECHO_CMD} "${SAMBA_LIB}/pam_winbind.so" >> ${TMPPLIST};
 .endif

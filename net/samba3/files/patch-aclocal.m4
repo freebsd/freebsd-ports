@@ -1,5 +1,5 @@
---- aclocal.m4.orig	Thu Aug 30 21:19:57 2007
-+++ aclocal.m4	Thu Aug 30 21:40:52 2007
+--- ./aclocal.m4.orig	2009-01-19 10:40:09.000000000 +0000
++++ ./aclocal.m4	2009-01-20 15:50:59.000000000 +0000
 @@ -307,84 +307,79 @@
    dnl those with the standalone portable libiconv installed).
    AC_MSG_CHECKING(for iconv in $1)
@@ -35,30 +35,27 @@
 +	AC_TRY_LINK([#include <stdlib.h>
  #include <iconv.h>],
 -          [iconv_t cd = iconv_open("","");
+-           iconv(cd,NULL,NULL,NULL,NULL);
+-           iconv_close(cd);],
+-           jm_cv_include="iconv.h"
+-           jm_cv_func_iconv=yes
+-           jm_cv_lib_iconv="")
 +	[iconv_t cd = iconv_open("","");
 +         iconv(cd,NULL,NULL,NULL,NULL);
 +         iconv_close(cd);],
 +	jm_cv_func_iconv=yes
 +	jm_cv_include="iconv.h"
 +	jm_cv_lib_iconv="")
-+
-+	if test "$jm_cv_func_iconv" != yes; then
-+	  jm_save_LIBS="$LIBS"
-+	  LIBS="$LIBS -lgiconv"
-+          AC_TRY_LINK([#include <stdlib.h>
-+#include <giconv.h>],
-+	  [iconv_t cd = iconv_open("","");
-            iconv(cd,NULL,NULL,NULL,NULL);
-            iconv_close(cd);],
--           jm_cv_include="iconv.h"
--           jm_cv_func_iconv=yes
--           jm_cv_lib_iconv="")
--
+ 
 -          if test "$jm_cv_lib_iconv" != yes; then
 -            jm_save_LIBS="$LIBS"
 -            LIBS="$LIBS -lgiconv"
 -            AC_TRY_LINK([#include <stdlib.h>
--#include <giconv.h>],
++	if test "$jm_cv_func_iconv" != yes; then
++	  jm_save_LIBS="$LIBS"
++	  LIBS="$LIBS -lgiconv"
++          AC_TRY_LINK([#include <stdlib.h>
+ #include <giconv.h>],
 -              [iconv_t cd = iconv_open("","");
 -               iconv(cd,NULL,NULL,NULL,NULL);
 -               iconv_close(cd);],
@@ -67,20 +64,21 @@
 -              jm_cv_include="giconv.h"
 -              jm_cv_giconv=yes
 -              jm_cv_lib_iconv="giconv")
--
--           LIBS="$jm_save_LIBS"
--
--        if test "$jm_cv_func_iconv" != yes; then
--          jm_save_LIBS="$LIBS"
--          LIBS="$LIBS -liconv"
--          AC_TRY_LINK([#include <stdlib.h>
++	  [iconv_t cd = iconv_open("","");
++           iconv(cd,NULL,NULL,NULL,NULL);
++           iconv_close(cd);],
 +          jm_cv_func_iconv=yes
 +          jm_cv_include="giconv.h"
 +          jm_cv_lib_iconv="giconv"
 +          jm_cv_giconv=yes)
-+
+ 
+-           LIBS="$jm_save_LIBS"
 +	  LIBS="$jm_save_LIBS"
-+
+ 
+-        if test "$jm_cv_func_iconv" != yes; then
+-          jm_save_LIBS="$LIBS"
+-          LIBS="$LIBS -liconv"
+-          AC_TRY_LINK([#include <stdlib.h>
 +	  if test "$jm_cv_func_iconv" != yes; then
 +	    jm_save_LIBS="$LIBS"
 +	    LIBS="$LIBS -liconv"
