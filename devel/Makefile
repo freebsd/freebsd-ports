@@ -1547,6 +1547,7 @@
     SUBDIR += p5-MooseX-AttributeHelpers
     SUBDIR += p5-MooseX-ClassAttribute
     SUBDIR += p5-MooseX-Clone
+    SUBDIR += p5-MooseX-ConfigFromFile
     SUBDIR += p5-MooseX-Daemonize
     SUBDIR += p5-MooseX-Getopt
     SUBDIR += p5-MooseX-IOC

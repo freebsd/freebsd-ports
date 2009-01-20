@@ -1,0 +1,3 @@
+An abstract Moose role for setting attributes from a configfile.
+
+WWW: http://search.cpan.org/dist/MooseX-ConfigFromFile/
