@@ -66,7 +66,7 @@ lib/libpulse.so.0
 lib/libpulsecore.a
 lib/libpulsecore.la
 lib/libpulsecore.so
-lib/libpulsecore.so.8
+lib/libpulsecore.so.9
 lib/libpulsedsp.so
 lib/pulse-%%PULSE_VERSION%%/modules/libauth-cookie.so
 lib/pulse-%%PULSE_VERSION%%/modules/libauthkey.so
