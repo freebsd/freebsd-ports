@@ -44,8 +44,8 @@ OPTIONS=	ASPELL "Interface to aspell spelling checker"	on \
 		FV	"Free Pascal unit for Delphi support" on \
 		GDBM	"Interface to the GNU database system"	on \
 		GGI	"Interface to libggi library"	on \
-		GNOME	"Free Pascal unit to create programs for GNOME" on \
-		GTK	"Interface to gtk libraries"	on \
+		GNOME1	"Free Pascal unit to create programs for GNOME" on \
+		GTK1	"Interface to gtk libraries"	on \
 		GTK2	"Interface to gtk2 libraries"	on \
 		IMAGEMAGICK	"Free Pascal interface to ImageMagick"	on \
 		IMLIB	"Interface to imlib library"	on \
@@ -80,7 +80,7 @@ OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 
 ALL_OPTIONS=	ASPELL BFD CAIRO CHM FCL-ASYNC FCL-BASE FCL-DB FCL-FPCUNIT FCL-IMAGE \
 		FCL-JSON FCL-NET FCL-PASSRC FCL-PROCESS FCL-REGISTRY FCL-WEB FCL-XML \
-		FFTW FPMKUNIT FPGTK FV GDBM GGI GNOME GTK GTK2 IMAGEMAGICK IMLIB LIBCURL \
+		FFTW FPMKUNIT FPGTK FV GDBM GGI GNOME1 GTK1 GTK2 IMAGEMAGICK IMLIB LIBCURL \
 		LIBGD LIBPNG NCURSES NUMLIB OPENGL OPENSSL PCAP PXLIB SDL SVGALIB SYMBOLIC \
 		SYSLOG TCL UNZIP USERS UTMP X11 XFORMS ZLIB
 
