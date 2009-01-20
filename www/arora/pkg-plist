@@ -5,9 +5,12 @@ share/applications/arora.desktop
 %%NLS%%share/arora/locale/de.qm
 %%NLS%%share/arora/locale/en.qm
 %%NLS%%share/arora/locale/es.qm
+%%NLS%%share/arora/locale/es_CR.qm
 %%NLS%%share/arora/locale/et.qm
 %%NLS%%share/arora/locale/fr_CA.qm
 %%NLS%%share/arora/locale/fr_FR.qm
+%%NLS%%share/arora/locale/gl.qm
+%%NLS%%share/arora/locale/he.qm
 %%NLS%%share/arora/locale/hu.qm
 %%NLS%%share/arora/locale/it.qm
 %%NLS%%share/arora/locale/nl.qm
@@ -15,7 +18,6 @@ share/applications/arora.desktop
 %%NLS%%share/arora/locale/pt_BR.qm
 %%NLS%%share/arora/locale/ru.qm
 %%NLS%%share/arora/locale/tr.qm
-%%NLS%%share/arora/locale/zh_CN.qm
 share/icons/hicolor/128x128/apps/arora.png
 share/icons/hicolor/16x16/apps/arora.png
 share/icons/hicolor/32x32/apps/arora.png

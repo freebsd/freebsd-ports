@@ -5,40 +5,45 @@
 # $FreeBSD$
 
 PORTNAME=	arora
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.4
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	andy@athame.co.uk
+MAINTAINER=	decept0@gmail.com
 COMMENT=	Simple Qt4 based browser
 
 USE_QT_VER=	4
 QT_COMPONENTS=	network webkit qmake_build moc_build uic_build rcc_build \
-		imageformats
+		imageformats gui
 HAS_CONFIGURE=	yes
 QMAKE_ARGS+=	-unix -recursive PREFIX=${PREFIX}
 
 MAN1=	arora.1
 
-.if !defined(WITHOUT_NLS)
+.if defined(WITHOUT_NLS)
+PLIST_SUB+=	NLS="@comment "
+.else
 QT_COMPONENTS+=	linguist_build
 PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 do-configure:
 .if defined(WITHOUT_NLS)
 	@${REINPLACE_CMD} -e "/INSTALLS/s|translations||" \
-		-e "/PRE_TARGETDEPS/s|compiler_updateqm_make_all||" \
 		${WRKSRC}/src/src.pro
+	@${REINPLACE_CMD} -e "/PRE_TARGETDEPS/s|compiler_updateqm_make_all||" \
+		${WRKSRC}/src/locale/locale.pri
 .endif
+	@${REINPLACE_CMD} -e "/INSTALLS/s|man man-compress||" \
+		${WRKSRC}/src/src.pro
+	@${REINPLACE_CMD} -e "/else/s|lrelease|lrelease-qt4|" \
+		${WRKSRC}/src/locale/locale.pri
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS}
 
 post-configure:
-	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
-		's|^CC .*|CC=${CC}|; s|^CXX .*|CXX=${CXX}|; s|^LINK .*|LINK=${CXX}|'
+	${REINPLACE_CMD} -e \
+		's|^CC .*|CC=${CC}|; s|^CXX .*|CXX=${CXX}|; s|^LINK .*|LINK=${CXX}|' \
+		${WRKSRC}/src/Makefile
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/src/data/arora.1 ${PREFIX}/man/man1/
