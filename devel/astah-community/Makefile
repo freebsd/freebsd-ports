@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jude-community
-PORTVERSION=	5.4
+PORTVERSION=	5.4.1
 CATEGORIES=	devel java
 MASTER_SITES=	# you have to register yourself as a member to download
 DISTNAME=	${PORTNAME}-${PORTVERSION:S!.!_!g}
@@ -61,8 +61,10 @@ PORTDATA+=	tools.jar
 .endif
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	README-e.txt README.txt ReleaseNote-e.html ReleaseNote.html \
-		ProductInformation.txt
+PORTDOCS=	ReleaseNote-e.html ReleaseNote.html \
+		ProductInformation.txt \
+		API_sample_program_license_agreement-e.txt \
+		API_sample_program_license_agreement.txt
 .endif
 
 post-patch:
