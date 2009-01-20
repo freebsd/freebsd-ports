@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	astyle
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	devel textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION}__linux
+DISTNAME=	${PORTNAME}_${PORTVERSION}_linux
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	A reindenter and reformatter of C, C++, C\# and Java source code
@@ -21,15 +21,14 @@ LDFLAGS+=	-s
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 USE_GMAKE=	yes
 
-WRKSRC=		${WRKDIR}/astyle/build
-ALL_TARGET=	release
+WRKSRC=		${WRKDIR}/astyle/buildgcc
 
 pre-patch:
 	${REINPLACE_CMD} -e 's,^CFLAGS,#CFLAGS,; s,g++,${CXX},;' ${WRKSRC}/Makefile
 
 PLIST_FILES=	bin/astyle
 .if !defined(NOPORTDOCS)
-PORTDOCS=	astyle.html astyleX.html astyle_news.html install.html license.html astyle_notes.html index.html
+PORTDOCS=	*
 .endif
 
 do-install:
