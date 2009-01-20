@@ -25,4 +25,7 @@ PLIST_FILES=	bin/bogoQDBMupgrade
 
 MASTERDIR=	${.CURDIR}/../bogofilter
 
+DEPRECATED=	Migrate to bogofilter-tc instead
+EXPIRATION_DATE=2009-06-30
+
 .include "${MASTERDIR}/Makefile"
