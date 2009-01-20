@@ -5,36 +5,69 @@
 # $FreeBSD$
 #
 
-PORTNAME=	fntsample
-PORTVERSION=	2.8
-PORTREVISION=	1
-CATEGORIES=	x11-fonts
-MASTER_SITES=	SF http://unicode.org/Public/5.0.0/ucd/:unidata
+PORTNAME?=	fntsample
+PORTVERSION=	3.0
+PORTREVISION?=	0
+CATEGORIES?=	x11-fonts
+MASTER_SITES=	SF http://unicode.org/Public/5.1.0/ucd/:unidata
+MASTER_SITE_SUBDIR=	fntsample
+DISTNAME=	fntsample-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} Blocks.txt:unidata
 EXTRACT_ONLY=	${DISTFILES:M*gz}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Show Unicode coverage of a font
+COMMENT?=	Show Unicode coverage of a font
 
+USE_PERL5_RUN=	yes
+
+.if defined(PDFOUTLINE)
+RUN_DEPENDS=	p5-Locale-libintl>=0:${PORTSDIR}/devel/p5-Locale-libintl \
+		p5-PDF-API2>=0:${PORTSDIR}/textproc/p5-PDF-API2
+
+NO_BUILD=	yes
+
+MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/${PORTNAME}
+.else
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
-		freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	pdfoutline:${PORTSDIR}/textproc/pdfoutline
 
-USE_GNOME=	glib20 pkgconfig pango
-USE_PERL5_RUN=	yes
+USE_GNOME=	pango
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/${PORTNAME}
+CONFIGURE_ARGS=	--with-unicode-blocks=${WRKSRC}/Blocks.txt
+
 MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/${PORTNAME} share/locale/uk/LC_MESSAGES/${PORTNAME}.mo
+.endif
 
 post-extract:
-	@${CP} ${_DISTDIR}/Blocks.txt ${WRKSRC}/
+.if !defined(PDFOUTLINE)
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/Blocks.txt ${WRKSRC}
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/unicode|${WRKSRC}|' ${WRKSRC}/configure
+.if defined(PDFOUTLINE)
+	@${SED} -e 's|##PACKAGE##|fntsample|g ; \
+		 s|##LOCALEDIR##|${PREFIX}/share/locale|g' \
+			${WRKSRC}/${PORTNAME}.pl > ${WRKSRC}/${PORTNAME}
+	@${SED} -e 's|@DATE@|2008-10-22|g' \
+		${WRKSRC}/${PORTNAME}.1.in > ${WRKSRC}/${PORTNAME}.1
+.else
+	@${REINPLACE_CMD} -e \
+		's|^bin_SCRIPTS|#bin_SCRIPTS|g' ${WRKSRC}/Makefile.in
+.endif
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
+.if defined(PDFOUTLINE)
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+.else
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/share/locale/uk/LC_MESSAGES
+	${INSTALL_DATA} ${WRKSRC}/po/uk.gmo \
+		${PREFIX}/share/locale/uk/LC_MESSAGES/${PORTNAME}.mo
+.endif
 
 .include <bsd.port.mk>
