@@ -10,6 +10,8 @@ PKGNAMESUFFIX=	-webkit
 
 COMMENT=	 An extremely lightweight GNOME browser using the WebKit engine
 
+BROKEN=	is not ready for use; this port should be available in GNOME 2.26
+
 EPHY_SLAVE=	webkit
 MASTERDIR=	${.CURDIR}/../../www/epiphany
 
