@@ -13,10 +13,10 @@
 -CXXFLAGS=$(PLATFORM) $(CXXWARN) -O0 -ggdb -pipe $(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
 -_CXXFLAGS=$(PLATFORM) -O3 -fomit-frame-pointer -ffast-math -pipe $(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
 +OPTIONS = -DBSD -DLINUX -DELC $(foreach FEATURE, $(FEATURES), -D$(FEATURE))
-+CFLAGS+=$(PLATFORM) $(CWARN) $(OPTIONS) `$(SDL_CONFIG) --cflags` $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
-+_CFLAGS=$(CFLAGS) $(PLATFORM) -fomit-frame-pointer -ffast-math -pipe $(OPTIONS) `$(SDL_CONFIG) --cflags` $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
-+CXXFLAGS+=$(PLATFORM) $(CXXWARN) $(OPTIONS) `$(SDL_CONFIG) --cflags` $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
-+_CXXFLAGS=$(CXXFLAGS) $(PLATFORM) -fomit-frame-pointer -ffast-math -pipe $(OPTIONS) `$(SDL_CONFIG) --cflags` $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
++CFLAGS+=$(CWARN) $(OPTIONS) `$(SDL_CONFIG) --cflags` $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
++_CFLAGS=$(CFLAGS) -fomit-frame-pointer -ffast-math -pipe $(OPTIONS) `$(SDL_CONFIG) --cflags` $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
++CXXFLAGS+=$(CXXWARN) $(OPTIONS) `$(SDL_CONFIG) --cflags` $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
++_CXXFLAGS=$(CXXFLAGS) -fomit-frame-pointer -ffast-math -pipe $(OPTIONS) `$(SDL_CONFIG) --cflags` $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
  
  ZLIB_LIBS = -lz
  PNG_SCREENSHOT_LIBS = -lpng
