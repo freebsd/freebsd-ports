@@ -525,7 +525,6 @@ apparix                         ports/misc/apparix
 appres                          ports/x11/appres
 appwrapper                      ports/deskutils/appwrapper
 apr                             ports/devel/apr
-apr-svn                         ports/devel/apr-svn
 apricots                        ports/games/apricots
 aprsd                           ports/comms/aprsd
 apsfilter                       ports/print/apsfilter
@@ -1530,7 +1529,6 @@ claws-mail-notification         ports/mail/claws-mail-notification
 claws-mail-pdf_viewer           ports/mail/claws-mail-pdf_viewer
 claws-mail-perl                 ports/mail/claws-mail-perl
 claws-mail-rssyl                ports/mail/claws-mail-rssyl
-claws-mail-smime                ports/mail/claws-mail-smime
 claws-mail-spamreport           ports/mail/claws-mail-spamreport
 claws-mail-synce                ports/mail/claws-mail-synce
 claws-mail-themes               ports/x11-themes/claws-mail-themes
@@ -2730,7 +2728,6 @@ elmer-eio                       ports/science/elmer-eio
 elmer-fem                       ports/science/elmer-fem
 elmer-hutiter                   ports/science/elmer-hutiter
 elmer-matc                      ports/science/elmer-matc
-elmer-mathlibs                  ports/math/elmer-mathlibs
 elmer-meshgen2d                 ports/science/elmer-meshgen2d
 elmer-umfpack                   ports/math/elmer-umfpack
 elmerfront                      ports/science/elmerfront
@@ -3469,6 +3466,9 @@ fpc-gtk1                        ports/x11-toolkits/fpc-gtk1
 fpc-gtk2                        ports/x11-toolkits/fpc-gtk2
 fpc-hash                        ports/security/fpc-hash
 fpc-httpd                       ports/www/fpc-httpd
+fpc-httpd13                     ports/www/fpc-httpd13
+fpc-httpd20                     ports/www/fpc-httpd20
+fpc-httpd22                     ports/www/fpc-httpd22
 fpc-ibase                       ports/databases/fpc-ibase
 fpc-ide                         ports/editors/fpc-ide
 fpc-imagemagick                 ports/graphics/fpc-imagemagick
@@ -6234,6 +6234,7 @@ kaptain                         ports/devel/kaptain
 kaputa                          ports/x11-fonts/kaputa
 karamba                         ports/deskutils/karamba
 kardsgt                         ports/games/kardsgt
+kartofel                        ports/games/kartofel
 kasablanca                      ports/ftp/kasablanca
 kash3                           ports/math/kash3
 kaskade                         ports/math/kaskade
@@ -6268,6 +6269,7 @@ kcheckers                       ports/games/kcheckers
 kcheckgmail                     ports/mail/kcheckgmail
 kchm                            ports/deskutils/kchm
 kchmviewer                      ports/deskutils/kchmviewer
+kchmviewer-kde4                 ports/deskutils/kchmviewer-kde4
 kcoloredit                      ports/graphics/kcoloredit
 kcpuload                        ports/sysutils/kcpuload
 kcube                           ports/sysutils/kcube
@@ -6453,6 +6455,7 @@ kdeplasma-addons                ports/deskutils/kdeplasma-addons
 kdesdk3                         ports/devel/kdesdk3
 kdesdk4                         ports/devel/kdesdk4
 kdesvn                          ports/devel/kdesvn
+kdesvn-kde4                     ports/devel/kdesvn-kde4
 kdetoys3                        ports/x11-clocks/kdetoys3
 kdetoys4                        ports/x11-clocks/kdetoys4
 kdeutils3                       ports/misc/kdeutils3
@@ -7712,6 +7715,7 @@ linux-libxml                    ports/textproc/linux-libxml
 linux-libxml2                   ports/textproc/linux-libxml2
 linux-mbrola                    ports/audio/linux-mbrola
 linux-megacli                   ports/sysutils/linux-megacli
+linux-megacli2                  ports/sysutils/linux-megacli2
 linux-megamgr                   ports/sysutils/linux-megamgr
 linux-mikmod                    ports/audio/linux-mikmod
 linux-mozilla                   ports/www/linux-mozilla
@@ -9306,6 +9310,7 @@ ocaml-lablgl                    ports/graphics/ocaml-lablgl
 ocaml-lablgtk                   ports/x11-toolkits/ocaml-lablgtk
 ocaml-lablgtk2                  ports/x11-toolkits/ocaml-lablgtk2
 ocaml-lacaml                    ports/devel/ocaml-lacaml
+ocaml-lwt                       ports/devel/ocaml-lwt
 ocaml-magic                     ports/devel/ocaml-magic
 ocaml-mode.el                   ports/lang/ocaml-mode.el
 ocaml-net                       ports/www/ocaml-net
@@ -12670,6 +12675,7 @@ p5-Unix-Mknod                   ports/sysutils/p5-Unix-Mknod
 p5-Unix-Processors              ports/sysutils/p5-Unix-Processors
 p5-Unix-Statgrab                ports/devel/p5-Unix-Statgrab
 p5-Unix-Syslog                  ports/sysutils/p5-Unix-Syslog
+p5-Unix-Uptime                  ports/devel/p5-Unix-Uptime
 p5-User                         ports/sysutils/p5-User
 p5-User-Identity                ports/devel/p5-User-Identity
 p5-VCG                          ports/graphics/p5-VCG
@@ -15947,6 +15953,7 @@ p5-unix-mknod                   ports/sysutils/p5-Unix-Mknod
 p5-unix-processors              ports/sysutils/p5-Unix-Processors
 p5-unix-statgrab                ports/devel/p5-Unix-Statgrab
 p5-unix-syslog                  ports/sysutils/p5-Unix-Syslog
+p5-unix-uptime                  ports/devel/p5-Unix-Uptime
 p5-uri                          ports/net/p5-URI
 p5-uri-escape-xs                ports/www/p5-URI-Escape-XS
 p5-uri-fetch                    ports/www/p5-URI-Fetch
@@ -17420,6 +17427,7 @@ pkg_trackinst                   ports/ports-mgmt/pkg_trackinst
 pkg_tree                        ports/ports-mgmt/pkg_tree
 pkgfe                           ports/ports-mgmt/pkgfe
 pkgsearch                       ports/ports-mgmt/pkgsearch
+pkipplib                        ports/print/pkipplib
 pkpgcounter                     ports/print/pkpgcounter
 pks                             ports/security/pks
 pktstat                         ports/net-mgmt/pktstat
@@ -18292,6 +18300,7 @@ py-pexpect                      ports/misc/py-pexpect
 py-pg8000                       ports/databases/py-pg8000
 py-pg_pqueue                    ports/databases/py-pg_pqueue
 py-phpserialize                 ports/devel/py-phpserialize
+py-pip                          ports/devel/py-pip
 py-plastex                      ports/math/py-plastex
 py-plex                         ports/devel/py-plex
 py-ply                          ports/devel/py-ply
@@ -18537,7 +18546,6 @@ py-vobject                      ports/deskutils/py-vobject
 py-vorbis                       ports/audio/py-vorbis
 py-vte                          ports/x11-toolkits/py-vte
 py-wax                          ports/x11-toolkits/py-wax
-py-wbxml                        ports/textproc/py-wbxml
 py-webhelpers                   ports/www/py-webhelpers
 py-webunit                      ports/www/py-webunit
 py-webware                      ports/www/py-webware
@@ -22210,6 +22218,7 @@ wormux                          ports/games/wormux
 wormux-devel                    ports/games/wormux-devel
 wots                            ports/sysutils/wots
 wotsap                          ports/misc/wotsap
+wpa_gui                         ports/net/wpa_gui
 wping                           ports/net/wping
 wprint                          ports/print/wprint
 wput                            ports/ftp/wput
