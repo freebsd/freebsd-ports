@@ -1,7 +1,7 @@
 $FreeBSD$
 
---- configure.orig	Fri Mar 12 09:24:26 2004
-+++ configure	Fri Mar 25 16:02:29 2005
+--- configure.orig	2004-03-12 08:24:26.000000000 -0800
++++ configure	2009-01-19 23:01:33.000000000 -0800
 @@ -5123,7 +5123,7 @@
    cat >conftest.$ac_ext <<_ACEOF
  #line 5124 "configure"
@@ -11,12 +11,30 @@ $FreeBSD$
  _ACEOF
  if { (eval echo "$as_me:5128: \"$ac_cpp conftest.$ac_ext\"") >&5
    (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
+@@ -7216,7 +7216,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldf  $LIBS"
++LIBS="-ldf -ljpeg -lsz -lz  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 7221 "configure"
+ #include "confdefs.h"
 @@ -7261,7 +7261,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lmfhdf  $LIBS"
-+LIBS="-lmfhdf -ldf $LIBS"
++LIBS="-lmfhdf -ldf -ljpeg -lsz -lz $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  #line 7266 "configure"
  #include "confdefs.h"
+@@ -9031,7 +9031,7 @@
+      ga_lib_suffix='.a'
+   fi
+ 
+-  for ga_lib_name in mfhdf df jpeg udunits z ; do
++  for ga_lib_name in mfhdf df jpeg sz udunits z ; do
+       hdf_libs="$hdf_libs ${ga_lib_prefix}${ga_lib_name}${ga_lib_suffix}"
+   done
+ 
