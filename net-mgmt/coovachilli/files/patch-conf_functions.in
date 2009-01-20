@@ -1,0 +1,19 @@
+--- conf/functions.in.orig	2009-01-10 17:55:30.000000000 +0000
++++ conf/functions.in	2009-01-10 17:56:42.000000000 +0000
+@@ -4,7 +4,6 @@
+ # Licensed under GPL. See http://coova.org/
+ #
+ 
+-IPTABLES=/sbin/iptables
+ IFCONFIG=/sbin/ifconfig
+ 
+ CHILLI=@ETCCHILLI@
+@@ -22,8 +21,6 @@
+ [ -f $CHILLI/defaults ] && . $CHILLI/defaults
+ [ -f $CHILLI/config ]   && . $CHILLI/config
+ 
+-[ -f /etc/sysconfig/chilli ] && . /etc/sysconfig/chilli
+-
+ HS_UAMPORT=${HS_UAMPORT:-3990}
+ HS_RADIUS=${HS_RADIUS:-$HS_UAMSERVER}
+ HS_RADSECRET=${HS_RADSECRET:-$HS_UAMSECRET}

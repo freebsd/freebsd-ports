@@ -1,0 +1,39 @@
+@stopdaemon coovachilli
+etc/chilli.conf
+etc/chilli/defaults
+etc/chilli/down.sh
+etc/chilli/functions
+etc/chilli/up.sh
+www/chilli/ChilliLibrary.js
+www/chilli/chilliController.js
+www/chilli/chilliform.chi
+www/chilli/chilliform.chi.sh
+www/chilli/chillijs.chi
+www/chilli/chillijs.chi.sh
+www/chilli/config.sh
+www/chilli/coova.html
+www/chilli/coova.jpg
+www/chilli/coova.png
+www/chilli/json_html.tmpl
+www/chilli/openid.gif
+www/chilli/wait.gif
+etc/chilli/wwwsh
+lib/libbstring.a
+lib/libbstring.la
+lib/libbstring.so
+lib/libbstring.so.0
+lib/libchilli.a
+lib/libchilli.la
+lib/libchilli.so
+lib/libchilli.so.0
+sbin/chilli
+sbin/chilli_query
+sbin/chilli_radconfig
+sbin/chilli_response
+sbin/test_radius
+@dirrm www/chilli
+@dirrm etc/chilli
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pf.conf.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ipfw-config.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/main.conf.sample
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

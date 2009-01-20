@@ -1,0 +1,11 @@
+| Add coovachilli_enable="YES" to /etc/rc.conf
+|
+| You'll need to tweak your kernel settings
+| add the following to /boot/loader.conf
+| kern.ipc.msgseg=16000
+| kern.ipc.msgmnb=16000
+|
+| Sample config files located in %%EXAMPLESDIR%%
+| copy the sample main.conf file to your
+| chilli directory & create an empty
+| hs.conf & local.conf to get going.
