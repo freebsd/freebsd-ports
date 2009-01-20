@@ -9,8 +9,7 @@ PORTNAME=	GeoIP
 PORTVERSION=	1.4.5
 PORTREVISION=	1
 CATEGORIES=	net geography
-MASTER_SITES=	http://www.maxmind.com/download/geoip/api/c/ \
-		http://mirror.mcx2.org/
+MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/c/
 
 MAINTAINER=	adox@mcx2.org
 COMMENT=	Find the country that any IP address or hostname originates from
