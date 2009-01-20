@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	turbomail
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.1
+#PORTREVISION=	0
 CATEGORIES=	mail www python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/T/TurboMail/ \
+MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TurboMail-${PORTVERSION}
@@ -17,23 +17,13 @@ DISTNAME=	TurboMail-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Multi-threaded mail queue manager for TurboGears applications
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools \
-		tg-admin:${PORTSDIR}/www/py-turbogears
+BUILD_DEPENDS=	tg-admin:${PORTSDIR}/www/py-turbogears
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PLIST_FILES=	${PYTHON_SITELIBDIR:S|${PREFIX}/||}/${PYTURBOMAIL_EGG}
-
-SUB_FILES=	pkg-deinstall pkg-install
-SUB_LIST=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \
-		EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
-		EGG_VER="${PORTNAME}==${PORTVERSION}"
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 USE_PYTHON=	2.4+
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TurboMail
-PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
-
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
-PYTURBOMAIL_EGG=	TurboMail-${PORTVERSION}-py${PYTHON_VER}.egg
 
 .include <bsd.port.mk>
