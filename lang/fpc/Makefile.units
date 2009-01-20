@@ -119,7 +119,6 @@ LIB_DEPENDS=	ggi:${PORTSDIR}/graphics/libggi
 .include <${PORTSDIR}/Mk/bsd.gnome.mk>
 USE_GNOME=	gtk12
 .	endif
-HAVE_EXAMPLES=	true
 OPT+=-Fu${WRKDIR}/${WRKUNITDIR}/*
 .endif
 
@@ -128,7 +127,6 @@ OPT+=-Fu${WRKDIR}/${WRKUNITDIR}/*
 .include <${PORTSDIR}/Mk/bsd.gnome.mk>
 USE_GNOME=	gtk20
 .	endif
-HAVE_EXAMPLES=	true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-httpd13"
