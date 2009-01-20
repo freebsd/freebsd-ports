@@ -1,4 +1,5 @@
 bin/xqilla
+include/xqc.h
 include/xqilla/ast/ASTNode.hpp
 include/xqilla/ast/ASTNodeImpl.hpp
 include/xqilla/ast/ConstantFoldingFunction.hpp
