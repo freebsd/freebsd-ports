@@ -3,7 +3,9 @@ bin/onmetis
 bin/onmetis.exe
 bin/pmetis
 lib/libmetis.a
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README_Code_Aster
 %%PORTDOCS%%%%DOCSDIR%%/manual.ps
-%%PORTDOCS%%%%EXAMPLESDIR%%/fort.81
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fort.81
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

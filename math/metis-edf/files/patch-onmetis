@@ -1,0 +1,17 @@
+--- onmetis.orig	2008-12-16 13:27:51.000000000 +0100
++++ onmetis	2009-01-19 21:52:01.000000000 +0100
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#! /bin/sh
+ #
+ # shell-script to call METIS from CODE_ASTER
+ #  $1 : data file for METIS (numerotation)
+@@ -10,8 +10,6 @@
+ # install directory
+ METIS_INSTALL=/home01/courtois/PKG/BUILD/METIS/metis-edf-4.1
+ 
+-export LD_LIBRARY_PATH=/usr/share/lsf/6.2/linux2.6-glibc2.3-ia64/lib:/opt/intelruntime:/opt/mpi/mpibull2-1.3.5-1.t/lib/drivers/qxelan:/opt/mpi/mpibull2-1.3.5-1.t/lib/:/opt/mpi/mpibull2-1.3.5-1.t/lib/mpianalyser/modules:/usr/share/lsf/6.2/linux2.6-glibc2.3-ia64/lib:/usr/lib:/usr/lib64:/opt/mpi/mpibull2-1.3.5-1.t/lib/pmi:$LD_LIBRARY_PATH
+-
+ repinit=`pwd`
+ tmp_metis=$repinit/dir_metis
+ 
