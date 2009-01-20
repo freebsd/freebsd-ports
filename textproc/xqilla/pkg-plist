@@ -14,27 +14,39 @@ include/xqilla/ast/StaticType.hpp
 include/xqilla/ast/TupleNode.hpp
 include/xqilla/ast/WhereTuple.hpp
 include/xqilla/ast/XPath1Compat.hpp
+include/xqilla/ast/XQAnalyzeString.hpp
+include/xqilla/ast/XQApplyTemplates.hpp
 include/xqilla/ast/XQAtomize.hpp
 include/xqilla/ast/XQAttributeConstructor.hpp
+include/xqilla/ast/XQCallTemplate.hpp
 include/xqilla/ast/XQCastAs.hpp
 include/xqilla/ast/XQCastableAs.hpp
 include/xqilla/ast/XQCommentConstructor.hpp
 include/xqilla/ast/XQContextItem.hpp
+include/xqilla/ast/XQCopy.hpp
+include/xqilla/ast/XQCopyOf.hpp
 include/xqilla/ast/XQDOMConstructor.hpp
 include/xqilla/ast/XQDocumentConstructor.hpp
 include/xqilla/ast/XQDocumentOrder.hpp
+include/xqilla/ast/XQEffectiveBooleanValue.hpp
 include/xqilla/ast/XQElementConstructor.hpp
 include/xqilla/ast/XQFunction.hpp
 include/xqilla/ast/XQFunctionCall.hpp
+include/xqilla/ast/XQFunctionConversion.hpp
+include/xqilla/ast/XQFunctionDeref.hpp
+include/xqilla/ast/XQFunctionRef.hpp
 include/xqilla/ast/XQGlobalVariable.hpp
 include/xqilla/ast/XQIf.hpp
+include/xqilla/ast/XQInlineFunction.hpp
 include/xqilla/ast/XQInstanceOf.hpp
 include/xqilla/ast/XQLiteral.hpp
+include/xqilla/ast/XQMap.hpp
+include/xqilla/ast/XQNamespaceBinding.hpp
+include/xqilla/ast/XQNamespaceConstructor.hpp
 include/xqilla/ast/XQNav.hpp
 include/xqilla/ast/XQOperator.hpp
 include/xqilla/ast/XQOrderingChange.hpp
 include/xqilla/ast/XQPIConstructor.hpp
-include/xqilla/ast/XQParenthesizedExpr.hpp
 include/xqilla/ast/XQPredicate.hpp
 include/xqilla/ast/XQQuantified.hpp
 include/xqilla/ast/XQReturn.hpp
@@ -50,9 +62,11 @@ include/xqilla/axis/SelfAxis.hpp
 include/xqilla/context/Collation.hpp
 include/xqilla/context/ContextHelpers.hpp
 include/xqilla/context/DynamicContext.hpp
+include/xqilla/context/ExternalFunctionResolver.hpp
 include/xqilla/context/ItemFactory.hpp
 include/xqilla/context/MessageListener.hpp
 include/xqilla/context/ModuleResolver.hpp
+include/xqilla/context/RegexGroupStore.hpp
 include/xqilla/context/Scope.hpp
 include/xqilla/context/StaticContext.hpp
 include/xqilla/context/URIResolver.hpp
@@ -68,11 +82,19 @@ include/xqilla/context/impl/VarStoreImpl.hpp
 include/xqilla/context/impl/VariableStoreTemplate.hpp
 include/xqilla/context/impl/XQContextImpl.hpp
 include/xqilla/context/impl/XQDynamicContextImpl.hpp
+include/xqilla/debug/ASTDebugHook.hpp
+include/xqilla/debug/DebugHookDecorator.hpp
+include/xqilla/debug/DebugListener.hpp
+include/xqilla/debug/InputParser.hpp
+include/xqilla/debug/InteractiveDebugger.hpp
+include/xqilla/debug/StackFrame.hpp
+include/xqilla/debug/TupleDebugHook.hpp
 include/xqilla/dom-api/XPath2Result.hpp
 include/xqilla/dom-api/XQillaExpression.hpp
 include/xqilla/dom-api/XQillaNSResolver.hpp
 include/xqilla/dom-api/impl/XQillaNSResolverImpl.hpp
 include/xqilla/events/ContentSequenceFilter.hpp
+include/xqilla/events/EventGenerator.hpp
 include/xqilla/events/EventHandler.hpp
 include/xqilla/events/EventSerializer.hpp
 include/xqilla/events/NSFixupFilter.hpp
@@ -131,6 +153,7 @@ include/xqilla/functions/FunctionAbs.hpp
 include/xqilla/functions/FunctionAdjustDateTimeToTimezone.hpp
 include/xqilla/functions/FunctionAdjustDateToTimezone.hpp
 include/xqilla/functions/FunctionAdjustTimeToTimezone.hpp
+include/xqilla/functions/FunctionAnalyzeString.hpp
 include/xqilla/functions/FunctionAvg.hpp
 include/xqilla/functions/FunctionBaseURI.hpp
 include/xqilla/functions/FunctionBoolean.hpp
@@ -156,6 +179,7 @@ include/xqilla/functions/FunctionDefaultCollation.hpp
 include/xqilla/functions/FunctionDistinctValues.hpp
 include/xqilla/functions/FunctionDoc.hpp
 include/xqilla/functions/FunctionDocAvailable.hpp
+include/xqilla/functions/FunctionDocument.hpp
 include/xqilla/functions/FunctionDocumentURI.hpp
 include/xqilla/functions/FunctionEmpty.hpp
 include/xqilla/functions/FunctionEncodeForUri.hpp
@@ -166,6 +190,8 @@ include/xqilla/functions/FunctionExactlyOne.hpp
 include/xqilla/functions/FunctionExists.hpp
 include/xqilla/functions/FunctionFalse.hpp
 include/xqilla/functions/FunctionFloor.hpp
+include/xqilla/functions/FunctionFunctionArity.hpp
+include/xqilla/functions/FunctionFunctionName.hpp
 include/xqilla/functions/FunctionHoursFromDateTime.hpp
 include/xqilla/functions/FunctionHoursFromDuration.hpp
 include/xqilla/functions/FunctionHoursFromTime.hpp
@@ -205,9 +231,11 @@ include/xqilla/functions/FunctionOneOrMore.hpp
 include/xqilla/functions/FunctionParseHTML.hpp
 include/xqilla/functions/FunctionParseJSON.hpp
 include/xqilla/functions/FunctionParseXML.hpp
+include/xqilla/functions/FunctionPartialApply.hpp
 include/xqilla/functions/FunctionPosition.hpp
 include/xqilla/functions/FunctionPrefixFromQName.hpp
 include/xqilla/functions/FunctionQName.hpp
+include/xqilla/functions/FunctionRegexGroup.hpp
 include/xqilla/functions/FunctionRemove.hpp
 include/xqilla/functions/FunctionReplace.hpp
 include/xqilla/functions/FunctionResolveQName.hpp
@@ -265,21 +293,18 @@ include/xqilla/items/ATGYearMonthOrDerived.hpp
 include/xqilla/items/ATGYearOrDerived.hpp
 include/xqilla/items/ATHexBinaryOrDerived.hpp
 include/xqilla/items/ATNotationOrDerived.hpp
-include/xqilla/items/ATQNameConstructor.hpp
 include/xqilla/items/ATQNameOrDerived.hpp
 include/xqilla/items/ATStringOrDerived.hpp
 include/xqilla/items/ATTimeOrDerived.hpp
 include/xqilla/items/ATUntypedAtomic.hpp
 include/xqilla/items/AnyAtomicType.hpp
-include/xqilla/items/AnyAtomicTypeConstructor.hpp
 include/xqilla/items/DatatypeFactory.hpp
 include/xqilla/items/DatatypeLookup.hpp
 include/xqilla/items/DateOrTimeType.hpp
+include/xqilla/items/FunctionRef.hpp
 include/xqilla/items/Item.hpp
-include/xqilla/items/ItemConstructor.hpp
 include/xqilla/items/Node.hpp
 include/xqilla/items/Numeric.hpp
-include/xqilla/items/NumericTypeConstructor.hpp
 include/xqilla/items/Timezone.hpp
 include/xqilla/items/impl/ATBooleanOrDerivedImpl.hpp
 include/xqilla/items/impl/ATDateOrDerivedImpl.hpp
@@ -320,10 +345,14 @@ include/xqilla/operators/Plus.hpp
 include/xqilla/operators/Range.hpp
 include/xqilla/operators/UnaryMinus.hpp
 include/xqilla/operators/Union.hpp
+include/xqilla/optimizer/ASTCopier.hpp
+include/xqilla/optimizer/ASTReleaser.hpp
 include/xqilla/optimizer/ASTVisitor.hpp
+include/xqilla/optimizer/PartialEvaluator.hpp
 include/xqilla/optimizer/Optimizer.hpp
 include/xqilla/optimizer/QueryPathNode.hpp
 include/xqilla/optimizer/QueryPathTreeGenerator.hpp
+include/xqilla/optimizer/StaticTyper.hpp
 include/xqilla/parser/QName.hpp
 include/xqilla/runtime/ClosureResult.hpp
 include/xqilla/runtime/EmptyResult.hpp
@@ -370,13 +399,14 @@ include/xqilla/utils/XStr.hpp
 include/xqilla/xerces/XercesConfiguration.hpp
 include/xqilla/xqilla-dom3.hpp
 include/xqilla/xqilla-simple.hpp
+include/xqilla/xqilla-xqc.h
 include/xqilla/xqts/TestSuiteParser.hpp
 include/xqilla/xqts/TestSuiteResultListener.hpp
 include/xqilla/xqts/TestSuiteRunner.hpp
 lib/libxqilla.a
 lib/libxqilla.la
 lib/libxqilla.so
-lib/libxqilla.so.4
+lib/libxqilla.so.5
 @dirrm include/xqilla/xqts
 @dirrm include/xqilla/xerces
 @dirrm include/xqilla/utils
@@ -398,6 +428,7 @@ lib/libxqilla.so.4
 @dirrm include/xqilla/events
 @dirrm include/xqilla/dom-api/impl
 @dirrm include/xqilla/dom-api
+@dirrm include/xqilla/debug
 @dirrm include/xqilla/context/impl
 @dirrm include/xqilla/context
 @dirrm include/xqilla/axis
