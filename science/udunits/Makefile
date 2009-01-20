@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	udunits
-PORTVERSION=	1.12.4
+PORTVERSION=	1.12.9
 CATEGORIES=	science math
 MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/${PORTNAME}/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/udunits|}
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for manipulating units of physical quantities
