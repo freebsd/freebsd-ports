@@ -4,3 +4,5 @@ sbin/pkg_delete
 sbin/pkg_info
 sbin/pkg_updating
 sbin/pkg_version
+%%WRAPPER%%@cwd /var/db
+%%WRAPPER%%pkg_install.conf

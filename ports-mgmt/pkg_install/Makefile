@@ -7,6 +7,7 @@
 
 PORTNAME=		pkg_install
 PORTVERSION=		20080708
+PORTREVISION=		1
 CATEGORIES=		ports-mgmt
 MASTER_SITES=		${MASTER_SITE_LOCAL} \
 			http://people.FreeBSD.org/~flz/distfiles/pkg_install/
@@ -24,6 +25,12 @@ MAKE_ARGS=		-DNO_OBJ -DNO_CRYPT -DNO_OPENSSL
 OPTIONS=		WRAPPER "Use ports version instead of base if more recent" on
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_WRAPPER)
+PLIST_SUB+=	WRAPPER=""
+.else
+PLIST_SUB+=	WRAPPER="@comment "
+.endif
 
 pre-configure:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
