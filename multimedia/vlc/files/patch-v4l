@@ -1,5 +1,5 @@
---- modules/access/v4l/v4l.c.orig	Mon Jun 12 09:41:08 2006
-+++ modules/access/v4l/v4l.c	Mon Jun 12 10:19:59 2006
+--- modules/access/v4l.c.orig	Mon Jun 12 09:41:08 2006
++++ modules/access/v4l.c	Mon Jun 12 10:19:59 2006
 @@ -555,7 +555,7 @@
          int i_noframe = -1;
          ioctl( p_sys->fd_video, MJPIOC_QBUF_CAPT, &i_noframe );
