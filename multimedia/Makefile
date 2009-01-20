@@ -19,7 +19,6 @@
     SUBDIR += castpodder
     SUBDIR += cheese
     SUBDIR += clive
-    SUBDIR += clive1
     SUBDIR += clutter-gst
     SUBDIR += cx88
     SUBDIR += devede
