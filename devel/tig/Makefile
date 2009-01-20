@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tig
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	devel
 MASTER_SITES=	http://jonas.nitro.dk/tig/releases/
 
