@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/FindBin/libs/.packlist
+%%SITE_PERL%%/FindBin/libs.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FindBin/libs
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FindBin
+@dirrm %%SITE_PERL%%/FindBin

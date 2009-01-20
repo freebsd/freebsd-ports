@@ -1372,6 +1372,7 @@
     SUBDIR += p5-Filesys-Virtual-Plain
     SUBDIR += p5-Filter
     SUBDIR += p5-Filter-Template
+    SUBDIR += p5-FindBin-libs
     SUBDIR += p5-Forest
     SUBDIR += p5-FreezeThaw
     SUBDIR += p5-Gearman
