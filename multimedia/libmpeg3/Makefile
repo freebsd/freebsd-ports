@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libmpeg3
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	1.8
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/heroines
@@ -15,33 +14,62 @@ MASTER_SITES=	SF/heroines
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced editing and manipulation of MPEG streams
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
-		a52.0:${PORTSDIR}/audio/liba52
+LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52
+
+OPTIONS=	MMX "Enable MMX instruction set (i386 only)" off
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-NASM?=		${LOCALBASE}/bin/nasm
-MAKE_ENV=	NASM=${NASM} INSTALL='${INSTALL}' ARCH=${ARCH} PTHREAD_LIBS=${PTHREAD_LIBS}
+MAKE_ARGS=	CC="${CC}" USE_CSS=0 OBJDIR="obj" \
+		CFLAGS="${CFLAGS} ${CPPFLAGS}" LIBS="${LDFLAGS}"
 
 PORTDOCS=	index.html
-MPEG3_UTILS=	mpeg3cat mpeg3dump mpeg3peek mpeg3toc
-PLIST_FILES=	${MPEG3_UTILS:S,^,bin/,} include/libmpeg3.h include/mpeg3private.h \
-		include/mpeg3protos.h lib/libmpeg3.a
+PLIST_FILES=	${BIN_FILES:S|^|bin/|} ${INC_FILES:S|^|include/|} \
+		${LIB_FILES:S|^|lib/|}
+
+BIN_FILES=	mpeg3cat mpeg3dump mpeg3peek mpeg3toc
+INC_FILES=	libmpeg3.h mpeg3private.h mpeg3protos.h
+LIB_FILES=	libmpeg3.a
+
+CPPFLAGS=	-I. -I${LOCALBASE}/include/a52dec ${PTHREAD_CFLAGS}
+LDFLAGS=	-lm -L${LOCALBASE}/lib -la52 ${PTHREAD_LIBS}
+
+NASM?=		${LOCALBASE}/bin/nasm
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MMX) && (${ARCH} == "i386")
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+MAKE_ARGS+=	USE_MMX=1 NASM="${NASM}"
+CFLAGS+=	-DHAVE_MMX
+.else
+MAKE_ARGS+=	USE_MMX=0
+.endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|^OBJDIR|#OBJDIR|g ; \
+		 s|^A52DIR|#A52DIR|g ; \
+		 s|^include|#include|g' ${WRKSRC}/Makefile
 	@${FIND} ${WRKSRC} -name '*.[ch]' -print0 \
 		| ${XARGS} -0 ${REINPLACE_CMD} -e 's|stdint\.h|sys/types.h|g'
 
 do-install:
-	${INSTALL_PROGRAM} ${MPEG3_UTILS:S,^,${WRKSRC}/${ARCH}/,} ${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/${ARCH}/libmpeg3.a ${PREFIX}/lib/
-	${INSTALL_DATA} ${WRKSRC}/libmpeg3.h ${WRKSRC}/mpeg3private.h \
-		${WRKSRC}/mpeg3protos.h ${PREFIX}/include/
-.ifndef (NOPORTDOCS)
-	${INSTALL} -d ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/index.html ${DOCSDIR}/
+.for file in ${BIN_FILES}
+	cd ${WRKSRC}/obj && ${INSTALL_PROGRAM} ${file} ${PREFIX}/bin
+.endfor
+.for file in ${INC_FILES}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${file} ${PREFIX}/include
+.endfor
+.for file in ${LIB_FILES}
+	cd ${WRKSRC}/obj && ${INSTALL_DATA} ${file} ${PREFIX}/lib
+.endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	cd ${WRKSRC}/docs && ${INSTALL_DATA} ${file} ${DOCSDIR}
+.endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
