@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	data
-PORTVERSION=	140
+PORTVERSION=	180
 CATEGORIES=	games
-MASTER_SITES=	http://el.beplacid.net/downloads/
+MASTER_SITES=	http://el.beplacid.net/downloads/ \
+		http://www.eternal-lands.com/ \
+		http://el.rauchs-home.de/client/
 PKGNAMEPREFIX=	el-
 DISTFILES=	${EL_DATA}
 DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
@@ -22,8 +24,8 @@ USE_DOS2UNIX=	*.ini *.txt
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX:S/-//}
 PLIST=		${WRKDIR}/pkg-plist
-WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX:S/-//}_install
-EL_DATA=	${PKGNAMEPREFIX:S/-/_/}linux_install_${PORTVERSION}.zip
+WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX:S/-/_/}linux
+EL_DATA=	${PKGNAMEPREFIX:S/-/_/}linux_${PORTVERSION}_install.zip
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
@@ -38,6 +40,8 @@ post-extract:
 		${XARGS} -0 ${RM} -R
 	@${FIND} ${WRKSRC} -type f -name "*.bin" -print0 | \
 		${XARGS} -0 ${RM} -R
+	@${RM} -R ${WRKSRC}/custom ${WRKSRC}/textures/eye_candy/textures
+
 
 pre-install:
 	@${RM} -f ${PLIST}

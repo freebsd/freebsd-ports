@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	el
-PORTVERSION=	140
-PORTREVISION=	2
+PORTVERSION=	180
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL:S,$,acm/${PORTNAME}/,}
@@ -31,7 +30,7 @@ USE_SDL=	sdl net image
 USE_GL=		yes
 
 ALL_TARGET=	el.x86
-MAKEFILE=	Makefile.bsdg
+MAKEFILE=	Makefile.linux
 PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
@@ -43,10 +42,6 @@ CFLAGS+=	-DX86_64
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
-
-post-extract:
-	@cd ${WRKSRC} && \
-		${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e 's|malloc.h|stdlib.h|g' "{}" \;
 
 pre-install:
 	@${ECHO} "#!/bin/sh" > ${WRKDIR}/el
