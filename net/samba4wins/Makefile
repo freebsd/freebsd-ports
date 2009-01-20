@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		samba4wins
-PORTVERSION=		1.0.6
-PORTREVISION=		1
+PORTVERSION=		1.0.7
 CATEGORIES=		net
 MASTER_SITES=		http://ftp.sernet.de/pub/samba4WINS/debian/pool/
 DISTNAME=		${PORTNAME}_${PORTVERSION}-1
@@ -55,6 +54,8 @@ SUB_LIST+=		S4W_RUNDIR=${S4W_RUNDIR}
 PLIST_SUB+=		S4W_LOGDIR=${S4W_LOGDIR} \
 			S4W_LOCKDIR=${S4W_LOCKDIR}
 
+INSTALL_TARGET=		showlayout installbin installdat installmisc installlib installpc
+
 post-build:
 			@for f in ${WRKSRC}/scripting/bin/*; do \
 			    ${REINPLACE_CMD} -i '' -e 's|smbscript|${PREFIX}/bin/smbscript4|' \
@@ -67,18 +68,8 @@ post-install:
 .if !defined(NOPORTDOCS)
 			@${MKDIR} ${DOCSDIR}
 .	for d in HOWTO.txt NEWS.txt README.txt TODO.txt
-			${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/debian/${PORTNAME}-${PORTVERSION}-${d} ${DOCSDIR}/${d}
+			${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/${PORTNAME}-${d} ${DOCSDIR}/${d}
 .	endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not configure on FreeBSD 6.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

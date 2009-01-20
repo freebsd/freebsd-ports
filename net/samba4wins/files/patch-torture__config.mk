@@ -1,5 +1,5 @@
---- torture/config.mk.orig	Mon Aug 28 23:34:14 2006
-+++ torture/config.mk	Mon Aug 28 23:34:27 2006
+--- ./torture/config.mk.orig	2009-01-14 08:31:07.000000000 +0000
++++ ./torture/config.mk	2009-01-19 02:13:34.000000000 +0000
 @@ -198,7 +198,7 @@
  
  #################################
