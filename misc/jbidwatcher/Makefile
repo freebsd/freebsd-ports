@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	jbidwatcher
-DISTVERSION=	2.0beta10
+DISTVERSION=	2.0beta11
 CATEGORIES=	misc java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.jbidwatcher.com/rdl/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.jbidwatcher.com/rdl/ \
+		SF
 DISTNAME=	JBidwatcher-${DISTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
