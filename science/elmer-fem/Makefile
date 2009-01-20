@@ -64,7 +64,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
 
-CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FCFLAGS="${FCFLAGS}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS+=	--with-umfpack="-lumfpack_elmer" \
 			--with-blas="${BLAS}" \
 			--with-lapack="${LAPACK}" \
