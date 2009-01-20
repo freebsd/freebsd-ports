@@ -9,7 +9,8 @@
 PORTNAME=	gnucap
 PORTVERSION=	2008.06.08
 CATEGORIES=	cad
-MASTER_SITES=	http://www.gnucap.org/devel/
+MASTER_SITES=	http://www.gnucap.org/devel/ \
+		http://www.gnucap.org/devel/archive/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	stas@FreeBSD.org
