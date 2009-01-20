@@ -28,7 +28,6 @@ USE_GMAKE=	yes
 ALL_TARGET=
 
 USE_FORTRAN=	yes
-CONFIGURE_ENV+=	FC=${FC} F77=${FC} FCFLAGS=${FCFLAGS}
 
 .include <bsd.port.pre.mk>
 

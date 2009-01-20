@@ -40,7 +40,6 @@ post-patch:
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:262
-CONFIGURE_ENV+=	FC=${FC} F77=${FC}
 ALL_TARGET=
 
 PLIST_FILES=	include/huti_defs.h include/huti_fdefs.h lib/libhuti.a

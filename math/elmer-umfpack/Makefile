@@ -18,7 +18,6 @@ COMMENT=	UMFPACK library used by ELMER FEM package
 
 USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	FC=${FC} F77=${FC}
 ALL_TARGET=
 
 # This should be looked up by autoconf
