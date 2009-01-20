@@ -6,36 +6,31 @@
 #
 
 PORTNAME=	fonttools
-PORTVERSION=	2.0b1
+PORTVERSION=	2.2
 CATEGORIES=	print python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	fonttools
+MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	fonttools-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source library for manipulating fonts, written in Python
 
-BUILD_DEPENDS=	xmlproc_val:${PORTSDIR}/textproc/py-xml \
-		${PYNUMERIC}
-RUN_DEPENDS=	xmlproc_val:${PORTSDIR}/textproc/py-xml \
-		${PYNUMERIC}
-
-WRKSRC=		${WRKDIR}/fonttools
+BUILD_DEPENDS=	${PYNUMPY} ${PYXML}
+RUN_DEPENDS=	${PYNUMPY} ${PYXML}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_EGGINFODIR=	${PYTHON_SITELIBDIR}/FontTools
-PYDISTUTILS_PKGNAME=	FontTools
-PYDISTUTILS_PKGVERSION=	1.0
 
-DOCDIR=		${PREFIX}/share/doc/py-fonttools
+MAN1=		ttx.1
+
+DOCSDIR=	${PREFIX}/share/doc/py-fonttools
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/Doc/* ${DOCDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Doc/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Doc/*.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
