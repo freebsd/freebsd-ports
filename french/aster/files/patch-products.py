@@ -1,6 +1,6 @@
---- products.py.orig	2008-12-23 18:01:01.000000000 +0100
-+++ products.py	2009-01-04 19:56:33.000000000 +0100
-@@ -931,16 +931,19 @@
+--- products.py.orig	2009-01-16 15:50:07.000000000 +0100
++++ products.py	2009-01-19 22:34:19.000000000 +0100
+@@ -934,16 +934,19 @@
             'HOME_PYTHON', 'PYTHON_EXE', 'PYTHONLIB', 'PYMODULES_PREFIX',
             'HOME_MUMPS', 'HOME_ZMAT', 'HOME_MPI', 'INCLUDE_MUMPS',
             'HOME_MED', 'HOME_HDF', 'HOME_CRPCRS',
@@ -24,7 +24,7 @@
             'NOBUILD', ],
     )
     cfg['ENV_SH']   = cfg.get('ENV_SH', '')
-@@ -975,6 +978,19 @@
+@@ -978,6 +981,19 @@
        opt['FFLAGS']     = '-O2'
        zmat_platform='Linux'
        mpilibs.extend(['mpich'])
@@ -44,7 +44,7 @@
     elif cfg['IFDEF'] == 'LINUX64':
        opt['SYSLIB']     = '-Wl,--allow-multiple-definition -Wl,--export-dynamic -lieee -ldl -lutil -lm'
        opt['LDFLAGS']    = '-v'
-@@ -1056,12 +1072,15 @@
+@@ -1059,12 +1075,15 @@
     # ----- MUMPS
     if cfg['HOME_MUMPS'] != '':
        cfg['DEFINED'] += ' _HAVE_MUMPS'
@@ -66,16 +66,7 @@
        opt['F90INCLUDE'] += ' -I%s' % os.path.join(cfg['ASTER_ROOT'],cfg['ASTER_VERSION'],'bibf90',cfg['INCLUDE_MUMPS'])
        if cfg['HOME_MPI'] != '':
           cfg['DEFINED'] += ' _USE_MPI_MUMPS'
-@@ -1102,7 +1121,7 @@
-       ftools.find_and_set(cfg, 'FINCLUDE', 'mpif.h',
-          cfg['HOME_MPI'],
-          typ='inc', err=False, append=True)
--      opt['DEFINED'] +=' _USE_MPI _USE_MPI_FETI'
-+      cfg['DEFINED'] +=' _USE_MPI _USE_MPI_FETI'
- 
-    else:
-       opt['MPILIB']=''
-@@ -1117,7 +1136,7 @@
+@@ -1120,7 +1139,7 @@
              cfg['HOME_SCOTCH'],
              err=True, append=True)
           if lib == 'common':
