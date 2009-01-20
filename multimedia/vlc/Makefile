@@ -9,20 +9,18 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.6i
-PORTREVISION=	3
-PORTEPOCH=	2
+DISTVERSION=	0.9.8a
+PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
-		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${DISTVERSION}/ \
-		ftp://ftp.crans.org/pub/videolan/vlc/${DISTVERSION}/ \
-		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${DISTVERSION}/
+MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
+		http://ftp.snt.utwente.nl/pub/software/videolan/${PORTNAME}/${DISTVERSION}/ \
+		ftp://ftp.crans.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
+LIB_DEPENDS=	tar.0:${PORTSDIR}/devel/libtar \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 
@@ -31,35 +29,34 @@ OPTIONS+=	AALIB "Aalib Console Graphics Support" Off
 OPTIONS+=	AVAHI "Avahi (Rendezvous/Bonjour (R) ) networking" On
 OPTIONS+=	CACA "Libcaca Console Graphics Support" Off
 OPTIONS+=	ARTS "Enable arts sound support" Off
-OPTIONS+=	DAAP "Connect to iTunes(R) music shares" On
 OPTIONS+=	DEBUG "Enable debuging support" Off
 OPTIONS+=	DTS "DTS decoder support, many DVDs use this" On
 OPTIONS+=	ESOUND "Esound Support" Off
 OPTIONS+=	FAAC "Faac audio encoder (mp4/aac) support" Off
-OPTIONS+=	FAAD "Faad audio decoder (mp4/aac) support" Off
-OPTIONS+=	FLAC "Flac audio codec support" Off
+OPTIONS+=	FAAD "Faad audio decoder (mp4/aac) support" On
+OPTIONS+=	FLAC "Flac audio codec support" On
 OPTIONS+=	HTTPD "Streaming media control via http" On
 OPTIONS+=	LIVEMEDIA "Support for rstp/rtp/sdp protocols" On
+OPTIONS+=	LUA "Enable lua scripting" Off
 OPTIONS+=	MAD "Mad mp3 audio decoder support" On
 OPTIONS+=	MATROSKA "Matroska Container Format support" On
 OPTIONS+=	MPEG2 "Mpeg-2 audio/video decoder Support" On
 OPTIONS+=	NCURSES "Enable ncurses (console) interface" Off
 OPTIONS+=	OGG "Ogg audio decoder support" On
+OPTIONS+=	QT4 "QT4 Interface" On
 OPTIONS+=	REALAUDIO "Real audio(R) support" On
 OPTIONS+=	SAMBA "SAMBA Access module" On
 OPTIONS+=	SDL "SDL video output" On
 OPTIONS+=	SVG "SVG graphics support" Off
 OPTIONS+=	SVGALIB "SVGALIB video output" Off
 OPTIONS+=	SHOUT "Shout2 support" Off
-OPTIONS+=	SKINS "Enable Winamp 2.x skinned interface" Off
+OPTIONS+=	SKINS "Enable winamp skins interface (requires QT4)" Off
 OPTIONS+=	SPEEX "Speex voice codec support" On
-OPTIONS+=	THEORA "OGG/Vorbis video codec support" Off
-OPTIONS+=	TWOLAME "Twolame mpeg2 audio encoder support" Off
+OPTIONS+=	THEORA "OGG/Vorbis video codec support" On
+OPTIONS+=	TWOLAME "Twolame mpeg2 audio encoder support" On
 OPTIONS+=	VORBIS "Vorbis support" On
 OPTIONS+=	WIN32_CODECS "win32 multimedia DLL's" Off
 OPTIONS+=	X264 "Enable H.264/AVC codec support" On
-
-CONFLICTS=	vlc-devel-[0-9]*
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -79,14 +76,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${FAKEDIR}/include -I${WRKSRC}/include ${CPPFLAGS} -I
 		LDFLAGS="${LDFLAGS} -L${FAKEDIR}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lc" \
 		LIBS="-lc"
 
-CONFIGURE_ARGS+=	--enable-ffmpeg \
-			--with-ffmpeg=${LOCALBASE} \
-			--with-libiconv-prefix=${LOCALBASE} \
-			--with-libintl-prefix=${LOCALBASE} \
-			--with-ffmpeg-zlib \
-			--disable-gnome \
-			--disable-gtk \
-			--without-libintl-prefix \
+CONFIGURE_ARGS+=	--enable-vlc \
+			--enable-avcodec \
+			--enable-avformat \
+			--enable-postproc \
 			--without-dv-raw1394 \
 			--disable-dv
 
@@ -154,10 +147,23 @@ DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
 DEFAULT_CDROM_DEVICE=/dev/acd0
 .endif
 
-.if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
-LIB_DEPENDS+=	tar.0:${PORTSDIR}/devel/libtar
+.if !defined(WITHOUT_QT4)
+USE_QT_VER+=	4
+QT_COMPONENTS+=	gui corelib moc rcc uic
+CONFIGURE_ARGS+=--enable-qt4
+.else
+CONFIGURE_ARGS+=--disable-qt4
+.endif
+
+.if !defined(WITHOUT_LIBNOTIFY)
+LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
+CONFIGURE_ARGS+=--enable-notify
+.else
+CONFIGURE_ARGS+=--disable-notify
+.endif
+
+.if defined(WITH_SKINS) && !defined(WITHOUT_SKINS) && !defined(WITHOUT_QT4)
 CONFIGURE_ARGS+=--enable-skins2
-.undef WITHOUT_WXGTK
 .else
 CONFIGURE_ARGS+=--disable-skins2
 .endif
@@ -169,12 +175,39 @@ CONFIGURE_ARGS+=--enable-loader
 CONFIGURE_ARGS+=--disable-loader
 .endif
 
-.if !defined(WITHOUT_WXGTK)
-USE_WX=		2.6
-WX_UNICODE=	yes
-CONFIGURE_ARGS+=--enable-wxwidgets
+.if defined(WITH_JACK) && !defined(WITHOUT_JACK)
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+CONFIGURE_ARGS+=--enable-jack
 .else
-CONFIGURE_ARGS+=--disable-wxwidgets
+CONFIGURE_ARGS+=--disable-jack
+.endif
+
+.if defined(WITH_REMOTE_OSD)
+LIB_DEPENDS+=	gcrypt.16:${PORTSDIR}/security/libgcrypt
+CONFIGURE_ARGS+=--enable-remoteosd
+.else
+CONFIGURE_ARGS+=--disable-remoteosd
+.endif
+
+.if defined(WITH_PULSEAUDIO) && !defined(WITHOUT_PULSEAUDIO)
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+CONFIGURE_ARGS+=--enable-pulse
+.else
+CONFIGURE_ARGS+=--disable-pulse
+.endif
+
+.if defined(WITH_FLUIDSYNTH) && !defined(WITHOUT_FLUIDSYNTH)
+LIB_DEPENDS+=	fluidsynth.2:${PORTSDIR}/audio/fluidsynth
+CONFIGURE_ARGS+=--enable-fluidsynth
+.else
+CONFIGURE_ARGS+=--disable-fluidsynth
+.endif
+
+.if !defined(WITHOUT_ZVBI)
+LIB_DEPENDS+=	zvbi.13:${PORTSDIR}/devel/libzvbi
+CONFIGURE_ARGS+=--enable-zvbi
+.else
+CONFIGURE_ARGS+=--disable-zvbi
 .endif
 
 .if !defined(WITHOUT_HAL)
@@ -290,6 +323,13 @@ CPPFLAGS+=	-I${LOCALBASE}/include/dirac
 CONFIGURE_ARGS+=--disable-dirac
 .endif
 
+.if defined(WITH_SCHROEDINGER) && !defined(WITHOUT_SCHROEDINGER)
+LIB_DEPENDS+=	schroedinger-1.0.1:${PORTSDIR}/multimedia/schroedinger
+CONFIGURE_ARGS+=--enable-schroedinger
+.else
+CONFIGURE_ARGS+=--disable-schroedinger
+.endif
+
 .if !defined(WITHOUT_X264)
 CONFIGURE_ARGS+=--enable-x264
 LIB_DEPENDS+=	x264.50:${PORTSDIR}/multimedia/x264
@@ -297,30 +337,30 @@ LIB_DEPENDS+=	x264.50:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=--disable-x264
 .endif
 
+.if (defined(WITH_LUA) || exists(${LOCALBASE}/lib/lua51/liblua.a)) && !defined(WITHOUT_LUA)
+USE_LUA=5.1+
+WANT_LUA_VER=5.1
+CONFIGURE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua"
+CONFIGURE_ARGS+=--enable-lua
+.else
+CONFIGURE_ARGS+=--disable-lua
+.endif
+
 .if (defined(WITH_CACA) || exists(${LOCALBASE}/lib/libcaca.a)) && !defined(WITHOUT_CACA)
 .if !defined(WITHOUT_AALIB)
 WITH_AALIB=	yes
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcaca.a:${PORTSDIR}/graphics/libcaca
-RUN_DEPENDS+=	${LOCALBASE}/lib/libcaca.a:${PORTSDIR}/graphics/libcaca
-
+LIB_DEPENDS+=	caca.0:${PORTSDIR}/graphics/libcaca
 CONFIGURE_ARGS+=--enable-caca
 .endif
 .else
 CONFIGURE_ARGS+=--disable-caca
 .endif
 
-.if !defined(WITHOUT_DAAP)
-LIB_DEPENDS+=	opendaap.0:${PORTSDIR}/devel/libopendaap
-CONFIGURE_ARGS+=--enable-daap
-.else
-CONFIGURE_ARGS+=--disable-daap
-.endif
-
 .if !defined(WITHOUT_DTS)
 LIB_DEPENDS+=	dca.0:${PORTSDIR}/multimedia/libdca
-CONFIGURE_ARGS+=--enable-dts
+CONFIGURE_ARGS+=--enable-dca
 .else
-CONFIGURE_ARGS+=--disable-dts
+CONFIGURE_ARGS+=--disable-dca
 .endif
 
 .if defined(WITHOUT_HTTPD)
@@ -349,15 +389,14 @@ CONFIGURE_ARGS+=--disable-a52
 .endif
 
 .if defined(WITH_VLC_MOZILLA_PLUGIN) && !defined(WITHOUT_VLC_MOZILLA_PLUGIN)
-USE_GECKO=	xulrunner firefox mozilla seamonkey nvu
+USE_GECKO=	firefox mozilla seamonkey nvu
+USE_WEBPLUGINS=	gecko*
+WEBPLUGINS_FILES=libvlcplugin.so
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 CONFIGURE_ENV+=	MOZILLA_CONFIG="${GECKO_CONFIG}" \
 		XPIDL="${XPIDL}" \
 		XPIDL_INCL="${XPIDL_INCL}"
 CONFIGURE_ARGS+=--enable-mozilla
-
-USE_WEBPLUGINS=	gecko*
-WEBPLUGINS_FILES=libvlcplugin.so
-.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 .endif
 
 .if !defined(WITHOUT_MPEG2)
@@ -390,6 +429,13 @@ CONFIGURE_ARGS+=--enable-live555 \
 		--with-live555-tree=${LOCALBASE}/live
 .else
 CONFIGURE_ARGS+=--disable-live555
+.endif
+
+.if !defined(WITHOUT_TAGLIB)
+LIB_DEPENDS+=	tag.6:${PORTSDIR}/audio/taglib
+CONFIGURE_ARGS+=--enable-taglib
+.else
+CONFIGURE_ARGS+=--disable-taglib
 .endif
 
 .if !defined(WITHOUT_MAD)
