@@ -7,7 +7,7 @@
 
 PORTNAME=	dcl
 PORTVERSION=	5.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.gfd-dennou.org/arch/dcl/ \
 		http://dennou-h.gfd-dennou.org/arch/dcl/ \
@@ -17,13 +17,9 @@ MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	Scientific graphic library for geoscience
 
 USE_XORG=	x11 xext
+USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-gtk2 --disable-gtk --with-x
-
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-CONFIGURE_ENV+=	FC="${FC}" FFLAGS="${FFLAGS}"
 
 DOCFILES=	CHECK CREDITS HISTORY README README_clrmap README_gt2dlib \
 		README_itr51 README_pslib README_umfmap
