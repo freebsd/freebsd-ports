@@ -35,10 +35,6 @@ PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64
-CFLAGS+=	-DX86_64
-.endif
-
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
