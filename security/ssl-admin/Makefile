@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ssl-admin
-DISTVERSION=	1.0
+DISTVERSION=	1.0.1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/ 
+MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/ssl-admin/
 
 MAINTAINER=	ecrist@secure-computing.net
-COMMENT=	OpenSSL certificate manager with OpenVPN support.
+COMMENT=	OpenSSL certificate manager with OpenVPN support
 
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/zip \
 		zip:${PORTSDIR}/archivers/unzip
@@ -20,8 +20,6 @@ USE_PERL5_RUN=	YES
 MAN1=		ssl-admin.1
 MAN5=		ssl-admin.conf.5
 SUB_FILES=	pkg-message
-
-NO_PACKAGE=	This is a perl script - there is no reason to package it.
 
 post-install:
 	${CAT} ${PKGMESSAGE}
