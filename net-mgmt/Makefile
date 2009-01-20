@@ -47,6 +47,7 @@
     SUBDIR += ciscoconf
     SUBDIR += clog
     SUBDIR += collectd
+    SUBDIR += coovachilli
     SUBDIR += confregdecode
     SUBDIR += cowpatty
     SUBDIR += cricket

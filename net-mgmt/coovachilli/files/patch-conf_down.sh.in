@@ -1,0 +1,11 @@
+--- conf/down.sh.in.orig	2009-01-10 18:04:37.000000000 +0000
++++ conf/down.sh.in	2009-01-10 18:04:52.000000000 +0000
+@@ -5,8 +5,5 @@
+ 
+ . @ETCCHILLI@/functions
+ 
+-[ -e "@VARRUN@/chilli.iptables" ] && sh @VARRUN@/chilli.iptables 2>/dev/null
+-rm -f @VARRUN@/chilli.iptables 2>/dev/null
+-
+ # site specific stuff optional
+ [ -e @ETCCHILLI@/ipdown.sh ] && . @ETCCHILLI@/ipdown.sh

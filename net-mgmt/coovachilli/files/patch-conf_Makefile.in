@@ -1,0 +1,102 @@
+--- conf/Makefile.in.orig	2008-06-08 05:49:09.000000000 +0100
++++ conf/Makefile.in	2008-06-18 01:17:58.000000000 +0100
+@@ -46,11 +46,10 @@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+-am__installdirs = "$(DESTDIR)$(chillidir)" "$(DESTDIR)$(initdir)" \
+-	"$(DESTDIR)$(chillidir)" "$(DESTDIR)$(sysconfdir)"
++am__installdirs = "$(DESTDIR)$(chillidir)" "$(DESTDIR)$(chillidir)" \
++	"$(DESTDIR)$(sysconfdir)"
+ chilliSCRIPT_INSTALL = $(INSTALL_SCRIPT)
+-initSCRIPT_INSTALL = $(INSTALL_SCRIPT)
+-SCRIPTS = $(chilli_SCRIPTS) $(init_SCRIPTS)
++SCRIPTS = $(chilli_SCRIPTS)
+ SOURCES =
+ DIST_SOURCES =
+ am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
+@@ -163,14 +162,11 @@
+ chillidir = $(sysconfdir)/chilli
+ chilli_SCRIPTS = functions up.sh down.sh
+ chilli_DATA = defaults 
+-initdir = $(sysconfdir)/init.d
+-init_SCRIPTS = chilli
+-EXTRA_DIST = $(init_SCRIPTS:=.in) \
++EXTRA_DIST = \
+ $(chilli_SCRIPTS:=.in) chilli.conf.in defaults.in
+ 
+ edit = sed \
+ 	-e 's,@SBINDIR\@,$(sbindir),g' \
+-	-e 's,@INITDIR\@,$(initrddir),g' \
+ 	-e 's,@VARRUN\@,$(localstatedir)/run,g' \
+ 	-e 's,@ETCCHILLI\@,$(sysconfdir)/chilli,g' \
+ 	-e 's,@SYSCONFDIR\@,$(sysconfdir),g' \
+@@ -227,25 +223,6 @@
+ 	  echo " rm -f '$(DESTDIR)$(chillidir)/$$f'"; \
+ 	  rm -f "$(DESTDIR)$(chillidir)/$$f"; \
+ 	done
+-install-initSCRIPTS: $(init_SCRIPTS)
+-	@$(NORMAL_INSTALL)
+-	test -z "$(initdir)" || $(mkdir_p) "$(DESTDIR)$(initdir)"
+-	@list='$(init_SCRIPTS)'; for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  if test -f $$d$$p; then \
+-	    f=`echo "$$p" | sed 's|^.*/||;$(transform)'`; \
+-	    echo " $(initSCRIPT_INSTALL) '$$d$$p' '$(DESTDIR)$(initdir)/$$f'"; \
+-	    $(initSCRIPT_INSTALL) "$$d$$p" "$(DESTDIR)$(initdir)/$$f"; \
+-	  else :; fi; \
+-	done
+-
+-uninstall-initSCRIPTS:
+-	@$(NORMAL_UNINSTALL)
+-	@list='$(init_SCRIPTS)'; for p in $$list; do \
+-	  f=`echo "$$p" | sed 's|^.*/||;$(transform)'`; \
+-	  echo " rm -f '$(DESTDIR)$(initdir)/$$f'"; \
+-	  rm -f "$(DESTDIR)$(initdir)/$$f"; \
+-	done
+ 
+ mostlyclean-libtool:
+ 	-rm -f *.lo
+@@ -328,7 +305,7 @@
+ check: check-am
+ all-am: Makefile $(SCRIPTS) $(DATA)
+ installdirs:
+-	for dir in "$(DESTDIR)$(chillidir)" "$(DESTDIR)$(initdir)" "$(DESTDIR)$(chillidir)" "$(DESTDIR)$(sysconfdir)"; do \
++	for dir in "$(DESTDIR)$(chillidir)" "$(DESTDIR)$(chillidir)" "$(DESTDIR)$(sysconfdir)"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
+ install: install-am
+@@ -373,8 +350,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-chilliDATA install-chilliSCRIPTS \
+-	install-initSCRIPTS
++install-data-am: install-chilliDATA install-chilliSCRIPTS
+ 
+ install-exec-am: install-sysconfDATA
+ 
+@@ -401,20 +377,20 @@
+ ps-am:
+ 
+ uninstall-am: uninstall-chilliDATA uninstall-chilliSCRIPTS \
+-	uninstall-info-am uninstall-initSCRIPTS uninstall-sysconfDATA
++	uninstall-info-am uninstall-sysconfDATA
+ 
+ .PHONY: all all-am check check-am clean clean-generic clean-libtool \
+ 	distclean distclean-generic distclean-libtool distdir dvi \
+ 	dvi-am html html-am info info-am install install-am \
+ 	install-chilliDATA install-chilliSCRIPTS install-data \
+ 	install-data-am install-exec install-exec-am install-info \
+-	install-info-am install-initSCRIPTS install-man install-strip \
++	install-info-am install-man install-strip \
+ 	install-sysconfDATA installcheck installcheck-am installdirs \
+ 	maintainer-clean maintainer-clean-generic mostlyclean \
+ 	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
+ 	uninstall uninstall-am uninstall-chilliDATA \
+ 	uninstall-chilliSCRIPTS uninstall-info-am \
+-	uninstall-initSCRIPTS uninstall-sysconfDATA
++	uninstall-sysconfDATA
+ 
+ 
+ functions: Makefile functions.in

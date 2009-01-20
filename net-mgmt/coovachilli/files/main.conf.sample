@@ -1,0 +1,29 @@
+cmdsocket       /var/run/chilli.sock
+pidfile         /var/run/chilli.pid
+net		10.1.0.0/255.255.255.0
+uamlisten	10.1.0.1
+uamport         3990
+dhcpif		em1
+adminuser       chillispot
+adminpasswd     chillispot
+uamallowed	coova.org,coova.org,rad01.coova.org,coova.org
+uamanydns
+
+domain lan
+dns1 208.67.222.222
+uamhomepage http://10.1.0.1:3990/www/coova.html
+wisprlogin https://coova.org/app/uam/auth
+wwwdir /usr/local/www/chilli 
+wwwbin /etc/chilli/wwwsh
+locationname "My HotSpot"
+radiuslocationname My_HotSpot
+radiuslocationid isocc=,cc=,ac=,network=Coova,
+radiusserver1	rad01.coova.org
+radiusserver2	rad01.coova.org
+radiussecret	coova-anonymous
+radiusauthport  1812
+radiusacctport  1813
+uamserver	https://coova.org/app/uam/chilli
+radiusnasid	nas01
+
+papalwaysok
