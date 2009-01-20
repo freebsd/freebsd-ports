@@ -7,6 +7,7 @@
 %%APP_NAME%%/lib/jaxrpc-15.jar
 %%APP_NAME%%/lib/jaxws-api.jar
 %%APP_NAME%%/lib/jca-15.jar
+%%APP_NAME%%/lib/jsf-12.jar
 %%APP_NAME%%/lib/jms-11.jar
 %%APP_NAME%%/lib/jpa-15.jar
 %%APP_NAME%%/lib/jsdk-15.jar
