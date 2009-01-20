@@ -1,0 +1,3 @@
+Serializes and deserializes Path::Class objects as file:// URI.
+
+WWW: http://search.cpan.org/dist/Path-Class-URI/
