@@ -1,9 +1,14 @@
+include/irrlicht/CDynamicMeshBuffer.h
+include/irrlicht/CIndexBuffer.h
 include/irrlicht/CMeshBuffer.h
+include/irrlicht/CVertexBuffer.h
 include/irrlicht/ECullingTypes.h
 include/irrlicht/EDebugSceneTypes.h
 include/irrlicht/EDriverFeatures.h
 include/irrlicht/EDriverTypes.h
+include/irrlicht/EGUIAlignment.h
 include/irrlicht/EGUIElementTypes.h
+include/irrlicht/EHardwareBufferFlags.h
 include/irrlicht/EMaterialFlags.h
 include/irrlicht/EMaterialTypes.h
 include/irrlicht/EMeshWriterEnums.h
@@ -18,10 +23,12 @@ include/irrlicht/IAnimatedMeshSceneNode.h
 include/irrlicht/IAttributeExchangingObject.h
 include/irrlicht/IAttributes.h
 include/irrlicht/IBillboardSceneNode.h
+include/irrlicht/IBillboardTextSceneNode.h
 include/irrlicht/IBoneSceneNode.h
 include/irrlicht/ICameraSceneNode.h
 include/irrlicht/ICursorControl.h
 include/irrlicht/IDummyTransformationSceneNode.h
+include/irrlicht/IDynamicMeshBuffer.h
 include/irrlicht/IEventReceiver.h
 include/irrlicht/IFileList.h
 include/irrlicht/IFileSystem.h
@@ -48,11 +55,13 @@ include/irrlicht/IGUISpinBox.h
 include/irrlicht/IGUISpriteBank.h
 include/irrlicht/IGUIStaticText.h
 include/irrlicht/IGUITabControl.h
+include/irrlicht/IGUITable.h
 include/irrlicht/IGUIToolbar.h
 include/irrlicht/IGUIWindow.h
 include/irrlicht/IImage.h
 include/irrlicht/IImageLoader.h
 include/irrlicht/IImageWriter.h
+include/irrlicht/IIndexBuffer.h
 include/irrlicht/ILightSceneNode.h
 include/irrlicht/ILogger.h
 include/irrlicht/IMaterialRenderer.h
@@ -87,6 +96,8 @@ include/irrlicht/ISceneCollisionManager.h
 include/irrlicht/ISceneManager.h
 include/irrlicht/ISceneNode.h
 include/irrlicht/ISceneNodeAnimator.h
+include/irrlicht/ISceneNodeAnimatorCameraFPS.h
+include/irrlicht/ISceneNodeAnimatorCameraMaya.h
 include/irrlicht/ISceneNodeAnimatorCollisionResponse.h
 include/irrlicht/ISceneNodeAnimatorFactory.h
 include/irrlicht/ISceneNodeFactory.h
@@ -99,8 +110,10 @@ include/irrlicht/ITextSceneNode.h
 include/irrlicht/ITexture.h
 include/irrlicht/ITimer.h
 include/irrlicht/ITriangleSelector.h
+include/irrlicht/IVertexBuffer.h
 include/irrlicht/IVideoDriver.h
 include/irrlicht/IVideoModeList.h
+include/irrlicht/IVolumeLightSceneNode.h
 include/irrlicht/IWriteFile.h
 include/irrlicht/IXMLReader.h
 include/irrlicht/IXMLWriter.h
@@ -124,6 +137,7 @@ include/irrlicht/SParticle.h
 include/irrlicht/SSharedMeshBuffer.h
 include/irrlicht/SSkinMeshBuffer.h
 include/irrlicht/SceneParameters.h
+include/irrlicht/SVertexIndex.h
 include/irrlicht/SViewFrustum.h
 include/irrlicht/aabbox3d.h
 include/irrlicht/coreutil.h
@@ -203,6 +217,8 @@ lib/libIrrlicht.so.%%SHARED_LIB_VER%%
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/013shot.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/014shot.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/015shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/016shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/018shot.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/2ddemo.bmp
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/Faerie5.BMP
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/IrrlichtTheme.ogg
@@ -252,10 +268,15 @@ lib/libIrrlicht.so.%%SHARED_LIB_VER%%
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlichtlogoaligned.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlichtlogoalpha.tga
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlichtlogoalpha2.tga
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/lightFalloff.png
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/lucida.xml
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/lucida0.png
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/map-20kdm2.pk3
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/map-20kdm2.txt
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/ninja animation ranges.txt
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/ninja.b3d
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/nskinbl.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/nskinrd.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/open.png
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/opengl.frag
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/opengl.psh
@@ -276,6 +297,7 @@ lib/libIrrlicht.so.%%SHARED_LIB_VER%%
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/rockwall_height.bmp
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/room.3ds
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/rsptnback.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/skydome.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/smoke.bmp
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/sphere.3ds
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/spheremap.jpg
