@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	3.01
+PORTVERSION=	3.02
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://kitenet.net/~joey/debian/unstable/
@@ -77,6 +77,7 @@ post-patch:
 		-e 's|\(-install -d $$(DESTDIR)/etc/ikiwiki\)|#\1|' \
 		-e 's|\(-install -m 0644 wikilist\)|#\1|' \
 		-e 's|\(-install -m 0644 auto.setup\)|#\1|' \
+		-e 's|\(-install -m 0644 auto-blog.setup\)|#\1|' \
 		${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} -e \
 		"s|/usr/lib/cgi-bin/omega/omega|${LOCALBASE}/www/xapian-omega/cgi-bin/omega|g" \
@@ -89,6 +90,7 @@ post-patch:
 post-install:
 	${MKDIR} ${PREFIX}/etc/ikiwiki
 	${INSTALL_DATA} ${WRKSRC}/auto.setup ${PREFIX}/etc/ikiwiki
+	${INSTALL_DATA} ${WRKSRC}/auto-blog.setup ${PREFIX}/etc/ikiwiki
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${DOCSDIR}

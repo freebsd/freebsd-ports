@@ -132,6 +132,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/anonok.pm
 %%SITE_PERL%%/IkiWiki/Plugin/attachment.pm
 %%SITE_PERL%%/IkiWiki/Plugin/autoindex.pm
+%%SITE_PERL%%/IkiWiki/Plugin/blogspam.pm
 %%SITE_PERL%%/IkiWiki/Plugin/brokenlinks.pm
 %%SITE_PERL%%/IkiWiki/Plugin/bzr.pm
 %%SITE_PERL%%/IkiWiki/Plugin/calendar.pm
@@ -198,6 +199,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/relativedate.pm
 %%SITE_PERL%%/IkiWiki/Plugin/remove.pm
 %%SITE_PERL%%/IkiWiki/Plugin/rename.pm
+%%SITE_PERL%%/IkiWiki/Plugin/repolist.pm
 %%SITE_PERL%%/IkiWiki/Plugin/search.pm
 %%SITE_PERL%%/IkiWiki/Plugin/shortcut.pm
 %%SITE_PERL%%/IkiWiki/Plugin/sidebar.pm
@@ -231,6 +233,7 @@ bin/ikiwiki
 bin/ikiwiki-makerepo
 bin/ikiwiki-transition
 bin/ikiwiki-update-wikilist
+etc/ikiwiki/auto-blog.setup
 etc/ikiwiki/auto.setup
 lib/ikiwiki/plugins/proxy.py
 lib/ikiwiki/plugins/rst
