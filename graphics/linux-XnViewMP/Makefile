@@ -7,6 +7,7 @@
 
 PORTNAME=	XnViewMP
 PORTVERSION=	0.015
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp2.xnview.com/xnview/misc/
 PKGNAMEPREFIX=	linux-
@@ -15,8 +16,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	petr@petrovich.kiev.ua
 COMMENT=	XnView Multi Platform, graphics viewer and converer
-
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-glib2
 
 NO_CDROM=	For commercial use and distribution, it is necessary to register
 ONLY_FOR_ARCHS=	i386
