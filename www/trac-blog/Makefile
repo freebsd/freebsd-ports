@@ -20,6 +20,10 @@ RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		${PYTHON_SITELIBDIR}/TracTags-0.4.1-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-tags \
 		${PYTHON_SITELIBDIR}/TracWebAdmin-0.1.2dev-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-webadmin
 
+IGNORE=		Not supported anymore for trac > 0.10; use FullBlogPlugin instead
+DEPRECATED=	${IGNORE}
+EXPIRE_DATE=	2009-07-01
+
 WRKSRC=		${WRKDIR}/trac${PORTNAME}plugin
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	easy_install
