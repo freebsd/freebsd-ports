@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHPUnit
-PORTVERSION=	3.3.9
+PORTVERSION=	3.3.10
 CATEGORIES=	devel www pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 
@@ -466,7 +466,7 @@ TESTS=		Extensions/Database/DataSet/AllTests.php \
 		AllTests.php \
 		Regression/578.phpt \
 		Regression/Issue578Test.php \
-		config.xml.dist 
+		config.xml.dist
 SCRIPTFILES=	phpunit
 _EXAMPLESDIR=	PHPUnit/Samples
 _TESTSDIR=	PHPUnit/Tests
@@ -502,7 +502,7 @@ USE_PHP+=	tokenizer
 .endif
 
 .if defined(WITH_XDEBUG)
-RUN_DEPENDS+=	${PREFIX}/lib/php/${PHP_EXT_DIR}/xdebug.so:${PORTSDIR}/devel/php-xdebug
+RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xdebug.so:${PORTSDIR}/devel/php-xdebug
 .endif
 
 post-patch:
