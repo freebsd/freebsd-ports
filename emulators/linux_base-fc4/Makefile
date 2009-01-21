@@ -8,7 +8,7 @@
 
 PORTNAME=		fc
 PORTVERSION=		4
-PORTREVISION=		13
+PORTREVISION=		14
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
@@ -39,6 +39,7 @@ BIN_DISTFILES=	basesystem-8.0-5.noarch.rpm \
 		freetype-2.1.9-2.${LINUX_RPM_ARCH}.rpm \
 		gdbm-1.8.0-25.${LINUX_RPM_ARCH}.rpm \
 		glib-1.2.10-16.${LINUX_RPM_ARCH}.rpm \
+		glib2-2.6.6-1.${LINUX_RPM_ARCH}.rpm \
 		glibc-2.3.6-3.${LINUX_RPM_ARCH}.rpm \
 		glibc-common-2.3.6-3.${LINUX_RPM_ARCH}.rpm \
 		grep-2.5.1-48.2.${LINUX_RPM_ARCH}.rpm \
@@ -78,6 +79,7 @@ SRC_DISTFILES+=	acl-2.2.32-1.FC4.2.src.rpm \
 		gcc-4.0.2-8.fc4.src.rpm \
 		gdbm-1.8.0-25.src.rpm \
 		glib-1.2.10-16.src.rpm \
+		glib2-2.6.6-1.src.rpm \
 		glibc-2.3.6-3.src.rpm \
 		grep-2.5.1-48.2.src.rpm \
 		krb5-1.4.1-5.src.rpm \
@@ -96,9 +98,8 @@ ALWAYS_KEEP_DISTFILES=	yes
 .endif
 
 LATEST_LINK=		linux_base
-CONFLICTS=		linux_base-7* linux_base-deb* linux_base-gentoo* \
-			linux_base-rh-9* linux_base-suse-9* linux_base-8* \
-			linux_base-f8 linux_base-f7 linux_base-fc6 linux_locale*
+CONFLICTS=		linux_base-gentoo* linux_locale* \
+			linux_base-f8* linux_base-f7* linux_base-fc6*
 ONLY_FOR_ARCHS=		i386 amd64
 LINUX_RPM_ARCH=		i386
 USE_LINUX_PREFIX=	yes

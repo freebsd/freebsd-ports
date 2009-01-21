@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk2
 PORTVERSION=	2.6.10
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits linux
 DISTFILES=	${PORTNAME}-${PORTVERSION}-2.fc4.4.${LINUX_RPM_ARCH}.rpm \
 		${PORTNAME}-engines-2.6.3-2.${LINUX_RPM_ARCH}.rpm
@@ -16,12 +17,6 @@ COMMENT=	GTK+ library, version 2.X, Linux binary
 
 # these libraries are required by gtk-query-immodules-2.0 or
 # gdk-pixbuf-query-loaders
-.if !defined(OVERRIDE_LINUX_BASE_PORT) || \
-    (${OVERRIDE_LINUX_BASE_PORT} != "fc6" && \
-    ${OVERRIDE_LINUX_BASE_PORT} != "f7" && \
-    ${OVERRIDE_LINUX_BASE_PORT} != "f8")
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-glib2
-.endif
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libatk-1.0.so.0:${PORTSDIR}/accessibility/linux-atk \
 		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
 		${LINUXBASE}/usr/lib/libpng12.so.0:${PORTSDIR}/graphics/linux-png \

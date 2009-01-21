@@ -8,7 +8,7 @@
 PORTNAME=	mplayerplug-in
 PORTVERSION=	3.50
 DISTVERSIONSUFFIX=	-1.rh9.rf
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www multimedia
 MASTER_SITES=	CENKES http://apt.sw.be/packages/mplayerplug-in/ \
 		ftp://fr2.rpmfind.net/linux/dag/redhat/9/en/i386/dag/RPMS/
@@ -21,12 +21,6 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
 		${LINUXBASE}/usr/lib/libatk-1.0.so.0:${PORTSDIR}/accessibility/linux-atk \
 		${LINUXBASE}/usr/lib/libpangoxft-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango
-.if !defined(OVERRIDE_LINUX_BASE_PORT) || \
-	(${OVERRIDE_LINUX_BASE_PORT} != "fc6" && \
-	${OVERRIDE_LINUX_BASE_PORT} != "f7" && \
-	${OVERRIDE_LINUX_BASE_PORT} != "f8")
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libgobject-2.0.so.0:${PORTSDIR}/devel/linux-glib2
-.endif
 
 NO_BUILD=	yes
 USE_LINUX_RPM=	yes

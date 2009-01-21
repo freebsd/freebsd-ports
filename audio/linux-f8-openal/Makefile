@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	openal
+PORTREVISION=	1
 DISTVERSION=	0.0.9-0.6.20060204cvs.fc4
 CATEGORIES=	audio linux
 MASTER_SITE_SUBDIR=	../extras/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/
@@ -15,7 +16,6 @@ COMMENT=	A 3D positional spatialized sound library (Linux version)
 
 RUN_DEPENDS=	${LINUXBASE}/lib/libasound.so.2:${PORTSDIR}/audio/linux-alsa-lib \
 		${LINUXBASE}/usr/lib/libartsc.so.0:${PORTSDIR}/audio/linux-arts \
-		${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-glib2 \
 		${LINUXBASE}/usr/lib/libesd.so.0:${PORTSDIR}/audio/linux-esound \
 		${LINUXBASE}/usr/lib/libaudiofile.so.0:${PORTSDIR}/audio/linux-libaudiofile \
 		${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \

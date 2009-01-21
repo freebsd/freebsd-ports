@@ -7,7 +7,7 @@
 
 PORTNAME=	google-earth
 PORTVERSION=	4.3.7284.3916
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/current/
 DISTNAME=	GoogleEarthLinux
@@ -19,8 +19,7 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Explore, Search and Discover
 
 EXTRACT_DEPENDS=	unmakeself:${PORTSDIR}/archivers/unmakeself
-RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info \
-		${LINUXBASE}/usr/lib/libgthread-2.0.so.0:${PORTSDIR}/devel/linux-glib2
+RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 RESTRICTED=	Not sure about redistribution rights
 
