@@ -106,4 +106,8 @@ post-install:
 BROKEN=		Does not compile on sparc64
 .endif
 
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 700000
+BROKEN=		ihppimpl segfaults during build
+.endif
+
 .include <bsd.port.post.mk>
