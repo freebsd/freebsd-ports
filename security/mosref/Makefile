@@ -18,6 +18,12 @@ USE_GMAKE=	yes
 
 PORTDOCS=	ChangeLog TODO vm-implementation.tex vm-implementation.pdf
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 700000
+BROKEN=		segmentation fault during build
+.endif
+
 # The distfile has execute bits set on everything; fix.
 post-extract:
 	${FIND} ${WRKSRC} -type f -exec ${CHMOD} a-x {} ";"
@@ -34,4 +40,4 @@ post-install:
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} vm-implementation.tex vm-implementation.pdf ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
