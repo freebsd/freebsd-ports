@@ -749,7 +749,6 @@
     SUBDIR += lightning
     SUBDIR += lincvs
     SUBDIR += linux-allegro
-    SUBDIR += linux-glib2
     SUBDIR += linux-js
     SUBDIR += linux-kmod-compat
     SUBDIR += linux-libglade
