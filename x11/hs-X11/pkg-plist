@@ -1,31 +1,57 @@
+%%SUBDIR%%/Graphics/X11.hi
+%%SUBDIR%%/Graphics/X11/Types.hi
 %%SUBDIR%%/Graphics/X11/Xinerama.hi
-%%SUBDIR%%/Graphics/X11/Xlib/Extras.hi
-%%SUBDIR%%/include/XlibExtras.h
+%%SUBDIR%%/Graphics/X11/Xlib.hi
 %%SUBDIR%%/Graphics/X11/Xlib/Atom.hi
 %%SUBDIR%%/Graphics/X11/Xlib/Color.hi
 %%SUBDIR%%/Graphics/X11/Xlib/Context.hi
 %%SUBDIR%%/Graphics/X11/Xlib/Display.hi
 %%SUBDIR%%/Graphics/X11/Xlib/Event.hi
+%%SUBDIR%%/Graphics/X11/Xlib/Extras.hi
 %%SUBDIR%%/Graphics/X11/Xlib/Font.hi
+%%SUBDIR%%/Graphics/X11/Xlib/Image.hi
 %%SUBDIR%%/Graphics/X11/Xlib/Misc.hi
 %%SUBDIR%%/Graphics/X11/Xlib/Region.hi
 %%SUBDIR%%/Graphics/X11/Xlib/Screen.hi
 %%SUBDIR%%/Graphics/X11/Xlib/Types.hi
 %%SUBDIR%%/Graphics/X11/Xlib/Window.hi
-%%SUBDIR%%/Graphics/X11/Xlib/Image.hi
-%%SUBDIR%%/Graphics/X11/Types.hi
-%%SUBDIR%%/Graphics/X11/Xlib.hi
-%%SUBDIR%%/Graphics/X11.hi
-%%SUBDIR%%/libHSX11-%%PORTVERSION%%.a
 %%SUBDIR%%/HSX11-%%PORTVERSION%%.o
 %%SUBDIR%%/include/HsXlib.h
+%%SUBDIR%%/include/XlibExtras.h
+%%SUBDIR%%/libHSX11-%%PORTVERSION%%.a
 %%SUBDIR%%/%%PORTNAME%%-register.sh
-share/doc/X11-1.4.1/LICENSE
-@dirrm share/doc/X11-1.4.1
+%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11-Types.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11-Xinerama.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11-Xlib-Atom.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11-Xlib-Color.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11-Xlib-Context.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11-Xlib-Display.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11-Xlib-Event.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11-Xlib-Extras.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11-Xlib-Font.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11-Xlib-Image.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11-Xlib-Misc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11-Xlib-Region.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11-Xlib-Screen.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11-Xlib-Types.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11-Xlib-Window.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11-Xlib.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11.html
+%%PORTDOCS%%%%DOCSDIR%%/html/X11.haddock
+%%PORTDOCS%%%%DOCSDIR%%/html/doc-index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/haddock-util.js
+%%PORTDOCS%%%%DOCSDIR%%/html/haddock.css
+%%PORTDOCS%%%%DOCSDIR%%/html/haskell_icon.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/minus.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/plus.gif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
+@dirrmtry %%SUBDIR%%/include
 @dirrm %%SUBDIR%%/Graphics/X11/Xlib
 @dirrm %%SUBDIR%%/Graphics/X11
 @dirrmtry %%SUBDIR%%/Graphics
-@dirrmtry %%SUBDIR%%/include
 @exec /bin/sh %D/%%SUBDIR%%/%%PORTNAME%%-register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg unregister X11

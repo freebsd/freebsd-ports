@@ -6,7 +6,7 @@
 
 PORTNAME=	x11
 PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/X11/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -36,7 +36,12 @@ USE_XORG=	x11 xext sm
 # 'owned' by lang/ghc:
 CABALDIR=	${PREFIX}/lib/ghc-${GHC_VERSION}/cabal
 CABALCMD=	${LOCALBASE}/bin/runghc Setup.hs
+DOCSDIR=	${PREFIX}/share/doc/X11-${PORTVERSION}
 SUBDIR=		${PORTNAME}${PKGNAMESUFFIX}
+
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
+.endif
 
 do-configure:
 	cd ${WRKSRC} && ${CABALCMD} configure --ghc --prefix=${PREFIX} --libdir=${CABALDIR} \
@@ -45,6 +50,9 @@ do-configure:
 do-build:
 	cd ${WRKSRC} && ${CABALCMD} build \
 	 && ${CABALCMD} --gen-script register
+.if !defined(NOPORTDOCS)
+	cd ${WRKSRC} && ${CABALCMD} haddock
+.endif
 
 do-install:
 	cd ${WRKSRC} && ${CABALCMD} install \
