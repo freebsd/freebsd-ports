@@ -1,0 +1,11 @@
+--- Makefile.orig	2009-01-07 07:19:36.000000000 +0300
++++ Makefile	2009-01-19 12:16:19.000000000 +0300
+@@ -1,7 +1,6 @@
+ #!/bin/bash
+ 
+-CC = gcc
+-CFLAGS = `pkg-config --cflags --libs gtk+-2.0`
++CFLAGS += `pkg-config --cflags --libs gtk+-2.0`
+ 
+ default: compile
+ 
