@@ -8,6 +8,7 @@
 
 PORTNAME=	jags
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www-fis.iarc.fr/~martyn/software/jags/
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
@@ -33,14 +34,21 @@ CONFIGURE_ARGS=	--with-lapack=-llapack --with-blas=-lblas
 DIST_SUBDIR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS=-L${PREFIX}/lib
+CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib
 USE_FORTRAN=	yes
+USE_LDCONFIG=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+		${WRKSRC}/etc/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/jags_user_manual.pdf \
 		${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	( cd ${EXAMPLESDIR}; \
 	  ${PAX} -rzf ${DISTDIR}/${DIST_SUBDIR}/classic-bugs.tar.gz \
