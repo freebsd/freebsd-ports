@@ -7,7 +7,7 @@
 
 PORTNAME=	fem
 PORTVERSION=	5.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science tk
 MASTER_SITES=	SF/elmerfem
 PKGNAMEPREFIX=	elmer-
@@ -63,7 +63,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
-
+CONFIGURE_ENV+=	FCFLAGS="${FCFLAGS}"
 CONFIGURE_ARGS+=	--with-umfpack="-lumfpack_elmer" \
 			--with-blas="${BLAS}" \
 			--with-lapack="${LAPACK}" \
