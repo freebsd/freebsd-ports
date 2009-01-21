@@ -1,35 +1,35 @@
 $FreeBSD$
 
---- configure.orig	2004-03-12 08:24:26.000000000 -0800
-+++ configure	2009-01-19 23:01:33.000000000 -0800
-@@ -5123,7 +5123,7 @@
-   cat >conftest.$ac_ext <<_ACEOF
- #line 5124 "configure"
- #include "confdefs.h"
+--- configure.orig	2005-05-23 08:04:40.000000000 -0700
++++ configure	2009-01-20 21:01:00.000000000 -0800
+@@ -6835,7 +6835,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
 -#include <freq.h>
 +#include <X11/libsx/freq.h>
  _ACEOF
- if { (eval echo "$as_me:5128: \"$ac_cpp conftest.$ac_ext\"") >&5
-   (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
-@@ -7216,7 +7216,7 @@
+ rm -f conftest.$ac_objext
+ if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
+@@ -9866,7 +9866,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-ldf  $LIBS"
 +LIBS="-ldf -ljpeg -lsz -lz  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line 7221 "configure"
- #include "confdefs.h"
-@@ -7261,7 +7261,7 @@
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -9917,7 +9917,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lmfhdf  $LIBS"
 +LIBS="-lmfhdf -ldf -ljpeg -lsz -lz $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line 7266 "configure"
- #include "confdefs.h"
-@@ -9031,7 +9031,7 @@
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -11916,7 +11916,7 @@
       ga_lib_suffix='.a'
    fi
  
