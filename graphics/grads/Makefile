@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	grads
-PORTVERSION=	1.9b3
-PORTREVISION=	3
+PORTVERSION=	1.9b4
 CATEGORIES=	graphics science math
 MASTER_SITES=	ftp://grads.iges.org/grads/1.9/:src \
 		ftp://grads.iges.org/grads/:other
 DISTNAME=	${PORTNAME}-${PORTVERSION}
-DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}:src \
+DISTFILES=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX}:src \
 		example.tar.gz:other
-EXTRACT_ONLY=	${DISTNAME}-src${EXTRACT_SUFX}
+EXTRACT_ONLY=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	The Grid Analysis and Display System
