@@ -16,6 +16,7 @@ COMMENT=	C++ wrapper library for the multimedia library GStreamer
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 USE_GSTREAMER=	yes
 USE_GNOME=	pkgconfig gnomeprefix gnomehack
 GNU_CONFIGURE=	yes
