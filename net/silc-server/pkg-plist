@@ -5,11 +5,11 @@ etc/silc/silcd.conf.sample
 @unexec if cmp -s %D/etc/silc/silcalgs.conf.sample %D/etc/silc/silcalgs.conf; then rm -f %D/etc/silc/silcalgs.conf; fi
 etc/silc/silcalgs.conf.sample
 @exec if [ ! -f %D/etc/silc/silcalgs.conf ] ; then cp -p %D/%F %B/silcalgs.conf; fi
-%%PORTDOCS%%%%EXAMPLESDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/cell_backup.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/cell_router.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/cell_server1.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/cell_server2.conf
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cell_backup.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cell_router.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cell_server1.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cell_server2.conf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry etc/silc
 @dirrmtry var/log/silc

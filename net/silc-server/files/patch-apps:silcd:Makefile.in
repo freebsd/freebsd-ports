@@ -1,17 +1,6 @@
---- apps/silcd/Makefile.in.orig	2007-11-18 07:37:58.000000000 -0500
-+++ apps/silcd/Makefile.in	2008-01-03 00:30:42.000000000 -0500
-@@ -350,8 +350,8 @@
- 	     || test -f $$p1 \
- 	  ; then \
- 	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
--	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(sbinPROGRAMS_INSTALL) '$$p' '$(DESTDIR)$(sbindir)/$$f'"; \
--	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(sbinPROGRAMS_INSTALL) "$$p" "$(DESTDIR)$(sbindir)/$$f" || exit 1; \
-+	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(sbinPROGRAMS_INSTALL) '$$p' '$(DESTDIR)$(sbindir)/$$p'"; \
-+	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(sbinPROGRAMS_INSTALL) "$$p" "$(DESTDIR)$(sbindir)/$$p" || exit 1; \
- 	  else :; fi; \
- 	done
- 
-@@ -576,14 +576,11 @@
+--- ./apps/silcd/Makefile.in.orig	2009-01-20 19:16:34.173984834 -0500
++++ ./apps/silcd/Makefile.in	2009-01-20 19:38:32.379638067 -0500
+@@ -577,14 +577,11 @@
  
  
  install-dirs-server:
@@ -26,7 +15,7 @@
  	-@if test -f $(top_srcdir)/doc/silcd.8 ; then \
  	 $(INSTALL_DATA) $(top_srcdir)/doc/silcd.8 $(mandir)/man8; \
  	fi
-@@ -592,22 +589,17 @@
+@@ -593,22 +590,17 @@
  	fi
  
  etc-install-server:
@@ -38,7 +27,7 @@
 -		$(etcdir)/silcalgs.conf; \
 -          chmod go= $(etcdir)/silcd.conf; \
 -	fi
-+		$(etcdir)/silcalgs.conf.sample;
++		$(etcdir)/silcalgs.conf.sample; \
  
  examples-install:
 -	-mkdir -p $(docdir)/examples/
