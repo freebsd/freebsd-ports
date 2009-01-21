@@ -8,6 +8,7 @@
 PORTNAME=	flock
 PORTVERSION=	1.1.2
 DISTVERSIONSUFFIX=	.en-US.linux-i686
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/%SUBDIR%/ \
 		http://ftp.osuosl.org/pub/%SUBDIR%/ \

@@ -8,6 +8,7 @@
 PORTNAME=	nvu
 PORTVERSION=	1.0
 DISTVERSIONSUFFIX=	-pc-linux2.6.10-gnu
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://cvs.nvu.com/download/ CSME
 

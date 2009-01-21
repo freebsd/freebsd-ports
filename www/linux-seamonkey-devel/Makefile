@@ -9,6 +9,7 @@ PORTNAME=	seamonkey
 PORTVERSION=	2.0.a${SNAPDATE:S/-/./g}
 DISTVERSION=	2.0a1pre
 DISTVERSIONSUFFIX=	.en-US.linux-i686
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
 		ftp://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
