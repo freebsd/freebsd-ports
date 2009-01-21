@@ -19,6 +19,10 @@ COMMENT=	Set up restricted areas within Trac
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
+IGNORE=		Not supported anymore; functionality included in trac since 0.11
+DEPRECATED=	${IGNORE}
+EXPIRE_DATE=	2009-07-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin
 NO_BUILD=	yes
 USE_PYTHON=	2.3+
