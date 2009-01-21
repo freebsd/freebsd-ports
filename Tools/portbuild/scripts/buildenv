@@ -19,7 +19,7 @@ validate_env() {
     esac
 
     case ${branch} in
-	6|6-exp|6-exp2|7|7-exp|8|8-exp)
+	6|6-exp|7|7-exp|8|8-exp)
 	    continue
 	    ;;
 	*)
@@ -86,9 +86,6 @@ buildenv () {
 	export INDEXFILE=INDEX-6
 	    ;;
 	x6-exp)
-	export INDEXFILE=INDEX-6
-	    ;;
-	x6-exp2)
 	export INDEXFILE=INDEX-6
 	    ;;
 	x7)
