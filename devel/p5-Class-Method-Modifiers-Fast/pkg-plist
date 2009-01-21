@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Class/Method/Modifiers/Fast.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Method/Modifiers/Fast/.packlist
+@dirrmtry %%SITE_PERL%%/Class/Method/Modifiers
+@dirrmtry %%SITE_PERL%%/Class/Method
+@dirrmtry %%SITE_PERL%%/Class
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Method/Modifiers/Fast
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Method/Modifiers
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Method
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
