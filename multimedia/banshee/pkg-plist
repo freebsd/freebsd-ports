@@ -117,6 +117,8 @@ libdata/pkgconfig/banshee-1-mono-media.pc
 libdata/pkgconfig/banshee-1-musicbrainz.pc
 libdata/pkgconfig/banshee-1-services.pc
 libdata/pkgconfig/banshee-1-thickclient.pc
+share/applications/banshee-1-audiocd.desktop
+share/applications/banshee-1-media-player.desktop
 share/applications/banshee-1.desktop
 share/banshee-1/audio-profiles/base.xml
 share/banshee-1/audio-profiles/flac.xml
