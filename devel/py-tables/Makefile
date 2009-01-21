@@ -7,12 +7,13 @@
 #
 
 PORTNAME=	tables
-PORTVERSION=	2.0.4
+PORTVERSION=	2.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.pytables.org/download/stable/ \
 		http://www.pytables.org/download/py${PORTNAME}-${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pytables-${PORTVERSION}
+DISTFILES=	tables-${PORTVERSION}.tar.gz pytablesmanual-${PORTVERSION}.pdf
+EXTRACT_ONLY=	tables-${PORTVERSION}.tar.gz
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A hierarchical database for Python
@@ -45,7 +46,17 @@ post-install:
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/tables -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+
 .if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/pytablesmanual-${PORTVERSION}.pdf ${DOCSDIR}
+	${ECHO} '${DOCSDIR}/pytablesmanual-${PORTVERSION}.pdf' | ${SED} 's,^${PREFIX}/,,' \
+		 >> ${TMPPLIST}
+	${ECHO} '${DOCSDIR}' | ${SED} 's,^${PREFIX}/,@dirrm ,' \
+		>> ${TMPPLIST}
+.endif
+
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
 	@${FIND} ${EXAMPLESDIR} ! -type d | \
