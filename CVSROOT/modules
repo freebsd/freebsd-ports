@@ -1696,6 +1696,7 @@ convmv                          ports/converters/convmv
 cook                            ports/devel/cook
 cooledit                        ports/editors/cooledit
 coolmail                        ports/mail/coolmail
+coovachilli                     ports/net-mgmt/coovachilli
 coppermine                      ports/www/coppermine
 cops                            ports/security/cops
 copytape                        ports/sysutils/copytape
@@ -3465,7 +3466,6 @@ fpc-graph                       ports/graphics/fpc-graph
 fpc-gtk1                        ports/x11-toolkits/fpc-gtk1
 fpc-gtk2                        ports/x11-toolkits/fpc-gtk2
 fpc-hash                        ports/security/fpc-hash
-fpc-httpd                       ports/www/fpc-httpd
 fpc-httpd13                     ports/www/fpc-httpd13
 fpc-httpd20                     ports/www/fpc-httpd20
 fpc-httpd22                     ports/www/fpc-httpd22
@@ -10896,6 +10896,7 @@ p5-Finance-QuoteHist            ports/finance/p5-Finance-QuoteHist
 p5-Finance-QuoteTW              ports/finance/p5-Finance-QuoteTW
 p5-Finance-TW-EmergingQuote     ports/finance/p5-Finance-TW-EmergingQuote
 p5-Finance-TW-TSEQuote          ports/finance/p5-Finance-TW-TSEQuote
+p5-FindBin-libs                 ports/devel/p5-FindBin-libs
 p5-Flickr-API                   ports/www/p5-Flickr-API
 p5-Flickr-Upload                ports/www/p5-Flickr-Upload
 p5-Font-AFM                     ports/x11-fonts/p5-Font-AFM
@@ -11126,6 +11127,7 @@ p5-HTTP-Cookies-Mozilla         ports/www/p5-HTTP-Cookies-Mozilla
 p5-HTTP-Cookies-iCab            ports/www/p5-HTTP-Cookies-iCab
 p5-HTTP-Cookies-w3m             ports/www/p5-HTTP-Cookies-w3m
 p5-HTTP-DAV                     ports/www/p5-HTTP-DAV
+p5-HTTP-Engine                  ports/www/p5-HTTP-Engine
 p5-HTTP-GHTTP                   ports/www/p5-HTTP-GHTTP
 p5-HTTP-HeaderParser-XS         ports/www/p5-HTTP-HeaderParser-XS
 p5-HTTP-Lite                    ports/www/p5-HTTP-Lite
@@ -14139,6 +14141,7 @@ p5-finance-quotehist            ports/finance/p5-Finance-QuoteHist
 p5-finance-quotetw              ports/finance/p5-Finance-QuoteTW
 p5-finance-tw-emergingquote     ports/finance/p5-Finance-TW-EmergingQuote
 p5-finance-tw-tsequote          ports/finance/p5-Finance-TW-TSEQuote
+p5-findbin-libs                 ports/devel/p5-FindBin-libs
 p5-flickr-api                   ports/www/p5-Flickr-API
 p5-flickr-upload                ports/www/p5-Flickr-Upload
 p5-flv-info                     ports/multimedia/p5-FLV-Info
@@ -14387,6 +14390,7 @@ p5-http-cookies-icab            ports/www/p5-HTTP-Cookies-iCab
 p5-http-cookies-mozilla         ports/www/p5-HTTP-Cookies-Mozilla
 p5-http-cookies-w3m             ports/www/p5-HTTP-Cookies-w3m
 p5-http-dav                     ports/www/p5-HTTP-DAV
+p5-http-engine                  ports/www/p5-HTTP-Engine
 p5-http-ghttp                   ports/www/p5-HTTP-GHTTP
 p5-http-headerparser-xs         ports/www/p5-HTTP-HeaderParser-XS
 p5-http-lite                    ports/www/p5-HTTP-Lite
@@ -21829,7 +21833,6 @@ vitetris                        ports/games/vitetris
 viz                             ports/misc/viz
 vizone                          ports/dns/vizone
 vlc                             ports/multimedia/vlc
-vlc-devel                       ports/multimedia/vlc-devel
 vlock                           ports/security/vlock
 vlog                            ports/security/vlog
 vm                              ports/mail/vm
