@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Archive-Tar
-PORTVERSION=	1.42
+PORTVERSION=	1.44
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Perl module for creation and manipulation of tar files
 
 RUN_DEPENDS=	p5-IO-Compress-Bzip2>=2.012:${PORTSDIR}/archivers/p5-IO-Compress-Bzip2 \
