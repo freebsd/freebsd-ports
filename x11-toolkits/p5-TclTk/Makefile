@@ -23,6 +23,12 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Tcl::Tk.3
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=		something segfaults during build
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/Makefile.PL
 
@@ -33,4 +39,4 @@ do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

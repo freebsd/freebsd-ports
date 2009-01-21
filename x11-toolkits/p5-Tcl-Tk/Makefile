@@ -22,4 +22,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Tcl::Tk.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=		something segfaults during build
+.endif
+
+.include <bsd.port.post.mk>
