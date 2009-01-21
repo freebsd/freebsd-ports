@@ -3760,3 +3760,4 @@ mail/claws-mail-smime|mail/claws-mail|2009-01-19|The SMIME plugin is included in
 www/fpc-httpd||2009-01-19|Splitted to www/fpc-httpd13 www/fpc-httpd20 and www/fpc-httpd22
 multimedia/vlc-devel||2009-01-19|Removed - merged into multimedia/vlc
 
+textproc/nltk_lite||2009-01-21|Removed

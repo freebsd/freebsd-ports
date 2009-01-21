@@ -355,7 +355,6 @@
     SUBDIR += nl-aspell
     SUBDIR += nl-ispell
     SUBDIR += nltk
-    SUBDIR += nltk_lite
     SUBDIR += nn-aspell
     SUBDIR += nunnimcax
     SUBDIR += nux
