@@ -7,7 +7,7 @@
 
 PORTNAME=	rkward
 DISTVERSION=	0.4.9a
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,8 +17,6 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	IDE/GUI for the R-project
 
 LIB_DEPENDS=	R.0:${PORTSDIR}/math/R
-
-BROKEN=		does not compile
 
 USE_KDELIBS_VER=3
 USE_PHP=	yes
@@ -31,8 +29,7 @@ CONFIGURE_ARGS=	--disable-fast-perl
 INSTALLS_ICONS=	yes
 
 USE_FORTRAN=	yes
-FORTRANLIBDIR2=	`${DIRNAME} \\`gfortran42 -print-libgcc-file-name\\``/../../../
-CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+FORTRANLIBDIR2=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``/../../../
 
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/rkward
 
