@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lwp
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/lwp/src/ \
 		ftp://ftp.wu-wien.ac.at/pub/systems/coda/src/ \
@@ -21,10 +21,8 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 post-extract:
-.for file in pkgs/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's#(libdir)#{prefix}/libdata#g' \
-		${WRKSRC}/${file}
-.endfor
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
