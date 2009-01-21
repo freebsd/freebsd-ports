@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rpc2
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/rpc2/src/ \
 		ftp://ftp.wu-wien.ac.at/pub/systems/coda/src/ \
@@ -26,10 +26,8 @@ USE_PERL5=	yes
 USE_LDCONFIG=	yes
 
 post-extract:
-.for file in pkgs/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's#(libdir)#{prefix}/libdata#g' \
-		${WRKSRC}/${file}
-.endfor
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
