@@ -24,7 +24,6 @@
     SUBDIR += fltk2
     SUBDIR += flu
     SUBDIR += flvw
-    SUBDIR += fox10
     SUBDIR += fox12
     SUBDIR += fox14
     SUBDIR += fox16
@@ -33,7 +32,6 @@
     SUBDIR += fpc-gtk2
     SUBDIR += fpc-xforms
     SUBDIR += fxscintilla
-    SUBDIR += fxscintilla-fox10
     SUBDIR += fxscintilla-fox12
     SUBDIR += fxscintilla-fox14
     SUBDIR += gai
@@ -190,7 +188,6 @@
     SUBDIR += py-SciParam
     SUBDIR += py-anygui
     SUBDIR += py-fltk
-    SUBDIR += py-fox
     SUBDIR += py-gnome
     SUBDIR += py-gnome-desktop
     SUBDIR += py-gnome-extras
@@ -230,7 +227,6 @@
     SUBDIR += renaissance
     SUBDIR += rep-gtk
     SUBDIR += rep-gtk2
-    SUBDIR += ruby-fox10
     SUBDIR += ruby-fox12
     SUBDIR += ruby-fox16
     SUBDIR += ruby-gnomeprintui
