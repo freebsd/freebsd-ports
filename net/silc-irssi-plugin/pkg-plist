@@ -5,6 +5,14 @@ lib/irssi/modules/libsilc_core.a
 lib/irssi/modules/libsilc_core.la
 lib/irssi/modules/libsilc_core.so
 lib/irssi/modules/libsilc_core.so.0
+lib/libsilc-1.1.so
+lib/libsilc-1.1.so.3
+lib/libsilc.la
+lib/libsilc.so
+lib/libsilcclient-1.1.so
+lib/libsilcclient-1.1.so.3
+lib/libsilcclient.la
+lib/libsilcclient.so
 share/irssi/help/silc/action
 share/irssi/help/silc/admin
 share/irssi/help/silc/alias
