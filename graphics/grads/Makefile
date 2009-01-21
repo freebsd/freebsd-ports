@@ -36,6 +36,18 @@ CONFIGURE_ARGS+=	--enable-dyn-supplibs \
 OPTIONS=	HDF "Build hdf-support (only hdf OR netcdf is supported)" on \
 		NETCDF "Build netcdf-support" off
 
+.if !defined(NOPORTDATA)
+PORTDATA=	*
+.endif
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
+.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	*
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_HDF)
@@ -58,16 +70,17 @@ post-configure:
 	${REINPLACE_CMD} -e "s:%%DATADIR%%:${DATADIR}:" ${WRKSRC}/src/gx.h
 
 post-install:
+.if !defined(NOPORTDATA)
 	${MKDIR} "${DATADIR}"
-	cd ${WRKSRC}/data && ${FIND} . \
-		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} "${DATADIR}"
+	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . "${DATADIR}"
+.endif
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} "${EXAMPLESDIR}"
-	cd ${WRKSRC}/examples && ${FIND} . \
-		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} "${EXAMPLESDIR}"
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . "${EXAMPLESDIR}"
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} "${DOCSDIR}"
-	cd ${WRKSRC}/doc && ${FIND} . \
-		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} "${DOCSDIR}"
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . "${DOCSDIR}"
 .endif
 
 .include <bsd.port.post.mk>
