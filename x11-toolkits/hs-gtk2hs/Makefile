@@ -20,6 +20,8 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		xulrunner:${PORTSDIR}/www/xulrunner
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		does not compile
+
 USE_GNOME=	gtk20 libglade2 gtksourceview gconf2 librsvg2
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
