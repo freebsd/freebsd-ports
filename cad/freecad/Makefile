@@ -22,6 +22,8 @@ LIB_DEPENDS=	gts.5:${PORTSDIR}/graphics/gts			\
 		xerces-c.27:${PORTSDIR}/textproc/xerces-c2	\
 		Wm4Foundation.0:${PORTSDIR}/graphics/wildmagic
 
+BROKEN=		does not compile
+
 USE_PYTHON=	yes
 USE_QT_VER=	3
 USE_GMAKE=	yes
