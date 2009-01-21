@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	banshee
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://download.banshee-project.org/banshee/
 DISTNAME=	${PORTNAME}-1-${PORTVERSION}
@@ -76,6 +76,7 @@ post-patch:
 	@${REINPLACE_CMD} "s|!/bin/bash|!${PREFIX}/bin/bash|" \
 				${WRKSRC}/build/icon-theme-installer \
 				${WRKSRC}/build/private-icon-theme-installer \
+				${WRKSRC}/data/desktop-files/update-desktop-file.sh \
 				${WRKSRC}/src/Clients/Booter/banshee-1.in
 	@${REINPLACE_CMD} 's|sed -r|sed -E|' \
 				${WRKSRC}/data/icon-theme-hicolor/Makefile.in
