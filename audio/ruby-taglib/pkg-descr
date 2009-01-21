@@ -1,0 +1,8 @@
+Ruby-taglib is a ruby library wrapping the Taglib library,
+simple dl-based wrapper of Taglib's C library.
+It's short and sweet, because the C API is written by someone who knows
+how to use OO programming, and Ruby with dl just makes it all too easy
+to wrap such a library.
+
+Author:	Neil Stevens <neil@hakubi.us>
+WWW:	http://www.hakubi.us/ruby-taglib/
