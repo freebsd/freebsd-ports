@@ -2,6 +2,13 @@ bin/paprefs
 share/applications/paprefs.desktop
 %%DATADIR%%/paprefs.glade
 share/locale/de/LC_MESSAGES/paprefs.mo
+share/locale/el/LC_MESSAGES/paprefs.mo
+share/locale/fr/LC_MESSAGES/paprefs.mo
+share/locale/hu/LC_MESSAGES/paprefs.mo
+share/locale/pl/LC_MESSAGES/paprefs.mo
+share/locale/pt_BR/LC_MESSAGES/paprefs.mo
+share/locale/sv/LC_MESSAGES/paprefs.mo
+share/locale/tr/LC_MESSAGES/paprefs.mo
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/de/LC_MESSAGES
 @dirrmtry share/locale/de
