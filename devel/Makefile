@@ -1001,6 +1001,7 @@
     SUBDIR += p5-Cache-Mmap
     SUBDIR += p5-Cache-Simple-TimedExpiry
     SUBDIR += p5-Calendar-Simple
+    SUBDIR += p5-Carp-Always
     SUBDIR += p5-Carp-Assert
     SUBDIR += p5-Carp-Assert-More
     SUBDIR += p5-Carp-Clan
