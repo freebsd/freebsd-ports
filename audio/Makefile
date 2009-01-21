@@ -608,6 +608,7 @@
     SUBDIR += ruby-ogginfo
     SUBDIR += ruby-shout
     SUBDIR += ruby-smf
+    SUBDIR += ruby-taglib
     SUBDIR += ruby-vorbisfile
     SUBDIR += ruby-xmms
     SUBDIR += ruby-xmms2
