@@ -1,0 +1,5 @@
+This module is meant as a debugging aid.  It can be used to make a
+script complain loudly with stack backtraces when warn()ing or
+die()ing.
+
+WWW: http://search.cpan.org/dist/Carp-Always/
