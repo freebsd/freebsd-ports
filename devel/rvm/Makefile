@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rvm
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/rvm/src/ \
 		ftp://ftp.wu-wien.ac.at/pub/systems/coda/src/ \
@@ -26,7 +26,7 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-extract:
-.for file in pkgs/Makefile.in
+.for file in Makefile.in
 	@${REINPLACE_CMD} -e \
 		's#(libdir)#{prefix}/libdata#g' ${WRKSRC}/${file}
 .endfor
