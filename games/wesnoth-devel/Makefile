@@ -19,6 +19,8 @@ COMMENT=	A fantasy turn-based strategy game
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
 		freetype.9:${PORTSDIR}/print/freetype2
 
+BROKEN=		bad plist
+
 CONFLICTS=	wesnoth-1.4*
 
 USE_SDL=	image mixer net ttf
