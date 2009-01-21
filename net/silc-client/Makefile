@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	net ipv6 security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
@@ -31,6 +31,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib12
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--without-libtoolfix
 
