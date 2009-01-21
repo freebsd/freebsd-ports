@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	asymptote
-PORTVERSION=	1.44
-PORTREVISION=	1
+PORTVERSION=	1.59
+PORTREVISION=	0
 CATEGORIES=	math
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -17,29 +17,30 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A powerful script-based vector graphics language
 
 LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3
-BUILD_DEPENDS=	boehm-gc>=6.8:${PORTSDIR}/devel/boehm-gc \
-		convert:${PORTSDIR}/graphics/ImageMagick \
+BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \
 		latex:${PORTSDIR}/print/teTeX \
 		makeinfo:${PORTSDIR}/textproc/texi2html \
 		${MKTEXLSR}:${PORTSDIR}/print/teTeX \
+		svn:${PORTSDIR}/devel/subversion \
 		texi2dvi:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	boehm-gc>=6.8:${PORTSDIR}/devel/boehm-gc \
-		gv:${PORTSDIR}/print/gv \
+RUN_DEPENDS=	gv:${PORTSDIR}/print/gv \
 		latex:${PORTSDIR}/print/teTeX \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
-# devel/boehm-gc
 ONLY_FOR_ARCHS=	i386 amd64
+# it requires boehm-gc 7.X
+CONFIGURE_ARGS=	--disable-gc
 
 USE_GHOSTSCRIPT=yes
+USE_GL=	glut
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-gc=system --with-latex=${LOCALBASE}/share/texmf-local/tex/latex
+CONFIGURE_ARGS+=	--with-latex=${LOCALBASE}/share/texmf-local/tex/latex
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include $${CPPFLAGS}" LFLAGS="-L${LOCALBASE}/lib $${LFLAGS}" CFLAGS="-I${LOCALBASE}/include $${CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib $${LDFLAGS}"
 MAKE_ENV+=	${CONFIGURE_ENV}
 

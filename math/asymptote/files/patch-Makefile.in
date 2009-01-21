@@ -1,6 +1,6 @@
---- Makefile.in	2008-10-06 12:16:51.000000000 +0200
-+++ Makefile.in.port	2008-10-07 13:28:38.000000000 +0200
-@@ -54,7 +54,7 @@
+--- Makefile.in	2008-11-27 19:43:50.000000000 +0100
++++ Makefile.in.port	2008-11-30 13:19:46.000000000 +0100
+@@ -55,7 +55,7 @@
  asydir = $(datadir)/asymptote
  GUIdir = $(asydir)/GUI
  docdir = $(DESTDIR)@docdir@
@@ -9,12 +9,3 @@
  animationsdir = $(exampledir)/animations
  latexdir = $(DESTDIR)@latexdir@
  INSTALL = @INSTALL@
-@@ -106,7 +106,7 @@
- 	fi
- 	cd $(GC); \
- 	./configure $(GCOPTIONS); \
--	$(MAKE) check
-+	$(MAKE)
- 
- $(GCPPLIB): $(GCLIB)
- 
