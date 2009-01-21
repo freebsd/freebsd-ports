@@ -1,0 +1,8 @@
+%%SITE_PERL%%/XML/OPML/LibXML.pm
+%%SITE_PERL%%/XML/OPML/LibXML/Document.pm
+%%SITE_PERL%%/XML/OPML/LibXML/Outline.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/OPML/LibXML/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/OPML/LibXML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/OPML
+@dirrm %%SITE_PERL%%/XML/OPML/LibXML
+@dirrmtry %%SITE_PERL%%/XML/OPML
