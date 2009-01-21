@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oss
-DISTVERSION=	4.1-build1050
+DISTVERSION=	4.1-build1051
 CATEGORIES=	audio kld
 MASTER_SITES=	http://www.opensound.com/developer/sources/stable/bsd/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-bsd
@@ -25,8 +25,9 @@ PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 SUB_FILES=	pkg-install pkg-deinstall
 ONLY_FOR_ARCHS=	amd64 i386
 
-MAN1=		ossinfo.1 ossmix.1 ossplay.1 ossrecord.1 osstest.1 \
-		ossxmix.1 soundoff.1 soundon.1
+MAN1=		ossinfo.1.gz ossmix.1.gz osspartysh.1.gz ossplay.1.gz \
+		ossrecord.1.gz osstest.1.gz ossxmix.1.gz soundoff.1.gz \
+		soundon.1.gz
 MAN7=		oss_ali5455.7.gz oss_atiaudio.7.gz oss_audigyls.7.gz \
 		oss_audioloop.7.gz oss_audiopci.7.gz oss_cmi878x.7.gz \
 		oss_cmpci.7.gz oss_cs4281.7.gz oss_cs461x.7.gz \
@@ -37,7 +38,7 @@ MAN7=		oss_ali5455.7.gz oss_atiaudio.7.gz oss_audigyls.7.gz \
 		oss_sbpci.7.gz oss_sbxfi.7.gz oss_solo.7.gz \
 		oss_trident.7.gz oss_via823x.7.gz oss_via97.7.gz \
 		oss_ymf7xx.7.gz osscore.7.gz
-MAN8=		ossdetect.8 ossdevlinks.8 savemixer.8 vmixctl.8
+MAN8=		ossdetect.8.gz ossdevlinks.8.gz savemixer.8.gz vmixctl.8.gz
 
 CONF_FILES=	oss_audigyls oss_audioloop oss_cs461x oss_emu10k1x \
 		oss_envy24 oss_envy24ht oss_fmedia oss_hdaudio oss_ich \
@@ -100,9 +101,9 @@ do-install:
 	@${MKDIR} ${PREFIX}/lib/oss/modules
 	${INSTALL_KLD} ${PROTO_OSSLIBDIR}/modules/*.ko \
 	    ${PREFIX}/lib/oss/modules/
-	${INSTALL_MAN} ${PROTO_MANDIR}/man1/*.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${PROTO_MANDIR}/man1/*.1.gz ${PREFIX}/man/man1/
 	${INSTALL_MAN} ${PROTO_MANDIR}/man7/*.7.gz ${PREFIX}/man/man7/
-	${INSTALL_MAN} ${PROTO_MANDIR}/man8/*.8 ${PREFIX}/man/man8/
+	${INSTALL_MAN} ${PROTO_MANDIR}/man8/*.8.gz ${PREFIX}/man/man8/
 	${INSTALL_PROGRAM} ${PROTO_SBINDIR}/ossdetect ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${PROTO_SBINDIR}/ossdevlinks ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${PROTO_SBINDIR}/savemixer ${PREFIX}/sbin/

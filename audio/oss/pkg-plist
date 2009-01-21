@@ -1,5 +1,6 @@
 bin/ossinfo
 bin/ossmix
+bin/osspartysh
 bin/ossplay
 bin/ossrecord
 bin/osstest
