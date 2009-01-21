@@ -1056,6 +1056,7 @@
     SUBDIR += p5-Class-MakeMethods
     SUBDIR += p5-Class-Measure
     SUBDIR += p5-Class-Method-Modifiers
+    SUBDIR += p5-Class-Method-Modifiers-Fast
     SUBDIR += p5-Class-MethodMaker
     SUBDIR += p5-Class-MethodMapper
     SUBDIR += p5-Class-MixinFactory
