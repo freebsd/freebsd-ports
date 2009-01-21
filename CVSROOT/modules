@@ -35,10 +35,8 @@
 # can be useful for creating a module that consists of many directories
 # spread out over the entire source repository.
 #
-
 # Convenient aliases
 world		-a .
-
 # CVSROOT support
 CVSROOT		CVSROOT
 access		CVSROOT access
@@ -56,9 +54,7 @@ modules		CVSROOT modules
 rcsinfo		CVSROOT rcsinfo
 rcstemplate	CVSROOT rcstemplate
 taginfo		CVSROOT taginfo
-
 # !!MERGE!!
-
 #
 # Ports directories
 #
@@ -130,7 +126,6 @@ ports_x11_servers               ports/x11-servers
 ports_x11_themes                ports/x11-themes
 ports_x11_toolkits              ports/x11-toolkits
 ports_x11_wm                    ports/x11-wm
-
 #
 # Ports modules
 #
@@ -3431,7 +3426,6 @@ fortytwo-encore                 ports/devel/fortytwo-encore
 fotaq                           ports/games/fotaq
 fotofix                         ports/graphics/fotofix
 fourcdns                        ports/dns/fourcdns
-fox10                           ports/x11-toolkits/fox10
 fox12                           ports/x11-toolkits/fox12
 fox14                           ports/x11-toolkits/fox14
 fox16                           ports/x11-toolkits/fox16
@@ -3730,7 +3724,6 @@ fwknop                          ports/security/fwknop
 fwlogwatch                      ports/security/fwlogwatch
 fwtk                            ports/security/fwtk
 fxscintilla                     ports/x11-toolkits/fxscintilla
-fxscintilla-fox10               ports/x11-toolkits/fxscintilla-fox10
 fxscintilla-fox12               ports/x11-toolkits/fxscintilla-fox12
 fxscintilla-fox14               ports/x11-toolkits/fxscintilla-fox14
 fxsudoku                        ports/games/fxsudoku
@@ -18105,7 +18098,6 @@ py-forgethtml                   ports/www/py-forgethtml
 py-forgetsql                    ports/databases/py-forgetsql
 py-formencode                   ports/www/py-formencode
 py-fortran                      ports/devel/py-fortran
-py-fox                          ports/x11-toolkits/py-fox
 py-fpconst                      ports/math/py-fpconst
 py-freebsd                      ports/devel/py-freebsd
 py-freeimagepy                  ports/graphics/py-freeimagepy
@@ -19379,7 +19371,6 @@ ruby-flexmock                   ports/devel/ruby-flexmock
 ruby-flvtool2                   ports/multimedia/ruby-flvtool2
 ruby-format                     ports/textproc/ruby-format
 ruby-formvalidator              ports/textproc/ruby-formvalidator
-ruby-fox10                      ports/x11-toolkits/ruby-fox10
 ruby-fox12                      ports/x11-toolkits/ruby-fox12
 ruby-fox16                      ports/x11-toolkits/ruby-fox16
 ruby-freedb                     ports/audio/ruby-freedb

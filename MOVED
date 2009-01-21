@@ -3759,5 +3759,8 @@ textproc/py-wbxml|||2009-01-19|Expired: No longer supported by developers
 mail/claws-mail-smime|mail/claws-mail|2009-01-19|The SMIME plugin is included in the main port via the GPGME option now
 www/fpc-httpd||2009-01-19|Splitted to www/fpc-httpd13 www/fpc-httpd20 and www/fpc-httpd22
 multimedia/vlc-devel||2009-01-19|Removed - merged into multimedia/vlc
-
 textproc/nltk_lite||2009-01-21|Removed
+x11-toolkits/fox10||2009-01-21|Removed deprecated port, use x11-toolkits/fox16 instead
+x11-toolkits/fxscintilla-fox10||2009-01-21|Removed deprecated port, use x11-toolkits/fxscintilla instead
+x11-toolkits/py-fox||2009-01-21|Removed deprecated port, has a broken dependency
+x11-toolkits/ruby-fox10||2009-01-21|Removed deprecated port, use x11-toolkits/ruby-fox16 instead
