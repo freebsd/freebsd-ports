@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hgview
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.logilab.org/pub/hgview/
 
