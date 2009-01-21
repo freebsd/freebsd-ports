@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	ansel
-PORTVERSION=	0.1.b20070319
-PORTREVISION=	3
-DISTVERSIONPREFIX=
+DISTVERSION=	1.0-rc1
 CATEGORIES=	www
-MASTER_SITES=	CENKES http://freebsd.alaskaparadise.com/source/
+DIST_SUBDIR=	horde
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Image gallery
