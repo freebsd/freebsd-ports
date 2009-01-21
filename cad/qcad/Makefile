@@ -7,7 +7,7 @@
 
 PORTNAME=	qcad
 PORTVERSION=	2.0.5.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	ftp://www.ribbonsoft.com/archives/qcad/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1$/-1/}-community.src
@@ -33,6 +33,11 @@ MAKE_ENV=	QTDIR="${QTDIR}" MAKE="${GMAKE}" \
 .if ${ARCH} == "alpha"
 CFLAGS+=	-O0
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's:RS_SYSTEM->getAppDir()+"/bin":"${PREFIX}/bin":' \
+		-e 's:RS_SYSTEM->getDocPath() + "/qcaddoc.adp":"${DOCSDIR}/qcaddoc.adp":' \
+		${WRKSRC}/qcad/src/qc_applicationwindow.cpp
 
 do-build:
 	cd ${WRKSRC}/scripts && ${SETENV} ${MAKE_ENV} bash ./build_qcad.sh notrans
