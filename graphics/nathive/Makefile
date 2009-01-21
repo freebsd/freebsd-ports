@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nathive
-PORTVERSION=	0.811
+PORTVERSION=	0.813
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.nathive.org/packages/ \
 		http://mirror.amdmi3.ru/
@@ -16,16 +16,11 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lightweight image editor
 
 USE_GNOME=	pkgconfig glib20 gtk20
-NO_WRKSUBDIR=	yes
+ALL_TARGET=	default
 
 post-patch:
 	@${REINPLACE_CMD} -e '/define.*PATH/ s|".*"|"${DATADIR}/"|' \
-		${WRKSRC}/nathive.c
-
-do-build:
-	cd ${WRKSRC} && \
-		${CC} ${CFLAGS} `pkg-config --cflags --libs glib-2.0` \
-		`pkg-config --cflags --libs gtk+-2.0` nathive.c -o nathive
+		${WRKSRC}/main.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nathive ${PREFIX}/bin

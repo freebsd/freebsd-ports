@@ -8,12 +8,17 @@ bin/nathive
 %%DATADIR%%/img/picker.png
 %%DATADIR%%/img/select.png
 %%DATADIR%%/img/square.png
+%%DATADIR%%/img/visual.png
+%%DATADIR%%/img/visual_rotate.png
+%%DATADIR%%/img/visual_scale.png
 %%DATADIR%%/lang/chinese.xml
 %%DATADIR%%/lang/english.xml
+%%DATADIR%%/lang/french.xml
 %%DATADIR%%/lang/german.xml
 %%DATADIR%%/lang/hungarian.xml
 %%DATADIR%%/lang/polish.xml
 %%DATADIR%%/lang/spanish.xml
+%%DATADIR%%/lang/swedish.xml
 %%DATADIR%%/palettes/01.xml
 %%DATADIR%%/palettes/02.xml
 %%DATADIR%%/text/credits
