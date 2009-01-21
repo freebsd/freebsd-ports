@@ -1,4 +1,12 @@
 bin/silc
+lib/libsilc-1.1.so
+lib/libsilc-1.1.so.3
+lib/libsilc.la
+lib/libsilc.so
+lib/libsilcclient-1.1.so
+lib/libsilcclient-1.1.so.3
+lib/libsilcclient.la
+lib/libsilcclient.so
 %%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/Irssi.pm
 %%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/Irssi/Silc.pm
 %%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/Irssi/TextUI.pm
