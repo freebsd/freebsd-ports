@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Module/Install/AuthorTests.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Install/AuthorTests/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Install/AuthorTests
