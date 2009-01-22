@@ -6,6 +6,7 @@
 
 PORTNAME=	gnu-radius
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	radius
@@ -58,7 +59,7 @@ CONFIGURE_ARGS+=--enable-snmp
 .endif
 
 .if defined(WITH_CLIENT)
-LIB_DEPENDS+=	guile.19:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	guile.20:${PORTSDIR}/lang/guile
 CONFIGURE_ARGS+=--enable-client
 PLIST_SUB+=	CLIENT=""
 .else

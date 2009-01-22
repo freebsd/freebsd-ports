@@ -7,6 +7,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.20.3
+PORTREVISION=	1
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -363,7 +364,7 @@ PLIST_SUB+=		WITH_TCL="@comment "
 .if defined(WITH_GUILE)
 CONFIGURE_ARGS+=	--enable-guile
 PLIST_SUB+=		WITH_GUILE=""
-LIB_DEPENDS+=		guile.19:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=		guile.20:${PORTSDIR}/lang/guile
 MANN+=			gv_guile.n
 .else
 CONFIGURE_ARGS+=	--disable-guile

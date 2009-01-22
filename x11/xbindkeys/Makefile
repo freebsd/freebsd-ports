@@ -8,7 +8,7 @@
 
 PORTNAME=	xbindkeys
 PORTVERSION=	1.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://hocwp.free.fr/xbindkeys/
 
@@ -33,7 +33,7 @@ WISH=		${LOCALBASE}/bin/wish8.4
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GUILE)
-LIB_DEPENDS+=	guile.19:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	guile.20:${PORTSDIR}/lang/guile
 .else
 CONFIGURE_ARGS+=	--disable-guile
 .endif

@@ -7,7 +7,7 @@
 
 PORTNAME=	libmatheval
 PORTVERSION=	1.1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel math
 MASTER_SITES=	GNU
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A library of procedures for evaluating mathematical functions
 
-LIB_DEPENDS=	guile.19:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"

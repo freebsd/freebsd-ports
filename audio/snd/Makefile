@@ -7,7 +7,7 @@
 
 PORTNAME=	snd
 PORTVERSION=	10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://mirror.mcx2.org/
@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	--without-gsl
 .endif
 
 .if !defined(WITHOUT_GUILE)
-LIB_DEPENDS+=	guile.19:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	guile.20:${PORTSDIR}/lang/guile
 PLIST_SUB+=	SCHEME=""
 .else
 CONFIGURE_ARGS+=	--without-guile

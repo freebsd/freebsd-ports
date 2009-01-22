@@ -8,7 +8,7 @@
 
 PORTNAME=	gnunet
 PORTVERSION=	0.6.6b
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	http://www.ovmj.org/GNUnet/download/ \
 		${MASTER_SITE_GNU}
@@ -80,7 +80,7 @@ PLIST_SUB+=		WITH_IPV6="@comment "
 .endif
 
 .if defined(WITH_GUILE)
-LIB_DEPENDS+=		guile.19:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=		guile.20:${PORTSDIR}/lang/guile
 CONFIGURE_ARGS+=	--enable-guile
 MAN1+=			gnunet-download-manager.1
 PLIST_SUB+=		WITH_GUILE=""
