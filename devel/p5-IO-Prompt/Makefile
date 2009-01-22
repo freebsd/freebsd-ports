@@ -25,6 +25,9 @@ PERL_CONFIGURE=	yes
 
 MAN3=	IO::Prompt.3
 
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.orig" -delete
+
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500800
 post-patch:
