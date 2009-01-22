@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openxpki
-PORTVERSION=	0.9.1267
+PORTVERSION=	0.9.1389
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -77,7 +77,6 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::pkcs7_get_chain.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::pkcs7_sign.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::pkcs7_verify.3 \
-	OpenXPKI::Crypto::Backend::OpenSSL::Command::symmetric_cipher.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Config.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Engine.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Engine::GOST.3 \
@@ -178,6 +177,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Activity::CRLIssuance::IssueCRL.3 \
 	OpenXPKI::Server::Workflow::Activity::CRLIssuance::PublishCRL.3 \
 	OpenXPKI::Server::Workflow::Activity::CRR::PersistRequest.3 \
+	OpenXPKI::Server::Workflow::Activity::CSR::ChangeNotBeforeOrAfter.3 \
 	OpenXPKI::Server::Workflow::Activity::CSR::GenerateKey.3 \
 	OpenXPKI::Server::Workflow::Activity::CSR::GeneratePKCS10.3 \
 	OpenXPKI::Server::Workflow::Activity::CSR::PersistRequest.3 \
@@ -198,6 +198,8 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Activity::DataExchange::ReadArchive.3 \
 	OpenXPKI::Server::Workflow::Activity::DataExchange::UnpackArchive.3 \
 	OpenXPKI::Server::Workflow::Activity::DataExchange::WriteArchive.3 \
+	OpenXPKI::Server::Workflow::Activity::PasswordSafe::RetrievePassword.3 \
+	OpenXPKI::Server::Workflow::Activity::PasswordSafe::StorePassword.3 \
 	OpenXPKI::Server::Workflow::Activity::SCEP::ExtractCSR.3 \
 	OpenXPKI::Server::Workflow::Activity::SCEP::SetContextFromCSR.3 \
 	OpenXPKI::Server::Workflow::Activity::SCEP::SetContextFromOriginalCert.3 \
@@ -263,6 +265,8 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Validator::PasswordQuality.3 \
 	OpenXPKI::Server::Workflow::Validator::ReasonCode.3 \
 	OpenXPKI::Server::Workflow::Validator::SPKAC.3 \
+	OpenXPKI::Server::Workflow::Validator::UnusedID.3 \
+	OpenXPKI::Server::Workflow::Validator::ValidityTime.3 \
 	OpenXPKI::Service.3 \
 	OpenXPKI::Service::Default.3 \
 	OpenXPKI::Service::Default::Command.3 \
