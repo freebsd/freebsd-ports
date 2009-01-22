@@ -9,6 +9,7 @@
 
 PORTNAME=	lilypond
 PORTVERSION=	2.11.65
+PORTREVISION=	1
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.11/:src \
     		${MASTER_SITE_LOCAL}/gahr/:fonts \
@@ -25,7 +26,7 @@ BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		rarian-sk-config:${PORTSDIR}/textproc/rarian \
 		texi2html:${PORTSDIR}/textproc/texi2html \
 		texi2dvi:${PORTSDIR}/print/texinfo
-LIB_DEPENDS=	guile.19:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
     		mftrace:${PORTSDIR}/print/mftrace
 
@@ -50,6 +51,8 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" MAKEINFO="${LOCALBASE}/bin/makeinfo"
 NOCCACHE=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+BROKEN=		Does not compile
 
 .include <bsd.port.pre.mk>
 
