@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Module/Collect/Package.pm
+%%SITE_PERL%%/Module/Collect.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Collect/.packlist
+@dirrm %%SITE_PERL%%/Module/Collect
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Collect
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
