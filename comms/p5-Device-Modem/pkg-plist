@@ -10,9 +10,9 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/Modem
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device
 @dirrmtry %%SITE_PERL%%/Device
-%%PORTDOCS%%%%EXAMPLESDIR%%/xmodem.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/shell.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/dial.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/active.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/caller-id.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmodem.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shell.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dial.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/active.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/caller-id.pl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

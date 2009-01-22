@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Device-Modem
-PORTVERSION=	1.48
+PORTVERSION=	1.50
 CATEGORIES=	comms perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,7 +24,7 @@ MAN3=		Device::Modem.3 Device::Modem::Log::File.3 \
 		Device::Modem::UsRobotics.3
 
 post-install:
-.ifndef(NOPORTDOCS)
+.ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${EXAMPLESDIR}
