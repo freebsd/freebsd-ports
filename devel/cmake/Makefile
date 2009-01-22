@@ -7,7 +7,7 @@
 
 PORTNAME=	cmake
 PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cmake.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/ \
 		${MASTER_SITE_LOCAL}
