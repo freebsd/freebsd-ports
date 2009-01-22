@@ -10,7 +10,7 @@ PORTVERSION=	0.7.6
 CATEGORIES=	net
 MASTER_SITES=	http://download.banshee-project.org/${PORTNAME}/
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Cross platform Zero Configuration Networking library for Mono
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \

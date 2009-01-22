@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono framework to create extensible applications
 
 LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mono.pc:${PORTSDIR}/lang/mono

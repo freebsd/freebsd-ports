@@ -10,7 +10,7 @@ PORTVERSION=	2.0.3.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.taglib-sharp.com/Download/
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Tagging library for the Mono framework
 
 LIB_PC_DEPENDS=	mono.pc:${PORTSDIR}/lang/mono
