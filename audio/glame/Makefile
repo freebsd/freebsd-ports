@@ -7,7 +7,7 @@
 
 PORTNAME=	glame
 PORTVERSION=	2.0.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio gnome
 MASTER_SITES=	SF
 
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		mad.2:${PORTSDIR}/audio/libmad \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		guile.19:${PORTSDIR}/lang/guile
+		guile.20:${PORTSDIR}/lang/guile
 
 USE_XORG=	xbitmaps x11
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui

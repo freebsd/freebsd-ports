@@ -8,7 +8,7 @@
 
 PORTNAME=	g-wrap
 PORTVERSION=	1.9.6
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	devel scheme
 MASTER_SITES=	SAVANNAH
@@ -16,9 +16,9 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A tool for exporting C libraries into Scheme interpreters
 
-BUILD_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
+BUILD_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile \
 		slib-guile>0:${PORTSDIR}/lang/slib-guile
-RUN_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
+RUN_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile \
 		slib-guile>0:${PORTSDIR}/lang/slib-guile
 
 INFO=		g-wrap

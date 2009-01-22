@@ -7,6 +7,7 @@
 
 PORTNAME=	elinks
 DISTVERSION=	0.11.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://elinks.or.cz/download/
 

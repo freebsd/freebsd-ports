@@ -7,7 +7,7 @@
 
 PORTNAME=	fmars
 PORTVERSION=	0.0.207
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://users.v-lo.krakow.pl/~michal/
 
