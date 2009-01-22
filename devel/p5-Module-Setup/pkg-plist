@@ -1,0 +1,33 @@
+bin/module-setup
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Setup/.packlist
+%%SITE_PERL%%/Module/Setup.pm
+%%SITE_PERL%%/Module/Setup/Distribute.pm
+%%SITE_PERL%%/Module/Setup/Flavor.pm
+%%SITE_PERL%%/Module/Setup/Flavor/CodeRepos.pm
+%%SITE_PERL%%/Module/Setup/Flavor/Default.pm
+%%SITE_PERL%%/Module/Setup/Path.pm
+%%SITE_PERL%%/Module/Setup/Path/Additional.pm
+%%SITE_PERL%%/Module/Setup/Path/Base.pm
+%%SITE_PERL%%/Module/Setup/Path/Config.pm
+%%SITE_PERL%%/Module/Setup/Path/Dir.pm
+%%SITE_PERL%%/Module/Setup/Path/File.pm
+%%SITE_PERL%%/Module/Setup/Path/Flavor.pm
+%%SITE_PERL%%/Module/Setup/Path/Flavors.pm
+%%SITE_PERL%%/Module/Setup/Path/Plugins.pm
+%%SITE_PERL%%/Module/Setup/Path/Template.pm
+%%SITE_PERL%%/Module/Setup/Plugin.pm
+%%SITE_PERL%%/Module/Setup/Plugin/Additional.pm
+%%SITE_PERL%%/Module/Setup/Plugin/Config/Basic.pm
+%%SITE_PERL%%/Module/Setup/Plugin/Template.pm
+%%SITE_PERL%%/Module/Setup/Plugin/Test/Makefile.pm
+%%SITE_PERL%%/Module/Setup/Plugin/VC/Git.pm
+%%SITE_PERL%%/Module/Setup/Plugin/VC/SVK.pm
+%%SITE_PERL%%/Module/Setup/Plugin/VC/SVN.pm
+@dirrm %%SITE_PERL%%/Module/Setup/Plugin/VC
+@dirrm %%SITE_PERL%%/Module/Setup/Plugin/Test
+@dirrm %%SITE_PERL%%/Module/Setup/Plugin/Config
+@dirrm %%SITE_PERL%%/Module/Setup/Plugin
+@dirrm %%SITE_PERL%%/Module/Setup/Path
+@dirrm %%SITE_PERL%%/Module/Setup/Flavor
+@dirrm %%SITE_PERL%%/Module/Setup
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Setup
