@@ -632,6 +632,7 @@
     SUBDIR += p5-URI-OpenURL
     SUBDIR += p5-URI-SmartURI
     SUBDIR += p5-URI-Template
+    SUBDIR += p5-URI-Template-Restrict
     SUBDIR += p5-Validate-Net
     SUBDIR += p5-What
     SUBDIR += p5-X500-DN
