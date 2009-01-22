@@ -27,6 +27,10 @@ MAN8=	dnet.8
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800059
+BROKEN=		does not build
+.endif
+
 .if !defined(LIBDNET_SLAVE)
 
 post-patch:
