@@ -5,9 +5,6 @@
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/Javascript.pm
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/Menu.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML/Mason/.packlist
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg/openxpki-mason-cgi.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg/openxpki-mason-mod_perl.conf
-%%PORTDATA%%%%DATADIR%%/bin/openxpki.cgi
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/Menu/Query/index.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/Renderer/Command/default.mhtml
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/Renderer/Service/GET_AUTHENTICATION_STACK.mhtml
@@ -39,15 +36,19 @@
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/css/openxpki.css
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/css/sinorcaish-print.css
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/css/sinorcaish-screen.css
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/errors/internal_server_error_en.htm
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/favicon.ico
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/images/bug.jpg
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/images/de.png
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/images/gb.png
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/images/en.png
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/images/openxpki_logo.png
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/images/openxpki_sinorcaish.png
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/images/ru.png
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/images/search.png
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/index.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/configured_languages.mhtml
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/debug.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/display_field.mhtml
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/field_to_i18n.mhtml
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/filename_for_cert.mhtml
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/get_deep_error.mhtml
@@ -152,10 +153,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/change_csr_subject.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/change_csr_subject_alt_name.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/change_csr_subject_style.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/change_notafter.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/change_notbefore.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/change_validity.mhtml
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/continue.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/continue_issuance.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/dhandler
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/fail_workflow.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/issue_certificate.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/persist_csr.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/persist_csrs.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/reject_crr.html
@@ -175,6 +180,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/show_pending_requests.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/start_data_exchange_export.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/syshandler
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg/openxpki-mason-cgi.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg/openxpki-mason-mod_perl.conf
+%%PORTDATA%%%%DATADIR%%/bin/openxpki.cgi
+%%PORTDATA%%@dirrmtry %%DATADIR%%/bin
+%%PORTDATA%%@dirrmtry %%DATADIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/eg
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/workflow/activity
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/workflow
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/smartcard_personalization
@@ -187,6 +199,7 @@
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/lib/html
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/lib
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/images
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/errors
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/css
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/binary
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/authentication
@@ -198,10 +211,6 @@
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Menu
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%PORTDATA%%@dirrmtry %%DATADIR%%/bin
-%%PORTDATA%%@dirrmtry %%DATADIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/eg
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML/Mason
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client
