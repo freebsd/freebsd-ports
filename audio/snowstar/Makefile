@@ -18,6 +18,9 @@ COMMENT=	A GUI interface to copy files to/from the Diamond Rio PM300
 RUN_DEPENDS=	rio:${PORTSDIR}/audio/rio \
 		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
+DEPRECATED=		tcl8.0 support is going to be dropped
+EXPIRATION_DATE=	2009-04-22
+
 NO_BUILD=	true
 NO_WRKSUBDIR=	true
 
