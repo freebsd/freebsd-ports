@@ -14,7 +14,7 @@
  upgrade: testdeps config-install dirs files-install fixperms upgrade-instruct
  
 -upgrade-noclobber: config-install dirs libs-install html-install bin-install local-install doc-install fixperms
-+upgrade-noclobber: config-install dirs libs-install html-install bin-install doc-install fixperms
++upgrade-noclobber: config-install dirs libs-install html-install bin-install doc-install
  
  
  # {{{ dependencies
@@ -23,7 +23,7 @@
  # }}}
  
 -install: testdeps config-install dirs files-install fixperms instruct
-+install: config-install dirs files-install fixperms 
++install: config-install dirs files-install
  
 -files-install: libs-install etc-install config-install bin-install sbin-install html-install local-install doc-install
 +files-install: libs-install etc-install config-install bin-install sbin-install html-install doc-install
