@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libapreq
-PORTVERSION=	1.33
+PORTVERSION=	1.34
 CATEGORIES=	www perl5 devel
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Apache
@@ -16,7 +16,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Generic Apache Request Library
 
 .if defined(WITH_MODPERL2)
-IGNORE=		This port does not support mod_perl2
+IGNORE=		this port does not support mod_perl2
 .else
 RUN_DEPENDS?=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 BUILD_DEPENDS=	${RUN_DEPENDS} \
@@ -28,12 +28,8 @@ PERL_CONFIGURE=	yes
 MAN3=		Apache::Cookie.3 Apache::Request.3 Apache::libapreq.3 \
 		libapreq.3
 
-post-patch:
-	@${PERL} -pi~ -e '$$_="" if ($$.>37 && $$.<63) || /PREREQ_PM/' \
-		${WRKSRC}/Makefile.PL
-
 post-install:
-.ifndef(NOPORTDOCS)
+.ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${EXAMPLESDIR}/c/testapreq
 	@${MKDIR} ${EXAMPLESDIR}/perl
