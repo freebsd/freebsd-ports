@@ -16,13 +16,13 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Request
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libapreq/include
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libapreq
-%%PORTDOCS%%%%EXAMPLESDIR%%/c/testapreq/Makefile.apxs
-%%PORTDOCS%%%%EXAMPLESDIR%%/c/testapreq/Makefile.tmpl
-%%PORTDOCS%%%%EXAMPLESDIR%%/c/testapreq/mod_testapreq.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/c/testapreq/mod_testapreq.module
-%%PORTDOCS%%%%EXAMPLESDIR%%/perl/cookie.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/perl/file_upload.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/c/testapreq
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/c
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/perl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/testapreq/Makefile.apxs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/testapreq/Makefile.tmpl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/testapreq/mod_testapreq.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/testapreq/mod_testapreq.module
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/cookie.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/file_upload.pl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c/testapreq
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/perl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
