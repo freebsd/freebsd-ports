@@ -1,0 +1,7 @@
+%%SITE_PERL%%/IPC/System/Simple.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/System/Simple/.packlist
+@dirrmtry %%SITE_PERL%%/IPC/System
+@dirrmtry %%SITE_PERL%%/IPC
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/System/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/System
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
