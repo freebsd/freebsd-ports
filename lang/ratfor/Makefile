@@ -26,9 +26,7 @@ EXTRACT_AFTER_ARGS=	| ${SH}
 ALL_TARGET=	all tests
 MAN1=		ratfor.1
 
-WANT_FORTRAN=yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-F77=		gfortran42
+USE_FORTRAN=	yes
 
 post-patch:
 	@cd ${WRKSRC} ; ${PATCH} --quiet < testw.patch
