@@ -1,0 +1,106 @@
+share/xsl/uml2svg/uml2svg.xsl
+share/xsl/uml2svg/xsl/.project
+share/xsl/uml2svg/xsl/ActivityDiagrams/AcceptEventAction.xsl
+share/xsl/uml2svg/xsl/ActivityDiagrams/Action.xsl
+share/xsl/uml2svg/xsl/ActivityDiagrams/ActionState.xsl
+share/xsl/uml2svg/xsl/ActivityDiagrams/ActivityDiagram.xsl
+share/xsl/uml2svg/xsl/ActivityDiagrams/ActivityEdge.xsl
+share/xsl/uml2svg/xsl/ActivityDiagrams/ActivityEdgeDescription.xsl
+share/xsl/uml2svg/xsl/ActivityDiagrams/ActivityPartition.xsl
+share/xsl/uml2svg/xsl/ActivityDiagrams/CallAction.xsl
+share/xsl/uml2svg/xsl/ActivityDiagrams/Compartment.xsl
+share/xsl/uml2svg/xsl/ActivityDiagrams/ConditionalNode.xsl
+share/xsl/uml2svg/xsl/ActivityDiagrams/ExceptionHandler.xsl
+share/xsl/uml2svg/xsl/ActivityDiagrams/InStates.xsl
+share/xsl/uml2svg/xsl/ActivityDiagrams/InterruptableActivityRegion.xsl
+share/xsl/uml2svg/xsl/ActivityDiagrams/ObjectFlowState.xsl
+share/xsl/uml2svg/xsl/ActivityDiagrams/Pin.xsl
+share/xsl/uml2svg/xsl/ActivityDiagrams/SendSignalAction.xsl
+share/xsl/uml2svg/xsl/ClassDiagrams/AssociationClass.xsl
+share/xsl/uml2svg/xsl/ClassDiagrams/Attribute.xsl
+share/xsl/uml2svg/xsl/ClassDiagrams/AttributeCompartment.xsl
+share/xsl/uml2svg/xsl/ClassDiagrams/Class.xsl
+share/xsl/uml2svg/xsl/ClassDiagrams/ClassDiagram.xsl
+share/xsl/uml2svg/xsl/ClassDiagrams/Interface.xsl
+share/xsl/uml2svg/xsl/ClassDiagrams/Interface_Ball.xsl
+share/xsl/uml2svg/xsl/ClassDiagrams/Operation.xsl
+share/xsl/uml2svg/xsl/ClassDiagrams/OperationCompartment.xsl
+share/xsl/uml2svg/xsl/ClassDiagrams/PackageClass.xsl
+share/xsl/uml2svg/xsl/ClassDiagrams/PackageClassBody.xsl
+share/xsl/uml2svg/xsl/ClassDiagrams/Parameter.xsl
+share/xsl/uml2svg/xsl/CollaborationDiagrams/CollaborationDiagram.xsl
+share/xsl/uml2svg/xsl/CollaborationDiagrams/Object.xsl
+share/xsl/uml2svg/xsl/CollaborationDiagrams/StimuliArrows.xsl
+share/xsl/uml2svg/xsl/Common/Arrowheads.xsl
+share/xsl/uml2svg/xsl/Common/Comment.xsl
+share/xsl/uml2svg/xsl/Common/CompartmentSeparator.xsl
+share/xsl/uml2svg/xsl/Common/DirectedName.xsl
+share/xsl/uml2svg/xsl/Common/Ellipse.xsl
+share/xsl/uml2svg/xsl/Common/ExpressionCompartment.xsl
+share/xsl/uml2svg/xsl/Common/FreeText.xsl
+share/xsl/uml2svg/xsl/Common/Globals.xsl
+share/xsl/uml2svg/xsl/Common/Lines.xsl
+share/xsl/uml2svg/xsl/Common/Multiplicity.xsl
+share/xsl/uml2svg/xsl/Common/Name.xsl
+share/xsl/uml2svg/xsl/Common/NameAndType.xsl
+share/xsl/uml2svg/xsl/Common/NameCompartment.xsl
+share/xsl/uml2svg/xsl/Common/NamespaceCompartment.xsl
+share/xsl/uml2svg/xsl/Common/Polyline.xsl
+share/xsl/uml2svg/xsl/Common/StereotypeCompartment.xsl
+share/xsl/uml2svg/xsl/Common/Styling.xsl
+share/xsl/uml2svg/xsl/Common/Text.xsl
+share/xsl/uml2svg/xsl/Common/Visibility.xsl
+share/xsl/uml2svg/xsl/DeploymentDiagrams/Component.xsl
+share/xsl/uml2svg/xsl/DeploymentDiagrams/ComponentBody.xsl
+share/xsl/uml2svg/xsl/DeploymentDiagrams/ComponentInstance.xsl
+share/xsl/uml2svg/xsl/DeploymentDiagrams/DeploymentDiagram.xsl
+share/xsl/uml2svg/xsl/DeploymentDiagrams/Node.xsl
+share/xsl/uml2svg/xsl/DeploymentDiagrams/NodeInstance.xsl
+share/xsl/uml2svg/xsl/DeploymentDiagrams/PortNameCompartment.xsl
+share/xsl/uml2svg/xsl/DeploymentDiagrams/ProvidedInterfaceNode.xsl
+share/xsl/uml2svg/xsl/DeploymentDiagrams/RequiredInterfaceNode.xsl
+share/xsl/uml2svg/xsl/DiagramCount.xsl
+share/xsl/uml2svg/xsl/DiagramList.xsl
+share/xsl/uml2svg/xsl/Main.xsl
+share/xsl/uml2svg/xsl/SequenceDiagrams/Lifeline.xsl
+share/xsl/uml2svg/xsl/SequenceDiagrams/ObjectSequence.xsl
+share/xsl/uml2svg/xsl/SequenceDiagrams/SequenceDiagram.xsl
+share/xsl/uml2svg/xsl/StateDiagrams/CompositeState.xsl
+share/xsl/uml2svg/xsl/StateDiagrams/FinalState.xsl
+share/xsl/uml2svg/xsl/StateDiagrams/InternalTransitionCompartment.xsl
+share/xsl/uml2svg/xsl/StateDiagrams/PseudoState.xsl
+share/xsl/uml2svg/xsl/StateDiagrams/Region.xsl
+share/xsl/uml2svg/xsl/StateDiagrams/RegionCompartment.xsl
+share/xsl/uml2svg/xsl/StateDiagrams/RegionSeparator.xsl
+share/xsl/uml2svg/xsl/StateDiagrams/SimpleState.xsl
+share/xsl/uml2svg/xsl/StateDiagrams/State.xsl
+share/xsl/uml2svg/xsl/StateDiagrams/StateDiagram.xsl
+share/xsl/uml2svg/xsl/StateDiagrams/StateTransitionDescription.xsl
+share/xsl/uml2svg/xsl/StateDiagrams/SubStates.xsl
+share/xsl/uml2svg/xsl/StateDiagrams/SynchState.xsl
+share/xsl/uml2svg/xsl/StateDiagrams/Transition.xsl
+share/xsl/uml2svg/xsl/StateDiagrams/TransitionDescription.xsl
+share/xsl/uml2svg/xsl/System/DiagramSize.xsl
+share/xsl/uml2svg/xsl/System/MakeArrowScript.xsl
+share/xsl/uml2svg/xsl/System/MakeTree.xsl
+share/xsl/uml2svg/xsl/System/MakeTreeScript.xsl
+share/xsl/uml2svg/xsl/UseCaseDiagrams/Actor.xsl
+share/xsl/uml2svg/xsl/UseCaseDiagrams/ActorStickman.xsl
+share/xsl/uml2svg/xsl/UseCaseDiagrams/Collaboration.xsl
+share/xsl/uml2svg/xsl/UseCaseDiagrams/ExtensionPoint.xsl
+share/xsl/uml2svg/xsl/UseCaseDiagrams/ExtensionPointCompartment.xsl
+share/xsl/uml2svg/xsl/UseCaseDiagrams/PackageUseCase.xsl
+share/xsl/uml2svg/xsl/UseCaseDiagrams/PackageUseCaseBody.xsl
+share/xsl/uml2svg/xsl/UseCaseDiagrams/UseCase.xsl
+share/xsl/uml2svg/xsl/UseCaseDiagrams/UseCaseDiagram.xsl
+@dirrm share/xsl/uml2svg/xsl/UseCaseDiagrams
+@dirrm share/xsl/uml2svg/xsl/System
+@dirrm share/xsl/uml2svg/xsl/StateDiagrams
+@dirrm share/xsl/uml2svg/xsl/SequenceDiagrams
+@dirrm share/xsl/uml2svg/xsl/DeploymentDiagrams
+@dirrm share/xsl/uml2svg/xsl/Common
+@dirrm share/xsl/uml2svg/xsl/CollaborationDiagrams
+@dirrm share/xsl/uml2svg/xsl/ClassDiagrams
+@dirrm share/xsl/uml2svg/xsl/ActivityDiagrams
+@dirrm share/xsl/uml2svg/xsl
+@dirrm share/xsl/uml2svg

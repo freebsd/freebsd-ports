@@ -1076,6 +1076,7 @@
     SUBDIR += uim-kde
     SUBDIR += uim-m17nlib
     SUBDIR += uim-qt
+    SUBDIR += uml2svg
     SUBDIR += uncrustify
     SUBDIR += uni2ascii
     SUBDIR += unroff
