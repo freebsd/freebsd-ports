@@ -13,91 +13,6 @@
 %%SITE_PERL%%/Data/Serializer/XML/Simple.pm
 %%SITE_PERL%%/Data/Serializer/YAML.pm
 %%SITE_PERL%%/Data/Serializer/YAML/Syck.pm
-%%SITE_PERL%%/auto/Data/Serializer/Config/General/autosplit.ix
-%%SITE_PERL%%/auto/Data/Serializer/Data/Denter/autosplit.ix
-%%SITE_PERL%%/auto/Data/Serializer/Data/Denter/deserialize.al
-%%SITE_PERL%%/auto/Data/Serializer/Data/Denter/serialize.al
-%%SITE_PERL%%/auto/Data/Serializer/Data/Dumper/autosplit.ix
-%%SITE_PERL%%/auto/Data/Serializer/Data/Dumper/deserialize.al
-%%SITE_PERL%%/auto/Data/Serializer/Data/Dumper/serialize.al
-%%SITE_PERL%%/auto/Data/Serializer/Data/Taxi/autosplit.ix
-%%SITE_PERL%%/auto/Data/Serializer/Data/Taxi/deserialize.al
-%%SITE_PERL%%/auto/Data/Serializer/Data/Taxi/serialize.al
-%%SITE_PERL%%/auto/Data/Serializer/FreezeThaw/autosplit.ix
-%%SITE_PERL%%/auto/Data/Serializer/FreezeThaw/deserialize.al
-%%SITE_PERL%%/auto/Data/Serializer/FreezeThaw/serialize.al
-%%SITE_PERL%%/auto/Data/Serializer/JSON/Syck/autosplit.ix
-%%SITE_PERL%%/auto/Data/Serializer/JSON/Syck/deserialize.al
-%%SITE_PERL%%/auto/Data/Serializer/JSON/Syck/serialize.al
-%%SITE_PERL%%/auto/Data/Serializer/JSON/autosplit.ix
-%%SITE_PERL%%/auto/Data/Serializer/JSON/deserialize.al
-%%SITE_PERL%%/auto/Data/Serializer/JSON/serialize.al
-%%SITE_PERL%%/auto/Data/Serializer/PHP/Serialization/autosplit.ix
-%%SITE_PERL%%/auto/Data/Serializer/PHP/Serialization/deserialize.al
-%%SITE_PERL%%/auto/Data/Serializer/PHP/Serialization/serialize.al
-%%SITE_PERL%%/auto/Data/Serializer/Storable/autosplit.ix
-%%SITE_PERL%%/auto/Data/Serializer/Storable/deserialize.al
-%%SITE_PERL%%/auto/Data/Serializer/Storable/serialize.al
-%%SITE_PERL%%/auto/Data/Serializer/XML/Dumper/autosplit.ix
-%%SITE_PERL%%/auto/Data/Serializer/XML/Dumper/deserialize.al
-%%SITE_PERL%%/auto/Data/Serializer/XML/Dumper/serialize.al
-%%SITE_PERL%%/auto/Data/Serializer/XML/Simple/autosplit.ix
-%%SITE_PERL%%/auto/Data/Serializer/XML/Simple/deserialize.al
-%%SITE_PERL%%/auto/Data/Serializer/XML/Simple/serialize.al
-%%SITE_PERL%%/auto/Data/Serializer/YAML/Syck/autosplit.ix
-%%SITE_PERL%%/auto/Data/Serializer/YAML/Syck/deserialize.al
-%%SITE_PERL%%/auto/Data/Serializer/YAML/Syck/serialize.al
-%%SITE_PERL%%/auto/Data/Serializer/YAML/autosplit.ix
-%%SITE_PERL%%/auto/Data/Serializer/YAML/deserialize.al
-%%SITE_PERL%%/auto/Data/Serializer/YAML/serialize.al
-%%SITE_PERL%%/auto/Data/Serializer/_compress.al
-%%SITE_PERL%%/auto/Data/Serializer/_create_token.al
-%%SITE_PERL%%/auto/Data/Serializer/_deb64.al
-%%SITE_PERL%%/auto/Data/Serializer/_decode.al
-%%SITE_PERL%%/auto/Data/Serializer/_decompress.al
-%%SITE_PERL%%/auto/Data/Serializer/_decrypt.al
-%%SITE_PERL%%/auto/Data/Serializer/_dedigest.al
-%%SITE_PERL%%/auto/Data/Serializer/_dehex.al
-%%SITE_PERL%%/auto/Data/Serializer/_deserialize.al
-%%SITE_PERL%%/auto/Data/Serializer/_enb64.al
-%%SITE_PERL%%/auto/Data/Serializer/_encode.al
-%%SITE_PERL%%/auto/Data/Serializer/_encrypt.al
-%%SITE_PERL%%/auto/Data/Serializer/_endigest.al
-%%SITE_PERL%%/auto/Data/Serializer/_enhex.al
-%%SITE_PERL%%/auto/Data/Serializer/_extract_token.al
-%%SITE_PERL%%/auto/Data/Serializer/_get_digest.al
-%%SITE_PERL%%/auto/Data/Serializer/_get_token.al
-%%SITE_PERL%%/auto/Data/Serializer/_remove_token.al
-%%SITE_PERL%%/auto/Data/Serializer/_serialize.al
-%%SITE_PERL%%/auto/Data/Serializer/autosplit.ix
-%%SITE_PERL%%/auto/Data/Serializer/deserialize.al
-%%SITE_PERL%%/auto/Data/Serializer/freeze.al
-%%SITE_PERL%%/auto/Data/Serializer/raw_deserialize.al
-%%SITE_PERL%%/auto/Data/Serializer/raw_serialize.al
-%%SITE_PERL%%/auto/Data/Serializer/retrieve.al
-%%SITE_PERL%%/auto/Data/Serializer/serialize.al
-%%SITE_PERL%%/auto/Data/Serializer/store.al
-%%SITE_PERL%%/auto/Data/Serializer/thaw.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Serializer/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Serializer
-@dirrm %%SITE_PERL%%/auto/Data/Serializer/YAML/Syck
-@dirrm %%SITE_PERL%%/auto/Data/Serializer/YAML
-@dirrm %%SITE_PERL%%/auto/Data/Serializer/XML/Simple
-@dirrm %%SITE_PERL%%/auto/Data/Serializer/XML/Dumper
-@dirrm %%SITE_PERL%%/auto/Data/Serializer/XML
-@dirrm %%SITE_PERL%%/auto/Data/Serializer/Storable
-@dirrm %%SITE_PERL%%/auto/Data/Serializer/PHP/Serialization
-@dirrm %%SITE_PERL%%/auto/Data/Serializer/PHP
-@dirrm %%SITE_PERL%%/auto/Data/Serializer/JSON/Syck
-@dirrm %%SITE_PERL%%/auto/Data/Serializer/JSON
-@dirrm %%SITE_PERL%%/auto/Data/Serializer/FreezeThaw
-@dirrm %%SITE_PERL%%/auto/Data/Serializer/Data/Taxi
-@dirrm %%SITE_PERL%%/auto/Data/Serializer/Data/Dumper
-@dirrm %%SITE_PERL%%/auto/Data/Serializer/Data/Denter
-@dirrm %%SITE_PERL%%/auto/Data/Serializer/Data
-@dirrm %%SITE_PERL%%/auto/Data/Serializer/Config/General
-@dirrm %%SITE_PERL%%/auto/Data/Serializer/Config
-@dirrm %%SITE_PERL%%/auto/Data/Serializer
 @dirrm %%SITE_PERL%%/Data/Serializer/YAML
 @dirrm %%SITE_PERL%%/Data/Serializer/XML
 @dirrm %%SITE_PERL%%/Data/Serializer/PHP
@@ -105,6 +20,5 @@
 @dirrm %%SITE_PERL%%/Data/Serializer/Data
 @dirrm %%SITE_PERL%%/Data/Serializer/Config
 @dirrm %%SITE_PERL%%/Data/Serializer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrmtry %%SITE_PERL%%/auto/Data
 @dirrmtry %%SITE_PERL%%/Data
