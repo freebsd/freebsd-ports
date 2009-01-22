@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pydev
-PORTVERSION=	1.3.22
+PORTVERSION=	1.4.0
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	java devel python
@@ -19,8 +19,6 @@ COMMENT=	Eclipse plugin for Python and Jython development
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
-JAVA_OS=	native
-JAVA_VENDOR=	bsdjava
 JAVA_VERSION=	1.5+
 
 NO_BUILD=	yes
