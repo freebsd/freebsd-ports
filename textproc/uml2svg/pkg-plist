@@ -104,3 +104,4 @@ share/xsl/uml2svg/xsl/UseCaseDiagrams/UseCaseDiagram.xsl
 @dirrm share/xsl/uml2svg/xsl/ActivityDiagrams
 @dirrm share/xsl/uml2svg/xsl
 @dirrm share/xsl/uml2svg
+@dirrmtry share/xsl
