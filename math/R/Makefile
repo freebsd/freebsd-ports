@@ -56,7 +56,7 @@ USE_ICONV=	yes
 USE_PERL5=	yes
 USE_GETTEXT=	yes
 
-CONFIGURE_ENV=	INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644" F77="${F77}" FC="${FC}"
+CONFIGURE_ENV=	INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644"
 CONFIGURE_ARGS=	--enable-R-shlib --with-system-bzlib --with-system-zlib \
 		rdocdir=${DOCSDIR}
 
