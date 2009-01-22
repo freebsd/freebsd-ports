@@ -1540,6 +1540,7 @@
     SUBDIR += p5-Module-Reload-Sel
     SUBDIR += p5-Module-Runtime
     SUBDIR += p5-Module-ScanDeps
+    SUBDIR += p5-Module-Setup
     SUBDIR += p5-Module-Starter
     SUBDIR += p5-Module-Starter-PBP
     SUBDIR += p5-Module-Starter-Plugin-SimpleStore
