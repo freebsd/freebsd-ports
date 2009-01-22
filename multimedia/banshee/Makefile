@@ -11,7 +11,7 @@ CATEGORIES=	multimedia audio
 MASTER_SITES=	http://download.banshee-project.org/banshee/
 DISTNAME=	${PORTNAME}-1-${PORTVERSION}
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Music management and playback for gnome
 
 # Could do without bash, but it's brought in by gnome anyway.
