@@ -9,7 +9,8 @@
 CLI_DEPS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
   			p5-Getopt-Long>=2.24:${PORTSDIR}/devel/p5-Getopt-Long \
 			${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-			${SITE_PERL}/Term/ReadLine/Perl.pm:${PORTSDIR}/devel/p5-ReadLine-Perl
+			${SITE_PERL}/Term/ReadLine/Perl.pm:${PORTSDIR}/devel/p5-ReadLine-Perl \
+			p5-Net-SSLeay>=1.35:${PORTSDIR}/security/p5-Net-SSLeay
 
 CORE_DEPS=	p5-Encode>=2.13:${PORTSDIR}/converters/p5-Encode \
 			${SITE_PERL}/Class/ReturnValue.pm:${PORTSDIR}/devel/p5-Class-ReturnValue \

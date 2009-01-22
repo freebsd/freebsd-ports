@@ -5,7 +5,7 @@
    sysconfdir:		${prefix}/etc+
    mandir:		${prefix}/man
 -  libdir:		${prefix}/lib+
-+  libdir:		/usr/local/lib/perl5/site_perl/5.8.8
++  libdir:	 	%%SITE_PERL%%	
    datadir:		${prefix}/share+
    htmldir:		${datadir}/html
 +  sharedir:         ${prefix}/share+
@@ -23,7 +23,7 @@
 +  custometcdir:		${customdir}/etc+
 +  customhtmldir:	${customdir}/www+
 +  customlexdir:		${sharedir}/po
-+  customlibdir:		/usr/local/lib/perl5/site_perl/5.8.8
++  customlibdir:	%%SITE_PERL%%
  </Layout>
  
  <Layout Win32>

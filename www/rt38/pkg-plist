@@ -1209,3 +1209,4 @@ share/rt38/html/l
 @dirrm %%SITE_PERL%%/RT/Action
 @dirrm %%SITE_PERL%%/RT
 @dirrm etc/rt38
+@dirrmtry www/rt38
