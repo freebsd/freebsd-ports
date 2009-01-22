@@ -1,4 +1,4 @@
-Now the cannaserver uses a UNIX domain scoekt by default.  If you need
+Now the cannaserver uses a UNIX domain socket by default.  If you need
 to use a TCP connection, please edit your /etc/rc.conf (or alike) and
 add the -inet command-line option to canna_flags, i.e.:
 
