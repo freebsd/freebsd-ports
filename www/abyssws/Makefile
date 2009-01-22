@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	abyssws
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTVERSION=	2.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.aprelium.com/data/
 DISTNAME=	abwsx1-freebsd
@@ -41,8 +40,7 @@ do-install:
 	@${INSTALL} -d ${PREFIX}/lib/abyssws
 	${TAR} -C ${WRKSRC} -cf - . | ${TAR} -C ${PREFIX}/lib/abyssws -xf -
 	@ ${CHOWN} -R abyssws:abyssws ${PREFIX}/lib/abyssws/
-	@${ECHO_CMD} '@exec ${CHOWN} -R abyssws:abyssws \
-		${PREFIX}/lib/abyssws' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
 
 post-install:
 	@if [ ! -f ${PREFIX}/lib/abyssws/htdocs/index.html ]; then \
