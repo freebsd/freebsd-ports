@@ -18,6 +18,9 @@ COMMENT=	A fun multiplayer game with cute fluffy bunnies and bloody explosions
 
 USE_SDL=	mixer sdl
 
+DEPRECATED=		tcl8.0 support is going to be dropped
+EXPIRATION_DATE=	2009-03-22
+
 .if !defined (WITHOUT_TCL)
 RUN_DEPENDS+=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 PLIST_SUB +=	WITH_TCL=""

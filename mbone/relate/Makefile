@@ -23,4 +23,7 @@ RUN_DEPENDS=	rat30:${PORTSDIR}/mbone/rat30 \
 PLIST_FILES=	bin/relate
 WRKSRC=		${WRKDIR}/relate
 
+DEPRECATED=		tcl8.0 support is going to be dropped
+EXPIRATION_DATE=	2009-03-22
+
 .include <bsd.port.mk>

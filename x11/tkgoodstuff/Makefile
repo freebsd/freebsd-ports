@@ -29,6 +29,9 @@ CONFIGURE_ENV=	TCLCONFIGSH=${PREFIX}/lib/tcl8.0/tclConfig.sh \
 CONFIGURE_ARGS=	--enable-libs
 STRIP=
 
+DEPRECATED=		tcl8.0 support is going to be dropped
+EXPIRATION_DATE=	2009-03-22
+
 post-patch:
 	@${RM} -f ${WRKSRC}/tcl/*.orig
 
