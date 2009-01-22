@@ -35,8 +35,10 @@
 # can be useful for creating a module that consists of many directories
 # spread out over the entire source repository.
 #
+
 # Convenient aliases
 world		-a .
+
 # CVSROOT support
 CVSROOT		CVSROOT
 access		CVSROOT access
@@ -54,7 +56,9 @@ modules		CVSROOT modules
 rcsinfo		CVSROOT rcsinfo
 rcstemplate	CVSROOT rcstemplate
 taginfo		CVSROOT taginfo
+
 # !!MERGE!!
+
 #
 # Ports directories
 #
@@ -126,6 +130,7 @@ ports_x11_servers               ports/x11-servers
 ports_x11_themes                ports/x11-themes
 ports_x11_toolkits              ports/x11-toolkits
 ports_x11_wm                    ports/x11-wm
+
 #
 # Ports modules
 #
@@ -9129,7 +9134,6 @@ nl-aspell                       ports/textproc/nl-aspell
 nl-ispell                       ports/textproc/nl-ispell
 nload                           ports/net/nload
 nltk                            ports/textproc/nltk
-nltk_lite                       ports/textproc/nltk_lite
 nmap                            ports/security/nmap
 nmap-i18n-man                   ports/security/nmap-i18n-man
 nmh                             ports/mail/nmh
@@ -10047,6 +10051,7 @@ p5-Cache-Simple-TimedExpiry     ports/devel/p5-Cache-Simple-TimedExpiry
 p5-Cairo                        ports/graphics/p5-Cairo
 p5-Calendar-Simple              ports/devel/p5-Calendar-Simple
 p5-Captcha-reCAPTCHA            ports/graphics/p5-Captcha-reCAPTCHA
+p5-Carp-Always                  ports/devel/p5-Carp-Always
 p5-Carp-Assert                  ports/devel/p5-Carp-Assert
 p5-Carp-Assert-More             ports/devel/p5-Carp-Assert-More
 p5-Carp-Clan                    ports/devel/p5-Carp-Clan
@@ -10247,6 +10252,7 @@ p5-Class-MOP                    ports/devel/p5-Class-MOP
 p5-Class-MakeMethods            ports/devel/p5-Class-MakeMethods
 p5-Class-Measure                ports/devel/p5-Class-Measure
 p5-Class-Method-Modifiers       ports/devel/p5-Class-Method-Modifiers
+p5-Class-Method-Modifiers-Fast  ports/devel/p5-Class-Method-Modifiers-Fast
 p5-Class-MethodMaker            ports/devel/p5-Class-MethodMaker
 p5-Class-MethodMapper           ports/devel/p5-Class-MethodMapper
 p5-Class-MixinFactory           ports/devel/p5-Class-MixinFactory
@@ -11583,6 +11589,7 @@ p5-MooseX-Async                 ports/devel/p5-MooseX-Async
 p5-MooseX-AttributeHelpers      ports/devel/p5-MooseX-AttributeHelpers
 p5-MooseX-ClassAttribute        ports/devel/p5-MooseX-ClassAttribute
 p5-MooseX-Clone                 ports/devel/p5-MooseX-Clone
+p5-MooseX-ConfigFromFile        ports/devel/p5-MooseX-ConfigFromFile
 p5-MooseX-Daemonize             ports/devel/p5-MooseX-Daemonize
 p5-MooseX-Getopt                ports/devel/p5-MooseX-Getopt
 p5-MooseX-IOC                   ports/devel/p5-MooseX-IOC
@@ -11970,6 +11977,7 @@ p5-Parse-Yapp                   ports/devel/p5-Parse-Yapp
 p5-ParseLex                     ports/devel/p5-ParseLex
 p5-PatchReader                  ports/devel/p5-PatchReader
 p5-Path-Class                   ports/devel/p5-Path-Class
+p5-Path-Class-URI               ports/www/p5-Path-Class-URI
 p5-PathTools                    ports/devel/p5-PathTools
 p5-PayflowPro                   ports/finance/p5-PayflowPro
 p5-Penguin                      ports/devel/p5-Penguin
@@ -12837,6 +12845,7 @@ p5-XML-NamespaceSupport         ports/textproc/p5-XML-NamespaceSupport
 p5-XML-Node                     ports/textproc/p5-XML-Node
 p5-XML-NodeFilter               ports/textproc/p5-XML-NodeFilter
 p5-XML-OPML                     ports/textproc/p5-XML-OPML
+p5-XML-OPML-LibXML              ports/textproc/p5-XML-OPML-LibXML
 p5-XML-Parser                   ports/textproc/p5-XML-Parser
 p5-XML-Parser-EasyTree          ports/textproc/p5-XML-Parser-EasyTree
 p5-XML-Parser-Lite-Tree         ports/textproc/p5-XML-Parser-Lite-Tree
@@ -13209,6 +13218,7 @@ p5-calendar-simple              ports/devel/p5-Calendar-Simple
 p5-cam-pdf                      ports/textproc/p5-CAM-PDF
 p5-capitalization               ports/devel/p5-capitalization
 p5-captcha-recaptcha            ports/graphics/p5-Captcha-reCAPTCHA
+p5-carp-always                  ports/devel/p5-Carp-Always
 p5-carp-assert                  ports/devel/p5-Carp-Assert
 p5-carp-assert-more             ports/devel/p5-Carp-Assert-More
 p5-carp-clan                    ports/devel/p5-Carp-Clan
@@ -13471,6 +13481,7 @@ p5-class-loader                 ports/devel/p5-Class-Loader
 p5-class-makemethods            ports/devel/p5-Class-MakeMethods
 p5-class-measure                ports/devel/p5-Class-Measure
 p5-class-method-modifiers       ports/devel/p5-Class-Method-Modifiers
+p5-class-method-modifiers-fast  ports/devel/p5-Class-Method-Modifiers-Fast
 p5-class-methodmaker            ports/devel/p5-Class-MethodMaker
 p5-class-methodmapper           ports/devel/p5-Class-MethodMapper
 p5-class-mixinfactory           ports/devel/p5-Class-MixinFactory
@@ -14839,6 +14850,7 @@ p5-moosex-async                 ports/devel/p5-MooseX-Async
 p5-moosex-attributehelpers      ports/devel/p5-MooseX-AttributeHelpers
 p5-moosex-classattribute        ports/devel/p5-MooseX-ClassAttribute
 p5-moosex-clone                 ports/devel/p5-MooseX-Clone
+p5-moosex-configfromfile        ports/devel/p5-MooseX-ConfigFromFile
 p5-moosex-daemonize             ports/devel/p5-MooseX-Daemonize
 p5-moosex-getopt                ports/devel/p5-MooseX-Getopt
 p5-moosex-ioc                   ports/devel/p5-MooseX-IOC
@@ -15152,6 +15164,7 @@ p5-parse-yapp                   ports/devel/p5-Parse-Yapp
 p5-parselex                     ports/devel/p5-ParseLex
 p5-patchreader                  ports/devel/p5-PatchReader
 p5-path-class                   ports/devel/p5-Path-Class
+p5-path-class-uri               ports/www/p5-Path-Class-URI
 p5-pathtools                    ports/devel/p5-PathTools
 p5-payflowpro                   ports/finance/p5-PayflowPro
 p5-pcsc-card                    ports/devel/p5-PCSC-Card
@@ -16138,6 +16151,7 @@ p5-xml-namespacesupport         ports/textproc/p5-XML-NamespaceSupport
 p5-xml-node                     ports/textproc/p5-XML-Node
 p5-xml-nodefilter               ports/textproc/p5-XML-NodeFilter
 p5-xml-opml                     ports/textproc/p5-XML-OPML
+p5-xml-opml-libxml              ports/textproc/p5-XML-OPML-LibXML
 p5-xml-parser                   ports/textproc/p5-XML-Parser
 p5-xml-parser-easytree          ports/textproc/p5-XML-Parser-EasyTree
 p5-xml-parser-lite-tree         ports/textproc/p5-XML-Parser-Lite-Tree
@@ -19529,6 +19543,7 @@ ruby-subversion                 ports/devel/ruby-subversion
 ruby-svg                        ports/graphics/ruby-svg
 ruby-sybct                      ports/databases/ruby-sybct
 ruby-sysvipc                    ports/devel/ruby-sysvipc
+ruby-taglib                     ports/audio/ruby-taglib
 ruby-tcpsocketpipe              ports/net/ruby-tcpsocketpipe
 ruby-tcpwrap                    ports/security/ruby-tcpwrap
 ruby-tempura                    ports/textproc/ruby-tempura
