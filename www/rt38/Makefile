@@ -15,7 +15,7 @@
 
 PORTNAME=	rt
 PORTVERSION=	3.8.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
@@ -30,9 +30,9 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-noportdocs-Makefile.in
 CONFLICTS=	rt-2* rt-3.0* rt-3.2* rt-3.4* rt-3.6*
 LATEST_LINK=	rt38
 
-OPTIONS=	MYSQL 	"Enable MySQL backend" 		on \
-		APACHE2		"Enable Apache2 server"		on \
-		MODPERL2	"Enable mod_perl2 support"	on \
+OPTIONS=	MYSQL 		"Enable MySQL backend" 		on  \
+		APACHE2		"Enable Apache2 server"		on  \
+		MODPERL2	"Enable mod_perl2 support"	on  \
 		POSTGRESQL 	"Enable Postgresql backend"	off \
 		ORACLE		"Enable Oracle backend"		off \
 		SQLITE		"Enable SQLite backend" 	off \
@@ -194,6 +194,7 @@ pre-fetch:
 
 post-patch:
 	@${RM} -f ${WRKSRC}/lib/RT.pm.in.orig
+	@${REINPLACE_CMD} -e 's!%%PREFIX%%!${PREFIX}!g' ${WRKSRC}/config.layout
 	@${REINPLACE_CMD} -e 's!%%SITE_PERL%%!${SITE_PERL}!g' ${WRKSRC}/config.layout
 
 pre-install:

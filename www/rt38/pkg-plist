@@ -1051,6 +1051,7 @@ share/rt38/html/autohandler
 share/rt38/html/dhandler
 share/rt38/html/index.html
 share/rt38/html/l
+@dirrm share/rt38/etc
 @dirrm share/rt38/plugins
 @dirrm share/rt38/po
 @dirrm share/rt38/html/Widgets/Form
@@ -1183,6 +1184,7 @@ share/rt38/html/l
 @dirrm share/rt38/html/Admin/CustomFields
 @dirrm share/rt38/html/Admin
 @dirrm share/rt38/html
+@dirrm share/rt38/lib
 @dirrm share/rt38
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/RT/URI
