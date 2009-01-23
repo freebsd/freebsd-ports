@@ -7,7 +7,7 @@
 
 PORTNAME=	SoQt
 PORTVERSION=	1.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.coin3d.org/coin/src/all/ \
 		ftp://ftp.coin3d.org/pub/coin/src/all/
@@ -16,7 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt toolkit library for Coin
 
-LIB_DEPENDS=	Coin.45:${PORTSDIR}/graphics/Coin
+LIB_DEPENDS=	Coin.60:${PORTSDIR}/graphics/Coin
 
 USE_AUTOTOOLS=	libtool:15
 USE_QT_VER=	3
