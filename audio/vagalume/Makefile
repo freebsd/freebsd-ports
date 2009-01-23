@@ -7,6 +7,7 @@
 
 PORTNAME=	vagalume
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 MASTER_SITE_SUBDIR=	pool/main/v/vagalume/
@@ -16,7 +17,7 @@ MAINTAINER=	decke@bluelife.at
 COMMENT=	A GTK+-based client for the Last.fm online radio
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
-		curl.4:${PORTSDIR}/ftp/curl
+		curl.5:${PORTSDIR}/ftp/curl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 

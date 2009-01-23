@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkpod
 PORTVERSION=	0.99.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -57,7 +57,7 @@ LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 .endif
 
 .if defined(WITH_CURL) || exists(${LOCALBASE}/lib/libcurl.so)
-LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
 .endif
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"

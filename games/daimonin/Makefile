@@ -7,6 +7,7 @@
 
 PORTNAME=	daimonin_client
 PORTVERSION=	0.9.7.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/daimonin
 
@@ -14,7 +15,7 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Free open source Massively Multiplayer On-line Role-playing Game (MMORPG)
 
 LIB_DEPENDS=	physfs:${PORTSDIR}/devel/physfs \
-		curl.4:${PORTSDIR}/ftp/curl
+		curl.5:${PORTSDIR}/ftp/curl
 
 USE_ZIP=	yes
 HAS_CONFIGURE=	yes

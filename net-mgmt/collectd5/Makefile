@@ -7,6 +7,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.5.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/ \
 		http://mirror.roe.ch/dist/${PORTNAME}/
@@ -98,7 +99,7 @@ PLIST_SUB+=	CGI="@comment "
 
 .if defined(WITH_APACHE)
 CONFIGURE_ARGS+=--enable-apache
-LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	APACHE=""
 .else
 CONFIGURE_ARGS+=--disable-apache

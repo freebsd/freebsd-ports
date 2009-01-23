@@ -8,7 +8,7 @@
 
 PORTNAME=	webkit
 PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://people.freedesktop.org/~alp/webkit/gtk/
 PKGNAMESUFFIX=	-gtk2
@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An opensource browser engine
 
 LIB_DEPENDS=	icutu.38:${PORTSDIR}/devel/icu \
-		curl.4:${PORTSDIR}/ftp/curl \
+		curl.5:${PORTSDIR}/ftp/curl \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 
 WANT_GSTREAMER=	yes

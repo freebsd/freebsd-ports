@@ -7,6 +7,7 @@
 
 PORTNAME=	warsow
 PORTVERSION=	0.42
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://data.rodix.free.fr/warsow/files/ \
 		http://88.191.19.21/wsw/
@@ -16,7 +17,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A fast paced first person shooter game
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	${DATADIR}/basewsw/data0.pk3:${PORTSDIR}/games/warsow-data
 
 ONLY_FOR_ARCHS=	i386 amd64

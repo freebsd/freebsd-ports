@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.99.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=	--disable-xft
 .endif
 
 .if !defined(WITHOUT_CURL)
-LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=	--without-curl
 .endif

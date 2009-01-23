@@ -7,13 +7,14 @@
 
 PORTNAME=	codelite
 DISTVERSION=	1.0.${SVN_REVISION}
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	SF
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	An Open Source IDE for C/C++
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
 OPTIONS=	CSCOPE	"Enable CScope integration" OFF
 

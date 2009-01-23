@@ -7,7 +7,7 @@
 
 PORTNAME=	telak
 PORTVERSION=	0.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://julien.danjou.info/telak/ \
 		CRITICAL
@@ -15,7 +15,7 @@ MASTER_SITES=	http://julien.danjou.info/telak/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A tool to draw pictures on your root window
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
 		gcrypt.16:${PORTSDIR}/security/libgcrypt
 
 USE_GMAKE=	yes

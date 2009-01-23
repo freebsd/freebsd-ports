@@ -8,13 +8,14 @@
 
 PORTNAME=	wsdlpull
 PORTVERSION=	1.22
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	C++ WSDL Parser
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
 USE_GNOME=	gnometarget
 USE_AUTOTOOLS=	libtool:15

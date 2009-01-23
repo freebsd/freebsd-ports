@@ -7,7 +7,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/ \
 		http://www.gdal.org/dl/ \
@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=	--with-cfitsio=no
 .endif
 
 .if defined(WITH_CURL)
-LIB_DEPENDS+=		curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=		curl.5:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}/bin/curl-config
 .else
 CONFIGURE_ARGS+=	--with-curl=no

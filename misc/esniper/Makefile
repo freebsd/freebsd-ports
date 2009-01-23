@@ -6,6 +6,7 @@
 
 PORTNAME=	esniper
 DISTVERSION=	2-18-1
+PORTREVISION=	1
 CATEGORIES=	misc net
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -13,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	A lightweight console application for sniping ebay auctions
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-curl-config=${LOCALBASE}/bin/curl-config

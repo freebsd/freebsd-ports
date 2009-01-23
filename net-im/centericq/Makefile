@@ -8,7 +8,7 @@
 
 PORTNAME=	centericq
 PORTVERSION=	4.21.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net-im
 MASTER_SITES=	http://thekonst.net/download/
 
@@ -69,7 +69,7 @@ CONFIGURE_ARGS+=	--with-fribidi
 .if !defined(WITH_MSN)
 CONFIGURE_ARGS+=	--disable-msn
 .else
-LIB_DEPENDS+=		curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=		curl.5:${PORTSDIR}/ftp/curl
 .endif
 
 .if !defined(WITH_YAHOO)

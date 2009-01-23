@@ -5,6 +5,7 @@
 
 PORTNAME=	ocurl
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	ocaml-
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
 WRKSRC=		${WRKDIR}/ocurl
 USE_GMAKE=	yes

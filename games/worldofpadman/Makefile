@@ -7,7 +7,7 @@
 
 PORTNAME=	worldofpadman
 PORTVERSION=	1.2.20080621
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://thilo.kickchat.com/download/:full \
 		http://btc3x6.che.uni-bayreuth.de/~tl/wop_final/:full \
@@ -66,7 +66,7 @@ MAKE_ENV+=	HAVE_VM_COMPILED=true
 .if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SMP)
 # curl
 .   if defined(WITH_CURL)
-LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
 MAKE_ENV+=	USE_CURL=1
 .       if defined(WITH_CURL_DLOPEN)
 MAKE_ENV+=	USE_CURL_DLOPEN=1

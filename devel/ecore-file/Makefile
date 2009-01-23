@@ -7,7 +7,7 @@
 
 PORTNAME=	file
 PORTVERSION=	0.9.9.042
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 		http://download.enlightenment.org/snapshots/2008-01-25/
@@ -45,7 +45,7 @@ OPTIONS=	CURL	"Enable Curl support"	on
 
 .if !defined(WITHOUT_CURL)
 CONFIGURE_ARGS+=	--enable-curl
-LIB_DEPENDS+=		curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=		curl.5:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=	--disable-curl
 .endif

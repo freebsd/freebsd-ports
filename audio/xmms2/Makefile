@@ -11,6 +11,7 @@ DISTVERSION=	0.5DrLecter
 CATEGORIES?=	audio
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}
+PORTREVISION?=	1
 
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT?=	Rewrite of xmms as a client/server system (developer release)
@@ -87,7 +88,7 @@ EXCLUDE+=	--without-optionals="python" --without-optionals="ruby" --without-opti
 .if !defined(XMMS2_SLAVE)
 
 .if !defined(WITHOUT_CURL)
-LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	CURL=""
 .else
 EXCLUDE+=	--without-plugins="curl" --without-plugins="icymetaint"

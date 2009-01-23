@@ -7,6 +7,7 @@
 
 PORTNAME=	gmpc-mdcover
 PORTVERSION=	0.16.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/download/Programs/gmpc/${PORTVERSION}/
 
@@ -14,7 +15,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A Directory artist/song plugin for gmpc
 
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
-		curl.4:${PORTSDIR}/ftp/curl
+		curl.5:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	http
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Extended HTTP Support
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

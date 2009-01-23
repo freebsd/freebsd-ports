@@ -7,6 +7,7 @@
 
 PORTNAME=	linknx
 PORTVERSION=	0.0.1.25
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -32,7 +33,7 @@ LIB_DEPENDS+=	esmtp.6:${PORTSDIR}/mail/libesmtp
 .endif
 
 .if (defined(WITH_LIBCURL) || exists(${LOCALBASE}/lib/libcurl.so))
-LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
 .endif
 
 USE_RC_SUBR=	${PORTNAME}

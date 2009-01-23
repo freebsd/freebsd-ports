@@ -8,14 +8,14 @@
 
 PORTNAME=	openftd
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news
 MASTER_SITES=	http://www.icheb.nl/mirrors/openftd/
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	FreeBSD version of the Fill Threads Database program
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		dbus-1.3:${PORTSDIR}/devel/dbus \

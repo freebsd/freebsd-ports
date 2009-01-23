@@ -7,7 +7,7 @@
 
 PORTNAME=	mediatomb
 PORTVERSION=	0.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,7 @@ CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		LDFLAGS="${LDFLAGS}" \
 		CFLAGS="${CFLAGS}"
 LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2 \
-		curl.4:${PORTSDIR}/ftp/curl
+		curl.5:${PORTSDIR}/ftp/curl
 USE_RC_SUBR=	mediatomb.sh
 
 # --- configurable variables ---

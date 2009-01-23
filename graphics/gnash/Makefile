@@ -7,7 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://getgnash.org/packages/releases/ \
 		${MASTER_SITE_GNU}
@@ -18,7 +18,7 @@ COMMENT=	GNU Flash movie player
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		curl.4:${PORTSDIR}/ftp/curl \
+		curl.5:${PORTSDIR}/ftp/curl \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
 CONFLICTS=	gnash-devel-[0-9]*

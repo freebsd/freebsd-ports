@@ -7,7 +7,7 @@
 
 PORTNAME=	morla
 PORTVERSION=	0.16
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://www.morlardf.net/src/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
@@ -17,7 +17,7 @@ COMMENT=	A RDF editor
 
 LIB_DEPENDS=	nxml.18:${PORTSDIR}/textproc/libnxml \
 		rdf.0:${PORTSDIR}/textproc/redland \
-		curl.4:${PORTSDIR}/ftp/curl
+		curl.5:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 

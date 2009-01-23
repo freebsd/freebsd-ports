@@ -7,6 +7,7 @@
 
 PORTNAME=	zabbix
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
@@ -16,7 +17,7 @@ COMMENT=	Application and network monitoring solution
 
 LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp \
 		iksemel.4:${PORTSDIR}/textproc/iksemel \
-		curl.4:${PORTSDIR}/ftp/curl
+		curl.5:${PORTSDIR}/ftp/curl
 
 OPTIONS=	MYSQL "Use MySQL backend" on \
 		PGSQL "Use PostgreSQL backend" off \

@@ -7,6 +7,7 @@
 
 PORTNAME=	libwfut
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	worldforge
@@ -15,7 +16,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	WorldForge update library
 
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
-		curl.4:${PORTSDIR}/ftp/curl
+		curl.5:${PORTSDIR}/ftp/curl
 
 CONFIGURE_ARGS+=--without-python
 GNU_CONFIGURE=	yes

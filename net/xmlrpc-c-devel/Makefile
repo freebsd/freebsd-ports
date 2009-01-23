@@ -8,7 +8,7 @@
 
 PORTNAME=	xmlrpc-c
 PORTVERSION=	1.11.00
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -44,7 +44,7 @@ CFLAGS+=	-DNDEBUG
 .if defined(WITHOUT_CURL)
 CONFIGURE_ARGS+=	--disable-curl-client
 .else
-LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
 OPT_CURL=	yes
 .endif
 

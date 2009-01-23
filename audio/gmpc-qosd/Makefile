@@ -7,7 +7,7 @@
 
 PORTNAME=	gmpc-qosd
 PORTVERSION=	0.15.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/gmpc-${PORTVERSION:C/\.0$//}/
 
@@ -15,7 +15,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Q on Screen Display plugin for gmpc
 
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
-		curl.4:${PORTSDIR}/ftp/curl
+		curl.5:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc \
 		xosd-config:${PORTSDIR}/misc/xosd
 RUN_DEPEND=	gmpc:${PORTSDIR}/audio/gmpc

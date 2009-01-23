@@ -7,7 +7,7 @@
 
 PORTNAME=	ljit
 PORTVERSION=	0.2.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils
 MASTER_SITES=	http://kir.vtx.ru/ljit/dl/ \
 		http://freebsd.nsu.ru/distfiles/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://kir.vtx.ru/ljit/dl/ \
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GUI tool to help LiveJournal users post images
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 GNU_CONFIGURE=	yes

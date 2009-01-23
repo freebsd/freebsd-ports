@@ -7,7 +7,7 @@
 
 PORTNAME=	planeshift
 PORTVERSION=	0.3.017
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://alex.foxybanana.com/freebsd/
 
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam \
 		cel-config:${PORTSDIR}/graphics/crystalentitylayer-devel \
 		${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/libbfd
 LIB_DEPENDS=	cal3d.12:${PORTSDIR}/graphics/cal3d \
-		curl.4:${PORTSDIR}/ftp/curl
+		curl.5:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

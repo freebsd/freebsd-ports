@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.4.22.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.digium.com/pub/asterisk/ \
 		http://downloads.digium.com/pub/asterisk/old-releases/ \
@@ -20,7 +21,7 @@ BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		newt.51:${PORTSDIR}/devel/newt \
 		gsm.1:${PORTSDIR}/audio/gsm \
-		curl.4:${PORTSDIR}/ftp/curl
+		curl.5:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 ONLY_FOR_ARCHS=	i386 sparc64 amd64 powerpc

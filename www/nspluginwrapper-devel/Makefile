@@ -7,7 +7,7 @@
 
 PORTNAME=	nspluginwrapper
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www linux emulators
 MASTER_SITES=	http://gwenole.beauchesne.info/projects/nspluginwrapper/files/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RPMFILE}
@@ -17,7 +17,7 @@ MAINTAINER=	malus.x@gmail.com
 COMMENT=	A compatibility plugin for Netscape 4 (NPAPI) plugins
 
 EXTRACT_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2
 
 RPMFILE=	${PORTNAME}-i386-${PORTVERSION}-1.x86_64.rpm
