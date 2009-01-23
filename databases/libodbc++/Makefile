@@ -40,6 +40,8 @@ CONFIGURE_ARGS+=	--with-iodbc=${LOCALBASE}
 .elif defined(WITH_UNIXODBC)
 LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
+
+BROKEN=		does not compile
 .endif
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}

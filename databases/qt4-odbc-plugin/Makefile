@@ -20,6 +20,8 @@ DB=		odbc
 
 LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
 
+BROKEN=		does not compile
+
 USE_QT_VER=	4
 QT_COMPONENTS=	moc_build sql
 QT_NONSTANDARD=	yes

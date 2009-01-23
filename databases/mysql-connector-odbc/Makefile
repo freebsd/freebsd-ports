@@ -45,6 +45,8 @@ WITH_UNIXODBC?=	yes
 .endif
 
 .if defined(WITH_UNIXODBC)
+BROKEN=			does not compile
+
 LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc-ini=${LOCALBASE}/etc/odbc.ini \
 			--with-unixODBC=${LOCALBASE}

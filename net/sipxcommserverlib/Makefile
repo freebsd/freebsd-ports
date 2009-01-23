@@ -26,6 +26,8 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		postmaster:${PORTSDIR}/databases/postgresql81-server
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:262:env automake:19:env
