@@ -1052,6 +1052,7 @@ share/rt38/html/dhandler
 share/rt38/html/index.html
 share/rt38/html/l
 @dirrm share/rt38/etc
+@exec mkdir -p %D/share/rt38/plugins
 @dirrm share/rt38/plugins
 @dirrm share/rt38/po
 @dirrm share/rt38/html/Widgets/Form
