@@ -44,6 +44,8 @@ WITH_UNIXODBC=	yes
 # I.e. even if WITH_IODBC is defined
 LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-unixodbc=${LOCALBASE}
+
+BROKEN=			does not compile
 .else
 LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS+=	--with-iodbc=${LOCALBASE}
