@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	squeezecenter
-PORTVERSION=	7.3.1
-PORTREVISION=	1
+PORTVERSION=	7.3.2
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeCenter_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.0//}-noCPAN
@@ -24,7 +23,7 @@ OPTIONS=	APE "Support Monkey's Audio Codec input" on \
 		LAME "Support MP3 output via LAME" off \
 		MUSEPACK "Support musepack input" on \
 		SHORTEN "Support Shorten input" off \
-		VORBIS "Support OGG Vorbis input (SliMP3 and SB1)" on
+		SOX "Support OGG Vorbis input via SoX (SliMP3 and SB1)" on
 
 RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
@@ -74,8 +73,8 @@ RUN_DEPENDS+=	mppdec:${PORTSDIR}/audio/musepack
 .if !defined(WITHOUT_SHORTEN)
 RUN_DEPENDS+=	shorten:${PORTSDIR}/audio/shorten
 .endif
-.if !defined(WITHOUT_VORBIS)
-RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
+.if !defined(WITHOUT_SOX)
+RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 .endif
 
 USE_RC_SUBR=	squeezecenter.sh
