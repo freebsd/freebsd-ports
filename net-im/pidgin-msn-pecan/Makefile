@@ -22,13 +22,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on FreeBSD 6.X		
-.endif
-
 post-install:
 	${GMAKE} -C ${WRKSRC} install_locales
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

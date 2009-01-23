@@ -15,7 +15,7 @@ diff -Naur ./Makefile ../msn-pecan-0.0.17/Makefile
  FALLBACK_CFLAGS := -I./fix_purple
  
 -LDFLAGS := -Wl,--no-undefined
-+LDFLAGS := -Wl,--no-undefined,-lintl
++LDFLAGS := -Wl,--no-undefined,-lintl,-lc
  
  prefix := $(DESTDIR)/$(PURPLE_PREFIX)
  plugin_dir := $(prefix)/lib/purple-2
