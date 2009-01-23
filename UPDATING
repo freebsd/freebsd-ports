@@ -7,6 +7,31 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20090123:
+  AFFECTS: users of x11-servers/xorg-server
+  AUTHOR: rnoland@FreeBSD.org
+
+  If you are using an older xorg.conf serveral config lines are
+  no longer needed and will generate warnings when X is started.
+  RgbPath will cause X to fail to start, remove it from your config.
+
+  Server 1.5.3 also really wants to configure it's input devices
+  via hald.  This is causing some issues with moused and
+  /dev/sysmouse.  There are a couple of options for how to deal
+  with it.
+
+  1. Add Option "AllowEmptyInput" "off" to your ServerLayout section.
+     This will cause X to use the configured kbd, mouse, and vmmouse
+     sections from your xorg.conf
+
+  2. Don't use moused.  If you want it to work with addon usb mice
+     set this in rc.conf:
+
+     moused_enable="NO"
+     moused_nondefault_enable="NO"
+
+  I'm working on fixing hald or the mouse driver or both.
+
+20090123:
   AFFECTS: users of x11/libxcb
   AUTHOR: flz@FreeBSD.org
 
