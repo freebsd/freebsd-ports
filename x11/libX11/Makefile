@@ -16,8 +16,6 @@ COMMENT=	X11 library
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xcb.pc:${PORTSDIR}/x11/libxcb
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xcb.pc:${PORTSDIR}/x11/libxcb
 
-OPTIONS=	XCB "use XCB for low-level protocol implementation" on
-
 XORG_CAT=	lib
 USE_XORG=	bigreqsproto xau xcmiscproto xdmcp xextproto xtrans \
 		kbproto:both inputproto xf86bigfontproto xproto:both
