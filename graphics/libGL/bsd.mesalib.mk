@@ -17,75 +17,90 @@
 # $FreeBSD$
 #
 
-MESAVERSION=	7.0.3
+MESAVERSION=	7.2
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
 MASTER_SITE_SUBDIR=	mesa3d
-DISTFILES=	MesaLib-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES=	MesaLib-${MESAVERSION}${EXTRACT_SUFX}
 MAINTAINER=	x11@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 
-MAKE_ARGS=	SHELL=${SH}
-CFLAGS+=	-DUSE_XSHM -DHZ=100
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
+		LDFLAGS=-L${LOCALBASE}/lib
 
-PREFIX=		${LOCALBASE}
-FILESDIR=	${.CURDIR}/../../graphics/libGL/files
-WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}
-CONFDIR=	${WRKSRC}/configs
+ALL_TARGET=	default
 
-SHVER?=		1
+#MAKE_ARGS=	SHELL=${SH}
+#CFLAGS+=	-DUSE_XSHM -DHZ=100
+
+#FILESDIR=	${.CURDIR}/../../graphics/libGL/files
+WRKSRC=		${WRKDIR}/Mesa-${MESAVERSION}
 
 .if !defined(ARCH)
 ARCH!=		uname -p
 .endif
 
-.if ${ARCH} == i386
-PLIST_SUB+=	I386=""
-PLIST_SUB+=	I386_AMD64=""
-ALL_TARGET=	freebsd-dri-x86
-.elif ${ARCH} == amd64
-PLIST_SUB+=	I386="@comment "
-PLIST_SUB+=	I386_AMD64=""
-ALL_TARGET=	freebsd-dri-amd64
-.else
-PLIST_SUB+=	I386="@comment "
-PLIST_SUB+=	I386_AMD64="@comment "
-ALL_TARGET=	freebsd-dri
-.endif
-
 .if ${ARCH} == alpha
-FAST_MATH=	
+FAST_MATH=
 .else
-FAST_MATH=	-ffast-math
+FAST_MATH=      -ffast-math
 .endif
 
-pre-patch:
-	@${REINPLACE_CMD} \
-		-e '/^CC =/d' -e '/^CXX =/d' \
-		-e 's|/usr/X11R6|${LOCALBASE}|g' \
-		-e 's|/usr/local|${LOCALBASE}|g' \
-		-e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		-e 's|-ffast-math|${FAST_MATH}|g' \
-		-e 's|CFLAGS = |CFLAGS = ${CFLAGS} |g' \
-		-e 's|OPT_FLAGS = .*|OPT_FLAGS = ${CFLAGS}|g' \
-		-e "s|SRC_DIRS = .*|SRC_DIRS = ${SRCDIR}|g" \
-		-e 's|-DHAVE_POSIX_MEMALIGN||' \
-		${CONFDIR}/freebsd-dri
-	@${REINPLACE_CMD} \
-		-e 's|^\(MKDEP_OPTIONS.*\)|\1 -- -I${LOCALBASE}/include|' \
-		-e 's|^\(MKLIB_OPTIONS.*\)|\1 -L${LOCALBASE}/lib|' \
-		-e 's|^DRI_DRIVER_INSTALL_DIR.*|DRI_DRIVER_INSTALL_DIR = ${LOCALBASE}/lib/dri|' \
-		${CONFDIR}/default
+COMPONENT=	${PORTNAME:L:C/^lib//:C/mesa-//}
 
-.if !target(do-install)
-do-install:
-	${MKDIR} ${PREFIX}/include/GL/
-.for i in ${HEADERS}
-	${INSTALL_DATA} ${WRKSRC}/${HEADERSDIR}/${i} ${PREFIX}/include/GL/
-.endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/${PORTNAME}.so.${SHVER} ${PREFIX}/lib
-	${LN} -sf ${PORTNAME}.so.${SHVER} ${PREFIX}/lib/${PORTNAME}.so
+.if ${COMPONENT:Mglut} == ""
+. if ${COMPONENT:Mglu} == ""
+CONFIGURE_ARGS+=	--disable-glu --disable-glut
+. else
+CONFIGURE_ARGS+=	--disable-glut
+. endif
+.else
+DISTFILES+=	MesaGLUT-${MESAVERSION}${EXTRACT_SUFX}
+.endif
+
+.if ${COMPONENT:Mglw} == ""
+CONFIGURE_ARGS+=	--disable-glw
+.else
+CONFIGURE_ARGS+=	--enable-motif
+.endif
+
+.if ${COMPONENT:Mdemos} == ""
+CONFIGURE_ARGS+=	--with-demos=no
+.else
+DISTFILES+=	MesaDemos-${MESAVERSION}${EXTRACT_SUFX}
+CONFIGURE_ARGS+=	--with-demos=demos,xdemos
+.endif
+
+.if ${COMPONENT:Mdri} == ""
+CONFIGURE_ARGS+=	--with-dri-drivers=no
+.endif
+
+.if defined(WITHOUT_XCB)
+CONFIGURE_ARGS+=	--disable-xcb
+.else
+CONFIGURE_ARGS+=	--enable-xcb
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ffast-math|${FAST_MATH}|' -e 's|x86_64|amd64|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|[$$](INSTALL_LIB_DIR)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/src/glu/Makefile \
+		${WRKSRC}/src/glw/Makefile \
+		${WRKSRC}/src/mesa/Makefile \
+		${WRKSRC}/src/mesa/drivers/dri/Makefile
+.if ${COMPONENT:Mglut} != ""
+	@${REINPLACE_CMD} -e 's|[$$](INSTALL_LIB_DIR)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/src/glut/glx/Makefile
+.endif
+.if ${COMPONENT:Mdemos} != ""
+	@${REINPLACE_CMD} -e 's|../images/|${DATADIR}/images/|g' \
+		-e 's|geartrain.dat|${DATADIR}/data/geartrain.dat|g' \
+		-e 's|terrain.dat|${DATADIR}/data/terrain.dat|g' \
+		-e 's|isosurf.dat|${DATADIR}/data/isosurf.dat|g' \
+			${WRKSRC}/progs/demos/*.c ${WRKSRC}/progs/xdemos/*.c
 .endif

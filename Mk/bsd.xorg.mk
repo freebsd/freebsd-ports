@@ -133,6 +133,9 @@ DISTFILES?=	xorg-server-${PORTVERSION}.tar.bz2
 WRKSRC=		${WRKDIR}/xorg-server-${PORTVERSION}
 USE_GNOME+=	gnomehack
 CONFIGURE_ARGS+=	--with-xkb-path=${LOCALBASE}/share/X11/xkb
+
+LIB_PC_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dri.pc:${PORTSDIR}/graphics/dri
+USE_XORG+=	pciaccess
 . endif
 
 .endif
@@ -146,13 +149,14 @@ Xorg_Post_Include=		bsd.xorg.mk
 # Register all xorg .pc files here.
 # foo_LIB_PC_DEPENDS means it should go to BUILD_DEPENDS *and* RUN_DEPENDS.
 
-XORG_MODULES=	bigreqsproto compositeproto damageproto dmx dmxproto evieproto fixesproto fontcacheproto fontenc fontsproto fontutil glproto ice inputproto kbproto libfs oldx pixman printproto randrproto recordproto renderproto resourceproto scrnsaverproto sm trapproto videoproto x11 xau xaw xaw6 xaw7 xaw8 xbitmaps xcmiscproto xcomposite xcursor xdamage xdmcp xevie xext xextproto xf86bigfontproto xf86dgaproto xf86driproto xf86miscproto xf86rushproto xf86vidmodeproto xfixes xfont xfontcache xft xi xinerama xineramaproto xkbfile xkbui xmu xmuu xorg-server xp xpm xprintapputil xprintutil xproto xproxymngproto xrandr xrender xres xscrnsaver xt xtrans xtrap xtst xv xvmc xxf86dga xxf86misc xxf86vm
+XORG_MODULES=	bigreqsproto compositeproto damageproto dmx dmxproto dri2proto evieproto fixesproto fontcacheproto fontenc fontsproto fontutil glproto ice inputproto kbproto libfs oldx pciaccess pixman printproto randrproto recordproto renderproto resourceproto scrnsaverproto sm trapproto videoproto x11 xau xaw xaw6 xaw7 xbitmaps xcmiscproto xcomposite xcursor xdamage xdmcp xevie xext xextproto xf86bigfontproto xf86dgaproto xf86driproto xf86miscproto xf86rushproto xf86vidmodeproto xfixes xfont xfontcache xft xi xinerama xineramaproto xkbfile xkbui xmu xmuu xorg-server xp xpm xprintapputil xprintutil xproto xproxymngproto xrandr xrender xres xscrnsaver xt xtrans xtrap xtst xv xvmc xxf86dga xxf86misc xxf86vm
 
 bigreqsproto_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bigreqsproto.pc:${PORTSDIR}/x11/bigreqsproto
 compositeproto_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compositeproto.pc:${PORTSDIR}/x11/compositeproto
 damageproto_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/damageproto.pc:${PORTSDIR}/x11/damageproto
 dmx_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/dmx.pc:${PORTSDIR}/x11/libdmx
 dmxproto_BUILD_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/dmxproto.pc:${PORTSDIR}/x11/dmxproto
+dri2proto_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dri2proto.pc:${PORTSDIR}/x11/dri2proto
 evieproto_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/evieproto.pc:${PORTSDIR}/x11/evieext
 fixesproto_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/fixesproto.pc:${PORTSDIR}/x11/fixesproto
 fontcacheproto_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/fontcacheproto.pc:${PORTSDIR}/x11-fonts/fontcacheproto
@@ -165,6 +169,7 @@ inputproto_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/inputproto.pc:${PORTSDI
 kbproto_BUILD_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/kbproto.pc:${PORTSDIR}/x11/kbproto
 libfs_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/libfs.pc:${PORTSDIR}/x11-fonts/libFS
 oldx_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/oldx.pc:${PORTSDIR}/x11/liboldX
+pciaccess_LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pciaccess.pc:${PORTSDIR}/devel/libpciaccess
 pixman_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/pixman-1.pc:${PORTSDIR}/x11/pixman
 printproto_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/printproto.pc:${PORTSDIR}/x11/printproto
 randrproto_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/randrproto.pc:${PORTSDIR}/x11/randrproto
@@ -177,10 +182,9 @@ trapproto_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/trapproto.pc:${PORTSDIR}
 videoproto_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/videoproto.pc:${PORTSDIR}/x11/videoproto
 x11_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11
 xau_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xau.pc:${PORTSDIR}/x11/libXau
-xaw_LIB_PC_DEPENDS=		${xaw${XAWVER}_LIB_PC_DEPENDS}
+xaw_LIB_PC_DEPENDS=		${xaw7_LIB_PC_DEPENDS}
 xaw6_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xaw6.pc:${PORTSDIR}/x11-toolkits/libXaw
 xaw7_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xaw7.pc:${PORTSDIR}/x11-toolkits/libXaw
-xaw8_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xaw8.pc:${PORTSDIR}/x11-toolkits/libXaw
 xbitmaps_LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xbitmaps.pc:${PORTSDIR}/x11/xbitmaps
 xcmiscproto_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcmiscproto.pc:${PORTSDIR}/x11/xcmiscproto
 xcomposite_LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcomposite.pc:${PORTSDIR}/x11/libXcomposite

@@ -6,6 +6,7 @@
 
 PORTNAME=	sim-im-devel
 PORTVERSION=	0.9.5.2236
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://sim-im.lehis.ru/dist/ \
 		http://www.sim-im.lehis.ru/dist/
@@ -22,7 +23,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_QT_VER=	3
-USE_XORG=	x11 xext
+USE_XORG=	x11 xext xscrnsaver
 USE_OPENSSL=	yes
 USE_PERL5_BUILD=	yes
 USE_GETTEXT=	yes

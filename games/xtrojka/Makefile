@@ -7,7 +7,7 @@
 
 PORTNAME=	xtrojka
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/games/
 DISTNAME=	${PORTNAME}

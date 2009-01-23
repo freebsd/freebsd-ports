@@ -1,6 +1,8 @@
-%%I386%%lib/dri/i810_dri.so
-%%I386_AMD64%%lib/dri/i915_dri.so
-%%I386_AMD64%%lib/dri/i965_dri.so
+include/GL/internal/dri_interface.h
+include/GL/internal/dri_sarea.h
+lib/dri/i810_dri.so
+lib/dri/i915_dri.so
+lib/dri/i965_dri.so
 lib/dri/mach64_dri.so
 lib/dri/mga_dri.so
 lib/dri/r128_dri.so
@@ -9,6 +11,10 @@ lib/dri/r300_dri.so
 lib/dri/radeon_dri.so
 lib/dri/savage_dri.so
 lib/dri/sis_dri.so
-%%I386%%lib/dri/tdfx_dri.so
-%%I386%%lib/dri/unichrome_dri.so
+lib/dri/swrast_dri.so
+lib/dri/tdfx_dri.so
+lib/dri/unichrome_dri.so
+libdata/pkgconfig/dri.pc
 @dirrm lib/dri
+@dirrmtry include/GL/internal
+@dirrmtry include/GL

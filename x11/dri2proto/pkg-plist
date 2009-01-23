@@ -1,0 +1,3 @@
+include/X11/extensions/dri2proto.h
+libdata/pkgconfig/dri2proto.pc
+@dirrmtry include/X11/extensions

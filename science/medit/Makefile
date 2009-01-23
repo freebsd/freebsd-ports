@@ -6,7 +6,7 @@
 
 PORTNAME=	medit
 PORTVERSION=	2006.09.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}	\
 		http://www.ann.jussieu.fr/~frey/logiciels/:author
@@ -47,10 +47,8 @@ PLIST_DIRS=	%%EXAMPLESDIR%%
 . endif
 .endif
 
-LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut
-
 NO_WRKSUBDIR=	yes
-USE_GL=		yes
+USE_GL=		glut
 
 .include <bsd.port.pre.mk>
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	celestia
 PORTVERSION=	1.4.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	astro
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-${CELESTIA_UI}
@@ -21,6 +21,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GL=		gl
+USE_XORG=	x11 xt xext xmu xi
 USE_GETTEXT=	yes
 WANT_GNOME=	yes
 
@@ -35,7 +36,7 @@ CONFLICTS=	${UI_LIST:S|${CELESTIA_UI}||:S|^|celestia-|:S|$|-[0-9]*|} # lol
 
 .if ${CELESTIA_UI} == "glut"
 CONFIGURE_ARGS+=	--with-glut
-LIB_DEPENDS+=	glut:${PORTSDIR}/graphics/libglut
+USE_GL+=	glut
 .elif ${CELESTIA_UI} == "gtk"
 CONFIGURE_ARGS+=	--with-gtk
 USE_GNOME+=	gtk20

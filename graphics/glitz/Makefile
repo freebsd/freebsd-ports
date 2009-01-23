@@ -8,7 +8,7 @@
 
 PORTNAME=	glitz
 PORTVERSION=	0.5.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 
@@ -16,6 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OpenGL image compositing library
 
 USE_GL=		yes
+USE_XORG=	xt
 USE_GNOME=	pkgconfig gnometarget gnomehack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	libX11
-PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTVERSION=	1.1.99.2
 PORTEPOCH=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11 library
 
-OPTIONS=	XCB "use XCB for low-level protocol implementation" off
+OPTIONS=	XCB "use XCB for low-level protocol implementation" on
 
 XORG_CAT=	lib
 USE_XORG=	bigreqsproto xau xcmiscproto xdmcp xextproto xtrans \
@@ -25,8 +24,8 @@ CONFIGURE_ARGS+=	--enable-xdmauth --datadir=${PREFIX}/lib
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_XCB)
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xcb-xlib.pc:${PORTSDIR}/x11/libxcb
-RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xcb-xlib.pc:${PORTSDIR}/x11/libxcb
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xcb.pc:${PORTSDIR}/x11/libxcb
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xcb.pc:${PORTSDIR}/x11/libxcb
 CONFIGURE_ARGS+=	--with-xcb=yes
 PLIST_SUB+=	XCB=""
 .else

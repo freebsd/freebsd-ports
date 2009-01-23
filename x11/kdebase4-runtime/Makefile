@@ -8,6 +8,7 @@
 
 PORTNAME=	kdebase-runtime
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -17,7 +18,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
 LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb \
-		xcb.1:${PORTSDIR}/x11/libxcb \
+		xcb.2:${PORTSDIR}/x11/libxcb \
 		xine.1:${PORTSDIR}/multimedia/libxine \
 		xklavier.12:${PORTSDIR}/x11/libxklavier
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme

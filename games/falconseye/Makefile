@@ -7,7 +7,7 @@
 
 PORTNAME=	falconseye
 PORTVERSION=	1.9.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/falconseye
 DISTNAME=	nethack_source_331_jtp_${PORTVERSION:S/.//g}

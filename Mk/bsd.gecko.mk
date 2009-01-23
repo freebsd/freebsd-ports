@@ -395,6 +395,7 @@ MOZ_OPTIONS+=	--with-system-zlib=/usr		\
 		--disable-pedantic		\
 		--disable-bidi			\
 		--disable-xterm-updates		\
+		--disable-xprint		\
 		--enable-xinerama
 MOZ_MK_OPTIONS+=	XP_UNIX=1		\
 			PERL=${PERL}

@@ -7,6 +7,7 @@
 
 PORTNAME=	subtitlecomposer
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=subcomposer
@@ -45,7 +46,7 @@ IGNORE=		needs XCB support in libxine
 . endif
 
 LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine \
-		xcb.1:${PORTSDIR}/x11/libxcb
+		xcb.2:${PORTSDIR}/x11/libxcb
 .else
 CONFIGURE_ARGS+=--without-xine --without-xcb
 .endif

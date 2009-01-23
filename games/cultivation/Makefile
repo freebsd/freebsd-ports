@@ -7,6 +7,7 @@
 
 PORTNAME=	cultivation
 PORTVERSION=	8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	Cultivation_${PORTVERSION}_UnixSource
@@ -14,9 +15,9 @@ DISTNAME=	Cultivation_${PORTVERSION}_UnixSource
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Unique game of conflict and cooperation in a gardening community
 
-LIB_DEPENDS=	portaudio:${PORTSDIR}/audio/portaudio \
-		glut.4:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	portaudio:${PORTSDIR}/audio/portaudio
 
+USE_GL=		glut
 USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/game2

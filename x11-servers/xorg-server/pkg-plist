@@ -9,8 +9,6 @@ bin/gtf
 %%PPC_NA%%bin/outb
 %%PPC_NA%%bin/outl
 %%PPC_NA%%bin/outw
-bin/pcitweak
-%%AMD64_I386_SPARC64%%bin/scanpci
 bin/xorgconfig
 include/xorg/BT.h
 include/xorg/IBM.h
@@ -42,6 +40,7 @@ include/xorg/damagestr.h
 include/xorg/dbestruct.h
 include/xorg/dgaproc.h
 include/xorg/dix.h
+include/xorg/dixaccess.h
 include/xorg/dixevents.h
 include/xorg/dixfont.h
 include/xorg/dixfontstr.h
@@ -98,11 +97,13 @@ include/xorg/picture.h
 include/xorg/picturestr.h
 include/xorg/pixmap.h
 include/xorg/pixmapstr.h
+include/xorg/privates.h
 include/xorg/property.h
 include/xorg/propertyst.h
 include/xorg/randrstr.h
 include/xorg/region.h
 include/xorg/regionstr.h
+include/xorg/registry.h
 include/xorg/renderedge.h
 include/xorg/resource.h
 include/xorg/rgb.h
@@ -157,8 +158,6 @@ include/xorg/xf86Version.h
 include/xorg/xf86Xinput.h
 include/xorg/xf86_OSlib.h
 include/xorg/xf86_OSproc.h
-include/xorg/xf86_ansic.h
-include/xorg/xf86_libc.h
 include/xorg/xf86cmap.h
 include/xorg/xf86fbman.h
 include/xorg/xf86i2c.h
@@ -169,15 +168,15 @@ include/xorg/xf86xv.h
 include/xorg/xf86xvmc.h
 include/xorg/xf86xvpriv.h
 include/xorg/xisb.h
+include/xorg/xkbfile.h
 include/xorg/xkbsrv.h
+include/xorg/xkbstr.h
 include/xorg/xorg-server.h
 include/xorg/xorgVersion.h
 include/xorg/xvdix.h
 include/xorg/xvmcext.h
 lib/X11/Cards
 lib/X11/Options
-lib/xorg/modules/extensions/libGLcore.la
-lib/xorg/modules/extensions/libGLcore.so
 lib/xorg/modules/extensions/libdbe.la
 lib/xorg/modules/extensions/libdbe.so
 lib/xorg/modules/extensions/libdri.la
@@ -186,14 +185,8 @@ lib/xorg/modules/extensions/libextmod.la
 lib/xorg/modules/extensions/libextmod.so
 lib/xorg/modules/extensions/libglx.la
 lib/xorg/modules/extensions/libglx.so
-lib/xorg/modules/extensions/librecord.la
-lib/xorg/modules/extensions/librecord.so
-lib/xorg/modules/extensions/libxtrap.la
-lib/xorg/modules/extensions/libxtrap.so
 lib/xorg/modules/fonts/libfreetype.la
 lib/xorg/modules/fonts/libfreetype.so
-lib/xorg/modules/fonts/libtype1.la
-lib/xorg/modules/fonts/libtype1.so
 %%ALPHA_NA%%lib/xorg/modules/libafb.la
 %%ALPHA_NA%%lib/xorg/modules/libafb.so
 lib/xorg/modules/libcfb.la
@@ -208,10 +201,6 @@ lib/xorg/modules/libint10.la
 lib/xorg/modules/libint10.so
 lib/xorg/modules/libmfb.la
 lib/xorg/modules/libmfb.so
-lib/xorg/modules/libpcidata.la
-lib/xorg/modules/libpcidata.so
-lib/xorg/modules/libscanpci.la
-lib/xorg/modules/libscanpci.so
 lib/xorg/modules/libshadow.la
 lib/xorg/modules/libshadow.so
 lib/xorg/modules/libshadowfb.la
@@ -248,7 +237,7 @@ lib/xorg/modules/multimedia/tda9885_drv.la
 lib/xorg/modules/multimedia/tda9885_drv.so
 lib/xorg/modules/multimedia/uda1380_drv.la
 lib/xorg/modules/multimedia/uda1380_drv.so
-lib/xserver/SecurityPolicy
+lib/xorg/protocol.txt
 libdata/pkgconfig/xorg-server.pc
 share/X11/xkb/compiled/README.compiled
 share/aclocal/xorg-server.m4
@@ -259,7 +248,6 @@ share/aclocal/xorg-server.m4
 @dirrm lib/xorg/modules/multimedia
 @dirrm lib/xorg/modules
 @dirrm lib/xorg
-@dirrm lib/xserver
 @dirrmtry include/X11/bitmaps
 @dirrmtry include/X11/pixmaps
 @dirrmtry lib/X11/doc

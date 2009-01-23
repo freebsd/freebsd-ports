@@ -7,7 +7,7 @@
 
 PORTNAME=	lablgl
 PORTVERSION=	1.03
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/
 PKGNAMEPREFIX=	ocaml-

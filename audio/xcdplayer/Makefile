@@ -7,7 +7,7 @@
 
 PORTNAME=	xcdplayer
 PORTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.tar.Z

@@ -20,6 +20,6 @@ USE_XORG=	xau x11 xext xxf86dga
 NOT_FOR_ARCHS=	sparc64
 
 post-patch:
-	@${REINPLACE_CMD} 's|^\(LDADD +=.*\)|\1 -lXau -lXdmcp|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's|^\(LDADD +=.*\)|\1 -lxcb -lXau -lXdmcp|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

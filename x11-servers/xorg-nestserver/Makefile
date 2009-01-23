@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xorg-nestserver
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.5.3
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 
@@ -19,6 +18,8 @@ CONFLICTS=	XFree86-NestServer-*
 XORG_CAT=	xserver
 
 LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
+
+USE_GL=		gl
 USE_XORG=	x11 xf86driproto glproto randrproto renderproto fixesproto \
 		damageproto xcmiscproto xextproto xf86miscproto inputproto \
 		xf86vidmodeproto xf86bigfontproto scrnsaverproto bigreqsproto \

@@ -1,3 +1,3 @@
-MD5 (xorg/driver/xf86-video-fbdev-0.3.1.tar.bz2) = 9ae810c6c6c3c9713a67866fe794d4ff
-SHA256 (xorg/driver/xf86-video-fbdev-0.3.1.tar.bz2) = 309d1f618c77559ea494c05d45b09577790c44900685e17bc812e4e1b19df6e7
-SIZE (xorg/driver/xf86-video-fbdev-0.3.1.tar.bz2) = 217635
+MD5 (xorg/driver/xf86-video-fbdev-0.4.0.tar.bz2) = 6572b39fec77b8e6de1c858a93992924
+SHA256 (xorg/driver/xf86-video-fbdev-0.4.0.tar.bz2) = bba725daeb2a313b83f2b92855a9ae8aa72c4cc8581f9f62f101ebdf00ac359d
+SIZE (xorg/driver/xf86-video-fbdev-0.4.0.tar.bz2) = 242435

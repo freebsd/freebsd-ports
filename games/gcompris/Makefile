@@ -31,6 +31,7 @@ GNU_CONFIGURE=	yes
 USE_GSTREAMER=	yes
 USE_PYTHON=	yes
 USE_SDL=	mixer
+USE_DISPLAY=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui pygnome2
 CONFIGURE_ARGS=	--enable-gnet
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -41,14 +42,6 @@ MAN6=		gcompris.6
 INFO=		gcompris
 
 .include <bsd.port.pre.mk>
-
-.if !defined(DISPLAY)
-BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
-		${LOCALBASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
-.if !defined(PACKAGE_BUILDING)
-CONFIGURE_ENV+=	DISPLAY="localhost:1001"
-.endif
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \

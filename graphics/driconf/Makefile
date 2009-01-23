@@ -7,16 +7,16 @@
 
 PORTNAME=	driconf
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://people.freedesktop.org/~fxkuehl/driconf/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration program for DRI drivers
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
+USE_GL=		glut
 USE_PYTHON=	yes
 NO_BUILD=	yes
 USE_GETTEXT=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	gsynaptics
 PORTVERSION=	0.9.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	gsynaptics/21527
@@ -33,6 +33,6 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/input/synaptics_drv.so:${PORTSDIR}/x11-drivers/synaptics
+RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/input/synaptics_drv.so:${PORTSDIR}/x11-drivers/xf86-input-synaptics
 
 .include <bsd.port.post.mk>

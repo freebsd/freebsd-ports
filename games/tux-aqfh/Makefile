@@ -7,7 +7,7 @@
 
 PORTNAME=	tux_aqfh
 PORTVERSION=	1.0.14
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://tuxaqfh.sourceforge.net/dist/
 

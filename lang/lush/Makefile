@@ -14,6 +14,7 @@ MAINTAINER=	dyeske@gmail.com
 COMMENT=	A high level object-oriented programming language
 
 USE_GETTEXT=	yes
+USE_XORG=	xt xft
 USE_GL=		yes
 USE_SDL=	sdl image
 GNU_CONFIGURE=	yes

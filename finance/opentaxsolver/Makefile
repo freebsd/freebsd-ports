@@ -7,6 +7,7 @@
 
 PORTNAME=	${UPPORTNAME:L}
 PORTVERSION=	5.07
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	SF/opentaxsolver
 DISTNAME=	${UPPORTNAME}2007_${PORTVERSION}
@@ -16,6 +17,7 @@ MAINTAINER=	jhein@timing.com
 COMMENT=	US tax prep software
 
 USE_GL=		yes
+USE_XORG=	xmu xext x11
 UPPORTNAME=	OpenTaxSolver
 
 post-patch:

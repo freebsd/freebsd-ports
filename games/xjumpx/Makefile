@@ -7,7 +7,7 @@
 
 PORTNAME=	xjumpx
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://fenix.ne.jp/~cdrtk/soft/dl/
 

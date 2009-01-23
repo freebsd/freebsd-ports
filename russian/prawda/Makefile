@@ -7,7 +7,7 @@
 
 PORTNAME=	prawda
 PORTVERSION=	0.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	russian
 MASTER_SITES=	http://www.prawda.newmail.ru/
 

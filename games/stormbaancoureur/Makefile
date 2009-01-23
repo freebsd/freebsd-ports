@@ -15,11 +15,10 @@ MASTER_SITES=	http://bram.creative4vision.nl/stormbaancoureur/download/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simulated obstacle course for automobiles
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
 
-USE_GL=		yes
+USE_GL=		glut
 
 MAKE_ENV=	DATADIR="${DATADIR}"
 

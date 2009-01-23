@@ -15,7 +15,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math graphics
 MASTER_SITES=	http://ovt.irfu.se/vtk/files/
 DISTFILES?=	VTK-${PORTVERSION}-LatestRelease.tar.gz
@@ -57,6 +57,7 @@ BUILD_DEPENDS+=	${VTKDATAROOT}/VTKData.readme:${PORTSDIR}/math/vtk-data
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_LDCONFIG=	yes
+USE_XORG=	xt
 
 CMAKE?=		${LOCALBASE}/bin/cmake
 CXXFLAGS+=	-Wno-deprecated

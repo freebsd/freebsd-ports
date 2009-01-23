@@ -692,6 +692,7 @@
     SUBDIR += libowfat
     SUBDIR += libpasori
     SUBDIR += libpci
+    SUBDIR += libpciaccess
     SUBDIR += libpdel
     SUBDIR += libpeak
     SUBDIR += libphish

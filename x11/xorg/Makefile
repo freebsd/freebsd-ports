@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xorg
-PORTVERSION=	7.3
-PORTREVISION=	2
+PORTVERSION=	7.4
 CATEGORIES=	x11
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -29,12 +28,11 @@ RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xbitmaps.pc:${PORTSDIR}/x11/xbitmap
 RUN_DEPENDS+=	${LOCALBASE}/share/X11/doc/hardcopy/BDF/bdf.PS.gz:${PORTSDIR}/x11/xorg-docs
 .endif
 
-# app, lib, font, driver, proto
+# app, lib, font, driver
 RUN_DEPENDS+=	${LOCALBASE}/libdata/xorg/apps:${PORTSDIR}/x11/xorg-apps \
 		${LOCALBASE}/libdata/xorg/libraries:${PORTSDIR}/x11/xorg-libraries \
 		${LOCALBASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts \
-		${LOCALBASE}/libdata/xorg/drivers:${PORTSDIR}/x11-drivers/xorg-drivers \
-		${LOCALBASE}/libdata/xorg/protos:${PORTSDIR}/x11/xorg-protos
+		${LOCALBASE}/libdata/xorg/drivers:${PORTSDIR}/x11-drivers/xorg-drivers
 
 .if defined(XORG_COMPLETE)
 RUN_DEPENDS+=	Xnest:${PORTSDIR}/x11-servers/xorg-nestserver \

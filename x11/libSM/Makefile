@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	libSM
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 PORTEPOCH=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Session Management library for X11
+
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/uuid.pc:${PORTSDIR}/misc/e2fsprogs-libuuid
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/uuid.pc:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 XORG_CAT=	lib
 USE_XORG=	ice xproto:both xtrans

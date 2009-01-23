@@ -23,6 +23,9 @@ libdata/pkgconfig/x11.pc
 %%XCB%%libdata/pkgconfig/x11-xcb.pc
 lib/X11/XErrorDB
 lib/X11/XKeysymDB
+lib/X11/locale/am_ET.UTF-8/XI18N_OBJS
+lib/X11/locale/am_ET.UTF-8/XLC_LOCALE
+lib/X11/locale/am_ET.UTF-8/Compose
 lib/X11/locale/armscii-8/XI18N_OBJS
 lib/X11/locale/armscii-8/XLC_LOCALE
 lib/X11/locale/armscii-8/Compose
@@ -254,4 +257,5 @@ lib/X11/locale/compose.dir
 @dirrm lib/X11/locale/el_GR.UTF-8
 @dirrm lib/X11/locale/C
 @dirrm lib/X11/locale/armscii-8
+@dirrm lib/X11/locale/am_ET.UTF-8
 @dirrm lib/X11/locale

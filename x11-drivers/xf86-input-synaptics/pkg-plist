@@ -1,0 +1,12 @@
+bin/synclient
+bin/syndaemon
+include/xorg/synaptics-properties.h
+include/xorg/synaptics.h
+lib/xorg/modules/input/synaptics_drv.la
+lib/xorg/modules/input/synaptics_drv.so
+libdata/pkgconfig/xorg-synaptics.pc
+share/hal/fdi/policy/10osvendor/11-x11-synaptics.fdi
+@dirrmtry lib/xorg/modules/input
+@dirrmtry lib/xorg/modules
+@dirrmtry lib/xorg
+@dirrmtry include/xorg

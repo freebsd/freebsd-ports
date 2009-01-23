@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xdm
-PORTVERSION=	1.1.6
-PORTREVISION=	3
+PORTVERSION=	1.1.8
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -29,6 +29,7 @@ post-patch:
 			${WRKSRC}/config/xdm-config.cpp \
 			${WRKSRC}/config/Xstartup.cpp \
 			${WRKSRC}/config/Xreset.cpp
+	@${REINPLACE_CMD} -e "s|@DESTDIR@||" ${WRKSRC}/Makefile.in
 
 post-configure:
 	@${REINPLACE_CMD} -e "s|${EXAMPLESDIR}|${PREFIX}/lib/X11/xdm|" \

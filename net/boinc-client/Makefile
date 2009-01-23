@@ -44,14 +44,14 @@ OPTIONS=	X11 "Build Boinc Manager GUI" on \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_X11)
+USE_GL=		glut
 USE_XORG=	x11
 USE_WX=		2.6+
 WX_CONF_ARGS=	absolute
 CPPFLAGS+=		-I${LOCALBASE}/include
 
 USE_ICONV=	yes
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
-		glut:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 
 PLIST_SUB+=	BOINC_GUI=""
 .else

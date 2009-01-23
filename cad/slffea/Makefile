@@ -8,7 +8,7 @@
 
 PORTNAME=	slffea
 PORTVERSION=	1.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	cad
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}13
@@ -17,9 +17,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	San Le's Free Finite Element Analysis
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
 CONFLICTS=	swi-pl-[0-9]* TenDRA-[0-9]*
+
+USE_GL=		glut
 
 CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.3

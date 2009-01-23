@@ -29,11 +29,7 @@ USE_PYTHON=	yes
 GCONF_SCHEMAS=	revelation.schemas revelation-applet.schemas
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
-
-.if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
-		${LOCALBASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
-.endif
+USE_DISPLAY=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(rvl_py_version=\)".*$$|\1""|' \

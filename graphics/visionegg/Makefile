@@ -8,7 +8,7 @@
 
 PORTNAME=	visionegg
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -25,9 +25,8 @@ RUN_DEPENDS=	\
 	${PYTHON_SITELIBDIR}/PIL/Image.py:${PORTSDIR}/graphics/py-imaging \
 	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl \
 	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
-LIB_DEPENDS=	\
-	glut.4:${PORTSDIR}/graphics/libglut
 
+USE_GL=		glut
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_BUILDARGS=	-L${LOCALBASE}/lib

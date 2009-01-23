@@ -7,7 +7,7 @@
 
 PORTNAME=	magiccube4d
 PORTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.superliminal.com/cube/
 DISTNAME=	mc4d-src-${PORTVERSION:S/./_/}

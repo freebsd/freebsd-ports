@@ -7,7 +7,7 @@
 
 PORTNAME=	xstroke
 PORTVERSION=	0.5.12
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.handhelds.org/projects/xstroke/release-0.5/ \
 		http://www.handhelds.org/download/projects/xstroke/release-0.5/
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fullscreen gesture recognition
 
 USE_BISON=	build
-USE_XORG=	xft x11
+USE_XORG=	xft x11 xext xi
 USE_IMAKE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}
 CPPFLAGS=	-I${LOCALBASE}/include -I.

@@ -7,7 +7,7 @@
 
 PORTNAME=	xquarto
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.math.lsa.umich.edu/~mattiasj/games/xquarto/
 

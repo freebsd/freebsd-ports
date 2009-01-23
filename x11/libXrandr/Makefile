@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libXrandr
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -17,7 +16,6 @@ XORG_CAT=	lib
 USE_XORG=	x11 randrproto:both xext xextproto xrender renderproto xproto:both
 
 MAN3=		Xrandr.3 \
-		XRRConfig.3 \
 		XRRConfigCurrentConfiguration.3 \
 		XRRConfigCurrentRate.3 \
 		XRRConfigRates.3 \
@@ -29,7 +27,6 @@ MAN3=		Xrandr.3 \
 		XRRQueryExtension.3 \
 		XRRQueryVersion.3 \
 		XRRRootToScreen.3 \
-		XRRScreenConfig.3 \
 		XRRSelectInput.3 \
 		XRRSetScreenConfig.3 \
 		XRRSetScreenConfigAndRate.3

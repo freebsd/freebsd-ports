@@ -7,6 +7,7 @@
 
 PORTNAME=	crossfire
 PORTVERSION=	1.11.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		ftp://ftp.real-time.com/pub/games/crossfire/

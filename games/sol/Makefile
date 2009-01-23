@@ -7,7 +7,7 @@
 
 PORTNAME=	sol
 PORTVERSION=	1.0.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 

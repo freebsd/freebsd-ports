@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	xf86-video-vmware
-PORTVERSION=	10.15.2
-PORTREVISION=	1
+PORTVERSION=	10.16.5
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org vmware display driver
 
 XORG_CAT=	driver
-USE_XORG=	xextproto xineramaproto
+USE_XORG=	xextproto xineramaproto videoproto
+
 MAN4=		vmware.4x
 
 .include <bsd.port.mk>

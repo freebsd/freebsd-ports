@@ -7,7 +7,7 @@
 
 PORTNAME=	glean
 PORTVERSION=	1.0.20030925
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics benchmarks
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	anholt
@@ -22,7 +22,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 PLIST_FILES=	bin/glean
 WRKSRC=		${WRKDIR}/glean/src
 USE_BZIP2=	yes
-USE_GL=		yes
+USE_GL=		glut
 USE_GMAKE=	yes
 MAKE_ENV+=	GLEAN_ROOT="${WRKDIR}/glean"
 ALL_TARGET=	install

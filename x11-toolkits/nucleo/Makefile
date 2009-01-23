@@ -7,7 +7,7 @@
 
 PORTNAME=	nucleo
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://insitu.lri.fr/metisse/download/latest/ \
 		http://freebsd.nsu.ru/distfiles/metisse/
@@ -22,6 +22,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		glu
+USE_XORG=	x11 xt
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

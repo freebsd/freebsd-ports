@@ -1,3 +1,5 @@
 include/GL/glu.h
+include/GL/glu_mangle.h
 lib/libGLU.so
 lib/libGLU.so.1
+libdata/pkgconfig/glu.pc

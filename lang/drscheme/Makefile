@@ -7,7 +7,7 @@
 
 PORTNAME=	drscheme
 PORTVERSION=	370
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		http://www.cs.utah.edu/plt/download/${PORTVERSION}/plt/ \

@@ -7,7 +7,7 @@
 
 PORTNAME=	ssvnc
 PORTVERSION=	1.0.20
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net security
 MASTER_SITES=	http://www.karlrunge.com/x11vnc/etv/
 

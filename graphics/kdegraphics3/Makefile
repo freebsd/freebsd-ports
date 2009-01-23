@@ -8,7 +8,7 @@
 
 PORTNAME=	kdegraphics
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -22,7 +22,6 @@ LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype:${PORTSDIR}/print/freetype2 \
 		fribidi:${PORTSDIR}/converters/fribidi \
-		glut:${PORTSDIR}/graphics/libglut \
 		lcms:${PORTSDIR}/graphics/lcms \
 		paper:${PORTSDIR}/print/libpaper \
 		poppler-qt:${PORTSDIR}/graphics/poppler-qt
@@ -32,6 +31,7 @@ CONFLICTS=	kolourpaint-[0-9]*
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 
+USE_GL=		glut
 USE_BZIP2=	yes
 USE_AUTOTOOLS=  libtool:15
 USE_GMAKE=	yes

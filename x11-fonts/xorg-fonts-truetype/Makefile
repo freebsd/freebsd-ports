@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xorg-fonts-truetype
-PORTVERSION=	7.3
+PORTVERSION=	7.4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	# none
 DISTFILES=	# none

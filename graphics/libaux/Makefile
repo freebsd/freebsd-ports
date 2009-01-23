@@ -7,7 +7,7 @@
 
 PORTNAME=	libaux
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.freebsdbrasil.com.br/~jmelo/
 DISTFILES=	libaux${EXTRACT_SUFX} libtk${EXTRACT_SUFX}
@@ -15,10 +15,9 @@ DISTFILES=	libaux${EXTRACT_SUFX} libtk${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Nano Window Toolkit and Auxiliary Library for OpenGL
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_GL=		glut
 USE_IMAKE=	yes
 
 do-install:

@@ -7,7 +7,7 @@
 
 PORTNAME=	rosegarden
 PORTVERSION=	2.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cannam.demon.co.uk/rosegarden/distribution/
 DISTNAME=	${PORTNAME}-2.1pl2

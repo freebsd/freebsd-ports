@@ -7,7 +7,7 @@
 
 PORTNAME=		landscape
 PORTVERSION=		0.7
-PORTREVISION=	7
+PORTREVISION=		8
 CATEGORIES=		graphics kde
 MASTER_SITES=		http://www.witchspace.com/files/
 
@@ -15,8 +15,8 @@ MAINTAINER=		jon@witchspace.com
 COMMENT=		A program for generating and rendering fractal landscapes
 
 BUILD_DEPENDS=		qmake:${PORTSDIR}/devel/qmake
-LIB_DEPENDS=		glut.4:${PORTSDIR}/graphics/libglut
 
+USE_GL=			glut
 PLIST_FILES=		bin/landscape
 USE_KDELIBS_VER=	3
 QTDIR?=			${QT_PREFIX}

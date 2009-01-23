@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xorg-drivers
-PORTVERSION=	7.3
-PORTREVISION=	3
+PORTVERSION=	7.4
 CATEGORIES=	x11-drivers
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -31,12 +30,12 @@ VIDEO_ON=	ati \
 		nv \
 		r128 \
 		radeonhd \
-		vesa vga
+		vesa
 
 .if ${ARCH} == "sparc64"
 VIDEO_ON+=	sunffb
 .else
-VIDEO_ON+=	via
+VIDEO_ON+=	openchrome
 .endif
 
 VIDEO_OFF=	apm ark \
@@ -47,11 +46,10 @@ VIDEO_OFF=	apm ark \
 		i128 i740 imstt \
 		mga \
 		neomagic newport nsc \
-		openchrome \
 		rendition \
 		s3 s3virge savage siliconmotion	sis \
 		tdfx tga trident tseng \
-		vmware voodoo
+		via vmware voodoo
 
 VIDEO_EXCL=	via:openchrome
 
@@ -66,7 +64,7 @@ INPUT_OFF=	acecad \
 		jamstudio joystick \
 		magellan magictouch microtouch mutouch \
 		palmax penmount \
-		spaceorb summa \
+		spaceorb summa synaptics \
 		tek4957 \
 		vmmouse void
 

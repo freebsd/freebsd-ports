@@ -7,17 +7,16 @@
 
 PORTNAME=	tdfsb
 PORTVERSION=	0.0.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.determinate.net/webdata/data/
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A 3D filesystem browser
 
-LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg \
-		glut.4:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 
-USE_GL=		yes
+USE_GL=		glut
 USE_SDL=	image sdl
 
 PLIST_FILES=	bin/${PORTNAME}

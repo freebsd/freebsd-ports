@@ -7,6 +7,7 @@
 
 PORTNAME=	mhgui
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	makehuman
@@ -14,15 +15,14 @@ MASTER_SITE_SUBDIR=	makehuman
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	GUI widget library for MakeHuman
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \
-		animorph.0:${PORTSDIR}/graphics/animorph \
+LIB_DEPENDS=	animorph.0:${PORTSDIR}/graphics/animorph \
 		png.5:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
-USE_GL=		yes
+USE_GL=		glut
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
