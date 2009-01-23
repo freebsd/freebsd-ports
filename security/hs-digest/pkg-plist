@@ -1,0 +1,13 @@
+%%SUBDIR%%/Data/Digest/Adler32.hi
+%%SUBDIR%%/Data/Digest/CRC32.hi
+%%SUBDIR%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%SUBDIR%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%SUBDIR%%/%%PORTNAME%%-register.sh
+%%RMLIC%%%%DOCSDIR%%/LICENSE
+%%RMLIC%%@dirrm %%DOCSDIR%%
+@dirrmtry %%SUBDIR%%/Data/Digest
+@dirrmtry %%SUBDIR%%/Data
+@exec sh %D/%%SUBDIR%%/%%PORTNAME%%-register.sh
+@exec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec ghc-pkg unregister %%PORTNAME%%
+@unexec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
