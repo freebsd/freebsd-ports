@@ -7,6 +7,7 @@
 
 PORTNAME=	xorg-apps
 PORTVERSION=	7.4
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -24,6 +25,9 @@ COMPONENTS=	appres bitmap xf86dga:dga iceauth luit \
 		xlsatoms xlsclients xmodmap xpr xprop xrandr xrdb \
 		xrefresh xset xsetmode xsetroot xvinfo xwd xwininfo \
 		xwud
+
+# These three are added for convenience purposes only.
+COMPONENTS+=	x11-wm/twm:twm xinit xterm
 
 NO_BUILD=	yes
 
