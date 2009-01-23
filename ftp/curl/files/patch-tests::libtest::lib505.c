@@ -1,7 +1,7 @@
-diff -urN -urN -x .svn ../../vendor/curl/tests/libtest/lib505.c ./tests/libtest/lib505.c
---- ../../vendor/curl/tests/libtest/lib505.c	2008-03-20 15:26:14.000000000 +0200
-+++ ./tests/libtest/lib505.c	2008-04-02 13:21:07.000000000 +0300
-@@ -54,12 +54,24 @@
+diff -urN -x .svn ../../vendor/curl/tests/libtest/lib505.c ./tests/libtest/lib505.c
+--- ../../vendor/curl/tests/libtest/lib505.c	2008-09-22 00:15:55.000000000 +0300
++++ ./tests/libtest/lib505.c	2009-01-21 16:12:24.000000000 +0200
+@@ -56,12 +56,24 @@
      return -1;
    }
  
@@ -28,7 +28,7 @@ diff -urN -urN -x .svn ../../vendor/curl/tests/libtest/lib505.c ./tests/libtest/
              error, strerror(error));
      fprintf(stderr, "WARNING: cannot open file %s\n", libtest_arg2);
      return -1;
-@@ -70,18 +82,6 @@
+@@ -72,18 +84,6 @@
      return -4;
    }
  
