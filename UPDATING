@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090123:
+  AFFECTS: users of x11/libxcb
+  AUTHOR: flz@FreeBSD.org
+
+  Libxcb shared library version was bumped from 1 to 2.  You need to
+  rebuild any consumer of libxcb.so.1 or some applications will be
+  linked against two versions of libxcb once libX11 is upgraded.
+
+  For portupgrade users:
+
+    # portupgrade -rf libxcb
+
 20090121:
   AFFECTS: users of devel/linux-glib2, emulation/linux_base-f4
   AUTHOR: bsam@FreeBSD.org
