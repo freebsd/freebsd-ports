@@ -87,6 +87,7 @@ lib/ocaml/camlp5/pa_o.cmo
 lib/ocaml/camlp5/pa_o.cmx
 lib/ocaml/camlp5/pa_o.o
 lib/ocaml/camlp5/pa_o_fast.cmx
+lib/ocaml/camlp5/pa_o_fast.o
 lib/ocaml/camlp5/pa_oop.cmo
 lib/ocaml/camlp5/pa_oop.cmx
 lib/ocaml/camlp5/pa_oop.o
