@@ -7,7 +7,7 @@
 
 PORTNAME=	epkg
 PORTVERSION=	2.3.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.feep.net/pub/encap/epkg/
 
@@ -15,7 +15,7 @@ MAINTAINER=	pirzyk@freebsd.org
 COMMENT=	Encap Package Manager
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libfget.a:${PORTSDIR}/ftp/fget
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 HAS_CONFIGURE=	YES

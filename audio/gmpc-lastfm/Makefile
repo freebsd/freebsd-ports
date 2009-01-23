@@ -7,6 +7,7 @@
 
 PORTNAME=	gmpc-lastfm
 PORTVERSION=	0.16.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 DISTNAME=	gmpc-last.fm-${PORTVERSION}
@@ -15,7 +16,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Lastfm plugin for gmpc
 
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
-		curl.4:${PORTSDIR}/ftp/curl
+		curl.5:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 

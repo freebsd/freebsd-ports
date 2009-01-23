@@ -8,6 +8,7 @@
 
 PORTNAME=	raptor
 PORTVERSION=	1.4.16
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://download.librdf.org/source/
@@ -16,7 +17,7 @@ MASTER_SITE_SUBDIR=	librdf
 MAINTAINER=	chuck@pkix.net
 COMMENT=	RDF Parser Toolkit for Redland
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
 USE_GNOME=	gnomehack gnometarget libxml2
 GNU_CONFIGURE=	yes

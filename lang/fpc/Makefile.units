@@ -162,7 +162,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
 .if ${PKGNAMESUFFIX} == "-libcurl"
 .	if defined(WITH_LIBCURL)
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 .	endif
 .endif
 

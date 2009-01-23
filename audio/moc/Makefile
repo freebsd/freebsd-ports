@@ -7,6 +7,7 @@
 
 PORTNAME=	moc
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.daper.net/pub/soft/moc/stable/
 
@@ -105,7 +106,7 @@ CONFIGURE_ARGS+=	--without-samplerate
 .endif
 
 .if defined(WITH_CURL)
-LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=	--without-curl
 .endif

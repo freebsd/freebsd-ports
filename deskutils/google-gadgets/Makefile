@@ -7,6 +7,7 @@
 
 PORTNAME=	google-gadgets
 PORTVERSION=	0.10.4
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://google-gadgets-for-linux.googlecode.com/files/
 DISTNAME=	${PORTNAME}-for-linux-${PORTVERSION}
@@ -25,7 +26,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus \
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		dbus-1.3:${PORTSDIR}/devel/dbus \
-		curl.4:${PORTSDIR}/ftp/curl \
+		curl.5:${PORTSDIR}/ftp/curl \
 		rsvg-2.2:${PORTSDIR}/graphics/librsvg2
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/firefox-js.pc:${PORTSDIR}/www/firefox \
 		${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info

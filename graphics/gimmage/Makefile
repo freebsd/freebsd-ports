@@ -7,7 +7,7 @@
 
 PORTNAME=	gimmage
 PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	BERLIOS CENKES
 
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple image viewer
 
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		curl.4:${PORTSDIR}/ftp/curl
+		curl.5:${PORTSDIR}/ftp/curl
 
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

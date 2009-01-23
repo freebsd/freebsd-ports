@@ -6,14 +6,14 @@
 
 PORTNAME=	wmweather
 PORTVERSION=	2.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc windowmaker geography
 MASTER_SITES=	http://www.godisch.de/debian/wmweather/
 
 MAINTAINER=	kris@FreeBSD.org
 COMMENT=	A WMaker dockapp which displays meteorological data for your city
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	xmessage:${PORTSDIR}/x11/xmessage
 RUN_DEPENDS=	xmessage:${PORTSDIR}/x11/xmessage
 

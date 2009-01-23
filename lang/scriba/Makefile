@@ -7,7 +7,7 @@
 
 PORTNAME=	scriba
 PORTVERSION=	20b0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.scriptbasic.com/download/
 DISTNAME=	${PORTNAME}-v2.0b0-source
@@ -50,7 +50,7 @@ PLIST_SUB+=	BDB="@comment "
 .endif
 
 .if defined(WITH_CURL)
-LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	CURL=""
 .else
 PLIST_SUB+=	CURL="@comment "

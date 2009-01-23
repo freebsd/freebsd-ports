@@ -8,13 +8,14 @@
 
 PORTNAME=	curlpp
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://rrette.com/files/curlpp/curlpp-${PORTVERSION:R}/
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A C++ wrapper for libcurl
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

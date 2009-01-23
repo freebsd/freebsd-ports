@@ -7,14 +7,14 @@
 
 PORTNAME=	mudmagic
 PORTVERSION=	1.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.mudmagic.com/mud-client/downloads/
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	A GTK+ based MUD client
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		png.5:${PORTSDIR}/graphics/png \
 		expat:${PORTSDIR}/textproc/expat2 \

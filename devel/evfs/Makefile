@@ -8,7 +8,7 @@
 
 PORTNAME=	evfs
 PORTVERSION=	20080223
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=--disable-samba
 .endif
 
 .if !defined(WITHOUT_FTP) || exists(${LOCALBASE}/lib/libcurl.so.4)
-LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	FTP=""
 .else
 PLIST_SUB+=	FTP="@comment "

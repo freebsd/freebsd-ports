@@ -7,7 +7,7 @@
 
 PORTNAME=	gbemol
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MAINTAINER=	tmh.public@gmail.com
 COMMENT=	Graphical frontend for the Music Player Daemon
 
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
-		curl.4:${PORTSDIR}/ftp/curl \
+		curl.5:${PORTSDIR}/ftp/curl \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes

@@ -7,14 +7,14 @@
 
 PORTNAME=	authforce
 PORTVERSION=	0.9.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security www
 MASTER_SITES=	http://www.divineinvasion.net/authforce/
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	HTTP authentication brute forcer
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

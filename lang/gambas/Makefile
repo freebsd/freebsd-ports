@@ -6,14 +6,14 @@
 
 PORTNAME=		gambas
 PORTVERSION=		1.0.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		lang
 MASTER_SITES=		SF
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Gambas Almost Means BASic
 
-LIB_DEPENDS=		curl.4:${PORTSDIR}/ftp/curl	\
+LIB_DEPENDS=		curl.5:${PORTSDIR}/ftp/curl	\
 			ml.0:${PORTSDIR}/math/ldouble
 
 USE_AUTOTOOLS=		libltdl:15 libtool:15

@@ -7,13 +7,14 @@
 
 PORTNAME=	bzflag
 PORTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	chuck@pkix.net
 COMMENT=	A multiplayer 3D tank battle game
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes
 USE_SDL=	yes

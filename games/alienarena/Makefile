@@ -7,6 +7,7 @@
 
 PORTNAME=	alienarena
 PORTVERSION=	2008.710
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/alienarena/Files/
 DISTNAME=	${PORTNAME}2008-linux20080603
@@ -37,7 +38,7 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CLIENT)
-LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 USE_GL=		yes

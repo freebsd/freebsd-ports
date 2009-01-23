@@ -10,5 +10,6 @@ CATEGORIES=	ftp
 MASTERDIR=	${.CURDIR}/../../lang/php4
 
 PKGNAMESUFFIX=	-curl
+PORTREVISION=	1
 
 .include "${MASTERDIR}/Makefile"

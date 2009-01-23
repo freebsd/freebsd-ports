@@ -7,7 +7,7 @@
 
 PORTNAME=	db
 PORTVERSION=	20070124
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,$,acm/foomatic/,} \
 		http://freebsd.unixfreunde.de/sources/
@@ -19,7 +19,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Foomatic database
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		curl.4:${PORTSDIR}/ftp/curl
+		curl.5:${PORTSDIR}/ftp/curl
 
 USE_GMAKE=	yes
 USE_PERL5=	yes

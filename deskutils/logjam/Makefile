@@ -7,14 +7,14 @@
 
 PORTNAME=	logjam
 PORTVERSION=	4.5.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils
 MASTER_SITES=	http://logjam.danga.com/download/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A GTK2 interface to livejournals, ie www.livejournal.com
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
 MAN1=		logjam.1
 

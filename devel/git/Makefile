@@ -7,6 +7,7 @@
 
 PORTNAME=	git
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \

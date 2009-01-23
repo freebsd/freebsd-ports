@@ -7,6 +7,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		5.2.0
+PORTREVISION=		1
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -104,7 +105,7 @@ PLIST_SUB+=		WITH_PERL="@comment "
 .endif
 
 .if defined(WITH_CURL)
-LIB_DEPENDS+=		curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=		curl.5:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
 .endif
 

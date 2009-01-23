@@ -7,13 +7,14 @@
 
 PORTNAME=	flickcurl
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.dajobe.org/flickcurl/
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	C library for the Flickr API
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget ltverhack libxml2 pkgconfig

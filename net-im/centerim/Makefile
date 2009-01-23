@@ -8,6 +8,7 @@
 
 PORTNAME=	centerim
 PORTVERSION=	4.22.6
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.centerim.org/download/releases/ \
 		ftp://ftp.centerim.org/releases/
@@ -15,7 +16,7 @@ MASTER_SITES=	http://www.centerim.org/download/releases/ \
 MAINTAINER=	frank@altpeter.de
 COMMENT=	A text mode menu- and window-driven IM interface
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
 USE_ICONV=	yes
 USE_OPENSSL=	yes

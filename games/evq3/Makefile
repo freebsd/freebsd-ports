@@ -7,6 +7,7 @@
 
 PORTNAME=	evq3
 PORTVERSION=	1.3.20080810
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://evolution.quakedev.com/dev/evq3/:pak \
 		${MASTER_SITE_LOCAL:S|$|alepulver/:src|}
@@ -69,7 +70,7 @@ MAKE_ENV+=	HAVE_VM_COMPILED=true
 .if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SMP)
 # curl
 .   if defined(WITH_CURL)
-LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
 MAKE_ENV+=	USE_CURL=1
 .       if defined(WITH_CURL_DLOPEN)
 MAKE_ENV+=	USE_CURL_DLOPEN=1
