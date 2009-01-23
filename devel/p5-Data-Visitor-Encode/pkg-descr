@@ -1,0 +1,6 @@
+Data::Visitor::Encode visits each node of a structure, and returns a
+new structure with each node's encoding (or similar action).  If you
+ever wished to do a bulk encode/decode of the contents of a structure,
+then this module may help you.
+
+WWW: http://search.cpan.org/dist/Data-Visitor-Encode/
