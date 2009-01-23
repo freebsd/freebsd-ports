@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	libeXosip2
-PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTVERSION=	3.2.0
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	exosip
+MASTER_SITES=	SAVANNAH/exosip
 
 MAINTAINER=	bd_subzero@yahoo.com
 COMMENT=	GPL library that extends the capability of the oSIP library
