@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Data/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Data/Util/Curry.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Data/Util/Error.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Data/Util/JA.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Data/Util/PurePerl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Util/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Util/Util.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Util/Util.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Util
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Data/Util
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data

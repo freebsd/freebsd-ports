@@ -1163,6 +1163,7 @@
     SUBDIR += p5-Data-Types
     SUBDIR += p5-Data-UUID
     SUBDIR += p5-Data-Uniqid
+    SUBDIR += p5-Data-Util
     SUBDIR += p5-Data-Validate
     SUBDIR += p5-Data-Visitor
     SUBDIR += p5-Date-Calc
