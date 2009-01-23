@@ -1437,6 +1437,7 @@
     SUBDIR += trac-ldap
     SUBDIR += trac-macropost
     SUBDIR += trac-mastertickets
+    SUBDIR += trac-mercurial
     SUBDIR += trac-nav
     SUBDIR += trac-navadd
     SUBDIR += trac-pagelist
