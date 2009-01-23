@@ -1,7 +1,16 @@
 bin/coin-config
+include/Inventor/C/XML/attribute.h
+include/Inventor/C/XML/document.h
+include/Inventor/C/XML/element.h
+include/Inventor/C/XML/entity.h
+include/Inventor/C/XML/parser.h
+include/Inventor/C/XML/path.h
+include/Inventor/C/XML/types.h
+include/Inventor/C/XML/world.h
 include/Inventor/C/base/hash.h
 include/Inventor/C/base/heap.h
 include/Inventor/C/base/list.h
+include/Inventor/C/base/math-undefs.h
 include/Inventor/C/base/memalloc.h
 include/Inventor/C/base/rbptree.h
 include/Inventor/C/base/string.h
@@ -41,6 +50,7 @@ include/Inventor/SbBox3s.h
 include/Inventor/SbClip.h
 include/Inventor/SbColor.h
 include/Inventor/SbColor4f.h
+include/Inventor/SbColorRGBA.h
 include/Inventor/SbCylinder.h
 include/Inventor/SbDPLine.h
 include/Inventor/SbDPLinear.h
@@ -64,6 +74,7 @@ include/Inventor/SbString.h
 include/Inventor/SbTesselator.h
 include/Inventor/SbTime.h
 include/Inventor/SbTypeInfo.h
+include/Inventor/SbVec.h
 include/Inventor/SbVec2b.h
 include/Inventor/SbVec2d.h
 include/Inventor/SbVec2f.h
@@ -94,6 +105,7 @@ include/Inventor/SbXfBox3d.h
 include/Inventor/SbXfBox3f.h
 include/Inventor/So.h
 include/Inventor/SoDB.h
+include/Inventor/SoEventManager.h
 include/Inventor/SoFullPath.h
 include/Inventor/SoInput.h
 include/Inventor/SoInteraction.h
@@ -104,6 +116,7 @@ include/Inventor/SoOutput.h
 include/Inventor/SoPath.h
 include/Inventor/SoPickedPoint.h
 include/Inventor/SoPrimitiveVertex.h
+include/Inventor/SoRenderManager.h
 include/Inventor/SoSceneManager.h
 include/Inventor/SoType.h
 include/Inventor/VRMLnodes/SoVRML.h
@@ -200,22 +213,38 @@ include/Inventor/annex/FXViz/elements/SoGLShadowCullingElement.h
 include/Inventor/annex/FXViz/elements/SoShadowStyleElement.h
 include/Inventor/annex/FXViz/nodes/SoShadowCulling.h
 include/Inventor/annex/FXViz/nodes/SoShadowGroup.h
+include/Inventor/annex/FXViz/nodes/SoShadowSpotLight.h
 include/Inventor/annex/FXViz/nodes/SoShadowStyle.h
+include/Inventor/annex/ForeignFiles/SoForeignFileKit.h
+include/Inventor/annex/ForeignFiles/SoSTLFileKit.h
 include/Inventor/annex/HardCopy/SoHardCopy.h
 include/Inventor/annex/HardCopy/SoPSVectorOutput.h
 include/Inventor/annex/HardCopy/SoVectorOutput.h
 include/Inventor/annex/HardCopy/SoVectorizeAction.h
 include/Inventor/annex/HardCopy/SoVectorizePSAction.h
+include/Inventor/annex/Profiler/SbProfilingData.h
+include/Inventor/annex/Profiler/SoProfiler.h
+include/Inventor/annex/Profiler/elements/SoProfilerElement.h
+include/Inventor/annex/Profiler/engines/SoProfilerTopEngine.h
+include/Inventor/annex/Profiler/nodekits/SoNodeVisualize.h
+include/Inventor/annex/Profiler/nodekits/SoProfilerOverlayKit.h
+include/Inventor/annex/Profiler/nodekits/SoProfilerTopKit.h
+include/Inventor/annex/Profiler/nodekits/SoProfilerVisualizeKit.h
+include/Inventor/annex/Profiler/nodekits/SoScrollingGraphKit.h
+include/Inventor/annex/Profiler/nodes/SoProfilerStats.h
+include/Inventor/annex/Profiler/utils/SoProfilingReportGenerator.h
 include/Inventor/bundles/SoBundle.h
 include/Inventor/bundles/SoMaterialBundle.h
 include/Inventor/bundles/SoNormalBundle.h
 include/Inventor/bundles/SoTextureCoordinateBundle.h
+include/Inventor/bundles/SoVertexAttributeBundle.h
 include/Inventor/caches/SoBoundingBoxCache.h
 include/Inventor/caches/SoCache.h
 include/Inventor/caches/SoConvexDataCache.h
 include/Inventor/caches/SoGLCacheList.h
 include/Inventor/caches/SoGLRenderCache.h
 include/Inventor/caches/SoNormalCache.h
+include/Inventor/caches/SoPrimitiveVertexCache.h
 include/Inventor/caches/SoTextureCoordinateCache.h
 include/Inventor/collision/SoIntersectionDetectionAction.h
 include/Inventor/details/SoConeDetail.h
@@ -261,6 +290,7 @@ include/Inventor/elements/SoBumpMapCoordinateElement.h
 include/Inventor/elements/SoBumpMapElement.h
 include/Inventor/elements/SoBumpMapMatrixElement.h
 include/Inventor/elements/SoCacheElement.h
+include/Inventor/elements/SoCacheHintElement.h
 include/Inventor/elements/SoClipPlaneElement.h
 include/Inventor/elements/SoComplexityElement.h
 include/Inventor/elements/SoComplexityTypeElement.h
@@ -269,6 +299,7 @@ include/Inventor/elements/SoCreaseAngleElement.h
 include/Inventor/elements/SoCullElement.h
 include/Inventor/elements/SoDecimationPercentageElement.h
 include/Inventor/elements/SoDecimationTypeElement.h
+include/Inventor/elements/SoDepthBufferElement.h
 include/Inventor/elements/SoDiffuseColorElement.h
 include/Inventor/elements/SoDrawStyleElement.h
 include/Inventor/elements/SoElement.h
@@ -283,6 +314,7 @@ include/Inventor/elements/SoGLCacheContextElement.h
 include/Inventor/elements/SoGLClipPlaneElement.h
 include/Inventor/elements/SoGLColorIndexElement.h
 include/Inventor/elements/SoGLCoordinateElement.h
+include/Inventor/elements/SoGLDepthBufferElement.h
 include/Inventor/elements/SoGLDisplayList.h
 include/Inventor/elements/SoGLDrawStyleElement.h
 include/Inventor/elements/SoGLEnvironmentElement.h
@@ -311,6 +343,7 @@ include/Inventor/elements/SoGLTextureImageElement.h
 include/Inventor/elements/SoGLTextureMatrixElement.h
 include/Inventor/elements/SoGLUpdateAreaElement.h
 include/Inventor/elements/SoGLVBOElement.h
+include/Inventor/elements/SoGLVertexAttributeElement.h
 include/Inventor/elements/SoGLViewingMatrixElement.h
 include/Inventor/elements/SoGLViewportRegionElement.h
 include/Inventor/elements/SoGeoElement.h
@@ -364,6 +397,8 @@ include/Inventor/elements/SoTextureQualityElement.h
 include/Inventor/elements/SoTextureUnitElement.h
 include/Inventor/elements/SoTransparencyElement.h
 include/Inventor/elements/SoUnitsElement.h
+include/Inventor/elements/SoVertexAttributeBindingElement.h
+include/Inventor/elements/SoVertexAttributeElement.h
 include/Inventor/elements/SoViewVolumeElement.h
 include/Inventor/elements/SoViewingMatrixElement.h
 include/Inventor/elements/SoViewportRegionElement.h
@@ -391,6 +426,7 @@ include/Inventor/engines/SoEngineOutput.h
 include/Inventor/engines/SoEngines.h
 include/Inventor/engines/SoFieldConverter.h
 include/Inventor/engines/SoGate.h
+include/Inventor/engines/SoHeightMapToNormalMap.h
 include/Inventor/engines/SoInterpolate.h
 include/Inventor/engines/SoInterpolateFloat.h
 include/Inventor/engines/SoInterpolateRotation.h
@@ -404,6 +440,7 @@ include/Inventor/engines/SoOutputData.h
 include/Inventor/engines/SoSelectOne.h
 include/Inventor/engines/SoSubEngine.h
 include/Inventor/engines/SoSubNodeEngine.h
+include/Inventor/engines/SoTexture2Convert.h
 include/Inventor/engines/SoTimeCounter.h
 include/Inventor/engines/SoTransformVec3f.h
 include/Inventor/engines/SoTriggerAny.h
@@ -453,14 +490,14 @@ include/Inventor/fields/SoMFVec2f.h
 include/Inventor/fields/SoMFVec2i32.h
 include/Inventor/fields/SoMFVec2s.h
 include/Inventor/fields/SoMFVec3b.h
-include/Inventor/fields/SoMFVec3i32.h
 include/Inventor/fields/SoMFVec3d.h
 include/Inventor/fields/SoMFVec3f.h
+include/Inventor/fields/SoMFVec3i32.h
 include/Inventor/fields/SoMFVec3s.h
 include/Inventor/fields/SoMFVec4b.h
 include/Inventor/fields/SoMFVec4d.h
-include/Inventor/fields/SoMFVec4i32.h
 include/Inventor/fields/SoMFVec4f.h
+include/Inventor/fields/SoMFVec4i32.h
 include/Inventor/fields/SoMFVec4s.h
 include/Inventor/fields/SoMFVec4ub.h
 include/Inventor/fields/SoMFVec4ui32.h
@@ -560,6 +597,7 @@ include/Inventor/misc/SoChildList.h
 include/Inventor/misc/SoContextHandler.h
 include/Inventor/misc/SoGLBigImage.h
 include/Inventor/misc/SoGLCubeMapImage.h
+include/Inventor/misc/SoGLDriverDatabase.h
 include/Inventor/misc/SoGLImage.h
 include/Inventor/misc/SoGlyph.h
 include/Inventor/misc/SoJavaScriptEngine.h
@@ -597,6 +635,7 @@ include/Inventor/nodes/SoBlinker.h
 include/Inventor/nodes/SoBumpMap.h
 include/Inventor/nodes/SoBumpMapCoordinate.h
 include/Inventor/nodes/SoBumpMapTransform.h
+include/Inventor/nodes/SoCacheHint.h
 include/Inventor/nodes/SoCallback.h
 include/Inventor/nodes/SoCamera.h
 include/Inventor/nodes/SoClipPlane.h
@@ -607,6 +646,7 @@ include/Inventor/nodes/SoCoordinate3.h
 include/Inventor/nodes/SoCoordinate4.h
 include/Inventor/nodes/SoCube.h
 include/Inventor/nodes/SoCylinder.h
+include/Inventor/nodes/SoDepthBuffer.h
 include/Inventor/nodes/SoDirectionalLight.h
 include/Inventor/nodes/SoDrawStyle.h
 include/Inventor/nodes/SoEnvironment.h
@@ -673,6 +713,7 @@ include/Inventor/nodes/SoRotationXYZ.h
 include/Inventor/nodes/SoRotor.h
 include/Inventor/nodes/SoScale.h
 include/Inventor/nodes/SoSceneTexture2.h
+include/Inventor/nodes/SoSceneTextureCubeMap.h
 include/Inventor/nodes/SoSelection.h
 include/Inventor/nodes/SoSeparator.h
 include/Inventor/nodes/SoShaderObject.h
@@ -688,6 +729,7 @@ include/Inventor/nodes/SoSurroundScale.h
 include/Inventor/nodes/SoSwitch.h
 include/Inventor/nodes/SoText2.h
 include/Inventor/nodes/SoText3.h
+include/Inventor/nodes/SoTexture.h
 include/Inventor/nodes/SoTexture2.h
 include/Inventor/nodes/SoTexture2Transform.h
 include/Inventor/nodes/SoTexture3.h
@@ -701,7 +743,10 @@ include/Inventor/nodes/SoTextureCoordinateCylinder.h
 include/Inventor/nodes/SoTextureCoordinateDefault.h
 include/Inventor/nodes/SoTextureCoordinateEnvironment.h
 include/Inventor/nodes/SoTextureCoordinateFunction.h
+include/Inventor/nodes/SoTextureCoordinateNormalMap.h
+include/Inventor/nodes/SoTextureCoordinateObject.h
 include/Inventor/nodes/SoTextureCoordinatePlane.h
+include/Inventor/nodes/SoTextureCoordinateReflectionMap.h
 include/Inventor/nodes/SoTextureCoordinateSphere.h
 include/Inventor/nodes/SoTextureCubeMap.h
 include/Inventor/nodes/SoTextureMatrixTransform.h
@@ -714,9 +759,11 @@ include/Inventor/nodes/SoTranslation.h
 include/Inventor/nodes/SoTransparencyType.h
 include/Inventor/nodes/SoTriangleStripSet.h
 include/Inventor/nodes/SoUnits.h
+include/Inventor/nodes/SoVertexAttribute.h
+include/Inventor/nodes/SoVertexAttributeBinding.h
 include/Inventor/nodes/SoVertexProperty.h
-include/Inventor/nodes/SoVertexShape.h
 include/Inventor/nodes/SoVertexShader.h
+include/Inventor/nodes/SoVertexShape.h
 include/Inventor/nodes/SoWWWAnchor.h
 include/Inventor/nodes/SoWWWInline.h
 include/Inventor/non_winsys.h
@@ -733,6 +780,14 @@ include/Inventor/projectors/SbSpherePlaneProjector.h
 include/Inventor/projectors/SbSphereProjector.h
 include/Inventor/projectors/SbSphereSectionProjector.h
 include/Inventor/projectors/SbSphereSheetProjector.h
+include/Inventor/scxml/ScXML.h
+include/Inventor/scxml/ScXMLEvent.h
+include/Inventor/scxml/ScXMLInvoke.h
+include/Inventor/scxml/ScXMLObject.h
+include/Inventor/scxml/ScXMLStateMachine.h
+include/Inventor/scxml/ScXMLSubObject.h
+include/Inventor/scxml/SoScXMLEvent.h
+include/Inventor/scxml/SoScXMLStateMachine.h
 include/Inventor/sensors/SoAlarmSensor.h
 include/Inventor/sensors/SoDataSensor.h
 include/Inventor/sensors/SoDelayQueueSensor.h
@@ -757,13 +812,18 @@ include/Inventor/threads/SbRWMutex.h
 include/Inventor/threads/SbStorage.h
 include/Inventor/threads/SbThread.h
 include/Inventor/threads/SbThreadAutoLock.h
+include/Inventor/threads/SbThreadMutex.h
 include/Inventor/threads/SbTypedStorage.h
+include/Inventor/tools/SbLazyPimplPtr.h
+include/Inventor/tools/SbLazyPimplPtr.hpp
+include/Inventor/tools/SbPimplPtr.h
+include/Inventor/tools/SbPimplPtr.hpp
 include/SoDebug.h
 include/SoWinEnterScope.h
 include/SoWinLeaveScope.h
 lib/libCoin.la
 lib/libCoin.so
-lib/libCoin.so.45
+lib/libCoin.so.60
 libdata/pkgconfig/Coin.pc
 %%DATADIR%%/conf/coin-default.cfg
 %%DATADIR%%/draggerDefaults/centerballDragger.iv
@@ -787,21 +847,26 @@ libdata/pkgconfig/Coin.pc
 %%DATADIR%%/draggerDefaults/transformerDragger.iv
 %%DATADIR%%/draggerDefaults/translate1Dragger.iv
 %%DATADIR%%/draggerDefaults/translate2Dragger.iv
+%%DATADIR%%/scxml/navigation/examiner.xml
 %%DATADIR%%/shaders/lights/DirSpotLight.glsl
 %%DATADIR%%/shaders/lights/DirectionalLight.glsl
 %%DATADIR%%/shaders/lights/PointLight.glsl
 %%DATADIR%%/shaders/lights/SpotLight.glsl
 %%DATADIR%%/shaders/vsm/VsmLookup.glsl
 share/aclocal/coin.m4
-@dirrm %%DATADIR%%/draggerDefaults
-@dirrm %%DATADIR%%/shaders/lights
 @dirrm %%DATADIR%%/shaders/vsm
+@dirrm %%DATADIR%%/shaders/lights
 @dirrm %%DATADIR%%/shaders
+@dirrm %%DATADIR%%/scxml/navigation
+@dirrm %%DATADIR%%/scxml
+@dirrm %%DATADIR%%/draggerDefaults
 @dirrm %%DATADIR%%/conf
 @dirrm %%DATADIR%%
+@dirrm include/Inventor/tools
 @dirrm include/Inventor/threads
 @dirrm include/Inventor/system
 @dirrm include/Inventor/sensors
+@dirrm include/Inventor/scxml
 @dirrm include/Inventor/projectors
 @dirrm include/Inventor/nodes
 @dirrm include/Inventor/nodekits
@@ -819,10 +884,17 @@ share/aclocal/coin.m4
 @dirrm include/Inventor/collision
 @dirrm include/Inventor/caches
 @dirrm include/Inventor/bundles
-@dirrm include/Inventor/annex/FXViz/elements
-@dirrm include/Inventor/annex/FXViz/nodes
-@dirrm include/Inventor/annex/FXViz
+@dirrm include/Inventor/annex/Profiler/utils
+@dirrm include/Inventor/annex/Profiler/nodes
+@dirrm include/Inventor/annex/Profiler/nodekits
+@dirrm include/Inventor/annex/Profiler/engines
+@dirrm include/Inventor/annex/Profiler/elements
+@dirrm include/Inventor/annex/Profiler
 @dirrm include/Inventor/annex/HardCopy
+@dirrm include/Inventor/annex/ForeignFiles
+@dirrm include/Inventor/annex/FXViz/nodes
+@dirrm include/Inventor/annex/FXViz/elements
+@dirrm include/Inventor/annex/FXViz
 @dirrm include/Inventor/annex
 @dirrm include/Inventor/actions
 @dirrm include/Inventor/VRMLnodes
@@ -830,5 +902,6 @@ share/aclocal/coin.m4
 @dirrm include/Inventor/C/glue
 @dirrm include/Inventor/C/errors
 @dirrm include/Inventor/C/base
+@dirrm include/Inventor/C/XML
 @dirrm include/Inventor/C
 @dirrm include/Inventor

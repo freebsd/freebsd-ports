@@ -1,8 +1,8 @@
---- Makefile.in.orig	2007-12-25 21:33:49.000000000 -0500
-+++ Makefile.in	2007-12-25 21:37:23.000000000 -0500
-@@ -284,7 +284,7 @@
+--- Makefile.in.orig	2009-01-21 18:48:08.000000000 -0200
++++ Makefile.in	2009-01-21 18:48:34.000000000 -0200
+@@ -1302,7 +1302,7 @@
+ 	include/boost/visit_each.hpp
  
- SUBDIRS = . bin include $(SRCDIRS) $(DOCDIRS) $(JAVADIR)
  
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(exec_prefix)/libdata/pkgconfig
