@@ -1,8 +1,8 @@
 diff -urN -x .svn ../../vendor/curl/Makefile.in ./Makefile.in
---- ../../vendor/curl/Makefile.in	2008-03-20 15:23:26.000000000 +0200
-+++ ./Makefile.in	2008-03-21 12:25:17.000000000 +0200
-@@ -259,9 +259,9 @@
-  curl-style.el sample.emacs RELEASE-NOTES buildconf buildconf.bat libcurl.pc.in
+--- ../../vendor/curl/Makefile.in	2008-11-05 14:00:46.000000000 +0200
++++ ./Makefile.in	2009-01-21 16:12:08.000000000 +0200
+@@ -273,9 +273,9 @@
+  libcurl.pc.in vc6curl.dsw
  
  bin_SCRIPTS = curl-config
 -SUBDIRS = lib src
@@ -14,7 +14,7 @@ diff -urN -x .svn ../../vendor/curl/Makefile.in ./Makefile.in
  pkgconfig_DATA = libcurl.pc
  all: all-recursive
  
-@@ -817,12 +817,10 @@
+@@ -835,12 +835,10 @@
  # We extend the standard install with a custom hook:
  install-data-hook:
  	cd include && $(MAKE) install
@@ -24,6 +24,6 @@ diff -urN -x .svn ../../vendor/curl/Makefile.in ./Makefile.in
  uninstall-hook:
  	cd include && $(MAKE) uninstall
 -	cd docs && $(MAKE) uninstall
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
+ 
+ ca-bundle: lib/mk-ca-bundle.pl
+ 	@echo "generate a fresh ca-bundle.crt"

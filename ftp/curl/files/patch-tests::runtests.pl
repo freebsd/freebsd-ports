@@ -1,11 +1,12 @@
---- tests/runtests.pl.orig	Wed May 18 11:50:16 2005
-+++ tests/runtests.pl	Wed May 18 11:50:32 2005
-@@ -29,7 +29,7 @@
- @INC=(@INC, $ENV{'srcdir'}, ".");
+diff -urN -x .svn ../../vendor/curl/tests/runtests.pl ./tests/runtests.pl
+--- ../../vendor/curl/tests/runtests.pl	2008-10-27 22:11:37.000000000 +0200
++++ ./tests/runtests.pl	2009-01-21 16:12:22.000000000 +0200
+@@ -88,7 +88,7 @@
+     );
  
  require "getpart.pm"; # array functions
 -require "valgrind.pm"; # valgrind report parser
 +#require "valgrind.pm"; # valgrind report parser
  require "ftp.pm";
  
- my $srcdir = $ENV{'srcdir'} || '.';
+ my $HOSTIP="127.0.0.1";   # address on which the test server listens

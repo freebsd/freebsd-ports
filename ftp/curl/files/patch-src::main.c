@@ -1,8 +1,8 @@
-diff -urN -urN -x .svn ../../vendor/curl/src/main.c ./src/main.c
---- ../../vendor/curl/src/main.c	2008-03-24 00:40:11.000000000 +0200
-+++ ./src/main.c	2008-04-02 15:51:11.000000000 +0300
-@@ -4190,31 +4190,32 @@
-              (-1 == create_dir_hierarchy(outfile)))
+diff -urN -x .svn ../../vendor/curl/src/main.c ./src/main.c
+--- ../../vendor/curl/src/main.c	2008-10-29 00:12:02.000000000 +0200
++++ ./src/main.c	2009-01-21 16:12:11.000000000 +0200
+@@ -4313,31 +4313,32 @@
+              (-1 == create_dir_hierarchy(outfile, config->errors)))
              return CURLE_WRITE_ERROR;
  
 -          if(config->resume_from_current) {
@@ -30,7 +30,7 @@ diff -urN -urN -x .svn ../../vendor/curl/src/main.c ./src/main.c
 +	    /* (always open for appending, it has no effect on new files) */
 +            outs.stream=(FILE *) fopen(outfile, "ab");
              if (!outs.stream) {
-               helpf("Can't open '%s'!\n", outfile);
+               helpf(config->errors, "Can't open '%s'!\n", outfile);
                return CURLE_WRITE_ERROR;
              }
 +
@@ -52,20 +52,11 @@ diff -urN -urN -x .svn ../../vendor/curl/src/main.c ./src/main.c
            }
            else {
              outs.stream = NULL; /* open when needed */
-@@ -4289,7 +4290,7 @@
-            */
- 
-           infd= open(uploadfile, O_RDONLY | O_BINARY);
--          if ((infd == -1) || stat(uploadfile, &fileinfo)) {
-+          if ((infd == -1) || fstat(infd, &fileinfo)) {
-             helpf("Can't open '%s'!\n", uploadfile);
-             if(infd != -1)
-               close(infd);
-@@ -5155,12 +5156,13 @@
- const char *
+@@ -5288,12 +5289,13 @@
+ static const char *
  msdosify (const char *file_name)
  {
--  static char dos_name[PATH_MAX];
+-  static char dos_name[PATH_MAX*2];
 +  static char dos_name[PATH_MAX + 16];
    static const char illegal_chars_dos[] = ".+, ;=[]|<>\\\":?*";
    static const char *illegal_chars_w95 = &illegal_chars_dos[8];
@@ -76,7 +67,7 @@ diff -urN -urN -x .svn ../../vendor/curl/src/main.c ./src/main.c
    const char *illegal_aliens = illegal_chars_dos;
    size_t len = sizeof (illegal_chars_dos) - 1;
    int lfn = 0;
-@@ -5181,7 +5183,7 @@
+@@ -5314,7 +5316,7 @@
      *d++ = *s++;
    }
  
@@ -85,7 +76,7 @@ diff -urN -urN -x .svn ../../vendor/curl/src/main.c ./src/main.c
      if (memchr (illegal_aliens, *s, len)) {
        /* Dots are special: DOS doesn't allow them as the leading character,
           and a file name cannot have more than a single dot.  We leave the
-@@ -5238,6 +5240,10 @@
+@@ -5371,6 +5373,10 @@
        idx++;
    }
  
@@ -96,21 +87,3 @@ diff -urN -urN -x .svn ../../vendor/curl/src/main.c ./src/main.c
    *d = '\0';
    return dos_name;
  }
-@@ -5252,11 +5258,15 @@
-   struct stat st_buf;
-   char fname[PATH_MAX];
- 
--  strcpy (fname, file_name);
-+  snprintf (fname, PATH_MAX, "%s", file_name);
-   base = basename (fname);
-   if (((stat(base, &st_buf)) == 0) && (S_ISCHR(st_buf.st_mode))) {
--    size_t blen = strlen (base);
-+    size_t blen = strlen (base), flen = strlen (fname);
- 
-+    if(flen == PATH_MAX - 1) {
-+      blen--;
-+      base[blen] = '\0';
-+    }
-     /* Prepend a '_'.  */
-     memmove (base + 1, base, blen + 1);
-     base[0] = '_';

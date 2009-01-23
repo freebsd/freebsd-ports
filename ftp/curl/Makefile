@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.18.0
+PORTVERSION=	7.19.2
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -18,11 +18,14 @@ MASTER_SITE_SUBDIR=	curl
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers
 
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+
 MAN1=		curl.1 curl-config.1
 MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 \
 		curl_easy_escape.3 curl_easy_getinfo.3 \
 		curl_easy_init.3 curl_easy_pause.3 \
-		curl_easy_perform.3 curl_easy_reset.3 \
+		curl_easy_perform.3 curl_easy_reset.3 curl_easy_recv.3 \
+		curl_easy_send.3 \
 		curl_easy_setopt.3 curl_easy_strerror.3 curl_easy_unescape.3 \
 		curl_escape.3 \
 		curl_unescape.3 curl_formadd.3 curl_formget.3 curl_formfree.3 curl_free.3 \
@@ -40,7 +43,7 @@ MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 \
 		libcurl-multi.3 libcurl-share.3 libcurl-tutorial.3
 
 USE_LDCONFIG=	yes
-SHLIB_VER=	4
+SHLIB_VER=	5
 
 MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
@@ -59,7 +62,8 @@ OPTIONS=	CARES "Asynchronous DNS resolution via c-ares" off \
 		LIBIDN "Internationalized Domain Names via libidn" off \
 		LIBSSH2 "SCP/SFTP support via libssh2" off \
 		NTLM "NTLM authentication" off \
-		OPENSSL "OpenSSL support" on
+		OPENSSL "OpenSSL support" on \
+		PROXY "Proxy support" on
 
 .include <bsd.port.pre.mk>
 
@@ -91,7 +95,8 @@ IGNORE=			only supports LDAPS with SSL (OpenSSL or GNUTLS)
 
 .if !defined(WITHOUT_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
-CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE} \
+			--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
 .else
 CONFIGURE_ARGS+=	--without-ssl
 .endif
@@ -165,6 +170,12 @@ CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=	--enable-ntlm
 .else
 CONFIGURE_ARGS+=	--disable-ntlm
+.endif
+
+.if !defined(WITHOUT_PROXY)
+CONFIGURE_ARGS+=	--enable-proxy
+.else
+CONFIGURE_ARGS+=	--disable-proxy
 .endif
 
 .if defined(ADDFLAGS)
