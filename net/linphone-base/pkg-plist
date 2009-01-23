@@ -20,8 +20,10 @@ include/mediastreamer2/msv4l.h
 include/mediastreamer2/msvideo.h
 include/mediastreamer2/msvideoout.h
 include/mediastreamer2/msvolume.h
+include/mediastreamer2/mswebcam.h
 include/mediastreamer2/rfc3984.h
 include/mediastreamer2/waveheader.h
+include/ortp/b64.h
 include/ortp/event.h
 include/ortp/ortp.h
 include/ortp/payloadtype.h
@@ -47,7 +49,7 @@ lib/libmediastreamer.so.0
 lib/libortp.a
 lib/libortp.la
 lib/libortp.so
-lib/libortp.so.7
+lib/libortp.so.8
 libdata/pkgconfig/linphone.pc
 libdata/pkgconfig/mediastreamer.pc
 libdata/pkgconfig/ortp.pc

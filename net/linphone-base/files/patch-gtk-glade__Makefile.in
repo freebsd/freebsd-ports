@@ -1,0 +1,41 @@
+--- gtk-glade/Makefile.in.orig	2008-10-10 21:54:08.000000000 +0900
++++ gtk-glade/Makefile.in	2008-10-20 05:14:41.000000000 +0900
+@@ -67,9 +67,6 @@
+ linphone_3_OBJECTS = $(am_linphone_3_OBJECTS)
+ am__DEPENDENCIES_1 =
+ @BUILD_GLADE_UI_TRUE@linphone_3_DEPENDENCIES =  \
+-@BUILD_GLADE_UI_TRUE@	$(top_builddir)/oRTP/src/libortp.la \
+-@BUILD_GLADE_UI_TRUE@	$(top_builddir)/mediastreamer2/src/libmediastreamer.la \
+-@BUILD_GLADE_UI_TRUE@	$(top_builddir)/coreapi/liblinphone.la \
+ @BUILD_GLADE_UI_TRUE@	$(am__DEPENDENCIES_1) \
+ @BUILD_GLADE_UI_TRUE@	$(am__DEPENDENCIES_1) \
+ @BUILD_GLADE_UI_TRUE@	$(am__DEPENDENCIES_1)
+@@ -310,9 +307,9 @@
+ @BUILD_GLADE_UI_TRUE@			logging.c \
+ @BUILD_GLADE_UI_TRUE@			linphone.h
+ 
+-@BUILD_GLADE_UI_TRUE@linphone_3_LDADD = $(top_builddir)/oRTP/src/libortp.la \
+-@BUILD_GLADE_UI_TRUE@		$(top_builddir)/mediastreamer2/src/libmediastreamer.la \
+-@BUILD_GLADE_UI_TRUE@		$(top_builddir)/coreapi/liblinphone.la \
++@BUILD_GLADE_UI_TRUE@linphone_3_LDADD = `$(PKG_CONFIG) --libs ortp` \
++@BUILD_GLADE_UI_TRUE@		`$(PKG_CONFIG) --libs mediastreamer` \
++@BUILD_GLADE_UI_TRUE@		`$(PKG_CONFIG) --libs linphone` \
+ @BUILD_GLADE_UI_TRUE@			$(LIBGTK_LIBS) $(INTLLIBS) \
+ @BUILD_GLADE_UI_TRUE@			$(LIBGLADE_LIBS)
+ 
+@@ -324,10 +321,12 @@
+ 
+ #gtk-linphone.ui:	gtk-linphone.glade
+ #	gtk-builder-convert gtk-linphone.glade $@
+-AM_CFLAGS = -I$(top_srcdir)/coreapi/ \
+-		-I$(top_srcdir)/mediastreamer2/include/ \
++AM_CFLAGS = \
++		`$(PKG_CONFIG) --cflags ortp` \
++		`$(PKG_CONFIG) --cflags mediastreamer` \
++		`$(PKG_CONFIG) --cflags linphone` \
+ 		$(LIBGLADE_CFLAGS) $(STRICT_OPTIONS) $(LIBGTK_CFLAGS) $(IPV6_CFLAGS) \
+-		$(ORTP_CFLAGS) $(OSIP_CFLAGS) 
++		$(OSIP_CFLAGS) 
+ 
+ all: all-am
+ 

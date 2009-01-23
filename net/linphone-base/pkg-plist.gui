@@ -1,9 +1,20 @@
 bin/linphone
-libdata/bonobo/servers/GNOME_LinphoneApplet.server
-libexec/linphone_applet
+bin/linphone-3
 share/applications/linphone.desktop
-share/applications/linphone_applet.desktop
-share/gnome-2.0/ui/GNOME_LinphoneApplet.xml
+%%DATADIR%%/about.glade
+%%DATADIR%%/call_logs.glade
+%%DATADIR%%/chatroom.glade
+%%DATADIR%%/contact.glade
+%%DATADIR%%/gtk-linphone.glade
+%%DATADIR%%/incoming_call.glade
+%%DATADIR%%/linphone.png
+%%DATADIR%%/linphone2.png
+%%DATADIR%%/log.glade
+%%DATADIR%%/main.glade
+%%DATADIR%%/parameters.glade
+%%DATADIR%%/password.glade
+%%DATADIR%%/sip_account.glade
+%%DATADIR%%/stock_people.png
 share/pixmaps/linphone/linphone.png
 share/pixmaps/linphone/linphone2.png
 share/pixmaps/linphone/linphone2.xpm
@@ -16,3 +27,5 @@ share/pixmaps/linphone/sip-otl.png
 share/pixmaps/linphone/sip-otp.png
 share/pixmaps/linphone/sip-wfa.png
 @dirrm share/pixmaps/linphone
+@dirrmtry %%DATADIR%%
+@dirrmtry share/applications
