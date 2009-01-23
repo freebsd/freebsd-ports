@@ -22,6 +22,7 @@
     SUBDIR += dctc-gui
     SUBDIR += dctc-gui-qt
     SUBDIR += deluge
+    SUBDIR += deluge05
     SUBDIR += ed2k
     SUBDIR += edonkey-gui-gtk
     SUBDIR += edonkey-gui-gtk-urlslave
