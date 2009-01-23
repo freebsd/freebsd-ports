@@ -1,11 +1,11 @@
 bin/iverilog
 bin/iverilog-vpi
 bin/vvp
-include/_pli_types.h
-include/acc_user.h
-include/ivl_target.h
-include/veriuser.h
-include/vpi_user.h
+include/iverilog/_pli_types.h
+include/iverilog/acc_user.h
+include/iverilog/ivl_target.h
+include/iverilog/veriuser.h
+include/iverilog/vpi_user.h
 lib/ivl/cadpli.vpl
 lib/ivl/edif-s.conf
 lib/ivl/edif.conf
@@ -28,3 +28,4 @@ lib/ivl/xnf.conf
 lib/libveriuser.a
 lib/libvpi.a
 @dirrm lib/ivl
+@dirrm include/iverilog

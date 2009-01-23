@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	iverilog
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.7
 PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/v${PORTVERSION:C,\.[0-9]$,,}/ \
@@ -21,6 +21,8 @@ GNU_CONFIGURE=	yes
 USE_BISON=	build
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
+
+CONFIGURE_ARGS=	--disable-suffix
 
 MAN1=		iverilog-vpi.1 iverilog.1 vvp.1 iverilog-fpga.1
 
