@@ -4,19 +4,19 @@
 #
 # $FreeBSD$
 
-PORTNAME=		basket
-PORTVERSION=		1.0.3.1
+PORTNAME=	basket
+PORTVERSION=	1.0.3.1
 PORTREVISION=	1
-CATEGORIES=		deskutils kde
-MASTER_SITES=		http://basket.kde.org/downloads/
+CATEGORIES=	deskutils kde
+MASTER_SITES=	http://basket.kde.org/downloads/
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Desktop organization tool
+MAINTAINER=	decept0@gmail.com
+COMMENT=	Desktop organization tool
 
-USE_KDELIBS_VER=	3
-USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:15
-USE_LDCONFIG=		yes
+USE_KDELIBS_VER=3
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
+USE_LDCONFIG=	yes
 
 OPTIONS=	KONTACT	"Kontact plugin" on \
 		GPGME "GPG support (experimental)" off
