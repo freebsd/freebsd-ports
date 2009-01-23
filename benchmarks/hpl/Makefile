@@ -7,20 +7,16 @@
 
 PORTNAME=	hpl
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.netlib.org/benchmark/hpl/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	High Performance Computing Linpack Benchmark
 
-.if !defined(WITH_LAM)
-BUILD_DEPENDS=	${LOCALBASE}/mpich/bin/mpicc:${PORTSDIR}/net/mpich
-.else
 BUILD_DEPENDS=	${LOCALBASE}/bin/lamd:${PORTSDIR}/net/lam
 CC=		${LOCALBASE}/bin/mpicc
 FC=		${LOCALBASE}/bin/mpicc
-.endif
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_FORTRAN=	yes
@@ -84,14 +80,9 @@ post-patch:
 		s|ARCH[ )]|_&|g' \
 		${WRKSRC}/setup/Make.${HPL_ARCH}
 
-.if defined(WITH_LAM)
 	@${REINPLACE_CMD} -e 's|^MPdir[ ]*=.*$$|#&| ; s|^MPinc[ ]*=.*$$|#&| ; \
 		s|^MPlib[ ]*=.*$$|MPlib = /usr/lib/libg2c.a|' \
 		${WRKSRC}/setup/Make.${HPL_ARCH}
-.else
-	@${REINPLACE_CMD} -e 's|^MPdir[ ]*=.*$$|MPdir = ${LOCALBASE}/mpich|' \
-		${WRKSRC}/setup/Make.${HPL_ARCH}
-.endif
 
 .if defined(WITH_BLAS)
 	@${REINPLACE_CMD} -e 's|^HPL_OPTS[ ]*=.*$$|HPL_OPTS =| ; \
