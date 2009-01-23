@@ -219,6 +219,7 @@ sbin/rndc-confgen
 %%PORTDOCS%%%%DOCSDIR%%/misc/rfc-compliance
 %%PORTDOCS%%%%DOCSDIR%%/misc/roadmap
 %%PORTDOCS%%%%DOCSDIR%%/misc/sdb
+%%PORTDOCS%%%%DOCSDIR%%/misc/sort-options.pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/arm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/misc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
