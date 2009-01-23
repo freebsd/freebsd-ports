@@ -185,6 +185,7 @@
     SUBDIR += hmap
     SUBDIR += horde-jeta
     SUBDIR += hostsentry
+    SUBDIR += hs-digest-ghc
     SUBDIR += httprint
     SUBDIR += hunch
     SUBDIR += hydra
