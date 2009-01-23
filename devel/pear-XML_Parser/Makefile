@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_Parser
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	devel pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
@@ -17,11 +17,13 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	XML
 FILES=		Parser/Simple.php Parser.php
-TESTS=		001.phpt 002.phpt 003.phpt 004.phpt 005.phpt test2.xml test3.xml
-EXAMPLES=	xml_parser_file.php xml_parser_file.xml xml_parser_handler.php \
-		xml_parser_funcmode.php xml_parser_simple1.php \
-		xml_parser_simple1.xml xml_parser_simple2.php \
-		xml_parser_simple2.xml xml_parser_simple_handler.php
+TESTS=		001.phpt 003.phpt 005.phpt bug-9328.phpt test3.xml \
+		002.phpt 004.phpt AllTests.php test2.xml
+EXAMPLES=	xml_parser_file.php xml_parser_simple1.xml \
+		xml_parser_file.xml xml_parser_simple2.php \
+		xml_parser_funcmode.php xml_parser_simple2.xml \
+		xml_parser_handler.php xml_parser_simple_handler.php \
+		xml_parser_simple1.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
