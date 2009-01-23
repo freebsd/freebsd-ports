@@ -2,7 +2,7 @@ include/X11/ImUtil.h
 include/X11/XKBlib.h
 include/X11/Xcms.h
 include/X11/Xlib.h
-%%XCB%%include/X11/Xlib-xcb.h
+include/X11/Xlib-xcb.h
 include/X11/XlibConf.h
 include/X11/Xlibint.h
 include/X11/Xlocale.h
@@ -15,12 +15,12 @@ lib/libX11.a
 lib/libX11.la
 lib/libX11.so
 lib/libX11.so.6
-%%XCB%%lib/libX11-xcb.a
-%%XCB%%lib/libX11-xcb.la
-%%XCB%%lib/libX11-xcb.so
-%%XCB%%lib/libX11-xcb.so.1
+lib/libX11-xcb.a
+lib/libX11-xcb.la
+lib/libX11-xcb.so
+lib/libX11-xcb.so.1
 libdata/pkgconfig/x11.pc
-%%XCB%%libdata/pkgconfig/x11-xcb.pc
+libdata/pkgconfig/x11-xcb.pc
 lib/X11/XErrorDB
 lib/X11/XKeysymDB
 lib/X11/locale/am_ET.UTF-8/XI18N_OBJS

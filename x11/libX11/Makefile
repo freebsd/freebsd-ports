@@ -13,25 +13,17 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11 library
 
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xcb.pc:${PORTSDIR}/x11/libxcb
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xcb.pc:${PORTSDIR}/x11/libxcb
+
 OPTIONS=	XCB "use XCB for low-level protocol implementation" on
 
 XORG_CAT=	lib
 USE_XORG=	bigreqsproto xau xcmiscproto xdmcp xextproto xtrans \
 		kbproto:both inputproto xf86bigfontproto xproto:both
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS+=	--enable-xdmauth --datadir=${PREFIX}/lib
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_XCB)
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xcb.pc:${PORTSDIR}/x11/libxcb
-RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xcb.pc:${PORTSDIR}/x11/libxcb
-CONFIGURE_ARGS+=	--with-xcb=yes
-PLIST_SUB+=	XCB=""
-.else
-CONFIGURE_ARGS+=	--with-xcb=no
-PLIST_SUB+=	XCB="@comment "
-.endif
+CONFIGURE_ARGS+=	--enable-xdmauth --datadir=${PREFIX}/lib \
+			--with-xcb=yes
 
 .include "${.CURDIR}/manpages"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
