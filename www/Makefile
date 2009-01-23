@@ -1438,6 +1438,7 @@
     SUBDIR += trac-macropost
     SUBDIR += trac-mastertickets
     SUBDIR += trac-nav
+    SUBDIR += trac-navadd
     SUBDIR += trac-pagelist
     SUBDIR += trac-pagetopdf
     SUBDIR += trac-pendingticket
