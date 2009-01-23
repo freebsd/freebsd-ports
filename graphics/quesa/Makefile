@@ -7,7 +7,7 @@
 
 PORTNAME=	quesa
 PORTVERSION=	1.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 .ifdef (WITH_EXAMPLES)
@@ -19,8 +19,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High level 3D graphics library compatible with Apple's QuickDraw(TM)
 
 USE_AUTOTOOLS=	libtool:15
-USE_GL=		glu
-USE_XORG=	x11 ice
+USE_GL=		glut
+USE_XORG=	x11 ice xmu xi
 .ifdef (WITH_EXAMPLES)
 USE_GNOME=	gtk12
 .endif

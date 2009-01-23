@@ -7,16 +7,14 @@
 
 PORTNAME=	glclock
 DISTVERSION=	6.0b6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.daionet.gr.jp/~masa/archives/
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	OpenGL spinning pocket watch demo and benchmark utility
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
-USE_GL=		yes
+USE_GL=		glut
 MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CXX}" LN="${CXX}" OPT="${OPT}" \
 		INCLUDE_PATH="-I${LOCALBASE}/include" \

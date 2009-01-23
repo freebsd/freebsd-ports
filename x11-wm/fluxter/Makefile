@@ -7,7 +7,7 @@
 
 PORTNAME=	fluxter
 PORTVERSION=	0.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://benedict.isomedia.com/homes/stevencooper/files/
 

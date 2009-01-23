@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xf86-input-elographics
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org

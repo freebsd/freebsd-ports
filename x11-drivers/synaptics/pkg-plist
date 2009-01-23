@@ -1,6 +1,0 @@
-bin/synclient
-@comment bin/syndaemon
-lib/xorg/modules/input/synaptics_drv.so
-@dirrmtry lib/xorg/modules/input
-@dirrmtry lib/xorg/modules
-@dirrmtry lib/xorg

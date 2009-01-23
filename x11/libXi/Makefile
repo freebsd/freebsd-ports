@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libXi
-PORTVERSION=	1.1.3
+PORTVERSION=	1.2.0
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -20,10 +20,12 @@ MAN3=		XAllowDeviceEvents.3 \
 		XChangeDeviceControl.3 \
 		XChangeDeviceDontPropagateList.3 \
 		XChangeDeviceKeyMapping.3 \
+		XChangeDeviceProperty.3 \
 		XChangeFeedbackControl.3 \
 		XChangeKeyboardDevice.3 \
 		XChangePointerDevice.3 \
 		XCloseDevice.3 \
+		XDeleteDeviceProperty.3 \
 		XDeviceBell.3 \
 		XDeviceTimeCoord.3 \
 		XFreeDeviceList.3 \
@@ -31,6 +33,7 @@ MAN3=		XAllowDeviceEvents.3 \
 		XGetDeviceKeyMapping.3 \
 		XGetDeviceModifierMapping.3 \
 		XGetDeviceMotionEvents.3 \
+		XGetDeviceProperty.3 \
 		XGetExtensionVersion.3 \
 		XGetFeedbackControl.3 \
 		XGetDeviceButtonMapping.3 \
@@ -40,6 +43,7 @@ MAN3=		XAllowDeviceEvents.3 \
 		XGrabDevice.3 \
 		XGrabDeviceButton.3 \
 		XGrabDeviceKey.3 \
+		XListDeviceProperties.3 \
 		XListInputDevices.3 \
 		XOpenDevice.3 \
 		XQueryDeviceState.3 \

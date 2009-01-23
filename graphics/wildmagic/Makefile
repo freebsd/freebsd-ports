@@ -7,6 +7,7 @@
 
 PORTNAME=	WildMagic
 DISTVERSION=	4p8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.geometrictools.com/Downloads/
 DISTNAME=	${PORTNAME}${DISTVERSION}

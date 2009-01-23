@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.99.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +19,7 @@ COMMENT=	An X11 multimedia player
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine \
 		png.5:${PORTSDIR}/graphics/png
 
+USE_XORG=	x11 xt xv xinerama xxf86vm
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
@@ -61,7 +62,7 @@ PLIST_SUB+=	NLS=""
 .endif
 
 .if !defined(WITHOUT_XFT)
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+USE_XORG+=	xft
 .else
 CONFIGURE_ARGS+=	--disable-xft
 .endif

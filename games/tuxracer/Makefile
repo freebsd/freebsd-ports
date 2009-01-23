@@ -7,7 +7,7 @@
 
 PORTNAME=	tuxracer
 PORTVERSION=	0.61
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/tuxracer
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
@@ -20,6 +20,7 @@ LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
 
 USE_SDL=	mixer sdl
 USE_GL=		gl
+USE_XORG=	x11 xt xmu xi
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:14 autoconf:262
 AUTOMAKE_ARGS=	-a

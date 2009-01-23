@@ -7,7 +7,7 @@
 
 PORTNAME=	kiki
 PORTVERSION=	1.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -16,11 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Kiki the nanobot is a 3-D puzzle game
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
 USE_PYTHON=	2.3
 USE_GMAKE=	yes
-USE_GL=		gl
+USE_GL=		glut
 USE_SDL=	sdl mixer image
 USE_DOS2UNIX=	kodilib/linux/Makefile src/main/KikiController.cpp linux/Makefile kodilib/src/types/KVector.h src/main/KikiPythonWidget.h
 

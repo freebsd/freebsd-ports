@@ -7,17 +7,17 @@
 
 PORTNAME=	pdfcube
 PORTVERSION=	0.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	http://code.100allora.it/releases/pdfcube/
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	An OpenGL presentation viewer on a spinning cube
 
-LIB_DEPENDS=	glut:${PORTSDIR}/graphics/libglut \
-		gtkglext:${PORTSDIR}/x11-toolkits/gtkglext \
+LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext \
 		poppler-glib:${PORTSDIR}/graphics/poppler-gtk
 
+USE_GL=		glut
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/pdfcube

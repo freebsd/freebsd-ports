@@ -7,7 +7,7 @@
 
 PORTNAME=	actx
 PORTVERSION=	1.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://rosegray.sakura.ne.jp/ActX/
 

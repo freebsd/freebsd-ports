@@ -7,6 +7,7 @@
 
 PORTNAME=	xbomb
 PORTVERSION=	2.2
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.gedanken.demon.co.uk/download-xbomb/
 EXTRACT_SUFX=	.tgz
@@ -14,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minesweeper with a couple of grid types
 
-USE_XORG=	xaw
+USE_XORG=	xaw7
 
 MAN6=		xbomb.6
 PLIST_FILES=	bin/xbomb \
@@ -26,8 +27,8 @@ PLIST_DIRS=	lib/X11/xbomb
 
 do-build:
 	cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} -DLOCALBASE=\"${LOCALBASE}\" \
-		`pkg-config --cflags xaw8` *.c -o xbomb \
-		`pkg-config --libs xaw8`
+		`pkg-config --cflags xaw7` *.c -o xbomb \
+		`pkg-config --libs xaw7`
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xbomb ${PREFIX}/bin/xbomb

@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	xcb-util
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.2
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
 MAINTAINER=	ntarmos@ceid.upatras.gr
 COMMENT=	A module with libxcb/libX11 extension/replacement libraries
 
-LIB_DEPENDS=	xcb.1:${PORTSDIR}/x11/libxcb
+LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb
 BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
 
 USE_BZIP2=	yes

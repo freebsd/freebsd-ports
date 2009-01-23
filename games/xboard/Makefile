@@ -7,7 +7,7 @@
 
 PORTNAME=	xboard
 PORTVERSION=	4.2.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.tim-mann.org/xboard/ \
 		${MASTER_SITE_GNU}

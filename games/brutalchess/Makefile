@@ -7,7 +7,7 @@
 
 PORTNAME=		brutalchess
 PORTVERSION=		0.5.2
-PORTREVISION=	3
+PORTREVISION=		4
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ MAINTAINER=		gustau.perez@gmail.com
 COMMENT=		Nice looking OpenGL chess game
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_XORG=	x11
+USE_XORG=		x11 xext xt xmu xi
 
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool:15

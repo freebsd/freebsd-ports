@@ -7,7 +7,7 @@
 
 PORTNAME=	gxine
 PORTVERSION=	0.5.903
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	xine
@@ -91,7 +91,7 @@ PLIST_SUB+=	MOZILLA_PLUGIN=""
 .endif
 
 .if defined(WITH_XCB)
-LIB_DEPENDS+=	xcb.1:${PORTSDIR}/x11/libxcb
+LIB_DEPENDS+=	xcb.2:${PORTSDIR}/x11/libxcb
 .else
 CONFIGURE_ARGS+=--without-xcb
 .endif

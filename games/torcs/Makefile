@@ -7,6 +7,7 @@
 
 PORTNAME=	torcs
 DISTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -53,8 +54,7 @@ BASH2FIX=	src/linux/torcs.in src/tools/accc/accc.in \
 .if defined(WITH_FREEGLUT)
 LIB_DEPENDS+=	glut.11:${PORTSDIR}/graphics/freeglut
 .else
-USE_GL=		yes
-LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut
+USE_GL=		glut
 .endif
 
 EMPTYDIR=	champ dtmrace endrace ncrace practice quickrace

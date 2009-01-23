@@ -15,13 +15,10 @@ BUILD_DEPENDS+=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS+=	Xm.3:${PORTSDIR}/x11-toolkits/open-motif
 
 USE_GL=		gl
-USE_XORG=	xt
+USE_XORG=	glproto xt x11 xext xxf86vm xdamage xfixes
 
-CFLAGS+=	-D__GLX_MOTIF=1
-SRCDIR=		glw
-
-HEADERS=	GLwDrawA.h GLwDrawAP.h GLwMDrawA.h GLwMDrawAP.h
-HEADERSDIR=	src/glw
+do-install:
+	cd ${WRKSRC}/src/glw; ${GMAKE} install
 
 .include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"
 .include <bsd.port.mk>

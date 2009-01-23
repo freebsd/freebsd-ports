@@ -7,7 +7,7 @@
 
 PORTNAME=	elmerpost
 PORTVERSION=	5.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	SF/elmerfem
 
@@ -23,6 +23,7 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 CXXFLAGS+=	-Wno-deprecated
 
 USE_GL=		yes
+USE_XORG=	x11 xt xi
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=

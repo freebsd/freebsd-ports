@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	xinput
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=utilities
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Very useful utility for configuring and testing XInput devices
 
-USE_IMAKE=	yes
+XORG_CAT=	app
+USE_XORG=	inputproto x11 xi xext
+
+PLIST_FILES=	bin/xinput
 
 MAN1=		xinput.1
-PLIST_FILES=	bin/xinput
 
 .include <bsd.port.mk>

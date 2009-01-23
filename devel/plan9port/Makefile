@@ -7,6 +7,7 @@
 
 PORTNAME=	plan9port
 PORTVERSION=	20080909
+PORTREVISION=	1
 CATEGORIES=	devel plan9
 MASTER_SITES=	http://swtch.com/plan9port/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
@@ -15,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	serge.gagnon.1@ulaval.ca
 COMMENT=	Port of the bulk of the Plan9 software build environment to Unix
 
-USE_XORG=	x11 xt xi xaw6 xaw7 xaw8
+USE_XORG=	x11 xt xi xaw
 USE_PERL5_BUILD=YES
 WRKSRC=		${WRKDIR}/plan9
 PLIST=		${WRKDIR}/.PLIST

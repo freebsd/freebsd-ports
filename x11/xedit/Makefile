@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	xedit
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.2
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Simple text editor for X
 
 XORG_CAT=	app
-USE_XORG=	xt xaw xp xprintutil
+USE_XORG=	xt xaw7
 
 MAN1=		xedit.1
 

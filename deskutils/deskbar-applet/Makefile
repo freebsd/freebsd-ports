@@ -25,6 +25,7 @@ USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack pygnomedesktop intlhack
 USE_PYTHON=	yes
 USE_GMAKE=	yes
+USE_DISPLAY=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes

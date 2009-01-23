@@ -7,7 +7,7 @@
 
 PORTNAME=	xconq
 PORTVERSION=	7.4.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games tcl tk
 MASTER_SITES=	ftp://sources.redhat.com/pub/xconq/ \
 		ftp://unix.hensa.ac.uk/mirrors/sources.redhat.com/pub/xconq/

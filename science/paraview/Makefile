@@ -7,7 +7,7 @@
 
 PORTNAME=	paraview
 PORTVERSION=	2.4.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v2.4/
 
@@ -22,6 +22,7 @@ LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5 \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GL=		yes
+USE_XORG=	x11 xt
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes

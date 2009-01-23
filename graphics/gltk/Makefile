@@ -7,7 +7,7 @@
 
 PORTNAME=	gltk
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.sgi.com/opengl/contrib/ \
 		ftp://ftp.u-aizu.ac.jp/pub/os/sgi/misc/ftp.sgi.com/pub/opengl/contrib/
@@ -17,8 +17,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL/Tk interface
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
+USE_GL=		glut
 USE_IMAKE=	yes
 
 do-install:

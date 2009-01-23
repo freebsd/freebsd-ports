@@ -7,6 +7,7 @@
 
 PORTNAME=	snns
 PORTVERSION=	4.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.ra.cs.uni-tuebingen.de/downloads/SNNS/
 DISTNAME=	SNNSv${PORTVERSION}

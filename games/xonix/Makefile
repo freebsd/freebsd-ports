@@ -7,7 +7,7 @@
 
 PORTNAME=	xonix
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
 

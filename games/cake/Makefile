@@ -7,7 +7,7 @@
 
 PORTNAME=	cake
 PORTVERSION=	2005.12.26
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.calodox.scene.org/morbac/cake/download/ \
 		${MASTER_SITE_LOCAL} http://freebsd.nsu.ru/distfiles/
@@ -36,7 +36,7 @@ OPTIONS=	FREEGLUT "Build with alternative GLUT library, FreeGLUT" off
 .if defined(WITH_FREEGLUT)
 LIB_DEPENDS=	glut.11:${PORTSDIR}/graphics/freeglut
 .else
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+USE_GL=		glut
 .endif
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 

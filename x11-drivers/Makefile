@@ -4,7 +4,6 @@
     COMMENT = X11 drivers
 
     SUBDIR += input-wacom
-    SUBDIR += synaptics
     SUBDIR += xf86-input-acecad
     SUBDIR += xf86-input-calcomp
     SUBDIR += xf86-input-citron
@@ -27,6 +26,7 @@
     SUBDIR += xf86-input-penmount
     SUBDIR += xf86-input-spaceorb
     SUBDIR += xf86-input-summa
+    SUBDIR += xf86-input-synaptics
     SUBDIR += xf86-input-tek4957
     SUBDIR += xf86-input-vmmouse
     SUBDIR += xf86-input-void

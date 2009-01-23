@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	xf86-input-vmmouse
-PORTVERSION=	12.4.3
-PORTREVISION=	2
+PORTVERSION=	12.6.3
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org vmmouse input driver
 
 XORG_CAT=	driver
+CONFIGURE_ARGS= --with-hal-callouts-dir=${PREFIX}/libexec/hal/scripts
+
+MAN1=		vmmouse_detect.1
 MAN4=		vmmouse.4x
 
 ONLY_FOR_ARCHS=	i386 amd64

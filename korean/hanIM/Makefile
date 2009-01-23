@@ -17,7 +17,7 @@ COMMENT=	Mizi Research's Korean X11 Input Method
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 
 USE_IMAKE=	YES
-USE_XORG=	xpm
+USE_XORG=	xpm xmu xaw
 WRKSRC=		${WRKDIR}/hanIM
 
 post-install:

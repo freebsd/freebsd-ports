@@ -7,7 +7,7 @@
 
 PORTNAME=	xbuffy
 PORTVERSION=	3.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.fiction.net/blong/programs/xbuffy/
 DISTNAME=	${PORTNAME}-3.3.bl.3

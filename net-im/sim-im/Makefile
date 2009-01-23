@@ -6,7 +6,7 @@
 
 PORTNAME=	sim-im
 PORTVERSION=	0.9.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://sim-im.lehis.ru/dist/ \
@@ -33,7 +33,7 @@ USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
-USE_XORG=	x11 xext ice
+USE_XORG=	x11 xext ice xscrnsaver
 
 .if !defined(WITH_KDE)
 CONFIGURE_ARGS+=--disable-kde --enable-mt

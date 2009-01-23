@@ -180,8 +180,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 .if ${PKGNAMESUFFIX} == "-opengl"
 .	if defined(WITH_OPENGL)
-USE_GL=		yes
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+USE_GL=		glut
 .	endif
 HAVE_EXAMPLES=	true
 .endif

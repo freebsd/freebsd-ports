@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.1.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	lib
@@ -138,7 +138,7 @@ PLIST_SUB+=	WITH_XVMC="@comment "
 .endif
 
 .if defined(WITH_XCB)
-LIB_DEPENDS+=	xcb.1:${PORTSDIR}/x11/libxcb
+LIB_DEPENDS+=	xcb.2:${PORTSDIR}/x11/libxcb
 PLIST_SUB+=	WITH_XCB=""
 .else
 PLIST_SUB+=	WITH_XCB="@comment "

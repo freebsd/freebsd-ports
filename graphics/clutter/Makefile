@@ -7,19 +7,20 @@
 
 PORTNAME=	clutter
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.clutter-project.org/sources/${PORTNAME}/0.8/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OpenGL based interactive canvas library
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \
-		json-glib-1.0:${PORTSDIR}/devel/json-glib
+LIB_DEPENDS=	json-glib-1.0:${PORTSDIR}/devel/json-glib
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	pkgconfig gtk20 gnomehack ltverhack gnomeprefix
-USE_XORG=	xp x11
+USE_GL=		gl
+USE_XORG=	glproto x11 xfixes xdamage xcomposite xi
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-x --with-json=check
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

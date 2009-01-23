@@ -7,6 +7,7 @@
 
 PORTNAME=	Coin
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.coin3d.org/coin/src/all/ \
 		ftp://ftp.coin3d.org/pub/coin/src/all/
@@ -18,6 +19,7 @@ LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		simage.26:${PORTSDIR}/graphics/simage
 
 USE_GL=		yes
+USE_XORG=	xt x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pthread=yes --enable-threadsafe	\
 		--enable-3ds-import --enable-sound	\

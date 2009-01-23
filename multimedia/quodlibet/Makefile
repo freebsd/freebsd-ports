@@ -22,6 +22,7 @@ USE_PYTHON=	2.4+
 USE_GNOME=	pygtk2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_DISPLAY=	yes
 USE_GSTREAMER=	gconf good python
 
 MAN1=		exfalso.1 quodlibet.1
@@ -102,11 +103,6 @@ USE_GNOME+=	pygnomeextras
 PLIST_SUB+=	EXTENSIONS=""
 .else
 PLIST_SUB+=	EXTENSIONS="@comment "
-.endif
-
-.if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
-		${LOCALBASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
 .endif
 
 do-configure:

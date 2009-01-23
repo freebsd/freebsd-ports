@@ -7,7 +7,7 @@
 
 PORTNAME=	xfrisk
 PORTVERSION=	1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://tuxick.net/xfrisk/files/
 DISTNAME=	XFrisk-${PORTVERSION}

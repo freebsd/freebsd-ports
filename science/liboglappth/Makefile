@@ -6,7 +6,7 @@
 
 PORTNAME=	liboglappth
 PORTVERSION=	0.98
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/current/ \
 		http://bioinformatics.org/ghemical/download/

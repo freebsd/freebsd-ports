@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-paranormal
 PORTVERSION=	0.2.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	paranormal
@@ -16,13 +16,13 @@ DISTNAME=	paranormal-${PORTVERSION:S/.p/pre/}
 MAINTAINER=	dyeske@gmail.com
 COMMENT=	An adaptation of the "OpenGL Spectrum Analyzer" from XMMS
 
-LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
-		glut.4:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include/libxml2/libxml"
 
+USE_GL=		glut
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 USE_LDCONFIG=	yes

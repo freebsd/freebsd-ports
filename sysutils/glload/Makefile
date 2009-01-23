@@ -7,7 +7,7 @@
 
 PORTNAME=	glload
 PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://reality.exsgi.org/eile/misc/
 

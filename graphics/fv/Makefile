@@ -7,6 +7,7 @@
 
 PORTNAME=	fv
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.eaflux.com/fv/sources/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}

@@ -8,7 +8,7 @@
 
 PORTNAME=	clanlib
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.clanlib.org/download/releases-0.8/ \
@@ -33,7 +33,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-clanJavaScript --disable-docs
 USE_GMAKE=	yes
-USE_XORG=	x11
+USE_XORG=	x11 xmu xi
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LDCONFIG=	yes
 USE_SDL=	gfx

@@ -6,48 +6,45 @@
 #
 
 PORTNAME=	xorg-server
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.3
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
-MASTER_SITES=	http://xorg.freedesktop.org/releases/individual/xserver/:fdo \
-		${MASTER_SITE_SOURCEFORGE:S/$/:mesa/}
-MASTER_SITE_SUBDIR=mesa3d/:mesa
-DISTFILES=	xorg-server-${PORTVERSION}.tar.bz2:fdo \
-		MesaLib-7.0.1.tar.bz2:mesa
+MASTER_SITES=	http://xorg.freedesktop.org/releases/individual/xserver/
+DISTFILES=	xorg-server-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org X server and related programs
 
 LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
+
 RUN_DEPENDS=	${LOCALBASE}/share/X11/xkb/rules/base.xml:${PORTSDIR}/x11/xkeyboard-config
 
 CONFLICTS=	XFree86-Server-*
 
 XORG_CAT=	xserver
 
+USE_GL=		gl
 USE_XORG=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
 		xmu xt xpm xext randrproto renderproto fixesproto damageproto \
 		xcmiscproto xextproto xproto xtrans xf86miscproto \
 		xf86vidmodeproto xf86bigfontproto scrnsaverproto bigreqsproto \
 		resourceproto fontsproto inputproto xf86dgaproto \
 		videoproto compositeproto trapproto recordproto xineramaproto \
-		evieproto xfont fontenc xkbui pixman
+		evieproto xfont fontenc xkbui pixman pciaccess
 
+USE_OPENSSL=	yes
 USE_PERL5_BUILD=yes
-CONFIGURE_ARGS=	--with-mesa-source=${WRKDIR}/Mesa-7.0.1 \
-		--disable-dmx --disable-xvfb --disable-xnest --disable-xprint \
-		--localstatedir=/var --without-dtrace
+CONFIGURE_ARGS=	--disable-dmx --disable-xvfb --disable-xnest --disable-xprint \
+		--localstatedir=/var --without-dtrace --disable-xephyr
 
 MAN1=		Xorg.1 \
 		Xserver.1 \
 		cvt.1 \
 		gtf.1 \
-		pcitweak.1 \
 		xorgconfig.1
 MAN4=		exa.4 \
 		fbdevhw.4
-MAN5=		xorg.conf.5 \
-		SecurityPolicy.5
+MAN5=		xorg.conf.5
 
 NOT_FOR_ARCHS=	ia64 alpha
 
@@ -56,6 +53,13 @@ OPTIONS=	HAL	"Compile with HAL config support" on \
 		SUID	"Install the Xorg server with setuid bit set" on
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_OPENSSL_BASE)
+# The reason why I use this is cause openssl from base doesn't install a .pc file
+# and configure will fail trying to find it. Setting both of those variables to
+# a *non-empty* value by-passes the pkg-config check.
+CONFIGURE_ENV=	SHA1_LIB="-L/usr/lib -lcrypto" SHA1_CFLAGS="-I/usr/include"
+.endif
 
 .if !defined(WITHOUT_HAL)
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
@@ -101,7 +105,6 @@ PLIST_SUB+=	SPARC64_NA=""
 
 .if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == sparc64
 PLIST_SUB+=	AMD64_I386_SPARC64=""
-MAN1+=		scanpci.1
 .else
 PLIST_SUB+=	AMD64_I386_SPARC64="@comment "
 .endif

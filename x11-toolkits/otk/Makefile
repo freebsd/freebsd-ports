@@ -7,6 +7,7 @@
 
 PORTNAME=	otk
 PORTVERSION=	0.64
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_lib_${DISTVERSION}
@@ -15,9 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Widget library based on OpenGL
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
-USE_GL=		glu gl
+USE_GL=		glut glu gl
 USE_LDCONFIG=	yes
 USE_XORG=	xmu xext x11
 WRKSRC=		${WRKDIR}/${PORTNAME}_lib

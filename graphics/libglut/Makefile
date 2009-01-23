@@ -6,25 +6,18 @@
 #
 
 PORTNAME=	libglut
-PORTVERSION=	7.0.3
+PORTVERSION=	${MESAVERSION}
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mesa3d
-DISTNAME=	MesaGLUT-${PORTVERSION}
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	OpenGL utility toolkit
 
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_GL=		glu
+USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes xi xmu
 
-WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}/src/glut/glx
+do-install:
+	cd ${WRKSRC}/src/glut/glx; ${GMAKE} install
 
-pre-patch:
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
-
-pre-install:
-	@${MKDIR} ${PREFIX}/include/GL
-
+.include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"
 .include <bsd.port.mk>

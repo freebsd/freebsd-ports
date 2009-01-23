@@ -7,6 +7,7 @@
 
 PORTNAME=	glsfcave
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://user.ecc.u-tokyo.ac.jp/~g650192/glsfcave/ \
 		http://mirror.amdmi3.ru/
@@ -15,10 +16,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Control a ribbon to avoid hitting walls
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
 USE_BZIP2=	yes
-USE_GL=		yes
+USE_GL=		glut
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

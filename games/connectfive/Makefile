@@ -7,7 +7,7 @@
 
 PORTNAME=	connectfive
 PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/connectfive
 DISTNAME=	connectFive
@@ -22,6 +22,7 @@ ALL_TARGET=	default
 
 USE_SDL=	sdl
 USE_GL=		gl
+USE_XORG=	xmu xext x11
 USE_GMAKE=	yes
 
 WRKSRC=	${WRKDIR}/connectFive

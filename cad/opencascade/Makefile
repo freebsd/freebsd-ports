@@ -7,6 +7,7 @@
 
 PORTNAME=		opencascade
 PORTVERSION=		6.3
+PORTREVISION=		1
 CATEGORIES=		cad science
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	thierry
@@ -31,6 +32,7 @@ USE_TCL_BUILD=	84
 USE_TCL_RUN=	84
 USE_TCL_THREADS=yes
 USE_JAVA=	yes
+USE_XORG=	xmu
 JAVA_VERSION=	1.4+
 #.if defined(MAINTAINER_MODE)
 # linux-sun-jdk was required for 6.1, but 6.2 is OK with diablo-jdk.

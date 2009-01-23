@@ -1,5 +1,8 @@
+bin/vmmouse_detect
+libexec/hal/scripts/hal-probe-vmmouse
 lib/xorg/modules/input/vmmouse_drv.la
 lib/xorg/modules/input/vmmouse_drv.so
+share/hal/fdi/policy/20thirdparty/11-x11-vmmouse.fdi
 @dirrmtry lib/xorg/modules/input
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg

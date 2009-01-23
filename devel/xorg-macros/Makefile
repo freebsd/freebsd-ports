@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xorg-macros
-PORTVERSION=	1.1.5
+PORTVERSION=	1.2.1
 CATEGORIES=	devel x11
 DISTNAME=	util-macros-$(PORTVERSION)
 
@@ -15,7 +15,6 @@ COMMENT=	X.Org development aclocal macros
 
 XORG_CAT=	util
 
-PLIST_FILES=	share/aclocal/xorgversion.m4 \
-		share/aclocal/xorg-macros.m4
+PLIST_FILES=	share/aclocal/xorg-macros.m4
 
 .include <bsd.port.mk>

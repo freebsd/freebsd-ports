@@ -4,3 +4,5 @@ include/GL/GLwMDrawA.h
 include/GL/GLwMDrawAP.h
 lib/libGLw.so
 lib/libGLw.so.1
+libdata/pkgconfig/glw.pc
+@dirrmtry include/GL

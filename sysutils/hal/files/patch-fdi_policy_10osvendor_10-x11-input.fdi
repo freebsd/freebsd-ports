@@ -1,6 +1,6 @@
---- fdi/policy/10osvendor/10-x11-input.fdi.orig	2008-03-27 13:42:31.000000000 -0400
-+++ fdi/policy/10osvendor/10-x11-input.fdi	2008-03-27 13:48:06.000000000 -0400
-@@ -1,15 +1,6 @@
+--- fdi/policy/10osvendor/10-x11-input.fdi.orig	2008-09-24 14:32:26.000000000 +0100
++++ fdi/policy/10osvendor/10-x11-input.fdi	2008-09-24 14:34:22.000000000 +0100
+@@ -1,19 +1,10 @@
  <?xml version="1.0" encoding="ISO-8859-1"?>
  <deviceinfo version="0.2">
    <device>
@@ -13,6 +13,12 @@
 -      </match>
 -    </match>
 -
-     <match key="info.capabilities" contains="input.keys">
+-    <match key="info.capabilities" contains="input.keys">
++    <match key="info.capabilities" contains="input.keyboard">
        <!-- If we're using Linux, we use evdev by default (falling back to
             keyboard otherwise). -->
+-      <merge key="input.x11_driver" type="string">keyboard</merge>
++      <merge key="input.x11_driver" type="string">kbd</merge>
+       <match key="/org/freedesktop/Hal/devices/computer:system.kernel.name"
+              string="Linux">
+         <merge key="input.x11_driver" type="string">evdev</merge>

@@ -7,6 +7,7 @@
 
 PORTNAME=	xlockmore
 PORTVERSION=	5.27
+PORTREVISION=	1
 CATEGORIES?=	x11
 MASTER_SITES=	ftp://ibiblio.org/pub/Linux/X11/screensavers/ \
 		CRITICAL

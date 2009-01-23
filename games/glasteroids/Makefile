@@ -7,7 +7,7 @@
 
 PORTNAME=	glasteroids
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.honors.montana.edu/~jjc/Glasteroids/
 DISTNAME=	Glasteriods

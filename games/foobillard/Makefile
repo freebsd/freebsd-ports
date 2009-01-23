@@ -7,6 +7,7 @@
 
 PORTNAME=	foobillard
 PORTVERSION=	3.0a
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://foobillard.sunsite.dk/dnl/
 
@@ -35,7 +36,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include" \
 USE_SDL=	yes
 CONFIGURE_ARGS+=	--enable-SDL
 .else
-LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut
+USE_GL=		glut
 CONFIGURE_ARGS+=	--enable-glut
 .endif
 

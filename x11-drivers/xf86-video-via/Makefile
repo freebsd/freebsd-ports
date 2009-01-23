@@ -13,10 +13,12 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org via display driver
 
-USE_GL=		gl
+IGNORE=		requires pciVideoPtr typedef
 
+USE_GL=		gl
 XORG_CAT=	driver
 USE_XORG=	xvmc xf86driproto xextproto x11 glproto
+
 MAN4=		via.4x
 
 .include <bsd.port.pre.mk>

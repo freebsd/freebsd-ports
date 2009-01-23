@@ -7,7 +7,7 @@
 
 PORTNAME=	airrox
 PORTVERSION=	0.0.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-0.04
@@ -15,11 +15,9 @@ DISTNAME=	${PORTNAME}-0.04
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	An 3D Air Hockey, which uses SDL & OpenGL
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
 USE_GMAKE=	yes
 USE_SDL=	mixer net sdl
-USE_GL=		yes
+USE_GL=		glut
 REINPLACE_ARGS=	-i ''
 ALL_TARGET=	linux
 WRKSRC=		${WRKDIR}/${PORTNAME}/source

@@ -35,6 +35,7 @@
     SUBDIR += dgs
     SUBDIR += dmenu
     SUBDIR += dmxproto
+    SUBDIR += dri2proto
     SUBDIR += docker
     SUBDIR += dxpc
     SUBDIR += dynamag
@@ -423,8 +424,6 @@
     SUBDIR += xorg-edit
     SUBDIR += xorg-libraries
     SUBDIR += xorg-minimal
-    SUBDIR += xorg-protos
-    SUBDIR += xphelloworld
     SUBDIR += xplsprinters
     SUBDIR += xpr
     SUBDIR += xprehashprinterlist

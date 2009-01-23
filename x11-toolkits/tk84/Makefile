@@ -7,6 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.4.19
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -381,6 +382,7 @@ pre-everything::
 	@if ${TEST} -e "${NONEXISTENT}"; then ${ECHO_MSG} "=== Aborted, please remove ${NONEXISTENT}"; exit 1; fi
 
 post-patch:
+	@(cd ${WRKSRC}/..; ${PATCH} -p0 < ${PATCHDIR}/extra-lastevent-patch)
 	@${REINPLACE_CMD} -e 's|X11/Intrinsic.h|X11/Xlib.h|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|@TK_SHARED_BUILD@|#@TK_SHARED_BUILD@|g' ${WRKSRC}/Makefile.in
 .if defined(BUILDING_TK_THREADS)

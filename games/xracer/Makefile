@@ -7,7 +7,7 @@
 
 PORTNAME=	xracer
 PORTVERSION=	0.94
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_FREEBSD_ORG}
 MASTER_SITE_SUBDIR=	distfiles
@@ -16,9 +16,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-data${EXTRACT_SUFX}
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Awesome WipeOut clone for OpenGL and X11!
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		glut.4:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+USE_GL=		glut
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:14 autoconf:213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \

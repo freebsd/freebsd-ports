@@ -7,7 +7,7 @@
 
 PORTNAME=	aewm
 PORTVERSION=	1.2.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.red-bean.com/~decklin/software/aewm/
 

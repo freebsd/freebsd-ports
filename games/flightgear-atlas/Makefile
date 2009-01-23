@@ -7,7 +7,7 @@
 
 PORTNAME=	flightgear-atlas
 PORTVERSION=	0.3.0.20080504
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://contribs.martymac.com/FreeBSD-ports/distfiles/ \
 		http://freebsd.unixfreunde.de/sources/

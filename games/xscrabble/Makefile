@@ -7,6 +7,7 @@
 
 PORTNAME=	xscrabble
 PORTVERSION=	2.12
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/educational_games/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}_en${EXTRACT_SUFX}
