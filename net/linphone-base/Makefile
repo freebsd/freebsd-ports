@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	linphone
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	3.0.0
 PORTEPOCH=	1
 CATEGORIES?=	net
 MASTER_SITES=	SAVANNAH/${PORTNAME}/stable/sources
@@ -46,38 +45,37 @@ PLIST_SUB+=	NLS=""
 .endif
 
 .if defined(LINPHONE_GUI)
-BUILD_DEPENDS+=	linphone-base>=2.1.1:${PORTSDIR}/net/linphone-base
-RUN_DEPENDS+=	linphone-base>=2.1.1:${PORTSDIR}/net/linphone-base
+BUILD_DEPENDS+=	linphone-base>=3.0.0:${PORTSDIR}/net/linphone-base
+RUN_DEPENDS+=	linphone-base>=3.0.0:${PORTSDIR}/net/linphone-base
 DESCR=		${PKGDIR}/pkg-descr.gui
 PLIST=		${PKGDIR}/pkg-plist.gui
-USE_GNOME+=	gnomepanel gnomeprefix
+USE_GNOME+=	libglade2
 MAN1=		linphone.1
-SUBDIRS=	pixmaps gtk
+SUBDIRS=	pixmaps gtk-glade
 .else
 PKGNAMESUFFIX=	-base
 CONFIGURE_ARGS+=	--enable-gtk_ui=no
 MAN1=		linphonec.1 sipomatic.1
-SUBDIRS=	po oRTP mediastreamer2 media_api coreapi console
+SUBDIRS=	po oRTP mediastreamer2 coreapi console
 .endif
 
-post-extract:
-	@${CP} -f ${FILESDIR}/GNOME_LinphoneApplet.xml ${WRKSRC}/gtk
-
 post-patch:
+	@${REINPLACE_CMD} -e 's|sounds/linphone|linphone/sounds|g' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s| =| ?=|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/^imgdir =/s|(datadir)|(pkgdatadir)|g' \
 		${WRKSRC}/mediastreamer2/src/Makefile.in
 .for file in configure src/gsm.c
 	@${REINPLACE_CMD} -e 's|gsm/gsm\.h|gsm.h|g' \
 		${WRKSRC}/mediastreamer2/${file}
-.endfor 
+.endfor
 
 post-install:
 .if defined(LINPHONE_GUI)
+	@${LN} -sf linphone-3 ${PREFIX}/bin/linphone
 	${INSTALL_MAN} ${WRKSRC}/share/C/linphone.1 ${MANPREFIX}/man/man1
+	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/share/linphone.desktop \
-		${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/share/linphone_applet.desktop \
 		${PREFIX}/share/applications
 .else
 	${INSTALL_MAN} ${WRKSRC}/share/C/linphonec.1 ${MANPREFIX}/man/man1
