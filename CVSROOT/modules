@@ -7683,7 +7683,6 @@ linux-freealut                  ports/audio/linux-freealut
 linux-gdk-pixbuf                ports/graphics/linux-gdk-pixbuf
 linux-geepee32                  ports/emulators/linux-geepee32
 linux-gid                       ports/cad/linux-gid
-linux-glib2                     ports/devel/linux-glib2
 linux-gspca-kmod                ports/multimedia/linux-gspca-kmod
 linux-gtk                       ports/x11-toolkits/linux-gtk
 linux-gtk-bluecurve-theme       ports/x11-themes/linux-gtk-bluecurve-theme
@@ -11139,10 +11138,12 @@ p5-HTTP-Recorder                ports/www/p5-HTTP-Recorder
 p5-HTTP-Request-AsCGI           ports/www/p5-HTTP-Request-AsCGI
 p5-HTTP-Request-Params          ports/www/p5-HTTP-Request-Params
 p5-HTTP-Response-Encoding       ports/www/p5-HTTP-Response-Encoding
+p5-HTTP-Router                  ports/www/p5-HTTP-Router
 p5-HTTP-Server-Simple           ports/www/p5-HTTP-Server-Simple
 p5-HTTP-Server-Simple-Mason     ports/www/p5-HTTP-Server-Simple-Mason
 p5-HTTP-Server-Simple-Recorder  ports/www/p5-HTTP-Server-Simple-Recorder
 p5-HTTP-Server-Simple-Static    ports/www/p5-HTTP-Server-Simple-Static
+p5-HTTP-Session                 ports/www/p5-HTTP-Session
 p5-HTTP-SimpleLinkChecker       ports/www/p5-HTTP-SimpleLinkChecker
 p5-HTTP-Size                    ports/www/p5-HTTP-Size
 p5-HTTP-WebTest                 ports/www/p5-HTTP-WebTest
@@ -11221,6 +11222,7 @@ p5-IPC-ShareLite                ports/devel/p5-IPC-ShareLite
 p5-IPC-Shareable                ports/devel/p5-IPC-Shareable
 p5-IPC-SharedCache              ports/devel/p5-IPC-SharedCache
 p5-IPC-Signal                   ports/devel/p5-IPC-Signal
+p5-IPC-System-Simple            ports/devel/p5-IPC-System-Simple
 p5-IRC                          ports/irc/p5-IRC
 p5-IRC-Bot-Hangman              ports/irc/p5-IRC-Bot-Hangman
 p5-Ima-DBI                      ports/databases/p5-Ima-DBI
@@ -11364,6 +11366,7 @@ p5-Log-Accounting-SVN           ports/devel/p5-Log-Accounting-SVN
 p5-Log-Agent                    ports/devel/p5-Log-Agent
 p5-Log-Agent-Logger             ports/devel/p5-Log-Agent-Logger
 p5-Log-Dispatch                 ports/devel/p5-Log-Dispatch
+p5-Log-Dispatch-Colorful        ports/devel/p5-Log-Dispatch-Colorful
 p5-Log-Dispatch-Config          ports/devel/p5-Log-Dispatch-Config
 p5-Log-Dispatch-Configurator-YAML  ports/devel/p5-Log-Dispatch-Configurator-YAML
 p5-Log-Dispatch-Email-EmailSend  ports/devel/p5-Log-Dispatch-Email-EmailSend
@@ -11549,6 +11552,7 @@ p5-Module-Build                 ports/devel/p5-Module-Build
 p5-Module-Build-Convert         ports/devel/p5-Module-Build-Convert
 p5-Module-Build-Kwalitee        ports/devel/p5-Module-Build-Kwalitee
 p5-Module-CPANTS-Analyse        ports/devel/p5-Module-CPANTS-Analyse
+p5-Module-Collect               ports/devel/p5-Module-Collect
 p5-Module-Compile               ports/devel/p5-Module-Compile
 p5-Module-CoreList              ports/devel/p5-Module-CoreList
 p5-Module-Dependency            ports/devel/p5-Module-Dependency
@@ -11558,6 +11562,7 @@ p5-Module-Find                  ports/devel/p5-Module-Find
 p5-Module-Info                  ports/devel/p5-Module-Info
 p5-Module-Info-File             ports/devel/p5-Module-Info-File
 p5-Module-Install               ports/devel/p5-Module-Install
+p5-Module-Install-AuthorTests   ports/devel/p5-Module-Install-AuthorTests
 p5-Module-List                  ports/devel/p5-Module-List
 p5-Module-Load                  ports/devel/p5-Module-Load
 p5-Module-Load-Conditional      ports/devel/p5-Module-Load-Conditional
@@ -11572,6 +11577,7 @@ p5-Module-Reload                ports/devel/p5-Module-Reload
 p5-Module-Reload-Sel            ports/devel/p5-Module-Reload-Sel
 p5-Module-Runtime               ports/devel/p5-Module-Runtime
 p5-Module-ScanDeps              ports/devel/p5-Module-ScanDeps
+p5-Module-Setup                 ports/devel/p5-Module-Setup
 p5-Module-Signature             ports/security/p5-Module-Signature
 p5-Module-Starter               ports/devel/p5-Module-Starter
 p5-Module-Starter-PBP           ports/devel/p5-Module-Starter-PBP
@@ -11601,6 +11607,7 @@ p5-MooseX-StrictConstructor     ports/devel/p5-MooseX-StrictConstructor
 p5-MooseX-Types                 ports/devel/p5-MooseX-Types
 p5-MooseX-Types-Path-Class      ports/devel/p5-MooseX-Types-Path-Class
 p5-Mouse                        ports/devel/p5-Mouse
+p5-MouseX-Getopt                ports/devel/p5-MouseX-Getopt
 p5-Music-Audioscrobbler-MPD     ports/audio/p5-Music-Audioscrobbler-MPD
 p5-Music-Audioscrobbler-Submit  ports/audio/p5-Music-Audioscrobbler-Submit
 p5-MusicBrainz-Client           ports/audio/p5-MusicBrainz-Client
@@ -12658,6 +12665,7 @@ p5-URI-ParseSearchString        ports/www/p5-URI-ParseSearchString
 p5-URI-Sequin                   ports/www/p5-URI-Sequin
 p5-URI-SmartURI                 ports/net/p5-URI-SmartURI
 p5-URI-Template                 ports/net/p5-URI-Template
+p5-URI-Template-Restrict        ports/net/p5-URI-Template-Restrict
 p5-URI-Title                    ports/www/p5-URI-Title
 p5-URI-ToDisk                   ports/www/p5-URI-ToDisk
 p5-URI-imap                     ports/mail/p5-URI-imap
@@ -14407,10 +14415,12 @@ p5-http-recorder                ports/www/p5-HTTP-Recorder
 p5-http-request-ascgi           ports/www/p5-HTTP-Request-AsCGI
 p5-http-request-params          ports/www/p5-HTTP-Request-Params
 p5-http-response-encoding       ports/www/p5-HTTP-Response-Encoding
+p5-http-router                  ports/www/p5-HTTP-Router
 p5-http-server-simple           ports/www/p5-HTTP-Server-Simple
 p5-http-server-simple-mason     ports/www/p5-HTTP-Server-Simple-Mason
 p5-http-server-simple-recorder  ports/www/p5-HTTP-Server-Simple-Recorder
 p5-http-server-simple-static    ports/www/p5-HTTP-Server-Simple-Static
+p5-http-session                 ports/www/p5-HTTP-Session
 p5-http-simplelinkchecker       ports/www/p5-HTTP-SimpleLinkChecker
 p5-http-size                    ports/www/p5-HTTP-Size
 p5-http-webtest                 ports/www/p5-HTTP-WebTest
@@ -14512,6 +14522,7 @@ p5-ipc-shareable                ports/devel/p5-IPC-Shareable
 p5-ipc-sharedcache              ports/devel/p5-IPC-SharedCache
 p5-ipc-sharelite                ports/devel/p5-IPC-ShareLite
 p5-ipc-signal                   ports/devel/p5-IPC-Signal
+p5-ipc-system-simple            ports/devel/p5-IPC-System-Simple
 p5-irc                          ports/irc/p5-IRC
 p5-irc-bot-hangman              ports/irc/p5-IRC-Bot-Hangman
 p5-iterator                     ports/devel/p5-Iterator
@@ -14625,6 +14636,7 @@ p5-log-accounting-svn           ports/devel/p5-Log-Accounting-SVN
 p5-log-agent                    ports/devel/p5-Log-Agent
 p5-log-agent-logger             ports/devel/p5-Log-Agent-Logger
 p5-log-dispatch                 ports/devel/p5-Log-Dispatch
+p5-log-dispatch-colorful        ports/devel/p5-Log-Dispatch-Colorful
 p5-log-dispatch-config          ports/devel/p5-Log-Dispatch-Config
 p5-log-dispatch-configurator-yaml  ports/devel/p5-Log-Dispatch-Configurator-YAML
 p5-log-dispatch-email-emailsend  ports/devel/p5-Log-Dispatch-Email-EmailSend
@@ -14808,6 +14820,7 @@ p5-mocked                       ports/devel/p5-mocked
 p5-module-build                 ports/devel/p5-Module-Build
 p5-module-build-convert         ports/devel/p5-Module-Build-Convert
 p5-module-build-kwalitee        ports/devel/p5-Module-Build-Kwalitee
+p5-module-collect               ports/devel/p5-Module-Collect
 p5-module-compile               ports/devel/p5-Module-Compile
 p5-module-corelist              ports/devel/p5-Module-CoreList
 p5-module-cpants-analyse        ports/devel/p5-Module-CPANTS-Analyse
@@ -14818,6 +14831,7 @@ p5-module-find                  ports/devel/p5-Module-Find
 p5-module-info                  ports/devel/p5-Module-Info
 p5-module-info-file             ports/devel/p5-Module-Info-File
 p5-module-install               ports/devel/p5-Module-Install
+p5-module-install-authortests   ports/devel/p5-Module-Install-AuthorTests
 p5-module-list                  ports/devel/p5-Module-List
 p5-module-load                  ports/devel/p5-Module-Load
 p5-module-load-conditional      ports/devel/p5-Module-Load-Conditional
@@ -14832,6 +14846,7 @@ p5-module-reload                ports/devel/p5-Module-Reload
 p5-module-reload-sel            ports/devel/p5-Module-Reload-Sel
 p5-module-runtime               ports/devel/p5-Module-Runtime
 p5-module-scandeps              ports/devel/p5-Module-ScanDeps
+p5-module-setup                 ports/devel/p5-Module-Setup
 p5-module-signature             ports/security/p5-Module-Signature
 p5-module-starter               ports/devel/p5-Module-Starter
 p5-module-starter-pbp           ports/devel/p5-Module-Starter-PBP
@@ -14862,6 +14877,7 @@ p5-moosex-strictconstructor     ports/devel/p5-MooseX-StrictConstructor
 p5-moosex-types                 ports/devel/p5-MooseX-Types
 p5-moosex-types-path-class      ports/devel/p5-MooseX-Types-Path-Class
 p5-mouse                        ports/devel/p5-Mouse
+p5-mousex-getopt                ports/devel/p5-MouseX-Getopt
 p5-mp3-find                     ports/audio/p5-MP3-Find
 p5-mp3-id3v1tag                 ports/audio/p5-MP3-ID3v1Tag
 p5-mp3-info                     ports/audio/p5-MP3-Info
@@ -15976,6 +15992,7 @@ p5-uri-parsesearchstring        ports/www/p5-URI-ParseSearchString
 p5-uri-sequin                   ports/www/p5-URI-Sequin
 p5-uri-smarturi                 ports/net/p5-URI-SmartURI
 p5-uri-template                 ports/net/p5-URI-Template
+p5-uri-template-restrict        ports/net/p5-URI-Template-Restrict
 p5-uri-title                    ports/www/p5-URI-Title
 p5-uri-todisk                   ports/www/p5-URI-ToDisk
 p5-usb                          ports/devel/p5-usb
@@ -18853,6 +18870,7 @@ qt4-webkit                      ports/www/qt4-webkit
 qt4-xml                         ports/textproc/qt4-xml
 qt4-xmlpatterns                 ports/textproc/qt4-xmlpatterns
 qt4-xmlpatterns-tool            ports/textproc/qt4-xmlpatterns-tool
+qt4pas                          ports/x11-toolkits/qt4pas
 qtcurve-gtk2                    ports/x11-themes/qtcurve-gtk2
 qtcurve-kde3                    ports/x11-themes/qtcurve-kde3
 qtcurve-kde4                    ports/x11-themes/qtcurve-kde4
@@ -21593,6 +21611,7 @@ umatrix                         ports/math/umatrix
 umem                            ports/devel/umem
 umit                            ports/security/umit
 umix                            ports/audio/umix
+uml2svg                         ports/textproc/uml2svg
 umodplayer                      ports/audio/umodplayer
 umodunpack                      ports/misc/umodunpack
 umr                             ports/multimedia/umr
