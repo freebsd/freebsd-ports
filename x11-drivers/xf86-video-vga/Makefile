@@ -7,7 +7,7 @@
 
 PORTNAME=	xf86-video-vga
 PORTVERSION=	4.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -16,5 +16,7 @@ COMMENT=	X.Org vga display driver
 XORG_CAT=	driver
 USE_XORG=	xextproto
 MAN4=		vga.4x
+
+BROKEN=		Needs to be removed
 
 .include <bsd.port.mk>
