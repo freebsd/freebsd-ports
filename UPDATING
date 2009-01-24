@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090124:
+  AFFECTS: users of x11-servers/xorg-server, sysutils/hal
+  AUTHOR: rnoland@FreeBSD.org
+
+  sysutils/hal has been updated and should now properly detect
+  mice for use in Xorg.  Use of AllowEmptyInput should no longer
+  be needed for most users and moused should now work fine.
+
 20090123:
   AFFECTS: users of x11-servers/xorg-server
   AUTHOR: rnoland@FreeBSD.org
