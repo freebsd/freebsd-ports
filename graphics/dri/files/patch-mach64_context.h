@@ -1,6 +1,6 @@
---- src/mesa/drivers/dri/mach64/mach64_context.h.orig	Mon Nov 28 13:17:16 2005
-+++ src/mesa/drivers/dri/mach64/mach64_context.h	Wed Dec 20 15:37:34 2006
-@@ -331,25 +331,28 @@
+--- src/mesa/drivers/dri/mach64/mach64_context.h.orig	2009-01-21 10:55:48.000000000 -0500
++++ src/mesa/drivers/dri/mach64/mach64_context.h	2009-01-22 13:48:00.000000000 -0500
+@@ -288,17 +288,20 @@
  /* ================================================================
   * Byte ordering
   */
@@ -11,27 +11,17 @@
  #define LE32_OUT( x, y )	do { *(GLuint *)(x) = (y); } while (0)
  #define LE32_OUT_FLOAT( x, y )	do { *(GLfloat *)(x) = (y); } while (0)
  #else
+-#ifndef __OpenBSD__
 -#include <byteswap.h>
--#define LE32_IN( x )		bswap_32( *(GLuint *)(x) )
-+#define LE32_IN( x )		CPU_TO_LE32( *(GLuint *)(x) )
- #define LE32_IN_FLOAT( x )						\
- ({									\
--   GLuint __tmp = bswap_32( *(GLuint *)(x) );				\
-+   GLuint __tmp = CPU_TO_LE32( *(GLuint *)(x) );			\
-    *(GLfloat *)&__tmp;							\
- })
--#define LE32_OUT( x, y )	do { *(GLuint *)(x) = bswap_32( y ); } while (0)
-+#define LE32_OUT( x, y )	do { *(GLuint *)(x) = CPU_TO_LE32( y ); } while (0)
-+#define LE32_OUT( x, y )						\
-+do {									\
-+   *(GLuint *)(x) = CPU_TO_LE32( y );					\
-+} while (0)
- #define LE32_OUT_FLOAT( x, y )						\
- do {									\
-    GLuint __tmp;							\
-    *(GLfloat *)&__tmp = (y);						\
--   *(GLuint *)(x) = bswap_32( __tmp );					\
-+   *(GLuint *)(x) = CPU_TO_LE32( __tmp );				\
- } while (0)
+-#else
++#if defined(__OpenBSD__)
+ #include <machine/endian.h>
+ #define bswap_32 bswap32
++#elif defined(__FreeBSD__)
++#include <sys/endian.h>
++#define bswap_32 bswap32
++#else
++#include <byteswap.h>
  #endif
  
+ #define LE32_IN( x )		bswap_32( *(GLuint *)(x) )

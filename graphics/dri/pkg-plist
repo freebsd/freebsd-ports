@@ -1,5 +1,4 @@
 include/GL/internal/dri_interface.h
-include/GL/internal/dri_sarea.h
 lib/dri/i810_dri.so
 lib/dri/i915_dri.so
 lib/dri/i965_dri.so
