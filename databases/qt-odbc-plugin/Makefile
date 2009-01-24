@@ -21,6 +21,8 @@ CONFLICTS=	qt4-odbc-plugin-4.2.* qt4-odbc-plugin-4.3.0
 
 DB=		odbc
 
+BROKEN=		does not compile
+
 LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC \
 		qt-mt:${PORTSDIR}/x11-toolkits/qt33
 
