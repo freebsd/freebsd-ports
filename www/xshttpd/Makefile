@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.5g05
-PORTREVISION=	1
+DISTVERSION=	3.6g01
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -87,7 +86,7 @@ CONFIGURE_ARGS+=--with-curl=no
 .endif
 
 post-patch:
-.for i in man/httpd.1 man/httpd.conf.5 config/httpd.conf.sample \
+.for i in man/httpd.1.in man/httpd.conf.5 config/httpd.conf.sample \
 	contrib/SSL-Makefile contrib/logrotate.sh
 	@${REINPLACE_CMD} \
 		-e 's|/wwwsys|${WWWDIR}|g' \
@@ -98,11 +97,9 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} \
 		-e 's|\(MIME_TYPES\).*|\1 "${LOCALBASE}/etc/mime.types"|' \
-		${WRKSRC}/src/confuser.h
+		${WRKSRC}/src/constants.h
 	@${REINPLACE_CMD} -e 's|mime.types ||g' \
 		${WRKSRC}/config/Makefile.in
-	@${REINPLACE_CMD} -e '/^install-data-am/s|install-docDATA||' \
-		${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
