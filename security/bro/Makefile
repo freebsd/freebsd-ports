@@ -26,6 +26,12 @@ CONFIGURE_ARGS=	--disable-perftools
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not package
+.endif
+
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/aux/broccoli/broccoli.conf \
 	   	${PREFIX}/etc/broccoli.conf.sample
@@ -36,4 +42,4 @@ post-install:
 
 	${LN} -sf ${PREFIX}/lib/libbroccoli.so.2.0 ${PREFIX}/lib/libbroccoli.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
