@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	happy
-PORTVERSION=	1.17
+PORTVERSION=	1.18.2
 CATEGORIES=	devel haskell
-MASTER_SITES=	http://www.haskell.org/happy/dist/${PORTVERSION}/
+MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
@@ -18,12 +18,17 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
+PLIST_SUB+=	RMLIC="@comment "
+.else
+PLIST_SUB+=	RMLIC=""
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//g}
-
-PLIST_SUB=	HAPPY_VERSION=${PORTVERSION}
-PORTDOCS=	*
+PLIST_SUB+=	SUBDIR=share/${PORTNAME}-${PORTVERSION}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+PORTDOCS=	LICENSE html
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}-${PORTVERSION}
+PORTEXAMPLES=	*
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:262:env
@@ -33,7 +38,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+' ${WRKSRC}/doc/configure.ac
 
 do-configure:
-	cd ${WRKSRC} && runhaskell Setup.lhs configure
+	cd ${WRKSRC} && runhaskell Setup.lhs configure ${CONFIGURE_ARGS}
 	cd ${WRKSRC}/doc && ${AUTOCONF} && ./configure --prefix=${PREFIX}
 
 do-build:
@@ -48,8 +53,12 @@ do-install:
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/happy
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+.endif
 .if !defined(NOPORTDOCS)
-	@(cd ${WRKSRC}/doc && ${CP} -R happy ${PREFIX}/share/doc)
+	@(cd ${WRKSRC}/doc && ${CP} -R happy/ ${DOCSDIR}/html)
 .endif
 
 .include <bsd.port.mk>
