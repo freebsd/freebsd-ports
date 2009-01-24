@@ -17,6 +17,9 @@ COMMENT=	A small irc client using GTK+
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 
+DEPRECATED=		project is discontinued and tcl82 support is going to be dropped
+EXPIRATION_DATE=	2009-04-22
+
 PLIST_FILES=	bin/olirc
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
