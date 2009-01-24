@@ -15,6 +15,8 @@ DISTFILES=	papi-3.5.0-freebsd-rev49.tar.bz2
 MAINTAINER=	redcrash@gmail.com
 COMMENT=	API to access the performance counter hw in the microprocessor
 
+BROKEN=		does not compile
+
 PROJECTHOST=	papi-for-freebsd
 STRIP=
 USE_LDCONFIG=	yes
