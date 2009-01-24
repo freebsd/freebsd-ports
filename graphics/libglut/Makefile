@@ -14,7 +14,7 @@ COMMENT=	OpenGL utility toolkit
 
 USE_LDCONFIG=	yes
 USE_GL=		glu
-USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes xi xmu
+USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes xi xmu dri2proto
 
 do-install:
 	cd ${WRKSRC}/src/glut/glx; ${GMAKE} install

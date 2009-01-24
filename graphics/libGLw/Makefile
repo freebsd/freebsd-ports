@@ -15,7 +15,7 @@ BUILD_DEPENDS+=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS+=	Xm.3:${PORTSDIR}/x11-toolkits/open-motif
 
 USE_GL=		gl
-USE_XORG=	glproto xt x11 xext xxf86vm xdamage xfixes
+USE_XORG=	glproto xt x11 xext xxf86vm xdamage xfixes dri2proto
 
 do-install:
 	cd ${WRKSRC}/src/glw; ${GMAKE} install
