@@ -7,7 +7,7 @@
 
 PORTNAME=	gracer
 PORTVERSION=	0.1.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -18,13 +18,13 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tcl82.1:${PORTSDIR}/lang/tcl82
+		tcl84.1:${PORTSDIR}/lang/tcl84
 
 USE_GL=		glut
 USE_PERL5_BUILD=yes
 USE_AUTOTOOLS=	autoconf:213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-			  -I${LOCALBASE}/include/tcl8.2 \
+			  -I${LOCALBASE}/include/tcl8.4 \
 			  -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib"
 USE_GMAKE=	yes
