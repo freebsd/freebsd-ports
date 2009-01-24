@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	jetty
-DISTVERSION=	6.1.9
+DISTVERSION=	6.1.14
 CATEGORIES=	www java
 MASTER_SITES=	http://dist.codehaus.org/jetty/${PORTNAME}-${DISTVERSION}/
 
-MAINTAINER=	jbq@caraldi.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-featured web server implemented entirely in java
 
 USE_RC_SUBR=	${PORTNAME}
@@ -18,7 +18,7 @@ USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_PYTHON=	1.6+
-PLIST=			${WRKDIR}/pkg-plist
+PLIST=		${WRKDIR}/pkg-plist
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_RC_SUBR=	jetty
