@@ -847,6 +847,7 @@ base                            ports/security/base
 base64                          ports/converters/base64
 bash                            ports/shells/bash
 bash-completion                 ports/shells/bash-completion
+bash-static                     ports/shells/bash-static
 bashburn                        ports/sysutils/bashburn
 bashc                           ports/shells/bashc
 basicdsp                        ports/cad/basicdsp
@@ -2378,6 +2379,7 @@ drbl                            ports/mail/drbl
 drexelsnmp                      ports/java/drexelsnmp
 drgeo                           ports/math/drgeo
 dri                             ports/graphics/dri
+dri2proto                       ports/x11/dri2proto
 driconf                         ports/graphics/driconf
 driftnet                        ports/net-mgmt/driftnet
 driglide                        ports/x11-servers/driglide
@@ -5756,6 +5758,7 @@ ja-p5-Date-Japanese-Holiday     ports/japanese/p5-Date-Japanese-Holiday
 ja-p5-DateTime-Calendar-Japanese-Era  ports/japanese/p5-DateTime-Calendar-Japanese-Era
 ja-p5-DateTime-Format-Japanese  ports/japanese/p5-DateTime-Format-Japanese
 ja-p5-Encode-EUCJPMS            ports/japanese/p5-Encode-EUCJPMS
+ja-p5-Encode-JP-Mobile          ports/japanese/p5-Encode-JP-Mobile
 ja-p5-FormValidator-Simple-Plugin-Number-Phone-JP  ports/japanese/p5-FormValidator-Simple-Plugin-Number-Phone-JP
 ja-p5-Jcode                     ports/japanese/p5-Jcode
 ja-p5-Lingua-JA-Kana            ports/japanese/p5-Lingua-JA-Kana
@@ -5776,6 +5779,7 @@ ja-p5-date-japanese-holiday     ports/japanese/p5-Date-Japanese-Holiday
 ja-p5-datetime-calendar-japanese-era  ports/japanese/p5-DateTime-Calendar-Japanese-Era
 ja-p5-datetime-format-japanese  ports/japanese/p5-DateTime-Format-Japanese
 ja-p5-encode-eucjpms            ports/japanese/p5-Encode-EUCJPMS
+ja-p5-encode-jp-mobile          ports/japanese/p5-Encode-JP-Mobile
 ja-p5-formvalidator-simple-plugin-number-phone-jp  ports/japanese/p5-FormValidator-Simple-Plugin-Number-Phone-JP
 ja-p5-jcode                     ports/japanese/p5-Jcode
 ja-p5-jcode.pl                  ports/japanese/p5-jcode.pl
@@ -7361,6 +7365,7 @@ libpbl                          ports/databases/libpbl
 libpcapnav                      ports/net/libpcapnav
 libpcd                          ports/graphics/libpcd
 libpci                          ports/devel/libpci
+libpciaccess                    ports/devel/libpciaccess
 libpdel                         ports/devel/libpdel
 libpdtp                         ports/net-p2p/libpdtp
 libpeak                         ports/devel/libpeak
@@ -8650,7 +8655,6 @@ mpg123.el                       ports/audio/mpg123.el
 mpg321                          ports/audio/mpg321
 mpgtx                           ports/multimedia/mpgtx
 mph                             ports/devel/mph
-mpich                           ports/net/mpich
 mpich2                          ports/net/mpich2
 mpiexec                         ports/sysutils/mpiexec
 mping                           ports/net/mping
@@ -10557,12 +10561,14 @@ p5-Data-TreeDumper-Renderer-GTK  ports/devel/p5-Data-TreeDumper-Renderer-GTK
 p5-Data-Types                   ports/devel/p5-Data-Types
 p5-Data-UUID                    ports/devel/p5-Data-UUID
 p5-Data-Uniqid                  ports/devel/p5-Data-Uniqid
+p5-Data-Util                    ports/devel/p5-Data-Util
 p5-Data-Validate                ports/devel/p5-Data-Validate
 p5-Data-Validate-Domain         ports/dns/p5-Data-Validate-Domain
 p5-Data-Validate-Email          ports/mail/p5-Data-Validate-Email
 p5-Data-Validate-IP             ports/net-mgmt/p5-Data-Validate-IP
 p5-Data-Validate-URI            ports/www/p5-Data-Validate-URI
 p5-Data-Visitor                 ports/devel/p5-Data-Visitor
+p5-Data-Visitor-Encode          ports/devel/p5-Data-Visitor-Encode
 p5-Date-Calc                    ports/devel/p5-Date-Calc
 p5-Date-Calc-Iterator           ports/devel/p5-Date-Calc-Iterator
 p5-Date-DayOfWeek               ports/devel/p5-Date-DayOfWeek
@@ -13735,6 +13741,7 @@ p5-data-treedumper-renderer-dhtml  ports/www/p5-Data-TreeDumper-Renderer-DHTML
 p5-data-treedumper-renderer-gtk  ports/devel/p5-Data-TreeDumper-Renderer-GTK
 p5-data-types                   ports/devel/p5-Data-Types
 p5-data-uniqid                  ports/devel/p5-Data-Uniqid
+p5-data-util                    ports/devel/p5-Data-Util
 p5-data-uuid                    ports/devel/p5-Data-UUID
 p5-data-validate                ports/devel/p5-Data-Validate
 p5-data-validate-domain         ports/dns/p5-Data-Validate-Domain
@@ -13742,6 +13749,7 @@ p5-data-validate-email          ports/mail/p5-Data-Validate-Email
 p5-data-validate-ip             ports/net-mgmt/p5-Data-Validate-IP
 p5-data-validate-uri            ports/www/p5-Data-Validate-URI
 p5-data-visitor                 ports/devel/p5-Data-Visitor
+p5-data-visitor-encode          ports/devel/p5-Data-Visitor-Encode
 p5-date-calc                    ports/devel/p5-Date-Calc
 p5-date-calc-iterator           ports/devel/p5-Date-Calc-Iterator
 p5-date-dayofweek               ports/devel/p5-Date-DayOfWeek
@@ -20782,7 +20790,6 @@ sympa                           ports/mail/sympa
 sympa-elixus                    ports/mail/sympa-elixus
 sympa5                          ports/mail/sympa5
 synaesthesia                    ports/graphics/synaesthesia
-synaptics                       ports/x11-drivers/synaptics
 synce-gvfs                      ports/palm/synce-gvfs
 synce-hal                       ports/palm/synce-hal
 synce-librapi2                  ports/palm/synce-librapi2
@@ -22526,6 +22533,7 @@ xf86-input-palmax               ports/x11-drivers/xf86-input-palmax
 xf86-input-penmount             ports/x11-drivers/xf86-input-penmount
 xf86-input-spaceorb             ports/x11-drivers/xf86-input-spaceorb
 xf86-input-summa                ports/x11-drivers/xf86-input-summa
+xf86-input-synaptics            ports/x11-drivers/xf86-input-synaptics
 xf86-input-tek4957              ports/x11-drivers/xf86-input-tek4957
 xf86-input-vmmouse              ports/x11-drivers/xf86-input-vmmouse
 xf86-input-void                 ports/x11-drivers/xf86-input-void
@@ -22959,7 +22967,6 @@ xorg-libraries                  ports/x11/xorg-libraries
 xorg-macros                     ports/devel/xorg-macros
 xorg-minimal                    ports/x11/xorg-minimal
 xorg-nestserver                 ports/x11-servers/xorg-nestserver
-xorg-protos                     ports/x11/xorg-protos
 xorg-server                     ports/x11-servers/xorg-server
 xorg-vfbserver                  ports/x11-servers/xorg-vfbserver
 xoris                           ports/graphics/xoris
@@ -22981,7 +22988,6 @@ xpath2rss                       ports/www/xpath2rss
 xpbiff                          ports/mail/xpbiff
 xpdf                            ports/graphics/xpdf
 xpenguins                       ports/games/xpenguins
-xphelloworld                    ports/x11/xphelloworld
 xphoon                          ports/astro/xphoon
 xphotohunter                    ports/games/xphotohunter
 xpi-adblock                     ports/www/xpi-adblock
