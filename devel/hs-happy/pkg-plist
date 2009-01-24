@@ -1,17 +1,17 @@
 bin/happy
-share/happy-%%HAPPY_VERSION%%/GLR_Base
-share/happy-%%HAPPY_VERSION%%/GLR_Lib
-share/happy-%%HAPPY_VERSION%%/GLR_Lib-ghc
-share/happy-%%HAPPY_VERSION%%/GLR_Lib-ghc-debug
-share/happy-%%HAPPY_VERSION%%/HappyTemplate
-share/happy-%%HAPPY_VERSION%%/HappyTemplate-arrays
-share/happy-%%HAPPY_VERSION%%/HappyTemplate-arrays-coerce
-share/happy-%%HAPPY_VERSION%%/HappyTemplate-arrays-coerce-debug
-share/happy-%%HAPPY_VERSION%%/HappyTemplate-arrays-debug
-share/happy-%%HAPPY_VERSION%%/HappyTemplate-arrays-ghc
-share/happy-%%HAPPY_VERSION%%/HappyTemplate-arrays-ghc-debug
-share/happy-%%HAPPY_VERSION%%/HappyTemplate-coerce
-share/happy-%%HAPPY_VERSION%%/HappyTemplate-ghc
-share/doc/happy-%%HAPPY_VERSION%%/LICENSE
-@dirrm share/happy-%%HAPPY_VERSION%%
-@dirrm share/doc/happy-%%HAPPY_VERSION%%
+%%SUBDIR%%/GLR_Base
+%%SUBDIR%%/GLR_Lib
+%%SUBDIR%%/GLR_Lib-ghc
+%%SUBDIR%%/GLR_Lib-ghc-debug
+%%SUBDIR%%/HappyTemplate
+%%SUBDIR%%/HappyTemplate-arrays
+%%SUBDIR%%/HappyTemplate-arrays-coerce
+%%SUBDIR%%/HappyTemplate-arrays-coerce-debug
+%%SUBDIR%%/HappyTemplate-arrays-debug
+%%SUBDIR%%/HappyTemplate-arrays-ghc
+%%SUBDIR%%/HappyTemplate-arrays-ghc-debug
+%%SUBDIR%%/HappyTemplate-coerce
+%%SUBDIR%%/HappyTemplate-ghc
+@dirrm %%SUBDIR%%
+%%RMLIC%%%%DOCSDIR%%/LICENSE
+%%RMLIC%%@dirrm %%DOCSDIR%%
