@@ -22371,8 +22371,11 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>apache_fp</name>
-	<name>apache+ipv6</name>
 	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>apache+ipv6</name>
+	<range><lt>1.3.37</lt></range>
       </package>
       <package>
 	<name>ru-apache</name>
@@ -22425,7 +22428,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-11-01</discovery>
       <entry>2006-01-01</entry>
-      <modified>2006-01-03</modified>
+      <modified>2009-01-23</modified>
     </dates>
   </vuln>
 
@@ -26306,8 +26309,11 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>apache_fp</name>
-	<name>apache+ipv6</name>
 	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>apache+ipv6</name>
+	<range><lt>1.3.37</lt></range>
       </package>
       <package>
 	<name>ru-apache</name>
@@ -26349,7 +26355,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-07-25</discovery>
       <entry>2005-07-26</entry>
-      <modified>2005-12-25</modified>
+      <modified>2009-01-23</modified>
     </dates>
   </vuln>
 
