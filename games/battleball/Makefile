@@ -7,7 +7,7 @@
 
 PORTNAME=	battleball
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.aeternal.net/ports/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D single/multiplayer military soccer game for X Window System
 
 USE_GL=		glu gl
+UES_XORG=	xmu xi
 WRKSRC=		${WRKDIR}/battleball-2.1-src
 CFLAGS+=	-Wno-deprecated ${PTHREAD_CFLAGS}
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"	\
