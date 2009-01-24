@@ -7,12 +7,17 @@
 
 PORTNAME=	Class-Method-Modifiers-Fast
 PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to provide Moose-like method modifiers
+
+RUN_DEPENDS=	\
+	p5-Data-Util>0:${PORTSDIR}/devel/p5-Data-Util
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
