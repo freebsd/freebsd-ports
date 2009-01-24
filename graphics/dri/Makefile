@@ -18,7 +18,7 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 CONFLICTS=	dri-6.2.2005* dri-6.5.2006*
 
-USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes
+USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto
 
 do-install:
 	cd ${WRKSRC}/src/mesa; ${GMAKE} install-dri
