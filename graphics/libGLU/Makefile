@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 COMMENT=	OpenGL utility library
 
 USE_GL=		gl
-USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes
+USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto
 
 do-install:
 	cd ${WRKSRC}/src/glu; ${GMAKE} install

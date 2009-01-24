@@ -15,7 +15,7 @@ BUILD_DEPENDS+=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS+=	drm:${PORTSDIR}/graphics/libdrm \
 		expat.6:${PORTSDIR}/textproc/expat2
 
-USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes
+USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto
 
 do-install:
 	${RM} ${WRKSRC}/include/GL/glu*.h

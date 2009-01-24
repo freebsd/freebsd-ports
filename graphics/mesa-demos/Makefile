@@ -14,7 +14,7 @@ MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	OpenGL demos distributed with Mesa
 
 USE_GL=		glu glut
-USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes
+USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
 
