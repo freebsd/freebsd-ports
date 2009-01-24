@@ -1,6 +1,6 @@
---- hald/freebsd/addons/addon-mouse.c.orig	2008-12-21 01:15:41.000000000 -0500
-+++ hald/freebsd/addons/addon-mouse.c	2008-12-21 01:17:03.000000000 -0500
-@@ -0,0 +1,336 @@
+--- hald/freebsd/addons/addon-mouse.c.orig	2009-01-24 02:12:21.000000000 -0500
++++ hald/freebsd/addons/addon-mouse.c	2009-01-24 02:14:11.000000000 -0500
+@@ -0,0 +1,319 @@
 +/***************************************************************************
 + * CVSID: $Id$
 + *
@@ -52,7 +52,6 @@
 +#define MOUSE_DRIVER "mouse"
 +#define MOUSED_DEVICE "/dev/sysmouse"
 +#define MOUSED_PROC_NAME "moused"
-+#define XORG_PROC_NAME "Xorg"
 +
 +static struct
 +{
@@ -244,7 +243,6 @@
 +static void
 +poll_for_moused (void)
 +{
-+  char *driver;
 +  char *old_device;
 +  const char *device;
 +  gboolean found;
@@ -255,30 +253,15 @@
 +  device = get_mouse_device(addon.device_file);
 +  if (strcmp(old_device, device))
 +    {
++      libhal_device_remove_property(hfp_ctx, hfp_udi, "input.device", &hfp_error);
++      dbus_error_free(&hfp_error);
 +      libhal_device_set_property_string(hfp_ctx, hfp_udi, "input.device", device, &hfp_error);
 +      dbus_error_free(&hfp_error);
 +    }
 +  g_free(old_device);
 +
-+  driver = libhal_device_get_property_string(hfp_ctx, hfp_udi, "input.x11_driver", &hfp_error);
++  libhal_device_set_property_string(hfp_ctx, hfp_udi, "input.x11_driver", MOUSE_DRIVER, &hfp_error);
 +  dbus_error_free(&hfp_error);
-+
-+  found = (strcmp(device, MOUSED_DEVICE) == 0);
-+  if (! found)
-+    found = device_opened_by_proc(device, XORG_PROC_NAME);
-+
-+  if (found && driver)
-+    {
-+      libhal_device_remove_property(hfp_ctx, hfp_udi, "input.x11_driver", &hfp_error);
-+      dbus_error_free(&hfp_error);
-+    }
-+  else if (! (found || driver))
-+    {
-+      libhal_device_set_property_string(hfp_ctx, hfp_udi, "input.x11_driver", MOUSE_DRIVER, &hfp_error);
-+      dbus_error_free(&hfp_error);
-+    }
-+
-+  g_free(driver);
 +}
 +
 +int
