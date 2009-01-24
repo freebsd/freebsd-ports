@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bitflu
-PORTVERSION=	0.62
+PORTVERSION=	0.70
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://bitflu.workaround.ch/bitflu/ CENKES
 EXTRACT_SUFX=	.tgz
