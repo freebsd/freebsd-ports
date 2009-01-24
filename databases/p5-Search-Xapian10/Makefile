@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Search-Xapian
-PORTVERSION=	1.0.9.0
+PORTVERSION=	1.0.10.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Perl XS frontend to the Xapian C++ search library
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	xapian-core>=1.0.9:${PORTSDIR}/databases/xapian-core
+RUN_DEPENDS=	xapian-core>=1.0.10:${PORTSDIR}/databases/xapian-core
 
 PERL_CONFIGURE=	yes
 CC=		${CXX}
@@ -37,5 +37,8 @@ MAN3=	Search::Xapian.3 \
 	Search::Xapian::ValueIterator.3 \
 	Search::Xapian::Weight.3 \
 	Search::Xapian::WritableDatabase.3
+
+post-extract:
+	${PERL} -i -pe 's/^if \(defined \$$builddir/if (0/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
