@@ -5,25 +5,36 @@
 # $FreeBSD$
 
 PORTNAME=	haxml
-PORTVERSION=	1.13.3
+PORTVERSION=	1.19.4
 CATEGORIES=	textproc haskell
-MASTER_SITES=	http://www.haskell.org/HaXml/ \
-		ftp://ftp.cs.york.ac.uk/pub/haskell/HaXml/
+MASTER_SITES=	http://hackage.haskell.org/packages/archive/HaXml/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
 DISTNAME=	HaXml-${PORTVERSION}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A collection of utilities for using Haskell and XML together
 
-BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
+		hs-polyparse-ghc>=1.1:${PORTSDIR}/textproc/hs-polyparse-ghc
+RUN_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
+		hs-polyparse-ghc>=1.1:${PORTSDIR}/textproc/hs-polyparse-ghc
 
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
+CONFIGURE_ARGS= --ghc --prefix=${PREFIX}
 
-GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`
-PLIST_SUB+=	GHC_VERSION="${GHC_VERSION}" \
-		HAXML_VERSION=${PORTVERSION}
+GHC_VERSION=	6.8.3
+PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} \
+		HAXMLDIR=lib/HaXml-${PORTVERSION} \
+		GHCDIR=ghc-${GHC_VERSION} \
+		SUBDIR=lib/HaXml-${PORTVERSION}/ghc-${GHC_VERSION} \
+		PORTVERSION=${PORTVERSION}
+DOCSDIR=	${PREFIX}/share/doc/HaXml-${PORTVERSION}
 PORTDOCS=	*
+
+.if !defined(NOPORTDOCS)
+PLIST_SUB+=	RMLIC="@comment "
+.else
+PLIST_SUB+=	RMLIC=""
+.endif
 
 do-configure:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/runhaskell Setup.hs configure ${CONFIGURE_ARGS}
@@ -36,10 +47,9 @@ do-install:
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/dist/installed-pkg-config ${PREFIX}/lib/HaXml-${PORTVERSION}/ghc-${GHC_VERSION}/HaXml.pkgconf
-	@${RM} -f ${LOCALBASE}/lib/ghc-${GHC_VERSION}/package.conf.old
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC} && ${CP} -R docs/* ${DOCSDIR})
+	@(cd ${WRKSRC} && ${CP} -R docs/ ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
