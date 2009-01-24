@@ -89,7 +89,6 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/InputO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/InputO.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Internals.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/Item.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/ItemStyle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/JPEG.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/LabEntry.pm
@@ -110,11 +109,14 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Menu.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Menu.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Menu/Item.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/Menu/Item.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Menubar.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Menubutton.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Menubutton.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Message.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Message.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/MsgBox.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/MsgBox.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Mwm.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Mwm.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/NBFrame.pm
@@ -302,6 +304,8 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib/TEMPLATE.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib/Tiler.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib/lib/npuz/Xcamel.npuz
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib/all.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib/cursor.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib/npuz.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib/plop.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/event.pod
@@ -608,6 +612,14 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Toplevel/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/TraverseToMenu.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Widget/ASkludge.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Widget/AltKeyInDialog.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Widget/AmpWidget.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Widget/FindAltKeyTarget.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Widget/MasterMenu.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Widget/RestoreFocusGrab.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Widget/SetAmpText.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Widget/SetFocusGrab.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Widget/UnderlineAmpersand.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Widget/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Widget/clipboardKeysyms.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Widget/pathname.al
@@ -631,6 +643,8 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/focusNext.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/focusPrev.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/getEncoding.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/getNextFocus.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/getPrevFocus.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/interps.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/lsearch.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/pTk/extralibs.ld
