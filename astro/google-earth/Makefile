@@ -56,6 +56,8 @@ do-patch:
 do-build:
 	@${SETENV} SETUP_INSTALLPATH=${DATADIR} ${WRKSRC}/postinstall.sh
 	@cd ${WRKSRC} && ${RM} -rf setup.* preuninstall.sh postinstall.sh
+
+pre-su-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
 
 do-install:
