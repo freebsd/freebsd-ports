@@ -45,6 +45,12 @@ USE_EFL=	imlib2
 CONFIGURE_ARGS+=	--with-imlib2
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile
+.endif
+
 post-patch:
 	@${GREP} -lR "#!/bin/bash" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		 's|#!/bin/bash|#!/bin/sh|g'
@@ -55,4 +61,4 @@ post-install:
 	${CHOWN} -R ${LIBOWN}:${LIBGRP} ${PREFIX}/libexec/TeXmacs
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/TeXmacs
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
