@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Tk
-PORTVERSION=	804.027
-PORTREVISION=	2
+DISTVERSION=	804.028_501
 CATEGORIES=	x11-toolkits tk perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/Tk/SREZIC
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
@@ -60,16 +59,17 @@ MAN3=		Tie::Watch.3 \
 		Tk::Image.3 \
 		Tk::InputO.3 \
 		Tk::Internals.3 \
-		Tk::Item.3 \
 		Tk::JPEG.3 \
 		Tk::LabFrame.3 \
 		Tk::Label.3 \
 		Tk::Labelframe.3 \
 		Tk::Listbox.3 \
 		Tk::MainWindow.3 \
+		Tk::Menu::Item.3 \
 		Tk::Menu.3 \
 		Tk::Menubutton.3 \
 		Tk::Message.3 \
+		Tk::MsgBox.3 \
 		Tk::Mwm.3 \
 		Tk::NoteBook.3 \
 		Tk::Optionmenu.3 \
