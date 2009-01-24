@@ -136,7 +136,7 @@ CONFIGURE_ARGS+=	--with-iconvincludedir=${LOCALBASE}/include
 .endif
 
 .if !defined(WITHOUT_XPM) || exists(${LOCALBASE}/lib/libXpm.so)
-USE_XORG+=		xaw8 xpm xmu xt sm ice xext x11 xau xdmcp xp
+USE_XORG+=		xaw xpm xmu xt sm ice xext x11 xau xdmcp xp
 MAN1+=			lefty.1
 PLIST_SUB+=		WITH_XPM=""
 .else
