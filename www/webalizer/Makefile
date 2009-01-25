@@ -16,22 +16,9 @@ MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/geodb/:geodb \
 PKGNAMESUFFIX?=	${WEBALIZER_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}-2.21-02-src
 DISTFILES=	${DISTNAME}.tgz:main
-.if defined(WITH_GEODB) || defined(WITH_GEOIP)|| make(makesum) || defined(FETCH_ALL)
-DISTFILES+=	webalizer-flags.tgz:main
-.endif
-.if defined(WITH_GEODB) || make(makesum) || defined(FETCH_ALL)
-DISTFILES+=	webalizer-geodb-20090101.tgz:geodb
-.endif
 
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT=	A web server log file analysis program
-
-.if !defined(LIB_DEPENDS)
-LIB_DEPENDS=	gd.4:${PORTSDIR}/${GD_PORT}
-.endif
-.if defined(WITH_GEOIP)
-LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
-.endif
 
 GNU_CONFIGURE=	yes
 DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
@@ -46,6 +33,20 @@ WEBALIZER_LANG?=english
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_GEODB) || defined(WITH_GEOIP)|| make(makesum) || defined(FETCH_ALL)
+DISTFILES+=	webalizer-flags.tgz:main
+.endif
+.if defined(WITH_GEODB) || make(makesum) || defined(FETCH_ALL)
+DISTFILES+=	webalizer-geodb-20090101.tgz:geodb
+.endif
+
+.if !defined(LIB_DEPENDS)
+LIB_DEPENDS=	gd.4:${PORTSDIR}/${GD_PORT}
+.endif
+.if defined(WITH_GEOIP)
+LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
+.endif
 
 .if defined(WITH_GEODB)
 PLIST_SUB+=	WITH_GEODB=""
