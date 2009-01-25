@@ -11,6 +11,8 @@ bin/x11vnc
 %%DATADIR%%/classes/ssl/ultrasigned.vnc
 %%DATADIR%%/classes/VncViewer.jar
 %%DATADIR%%/classes/index.vnc
+share/applications/x11vnc.desktop
 @dirrm %%DATADIR%%/classes/ssl
 @dirrm %%DATADIR%%/classes
 @dirrm %%DATADIR%%
+@dirrmtry /share/applications
