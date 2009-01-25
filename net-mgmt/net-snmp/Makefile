@@ -7,6 +7,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.4.2.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
@@ -92,7 +93,7 @@ NET_SNMP_LOGFILE?=	/var/log/snmpd.log
 NET_SNMP_PERSISTENTDIR?=/var/net-snmp
 NET_SNMP_MIB_MODULES?=	${NET_SNMP_MIB_MODULE_LIST}
 
-NET_SNMP_MIB_MODULE_LIST=host disman/event-mib smux mibII/mta_sendmail mibII/tcpTable ucd-snmp/diskio
+NET_SNMP_MIB_MODULE_LIST=host disman/event-mib smux mibII/mta_sendmail mibII/tcpTable ucd-snmp/diskio sctp-mib
 
 .if defined(WITH_MFD_REWRITES)
 CONFIGURE_ARGS+=--enable-mfd-rewrites
