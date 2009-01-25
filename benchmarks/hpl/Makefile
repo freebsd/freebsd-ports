@@ -15,7 +15,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	High Performance Computing Linpack Benchmark
 
 .if !defined(WITH_LAM)
-BUILD_DEPENDS=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
+BUILD_DEPENDS=	${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
 .else
 BUILD_DEPENDS=	${LOCALBASE}/bin/lamd:${PORTSDIR}/net/lam
 CC=		${LOCALBASE}/bin/mpicc
