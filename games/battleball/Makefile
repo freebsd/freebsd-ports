@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D single/multiplayer military soccer game for X Window System
 
 USE_GL=		glu gl
-UES_XORG=	xmu xi
+USE_XORG=	xmu xi
 WRKSRC=		${WRKDIR}/battleball-2.1-src
 CFLAGS+=	-Wno-deprecated ${PTHREAD_CFLAGS}
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"	\
