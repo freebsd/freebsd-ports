@@ -7,6 +7,7 @@
 
 PORTNAME=	kdeaccessibility
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	accessibility kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -18,6 +19,7 @@ COMMENT=	Accessibility applications for KDE
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 
+USE_XORG=	xtst
 USE_BZIP2=	yes
 USE_AUTOTOOLS=  libtool:15
 USE_GMAKE=	yes
