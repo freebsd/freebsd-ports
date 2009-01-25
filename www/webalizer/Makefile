@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webalizer
-PORTVERSION=	2.20.3
+PORTVERSION=	2.21.2
 PORTREVISION=	0
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/:main \
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/geodb/:geodb \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/:main \
 		http://flags.blogpotato.de/zip/:flags
 PKGNAMESUFFIX?=	${WEBALIZER_SUFFIX}${PKGNAMESUFFIX2}
-DISTNAME=	${PORTNAME}-2.20-03-src
+DISTNAME=	${PORTNAME}-2.21-02-src
 DISTFILES=	${DISTNAME}.tgz:main
 .if defined(WITH_GEODB) || defined(WITH_GEOIP)|| make(makesum) || defined(FETCH_ALL)
 DISTFILES+=	webalizer-flags.tgz:main
@@ -69,7 +69,7 @@ PLIST_SUB+=	WITH_GEOIP=""
 PLIST_SUB+=	WITH_GEOIP="@comment "
 .endif
 
-.if defined(WITH_BDB_VER) || defined(WITH_BDB) 
+.if defined(WITH_BDB_VER) || defined(WITH_BDB)
 USE_BDB=	yes
 INVALID_BDB_VER=	2 3 40
 .if defined(WITH_GEODB)
@@ -117,7 +117,6 @@ EXTRA_PATCHES+=		${FILESDIR}/uk-output.c
 .endif
 .endif
 
-
 .if defined(WITH_WEBALIZER_CONV)
 USE_ICONV=yes
 # 	The patch file is written by URASHIMA Akira
@@ -147,7 +146,7 @@ pre-configure:
 		-e "s|MAXURLH  512 |MAXURLH  2048|" \
 		${WRKSRC}/webalizer.h
 .endif
-.if defined(WITH_BDB_VER) || defined(WITH_BDB) 
+.if defined(WITH_BDB_VER) || defined(WITH_BDB)
 	${REINPLACE_CMD} -e "s|-ldb|-l${BDB_LIB_NAME}|" \
 		${WRKSRC}/configure
 .else
