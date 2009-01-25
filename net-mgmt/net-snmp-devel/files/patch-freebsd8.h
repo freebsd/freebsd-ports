@@ -1,4 +1,5 @@
---- include/net-snmp/system/freebsd8.h.orig	Sun Jul 17 22:41:06 2005
-+++ include/net-snmp/system/freebsd8.h	Sun Jul 17 22:41:28 2005
-@@ -0,0 +1 @@
+--- include/net-snmp/system/freebsd8.h.orig	2009-01-24 13:29:00.000000000 +0900
++++ include/net-snmp/system/freebsd8.h	2009-01-24 23:23:25.000000000 +0900
+@@ -0,0 +1,2 @@
 +#include "freebsd7.h"
++#define freebsd7 freebsd7
