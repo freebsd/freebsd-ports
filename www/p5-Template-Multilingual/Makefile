@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Template-Multilingual
-PORTVERSION=	0.09
+PORTVERSION=	1.00
 CATEGORIES=	www textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
