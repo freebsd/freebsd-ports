@@ -16,6 +16,8 @@ COMMENT=	Subversion plugin for Thunar
 
 LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
