@@ -8,6 +8,7 @@
 PORTNAME=	xorg-vfbserver
 PORTVERSION=	1.5.3
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -23,7 +24,7 @@ USE_GL=		gl
 USE_XORG=	x11 xf86driproto glproto randrproto renderproto fixesproto \
 		damageproto xcmiscproto xextproto xf86miscproto inputproto \
 		xf86vidmodeproto xf86bigfontproto scrnsaverproto bigreqsproto \
-		resourceproto fontsproto xf86dgaproto videoproto \
+		dri2proto resourceproto fontsproto xf86dgaproto videoproto \
 		compositeproto trapproto recordproto resourceproto \
 		xineramaproto evieproto xkbfile xfont fontenc xkbui xxf86misc \
 		xxf86vm xaw7 xmu xpm xext pixman xtrans
