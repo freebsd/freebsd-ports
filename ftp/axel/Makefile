@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	axel
-PORTVERSION=	1.1
+PORTVERSION=	2.2
 PORTREVISION=	1
 CATEGORIES=	ftp
-MASTER_SITES=	${MASTER_SITE_GENTOO} \
-		http://alioth.debian.org/frs/download.php/2287/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/2659/
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	prudhvikrishna@gmail.com
@@ -19,7 +18,7 @@ COMMENT=	A download accelerator
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man --i18n=1
+CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
 
 OPTIONS=	NLS	"I18N support"		on	\
 		DEBUG	"Debugging support"	off
@@ -43,7 +42,8 @@ CONFIGURE_ARGS+=--debug=1 --strip=0
 MAN1=		axel.1
 
 post-configure:
-	@${REINPLACE_CMD} -e 's,-O3,${CFLAGS},; s|gcc|${CC}|; \
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|; \
 		s|-pthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile.settings
+	@${ECHO} 'CFLAGS+=${CFLAGS}' >> ${WRKSRC}/Makefile.settings
 
 .include <bsd.port.post.mk>
