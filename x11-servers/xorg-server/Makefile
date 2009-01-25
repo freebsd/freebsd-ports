@@ -8,6 +8,7 @@
 PORTNAME=	xorg-server
 PORTVERSION=	1.5.3
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://xorg.freedesktop.org/releases/individual/xserver/
 DISTFILES=	xorg-server-${PORTVERSION}.tar.bz2
@@ -26,7 +27,7 @@ XORG_CAT=	xserver
 USE_GL=		gl
 USE_XORG=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
 		xmu xt xpm xext randrproto renderproto fixesproto damageproto \
-		xcmiscproto xextproto xproto xtrans xf86miscproto \
+		dri2proto xcmiscproto xextproto xproto xtrans xf86miscproto \
 		xf86vidmodeproto xf86bigfontproto scrnsaverproto bigreqsproto \
 		resourceproto fontsproto inputproto xf86dgaproto \
 		videoproto compositeproto trapproto recordproto xineramaproto \
