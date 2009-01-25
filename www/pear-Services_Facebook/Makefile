@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_Facebook
-PORTVERSION=	0.1.8
+PORTVERSION=	0.2.1
 CATEGORIES=	www pear
 
 MAINTAINER=	wenheping@gmail.com
@@ -19,7 +19,8 @@ USE_PHP=	curl
 CATEGORY=	Services
 
 FILES=		Services/Facebook.php \
-		Services/Facebook/Users.php Services/Facebook/Share.php \
+		Services/Facebook/Users.php \
+		Services/Facebook/Share.php \
 		Services/Facebook/Profile.php \
 		Services/Facebook/Photos.php \
 		Services/Facebook/Pages.php \
@@ -27,50 +28,32 @@ FILES=		Services/Facebook.php \
 		Services/Facebook/MarketPlace.php \
 		Services/Facebook/Groups.php \
 		Services/Facebook/Friends.php \
-		Services/Facebook/FQL.php Services/Facebook/Feed.php \
+		Services/Facebook/FQL.php \
+		Services/Facebook/Feed.php \
 		Services/Facebook/FBML.php \
 		Services/Facebook/Exception.php \
 		Services/Facebook/Events.php \
+		Services/Facebook/Data.php \
 		Services/Facebook/Common.php \
 		Services/Facebook/Connect.php \
+		Services/Facebook/Batch.php \
 		Services/Facebook/Auth.php \
 		Services/Facebook/Application.php \
 		Services/Facebook/Admin.php \
 		Services/Facebook/MarketPlace/Listing.php
 
-TESTS=		010-users-isAppAdded.phpt \
-		012-users-getInfo.phpt \
-		014-users-getLoggedInUser.phpt \
-		020-profile-setFBML.phpt \
-		022-profile-getFBML.phpt \
-		030-friends-areFriends.phpt \
-		032-friends-get.phpt \
-		034-friends-getAppUsers.phpt \
-		040-fql-query.phpt \
-		050-feed-publishStoryToUser.phpt \
-		052-feed-publishActionOfUser.phpt \
-		060-photos-createAlbum.phpt \
-		062-photos-upload.phpt \
-		080-application-getPublicInfoById.phpt \
-		081-application-getPublicInfoByApiKey.phpt \
-		082-application-getPublicInfoByCanvasName.phpt \
-		090-admin-getNotificationsPerDay.phpt \
-		091-admin-getRequestsPerDay.phpt \
-		092-admin-getAppProperties.phpt \
-		110-pages-isAdmin.phpt \
-		111-pages-isFan.phpt \
-		112-pages-isAppAdded.phpt \
-		120-marketplace-createListing.phpt \
-		121-marketplace-getCategories.phpt \
-		122-marketplace-getSubCategory.phpt \
-		123-marketplace-getListings.phpt \
-		124-marketplace-removeListing.phpt \
-		125-marketplace-search.phpt \
-		130-connect-hashEmail.phpt \
-		131-connect-unregisterUsers.phpt \
-		132-connect-registerUsers.phpt \
-		test-image.jpg \
-		tests-config.php.example
+TESTS=		AllTests.php Services/AllTests.php \
+		Services/Facebook/AdminTest.php Services/Facebook/AllTests.php \
+		Services/Facebook/ApplicationTest.php Services/Facebook/AuthTest.php \
+		Services/Facebook/BatchTest.php Services/Facebook/CommonTest.php \
+		Services/Facebook/ConnectTest.php Services/Facebook/EventsTest.php \
+		Services/Facebook/FBMLTest.php Services/Facebook/FQLTest.php \
+		Services/Facebook/FeedTest.php Services/Facebook/FriendsTest.php \
+		Services/Facebook/GroupsTest.php Services/Facebook/MarketPlaceTest.php \
+		Services/Facebook/NotificationsTest.php Services/Facebook/PagesTest.php \
+		Services/Facebook/PhotosTest.php Services/Facebook/ProfileTest.php \
+		Services/Facebook/ShareTest.php Services/Facebook/UnitTestCommon.php \
+		Services/Facebook/UsersTest.php Services/Facebook/skel.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
