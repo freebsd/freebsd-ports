@@ -20,6 +20,8 @@ COMMENT=	Support for xscreensaver blankers in KDE
 
 CONFLICTS=	kdeartwork-3.1.* kdeartwork-3.2.[0-3]
 
+BROKEN=		bad plist
+
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 

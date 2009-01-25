@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	wes@FreeBSD.org
 COMMENT=	C++ Portable Components library
 
+BROKEN=		bad plist
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
