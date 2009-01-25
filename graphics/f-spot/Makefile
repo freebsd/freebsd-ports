@@ -22,6 +22,8 @@ LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_SQLITE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack gnomesharp20
