@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.exaile.org/files/ \
 		http://wickedmachine.net/~jsa/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	AmaroK replacement for GTK+
 
 RUN_DEPENDS=	py*-dbus>=0.82.1:${PORTSDIR}/devel/py-dbus \
