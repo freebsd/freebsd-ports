@@ -3769,3 +3769,4 @@ x11/xorg-protos||2009-01-23|Not really necessary
 x11-drivers/synaptics|x11-drivers/xf86-input-synaptics|2009-01-23|Now an official X.org driver
 net/mpich|net/mpich2|2009-01-23|Broken and superseded by mpich2
 lang/gcc28|lang/gcc42|2009-01-24|Abandoned upstream, superseded by gcc42 and, preferrably, gcc43
+x11/xphelloworld||2009-01-24|Xprint application, deprecated upstream
