@@ -144,8 +144,8 @@ lib/libxine.so.1
 %%PLUGINSDIR%%/xineplug_vo_out_raw.so
 %%PLUGINSDIR%%/xineplug_vo_out_sdl.so
 %%WITH_VIDIX%%%%PLUGINSDIR%%/xineplug_vo_out_vidix.so
-%%WITH_XCB%%%%PLUGINSDIR%%/xineplug_vo_out_xcbshm.so
-%%WITH_XCB%%%%PLUGINSDIR%%/xineplug_vo_out_xcbxv.so
+%%PLUGINSDIR%%/xineplug_vo_out_xcbshm.so
+%%PLUGINSDIR%%/xineplug_vo_out_xcbxv.so
 %%PLUGINSDIR%%/xineplug_vo_out_xshm.so
 %%PLUGINSDIR%%/xineplug_vo_out_xv.so
 %%WITH_XVMC%%%%PLUGINSDIR%%/xineplug_vo_out_xvmc.so
