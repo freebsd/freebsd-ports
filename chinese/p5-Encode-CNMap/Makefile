@@ -10,7 +10,7 @@ PORTVERSION=	0.32
 CATEGORIES=	chinese perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Encode
-PKGNAMEPREFIX=	p5
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Enhanced Chinese encodings with Simplified-Traditional auto-mapping
