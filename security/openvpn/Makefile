@@ -43,6 +43,22 @@ SUB_LIST+=	OSVERSION=${OSVERSION}
 
 SUB_LIST+=	RCSFX=${RC_SUBR_SUFFIX}
 
+.ifdef (LOG_OPENVPN)
+CFLAGS+=	-DLOG_OPENVPN=${LOG_OPENVPN}
+.endif
+
+pre-fetch:
+.ifdef (LOG_OPENVPN)
+	@${ECHO} "Building with LOG_OPENVPN=${LOG_OPENVPN}"
+.else
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "      LOG_OPENVPN={Valid syslog facility}"
+	@${ECHO} "      EXAMPLE:  make LOG_OPENVPN=LOG_DAEMON"
+	@${ECHO} ""
+.endif
+
 # NOTE: there is no way to explicitly specify the LZO version to OpenVPN,
 # if LZO2 and LZO1 are installed, OpenVPN will pick LZO2.
 # So depend on LZO1 only if it's already there and LZO2 isn't.
