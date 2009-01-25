@@ -17,6 +17,8 @@ COMMENT=	RSS Feeds support for evolution mail
 BUILD_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 
+BROKEN=		does not compile
+
 USE_GECKO=	firefox
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
