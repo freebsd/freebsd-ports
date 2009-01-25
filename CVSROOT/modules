@@ -2102,6 +2102,7 @@ delegate                        ports/net/delegate
 deleted                         ports/sysutils/deleted
 deltup                          ports/sysutils/deltup
 deluge                          ports/net-p2p/deluge
+deluge05                        ports/net-p2p/deluge05
 demeter                         ports/graphics/demeter
 demime                          ports/mail/demime
 demoniac                        ports/misc/demoniac
@@ -3823,7 +3824,6 @@ gcalcli                         ports/deskutils/gcalcli
 gcalctool                       ports/math/gcalctool
 gcb                             ports/x11/gcb
 gcc-ooo                         ports/lang/gcc-ooo
-gcc28                           ports/lang/gcc28
 gcc295                          ports/lang/gcc295
 gcc33                           ports/lang/gcc33
 gcc34                           ports/lang/gcc34
@@ -5074,6 +5074,7 @@ hs-binary-ghc                   ports/devel/hs-binary-ghc
 hs-bytestring-csv               ports/textproc/hs-bytestring-csv
 hs-c2hs                         ports/devel/hs-c2hs
 hs-cpphs                        ports/devel/hs-cpphs
+hs-digest-ghc                   ports/security/hs-digest-ghc
 hs-dlist                        ports/devel/hs-dlist
 hs-drift                        ports/devel/hs-drift
 hs-frantk                       ports/x11-toolkits/hs-frantk
@@ -5095,6 +5096,7 @@ hs-hscolour-docs                ports/print/hs-hscolour-docs
 hs-idoc                         ports/devel/hs-idoc
 hs-opengl-ghc                   ports/x11-toolkits/hs-opengl-ghc
 hs-pcre-light-ghc               ports/devel/hs-pcre-light-ghc
+hs-polyparse-ghc                ports/textproc/hs-polyparse-ghc
 hs-stream                       ports/devel/hs-Stream
 hs-stringsearch                 ports/textproc/hs-stringsearch
 hs-utf8-string-ghc              ports/devel/hs-utf8-string-ghc
@@ -21306,7 +21308,9 @@ trac-iniadmin                   ports/www/trac-iniadmin
 trac-ldap                       ports/www/trac-ldap
 trac-macropost                  ports/www/trac-macropost
 trac-mastertickets              ports/www/trac-mastertickets
+trac-mercurial                  ports/www/trac-mercurial
 trac-nav                        ports/www/trac-nav
+trac-navadd                     ports/www/trac-navadd
 trac-pagelist                   ports/www/trac-pagelist
 trac-pagetopdf                  ports/www/trac-pagetopdf
 trac-pendingticket              ports/www/trac-pendingticket
