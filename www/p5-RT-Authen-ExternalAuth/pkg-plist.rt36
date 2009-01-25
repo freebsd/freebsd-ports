@@ -1,0 +1,17 @@
+%%RTHOME%%/local/etc/Authen-ExternalAuth/RT_SiteConfig.pm
+%%RTHOME%%/local/lib/RT/Authen/ExternalAuth.pm
+%%RTHOME%%/local/lib/RT/User_Vendor.pm
+%%RTHOME%%/local/man/auto/RT/Authen/ExternalAuth/.packlist
+%%RTHOME%%/share/html/Callbacks/ExternalAuth/autohandler/Auth
+@dirrm %%RTHOME%%/share/html/Callbacks/ExternalAuth/autohandler
+@dirrm %%RTHOME%%/share/html/Callbacks/ExternalAuth
+@dirrmtry %%RTHOME%%/share/html/Callbacks
+@dirrmtry %%RTHOME%%/local/man/man3
+@dirrm %%RTHOME%%/local/man/auto/RT/Authen/ExternalAuth
+@dirrmtry %%RTHOME%%/local/man/auto/RT/Authen
+@dirrmtry %%RTHOME%%/local/man/auto/RT
+@dirrmtry %%RTHOME%%/local/man/auto
+@dirrmtry %%RTHOME%%/local/man
+@dirrm %%RTHOME%%/local/lib/RT/Authen
+@dirrmtry %%RTHOME%%/local/lib/RT
+@dirrm %%RTHOME%%/local/etc/Authen-ExternalAuth

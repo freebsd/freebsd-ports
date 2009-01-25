@@ -1,0 +1,11 @@
+RT::Authen::ExternalAuth  RT Authentication using External Sources
+
+A complete package for adding external authentication mechanisms to
+RT. It currently supports LDAP via Net::LDAP and External Database
+authentication for any database with an installed DBI driver.
+
+It also allows for authenticating cookie information against an
+external database through the use of the RT-Authen-CookieAuth
+extension.
+
+WWW: http://search.cpan.org/perldoc?RT::Authen::ExternalAuth
