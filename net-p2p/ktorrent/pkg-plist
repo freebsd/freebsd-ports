@@ -134,15 +134,16 @@ lib/kde4/ktsearchplugin.so
 lib/kde4/ktstatsplugin.so
 lib/kde4/ktupnpplugin.so
 lib/kde4/ktwebinterfaceplugin.so
+lib/kde4/ktzeroconfplugin.so
 lib/libbtcore.so
 lib/libbtcore.so.7
-lib/libbtcore.so.7.4.0
+lib/libbtcore.so.7.5.0
 lib/libktcore.so
 lib/libktcore.so.6
-lib/libktcore.so.6.4.0
+lib/libktcore.so.6.5.0
 lib/libktupnp.so
 lib/libktupnp.so.3
-lib/libktupnp.so.3.2.0
+lib/libktupnp.so.3.3.0
 share/applications/kde4/ktorrent.desktop
 share/apps/cmake/modules/FindBTCore.cmake
 share/apps/ktorrent/FLAGS_LICENCE
@@ -523,6 +524,7 @@ share/kde4/services/ktsearchplugin.desktop
 share/kde4/services/ktstatsplugin.desktop
 share/kde4/services/ktupnpplugin.desktop
 share/kde4/services/ktwebinterfaceplugin.desktop
+share/kde4/services/ktzeroconfplugin.desktop
 share/kde4/servicetypes/ktorrentplugin.desktop
 share/locale/ca/LC_MESSAGES/ktorrent.mo
 share/locale/cs/LC_MESSAGES/ktorrent.mo
