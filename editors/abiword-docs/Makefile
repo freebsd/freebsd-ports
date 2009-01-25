@@ -19,6 +19,8 @@ COMMENT=	AbiWord help files
 BUILD_DEPENDS=	abiword:${PORTSDIR}/editors/abiword
 RUN_DEPENDS=	abiword:${PORTSDIR}/editors/abiword
 
+BROKEN=		segfaults during build
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 # Don't give X warnings if DISPLAY is set
