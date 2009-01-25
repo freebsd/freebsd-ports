@@ -7,7 +7,7 @@
 
 PORTNAME=	compiz
 PORTVERSION=	0.7.8
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	rnoland@FreeBSD.org
@@ -75,10 +75,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|libpng|libpng12|' ${WRKSRC}/configure
 
 .include <bsd.port.pre.mk>
-
-.if !exists(${LOCALBASE}/libdata/pkgconfig/x11-xcb.pc)
-EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-no-xcb
-.endif
 
 .if !defined(WITHOUT_RSVG)
 CONFIGURE_ARGS+=	--enable-librsvg
