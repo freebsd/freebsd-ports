@@ -21,6 +21,8 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 		${LOCALBASE}/eclipse/features/org.eclipse.emf_2.3.2.v200802051830/feature.xml:${PORTSDIR}/java/eclipse-emf \
 		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.3.2.v20080129/feature.xml:${PORTSDIR}/java/eclipse-gef
 
+BROKEN=		deletes files installed by dependency on deinstall
+
 CONFLICTS=	eclipse-lomboz-3.*
 
 NO_BUILD=	yes
