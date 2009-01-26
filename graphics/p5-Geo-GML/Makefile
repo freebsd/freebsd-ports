@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Geo-GML
-PORTVERSION=	0.11
+PORTVERSION=	0.13
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-XML-Compile>=0.96:${PORTSDIR}/textproc/p5-XML-Compile \
 		p5-XML-Compile-Cache>=0.14:${PORTSDIR}/textproc/p5-XML-Compile-Cache
 
-MAN3=		Geo::GML.3 Geo::GML::Util.3
+MAN3=		Geo::GML.3 Geo::GML::Util.3 Geo::GML::GeoPoint.3
 
 PERL_CONFIGURE=	yes
 
