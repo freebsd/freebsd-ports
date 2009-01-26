@@ -136,9 +136,6 @@ MAN3+=	GDBM_File.3
 .endif
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}/perl
 
-test:
-	@(cd ${WRKSRC}; make test)
-
 BSDPAN_DEST=	${PREFIX}/lib/perl5/${PERL_VER}/BSDPAN
 BSDPAN_FILES=	BSDPAN.pm BSDPAN/Override.pm Config.pm \
 		ExtUtils/MM_Unix.pm \
@@ -191,6 +188,11 @@ post-install:
 .if defined(WITH_USE_PERL)
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
+
+test: build
+	@(cd ${WRKSRC}; make test)
+
+regression-test: test
 
 rebuild-xs:
 	${LOCALBASE}/sbin/portupgrade -f `(${FIND} ${PKG_DBDIR}/p5*/+CONTENTS | \
