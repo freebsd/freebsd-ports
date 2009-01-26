@@ -1,6 +1,8 @@
 bin/fvm-config
+include/fvm_block_to_part.h
 include/fvm_config.h
 include/fvm_config_priv.h
+include/fvm_coupling.h
 include/fvm_defs.h
 include/fvm_file.h
 include/fvm_group.h
@@ -17,6 +19,7 @@ include/fvm_nodal_project.h
 include/fvm_nodal_triangulate.h
 include/fvm_order.h
 include/fvm_parall.h
+include/fvm_part_to_block.h
 include/fvm_periodicity.h
 include/fvm_selector.h
 include/fvm_triangulate.h
@@ -25,3 +28,7 @@ lib/libfvm.a
 lib/libfvm.la
 lib/libfvm.so
 lib/libfvm.so.0
+lib/libfvm_coupl.a
+lib/libfvm_coupl.la
+lib/libfvm_coupl.so
+lib/libfvm_coupl.so.0
