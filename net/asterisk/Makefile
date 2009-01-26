@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.4.22.1
-PORTREVISION=	1
+PORTVERSION=	1.4.22.2
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.digium.com/pub/asterisk/ \
 		http://downloads.digium.com/pub/asterisk/old-releases/ \
