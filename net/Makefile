@@ -463,6 +463,7 @@
     SUBDIR += p5-Gopher-Server
     SUBDIR += p5-IO-INET6
     SUBDIR += p5-IO-Interface
+    SUBDIR += p5-IO-MultiPipe
     SUBDIR += p5-IO-Socket-Multicast
     SUBDIR += p5-IO-Socket-Multicast6
     SUBDIR += p5-IP-Country

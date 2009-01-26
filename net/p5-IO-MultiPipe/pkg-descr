@@ -1,0 +1,20 @@
+Normally if a part of a pipe fails, depending on the location, it won't
+be detected. This breaks down a command involving pipes and runs each
+command seperately.
+
+It uses open3 to run each chunk of the pipe.
+
+    use IO::MultiPipe;
+    
+    my $pipes = IO::MultiPipe->new();
+	    
+    #This sets the pipe that will be run.
+    $pipes->set('sed s/-// | sed s/123/abc/ | sed s/ABC/abc/');
+    if ($pipes->{error}){
+        print "Error!\n";
+    }
+
+    #'123-ABCxyz' through the command set above.
+    my $returned=$pipes->run('123-ABCxyz');
+
+WWW: http://search.cpan.org/~vvelox/IO-MultiPipe/
