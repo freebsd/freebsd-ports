@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		calcurse
-PORTVERSION=		2.4
+PORTVERSION=		2.5
 CATEGORIES=		deskutils
 MASTER_SITES=		ftp://ftp2.culot.org/culot/
 
