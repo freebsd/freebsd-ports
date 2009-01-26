@@ -1126,6 +1126,7 @@
     SUBDIR += pear-HTTP_FloodControl
     SUBDIR += pear-HTTP_Header
     SUBDIR += pear-HTTP_Request
+    SUBDIR += pear-HTTP_Request2
     SUBDIR += pear-HTTP_Server
     SUBDIR += pear-HTTP_Session2
     SUBDIR += pear-HTTP_Upload
