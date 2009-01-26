@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	cakephp
-PORTVERSION=	1.2.0.7692
+PORTVERSION=	1.2.1.8004
 CATEGORIES=	www
-MASTER_SITES=	http://cakeforge.org/frs/download.php/672/ \
+MASTER_SITES=	http://cakeforge.org/frs/download.php/697/ \
 		LOCAL/glarkin
 PKGNAMESUFFIX=	-devel
-DISTNAME=	cake_${PORTVERSION}-rc3
+DISTNAME=	cake_${PORTVERSION}
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
@@ -21,6 +21,10 @@ DISTFILE_SUFFIX=/donation=complete
 FETCH_BEFORE_ARGS=	-o -
 TARGET_DISTFILE=${DISTNAME}${EXTRACT_SUFX}
 
+WRKSRC=		${WRKDIR}/cake_${PORTVERSION}
+
+PORTDOCS=	README
+
 USE_APACHE=	2.0+
 SLAVE_PORT_MODULES=	rewrite
 
@@ -28,10 +32,17 @@ CONFLICTS=	cakephp-[0-9]*
 
 NO_BUILD=	yes
 USE_GETTEXT=	yes
-USE_PHP=	pcre session
+USE_PHP=	session
 WANT_PHP_WEB=	yes
 
-CAKE_CONF_FILES=app/config/database.php
+CAKE_CONF_FILES=	\
+		app/config/acl.ini.php \
+		app/config/bootstrap.php \
+		app/config/core.php \
+		app/config/database.php \
+		app/config/inflections.php \
+		app/config/routes.php
+CAKE_CONSOLE=	cake/console/cake
 
 SUB_FILES=	pkg-message
 
@@ -105,6 +116,9 @@ USE_PHP+=	apc
 USE_PHP+=	memcache
 .endif
 
+# Include bash for Cake console script
+RUN_DEPENDS+=	bash>=0:${PORTSDIR}/shells/bash
+
 do-fetch:
 	@${INSTALL} -d ${DISTDIR}
 .if !exists(${DISTDIR}/${TARGET_DISTFILE})
@@ -135,15 +149,25 @@ confighelp:
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		".htaccess app cake index.php vendors" ${WWWDIR}
+
 .if !defined(WITH_PROD)
 # If installed in development mode, get rid of .htaccess files,
 # as noted by:
 # http://book.cakephp.org/view/42/The-Configuration-Class#CakePHP-Core-Configuration-Variables-44
-	@${FIND} ${WWWDIR} -name .htaccess -exec ${RM} {} \;
-	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR:S|^${PREFIX}/|%D/|} -name .htaccess -exec ${RM} {} \;' >> ${TMPPLIST}
+	@${FIND} ${WWWDIR} -type f -name .htaccess -exec ${RM} {} \;
+	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR:S|^${PREFIX}/|%D/|} -type f -name .htaccess -exec ${RM} {} \;' >> ${TMPPLIST}
 .endif
+
+# Get rid of the empty placeholder files
+	@${FIND} ${WWWDIR} -type f -name empty -size 0 -exec ${RM} {} \;
+	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR:S|^${PREFIX}/|%D/|} -type f -name empty -size 0 -exec ${RM} {} \;' >> ${TMPPLIST}
+
 	@for i in ${CAKE_CONF_FILES}; do \
-		${INSTALL_DATA} ${WRKSRC}/$$i.default ${WWWDIR}/$$i; \
+		if [ -f ${WRKSRC}/$$i.default -a ! -f ${WRKSRC}/$$i ]; then \
+			${INSTALL_DATA} ${WRKSRC}/$$i.default ${WWWDIR}/$$i; \
+		elif [ -f ${WRKSRC}/$$i -a ! -f ${WRKSRC}/$$i.default ]; then \
+			${INSTALL_DATA} ${WRKSRC}/$$i ${WWWDIR}/$$i.default; \
+		fi \
 	done
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
@@ -154,6 +178,12 @@ do-install:
 	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
 		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
+
+# Fix the bash shell path and the permissions of the Cake console script
+	@${REINPLACE_CMD} -e "s|^#!/bin/bash|#!${LOCALBASE}/bin/bash|" ${WWWDIR}/${CAKE_CONSOLE}
+	@${ECHO_CMD} '@exec ${REINPLACE_CMD} -e "s|^#!/bin/bash|#!${LOCALBASE}/bin/bash|" ${WWWDIR}/${CAKE_CONSOLE}' >> ${TMPPLIST}
+	@${CHMOD} 755 ${WWWDIR}/${CAKE_CONSOLE}
+	@${ECHO_CMD} '@exec ${CHMOD} 755 ${WWWDIR}/${CAKE_CONSOLE}' >> ${TMPPLIST}
 
 post-install:
 	@if [ -d "${CONFDIR}" ]; then \
@@ -167,8 +197,8 @@ post-install:
 	  ${FALSE} ; \
 	fi
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/*.txt ${DOCSDIR}
+	@${INSTALL} -d ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 .if ${CGI_EXT} == "-cgi"
