@@ -13,11 +13,15 @@ bin/tchtest
 bin/tcucodec
 bin/tcumttest
 bin/tcutest
+bin/tctmgr
+bin/tctmttest
+bin/tcttest
 include/tcadb.h
 include/tcbdb.h
 include/tcfdb.h
 include/tchdb.h
 include/tcutil.h
+include/tctdb.h
 lib/libtokyocabinet.a
 lib/libtokyocabinet.so
 lib/libtokyocabinet.so.%%SHLIB_VER_MAJ%%
