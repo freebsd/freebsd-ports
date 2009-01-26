@@ -202,6 +202,13 @@ post-install:
 # Setting LC_ALL=C is a kludge; maybe curl/libcurl shouldn't actually use
 # the user's locale when dates are sent to the server.
 test:	build
+.if defined(WITHOUT_PROXY)
+	@${ECHO_MSG} "******************************************"
+	@${ECHO_MSG} "* You have disabled curl proxy support.  *"
+	@${ECHO_MSG} "* Some tests SHALL FAIL!                 *"
+	@${ECHO_MSG} "* This is being addressed.               *"
+	@${ECHO_MSG} "******************************************"
+.endif
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} LC_ALL=C ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
 
 .include <bsd.port.post.mk>
