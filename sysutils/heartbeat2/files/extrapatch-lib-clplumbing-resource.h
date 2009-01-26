@@ -34,7 +34,7 @@
 + * SUCH DAMAGE.
 + *
 + *	@(#)resource.h	8.4 (Berkeley) 1/9/95
-+ * $FreeBSD: /tmp/pcvs/ports/sysutils/heartbeat2/files/Attic/extrapatch-lib-clplumbing-resource.h,v 1.1 2006-04-18 21:53:58 ehaupt Exp $
++ * $FreeBSD: /tmp/pcvs/ports/sysutils/heartbeat2/files/Attic/extrapatch-lib-clplumbing-resource.h,v 1.2 2009-01-26 06:42:52 pgollucci Exp $
 + */
 +
 +#ifndef _SYS_RESOURCE_H_
