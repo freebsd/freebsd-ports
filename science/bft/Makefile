@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bft
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.8
 CATEGORIES=	science parallel
 MASTER_SITES=	http://rd.edf.com/fichiers/fckeditor/File/EDF%20RD/Code_Saturne/Fichiers/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
