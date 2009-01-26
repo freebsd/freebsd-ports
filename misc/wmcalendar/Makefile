@@ -17,6 +17,8 @@ COMMENT=	A dockable calendar with interface to iCalendar based calendars
 
 LIB_DEPENDS=	ical.42:${PORTSDIR}/devel/libical
 
+BROKEN=		does not compile
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
 USE_XORG=	xpm
