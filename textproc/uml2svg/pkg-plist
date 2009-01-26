@@ -105,3 +105,10 @@ share/xsl/uml2svg/xsl/UseCaseDiagrams/UseCaseDiagram.xsl
 @dirrm share/xsl/uml2svg/xsl
 @dirrm share/xsl/uml2svg
 @dirrmtry share/xsl
+%%PORTDOCS%%%%DOCSDIR%%/images/screenshot.png
+%%PORTDOCS%%%%DOCSDIR%%/images/uml_as_a_central_notation.png
+%%PORTDOCS%%%%DOCSDIR%%/skin.css
+%%PORTDOCS%%%%DOCSDIR%%/uml2svg-0.18-manual.html
+%%PORTDOCS%%%%DOCSDIR%%/uml2svg-0.18-manual.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
