@@ -31,7 +31,9 @@ libexec/postfix/error
 libexec/postfix/flush
 libexec/postfix/lmtp
 libexec/postfix/local
+libexec/postfix/main.cf
 libexec/postfix/master
+libexec/postfix/master.cf
 libexec/postfix/nqmgr
 libexec/postfix/oqmgr
 libexec/postfix/pickup
@@ -39,6 +41,7 @@ libexec/postfix/pipe
 libexec/postfix/post-install
 libexec/postfix/postfix-files
 libexec/postfix/postfix-script
+libexec/postfix/postfix-wrapper
 libexec/postfix/proxymap
 libexec/postfix/qmgr
 libexec/postfix/qmqpd
@@ -202,6 +205,7 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/postfix-logo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/postfix-manuals.html
 %%PORTDOCS%%%%DOCSDIR%%/postfix-power.png
+%%PORTDOCS%%%%DOCSDIR%%/postfix-wrapper.5.html
 %%PORTDOCS%%%%DOCSDIR%%/postfix.1.html
 %%PORTDOCS%%%%DOCSDIR%%/postkick.1.html
 %%PORTDOCS%%%%DOCSDIR%%/postlock.1.html
