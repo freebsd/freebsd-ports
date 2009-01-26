@@ -641,6 +641,7 @@
     SUBDIR += p5-XML-RPC
     SUBDIR += p5-XPC
     SUBDIR += p5-ZConf
+    SUBDIR += p5-ZConf-Mail
     SUBDIR += p5-perl-ldap
     SUBDIR += panoptis
     SUBDIR += paris-traceroute
