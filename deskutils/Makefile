@@ -190,6 +190,7 @@
     SUBDIR += org-mode.el6
     SUBDIR += p5-Data-ICal
     SUBDIR += p5-Goo
+    SUBDIR += p5-ZConf-Runner
     SUBDIR += pal
     SUBDIR += phpgroupware
     SUBDIR += phpicalendar
