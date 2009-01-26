@@ -1417,6 +1417,7 @@
     SUBDIR += p5-IO-KQueue
     SUBDIR += p5-IO-Lambda
     SUBDIR += p5-IO-LockedFile
+    SUBDIR += p5-IO-MultiPipe
     SUBDIR += p5-IO-Multiplex
     SUBDIR += p5-IO-NestedCapture
     SUBDIR += p5-IO-Null
