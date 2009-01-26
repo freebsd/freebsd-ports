@@ -86,7 +86,15 @@ $FreeBSD$
  		-fomit-frame-pointer -DAST_MODULE=\"chan_oh323.so\"
  
  DRVDEPS=$(shell ls *.h)
-@@ -151,19 +151,27 @@
+@@ -116,6 +116,7 @@
+ 	if [ ! -d $(DESTDIR)$(ASTERISKETCDIR) ]; then \
+ 		$(INSTALL) -d $(DESTDIR)$(ASTERISKETCDIR); \
+ 	fi
++	$(INSTALL) -m 0644 oh323.conf.sample $(DESTDIR)$(ASTERISKETCDIR)/
+ 	if [ ! -f $(DESTDIR)$(ASTERISKETCDIR)/oh323.conf ]; then \
+ 		$(INSTALL) -m 0644 oh323.conf.sample $(DESTDIR)$(ASTERISKETCDIR)/oh323.conf; \
+ 	fi
+@@ -151,19 +152,27 @@
  	@if [ ! -f "$(LIBH323PATH)" ]; then \
  		echo "ERROR: No OPENH323 library found!"; exit 1; \
  	fi
