@@ -281,6 +281,7 @@
     SUBDIR += libebml
     SUBDIR += libextractor
     SUBDIR += libkmfl
+    SUBDIR += liblinebreak
     SUBDIR += liblingoteach
     SUBDIR += liblrdf
     SUBDIR += libmrss
