@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ecs
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.3.3
 CATEGORIES=	science
 MASTER_SITES=	http://rd.edf.com/fichiers/fckeditor/File/EDF%20RD/Code_Saturne/Fichiers/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -30,6 +29,7 @@ CONFIGURE_ARGS=	--with-bft=${LOCALBASE}		\
 		--with-med=${LOCALBASE}		\
 		--with-metis=${LOCALBASE}
 CONFIGURE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
+USE_GMAKE=	yes
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
@@ -44,9 +44,10 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-NOPORTDOCS=	yes	# PDF not produced ATM
+#NOPORTDOCS=	yes	# PDF not produced ATM
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	pdflatex:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS+=	pdflatex:${PORTSDIR}/print/teTeX-base	\
+		fig2dev:${PORTSDIR}/print/transfig
 PORTDOCS=	mi_ecs.pdf mu_ecs.pdf
 .endif
 
