@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	glut
-PORTVERSION=	2.1.1.1
-PORTREVISION=	3
+PORTVERSION=	2.1.1.2
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/GLUT/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -14,7 +13,7 @@ PKGNAMESUFFIX=	-ghc
 DISTNAME=	GLUT-${PORTVERSION}
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A Compiler for the functional language Haskell
+COMMENT=	A Haskell binding for the OpenGL Utility Toolkit
 
 USE_GL=		glut
 
@@ -23,6 +22,8 @@ PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} \
 		PORTVERSION=${PORTVERSION} \
 		PORTNAME=${PORTNAME} \
 		SUBDIR=lib/ghc-${GHC_VERSION}/cabal
+DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
+PORTDOCS=	LICENSE html
 
 .include <bsd.port.pre.mk>
 
@@ -36,6 +37,13 @@ CABALDIR=	${PREFIX}/lib/ghc-${GHC_VERSION}/cabal
 CABALCMD=	${LOCALBASE}/bin/runghc Setup.hs
 SUBDIR=		${PORTNAME}${PKGNAMESUFFIX}
 
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
+PLIST_SUB+=	RMLIC="@comment "
+.else
+PLIST_SUB+=	RMLIC=""
+.endif
+
 do-configure:
 	cd ${WRKSRC} && ${CABALCMD} configure --ghc --prefix=${PREFIX} --libdir=${CABALDIR} \
 	 --libsubdir='' --datasubdir=''
@@ -43,6 +51,9 @@ do-configure:
 do-build:
 	cd ${WRKSRC} && ${CABALCMD} build \
 	 && ${CABALCMD} --gen-script register
+.if !defined(NOPORTDOCS)
+	cd ${WRKSRC} && ${CABALCMD} haddock
+.endif
 
 do-install:
 	cd ${WRKSRC} && ${CABALCMD} install \
