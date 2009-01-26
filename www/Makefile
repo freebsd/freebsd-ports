@@ -1099,6 +1099,7 @@
     SUBDIR += p5-WebService-BuzzurlAPI
     SUBDIR += p5-WebService-CIA
     SUBDIR += p5-WebService-ISBNDB
+    SUBDIR += p5-WebService-MusicBrainz
     SUBDIR += p5-WebService-NoPaste
     SUBDIR += p5-WebService-Rakuten
     SUBDIR += p5-WebService-Simple
