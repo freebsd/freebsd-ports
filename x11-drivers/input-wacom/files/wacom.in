@@ -6,13 +6,18 @@
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# wacom_enable (bool):   Set to NO by default.
-#               Set it to YES to enable wacom.
+# wacom_enable (bool):		Set to NO by default.
+#				Set it to YES to enable wacom.
+# wacom_types (list):		Set to "stylus eraser cursor pad touch" by
+#				default. A list of wacom profiles to set up.
+# wacom_porttype (enum):	Set to "%%PORTTYPE%%" by default.
+#				Set this to usb or serial.
 #
 # This script additionally offers setup and cleanup to configure Xorg
 # for use of the driver or remove the configuration settings.
 # The input devices are only added to the first ServerLayout section
 # and also only removed once.
+# In USB mode the file /boot/loader.conf is also adjusted.
 #
 
 . %%RC_SUBR%%
@@ -286,6 +291,14 @@ do_setup() {
 		section_insert_line "$config" "ServerLayout" "	InputDevice	\"$ident\"	\"SendCoreEvents\""
 	}
 
+	if [ "$(eval "echo \${${name}_porttype}")" = "usb" ]; then
+		if ! /usr/bin/grep -qx 'uwacom_load="YES"' \
+			/boot/loader.conf; then
+			echo "Setting up /boot/loader.conf"
+			/bin/cp /boot/loader.conf /boot/loader.conf.orig
+			echo 'uwacom_load="YES"' >> /boot/loader.conf
+		fi
+	fi
 }
 
 #
@@ -381,11 +394,21 @@ do_cleanup() {
 		/bin/rm "$config.$$"
 		done
 	}
+
+	if [ "$(eval "echo \${${name}_porttype}")" = "usb" ]; then
+		if /usr/bin/grep -qx 'uwacom_load="YES"' \
+			/boot/loader.conf; then
+			echo "Cleaning up /boot/loader.conf"
+			/bin/cp /boot/loader.conf /boot/loader.conf.orig
+			/usr/bin/grep -xv 'uwacom_load="YES"' \
+				/boot/loader.conf.orig > /boot/loader.conf
+		fi
+	fi
+
 }
 
 do_start() {
 	if /sbin/kldstat | /usr/bin/grep -q uwacom; then
-		echo "${name} is already running."
 		return 0
 	fi
 	echo "Starting ${name}."
