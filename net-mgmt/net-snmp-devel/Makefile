@@ -93,7 +93,11 @@ NET_SNMP_LOGFILE?=	/var/log/snmpd.log
 NET_SNMP_PERSISTENTDIR?=/var/net-snmp
 NET_SNMP_MIB_MODULES?=	${NET_SNMP_MIB_MODULE_LIST}
 
-NET_SNMP_MIB_MODULE_LIST=host disman/event-mib smux mibII/mta_sendmail mibII/tcpTable ucd-snmp/diskio sctp-mib
+NET_SNMP_MIB_MODULE_LIST=host disman/event-mib smux mibII/mta_sendmail mibII/tcpTable ucd-snmp/diskio
+
+.if ${OSVERSION} >= 700028
+NET_SNMP_MIB_MODULE_LIST+=	sctp-mib
+.endif
 
 .if defined(WITH_MFD_REWRITES)
 CONFIGURE_ARGS+=--enable-mfd-rewrites
