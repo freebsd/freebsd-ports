@@ -1,34 +1,34 @@
---- bin/cs_profile.orig	2008-04-23 11:32:09.000000000 +0200
-+++ bin/cs_profile	2008-04-29 23:35:23.000000000 +0200
-@@ -37,12 +37,17 @@
- 
- # Versions Code_saturne
- 
--  PATHCS=/home/saturne
-+  PATHCS=%%LOCALBASE%%/Saturne
-+
-+  CS_HOME=${PATHCS}/Noyau/ncs
-+  ECS_HOME=${PATHCS}/Enveloppe/ecs
-+  CSGUI_HOME=${PATHCS}/Interface/ics
-+  SYRCS_HOME=${PATHCS}/opt/syr_cs
+--- bin/cs_profile.orig	2008-11-13 19:49:48.000000000 +0100
++++ bin/cs_profile	2009-01-25 10:23:09.000000000 +0100
+@@ -62,12 +62,16 @@
+   elif [ "$NOM_ARCH" = "Blue_Gene_P" ] ; then 
+     CS_ROOT=/gpfs/home/saturne
+   else
+-    CS_ROOT=/home/saturne
++    CS_ROOT=%%LOCALBASE%%/Saturne
+   fi
+-  CS_HOME=${CS_ROOT}/Noyau/ncs-1.3.3
+-  ECS_HOME=${CS_ROOT}/Enveloppe/ecs-1.3.3
+-  CSGUI_HOME=${CS_ROOT}/Interface/ics-1.3.3
+-  SYRCS_HOME=${CS_ROOT}/opt/syr_cs-2.1.1
++  CS_HOME=${CS_ROOT}/Noyau/ncs
++  ECS_HOME=${CS_ROOT}/Enveloppe/ecs
++  CSGUI_HOME=${CS_ROOT}/Interface/ics
++  SYRCS_HOME=${CS_ROOT}/opt/syr_cs
 +# Variables specifiques a passer au Makefile FreeBSD par lance
 +  LOCALBASE=%%LOCALBASE%% ; export LOCALBASE
 +  FC=%%FC%% ; export FC
 +  PTHREAD_LIBS=%%PTHREAD_LIBS%% ; export PTHREAD_LIBS
- 
--  CS_HOME=${PATHCS}/Noyau/ncs-1.3.2
--  ECS_HOME=${PATHCS}/Enveloppe/ecs-1.3.2
--  CSGUI_HOME=${PATHCS}/Interface/ics-1.3.2
--  SYRCS_HOME=${PATHCS}/opt/syr_cs-2.0.2
  #
- # Path 
-   PATH=$CS_HOME/bin:$ECS_HOME/bin:$PATH
-@@ -52,5 +57,7 @@
-   export PATH
- 
- # Chemins et librairies pour MPI
--  CS_MPI_PATH=/home/saturne/opt/openmpi-1.2.6/arch/Linux/bin
-+  MPI_HOME=%%MPI_HOME%% ; export MPI_HOME
-+  MPI_LIBS=%%MPI_LIBS%% ; export MPI_LIBS
-+  CS_MPI_PATH=${MPI_HOME}/bin
+   if [ "$NOM_ARCH" = "Linux" -a -d /home/prevalcs/HOMARD ] ; then
+     CSHOMARD_HOME=/home/prevalcs/HOMARD
+@@ -94,6 +98,8 @@
+   elif [ "$NOM_ARCH" = "Linux_Ch" ] ; then
+     CS_MPI_PATH=/usr/local/mpichgm-1.2.6.14b-64b/bin
+   else
+-    CS_MPI_PATH=
++    MPI_HOME=%%MPI_HOME%% ; export MPI_HOME
++    MPI_LIBS=%%MPI_LIBS%% ; export MPI_LIBS
++    CS_MPI_PATH=${MPI_HOME}/bin
+   fi
    export CS_MPI_PATH

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ncs
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.3.3
 CATEGORIES=	science parallel
 MASTER_SITES=	http://rd.edf.com/fichiers/fckeditor/File/EDF%20RD/Code_Saturne/Fichiers/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -20,6 +19,7 @@ LIB_DEPENDS=	fvm.0:${PORTSDIR}/science/fvm
 RUN_DEPENDS=	xmgrace:${PORTSDIR}/math/grace	\
 		ecs:${PORTSDIR}/science/ecs
 
+USE_GMAKE=	yes
 USE_GNOME=	libxml2
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -28,14 +28,9 @@ MAKE_ENV=	NOM_ARCH=${OPSYS} CS_HOME=${WRKSRC} CS_MPI_PATH=${MPI_HOME}/bin	\
 		PTHREAD_LIBS=${PTHREAD_LIBS} TERM=${TERM}			\
 		MPI_HOME=${MPI_HOME} MPI_LIBS="${MPI_LIBS}"
 
-WANT_FORTRAN=	yes	#dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-RUN_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
-FORTRANLIBDIR=	`${DIRNAME} \\`gfortran42 -print-libgcc-file-name\\``
-FORTRANLIBDIR2=	`${DIRNAME} \\`gfortran42 -print-libgcc-file-name\\``/../../../
-MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+USE_FORTRAN=	yes	#dummy but future use
+FORTRANLIBDIR=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``
+FORTRANLIBDIR2=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``/../../../
 
 .if defined(PACKAGE_BUILDING)
 TERM=		vt100	# Force for pointyhat to override su
@@ -75,8 +70,8 @@ MPI_LIBS=	-lmpich
 .endif
 
 .if !defined(NOPORTDOCS)
-# No PDF at the moment
-#BUILD_DEPENDS+=	pdftex:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS+=	pdftex:${PORTSDIR}/print/teTeX-base	\
+		fig2dev:${PORTSDIR}/print/transfig
 DOCS=		AUTHORS COMPATIBILITY Changelog TODO
 .endif
 
@@ -112,16 +107,12 @@ pre-patch:
 	${CP} -p ${WRKSRC}/bin/macros_Linux.mk ${WRKSRC}/bin/macros_FreeBSD.mk
 
 do-configure:
-	${REINPLACE_CMD} -e 's|%%PATHCS%%|${PATHCS}|'		\
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|'		\
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|'	\
 		-e 's|%%FC%%|${FC}|'				\
 		-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|'	\
 		-e 's|%%MPI_HOME%%|${MPI_HOME}|'		\
 		-e 's|%%MPI_LIBS%%|${MPI_LIBS}|'		\
 		${BUILD_WRKSRC}/cs_profile
-	${REINPLACE_CMD}	\
-	-e 's|/home/saturne/opt/python/arch/$${NOM_ARCH}/bin/python|${PYTHON_CMD}|'	\
-		${BUILD_WRKSRC}/SaturneGUI
 .if defined(WITH_ATLAS)
 	${REINPLACE_CMD} -e 's|BLAS            =0|BLAS            =1|'			\
 		${BUILD_WRKSRC}/macros_FreeBSD.mk
@@ -131,6 +122,7 @@ do-configure:
 		-e 's|BLAS_INC        =|BLAS_INC        =-I${LOCALBASE}/include|'	\
 		${BUILD_WRKSRC}/macros_FreeBSD.mk
 .endif
+	${REINPLACE_CMD} -e 's|make|${GMAKE}|g' ${BUILD_WRKSRC}/lance_install
 
 do-build:
 	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./lance_install)
@@ -141,9 +133,9 @@ do-build:
 		${GREP} -B 10 '^Stop in ') || ${TRUE}
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG}
-	#@${ECHO_MSG} "===>  Building documentation."
+	@${ECHO_MSG} "===>  Building documentation."
 	@${ECHO_MSG}
-	#(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./lance_install DOC)
+	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./lance_install DOC)
 .endif
 
 do-install:
@@ -166,16 +158,15 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arch/${OPSYS}/bin/cs13.exe	\
 		${CS_HOME}/arch/${OPSYS}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	#${MKDIR} ${DOCSDIR} ${CS_HOME}/doc/THEORY/ ${CS_HOME}/doc/USER/	\
+	${MKDIR} ${DOCSDIR} ${CS_HOME}/doc/THEORY/ ${CS_HOME}/doc/USER/	\
 		${CS_HOME}/doc/TUTORIAL/
-	#${INSTALL_DATA} ${WRKSRC}/doc/THEORY/theory.pdf ${CS_HOME}/doc/THEORY/
-	#${INSTALL_DATA} ${WRKSRC}/doc/TUTORIAL/tutorial.pdf ${CS_HOME}/doc/TUTORIAL/
-	#${INSTALL_DATA} ${WRKSRC}/doc/USER/user.pdf ${CS_HOME}/doc/USER/
-	#${LN} -sf ${CS_HOME}/doc/THEORY/theory.pdf ${CS_HOME}/doc/TUTORIAL/tutorial.pdf	\
-	#	${CS_HOME}/doc/USER/user.pdf ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/THEORY/theory.pdf ${CS_HOME}/doc/THEORY/
+	${INSTALL_DATA} ${WRKSRC}/doc/TUTORIAL/tutorial.pdf ${CS_HOME}/doc/TUTORIAL/
+	${INSTALL_DATA} ${WRKSRC}/doc/USER/user.pdf ${CS_HOME}/doc/USER/
+	${LN} -sf ${CS_HOME}/doc/THEORY/theory.pdf ${CS_HOME}/doc/TUTORIAL/tutorial.pdf	\
+		${CS_HOME}/doc/USER/user.pdf ${DOCSDIR}/
 	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	#${LN} -sf ${LOCALBASE}/share/doc/ecs/ ${ECS_HOME}/doc
+	${LN} -sf ${LOCALBASE}/share/doc/ecs/ ${ECS_HOME}/doc
 .endif
 
 post-install:

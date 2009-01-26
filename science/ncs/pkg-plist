@@ -1,5 +1,5 @@
 %%ECS_HOME%%/bin/ecs
-@comment %%ECS_HOME%%/doc
+%%ECS_HOME%%/doc
 %%CS_HOME%%/arch/FreeBSD/bin/cs13.exe
 %%CS_HOME%%/arch/FreeBSD/lib/libsaturneBASE.a
 %%CS_HOME%%/arch/FreeBSD/lib/libsaturneCFBL.a
@@ -63,9 +63,9 @@
 %%CS_HOME%%/data/thch/dp_FCP
 %%CS_HOME%%/data/thch/dp_FUE
 %%CS_HOME%%/data/thch/dp_transfo
-@comment %%PORTDOCS%%%%CS_HOME%%/doc/THEORY/theory.pdf
-@comment %%PORTDOCS%%%%CS_HOME%%/doc/TUTORIAL/tutorial.pdf
-@comment %%PORTDOCS%%%%CS_HOME%%/doc/USER/user.pdf
+%%PORTDOCS%%%%CS_HOME%%/doc/THEORY/theory.pdf
+%%PORTDOCS%%%%CS_HOME%%/doc/TUTORIAL/tutorial.pdf
+%%PORTDOCS%%%%CS_HOME%%/doc/USER/user.pdf
 %%CS_HOME%%/include/base/albase.h
 %%CS_HOME%%/include/base/alstru.h
 %%CS_HOME%%/include/base/cs_ale.h
@@ -650,9 +650,9 @@ lib/libsaturneRAYT.a
 %%PORTDOCS%%%%DOCSDIR%%/COMPATIBILITY
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-@comment %%PORTDOCS%%%%DOCSDIR%%/theory.pdf
-@comment %%PORTDOCS%%%%DOCSDIR%%/tutorial.pdf
-@comment %%PORTDOCS%%%%DOCSDIR%%/user.pdf
+%%PORTDOCS%%%%DOCSDIR%%/theory.pdf
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.pdf
+%%PORTDOCS%%%%DOCSDIR%%/user.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%CS_HOME%%/users/rayt
 @dirrm %%CS_HOME%%/users/pprt
@@ -686,10 +686,10 @@ lib/libsaturneRAYT.a
 @dirrm %%CS_HOME%%/include/cfbl
 @dirrm %%CS_HOME%%/include/base
 @dirrm %%CS_HOME%%/include
-@comment %%PORTDOCS%%@dirrm %%CS_HOME%%/doc/USER
-@comment %%PORTDOCS%%@dirrm %%CS_HOME%%/doc/TUTORIAL
-@comment %%PORTDOCS%%@dirrm %%CS_HOME%%/doc/THEORY
-@comment %%PORTDOCS%%@dirrm %%CS_HOME%%/doc
+%%PORTDOCS%%@dirrm %%CS_HOME%%/doc/USER
+%%PORTDOCS%%@dirrm %%CS_HOME%%/doc/TUTORIAL
+%%PORTDOCS%%@dirrm %%CS_HOME%%/doc/THEORY
+%%PORTDOCS%%@dirrm %%CS_HOME%%/doc
 @dirrm %%CS_HOME%%/data/thch
 @dirrm %%CS_HOME%%/data/mati
 @dirrm %%CS_HOME%%/data
