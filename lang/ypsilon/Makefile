@@ -7,7 +7,7 @@
 
 PORTNAME=	ypsilon
 PORTVERSION=	0.9.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-0.9.6.update3
@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}-0.9.6.update3
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	Scheme implementation for real-time applications
 
-USE_GL=		glut
 USE_GMAKE=	yes
 MAKE_ARGS=	DATADIR="${DATADIR}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
