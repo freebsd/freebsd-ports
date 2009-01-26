@@ -1,0 +1,12 @@
+--- config.in.orig	Tue Jan  6 14:55:07 2009
++++ config.in	Sun Jan 25 19:59:19 2009
+@@ -3,6 +3,9 @@
+ /* Define if LDAP will be used. */
+ #undef AUTHLDAP
+ 
++/* Includes the micro version */
++#undef DBMAIL_VERSION
++
+ /* Define to 1 if you have the <ConnectionPool.h> header file. */
+ #undef HAVE_CONNECTIONPOOL_H
+ 

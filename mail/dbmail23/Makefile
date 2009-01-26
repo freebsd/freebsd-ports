@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	dbmail
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.3/
 
 MAINTAINER=	mark_sf@kikg.ifmo.ru
 COMMENT=	An SQL database-based mail system (POP3 and IMAP)
 
+LIB_DEPENDS+=	event-1.4:${PORTSDIR}/devel/libevent
 LIB_DEPENDS+=	gmime-2.0.4:${PORTSDIR}/mail/gmime2
 LIB_DEPENDS+=	mhash.2:${PORTSDIR}/security/mhash
+LIB_DEPENDS+=	zdb-2.3:${PORTSDIR}/databases/libzdb
 
 CONFLICTS=	dbmail-*-2.0.* dbmail-2.1.* dbmail-2.2.*
 
@@ -40,7 +42,7 @@ CONFIGURE_ARGS+=--with-pkglibdir=${LOCALBASE}/lib/dbmail \
 MAKE_ARGS+=	mandir=${MANPREFIX}/man
 
 MAIN_DOCS=	AUTHORS BUGS COPYING INSTALL NEWS README \
-		THANKS UPGRADING VERSION \
+		THANKS UPGRADING ChangeLog \
 		dbmail.schema
 ADDITIONAL_DOCS=README.aliases README.exim README.ldap \
 		README.postfix README.qmail README.sieve \

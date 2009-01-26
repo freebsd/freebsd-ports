@@ -14,22 +14,10 @@ lib/dbmail/libdbmail.a
 lib/dbmail/libdbmail.la
 lib/dbmail/libdbmail.so
 lib/dbmail/libdbmail.so.0
-%%MYSQL%%lib/dbmail/libmysql.a
-%%MYSQL%%lib/dbmail/libmysql.la
-%%MYSQL%%lib/dbmail/libmysql.so
-%%MYSQL%%lib/dbmail/libmysql.so.0
-%%PGSQL%%lib/dbmail/libpgsql.a
-%%PGSQL%%lib/dbmail/libpgsql.la
-%%PGSQL%%lib/dbmail/libpgsql.so
-%%PGSQL%%lib/dbmail/libpgsql.so.0
 %%SIEVE%%lib/dbmail/libsort_sieve.a
 %%SIEVE%%lib/dbmail/libsort_sieve.la
 %%SIEVE%%lib/dbmail/libsort_sieve.so
 %%SIEVE%%lib/dbmail/libsort_sieve.so.0
-%%SQLITE%%lib/dbmail/libsqlite.a
-%%SQLITE%%lib/dbmail/libsqlite.la
-%%SQLITE%%lib/dbmail/libsqlite.so
-%%SQLITE%%lib/dbmail/libsqlite.so.0
 @dirrm lib/dbmail
 sbin/dbmail-deliver
 sbin/dbmail-export
@@ -38,7 +26,6 @@ sbin/dbmail-lmtpd
 sbin/dbmail-pop3d
 %%SIEVE%%sbin/dbmail-sievecmd
 %%SIEVE%%sbin/dbmail-timsieved
-sbin/dbmail-top
 sbin/dbmail-users
 sbin/dbmail-util
 @exec mkdir -p %D/share/%%PORTNAME%%
@@ -46,6 +33,7 @@ sbin/dbmail-util
 %%MYSQL%%share/%%PORTNAME%%/mysql/2_1_7-2_2_0.mysql
 %%MYSQL%%share/%%PORTNAME%%/mysql/2_2_5-2_3_0.mysql
 %%MYSQL%%share/%%PORTNAME%%/mysql/2_3_0-2_3_2.mysql
+%%MYSQL%%share/%%PORTNAME%%/mysql/2_3_4-2_3_5.mysql
 %%MYSQL%%share/%%PORTNAME%%/mysql/create_tables.mysql
 %%MYSQL%%share/%%PORTNAME%%/mysql/fix_foreign_keys.mysql
 %%MYSQL%%share/%%PORTNAME%%/mysql/migrate_from_1.x_to_2.0_innodb.mysql
@@ -55,6 +43,7 @@ sbin/dbmail-util
 %%PGSQL%%@exec mkdir -p %D/share/PORTNAME/%%PORTNAME%%/postgresql
 %%PGSQL%%share/%%PORTNAME%%/postgresql/2_1_7-2_2_0.pgsql
 %%PGSQL%%share/%%PORTNAME%%/postgresql/2_2_5-2_3_0.pgsql
+%%PGSQL%%share/%%PORTNAME%%/postgresql/2_3_4-2_3_5.pgsql
 %%PGSQL%%share/%%PORTNAME%%/postgresql/create_tables.pgsql
 %%PGSQL%%share/%%PORTNAME%%/postgresql/migrate_from_1.x_to_2.0.pgsql
 %%PGSQL%%share/%%PORTNAME%%/postgresql/migrate_from_2.0_to_2.2.pgsql
@@ -62,6 +51,7 @@ sbin/dbmail-util
 %%SQLITE%%@exec mkdir -p %D/share/PORTNAME/%%PORTNAME%%/sqlite
 %%SQLITE%%share/%%PORTNAME%%/sqlite/2_1_7-2_2_0.sqlite
 %%SQLITE%%share/%%PORTNAME%%/sqlite/2_2_5-2_3_0.sqlite
+%%SQLITE%%share/%%PORTNAME%%/sqlite/2_3_4-2_3_5.sqlite
 %%SQLITE%%share/%%PORTNAME%%/sqlite/create_tables.sqlite
 %%SQLITE%%share/%%PORTNAME%%/sqlite/trigger.tmpl.sql
 %%SQLITE%%@dirrm share/%%PORTNAME%%/sqlite
