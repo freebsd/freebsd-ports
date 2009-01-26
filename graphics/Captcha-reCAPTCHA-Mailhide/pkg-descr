@@ -1,0 +1,16 @@
+Captcha::reCAPTCHA::Mailhide - A Perl implementation of
+the reCAPTCHA Mailhide API
+
+reCAPTCHA is a hybrid mechanical turk and captcha that allows visitors who
+complete the captcha to assist in the digitization of books.
+
+reCAPTCHA improves the process of digitizing books by sending words that
+cannot be read by computers to the Web in the form of CAPTCHAs for
+humans to decipher. More specifically, each word that cannot be read
+correctly by OCR is placed on an image and used as a CAPTCHA. This is
+possible because most OCR programs alert you when a word cannot be read
+correctly.
+
+http://recaptcha.net/learnmore.html
+
+WWW: http://search.cpan.org/~andya/Captcha-reCAPTCHA-Mailhide-0.93/

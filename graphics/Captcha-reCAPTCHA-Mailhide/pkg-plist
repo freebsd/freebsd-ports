@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Captcha/reCAPTCHA/Mailhide.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Captcha/reCAPTCHA/Mailhide/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Captcha/reCAPTCHA/Mailhide
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Captcha/reCAPTCHA
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Captcha
+@dirrm %%SITE_PERL%%/Captcha/reCAPTCHA
+@dirrmtry %%SITE_PERL%%/Captcha

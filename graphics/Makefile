@@ -4,6 +4,7 @@
     COMMENT = Graphics tools and libraries
 
     SUBDIR += 4va
+    SUBDIR += Captcha-reCAPTCHA-Mailhide
     SUBDIR += Cgraph
     SUBDIR += Coin
     SUBDIR += EZWGL
