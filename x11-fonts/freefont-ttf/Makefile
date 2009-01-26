@@ -6,22 +6,23 @@
 #
 
 PORTNAME=		freefont-ttf
-PORTVERSION=		20060126
-PORTREVISION=	2
+PORTVERSION=		20090104
 CATEGORIES=		x11-fonts
-MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	freefont
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		pgollucci@FreeBSD.org
 COMMENT=		Free UCS Outline Fonts
 
-NO_BUILD=		yes
-WRKSRC=			${WRKDIR}/freefont-${PORTVERSION}
-SUB_FILES=		pkg-message
-SUB_LIST=		INSTALLDIR=${INSTALLDIR}
-PKGMESSAGE=		${WRKDIR}/pkg-message
+BUILD_DEPENDS=		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
+			mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
+WRKSRC=			${WRKDIR}/freefont-${PORTVERSION}
 INSTALLDIR=		${PREFIX}/lib/X11/fonts/${PORTNAME}
+
+do-build:
+	cd ${WRKSRC} && ${LOCALBASE}/bin/mkfontscale
+	cd ${WRKSRC} && ${LOCALBASE}/bin/mkfontdir
 
 do-install:
 .if !defined(NOPORTDOCS)
@@ -33,12 +34,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
 .endif
 	${MKDIR} ${INSTALLDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${INSTALLDIR}
-	# Use these pregenerated files instead of using mkfontscale and mkfontdir
-	# to avoid xorg-clients dependency
-	${INSTALL_DATA} ${FILESDIR}/fonts.scale ${INSTALLDIR}
-	${INSTALL_DATA} ${FILESDIR}/fonts.dir ${INSTALLDIR}
+	cd ${WRKSRC} && \
+	${INSTALL_DATA} fonts.dir fonts.scale *.ttf ${INSTALLDIR}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
 .include <bsd.port.mk>
