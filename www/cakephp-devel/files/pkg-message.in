@@ -6,5 +6,5 @@ and making a donation to the development effort.
 Note that you should restart your Apache web server to ensure that
 the CakePHP configuration file is loaded.
 
-Be sure to check %%WWWDIR%%/app/config/core.php for
+Be sure to check the files in %%WWWDIR%%/app/config for
 additional framework configuration options.
