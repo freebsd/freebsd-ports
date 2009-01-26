@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	freecell-solver
-PORTVERSION=	2.8.14
+PORTVERSION=	2.14.0
 PORTREVISION=	0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
@@ -16,11 +16,11 @@ MASTER_SITE_SUBDIR=	fc-solve
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program that automatically solves games of Freecell
 
-GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget
+USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 
-MAN6=	fc-solve-board_gen.6 fc-solve.6 \
+MAN6=	fc-solve-board_gen.6 \
+	fc-solve.6 \
 	freecell-solver-range-parallel-solve.6 \
 	make-aisleriot-freecell-board.6 \
 	make-gnome-freecell-board.6 \
