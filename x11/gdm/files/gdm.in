@@ -3,7 +3,7 @@
 #    $MCom: ports/x11/gdm/files/gdm.in,v 1.32 2008/08/17 17:31:43 marcus Exp $
 
 # PROVIDE: gdm
-# REQUIRE: LOGIN cleanvar moused syscons dbus
+# REQUIRE: LOGIN cleanvar moused syscons dbus hald
 #
 # Add the following to /etc/rc.conf to start GDM at boot time:
 #
