@@ -63,109 +63,109 @@ OPTIONS=	ECLIPSE		"Eclipse modules"		on \
 PLIST_SUB+=	ECLIPSE=""
 MODULES+=	eclipse
 .else
-PLIST_SUB+=	ECLIPSE="@comment"
+PLIST_SUB+=	ECLIPSE="@comment "
 .endif
 .if defined(WITH_EPUB)
 PLIST_SUB+=	EPUB=""
 MODULES+=	epub
 .else
-PLIST_SUB+=	EPUB="@comment"
+PLIST_SUB+=	EPUB="@comment "
 .endif
 .if defined(WITH_EXTENSIONS)
 PLIST_SUB+=	EXTENSIONS=""
 MODULES+=	extensions
 .else
-PLIST_SUB+=	EXTENSONS="@comment"
+PLIST_SUB+=	EXTENSONS="@comment "
 .endif
 .if defined(WITH_FO)
 PLIST_SUB+=	FO=""
 MODULES+=	fo
 .else
-PLIST_SUB+=	FO="@comment"
+PLIST_SUB+=	FO="@comment "
 .endif
 .if defined(WITH_HIGHLIGHTING)
 PLIST_SUB+=	HIGHLIGHTING=""
 MODULES+=	highlighting
 .else
-PLIST_SUB+=	HIGHLIGHTING="@comment"
+PLIST_SUB+=	HIGHLIGHTING="@comment "
 .endif
 .if defined(WITH_HTML)
 PLIST_SUB+=	HTML=""
 MODULES+=	html
 .else
-PLIST_SUB+=	HTML="@comment"
+PLIST_SUB+=	HTML="@comment "
 .endif
 .if defined(WITH_HTMLHELP)
 PLIST_SUB+=	HTMLHELP=""
 MODULES+=	htmlhelp
 .else
-PLIST_SUB+=	HTMLHELP="@comment"
+PLIST_SUB+=	HTMLHELP="@comment "
 .endif
 .if defined(WITH_JAVAHELP)
 PLIST_SUB+=	JAVAHELP=""
 MODULES+=	javahelp
 .else
-PLIST_SUB+=	JAVAHELP="@comment"
+PLIST_SUB+=	JAVAHELP="@comment "
 .endif
 .if defined(WITH_MANPAGES)
 PLIST_SUB+=	MANPAGES=""
 MODULES+=	manpages
 .else
-PLIST_SUB+=	MANPAGES="@comment"
+PLIST_SUB+=	MANPAGES="@comment "
 .endif
 .if defined(WITH_PROFILING)
 PLIST_SUB+=	PROFILING=""
 MODULES+=	profiling
 .else
-PLIST_SUB+=	PROFILING="@comment"
+PLIST_SUB+=	PROFILING="@comment "
 .endif
 .if defined(WITH_ROUNDTRIP)
 PLIST_SUB+=	ROUNDTRIP=""
 MODULES+=	roundtrip
 .else
-PLIST_SUB+=	ROUNDTRIP="@comment"
+PLIST_SUB+=	ROUNDTRIP="@comment "
 .endif
 .if defined(WITH_SLIDES)
 PLIST_SUB+=	SLIDES=""
 MODULES+=	slides
 .else
-PLIST_SUB+=	SLIDES="@comment"
+PLIST_SUB+=	SLIDES="@comment "
 .endif
 .if defined(WITH_TEMPLATE)
 PLIST_SUB+=	TEMPLATE=""
 MODULES+=	template
 .else
-PLIST_SUB+=	TEMPLATE="@comment"
+PLIST_SUB+=	TEMPLATE="@comment "
 .endif
 .if defined(WITH_TESTS)
 PLIST_SUB+=	TESTS=""
 MODULES+=	tests
 .else
-PLIST_SUB+=	TESTS="@comment"
+PLIST_SUB+=	TESTS="@comment "
 .endif
 .if defined(WITH_TOOLS)
 PLIST_SUB+=	TOOLS=""
 MODULES+=	tools
 .else
-PLIST_SUB+=	TOOLS="@comment"
+PLIST_SUB+=	TOOLS="@comment "
 .endif
 .if defined(WITH_WEBSITE)
 PLIST_SUB+=	WEBSITE=""
 MODULES+=	website
 .else
-PLIST_SUB+=	WEBSITE="@comment"
+PLIST_SUB+=	WEBSITE="@comment "
 .endif
 .if defined(WITH_XHTML)
 PLIST_SUB+=	XHTML=""
 MODULES+=	xhtml
 .else
-PLIST_SUB+=	XHTML="@comment"
+PLIST_SUB+=	XHTML="@comment "
 .endif
 .if defined(WITH_XHTML11)
 PLIST_SUB+=	XHTML11=""
 MODULES+=	xhtml-1_1
 .else
-PLIST_SUB+=	XHTML11="@comment"
+PLIST_SUB+=	XHTML11="@comment "
 .endif
 
 post-extract:
