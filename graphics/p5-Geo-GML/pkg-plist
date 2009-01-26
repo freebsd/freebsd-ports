@@ -1,6 +1,8 @@
 %%SITE_PERL%%/mach/auto/Geo/GML/.packlist
 %%SITE_PERL%%/Geo/GML.pm
 %%SITE_PERL%%/Geo/GML.pod
+%%SITE_PERL%%/Geo/GML/GeoPoint.pod
+%%SITE_PERL%%/Geo/GML/GeoPoint.pm
 %%SITE_PERL%%/Geo/GML/Util.pm
 %%SITE_PERL%%/Geo/GML/Util.pod
 %%SITE_PERL%%/Geo/GML/xsd/ReadMe.txt
