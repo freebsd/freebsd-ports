@@ -1,0 +1,97 @@
+--- hald/freebsd/probing/Makefile.in.orig	2009-01-25 16:54:29.000000000 -0500
++++ hald/freebsd/probing/Makefile.in	2009-01-25 18:14:20.000000000 -0500
+@@ -34,6 +34,7 @@ build_triplet = @build@
+ host_triplet = @host@
+ @HALD_COMPILE_FREEBSD_TRUE@libexec_PROGRAMS =  \
+ @HALD_COMPILE_FREEBSD_TRUE@	hald-probe-hiddev$(EXEEXT) \
++@HALD_COMPILE_FREEBSD_TRUE@	hald-probe-mouse$(EXEEXT) \
+ @HALD_COMPILE_FREEBSD_TRUE@	hald-probe-scsi$(EXEEXT) \
+ @HALD_COMPILE_FREEBSD_TRUE@	hald-probe-smbios$(EXEEXT) \
+ @HALD_COMPILE_FREEBSD_TRUE@	hald-probe-storage$(EXEEXT) \
+@@ -54,6 +55,9 @@ PROGRAMS = $(libexec_PROGRAMS)
+ am_hald_probe_hiddev_OBJECTS = probe-hiddev.$(OBJEXT)
+ hald_probe_hiddev_OBJECTS = $(am_hald_probe_hiddev_OBJECTS)
+ hald_probe_hiddev_DEPENDENCIES = $(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la
++am_hald_probe_mouse_OBJECTS = hald_probe_mouse-probe-mouse.$(OBJEXT)
++hald_probe_mouse_OBJECTS = $(am_hald_probe_mouse_OBJECTS)
++hald_probe_mouse_DEPENDENCIES = $(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la
+ am_hald_probe_scsi_OBJECTS = probe-scsi.$(OBJEXT)
+ hald_probe_scsi_OBJECTS = $(am_hald_probe_scsi_OBJECTS)
+ hald_probe_scsi_DEPENDENCIES = $(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la
+@@ -82,10 +86,11 @@ CCLD = $(CC)
+ LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
+-SOURCES = $(hald_probe_hiddev_SOURCES) $(hald_probe_scsi_SOURCES) \
+-	$(hald_probe_smbios_SOURCES) $(hald_probe_storage_SOURCES) \
+-	$(hald_probe_volume_SOURCES)
+-DIST_SOURCES = $(hald_probe_hiddev_SOURCES) $(hald_probe_scsi_SOURCES) \
++SOURCES = $(hald_probe_hiddev_SOURCES) $(hald_probe_mouse_SOURCES) \
++	$(hald_probe_scsi_SOURCES) $(hald_probe_smbios_SOURCES) \
++	$(hald_probe_storage_SOURCES) $(hald_probe_volume_SOURCES)
++DIST_SOURCES = $(hald_probe_hiddev_SOURCES) \
++	$(hald_probe_mouse_SOURCES) $(hald_probe_scsi_SOURCES) \
+ 	$(hald_probe_smbios_SOURCES) $(hald_probe_storage_SOURCES) \
+ 	$(hald_probe_volume_SOURCES)
+ ETAGS = etags
+@@ -238,6 +243,7 @@ sharedstatedir = @sharedstatedir@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AM_CPPFLAGS = \
+@@ -254,6 +260,13 @@ hald_probe_hiddev_LDADD = \
+ 	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la	\
+ 	-lusbhid
+ 
++hald_probe_mouse_SOURCES = probe-mouse.c
++hald_probe_mouse_CPPFLAGS = $(AM_CPPFLAGS) @GLIB_CFLAGS@
++hald_probe_mouse_LDADD = \
++	@GLIB_LIBS@	\
++	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la \
++	-lutil
++
+ hald_probe_smbios_SOURCES = probe-smbios.c
+ hald_probe_smbios_LDADD = \
+ 	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la
+@@ -340,6 +353,9 @@ clean-libexecPROGRAMS:
+ hald-probe-hiddev$(EXEEXT): $(hald_probe_hiddev_OBJECTS) $(hald_probe_hiddev_DEPENDENCIES) 
+ 	@rm -f hald-probe-hiddev$(EXEEXT)
+ 	$(LINK) $(hald_probe_hiddev_OBJECTS) $(hald_probe_hiddev_LDADD) $(LIBS)
++hald-probe-mouse$(EXEEXT): $(hald_probe_mouse_OBJECTS) $(hald_probe_mouse_DEPENDENCIES) 
++	@rm -f hald-probe-mouse$(EXEEXT)
++	$(LINK) $(hald_probe_mouse_OBJECTS) $(hald_probe_mouse_LDADD) $(LIBS)
+ hald-probe-scsi$(EXEEXT): $(hald_probe_scsi_OBJECTS) $(hald_probe_scsi_DEPENDENCIES) 
+ 	@rm -f hald-probe-scsi$(EXEEXT)
+ 	$(LINK) $(hald_probe_scsi_OBJECTS) $(hald_probe_scsi_LDADD) $(LIBS)
+@@ -359,6 +375,7 @@ mostlyclean-compile:
+ distclean-compile:
+ 	-rm -f *.tab.c
+ 
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hald_probe_mouse-probe-mouse.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hald_probe_storage-freebsd_dvd_rw_utils.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hald_probe_storage-probe-storage.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hald_probe_volume-freebsd_dvd_rw_utils.Po@am__quote@
+@@ -388,6 +405,20 @@ distclean-compile:
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ $<
+ 
++hald_probe_mouse-probe-mouse.o: probe-mouse.c
++@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(hald_probe_mouse_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT hald_probe_mouse-probe-mouse.o -MD -MP -MF $(DEPDIR)/hald_probe_mouse-probe-mouse.Tpo -c -o hald_probe_mouse-probe-mouse.o `test -f 'probe-mouse.c' || echo '$(srcdir)/'`probe-mouse.c
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/hald_probe_mouse-probe-mouse.Tpo $(DEPDIR)/hald_probe_mouse-probe-mouse.Po
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='probe-mouse.c' object='hald_probe_mouse-probe-mouse.o' libtool=no @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(hald_probe_mouse_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o hald_probe_mouse-probe-mouse.o `test -f 'probe-mouse.c' || echo '$(srcdir)/'`probe-mouse.c
++
++hald_probe_mouse-probe-mouse.obj: probe-mouse.c
++@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(hald_probe_mouse_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT hald_probe_mouse-probe-mouse.obj -MD -MP -MF $(DEPDIR)/hald_probe_mouse-probe-mouse.Tpo -c -o hald_probe_mouse-probe-mouse.obj `if test -f 'probe-mouse.c'; then $(CYGPATH_W) 'probe-mouse.c'; else $(CYGPATH_W) '$(srcdir)/probe-mouse.c'; fi`
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/hald_probe_mouse-probe-mouse.Tpo $(DEPDIR)/hald_probe_mouse-probe-mouse.Po
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='probe-mouse.c' object='hald_probe_mouse-probe-mouse.obj' libtool=no @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(hald_probe_mouse_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o hald_probe_mouse-probe-mouse.obj `if test -f 'probe-mouse.c'; then $(CYGPATH_W) 'probe-mouse.c'; else $(CYGPATH_W) '$(srcdir)/probe-mouse.c'; fi`
++
+ hald_probe_storage-freebsd_dvd_rw_utils.o: freebsd_dvd_rw_utils.c
+ @am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(hald_probe_storage_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT hald_probe_storage-freebsd_dvd_rw_utils.o -MD -MP -MF $(DEPDIR)/hald_probe_storage-freebsd_dvd_rw_utils.Tpo -c -o hald_probe_storage-freebsd_dvd_rw_utils.o `test -f 'freebsd_dvd_rw_utils.c' || echo '$(srcdir)/'`freebsd_dvd_rw_utils.c
+ @am__fastdepCC_TRUE@	mv -f $(DEPDIR)/hald_probe_storage-freebsd_dvd_rw_utils.Tpo $(DEPDIR)/hald_probe_storage-freebsd_dvd_rw_utils.Po

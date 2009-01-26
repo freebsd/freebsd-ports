@@ -1,12 +1,12 @@
---- hald/freebsd/addons/addon-mouse.c.orig	2009-01-25 16:54:29.000000000 -0500
-+++ hald/freebsd/addons/addon-mouse.c	2009-01-25 23:00:48.000000000 -0500
-@@ -0,0 +1,371 @@
+--- hald/freebsd/probing/probe-mouse.c.orig	2009-01-25 16:54:29.000000000 -0500
++++ hald/freebsd/probing/probe-mouse.c	2009-01-25 18:40:04.000000000 -0500
+@@ -0,0 +1,301 @@
 +/***************************************************************************
 + * CVSID: $Id$
 + *
-+ * addon-mouse.c : poll mice to disable moused(8) owned devices
++ * probe-hiddev.c : Mouse prober
 + *
-+ * Copyright (C) 2008 Joe Marcus Clarke
++ * Copyright (C) 2008 Joe Marcus Clarke <marcus@FreeBSD.org>
 + *
 + * This program is free software; you can redistribute it and/or modify
 + * it under the terms of the GNU General Public License as published by
@@ -29,23 +29,17 @@
 +#endif
 +
 +#include <sys/param.h>
-+#include <sys/types.h>
-+#include <sys/event.h>
-+#include <sys/time.h>
-+#include <sys/proc.h>
 +#if __FreeBSD_version >= 800058
 +#include <sys/types.h>
 +#include <sys/user.h>
 +#include <sys/sysctl.h>
 +#include <libutil.h>
 +#endif
-+#include <string.h>
-+#include <stdlib.h>
-+#include <assert.h>
 +#include <unistd.h>
++#include <stdlib.h>
++#include <string.h>
++#include <fcntl.h>
 +#include <glib.h>
-+
-+#include "libhal/libhal.h"
 +
 +#include "../libprobe/hfp.h"
 +
@@ -53,19 +47,10 @@
 +#define CMD "/usr/bin/fstat %s"
 +#endif
 +
++#define MOUSE_DRIVER "mouse"
 +#define MOUSED_DEVICE "/dev/sysmouse"
 +#define MOUSED_PROC_NAME "moused"
 +#define XORG_PROC_NAME "Xorg"
-+#define NO_PID -1
-+
-+static struct
-+{
-+  const struct timespec        update_interval;
-+  char                        *device_file;
-+  struct timespec              next_update;
-+} addon = { { 2, 0 } };
-+
-+static int kd = -1;
 +
 +#if __FreeBSD_version >= 800058
 +static struct kinfo_proc *
@@ -136,12 +121,10 @@
 +}
 +
 +static gboolean
-+device_opened_by_proc (const char *device, const char *proc, pid_t *pid)
++device_opened_by_proc (const char *device, const char *proc)
 +{
 +  struct kinfo_proc *kip, *pfreep;
 +  int cnt, i;
-+
-+  *pid = NO_PID;
 +
 +  pfreep = hfp_kinfo_getproc(&cnt);
 +  if (pfreep == NULL)
@@ -166,7 +149,6 @@
 +              if (kif->kf_type == KF_TYPE_VNODE &&
 +                  ! strcmp(kif->kf_path, device))
 +                {
-+		  *pid = kip->ki_pid;
 +                  g_free(ffreep);
 +                  g_free(pfreep);
 +                  return TRUE;
@@ -181,7 +163,7 @@
 +}
 +#else
 +static gboolean
-+device_opened_by_proc (const char *device, const char *proc, pid_t *pid)
++device_opened_by_proc (const char *device, const char *proc)
 +{
 +  char **lines;
 +  char *output = NULL;
@@ -190,7 +172,6 @@
 +  gboolean found = FALSE;
 +
 +  cmd = g_strdup_printf(CMD, device);
-+  *pid = NO_PID;
 +
 +  if (! g_spawn_command_line_sync(cmd, &output, NULL, NULL, NULL))
 +    {
@@ -227,10 +208,6 @@
 +      if (j < len && fields[j] && ! strcmp(fields[j], proc))
 +        {
 +          found = TRUE;
-+	  for (++j; j < len && fields[j] && *fields[j] == '\0'; j++)
-+	    ;
-+	  if (j < len && fields[j])
-+	    *pid = atoi(fields[j]);
 +          g_strfreev(fields);
 +          break;
 +        }
@@ -246,128 +223,81 @@
 +}
 +#endif
 +
-+static const char *
-+get_mouse_device (const char *device, pid_t *pid)
-+{
-+  if (device_opened_by_proc(device, MOUSED_PROC_NAME, pid))
-+    return MOUSED_DEVICE;
-+
-+  return device;
-+}
-+
 +static void
-+poll_for_moused (void)
++probe_mouse (const char *device_file)
 +{
-+  struct kevent ev;
-+  const char *device;
 +  gboolean found;
-+  pid_t pid;
-+  char *owner = NULL;
-+  char *prev_owner = NULL;
++  char *driver;
 +
-+again:
-+  device = get_mouse_device(addon.device_file, &pid);
-+  if (pid != NO_PID)
++  driver = libhal_device_get_property_string(hfp_ctx, hfp_udi,
++                                             "input.x11_driver", &hfp_error);
++  dbus_error_free(&hfp_error);
++
++  found = device_opened_by_proc(device_file, XORG_PROC_NAME);
++  if (found)
 +    {
-+      EV_SET(&ev, pid, EVFILT_PROC, EV_ADD | EV_ENABLE, NOTE_EXIT, 0, NULL);
-+      if (kevent(kd, &ev, 1, NULL, 0, NULL) < 0)
-+        return;
-+      g_free(owner);
-+      owner = g_strdup(MOUSED_PROC_NAME);
++      if (driver)
++        {
++          libhal_device_remove_property(hfp_ctx, hfp_udi, "input.x11_driver",
++                                        &hfp_error);
++	  dbus_error_free(&hfp_error);
++	  g_free(driver);
++	}
++      return;
++    }
++
++  found = device_opened_by_proc(device_file, MOUSED_PROC_NAME);
++  if (found)
++    {
++      libhal_device_set_property_string(hfp_ctx, hfp_udi, "input.device",
++                                        MOUSED_DEVICE, &hfp_error);
++      dbus_error_free(&hfp_error);
++      found = device_opened_by_proc(MOUSED_DEVICE, XORG_PROC_NAME);
++      if (! found)
++        {
++          libhal_device_set_property_string(hfp_ctx, hfp_udi,
++			                    "input.x11_driver",
++                                            MOUSE_DRIVER, &hfp_error);
++	  dbus_error_free(&hfp_error);
++	}
++      else if (driver)
++        {
++          libhal_device_remove_property(hfp_ctx, hfp_udi, "input.x11_driver",
++                                        &hfp_error);
++	  dbus_error_free(&hfp_error);
++	}
 +    }
 +  else
 +    {
-+      found = device_opened_by_proc(device, XORG_PROC_NAME, &pid);
-+      if (found && pid != NO_PID)
-+        {
-+          EV_SET(&ev, pid, EVFILT_PROC, EV_ADD | EV_ENABLE, NOTE_EXIT, 0, NULL);
-+	  if (kevent(kd, &ev, 1, NULL, 0, NULL) < 0)
-+            return;
-+          g_free(owner);
-+	  owner = g_strdup(XORG_PROC_NAME);
-+	}
-+      else
-+        goto out;
-+    }
-+
-+  if (owner && prev_owner && strcmp(owner, prev_owner))
-+    goto out;
-+
-+  if (kevent(kd, NULL, 0, &ev, 1, NULL) < 0)
-+    return;
-+
-+  sleep(3);
-+  g_free(prev_owner);
-+  prev_owner = NULL;
-+  if (owner)
-+    prev_owner = g_strdup(owner);
-+  goto again;
-+
-+out:
-+  if (owner)
-+    {
-+      libhal_device_reprobe(hfp_ctx, hfp_udi, &hfp_error);
++      libhal_device_set_property_string(hfp_ctx, hfp_udi, "input.device",
++                                        device_file, &hfp_error);
++      dbus_error_free(&hfp_error);
++      libhal_device_set_property_string(hfp_ctx, hfp_udi, "input.x11_driver",
++                                        MOUSE_DRIVER, &hfp_error);
 +      dbus_error_free(&hfp_error);
 +    }
-+  g_free(owner);
-+  g_free(prev_owner);
++
++  g_free(driver);
 +}
 +
 +int
 +main (int argc, char **argv)
 +{
-+  DBusConnection *connection;
++  char *device_file;
 +
 +  if (! hfp_init(argc, argv))
 +    goto end;
 +
-+  addon.device_file = getenv("HAL_PROP_FREEBSD_DEVICE_FILE");
-+  if (! addon.device_file)
++  device_file = getenv("HAL_PROP_FREEBSD_DEVICE_FILE");
++  if (! device_file)
 +    goto end;
 +
-+  setproctitle("%s", addon.device_file);
++  /* give a meaningful process title for ps(1) */
++  setproctitle("%s", device_file);
 +
-+  if (! libhal_device_addon_is_ready(hfp_ctx, hfp_udi, &hfp_error))
-+    goto end;
-+  dbus_error_free(&hfp_error);
-+
-+  connection = libhal_ctx_get_dbus_connection(hfp_ctx);
-+  assert(connection != NULL);
-+
-+  kd = kqueue();
-+  assert(kd > -1);
-+
-+  while (TRUE)
-+    {
-+      /* process dbus traffic until update interval has elapsed */
-+      while (TRUE)
-+        {
-+          struct timespec now;
-+
-+          hfp_clock_gettime(&now);
-+          if (hfp_timespeccmp(&now, &addon.next_update, <))
-+            {
-+              struct timespec timeout;
-+
-+              timeout = addon.next_update;
-+              hfp_timespecsub(&timeout, &now);
-+
-+              if (timeout.tv_sec < 0) /* current time went backwards */
-+                timeout = addon.update_interval;
-+
-+              dbus_connection_read_write_dispatch(connection, timeout.tv_sec * 1000 + timeout.tv_nsec / 1000000);
-+              if (! dbus_connection_get_is_connected(connection))
-+                goto end;
-+            }
-+          else
-+            break;
-+        }
-+
-+      poll_for_moused();
-+
-+      hfp_clock_gettime(&addon.next_update);
-+      hfp_timespecadd(&addon.next_update, &addon.update_interval);
-+    }
++  /* Sleep for a second to give moused a chance to connect. */
++  sleep(1);
++  probe_mouse(device_file);
 +
 + end:
 +  return 0;

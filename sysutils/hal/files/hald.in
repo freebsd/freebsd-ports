@@ -4,7 +4,7 @@
 #   $MCom: ports/sysutils/hal/files/hald.in,v 1.14 2008/08/21 16:04:48 mezz Exp $
 #
 # PROVIDE: hald
-# REQUIRE: DAEMON usbd devd dbus
+# REQUIRE: DAEMON usbd devd dbus moused
 #
 # Add the following line to /etc/rc.conf to enable the HAL daemon:
 #

@@ -65,6 +65,7 @@ libexec/hald-addon-mouse-sysmouse
 libexec/hald-addon-storage
 libexec/hald-generate-fdi-cache
 libexec/hald-probe-hiddev
+libexec/hald-probe-mouse
 libexec/hald-probe-scsi
 libexec/hald-probe-smbios
 libexec/hald-probe-storage
