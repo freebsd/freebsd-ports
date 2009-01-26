@@ -1,0 +1,7 @@
+bin/zcmailcompose
+bin/zcgetmail
+%%SITE_PERL%%/ZConf/Mail.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Mail/.packlist
+@dirrmtry %%SITE_PERL%%/Zconf
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Mail
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf
