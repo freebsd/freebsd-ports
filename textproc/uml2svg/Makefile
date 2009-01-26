@@ -44,5 +44,7 @@ do-install:
 plist:
 	${FIND} ${PREFIX}/${INSTDIR} -type f | ${SED} 's|${PREFIX}/||g' | ${SORT} >${PLIST}
 	${FIND} ${PREFIX}/${INSTDIR} -type d | ${SORT} -r | ${SED} -e 's|${PREFIX}/||g' -e 's|^|@dirrm |g' >>${PLIST}
+	${FIND} ${DOCSDIR} -type f | ${SED} 's|${DOCSDIR}/|%%PORTDOCS%%%%DOCSDIR%%/|g' | ${SORT} >>${PLIST}
+	${FIND} ${DOCSDIR} -type d | ${SORT} -r | ${SED} 's|${DOCSDIR}/|%%PORTDOCS%%@dirrm %%DOCSDIR%%/|g' >>${PLIST}
 
 .include <bsd.port.post.mk>
