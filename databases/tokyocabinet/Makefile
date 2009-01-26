@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tokyocabinet
-PORTVERSION=	1.3.27
+PORTVERSION=	1.4.1
 CATEGORIES=	databases
 MASTER_SITES=	http://tokyocabinet.sourceforge.net/
 
@@ -25,9 +25,10 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.in
 MAN1=		tcamgr.1 tcatest.1 tcbmgr.1 tcbmttest.1 tcbtest.1 \
 		tcfmgr.1 tcfmttest.1 tcftest.1 \
 		tchmgr.1 tchmttest.1 tchtest.1 tcucodec.1 tcumttest.1 \
-		tcutest.1
+		tcutest.1 tctmgr.1 tctmttest.1 tcttest.1
 MAN3=		tcadb.3 tcbdb.3 tcfdb.3 tchdb.3 tclist.3 tcmap.3 \
-		tcmdb.3 tcmpool.3 tcutil.3 tcxstr.3 tokyocabinet.3 tctree.3
+		tcmdb.3 tcmpool.3 tcutil.3 tcxstr.3 tokyocabinet.3 tctree.3 \
+		tctdb.3
 
 OPTIONS=	DEBUG "Debugging support" off \
 		DEVEL "Development build" off \
@@ -76,7 +77,7 @@ CONFIGURE_ARGS+=	--disable-pthread
 CONFIGURE_ARGS+=	--disable-shared
 .endif
 
-SHLIB_VER=	7.4.0
+SHLIB_VER=	7.6.0
 SHLIB_VER_MAJ=	7
 
 PLIST_SUB+= SHLIB_VER=${SHLIB_VER} SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
