@@ -18,8 +18,6 @@ BUILD_DEPENDS= 	${LOCALBASE}/sbin/asterisk:${PORTSDIR}/net/asterisk
 LIB_DEPENDS= 	pt_r.1:${PORTSDIR}/devel/pwlib\
 	    	h323_r.1:${PORTSDIR}/net/openh323
 
-BROKEN=		does not package
-
 USE_GMAKE=	yes
 MAKE_ENV=	MKDIR="${MKDIR}" \
 		PWLIBDIR=${LOCALBASE}/share/pwlib \
