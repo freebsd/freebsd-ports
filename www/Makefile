@@ -1137,6 +1137,7 @@
     SUBDIR += pear-Services_Delicious
     SUBDIR += pear-Services_Digg
     SUBDIR += pear-Services_Facebook
+    SUBDIR += pear-Services_GeoNames
     SUBDIR += pear-Services_Google
     SUBDIR += pear-Services_OpenSearch
     SUBDIR += pear-Services_SharedBook
