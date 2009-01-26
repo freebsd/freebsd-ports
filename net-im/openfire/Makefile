@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	openfire
-PORTVERSION=	3.6.2
+PORTVERSION=	3.6.3
 CATEGORIES=	net-im java
-MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=openfire/
+MASTER_SITES=	http://download.igniterealtime.org/openfire/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	gahr@FreeBSD.org
