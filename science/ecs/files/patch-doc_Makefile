@@ -1,0 +1,20 @@
+--- doc/Makefile.orig	2006-04-24 13:52:56.000000000 +0200
++++ doc/Makefile	2009-01-24 23:33:10.000000000 +0100
+@@ -31,7 +31,7 @@
+ 
+ 
+ doc:
+-	@make pdf
++	@$(MAKE) pdf
+ 
+ 
+ pdf:
+@@ -57,7 +57,7 @@
+ 
+ 
+ install: 
+-	@\mv $(TEX)/*.pdf .
++	@\cp $(TEX)/*.pdf .
+ 
+ 
+ help info aide:
