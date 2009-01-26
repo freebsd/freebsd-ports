@@ -7,7 +7,7 @@
 
 PORTNAME=	canna
 PORTVERSION=	3.7p3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	canna/9565/
@@ -17,11 +17,12 @@ DISTNAME=	Canna${PORTVERSION:S/.//g}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A Kana-to-Kanji conversion system, binary part
 
+# XXX: USE_IMAKE implies USE_XLIB which is not needed for this port
+BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/canna-lib
 
 USE_RC_SUBR=	canna.sh
 USE_BZIP2=	yes
-USE_IMAKE=	yes
 ALL_TARGET=	canna
 INSTALL_TARGET=	instserver instclient
 
@@ -45,7 +46,11 @@ MAN3=	RkCloseRoma.3 RkCvtEuc.3 RkCvtHan.3 RkCvtHira.3 RkCvtKana.3	\
 MLINKS= uilib.3 XKanjiControl.3 uilib.3 XLookupKanjiString.3 uilib.3	\
 	jrKanjiControl.3 uilib.3 jrKanjiString.3
 
+post-configure:
+	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF}
+
 post-install:
+	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install.man
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${CP} -R ${PORTDOCS} ${DOCSDIR}
