@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iodine
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.0
 CATEGORIES=	net
 MASTER_SITES=	http://code.kryo.se/iodine/
 
@@ -14,6 +14,8 @@ MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Tunnel IPv4 data through a DNS server
 
 PLIST_FILES=	bin/iodine sbin/iodined
+
+BUILD_WRKSRC=	${WRKSRC}/src
 
 PORTDOCS=	CHANGELOG README TODO
 
@@ -23,9 +25,6 @@ MLINKS=		iodine.8 iodined.8
 USE_RC_SUBR=	iodined
 
 .include <bsd.port.pre.mk>
-
-do-build:
-	@cd ${WRKSRC}/src; ${MAKE} all
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/iodine ${PREFIX}/bin
