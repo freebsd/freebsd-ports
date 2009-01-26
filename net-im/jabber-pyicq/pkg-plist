@@ -9,6 +9,17 @@ lib/jabber/pyicq/data/defaultICQAvatar.png
 lib/jabber/pyicq/src/adhoc.py
 lib/jabber/pyicq/src/avatar.py
 lib/jabber/pyicq/src/bool.py
+lib/jabber/pyicq/src/chardet_utf/mbcsgroupprober.py
+lib/jabber/pyicq/src/chardet_utf/__init__.py
+lib/jabber/pyicq/src/chardet_utf/charsetprober.py
+lib/jabber/pyicq/src/chardet_utf/charsetgroupprober.py
+lib/jabber/pyicq/src/chardet_utf/utf16leprober.py
+lib/jabber/pyicq/src/chardet_utf/utf8prober.py
+lib/jabber/pyicq/src/chardet_utf/mbcssm.py
+lib/jabber/pyicq/src/chardet_utf/codingstatemachine.py
+lib/jabber/pyicq/src/chardet_utf/universaldetector.py
+lib/jabber/pyicq/src/chardet_utf/utf16beprober.py
+lib/jabber/pyicq/src/chardet_utf/constants.py
 lib/jabber/pyicq/src/config.py
 lib/jabber/pyicq/src/contact.py
 lib/jabber/pyicq/src/debug.py
@@ -95,6 +106,7 @@ lib/jabber/pyicq/src/xdb/mysql.py
 lib/jabber/pyicq/src/xdb/template.py
 lib/jabber/pyicq/src/xdb/xmlfiles.py
 lib/jabber/pyicq/src/xmlconfig.py
+@dirrm lib/jabber/pyicq/src/chardet_utf
 @dirrm lib/jabber/pyicq/src/langs
 @dirrm lib/jabber/pyicq/src/legacy/services
 @dirrm lib/jabber/pyicq/src/legacy
