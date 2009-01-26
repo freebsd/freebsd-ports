@@ -12081,6 +12081,7 @@ p5-RPC-Simple                   ports/net/p5-RPC-Simple
 p5-RPC-XML                      ports/net/p5-RPC-XML
 p5-RRD-Simple                   ports/databases/p5-RRD-Simple
 p5-RRDTool-OO                   ports/devel/p5-RRDTool-OO
+p5-RT-Authen-ExternalAuth       ports/www/p5-RT-Authen-ExternalAuth
 p5-RT-Client-REST               ports/www/p5-RT-Client-REST
 p5-RT-Extension-LDAPImport      ports/www/p5-RT-Extension-LDAPImport
 p5-RT-Extension-SLA             ports/www/p5-RT-Extension-SLA
@@ -15415,6 +15416,7 @@ p5-rpc-xml                      ports/net/p5-RPC-XML
 p5-rpm-build-perl               ports/devel/p5-rpm-build-perl
 p5-rrd-simple                   ports/databases/p5-RRD-Simple
 p5-rrdtool-oo                   ports/devel/p5-RRDTool-OO
+p5-rt-authen-externalauth       ports/www/p5-RT-Authen-ExternalAuth
 p5-rt-client-rest               ports/www/p5-RT-Client-REST
 p5-rt-extension-ldapimport      ports/www/p5-RT-Extension-LDAPImport
 p5-rt-extension-sla             ports/www/p5-RT-Extension-SLA
