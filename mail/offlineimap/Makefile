@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	offlineimap
-PORTVERSION=	6.0.0
+PORTVERSION=	6.0.3
 CATEGORIES=	mail python
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	arved
+MASTER_SITES=	http://software.complete.org/software/attachments/download/334/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sergei
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Powerful IMAP/Maildir synchronization and reader support
 
 .if !defined(WITHOUT_X11)
