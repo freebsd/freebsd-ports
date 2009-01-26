@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	x11
-PORTVERSION=	1.4.1
-PORTREVISION=	3
+PORTVERSION=	1.4.5
 CATEGORIES=	x11 haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/X11/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -25,6 +24,8 @@ PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} \
 		PORTNAME=${PORTNAME} \
 		SUBDIR=lib/ghc-${GHC_VERSION}/cabal
 
+OPTIONS=	XINERAMA "Build with Xinerama support" off
+
 .include <bsd.port.pre.mk>
 
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
@@ -33,14 +34,22 @@ RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 
 USE_XORG=	x11 xext sm
 
+.if defined(WITH_XINERAMA)
+USE_XORG+=	xinerama
+.endif
+
 # 'owned' by lang/ghc:
 CABALDIR=	${PREFIX}/lib/ghc-${GHC_VERSION}/cabal
 CABALCMD=	${LOCALBASE}/bin/runghc Setup.hs
 DOCSDIR=	${PREFIX}/share/doc/X11-${PORTVERSION}
+PORTDOCS=	LICENSE html
 SUBDIR=		${PORTNAME}${PKGNAMESUFFIX}
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
+PLIST_SUB+=	RMLIC="@comment "
+.else
+PLIST_SUB+=	RMLIC=""
 .endif
 
 do-configure:
