@@ -1,0 +1,14 @@
+--- configure.orig	Sun Jan 25 20:02:47 2009
++++ configure	Sun Jan 25 20:09:32 2009
+@@ -1852,6 +1852,11 @@
+ _ACEOF
+ 
+ 
++cat >>confdefs.h <<_ACEOF
++#define DBMAIL_VERSION "$PACKAGE_VERSION"
++_ACEOF
++
++
+ # Let the site file select an alternate cache file if it wants to.
+ # Prefer explicitly selected file to automatically selected ones.
+ if test -n "$CONFIG_SITE"; then
