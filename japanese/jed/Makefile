@@ -7,7 +7,7 @@
 
 PORTNAME=	jed
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese editors
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.kondara.org/~g/slang/
@@ -52,7 +52,7 @@ LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/canna-lib
 .if defined(WITHOUT_X11)
 PLIST_SUB=	X11="@comment "
 .else
-USE_XORG=	x11 xext
+USE_XORG=	x11 xext xt
 BINSTUFF+=	xjed
 PLIST_SUB=	X11="bin/xjed"
 .endif
