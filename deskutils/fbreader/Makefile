@@ -6,53 +6,52 @@
 #
 
 PORTNAME=	fbreader
-PORTVERSION=	0.8.15
+PORTVERSION=	0.10.2
 DISTVERSIONPREFIX=	sources-
-PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.fbreader.org/ CENKES
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri.pankov@gmail.com
 COMMENT=	Powerful e-book reader
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
+		expat.6:${PORTSDIR}/textproc/expat2 \
+		fribidi.0:${PORTSDIR}/converters/fribidi \
+		linebreak.1:${PORTSDIR}/textproc/liblinebreak
 
-USE_LDCONFIG=	yes
-.ifdef WITHOUT_QT
-UI=	gtk
+.if defined(WITH_GTK2)
+UI=		gtk
 USE_GNOME=	gtk20
 .else
-UI=	qt4
+UI=		qt4
 USE_QT_VER=	4
 QT_COMPONENTS=	gui corelib moc
 LDFLAGS+=	-L${QT_LIBDIR}
 .endif
+
 USE_GMAKE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lcompat
-MAKE_ENV+=	TARGET_ARCH=desktop UI_TYPE=${UI} TARGET_STATUS=release \
-		ROOTDIR=${WRKSRC} EXTERNALINCLUDE="-I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS}" INSTALLDIR="${PREFIX}" LIBDIR=${PREFIX}/lib \
-		BUILD_SHARED_LIBRARY=yes LD="${CXX}"
-MAKE_ARGS+=	MAKE=gmake LIBDIR=${PREFIX}/lib
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+USE_LDCONFIG=	yes
+
 INSTALL_TARGET=	do_install
 PLIST_SUB=	UI=${UI}
-PORT_VERBS=	FBReader zlibrary libzl
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ENV+=	TARGET_ARCH=desktop UI_TYPE=${UI} TARGET_STATUS=release \
+		ROOTDIR=${WRKSRC} INSTALLDIR=${PREFIX} LIBDIR=${PREFIX}/lib \
+		LD="${CXX}" LDFLAGS="${LDFLAGS}"
+MAKE_ARGS+=	MAKE=${GMAKE} LIBDIR=${PREFIX}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^LDFLAGS/s|=|+=|' ${WRKSRC}/makefiles/arch/*mk
-	@${REINPLACE_CMD} -e 's|-ldl||;/CORE_LIBS/s|$$| -liconv|'\
-		${WRKSRC}/makefiles/config.mk ${WRKSRC}/zlibrary/core/Makefile
-	@${REINPLACE_CMD} -e 's|libpng |libpng12 |'\
+	@${REINPLACE_CMD} -e '/^CFLAGS/s,-pipe.*$$,${CFLAGS} -DDO_ICONV_CAST -DLIBICONV_PLUG,' \
+		-e '/^CC/d;/^LD/d;/QTINCLUDE/s,-I.*$$,-I${QT_INCDIR},;s,libpng ,libpng12 ,' \
 		${WRKSRC}/makefiles/arch/desktop.mk
-	@${REINPLACE_CMD} -e '/TARGET =/s|\.so\..*|.so.0|;s|$$[(]LIBDIR[)]|${PREFIX}/lib|'\
-		${WRKSRC}/zlibrary/[ct]*/Makefile
-	@${FIND} ${WRKSRC} -name Makefile -or -name \*.mk -or -name rules|\
-		${XARGS} ${REINPLACE_CMD} -e 's/make /gmake /g;s|	@|	|;\
-		s|/usr/local|%%PREFIX%%|g;s|/usr|%%PREFIX%%|g;s|%%PREFIX%%|${PREFIX}|g;\
-		/^CC =/d;/^LD =/d;s|-pipe||;s|-O3|${CFLAGS}|'
-	@${FIND} ${WRKSRC} -name '*.bak' -delete
+	@${REINPLACE_CMD} -e 's,-O3,,;s,-ldl,-liconv,' \
+		${WRKSRC}/makefiles/config.mk ${WRKSRC}/zlibrary/core/Makefile
+	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},' ${WRKSRC}/fbreader/desktop/Makefile
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} \
+		-e 's,make ,gmake ,'
 
 .include <bsd.port.mk>
