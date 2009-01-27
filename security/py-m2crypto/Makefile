@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	m2crypto
-PORTVERSION=	0.18.2
+PORTVERSION=	0.19.1
 CATEGORIES=	security python
-MASTER_SITES=	http://chandlerproject.org/pub/Projects/MeTooCrypto/
+MASTER_SITES=	CHEESESHOP \
+		http://chandlerproject.org/pub/Projects/MeTooCrypto/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	M2Crypto-${PORTVERSION}
 DIST_SUBDIR=	python
 
 MAINTAINER=	mnag@FreeBSD.org
@@ -19,7 +21,8 @@ BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 
 USE_PYTHON=	2.3+
 USE_OPENSSL=	yes
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=	easy_install
+PYEASYINSTALL_ARCHDEP=	yes
 PYDISTUTILS_PKGNAME=	M2Crypto
 
 .include <bsd.port.pre.mk>
