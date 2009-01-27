@@ -110,8 +110,8 @@ upgrades.
   AUTHOR:   pgollucci@FreeBSD.org
 
   devel/apr-svn has been removed and devel/apr now handles its role.
-  devel/apr now defaults to building with berkley database support (bdb)
-  APR_UTIL_* tunablables have been renamed to compy with ports/KNOBS names.
+  devel/apr now defaults to building with berkeley database support (bdb)
+  APR_UTIL_* tunables have been renamed to comply with ports/KNOBS names.
 
 20090114:
   AFFECTS: users of x11/kdebase4-workspace, x11/kdebase4-runtime
