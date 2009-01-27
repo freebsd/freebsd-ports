@@ -1248,6 +1248,7 @@
     SUBDIR += py-prewikka
     SUBDIR += py-pullparser
     SUBDIR += py-pylons
+    SUBDIR += py-pyquery
     SUBDIR += py-pysearch
     SUBDIR += py-pywebdav
     SUBDIR += py-qp
