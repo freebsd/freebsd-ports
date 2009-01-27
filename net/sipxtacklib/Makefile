@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	net java
 MASTER_SITES=	http://www.sipfoundry.org/pub/sipX/3.6/SRC/
 
-MAINTAINER=	durian@shadetreesoftware.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	sipX library of utilities and SIP stack info processing
 
 LIB_DEPENDS=	sipXport:${PORTSDIR}/net/sipxportlib \
@@ -20,6 +20,9 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		ginstall:${PORTSDIR}/sysutils/coreutils \
 		cppunit-config:${PORTSDIR}/devel/cppunit
+
+DEPRECATED=		old version, needs updating
+EXPIRATION_DATE=	2009-03-27
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

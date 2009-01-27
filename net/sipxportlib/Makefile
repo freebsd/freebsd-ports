@@ -11,13 +11,16 @@ PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.sipfoundry.org/pub/sipX/3.6/SRC/
 
-MAINTAINER=	durian@shadetreesoftware.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	sipX library of general purpose utils and OS abstration APIs.
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit \
 		ginstall:${PORTSDIR}/sysutils/coreutils
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
+DEPRECATED=		old version, needs updating
+EXPIRATION_DATE=	2009-03-27
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
