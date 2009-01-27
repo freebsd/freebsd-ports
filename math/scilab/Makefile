@@ -71,6 +71,10 @@ MAKE_ENV+=	BLAS_LIBS="-L${LOCALBASE}/lib ${BLAS_LIBS}"
 BROKEN=		does not compile on alpha 5.x, ia64, sparc64
 .endif
 
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 700000
+BROKEN=		segfaults during build on FreeBSD amd64/7.x
+.endif
+
 post-patch:
 	@# malloc.h -> stdlib.h conversions
 	@${GREP} -lr "<malloc.h>" ${WRKSRC} \
