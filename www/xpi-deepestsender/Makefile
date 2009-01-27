@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	deepestsender
-PORTVERSION=	0.8.0
-DISTVERSIONSUFFIX=	-firefox+sm
+PORTVERSION=	0.9.0
+DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	wahjava@gmail.com
 COMMENT=	An addon which allows posting to blogs
 
-XPI_DISTNAME=	deepest%20sender
+XPI_DISTNAME=	deepest_sender
 XPI_NUM=	1811
 XPI_ID=		{B9DAB69C-460E-4085-AE6C-F95B0D858581}
-USE_XPI=	*firefox*
+USE_XPI=	*firefox3*
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
