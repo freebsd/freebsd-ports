@@ -8,7 +8,7 @@
 
 PORTNAME=	qt-${DB}-plugin
 PORTVERSION=	3.3.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
@@ -25,6 +25,7 @@ BROKEN=		does not compile
 
 LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC \
 		qt-mt:${PORTSDIR}/x11-toolkits/qt33
+BUILD_DEPENDS=	unixODBC>=2.2.14_1:${PORTSDIR}/databases/unixODBC
 
 USE_BZIP2=	yes
 PLUGIN=		plugins/src/sqldrivers/${DB}

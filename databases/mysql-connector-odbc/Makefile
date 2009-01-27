@@ -8,7 +8,7 @@
 PORTNAME=	mysql-connector-odbc
 PORTVERSION=	3.51.26
 DISTVERSIONSUFFIX=	r1127
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	Connector-ODBC/3.51
@@ -45,9 +45,8 @@ WITH_UNIXODBC?=	yes
 .endif
 
 .if defined(WITH_UNIXODBC)
-BROKEN=			does not compile
-
 LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+BUILD_DEPENDS=		unixODBC>=2.2.14_1:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc-ini=${LOCALBASE}/etc/odbc.ini \
 			--with-unixODBC=${LOCALBASE}
 CFLAGS+=		${PTHREAD_LIBS}
