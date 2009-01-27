@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	apparix
-PORTVERSION=	20080725
+PORTVERSION=	20081026
 CATEGORIES=	misc
 MASTER_SITES=	http://micans.org/apparix/src/
-DISTNAME=	${PORTNAME}-08-206
+DISTNAME=	${PORTNAME}-08-331
 
 MAINTAINER=	steinex@nognu.de
 COMMENT=	Bookmark directories and apparate inside them
@@ -20,6 +20,9 @@ MANCOMPRESSED=	no
 MAN1=		apparix.1
 PORTDOCS=	apparix.azm apparix.html apparix.ps
 PLIST_FILES=	bin/apparix
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|sig_atomic_t|int|g' ${WRKSRC}/util/err.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
