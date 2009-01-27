@@ -9723,6 +9723,7 @@ p5-Algorithm-LUHN               ports/devel/p5-Algorithm-LUHN
 p5-Algorithm-MDiff              ports/devel/p5-Algorithm-MDiff
 p5-Algorithm-MarkovChain        ports/devel/p5-Algorithm-MarkovChain
 p5-Algorithm-MinMax             ports/devel/p5-Algorithm-MinMax
+p5-Algorithm-Munkres            ports/math/p5-Algorithm-Munkres
 p5-Algorithm-NaiveBayes         ports/devel/p5-Algorithm-NaiveBayes
 p5-Algorithm-Networksort        ports/devel/p5-Algorithm-Networksort
 p5-Algorithm-Numerical-Shuffle  ports/devel/p5-Algorithm-Numerical-Shuffle
@@ -10958,6 +10959,7 @@ p5-Geo-Caching                  ports/www/p5-Geo-Caching
 p5-Geo-Coder-Google             ports/misc/p5-Geo-Coder-Google
 p5-Geo-Coordinates-UTM          ports/math/p5-Geo-Coordinates-UTM
 p5-Geo-Distance                 ports/math/p5-Geo-Distance
+p5-Geo-EOP                      ports/graphics/p5-Geo-EOP
 p5-Geo-GML                      ports/graphics/p5-Geo-GML
 p5-Geo-IP                       ports/net/p5-Geo-IP
 p5-Geo-IP-PurePerl              ports/net/p5-Geo-IP-PurePerl
@@ -12967,6 +12969,7 @@ p5-algorithm-luhn               ports/devel/p5-Algorithm-LUHN
 p5-algorithm-markovchain        ports/devel/p5-Algorithm-MarkovChain
 p5-algorithm-mdiff              ports/devel/p5-Algorithm-MDiff
 p5-algorithm-minmax             ports/devel/p5-Algorithm-MinMax
+p5-algorithm-munkres            ports/math/p5-Algorithm-Munkres
 p5-algorithm-naivebayes         ports/devel/p5-Algorithm-NaiveBayes
 p5-algorithm-networksort        ports/devel/p5-Algorithm-Networksort
 p5-algorithm-numerical-shuffle  ports/devel/p5-Algorithm-Numerical-Shuffle
@@ -14218,6 +14221,7 @@ p5-geo-caching                  ports/www/p5-Geo-Caching
 p5-geo-coder-google             ports/misc/p5-Geo-Coder-Google
 p5-geo-coordinates-utm          ports/math/p5-Geo-Coordinates-UTM
 p5-geo-distance                 ports/math/p5-Geo-Distance
+p5-geo-eop                      ports/graphics/p5-Geo-EOP
 p5-geo-gml                      ports/graphics/p5-Geo-GML
 p5-geo-ip                       ports/net/p5-Geo-IP
 p5-geo-ip-pureperl              ports/net/p5-Geo-IP-PurePerl
