@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	modcplusplus
 
-MAINTAINER=	durian@shadetreesoftware.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module for loading C++ objects as handlers
 
 USE_APACHE=	2.0+

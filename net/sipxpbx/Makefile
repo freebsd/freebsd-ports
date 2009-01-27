@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	http://www.sipfoundry.org/pub/sipX/3.6/SRC/
 
-MAINTAINER=	durian@shadetreesoftware.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	sipX PBX - Toplevel sipX port
 
 BUILD_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_cplusplus.so:${PORTSDIR}/www/mod_cplusplus \
@@ -32,6 +32,9 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		sipstatus.sh:${PORTSDIR}/net/sipxpublisher \
 		sipXvxml.sh:${PORTSDIR}/net/sipxvxml \
 		psql:${PORTSDIR}/databases/postgresql81-client
+
+DEPRECATED=		depends on broken port net/sipxcommserverlib
+EXPIRATION_DATE=	2009-03-27
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

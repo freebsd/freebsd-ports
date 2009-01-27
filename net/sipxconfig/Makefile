@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://www.sipfoundry.org/pub/sipX/3.6/SRC/
 
-MAINTAINER=	durian@shadetreesoftware.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	sipX server for configuring sipX via a web interface
 
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
@@ -24,6 +24,9 @@ LIB_DEPENDS=	sipXport:${PORTSDIR}/net/sipxportlib \
 		pcre.0:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		psql:${PORTSDIR}/databases/postgresql81-client
+
+DEPRECATED=		depends on broken port net/sipxcommserverlib
+EXPIRATION_DATE=	2009-03-27
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

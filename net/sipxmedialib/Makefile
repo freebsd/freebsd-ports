@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.sipfoundry.org/pub/sipX/3.6/SRC/
 
-MAINTAINER=	durian@shadetreesoftware.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	sipX library for media streams
 
 BUILD_DEPENDS=	ginstall:${PORTSDIR}/sysutils/coreutils \
@@ -19,6 +19,9 @@ BUILD_DEPENDS=	ginstall:${PORTSDIR}/sysutils/coreutils \
 LIB_DEPENDS=	sipXport:${PORTSDIR}/net/sipxportlib \
 		sipXtack:${PORTSDIR}/net/sipxtacklib \
 		pcre.0:${PORTSDIR}/devel/pcre
+
+DEPRECATED=		old version, needs updating
+EXPIRATION_DATE=	2009-03-27
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

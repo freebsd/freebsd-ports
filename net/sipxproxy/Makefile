@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://www.sipfoundry.org/pub/sipX/3.6/SRC/
 
-MAINTAINER=	durian@shadetreesoftware.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	sipX server for handling SIP authorization and call records
 
 LIB_DEPENDS=	sipXport:${PORTSDIR}/net/sipxportlib \
@@ -23,6 +23,9 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		ginstall:${PORTSDIR}/sysutils/coreutils \
 		cppunit-config:${PORTSDIR}/devel/cppunit
+
+DEPRECATED=		depends on broken port net/sipxcommserverlib
+EXPIRATION_DATE=	2009-03-27
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
