@@ -8,13 +8,12 @@
 # this port.  You need a patched version of mysql server for that.
 
 PORTNAME=	sphinxsearch
-DISTVERSION=	0.9.8-rc2
-PORTREVISION=	1
 PORTEPOCH=	1
+DISTVERSION=	0.9.9-rc1
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://www.sphinxsearch.com/downloads/
 PKGNAMESUFFIX?=	-devel
-DISTNAME=	sphinx-0.9.8-rc2
+DISTNAME=	sphinx-0.9.9-rc1
 
 PATCH_DIST_STRIP=-p1
 
@@ -41,7 +40,7 @@ SPHINX_LOG?=	/var/log/${PORTNAME}
 # don't ask.
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=		CC=${CC} CPPFLAGS="${CXXFLAGS}"
+CONFIGURE_ENV+=	CC=${CC} CPPFLAGS="${CXXFLAGS}"
 CFGFILE=	${PREFIX}/etc/sphinx.conf
 USE_RC_SUBR=	sphinxsearch.sh
 SUB_LIST+=	PORTNAME=${PORTNAME}     \
