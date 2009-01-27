@@ -4,7 +4,6 @@
     COMMENT = Graphics tools and libraries
 
     SUBDIR += 4va
-    SUBDIR += Captcha-reCAPTCHA-Mailhide
     SUBDIR += Cgraph
     SUBDIR += Coin
     SUBDIR += EZWGL
@@ -514,6 +513,7 @@
     SUBDIR += p5-Acme-Steganography-Image-Png
     SUBDIR += p5-CAD-Drawing
     SUBDIR += p5-CAD-Drawing-Template
+    SUBDIR += p5-Captcha-reCAPTCHA-Mailhide
     SUBDIR += p5-Cairo
     SUBDIR += p5-Captcha-reCAPTCHA
     SUBDIR += p5-Chart-Clicker
