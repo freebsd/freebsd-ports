@@ -479,6 +479,7 @@
     SUBDIR += postfix-gps-devel
     SUBDIR += postfix-policyd-sf
     SUBDIR += postfix-policyd-spf
+    SUBDIR += postfix-policyd-spf-perl
     SUBDIR += postfix-policyd-weight
     SUBDIR += postfix-postfwd
     SUBDIR += postfix1

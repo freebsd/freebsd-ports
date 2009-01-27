@@ -1,0 +1,32 @@
+--- postfix-policyd-spf-perl.orig	2008-07-25 19:35:01.000000000 -0700
++++ postfix-policyd-spf-perl	2009-01-25 16:46:38.991336330 -0800
+@@ -263,14 +263,14 @@
+             info => "%s: SPF %s: HELO/EHLO: %s",
+             $attr->{queue_id}, $helo_result, $attr->{helo_name}
+         );
+-        return "550 $helo_authority_exp";
++        return "%%SPF_FAIL%% $helo_authority_exp";
+     }
+     elsif ($helo_result->is_code('temperror')) {
+         syslog(
+             info => "%s: SPF %s: HELO/EHLO: %s",
+             $attr->{queue_id}, $helo_result, $attr->{helo_name}
+         );
+-        return "DEFER_IF_PERMIT SPF-Result=$helo_local_exp";
++        return "%%SPF_TEMPERROR%% SPF-Result=$helo_local_exp";
+     }
+     elsif ($attr->{sender} eq '') {
+         syslog(
+@@ -334,10 +334,10 @@
+         $attr->{queue_id}, $mfrom_result, $attr->{sender}
+     );
+     if ($mfrom_result->is_code('fail')) {
+-        return "550 $mfrom_authority_exp";
++        return "%%SPF_FAIL%% $mfrom_authority_exp";
+     }
+     elsif ($mfrom_result->is_code('temperror')) {
+-        return "DEFER_IF_PERMIT SPF-Result=$mfrom_local_exp";
++        return "%%SPF_TEMPERROR%% SPF-Result=$mfrom_local_exp";
+     }
+     else {
+         return "PREPEND $mfrom_spf_header"
