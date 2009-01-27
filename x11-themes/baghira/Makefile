@@ -21,6 +21,7 @@ COMMENT=	An Aqua like window decoration and widget style for KDE
 
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
+USE_XORG=	xtst
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 
