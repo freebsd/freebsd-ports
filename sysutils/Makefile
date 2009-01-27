@@ -644,6 +644,7 @@
     SUBDIR += rsyslog4-gssapi
     SUBDIR += rsyslog4-mysql
     SUBDIR += rsyslog4-pgsql
+    SUBDIR += rsyslog4-relp
     SUBDIR += rtty
     SUBDIR += ruby-log4r
     SUBDIR += ruby-quota
