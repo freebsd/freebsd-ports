@@ -2,6 +2,9 @@ include/ldns/buffer.h
 include/ldns/common.h
 include/ldns/dname.h
 include/ldns/dnssec.h
+include/ldns/dnssec_sign.h
+include/ldns/dnssec_verify.h
+include/ldns/dnssec_zone.h
 include/ldns/error.h
 include/ldns/higher.h
 include/ldns/host2str.h
@@ -11,6 +14,7 @@ include/ldns/ldns.h
 include/ldns/net.h
 include/ldns/packet.h
 include/ldns/parse.h
+include/ldns/rbtree.h
 include/ldns/rdata.h
 include/ldns/resolver.h
 include/ldns/rr.h
@@ -21,8 +25,8 @@ include/ldns/update.h
 include/ldns/util.h
 include/ldns/wire2host.h
 include/ldns/zone.h
-lib/libldns-1.2.2.so
 lib/libldns.a
 lib/libldns.la
 lib/libldns.so
+lib/libldns.so.1
 @dirrm include/ldns

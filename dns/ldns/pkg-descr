@@ -4,4 +4,4 @@ and experimental software for current Internet drafts.
 Because ldns is written in C it should be a lot faster than Perl or other
 scripting languages.
 
-WWW: http://www.nlnetlabs.nl/ldns/
+WWW: http://www.nlnetlabs.nl/projects/ldns/
