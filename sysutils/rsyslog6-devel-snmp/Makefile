@@ -1,0 +1,25 @@
+# New ports collection makefile for: rsyslog4-snmp
+# Date created:     29 December 2008
+# Whom:             Cristiano Rolim Pereira <cristianorolim@hotmail.com>
+#
+# $FreeBSD$
+#
+
+COMMENT=	SNMP trap sender for rsyslog
+
+MNAME=	snmp
+LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+
+.include "${.CURDIR}/../rsyslog4/bsd.rsyslog.mk"
+
+CONFIGURE_ARGS+=--enable-snmp
+
+PLIST_FILES+=	lib/rsyslog/omsnmp.la \
+		lib/rsyslog/omsnmp.so
+
+do-install:
+	@${INSTALL_PROGRAM} \
+		${WRKSRC}/plugins/omsnmp/.libs/omsnmp.so ${PREFIX}/lib/rsyslog
+	@${INSTALL_DATA} \
+		${WRKSRC}/plugins/omsnmp/omsnmp.la ${PREFIX}/lib/rsyslog
+.include <bsd.port.mk>
