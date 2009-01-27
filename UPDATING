@@ -7,6 +7,17 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20090127:
+  AFFECTS: gstreamer-plugins
+  AUTHOR: kwm@FreeBSD.org
+
+  The gstapp library moved from the gstreamer-plugins-bad package
+  to gstreamer-plugins. It will be nessasary to rebuild the 
+  gstreamer-plugins port. After updating your installed ports do:
+
+  portupgrade users:
+  # portupgrade -f gstreamer-plugins
+
+20090127:
   AFFECTS: users of www/xpi-deepestsender
   AUTHOR: pgollucci@FreeBSD.org
 
