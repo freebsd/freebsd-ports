@@ -1,0 +1,23 @@
+SVN-Hooks is a Perl framework for creating Subversion hooks.
+
+It comes with a bunch of plugins (actually, sub-modules of SVN::Hooks)
+that implement some of the most used standalone Subversion hooks
+available, such as pre-commit hooks for enforcing:
+
+- the log message format
+- property settings
+- the repository structure
+- restrictions on the modification of repository areas (e.g., /tags)
+- restrictions on filenames
+- the integration with ticketing systems
+
+It also comes with post-commit hooks for:
+
+- sending commit emails
+- updating configuration files in the server from changes made in
+  the repository
+
+But as a framework, it can be extended to implement all types of
+hooks.
+
+WWW:    http://search.cpan.org/dist/SVN-Hooks/

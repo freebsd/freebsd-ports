@@ -1689,6 +1689,7 @@
     SUBDIR += p5-SVN-Agent
     SUBDIR += p5-SVN-Dump
     SUBDIR += p5-SVN-Hook
+    SUBDIR += p5-SVN-Hooks
     SUBDIR += p5-SVN-Log
     SUBDIR += p5-SVN-Look
     SUBDIR += p5-SVN-Mirror
