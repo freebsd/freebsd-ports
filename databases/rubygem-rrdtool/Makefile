@@ -20,6 +20,9 @@ BUILD_DEPENDS=	sow:${PORTSDIR}/devel/rubygem-hoe
 
 BROKEN=		does not compile with rrdtool 1.3
 
+DEPRECATED=	port no longer maintained by upstream use rrdtools own ruby bindings instead
+EXPIRATION_DATE=	2009-03-01
+
 GEM_NAME=	RubyRRDtool-0.6.0
 GEM_ENV=	MAKEFLAGS="CPPFLAGS=-I${LOCALBASE}/include"
 
