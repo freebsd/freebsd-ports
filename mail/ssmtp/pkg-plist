@@ -1,4 +1,4 @@
 sbin/ssmtp
 etc/ssmtp/revaliases.sample
 etc/ssmtp/ssmtp.conf.sample
-@dirrmtry %D/etc/ssmtp 2> /dev/null || echo "If you don't plan to reinstall ssmtp, you can safely remove %D/etc/ssmtp" | fmt
+@dirrmtry etc/ssmtp 2> /dev/null || echo "If you don't plan to reinstall ssmtp, you can safely remove %D/etc/ssmtp" | fmt
