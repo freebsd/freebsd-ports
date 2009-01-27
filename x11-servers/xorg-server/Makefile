@@ -8,7 +8,7 @@
 PORTNAME=	xorg-server
 PORTVERSION=	1.5.3
 PORTEPOCH=	1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://xorg.freedesktop.org/releases/individual/xserver/
 DISTFILES=	xorg-server-${PORTVERSION}.tar.bz2
@@ -36,7 +36,8 @@ USE_XORG=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
 USE_OPENSSL=	yes
 USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	--disable-dmx --disable-xvfb --disable-xnest --disable-xprint \
-		--localstatedir=/var --without-dtrace --disable-xephyr
+		--localstatedir=/var --without-dtrace --disable-xephyr \
+		--enable-record=yes --enable-xtrap=yes
 
 MAN1=		Xorg.1 \
 		Xserver.1 \

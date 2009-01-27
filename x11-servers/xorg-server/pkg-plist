@@ -185,6 +185,10 @@ lib/xorg/modules/extensions/libextmod.la
 lib/xorg/modules/extensions/libextmod.so
 lib/xorg/modules/extensions/libglx.la
 lib/xorg/modules/extensions/libglx.so
+lib/xorg/modules/extensions/librecord.la
+lib/xorg/modules/extensions/librecord.so
+lib/xorg/modules/extensions/libxtrap.la
+lib/xorg/modules/extensions/libxtrap.so
 lib/xorg/modules/fonts/libfreetype.la
 lib/xorg/modules/fonts/libfreetype.so
 %%ALPHA_NA%%lib/xorg/modules/libafb.la
