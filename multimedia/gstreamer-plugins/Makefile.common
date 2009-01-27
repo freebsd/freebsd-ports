@@ -15,11 +15,16 @@ BASE_GST_ALL_PLUGINS= \
 BAD_GST_ALL_PLUGINS+= \
 		alsa \
 		amrwb \
+		apexsink \
 		bz2 \
 		cdaudio \
+		celt \
+		dc1394 \
 		directfb \
+		dirac \
 		divx \
 		dts \
+		dvb \
 		faac \
 		faad \
 		gsm \
@@ -35,15 +40,24 @@ BAD_GST_ALL_PLUGINS+= \
 		nas \
 		neon \
 		ofa \
+		oss4 \
+		qtwrapper \
 		resindvd \
 		sdl \
+		sf \
 		sndfile \
 		soundtouch \
 		spc \
 		swfdec \
+		theoraexpdec \
 		timidity \
+		twolame \
+		vcdsrc \
+		wildmidi \
+		wininet \
 		x264 \
 		xvid
+
 # good
 GOOD_GST_ALL_PLUGINS+= \
 		aalib \
@@ -97,6 +111,7 @@ CONFIGURE_ARGS+=	--enable-${GST_PLUGIN}
 CONFIGURE_ARGS+=--disable-tests \
 		--disable-examples \
 		--disable-1394 \
+		--disable-acm \
 		--disable-amrnb \
 		--disable-alsa \
 		--disable-http \
