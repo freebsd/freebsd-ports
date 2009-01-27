@@ -1,0 +1,4 @@
+lib/rsyslog/ompgsql.la
+lib/rsyslog/ompgsql.so
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgsql_createDB.sql
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
