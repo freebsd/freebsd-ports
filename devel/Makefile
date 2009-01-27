@@ -1690,6 +1690,7 @@
     SUBDIR += p5-SVN-Dump
     SUBDIR += p5-SVN-Hook
     SUBDIR += p5-SVN-Log
+    SUBDIR += p5-SVN-Look
     SUBDIR += p5-SVN-Mirror
     SUBDIR += p5-SVN-Notify
     SUBDIR += p5-SVN-Notify-Config

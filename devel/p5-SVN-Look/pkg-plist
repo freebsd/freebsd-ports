@@ -1,0 +1,5 @@
+%%SITE_PERL%%/SVN/Look.pm
+@dirrmtry %%SITE_PERL%%/SVN
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Look/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Look
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
