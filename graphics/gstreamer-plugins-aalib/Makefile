@@ -6,7 +6,7 @@
 #   $MCom: ports/graphics/gstreamer-plugins-aalib/Makefile,v 1.5 2008/03/19 14:05:33 ahze Exp $
 #
 
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	graphics
 
 COMMENT=	Gstreamer ascii art plugin

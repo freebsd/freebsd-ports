@@ -6,7 +6,7 @@
 #   $MCom: ports/audio/gstreamer-plugins-speex/Makefile,v 1.5 2008/03/19 14:05:32 ahze Exp $
 #
 
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer speex voice plugin
