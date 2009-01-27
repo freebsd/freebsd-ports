@@ -119,7 +119,7 @@ libdata/pkgconfig/gstreamer-base-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-controller-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-dataprotocol-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-net-%%VERSION%%.pc
-%%CHECK%%share/aclocal/gst-element-check-%%VERSION%%.m4
+share/aclocal/gst-element-check-%%VERSION%%.m4
 share/locale/af/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/be/LC_MESSAGES/gstreamer-%%VERSION%%.mo
