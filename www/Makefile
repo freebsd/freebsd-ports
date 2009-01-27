@@ -1629,6 +1629,7 @@
     SUBDIR += xpi-locale-switcher
     SUBDIR += xpi-menueditor
     SUBDIR += xpi-mldonkey
+    SUBDIR += xpi-modify_headers
     SUBDIR += xpi-mousegestures
     SUBDIR += xpi-mozex
     SUBDIR += xpi-mrtech-local-install
