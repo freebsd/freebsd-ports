@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fullscreen gesture recognition
 
 USE_BISON=	build
-USE_XORG=	xft x11 xext xi
+USE_XORG=	xft x11 xext xi xtst
 USE_IMAKE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}
 CPPFLAGS=	-I${LOCALBASE}/include -I.
