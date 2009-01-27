@@ -638,6 +638,7 @@
     SUBDIR += rsyslog3-pgsql
     SUBDIR += rsyslog3-relp
     SUBDIR += rsyslog3-snmp
+    SUBDIR += rsyslog4
     SUBDIR += rtty
     SUBDIR += ruby-log4r
     SUBDIR += ruby-quota
