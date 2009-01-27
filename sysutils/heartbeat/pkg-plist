@@ -7,6 +7,7 @@ etc/ha.d/rc.d/ip-request
 etc/ha.d/rc.d/ip-request-resp
 etc/ha.d/rc.d/status
 etc/ha.d/resource.d/AudibleAlarm
+etc/ha.d/resource.d/BSDService
 etc/ha.d/resource.d/Delay
 etc/ha.d/resource.d/Filesystem
 etc/ha.d/resource.d/ICP

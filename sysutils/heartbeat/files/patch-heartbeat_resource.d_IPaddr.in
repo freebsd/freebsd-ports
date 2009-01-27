@@ -1,11 +1,54 @@
---- heartbeat/resource.d/IPaddr.in.orig	2008-10-16 19:49:31.000000000 +0200
-+++ heartbeat/resource.d/IPaddr.in	2008-10-16 19:51:23.000000000 +0200
-@@ -105,7 +105,7 @@
+--- heartbeat/resource.d/IPaddr.in.orig	2009-01-16 21:01:12.000000000 +0100
++++ heartbeat/resource.d/IPaddr.in	2009-01-16 21:13:44.000000000 +0100
+@@ -79,6 +79,23 @@
+   return 1
+ }
  
-     case $SYSTYPE in
-       *BSD)
--		$IFCONFIG | grep "$ipaddr" -B4 | grep "UP," | cut -d ":" -f 1
-+		$IFCONFIG | grep "$ipaddr " -B20 | grep "UP," | tail -n 1 | cut -d ":" -f 1
- 		return 0;;
++find_interface_bsd() {
++
++  ipaddr="$1";
++
++  for ifname in `$IFCONFIG -l`
++  do
++#    echo "IFNAME:$ifname"
++    $IFCONFIG $ifname | grep "inet.*[: ]$ipaddr " >/dev/null 2>&1
++    if [ $? -eq 0 ]
++    then
++      echo $ifname
++      return 0
++    fi
++  done
++  return 1
++}
++
+ #
+ #	Find out which alias serves the given IP address
+ #	The argument is an IP address, and its output
+@@ -131,6 +148,9 @@
+ 	SunOS)
+ 	 	IF=`find_interface_solaris $BASEIP`
+         ;;
++	BSD)
++		IF=`find_interface_bsd $BASEIP`
++	;;
        *)
-     		: "comparing $ipaddr to $addr (from ifconfig)"
+ 	 	IF=`find_interface_generic $BASEIP`
+        ;;
+@@ -253,6 +273,7 @@
+ 		;;
+ 
+     *BSD)
++		echo "ipaddr: $ipaddr, iface: $iface, ifinfo: $ifinfo"
+ 		CMD="$IFCONFIG $iface inet $ipaddr netmask 255.255.255.255 alias"
+ 		;;
+     *)		
+@@ -461,6 +482,9 @@
+        SunOS)
+ 		j=1
+ 		;;
++	*BSD)
++		j=1
++		;;
+ 	*)
+ 		j=0
+                 TRYADRCNT=`ls "${NICBASE}:"* | wc -l | tr -d ' ' 2>/dev/null`

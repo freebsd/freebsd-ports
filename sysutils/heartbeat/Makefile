@@ -7,7 +7,7 @@
 
 PORTNAME=	heartbeat
 PORTVERSION=	1.2.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://linux-ha.org/download/
 
