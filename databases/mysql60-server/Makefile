@@ -29,7 +29,6 @@ CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-readline \
 		--without-libedit \
 		--with-libwrap \
-		--with-mysqlfs \
 		--with-low-memory \
 		--with-comment='FreeBSD port: ${PKGNAME}' \
 		--enable-thread-safe-client
