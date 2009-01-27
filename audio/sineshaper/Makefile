@@ -26,13 +26,9 @@ USE_GCC=	4.2+
 CFLAGS+=	-I${LOCALBASE}/include/dssi
 USE_AUTOTOOLS=	autoconf:262 automake:110:env libtool:15
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
 BROKEN=		does not compile
-.endif
 
 pre-configure:
 	cd ${WRKSRC} && ${AUTORECONF}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
