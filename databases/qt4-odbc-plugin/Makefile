@@ -8,6 +8,7 @@
 
 PORTNAME=	qt4-${DB}-plugin
 PORTVERSION=	${QT4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
@@ -19,8 +20,7 @@ COMMENT=	Qt ODBC database plugin
 DB=		odbc
 
 LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
-
-BROKEN=		does not compile
+BUILD_DEPENDS=	unixODBC>=2.2.14_1:${PORTSDIR}/databases/unixODBC
 
 USE_QT_VER=	4
 QT_COMPONENTS=	moc_build sql

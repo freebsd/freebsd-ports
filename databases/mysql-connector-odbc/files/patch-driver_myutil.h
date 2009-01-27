@@ -3,8 +3,9 @@
 @@ -174,7 +174,7 @@
  				      SQLLEN *pcbValue);
  SQLRETURN SQL_API my_SQLExtendedFetch(SQLHSTMT hstmt, SQLUSMALLINT fFetchType,
- 				      SQLROWOFFSET irow, SQLULEN *pcrow,
+-				      SQLROWOFFSET irow, SQLULEN *pcrow,
 -				      SQLUSMALLINT FAR *rgfRowStatus, bool upd_status);
++				      SQLLEN irow, SQLULEN *pcrow,
 +				      SQLUSMALLINT FAR *rgfRowStatus, my_bool upd_status);
  SQLRETURN copy_stmt_error(STMT FAR *src, STMT FAR *dst);
  int unireg_to_c_datatype(MYSQL_FIELD *field);
