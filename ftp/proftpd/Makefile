@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	proftpd
-DISTVERSION=	1.3.2rc3
-PORTREVISION=	1
+DISTVERSION=	1.3.2rc4
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -69,11 +68,11 @@ OPTIONS=	BAN "Include mod_ban (Requires CTRLS)" off \
 		CTRLS "Include controls" off \
 		DIGEST "Include mod_digest" off \
 		IFSESSION "Include mod_ifsession" on \
-		IPV6 "Use IPv6" off \
+		IPV6 "Use IPv6" on \
 		LDAP "Use LDAP" off \
 		LDAP_TLS "Use LDAP TLS (Requires LDAP, OPENSSL)" off\
 		MYSQL "MySQL auth (Can be combined with PGSQL)" off \
-		NLS "Use nls (builds mod_lang)" off \
+		NLS "Use nls (builds mod_lang)" on \
 		OPENSSL "Include mod_tls" on \
 		PGSQL "Postgres auth (Can be combined with MYSQL)" off \
 		QUOTA "Include mod_quota" off \
@@ -157,10 +156,13 @@ LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--enable-nls
 USE_GETTEXT=yes
 PROFTPD_LIBS+=	-lintl -L${LOCALBASE}/lib
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 #allow user to override
-MODULES?=	mod_ratio:mod_readme:mod_rewrite:mod_wrap2:mod_ifsession
+MODULES?=	mod_ratio:mod_readme:mod_rewrite:mod_wrap2:mod_ifsession:mod_lang
 
 INCLUDEDIRS?=
 LIBDIRS?=
@@ -227,9 +229,9 @@ MODULES:=${MODULES}:mod_clamav
 LIB_DEPENDS+=	clamav.5:${PORTSDIR}/security/clamav
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
-PLIST_SUB=	CLAMAV=""
+PLIST_SUB+=	CLAMAV=""
 .else
-PLIST_SUB=	CLAMAV="@comment "
+PLIST_SUB+=	CLAMAV="@comment "
 .endif
 
 .if defined(WITH_DIGEST)
