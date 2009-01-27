@@ -3,6 +3,7 @@ bin/ftpdctl
 bin/ftptop
 bin/ftpwho
 bin/prxs
+
 @unexec if cmp -s %D/etc/proftpd.conf %D/etc/proftpd.conf.sample; then rm -f %D/etc/proftpd.conf; fi
 etc/proftpd.conf.sample
 @exec cp -n %D/%F %B/proftpd.conf
@@ -63,5 +64,17 @@ libdata/pkgconfig/proftpd.pc
 sbin/ftpshut
 sbin/in.proftpd
 sbin/proftpd
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/proftpd.mo
+%%NLS%%share/locale/en_US/LC_MESSAGES/proftpd.mo
+%%NLS%%share/locale/it_IT/LC_MESSAGES/proftpd.mo
+%%NLS%%share/locale/ru_RU/LC_MESSAGES/proftpd.mo
+%%NLS%%@dirrm share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm share/locale/en_US/LC_MESSAGES
+%%NLS%%@dirrm share/locale/it_IT/LC_MESSAGES
+%%NLS%%@dirrm share/locale/ru_RU/LC_MESSAGES
+%%NLS%%@dirrm share/locale/zh_CN
+%%NLS%%@dirrm share/locale/en_US
+%%NLS%%@dirrm share/locale/it_IT
+%%NLS%%@dirrm share/locale/ru_RU
 @dirrm include/proftpd
 @dirrmtry lib/proftpd
