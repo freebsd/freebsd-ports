@@ -1,0 +1,17 @@
+%%SITE_PERL%%/SVN/Hooks.pm
+%%SITE_PERL%%/SVN/Hooks/AllowLogChange.pm
+%%SITE_PERL%%/SVN/Hooks/CheckLog.pm
+%%SITE_PERL%%/SVN/Hooks/CheckMimeTypes.pm
+%%SITE_PERL%%/SVN/Hooks/CheckProperty.pm
+%%SITE_PERL%%/SVN/Hooks/CheckStructure.pm
+%%SITE_PERL%%/SVN/Hooks/DenyChanges.pm
+%%SITE_PERL%%/SVN/Hooks/DenyFilenames.pm
+%%SITE_PERL%%/SVN/Hooks/JiraAcceptance.pm
+%%SITE_PERL%%/SVN/Hooks/Mailer.pm
+%%SITE_PERL%%/SVN/Hooks/Notify.pm
+%%SITE_PERL%%/SVN/Hooks/UpdateConfFile.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Hooks/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Hooks
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
+@dirrm %%SITE_PERL%%/SVN/Hooks
+@dirrmtry %%SITE_PERL%%/SVN
