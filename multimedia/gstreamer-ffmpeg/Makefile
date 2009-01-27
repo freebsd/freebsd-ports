@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.4
-PORTREVISION=	1
+PORTVERSION=	0.10.6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/
 PKGNAMESUFFIX=	-ffmpeg
@@ -25,9 +24,9 @@ USE_GNOME=	gnometarget
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		CPPFLAGS="${CPPFLAGS}" \
 		CFLAGS="${CFLAGS} -fno-force-addr" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+		LDFLAGS="${LDFLAGS}"
 PLIST_SUB=	\
 		VERSION="${GST_VERSION}"
 WITHOUT_CPU_CFLAGS=	yes
