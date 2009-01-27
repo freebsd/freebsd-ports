@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.6.4
+PORTVERSION=	3.6.10
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 DISTNAME=	sqlite-${PORTVERSION}
@@ -84,7 +84,8 @@ post-patch:
 	@${REINPLACE_CMD} -E -e "s|-lpthread||g" \
 		${WRKSRC}/sqlite.pc.in ${WRKSRC}/sqlite3.pc.in
 .endif
-	@${REINPLACE_CMD} -e "s|fts3.c||g" ${WRKSRC}/tool/mksqlite3c.tcl
+	@${REINPLACE_CMD} -e "s|fts3.c||g" \
+		-e "s|fts3_expr.c||g" ${WRKSRC}/tool/mksqlite3c.tcl
 
 post-install:
 .if defined(WITH_TCLWRAPPER)
