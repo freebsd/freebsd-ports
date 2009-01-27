@@ -8,6 +8,7 @@
 PORTNAME=	xorg-dmx
 PORTVERSION=	1.5.3
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -21,7 +22,7 @@ LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
 
 USE_GL=		gl
 USE_XORG=	x11 xf86driproto glproto randrproto renderproto fixesproto \
-		damageproto xcmiscproto xextproto xf86miscproto \
+		dri2proto damageproto xcmiscproto xextproto xf86miscproto \
 		xf86vidmodeproto xf86bigfontproto scrnsaverproto bigreqsproto \
 		resourceproto fontsproto xf86dgaproto videoproto \
 		compositeproto trapproto recordproto resourceproto \

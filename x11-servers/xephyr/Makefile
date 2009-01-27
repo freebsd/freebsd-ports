@@ -7,6 +7,7 @@
 
 PORTNAME=	xephyr
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -18,7 +19,7 @@ LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
 
 USE_GL=		gl
 USE_XORG=	x11 xf86driproto glproto randrproto renderproto fixesproto \
-		damageproto xcmiscproto xtrans inputproto \
+		dri2proto damageproto xcmiscproto xtrans inputproto \
 		xf86bigfontproto scrnsaverproto bigreqsproto \
 		resourceproto fontsproto videoproto \
 		compositeproto trapproto recordproto \
