@@ -7,6 +7,7 @@
 
 PORTNAME=	memcached
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.danga.com/memcached/dist/ \
 		${MASTER_SITE_GENTOO}
@@ -38,8 +39,10 @@ PORTDOCS=	memory_management.txt protocol.txt
 PATCH_SITES+=		${MASTER_SITE_SOURCEFORGE}
 PATCH_SITE_SUBDIR=	repcached
 PATCH_DIST_STRIP+=	-p1
-PATCHFILES+=		repcached-2.1-1.2.6.patch.gz
+PATCHFILES+=		repcached-2.2-1.2.6.patch.gz
 CONFIGURE_ARGS+=	--enable-replication --disable-threads
+.else
+CONFIGURE_ARGS+=	--enable-threads
 .endif
 
 post-configure:
