@@ -6,7 +6,7 @@
 #   $MCom: ports/audio/gstreamer-plugins-taglib/Makefile,v 1.3 2008/03/19 14:05:32 ahze Exp $
 #
 
-PORTREVISION=	4
+PORTREVISION=	0
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer taglib plugin

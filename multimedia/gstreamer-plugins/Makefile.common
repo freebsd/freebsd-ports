@@ -59,7 +59,6 @@ GOOD_GST_ALL_PLUGINS+= \
 		ladspa \
 		libcaca \
 		libpng \
-		taglib \
 		raw1394 \
 		shout2 \
 		soup \
