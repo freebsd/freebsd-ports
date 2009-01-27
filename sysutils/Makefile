@@ -640,6 +640,7 @@
     SUBDIR += rsyslog3-snmp
     SUBDIR += rsyslog4
     SUBDIR += rsyslog4-dbi
+    SUBDIR += rsyslog4-gnutls
     SUBDIR += rtty
     SUBDIR += ruby-log4r
     SUBDIR += ruby-quota
