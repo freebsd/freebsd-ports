@@ -1,0 +1,16 @@
+share/pear/Services/HTMLValidator/Error.php
+share/pear/Services/HTMLValidator/Message.php
+share/pear/Services/HTMLValidator/Response.php
+share/pear/Services/HTMLValidator/Warning.php
+share/pear/Services/HTMLValidator.php
+share/pear/tests/Services_W3C_HTMLValidator/AllTests.php
+share/pear/tests/Services_W3C_HTMLValidator/Services/W3C/HTMLValidatorTest.php
+share/pear/packages/pear-Services_W3C_HTMLValidator-1.0.0r2/package.xml
+@dirrm share/pear/Services/HTMLValidator
+@dirrm share/pear/Services
+@dirrm share/pear/tests/Services_W3C_HTMLValidator/Services/W3C/
+@dirrm share/pear/tests/Services_W3C_HTMLValidator/Services
+@dirrm share/pear/tests/Services_W3C_HTMLValidator
+@dirrm share/examples/pear/Services_W3C_HTMLValidator/PHPUnit
+@dirrm share/examples/pear/Services_W3C_HTMLValidator
+@dirrm share/pear/packages/pear-Services_W3C_HTMLValidator-1.0.0r2
