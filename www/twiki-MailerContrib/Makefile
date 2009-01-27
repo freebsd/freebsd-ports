@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	MailerContrib
-SVNREV=		17629
+SVNREV=		17641
 
 COMMENT=	E-mail notification of changes
 
