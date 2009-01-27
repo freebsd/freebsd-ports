@@ -9,8 +9,7 @@ PORTNAME=	rsibreak
 PORTVERSION=	0.8.0
 PORTREVISION=	2
 CATEGORIES=	x11 kde
-MASTER_SITES=	http://www.rsibreak.org/images/e/e0/
-DISTFILES=	Rsibreak-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	http://www.rsibreak.org/files/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A KDE RSI prevention tool
@@ -20,6 +19,7 @@ USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
+USE_XORG=	xscrnsaver
 
 post-patch:
 	@${REINPLACE_CMD} 's/install-data-local: install-apidox/install-data-local:/' \
