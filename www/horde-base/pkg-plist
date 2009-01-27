@@ -228,7 +228,6 @@
 %%HORDIR%%/lib/Horde/Editor/fckeditor.php
 %%HORDIR%%/lib/Horde/Editor/tinymce.php
 %%HORDIR%%/lib/Horde/Editor/xinha.php
-%%HORDIR%%/lib/Horde/Exception.php
 %%HORDIR%%/lib/Horde/Feed.php
 %%HORDIR%%/lib/Horde/Feed/Atom.php
 %%HORDIR%%/lib/Horde/Feed/Base.php
@@ -282,6 +281,7 @@
 %%HORDIR%%/lib/Horde/Image/Effect/gd/text_watermark.php
 %%HORDIR%%/lib/Horde/Image/Effect/gd/unsharp_mask.php
 %%HORDIR%%/lib/Horde/Image/Effect/im/border.php
+%%HORDIR%%/lib/Horde/Image/Effect/im/composite.php
 %%HORDIR%%/lib/Horde/Image/Effect/im/drop_shadow.php
 %%HORDIR%%/lib/Horde/Image/Effect/im/photo_stack.php
 %%HORDIR%%/lib/Horde/Image/Effect/im/polaroid_image.php
