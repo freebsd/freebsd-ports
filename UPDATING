@@ -18,7 +18,7 @@ upgrades.
   AFFECTS: users of x11-servers/xorg-server
   AUTHOR: rnoland@FreeBSD.org
 
-  If you are using an older xorg.conf serveral config lines are
+  If you are using an older xorg.conf several config lines are
   no longer needed and will generate warnings when X is started.
   RgbPath will cause X to fail to start, remove it from your config.
 
