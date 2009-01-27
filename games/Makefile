@@ -750,6 +750,7 @@
     SUBDIR += shaaft
     SUBDIR += shootingstar
     SUBDIR += simplevaders
+    SUBDIR += simutrans
     SUBDIR += six
     SUBDIR += sjeng
     SUBDIR += sl

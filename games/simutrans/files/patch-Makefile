@@ -1,0 +1,12 @@
+--- Makefile.orig	2008-12-21 15:40:36.000000000 +0100
++++ Makefile	2008-12-21 15:41:10.000000000 +0100
+@@ -69,9 +69,6 @@
+     CFLAGS   += -minline-all-stringops
+     LDFLAGS += -ffunctions-sections
+   endif
+-else
+-  CFLAGS   += -O
+-  CXXFLAGS += -O
+ endif
+ 
+ ifdef DEBUG
