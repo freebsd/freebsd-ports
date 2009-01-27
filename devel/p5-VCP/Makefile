@@ -31,6 +31,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
+BROKEN=		does not build
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
