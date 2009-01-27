@@ -1,0 +1,53 @@
+# New ports collection makefile for:	postfix-policyd-spf-perl
+# Date created:				2008-01-25
+# Whom:					Darren Pilgrim <ports.maintainer@evilphi.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	postfix-policyd-spf-perl
+PORTVERSION=	2.007
+CATEGORIES=	mail
+MASTER_SITES=	http://www.openspf.org/blobs/
+
+MAINTAINER=	ports.maintainer@evilphi.com
+COMMENT=	SPF policy service for Postfix written in Perl
+
+RUN_DEPENDS=	${SITE_PERL}/Mail/SPF.pm:${PORTSDIR}/mail/p5-Mail-SPF \
+		p5-NetAddr-IP>=4:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
+		${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
+
+USE_PERL5_RUN=	5.6.0+
+NO_BUILD=	yes
+
+PLIST_FILES=	sbin/postfix-policyd-spf-perl
+
+SUB_LIST=	PREFIX=${PREFIX}
+SUB_FILES=	pkg-message
+
+SPF_FAIL?=	550
+SPF_TEMPERROR?=	DEFER_IF_PERMIT
+REINPLACE=	s/%%SPF_FAIL%%/${SPF_FAIL}/g;\
+		s/%%SPF_TEMPERROR%%/${SPF_TEMPERROR}/g;
+
+pre-patch:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You can change the actions returned by the server by setting the following"
+	@${ECHO_MSG} "environment variables:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  SPF_FAIL      - Used when the SPF record(s) determine client is not"
+	@${ECHO_MSG} "                  authorized.  Default: 550"
+	@${ECHO_MSG} "  SPF_TEMPERROR - Used when the SPF check itself fails due to a transient"
+	@${ECHO_MSG} "                  error (i.e. DNS timeout).  Default: DEFER_IF_PERMIT"
+	@${ECHO_MSG} ""
+
+post-patch:
+	@${REINPLACE_CMD} -e '${REINPLACE}' ${WRKSRC}/postfix-policyd-spf-perl
+
+do-install:
+	@${INSTALL_SCRIPT} ${WRKSRC}/postfix-policyd-spf-perl ${PREFIX}/sbin
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>

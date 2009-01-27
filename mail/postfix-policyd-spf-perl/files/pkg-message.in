@@ -1,0 +1,26 @@
+The service is not enabled by default.  Enable it by doing the following:
+
+1. Add the following to /etc/postfix/master.cf:
+
+	spf-policy unix -       n       n       -       0       spawn
+	  user=nobody argv=%%PREFIX%%/sbin/postfix-policyd-spf-perl
+
+   The user nobody is fine if you have no other daemons running as nobody.
+   Otherwise, you should use a dedicated user and group for this policy
+   service.
+
+2. Add "spf-policy_time_limit = 3600" to main.cf.
+
+3. Configure the Postfix policy service in %%PREFIX%%/etc/postfix/main.cf:
+
+	smtpd_recipient_restrictions =
+		...
+		reject_unauth_destination
+		...
+		check_policy_service unix:private/spf-policy
+		...
+
+   NOTE: Specify check_policy_service AFTER reject_unauth_destination or your
+   system may become an open relay.
+
+4. Restart Postfix.

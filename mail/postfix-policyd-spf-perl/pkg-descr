@@ -1,0 +1,4 @@
+postfix-policyd-spf-perl is an RFC-4408-compliant SPF policy service for
+postfix written in Perl.
+
+WWW: http://www.openspf.org/Software/
