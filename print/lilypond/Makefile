@@ -52,8 +52,6 @@ NOCCACHE=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-BROKEN=		Does not compile
-
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS) && defined(WITH_WEBDOCS)
