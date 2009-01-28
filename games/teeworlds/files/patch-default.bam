@@ -1,11 +1,11 @@
---- default.bam.orig	2009-01-13 22:36:11.000000000 +0300
-+++ default.bam	2009-01-14 17:42:42.000000000 +0300
-@@ -132,7 +132,7 @@
+--- default.bam.orig	2009-01-25 13:50:33.000000000 +0000
++++ default.bam	2009-01-26 18:11:46.000000000 +0000
+@@ -128,7 +128,7 @@
+ 			settings.link.frameworks:Add("Carbon")
+ 			settings.link.frameworks:Add("AppKit")
  		else
- 			glfw_platform = "x11"
- 			pa_platform = "unix"
 -			settings.link.libs:Add("pthread")
 +			settings.link.flags:Add("-pthread")
  		end
  	elseif family == "windows" then
- 		glfw_platform = "win32"
+ 		settings.link.libs:Add("gdi32")
