@@ -2,12 +2,18 @@ bin/kdesvn
 bin/kdesvnaskpass
 include/svnqt/annotate_line.hpp
 include/svnqt/apr.hpp
+include/svnqt/cache/DatabaseException.hpp
+include/svnqt/cache/LogCache.hpp
+include/svnqt/cache/ReposLog.hpp
 include/svnqt/check.hpp
 include/svnqt/client.hpp
 include/svnqt/commititem.hpp
+include/svnqt/conflictdescription.hpp
+include/svnqt/conflictresult.hpp
 include/svnqt/context.hpp
 include/svnqt/context_listener.hpp
 include/svnqt/datetime.hpp
+include/svnqt/diffoptions.hpp
 include/svnqt/dirent.hpp
 include/svnqt/entry.hpp
 include/svnqt/exception.hpp
@@ -22,6 +28,7 @@ include/svnqt/revision.hpp
 include/svnqt/shared_pointer.hpp
 include/svnqt/smart_pointer.hpp
 include/svnqt/status.hpp
+include/svnqt/stringarray.hpp
 include/svnqt/svnfilestream.hpp
 include/svnqt/svnqt_defines.hpp
 include/svnqt/svnqttypes.hpp
@@ -38,24 +45,33 @@ lib/kde3/libkdesvnpart.la
 lib/kde3/libkdesvnpart.so
 lib/libsvnqt.so
 lib/libsvnqt.so.4
-lib/libsvnqt.so.4.1.1
+lib/libsvnqt.so.4.2.2
 share/applications/kde/kdesvn.desktop
-share/apps/kconf_update/kdesvnpartrc-use-external.upd
 share/apps/kconf_update/kdesvn-use-external-update.sh
+share/apps/kconf_update/kdesvnpartrc-use-external.upd
 share/apps/kdesvn/kdesvnui.rc
 share/apps/kdesvnpart/kdesvn_part.rc
 share/apps/konqueror/servicemenus/kdesvn_subversion.desktop
 share/config.kcfg/kdesvn_part.kcfg
-%%PORTDOCS%%%%DOCSDIR%%/common
-%%PORTDOCS%%%%DOCSDIR%%/hi128-filesys-kdesvnadded.png
-%%PORTDOCS%%%%DOCSDIR%%/hi128-filesys-kdesvnconflicted.png
-%%PORTDOCS%%%%DOCSDIR%%/hi128-filesys-kdesvndeleted.png
-%%PORTDOCS%%%%DOCSDIR%%/hi128-filesys-kdesvnlocked.png
-%%PORTDOCS%%%%DOCSDIR%%/hi128-filesys-kdesvnmodified.png
-%%PORTDOCS%%%%DOCSDIR%%/hi128-filesys-kdesvnneedlock.png
-%%PORTDOCS%%%%DOCSDIR%%/hi128-filesys-kdesvnupdates.png
-%%PORTDOCS%%%%DOCSDIR%%/index.cache.bz2
-%%PORTDOCS%%%%DOCSDIR%%/index.docbook
+%%PORTDOCS%%%%DOCSDIR%%/HTML/en/kdesvn/common
+%%PORTDOCS%%%%DOCSDIR%%/HTML/en/kdesvn/hi128-filesys-kdesvnadded.png
+%%PORTDOCS%%%%DOCSDIR%%/HTML/en/kdesvn/hi128-filesys-kdesvnconflicted.png
+%%PORTDOCS%%%%DOCSDIR%%/HTML/en/kdesvn/hi128-filesys-kdesvndeleted.png
+%%PORTDOCS%%%%DOCSDIR%%/HTML/en/kdesvn/hi128-filesys-kdesvnlocked.png
+%%PORTDOCS%%%%DOCSDIR%%/HTML/en/kdesvn/hi128-filesys-kdesvnmodified.png
+%%PORTDOCS%%%%DOCSDIR%%/HTML/en/kdesvn/hi128-filesys-kdesvnneedlock.png
+%%PORTDOCS%%%%DOCSDIR%%/HTML/en/kdesvn/hi128-filesys-kdesvnupdates.png
+%%PORTDOCS%%%%DOCSDIR%%/HTML/en/kdesvn/index.cache.bz2
+%%PORTDOCS%%%%DOCSDIR%%/HTML/en/kdesvn/index.docbook
+%%PORTDOCS%%%%DOCSDIR%%/HTML/nl/kdesvn/hi128-filesys-kdesvnadded.png
+%%PORTDOCS%%%%DOCSDIR%%/HTML/nl/kdesvn/hi128-filesys-kdesvnconflicted.png
+%%PORTDOCS%%%%DOCSDIR%%/HTML/nl/kdesvn/hi128-filesys-kdesvndeleted.png
+%%PORTDOCS%%%%DOCSDIR%%/HTML/nl/kdesvn/hi128-filesys-kdesvnlocked.png
+%%PORTDOCS%%%%DOCSDIR%%/HTML/nl/kdesvn/hi128-filesys-kdesvnmodified.png
+%%PORTDOCS%%%%DOCSDIR%%/HTML/nl/kdesvn/hi128-filesys-kdesvnneedlock.png
+%%PORTDOCS%%%%DOCSDIR%%/HTML/nl/kdesvn/hi128-filesys-kdesvnupdates.png
+%%PORTDOCS%%%%DOCSDIR%%/HTML/nl/kdesvn/index.cache.bz2
+%%PORTDOCS%%%%DOCSDIR%%/HTML/nl/kdesvn/index.docbook
 share/icons/hicolor/128x128/actions/kdesvnadd.png
 share/icons/hicolor/128x128/actions/kdesvnaddrecursive.png
 share/icons/hicolor/128x128/actions/kdesvnblame.png
@@ -259,6 +275,7 @@ share/icons/hicolor/scalable/filesystems/kdesvnupdates.svgz
 %%NLS%%share/locale/fr/LC_MESSAGES/kdesvn.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/kdesvn.mo
 %%NLS%%share/locale/it/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/kdesvn.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/kdesvn.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/kdesvn.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/kdesvn.mo
@@ -276,8 +293,51 @@ share/services/svn+https.protocol
 share/services/svn+ssh.protocol
 share/services/svn.protocol
 @dirrmtry share/services/kded
+@dirrmtry share/services
+@dirrmtry share/icons/hicolor/scalable/filesystems
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable/actions
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/64x64/filesystems
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64/actions
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/filesystems
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48/actions
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/filesystems
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32/actions
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/22x22/filesystems
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22/actions
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/filesystems
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16/actions
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/filesystems
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128/actions
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/HTML/nl/kdesvn
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/HTML/nl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/HTML/en/kdesvn
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/HTML/en
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/HTML
+@dirrmtry share/config.kcfg
+@dirrmtry share/apps/konqueror/servicemenus
+@dirrmtry share/apps/konqueror
 @dirrm share/apps/kdesvnpart
-@dirrm share/apps/kdesvn
+@dirrmtry share/apps/kdesvn
+@dirrmtry share/apps/kconf_update
+@dirrmtry share/apps
 @dirrmtry share/applications/kde
+@dirrmtry share/applications
+@dirrmtry lib/kde3
+@dirrm include/svnqt/cache
 @dirrm include/svnqt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
