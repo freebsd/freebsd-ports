@@ -6,7 +6,7 @@
 #   $MCom: ports/audio/gstreamer-plugins-nas/Makefile,v 1.5 2008/03/19 14:05:31 ahze Exp $
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 COMMENT=	GStreamer NAS (Network Audio System) plugin
