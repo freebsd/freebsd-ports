@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	SF
 
-MAINTAINER=	beat@chruetertee.ch
+MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Check HTML documents for broken links
 
 USE_PYTHON=		2.4+

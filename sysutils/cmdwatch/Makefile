@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.chruetertee.ch/files/download/
 
-MAINTAINER=	beat@chruetertee.ch
+MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Watches the output from a command at specified intervals
 
 MAN1=		cmdwatch.1

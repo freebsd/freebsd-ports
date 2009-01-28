@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	german tk
 MASTER_SITES=	ftp://ftp.tu-chemnitz.de/pub/Local/urz/ding/
 
-MAINTAINER=	beat@chruetertee.ch
+MAINTAINER=	beat@FreeBSD.org
 COMMENT=	A German-English dictionary program for X windows/Unix
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \

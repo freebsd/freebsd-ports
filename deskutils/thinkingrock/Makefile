@@ -12,7 +12,7 @@ CATEGORIES=	deskutils java
 MASTER_SITES=	SF
 DISTNAME=	tr-${PORTVERSION}
 
-MAINTAINER=	beat@chruetertee.ch
+MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Application for collecting and processing your thoughts
 
 USE_JAVA=	yes

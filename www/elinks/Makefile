@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://elinks.or.cz/download/
 
-MAINTAINER=	beat@chruetertee.ch
+MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Elinks - links text WWW browser with enhancements
 
 GNU_CONFIGURE=	yes

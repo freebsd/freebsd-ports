@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	misc tk
 MASTER_SITES=	http://www.blackie.dk/dotfile/download/
 
-MAINTAINER=	beat@chruetertee.ch
+MAINTAINER=	beat@FreeBSD.org
 COMMENT=	A GUI dotfile generator program to create .config files
 
 BUILD_DEPENDS=	formail:${PORTSDIR}/mail/procmail

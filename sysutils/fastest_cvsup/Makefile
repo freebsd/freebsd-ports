@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.chruetertee.ch/files/download/
 
-MAINTAINER=	beat@chruetertee.ch
+MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Finds fastest CVSup server
 
 DISTVERSION=	0.2.8
