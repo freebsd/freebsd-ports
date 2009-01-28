@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unuran
-PORTVERSION=	1.2.4
+PORTVERSION=	1.3.1
 CATEGORIES=	math
 MASTER_SITES=	http://statmath.wu-wien.ac.at/unuran/
 
@@ -24,6 +24,10 @@ USE_LDCONFIG=	yes
 INFO=		unuran
 PORTDOCS=	unuran.pdf unuran.txt
 
+post-patch:
+	${FIND} -X ${WRKSRC} -name 'Makefile.\in' | ${XARGS} ${REINPLACE_CMD} -e \
+		's/sinclude/#sinclude/g'
+
 .ifndef(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
@@ -37,6 +41,10 @@ CONFIGURE_ARGS+=	--enable-check-struct --enable-logging
 
 regression-test: build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} check)
+
+fullcheck: build
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} fullcheck)
+
 .endif
 
 .include <bsd.port.mk>
