@@ -7,6 +7,7 @@
 
 PORTNAME=	merkaartor
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://www.merkaartor.org/downloads/source/
 
@@ -18,7 +19,7 @@ LIB_DEPENDS=	exiv2:${PORTSDIR}/graphics/exiv2
 USE_BZIP2=	yes
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build gui network svg webkit xml
+QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build gui network svg webkit xml imageformats
 
 MAN1=		merkaartor.1
 
