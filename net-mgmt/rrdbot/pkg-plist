@@ -16,6 +16,7 @@ share/rrdbot/mib/HOST-RESOURCES-TYPES.txt
 share/rrdbot/mib/IANA-ADDRESS-FAMILY-NUMBERS-MIB.txt
 share/rrdbot/mib/IANA-LANGUAGE-MIB.txt
 share/rrdbot/mib/IANAifType-MIB.txt
+share/rrdbot/mib/JAILS-MIB.txt
 share/rrdbot/mib/IF-INVERTED-STACK-MIB.txt
 share/rrdbot/mib/IF-MIB.txt
 share/rrdbot/mib/INET-ADDRESS-MIB.txt
@@ -29,6 +30,7 @@ share/rrdbot/mib/IPV6-UDP-MIB.txt
 share/rrdbot/mib/LM-SENSORS-MIB.txt
 share/rrdbot/mib/NOTIFICATION-LOG-MIB.txt
 share/rrdbot/mib/OSPF-MIB.txt
+share/rrdbot/mib/PCAP-MIB.txt
 share/rrdbot/mib/REGEX-MIB.txt
 share/rrdbot/mib/RFC-1215.txt
 share/rrdbot/mib/RFC1155-SMI.txt
@@ -51,6 +53,7 @@ share/rrdbot/mib/SNMPv2-SMI.txt
 share/rrdbot/mib/SNMPv2-TC.txt
 share/rrdbot/mib/SNMPv2-TM.txt
 share/rrdbot/mib/SOURCE-ROUTING-MIB.txt
+share/rrdbot/mib/UCD-SNMP-MIB.txt
 share/rrdbot/mib/TCP-MIB.txt
 share/rrdbot/mib/UDP-MIB.txt
 @dirrm share/rrdbot/mib
