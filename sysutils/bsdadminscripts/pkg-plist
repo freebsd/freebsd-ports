@@ -1,6 +1,7 @@
 share/bsdadminscripts/buildflags.awk
 etc/buildflags.conf.sample
 share/bsdadminscripts/buildflags.mk
+sbin/distviper
 sbin/pkg_libchk
 sbin/pkg_validate
 sbin/portconfig

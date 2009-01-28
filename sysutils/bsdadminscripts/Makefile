@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdadminscripts
-PORTVERSION=	4.4.4
+PORTVERSION=	5.0
 CATEGORIES=	sysutils ports-mgmt
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,6 +22,7 @@ MANCOMPRESSED=	no
 NOPORTDOCS=	-nodoc
 .else
 MAN1=		bsdadminscripts.1 \
+		distviper.1 \
 		rcstart.1 \
 		portconfig.1 \
 		buildflags.mk.1 buildflags.conf.1 buildflags.awk.1 \
@@ -41,6 +42,7 @@ plist: patch
 
 do-install:
 	@cd ${WRKSRC}; ./install.sh \
-		-prefix=${PREFIX} -ports=${PORTSDIR} ${NOPORTDOCS}
+		-prefix=${PREFIX} -ports=${PORTSDIR} -distdir=${DISTDIR} \
+			${NOPORTDOCS}
 
 .include <bsd.port.mk>
