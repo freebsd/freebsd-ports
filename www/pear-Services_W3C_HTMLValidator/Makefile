@@ -8,7 +8,7 @@
 PORTNAME=	Services_W3C_HTMLValidator
 PORTVERSION=	1.0.0r2
 CATEGORIES=	www pear
-DISTNAME=	${PORTNAME}-1.0.0RC2
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/RC/}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An Object Oriented Interface to the W3C HTML Validator service.
