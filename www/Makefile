@@ -1088,6 +1088,7 @@
     SUBDIR += p5-WWW-Spinn3r
     SUBDIR += p5-WWW-TV
     SUBDIR += p5-WWW-TWSMS
+    SUBDIR += p5-WWW-TinySong
     SUBDIR += p5-WWW-VenusEnvy
     SUBDIR += p5-WWW-WebArchive
     SUBDIR += p5-WWW-Wikipedia
