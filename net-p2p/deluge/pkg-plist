@@ -1,10 +1,10 @@
 bin/deluge
 bin/deluged
-%%PYTHON_SITELIBDIR%%/deluge-1.1.0-py2.5.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/deluge-1.1.0-py2.5.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/deluge-1.1.0-py2.5.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/deluge-1.1.0-py2.5.egg-info/entry_points.txt
-%%PYTHON_SITELIBDIR%%/deluge-1.1.0-py2.5.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/deluge-1.1.1-py2.5.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/deluge-1.1.1-py2.5.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/deluge-1.1.1-py2.5.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/deluge-1.1.1-py2.5.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/deluge-1.1.1-py2.5.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/deluge/SimpleXMLRPCServer.py
 %%PYTHON_SITELIBDIR%%/deluge/SimpleXMLRPCServer.pyc
 %%PYTHON_SITELIBDIR%%/deluge/SimpleXMLRPCServer.pyo
@@ -348,6 +348,7 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/deluge/i18n/ast/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/deluge/i18n/be/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/deluge/i18n/bg/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/bn/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/deluge/i18n/bs/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/deluge/i18n/ca/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/deluge/i18n/cs/LC_MESSAGES/deluge.mo
@@ -390,6 +391,7 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/deluge/i18n/nb/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/deluge/i18n/nds/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/deluge/i18n/nl/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/nn/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/deluge/i18n/pl/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/deluge/i18n/pms/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/deluge/i18n/pt/LC_MESSAGES/deluge.mo
@@ -1073,6 +1075,8 @@ share/pixmaps/deluge.xpm
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pms
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pl/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pl
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nn
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nl/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nl
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nds/LC_MESSAGES
@@ -1155,6 +1159,8 @@ share/pixmaps/deluge.xpm
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ca
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/bs/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/bs
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/bn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/bn
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/bg/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/bg
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/be/LC_MESSAGES
@@ -1168,7 +1174,7 @@ share/pixmaps/deluge.xpm
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/data
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/core
-@dirrm %%PYTHON_SITELIBDIR%%/deluge-1.1.0-py2.5.egg-info
+@dirrm %%PYTHON_SITELIBDIR%%/deluge-1.1.1-py2.5.egg-info
 @dirrm %%PYTHON_SITELIBDIR%%/deluge
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
