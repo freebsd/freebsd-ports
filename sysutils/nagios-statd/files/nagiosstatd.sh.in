@@ -22,10 +22,12 @@ name="nagiosstatd"
 #rcvar=`set_rcvar`
 rcvar=${name}_enable
 
-pidfile="${nagiosstatd_file}"
+pidfile="${nagiosstatd_pidfile}"
 
 
 command=%%PREFIX%%/sbin/nagios-statd
+command_args="-P ${nagiosstatd_pidfile}"
+command_interpreter="python"
 
 load_rc_config $name
 

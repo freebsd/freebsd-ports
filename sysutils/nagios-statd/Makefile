@@ -7,6 +7,7 @@
 
 PORTNAME=	nagios-statd
 PORTVERSION=	3.12
+PORTREVISION=	1
 CATEGORIES=	sysutils python net-mgmt
 MASTER_SITES=	http://www.twoevils.org/files/netsaint_statd/
 
