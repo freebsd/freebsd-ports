@@ -749,6 +749,8 @@ www/ilias/Modules/ScormAicc/templates/default/tpl.scorm_obj.html
 www/ilias/Modules/ScormAicc/templates/default/tpl.scorm_track_item.html
 www/ilias/Modules/ScormAicc/templates/default/tpl.scorm_track_item_per_user.html
 www/ilias/Modules/ScormAicc/templates/default/tpl.scorm_track_items.html
+www/ilias/Modules/ScormAicc/templates/default/tpl.scorm_track_item_sco.html
+www/ilias/Modules/ScormAicc/templates/default/tpl.scorm_track_items_sco.html
 www/ilias/Modules/ScormAicc/templates/default/tpl.scorm_tracking_data_export.html
 www/ilias/Modules/ScormAicc/templates/default/tpl.scorm_tracking_data_import.html
 www/ilias/Modules/ScormAicc/templates/default/tpl.scorm_unload_sco.html
@@ -866,6 +868,7 @@ www/ilias/Modules/SurveyQuestionPool/classes/class.ilSurveyQuestionPoolModule.ph
 www/ilias/Modules/SurveyQuestionPool/classes/class.ilSurveyQuestionpoolExport.php
 www/ilias/Modules/SurveyQuestionPool/classes/class.ilSurveyQuestionsPlugin.php
 www/ilias/Modules/SurveyQuestionPool/module.xml
+www/ilias/Modules/SurveyQuestionPool/phplot/ChangeLog
 www/ilias/Modules/SurveyQuestionPool/phplot/LICENSE.GPL
 www/ilias/Modules/SurveyQuestionPool/phplot/LICENSE.PHP_3_0
 www/ilias/Modules/SurveyQuestionPool/phplot/NEWS.txt
@@ -966,9 +969,6 @@ www/ilias/Modules/Test/templates/default/tpl.il_as_tst_correct_solution_output.h
 www/ilias/Modules/Test/templates/default/tpl.il_as_tst_defaults.html
 www/ilias/Modules/Test/templates/default/tpl.il_as_tst_eval_anonymous_aggregation.html
 www/ilias/Modules/Test/templates/default/tpl.il_as_tst_eval_single_answers.html
-www/ilias/Modules/Test/templates/default/tpl.il_as_tst_eval_statistical_evaluation.html
-www/ilias/Modules/Test/templates/default/tpl.il_as_tst_eval_statistical_evaluation_preview.html
-www/ilias/Modules/Test/templates/default/tpl.il_as_tst_eval_statistical_evaluation_selection.html
 www/ilias/Modules/Test/templates/default/tpl.il_as_tst_eval_user_detail_detail.html
 www/ilias/Modules/Test/templates/default/tpl.il_as_tst_evaluation.html
 www/ilias/Modules/Test/templates/default/tpl.il_as_tst_evaluation_details.html
@@ -1083,9 +1083,10 @@ www/ilias/Modules/TestQuestionPool/classes/class.ilObjQuestionPoolListGUI.php
 www/ilias/Modules/TestQuestionPool/classes/class.ilQuestionpoolExport.php
 www/ilias/Modules/TestQuestionPool/classes/class.ilQuestionsPlugin.php
 www/ilias/Modules/TestQuestionPool/classes/class.ilSolutionExplorer.php
+www/ilias/Modules/TestQuestionPool/classes/class.ilSuggestedSolutionSelectorGUI.php
 www/ilias/Modules/TestQuestionPool/classes/class.ilTestQuestionPoolModule.php
 www/ilias/Modules/TestQuestionPool/classes/export/qti12/class.assClozeTestExport.php
-www/ilias/Modules/TestQuestionPool/classes/export/qti12/class.assFlashAppExport.php
+www/ilias/Modules/TestQuestionPool/classes/export/qti12/class.assFlashQuestionExport.php
 www/ilias/Modules/TestQuestionPool/classes/export/qti12/class.assImagemapQuestionExport.php
 www/ilias/Modules/TestQuestionPool/classes/export/qti12/class.assJavaAppletExport.php
 www/ilias/Modules/TestQuestionPool/classes/export/qti12/class.assMatchingQuestionExport.php
@@ -1097,7 +1098,7 @@ www/ilias/Modules/TestQuestionPool/classes/export/qti12/class.assSingleChoiceExp
 www/ilias/Modules/TestQuestionPool/classes/export/qti12/class.assTextQuestionExport.php
 www/ilias/Modules/TestQuestionPool/classes/export/qti12/class.assTextSubsetExport.php
 www/ilias/Modules/TestQuestionPool/classes/import/qti12/class.assClozeTestImport.php
-www/ilias/Modules/TestQuestionPool/classes/import/qti12/class.assFlashAppImport.php
+www/ilias/Modules/TestQuestionPool/classes/import/qti12/class.assFlashQuestionImport.php
 www/ilias/Modules/TestQuestionPool/classes/import/qti12/class.assImagemapQuestionImport.php
 www/ilias/Modules/TestQuestionPool/classes/import/qti12/class.assJavaAppletImport.php
 www/ilias/Modules/TestQuestionPool/classes/import/qti12/class.assMatchingQuestionImport.php
@@ -1192,6 +1193,7 @@ www/ilias/Modules/TestQuestionPool/templates/default/tpl.il_as_tst_solution_outp
 www/ilias/Modules/TestQuestionPool/templates/default/tpl.qpl_questions.html
 www/ilias/Modules/TestQuestionPool/templates/default/tpl.question_pool_menu.js
 www/ilias/Modules/TestQuestionPool/templates/default/tpl.question_type_menu.js
+www/ilias/Modules/TestQuestionPool/templates/default/tpl.prop_suggestedsolutionselector.html
 www/ilias/Modules/TestQuestionPool/templates/default/tpl.text_filter.css
 www/ilias/Modules/TestQuestionPool/templates/default/tpl.text_filter.js
 www/ilias/Modules/WebResource/classes/class.ilLinkResourceHandlerGUI.php
@@ -2050,12 +2052,14 @@ www/ilias/Services/Feeds/templates/default/tpl.show_feed_item.html
 www/ilias/Services/FileSystemStorage/classes/class.ilFileSystemStorage.php
 www/ilias/Services/Form/classes/class.ilCheckboxInputGUI.php
 www/ilias/Services/Form/classes/class.ilColorPickerInputGUI.php
+www/ilias/Services/Form/classes/class.ilCSSRectInputGUI.php
 www/ilias/Services/Form/classes/class.ilCustomInputGUI.php
 www/ilias/Services/Form/classes/class.ilDateTimeInputGUI.php
 www/ilias/Services/Form/classes/class.ilDurationInputGUI.php
 www/ilias/Services/Form/classes/class.ilEMailInputGUI.php
 www/ilias/Services/Form/classes/class.ilFeedUrlInputGUI.php
 www/ilias/Services/Form/classes/class.ilFileInputGUI.php
+www/ilias/Services/Form/classes/class.ilFlashFileInputGUI.php
 www/ilias/Services/Form/classes/class.ilFormGUI.php
 www/ilias/Services/Form/classes/class.ilFormPropertyGUI.php
 www/ilias/Services/Form/classes/class.ilFormSectionHeaderGUI.php
@@ -2082,6 +2086,7 @@ www/ilias/Services/Form/js/ServiceFormHierarchyForm.js
 www/ilias/Services/Form/templates/default/images/color_picker_hue_thumb.png
 www/ilias/Services/Form/templates/default/images/color_picker_thumb.png
 www/ilias/Services/Form/templates/default/tpl.color_picker.js
+www/ilias/Services/Form/templates/default/tpl.flashAddParam.js
 www/ilias/Services/Form/templates/default/tpl.form.html
 www/ilias/Services/Form/templates/default/tpl.hierarchy_form.html
 www/ilias/Services/Form/templates/default/tpl.hierarchy_form_nodes.html
@@ -3032,6 +3037,7 @@ www/ilias/Services/Tagging/service.xml
 www/ilias/Services/Tagging/templates/default/tpl.resources_for_tag.html
 www/ilias/Services/Tagging/templates/default/tpl.tag_cloud.html
 www/ilias/Services/Tagging/templates/default/tpl.tags_input.html
+www/ilias/Services/Tracking/classes/class.ilLearningProgressAccess.php
 www/ilias/Services/Tracking/classes/ItemList/class.ilLPContentObjectListGUI.php
 www/ilias/Services/Tracking/classes/ItemList/class.ilLPCourseListGUI.php
 www/ilias/Services/Tracking/classes/ItemList/class.ilLPEventListGUI.php
@@ -5018,6 +5024,7 @@ www/ilias/unzip_test_file.zip
 www/ilias/webdav.php
 www/ilias/webservice/soap/classes/class.ilCopyWizardSettingsXMLParser.php
 www/ilias/webservice/soap/classes/class.ilNusoapUserAdministrationAdapter.php
+www/ilias/webservice/soap/classes/class.ilObjectXMLException.php
 www/ilias/webservice/soap/classes/class.ilObjectXMLParser.php
 www/ilias/webservice/soap/classes/class.ilObjectXMLWriter.php
 www/ilias/webservice/soap/classes/class.ilSoapAdministration.php
@@ -5094,6 +5101,7 @@ www/ilias/xml/ilias_learning_progress_3_7.dtd
 www/ilias/xml/ilias_mail_0_1.dtd
 www/ilias/xml/ilias_obj.dtd
 www/ilias/xml/ilias_object_3_10.dtd
+www/ilias/xml/ilias_object_3_11.dtd
 www/ilias/xml/ilias_object_3_7.dtd
 www/ilias/xml/ilias_paragraph_plugins_0_1.dtd
 www/ilias/xml/ilias_pg_0_1.dtd
