@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	kdesvn
-PORTVERSION=	0.14.4
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	devel kde
-MASTER_SITES=	http://kdesvn.alwins-world.de/trac.fcgi/downloads/
+MASTER_SITES=	http://kdesvn.alwins-world.de/downloads/
 
 MAINTAINER=	yuanjue@FreeBSD.org
 COMMENT=	KDE frontend for Subversion
@@ -21,8 +20,7 @@ USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-
-CMAKE_ARGS=	-DLIB_SUFFIX=
+USE_SQLITE=	3
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -32,7 +30,7 @@ PLIST_SUB+=	NLS="@comment "
 EXTRA_PATCHES=	${FILESDIR}/nls-patch-CMakeLists.txt
 .endif
 
-DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc
 
 MAN1=	kdesvn.1 kdesvnaskpass.1
 
@@ -43,4 +41,10 @@ post-extract:
 	${ECHO} "ADD_SUBDIRECTORY(man)" > ${PATCH_WRKSRC}/doc/CMakeLists.txt
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+BROKEN=		Leaves files behind when deinstalled on amd64
+.endif
+
+.include <bsd.port.post.mk>
