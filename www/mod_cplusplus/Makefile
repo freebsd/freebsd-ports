@@ -9,10 +9,10 @@ PORTNAME=	mod_cplusplus
 PORTVERSION=	1.5.3
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	modcplusplus
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for loading C++ objects as handlers
 
 USE_APACHE=	2.0+
