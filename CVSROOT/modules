@@ -6206,6 +6206,7 @@ juno-2                          ports/graphics/juno-2
 jwchat                          ports/net-im/jwchat
 jwhois                          ports/net/jwhois
 jwm                             ports/x11-wm/jwm
+jx                              ports/sysutils/jx
 jxm                             ports/audio/jxm
 jython                          ports/lang/jython
 jzintv                          ports/emulators/jzintv
@@ -7248,6 +7249,7 @@ libksba                         ports/security/libksba
 liblas                          ports/devel/liblas
 libleaftag                      ports/devel/libleaftag
 liblinear                       ports/science/liblinear
+liblinebreak                    ports/textproc/liblinebreak
 liblingoteach                   ports/textproc/liblingoteach
 liblo                           ports/audio/liblo
 liblogging                      ports/devel/liblogging
@@ -10057,6 +10059,7 @@ p5-Cache-Simple-TimedExpiry     ports/devel/p5-Cache-Simple-TimedExpiry
 p5-Cairo                        ports/graphics/p5-Cairo
 p5-Calendar-Simple              ports/devel/p5-Calendar-Simple
 p5-Captcha-reCAPTCHA            ports/graphics/p5-Captcha-reCAPTCHA
+p5-Captcha-reCAPTCHA-Mailhide   ports/graphics/p5-Captcha-reCAPTCHA-Mailhide
 p5-Carp-Always                  ports/devel/p5-Carp-Always
 p5-Carp-Assert                  ports/devel/p5-Carp-Assert
 p5-Carp-Assert-More             ports/devel/p5-Carp-Assert-More
@@ -11197,6 +11200,7 @@ p5-IO-Interface                 ports/net/p5-IO-Interface
 p5-IO-KQueue                    ports/devel/p5-IO-KQueue
 p5-IO-Lambda                    ports/devel/p5-IO-Lambda
 p5-IO-LockedFile                ports/devel/p5-IO-LockedFile
+p5-IO-MultiPipe                 ports/devel/p5-IO-MultiPipe
 p5-IO-Multiplex                 ports/devel/p5-IO-Multiplex
 p5-IO-NestedCapture             ports/devel/p5-IO-NestedCapture
 p5-IO-Null                      ports/devel/p5-IO-Null
@@ -12172,7 +12176,9 @@ p5-SVN-Access                   ports/devel/p5-SVN-Access
 p5-SVN-Agent                    ports/devel/p5-SVN-Agent
 p5-SVN-Dump                     ports/devel/p5-SVN-Dump
 p5-SVN-Hook                     ports/devel/p5-SVN-Hook
+p5-SVN-Hooks                    ports/devel/p5-SVN-Hooks
 p5-SVN-Log                      ports/devel/p5-SVN-Log
+p5-SVN-Look                     ports/devel/p5-SVN-Look
 p5-SVN-Mirror                   ports/devel/p5-SVN-Mirror
 p5-SVN-Notify                   ports/devel/p5-SVN-Notify
 p5-SVN-Notify-Config            ports/devel/p5-SVN-Notify-Config
@@ -12785,6 +12791,7 @@ p5-WebService-Bloglines         ports/www/p5-WebService-Bloglines
 p5-WebService-BuzzurlAPI        ports/www/p5-WebService-BuzzurlAPI
 p5-WebService-CIA               ports/www/p5-WebService-CIA
 p5-WebService-ISBNDB            ports/www/p5-WebService-ISBNDB
+p5-WebService-MusicBrainz       ports/www/p5-WebService-MusicBrainz
 p5-WebService-NoPaste           ports/www/p5-WebService-NoPaste
 p5-WebService-Rakuten           ports/www/p5-WebService-Rakuten
 p5-WebService-Simple            ports/www/p5-WebService-Simple
@@ -12931,6 +12938,8 @@ p5-Yahoo-BBAuth                 ports/security/p5-Yahoo-BBAuth
 p5-Yahoo-Lifestyle              ports/www/p5-Yahoo-Lifestyle
 p5-Yahoo-Search                 ports/www/p5-Yahoo-Search
 p5-ZConf                        ports/net/p5-ZConf
+p5-ZConf-Mail                   ports/net/p5-ZConf-Mail
+p5-ZConf-Runner                 ports/deskutils/p5-ZConf-Runner
 p5-ZML                          ports/devel/p5-ZML
 p5-Zen-Koans                    ports/misc/p5-Zen-Koans
 p5-accessors                    ports/devel/p5-accessors
@@ -13238,6 +13247,7 @@ p5-calendar-simple              ports/devel/p5-Calendar-Simple
 p5-cam-pdf                      ports/textproc/p5-CAM-PDF
 p5-capitalization               ports/devel/p5-capitalization
 p5-captcha-recaptcha            ports/graphics/p5-Captcha-reCAPTCHA
+p5-captcha-recaptcha-mailhide   ports/graphics/p5-Captcha-reCAPTCHA-Mailhide
 p5-carp-always                  ports/devel/p5-Carp-Always
 p5-carp-assert                  ports/devel/p5-Carp-Assert
 p5-carp-assert-more             ports/devel/p5-Carp-Assert-More
@@ -14043,6 +14053,7 @@ p5-event-lib                    ports/devel/p5-Event-Lib
 p5-event-notify                 ports/devel/p5-Event-Notify
 p5-event-rpc                    ports/devel/p5-Event-RPC
 p5-every                        ports/devel/p5-Every
+p5-ex-lib                       ports/devel/p5-ex-lib
 p5-excel-template               ports/textproc/p5-Excel-Template
 p5-exception-class              ports/devel/p5-Exception-Class
 p5-exception-class-dbi          ports/databases/p5-Exception-Class-DBI
@@ -14501,6 +14512,7 @@ p5-io-interface                 ports/net/p5-IO-Interface
 p5-io-kqueue                    ports/devel/p5-IO-KQueue
 p5-io-lambda                    ports/devel/p5-IO-Lambda
 p5-io-lockedfile                ports/devel/p5-IO-LockedFile
+p5-io-multipipe                 ports/devel/p5-IO-MultiPipe
 p5-io-multiplex                 ports/devel/p5-IO-Multiplex
 p5-io-nestedcapture             ports/devel/p5-IO-NestedCapture
 p5-io-null                      ports/devel/p5-IO-Null
@@ -15614,7 +15626,9 @@ p5-svn-acl                      ports/devel/p5-SVN-ACL
 p5-svn-agent                    ports/devel/p5-SVN-Agent
 p5-svn-dump                     ports/devel/p5-SVN-Dump
 p5-svn-hook                     ports/devel/p5-SVN-Hook
+p5-svn-hooks                    ports/devel/p5-SVN-Hooks
 p5-svn-log                      ports/devel/p5-SVN-Log
+p5-svn-look                     ports/devel/p5-SVN-Look
 p5-svn-mirror                   ports/devel/p5-SVN-Mirror
 p5-svn-notify                   ports/devel/p5-SVN-Notify
 p5-svn-notify-config            ports/devel/p5-SVN-Notify-Config
@@ -16044,6 +16058,7 @@ p5-webservice-bloglines         ports/www/p5-WebService-Bloglines
 p5-webservice-buzzurlapi        ports/www/p5-WebService-BuzzurlAPI
 p5-webservice-cia               ports/www/p5-WebService-CIA
 p5-webservice-isbndb            ports/www/p5-WebService-ISBNDB
+p5-webservice-musicbrainz       ports/www/p5-WebService-MusicBrainz
 p5-webservice-nopaste           ports/www/p5-WebService-NoPaste
 p5-webservice-rakuten           ports/www/p5-WebService-Rakuten
 p5-webservice-simple            ports/www/p5-WebService-Simple
@@ -16252,6 +16267,8 @@ p5-yape-html                    ports/textproc/p5-YAPE-HTML
 p5-yape-regex                   ports/textproc/p5-YAPE-Regex
 p5-yape-regex-explain           ports/textproc/p5-YAPE-Regex-Explain
 p5-zconf                        ports/net/p5-ZConf
+p5-zconf-mail                   ports/net/p5-ZConf-Mail
+p5-zconf-runner                 ports/deskutils/p5-ZConf-Runner
 p5-zen-koans                    ports/misc/p5-Zen-Koans
 p5-zml                          ports/devel/p5-ZML
 p65                             ports/devel/p65
@@ -16514,6 +16531,7 @@ pear-HTTP_Download              ports/www/pear-HTTP_Download
 pear-HTTP_FloodControl          ports/www/pear-HTTP_FloodControl
 pear-HTTP_Header                ports/www/pear-HTTP_Header
 pear-HTTP_Request               ports/www/pear-HTTP_Request
+pear-HTTP_Request2              ports/www/pear-HTTP_Request2
 pear-HTTP_Server                ports/www/pear-HTTP_Server
 pear-HTTP_Session2              ports/www/pear-HTTP_Session2
 pear-HTTP_Upload                ports/www/pear-HTTP_Upload
@@ -16612,6 +16630,7 @@ pear-Services_Compete           ports/www/pear-Services_Compete
 pear-Services_Delicious         ports/www/pear-Services_Delicious
 pear-Services_Digg              ports/www/pear-Services_Digg
 pear-Services_Facebook          ports/www/pear-Services_Facebook
+pear-Services_GeoNames          ports/www/pear-Services_GeoNames
 pear-Services_Google            ports/www/pear-Services_Google
 pear-Services_OpenSearch        ports/www/pear-Services_OpenSearch
 pear-Services_Pingback          ports/net/pear-Services_Pingback
@@ -16785,6 +16804,7 @@ pear-http_download              ports/www/pear-HTTP_Download
 pear-http_floodcontrol          ports/www/pear-HTTP_FloodControl
 pear-http_header                ports/www/pear-HTTP_Header
 pear-http_request               ports/www/pear-HTTP_Request
+pear-http_request2              ports/www/pear-HTTP_Request2
 pear-http_server                ports/www/pear-HTTP_Server
 pear-http_session2              ports/www/pear-HTTP_Session2
 pear-http_upload                ports/www/pear-HTTP_Upload
@@ -16882,6 +16902,7 @@ pear-services_compete           ports/www/pear-Services_Compete
 pear-services_delicious         ports/www/pear-Services_Delicious
 pear-services_digg              ports/www/pear-Services_Digg
 pear-services_facebook          ports/www/pear-Services_Facebook
+pear-services_geonames          ports/www/pear-Services_GeoNames
 pear-services_google            ports/www/pear-Services_Google
 pear-services_opensearch        ports/www/pear-Services_OpenSearch
 pear-services_pingback          ports/net/pear-Services_Pingback
@@ -17724,6 +17745,7 @@ postfix-gps                     ports/mail/postfix-gps
 postfix-gps-devel               ports/mail/postfix-gps-devel
 postfix-policyd-sf              ports/mail/postfix-policyd-sf
 postfix-policyd-spf             ports/mail/postfix-policyd-spf
+postfix-policyd-spf-perl        ports/mail/postfix-policyd-spf-perl
 postfix-policyd-weight          ports/mail/postfix-policyd-weight
 postfix-postfwd                 ports/mail/postfix-postfwd
 postfix1                        ports/mail/postfix1
@@ -18397,6 +18419,7 @@ py-pyme                         ports/security/py-pyme
 py-pypcap                       ports/net/py-pypcap
 py-pypgsql                      ports/databases/py-pyPgSQL
 py-pyproj                       ports/graphics/py-pyproj
+py-pyquery                      ports/www/py-pyquery
 py-pyro                         ports/devel/py-pyro
 py-pyscript                     ports/print/py-pyscript
 py-pysearch                     ports/www/py-pysearch
@@ -20153,6 +20176,7 @@ simplicity                      ports/java/simplicity
 simplog                         ports/www/simplog
 simscan                         ports/mail/simscan
 simulavr                        ports/devel/simulavr
+simutrans                       ports/games/simutrans
 since                           ports/misc/since
 sineshaper                      ports/audio/sineshaper
 sinfp                           ports/security/sinfp
@@ -23050,6 +23074,7 @@ xpi-live_http_headers           ports/www/xpi-live_http_headers
 xpi-locale-switcher             ports/www/xpi-locale-switcher
 xpi-menueditor                  ports/www/xpi-menueditor
 xpi-mldonkey                    ports/www/xpi-mldonkey
+xpi-modify_headers              ports/www/xpi-modify_headers
 xpi-mousegestures               ports/www/xpi-mousegestures
 xpi-mozex                       ports/www/xpi-mozex
 xpi-mrtech-local-install        ports/www/xpi-mrtech-local-install
