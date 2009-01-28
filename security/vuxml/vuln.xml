@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2ffb1b0d-ecf5-11dd-abae-00219b0fc4d8">
+    <topic> glpi -- SQL Injection</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><lt>0.71.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The GLPI project reports:</p>
+        <blockquote
+          cite="http://www.glpi-project.org/spip.php?page=annonce&amp;id_breve=161&amp;lang=en">
+	  <p>SQL injection vulnerabilities have been found and fixed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.glpi-project.org/spip.php?page=annonce&amp;id_breve=161&amp;lang=en</url>
+      <url>https://mail.gna.org/public/glpi-news/2009-01/msg00002.html</url>
+      <url>https://dev.indepnet.net/glpi/ticket/1224</url>
+    </references>
+    <dates>
+      <discovery>2009-01-25</discovery>
+      <entry>2009-01-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c3aba586-ea77-11dd-9d1e-000bcdc1757a">
     <topic>openfire -- multiple vulnerabilities</topic>
     <affects>
