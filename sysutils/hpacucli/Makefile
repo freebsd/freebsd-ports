@@ -7,7 +7,7 @@
 
 PORTNAME=		hpacucli
 PORTVERSION=		7.50
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -23,9 +23,6 @@ IA32_BINARY_PORT=	yes
 LIB_DEPENDS+=		c.4:${PORTSDIR}/misc/compat4x
 LIB_DEPENDS+=		c.5:${PORTSDIR}/misc/compat5x
 
-APP_PREFIX=		lib/compaq/hpacucli
-USE_LDCONFIG=		${PREFIX}/${APP_PREFIX}
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/${PORTNAME}
 
@@ -35,4 +32,13 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/.${PORTNAME} ${PREFIX}/libexec/
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+APP_PREFIX=		lib/compaq/hpacucli
+.if ${ARCH} == amd64
+USE_LDCONFIG32=		${PREFIX}/${APP_PREFIX}
+.else
+USE_LDCONFIG=		${PREFIX}/${APP_PREFIX}
+.endif
+
+.include <bsd.port.post.mk>
