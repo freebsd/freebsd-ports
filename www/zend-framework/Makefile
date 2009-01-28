@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ZendFramework
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	1.7.3
 CATEGORIES=	www
 MASTER_SITES=	http://framework.zend.com/releases/${DISTNAME}/ GENTOO/distfiles
 
@@ -24,6 +23,7 @@ SUB_FILES=	pkg-message
 OPTIONS=	\
 		EDOJO "Install embedded Dojo" On \
 		PDOJO "Install Dojo from ports" Off \
+		INCUBATOR "Install incubator classes" Off \
 		MYSQL "Install MySQL PDO support" Off \
 		MYSQLI "Install MySQLi support" Off \
 		DBLIB "Install DBLIB PDO support" Off \
@@ -57,6 +57,14 @@ CONFLICTS+=	dojo-1.*
 DOJO=		"@comment "
 .endif
 PLIST_SUB+=	DOJO=${DOJO}
+
+.if defined(WITH_INCUBATOR)
+INCUBATOR=	""
+INSTALL_DIRS+=	incubator
+.else
+INCUBATOR=	"@comment "
+.endif
+PLIST_SUB+=	INCUBATOR=${INCUBATOR}
 
 .if defined(WITH_PDOJO)
 RUN_DEPENDS+=	dojo>=0:${PORTSDIR}/www/dojo
