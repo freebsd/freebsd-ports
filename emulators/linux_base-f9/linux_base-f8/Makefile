@@ -7,7 +7,7 @@
 
 PORTNAME=		f8
 PORTVERSION=		8
-PORTREVISION=		10
+PORTREVISION=		11
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	../releases/${PORTVERSION}/Everything/${LINUX_RPM_ARCH}/os/Packages \
@@ -27,13 +27,13 @@ BIN_DISTFILES=	basesystem-8.1-1.noarch.rpm \
 		compat-libstdc++-296-2.96-139.${LINUX_RPM_ARCH}.rpm \
 		compat-libstdc++-33-3.2.3-62.${LINUX_RPM_ARCH}.rpm \
 		coreutils-6.9-19.fc8.${LINUX_RPM_ARCH}.rpm \
-		db4-4.6.21-2.fc8.${LINUX_RPM_ARCH}.rpm \
-		e2fsprogs-1.40.4-2.fc8.${LINUX_RPM_ARCH}.rpm \
-		e2fsprogs-libs-1.40.4-2.fc8.${LINUX_RPM_ARCH}.rpm \
+		db4-4.6.21-3.fc8.${LINUX_RPM_ARCH}.rpm \
+		e2fsprogs-1.40.4-3.fc8.${LINUX_RPM_ARCH}.rpm \
+		e2fsprogs-libs-1.40.4-3.fc8.${LINUX_RPM_ARCH}.rpm \
 		elfutils-0.137-3.fc8.${LINUX_RPM_ARCH}.rpm \
 		fedora-release-8-6.transition.noarch.rpm \
 		filesystem-2.4.11-1.fc8.${LINUX_RPM_ARCH}.rpm \
-		freetype-2.3.5-4.fc8.${LINUX_RPM_ARCH}.rpm \
+		freetype-2.3.5-5.fc8.${LINUX_RPM_ARCH}.rpm \
 		gdbm-1.8.0-27.fc7.${LINUX_RPM_ARCH}.rpm \
 		glib-1.2.10-28.fc8.${LINUX_RPM_ARCH}.rpm \
 		glib2-2.14.6-2.fc8.${LINUX_RPM_ARCH}.rpm \
@@ -72,12 +72,12 @@ SRC_DISTFILES+=	acl-2.2.39-14.fc8.src.rpm \
 		bzip2-1.0.4-12.fc8.src.rpm \
 		compat-db-4.5.20-3.fc8.src.rpm \
 		coreutils-6.9-19.fc8.src.rpm \
-		db4-4.6.21-2.fc8.src.rpm \
-		e2fsprogs-1.40.4-2.fc8.src.rpm \
+		db4-4.6.21-3.fc8.src.rpm \
+		e2fsprogs-1.40.4-3.fc8.src.rpm \
 		elfutils-0.137-3.fc8.src.rpm \
 		fedora-release-8-6.transition.src.rpm \
 		filesystem-2.4.11-1.fc8.src.rpm \
-		freetype-2.3.5-4.fc8.src.rpm \
+		freetype-2.3.5-5.fc8.src.rpm \
 		gcc-4.1.2-33.src.rpm \
 		gdbm-1.8.0-27.fc7.src.rpm \
 		glib-1.2.10-28.fc8.src.rpm \
