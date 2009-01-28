@@ -131,6 +131,7 @@ share/zlibrary/unicode.xml.gz
 @dirrm share/FBReader/help
 @dirrm share/FBReader/resources
 @dirrm share/FBReader
+@dirrmtry share/applications
 @dirrm share/pixmaps/FBReader
 @dirrm share/zlibrary/default
 @dirrm share/zlibrary/encodings
