@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tokyocabinet
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.3
 CATEGORIES=	databases
 MASTER_SITES=	http://tokyocabinet.sourceforge.net/
 
@@ -77,7 +77,7 @@ CONFIGURE_ARGS+=	--disable-pthread
 CONFIGURE_ARGS+=	--disable-shared
 .endif
 
-SHLIB_VER=	7.6.0
+SHLIB_VER=	7.8.0
 SHLIB_VER_MAJ=	7
 
 PLIST_SUB+= SHLIB_VER=${SHLIB_VER} SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
