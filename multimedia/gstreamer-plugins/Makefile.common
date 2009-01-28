@@ -171,6 +171,8 @@ gst_cdaudio_DIST=	bad
 # cdparanoia
 gst_cdparanoia_LIB_DEPENDS+=	cdda_interface.0:${PORTSDIR}/audio/cdparanoia
 gst_cdparanoia_EXTRA_LIBS+=	-lgstcdda-${VERSION}
+gst_cdparanoia_PLIST_FILES=	${GST_LIB_DIR}/libgstcdparanoia.la \
+		${GST_LIB_DIR}/libgstcdparanoia.so
 gst_cdparanoia_DIST=	base
 
 # cdio
@@ -242,11 +244,15 @@ gst_gdk_pixbuf_PLIST_FILES=	${GST_LIB_DIR}/libgstgdkpixbuf.a \
 # gio
 gst_gio_USE_GNOME+=	glib20
 gst_gio_CONFIGURE_ARGS+=--enable-experimental
+gst_gio_PLIST_FILES=	${GST_LIB_DIR}/libgstgio.la \
+		${GST_LIB_DIR}/libgstgio.so
 gst_gio_DIST=	base
 
 # gnomevfs
 gst_gnomevfs_USE_GNOME+=	gnomevfs2
 gst_gnomevfs_CONFIGURE_ARGS+=--enable-gnome_vfs
+gst_gnomevfs_PLIST_FILES=	${GST_LIB_DIR}/libgstgnomevfs.la \
+		${GST_LIB_DIR}/libgstgnomevfs.so
 gst_gnomevfs_DIST=	base
 
 # gsm
@@ -299,6 +305,8 @@ gst_libpng_PLIST_FILES=	${GST_LIB_DIR}/libgstpng.so \
 
 # libvisual
 gst_libvisual_LIB_DEPENDS+=	visual.0:${PORTSDIR}/graphics/libvisual
+gst_libvisual_PLIST_FILES=	${GST_LIB_DIR}/libgstlibvisual.la \
+		${GST_LIB_DIR}/libgstlibvisual.so
 gst_libvisual_DIST=	base
 
 # mad
@@ -347,10 +355,14 @@ gst_neon_DIST=		bad
 # ogg
 gst_ogg_LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg
 gst_ogg_EXTRA_LIBS+=	-lgstriff-${VERSION}
+gst_ogg_PLIST_FILES=	${GST_LIB_DIR}/libgstogg.la \
+		${GST_LIB_DIR}/libgstogg.so
 gst_ogg_DIST=	base
 
 # pango
 gst_pango_USE_GNOME+=	pango
+gst_pango_PLIST_FILES=	${GST_LIB_DIR}/libgstpango.la \
+		${GST_LIB_DIR}/libgstpango.so
 gst_pango_DIST=	base
 
 # sdl
@@ -398,12 +410,16 @@ gst_taglib_LIB_DEPENDS+=	tag.6:${PORTSDIR}/audio/taglib
 
 # theora
 gst_theora_LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
+gst_theora_PLIST_FILES=		${GST_LIB_DIR}/libgsttheora.la \
+		${GST_LIB_DIR}/libgsttheora.so
 gst_theora_DIST=	base
 
 # vorbis
 gst_vorbis_USE_GSTREAMER+=	ogg
 gst_vorbis_LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 gst_vorbis_EXTRA_LIBS+=	-lgsttag-${VERSION} -lgstaudio-${VERSION}
+gst_vorbis_PLIST_FILES=	${GST_LIB_DIR}/libgstvorbis.la \
+		${GST_LIB_DIR}/libgstvorbis.so
 gst_vorbis_DIST=	base
 
 # x264
