@@ -10,7 +10,7 @@ PORTVERSION=	1.2.30
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
-MAINTAINER=	beat@chruetertee.ch
+MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Round Robin Database Tools v1.2
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \

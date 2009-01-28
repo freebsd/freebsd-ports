@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.brain-dump.org/projects/dvtm/
 
-MAINTAINER=	beat@chruetertee.ch
+MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Tiling window management for the console
 
 MAN1=		dvtm.1

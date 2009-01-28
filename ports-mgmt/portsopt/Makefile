@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.chruetertee.ch/files/download/
 
-MAINTAINER=	beat@chruetertee.ch
+MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Shows WITH(OUT)-knobs of a port makefile
 
 NO_BUILD=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	security python
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	beat@chruetertee.ch
+MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Test the integrity of communications over networks and firewalls
 
 USE_PYTHON=	yes

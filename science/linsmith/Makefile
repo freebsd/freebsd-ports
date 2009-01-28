@@ -11,7 +11,7 @@ PORTVERSION=	0.99.11
 CATEGORIES=	science hamradio
 MASTER_SITES=	SF
 
-MAINTAINER=	beat@chruetertee.ch
+MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Smith charting program
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt

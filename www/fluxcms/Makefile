@@ -14,7 +14,7 @@ MASTER_SITES=	http://bitflux.org/download/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}-snapshot-20081127
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	beat@chruetertee.ch
+MAINTAINER=	beat@FreeBSD.org
 COMMENT=	An extensible and flexible CMS based on PHP 5 and XML/XSLT
 
 NO_BUILD=	yes

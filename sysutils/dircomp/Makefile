@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	beat@chruetertee.ch
+MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Compare two directories
 
 .ifndef WITHOUT_X11
