@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.13.2
+PORTVERSION=	0.14.1
 CATEGORIES=	audio ipv6
-MASTER_SITES=	http://musicpd.org/uploads/files/ \
-		http://redundancy.redundancy.org/mirror/
+MASTER_SITES=   SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
+
 DISTNAME=	mpd-${PORTVERSION}
 
 MAINTAINER=	jo.lindqvist@gmail.com
@@ -18,8 +18,11 @@ COMMENT=	A remote-controllable music daemon
 
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
 
+USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_GNOME=	glib20
+
 USE_RC_SUBR=	musicpd.sh
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -47,6 +50,7 @@ OPTIONS=	FLAC		"Support FLAC audio format"		on \
 		PULSEAUDIO	"Support PulseAudio sound server"	off \
 		JACK		"Support JACK audio server"		off \
 		SHOUTCAST	"Support for Icecast and Shoutcast"	off \
+		LAME		"Support for MP3 Icecast Streams"	off \
 		SAMPLERATE	"Support sample rate conversion"	off
 
 .include <bsd.port.pre.mk>
@@ -69,16 +73,20 @@ CONFIGURE_ARGS+=--with-tremor
 LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
 .endif
 
-.if defined(WITHOUT_WAV)
-CONFIGURE_ARGS+=--disable-audiofile
-.else
-LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
-.endif
-
 .if defined(WITH_AAC)
 LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 .else
 CONFIGURE_ARGS+=--disable-aac
+.endif
+
+.if defined(WITH_LAME)
+LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
+.endif
+
+.if defined(WITHOUT_WAV)
+CONFIGURE_ARGS+=--disable-audiofile
+.else
+LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 .endif
 
 .if defined(WITH_MUSEPACK)
