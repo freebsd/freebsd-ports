@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rngstreams
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	math
 MASTER_SITES=	http://statmath.wu-wien.ac.at/software/RngStreams/
 
