@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	tool/${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embedded Perl 5 Language
 
+BROKEN=		does not compile
+
 # User-controlled variables list
 # INSTALL_ALSO_AS_SSSL
 #	install ePerl also as a Server-Side
