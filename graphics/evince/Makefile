@@ -71,6 +71,10 @@ USE_GNOME+=		nautilus2
 CONFIGURE_ARGS+=	--enable-nautilus
 PLIST_SUB+=		NAUTILUS=""
 .else
+BUILD_DEPENDS+=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
+RUN_DEPENDS+=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
+LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
+USE_GNOME+=		libglade2
 CONFIGURE_ARGS+=	--disable-nautilus
 PLIST_SUB+=		NAUTILUS="@comment "
 .endif
