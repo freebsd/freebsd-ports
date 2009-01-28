@@ -1,0 +1,21 @@
+--- Makefile.orig	2007-12-17 19:00:19.000000000 +0100
++++ Makefile	2009-01-27 19:27:39.000000000 +0100
+@@ -19,18 +19,15 @@
+ 	sed -e "s,@PREFIX@,${PREFIX},;s,@LIBDIR@,${LIBDIR},;s,@VERSION@,${VERSION}," \
+ 		< ${NAME} > build/${NAME}
+ 	pod2man ${NAME} > build/${NAME}.1
+-	${MAKE} -C po build
+ 	
+ 
+ install: all install-dirs
+ 	install -m 0755 build/${NAME} ${DESTDIR}${BINDIR}
+ 	install -m 0644 build/${NAME}.1 ${DESTDIR}${MAN1DIR}
+-	${MAKE} -C po install
+ 
+ install-dirs:
+ 	install -d ${DESTDIR}${BINDIR}
+ 	install -d ${DESTDIR}${MAN1DIR}
+-	${MAKE} -C po install-dirs
+ 
+ uninstall:
+ 	rm -f ${DESTDIR}${BINDIR}/${NAME}

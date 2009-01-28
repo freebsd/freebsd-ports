@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clawsker
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/tools/
 
@@ -22,11 +22,18 @@ USE_PERL5=	5.8.0+
 MAN1=		clawsker.1
 
 .if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
+EXTRA_PATCHES=	${FILESDIR}/extra-Makefile-without_nls
 PLIST_SUB+=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
