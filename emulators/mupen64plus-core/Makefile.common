@@ -35,7 +35,7 @@ PLIST_SUB+=	TRANSLATIONS="@comment "
 ALL_TARGET=		mupen64plus
 EXTRACT_AFTER_ARGS+=	"${DISTNAME}/RELEASE" "${DISTNAME}/README" "${DISTNAME}/doc/*" "${DISTNAME}/lang/*" \
 				"${DISTNAME}/icons/*" "${DISTNAME}/memory/*" "${DISTNAME}/r4300/*" "${DISTNAME}/debugger/*" \
-						"${DISTNAME}/translations/*"
+						"${DISTNAME}/translations/*" "${DISTNAME}/fonts/*"
 
 MAN1=			mupen64plus.1
 .else
@@ -158,13 +158,16 @@ do-install:
 	@${MKDIR} ${DATADIR}/config
 	${INSTALL_DATA} ${WRKSRC}/config/mupen64plus.conf ${DATADIR}/config/
 
+	@${MKDIR} ${DATADIR}/fonts
+	${INSTALL_DATA} ${WRKSRC}/fonts/font.ttf ${DATADIR}/fonts/
+
 	@${MKDIR} ${DATADIR}/lang
 	${INSTALL_DATA} ${WRKSRC}/lang/* ${DATADIR}/lang/
 
 	@${MKDIR} ${DATADIR}/icons
 	@cd ${WRKSRC}/icons && \
 		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/icons/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "${WRKSRC}/icons/{}" "${DATADIR}/icons/" \;
+			${FIND} * -type f -exec ${INSTALL_DATA} "${WRKSRC}/icons/{}" "${DATADIR}/icons/{}" \;
 
 	@${MKDIR} ${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${DESKTOPDIR}
