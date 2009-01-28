@@ -85,7 +85,6 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <url>http://www.coresecurity.com/content/openfire-multiple-vulnerabilities</url>
       <bid>32935</bid>
       <bid>32937</bid>
       <bid>32938</bid>
@@ -94,6 +93,7 @@ Note:  Please add new entries to the beginning of this file.
       <bid>32943</bid>
       <bid>32944</bid>
       <bid>32945</bid>
+      <url>http://www.coresecurity.com/content/openfire-multiple-vulnerabilities</url>
     </references>
     <dates>
       <discovery>2009-01-08</discovery>
@@ -102,7 +102,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="abcacb5a-e7f1-11dd-afcd-00e0815b8da8">
-    <topic> ipset-tools -- Denial of Service Vulnerabilities</topic>
+    <topic>ipset-tools -- Denial of Service Vulnerabilities</topic>
     <affects>
       <package>
 	<name>ipsec-tools</name>
@@ -122,9 +122,9 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>30657</bid>
       <cvename>CVE-2008-3651</cvename>
       <cvename>CVE-2008-3652</cvename>
-      <bid>30657</bid>
       <mlist msgid="20080724084529.GA3768@zen.inc">http://marc.info/?l=ipsec-tools-devel&amp;m=121688914101709&amp;w=2</mlist>
     </references>
     <dates>
@@ -153,8 +153,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <url>http://www.securityfocus.com/bid/33256</url>
       <bid>33256</bid>
+      <url>http://www.securityfocus.com/bid/33256</url>
     </references>
     <dates>
       <discovery>2009-01-14</discovery>
@@ -177,11 +177,11 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>A vulnerability has been reported in OptiPNG, which
 	    potentially can be exploited by malicious people to compromise
 	    a user's system.</p>
-	    <p>The vulnerability is caused due to a boundary error in
+	  <p>The vulnerability is caused due to a boundary error in
 	    the BMP reader and can be exploited to cause a buffer
 	    overflow by tricking a user into processing a specially
 	    crafted file.</p>
-	    <p>Successful exploitation may allow execution of arbitrary
+	  <p>Successful exploitation may allow execution of arbitrary
 	    code.</p>
 	</blockquote>
       </body>
@@ -251,9 +251,9 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-     <url>http://www.securityfocus.com/bid/26445/</url>
-     <cvename>CVE-2007-4476</cvename>
-     <bid>26445</bid>
+      <bid>26445</bid>
+      <cvename>CVE-2007-4476</cvename>
+      <url>http://www.securityfocus.com/bid/26445/</url>
     </references>
     <dates>
       <discovery>2007-11-14</discovery>
