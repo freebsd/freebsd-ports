@@ -8,7 +8,7 @@
 
 PORTNAME=	totem
 PORTVERSION=	2.24.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -61,7 +61,7 @@ TOTEM_PLUGINS=	thumbnail screensaver ontop gromit media-player-keys \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PUBLISH)
-LIB_DEPENDS+=	epc-1.0.1:${PORTSDIR}/www/libepc
+LIB_DEPENDS+=	epc-1.0.2:${PORTSDIR}/www/libepc
 PLIST_SUB+=	PUBLISH=""
 TOTEM_PLUGINS:=	${TOTEM_PLUGINS} publish
 .else

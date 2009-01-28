@@ -8,6 +8,7 @@
 
 PORTNAME=	glom
 PORTVERSION=	1.8.5
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,7 +20,7 @@ LIB_DEPENDS=	bakery-2.6:${PORTSDIR}/x11-toolkits/bakery \
 		gdamm-3.0.10:${PORTSDIR}/databases/libgdamm \
 		gtksourceviewmm-2.0.2:${PORTSDIR}/x11-toolkits/libgtksourceviewmm \
 		avahi-ui.0:${PORTSDIR}/net/avahi-gtk \
-		epc-1.0.1:${PORTSDIR}/www/libepc \
+		epc-1.0.2:${PORTSDIR}/www/libepc \
 		goocanvasmm-0.1.4:${PORTSDIR}/graphics/goocanvasmm
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/libgda-postgres-3.0.pc:${PORTSDIR}/databases/libgda3-postgresql
