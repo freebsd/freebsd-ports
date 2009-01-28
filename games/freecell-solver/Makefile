@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	fc-solve
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program that automatically solves games of Freecell
 
+USE_PERL5_BUILD=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 
