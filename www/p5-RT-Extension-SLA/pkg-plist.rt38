@@ -27,7 +27,6 @@ man/auto/RT/Extension/SLA/.packlist
 @dirrm %%RTHOME%%/plugins/RT-Extension-SLA/lib
 @dirrm %%RTHOME%%/plugins/RT-Extension-SLA/etc
 @dirrm %%RTHOME%%/plugins/RT-Extension-SLA
-@dirrmtry %%RTHOME%%/plugins
 @dirrm man/auto/RT/Extension/SLA
 @dirrmtry man/auto/RT/Extension
 @dirrmtry man/auto/RT
