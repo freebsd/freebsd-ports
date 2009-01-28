@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	moc
-PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTVERSION=	2.4.4
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.daper.net/pub/soft/moc/stable/
 
@@ -16,6 +15,7 @@ COMMENT=	A console audio player designed to be powerful and easy to use
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
@@ -33,7 +33,8 @@ OPTIONS=	JACK "JACK support" off \
 		SNDFILE "libsndfile support" off \
 		SPEEX "Speex support" off \
 		SAMPLERATE "libsamplerate support" off \
-		CURL "curl support (Internet streams)" on
+		CURL "curl support (Internet streams)" on \
+		RCC "RCC support" off
 
 .include <bsd.port.pre.mk>
 
@@ -46,7 +47,8 @@ CONFIGURE_ARGS+=	--without-jack
 .if defined(WITH_MP3)
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
 		id3tag.0:${PORTSDIR}/audio/libid3tag
-PLIST_FILES+=	lib/moc/decoder_plugins/libmp3_decoder.la \
+PLIST_FILES+=	lib/moc/decoder_plugins/libmp3_decoder.a \
+		lib/moc/decoder_plugins/libmp3_decoder.la \
 		lib/moc/decoder_plugins/libmp3_decoder.so
 .else
 CONFIGURE_ARGS+=	--without-mp3
@@ -55,7 +57,8 @@ CONFIGURE_ARGS+=	--without-mp3
 .if defined(WITH_MUSEPACK)
 LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec \
 		tag_c.0:${PORTSDIR}/audio/taglib
-PLIST_FILES+=	lib/moc/decoder_plugins/libmusepack_decoder.la \
+PLIST_FILES+=	lib/moc/decoder_plugins/libmusepack_decoder.a \
+		lib/moc/decoder_plugins/libmusepack_decoder.la \
 		lib/moc/decoder_plugins/libmusepack_decoder.so
 .else
 CONFIGURE_ARGS+=	--without-musepack
@@ -63,7 +66,8 @@ CONFIGURE_ARGS+=	--without-musepack
 
 .if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
-PLIST_FILES+=	lib/moc/decoder_plugins/libvorbis_decoder.la \
+PLIST_FILES+=	lib/moc/decoder_plugins/libvorbis_decoder.a \
+		lib/moc/decoder_plugins/libvorbis_decoder.la \
 		lib/moc/decoder_plugins/libvorbis_decoder.so
 .else
 CONFIGURE_ARGS+=	--without-ogg
@@ -71,7 +75,8 @@ CONFIGURE_ARGS+=	--without-ogg
 
 .if defined(WITH_FLAC)
 LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
-PLIST_FILES+=	lib/moc/decoder_plugins/libflac_decoder.la \
+PLIST_FILES+=	lib/moc/decoder_plugins/libflac_decoder.a \
+		lib/moc/decoder_plugins/libflac_decoder.la \
 		lib/moc/decoder_plugins/libflac_decoder.so
 .else
 CONFIGURE_ARGS+=	--without-flac
@@ -79,13 +84,17 @@ CONFIGURE_ARGS+=	--without-flac
 
 .if defined(WITH_FFMPEG)
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+PLIST_FILES+=   lib/moc/decoder_plugins/libffmpeg_decoder.a \
+		lib/moc/decoder_plugins/libffmpeg_decoder.la \
+		lib/moc/decoder_plugins/libffmpeg_decoder.so
 .else
 CONFIGURE_ARGS+=	--without-ffmpeg
 .endif
 
 .if defined(WITH_SNDFILE)
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
-PLIST_FILES+=	lib/moc/decoder_plugins/libsndfile_formats_decoder.la \
+PLIST_FILES+=	lib/moc/decoder_plugins/libsndfile_formats_decoder.a \
+		lib/moc/decoder_plugins/libsndfile_formats_decoder.la \
 		lib/moc/decoder_plugins/libsndfile_formats_decoder.so
 .else
 CONFIGURE_ARGS+=	--without-sndfile
@@ -93,7 +102,8 @@ CONFIGURE_ARGS+=	--without-sndfile
 
 .if defined(WITH_SPEEX)
 LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
-PLIST_FILES+=	lib/moc/decoder_plugins/libspeex_decoder.la \
+PLIST_FILES+=	lib/moc/decoder_plugins/libspeex_decoder.a \
+		lib/moc/decoder_plugins/libspeex_decoder.la \
 		lib/moc/decoder_plugins/libspeex_decoder.so
 .else
 CONFIGURE_ARGS+=	--without-speex
@@ -109,6 +119,13 @@ CONFIGURE_ARGS+=	--without-samplerate
 LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=	--without-curl
+.endif
+
+.if defined(WITH_RCC)
+LIB_DEPENDS+=	rcc.2:${PORTSDIR}/devel/librcc \
+		rcd.1:${PORTSDIR}/devel/librcd
+.else
+CONFIGURE_ARGS+=	--without-rcc
 .endif
 
 .include <bsd.port.post.mk>
