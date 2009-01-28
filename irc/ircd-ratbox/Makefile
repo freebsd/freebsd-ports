@@ -179,9 +179,10 @@ post-patch:
 
 pre-su-install:
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	${MKDIR}  ${PREFIX}/etc/${PORTNAME}
-	${MKDIR}  ${DATADIR}/help
-	${MKDIR}  ${PREFIX}/lib/${PORTNAME}/modules
+	${MKDIR} ${PREFIX}/etc/${PORTNAME}
+	${CHOWN} ircd:ircd ${PREFIX}/etc/${PORTNAME}
+	${MKDIR} ${DATADIR}/help
+	${MKDIR} ${PREFIX}/lib/${PORTNAME}/modules
 
 post-install:
 .if !defined(NOPORTDOCS)
