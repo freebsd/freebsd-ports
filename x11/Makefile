@@ -332,7 +332,6 @@
     SUBDIR += xclick
     SUBDIR += xclip
     SUBDIR += xclipboard
-    SUBDIR += xclock
     SUBDIR += xcmd
     SUBDIR += xcmiscproto
     SUBDIR += xcmsdb
