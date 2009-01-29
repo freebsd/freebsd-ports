@@ -19,6 +19,7 @@ COMMENT=	A program that automatically solves games of Freecell
 USE_PERL5_BUILD=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
+PORTDOCS=	*
 
 MAN6=	fc-solve-board_gen.6 \
 	fc-solve.6 \
