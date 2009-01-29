@@ -208,6 +208,9 @@
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/__init__.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/bplist.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/bplist.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/bplist.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/chm.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/chm.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/chm.pyo
@@ -253,6 +256,9 @@
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/ttf.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/ttf.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/ttf.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/word_doc.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/word_doc.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/word_doc.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_parser/network/__init__.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/network/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/network/__init__.pyo
