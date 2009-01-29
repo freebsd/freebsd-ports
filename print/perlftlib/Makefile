@@ -38,8 +38,4 @@ post-build:
 		${WRKSRC}/${DIST}
 .endfor
 
-.include <bsd.port.pre.mk>
-.if exists(${SITE_PERL}/ExtUtils/CBuilder.pm)
-BROKEN=		Does not build if devel/p5-ExUtils-CBuilder is installed
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
