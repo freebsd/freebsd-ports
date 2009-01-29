@@ -270,6 +270,8 @@ gst_gsm_DIST=	bad
 
 # ivorbis
 gst_ivorbis_LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
+gst_ivorbis_PLIST_FILES=	${GST_LIB_DIR}/libgstivorbis.la \
+		${GST_LIB_DIR}/libgstivorbis.so
 gst_ivorbis_DIST=	bad
 
 # hal
