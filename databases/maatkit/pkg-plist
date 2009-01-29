@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/maatkit.pm
 %%SITE_PERL%%/maatkitdsn.pm
 bin/mk-archiver
@@ -7,6 +8,7 @@ bin/mk-deadlock-logger
 bin/mk-duplicate-key-checker
 bin/mk-find
 bin/mk-heartbeat
+bin/mk-log-parser
 bin/mk-parallel-dump
 bin/mk-parallel-restore
 bin/mk-profile-compact
