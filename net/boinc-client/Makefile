@@ -7,7 +7,7 @@
 
 PORTNAME=	boinc-client
 PORTVERSION=	6.4.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
@@ -69,7 +69,7 @@ post-patch:
 		${WRKSRC}/client/file_names.h ${WRKSRC}/lib/boinc_cmd.cpp \
 		${WRKSRC}/clientgui/MainDocument.cpp
 	@${REINPLACE_CMD} -e 's|../curl/ca-bundle.crt||' ${WRKSRC}/client/Makefile.in
-	@${REINPLACE_CMD} -e 's|ca-bundle.crt|${LOCALBASE}/share/curl/curl-ca-bundle.crt|' ${WRKSRC}/client/file_names.h
+	@${REINPLACE_CMD} -e 's|ca-bundle.crt|${LOCALBASE}/share/certs/ca-root-nss.crt|' ${WRKSRC}/client/file_names.h
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' ${WRKSRC}/clientgui/stdwx.h
 	@${REINPLACE_CMD} -e 's| install-dist_pkgdataDATA||' ${WRKSRC}/clientgui/res/Makefile.in
 	@${REINPLACE_CMD} -e 's|boincmgr.16x16.png boincmgr.32x32.png boincmgr.48x48.png||' ${WRKSRC}/clientgui/res/Makefile.in
