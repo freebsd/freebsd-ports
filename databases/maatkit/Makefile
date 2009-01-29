@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maatkit
-PORTVERSION=	2442
+PORTVERSION=	2725
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -26,6 +26,7 @@ MAN1=	mk-archiver.1 \
 		mk-duplicate-key-checker.1 \
 		mk-find.1 \
 		mk-heartbeat.1 \
+		mk-log-parser.1 \
 		mk-parallel-dump.1 \
 		mk-parallel-restore.1 \
 		mk-profile-compact.1 \
