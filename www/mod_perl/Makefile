@@ -8,7 +8,8 @@
 PORTNAME=	mod_perl
 PORTVERSION=	1.30
 CATEGORIES=	www perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	ModPerl/GOZER
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Embeds a Perl interpreter in the Apache server
