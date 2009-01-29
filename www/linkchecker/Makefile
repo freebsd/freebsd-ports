@@ -7,22 +7,24 @@
 #
 
 PORTNAME=	linkchecker
-PORTVERSION=	4.9
-PORTREVISION=	1
+PORTVERSION=	5.0
 CATEGORIES=	www python
 MASTER_SITES=	SF
+DISTNAME=	LinkChecker-${PORTVERSION}
 
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Check HTML documents for broken links
 
-USE_PYTHON=		2.4+
+USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	yes
+INSTALLS_EGGINFO=	yes
+PYDISTUTILS_EGGINFO=	LinkChecker-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-info
 
 MAN1=	linkchecker.1
 MAN5=	linkcheckerrc.5
-MANLANG=	"" de
 
 .if !defined(WITHOUT_NLS)
+MANLANG=	"" de
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -36,9 +38,9 @@ post-patch:
 
 .if !defined(WITHOUT_NLS)
 post-install:
-	${CP} ${WRKSRC}/build/share/locale/de/LC_MESSAGES/linkchecker.mo ${PREFIX}/share/locale/de/LC_MESSAGES/
-	${CP} ${WRKSRC}/build/share/locale/es/LC_MESSAGES/linkchecker.mo ${PREFIX}/share/locale/es/LC_MESSAGES/
-	${CP} ${WRKSRC}/build/share/locale/fr/LC_MESSAGES/linkchecker.mo ${PREFIX}/share/locale/fr/LC_MESSAGES/
+	${CP} ${WRKSRC}/build/share/locale/de/LC_MESSAGES/LinkChecker.mo ${PREFIX}/share/locale/de/LC_MESSAGES/
+	${CP} ${WRKSRC}/build/share/locale/es/LC_MESSAGES/LinkChecker.mo ${PREFIX}/share/locale/es/LC_MESSAGES/
+	${CP} ${WRKSRC}/build/share/locale/fr/LC_MESSAGES/LinkChecker.mo ${PREFIX}/share/locale/fr/LC_MESSAGES/
 .endif
 
 .include <bsd.port.mk>
