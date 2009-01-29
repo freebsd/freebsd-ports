@@ -12,7 +12,7 @@ MASTER_SITES=	http://perl.plover.com/Template/ \
 		CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Expand template text with embedded Perl
 
 PERL_CONFIGURE=	YES
