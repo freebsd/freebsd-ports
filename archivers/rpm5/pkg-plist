@@ -218,6 +218,7 @@ man/sk/man8/rpm.8
 @dirrmtry src/rpm/SOURCES
 @dirrmtry src/rpm/RPMS/x86_64
 @dirrmtry src/rpm/RPMS/sparcv9
+@dirrmtry src/rpm/RPMS/sparcv8
 @dirrmtry src/rpm/RPMS/sparc64
 @dirrmtry src/rpm/RPMS/sparc
 @dirrmtry src/rpm/RPMS/ppc64
