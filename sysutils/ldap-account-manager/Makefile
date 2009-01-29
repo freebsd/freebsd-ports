@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ldap-account-manager
-PORTVERSION=	2.4.0
-PORTREVISION=	3
+PORTVERSION=	2.5.0
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${PNAME}
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
@@ -26,8 +25,8 @@ WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=	5
 
 PNAME=		lam
-PORTDOCS=	docs COPYING HISTORY INSTALL README
-LAMDATA=	index.html VERSION config graphics help lib locale sess style templates tmp
+PORTDOCS=	docs COPYING HISTORY INSTALL README copyright
+LAMDATA=	config graphics help lib locale sess style templates tmp VERSION index.html
 WWWDIR?=	${PREFIX}/www/${PNAME}
 SUB_FILES=	pkg-message
 
@@ -38,20 +37,20 @@ do-configure:
 
 do-install:
 	-@${MKDIR} ${WWWDIR}
-.for i in ${LAMDATA}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${WWWDIR}
-.endfor
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${LAMDATA}" ${WWWDIR}
 .if !defined(NOPORTDOCS)
 	-@${MKDIR} ${DOCSDIR}
-.for j in ${PORTDOCS}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${j} ${DOCSDIR}
-.endfor
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${DOCSDIR}
 .endif
-	@[ -e ${WWWDIR}/config/config.cfg ] || ${INSTALL_DATA} ${WRKSRC}/config/config.cfg_sample ${WWWDIR}/config/config.cfg
-	@[ -e ${WWWDIR}/config/lam.conf   ] || ${INSTALL_DATA} ${WRKSRC}/config/lam.conf_sample   ${WWWDIR}/config/lam.conf
 
 post-install:
-	@${ECHO_MSG} "===> Setting correct permissions"
+	@if [ ! -f ${WWWDIR}/config/config.conf ]; then \
+	    ${CP} -p ${WWWDIR}/config/config.cfg_sample ${WWWDIR}/config/config.cfg ; \
+	fi
+	@if [ ! -f ${WWWDIR}/config/lam.conf ]; then \
+	    ${CP} -p ${WWWDIR}/config/lam.conf_sample ${WWWDIR}/config/lam.conf ; \
+	fi
+
 	@${FIND} ${WWWDIR} -type f -exec ${CHMOD} 644 {} \;
 	@${FIND} ${WWWDIR} -type d -exec ${CHMOD} 755 {} \;
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/config ${WWWDIR}/sess ${WWWDIR}/tmp
