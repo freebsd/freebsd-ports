@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pip
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.1
 #PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
@@ -17,6 +17,6 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Pip installs (Python) packages. An easy_install replacement
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
