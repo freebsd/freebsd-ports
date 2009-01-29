@@ -405,6 +405,7 @@
     SUBDIR += gdb6
     SUBDIR += gdbmods
     SUBDIR += geany
+    SUBDIR += gearmand
     SUBDIR += generate
     SUBDIR += gengameng
     SUBDIR += gengetopt
