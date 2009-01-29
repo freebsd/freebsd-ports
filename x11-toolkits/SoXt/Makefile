@@ -19,6 +19,7 @@ LIB_DEPENDS=	Coin.60:${PORTSDIR}/graphics/Coin
 USE_GL=		yes
 USE_MOTIF=	yes
 USE_PERL5_BUILD=	yes
+USE_XORG=	xi
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--with-pthread=yes --with-coin=${LOCALBASE}
@@ -26,9 +27,7 @@ CONFIGURE_ARGS+=	--with-pthread=yes --with-coin=${LOCALBASE}
 USE_LDCONFIG=	yes
 MAN1=		soxt-config.1
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e "s,echo aout, echo elf," ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
