@@ -7,7 +7,7 @@
 
 PORTNAME=	eperl
 PORTVERSION=	2.2.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang www perl5
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	tool/${PORTNAME}
@@ -40,8 +40,11 @@ MAN1=	eperl.1
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-configure
 .endif
 
-.if ${OSVERSION} >= 800058
-BROKEN=		does not build
+# Remove the strndup function from eperl, since
+# certain versions of FreeBSD include it
+.if ${OSVERSION} >= 701101
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-eperl_proto.h \
+		${PATCHDIR}/extra-patch-eperl_parse.c
 .endif
 
 test:
