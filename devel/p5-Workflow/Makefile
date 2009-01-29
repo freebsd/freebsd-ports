@@ -28,7 +28,9 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID \
 	${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper \
 	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception
+	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
+	${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp
+
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.6+
