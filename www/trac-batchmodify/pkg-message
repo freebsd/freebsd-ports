@@ -1,0 +1,10 @@
+**************************************************
+To complete the installation, please add:
+
+[components]
+trac.ticket.query.* = enabled
+batchmod.* = enabled
+
+to your trac.ini to enable the ticket batch
+modification plugin.
+**************************************************

@@ -1425,6 +1425,7 @@
     SUBDIR += trac-accountmanager
     SUBDIR += trac-addcomment
     SUBDIR += trac-advancedticketworkflow
+    SUBDIR += trac-batchmodify
     SUBDIR += trac-blog
     SUBDIR += trac-bzr
     SUBDIR += trac-calendar
