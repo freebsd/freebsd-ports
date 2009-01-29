@@ -3,29 +3,29 @@ bin/eperl
 %%SSSL%%@exec echo "AddType  application/x-httpd-eperl  .phtml .eperl .epl" >>%D/etc/apache/srm.conf
 %%SSSL%%@exec echo "Action   application/x-httpd-eperl  /cgi-bin/nph-eperl" >>%D/etc/apache/srm.conf
 %%SSSL%%@unexec grep -v "application/x-httpd-eperl" %D/etc/apache/srm.conf >%D/etc/apache/srm.conf.bak; mv %D/etc/apache/srm.conf.bak %D/etc/apache/srm.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/00README
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.cgipm.phtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.cgipm.iphtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.env.phtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.env.iphtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.errout.phtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.errout.iphtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.errsyn.phtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.errsyn.iphtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.func.phtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.func.iphtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.html.phtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.html.iphtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.image.phtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.image.iphtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.lwp.phtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.lwp.iphtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.net.phtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.net.iphtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.pp.phtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.pp.iphtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.table.phtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.table.iphtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.text.phtml
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.text.iphtml
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/00README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.cgipm.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.cgipm.iphtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.env.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.env.iphtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.errout.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.errout.iphtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.errsyn.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.errsyn.iphtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.func.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.func.iphtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.html.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.html.iphtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.image.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.image.iphtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.lwp.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.lwp.iphtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.net.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.net.iphtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.pp.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.pp.iphtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.table.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.table.iphtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.text.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.text.iphtml
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

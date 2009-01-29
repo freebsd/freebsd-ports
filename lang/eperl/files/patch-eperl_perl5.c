@@ -1,5 +1,5 @@
---- eperl_perl5.c.orig	Fri Sep  8 00:29:14 2000
-+++ eperl_perl5.c	Fri Sep  8 00:29:27 2000
+--- ./eperl_perl5.c.orig	1998-08-02 10:33:55.000000000 -0400
++++ ./eperl_perl5.c	2009-01-29 13:27:30.000000000 -0500
 @@ -33,6 +33,8 @@
  **  eperl_perl5.c -- ePerl Perl5 related stuff
  */
