@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.0.32
-PORTREVISION=	2
+DISTVERSION=	0.2.0.33
+PORTREVISION=	0
 CATEGORIES=	security net
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.cypherpunks.at/dist/ \
