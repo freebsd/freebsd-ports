@@ -155,6 +155,7 @@
     SUBDIR += mjpegtools-yuvfilters
     SUBDIR += mkvtoolnix
     SUBDIR += mkxvcd
+    SUBDIR += mlt
     SUBDIR += mmpython
     SUBDIR += mmsclient
     SUBDIR += mmsrip
