@@ -1,4 +1,5 @@
 bin/linkchecker
+bin/linkchecker-gui
 %%DATADIR%%/linkcheckerrc
 %%DATADIR%%/logging.conf
 %%EXAMPLESDIR%%/check.js
@@ -13,7 +14,10 @@ bin/linkchecker
 %%EXAMPLESDIR%%/leer.html.de
 %%EXAMPLESDIR%%/leer.html.en
 %%EXAMPLESDIR%%/linkchecker-completion
-%%PYTHON_SITELIBDIR%%/_linkchecker_configdata.py
+%%EXAMPLESDIR%%/linkchecker.apache.conf
+%%PYTHON_SITELIBDIR%%/_LinkChecker_configdata.py
+%%PYTHON_SITELIBDIR%%/_LinkChecker_configdata.pyc
+%%PYTHON_SITELIBDIR%%/_LinkChecker_configdata.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/HtmlParser/__init__.py
 %%PYTHON_SITELIBDIR%%/linkcheck/HtmlParser/__init__.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/HtmlParser/__init__.pyo
@@ -60,9 +64,6 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/ftpurl.py
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/ftpurl.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/ftpurl.pyo
-%%PYTHON_SITELIBDIR%%/linkcheck/checker/gopherurl.py
-%%PYTHON_SITELIBDIR%%/linkcheck/checker/gopherurl.pyc
-%%PYTHON_SITELIBDIR%%/linkcheck/checker/gopherurl.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/httpheaders.py
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/httpheaders.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/httpheaders.pyo
@@ -93,6 +94,9 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/urlbase.py
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/urlbase.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/urlbase.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/clamav.py
+%%PYTHON_SITELIBDIR%%/linkcheck/clamav.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/clamav.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/configuration/__init__.py
 %%PYTHON_SITELIBDIR%%/linkcheck/configuration/__init__.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/configuration/__init__.pyo
@@ -138,15 +142,15 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/dnssec.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/dnssec.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/dnssec.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/e164.py
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/e164.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/e164.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/exception.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/exception.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/exception.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/flags.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/flags.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/flags.pyo
-%%PYTHON_SITELIBDIR%%/linkcheck/dns/ifconfig.py
-%%PYTHON_SITELIBDIR%%/linkcheck/dns/ifconfig.pyc
-%%PYTHON_SITELIBDIR%%/linkcheck/dns/ifconfig.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/inet.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/inet.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/inet.pyo
@@ -252,6 +256,9 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/SOA.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/SOA.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/SOA.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/SPF.py
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/SPF.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/SPF.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/SSHFP.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/SSHFP.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/SSHFP.pyo
@@ -273,6 +280,12 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/IN/APL.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/IN/APL.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/IN/APL.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/IN/DHCID.py
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/IN/DHCID.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/IN/DHCID.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/IN/IPSECKEY.py
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/IN/IPSECKEY.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/IN/IPSECKEY.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/IN/KX.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/IN/KX.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/IN/KX.pyo
@@ -312,12 +325,18 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/sigbase.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/sigbase.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/sigbase.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/txtbase.py
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/txtbase.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/txtbase.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/renderer.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/renderer.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/renderer.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/resolver.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/resolver.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/resolver.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/reversename.py
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/reversename.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/reversename.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rrset.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rrset.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rrset.pyo
@@ -354,28 +373,48 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/fileutil.py
 %%PYTHON_SITELIBDIR%%/linkcheck/fileutil.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/fileutil.pyo
-%%PYTHON_SITELIBDIR%%/linkcheck/ftpparse/__init__.py
-%%PYTHON_SITELIBDIR%%/linkcheck/ftpparse/__init__.pyc
-%%PYTHON_SITELIBDIR%%/linkcheck/ftpparse/__init__.pyo
-%%PYTHON_SITELIBDIR%%/linkcheck/ftpparse/_ftpparse.so
+%%PYTHON_SITELIBDIR%%/linkcheck/ftpparse.py
+%%PYTHON_SITELIBDIR%%/linkcheck/ftpparse.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/ftpparse.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/__init__.py
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/linkchecker_rc.py
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/linkchecker_rc.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/linkchecker_rc.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/linkchecker_ui_main.py
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/linkchecker_ui_main.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/linkchecker_ui_main.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/linkchecker_ui_options.py
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/linkchecker_ui_options.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/linkchecker_ui_options.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/gzip2.py
 %%PYTHON_SITELIBDIR%%/linkcheck/gzip2.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/gzip2.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/htmlutil/__init__.py
+%%PYTHON_SITELIBDIR%%/linkcheck/htmlutil/__init__.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/htmlutil/__init__.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/htmlutil/linkname.py
+%%PYTHON_SITELIBDIR%%/linkcheck/htmlutil/linkname.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/htmlutil/linkname.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/htmlutil/linkparse.py
+%%PYTHON_SITELIBDIR%%/linkcheck/htmlutil/linkparse.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/htmlutil/linkparse.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/htmlutil/titleparse.py
+%%PYTHON_SITELIBDIR%%/linkcheck/htmlutil/titleparse.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/htmlutil/titleparse.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/httplib2.py
 %%PYTHON_SITELIBDIR%%/linkcheck/httplib2.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/httplib2.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/httputil.py
+%%PYTHON_SITELIBDIR%%/linkcheck/httputil.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/httputil.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/i18n.py
 %%PYTHON_SITELIBDIR%%/linkcheck/i18n.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/i18n.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/lc_cgi.py
 %%PYTHON_SITELIBDIR%%/linkcheck/lc_cgi.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/lc_cgi.pyo
-%%PYTHON_SITELIBDIR%%/linkcheck/linkname.py
-%%PYTHON_SITELIBDIR%%/linkcheck/linkname.pyc
-%%PYTHON_SITELIBDIR%%/linkcheck/linkname.pyo
-%%PYTHON_SITELIBDIR%%/linkcheck/linkparse.py
-%%PYTHON_SITELIBDIR%%/linkcheck/linkparse.pyc
-%%PYTHON_SITELIBDIR%%/linkcheck/linkparse.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/lock.py
 %%PYTHON_SITELIBDIR%%/linkcheck/lock.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/lock.pyo
@@ -400,6 +439,9 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/logger/gml.py
 %%PYTHON_SITELIBDIR%%/linkcheck/logger/gml.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/logger/gml.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/logger/graph.py
+%%PYTHON_SITELIBDIR%%/linkcheck/logger/graph.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/logger/graph.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/logger/gxml.py
 %%PYTHON_SITELIBDIR%%/linkcheck/logger/gxml.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/logger/gxml.pyo
@@ -424,9 +466,16 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/msgfmt.py
 %%PYTHON_SITELIBDIR%%/linkcheck/msgfmt.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/msgfmt.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/network/__init__.py
+%%PYTHON_SITELIBDIR%%/linkcheck/network/__init__.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/network/__init__.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/network/_network.so
 %%PYTHON_SITELIBDIR%%/linkcheck/robotparser2.py
 %%PYTHON_SITELIBDIR%%/linkcheck/robotparser2.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/robotparser2.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/socketutil.py
+%%PYTHON_SITELIBDIR%%/linkcheck/socketutil.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/socketutil.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/strformat.py
 %%PYTHON_SITELIBDIR%%/linkcheck/strformat.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/strformat.pyo
@@ -441,18 +490,20 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/url.pyo
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/HtmlParser
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/cache
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/checker
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/configuration
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/director
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/network
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/logger
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/htmlutil
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/gui
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/IN
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/ftpparse
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/logger
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/director
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/configuration
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/checker
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/cache
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/HtmlParser
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck
-%%NLS%%share/locale/de/LC_MESSAGES/linkchecker.mo
-%%NLS%%share/locale/es/LC_MESSAGES/linkchecker.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/linkchecker.mo
+%%NLS%%share/locale/de/LC_MESSAGES/LinkChecker.mo
+%%NLS%%share/locale/es/LC_MESSAGES/LinkChecker.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/LinkChecker.mo
