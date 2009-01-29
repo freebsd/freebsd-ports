@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Workflow
-PORTVERSION=	0.31
+PORTVERSION=	1.32
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -87,7 +87,7 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/ && ${CP} -R README Changes TODO VERSION doc ${DOCSDIR}/)
+	@(cd ${WRKSRC}/ && ${CP} -R README Changes TODO doc ${DOCSDIR}/)
 	@${ECHO_MSG} "===> Docs are installed in ${DOCSDIR}."
 .endif
 
