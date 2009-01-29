@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slgtk
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://space.mit.edu/pub/cxc/modules/slgtk/
 
@@ -15,12 +15,9 @@ COMMENT=	S-Lang binding for GTK+
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 
-BROKEN=		does not compile
-
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LDFLAGS=-lncurses
-USE_LDCONFIG=	yes
 
 MAN1=		imdisplay.1
 
@@ -46,8 +43,8 @@ post-patch:
 		${WRKSRC}/examples/main.sl
 	@${REINPLACE_CMD} -e '/rm -f devel/d ; /ln -sf @prefix@ devel/d' \
 		${WRKSRC}/Makefile.in
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|PACKAGES|SLGTK_PACKAGES|g'
+	@${REINPLACE_CMD} -e 's|"\.\./images/test\.xpm"|path_concat(SLGTK_IMAGES_DIR,"test\.xpm")|' ${WRKSRC}/examples/textview.sl \
+		${WRKSRC}/examples/wmhints.sl
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -60,6 +57,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/README ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.sl ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/packages/wdisplay.sl ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/images/gtk-logo-rgb.gif ${EXAMPLESDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/images/test.xpm ${EXAMPLESDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/images/stars.fits ${EXAMPLESDIR}/images
 .endif
