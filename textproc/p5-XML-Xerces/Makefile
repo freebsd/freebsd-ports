@@ -17,6 +17,8 @@ COMMENT=	The Perl API to the Apache project's Xerces XML parser
 
 LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2
 
+BROKEN=		does not compile
+
 USE_GMAKE=	YES
 PERL_CONFIGURE=	YES
 CONFIGURE_ENV+=	XERCES_LIB="${LOCALBASE}/lib" \
