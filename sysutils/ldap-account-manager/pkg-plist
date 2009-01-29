@@ -1,12 +1,15 @@
 %%WWWDIR%%/VERSION
 %%WWWDIR%%/config/.htaccess
+@unexec if cmp -s %D/%%WWWDIR%%/config/config.cfg %D/%%WWWDIR%%/config/config.cfg_sample; then rm -f %D/%%WWWDIR%%/config/config.cfg; fi
 %%WWWDIR%%/config/config.cfg_sample
-%%WWWDIR%%/config/config.cfg
+@exec if [ ! -f %D/www/lam/config/config.cfg ] ; then cp -p %D/%F %B/config.cfg; fi
+@unexec if cmp -s %D/%%WWWDIR%%/config/lam.conf %D/%%WWWDIR%%/config/lam.conf_sample; then rm -f %D/%%WWWDIR%%/config/lam.conf; fi
 %%WWWDIR%%/config/lam.conf_sample
-%%WWWDIR%%/config/lam.conf
+@exec if [ ! -f %D/www/lam/lam.conf ] ; then cp -p %D/%F %B/lam.conf; fi
 %%WWWDIR%%/config/language
 %%WWWDIR%%/config/passwordMailTemplate.txt
 %%WWWDIR%%/config/pdf/.htaccess
+%%WWWDIR%%/config/pdf/default.dhcp.xml
 %%WWWDIR%%/config/pdf/default.group.xml
 %%WWWDIR%%/config/pdf/default.host.xml
 %%WWWDIR%%/config/pdf/default.mailAlias.xml
@@ -63,6 +66,7 @@
 %%WWWDIR%%/graphics/lam.png
 %%WWWDIR%%/graphics/ldap-server.png
 %%WWWDIR%%/graphics/light.png
+%%WWWDIR%%/graphics/logo32.png
 %%WWWDIR%%/graphics/locality.png
 %%WWWDIR%%/graphics/lock.png
 %%WWWDIR%%/graphics/mail.png
@@ -333,5 +337,5 @@
 @dirrm %%WWWDIR%%/config/profiles
 @dirrm %%WWWDIR%%/config/pdf/logos
 @dirrm %%WWWDIR%%/config/pdf
-@dirrm %%WWWDIR%%/config
-@dirrm %%WWWDIR%%
+@dirrmtry %%WWWDIR%%/config
+@dirrmtry %%WWWDIR%%
