@@ -7,15 +7,13 @@
 
 PORTNAME=	eperl
 PORTVERSION=	2.2.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang www perl5
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	tool/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Embedded Perl 5 Language
-
-BROKEN=		does not compile
 
 # User-controlled variables list
 # INSTALL_ALSO_AS_SSSL
@@ -38,6 +36,10 @@ MAN1=	eperl.1
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} >= 500809
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-configure
+.endif
+
 .if ${OSVERSION} >= 800058
 BROKEN=		does not build
 .endif
@@ -53,16 +55,12 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/eperl ${PREFIX}/bin/eperl
 	${INSTALL_MAN} ${WRKSRC}/eperl.1 ${PREFIX}/man/man1/eperl.1
-.if !defined(NOPORTDOCS)
-	@if [ ! -d ${EXAMPLESDIR} ]; then \
-		${MKDIR} ${EXAMPLESDIR}; \
-	fi
+.if !defined(NOPORTEXAMPLES)
+	${INSTALL} -d ${EXAMPLESDIR}
 	${CP} ${WRKSRC}/eg/* ${EXAMPLESDIR}/
 .endif
 .if defined(INSTALL_ALSO_AS_SSSL)
-	@if [ ! -d ${PREFIX}/www/cgi-bin ]; then \
-		${MKDIR} ${PREFIX}/www/cgi-bin; \
-	fi
+	${INSTALL} -d ${PREFIX}/www/cgi-bin; \
 	${INSTALL_PROGRAM} ${WRKSRC}/eperl ${PREFIX}/www/cgi-bin/nph-eperl
 	@if [ ".`${GREP} x-httpd-eperl ${PREFIX}/etc/apache/srm.conf`" = . ]; then \
 		${ECHO_CMD} "AddType  application/x-httpd-eperl  .phtml .eperl .epl" \

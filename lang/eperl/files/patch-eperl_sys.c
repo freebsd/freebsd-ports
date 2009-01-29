@@ -1,5 +1,5 @@
---- eperl_sys.c.original        Mon Jul 27 17:41:34 1998
-+++ eperl_sys.c Mon May  1 15:07:34 2000
+--- ./eperl_sys.c.orig	1998-07-27 04:41:34.000000000 -0400
++++ ./eperl_sys.c	2009-01-29 13:27:29.000000000 -0500
 @@ -239,8 +239,8 @@
      char timestr[128];
  
