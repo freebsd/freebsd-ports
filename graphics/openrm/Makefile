@@ -7,7 +7,7 @@
 
 PORTNAME=		openrm
 PORTVERSION=		1.6.0
-PORTREVISION=	2
+PORTREVISION=		2
 CATEGORIES=		graphics
 MASTER_SITES=		SF
 DISTNAME=		${PORTNAME}-devel-${PORTVERSION}-1
@@ -28,6 +28,7 @@ EXTRA_PATCHES=	${PATCHDIR}/makeinclude.diff
 .endif
 
 USE_GL=		glu
+USE_XORG=	xmu
 USE_PERL5_BUILD=yes
 ALL_TARGET=	freebsd docs
 MAKE_ARGS=	AR=${AR} \
