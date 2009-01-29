@@ -994,8 +994,6 @@ MASTER_SITE_PGSQL+= \
 
 .if !defined(IGNORE_MASTER_SITE_PHP)
 MASTER_SITE_PHP+= \
-	http://br.php.net/%SUBDIR%/ \
-	http://cn.php.net/%SUBDIR%/ \
 	http://dk.php.net/%SUBDIR%/ \
 	http://de.php.net/%SUBDIR%/ \
 	http://es.php.net/%SUBDIR%/ \
@@ -1007,6 +1005,8 @@ MASTER_SITE_PHP+= \
 	http://se.php.net/%SUBDIR%/ \
 	http://uk.php.net/%SUBDIR%/ \
 	http://us2.php.net/%SUBDIR%/ \
+	http://br.php.net/%SUBDIR%/ \
+	http://cn.php.net/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/php/&,}
 .endif
 
