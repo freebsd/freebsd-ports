@@ -23,6 +23,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 #		${SITE_PERL}/Apache/SessionX.pm:${PORTSDIR}/www/p5-Apache-SessionX
 .endif
 
+BROKEN=		does not compile
+
 PERL_CONFIGURE=	yes
 
 .if !defined(WITHOUT_APACHE)
