@@ -180,6 +180,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_90.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_91.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_92.html
+%%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_93.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_abt.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_fot.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_ovr.html
