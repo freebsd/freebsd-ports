@@ -6,6 +6,13 @@ share/pear/Services/HTMLValidator.php
 share/pear/tests/Services_W3C_HTMLValidator/AllTests.php
 share/pear/tests/Services_W3C_HTMLValidator/Services/W3C/HTMLValidatorTest.php
 share/pear/packages/pear-Services_W3C_HTMLValidator-1.0.0r2/package.xml
+share/examples/pear/Services_W3C_HTMLValidator/PHPUnit/URIValidationTest.php
+share/examples/pear/Services_W3C_HTMLValidator/PHPUnit/ValidationSuite.php
+share/examples/pear/Services_W3C_HTMLValidator/example.html
+share/examples/pear/Services_W3C_HTMLValidator/validate_byfile.php
+share/examples/pear/Services_W3C_HTMLValidator/validate_byuri.php
+share/examples/pear/Services_W3C_HTMLValidator/validate_fragment.php
+share/examples/pear/Services_W3C_HTMLValidator/validate_responsexml.php
 @dirrm share/pear/Services/HTMLValidator
 @dirrm share/pear/Services
 @dirrm share/pear/tests/Services_W3C_HTMLValidator/Services/W3C/
