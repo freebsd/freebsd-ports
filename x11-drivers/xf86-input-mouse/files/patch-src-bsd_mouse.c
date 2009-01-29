@@ -1,11 +1,20 @@
---- src/bsd_mouse.c.orig	2008-12-13 18:24:06.000000000 -0500
-+++ src/bsd_mouse.c	2008-12-14 22:50:40.000000000 -0500
+--- src/bsd_mouse.c.orig	2008-11-26 23:11:36.000000000 -0500
++++ src/bsd_mouse.c	2009-01-28 12:52:12.000000000 -0500
 @@ -1,4 +1,3 @@
 -
  /*
   * Copyright (c) 1999-2003 by The XFree86 Project, Inc.
   *
-@@ -75,11 +74,15 @@
+@@ -28,6 +27,8 @@
+ 
+ #include <xorg-server.h>
+ 
++#define XPS2_SUPPORT
++
+ #include <X11/X.h>
+ #include "xf86.h"
+ #include "xf86Priv.h"
+@@ -75,11 +76,13 @@
  #define DEFAULT_MOUSE_DEV		"/dev/mouse"
  #define DEFAULT_SYSMOUSE_DEV		"/dev/sysmouse"
  #define DEFAULT_PS2_DEV			"/dev/psm0"
@@ -14,10 +23,8 @@
  static const char *mouseDevs[] = {
  	DEFAULT_MOUSE_DEV,
  	DEFAULT_SYSMOUSE_DEV,
-+#ifndef CONFIG_HAL
  	DEFAULT_PS2_DEV,
 +	DEFAULT_USB_DEV,
-+#endif
  	NULL
  };
  #elif (defined(__OpenBSD__) || defined(__NetBSD__)) && defined(WSCONS_SUPPORT)
