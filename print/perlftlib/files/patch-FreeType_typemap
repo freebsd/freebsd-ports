@@ -1,0 +1,11 @@
+--- FreeType/typemap.orig	1998-12-14 06:13:26.000000000 +0100
++++ FreeType/typemap	2009-01-29 20:45:20.000000000 +0100
+@@ -98,7 +98,7 @@
+ 		FETCH_OBJ_IV(obj, &$var, cols, $var);
+ 		FETCH_OBJ_IV(obj, &$var, width, $var);
+ 		FETCH_OBJ_IV(obj, &$var, flow, $var);
+-#		FETCH_OBJ_IV(obj, &$var, size, $var);
++		/* FETCH_OBJ_IV(obj, &$var, size, $var); */
+ 		FETCH_OBJ(obj, bitmap, sv, $var);
+ 		$var.bitmap = SvPV(sv, na);
+ 		$var.size = na;
