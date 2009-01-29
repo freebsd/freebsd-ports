@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Locale::Maketext::Fuzzy - Maketext from already interpolated strings
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \

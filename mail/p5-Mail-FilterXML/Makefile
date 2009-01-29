@@ -11,7 +11,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that allows writing mail filter rules in XML
 
 BUILD_DEPENDS=	${SITE_PERL}/Mail/Audit.pm:${PORTSDIR}/mail/p5-Mail-Audit \

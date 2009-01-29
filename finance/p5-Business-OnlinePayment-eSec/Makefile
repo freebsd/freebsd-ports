@@ -12,7 +12,7 @@ CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An Business::OnlinePayment backend module for eSec
 
 BUILD_DEPENDS=	${SITE_PERL}/Business/CreditCard.pm:${PORTSDIR}/finance/p5-Business-CreditCard \

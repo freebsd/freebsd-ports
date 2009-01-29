@@ -12,7 +12,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	'The Next Generation' of Text::PDF::API
 
 BUILD_DEPENDS=	${PERL_SITELIBDIR}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib

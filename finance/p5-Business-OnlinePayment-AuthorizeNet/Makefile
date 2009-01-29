@@ -11,7 +11,7 @@ CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Business::OnlinePayment backend module for Authorize.Net
 
 RUN_DEPENDS=	p5-Business-OnlinePayment>=3:${PORTSDIR}/finance/p5-Business-OnlinePayment \

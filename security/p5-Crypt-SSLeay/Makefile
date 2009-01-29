@@ -11,7 +11,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to allow p5-libwww LWP to make https connections
 
 BUILD_DEPENDS=		${SITE_PERL}/URI/URL.pm:${PORTSDIR}/net/p5-URI

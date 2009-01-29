@@ -12,7 +12,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to IDEA block cipher
 
 PERL_CONFIGURE=	yes

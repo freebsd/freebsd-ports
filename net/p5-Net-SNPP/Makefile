@@ -11,7 +11,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Net::SNPP - Perl Simple Network Pager Protocol Client
 
 PERL_CONFIGURE=	yes

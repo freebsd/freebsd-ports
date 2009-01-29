@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 PKGNAMESUFFIX=	${MODPERL_SUFFIX}
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Active Server Pages for Apache
 
 BUILD_DEPENDS=	${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \

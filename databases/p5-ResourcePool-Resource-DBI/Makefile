@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN \
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MW/MWS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	ResourcePool::Resource::DBI - A ResourcePool wrapper for DBI
 
 BUILD_DEPENDS=	${SITE_PERL}/ResourcePool.pm:${PORTSDIR}/devel/p5-ResourcePool \

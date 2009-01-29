@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN \
 		http://scott.wiersdorf.org/perl/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Perl OO interface to procmail rc files
 
 PERL_CONFIGURE=	YES
