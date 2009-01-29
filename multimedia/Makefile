@@ -107,6 +107,7 @@
     SUBDIR += kbtv
     SUBDIR += kdemultimedia3
     SUBDIR += kdemultimedia4
+    SUBDIR += kdenlive
     SUBDIR += kino
     SUBDIR += kissdx
     SUBDIR += kmenc15
