@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: gearmand
+# REQUIRE: DAEMON
+
+. "%%RC_SUBR%%"
+
+name="gearmand"
+command="%%PREFIX%%/bin/gearmand"
+
+load_rc_config "$name"
+: ${gearmand_enable="NO"}
+: ${gearmand_flags="-p 4730 -v"}
+: ${gearmand_group="daemon"}
+: ${gearmand_user="daemon"}
+
+command_args="${gearmand_flags} &"
+
+run_rc_command "$1"
+
