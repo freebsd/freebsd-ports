@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.2.11
-PORTREVISION=	2
+PORTREVISION?=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -22,7 +22,7 @@ COMMENT?=	Version 2.2.x of Apache web server with ${WITH_MPM:L} MPM.
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		pcre.0:${PORTSDIR}/devel/pcre
 
-LATEST_LINK=	apache22
+LATEST_LINK?=	apache22
 
 CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.* \
 		apache+mod_ssl+mod_snmp+ipv6-1.* apache+mod_ssl+mod_accel-1.* \
