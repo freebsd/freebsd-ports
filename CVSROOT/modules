@@ -12777,6 +12777,7 @@ p5-WWW-SourceForge              ports/www/p5-WWW-SourceForge
 p5-WWW-Spinn3r                  ports/www/p5-WWW-Spinn3r
 p5-WWW-TV                       ports/www/p5-WWW-TV
 p5-WWW-TWSMS                    ports/www/p5-WWW-TWSMS
+p5-WWW-TinySong                 ports/www/p5-WWW-TinySong
 p5-WWW-VenusEnvy                ports/www/p5-WWW-VenusEnvy
 p5-WWW-WebArchive               ports/www/p5-WWW-WebArchive
 p5-WWW-Wikipedia                ports/www/p5-WWW-Wikipedia
@@ -16122,6 +16123,7 @@ p5-www-shorten-0rz              ports/www/p5-WWW-Shorten-0rz
 p5-www-shorten-kuso             ports/www/p5-WWW-Shorten-KUSO
 p5-www-sourceforge              ports/www/p5-WWW-SourceForge
 p5-www-spinn3r                  ports/www/p5-WWW-Spinn3r
+p5-www-tinysong                 ports/www/p5-WWW-TinySong
 p5-www-tv                       ports/www/p5-WWW-TV
 p5-www-twsms                    ports/www/p5-WWW-TWSMS
 p5-www-venusenvy                ports/www/p5-WWW-VenusEnvy
@@ -19297,6 +19299,14 @@ rsyslog3-mysql                  ports/sysutils/rsyslog3-mysql
 rsyslog3-pgsql                  ports/sysutils/rsyslog3-pgsql
 rsyslog3-relp                   ports/sysutils/rsyslog3-relp
 rsyslog3-snmp                   ports/sysutils/rsyslog3-snmp
+rsyslog4                        ports/sysutils/rsyslog4
+rsyslog4-dbi                    ports/sysutils/rsyslog4-dbi
+rsyslog4-gnutls                 ports/sysutils/rsyslog4-gnutls
+rsyslog4-gssapi                 ports/sysutils/rsyslog4-gssapi
+rsyslog4-mysql                  ports/sysutils/rsyslog4-mysql
+rsyslog4-pgsql                  ports/sysutils/rsyslog4-pgsql
+rsyslog4-relp                   ports/sysutils/rsyslog4-relp
+rsyslog4-snmp                   ports/sysutils/rsyslog4-snmp
 rt2                             ports/www/rt2
 rt2-demo                        ports/games/rt2-demo
 rt32                            ports/www/rt32
@@ -22459,7 +22469,7 @@ xclasses                        ports/x11-toolkits/xclasses
 xclick                          ports/x11/xclick
 xclip                           ports/x11/xclip
 xclipboard                      ports/x11/xclipboard
-xclock                          ports/x11/xclock
+xclock                          ports/x11-clocks/xclock
 xcmd                            ports/x11/xcmd
 xcmiscproto                     ports/x11/xcmiscproto
 xcmsdb                          ports/x11/xcmsdb
