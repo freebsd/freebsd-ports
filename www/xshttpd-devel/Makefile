@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.7b03
-PORTREVISION=	1
+DISTVERSION=	3.7b05
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -100,7 +99,6 @@ post-patch:
 		${WRKSRC}/config/Makefile.in
 
 post-install:
-	@${TOUCH} ${WWWDIR}/module/.keepme
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 . for f in ${PORTDOCS}

@@ -64,9 +64,11 @@ bin/xspasswd
 %%WWWDIR%%/icons/xs-unknown.gif
 %%WWWDIR%%/icons/xs-video.gif
 %%WWWDIR%%/icons/xs-zip.gif
-%%WWWDIR%%/module/.keepme
 %%PERL%%%%WWWDIR%%/module/mod_perl.so
 %%LDAP%%%%WWWDIR%%/module/mod_ldap.so
+%%WWWDIR%%/module/mod_compress.so
+%%WWWDIR%%/module/mod_gzip.so
+%%WWWDIR%%/module/mod_bzip2.so
 @exec mkdir -p %%WWWDIR%%/htdocs
 @dirrm %%WWWDIR%%/contrib
 @dirrm %%WWWDIR%%/gfxcount
