@@ -1,5 +1,5 @@
---- src/freebsd_pci.c.orig	2009-01-25 11:53:11.000000000 -0500
-+++ src/freebsd_pci.c	2009-01-25 11:53:26.000000000 -0500
+--- src/freebsd_pci.c.orig	2008-10-31 11:40:09.000000000 -0400
++++ src/freebsd_pci.c	2009-01-29 12:34:31.000000000 -0500
 @@ -53,6 +53,17 @@
  #define	PCIS_DISPLAY_3D		0x02
  #define	PCIS_DISPLAY_OTHER	0x80
@@ -96,3 +96,11 @@
  
      if (addr & 0x01)
  	dev->regions[region].is_IO = 1;
+@@ -495,6 +527,7 @@
+ 	pci_sys->devices[ i ].base.device_id = p->pc_device;
+ 	pci_sys->devices[ i ].base.subvendor_id = p->pc_subvendor;
+ 	pci_sys->devices[ i ].base.subdevice_id = p->pc_subdevice;
++	pci_sys->devices[ i ].base.revision = p->pc_revid;
+ 	pci_sys->devices[ i ].base.device_class = (uint32_t)p->pc_class << 16 |
+ 	    (uint32_t)p->pc_subclass << 8 | (uint32_t)p->pc_progif;
+     }
