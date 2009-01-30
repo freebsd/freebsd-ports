@@ -10,7 +10,9 @@ bin/structuresynth
 %%DATADIR%%/Examples/Invader.es
 %%DATADIR%%/Examples/Jugend2D.es
 %%DATADIR%%/Examples/Menger.es
+%%DATADIR%%/Examples/MeshTest.es
 %%DATADIR%%/Examples/Mondrian.es
+%%DATADIR%%/Examples/Nabla.es
 %%DATADIR%%/Examples/Octopod II.es
 %%DATADIR%%/Examples/RoundTree.es
 %%DATADIR%%/Examples/SpiralTree2D.es
@@ -21,6 +23,7 @@ bin/structuresynth
 %%DATADIR%%/Misc/about.html
 %%DATADIR%%/Misc/icon.jpg
 %%DATADIR%%/Misc/povray.rendertemplate
+%%DATADIR%%/Misc/renderman.rendertemplate
 %%DATADIR%%/Misc/splash.png
 %%DATADIR%%/Misc/sunflow.rendertemplate
 %%DATADIR%%/Misc/sunflowcolored.rendertemplate
