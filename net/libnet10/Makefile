@@ -10,7 +10,7 @@ PORTVERSION=	1.0.2a
 PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
+MASTER_SITES=	http://www.packetfactory.net/libnet/dist/deprecated/
 PKGNAMESUFFIX=	10
 
 MAINTAINER=	ports@FreeBSD.org
