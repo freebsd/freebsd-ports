@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	treecc
-PORTVERSION=	0.3.8
+PORTVERSION=	0.3.10
 CATEGORIES=	lang
-MASTER_SITES=	${PNET_MASTER_SITES}
-MASTER_SITE_SUBDIR=	${PNET_MASTER_SITE_SUBDIR}
+MASTER_SITES=	SAVANNAH/dotgnu-pnet
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Treecc is designed to assist in the development of compilers
@@ -20,5 +19,4 @@ MAN1=		treecc.1
 INFO=		treecc
 PLIST_FILES=	bin/treecc lib/libtreecc.a
 
-.include "${.CURDIR}/../pnet/Makefile.pnet"
 .include <bsd.port.mk>
