@@ -7,7 +7,7 @@
 
 PORTNAME=	httptunnel
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.Awfulhak.org/httptunnel/ \
 		ftp://ftp.nocrew.org/pub/nocrew/unix/ \
@@ -16,16 +16,18 @@ MASTER_SITES=	http://www.Awfulhak.org/httptunnel/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tunnel a tcp/ip connection through a http/tcp/ip connection
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet
 .if defined(ENABLE_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
 .endif
 MAN1=		hts.1 htc.1
 
+USE_RC_SUBR=	hts htc
+
+PLIST_FILES=	bin/hts bin/htc
+
 post-install:
-	${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${FILESDIR}/httptunnel.sh \
-		>${PREFIX}/etc/rc.d/httptunnel.sh
-	${CHMOD} 755 ${PREFIX}/etc/rc.d/httptunnel.sh
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

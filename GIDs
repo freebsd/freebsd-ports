@@ -104,6 +104,7 @@ wildfire:*:340:
 stunnel:*:341:
 openfire:*:342:
 _iodined:*:353:
+httptunnel:*:361:
 ldap:*:389:
 tiarra:*:398:
 drweb:*:426:

@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090130:
+  AFFECTS: users of www/httptunnel
+  AUTHOR: rafan@FreeBSD.org
+
+  The startup script has been converted to new rc.d style and split
+  into two scripts: htc (client) and hts (server). Please check the scripts
+  for how to set variables in /etc/rc.conf.
+
 20090127:
   AFFECTS: gstreamer-plugins
   AUTHOR: kwm@FreeBSD.org
