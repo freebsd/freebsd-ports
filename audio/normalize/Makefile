@@ -9,7 +9,7 @@ PORTNAME=	normalize
 PORTVERSION=	0.7.7
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://download.savannah.gnu.org/releases/normalize/
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	alex@fafula.com
 COMMENT=	A tool for adjusting the volume of wave/MP3 files to a standard level
