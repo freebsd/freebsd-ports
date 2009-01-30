@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ ! -d ${HOME}/.blender ]; then
+	echo "Creating links in home directory..."
+	ln -s %%PREFIX%%/share/blender ${HOME}/.blender
+fi
+exec %%PREFIX%%/bin/blender-bin "$@"
+

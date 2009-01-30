@@ -1,0 +1,11 @@
+--- extern/Makefile.orig	2009-01-21 08:09:59.000000000 +0100
++++ extern/Makefile	2009-01-21 08:10:30.000000000 +0100
+@@ -30,7 +30,7 @@
+ 
+ SOURCEDIR = extern
+ DIR = $(OCGDIR)/extern
+-DIRS = qhull/src solid glew/src
++DIRS = qhull/src solid
+ 
+ ifeq ($(WITH_FREETYPE2), true)
+     DIRS += bFTGL/src
