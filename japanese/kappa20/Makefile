@@ -9,7 +9,7 @@ PORTNAME=	k20fonts
 PORTVERSION=	0.396
 PORTREVISION=	5
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://khdd.net/20dot.fonts/:kappa20 \
+MASTER_SITES=	${MASTER_SITE_NETBSD:S/$/:kappa20/:S/%SUBDIR%/LOCAL_PORTS/} \
 		http://downloads.sourceforge.jp/x-tt/8412/:ayu20
 DISTNAME=	Kappa20-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:kappa20 \
