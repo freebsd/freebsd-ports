@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmonad-contrib
-PORTVERSION=	0.8
+PORTVERSION=	0.8.1
 CATEGORIES=	x11-wm haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/xmonad-contrib/${PORTVERSION}/
 
@@ -25,12 +25,16 @@ CABALCMD=	${LOCALBASE}/bin/runghc Setup.lhs
 GHC_VERSION=	6.8.3
 SUBDIR=		lib/${PORTNAME}-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+PORTDOCS=	LICENSE html
 PLIST_SUB=	GHC_VERSION=${GHC_VERSION} \
 		PORTVERSION=${PORTVERSION} \
 		SUBDIR=${SUBDIR}
 
-.ifndef (NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
+.else
+PLIST_DIRS+=	%%DOCSDIR%%
+PLIST_FILES+=	%%DOCSDIR%%/LICENSE
 .endif
 
 do-configure:
@@ -38,7 +42,7 @@ do-configure:
 
 do-build:
 	cd ${WRKSRC} && ${CABALCMD} build && ${CABALCMD} register --gen-script
-.ifndef (NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 	cd ${WRKSRC} && ${CABALCMD} haddock
 .endif
 
