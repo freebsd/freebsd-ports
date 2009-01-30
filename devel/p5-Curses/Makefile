@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Curses
-PORTVERSION=	1.26
+PORTVERSION=	1.27
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,7 +25,7 @@ MAN3=		Curses.3
 pre-configure:
 	@${LN} -sf ${WRKSRC}/hints/c-freebsd.ncurses.h \
 		${WRKSRC}/c-config.h
-	@${MKDIR} -p ${WRKSRC}/usr/include/ncurses
+	@${MKDIR} ${WRKSRC}/usr/include/ncurses
 .for i in form.h ncurses.h menu.h panel.h
 	@${LN} -fs /usr/include/${i} ${WRKSRC}/usr/include/ncurses/${i}
 .endfor
