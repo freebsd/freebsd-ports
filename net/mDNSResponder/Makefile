@@ -9,7 +9,7 @@
 PORTNAME=	mDNSResponder
 PORTVERSION=	108
 CATEGORIES=	net dns
-MASTER_SITES=	http://darwinsource.opendarwin.org/tarballs/apsl/
+MASTER_SITES=	http://www.opensource.apple.com/darwinsource/tarballs/other/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
