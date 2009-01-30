@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	moodle
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.4
 CATEGORIES=	www
-MASTER_SITES=	http://download.moodle.org/stable19/
+MASTER_SITES=	http://download.moodle.org/stable19/ \
+		http://download2.moodle.org/stable19/ \
+		http://download3.moodle.org/stable19/ \
+		http://download4.moodle.org/stable19/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jmrueda@diatel.upm.es
@@ -66,7 +69,7 @@ USE_PHP+=	ldap
 .endif
 
 .if !defined(WITHOUT_MIMETEX)
-RUN_DEPENDS+=	${PREFIX}/www/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
+RUN_DEPENDS+=	${LOCALBASE}/www/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
 .endif
 
 NO_BUILD=	yes
