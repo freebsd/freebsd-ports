@@ -9,10 +9,16 @@
 %%WEBFRONTDIR%%/ganglia.php
 %%WEBFRONTDIR%%/get_context.php
 %%WEBFRONTDIR%%/get_ganglia.php
+%%WEBFRONTDIR%%/graph.d/cpu_report.php
+%%WEBFRONTDIR%%/graph.d/load_report.php
+%%WEBFRONTDIR%%/graph.d/mem_report.php
+%%WEBFRONTDIR%%/graph.d/metric.php
+%%WEBFRONTDIR%%/graph.d/network_report.php
+%%WEBFRONTDIR%%/graph.d/packet_report.php
+%%WEBFRONTDIR%%/graph.d/sample_report.php
 %%WEBFRONTDIR%%/graph.php
 %%WEBFRONTDIR%%/grid_tree.php
 %%WEBFRONTDIR%%/header.php
-%%WEBFRONTDIR%%/host_gmetrics.php
 %%WEBFRONTDIR%%/host_view.php
 %%WEBFRONTDIR%%/index.php
 %%WEBFRONTDIR%%/meta_view.php
@@ -22,12 +28,6 @@
 %%WEBFRONTDIR%%/private_clusters
 %%WEBFRONTDIR%%/show_node.php
 %%WEBFRONTDIR%%/styles.css
-%%WEBFRONTDIR%%/templates/Rocks/cluster_extra.tpl
-%%WEBFRONTDIR%%/templates/Rocks/header.tpl
-%%WEBFRONTDIR%%/templates/Rocks/host_extra.tpl
-%%WEBFRONTDIR%%/templates/Rocks/images/ganglia.jpg
-%%WEBFRONTDIR%%/templates/Rocks/images/hardhat.png
-%%WEBFRONTDIR%%/templates/Rocks/images/rocks.jpg
 %%WEBFRONTDIR%%/templates/default/cluster_extra.tpl
 %%WEBFRONTDIR%%/templates/default/cluster_view.tpl
 %%WEBFRONTDIR%%/templates/default/footer.tpl
@@ -35,7 +35,6 @@
 %%WEBFRONTDIR%%/templates/default/header-nobanner.tpl
 %%WEBFRONTDIR%%/templates/default/header.tpl
 %%WEBFRONTDIR%%/templates/default/host_extra.tpl
-%%WEBFRONTDIR%%/templates/default/host_gmetrics.tpl
 %%WEBFRONTDIR%%/templates/default/host_view.tpl
 %%WEBFRONTDIR%%/templates/default/images/cluster_0-24.jpg
 %%WEBFRONTDIR%%/templates/default/images/cluster_25-49.jpg
@@ -63,8 +62,7 @@
 %%WEBFRONTDIR%%/version.php
 @dirrm %%WEBFRONTDIR%%/templates/default/images
 @dirrm %%WEBFRONTDIR%%/templates/default
-@dirrm %%WEBFRONTDIR%%/templates/Rocks/images
-@dirrm %%WEBFRONTDIR%%/templates/Rocks
 @dirrm %%WEBFRONTDIR%%/templates
-@dirrmtry rmdir %D/%%WEBFRONTDIR%%
+@dirrm %%WEBFRONTDIR%%/graph.d
+@dirrmtry /bin/rmdir %D/%%WEBFRONTDIR%%
 @unexec (test -d %D/%%WEBFRONTDIR%% && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%WEBFRONTDIR%% and its contents manually.")) || true
