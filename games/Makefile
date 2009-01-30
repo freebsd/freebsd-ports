@@ -604,6 +604,7 @@
     SUBDIR += pengupop
     SUBDIR += pentix
     SUBDIR += pets
+    SUBDIR += peg-e
     SUBDIR += phalanx
     SUBDIR += phpua-bf
     SUBDIR += phpua-cod
