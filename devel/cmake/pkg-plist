@@ -3,6 +3,7 @@ bin/cmake
 bin/cpack
 bin/ctest
 %%DATADIR%%/Modules/AddFileDependencies.cmake
+%%DATADIR%%/Modules/BundleUtilities.cmake
 %%DATADIR%%/Modules/CMake.cmake
 %%DATADIR%%/Modules/CMakeASM-ATTInformation.cmake
 %%DATADIR%%/Modules/CMakeASMCompiler.cmake.in
@@ -230,6 +231,7 @@ bin/ctest
 %%DATADIR%%/Modules/InstallRequiredSystemLibraries.cmake
 %%DATADIR%%/Modules/KDE3Macros.cmake
 %%DATADIR%%/Modules/MacOSXBundleInfo.plist.in
+%%DATADIR%%/Modules/MacOSXFrameworkInfo.plist.in
 %%DATADIR%%/Modules/MacroAddFileDependencies.cmake
 %%DATADIR%%/Modules/NSIS.InstallOptions.ini.in
 %%DATADIR%%/Modules/NSIS.template.in

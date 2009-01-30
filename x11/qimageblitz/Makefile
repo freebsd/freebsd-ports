@@ -20,7 +20,6 @@ USE_LDCONFIG=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui qmake_build moc_build uic_build rcc_build
 USE_CMAKE=	yes
-CMAKE_DEBUG=	yes
 CMAKE_VERBOSE=	yes
 
 post-patch:

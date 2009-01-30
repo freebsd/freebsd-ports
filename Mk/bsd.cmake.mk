@@ -7,11 +7,9 @@
 #					Default: ${CONFIGURE_ENV}
 # CMAKE_ARGS		- Arguments passed to cmake
 #					Default: see below
-# CMAKE_USE_PTHREAD	- Instruct cmake to use pthreads when 
+# CMAKE_USE_PTHREAD	- Instruct cmake to use pthreads when
 #					compiling/linking
 #					Default: not set
-# CMAKE_BUILD_TYPE	- Type of build (release, debug)
-#					Default: Release
 # CMAKE_VERBOSE		- Verbose build
 #					Default: not set
 # CMAKE_SOURCE_PATH	- Path to sourcedir for cmake
@@ -47,12 +45,11 @@ CMAKE_ARGS+=	-DCMAKE_C_COMPILER:STRING="${CC}" \
 				-DCMAKE_C_FLAGS:STRING="${CFLAGS}" \
 				-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS}" \
 				-DCMAKE_INSTALL_PREFIX:PATH="${CMAKE_INSTALL_PREFIX}" \
-				-DCMAKE_BUILD_TYPE:STRING="${CMAKE_BUILD_TYPE}"
+				-DCMAKE_BUILD_TYPE:STRING=""
 
 #
 # Default build type and sourcedir
 #
-CMAKE_BUILD_TYPE?=	Release
 CMAKE_SOURCE_PATH?=	.
 CMAKE_INSTALL_PREFIX?=	${PREFIX}
 
@@ -69,10 +66,10 @@ CMAKE_ARGS+=	-DCMAKE_THREAD_LIBS:STRING="${PTHREAD_LIBS}" \
 .endif
 
 #
-# Force DEBUG buildtype if needed
+# Strip binaries
 #
-.if defined(CMAKE_DEBUG) || defined(WITH_DEBUG)
-CMAKE_BUILD_TYPE=DEBUG
+.if !defined(WITH_DEBUG)
+CMAKE_ARGS+=	-DCMAKE_INSTALL_DO_STRIP:BOOL=ON
 .endif
 
 #
@@ -87,6 +84,6 @@ CMAKE_ARGS+=	-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
 #
 .if !target(do-configure)
 do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${CMAKE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} ${CMAKE_SOURCE_PATH}
+	@cd ${CONFIGURE_WRKSRC}; ${SETENV} ${CMAKE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} ${CMAKE_SOURCE_PATH}
 .endif
 
