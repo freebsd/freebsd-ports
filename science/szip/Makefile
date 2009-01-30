@@ -10,7 +10,7 @@ PORTVERSION=	2.1
 PORTREVISION=	1
 CATEGORIES=	science archivers
 MASTER_SITES=	ftp://ftp.hdfgroup.org/lib-external/szip/2.1/src/:src \
-		http://hdf.ncsa.uiuc.edu/doc_resource/SZIP/:doc
+		http://www.hdfgroup.org/doc_resource/SZIP/:doc
 PKGNAMEPREFIX=	hdf-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
 		${DOCFILE}:doc
