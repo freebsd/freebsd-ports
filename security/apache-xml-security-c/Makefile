@@ -8,7 +8,7 @@
 PORTNAME=	xml-security-c
 PORTVERSION=	1.4.0
 CATEGORIES=	security
-MASTER_SITES=	http://xml.apache.org/security/dist/c-library/
+MASTER_SITES=	http://santuario.apache.org/dist/c-library/
 PKGNAMEPREFIX=	apache-
 
 MAINTAINER=	janos.mohacsi@bsd.hu
