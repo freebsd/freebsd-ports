@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/	\
 		http://public.planetmirror.com/pub/blender/source/
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D modeling/rendering/animation/gaming package
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
