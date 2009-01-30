@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ninix-aya
-PORTVERSION=	3.9.7
-PORTREVISION=	1
+PORTVERSION=	3.9.8a
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	ninix-aya/28636
+MASTER_SITE_SUBDIR=	ninix-aya/36866
 DISTNAME=	ninix-aya-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -21,7 +20,8 @@ LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		lha:${PORTSDIR}/archivers/lha \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
-		${PYTHON_SITELIBDIR}/chardet/__init__.py:${PORTSDIR}/textproc/py-chardet
+		${PYTHON_SITELIBDIR}/chardet/__init__.py:${PORTSDIR}/textproc/py-chardet \
+		${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
 
 PYVERSION=	${PYTHON_VERSION:S/^python//}
 .if defined(PYTHON_VERSION) && ${PYVERSION:S/.//} < 24

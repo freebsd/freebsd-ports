@@ -1,7 +1,6 @@
 bin/ninix
 bin/ninix-install
 bin/ninix-update
-libexec/ninix/_niseshiori.so
 libexec/ninix/ninix/dll/textcopy.py
 libexec/ninix/ninix/dll/aya.py
 libexec/ninix/ninix/dll/bln.py
