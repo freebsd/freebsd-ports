@@ -9,9 +9,8 @@ PORTNAME=	ace
 PORTVERSION=	5.5.2
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://deuce.doc.wustl.edu/pub/previous_versions/ \
-		http://deuce.doc.wustl.edu/old_distribution/ \
-		http://www.navicon.dk/mirrors/ace/deuce.doc.wustl.edu/old_distribution/
+MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
+		http://download.dre.vanderbilt.edu/previous_versions/
 DISTNAME=	ACE-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
