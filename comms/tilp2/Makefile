@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	tilp2
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.11
 CATEGORIES=	comms
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	tilp
 
 MAINTAINER=	tijl@ulyssis.org
@@ -22,7 +21,6 @@ LIB_DEPENDS=	ticables2.1:${PORTSDIR}/comms/libticables2 \
 		ticonv.3:${PORTSDIR}/converters/libticonv
 
 USE_AUTOTOOLS=	libtool:15
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
 
@@ -35,14 +33,14 @@ PLIST_SUB=	NLS="@comment "
 .endif
 
 CONFIGURE_ARGS+=	--without-kde
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -UGTK_DISABLE_DEPRECATED" \
-		LDFLAGS="-L${LOCALBASE}/lib -export-dynamic"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=	tilp.1
 
 post-patch:
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-D.*_DISABLE_DEPRECATED||g'
+	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/configure ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|#define .*_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/src/device.c ${WRKSRC}/src/toolbar.c
 
