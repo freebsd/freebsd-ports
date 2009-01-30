@@ -8,7 +8,7 @@
 
 PORTNAME=	zip
 PORTVERSION=	1.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-
@@ -47,6 +47,7 @@ pre-install:
 .endif
 
 post-install:
+	@${INSTALL_DATA} ${FILESDIR}/META ${OCAMLFIND_DESTDIR}/${PORTNAME}
 	@${FIND} ${OCAMLFIND_DESTDIR}/${PORTNAME} -type f | \
 		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm ${OCAML_SITELIBDIR}/${PORTNAME}" >> ${TMPPLIST}
