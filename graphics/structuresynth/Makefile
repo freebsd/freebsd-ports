@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	structuresynth
-PORTVERSION=	0.8.5
+PORTVERSION=	0.9.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	StructureSynth-Source-v${PORTVERSION}
@@ -16,20 +16,21 @@ COMMENT=	Rule-based 3D structure generator
 
 USE_ZIP=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build corelib gui opengl moc_build rcc_build xml
+QT_COMPONENTS=	qmake_build corelib gui opengl moc_build rcc_build xml script
 
 WRKSRC=		${WRKDIR}/structuresynth
 
 post-extract:
-	${MV} ${WRKDIR}/"Structure Synth Source" ${WRKDIR}/structuresynth
+	@${MV} ${WRKDIR}/"Structure Synth Source" ${WRKDIR}/structuresynth
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|"Examples"|"${DATADIR}/Examples"|; \
-		s|"Misc"|"${DATADIR}/Misc"|' ${WRKSRC}/MainWindow.cpp
+	@${REINPLACE_CMD} -e '/examplesDir/ s|"Examples"|"${DATADIR}/Examples"|; \
+		/miscDir/ s|"Misc"|"${DATADIR}/Misc"|' \
+		${WRKSRC}/StructureSynth/GUI/MainWindow.cpp
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -project
-	@${ECHO_CMD} "QT+=opengl xml" >> ${WRKSRC}/structuresynth.pro
+	@${ECHO_CMD} "QT+=opengl xml script" >> ${WRKSRC}/structuresynth.pro
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
 		-spec ${QMAKESPEC} structuresynth.pro
 
