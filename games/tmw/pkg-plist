@@ -1,8 +1,9 @@
 bin/tmw
 share/applications/tmw.desktop
 share/pixmaps/tmw.png
+%%DATADIR%%/data/fonts/dejavusans.ttf
 %%DATADIR%%/data/graphics/gui/bg_quad_dis.png
-%%DATADIR%%/data/graphics/gui/browserfont.png
+%%DATADIR%%/data/graphics/gui/bubble.png
 %%DATADIR%%/data/graphics/gui/button.png
 %%DATADIR%%/data/graphics/gui/button_disabled.png
 %%DATADIR%%/data/graphics/gui/buttonhi.png
@@ -31,9 +32,10 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/graphics/gui/radioout.png
 %%DATADIR%%/data/graphics/gui/resize.png
 %%DATADIR%%/data/graphics/gui/rpgfont_wider.png
-%%DATADIR%%/data/graphics/gui/sansserif8.png
 %%DATADIR%%/data/graphics/gui/selection.png
 %%DATADIR%%/data/graphics/gui/slider.png
+%%DATADIR%%/data/graphics/gui/tab.png
+%%DATADIR%%/data/graphics/gui/tabselected.png
 %%DATADIR%%/data/graphics/gui/target-cursor-blue-l.png
 %%DATADIR%%/data/graphics/gui/target-cursor-blue-m.png
 %%DATADIR%%/data/graphics/gui/target-cursor-blue-s.png
@@ -62,6 +64,29 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/help/support.txt
 %%DATADIR%%/data/help/team.txt
 %%DATADIR%%/data/icons/tmw.png
+%%NLS%%share/locale/ar/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/da/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/de/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/es/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/he/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/id/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/it/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/tmw.mo
+%%NLS%%share/locale/th/LC_MESSAGES/tmw.mo
 %%MUSICADDON%%%%DATADIR%%/data/music/Faith.ogg
 %%MUSICADDON%%%%DATADIR%%/data/music/Clouds Calling.ogg
 %%MUSICADDON%%%%DATADIR%%/data/music/Magick - Real.ogg
@@ -71,6 +96,7 @@ share/pixmaps/tmw.png
 %%MUSICADDON%%@dirrm %%DATADIR%%/data/music
 @dirrm %%DATADIR%%/data/icons
 @dirrm %%DATADIR%%/data/help
+@dirrm %%DATADIR%%/data/fonts
 @dirrm %%DATADIR%%/data/graphics/images
 @dirrm %%DATADIR%%/data/graphics/gui
 @dirrm %%DATADIR%%/data/graphics
