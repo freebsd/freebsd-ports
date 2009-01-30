@@ -8,7 +8,7 @@
 PORTNAME=	elementtree
 PORTVERSION=	1.2.6
 CATEGORIES=	devel python
-MASTER_SITES=	http://effbot.org/downloads/
+MASTER_SITES=	http://effbot.org/media/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-20050316
 
