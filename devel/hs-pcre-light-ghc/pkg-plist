@@ -1,23 +1,9 @@
-%%SUBDIR%%/HSpcre-light-%%PORTVERSION%%.o
 %%SUBDIR%%/Text/Regex/PCRE/Light.hi
 %%SUBDIR%%/Text/Regex/PCRE/Light/Base.hi
 %%SUBDIR%%/Text/Regex/PCRE/Light/Char8.hi
-%%SUBDIR%%/libHSpcre-light-%%PORTVERSION%%.a
+%%SUBDIR%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%SUBDIR%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%SUBDIR%%/%%PORTNAME%%-register.sh
-%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/html/%%PORTNAME%%.haddock
-%%PORTDOCS%%%%DOCSDIR%%/html/doc-index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/haddock-util.js
-%%PORTDOCS%%%%DOCSDIR%%/html/haddock.css
-%%PORTDOCS%%%%DOCSDIR%%/html/haskell_icon.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/minus.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/plus.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/Text-Regex-PCRE-Light-Base.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Text-Regex-PCRE-Light-Char8.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Text-Regex-PCRE-Light.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-@dirrm %%DOCSDIR%%
 @dirrmtry %%SUBDIR%%/Text/Regex/PCRE/Light
 @dirrmtry %%SUBDIR%%/Text/Regex/PCRE
 @dirrmtry %%SUBDIR%%/Text/Regex
