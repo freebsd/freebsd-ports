@@ -3,11 +3,16 @@
 %%WWWDIR%%/index.php
 %%WWWDIR%%/js/constants.js
 %%WWWDIR%%/js/jawstats.js
-%%WWWDIR%%/js/jquery.blockUI.js
 %%WWWDIR%%/js/jquery.js
 %%WWWDIR%%/js/jquery.tablesorter.js
 %%WWWDIR%%/js/packed.js
 %%WWWDIR%%/js/swfobject.js
+%%WWWDIR%%/languages/de-de.js
+%%WWWDIR%%/languages/fr.js
+%%WWWDIR%%/languages/jp.js
+%%WWWDIR%%/languages/pl.js
+%%WWWDIR%%/languages/sv.js
+%%WWWDIR%%/languages/translations.php
 %%WWWDIR%%/pkg-message
 %%WWWDIR%%/readme.txt
 %%WWWDIR%%/swf/bar_graph.swf
@@ -110,7 +115,6 @@
 %%WWWDIR%%/themes/default/flags/es.gif
 %%WWWDIR%%/themes/default/flags/et.gif
 %%WWWDIR%%/themes/default/flags/eu.gif
-%%WWWDIR%%/themes/default/flags/europeanunion.gif
 %%WWWDIR%%/themes/default/flags/fam.gif
 %%WWWDIR%%/themes/default/flags/fi.gif
 %%WWWDIR%%/themes/default/flags/fj.gif
@@ -290,6 +294,8 @@
 %%WWWDIR%%/themes/default/flags/za.gif
 %%WWWDIR%%/themes/default/flags/zm.gif
 %%WWWDIR%%/themes/default/flags/zw.gif
+%%WWWDIR%%/themes/default/images/change_language.gif
+%%WWWDIR%%/themes/default/images/change_language_on.gif
 %%WWWDIR%%/themes/default/images/external_link.png
 %%WWWDIR%%/themes/default/images/loading.gif
 %%WWWDIR%%/themes/default/images/tab_left.gif
@@ -308,6 +314,18 @@
 %%WWWDIR%%/themes/default/os/symbian.gif
 %%WWWDIR%%/themes/default/os/unknown.gif
 %%WWWDIR%%/themes/default/os/win.gif
+%%WWWDIR%%/themes/default/paging/first.gif
+%%WWWDIR%%/themes/default/paging/first_off.gif
+%%WWWDIR%%/themes/default/paging/first_on.gif
+%%WWWDIR%%/themes/default/paging/last.gif
+%%WWWDIR%%/themes/default/paging/last_off.gif
+%%WWWDIR%%/themes/default/paging/last_on.gif
+%%WWWDIR%%/themes/default/paging/next.gif
+%%WWWDIR%%/themes/default/paging/next_off.gif
+%%WWWDIR%%/themes/default/paging/next_on.gif
+%%WWWDIR%%/themes/default/paging/prev.gif
+%%WWWDIR%%/themes/default/paging/prev_off.gif
+%%WWWDIR%%/themes/default/paging/prev_on.gif
 %%WWWDIR%%/themes/default/searchengines/alexa.gif
 %%WWWDIR%%/themes/default/searchengines/alice.gif
 %%WWWDIR%%/themes/default/searchengines/alltheweb.gif
@@ -350,6 +368,7 @@
 %%WWWDIR%%/xml_stats.php
 %%WWWDIR%%/xml_update.php
 @dirrm %%WWWDIR%%/themes/default/searchengines
+@dirrm %%WWWDIR%%/themes/default/paging
 @dirrm %%WWWDIR%%/themes/default/os
 @dirrm %%WWWDIR%%/themes/default/images
 @dirrm %%WWWDIR%%/themes/default/flags
@@ -358,5 +377,6 @@
 @dirrm %%WWWDIR%%/themes/default
 @dirrm %%WWWDIR%%/themes
 @dirrm %%WWWDIR%%/swf
+@dirrm %%WWWDIR%%/languages
 @dirrm %%WWWDIR%%/js
 @dirrm %%WWWDIR%%
