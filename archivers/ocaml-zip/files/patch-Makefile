@@ -1,0 +1,11 @@
+--- Makefile.orig	2009-01-13 14:56:33.000000000 +0100
++++ Makefile	2009-01-13 14:56:52.000000000 +0100
+@@ -56,7 +56,7 @@
+ 
+ install:
+ 	mkdir -p $(INSTALLDIR)
+-	${BSD_INSTALL_DATA} zip.cma zip.cmi gzip.cmi zip.mli gzip.mli libcamlzip.a $(INSTALLDIR)
++	${BSD_INSTALL_DATA} zip.cma zip.cmi gzip.cmi zip.mli gzip.mli zlib.cmi zlib.mli libcamlzip.a $(INSTALLDIR)
+ 	if test -f dllcamlzip.so; then \
+ 	  ${BSD_INSTALL_DATA} dllcamlzip.so $(INSTALLDIR); \
+           installdir=$(INSTALLDIR); \
