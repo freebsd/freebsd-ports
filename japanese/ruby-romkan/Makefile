@@ -8,7 +8,7 @@
 PORTNAME=	romkan
 PORTVERSION=	0.4
 CATEGORIES=	japanese converters ruby
-MASTER_SITES=	http://namazu.org/~satoru/ruby-romkan/
+MASTER_SITES=	http://0xcc.net/ruby-romkan/
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
