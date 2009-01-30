@@ -7,6 +7,7 @@
 
 PORTNAME=	sks
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://minskyprimus.net/sks/releases/
 MASTER_SITE_SUBDIR=	${PORTNAME}
