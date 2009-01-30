@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	monitor-core
-PORTVERSION=	3.0.6
-PORTREVISION=	1
+PORTVERSION=	3.1.1
 CATEGORIES=	sysutils net parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ganglia
@@ -20,10 +19,15 @@ DISTNAME=	ganglia-${PORTVERSION}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, monitoring daemon
 
+LIB_DEPENDS+=	confuse:${PORTSDIR}/devel/libconfuse
+
 PKGINSTALL=	${WRKDIR}/pkg-install
 
-OPTIONS+=	GMETAD "include gmetad" on \
-		LIBGANGLIA "include libganglia" off
+OPTIONS+=	GMETAD "include gmetad" on
+
+USE_PYTHON=	yes
+USE_AUTOTOOLS=	libtool:15
+LIBTOOLFILES=	configure libmetrics/configure
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${_CFLAGS}" LDFLAGS="${_LDFLAGS}"
@@ -63,7 +67,7 @@ USE_RC_SUBR=	ganglia.sh
 .endif
 
 .if defined (WITH_GMETAD)
-LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS+=	rrd:${PORTSDIR}/databases/rrdtool
 CONFIGURE_ARGS+=	--with-gmetad
 PLIST_SUB+=	GMETAD=
 SUB_LIST+=	GMETAD=
@@ -72,12 +76,7 @@ PLIST_SUB+=	GMETAD="@comment "
 SUB_LIST+=	GMETAD="\#"
 .endif
 
-.if defined (WITH_LIBGANGLIA)
 USE_LDCONFIG=	yes
-PLIST_SUB+=	LIBGANGLIA=
-.else
-PLIST_SUB+=	LIBGANGLIA="@comment "
-.endif
 
 MAN1=		gmetric.1 gmond.1 gstat.1
 .if defined (WITH_GMETAD)
@@ -109,6 +108,16 @@ FIX_USER_FILES=	ganglia.pod \
 		gmond/g25_config.c \
 		lib/libgmond.c
 
+MODULES=	modcpu.so \
+		moddisk.so \
+		modload.so \
+		modmem.so \
+		modmulticpu.so \
+		modnet.so \
+		modproc.so \
+		modpython.so \
+		modsys.so
+
 post-patch:
 	${REINPLACE_CMD} -e "s|/etc/\(gm[a-z]*d.conf\)|${PREFIX}/etc/\1|g" \
 	    ${FIX_CONF_FILES:S|^|${WRKSRC}/|}
@@ -120,26 +129,17 @@ post-patch:
 post-build:
 	${WRKSRC}/gmond/gmond -t > ${WRKDIR}/gmond.conf
 
-do-install:
-.if defined (WITH_GMETAD)
-	cd ${WRKSRC}/gmetad && make install
+post-install:
+.if defined(WITH_GMETAD)
 	${INSTALL_SCRIPT} ${FILESDIR}/gmetasnap.sh ${PREFIX}/sbin/gmetasnap
 	${INSTALL_MAN} ${WRKSRC}/mans/gmetad.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${GMETAD_CONF} ${PREFIX}/etc/gmetad.conf.sample
 .endif
-	cd ${WRKSRC}/gmetric && make install
 	${INSTALL_MAN} ${WRKSRC}/mans/gmetric.1 ${MANPREFIX}/man/man1
-	cd ${WRKSRC}/gmond && make install
 	${INSTALL_MAN} ${WRKSRC}/mans/gmond.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/gmond/gmond.conf.5 ${MANPREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/mans/gstat.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${GMOND_CONF} ${PREFIX}/etc/gmond.conf.sample
-.if defined (WITH_LIBGANGLIA)
-	cd ${WRKSRC}/lib && make install
-	${INSTALL_SCRIPT} ${WRKSRC}/ganglia-config ${PREFIX}/bin
-.endif
-
-post-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

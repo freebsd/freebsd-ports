@@ -1,17 +1,30 @@
 @comment $FreeBSD$
-%%LIBGANGLIA%%bin/ganglia-config
+bin/ganglia-config
 bin/gstat
 bin/gmetric
 @unexec if cmp -s %D/etc/gmond.conf %D/etc/gmond.conf.sample; then rm -f %D/etc/gmond.conf; fi
 etc/gmond.conf.sample
 %%GMETAD%%@unexec if cmp -s %D/etc/gmetad.conf %D/etc/gmetad.conf.sample; then rm -f %D/etc/gmetad.conf; fi
 %%GMETAD%%etc/gmetad.conf.sample
-%%LIBGANGLIA%%include/ganglia.h
-%%LIBGANGLIA%%lib/libganglia-3.0.0.so.0
-%%LIBGANGLIA%%lib/libganglia-3.0.0.so
-%%LIBGANGLIA%%lib/libganglia.so
-%%LIBGANGLIA%%lib/libganglia.la
-%%LIBGANGLIA%%lib/libganglia.a
+include/ganglia.h
+include/ganglia_gexec.h
+include/gm_mmn.h
+include/gm_metric.h
+include/gm_msg.h
+include/gm_protocol.h
+include/gm_value.h
+lib/libganglia-3.1.1.so.0
+lib/libganglia.a
+lib/libganglia.la
+lib/ganglia/libmodcpu.so.0.0
+lib/ganglia/libmoddisk.so.0.0
+lib/ganglia/libmodload.so.0.0
+lib/ganglia/libmodmem.so.0.0
+lib/ganglia/libmodmulticpu.so.0.0
+lib/ganglia/libmodnet.so.0.0
+lib/ganglia/libmodproc.so.0.0
+lib/ganglia/libmodpython.so.0.0
+lib/ganglia/libmodsys.so.0.0
 %%GMETAD%%sbin/gmetad
 %%GMETAD%%sbin/gmetasnap
 sbin/gmond
