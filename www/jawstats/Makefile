@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	jawstats
-DISTVERSION=	0.6beta
+DISTVERSION=	0.7beta
 CATEGORIES=	www
-MASTER_SITES=	http://www.jawstats.com/src/archive/
+MASTER_SITES=	http://www.jawstats.com/src/
 
 MAINTAINER=	Alan@Wave2.org
 COMMENT=	JAWStats is a Free Web Site Statistics tool
