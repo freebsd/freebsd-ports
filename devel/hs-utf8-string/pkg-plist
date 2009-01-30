@@ -3,36 +3,19 @@
 %%SUBDIR%%/Data/ByteString/Lazy/UTF8.hi
 %%SUBDIR%%/Data/ByteString/UTF8.hi
 %%SUBDIR%%/Data/String/UTF8.hi
-%%SUBDIR%%/HSutf8-string-0.3.3.o
 %%SUBDIR%%/System/IO/UTF8.hi
-%%SUBDIR%%/libHSutf8-string-0.3.3.a
-%%SUBDIR%%/utf8-string-register.sh
-%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/html/Codec-Binary-UTF8-Generic.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Codec-Binary-UTF8-String.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Data-ByteString-Lazy-UTF8.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Data-ByteString-UTF8.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Data-String-UTF8.html
-%%PORTDOCS%%%%DOCSDIR%%/html/System-IO-UTF8.html
-%%PORTDOCS%%%%DOCSDIR%%/html/doc-index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/haddock-util.js
-%%PORTDOCS%%%%DOCSDIR%%/html/haddock.css
-%%PORTDOCS%%%%DOCSDIR%%/html/haskell_icon.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/minus.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/plus.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/utf8-string.haddock
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-@dirrm %%DOCSDIR%%
-@dirrm %%SUBDIR%%/System/IO
-@dirrm %%SUBDIR%%/System
-@dirrm %%SUBDIR%%/Data/String
-@dirrm %%SUBDIR%%/Data/ByteString/Lazy
-@dirrm %%SUBDIR%%/Data/ByteString
-@dirrm %%SUBDIR%%/Data
-@dirrm %%SUBDIR%%/Codec/Binary/UTF8
-@dirrm %%SUBDIR%%/Codec/Binary
-@dirrm %%SUBDIR%%/Codec
+%%SUBDIR%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%SUBDIR%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%SUBDIR%%/%%PORTNAME%%-register.sh
+@dirrmtry %%SUBDIR%%/System/IO
+@dirrmtry %%SUBDIR%%/System
+@dirrmtry %%SUBDIR%%/Data/String
+@dirrmtry %%SUBDIR%%/Data/ByteString/Lazy
+@dirrmtry %%SUBDIR%%/Data/ByteString
+@dirrmtry %%SUBDIR%%/Data
+@dirrmtry %%SUBDIR%%/Codec/Binary/UTF8
+@dirrmtry %%SUBDIR%%/Codec/Binary
+@dirrmtry %%SUBDIR%%/Codec
 @exec /bin/sh %D/%%SUBDIR%%/%%PORTNAME%%-register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg unregister %%PORTNAME%%
