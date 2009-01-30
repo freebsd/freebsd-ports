@@ -9,9 +9,9 @@ PORTNAME=	slib
 PORTVERSION=	3a4
 PORTREVISION=	1
 CATEGORIES=	lang scheme
-MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/ \
-		http://swissnet.ai.mit.edu/ftpdir/scm/OLD/:old
-DISTFILES=	slib2d6${EXTRACT_SUFX}:old \
+MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
+		http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
+DISTFILES=	slib2d6${EXTRACT_SUFX} \
 		slib${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
