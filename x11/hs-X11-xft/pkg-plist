@@ -3,22 +3,9 @@
 %%SUBDIR%%/HSX11-xft-0.3.o
 %%SUBDIR%%/libHSX11-xft-0.3.a
 %%SUBDIR%%/x11-xft-register.sh
-%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11-Xft.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Graphics-X11-Xrender.html
-%%PORTDOCS%%%%DOCSDIR%%/html/X11-xft.haddock
-%%PORTDOCS%%%%DOCSDIR%%/html/doc-index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/haddock-util.js
-%%PORTDOCS%%%%DOCSDIR%%/html/haddock.css
-%%PORTDOCS%%%%DOCSDIR%%/html/haskell_icon.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/minus.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/plus.gif
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-@dirrm %%DOCSDIR%%
 @dirrmtry %%SUBDIR%%/Graphics/X11
 @dirrmtry %%SUBDIR%%/Graphics
 @exec /bin/sh %D/%%SUBDIR%%/%%PORTNAME%%-register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister X11-xft
+@unexec ghc-pkg unregister X11-xft
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
