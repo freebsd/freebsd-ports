@@ -9,14 +9,14 @@ PORTNAME=	libmspack
 PORTVERSION=	0.0.20040308
 PORTREVISION=	3
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.kyz.uklinux.net/downloads/
+MASTER_SITES=	http://www.cabextract.org.uk/libmspack/
 DISTNAME=	${PORTNAME}-${PORTVERSION}alpha
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A library for Microsoft compression formats
 
 USE_AUTOTOOLS=	libtool:15
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 post-patch:
