@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dovecot-sieve
-PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTVERSION=	1.1.6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dovecot.org/releases/sieve/ \
 		http://www.is-root.com/myports/
