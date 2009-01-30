@@ -1,0 +1,261 @@
+bin/blender
+bin/blender-bin
+%%DATADIR%%/.bfont.ttf
+%%DATADIR%%/.Blanguages
+%%NLS%%%%DATADIR%%/locale/ar/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/bg/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/ca/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/cs/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/de/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/el/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/es/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/fi/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/fr/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/hr/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/hr_HR/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/it/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/ja/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/ko/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/nl/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/pl/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/pt_BR/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/ro/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/ru/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/sr/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/sr@Latn/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/sv/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/uk/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/locale/zh_CN/LC_MESSAGES/blender.mo
+%%DATADIR%%/scripts/bpydata/config/readme.txt
+%%DATADIR%%/scripts/bpydata/readme.txt
+%%DATADIR%%/scripts/bpydata/KUlang.txt
+%%DATADIR%%/scripts/bpymodules/colladaImEx/__init__.py
+%%DATADIR%%/scripts/bpymodules/colladaImEx/collada.py
+%%DATADIR%%/scripts/bpymodules/colladaImEx/cstartup.py
+%%DATADIR%%/scripts/bpymodules/colladaImEx/cutils.py
+%%DATADIR%%/scripts/bpymodules/colladaImEx/helperObjects.py
+%%DATADIR%%/scripts/bpymodules/colladaImEx/logo.png
+%%DATADIR%%/scripts/bpymodules/colladaImEx/translator.py
+%%DATADIR%%/scripts/bpymodules/colladaImEx/xmlUtils.py
+%%DATADIR%%/scripts/bpymodules/BPyAddMesh.py
+%%DATADIR%%/scripts/bpymodules/BPyArmature.py
+%%DATADIR%%/scripts/bpymodules/BPyBlender.py
+%%DATADIR%%/scripts/bpymodules/BPyCurve.py
+%%DATADIR%%/scripts/bpymodules/BPyImage.py
+%%DATADIR%%/scripts/bpymodules/BPyMathutils.py
+%%DATADIR%%/scripts/bpymodules/BPyMesh.py
+%%DATADIR%%/scripts/bpymodules/BPyMesh_octree.py
+%%DATADIR%%/scripts/bpymodules/BPyMesh_redux.py
+%%DATADIR%%/scripts/bpymodules/BPyMessages.py
+%%DATADIR%%/scripts/bpymodules/BPyNMesh.py
+%%DATADIR%%/scripts/bpymodules/BPyObject.py
+%%DATADIR%%/scripts/bpymodules/BPyRegistry.py
+%%DATADIR%%/scripts/bpymodules/BPyRender.py
+%%DATADIR%%/scripts/bpymodules/BPySys.py
+%%DATADIR%%/scripts/bpymodules/BPyTextPlugin.py
+%%DATADIR%%/scripts/bpymodules/BPyWindow.py
+%%DATADIR%%/scripts/bpymodules/blend2renderinfo.py
+%%DATADIR%%/scripts/bpymodules/defaultdoodads.py
+%%DATADIR%%/scripts/bpymodules/dxfColorMap.py
+%%DATADIR%%/scripts/bpymodules/dxfLibrary.py
+%%DATADIR%%/scripts/bpymodules/dxfReader.py
+%%DATADIR%%/scripts/bpymodules/mesh_gradient.py
+%%DATADIR%%/scripts/bpymodules/meshtools.py
+%%DATADIR%%/scripts/bpymodules/paths_ai2obj.py
+%%DATADIR%%/scripts/bpymodules/paths_eps2obj.py
+%%DATADIR%%/scripts/bpymodules/paths_gimp2obj.py
+%%DATADIR%%/scripts/bpymodules/paths_svg2obj.py
+%%DATADIR%%/scripts/Axiscopy.py
+%%DATADIR%%/scripts/DirectX8Importer.py
+%%DATADIR%%/scripts/DirectX8Exporter.py
+%%DATADIR%%/scripts/IDPropBrowser.py
+%%DATADIR%%/scripts/3ds_export.py
+%%DATADIR%%/scripts/3ds_import.py
+%%DATADIR%%/scripts/ac3d_import.py
+%%DATADIR%%/scripts/ac3d_export.py
+%%DATADIR%%/scripts/add_mesh_empty.py
+%%DATADIR%%/scripts/add_mesh_torus.py
+%%DATADIR%%/scripts/animation_bake_constraints.py
+%%DATADIR%%/scripts/animation_trajectory.py
+%%DATADIR%%/scripts/armature_symmetry.py
+%%DATADIR%%/scripts/bevel_center.py
+%%DATADIR%%/scripts/blenderLipSynchro.py
+%%DATADIR%%/scripts/bvh_import.py
+%%DATADIR%%/scripts/c3d_import.py
+%%DATADIR%%/scripts/camera_changer.py
+%%DATADIR%%/scripts/collada_import.py
+%%DATADIR%%/scripts/collada_export.py
+%%DATADIR%%/scripts/colladaExport14.py
+%%DATADIR%%/scripts/colladaImport14.py
+%%DATADIR%%/scripts/config.py
+%%DATADIR%%/scripts/console.py
+%%DATADIR%%/scripts/discombobulator.py
+%%DATADIR%%/scripts/envelope_symmetry.py
+%%DATADIR%%/scripts/export_dxf.py
+%%DATADIR%%/scripts/export_fbx.py
+%%DATADIR%%/scripts/export-iv-0.1.py
+%%DATADIR%%/scripts/export_lightwave_motion.py
+%%DATADIR%%/scripts/export_m3g.py
+%%DATADIR%%/scripts/export_map.py
+%%DATADIR%%/scripts/export_mdd.py
+%%DATADIR%%/scripts/export_obj.py
+%%DATADIR%%/scripts/faceselect_same_weights.py
+%%DATADIR%%/scripts/flt_defaultp.py
+%%DATADIR%%/scripts/flt_dofedit.py
+%%DATADIR%%/scripts/flt_export.py
+%%DATADIR%%/scripts/flt_filewalker.py
+%%DATADIR%%/scripts/flt_import.py
+%%DATADIR%%/scripts/flt_lodedit.py
+%%DATADIR%%/scripts/flt_palettemanager.py
+%%DATADIR%%/scripts/flt_properties.py
+%%DATADIR%%/scripts/flt_toolbar.py
+%%DATADIR%%/scripts/help_bpy_api.py
+%%DATADIR%%/scripts/help_browser.py
+%%DATADIR%%/scripts/help_getting_started.py
+%%DATADIR%%/scripts/help_manual.py
+%%DATADIR%%/scripts/help_release_notes.py
+%%DATADIR%%/scripts/help_tutorials.py
+%%DATADIR%%/scripts/help_web_blender.py
+%%DATADIR%%/scripts/help_web_devcomm.py
+%%DATADIR%%/scripts/help_web_eshop.py
+%%DATADIR%%/scripts/help_web_usercomm.py
+%%DATADIR%%/scripts/hotkeys.py
+%%DATADIR%%/scripts/image_auto_layout.py
+%%DATADIR%%/scripts/image_billboard.py
+%%DATADIR%%/scripts/image_edit.py
+%%DATADIR%%/scripts/import_dxf.py
+%%DATADIR%%/scripts/import_lightwave_motion.py
+%%DATADIR%%/scripts/import_mdd.py
+%%DATADIR%%/scripts/import_obj.py
+%%DATADIR%%/scripts/lightwave_import.py
+%%DATADIR%%/scripts/lightwave_export.py
+%%DATADIR%%/scripts/md2_export.py
+%%DATADIR%%/scripts/md2_import.py
+%%DATADIR%%/scripts/mesh_boneweight_copy.py
+%%DATADIR%%/scripts/mesh_cleanup.py
+%%DATADIR%%/scripts/mesh_edges2curves.py
+%%DATADIR%%/scripts/mesh_mirror_tool.py
+%%DATADIR%%/scripts/mesh_poly_reduce.py
+%%DATADIR%%/scripts/mesh_skin.py
+%%DATADIR%%/scripts/mesh_solidify.py
+%%DATADIR%%/scripts/mesh_unfolder.py
+%%DATADIR%%/scripts/mesh_wire.py
+%%DATADIR%%/scripts/ms3d_import.py
+%%DATADIR%%/scripts/ms3d_import_ascii.py
+%%DATADIR%%/scripts/obdatacopier.py
+%%DATADIR%%/scripts/object_apply_def.py
+%%DATADIR%%/scripts/object_batch_name_edit.py
+%%DATADIR%%/scripts/object_cookie_cutter.py
+%%DATADIR%%/scripts/object_drop.py
+%%DATADIR%%/scripts/object_find.py
+%%DATADIR%%/scripts/object_random_loc_sz_rot.py
+%%DATADIR%%/scripts/object_sel2dupgroup.py
+%%DATADIR%%/scripts/object_timeofs_follow_act.py
+%%DATADIR%%/scripts/off_export.py
+%%DATADIR%%/scripts/off_import.py
+%%DATADIR%%/scripts/paths_import.py
+%%DATADIR%%/scripts/ply_export.py
+%%DATADIR%%/scripts/ply_import.py
+%%DATADIR%%/scripts/raw_export.py
+%%DATADIR%%/scripts/raw_import.py
+%%DATADIR%%/scripts/renameobjectbyblock.py
+%%DATADIR%%/scripts/render_save_layers.py
+%%DATADIR%%/scripts/rvk1_torvk2.py
+%%DATADIR%%/scripts/save_theme.py
+%%DATADIR%%/scripts/scripttemplate_camer_object.py
+%%DATADIR%%/scripts/scripttemplate_gamelogic.py
+%%DATADIR%%/scripts/scripttemplate_gamelogic_basic.py
+%%DATADIR%%/scripts/scripttemplate_ipo_gen.py
+%%DATADIR%%/scripts/scripttemplate_mesh_edit.py
+%%DATADIR%%/scripts/scripttemplate_metaball_create.py
+%%DATADIR%%/scripts/scripttemplate_object_edit.py
+%%DATADIR%%/scripts/scripttemplate_pyconstraint.py
+%%DATADIR%%/scripts/scripttemplate_text_plugin.py
+%%DATADIR%%/scripts/slp_import.py
+%%DATADIR%%/scripts/sysinfo.py
+%%DATADIR%%/scripts/textplugin_functiondocs.py
+%%DATADIR%%/scripts/textplugin_imports.py
+%%DATADIR%%/scripts/textplugin_membersuggest.py
+%%DATADIR%%/scripts/textplugin_outliner.py
+%%DATADIR%%/scripts/textplugin_suggest.py
+%%DATADIR%%/scripts/textplugin_templates.py
+%%DATADIR%%/scripts/unweld.py
+%%DATADIR%%/scripts/uv_export.py
+%%DATADIR%%/scripts/uv_seams_from_islands.py
+%%DATADIR%%/scripts/uvcalc_follow_active_coords.py
+%%DATADIR%%/scripts/uvcalc_lightmap.py
+%%DATADIR%%/scripts/uvcalc_quad_clickproj.py
+%%DATADIR%%/scripts/uvcalc_smart_project.py
+%%DATADIR%%/scripts/uvcopy.py
+%%DATADIR%%/scripts/vertexpaint_from_material.py
+%%DATADIR%%/scripts/vertexpaint_gradient.py
+%%DATADIR%%/scripts/vertexpaint_selfshadow_ao.py
+%%DATADIR%%/scripts/vrml97_export.py
+%%DATADIR%%/scripts/weightpaint_average.py
+%%DATADIR%%/scripts/weightpaint_clean.py
+%%DATADIR%%/scripts/weightpaint_copy.py
+%%DATADIR%%/scripts/weightpaint_envelope_assign.py
+%%DATADIR%%/scripts/weightpaint_gradient.py
+%%DATADIR%%/scripts/weightpaint_grow_shrink.py
+%%DATADIR%%/scripts/weightpaint_invert.py
+%%DATADIR%%/scripts/weightpaint_normalize.py
+%%DATADIR%%/scripts/widgetwizard.py
+%%DATADIR%%/scripts/wizard_curve2tree.py
+%%DATADIR%%/scripts/x3d_export.py
+%%DATADIR%%/scripts/xfig_export.py
+%%DATADIR%%/scripts/xsi_export.py
+@dirrm %%DATADIR%%/scripts/bpymodules/colladaImEx
+@dirrm %%DATADIR%%/scripts/bpymodules
+@dirrm %%DATADIR%%/scripts/bpydata/config
+@dirrm %%DATADIR%%/scripts/bpydata
+@dirrm %%DATADIR%%/scripts
+%%NLS%%@dirrm %%DATADIR%%/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/zh_CN
+%%NLS%%@dirrm %%DATADIR%%/locale/uk/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/uk
+%%NLS%%@dirrm %%DATADIR%%/locale/sv/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/sv
+%%NLS%%@dirrm %%DATADIR%%/locale/sr@Latn/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/sr@Latn
+%%NLS%%@dirrm %%DATADIR%%/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/sr
+%%NLS%%@dirrm %%DATADIR%%/locale/ru/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/ru
+%%NLS%%@dirrm %%DATADIR%%/locale/ro/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/ro
+%%NLS%%@dirrm %%DATADIR%%/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/pt_BR
+%%NLS%%@dirrm %%DATADIR%%/locale/pl/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/pl
+%%NLS%%@dirrm %%DATADIR%%/locale/nl/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/nl
+%%NLS%%@dirrm %%DATADIR%%/locale/ko/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/ko
+%%NLS%%@dirrm %%DATADIR%%/locale/ja/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/ja
+%%NLS%%@dirrm %%DATADIR%%/locale/it/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/it
+%%NLS%%@dirrm %%DATADIR%%/locale/hr_HR/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/hr_HR
+%%NLS%%@dirrm %%DATADIR%%/locale/hr/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/hr
+%%NLS%%@dirrm %%DATADIR%%/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/fr
+%%NLS%%@dirrm %%DATADIR%%/locale/fi/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/fi
+%%NLS%%@dirrm %%DATADIR%%/locale/el/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/el
+%%NLS%%@dirrm %%DATADIR%%/locale/es/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/es
+%%NLS%%@dirrm %%DATADIR%%/locale/de/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/de
+%%NLS%%@dirrm %%DATADIR%%/locale/cs/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/cs
+%%NLS%%@dirrm %%DATADIR%%/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/ca
+%%NLS%%@dirrm %%DATADIR%%/locale/bg/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/bg
+%%NLS%%@dirrm %%DATADIR%%/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/ar
+%%NLS%%@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%

@@ -1,0 +1,11 @@
+--- source/Makefile.orig	2009-01-21 08:14:52.000000000 +0100
++++ source/Makefile	2008-10-14 19:45:24.000000000 +0200
+@@ -106,7 +106,7 @@
+ COMLIB += $(OCGDIR)/blender/avi/$(DEBUG_DIR)libavi.a
+ COMLIB += $(NAN_JPEG)/lib/libjpeg.a
+ COMLIB += $(OCGDIR)/blender/gpu/$(DEBUG_DIR)libgpu.a
+-COMLIB += $(NAN_GLEW)/lib/libglew.a
++COMLIB += $(NAN_GLEW)/lib/libGLEW.a
+ 
+ ifneq ($(NAN_NO_KETSJI),true)
+     COMLIB += $(OCGDIR)/gameengine/bloutines/$(DEBUG_DIR)libbloutines.a
