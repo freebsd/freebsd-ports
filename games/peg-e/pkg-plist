@@ -1,0 +1,8 @@
+bin/peg-e
+share/applications/peg-e.desktop
+share/icons/hicolor/48x48/apps/peg-e.png
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
