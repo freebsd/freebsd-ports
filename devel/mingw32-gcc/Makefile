@@ -115,7 +115,7 @@ PLIST_SUB+=	OBJCXX="@comment "
 .if defined(WITH_LANG_FORTRAN)
 DISTFILES+=	gcc-fortran-${GCCVERSION}${EXTRACT_SUFX}
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4 \
-		mpfr.2:${PORTSDIR}/math/mpfr
+		mpfr.3:${PORTSDIR}/math/mpfr
 CONFIGURE_ARGS+=--with-gmp=${LOCALBASE} \
 		--with-mpfr=${LOCALBASE}
 MAN1+=		${PKGNAMEPREFIX}gfortran.1
