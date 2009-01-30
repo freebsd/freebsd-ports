@@ -9,7 +9,7 @@ PORTNAME=	libflash
 PORTVERSION=	0.4.13
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	Sf/gplflash
+MASTER_SITES=	SF/gplflash
 DISTNAME=	gplflash-${PORTVERSION}
 
 MAINTAINER=	llwang@infor.org
