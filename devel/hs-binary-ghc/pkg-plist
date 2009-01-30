@@ -2,24 +2,9 @@
 %%SUBDIR%%/Data/Binary/Builder.hi
 %%SUBDIR%%/Data/Binary/Get.hi
 %%SUBDIR%%/Data/Binary/Put.hi
-%%SUBDIR%%/HSbinary-%%PORTVERSION%%.o
-%%SUBDIR%%/libHSbinary-%%PORTVERSION%%.a
+%%SUBDIR%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%SUBDIR%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
 %%SUBDIR%%/%%PORTNAME%%-register.sh
-%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/html/%%PORTNAME%%.haddock
-%%PORTDOCS%%%%DOCSDIR%%/html/doc-index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/haddock-util.js
-%%PORTDOCS%%%%DOCSDIR%%/html/haddock.css
-%%PORTDOCS%%%%DOCSDIR%%/html/haskell_icon.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/minus.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/plus.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/Data-Binary-Builder.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Data-Binary-Get.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Data-Binary-Put.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Data-Binary.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-@dirrm %%DOCSDIR%%
 @dirrmtry %%SUBDIR%%/Data/Binary
 @dirrmtry %%SUBDIR%%/Data
 @exec sh %D/%%SUBDIR%%/%%PORTNAME%%-register.sh

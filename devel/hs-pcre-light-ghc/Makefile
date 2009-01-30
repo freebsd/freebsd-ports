@@ -7,6 +7,7 @@
 
 PORTNAME=	pcre-light
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -28,12 +29,16 @@ PLIST_SUB=	GHC_VERSION=${GHC_VERSION}		\
 		PORTNAME=${PORTNAME}			\
 		PORTVERSION=${PORTVERSION}		\
 		SUBDIR=${CABALDIR}
-DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+PORTDOCS=	LICENSE html
 
 CONFIGURE_ARGS=	--ghc --prefix=${PREFIX} --libdir=${PREFIX}/${CABALDIR} --libsubdir='' --datasubdir=''
 
-.ifndef (NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
+.else
+PLIST_DIRS+=	%%DOCSDIR%%
+PLIST_FILES+=	%%DOCSDIR%%/LICENSE
 .endif
 
 do-configure:
@@ -41,7 +46,7 @@ do-configure:
 
 do-build:
 	cd ${WRKSRC} && ${CABALCMD} build && ${CABALCMD} --gen-script register
-.ifndef (NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 	cd ${WRKSRC} && ${CABALCMD} haddock
 .endif
 
