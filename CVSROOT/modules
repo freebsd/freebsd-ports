@@ -3891,6 +3891,7 @@ gdt                             ports/cad/gdt
 gdtclft                         ports/graphics/gdtclft
 gdvrecv                         ports/multimedia/gdvrecv
 geany                           ports/devel/geany
+gearmand                        ports/devel/gearmand
 gecko-sharp10                   ports/www/gecko-sharp10
 gecko-sharp20                   ports/www/gecko-sharp20
 geda                            ports/cad/geda
@@ -6453,6 +6454,7 @@ kdemultimedia3                  ports/multimedia/kdemultimedia3
 kdemultimedia4                  ports/multimedia/kdemultimedia4
 kdenetwork3                     ports/net/kdenetwork3
 kdenetwork4                     ports/net/kdenetwork4
+kdenlive                        ports/multimedia/kdenlive
 kdepim3                         ports/deskutils/kdepim3
 kdepim4                         ports/deskutils/kdepim4
 kdepimlibs4                     ports/deskutils/kdepimlibs4
@@ -8387,6 +8389,8 @@ mldonkey-serverspy              ports/net-p2p/mldonkey-serverspy
 mldonkey-urlslave               ports/net-p2p/mldonkey-urlslave
 mlmmj                           ports/mail/mlmmj
 mls                             ports/mail/mls
+mlt                             ports/multimedia/mlt
+mlt++                           ports/multimedia/mlt++
 mlterm                          ports/x11/mlterm
 mlton                           ports/lang/mlton
 mlview                          ports/editors/mlview
