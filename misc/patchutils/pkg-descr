@@ -18,4 +18,4 @@ Patchutils is a small collection of programs that operate on patch files.
  - Recountdiff fixes up counts and offsets in a unified diff.
  - Unwrapdiff fixes word-wrapped unified diffs.
 
-WWW: http://cyberelk.net/tim/patchutils/
+WWW: http://cyberelk.net/tim/software/patchutils/
