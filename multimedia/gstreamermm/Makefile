@@ -13,7 +13,8 @@ MASTER_SITES=	GNOME
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	C++ wrapper library for the multimedia library GStreamer
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_BZIP2=	yes
