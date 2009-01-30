@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	patchutils
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	misc
 MASTER_SITES=	http://cyberelk.net/tim/data/patchutils/stable/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	A small collection of programs that operate on patch files
 
 USE_BZIP2=	yes
