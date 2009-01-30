@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# PROVIDE: hts
+# REQUIRE: LOGIN
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# hts_enable (bool): Set to NO by default.
+#                    Set it to YES to enable httptunnel server.
+# hts_port (string): [host:]port to listen for htc connection.
+#                    Set to 8888 by default.
+# hts_forward (string): Talk to this socket.
+# hts_device (string): *or* talk to this device.
+# hts_flags (string): Additional flags for hts.
+#
+
+. %%RC_SUBR%%
+
+name="hts"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/bin/${name}
+
+start_precmd="hts_prestart"
+
+hts_prestart()
+{
+	if checkyesno hts_enable; then
+		if [ -z "$hts_device" -a -z "$hts_forward" ]; then
+			err 1 "Specify either hts_device or hts_forward"
+		fi
+	fi
+
+	return 0
+}
+
+load_rc_config $name
+
+: ${hts_enable="NO"}
+: ${hts_user="httptunnel"}
+
+: ${hts_port="8888"}
+: ${hts_device=""}
+: ${hts_forward=""}
+
+[ -n "$hts_device" ] && command_args="-d $hts_device"
+[ -n "$hts_forward" ] && command_args="-F $hts_forward"
+command_args="$command_args $hts_port"
+
+run_rc_command "$1"

@@ -1,0 +1,77 @@
+#!/bin/sh
+
+# PROVIDE: htc
+# REQUIRE: LOGIN
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# htc_enable (bool): Set to NO by default.
+#                    Set it to YES to enable httptunnel client.
+# htc_port (string): host:port where hts is running
+# htc_forward (string): Talk to this socket.
+# htc_device (string): *or* talk to this device.
+# 
+# htc_proxy (string): host:port of proxy to talk to hts via
+# htc_proxyauth (string): user:password to pass to proxy, or a file
+# htc_proxybuffer (string): Buffer size for buffered proxies.
+#                     Default set to "1K".
+# htc_browser (string): Pretend to be this browser.
+#                     Default set to "Mozilla/4.7 [en] (X11; I; Linux 2.2.12 i386)".
+# htc_flags (string): additional arguments to htc. Default set to -S.
+#
+
+. %%RC_SUBR%%
+
+name="htc"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/bin/${name}
+
+start_precmd="htc_prestart"
+
+htc_prestart()
+{
+	if checkyesno htc_enable; then
+		if [ -z "$htc_device" -a -z "$htc_forward" ]; then
+			err 1 "Specify either htc_device or htc_forward"
+		fi
+	fi
+
+	return 0
+}
+
+
+load_rc_config $name
+
+: ${htc_enable="NO"}
+: ${htc_user="httptunnel"}
+
+: ${htc_port=""}
+: ${htc_forward=""}
+: ${htc_device=""}
+
+: ${htc_proxy=""}
+: ${htc_proxyauth=""}
+: ${htc_proxybuffer="1K"}
+: ${htc_browser="Mozilla/4.7 [en] (X11; I; Linux 2.2.12 i386)"}
+: ${htc_flags="-S"}
+
+[ -n "$htc_forward" ] && command_args="-F $htc_forward"
+[ -n "$htc_device" ] && command_args="-d $htc_device"
+[ -n "$htc_browser" ] && command_args="-U '\"'\"'$htc_browser'\"'\"' $command_args"
+if [ -n "$htc_proxy" ]; then
+	[ -n "$htc_proxybuffer" ] && command_args="-B $htc_proxybuffer $command_args"
+	if [ -n "$htc_proxyauth" ]; then
+		if [ -f "$htc_proxyauth" ]; then
+			command_args="--proxy-authorization-file $htc_proxyauth $command_args"
+		else
+			command_args="-A $htc_proxyauth $command_args"
+		fi
+	fi
+	command_args="-P $htc_proxy $command_args"
+fi
+
+command_args="$command_args $htc_port"
+
+run_rc_command "$1"
