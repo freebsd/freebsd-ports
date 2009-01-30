@@ -1,80 +1,40 @@
---- Makefile.orig	Thu Mar 15 12:27:51 2007
-+++ Makefile	Mon Apr 23 10:18:24 2007
-@@ -16,7 +16,7 @@
- CAMLDOC = $(OCAMLFIND) ocamldoc $(LIB)
- TOINSTALL = modules/tutorial.cmo modules/tutorial.cmi modules/monitoring.cmo server/parseconfig.cmi server/ocsigen.cmi server/ocsigenmod.cma server/staticmod.cmi server/staticmod.cmo server/ocsigenboxes.cmi xmlp4/ohl-xhtml/xHTML.cmi xmlp4/ohl-xhtml/xML.cmi xmlp4/ohl-xhtml/xhtml.cma xmlp4/xhtmltypes.cmi xmlp4/simplexmlparser.cmi xmlp4/xhtmlsyntax.cma META lwt/lwt.cmi lwt/lwt_unix.cmi server/preemptive.cmi http/predefined_senders.cmi baselib/messages.cmi $(DUCEFILES)
- EXAMPLES = modules/tutorial.cmo modules/tutorial.cmi modules/monitoring.cmo $(DUCEEXAMPLES)
--PP = -pp "camlp4o ./lib/xhtmlsyntax.cma -loc loc"
-+PP = -pp "$(CAMLP4O) ./lib/xhtmlsyntax.cma -loc loc"
+--- Makefile.orig	2008-07-01 13:50:21.000000000 +0200
++++ Makefile	2008-07-08 11:25:25.000000000 +0200
+@@ -284,7 +284,6 @@
  
- all: $(REPS)
- 
-@@ -62,7 +62,7 @@
- 	@for i in $(REPS) ; do touch "$$i"/.depend; $(MAKE) -C $$i depend ; done
- 
- 
--.PHONY: install fullinstall doc
-+.PHONY: install fullinstall doc docinstall
- install:
- 	mkdir -p $(PREFIX)/$(MODULEINSTALLDIR)
- 	mkdir -p $(PREFIX)/$(EXAMPLESINSTALLDIR)
-@@ -73,10 +73,10 @@
- 	-rm META
- 
- 
--fullinstall: doc install
-+fullinstall: install
- 	mkdir -p $(PREFIX)/$(CONFIGDIR)
- 	mkdir -p $(PREFIX)/$(STATICPAGESDIR)
--	-mv $(PREFIX)/$(CONFIGDIR)/ocsigen.conf $(PREFIX)/$(CONFIGDIR)/ocsigen.conf.old
-+#	-mv $(PREFIX)/$(CONFIGDIR)/ocsigen.conf $(PREFIX)/$(CONFIGDIR)/ocsigen.conf.old
- 	cat files/ocsigen.conf \
+ installnodoc: partialinstall
+ 	mkdir -p $(TEMPROOT)$(CONFIGDIR)
+-	mkdir -p $(TEMPROOT)$(CONFIGDIR)/conf.d
+ 	mkdir -p $(TEMPROOT)$(STATICPAGESDIR)
+ 	mkdir -p $(TEMPROOT)$(STATICPAGESDIR)/miniwiki
+ 	mkdir -p $(TEMPROOT)$(STATICPAGESDIR)/tutorial
+@@ -295,7 +294,6 @@
+ 	[ -p $(TEMPROOT)$(COMMANDPIPE) ] || { mkfifo $(TEMPROOT)$(COMMANDPIPE); \
+ 	  chmod 660 $(TEMPROOT)$(COMMANDPIPE); \
+ 	  $(CHOWN) -R $(OCSIGENUSER):$(OCSIGENGROUP) $(TEMPROOT)$(COMMANDPIPE);}
+-#	-mv $(TEMPROOT)$(CONFIGDIR)/$(OCSIGENNAME).conf $(TEMPROOT)$(CONFIGDIR)/$(OCSIGENNAME).conf.old
+ 	cat files/ocsigen.conf.in \
  	| sed s%_LOGDIR_%$(LOGDIR)%g \
  	| sed s%_STATICPAGESDIR_%$(STATICPAGESDIR)%g \
-@@ -84,7 +84,7 @@
- 	| sed s%_OCSIGENUSER_%$(OCSIGENUSER)%g \
- 	| sed s%_OCSIGENGROUP_%$(OCSIGENGROUP)%g \
- 	| sed s%_MODULEINSTALLDIR_%$(MODULEINSTALLDIR)/$(OCSIGENNAME)%g \
--	> $(PREFIX)/$(CONFIGDIR)/ocsigen.conf
-+	> $(PREFIX)/$(CONFIGDIR)/ocsigen.conf.sample
- 	-mv $(PREFIX)/$(CONFIGDIR)/mime.types $(PREFIX)/$(CONFIGDIR)/mime.types.old
- 	cp -f files/mime.types $(PREFIX)/$(CONFIGDIR)
- 	mkdir -p $(PREFIX)/$(LOGDIR)
-@@ -92,8 +92,19 @@
- 	$(CHOWN) -R $(OCSIGENUSER):$(OCSIGENGROUP) $(PREFIX)/$(STATICPAGESDIR)
- 	chmod u+rwx $(PREFIX)/$(LOGDIR)
- 	chmod a+rx $(PREFIX)/$(CONFIGDIR)
--	chmod a+r $(PREFIX)/$(CONFIGDIR)/ocsigen.conf
-+	chmod a+r $(PREFIX)/$(CONFIGDIR)/ocsigen.conf.sample
- 	chmod a+r $(PREFIX)/$(CONFIGDIR)/mime.types
-+#	[ -d /etc/logrotate.d ] && \
-+#	 { mkdir -p ${PREFIX}/etc/logrotate.d ; \
-+#	   cat files/logrotate.IN \
-+#	   | sed s%LOGDIR%$(LOGDIR)%g \
-+#	   | sed s%USER%$(OCSIGENUSER)%g \
-+#	   | sed s%GROUP%$(OCSIGENGROUP)%g \
-+#	  > $(PREFIX)/etc/logrotate.d/$(OCSIGENNAME); }
-+	install -d -m 755 $(PREFIX)/$(MANDIR)
-+	install -m 644 files/ocsigen.1 $(PREFIX)/$(MANDIR)
-+
-+docinstall: doc
- 	mkdir -p $(PREFIX)/$(DOCDIR)
- 	install -d -m 755 $(PREFIX)/$(DOCDIR)/lwt
- 	install -d -m 755 $(PREFIX)/$(DOCDIR)/oc
-@@ -102,16 +113,6 @@
- 	install -m 644 doc/oc/* $(PREFIX)/$(DOCDIR)/oc
- 	chmod a+rx $(PREFIX)/$(DOCDIR)
- 	chmod a+r $(PREFIX)/$(DOCDIR)/*
--	[ -d /etc/logrotate.d ] && \
--	 { mkdir -p ${PREFIX}/etc/logrotate.d ; \
--	   cat files/logrotate.IN \
--	   | sed s%LOGDIR%$(LOGDIR)%g \
--	   | sed s%USER%$(OCSIGENUSER)%g \
--	   | sed s%GROUP%$(OCSIGENGROUP)%g \
--	  > $(PREFIX)/etc/logrotate.d/$(OCSIGENNAME); }
--	install -d -m 755 $(PREFIX)/$(MANDIR)
--	install -m 644 files/ocsigen.1 $(PREFIX)/$(MANDIR)
--
- 
- .PHONY: uninstall fulluninstall
- uninstall:
+@@ -318,21 +316,10 @@
+ 	| sed s%[.]cmo%.cmxs%g \
+ 	| sed s%[.]cma%.cmxs%g \
+ 	> $(TEMPROOT)$(CONFIGDIR)/$(OCSIGENNAME).conf.opt.sample
+-	-mv $(TEMPROOT)$(CONFIGDIR)/mime.types $(TEMPROOT)$(CONFIGDIR)/mime.types.old
+ 	cp -f files/mime.types $(TEMPROOT)$(CONFIGDIR)
+ 	mkdir -p $(TEMPROOT)$(LOGDIR)
+ 	chmod u+rwx $(TEMPROOT)$(LOGDIR)
+-	chmod a+rx $(TEMPROOT)$(CONFIGDIR)
+-	chmod a+rx $(TEMPROOT)$(CONFIGDIR)/conf.d
+-	[ -f $(TEMPROOT)$(CONFIGDIR)/$(OCSIGENNAME).conf ] || \
+-	{ cp $(TEMPROOT)$(CONFIGDIR)/$(OCSIGENNAME).conf.sample \
+-             $(TEMPROOT)$(CONFIGDIR)/$(OCSIGENNAME).conf; \
+-	  chmod a+r $(TEMPROOT)$(CONFIGDIR)/$(OCSIGENNAME).conf; }
+ 	chmod a+r $(TEMPROOT)$(CONFIGDIR)/$(OCSIGENNAME).conf.sample
+-	[ -f $(TEMPROOT)$(CONFIGDIR)/$(OCSIGENNAME).conf ] || \
+-	{ cp $(TEMPROOT)$(CONFIGDIR)/$(OCSIGENNAME).conf.opt.sample \
+-             $(TEMPROOT)$(CONFIGDIR)/$(OCSIGENNAME).conf.opt; \
+-	  chmod a+r $(TEMPROOT)$(CONFIGDIR)/$(OCSIGENNAME).conf.opt; }
+ 	chmod a+r $(TEMPROOT)$(CONFIGDIR)/$(OCSIGENNAME).conf.opt.sample
+ 	chmod a+r $(TEMPROOT)$(CONFIGDIR)/mime.types
+ 	$(INSTALL) -m 644 files/tutorial/style.css $(TEMPROOT)$(STATICPAGESDIR)/tutorial
