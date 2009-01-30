@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.5p157
+PORTVERSION=	4.2.5p158
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ntp-dev/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
