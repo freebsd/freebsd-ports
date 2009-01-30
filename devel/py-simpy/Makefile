@@ -6,10 +6,9 @@
 # $FreeBSD$
 
 PORTNAME=	simpy
-PORTVERSION=	1.9.1
+PORTVERSION=	2.00
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SimPy-${PORTVERSION}
 
@@ -24,7 +23,6 @@ OPTIONS=	TKINTER		"Install py-tkinter for plot"      off
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 .endif
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
@@ -38,8 +36,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkint
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/SimPyDocs && ${FIND} . | \
-		${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR})
+	(cd ${WRKSRC}/SimPyDocs && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
 	@${MKDIR} ${EXAMPLESDIR}
 	(cd ${WRKSRC}/SimPyModels && ${FIND} . | \
