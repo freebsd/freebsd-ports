@@ -72,7 +72,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="b9077cc4-6d04-4bcb-a37a-9ceaebfdcc9e">
-    <topic>ganglia-monitor-core -- Stack-based buffer overflow in the process_path function</topic>
+    <topic>ganglia -- buffer overflow vulnerability</topic>
     <affects>
       <package>
 	<name>ganglia-monitor-core</name>
@@ -97,13 +97,12 @@ Note:  Please add new entries to the beginning of this file.
        </body>
     </description>
     <references>
-      <bid>33229</bid>
       <cvename>CVE-2009-0241</cvename>
       <url>http://secunia.com/advisories/33506</url>
     </references>
     <dates>
-      <discovery>2009-01-21</discovery>
-      <entry>2009-01-27</entry>
+      <discovery>2009-01-26</discovery>
+      <entry>2009-01-30</entry>
       <modified>2009-01-30</modified>
     </dates>
   </vuln>
