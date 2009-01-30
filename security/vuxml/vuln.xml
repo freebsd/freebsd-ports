@@ -39,13 +39,14 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>ganglia-monitor-core</name>
+	<name>ganglia-monitor-webfrontend</name>
 	<range><lt>3.1.1</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Secunia reports:</p>
-	  <blockquote cite="http://secunia.com/advisories/33506">
+	 <blockquote cite="http://secunia.com/advisories/33506">
 	    <p>Spike Spiegel has discovered a vulnerability in Ganglia which
 	      can be exploited by malicious people to compromise a
 	      vulnerable system.  The vulnerability is caused due to a
@@ -59,9 +60,9 @@ Note:  Please add new entries to the beginning of this file.
        </body>
     </description>
     <references>
-      <url>http://secunia.com/advisories/33506</url>
-      <cvename>CVE-2009-0241</cvename>
       <bid>33229</bid>
+      <cvename>CVE-2009-0241</cvename>
+      <url>http://secunia.com/advisories/33506</url>
     </references>
     <dates>
       <discovery>2009-01-21</discovery>
