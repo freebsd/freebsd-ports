@@ -8,11 +8,11 @@
 PORTNAME=	ParseLex
 PORTVERSION=	2.15
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/Parse
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pirzyk@freebsd.org
-COMMENT= 	Object-oriented generator of lexical analyzers
+MAINTAINER=	pirzyk@FreeBSD.org
+COMMENT=	Object-oriented generator of lexical analyzers
 
 PERL_CONFIGURE=	yes
 
