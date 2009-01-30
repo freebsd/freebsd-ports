@@ -7,6 +7,8 @@
 
 PORTNAME=	ktorrent
 PORTVERSION=	3.1.6
+DISTVERSIONSUFFIX=	-4
+PORTREVISION=	1
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${PORTVERSION}/
 
@@ -25,5 +27,7 @@ QT_COMPONENTS=	qt3support dbus gui network sql svg xml \
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>
