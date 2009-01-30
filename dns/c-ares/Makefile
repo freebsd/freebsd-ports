@@ -8,7 +8,7 @@
 PORTNAME=	c-ares
 PORTVERSION=	1.4.0
 CATEGORIES=	dns
-MASTER_SITES=	http://daniel.haxx.se/projects/c-ares/
+MASTER_SITES=	http://c-ares.haxx.se/
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	An asynchronous DNS resolver library
