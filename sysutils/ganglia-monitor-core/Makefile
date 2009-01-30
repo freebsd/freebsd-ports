@@ -7,6 +7,7 @@
 
 PORTNAME=	monitor-core
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils net parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ganglia
@@ -38,7 +39,7 @@ SUB_FILES=	pkg-install
 
 .if defined (GMETAD_CONF)
 .if !exists (${GMETAD_CONF})
-IGNORE=		GMETAD_CONF must point to an existing file when defined
+IGNORE=		the variable GMETAD_CONF must point to a file when defined
 .endif
 .else
 GMETAD_CONF=	${WRKSRC}/gmetad/gmetad.conf
@@ -46,7 +47,7 @@ GMETAD_CONF=	${WRKSRC}/gmetad/gmetad.conf
 
 .if defined (GMOND_CONF)
 .if !exists (${GMOND_CONF})
-IGNORE=		GMOND_CONF must point to an existing file when defined
+IGNORE=		the variable GMOND_CONF must point to a file when defined
 .endif
 .else
 GMOND_CONF=	${WRKDIR}/gmond.conf
