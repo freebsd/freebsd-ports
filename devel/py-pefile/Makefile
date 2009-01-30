@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pefile
-PORTVERSION=	1.2.9.1
+DISTVERSION=	1.2.10-60
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,10 +16,9 @@ COMMENT=	A python module to read and work with PE files
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_EGGINFO=	${PORTNAME}-${DISTVERSION:C/\-/_/g}-py${PYTHON_VER}.egg-info
 
-.if !defined(NOPORTDOCS)
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
