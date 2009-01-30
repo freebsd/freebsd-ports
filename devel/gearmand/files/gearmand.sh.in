@@ -17,7 +17,7 @@ load_rc_config "$name"
 : ${gearmand_group="daemon"}
 : ${gearmand_user="daemon"}
 
-command_args="${gearmand_flags} &"
+command_args="&"
 
 run_rc_command "$1"
 
