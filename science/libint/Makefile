@@ -9,7 +9,7 @@ PORTNAME=	libint
 PORTVERSION=	1.1.2
 PORTREVISION=	1
 CATEGORIES=	science
-MASTER_SITES=	http://www.chem.vt.edu/chem-dept/valeev/software/libint/src/
+MASTER_SITES=	http://www.files.chem.vt.edu/chem-dept/valeev/software/libint/src/
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Evaluate the integrals in modern atomic and molecular theory
