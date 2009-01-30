@@ -5,26 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=				ex-lib
-PORTVERSION=			0.02
-#PORTREVISION=	0
-#PORTEPOCH=	0
-CATEGORIES=				devel perl5
-MASTER_SITES=			CPAN
-#MASTER_SITE_SUBDIR=
-PKGNAMEPREFIX=			p5-
-#PKGNAMESUFFIX=
-#DISTNAME=
-#EXTRACT_SUFX=
-#DISTFILES=
-#DIST_SUBDIR=	${PORTNAME}
-#EXTRACT_ONLY=
+PORTNAME=	ex-lib
+PORTVERSION=	0.03
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
 
-MAINTAINER=				mons@cpan.org
-COMMENT=				Relative use lib in absolute way
+MAINTAINER=	mons@cpan.org
+COMMENT=	Relative use lib in absolute way
 
-PERL_CONFIGURE=			yes
+PERL_CONFIGURE=	yes
 
-MAN3=					ex::lib.3
+MAN3=		ex::lib.3
 
 .include <bsd.port.mk>
