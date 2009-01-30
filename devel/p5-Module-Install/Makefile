@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Module-Install
-PORTVERSION=	0.77
-PORTREVISION=	1
+PORTVERSION=	0.78
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -38,6 +37,7 @@ MAN3=		inc::Module::Install.3 \
 		Module::Install::Can.3 \
 		Module::Install::Compiler.3 \
 		Module::Install::Deprecated.3 \
+		Module::Install::DSL.3 \
 		Module::Install::External.3 \
 		Module::Install::Makefile.3 \
     		Module::Install::PAR.3 \
