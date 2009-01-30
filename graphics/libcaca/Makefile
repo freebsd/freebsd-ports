@@ -9,7 +9,7 @@ PORTNAME=	libcaca
 DISTVERSION=	0.99.beta13
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://libcaca.zoy.org/files/
+MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/libcaca/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Graphics library that outputs text instead of pixels
