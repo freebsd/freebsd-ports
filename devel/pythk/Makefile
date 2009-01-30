@@ -8,7 +8,8 @@
 PORTNAME=	pythk
 PORTVERSION=	0.1.1
 CATEGORIES=	devel
-MASTER_SITES=	http://master.branda.to/downloads/pythk/
+MASTER_SITES=	https://opensvn.csie.org/traccgi/PumperWeb/raw-attachment/wiki/sqlcc/ \
+		http://master.branda.to/downloads/pythk/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thinker@branda.to
