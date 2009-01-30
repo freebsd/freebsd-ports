@@ -9,7 +9,9 @@ PORTNAME=	json-glib
 PORTVERSION=	0.6.2
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://folks.o-hand.com/~ebassi/sources/
+MASTER_SITES=	http://folks.o-hand.com/~ebassi/sources/ \
+    		${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITE_SUBDIR=	marcus:local
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	JSON (RFC 4627) interface for Glib
