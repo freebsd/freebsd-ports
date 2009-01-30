@@ -9,8 +9,7 @@ PORTNAME=	libpqxx
 PORTVERSION=	2.6.9
 PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	ftp://thaiopensource.org/%SUBDIR%/
-MASTER_SITE_SUBDIR=	software/libpqxx
+MASTER_SITES=	http://pqxx.org/download/software/libpqxx/
 PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	postgresql
 
