@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpfr
-PORTVERSION=	2.3.2
+PORTVERSION=	2.4.0
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.mpfr.org/mpfr-current/
 DIST_SUBDIR=	mpfr
