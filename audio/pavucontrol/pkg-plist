@@ -1,5 +1,24 @@
 bin/pavucontrol
+lib/locale/de/LC_MESSAGES/pavucontrol.mo
+lib/locale/el/LC_MESSAGES/pavucontrol.mo
+lib/locale/fr/LC_MESSAGES/pavucontrol.mo
+lib/locale/hu/LC_MESSAGES/pavucontrol.mo
+lib/locale/pl/LC_MESSAGES/pavucontrol.mo
+lib/locale/sv/LC_MESSAGES/pavucontrol.mo
 share/applications/pavucontrol.desktop
 %%DATADIR%%/pavucontrol.glade
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
+@dirrmtry lib/locale/de/LC_MESSAGES
+@dirrmtry lib/locale/de
+@dirrmtry lib/locale/el/LC_MESSAGES
+@dirrmtry lib/locale/el
+@dirrmtry lib/locale/fr/LC_MESSAGES
+@dirrmtry lib/locale/fr
+@dirrmtry lib/locale/hu/LC_MESSAGES
+@dirrmtry lib/locale/hu
+@dirrmtry lib/locale/pl/LC_MESSAGES
+@dirrmtry lib/locale/pl
+@dirrmtry lib/locale/sv/LC_MESSAGES
+@dirrmtry lib/locale/sv
+@dirrmtry lib/locale
