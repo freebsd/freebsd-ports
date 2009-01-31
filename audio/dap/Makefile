@@ -9,7 +9,8 @@ PORTNAME=	dap
 PORTVERSION=	2.1.5
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.sourcefiles.org/Multimedia/Soundfile_Editors/
+MASTER_SITES=	http://cvsup1.theplanet.com/distfiles/ \
+		http://www.sourcefiles.org/Multimedia/Soundfile_Editors/
 EXTRACT_SUFX=.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,12 +23,32 @@ USE_XORG=	xpm
 
 MAKE_ENV+=	OTHER_INCLUDE_DIR=. OTHER_LIBRARY_DIR=.
 
+PORTDOCS=	COPYING README THANKS TODO
+PORTEXAMPLES=	testautopan.dsp \
+		testmodulateddelay.dsp \
+		testphaser.dsp \
+		teststereoecho.dsp \
+		testflanger.dsp \
+		testmultitapdelay.dsp \
+		testreverb.dsp	\
+		weirdflanger.dsp
+PLIST_FILES=	bin/DAP
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/main/DAP ${PREFIX}/bin/
+
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/DAP/
-	${INSTALL_MAN} ${WRKSRC}/COPYING ${WRKSRC}/README \
-		${WRKSRC}/THANKS ${WRKSRC}/TODO ${PREFIX}/share/doc/DAP/
+	@${MKDIR} ${DOCSDIR}
+.for _DOC in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${_DOC} ${DOCSDIR}/${_DOC}
+.endfor
+.endif
+
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+.for _EXAMPLE in ${PORTEXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/main/effects/${_EXAMPLE} ${EXAMPLESDIR}/${_EXAMPLE}
+.endfor
 .endif
 
 .include <bsd.port.mk>
