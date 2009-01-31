@@ -7,3 +7,6 @@ SIZE (bind8-1.450-1.wbm.gz) = 394512
 MD5 (postfix-1.450-1.wbm.gz) = b8dd73174493c4b88feb8322c3a4f1c8
 SHA256 (postfix-1.450-1.wbm.gz) = 4a32e0f8ec1b4fc43ad80b83b01d22af8917957321982f7633a080099d857915
 SIZE (postfix-1.450-1.wbm.gz) = 438758
+MD5 (webmin-1.450-1.wbm.gz) = bf58fc7055c005b12ef2ec7b58f443a9
+SHA256 (webmin-1.450-1.wbm.gz) = 1797561ef4259400ddc2a09abcaeac8dcb0e0f80e638be5058528e17aafd53b1
+SIZE (webmin-1.450-1.wbm.gz) = 414254
