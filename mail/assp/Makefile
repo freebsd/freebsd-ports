@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	assp
-PORTVERSION=	1.3.3.10
+PORTVERSION=	1.4.3.1
 CATEGORIES=	mail
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME:U}_${PORTVERSION}-Install
@@ -19,19 +19,15 @@ NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
 USE_DOS2UNIX=	\
-		../1.3.3.8-1.3.3.10-changes.txt \
+		../changelog.txt \
 		addservice.pl \
 		assp.pl \
 		files/URIBLCCTLDS.txt \
-		files/blackdomains.txt \
 		files/bombre.txt \
 		files/invalidptr.txt \
 		files/ipnp.txt \
-		files/ipwl.txt \
 		files/nodelay.txt \
-		files/rbl-service.txt \
 		files/redre.txt \
-		files/whitedomains.txt \
 		images/assp.css \
 		images/editor.css \
 		images/shutdown.css \
@@ -72,9 +68,10 @@ OPTIONS=	EMVALID	"RFC822 recipient address validator" on \
 		CLAMAV	"ClamAV virus scanner" on \
 		DNSBL	"DNS block list checking" on \
 		MYSQL	"Use MySQL db to store white/red/delaylists" off \
-		SIMPLE	"Use procedural Web Page interfaces" on
+		SIMPLE	"Use procedural Web Page interfaces" on \
+		SSL	"SSL secure sockets support" on
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME:L}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${DISTNAME}/${PORTNAME:U}
 
 .include <bsd.port.pre.mk>
 
@@ -122,6 +119,11 @@ RUN_DEPENDS+=	${SITE_PERL}/Tie/RDBM.pm:${PORTSDIR}/databases/p5-Tie-DBI
 
 .if !defined(WITHOUT_SIMPLE)
 RUN_DEPENDS+=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
+.endif
+
+.if !defined(WITHOUT_SSL)
+RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-assp.pl+SSL
 .endif
 
 EXTRACT_AFTER_ARGS=	-d ${PORTNAME}-${PORTVERSION}
