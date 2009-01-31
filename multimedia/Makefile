@@ -213,6 +213,7 @@
     SUBDIR += py-gstreamer
     SUBDIR += py-kaa-base
     SUBDIR += py-kaa-imlib2
+    SUBDIR += py-kaa-metadata
     SUBDIR += py-pybmp
     SUBDIR += qdvdauthor
     SUBDIR += qt4-phonon
