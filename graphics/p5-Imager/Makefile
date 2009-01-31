@@ -25,8 +25,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 
 PERL_CONFIGURE=	5.8.0+
 CONFIGURE_ENV=	IM_LIBPATH="${LOCALBASE}/lib" \
-		IM_CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
-		IM_INCPATH="${LOCALBASE}/include/freetype2/freetype"
+		IM_CFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
 
 .include "Makefile.man"
 
