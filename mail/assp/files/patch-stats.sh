@@ -1,5 +1,5 @@
---- stats.sh.orig	2008-08-06 17:43:32.000000000 -0400
-+++ stats.sh	2008-08-06 17:47:16.000000000 -0400
+--- stats.sh.orig	2009-01-29 13:19:18.000000000 -0500
++++ stats.sh	2009-01-29 20:27:14.000000000 -0500
 @@ -1,15 +1,23 @@
  #!/bin/sh
  
@@ -43,7 +43,7 @@
  #
  # I got the idea for this script from Mark Constable. He submitted
  #  a similar script to follow the Courier-MTA /var/log/maillog
-@@ -46,91 +47,308 @@
+@@ -46,91 +47,315 @@
  # Some fields are truncated (with a hard-coded length value, usually 40)
  #   to keep each line more or less intact on your screen as things scroll by
  # Colors are coded with ANSI Color coding, your mileage may vary ...
@@ -136,11 +136,11 @@
 - }'
 +tail -300 -f /var/db/assp/maillog.txt | awk  '
 +  {
-+    # look for $3 ~ [reason]
++    # skip over "[reason]" fields
 +    p=0
-+    if ($3 ~ /\[.*\]/) p=1
++    if ($(p+4) ~ /\[.*]/) p++
 +  }
-+  /local or whitelisted/ {
++  /\[Local]|\[Whitelisted]|local or whitelisted/ {
 +    printf("%s %s \033[1;32m%-15s\033[0m \033[1;37mLW  %s\033[0m \033[1;32m->\033[0m \033[1;37m%s\033[0m\n",
 +        $1,
 +        $2,
@@ -149,8 +149,10 @@
 +        $(p+7) )
 +    next
 +  }
-+  /[Em]ail whitelist (addition|deletion):/ {
-+    printf("%s %s \033[1;36m%-15s\033[0m \033[1;36mW%s %s\033[0m \033[1;37m%s\033[0m \033[1;36m%s\033[0m\n",
++  /[Em]ail whitelist (addition|deletion):*/ {
++    if (/(addition|deletion)$/)
++	next
++    printf("%s %s \033[1;36m%-15s\033[0m \033[1;36mW%s  %s\033[0m \033[1;37m%s\033[0m \033[1;36m%s\033[0m\n",
 +	$1,
 +	$2,
 +	$(p+4),
@@ -161,7 +163,7 @@
 +    next
 +  }
 +  /whitelist addition:/ && !/[Ee]mail/ {
-+    printf("%s %s \033[1;36m%-15s\033[0m \033[1;36mWC %s\033[0m \033[1;37m%s\033[0m \033[1;36m%s\033[0m\n",
++    printf("%s %s \033[1;36m%-15s\033[0m \033[1;36mWC  %s\033[0m \033[1;37m%s\033[0m \033[1;36m%s\033[0m\n",
 +	$1,
 +	$2,
 +	$(p+4),
@@ -181,11 +183,11 @@
 +	($(p+8)) ? " " $(p+8) : "" )
 +    next
 +  }
-+  /Bayesian Check ( - )?Prob/ {
++  /Bayesian Check (- )?Prob/ {
 +    # suppress
 +    next
 +  }
-+  /Bayesian [Ss]pam/ {
++  /\[Bayesian]|Bayesian [Ss]pam/ {
 +    printf("%s %s \033[1;31m%-15s BS  %s -> %s\033[0m\n",
 +        $1,
 +        $2,
@@ -198,7 +200,7 @@
 +    # suppress
 +    next
 +  }
-+  /message ok/ {
++  /\[MessageOK]|message ok/ {
 +    printf("%s %s \033[1;32m%-15s OK  %s -> %s\033[0m\n",
 +        $1,
 +        $2,
@@ -247,7 +249,7 @@
 +        $(p+8) )
 +    next
 +  }
-+  /Unknown Sender (with|from) Local Domain/ {
++  /\[InvalidLocalSender]|Unknown Sender (with|from) Local Domain/ {
 +    printf("%s %s \033[1;34m%-15s IS  %s\033[0m\n",
 +        $1,
 +        $2,
@@ -272,21 +274,21 @@
 +        $(p+7) )
 +    next
 +  }
-+  /(\[DNSBL]|\[DNSBLcache]).* rejected by / {
++  /(\[DNSBL]|\[DNSBLcache]).* (listed|rejected) by / {
 +    printf("%s %s \033[1;35m%-15s BL  %s (%s blacklisted by %s)\033[0m\n",
 +        $1,
 +        $2,
 +        $(p+4),
 +        substr($(p+5),1,40),
-+        $(p+7),
-+	$(p+10) )
++        /listed/ ? $(p+11) : $(p+7),
++	/listed/ ? $(p+14) : $(p+10) )
 +    next
 +  }
-+  /Received-SPF(\(cache\))?: (pass|neutral)| SPF: (soft)?fail|SPFstrict/ {
++  /\[SPF] .* SPF: (unknown|pass|neutral)|\[SPF] .*\(SPF neutral\)|Received-SPF(\(cache\))?: (pass|neutral)| SPF: (soft)?fail|SPFstrict/ {
 +    # suppress
 +    next
 +  }
-+  /failed SPF checks|Received-SPF(\(cache\))?: ((soft)?fail|error)| SPF: neutral/ {
++  /failed SPF checks|Received-SPF(\(cache\))?: ((soft)?fail|error)/ {
 +    printf("%s %s \033[1;35m%-15s SP  %s -> %s\033[0m\n",
 +        $1,
 +        $2,
@@ -295,14 +297,14 @@
 +        $(p+7) )
 +    next
 +  }
-+  /has spam helo|HELO-Blacklist:/ {
++  /\[ForgedHELO]|has spam helo|HELO-Blacklist:/ {
 +    printf("%s %s \033[1;35m%-15s HL  %s -> %s %s\033[0m\n",
 +        $1,
 +        $2,
 +        $(p+4),
 +        substr($(p+5),1,40),
-+        $(p+7),
-+        $(p+11) )
++        /found]/ ? "" : $(p+7),
++        /found]/ ? "(" $(p+10) : $(p+11) )
 +    next
 +  }
 +  /Forged HELO:/ {
@@ -333,7 +335,7 @@
 +        $2,
 +        $(p+4),
 +        substr($(p+5),1,40),
-+        $(p+8) )
++        /bounce|to:/ ? $(p+7) : $(p+8) )
 +    next
 +  }
 +  /DATA phase delayed/ {
@@ -344,7 +346,7 @@
 +    printf("\033[1;33m%s\033[0m\n", $0)
 +    next
 +  }
-+  /ClamAV: scanning/ {
++  /ClamAV: .* - OK $/ {
 +    # suppress
 +    next
 +  }
@@ -360,37 +362,33 @@
 +    # suppress
 +    next
 +  }
-+  /\[VIRUS].*PB:.*score:.*reason:/ {
++  /PB:.*score: [0-9]+\+[0-9]+ => [0-9]+ reason:|PB-Message-Score|PB-IP-Score|\[scoring]/ {
 +    # suppress
 +    next
-+    printf("%s %s\033[1;35m %-15s PB  %s %s %s %s (%s)\033[0m\n",
++  }
++#  /PB:( deleting\(black\)/ {
++#    printf("%s %s\033[1;35m %-15s PB  %s %s %s %s (%s)\033[0m\n",
++#	$1,
++#	$2,
++#	$(p+4),
++#	$(p+8), $(p+9), $(p+10), $(p+11),
++#	substr($(p+12),8,40) )
++#    next
++#  }
++  /PBextreme |PBextreme:monitoring/ {
++    printf("%s %s\033[1;35m %-15s PB  %s extreme %s\033[0m\n",
 +	$1,
 +	$2,
 +	$(p+4),
-+	$(p+10), $(p+11), $(p+12), $(p+13),
-+	substr($(p+14),8,40) )
-+    next
-+  }
-+  /PB:( deleting\(black\)|.*score:.*reason:)/ {
-+    # suppress
-+    next
-+    printf("%s %s\033[1;34m %-15s PB  %s %s %s %s (%s)\033[0m\n",
-+	$1,
-+	$2,
-+	$(p+4),
-+	$(p+8), $(p+9), $(p+10), $(p+11),
-+	substr($(p+12),8,40) )
-+    next
-+  }
-+  /PBextreme:monitoring/ {
-+    # suppress
++	substr($(p+5),1,40),
++	$(p+7) )
 +    next
 +  }
 +  /(\[ValidHelo]|\[InvalidHelo]|\[PTRinvalid]|\[PTRmissing])\[scoring]/ {
 +    # suppress
 +    next
 +  }
-+  /Message Limit/ {
++  /\[MessageLimit]|Message Limit/ {
 +    printf("%s %s\033[1;35m %-15s PB  %s -> %s\033[0m\n",
 +	$1,
 +	$2,
@@ -422,6 +420,15 @@
 +  }
 +  /Regex:(Black|NoProcessingDomain)/ {
 +    # suppress
++    next
++  }
++  /invalid remote sender for internal address/ {
++    printf("%s %s \033[1;35m%-15s IO  %s -> %s\033[0m\n",
++        $1,
++        $2,
++        $(p+4),
++        $(p+5),
++        substr($(p+12),1,40) )
 +    next
 +  }
 +  {

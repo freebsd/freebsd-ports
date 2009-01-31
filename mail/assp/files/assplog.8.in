@@ -69,6 +69,9 @@ message to ASSP's email interface (e.g., spam/notspam report, redlist addition)
 HL
 Bad HELO greeting
 .TP
+IO
+Invalid sender for internal recipient - internal-only recipient
+.TP
 IR
 Invalid recipient, failed LDAP or flat list test
 .TP
