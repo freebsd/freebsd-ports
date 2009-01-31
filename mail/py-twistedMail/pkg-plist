@@ -56,7 +56,6 @@ bin/mailmail
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/pop3testserver.py
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/pop3testserver.pyc
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/pop3testserver.pyo
-%%PYTHON_SITELIBDIR%%/twisted/mail/test/process.alias.sh
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/rfc822.message
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/test_bounce.py
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/test_bounce.pyc
@@ -67,6 +66,9 @@ bin/mailmail
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/test_mail.py
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/test_mail.pyc
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/test_mail.pyo
+%%PYTHON_SITELIBDIR%%/twisted/mail/test/test_mailmail.py
+%%PYTHON_SITELIBDIR%%/twisted/mail/test/test_mailmail.pyc
+%%PYTHON_SITELIBDIR%%/twisted/mail/test/test_mailmail.pyo
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/test_options.py
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/test_options.pyc
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/test_options.pyo
@@ -82,6 +84,7 @@ bin/mailmail
 %%PYTHON_SITELIBDIR%%/twisted/plugins/twisted_mail.py
 %%PYTHON_SITELIBDIR%%/twisted/plugins/twisted_mail.pyc
 %%PYTHON_SITELIBDIR%%/twisted/plugins/twisted_mail.pyo
+@dirrmtry %%PYTHON_SITELIBDIR%%/twisted/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/mail/test
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/mail/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/mail

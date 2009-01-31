@@ -165,6 +165,9 @@ bin/im
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_service.py
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_service.pyc
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_service.pyo
+%%PYTHON_SITELIBDIR%%/twisted/words/test/test_tap.py
+%%PYTHON_SITELIBDIR%%/twisted/words/test/test_tap.pyc
+%%PYTHON_SITELIBDIR%%/twisted/words/test/test_tap.pyo
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_toc.py
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_toc.pyc
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_toc.pyo
@@ -174,6 +177,9 @@ bin/im
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_xmlstream.py
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_xmlstream.pyc
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_xmlstream.pyo
+%%PYTHON_SITELIBDIR%%/twisted/words/test/test_xmpproutertap.py
+%%PYTHON_SITELIBDIR%%/twisted/words/test/test_xmpproutertap.pyc
+%%PYTHON_SITELIBDIR%%/twisted/words/test/test_xmpproutertap.pyo
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_xpath.py
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_xpath.pyc
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_xpath.pyo
@@ -199,6 +205,9 @@ bin/im
 %%PYTHON_SITELIBDIR%%/twisted/words/xish/xpathparser.py
 %%PYTHON_SITELIBDIR%%/twisted/words/xish/xpathparser.pyc
 %%PYTHON_SITELIBDIR%%/twisted/words/xish/xpathparser.pyo
+%%PYTHON_SITELIBDIR%%/twisted/words/xmpproutertap.py
+%%PYTHON_SITELIBDIR%%/twisted/words/xmpproutertap.pyc
+%%PYTHON_SITELIBDIR%%/twisted/words/xmpproutertap.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/words/xish
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/words/test
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/words/scripts

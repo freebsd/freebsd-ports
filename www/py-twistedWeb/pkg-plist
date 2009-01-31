@@ -4,6 +4,18 @@
 %%PYTHON_SITELIBDIR%%/twisted/web/__init__.py
 %%PYTHON_SITELIBDIR%%/twisted/web/__init__.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/__init__.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web/_auth/__init__.py
+%%PYTHON_SITELIBDIR%%/twisted/web/_auth/__init__.pyc
+%%PYTHON_SITELIBDIR%%/twisted/web/_auth/__init__.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web/_auth/basic.py
+%%PYTHON_SITELIBDIR%%/twisted/web/_auth/basic.pyc
+%%PYTHON_SITELIBDIR%%/twisted/web/_auth/basic.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web/_auth/digest.py
+%%PYTHON_SITELIBDIR%%/twisted/web/_auth/digest.pyc
+%%PYTHON_SITELIBDIR%%/twisted/web/_auth/digest.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web/_auth/wrapper.py
+%%PYTHON_SITELIBDIR%%/twisted/web/_auth/wrapper.pyc
+%%PYTHON_SITELIBDIR%%/twisted/web/_auth/wrapper.pyo
 %%PYTHON_SITELIBDIR%%/twisted/web/_version.py
 %%PYTHON_SITELIBDIR%%/twisted/web/_version.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/_version.pyo
@@ -34,6 +46,12 @@
 %%PYTHON_SITELIBDIR%%/twisted/web/http.py
 %%PYTHON_SITELIBDIR%%/twisted/web/http.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/http.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web/http_headers.py
+%%PYTHON_SITELIBDIR%%/twisted/web/http_headers.pyc
+%%PYTHON_SITELIBDIR%%/twisted/web/http_headers.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web/iweb.py
+%%PYTHON_SITELIBDIR%%/twisted/web/iweb.pyc
+%%PYTHON_SITELIBDIR%%/twisted/web/iweb.pyo
 %%PYTHON_SITELIBDIR%%/twisted/web/microdom.py
 %%PYTHON_SITELIBDIR%%/twisted/web/microdom.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/microdom.pyo
@@ -82,15 +100,27 @@
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_http.py
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_http.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_http.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_http_headers.py
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_http_headers.pyc
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_http_headers.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_httpauth.py
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_httpauth.pyc
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_httpauth.pyo
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_mvc.py
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_mvc.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_mvc.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_proxy.py
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_proxy.pyc
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_proxy.pyo
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_soap.py
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_soap.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_soap.pyo
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_static.py
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_static.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_static.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_tap.py
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_tap.pyc
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_tap.pyo
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_web.py
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_web.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_web.pyo
@@ -100,6 +130,9 @@
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_woven.py
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_woven.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_woven.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_wsgi.py
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_wsgi.pyc
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_wsgi.pyo
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_xml.py
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_xml.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_xml.pyo
@@ -175,9 +208,13 @@
 %%PYTHON_SITELIBDIR%%/twisted/web/woven/widgets.py
 %%PYTHON_SITELIBDIR%%/twisted/web/woven/widgets.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/woven/widgets.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web/wsgi.py
+%%PYTHON_SITELIBDIR%%/twisted/web/wsgi.pyc
+%%PYTHON_SITELIBDIR%%/twisted/web/wsgi.pyo
 %%PYTHON_SITELIBDIR%%/twisted/web/xmlrpc.py
 %%PYTHON_SITELIBDIR%%/twisted/web/xmlrpc.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/xmlrpc.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/web/woven
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/web/test
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/web/_auth
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/web
