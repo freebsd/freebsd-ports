@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	routes
-PORTVERSION=	1.10.1
+PORTVERSION=	1.10.2
 CATEGORIES=	www python
-MASTER_SITES=	${MASTER_SITE_CHEESESHOP} \
-		http://dryice.name/computer/FreeBSD/distfiles/
+MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
 MASTER_SITE_SUBDIR=	source/R/Routes
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Routes-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Routing package for Python that matches URLs to dicts and vice versa
 
 USE_PYTHON=	yes
