@@ -9,7 +9,7 @@ PORTNAME=	abacus
 PORTVERSION=	0.9.13
 PORTREVISION=	4
 CATEGORIES=	deskutils
-MASTER_SITES=	http://tahoe.inesc.pt/~aml/abacus/
+MASTER_SITES=	http://kdbio.inesc-id.pt/~aml/abacus/
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	steve
