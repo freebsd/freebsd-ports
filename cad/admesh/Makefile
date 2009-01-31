@@ -9,7 +9,7 @@ PORTNAME=	admesh
 PORTVERSION=	0.95
 PORTREVISION=	1
 CATEGORIES=	cad
-MASTER_SITES=	http://www.varlog.com/products/admesh/files/
+MASTER_SITES=	http://www.varlog.com/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for processing STL triangulated solid meshes
