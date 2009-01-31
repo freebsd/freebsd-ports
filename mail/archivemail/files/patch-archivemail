@@ -1,0 +1,11 @@
+--- archivemail.orgi	2009-01-31 21:50:02.000000000 +0100
++++ archivemail	2009-01-31 21:50:22.000000000 +0100
+@@ -1271,7 +1271,7 @@
+         original = mailbox.MHMailbox(mailbox_name)
+     else:
+         unexpected_error("unknown type: %s" % type)        
+-    assert(original)
++
+ 
+     cache = IdentityCache(mailbox_name)
+ 
