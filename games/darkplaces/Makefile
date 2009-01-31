@@ -9,7 +9,7 @@ PORTNAME=	darkplaces
 PORTVERSION=	20071120
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://offload1.icculus.org/twilight/darkplaces/files/
+MASTER_SITES=	http://offload1.icculus.org:9090/twilight/darkplaces/files/
 DISTNAME=	${PORTNAME}engine${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
