@@ -9,7 +9,7 @@ PORTNAME=	d2x
 PORTVERSION=	0.2.5
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	http://www.icculus.org/d2x/src/
+MASTER_SITES=	http://offload2.icculus.org:9090/d2x/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix port of Descent 2 Game
