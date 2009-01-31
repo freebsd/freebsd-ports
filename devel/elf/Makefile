@@ -9,7 +9,8 @@ PORTNAME=	elf
 PORTVERSION=	0.5.4p1
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://samy.kerneled.org/projects/
+MASTER_SITES=	${MASTER_SITE_PACKETSTORM}
+MASTER_SITE_SUBDIR=	linux/reverse-engineering
 
 MAINTAINER=	sbahra@gwu.edu
 COMMENT=	A commandline based ELF header analyzer
