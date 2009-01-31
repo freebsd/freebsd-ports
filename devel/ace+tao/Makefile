@@ -8,9 +8,8 @@
 PORTNAME?=	ace+tao
 PORTVERSION?=	${ACE_VERSION}+${TAO_VERSION}
 CATEGORIES=	devel
-MASTER_SITES=	ftp://deuce.doc.wustl.edu/pub/previous_versions/ \
-		http://deuce.doc.wustl.edu/old_distribution/ \
-		http://www.navicon.dk/mirrors/ace/deuce.doc.wustl.edu/old_distribution/
+MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
+		http://download.dre.vanderbilt.edu/previous_versions/
 DISTNAME=	ACE-${ACE_VERSION:C/\.0$//}+TAO-${TAO_VERSION:C/\.0$//}
 
 MAINTAINER=	ports@FreeBSD.org
