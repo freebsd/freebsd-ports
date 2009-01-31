@@ -8,7 +8,7 @@
 PORTNAME=	conquest
 PORTVERSION=	7.2
 CATEGORIES=	games
-MASTER_SITES=	http://www.radscan.com/conquest/
+MASTER_SITES=	SF/conq
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
