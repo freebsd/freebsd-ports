@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	soapui
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop application for dealing with web services over HTTP
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
