@@ -1,6 +1,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/basics.html
 %%PORTDOCS%%%%DOCSDIR%%/build_from_repo.html
 %%PORTDOCS%%%%DOCSDIR%%/free_support.html
+%%PORTDOCS%%%%DOCSDIR%%/install.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
 %%PORTDOCS%%%%DOCSDIR%%/professional_services.html
 %%PORTDOCS%%%%DOCSDIR%%/searching.html
@@ -83,6 +84,7 @@
 %%LOGCONDIR%%/doc/basics.html
 %%LOGCONDIR%%/doc/build_from_repo.html
 %%LOGCONDIR%%/doc/free_support.html
+%%LOGCONDIR%%/doc/install.html
 %%LOGCONDIR%%/doc/manual.html
 %%LOGCONDIR%%/doc/professional_services.html
 %%LOGCONDIR%%/doc/searching.html
@@ -222,6 +224,7 @@
 %%LOGCONDIR%%/include/functions_common.php
 %%LOGCONDIR%%/include/functions_config.php
 %%LOGCONDIR%%/include/functions_db.php
+%%LOGCONDIR%%/include/functions_debugoutput.php
 %%LOGCONDIR%%/include/functions_filters.php
 %%LOGCONDIR%%/include/functions_frontendhelpers.php
 %%LOGCONDIR%%/include/functions_installhelpers.php
@@ -237,6 +240,9 @@
 %%LOGCONDIR%%/lang/en/admin.php
 %%LOGCONDIR%%/lang/en/info.txt
 %%LOGCONDIR%%/lang/en/main.php
+%%LOGCONDIR%%/lang/it_IT/admin.php
+%%LOGCONDIR%%/lang/it_IT/info.txt
+%%LOGCONDIR%%/lang/it_IT/main.php
 %%LOGCONDIR%%/lang/pt_BR/admin.php
 %%LOGCONDIR%%/lang/pt_BR/info.txt
 %%LOGCONDIR%%/lang/pt_BR/main.php
@@ -296,6 +302,7 @@
 @dirrm %%LOGCONDIR%%/templates/admin
 @dirrm %%LOGCONDIR%%/templates
 @dirrm %%LOGCONDIR%%/lang/pt_BR
+@dirrm %%LOGCONDIR%%/lang/it_IT
 @dirrm %%LOGCONDIR%%/lang/en
 @dirrm %%LOGCONDIR%%/lang/de
 @dirrm %%LOGCONDIR%%/lang
@@ -318,6 +325,6 @@
 @dirrm %%LOGCONDIR%%/classes
 @dirrm %%LOGCONDIR%%/admin
 @dirrm %%LOGCONDIR%%/BitstreamVeraFonts
-@dirrm %%LOGCONDIR%%
+@dirrmtry %%LOGCONDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDATA%%@dirrm %%DATADIR%%
