@@ -1,22 +1,21 @@
 # New ports collection makefile for:	libmcve
 # Date Created:				16 March 2002
-# Whom:					Brad House <brad@mcve.com>
+# Whom:					Brad House <brad@monetra.com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	libmcve
-PORTVERSION=	5.2
+PORTNAME=	libmonetra
+PORTVERSION=	7.0.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.mcve.com/pub/libmonetra/
+MASTER_SITES=	ftp://ftp.monetra.com/pub/libmonetra/
 DISTNAME=	libmonetra-${PORTVERSION}
 
-MAINTAINER=	brad@mcve.com
-COMMENT=	Library to allow credit card processing through MCVE
+MAINTAINER=	brad@monetra.com
+COMMENT=	Library for credit card processing through Monetra (formerly MCVE)
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--without-pthread
 
 .include <bsd.port.mk>

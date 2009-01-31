@@ -1,8 +1,8 @@
-This is the library to allow connections to an MCVE Credit
-Card Processing Daemon via SSL, TCP/IP, and drop-files.
+This is the library to allow connections to an Monetra Payment
+Processing Daemon via SSL and TCP/IP.
 It is the base of other APIs including PHP, PERL, and JAVA.
 
-WWW: http://www.mcve.com
+WWW: http://www.monetra.com
 
 - Brad House
-brad@mcve.com
+brad@monetra.com
