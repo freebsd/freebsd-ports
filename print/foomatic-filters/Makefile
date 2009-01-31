@@ -9,7 +9,8 @@ PORTNAME=	foomatic-filters
 PORTVERSION=	3.0.2
 PORTREVISION=	4
 CATEGORIES=	print
-MASTER_SITES=	http://www.linuxprinting.org/download/foomatic/
+MASTER_SITES=	http://www.linuxprinting.org/download/foomatic/ \
+		http://www.linuxprinting.org/download/foomatic/oldstuff/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foomatic wrapper scripts
