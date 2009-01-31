@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	uif2iso
-PORTVERSION=	0.1.5a
+PORTVERSION=	0.1.7a
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.carpetsmoker.net/distfiles/ \
-		http://www.xs4all.nl/distfiles/ \
+MASTER_SITES=	http://www.xs4all.nl/distfiles/ \
 		http://www.rwxrwxrwx.net/distfiles/
 
 MAINTAINER=	carpetsmoker@rwxrwxrwx.net
@@ -20,17 +19,16 @@ PORTDOCS=	uif2iso.txt
 
 post-patch:
 	@${REINPLACE_CMD} 's|exit(1)|exit(0)|' ${WRKSRC}/uif2iso.c
+	@${REINPLACE_CMD} 's|/usr/local|${PREFIX}|' ${WRKSRC}/Makefile
 
-do-build:
-	${CC} -o ${WRKSRC}/${PORTNAME} ${CFLAGS} -lz -lssl ${WRKSRC}/uif2iso.c
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/uif2iso ${PREFIX}/bin/
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/uif2iso.txt ${DOCSDIR}
 .endif
 
+# Original files from author contain no version number and are not in
+# a separate directory.
 .if defined(MAINTAINER)
 distfile:
 	rm -fr /tmp/${PORTNAME}-${PORTVERSION}
