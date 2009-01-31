@@ -1,4 +1,4 @@
-# New ports collection makefile for: apr
+# New ports collection makefile for: serf
 # Date created:		28 May 2008
 # Whom:			Craig Rodrigues <rodrigc@FreeBSD.org>
 #
@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	serf
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
-MAINTAINER=	rodrigc@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Serf HTTP client library
 
-LIB_DEPENDS+=	apr:${PORTSDIR}/devel/apr
+LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr
 
 PROJECTHOST=	serf
 USE_BZIP2=	yes
