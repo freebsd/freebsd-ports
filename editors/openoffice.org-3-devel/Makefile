@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	openoffice.org
-PORTVERSION?=	3.1.${SNAPDATE}
+PORTVERSION?=	3.2.${SNAPDATE}
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/cws/:cws \
@@ -70,11 +70,11 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-MILESTONE?=		40
+MILESTONE?=		41
 OOOTAG?=		DEV300_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20090127
+SNAPDATE=		20090131
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 .if defined(WITH_CWS)
