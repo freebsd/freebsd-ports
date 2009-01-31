@@ -6,7 +6,7 @@
 PORTNAME=	pluxml
 PORTVERSION=	4
 CATEGORIES=	french www
-MASTER_SITES=	http://pluxml.org/download/
+MASTER_SITES=	http://download.pluxml.org/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-blog-beta${PORTVERSION}
 

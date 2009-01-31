@@ -10,7 +10,7 @@ PORTVERSION=	1.06
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	ftp
-MASTER_SITES=	http://mark.tranchant.co.uk/software/
+MASTER_SITES=	http://mark.tranchant.co.uk/files/
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Upload queue manager for non-permanent connections
