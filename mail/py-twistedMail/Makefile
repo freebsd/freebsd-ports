@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	twistedMail
-PORTVERSION=	0.4.0
+PORTVERSION=	8.2.0
 CATEGORIES=	mail devel python
-MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Mail/${PORTVERSION:S/.0//}/
+MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Mail/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedMail-${PORTVERSION}
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Twisted_Mail
 

@@ -1,4 +1,3 @@
-bin/bookify
 bin/lore
 %%PYTHON_SITELIBDIR%%/twisted/lore/__init__.py
 %%PYTHON_SITELIBDIR%%/twisted/lore/__init__.pyc
@@ -79,6 +78,9 @@ bin/lore
 %%PYTHON_SITELIBDIR%%/twisted/lore/test/test_lore.py
 %%PYTHON_SITELIBDIR%%/twisted/lore/test/test_lore.pyc
 %%PYTHON_SITELIBDIR%%/twisted/lore/test/test_lore.pyo
+%%PYTHON_SITELIBDIR%%/twisted/lore/test/test_man2lore.py
+%%PYTHON_SITELIBDIR%%/twisted/lore/test/test_man2lore.pyc
+%%PYTHON_SITELIBDIR%%/twisted/lore/test/test_man2lore.pyo
 %%PYTHON_SITELIBDIR%%/twisted/lore/texi.py
 %%PYTHON_SITELIBDIR%%/twisted/lore/texi.pyc
 %%PYTHON_SITELIBDIR%%/twisted/lore/texi.pyo

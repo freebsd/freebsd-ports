@@ -29,6 +29,9 @@ bin/tkconch
 %%PYTHON_SITELIBDIR%%/twisted/conch/client/direct.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/client/direct.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/client/direct.pyo
+%%PYTHON_SITELIBDIR%%/twisted/conch/client/knownhosts.py
+%%PYTHON_SITELIBDIR%%/twisted/conch/client/knownhosts.pyc
+%%PYTHON_SITELIBDIR%%/twisted/conch/client/knownhosts.pyo
 %%PYTHON_SITELIBDIR%%/twisted/conch/client/options.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/client/options.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/client/options.pyo
@@ -161,12 +164,27 @@ bin/tkconch
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/__init__.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/__init__.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/keydata.py
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/keydata.pyc
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/keydata.pyo
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_agent.py
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_agent.pyc
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_agent.pyo
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_cftp.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_cftp.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_cftp.pyo
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_channel.py
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_channel.pyc
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_channel.pyo
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_checkers.py
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_checkers.pyc
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_checkers.pyo
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_conch.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_conch.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_conch.pyo
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_connection.py
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_connection.pyc
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_connection.pyo
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_filetransfer.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_filetransfer.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_filetransfer.pyo
@@ -179,12 +197,18 @@ bin/tkconch
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_keys.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_keys.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_keys.pyo
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_knownhosts.py
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_knownhosts.pyc
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_knownhosts.pyo
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_manhole.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_manhole.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_manhole.pyo
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_mixin.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_mixin.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_mixin.pyo
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_openssh_compat.py
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_openssh_compat.pyc
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_openssh_compat.pyo
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_recvline.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_recvline.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_recvline.pyo
@@ -197,6 +221,15 @@ bin/tkconch
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_text.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_text.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_text.pyo
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_transport.py
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_transport.pyc
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_transport.pyo
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_userauth.py
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_userauth.pyc
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_userauth.pyo
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_window.py
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_window.pyc
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_window.pyo
 %%PYTHON_SITELIBDIR%%/twisted/conch/ttymodes.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/ttymodes.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/ttymodes.pyo
@@ -215,6 +248,7 @@ bin/tkconch
 %%PYTHON_SITELIBDIR%%/twisted/plugins/twisted_conch.py
 %%PYTHON_SITELIBDIR%%/twisted/plugins/twisted_conch.pyc
 %%PYTHON_SITELIBDIR%%/twisted/plugins/twisted_conch.pyo
+@dirrmtry %%PYTHON_SITELIBDIR%%/twisted/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/conch/ui
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/conch/test
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/conch/ssh

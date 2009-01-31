@@ -192,9 +192,9 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 # USE_TWISTED		- If this option is just yes then build and run
 #					  the dependence to twistedCore is added. Alternatively
 #					  here can be listed specific components of twisted
-#					  framework, available components are: web, web2, lore,
-#					  news, words, pair,mail, names, xish, runner, flow and
-#					  conch. Note that core component is required for any of
+#					  framework, available components are: conch, lore,
+#					  mail, names, news, runner, web, web2 and words.
+#					  Note that core component is required for any of
 #					  this optional components.
 #
 # USE_TWISTED_BUILD	- Same as previous but add only build dependency.
@@ -655,32 +655,21 @@ BUILD_DEPENDS+=		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-t
 . if defined(TWISTED_RUN_DEP)
 RUN_DEPENDS+=		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore
 . endif
-.elif ${USE_TWISTED} == "13"
-USE_TWISTED_VER=	${USE_TWISTED}
-. if defined(TWISTED_BUILD_DEP)
-BUILD_DEPENDS+=		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted
-. endif
-. if defined(TWISTED_RUN_DEP)
-RUN_DEPENDS+=		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted
-. endif
 .else
 USE_TWISTED_VER=	20
 # Checking for twisted components
-_TWISTED_COMPONENTS?=	web web2 lore news words pair mail names xish runner flow conch
+_TWISTED_COMPONENTS?=	conch lore mail names news runner web web2 words
 
 # XXX Should be here other dependencies types?
-web_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/web/__init__.py:${PORTSDIR}/www/py-twistedWeb
-web2_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/web2/__init__.py:${PORTSDIR}/www/py-twistedWeb2
-lor_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/textproc/__init__.py:${PORTSDIR}/textproc/py-twistedLore
-news_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/news/__init__.py:${PORTSDIR}/news/py-twistedNews
-words_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/words/__init__.py:${PORTSDIR}/net-im/py-twistedWords
-pair_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/pair/__init__.py:${PORTSDIR}/net/py-twistedPair
+conch_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/conch/__init__.py:${PORTSDIR}/security/py-twistedConch
+lore_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/lore/__init__.py:${PORTSDIR}/textproc/py-twistedLore
 mail_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/mail/__init__.py:${PORTSDIR}/mail/py-twistedMail
 names_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/names/__init__.py:${PORTSDIR}/dns/py-twistedNames
-xish_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/xish/__init__.py:${PORTSDIR}/devel/py-twistedXish
-runner_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/runner/__init__.py:${PORTSDIR}/devel/py-twistedRunner
-flow_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/flow/__init__.py:${PORTSDIR}/devel/py-twistedFlow
-conch_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/conch/__init__.py:${PORTSDIR}/security/py-twistedConch
+news_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/news/__init__.py:${PORTSDIR}/news/py-twistedNews
+runner_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/runner/__init__.py:${PORTSDIR}/devel/py-twistedRunner
+web2_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/web2/__init__.py:${PORTSDIR}/www/py-twistedWeb2
+web_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/web/__init__.py:${PORTSDIR}/www/py-twistedWeb
+words_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/words/__init__.py:${PORTSDIR}/net-im/py-twistedWords
 
 .for component in ${_TWISTED_COMPONENTS}
 _COMP_TEST=	${USE_TWISTED:M${component}}

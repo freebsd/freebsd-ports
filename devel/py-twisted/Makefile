@@ -6,37 +6,80 @@
 #
 
 PORTNAME=	twisted
-PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTVERSION=	8.2.0
 CATEGORIES=	devel net python
-MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	# empty
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Twisted_NoDocs-${PORTVERSION}
+DISTFILES=	# none
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An event-based Python framework for internet applications
+MAINTAINER=	python@FreeBSD.org
+COMMENT=	Metaport of Twisted, an event-driven networking engine
 
-CONFLICTS=	py??-twistedCore-[0-9]*
-
-# - Note that Twisted ships with some graphical examples and clients that
-#   require PyGNOME to run.  These are not central to the funcitoning of
-#   Twisted, but the user should feel free to install x11-toolits/py-gnome
-#   separately if desired.
-
-USE_BZIP2=	yes
-USE_PYTHON=	2.2+
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	Twisted
-PYDISTUTILS_PKGVERSION=	1.3.0rc1
-
-PLIST_SUB+=	S=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
+NO_BUILD=	yes
+USE_PYTHON=	yes
+PYDISTUTILS_NOEGGINFO=	yes
 
 WRKSRC=		${WRKDIR}/Twisted-${PORTVERSION}
 
-post-install:
-	@ ${MKDIR} ${DATADIR}/admin
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/admin/accepttests \
-	  ${WRKSRC}/admin/runtests ${DATADIR}/admin
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
 
-.include <bsd.port.mk>
+OPTIONS=	CONCH	"SSH and SFTP protocol" on \
+		LORE	"Documentation generator" on \
+		MAIL	"SMTP, IMAP and POP protocol" on \
+		NAMES	"DNS protocol" on \
+		NEWS	"NNTP protocol" on \
+		RUNNER	"Process management" on \
+		WEB	"HTTP protocol" on \
+		WEB2	"HTTP/1.1 Server Framework" on \
+		WORDS	"Chat and Instant Messaging" on
+
+do-install:
+	${DO_NADA}
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_CONCH)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/conch/__init__.py:${PORTSDIR}/security/py-twistedConch
+.endif
+
+.if !defined(WITHOUT_FLOW)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/flow/__init__.py:${PORTSDIR}/devel/py-twistedFlow
+.endif
+
+.if !defined(WITHOUT_MAIL)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/mail/__init__.py:${PORTSDIR}/mail/py-twistedMail
+.endif
+
+.if !defined(WITHOUT_NAMES)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/names/__init__.py:${PORTSDIR}/dns/py-twistedNames
+.endif
+
+.if !defined(WITHOUT_NEWS)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/news/__init__.py:${PORTSDIR}/news/py-twistedNews
+.endif
+
+.if !defined(WITHOUT_PAIR)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/pair/__init__.py:${PORTSDIR}/net/py-twistedPair
+.endif
+
+.if !defined(WITHOUT_RUNNER)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/runner/__init__.py:${PORTSDIR}/devel/py-twistedRunner
+.endif
+
+.if !defined(WITHOUT_LORE)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/lore/__init__.py:${PORTSDIR}/textproc/py-twistedLore
+.endif
+
+.if !defined(WITHOUT_WEB)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/web/__init__.py:${PORTSDIR}/www/py-twistedWeb
+.endif
+
+.if !defined(WITHOUT_WEB2)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/web2/__init__.py:${PORTSDIR}/www/py-twistedWeb2
+.endif
+
+.if !defined(WITHOUT_WORDS)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/words/__init__.py:${PORTSDIR}/net-im/py-twistedWords
+.endif
+
+.include <bsd.port.post.mk>
