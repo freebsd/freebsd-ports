@@ -9,7 +9,7 @@ PORTNAME=	dlume
 PORTVERSION=	0.2.4
 PORTREVISION=	7
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://clay.ll.pl/download/
+MASTER_SITES=	${MASTER_SITE_TUCOWS}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 address book
