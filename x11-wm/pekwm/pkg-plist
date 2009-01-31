@@ -6,10 +6,43 @@ bin/pekwm
 %%ETCDIR%%/mouse
 %%ETCDIR%%/start
 %%ETCDIR%%/vars
+%%DATADIR%%/themes/default-plain/theme
+%%DATADIR%%/themes/default/arrow.png
+%%DATADIR%%/themes/default/arrow_focus.png
+%%DATADIR%%/themes/default/bottom-border.png
+%%DATADIR%%/themes/default/bottom-border_unfocus.png
+%%DATADIR%%/themes/default/bottom-left.png
+%%DATADIR%%/themes/default/bottom-left_unfocus.png
+%%DATADIR%%/themes/default/bottom-right.png
+%%DATADIR%%/themes/default/bottom-right_unfocus.png
+%%DATADIR%%/themes/default/button.png
+%%DATADIR%%/themes/default/button_hover.png
+%%DATADIR%%/themes/default/button_press.png
+%%DATADIR%%/themes/default/button_unfocus.png
+%%DATADIR%%/themes/default/item.png
+%%DATADIR%%/themes/default/item_focus.png
+%%DATADIR%%/themes/default/left-border.png
+%%DATADIR%%/themes/default/left-border_unfocus.png
+%%DATADIR%%/themes/default/menu-bottom.png
+%%DATADIR%%/themes/default/menu-bottom_unfocus.png
+%%DATADIR%%/themes/default/menuline.png
+%%DATADIR%%/themes/default/right-border.png
+%%DATADIR%%/themes/default/right-border_unfocus.png
+%%DATADIR%%/themes/default/tab-separator.png
+%%DATADIR%%/themes/default/tab-separator_unfocus.png
 %%DATADIR%%/themes/default/theme
+%%DATADIR%%/themes/default/title.png
+%%DATADIR%%/themes/default/title_unfocus.png
+%%DATADIR%%/themes/default/top-border.png
+%%DATADIR%%/themes/default/top-border_unfocus.png
+%%DATADIR%%/themes/default/top-left.png
+%%DATADIR%%/themes/default/top-left_unfocus.png
+%%DATADIR%%/themes/default/top-right.png
+%%DATADIR%%/themes/default/top-right_unfocus.png
 %%DATADIR%%/scripts/pekwm_ws_menu.sh
 %%DATADIR%%/scripts/pekwm_themeset.sh
 @dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/themes/default-plain
 @dirrm %%DATADIR%%/themes/default
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
