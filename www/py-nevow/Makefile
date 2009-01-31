@@ -19,7 +19,7 @@ COMMENT=	A web application templating system, based on the the Twisted Woven
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_TWISTED=	yes
+USE_TWISTED=	web
 USE_GETTEXT=	yes
 NO_BUILD=	yes
 PYDISTUTILS_PKGNAME=	Nevow
@@ -28,8 +28,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKSRC}/pkg-message
 
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=		${PYTHON_SITELIBDIR}/twisted/web/__init__.py:${PORTSDIR}/www/py-twistedWeb \
-			${PYTHON_SITELIBDIR}/docutils/__init__.py:${PORTSDIR}/textproc/py-docutils
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/docutils/__init__.py:${PORTSDIR}/textproc/py-docutils
 .endif
 
 post-install:
