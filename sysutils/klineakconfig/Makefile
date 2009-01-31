@@ -19,6 +19,7 @@ COMMENT=	Configure lineakd through a KDE interface
 LIB_DEPENDS=	lineak.8:${PORTSDIR}/sysutils/lineakd
 
 USE_KDELIBS_VER=3
+USE_XORG=	xkbfile
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 
