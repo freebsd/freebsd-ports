@@ -8,7 +8,7 @@
 PORTNAME=	alienwave
 PORTVERSION=	0.3.0
 CATEGORIES=	games
-MASTER_SITES=	http://www.cs.unibo.it/~pira/alienwave/
+MASTER_SITES=	http://www.alessandropira.org/alienwave/
 
 MAINTAINER=	tlp@liquidx.org
 COMMENT=	Shoot'em up game written using ncurses

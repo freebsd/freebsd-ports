@@ -9,7 +9,7 @@ PORTNAME=	amphetamine
 PORTVERSION=	0.8.10
 PORTREVISION=	7
 CATEGORIES=	games
-MASTER_SITES=	http://n.ethz.ch/student/loehrerl/amph/files/
+MASTER_SITES=	http://homepage.hispeed.ch/loehrer/amph/files/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX}
 
