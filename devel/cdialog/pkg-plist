@@ -59,6 +59,7 @@ lib/libcdialog.so.6
 %%EXAMPLESDIR%%/form1-both
 %%EXAMPLESDIR%%/form1-extra
 %%EXAMPLESDIR%%/form1-help
+%%EXAMPLESDIR%%/form1-utf8
 %%EXAMPLESDIR%%/form2
 %%EXAMPLESDIR%%/form3
 %%EXAMPLESDIR%%/form4
@@ -138,6 +139,7 @@ lib/libcdialog.so.6
 %%EXAMPLESDIR%%/password1
 %%EXAMPLESDIR%%/password2
 %%EXAMPLESDIR%%/passwordform1
+%%EXAMPLESDIR%%/passwordform1-utf8
 %%EXAMPLESDIR%%/pause
 %%EXAMPLESDIR%%/pause-help
 %%EXAMPLESDIR%%/progress
