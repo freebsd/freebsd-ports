@@ -8,7 +8,7 @@
 PORTNAME=	cut
 PORTVERSION=	2.4
 CATEGORIES=	devel
-MASTER_SITES=	http://www.falvotech.com/content/cut/downloads/
+MASTER_SITES=	http://www.falvotech.com/content/cut/2.4/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unit Testing Framework for C, C++ and Objective-C
