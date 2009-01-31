@@ -17061,6 +17061,7 @@ pecomato                        ports/graphics/pecomato
 pedisassem                      ports/devel/pedisassem
 peeper                          ports/x11/peeper
 peercast                        ports/net-p2p/peercast
+peg-e                           ports/games/peg-e
 peksystray                      ports/x11-wm/peksystray
 pekwm                           ports/x11-wm/pekwm
 pen                             ports/net/pen
@@ -21334,6 +21335,7 @@ trac                            ports/www/trac
 trac-accountmanager             ports/www/trac-accountmanager
 trac-addcomment                 ports/www/trac-addcomment
 trac-advancedticketworkflow     ports/www/trac-advancedticketworkflow
+trac-batchmodify                ports/www/trac-batchmodify
 trac-blog                       ports/www/trac-blog
 trac-bzr                        ports/www/trac-bzr
 trac-calendar                   ports/www/trac-calendar
