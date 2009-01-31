@@ -9,12 +9,12 @@ PORTNAME=	abuse_sdl
 PORTVERSION=	0.7.0
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	http://www.labyrinth.net.au/~trandor/abuse/files/
+MASTER_SITES=	http://abuse.zoy.org/raw-attachment/wiki/Downloads/
+DISTNAME=	abuse-sdl-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SDL port of the Abuse game engine
 
-USE_BZIP2=	yes
 USE_GL=		gl
 USE_SDL=	sdl
 USE_GMAKE=	yes
