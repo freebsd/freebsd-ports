@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pqiv
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.pberndt.com/raw//Programme/Linux/pqiv/_download/ \
 		http://www.carpetsmoker.net/distfiles/ \
