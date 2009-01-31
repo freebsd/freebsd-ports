@@ -9,7 +9,8 @@ PORTNAME=	cvm
 PORTVERSION=	0.82
 PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	http://untroubled.org/${PORTNAME}/
+MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
+		http://untroubled.org/${PORTNAME}/archive/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Credential Validation Modules
