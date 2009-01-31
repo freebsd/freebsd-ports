@@ -6,29 +6,48 @@
 #
 
 PORTNAME=	yc.el
-PORTVERSION=	4.0.13
-PORTREVISION=	2
+PORTVERSION=	5.0.0
 PORTEPOCH=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://www.ceres.dti.ne.jp/~knak/
 DISTNAME=	yc-${PORTVERSION}
+DISTFILES=	${DISTNAME}.el.gz
 
 MAINTAINER=	t@nakao.org
 COMMENT=	Yet another Canna client for Emacs/XEmacs
 
+NO_WRKSUBDIR=	yes
+
 USE_EMACS=	yes
-YC_LISPDIR=		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/yc
+YC_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/yc
 
-MAKE_ARGS+=	LISPDIR=${YC_LISPDIR}
-MAKE_ARGS+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}"
-MAKE_ARGS+=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
-
-PLIST_FILES=	bin/icanna \
-		%%EMACS_VERSION_SITE_LISPDIR%%/yc/yc.el \
+PLIST_FILES=	%%EMACS_VERSION_SITE_LISPDIR%%/yc/yc.el \
 		%%EMACS_VERSION_SITE_LISPDIR%%/yc/yc.elc
 PLIST_DIRS=	%%EMACS_VERSION_SITE_LISPDIR%%/yc
+
+OPTIONS=	ICANNA	"Enable icanna support"	off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_ICANNA)
+RUN_DEPENDS+=	${LOCALBASE}/bin/icanna:${PORTSDIR}/japanese/icanna
+.endif
+
+do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
+	@cd ${WRKDIR} && ${GZCAT} ${DISTDIR}/${DISTNAME}.el.gz >yc.el
+
+do-build:
+	@cd ${WRKDIR} && \
+	${EMACS_CMD} -batch -f batch-byte-compile yc.el
+
+do-install:
+	@${TEST} -f ${YC_LISPDIR} || ${MKDIR} ${YC_LISPDIR}
+	@cd ${WRKDIR} && \
+	${INSTALL_SCRIPT} yc.el yc.elc ${YC_LISPDIR}
 
 post-install:
 	@${CAT} ${MASTERDIR}/pkg-message
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
