@@ -1,0 +1,16 @@
+Index: makefile.pmk
+===================================================================
+--- readlicense_oo/util/makefile.pmk (revision 266942)
++++ readlicense_oo/util/makefile.pmk (working copy)
+@@ -55,7 +55,11 @@
+ virtual : $(MERGEDXRM) $(COMMONMISC)$/readme.dtd $(PRJ)$/docs/readme.xsl
+ 
+ $(MISC)$/readme_text.xsl : virtual
++.IF "$(USE_SHELL)"!="4nt"
++ 	$(SED) 's#method="html".*>#method="text"/>#' < ..$/readme.xsl > $@
++.ELSE			# "$(USE_SHELL)"!="4nt"
+ 	$(SED) "s/method=\"html\".*>/method=\"text\"\/>/" < ..$/readme.xsl > $@
++.ENDIF			# "$(USE_SHELL)"!="4nt"
+ 
+ $(MISC)$/$(GUI)$/$(eq,$(GUI),WNT readme README)_%.html : 'virtual'
+ 	$(XSLTPROC) --nonet -o $@ \
