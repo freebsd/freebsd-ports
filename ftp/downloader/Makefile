@@ -17,6 +17,9 @@ DISTNAME=	d4x-${PORTVERSION}
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Program for downloading via FTP or HTTP with GUI
 
+DEPRECATED=	sources unavailable - website dissappeared
+EXPIRATION_DATE=	2009-02-15
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/smart_ptr.hpp:${PORTSDIR}/devel/boost \
 		bash:${PORTSDIR}/shells/bash
 
