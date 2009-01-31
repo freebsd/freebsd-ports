@@ -20,7 +20,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		GLU.1:${PORTSDIR}/graphics/libGLU
 
-USE_XORG=	x11
+USE_XORG=	x11 xi
 USE_GL=		glw
 USE_GMAKE=	yes
 USE_ICONV=	yes
