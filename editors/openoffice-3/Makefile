@@ -8,7 +8,6 @@
 
 PORTNAME?=	openoffice.org
 PORTVERSION?=	${OOOVERSION}
-PORTREVISION?=	1
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/cws/:cws \
@@ -32,7 +31,7 @@ DISTFILES+=	${CWSARCHIVE}:cws
 .endif
 CWSARCHIVE=	${WITH_CWS}.tar.gz
 
-OOOVERSION=	3.0.0
+OOOVERSION=	3.0.1
 NO_LATEST_LINK=	yes
 USE_GNOME=	desktopfileutils gtk20
 MOZILLA_VERSION=	1.7.5
@@ -73,7 +72,7 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-MILESTONE?=		9
+MILESTONE?=		15
 OOOTAG?=		OOO300_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
