@@ -1,0 +1,25 @@
+fix for 'stderr' error
+
+dbus-daemon: Would reject message, 1 matched rules; type="method_call", sender=":1.33" (uid=1002 pid=23124 comm=") interface="org.freedesktop.DBus.Introspectable" member="Introspect" error name="(unset)" requested_reply=0 destination="org.freedesktop.Hal" (uid=0 pid=25899 comm="))
+
+here is a patch for hal.conf. Fixed in upstream, obrient from https://bugs.freedesktop.org/show_bug.cgi?id=18985
+
+--- hal.conf.in.orig	2008-08-14 04:32:12.000000000 -0400
++++ hal.conf.in	2008-12-19 12:11:02.000000000 -0500
+@@ -16,6 +16,8 @@
+ 
+   <!-- Allow anyone to invoke methods on the Manager and Device interfaces -->
+   <policy context="default">
++    <allow send_destination="org.freedesktop.Hal"
++           send_interface="org.freedesktop.DBus.Introspectable"/>
+     <allow send_interface="org.freedesktop.Hal.Manager"/>
+     <allow send_interface="org.freedesktop.Hal.Device"/>
+     <allow receive_interface="org.freedesktop.Hal.Manager"
+@@ -26,6 +28,7 @@
+     <allow send_interface="org.freedesktop.Hal.Device.SystemPowerManagement"/>
+     <allow send_interface="org.freedesktop.Hal.Device.LaptopPanel"/>
+     <allow send_interface="org.freedesktop.Hal.Device.Volume"/>
++    <allow send_interface="org.freedesktop.Hal.Device.KillSwitch"/>
+     <allow send_interface="org.freedesktop.Hal.Device.Volume.Crypto"/>
+     <allow receive_interface="org.freedesktop.Hal.Device.SystemPowerManagement"
+ 	   receive_sender="org.freedesktop.Hal"/>
