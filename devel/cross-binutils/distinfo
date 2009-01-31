@@ -1,6 +1,6 @@
 MD5 (binutils-2.18.tar.bz2) = 9d22ee4dafa3a194457caf4706f9cf01
 SHA256 (binutils-2.18.tar.bz2) = 487a33a452f0edcf1f8bb8fc23dff5c7a82edec3f3f8b65632b6c945e961ee9b
 SIZE (binutils-2.18.tar.bz2) = 14962245
-MD5 (binutils-2.18-rtems4.9-20071104.diff) = 7ce321d935005bca5a352bcd74f8b2e5
+MD5 (binutils-2.18-rtems4.8-20071104.diff) = 7ce321d935005bca5a352bcd74f8b2e5
 SHA256 (binutils-2.18-rtems4.8-20071104.diff) = fb31b147fba28cef481f07138be78980b5e7ed3bb07fd18c72defd4c9625f0f7
 SIZE (binutils-2.18-rtems4.8-20071104.diff) = 1220

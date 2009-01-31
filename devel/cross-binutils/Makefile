@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
 PKGNAMEPREFIX=	${TGTARCH}-${TGTABI}-
 
-PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/
+PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/4.8/
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	stas@FreeBSD.org
