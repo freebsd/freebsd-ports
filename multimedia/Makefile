@@ -211,6 +211,7 @@
     SUBDIR += pvrxxx
     SUBDIR += pwcbsd
     SUBDIR += py-gstreamer
+    SUBDIR += py-kaa-base
     SUBDIR += py-pybmp
     SUBDIR += qdvdauthor
     SUBDIR += qt4-phonon
