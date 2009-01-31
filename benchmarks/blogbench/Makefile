@@ -8,7 +8,8 @@
 PORTNAME=	blogbench
 PORTVERSION=	1.0
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp://ftp.blogbench.pureftpd.org/blogbench/
+MASTER_SITES=	http://download.pureftpd.org/pub/blogbench/ \
+		ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/blogbench/
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Performance Test of Filesystem I/O
