@@ -10,7 +10,7 @@ PORTVERSION=	0.5.8
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	avanor
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	Rogue-like game with easy ADOM-like user interface
@@ -18,6 +18,7 @@ COMMENT=	Rogue-like game with easy ADOM-like user interface
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ARGS+=	VERSION=${PORTVERSION} DATA_DIR=${DATADIR}/
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|g++|${CXX}|; \
