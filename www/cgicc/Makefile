@@ -10,7 +10,7 @@ PORTNAME=	cgicc
 PORTVERSION=	3.2.3
 PORTREVISION=	1
 CATEGORIES=	www devel
-MASTER_SITES=	ftp://ftp.cgicc.org/
+MASTER_SITES=	GNU
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	A C++ class library for writing CGI applications
