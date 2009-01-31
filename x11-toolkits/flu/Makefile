@@ -9,7 +9,7 @@ PORTNAME=	flu
 PORTVERSION=	2.14
 PORTREVISION=	4
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.osc.edu/~jbryan/FLU/
+MASTER_SITES=	http://www.osc.edu/archive/FLU/
 DISTNAME=	FLU_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
