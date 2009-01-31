@@ -7,7 +7,7 @@
 
 PORTNAME=	zsnes
 PORTVERSION=	1.51
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF
@@ -20,8 +20,8 @@ COMMENT=	Intel x86 only Super Nintendo Entertainment System (SNES) Emulator
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-# non-portable, for a portable emulator see emulators/snes9x
 ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	non-portable, for a portable emulator see emulators/snes9x
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/}/src
 
