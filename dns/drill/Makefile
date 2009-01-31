@@ -6,23 +6,25 @@
 #
 
 PORTNAME=	drill
-PORTVERSION=	0.9.2
+PORTVERSION=	1.4.1
 CATEGORIES=	dns
-MASTER_SITES=	http://www.nlnetlabs.nl/downloads/drill/
+MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/
+DISTNAME=	ldns-${PORTVERSION}
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	A dig style dnssec aware dns debugging tool
 
-MAN1=		drill.1
-MANCOMPRESSED=	no
+LIB_DEPENDS=	ldns.1:${PORTSDIR}/dns/ldns
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_BZIP2=	yes
+MAN1=		drill.1
+
+WRKSRC=		${WRKDIR}/ldns-${PORTVERSION}/${PORTNAME}
 USE_OPENSSL=	yes
-HAS_CONFIGURE=	yes
-LDFLAGS+=	-L${OPENSSLLIB}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
 CFLAGS+=	${CPPFLAGS} -I${OPENSSLINC}
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
 
 PLIST_FILES=	bin/drill
 
