@@ -8,7 +8,7 @@
 
 PORTNAME=	webkit
 PORTVERSION=	1.0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://people.freedesktop.org/~alp/webkit/gtk/
 PKGNAMESUFFIX=	-gtk2
@@ -29,7 +29,8 @@ USE_PERL5=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf:262 automake:110 libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_path_DOLT_BASH=""
 CONFIGURE_ARGS=	--with-webkit-target=x11 \
 		--enable-icon-database \
 		--enable-svg \
