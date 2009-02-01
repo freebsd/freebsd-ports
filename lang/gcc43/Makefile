@@ -27,7 +27,7 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 
 SUFFIX=		43
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
-NOT_FOR_ARCHS=	alpha ia64
+NOT_FOR_ARCHS=	alpha ia64 powerpc
 USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
