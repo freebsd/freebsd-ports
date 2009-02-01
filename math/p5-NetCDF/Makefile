@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	NetCDF
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	math perl5
 MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/netcdf-perl/
 PKGNAMEPREFIX=	p5-
@@ -17,7 +16,13 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	rand@meridian-enviro.com
 COMMENT=	Perl5 module to read and write netCDF files
 
+NETCDF_VER?=	4
+
+.if (${NETCDF_VER} == 4)
+LIB_DEPENDS=	netcdf.5:${PORTSDIR}/science/netcdf4
+.else
 LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
+.endif
 
 USE_PERL5=	yes
 
