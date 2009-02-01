@@ -9,8 +9,7 @@ PORTNAME=	librsvg
 PORTVERSION=	1.0.3
 PORTREVISION=	7
 CATEGORIES=	graphics gnome
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	sources/librsvg/1.0
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for parsing and rendering SVG vector-graphic files
