@@ -17,8 +17,7 @@ MASTER_SITE_SUBDIR=	releases/gcc-${VERSIONSTRING}
 DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g77-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
+		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX}
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 3.4
@@ -82,14 +81,6 @@ pre-configure:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
 	@${RM} -f ${SRCDIR}/gcc/*/*.info*
 	@${MKDIR} ${CONFIGURE_WRKSRC}
-
-post-build:
-	@${ECHO_MSG} "Consider running 'make check' before 'make install', especially"
-	@${ECHO_MSG} "if you have not performed this build on -STABLE or -CURRENT."
-	@${ECHO_MSG} "This assumes that you have the dejagnu port installed."
-
-check: build
-	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
 	# man pages can only be generated if Perl >= 5.6 is installed;

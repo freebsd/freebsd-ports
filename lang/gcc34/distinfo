@@ -10,6 +10,3 @@ SIZE (gcc-g77-3.4.6.tar.bz2) = 908261
 MD5 (gcc-objc-3.4.6.tar.bz2) = 87453b6e9b32047de11ae933a985155f
 SHA256 (gcc-objc-3.4.6.tar.bz2) = 053061f7d828f73e1c6a6b9d2a4eeba8d1d8f64bd0a77d2df40091a429de1f5d
 SIZE (gcc-objc-3.4.6.tar.bz2) = 215655
-MD5 (gcc-testsuite-3.4.6.tar.bz2) = 32a1057b841b4782ae3f4be84a98c085
-SHA256 (gcc-testsuite-3.4.6.tar.bz2) = 87f8c7ca951fd13ea241328de2e0e1af8281f1aa3a68e5831e37ff746a256574
-SIZE (gcc-testsuite-3.4.6.tar.bz2) = 2646715
