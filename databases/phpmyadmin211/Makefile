@@ -7,6 +7,7 @@
 
 PORTNAME=	phpMyAdmin211
 DISTVERSION=	2.11.9.4
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/phpmyadmin
 DISTNAME=	${PORTNAME:S/211//}-${DISTVERSION}-all-languages
@@ -71,7 +72,6 @@ SUB_FILES+=	pkg-message
 
 OPTIONS=	BZ2	 "bzip2 library support" on \
 		GD	 "GD library support" on \
-		MYSQLI	 "Improved MySQL support" off \
 		OPENSSL	 "OpenSSL support" on \
 		PDF	 "PDFlib support (implies GD)" on \
 		ZLIB	 "ZLIB support" on \
@@ -90,13 +90,6 @@ OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 # Options that default to on:
 .for opt in BZ2 GD OPENSSL PDF ZLIB MCRYPT MBSTRING
 .    if !defined(WITHOUT_${opt}) || defined(WITH_${opt})
-USE_PHP+=	${opt:L}
-.    endif
-.endfor
-
-# Options that default to off:
-.for opt in MYSQLI
-.    if defined(WITH_${opt}) && !defined(WITHOUT_${opt})
 USE_PHP+=	${opt:L}
 .    endif
 .endfor
@@ -128,8 +121,8 @@ pre-everything::
 	${ECHO_MSG} "    WITH_SUPHP=yes   Install appropriately for use with"
 	${ECHO_MSG} "                     the www/suphp port [default: no]"
 	${ECHO_MSG} ""
-	${ECHO_MSG} "Note that selecting the MYSQLI option will only work"
-	${ECHO_MSG} "with PHP5 and MySQL 4.1.x"
+	${ECHO_MSG} "Note that the mysqli option is not available with this"
+	${ECHO_MSG} "port.  Please use databases/phpmyadmin instead."
 	${ECHO_MSG} ""
 	${ECHO_MSG} "If you want to use PHP4, for best results, please"
 	${ECHO_MSG} "install lang/php4 before attempting to install"
