@@ -33,7 +33,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 	${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.6.0+
 
 MAN1=	handel.pl.1
 MAN3=	Handel::Iterator.3 \
@@ -116,9 +116,5 @@ MAN3=	Handel::Iterator.3 \
 
 post-extract:
 	@${PERL} -pi -e '$$_ = undef if /^auto_install/' ${WRKSRC}/Makefile.PL
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	perl 5.6 or newer required. Install lang/perl5.8 or lang/perl5 and try again
-.endif
 
 .include <bsd.port.post.mk>

@@ -20,6 +20,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
+EXPIRATION_DATE=	2009-05-31
+DEPRECATED=	no longer under development, please use lang/perl5.8 or lang/perl5.10
+
 CONFLICTS=	perl-5.8.* perl-5.10.*
 
 PERL_VER=	5.6.2
