@@ -8,7 +8,7 @@
 PORTNAME=	cadubi
 PORTVERSION=	1.3
 CATEGORIES=	graphics editors
-MASTER_SITES=	http://langworth.com/downloads/
+MASTER_SITES=	http://langworth.com/pub/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASCII drawing utility
