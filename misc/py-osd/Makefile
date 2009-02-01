@@ -9,8 +9,7 @@ PORTNAME=	osd
 PORTVERSION=	0.2.14
 PORTREVISION=	4
 CATEGORIES=	misc python
-MASTER_SITES=	http://repose.cx/pyosd/ \
-		http://damien.kangaweb.com/moving/stuff/pyosd/
+MASTER_SITES=	http://ichi2.net/pyosd/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyosd-${PORTVERSION}
 
