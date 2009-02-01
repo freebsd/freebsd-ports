@@ -5,12 +5,10 @@ bin/g++%%SUFFIX%%
 bin/gcc%%SUFFIX%%
 bin/gccbug%%SUFFIX%%
 bin/gcov%%SUFFIX%%
-bin/gfortran%%SUFFIX%%
 bin/%%GNU_HOST%%-c++%%SUFFIX%%
 bin/%%GNU_HOST%%-g++%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
 bin/%%GNU_HOST%%-gcc%%SUFFIX%%
-bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
 info/gcc%%SUFFIX%%/dir
 %%JAVA%%bin/addr2name.awk%%SUFFIX%%
 %%JAVA%%bin/gappletviewer%%SUFFIX%%
