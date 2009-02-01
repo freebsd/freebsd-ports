@@ -16,14 +16,18 @@ MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
+		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX}
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.3
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		mpfr.3:${PORTSDIR}/math/mpfr
+
+.if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
+DISTFILES+=	gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
+BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
+.endif
 
 SUFFIX=		43
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
@@ -155,12 +159,7 @@ pre-configure:
 	@${RM} -f ${SRCDIR}/gcc/*/*.info*
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
-post-build:
-	@${ECHO_MSG} "Consider running 'make check' before 'make install', especially"
-	@${ECHO_MSG} "if you have not performed this build on -STABLE or -CURRENT."
-	@${ECHO_MSG} "This assumes that you have the dejagnu port installed."
-
-check: build
+regression-test: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
