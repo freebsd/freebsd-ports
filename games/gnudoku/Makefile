@@ -9,8 +9,7 @@ PORTNAME=	GNUDoku
 PORTVERSION=	0.93
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://offload1.icculus.org/~jcspray/GNUDoku/ \
-		http://icculus.org/~jcspray/GNUDoku/
+MASTER_SITES=	http://offload2.icculus.org:9090/~jcspray/GNUDoku/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A free program for creating and solving Su Doku puzzles
