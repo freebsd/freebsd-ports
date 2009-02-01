@@ -1,0 +1,41 @@
+--- qt4-im/Makefile.orig	2009-02-01 08:50:10.000000000 +0800
++++ qt4-im/Makefile	2009-02-01 08:55:39.000000000 +0800
+@@ -1,29 +1,29 @@
+ include ../config.mak
+ QT=qt4
+-QTIM=$(QT)/plugins/lib/inputmethods
+-IMMODULES=$(libdir)/$(QTIM)
++QTIM=$(QT)/plugins/inputmethods
++IMMODULES=/usr/local/lib/$(QTIM)
+ ifeq ($(LIB), lib64)
+-	IMMODULES_LOCAL=/usr/$(LIB)/qt4/plugins/lib64/inputmethods
++	IMMODULES_LOCAL=/usr/local/lib/qt4/plugins/lib64/inputmethods
+ else
+-	IMMODULES_LOCAL=/usr/$(LIB)/$(QTIM)
++	IMMODULES_LOCAL=$(IMMODULES)
+ endif
+-QTINC=/usr/lib/$(QT)/include
++QTINC=/usr/local/include/$(QT)
+ 
+-INCS=-I../im-client -I$(QTINC) -I/usr/include/X11 -I$(QTINC)/QtGui -I$(QTINC)/QtCore
++INCS=-I../im-client -I$(QTINC) -I/usr/local/include -I$(QTINC)/QtGui -I$(QTINC)/QtCore
+ CXXFLAGS=$(OPTFLAGS) $(INCS) -Wall -D_REENTRANT -fPIC  -DQT4 -DQT_SHARED \
+ -DQT_IMMODULE -DPIC
+ OBJS= moc_gcin-qt.o gcin-qt.o im-gcin-qt.o gcin-imcontext-qt.o
+ .SUFFIXES:	.c .cpp .a .so .E .h
+-LDFLAGS=-L/usr/lib/$(QT)/$(LIB) -L/usr/X11R6/$(LIB) -L../im-client -lQtGui -lQtCore -lmng -ljpeg -lpng -lz \
++LDFLAGS=-L/usr/local/lib/$(QT) -L/usr/local/lib -L../im-client -lQtGui -lQtCore -lmng -ljpeg -lpng -lz \
+ -lXrender -lXrandr  -lXft -lfontconfig -lgcin-im-client \
+--lXext -lX11 -lm -lSM -lICE -ldl -lpthread
++-lXext -lX11 -lm -lSM -lICE -lpthread
+ all:    im-gcin.so
+ 
+ .cpp.E:
+ 	$(CXX) -E $(CFLAGS) $(INCS) $< > $@
+ 
+ moc_gcin-qt.cpp:	gcin-qt.h
+-	/usr/lib/$(QT)/bin/moc $< -o moc_gcin-qt.cpp
++	/usr/local/bin/moc-qt4 $< -o moc_gcin-qt.cpp
+ 
+ im-gcin.so: $(OBJS)
+ 	export LD_RUN_PATH=$(gcinlibdir) ;\
