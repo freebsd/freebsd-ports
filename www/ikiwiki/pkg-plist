@@ -105,6 +105,7 @@
 %%DATADIR%%/templates/blogpost.tmpl
 %%DATADIR%%/templates/change.tmpl
 %%DATADIR%%/templates/comment.tmpl
+%%DATADIR%%/templates/commentmoderation.tmpl
 %%DATADIR%%/templates/editcomment.tmpl
 %%DATADIR%%/templates/editpage.tmpl
 %%DATADIR%%/templates/editconflict.tmpl
@@ -219,6 +220,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/toggle.pm
 %%SITE_PERL%%/IkiWiki/Plugin/txt.pm
 %%SITE_PERL%%/IkiWiki/Plugin/typography.pm
+%%SITE_PERL%%/IkiWiki/Plugin/underlay.pm
 %%SITE_PERL%%/IkiWiki/Plugin/version.pm
 %%SITE_PERL%%/IkiWiki/Plugin/websetup.pm
 %%SITE_PERL%%/IkiWiki/Plugin/wikitext.pm
