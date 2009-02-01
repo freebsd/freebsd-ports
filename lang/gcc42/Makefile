@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	gcc
+PORTNAME=	gcc
 PORTVERSION=	4.2.5
 PORTREVISION=	20081126
 CATEGORIES=	lang java
@@ -14,20 +14,18 @@ VERSIONSTRING=	4.2-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
+		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX}
 
 MAINTAINER?=	gerald@FreeBSD.org
-COMMENT?=	GNU Compiler Collection 4.2
+COMMENT=	GNU Compiler Collection 4.2
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		mpfr.3:${PORTSDIR}/math/mpfr
 
 SUFFIX=		42
-LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}
-NOT_FOR_ARCHS=	ia64
+LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
+NOT_FOR_ARCHS=	ia64 powerpc
 USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -70,14 +68,12 @@ PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET} \
 MAN1=		cpp${SUFFIX}.1 \
 		g++${SUFFIX}.1 \
 		gcc${SUFFIX}.1 \
-		gcov${SUFFIX}.1 \
-		gfortran${SUFFIX}.1
+		gcov${SUFFIX}.1
 INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/cppinternals \
 		gcc${SUFFIX}/gcc \
 		gcc${SUFFIX}/gccinstall \
 		gcc${SUFFIX}/gccint \
-		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/libgomp
 
 .if ! defined(WITHOUT_JAVA)
@@ -134,14 +130,6 @@ pre-configure:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
 	@${RM} -f ${SRCDIR}/gcc/*/*.info*
 	@${MKDIR} ${CONFIGURE_WRKSRC}
-
-post-build:
-	@${ECHO_MSG} "Consider running 'make check' before 'make install', especially"
-	@${ECHO_MSG} "if you have not performed this build on -STABLE or -CURRENT."
-	@${ECHO_MSG} "This assumes that you have the dejagnu port installed."
-
-check: build
-	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
 	# man pages can only be generated if Perl >= 5.6 is installed;
