@@ -45,7 +45,7 @@ OPTIONS=	ICONS		"Install default icon set" on \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_ICONS)
-DISTFILES+=	fvwm_icons.tgz
+DISTFILES+=	fvwm_icons-20070101.tar.bz2
 .endif
 
 .if defined(WITHOUT_ICONV)
