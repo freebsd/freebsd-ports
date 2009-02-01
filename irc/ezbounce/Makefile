@@ -8,8 +8,7 @@
 PORTNAME=	ezbounce
 PORTVERSION=	1.04c
 CATEGORIES=	irc
-MASTER_SITES=	http://druglord.freelsd.org/ezbounce/files/ \
-		ftp://ftp.rewt.org.uk/pub/distfiles/
+MASTER_SITES=	http://www.linuxftw.com/ezbounce/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
