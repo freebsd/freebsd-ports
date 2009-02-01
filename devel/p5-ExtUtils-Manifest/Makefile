@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ExtUtils-Manifest
-PORTVERSION=	1.55
+PORTVERSION=	1.56
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Utilities to write and check a MANIFEST file
 
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
+BUILD_DEPENDS=	p5-PathTools>=0.8:${PORTSDIR}/devel/p5-PathTools
 
 PERL_CONFIGURE=	yes
 
