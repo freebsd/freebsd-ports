@@ -10,6 +10,7 @@ PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	gould
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gtk+ based screen capture
