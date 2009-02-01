@@ -1,0 +1,18 @@
+%%SPAMFILTER%%osbf-lua/cache_report.lua
+%%SPAMFILTER%%osbf-lua/classify.sample
+%%SPAMFILTER%%osbf-lua/create_databases.lua
+%%SPAMFILTER%%osbf-lua/database_status.lua
+%%SPAMFILTER%%osbf-lua/getopt.lua
+%%SPAMFILTER%%osbf-lua/promailrc.sample
+%%SPAMFILTER%%osbf-lua/random.lua
+%%SPAMFILTER%%osbf-lua/roc.lua
+%%SPAMFILTER%%osbf-lua/spamfilter.help
+%%SPAMFILTER%%osbf-lua/spamfilter.lua
+%%SPAMFILTER%%osbf-lua/spamfilter_commands.lua
+%%SPAMFILTER%%osbf-lua/spamfilter_config.lua
+%%SPAMFILTER%%osbf-lua/toer.lua
+%%SPAMFILTER%%osbf-lua/train.sample
+%%SPAMFILTER%%@dirrmtry osbf-lua
+lib/lua51/osbf.so
+lib/lua51/libosbf.so.2.0.4
+@dirrmtry lib/lua51

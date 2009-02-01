@@ -1,0 +1,8 @@
+OSBF-Lua (Orthogonal Sparse Bigrams with confidence Factor) is a Lua C module
+for text classification. It is a port of the OSBF classifier implemented in the
+CRM114 project. This implementation attempts to put focus on the classification
+task itself by using Lua as the scripting language, a powerful yet light-weight
+and fast language, which makes it easier to build and test more elaborated
+filters and training methods.
+
+WWW: http://osbf-lua.luaforge.net/
