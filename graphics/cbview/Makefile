@@ -9,7 +9,7 @@ PORTNAME=	cbview
 PORTVERSION=	0.06
 PORTREVISION=	6
 CATEGORIES=	graphics perl5
-MASTER_SITES=	http://elvine.org/code/cbview/
+MASTER_SITES=	http://www.sourcefiles.org/Toys/Humor/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A viewer/converter for CBR/CBZ comic book archives
