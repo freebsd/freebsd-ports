@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zfs-snapshot-mgmt
-PORTVERSION=	20080706
+PORTVERSION=	20090201
 CATEGORIES=	sysutils
 MASTER_SITES=	http://marcin.studio4plus.com/files/
 
