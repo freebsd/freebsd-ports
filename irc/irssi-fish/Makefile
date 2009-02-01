@@ -9,7 +9,7 @@ PORTNAME=	irssi-fish
 DISTVERSION=	0.99
 PORTREVISION=	2
 CATEGORIES=	irc security
-MASTER_SITES=	http://fish.sekure.us/irssi/
+MASTER_SITES=	http://fish.sekure.la/irssi/
 DISTNAME=	FiSH-irssi.v${DISTVERSION}-source
 
 MAINTAINER=	wahjava@gmail.com
