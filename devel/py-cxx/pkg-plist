@@ -1,8 +1,14 @@
 include/%%PYTHON_VERSION%%/CXX/Config.hxx
+include/%%PYTHON_VERSION%%/CXX/CxxDebug.hxx
 include/%%PYTHON_VERSION%%/CXX/Exception.hxx
+include/%%PYTHON_VERSION%%/CXX/ExtensionModule.hxx
+include/%%PYTHON_VERSION%%/CXX/ExtensionOldType.hxx
+include/%%PYTHON_VERSION%%/CXX/ExtensionType.hxx
+include/%%PYTHON_VERSION%%/CXX/ExtensionTypeBase.hxx
 include/%%PYTHON_VERSION%%/CXX/Extensions.hxx
 include/%%PYTHON_VERSION%%/CXX/IndirectPythonInterface.hxx
 include/%%PYTHON_VERSION%%/CXX/Objects.hxx
+include/%%PYTHON_VERSION%%/CXX/PythonType.hxx
 include/%%PYTHON_VERSION%%/CXX/Version.hxx
 include/%%PYTHON_VERSION%%/CXX/WrapPython.h
 @dirrm include/%%PYTHON_VERSION%%/CXX
