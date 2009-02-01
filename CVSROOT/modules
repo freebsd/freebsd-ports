@@ -18256,6 +18256,9 @@ py-jinja2                       ports/devel/py-Jinja2
 py-jonpy                        ports/www/py-jonpy
 py-json-py                      ports/devel/py-json-py
 py-jsonlib                      ports/devel/py-jsonlib
+py-kaa-base                     ports/multimedia/py-kaa-base
+py-kaa-imlib2                   ports/multimedia/py-kaa-imlib2
+py-kaa-metadata                 ports/multimedia/py-kaa-metadata
 py-karaoke                      ports/audio/py-karaoke
 py-kde                          ports/x11-toolkits/py-kde
 py-kenosis                      ports/net-p2p/py-kenosis
