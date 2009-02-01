@@ -104,7 +104,7 @@ PERL_ARCH?=		mach
 .if ${PERL_LEVEL} >= 500800
 PERL_PORT?=	perl5.8
 .else # ${PERL_LEVEL} < 500800
-PERL_PORT?=	perl5
+PERL_PORT?=	perl5.6
 .endif
 
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}

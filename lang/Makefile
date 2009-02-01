@@ -222,7 +222,7 @@
     SUBDIR += pbasic
     SUBDIR += pcc
     SUBDIR += pecl-perl
-    SUBDIR += perl5
+    SUBDIR += perl5.6
     SUBDIR += perl5.8
     SUBDIR += pexts
     SUBDIR += pfe-devel
