@@ -21,3 +21,4 @@ share/%%PYTHON_VERSION%%/CXX/cxx_extensions.cxx
 share/%%PYTHON_VERSION%%/CXX/cxxextensions.c
 share/%%PYTHON_VERSION%%/CXX/cxxsupport.cxx
 @dirrm share/%%PYTHON_VERSION%%/CXX
+@dirrmtry share/%%PYTHON_VERSION%%
