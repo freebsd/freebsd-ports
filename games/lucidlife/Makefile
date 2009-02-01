@@ -8,9 +8,7 @@
 PORTNAME=	lucidlife
 PORTVERSION=	0.9.2
 CATEGORIES=	games
-MASTER_SITES=	http://offload1.icculus.org/~jcspray/LucidLife/ \
-		http://icculus.org/~jcspray/LucidLife/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://offload1.icculus.org:9090/~jcspray/LucidLife/
 
 MAINTAINER=	mwisnicki+freebsd@gmail.com
 COMMENT=	A GTK2 implementation of Conway's Game of Life
