@@ -8,7 +8,7 @@
 PORTNAME=	cog
 PORTVERSION=	2.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.nedbatchelder.com/code/cog/
+MASTER_SITES=	http://nedbatchelder.com/code/cog/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	apesternikov@page2rss.com
