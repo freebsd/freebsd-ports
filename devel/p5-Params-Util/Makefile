@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Params-Util
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	Utility functions to aid in parameter checking
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Params::Util.3
+MAN3=		Params::Util.3
 
 .include <bsd.port.pre.mk>
 
