@@ -19,6 +19,9 @@ MASTER_SITES=	http://www.mirrors.wiretapped.net/security/steganography/nicetext/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert files to pseudo-natural-language text and back again
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc33 which fails to build
+EXPIRATION_DATE=2009-03-02
+
 USE_GCC=	3.3
 USE_GMAKE=	yes
 CFLAGS+=	-fpermissive
