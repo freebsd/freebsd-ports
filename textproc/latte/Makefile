@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.latte.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple language for marking up text in a very expressive way
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc33 which fails to build
+EXPIRATION_DATE=2009-03-02
+
 USE_BISON=	build
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:213 libtool:15

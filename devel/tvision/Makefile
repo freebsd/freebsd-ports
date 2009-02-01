@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	devel/lang/c++
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Turbo Vision C++ CUI library for UNIX
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc33 which fails to build
+EXPIRATION_DATE=2009-03-02
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15

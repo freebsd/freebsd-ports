@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.etse.urv.es/~dmanye/quelcom/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of command-line utilities for MP3 and wave files
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc33 which fails to build
+EXPIRATION_DATE=2009-03-02
+
 USE_GCC=	3.3
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

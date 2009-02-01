@@ -14,6 +14,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Project Revision Control System
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc33 which fails to build
+EXPIRATION_DATE=2009-03-02
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	3.3
