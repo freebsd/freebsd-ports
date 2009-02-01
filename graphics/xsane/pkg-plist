@@ -24,6 +24,8 @@ bin/xsane
 %%NLS%%share/locale/vi/LC_MESSAGES/xsane.mo
 %%NLS%%share/locale/zh/LC_MESSAGES/xsane.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xsane.mo
+share/applications/xsane.desktop
+share/pixmaps/xsane.xpm
 share/sane/xsane/Mustek-logo.xpm
 share/sane/xsane/Plustek-logo.xpm
 share/sane/xsane/UMAX-logo.xpm
@@ -179,4 +181,5 @@ share/sane/xsane/xsane-startimage.pnm
 share/sane/xsane/xsane-style.rc
 @dirrm share/sane/xsane/doc
 @dirrm share/sane/xsane
+@dirrmtry share/applications
 @dirrmtry share/sane
