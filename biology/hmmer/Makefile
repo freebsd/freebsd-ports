@@ -8,7 +8,7 @@
 PORTNAME=	hmmer
 PORTVERSION=	2.3.2
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.genetics.wustl.edu/pub/eddy/hmmer/${PORTVERSION}/
+MASTER_SITES=	ftp://selab.janelia.org/pub/software/hmmer/CURRENT/
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Profile hidden Markov models for biological sequence analysis
