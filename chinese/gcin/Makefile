@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.4.4
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://cle.linux.org.tw/gcin/download/:main \
 		http://ftp.twaren.net/local-distfiles/gcin/:main \
@@ -17,6 +16,8 @@ EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A traditional chinese input utility in X
+
+BUILD_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
 
 CONFLICTS=	zh-gcin-devel-[0-9]*
 LATEST_LINK=	yes
@@ -28,13 +29,19 @@ USE_GMAKE=	YES
 USE_XORG=	xtst
 INSTALLS_ICONS=	YES
 USE_LDCONFIG=	YES
-OPTIONS=	BOSHIAMY	"enable Boshiamy Input Method"	on
+OPTIONS=	ANTHY		"enable Japanese anthy IM module" off \
+		BOSHIAMY	"enable Boshiamy Input Method" on \
+		QT_IM_MODULE	"enable QT IM module" on
 
 MAN1=		gcin.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
 		gcin-message.1 gcin-setup.1 gtab-merge.1 juyin-learn.1 \
 		phoa2d.1 sim2trad.1 tsa2d32.1 tslearn.1
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_ANTHY)
+RUN_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
+.endif
 
 .if defined(WITH_BOSHIAMY)
 MASTER_SITES+=	http://cle.linux.org.tw/~edt1023/gcin/:boshiamy \
@@ -53,26 +60,31 @@ post-extract:
 		${WRKSRC}/scripts/Makefile
 .endif
 
-pre-patch:
+.if defined(WITH_QT_IM_MODULE)
+USE_QT_VER=	4
+QT_COMPONENTS=	inputmethods qmake_build moc_build corelib gui
+LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng
+.endif
+
+post-patch:
 	@${REINPLACE_CMD} -e 's,&,,; 1 s,bash,sh,; \
 		s,QT_IM_DIR=/usr,QT_IM_DIR=$$prefix,; \
 		s,mandir=$$datadir,mandir=$$prefix,; \
 		s,/usr/share,$$prefix/share,; s,libdir)\/gcin,libdir),; \
-		143,150 d; \
+		s,/usr/lib/qt4/plugins/lib,${PREFIX}/lib/qt4/plugins,; \
 		s,gcc,$$CC,; s,gcin-$$GCIN_VERSION,gcin,' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,; \
-	  	210,211 d; 215,216 d;' \
+	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,;' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,/usr/local,/usr,g' \
 		${WRKSRC}/gtk-im/Makefile ${WRKSRC}/menu/Makefile
-	@${REINPLACE_CMD} -e 's,/usr/lib,${LOCALBASE}/lib,g; \
-		s,/usr/include,${LOCALBASE}/include,g; s,Xft2/X11/Xft,X11/Xft,' \
-		${WRKSRC}/qt-im/Makefile
 	@${REINPLACE_CMD} -e 's,modify-XIM ,,; 8,10 d' \
 		${WRKSRC}/scripts/Makefile
 	@${REINPLACE_CMD} -e 's,bash,sh,; s/&//; s,/opt/gnome,${LOCALBASE},;' \
 		${WRKSRC}/scripts/utf8-edit ${WRKSRC}/scripts/gcin-user-setup \
 		${WRKSRC}/scripts/gtab.append_prepare
+	@${REINPLACE_CMD} -e 's,bash,sh,; s/&//; 12,13 s/=/ /; \
+		s/export/setenv/; s/mozilla-firefox/firefox3/;' \
+		${WRKSRC}/scripts/html-browser
 	@${REINPLACE_CMD} -e 's,wget,fetch,' ${WRKSRC}/scripts/noseeing-inst
 	@${REINPLACE_CMD} -e 's,gcin-im-client.h,im-client/gcin-im-client.h,;' \
 		${WRKSRC}/gtk-im/gtkimcontextgcin.c
@@ -83,16 +95,31 @@ pre-patch:
 	@${REINPLACE_CMD} -e '/make/ d' ${WRKSRC}/IMdkit/lib/Makefile
 
 .if defined(WITH_BOSHIAMY)
-post-patch:
 PLIST_SUB+=	BOSHIAMY=""
 .else
 PLIST_SUB+=	BOSHIAMY="@comment "
 .endif
 
+.if defined(WITH_QT_IM_MODULE)
+PLIST_SUB+=	QT_IM_MODULE=""
+.else
+PLIST_SUB+=	QT_IM_MODULE="@comment "
+.endif
+
+post-build:
+.if !defined(DEBUG_FLAGS)
+	@${FIND} ${WRKSRC} -name "*.so*" | ${XARGS} strip
+.endif
+
 post-install:
+.if !defined(DEBUG_FLAGS)
+.for f in gcin* gtab-merge juyin-learn phoa2* sim2trad trad2sim ts*
+	@strip ${PREFIX}/bin/${f}
+.endfor
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in Changelog README
+.for file in Changelog.html README.html
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
