@@ -10,7 +10,7 @@ PORTVERSION=	0.15
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.gnubg.org/media/sources/:src \
-		${MASTER_SITE_GNU_ALPHA}:ts
+		${MASTER_SITE_GNU_ALPHA:S/$/:ts/}
 MASTER_SITE_SUBDIR=	${PORTNAME}/:ts
 DISTFILES=	gnubg-source-MAIN-20070601.tar.gz:src \
 		gnubg_ts0.bd.gz:ts
