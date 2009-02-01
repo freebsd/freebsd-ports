@@ -21,7 +21,7 @@ COMMENT=	Local/remote mirroring+incremental backup
 
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync
 
-CONFLICTS=	rdiff-backup-devel-[0-9]* rdiff-backup10-[0-9]*
+CONFLICTS=	rdiff-backup-devel-[0-9]* rdiff-backup-1.0*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
