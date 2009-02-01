@@ -8,8 +8,7 @@
 PORTNAME=	ezpyinline
 PORTVERSION=	0.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/e/ezpyinline/
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+MASTER_SITES=	CHEESESHOP
 DIST_SUBDIR=	python
 
 MAINTAINER=	lwhsu@FreeBSD.org
