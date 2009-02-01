@@ -306,6 +306,7 @@
     SUBDIR += nullpop
     SUBDIR += offlineimap
     SUBDIR += openwebmail
+    SUBDIR += osbf-lua
     SUBDIR += ovs
     SUBDIR += p3scan
     SUBDIR += p5-Clamd
