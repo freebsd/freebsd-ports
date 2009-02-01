@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=--enable-audio=oss,esd,vorbis
 CONFIGURE_ARGS+=--enable-audio=oss,vorbis
 .endif
 
-pre-install:
+pre-su-install:
 	@${MKDIR} ${PREFIX}/share/timidity ${PREFIX}/${TIMID_LIBDIR}
 
 post-install::
