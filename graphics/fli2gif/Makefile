@@ -9,7 +9,7 @@ PORTNAME=	fli2gif
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.bovine.net/~jlawson/coding/fli2gif/
+MASTER_SITES=	http://jeff.bovine.net/download/fli2gif/
 DISTNAME=	${PORTNAME}b
 
 MAINTAINER=	ports@FreeBSD.org
