@@ -8,7 +8,7 @@
 PORTNAME=	trace2html
 PORTVERSION=	0.2.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/t/trace2html/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
