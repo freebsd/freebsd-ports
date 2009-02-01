@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libmspack
-PORTVERSION=	0.0.20040308
-PORTREVISION=	3
+PORTVERSION=	0.0.20060920
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.cabextract.org.uk/libmspack/
 DISTNAME=	${PORTNAME}-${PORTVERSION}alpha
@@ -18,9 +17,5 @@ COMMENT=	A library for Microsoft compression formats
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,\*this,*self,'\
-		-e 's,@param\( *\)this,@param\1self,' ${WRKSRC}/mspack/mspack.h
 
 .include <bsd.port.mk>
