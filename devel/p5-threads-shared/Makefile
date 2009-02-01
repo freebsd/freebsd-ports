@@ -9,6 +9,7 @@ PORTNAME=	threads-shared
 PORTVERSION=	1.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../authors/id/J/JD/JDHEDDEN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ruben@verweg.com
