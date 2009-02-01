@@ -8,7 +8,7 @@ PORTNAME=	graphviz
 PORTVERSION=	0.33
 PORTREVISION=	2
 CATEGORIES=	graphics python
-MASTER_SITES=	https://networkx.lanl.gov/download/
+MASTER_SITES=	http://networkx.lanl.gov/download/pygraphviz/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pygraphviz-${PORTVERSION}
 
