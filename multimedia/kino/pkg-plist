@@ -312,6 +312,7 @@ share/kino/help/fr/trimloader.html
 share/kino/help/fr/ui.html
 share/kino/help/fr/vi.html
 share/kino/scripts/help.sh
+share/kino/scripts/dvdauthor/dvdauthor-brasero.sh
 share/kino/scripts/dvdauthor/dvdauthor-k3b.sh
 share/kino/scripts/dvdauthor/dvdauthor.sh
 share/kino/scripts/dvdauthor/growisofs.sh
@@ -327,6 +328,7 @@ share/kino/scripts/exports/ffmpeg_dvd_dual.sh
 share/kino/scripts/exports/ffmpeg_flv.sh
 share/kino/scripts/exports/ffmpeg_h264.sh
 share/kino/scripts/exports/ffmpeg_h264_dual.sh
+share/kino/scripts/exports/ffmpeg_h264_ps3.sh
 share/kino/scripts/exports/ffmpeg_huffyuv.sh
 share/kino/scripts/exports/ffmpeg_mov.sh
 share/kino/scripts/exports/ffmpeg_mp3.sh
@@ -400,6 +402,7 @@ share/locale/no/LC_MESSAGES/kino.mo
 share/locale/ru/LC_MESSAGES/kino.mo
 share/locale/sv/LC_MESSAGES/kino.mo
 share/locale/uk/LC_MESSAGES/kino.mo
+share/locale/zh_TW/LC_MESSAGES/kino.mo
 share/mime/packages/kino.xml
 @dirrm include/kino
 @dirrm lib/kino-gtk2
