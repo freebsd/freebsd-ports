@@ -9,8 +9,7 @@ PORTNAME=	tcpflow
 PORTVERSION=	0.21
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.circlemud.org/pub/jelson/tcpflow/ \
-		http://home.leo.org/~barner/freebsd/distfiles/
+MASTER_SITES=	http://www.circlemud.org/pub/jelson/tcpflow/
 
 MAINTAINER=	barner@FreeBSD.org
 COMMENT=	A tool for capturing data transmitted as part of TCP connections
