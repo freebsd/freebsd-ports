@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	zhcon
-PORTVERSION=	0.2.5
-PORTREVISION=	2
+PORTVERSION=	0.2.6
 CATEGORIES=	chinese
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	LOCAL/chinsan/chinese SF
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A fast Console Chinese System which supports framebuffer device
