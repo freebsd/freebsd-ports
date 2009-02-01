@@ -9,7 +9,7 @@ PORTNAME=	gnome-pim
 PORTVERSION=	1.4.9
 PORTREVISION=	8
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://www.jroger.in-berlin.de/gnome-pim/
+MASTER_SITES=	http://www.rittau.org/gnome-pim/
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
