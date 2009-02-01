@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	3.7.7
+PORTVERSION=	3.7.8
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	ftp://ftp.wiretapped.net/pub/mirrors/lftp/ \
-		ftp://ftp.wiretapped.net/pub/mirrors/lftp/old/ \
-		ftp://ftp.130th.net/pub/mirror/lftp/ \
-		ftp://ftp.130th.net/pub/mirror/lftp/old/ \
-		ftp://ftp.iasi.roedu.net/pub/os/Linux/network/ftp/lftp/ \
-		ftp://ftp.iasi.roedu.net/pub/os/Linux/network/ftp/lftp/old/ \
-		ftp://ftp.yars.free.net/pub/source/lftp/ \
-		ftp://ftp.yars.free.net/pub/source/lftp/old/ \
+MASTER_SITES=	ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
+		ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/old/ \
 		ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/ \
 		http://lftp.cybermirror.org/ \
-		http://lftp.cybermirror.org/old/
+		http://lftp.cybermirror.org/old/ \
+		ftp://ftp.wiretapped.net/pub/mirrors/lftp/ \
+		ftp://ftp.wiretapped.net/pub/mirrors/lftp/old/ \
+		ftp://ftp.yars.free.net/pub/source/lftp/ \
+		ftp://ftp.yars.free.net/pub/source/lftp/old/
 
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Shell-like command line ftp client
