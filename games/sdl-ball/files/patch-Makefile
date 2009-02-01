@@ -1,5 +1,5 @@
---- Makefile.orig	2008-12-31 03:42:35.000000000 +0300
-+++ Makefile	2009-01-11 18:51:37.000000000 +0300
+--- Makefile.orig	2008-12-31 00:42:35.000000000 +0000
++++ Makefile	2009-01-31 03:45:32.000000000 +0000
 @@ -2,13 +2,12 @@
  
  #append -DWITH_WIIUSE to compile with WIIUSE support!
@@ -7,7 +7,7 @@
 -CC=g++ -DDATADIR="\"$(DATADIR)\""
  
 -CFLAGS+=-c -Wall `sdl-config --cflags`
-+CFLAGS+=-c -Wall `${SDL_CONFIG} --cflags` -DDATADIR="\"$(DATADIR)\""
++CFLAGS+=-Wall `${SDL_CONFIG} --cflags` -DDATADIR="\"$(DATADIR)\""
  
  #append -lwiiuse to compile with WIIUSE support
  #remove -lSDL_mixer if compiling with -DNOSOUND
@@ -16,3 +16,12 @@
  
  SOURCES=main.cpp 
  OBJECTS=$(SOURCES:.cpp=.o)
+@@ -18,7 +17,7 @@
+ all: $(SOURCES) $(EXECUTABLE)
+ 	
+ $(EXECUTABLE): $(OBJECTS)
+-	$(CC) $(LDFLAGS) $(OBJECTS) $(LIBS) -o $@
++	$(CC) $(CFLAGS) $(SOURCES) $(LIBS) -o $@
+ 
+ .cpp.o:
+ 	$(CC) $(CFLAGS) $< -o $@
