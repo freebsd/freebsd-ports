@@ -1,7 +1,7 @@
---- modules/gpgsqlbackend/Makefile.in.orig	Sat Jul 16 13:24:53 2005
-+++ modules/gpgsqlbackend/Makefile.in	Mon Jul 18 14:22:07 2005
-@@ -203,14 +203,14 @@
- target_alias = @target_alias@
+--- modules/gpgsqlbackend/Makefile.in.org	2009-01-28 10:55:21.000000000 +0100
++++ modules/gpgsqlbackend/Makefile.in	2009-01-28 11:02:29.000000000 +0100
+@@ -217,14 +217,14 @@
+ AM_CPPFLAGS = @THREADFLAGS@
  lib_LTLIBRARIES = libgpgsqlbackend.la
  EXTRA_DIST = OBJECTFILES OBJECTLIBS
 -INCLUDES = -I@PGSQL_incdir@
@@ -9,7 +9,7 @@
  libgpgsqlbackend_la_SOURCES = gpgsqlbackend.cc gpgsqlbackend.hh \
  		spgsql.hh spgsql.cc
  
- libgpgsqlbackend_la_LDFLAGS = @PGSQL_lib@ -Wl,-Bstatic -lpq \
+ libgpgsqlbackend_la_LDFLAGS = -module -avoid-version @PGSQL_lib@ -Wl,-Bstatic -lpq \
  	-Wl,-Bdynamic 
  
 -libgpgsqlbackend_la_LIBADD = -lssl -lcrypt -lcrypto
