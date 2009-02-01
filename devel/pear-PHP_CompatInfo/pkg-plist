@@ -1,0 +1,251 @@
+share/pear/PHP/CompatInfo.php
+share/pear/PHP/CompatInfo/Cli.php
+share/pear/PHP/CompatInfo/PDO_class_array.php
+share/pear/PHP/CompatInfo/PDO_func_array.php
+share/pear/PHP/CompatInfo/Parser.php
+share/pear/PHP/CompatInfo/Reflection_class_array.php
+share/pear/PHP/CompatInfo/Renderer.php
+share/pear/PHP/CompatInfo/Renderer/Array.php
+share/pear/PHP/CompatInfo/Renderer/Csv.php
+share/pear/PHP/CompatInfo/Renderer/Html.php
+share/pear/PHP/CompatInfo/Renderer/Null.php
+share/pear/PHP/CompatInfo/Renderer/Text.php
+share/pear/PHP/CompatInfo/Renderer/Xml.php
+share/pear/PHP/CompatInfo/SPL_class_array.php
+share/pear/PHP/CompatInfo/SPL_func_array.php
+share/pear/PHP/CompatInfo/SQLite_class_array.php
+share/pear/PHP/CompatInfo/SQLite_const_array.php
+share/pear/PHP/CompatInfo/SQLite_func_array.php
+share/pear/PHP/CompatInfo/SimpleXML_class_array.php
+share/pear/PHP/CompatInfo/SimpleXML_func_array.php
+share/pear/PHP/CompatInfo/apache2handler_sapi_array.php
+share/pear/PHP/CompatInfo/bcmath_func_array.php
+share/pear/PHP/CompatInfo/bz2_func_array.php
+share/pear/PHP/CompatInfo/calendar_const_array.php
+share/pear/PHP/CompatInfo/calendar_func_array.php
+share/pear/PHP/CompatInfo/cgi_sapi_array.php
+share/pear/PHP/CompatInfo/class_array.php
+share/pear/PHP/CompatInfo/cli_sapi_array.php
+share/pear/PHP/CompatInfo/com_dotnet_class_array.php
+share/pear/PHP/CompatInfo/com_dotnet_const_array.php
+share/pear/PHP/CompatInfo/com_dotnet_func_array.php
+share/pear/PHP/CompatInfo/const_array.php
+share/pear/PHP/CompatInfo/ctype_func_array.php
+share/pear/PHP/CompatInfo/date_class_array.php
+share/pear/PHP/CompatInfo/date_const_array.php
+share/pear/PHP/CompatInfo/date_func_array.php
+share/pear/PHP/CompatInfo/dom_class_array.php
+share/pear/PHP/CompatInfo/dom_const_array.php
+share/pear/PHP/CompatInfo/dom_func_array.php
+share/pear/PHP/CompatInfo/filter_const_array.php
+share/pear/PHP/CompatInfo/filter_func_array.php
+share/pear/PHP/CompatInfo/ftp_const_array.php
+share/pear/PHP/CompatInfo/ftp_func_array.php
+share/pear/PHP/CompatInfo/func_array.php
+share/pear/PHP/CompatInfo/gd_const_array.php
+share/pear/PHP/CompatInfo/gd_func_array.php
+share/pear/PHP/CompatInfo/gettext_func_array.php
+share/pear/PHP/CompatInfo/gmp_const_array.php
+share/pear/PHP/CompatInfo/gmp_func_array.php
+share/pear/PHP/CompatInfo/hash_const_array.php
+share/pear/PHP/CompatInfo/hash_func_array.php
+share/pear/PHP/CompatInfo/iconv_const_array.php
+share/pear/PHP/CompatInfo/iconv_func_array.php
+share/pear/PHP/CompatInfo/imap_const_array.php
+share/pear/PHP/CompatInfo/imap_func_array.php
+share/pear/PHP/CompatInfo/internal_const_array.php
+share/pear/PHP/CompatInfo/json_func_array.php
+share/pear/PHP/CompatInfo/libxml_class_array.php
+share/pear/PHP/CompatInfo/libxml_const_array.php
+share/pear/PHP/CompatInfo/libxml_func_array.php
+share/pear/PHP/CompatInfo/mbstring_const_array.php
+share/pear/PHP/CompatInfo/mbstring_func_array.php
+share/pear/PHP/CompatInfo/ming_class_array.php
+share/pear/PHP/CompatInfo/ming_const_array.php
+share/pear/PHP/CompatInfo/ming_func_array.php
+share/pear/PHP/CompatInfo/mysql_const_array.php
+share/pear/PHP/CompatInfo/mysql_func_array.php
+share/pear/PHP/CompatInfo/mysqli_class_array.php
+share/pear/PHP/CompatInfo/mysqli_const_array.php
+share/pear/PHP/CompatInfo/mysqli_func_array.php
+share/pear/PHP/CompatInfo/odbc_const_array.php
+share/pear/PHP/CompatInfo/odbc_func_array.php
+share/pear/PHP/CompatInfo/openssl_const_array.php
+share/pear/PHP/CompatInfo/openssl_func_array.php
+share/pear/PHP/CompatInfo/pcre_const_array.php
+share/pear/PHP/CompatInfo/pcre_func_array.php
+share/pear/PHP/CompatInfo/pgsql_const_array.php
+share/pear/PHP/CompatInfo/pgsql_func_array.php
+share/pear/PHP/CompatInfo/sapi_array.php
+share/pear/PHP/CompatInfo/session_func_array.php
+share/pear/PHP/CompatInfo/snmp_const_array.php
+share/pear/PHP/CompatInfo/snmp_func_array.php
+share/pear/PHP/CompatInfo/standard_class_array.php
+share/pear/PHP/CompatInfo/standard_const_array.php
+share/pear/PHP/CompatInfo/standard_func_array.php
+share/pear/PHP/CompatInfo/tokenizer_const_array.php
+share/pear/PHP/CompatInfo/tokenizer_func_array.php
+share/pear/PHP/CompatInfo/wddx_func_array.php
+share/pear/PHP/CompatInfo/xdebug_const_array.php
+share/pear/PHP/CompatInfo/xdebug_func_array.php
+share/pear/PHP/CompatInfo/xml_const_array.php
+share/pear/PHP/CompatInfo/xml_func_array.php
+share/pear/PHP/CompatInfo/xmlreader_class_array.php
+share/pear/PHP/CompatInfo/xmlwriter_class_array.php
+share/pear/PHP/CompatInfo/xmlwriter_func_array.php
+share/pear/PHP/CompatInfo/xsl_class_array.php
+share/pear/PHP/CompatInfo/xsl_const_array.php
+share/pear/PHP/CompatInfo/zip_class_array.php
+share/pear/PHP/CompatInfo/zip_func_array.php
+share/pear/PHP/CompatInfo/zlib_const_array.php
+share/pear/PHP/CompatInfo/zlib_func_array.php
+share/pear/PHP/scripts/calendar_const_exceptions.php
+share/pear/PHP/scripts/calendar_func_exceptions.php
+share/pear/PHP/scripts/class_exceptions.php
+share/pear/PHP/scripts/compatinfo.bat
+share/pear/PHP/scripts/configure.php
+share/pear/PHP/scripts/constant_exceptions.php
+share/pear/PHP/scripts/date_class_exceptions.php
+share/pear/PHP/scripts/date_const_exceptions.php
+share/pear/PHP/scripts/date_func_exceptions.php
+share/pear/PHP/scripts/exceptions.conf.php
+share/pear/PHP/scripts/ftp_const_exceptions.php
+share/pear/PHP/scripts/function_exceptions.php
+share/pear/PHP/scripts/gd_const_exceptions.php
+share/pear/PHP/scripts/gd_func_exceptions.php
+share/pear/PHP/scripts/gettext_func_exceptions.php
+share/pear/PHP/scripts/gmp_const_exceptions.php
+share/pear/PHP/scripts/hash_func_exceptions.php
+share/pear/PHP/scripts/iconv_const_exceptions.php
+share/pear/PHP/scripts/iconv_func_exceptions.php
+share/pear/PHP/scripts/internal_const_exceptions.php
+share/pear/PHP/scripts/libxml_func_exceptions.php
+share/pear/PHP/scripts/mysql_const_exceptions.php
+share/pear/PHP/scripts/mysqli_const_exceptions.php
+share/pear/PHP/scripts/openssl_const_exceptions.php
+share/pear/PHP/scripts/pci.php
+share/pear/PHP/scripts/pciconf.bat
+share/pear/PHP/scripts/pcre_const_exceptions.php
+share/pear/PHP/scripts/spl_func_exceptions.php
+share/pear/PHP/scripts/standard_class_exceptions.php
+share/pear/PHP/scripts/standard_const_exceptions.php
+share/pear/PHP/scripts/standard_func_exceptions.php
+share/pear/PHP/scripts/xmlwriter_func_exceptions.php
+share/pear/PHP/scripts/xsl_const_exceptions.php
+share/pear/PHP/scripts/zlib_func_exceptions.php
+share/pear/data/PHP_CompatInfo/apache/versions.xml
+share/pear/data/PHP_CompatInfo/apc/versions.xml
+share/pear/data/PHP_CompatInfo/apd/versions.xml
+share/pear/data/PHP_CompatInfo/bcmath/versions.xml
+share/pear/data/PHP_CompatInfo/bzip2/versions.xml
+share/pear/data/PHP_CompatInfo/com/versions.xml
+share/pear/data/PHP_CompatInfo/ctype/versions.xml
+share/pear/data/PHP_CompatInfo/datetime/versions.xml
+share/pear/data/PHP_CompatInfo/dom/versions.xml
+share/pear/data/PHP_CompatInfo/filter/versions.xml
+share/pear/data/PHP_CompatInfo/ftp/versions.xml
+share/pear/data/PHP_CompatInfo/gmp/versions.xml
+share/pear/data/PHP_CompatInfo/hash/versions.xml
+share/pear/data/PHP_CompatInfo/iconv/versions.xml
+share/pear/data/PHP_CompatInfo/image/versions.xml
+share/pear/data/PHP_CompatInfo/json/versions.xml
+share/pear/data/PHP_CompatInfo/mbstring/versions.xml
+share/pear/data/PHP_CompatInfo/mysql/versions.xml
+share/pear/data/PHP_CompatInfo/mysqli/versions.xml
+share/pear/data/PHP_CompatInfo/openssl/versions.xml
+share/pear/data/PHP_CompatInfo/pcre/versions.xml
+share/pear/data/PHP_CompatInfo/pdo/versions.xml
+share/pear/data/PHP_CompatInfo/pgsql/versions.xml
+share/pear/data/PHP_CompatInfo/posix/versions.xml
+share/pear/data/PHP_CompatInfo/session/versions.xml
+share/pear/data/PHP_CompatInfo/simplexml/versions.xml
+share/pear/data/PHP_CompatInfo/spl/versions.xml
+share/pear/data/PHP_CompatInfo/ssh2/versions.xml
+share/pear/data/PHP_CompatInfo/tidy/versions.xml
+share/pear/data/PHP_CompatInfo/wddx/versions.xml
+share/pear/data/PHP_CompatInfo/xml/versions.xml
+share/pear/data/PHP_CompatInfo/xmlreader/versions.xml
+share/pear/data/PHP_CompatInfo/xmlwriter/versions.xml
+share/pear/data/PHP_CompatInfo/xsl/versions.xml
+share/pear/data/PHP_CompatInfo/xslt/versions.xml
+share/pear/data/PHP_CompatInfo/zip/versions.xml
+share/pear/data/PHP_CompatInfo/zlib/versions.xml
+share/pear/packages/pear-PHP_CompatInfo-1.9.0/package.xml
+share/pear/tests/PHP_CompatInfo/AllTests.php
+share/pear/tests/PHP_CompatInfo/PHP_CompatInfo_TestSuite_Bugs.php
+share/pear/tests/PHP_CompatInfo/PHP_CompatInfo_TestSuite_Cli.php
+share/pear/tests/PHP_CompatInfo/PHP_CompatInfo_TestSuite_Standard.php
+share/pear/tests/PHP_CompatInfo/beehiveforum082/forum/include/forum.inc.php
+share/pear/tests/PHP_CompatInfo/checkMax.php
+share/pear/tests/PHP_CompatInfo/emptyDir/empty_dir.txt
+share/pear/tests/PHP_CompatInfo/kohana22/modules/gmaps/javascript.php
+share/pear/tests/PHP_CompatInfo/parseDir/PHP5/tokens.php5
+share/pear/tests/PHP_CompatInfo/parseDir/PHP5/upload_error.php
+share/pear/tests/PHP_CompatInfo/parseDir/extensions.php
+share/pear/tests/PHP_CompatInfo/parseDir/phpinfo.php
+share/pear/tests/PHP_CompatInfo/parseFile/File_Find-1.3.0__Find.php
+share/pear/tests/PHP_CompatInfo/parseFile/PackageUpdate.php
+share/pear/tests/PHP_CompatInfo/parseFile/conditional.php
+share/pear/tests/PHP_CompatInfo/parseFile/empty.php
+share/pear/tests/PHP_CompatInfo/parseFile/ignore_functions_match.php
+share/pear/tests/PHP_CompatInfo/parseFile/math.php
+share/pear/tests/PHP_CompatInfo/parseFile/php5_method_chaining.php
+share/pear/tests/PHP_CompatInfo/parseFile/php5_method_chaining_samp2.php
+share/pear/tests/PHP_CompatInfo/parseFile/phpweb-entities.php
+share/pear/tests/PHP_CompatInfo/parseFile/zip.php
+share/pear/tests/PHP_CompatInfo/sample_req6056.php
+@dirrm share/pear/tests/PHP_CompatInfo/parseFile
+@dirrm share/pear/tests/PHP_CompatInfo/parseDir/PHP5
+@dirrm share/pear/tests/PHP_CompatInfo/parseDir
+@dirrm share/pear/tests/PHP_CompatInfo/kohana22/modules/gmaps
+@dirrm share/pear/tests/PHP_CompatInfo/kohana22/modules
+@dirrm share/pear/tests/PHP_CompatInfo/kohana22
+@dirrm share/pear/tests/PHP_CompatInfo/emptyDir
+@dirrm share/pear/tests/PHP_CompatInfo/beehiveforum082/forum/include
+@dirrm share/pear/tests/PHP_CompatInfo/beehiveforum082/forum
+@dirrm share/pear/tests/PHP_CompatInfo/beehiveforum082
+@dirrm share/pear/tests/PHP_CompatInfo
+@dirrm share/pear/packages/pear-PHP_CompatInfo-1.9.0
+@dirrm share/pear/data/PHP_CompatInfo/zlib
+@dirrm share/pear/data/PHP_CompatInfo/zip
+@dirrm share/pear/data/PHP_CompatInfo/xslt
+@dirrm share/pear/data/PHP_CompatInfo/xsl
+@dirrm share/pear/data/PHP_CompatInfo/xmlwriter
+@dirrm share/pear/data/PHP_CompatInfo/xmlreader
+@dirrm share/pear/data/PHP_CompatInfo/xml
+@dirrm share/pear/data/PHP_CompatInfo/wddx
+@dirrm share/pear/data/PHP_CompatInfo/tidy
+@dirrm share/pear/data/PHP_CompatInfo/ssh2
+@dirrm share/pear/data/PHP_CompatInfo/spl
+@dirrm share/pear/data/PHP_CompatInfo/simplexml
+@dirrm share/pear/data/PHP_CompatInfo/session
+@dirrm share/pear/data/PHP_CompatInfo/posix
+@dirrm share/pear/data/PHP_CompatInfo/pgsql
+@dirrm share/pear/data/PHP_CompatInfo/pdo
+@dirrm share/pear/data/PHP_CompatInfo/pcre
+@dirrm share/pear/data/PHP_CompatInfo/openssl
+@dirrm share/pear/data/PHP_CompatInfo/mysqli
+@dirrm share/pear/data/PHP_CompatInfo/mysql
+@dirrm share/pear/data/PHP_CompatInfo/mbstring
+@dirrm share/pear/data/PHP_CompatInfo/json
+@dirrm share/pear/data/PHP_CompatInfo/image
+@dirrm share/pear/data/PHP_CompatInfo/iconv
+@dirrm share/pear/data/PHP_CompatInfo/hash
+@dirrm share/pear/data/PHP_CompatInfo/gmp
+@dirrm share/pear/data/PHP_CompatInfo/ftp
+@dirrm share/pear/data/PHP_CompatInfo/filter
+@dirrm share/pear/data/PHP_CompatInfo/dom
+@dirrm share/pear/data/PHP_CompatInfo/datetime
+@dirrm share/pear/data/PHP_CompatInfo/ctype
+@dirrm share/pear/data/PHP_CompatInfo/com
+@dirrm share/pear/data/PHP_CompatInfo/bzip2
+@dirrm share/pear/data/PHP_CompatInfo/bcmath
+@dirrm share/pear/data/PHP_CompatInfo/apd
+@dirrm share/pear/data/PHP_CompatInfo/apc
+@dirrm share/pear/data/PHP_CompatInfo/apache
+@dirrm share/pear/data/PHP_CompatInfo/
+@dirrm share/pear/PHP/scripts
+@dirrm share/pear/PHP/CompatInfo/Renderer
+@dirrm share/pear/PHP/CompatInfo
+@dirrm share/pear/PHP
+@dirrm share/examples/pear/PHP_CompatInfo
