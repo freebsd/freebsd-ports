@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdl-ball
-PORTVERSION=	1.0
+PORTVERSION=	1.01
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -20,9 +20,15 @@ MAKE_ENV=	DATADIR=${DATADIR}/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+PORTDOCS=	*
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sdl-ball ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/sdl-ball ${PREFIX}/bin/
 	${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/themes && ${COPYTREE_SHARE} . ${DATADIR}
+	cd ${WRKSRC}/themes && ${COPYTREE_SHARE} . ${DATADIR}/
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+.endif
 
 .include <bsd.port.mk>
