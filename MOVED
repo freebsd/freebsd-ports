@@ -3772,3 +3772,4 @@ lang/gcc28|lang/gcc42|2009-01-24|Abandoned upstream, superseded by gcc42 and, pr
 x11/xphelloworld||2009-01-24|Xprint application, deprecated upstream
 x11/xclock|x11-clocks/xclock|2009-01-28|Moved to a more appropriate category
 lang/perl5|lang/perl5.6|2009-02-01|Renamed
+devel/libmcve|devel/libmonetra|2009-02-01|Project renamed

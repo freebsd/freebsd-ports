@@ -671,8 +671,8 @@
     SUBDIR += libmatheval
     SUBDIR += libmba
     SUBDIR += libmcs
-    SUBDIR += libmcve
     SUBDIR += libmimedir
+    SUBDIR += libmonetra
     SUBDIR += libmowgli
     SUBDIR += libmpcbdm
     SUBDIR += libmsocket
