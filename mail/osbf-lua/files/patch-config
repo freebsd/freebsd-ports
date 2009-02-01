@@ -1,0 +1,14 @@
+--- config.old	2009-01-14 19:47:07.000000000 -0200
++++ config	2009-01-14 19:47:27.000000000 -0200
+@@ -8,9 +8,9 @@
+ SPAMFILTER_DIR= $(PREFIX)/osbf-lua
+ 
+ # Lua's library dir:
+-LUA_LIBDIR= /usr/local/lib/lua/5.1
++LUA_LIBDIR= /usr/local/lib/lua51
+ # Lua's include dir
+-LUA_INCDIR= /usr/local/include
++LUA_INCDIR= /usr/local/include/lua51
+ 
+ # System's include dir (where include files are installed)
+ INC_DIR= /usr/local/include
