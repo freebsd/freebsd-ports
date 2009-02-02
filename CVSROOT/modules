@@ -9650,6 +9650,7 @@ osb-browser                     ports/www/osb-browser
 osb-jscore                      ports/lang/osb-jscore
 osb-nrcit                       ports/www/osb-nrcit
 osb-nrcore                      ports/www/osb-nrcore
+osbf-lua                        ports/mail/osbf-lua
 oscommerce                      ports/www/oscommerce
 osdclock                        ports/x11-clocks/osdclock
 osdmixer                        ports/audio/osdmixer
