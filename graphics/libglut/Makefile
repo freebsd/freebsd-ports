@@ -10,7 +10,7 @@ PORTVERSION=	${MESAVERSION}
 PORTREVISION=	1
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenGL utility toolkit
 
 USE_GL=		glu
