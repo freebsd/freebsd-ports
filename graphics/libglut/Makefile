@@ -13,7 +13,6 @@ CATEGORIES=	graphics
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL utility toolkit
 
-USE_LDCONFIG=	yes
 USE_GL=		glu
 USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes xi xmu dri2proto
 
