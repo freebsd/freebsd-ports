@@ -37,6 +37,7 @@ do-install:
 APP_PREFIX=		lib/compaq/hpacucli
 .if ${ARCH} == amd64
 USE_LDCONFIG32=		${PREFIX}/${APP_PREFIX}
+BROKEN=			currently does not work on amd64 (see ports/128288)
 .else
 USE_LDCONFIG=		${PREFIX}/${APP_PREFIX}
 .endif
