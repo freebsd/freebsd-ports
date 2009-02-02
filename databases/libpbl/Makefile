@@ -40,4 +40,10 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=		does not work with databases > ~200 MB (see ports/130236)
+.endif
+
+.include <bsd.port.post.mk>
