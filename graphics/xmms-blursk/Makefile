@@ -13,7 +13,7 @@ MASTER_SITES=	http://web.cecs.pdx.edu/~kirkenda/blursk/
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	Blursk-${PORTVERSION}
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A XMMS plugin inspired by "Blur Scope"
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

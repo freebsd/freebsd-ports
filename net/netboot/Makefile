@@ -9,7 +9,7 @@ PORTVERSION=	0.10.2
 CATEGORIES=	net
 MASTER_SITES=	SF
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netboot with Packet or NDIS-2 drivers
 
 LIB_DEPENDS=	lzo2.2:${PORTSDIR}/archivers/lzo2

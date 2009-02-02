@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rss-glx
 DISTNAME=	rss-glx_${PORTVERSION}
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL screensaver collection
 
 LIB_DEPENDS=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick

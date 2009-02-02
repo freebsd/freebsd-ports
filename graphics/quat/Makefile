@@ -10,7 +10,7 @@ PORTVERSION=	1.20
 CATEGORIES=	graphics
 MASTER_SITES=   http://www.physcip.uni-stuttgart.de/phy11733/download/
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Three-dimensional fractal creator (command line only)
 
 GNU_CONFIGURE=	yes

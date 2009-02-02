@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://ish.cx/~jason/arpscan/ \
 		http://unx.ca/~jason/arpscan/
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple arp scanner
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet

@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://stukach.com/hosted/
 DISTNAME=	fishmatic
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An XMMS non-static OpenGL stereogram visualization plugin
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

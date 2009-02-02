@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An editing tool used for painting and retouching of movies
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

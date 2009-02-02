@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	arved
 DISTFILES=	leocad-${PORTVERSION:S/.p/pre/}.tgz leocad-pieces-20030330.zip
 EXTRACT_ONLY=	leocad-${PORTVERSION:S/.p/pre/}.tgz
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CAD program that uses bricks similar to those found in many toys
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip

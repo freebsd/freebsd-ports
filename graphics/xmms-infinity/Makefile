@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://julien.carme.free.fr/
 DISTNAME=	infinity-${PORTVERSION}
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A XMMS plug-in which generate full-screen interactive light effects
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

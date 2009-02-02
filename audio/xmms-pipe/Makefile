@@ -13,7 +13,7 @@ MASTER_SITES=	http://rooster.stanford.edu/~ben/xmmspipe/files/
 DISTNAME=	xmmspipe-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Controls XMMS with a named pipe
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

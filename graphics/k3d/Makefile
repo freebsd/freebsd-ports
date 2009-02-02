@@ -13,7 +13,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D modeling, animation, and rendering system
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibul.a:${PORTSDIR}/x11-toolkits/plib

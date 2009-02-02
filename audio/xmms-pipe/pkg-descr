@@ -3,6 +3,3 @@ sending strings to a named pipe (FIFO). When enabled, XMMS can be
 commanded by sending strings to $HOME/.xmms/inpipe.
 
 WWW: http://rooster.stanford.edu/~ben/xmmspipe/
-
-- David
-dyeske@gmail.com
