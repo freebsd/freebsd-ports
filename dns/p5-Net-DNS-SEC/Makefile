@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-DNS-SEC
-PORTVERSION=	0.14
-PORTREVISION=	1
+PORTVERSION=	0.15
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN \
 		http://www.ripe.net/ripencc/pub-services/np/DISI/SRC/
@@ -28,9 +27,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Net::DNS::Keyset.3 Net::DNS::RR::DS.3 Net::DNS::RR::KEY.3 \
 		Net::DNS::RR::NXT.3 Net::DNS::RR::SIG.3 \
-		Net::DNS::SEC.3 \
+		Net::DNS::SEC.3 Net::DNS::RR::DLV.3 \
 		Net::DNS::SEC::Private.3 Net::DNS::RR::RRSIG.3 \
-		Net::DNS::RR::NSEC.3 Net::DNS::RR::DNSKEY.3
+		Net::DNS::RR::NSEC.3 Net::DNS::RR::DNSKEY.3 \
+		Net::DNS::RR::NSEC3.3 Net::DNS::RR::NSEC3PARAM.3
 
 .include <bsd.port.pre.mk>
 
