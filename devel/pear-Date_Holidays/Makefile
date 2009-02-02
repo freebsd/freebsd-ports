@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Date_Holidays
-PORTVERSION=	0.20.1
+PORTVERSION=	0.21.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
@@ -19,8 +19,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 CATEGORY=	Date
 FILES=		Holidays.php \
 		Holidays/Driver/Christian.php \
-		Holidays/Driver/EasternChristian.php \
 		Holidays/Driver/Composite.php \
+		Holidays/Driver/EasternChristian.php \
 		Holidays/Driver/Jewish.php \
 		Holidays/Filter/Blacklist.php \
 		Holidays/Filter/Composite.php \
