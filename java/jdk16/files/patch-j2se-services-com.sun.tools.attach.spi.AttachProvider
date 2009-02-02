@@ -1,0 +1,9 @@
+$FreeBSD$
+
+--- ../../j2se/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	1 Nov 2005 05:12:03 -0000	1.1.1.1
++++ ../../j2se/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	29 Jan 2009 08:13:19 -0000
+@@ -12,3 +12,4 @@
+ #[solaris]sun.tools.attach.SolarisAttachProvider
+ #[windows]sun.tools.attach.WindowsAttachProvider
+ #[linux]sun.tools.attach.LinuxAttachProvider
++#[bsd]sun.tools.attach.BSDAttachProvider
