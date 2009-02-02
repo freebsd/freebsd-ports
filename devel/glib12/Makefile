@@ -9,8 +9,7 @@ PORTNAME=	glib
 PORTVERSION=	1.2.10
 PORTREVISION=	12
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/glib/1.2
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Some useful routines of C programming (previous stable version)

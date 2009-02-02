@@ -9,8 +9,7 @@ PORTNAME=	bonobo-conf
 PORTVERSION=	0.16
 PORTREVISION=	6
 CATEGORIES=	devel gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/bonobo-conf/0.16
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Bonobo configuration moniker

@@ -8,8 +8,7 @@
 PORTNAME=	bigboard
 PORTVERSION=	0.5.38
 CATEGORIES=	misc gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 
 MAINTAINER=	wahjava@gmail.com
 COMMENT=	Big Board sidebar is an experimental panel for the GNOME Desktop

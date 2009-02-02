@@ -9,8 +9,7 @@ PORTNAME=	gnome-gpg
 PORTVERSION=	0.5.0
 PORTREVISION=	4
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Simple commandline wrapper around gpg for gnome-keyring

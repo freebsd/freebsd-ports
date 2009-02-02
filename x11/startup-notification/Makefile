@@ -9,9 +9,8 @@ PORTNAME=	startup-notification
 PORTVERSION=	0.9
 PORTREVISION=	2
 CATEGORIES=	x11 gnome
-MASTER_SITES=	${MASTER_SITE_GNOME} \
+MASTER_SITES=	GNOME \
 		http://www.freedesktop.org/software/startup-notification/releases/
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

@@ -11,8 +11,7 @@ PORTNAME=	gnome-web-photo
 PORTVERSION=	0.2
 PORTREVISION=	5
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2
+MASTER_SITES=	GNOME
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Tool to generate full-size image files and thumbnails
