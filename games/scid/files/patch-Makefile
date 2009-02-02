@@ -1,6 +1,6 @@
 --- Makefile.orig	2008-10-10 10:59:55.000000000 +0200
-+++ Makefile	2008-12-26 15:09:52.000000000 +0100
-@@ -9,11 +9,11 @@
++++ Makefile	2009-01-26 12:27:47.000000000 +0100
+@@ -9,16 +9,16 @@
  
  # BINDIR: where the Scid programs are copied for "make install".
  #
@@ -14,6 +14,12 @@
  
  ### TCL_VERSION: Set this according to the version of Tcl/Tk you have
  #   installed that you want Scid to use: 8.0, 8.1, 8.2, 8.3, etc.
+ #
+-TCL_VERSION = 8.5
++TCL_VERSION = ${TCL_VER}
+ 
+ # TCL_INCLUDE, TCL_LIBRARY, TK_LIBRARY: these are the compiler options
+ #    needed for linking Scid with Tcl/Tk.  The program "./configure"
 @@ -27,9 +27,9 @@
  #
  # The settings determined by "./configure" are:
@@ -31,9 +37,9 @@
  # TCL_INCLUDE = -I /usr/local/include/tcl8.0 -I /usr/local/include/tk8.0
  # TCL_LIBRARY = -L /usr/local/lib -ltcl80 -ldl
  # TK_LIBRARY  = $(TCL_LIBRARY) -ltk80 -L /usr/X11/lib -lX11
-+TCL_INCLUDE = -I${LOCALBASE}/include/tcl8.5 -I${LOCALBASE}/include/tk8.5 -I${LOCALBASE}/include
-+TCL_LIBRARY = -L${LOCALBASE}/lib -ltcl85
-+TK_LIBRARY  = $(TCL_LIBRARY) -ltk85 -L${LOCALBASE}/lib -lX11
++TCL_INCLUDE = -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} -I${LOCALBASE}/include
++TCL_LIBRARY = -L${LOCALBASE}/lib -ltcl${TCL_LIBVER}${TCL_THREADS_SUFFIX} ${PTHREAD_LIBS}
++TK_LIBRARY  = $(TCL_LIBRARY) -ltk${TCL_LIBVER}${TCL_THREADS_SUFFIX} -L${LOCALBASE}/lib -lX11 ${PTHREAD_LIBS}
  
  
  ########################################
