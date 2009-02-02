@@ -1,0 +1,25 @@
+#!/bin/sh
+# warn about manually removing user/group/homedir and log/rundirs
+
+user=%%FREEVO_USER%%
+group=%%FREEVO_GROUP%%
+home=%%FREEVO_HOME%%
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+	if pw usershow "$user" >/dev/null 2>&1; then
+		echo "Warning: if this is a final deinstall, remove user \"$user\" manually"
+	fi
+	if pw groupshow "$group" >/dev/null 2>&1; then
+		echo "Warning: if this is a final deinstall, remove group \"$group\" manually"
+	fi
+	if [ -d "$home" ]; then
+		echo "Warning: if this is a final deinstall, remove directory \"$home\" manually"
+	fi
+	if [ -d "/var/log/freevo" ]; then
+		echo "Warning: if this is a final deinstall, remove directory \"/var/log/freevo\" manually"
+	fi 
+	if [ -d "/var/run/freevo" ]; then
+		echo "Warning: if this is a final deinstall, remove directory \"/var/run/freevo\" manually"
+	fi 
+fi
+

@@ -1,0 +1,20 @@
+--- freevo.orig	2009-01-11 15:50:59.000000000 -0500
++++ freevo	2009-01-13 21:39:10.000000000 -0500
+@@ -156,7 +156,7 @@
+     get pid of running 'name'
+     """
+     _debug_('getpid(name=%r, arg=%r)' % (name, arg))
+-    for fname in ('/var/run/' + name  + '-%s.pid' % os.getuid(),
++    for fname in ('/var/run/freevo/' + name  + '-%s.pid' % os.getuid(),
+                   '/tmp/' + name + '-%s.pid' % os.getuid()):
+         if os.path.isfile(fname):
+             f = open(fname)
+@@ -259,7 +259,7 @@
+     if pid:
+         if store:
+             try:
+-                f = open('/var/run/' + name + '-%s.pid' % os.getuid(), 'w')
++                f = open('/var/run/freevo/' + name + '-%s.pid' % os.getuid(), 'w')
+             except (OSError, IOError):
+                 f = open('/tmp/' + name + '-%s.pid' % os.getuid(), 'w')
+ 

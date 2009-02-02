@@ -6,133 +6,62 @@
 #
 
 PORTNAME=	freevo
-PORTVERSION=	1.5.4
-PORTREVISION=	5
+PORTVERSION=	1.8.3
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	freevo
+MASTER_SITES=	SF
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Open source digital jukebox
 
-.ifdef NOPORTDOCS
-BROKEN=		bad plist
-.endif
-
-RUN_DEPENDS=	aumix:${PORTSDIR}/audio/aumix \
-		${PYTHON_SITELIBDIR}/pyosd/__init__.py:${PORTSDIR}/misc/py-osd \
+RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
+		mencoder:${PORTSDIR}/multimedia/mencoder \
+		aumix:${PORTSDIR}/audio/aumix \
+		tv_cat:${PORTSDIR}/textproc/p5-xmltv \
+		${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml \
+		${PYTHON_SITELIBDIR}/kaa/__init__.py:${PORTSDIR}/multimedia/py-kaa-base \
+		${PYTHON_SITELIBDIR}/kaa/imlib2/__init__.py:${PORTSDIR}/multimedia/py-kaa-imlib2 \
+		${PYTHON_SITELIBDIR}/kaa/metadata/__init__.py:${PORTSDIR}/multimedia/py-kaa-metadata \
+		${PYTHON_SITELIBDIR}/BeautifulSoup.py:${PORTSDIR}/www/py-beautifulsoup \
 		${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted \
-		${PYTHON_SITELIBDIR}/mmpython/__init__.py:${PORTSDIR}/multimedia/mmpython \
-		${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml \
+		${PYTHON_SITELIBDIR}/Numeric/Numeric_headers/__init__.py:${PORTSDIR}/math/py-numeric
+
+FREEVO_USER=	freevo
+FREEVO_GROUP=	${FREEVO_USER}
+FREEVO_UID=	523
+FREEVO_GID=	${FREEVO_UID}
+FREEVO_HOME=	/var/db/${FREEVO_USER}
 
 NO_BUILD=	yes
-SUB_LIST+=	PORTVERSION=${PORTVERSION}
-SUB_FILES=	pkg-message
+SUB_LIST+=	PORTVERSION=${PORTVERSION} \
+		FREEVO_USER=${FREEVO_USER} \
+		FREEVO_GROUP=${FREEVO_GROUP} \
+		FREEVO_UID=${FREEVO_UID} \
+		FREEVO_GID=${FREEVO_GID} \
+		FREEVO_HOME=${FREEVO_HOME}
+SUB_FILES=	pkg-message pkg-install pkg-deinstall
 
-USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PKGINSTALL=	pkg-install
+
+USE_RC_SUBR=	${PORTNAME}
+RC_SCRIPT=	${PREFIX}/etc/rc.d/${PORTNAME}
 
 DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
-CONF=		${PREFIX}/etc/${PORTNAME}
-
-OPTIONS=	MPLAYER	"Enable mplayer video playback support" On \
-		XINE "Enable xine video playback support" On \
-		MAME "Enable xmame game support" Off \
-		SNES9X "Enable snes9x game support" Off \
-		ZSNES "Enable zsnes game support" Off \
-		XMLTV "Enable TV guide listings support" On \
-		CDPARANOIA "Enable cdparanoia audio extraction support" On \
-		LAME "Enable lame MP3 encoding support" On \
-		OGG "Enable Ogg Vorbis encoding support" On \
-		FLAC "Enable FLAC encoding support" Off \
-		LIRC "Enable lirc remote control support" On
+CONFDIR=	${PREFIX}/etc/${PORTNAME}
 
 .include <bsd.port.pre.mk>
-
-###
-# AUTODETECTION
-###
-
-.if exists(${LOCALBASE}/bin/xmame) && !defined(WITHOUT_MAME)
-WITH_MAME=	YES
-.endif
-
-.if exists(${LOCALBASE}/bin/snes9x) && !defined(WITHOUT_SNES9X)
-WITH_SNES9X=	YES
-.endif
-
-.if exists(${LOCALBASE}/bin/zsnes) && !defined(WITHOUT_ZSNES)
-WITH_ZSNES=	YES
-.endif
-
-.if exists(${LOCALBASE}/bin/flac) && !defined(WITHOUT_FLAC)
-WITH_FLAC=	YES
-.endif
-
-###
-# CONFIGURE RUN_DEPENDS
-###
-
-.if !defined(WITHOUT_MPLAYER)
-RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
-.endif
-
-.if !defined(WITHOUT_XINE)
-RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine
-.endif
-
-.if defined(WITH_MAME)
-RUN_DEPENDS+=	xmame:${PORTSDIR}/emulators/xmame
-.endif
-
-.if defined(WITH_SNES9X)
-RUN_DEPENDS+=	snes9x:${PORTSDIR}/emulators/snes9x
-.endif
-
-.if defined(WITH_ZSNES)
-RUN_DEPENDS+=	zsnes:${PORTSDIR}/emulators/zsnes
-.endif
-
-.if !defined(WITHOUT_XMLTV)
-RUN_DEPENDS+=	tv_cat:${PORTSDIR}/textproc/p5-xmltv
-.endif
-
-.if !defined(WITHOUT_CDPARANOIA)
-RUN_DEPENDS+=	cdparanoia:${PORTSDIR}/audio/cdparanoia
-.endif
-
-.if !defined(WITHOUT_LAME)
-RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
-.endif
-
-.if !defined(WITHOUT_OGG)
-RUN_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools
-.endif
-
-.if defined(WITH_FLAC)
-RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
-.endif
-
-.if !defined(WITHOUT_LIRC)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pylircmodule.so:${PORTSDIR}/comms/py-lirc
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/freevo|${PREFIX}/etc/freevo|' ${WRKSRC}/freevo_config.py
 	@${REINPLACE_CMD} -e 's|/etc/freevo|${PREFIX}/etc/freevo|' ${WRKSRC}/local_conf.py.example
 
-pre-install:
-	@BATCH="${BATCH}" ${SH} ${PKGINSTALL} PRE-INSTALL
-
 post-install:
-	@${MKDIR} ${CONF} && ${CHMOD} a+rx ${CONF}
-	${INSTALL_DATA} ${WRKSRC}/local_conf.py.example ${CONF}
-	@${SED} 's|%%PREFIX%%|${PREFIX}|' ${FILESDIR}/freevo.sh.sample > ${WRKDIR}/freevo.sh.sample
-	${INSTALL_SCRIPT} ${WRKDIR}/freevo.sh.sample ${PREFIX}/etc/rc.d/
-	@${SED} 's|%%PREFIX%%|${PREFIX}|' ${PKGMESSAGE}
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${MKDIR} ${CONFDIR}
+	${CHMOD} a+rx ${CONFDIR}
+	${INSTALL_DATA} ${WRKSRC}/local_conf.py.example ${CONFDIR}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
