@@ -1,6 +1,18 @@
 --- ./Makefile.in.orig	2006-03-07 15:44:34.000000000 +0100
-+++ ./Makefile.in	2008-08-21 18:28:55.665610617 +0200
-@@ -21,7 +21,7 @@
++++ ./Makefile.in	2009-01-29 17:49:24.121891519 +0100
+@@ -8,9 +8,10 @@
+ BINARY = lanmap
+ BINDEST = ${prefix}/bin/
+ DATADEST = ${prefix}/share/lanmap/
++TMPDEST ?= /tmp
+ 
+ all:
+-	cd ./src && make LANMAP_DATADIR="$(DATADEST)"
++	cd ./src && make LANMAP_DATADIR="$(DATADEST)" LANMAP_DATATMP="$(TMPDEST)"
+ 
+ install:
+ 	install -m 0755 ./src/$(BINARY) $(BINDEST)
+@@ -21,7 +22,7 @@
  	install -m 0644 ./data/mac_vendor $(DATADEST)data/
  	install -m 0644 -d $(DATADEST)graph
  	install -m 0644 ./graph/lanmap.header $(DATADEST)graph/
