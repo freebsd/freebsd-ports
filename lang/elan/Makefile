@@ -8,7 +8,7 @@
 PORTNAME=	elan
 PORTVERSION=	1.7c
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.cs.ru.nl/pub/vb/
+MASTER_SITES=	ftp://ftp.cs.ru.nl/pub/vb/elan/
 DISTNAME=	${PORTNAME}-1.7
 
 MAINTAINER=	ed@FreeBSD.org
@@ -16,9 +16,9 @@ COMMENT=	Compiler for the Elan Programming Environment
 
 LIB_DEPENDS=	dcg:${PORTSDIR}/devel/mimir
 
-WRKSRC=	${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
-MAN1=	elancc.1
+MAN1=		elancc.1
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
