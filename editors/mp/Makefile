@@ -9,7 +9,7 @@ PORTNAME=	mp
 PORTVERSION=	3.3.18b
 PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	http://www.triptico.com/download/
+MASTER_SITES=	http://triptico.com/download/
 
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	A programming text editor
