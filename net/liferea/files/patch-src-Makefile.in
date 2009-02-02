@@ -5,7 +5,7 @@
  @WITH_GTKHTML2_TRUE@GTKHTML2 = gtkhtml2
  @WITH_WEBKIT_TRUE@WEBKIT = webkit
 -SUBDIRS = net parsers notification ui fl_sources scripting . $(GTKHTML2) $(WEBKIT) mozilla
-+@WITH_GECKO_TRUE@MOZILLA = mozilla
++@WITH_MOZILLA_TRUE@MOZILLA = mozilla
 +SUBDIRS = net parsers notification ui fl_sources scripting . $(GTKHTML2) $(WEBKIT) $(MOZILLA)
  AM_CPPFLAGS = \
  	-DPACKAGE_DATA_DIR=\""$(datadir)"\" \
