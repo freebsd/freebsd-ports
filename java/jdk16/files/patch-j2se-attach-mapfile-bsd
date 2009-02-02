@@ -1,0 +1,28 @@
+$FreeBSD$
+
+--- ../../j2se/make/com/sun/tools/attach/mapfile-bsd	10 May 2007 05:39:49 -0000	1.1
++++ ../../j2se/make/com/sun/tools/attach/mapfile-bsd	29 Jan 2009 08:13:19 -0000
+@@ -1,5 +1,5 @@
+ #
+-#ident	"@(#)mapfile-linux	1.5 05/11/17"
++#ident	"@(#)mapfile-bsd	1.0 09/01/15"
+ #
+ # Copyright 2006 Sun Microsystems, Inc. All rights reserved.
+ # Copyright 2006 Sun Microsystems, Inc. Tous droits réservés.
+@@ -11,6 +11,16 @@
+ # Define public interface.
+ 
+ SUNWprivate_1.1 {
++	global:
++            Java_sun_tools_attach_BSDVirtualMachine_checkPermissions;
++            Java_sun_tools_attach_BSDVirtualMachine_close;
++            Java_sun_tools_attach_BSDVirtualMachine_connect;
++            Java_sun_tools_attach_BSDVirtualMachine_sendQuitTo;
++            Java_sun_tools_attach_BSDVirtualMachine_socket;
++            Java_sun_tools_attach_BSDVirtualMachine_read;
++            Java_sun_tools_attach_BSDVirtualMachine_write;
++            Java_sun_tools_attach_BSDVirtualMachine_createAttachFile;
++
+ 	local:
+ 		*;
+ };

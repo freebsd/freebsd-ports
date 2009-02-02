@@ -1,0 +1,15 @@
+$FreeBSD$
+
+--- ../../j2se/make/com/sun/tools/attach/Exportedfiles.gmk	21 Jul 2006 17:23:23 -0000	1.1.1.2
++++ ../../j2se/make/com/sun/tools/attach/Exportedfiles.gmk	29 Jan 2009 08:13:19 -0000
+@@ -25,5 +25,10 @@
+ 	sun/tools/attach/LinuxVirtualMachine.java
+ endif
+ 
++ifeq ($(PLATFORM), bsd)
++FILES_export = \
++	sun/tools/attach/BSDVirtualMachine.java
++endif
++
+ 
+ 
