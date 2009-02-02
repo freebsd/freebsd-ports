@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Date_Holidays_Denmark
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
@@ -18,7 +18,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 CATEGORY=	Date
 FILES=		Holidays/Driver/Denmark.php
 
+PLIST_SUB=      PORTVERSION=${PORTVERSION}
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>
-
