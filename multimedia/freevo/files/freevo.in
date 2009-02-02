@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# PROVIDE: freevo
+# REQUIRE: DAEMON lircd
+# KEYWORD: shutdown
+#
+# Uses the following /etc/rc.conf variables:
+#	freevo_enable="YES"			master on/off
+#	freevo_recordserver_enable="YES"	start freevo record server
+#	freevo_webserver_enable="YES"		start freevo web server
+#	freevo_gui_enable="YES"			start freevo GUI
+#
+
+. /etc/rc.subr
+
+name=freevo
+rcvar=`set_rcvar`
+
+load_rc_config $name
+: ${freevo_enable="NO"}
+: ${freevo_recordserver_enable="NO"}
+: ${freevo_webserver_enable="NO"}
+: ${freevo_gui_enable="NO"}
+
+freevo_user=${freevo_user:-"freevo"}
+freevo_group=${freevo_group:-"freevo"}
+freevo_uid=`pw usershow ${freevo_user} | awk -F: '{print $3}'`
+freevo_dir=`pw usershow ${freevo_user} | awk -F: '{print $9}'`
+
+command=%%PREFIX%%/bin/freevo
+command_interpreter="%%PREFIX%%/bin/python2.5"
+
+cd ${freevo_dir}
+
+case "$1" in
+start)
+	[ ${freevo_recordserver_enable} = "YES" ] && su ${freevo_user} -c "${command} recordserver start"
+	[ ${freevo_webserver_enable} = "YES" ] && su ${freevo_user} -c "${command} webserver start"
+	[ ${freevo_gui_enable} = "YES" ] && su ${freevo_user} -c "${command}  start"
+	;;
+stop)
+	[ ${freevo_recordserver_enable} = "YES" ] && su ${freevo_user} -c "${command} recordserver stop"
+	[ ${freevo_webserver_enable} = "YES" ] && su ${freevo_user} -c "${command} webserver stop"
+	[ ${freevo_gui_enable} = "YES" ] && su ${freevo_user} -c "${command}  stop"
+	;;
+restart)
+	[ ${freevo_recordserver_enable} = "YES" ] && su ${freevo_user} -c "${command} recordserver stop"
+	[ ${freevo_webserver_enable} = "YES" ] && su ${freevo_user} -c "${command} webserver stop"
+	[ ${freevo_gui_enable} = "YES" ] && su ${freevo_user} -c "${command}  stop"
+	[ ${freevo_recordserver_enable} = "YES" ] && su ${freevo_user} -c "${command} recordserver start"
+	[ ${freevo_webserver_enable} = "YES" ] && su ${freevo_user} -c "${command} webserver start"
+	[ ${freevo_gui_enable} = "YES" ] && su ${freevo_user} -c "${command}  start"
+	;;
+esac
+

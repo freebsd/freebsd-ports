@@ -1,0 +1,51 @@
+#!/bin/sh
+# create freevo user/group/homedir and log/rundirs
+
+user=%%FREEVO_USER%%
+group=%%FREEVO_GROUP%%
+uid=%%FREEVO_UID%%
+gid=%%FREEVO_GID%%
+home=%%FREEVO_HOME%%
+
+export PATH=/bin:/usr/bin:/sbin:/usr/sbin
+
+if [ "$1" = "PRE-INSTALL" ]; then
+	if pw groupshow "$group" 2>/dev/null; then
+		echo "You already have a group \"$group\", so I will use it."
+	else
+		echo "Creating group \"$group\"..."
+		pw groupadd $group -g $gid || exit 1
+	fi
+
+	if pw usershow "$user" 2>/dev/null; then
+		echo "You already have a user \"$user\", so I will use it."
+	else
+		echo "Creating user \"$user\"..."
+		pw useradd $user -u $uid -g $group -d $home -s /bin/sh \
+		    -c "Freevo Owner" || exit 1
+	fi
+
+	if [ -d "$home" ]; then
+		echo "You already have a freevo home directory \"$home\", so I will use it."
+	else
+		echo "Creating freevo home directory \"$home\"..."
+		mkdir -p $home
+		chown $user:$group $home
+	fi
+
+	if [ -d "/var/log/freevo" ]; then
+		echo "You already have a freevo log directory \"/var/log/freevo\", so I will use it."
+	else
+		echo "Creating freevo log directory \"/var/log/freevo\"..."
+		mkdir -p /var/log/freevo
+		chown $user:$group /var/log/freevo
+	fi
+
+	if [ -d "/var/run/freevo" ]; then
+		echo "You already have a freevo log directory \"/var/run/freevo\", so I will use it."
+	else
+		echo "Creating freevo run directory \"/var/run/freevo\"..."
+		mkdir -p /var/run/freevo
+		chown $user:$group /var/run/freevo
+	fi
+fi
