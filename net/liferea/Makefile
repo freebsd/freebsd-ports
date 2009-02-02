@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	1.4.23
+PORTVERSION=	1.4.24
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
@@ -31,9 +31,9 @@ OPTIONS=	LIBNOTIFY "Enable libnotify support" on \
 		DBUS "Enable dbus support" on \
 		GNUTLS "Enable SSL/HTTPS support" on \
 		GTKHTML "Use GtkHtml for rendering" on \
-		WEBKIT "Use Webkit for rendering" off \
-		MOZILLA "Use Firefox for rendering" off \
-		XULRUNNER "Use Xulrunner for rendering" off
+		WEBKIT "Use Webkit for rendering" off
+#		MOZILLA "Use Firefox for rendering" off \
+#		XULRUNNER "Use Xulrunner for rendering" off
 
 .include <bsd.port.pre.mk>
 
@@ -70,21 +70,27 @@ PLIST_SUB+=	WEBKIT="@comment "
 .endif
 
 .ifdef WITH_MOZILLA
+USE_GNOME+=	gconf2 libxslt
 USE_GECKO=	firefox mozilla
-CONFIGURE_ARGS+=--enable-gecko=${GECKO}
+CONFIGURE_ARGS+=--with-gecko=${GECKO}
 PLIST_SUB+=	MOZ=""
+BROKEN=		does not compile
 .else
-CONFIGURE_ARGS+=--disable-gecko
 PLIST_SUB+=	MOZ="@comment "
 .endif
 
 .ifdef WITH_XULRUNNER
+CONFIGURE_ARGS+=--with-gecko=xulrunner
 BUILD_DEPENDS+=	xulrunner:${PORTSDIR}/www/xulrunner
 RUN_DEPENDS+=	xulrunner:${PORTSDIR}/www/xulrunner
 PLIST_SUB+=	XUL=""
+BROKEN=		does not configure
 .else
-CONFIGURE_ARGS+=--disable-xulrunner
 PLIST_SUB+=	XUL="@comment "
+.endif
+
+.if !defined(WITH_MOZILLA) && !defined(WITH_XULRUNNER)
+CONFIGURE_ARGS+=--disable-gecko
 .endif
 
 .ifdef WITHOUT_DBUS
