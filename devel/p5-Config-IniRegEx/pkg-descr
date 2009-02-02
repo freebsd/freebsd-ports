@@ -1,0 +1,8 @@
+Using this module it does the ini configuration file parsing,
+with an addon facility of regex kind of search. This module
+aims out doing a regex search for Sections, and Parameters
+of the Ini configuration file. It does the Perl regex matching,
+nothing external. So whoever knows the Perl basic regex can
+use this feature.
+
+WWW:	http://search.cpan.org/dist/Config-IniRegEx/
