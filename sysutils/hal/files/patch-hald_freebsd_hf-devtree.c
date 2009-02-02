@@ -1,6 +1,30 @@
 --- hald/freebsd/hf-devtree.c.orig	2008-05-07 19:24:03.000000000 -0400
-+++ hald/freebsd/hf-devtree.c	2009-01-25 17:17:02.000000000 -0500
-@@ -426,7 +426,13 @@ hf_devtree_probe (void)
++++ hald/freebsd/hf-devtree.c	2009-01-30 14:30:57.000000000 -0500
+@@ -86,7 +86,11 @@ hf_devtree_cpu_can_throttle (int cpu)
+   gboolean can = FALSE;
+   char *levels;
+ 
++#ifdef notyet
+   levels = hf_get_string_sysctl(NULL, "dev.cpu.%i.freq_levels", cpu);
++#else
++  levels = hf_get_string_sysctl(NULL, "dev.cpu.0.freq_levels");
++#endif
+   if (levels)
+     {
+       char **toks;
+@@ -109,7 +113,11 @@ hf_devtree_cpu_get_maxfreq (int cpu)
+   char *levels;
+   int freq = -1;
+ 
++#ifdef notyet
+   levels = hf_get_string_sysctl(NULL, "dev.cpu.%i.freq_levels", cpu);
++#else
++  levels = hf_get_string_sysctl(NULL, "dev.cpu.0.freq_levels");
++#endif
+   if (levels)
+     {
+       sscanf(levels, "%i/", &freq);
+@@ -426,7 +434,13 @@ hf_devtree_probe (void)
  	  HalDevice *device;
  
  	  device = hf_devtree_device_new(parent, info->handler, info->unit);
@@ -15,7 +39,7 @@
  	}
  
        devices = g_slist_delete_link(devices, root);
-@@ -434,6 +440,17 @@ hf_devtree_probe (void)
+@@ -434,6 +448,17 @@ hf_devtree_probe (void)
      }
  }
  
@@ -33,7 +57,7 @@
  HalDevice *
  hf_devtree_find_from_name (HalDeviceStore *store, const char *name)
  {
-@@ -597,5 +614,6 @@ hf_devtree_is_driver (const char *name, 
+@@ -597,5 +622,6 @@ hf_devtree_is_driver (const char *name, 
  }
  
  HFHandler hf_devtree_handler = {
