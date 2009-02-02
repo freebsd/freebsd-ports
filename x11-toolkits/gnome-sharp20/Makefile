@@ -10,8 +10,7 @@ PORTNAME=	gnome-sharp
 PORTVERSION=	2.16.0
 PORTREVISION=	5
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.16
+MASTER_SITES=	GNOME
 
 MAINTAINER=	bsd-sharp@googlegroups.com
 COMMENT=	GNOME interfaces for the .NET runtime

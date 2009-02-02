@@ -9,8 +9,7 @@ PORTNAME=	gnome-mud
 PORTVERSION=	0.10.7
 PORTREVISION=	5
 CATEGORIES=	net gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	GNOME
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-based MUD client with triggers, aliases, colors, etc

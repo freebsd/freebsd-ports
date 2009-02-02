@@ -9,8 +9,7 @@ PORTNAME=	desktop-data-model
 PORTVERSION=	1.2.4
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+)(\.[0-9]+)*/\1/}
+MASTER_SITES=	GNOME
 
 MAINTAINER=	wahjava@gmail.com
 COMMENT=	Engine providing live updates of online data to the desktop

@@ -9,8 +9,7 @@ PORTNAME=	gob
 PORTVERSION=	1.0.12
 PORTREVISION=	4
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gob/1.0
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A preprocessor for making GTK+ objects with inline C

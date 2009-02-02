@@ -9,8 +9,7 @@ PORTNAME=	xml-i18n-tools
 PORTVERSION=	0.9
 PORTREVISION=	1
 CATEGORIES=	textproc gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Xml internationalization support for GNOME, and others

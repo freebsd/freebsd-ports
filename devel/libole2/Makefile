@@ -9,8 +9,7 @@ PORTNAME=	libole2
 PORTVERSION=	0.2.4
 PORTREVISION=	2
 CATEGORIES=	devel gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/libole2/0.2
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Support library for OLE functions (MS-Excel) for gnumeric

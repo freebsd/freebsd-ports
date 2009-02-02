@@ -13,7 +13,7 @@ PORTNAME=	ximian-south
 PORTVERSION=	1.3.6
 PORTREVISION=	3
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	teams/art.gnome.org/archive/themes/icon
 DISTNAME=	ICON-Ximian-South-${PORTVERSION}
 

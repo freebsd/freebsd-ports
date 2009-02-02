@@ -10,8 +10,7 @@ PORTNAME=	present
 PORTVERSION=	0.0.3
 PORTREVISION=	6
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.0
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A library for reading Microsoft PowerPoint(tm) documents

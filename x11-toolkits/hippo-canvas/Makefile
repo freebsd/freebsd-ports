@@ -8,8 +8,7 @@
 PORTNAME=	hippo-canvas
 PORTVERSION=	0.3.0
 CATEGORIES=	x11-toolkits gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 
 MAINTAINER=	wahjava@gmail.com
 COMMENT=	A client stacker popup widget for GTK+ toolkit

@@ -11,8 +11,7 @@ PORTVERSION=	0.4.0
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.4
+MASTER_SITES=	GNOME
 
 MAINTAINER=	bsd-sharp@googlegroups.com
 COMMENT=	Personal photo management to the GNOME desktop

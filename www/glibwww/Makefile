@@ -9,8 +9,7 @@ PORTNAME=	glibwww
 PORTVERSION=	0.2
 PORTREVISION=	6
 CATEGORIES=	www gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/glibwww/0.2
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A library for people wanting to use libwww with gtk/gnome

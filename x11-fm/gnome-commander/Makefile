@@ -9,8 +9,7 @@ PORTNAME=	gnome-commander
 PORTVERSION=	1.0.1
 PORTREVISION=	6
 CATEGORIES=	x11-fm gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-commander/1.0/
+MASTER_SITES=	GNOME
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File manager for Gnome

@@ -10,8 +10,7 @@ PORTNAME=	ontv
 PORTVERSION=	2.4.0
 PORTREVISION=	4
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME Applet for monitoring current and upcoming TV programs

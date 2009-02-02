@@ -9,8 +9,7 @@ PORTNAME=	gtk-engines
 PORTVERSION=	0.12
 PORTREVISION=	8
 CATEGORIES=	x11-themes
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gtk-engines/0.12
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Theme engine for gtk+ toolkits
