@@ -7,6 +7,7 @@
 
 PORTNAME=	simpy
 PORTVERSION=	2.00
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,11 +23,6 @@ PYDISTUTILS_PKGNAME=	SimPy
 OPTIONS=	TKINTER		"Install py-tkinter for plot"      off
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-.if !defined(NOPORTDOCS)
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-.endif
-EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
-
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_TKINTER)
@@ -38,8 +34,11 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/SimPyDocs && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
+
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	(cd ${WRKSRC}/SimPyModels && ${FIND} . | \
 		${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR})
+.endif
 
 .include <bsd.port.post.mk>
