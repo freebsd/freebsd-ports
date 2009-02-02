@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysql++
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.8
 CATEGORIES=	databases devel
 MASTER_SITES=	http://tangentsoft.net/mysql++/releases/ \
 		T32.TecNik93.com/ports/others_ports/${PORTNAME}/sources/
@@ -20,6 +20,7 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} --enable-thread-check
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
+PLIST_SUB+=	VER=${PORTVERSION}
 
 CONFLICTS=	${PORTNAME}*-1.*
 
