@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	materm
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tabbed version of rxvt
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

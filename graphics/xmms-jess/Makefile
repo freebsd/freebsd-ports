@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://arquier.free.fr/
 DISTNAME=	JESS-${PORTVERSION}
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A XMMS visualization plugin that uses SDL
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://jzb.rapanden.dk/pub/
 DISTNAME=	speex-xmms-${PORTVERSION}
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS input plugin to play speex files
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

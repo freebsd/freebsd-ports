@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}-2k4-0-src
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cool XMMS visualization
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms \

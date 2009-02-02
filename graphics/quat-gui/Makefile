@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.physcip.uni-stuttgart.de/phy11733/download/
 PKGNAMESUFFIX=	-gui
 DISTNAME=	quat-${PORTVERSION:S/.p/pre/}
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Three-dimensional fractal creator (X11 GUI)
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk

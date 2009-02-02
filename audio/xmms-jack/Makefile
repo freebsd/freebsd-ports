@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	xmms-jack
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS plugin for jack
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \

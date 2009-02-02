@@ -10,7 +10,7 @@ PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high level object-oriented programming language
 
 USE_GETTEXT=	yes

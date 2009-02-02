@@ -12,7 +12,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://coscorrosa.com/programs/${PORTNAME}/download/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK based program for viewing and creating L-system fractals
 
 WRKSRC=		${WRKDIR}/lsysexp-0.67

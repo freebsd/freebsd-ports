@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	faac
 PKGNAMEPREFIX=	xmms-
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS plugin for faad
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

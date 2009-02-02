@@ -11,7 +11,7 @@ CATEGORIES=	devel tcl
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	tclxml
 
-MAINTAINER?=	dyeske@gmail.com
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	API for parsing XML documents using Tcl
 
 RUN_DEPENDS?=	dtplite:${PORTSDIR}/devel/tcllib

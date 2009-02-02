@@ -11,8 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A XMMS future composer input plugin
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

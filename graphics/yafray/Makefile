@@ -9,7 +9,7 @@ PORTVERSION=	0.0.9
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.yafray.org/sec/2/downloads/
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast XML based raytracer
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
