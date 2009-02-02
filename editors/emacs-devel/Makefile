@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	emacs
-PORTVERSION=	${EMACS_VER}.${SNAPSHOT}
-PORTREVISION=	1
+PORTVERSION=	${EMACS_VER}
 CATEGORIES=	editors ipv6
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	keramida
-DISTNAME=	${PORTNAME}-cvs-2008.12.07.18.51.01
+MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
+MASTER_SITE_SUBDIR=     emacs/pretest
 
 MAINTAINER=	keramida@ceid.upatras.gr
 COMMENT=	GNU editing macros
@@ -33,16 +31,12 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
-USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
 
-EMACS_VER=	23.0.60
-SNAPSHOT=	20081207
+EMACS_VER=	23.0.90
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	bootstrap
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CONFIGURE_TARGET=	${MACHINE_ARCH}-freebsd
 .if defined(WITHOUT_X11)
@@ -68,7 +62,8 @@ USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--without-xim
 .endif
 
-MAN1=		ctags.1 emacs.1 emacsclient.1 etags.1
+MAN1=		b2m.1 ctags.1 ebrowse.1 emacs.1 emacsclient.1 etags.1 \
+		grep-changelog.1 rcs-checkin.1
 PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET}
 
 MAKE_ENV=	LC_ALL=C

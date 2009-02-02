@@ -1,6 +1,6 @@
---- Makefile.in.orig	2008-12-09 19:27:59.000000000 +0200
-+++ Makefile.in	2008-12-09 19:25:19.000000000 +0200
-@@ -444,14 +444,6 @@
+--- Makefile.in.orig	Mon Feb 02 04:32:35 2009 +0200
++++ Makefile.in	Mon Feb 02 04:22:03 2009 +0200
+@@ -451,14 +451,6 @@
  
  install-arch-indep: mkdir info install-etc
  	-set ${COPYDESTS} ; \
@@ -15,7 +15,7 @@
  	mkdir ${COPYDESTS} ; \
  	chmod ugo+rx ${COPYDESTS} ; \
  	unset CDPATH; \
-@@ -552,9 +544,9 @@
+@@ -559,9 +551,9 @@
  	   cd ${srcdir}/info ; \
  	   for elt in $(INFO_FILES); do \
  	      test "$(MAKEINFO)" = "off" && ! test -e $$elt && continue; \
@@ -28,7 +28,7 @@
  	      done; \
  	   done); \
  	else true; fi
-@@ -565,7 +557,7 @@
+@@ -572,7 +564,7 @@
  	  for elt in $(INFO_FILES); do \
  	    test "$(MAKEINFO)" = "off" && ! test -e $$elt && continue; \
  	    (cd $${thisdir}; \
