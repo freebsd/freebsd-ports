@@ -6,10 +6,13 @@
 #
 
 PORTNAME=	cgit
-PORTVERSION=	0.8.1
-PORTREVISION=	3
+PORTVERSION=	0.8.2
 CATEGORIES=	devel www
-MASTER_SITES= 	http://hjemli.net/git/cgit/snapshot/
+MASTER_SITES= 	http://hjemli.net/git/cgit/snapshot/:cgit \
+		http://www.kernel.org/pub/software/scm/git/:git
+DISTFILES=	cgit-${PORTVERSION}${EXTRACT_SUFX}:cgit \
+		git-${GIT_VERSION}.tar.bz2:git
+GIT_VERSION=	1.6.1.1
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	A fast webinterface for git
@@ -27,6 +30,13 @@ MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CGIT_CONFIG=${PREFIX}/etc/cgitrc
 
 SUB_FILES=	pkg-message
+
+post-extract:
+	@${RMDIR} ${WRKSRC}/git
+	@${MV} ${WRKDIR}/git-${GIT_VERSION} ${WRKSRC}/git
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^CC =/d' ${WRKSRC}/git/Makefile
 
 post-install:
 	@${MKDIR} /var/cache/${PORTNAME}
