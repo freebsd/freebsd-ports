@@ -22,7 +22,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
 MASTER_SITE_SUBDIR=	mesa3d
 DISTFILES=	MesaLib-${MESAVERSION}${EXTRACT_SUFX}
-MAINTAINER=	x11@FreeBSD.org
+MAINTAINER?=	x11@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
