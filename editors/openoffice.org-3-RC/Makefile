@@ -151,9 +151,6 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 WITHOUT_MOZILLA=	yes
 LIB_DEPENDS+=		boost_regex:${PORTSDIR}/devel/boost
 CONFIGURE_ARGS+=	--with-system-boost=yes #i58343#
-.if (${OSVERSION} >= 700042)
-EXTRA_PATCHES+=	${FILESDIR}/amd64-gcc42-workaround
-.endif
 .endif
 .if (${OSVERSION} <= 602102)
 EXTRA_PATCHES+=	${FILESDIR}/rtld-workaround-i66667
