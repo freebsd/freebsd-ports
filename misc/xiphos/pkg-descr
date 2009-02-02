@@ -1,10 +1,6 @@
-The GnomeSword GUI is a frontend to the SWORD project.
+Xiphos (formerly known as GnomeSword) is a Bible study tool written
+with the GNOME toolkit, offering a rich and featureful environment
+for reading, study, and research using modules from The SWORD Project
+and elsewhere.
 
-The SWORD Project is an effort to create an ever expanding software
-package for research and study of God and His Word. The SWORD Bible
-Framework allows easy manipulation of Bible texts, commentaries,
-lexicons, dictionaries, etc.  Many frontends are build using this
-framework. An installed module set may be shared between any frontend
-using the framework.
-
-WWW: http://gnomesword.sourceforge.net/
+WWW: http://www.xiphos.org/

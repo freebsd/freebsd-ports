@@ -1,14 +1,16 @@
-# New ports collection makefile for: gnomesword
+# New ports collection makefile for: xiphos
 # Date created:   April 27, 2007
-# Whom:           Thomas Abthorpe <thomas@goodking.ca>
+# Whom:           Thomas Abthorpe <tabthorpe@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gnomesword
+PORTNAME=	xiphos
 PORTVERSION=	2.4.1
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	gnomesword
+DISTNAME=	gnomesword-${PORTVERSION}
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A bible interface utilizing the sword framework
