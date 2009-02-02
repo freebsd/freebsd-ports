@@ -1,5 +1,5 @@
---- src/ck-sysdeps-freebsd.c.orig        2008-01-23 09:30:44.000000000 -0500
-+++ src/ck-sysdeps-freebsd.c        2008-02-06 22:50:57.000000000 -0500
+--- src/ck-sysdeps-freebsd.c.orig	2008-04-03 20:36:21.000000000 -0400
++++ src/ck-sysdeps-freebsd.c	2009-01-30 17:03:00.000000000 -0500
 @@ -27,6 +27,7 @@
  #include <unistd.h>
  #include <string.h>
@@ -24,7 +24,7 @@
                  *stat = NULL;
          }
  
-@@ -318,38 +317,40 @@ gboolean
+@@ -327,38 +326,38 @@ gboolean
  ck_get_max_num_consoles (guint *num)
  {
          int      max_consoles;
@@ -41,19 +41,16 @@
 -        if (res == 0) {
 -                goto done;
 -        }
--
++        g.gl_offs = 0;
++        glob ("/dev/ttyv*", GLOB_DOOFFS | GLOB_NOSORT, NULL, &g);
++        for (i = 0; i < g.gl_pathc && g.gl_pathv[i] != NULL; i++) {
++		struct stat sb;
++                char *cdev;
+ 
 -        while ((t = getttyent ()) != NULL) {
 -                if (t->ty_status & TTY_ON && strncmp (t->ty_name, "ttyv", 4) == 0)
-+        g.gl_offs = 0;
-+        glob ("/dev/ttyv*", GLOB_DOOFFS, NULL, &g);
-+        for (i = 0; i < g.gl_pathc && g.gl_pathv[i] != NULL; i++) {
-+                int fd;
-+                char *cdev;
-+
 +                cdev = g.gl_pathv[i];
-+                fd = open (cdev, O_RDONLY | O_NOCTTY);
-+                if (fd > -1) {
-+                        close (fd);
++                if (stat (cdev, &sb) > -1 && S_ISCHR (sb.st_mode)) {
                          max_consoles++;
 +                } else {
 +                        break;
@@ -83,7 +80,7 @@
  }
  
  char *
-@@ -360,7 +361,12 @@ ck_get_console_device_for_num (guint num
+@@ -369,7 +368,12 @@ ck_get_console_device_for_num (guint num
          /* The device number is always one less than the VT number. */
          num--;
  
@@ -97,7 +94,7 @@
  
          return device;
  }
-@@ -370,6 +376,7 @@ ck_get_console_num_from_device (const ch
+@@ -379,6 +383,7 @@ ck_get_console_num_from_device (const ch
                                  guint      *num)
  {
          guint    n;
@@ -105,7 +102,7 @@
          gboolean ret;
  
          n = 0;
-@@ -379,7 +386,11 @@ ck_get_console_num_from_device (const ch
+@@ -388,7 +393,11 @@ ck_get_console_num_from_device (const ch
                  return FALSE;
          }
  
@@ -118,7 +115,7 @@
                  /* The VT number is always one more than the device number. */
                  n++;
                  ret = TRUE;
-@@ -399,6 +410,7 @@ ck_get_active_console_num (int    consol
+@@ -408,6 +417,7 @@ ck_get_active_console_num (int    consol
          gboolean ret;
          int      res;
          int      active;
@@ -126,7 +123,7 @@
  
          g_assert (console_fd != -1);
  
-@@ -411,7 +423,12 @@ ck_get_active_console_num (int    consol
+@@ -420,7 +430,12 @@ ck_get_active_console_num (int    consol
                  goto out;
          }
  
