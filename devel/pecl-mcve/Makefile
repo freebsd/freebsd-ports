@@ -17,7 +17,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A PECL Extension for Interface the MCVE/Monetra API
 
-LIB_DEPENDS=	mcve.5:${PORTSDIR}/devel/libmcve
+LIB_DEPENDS=	monetra.7:${PORTSDIR}/devel/libmonetra
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
