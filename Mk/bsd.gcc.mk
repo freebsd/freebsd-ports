@@ -66,34 +66,42 @@ GCCVERSION_040400=	999999 999999 4.4
 #
 
 .if defined (USE_FORTRAN)
+
 # gfortran43 from lang/gcc43 is the default for now.
 . if ${USE_FORTRAN} == yes
 BUILD_DEPENDS+=	gfortran43:${PORTSDIR}/lang/gcc43
 RUN_DEPENDS+=	gfortran43:${PORTSDIR}/lang/gcc43
 FC:=	gfortran43
 F77:=	gfortran43
-. endif
+CC:=	gcc43
+CXX:=	g++43
 
 # Intel Fortran compiler from lang/ifc.
-. if ${USE_FORTRAN} == ifort
+. elif ${USE_FORTRAN} == ifort
 BUILD_DEPENDS+=	${LOCALBASE}/intel_fc_80/bin/ifort:${PORTSDIR}/lang/ifc
 RUN_DEPENDS+=	${LOCALBASE}/intel_fc_80/bin/ifort:${PORTSDIR}/lang/ifc
 FC:=	${LOCALBASE}/intel_fc_80/bin/ifort
 F77:=	${LOCALBASE}/intel_fc_80/bin/ifort
-. endif
 
 # In some case we want to use g77 from lang/gcc34 (FreeBSD>=7) or f77
 # (FreeBSD<=6).
-. if ${USE_FORTRAN} == g77
-.  if (${OSVERSION} > 700000)
+. elif ${USE_FORTRAN} == g77
+.  if (${OSVERSION} > 700042)
 BUILD_DEPENDS+=	g77-34:${PORTSDIR}/lang/gcc34
 RUN_DEPENDS+=	g77-34:${PORTSDIR}/lang/gcc34
 FC:=	g77-34
 F77:=	g77-34
-.else
+CC:=	gcc34
+CXX:=	g++34
+.  else
 F77:=	f77
 FC:=	f77
+CC:=	gcc
+CXX:=	g++
 .  endif
+
+. else
+IGNORE=	specifies unknown value "${USE_FORTRAN}" for USE_FORTRAN
 . endif
 
 CONFIGURE_ENV+=	F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
@@ -223,3 +231,4 @@ test-gcc:
 	@echo CC=${CC} - CXX=${CXX} - CFLAGS=${CFLAGS}
 	@echo F77=${F77} - FC=${FC} - FFLAGS=${FFLAGS}
 	@echo BUILD_DEPENDS=${BUILD_DEPENDS}
+	@echo RUN_DEPENDS=${RUN_DEPENDS}
