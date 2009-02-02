@@ -231,11 +231,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/contact.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/copy.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/copy.xpm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/custom/README
-%%DATADIR%%/%%EMACS_VER%%/etc/images/custom/down-pushed.xpm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/custom/down.xpm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/custom/right-pushed.xpm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/custom/right.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/cut.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/cut.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/data-save.pbm
@@ -871,6 +866,7 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/leim/quail/greek.elc
 %%DATADIR%%/%%EMACS_VER%%/leim/quail/hangul.el.gz
 %%DATADIR%%/%%EMACS_VER%%/leim/quail/hangul.elc
+%%DATADIR%%/%%EMACS_VER%%/leim/quail/hangul3.elc
 %%DATADIR%%/%%EMACS_VER%%/leim/quail/hanja-jis.el.gz
 %%DATADIR%%/%%EMACS_VER%%/leim/quail/hanja-jis.elc
 %%DATADIR%%/%%EMACS_VER%%/leim/quail/hanja.el.gz
@@ -972,7 +968,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/button.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/button.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calc/README
-%%DATADIR%%/%%EMACS_VER%%/lisp/calc/README.prev
 %%DATADIR%%/%%EMACS_VER%%/lisp/calc/calc-aent.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calc/calc-aent.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calc/calc-alg.el.gz
@@ -2120,24 +2115,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/metamail.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/mspools.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/mspools.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/pmail.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/pmail.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/pmailedit.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/pmailedit.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/pmailhdr.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/pmailhdr.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/pmailkwd.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/pmailkwd.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/pmailmm.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/pmailmm.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/pmailmsc.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/pmailmsc.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/pmailout.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/pmailout.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/pmailsort.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/pmailsort.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/pmailsum.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/pmailsum.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/reporter.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/reporter.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rfc2368.el.gz
@@ -2152,6 +2129,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rmailedit.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rmailkwd.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rmailkwd.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/mail/rmailmm.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/mail/rmailmm.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rmailmsc.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rmailmsc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rmailout.el.gz
@@ -2368,7 +2347,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/newcomment.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/novice.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/novice.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/nxml/TODO
 %%DATADIR%%/%%EMACS_VER%%/lisp/nxml/nxml-enc.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/nxml/nxml-enc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/nxml/nxml-glyph.el.gz
@@ -2446,6 +2424,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/scribe.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/swedish.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/swedish.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-mcvs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-mcvs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/x-menu.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/x-menu.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-agenda.el.gz
@@ -2470,6 +2450,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-export-latex.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-faces.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-faces.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/org/org-footnote.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/org/org-footnote.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-gnus.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-gnus.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-id.el.gz
@@ -2761,6 +2743,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ps-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/python.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/python.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ruby-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ruby-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/scheme.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/scheme.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/sh-script.el.gz
@@ -3114,8 +3098,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc-hg.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc-hooks.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc-hooks.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/vc-mcvs.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/vc-mcvs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc-mtn.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc-mtn.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc-rcs.el.gz
@@ -3233,7 +3215,6 @@ var/games/emacs/tetris-scores
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/gud
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/custom
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/gnus
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/e
@@ -3243,6 +3224,9 @@ var/games/emacs/tetris-scores
 @dirrm libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%
 @dirrm libexec/emacs/%%EMACS_VER%%
 @dirrm libexec/emacs
+@dirrmtry var/games/emacs
+@dirrmtry var/games
+@dirrmtry var
 @dirrmtry share/icons/hicolor/scalable/mimetypes
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
@@ -3259,6 +3243,3 @@ var/games/emacs/tetris-scores
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/applications
-@dirrmtry var/games/emacs
-@dirrmtry var/games
-@dirrmtry var
