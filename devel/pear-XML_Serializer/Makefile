@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_Serializer
-PORTVERSION=	0.19.1
+PORTVERSION=	0.19.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
@@ -18,20 +18,20 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	XML
 FILES=		Serializer.php Unserializer.php
-EXAMPLES=	example.xml serializeAndEncode.php serializeAndReturn.php \
-		serializeCData.php serializeIndexedArray.php \
-		serializeIndexedArrayWithContext.php \
-		serializeNullProperties.php serializeObject.php \
-		serializeRDF.php Serializer_Bug7112.php \
-		serializeSelectiveAttributes.php serializeWithAttributes.php \
-		serializeWithAttributes2.php serializeWithComment.php \
-		serializeWithDtd.php serializeWithIndentedAttributes.php \
-		serializeWithNamespace.php serializeWithTagMap.php \
-		unserializeAnyXML.php unserializeClassNames.php \
-		unserializeEncoded.php unserializeEnum.php \
-		unserializeObject.php unserializeRDF.php \
-		unserializeWhitespace.php unserializeWithAttributes.php \
-		unserializeWithTagMap.php unserializeWithTypeGuessing.php
+EXAMPLES=	Serializer_Bug7112.php serializeWithDtd.php \
+		example.xml serializeWithIndentedAttributes.php \
+		serializeAndEncode.php serializeWithNamespace.php \
+		serializeAndReturn.php serializeWithTagMap.php \
+		serializeCData.php unserializeAnyXML.php \
+		serializeIndexedArray.php unserializeClassNames.php \
+		serializeIndexedArrayWithContext.php unserializeEncoded.php \
+		serializeNullProperties.php unserializeEnum.php \
+		serializeObject.php unserializeObject.php \
+		serializeRDF.php unserializeRDF.php \
+		serializeSelectiveAttributes.php unserializeWhitespace.php \
+		serializeWithAttributes.php unserializeWithAttributes.php \
+		serializeWithAttributes2.php unserializeWithTagMap.php \
+		serializeWithComment.php unserializeWithTypeGuessing.php
 DOCS=		todo.txt
 _DOCSDIR=	doc
 
