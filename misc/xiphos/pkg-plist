@@ -99,21 +99,21 @@ share/gnome/help/gnomesword/fr/preferences.xml
 share/gnome/help/gnomesword/fr/search.xml
 share/gnome/help/gnomesword/fr/start.xml
 share/gnome/help/gnomesword/fr/studypad.xml
-%%DATADIR%%/arrow_down.png
-%%DATADIR%%/arrow_down_box.png
-%%DATADIR%%/arrow_up.png
-%%DATADIR%%/arrow_up_box.png
-%%DATADIR%%/bookmarks.glade
-%%DATADIR%%/editor_note.xml
-%%DATADIR%%/editor_studypad.xml
-%%DATADIR%%/export-dialog.glade
-%%DATADIR%%/languages
-%%DATADIR%%/logo.png
-%%DATADIR%%/module-manager.glade
-%%DATADIR%%/navbar_versekey.glade
-%%DATADIR%%/prefs.glade
-%%DATADIR%%/search-dialog.glade
-%%DATADIR%%/sword3.png
+share/gnomesword/arrow_down.png
+share/gnomesword/arrow_down_box.png
+share/gnomesword/arrow_up.png
+share/gnomesword/arrow_up_box.png
+share/gnomesword/bookmarks.glade
+share/gnomesword/editor_note.xml
+share/gnomesword/editor_studypad.xml
+share/gnomesword/export-dialog.glade
+share/gnomesword/languages
+share/gnomesword/logo.png
+share/gnomesword/module-manager.glade
+share/gnomesword/navbar_versekey.glade
+share/gnomesword/prefs.glade
+share/gnomesword/search-dialog.glade
+share/gnomesword/sword3.png
 share/locale/bg/LC_MESSAGES/gnomesword.mo
 share/locale/cs/LC_MESSAGES/gnomesword.mo
 share/locale/de/LC_MESSAGES/gnomesword.mo
@@ -156,7 +156,7 @@ share/pixmaps/gnomesword/splash2.png
 share/pixmaps/gnomesword/sword.png
 share/pixmaps/gnomesword/sword3.png
 share/pixmaps/gnomesword/tt.png
-@dirrm %%DATADIR%%
+@dirrm share/gnomesword
 @dirrm share/pixmaps/gnomesword
 @dirrm share/locale/sv_SE/LC_MESSAGES
 @dirrm share/locale/sv_SE

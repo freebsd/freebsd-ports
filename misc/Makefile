@@ -134,7 +134,6 @@
     SUBDIR += gnome-user-docs
     SUBDIR += gnome2-reference
     SUBDIR += gnomehier
-    SUBDIR += gnomesword
     SUBDIR += gnu-watch
     SUBDIR += gnuls
     SUBDIR += gnustep-examples
@@ -568,6 +567,7 @@
     SUBDIR += xfce4-weather-plugin
     SUBDIR += xfce4-wm-themes
     SUBDIR += xgas
+    SUBDIR += xiphos
     SUBDIR += xless
     SUBDIR += xosd
     SUBDIR += xpns
