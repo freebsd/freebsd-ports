@@ -1,0 +1,5 @@
+Data::Dumper::Perltidy encapsulates both Data::Dumper and
+Perl::Tidy to provide a function that stringifies a Perl
+data structure in a pretty printed format.
+
+WWW:	http://search.cpan.org/dist/Data-Dumper-Perltidy/
