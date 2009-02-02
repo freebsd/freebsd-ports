@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	memtest86
-PORTVERSION=	3.4
+PORTVERSION=	3.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.memtest86.com/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}a.iso.zip
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}.iso.zip
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jadawin@FreeBSD.org
@@ -22,18 +22,19 @@ ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 
 PORTDOCS=	README
-PLIST_FILES=	%%DATADIR%%/floppy.bin %%DATADIR%%/memtest.iso
+PLIST_FILES=	%%DATADIR%%/floppy.bin %%DATADIR%%/Memtest86-3.5.iso
 PLIST_DIRS=	%%DATADIR%%
 
 SUB_FILES=	pkg-message
 
 post-extract:
-	@${UNZIP_CMD} -qo ${DISTDIR}/${DISTNAME}a.iso.zip -d ${WRKSRC}
+	@${UNZIP_CMD} -qo ${DISTDIR}/${DISTNAME}.iso.zip -d ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/precomp.bin ${DATADIR}/floppy.bin
-	${INSTALL_DATA} ${WRKSRC}/memtest.iso ${DATADIR}/memtest.iso
+	${INSTALL_DATA} ${WRKSRC}/Memtest86-${PORTVERSION}.iso \
+			${DATADIR}/Memtest86-${PORTVERSION}.iso
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
