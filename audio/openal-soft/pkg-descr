@@ -1,0 +1,10 @@
+OpenAL Soft is a software implementation of the OpenAL 3D audio API and an
+alternative to the somewhat outdated reference implementation.
+As stated on the website, OpenAL provides capabilities for playing audio in a
+virtual 3d environment. Distance attenuation, doppler shift, and directional
+sound emitters are among the features handled by the API. More advanced
+effects, including air absorption, low-pass filters, and reverb, are
+available through the EFX extension. It also facilitates streaming audio,
+multi-channel buffers, and audio capture.
+
+WWW:	http://kcat.strangesoft.net/openal.html
