@@ -28,7 +28,7 @@ MAKE_ENV=	NOM_ARCH=${OPSYS} CS_HOME=${WRKSRC} CS_MPI_PATH=${MPI_HOME}/bin	\
 		PTHREAD_LIBS=${PTHREAD_LIBS} TERM=${TERM}			\
 		MPI_HOME=${MPI_HOME} MPI_LIBS="${MPI_LIBS}"
 
-USE_FORTRAN=	yes	#dummy but future use
+USE_FORTRAN=	yes
 FORTRANLIBDIR=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``
 FORTRANLIBDIR2=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``/../../../
 
