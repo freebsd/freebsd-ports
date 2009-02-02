@@ -7,6 +7,7 @@
 
 PORTNAME=	moodle
 PORTVERSION=	1.9.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.moodle.org/stable19/ \
 		http://download2.moodle.org/stable19/ \
@@ -17,7 +18,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jmrueda@diatel.upm.es
 COMMENT=	Course management system based on social constructionism
 
-USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc
+USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype
 WRKSRC=		${WRKDIR}/moodle
 
 OPTIONS=	MYSQL   "Add support for a MySQL database server" Off \
@@ -88,9 +89,6 @@ pre-install:
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PREFIX}/${MOODLEDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MOODLEDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MOODLEDIR}' \
-		>> ${TMPPLIST}
 	@${FIND} ${PREFIX}/${MOODLEDIR} -type d -exec ${CHMOD} a+x {} \;
 	@${ECHO_CMD} '@exec ${FIND} ${PREFIX}/${MOODLEDIR} -type d -exec ${CHMOD} a+x {} \;' \
 		>> ${TMPPLIST}
