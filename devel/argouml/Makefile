@@ -22,6 +22,8 @@ COMMENT=	A UML design tool with cognitive support
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
+PORTSCOUT=	limitw:1,even
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 USE_JAVA=	yes
