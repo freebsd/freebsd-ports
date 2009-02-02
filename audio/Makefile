@@ -478,6 +478,7 @@
     SUBDIR += ogg2mp3
     SUBDIR += oggsplit
     SUBDIR += openal
+    SUBDIR += openal-soft
     SUBDIR += openspc
     SUBDIR += opmixer
     SUBDIR += optimfrog
