@@ -1,5 +1,5 @@
 bin/dbus-binding-tool
-etc/profile.d/dbus-bash-completion.sh
+etc/bash_completion.d/dbus-bash-completion.sh
 include/dbus-%%VERSION%%/dbus/dbus-glib-bindings.h
 include/dbus-%%VERSION%%/dbus/dbus-glib-error-enum.h
 include/dbus-%%VERSION%%/dbus/dbus-glib-lowlevel.h
@@ -32,4 +32,4 @@ libexec/dbus-bash-completion-helper
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
 @dirrm %%DOCSDIR%%
-@dirrmtry etc/profile.d
+@dirrmtry etc/bash_completion.d
