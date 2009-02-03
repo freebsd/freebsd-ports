@@ -18,7 +18,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} =="ia64"
+.if ${ARCH} == "amd64" || ${ARCH} =="ia64" || ${ARCH} =="sparc64"
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-logging.cc \
 		${FILESDIR}/extra-patch-src-raw_logging.cc
 .endif
