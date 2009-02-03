@@ -8,7 +8,7 @@
 
 PORTNAME=	centerim
 PORTVERSION=	4.22.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.centerim.org/download/releases/ \
 		ftp://ftp.centerim.org/releases/
@@ -107,6 +107,10 @@ CONFIGURE_ARGS+=	--disable-gg
 LIB_DEPENDS+=		gadu.3:${PORTSDIR}/polish/ekg
 LIBGADU=		-lgadu
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '1 s|/usr/bin/python|/usr/bin/env python|' \
+		${WRKSRC}/misc/CenterIMLog2HTML.py
 
 .if !defined(NOPORTDOCS)
 post-install:
