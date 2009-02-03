@@ -5,7 +5,9 @@
 %%SITE_PERL%%/POE/Component/IRC/Cookbook/BasicBot.pod
 %%SITE_PERL%%/POE/Component/IRC/Cookbook/Disconnecting.pod
 %%SITE_PERL%%/POE/Component/IRC/Cookbook/MegaHAL.pod
+%%SITE_PERL%%/POE/Component/IRC/Cookbook/Reload.pod
 %%SITE_PERL%%/POE/Component/IRC/Cookbook/Resolver.pod
+%%SITE_PERL%%/POE/Component/IRC/Cookbook/Seen.pod
 %%SITE_PERL%%/POE/Component/IRC/Cookbook/Translator.pod
 %%SITE_PERL%%/POE/Component/IRC/Plugin.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/AutoJoin.pm
@@ -29,8 +31,6 @@
 %%SITE_PERL%%/POE/Component/IRC/Qnet.pm
 %%SITE_PERL%%/POE/Component/IRC/Qnet/State.pm
 %%SITE_PERL%%/POE/Component/IRC/State.pm
-%%SITE_PERL%%/POE/Component/IRC/Test/Harness.pm
-%%SITE_PERL%%/POE/Component/IRC/Test/Plugin.pm
 %%SITE_PERL%%/POE/Filter/IRC.pm
 %%SITE_PERL%%/POE/Filter/IRC/Compat.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/.packlist
@@ -50,7 +50,6 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
 @dirrmtry %%SITE_PERL%%/POE/Filter/IRC
 @dirrmtry %%SITE_PERL%%/POE/Filter
-@dirrmtry %%SITE_PERL%%/POE/Component/IRC/Test
 @dirrmtry %%SITE_PERL%%/POE/Component/IRC/Qnet
 @dirrmtry %%SITE_PERL%%/POE/Component/IRC/Plugin
 @dirrmtry %%SITE_PERL%%/POE/Component/IRC/Cookbook
