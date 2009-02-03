@@ -6,20 +6,27 @@
 #
 
 PORTNAME=	libaiff
-PORTVERSION=	3.0
+PORTVERSION=	5.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/aifftools
+DISTNAME=	libaiff-5.0-release
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Read and write AIFF files
 
 GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	lib/${PORTNAME}.a include/${PORTNAME}/config.h include/${PORTNAME}/endian.h \
-		include/${PORTNAME}/${PORTNAME}.h
+		include/${PORTNAME}/${PORTNAME}.h include/${PORTNAME}/config.vc.h
 PLIST_DIRS=	include/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/install: libaiff.a/install:/' ${WRKSRC}/${MAKEFILE}.in
+	@${REINPLACE_CMD} -e 's/install: libaiff.a/install:/' \
+	${WRKSRC}/${MAKEFILE}.in
+
+.if ${OSVERSION} < 700042
+BROKEN=		does not build on 6.x.
+.endif
 
 .include <bsd.port.mk>
