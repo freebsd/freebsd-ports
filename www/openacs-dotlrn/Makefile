@@ -7,6 +7,7 @@
 
 PORTNAME=	dotlrn
 DISTVERSION=	2.4.1
+PORTREVISION=	1
 MASTER_SITES=	http://openacs.org/projects/dotlrn/download/download/
 
 MAINTAINER=	mm@FreeBSD.org

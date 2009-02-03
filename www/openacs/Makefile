@@ -7,6 +7,7 @@
 
 PORTNAME?=	openacs
 DISTVERSION?=	5.4.3
+PORTREVISION?=	1
 CATEGORIES=	www
 MASTER_SITES?=	http://openacs.org/projects/openacs/download/download/
 EXTRACT_SUFX=	.tgz?revision_id=${DIST_REV_ID}
@@ -17,8 +18,7 @@ COMMENT?=	A modular web application platform for communities
 DIST_REV_ID?=	2089636
 
 AOLSERVERBASE?=	${LOCALBASE}/aolserver
-RUN_DEPENDS+=	${AOLSERVERBASE}/bin/nscache.so:${PORTSDIR}/www/aolserver-nscache \
-		${AOLSERVERBASE}/bin/nsopenssl.so:${PORTSDIR}/security/aolserver-nsopenssl \
+RUN_DEPENDS+=	${AOLSERVERBASE}/bin/nsopenssl.so:${PORTSDIR}/security/aolserver-nsopenssl \
 		${AOLSERVERBASE}/bin/nssha1.so:${PORTSDIR}/security/aolserver-nssha1 \
 		${AOLSERVERBASE}/bin/nspostgres.so:${PORTSDIR}/databases/aolserver-nspostgres \
 		${AOLSERVERBASE}/modules/tcl/xotcl.tcl:${PORTSDIR}/www/aolserver-xotcl \
