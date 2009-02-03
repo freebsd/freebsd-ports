@@ -32,6 +32,10 @@ OPTIONS=	ADDONS	"Install addons (~200 MB download size)" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 .if defined(WITH_ADDONS)
 DISTNAME=	LostPixels-${PORTVERSION}-source-with-addons
 PKGNAMESUFFIX=	-with-addons
