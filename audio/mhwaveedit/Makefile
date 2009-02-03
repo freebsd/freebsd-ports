@@ -48,6 +48,10 @@ OPTIONS=	DOUBLE_SAMPLES "increase quality for 24/32-bit samplerates" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 .if defined(WITH_DOUBLE_SAMPLES)
 CONFIGURE_ARGS+=	--with-double-samples
 .endif
