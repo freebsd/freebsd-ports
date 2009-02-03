@@ -30,6 +30,10 @@ PATCH_STRIP=	-p1
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Fails to install on sparc64
+.endif
+
 BF_LIBS?=		-ldb-4.3
 BF_CPPFLAGS?=		-I${LOCALBASE}/include/db43 -I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
