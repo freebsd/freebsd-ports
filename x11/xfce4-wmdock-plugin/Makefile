@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-wmdock-plugin
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://www.ibh.de/~ellguth/develop/
 
