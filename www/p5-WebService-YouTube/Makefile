@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	WebService-YouTube
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-version>0:${PORTSDIR}/devel/p5-version
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=	WebService::YouTube.3 \
 	WebService::YouTube::Feeds.3 \
