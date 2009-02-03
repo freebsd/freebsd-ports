@@ -1,4 +1,5 @@
 bin/playsound
+bin/playsound_simple
 include/SDL/SDL_sound.h
 lib/libSDL_sound.a
 lib/libSDL_sound.la
