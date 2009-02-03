@@ -22,6 +22,9 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 3.3
 
+DEPRECATED=	fails to build on any version of FreeBSD, closed upstream for half a decade
+EXPIRATION_DATE=2009-03-03
+
 SUFFIX=		33
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
 NOT_FOR_ARCHS=	amd64 sparc64
