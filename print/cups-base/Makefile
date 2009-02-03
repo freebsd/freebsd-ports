@@ -51,7 +51,8 @@ OPTIONS=	GNUTLS		"Build with GNUTLS library" on \
 		PAM		"Build with PAM support" off \
 		LDAP		"Build with LDAP support" off \
 		DBUS		"Build with DBUS support" off \
-		XDG_OPEN	"Build with XDG_OPEN support" off
+		XDG_OPEN	"Build with XDG_OPEN as browser" off \
+		GVFS_OPEN	"Build with GVFS_OPEN as browser" off
 
 CUPS_ETCDIR=	${PREFIX}/etc/cups
 CUPS_SPOOLDIR=	/var/spool/cups
@@ -132,7 +133,11 @@ CONFIGURE_ARGS+=	--disable-dbus
 .endif
 
 .if defined(WITH_XDG_OPEN)
-RUN_DEPENDS=		xdg-open:${PORTSDIR}/devel/xdg-utils
+RUN_DEPENDS+=		xdg-open:${PORTSDIR}/devel/xdg-utils
+.endif
+
+.if defined(WITH_GVFS_OPEN)
+RUN_DEPENDS+=		gvfs-open:${PORTSDIR}/devel/gvfs
 .endif
 
 MAN1EXT=	1
@@ -190,6 +195,9 @@ post-configure:
 .endif
 
 post-patch:
+.if defined(WITH_GVFS_OPEN)
+	@${REINPLACE_CMD} -e 's|htmlview|gvfs-open|' ${WRKSRC}/desktop/cups.desktop
+.endif
 .if defined(WITH_XDG_OPEN)
 	@${REINPLACE_CMD} -e 's|htmlview|xdg-open|' ${WRKSRC}/desktop/cups.desktop
 .endif
