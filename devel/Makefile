@@ -2525,6 +2525,7 @@
     SUBDIR += rubygem-rubyforge
     SUBDIR += rubygem-rubyinlineaccel
     SUBDIR += rubygem-sequel
+    SUBDIR += rubygem-sexp_processor
     SUBDIR += rubygem-stream
     SUBDIR += rubygem-transactionsimple
     SUBDIR += rubygem-trollop
