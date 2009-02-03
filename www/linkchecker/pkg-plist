@@ -145,6 +145,9 @@ bin/linkchecker-gui
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/e164.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/e164.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/e164.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/entropy.py
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/entropy.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/entropy.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/exception.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/exception.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/exception.pyo
