@@ -46,6 +46,10 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Fails to install on sparc64
+.endif
+
 .if defined(WITHOUT_TCLTK)
 CONFIGURE_ARGS+=	--with-tcl=no
 PLIST_SUB+=	TCLTK="@comment "
