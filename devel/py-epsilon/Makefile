@@ -7,6 +7,7 @@
 
 PORTNAME=	epsilon
 PORTVERSION=	0.5.11
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,6 @@ MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Epsilon is a set of Python utility modules used by DivMod projects
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
-
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
