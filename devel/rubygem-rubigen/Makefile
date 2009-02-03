@@ -5,14 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	rubigen
-PORTVERSION=	1.3.2
+PORTVERSION=	1.5.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Ruby generic generator framework
 
-BUILD_DEPENDS=	rubygem-activesupport>=1.4.4:${PORTSDIR}/devel/rubygem-activesupport
+BUILD_DEPENDS=	rubygem-activesupport>=2.2.2:${PORTSDIR}/devel/rubygem-activesupport
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
