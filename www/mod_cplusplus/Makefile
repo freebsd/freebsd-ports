@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_cplusplus
-PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTVERSION=	1.5.4
 CATEGORIES=	www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	modcplusplus
@@ -17,23 +16,22 @@ COMMENT=	Apache module for loading C++ objects as handlers
 
 USE_APACHE=	2.0+
 USE_AUTOTOOLS=	autoconf:262 autoheader:262 libtool:15 automake:19 aclocal:19
-ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
-AUTOMAKE_ARGS+=	-a
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
+ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS+=	-a
 
 SUB_FILES=	pkg-message
 SUB_LIST=	"APACHEMODDIR=${APACHEMODDIR}"
 
-# Redefine the autotools run order to match what would happen in the
-# autogen.sh script.  We cannot use that script directly since it does
-# not use the versioned autotools.
-run-autotools: run-autotools-aclocal patch-autotools run-autotools-autoheader \
-    run-libtoolize run-autotools-automake run-autotools-autoconf
+WRKSRC=	${WRKDIR}/${PORTNAME}
 
-run-libtoolize:
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} \
-	    ${LIBTOOLIZE} --force --copy)
+post-extract:
+	${REINPLACE_CMD} -e 's,-Werror,,' ${WRKSRC}/configure.in
+
+pre-configure:
+	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} --force --copy)
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/${APACHEINCLUDEDIR}
