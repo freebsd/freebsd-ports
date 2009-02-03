@@ -32,6 +32,10 @@ OPTIONS=	MIDI		"Enable MIDI support"			On \
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 .if defined(WITH_MIDI)
 .if defined(WITH_TIMIDITYPLUS)
 RUN_DEPENDS+=	timidity:${PORTSDIR}/audio/timidity++
