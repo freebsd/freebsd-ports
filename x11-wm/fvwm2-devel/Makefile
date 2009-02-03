@@ -45,7 +45,8 @@ OPTIONS=	ICONS		"Install default icon set" on \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_ICONS)
-DISTFILES+=	fvwm_icons-20070101.tar.bz2
+FVWM_ICONS=	fvwm_icons-20070101.tar.bz2
+DISTFILES+=	${FVWM_ICONS}
 .endif
 
 .if defined(WITHOUT_ICONV)
@@ -138,7 +139,7 @@ MLINKS=	fvwm.1 fvwm2.1 \
 PLIST_SUB+=	ICONS=""
 post-extract:
 	@${MKDIR} ${WRKDIR}/icons
-	@${TAR} -xzf ${DISTDIR}/fvwm_icons.tgz -C ${WRKDIR}/icons
+	@${TAR} -xzf ${DISTDIR}/${FVWM_ICONS} -C ${WRKDIR}/icons
 .else
 PLIST_SUB+=	ICONS="@comment not installed: "
 .endif
