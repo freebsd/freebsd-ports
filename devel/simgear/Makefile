@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	SimGear
-PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTVERSION=	1.9.1
 CATEGORIES=	devel games
 MASTER_SITES=	ftp://ftp.de.simgear.org/pub/simgear/Source/ \
 		ftp://ftp.simgear.org/pub/simgear/Source/
@@ -24,7 +23,7 @@ LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		boost_thread.4:${PORTSDIR}/devel/boost
 
 USE_XORG=	ice sm x11 xext xi xt xmu
-USE_GL=	gl glu glut
+USE_GL=		gl glu glut
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
