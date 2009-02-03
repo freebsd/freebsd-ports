@@ -30,4 +30,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libx86.so.1 ${PREFIX}/lib
 	${LN} -sf ${PREFIX}/lib/libx86.so.1 ${PREFIX}/lib/libx86.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+ONLY_FOR_ARCHS=	amd64 i386
+
+.include <bsd.port.post.mk>
