@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	taglib-sharp
-PORTVERSION=	2.0.3.0
+PORTVERSION=	2.0.3.1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.taglib-sharp.com/Download/
+MASTER_SITES=	http://www.taglib-sharp.com/Download/ \
+		http://download.banshee-project.org/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Tagging library for the Mono framework
