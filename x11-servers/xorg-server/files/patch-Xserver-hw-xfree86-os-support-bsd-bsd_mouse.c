@@ -1,11 +1,11 @@
---- hw/xfree86/os-support/bsd/bsd_mouse.c.orig	2007-08-23 15:05:48.000000000 -0400
-+++ hw/xfree86/os-support/bsd/bsd_mouse.c	2008-04-08 15:41:42.000000000 -0400
+--- hw/xfree86/os-support/bsd/bsd_mouse.c.orig	2008-11-05 11:52:17.000000000 -0500
++++ hw/xfree86/os-support/bsd/bsd_mouse.c	2009-02-02 15:56:11.000000000 -0500
 @@ -1,4 +1,3 @@
 -
  /*
   * Copyright (c) 1999-2003 by The XFree86 Project, Inc.
   *
-@@ -76,11 +75,15 @@
+@@ -76,11 +75,13 @@
  #define DEFAULT_MOUSE_DEV		"/dev/mouse"
  #define DEFAULT_SYSMOUSE_DEV		"/dev/sysmouse"
  #define DEFAULT_PS2_DEV			"/dev/psm0"
@@ -14,14 +14,12 @@
  static const char *mouseDevs[] = {
  	DEFAULT_MOUSE_DEV,
  	DEFAULT_SYSMOUSE_DEV,
-+#ifndef CONFIG_HAL
  	DEFAULT_PS2_DEV,
 +	DEFAULT_USB_DEV,
-+#endif
  	NULL
  };
- #elif defined(__OpenBSD__) && defined(WSCONS_SUPPORT)
-@@ -101,7 +104,11 @@
+ #elif (defined(__OpenBSD__) || defined(__NetBSD__)) && defined(WSCONS_SUPPORT)
+@@ -101,7 +102,11 @@
  #if defined(__NetBSD__)
      return MSE_SERIAL | MSE_BUS | MSE_PS2 | MSE_AUTO;
  #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
@@ -34,7 +32,7 @@
  #else
      return MSE_SERIAL | MSE_BUS | MSE_PS2 | MSE_XPS2 | MSE_AUTO;
  #endif
-@@ -180,10 +187,31 @@
+@@ -180,10 +185,31 @@
  	{ MOUSE_PROTO_THINK,		"ThinkingMouse" },
  	{ MOUSE_PROTO_SYSMOUSE,		"SysMouse" }
  };
@@ -67,7 +65,7 @@
      int i;
      mousehw_t hw;
      mousemode_t mode;
-@@ -191,10 +219,20 @@
+@@ -191,10 +217,20 @@
      if (pInfo->fd == -1)
  	return NULL;
  
@@ -89,7 +87,7 @@
      /* interrogate the driver and get some intelligence on the device. */
      hw.iftype = MOUSE_IF_UNKNOWN;
      hw.model = MOUSE_MODEL_GENERIC;
-@@ -210,9 +248,18 @@
+@@ -210,9 +246,18 @@
  		    protoPara[0] = mode.syncmask[0];
  		    protoPara[1] = mode.syncmask[1];
  		}
@@ -110,7 +108,7 @@
  	    }
  	}
      }
-@@ -235,41 +282,41 @@
+@@ -235,41 +280,41 @@
  	(protocol && xf86NameCmp(protocol, "SysMouse") == 0)) {
  	/*
  	 * As the FreeBSD sysmouse driver defaults to protocol level 0
@@ -169,7 +167,7 @@
      }
      return FALSE;
  }
-@@ -309,15 +356,12 @@
+@@ -309,15 +354,23 @@
  		    devMouse = FALSE;
  		}
  		close(fd);
@@ -183,12 +181,23 @@
 -		}
  	    } else {
  		close(fd);
++		/*
++		 * If moused(8) owns the device, open(2) should have failed
++		 * but just in case...
++		 */
 +		if (MousedRunning(*pdev))
 +		    continue;
++		/*
++		 * ums(4) does not support anything but SysMouse protocol.
++		 */
++		if (!strncmp(*pdev, DEFAULT_USB_DEV, 8) && protocol &&
++		    strcasecmp(protocol, "auto") &&
++		    strcasecmp(protocol, "sysmouse"))
++			continue;
  		break;
  	    }
  	}
-@@ -775,7 +819,9 @@
+@@ -775,7 +828,9 @@
      p->CheckProtocol = CheckProtocol;
  #if (defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)) && defined(MOUSE_PROTO_SYSMOUSE)
      p->SetupAuto = SetupAuto;
