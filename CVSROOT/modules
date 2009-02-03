@@ -4361,7 +4361,6 @@ gnomemm                         ports/x11-toolkits/gnomemm
 gnomephotoprinter               ports/print/gnomephotoprinter
 gnomermind                      ports/games/gnomermind
 gnomesudoku                     ports/games/gnomesudoku
-gnomesword                      ports/misc/gnomesword
 gnometelnet                     ports/net/gnometelnet
 gnomoradio                      ports/audio/gnomoradio
 gnono                           ports/games/gnono
@@ -7272,7 +7271,6 @@ libmba                          ports/devel/libmba
 libmcal                         ports/misc/libmcal
 libmcrypt                       ports/security/libmcrypt
 libmcs                          ports/devel/libmcs
-libmcve                         ports/devel/libmcve
 libmemcache                     ports/databases/libmemcache
 libmemcached                    ports/databases/libmemcached
 libmetalink                     ports/misc/libmetalink
@@ -7283,6 +7281,7 @@ libmimedir                      ports/devel/libmimedir
 libmms                          ports/net/libmms
 libmng                          ports/graphics/libmng
 libmodplug                      ports/audio/libmodplug
+libmonetra                      ports/devel/libmonetra
 libmorph                        ports/graphics/libmorph
 libmovtar                       ports/multimedia/libmovtar
 libmowgli                       ports/devel/libmowgli
@@ -9501,6 +9500,7 @@ open-vm-tools-nox11             ports/emulators/open-vm-tools-nox11
 openacs                         ports/www/openacs
 openacs-dotlrn                  ports/www/openacs-dotlrn
 openal                          ports/audio/openal
+openal-soft                     ports/audio/openal-soft
 openalchemist                   ports/games/openalchemist
 openam                          ports/net/openam
 openarena                       ports/games/openarena
@@ -10322,6 +10322,7 @@ p5-Config-General               ports/devel/p5-Config-General
 p5-Config-INI-Simple            ports/devel/p5-Config-INI-Simple
 p5-Config-IniFiles              ports/devel/p5-Config-IniFiles
 p5-Config-IniHash               ports/devel/p5-Config-IniHash
+p5-Config-IniRegEx              ports/devel/p5-Config-IniRegEx
 p5-Config-JSON                  ports/devel/p5-Config-JSON
 p5-Config-Model                 ports/devel/p5-Config-Model
 p5-Config-Objective             ports/devel/p5-Config-Objective
@@ -10530,6 +10531,7 @@ p5-Data-Dump                    ports/devel/p5-Data-Dump
 p5-Data-Dump-Streamer           ports/devel/p5-Data-Dump-Streamer
 p5-Data-DumpXML                 ports/devel/p5-Data-DumpXML
 p5-Data-Dumper                  ports/devel/p5-Data-Dumper
+p5-Data-Dumper-Perltidy         ports/devel/p5-Data-Dumper-Perltidy
 p5-Data-Dumper-Simple           ports/devel/p5-Data-Dumper-Simple
 p5-Data-Entropy                 ports/security/p5-Data-Entropy
 p5-Data-Float                   ports/math/p5-Data-Float
@@ -13575,6 +13577,7 @@ p5-config-general               ports/devel/p5-Config-General
 p5-config-ini-simple            ports/devel/p5-Config-INI-Simple
 p5-config-inifiles              ports/devel/p5-Config-IniFiles
 p5-config-inihash               ports/devel/p5-Config-IniHash
+p5-config-iniregex              ports/devel/p5-Config-IniRegEx
 p5-config-json                  ports/devel/p5-Config-JSON
 p5-config-model                 ports/devel/p5-Config-Model
 p5-config-objective             ports/devel/p5-Config-Objective
@@ -13721,6 +13724,7 @@ p5-data-currency                ports/finance/p5-Data-Currency
 p5-data-dump                    ports/devel/p5-Data-Dump
 p5-data-dump-streamer           ports/devel/p5-Data-Dump-Streamer
 p5-data-dumper                  ports/devel/p5-Data-Dumper
+p5-data-dumper-perltidy         ports/devel/p5-Data-Dumper-Perltidy
 p5-data-dumper-simple           ports/devel/p5-Data-Dumper-Simple
 p5-data-dumpxml                 ports/devel/p5-Data-DumpXML
 p5-data-entropy                 ports/security/p5-Data-Entropy
@@ -17081,7 +17085,7 @@ perf                            ports/sysutils/perf
 perforce                        ports/devel/perforce
 performance                     ports/devel/performance
 perl2html                       ports/textproc/perl2html
-perl5                           ports/lang/perl5
+perl5.6                         ports/lang/perl5.6
 perl5.8                         ports/lang/perl5.8
 perlbal                         ports/www/perlbal
 perlconsole                     ports/devel/perlconsole
@@ -22757,6 +22761,7 @@ xinvaders                       ports/games/xinvaders
 xinvaders3d                     ports/games/xinvaders3d
 xinvest                         ports/finance/xinvest
 xipdump                         ports/net/xipdump
+xiphos                          ports/misc/xiphos
 xipmsg                          ports/net/xipmsg
 xisola                          ports/games/xisola
 xisp                            ports/net/xisp
