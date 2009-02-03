@@ -11,7 +11,8 @@ PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} fvwm_icons-20070101.tar.bz2
+FVWM_ICONS=	fvwm_icons-20070101.tar.bz2
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${FVWM_ICONS}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	cy@FreeBSD.org
@@ -89,7 +90,7 @@ PLIST_SUB+=	GTK="@comment not installed: "
 
 post-extract:
 	@${MKDIR} ${WRKDIR}/icons
-	@${TAR} -xzf ${DISTDIR}/fvwm_icons.tgz -C ${WRKDIR}/icons
+	@${TAR} -xyf ${DISTDIR}/${FVWM_ICONS} -C ${WRKDIR}/icons
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' \
