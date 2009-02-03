@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmpc
-PORTVERSION=	0.16.1
-PORTREVISION=	1
+PORTVERSION=	0.17.0
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
@@ -23,8 +22,11 @@ GNU_CONFIGURE=	yes
 USE_XORG=	x11 sm
 USE_GMAKE=	yes
 USE_GNOME=	libglade2 gnomevfs2 gnomehack
+INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+
+MAN1=	gmpc-remote.1 gmpc.1
 
 OPTIONS=	SESSION "Enable session support" on \
 		MMKEYS "Enable multimedia keys support" on \

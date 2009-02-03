@@ -1,5 +1,6 @@
 bin/gmpc
 bin/gmpc-remote
+bin/gmpc-remote-stream
 include/gmpc/TreeSearchWidget.h
 include/gmpc/config1.h
 include/gmpc/gmpc-clicklabel.h
@@ -28,6 +29,7 @@ share/applications/gmpc.desktop
 %%DATADIR%%/icons/hicolor/16x16/actions/playlist-browser.png
 %%DATADIR%%/icons/hicolor/16x16/actions/playlist-search-browser.png
 %%DATADIR%%/icons/hicolor/16x16/actions/tag-browser.png
+%%DATADIR%%/icons/hicolor/16x16/apps/gmpc.png
 %%DATADIR%%/icons/hicolor/16x16/status/audio-volume-high.png
 %%DATADIR%%/icons/hicolor/16x16/status/audio-volume-low.png
 %%DATADIR%%/icons/hicolor/16x16/status/audio-volume-medium.png
@@ -37,6 +39,7 @@ share/applications/gmpc.desktop
 %%DATADIR%%/icons/hicolor/16x16/status/gmpc-tray-play.png
 %%DATADIR%%/icons/hicolor/16x16/status/gmpc-tray.png
 %%DATADIR%%/icons/hicolor/22x22/actions/media-playlist.png
+%%DATADIR%%/icons/hicolor/22x22/apps/gmpc.png
 %%DATADIR%%/icons/hicolor/22x22/status/audio-volume-high.png
 %%DATADIR%%/icons/hicolor/22x22/status/audio-volume-low.png
 %%DATADIR%%/icons/hicolor/22x22/status/audio-volume-medium.png
@@ -50,6 +53,7 @@ share/applications/gmpc.desktop
 %%DATADIR%%/icons/hicolor/32x32/actions/playlist-browser.png
 %%DATADIR%%/icons/hicolor/32x32/actions/playlist-search-browser.png
 %%DATADIR%%/icons/hicolor/32x32/actions/tag-browser.png
+%%DATADIR%%/icons/hicolor/32x32/apps/gmpc.png
 %%DATADIR%%/icons/hicolor/32x32/status/audio-volume-high.png
 %%DATADIR%%/icons/hicolor/32x32/status/audio-volume-low.png
 %%DATADIR%%/icons/hicolor/32x32/status/audio-volume-medium.png
@@ -57,6 +61,8 @@ share/applications/gmpc.desktop
 %%DATADIR%%/icons/hicolor/48x48/actions/media-playlist.png
 %%DATADIR%%/icons/hicolor/48x48/actions/media-tag.png
 %%DATADIR%%/icons/hicolor/48x48/actions/tag-browser.png
+%%DATADIR%%/icons/hicolor/48x48/apps/gmpc.png
+%%DATADIR%%/icons/hicolor/scalable/apps/gmpc.svg
 %%DATADIR%%/icons/hicolor/scalable/status/audio-volume-high.svg
 %%DATADIR%%/icons/hicolor/scalable/status/audio-volume-low.svg
 %%DATADIR%%/icons/hicolor/scalable/status/audio-volume-medium.svg
@@ -83,31 +89,38 @@ share/locale/de/LC_MESSAGES/gmpc.mo
 share/locale/es/LC_MESSAGES/gmpc.mo
 share/locale/fr/LC_MESSAGES/gmpc.mo
 share/locale/gl/LC_MESSAGES/gmpc.mo
+share/locale/he/LC_MESSAGES/gmpc.mo
 share/locale/hu/LC_MESSAGES/gmpc.mo
 share/locale/it/LC_MESSAGES/gmpc.mo
 share/locale/nb/LC_MESSAGES/gmpc.mo
 share/locale/nl/LC_MESSAGES/gmpc.mo
 share/locale/pl/LC_MESSAGES/gmpc.mo
+share/locale/ro/LC_MESSAGES/gmpc.mo
 share/locale/ru/LC_MESSAGES/gmpc.mo
 share/locale/sv/LC_MESSAGES/gmpc.mo
+share/locale/tr/LC_MESSAGES/gmpc.mo
 share/locale/zh_CN/LC_MESSAGES/gmpc.mo
-@unexec /bin/rm %D/share/icons/hicolor/icon-theme.cache 2>/dev/null || /usr/bin/true
 @dirrm %%DATADIR%%/icons/hicolor/scalable/status
+@dirrm %%DATADIR%%/icons/hicolor/scalable/apps
 @dirrm %%DATADIR%%/icons/hicolor/scalable/actions
 @dirrm %%DATADIR%%/icons/hicolor/scalable
+@dirrm %%DATADIR%%/icons/hicolor/48x48/apps
 @dirrm %%DATADIR%%/icons/hicolor/48x48/actions
 @dirrm %%DATADIR%%/icons/hicolor/48x48
 @dirrm %%DATADIR%%/icons/hicolor/32x32/status
+@dirrm %%DATADIR%%/icons/hicolor/32x32/apps
 @dirrm %%DATADIR%%/icons/hicolor/32x32/actions
 @dirrm %%DATADIR%%/icons/hicolor/32x32
 @dirrm %%DATADIR%%/icons/hicolor/22x22/status
+@dirrm %%DATADIR%%/icons/hicolor/22x22/apps
 @dirrm %%DATADIR%%/icons/hicolor/22x22/actions
 @dirrm %%DATADIR%%/icons/hicolor/22x22
 @dirrm %%DATADIR%%/icons/hicolor/16x16/status
+@dirrm %%DATADIR%%/icons/hicolor/16x16/apps
 @dirrm %%DATADIR%%/icons/hicolor/16x16/actions
 @dirrm %%DATADIR%%/icons/hicolor/16x16
 @dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrmtry include/gmpc
+@dirrm include/gmpc
