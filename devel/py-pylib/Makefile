@@ -33,4 +33,10 @@ post-install:
 	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+IGNORE=		has not yet been ported to sparc64
+.endif
+
+.include <bsd.port.post.mk>
