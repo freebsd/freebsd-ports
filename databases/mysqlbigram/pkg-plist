@@ -1,5 +1,0 @@
-@comment $FreeBSD$
-lib/mysql/bi_gramlib.la
-lib/mysql/bi_gramlib.so
-lib/mysql/bi_gramlib.so.0
-@dirrmtry lib/mysql

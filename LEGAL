@@ -411,7 +411,6 @@ l_fc_p*_*.*.*.tar	lang/ifc7		No redistribution allowed
 l_fc_p*_*.*.*.tar.gz	lang/ifc		No redistribution allowed
 macopix-*.tar.gz	games/macopix		Contains commercial character
 						data
-mathfonts-4.1/*		x11-fonts/mathfonts	No redistribution allowed
 MB339-PAN.zip		games/flightgear-mb339-pan Redistribution prohibited
 mbrola-freebsd/*	audio/mbrola		No commercial, military use;
 						voices cannot be sold

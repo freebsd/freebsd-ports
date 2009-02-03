@@ -45,12 +45,10 @@
     SUBDIR += etoile-azswitch
     SUBDIR += etoile-login
     SUBDIR += evilwm
-    SUBDIR += expocity
     SUBDIR += fbcmd
     SUBDIR += fbpager
     SUBDIR += fluxbox
     SUBDIR += fluxconf
-    SUBDIR += fluxspace
     SUBDIR += fluxter
     SUBDIR += flwm
     SUBDIR += fvwm

@@ -96,7 +96,6 @@
     SUBDIR += linux-fontconfig
     SUBDIR += linuxlibertine
     SUBDIR += manu-gothica
-    SUBDIR += mathfonts
     SUBDIR += mgopen
     SUBDIR += mkbold
     SUBDIR += mkbold-mkitalic

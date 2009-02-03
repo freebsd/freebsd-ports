@@ -266,7 +266,6 @@
     SUBDIR += python30
     SUBDIR += q
     SUBDIR += qscheme
-    SUBDIR += quack
     SUBDIR += ratfor
     SUBDIR += rexx-imc
     SUBDIR += rexx-regina

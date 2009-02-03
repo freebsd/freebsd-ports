@@ -16,7 +16,6 @@
     SUBDIR += bbappconf
     SUBDIR += bbdock
     SUBDIR += bbrun
-    SUBDIR += bbuname
     SUBDIR += beforelight
     SUBDIR += bgrot
     SUBDIR += bgs

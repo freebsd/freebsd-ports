@@ -117,7 +117,6 @@
     SUBDIR += scim-tables
     SUBDIR += srecite
     SUBDIR += stardict2-dict-zh_CN
-    SUBDIR += stardict2-dict-zh_TW
     SUBDIR += tcl83
     SUBDIR += telnet
     SUBDIR += tin
