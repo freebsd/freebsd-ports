@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	aolserver
-PORTVERSION=	4.5.0
+PORTVERSION=	4.5.1
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aolserver
@@ -39,6 +38,7 @@ PLIST_SUB+=	${SUB_VARS} AOLSERVERBASE="${AOLSERVERBASE}"
 
 USE_TCL=		84+
 USE_TCL_THREADS=	yes
+INVALID_TCL_VER=	86
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -106,7 +106,7 @@ MANN=	ns_geturl.n ns_gifsize.n ns_headers.n ns_hrefs.n ns_ictl.n ns_info.n \
 	ns_markfordelete.n ns_requestauthorize.n
 MLINKS=	Ns_AdpRegisterParser.3 Ns_AdpRequest.3 \
 	Ns_AbsTimedWaitForEvent.3 Ns_AllocThreadLocalStorage.3 \
-		Ns_AuthorizeRequest.3 Ns_AuthorizeUser.3 \
+	Ns_AuthorizeRequest.3 Ns_AuthorizeUser.3 \
 	Ns_AbsTimedWaitForEvent.3 Ns_BeginDetachedThread.3 \
 	Ns_AbsTimedWaitForEvent.3 Ns_BeginThread.3 \
 	Ns_AbsTimedWaitForEvent.3 Ns_BroadcastEvent.3 \
@@ -154,7 +154,7 @@ MLINKS=	Ns_AdpRegisterParser.3 Ns_AdpRequest.3 \
 	Ns_ConnCopyToChannel.3 Ns_ConnCopyToDString.3 \
 	Ns_ConnCopyToChannel.3 Ns_ConnCopyToFd.3 \
 	Ns_ConnCopyToChannel.3 Ns_ConnCopyToFile.3 \
-		Ns_ConnDriverContext.3 Ns_ConnDriverName.3 \
+	Ns_ConnDriverContext.3 Ns_ConnDriverName.3 \
 	Ns_ConnGetQuery.3 Ns_ConnFirstFile.3 \
 	Ns_ConnFlush.3 Ns_ConnFlushDirect.3 \
 	Ns_ConnGetQuery.3 Ns_ConnGetFile.3 \
@@ -393,13 +393,14 @@ MLINKS=	Ns_AdpRegisterParser.3 Ns_AdpRequest.3 \
 	Ns_RegisterAtExit.3 Ns_RegisterAtShutdown.3 \
 	Ns_RegisterAtExit.3 Ns_RegisterAtSignal.3 \
 	Ns_RegisterAtExit.3 Ns_RegisterAtStartup.3 \
-		Ns_RegisterCleanup.3 Ns_RegisterConnCleanup.3 \
+	Ns_RegisterCleanup.3 Ns_RegisterConnCleanup.3 \
 	Ns_DriverInit.3 Ns_RegisterDriver.3 \
 	Ns_RegisterCleanup.3 Ns_RegisterFilter.3 \
 	Ns_ModuleGetSymbol.3 Ns_RegisterModule.3 \
 	Ns_GetProcInfo.3 Ns_RegisterProcInfo.3 \
 	Ns_AuthorizeRequest.3 Ns_RegisterProxyRequest.3 \
 	Ns_AuthorizeRequest.3 Ns_RegisterRequest.3 \
+	Ns_ConnReturnBadRequest.3 Ns_RegisterRedirect.3 \
 	Ns_ConnReturnBadRequest.3 Ns_RegisterReturn.3 \
 	Ns_RegisterAtExit.3 Ns_RegisterServerShutdown.3 \
 	Ns_RegisterCleanup.3 Ns_RegisterServerTrace.3 \
@@ -500,7 +501,7 @@ MLINKS=	Ns_AdpRegisterParser.3 Ns_AdpRequest.3 \
 	Ns_Fatal.3 Ns_TclLogError.3 \
 	Ns_Fatal.3 Ns_TclLogErrorRequest.3 \
 	Ns_TclAllocateInterp.3 Ns_TclMarkForDelete.3 \
-		Ns_TclRegisterAtCleanup.3 Ns_TclRegisterAtCreate.3 \
+	Ns_TclRegisterAtCleanup.3 Ns_TclRegisterAtCreate.3 \
 	Ns_TclRegisterAtCleanup.3 Ns_TclRegisterAtDelete.3 \
 	Ns_TclRegisterAtCleanup.3 Ns_TclRegisterDeferred.3 \
 	Ns_FreeConnInterp.3 Ns_TclRequest.3 \
@@ -533,7 +534,7 @@ MLINKS=	Ns_AdpRegisterParser.3 Ns_AdpRequest.3 \
 	Ns_After.3 Ns_UnscheduleProc.3 \
 	Ns_SetUrlToFileProc.3 Ns_UrlIsDir.3 \
 	Ns_SetUrlToFileProc.3 Ns_UrlIsFile.3 \
-		Ns_UrlSpecificAlloc.3 Ns_UrlSpecificDestroy.3 \
+	Ns_UrlSpecificAlloc.3 Ns_UrlSpecificDestroy.3 \
 	Ns_UrlSpecificAlloc.3 Ns_UrlSpecificGet.3 \
 	Ns_UrlSpecificAlloc.3 Ns_UrlSpecificGetExact.3 \
 	Ns_UrlSpecificAlloc.3 Ns_UrlSpecificGetFast.3 \
