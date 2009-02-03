@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress-mu
-PORTVERSION=	2.6.5
+PORTVERSION=	2.7
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://mu.wordpress.org/
@@ -15,7 +15,7 @@ DISTNAME=	latest
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Multi-user version of the famous WordPress blogging application
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_PHP=	mysql pcre xml
 NO_BUILD=	YES
@@ -31,10 +31,10 @@ pre-everything::
 do-install:
 	@${MKDIR} ${WWWDIR}
 	@${CHMOD} 755 ${WWWDIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR}/)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}/
 .endif
 
 post-install:
