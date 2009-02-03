@@ -1,6 +1,0 @@
-MD5 (subversion/subversion-1.5.0.tar.bz2) = 004b57643406dd10957ec87955702189
-SHA256 (subversion/subversion-1.5.0.tar.bz2) = 755e9b2bac5ce69ff0177a02f3946c2840db06411e92e767e3c44a8c46d496b3
-SIZE (subversion/subversion-1.5.0.tar.bz2) = 4852793
-MD5 (subversion/svn_hacks_1.1.diff) = c936ad112897d698c6b3c066c8f93606
-SHA256 (subversion/svn_hacks_1.1.diff) = cbc4503e4f6a624ec40d23b8b8444ced84d71482308c4c08e3cce6f3452b64cb
-SIZE (subversion/svn_hacks_1.1.diff) = 17813

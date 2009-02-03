@@ -461,7 +461,6 @@
     SUBDIR += py-qt4-demo
     SUBDIR += py-qt4-doc
     SUBDIR += py-yolk
-    SUBDIR += pybliographer
     SUBDIR += pylize
     SUBDIR += pypanda
     SUBDIR += qbrew

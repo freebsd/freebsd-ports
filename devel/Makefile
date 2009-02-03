@@ -502,10 +502,8 @@
     SUBDIR += hs-haddock
     SUBDIR += hs-haddock-docs
     SUBDIR += hs-happy
-    SUBDIR += hs-hat
     SUBDIR += hs-hdoc
     SUBDIR += hs-hmake
-    SUBDIR += hs-hpl
     SUBDIR += hs-idoc
     SUBDIR += hs-pcre-light-ghc
     SUBDIR += hs-utf8-string-ghc
@@ -2190,7 +2188,6 @@
     SUBDIR += py-cmdln
     SUBDIR += py-cog
     SUBDIR += py-configobj
-    SUBDIR += py-coro
     SUBDIR += py-ctypes
     SUBDIR += py-cxx
     SUBDIR += py-dal
@@ -2603,7 +2600,6 @@
     SUBDIR += subcommander
     SUBDIR += subcommander2
     SUBDIR += subversion
-    SUBDIR += subversion-devel
     SUBDIR += subversion-freebsd
     SUBDIR += subversive
     SUBDIR += sunterlib

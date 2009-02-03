@@ -132,7 +132,6 @@
     SUBDIR += sendxmpp
     SUBDIR += sim-im
     SUBDIR += sim-im-devel
-    SUBDIR += sulci
     SUBDIR += tapioca-qt
     SUBDIR += telepathy-butterfly
     SUBDIR += telepathy-gabble

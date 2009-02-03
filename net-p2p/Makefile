@@ -94,7 +94,6 @@
     SUBDIR += p5-Net-BitTorrent-PeerPacket
     SUBDIR += p5-WWW-BitTorrent
     SUBDIR += p5-pdonkey
-    SUBDIR += peercast
     SUBDIR += phex
     SUBDIR += py-bittornado
     SUBDIR += py-bittornado-core

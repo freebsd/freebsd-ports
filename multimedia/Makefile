@@ -96,7 +96,6 @@
     SUBDIR += gxmms
     SUBDIR += handbrake
     SUBDIR += hayes
-    SUBDIR += helixplayer
     SUBDIR += iriverter
     SUBDIR += iso2mkv
     SUBDIR += jahshaka
@@ -153,7 +152,6 @@
     SUBDIR += mimms
     SUBDIR += miro
     SUBDIR += mjpegtools
-    SUBDIR += mjpegtools-yuvfilters
     SUBDIR += mkvtoolnix
     SUBDIR += mkxvcd
     SUBDIR += mlt

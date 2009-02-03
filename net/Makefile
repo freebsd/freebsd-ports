@@ -156,7 +156,6 @@
     SUBDIR += fsplib
     SUBDIR += ftelnetd
     SUBDIR += g2ipmsg
-    SUBDIR += gacxtool
     SUBDIR += gastman
     SUBDIR += gatekeeper
     SUBDIR += gateway6
@@ -178,7 +177,6 @@
     SUBDIR += gnome-netstatus
     SUBDIR += gnome-nettool
     SUBDIR += gnome-vnc
-    SUBDIR += gnometelnet
     SUBDIR += gnosamba
     SUBDIR += gnu-radius
     SUBDIR += gofish
@@ -309,7 +307,6 @@
     SUBDIR += libtnl
     SUBDIR += libtrace
     SUBDIR += libunp
-    SUBDIR += libunpipc
     SUBDIR += libvncserver
     SUBDIR += liferea
     SUBDIR += linc
@@ -743,7 +740,6 @@
     SUBDIR += py-ldap2
     SUBDIR += py-libdnet
     SUBDIR += py-libnet
-    SUBDIR += py-mantissa
     SUBDIR += py-medusa
     SUBDIR += py-mp-random
     SUBDIR += py-netaddr
@@ -998,7 +994,6 @@
     SUBDIR += vchat
     SUBDIR += vde
     SUBDIR += vde2
-    SUBDIR += versuch
     SUBDIR += vinagre
     SUBDIR += vino
     SUBDIR += vnc

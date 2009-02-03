@@ -120,7 +120,6 @@
     SUBDIR += html2ps-letter
     SUBDIR += hugelatex
     SUBDIR += hyperlatex
-    SUBDIR += ifhp
     SUBDIR += ifxetex
     SUBDIR += it-acroread8
     SUBDIR += jabref
@@ -326,7 +325,6 @@
     SUBDIR += ttftot42
     SUBDIR += txtbdf2ps
     SUBDIR += typetools
-    SUBDIR += virtualpaper
     SUBDIR += wmlpq
     SUBDIR += wprint
     SUBDIR += xdvi

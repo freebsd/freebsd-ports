@@ -743,7 +743,6 @@
     SUBDIR += spybye
     SUBDIR += sqlmap
     SUBDIR += sqlninja
-    SUBDIR += squidclam
     SUBDIR += squidclamav
     SUBDIR += srm
     SUBDIR += srp

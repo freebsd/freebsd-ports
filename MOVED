@@ -3775,3 +3775,34 @@ lang/perl5|lang/perl5.6|2009-02-01|Renamed
 devel/libmcve|devel/libmonetra|2009-02-01|Project renamed
 misc/gnomesword|misc/xiphos/|2009-02-02|Project renamed
 www/aolserver-nscache||2009-02-03|Removed
+games/emacs-chess||2009-02-03|Has expired: has been broken for more than 6 months
+devel/subversion-devel||2009-02-03|Has expired: Use devel/subversion or devel/subversion-freebsd instead of this port
+devel/hs-hat||2009-02-03|Has expired: has been broken for more than 6 months
+devel/hs-hpl||2009-02-03|Has expired: has been broken for more than 6 months
+databases/mysqlbigram||2009-02-03|Has expired: has been broken for more than 6 months
+mail/claws-mail-clamav||2009-02-03|Has expired: has been broken for more than 6 months
+mail/sylpheed2-devel||2009-02-03|Has expired: has been broken for more than 6 months
+www/pecl-mnogosearch||2009-02-03|Has expired: has been broken for more than 6 months
+x11-fonts/mathfonts||2009-02-03|Has expired: This port was supported by Mozilla 1.8 (including Firefox 2.0) - to be replaced by  STIX fonts for Firefox 3.x
+x11-wm/fluxspace||2009-02-03|Has expired: has been broken for more than 6 months
+x11-wm/expocity||2009-02-03|Has expired: project has been abandoned
+x11/bbuname||2009-02-03|Has expired: has been broken for more than 6 months
+security/squidclam||2009-02-03|Has expired: has been broken for more than 6 months
+print/virtualpaper||2009-02-03|Has expired: depends on broken, expired port
+print/ifhp||2009-02-03|Has expired: has been broken for more than 6 months
+net-p2p/peercast||2009-02-03|Has expired: has been forbidden for more than 6 months
+palm/pdbc||2009-02-03|Has expired: has been broken for more than 6 months
+net-mgmt/NeTraMet||2009-02-03|Has expired: has been broken for more than 6 months
+net-im/sulci||2009-02-03|Has expired: has been broken for more than 6 months
+multimedia/mjpegtools-yuvfilters||2009-02-03|Has expired: has been broken for more than 6 months
+multimedia/helixplayer||2009-02-03|Has expired: has been broken for more than 6 months
+lang/quack||2009-02-03|Has expired: has been broken for more than 6 months
+misc/pybliographer||2009-02-03|Has expired: has been broken for more than 6 months
+net/versuch||2009-02-03|Has expired: has been broken for more than 6 months
+net/py-mantissa||2009-02-03|Has expired: has been broken for more than 6 months
+net/libunpipc||2009-02-03|Has expired: has been broken for more than 6 months
+net/gnometelnet||2009-02-03|Has expired: has been broken for more than 6 months
+net/gacxtool||2009-02-03|Has expired: depends on expired, broken port
+devel/py-coro||2009-02-03|Has expired: has been broken for more than 6 months
+chinese/stardict2-dict-zh_TW||2009-02-03|Has expired: has been broken for more than 6 months
+x11-themes/gtk-industrial-theme||2009-02-03|Has expired: has been broken for more than 6 months

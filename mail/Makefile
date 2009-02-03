@@ -48,7 +48,6 @@
     SUBDIR += claws-mail-att_remover
     SUBDIR += claws-mail-attach_warner
     SUBDIR += claws-mail-cachesaver
-    SUBDIR += claws-mail-clamav
     SUBDIR += claws-mail-fetchinfo
     SUBDIR += claws-mail-gtkhtml2_viewer
     SUBDIR += claws-mail-mailmbox
@@ -657,7 +656,6 @@
     SUBDIR += swaks
     SUBDIR += sylpheed
     SUBDIR += sylpheed2
-    SUBDIR += sylpheed2-devel
     SUBDIR += sympa
     SUBDIR += sympa-elixus
     SUBDIR += sympa5
