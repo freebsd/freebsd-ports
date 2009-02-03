@@ -21,6 +21,8 @@ PLIST_FILES=	lib/${PORTNAME}.a include/${PORTNAME}/config.h include/${PORTNAME}/
 		include/${PORTNAME}/${PORTNAME}.h include/${PORTNAME}/config.vc.h
 PLIST_DIRS=	include/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/install: libaiff.a/install:/' \
 	${WRKSRC}/${MAKEFILE}.in
@@ -29,4 +31,4 @@ post-patch:
 BROKEN=		does not build on 6.x.
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
