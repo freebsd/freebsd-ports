@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.icculus.org/SDL_sound/downloads/
 DISTNAME=	SDL_sound-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mva@sysfault.org
 COMMENT=	A SDL audio library and player for some popular sound file formats
 
 USE_AUTOTOOLS=	libtool:15
