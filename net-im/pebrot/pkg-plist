@@ -17,6 +17,8 @@ share/doc/pebrot/ChangeLog
 share/doc/pebrot/README
 share/doc/pebrot/logos/moo.txt
 share/doc/pebrot/logos/pebrot.txt
+share/doc/pebrot/logos/python.txt
+share/doc/pebrot/logos/python2.txt
 share/doc/pebrot/logos/readme
 share/doc/pebrot/pebrotrc
 share/doc/pebrot/utils/enc.py
