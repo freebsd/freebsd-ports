@@ -57,6 +57,7 @@ share/locale/io/LC_MESSAGES/alacarte.mo
 share/locale/it/LC_MESSAGES/alacarte.mo
 share/locale/ja/LC_MESSAGES/alacarte.mo
 share/locale/ka/LC_MESSAGES/alacarte.mo
+share/locale/kk/LC_MESSAGES/alacarte.mo
 share/locale/kn/LC_MESSAGES/alacarte.mo
 share/locale/ko/LC_MESSAGES/alacarte.mo
 share/locale/ku/LC_MESSAGES/alacarte.mo
@@ -121,6 +122,8 @@ share/locale/zh_TW/LC_MESSAGES/alacarte.mo
 @dirrmtry share/locale/mg
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/io/LC_MESSAGES
 @dirrmtry share/locale/io
 @dirrmtry share/locale/fur/LC_MESSAGES
