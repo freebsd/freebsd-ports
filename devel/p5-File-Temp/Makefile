@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Temp
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,8 +17,5 @@ COMMENT=	Perl5 module to generate temporary files or directories safely
 PERL_CONFIGURE=	yes
 
 MAN3=		File::Temp.3
-
-pre-patch:
-	@${FIND} ${WRKSRC} -name "._Temp.pm" -delete
 
 .include <bsd.port.mk>
