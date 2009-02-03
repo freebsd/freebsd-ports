@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	POE-Component-IRC
-PORTVERSION=	5.88
-PORTREVISION=	1
+PORTVERSION=	5.96
 CATEGORIES=	irc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -51,8 +50,8 @@ MAN3=		POE::Component::IRC.3 \
 		POE::Component::IRC::Qnet.3 \
 		POE::Component::IRC::Qnet::State.3 \
 		POE::Component::IRC::State.3 \
-		POE::Component::IRC::Test::Harness.3 \
-		POE::Component::IRC::Test::Plugin.3 \
+		POE::Component::IRC::Cookbook::Reload.3 \
+		POE::Component::IRC::Cookbook::Seen.3 \
 		POE::Component::IRC::Cookbook::Translator.3 \
 		POE::Component::IRC::Cookbook::Disconnecting.3 \
 		POE::Component::IRC::Cookbook::BasicBot.3 \
