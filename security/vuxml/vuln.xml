@@ -34,6 +34,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4a99d61c-f23a-11dd-9f55-0030843d3802">
+    <topic>perl -- Directory Permissions Race Condition</topic>
+    <affects>
+      <package>
+	<name>perl</name>
+	<range><ge>5.8.0</ge><lt>5.8.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/14531/">
+	  <p>Paul Szabo has reported a vulnerability in Perl File::Path::rmtree,
+	    which potentially can be exploited by malicious, local users to
+	    gain escalated privileges.</p>
+	  <p>The vulnerability is caused due to a race condition in the way
+	    File::Path::rmtree handles directory permissions when cleaning up
+	    directories. This can be exploited by replacing an existing sub
+	    directory in the directory tree with a symbolic link to an arbitrary
+	    file.</p>
+	  <p>Successful exploitation may allow changing permissions of arbitrary
+	    files, if root uses an application using the vulnerable code to delete
+	    files in a directory having a world-writable sub directory.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-0448</cvename>
+      <url>http://www.ubuntulinux.org/usn/usn-94-1</url>
+      <url>http://secunia.com/advisories/14531/</url>
+    </references>
+    <dates>
+      <discovery>2005-03-09</discovery>
+      <entry>2009-02-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6a523dba-eeab-11dd-ab4f-0030843d3802">
     <topic>moinmoin -- multiple cross site scripting vulnerabilities</topic>
     <affects>
