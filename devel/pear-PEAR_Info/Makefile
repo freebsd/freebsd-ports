@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PEAR_Info
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
