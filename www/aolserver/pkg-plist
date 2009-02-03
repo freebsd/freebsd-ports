@@ -55,6 +55,8 @@
 %%AOLSERVERBASE%%/modules/tcl/nsdb.tcl
 %%AOLSERVERBASE%%/modules/tcl/nsperm/compat.tcl
 %%AOLSERVERBASE%%/modules/tcl/nsperm/init.tcl
+%%AOLSERVERBASE%%/modules/tcl/packages.tcl
+%%AOLSERVERBASE%%/modules/tcl/pools.tcl
 %%AOLSERVERBASE%%/modules/tcl/prodebug.tcl
 %%AOLSERVERBASE%%/modules/tcl/return.tcl
 %%AOLSERVERBASE%%/modules/tcl/sendmail.tcl
@@ -437,8 +439,8 @@
 %%HTMLDOCS%%%%AOLSERVERBASE%%/html/Ns_RegisterModule.3.htm
 %%HTMLDOCS%%%%AOLSERVERBASE%%/html/Ns_RegisterProcInfo.3.htm
 %%HTMLDOCS%%%%AOLSERVERBASE%%/html/Ns_RegisterProxyRequest.3.htm
+%%HTMLDOCS%%%%AOLSERVERBASE%%/html/Ns_RegisterRedirect.3.htm
 %%HTMLDOCS%%%%AOLSERVERBASE%%/html/Ns_RegisterRequest.3.htm
-%%HTMLDOCS%%%%AOLSERVERBASE%%/html/Ns_RegisterReturn.3.htm
 %%HTMLDOCS%%%%AOLSERVERBASE%%/html/Ns_RegisterServerShutdown.3.htm
 %%HTMLDOCS%%%%AOLSERVERBASE%%/html/Ns_RegisterServerTrace.3.htm
 %%HTMLDOCS%%%%AOLSERVERBASE%%/html/Ns_RegisterShutdown.3.htm
