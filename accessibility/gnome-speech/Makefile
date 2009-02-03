@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-speech
-PORTVERSION=	0.4.22
+PORTVERSION=	0.4.23
 CATEGORIES=	accessibility audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
