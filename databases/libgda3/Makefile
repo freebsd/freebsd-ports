@@ -75,6 +75,10 @@ CONFIGURE_ARGS+=	--without-firebird
 .endif
 
 .if ${LIBGDA3_SLAVE}=="freetds"
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 LIB_DEPENDS+=		tds.5:${PORTSDIR}/databases/freetds
 CONFIGURE_ARGS+=	--with-tds=${LOCALBASE}
 .else
