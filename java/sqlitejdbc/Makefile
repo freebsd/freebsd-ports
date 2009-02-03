@@ -9,7 +9,7 @@ PORTNAME=	sqlitejdbc
 PORTVERSION=	052
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-src
-CATEGORIES=	databases java
+CATEGORIES=	java databases
 MASTER_SITES=	http://files.zentus.com/sqlitejdbc/
 EXTRACT_SUFX=	.tgz
 
