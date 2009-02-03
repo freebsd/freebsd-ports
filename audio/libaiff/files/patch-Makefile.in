@@ -1,0 +1,11 @@
+--- Makefile.in.org	2009-02-03 09:18:56.000000000 +0100
++++ Makefile.in	2009-02-03 09:19:09.000000000 +0100
+@@ -6,7 +6,7 @@
+ CFLAGS = @DEFS@ -I. -Ilibaiff -g -O2 -ansi -pedantic -Wall -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-align -Wwrite-strings -Wsign-compare -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wnested-externs -Wno-unreachable-code
+ 
+ # for GCC4. comment for GCC3
+-CFLAGS += -Wextra -Wmissing-field-initializers -Wno-discard-qual
++CFLAGS += -Wextra -Wmissing-field-initializers
+ 
+ prefix = @prefix@
+ 
