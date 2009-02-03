@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gmpc-lastfm
-PORTVERSION=	0.16.1
-PORTREVISION=	1
+PORTVERSION=	0.17.0
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
-DISTNAME=	gmpc-last.fm-${PORTVERSION}
+DISTNAME=	gmpc-last-fm-${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Lastfm plugin for gmpc

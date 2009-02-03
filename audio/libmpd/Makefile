@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmpd
-PORTVERSION=	0.16.1
+PORTVERSION=	0.17.0
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 
@@ -17,5 +17,9 @@ USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig glib20 gnomehack
 USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,libmpd-1.0\/libmpd,libmpd,' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
