@@ -6,18 +6,15 @@
 #
 
 PORTNAME=		Class-Hook
-PORTVERSION=		0.02
-PORTREVISION=		1
+PORTVERSION=		0.03
 CATEGORIES=		devel perl5
-MASTER_SITES=		CPAN \
-			http://cottage.quynh-and-brian.org/freebsd/ports/distfiles/
+MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Add hooks on methods from other classes
 
 PERL_CONFIGURE=		yes
-WRKSRC=			${WRKDIR}/Class-Hook
 
 MAN3=			Class::Hook.3
 
