@@ -1,4 +1,5 @@
 bin/install_rubigen_scripts
+bin/rubigen
 bin/ruby_app
 %%GEM_CACHE%%
 %%GEM_DOC_DIR%%/rdoc/classes/Dir.html
@@ -7,23 +8,21 @@ bin/ruby_app
 %%GEM_DOC_DIR%%/rdoc/classes/Object.src/M000002.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/AbstractGemSource.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/AbstractGemSource.src/M000100.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/AbstractGemSource.src/M000104.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Base.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Base.src/M000124.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Base.src/M000125.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Base.src/M000126.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Base.src/M000127.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Base.src/M000128.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Base.src/M000129.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Base.src/M000130.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Base.src/M000131.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Base.src/M000132.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Base.src/M000133.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Base.src/M000134.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Base.src/M000135.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Base.src/M000136.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands.src/M000023.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands.src/M000027.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Base.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Base.src/M000032.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Base.src/M000033.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Base.src/M000034.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Base.src/M000035.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Base.src/M000036.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Base.src/M000037.html
@@ -32,11 +31,11 @@ bin/ruby_app
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Base.src/M000040.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Base.src/M000041.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Base.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Base.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Base.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Base.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Base.src/M000046.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Create.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Create.src/M000056.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Create.src/M000057.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Create.src/M000058.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Create.src/M000059.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Create.src/M000060.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Create.src/M000061.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Create.src/M000062.html
@@ -46,43 +45,43 @@ bin/ruby_app
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Create.src/M000066.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Create.src/M000067.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Create.src/M000068.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Create.src/M000069.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Create.src/M000070.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Create.src/M000071.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Create.src/M000072.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Destroy.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Destroy.src/M000025.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Destroy.src/M000027.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Destroy.src/M000028.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Destroy.src/M000029.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Destroy.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Destroy.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Destroy.src/M000032.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Destroy.src/M000033.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/List.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/List.src/M000043.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/List.src/M000044.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/List.src/M000045.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/List.src/M000046.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/List.src/M000047.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/List.src/M000048.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/List.src/M000049.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/List.src/M000050.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/List.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/List.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/List.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/List.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/List.src/M000055.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/RewindBase.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/RewindBase.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/RewindBase.src/M000034.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Update.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Update.src/M000052.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Update.src/M000053.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Update.src/M000054.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Update.src/M000055.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Update.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Update.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Update.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Commands/Update.src/M000059.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GemPathSource.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GemPathSource.src/M000106.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GemPathSource.src/M000107.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GemPathSource.src/M000108.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GemPathSource.src/M000110.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GemPathSource.src/M000111.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GemPathSource.src/M000112.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratedAttribute.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratedAttribute.src/M000121.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratedAttribute.src/M000122.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratedAttribute.src/M000123.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratedAttribute.src/M000125.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratedAttribute.src/M000126.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratedAttribute.src/M000127.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratorError.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratorTestHelper.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratorTestHelper.src/M000081.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratorTestHelper.src/M000082.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratorTestHelper.src/M000083.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratorTestHelper.src/M000084.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratorTestHelper.src/M000085.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratorTestHelper.src/M000086.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratorTestHelper.src/M000087.html
@@ -95,30 +94,31 @@ bin/ruby_app
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratorTestHelper.src/M000094.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratorTestHelper.src/M000095.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratorTestHelper.src/M000096.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratorTestHelper.src/M000097.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratorTestHelper.src/M000098.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratorTestHelper.src/M000099.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/GeneratorTestHelper.src/M000100.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup.src/M000069.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup.src/M000070.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup.src/M000073.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup.src/M000074.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup/ClassMethods.src/M000071.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup/ClassMethods.src/M000072.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup/ClassMethods.src/M000073.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup/ClassMethods.src/M000074.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup/ClassMethods.src/M000075.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup/ClassMethods.src/M000076.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup/ClassMethods.src/M000077.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup/ClassMethods.src/M000078.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup/ClassMethods.src/M000079.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup/ClassMethods.src/M000080.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup/ClassMethods.src/M000081.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup/ClassMethods.src/M000082.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup/ClassMethods.src/M000083.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Lookup/ClassMethods.src/M000084.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Manifest.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Manifest.src/M000101.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Manifest.src/M000102.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Manifest.src/M000103.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Manifest.src/M000104.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Manifest.src/M000105.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Manifest.src/M000106.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Manifest.src/M000107.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Manifest.src/M000108.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Manifest.src/M000109.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options.src/M000008.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options.src/M000009.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options.src/M000010.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options.src/M000011.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options.src/M000012.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options.src/M000013.html
@@ -127,49 +127,58 @@ bin/ruby_app
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options.src/M000016.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options.src/M000017.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options.src/M000019.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options.src/M000021.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options/ClassMethods.src/M000019.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options/ClassMethods.src/M000020.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options/ClassMethods.src/M000021.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options/ClassMethods.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options/ClassMethods.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options/ClassMethods.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Options/ClassMethods.src/M000025.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/PathFilteredSource.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/PathFilteredSource.src/M000115.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/PathFilteredSource.src/M000116.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/PathFilteredSource.src/M000117.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/PathFilteredSource.src/M000119.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/PathFilteredSource.src/M000120.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/PathFilteredSource.src/M000121.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/PathSource.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/PathSource.src/M000097.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/PathSource.src/M000098.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/PathSource.src/M000099.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/PathSource.src/M000101.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/PathSource.src/M000102.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/PathSource.src/M000103.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Scripts.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Scripts/Base.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Scripts/Base.src/M000004.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Scripts/Base.src/M000005.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Scripts/Base.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Scripts/Base.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Scripts/Base.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Scripts/Base.src/M000009.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Scripts/Destroy.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Scripts/Destroy.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Scripts/Destroy.src/M000006.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Scripts/Generate.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Scripts/Update.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Scripts/Update.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Scripts/Update.src/M000010.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Source.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Source.src/M000118.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Source.src/M000119.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Source.src/M000120.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Source.src/M000122.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Source.src/M000123.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Source.src/M000124.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Spec.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Spec.src/M000109.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Spec.src/M000110.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Spec.src/M000111.html
-%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Spec.src/M000112.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Spec.src/M000113.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Spec.src/M000114.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Spec.src/M000115.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Spec.src/M000116.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Spec.src/M000117.html
+%%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Spec.src/M000118.html
 %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/UsageError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rubigen.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rubigen/CLI.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rubigen/CLI.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rubigen/CLI.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rubigen/CLI.src/M000005.html
 %%GEM_DOC_DIR%%/rdoc/created.rid
 %%GEM_DOC_DIR%%/rdoc/files/History_txt.html
 %%GEM_DOC_DIR%%/rdoc/files/License_txt.html
 %%GEM_DOC_DIR%%/rdoc/files/Manifest_txt.html
-%%GEM_DOC_DIR%%/rdoc/files/README_txt.html
+%%GEM_DOC_DIR%%/rdoc/files/README_rdoc.html
 %%GEM_DOC_DIR%%/rdoc/files/Todo_txt.html
 %%GEM_DOC_DIR%%/rdoc/files/app_generators/ruby_app/templates/README_txt.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/rubigen/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/rubigen/cli_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/rubigen/commands_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/rubigen/generated_attribute_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/rubigen/helpers/generator_test_helper_rb.html
@@ -182,7 +191,6 @@ bin/ruby_app
 %%GEM_DOC_DIR%%/rdoc/files/lib/rubigen/scripts_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/rubigen/simple_logger_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/rubigen/spec_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/rubigen/version_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/rubigen_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/website/index_txt.html
 %%GEM_DOC_DIR%%/rdoc/files/website/version-raw_txt.html
@@ -192,10 +200,11 @@ bin/ruby_app
 %%GEM_DOC_DIR%%/rdoc/fr_method_index.html
 %%GEM_DOC_DIR%%/rdoc/index.html
 %%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_LIB_DIR%%/.autotest
 %%GEM_LIB_DIR%%/History.txt
 %%GEM_LIB_DIR%%/License.txt
 %%GEM_LIB_DIR%%/Manifest.txt
-%%GEM_LIB_DIR%%/README.txt
+%%GEM_LIB_DIR%%/README.rdoc
 %%GEM_LIB_DIR%%/Rakefile
 %%GEM_LIB_DIR%%/Todo.txt
 %%GEM_LIB_DIR%%/app_generators/ruby_app/USAGE
@@ -205,15 +214,20 @@ bin/ruby_app
 %%GEM_LIB_DIR%%/app_generators/ruby_app/templates/lib/module.rb
 %%GEM_LIB_DIR%%/app_generators/ruby_app/templates/test/test_helper.rb.erb
 %%GEM_LIB_DIR%%/bin/install_rubigen_scripts
+%%GEM_LIB_DIR%%/bin/rubigen
 %%GEM_LIB_DIR%%/bin/ruby_app
-%%GEM_LIB_DIR%%/config/hoe.rb
-%%GEM_LIB_DIR%%/config/requirements.rb
+%%GEM_LIB_DIR%%/features/development.feature
+%%GEM_LIB_DIR%%/features/help.feature
+%%GEM_LIB_DIR%%/features/rubigen_cli.feature
+%%GEM_LIB_DIR%%/features/steps/common.rb
+%%GEM_LIB_DIR%%/features/steps/env.rb
 %%GEM_LIB_DIR%%/generators/install_rubigen_scripts/install_rubigen_scripts_generator.rb
 %%GEM_LIB_DIR%%/generators/install_rubigen_scripts/templates/script/destroy
 %%GEM_LIB_DIR%%/generators/install_rubigen_scripts/templates/script/generate
 %%GEM_LIB_DIR%%/generators/install_rubigen_scripts/templates/script/win_script.cmd
 %%GEM_LIB_DIR%%/lib/rubigen.rb
 %%GEM_LIB_DIR%%/lib/rubigen/base.rb
+%%GEM_LIB_DIR%%/lib/rubigen/cli.rb
 %%GEM_LIB_DIR%%/lib/rubigen/commands.rb
 %%GEM_LIB_DIR%%/lib/rubigen/generated_attribute.rb
 %%GEM_LIB_DIR%%/lib/rubigen/helpers/generator_test_helper.rb
@@ -226,7 +240,6 @@ bin/ruby_app
 %%GEM_LIB_DIR%%/lib/rubigen/scripts/update.rb
 %%GEM_LIB_DIR%%/lib/rubigen/simple_logger.rb
 %%GEM_LIB_DIR%%/lib/rubigen/spec.rb
-%%GEM_LIB_DIR%%/lib/rubigen/version.rb
 %%GEM_LIB_DIR%%/rubygems_generators/application_generator/USAGE
 %%GEM_LIB_DIR%%/rubygems_generators/application_generator/application_generator_generator.rb
 %%GEM_LIB_DIR%%/rubygems_generators/application_generator/templates/bin
@@ -243,17 +256,10 @@ bin/ruby_app
 %%GEM_LIB_DIR%%/rubygems_generators/component_generator/templates/test.rb
 %%GEM_LIB_DIR%%/rubygems_generators/component_generator/templates/test_generator_helper.rb
 %%GEM_LIB_DIR%%/rubygems_generators/component_generator/templates/usage
+%%GEM_LIB_DIR%%/script/console
 %%GEM_LIB_DIR%%/script/destroy
 %%GEM_LIB_DIR%%/script/generate
 %%GEM_LIB_DIR%%/script/txt2html
-%%GEM_LIB_DIR%%/script/txt2js
-%%GEM_LIB_DIR%%/setup.rb
-%%GEM_LIB_DIR%%/tasks/deployment.rake
-%%GEM_LIB_DIR%%/tasks/environment.rake
-%%GEM_LIB_DIR%%/tasks/website.rake
-%%GEM_LIB_DIR%%/test/examples_from_rails/generator_test_helper.rb
-%%GEM_LIB_DIR%%/test/examples_from_rails/test_rails_resource_generator.rb
-%%GEM_LIB_DIR%%/test/examples_from_rails/test_rails_scaffold_generator.rb
 %%GEM_LIB_DIR%%/test/test_application_generator_generator.rb
 %%GEM_LIB_DIR%%/test/test_component_generator_generator.rb
 %%GEM_LIB_DIR%%/test/test_generate_builtin_application.rb
@@ -262,6 +268,7 @@ bin/ruby_app
 %%GEM_LIB_DIR%%/test/test_helper.rb
 %%GEM_LIB_DIR%%/test/test_install_rubigen_scripts_generator.rb
 %%GEM_LIB_DIR%%/test/test_lookup.rb
+%%GEM_LIB_DIR%%/test/test_rubigen_cli.rb
 %%GEM_LIB_DIR%%/test_unit_generators/test_unit/USAGE
 %%GEM_LIB_DIR%%/test_unit_generators/test_unit/templates/test.rb
 %%GEM_LIB_DIR%%/test_unit_generators/test_unit/test_unit_generator.rb
@@ -282,9 +289,7 @@ bin/ruby_app
 @dirrm %%GEM_LIB_DIR%%/test_unit_generators/test_unit/templates
 @dirrm %%GEM_LIB_DIR%%/test_unit_generators/test_unit
 @dirrm %%GEM_LIB_DIR%%/test_unit_generators
-@dirrm %%GEM_LIB_DIR%%/test/examples_from_rails
 @dirrm %%GEM_LIB_DIR%%/test
-@dirrm %%GEM_LIB_DIR%%/tasks
 @dirrm %%GEM_LIB_DIR%%/script
 @dirrm %%GEM_LIB_DIR%%/rubygems_generators/component_generator/templates
 @dirrm %%GEM_LIB_DIR%%/rubygems_generators/component_generator
@@ -299,7 +304,8 @@ bin/ruby_app
 @dirrm %%GEM_LIB_DIR%%/generators/install_rubigen_scripts/templates
 @dirrm %%GEM_LIB_DIR%%/generators/install_rubigen_scripts
 @dirrm %%GEM_LIB_DIR%%/generators
-@dirrm %%GEM_LIB_DIR%%/config
+@dirrm %%GEM_LIB_DIR%%/features/steps
+@dirrm %%GEM_LIB_DIR%%/features
 @dirrm %%GEM_LIB_DIR%%/bin
 @dirrm %%GEM_LIB_DIR%%/app_generators/ruby_app/templates/test
 @dirrm %%GEM_LIB_DIR%%/app_generators/ruby_app/templates/lib
@@ -316,6 +322,8 @@ bin/ruby_app
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/app_generators/ruby_app
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/app_generators
 @dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Rubigen/CLI.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Rubigen
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Spec.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Source.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/RubiGen/Scripts/Update.src
