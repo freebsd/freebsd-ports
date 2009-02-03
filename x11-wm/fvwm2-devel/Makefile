@@ -45,8 +45,8 @@ OPTIONS=	ICONS		"Install default icon set" on \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_ICONS)
-FVWM_ICONS=	fvwm_icons-20070101.tar.bz2
-DISTFILES+=	${FVWM_ICONS}
+FVWM_ICONS=	fvwm_icons-20070101
+DISTFILES+=	${FVWM_ICONS}.tar.bz2
 .endif
 
 .if defined(WITHOUT_ICONV)
@@ -159,7 +159,7 @@ post-install:
 
 .if !defined(WITHOUT_ICONS)
 	@${MKDIR} ${PREFIX}/share/fvwm/pixmaps
-	${INSTALL_DATA} ${WRKDIR}/icons/fvwm_icons/*.xpm \
+	${INSTALL_DATA} ${WRKDIR}/icons/${FVWM_ICONS}/*.xpm \
 		${PREFIX}/share/fvwm/pixmaps
 .endif
 

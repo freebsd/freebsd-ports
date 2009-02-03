@@ -11,8 +11,8 @@ PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
-FVWM_ICONS=	fvwm_icons-20070101.tar.bz2
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${FVWM_ICONS}
+FVWM_ICONS=	fvwm_icons-20070101
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${FVWM_ICONS}.tar.bz2
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	cy@FreeBSD.org
@@ -90,7 +90,7 @@ PLIST_SUB+=	GTK="@comment not installed: "
 
 post-extract:
 	@${MKDIR} ${WRKDIR}/icons
-	@${TAR} -xyf ${DISTDIR}/${FVWM_ICONS} -C ${WRKDIR}/icons
+	@${TAR} -xyf ${DISTDIR}/${FVWM_ICONS}.tar.bz2 -C ${WRKDIR}/icons
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' \
@@ -104,7 +104,7 @@ post-install:
 			${PREFIX}/etc/system.fvwm2rc; \
 	fi
 	@${MKDIR} ${PREFIX}/share/fvwm2/pixmaps
-	${INSTALL_DATA} ${WRKDIR}/icons/fvwm_icons/*.xpm \
+	${INSTALL_DATA} ${WRKDIR}/icons/${FVWM_ICONS}/*.xpm \
 		${PREFIX}/share/fvwm2/pixmaps
 
 .include <bsd.port.post.mk>
