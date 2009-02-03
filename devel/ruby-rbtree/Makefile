@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rbtree
-PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTVERSION=	0.2.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.geocities.co.jp/SiliconValley-PaloAlto/3388/rbtree/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
