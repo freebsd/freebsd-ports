@@ -184,4 +184,9 @@ do-install:
 	@(cd ${PREFIX}; ${FIND} -s -d ${ECLIPSE} -type d) | ${SED} -ne 's,^,@dirrm ,p' >> ${TMPPLIST}
 	@echo '@unexec ${PREFIX}/bin/update-desktop-database > /dev/null || /usr/bin/true' >> ${TMPPLIST}
 
+setup-user:
+	@echo 'Preparing Eclipse configuration for user ${USER}'
+	@${PREFIX}/bin/${ECLIPSE} -initialize -clean -consoleLog
+	@${FIND} ${HOME}/.eclipse -exec touch {} \;
+	
 .include <bsd.port.post.mk>
