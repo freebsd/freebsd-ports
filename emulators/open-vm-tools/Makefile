@@ -55,6 +55,10 @@ USE_RC_SUBR=		vmware-guestd.sh vmware-kmod.sh
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+IGNORE=		not yet ported to sparc64
+.endif
+
 PLIST_SUB+=	LIB32DIR=${LIB32DIR}
 
 SUB_LIST+=	LIB32DIR=${LIB32DIR}
