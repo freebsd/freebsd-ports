@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	mod_auth_mysql
-PORTVERSION=	2.20
-PORTREVISION=	8
+PORTVERSION=	3.2
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	mod-auth-mysql
 
 MAINTAINER=	apache@FreeBSD.org
@@ -22,13 +21,10 @@ USE_MYSQL=	yes
 USE_APACHE=	13
 AP_GENPLIST=	yes
 PORTDOCS=	README USAGE
-PLIST_FILES+=	libexec/apache/libauth_mysql.so
+PLIST_FILES+=	libexec/apache/mod_auth_mysql.so
 
-PKGMESSAGE=	${WRKSRC}/.install_notes
-
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-mysql=${PREFIX} \
-		--with-apxs=${APXS}
+post-patch:
+	${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},g' -e 's,apxs,${APXS},' ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
