@@ -14,7 +14,6 @@
     SUBDIR += analog
     SUBDIR += anyremote2html
     SUBDIR += aolserver
-    SUBDIR += aolserver-nscache
     SUBDIR += aolserver-xotcl
     SUBDIR += apache-contrib
     SUBDIR += apache-forrest
