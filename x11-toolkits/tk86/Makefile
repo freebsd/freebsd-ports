@@ -87,10 +87,10 @@ PLIST_SUB+=	INSTMAN=''
 MAN1=	wish.1
 MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
 	CanvTxtInfo.3 Clipboard.3 ClrSelect.3 ConfigWidg.3 ConfigWind.3 \
-	CoordToWin.3 CrtCmHdlr.3 CrtErrHdlr.3 CrtGenHdlr.3 CrtImgType.3 \
-	CrtItemType.3 CrtPhImgFmt.3 CrtSelHdlr.3 CrtWindow.3 DeleteImg.3 \
-	DrawFocHlt.3 EventHndlr.3 FindPhoto.3 FontId.3 FreeXId.3 GeomReq.3 \
-	GetAnchor.3 GetBitmap.3 GetCapStyl.3 GetClrmap.3 GetColor.3 \
+	CoordToWin.3 CrtConsoleChan.3 CrtCmHdlr.3 CrtErrHdlr.3 CrtGenHdlr.3 \
+	CrtImgType.3 CrtItemType.3 CrtPhImgFmt.3 CrtSelHdlr.3 CrtWindow.3 \
+	DeleteImg.3 DrawFocHlt.3 EventHndlr.3 FindPhoto.3 FontId.3 FreeXId.3 \
+	GeomReq.3 GetAnchor.3 GetBitmap.3 GetCapStyl.3 GetClrmap.3 GetColor.3 \
 	GetCursor.3 GetDash.3 GetFont.3 GetGC.3 GetHINSTANCE.3 GetHWND.3 \
 	GetImage.3 GetJoinStl.3 GetJustify.3 GetOption.3 GetPixels.3 \
 	GetPixmap.3 GetRelief.3 GetRootCrd.3 GetScroll.3 GetSelect.3 GetUid.3 \
@@ -103,20 +103,21 @@ MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
 	Tk_Init.3 Tk_Main.3 TkInitStubs.3 WindowId.3 ttk_Geometry.3 \
 	ttk_Theme.3
 
-MANN=	bell.n bind.n bindtags.n bitmap.n button.n canvas.n checkbutton.n \
-	chooseColor.n chooseDirectory.n clipboard.n colors.n console.n \
-	cursors.n destroy.n dialog.n entry.n event.n focus.n focusNext.n \
-	font.n frame.n getOpenFile.n grab.n grid.n keysyms.n image.n label.n \
-	labelframe.n listbox.n loadTk.n lower.n menu.n menubar.n menubutton.n \
-	message.n messageBox.n option.n optionMenu.n options.n pack-old.n \
-	pack.n panedwindow.n palette.n photo.n place.n popup.n radiobutton.n \
-	raise.n scale.n scrollbar.n selection.n send.n spinbox.n text.n tk.n \
-	tkerror.n tkvars.n tkwait.n toplevel.n winfo.n wm.n \
-	ttk_button.n ttk_checkbutton.n ttk_combobox.n ttk_entry.n ttk_frame.n \
-	ttk_image.n ttk_intro.n ttk_label.n ttk_labelframe.n ttk_menubutton.n \
-	ttk_notebook.n ttk_panedwindow.n ttk_progressbar.n ttk_radiobutton.n \
-	ttk_scrollbar.n ttk_separator.n ttk_sizegrip.n ttk_style.n \
-	ttk_treeview.n ttk_widget.n
+MANN=	bell.n bind.n bindtags.n bitmap.n button.n busy.n canvas.n \
+	checkbutton.n chooseColor.n chooseDirectory.n clipboard.n colors.n \
+	console.n cursors.n destroy.n dialog.n entry.n event.n focus.n \
+	focusNext.n font.n fontchooser.n frame.n getOpenFile.n grab.n grid.n \
+	keysyms.n image.n label.n labelframe.n listbox.n loadTk.n lower.n \
+	menu.n menubar.n menubutton.n message.n messageBox.n option.n \
+	optionMenu.n options.n pack-old.n pack.n panedwindow.n palette.n \
+	photo.n place.n popup.n radiobutton.n raise.n scale.n scrollbar.n \
+	selection.n send.n spinbox.n text.n tk.n tkerror.n tkvars.n tkwait.n \
+	toplevel.n winfo.n wm.n ttk_button.n ttk_checkbutton.n ttk_combobox.n \
+	ttk_entry.n ttk_frame.n ttk_image.n ttk_intro.n ttk_label.n \
+	ttk_labelframe.n ttk_menubutton.n ttk_notebook.n ttk_panedwindow.n \
+	ttk_progressbar.n ttk_radiobutton.n ttk_scrollbar.n ttk_separator.n \
+	ttk_scale.n ttk_sizegrip.n ttk_spinbox.n ttk_style.n ttk_treeview.n \
+	ttk_vsapi.n ttk_widget.n
 
 # MLINKS generated via  awk '/ln/ {print "\t" $2,$3,"\\"}' unix/mkLinks
 MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
@@ -427,9 +428,9 @@ post-patch:
 .endif
 
 post-configure:
-	${REINPLACE_CMD} \
-		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TKBASE}|' \
-		${WRKSRC}/tkConfig.sh
+#	${REINPLACE_CMD} \
+#		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TKBASE}|' \
+#		${WRKSRC}/tkConfig.sh
 	${REINPLACE_CMD} -e 's|-Wl,--rpath -Wl,/usr/local/lib||g' ${WRKSRC}/Makefile
 
 .if defined(BUILDING_TK_THREADS)
