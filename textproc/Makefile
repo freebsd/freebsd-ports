@@ -1061,6 +1061,7 @@
     SUBDIR += tl-aspell
     SUBDIR += tn-aspell
     SUBDIR += tnef2txt
+    SUBDIR += tokyodystopia
     SUBDIR += tr-aspell
     SUBDIR += trang
     SUBDIR += translate-toolkit
