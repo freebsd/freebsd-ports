@@ -9,7 +9,7 @@
 PORTNAME=	mget
 PORTVERSION=	1.4.2
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	http://cs-people.bu.edu/dbera/activities/projects/mget/
+MASTER_SITES=	http://cs-people.bu.edu/dbera/projects/mget/
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Multithreaded commandline web-download manager
