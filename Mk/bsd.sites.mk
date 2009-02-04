@@ -1132,7 +1132,6 @@ MASTER_SITE_RUBY+= \
 # See http://rubyforge.org/credits/
 .if !defined(IGNORE_MASTER_SITE_RUBYFORGE)
 MASTER_SITE_RUBYFORGE+= \
-	http://rubyforge.rubyuser.de/%SUBDIR%/ \
 	http://rubyforge.iasi.roedu.net/files/%SUBDIR%/ \
 	http://files.rubyforge.mmmultiworks.com/%SUBDIR%/ \
 	http://files.rubyforge.vm.bytemark.co.uk/%SUBDIR%/
