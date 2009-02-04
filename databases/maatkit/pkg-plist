@@ -8,10 +8,10 @@ bin/mk-deadlock-logger
 bin/mk-duplicate-key-checker
 bin/mk-find
 bin/mk-heartbeat
-bin/mk-log-parser
 bin/mk-parallel-dump
 bin/mk-parallel-restore
 bin/mk-profile-compact
+bin/mk-query-digest
 bin/mk-query-profiler
 bin/mk-show-grants
 bin/mk-slave-delay
