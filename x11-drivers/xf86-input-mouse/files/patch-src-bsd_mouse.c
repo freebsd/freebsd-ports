@@ -1,5 +1,5 @@
 --- src/bsd_mouse.c.orig	2008-11-26 23:11:36.000000000 -0500
-+++ src/bsd_mouse.c	2009-02-02 15:44:07.000000000 -0500
++++ src/bsd_mouse.c	2009-02-04 12:56:32.000000000 -0500
 @@ -1,4 +1,3 @@
 -
  /*
@@ -65,29 +65,25 @@
      int i;
      mousehw_t hw;
      mousemode_t mode;
-@@ -190,10 +216,20 @@
+@@ -190,10 +216,16 @@
      if (pInfo->fd == -1)
  	return NULL;
  
 +#ifdef XPS2_SUPPORT
      /* set the driver operation level, if applicable */
-+    if ((dev = xf86FindOptionValue(pInfo->options, "Device"))) {
-+	if (!strncmp(dev, DEFAULT_PS2_DEV, 8))
-+	    i = 2;
-+	else
-+	    i = 1;
-+	ioctl(pInfo->fd, MOUSE_SETLEVEL, &i);
-+    }
-+#else
++    dev = xf86FindOptionValue(pInfo->options, "Device");
++    if (dev != NULL && !strncmp(dev, DEFAULT_PS2_DEV, 8))
++	i = 2;
++    else
++#endif
      i = 1;
      ioctl(pInfo->fd, MOUSE_SETLEVEL, &i);
 -    
-+#endif
 +
      /* interrogate the driver and get some intelligence on the device. */
      hw.iftype = MOUSE_IF_UNKNOWN;
      hw.model = MOUSE_MODEL_GENERIC;
-@@ -209,9 +245,18 @@
+@@ -209,9 +241,18 @@
  		    protoPara[0] = mode.syncmask[0];
  		    protoPara[1] = mode.syncmask[1];
  		}
@@ -108,7 +104,7 @@
  	    }
  	}
      }
-@@ -234,41 +279,41 @@
+@@ -234,41 +275,41 @@
  	(protocol && xf86NameCmp(protocol, "SysMouse") == 0)) {
  	/*
  	 * As the FreeBSD sysmouse driver defaults to protocol level 0
@@ -167,10 +163,48 @@
      }
      return FALSE;
  }
-@@ -308,15 +353,23 @@
+@@ -276,17 +317,17 @@
+ static const char *
+ FindDevice(InputInfoPtr pInfo, const char *protocol, int flags)
+ {
+-    int fd = -1;
++    int ret = -1;
+     const char **pdev, *dev = NULL;
+     Bool devMouse = FALSE;
+     struct stat devMouseStat;
+     struct stat sb;
+ 
+     for (pdev = mouseDevs; *pdev; pdev++) {
+-	SYSCALL (fd = open(*pdev, O_RDWR | O_NONBLOCK));
+-	if (fd == -1) {
++	SYSCALL (ret = stat(*pdev, &sb));
++	if (ret == -1) {
+ #ifdef DEBUG
+-	    ErrorF("Cannot open %s (%s)\n", *pdev, strerror(errno));
++	    ErrorF("Cannot stat %s (%s)\n", *pdev, strerror(errno));
+ #endif
+ 	} else {
+ 	    /*
+@@ -295,28 +336,32 @@
+ 	     * the test for whether /dev/sysmouse is usable can be made.
+ 	     */
+ 	    if (!strcmp(*pdev, DEFAULT_MOUSE_DEV)) {
+-		if (fstat(fd, &devMouseStat) == 0)
+-		    devMouse = TRUE;
+-		close(fd);
++		memcpy(&devMouseStat, &sb, sizeof(devMouseStat));
++		devMouse = TRUE;
+ 		continue;
+ 	    } else if (!strcmp(*pdev, DEFAULT_SYSMOUSE_DEV)) {
+ 		/* Check if /dev/mouse is the same as /dev/sysmouse. */
+-		if (devMouse && fstat(fd, &sb) == 0 && 
+-		    devMouseStat.st_dev == sb.st_dev &&
++		if (devMouse && devMouseStat.st_dev == sb.st_dev &&
+ 		    devMouseStat.st_ino == sb.st_ino) {
+ 		    /* If the same, use /dev/sysmouse. */
  		    devMouse = FALSE;
  		}
- 		close(fd);
+-		close(fd);
 -		if (MousedRunning())
 +		if (MousedRunning(NULL))
  		    break;
@@ -180,24 +214,24 @@
 -#endif
 -		}
  	    } else {
- 		close(fd);
-+		/*
-+		 * If moused(8) owns the device, open(2) should have failed
-+		 * but just in case...
-+		 */
+-		close(fd);
++		/* Check if /dev/mouse is the same as this device. */
++		if (devMouse && devMouseStat.st_dev == sb.st_dev &&
++		    devMouseStat.st_ino == sb.st_ino) {
++		    /* If the same, use this device. */
++		    devMouse = FALSE;
++		}
 +		if (MousedRunning(*pdev))
 +		    continue;
-+		/*
-+		 * ums(4) does not support anything but SysMouse protocol.
-+		 */
++		/* ums(4) does not support anything but SysMouse protocol. */
 +		if (!strncmp(*pdev, DEFAULT_USB_DEV, 8) && protocol &&
-+		    strcasecmp(protocol, "auto") &&
-+		    strcasecmp(protocol, "sysmouse"))
-+			continue;
++		    xf86NameCmp(protocol, "auto") != 0 &&
++		    xf86NameCmp(protocol, "sysmouse") != 0)
++		    continue;
  		break;
  	    }
  	}
-@@ -782,7 +835,9 @@
+@@ -782,7 +827,9 @@
      p->CheckProtocol = CheckProtocol;
  #if (defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)) && defined(MOUSE_PROTO_SYSMOUSE)
      p->SetupAuto = SetupAuto;
