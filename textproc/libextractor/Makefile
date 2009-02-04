@@ -9,9 +9,7 @@ PORTNAME=	libextractor
 PORTVERSION=	0.5.20b
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://gnunet.org/libextractor/download/ \
-		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://gnunet.org/libextractor/download/
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Library for keyword extraction
