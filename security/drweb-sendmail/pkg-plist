@@ -151,17 +151,24 @@ etc/drweb/templates/en/sendmail/sender_virus.msg-distr
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.rus
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.rus.utf8
 %%PORTDOCS%%%%DOCSDIR%%/addresses_list.rus.txt
+%%PORTDOCS%%%%DOCSDIR%%/addresses_list.rus.txt.utf8
 %%PORTDOCS%%%%DOCSDIR%%/addresses_list.txt
 %%PORTDOCS%%%%DOCSDIR%%/conf_file.rus.txt
+%%PORTDOCS%%%%DOCSDIR%%/conf_file.rus.txt.utf8
 %%PORTDOCS%%%%DOCSDIR%%/conf_file.txt
 %%PORTDOCS%%%%DOCSDIR%%/notify.rus.txt
+%%PORTDOCS%%%%DOCSDIR%%/notify.rus.txt.utf8
 %%PORTDOCS%%%%DOCSDIR%%/notify.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme
 %%PORTDOCS%%%%DOCSDIR%%/readme.rus
+%%PORTDOCS%%%%DOCSDIR%%/readme.rus.utf8
 %%PORTDOCS%%%%DOCSDIR%%/users_list.rus.txt
+%%PORTDOCS%%%%DOCSDIR%%/users_list.rus.txt.utf8
 %%PORTDOCS%%%%DOCSDIR%%/users_list.txt
 %%PORTDOCS%%%%DOCSDIR%%/viruses_list.rus.txt
+%%PORTDOCS%%%%DOCSDIR%%/viruses_list.rus.txt.utf8
 %%PORTDOCS%%%%DOCSDIR%%/viruses_list.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/drweb/templates/en/sendmail

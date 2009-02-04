@@ -6,36 +6,32 @@
 #
 
 PORTNAME=	drweb
-PORTVERSION=	4.44.0
+PORTVERSION=	4.44.1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/60/:f60 \
-		http://freebsd.spectrum.ru/distfiles/drweb/:f60
+MASTER_SITES=	ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/60/ \
+  			http://freebsd.spectrum.ru/distfiles/drweb/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-unix-fbsd60
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	support@spectrum.ru
 COMMENT=	DrWeb antivirus suite
 
-RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
-
 IA32_BINARY_PORT=	yes
 NO_BUILD=		yes
-USE_RC_SUBR=		drwebd.sh
+USE_RC_SUBR=		drwebd
 USE_BZIP2=		yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 601000
-DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd60
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:f60
-.else
-IGNORE=		"Sorry, port is not supported of FreeBSD version < 6.1"
+.if ${OSVERSION} < 601000
+IGNORE=		sorry, port is not supported of FreeBSD version < 6.1
 .endif
 
 .if ${OSVERSION} >= 700000
-LIB_DEPENDS+=   stdc++.5:${PORTSDIR}/misc/compat6x
+LIB_DEPENDS+=	stdc++.5:${PORTSDIR}/misc/compat6x
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 DRWEB_PREFIX=	${PREFIX}/${PORTNAME}
 DRWEB_VARPREFIX=/var/drweb
