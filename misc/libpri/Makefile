@@ -8,8 +8,7 @@
 PORTNAME=	libpri
 PORTVERSION=	1.4.1
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.digium.com/pub/libpri/ \
-		ftp://ftp.digium.com/pub/libpri/old/
+MASTER_SITES=	http://downloads.digium.com/pub/libpri/old/
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A C implementation of the Primary Rate ISDN specification
