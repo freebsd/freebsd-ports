@@ -1,4 +1,4 @@
-# New ports collection makefile for:	p5-Danga-Socket
+# New ports collection makefile for:	perlbal
 # Date created:		2005-08-08
 # Whom:			Jacques Marneweck <jacques@php.net>
 #
