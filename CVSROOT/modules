@@ -481,7 +481,6 @@ anyremote                       ports/comms/anyremote
 anyremote2html                  ports/www/anyremote2html
 aoi                             ports/graphics/aoi
 aolserver                       ports/www/aolserver
-aolserver-nscache               ports/www/aolserver-nscache
 aolserver-nsencrypt             ports/security/aolserver-nsencrypt
 aolserver-nsgd                  ports/graphics/aolserver-nsgd
 aolserver-nsmcrypt              ports/security/aolserver-nsmcrypt
@@ -19777,6 +19776,7 @@ rubygem-scrapi                  ports/www/rubygem-scrapi
 rubygem-scrubyt                 ports/www/rubygem-scrubyt
 rubygem-scruffy                 ports/graphics/rubygem-scruffy
 rubygem-sequel                  ports/devel/rubygem-sequel
+rubygem-sexp_processor          ports/devel/rubygem-sexp_processor
 rubygem-sinatra                 ports/www/rubygem-sinatra
 rubygem-snmp                    ports/net-mgmt/rubygem-snmp
 rubygem-spreadsheet             ports/textproc/rubygem-spreadsheet
