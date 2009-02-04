@@ -34,6 +34,49 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6d85dc62-f2bd-11dd-9f55-0030843d3802">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drual5</name>
+	<range><lt>5.15</lt></range>
+      </package>
+      <package>
+        <name>drupal6</name>
+	<range><lt>drupal6.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal Team reports:</p>
+	<blockquote cite="http://drupal.org/node/358957">
+	  <p>The Content Translation module for Drupal 6.x enables users to make
+	    a translation of an existing item of content (a node). In that proces
+	    the existing node's content is copied into the new node's submission
+	    form.</p>
+	  <p>The module contains a flaw that allows a user with the 'translate
+	    content' permission to potentially bypass normal viewing access
+	    restrictions, for example allowing the user to see the content of
+	    unpublished nodes even if they do not have permission to view
+	    unpublished nodes.</p>
+	  <p>When user profile pictures are enabled, the default user profile
+	    validation function will be bypassed, possibly allowing invalid user
+	    names or e-mail addresses to be submitted.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/358957</url>
+      <url>http://secunia.com/advisories/33550/</url>
+      <url>http://secunia.com/advisories/33500/</url>
+      <url>http://secunia.com/advisories/33542/</url>
+    </references>
+    <dates>
+      <discovery>2009-01-14</discovery>
+      <entry>2009-02-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4a99d61c-f23a-11dd-9f55-0030843d3802">
     <topic>perl -- Directory Permissions Race Condition</topic>
     <affects>
