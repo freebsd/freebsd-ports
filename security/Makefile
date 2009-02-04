@@ -490,6 +490,7 @@
     SUBDIR += p5-HTML-Email-Obfuscate
     SUBDIR += p5-IO-Socket-SSL
     SUBDIR += p5-MD5
+    SUBDIR += p5-Mcrypt
     SUBDIR += p5-Module-Signature
     SUBDIR += p5-Net-Daemon-SSL
     SUBDIR += p5-Net-OpenID-JanRain
