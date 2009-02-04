@@ -1,6 +1,6 @@
---- hald/freebsd/probing/probe-mouse.c.orig	2009-01-25 16:54:29.000000000 -0500
-+++ hald/freebsd/probing/probe-mouse.c	2009-01-25 18:40:04.000000000 -0500
-@@ -0,0 +1,301 @@
+--- hald/freebsd/probing/probe-mouse.c.orig	2009-02-04 11:00:00.000000000 -0500
++++ hald/freebsd/probing/probe-mouse.c	2009-02-04 11:04:43.000000000 -0500
+@@ -0,0 +1,312 @@
 +/***************************************************************************
 + * CVSID: $Id$
 + *
@@ -227,7 +227,9 @@
 +probe_mouse (const char *device_file)
 +{
 +  gboolean found;
++  char **udis;
 +  char *driver;
++  int num_udis;
 +
 +  driver = libhal_device_get_property_string(hfp_ctx, hfp_udi,
 +                                             "input.x11_driver", &hfp_error);
@@ -255,10 +257,19 @@
 +      found = device_opened_by_proc(MOUSED_DEVICE, XORG_PROC_NAME);
 +      if (! found)
 +        {
-+          libhal_device_set_property_string(hfp_ctx, hfp_udi,
-+			                    "input.x11_driver",
-+                                            MOUSE_DRIVER, &hfp_error);
++	  udis = libhal_manager_find_device_string_match(hfp_ctx,
++							 "input.device",
++							 MOUSED_DEVICE,
++							 &num_udis,
++							 &hfp_error);
 +	  dbus_error_free(&hfp_error);
++	  if (num_udis > 0 && udis != NULL && !strcmp(udis[0], hfp_udi)) {
++	    libhal_device_set_property_string(hfp_ctx, hfp_udi,
++					      "input.x11_driver",
++					      MOUSE_DRIVER, &hfp_error);
++	    dbus_error_free(&hfp_error);
++	    libhal_free_string_array(udis);
++	  }
 +	}
 +      else if (driver)
 +        {
