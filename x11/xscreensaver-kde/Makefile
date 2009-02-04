@@ -7,7 +7,7 @@
 
 PORTNAME=	xscreensaver-kde
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -19,8 +19,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Support for xscreensaver blankers in KDE
 
 CONFLICTS=	kdeartwork-3.1.* kdeartwork-3.2.[0-3]
-
-BROKEN=		bad plist
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
