@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Mosso-CloudFiles
-PORTVERSION=	0.34
+PORTVERSION=	0.35
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,9 @@ RUN_DEPENDS=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-StrictConstructor>=0:${PORTSDIR}/devel/p5-MooseX-StrictConstructor \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-LWP-UserAgent-Determined>=0:${PORTSDIR}/www/p5-LWP-UserAgent-Determined
+		p5-LWP-UserAgent-Determined>=0:${PORTSDIR}/www/p5-LWP-UserAgent-Determined \
+		p5-Data-Stream-Bulk>=0:${PORTSDIR}/devel/p5-Data-Stream-Bulk \
+		p5-LWP-ConnCache-MaxKeepAliveRequests>=0:${PORTSDIR}/www/p5-LWP-ConnCache-MaxKeepAliveRequests
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
