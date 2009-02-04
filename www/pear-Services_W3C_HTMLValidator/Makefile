@@ -29,6 +29,9 @@ TESTS=		AllTests.php Services/W3C/HTMLValidatorTest.php
 
 _EXAMPLESDIR=	docs/examples
 
+PLIST_SUB=	PORTVERSION=${PORTVERSION} \
+		PORTREVISION=${PORTREVISION}
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>
