@@ -22,9 +22,7 @@ USE_LDCONFIG=	yes
 DOCSDIR=	${PREFIX}/share/doc/check-${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/check-${PORTVERSION}
 
-.if !defined(NOPORTDOCS)
 INFO=		check
-.endif
 
 post-patch:
 .if defined(NOPORTDOCS)
@@ -36,7 +34,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e '/^install-data-am:/ s/ install-exampleDATA//' \
 		-e '/^install-data-am:/ s/ install-examplesrcDATA//' \
-		-e '/install-exampletestsDATA/ s/ install-info-am//' \
+		-e '/install-exampletestsDATA/ s/install-exampletestsDATA//' \
 		${WRKSRC}/doc/Makefile.in
 .endif
 
