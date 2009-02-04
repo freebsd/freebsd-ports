@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	drweb-sendmail
-PORTVERSION=	4.33
-PORTREVISION=	5
+PORTVERSION=	4.44.1
 CATEGORIES=	security mail
-MASTER_SITES=	ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/60/:f61 \
-		http://freebsd.spectrum.ru/distfiles/drweb/:f61
+MASTER_SITES=	ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/60/ \
+	http://freebsd.spectrum.ru/distfiles/drweb/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd60
 DIST_SUBDIR=	drweb
 
 MAINTAINER=	support@spectrum.ru
@@ -20,18 +20,16 @@ RUN_DEPENDS=	${LOCALBASE}/drweb/drwebd:${PORTSDIR}/security/drweb
 
 IA32_BINARY_PORT=	yes
 NO_BUILD=		yes
-USE_RC_SUBR=            drweb-smf.sh
+USE_RC_SUBR=	drweb-smf
+USE_BZIP2=		yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 601000
-DISTNAME=       ${PORTNAME}-${PORTVERSION}-freebsd61
-DISTFILES=      ${DISTNAME}${EXTRACT_SUFX}:f61
-.else
-IGNORE=         sorry, port is not supported of FreeBSD version < 6.1
+.if ${OSVERSION} < 601000
+IGNORE=	sorry, port is not supported of FreeBSD version < 6.1
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 INST_PREFIX=	${PREFIX}/drweb
 CONF_PREFIX=	${PREFIX}/etc/drweb
 
@@ -43,7 +41,7 @@ TMPLS=		admin_archive admin_cured admin_error admin_license admin_malware \
 
 do-install:
 	${INSTALL_PROGRAM} -m 0750 -o drweb -g drweb \
-		${WRKSRC}${LOCALBASE}/drweb/drweb-smf.static ${INST_PREFIX}/drweb-smf
+		${WRKSRC}${LOCALBASE}/drweb/drweb-smf ${INST_PREFIX}/drweb-smf
 .for CONF in ${CONFS}
 	${SED} -e s#/usr/local/drweb/run#/var/drweb/run#g \
 		< ${WRKSRC}${LOCALBASE}/etc/drweb/${CONF}.conf > \

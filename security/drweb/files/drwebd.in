@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/security/drweb/files/Attic/drwebd.in,v 1.1 2009-02-04 10:26:35 pgollucci Exp $
 
 # PROVIDE: drwebd
 # REQUIRE: DAEMON

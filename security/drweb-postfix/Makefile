@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	drweb-postfix
-PORTVERSION=	4.33
-PORTREVISION=	3
+PORTVERSION=	4.44.1
 CATEGORIES=	security mail
-MASTER_SITES=	ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/61/:f61 \
-		ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/55/:f55 \
-		ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/411/:f411 \
-		http://freebsd.spectrum.ru/distfiles/drweb/:f61,f55,f411
+MASTER_SITES=	ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/60/ \
+		http://freebsd.spectrum.ru/distfiles/drweb/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd60
 DIST_SUBDIR=	drweb
 
 MAINTAINER=	support@spectrum.ru
@@ -22,18 +20,15 @@ RUN_DEPENDS=	${LOCALBASE}/drweb/drwebd:${PORTSDIR}/security/drweb
 
 IA32_BINARY_PORT=	yes
 NO_BUILD=		yes
+USE_BZIP2=		yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 601000
-DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd61
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:f61
-.else
-DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd55
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:f55
+.if ${OSVERSION} < 601000
+IGNORE=	sorry, port is not supported of FreeBSD version < 6.1
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 INST_PREFIX=	${PREFIX}/drweb
 CONF_PREFIX=	${PREFIX}/etc/drweb
 
