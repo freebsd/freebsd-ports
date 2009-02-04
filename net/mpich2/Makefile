@@ -7,7 +7,7 @@
 
 PORTNAME=	mpich2
 PORTVERSION=	1.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/
@@ -18,6 +18,7 @@ DIST_SUBDIR=	mpich
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable implementation of MPI-1 and MPI-2
 
+LIB_DEPENDS=	execinfo.1:${PORTDIR}/devel/libexecinfo
 #BUILD_DEPENDS=	doctext:${PORTSDIR}/textproc/sowing
 
 #-----------------------------------------------------------------------
@@ -34,7 +35,8 @@ USE_GNOME=	pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-romio --enable-sharedlibs=gcc
-CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}" LDFLAGS="${PTHREAD_LIBS}"
+CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}" CPPFLAGS="-I${LOCALBASE}/include"	\
+		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo ${PTHREAD_LIBS}"
 FFLAGS?=	-O2
 NOCCACHE=	yes
 MAKE_ENV=	CCACHE_DISABLE=yes
