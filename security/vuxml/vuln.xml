@@ -38,7 +38,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
       <package>
-	<name>drual5</name>
+	<name>drupal5</name>
 	<range><lt>5.15</lt></range>
       </package>
       <package>
