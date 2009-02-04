@@ -61,7 +61,7 @@ CONFIGURE_ARGS+=	--enable-threads --with-tcl=${LOCALBASE}/lib/tcl${TK_VER}${THRE
 CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			ac_cv_path_tclsh="${LOCALBASE}/bin/tclsh${TK_VER}${THREADS_SUFFIX}"
 LATEST_LINK=		tk86${THREADS_SUFFIX}
-SUB_LIST+=		TK_PROVIDE="; package provide Tk-threads ${TK_VER}"
+SUB_LIST+=		TK_PROVIDE="; package provide Tk-threads ${TK_VER}b1"
 .else
 CONFIGURE_ARGS+=	--disable-threads --with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
 			ac_cv_path_tclsh="${TCLSH}"
