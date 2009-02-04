@@ -8,9 +8,7 @@
 PORTNAME=	libpri
 PORTVERSION=	1.2.3
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.digium.com/pub/libpri/ \
-		ftp://ftp.digium.com/pub/libpri/old/
-
+MASTER_SITES=	http://downloads.digium.com/pub/libpri/old/
 PKGNAMESUFFIX=	-bristuff
 PATCHFILES=	${PORTNAME}-${PORTVERSION}-${BRIVER}.patch.gz
 PATCH_SITES=	${MASTER_SITE_LOCAL}
