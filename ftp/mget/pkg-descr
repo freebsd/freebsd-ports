@@ -4,4 +4,4 @@ It can handle proxies and can tunnel through them to get files blocked by
 proxies.  Currently mGet only handles HTTP downloads directly, while FTP
 downloads must go through a proxy.
 
-WWW: http://cs-people.bu.edu/dbera/activities/projects/mget/mget.php
+WWW: http://cs-people.bu.edu/dbera/projects/mget/mget.php
