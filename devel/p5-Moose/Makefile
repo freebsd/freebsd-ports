@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.65
+PORTVERSION=	0.67
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DR/DROLSKY
@@ -24,7 +24,7 @@ RUN_DEPENDS=	\
 	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Moose.3 \
 	Moose::Cookbook.3 \
@@ -58,6 +58,18 @@ MAN3=	Moose.3 \
 	Moose::Error::Default.3 \
 	Moose::Exporter.3 \
 	Moose::Intro.3 \
+	Moose::Manual.3 \
+	Moose::Manual::Attributes.3 \
+	Moose::Manual::BestPractices.3 \
+	Moose::Manual::Classes.3 \
+	Moose::Manual::Concepts.3 \
+	Moose::Manual::Construction.3 \
+	Moose::Manual::Delegation.3 \
+	Moose::Manual::MethodModifiers.3 \
+	Moose::Manual::MooseX.3 \
+	Moose::Manual::MOP.3 \
+	Moose::Manual::Roles.3 \
+	Moose::Manual::Types.3 \
 	Moose::Meta::Attribute.3 \
 	Moose::Meta::Class.3 \
 	Moose::Meta::Instance.3 \
