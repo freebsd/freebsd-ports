@@ -398,6 +398,7 @@
     SUBDIR += p5-Crypt-HCE_SHA
     SUBDIR += p5-Crypt-IDEA
     SUBDIR += p5-Crypt-Imail
+    SUBDIR += p5-Crypt-Juniper
     SUBDIR += p5-Crypt-Khazad
     SUBDIR += p5-Crypt-License
     SUBDIR += p5-Crypt-Lite

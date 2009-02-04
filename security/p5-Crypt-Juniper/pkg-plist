@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%//Crypt/Juniper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Juniper/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Juniper
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
+@dirrmtry %%SITE_PERL%%/Crypt
