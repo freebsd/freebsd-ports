@@ -7,7 +7,7 @@
 
 PORTNAME=	aa
 PORTVERSION=	56
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://moshier.net/ \
 		http://www.mirrorservice.org/sites/www.moshier.net/
