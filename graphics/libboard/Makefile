@@ -8,7 +8,7 @@
 PORTNAME=		libboard
 PORTVERSION=		0.8.2
 CATEGORIES=		graphics
-MASTER_SITES=		http://www.greyc.ensicaen.fr/~seb/board/download/
+MASTER_SITES=		SF
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		A vector graphics C++ library
