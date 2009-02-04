@@ -8,10 +8,8 @@
 PORTNAME=	tzfile
 PORTVERSION=	0.1
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://cvs.m17n.org/viewcvs/ruby/
-PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	tzfile.tar.gz\?only_with_tag=${PORTNAME}-${PORTVERSION:S/./_/g}\&view=tar
-DIST_SUBDIR=	ruby
+MASTER_SITES=	http://www.a-k-r.org/ruby-tzfile/
+DISTFILES=	ruby-${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TZFile handling library for Ruby
