@@ -36,6 +36,7 @@ bin/midc
 %%NLS%%share/locale/ta/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/mc.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/wa/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/mc.mo
@@ -65,6 +66,8 @@ bin/midc
 %%DATADIR%%/extfs/rpms
 %%DATADIR%%/extfs/sfs.ini
 %%DATADIR%%/extfs/trpm
+%%DATADIR%%/extfs/u7z
+%%DATADIR%%/extfs/ualz
 %%DATADIR%%/extfs/uar
 %%DATADIR%%/extfs/uarj
 %%DATADIR%%/extfs/uha
@@ -102,6 +105,13 @@ bin/midc
 %%EDITOR%%%%DATADIR%%/syntax/c.syntax
 %%EDITOR%%%%DATADIR%%/syntax/changelog.syntax
 %%EDITOR%%%%DATADIR%%/syntax/cs.syntax
+%%EDITOR%%%%DATADIR%%/syntax/css.syntax
+%%EDITOR%%%%DATADIR%%/syntax/cxx.syntax
+%%EDITOR%%%%DATADIR%%/syntax/d.syntax
+%%EDITOR%%%%DATADIR%%/syntax/debian-changelog.syntax
+%%EDITOR%%%%DATADIR%%/syntax/debian-control.syntax
+%%EDITOR%%%%DATADIR%%/syntax/debian-description.syntax
+%%EDITOR%%%%DATADIR%%/syntax/debian-sources-list.syntax
 %%EDITOR%%%%DATADIR%%/syntax/diff.syntax
 %%EDITOR%%%%DATADIR%%/syntax/dos.syntax
 %%EDITOR%%%%DATADIR%%/syntax/eiffel.syntax
@@ -142,3 +152,4 @@ bin/midc
 @dirrm %%DATADIR%%/extfs
 @dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%
+@dirrm libexec/mc
