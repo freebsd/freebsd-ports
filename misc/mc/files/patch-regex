@@ -1,6 +1,6 @@
---- src/cmd.c.orig	Sat Jun 24 19:44:21 2006
-+++ src/cmd.c	Sat Jun 24 19:45:46 2006
-@@ -510,7 +510,7 @@
+--- src/cmd.c.orig	2009-02-03 18:49:42.000000000 +0800
++++ src/cmd.c	2009-02-03 18:50:16.000000000 +0800
+@@ -513,7 +513,7 @@
  		continue;
  	}
  	c = regexp_match (reg_exp_t, current_panel->dir.list[i].fname,
@@ -9,9 +9,9 @@
  	if (c == -1) {
  	    message (1, MSG_ERROR, _("  Malformed regular expression  "));
  	    g_free (reg_exp);
---- src/dir.c.orig	Sat Jun 24 19:51:05 2006
-+++ src/dir.c	Sat Jun 24 19:51:31 2006
-@@ -405,7 +405,7 @@
+--- src/dir.c.orig	2009-02-03 18:51:43.000000000 +0800
++++ src/dir.c	2009-02-03 18:51:57.000000000 +0800
+@@ -327,7 +327,7 @@
  	    *stale_link = 1;
      }
      if (!(S_ISDIR (buf1->st_mode) || *link_to_dir) && filter
@@ -20,9 +20,9 @@
  	return 0;
  
      /* Need to grow the *list? */
---- src/ext.c.orig	Sat Jun 24 19:52:00 2006
-+++ src/ext.c	Sat Jun 24 19:52:21 2006
-@@ -394,7 +394,7 @@
+--- src/ext.c.orig	2009-02-03 18:52:36.000000000 +0800
++++ src/ext.c	2009-02-03 18:53:11.000000000 +0800
+@@ -395,7 +395,7 @@
      }
  
      if (content_string[0]
@@ -31,7 +31,7 @@
  	found = 1;
      }
  
-@@ -534,11 +534,11 @@
+@@ -519,11 +519,11 @@
  		/* Do not transform shell patterns, you can use shell/ for
  		 * that
  		 */
@@ -45,27 +45,27 @@
  		    found = 1;
  	    } else if (!strncmp (p, "shell/", 6)) {
  		p += 6;
---- src/find.c.orig	Sat Jun 24 20:36:41 2006
-+++ src/find.c	Sat Jun 24 20:37:58 2006
-@@ -575,6 +575,7 @@
+--- src/find.c.orig	2009-02-03 18:54:16.000000000 +0800
++++ src/find.c	2009-02-03 18:56:56.000000000 +0800
+@@ -615,6 +615,7 @@
      struct stat tmp_stat;
      static int pos;
      static int subdirs_left = 0;
-+    int cflags = 0;
++	int cflags = 0;
  
      if (!h) { /* someone forces me to close dirp */
  	if (dirp) {
-@@ -586,6 +587,9 @@
+@@ -626,6 +627,9 @@
          dp = 0;
  	return 1;
      }
 +
-+    if (case_sensitive == 0)
-+	cflags |= REG_ICASE;
++	if (case_sensitive == 0)
++		cflags |= REG_ICASE;
   do_search_begin:
      while (!dp){
  	
-@@ -662,7 +666,7 @@
+@@ -702,7 +706,7 @@
  	g_free (tmp_name);
      }
  
@@ -74,9 +74,9 @@
  	if (content_pattern) {
  	    if (search_content (h, directory, dp->d_name)) {
  		return 1;
---- src/user.c.orig	Sat Jun 24 19:54:48 2006
-+++ src/user.c	Sat Jun 24 19:55:10 2006
-@@ -412,18 +412,18 @@
+--- src/user.c.orig	2009-02-03 18:57:38.000000000 +0800
++++ src/user.c	2009-02-03 18:58:17.000000000 +0800
+@@ -416,18 +416,18 @@
  	    break;
  	case 'f': /* file name pattern */
  	    p = extract_arg (p, arg, sizeof (arg));
@@ -98,14 +98,14 @@
  	    break;
  	case 't':
  	    p = extract_arg (p, arg, sizeof (arg));
---- src/util.c.orig	Sat Jun 24 19:55:21 2006
-+++ src/util.c	Sat Jun 24 19:57:49 2006
-@@ -563,25 +563,28 @@
- 	return  g_strdup (pattern);
+--- src/util.c.orig	2009-02-03 18:58:31.000000000 +0800
++++ src/util.c	2009-02-03 19:00:41.000000000 +0800
+@@ -586,25 +586,28 @@
  }
  
--int regexp_match (const char *pattern, const char *string, int match_type)
-+int regexp_match (const char *pattern, const char *string, int match_type, int cflags)
+ int
+-regexp_match (const char *pattern, const char *string, int match_type)
++regexp_match (const char *pattern, const char *string, int match_type, int cflags)
  {
      static regex_t r;
      static char *old_pattern = NULL;
@@ -115,8 +115,8 @@
      char *my_pattern;
  
 -    if (!old_pattern || STRCOMP (old_pattern, pattern) || old_type != match_type){
-+    if (!old_pattern || STRCOMP (old_pattern, pattern) || 
-+		old_type != match_type || cflags != old_cflags){
++    if (!old_pattern || STRCOMP (old_pattern, pattern) ||
++			old_type != match_type || cflags != old_cflags){
  	if (old_pattern){
  	    regfree (&r);
  	    g_free (old_pattern);
@@ -132,9 +132,9 @@
  	old_pattern = my_pattern;
  	old_type = match_type;
      }
---- src/util.h.orig	Sat Jun 24 19:57:50 2006
-+++ src/util.h	Sat Jun 24 19:58:03 2006
-@@ -116,7 +116,7 @@
+--- src/util.h.orig	2009-02-03 19:00:50.000000000 +0800
++++ src/util.h	2009-02-03 19:01:21.000000000 +0800
+@@ -125,7 +125,7 @@
  
  extern int easy_patterns;
  char *convert_pattern (const char *pattern, int match_type, int do_group);

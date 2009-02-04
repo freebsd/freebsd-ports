@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	mc
-PORTVERSION=	4.6.1
-PORTREVISION=	8
+PORTVERSION=	4.6.2
 CATEGORIES=	misc shells
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	utils/file/managers/mc/
+MASTER_SITES=	http://www.midnight-commander.org/downloads/ \
+		${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	utils/file/managers/mc
+
+PATCH_SITES=	${MASTER_SITES}
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Midnight Commander, a free Norton Commander Clone
@@ -29,6 +31,9 @@ USE_GNOME=	glib20
 .endif
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	aclocal:19 automake:19
+ACLOCAL_ARGS=	-I m4
+AUTOMAKE_ARGS=	-c -a
 
 OPTIONS=	UTF8		"Build with UTF8 support" on \
 		SLANG		"Build with SLang library" on \
@@ -47,7 +52,7 @@ CONFIGURE_ARGS+=--with-samba --with-configdir=${LOCALBASE}/etc \
 .endif
 
 .if defined(WITH_ICONV) || !(defined(WITHOUT_ICONV) || defined(MINIMAL))
-CONFIGURE_ARGS+=--enable-charset
+CONFIGURE_ARGS+=--enable-charset --with-libiconv-prefix=${LOCALBASE}
 PLIST_SUB=	CHARSETS=""
 .else
 PLIST_SUB=	CHARSETS="@comment "
@@ -57,8 +62,9 @@ PLIST_SUB=	CHARSETS="@comment "
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
+CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE}
 PLIST_SUB+=	NLS=""
-_MANLANG=	es hu it pl ru.KOI8-R sr
+_MANLANG=	es hu it pl ru sr
 .endif
 
 .if !defined(WITH_X11) || defined(MINIMAL)
@@ -82,9 +88,11 @@ WITHOUT_SLANG=	yes
 .endif
 
 .if defined(WITH_UTF8)
+PATCHFILES=	${DISTNAME}-utf8.patch.gz
+PATCH_DIST_STRIP=	-p1
 LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
-CONFIGURE_ARGS+=--with-screen-slang
-CONFIGURE_ENV+=	LDFLAGS=-L${PREFIX}/lib
+CONFIGURE_ARGS+=--with-screen=slang
+CONFIGURE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
 .elif !defined(WITH_SLANG) && (defined(WITHOUT_SLANG) || defined(MINIMAL))
 CONFIGURE_ARGS+=--with-screen=ncurses
 .else
@@ -110,14 +118,11 @@ _MANPAGES+=	${_MAN1:S%^%${MAN1PREFIX}/man/${lang}/man1/%}
 post-patch:
 .if !defined(WITH_NLS) && (defined(WITHOUT_NLS) || defined(MINIMAL))
 	@${REINPLACE_CMD} -e '/^LIBFILES_ADD +=/,/[^\\]$$/ s/^/#/'\
-	    ${WRKSRC}/lib/Makefile.in
+		${WRKSRC}/lib/Makefile.am
 .endif
 	@${REINPLACE_CMD} -e 's|/usr/bin/zip|${LOCALBASE}/bin/zip|' \
 		-e 's|/usr/bin/unzip|${LOCALBASE}/bin/unzip|' \
 		${WRKSRC}/configure
-.if defined(WITH_UTF8)
-	cat ${PATCHDIR}/mc-4.6.1-utf8-r2.patch | patch -p1 --silent -d ${WRKSRC}
-.endif
 
 post-install:
 	@${LN} -sf mc ${PREFIX}/bin/midc
