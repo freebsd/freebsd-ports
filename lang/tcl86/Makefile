@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	tcl
-PORTVERSION=	8.5.6
+PORTVERSION=	8.6.b.1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
 PKGNAMESUFFIX?=		${THREADS_SUFFIX}${PKGNAMESUFFIX2}
-DISTNAME=	${PORTNAME}${PORTVERSION}-src
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.b.1/b1/}-src
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Tool Command Language
@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --without-tzdata --includedir=${PREFIX}/include/tcl${TCL_VER}
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
-TCL_VER=	8.5
+TCL_VER=	8.6
 SHORT_TCL_VER=	${TCL_VER:S/8./8/}
 MAKE_ENV=	SHORT_TCL_VER=${SHORT_TCL_VER} LANG=C LC_ALL=C	# LANG=C is required for some of UTF-using tests
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for README.html
@@ -31,7 +31,7 @@ PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=${SHORT_TCL_VER}
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude compat/
 
 .if !defined(BUILDING_TCL_THREADS)
-OPTIONS=	TCL85_MAN "Install tcl 8.5 manpages" off \
+OPTIONS=	TCL86_MAN "Install tcl 8.6 manpages" off \
 		TZDATA "Install tcl timezone data" off
 .else
 USE_TCL=	${SHORT_TCL_VER}
@@ -65,7 +65,7 @@ CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS
 
 CONFIGURE_ARGS+=	--disable-threads
 
-.if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TCL85_MAN)
+.if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TCL86_MAN)
 
 PLIST_SUB+=	INSTMAN='@comment '
 
@@ -697,7 +697,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 .endif
 .endif # defined(BUILDING_TCL_THREADS)
 
-LATEST_LINK=	tcl85${THREADS_SUFFIX}
+LATEST_LINK=	tcl86${THREADS_SUFFIX}
 
 TCLBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
 
@@ -720,9 +720,9 @@ post-patch:
 BLACKHOLE!=	${SYSCTL} -n net.inet.tcp.blackhole || ${TRUE}
 
 post-configure:
-	${REINPLACE_CMD} \
-		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TCLBASE}|' \
-		${WRKSRC}/tclConfig.sh
+#	${REINPLACE_CMD} \
+#		-e 's|${WRKDIRPREFIX}${.CURDIR}|${WRKDIRPREFIX}${TCLBASE}|' \
+#		${WRKSRC}/tclConfig.sh
 	${REINPLACE_CMD} \
 		-e 's,-DNO_MEMMOVE=1,,' -e 's,-DNO_STRING_H=1,,' \
 		-e 's,^COMPAT_OBJS.*,,' ${WRKSRC}/Makefile
@@ -745,7 +745,7 @@ post-install:
 .if defined(WITH_TZDATA)
 	@cd ${WRKSRC} && ${MAKE} -f Makefile install-tzdata ${MAKE_ENV}
 .endif
-.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL85_MAN)
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL86_MAN)
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
 . for mp in ${MAN1} ${MAN3} ${MANN}

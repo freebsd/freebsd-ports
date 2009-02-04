@@ -11,6 +11,10 @@ include/tcl%%TCL_VER%%/generic/tclIO.h
 include/tcl%%TCL_VER%%/generic/tclInt.h
 include/tcl%%TCL_VER%%/generic/tclIntDecls.h
 include/tcl%%TCL_VER%%/generic/tclIntPlatDecls.h
+include/tcl%%TCL_VER%%/generic/tclOO.h
+include/tcl%%TCL_VER%%/generic/tclOODecls.h
+include/tcl%%TCL_VER%%/generic/tclOOInt.h
+include/tcl%%TCL_VER%%/generic/tclOOIntDecls.h
 include/tcl%%TCL_VER%%/generic/tclPlatDecls.h
 include/tcl%%TCL_VER%%/generic/tclPort.h
 include/tcl%%TCL_VER%%/generic/tclRegexp.h
@@ -20,6 +24,10 @@ include/tcl%%TCL_VER%%/generic/tommath.h
 include/tcl%%TCL_VER%%/tcl.h
 include/tcl%%TCL_VER%%/tclDecls.h
 include/tcl%%TCL_VER%%/tclPlatDecls.h
+include/tcl%%TCL_VER%%/tclOO.h
+include/tcl%%TCL_VER%%/tclOODecls.h
+include/tcl%%TCL_VER%%/tclTomMath.h
+include/tcl%%TCL_VER%%/tclTomMathDecls.h
 include/tcl%%TCL_VER%%/unix/tclUnixPort.h
 include/tcl%%TCL_VER%%/unix/tclUnixThrd.h
 lib/libtcl%%SHORT_TCL_VER%%.a
@@ -354,6 +362,7 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Argentina/La_Rioja
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Argentina/Mendoza
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Argentina/Rio_Gallegos
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Argentina/Salta
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Argentina/San_Juan
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Argentina/San_Luis
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Argentina/Tucuman
@@ -460,6 +469,7 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Resolute
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Rio_Branco
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Rosario
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Santarem
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Santiago
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Santo_Domingo
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Sao_Paulo
@@ -855,6 +865,7 @@ lib/tcl8/8.5/tcltest-2.3.0.tm
 @dirrmtry lib/tcl8/8.4/platform
 @dirrmtry lib/tcl8/8.4
 @dirrmtry lib/tcl8/8.5
+@dirrmtry lib/tcl8/8.6
 @dirrmtry lib/tcl8
 @dirrm include/tcl%%TCL_VER%%/unix
 @dirrm include/tcl%%TCL_VER%%/generic

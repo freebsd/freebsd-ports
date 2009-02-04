@@ -7,6 +7,6 @@
 
 BUILDING_TCL_THREADS=	yes
 
-MASTERDIR=	${.CURDIR}/../tcl85
+MASTERDIR=	${.CURDIR}/../tcl86
 
 .include	"${MASTERDIR}/Makefile"
