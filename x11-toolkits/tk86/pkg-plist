@@ -64,6 +64,7 @@ lib/tk%%TK_VER%%/console.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/entry3.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/filebox.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/floor.tcl
+%%DEMOS%%lib/tk%%TK_VER%%/demos/fontchoose.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/form.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/goldberg.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/hello
