@@ -1,6 +1,19 @@
---- perl/Makefile.in.orig	2008-08-23 03:20:01.000000000 +0900
-+++ perl/Makefile.in	2008-09-02 07:36:59.000000000 +0900
-@@ -291,15 +291,15 @@
+--- perl/Makefile.in.orig	2009-01-22 22:51:25.000000000 +0900
++++ perl/Makefile.in	2009-01-27 16:15:23.000000000 +0900
+@@ -316,9 +316,9 @@
+ 	$(libApplication_la_LDFLAGS) $(LDFLAGS) -o $@
+ @WANT_CLIENT_TRUE@am_libApplication_la_rpath = -rpath \
+ @WANT_CLIENT_TRUE@	$(libApplicationdir)
+-libArchive_la_DEPENDENCIES = libamglue.la \
+-	$(top_builddir)/amar-src/libamar.la \
+-	$(top_builddir)/common-src/libamanda.la
++@WANT_CLIENT_TRUE@libArchive_la_DEPENDENCIES = libamglue.la \
++@WANT_CLIENT_TRUE@	$(top_builddir)/amar-src/libamar.la \
++@WANT_CLIENT_TRUE@	$(top_builddir)/common-src/libamanda.la
+ am_libArchive_la_OBJECTS = Archive.lo $(am__objects_1)
+ libArchive_la_OBJECTS = $(am_libArchive_la_OBJECTS)
+ libArchive_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+@@ -337,15 +337,15 @@
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(libCmdline_la_LDFLAGS) $(LDFLAGS) -o $@
  @WANT_SERVER_TRUE@am_libCmdline_la_rpath = -rpath $(libCmdlinedir)
@@ -20,10 +33,30 @@
  am_libDebug_la_OBJECTS = Debug.lo $(am__objects_1)
  libDebug_la_OBJECTS = $(am_libDebug_la_OBJECTS)
  libDebug_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
-@@ -343,22 +343,22 @@
+@@ -376,8 +376,8 @@
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
- 	$(libTapefile_la_LDFLAGS) $(LDFLAGS) -o $@
- @WANT_SERVER_TRUE@am_libTapefile_la_rpath = -rpath $(libTapefiledir)
+ 	$(libLogfile_la_LDFLAGS) $(LDFLAGS) -o $@
+ @WANT_SERVER_TRUE@am_libLogfile_la_rpath = -rpath $(libLogfiledir)
+-libMainLoop_la_DEPENDENCIES = libamglue.la \
+-	$(top_builddir)/common-src/libamanda.la
++@WANT_CLIENT_TRUE@libMainLoop_la_DEPENDENCIES = libamglue.la \
++@WANT_CLIENT_TRUE@	$(top_builddir)/common-src/libamanda.la
+ am_libMainLoop_la_OBJECTS = MainLoop.lo $(am__objects_1)
+ libMainLoop_la_OBJECTS = $(am_libMainLoop_la_OBJECTS)
+ libMainLoop_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+@@ -396,23 +396,23 @@
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(libTapelist_la_LDFLAGS) $(LDFLAGS) -o $@
+ @WANT_SERVER_TRUE@am_libTapelist_la_rpath = -rpath $(libTapelistdir)
+-libTests_la_DEPENDENCIES = libamglue.la \
+-	$(top_builddir)/common-src/libamanda.la
++@WANT_CLIENT_TRUE@libTests_la_DEPENDENCIES = libamglue.la \
++@WANT_CLIENT_TRUE@	$(top_builddir)/common-src/libamanda.la
+ am_libTests_la_OBJECTS = Tests.lo $(am__objects_1)
+ libTests_la_OBJECTS = $(am_libTests_la_OBJECTS)
+ libTests_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(libTests_la_LDFLAGS) $(LDFLAGS) -o $@
 -libTypes_la_DEPENDENCIES = libamglue.la \
 -	$(top_builddir)/common-src/libamanda.la
 +@WANT_CLIENT_TRUE@libTypes_la_DEPENDENCIES = libamglue.la \
@@ -42,14 +75,31 @@
  libUtil_la_OBJECTS = $(am_libUtil_la_OBJECTS)
  libUtil_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
- 	$(libUtil_la_LDFLAGS) $(LDFLAGS) -o $@
- libamglue_la_LIBADD =
--am_libamglue_la_OBJECTS = ghashtable.lo bigint.lo
-+@WANT_CLIENT_TRUE@am_libamglue_la_OBJECTS = ghashtable.lo bigint.lo
- libamglue_la_OBJECTS = $(am_libamglue_la_OBJECTS)
- libamglue_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
- 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
-@@ -914,39 +914,39 @@
+@@ -984,7 +984,8 @@
+ 	$(am__append_2) $(am__append_3) $(am__append_4)
+ 
+ # (amplot has a conditional, but doesn't have any header files)
+-amlib_LTLIBRARIES = libamglue.la
++@WANT_SERVER_TRUE@amlib_LTLIBRARIES = 
++@WANT_CLIENT_TRUE@amlib_LTLIBRARIES = libamglue.la
+ libamglue_la_SOURCES = \
+ 	amglue/ghashtable.c \
+ 	amglue/bigint.c \
+@@ -1042,10 +1043,11 @@
+ 	Amanda/Types.pm Amanda/Tests.pm Amanda/MainLoop.pm \
+ 	Amanda/Paths.pm Amanda/Constants.pm Amanda/Script_App.pm \
+ 	$(am__append_8) Amanda/Script.pm
++@WANT_SERVER_TRUE@Amanda_DATA = $(am__append_5)
+ 
+ # PACKAGE: Amanda::Archive
+-libArchivedir = $(amperldir)/auto/Amanda/Archive
+-libArchive_LTLIBRARIES = libArchive.la
++@WANT_CLIENT_TRUE@libArchivedir = $(amperldir)/auto/Amanda/Archive
++@WANT_CLIENT_TRUE@libArchive_LTLIBRARIES = libArchive.la
+ libArchive_la_SOURCES = Amanda/Archive.c $(AMGLUE_SWG)
+ libArchive_la_LDFLAGS = $(PERL_EXT_LDFLAGS)
+ libArchive_la_LIBADD = libamglue.la \
+@@ -1118,57 +1120,57 @@
  
  
  # PACKAGE: Amanda::Debug
@@ -112,4 +162,34 @@
 +@WANT_CLIENT_TRUE@	$(top_builddir)/common-src/libamanda.la
  
  
- # perl doesn't use the cyg prefix and it doesn't search in the bin
+ # PACKAGE: Amanda::Tests
+-libTestsdir = $(amperldir)/auto/Amanda/Tests
+-libTests_LTLIBRARIES = libTests.la
+-libTests_la_SOURCES = Amanda/Tests.c $(AMGLUE_SWG)
+-libTests_la_LDFLAGS = $(PERL_EXT_LDFLAGS)
+-libTests_la_LIBADD = libamglue.la \
+-	$(top_builddir)/common-src/libamanda.la
++@WANT_CLIENT_TRUE@libTestsdir = $(amperldir)/auto/Amanda/Tests
++@WANT_CLIENT_TRUE@libTests_LTLIBRARIES = libTests.la
++@WANT_CLIENT_TRUE@libTests_la_SOURCES = Amanda/Tests.c $(AMGLUE_SWG)
++@WANT_CLIENT_TRUE@libTests_la_LDFLAGS = $(PERL_EXT_LDFLAGS)
++@WANT_CLIENT_TRUE@libTests_la_LIBADD = libamglue.la \
++@WANT_CLIENT_TRUE@	$(top_builddir)/common-src/libamanda.la
+ 
+ 
+ # PACKAGE: Amanda::MainLoop
+-libMainLoopdir = $(amperldir)/auto/Amanda/MainLoop
+-libMainLoop_LTLIBRARIES = libMainLoop.la
+-libMainLoop_la_SOURCES = Amanda/MainLoop.c $(AMGLUE_SWG)
+-libMainLoop_la_LDFLAGS = $(PERL_EXT_LDFLAGS)
+-libMainLoop_la_LIBADD = libamglue.la \
+-	$(top_builddir)/common-src/libamanda.la
++@WANT_CLIENT_TRUE@libMainLoopdir = $(amperldir)/auto/Amanda/MainLoop
++@WANT_CLIENT_TRUE@libMainLoop_LTLIBRARIES = libMainLoop.la
++@WANT_CLIENT_TRUE@libMainLoop_la_SOURCES = Amanda/MainLoop.c $(AMGLUE_SWG)
++@WANT_CLIENT_TRUE@libMainLoop_la_LDFLAGS = $(PERL_EXT_LDFLAGS)
++@WANT_CLIENT_TRUE@libMainLoop_la_LIBADD = libamglue.la \
++@WANT_CLIENT_TRUE@	$(top_builddir)/common-src/libamanda.la
+ 
+ 
+ # PACKAGE: Amanda::Application
