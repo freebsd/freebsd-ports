@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	2.2.6
-PORTREVISION=	2
+PORTVERSION=	2.3.0
 CATEGORIES=	cad
 MASTER_SITES=	http://www.sfr-fresh.com/unix/privat/ \
 				http://www.geuz.org/gmsh/src/
@@ -30,11 +29,14 @@ TETGEN_SRC=		predicates.cxx tetgen.cxx tetgen.h
 .endif
 
 USE_FORTRAN=	yes
+FORTRANLIBDIR=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``
+FORTRANLIBDIR2=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``/../../../
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fltk-prefix=${LOCALBASE}	\
 		--with-gsl-prefix=${LOCALBASE}	\
 		--with-med-prefix=${LOCALBASE}	\
 		--with-jpeg-prefix=${LOCALBASE}	\
+		--with-blas-lapack-prefix=${LOCALBASE} \
 		--with-png-prefix=${LOCALBASE}
 USE_GMAKE=	yes
 ALL_TARGET=	all utils
@@ -64,6 +66,10 @@ CONFIGURE_ARGS+=	--enable-cgns --with-cgns-prefix=${LOCALBASE}
 CONFIGURE_ARGS+=	--disable-cgns
 .endif
 
+.if !defined(WITHOUT_GMM)
+CONFIGURE_ARGS+=	--disable-gmm
+.endif
+
 # For FourierModel
 .if defined(WITH_FFTW3)
 LIB_DEPENDS+=		fftw3.4:${PORTSDIR}/math/fftw3
@@ -89,6 +95,24 @@ PORTDOCS=	CREDITS.txt FAQ.txt VERSIONS.txt gmsh.html
 
 MAN1=		gmsh.1
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=	yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+BLAS=		-lcblas -lf77blas -latlas -L${FORTRANLIBDIR} -L${FORTRANLIBDIR2} -lgfortranbegin -lgfortran
+LAPACK=		-lalapack ${BLAS}
+ARPACK=		-larpack
+.else
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+BLAS=		-lblas
+LAPACK=		-llapack ${BLAS}
+ARPACK=		-larpack
+.endif
+
 pre-everything::
 	@${ECHO_MSG} ""
 .if !defined(WITHOUT_TETGEN)
@@ -106,6 +130,10 @@ pre-everything::
 .endif
 .if !defined(WITHOUT_CGNS)
 	@${ECHO_MSG} "Define WITHOUT_CGNS to disable CGNS support."
+	@${ECHO_MSG} ""
+.endif
+.if !defined(WITHOUT_GMM)
+	@${ECHO_MSG} "Define WITHOUT_GMM to disable gmm++ support."
 	@${ECHO_MSG} ""
 .endif
 .if !defined(WITH_OCC)
@@ -131,6 +159,9 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s|../tutorial|${DOCSDIR}/tutorial|"	\
 		${WRKSRC}/demos/${demo}
 .endfor
+	${REINPLACE_CMD} -e 's|-lcblas -latlas|%%BLAS%%|;		\
+		s|-lcblas|${BLAS}|; s|%%BLAS%%|${BLAS}|;		\
+		s|-llapack|${LAPACK}|' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
 .for f in dxf2geo gmsh mshsort
@@ -154,4 +185,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
