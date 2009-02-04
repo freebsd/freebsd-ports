@@ -3251,6 +3251,7 @@
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Manifest/Metadata.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Manifest/ProviderMetadata.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Manifest/Registry.php
+%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Provider/Abstract.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Provider/Action.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Provider/Interface.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Provider/Registry.php
@@ -3273,6 +3274,7 @@
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/System/ProjectDirectory.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/System/ProjectProfileFile.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/System/ProjectProvidersDirectory.php
+%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ActionMethod.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ApisDirectory.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ApplicationDirectory.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/BootstrapFile.php
@@ -3281,6 +3283,8 @@
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ControllerFile.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ControllersDirectory.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/DataDirectory.php
+%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/DbTableDirectory.php
+%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/DbTableFile.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/HtaccessFile.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/LayoutsDirectory.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/LibraryDirectory.php
@@ -3307,6 +3311,7 @@
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ZfStandardLibraryDirectory.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Exception.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Profile.php
+%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Profile/Exception.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Profile/FileParser/Interface.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Profile/FileParser/Xml.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Profile/Iterator/EnabledResource.php
@@ -3316,6 +3321,8 @@
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/Abstract.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/Action.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/Controller.php
+%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/DbTable.php
+%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/Exception.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/Manifest.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/Profile.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/Project.php
@@ -4562,6 +4569,7 @@
 %%DATADIR%%/library/Zend/Log/Filter/Message.php
 %%DATADIR%%/library/Zend/Log/Filter/Priority.php
 %%DATADIR%%/library/Zend/Log/Filter/Suppress.php
+%%DATADIR%%/library/Zend/Log/Formatter/Firebug.php
 %%DATADIR%%/library/Zend/Log/Formatter/Interface.php
 %%DATADIR%%/library/Zend/Log/Formatter/Simple.php
 %%DATADIR%%/library/Zend/Log/Formatter/Xml.php
@@ -5327,15 +5335,15 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/dateAmf3Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/intAmf0Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/largeIntAmf3Response.bin
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/mixedArrayAmf0Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/nestedArrayAmf0Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/nullAmf0Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/numberAmf0Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/numberAmf3Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/objectAmf0Response.bin
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/sparseArrayAmf0Response.bin
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/stringKeyArrayAmf0Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/stringAmf0Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/stringAmf3Response.bin
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/stringArrayAmf0Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/typedObjectAmf0Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/ResponseTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/ServerTest.php
