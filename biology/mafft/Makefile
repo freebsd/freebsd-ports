@@ -9,8 +9,7 @@
 PORTNAME=	mafft
 PORTVERSION=	5.743
 CATEGORIES=	biology
-MASTER_SITES=	http://www.biophys.kyoto-u.ac.jp/~katoh/programs/align/mafft/ \
-		http://genoma.unsam.edu.ar/~fernan/freebsd/distfiles/
+MASTER_SITES=	http://align.bmr.kyushu-u.ac.jp/mafft/software/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
