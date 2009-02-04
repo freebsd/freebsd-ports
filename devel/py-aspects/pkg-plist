@@ -1,0 +1,11 @@
+%%PYTHON_SITELIBDIR%%/aspects.py
+%%PYTHON_SITELIBDIR%%/aspects.pyc
+%%PYTHON_SITELIBDIR%%/aspects.pyo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpget_example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeout_advice.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeout_example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tracer_advice.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tracer_example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/typecheck_advice.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/typecheck_example.py
+@dirrm %%EXAMPLESDIR%%

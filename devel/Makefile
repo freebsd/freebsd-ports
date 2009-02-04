@@ -2175,6 +2175,7 @@
     SUBDIR += py-anonfunc
     SUBDIR += py-argparse
     SUBDIR += py-asn1
+    SUBDIR += py-aspects
     SUBDIR += py-astng
     SUBDIR += py-babel
     SUBDIR += py-bison
