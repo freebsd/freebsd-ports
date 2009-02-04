@@ -18,7 +18,7 @@ DIST_SUBDIR=	mpich
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable implementation of MPI-1 and MPI-2
 
-LIB_DEPENDS=	execinfo.1:${PORTDIR}/devel/libexecinfo
+LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 #BUILD_DEPENDS=	doctext:${PORTSDIR}/textproc/sowing
 
 #-----------------------------------------------------------------------
