@@ -7,6 +7,6 @@
 
 BUILDING_TK_THREADS=	yes
 
-MASTERDIR=	${.CURDIR}/../tk85
+MASTERDIR=	${.CURDIR}/../tk86
 
 .include "${MASTERDIR}/Makefile"

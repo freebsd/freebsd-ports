@@ -3,6 +3,7 @@ include/tk%%TK_VER%%/generic/default.h
 include/tk%%TK_VER%%/generic/ks_names.h
 include/tk%%TK_VER%%/generic/tk.h
 include/tk%%TK_VER%%/generic/tk3d.h
+include/tk%%TK_VER%%/generic/tkBusy.h
 include/tk%%TK_VER%%/generic/tkButton.h
 include/tk%%TK_VER%%/generic/tkCanvas.h
 include/tk%%TK_VER%%/generic/tkColor.h
@@ -10,6 +11,7 @@ include/tk%%TK_VER%%/generic/tkDecls.h
 include/tk%%TK_VER%%/generic/tkEntry.h
 include/tk%%TK_VER%%/generic/tkFileFilter.h
 include/tk%%TK_VER%%/generic/tkFont.h
+include/tk%%TK_VER%%/generic/tkImgPhoto.h
 include/tk%%TK_VER%%/generic/tkInt.h
 include/tk%%TK_VER%%/generic/tkIntDecls.h
 include/tk%%TK_VER%%/generic/tkIntPlatDecls.h
@@ -125,6 +127,7 @@ lib/tk%%TK_VER%%/console.tcl
 lib/tk%%TK_VER%%/dialog.tcl
 lib/tk%%TK_VER%%/entry.tcl
 lib/tk%%TK_VER%%/focus.tcl
+lib/tk%%TK_VER%%/fontchooser.tcl
 lib/tk%%TK_VER%%/images/README
 lib/tk%%TK_VER%%/images/logo.eps
 lib/tk%%TK_VER%%/images/logo100.gif
@@ -163,7 +166,6 @@ lib/tk%%TK_VER%%/optMenu.tcl
 lib/tk%%TK_VER%%/palette.tcl
 lib/tk%%TK_VER%%/panedwindow.tcl
 lib/tk%%TK_VER%%/pkgIndex.tcl
-lib/tk%%TK_VER%%/prolog.ps
 lib/tk%%TK_VER%%/safetk.tcl
 lib/tk%%TK_VER%%/scale.tcl
 lib/tk%%TK_VER%%/scrlbar.tcl
@@ -192,9 +194,11 @@ lib/tk%%TK_VER%%/ttk/progress.tcl
 lib/tk%%TK_VER%%/ttk/scale.tcl
 lib/tk%%TK_VER%%/ttk/scrollbar.tcl
 lib/tk%%TK_VER%%/ttk/sizegrip.tcl
+lib/tk%%TK_VER%%/ttk/spinbox.tcl
 lib/tk%%TK_VER%%/ttk/treeview.tcl
 lib/tk%%TK_VER%%/ttk/ttk.tcl
 lib/tk%%TK_VER%%/ttk/utils.tcl
+lib/tk%%TK_VER%%/ttk/vistaTheme.tcl
 lib/tk%%TK_VER%%/ttk/winTheme.tcl
 lib/tk%%TK_VER%%/ttk/xpTheme.tcl
 lib/tk%%TK_VER%%/unsupported.tcl

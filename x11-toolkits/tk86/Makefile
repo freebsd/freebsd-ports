@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	tk
-PORTVERSION=	8.5.6
+PORTVERSION=	8.6.b.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
 PKGNAMESUFFIX?=	${THREADS_SUFFIX}
-DISTNAME=	${PORTNAME}${PORTVERSION}-src
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.b.1/b1/}-src
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Graphical toolkit for TCL
 
-LATEST_LINK?=	tk85
+LATEST_LINK?=	tk86
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}/unix
 GNU_CONFIGURE=	yes
-TK_VER=		8.5
-SHORT_TK_VER=	85
+TK_VER=		8.6
+SHORT_TK_VER=	86
 CONFIGURE_ARGS=	--enable-shared --includedir=${PREFIX}/include/tk${TK_VER}
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk${SHORT_TK_VER}.so.1
 MAKE_ENV=	SHORT_TK_VER=${SHORT_TK_VER}
@@ -35,7 +35,7 @@ SUB_FILES=	pkgIndex.tcl
 .if !defined(BUILDING_TK_THREADS)
 USE_TCL=	${SHORT_TK_VER}
 
-OPTIONS=	TK85_MAN "Install tk 8.5 manpages" off \
+OPTIONS=	TK86_MAN "Install tk 8.6 manpages" off \
 		XFT "Use Xft fonts" on \
 		DEMOS "Install demos" off
 .else
@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=	--disable-xft
 CONFIGURE_ARGS+=	--enable-threads --with-tcl=${LOCALBASE}/lib/tcl${TK_VER}${THREADS_SUFFIX}
 CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			ac_cv_path_tclsh="${LOCALBASE}/bin/tclsh${TK_VER}${THREADS_SUFFIX}"
-LATEST_LINK=		tk85${THREADS_SUFFIX}
+LATEST_LINK=		tk86${THREADS_SUFFIX}
 SUB_LIST+=		TK_PROVIDE="; package provide Tk-threads ${TK_VER}"
 .else
 CONFIGURE_ARGS+=	--disable-threads --with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
@@ -75,7 +75,7 @@ PLIST_SUB+=	DEMOS=""
 PLIST_SUB+=	DEMOS="@comment "
 .endif
 
-.if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TK85_MAN)
+.if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TK86_MAN)
 
 PLIST_SUB+=	INSTMAN='@comment '
 
@@ -442,7 +442,7 @@ do-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}${THREADS_SUFFIX}/
-.if !defined(BUILDING_TK_THREADS) && !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK85_MAN)
+.if !defined(BUILDING_TK_THREADS) && !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK86_MAN)
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
 . for mp in ${MAN1} ${MAN3} ${MANN}
