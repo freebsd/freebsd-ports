@@ -7,7 +7,7 @@
 
 PORTNAME=	torrent_swapper
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	bit-torrent
@@ -16,7 +16,7 @@ DISTNAME=	swapper
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Sociable P2P network client based on Bittorrent
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/M2Crypto/__init__.py:${PORTSDIR}/security/py-m2crypto \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}m2crypto>=0.19.1:${PORTSDIR}/security/py-m2crypto \
 		${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 
 USE_PYTHON=	2.4+
