@@ -5,9 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	FlightGear
-PORTVERSION?=	${FGVERSION}
-PORTREVISION?=	0
+PORTNAME=	FlightGear
+PORTVERSION=	1.9.1
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	ftp://ftp.de.flightgear.org/pub/fgfs/Source/ \
@@ -19,8 +18,8 @@ MASTER_SITES=	ftp://ftp.de.flightgear.org/pub/fgfs/Source/ \
 		ftp://ftp.flightgear.org/pub/fgfs/Source/ \
 		ftp://ftp.is.co.za/pub/games/flightgear/ftp/Source/
 
-MAINTAINER?=	ganael.laplanche@martymac.com
-COMMENT?=	The FlightGear flight simulator
+MAINTAINER=	ganael.laplanche@martymac.com
+COMMENT=	The FlightGear flight simulator
 
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		osg.48:${PORTSDIR}/graphics/osg \
@@ -30,8 +29,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear \
 		${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/flightgear-data
-
-FGVERSION=	1.9.1
 
 USE_XORG=	ice sm x11 xext xi xt xmu
 USE_GL=		gl glu glut
