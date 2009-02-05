@@ -31,6 +31,7 @@ USE_PYTHON=	yes
 USE_SDL=	sdl sound
 USE_GNOME=	libxslt
 USE_AUTOTOOLS=	autoconf:262:env automake:110:env
+USE_XORG=	xmu xi
 
 MAN1=		kmakef.1 kroc.1 mkoccdeps.1 occ21.1 occamdoc.1
 MAN3=		libconvert-inmos.3 libcourse-cycles.3 libcourse-nets.3 \
