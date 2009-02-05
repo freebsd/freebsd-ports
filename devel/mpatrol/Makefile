@@ -8,7 +8,7 @@ PORTNAME=	mpatrol
 PORTVERSION=	1.4.8
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cbmamiga.demon.co.uk/mpatrol/files/
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	mycroft@virgaria.org
