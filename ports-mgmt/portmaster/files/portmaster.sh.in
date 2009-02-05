@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (c) 2005-2008 Douglas Barton, All rights reserved
+# Copyright (c) 2005-2009 Douglas Barton, All rights reserved
 # Please see detailed copyright below
 
 trap trap_exit INT
@@ -42,7 +42,7 @@ umask 022
 version () {
 	local rcs cvs
 
-	rcs='$Id: portmaster,v 2.36 2008/07/28 21:13:08 doug Exp $'
+	rcs='$Id: portmaster,v 2.37 2009/01/27 00:31:29 doug Exp $'
 	cvs='$FreeBSD$'
 
 	rcs="${rcs#*,v }" ; rcs="${rcs%% *}"
@@ -96,9 +96,12 @@ trap_exit () {
 }
 
 kill_bad_children () {
-	local pid ppid command ; IFS=' '
+	local mypgid pid ppid pgid command ; IFS=' '
 
-	ps -axo pid,ppid,command | sed '1d' | while read pid ppid command; do
+	mypgid=`ps -o pgid -p $PARENT_PID` ; mypgid=${mypgid##*PGID[^0-9]}
+
+	ps -axo pid,ppid,pgid,command | sed '1d' |
+	    while read pid ppid pgid command; do
 		[ "$pid" -gt 25 ] || continue
 		case "$ppid" in
 		1)	case "$command" in
@@ -107,14 +110,11 @@ kill_bad_children () {
 				pm_kill -9 $pid ;;
 			esac
 			;;
-		$PARENT_PID)
+		*)	[ $pgid -eq $mypgid ] || continue
 			case "$command" in
-			*'make -DBATCH checksum'*|*'/fetch '*|\[sh\])
-				pm_kill -9 $pid ;;
-			esac
-			;;
-		*)	case "$command" in
 			*" $0 "*) [ $pid -ne $PARENT_PID ] && pm_kill $pid ;;
+			*'make -DBATCH checksum'*|*'/fetch '*|\[sh\])
+				pm_kill $pid ;;
 			esac
 			;;
 		esac
@@ -125,7 +125,11 @@ safe_exit () {
 	local files p f show_list
 
 	if [ "$$" -eq "$PARENT_PID" ]; then
-		[ -n "$DI_FILES" -o -n "$FETCH_ONLY" ] && kill_bad_children
+		if [ -s "$DI_FILES" ]; then
+			grep -q '%%%%%%%%%%%%' $DI_FILES || kill_bad_children
+		fi
+		[ -n "$FETCH_ONLY" -a -z "$FETCH_ONLY_DONE" ] &&
+			kill_bad_children
 
 		if [ -z "$TRAP" ]; then
 			if [ -n "$UPDATE_REQ_BYS" -o -n "$PM_FORCE" ]; then
@@ -249,6 +253,8 @@ usage () {
 	echo ''
 	echo "${0##*/} --check-depends"
 	echo ''
+	echo "${0##*/} --check-port-dbdir [-v]"
+	echo ''
 	echo "${0##*/} -h|--help"
 	echo "${0##*/} --version"
 	echo ''
@@ -291,6 +297,8 @@ usage () {
 	echo '--clean-distfiles-all delete stale distfiles without prompting'
 	echo ''
 	echo '--check-depends cross-check and update dependency information for all ports'
+	echo ''
+	echo "--check-port-dbdir check for stale entries in $port_dbdir"
 	echo ''
 	echo '-h|--help display this help message'
 	echo '--version display the version number'
@@ -340,6 +348,10 @@ if [ "$$" -eq "$PARENT_PID" ]; then
 		# In case it is a symlink
 		distdir="${distdir}/"
 	fi
+	if [ -z "$port_dbdir" ]; then
+		port_dbdir=`pm_make_b -f/usr/share/mk/bsd.port.mk -V PORT_DBDIR`
+		[ -n "$port_dbdir" ] && export port_dbdir
+	fi
 
 	export pd pdb distdir
 fi
@@ -350,6 +362,7 @@ case "$1" in
 --clean-distfiles)	CLEAN_DISTFILES=clean_distfiles ;;
 --clean-distfiles-all)	CLEAN_DISTFILES=clean_distfiles_all ; ALL=cda ;;
 --check-depends)	CHECK_DEPENDS=check_depends ;;
+--check-port-dbdir)	CHECK_PORT_DBDIR=check_port_dbdir ;;
 --show-work)		SHOW_WORK=show ; RECURSE_THOROUGH=thorough ; shift ;;
 --force-config)		export FORCE_CONFIG=force_config ; shift ;;
 --*)			echo "Illegal option $1" ; echo ''
@@ -450,13 +463,15 @@ IFS='
 			else
 			echo "	===>>> $d_origin is listed as a dependency"
 			echo "	===>>> but there is no installed version"
+			echo ''
 				if [ -n "$CHECK_DEPENDS" ]; then
-					echo ''
 		echo -n "	===>>> Delete this dependency data? [n] "
 					read answer
 					case "$answer" in
 					[yY]) unset prev_line line ; continue ;;
 					esac
+				else
+				echo "	===>>> Try ${0##*/} --check-depends"
 				fi
 			fi
 
@@ -504,7 +519,7 @@ IFS='
 
 find_moved_port () {
 	# Global: moved_npd
-	local sf iport IFS l
+	local sf iport IFS l reason
 
 	sf=$1	# Search for
 	iport=$2
@@ -525,7 +540,9 @@ find_moved_port () {
 				fi
 				return 0
 			else
-				fail "The $sf port has been deleted: ${l##*|}"
+				reason=${l##*|}
+				[ "$3" != 'nonfatal' ] &&
+				  fail "The $sf port has been deleted: $reason"
 			fi
 			;;
 		${sf}\|*) moved_npd=${l#*\|}	# New port directory
@@ -540,9 +557,13 @@ find_moved_port () {
 	done
 
 	if [ -z "$moved_npd" ]; then
-		echo ''
-		echo "	===>>> No $pd/$1 exists, and no information"
-		echo "	===>>> about $1 can be found in $pd/MOVED"
+		if [ -z "$reason" ]; then
+			echo ''
+			echo "	===>>> No $pd/$1 exists, and no information"
+			echo "	===>>> about $1 can be found in $pd/MOVED"
+		else	# Only reached in LIST_PLUS
+			echo "	===>>> The $sf port has been deleted: $reason"
+		fi
 		echo ''
 
 		[ -n "$iport" ] || iport=`iport_from_origin $sf`
@@ -558,7 +579,9 @@ find_moved_port () {
 read_distinfos () {
 	local pkg iport origin distinfo disc1 f disc2
 
+	echo '############' > $DI_FILES		# Make the file > 0 bytes
 	echo "===>>> Gathering distinfo list for installed ports"
+	echo ''
 	for pkg in ${pdb}/*; do
 		[ -d $pkg ] || continue
 		iport=${pkg#$pdb/}
@@ -568,7 +591,7 @@ read_distinfos () {
 		origin=`origin_from_pdb $iport`
 
 		if [ ! -d "$pd/$origin" ]; then
-			find_moved_port $origin $iport >/dev/null
+			find_moved_port $origin $iport nonfatal >/dev/null
 			[ -n "$moved_npd" ] || continue
 			origin=$moved_npd
 		fi
@@ -588,6 +611,11 @@ read_distinfos () {
 			done
 		fi
 	done
+
+	# Tell safe_exit that we are done
+	[ -e "${DI_FILES}-e" ] && unlink ${DI_FILES}-e
+	sed -i -e 1s/############/%%%%%%%%%%%%/ $DI_FILES
+	[ -e "${DI_FILES}-e" ] && unlink ${DI_FILES}-e
 }
 
 #=============== End functions relevant to --features and main ===============
@@ -669,6 +697,58 @@ IFS='
 			pm_unlink $grep_deps && unset grep_deps; }
 
 		update_contents $pkg/+CONTENTS
+	done
+	exit 0
+fi
+
+if [ -n "$CHECK_PORT_DBDIR" ]; then
+	if [ "$2" = "-v" ]; then PM_VERBOSE=vopt; fi
+
+	unique_list=':'
+
+	echo "===>>> Building list of installed port names"; echo ''
+	for pkg in $pdb/*; do
+		unset unique_name
+
+		iport=${pkg#$pdb/}
+		origin=`origin_from_pdb $iport`
+
+		if [ ! -d "$pd/$origin" ]; then
+			find_moved_port $origin $iport nonfatal >/dev/null
+			[ -n "$moved_npd" ] || continue
+			origin=$moved_npd
+		fi
+
+		pm_cd $pd/$origin || {
+			echo "	===>>> $pd/$origin does not exist for $pkg";
+			continue; }
+		unique_name=`make -V UNIQUENAME`
+		unique_list="${unique_list}${unique_name}:"
+	done
+
+	echo "===>>> Checking $port_dbdir"
+
+	[ -n "$PM_VERBOSE" ] && { print='-print'; echo '';
+		echo "===>>> Deleting empty directories (if any)"; }
+	pm_find_s $port_dbdir -type d -empty $print -delete
+	[ -n "$PM_VERBOSE" ] && echo ''
+
+	for dir in ${port_dbdir}/*; do
+		dbdir=${dir#$port_dbdir/}
+
+		[ -n "$PM_VERBOSE" ] && echo -n "===>>> Checking ${dbdir}: "
+		case "$unique_list" in
+		*:${dbdir}:*)	[ -n "$PM_VERBOSE" ] && echo "Ok" ;;
+		*)	[ -n "$PM_VERBOSE" ] && echo ''
+			echo ''
+			echo "	===>>> $dbdir does not seem to be installed"
+			echo -n "	===>>> Delete ${dir}? [n] "
+			read answer
+			case "$answer" in
+			[yY])	pm_rm_s -rf $dir ;;
+			esac
+			;;
+		esac
 	done
 	exit 0
 fi
@@ -758,9 +838,9 @@ check_state () {
 
 check_for_updates () {
 	# Global: num_updates
-	local list iport origin port_ver udf do_update
+	local list_only nf iport origin port_ver udf do_update
 
-	[ "$1" = 'list' ] && { list=list ; shift; }
+	[ "$1" = 'list' ] && { list_only=list_only; nf=nonfatal; shift; }
 
 	iport=$1
 
@@ -841,7 +921,7 @@ check_for_updates () {
 			esac
 		fi
 	else
-		find_moved_port $origin $iport
+		find_moved_port $origin $iport $nf
 
 		# If the port has moved, we have to update it, otherwise ignore
 		[ -n "$moved_npd" ] && do_update=do_update6
@@ -850,7 +930,7 @@ check_for_updates () {
 	[ -z "$do_update" ] && {
 		CUR_DEPS="${CUR_DEPS}${iport}:${origin}:" ; return 0; }
 
-	if [ -n "$list" ]; then
+	if [ -n "$list_only" ]; then
 		if [ -z "$moved_npd" ]; then
 			echo "	===>>> New version available: $port_ver"
 			[ -e "$pdb/$iport/+IGNOREME" ] &&
@@ -941,10 +1021,8 @@ find_dl_distfiles () {
 			dist_list_files="${dist_list_files}${file#*/} "
 		done
 	else
-		local port_dbdir
 		# The port might have moved, etc.; so take a stab at it,
 		# but do not take a chance with a possibly wrong answer
-		port_dbdir=`pm_make_b -f/usr/share/mk/bsd.port.mk -V PORT_DBDIR`
 		dist_list="$port_dbdir/${1##*/}/distfiles"
 
 		[ -s "$dist_list" ] || { unset dist_list ; return 0; }
@@ -1412,6 +1490,7 @@ check_fetch_only () {
 		fi
 	done
 	echo "===>>> Distfile fetching is complete"
+	FETCH_ONLY_DONE=fetch_only_done
 	safe_exit
 }
 
@@ -1425,7 +1504,7 @@ update_port () {
 	[ -n "$DEPTH" ] && echo "	$DEPTH >> ${1#$pd/}"
 
 	if [ -z "$NO_ACTION" -o -n "$CONFIG_ONLY" ]; then
-		($0 $ARGS $@) || fail "Update for $1 failed"
+		($0 $ARGS $1) || fail "Update for $1 failed"
 		. $IPC_SAVE
 	else
 		[ -n "$PM_VERBOSE" ] &&
@@ -1544,6 +1623,7 @@ dependency_check () {
 		if [ -n "$iport" ]; then
 			check_for_updates $iport $origin || fail 'Update failed'
 		else
+			check_interactive $d_port || continue
 			update_port $d_port
 		fi
 	done
@@ -1685,7 +1765,6 @@ if [ "$$" -eq "$PARENT_PID" -a -z "$SHOW_WORK" ]; then
 	# Set the file name here so it's visible to the children
 	if [ -z "$DONT_SCRUB_DISTFILES" -a -z "$FETCH_ONLY" ]; then
 		export DI_FILES=`pm_mktemp DI-FILES`
-		(read_distinfos)&
 	fi
 
 	if [ $# -gt 1 -a -z "$REPLACE_ORIGIN" ]; then
@@ -1725,6 +1804,9 @@ all_config () {
 		CONFIG_SEEN_LIST="${CONFIG_SEEN_LIST}${origin}:"
 	done
 }
+	if [ -z "$DONT_SCRUB_DISTFILES" -a -z "$FETCH_ONLY" ]; then
+		(read_distinfos)&
+	fi
 	ports_by_category
 	echo "===>>> Starting check of installed ports for available updates"
 
@@ -1935,6 +2017,12 @@ check_state || {
 	echo "	       $state line in the Makefile and try again.";
 	safe_exit 1; }
 
+# Do not start this in the background until we are sure we are going to build
+if [ "$$" -eq "$PARENT_PID" -a -z "$SHOW_WORK" -a -z "$DONT_SCRUB_DISTFILES" \
+	-a -z "$FETCH_ONLY" ]; then
+	echo ''; (read_distinfos)&
+fi
+
 # Do these things first time through, with or without 'make config'
 if [ -z "$PM_BUILDING" -a -z "$SHOW_WORK" -a -z "$NO_ACTION" ]; then
 dofetch () {
@@ -1949,25 +2037,31 @@ dofetch () {
 	    pm_make -DBATCH checksum >> $fetchlog 2>&1; \
 	    rm -f ${TMPDIR}/f-${PARENT_PID}-*-${portdir#*/}.* )&
 }
-	# PATCHFILES may get added post-config, but we want to
-	# do as much of this as we can, as early as we can, and
-	# patch files are usually small anyway.
-	distfiles=`pm_make -V ALLFILES | sed -e 's# *$##g'`
-	[ -n "$distfiles" ] && distfiles=" ${distfiles} "
 
-	# Make sure that different ports using the same distfiles
-	# do not clobber each other's fetchs
-	for file in $distfiles; do
+	# Handle the problem of manual fetching
+	master_sites=`pm_make_b -V MASTER_SITES`
+	if [ -n "$master_sites" ]; then
+		# PATCHFILES may get added post-config, but we want to
+		# do as much of this as we can, as early as we can, and
+		# patch files are usually small anyway.
+		distfiles=`pm_make -V ALLFILES | sed -e 's# *$##g'`
+		[ -n "$distfiles" ] && distfiles=" ${distfiles} "
+
+		# Make sure that different ports using the same distfiles
+		# do not clobber each other's fetchs
+		for file in $distfiles; do
 		if ! ls ${TMPDIR}/f-${PARENT_PID}-${file}-* >/dev/null 2>&1
-		then
-			pm_mktemp ${file}-${portdir#*/} >/dev/null
-		else
-			DONT_FETCH=dont_fetch
-			break
-		fi
-	done
+			then
+				pm_mktemp ${file}-${portdir#*/} >/dev/null
+			else
+				DONT_FETCH=dont_fetch
+				break
+			fi
+		done
 
-	[ -z "$DONT_FETCH" -a -n "$distfiles" ] && dofetch
+		[ -z "$DONT_FETCH" -a -n "$distfiles" ] && dofetch
+	fi
+	unset master_sites
 
 	if [ -z "$FETCH_ONLY" ]; then
 		TESTINT=`grep -l ^IS_INTERACTIVE Makefile`
@@ -2365,7 +2459,7 @@ safe_exit
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#  Copyright (c) 2005-2008 Douglas Barton
+#  Copyright (c) 2005-2009 Douglas Barton
 #  All rights reserved.
 #
 #  Redistribution and use in source and binary forms, with or without
