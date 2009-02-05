@@ -1,4 +1,4 @@
-.\" Copyright (c) 2006-2008 Doug Barton dougb@FreeBSD.org
+.\" Copyright (c) 2006-2009 Doug Barton dougb@FreeBSD.org
 .\" All rights reserved.
 .\"
 .\" Redistribution and use in source and binary forms, with or without
@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd July 28, 2008
+.Dd January 26, 2009
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -87,6 +87,8 @@ and/or multiple globs from /var/db/pkg
 .Fl -clean-distfiles-all
 .Nm
 .Fl -check-depends
+.Nm
+.Fl -check-port-dbdir
 .Nm
 .Fl h|--help
 .Nm
@@ -227,6 +229,24 @@ any
 .Pa pkg-message
 files that were installed,
 and a summary of the work performed will be displayed.
+.Pp
+If something goes wrong during the process
+(e.g., a port build fails, a port is marked BROKEN)
+.Nm
+will report any work done successfully as described above,
+then exit.
+The question is often asked,
+.Dq Why is it not possible to proceed with the ports that do not have errors?
+The answer is that (unfortunately)
+.Nm
+is not omniscient, and therefore cannot guess what resolution the
+user would like to have for this problem.
+Manual intervention is therefore required.
+Assuming that the failure occurred after the config phase has ended
+(i.e., something has started building),
+the user can save time by adding the
+.Fl G
+option to the command line to skip the config phase the second time through.
 .Sh OPTIONS
 The options are as follows:
 .Bl -tag -width F1
@@ -331,6 +351,9 @@ If not, offer to delete the stale file.
 does the same as above, but deletes all files without prompting.
 .It Fl -check-depends
 cross-check and update dependency information for all ports
+.It Fl -check-port-dbdir
+check for stale entries in
+.Pa /var/db/ports
 .It Fl h|--help
 display help message
 .It Fl -version
@@ -573,7 +596,7 @@ This can be used as an alias in your shell.
 Be sure to fix the line wrapping appropriately.
 .Dl "portmaster -L |"
 .Dl "egrep -B1 '(ew|ort) version|Aborting|installed|dependencies|"
-.Dl "IGNORE|marked|Reason:|MOVED' | grep -v '^--'"
+.Dl "IGNORE|marked|Reason:|MOVED|deleted' | grep -v '^--'"
 .Pp
 Using
 .Nm
@@ -581,18 +604,20 @@ to do a complete reinstallation of all your ports:
 .Dl "1. portmaster -l > ~/installed-port-list"
 .Dl "2. Update your ports tree"
 .Dl "3. portmaster --clean-distfiles-all"
-.Dl "4. portmaster -Faf"
-.Dl "5. pkg_delete '*'"
-.Dl "6. rm -rf /usr/local/lib/compat/pkg"
-.Dl "7. Manually check through /usr/local to make sure it is really"
-.Dl "   empty"
+.Dl "4. portmaster --check-port-dbdir"
+.Dl "5. portmaster -Faf"
+.Dl "6. pkg_delete '*'"
+.Dl "7. rm -rf /usr/local/lib/compat/pkg"
+.Dl "8. Manually check /usr/local and /var/db/pkg"
+.Dl "   to make sure that they are really empty"
 .Pp
 .Dl "Now look at the list you generated in the first step and install"
-.Dl "all the root and leaf ports that you want to have again. The trunk"
+.Dl "the root and leaf ports that you want to have again.  The trunk"
 .Dl "and branch ports are dependencies, and will automatically be"
 .Dl "installed as needed.  You probably want to use the -D option for"
-.Dl "the installations and then run --clean-distfiles-all again when"
-.Dl "you are done."
+.Dl "the installations and then run --clean-distfiles[-all] again when"
+.Dl "you are done.  You might also want to consider using the"
+.Dl "--force-config option when installing the new ports."
 .Sh SEE ALSO
 .Xr make 1 ,
 .Xr pkg_delete 1 ,
