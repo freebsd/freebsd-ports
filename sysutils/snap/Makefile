@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snap
-DISTVERSION=	1.0
+DISTVERSION=	1.01
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cs.nctu.edu.tw/~wchunhao/ports/snap/
