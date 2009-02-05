@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	AxKit
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.7
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	xml/axkit
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	XML Delivery Toolkit for Apache/Perl
 
 BUILD_DEPENDS=	\
@@ -32,15 +31,15 @@ BUILD_DEPENDS=	\
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.62
-
 MAN3=		\
+		Apache::AxKit::DirHandler.3 \
 		Apache::AxKit::Language.3 \
 		Apache::AxKit::Language::AxPoint.3 \
 		Apache::AxKit::Language::HtmlDoc.3 \
 		Apache::AxKit::Language::SAXMachines.3 \
 		Apache::AxKit::Language::XPathScript.3 \
 		Apache::AxKit::Language::XSP.3 \
+		Apache::AxKit::Language::XSP::Preload.3 \
 		Apache::AxKit::Language::XSP::SimpleTaglib.3 \
 		Apache::AxKit::Language::XSP::TaglibHelper.3 \
 		Apache::AxKit::LibXMLSupport.3 \
@@ -49,6 +48,7 @@ MAN3=		\
 		Apache::AxKit::Plugin::Passthru.3 \
 		Apache::AxKit::Plugin::QueryStringCache.3 \
 		Apache::AxKit::Provider.3 \
+		Apache::AxKit::Provider::POST.3 \
 		Apache::AxKit::Provider::FileWrite.3 \
 		Apache::AxKit::StyleChooser::Cookie.3 \
 		Apache::AxKit::StyleChooser::FileSuffix.3 \

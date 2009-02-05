@@ -2,12 +2,14 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/CharsetConv.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/CharsetConv.xs
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/ConfigReader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/DirHandler.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Exception.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Language.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Language/AxPoint.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Language/HtmlDoc.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Language/LibXSLT.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Language/PassiveTeX.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Language/Petal.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Language/Query.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Language/SAXMachines.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Language/Sablot.pm
@@ -15,6 +17,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Language/XMLNewsRDF.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Language/XPathScript.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Language/XSP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Language/XSP/Preload.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Language/XSP/SimpleTaglib.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Language/XSP/TaglibHelper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/LibXMLSupport.pm
@@ -24,6 +27,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Plugin/Passthru.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Plugin/QueryStringCache.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Provider.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Provider/POST.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Provider/File.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Provider/FileWrite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/AxKit/Provider/Filter.pm
