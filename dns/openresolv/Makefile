@@ -8,7 +8,8 @@
 PORTNAME=	openresolv
 PORTVERSION=	1.1
 CATEGORIES=	dns
-MASTER_SITES=	http://roy.marples.name/openresolv/
+MASTER_SITES= http://roy.marples.name/downloads/openresolv/ \
+  ftp://roy.marples.name/pub/openresolv/
 
 MAINTAINER=	roy@marples.name
 COMMENT=	A resolvconf compatible framework for managing resolv.conf
