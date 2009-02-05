@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	stklos
-PORTVERSION=	0.82
-PORTREVISION=	2
+PORTVERSION=	0.98
 CATEGORIES=	lang scheme
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.stklos.org/download/ \
+		ftp://kaolin.essi.fr/pub/STklos/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vmagerya@gmail.com
 COMMENT=	The successor of the STk Scheme interpreter
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
+		pcre.0:${PORTSDIR}/devel/pcre \
+		ffi.5:${PORTSDIR}/devel/libffi \
 		gc.1:${PORTSDIR}/devel/boehm-gc
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -35,13 +36,6 @@ MAN1=		stklos-compile.1 stklos-config.1 stklos-genlex.1 stklos.1 \
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's|-@VERSION@||' ${WRKSRC}/doc/Makefile.in
-	@${REINPLACE_CMD} -e 's|^function ||' \
-		${WRKSRC}/utils/stklos-config.in \
-		${WRKSRC}/utils/stklos-ext-install \
-		${WRKSRC}/utils/stklos-install
-	@${REINPLACE_CMD} -e 's|$UID = 0|`id -u` -eq 0|' \
-		${WRKSRC}/utils/stklos-ext-install \
-		${WRKSRC}/utils/stklos-install
 	@${REINPLACE_CMD} -e '/&&/s|make|gmake|; /&&/s|configure|./configure|' \
 		${WRKSRC}/utils/stklos-install
 
