@@ -13,6 +13,7 @@ lib/libglog.a
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.windows
 %%PORTDOCS%%%%DOCSDIR%%/designstyle.css
 %%PORTDOCS%%%%DOCSDIR%%/glog.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
