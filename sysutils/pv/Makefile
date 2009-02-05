@@ -7,6 +7,7 @@
 
 PORTNAME=	pv
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	pipeviewer
@@ -22,19 +23,11 @@ MAN1=		pv.1
 PLIST_FILES=	bin/pv
 PORTDOCS=	README COPYING INSTALL NEWS PACKAGE \
 		TODO VERSION release-checklist
-OPTIONS=	DEBUG "Enable debug support" off \
-		PROFILER "Enable profiling support" off \
-		LFS "Enable LFS support" on \
+OPTIONS=	LFS "Use large filesystem support" on \
 		NLS "Use Native Language Support" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debugging
-.endif
-.if defined(WITH_PROFILER)
-CONFIGURE_ARGS+=	--enable-profiling
-.endif
 .if defined(WITHOUT_LFS)
 CONFIGURE_ARGS+=	--disable-lfs
 .endif
