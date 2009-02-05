@@ -18,6 +18,9 @@ BUILD_DEPENDS=	rubygem-open4>=0.0.0:${PORTSDIR}/devel/rubygem-open4 \
 		rubygem-mime-types>=0.0.0:${PORTSDIR}/misc/rubygem-mime-types
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+DEPRECATED=	Obsolete, use devel/rubygem-grit instead
+EXPIRATION_DATE=	2009-03-04
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 
