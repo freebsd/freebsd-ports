@@ -5,26 +5,26 @@
 # $FreeBSD$
 #
 
-PORTNAME=		dyncall
-PORTVERSION=		0.2
-CATEGORIES=		devel
-MASTER_SITES=		http://www.dyncall.org/r0.2/
+PORTNAME=	dyncall
+PORTVERSION=	0.3
+CATEGORIES=	devel
+MASTER_SITES=	http://www.dyncall.org/r${PORTVERSION}/
 
-MAINTAINER=		tphilipp@potion-studios.com
-COMMENT=		Highly dynamic multi-platform foreign function call interface library
+MAINTAINER=	tphilipp@potion-studios.com
+COMMENT=	Highly dynamic multi-platform foreign function call interface library
 
-MAN3=			dyncall.3
-HAS_CONFIGURE=		yes
+MAN3=		dyncall.3
+HAS_CONFIGURE=	yes
 
-MAKEFILE=		${WRKSRC}/BSDmakefile
+MAKEFILE=	BSDmakefile
 
-# There is no install target in the BSD makefile of version 0.2 of the dyncall library, so
+# There is no install target in the BSD makefile of version 0.3 of the dyncall library, so
 # install it manually.
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not install
+.if ${ARCH} == "sparc64" || ${ARCH} == "ia64" || ${ARCH} == "alpha"
+BROKEN=		Does not install (unsupported architecture)
 .endif
 
 do-install:
