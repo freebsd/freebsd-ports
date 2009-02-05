@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freefem++
-DISTVERSION=	2.24-2
-PORTREVISION=	2
+DISTVERSION=	3.0-5
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
@@ -21,7 +20,8 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads		\
 		gsl.13:${PORTSDIR}/math/gsl
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick		\
 		dvips:${PORTSDIR}/print/dvipsk-tetex			\
-		pdflatex:${PORTSDIR}/print/teTeX-base
+		pdflatex:${PORTSDIR}/print/teTeX-base			\
+		${LOCALBASE}/lib/libtet.a:${PORTSDIR}/math/tetgen
 RUN_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex			\
 		pdflatex:${PORTSDIR}/print/teTeX-base			\
 		bamg:${PORTSDIR}/math/bamg
@@ -32,10 +32,11 @@ USE_FORTRAN=		yes
 FORTRANLIBDIR=		`${DIRNAME} \`${FC} -print-libgcc-file-name\``
 FORTRANLIBDIR2=		`${DIRNAME} \`${FC} -print-libgcc-file-name\``/../../../
 USE_BISON=		build
-USE_GL=			yes
+USE_GL=			glut
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-download					\
+			--without-wget						\
 			--without-cadna						\
 			--with-blas="${BLAS}"					\
 			--with-lapack="${LAPACK}"				\
@@ -97,6 +98,9 @@ pre-configure:
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	${REINPLACE_CMD} -e "s|mpicc|${LOCALBASE}/mpich2/bin/mpicxx|"	\
 		${WRKSRC}/src/mpi/Makefile.in
+.for sf in configure src/mpi/parallelempi.cpp
+	${REINPLACE_CMD} -e 's|mpi++.h|mpicxx.h|' ${WRKSRC}/${sf}
+.endfor
 #	${FIND} ${WRKSRC} -name "*.edp" | ${XARGS} \
 #		${REINPLACE_CMD} -e 's|exec("medit|// exec("medit|g'
 
@@ -109,20 +113,22 @@ post-build:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	@${ECHO_MSG} "===>  Documentation installed in ${DOCSDIR}."
-. for direx in "" -bug -chapt3 -eigen -load -mpi -other -tutorial
-	@cd ${WRKSRC}/examples++${direx} && ${FIND} . -type d	\
+.endif
+.if !defined(NOPORTEXAMPLES)
+. for direx in "" -3d -bug -chapt3 -eigen -load -mpi -other -tutorial
+	cd ${WRKSRC}/examples++${direx} && ${FIND} . -type d	\
 		-exec ${MKDIR} ${EXAMPLESDIR}/${direx:S/-//}/{} \;
-	@cd ${WRKSRC}/examples++${direx} && ${FIND} -L . -type f	\
+	cd ${WRKSRC}/examples++${direx} && ${FIND} -L . -type f	\
 		-exec ${INSTALL_DATA} ${WRKSRC}/examples++${direx}/{}	\
 			${EXAMPLESDIR}/${direx:S/-//} \;
 . endfor
-	@${FIND} ${EXAMPLESDIR} -name "Makefile*" -delete
-	@${RMDIR} ${EXAMPLESDIR}/load/include
+	${FIND} ${EXAMPLESDIR} -name "Makefile*" -delete
+	${RMDIR} ${EXAMPLESDIR}/load/include
 . for sample in ${BADSAMPLES}
-	@${RM} ${EXAMPLESDIR}/${sample}
+	${RM} ${EXAMPLESDIR}/${sample}
 . endfor
 	@${ECHO_MSG} "===>  Examples installed in ${EXAMPLESDIR}."
 .endif
@@ -130,10 +136,8 @@ post-install:
 .if defined(MAINTAINER_MODE)
 regression-test:	install
 	# Gnuplot and medit needed! Click on the picture to end a set.
-.for direx in - -eigen -tutorial
-	(cd ${EXAMPLESDIR}/${direx:S/-//} ;	\
-	${PREFIX}/bin/FreeFem++ all.edp)
-.endfor
+	(cd ${WRKSRC}/examples++ &&	\
+	${PREFIX}/bin/FreeFem++ regtests.edp)
 .endif
 
 .include <bsd.port.post.mk>
