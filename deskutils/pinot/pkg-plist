@@ -2,6 +2,7 @@ bin/pinot
 bin/pinot-dbus-daemon
 bin/pinot-index
 bin/pinot-label
+bin/pinot-prefs
 bin/pinot-search
 etc/pinot/external-filters.xml
 etc/pinot/globalconfig.xml
@@ -25,6 +26,7 @@ lib/pinot/filters/libmboxfilter.so.0
 lib/pinot/filters/libtaglibfilter.so
 lib/pinot/filters/libtaglibfilter.so.0
 share/applications/pinot.desktop
+share/applications/pinot-prefs.desktop
 share/dbus-1/services/de.berlios.Pinot.service
 share/icons/hicolor/16x16/apps/pinot.png
 share/icons/hicolor/22x22/apps/pinot.png
@@ -34,6 +36,7 @@ share/icons/hicolor/48x48/apps/pinot.png
 share/locale/de/LC_MESSAGES/pinot.mo
 share/locale/es/LC_MESSAGES/pinot.mo
 share/locale/fr/LC_MESSAGES/pinot.mo
+share/locale/he/LC_MESSAGES/pinot.mo
 share/locale/it/LC_MESSAGES/pinot.mo
 share/locale/ja/LC_MESSAGES/pinot.mo
 share/locale/nl/LC_MESSAGES/pinot.mo
@@ -44,14 +47,13 @@ share/locale/sv/LC_MESSAGES/pinot.mo
 share/locale/zh_CN/LC_MESSAGES/pinot.mo
 share/locale/zh_TW/LC_MESSAGES/pinot.mo
 %%DATADIR%%/YahooBOSS.src
-%%DATADIR%%/engines/A9.src
 %%DATADIR%%/engines/AmazonAPI.src
-%%DATADIR%%/engines/BitTorrent.src
 %%DATADIR%%/engines/Clusty.src
 %%DATADIR%%/engines/Exalead.src
 %%DATADIR%%/engines/Freshmeat.src
 %%DATADIR%%/engines/Google.src
 %%DATADIR%%/engines/GoogleCodeSearch.src
+%%DATADIR%%/engines/IOIDescription.xml
 %%DATADIR%%/engines/KodersDescription.xml
 %%DATADIR%%/engines/MSN.src
 %%DATADIR%%/engines/MozDexDescription.xml
@@ -63,7 +65,10 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 %%DATADIR%%/engines/Yahoo.src
 %%DATADIR%%/metase-gtk2.glade
 %%DATADIR%%/metase-gtk2.gladep
+%%DATADIR%%/pinot-cd.sh
+%%DATADIR%%/pinot-check-file.sh
 %%DATADIR%%/pinot-dbus-daemon.xml
+%%DATADIR%%/pinot-enum-index.sh
 %%DATADIR%%/stopwords/.empty_file
 %%DATADIR%%/xapian-powered.png
 @dirrm %%DATADIR%%/stopwords
