@@ -9,7 +9,7 @@ PORTNAME=	objc
 PORTVERSION=	3.2.8
 PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	http://users.pandora.be/stes/
+MASTER_SITES=	http://users.telenet.be/stes/
 DISTFILES=	objc-bootstrap-${BOOTVERSION}.tar.gz objc-${PORTVERSION}.tar.gz
 
 MAINTAINER=	stas@FreeBSD.org
