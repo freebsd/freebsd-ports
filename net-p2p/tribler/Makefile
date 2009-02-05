@@ -7,7 +7,7 @@
 
 PORTNAME=	tribler
 PORTVERSION=	4.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 DISTNAME=	Tribler_${PORTVERSION}_src
@@ -15,7 +15,7 @@ DISTNAME=	Tribler_${PORTVERSION}_src
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Streaming capable P2P network client based on BitTorrent
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/M2Crypto/__init__.py:${PORTSDIR}/security/py-m2crypto \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}m2crypto>=0.19.1:${PORTSDIR}/security/py-m2crypto \
 		${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 
 USE_ZIP=	yes
