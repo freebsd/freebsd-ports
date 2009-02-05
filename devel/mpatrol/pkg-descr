@@ -4,4 +4,4 @@ memory. It acts as a malloc() debugger for debugging dynamic memory
 allocations, although it can also trace and profile calls to malloc() and
 free() too.
 
-WWW: http://www.cbmamiga.demon.co.uk/mpatrol/
+WWW: http://mpatrol.sourceforge.net/
