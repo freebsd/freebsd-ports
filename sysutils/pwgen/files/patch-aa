@@ -1,0 +1,39 @@
+--- Makefile.orig	Tue Jan  4 22:54:58 2000
++++ Makefile	Sun Jul  6 20:15:32 2003
+@@ -6,17 +6,17 @@
+ OPTS	= -DALLBYOPTS -DRAND48 -DDEBIAN
+ 
+ # Standard items
+-CC	= gcc
+-CFLAGS	= -O3
+-LD	= cc
+-#LDFLAGS	= -g
++CC	?= gcc
++CFLAGS	+= ${CPPFLAGS}
++LD	= ${CC}
+ LIBS	= -lm
+ INSTALL	= install -s
+ INFLAGS	=
+ 
+ # Where to install
+-DESTDIR	= /usr/local/bin
+-MANDIR	= /usr/local/man/man1
++PREFIX	?= /usr/local
++DESTDIR	= ${PREFIX}/bin
++MANDIR	= ${PREFIX}/man/man1
+ 
+ # End configuration section
+ 
+@@ -27,10 +27,8 @@
+ 	./pwgen 8 20
+ 
+ install: all
+-	$(INSTALL) pwgen $(DESTDIR)
+-	install pwgen.1 $(MANDIR)
+-	chmod 555 $(DESTDIR)/pwgen
+-	chmod 444 $(MANDIR)/pwgen.1
++	${BSD_INSTALL_PROGRAM} pwgen $(DESTDIR)
++	${BSD_INSTALL_MAN} pwgen.1 $(MANDIR)
+ 
+ spwgen:	spwgen.o
+ 	$(LD) $(LDFLAGS) -o spwgen spwgen.o $(LIBS)
