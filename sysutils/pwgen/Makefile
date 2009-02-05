@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	oddbjorn@tricknology.org
 COMMENT=	A simple password generator
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 
 MAN1=		pwgen.1
 PLIST_FILES=	bin/pwgen
