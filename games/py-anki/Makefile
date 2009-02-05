@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	anki
-PORTVERSION=	0.9.5.7
-PORTREVISION=	1
+PORTVERSION=	0.9.9.5
 CATEGORIES=	games python
-MASTER_SITES=	CENKES http://ichi2.net/anki/download/
+MASTER_SITES=	http://ichi2.net/anki/download/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 
