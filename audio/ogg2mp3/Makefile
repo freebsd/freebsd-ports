@@ -6,7 +6,7 @@
 
 PORTNAME=	ogg2mp3
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://amor.cms.hu-berlin.de/~h0444y2j/pub/
 

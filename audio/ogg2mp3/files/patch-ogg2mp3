@@ -1,0 +1,11 @@
+--- ./ogg2mp3.orig	2009-02-02 20:13:18.000000000 +0000
++++ ./ogg2mp3	2009-02-02 20:13:44.000000000 +0000
+@@ -68,7 +68,7 @@
+ 
+ # build genre hash
+ my %genres;
+-open(GENRES, "$MP3ENC --genre-list|") or die "Couldn't get genre list with $MP3ENC --genre-list\n";
++open(GENRES, "$MP3ENC --genre-list 2>&1 |") or die "Couldn't get genre list with $MP3ENC --genre-list\n";
+ while(<GENRES>) {
+     chomp;
+     next if /^\s*$/;
