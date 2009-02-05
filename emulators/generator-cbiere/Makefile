@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	generator
-PORTVERSION=	0.35.r2
-PORTREVISION=	6
+PORTVERSION=	0.35.r4
 PORTEPOCH=	1
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.ghostwhitecrab.com/generator/ \
-		http://www.ghostwhitecrab.de/generator/
+MASTER_SITES=	http://www.squish.net/generator/cbiere/generator/
 PKGNAMESUFFIX=	-cbiere
-DISTNAME=	${PORTNAME}-0.35${PKGNAMESUFFIX}-r2
+DISTNAME=	${PORTNAME}-0.35${PKGNAMESUFFIX}-r4
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	SEGA Genesis emulator
