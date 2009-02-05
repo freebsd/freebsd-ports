@@ -7,7 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	20040803
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.webonaut.com/distfiles/${PORTNAME}${PKGNAMESUFFIX}/
 PKGNAMESUFFIX=	-remote
@@ -49,7 +49,7 @@ PLIST_SUB+=	MENU_THUNDERBIRD="@comment "
 .endif
 
 do-build:
-	@${REINPLACE_CMD} -e 's|@LOCALBASE@|${PREFIX}|g' \
+	@${REINPLACE_CMD} -e 's|@X11BASE@|${PREFIX}|g' \
 		${WRKSRC}/${FIREFOX_REMOTE}
 	@${REINPLACE_CMD} -e 's|@UTF8@|${UTF8_HACK}|g' \
 		${WRKSRC}/${FIREFOX_REMOTE}
