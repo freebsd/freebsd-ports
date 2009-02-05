@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	pwgen
-PORTVERSION=	2.06
+PORTVERSION=	1.15
+PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	http://www.tricknology.org/ports/
 
 MAINTAINER=	oddbjorn@tricknology.org
 COMMENT=	A simple password generator
 
-GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-1
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 MAN1=		pwgen.1
 PLIST_FILES=	bin/pwgen
