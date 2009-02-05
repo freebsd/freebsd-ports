@@ -45,12 +45,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/history.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/history.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/history.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/hooks.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/hooks.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/hooks.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/anki03.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/anki03.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/anki03.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/wcu.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/wcu.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/wcu.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/anki10.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/anki10.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/importing/anki10.pyo
@@ -70,7 +73,14 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/de_DE/LC_MESSAGES/libanki.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/es_ES/LC_MESSAGES/libanki.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/fr_FR/LC_MESSAGES/libanki.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/fi_FI/LC_MESSAGES/libanki.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/it_IT/LC_MESSAGES/libanki.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/ja_JP/LC_MESSAGES/libanki.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/ko_KR/LC_MESSAGES/libanki.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/pl_PL/LC_MESSAGES/libanki.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/media.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/media.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/media.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/models.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/models.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/models.pyo
@@ -89,33 +99,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/utils.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/shared.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/shared.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/shared.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_deck.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_deck.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_deck.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_exporting.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_exporting.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_exporting.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_features.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_features.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_features.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_importing.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_importing.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_importing.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_stdmodels.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_stdmodels.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_stdmodels.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_sync.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_sync.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_sync.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_utils.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_utils.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_utils.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/features/chinese
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/features
@@ -126,11 +109,18 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/de_DE
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/es_ES/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/es_ES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/fi_FI/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/fi_FI
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/fr_FR/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/fr_FR
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/ja_JP/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/ja_JP
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/it_IT/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/it_IT
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/ko_KR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/ko_KR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/pl_PL/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale/pl_PL
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki/locale
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/anki
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
