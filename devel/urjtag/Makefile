@@ -14,16 +14,17 @@ MASTER_SITES=	SF
 MAINTAINER=	bahamasfranks@gmail.com
 COMMENT=	Extended utility to work with JTAG-aware boards
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LEX=${LOCALBASE}/bin/flex
 
-CONFIGURE_ENV+=	CFLAGS=--std=c99
+CFLAGS+=	--std=c99
 
 MAN1=		jtag.1 bsdl2jtag.1
-
-CONFLICTS=	libflash-0.*
 
 OPTIONS=	\
 	USB	"Build support for USB JTAG adapters"		 On	\
@@ -31,9 +32,6 @@ OPTIONS=	\
 	JEDEC	"Enable experimental JEDEC flash detection"	 Off
 
 .include <bsd.port.pre.mk>
-
-BUILD_DEPENDS+=		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
-CONFIGURE_ENV+=		LEX=${LOCALBASE}/bin/flex
 
 .if defined(WITH_JEDEC)
 CONFIGURE_ARGS+=	--enable-jedec
