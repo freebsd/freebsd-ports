@@ -28,11 +28,14 @@ etc/yaws.conf.sample
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_revproxy.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_rpc.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_rss.beam
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_sendfile.beam
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_sendfile_compat.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_server.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_session_server.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_soap_lib.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_soap_srv.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_sup.beam
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_sup_restarts.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ticker.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_xmlrpc.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_zlib.beam
@@ -44,6 +47,7 @@ etc/yaws.conf.sample
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/envelope.xsd
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/epam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/lib/setuid_drv.so
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/lib/yaws_sendfile_drv.so
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/mime.types
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/soap.xsd
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/wsdl.xsd
@@ -61,6 +65,7 @@ etc/yaws.conf.sample
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_cgi.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_compile.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_config.erl
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_configure.hrl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_content_negotiation.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_ctl.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_dav.erl
@@ -76,12 +81,15 @@ etc/yaws.conf.sample
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_revproxy.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_rpc.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_rss.erl
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_sendfile.erl
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_sendfile_compat.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_server.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_session_server.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_showarg.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_soap_lib.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_soap_srv.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_sup.erl
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_sup_restarts.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_ticker.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_vdir.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_xmlrpc.erl
@@ -252,6 +260,7 @@ etc/yaws.conf.sample
 %%WWWDIR%%/news
 %%WWWDIR%%/pcookie.yaws
 %%WWWDIR%%/post.yaws
+%%WWWDIR%%/privbind.yaws
 %%WWWDIR%%/process_tree.dia
 %%WWWDIR%%/process_tree.png
 %%WWWDIR%%/query.yaws
