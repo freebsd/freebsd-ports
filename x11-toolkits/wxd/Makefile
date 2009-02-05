@@ -13,7 +13,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=	jaj@hcl-club.lu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	wxWidgets bindings for the D programming language
 
 BUILD_DEPENDS=	gdc:${PORTSDIR}/lang/gdc

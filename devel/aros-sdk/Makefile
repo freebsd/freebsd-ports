@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aros
 DISTNAME=	AROS-20060207-i386-all-sdk
 
-MAINTAINER=	jaj@hcl-club.lu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Software development kit (SDK) for the AROS Operating System
 
 USE_BZIP2=	yes
