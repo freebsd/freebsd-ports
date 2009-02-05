@@ -15,47 +15,8 @@ lib/liblua-%%LUA_VER%%.so.%%LUA_VER_SH%%
 %%LUA_LIBDIR%%/liblua.so
 %%LUA_LIBDIR%%/liblua-%%LUA_VER%%.so.%%LUA_VER_SH%%
 libdata/pkgconfig/lua-%%LUA_VER%%.pc
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/amazon.gif
-%%PORTDOCS%%%%DOCSDIR%%/contents.html
-%%PORTDOCS%%%%DOCSDIR%%/etc/Makefile
-%%PORTDOCS%%%%DOCSDIR%%/etc/README
-%%PORTDOCS%%%%DOCSDIR%%/etc/all.c
-%%PORTDOCS%%%%DOCSDIR%%/etc/lua.ico
-%%PORTDOCS%%%%DOCSDIR%%/etc/luavs.bat
-%%PORTDOCS%%%%DOCSDIR%%/etc/min.c
-%%PORTDOCS%%%%DOCSDIR%%/etc/noparser.c
-%%PORTDOCS%%%%DOCSDIR%%/etc/strict.lua
-%%PORTDOCS%%%%DOCSDIR%%/logo.gif
-%%PORTDOCS%%%%DOCSDIR%%/lua.html
-%%PORTDOCS%%%%DOCSDIR%%/luac.html
-%%PORTDOCS%%%%DOCSDIR%%/manual.html
-%%PORTDOCS%%%%DOCSDIR%%/readme.html
-%%PORTDOCS%%%%DOCSDIR%%/test/README
-%%PORTDOCS%%%%DOCSDIR%%/test/bisect.lua
-%%PORTDOCS%%%%DOCSDIR%%/test/cf.lua
-%%PORTDOCS%%%%DOCSDIR%%/test/echo.lua
-%%PORTDOCS%%%%DOCSDIR%%/test/env.lua
-%%PORTDOCS%%%%DOCSDIR%%/test/factorial.lua
-%%PORTDOCS%%%%DOCSDIR%%/test/fib.lua
-%%PORTDOCS%%%%DOCSDIR%%/test/fibfor.lua
-%%PORTDOCS%%%%DOCSDIR%%/test/globals.lua
-%%PORTDOCS%%%%DOCSDIR%%/test/hello.lua
-%%PORTDOCS%%%%DOCSDIR%%/test/life.lua
-%%PORTDOCS%%%%DOCSDIR%%/test/luac.lua
-%%PORTDOCS%%%%DOCSDIR%%/test/printf.lua
-%%PORTDOCS%%%%DOCSDIR%%/test/readonly.lua
-%%PORTDOCS%%%%DOCSDIR%%/test/sieve.lua
-%%PORTDOCS%%%%DOCSDIR%%/test/sort.lua
-%%PORTDOCS%%%%DOCSDIR%%/test/table.lua
-%%PORTDOCS%%%%DOCSDIR%%/test/trace-calls.lua
-%%PORTDOCS%%%%DOCSDIR%%/test/trace-globals.lua
-%%PORTDOCS%%%%DOCSDIR%%/test/xd.lua
 @dirrm share/lua/%%LUA_VER%%
 @dirrmtry share/lua
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/test
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/etc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%LUA_LIBDIR%%
 @dirrm lib/lua/%%LUA_VER%%
 @dirrmtry lib/lua

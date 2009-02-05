@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lua
-PORTVERSION=	5.1.3
-PORTREVISION=	3
+PORTVERSION=	5.1.4
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/ \
 		ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
@@ -16,7 +15,7 @@ MASTER_SITES=	http://www.lua.org/ftp/ \
 		ftp://ftp.uni-trier.de/pub/languages/lua/ \
 		ftp://ftp.gwdg.de/pub/languages/lua/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Small, compilable scripting language providing easy access to C code
 
 USE_LUA=	5.1
@@ -28,6 +27,7 @@ MAKE_ENV=	LUA_SONAME="liblua-${LUA_VER}.so.${LUA_VER_SH}"
 
 MAN1=		lua-${LUA_VER}.1 luac-${LUA_VER}.1
 DOCSDIR=	${PREFIX}/share/doc/${LUA_SUBDIR}
+PORTDOCS=	*
 LATEST_LINK=	${LUA_SUBDIR}
 
 LUA_BIN=	lua luac
@@ -57,6 +57,8 @@ post-patch:
 		s|^(INSTALL_CMOD=).*|\1 ${LUA_MODLIBDIR}| ; \
 		s|^(INSTALL_LMOD=).*|\1 ${LUA_MODSHAREDIR}|' \
 		${WRKSRC}/etc/lua.pc
+	@${REINPLACE_CMD} -e 's,rand *(,random(,g' \
+		${WRKSRC}/src/lmathlib.c
 
 post-build:
 	@${RM} -f ${WRKSRC}/test/lua ${WRKSRC}/test/luac
