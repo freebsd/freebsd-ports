@@ -5,17 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	grit
-PORTVERSION=	0.7.0
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF/gems
 
 MAINTAINER=	daniel@roe.ch
 COMMENT=	An object-oriented ruby library to access git repositories
 
-BUILD_DEPENDS=	rubygem-open4>=0.0.0:${PORTSDIR}/devel/rubygem-open4 \
-		rubygem-diff-lcs>=0.0.0:${PORTSDIR}/textproc/rubygem-diff-lcs \
-		rubygem-mime-types>=0.0.0:${PORTSDIR}/misc/rubygem-mime-types \
-		rubygem-hoe>=1.4.0:${PORTSDIR}/devel/rubygem-hoe
+BUILD_DEPENDS=	rubygem-diff-lcs>=0.0.0:${PORTSDIR}/textproc/rubygem-diff-lcs \
+		rubygem-mime-types>=0.0.0:${PORTSDIR}/misc/rubygem-mime-types
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
