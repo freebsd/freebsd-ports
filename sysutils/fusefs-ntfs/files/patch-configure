@@ -1,6 +1,6 @@
---- configure.orig	2008-05-28 16:07:58.000000000 -0300
-+++ configure	2008-06-23 17:39:29.000000000 -0300
-@@ -2671,7 +2671,7 @@
+--- configure.orig	2008-08-11 13:14:21.000000000 -0300
++++ configure	2008-09-17 23:01:15.000000000 -0300
+@@ -2663,7 +2663,7 @@
  else
  
  		case "${target_os}" in
@@ -9,16 +9,16 @@
  			*) enable_mount_helper="no" ;;
  		esac
  
-@@ -19822,7 +19822,7 @@
+@@ -19619,7 +19619,7 @@
  fi
  
  	;;
--darwin*|netbsd*)
-+darwin*|netbsd*|freebsd*)
+-darwin*|netbsd*|solaris*)
++darwin*|netbsd*|solaris*|freebsd*)
  	with_fuse="external"
  	;;
  freebsd*)
-@@ -23285,7 +23285,7 @@
+@@ -23029,7 +23029,7 @@
  fi
  
  # Settings
