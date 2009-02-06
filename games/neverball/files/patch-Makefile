@@ -1,0 +1,28 @@
+--- Makefile.orig	2009-01-29 16:39:11.000000000 -0600
++++ Makefile	2009-02-05 21:25:57.000000000 -0600
+@@ -12,6 +12,10 @@
+     DARWIN := 1
+ endif
+ 
++ifeq ($(shell uname), FreeBSD)
++    FREEBSD := 1
++endif
++
+ #------------------------------------------------------------------------------
+ # Optional flags (CFLAGS, CPPFLAGS, ...)
+ 
+@@ -105,6 +109,14 @@
+     BASE_LIBS += -L/opt/local/lib
+ endif
+ 
++ifdef FREEBSD
++    BASE_LIBS += -L%%LOCALBASE%%/lib
++
++    ifneq ($(ENABLE_NLS),0)
++        INTL_LIBS := -lintl -liconv
++    endif
++endif
++
+ ALL_LIBS := $(SDL_LIBS) $(BASE_LIBS) $(TILT_LIBS) $(INTL_LIBS) -lSDL_ttf \
+     -lvorbisfile $(OGL_LIBS)
+ 
