@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	pebble
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Lightweight, open source, Java EE blogging tool
 
-PATCH_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+PATCH_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LOCALBASE}/apache-tomcat6.0/bin/catalina.sh:${PORTSDIR}/www/tomcat6
 
 USE_ZIP=	yes
@@ -41,7 +42,7 @@ PLIST_FILES=	${WEBAPP_SUBDIR}/${PORTNAME}.war etc/pebble.properties.sample
 PEBBLE_CONTEXT=	WEB-INF/applicationContext-pebble.xml
 
 do-patch:
-	cd ${WRKSRC} && ${UNZIP_CMD} -o pebble.war "${PEBBLE_CONTEXT}"
+	cd ${WRKSRC} && ${LOCALBASE}/bin/unzip -o pebble.war "${PEBBLE_CONTEXT}"
 	${SED} -i.bak 's,/WEB-INF/pebble\.properties,file:${PEBBLE_PROPERTIES},' "${WRKSRC}/${PEBBLE_CONTEXT}"
 	cd ${WRKSRC} && ${LOCALBASE}/bin/zip -u pebble.war ${PEBBLE_CONTEXT}
 
