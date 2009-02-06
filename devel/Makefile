@@ -984,6 +984,7 @@
     SUBDIR += p5-BS-Event
     SUBDIR += p5-BSD-Resource
     SUBDIR += p5-BSD-stat
+    SUBDIR += p5-Badger
     SUBDIR += p5-Best
     SUBDIR += p5-Bundle-Perl6
     SUBDIR += p5-C-Scan
