@@ -7,6 +7,7 @@
 
 PORTNAME=	psi
 DISTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
@@ -19,7 +20,8 @@ HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui iconengines imageformats qt3support \
-		inputmethods moc network rcc script svg uic xml
+		inputmethods network script svg xml \
+		qmake_build moc_build rcc_build uic_build
 
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
