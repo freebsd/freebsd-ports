@@ -1,4 +1,4 @@
-%%PL_FILES%%bin/prove
+bin/%%P5_PREFIX%%prove
 %%SITE_PERL%%/App/Prove.pm
 %%SITE_PERL%%/App/Prove/State.pm
 %%SITE_PERL%%/App/Prove/State/Result.pm

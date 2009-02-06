@@ -7,7 +7,7 @@
 
 PORTNAME=	Test-Harness
 PORTVERSION=	3.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,6 @@ COMMENT=	Run perl standard test scripts with statistics
 
 PERL_CONFIGURE=	yes
 
-MAN1=		prove.1
 MAN3=		App::Prove.3 \
 		App::Prove::State.3 \
 		App::Prove::State::Result.3 \
@@ -62,21 +61,18 @@ MAN3=		App::Prove.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 500800
-.undef MAN1
-PLIST_SUB+=	PL_FILES="@comment "
+PLIST_SUB=	P5_PREFIX="p5"
+MAN1=		p5prove.1
 pre-patch:
-	@${PERL} -pi -e "s,'bin/prove',," ${WRKSRC}/Makefile.PL
+	@${MV} ${WRKSRC}/bin/prove ${WRKSRC}/bin/p5prove
+	@${PERL} -pi -e "s,^bin/prove$$,bin/p5prove," ${WRKSRC}/MANIFEST
+	@${PERL} -pi -e "s,'bin/prove','bin/p5prove'," ${WRKSRC}/Makefile.PL
 .else
-PLIST_SUB+=	PL_FILES=""
+MAN1=		prove.1
+PLIST_SUB=	P5_PREFIX=""
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/INSTALLDIRS/d' ${WRKSRC}/${CONFIGURE_SCRIPT}
-
-post-configure:
-.if ${PERL_LEVEL} >= 500800
-	@${REINPLACE_CMD} -E -e '/(DESTINSTALLSITEMAN1DIR|DESTINSTALLSCRIPT)/d' \
-		${WRKSRC}/${MAKEFILE}
-.endif
 
 .include <bsd.port.post.mk>
