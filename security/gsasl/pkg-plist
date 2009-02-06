@@ -5,7 +5,7 @@ include/gsasl.h
 lib/libgsasl.a
 lib/libgsasl.la
 lib/libgsasl.so
-lib/libgsasl.so.12
+lib/libgsasl.so.13
 libdata/pkgconfig/libgsasl.pc
 %%PORTDOCS%%%%DOCSDIR%%/gsasl.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/abstraction.png
@@ -25,6 +25,7 @@ libdata/pkgconfig/libgsasl.pc
 %%PORTDOCS%%%%DOCSDIR%%/reference/ix03.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/ix04.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/ix05.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/ix06.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/left.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/right.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/style.css
@@ -36,6 +37,7 @@ libdata/pkgconfig/libgsasl.pc
 %%NLS%%share/locale/ga/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/id/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/id/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gsasl.mo
