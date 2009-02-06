@@ -1,0 +1,49 @@
+bin/linux-gorky17
+%%DATADIR%%/bin/gorky17_demo
+%%DATADIR%%/bin/gorky17_demo.dynamic
+%%DATADIR%%/avi/intro.mjpg
+%%DATADIR%%/avi/introkon.mjpg
+%%DATADIR%%/avi/logo.mjpg
+%%DATADIR%%/avi/logo1.mjpg
+%%DATADIR%%/avi/logo2.mjpg
+%%DATADIR%%/dat/01__port_bulldozer/other.dat
+%%DATADIR%%/dat/01__port_bulldozer/sprite.dat
+%%DATADIR%%/dat/01__port_castlegate/other.dat
+%%DATADIR%%/dat/01__port_castlegate/sprite.dat
+%%DATADIR%%/dat/01__port_citadel/other.dat
+%%DATADIR%%/dat/01__port_citadel/sprite.dat
+%%DATADIR%%/dat/01__port_heavy/other.dat
+%%DATADIR%%/dat/01__port_heavy/sprite.dat
+%%DATADIR%%/dat/01__port_trabant/other.dat
+%%DATADIR%%/dat/01__port_trabant/sprite.dat
+%%DATADIR%%/dat/01_port/other.dat
+%%DATADIR%%/dat/01_port/sprite.dat
+%%DATADIR%%/dat/01_port_citadel/other.dat
+%%DATADIR%%/dat/01_port_citadel/sprite.dat
+%%DATADIR%%/dat/01_port_tunnel/other.dat
+%%DATADIR%%/dat/01_port_tunnel/sprite.dat
+%%DATADIR%%/dat/01_port_worker/other.dat
+%%DATADIR%%/dat/01_port_worker/sprite.dat
+%%DATADIR%%/dat/common/lang.dat
+%%DATADIR%%/dat/common/other.dat
+%%DATADIR%%/dat/common/sound.dat
+%%DATADIR%%/dat/common/sprite.dat
+%%DATADIR%%/dat/common/voice.dat
+%%DATADIR%%/adjust.dat
+%%DATADIR%%/demo1.jpg
+%%DATADIR%%/demo2.jpg
+%%DATADIR%%/demo3.jpg
+@dirrm %%DATADIR%%/avi
+@dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%/dat/01__port_bulldozer
+@dirrm %%DATADIR%%/dat/01__port_castlegate
+@dirrm %%DATADIR%%/dat/01__port_citadel
+@dirrm %%DATADIR%%/dat/01__port_heavy
+@dirrm %%DATADIR%%/dat/01__port_trabant
+@dirrm %%DATADIR%%/dat/01_port
+@dirrm %%DATADIR%%/dat/01_port_citadel
+@dirrm %%DATADIR%%/dat/01_port_tunnel
+@dirrm %%DATADIR%%/dat/01_port_worker
+@dirrm %%DATADIR%%/dat/common
+@dirrm %%DATADIR%%/dat
+@dirrm %%DATADIR%%
