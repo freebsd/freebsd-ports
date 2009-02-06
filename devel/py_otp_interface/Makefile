@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	py_otp_interface
-PORTVERSION=	0.95
+PORTVERSION=	0.96
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.lysator.liu.se/~tab/erlang/py_interface/
 DISTNAME=	py_interface-${PORTVERSION}
@@ -17,9 +17,9 @@ COMMENT=	A native Python implementation of an Erlang/OTP node
 
 USE_PYTHON=	yes
 
-OTP_LIBS=	__init__.py erl_async_conn.py erl_common.py erl_epmd.py \
-		erl_eventhandler.py erl_node.py erl_node_conn.py erl_opts.py \
-		erl_term.py
+OTP_LIBS=	__init__ erl_async_conn erl_common erl_epmd \
+		erl_eventhandler erl_node erl_node_conn erl_opts \
+		erl_term
 OTP_DOCS=	COPYING.LIB README
 
 do-build:
@@ -29,7 +29,7 @@ do-build:
 do-install:
 	@${MKDIR} ${PYTHON_SITELIBDIR}/py_interface
 	@for FILE in ${OTP_LIBS}; do \
-		${INSTALL_DATA} ${WRKSRC}/py_interface/$${FILE}* ${PYTHON_SITELIBDIR}/py_interface; \
+		${INSTALL_DATA} ${WRKSRC}/py_interface/$${FILE}.py? ${PYTHON_SITELIBDIR}/py_interface; \
 	done
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
