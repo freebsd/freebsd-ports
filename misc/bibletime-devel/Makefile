@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	1.7.b3
-PORTREVISION=	2
+PORTVERSION=	1.7.r1
 CATEGORIES=	misc kde
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/.beta/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A powerful Bible study application for KDE4
@@ -27,7 +26,7 @@ KDE4_BUILDENV=	yes
 USE_KDE4=	kdeprefix kdelibs runtime workspace automoc4
 USE_CMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib dbus gui xml qmake_build moc uic rcc
+QT_COMPONENTS=	corelib dbus gui xml webkit qmake_build moc_build uic_build rcc_build
 
 post-extract:
 	${MV} ${WRKDIR}/${DISTNAME} ${WRKDIR}/${PORTNAME}-${PORTVERSION}
