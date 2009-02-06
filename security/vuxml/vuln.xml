@@ -47,25 +47,25 @@ Note:  Please add new entries to the beginning of this file.
         <p>Todd Miller reports:</p>
         <blockquote
           cite="http://www.gratisoft.us/pipermail/sudo-announce/2009-February/000085.html">
-          <p>A bug was introduced in Sudo's group matching code in
-          version 1.6.9 when support for matching based on the
-          supplemental group vector was added.  This bug may allow
-          certain users listed in the sudoers file to run a command as a
-          different user than their access rule specifies.</p>
+          <p>A bug was introduced in Sudo's group matching code in version
+	    1.6.9 when support for matching based on the supplemental group
+	    vector was added.  This bug may allow certain users listed in
+	    the sudoers file to run a command as a different user than their
+	    access rule specifies.</p>
         </blockquote>
       </body>
     </description>
     <references>
-      <mlist msgid="200902041802.n14I2llS024155@core.courtesan.com">http://www.gratisoft.us/pipermail/sudo-announce/2009-February/000085.html</mlist>
-      <cvename>CVE-2009-0034</cvename>
       <bid>33517</bid>
+      <cvename>CVE-2009-0034</cvename>
+      <mlist msgid="200902041802.n14I2llS024155@core.courtesan.com">http://www.gratisoft.us/pipermail/sudo-announce/2009-February/000085.html</mlist>
     </references>
     <dates>
       <discovery>2009-02-04</discovery>
       <entry>2009-02-06</entry>
     </dates>
   </vuln>
-  
+
   <vuln vid="6d85dc62-f2bd-11dd-9f55-0030843d3802">
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
