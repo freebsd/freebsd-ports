@@ -1,5 +1,17 @@
---- Makefile.orig	2008-10-16 17:36:35.000000000 +0300
-+++ Makefile	2008-10-16 17:36:36.000000000 +0300
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -95,7 +95,7 @@
+ OVERWRITE=y
+ 
+ # Include debug and macro symbols in the executables (-g) and profiling info (-pg)
+-DEBUG=-g3
++#DEBUG=-g3
+ 
+ # Staging directory
+ # Files are copied here temporarily during the install process
 @@ -129,7 +129,7 @@
    ASTMANDIR=$(mandir)
  ifneq ($(findstring BSD,$(OSARCH)),)
@@ -9,7 +21,7 @@
  else
    ASTVARLIBDIR=$(localstatedir)/lib/asterisk
  endif
-@@ -214,9 +214,11 @@
+@@ -219,9 +219,11 @@
    ASTLDFLAGS+=-L/usr/local/lib
  endif
  
@@ -21,7 +33,7 @@
  
  ifeq ($(PROC),ppc)
    ASTCFLAGS+=-fsigned-char
-@@ -224,7 +226,7 @@
+@@ -229,7 +231,7 @@
  
  ifeq ($(OSARCH),FreeBSD)
    # -V is understood by BSD Make, not by GNU make.
@@ -30,7 +42,7 @@
    ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
    AST_LIBS+=$(shell if test  $(BSDVERSION) -lt 502102 ; then echo "-lc_r"; else echo "-pthread"; fi)
  endif
-@@ -401,15 +403,15 @@
+@@ -408,15 +410,15 @@
  # Should static HTTP be installed during make samples or even with its own target ala
  # webvoicemail?  There are portions here that *could* be customized but might also be
  # improved a lot.  I'll put it here for now.
@@ -51,7 +63,7 @@
  	$(MAKE) -C sounds install
  
  update: 
-@@ -430,47 +432,47 @@
+@@ -437,47 +439,47 @@
  OLDHEADERS=$(filter-out $(NEWHEADERS),$(notdir $(wildcard $(DESTDIR)$(ASTHEADERDIR)/*.h)))
  
  installdirs:
@@ -131,7 +143,7 @@
  	fi
  
  $(SUBDIRS_INSTALL):
-@@ -506,7 +508,7 @@
+@@ -513,7 +515,7 @@
  	@exit 1
  endif
  
@@ -140,7 +152,7 @@
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
  		/usr/sbin/asterisk-post-install $(DESTDIR) . ; \
  	fi
-@@ -544,31 +546,23 @@
+@@ -551,31 +553,23 @@
  upgrade: bininstall
  
  adsi:
@@ -180,7 +192,7 @@
  		( \
  		echo "[directories]" ; \
  		echo "astetcdir => $(ASTETCDIR)" ; \
-@@ -655,20 +649,23 @@
+@@ -662,20 +656,23 @@
  		echo "; Default: strict"; \
  		echo ";"; \
  		echo ";translation_algorithm = strict"; \

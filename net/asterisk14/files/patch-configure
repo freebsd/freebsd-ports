@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- configure.orig
-+++ configure
-@@ -3951,8 +3951,6 @@
+--- configure.orig	2008-12-15 19:43:59.000000000 +0200
++++ configure	2009-01-26 22:19:11.000000000 +0200
+@@ -3957,8 +3957,6 @@
  case "${host_os}" in
       freebsd*)
       ac_default_prefix=/usr/local
@@ -12,16 +9,7 @@ $FreeBSD$
       ;;
       *)
       ac_default_prefix=/usr
-@@ -27517,7 +27515,7 @@
- 
- 
- 	if test "${HAS_PWLIB:-unset}" != "unset"; then
--		PWLIB_VERSION=`grep "PWLIB_VERSION" ${PWLIB_INCDIR}/ptbuildopts.h | cut -f2 -d ' ' | sed -e 's/"//g'`
-+		PWLIB_VERSION=`grep "PWLIB_VERSION" ${PWLIB_INCDIR}/ptbuildopts.h | tr '\t' ' ' | cut -f3 -d ' ' | sed -e 's/"//g'`
- 		PWLIB_MAJOR_VERSION=`echo ${PWLIB_VERSION} | cut -f1 -d.`
- 		PWLIB_MINOR_VERSION=`echo ${PWLIB_VERSION} | cut -f2 -d.`
- 		PWLIB_BUILD_NUMBER=`echo ${PWLIB_VERSION} | cut -f3 -d.`
-@@ -28118,6 +28116,7 @@
+@@ -26022,6 +26020,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -29,7 +17,7 @@ $FreeBSD$
  #include <${HOME}/openh323/include/h323.h>
  _ACEOF
  rm -f conftest.$ac_objext
-@@ -28158,6 +28157,7 @@
+@@ -26062,6 +26061,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -37,7 +25,7 @@ $FreeBSD$
  #include <${HOME}/openh323/include/h323.h>
  _ACEOF
  if { (ac_try="$ac_cpp conftest.$ac_ext"
-@@ -28260,6 +28260,7 @@
+@@ -26164,6 +26164,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -45,7 +33,7 @@ $FreeBSD$
  #include </usr/local/include/openh323/h323.h>
  _ACEOF
  rm -f conftest.$ac_objext
-@@ -28300,6 +28301,7 @@
+@@ -26204,6 +26205,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -53,16 +41,7 @@ $FreeBSD$
  #include </usr/local/include/openh323/h323.h>
  _ACEOF
  if { (ac_try="$ac_cpp conftest.$ac_ext"
-@@ -28477,7 +28479,7 @@
- 
- 
- 	if test "${HAS_OPENH323:-unset}" != "unset"; then
--		OPENH323_VERSION=`grep "OPENH323_VERSION" ${OPENH323_INCDIR}/openh323buildopts.h | cut -f2 -d ' ' | sed -e 's/"//g'`
-+		OPENH323_VERSION=`grep "OPENH323_VERSION" ${OPENH323_INCDIR}/openh323buildopts.h | tr '\t' ' ' | cut -f3 -d ' ' | sed -e 's/"//g'`
- 		OPENH323_MAJOR_VERSION=`echo ${OPENH323_VERSION} | cut -f1 -d.`
- 		OPENH323_MINOR_VERSION=`echo ${OPENH323_VERSION} | cut -f2 -d.`
- 		OPENH323_BUILD_NUMBER=`echo ${OPENH323_VERSION} | cut -f3 -d.`
-@@ -28552,7 +28554,7 @@
+@@ -26456,7 +26458,7 @@
  
  	fi
  
@@ -71,7 +50,7 @@ $FreeBSD$
  
  	if test "${HAS_OPENH323:-unset}" != "unset"; then
  	   { echo "$as_me:$LINENO: checking OpenH323 installation validity" >&5
-@@ -34788,6 +34790,7 @@
+@@ -30834,6 +30836,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -79,7 +58,7 @@ $FreeBSD$
  #include <h323.h>
  _ACEOF
  rm -f conftest.$ac_objext
-@@ -34828,6 +34831,7 @@
+@@ -30874,6 +30877,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
