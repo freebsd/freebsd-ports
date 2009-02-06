@@ -27,7 +27,6 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 USE_ICONV=	yes
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc
-CMAKE_ENV+=	PATH=${LOCALBASE}:\${PATH}
 USE_EFL=	imlib2
 USE_GNOME=	glib20 pango
 USE_LUA=	5.1+
