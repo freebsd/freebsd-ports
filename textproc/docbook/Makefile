@@ -96,7 +96,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-xm
 .endif
 
 .if defined(WITH_DB50_XML)
-RUN_DEPENDS+=	${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-500
+RUN_DEPENDS+=	${LOCALBASE}/share/xml/docbook/5.0:${PORTSDIR}/textproc/docbook-500
 .endif
 
 .if defined(WITH_SDB_XML)
