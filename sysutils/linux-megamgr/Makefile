@@ -8,7 +8,7 @@
 PORTNAME=		linux-megamgr
 PORTVERSION=		5.20
 CATEGORIES=		sysutils linux
-MASTER_SITES=		http://www.lsi.com/files/support/rsa/utilities/megamgr/
+MASTER_SITES=		http://www.lsi.com/DistributionSystem/AssetDocument/files/support/rsa/utilities/megamgr/
 DISTNAME=		ut_linux_mgr_5.20
 
 MAINTAINER=		pmh@hausen.com
