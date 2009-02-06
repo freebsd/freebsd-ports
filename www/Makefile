@@ -1155,6 +1155,7 @@
     SUBDIR += pear-Text_Wiki
     SUBDIR += pear-UDDI
     SUBDIR += pear-XML_GRDDL
+    SUBDIR += pebble
     SUBDIR += pecl-APC
     SUBDIR += pecl-amfext
     SUBDIR += pecl-http
