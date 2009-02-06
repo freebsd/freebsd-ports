@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	osa
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
@@ -18,6 +19,7 @@ COMMENT=	Robust and small WWW server
 OPTIONS=	DEBUG "Enable nginx debugging" off \
 		GOOGLE_PERFTOOLS "Enable google perftools module" off \
 		HTTP_MODULE "Enable HTTP module" on \
+		HTTP_ACCESSKEY_MODULE "Enable http_accesskey module" off \
 		HTTP_ADDITION_MODULE "Enable http_addition module" off \
 		HTTP_DAV_MODULE "Enable http_webdav module" off \
 		HTTP_FLV_MODULE "Enable http_flv module" off \
@@ -75,6 +77,14 @@ CONFIGURE_ARGS+=--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_temp \
 		--http-proxy-temp-path=${NGINX_TMPDIR}/proxy_temp \
 		--http-fastcgi-temp-path=${NGINX_TMPDIR}/fastcgi_temp \
 		--http-log-path=${NGINX_LOGDIR}/nginx-access.log
+
+.if defined(WITH_HTTP_ACCESSKEY_MODULE)
+NGINX_ACCESSKEY_MODULE_VERSION=	2.0.3
+MASTER_SITES+=	${MASTER_SITE_LOCAL}:accesskey
+MASTER_SITE_SUBDIR=	osa:accesskey
+DISTFILES+=	nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}.tar.gz:accesskey
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}
+.endif
 
 .if defined(WITH_HTTP_ADDITION_MODULE)
 CONFIGURE_ARGS+=--with-http_addition_module
@@ -157,6 +167,11 @@ post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
 		s!%%PREFIX%%!${PREFIX}!' \
 		${WRKSRC}/conf/nginx.conf
+.if defined(WITH_HTTP_ACCESSKEY_MODULE)
+	@${REINPLACE_CMD} \
+		's!$$HTTP_ACCESSKEY_MODULE!ngx_http_accesskey_module!' \
+		${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}/config
+.endif
 
 do-build:
 	@cd ${WRKSRC} && ${MAKE}
