@@ -67,8 +67,9 @@ post-patch:
 		's|^(P_DOC_DIR=).*|\1${DOCSDIR:S/${PREFIX}\///}|' \
 		${WRKSRC}/gcc/p/Make-lang.in
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -Ee 's|^(PASCAL_INSTALL_DOC=).*|\1|' \
-		${WRKSRC}/gcc/p/Make-lang.in
+	@${REINPLACE_CMD} -e 's|^\(PASCAL_INSTALL_DOC=\).*|\1|; \
+	    s|$$(p_inst_docdir) $$(p_inst_demodir) $$(p_inst_docdemodir)||' \
+	    ${WRKSRC}/gcc/p/Make-lang.in
 .endif
 
 post-install:
