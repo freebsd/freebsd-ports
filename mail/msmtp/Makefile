@@ -7,6 +7,7 @@
 
 PORTNAME=	msmtp
 PORTVERSION=	1.4.17
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	msmtp
@@ -37,7 +38,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_r
 .endif
 
 .if defined(WITH_GSASL)
-LIB_DEPENDS+=	gsasl.12:${PORTSDIR}/security/gsasl
+LIB_DEPENDS+=	gsasl.13:${PORTSDIR}/security/gsasl
 .else
 CONFIGURE_ARGS+=	--without-gsasl
 .endif

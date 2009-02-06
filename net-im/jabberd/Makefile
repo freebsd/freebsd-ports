@@ -7,6 +7,7 @@
 
 PORTNAME=	jabberd
 PORTVERSION=	2.2.5
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://ftp.xiaoka.com/jabberd2/releases/
 DIST_SUBDIR=	jabber
@@ -15,7 +16,7 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		gsasl.12:${PORTSDIR}/security/gsasl \
+		gsasl.13:${PORTSDIR}/security/gsasl \
 		idn.16:${PORTSDIR}/dns/libidn \
 		udns.0:${PORTSDIR}/dns/udns
 
