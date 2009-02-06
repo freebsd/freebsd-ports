@@ -1,0 +1,29 @@
+bin/linux-majesty
+%%DATADIR%%/maj_demo
+%%DATADIR%%/maj_demo.dynamic
+%%DATADIR%%/data/action.cam
+%%DATADIR%%/data/bytecode.bcd
+%%DATADIR%%/data/cinedata1.cam
+%%DATADIR%%/data/company.cam
+%%DATADIR%%/data/constants.rgs
+%%DATADIR%%/data/gpltext.cam
+%%DATADIR%%/data/interfacedata.cam
+%%DATADIR%%/data/maindata.cam
+%%DATADIR%%/data/miscdata.cam
+%%DATADIR%%/data/promo01.bmp
+%%DATADIR%%/data/promo02.bmp
+%%DATADIR%%/data/promo03.bmp
+%%DATADIR%%/data/promo04.bmp
+%%DATADIR%%/data/sounddesc.cam
+%%DATADIR%%/data/soundfx.cam
+%%DATADIR%%/data/terrtype.cam
+%%DATADIR%%/data/textdata.cam
+%%DATADIR%%/data/tilesetdata.cam
+%%DATADIR%%/data/titlepage.bmp
+%%DATADIR%%/data/unittype.cam
+%%DATADIR%%/data/voices.cam
+%%DATADIR%%/quests/vampiric_revenge.q
+%%DATADIR%%/quests/vampiric_revenge.qdd
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/quests
+@dirrm %%DATADIR%%

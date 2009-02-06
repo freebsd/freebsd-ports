@@ -452,6 +452,7 @@
     SUBDIR += linux-etqw-demo-server
     SUBDIR += linux-etqw-server
     SUBDIR += linux-gorky17-demo
+    SUBDIR += linux-majesty-demo
     SUBDIR += linux-nerogame
     SUBDIR += linux-nwnclient
     SUBDIR += linux-nwserver
