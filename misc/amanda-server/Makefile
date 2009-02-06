@@ -7,6 +7,7 @@
 
 PORTNAME=	amanda
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -242,6 +243,7 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-application-src::amzfs-sendrecv.pl
 # MEMO:
 #   Prefix @WANT_SERVER_TRUE@ for server only files.
 #   Prefix @WANT_CLIENT_TRUE@ for client only files.
+#   For debugging: dbprintf(_("getcmd: %s\n"), line);
 # Maintainer TODO:
 #   o amanda-server installs libexec/amanda/amandad, sbin/amarchiver
 #     which should be handled by amanda-client only.
