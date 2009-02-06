@@ -12285,6 +12285,7 @@ p5-Statistics-OLS               ports/math/p5-Statistics-OLS
 p5-Statistics-Regression        ports/math/p5-Statistics-Regression
 p5-Statistics-TTest             ports/math/p5-Statistics-TTest
 p5-Storable                     ports/devel/p5-Storable
+p5-Storable-AMF                 ports/converters/p5-Storable-AMF
 p5-Stream                       ports/devel/p5-Stream
 p5-String-Approx                ports/devel/p5-String-Approx
 p5-String-CRC32                 ports/devel/p5-String-CRC32
@@ -15578,6 +15579,7 @@ p5-statistics-ols               ports/math/p5-Statistics-OLS
 p5-statistics-regression        ports/math/p5-Statistics-Regression
 p5-statistics-ttest             ports/math/p5-Statistics-TTest
 p5-storable                     ports/devel/p5-Storable
+p5-storable-amf                 ports/converters/p5-Storable-AMF
 p5-stream                       ports/devel/p5-Stream
 p5-string-approx                ports/devel/p5-String-Approx
 p5-string-camelcase             ports/textproc/p5-String-CamelCase
