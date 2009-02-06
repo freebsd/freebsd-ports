@@ -19,8 +19,9 @@ lib/libqca.so
 lib/libqca.so.2
 lib/libqca.so.2.0.0
 libdata/pkgconfig/qca.pc
-mkspecs/features/crypto.prf
-@dirrmtry mkspecs/features
-@dirrmtry mkspecs
+share/qt4/mkspecs/features/crypto.prf
+@dirrmtry share/qt4/mkspecs/features
+@dirrmtry share/qt4/mkspecs
+@dirrmtry share/qt4
 @dirrmtry include/QtCrypto
 @dirrmtry certs
