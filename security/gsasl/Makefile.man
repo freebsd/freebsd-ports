@@ -108,6 +108,7 @@ MAN3+=	gsasl_simple_getpass.3
 MAN3+=	gsasl_step.3
 MAN3+=	gsasl_step64.3
 MAN3+=	gsasl_strerror.3
+MAN3+=	gsasl_strerror_name.3
 MAN3+=	gsasl_stringprep_nfkc.3
 MAN3+=	gsasl_stringprep_saslprep.3
 MAN3+=	gsasl_stringprep_trace.3
