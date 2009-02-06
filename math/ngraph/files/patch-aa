@@ -1,9 +1,9 @@
---- Makefile.orig	Fri Feb 21 19:53:54 2003
-+++ Makefile	Sat Feb 22 18:09:03 2003
-@@ -1,26 +1,26 @@
- #
+--- Makefile.orig	2008-08-01 22:28:06.000000000 +0900
++++ Makefile	2009-02-06 21:39:03.000000000 +0900
+@@ -2,26 +2,26 @@
  MAINVERSION = '"6.03"'
- GUIVERSION = '".30"'
+ GUIVERSION = '".47"'
+ ALIGNSIZE = 8
 -LIBDIR = '"/usr/local/lib/Ngraph"'
 -INSTALLDIR = /usr/local/lib/Ngraph
 -BINDIR = /usr/local/bin
@@ -41,7 +41,7 @@
  #
  #
  ###############################################################################
-@@ -148,17 +148,18 @@
+@@ -149,17 +149,18 @@
  #
  # (Thanks to MIHIRA Sanpei Yoshiro <sanpei@sanpei.org>)
  #
