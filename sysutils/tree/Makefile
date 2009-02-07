@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tree
-PORTVERSION=	1.5.2.1
+PORTVERSION=	1.5.2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://mama.indstate.edu/linux/tree/ \
 		CENKES
