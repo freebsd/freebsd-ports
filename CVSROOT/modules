@@ -9897,6 +9897,7 @@ p5-BSD-Jail-Object              ports/sysutils/p5-BSD-Jail-Object
 p5-BSD-Resource                 ports/devel/p5-BSD-Resource
 p5-BSD-Sysctl                   ports/sysutils/p5-BSD-Sysctl
 p5-BSD-stat                     ports/devel/p5-BSD-stat
+p5-Badger                       ports/devel/p5-Badger
 p5-Baseball-Sabermetrics        ports/games/p5-Baseball-Sabermetrics
 p5-Benchmark-Forking            ports/benchmarks/p5-Benchmark-Forking
 p5-Benchmark-Stopwatch          ports/benchmarks/p5-Benchmark-Stopwatch
@@ -13146,6 +13147,7 @@ p5-b-keywords                   ports/devel/p5-B-Keywords
 p5-b-lexinfo                    ports/www/p5-B-LexInfo
 p5-b-size                       ports/devel/p5-B-Size
 p5-b-utils                      ports/devel/p5-B-Utils
+p5-badger                       ports/devel/p5-Badger
 p5-base                         ports/devel/p5-base
 p5-baseball-sabermetrics        ports/games/p5-Baseball-Sabermetrics
 p5-bbs-client                   ports/net/p5-BBS-Client
@@ -16977,6 +16979,7 @@ pear-xml_xpath                  ports/devel/pear-XML_XPath
 pear_Payment_DTA                ports/finance/pear_Payment_DTA
 pear_payment_dta                ports/finance/pear_Payment_DTA
 pearpc                          ports/emulators/pearpc
+pebble                          ports/www/pebble
 pebrot                          ports/net-im/pebrot
 pecl-APC                        ports/www/pecl-APC
 pecl-amfext                     ports/www/pecl-amfext
