@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	WWW-Curl
-PORTVERSION=	3.02
-PORTREVISION=	2
+PORTVERSION=	4.05
+PORTREVISION=	0
 CATEGORIES=	www ftp perl5
 MASTER_SITES=	CPAN \
 		http://curl.haxx.se/libcurl/perl/
@@ -20,9 +20,7 @@ LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl:install
 
 PERL_CONFIGURE=	yes
 
-MAN3=		WWW::Curl.3 \
-		WWW::Curl::Easy.3 \
-		WWW::Curl::Multi.3
+MAN3=		WWW::Curl.3
 
 post-patch:
 		${FIND} ${WRKSRC} -type f -name \*.orig -delete
