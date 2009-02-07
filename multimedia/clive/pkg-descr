@@ -1,7 +1,8 @@
-clive is a command line tool for extracting videos from Youtube,
-Google Video, Dailymotion, Guba (free), Stage6, Metacafe, LastFm,
-Sevenload websites.
-clive is written in Python and is cross-platform.
+clive is a portable Perl command line tool for extracting videos 
+from Youtube, Google Video, Break, LiveLeak, LastFm, EvisorTV,
+and Sevenload websites.  clive may be used in a non-interactive
+fashion -- this allows the user to start an extraction and disconnect
+from the system, letting clive finish the work.
 
 Main features:
 
@@ -12,8 +13,7 @@ Main features:
     - Chaining with ffmpeg for subsequent re-encoding
     - URL caching; re-fetch video page only when necessary
     - Gzip compressed video page data transfers
-    - Integration with X clipboard (with xclip)
-    - RSS/Atom parsing with video selection interface
+    - Integration with X clipboard
     - Continue partially downloaded files
     - Recall last URL batch
     - Supports UNIX pipes
