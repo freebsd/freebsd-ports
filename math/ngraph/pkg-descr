@@ -12,7 +12,7 @@ general ASCII text files, and plot to graph.
 
     and you need....
      - kinput2
-     - X Trye Type or X True Type Font server[best],
+     - X True Type or X True Type Font server[best],
        or kanji18 and kanji26 fonts, these fonts are in below ports[better],
 		- ja-ngraph-fonts	(japanese/ngraph-fonts)
 		- ja-kanji18		(japanese/kanji18)
