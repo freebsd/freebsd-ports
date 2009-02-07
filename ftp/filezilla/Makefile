@@ -11,7 +11,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	SF
 DISTNAME=	FileZilla_${PORTVERSION}_src
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Fast and reliable cross-platform FTP, FTPS and SFTP client
 
 LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls \
