@@ -15,7 +15,7 @@ $FreeBSD$
  #HFILES=
  LIBS=		-ldeflt -lschily $(LIB_SOCKET)
 -XMK_FILE=	Makefile.man Makefile.dfl Makefile.doc
-+XMK_FILE=	Makefile.man Makefile.doc
++XMK_FILE=	Makefile.man
  
  ###########################################################################
  include		$(SRCROOT)/$(RULESDIR)/rules.cmd
