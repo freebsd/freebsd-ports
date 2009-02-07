@@ -333,6 +333,8 @@
     SUBDIR += tcl84-thread
     SUBDIR += tcl85
     SUBDIR += tcl85-thread
+    SUBDIR += tcl86
+    SUBDIR += tcl86-thread
     SUBDIR += tclX
     SUBDIR += tcltutor
     SUBDIR += tinycobol

@@ -20926,6 +20926,8 @@ tcl84                           ports/lang/tcl84
 tcl84-thread                    ports/lang/tcl84-thread
 tcl85                           ports/lang/tcl85
 tcl85-thread                    ports/lang/tcl85-thread
+tcl86                           ports/lang/tcl86
+tcl86-thread                    ports/lang/tcl86-thread
 tclExpat                        ports/textproc/tclExpat
 tclX                            ports/lang/tclX
 tclcheck                        ports/devel/tclcheck
@@ -21193,6 +21195,8 @@ tk84                            ports/x11-toolkits/tk84
 tk84-thread                     ports/x11-toolkits/tk84-thread
 tk85                            ports/x11-toolkits/tk85
 tk85-thread                     ports/x11-toolkits/tk85-thread
+tk86                            ports/x11-toolkits/tk85
+tk86-thread                     ports/x11-toolkits/tk85-thread
 tkXwin                          ports/x11/tkXwin
 tkabber                         ports/net-im/tkabber
 tkabber-devel                   ports/net-im/tkabber-devel
