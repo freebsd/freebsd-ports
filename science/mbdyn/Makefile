@@ -16,6 +16,8 @@ COMMENT=	A MultiBody Dynamics analysis system
 
 LIB_DEPENDS=	umfpack:${PORTSDIR}/math/suitesparse
 
+BROKEN=		fails to build with GCC 4.3 as needed for Fortran
+
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:262
 USE_GMAKE=	yes
