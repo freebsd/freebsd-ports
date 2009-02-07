@@ -9,17 +9,14 @@
 %%SITE_PERL%%/Mouse/Tiny.pm
 %%SITE_PERL%%/Mouse/TypeRegistry.pm
 %%SITE_PERL%%/Mouse/Util.pm
-%%SITE_PERL%%/MouseX/Types.pm
-%%SITE_PERL%%/MouseX/Types/Mouse.pm
-%%SITE_PERL%%/MouseX/Types/TypeDecorator.pm
+%%SITE_PERL%%/Mouse/Util/TypeConstraints.pm
 %%SITE_PERL%%/Squirrel.pm
 %%SITE_PERL%%/Squirrel/Role.pm
 %%SITE_PERL%%/ouse.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mouse/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mouse
+@dirrmtry %%SITE_PERL%%/Mouse/Util
 @dirrmtry %%SITE_PERL%%/Mouse/Meta/Method
 @dirrmtry %%SITE_PERL%%/Mouse/Meta
 @dirrmtry %%SITE_PERL%%/Mouse
-@dirrmtry %%SITE_PERL%%/MouseX/Types
-@dirrmtry %%SITE_PERL%%/MouseX
 @dirrmtry %%SITE_PERL%%/Squirrel
