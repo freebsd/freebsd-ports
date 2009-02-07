@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- doc/vorbisfile/Makefile.in.bak	2007-07-25 16:46:35.000000000 +0000
-+++ doc/vorbisfile/Makefile.in	2007-07-26 21:53:26.000000000 +0000
+--- doc/vorbisfile/Makefile.in.orig
++++ doc/vorbisfile/Makefile.in
 @@ -150,7 +150,7 @@
  builddir = @builddir@
  datadir = @datadir@
@@ -12,3 +12,12 @@ $FreeBSD$
  dvidir = @dvidir@
  exec_prefix = @exec_prefix@
  host = @host@
+@@ -201,7 +201,7 @@
+ 	overview.html reference.html return.html seekexample.html seeking.html\
+ 	seeking_example_c.html seeking_test_c.html seekingexample.html\
+ 	style.css threads.html vorbis_comment.html vorbis_info.html\
+-	vorbisfile_example_c.html
++	vorbisfile_example_c.html ov_fopen.html
+ 
+ EXTRA_DIST = $(doc_DATA)
+ all: all-am

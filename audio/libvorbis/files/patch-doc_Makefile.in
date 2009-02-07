@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- doc/Makefile.in.orig	2007-07-26 21:50:20.000000000 +0000
-+++ doc/Makefile.in	2007-07-26 21:50:57.000000000 +0000
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
 @@ -162,7 +162,7 @@
  builddir = @builddir@
  datadir = @datadir@
@@ -12,3 +12,12 @@ $FreeBSD$
  dvidir = @dvidir@
  exec_prefix = @exec_prefix@
  host = @host@
+@@ -249,7 +249,7 @@
+ # FIXME: also needed here
+ #	white-xifish.png 
+ built_docs = Vorbis_I_spec.html Vorbis_I_spec.pdf
+-@BUILD_DOCS_FALSE@doc_DATA = $(static_docs) $(SPEC_PNG)
++@BUILD_DOCS_FALSE@doc_DATA = $(static_docs) $(SPEC_PNG) $(built_docs)
+ 
+ # conditionally make the generated documentation
+ @BUILD_DOCS_TRUE@doc_DATA = $(static_docs) $(SPEC_PNG) $(built_docs)

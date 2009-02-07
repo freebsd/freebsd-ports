@@ -18,6 +18,8 @@ libdata/pkgconfig/vorbis.pc
 libdata/pkgconfig/vorbisenc.pc
 libdata/pkgconfig/vorbisfile.pc
 share/aclocal/vorbis.m4
+%%PORTDOCS%%%%DOCSDIR%%/Vorbis_I_spec.html
+%%PORTDOCS%%%%DOCSDIR%%/Vorbis_I_spec.pdf
 %%PORTDOCS%%%%DOCSDIR%%/components.png
 %%PORTDOCS%%%%DOCSDIR%%/draft-ietf-avt-rtp-vorbis-06.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-ietf-avt-rtp-vorbis-06.xml
@@ -49,13 +51,20 @@ share/aclocal/vorbis.m4
 %%PORTDOCS%%%%DOCSDIR%%/vorbis-errors.txt
 %%PORTDOCS%%%%DOCSDIR%%/vorbis-fidelity.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbis.html
+%%PORTDOCS%%%%DOCSDIR%%/vorbisenc/changes.html
+%%PORTDOCS%%%%DOCSDIR%%/vorbisenc/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisenc/index.html
+%%PORTDOCS%%%%DOCSDIR%%/vorbisenc/ov_ectl_ratemanage2_arg.html
+%%PORTDOCS%%%%DOCSDIR%%/vorbisenc/ov_ectl_ratemanage_arg.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisenc/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisenc/reference.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisenc/style.css
 %%PORTDOCS%%%%DOCSDIR%%/vorbisenc/vorbis_encode_ctl.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisenc/vorbis_encode_init.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisenc/vorbis_encode_init_vbr.html
+%%PORTDOCS%%%%DOCSDIR%%/vorbisenc/vorbis_encode_setup_init.html
+%%PORTDOCS%%%%DOCSDIR%%/vorbisenc/vorbis_encode_setup_managed.html
+%%PORTDOCS%%%%DOCSDIR%%/vorbisenc/vorbis_encode_setup_vbr.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisenc/vorbis_info.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/OggVorbis_File.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/callbacks.html
@@ -75,6 +84,7 @@ share/aclocal/vorbis.m4
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/ov_clear.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/ov_comment.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/ov_crosslap.html
+%%PORTDOCS%%%%DOCSDIR%%/vorbisfile/ov_fopen.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/ov_info.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/ov_open.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/ov_open_callbacks.html
