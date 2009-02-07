@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqwebmail
-PORTVERSION=	5.2.2
+PORTVERSION=	5.3.1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -42,7 +42,7 @@ WEBDATADIR?=	www/data-dist
 WEBDATASUBDIR?=	sqwebmail
 IMAGEURL?=	${WEBDATASUBDIR}
 RCDIR?=		${PREFIX}/etc/rc.d
-CACHEDIR?=	${PREFIX}/var/sqwebmail/cache
+CACHEDIR?=	/var/sqwebmail/cache
 CACHEOWNER?=	bin
 
 # set WITH_TIMEOUTHARD to something other than 7200 seconds (2hr)
@@ -57,7 +57,7 @@ CACHEOWNER?=	bin
 #
 # End of user variables
 
-USE_GCC=	3.4
+#USE_GCC=	3.4
 USE_PERL5=	YES
 HAS_CONFIGURE=	YES
 USE_BZIP2=	YES
@@ -68,7 +68,7 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--enable-cgibindir=${PREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
 		--enable-imagedir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR} \
-		--localstatedir=${PREFIX}/var/sqwebmail \
+		--localstatedir=/var/sqwebmail \
 		--sysconfdir=${PREFIX}/etc/sqwebmail \
 		--enable-imageurl=/${IMAGEURL} \
 		--with-locking-method=fcntl \
