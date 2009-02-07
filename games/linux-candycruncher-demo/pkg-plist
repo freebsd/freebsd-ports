@@ -1,0 +1,8 @@
+bin/linux-candycruncher
+%%DATADIR%%/Bin/candycruncher_demo
+%%DATADIR%%/Bin/candycruncher_demo.dynamic
+%%DATADIR%%/Resources/cruncher.pyz
+%%DATADIR%%/Resources/pyrogon.ttf
+@dirrm %%DATADIR%%/Bin
+@dirrm %%DATADIR%%/Resources
+@dirrm %%DATADIR%%
