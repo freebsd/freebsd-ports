@@ -36,8 +36,7 @@ QT_COMPONENTS=		gui network opengl moc_build rcc_build uic_build xml svg
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-blas="${BLAS}" --without-llvm
 CPPFLAGS=		${CXXFLAGS} -I${LOCALBASE}/include  ${AMDINC}
-CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"		\
-			FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 SLAVEDIRS=	math/freemat-mpi
 
