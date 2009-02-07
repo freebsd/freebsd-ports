@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.67
+PORTVERSION=	0.68
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DR/DROLSKY
@@ -79,7 +79,7 @@ MAN3=	Moose.3 \
 	Moose::Meta::Method::Constructor.3 \
 	Moose::Meta::Method::Delegation.3 \
 	Moose::Meta::Method::Destructor.3 \
-	Moose::Meta::Method::Overriden.3 \
+	Moose::Meta::Method::Overridden.3 \
 	Moose::Meta::Role.3 \
 	Moose::Meta::Role::Application.3 \
 	Moose::Meta::Role::Application::RoleSummation.3 \
