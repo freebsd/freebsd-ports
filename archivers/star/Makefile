@@ -7,39 +7,66 @@
 #
 
 PORTNAME=	star
-PORTVERSION=	1.4.3
-PORTREVISION=	1
+DISTVERSION=	1.5
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.berlios.de/pub/star/
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Unique standard tape archiver with many enhancements
 
-CONFLICTS=	star-1.5*
+BUILD_DEPENDS=	${LOCALBASE}/bin/smake:${PORTSDIR}/devel/smake
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-MAKE_ENV=	LANG=C MAKEPROG=gmake CCOM=${CC}
-MAN1=		star.1
-MLINKS=		star.1 ustar.1
+USE_GETTEXT=	yes
+USE_ICONV=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800032
-BROKEN=		does not compile
+.if !defined(NO_INSTALL_MANPAGES)
+MAN1=		star.1 srmt.1 tartest.1
+MAN5=		star.5
+MLINKS=		star.1 ustar.1 star.5 ustar.5
+.else
+XMKFLAGS=	XMK_FILE=""
 .endif
 
-post-extract:
-.if ${MACHINE_ARCH} != "i386" || ${CC} != "cc"
-	@${LN} -sf i386-freebsd-cc.rul \
-		${WRKSRC}/RULES/${MACHINE_ARCH}-freebsd-${CC}.rul
-.endif
+MAKE_ENV+=	MAKEFLAGS=${MAKEFLAGS}
+
+PORTDOCS=	README README.crash README.mtio README.pattern STARvsGNUTAR \
+		README.ACL README.largefiles README.otherbugs \
+		README.posix-2001
+post-patch:
+	@${FIND} ${WRKSRC} -type f -print \
+		| ${XARGS} ${REINPLACE_CMD} -e "s@/etc/default@${PREFIX}/etc@g"
+	@${MV} -v ${WRKSRC}/rmt/rmt.1 ${WRKSRC}/rmt/srmt.1
+
+do-build:
+	@cd ${WRKSRC} && ${MAKE_ENV} ${LOCALBASE}/bin/smake
+	@cd ${WRKSRC}/star && ${MAKE_ENV} ${LOCALBASE}/bin/smake -f Makefile.doc
 
 do-install:
-	@${INSTALL_PROGRAM} \
-		${WRKSRC}/star/OBJ/${MACHINE_ARCH}-freebsd-${CC}/star \
-		${PREFIX}/bin
-	@cd ${PREFIX}/bin ; ${LN} -f star ustar
-	@${INSTALL_MAN} ${WRKSRC}/star/star.1 ${MANPREFIX}/man/man1
+	@cd ${WRKSRC}/star && ${MAKE_ENV} ${LOCALBASE}/bin/smake \
+		${INSTALL_TARGET} INS_BASE=${PREFIX} ${XMKFLAGS}
+	@cd ${WRKSRC}/rmt && ${MAKE_ENV} ${LOCALBASE}/bin/smake \
+		${INSTALL_TARGET} INS_BASE=${PREFIX} ${XMKFLAGS}
+	@cd ${WRKSRC}/tartest && ${MAKE_ENV} ${LOCALBASE}/bin/smake \
+		${INSTALL_TARGET} INS_BASE=${PREFIX} ${XMKFLAGS}
+	@${STRIP_CMD} ${PREFIX}/bin/star
+	@${STRIP_CMD} ${PREFIX}/sbin/srmt
+	@${STRIP_CMD} ${PREFIX}/bin/tartest
+	@${INSTALL_DATA} ${WRKSRC}/star/star.dfl ${PREFIX}/etc/star.sample
+	@if [ ! -f ${PREFIX}/etc/star ]; then \
+		${CP} -p ${PREFIX}/etc/star.sample ${PREFIX}/etc/star; \
+	fi
+	@${INSTALL_DATA} ${WRKSRC}/rmt/rmt.dfl ${PREFIX}/etc/rmt.sample
+	@if [ ! -f ${PREFIX}/etc/rmt ]; then \
+		${CP} -p ${PREFIX}/etc/rmt.sample ${PREFIX}/etc/rmt; \
+	fi
 
-.include <bsd.port.post.mk>
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for FILE in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/star/${FILE} ${DOCSDIR}/${FILE}
+.endfor
+.endif
+
+.include <bsd.port.mk>

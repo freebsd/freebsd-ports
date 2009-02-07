@@ -1,0 +1,21 @@
+
+$FreeBSD$
+
+--- rmt/Makefile.orig
++++ rmt/Makefile
+@@ -6,13 +6,13 @@
+ ###########################################################################
+ 
+ INSDIR=		sbin
+-TARGET=		rmt
++TARGET=		srmt
+ CPPOPTS +=	-DUSE_REMOTE
+ CPPOPTS +=	-DUSE_LARGEFILES
+ CFILES=		rmt.c
+ #HFILES=
+ LIBS=		-ldeflt -lschily $(LIB_SOCKET)
+-XMK_FILE=	Makefile.man Makefile.dfl Makefile.doc
++XMK_FILE=	Makefile.man Makefile.doc
+ 
+ ###########################################################################
+ include		$(SRCROOT)/$(RULESDIR)/rules.cmd

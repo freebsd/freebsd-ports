@@ -1,3 +1,10 @@
-@comment $FreeBSD$
 bin/star
+bin/tartest
 bin/ustar
+sbin/srmt
+@unexec if cmp -s %D/etc/rmt %D/etc/rmt.sample; then rm -f %D/etc/rmt; fi
+etc/rmt.sample
+@exec [ -f %B/rmt ] || cp %B/%f %B/rmt
+@unexec if cmp -s %D/etc/star %D/etc/star.sample; then rm -f %D/etc/star; fi
+etc/star.sample
+@exec [ -f %B/star ] || cp %B/%f %B/star

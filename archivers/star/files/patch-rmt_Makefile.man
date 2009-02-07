@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- rmt/Makefile.man.orig
++++ rmt/Makefile.man
+@@ -8,10 +8,10 @@
+ ###########################################################################
+ 
+ MANDIR=		man
+-TARGETMAN=	rmt
++TARGETMAN=	srmt
+ MANSECT=	$(MANSECT_CMD)
+ MANSUFFIX=	$(MANSUFF_CMD)
+-MANFILE=	rmt.1
++MANFILE=	srmt.1
+ 
+ ###########################################################################
+ include		$(SRCROOT)/$(RULESDIR)/rules.man

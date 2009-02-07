@@ -1,0 +1,21 @@
+--- star/Makefile.orig	2008-04-06 20:02:25.000000000 +0200
++++ star/Makefile	2008-05-16 10:49:50.928160632 +0200
+@@ -15,7 +15,7 @@
+ INSDIR=		bin
+ TARGET=		star
+ #SYMLINKS=	ustar tar
+-SYMLINKS=	ustar tar gnutar suntar scpio spax
++SYMLINKS=	ustar
+ CPPOPTS +=	-D__STAR__
+ CPPOPTS +=	-DSET_CTIME -DFIFO -DUSE_MMAP -DUSE_REMOTE -DUSE_RCMD_RSH
+ #CPPOPTS +=	-DSET_CTIME -DFIFO -DUSE_MMAP
+@@ -52,8 +52,7 @@
+ #
+ #	Wenn -lfind, dann auch  $(LIB_INTL)
+ #
+-XMK_FILE=	Makefile.man starformatman.mk scpioman.mk gnutarman.mk \
+-		spaxman.mk suntarman.mk Makefile.dfl Makefile.doc
++XMK_FILE=	Makefile.man starformatman.mk
+ 
+ star_fat.c: star.c
+ 	$(RM) $(RM_FORCE) $@; cp star.c $@
