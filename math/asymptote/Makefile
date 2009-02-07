@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asymptote
-PORTVERSION=	1.59
+PORTVERSION=	1.61
 PORTREVISION=	0
 CATEGORIES=	math
 MASTER_SITES=	SF
@@ -16,7 +16,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A powerful script-based vector graphics language
 
+.if defined(WITH_GSL)
+LIB_DEPENDS+=	gsl.13:${PORTSDIR}/math/gsl
+.endif
+.if defined(WITH_FFTW)
 LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3
+.endif
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \
 		latex:${PORTSDIR}/print/teTeX \
@@ -49,10 +54,6 @@ PLIST_SUB=	MKTEXLSR=${MKTEXLSR}
 
 ALL_TARGET=	asy
 INSTALL_TARGET=	install-asy
-
-.if defined(WITH_GSL)
-LIB_DEPENDS+=	gsl.13:${PORTSDIR}/math/gsl
-.endif
 
 # Documentation
 .if !defined(NOPORTDOCS)

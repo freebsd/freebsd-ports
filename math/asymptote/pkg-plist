@@ -48,6 +48,7 @@ bin/xasy
 %%DATADIR%%/markers.asy
 %%DATADIR%%/math.asy
 %%DATADIR%%/metapost.asy
+%%DATADIR%%/nopapersize.ps
 %%DATADIR%%/obj.asy
 %%DATADIR%%/ode.asy
 %%DATADIR%%/palette.asy
@@ -182,6 +183,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/filegraph.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fillcontour.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fjortoft.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/floor.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/flow.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/flowchartdemo.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fractaltree.asy
@@ -249,6 +251,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mosquito.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multicontour.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/near_earth.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oneoverx.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/onecontour.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/orthocenter.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parametricelevation.asy
