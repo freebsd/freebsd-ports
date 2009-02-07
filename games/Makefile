@@ -438,6 +438,7 @@
     SUBDIR += lincity-ng
     SUBDIR += linux-americasarmy
     SUBDIR += linux-candycruncher-demo
+    SUBDIR += linux-coldwar-demo
     SUBDIR += linux-darwinia-demo
     SUBDIR += linux-defcon
     SUBDIR += linux-doom3
