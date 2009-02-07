@@ -455,6 +455,7 @@
     SUBDIR += linux-gorky17-demo
     SUBDIR += linux-majesty-demo
     SUBDIR += linux-nerogame
+    SUBDIR += linux-ningpo-demo
     SUBDIR += linux-nwnclient
     SUBDIR += linux-nwserver
     SUBDIR += linux-quake3
