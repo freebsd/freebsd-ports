@@ -54,7 +54,7 @@ ALL_TARGET=	bsd
 pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "Use INSTALL_AS_INFOUNZIP=yes to install Info Unzip as ${PREFIX}/bin/info-unzip"
-	@${ECHO} "
+	@${ECHO} ""
 .endif
 
 .if defined(WITH_UNZIP_UNREDUCE)
