@@ -33,7 +33,7 @@ OPTIONS=	PASTE "Paste URLs from clipboard" off \
 		SHOW "Show cache entries" off
 
 USE_BZIP2=	yes
-USE_PERL5=	2.5.8+
+USE_PERL5=	5.8.2+
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
