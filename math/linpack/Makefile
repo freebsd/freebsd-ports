@@ -57,7 +57,7 @@ do-extract:
 .endfor
 
 do-build:
-	cd ${WRKSRC} ; ${SETENV} "FC=${FC}" "F77=${F77}" ${MAKE_ENV} ${MAKE}
+	cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE}
 
 pre-build:
 	${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
