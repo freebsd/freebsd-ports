@@ -1,4 +1,4 @@
-@unexec [ ! -f %D/var/sqwebmail/run/sqwebmail.pid ] && %D/etc/rc.d/sqwebmail-sqwebmaild stop || true
+@unexec [ ! -f /var/sqwebmail/run/sqwebmail.pid ] && %D/etc/rc.d/sqwebmail-sqwebmaild stop || true
 @unexec if cmp -s %D/etc/sqwebmail/ldapaddressbook.dist %D/etc/sqwebmail/ldapaddressbook; then rm -f %D/etc/sqwebmail/ldapaddressbook; fi
 etc/sqwebmail/ldapaddressbook.dist
 @unexec if cmp -s %D/etc/sqwebmail/sqwebmaild.dist %D/etc/sqwebmail/sqwebmaild; then rm -f %D/etc/sqwebmail/sqwebmaild; fi
@@ -77,13 +77,13 @@ share/sqwebmail/webgpg
 %%PORTDOCS%%%%DOCSDIR%%/README.sharedfolders.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/sqwebmail
-%%CACHE%%@dirrm var/sqwebmail/cache
-@dirrm var/sqwebmail/calendar/public
-@dirrm var/sqwebmail/calendar/private
-@dirrm var/sqwebmail/calendar/localcache
-@dirrm var/sqwebmail/calendar
-@dirrm var/sqwebmail/run
-@dirrm var/sqwebmail
+%%CACHE%%@unexec rmdir /var/sqwebmail/cache
+@unexec rmdir /var/sqwebmail/calendar/public
+@unexec rmdir /var/sqwebmail/calendar/private
+@unexec rmdir /var/sqwebmail/calendar/localcache
+@unexec rmdir /var/sqwebmail/calendar
+@unexec rmdir /var/sqwebmail/run
+@unexec rmdir /var/sqwebmail
 @dirrm share/sqwebmail/html/en-us
 @dirrm share/sqwebmail/html
 @dirrm share/sqwebmail
