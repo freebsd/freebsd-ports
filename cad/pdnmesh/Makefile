@@ -22,21 +22,21 @@ LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
-WITH_ATLAS=     yes
+WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas -latlas
 LAPACK=		-lalapack -lcblas
 .else
-LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=   lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif
 
 USE_FORTRAN=	yes
-CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}" BLAS_LIBS="${BLAS}" LAPACK_LIBS="${LAPACK}"
+CONFIGURE_ENV+=	BLAS_LIBS="${BLAS}" LAPACK_LIBS="${LAPACK}"
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
