@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://darcs.net/
 
@@ -25,7 +24,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		CFLAGS=""
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-INSTALL_TARGET=	installbin
+INSTALL_TARGET=	install
+PORTDOCS=	manual examples
 
 .include <bsd.port.pre.mk>
 
@@ -43,9 +43,12 @@ PLIST_SUB+=	CGIDIR=${CGIDIR} SERVER=""
 PLIST_SUB+=	SERVER="@comment "
 .endif
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base \
+		latex2html:${PORTSDIR}/textproc/latex2html
 ALL_TARGET+=	doc/manual/darcs.ps doc/manual/patch-theory.pdf doc/manual/index.html
-INSTALL_TARGET+=	installdocs
+INSTALL_TARGET+=	install-ps install-pdf install-html install-examples
+.else
+CONFIGURE_ARGS+=	--without-manual
 .endif
 
 MAN1=	darcs.1
@@ -55,6 +58,24 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libexecdir)/cgi-bin|${PREFIX}/${CGIDIR}| ; \
 		s|darcs/cgi.conf|darcs/cgi.conf.sample|' \
 		${WRKSRC}/${MAKEFILE}
+.endif
+
+pre-configure:
+.if ${OSVERSION} < 700000
+	@${ECHO_MSG}	""
+	@${ECHO_MSG}	"###############################################################################"
+	@${ECHO_MSG}	"                                                                               "
+	@${ECHO_MSG}	"                                A T T E N T I O N                              "
+	@${ECHO_MSG}	"                                                                               "
+	@${ECHO_MSG}	"If you experience problems during the configure process, please add the        "
+	@${ECHO_MSG}    "following lines to your /etc/libmap.conf configuration file:                   "
+	@${ECHO_MSG}    "                                                                               "
+	@${ECHO_MSG}    "libpthread.so.1 libthr.so.1                                                    "
+	@${ECHO_MSG}    "libpthread.so.2 libthr.so.2                                                    "
+	@${ECHO_MSG}    "libkse.so.3 libthr.so.3                                                        "
+	@${ECHO_MSG}    "                                                                               "
+	@${ECHO_MSG}	"###############################################################################"
+	@${ECHO_MSG}	""
 .endif
 
 post-install:

@@ -12,83 +12,8 @@ etc/bash_completion.d/darcs
 %%SERVER%%share/darcs/xslt/repos.xslt
 %%SERVER%%share/darcs/xslt/rss.xslt
 %%SERVER%%share/darcs/xslt/styles.css
-%%PORTDOCS%%%%DOCSDIR%%/examples/zsh_completion_new
-%%PORTDOCS%%%%DOCSDIR%%/examples/zsh_completion_old
-%%PORTDOCS%%%%DOCSDIR%%/manual/WARNINGS
-%%PORTDOCS%%%%DOCSDIR%%/manual/contents.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/crossref.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/darcs.css
-%%PORTDOCS%%%%DOCSDIR%%/manual/darcs.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/darcs.pdf
-%%PORTDOCS%%%%DOCSDIR%%/manual/darcs.ps
-%%PORTDOCS%%%%DOCSDIR%%/manual/footnode.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/images.aux
-%%PORTDOCS%%%%DOCSDIR%%/manual/images.log
-%%PORTDOCS%%%%DOCSDIR%%/manual/images.pl
-%%PORTDOCS%%%%DOCSDIR%%/manual/images.tex
-%%PORTDOCS%%%%DOCSDIR%%/manual/img1.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img10.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img11.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img12.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img13.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img14.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img15.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img16.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img17.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img18.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img19.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img2.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img20.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img21.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img22.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img23.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img24.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img25.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img26.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img27.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img28.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img29.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img3.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img30.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img31.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img32.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img33.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img34.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img35.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img36.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img4.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img5.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img6.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img7.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img8.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/img9.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/index.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/internals.pl
-%%PORTDOCS%%%%DOCSDIR%%/manual/labels.pl
-%%PORTDOCS%%%%DOCSDIR%%/manual/next.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/next_g.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/node1.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node10.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node11.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node2.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node3.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node4.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node5.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node6.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node7.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node8.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node9.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/nx_grp_g.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/patch-theory.pdf
-%%PORTDOCS%%%%DOCSDIR%%/manual/prev.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/prev_g.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/up.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/up_g.png
 @dirrm etc/bash_completion.d
 %%SERVER%%@dirrmtry etc/darcs
 %%SERVER%%@dirrmtry www/cgi-bin
 %%SERVER%%@dirrm share/darcs/xslt
 %%SERVER%%@dirrm share/darcs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
