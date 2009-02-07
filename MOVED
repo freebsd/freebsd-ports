@@ -3806,3 +3806,4 @@ net/gacxtool||2009-02-03|Has expired: depends on expired, broken port
 devel/py-coro||2009-02-03|Has expired: has been broken for more than 6 months
 chinese/stardict2-dict-zh_TW||2009-02-03|Has expired: has been broken for more than 6 months
 x11-themes/gtk-industrial-theme||2009-02-03|Has expired: has been broken for more than 6 months
+sysutils/srmt||2009-02-07|Moved into archivers/star

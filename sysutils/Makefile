@@ -695,7 +695,6 @@
     SUBDIR += spassgen
     SUBDIR += spindown
     SUBDIR += spinner
-    SUBDIR += srmt
     SUBDIR += ssync
     SUBDIR += stalepid
     SUBDIR += stmpclean
