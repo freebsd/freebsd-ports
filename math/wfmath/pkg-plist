@@ -35,6 +35,7 @@ include/wfmath-0.3/wfmath/intersect.h
 include/wfmath-0.3/wfmath/wfmath.h
 include/wfmath-0.3/wfmath/stream.h
 include/wfmath-0.3/wfmath/atlasconv.h
+include/wfmath-0.3/wfmath/zero.h
 @dirrm include/wfmath-0.3/wfmath
 @dirrm include/wfmath-0.3
 libdata/pkgconfig/wfmath-0.3.pc
