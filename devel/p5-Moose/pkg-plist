@@ -51,7 +51,7 @@
 %%SITE_PERL%%/Moose/Meta/Method/Constructor.pm
 %%SITE_PERL%%/Moose/Meta/Method/Destructor.pm
 %%SITE_PERL%%/Moose/Meta/Method/Delegation.pm
-%%SITE_PERL%%/Moose/Meta/Method/Overriden.pm
+%%SITE_PERL%%/Moose/Meta/Method/Overridden.pm
 %%SITE_PERL%%/Moose/Meta/Role.pm
 %%SITE_PERL%%/Moose/Meta/Role/Application.pm
 %%SITE_PERL%%/Moose/Meta/Role/Application/RoleSummation.pm
