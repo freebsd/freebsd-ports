@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://electricsheep.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	A nice distributed screensaver
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
