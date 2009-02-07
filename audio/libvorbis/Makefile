@@ -7,7 +7,7 @@
 
 PORTNAME=	libvorbis
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/ \
