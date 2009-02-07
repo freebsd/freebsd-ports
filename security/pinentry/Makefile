@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	pinentry
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT?=	A collection of simple PIN or passphrase entry dialogs
 
 LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt \
