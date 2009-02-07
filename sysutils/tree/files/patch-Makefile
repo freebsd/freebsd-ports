@@ -1,5 +1,8 @@
---- Makefile.orig	2008-09-22 15:51:25.000000000 +0800
-+++ Makefile	2008-09-22 15:56:58.000000000 +0800
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
 @@ -6,27 +6,27 @@
  # warranties, including, without limitation, the implied warranties
  # of merchant-ability and fitness for a particular purpose.
@@ -7,9 +10,10 @@
 -prefix = /usr
 +prefix = ${PREFIX}
  
- CC=gcc
+-CC=gcc
++CC?=gcc
  
- VERSION=1.5.2.1
+ VERSION=1.5.2.2
  TREE_DEST=tree
  BINDIR=${prefix}/bin
 -MAN=tree.1
@@ -33,13 +37,13 @@
 +LDFLAGS?=-s
 +XOBJS=strverscmp.o
  
- # Uncomment for Cygwin:
- #CFLAGS=-O2 -Wall -fomit-frame-pointer -DCYGWIN
-@@ -68,13 +68,11 @@
+ # Uncomment for Solaris:
+ #CC=cc
+@@ -82,13 +82,11 @@
  	if [ -f tree.o ]; then rm *.o; fi
  	rm -f *~
  
--install:
+-install: tree
 -	install -d $(BINDIR)
 -	install -d $(MANDIR)
 -	if [ -e $(TREE_DEST) ]; then \
@@ -47,8 +51,8 @@
 -	fi
 -	install man/$(MAN) $(MANDIR)/$(MAN)
 +install: $(TREE_DEST)
-+	$(MKDIR) $(BINDIR)
-+	$(MKDIR) $(MANDIR)
++	@$(MKDIR) $(BINDIR)
++	@$(MKDIR) $(MANDIR)
 +	${BSD_INSTALL_PROGRAM} $(TREE_DEST) $(BINDIR)
 +	${BSD_INSTALL_MAN} $(MAN) $(MANDIR)
  
