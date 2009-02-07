@@ -364,6 +364,7 @@
     SUBDIR += kdeadmin4
     SUBDIR += kdirstat
     SUBDIR += keep
+    SUBDIR += kgrubeditor
     SUBDIR += kgtk
     SUBDIR += kiconvtool
     SUBDIR += kkbswitch

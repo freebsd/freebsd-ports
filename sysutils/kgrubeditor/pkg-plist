@@ -1,0 +1,29 @@
+lib/kde4/kgrubeditor.so
+share/applications/kde4/kgrubeditor_app.desktop
+share/apps/kgrubeditor/icons/arch.png
+share/apps/kgrubeditor/icons/debian.png
+share/apps/kgrubeditor/icons/fedora.png
+share/apps/kgrubeditor/icons/gentoo.png
+share/apps/kgrubeditor/icons/kubuntu.png
+share/apps/kgrubeditor/icons/mandriva.png
+share/apps/kgrubeditor/icons/mepis.png
+share/apps/kgrubeditor/icons/mint.png
+share/apps/kgrubeditor/icons/pclinuxos.png
+share/apps/kgrubeditor/icons/sabayon.png
+share/apps/kgrubeditor/icons/slackware.png
+share/apps/kgrubeditor/icons/suse.png
+share/apps/kgrubeditor/icons/ubuntu.png
+share/apps/kgrubeditor/icons/windows.png
+share/apps/kgrubeditor/icons/xubuntu.png
+share/config.kcfg/kgrubeditor.kcfg
+share/config/kgrubeditor_splash.knsrc
+share/icons/hicolor/128x128/apps/kgrubeditor.png
+share/icons/hicolor/16x16/apps/kgrubeditor.png
+share/icons/hicolor/22x22/apps/kgrubeditor.png
+share/icons/hicolor/32x32/apps/kgrubeditor.png
+share/icons/hicolor/48x48/apps/kgrubeditor.png
+share/icons/hicolor/64x64/apps/kgrubeditor.png
+share/icons/hicolor/scalable/apps/kgrubeditor.svgz
+share/kde4/services/kgrubeditor.desktop
+@dirrm share/apps/kgrubeditor/icons
+@dirrm share/apps/kgrubeditor
