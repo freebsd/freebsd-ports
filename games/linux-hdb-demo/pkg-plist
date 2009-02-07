@@ -1,0 +1,14 @@
+bin/linux-hdb
+%%DATADIR%%/hdb_demo
+%%DATADIR%%/hdb_demo.dynamic
+%%DATADIR%%/music/jungle.ogg
+%%DATADIR%%/music/low_techno.ogg
+%%DATADIR%%/music/mysterious_quiet.ogg
+%%DATADIR%%/music/on_a_mission.ogg
+%%DATADIR%%/music/jaround.ogg
+%%DATADIR%%/hyperdemo.mpc
+%%DATADIR%%/Resources/pyrogon.ttf
+%%DATADIR%%/Resources/cruncher.pyz
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/Resources
+@dirrm %%DATADIR%%
