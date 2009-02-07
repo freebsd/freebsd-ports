@@ -26,9 +26,7 @@ USE_FORTRAN=	yes
 FORTRANLIBS=	-lgfortranbegin -lgfortran
 GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
-		FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_ARGS+=	AUTOMAKE="${TRUE}"
 
 MAN1=		mbdyn.1
@@ -75,7 +73,7 @@ CONFIGURE_ARGS+=	--with-metis=no
 
 .if defined(WITH_CHACO)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libchaco.a:${PORTSDIR}/math/chaco
-CONFIGURE_ARGS+=	--with-chaco=yes 
+CONFIGURE_ARGS+=	--with-chaco=yes
 .else
 CONFIGURE_ARGS+=	--with-chaco=no
 .endif
