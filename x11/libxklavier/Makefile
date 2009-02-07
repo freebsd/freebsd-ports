@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libxklavier
-PORTVERSION=	3.7
+PORTVERSION=	3.8
 PORTEPOCH=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	SF
@@ -21,6 +21,7 @@ RUN_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp \
     		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
 USE_XORG=	x11 xkbfile
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libxml2 glib20 ltverhack:12
 USE_LDCONFIG=	yes
