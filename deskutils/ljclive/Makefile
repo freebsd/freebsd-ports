@@ -18,6 +18,6 @@ MAN1=	clive.1
 
 GNU_CONFIGURE=	yes
 
-CONFLICTS=	py*-clive-[0-9]*
+CONFLICTS=	*clive-[1-9]*
 
 .include <bsd.port.mk>
