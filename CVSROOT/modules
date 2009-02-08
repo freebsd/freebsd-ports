@@ -5072,6 +5072,7 @@ hs-gtk2hs                       ports/x11-toolkits/hs-gtk2hs
 hs-haddock                      ports/devel/hs-haddock
 hs-haddock-docs                 ports/devel/hs-haddock-docs
 hs-happy                        ports/devel/hs-happy
+hs-hat                          ports/devel/hs-hat
 hs-haxml                        ports/textproc/hs-haxml
 hs-hdoc                         ports/devel/hs-hdoc
 hs-hgl                          ports/graphics/hs-hgl
@@ -7642,6 +7643,8 @@ linux-aspell                    ports/textproc/linux-aspell
 linux-atk                       ports/accessibility/linux-atk
 linux-blackdown-jdk14           ports/java/linux-blackdown-jdk14
 linux-cairo                     ports/graphics/linux-cairo
+linux-candycruncher-demo        ports/games/linux-candycruncher-demo
+linux-coldwar-demo              ports/games/linux-coldwar-demo
 linux-curl                      ports/ftp/linux-curl
 linux-darwinia-demo             ports/games/linux-darwinia-demo
 linux-defcon                    ports/games/linux-defcon
@@ -7678,10 +7681,12 @@ linux-freealut                  ports/audio/linux-freealut
 linux-gdk-pixbuf                ports/graphics/linux-gdk-pixbuf
 linux-geepee32                  ports/emulators/linux-geepee32
 linux-gid                       ports/cad/linux-gid
+linux-gorky17-demo              ports/games/linux-gorky17-demo
 linux-gspca-kmod                ports/multimedia/linux-gspca-kmod
 linux-gtk                       ports/x11-toolkits/linux-gtk
 linux-gtk-bluecurve-theme       ports/x11-themes/linux-gtk-bluecurve-theme
 linux-gtk2                      ports/x11-toolkits/linux-gtk2
+linux-hdb-demo                  ports/games/linux-hdb-demo
 linux-hicolor-icon-theme        ports/x11-themes/linux-hicolor-icon-theme
 linux-imlib                     ports/graphics/linux-imlib
 linux-j                         ports/lang/linux-j
@@ -7705,6 +7710,7 @@ linux-libtheora                 ports/multimedia/linux-libtheora
 linux-libvorbis                 ports/audio/linux-libvorbis
 linux-libxml                    ports/textproc/linux-libxml
 linux-libxml2                   ports/textproc/linux-libxml2
+linux-majesty-demo              ports/games/linux-majesty-demo
 linux-mbrola                    ports/audio/linux-mbrola
 linux-megacli                   ports/sysutils/linux-megacli
 linux-megacli2                  ports/sysutils/linux-megacli2
@@ -7715,6 +7721,7 @@ linux-mplayer-plugin            ports/www/linux-mplayer-plugin
 linux-nero                      ports/sysutils/linux-nero
 linux-nerodigitalaudio          ports/audio/linux-nerodigitalaudio
 linux-nerogame                  ports/games/linux-nerogame
+linux-ningpo-demo               ports/games/linux-ningpo-demo
 linux-nvu                       ports/www/linux-nvu
 linux-nwnclient                 ports/games/linux-nwnclient
 linux-nwserver                  ports/games/linux-nwserver
@@ -20926,8 +20933,6 @@ tcl84                           ports/lang/tcl84
 tcl84-thread                    ports/lang/tcl84-thread
 tcl85                           ports/lang/tcl85
 tcl85-thread                    ports/lang/tcl85-thread
-tcl86                           ports/lang/tcl86
-tcl86-thread                    ports/lang/tcl86-thread
 tclExpat                        ports/textproc/tclExpat
 tclX                            ports/lang/tclX
 tclcheck                        ports/devel/tclcheck
@@ -21195,8 +21200,6 @@ tk84                            ports/x11-toolkits/tk84
 tk84-thread                     ports/x11-toolkits/tk84-thread
 tk85                            ports/x11-toolkits/tk85
 tk85-thread                     ports/x11-toolkits/tk85-thread
-tk86                            ports/x11-toolkits/tk85
-tk86-thread                     ports/x11-toolkits/tk85-thread
 tkXwin                          ports/x11/tkXwin
 tkabber                         ports/net-im/tkabber
 tkabber-devel                   ports/net-im/tkabber-devel
