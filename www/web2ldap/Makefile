@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	web2ldap
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.0.8
 CATEGORIES=	www
 MASTER_SITES=	http://www.web2ldap.de/download/ \
 		ftp://ftp.ipt.ru/pub/download/

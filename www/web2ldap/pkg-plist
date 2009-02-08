@@ -219,6 +219,8 @@
 %%DATADIR%%/pylib/w2lapp/schema/plugins/subentries.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/vpim.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/vpim.pyc
+%%DATADIR%%/pylib/w2lapp/schema/plugins/x500dsa.py
+%%DATADIR%%/pylib/w2lapp/schema/plugins/x500dsa.pyc
 %%DATADIR%%/pylib/w2lapp/schema/syntaxes.py
 %%DATADIR%%/pylib/w2lapp/schema/syntaxes.pyc
 %%DATADIR%%/pylib/w2lapp/schema/viewer.py
