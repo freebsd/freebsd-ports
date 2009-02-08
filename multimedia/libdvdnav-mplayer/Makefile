@@ -7,6 +7,7 @@
 
 PORTNAME=	libdvdnav-mplayer
 PORTVERSION=	4.1.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/dvdnav/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/dvdnav/ \
@@ -20,7 +21,7 @@ DISTNAME=	libdvdnav-${PORTVERSION}
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Mplayer fork of the lidvdnav project
 
-LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
 CFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"

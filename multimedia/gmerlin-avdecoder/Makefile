@@ -7,7 +7,7 @@
 
 PORTNAME=	gmerlin-avdecoder
 PORTVERSION=	0.1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin
 
@@ -129,7 +129,7 @@ CONFIGURE_ARGS+=--disable-faad2
 .endif
 
 .if !defined(WITHOUT_DVDREAD)
-LIB_DEPENDS+=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS+=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 .else
 CONFIGURE_ARGS+=--disable-dvdread
 .endif
@@ -180,6 +180,8 @@ CXXFLAGS+=	-O3 -funroll-all-loops -ffast-math
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3 -funroll-all-loops -ffast-math||g; \
 		/LIBS/ s|-ldl||g; s|^LDFLAGS="|&$${LDFLAGS} |' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|#if DVDREAD_VERSION < 905|#if DVDREAD_VERSION < 904|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^LIBS = / s|$$| @LIBINTL@ -lz|' \
 		${WRKSRC}/tests/Makefile.in

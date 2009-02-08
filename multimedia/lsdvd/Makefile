@@ -7,14 +7,14 @@
 
 PORTNAME=	lsdvd
 PORTVERSION=	0.16
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Print information about the contents and structure of a DVD
 
-LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
