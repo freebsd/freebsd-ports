@@ -7,10 +7,10 @@
 
 PKGNAMESUFFIX=	-slang
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Slang interface for TiMidity++
 
-MASTERDIR=	${.CURDIR}/../..//audio/timidity++
+MASTERDIR=	${.CURDIR}/../../audio/timidity++
 
 PLIST_FILES=	${TIMID_LIBDIR}/interface_s.so
 

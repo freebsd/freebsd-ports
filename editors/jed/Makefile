@@ -7,7 +7,7 @@
 
 PORTNAME=	jed
 PORTVERSION=	0.99.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v${PORTVERSION:R}/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/jed/v${PORTVERSION:R}/ \
@@ -19,10 +19,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A SLang-based text editor
 
+LIB_DEPENDS=   slang.2:${PORTSDIR}/devel/libslang2
+
 CONFLICTS=	jed-devel-[0-9]*
 
-OPTIONS=	X11 "Build xjed (depends of X11)" on \
-		SLANG2 "Build using libslang-2.x" off
+OPTIONS=	X11 "Build xjed (depends of X11)" on
 
 USE_BZIP2=	yes
 DIST_SUBDIR=	jed
@@ -43,11 +44,7 @@ MAN1=		jed.1 rgrep.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SLANG2)
 LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
-.else
-LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
-.endif
 
 .if defined(WITHOUT_X11)
 PLIST_SUB+=	XJED="@comment "

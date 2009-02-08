@@ -7,7 +7,7 @@
 
 PORTNAME=	newt
 PORTVERSION=	0.51.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		# ftp://ftp.redhat.com/pub/redhat/linux/rawhide/SRPMS/SRPMS/
@@ -17,7 +17,7 @@ PKGNAMESUFFIX=	${PYTHONSUFFIX}${TCLSUFFIX}
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Not Erik's Windowing Toolkit:  console I/O handling library#'
 
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
+LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2 \
 		popt.0:${PORTSDIR}/devel/popt
 
 GNU_CONFIGURE=	yes

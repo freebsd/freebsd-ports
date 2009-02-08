@@ -13,14 +13,10 @@ MASTER_SITE_SUBDIR=	fenner/ruby-contrib
 DISTNAME=	${PORTNAME}lib-${PORTVERSION:}-1m
 DIST_SUBDIR=	ruby
 
-MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	S-Lang extension module for Ruby
+MAINTAINER=	pgollucci@FreeBSD.org
+COMMENT=	S-Lang extension module for Ruby
 
-.if defined(WITH_JAPANESE)
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
-.else
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
-.endif
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

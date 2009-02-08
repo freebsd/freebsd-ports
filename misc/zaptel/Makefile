@@ -7,6 +7,7 @@
 
 PORTNAME=	zaptel
 PORTVERSION=	1.4.11
+PORTREVISION=	1
 CATEGORIES=	misc kld
 MASTER_SITES=	http://people.freebsd.org/~gonzo/zaptel/
 DISTNAME=	${PORTNAME}-bsd-${PORTVERSION}
