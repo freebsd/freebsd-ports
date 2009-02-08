@@ -13,7 +13,6 @@
 %%RUBY_SITELIBDIR%%/web/controller.rb
 %%RUBY_SITELIBDIR%%/web/linkextor.rb
 %%RUBY_SITELIBDIR%%/web/css/scan.rb
-%%RUBY_SITELIBDIR%%/web/css/scan.rl
 %%RUBY_SITELIBDIR%%/web/agent/passwordmanager.rb
 %%RUBY_SITELIBDIR%%/web/agent/robots.rb
 %%RUBY_SITELIBDIR%%/web/agent/lirs.rb
