@@ -20,50 +20,50 @@ lib/jspice3/scripts/spinit
 @dirrm lib/jspice3/sced
 @dirrm lib/jspice3/scripts
 @dirrm lib/jspice3
-%%PORTDOCS%%%%EXAMPLESDIR%%/bjtnoise.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/bsim1tst.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/bsim2tst.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/diffpair.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/diodisto.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/ltra_1.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/ltra_2.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/ltra_3.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/mixdisto.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/mos6inv.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/mosamp2.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/mosmem.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/process.mod
-%%PORTDOCS%%%%EXAMPLESDIR%%/process.pro
-%%PORTDOCS%%%%EXAMPLESDIR%%/pz2.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/pzt.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/rc.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/rca3040.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/resnoise.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/rtlinv.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/schmitt.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/simplepz.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/testc.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/cryocmos/cryo_model.lib
-%%PORTDOCS%%%%EXAMPLESDIR%%/cryocmos/nmos_test.sp
-%%PORTDOCS%%%%EXAMPLESDIR%%/cryocmos/pmos_test.sp
-%%PORTDOCS%%%%EXAMPLESDIR%%/cryocmos/ringosc_meas.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/cryocmos/ringosc_test.out
-%%PORTDOCS%%%%EXAMPLESDIR%%/cryocmos/ringosc_test.sp
-%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/ex8.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/exjjintr.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/exjjiv.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/intr
-%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/jjcntr.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/jjoprng
-%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/jtl
-%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/jtl1
-%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/mvtltest
-%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/shutop
-%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/shuttle.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/shuttlea.cir
-%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/strange
-%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/thcntr
-%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/theta
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/cryocmos
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/josephson
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bjtnoise.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bsim1tst.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bsim2tst.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/diffpair.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/diodisto.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ltra_1.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ltra_2.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ltra_3.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mixdisto.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mos6inv.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mosamp2.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mosmem.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/process.mod
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/process.pro
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pz2.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pzt.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rc.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rca3040.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resnoise.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rtlinv.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/schmitt.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplepz.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testc.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cryocmos/cryo_model.lib
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cryocmos/nmos_test.sp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cryocmos/pmos_test.sp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cryocmos/ringosc_meas.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cryocmos/ringosc_test.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cryocmos/ringosc_test.sp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/josephson/ex8.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/josephson/exjjintr.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/josephson/exjjiv.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/josephson/intr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/josephson/jjcntr.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/josephson/jjoprng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/josephson/jtl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/josephson/jtl1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/josephson/mvtltest
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/josephson/shutop
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/josephson/shuttle.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/josephson/shuttlea.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/josephson/strange
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/josephson/thcntr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/josephson/theta
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cryocmos
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/josephson
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	jspice3
-PORTVERSION=	2.5
-PORTREVISION=	6
+PORTVERSION=	2.5.011109
+PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	http://www.wrcad.com/ftp/pub/	\
 		ftp://ftp.srware.com/pub/
+DISTNAME=	${PORTNAME}-2.5-011109
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An adaptation of the Berkeley Spice3f4 with superconductivity
@@ -18,6 +19,7 @@ COMMENT=	An adaptation of the Berkeley Spice3f4 with superconductivity
 CONFLICTS=	spice-[0-9]*
 
 OPTIONS=	X "Use X window system" on
+WRKSRC=		${WRKDIR}/${PORTNAME}-2.5
 
 .include <bsd.port.pre.mk>
 
@@ -43,7 +45,7 @@ do-install:
 	@(cd ${WRKSRC}/src/bin;${SETENV} ${MAKE_ENV} ${MAKE} install)
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	${MV} ${PREFIX}/lib/jspice3/examples ${EXAMPLESDIR}
 .else
 	${RM} -R ${PREFIX}/lib/jspice3/examples
