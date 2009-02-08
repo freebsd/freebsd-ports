@@ -214,5 +214,3 @@ share/locale/fy/LC_MESSAGES/sweeper.mo
 share/locale/fy/LC_MESSAGES/timezones4.mo
 share/locale/fy/LC_MESSAGES/useraccount.mo
 share/locale/fy/entry.desktop
-@dirrm share/locale/fy/LC_MESSAGES
-@dirrm share/locale/fy

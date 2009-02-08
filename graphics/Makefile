@@ -361,6 +361,7 @@
     SUBDIR += kgraphviewer
     SUBDIR += kiconedit
     SUBDIR += kipi-plugins
+    SUBDIR += kipi-plugins-kde4
     SUBDIR += kisomandel
     SUBDIR += kix-kmod
     SUBDIR += kludge3d

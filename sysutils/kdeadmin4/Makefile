@@ -8,7 +8,7 @@ PORTNAME=	kdeadmin
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	sysutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -27,17 +27,17 @@ QT_COMPONENTS=	corelib opengl dbus qt3support designer network svg qtestlib \
 		network porting_build qmake_build moc_build rcc_build \
 		uic_build uic3_build
 #USE_OPENLDAP=	yes
-
-# dirty hack should fix in upstream?
-LDFLAGS=	-lcrypt
+PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 CMAKE_ARGS+=	-DBUILD_kpackage:BOOL=Off \
 		-DBUILD_lilo-config:BOOL=Off
 
-post-patch:
+post-extract:
 	${MKDIR} ${WRKSRC}
+
+post-patch:
 	${REINPLACE_CMD} -e \
 	's,$${LIB_INSTALL_DIR}/pkgconfig,libdata/pkgconfig,' \
-	${WRKSRC}/../knetworkconf/backends/CMakeLists.txt
+	${PATCH_WRKSRC}/knetworkconf/backends/CMakeLists.txt
 
 .include <bsd.port.mk>

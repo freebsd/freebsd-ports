@@ -26,7 +26,6 @@ include/konqmimedata.h
 include/konqsidebarplugin.h
 include/libkonq_export.h
 lib/kde4/dolphinpart.so
-lib/kde4/kcm_css.so
 lib/kde4/kcm_dolphin.so
 lib/kde4/kcm_filetypes.so
 lib/kde4/kcm_history.so
@@ -48,7 +47,6 @@ lib/kde4/kcm_usb.so
 lib/kde4/kcm_useraccount.so
 lib/kde4/kded_favicons.so
 lib/kde4/kded_konqy_preloader.so
-lib/kde4/kded_kwrited.so
 lib/kde4/khtmlkttsdplugin.so
 lib/kde4/konq_aboutpage.so
 lib/kde4/konq_remoteencoding.so
@@ -67,7 +65,7 @@ lib/kde4/libnsplugin.so
 lib/kde4/plasma_applet_folderview.so
 lib/libdolphinprivate.so
 lib/libdolphinprivate.so.5
-lib/libdolphinprivate.so.5.0.0
+lib/libdolphinprivate.so.5.0.1
 lib/libkdeinit4_keditbookmarks.so
 lib/libkdeinit4_kfmclient.so
 lib/libkdeinit4_kinfocenter.so
@@ -76,13 +74,13 @@ lib/libkdeinit4_konsole.so
 lib/libkdeinit4_kwrite.so
 lib/libkonq.so
 lib/libkonq.so.7
-lib/libkonq.so.7.0.0
+lib/libkonq.so.7.0.1
 lib/libkonqsidebarplugin.so
 lib/libkonqsidebarplugin.so.5
-lib/libkonqsidebarplugin.so.5.0.0
+lib/libkonqsidebarplugin.so.5.0.1
 lib/libkonquerorprivate.so
 lib/libkonquerorprivate.so.5
-lib/libkonquerorprivate.so.5.0.0
+lib/libkonquerorprivate.so.5.0.1
 share/applications/kde4/Home.desktop
 share/applications/kde4/dolphin.desktop
 share/applications/kde4/kappfinder.desktop
@@ -341,7 +339,6 @@ share/apps/kconf_update/kfmclient_3_2_update.sh
 share/apps/kconf_update/konqsidebartng.upd
 share/apps/kconf_update/move_favicons.sh
 share/apps/kconf_update/move_konqsidebartng_entries.sh
-share/apps/kconf_update/socks.upd
 share/apps/kcontrol/pics/onlyone.png
 share/apps/kcontrol/pics/overlapping.png
 share/apps/kdm/pics/users/Blackbox.png
@@ -392,12 +389,6 @@ share/apps/konqueror/about/plugins_rtl.html
 share/apps/konqueror/about/specs.html
 share/apps/konqueror/about/tips.html
 share/apps/konqueror/about/top-left-konqueror.png
-share/apps/konqueror/icons/crystalsvg/16x16/actions/kde1.png
-share/apps/konqueror/icons/crystalsvg/16x16/actions/kde2.png
-share/apps/konqueror/icons/crystalsvg/16x16/actions/kde3.png
-share/apps/konqueror/icons/crystalsvg/16x16/actions/kde4.png
-share/apps/konqueror/icons/crystalsvg/16x16/actions/kde5.png
-share/apps/konqueror/icons/crystalsvg/16x16/actions/kde6.png
 share/apps/konqueror/konqueror.rc
 share/apps/konqueror/pics/arrow_bottomleft.png
 share/apps/konqueror/pics/arrow_bottomright.png
@@ -428,7 +419,6 @@ share/apps/konsole/linux.keytab
 share/apps/konsole/partui.rc
 share/apps/konsole/sessionui.rc
 share/apps/konsole/solaris.keytab
-share/apps/konsole/vt420pc.keytab
 share/apps/kwrite/kwriteui.rc
 share/apps/plugin/nspluginpart.rc
 share/autostart/konqy_preload.desktop
@@ -599,7 +589,6 @@ share/icons/oxygen/128x128/apps/wp.png
 share/icons/oxygen/128x128/apps/xclock.png
 share/icons/oxygen/128x128/apps/xfmail.png
 share/icons/oxygen/128x128/apps/xmag.png
-share/icons/oxygen/16x16/actions/view-file-columns.png
 share/icons/oxygen/16x16/apps/abiword.png
 share/icons/oxygen/16x16/apps/alevt.png
 share/icons/oxygen/16x16/apps/applixware.png
@@ -651,9 +640,7 @@ share/icons/oxygen/16x16/apps/xmms.png
 share/icons/oxygen/16x16/apps/xosview.png
 share/icons/oxygen/16x16/apps/xpaint.png
 share/icons/oxygen/16x16/apps/xv.png
-share/icons/oxygen/22x22/actions/view-file-columns.png
 share/icons/oxygen/22x22/apps/email.png
-share/icons/oxygen/32x32/actions/view-file-columns.png
 share/icons/oxygen/32x32/apps/abiword.png
 share/icons/oxygen/32x32/apps/alevt.png
 share/icons/oxygen/32x32/apps/applixware.png
@@ -708,7 +695,6 @@ share/icons/oxygen/32x32/apps/xmms.png
 share/icons/oxygen/32x32/apps/xosview.png
 share/icons/oxygen/32x32/apps/xpaint.png
 share/icons/oxygen/32x32/apps/xv.png
-share/icons/oxygen/48x48/actions/view-file-columns.png
 share/icons/oxygen/48x48/apps/abiword.png
 share/icons/oxygen/48x48/apps/applixware.png
 share/icons/oxygen/48x48/apps/blender.png
@@ -761,7 +747,6 @@ share/icons/oxygen/64x64/apps/wp.png
 share/icons/oxygen/64x64/apps/xclock.png
 share/icons/oxygen/64x64/apps/xfmail.png
 share/icons/oxygen/64x64/apps/xmag.png
-share/icons/oxygen/scalable/actions/view-file-columns.svgz
 share/icons/oxygen/scalable/apps/aim.svgz
 share/icons/oxygen/scalable/apps/antivirus.svgz
 share/icons/oxygen/scalable/apps/applixware.svgz
@@ -788,6 +773,7 @@ share/icons/oxygen/scalable/apps/xclock.svgz
 share/icons/oxygen/scalable/apps/xeyes.svgz
 share/icons/oxygen/scalable/apps/xpaint.svgz
 share/kde4/services/ServiceMenus/konsolehere.desktop
+share/kde4/services/bookmarks.desktop
 share/kde4/services/cache.desktop
 share/kde4/services/cookies.desktop
 share/kde4/services/desktoppath.desktop
@@ -796,8 +782,6 @@ share/kde4/services/dma.desktop
 share/kde4/services/dolphinpart.desktop
 share/kde4/services/ebrowsing.desktop
 share/kde4/services/filebehavior.desktop
-share/kde4/services/filebrowser.desktop
-share/kde4/services/filepreviews.desktop
 share/kde4/services/filetypes.desktop
 share/kde4/services/interrupts.desktop
 share/kde4/services/ioports.desktop
@@ -806,7 +790,6 @@ share/kde4/services/kcm_memory.desktop
 share/kde4/services/kcm_partition.desktop
 share/kde4/services/kcm_pci.desktop
 share/kde4/services/kcm_useraccount.desktop
-share/kde4/services/kcmcss.desktop
 share/kde4/services/kcmdolphin.desktop
 share/kde4/services/kcmhistory.desktop
 share/kde4/services/kcmkonqyperformance.desktop
@@ -815,11 +798,10 @@ share/kde4/services/kcmsolidproc.desktop
 share/kde4/services/kcmusb.desktop
 share/kde4/services/kded/favicons.desktop
 share/kde4/services/kded/konqy_preloader.desktop
-share/kde4/services/kded/kwrited.desktop
 share/kde4/services/kfindpart.desktop
+share/kde4/services/khtml_appearance.desktop
 share/kde4/services/khtml_behavior.desktop
 share/kde4/services/khtml_filter.desktop
-share/kde4/services/khtml_fonts.desktop
 share/kde4/services/khtml_general.desktop
 share/kde4/services/khtml_java_js.desktop
 share/kde4/services/khtml_plugins.desktop
@@ -895,53 +877,7 @@ share/templates/linkNFS.desktop
 share/templates/linkProgram.desktop
 share/templates/linkURL.desktop
 share/templates/linkZIP.desktop
-@dirrmtry share/kde4/servicetypes
 @dirrm share/kde4/services/useragentstrings
-@dirrmtry share/kde4/services/kded
-@dirrmtry share/kde4/services/ServiceMenus
-@dirrmtry share/kde4/services
-@dirrmtry share/kde4
-@dirrmtry share/icons/oxygen/scalable/apps
-@dirrmtry share/icons/oxygen/scalable/actions
-@dirrmtry share/icons/oxygen/scalable
-@dirrmtry share/icons/oxygen/64x64/apps
-@dirrmtry share/icons/oxygen/64x64
-@dirrmtry share/icons/oxygen/48x48/apps
-@dirrmtry share/icons/oxygen/48x48/actions
-@dirrmtry share/icons/oxygen/48x48
-@dirrmtry share/icons/oxygen/32x32/apps
-@dirrmtry share/icons/oxygen/32x32/actions
-@dirrmtry share/icons/oxygen/32x32
-@dirrmtry share/icons/oxygen/22x22/apps
-@dirrmtry share/icons/oxygen/22x22/actions
-@dirrmtry share/icons/oxygen/22x22
-@dirrmtry share/icons/oxygen/16x16/apps
-@dirrmtry share/icons/oxygen/16x16/actions
-@dirrmtry share/icons/oxygen/16x16
-@dirrmtry share/icons/oxygen/128x128/apps
-@dirrmtry share/icons/oxygen/128x128
-@dirrmtry share/icons/oxygen
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64/actions
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48/actions
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32/actions
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22/actions
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16/actions
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128/actions
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
 @dirrm share/doc/HTML/en/kwrite
 @dirrm share/doc/HTML/en/konsole
 @dirrm share/doc/HTML/en/konqueror
@@ -966,28 +902,22 @@ share/templates/linkZIP.desktop
 @dirrm share/doc/HTML/en/kfind
 @dirrm share/doc/HTML/en/kdepasswd
 @dirrm share/doc/HTML/en/dolphin
-@dirrmtry share/config
-@dirrmtry share/autostart
 @dirrm share/apps/plugin
 @dirrm share/apps/kwrite
+@dirrm share/apps/konsole
+@dirrm share/apps/konqueror/profiles
 @dirrm share/apps/konqueror/pics
-@dirrm share/apps/konqueror/icons/crystalsvg/16x16/actions
-@dirrm share/apps/konqueror/icons/crystalsvg/16x16
-@dirrm share/apps/konqueror/icons/crystalsvg
-@dirrm share/apps/konqueror/icons
 @dirrm share/apps/konqueror/about
 @dirrm share/apps/konqsidebartng/websidebar
+@dirrm share/apps/konqsidebartng/virtual_folders/remote/web
+@dirrm share/apps/konqsidebartng/virtual_folders/remote/ftp
+@dirrm share/apps/konqsidebartng/virtual_folders/remote
+@dirrm share/apps/konqsidebartng/entries
+@dirrm share/apps/konqsidebartng/dirtree
+@dirrm share/apps/konqsidebartng/add
 @dirrm share/apps/kinfocenter/about
 @dirrm share/apps/kinfocenter
-@dirrm share/apps/khtml/kpartplugins
-@dirrmtry share/apps/khtml
 @dirrm share/apps/keditbookmarks
-@dirrmtry share/apps/kdm/pics/users
-@dirrmtry share/apps/kdm/pics
-@dirrmtry share/apps/kdm
-@dirrmtry share/apps/kcontrol/pics
-@dirrmtry share/apps/kcontrol
-@dirrmtry share/apps/kconf_update
 @dirrm share/apps/kcmusb
 @dirrm share/apps/kcmcss
 @dirrm share/apps/kbookmark
@@ -1015,4 +945,3 @@ share/templates/linkZIP.desktop
 @dirrm share/apps/dolphinpart/kpartplugins
 @dirrm share/apps/dolphinpart
 @dirrm share/apps/dolphin
-@dirrmtry share/applications/kde4

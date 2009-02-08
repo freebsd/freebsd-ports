@@ -1,0 +1,11 @@
+--- CMakeLists.txt~	2009-02-03 19:54:33.000000000 +0200
++++ CMakeLists.txt	2009-02-03 19:53:40.000000000 +0200
+@@ -19,6 +19,8 @@
+       polkit-qt/
+     )
+ 
++  link_directories(${POLKIT_LIBRARY_DIR}  ${POLKITDBUS_LIBRARY_DIRS} ${POLKITGRANT_LIBRARY_DIRS})
++
+   add_subdirectory(manager)
+   add_subdirectory(services)
+   add_subdirectory(authorization)

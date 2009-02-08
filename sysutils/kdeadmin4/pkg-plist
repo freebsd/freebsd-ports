@@ -114,33 +114,11 @@ share/icons/hicolor/64x64/apps/kuser.png
 share/icons/hicolor/scalable/apps/ksystemlog.svgz
 share/kde4/services/kcm_cron.desktop
 share/kde4/services/kcm_knetworkconfmodule.desktop
-@dirrmtry share/kde4/services
-@dirrmtry share/kde4
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22/actions
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 @dirrm share/doc/HTML/en/kuser
 @dirrm share/doc/HTML/en/ksystemlog
 @dirrm share/doc/HTML/en/kpackage
 @dirrm share/doc/HTML/en/kcron
 @dirrm share/doc/HTML/en/kcontrol/knetworkconf
-@dirrmtry share/doc/HTML/en
-@dirrmtry share/doc/HTML
-@dirrmtry share/config.kcfg
 @dirrm share/apps/kuser/pics
 @dirrm share/apps/kuser/icons/oxygen/22x22/actions
 @dirrm share/apps/kuser/icons/oxygen/22x22
@@ -151,7 +129,3 @@ share/kde4/services/kcm_knetworkconfmodule.desktop
 @dirrm share/apps/knetworkconf/pixmaps
 @dirrm share/apps/knetworkconf/backends
 @dirrm share/apps/knetworkconf
-@dirrmtry share/apps
-@dirrmtry share/applications/kde4
-@dirrmtry share/applications
-@dirrmtry lib/kde4

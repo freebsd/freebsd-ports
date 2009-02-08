@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdehier4
-PORTVERSION=	1.0
+PORTVERSION=	1.0.3
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -21,7 +21,10 @@ USE_KDE4=	kdeprefix
 .include <bsd.port.pre.mk>
 
 .if ${KDE4_PREFIX} != ${LOCALBASE}
-PLIST_SUB+=	MTREE=""
+PLIST_SUB+=	MTREE="" \
+		LDCONFIG_DIR="${LDCONFIG_DIR}" \
+		LDCONFIG32_DIR="${LDCONFIG32_DIR}" \
+		KDE4_PREFIX="${KDE4_PREFIX}"
 .else
 PLIST_SUB+=	MTREE="@comment "
 .endif
@@ -44,6 +47,8 @@ do-install:
 	${LN} -sf ${LOCALBASE}/${LDCONFIG_DIR} ${KDE4_PREFIX}/libdata/
 	${LN} -sf ${LOCALBASE}/${LDCONFIG32_DIR} ${KDE4_PREFIX}/libdata/
 	${LN} -sf ${LOCALBASE}/libdata/pkgconfig ${KDE4_PREFIX}/libdata/
+	${ECHO_CMD} ${KDE4_PREFIX}/lib > \
+		${LOCALBASE}/${LDCONFIG_DIR}/kdehier4
 .endif
 
 .include <bsd.port.post.mk>

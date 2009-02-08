@@ -52,6 +52,7 @@
     SUBDIR += e
     SUBDIR += edenmath
     SUBDIR += eigen
+    SUBDIR += eigen2
     SUBDIR += eispack
     SUBDIR += elmer-umfpack
     SUBDIR += emacs-calc

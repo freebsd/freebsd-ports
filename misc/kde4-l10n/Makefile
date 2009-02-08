@@ -15,31 +15,49 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for KDE
 
-RUN_DEPENDS+=\
-	${KDE4_PREFIX}/share/locale/ja/entry.desktop:${PORTSDIR}/japanese/kde4-l10n \
-	${KDE4_PREFIX}/share/locale/fr/entry.desktop:${PORTSDIR}/french/kde4-l10n \
-	${KDE4_PREFIX}/share/locale/de/entry.desktop:${PORTSDIR}/german/kde4-l10n \
-	${KDE4_PREFIX}/share/locale/hu/entry.desktop:${PORTSDIR}/hungarian/kde4-l10n \
-	${KDE4_PREFIX}/share/locale/ko/entry.desktop:${PORTSDIR}/korean/kde4-l10n \
-	${KDE4_PREFIX}/share/locale/ru/entry.desktop:${PORTSDIR}/russian/kde4-l10n \
-	${KDE4_PREFIX}/share/locale/uk/entry.desktop:${PORTSDIR}/ukrainian/kde4-l10n \
-	${KDE4_PREFIX}/share/locale/pl/entry.desktop:${PORTSDIR}/polish/kde4-l10n
-
-.for LANG in bg ca cs csb da el en_GB eo es et fi fy ga gl hi it kk km ku lt \
-	lv mk ml nb nds pa sl sr sv ta th tr wa
-RUN_DEPENDS+= \
-	${KDE4_PREFIX}/share/locale/${LANG}/entry.desktop:${PORTSDIR}/misc/kde4-l10n-${LANG}
-.endfor
-RUN_DEPENDS+=\
-	${KDE4_PREFIX}/share/locale/pt/entry.desktop:${PORTSDIR}/portuguese/kde4-l10n \
-	${KDE4_PREFIX}/share/locale/pt_BR/entry.desktop:${PORTSDIR}/portuguese/kde4-l10n-pt_BR
-.for ZH in zh_CN zh_TW
-RUN_DEPENDS+=\
-	${KDE4_PREFIX}/share/locale/${ZH}/entry.desktop:${PORTSDIR}/chinese/kde4-l10n-${ZH}
-.endfor
-
 NO_BUILD=	yes
 NO_INSTALL=	yes
-USE_KDE4=	kdeprefix kdelibs
+USE_KDE4=	kdeprefix
 
-.include <bsd.port.mk>
+KDE4_LANG_ALL=	ar bg bn_IN ca cs csb da de el en_GB es et eu fi fr \
+		ga gl gu he hi hu is it ja kk km kn ko ku lt lv \
+		mai mk ml mr nb nds nl nn pa pl pt pt_BR ro ru \
+		sl sr sv tg th tr uk wa zh_CN zh_TW
+
+ar_PORT=	arabic/kde4-l10n
+de_PORT=	german/kde4-l10n
+fr_PORT=	french/kde4-l10n
+he_PORT=	hebrew/kde4-l10n
+hu_PORT=	hungarian/kde4-l10n
+ja_PORT=	japanese/kde4-l10n
+ko_PORT=	korean/kde4-l10n
+pl_PORT=	polish/kde4-l10n
+pt_BR_PORT=	portuguese/kde4-l10n-pt_BR
+pt_PORT=	portuguese/kde4-l10n
+ru_PORT=	russian/kde4-l10n
+uk_PORT=	ukrainian/kde4-l10n
+zh_CN_PORT=	chinese/kde4-l10n-zh_CN
+zh_TW_PORT=	chinese/kde4-l10n-zh_TW
+
+.include <${.CURDIR}/files/kde4-lang-names>
+
+.for lang in ${KDE4_LANG_ALL}
+${lang}_DETECT?=	${KDE4_PREFIX}/share/locale/${lang}/entry.desktop
+${lang}_PORT?=		misc/kde4-l10n-${lang}
+${lang}_NAME?=		${lang}
+.endfor
+
+OPTIONS=	ALL "All localizations" on
+.for lang in ${KDE4_LANG_ALL}
+OPTIONS+=	${lang} "${${lang}_NAME} localization" off
+.endfor
+
+.include <bsd.port.pre.mk>
+
+.for lang in ${KDE4_LANG_ALL}
+.if defined(WITH_ALL) || defined(WITH_${lang})
+RUN_DEPENDS+=	${${lang}_DETECT}:${PORTSDIR}/${${lang}_PORT}
+.endif
+.endfor
+
+.include <bsd.port.post.mk>

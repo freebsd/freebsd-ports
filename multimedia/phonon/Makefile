@@ -5,17 +5,18 @@
 # $FreeBSD$
 
 PORTNAME=	phonon
-PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTVERSION=	4.3.0
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/phonon/${PORTVERSION}
+MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE4 phonon applications
 
-CONFLICTS=	qt4-phonon-4*
+LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
+
+CONFLICTS=	qt4-phonon-4* kdebase-runtime-4.1.[0-4]*
 
 USE_BZIP2=	yes
 USE_KDE4=	kdehier automoc4 kdeprefix

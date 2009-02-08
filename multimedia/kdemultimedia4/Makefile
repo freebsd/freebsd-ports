@@ -8,28 +8,27 @@ PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Multimedia applications
 
-LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
-		FLAC:${PORTSDIR}/audio/flac \
-		cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
-		ogg:${PORTSDIR}/audio/libogg \
-		tag:${PORTSDIR}/audio/taglib \
-		theora:${PORTSDIR}/multimedia/libtheora \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		mp3lame:${PORTSDIR}/audio/lame \
+LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
+		cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia \
+		ogg.5:${PORTSDIR}/audio/libogg \
+		tag.6:${PORTSDIR}/audio/taglib \
+		vorbis.4:${PORTSDIR}/audio/libvorbis \
+		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		tunepimp.5:${PORTSDIR}/audio/libtunepimp \
 		xine.1:${PORTSDIR}/multimedia/libxine
-RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
+RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools \
+		lame:${PORTSDIR}/audio/lame
 
 LATEST_LINK=	${PORTNAME}4
 
 USE_BZIP2=	yes
-USE_KDE4=	kdelibs workspace kdeprefix kdehier automoc4
+USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib opengl dbus qt3support designer network svg qtestlib \

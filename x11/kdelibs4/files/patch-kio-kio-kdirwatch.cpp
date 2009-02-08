@@ -1,18 +1,16 @@
---- ../kio/kio/kdirwatch.cpp.orig	2008-06-29 18:29:43.000000000 +0200
-+++ ../kio/kio/kdirwatch.cpp	2008-06-30 00:40:46.000000000 +0200
-@@ -124,7 +124,11 @@
-   m_nfsPollInterval = config.readEntry("NFSPollInterval", 5000);
-   m_PollInterval = config.readEntry("PollInterval", 500);
- 
+--- ../kio/kio/kdirwatch.cpp.orgi	2009-01-27 18:07:49.000000000 +0100
++++ ../kio/kio/kdirwatch.cpp	2009-01-27 18:15:04.000000000 +0100
+@@ -89,6 +89,9 @@
+   } else if (method == "QFSWatch") {
+     return KDirWatchPrivate::QFSWatch;
+   } else {
 +#ifdef Q_OS_FREEBSD
-+  QString method = config.readEntry("PreferredMethod", "Stat");
-+#else
-   QString method = config.readEntry("PreferredMethod", "inotify");
++    return KDirWatchPrivate::Stat;
 +#endif
-   if (method == "Fam")
-   {
-     m_preferredMethod = Fam;
-@@ -154,7 +158,7 @@
+ #ifdef Q_OS_WIN
+     return KDirWatchPrivate::QFSWatch;
+ #else
+@@ -159,7 +162,7 @@
  
  #ifdef HAVE_FAM
    // It's possible that FAM server can't be started

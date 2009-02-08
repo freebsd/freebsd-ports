@@ -35,6 +35,7 @@ share/locale/is/LC_MESSAGES/kcoloredit.mo
 share/locale/it/LC_MESSAGES/kcoloredit.mo
 share/locale/ja/LC_MESSAGES/kcoloredit.mo
 share/locale/km/LC_MESSAGES/kcoloredit.mo
+share/locale/ku/LC_MESSAGES/kcoloredit.mo
 share/locale/lt/LC_MESSAGES/kcoloredit.mo
 share/locale/lv/LC_MESSAGES/kcoloredit.mo
 share/locale/mk/LC_MESSAGES/kcoloredit.mo
@@ -67,15 +68,9 @@ share/locale/zh_HK/LC_MESSAGES/kcoloredit.mo
 share/locale/zh_TW/LC_MESSAGES/kcoloredit.mo
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
 @dirrmtry share/locale/se/LC_MESSAGES
 @dirrmtry share/locale/se
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
 @dirrm share/doc/HTML/en/kcoloredit
 @dirrm share/apps/kcoloredit

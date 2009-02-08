@@ -21,6 +21,8 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui dbus network opengl svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 
+BROKEN=		Does not compile with KDE 4.2
+
 WRKSRC=		${WRKDIR}/plasmaspacer_${PORTVERSION}
 
 PLIST_FILES=	lib/kde4/plasma_applet_panelspacer.so \

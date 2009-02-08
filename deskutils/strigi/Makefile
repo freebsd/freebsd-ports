@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	strigi
-PORTVERSION=	0.5.11
-PORTREVISION=	1
+PORTVERSION=	0.6.3
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.vandenoever.info/software/strigi/
+MASTER_SITES=	SF
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Desktop searching program
@@ -21,7 +20,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui dbus moc_build uic_build qmake_build
 USE_BZIP2=	yes
 USE_GNOME=	libxml2 pkgconfig
-USE_FAM=	yes
+# USE_FAM=	yes
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
 
@@ -31,7 +30,5 @@ post-patch:
 		's,$${LIB_DESTINATION}/pkgconfig,libdata/pkgconfig,' \
 		${WRKSRC}/src/streamanalyzer/CMakeLists.txt \
 		${WRKSRC}/src/streams/CMakeLists.txt
-	${REINPLACE_CMD} -e 's,find_package(Qt4),,' \
-		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

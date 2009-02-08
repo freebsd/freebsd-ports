@@ -6,10 +6,9 @@
 
 PORTNAME=	kdeedu
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -28,31 +27,28 @@ LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb \
 
 LATEST_LINK=	${PORTNAME}4
 
-USE_OCAML=	yes
-NO_OCAML_RUNDEPENDS=    yes
 USE_BZIP2=	yes
-USE_QT_VER=	4
-USE_KDE4=	kdelibs workspace kdeprefix kdehier automoc4
+USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
+USE_QT_VER=	4
 QT_COMPONENTS=	gui svg qmake_build moc_build rcc_build uic_build
+USE_OCAML=	yes
+NO_OCAML_RUNDEPENDS=	yes
+USE_PYTHON=	yes
+
+MAN1=		kalzium.1 \
+		kbruch.1 \
+		kig.1 \
+		kmplot.1 \
+		ktouch.1
+MAN6=		khangman.6
 
 #fix checking boost_python
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include" \
-		-DWITH_SBIG:BOOL=OFF
+		-DBOOST_PYTHON_INCLUDES="${LOCALBASE}/include;${PYTHON_INCLUDEDIR}" \
+		-DBOOST_PYTHON_LIBS="-L${LOCALBASE}/lib -lboost_python -l${PYTHON_VERSION}"
 
 post-extract:
 	${MKDIR} ${WRKSRC}
-
-post-patch:
-	#fix checking libnova
-	${REINPLACE_CMD} -e 's|\(CMAKE_REQUIRED_INCLUDES $${NOVA_INCLUDE_DIR}\)|\1 ${LOCALBASE}/include|' \
-		 ${WRKSRC}/../cmake/modules/FindNova.cmake
-	#fix checking boost_python
-	${REINPLACE_CMD} -e 's|\(CMAKE_REQUIRED_INCLUDES $${_pydir}\)|\1 ${LOCALBASE}/include|' \
-		 ${WRKSRC}/../cmake/modules/FindBoostPython.cmake
-
-post-configure:
-	${REINPLACE_CMD} -e "s,-ldl,,g" ${WRKSRC}/kalzium/src/CMakeFiles/kalzium.dir/build.make
-	${REINPLACE_CMD} -e "s,-ldl,,g" ${WRKSRC}/kalzium/src/CMakeFiles/kalzium.dir/link.txt
 
 .include <bsd.port.mk>

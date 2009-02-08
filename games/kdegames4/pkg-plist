@@ -1,4 +1,6 @@
+bin/bomber
 bin/bovo
+bin/kapman
 bin/katomic
 bin/kbattleship
 bin/kblackbox
@@ -9,6 +11,7 @@ bin/kdiamond
 bin/kfourinline
 bin/kfourinlineproc
 bin/kgoldrunner
+bin/killbots
 bin/kiriki
 bin/kjumpingcube
 bin/klines
@@ -23,6 +26,7 @@ bin/kreversi
 bin/ksame
 bin/kshisen
 bin/ksirk
+bin/ksirkskineditor
 bin/kspaceduel
 bin/ksquares
 bin/ksudoku
@@ -133,26 +137,31 @@ include/kmahjonggtileset.h
 include/kstandardgameaction.h
 include/libkdegames_export.h
 include/libkmahjongg_export.h
+lib/libiris_ksirk.so
+lib/libiris_ksirk.so.2
+lib/libiris_ksirk.so.2.0.0
 lib/libkdegames.so
 lib/libkdegames.so.5
 lib/libkdegames.so.5.0.0
 lib/libkggzgames.so
 lib/libkggzgames.so.5
-lib/libkggzgames.so.5.0.0
+lib/libkggzgames.so.5.0.1
 lib/libkggzmod.so
 lib/libkggzmod.so.5
-lib/libkggzmod.so.5.0.0
+lib/libkggzmod.so.5.0.1
 lib/libkggznet.so
 lib/libkggznet.so.5
-lib/libkggznet.so.5.0.0
+lib/libkggznet.so.5.0.1
 lib/libkmahjongglib.so
 lib/libkmahjongglib.so.5
-lib/libkmahjongglib.so.5.0.0
+lib/libkmahjongglib.so.5.0.1
 lib/libkolfprivate.so
 lib/libkolfprivate.so.5
-lib/libkolfprivate.so.5.0.0
+lib/libkolfprivate.so.5.0.1
 share/applications/kde4/KGoldrunner.desktop
+share/applications/kde4/bomber.desktop
 share/applications/kde4/bovo.desktop
+share/applications/kde4/kapman.desktop
 share/applications/kde4/katomic.desktop
 share/applications/kde4/kbattleship.desktop
 share/applications/kde4/kblackbox.desktop
@@ -161,6 +170,7 @@ share/applications/kde4/kbounce.desktop
 share/applications/kde4/kbreakout.desktop
 share/applications/kde4/kdiamond.desktop
 share/applications/kde4/kfourinline.desktop
+share/applications/kde4/killbots.desktop
 share/applications/kde4/kiriki.desktop
 share/applications/kde4/kjumpingcube.desktop
 share/applications/kde4/klines.desktop
@@ -175,12 +185,20 @@ share/applications/kde4/kreversi.desktop
 share/applications/kde4/ksame.desktop
 share/applications/kde4/kshisen.desktop
 share/applications/kde4/ksirk.desktop
+share/applications/kde4/ksirkskineditor.desktop
 share/applications/kde4/kspaceduel.desktop
 share/applications/kde4/ksquares.desktop
 share/applications/kde4/ksudoku.desktop
 share/applications/kde4/ktuberling.desktop
 share/applications/kde4/kubrick.desktop
 share/applications/kde4/lskat.desktop
+share/apps/bomber/bomberui.rc
+share/apps/bomber/themes/Lava-Island.desktop
+share/apps/bomber/themes/Lava-Island.svgz
+share/apps/bomber/themes/kbomber.desktop
+share/apps/bomber/themes/kbomber.png
+share/apps/bomber/themes/kbomber.svgz
+share/apps/bomber/themes/lava-Island.png
 share/apps/bovo/bovoui.rc
 share/apps/bovo/themes/gomoku/theme.svg
 share/apps/bovo/themes/gomoku/themerc
@@ -458,40 +476,50 @@ share/apps/carddecks/cards-xskat-german/8.png
 share/apps/carddecks/cards-xskat-german/9.png
 share/apps/carddecks/cards-xskat-german/COPYRIGHT
 share/apps/carddecks/cards-xskat-german/index.desktop
-share/apps/carddecks/decks/deck0.desktop
-share/apps/carddecks/decks/deck0.png
+share/apps/carddecks/decks/deck1.desktop
+share/apps/carddecks/decks/deck1.png
 share/apps/carddecks/decks/deck10.desktop
 share/apps/carddecks/decks/deck10.png
+share/apps/carddecks/decks/deck10.svgz
 share/apps/carddecks/decks/deck11.desktop
 share/apps/carddecks/decks/deck11.png
+share/apps/carddecks/decks/deck11.svgz
+share/apps/carddecks/decks/deck12.desktop
+share/apps/carddecks/decks/deck12.png
+share/apps/carddecks/decks/deck12.svgz
+share/apps/carddecks/decks/deck13.desktop
+share/apps/carddecks/decks/deck13.png
+share/apps/carddecks/decks/deck13.svgz
 share/apps/carddecks/decks/deck14.desktop
 share/apps/carddecks/decks/deck14.png
-share/apps/carddecks/decks/deck15.desktop
-share/apps/carddecks/decks/deck15.png
-share/apps/carddecks/decks/deck16.desktop
-share/apps/carddecks/decks/deck16.png
-share/apps/carddecks/decks/deck17.desktop
-share/apps/carddecks/decks/deck17.png
-share/apps/carddecks/decks/deck24.desktop
-share/apps/carddecks/decks/deck24.png
-share/apps/carddecks/decks/deck25.desktop
-share/apps/carddecks/decks/deck25.png
-share/apps/carddecks/decks/deck25_dondorf.svgz
-share/apps/carddecks/decks/deck26.desktop
-share/apps/carddecks/decks/deck26.png
-share/apps/carddecks/decks/deck26_ornamental.svg
-share/apps/carddecks/decks/deck27.desktop
-share/apps/carddecks/decks/deck27.png
-share/apps/carddecks/decks/deck27_classic.svgz
-share/apps/carddecks/decks/deck28.desktop
-share/apps/carddecks/decks/deck28.png
-share/apps/carddecks/decks/deck28_oxygen.svgz
+share/apps/carddecks/decks/deck14.svgz
+share/apps/carddecks/decks/deck2.desktop
+share/apps/carddecks/decks/deck2.png
+share/apps/carddecks/decks/deck3.desktop
+share/apps/carddecks/decks/deck3.png
+share/apps/carddecks/decks/deck4.desktop
+share/apps/carddecks/decks/deck4.png
+share/apps/carddecks/decks/deck5.desktop
+share/apps/carddecks/decks/deck5.png
+share/apps/carddecks/decks/deck6.desktop
+share/apps/carddecks/decks/deck6.png
+share/apps/carddecks/decks/deck7.desktop
+share/apps/carddecks/decks/deck7.png
+share/apps/carddecks/decks/deck8.desktop
+share/apps/carddecks/decks/deck8.png
+share/apps/carddecks/decks/deck8.svgz
+share/apps/carddecks/decks/deck9.desktop
+share/apps/carddecks/decks/deck9.png
+share/apps/carddecks/decks/deck9.svgz
 share/apps/carddecks/svg-dondorf/11.png
 share/apps/carddecks/svg-dondorf/dondorf.svgz
 share/apps/carddecks/svg-dondorf/index.desktop
 share/apps/carddecks/svg-gm-paris/11.png
 share/apps/carddecks/svg-gm-paris/index.desktop
 share/apps/carddecks/svg-gm-paris/paris.svgz
+share/apps/carddecks/svg-jolly-royal/11.png
+share/apps/carddecks/svg-jolly-royal/index.desktop
+share/apps/carddecks/svg-jolly-royal/jolly-royal.svgz
 share/apps/carddecks/svg-nicu-ornamental/11.png
 share/apps/carddecks/svg-nicu-ornamental/AUTHORS
 share/apps/carddecks/svg-nicu-ornamental/COPYING
@@ -504,15 +532,30 @@ share/apps/carddecks/svg-nicu-white/index.desktop
 share/apps/carddecks/svg-nicu-white/white.svgz
 share/apps/carddecks/svg-oxygen-white/11.png
 share/apps/carddecks/svg-oxygen-white/index.desktop
-share/apps/carddecks/svg-oxygen-white/oxygen-white.svg
+share/apps/carddecks/svg-oxygen-white/oxygen-white.svgz
 share/apps/carddecks/svg-oxygen/11.png
 share/apps/carddecks/svg-oxygen/index.desktop
 share/apps/carddecks/svg-oxygen/oxygen.svgz
 share/apps/carddecks/svg-tigullio-international/index.desktop
 share/apps/carddecks/svg-tigullio-international/queen-of-hearts.png
-share/apps/carddecks/svg-tigullio-international/tigullio-international.svg
+share/apps/carddecks/svg-tigullio-international/tigullio-international.svgz
 share/apps/cmake/modules/FindLibKDEGames.cmake
 share/apps/cmake/modules/GGZ.cmake
+share/apps/kapman/defaultmaze.xml
+share/apps/kapman/kapmanui.rc
+share/apps/kapman/themes/invisible.desktop
+share/apps/kapman/themes/invisible.svgz
+share/apps/kapman/themes/invisible_preview.png
+share/apps/kapman/themes/matches.desktop
+share/apps/kapman/themes/matches.svgz
+share/apps/kapman/themes/matches_preview.png
+share/apps/kapman/themes/mountain.copyright
+share/apps/kapman/themes/mountain.desktop
+share/apps/kapman/themes/mountain.svgz
+share/apps/kapman/themes/mountain_preview.png
+share/apps/kapman/themes/retro.desktop
+share/apps/kapman/themes/retro.svgz
+share/apps/kapman/themes/retro_preview.png
 share/apps/katomic/katomicui.rc
 share/apps/katomic/levels/level_1
 share/apps/katomic/levels/level_10
@@ -608,6 +651,8 @@ share/apps/kblackbox/kblackboxui.rc
 share/apps/kblackbox/pics/kblackbox.svgz
 share/apps/kblocks/kblocksui.rc
 share/apps/kblocks/themes/default.desktop
+share/apps/kblocks/themes/default_block_fall.ogg
+share/apps/kblocks/themes/default_block_move.ogg
 share/apps/kblocks/themes/default_preview.png
 share/apps/kblocks/themes/default_theme.svg
 share/apps/kbounce/kbounceui.rc
@@ -623,16 +668,24 @@ share/apps/kbounce/themes/default_theme.svgz
 share/apps/kbounce/themes/geometry.desktop
 share/apps/kbounce/themes/geometry.png
 share/apps/kbounce/themes/kbounce.svg
+share/apps/kbounce/themes/oxygen.desktop
+share/apps/kbounce/themes/oxygen.png
+share/apps/kbounce/themes/oxygen.svgz
 share/apps/kbreakout/levelsets/default.levelset
+share/apps/kbreakout/themes/IceWorld.desktop
+share/apps/kbreakout/themes/IceWorld.svgz
+share/apps/kbreakout/themes/IceWorld_preview.png
 share/apps/kbreakout/themes/crystal.desktop
 share/apps/kbreakout/themes/crystal.svgz
 share/apps/kbreakout/themes/crystal_preview.png
 share/apps/kbreakout/themes/default.desktop
 share/apps/kbreakout/themes/default.svgz
-share/apps/kbreakout/themes/default_preview.png
 share/apps/kbreakout/themes/simple.desktop
 share/apps/kbreakout/themes/simple.svgz
 share/apps/kbreakout/themes/simple_preview.png
+share/apps/kbreakout/themes/web20.desktop
+share/apps/kbreakout/themes/web20.svgz
+share/apps/kbreakout/themes/web20_preview.png
 share/apps/kconf_update/kpat_update_cardwidth.upd
 share/apps/kdegames/pics/star.png
 share/apps/kdiamond/kdiamond.kcfg
@@ -654,6 +707,7 @@ share/apps/kfourinline/grafix/yellow_reflection.desktop
 share/apps/kfourinline/grafix/yellow_reflection.rc
 share/apps/kfourinline/kfourinlineui.rc
 share/apps/kgoldrunner/kgoldrunnerui.rc
+share/apps/kgoldrunner/system/game_cnt.txt
 share/apps/kgoldrunner/system/game_ende.txt
 share/apps/kgoldrunner/system/game_kgr.txt
 share/apps/kgoldrunner/system/game_plws.txt
@@ -673,9 +727,13 @@ share/apps/kgoldrunner/themes/black-on-white.desktop
 share/apps/kgoldrunner/themes/default.desktop
 share/apps/kgoldrunner/themes/default/actors.svg
 share/apps/kgoldrunner/themes/default/climb.wav
+share/apps/kgoldrunner/themes/default/completed.wav
+share/apps/kgoldrunner/themes/default/death.wav
 share/apps/kgoldrunner/themes/default/dig.wav
 share/apps/kgoldrunner/themes/default/falling.wav
+share/apps/kgoldrunner/themes/default/gameover.wav
 share/apps/kgoldrunner/themes/default/gold.wav
+share/apps/kgoldrunner/themes/default/ladder.wav
 share/apps/kgoldrunner/themes/default/set.svg
 share/apps/kgoldrunner/themes/default/step.wav
 share/apps/kgoldrunner/themes/egypt.desktop
@@ -690,6 +748,19 @@ share/apps/kgoldrunner/themes/nostalgia/actors.svg
 share/apps/kgoldrunner/themes/nostalgia/blue-actors.svg
 share/apps/kgoldrunner/themes/nostalgia/blue-set.svg
 share/apps/kgoldrunner/themes/nostalgia/set.svg
+share/apps/killbots/killbotsui.rc
+share/apps/killbots/rulesets/classic.desktop
+share/apps/killbots/rulesets/default.desktop
+share/apps/killbots/rulesets/easy.desktop
+share/apps/killbots/themes/classic.desktop
+share/apps/killbots/themes/classic.png
+share/apps/killbots/themes/classic.svg
+share/apps/killbots/themes/default.desktop
+share/apps/killbots/themes/default.png
+share/apps/killbots/themes/default.svg
+share/apps/killbots/themes/mountainadventure.desktop
+share/apps/killbots/themes/mountainadventure.png
+share/apps/killbots/themes/mountainadventure.svg
 share/apps/kiriki/images/dice-1.png
 share/apps/kiriki/images/dice-2.png
 share/apps/kiriki/images/dice-3.png
@@ -803,7 +874,20 @@ share/apps/kollision/sounds/you_lose.ogg
 share/apps/konquest/konquestui.rc
 share/apps/konquest/pics/default_theme.svgz
 share/apps/konquest/pics/konquest-splash.png
-share/apps/kpat/backgrounds/background.svg
+share/apps/kpat/background.svg
+share/apps/kpat/demo_bubble.svg
+share/apps/kpat/demos/demo_1.png
+share/apps/kpat/demos/demo_10.png
+share/apps/kpat/demos/demo_11.png
+share/apps/kpat/demos/demo_12.png
+share/apps/kpat/demos/demo_17.png
+share/apps/kpat/demos/demo_18.png
+share/apps/kpat/demos/demo_2.png
+share/apps/kpat/demos/demo_3.png
+share/apps/kpat/demos/demo_5.png
+share/apps/kpat/demos/demo_7.png
+share/apps/kpat/demos/demo_8.png
+share/apps/kpat/demos/demo_9.png
 share/apps/kpat/kpatui.rc
 share/apps/kpat/pile.svg
 share/apps/kpat/won.svg
@@ -816,6 +900,7 @@ share/apps/ksame/ksameui.rc
 share/apps/ksame/pics/default_theme.svgz
 share/apps/ksame/pics/old_theme.svgz
 share/apps/kshisen/kshisenui.rc
+share/apps/ksirk/jabber.png
 share/apps/ksirk/ksirkui.rc
 share/apps/ksirk/skins/default/Data/world.desktop
 share/apps/ksirk/skins/default/Images/2DownArrow.png
@@ -854,42 +939,9 @@ share/apps/ksirk/skins/default/Sounds/cannon.wav
 share/apps/ksirk/skins/default/Sounds/crash.wav
 share/apps/ksirk/skins/default/Sounds/roll.wav
 share/apps/ksirk/skins/skinsdir
-share/apps/ksirk/skins/static/Data/world.desktop
-share/apps/ksirk/skins/static/Images/2DownArrow.png
-share/apps/ksirk/skins/static/Images/2UpArrow.png
-share/apps/ksirk/skins/static/Images/arena.svg
-share/apps/ksirk/skins/static/Images/attackAuto.png
-share/apps/ksirk/skins/static/Images/attackOne.png
-share/apps/ksirk/skins/static/Images/attackThree.png
-share/apps/ksirk/skins/static/Images/attackTwo.png
-share/apps/ksirk/skins/static/Images/cancel.png
-share/apps/ksirk/skins/static/Images/defendOne.png
-share/apps/ksirk/skins/static/Images/defendTwo.png
-share/apps/ksirk/skins/static/Images/downArrow.png
-share/apps/ksirk/skins/static/Images/loader.gif
-share/apps/ksirk/skins/static/Images/logoLeft.png
-share/apps/ksirk/skins/static/Images/logoRight.png
-share/apps/ksirk/skins/static/Images/map-mask.png
-share/apps/ksirk/skins/static/Images/moveArmies.png
-share/apps/ksirk/skins/static/Images/moveBackFive.png
-share/apps/ksirk/skins/static/Images/moveBackOne.png
-share/apps/ksirk/skins/static/Images/moveBackTen.png
-share/apps/ksirk/skins/static/Images/moveFinish.png
-share/apps/ksirk/skins/static/Images/moveFive.png
-share/apps/ksirk/skins/static/Images/moveOne.png
-share/apps/ksirk/skins/static/Images/moveTen.png
-share/apps/ksirk/skins/static/Images/newNetGame.png
-share/apps/ksirk/skins/static/Images/nextPlayer.png
-share/apps/ksirk/skins/static/Images/pool.svg
-share/apps/ksirk/skins/static/Images/recycling.png
-share/apps/ksirk/skins/static/Images/recyclingFinished.png
-share/apps/ksirk/skins/static/Images/snapshot.jpg
-share/apps/ksirk/skins/static/Images/soldierKneeling.png
-share/apps/ksirk/skins/static/Images/stopAttackAuto.png
-share/apps/ksirk/skins/static/Images/upArrow.png
-share/apps/ksirk/skins/static/Sounds/cannon.wav
-share/apps/ksirk/skins/static/Sounds/crash.wav
-share/apps/ksirk/skins/static/Sounds/roll.wav
+share/apps/ksirkskineditor/cross.png
+share/apps/ksirkskineditor/ksirkskineditorui.rc
+share/apps/ksirkskineditor/target.png
 share/apps/kspaceduel/icons/oxygen/16x16/actions/spnewgame.png
 share/apps/kspaceduel/icons/oxygen/16x16/actions/spnewround.png
 share/apps/kspaceduel/icons/oxygen/16x16/actions/sppausegame.png
@@ -1020,6 +1072,9 @@ share/apps/ktuberling/pics/pizzeria.theme
 share/apps/ktuberling/pics/potato-game.desktop
 share/apps/ktuberling/pics/potato-game.svg
 share/apps/ktuberling/pics/potato-game.theme
+share/apps/ktuberling/pics/robin-tux.desktop
+share/apps/ktuberling/pics/robin-tux.svgz
+share/apps/ktuberling/pics/robin-tux.theme
 share/apps/ktuberling/pics/train_valley.desktop
 share/apps/ktuberling/pics/train_valley.svgz
 share/apps/ktuberling/pics/train_valley.theme
@@ -1128,12 +1183,15 @@ share/apps/lskat/grafix/default.desktop
 share/apps/lskat/grafix/default.rc
 share/apps/lskat/grafix/default.svg
 share/apps/lskat/lskatui.rc
+share/config.kcfg/bomber.kcfg
 share/config.kcfg/kblocks.kcfg
+share/config.kcfg/killbots.kcfg
 share/config.kcfg/kjumpingcube.kcfg
 share/config.kcfg/klines.kcfg
 share/config.kcfg/kmahjongg.kcfg
 share/config.kcfg/kshisen.kcfg
 share/config.kcfg/ksirksettings.kcfg
+share/config.kcfg/ksirkskineditorsettings.kcfg
 share/config.kcfg/kspaceduel.kcfg
 share/config.kcfg/ksquares.kcfg
 share/config.kcfg/kwin4.kcfg
@@ -1141,10 +1199,19 @@ share/config/kblocks.knsrc
 share/config/kdiamond.knsrc
 share/config/kgoldrunner.knsrc
 share/config/kmines.knsrc
+share/config/ksirk.knsrc
 share/config/ksudokurc
+share/doc/HTML/en/bomber/common
+share/doc/HTML/en/bomber/index.cache.bz2
+share/doc/HTML/en/bomber/index.docbook
 share/doc/HTML/en/bovo/common
 share/doc/HTML/en/bovo/index.cache.bz2
 share/doc/HTML/en/bovo/index.docbook
+share/doc/HTML/en/kapman/common
+share/doc/HTML/en/kapman/config.png
+share/doc/HTML/en/kapman/index.cache.bz2
+share/doc/HTML/en/kapman/index.docbook
+share/doc/HTML/en/kapman/kapman.png
 share/doc/HTML/en/katomic/common
 share/doc/HTML/en/katomic/index.cache.bz2
 share/doc/HTML/en/katomic/index.docbook
@@ -1183,6 +1250,16 @@ share/doc/HTML/en/kgoldrunner/index.cache.bz2
 share/doc/HTML/en/kgoldrunner/index.docbook
 share/doc/HTML/en/kgoldrunner/select.png
 share/doc/HTML/en/kgoldrunner/tute008.png
+share/doc/HTML/en/killbots/common
+share/doc/HTML/en/killbots/enemy.png
+share/doc/HTML/en/killbots/fastenemy.png
+share/doc/HTML/en/killbots/grid.png
+share/doc/HTML/en/killbots/hero.png
+share/doc/HTML/en/killbots/index.cache.bz2
+share/doc/HTML/en/killbots/index.docbook
+share/doc/HTML/en/killbots/junkheap.png
+share/doc/HTML/en/killbots/status.png
+share/doc/HTML/en/killbots/waitoutround.png
 share/doc/HTML/en/kiriki/common
 share/doc/HTML/en/kiriki/index.cache.bz2
 share/doc/HTML/en/kiriki/index.docbook
@@ -1249,6 +1326,7 @@ share/doc/HTML/en/ksirk/8020.png
 share/doc/HTML/en/ksirk/SoldatAGenoux1.png
 share/doc/HTML/en/ksirk/afterDistribution.png
 share/doc/HTML/en/ksirk/aide.png
+share/doc/HTML/en/ksirk/alaska.png
 share/doc/HTML/en/ksirk/annuler.png
 share/doc/HTML/en/ksirk/attackOne.png
 share/doc/HTML/en/ksirk/attackThree.png
@@ -1256,6 +1334,7 @@ share/doc/HTML/en/ksirk/attackTwo.png
 share/doc/HTML/en/ksirk/attackmenu.png
 share/doc/HTML/en/ksirk/autoattack.png
 share/doc/HTML/en/ksirk/belgium.png
+share/doc/HTML/en/ksirk/bluedices.png
 share/doc/HTML/en/ksirk/cannon.png
 share/doc/HTML/en/ksirk/cavalry.png
 share/doc/HTML/en/ksirk/common
@@ -1284,6 +1363,7 @@ share/doc/HTML/en/ksirk/logoLeft.png
 share/doc/HTML/en/ksirk/logoRight.png
 share/doc/HTML/en/ksirk/map-mask.png
 share/doc/HTML/en/ksirk/map.png
+share/doc/HTML/en/ksirk/mark1.png
 share/doc/HTML/en/ksirk/messagesent.png
 share/doc/HTML/en/ksirk/moveArmies.png
 share/doc/HTML/en/ksirk/moveBackFive.png
@@ -1297,6 +1377,7 @@ share/doc/HTML/en/ksirk/movement.png
 share/doc/HTML/en/ksirk/newGame.png
 share/doc/HTML/en/ksirk/newNetGame.png
 share/doc/HTML/en/ksirk/newgamedialog.png
+share/doc/HTML/en/ksirk/nextPlayer.png
 share/doc/HTML/en/ksirk/nouveauJeu.png
 share/doc/HTML/en/ksirk/numnetplayersdialog.png
 share/doc/HTML/en/ksirk/ouvrirJeu.png
@@ -1306,6 +1387,9 @@ share/doc/HTML/en/ksirk/playersetupdialog.png
 share/doc/HTML/en/ksirk/preferences.png
 share/doc/HTML/en/ksirk/quit.png
 share/doc/HTML/en/ksirk/quitter.png
+share/doc/HTML/en/ksirk/recycling.png
+share/doc/HTML/en/ksirk/recyclingFinished.png
+share/doc/HTML/en/ksirk/reddices.png
 share/doc/HTML/en/ksirk/saveGame.png
 share/doc/HTML/en/ksirk/shownumberofarmies.png
 share/doc/HTML/en/ksirk/uk.png
@@ -1344,6 +1428,8 @@ share/doc/HTML/en/lskat/common
 share/doc/HTML/en/lskat/index.cache.bz2
 share/doc/HTML/en/lskat/index.docbook
 share/doc/HTML/en/lskat/lskat_screen_01.png
+share/icons/hicolor/128x128/apps/bomber.png
+share/icons/hicolor/128x128/apps/kapman.png
 share/icons/hicolor/128x128/apps/katomic.png
 share/icons/hicolor/128x128/apps/kbattleship.png
 share/icons/hicolor/128x128/apps/kblackbox.png
@@ -1353,6 +1439,7 @@ share/icons/hicolor/128x128/apps/kbreakout.png
 share/icons/hicolor/128x128/apps/kdiamond.png
 share/icons/hicolor/128x128/apps/kfourinline.png
 share/icons/hicolor/128x128/apps/kgoldrunner.png
+share/icons/hicolor/128x128/apps/killbots.png
 share/icons/hicolor/128x128/apps/kiriki.png
 share/icons/hicolor/128x128/apps/kjumpingcube.png
 share/icons/hicolor/128x128/apps/klines.png
@@ -1366,12 +1453,14 @@ share/icons/hicolor/128x128/apps/kpat.png
 share/icons/hicolor/128x128/apps/kreversi.png
 share/icons/hicolor/128x128/apps/ksame.png
 share/icons/hicolor/128x128/apps/kshisen.png
+share/icons/hicolor/128x128/apps/ksirk.png
 share/icons/hicolor/128x128/apps/kspaceduel.png
 share/icons/hicolor/128x128/apps/ksquares.png
 share/icons/hicolor/128x128/apps/ksudoku.png
 share/icons/hicolor/128x128/apps/ktuberling.png
 share/icons/hicolor/128x128/apps/kubrick.png
 share/icons/hicolor/128x128/apps/lskat.png
+share/icons/hicolor/16x16/apps/kapman.png
 share/icons/hicolor/16x16/apps/katomic.png
 share/icons/hicolor/16x16/apps/kbattleship.png
 share/icons/hicolor/16x16/apps/kblackbox.png
@@ -1381,6 +1470,7 @@ share/icons/hicolor/16x16/apps/kbreakout.png
 share/icons/hicolor/16x16/apps/kdiamond.png
 share/icons/hicolor/16x16/apps/kfourinline.png
 share/icons/hicolor/16x16/apps/kgoldrunner.png
+share/icons/hicolor/16x16/apps/killbots.png
 share/icons/hicolor/16x16/apps/kiriki.png
 share/icons/hicolor/16x16/apps/kjumpingcube.png
 share/icons/hicolor/16x16/apps/klines.png
@@ -1401,6 +1491,7 @@ share/icons/hicolor/16x16/apps/ksudoku.png
 share/icons/hicolor/16x16/apps/ktuberling.png
 share/icons/hicolor/16x16/apps/kubrick.png
 share/icons/hicolor/16x16/apps/lskat.png
+share/icons/hicolor/22x22/apps/kapman.png
 share/icons/hicolor/22x22/apps/katomic.png
 share/icons/hicolor/22x22/apps/kbattleship.png
 share/icons/hicolor/22x22/apps/kblackbox.png
@@ -1410,6 +1501,7 @@ share/icons/hicolor/22x22/apps/kbreakout.png
 share/icons/hicolor/22x22/apps/kdiamond.png
 share/icons/hicolor/22x22/apps/kfourinline.png
 share/icons/hicolor/22x22/apps/kgoldrunner.png
+share/icons/hicolor/22x22/apps/killbots.png
 share/icons/hicolor/22x22/apps/kiriki.png
 share/icons/hicolor/22x22/apps/kjumpingcube.png
 share/icons/hicolor/22x22/apps/klines.png
@@ -1423,11 +1515,14 @@ share/icons/hicolor/22x22/apps/kpat.png
 share/icons/hicolor/22x22/apps/kreversi.png
 share/icons/hicolor/22x22/apps/ksame.png
 share/icons/hicolor/22x22/apps/kshisen.png
+share/icons/hicolor/22x22/apps/ksirk.png
 share/icons/hicolor/22x22/apps/kspaceduel.png
 share/icons/hicolor/22x22/apps/ksquares.png
 share/icons/hicolor/22x22/apps/ktuberling.png
 share/icons/hicolor/22x22/apps/kubrick.png
 share/icons/hicolor/22x22/apps/lskat.png
+share/icons/hicolor/32x32/apps/bomber.png
+share/icons/hicolor/32x32/apps/kapman.png
 share/icons/hicolor/32x32/apps/katomic.png
 share/icons/hicolor/32x32/apps/kbattleship.png
 share/icons/hicolor/32x32/apps/kblackbox.png
@@ -1437,6 +1532,7 @@ share/icons/hicolor/32x32/apps/kbreakout.png
 share/icons/hicolor/32x32/apps/kdiamond.png
 share/icons/hicolor/32x32/apps/kfourinline.png
 share/icons/hicolor/32x32/apps/kgoldrunner.png
+share/icons/hicolor/32x32/apps/killbots.png
 share/icons/hicolor/32x32/apps/kiriki.png
 share/icons/hicolor/32x32/apps/kjumpingcube.png
 share/icons/hicolor/32x32/apps/klines.png
@@ -1457,6 +1553,8 @@ share/icons/hicolor/32x32/apps/ksudoku.png
 share/icons/hicolor/32x32/apps/ktuberling.png
 share/icons/hicolor/32x32/apps/kubrick.png
 share/icons/hicolor/32x32/apps/lskat.png
+share/icons/hicolor/48x48/apps/bomber.png
+share/icons/hicolor/48x48/apps/kapman.png
 share/icons/hicolor/48x48/apps/katomic.png
 share/icons/hicolor/48x48/apps/kbattleship.png
 share/icons/hicolor/48x48/apps/kblackbox.png
@@ -1466,6 +1564,7 @@ share/icons/hicolor/48x48/apps/kbreakout.png
 share/icons/hicolor/48x48/apps/kdiamond.png
 share/icons/hicolor/48x48/apps/kfourinline.png
 share/icons/hicolor/48x48/apps/kgoldrunner.png
+share/icons/hicolor/48x48/apps/killbots.png
 share/icons/hicolor/48x48/apps/kiriki.png
 share/icons/hicolor/48x48/apps/kjumpingcube.png
 share/icons/hicolor/48x48/apps/klines.png
@@ -1485,6 +1584,8 @@ share/icons/hicolor/48x48/apps/ksquares.png
 share/icons/hicolor/48x48/apps/ktuberling.png
 share/icons/hicolor/48x48/apps/kubrick.png
 share/icons/hicolor/48x48/apps/lskat.png
+share/icons/hicolor/64x64/apps/bomber.png
+share/icons/hicolor/64x64/apps/kapman.png
 share/icons/hicolor/64x64/apps/katomic.png
 share/icons/hicolor/64x64/apps/kbattleship.png
 share/icons/hicolor/64x64/apps/kblackbox.png
@@ -1494,6 +1595,7 @@ share/icons/hicolor/64x64/apps/kbreakout.png
 share/icons/hicolor/64x64/apps/kdiamond.png
 share/icons/hicolor/64x64/apps/kfourinline.png
 share/icons/hicolor/64x64/apps/kgoldrunner.png
+share/icons/hicolor/64x64/apps/killbots.png
 share/icons/hicolor/64x64/apps/kiriki.png
 share/icons/hicolor/64x64/apps/kjumpingcube.png
 share/icons/hicolor/64x64/apps/klines.png
@@ -1507,12 +1609,16 @@ share/icons/hicolor/64x64/apps/kpat.png
 share/icons/hicolor/64x64/apps/kreversi.png
 share/icons/hicolor/64x64/apps/ksame.png
 share/icons/hicolor/64x64/apps/kshisen.png
+share/icons/hicolor/64x64/apps/ksirk.png
 share/icons/hicolor/64x64/apps/kspaceduel.png
 share/icons/hicolor/64x64/apps/ksquares.png
 share/icons/hicolor/64x64/apps/ktuberling.png
 share/icons/hicolor/64x64/apps/kubrick.png
 share/icons/hicolor/64x64/apps/lskat.png
+share/icons/hicolor/scalable/apps/bomber.svgz
+share/icons/hicolor/scalable/apps/kapman.svgz
 share/icons/hicolor/scalable/apps/kdiamond.svgz
+share/icons/hicolor/scalable/apps/kmahjongg.svgz
 share/icons/hicolor/scalable/apps/knetwalk.svgz
 share/icons/locolor/16x16/apps/ksirk.png
 share/icons/locolor/32x32/apps/ksirk.png
@@ -1533,41 +1639,22 @@ share/icons/oxygen/64x64/apps/kollision.png
 share/icons/oxygen/scalable/actions/lastmoves.svgz
 share/icons/oxygen/scalable/actions/legalmoves.svgz
 share/icons/oxygen/scalable/apps/kollision.svgz
-@dirrmtry share/icons/oxygen/scalable/apps
-@dirrmtry share/icons/oxygen/scalable/actions
-@dirrmtry share/icons/oxygen/scalable
-@dirrmtry share/icons/oxygen/64x64/apps
-@dirrmtry share/icons/oxygen/64x64
-@dirrmtry share/icons/oxygen/48x48/apps
-@dirrmtry share/icons/oxygen/48x48/actions
-@dirrmtry share/icons/oxygen/48x48
-@dirrmtry share/icons/oxygen/32x32/apps
-@dirrmtry share/icons/oxygen/32x32/actions
-@dirrmtry share/icons/oxygen/32x32
-@dirrmtry share/icons/oxygen/22x22/apps
-@dirrmtry share/icons/oxygen/22x22/actions
-@dirrmtry share/icons/oxygen/22x22
-@dirrmtry share/icons/oxygen/16x16/apps
-@dirrmtry share/icons/oxygen/16x16/actions
-@dirrmtry share/icons/oxygen/16x16
-@dirrmtry share/icons/oxygen/128x128/apps
-@dirrmtry share/icons/oxygen/128x128
-@dirrmtry share/icons/oxygen
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
+share/sounds/KDiamond-Stone-Drop.ogg
+share/sounds/KDiamond-Stone-Swap.ogg
+share/sounds/KDiamond-Stone-Touch.ogg
+share/sounds/kapman/bonus.ogg
+share/sounds/kapman/energizer.ogg
+share/sounds/kapman/gameover.ogg
+share/sounds/kapman/ghost.ogg
+share/sounds/kapman/levelup.ogg
+share/sounds/kapman/life.ogg
+share/sounds/kapman/pill.ogg
+@dirrm share/sounds/kapman
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
 @dirrm share/doc/HTML/en/lskat
 @dirrm share/doc/HTML/en/kubrick
 @dirrm share/doc/HTML/en/ktuberling
@@ -1588,6 +1675,7 @@ share/icons/oxygen/scalable/apps/kollision.svgz
 @dirrm share/doc/HTML/en/klines
 @dirrm share/doc/HTML/en/kjumpingcube
 @dirrm share/doc/HTML/en/kiriki
+@dirrm share/doc/HTML/en/killbots
 @dirrm share/doc/HTML/en/kgoldrunner
 @dirrm share/doc/HTML/en/kfourinline
 @dirrm share/doc/HTML/en/kdiamond
@@ -1597,7 +1685,9 @@ share/icons/oxygen/scalable/apps/kollision.svgz
 @dirrm share/doc/HTML/en/kblackbox
 @dirrm share/doc/HTML/en/kbattleship
 @dirrm share/doc/HTML/en/katomic
+@dirrm share/doc/HTML/en/kapman
 @dirrm share/doc/HTML/en/bovo
+@dirrm share/doc/HTML/en/bomber
 @dirrm share/apps/lskat/grafix
 @dirrm share/apps/lskat
 @dirrm share/apps/kubrick/themes
@@ -1634,10 +1724,7 @@ share/icons/oxygen/scalable/apps/kollision.svgz
 @dirrm share/apps/kspaceduel/icons/oxygen
 @dirrm share/apps/kspaceduel/icons
 @dirrm share/apps/kspaceduel
-@dirrm share/apps/ksirk/skins/static/Sounds
-@dirrm share/apps/ksirk/skins/static/Images
-@dirrm share/apps/ksirk/skins/static/Data
-@dirrm share/apps/ksirk/skins/static
+@dirrm share/apps/ksirkskineditor
 @dirrm share/apps/ksirk/skins/default/Sounds
 @dirrm share/apps/ksirk/skins/default/Images
 @dirrm share/apps/ksirk/skins/default/Data
@@ -1650,7 +1737,7 @@ share/icons/oxygen/scalable/apps/kollision.svgz
 @dirrm share/apps/kreversi/sounds
 @dirrm share/apps/kreversi/pics
 @dirrm share/apps/kreversi
-@dirrm share/apps/kpat/backgrounds
+@dirrm share/apps/kpat/demos
 @dirrm share/apps/kpat
 @dirrm share/apps/konquest/pics
 @dirrm share/apps/konquest
@@ -1677,6 +1764,9 @@ share/icons/oxygen/scalable/apps/kollision.svgz
 @dirrm share/apps/kjumpingcube
 @dirrm share/apps/kiriki/images
 @dirrm share/apps/kiriki
+@dirrm share/apps/killbots/themes
+@dirrm share/apps/killbots/rulesets
+@dirrm share/apps/killbots
 @dirrm share/apps/kgoldrunner/themes/nostalgia
 @dirrm share/apps/kgoldrunner/themes/kgr_geek
 @dirrm share/apps/kgoldrunner/themes/egypt
@@ -1707,11 +1797,14 @@ share/icons/oxygen/scalable/apps/kollision.svgz
 @dirrm share/apps/katomic/pics
 @dirrm share/apps/katomic/levels
 @dirrm share/apps/katomic
+@dirrm share/apps/kapman/themes
+@dirrm share/apps/kapman
 @dirrm share/apps/carddecks/svg-tigullio-international
 @dirrm share/apps/carddecks/svg-oxygen-white
 @dirrm share/apps/carddecks/svg-oxygen
 @dirrm share/apps/carddecks/svg-nicu-white
 @dirrm share/apps/carddecks/svg-nicu-ornamental
+@dirrm share/apps/carddecks/svg-jolly-royal
 @dirrm share/apps/carddecks/svg-gm-paris
 @dirrm share/apps/carddecks/svg-dondorf
 @dirrm share/apps/carddecks/decks
@@ -1727,8 +1820,8 @@ share/icons/oxygen/scalable/apps/kollision.svgz
 @dirrm share/apps/bovo/themes/gomoku
 @dirrm share/apps/bovo/themes
 @dirrm share/apps/bovo
-@dirrmtry share/applications/kde4
-@dirrmtry share/app
+@dirrm share/apps/bomber/themes
+@dirrm share/apps/bomber
 @dirrm include/kggznet
 @dirrm include/kggzmod
 @dirrm include/kggzgames
@@ -1736,4 +1829,3 @@ share/icons/oxygen/scalable/apps/kollision.svgz
 @dirrm include/highscore
 @dirrm include/digits
 @dirrm include/KDE/KGame
-@dirrmtry include/KDE/

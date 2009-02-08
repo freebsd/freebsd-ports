@@ -10,6 +10,9 @@
 # CMAKE_USE_PTHREAD	- Instruct cmake to use pthreads when
 #					compiling/linking
 #					Default: not set
+# CMAKE_BUILD_TYPE	- Type of build (cmake predefined build types),
+#					affects on CFALGS and thus should not be set.
+#					Default: none (which respects CFLAGS)
 # CMAKE_VERBOSE		- Verbose build
 #					Default: not set
 # CMAKE_SOURCE_PATH	- Path to sourcedir for cmake
@@ -45,13 +48,14 @@ CMAKE_ARGS+=	-DCMAKE_C_COMPILER:STRING="${CC}" \
 				-DCMAKE_C_FLAGS:STRING="${CFLAGS}" \
 				-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS}" \
 				-DCMAKE_INSTALL_PREFIX:PATH="${CMAKE_INSTALL_PREFIX}" \
-				-DCMAKE_BUILD_TYPE:STRING=""
+				-DCMAKE_BUILD_TYPE:STRING="${CMAKE_BUILD_TYPE}"
 
 #
 # Default build type and sourcedir
 #
 CMAKE_SOURCE_PATH?=	.
 CMAKE_INSTALL_PREFIX?=	${PREFIX}
+CMAKE_BUILD_TYPE?=	#none
 
 #
 # Instruct cmake to compile/link with pthreads

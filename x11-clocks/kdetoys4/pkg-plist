@@ -505,32 +505,9 @@ share/kde4/services/ScreenSavers/ktux.desktop
 share/kde4/services/kcmweather.desktop
 share/kde4/services/kcmweatherservice.desktop
 share/kde4/services/kweatherservice.desktop
-@dirrmtry share/kde4/services/ScreenSavers
-@dirrmtry share/kde4/services
-@dirrmtry share/kde4
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 @dirrm share/doc/HTML/en/kweather
 @dirrm share/doc/HTML/en/kteatime
 @dirrm share/doc/HTML/en/amor
-@dirrmtry share/doc/HTML/en
-@dirrmtry share/doc/HTML
-@dirrmtry share/dbus-1/interfaces
-@dirrmtry share/dbus-1
 @dirrm share/apps/kweatherservice
 @dirrm share/apps/kweather
 @dirrm share/apps/ktux/sprites
@@ -549,7 +526,3 @@ share/kde4/services/kweatherservice.desktop
 @dirrm share/apps/amor/pics/animated
 @dirrm share/apps/amor/pics
 @dirrm share/apps/amor
-@dirrmtry share/apps
-@dirrmtry share/applications/kde4
-@dirrmtry share/applications
-@dirrmtry lib/kde4

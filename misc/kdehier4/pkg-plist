@@ -11,8 +11,8 @@
 %%MTREE%%lib/X11/fonts/.keep_me
 %%MTREE%%lib/X11/fonts/local/.keep_me
 %%MTREE%%libdata/.keep_me
-%%MTREE%%libdata/ldconfig
-%%MTREE%%libdata/ldconfig32
+%%MTREE%%%%LDCONFIG_DIR%%
+%%MTREE%%%%LDCONFIG32_DIR%%
 %%MTREE%%libdata/pkgconfig
 %%MTREE%%libexec/.keep_me
 %%MTREE%%man/.keep_me
@@ -472,121 +472,96 @@ lib/kconf_update_bin/.keep_me
 lib/kde4/.keep_me
 lib/kde4/libexec/.keep_me
 lib/kde4/plugins/.keep_me
+lib/kde4/plugins/designer/.keep_me
+lib/kde4/plugins/styles/.keep_me
 lib/strigi/.keep_me
 share/applications/.keep_me
 share/applications/kde4/.keep_me
-share/applnk/.hidden/.keep_me
-share/applnk/.keep_me
-share/applnk/Applications/.keep_me
-share/applnk/Development/.keep_me
-share/applnk/Editors/.keep_me
-share/applnk/Edutainment/.keep_me
-share/applnk/Games/.keep_me
-share/applnk/Games/Arcade/.keep_me
-share/applnk/Games/Board/.keep_me
-share/applnk/Games/Card/.keep_me
-share/applnk/Games/Kidsgames/.keep_me
-share/applnk/Games/Roguelikes/.keep_me
-share/applnk/Games/TacticStrategy/.keep_me
-share/applnk/Graphics/.keep_me
-share/applnk/Graphics/More/.keep_me
-share/applnk/Internet/.keep_me
-share/applnk/Internet/More/.keep_me
-share/applnk/Internet/Terminal/.keep_me
-share/applnk/Multimedia/.keep_me
-share/applnk/Multimedia/More/.keep_me
-share/applnk/Office/.keep_me
-share/applnk/Settings/.keep_me
-share/applnk/Settings/Accessibility/.keep_me
-share/applnk/Settings/Components/.keep_me
-share/applnk/Settings/Desktop/.keep_me
-share/applnk/Settings/Information/.keep_me
-share/applnk/Settings/LookNFeel/.keep_me
-share/applnk/Settings/LookNFeel/Themes/.keep_me
-share/applnk/Settings/LookNFeel/Windows/.keep_me
-share/applnk/Settings/Network/.keep_me
-share/applnk/Settings/Network/WebBrowsing/.keep_me
-share/applnk/Settings/Peripherals/.keep_me
-share/applnk/Settings/Personalization/.keep_me
-share/applnk/Settings/PowerControl/.keep_me
-share/applnk/Settings/Security/.keep_me
-share/applnk/Settings/Sound/.keep_me
-share/applnk/Settings/System/.keep_me
-share/applnk/Settings/WebBrowsing/.keep_me
-share/applnk/Settingsmenu/.keep_me
-share/applnk/System/.keep_me
-share/applnk/System/More/.keep_me
-share/applnk/System/ScreenSavers/.keep_me
-share/applnk/System/Terminal/.keep_me
-share/applnk/Toys/.keep_me
-share/applnk/Utilities/.keep_me
-share/applnk/Utilities/More/.keep_me
-share/applnk/Utilities/XUtilities/.keep_me
 share/apps/.keep_me
+share/apps/cmake/.keep_me
+share/apps/cmake/modules/.keep_me
+share/apps/color-schemes/.keep_me
+share/apps/desktoptheme/.keep_me
+share/apps/desktoptheme/default/.keep_me
+share/apps/desktoptheme/default/widgets/.keep_me
 share/apps/kabc/.keep_me
 share/apps/kabc/formats/.keep_me
 share/apps/kabc/plugins/.keep_me
-share/apps/kate/.keep_me
-share/apps/kate/scripts/.keep_me
-share/apps/kdesktop/.keep_me
-share/apps/kdesktop/DesktopLinks/.keep_me
-share/apps/kdesktop/patterns/.keep_me
-share/apps/kdesktop/pics/.keep_me
-share/apps/kdesktop/programs/.keep_me
+share/apps/katepart/.keep_me
+share/apps/katepart/syntax/.keep_me
+share/apps/kcharselect/.keep_me
+share/apps/kcm_componentchooser/.keep_me
+share/apps/kconf_update/.keep_me
+share/apps/kcontrol/.keep_me
+share/apps/kcontrol/pics/.keep_me
+share/apps/kdm/.keep_me
+share/apps/kdm/pics/.keep_me
+share/apps/kdm/pics/users/.keep_me
 share/apps/khelpcenter/.keep_me
 share/apps/khelpcenter/plugins/.keep_me
-share/apps/kicker/.keep_me
-share/apps/kicker/applets/.keep_me
-share/apps/kicker/extensions/.keep_me
-share/apps/kicker/menuext/.keep_me
-share/apps/kicker/pics/.keep_me
-share/apps/kicker/tiles/.keep_me
-share/apps/kicker/wallpapers/.keep_me
+share/apps/khtml/.keep_me
+share/apps/khtml/kpartplugins/.keep_me
 share/apps/konqsidebartng/.keep_me
-share/apps/konqsidebartng/add/.keep_me
-share/apps/konqsidebartng/dirtree/.keep_me
-share/apps/konqsidebartng/entries/.keep_me
 share/apps/konqsidebartng/virtual_folders/.keep_me
-share/apps/konqsidebartng/virtual_folders/remote/.keep_me
-share/apps/konqsidebartng/virtual_folders/remote/ftp/.keep_me
-share/apps/konqsidebartng/virtual_folders/remote/web/.keep_me
 share/apps/konqsidebartng/virtual_folders/services/.keep_me
 share/apps/konqueror/.keep_me
-share/apps/konqueror/profiles/.keep_me
-share/apps/konqueror/servicemenus/.keep_me
-share/apps/konsole/.keep_me
-share/apps/konsole/profiles/.keep_me
-share/apps/kthememgr/.keep_me
-share/apps/kthememgr/Themes/.keep_me
+share/apps/kstyle/.keep_me
+share/apps/kstyle/themes/.keep_me
 share/apps/kwin/.keep_me
-share/apps/kwin/icewm-themes/.keep_me
-share/apps/kwin/pics/.keep_me
+share/apps/nepomuk/.keep_me
+share/apps/nepomuk/ontologies/.keep_me
+share/apps/plasma/.keep_me
+share/apps/plasma/services/.keep_me
 share/apps/profiles/.keep_me
-share/apps/zeroconf/.keep_me
+share/apps/remoteview/.keep_me
+share/apps/solid/.keep_me
+share/apps/solid/actions/.keep_me
+share/autostart/.keep_me
 share/config.kcfg/.keep_me
 share/config/.keep_me
 share/dbus-1/.keep_me
 share/dbus-1/interfaces/.keep_me
 share/dbus-1/services/.keep_me
 share/doc/HTML/.keep_me
+share/doc/HTML/bg/.keep_me
+share/doc/HTML/ca/.keep_me
 share/doc/HTML/cs/.keep_me
+share/doc/HTML/csb/.keep_me
 share/doc/HTML/da/.keep_me
 share/doc/HTML/de/.keep_me
+share/doc/HTML/el/.keep_me
 share/doc/HTML/en/.keep_me
 share/doc/HTML/en/kcontrol/.keep_me
+share/doc/HTML/en/kioslave/.keep_me
 share/doc/HTML/en_GB/.keep_me
+share/doc/HTML/eo/.keep_me
 share/doc/HTML/es/.keep_me
 share/doc/HTML/et/.keep_me
 share/doc/HTML/eu/.keep_me
 share/doc/HTML/fi/.keep_me
 share/doc/HTML/fr/.keep_me
+share/doc/HTML/fy/.keep_me
+share/doc/HTML/ga/.keep_me
+share/doc/HTML/gl/.keep_me
 share/doc/HTML/he/.keep_me
+share/doc/HTML/hi/.keep_me
 share/doc/HTML/hr/.keep_me
 share/doc/HTML/hu/.keep_me
 share/doc/HTML/it/.keep_me
 share/doc/HTML/ja/.keep_me
+share/doc/HTML/kk/.keep_me
+share/doc/HTML/km/.keep_me
 share/doc/HTML/ko/.keep_me
+share/doc/HTML/ku/.keep_me
+share/doc/HTML/lt/.keep_me
+share/doc/HTML/lv/.keep_me
+share/doc/HTML/mk/.keep_me
+share/doc/HTML/ml/.keep_me
+share/doc/HTML/nb/.keep_me
+share/doc/HTML/nds/.keep_me
 share/doc/HTML/nl/.keep_me
+share/doc/HTML/nn/.keep_me
+share/doc/HTML/pa/.keep_me
 share/doc/HTML/pl/.keep_me
 share/doc/HTML/pt/.keep_me
 share/doc/HTML/pt_BR/.keep_me
@@ -596,12 +571,53 @@ share/doc/HTML/sk/.keep_me
 share/doc/HTML/sl/.keep_me
 share/doc/HTML/sr/.keep_me
 share/doc/HTML/sv/.keep_me
+share/doc/HTML/ta/.keep_me
+share/doc/HTML/th/.keep_me
 share/doc/HTML/tr/.keep_me
 share/doc/HTML/uk/.keep_me
+share/doc/HTML/wa/.keep_me
 share/doc/HTML/xh/.keep_me
 share/doc/HTML/zh_CN/.keep_me
 share/doc/HTML/zh_TW/.keep_me
+share/emoticons/.keep_me
 share/icons/.keep_me
+share/icons/Locolor/.keep_me
+share/icons/Locolor/128x128/.keep_me
+share/icons/Locolor/128x128/actions/.keep_me
+share/icons/Locolor/128x128/apps/.keep_me
+share/icons/Locolor/128x128/devices/.keep_me
+share/icons/Locolor/128x128/filesystem/.keep_me
+share/icons/Locolor/128x128/mimetypes/.keep_me
+share/icons/Locolor/16x16/.keep_me
+share/icons/Locolor/16x16/actions/.keep_me
+share/icons/Locolor/16x16/apps/.keep_me
+share/icons/Locolor/16x16/devices/.keep_me
+share/icons/Locolor/16x16/filesystems/.keep_me
+share/icons/Locolor/16x16/mimetypes/.keep_me
+share/icons/Locolor/22x22/.keep_me
+share/icons/Locolor/22x22/actions/.keep_me
+share/icons/Locolor/22x22/apps/.keep_me
+share/icons/Locolor/22x22/devices/.keep_me
+share/icons/Locolor/22x22/filesystems/.keep_me
+share/icons/Locolor/22x22/mimetypes/.keep_me
+share/icons/Locolor/32x32/.keep_me
+share/icons/Locolor/32x32/actions/.keep_me
+share/icons/Locolor/32x32/apps/.keep_me
+share/icons/Locolor/32x32/devices/.keep_me
+share/icons/Locolor/32x32/filesystems/.keep_me
+share/icons/Locolor/32x32/mimetypes/.keep_me
+share/icons/Locolor/48x48/.keep_me
+share/icons/Locolor/48x48/actions/.keep_me
+share/icons/Locolor/48x48/apps/.keep_me
+share/icons/Locolor/48x48/devices/.keep_me
+share/icons/Locolor/48x48/filesystems/.keep_me
+share/icons/Locolor/48x48/mimetypes/.keep_me
+share/icons/Locolor/64x64/.keep_me
+share/icons/Locolor/64x64/actions/.keep_me
+share/icons/Locolor/64x64/apps/.keep_me
+share/icons/Locolor/64x64/devices/.keep_me
+share/icons/Locolor/64x64/filesystems/.keep_me
+share/icons/Locolor/64x64/mimetypes/.keep_me
 share/icons/crystalsvg/.keep_me
 share/icons/crystalsvg/128x128/.keep_me
 share/icons/crystalsvg/128x128/actions/.keep_me
@@ -958,43 +974,6 @@ share/icons/hicolor/scalable/stock/net/.keep_me
 share/icons/hicolor/scalable/stock/object/.keep_me
 share/icons/hicolor/scalable/stock/table/.keep_me
 share/icons/hicolor/scalable/stock/text/.keep_me
-share/icons/locolor/.keep_me
-share/icons/locolor/128x128/.keep_me
-share/icons/locolor/128x128/actions/.keep_me
-share/icons/locolor/128x128/apps/.keep_me
-share/icons/locolor/128x128/devices/.keep_me
-share/icons/locolor/128x128/filesystem/.keep_me
-share/icons/locolor/128x128/mimetypes/.keep_me
-share/icons/locolor/16x16/.keep_me
-share/icons/locolor/16x16/actions/.keep_me
-share/icons/locolor/16x16/apps/.keep_me
-share/icons/locolor/16x16/devices/.keep_me
-share/icons/locolor/16x16/filesystems/.keep_me
-share/icons/locolor/16x16/mimetypes/.keep_me
-share/icons/locolor/22x22/.keep_me
-share/icons/locolor/22x22/actions/.keep_me
-share/icons/locolor/22x22/apps/.keep_me
-share/icons/locolor/22x22/devices/.keep_me
-share/icons/locolor/22x22/filesystems/.keep_me
-share/icons/locolor/22x22/mimetypes/.keep_me
-share/icons/locolor/32x32/.keep_me
-share/icons/locolor/32x32/actions/.keep_me
-share/icons/locolor/32x32/apps/.keep_me
-share/icons/locolor/32x32/devices/.keep_me
-share/icons/locolor/32x32/filesystems/.keep_me
-share/icons/locolor/32x32/mimetypes/.keep_me
-share/icons/locolor/48x48/.keep_me
-share/icons/locolor/48x48/actions/.keep_me
-share/icons/locolor/48x48/apps/.keep_me
-share/icons/locolor/48x48/devices/.keep_me
-share/icons/locolor/48x48/filesystems/.keep_me
-share/icons/locolor/48x48/mimetypes/.keep_me
-share/icons/locolor/64x64/.keep_me
-share/icons/locolor/64x64/actions/.keep_me
-share/icons/locolor/64x64/apps/.keep_me
-share/icons/locolor/64x64/devices/.keep_me
-share/icons/locolor/64x64/filesystems/.keep_me
-share/icons/locolor/64x64/mimetypes/.keep_me
 share/icons/oxygen/.keep_me
 share/icons/oxygen/128x128/.keep_me
 share/icons/oxygen/128x128/actions/.keep_me
@@ -1094,22 +1073,24 @@ share/kde4/services/kresources/.keep_me
 share/kde4/services/kresources/kabc/.keep_me
 share/kde4/services/kresources/kcal/.keep_me
 share/kde4/servicetypes/.keep_me
+share/locale/csb/.keep_me
+share/locale/csb/LC_MESSAGES/.keep_me
 share/locale/en_US/.keep_me
-share/mimelnk/.keep_me
-share/mimelnk/all/.keep_me
-share/mimelnk/application/.keep_me
-share/mimelnk/audio/.keep_me
-share/mimelnk/image/.keep_me
-share/mimelnk/inode/.keep_me
-share/mimelnk/message/.keep_me
-share/mimelnk/model/.keep_me
-share/mimelnk/multipart/.keep_me
-share/mimelnk/text/.keep_me
-share/mimelnk/video/.keep_me
+share/locale/fy/.keep_me
+share/locale/fy/LC_MESSAGES/.keep_me
+share/locale/kk/.keep_me
+share/locale/kk/LC_MESSAGES/.keep_me
+share/locale/km/.keep_me
+share/locale/km/LC_MESSAGES/.keep_me
+share/locale/ku/.keep_me
+share/locale/ku/LC_MESSAGES/.keep_me
+share/locale/nds/.keep_me
+share/locale/nds/LC_MESSAGES/.keep_me
+share/locale/xh/.keep_me
+share/locale/xh/LC_MESSAGES/.keep_me
 share/services/.keep_me
 share/services/searchproviders/.keep_me
 share/services/useragentstrings/.keep_me
-share/servicetypes/.keep_me
 share/sounds/.keep_me
 share/templates/.keep_me
 share/templates/.source/.keep_me
@@ -1118,22 +1099,24 @@ share/wallpapers/.keep_me
 @dirrmtry share/templates/.source
 @dirrmtry share/templates
 @dirrmtry share/sounds
-@dirrmtry share/servicetypes
 @dirrmtry share/services/useragentstrings
 @dirrmtry share/services/searchproviders
 @dirrmtry share/services
-@dirrmtry share/mimelnk/video
-@dirrmtry share/mimelnk/text
-@dirrmtry share/mimelnk/multipart
-@dirrmtry share/mimelnk/model
-@dirrmtry share/mimelnk/message
-@dirrmtry share/mimelnk/inode
-@dirrmtry share/mimelnk/image
-@dirrmtry share/mimelnk/audio
-@dirrmtry share/mimelnk/application
-@dirrmtry share/mimelnk/all
-@dirrmtry share/mimelnk
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/fy/LC_MESSAGES
+@dirrmtry share/locale/fy
 @dirrmtry share/locale/en_US
+@dirrmtry share/locale/csb/LC_MESSAGES
+@dirrmtry share/locale/csb
 @dirrmtry share/kde4/servicetypes
 @dirrmtry share/kde4/services/kresources/kcal
 @dirrmtry share/kde4/services/kresources/kabc
@@ -1233,43 +1216,6 @@ share/wallpapers/.keep_me
 @dirrmtry share/icons/oxygen/128x128/actions
 @dirrmtry share/icons/oxygen/128x128
 @dirrmtry share/icons/oxygen
-@dirrmtry share/icons/locolor/64x64/mimetypes
-@dirrmtry share/icons/locolor/64x64/filesystems
-@dirrmtry share/icons/locolor/64x64/devices
-@dirrmtry share/icons/locolor/64x64/apps
-@dirrmtry share/icons/locolor/64x64/actions
-@dirrmtry share/icons/locolor/64x64
-@dirrmtry share/icons/locolor/48x48/mimetypes
-@dirrmtry share/icons/locolor/48x48/filesystems
-@dirrmtry share/icons/locolor/48x48/devices
-@dirrmtry share/icons/locolor/48x48/apps
-@dirrmtry share/icons/locolor/48x48/actions
-@dirrmtry share/icons/locolor/48x48
-@dirrmtry share/icons/locolor/32x32/mimetypes
-@dirrmtry share/icons/locolor/32x32/filesystems
-@dirrmtry share/icons/locolor/32x32/devices
-@dirrmtry share/icons/locolor/32x32/apps
-@dirrmtry share/icons/locolor/32x32/actions
-@dirrmtry share/icons/locolor/32x32
-@dirrmtry share/icons/locolor/22x22/mimetypes
-@dirrmtry share/icons/locolor/22x22/filesystems
-@dirrmtry share/icons/locolor/22x22/devices
-@dirrmtry share/icons/locolor/22x22/apps
-@dirrmtry share/icons/locolor/22x22/actions
-@dirrmtry share/icons/locolor/22x22
-@dirrmtry share/icons/locolor/16x16/mimetypes
-@dirrmtry share/icons/locolor/16x16/filesystems
-@dirrmtry share/icons/locolor/16x16/devices
-@dirrmtry share/icons/locolor/16x16/apps
-@dirrmtry share/icons/locolor/16x16/actions
-@dirrmtry share/icons/locolor/16x16
-@dirrmtry share/icons/locolor/128x128/mimetypes
-@dirrmtry share/icons/locolor/128x128/filesystem
-@dirrmtry share/icons/locolor/128x128/devices
-@dirrmtry share/icons/locolor/128x128/apps
-@dirrmtry share/icons/locolor/128x128/actions
-@dirrmtry share/icons/locolor/128x128
-@dirrmtry share/icons/locolor
 @dirrmtry share/icons/hicolor/scalable/stock/text
 @dirrmtry share/icons/hicolor/scalable/stock/table
 @dirrmtry share/icons/hicolor/scalable/stock/object
@@ -1626,12 +1572,53 @@ share/wallpapers/.keep_me
 @dirrmtry share/icons/crystalsvg/128x128/actions
 @dirrmtry share/icons/crystalsvg/128x128
 @dirrmtry share/icons/crystalsvg
+@dirrmtry share/icons/Locolor/64x64/mimetypes
+@dirrmtry share/icons/Locolor/64x64/filesystems
+@dirrmtry share/icons/Locolor/64x64/devices
+@dirrmtry share/icons/Locolor/64x64/apps
+@dirrmtry share/icons/Locolor/64x64/actions
+@dirrmtry share/icons/Locolor/64x64
+@dirrmtry share/icons/Locolor/48x48/mimetypes
+@dirrmtry share/icons/Locolor/48x48/filesystems
+@dirrmtry share/icons/Locolor/48x48/devices
+@dirrmtry share/icons/Locolor/48x48/apps
+@dirrmtry share/icons/Locolor/48x48/actions
+@dirrmtry share/icons/Locolor/48x48
+@dirrmtry share/icons/Locolor/32x32/mimetypes
+@dirrmtry share/icons/Locolor/32x32/filesystems
+@dirrmtry share/icons/Locolor/32x32/devices
+@dirrmtry share/icons/Locolor/32x32/apps
+@dirrmtry share/icons/Locolor/32x32/actions
+@dirrmtry share/icons/Locolor/32x32
+@dirrmtry share/icons/Locolor/22x22/mimetypes
+@dirrmtry share/icons/Locolor/22x22/filesystems
+@dirrmtry share/icons/Locolor/22x22/devices
+@dirrmtry share/icons/Locolor/22x22/apps
+@dirrmtry share/icons/Locolor/22x22/actions
+@dirrmtry share/icons/Locolor/22x22
+@dirrmtry share/icons/Locolor/16x16/mimetypes
+@dirrmtry share/icons/Locolor/16x16/filesystems
+@dirrmtry share/icons/Locolor/16x16/devices
+@dirrmtry share/icons/Locolor/16x16/apps
+@dirrmtry share/icons/Locolor/16x16/actions
+@dirrmtry share/icons/Locolor/16x16
+@dirrmtry share/icons/Locolor/128x128/mimetypes
+@dirrmtry share/icons/Locolor/128x128/filesystem
+@dirrmtry share/icons/Locolor/128x128/devices
+@dirrmtry share/icons/Locolor/128x128/apps
+@dirrmtry share/icons/Locolor/128x128/actions
+@dirrmtry share/icons/Locolor/128x128
+@dirrmtry share/icons/Locolor
 @dirrmtry share/icons
+@dirrmtry share/emoticons
 @dirrmtry share/doc/HTML/zh_TW
 @dirrmtry share/doc/HTML/zh_CN
 @dirrmtry share/doc/HTML/xh
+@dirrmtry share/doc/HTML/wa
 @dirrmtry share/doc/HTML/uk
 @dirrmtry share/doc/HTML/tr
+@dirrmtry share/doc/HTML/th
+@dirrmtry share/doc/HTML/ta
 @dirrmtry share/doc/HTML/sv
 @dirrmtry share/doc/HTML/sr
 @dirrmtry share/doc/HTML/sl
@@ -1641,121 +1628,96 @@ share/wallpapers/.keep_me
 @dirrmtry share/doc/HTML/pt_BR
 @dirrmtry share/doc/HTML/pt
 @dirrmtry share/doc/HTML/pl
+@dirrmtry share/doc/HTML/pa
+@dirrmtry share/doc/HTML/nn
 @dirrmtry share/doc/HTML/nl
+@dirrmtry share/doc/HTML/nds
+@dirrmtry share/doc/HTML/nb
+@dirrmtry share/doc/HTML/ml
+@dirrmtry share/doc/HTML/mk
+@dirrmtry share/doc/HTML/lv
+@dirrmtry share/doc/HTML/lt
+@dirrmtry share/doc/HTML/ku
 @dirrmtry share/doc/HTML/ko
+@dirrmtry share/doc/HTML/km
+@dirrmtry share/doc/HTML/kk
 @dirrmtry share/doc/HTML/ja
 @dirrmtry share/doc/HTML/it
 @dirrmtry share/doc/HTML/hu
 @dirrmtry share/doc/HTML/hr
+@dirrmtry share/doc/HTML/hi
 @dirrmtry share/doc/HTML/he
+@dirrmtry share/doc/HTML/gl
+@dirrmtry share/doc/HTML/ga
+@dirrmtry share/doc/HTML/fy
 @dirrmtry share/doc/HTML/fr
 @dirrmtry share/doc/HTML/fi
 @dirrmtry share/doc/HTML/eu
 @dirrmtry share/doc/HTML/et
 @dirrmtry share/doc/HTML/es
+@dirrmtry share/doc/HTML/eo
 @dirrmtry share/doc/HTML/en_GB
+@dirrmtry share/doc/HTML/en/kioslave
 @dirrmtry share/doc/HTML/en/kcontrol
 @dirrmtry share/doc/HTML/en
+@dirrmtry share/doc/HTML/el
 @dirrmtry share/doc/HTML/de
 @dirrmtry share/doc/HTML/da
+@dirrmtry share/doc/HTML/csb
 @dirrmtry share/doc/HTML/cs
+@dirrmtry share/doc/HTML/ca
+@dirrmtry share/doc/HTML/bg
 @dirrmtry share/doc/HTML
 @dirrmtry share/dbus-1/services
 @dirrmtry share/dbus-1/interfaces
 @dirrmtry share/dbus-1
 @dirrmtry share/config.kcfg
 @dirrmtry share/config
-@dirrmtry share/apps/zeroconf
+@dirrmtry share/autostart
+@dirrmtry share/apps/solid/actions
+@dirrmtry share/apps/solid
+@dirrmtry share/apps/remoteview
 @dirrmtry share/apps/profiles
-@dirrmtry share/apps/kwin/pics
-@dirrmtry share/apps/kwin/icewm-themes
+@dirrmtry share/apps/plasma/services
+@dirrmtry share/apps/plasma
+@dirrmtry share/apps/nepomuk/ontologies
+@dirrmtry share/apps/nepomuk
 @dirrmtry share/apps/kwin
-@dirrmtry share/apps/kthememgr/Themes
-@dirrmtry share/apps/kthememgr
-@dirrmtry share/apps/konsole/profiles
-@dirrmtry share/apps/konsole
-@dirrmtry share/apps/konqueror/servicemenus
-@dirrmtry share/apps/konqueror/profiles
+@dirrmtry share/apps/kstyle/themes
+@dirrmtry share/apps/kstyle
 @dirrmtry share/apps/konqueror
 @dirrmtry share/apps/konqsidebartng/virtual_folders/services
-@dirrmtry share/apps/konqsidebartng/virtual_folders/remote/web
-@dirrmtry share/apps/konqsidebartng/virtual_folders/remote/ftp
-@dirrmtry share/apps/konqsidebartng/virtual_folders/remote
 @dirrmtry share/apps/konqsidebartng/virtual_folders
-@dirrmtry share/apps/konqsidebartng/entries
-@dirrmtry share/apps/konqsidebartng/dirtree
-@dirrmtry share/apps/konqsidebartng/add
 @dirrmtry share/apps/konqsidebartng
-@dirrmtry share/apps/kicker/wallpapers
-@dirrmtry share/apps/kicker/tiles
-@dirrmtry share/apps/kicker/pics
-@dirrmtry share/apps/kicker/menuext
-@dirrmtry share/apps/kicker/extensions
-@dirrmtry share/apps/kicker/applets
-@dirrmtry share/apps/kicker
+@dirrmtry share/apps/khtml/kpartplugins
+@dirrmtry share/apps/khtml
 @dirrmtry share/apps/khelpcenter/plugins
 @dirrmtry share/apps/khelpcenter
-@dirrmtry share/apps/kdesktop/programs
-@dirrmtry share/apps/kdesktop/pics
-@dirrmtry share/apps/kdesktop/patterns
-@dirrmtry share/apps/kdesktop/DesktopLinks
-@dirrmtry share/apps/kdesktop
-@dirrmtry share/apps/kate/scripts
-@dirrmtry share/apps/kate
+@dirrmtry share/apps/kdm/pics/users
+@dirrmtry share/apps/kdm/pics
+@dirrmtry share/apps/kdm
+@dirrmtry share/apps/kcontrol/pics
+@dirrmtry share/apps/kcontrol
+@dirrmtry share/apps/kconf_update
+@dirrmtry share/apps/kcm_componentchooser
+@dirrmtry share/apps/kcharselect
+@dirrmtry share/apps/katepart/syntax
+@dirrmtry share/apps/katepart
 @dirrmtry share/apps/kabc/plugins
 @dirrmtry share/apps/kabc/formats
 @dirrmtry share/apps/kabc
+@dirrmtry share/apps/desktoptheme/default/widgets
+@dirrmtry share/apps/desktoptheme/default
+@dirrmtry share/apps/desktoptheme
+@dirrmtry share/apps/color-schemes
+@dirrmtry share/apps/cmake/modules
+@dirrmtry share/apps/cmake
 @dirrmtry share/apps
-@dirrmtry share/applnk/Utilities/XUtilities
-@dirrmtry share/applnk/Utilities/More
-@dirrmtry share/applnk/Utilities
-@dirrmtry share/applnk/Toys
-@dirrmtry share/applnk/System/Terminal
-@dirrmtry share/applnk/System/ScreenSavers
-@dirrmtry share/applnk/System/More
-@dirrmtry share/applnk/System
-@dirrmtry share/applnk/Settingsmenu
-@dirrmtry share/applnk/Settings/WebBrowsing
-@dirrmtry share/applnk/Settings/System
-@dirrmtry share/applnk/Settings/Sound
-@dirrmtry share/applnk/Settings/Security
-@dirrmtry share/applnk/Settings/PowerControl
-@dirrmtry share/applnk/Settings/Personalization
-@dirrmtry share/applnk/Settings/Peripherals
-@dirrmtry share/applnk/Settings/Network/WebBrowsing
-@dirrmtry share/applnk/Settings/Network
-@dirrmtry share/applnk/Settings/LookNFeel/Windows
-@dirrmtry share/applnk/Settings/LookNFeel/Themes
-@dirrmtry share/applnk/Settings/LookNFeel
-@dirrmtry share/applnk/Settings/Information
-@dirrmtry share/applnk/Settings/Desktop
-@dirrmtry share/applnk/Settings/Components
-@dirrmtry share/applnk/Settings/Accessibility
-@dirrmtry share/applnk/Settings
-@dirrmtry share/applnk/Office
-@dirrmtry share/applnk/Multimedia/More
-@dirrmtry share/applnk/Multimedia
-@dirrmtry share/applnk/Internet/Terminal
-@dirrmtry share/applnk/Internet/More
-@dirrmtry share/applnk/Internet
-@dirrmtry share/applnk/Graphics/More
-@dirrmtry share/applnk/Graphics
-@dirrmtry share/applnk/Games/TacticStrategy
-@dirrmtry share/applnk/Games/Roguelikes
-@dirrmtry share/applnk/Games/Kidsgames
-@dirrmtry share/applnk/Games/Card
-@dirrmtry share/applnk/Games/Board
-@dirrmtry share/applnk/Games/Arcade
-@dirrmtry share/applnk/Games
-@dirrmtry share/applnk/Edutainment
-@dirrmtry share/applnk/Editors
-@dirrmtry share/applnk/Development
-@dirrmtry share/applnk/Applications
-@dirrmtry share/applnk/.hidden
-@dirrmtry share/applnk
 @dirrmtry share/applications/kde4
 @dirrmtry share/applications
 @dirrmtry lib/strigi
+@dirrmtry lib/kde4/plugins/styles
+@dirrmtry lib/kde4/plugins/designer
 @dirrmtry lib/kde4/plugins
 @dirrmtry lib/kde4/libexec
 @dirrmtry lib/kde4
@@ -2227,3 +2189,6 @@ share/wallpapers/.keep_me
 %%MTREE%%@dirrm etc/pam.d
 %%MTREE%%@dirrm etc
 %%MTREE%%@dirrm bin
+%%MTREE%%@cwd %%LOCALBASE%%
+%%MTREE%%%%LDCONFIG_DIR%%/kdehier4
+%%MTREE%%@cwd %%KDE4_PREFIX%%
