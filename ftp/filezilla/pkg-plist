@@ -291,6 +291,39 @@ share/pixmaps/filezilla.png
 %%DATADIR%%/resources/lone/48x48/upload.png
 %%DATADIR%%/resources/lone/48x48/uploadadd.png
 %%DATADIR%%/resources/lone/theme.xml
+%%DATADIR%%/resources/minimal/16x16/ascii.png
+%%DATADIR%%/resources/minimal/16x16/auto.png
+%%DATADIR%%/resources/minimal/16x16/binary.png
+%%DATADIR%%/resources/minimal/16x16/bookmarks.png
+%%DATADIR%%/resources/minimal/16x16/cancel.png
+%%DATADIR%%/resources/minimal/16x16/compare.png
+%%DATADIR%%/resources/minimal/16x16/disconnect.png
+%%DATADIR%%/resources/minimal/16x16/download.png
+%%DATADIR%%/resources/minimal/16x16/downloadadd.png
+%%DATADIR%%/resources/minimal/16x16/file.png
+%%DATADIR%%/resources/minimal/16x16/filter.png
+%%DATADIR%%/resources/minimal/16x16/folder.png
+%%DATADIR%%/resources/minimal/16x16/folderback.png
+%%DATADIR%%/resources/minimal/16x16/folderclosed.png
+%%DATADIR%%/resources/minimal/16x16/folderup.png
+%%DATADIR%%/resources/minimal/16x16/help.png
+%%DATADIR%%/resources/minimal/16x16/localtreeview.png
+%%DATADIR%%/resources/minimal/16x16/lock.png
+%%DATADIR%%/resources/minimal/16x16/logview.png
+%%DATADIR%%/resources/minimal/16x16/processqueue.png
+%%DATADIR%%/resources/minimal/16x16/queueview.png
+%%DATADIR%%/resources/minimal/16x16/reconnect.png
+%%DATADIR%%/resources/minimal/16x16/refresh.png
+%%DATADIR%%/resources/minimal/16x16/remotetreeview.png
+%%DATADIR%%/resources/minimal/16x16/server.png
+%%DATADIR%%/resources/minimal/16x16/showhidden.png
+%%DATADIR%%/resources/minimal/16x16/sitemanager.png
+%%DATADIR%%/resources/minimal/16x16/speedlimits.png
+%%DATADIR%%/resources/minimal/16x16/synchronize.png
+%%DATADIR%%/resources/minimal/16x16/upload.png
+%%DATADIR%%/resources/minimal/16x16/uploadadd.png
+%%DATADIR%%/resources/minimal/32x32/file.png
+%%DATADIR%%/resources/minimal/theme.xml
 %%DATADIR%%/resources/opencrystal/16x16/ascii.png
 %%DATADIR%%/resources/opencrystal/16x16/auto.png
 %%DATADIR%%/resources/opencrystal/16x16/binary.png
@@ -412,6 +445,9 @@ share/applications/filezilla.desktop
 @dirrm %%DATADIR%%/resources/opencrystal/32x32
 @dirrm %%DATADIR%%/resources/opencrystal/16x16
 @dirrm %%DATADIR%%/resources/opencrystal
+@dirrm %%DATADIR%%/resources/minimal/32x32
+@dirrm %%DATADIR%%/resources/minimal/16x16
+@dirrm %%DATADIR%%/resources/minimal
 @dirrm %%DATADIR%%/resources/lone/48x48
 @dirrm %%DATADIR%%/resources/lone/32x32
 @dirrm %%DATADIR%%/resources/lone/16x16
