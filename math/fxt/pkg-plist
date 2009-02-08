@@ -144,6 +144,7 @@ include/fxt/bpol/lhca.h
 include/fxt/bpol/necklace2bitpol.h
 include/fxt/bpol/normalbasis.h
 include/fxt/bpol/normalpoly-dual.h
+include/fxt/bpol/normal-solvequadratic.h
 include/fxt/bpol/num-bitpol.h
 include/fxt/bpol/poly-tab.h
 include/fxt/chirpzt-all.h

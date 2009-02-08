@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fxt
-PORTVERSION=	2009.01.25
+PORTVERSION=	2009.02.02
 CATEGORIES=	math
 MASTER_SITES=	http://www.jjj.de/fxt/ \
 		http://freebsd.unixfreunde.de/sources/
