@@ -21,8 +21,7 @@ USE_FORTRAN=	yes
 USE_AUTOTOOLS=	libltdl:15 libtool:15 autoconf:262
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-				LDFLAGS="-L${LOCALBASE}/lib" \
-				F77="${F77}" FFLAGS="${FFLAGS}"
+				LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(cpp|h)
