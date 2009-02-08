@@ -1,4 +1,3 @@
-%%RUBY_SITELIBDIR%%/gopt.rb
 %%RUBY_SITELIBDIR%%/smf.rb
 %%RUBY_SITELIBDIR%%/smf/divert.rb
 %%RUBY_SITELIBDIR%%/smf/io.rb
