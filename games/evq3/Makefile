@@ -9,11 +9,10 @@ PORTNAME=	evq3
 PORTVERSION=	1.3.20080810
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://evolution.quakedev.com/dev/evq3/:pak \
-		${MASTER_SITE_LOCAL:S|$|alepulver/:src|}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
-		pak-evq3.pk3:pak \
-		pak-5evq3.pk3:src
+MASTER_SITES=	${MASTER_SITE_LOCAL:S|$|alepulver/|}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		pak-evq3.pk3 \
+		pak-5evq3.pk3
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	alepulver@FreeBSD.org
