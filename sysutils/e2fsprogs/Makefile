@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.41.3
+PORTVERSION=	1.41.4
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -51,9 +51,11 @@ PKGDEINSTALL=	${PKGINSTALL}
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB=	NLS="@comment "
+libintl=
 .else
 USE_GETTEXT=	yes
 PLIST_SUB=	NLS=""
+libintl=	"${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
 .endif
 
 .if ${ARCH} == "sparc64"
@@ -77,7 +79,7 @@ post-build:
 		&& ${GMAKE} e2fsck \
 		STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a \
 		../lib/libblkid.a  ../lib/libuuid.a" \
-		LIBINTL="${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
+		LIBINTL=${libintl}
 # Regression check: avoid a port (not upstream!) regression from 1.40.5,
 # check that e2fsck isn't dynalinked against anything but libc.so:
 	@${ECHO_CMD} -n "===>  checking that e2fsck depends on no shared objects beyond libc.so: "
@@ -108,11 +110,6 @@ post-build:
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${PREFIX}/sbin/
-	@: # stuff into /sbin since we might need e2fsck early on
-	${LN} ${PREFIX}/sbin/fsck_ext2fs /sbin/ 2>/dev/null || \
-		${INSTALL_PROGRAM} ${PREFIX}/sbin/fsck_ext2fs /sbin/
-	${LN} ${PREFIX}/sbin/e2fsck /sbin/ 2>/dev/null || \
-		${INSTALL_PROGRAM} ${PREFIX}/sbin/e2fsck /sbin/
 	${INSTALL_MAN} ${FILESDIR}/fsck_ext2fs.8 ${PREFIX}/man/man8/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -122,8 +119,7 @@ post-install:
 .endif
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_MSG} ; ${CAT} ${PKGMESSAGE} ; ${ECHO_MSG}
-
-# .if ${MASTERDIR} == ${.CURDIR}
+# the next line closes .if ${MASTERDIR} == ${.CURDIR}
 .endif
 
 .include <bsd.port.post.mk>

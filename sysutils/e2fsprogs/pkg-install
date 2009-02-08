@@ -6,6 +6,23 @@ MODE="$2" # PRE-INSTALL, POST-INSTALL, DEINSTALL, POST-DEINSTALL
 
 case "$MODE" in
 POST-INSTALL)
+	# install fsck tool and wrapper.
+	err=0
+	for i in e2fsck fsck_ext2fs ; do
+		ln -f ${PKG_PREFIX}/sbin/${i} /sbin 2>/dev/null \
+		|| cp -p ${PKG_PREFIX}/sbin/${i} /sbin \
+		|| err=1
+	done
+	if test $err = 1 ; then
+		echo '========================================================================'
+		echo 'Warning: cannot install fsck to /sbin!'
+		echo 'Requesting ext2fs to be checked from /etc/fstab can cause boot failures!'
+		echo '========================================================================'
+		echo ''
+	fi
+	#
+	# install configuration file and update
+	#
 	if test -f ${PKG_PREFIX}/etc/mke2fs.conf; then
 		if cmp -s ${PKG_PREFIX}/etc/mke2fs.conf.dist \
 						${PKG_PREFIX}/etc/mke2fs.conf; then
@@ -20,7 +37,7 @@ POST-INSTALL)
 				echo "==========================================================================="
 			else
 				mv ${PKG_PREFIX}/etc/mke2fs.conf \
-				   ${PKG_PREFIX}/etc/mke2fs.conf.e2fsprogs-old
+					 ${PKG_PREFIX}/etc/mke2fs.conf.e2fsprogs-old
 				cp -f -p ${PKG_PREFIX}/etc/mke2fs.conf.dist \
 					${PKG_PREFIX}/etc/mke2fs.conf
 				echo "==========================================================================="
@@ -37,6 +54,8 @@ POST-INSTALL)
 	fi
 	;;
 DEINSTALL)
+	rm -f /sbin/fsck_ext2fs /sbin/e2fsck \
+	|| echo "Could not remove /sbin/fsck_ext2fs /sbin/e2fsck. Please remove manually."
 	if cmp -s ${PKG_PREFIX}/etc/mke2fs.conf \
 		${PKG_PREFIX}/etc/mke2fs.conf.dist
 	then
