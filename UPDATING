@@ -16,7 +16,6 @@ upgrades.
   should be recompiled.
 
    # portupgrade -o devel/libslang devel/libslang2
-   # portupgrade -rf libxcb
 
 20090130:
   AFFECTS: users of www/httptunnel
