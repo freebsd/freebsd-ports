@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	axiom
-PORTVERSION=	0.5.20
-PORTREVISION=	1
+PORTVERSION=	0.5.30
 CATEGORIES=	databases python
 MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Axiom-${PORTVERSION}
 EXTRACT_SUFX=	.tar.gz?format=raw
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	Axiom is an object database in python using sqlite3
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/epsilon/__init__.py:${PORTSDIR}/devel/py-epsilon
