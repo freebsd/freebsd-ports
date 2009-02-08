@@ -6,13 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
-20090207:
+20090209:
   AFFECTS: users of multimedia/phonon, x11/kdelibs4, x11/kdebase4*,
   deskutils/kdepimlib4, deskutils/kdepim4, devel/automoc4
   AUTHOR: kde@FreeBSD.org
 
   KDE4 has been updated from 4.1.4 to 4.2.0. A number of applications
-  have been moved between packages. The easiest way to avoid various 
+  have been moved between packages. The easiest way to avoid various
   problems during update is to delete all KDE-4.1.4 ports and install
   KDE-4.2.0.
 
@@ -25,7 +25,7 @@ upgrades.
   AUTHOR:  pgollucci@FreeBSD.org
 
   devel/libslang has been removed in favor of devel/libslang2
-  after not being released in the last 5yrs.  WITH_SLANG2 is 
+  after not being released in the last 5yrs.  WITH_SLANG2 is
   nolonger a valid ports KNOB.  All ports depending on devel/libslang
   should be recompiled.
 
@@ -44,7 +44,7 @@ upgrades.
   AUTHOR: kwm@FreeBSD.org
 
   The gstapp library moved from the gstreamer-plugins-bad package
-  to gstreamer-plugins. It will be nessasary to rebuild the 
+  to gstreamer-plugins. It will be nessasary to rebuild the
   gstreamer-plugins port. After updating your installed ports do:
 
   portupgrade users:
