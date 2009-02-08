@@ -1,7 +1,7 @@
 bin/exifr
 %%GEM_CACHE%%
 %%GEM_LIB_DIR%%/CHANGELOG
-%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/README.rdoc
 %%GEM_LIB_DIR%%/Rakefile
 %%GEM_LIB_DIR%%/bin/exifr
 %%GEM_LIB_DIR%%/lib/exifr.rb
@@ -24,8 +24,8 @@ bin/exifr
 %%GEM_LIB_DIR%%/tests/data/plain.tif
 %%GEM_LIB_DIR%%/tests/data/weird_date.exif
 %%GEM_LIB_DIR%%/tests/test_helper.rb
-%%GEM_LIB_DIR%%/tests/test_jpeg.rb
-%%GEM_LIB_DIR%%/tests/test_tiff.rb
+%%GEM_LIB_DIR%%/tests/jpeg_test.rb
+%%GEM_LIB_DIR%%/tests/tiff_test.rb
 %%GEM_SPEC%%
 @dirrm %%GEM_LIB_DIR%%/bin
 @dirrm %%GEM_LIB_DIR%%/lib
