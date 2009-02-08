@@ -1,0 +1,24 @@
+%%LIBAWLDIR%%/dba/awl-tables.sql
+%%LIBAWLDIR%%/dba/grant-minimum-permissions.sh
+%%LIBAWLDIR%%/dba/grant-on-all-tables.sh
+%%LIBAWLDIR%%/dba/schema-management.sql
+%%LIBAWLDIR%%/inc/AWLUtilities.php
+%%LIBAWLDIR%%/inc/AuthPlugin.php
+%%LIBAWLDIR%%/inc/AuthPlugins.php
+%%LIBAWLDIR%%/inc/DataEntry.php
+%%LIBAWLDIR%%/inc/DataUpdate.php
+%%LIBAWLDIR%%/inc/EMail.php
+%%LIBAWLDIR%%/inc/MenuSet.php
+%%LIBAWLDIR%%/inc/PgQuery.php
+%%LIBAWLDIR%%/inc/Session.php
+%%LIBAWLDIR%%/inc/Translation.php
+%%LIBAWLDIR%%/inc/User.php
+%%LIBAWLDIR%%/inc/Validation.php
+%%LIBAWLDIR%%/inc/XMLDocument.php
+%%LIBAWLDIR%%/inc/XMLElement.php
+%%LIBAWLDIR%%/inc/classBrowser.php
+%%LIBAWLDIR%%/inc/iCalendar.php
+%%LIBAWLDIR%%/inc/vEvent.php
+@dirrm %%LIBAWLDIR%%/inc
+@dirrm %%LIBAWLDIR%%/dba
+@dirrm %%LIBAWLDIR%%

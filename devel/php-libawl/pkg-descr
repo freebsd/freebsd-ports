@@ -1,0 +1,11 @@
+Andrew's Web Libraries are a set of hopefully lightweight libraries for
+handling a variety of useful things for web programming, including:
+
+- Session management
+- User management
+- DB Records
+- Simple reporting
+- DB Schema Updating
+- iCalendar parsing
+
+WWW: http://rscds.sourceforge.net/
