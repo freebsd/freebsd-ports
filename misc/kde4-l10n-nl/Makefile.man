@@ -1,0 +1,15 @@
+MAN1=	fixincludes.1 \
+	kalzium.1 \
+	kappfinder.1 \
+	kate.1 \
+	kbruch.1 \
+	kig.1 \
+	kmag.1 \
+	kmousetool.1 \
+	kmouth.1 \
+	kmplot.1 \
+	po2xml.1 \
+	qtdoc.1 \
+	split2po.1 \
+	swappo.1
+MAN6=	kpat.6
