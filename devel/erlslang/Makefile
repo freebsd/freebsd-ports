@@ -7,7 +7,7 @@
 
 PORTNAME=	erlslang
 PORTVERSION=	1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.erlang.org/contrib/ \
 		http://erlang.stacken.kth.se/contrib/ \
@@ -20,7 +20,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	SLang binding for Erlang/OTP
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
@@ -30,7 +30,8 @@ USE_AUTOTOOLS=	autoconf:213
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=${WRKSRC}/config
 
-.include <bsd.port.pre.mk>
+EXPIRATION_DATE=   2009-03-18
+DEPRECATED=    BROKEN with devel/libslang2
 
 post-build:
 	@${RM} -r ${WRKSRC}/*/CVS
@@ -48,4 +49,4 @@ do-install:
 	@${CP} -r ${WRKSRC}/src   ${PREFIX}/lib/erlang/lib/${DISTNAME}/src
 	@${LN} -sf ${DISTNAME} ${PREFIX}/lib/erlang/lib/slang
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
