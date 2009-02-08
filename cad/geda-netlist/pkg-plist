@@ -19,6 +19,7 @@ bin/sw2asc
 %%DATADIR%%/scheme/gnet-bae.scm
 %%DATADIR%%/scheme/gnet-bom.scm
 %%DATADIR%%/scheme/gnet-bom2.scm
+%%DATADIR%%/scheme/gnet-calay.scm
 %%DATADIR%%/scheme/gnet-cascade.scm
 %%DATADIR%%/scheme/gnet-drc.scm
 %%DATADIR%%/scheme/gnet-drc2.scm
@@ -27,7 +28,9 @@ bin/sw2asc
 %%DATADIR%%/scheme/gnet-geda.scm
 %%DATADIR%%/scheme/gnet-gossip.scm
 %%DATADIR%%/scheme/gnet-gsch2pcb.scm
+%%DATADIR%%/scheme/gnet-mathematica.scm
 %%DATADIR%%/scheme/gnet-maxascii.scm
+%%DATADIR%%/scheme/gnet-osmond.scm
 %%DATADIR%%/scheme/gnet-pads.scm
 %%DATADIR%%/scheme/gnet-partslist-common.scm
 %%DATADIR%%/scheme/gnet-partslist1.scm
@@ -46,6 +49,7 @@ bin/sw2asc
 %%DATADIR%%/scheme/gnet-vhdl.scm
 %%DATADIR%%/scheme/gnet-vipec.scm
 %%DATADIR%%/scheme/gnetlist.scm
+%%DATADIR%%/scheme/gnetlist-post.scm
 %%DATADIR%%/system-gnetlistrc
 @dirrmtry %%DATADIR%%/scheme
 @dirrmtry %%DATADIR%%

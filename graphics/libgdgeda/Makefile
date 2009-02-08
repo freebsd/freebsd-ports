@@ -17,6 +17,9 @@ COMMENT=	Special version of the gd graphic lib for use by gEDA programs
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
+DEPRECATED=	is not required anymore
+EXPIRATION_DATE=	2009-02-22
+
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack

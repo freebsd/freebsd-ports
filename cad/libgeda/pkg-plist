@@ -1,6 +1,7 @@
 include/libgeda/colors.h
 include/libgeda/defines.h
 include/libgeda/funcs.h
+include/libgeda/geda_list.h
 include/libgeda/globals.h
 include/libgeda/i_vars.h
 include/libgeda/libgeda.h
@@ -11,8 +12,59 @@ include/libgeda/struct.h
 lib/libgeda.a
 lib/libgeda.la
 lib/libgeda.so
-lib/libgeda.so.28
+lib/libgeda.so.33
 libdata/pkgconfig/libgeda.pc
 share/geda/prolog.ps
+share/geda/scheme/geda.scm
+share/geda/system-gafrc
+share/icons/hicolor/16x16/mimetypes/application-x-geda-gsch2pcb-project-16.png
+share/icons/hicolor/16x16/mimetypes/application-x-geda-schematic-16.png
+share/icons/hicolor/16x16/mimetypes/application-x-geda-symbol-16.png
+share/icons/hicolor/22x22/mimetypes/application-x-geda-gsch2pcb-project-22.png
+share/icons/hicolor/22x22/mimetypes/application-x-geda-schematic-22.png
+share/icons/hicolor/22x22/mimetypes/application-x-geda-symbol-22.png
+share/icons/hicolor/24x24/mimetypes/application-x-geda-gsch2pcb-project-24.png
+share/icons/hicolor/24x24/mimetypes/application-x-geda-schematic-24.png
+share/icons/hicolor/24x24/mimetypes/application-x-geda-symbol-24.png
+share/icons/hicolor/32x32/mimetypes/application-x-geda-gsch2pcb-project-32.png
+share/icons/hicolor/32x32/mimetypes/application-x-geda-schematic-32.png
+share/icons/hicolor/32x32/mimetypes/application-x-geda-symbol-32.png
+share/icons/hicolor/48x48/mimetypes/application-x-geda-gsch2pcb-project-48.png
+share/icons/hicolor/48x48/mimetypes/application-x-geda-schematic-48.png
+share/icons/hicolor/48x48/mimetypes/application-x-geda-symbol-48.png
+share/icons/hicolor/scalable/mimetypes/application-x-geda-gsch2pcb-project.svg
+share/icons/hicolor/scalable/mimetypes/application-x-geda-schematic.svg
+share/icons/hicolor/scalable/mimetypes/application-x-geda-symbol.svg
+share/locale/de_DE/LC_MESSAGES/libgeda33.mo
+share/locale/en_GB/LC_MESSAGES/libgeda33.mo
+share/locale/es_ES/LC_MESSAGES/libgeda33.mo
+share/locale/nl_NL/LC_MESSAGES/libgeda33.mo
+share/mime/packages/libgeda.xml
+share/mimelnk/application/x-geda-gsch2pcb-project.desktop
+share/mimelnk/application/x-geda-schematic.desktop
+share/mimelnk/application/x-geda-symbol.desktop
+@dirrmtry share/mimelnk/application
+@dirrmtry share/mimelnk
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@dirrmtry share/locale/nl_NL/LC_MESSAGES
+@dirrmtry share/locale/nl_NL
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
+@dirrmtry share/icons/hicolor/scalable/mimetypes
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48/mimetypes
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/mimetypes
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/mimetypes
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/mimetypes
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/mimetypes
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/geda/scheme
 @dirrmtry share/geda
 @dirrm include/libgeda

@@ -6,23 +6,24 @@
 #
 
 PORTNAME=	libgeda
-PORTVERSION=	20070216
-PORTREVISION=	5
+PORTVERSION=	1.4.3
+PORTREVISION=	0
 CATEGORIES=	cad
-MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
-		http://geda.seul.org/devel/${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/release/v1.4/${PORTVERSION}/ \
+		http://geda.seul.org/release/v1.4/${PORTVERSION}/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	The gEDA's tools base utility library
 
-LIB_DEPENDS=	gdgeda.6:${PORTSDIR}/graphics/libgdgeda \
-		guile.20:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 gnomehack
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--enable-gdgeda
+CONFIGURE_ARGS=	--disable-update-mime-database \
+		--disable-update-desktop-database
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

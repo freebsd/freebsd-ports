@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	docs
-PORTVERSION=	20070216
-PORTREVISION=	0
+PORTVERSION=	1.4.3
 CATEGORIES=	cad
-MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
-		http://geda.seul.org/devel/${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/release/v1.4/${PORTVERSION}/ \
+		http://geda.seul.org/release/v1.4/${PORTVERSION}/
 PKGNAMEPREFIX=	geda-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 

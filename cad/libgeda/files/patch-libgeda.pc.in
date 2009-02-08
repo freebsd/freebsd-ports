@@ -1,9 +1,0 @@
---- libgeda.pc.in.orig	Wed Jun 28 02:38:37 2006
-+++ libgeda.pc.in	Wed Jun 28 02:38:47 2006
-@@ -7,5 +7,5 @@
- Description: gEDA/gaf's core library 
- Requires: 
- Version: @VERSION@
--Libs: -L${libdir} -lgeda @LIBGEDA_LDFLAGS@
-+Libs: -L${libdir} @LIBGEDA_LDFLAGS@ -lgeda
- Cflags: -I${includedir} @LIBGEDA_CFLAGS@

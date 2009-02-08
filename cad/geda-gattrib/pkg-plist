@@ -1,3 +1,24 @@
 bin/gattrib
+lib/locale/de_DE/LC_MESSAGES/geda-gattrib.mo
+lib/locale/es_ES/LC_MESSAGES/geda-gattrib.mo
+lib/locale/nl_NL/LC_MESSAGES/geda-gattrib.mo
+share/applications/geda-gattrib.desktop
+%%DATADIR%%/gattrib-menus.xml
 %%DATADIR%%/system-gattribrc
+share/icons/hicolor/48x48/apps/geda-gattrib-48.png
+share/icons/hicolor/scalable/apps/geda-gattrib.svg
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrmtry %%DATADIR%%
+@dirrmtry share/applications
+@dirrmtry lib/locale/nl_NL/LC_MESSAGES
+@dirrmtry lib/locale/nl_NL
+@dirrmtry lib/locale/es_ES/LC_MESSAGES
+@dirrmtry lib/locale/es_ES
+@dirrmtry lib/locale/de_DE/LC_MESSAGES
+@dirrmtry lib/locale/de_DE
+@dirrmtry lib/locale

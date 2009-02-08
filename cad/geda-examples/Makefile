@@ -6,29 +6,24 @@
 #
 
 PORTNAME=	examples
-PORTVERSION=	20070216
+PORTVERSION=	1.4.3
 CATEGORIES=	cad
-MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
-		http://geda.seul.org/devel/${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/release/v1.4/${PORTVERSION}/ \
+		http://geda.seul.org/release/v1.4/${PORTVERSION}/
 PKGNAMEPREFIX=	geda-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	The gEDA's examples
 
-NO_BUILD=	yes
+GNU_CONFIGURE=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/geda
 
 .include <bsd.port.pre.mk>
 
-EXAMPLES!=	${CAT} ${FILESDIR}/examples
-
-do-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC} \
-	 && ${FIND} -d ${EXAMPLES} -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \; \
-	 && ${FIND} -d ${EXAMPLES} -type f -exec ${INSTALL_DATA} {} \
-	 ${EXAMPLESDIR}/{} \;)
+post-patch:
+	@$(FIND) ${WRKSRC} -name Makefile.in -exec \
+		${REINPLACE_CMD} -e 's,\(^exampledir = \).*,\1${EXAMPLESDIR},g' {} \;
 
 .include <bsd.port.post.mk>
