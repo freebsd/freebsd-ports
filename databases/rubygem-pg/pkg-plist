@@ -1,0 +1,157 @@
+%%GEM_CACHE%%
+%%GEM_SPEC%%
+%%GEM_DOC_DIR%%/rdoc/classes/PGError.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000012.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000019.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000032.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000041.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000050.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000055.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000059.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000060.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000061.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000062.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000063.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000064.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000065.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000066.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000067.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000068.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000069.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000070.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000071.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000072.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000073.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000074.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000075.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000076.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000077.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000078.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000079.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000080.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGconn.src/M000081.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000100.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000101.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000102.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000103.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000104.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000105.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000106.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000107.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000108.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000109.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000110.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000111.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000112.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000113.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000114.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000115.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000116.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000117.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000118.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000119.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000120.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000121.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000122.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000123.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000124.html
+%%GEM_DOC_DIR%%/rdoc/classes/PGresult.src/M000125.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/files/ext/pg_c.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/PGconn.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/PGresult.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/ext
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc
+@dirrm %%GEM_DOC_DIR%%
+%%GEM_LIB_DIR%%/doc/postgres.html
+%%GEM_LIB_DIR%%/doc/postgres.jp.html
+%%GEM_LIB_DIR%%/ext/Makefile
+%%GEM_LIB_DIR%%/ext/compat.c
+%%GEM_LIB_DIR%%/ext/compat.h
+%%GEM_LIB_DIR%%/ext/compat.o
+%%GEM_LIB_DIR%%/ext/extconf.rb
+%%GEM_LIB_DIR%%/ext/mkmf.log
+%%GEM_LIB_DIR%%/ext/mkrf_config.rb
+%%GEM_LIB_DIR%%/ext/pg.c
+%%GEM_LIB_DIR%%/ext/pg.h
+%%GEM_LIB_DIR%%/ext/pg.o
+%%GEM_LIB_DIR%%/ext/pg.so
+%%GEM_LIB_DIR%%/lib/pg.so
+%%GEM_LIB_DIR%%/sample/losample.rb
+%%GEM_LIB_DIR%%/sample/psql.rb
+%%GEM_LIB_DIR%%/sample/psqlHelp.rb
+%%GEM_LIB_DIR%%/sample/test1.rb
+%%GEM_LIB_DIR%%/sample/test2.rb
+%%GEM_LIB_DIR%%/sample/test4.rb
+%%GEM_LIB_DIR%%/spec/data/expected_trace.out
+%%GEM_LIB_DIR%%/spec/data/random_binary_data
+%%GEM_LIB_DIR%%/spec/pgconn_spec.rb
+%%GEM_LIB_DIR%%/spec/pgresult_spec.rb
+@dirrm %%GEM_LIB_DIR%%/doc
+@dirrm %%GEM_LIB_DIR%%/ext
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/sample
+@dirrm %%GEM_LIB_DIR%%/spec/data
+@dirrm %%GEM_LIB_DIR%%/spec
+@dirrm %%GEM_LIB_DIR%%

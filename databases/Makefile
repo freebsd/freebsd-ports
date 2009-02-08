@@ -580,6 +580,7 @@
     SUBDIR += rubygem-jdbc-mysql
     SUBDIR += rubygem-kirbybase
     SUBDIR += rubygem-memcache-client
+    SUBDIR += rubygem-pg
     SUBDIR += rubygem-postgres
     SUBDIR += rubygem-rbase
     SUBDIR += rubygem-rrdtool
