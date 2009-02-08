@@ -7,14 +7,14 @@
 
 PORTNAME=	streamdvd
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast tool to backup Video DVDs 'on the fly'
 
-LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
 WRKSRC=		${WRKDIR}/StreamDVD-${PORTVERSION}
 

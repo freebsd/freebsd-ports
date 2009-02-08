@@ -7,14 +7,14 @@
 
 PORTNAME=	streamanalyze
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	CENKES LOCAL/beech
 
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	Shrink-factor calculator for StreamDVD
 
-LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
 WRKSRC=		${WRKDIR}/StreamAnalyze
 

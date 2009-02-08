@@ -7,6 +7,7 @@
 
 PORTNAME=	k3b
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	SF
 
@@ -99,7 +100,7 @@ CONFIGURE_ARGS+=	--without-musepack
 
 .if defined(WITH_LIBDVDREAD)
 PLIST_SUB+=	LIBDVDREAD=""
-LIB_DEPENDS+=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS+=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 .else
 PLIST_SUB+=	LIBDVDREAD="@comment "
 CONFIGURE_ARGS+=	--without-libdvdread

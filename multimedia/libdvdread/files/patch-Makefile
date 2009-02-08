@@ -1,0 +1,24 @@
+--- Makefile.orig	2008-08-31 11:27:37.000000000 +0200
++++ Makefile	2008-10-04 12:42:55.833207676 +0200
+@@ -90,8 +90,8 @@
+ # Install targets
+ 
+ install-headers:
+-	install -d $(DESTDIR)$(dvdread_incdir)
+-	install -m 644 $(DVDREAD_HEADERS) $(DESTDIR)$(dvdread_incdir)
++	install -d $(DESTDIR)$(incdir)
++	install -m 644 $(DVDREAD_HEADERS) $(DESTDIR)$(incdir)
+ 
+ install-shared: $(SHLIB)
+ 	install -d $(DESTDIR)$(shlibdir)
+@@ -154,8 +154,8 @@
+ 	$(pcedit) $< > $@
+ 
+ install-pkgconfig: $(.OBJDIR)/dvdread.pc
+-	install -d $(DESTDIR)$(libdir)/pkgconfig
+-	install -m 0644 $(.OBJDIR)/dvdread.pc $(DESTDIR)$(libdir)/pkgconfig
++	install -d $(DESTDIR)$(libdatadir)
++	install -m 0644 $(.OBJDIR)/dvdread.pc $(DESTDIR)$(libdatadir)
+ 
+ vpath %.so ${.OBJDIR}
+ vpath %.o ${.OBJDIR}
