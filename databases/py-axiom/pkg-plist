@@ -2,9 +2,6 @@ bin/axiomatic
 %%PYTHON_SITELIBDIR%%/axiom/__init__.py
 %%PYTHON_SITELIBDIR%%/axiom/__init__.pyc
 %%PYTHON_SITELIBDIR%%/axiom/__init__.pyo
-%%PYTHON_SITELIBDIR%%/axiom/_apsw.py
-%%PYTHON_SITELIBDIR%%/axiom/_apsw.pyc
-%%PYTHON_SITELIBDIR%%/axiom/_apsw.pyo
 %%PYTHON_SITELIBDIR%%/axiom/_fincache.py
 %%PYTHON_SITELIBDIR%%/axiom/_fincache.pyc
 %%PYTHON_SITELIBDIR%%/axiom/_fincache.pyo
@@ -75,15 +72,15 @@ bin/axiomatic
 %%PYTHON_SITELIBDIR%%/axiom/item.py
 %%PYTHON_SITELIBDIR%%/axiom/item.pyc
 %%PYTHON_SITELIBDIR%%/axiom/item.pyo
+%%PYTHON_SITELIBDIR%%/axiom/listversions.py
+%%PYTHON_SITELIBDIR%%/axiom/listversions.pyc
+%%PYTHON_SITELIBDIR%%/axiom/listversions.pyo
 %%PYTHON_SITELIBDIR%%/axiom/plugins/__init__.py
 %%PYTHON_SITELIBDIR%%/axiom/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/axiom/plugins/__init__.pyo
-%%PYTHON_SITELIBDIR%%/axiom/plugins/browsecmd.py
-%%PYTHON_SITELIBDIR%%/axiom/plugins/browsecmd.pyc
-%%PYTHON_SITELIBDIR%%/axiom/plugins/browsecmd.pyo
-%%PYTHON_SITELIBDIR%%/axiom/plugins/userbasecmd.py
-%%PYTHON_SITELIBDIR%%/axiom/plugins/userbasecmd.pyc
-%%PYTHON_SITELIBDIR%%/axiom/plugins/userbasecmd.pyo
+%%PYTHON_SITELIBDIR%%/axiom/plugins/axiom_plugins.py
+%%PYTHON_SITELIBDIR%%/axiom/plugins/axiom_plugins.pyc
+%%PYTHON_SITELIBDIR%%/axiom/plugins/axiom_plugins.pyo
 %%PYTHON_SITELIBDIR%%/axiom/queryutil.py
 %%PYTHON_SITELIBDIR%%/axiom/queryutil.pyc
 %%PYTHON_SITELIBDIR%%/axiom/queryutil.pyo
@@ -123,6 +120,9 @@ bin/axiomatic
 %%PYTHON_SITELIBDIR%%/axiom/test/cursortest.py
 %%PYTHON_SITELIBDIR%%/axiom/test/cursortest.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/cursortest.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/deleteswordapp.py
+%%PYTHON_SITELIBDIR%%/axiom/test/deleteswordapp.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/deleteswordapp.pyo
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/__init__.py
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/__init__.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/__init__.pyo
@@ -130,6 +130,7 @@ bin/axiomatic
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/catalog1to2.axiom.tbz2
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/loginMethod1to2.axiom.tbz2
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/parentHook1to2.axiom.tbz2
+%%PYTHON_SITELIBDIR%%/axiom/test/historic/parentHook2to3.axiom.tbz2
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/processor1to2.axiom.tbz2
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/stub_account1to2.py
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/stub_account1to2.pyc
@@ -143,12 +144,18 @@ bin/axiomatic
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/stub_parentHook1to2.py
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/stub_parentHook1to2.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/stub_parentHook1to2.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/historic/stub_parentHook2to3.py
+%%PYTHON_SITELIBDIR%%/axiom/test/historic/stub_parentHook2to3.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/historic/stub_parentHook2to3.pyo
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/stub_processor1to2.py
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/stub_processor1to2.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/stub_processor1to2.pyo
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/stub_subStoreStartupService1to2.py
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/stub_subStoreStartupService1to2.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/stub_subStoreStartupService1to2.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/historic/stub_textlist.py
+%%PYTHON_SITELIBDIR%%/axiom/test/historic/stub_textlist.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/historic/stub_textlist.pyo
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/stubloader.py
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/stubloader.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/stubloader.pyo
@@ -165,12 +172,19 @@ bin/axiomatic
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/test_parentHook1to2.py
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/test_parentHook1to2.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/test_parentHook1to2.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/historic/test_parentHook2to3.py
+%%PYTHON_SITELIBDIR%%/axiom/test/historic/test_parentHook2to3.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/historic/test_parentHook2to3.pyo
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/test_processor1to2.py
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/test_processor1to2.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/test_processor1to2.pyo
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/test_subStoreStartupService1to2.py
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/test_subStoreStartupService1to2.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/historic/test_subStoreStartupService1to2.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/historic/test_textlist.py
+%%PYTHON_SITELIBDIR%%/axiom/test/historic/test_textlist.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/historic/test_textlist.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/historic/textlist.axiom.tbz2
 %%PYTHON_SITELIBDIR%%/axiom/test/itemtest.py
 %%PYTHON_SITELIBDIR%%/axiom/test/itemtest.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/itemtest.pyo
@@ -204,12 +218,15 @@ bin/axiomatic
 %%PYTHON_SITELIBDIR%%/axiom/test/oldpath.py
 %%PYTHON_SITELIBDIR%%/axiom/test/oldpath.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/oldpath.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/onestepapp.py
+%%PYTHON_SITELIBDIR%%/axiom/test/onestepapp.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/onestepapp.pyo
 %%PYTHON_SITELIBDIR%%/axiom/test/openthenload.py
 %%PYTHON_SITELIBDIR%%/axiom/test/openthenload.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/openthenload.pyo
-%%PYTHON_SITELIBDIR%%/axiom/test/test_apsw.py
-%%PYTHON_SITELIBDIR%%/axiom/test/test_apsw.pyc
-%%PYTHON_SITELIBDIR%%/axiom/test/test_apsw.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/path_postcopy.py
+%%PYTHON_SITELIBDIR%%/axiom/test/path_postcopy.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/path_postcopy.pyo
 %%PYTHON_SITELIBDIR%%/axiom/test/test_attributes.py
 %%PYTHON_SITELIBDIR%%/axiom/test/test_attributes.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/test_attributes.pyo
@@ -237,6 +254,9 @@ bin/axiomatic
 %%PYTHON_SITELIBDIR%%/axiom/test/test_item.py
 %%PYTHON_SITELIBDIR%%/axiom/test/test_item.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/test_item.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/test_listversions.py
+%%PYTHON_SITELIBDIR%%/axiom/test/test_listversions.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/test_listversions.pyo
 %%PYTHON_SITELIBDIR%%/axiom/test/test_mixin.py
 %%PYTHON_SITELIBDIR%%/axiom/test/test_mixin.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/test_mixin.pyo
@@ -294,6 +314,39 @@ bin/axiomatic
 %%PYTHON_SITELIBDIR%%/axiom/test/toonewapp.py
 %%PYTHON_SITELIBDIR%%/axiom/test/toonewapp.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/toonewapp.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/__init__.py
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/__init__.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/__init__.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/override_init_new.py
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/override_init_new.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/override_init_new.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/override_init_old.py
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/override_init_old.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/override_init_old.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/reentrant_new.py
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/reentrant_new.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/reentrant_new.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/reentrant_old.py
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/reentrant_old.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/reentrant_old.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/replace_attribute_new.py
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/replace_attribute_new.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/replace_attribute_new.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/replace_attribute_old.py
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/replace_attribute_old.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/replace_attribute_old.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/replace_delete_new.py
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/replace_delete_new.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/replace_delete_new.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/replace_delete_old.py
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/replace_delete_old.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/replace_delete_old.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/two_upgrades_new.py
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/two_upgrades_new.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/two_upgrades_new.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/two_upgrades_old.py
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/two_upgrades_old.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures/two_upgrades_old.pyo
 %%PYTHON_SITELIBDIR%%/axiom/test/util.py
 %%PYTHON_SITELIBDIR%%/axiom/test/util.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/util.pyo
@@ -303,11 +356,17 @@ bin/axiomatic
 %%PYTHON_SITELIBDIR%%/axiom/userbase.py
 %%PYTHON_SITELIBDIR%%/axiom/userbase.pyc
 %%PYTHON_SITELIBDIR%%/axiom/userbase.pyo
-@rmtry %%PYTHON_SITELIBDIR%%/axiom/plugins/dropin.cache
 @dirrm %%PYTHON_SITELIBDIR%%/axiom/benchmarks
 @dirrm %%PYTHON_SITELIBDIR%%/axiom/examples
 @dirrm %%PYTHON_SITELIBDIR%%/axiom/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/axiom/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/axiom/test/historic
+@dirrm %%PYTHON_SITELIBDIR%%/axiom/test/upgrade_fixtures
 @dirrm %%PYTHON_SITELIBDIR%%/axiom/test
 @dirrm %%PYTHON_SITELIBDIR%%/axiom
+%%PYTHON_SITELIBDIR%%/twisted/plugins/dropin.cache
+%%PYTHON_SITELIBDIR%%/twisted/plugins/axiom_plugins.py
+%%PYTHON_SITELIBDIR%%/twisted/plugins/axiom_plugins.pyc
+%%PYTHON_SITELIBDIR%%/twisted/plugins/axiom_plugins.pyo
+@dirrmtry %%PYTHON_SITELIBDIR%%/twisted/plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/twisted
