@@ -7,14 +7,14 @@
 
 PORTNAME=	NetSpades
 PORTVERSION=	4.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.ece.rice.edu/~brentmh/spades/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Very popular card game for 1-4 players over a network
 
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12

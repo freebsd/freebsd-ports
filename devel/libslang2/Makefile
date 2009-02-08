@@ -16,12 +16,12 @@ DISTNAME=	slang-${PORTVERSION}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Routines for rapid alpha-numeric terminal applications development
 
+CONFLICTS=  libslang-1.*.j[0-9]
+
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 PLIST_SUB+=	SHLIB_VERSION=${PORTVERSION}
-
-CONFLICTS=	libslang-[0-9]* libslang-1.*.j[0-9]
 
 ALL_TARGET=	all static
 INSTALL_TARGET=	install install-static

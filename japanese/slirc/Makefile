@@ -15,6 +15,8 @@ MD5_FILE=	${.CURDIR}/distinfo
 EXTRA_FILESDIR=	${.CURDIR}/files
 EXTRA_PATCHES=	${EXTRA_FILESDIR}/patch-*
 
+BROKEN=	Does not compile with devel/libslang2
+
 SLANG_INCDIR=	${PREFIX}/include/slang
 LIB_DEPENDS_LIBSLANG?=	slang.2:${PORTSDIR}/japanese/libslang
 

@@ -714,7 +714,6 @@
     SUBDIR += libsigc++20
     SUBDIR += libsigcx
     SUBDIR += libsigsegv
-    SUBDIR += libslang
     SUBDIR += libslang2
     SUBDIR += libsoup
     SUBDIR += libsoup-reference

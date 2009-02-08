@@ -6,14 +6,15 @@
 
 PORTNAME=	pdmenu
 PORTVERSION=	1.2.96
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A simple console menu program
 
-OPTIONS=	SLANG2 "Build using libslang-2.x" off
+LIB_DEPENDS=   slang.2:${PORTSDIR}/devel/libslang2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -35,14 +36,6 @@ PLIST_FILES=	bin/pdmenu \
 		%%DATADIR%%/showdir.pl
 PLIST_DIRS=	%%DATADIR%%
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_SLANG2)
-LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
-.else
-LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pdmenu ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/examples/pdmenurc ${PREFIX}/etc
@@ -59,4 +52,4 @@ do-install:
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/pdmenu
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

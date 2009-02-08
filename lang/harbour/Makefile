@@ -7,14 +7,14 @@
 
 PORTNAME=	harbour
 PORTVERSION=	0.44.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.jsd0.com/public/harbour/dgh/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	An open source Clipper-compatible compiler
 
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 
 # Not 64-bit clean
 ONLY_FOR_ARCHS=	i386

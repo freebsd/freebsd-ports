@@ -8,16 +8,15 @@
 
 PORTNAME=	slmon
 PORTVERSION=	0.5.13
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	S-Lang System Monitor
 
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
-		slang.1:${PORTSDIR}/devel/libslang
+		slang.2:${PORTSDIR}/devel/libslang2
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

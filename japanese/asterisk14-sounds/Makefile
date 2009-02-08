@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk-sounds
 PORTVERSION=	1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://ftp.voip-info.jp/asterisk/sounds/
 DISTNAME=	${PORTVERSION:S|.|_|}/${PORTNAME:S|sounds|sound|}-jp_${PORTVERSION:S|.||}_beta

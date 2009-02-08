@@ -7,13 +7,13 @@
 
 PORTNAME=	slirc
 PORTVERSION=	0.12
-PORTREVISION=	1
+PORTREVISION=	2
 # Assign with += for slave ports
 CATEGORIES+=	irc
 MASTER_SITES=	http://members.core.com/~stabro/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A SLang-based IRC client
 
 LIB_DEPENDS=	${LIB_DEPENDS_LIBSLANG}
@@ -24,7 +24,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLANG_INCDIR?=	${PREFIX}/include
 SLANG_LIBDIR?=	${PREFIX}/lib
-LIB_DEPENDS_LIBSLANG?=	slang.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS_LIBSLANG?=	slang.2:${PORTSDIR}/devel/libslang2
 
 MAKE_ARGS=	SLANG_INCDIR="${SLANG_INCDIR}" \
 		SLANG_LIBDIR="${SLANG_LIBDIR}" \

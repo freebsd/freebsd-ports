@@ -1,4 +1,3 @@
-bin/gaul_diagnostics
 include/gaul/avltree.h
 include/gaul/compatibility.h
 include/gaul/ga_bitstring.h

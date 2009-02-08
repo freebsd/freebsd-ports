@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090207:
+  AFFECTS: users of devel/libslang and devel/libslang2
+  AUTHOR:  pgollucci@FreeBSD.org
+
+  devel/libslang has been removed in favor of devel/libslang2
+  after not being released in the last 5yrs.  WITH_SLANG2 is 
+  nolonger a valid ports KNOB.  All ports depending on devel/libslang
+  should be recompiled.
+
+   # portupgrade -o devel/libslang devel/libslang2
+   # portupgrade -rf libxcb
+
 20090130:
   AFFECTS: users of www/httptunnel
   AUTHOR: rafan@FreeBSD.org

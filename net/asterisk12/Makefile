@@ -9,6 +9,7 @@ PORTNAME=	asterisk
 PORTVERSION=	1.2.30.2
 PORTREVISION=	1
 PKGNAMESUFFIX=	12
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/

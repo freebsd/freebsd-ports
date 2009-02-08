@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk-gui
 PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.digium.com/pub/telephony/asterisk-gui/releases/
 
