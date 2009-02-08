@@ -7,6 +7,20 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20090207:
+  AFFECTS: users of multimedia/phonon, x11/kdelibs4, x11/kdebase4*,
+  deskutils/kdepimlib4, deskutils/kdepim4, devel/automoc4
+  AUTHOR: kde@FreeBSD.org
+
+  KDE4 has been updated from 4.1.4 to 4.2.0. A number of applications
+  have been moved between packages. The easiest way to avoid various 
+  problems during update is to delete all KDE-4.1.4 ports and install
+  KDE-4.2.0.
+
+     # pkg_delete -f kde\*4.1.4\* automoc4-\*
+     # portmaster -a (or portupgrade -a)
+     # cd ${PORTSDIR}/x11/kde4 && make config && make install clean
+
+20090207:
   AFFECTS: users of devel/libslang and devel/libslang2
   AUTHOR:  pgollucci@FreeBSD.org
 
