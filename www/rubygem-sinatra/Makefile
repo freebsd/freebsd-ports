@@ -5,15 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	sinatra
-PORTVERSION=	0.3.3
+PORTVERSION=	0.9.0.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 
 MAINTAINER=	daniel@roe.ch
 COMMENT=	A classy web development framework in ruby
 
-BUILD_DEPENDS=	rubygem-rack>=0.4.0:${PORTSDIR}/www/rubygem-rack
-RUN_DEPENDS=	rubygem-rack>=0.4.0:${PORTSDIR}/www/rubygem-rack
+BUILD_DEPENDS=	rubygem-rack>=0.9.0:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack>=0.9.0:${PORTSDIR}/www/rubygem-rack
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
