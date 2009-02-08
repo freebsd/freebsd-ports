@@ -5,6 +5,11 @@ Attention: ncmpcpp doesn't use ~/.ncmpcpprc and ~/.ncmpcpp_keys as config
 files anymore. It's been using respectively ~/.ncmpcpp/config and
 ~/.ncmpcpp/keys for this since ver. 0.2.4!
 
+--------------------------------------------------------------------------
+Colors syntax has changed since 0.3 version. See example config file for
+new syntax.
+--------------------------------------------------------------------------
+
 A default config has been installed to:
 PREFIX/share/doc/ncmpcpp/config
 
