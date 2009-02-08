@@ -1,0 +1,7 @@
+py-gammu is a python bindings for Gammu library, which allows
+access many phones. It currently does not support all Gammu
+features, but range of covered functions is increasing, if you
+need some specific, feel free to use bug tracking system for
+feature requests.
+
+WWW:	http://cihar.com/gammu/python/

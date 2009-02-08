@@ -100,6 +100,7 @@
     SUBDIR += pr
     SUBDIR += predict
     SUBDIR += py-bulksms
+    SUBDIR += py-gammu
     SUBDIR += py-lirc
     SUBDIR += py-serial
     SUBDIR += pyla
