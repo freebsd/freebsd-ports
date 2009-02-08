@@ -1,4 +1,6 @@
 %%DOCSDIR%%/nc.pdf
+%%DATADIR%%/gafrc.d/geda-clib.scm
+%%DATADIR%%/scheme/geda-font.scm
 %%DATADIR%%/sym/4000/4000-1.sym
 %%DATADIR%%/sym/4000/4000-2.sym
 %%DATADIR%%/sym/4000/4001-1.sym
@@ -789,6 +791,7 @@
 %%DATADIR%%/sym/font/O-double-acute-accent.sym
 %%DATADIR%%/sym/font/O-slash.sym
 %%DATADIR%%/sym/font/O.sym
+%%DATADIR%%/sym/font/Omega.sym
 %%DATADIR%%/sym/font/P.sym
 %%DATADIR%%/sym/font/Q.sym
 %%DATADIR%%/sym/font/R.sym
@@ -873,6 +876,7 @@
 %%DATADIR%%/sym/font/rbrack.sym
 %%DATADIR%%/sym/font/rparen.sym
 %%DATADIR%%/sym/font/s_-acute-accent.sym
+%%DATADIR%%/sym/font/s_-sharp.sym
 %%DATADIR%%/sym/font/s_.sym
 %%DATADIR%%/sym/font/semi.sym
 %%DATADIR%%/sym/font/slash.sym
@@ -1048,6 +1052,7 @@
 %%DATADIR%%/sym/maxim/max3223e-1.sym
 %%DATADIR%%/sym/maxim/max3226-1.sym
 %%DATADIR%%/sym/maxim/max3491-1.sym
+%%DATADIR%%/sym/maxim/max3674-1.sym
 %%DATADIR%%/sym/maxim/max378-1.sym
 %%DATADIR%%/sym/maxim/max400-1.sym
 %%DATADIR%%/sym/maxim/max4005-1.sym
@@ -1633,55 +1638,57 @@
 %%DATADIR%%/sym/xilinx/XC2S50-5PQ208I.sym
 %%DATADIR%%/sym/xilinx/XC2S50-6PQ208C.sym
 %%DATADIR%%/sym/xilinx/XC95108-PC84.sym
-%%DATADIR%%/system-gafrc
-@dirrm %%DATADIR%%/sym/xilinx
-@dirrm %%DATADIR%%/sym/vhdl
-@dirrm %%DATADIR%%/sym/verilog
-@dirrm %%DATADIR%%/sym/tube
-@dirrm %%DATADIR%%/sym/transistor
-@dirrm %%DATADIR%%/sym/titleblock
-@dirrm %%DATADIR%%/sym/switch
-@dirrm %%DATADIR%%/sym/switcap
-@dirrm %%DATADIR%%/sym/supervisor
-@dirrm %%DATADIR%%/sym/st
-@dirrm %%DATADIR%%/sym/spice
-@dirrm %%DATADIR%%/sym/rf
-@dirrm %%DATADIR%%/sym/relay
-@dirrm %%DATADIR%%/sym/radio
-@dirrm %%DATADIR%%/sym/power
-@dirrm %%DATADIR%%/sym/pla
-@dirrm %%DATADIR%%/sym/philips
-@dirrm %%DATADIR%%/sym/opto
-@dirrm %%DATADIR%%/sym/national
-@dirrm %%DATADIR%%/sym/misc
-@dirrm %%DATADIR%%/sym/minicircuits
-@dirrm %%DATADIR%%/sym/micro
-@dirrm %%DATADIR%%/sym/memory
-@dirrm %%DATADIR%%/sym/maxim
-@dirrm %%DATADIR%%/sym/local
-@dirrm %%DATADIR%%/sym/linear
-@dirrm %%DATADIR%%/sym/lattice
-@dirrm %%DATADIR%%/sym/irf
-@dirrm %%DATADIR%%/sym/io
-@dirrm %%DATADIR%%/sym/idt
-@dirrm %%DATADIR%%/sym/gnetman
-@dirrm %%DATADIR%%/sym/font
-@dirrm %%DATADIR%%/sym/ecl
-@dirrm %%DATADIR%%/sym/diode
-@dirrm %%DATADIR%%/sym/dec
-@dirrm %%DATADIR%%/sym/connector
-@dirrm %%DATADIR%%/sym/cascade
-@dirrm %%DATADIR%%/sym/bus
-@dirrm %%DATADIR%%/sym/asicpads
-@dirrm %%DATADIR%%/sym/asic
-@dirrm %%DATADIR%%/sym/apex
-@dirrm %%DATADIR%%/sym/analog
-@dirrm %%DATADIR%%/sym/amphenol
-@dirrm %%DATADIR%%/sym/altera
-@dirrm %%DATADIR%%/sym/allegro
-@dirrm %%DATADIR%%/sym/IEC417
-@dirrm %%DATADIR%%/sym/74
+@dirrm %%DATADIR%%/gafrc.d
+@dirrmtry %%DATADIR%%/scheme
 @dirrm %%DATADIR%%/sym/4000
-@dirrm %%DATADIR%%/sym
+@dirrm %%DATADIR%%/sym/74
+@dirrm %%DATADIR%%/sym/IEC417
+@dirrm %%DATADIR%%/sym/allegro
+@dirrm %%DATADIR%%/sym/altera
+@dirrm %%DATADIR%%/sym/amphenol
+@dirrm %%DATADIR%%/sym/analog
+@dirrm %%DATADIR%%/sym/apex
+@dirrm %%DATADIR%%/sym/asic
+@dirrm %%DATADIR%%/sym/asicpads
+@dirrm %%DATADIR%%/sym/bus
+@dirrm %%DATADIR%%/sym/cascade
+@dirrm %%DATADIR%%/sym/connector
+@dirrm %%DATADIR%%/sym/dec
+@dirrm %%DATADIR%%/sym/diode
+@dirrm %%DATADIR%%/sym/ecl
+@dirrm %%DATADIR%%/sym/font
+@dirrm %%DATADIR%%/sym/gnetman
+@dirrm %%DATADIR%%/sym/idt
+@dirrm %%DATADIR%%/sym/io
+@dirrm %%DATADIR%%/sym/irf
+@dirrm %%DATADIR%%/sym/lattice
+@dirrm %%DATADIR%%/sym/linear
+@dirrm %%DATADIR%%/sym/local
+@dirrm %%DATADIR%%/sym/maxim
+@dirrm %%DATADIR%%/sym/memory
+@dirrm %%DATADIR%%/sym/micro
+@dirrm %%DATADIR%%/sym/minicircuits
+@dirrm %%DATADIR%%/sym/misc
+@dirrm %%DATADIR%%/sym/national
+@dirrm %%DATADIR%%/sym/opto
+@dirrm %%DATADIR%%/sym/philips
+@dirrm %%DATADIR%%/sym/pla
+@dirrm %%DATADIR%%/sym/power
+@dirrm %%DATADIR%%/sym/radio
+@dirrm %%DATADIR%%/sym/relay
+@dirrm %%DATADIR%%/sym/rf
+@dirrm %%DATADIR%%/sym/spice
+@dirrm %%DATADIR%%/sym/st
+@dirrm %%DATADIR%%/sym/supervisor
+@dirrm %%DATADIR%%/sym/switcap
+@dirrm %%DATADIR%%/sym/switch
+@dirrm %%DATADIR%%/sym/titleblock
+@dirrm %%DATADIR%%/sym/transistor
+@dirrm %%DATADIR%%/sym/tube
+@dirrm %%DATADIR%%/sym/verilog
+@dirrm %%DATADIR%%/sym/vhdl
+@dirrm %%DATADIR%%/sym/xilinx
+@dirrmtry %%DATADIR%%/sym
 @dirrmtry %%DATADIR%%
 @dirrmtry %%DOCSDIR%%
+

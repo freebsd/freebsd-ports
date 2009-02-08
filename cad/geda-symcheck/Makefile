@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	symcheck
-PORTVERSION=	20070216
-PORTREVISION=	2
+PORTVERSION=	1.4.3
 CATEGORIES=	cad
-MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
-		http://geda.seul.org/devel/${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/release/v1.4/${PORTVERSION}/ \
+		http://geda.seul.org/release/v1.4/${PORTVERSION}/
 PKGNAMEPREFIX=	geda-
 DISTNAME=	${PKGNAMEPREFIX}g${PORTNAME}-${PORTVERSION}
 
@@ -18,7 +17,7 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	The gEDA's symbol checking utility
 
 RUN_DEPENDS=	${LOCALBASE}/share/geda/sym:${PORTSDIR}/cad/geda-symbols
-LIB_DEPENDS=	geda.28:${PORTSDIR}/cad/libgeda
+LIB_DEPENDS=	geda.33:${PORTSDIR}/cad/libgeda
 
 DOCSDIR=	${PREFIX}/share/doc/geda
 DATADIR=	${PREFIX}/share/geda

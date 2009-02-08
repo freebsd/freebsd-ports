@@ -1,0 +1,17 @@
+--- icon-theme-installer.orig	2009-01-28 18:58:56.000000000 +0100
++++ icon-theme-installer	2009-01-28 18:59:24.000000000 +0100
+@@ -108,10 +108,10 @@
+ 	exit 1
+ fi
+ 
+-if test ! -x `echo "$INSTALL_DATA_EXEC" | cut -f1 -d' '`; then
+-	echo "Cannot find '$INSTALL_DATA_EXEC'; You probably want to pass -x \$(INSTALL_DATA)"
+-	exit 1
+-fi
++#if test ! -x `echo "$INSTALL_DATA_EXEC" | cut -f1 -d' '`; then
++#	echo "Cannot find '$INSTALL_DATA_EXEC'; You probably want to pass -x \$(INSTALL_DATA)"
++#	exit 1
++#fi
+ 
+ if test -z "$SRC_DIR"; then
+ 	SRC_DIR=.

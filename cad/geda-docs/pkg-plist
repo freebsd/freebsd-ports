@@ -1,28 +1,4 @@
 %%DOCSDIR%%/gedadocs.html
-%%DOCSDIR%%/tutorials/gsch2pcb/gschem-warmup.html
-%%DOCSDIR%%/tutorials/gsch2pcb/images/board-1.png
-%%DOCSDIR%%/tutorials/gsch2pcb/images/board-2.png
-%%DOCSDIR%%/tutorials/gsch2pcb/images/board-3.png
-%%DOCSDIR%%/tutorials/gsch2pcb/images/board-4.png
-%%DOCSDIR%%/tutorials/gsch2pcb/images/board-5.png
-%%DOCSDIR%%/tutorials/gsch2pcb/images/board-6.png
-%%DOCSDIR%%/tutorials/gsch2pcb/images/gschem-sym-1.png
-%%DOCSDIR%%/tutorials/gsch2pcb/images/gschem-sym-2.png
-%%DOCSDIR%%/tutorials/gsch2pcb/images/gschem-sym-3.png
-%%DOCSDIR%%/tutorials/gsch2pcb/images/one-sch-1.png
-%%DOCSDIR%%/tutorials/gsch2pcb/images/one-sch-2.png
-%%DOCSDIR%%/tutorials/gsch2pcb/images/one-sch-3.png
-%%DOCSDIR%%/tutorials/gsch2pcb/images/paper1.gif
-%%DOCSDIR%%/tutorials/gsch2pcb/images/pcb-el-1.png
-%%DOCSDIR%%/tutorials/gsch2pcb/images/pcb-el-2.png
-%%DOCSDIR%%/tutorials/gsch2pcb/images/two-sch-1.png
-%%DOCSDIR%%/tutorials/gsch2pcb/images/two-sch-2.png
-%%DOCSDIR%%/tutorials/gsch2pcb/images/warmup-0.png
-%%DOCSDIR%%/tutorials/gsch2pcb/images/warmup-1.png
-%%DOCSDIR%%/tutorials/gsch2pcb/images/warmup-2.png
-%%DOCSDIR%%/tutorials/gsch2pcb/transistor-guide.html
-%%DOCSDIR%%/tutorials/gsch2pcb/tutorial-old.html
-%%DOCSDIR%%/tutorials/gsch2pcb/tutorial.html
 %%DOCSDIR%%/wiki/001geda_debian.html
 %%DOCSDIR%%/wiki/001geda_documentation.html
 %%DOCSDIR%%/wiki/001geda_faq-attribs.html
@@ -31,7 +7,6 @@
 %%DOCSDIR%%/wiki/001geda_faq-gschem.html
 %%DOCSDIR%%/wiki/001geda_faq-simulation.html
 %%DOCSDIR%%/wiki/001geda_faq.html
-%%DOCSDIR%%/wiki/001geda_glossary.html
 %%DOCSDIR%%/wiki/001geda_gschem_mp.html
 %%DOCSDIR%%/wiki/001geda_gschem_ug.html
 %%DOCSDIR%%/wiki/001geda_hse_howto.html
@@ -70,15 +45,29 @@
 %%DOCSDIR%%/wiki/_detail/devel_tips_dialog_picture.html
 %%DOCSDIR%%/wiki/_detail/geda_ambiguous1.html
 %%DOCSDIR%%/wiki/_detail/geda_ambiguous1_fixed.html
+%%DOCSDIR%%/wiki/_detail/geda_board-1.html
+%%DOCSDIR%%/wiki/_detail/geda_board-2.html
+%%DOCSDIR%%/wiki/_detail/geda_board-3.html
+%%DOCSDIR%%/wiki/_detail/geda_board-4.html
+%%DOCSDIR%%/wiki/_detail/geda_board-5.html
+%%DOCSDIR%%/wiki/_detail/geda_board-6.html
 %%DOCSDIR%%/wiki/_detail/geda_coordinatespace.html
 %%DOCSDIR%%/wiki/_detail/geda_design_flow.html
 %%DOCSDIR%%/wiki/_detail/geda_faq_attrib.html
 %%DOCSDIR%%/wiki/_detail/geda_fileformat_textgraphic.html
 %%DOCSDIR%%/wiki/_detail/geda_geda_flow.html
+%%DOCSDIR%%/wiki/_detail/geda_gschem-sym-1.html
+%%DOCSDIR%%/wiki/_detail/geda_gschem-sym-2.html
+%%DOCSDIR%%/wiki/_detail/geda_gschem-sym-3.html
 %%DOCSDIR%%/wiki/_detail/geda_gschem_screenshot_001.html
 %%DOCSDIR%%/wiki/_detail/geda_gschem_workflow_01.html
 %%DOCSDIR%%/wiki/_detail/geda_net.html
 %%DOCSDIR%%/wiki/_detail/geda_nets.html
+%%DOCSDIR%%/wiki/_detail/geda_one-sch-1.html
+%%DOCSDIR%%/wiki/_detail/geda_one-sch-2.html
+%%DOCSDIR%%/wiki/_detail/geda_one-sch-3.html
+%%DOCSDIR%%/wiki/_detail/geda_pcb-el-1.html
+%%DOCSDIR%%/wiki/_detail/geda_pcb-el-2.html
 %%DOCSDIR%%/wiki/_detail/geda_rf_cascade_figure1.html
 %%DOCSDIR%%/wiki/_detail/geda_rf_cascade_figure2.html
 %%DOCSDIR%%/wiki/_detail/geda_status_screenshot.html
@@ -89,6 +78,12 @@
 %%DOCSDIR%%/wiki/_detail/geda_symbol_7400-1.html
 %%DOCSDIR%%/wiki/_detail/geda_symbol_7400-1_hidden.html
 %%DOCSDIR%%/wiki/_detail/geda_terminal_screenshot_001.html
+%%DOCSDIR%%/wiki/_detail/geda_two-sch-1.html
+%%DOCSDIR%%/wiki/_detail/geda_two-sch-2.html
+%%DOCSDIR%%/wiki/_detail/geda_warmup_add_component.html
+%%DOCSDIR%%/wiki/_detail/geda_warmup_gschem01.html
+%%DOCSDIR%%/wiki/_detail/geda_warmup_gschem02.html
+%%DOCSDIR%%/wiki/_detail/geda_warmup_gschem03.html
 %%DOCSDIR%%/wiki/_detail/tragesym_acroread_selectiontable.html
 %%DOCSDIR%%/wiki/_detail/tragesym_gschem_finished.html
 %%DOCSDIR%%/wiki/_detail/tragesym_gschem_showhidden.html
@@ -100,86 +95,33 @@
 %%DOCSDIR%%/wiki/_detail/tragesym_ooo_selection.html
 %%DOCSDIR%%/wiki/_detail/tragesym_xemacs_modifiedselection.html
 %%DOCSDIR%%/wiki/_detail/tragesym_xemacs_rawselection.html
-%%DOCSDIR%%/wiki/_media/001devel_tips_dialog_picture.png
-%%DOCSDIR%%/wiki/_media/001geda_ambiguous1.png
-%%DOCSDIR%%/wiki/_media/001geda_ambiguous1_fixed.png
-%%DOCSDIR%%/wiki/_media/001geda_coordinatespace.jpg
-%%DOCSDIR%%/wiki/_media/001geda_design_flow.jpg
-%%DOCSDIR%%/wiki/_media/001geda_faq_attrib.jpg
-%%DOCSDIR%%/wiki/_media/001geda_fileformat_textgraphic.jpg
-%%DOCSDIR%%/wiki/_media/001geda_geda_flow.png
-%%DOCSDIR%%/wiki/_media/001geda_gschem_screenshot_001.jpg
-%%DOCSDIR%%/wiki/_media/001geda_gschem_workflow_01.jpg
-%%DOCSDIR%%/wiki/_media/001geda_net.jpg
-%%DOCSDIR%%/wiki/_media/001geda_nets.jpg
-%%DOCSDIR%%/wiki/_media/001geda_rf_cascade_figure1.jpg
-%%DOCSDIR%%/wiki/_media/001geda_rf_cascade_figure2.jpg
-%%DOCSDIR%%/wiki/_media/001geda_status_screenshot.jpg
-%%DOCSDIR%%/wiki/_media/001geda_switcap_figure1.jpg
-%%DOCSDIR%%/wiki/_media/001geda_switcap_figure2.jpg
-%%DOCSDIR%%/wiki/_media/001geda_switcap_figure3.jpg
-%%DOCSDIR%%/wiki/_media/001geda_switcap_figure4.jpg
-%%DOCSDIR%%/wiki/_media/001geda_symbol_7400-1.png
-%%DOCSDIR%%/wiki/_media/001geda_symbol_7400-1_hidden.png
-%%DOCSDIR%%/wiki/_media/001geda_terminal_screenshot_001.jpg
-%%DOCSDIR%%/wiki/_media/001tragesym_acroread_selectiontable.png
-%%DOCSDIR%%/wiki/_media/001tragesym_gschem_finished.png
-%%DOCSDIR%%/wiki/_media/001tragesym_gschem_showhidden.png
-%%DOCSDIR%%/wiki/_media/001tragesym_kpdf_pinconfiguration.png
-%%DOCSDIR%%/wiki/_media/001tragesym_kpdf_pindescription.png
-%%DOCSDIR%%/wiki/_media/001tragesym_ooo_attributes.png
-%%DOCSDIR%%/wiki/_media/001tragesym_ooo_changedpins.png
-%%DOCSDIR%%/wiki/_media/001tragesym_ooo_rearanged.png
-%%DOCSDIR%%/wiki/_media/001tragesym_ooo_selection.png
 %%DOCSDIR%%/wiki/_media/001tragesym_template
-%%DOCSDIR%%/wiki/_media/001tragesym_template.txt
-%%DOCSDIR%%/wiki/_media/001tragesym_xemacs_modifiedselection.png
-%%DOCSDIR%%/wiki/_media/001tragesym_xemacs_rawselection.png
-%%DOCSDIR%%/wiki/_media/002devel_tips_dialog_picture.png
-%%DOCSDIR%%/wiki/_media/002geda_ambiguous1.png
-%%DOCSDIR%%/wiki/_media/002geda_ambiguous1_fixed.png
-%%DOCSDIR%%/wiki/_media/002geda_coordinatespace.jpg
-%%DOCSDIR%%/wiki/_media/002geda_design_flow.jpg
-%%DOCSDIR%%/wiki/_media/002geda_faq_attrib.jpg
-%%DOCSDIR%%/wiki/_media/002geda_fileformat_textgraphic.jpg
-%%DOCSDIR%%/wiki/_media/002geda_geda_flow.png
-%%DOCSDIR%%/wiki/_media/002geda_gschem_screenshot_001.jpg
-%%DOCSDIR%%/wiki/_media/002geda_gschem_workflow_01.jpg
-%%DOCSDIR%%/wiki/_media/002geda_net.jpg
-%%DOCSDIR%%/wiki/_media/002geda_nets.jpg
-%%DOCSDIR%%/wiki/_media/002geda_rf_cascade_figure1.jpg
-%%DOCSDIR%%/wiki/_media/002geda_rf_cascade_figure2.jpg
-%%DOCSDIR%%/wiki/_media/002geda_status_screenshot.jpg
-%%DOCSDIR%%/wiki/_media/002geda_switcap_figure1.jpg
-%%DOCSDIR%%/wiki/_media/002geda_switcap_figure2.jpg
-%%DOCSDIR%%/wiki/_media/002geda_switcap_figure3.jpg
-%%DOCSDIR%%/wiki/_media/002geda_switcap_figure4.jpg
-%%DOCSDIR%%/wiki/_media/002geda_symbol_7400-1.png
-%%DOCSDIR%%/wiki/_media/002geda_symbol_7400-1_hidden.png
-%%DOCSDIR%%/wiki/_media/002geda_terminal_screenshot_001.jpg
-%%DOCSDIR%%/wiki/_media/002tragesym_acroread_selectiontable.png
-%%DOCSDIR%%/wiki/_media/002tragesym_gschem_finished.png
-%%DOCSDIR%%/wiki/_media/002tragesym_gschem_showhidden.png
-%%DOCSDIR%%/wiki/_media/002tragesym_kpdf_pinconfiguration.png
-%%DOCSDIR%%/wiki/_media/002tragesym_kpdf_pindescription.png
-%%DOCSDIR%%/wiki/_media/002tragesym_ooo_attributes.png
-%%DOCSDIR%%/wiki/_media/002tragesym_ooo_changedpins.png
-%%DOCSDIR%%/wiki/_media/002tragesym_ooo_rearanged.png
-%%DOCSDIR%%/wiki/_media/002tragesym_ooo_selection.png
-%%DOCSDIR%%/wiki/_media/002tragesym_xemacs_modifiedselection.png
-%%DOCSDIR%%/wiki/_media/002tragesym_xemacs_rawselection.png
 %%DOCSDIR%%/wiki/_media/devel_tips_dialog_picture.png
 %%DOCSDIR%%/wiki/_media/geda_ambiguous1.png
 %%DOCSDIR%%/wiki/_media/geda_ambiguous1_fixed.png
+%%DOCSDIR%%/wiki/_media/geda_board-1.png
+%%DOCSDIR%%/wiki/_media/geda_board-2.png
+%%DOCSDIR%%/wiki/_media/geda_board-3.png
+%%DOCSDIR%%/wiki/_media/geda_board-4.png
+%%DOCSDIR%%/wiki/_media/geda_board-5.png
+%%DOCSDIR%%/wiki/_media/geda_board-6.png
 %%DOCSDIR%%/wiki/_media/geda_coordinatespace.jpg
 %%DOCSDIR%%/wiki/_media/geda_design_flow.jpg
 %%DOCSDIR%%/wiki/_media/geda_faq_attrib.jpg
 %%DOCSDIR%%/wiki/_media/geda_fileformat_textgraphic.jpg
 %%DOCSDIR%%/wiki/_media/geda_geda_flow.png
+%%DOCSDIR%%/wiki/_media/geda_gschem-sym-1.png
+%%DOCSDIR%%/wiki/_media/geda_gschem-sym-2.png
+%%DOCSDIR%%/wiki/_media/geda_gschem-sym-3.png
 %%DOCSDIR%%/wiki/_media/geda_gschem_screenshot_001.jpg
 %%DOCSDIR%%/wiki/_media/geda_gschem_workflow_01.jpg
 %%DOCSDIR%%/wiki/_media/geda_net.jpg
 %%DOCSDIR%%/wiki/_media/geda_nets.jpg
+%%DOCSDIR%%/wiki/_media/geda_one-sch-1.png
+%%DOCSDIR%%/wiki/_media/geda_one-sch-2.png
+%%DOCSDIR%%/wiki/_media/geda_one-sch-3.png
+%%DOCSDIR%%/wiki/_media/geda_pcb-el-1.png
+%%DOCSDIR%%/wiki/_media/geda_pcb-el-2.png
 %%DOCSDIR%%/wiki/_media/geda_rf_cascade_figure1.jpg
 %%DOCSDIR%%/wiki/_media/geda_rf_cascade_figure2.jpg
 %%DOCSDIR%%/wiki/_media/geda_status_screenshot.jpg
@@ -190,6 +132,12 @@
 %%DOCSDIR%%/wiki/_media/geda_symbol_7400-1.png
 %%DOCSDIR%%/wiki/_media/geda_symbol_7400-1_hidden.png
 %%DOCSDIR%%/wiki/_media/geda_terminal_screenshot_001.jpg
+%%DOCSDIR%%/wiki/_media/geda_two-sch-1.png
+%%DOCSDIR%%/wiki/_media/geda_two-sch-2.png
+%%DOCSDIR%%/wiki/_media/geda_warmup_add_component.png
+%%DOCSDIR%%/wiki/_media/geda_warmup_gschem01.png
+%%DOCSDIR%%/wiki/_media/geda_warmup_gschem02.png
+%%DOCSDIR%%/wiki/_media/geda_warmup_gschem03.png
 %%DOCSDIR%%/wiki/_media/tragesym_acroread_selectiontable.png
 %%DOCSDIR%%/wiki/_media/tragesym_gschem_finished.png
 %%DOCSDIR%%/wiki/_media/tragesym_gschem_showhidden.png
@@ -200,7 +148,8 @@
 %%DOCSDIR%%/wiki/_media/tragesym_ooo_rearanged.png
 %%DOCSDIR%%/wiki/_media/tragesym_ooo_selection.png
 %%DOCSDIR%%/wiki/_media/tragesym_template
-%%DOCSDIR%%/wiki/_media/tragesym_template.txt
+%%DOCSDIR%%/wiki/_media/tragesym_template2
+%%DOCSDIR%%/wiki/_media/tragesym_template2.txt.txt
 %%DOCSDIR%%/wiki/_media/tragesym_xemacs_modifiedselection.png
 %%DOCSDIR%%/wiki/_media/tragesym_xemacs_rawselection.png
 %%DOCSDIR%%/wiki/docs_20060124_gschem_ug_app_a.html
@@ -213,12 +162,17 @@
 %%DOCSDIR%%/wiki/docs_20060124_gschem_ug_resources.html
 %%DOCSDIR%%/wiki/docs_20060124_gschem_ug_the_main_window.html
 %%DOCSDIR%%/wiki/docs_20060124_gschem_ug_the_status_window.html
+%%DOCSDIR%%/wiki/geda_bill_wilson_s.html
 %%DOCSDIR%%/wiki/geda_bom_readme.html
+%%DOCSDIR%%/wiki/geda_circuit_simulation_improvements.html
 %%DOCSDIR%%/wiki/geda_covered_mp.html
 %%DOCSDIR%%/wiki/geda_covered_rv.html
 %%DOCSDIR%%/wiki/geda_csygas.html
 %%DOCSDIR%%/wiki/geda_cygwin.html
+%%DOCSDIR%%/wiki/geda_data_plotting_improvements.html
+%%DOCSDIR%%/wiki/geda_data_structure_design_discussion.html
 %%DOCSDIR%%/wiki/geda_debian.html
+%%DOCSDIR%%/wiki/geda_design_flow_and_hierarchy_roadmap.html
 %%DOCSDIR%%/wiki/geda_devel-tips.html
 %%DOCSDIR%%/wiki/geda_documentation.html
 %%DOCSDIR%%/wiki/geda_eagle_pcb_netlister_readme.html
@@ -228,6 +182,7 @@
 %%DOCSDIR%%/wiki/geda_faq-gnetlist.html
 %%DOCSDIR%%/wiki/geda_faq-gsch2pcb.html
 %%DOCSDIR%%/wiki/geda_faq-gschem.html
+%%DOCSDIR%%/wiki/geda_faq-pcb.html
 %%DOCSDIR%%/wiki/geda_faq-simulation.html
 %%DOCSDIR%%/wiki/geda_faq.html
 %%DOCSDIR%%/wiki/geda_fbabgapp.html
@@ -250,9 +205,12 @@
 %%DOCSDIR%%/wiki/geda_grcsan.html
 %%DOCSDIR%%/wiki/geda_grenum_mp.html
 %%DOCSDIR%%/wiki/geda_gsch2pcb_readme.html
+%%DOCSDIR%%/wiki/geda_gsch2pcb_tutorial.html
+%%DOCSDIR%%/wiki/geda_gsch2pcb_tutorial_releasenotes.html
 %%DOCSDIR%%/wiki/geda_gschem2pcb_readme.html
 %%DOCSDIR%%/wiki/geda_gschem_mp.html
 %%DOCSDIR%%/wiki/geda_gschem_ug.html
+%%DOCSDIR%%/wiki/geda_gschem_warmup.html
 %%DOCSDIR%%/wiki/geda_gsymcheck_mp.html
 %%DOCSDIR%%/wiki/geda_gtkwave_lxt2miner_mp.html
 %%DOCSDIR%%/wiki/geda_gtkwave_lxt2vcd_mp.html
@@ -266,6 +224,7 @@
 %%DOCSDIR%%/wiki/geda_gtkwave_vcd2vzt_mp.html
 %%DOCSDIR%%/wiki/geda_gtkwave_vzt2vcd_mp.html
 %%DOCSDIR%%/wiki/geda_gtkwave_vztminer_mp.html
+%%DOCSDIR%%/wiki/geda_guile_scripting.html
 %%DOCSDIR%%/wiki/geda_hse_howto.html
 %%DOCSDIR%%/wiki/geda_icarus_anc.html
 %%DOCSDIR%%/wiki/geda_icarus_extensions.html
@@ -294,10 +253,13 @@
 %%DOCSDIR%%/wiki/geda_olib_readme.html
 %%DOCSDIR%%/wiki/geda_pcb-quick_reference.html
 %%DOCSDIR%%/wiki/geda_pcb.html
+%%DOCSDIR%%/wiki/geda_pcb_footprints.html
 %%DOCSDIR%%/wiki/geda_pcb_mp.html
 %%DOCSDIR%%/wiki/geda_pcb_tips.html
 %%DOCSDIR%%/wiki/geda_pcb_ug.html
+%%DOCSDIR%%/wiki/geda_release_engineering.html
 %%DOCSDIR%%/wiki/geda_scg.html
+%%DOCSDIR%%/wiki/geda_scm.html
 %%DOCSDIR%%/wiki/geda_sdb_howto.html
 %%DOCSDIR%%/wiki/geda_sn_readme.html
 %%DOCSDIR%%/wiki/geda_ssan.html
@@ -311,25 +273,31 @@
 %%DOCSDIR%%/wiki/geda_todos.html
 %%DOCSDIR%%/wiki/geda_tragesym_readme.html
 %%DOCSDIR%%/wiki/geda_tragesym_tutorial.html
+%%DOCSDIR%%/wiki/geda_transistor_guide.html
 %%DOCSDIR%%/wiki/geda_ubuntu.html
 %%DOCSDIR%%/wiki/geda_usage.html
 %%DOCSDIR%%/wiki/geda_vams_netlister_readme.html
 %%DOCSDIR%%/wiki/geda_verilog_netlister_readme.html
+%%DOCSDIR%%/wiki/geda_version_control_migration.html
 %%DOCSDIR%%/wiki/geda_vhdl_netlister_readme.html
 %%DOCSDIR%%/wiki/geda_wcalc_mp.html
 %%DOCSDIR%%/wiki/geda_wcalc_readme.html
 %%DOCSDIR%%/wiki/geda_wcalc_stdio_mp.html
+%%DOCSDIR%%/wiki/gsoc2007.html
+%%DOCSDIR%%/wiki/gsoc2007_projects.html
 %%DOCSDIR%%/wiki/index.html
 %%DOCSDIR%%/wiki/lib/exe/001css
+%%DOCSDIR%%/wiki/lib/exe/002css
 %%DOCSDIR%%/wiki/lib/exe/css
+%%DOCSDIR%%/wiki/lib/exe/opensearch
 %%DOCSDIR%%/wiki/lib/images/error.png
-%%DOCSDIR%%/wiki/lib/images/fileicons/conf.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/deb.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/doc.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/file.png
+%%DOCSDIR%%/wiki/lib/images/fileicons/gif.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/gz.png
-%%DOCSDIR%%/wiki/lib/images/fileicons/htm.png
-%%DOCSDIR%%/wiki/lib/images/fileicons/html.png
+%%DOCSDIR%%/wiki/lib/images/fileicons/jpeg.png
+%%DOCSDIR%%/wiki/lib/images/fileicons/jpg.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/odc.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/odf.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/odg.png
@@ -338,18 +306,21 @@
 %%DOCSDIR%%/wiki/lib/images/fileicons/ods.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/odt.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/pdf.png
+%%DOCSDIR%%/wiki/lib/images/fileicons/png.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/ppt.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/ps.png
+%%DOCSDIR%%/wiki/lib/images/fileicons/rar.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/rpm.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/rtf.png
+%%DOCSDIR%%/wiki/lib/images/fileicons/src.png
+%%DOCSDIR%%/wiki/lib/images/fileicons/swf.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/sxc.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/sxd.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/sxi.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/sxw.png
+%%DOCSDIR%%/wiki/lib/images/fileicons/tar.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/tgz.png
-%%DOCSDIR%%/wiki/lib/images/fileicons/txt.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/xls.png
-%%DOCSDIR%%/wiki/lib/images/fileicons/xml.png
 %%DOCSDIR%%/wiki/lib/images/fileicons/zip.png
 %%DOCSDIR%%/wiki/lib/images/info.png
 %%DOCSDIR%%/wiki/lib/images/interwiki.png
@@ -359,6 +330,7 @@
 %%DOCSDIR%%/wiki/lib/images/interwiki/bug.gif
 %%DOCSDIR%%/wiki/lib/images/interwiki/coral.gif
 %%DOCSDIR%%/wiki/lib/images/interwiki/doku.gif
+%%DOCSDIR%%/wiki/lib/images/interwiki/dokubug.gif
 %%DOCSDIR%%/wiki/lib/images/interwiki/google.gif
 %%DOCSDIR%%/wiki/lib/images/interwiki/meatball.gif
 %%DOCSDIR%%/wiki/lib/images/interwiki/phpfn.gif
@@ -367,43 +339,44 @@
 %%DOCSDIR%%/wiki/lib/images/interwiki/wp.gif
 %%DOCSDIR%%/wiki/lib/images/interwiki/wpde.gif
 %%DOCSDIR%%/wiki/lib/images/interwiki/wpmeta.gif
+%%DOCSDIR%%/wiki/lib/images/notify.png
 %%DOCSDIR%%/wiki/lib/images/smileys/fixme.gif
 %%DOCSDIR%%/wiki/lib/images/smileys/icon_smile.gif
 %%DOCSDIR%%/wiki/lib/images/smileys/icon_smile2.gif
 %%DOCSDIR%%/wiki/lib/images/smileys/icon_wink.gif
 %%DOCSDIR%%/wiki/lib/images/success.png
-%%DOCSDIR%%/wiki/lib/plugins/definitionlist/images/bullet.gif
+%%DOCSDIR%%/wiki/lib/plugins/images/bullet.gif
 %%DOCSDIR%%/wiki/lib/plugins/note/images/important.png
 %%DOCSDIR%%/wiki/lib/plugins/note/images/note.png
 %%DOCSDIR%%/wiki/lib/plugins/note/images/tip.png
 %%DOCSDIR%%/wiki/lib/plugins/note/images/warning.png
-%%DOCSDIR%%/wiki/lib/tpl/default/images/closed.gif
-%%DOCSDIR%%/wiki/lib/tpl/default/images/favicon
-%%DOCSDIR%%/wiki/lib/tpl/default/images/link_icon.gif
-%%DOCSDIR%%/wiki/lib/tpl/default/images/mail_icon.gif
-%%DOCSDIR%%/wiki/lib/tpl/default/images/open.gif
-%%DOCSDIR%%/wiki/lib/tpl/default/images/tocdot2.gif
-%%DOCSDIR%%/wiki/lib/tpl/default/images/windows.gif
+%%DOCSDIR%%/wiki/lib/tpl/geda/images/buttonshadow.png
+%%DOCSDIR%%/wiki/lib/tpl/geda/images/closed.gif
+%%DOCSDIR%%/wiki/lib/tpl/geda/images/favicon
+%%DOCSDIR%%/wiki/lib/tpl/geda/images/inputshadow.png
+%%DOCSDIR%%/wiki/lib/tpl/geda/images/link_icon.gif
+%%DOCSDIR%%/wiki/lib/tpl/geda/images/mail_icon.gif
+%%DOCSDIR%%/wiki/lib/tpl/geda/images/open.gif
+%%DOCSDIR%%/wiki/lib/tpl/geda/images/tocdot2.gif
+%%DOCSDIR%%/wiki/lib/tpl/geda/images/windows.gif
+%%DOCSDIR%%/wiki/libgeda3.html
 %%DOCSDIR%%/wiki/start_es.html
 %%DOCSDIR%%/wiki/start_fr.html
-@dirrm %%DOCSDIR%%/wiki/lib/tpl/default/images
-@dirrm %%DOCSDIR%%/wiki/lib/tpl/default
-@dirrm %%DOCSDIR%%/wiki/lib/tpl
+@dirrm %%DOCSDIR%%/wiki/_detail
+@dirrm %%DOCSDIR%%/wiki/_media
+@dirrm %%DOCSDIR%%/wiki/lib/exe
+@dirrm %%DOCSDIR%%/wiki/lib/images/fileicons
+@dirrm %%DOCSDIR%%/wiki/lib/images/interwiki
+@dirrm %%DOCSDIR%%/wiki/lib/images/smileys
+@dirrm %%DOCSDIR%%/wiki/lib/images
+@dirrm %%DOCSDIR%%/wiki/lib/plugins/definitionlist
+@dirrm %%DOCSDIR%%/wiki/lib/plugins/images
 @dirrm %%DOCSDIR%%/wiki/lib/plugins/note/images
 @dirrm %%DOCSDIR%%/wiki/lib/plugins/note
-@dirrm %%DOCSDIR%%/wiki/lib/plugins/definitionlist/images
-@dirrm %%DOCSDIR%%/wiki/lib/plugins/definitionlist
 @dirrm %%DOCSDIR%%/wiki/lib/plugins
-@dirrm %%DOCSDIR%%/wiki/lib/images/smileys
-@dirrm %%DOCSDIR%%/wiki/lib/images/interwiki
-@dirrm %%DOCSDIR%%/wiki/lib/images/fileicons
-@dirrm %%DOCSDIR%%/wiki/lib/images
-@dirrm %%DOCSDIR%%/wiki/lib/exe
+@dirrm %%DOCSDIR%%/wiki/lib/tpl/geda/images
+@dirrm %%DOCSDIR%%/wiki/lib/tpl/geda
+@dirrm %%DOCSDIR%%/wiki/lib/tpl
 @dirrm %%DOCSDIR%%/wiki/lib
-@dirrm %%DOCSDIR%%/wiki/_media
-@dirrm %%DOCSDIR%%/wiki/_detail
 @dirrm %%DOCSDIR%%/wiki
-@dirrm %%DOCSDIR%%/tutorials/gsch2pcb/images
-@dirrm %%DOCSDIR%%/tutorials/gsch2pcb
-@dirrm %%DOCSDIR%%/tutorials
 @dirrmtry %%DOCSDIR%%

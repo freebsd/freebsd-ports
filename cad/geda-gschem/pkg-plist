@@ -1,4 +1,6 @@
 bin/gschem
+bin/gschemdoc
+share/applications/geda-gschem.desktop
 %%DATADIR%%/bitmap/gschem-alignment_bottomcenter.png
 %%DATADIR%%/bitmap/gschem-alignment_bottomleft.png
 %%DATADIR%%/bitmap/gschem-alignment_bottomright.png
@@ -41,6 +43,7 @@ bin/gschem
 %%DATADIR%%/gschem-lightbg
 %%DATADIR%%/scheme/auto-place-attribs.scm
 %%DATADIR%%/scheme/auto-uref.scm
+%%DATADIR%%/scheme/default-attrib-positions.scm
 %%DATADIR%%/scheme/generate_netlist.scm
 %%DATADIR%%/scheme/gschem.scm
 %%DATADIR%%/scheme/image.scm
@@ -49,22 +52,35 @@ bin/gschem
 %%DATADIR%%/scheme/print-NB-attribs.scm
 %%DATADIR%%/scheme/print.scm
 %%DATADIR%%/system-gschemrc
-%%NLS%%share/locale/de_DE/LC_MESSAGES/geda-gschem.mo
-%%NLS%%share/locale/es_ES/LC_MESSAGES/geda-gschem.mo
-%%NLS%%share/locale/fr_FR/LC_MESSAGES/geda-gschem.mo
-%%NLS%%share/locale/it_IT/LC_MESSAGES/geda-gschem.mo
-%%NLS%%share/locale/ja_JP/LC_MESSAGES/geda-gschem.mo
-%%NLS%%share/locale/nl_NL/LC_MESSAGES/geda-gschem.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/geda-gschem.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/geda-gschem.mo
-%%NLS%%@dirrmtry share/locale/nl_NL/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nl_NL
-%%NLS%%@dirrmtry share/locale/ja_JP/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ja_JP
-%%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/it_IT
-%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de_DE
+share/icons/hicolor/48x48/apps/geda-gschem-48.png
+share/icons/hicolor/scalable/apps/geda-gschem.svg
+share/locale/af_ZA/LC_MESSAGES/geda-gschem.mo
+share/locale/de_DE/LC_MESSAGES/geda-gschem.mo
+share/locale/en_GB/LC_MESSAGES/geda-gschem.mo
+share/locale/es_ES/LC_MESSAGES/geda-gschem.mo
+share/locale/fr_FR/LC_MESSAGES/geda-gschem.mo
+share/locale/it_IT/LC_MESSAGES/geda-gschem.mo
+share/locale/ja_JP/LC_MESSAGES/geda-gschem.mo
+share/locale/nl_NL/LC_MESSAGES/geda-gschem.mo
+share/locale/pt_BR/LC_MESSAGES/geda-gschem.mo
+share/locale/ru/LC_MESSAGES/geda-gschem.mo
+@dirrmtry share/locale/nl_NL/LC_MESSAGES
+@dirrmtry share/locale/nl_NL
+@dirrmtry share/locale/ja_JP/LC_MESSAGES
+@dirrmtry share/locale/ja_JP
+@dirrmtry share/locale/it_IT/LC_MESSAGES
+@dirrmtry share/locale/it_IT
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
+@dirrmtry share/locale/af_ZA/LC_MESSAGES
+@dirrmtry share/locale/af_ZA
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrmtry %%DATADIR%%/scheme
 @dirrmtry %%DATADIR%%/bitmap
 @dirrmtry %%DATADIR%%
+@dirrmtry share/applications
