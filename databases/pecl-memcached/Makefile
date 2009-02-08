@@ -1,0 +1,30 @@
+# New ports collection makefile for:	pecl-memcached
+# Date created:		2009-01-31
+# Whom:			Gea-Suan Lin <gslin@gslin.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	memcached
+PORTVERSION=	0.1.0
+CATEGORIES=	databases
+MASTER_SITES=	http://pecl.php.net/get/
+PKGNAMEPREFIX=	pecl-
+EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	PECL
+
+MAINTAINER=	gslin@gslin.org
+COMMENT=	PHP extension for interfacing with memcached via libmemcached library
+
+LIB_DEPENDS=	memcached:${PORTSDIR}/databases/libmemcached
+
+PHP_MODNAME=	memcached
+USE_PHP=	session
+USE_PHPEXT=	yes
+USE_PHPIZE=	yes
+USE_PHP_BUILD=	yes
+
+post-install:
+	@${CAT} ${WRKSRC}/EXPERIMENTAL
+
+.include <bsd.port.mk>
