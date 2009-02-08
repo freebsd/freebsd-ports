@@ -13,7 +13,6 @@ bin/kross
 bin/kshell4
 bin/kunittestmodrunner
 bin/kwrapper4
-bin/kwalletd
 bin/makekdewidgets
 bin/meinproc4
 bin/nepomuk-rcgen
@@ -207,6 +206,7 @@ include/KDE/KAccelGen/Deref
 include/KDE/KAccelGen/Deref_Key
 include/KDE/KAcceleratorManager
 include/KDE/KAction
+include/KDE/KActionCategory
 include/KDE/KActionCollection
 include/KDE/KActionMenu
 include/KDE/KActionSelector
@@ -308,6 +308,7 @@ include/KDE/KDirOperator
 include/KDE/KDirSelectDialog
 include/KDE/KDirWatch
 include/KDE/KDiskFreeSpace
+include/KDE/KDiskFreeSpaceInfo
 include/KDE/KDoubleNumInput
 include/KDE/KDoubleSpinBox
 include/KDE/KDoubleValidator
@@ -318,6 +319,7 @@ include/KDE/KEmoticons
 include/KDE/KEmoticonsProvider
 include/KDE/KEmoticonsTheme
 include/KDE/KEncodingFileDialog
+include/KDE/KEncodingProber
 include/KDE/KExtendableItemDelegate
 include/KDE/KFadeWidgetEffect
 include/KDE/KFile
@@ -329,12 +331,14 @@ include/KDE/KFileItemList
 include/KDE/KFileMetaInfo
 include/KDE/KFileMetaInfoGroup
 include/KDE/KFileMetaInfoItem
+include/KDE/KFilePlacesModel
 include/KDE/KFileShare
 include/KDE/KFileSharePropsPlugin
 include/KDE/KFileTreeBranch
 include/KDE/KFileTreeView
 include/KDE/KFilterBase
 include/KDE/KFilterDev
+include/KDE/KFilterProxySearchLine
 include/KDE/KFind
 include/KDE/KFindDialog
 include/KDE/KFloatValidator
@@ -429,6 +433,7 @@ include/KDE/KLibLoader
 include/KDE/KLibrary
 include/KDE/KLineEdit
 include/KDE/KListWidget
+include/KDE/KListWidgetSearchLine
 include/KDE/KLocale
 include/KDE/KLocalizedString
 include/KDE/KLockFile
@@ -628,11 +633,13 @@ include/KDE/KTextEdit
 include/KDE/KTextEditor/Attribute
 include/KDE/KTextEditor/CodeCompletionInterface
 include/KDE/KTextEditor/CodeCompletionModel
+include/KDE/KTextEditor/CodeCompletionModelControllerInterface
 include/KDE/KTextEditor/Command
 include/KDE/KTextEditor/CommandExtension
 include/KDE/KTextEditor/CommandInterface
 include/KDE/KTextEditor/ConfigInterface
 include/KDE/KTextEditor/ConfigPage
+include/KDE/KTextEditor/ContainerInterface
 include/KDE/KTextEditor/Cursor
 include/KDE/KTextEditor/Document
 include/KDE/KTextEditor/Editor
@@ -720,10 +727,13 @@ include/KDE/KonqBookmarkOwner
 include/KDE/NET
 include/KDE/NETRootInfo
 include/KDE/NETWinInfo
+include/KDE/Nepomuk/KRatingPainter
+include/KDE/Nepomuk/KRatingWidget
 include/KDE/Nepomuk/Resource
 include/KDE/Nepomuk/ResourceManager
 include/KDE/Nepomuk/Service
 include/KDE/Nepomuk/Tag
+include/KDE/Nepomuk/Thing
 include/KDE/Nepomuk/Tools
 include/KDE/Nepomuk/Types/Class
 include/KDE/Nepomuk/Types/Literal
@@ -732,6 +742,66 @@ include/KDE/Nepomuk/Types/Property
 include/KDE/Nepomuk/Variant
 include/KDE/OrgKdeKDirNotifyInterface
 include/KDE/OrgKdeKLauncherInterface
+include/KDE/Plasma/AbstractRunner
+include/KDE/Plasma/AnimationDriver
+include/KDE/Plasma/Animator
+include/KDE/Plasma/Applet
+include/KDE/Plasma/AppletScript
+include/KDE/Plasma/BusyWidget
+include/KDE/Plasma/CheckBox
+include/KDE/Plasma/ComboBox
+include/KDE/Plasma/ConfigLoader
+include/KDE/Plasma/Containment
+include/KDE/Plasma/Context
+include/KDE/Plasma/Corona
+include/KDE/Plasma/DataContainer
+include/KDE/Plasma/DataEngine
+include/KDE/Plasma/DataEngineManager
+include/KDE/Plasma/DataEngineScript
+include/KDE/Plasma/Delegate
+include/KDE/Plasma/Dialog
+include/KDE/Plasma/Extender
+include/KDE/Plasma/ExtenderItem
+include/KDE/Plasma/FlashingLabel
+include/KDE/Plasma/Frame
+include/KDE/Plasma/FrameSvg
+include/KDE/Plasma/GLApplet
+include/KDE/Plasma/GroupBox
+include/KDE/Plasma/IconWidget
+include/KDE/Plasma/Label
+include/KDE/Plasma/LineEdit
+include/KDE/Plasma/Meter
+include/KDE/Plasma/Package
+include/KDE/Plasma/PackageMetadata
+include/KDE/Plasma/PackageStructure
+include/KDE/Plasma/PaintUtils
+include/KDE/Plasma/Plasma
+include/KDE/Plasma/PopupApplet
+include/KDE/Plasma/PushButton
+include/KDE/Plasma/QueryMatch
+include/KDE/Plasma/RadioButton
+include/KDE/Plasma/RunnerContext
+include/KDE/Plasma/RunnerManager
+include/KDE/Plasma/RunnerScript
+include/KDE/Plasma/ScriptEngine
+include/KDE/Plasma/ScrollBar
+include/KDE/Plasma/Service
+include/KDE/Plasma/ServiceJob
+include/KDE/Plasma/SignalPlotter
+include/KDE/Plasma/Slider
+include/KDE/Plasma/Svg
+include/KDE/Plasma/SvgWidget
+include/KDE/Plasma/TabBar
+include/KDE/Plasma/TextEdit
+include/KDE/Plasma/Theme
+include/KDE/Plasma/ToolButton
+include/KDE/Plasma/ToolTipContent
+include/KDE/Plasma/ToolTipManager
+include/KDE/Plasma/TreeView
+include/KDE/Plasma/Version
+include/KDE/Plasma/View
+include/KDE/Plasma/Wallpaper
+include/KDE/Plasma/WebView
 include/KDE/PtyProcess
 include/KDE/Solid/AcAdapter
 include/KDE/Solid/AudioInterface
@@ -879,6 +949,7 @@ include/kacceleratormanager.h
 include/kaccelgen.h
 include/kacl.h
 include/kaction.h
+include/kactioncategory.h
 include/kactioncollection.h
 include/kactionmenu.h
 include/kactionselector.h
@@ -897,11 +968,11 @@ include/kautosavefile.h
 include/kautostart.h
 include/kbookmark.h
 include/kbookmarkdialog.h
+include/kbookmarkdombuilder.h
 include/kbookmarkexporter.h
 include/kbookmarkimporter.h
 include/kbookmarkimporter_crash.h
 include/kbookmarkimporter_ie.h
-include/kbookmarkdombuilder.h
 include/kbookmarkimporter_ns.h
 include/kbookmarkimporter_opera.h
 include/kbookmarkmanager.h
@@ -911,6 +982,7 @@ include/kbuildsycocaprogressdialog.h
 include/kbuttongroup.h
 include/kcalendarsystem.h
 include/kcalendarsystemfactory.h
+include/kcapacitybar.h
 include/kcategorizedsortfilterproxymodel.h
 include/kcategorizedview.h
 include/kcategorydrawer.h
@@ -987,6 +1059,7 @@ include/kdirselectdialog.h
 include/kdirsortfilterproxymodel.h
 include/kdirwatch.h
 include/kdiskfreespace.h
+include/kdiskfreespaceinfo.h
 include/keditlistbox.h
 include/kedittoolbar.h
 include/kemailsettings.h
@@ -995,6 +1068,7 @@ include/kemoticonsprovider.h
 include/kemoticonstheme.h
 include/kencodingdetector.h
 include/kencodingfiledialog.h
+include/kencodingprober.h
 include/kexportplugin.h
 include/kextendableitemdelegate.h
 include/kfadewidgeteffect.h
@@ -1008,6 +1082,7 @@ include/kfilemetainfo.h
 include/kfilemetainfoitem.h
 include/kfileplacesmodel.h
 include/kfileplacesview.h
+include/kfilepreviewgenerator.h
 include/kfileshare.h
 include/kfilesharedialog.h
 include/kfilesharedlg.h
@@ -1017,6 +1092,7 @@ include/kfilewidget.h
 include/kfilewriteplugin.h
 include/kfilterbase.h
 include/kfilterdev.h
+include/kfilterproxysearchline.h
 include/kfind.h
 include/kfinddialog.h
 include/kfontaction.h
@@ -1031,6 +1107,8 @@ include/kgesture.h
 include/kglobal.h
 include/kglobalaccel.h
 include/kglobalsettings.h
+include/kglobalshortcutinfo.h
+include/kglobalshortcutinfo_p.h
 include/kguiitem.h
 include/khbox.h
 include/khelpmenu.h
@@ -1227,6 +1305,7 @@ include/kross/core/metafunction.h
 include/kross/core/metatype.h
 include/kross/core/object.h
 include/kross/core/script.h
+include/kross/core/wrapperinterface.h
 include/kross/ui/model.h
 include/kross/ui/plugin.h
 include/kross/ui/view.h
@@ -1294,6 +1373,7 @@ include/ktexteditor/annotationinterface.h
 include/ktexteditor/attribute.h
 include/ktexteditor/codecompletioninterface.h
 include/ktexteditor/codecompletionmodel.h
+include/ktexteditor/codecompletionmodelcontrollerinterface.h
 include/ktexteditor/commandinterface.h
 include/ktexteditor/configinterface.h
 include/ktexteditor/configpage.h
@@ -1305,6 +1385,7 @@ include/ktexteditor/editor.h
 include/ktexteditor/editorchooser.h
 include/ktexteditor/factory.h
 include/ktexteditor/ktexteditor_export.h
+include/ktexteditor/loadsavefiltercheckplugin.h
 include/ktexteditor/markinterface.h
 include/ktexteditor/modificationinterface.h
 include/ktexteditor/plugin.h
@@ -1392,11 +1473,73 @@ include/nepomuk/property.h
 include/nepomuk/resource.h
 include/nepomuk/resourcemanager.h
 include/nepomuk/tag.h
+include/nepomuk/thing.h
 include/nepomuk/tools.h
 include/nepomuk/variant.h
 include/netwm.h
 include/netwm_def.h
 include/passdlg.h
+include/plasma/abstractrunner.h
+include/plasma/animationdriver.h
+include/plasma/animator.h
+include/plasma/applet.h
+include/plasma/configloader.h
+include/plasma/containment.h
+include/plasma/context.h
+include/plasma/corona.h
+include/plasma/datacontainer.h
+include/plasma/dataengine.h
+include/plasma/dataenginemanager.h
+include/plasma/delegate.h
+include/plasma/dialog.h
+include/plasma/extender.h
+include/plasma/extenderitem.h
+include/plasma/framesvg.h
+include/plasma/glapplet.h
+include/plasma/package.h
+include/plasma/packagemetadata.h
+include/plasma/packagestructure.h
+include/plasma/paintutils.h
+include/plasma/plasma.h
+include/plasma/plasma_export.h
+include/plasma/popupapplet.h
+include/plasma/querymatch.h
+include/plasma/runnercontext.h
+include/plasma/runnermanager.h
+include/plasma/scripting/appletscript.h
+include/plasma/scripting/dataenginescript.h
+include/plasma/scripting/runnerscript.h
+include/plasma/scripting/scriptengine.h
+include/plasma/service.h
+include/plasma/servicejob.h
+include/plasma/svg.h
+include/plasma/theme.h
+include/plasma/tooltipcontent.h
+include/plasma/tooltipmanager.h
+include/plasma/version.h
+include/plasma/view.h
+include/plasma/wallpaper.h
+include/plasma/widgets/busywidget.h
+include/plasma/widgets/checkbox.h
+include/plasma/widgets/combobox.h
+include/plasma/widgets/flashinglabel.h
+include/plasma/widgets/frame.h
+include/plasma/widgets/groupbox.h
+include/plasma/widgets/iconwidget.h
+include/plasma/widgets/label.h
+include/plasma/widgets/lineedit.h
+include/plasma/widgets/meter.h
+include/plasma/widgets/pushbutton.h
+include/plasma/widgets/radiobutton.h
+include/plasma/widgets/scrollbar.h
+include/plasma/widgets/signalplotter.h
+include/plasma/widgets/slider.h
+include/plasma/widgets/svgwidget.h
+include/plasma/widgets/tabbar.h
+include/plasma/widgets/textedit.h
+include/plasma/widgets/toolbutton.h
+include/plasma/widgets/treeview.h
+include/plasma/widgets/webview.h
 include/predicateproperties.h
 include/qtest_kde.h
 include/skipdlg.h
@@ -1429,6 +1572,8 @@ include/sonnet/backgroundchecker.h
 include/sonnet/configdialog.h
 include/sonnet/configwidget.h
 include/sonnet/dialog.h
+include/sonnet/dictionarycombobox.h
+include/sonnet/globals.h
 include/sonnet/highlighter.h
 include/sonnet/speller.h
 include/threadweaver/DebuggingAids.h
@@ -1448,11 +1593,9 @@ lib/kde4/emoticonstheme_adium.so
 lib/kde4/emoticonstheme_kde.so
 lib/kde4/emoticonstheme_pidgin.so
 lib/kde4/emoticonstheme_xmpp.so
-lib/libkdeinit4_kwalletd.so
 lib/kde4/katepart.so
 lib/kde4/kcertpart.so
 lib/kde4/kcm_crypto.so
-lib/kde4/kded_globalaccel.so
 lib/kde4/kded_kcookiejar.so
 lib/kde4/kded_kssld.so
 lib/kde4/kded_proxyscout.so
@@ -1468,12 +1611,15 @@ lib/kde4/kio_metainfo.so
 lib/kde4/kjavaappletviewer.so
 lib/kde4/krosskjs.so
 lib/kde4/krossmoduleforms.so
+lib/kde4/krossmodulekdetranslation.so
 lib/kde4/krossqts.so
 lib/kde4/kspell_aspell.so
 lib/kde4/kspell_enchant.so
+lib/kde4/kspell_hspell.so
 lib/kde4/ktexteditor_docwordcompletion.so
 lib/kde4/ktexteditor_insertfile.so
 lib/kde4/ktexteditor_kdatatool.so
+lib/kde4/ktexteditor_python-encoding.so
 lib/kde4/ktranscript.so
 lib/kde4/libexec/filesharelist
 lib/kde4/libexec/fileshareset
@@ -1492,6 +1638,7 @@ lib/kde4/libkfilemodule.so
 lib/kde4/libkhtmlpart.so
 lib/kde4/libkmultipart.so
 lib/kde4/notepadpart.so
+lib/kde4/plugins/designer/kde3supportwidgets.so
 lib/kde4/plugins/designer/kdewidgets.so
 lib/kde4/plugins/imageformats/kimg_dds.so
 lib/kde4/plugins/imageformats/kimg_eps.so
@@ -1505,17 +1652,17 @@ lib/kde4/plugins/imageformats/kimg_xcf.so
 lib/kde4/plugins/imageformats/kimg_xview.so
 lib/kde4/plugins/script/libkrossqtsplugin.so
 lib/kde4/plugins/script/libkrossqtsplugin.so.5
-lib/kde4/plugins/script/libkrossqtsplugin.so.5.0.0
+lib/kde4/plugins/script/libkrossqtsplugin.so.5.0.1
 lib/kde4/spellcheckplugin.so
 lib/libkde3support.so
 lib/libkde3support.so.5
-lib/libkde3support.so.5.0.0
+lib/libkde3support.so.5.0.1
 lib/libkdecore.so
 lib/libkdecore.so.7
-lib/libkdecore.so.7.0.0
+lib/libkdecore.so.7.0.1
 lib/libkdefakes.so
 lib/libkdefakes.so.7
-lib/libkdefakes.so.7.0.0
+lib/libkdefakes.so.7.0.1
 lib/libkdeinit4_kbuildsycoca4.so
 lib/libkdeinit4_kconf_update.so
 lib/libkdeinit4_kded4.so
@@ -1523,79 +1670,79 @@ lib/libkdeinit4_kio_http_cache_cleaner.so
 lib/libkdeinit4_klauncher.so
 lib/libkdesu.so
 lib/libkdesu.so.7
-lib/libkdesu.so.7.0.0
+lib/libkdesu.so.7.0.1
 lib/libkdeui.so
 lib/libkdeui.so.7
-lib/libkdeui.so.7.0.0
+lib/libkdeui.so.7.0.1
 lib/libkdnssd.so
 lib/libkdnssd.so.5
-lib/libkdnssd.so.5.0.0
+lib/libkdnssd.so.5.0.1
 lib/libkfile.so
 lib/libkfile.so.5
-lib/libkfile.so.5.0.0
+lib/libkfile.so.5.0.1
 lib/libkhtml.so
 lib/libkhtml.so.7
-lib/libkhtml.so.7.0.0
+lib/libkhtml.so.7.0.1
 lib/libkimproxy.so
 lib/libkimproxy.so.5
-lib/libkimproxy.so.5.0.0
+lib/libkimproxy.so.5.0.1
 lib/libkio.so
 lib/libkio.so.7
-lib/libkio.so.7.0.0
+lib/libkio.so.7.0.1
 lib/libkjs.so
 lib/libkjs.so.5
-lib/libkjs.so.5.0.0
+lib/libkjs.so.5.0.1
 lib/libkjsapi.so
 lib/libkjsapi.so.5
-lib/libkjsapi.so.5.0.0
+lib/libkjsapi.so.5.0.1
 lib/libkjsembed.so
 lib/libkjsembed.so.5
-lib/libkjsembed.so.5.0.0
+lib/libkjsembed.so.5.0.1
 lib/libkmediaplayer.so
 lib/libkmediaplayer.so.5
-lib/libkmediaplayer.so.5.0.0
+lib/libkmediaplayer.so.5.0.1
 lib/libknewstuff2.so
 lib/libknewstuff2.so.5
-lib/libknewstuff2.so.5.0.0
+lib/libknewstuff2.so.5.0.1
 lib/libknotifyconfig.so
 lib/libknotifyconfig.so.5
-lib/libknotifyconfig.so.5.0.0
+lib/libknotifyconfig.so.5.0.1
 lib/libkntlm.so
 lib/libkntlm.so.5
-lib/libkntlm.so.5.0.0
+lib/libkntlm.so.5.0.1
 lib/libkparts.so
 lib/libkparts.so.5
-lib/libkparts.so.5.0.0
+lib/libkparts.so.5.0.1
 lib/libkpty.so
 lib/libkpty.so.5
-lib/libkpty.so.5.0.0
+lib/libkpty.so.5.0.1
 lib/libkrosscore.so
 lib/libkrosscore.so.5
-lib/libkrosscore.so.5.0.0
+lib/libkrosscore.so.5.0.1
 lib/libkrossui.so
 lib/libkrossui.so.5
-lib/libkrossui.so.5.0.0
+lib/libkrossui.so.5.0.1
 lib/libktexteditor.so
 lib/libktexteditor.so.5
-lib/libktexteditor.so.5.0.0
+lib/libktexteditor.so.5.0.1
 lib/libkunittest.so
 lib/libkunittest.so.5
-lib/libkunittest.so.5.0.0
+lib/libkunittest.so.5.0.1
 lib/libkutils.so
 lib/libkutils.so.5
-lib/libkutils.so.5.0.0
-lib/libkwalletbackend.so
-lib/libkwalletbackend.so.5
-lib/libkwalletbackend.so.5.0.0
+lib/libkutils.so.5.0.1
 lib/libnepomuk.so
 lib/libnepomuk.so.5
-lib/libnepomuk.so.5.0.0
+lib/libnepomuk.so.5.0.1
+lib/libplasma.so
+lib/libplasma.so.3
+lib/libplasma.so.3.0.0
 lib/libsolid.so
 lib/libsolid.so.5
-lib/libsolid.so.5.0.0
+lib/libsolid.so.5.0.1
 lib/libthreadweaver.so
 lib/libthreadweaver.so.5
-lib/libthreadweaver.so.5.0.0
+lib/libthreadweaver.so.5.0.1
 share/apps/LICENSES/ARTISTIC
 share/apps/LICENSES/BSD
 share/apps/LICENSES/GPL_V2
@@ -1603,6 +1750,7 @@ share/apps/LICENSES/GPL_V3
 share/apps/LICENSES/LGPL_V2
 share/apps/LICENSES/LGPL_V3
 share/apps/LICENSES/QPL_V1.0
+share/apps/cmake/modules/BasicFindPackageVersion.cmake.in
 share/apps/cmake/modules/CheckPointerMember.cmake
 share/apps/cmake/modules/CheckPrototypeExists.cmake
 share/apps/cmake/modules/CheckStructMember.cmake
@@ -1637,7 +1785,7 @@ share/apps/cmake/modules/FindGStreamer.cmake
 share/apps/cmake/modules/FindGettext.cmake
 share/apps/cmake/modules/FindGphoto2.cmake
 share/apps/cmake/modules/FindKDE4Internal.cmake
-share/apps/cmake/modules/FindKDEWIN.cmake
+share/apps/cmake/modules/FindKDE4Workspace.cmake
 share/apps/cmake/modules/FindKDEWIN32.cmake
 share/apps/cmake/modules/FindKDEWIN_Packager.cmake
 share/apps/cmake/modules/FindKNepomuk.cmake
@@ -1652,6 +1800,8 @@ share/apps/cmake/modules/FindKopete.cmake
 share/apps/cmake/modules/FindKorundum.cmake
 share/apps/cmake/modules/FindLCMS.cmake
 share/apps/cmake/modules/FindLibArt.cmake
+share/apps/cmake/modules/FindLibKonq.cmake
+share/apps/cmake/modules/FindLibPython.py
 share/apps/cmake/modules/FindLibXml2.cmake
 share/apps/cmake/modules/FindLibXslt.cmake
 share/apps/cmake/modules/FindLibintl.cmake
@@ -1666,17 +1816,21 @@ share/apps/cmake/modules/FindOggVorbis.cmake
 share/apps/cmake/modules/FindOpenEXR.cmake
 share/apps/cmake/modules/FindOpenSSL.cmake
 share/apps/cmake/modules/FindPCRE.cmake
-share/apps/cmake/modules/FindPNG.cmake
-share/apps/cmake/modules/FindPackageHandleStandardArgs.cmake
 share/apps/cmake/modules/FindPhonon.cmake
-share/apps/cmake/modules/FindPkgConfig.cmake
 share/apps/cmake/modules/FindPlasma.cmake
 share/apps/cmake/modules/FindPopplerQt4.cmake
 share/apps/cmake/modules/FindPostgreSQL.cmake
+share/apps/cmake/modules/FindPyKDE4.cmake
+share/apps/cmake/modules/FindPyKDE4.py
+share/apps/cmake/modules/FindPyQt.py
+share/apps/cmake/modules/FindPyQt4.cmake
+share/apps/cmake/modules/FindPythonLibrary.cmake
 share/apps/cmake/modules/FindQCA2.cmake
 share/apps/cmake/modules/FindQImageBlitz.cmake
 share/apps/cmake/modules/FindQt4.cmake
 share/apps/cmake/modules/FindRUBY.cmake
+share/apps/cmake/modules/FindSIP.cmake
+share/apps/cmake/modules/FindSIP.py
 share/apps/cmake/modules/FindSamba.cmake
 share/apps/cmake/modules/FindSane.cmake
 share/apps/cmake/modules/FindSasl2.cmake
@@ -1684,17 +1838,20 @@ share/apps/cmake/modules/FindSharedMimeInfo.cmake
 share/apps/cmake/modules/FindSoprano.cmake
 share/apps/cmake/modules/FindSqlite.cmake
 share/apps/cmake/modules/FindStrigi.cmake
-share/apps/cmake/modules/FindTIFF.cmake
 share/apps/cmake/modules/FindTaglib.cmake
 share/apps/cmake/modules/FindUSB.cmake
 share/apps/cmake/modules/FindX11.cmake
 share/apps/cmake/modules/FindXKB.cmake
 share/apps/cmake/modules/FindXine.cmake
 share/apps/cmake/modules/FindXmms.cmake
+share/apps/cmake/modules/KDE4CTestNightlySetup.cmake
 share/apps/cmake/modules/KDE4Defaults.cmake
 share/apps/cmake/modules/KDE4Macros.cmake
+share/apps/cmake/modules/KDELibs4LibraryTargets-%%KDE4_BUILD_TYPE%%.cmake
+share/apps/cmake/modules/KDELibs4LibraryTargets.cmake
+share/apps/cmake/modules/KDELibs4ToolsTargets-%%KDE4_BUILD_TYPE%%.cmake
+share/apps/cmake/modules/KDELibs4ToolsTargets.cmake
 share/apps/cmake/modules/KDELibsDependencies.cmake
-share/apps/cmake/modules/KDELibsDependenciesInternal.cmake
 share/apps/cmake/modules/MacroAddCompileFlags.cmake
 share/apps/cmake/modules/MacroAddFileDependencies.cmake
 share/apps/cmake/modules/MacroAddLinkFlags.cmake
@@ -1709,9 +1866,13 @@ share/apps/cmake/modules/MacroOptionalAddSubdirectory.cmake
 share/apps/cmake/modules/MacroOptionalDependPackage.cmake
 share/apps/cmake/modules/MacroOptionalFindPackage.cmake
 share/apps/cmake/modules/MacroPushRequiredVars.cmake
+share/apps/cmake/modules/MacroWriteBasicCMakeVersionFile.cmake
 share/apps/cmake/modules/NepomukMacros.cmake
-share/apps/cmake/modules/UsePkgConfig.cmake
+share/apps/cmake/modules/PythonCompile.py
+share/apps/cmake/modules/PythonMacros.cmake
+share/apps/cmake/modules/SIPMacros.cmake
 share/apps/cmake/modules/Win32Macros.cmake
+share/apps/cmake/modules/check_installed_exports_file.cmake
 share/apps/cmake/modules/cmake-modules-styleguide.txt
 share/apps/cmake/modules/config-alsa.h.cmake
 share/apps/cmake/modules/kde4_cmake_uninstall.cmake.in
@@ -1767,6 +1928,7 @@ share/apps/katepart/syntax/desktop.xml
 share/apps/katepart/syntax/diff.xml
 share/apps/katepart/syntax/djangotemplate.xml
 share/apps/katepart/syntax/doxygen.xml
+share/apps/katepart/syntax/doxygenlua.xml
 share/apps/katepart/syntax/dtd.xml
 share/apps/katepart/syntax/e.xml
 share/apps/katepart/syntax/eiffel.xml
@@ -1778,12 +1940,14 @@ share/apps/katepart/syntax/fgl-4gl.xml
 share/apps/katepart/syntax/fgl-per.xml
 share/apps/katepart/syntax/fortran.xml
 share/apps/katepart/syntax/freebasic.xml
+share/apps/katepart/syntax/fstab.xml
 share/apps/katepart/syntax/gap.xml
 share/apps/katepart/syntax/gdl.xml
 share/apps/katepart/syntax/gettext.xml
 share/apps/katepart/syntax/glsl.xml
 share/apps/katepart/syntax/gnuassembler.xml
 share/apps/katepart/syntax/haskell.xml
+share/apps/katepart/syntax/haxe.xml
 share/apps/katepart/syntax/html-php.xml
 share/apps/katepart/syntax/html.xml
 share/apps/katepart/syntax/idconsole.xml
@@ -1813,8 +1977,11 @@ share/apps/katepart/syntax/makefile.xml
 share/apps/katepart/syntax/mandoc.xml
 share/apps/katepart/syntax/mason.xml
 share/apps/katepart/syntax/matlab.xml
+share/apps/katepart/syntax/maxima.xml
 share/apps/katepart/syntax/mediawiki.xml
+share/apps/katepart/syntax/mergetagtext.xml
 share/apps/katepart/syntax/mips.xml
+share/apps/katepart/syntax/modelica.xml
 share/apps/katepart/syntax/modula-2.xml
 share/apps/katepart/syntax/monobasic.xml
 share/apps/katepart/syntax/mup.xml
@@ -1840,9 +2007,8 @@ share/apps/katepart/syntax/purebasic.xml
 share/apps/katepart/syntax/python.xml
 share/apps/katepart/syntax/r.xml
 share/apps/katepart/syntax/rapidq.xml
-share/apps/katepart/syntax/rhtml.xml
-share/apps/katepart/syntax/fstab.xml
 share/apps/katepart/syntax/rexx.xml
+share/apps/katepart/syntax/rhtml.xml
 share/apps/katepart/syntax/rib.xml
 share/apps/katepart/syntax/roff.xml
 share/apps/katepart/syntax/rpmspec.xml
@@ -1862,6 +2028,7 @@ share/apps/katepart/syntax/sql-postgresql.xml
 share/apps/katepart/syntax/sql.xml
 share/apps/katepart/syntax/stata.xml
 share/apps/katepart/syntax/syntax.template
+share/apps/katepart/syntax/systemc.xml
 share/apps/katepart/syntax/tcl.xml
 share/apps/katepart/syntax/texinfo.xml
 share/apps/katepart/syntax/tibasic.xml
@@ -2234,7 +2401,6 @@ share/apps/ksgmltools2/customization/fo/user.entities
 share/apps/ksgmltools2/customization/fr/catalog.xml
 share/apps/ksgmltools2/customization/fr/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/fr/entities/gpl-notice.docbook
-share/apps/ksgmltools2/customization/fr/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/fr/entities/help-menu.docbook
 share/apps/ksgmltools2/customization/fr/entities/install-compile.docbook
 share/apps/ksgmltools2/customization/fr/entities/install-intro.docbook
@@ -2244,11 +2410,31 @@ share/apps/ksgmltools2/customization/fr/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/fr/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/fr/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/fr/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/fr/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/fr/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/fr/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/fr/lang.entities
 share/apps/ksgmltools2/customization/fr/strings.entities
 share/apps/ksgmltools2/customization/fr/user.entities
+share/apps/ksgmltools2/customization/gl/catalog.xml
+share/apps/ksgmltools2/customization/gl/contributor.entities
+share/apps/ksgmltools2/customization/gl/entities/fdl-notice.docbook
+share/apps/ksgmltools2/customization/gl/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/gl/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/gl/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/gl/entities/install-intro.docbook
+share/apps/ksgmltools2/customization/gl/entities/lgpl-notice.docbook
+share/apps/ksgmltools2/customization/gl/entities/report-bugs.docbook
+share/apps/ksgmltools2/customization/gl/entities/underArtisticLicense.docbook
+share/apps/ksgmltools2/customization/gl/entities/underBSDLicense.docbook
+share/apps/ksgmltools2/customization/gl/entities/underFDL.docbook
+share/apps/ksgmltools2/customization/gl/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/gl/entities/underLGPL.docbook
+share/apps/ksgmltools2/customization/gl/entities/underX11License.docbook
+share/apps/ksgmltools2/customization/gl/entities/update-doc.docbook
+share/apps/ksgmltools2/customization/gl/lang.entities
+share/apps/ksgmltools2/customization/gl/strings.entities
+share/apps/ksgmltools2/customization/gl/user.entities
 share/apps/ksgmltools2/customization/he/catalog.xml
 share/apps/ksgmltools2/customization/he/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/he/entities/gpl-notice.docbook
@@ -2394,6 +2580,7 @@ share/apps/ksgmltools2/customization/nl/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/nl/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/nl/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/nl/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/nl/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/nl/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/nl/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/nl/lang.entities
@@ -2659,9 +2846,9 @@ share/apps/ksgmltools2/customization/uk/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/uk/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/uk/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/uk/entities/underBSDLicense.docbook
-share/apps/ksgmltools2/customization/uk/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/uk/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/uk/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/uk/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/uk/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/uk/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/uk/lang.entities
@@ -2871,6 +3058,7 @@ share/apps/ksgmltools2/docbook/xsl/common/eu.xml
 share/apps/ksgmltools2/docbook/xsl/common/fi.xml
 share/apps/ksgmltools2/docbook/xsl/common/fr.xml
 share/apps/ksgmltools2/docbook/xsl/common/gentext.xsl
+share/apps/ksgmltools2/docbook/xsl/common/gl.xml
 share/apps/ksgmltools2/docbook/xsl/common/he.xml
 share/apps/ksgmltools2/docbook/xsl/common/hr.xml
 share/apps/ksgmltools2/docbook/xsl/common/hu.xml
@@ -3440,28 +3628,6 @@ share/apps/kssl/ca-bundle.crt
 share/apps/ktexteditor_docwordcompletion/docwordcompletionui.rc
 share/apps/ktexteditor_insertfile/ktexteditor_insertfileui.rc
 share/apps/ktexteditor_kdatatool/ktexteditor_kdatatoolui.rc
-share/apps/nepomuk/ontologies/dces.desktop
-share/apps/nepomuk/ontologies/dces.rdf
-share/apps/nepomuk/ontologies/dcq.desktop
-share/apps/nepomuk/ontologies/dcq.rdf
-share/apps/nepomuk/ontologies/dctype.desktop
-share/apps/nepomuk/ontologies/dctype.rdf
-share/apps/nepomuk/ontologies/nao.desktop
-share/apps/nepomuk/ontologies/nao.trig
-share/apps/nepomuk/ontologies/nfo.desktop
-share/apps/nepomuk/ontologies/nfo.trig
-share/apps/nepomuk/ontologies/nie.desktop
-share/apps/nepomuk/ontologies/nie.trig
-share/apps/nepomuk/ontologies/nrl.desktop
-share/apps/nepomuk/ontologies/nrl.trig
-share/apps/nepomuk/ontologies/rdf.desktop
-share/apps/nepomuk/ontologies/rdf.rdfs
-share/apps/nepomuk/ontologies/rdfs.desktop
-share/apps/nepomuk/ontologies/rdfs.rdfs
-share/apps/nepomuk/ontologies/xesam.desktop
-share/apps/nepomuk/ontologies/xesam.rdfs
-share/apps/nepomuk/ontologies/xss.desktop
-share/apps/nepomuk/ontologies/xss.rdfs
 share/apps/nepomuk/pics/rating.png
 share/apps/proxyscout/proxyscout.notifyrc
 share/config/accept-languages.codes
@@ -3470,10 +3636,14 @@ share/config/colors/Oxygen.colors
 share/config/colors/Rainbow.colors
 share/config/colors/Royal.colors
 share/config/colors/Web.colors
+share/config/katemoderc
 share/config/kdebug.areas
 share/config/kdebugrc
 share/config/ksslcalist
+share/config/plasmoids.knsrc
 share/config/ui/ui_standards.rc
+share/dbus-1/interfaces/org.freedesktop.PowerManagement.Inhibit.xml
+share/dbus-1/interfaces/org.freedesktop.PowerManagement.xml
 share/dbus-1/interfaces/org.kde.JobView.xml
 share/dbus-1/interfaces/org.kde.JobViewServer.xml
 share/dbus-1/interfaces/org.kde.KCookieServer.xml
@@ -3484,7 +3654,6 @@ share/dbus-1/interfaces/org.kde.KLauncher.xml
 share/dbus-1/interfaces/org.kde.KMediaPlayer.xml
 share/dbus-1/interfaces/org.kde.KSpeech.xml
 share/dbus-1/interfaces/org.kde.KWallet.xml
-share/dbus-1/interfaces/org.kde.KdedGlobalAccel.xml
 share/dbus-1/interfaces/org.kde.Solid.Networking.Client.xml
 share/dbus-1/interfaces/org.kde.kded.xml
 share/dbus-1/interfaces/org.kde.kio.FileUndoManager.xml
@@ -3532,6 +3701,33 @@ share/doc/HTML/en/common/top-right.png
 share/doc/HTML/en/common/top.jpg
 share/doc/HTML/en/common/x11-license.html
 share/doc/HTML/en/common/xml.dcl
+share/doc/HTML/en/kioslave/data/common
+share/doc/HTML/en/kioslave/data/index.cache.bz2
+share/doc/HTML/en/kioslave/data/index.docbook
+share/doc/HTML/en/kioslave/file/common
+share/doc/HTML/en/kioslave/file/index.cache.bz2
+share/doc/HTML/en/kioslave/file/index.docbook
+share/doc/HTML/en/kioslave/ftp/common
+share/doc/HTML/en/kioslave/ftp/index.cache.bz2
+share/doc/HTML/en/kioslave/ftp/index.docbook
+share/doc/HTML/en/kioslave/help/common
+share/doc/HTML/en/kioslave/help/index.cache.bz2
+share/doc/HTML/en/kioslave/help/index.docbook
+share/doc/HTML/en/kioslave/http/common
+share/doc/HTML/en/kioslave/http/index.cache.bz2
+share/doc/HTML/en/kioslave/http/index.docbook
+share/doc/HTML/en/kioslave/mailto/common
+share/doc/HTML/en/kioslave/mailto/index.cache.bz2
+share/doc/HTML/en/kioslave/mailto/index.docbook
+share/doc/HTML/en/kioslave/rlogin/common
+share/doc/HTML/en/kioslave/rlogin/index.cache.bz2
+share/doc/HTML/en/kioslave/rlogin/index.docbook
+share/doc/HTML/en/kioslave/telnet/common
+share/doc/HTML/en/kioslave/telnet/index.cache.bz2
+share/doc/HTML/en/kioslave/telnet/index.docbook
+share/doc/HTML/en/kioslave/webdav/common
+share/doc/HTML/en/kioslave/webdav/index.cache.bz2
+share/doc/HTML/en/kioslave/webdav/index.docbook
 share/doc/HTML/en/sonnet/common
 share/doc/HTML/en/sonnet/index.cache.bz2
 share/doc/HTML/en/sonnet/index.docbook
@@ -3547,7 +3743,6 @@ share/icons/hicolor/48x48/actions/presence_away.png
 share/icons/hicolor/48x48/actions/presence_offline.png
 share/icons/hicolor/48x48/actions/presence_online.png
 share/kde4/services/crypto.desktop
-share/kde4/services/kwalletd.desktop
 share/kde4/services/data.protocol
 share/kde4/services/emoticonstheme_adium.desktop
 share/kde4/services/emoticonstheme_kde.desktop
@@ -3563,7 +3758,6 @@ share/kde4/services/https.protocol
 share/kde4/services/katepart.desktop
 share/kde4/services/kcertpart.desktop
 share/kde4/services/kded/kcookiejar.desktop
-share/kde4/services/kded/kdedglobalaccel.desktop
 share/kde4/services/kded/kssld.desktop
 share/kde4/services/kded/proxyscout.desktop
 share/kde4/services/khtml.desktop
@@ -3574,14 +3768,17 @@ share/kde4/services/kmailservice.protocol
 share/kde4/services/kmultipart.desktop
 share/kde4/services/kspell_aspell.desktop
 share/kde4/services/kspell_enchant.desktop
+share/kde4/services/kspell_hspell.desktop
 share/kde4/services/ktexteditor_docwordcompletion.desktop
 share/kde4/services/ktexteditor_docwordcompletion_config.desktop
 share/kde4/services/ktexteditor_insertfile.desktop
 share/kde4/services/ktexteditor_kdatatool.desktop
+share/kde4/services/ktexteditor_python-encoding.desktop
 share/kde4/services/metainfo.protocol
 share/kde4/services/mms.protocol
 share/kde4/services/mmst.protocol
 share/kde4/services/mmsu.protocol
+share/kde4/services/plasma-applet-extenderapplet.desktop
 share/kde4/services/pnm.protocol
 share/kde4/services/qimageioplugins/bmp.desktop
 share/kde4/services/qimageioplugins/dds.desktop
@@ -3638,91 +3835,26 @@ share/kde4/servicetypes/krop.desktop
 share/kde4/servicetypes/krwp.desktop
 share/kde4/servicetypes/kscan.desktop
 share/kde4/servicetypes/ktexteditor.desktop
+share/kde4/servicetypes/ktexteditor_loadsavefiltercheckplugin.desktop
 share/kde4/servicetypes/ktexteditorplugin.desktop
 share/kde4/servicetypes/kurifilterplugin.desktop
+share/kde4/servicetypes/plasma-animator.desktop
+share/kde4/servicetypes/plasma-applet.desktop
+share/kde4/servicetypes/plasma-containment.desktop
+share/kde4/servicetypes/plasma-dataengine.desktop
+share/kde4/servicetypes/plasma-packagestructure.desktop
+share/kde4/servicetypes/plasma-runner.desktop
+share/kde4/servicetypes/plasma-scriptengine.desktop
+share/kde4/servicetypes/plasma-wallpaper.desktop
 share/kde4/servicetypes/qimageio_plugin.desktop
 share/kde4/servicetypes/renamedialogplugin.desktop
 share/kde4/servicetypes/sonnetspeller.desktop
 share/locale/all_languages
 share/mime/all/all.xml
 share/mime/all/allfiles.xml
-share/mime/application/epub+zip.xml
-share/mime/application/metalink+xml.xml
-share/mime/application/msword.xml
-share/mime/application/pkcs10.xml
-share/mime/application/prs.plucker.xml
-share/mime/application/relaxng.xml
-share/mime/application/vnd.kde.kphotoalbum-import.xml
-share/mime/application/vnd.ms-tnef.xml
-share/mime/application/vnd.ms-xpsdocument.xml
-share/mime/application/x-cabri.xml
-share/mime/application/x-cda.xml
-share/mime/application/x-drgeo.xml
-share/mime/application/x-fictionbook.xml
-share/mime/application/x-font-snf.xml
-share/mime/application/x-icq.xml
-share/mime/application/x-java-applet.xml
-share/mime/application/x-kcachegrind.xml
-share/mime/application/x-kcsrc.xml
-share/mime/application/x-kexi-connectiondata.xml
-share/mime/application/x-kexiproject-shortcut.xml
-share/mime/application/x-kexiproject-sqlite.xml
-share/mime/application/x-kexiproject-sqlite2.xml
-share/mime/application/x-kexiproject-sqlite3.xml
-share/mime/application/x-kgeo.xml
-share/mime/application/x-kgetlist.xml
-share/mime/application/x-khtml-adaptor.xml
-share/mime/application/x-kig.xml
-share/mime/application/x-kmplot.xml
-share/mime/application/x-kns.xml
-share/mime/application/x-kolf.xml
-share/mime/application/x-kommander.xml
-share/mime/application/x-konsole.xml
-share/mime/application/x-kopete-emoticons.xml
-share/mime/application/x-kourse.xml
-share/mime/application/x-kseg.xml
-share/mime/application/x-ksysguard.xml
-share/mime/application/x-ktheme.xml
-share/mime/application/x-kudesigner.xml
-share/mime/application/x-kvtml.xml
-share/mime/application/x-kwallet.xml
-share/mime/application/x-kwordquiz.xml
-share/mime/application/x-mimearchive.xml
-share/mime/application/x-nzb.xml
-share/mime/application/x-openraster.xml
-share/mime/application/x-pak.xml
-share/mime/application/x-plasma.xml
-share/mime/application/x-quanta.xml
-share/mime/application/x-smb-server.xml
-share/mime/application/x-smb-workgroup.xml
-share/mime/application/x-superkaramba.xml
-share/mime/application/x-tuberling.xml
-share/mime/application/x-uml.xml
-share/mime/application/x-vnd.kde.kexi.xml
-share/mime/application/x-vnd.kde.kplato.work.xml
-share/mime/application/x-vnd.kde.kplato.xml
-share/mime/application/x-vnd.kde.kugar.mixed.xml
-share/mime/application/x-webarchive.xml
-share/mime/application/x-win-lnk.xml
-share/mime/application/x-xcursor.xml
-share/mime/application/xsd.xml
-share/mime/audio/aac.xml
-share/mime/audio/x-pn-realaudio-plugin.xml
 share/mime/fonts/package.xml
-share/mime/image/x-dds.xml
-share/mime/image/x-exr.xml
-share/mime/image/x-hdr.xml
-share/mime/image/x-kde-raw.xml
 share/mime/interface/x-winamp-skin.xml
 share/mime/packages/kde.xml
-share/mime/text/mrml.xml
-share/mime/text/plain.xml
-share/mime/text/vnd.abc.xml
-share/mime/text/x-cmake.xml
-share/mime/text/x-hex.xml
-share/mime/text/x-katefilelist.xml
-share/mime/text/x-objchdr.xml
-share/mime/text/xmcd.xml
 share/mime/uri/mms.xml
 share/mime/uri/mmst.xml
 share/mime/uri/mmsu.xml
@@ -3730,36 +3862,25 @@ share/mime/uri/pnm.xml
 share/mime/uri/rtspt.xml
 share/mime/uri/rtspu.xml
 @dirrmtry share/mime/uri
-@dirrmtry share/mime/text
-@dirrmtry share/mime/packages
 @dirrmtry share/mime/interface
-@dirrmtry share/mime/image
 @dirrmtry share/mime/fonts
-@dirrmtry share/mime/audio
-@dirrmtry share/mime/application
 @dirrmtry share/mime/all
-@dirrmtry share/mime
-@dirrmtry share/kde4/servicetypes
 @dirrm share/kde4/services/qimageioplugins
-@dirrmtry share/kde4/services/kded
-@dirrmtry share/kde4/services
-@dirrmtry share/kde4
-@dirrmtry share/icons/hicolor/48x48/actions
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/actions
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16/actions
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/doc/HTML/en/sonnet
-@dirrmtry share/doc/HTML/en/common
-@dirrmtry share/config/ui
-@dirrmtry share/config/colors
-@dirrmtry share/config
+@dirrm share/doc/HTML/en/sonnet
+@dirrm share/doc/HTML/en/kioslave/webdav
+@dirrm share/doc/HTML/en/kioslave/telnet
+@dirrm share/doc/HTML/en/kioslave/rlogin
+@dirrm share/doc/HTML/en/kioslave/mailto
+@dirrm share/doc/HTML/en/kioslave/http
+@dirrm share/doc/HTML/en/kioslave/help
+@dirrm share/doc/HTML/en/kioslave/ftp
+@dirrm share/doc/HTML/en/kioslave/file
+@dirrm share/doc/HTML/en/kioslave/data
+@dirrm share/doc/HTML/en/common
+@dirrm share/config/ui
+@dirrm share/config/colors
 @dirrm share/apps/proxyscout
 @dirrm share/apps/nepomuk/pics
-@dirrm share/apps/nepomuk/ontologies
-@dirrm share/apps/nepomuk
 @dirrm share/apps/ktexteditor_kdatatool
 @dirrm share/apps/ktexteditor_insertfile
 @dirrm share/apps/ktexteditor_docwordcompletion
@@ -3835,6 +3956,8 @@ share/mime/uri/rtspu.xml
 @dirrm share/apps/ksgmltools2/customization/hu
 @dirrm share/apps/ksgmltools2/customization/he/entities
 @dirrm share/apps/ksgmltools2/customization/he
+@dirrm share/apps/ksgmltools2/customization/gl/entities
+@dirrm share/apps/ksgmltools2/customization/gl
 @dirrm share/apps/ksgmltools2/customization/fr/entities
 @dirrm share/apps/ksgmltools2/customization/fr
 @dirrm share/apps/ksgmltools2/customization/fo/entities
@@ -3873,31 +3996,23 @@ share/mime/uri/rtspu.xml
 @dirrm share/apps/knewstuff
 @dirrm share/apps/kjava
 @dirrm share/apps/khtml/css
-@dirrm share/apps/khtml
 @dirrm share/apps/kdewidgets/pics
 @dirrm share/apps/kdewidgets
 @dirrm share/apps/kdeui/pics
 @dirrm share/apps/kdeui/about
 @dirrm share/apps/kdeui
-@dirrmtry share/apps/kconf_update
-@dirrmtry share/apps/kcm_componentchooser
-@dirrm share/apps/kcharselect
 @dirrm share/apps/kcertpart
-@dirrm share/apps/katepart/syntax
 @dirrm share/apps/katepart/script
-@dirrm share/apps/katepart
-@dirrmtry share/apps/cmake/modules
-@dirrmtry share/apps/cmake
 @dirrm share/apps/LICENSES
-@dirrmtry lib/kde4/plugins/script
-@dirrmtry lib/kde4/plugins/imageformats
-@dirrmtry lib/kde4/plugins/designer
-@dirrmtry lib/kde4/plugins
-@dirrmtry lib/kde4/libexec
+@dirrm lib/kde4/plugins/script
+@dirrm lib/kde4/plugins/imageformats
 @dirrm include/threadweaver
 @dirrm include/sonnet
-@dirrm include/solid
-@dirrm include/nepomuk
+@dirrmtry include/solid
+@dirrm include/plasma/widgets
+@dirrm include/plasma/scripting
+@dirrmtry include/plasma
+@dirrmtry include/nepomuk
 @dirrm include/kunittest
 @dirrm include/ktexteditor
 @dirrm include/ksettings
@@ -3918,6 +4033,7 @@ share/mime/uri/rtspu.xml
 @dirrm include/KDE/khtml
 @dirrm include/KDE/ThreadWeaver
 @dirrm include/KDE/Solid
+@dirrmtry include/KDE/Plasma
 @dirrm include/KDE/Nepomuk/Types
 @dirrm include/KDE/Nepomuk
 @dirrm include/KDE/KWallet
@@ -3934,7 +4050,7 @@ share/mime/uri/rtspu.xml
 @dirrm include/KDE/DOM
 @dirrm include/KDE/DNSSD
 @dirrm include/KDE/ConversionCheck
-@dirrmtry etc/xdg/menus
-@dirrmtry etc/xdg
+@dirrm etc/xdg/menus
+@dirrm etc/xdg
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

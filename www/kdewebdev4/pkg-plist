@@ -45,6 +45,8 @@ share/apps/kimagemapeditor/polygoncursor.png
 share/apps/kimagemapeditor/removepointcursor.png
 share/apps/klinkstatus/klinkstatus_shell.rc
 share/apps/klinkstatus/scripts/scripts.rc
+share/apps/klinkstatus/scripts/statistics.rb
+share/apps/klinkstatus/scripts/statisticsui.ui
 share/apps/klinkstatus/styles/results_stylesheet.xsl
 share/apps/klinkstatuspart/klinkstatus_part.rc
 share/apps/klinkstatuspart/kpartplugins/klinkstatus_automation.rc
@@ -228,34 +230,11 @@ share/kde4/services/klinkstatus_automation.desktop
 share/kde4/services/klinkstatus_part.desktop
 share/kde4/services/krossmoduleklinkstatus.desktop
 share/kde4/services/kxsldbg_part.desktop
-@dirrmtry share/kde4/services
-@dirrmtry share/kde4
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22/actions
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16/actions
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 @dirrm share/doc/HTML/en/xsldbg
 @dirrm share/doc/HTML/en/kxsldbg
 @dirrm share/doc/HTML/en/klinkstatus
 @dirrm share/doc/HTML/en/kimagemapeditor
 @dirrm share/doc/HTML/en/kfilereplace
-@dirrmtry share/doc/HTML/en
-@dirrmtry share/doc/HTML
-@dirrmtry share/dbus-1/interfaces
-@dirrmtry share/dbus-1
-@dirrmtry share/config
 @dirrm share/apps/xsldbg
 @dirrm share/apps/kxsldbgpart
 @dirrm share/apps/kxsldbg
@@ -272,9 +251,5 @@ share/kde4/services/kxsldbg_part.desktop
 @dirrm share/apps/kfilereplacepart/icons
 @dirrm share/apps/kfilereplacepart
 @dirrm share/apps/kfilereplace
-@dirrmtry share/apps
-@dirrmtry share/applnk/.hidden
-@dirrmtry share/applnk
-@dirrmtry share/applications/kde4
-@dirrmtry share/applications
-@dirrmtry lib/kde4
+@dirrm share/applnk/.hidden
+@dirrm share/applnk

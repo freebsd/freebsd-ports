@@ -10,13 +10,14 @@ PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMESUFFIX?=	# empty
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Base set of libraries needed by KDE programs
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libhspell.a:${PORTSDIR}/hebrew/hspell
 LIB_DEPENDS=	searchclient:${PORTSDIR}/deskutils/strigi \
 		soprano.4:${PORTSDIR}/textproc/soprano \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
@@ -36,8 +37,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicol
 		update-mime-database:${PORTSDIR}/misc/shared-mime-info \
 		iceauth:${PORTSDIR}/x11/iceauth \
 		xauth:${PORTSDIR}/x11/xauth
-# XXX: hebrew/hspell?
-# XXX: gssapi/kerberos special handling?
 
 .if exists(${LOCALBASE}/include/avahi-compat-libdns_sd/dns_sd.h) || defined(WITH_LIBDNS)
 LIB_DEPENDS+=	avahi-qt4:${PORTSDIR}/net/avahi-qt4 \
@@ -46,10 +45,9 @@ LIB_DEPENDS+=	avahi-qt4:${PORTSDIR}/net/avahi-qt4 \
 LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
 .endif
 
-CONFLICTS=	qt4-phonon-4*
-LATEST_LINK=	${PORTNAME}4
+CONFLICTS=	kdebase-workspace-4.1.*
 
-CMAKE_ARGS+=	-DWITH_FAM:BOOL=Off
+LATEST_LINK=	${PORTNAME}4
 
 USE_KDE4=	kdeprefix kdehier automoc4 sharedmime
 KDE4_BUILDENV=	yes
@@ -60,38 +58,41 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui network opengl qt3support \
 		qtestlib script sql svg xml designer \
 		assistant svg qdbusviewer makeqpf imageformats \
-		qmake_build moc_build rcc_build uic_build uic3_build
+		qmake_build moc_build rcc_build uic_build
 USE_GNOME=	libxml2 libxslt
 
-MAN1=		checkXML.1 kde4-config.1 makekdewidgets.1 kdecmake.1
-MAN7=		kdeoptions.7 qtoptions.7
-MAN8=		kbuildsycoca4.8
+CMAKE_ARGS+=	-DWITH_FAM:BOOL=Off \
+		-DKDE4_PREFIX:String=${KDE4_PREFIX}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700042
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-nepomuk-core-resourcefiltermodel.cpp \
-		${FILESDIR}/extrapatch-nepomuk-core-resourcefiltermodel.h
-.endif
+MAN1=	checkXML.1 \
+	kde4-config.1 \
+	kdecmake.1 \
+	kjs.1 \
+	kjscmd.1 \
+	kross.1 \
+	makekdewidgets.1
+MAN7=	kdeoptions.7 \
+	qtoptions.7
+MAN8=	kbuildsycoca4.8 \
+	kcookiejar4.8 \
+	kded4.8 \
+	kdeinit4.8 \
+	meinproc4.8
 
 post-extract:
 	${MKDIR} ${WRKSRC}
 
-post-patch:
-#fix finding automoc when PREFIX is not matched KDE4_PREFIX
-	${REINPLACE_CMD} -e 's|NO_DEFAULT_PATH|${KDE4_PREFIX} NO_DEFAULT_PATH|' \
-		${WRKSRC}/../cmake/modules/FindAutomoc4.cmake
-
 pre-configure:
-	${REINPLACE_CMD} -e 's|<qdatetime.h>|<QDateTime>|'\
-		${WRKSRC}/../kjs/api/kjsobject.cpp
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/../cmake/modules/*.cmake
 	#prevent updating mime during build
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/d; /SharedMimeInfo/d' \
 		${WRKSRC}/../mimetypes/CMakeLists.txt
-	${REINPLACE_CMD} -e 's|".kde"|".kde4"|' \
+	#default KDEHOME dir
+	${REINPLACE_CMD} -e '/KDE_DEFAULT_HOME/s|.kde|.kde4|' \
 		${WRKSRC}/../CMakeLists.txt
 
 post-install:
-	@-update-mime-database ${KDE4_PREFIX}/share/mime
+	@-update-mime-database ${PREFIX}/share/mime
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

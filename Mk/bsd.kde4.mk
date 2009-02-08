@@ -49,7 +49,8 @@ Kde_Include_MAINTAINER=	kde@FreeBSD.org
 #		but this could be changed in a future.
 #
 
-KDE4_VERSION=		4.1.4
+KDE4_VERSION=		4.2.0
+KDE4_BRANCH?=		stable
 
 #
 # KDE4 is installed into its own prefix to not conflict with KDE3
@@ -70,12 +71,12 @@ MASTER_SITE_KDE_kde=	${kmaster:S@%SUBDIR%/@${ksub}/@g}
 #
 # KDE4 modules
 #
-_USE_KDE4_ALL=			akonadi automoc4 kdebase kdehier kdelibs kdeprefix \
+_USE_KDE4_ALL=	akonadi automoc4 kdebase kdehier kdelibs kdeprefix \
 				pimlibs runtime sharedmime workspace
 
 akonadi_LIB_DEPENDS=		akonadiprotocolinternals.1:${PORTSDIR}/databases/akonadi
 
-automoc4_BUILD_DEPENDS=		${KDE4_PREFIX}/bin/automoc4:${PORTSDIR}/devel/automoc4
+automoc4_BUILD_DEPENDS=		${LOCALBASE}/bin/automoc4:${PORTSDIR}/devel/automoc4
 
 kdebase_LIB_DEPENDS=		konq.7:${PORTSDIR}/x11/kdebase4
 
@@ -95,7 +96,44 @@ sharedmime_RUN_DEPENDS=		kde4-shared-mime-info>=1:${PORTSDIR}/misc/kde4-shared-m
 
 workspace_LIB_DEPENDS=		kscreensaver.5:${PORTSDIR}/x11/kdebase4-workspace
 
+#
+# Common build related stuff for kde4 ports. It's not intended for usage
+# in KDE4-dependent ports
+#
+.if defined(KDE4_BUILDENV)
+
+.if ${OSVERSION} < 700042
+BROKEN=		does not build on 6.x. See http://miwi.bsdcrew.de/2009/01/30/status-report-kde-42-and-freebsd-64-support/
 .endif
+
+.if ${KDE4_BRANCH} == "unstable"
+WITH_DEBUG=yes
+.endif
+
+.if defined(WITH_DEBUG)
+CMAKE_BUILD_TYPE=	debug
+.else
+CMAKE_BUILD_TYPE=	release
+.endif
+
+PLIST_SUB+=	KDE4_VERSION="${KDE4_VERSION}" \
+		KDE4_BUILD_TYPE="${CMAKE_BUILD_TYPE}"
+
+USE_LDCONFIG=	yes
+
+USE_CMAKE=	yes
+# TODO: bsd.cmake.mk should be fixed first
+# CMAKE_SOURCE_PATH=	${WRKSRC}
+# CONFIGURE_WRKSRC?=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/build
+# BUILD_WRKSRC?=	${CONFIGURE_WRKSRC}
+# INSTALL_WRKSRC?=	${CONFIGURE_WRKSRC}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/build
+CMAKE_SOURCE_PATH=	..
+
+.endif # KDE4_BUILDENV
+
+.endif #!defined(_POSTMKINCLUDED) && !defined(Kde_Pre_Include)
 
 .if defined(_POSTMKINCLUDED) && !defined(Kde_Post_Include)
 
@@ -119,18 +157,4 @@ IGNORE=	cannot install: Unknown component ${component}
 . endif
 .endfor
 
-#
-# Common build related stuff for kde4 ports. It's not intended for usage
-# in KDE4-dependent ports
-#
-.if defined(KDE4_BUILDENV)
-USE_CMAKE=	yes
-
-USE_LDCONFIG=	${KDE4_PREFIX}/lib ${KDE4_PREFIX}/lib/kde4
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/build
-CMAKE_SOURCE_PATH=	..
-
-.endif # KDE4_BUILDENV
-
-.endif
+.endif #defined(_POSTMKINCLUDED) && !defined(Kde_Post_Include)

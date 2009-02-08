@@ -6,10 +6,9 @@
 
 PORTNAME=	kdegraphics
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -37,7 +36,7 @@ LATEST_LINK=	${PORTNAME}4
 
 USE_GL=			glut
 USE_GHOSTSCRIPT=	yes
-USE_KDE4=	kdelibs workspace kdeprefix kdehier automoc4
+USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4

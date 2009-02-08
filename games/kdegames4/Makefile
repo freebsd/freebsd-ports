@@ -8,13 +8,14 @@ PORTNAME=	kdegames
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Games for the KDE integrated X11 desktop
 
-LIB_DEPENDS=	ggzcore.9:${PORTSDIR}/games/ggz-client-libs
+LIB_DEPENDS=	ggzcore.9:${PORTSDIR}/games/ggz-client-libs \
+		qca.2:${PORTSDIR}/devel/qca
 
 LATEST_LINK=	${PORTNAME}4
 

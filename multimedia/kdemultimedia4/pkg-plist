@@ -3,7 +3,6 @@ bin/juk
 bin/kmix
 bin/kmixctrl
 bin/kscd
-bin/workman2cddb.pl
 include/audiocdencoder.h
 include/libkcddb/cdinfo.h
 include/libkcddb/cdinfodialog.h
@@ -24,13 +23,13 @@ lib/kde4/libaudiocd_encoder_vorbis.so
 lib/kde4/libaudiocd_encoder_wav.so
 lib/libaudiocdplugins.so
 lib/libaudiocdplugins.so.5
-lib/libaudiocdplugins.so.5.0.0
+lib/libaudiocdplugins.so.5.0.1
 lib/libkcddb.so
 lib/libkcddb.so.5
-lib/libkcddb.so.5.0.0
+lib/libkcddb.so.5.0.1
 lib/libkcompactdisc.so
 lib/libkcompactdisc.so.5
-lib/libkcompactdisc.so.5.0.0
+lib/libkcompactdisc.so.5.0.1
 lib/libkdeinit4_kmix.so
 lib/libkdeinit4_kmixctrl.so
 share/applications/kde4/dragonplayer.desktop
@@ -70,7 +69,14 @@ share/apps/kmix/pics/mix_volume.png
 share/apps/kmix/profiles/ALSA.default.xml
 share/apps/kmix/profiles/OSS.default.xml
 share/apps/konqsidebartng/virtual_folders/services/audiocd.desktop
+share/apps/kscd/skin/BubbleGum.svg
+share/apps/kscd/skin/Melon.svg
+share/apps/kscd/skin/NGRemote.svg
+share/apps/kscd/skin/Orange2.svg
+share/apps/kscd/skin/SquaredMelon.svg
+share/apps/kscd/skin/default.svg
 share/apps/profiles/kscd.profile.xml
+share/apps/solid/actions/dragonplayer-opendvd.desktop
 share/autostart/kmix_autostart.desktop
 share/autostart/restore_kmix_volumes.desktop
 share/config.kcfg/audiocd_lame_encoder.kcfg
@@ -82,6 +88,7 @@ share/dbus-1/interfaces/org.kde.KMix.xml
 share/dbus-1/interfaces/org.kde.juk.collection.xml
 share/dbus-1/interfaces/org.kde.juk.player.xml
 share/dbus-1/interfaces/org.kde.juk.search.xml
+share/dbus-1/interfaces/org.kde.kscd.cdplayer.xml
 share/doc/HTML/en/dragonplayer/common
 share/doc/HTML/en/dragonplayer/index.cache.bz2
 share/doc/HTML/en/dragonplayer/index.docbook
@@ -97,6 +104,9 @@ share/doc/HTML/en/juk/juk-tag-guesser.png
 share/doc/HTML/en/juk/normal-playlist.png
 share/doc/HTML/en/juk/search-playlist.png
 share/doc/HTML/en/juk/toolbar.png
+share/doc/HTML/en/kioslave/audiocd/common
+share/doc/HTML/en/kioslave/audiocd/index.cache.bz2
+share/doc/HTML/en/kioslave/audiocd/index.docbook
 share/doc/HTML/en/kmix/common
 share/doc/HTML/en/kmix/index.cache.bz2
 share/doc/HTML/en/kmix/index.docbook
@@ -144,6 +154,7 @@ share/icons/hicolor/64x64/apps/kmix.png
 share/icons/hicolor/64x64/apps/kscd.png
 share/icons/hicolor/scalable/apps/dragonplayer.svgz
 share/icons/oxygen/16x16/actions/player-volume-muted.png
+share/icons/oxygen/22x22/actions/kscd-dock.png
 share/icons/oxygen/22x22/actions/player-volume-muted.png
 share/icons/oxygen/32x32/actions/player-volume-muted.png
 share/icons/oxygen/48x48/actions/player-volume-muted.png
@@ -156,47 +167,18 @@ share/kde4/services/audiocd.protocol
 share/kde4/services/dragonplayer_part.desktop
 share/kde4/services/kmixctrl_restore.desktop
 share/kde4/services/libkcddb.desktop
-@dirrmtry share/kde4/services/ServiceMenus
-@dirrmtry share/kde4/services
-@dirrmtry share/kde4
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry share/doc/HTML/en/kscd
-@dirrmtry share/doc/HTML/en/kmix
-@dirrmtry share/doc/HTML/en/juk
+@dirrm share/doc/HTML/en/kscd
+@dirrm share/doc/HTML/en/kmix
+@dirrm share/doc/HTML/en/kioslave/audiocd
+@dirrm share/doc/HTML/en/juk
 @dirrm share/doc/HTML/en/dragonplayer
-@dirrmtry share/doc/HTML/en
-@dirrmtry share/doc/HTML
-@dirrmtry share/doc
-@dirrmtry share/dbus-1/interfaces
-@dirrmtry share/dbus-1
-@dirrmtry share/config.kcfg
-@dirrmtry share/autostart
-@dirrmtry share/apps/profiles
-@dirrmtry share/apps/konqsidebartng/virtual_folders/services
-@dirrmtry share/apps/konqsidebartng/virtual_folders
-@dirrmtry share/apps/konqsidebartng
-@dirrmtry share/apps/kmix/profiles
-@dirrmtry share/apps/kmix/pics
-@dirrmtry share/apps/kmix
-@dirrmtry share/apps/kconf_update
-@dirrmtry share/apps/juk/pics
-@dirrmtry share/apps/juk
+@dirrm share/apps/kscd/skin
+@dirrm share/apps/kscd
+@dirrm share/apps/kmix/profiles
+@dirrm share/apps/kmix/pics
+@dirrm share/apps/kmix
+@dirrm share/apps/juk/pics
+@dirrm share/apps/juk
 @dirrm share/apps/dragonplayer
-@dirrmtry share/apps
-@dirrmtry share/applications/kde4
-@dirrmtry share/applications
-@dirrmtry lib/kde4
-@dirrmtry include/libkcompactdisc
-@dirrmtry include/libkcddb
-@dirrmtry include
+@dirrm include/libkcompactdisc
+@dirrm include/libkcddb

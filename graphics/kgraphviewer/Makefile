@@ -23,6 +23,6 @@ QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 
 APP_VER=	2.0.2
-EXTRA_VER=	4.1.2
+EXTRA_VER=	4.2.0
 
 .include <bsd.port.mk>

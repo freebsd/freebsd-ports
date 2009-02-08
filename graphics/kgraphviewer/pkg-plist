@@ -49,6 +49,7 @@ share/locale/cs/LC_MESSAGES/kgraphviewer.mo
 share/locale/da/LC_MESSAGES/kgraphviewer.mo
 share/locale/de/LC_MESSAGES/kgraphviewer.mo
 share/locale/el/LC_MESSAGES/kgraphviewer.mo
+share/locale/es/LC_MESSAGES/kgraphviewer.mo
 share/locale/et/LC_MESSAGES/kgraphviewer.mo
 share/locale/fr/LC_MESSAGES/kgraphviewer.mo
 share/locale/ga/LC_MESSAGES/kgraphviewer.mo
@@ -57,11 +58,13 @@ share/locale/hi/LC_MESSAGES/kgraphviewer.mo
 share/locale/it/LC_MESSAGES/kgraphviewer.mo
 share/locale/ja/LC_MESSAGES/kgraphviewer.mo
 share/locale/km/LC_MESSAGES/kgraphviewer.mo
+share/locale/ku/LC_MESSAGES/kgraphviewer.mo
 share/locale/lt/LC_MESSAGES/kgraphviewer.mo
 share/locale/nb/LC_MESSAGES/kgraphviewer.mo
 share/locale/nds/LC_MESSAGES/kgraphviewer.mo
 share/locale/nl/LC_MESSAGES/kgraphviewer.mo
 share/locale/nn/LC_MESSAGES/kgraphviewer.mo
+share/locale/pa/LC_MESSAGES/kgraphviewer.mo
 share/locale/pl/LC_MESSAGES/kgraphviewer.mo
 share/locale/pt/LC_MESSAGES/kgraphviewer.mo
 share/locale/pt_BR/LC_MESSAGES/kgraphviewer.mo
@@ -76,10 +79,6 @@ share/locale/vi/LC_MESSAGES/kgraphviewer.mo
 share/locale/zh_CN/LC_MESSAGES/kgraphviewer.mo
 @dirrmtry share/locale/se/LC_MESSAGES
 @dirrmtry share/locale/se
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
 @dirrm share/doc/HTML/en/kgraphviewer
 @dirrm share/apps/kgraphviewerpart/pics
 @dirrm share/apps/kgraphviewerpart

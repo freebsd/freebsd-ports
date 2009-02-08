@@ -8,7 +8,7 @@ PORTNAME=	kdetoys
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	x11-clocks kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,10 +17,12 @@ COMMENT=	Collection of entertaining, educational programs for KDE
 LATEST_LINK=	${PORTNAME}4
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	opengl gui qmake_build moc_build rcc_build uic_build
 USE_KDE4=	kdelibs workspace kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	opengl gui qmake_build moc_build rcc_build uic_build
+
+MAN6=	amor.6
 
 post-extract:
 	${MKDIR} ${WRKSRC}

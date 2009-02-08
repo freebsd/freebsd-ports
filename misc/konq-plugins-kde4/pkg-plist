@@ -1,20 +1,20 @@
 bin/fsview
+lib/kde4/adblock.so
 lib/kde4/akregatorkonqfeedicon.so
 lib/kde4/autorefresh.so
-lib/kde4/libbabelfishplugin.so
-lib/kde4/libcrashesplugin.so
-lib/kde4/libdirfilterplugin.so
-lib/kde4/libdomtreeviewerplugin.so
-lib/kde4/libfsviewpart.so
-lib/kde4/libkhtmlsettingsplugin.so
-lib/kde4/libkimgallery.so
-lib/kde4/librellinksplugin.so
-lib/kde4/libuachangerplugin.so
-lib/kde4/libwebarchiverplugin.so
-lib/kde4/mfkonqmficon.so
+lib/kde4/babelfishplugin.so
+lib/kde4/crashesplugin.so
+lib/kde4/dirfilterplugin.so
+lib/kde4/domtreeviewerplugin.so
+lib/kde4/fsviewpart.so
+lib/kde4/khtmlsettingsplugin.so
+lib/kde4/kimgallery.so
 lib/kde4/minitoolsplugin.so
+lib/kde4/rellinksplugin.so
 lib/kde4/searchbarplugin.so
+lib/kde4/uachangerplugin.so
 lib/kde4/validatorsplugin.so
+lib/kde4/webarchiverplugin.so
 lib/kde4/webarchivethumbnail.so
 share/apps/akregator/pics/feed.png
 share/apps/dolphinpart/kpartplugins/dirfilterplugin.desktop
@@ -23,8 +23,6 @@ share/apps/dolphinpart/kpartplugins/kimgalleryplugin.desktop
 share/apps/dolphinpart/kpartplugins/kimgalleryplugin.rc
 share/apps/domtreeviewer/domtreeviewerui.rc
 share/apps/fsview/fsview_part.rc
-share/apps/imagerotation/exif.py
-share/apps/imagerotation/orient.py
 share/apps/khtml/kpartplugins/akregator_konqfeedicon.desktop
 share/apps/khtml/kpartplugins/akregator_konqfeedicon.rc
 share/apps/khtml/kpartplugins/autorefresh.desktop
@@ -33,10 +31,10 @@ share/apps/khtml/kpartplugins/crashesplugin.desktop
 share/apps/khtml/kpartplugins/crashesplugin.rc
 share/apps/khtml/kpartplugins/khtmlsettingsplugin.desktop
 share/apps/khtml/kpartplugins/khtmlsettingsplugin.rc
-share/apps/khtml/kpartplugins/mf_konqmficon.desktop
-share/apps/khtml/kpartplugins/mf_konqmficon.rc
 share/apps/khtml/kpartplugins/minitoolsplugin.desktop
 share/apps/khtml/kpartplugins/minitoolsplugin.rc
+share/apps/khtml/kpartplugins/plugin_adblock.desktop
+share/apps/khtml/kpartplugins/plugin_adblock.rc
 share/apps/khtml/kpartplugins/plugin_babelfish.desktop
 share/apps/khtml/kpartplugins/plugin_babelfish.rc
 share/apps/khtml/kpartplugins/plugin_domtreeviewer.desktop
@@ -57,7 +55,6 @@ share/apps/konqueror/icons/oxygen/64x64/actions/google.png
 share/apps/konqueror/icons/oxygen/scalable/actions/google.svgz
 share/apps/konqueror/kpartplugins/searchbar.desktop
 share/apps/konqueror/kpartplugins/searchbar.rc
-share/apps/microformat/pics/microformat.png
 share/apps/webkitpart/kpartplugins/autorefresh.desktop
 share/apps/webkitpart/kpartplugins/autorefresh.rc
 share/apps/webkitpart/kpartplugins/crashesplugin.desktop
@@ -66,6 +63,7 @@ share/apps/webkitpart/kpartplugins/plugin_validators.desktop
 share/apps/webkitpart/kpartplugins/plugin_validators.rc
 share/apps/webkitpart/kpartplugins/uachangerplugin.desktop
 share/apps/webkitpart/kpartplugins/uachangerplugin.rc
+share/config.kcfg/validators.kcfg
 share/config/translaterc
 share/doc/HTML/ca/konq-plugins/babel/common
 share/doc/HTML/ca/konq-plugins/babel/index.cache.bz2
@@ -139,10 +137,12 @@ share/doc/HTML/de/konq-plugins/validators/index.docbook
 share/doc/HTML/de/konq-plugins/webarchiver/common
 share/doc/HTML/de/konq-plugins/webarchiver/index.cache.bz2
 share/doc/HTML/de/konq-plugins/webarchiver/index.docbook
+share/doc/HTML/en/doc/common
+share/doc/HTML/en/doc/index.cache.bz2
+share/doc/HTML/en/doc/index.docbook
 share/doc/HTML/en/konq-plugins/babel/common
 share/doc/HTML/en/konq-plugins/babel/index.cache.bz2
 share/doc/HTML/en/konq-plugins/babel/index.docbook
-share/doc/HTML/en/konq-plugins/common
 share/doc/HTML/en/konq-plugins/crashes/common
 share/doc/HTML/en/konq-plugins/crashes/index.cache.bz2
 share/doc/HTML/en/konq-plugins/crashes/index.docbook
@@ -161,8 +161,6 @@ share/doc/HTML/en/konq-plugins/imgallery/index.cache.bz2
 share/doc/HTML/en/konq-plugins/imgallery/index.docbook
 share/doc/HTML/en/konq-plugins/imgallery/look.png
 share/doc/HTML/en/konq-plugins/imgallery/thumbnails.png
-share/doc/HTML/en/konq-plugins/index.cache.bz2
-share/doc/HTML/en/konq-plugins/index.docbook
 share/doc/HTML/en/konq-plugins/khtmlsettings/common
 share/doc/HTML/en/konq-plugins/khtmlsettings/index.cache.bz2
 share/doc/HTML/en/konq-plugins/khtmlsettings/index.docbook
@@ -247,6 +245,42 @@ share/doc/HTML/fr/konq-plugins/validators/index.docbook
 share/doc/HTML/fr/konq-plugins/webarchiver/common
 share/doc/HTML/fr/konq-plugins/webarchiver/index.cache.bz2
 share/doc/HTML/fr/konq-plugins/webarchiver/index.docbook
+share/doc/HTML/it/konq-plugins/babel/common
+share/doc/HTML/it/konq-plugins/babel/index.cache.bz2
+share/doc/HTML/it/konq-plugins/babel/index.docbook
+share/doc/HTML/it/konq-plugins/common
+share/doc/HTML/it/konq-plugins/crashes/common
+share/doc/HTML/it/konq-plugins/crashes/index.cache.bz2
+share/doc/HTML/it/konq-plugins/crashes/index.docbook
+share/doc/HTML/it/konq-plugins/dirfilter/common
+share/doc/HTML/it/konq-plugins/dirfilter/index.cache.bz2
+share/doc/HTML/it/konq-plugins/dirfilter/index.docbook
+share/doc/HTML/it/konq-plugins/domtreeviewer/common
+share/doc/HTML/it/konq-plugins/domtreeviewer/index.cache.bz2
+share/doc/HTML/it/konq-plugins/domtreeviewer/index.docbook
+share/doc/HTML/it/konq-plugins/fsview/common
+share/doc/HTML/it/konq-plugins/fsview/index.cache.bz2
+share/doc/HTML/it/konq-plugins/fsview/index.docbook
+share/doc/HTML/it/konq-plugins/imgallery/common
+share/doc/HTML/it/konq-plugins/imgallery/index.cache.bz2
+share/doc/HTML/it/konq-plugins/imgallery/index.docbook
+share/doc/HTML/it/konq-plugins/index.cache.bz2
+share/doc/HTML/it/konq-plugins/index.docbook
+share/doc/HTML/it/konq-plugins/khtmlsettings/common
+share/doc/HTML/it/konq-plugins/khtmlsettings/index.cache.bz2
+share/doc/HTML/it/konq-plugins/khtmlsettings/index.docbook
+share/doc/HTML/it/konq-plugins/mediaplayer/common
+share/doc/HTML/it/konq-plugins/mediaplayer/index.cache.bz2
+share/doc/HTML/it/konq-plugins/mediaplayer/index.docbook
+share/doc/HTML/it/konq-plugins/uachanger/common
+share/doc/HTML/it/konq-plugins/uachanger/index.cache.bz2
+share/doc/HTML/it/konq-plugins/uachanger/index.docbook
+share/doc/HTML/it/konq-plugins/validators/common
+share/doc/HTML/it/konq-plugins/validators/index.cache.bz2
+share/doc/HTML/it/konq-plugins/validators/index.docbook
+share/doc/HTML/it/konq-plugins/webarchiver/common
+share/doc/HTML/it/konq-plugins/webarchiver/index.cache.bz2
+share/doc/HTML/it/konq-plugins/webarchiver/index.docbook
 share/doc/HTML/nl/konq-plugins/babel/common
 share/doc/HTML/nl/konq-plugins/babel/index.cache.bz2
 share/doc/HTML/nl/konq-plugins/babel/index.docbook
@@ -414,7 +448,6 @@ share/icons/oxygen/64x64/actions/validators.png
 share/icons/oxygen/scalable/actions/htmlvalidator.svgz
 share/icons/oxygen/scalable/actions/validators.svgz
 share/kde4/services/ServiceMenus/imageconverter.desktop
-share/kde4/services/ServiceMenus/jpegorient.desktop
 share/kde4/services/fsview_part.desktop
 share/kde4/services/webarchivethumbnail.desktop
 share/locale/af/LC_MESSAGES/babelfish.mo
@@ -427,6 +460,7 @@ share/locale/af/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/af/LC_MESSAGES/uachangerplugin.mo
 share/locale/af/LC_MESSAGES/validatorsplugin.mo
 share/locale/af/LC_MESSAGES/webarchiver.mo
+share/locale/ar/LC_MESSAGES/adblock.mo
 share/locale/ar/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/ar/LC_MESSAGES/autorefresh.mo
 share/locale/ar/LC_MESSAGES/babelfish.mo
@@ -449,7 +483,6 @@ share/locale/be/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/be/LC_MESSAGES/autorefresh.mo
 share/locale/be/LC_MESSAGES/babelfish.mo
 share/locale/be/LC_MESSAGES/crashesplugin.mo
-share/locale/be/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/be/LC_MESSAGES/dirfilterplugin.mo
 share/locale/be/LC_MESSAGES/domtreeviewer.mo
 share/locale/be/LC_MESSAGES/fsview.mo
@@ -506,7 +539,6 @@ share/locale/ca/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/ca/LC_MESSAGES/autorefresh.mo
 share/locale/ca/LC_MESSAGES/babelfish.mo
 share/locale/ca/LC_MESSAGES/crashesplugin.mo
-share/locale/ca/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/ca/LC_MESSAGES/dirfilterplugin.mo
 share/locale/ca/LC_MESSAGES/domtreeviewer.mo
 share/locale/ca/LC_MESSAGES/fsview.mo
@@ -521,6 +553,7 @@ share/locale/ca/LC_MESSAGES/searchbarplugin.mo
 share/locale/ca/LC_MESSAGES/uachangerplugin.mo
 share/locale/ca/LC_MESSAGES/validatorsplugin.mo
 share/locale/ca/LC_MESSAGES/webarchiver.mo
+share/locale/cs/LC_MESSAGES/adblock.mo
 share/locale/cs/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/cs/LC_MESSAGES/autorefresh.mo
 share/locale/cs/LC_MESSAGES/babelfish.mo
@@ -558,7 +591,6 @@ share/locale/da/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/da/LC_MESSAGES/autorefresh.mo
 share/locale/da/LC_MESSAGES/babelfish.mo
 share/locale/da/LC_MESSAGES/crashesplugin.mo
-share/locale/da/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/da/LC_MESSAGES/dirfilterplugin.mo
 share/locale/da/LC_MESSAGES/domtreeviewer.mo
 share/locale/da/LC_MESSAGES/fsview.mo
@@ -573,11 +605,11 @@ share/locale/da/LC_MESSAGES/searchbarplugin.mo
 share/locale/da/LC_MESSAGES/uachangerplugin.mo
 share/locale/da/LC_MESSAGES/validatorsplugin.mo
 share/locale/da/LC_MESSAGES/webarchiver.mo
+share/locale/de/LC_MESSAGES/adblock.mo
 share/locale/de/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/de/LC_MESSAGES/autorefresh.mo
 share/locale/de/LC_MESSAGES/babelfish.mo
 share/locale/de/LC_MESSAGES/crashesplugin.mo
-share/locale/de/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/de/LC_MESSAGES/dirfilterplugin.mo
 share/locale/de/LC_MESSAGES/domtreeviewer.mo
 share/locale/de/LC_MESSAGES/fsview.mo
@@ -592,11 +624,11 @@ share/locale/de/LC_MESSAGES/searchbarplugin.mo
 share/locale/de/LC_MESSAGES/uachangerplugin.mo
 share/locale/de/LC_MESSAGES/validatorsplugin.mo
 share/locale/de/LC_MESSAGES/webarchiver.mo
+share/locale/el/LC_MESSAGES/adblock.mo
 share/locale/el/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/el/LC_MESSAGES/autorefresh.mo
 share/locale/el/LC_MESSAGES/babelfish.mo
 share/locale/el/LC_MESSAGES/crashesplugin.mo
-share/locale/el/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/el/LC_MESSAGES/dirfilterplugin.mo
 share/locale/el/LC_MESSAGES/domtreeviewer.mo
 share/locale/el/LC_MESSAGES/fsview.mo
@@ -637,11 +669,11 @@ share/locale/eo/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/eo/LC_MESSAGES/uachangerplugin.mo
 share/locale/eo/LC_MESSAGES/validatorsplugin.mo
 share/locale/eo/LC_MESSAGES/webarchiver.mo
+share/locale/es/LC_MESSAGES/adblock.mo
 share/locale/es/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/es/LC_MESSAGES/autorefresh.mo
 share/locale/es/LC_MESSAGES/babelfish.mo
 share/locale/es/LC_MESSAGES/crashesplugin.mo
-share/locale/es/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/es/LC_MESSAGES/dirfilterplugin.mo
 share/locale/es/LC_MESSAGES/domtreeviewer.mo
 share/locale/es/LC_MESSAGES/fsview.mo
@@ -660,7 +692,6 @@ share/locale/et/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/et/LC_MESSAGES/autorefresh.mo
 share/locale/et/LC_MESSAGES/babelfish.mo
 share/locale/et/LC_MESSAGES/crashesplugin.mo
-share/locale/et/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/et/LC_MESSAGES/dirfilterplugin.mo
 share/locale/et/LC_MESSAGES/domtreeviewer.mo
 share/locale/et/LC_MESSAGES/fsview.mo
@@ -675,6 +706,7 @@ share/locale/et/LC_MESSAGES/searchbarplugin.mo
 share/locale/et/LC_MESSAGES/uachangerplugin.mo
 share/locale/et/LC_MESSAGES/validatorsplugin.mo
 share/locale/et/LC_MESSAGES/webarchiver.mo
+share/locale/eu/LC_MESSAGES/adblock.mo
 share/locale/eu/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/eu/LC_MESSAGES/autorefresh.mo
 share/locale/eu/LC_MESSAGES/babelfish.mo
@@ -711,6 +743,7 @@ share/locale/fa/LC_MESSAGES/searchbarplugin.mo
 share/locale/fa/LC_MESSAGES/uachangerplugin.mo
 share/locale/fa/LC_MESSAGES/validatorsplugin.mo
 share/locale/fa/LC_MESSAGES/webarchiver.mo
+share/locale/fi/LC_MESSAGES/adblock.mo
 share/locale/fi/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/fi/LC_MESSAGES/autorefresh.mo
 share/locale/fi/LC_MESSAGES/babelfish.mo
@@ -733,7 +766,6 @@ share/locale/fr/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/fr/LC_MESSAGES/autorefresh.mo
 share/locale/fr/LC_MESSAGES/babelfish.mo
 share/locale/fr/LC_MESSAGES/crashesplugin.mo
-share/locale/fr/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/fr/LC_MESSAGES/dirfilterplugin.mo
 share/locale/fr/LC_MESSAGES/domtreeviewer.mo
 share/locale/fr/LC_MESSAGES/fsview.mo
@@ -766,11 +798,11 @@ share/locale/fy/LC_MESSAGES/searchbarplugin.mo
 share/locale/fy/LC_MESSAGES/uachangerplugin.mo
 share/locale/fy/LC_MESSAGES/validatorsplugin.mo
 share/locale/fy/LC_MESSAGES/webarchiver.mo
+share/locale/ga/LC_MESSAGES/adblock.mo
 share/locale/ga/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/ga/LC_MESSAGES/autorefresh.mo
 share/locale/ga/LC_MESSAGES/babelfish.mo
 share/locale/ga/LC_MESSAGES/crashesplugin.mo
-share/locale/ga/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/ga/LC_MESSAGES/dirfilterplugin.mo
 share/locale/ga/LC_MESSAGES/domtreeviewer.mo
 share/locale/ga/LC_MESSAGES/fsview.mo
@@ -785,11 +817,11 @@ share/locale/ga/LC_MESSAGES/searchbarplugin.mo
 share/locale/ga/LC_MESSAGES/uachangerplugin.mo
 share/locale/ga/LC_MESSAGES/validatorsplugin.mo
 share/locale/ga/LC_MESSAGES/webarchiver.mo
+share/locale/gl/LC_MESSAGES/adblock.mo
 share/locale/gl/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/gl/LC_MESSAGES/autorefresh.mo
 share/locale/gl/LC_MESSAGES/babelfish.mo
 share/locale/gl/LC_MESSAGES/crashesplugin.mo
-share/locale/gl/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/gl/LC_MESSAGES/dirfilterplugin.mo
 share/locale/gl/LC_MESSAGES/domtreeviewer.mo
 share/locale/gl/LC_MESSAGES/fsview.mo
@@ -824,7 +856,6 @@ share/locale/hi/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/hi/LC_MESSAGES/autorefresh.mo
 share/locale/hi/LC_MESSAGES/babelfish.mo
 share/locale/hi/LC_MESSAGES/crashesplugin.mo
-share/locale/hi/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/hi/LC_MESSAGES/dirfilterplugin.mo
 share/locale/hi/LC_MESSAGES/domtreeviewer.mo
 share/locale/hi/LC_MESSAGES/fsview.mo
@@ -857,6 +888,7 @@ share/locale/hr/LC_MESSAGES/searchbarplugin.mo
 share/locale/hr/LC_MESSAGES/uachangerplugin.mo
 share/locale/hr/LC_MESSAGES/validatorsplugin.mo
 share/locale/hr/LC_MESSAGES/webarchiver.mo
+share/locale/hsb/LC_MESSAGES/adblock.mo
 share/locale/hu/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/hu/LC_MESSAGES/autorefresh.mo
 share/locale/hu/LC_MESSAGES/babelfish.mo
@@ -897,7 +929,6 @@ share/locale/it/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/it/LC_MESSAGES/autorefresh.mo
 share/locale/it/LC_MESSAGES/babelfish.mo
 share/locale/it/LC_MESSAGES/crashesplugin.mo
-share/locale/it/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/it/LC_MESSAGES/dirfilterplugin.mo
 share/locale/it/LC_MESSAGES/domtreeviewer.mo
 share/locale/it/LC_MESSAGES/fsview.mo
@@ -912,11 +943,11 @@ share/locale/it/LC_MESSAGES/searchbarplugin.mo
 share/locale/it/LC_MESSAGES/uachangerplugin.mo
 share/locale/it/LC_MESSAGES/validatorsplugin.mo
 share/locale/it/LC_MESSAGES/webarchiver.mo
+share/locale/ja/LC_MESSAGES/adblock.mo
 share/locale/ja/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/ja/LC_MESSAGES/autorefresh.mo
 share/locale/ja/LC_MESSAGES/babelfish.mo
 share/locale/ja/LC_MESSAGES/crashesplugin.mo
-share/locale/ja/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/ja/LC_MESSAGES/dirfilterplugin.mo
 share/locale/ja/LC_MESSAGES/domtreeviewer.mo
 share/locale/ja/LC_MESSAGES/fsview.mo
@@ -949,11 +980,11 @@ share/locale/kk/LC_MESSAGES/searchbarplugin.mo
 share/locale/kk/LC_MESSAGES/uachangerplugin.mo
 share/locale/kk/LC_MESSAGES/validatorsplugin.mo
 share/locale/kk/LC_MESSAGES/webarchiver.mo
+share/locale/km/LC_MESSAGES/adblock.mo
 share/locale/km/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/km/LC_MESSAGES/autorefresh.mo
 share/locale/km/LC_MESSAGES/babelfish.mo
 share/locale/km/LC_MESSAGES/crashesplugin.mo
-share/locale/km/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/km/LC_MESSAGES/dirfilterplugin.mo
 share/locale/km/LC_MESSAGES/domtreeviewer.mo
 share/locale/km/LC_MESSAGES/fsview.mo
@@ -972,7 +1003,6 @@ share/locale/ko/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/ko/LC_MESSAGES/autorefresh.mo
 share/locale/ko/LC_MESSAGES/babelfish.mo
 share/locale/ko/LC_MESSAGES/crashesplugin.mo
-share/locale/ko/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/ko/LC_MESSAGES/dirfilterplugin.mo
 share/locale/ko/LC_MESSAGES/domtreeviewer.mo
 share/locale/ko/LC_MESSAGES/fsview.mo
@@ -987,11 +1017,29 @@ share/locale/ko/LC_MESSAGES/searchbarplugin.mo
 share/locale/ko/LC_MESSAGES/uachangerplugin.mo
 share/locale/ko/LC_MESSAGES/validatorsplugin.mo
 share/locale/ko/LC_MESSAGES/webarchiver.mo
+share/locale/ku/LC_MESSAGES/adblock.mo
+share/locale/ku/LC_MESSAGES/akregator_konqplugin.mo
+share/locale/ku/LC_MESSAGES/autorefresh.mo
+share/locale/ku/LC_MESSAGES/babelfish.mo
+share/locale/ku/LC_MESSAGES/crashesplugin.mo
+share/locale/ku/LC_MESSAGES/dirfilterplugin.mo
+share/locale/ku/LC_MESSAGES/domtreeviewer.mo
+share/locale/ku/LC_MESSAGES/fsview.mo
+share/locale/ku/LC_MESSAGES/imgalleryplugin.mo
+share/locale/ku/LC_MESSAGES/khtmlsettingsplugin.mo
+share/locale/ku/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/ku/LC_MESSAGES/konqsidebar_metabar.mo
+share/locale/ku/LC_MESSAGES/mf_konqplugin.mo
+share/locale/ku/LC_MESSAGES/minitoolsplugin.mo
+share/locale/ku/LC_MESSAGES/searchbarplugin.mo
+share/locale/ku/LC_MESSAGES/uachangerplugin.mo
+share/locale/ku/LC_MESSAGES/validatorsplugin.mo
+share/locale/ku/LC_MESSAGES/webarchiver.mo
+share/locale/lt/LC_MESSAGES/adblock.mo
 share/locale/lt/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/lt/LC_MESSAGES/autorefresh.mo
 share/locale/lt/LC_MESSAGES/babelfish.mo
 share/locale/lt/LC_MESSAGES/crashesplugin.mo
-share/locale/lt/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/lt/LC_MESSAGES/dirfilterplugin.mo
 share/locale/lt/LC_MESSAGES/domtreeviewer.mo
 share/locale/lt/LC_MESSAGES/fsview.mo
@@ -1006,11 +1054,11 @@ share/locale/lt/LC_MESSAGES/searchbarplugin.mo
 share/locale/lt/LC_MESSAGES/uachangerplugin.mo
 share/locale/lt/LC_MESSAGES/validatorsplugin.mo
 share/locale/lt/LC_MESSAGES/webarchiver.mo
+share/locale/lv/LC_MESSAGES/adblock.mo
 share/locale/lv/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/lv/LC_MESSAGES/autorefresh.mo
 share/locale/lv/LC_MESSAGES/babelfish.mo
 share/locale/lv/LC_MESSAGES/crashesplugin.mo
-share/locale/lv/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/lv/LC_MESSAGES/dirfilterplugin.mo
 share/locale/lv/LC_MESSAGES/domtreeviewer.mo
 share/locale/lv/LC_MESSAGES/fsview.mo
@@ -1065,11 +1113,11 @@ share/locale/ms/LC_MESSAGES/searchbarplugin.mo
 share/locale/ms/LC_MESSAGES/uachangerplugin.mo
 share/locale/ms/LC_MESSAGES/validatorsplugin.mo
 share/locale/ms/LC_MESSAGES/webarchiver.mo
+share/locale/nb/LC_MESSAGES/adblock.mo
 share/locale/nb/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/nb/LC_MESSAGES/autorefresh.mo
 share/locale/nb/LC_MESSAGES/babelfish.mo
 share/locale/nb/LC_MESSAGES/crashesplugin.mo
-share/locale/nb/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/nb/LC_MESSAGES/dirfilterplugin.mo
 share/locale/nb/LC_MESSAGES/domtreeviewer.mo
 share/locale/nb/LC_MESSAGES/fsview.mo
@@ -1084,11 +1132,11 @@ share/locale/nb/LC_MESSAGES/searchbarplugin.mo
 share/locale/nb/LC_MESSAGES/uachangerplugin.mo
 share/locale/nb/LC_MESSAGES/validatorsplugin.mo
 share/locale/nb/LC_MESSAGES/webarchiver.mo
+share/locale/nds/LC_MESSAGES/adblock.mo
 share/locale/nds/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/nds/LC_MESSAGES/autorefresh.mo
 share/locale/nds/LC_MESSAGES/babelfish.mo
 share/locale/nds/LC_MESSAGES/crashesplugin.mo
-share/locale/nds/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/nds/LC_MESSAGES/dirfilterplugin.mo
 share/locale/nds/LC_MESSAGES/domtreeviewer.mo
 share/locale/nds/LC_MESSAGES/fsview.mo
@@ -1121,11 +1169,11 @@ share/locale/ne/LC_MESSAGES/searchbarplugin.mo
 share/locale/ne/LC_MESSAGES/uachangerplugin.mo
 share/locale/ne/LC_MESSAGES/validatorsplugin.mo
 share/locale/ne/LC_MESSAGES/webarchiver.mo
+share/locale/nl/LC_MESSAGES/adblock.mo
 share/locale/nl/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/nl/LC_MESSAGES/autorefresh.mo
 share/locale/nl/LC_MESSAGES/babelfish.mo
 share/locale/nl/LC_MESSAGES/crashesplugin.mo
-share/locale/nl/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/nl/LC_MESSAGES/dirfilterplugin.mo
 share/locale/nl/LC_MESSAGES/domtreeviewer.mo
 share/locale/nl/LC_MESSAGES/fsview.mo
@@ -1140,11 +1188,11 @@ share/locale/nl/LC_MESSAGES/searchbarplugin.mo
 share/locale/nl/LC_MESSAGES/uachangerplugin.mo
 share/locale/nl/LC_MESSAGES/validatorsplugin.mo
 share/locale/nl/LC_MESSAGES/webarchiver.mo
+share/locale/nn/LC_MESSAGES/adblock.mo
 share/locale/nn/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/nn/LC_MESSAGES/autorefresh.mo
 share/locale/nn/LC_MESSAGES/babelfish.mo
 share/locale/nn/LC_MESSAGES/crashesplugin.mo
-share/locale/nn/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/nn/LC_MESSAGES/dirfilterplugin.mo
 share/locale/nn/LC_MESSAGES/domtreeviewer.mo
 share/locale/nn/LC_MESSAGES/fsview.mo
@@ -1163,7 +1211,6 @@ share/locale/oc/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/oc/LC_MESSAGES/autorefresh.mo
 share/locale/oc/LC_MESSAGES/babelfish.mo
 share/locale/oc/LC_MESSAGES/crashesplugin.mo
-share/locale/oc/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/oc/LC_MESSAGES/dirfilterplugin.mo
 share/locale/oc/LC_MESSAGES/domtreeviewer.mo
 share/locale/oc/LC_MESSAGES/fsview.mo
@@ -1178,6 +1225,7 @@ share/locale/oc/LC_MESSAGES/searchbarplugin.mo
 share/locale/oc/LC_MESSAGES/uachangerplugin.mo
 share/locale/oc/LC_MESSAGES/validatorsplugin.mo
 share/locale/oc/LC_MESSAGES/webarchiver.mo
+share/locale/pa/LC_MESSAGES/adblock.mo
 share/locale/pa/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/pa/LC_MESSAGES/autorefresh.mo
 share/locale/pa/LC_MESSAGES/babelfish.mo
@@ -1196,11 +1244,11 @@ share/locale/pa/LC_MESSAGES/searchbarplugin.mo
 share/locale/pa/LC_MESSAGES/uachangerplugin.mo
 share/locale/pa/LC_MESSAGES/validatorsplugin.mo
 share/locale/pa/LC_MESSAGES/webarchiver.mo
+share/locale/pl/LC_MESSAGES/adblock.mo
 share/locale/pl/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/pl/LC_MESSAGES/autorefresh.mo
 share/locale/pl/LC_MESSAGES/babelfish.mo
 share/locale/pl/LC_MESSAGES/crashesplugin.mo
-share/locale/pl/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/pl/LC_MESSAGES/dirfilterplugin.mo
 share/locale/pl/LC_MESSAGES/domtreeviewer.mo
 share/locale/pl/LC_MESSAGES/fsview.mo
@@ -1215,11 +1263,11 @@ share/locale/pl/LC_MESSAGES/searchbarplugin.mo
 share/locale/pl/LC_MESSAGES/uachangerplugin.mo
 share/locale/pl/LC_MESSAGES/validatorsplugin.mo
 share/locale/pl/LC_MESSAGES/webarchiver.mo
+share/locale/pt/LC_MESSAGES/adblock.mo
 share/locale/pt/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/pt/LC_MESSAGES/autorefresh.mo
 share/locale/pt/LC_MESSAGES/babelfish.mo
 share/locale/pt/LC_MESSAGES/crashesplugin.mo
-share/locale/pt/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/pt/LC_MESSAGES/dirfilterplugin.mo
 share/locale/pt/LC_MESSAGES/domtreeviewer.mo
 share/locale/pt/LC_MESSAGES/fsview.mo
@@ -1234,11 +1282,11 @@ share/locale/pt/LC_MESSAGES/searchbarplugin.mo
 share/locale/pt/LC_MESSAGES/uachangerplugin.mo
 share/locale/pt/LC_MESSAGES/validatorsplugin.mo
 share/locale/pt/LC_MESSAGES/webarchiver.mo
+share/locale/pt_BR/LC_MESSAGES/adblock.mo
 share/locale/pt_BR/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/pt_BR/LC_MESSAGES/autorefresh.mo
 share/locale/pt_BR/LC_MESSAGES/babelfish.mo
 share/locale/pt_BR/LC_MESSAGES/crashesplugin.mo
-share/locale/pt_BR/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/pt_BR/LC_MESSAGES/dirfilterplugin.mo
 share/locale/pt_BR/LC_MESSAGES/domtreeviewer.mo
 share/locale/pt_BR/LC_MESSAGES/fsview.mo
@@ -1253,11 +1301,11 @@ share/locale/pt_BR/LC_MESSAGES/searchbarplugin.mo
 share/locale/pt_BR/LC_MESSAGES/uachangerplugin.mo
 share/locale/pt_BR/LC_MESSAGES/validatorsplugin.mo
 share/locale/pt_BR/LC_MESSAGES/webarchiver.mo
+share/locale/ro/LC_MESSAGES/adblock.mo
 share/locale/ro/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/ro/LC_MESSAGES/autorefresh.mo
 share/locale/ro/LC_MESSAGES/babelfish.mo
 share/locale/ro/LC_MESSAGES/crashesplugin.mo
-share/locale/ro/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/ro/LC_MESSAGES/dirfilterplugin.mo
 share/locale/ro/LC_MESSAGES/domtreeviewer.mo
 share/locale/ro/LC_MESSAGES/fsview.mo
@@ -1272,11 +1320,11 @@ share/locale/ro/LC_MESSAGES/searchbarplugin.mo
 share/locale/ro/LC_MESSAGES/uachangerplugin.mo
 share/locale/ro/LC_MESSAGES/validatorsplugin.mo
 share/locale/ro/LC_MESSAGES/webarchiver.mo
+share/locale/ru/LC_MESSAGES/adblock.mo
 share/locale/ru/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/ru/LC_MESSAGES/autorefresh.mo
 share/locale/ru/LC_MESSAGES/babelfish.mo
 share/locale/ru/LC_MESSAGES/crashesplugin.mo
-share/locale/ru/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/ru/LC_MESSAGES/dirfilterplugin.mo
 share/locale/ru/LC_MESSAGES/domtreeviewer.mo
 share/locale/ru/LC_MESSAGES/fsview.mo
@@ -1313,7 +1361,6 @@ share/locale/sk/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/sk/LC_MESSAGES/autorefresh.mo
 share/locale/sk/LC_MESSAGES/babelfish.mo
 share/locale/sk/LC_MESSAGES/crashesplugin.mo
-share/locale/sk/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/sk/LC_MESSAGES/dirfilterplugin.mo
 share/locale/sk/LC_MESSAGES/domtreeviewer.mo
 share/locale/sk/LC_MESSAGES/fsview.mo
@@ -1346,11 +1393,30 @@ share/locale/sl/LC_MESSAGES/searchbarplugin.mo
 share/locale/sl/LC_MESSAGES/uachangerplugin.mo
 share/locale/sl/LC_MESSAGES/validatorsplugin.mo
 share/locale/sl/LC_MESSAGES/webarchiver.mo
+share/locale/sr/LC_MESSAGES/adblock.mo
+share/locale/sr/LC_MESSAGES/akregator_konqplugin.mo
+share/locale/sr/LC_MESSAGES/autorefresh.mo
+share/locale/sr/LC_MESSAGES/babelfish.mo
+share/locale/sr/LC_MESSAGES/crashesplugin.mo
+share/locale/sr/LC_MESSAGES/dirfilterplugin.mo
+share/locale/sr/LC_MESSAGES/domtreeviewer.mo
+share/locale/sr/LC_MESSAGES/fsview.mo
+share/locale/sr/LC_MESSAGES/imgalleryplugin.mo
+share/locale/sr/LC_MESSAGES/khtmlsettingsplugin.mo
+share/locale/sr/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/sr/LC_MESSAGES/konqsidebar_metabar.mo
+share/locale/sr/LC_MESSAGES/mf_konqplugin.mo
+share/locale/sr/LC_MESSAGES/minitoolsplugin.mo
+share/locale/sr/LC_MESSAGES/rellinks.mo
+share/locale/sr/LC_MESSAGES/searchbarplugin.mo
+share/locale/sr/LC_MESSAGES/uachangerplugin.mo
+share/locale/sr/LC_MESSAGES/validatorsplugin.mo
+share/locale/sr/LC_MESSAGES/webarchiver.mo
+share/locale/sv/LC_MESSAGES/adblock.mo
 share/locale/sv/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/sv/LC_MESSAGES/autorefresh.mo
 share/locale/sv/LC_MESSAGES/babelfish.mo
 share/locale/sv/LC_MESSAGES/crashesplugin.mo
-share/locale/sv/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/sv/LC_MESSAGES/dirfilterplugin.mo
 share/locale/sv/LC_MESSAGES/domtreeviewer.mo
 share/locale/sv/LC_MESSAGES/fsview.mo
@@ -1399,27 +1465,30 @@ share/locale/tg/LC_MESSAGES/searchbarplugin.mo
 share/locale/tg/LC_MESSAGES/uachangerplugin.mo
 share/locale/tg/LC_MESSAGES/validatorsplugin.mo
 share/locale/tg/LC_MESSAGES/webarchiver.mo
+share/locale/th/LC_MESSAGES/adblock.mo
 share/locale/th/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/th/LC_MESSAGES/autorefresh.mo
 share/locale/th/LC_MESSAGES/babelfish.mo
 share/locale/th/LC_MESSAGES/crashesplugin.mo
-share/locale/th/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/th/LC_MESSAGES/dirfilterplugin.mo
 share/locale/th/LC_MESSAGES/domtreeviewer.mo
+share/locale/th/LC_MESSAGES/fsview.mo
 share/locale/th/LC_MESSAGES/imgalleryplugin.mo
 share/locale/th/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/th/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/th/LC_MESSAGES/konqsidebar_metabar.mo
 share/locale/th/LC_MESSAGES/mf_konqplugin.mo
 share/locale/th/LC_MESSAGES/minitoolsplugin.mo
+share/locale/th/LC_MESSAGES/rellinks.mo
 share/locale/th/LC_MESSAGES/searchbarplugin.mo
 share/locale/th/LC_MESSAGES/uachangerplugin.mo
 share/locale/th/LC_MESSAGES/validatorsplugin.mo
 share/locale/th/LC_MESSAGES/webarchiver.mo
+share/locale/tr/LC_MESSAGES/adblock.mo
 share/locale/tr/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/tr/LC_MESSAGES/autorefresh.mo
 share/locale/tr/LC_MESSAGES/babelfish.mo
 share/locale/tr/LC_MESSAGES/crashesplugin.mo
-share/locale/tr/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/tr/LC_MESSAGES/dirfilterplugin.mo
 share/locale/tr/LC_MESSAGES/domtreeviewer.mo
 share/locale/tr/LC_MESSAGES/fsview.mo
@@ -1434,11 +1503,11 @@ share/locale/tr/LC_MESSAGES/searchbarplugin.mo
 share/locale/tr/LC_MESSAGES/uachangerplugin.mo
 share/locale/tr/LC_MESSAGES/validatorsplugin.mo
 share/locale/tr/LC_MESSAGES/webarchiver.mo
+share/locale/uk/LC_MESSAGES/adblock.mo
 share/locale/uk/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/uk/LC_MESSAGES/autorefresh.mo
 share/locale/uk/LC_MESSAGES/babelfish.mo
 share/locale/uk/LC_MESSAGES/crashesplugin.mo
-share/locale/uk/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/uk/LC_MESSAGES/dirfilterplugin.mo
 share/locale/uk/LC_MESSAGES/domtreeviewer.mo
 share/locale/uk/LC_MESSAGES/fsview.mo
@@ -1517,11 +1586,11 @@ share/locale/xh/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/xh/LC_MESSAGES/uachangerplugin.mo
 share/locale/xh/LC_MESSAGES/validatorsplugin.mo
 share/locale/xh/LC_MESSAGES/webarchiver.mo
+share/locale/zh_CN/LC_MESSAGES/adblock.mo
 share/locale/zh_CN/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/zh_CN/LC_MESSAGES/autorefresh.mo
 share/locale/zh_CN/LC_MESSAGES/babelfish.mo
 share/locale/zh_CN/LC_MESSAGES/crashesplugin.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/dirfilterplugin.mo
 share/locale/zh_CN/LC_MESSAGES/domtreeviewer.mo
 share/locale/zh_CN/LC_MESSAGES/fsview.mo
@@ -1536,11 +1605,11 @@ share/locale/zh_CN/LC_MESSAGES/searchbarplugin.mo
 share/locale/zh_CN/LC_MESSAGES/uachangerplugin.mo
 share/locale/zh_CN/LC_MESSAGES/validatorsplugin.mo
 share/locale/zh_CN/LC_MESSAGES/webarchiver.mo
+share/locale/zh_TW/LC_MESSAGES/adblock.mo
 share/locale/zh_TW/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/zh_TW/LC_MESSAGES/autorefresh.mo
 share/locale/zh_TW/LC_MESSAGES/babelfish.mo
 share/locale/zh_TW/LC_MESSAGES/crashesplugin.mo
-share/locale/zh_TW/LC_MESSAGES/desktop_extragear-base_konq-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/dirfilterplugin.mo
 share/locale/zh_TW/LC_MESSAGES/domtreeviewer.mo
 share/locale/zh_TW/LC_MESSAGES/fsview.mo
@@ -1555,22 +1624,14 @@ share/locale/zh_TW/LC_MESSAGES/searchbarplugin.mo
 share/locale/zh_TW/LC_MESSAGES/uachangerplugin.mo
 share/locale/zh_TW/LC_MESSAGES/validatorsplugin.mo
 share/locale/zh_TW/LC_MESSAGES/webarchiver.mo
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
 @dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
 @dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/se/LC_MESSAGES
 @dirrmtry share/locale/se
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/fy/LC_MESSAGES
-@dirrmtry share/locale/fy
+@dirrmtry share/locale/hsb/LC_MESSAGES
+@dirrmtry share/locale/hsb
 @dirrm share/doc/HTML/uk/konq-plugins/webarchiver
 @dirrm share/doc/HTML/uk/konq-plugins/validators
 @dirrm share/doc/HTML/uk/konq-plugins/uachanger
@@ -1619,6 +1680,18 @@ share/locale/zh_TW/LC_MESSAGES/webarchiver.mo
 @dirrm share/doc/HTML/nl/konq-plugins/crashes
 @dirrm share/doc/HTML/nl/konq-plugins/babel
 @dirrm share/doc/HTML/nl/konq-plugins
+@dirrm share/doc/HTML/it/konq-plugins/webarchiver
+@dirrm share/doc/HTML/it/konq-plugins/validators
+@dirrm share/doc/HTML/it/konq-plugins/uachanger
+@dirrm share/doc/HTML/it/konq-plugins/mediaplayer
+@dirrm share/doc/HTML/it/konq-plugins/khtmlsettings
+@dirrm share/doc/HTML/it/konq-plugins/imgallery
+@dirrm share/doc/HTML/it/konq-plugins/fsview
+@dirrm share/doc/HTML/it/konq-plugins/domtreeviewer
+@dirrm share/doc/HTML/it/konq-plugins/dirfilter
+@dirrm share/doc/HTML/it/konq-plugins/crashes
+@dirrm share/doc/HTML/it/konq-plugins/babel
+@dirrm share/doc/HTML/it/konq-plugins
 @dirrm share/doc/HTML/fr/konq-plugins/webarchiver
 @dirrm share/doc/HTML/fr/konq-plugins/validators
 @dirrm share/doc/HTML/fr/konq-plugins/uachanger
@@ -1654,6 +1727,7 @@ share/locale/zh_TW/LC_MESSAGES/webarchiver.mo
 @dirrm share/doc/HTML/en/konq-plugins/crashes
 @dirrm share/doc/HTML/en/konq-plugins/babel
 @dirrm share/doc/HTML/en/konq-plugins
+@dirrm share/doc/HTML/en/doc
 @dirrm share/doc/HTML/de/konq-plugins/webarchiver
 @dirrm share/doc/HTML/de/konq-plugins/validators
 @dirrm share/doc/HTML/de/konq-plugins/uachanger
@@ -1678,29 +1752,23 @@ share/locale/zh_TW/LC_MESSAGES/webarchiver.mo
 @dirrm share/doc/HTML/ca/konq-plugins/crashes
 @dirrm share/doc/HTML/ca/konq-plugins/babel
 @dirrm share/doc/HTML/ca/konq-plugins
-@dirrmtry share/doc/HTML/ca
 @dirrm share/apps/webkitpart/kpartplugins
 @dirrm share/apps/webkitpart
-@dirrm share/apps/microformat/pics
-@dirrm share/apps/microformat
-@dirrmtry share/apps/konqueror/kpartplugins
-@dirrmtry share/apps/konqueror/icons/oxygen/scalable/actions
-@dirrmtry share/apps/konqueror/icons/oxygen/scalable
-@dirrmtry share/apps/konqueror/icons/oxygen/64x64/actions
-@dirrmtry share/apps/konqueror/icons/oxygen/64x64
-@dirrmtry share/apps/konqueror/icons/oxygen/48x48/actions
-@dirrmtry share/apps/konqueror/icons/oxygen/48x48
-@dirrmtry share/apps/konqueror/icons/oxygen/32x32/actions
-@dirrmtry share/apps/konqueror/icons/oxygen/32x32
-@dirrmtry share/apps/konqueror/icons/oxygen/22x22/actions
-@dirrmtry share/apps/konqueror/icons/oxygen/22x22
-@dirrmtry share/apps/konqueror/icons/oxygen/16x16/actions
-@dirrmtry share/apps/konqueror/icons/oxygen/16x16
-@dirrmtry share/apps/konqueror/icons/oxygen
-@dirrmtry share/apps/konqueror/icons
-@dirrmtry share/apps/khtml/kpartplugins
-@dirrmtry share/apps/khtml
-@dirrm share/apps/imagerotation
+@dirrm share/apps/konqueror/kpartplugins
+@dirrm share/apps/konqueror/icons/oxygen/scalable/actions
+@dirrm share/apps/konqueror/icons/oxygen/scalable
+@dirrm share/apps/konqueror/icons/oxygen/64x64/actions
+@dirrm share/apps/konqueror/icons/oxygen/64x64
+@dirrm share/apps/konqueror/icons/oxygen/48x48/actions
+@dirrm share/apps/konqueror/icons/oxygen/48x48
+@dirrm share/apps/konqueror/icons/oxygen/32x32/actions
+@dirrm share/apps/konqueror/icons/oxygen/32x32
+@dirrm share/apps/konqueror/icons/oxygen/22x22/actions
+@dirrm share/apps/konqueror/icons/oxygen/22x22
+@dirrm share/apps/konqueror/icons/oxygen/16x16/actions
+@dirrm share/apps/konqueror/icons/oxygen/16x16
+@dirrm share/apps/konqueror/icons/oxygen
+@dirrm share/apps/konqueror/icons
 @dirrm share/apps/fsview
 @dirrm share/apps/domtreeviewer
 @dirrmtry share/apps/dolphinpart/kpartplugins

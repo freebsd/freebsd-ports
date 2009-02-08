@@ -5,6 +5,7 @@ include/Soprano/Backend
 include/Soprano/BackendFeature
 include/Soprano/BackendOption
 include/Soprano/BackendSetting
+include/Soprano/BackendSettings
 include/Soprano/BindingSet
 include/Soprano/Client/DBusClient
 include/Soprano/Client/DBusModel
@@ -12,6 +13,7 @@ include/Soprano/Client/DBusNodeIterator
 include/Soprano/Client/DBusQueryResultIterator
 include/Soprano/Client/DBusStatementIterator
 include/Soprano/Client/LocalSocketClient
+include/Soprano/Client/SparqlModel
 include/Soprano/Client/TcpClient
 include/Soprano/Error/Error
 include/Soprano/Error/ErrorCache
@@ -24,10 +26,10 @@ include/Soprano/Index/CLuceneIndex
 include/Soprano/Index/IndexFilterModel
 include/Soprano/Index/QueryHit
 include/Soprano/Inference/InferenceModel
-include/Soprano/Inference/InferenceRuleSet
 include/Soprano/Inference/NodePattern
 include/Soprano/Inference/Rule
 include/Soprano/Inference/RuleParser
+include/Soprano/Inference/RuleSet
 include/Soprano/Inference/StandardRuleSet
 include/Soprano/Inference/StatementPattern
 include/Soprano/Iterator
@@ -42,7 +44,7 @@ include/Soprano/PluginManager
 include/Soprano/Query/QueryLanguage
 include/Soprano/QueryResultIterator
 include/Soprano/QueryResultIteratorBackend
-include/Soprano/RdfSchemaWrapper
+include/Soprano/RdfSchemaModel
 include/Soprano/RdfSerialization
 include/Soprano/Serializer
 include/Soprano/Server/DBusExportIterator
@@ -70,6 +72,7 @@ include/Soprano/Vocabulary/SIL
 include/Soprano/Vocabulary/XMLSchema
 include/Soprano/Vocabulary/Xesam
 include/soprano/asyncmodel.h
+include/soprano/asyncresult.h
 include/soprano/backend.h
 include/soprano/bindingset.h
 include/soprano/cluceneindex.h
@@ -121,6 +124,7 @@ include/soprano/simplestatementiterator.h
 include/soprano/soprano.h
 include/soprano/soprano_export.h
 include/soprano/sopranotypes.h
+include/soprano/sparqlmodel.h
 include/soprano/statement.h
 include/soprano/statementiterator.h
 include/soprano/statementpattern.h

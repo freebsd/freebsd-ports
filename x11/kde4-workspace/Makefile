@@ -8,10 +8,9 @@
 
 PORTNAME=	kdebase-workspace
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -31,10 +30,8 @@ RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		xset:${PORTSDIR}/x11/xset
 
-CONFLICTS=	kdebase-runtime-4.1.[0-1]*
-
 SUB_FILES=	kdm
-USE_KDE4=	kdelibs kdeprefix kdehier automoc4
+USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4
@@ -45,73 +42,39 @@ QT_COMPONENTS=	assistant corelib dbus designer gui network opengl  \
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 
-CMAKE_ARGS+=	-DWITH_BlueZ:BOOL=Off
+CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
+		-DWITH_BlueZ:BOOL=OFF \
+		-DWITH_Sensors:BOOL=OFF \
+		-DWITH_NetworkManager:BOOL=OFF \
+		-DWITH_Xmms:BOOL=OFF \
+		-DWITH_Googlegadgets:BOOL=OFF \
+		-DWITH_QEdje:BOOL=OFF
+#Xmms and Googlegadgets could be enabled,
+#QEdje has not been ported yet.
 
 post-extract:
 	${MKDIR} ${WRKSRC}
 
 pre-configure:
-
-.for item in effects/showfps.h scene.h workspace.h
-	${REINPLACE_CMD} -e 's|<qdatetime.h>|<QDateTime>|'\
-		${WRKSRC}/../kwin/${item}
-.endfor
-.for item in client.h compositingprefs.h
-	${REINPLACE_CMD} -e 's|<qframe.h>|<QFrame>|'\
-		${WRKSRC}/../kwin/${item}
-.endfor
-.for item in placement.cpp popupinfo.cpp tabbox.cpp
-	${REINPLACE_CMD} -e 's|<qdrawutil.h>|<QtGui/qdrawutil.h>|'\
-		-e 's|<qdesktopwidget.h>|<QDesktopWidget>|'\
-		${WRKSRC}/../kwin/${item}
-.endfor
-	${REINPLACE_CMD} -e 's|<qsessionmanager.h>|<QSessionManager>|'\
-		${WRKSRC}/../kwin/sm.cpp
-.for item in effects/desktopgrid.h toplevel.h
-	${REINPLACE_CMD} -e 's|<qobject.h>|<QObject>|'\
-		${WRKSRC}/../kwin/${item}
-.endfor
-	${REINPLACE_CMD} -e 's|<qpainter.h>|<QPainter>|'\
-		${WRKSRC}/../kwin/effects/presentwindows.cpp
-	${REINPLACE_CMD} -e 's|<qcursor.h>|<QCursor>|'\
-		-e 's|<qevent.h>|<QtEvents>|'\
-		${WRKSRC}/../kwin/effects/test/test_input.cpp
 	${REINPLACE_CMD} -e 's|<qhash.h>|<QHash>|'\
 		${WRKSRC}/../kwin/effects/thumbnailaside.h
 	${REINPLACE_CMD} -e 's|<qdir.h>|<QDir>|'\
 		-e 's|<qfile.h>|<QFile>|'\
 		${WRKSRC}/../kwin/effects/videorecord.cpp
-.for item in kcmkwin/kwinoptions/windows.cpp clients/plastik/plastikclient.cpp\
-		clients/plastik/plastikclient.cpp
-	${REINPLACE_CMD} -e 's|<qdesktopwidget.h>|<QDesktopWidget>|'\
-		${WRKSRC}/../kwin/${item}
-.endfor
 .for item in b2/b2client.cpp kwmtheme/kwmthemeclient.cpp\
 		laptop/laptopclient.cpp modernsystem/modernsys.cpp\
 		redmond/redmond.cpp
 	${REINPLACE_CMD} -e 's|<qdrawutil.h>|<QtGui/qdrawutil.h>|'\
 		${WRKSRC}/../kwin/clients/${item}
 .endfor
-	${REINPLACE_CMD} -e 's|<qbitmap.h>|<QBitmap>|'\
-		-e 's|<qlabel.h>|<QLabel>|'\
-		-e 's|<qlayout.h>|<QLayout>|'\
-		-e 's|<qpainter.h>|<QPainter>|'\
-		-e 's|<qtooltip.h>|<QToolTip>|'\
-		${WRKSRC}/../kwin/clients/oxygen/oxygenclient.cpp
-	${REINPLACE_CMD} -e 's|<qevent.h>|<QtEvents>|'\
-		${WRKSRC}/../kwin/effects/desktopgrid.cpp
-
-post-configure:
-	${REINPLACE_CMD} -e 's|/\* #undef HAVE_XKB \*/|#define HAVE_XKB 1|'\
-		${WRKSRC}/../build/config-X11.h
 
 post-install:
-	${CHGRP} kmem ${KDE4_PREFIX}/bin/ksysguardd && \
-		${CHMOD} g+s ${KDE4_PREFIX}/bin/ksysguardd
-	@${LN} -sf ${KDE4_PREFIX}/bin/startkde ${KDE4_PREFIX}/bin/startkde4
-	@${MV} ${KDE4_PREFIX}/bin/kdm ${KDE4_PREFIX}/bin/kdm-bin
-	@${MV} ${KDE4_PREFIX}/lib/kde4/libexec/kdm_config ${KDE4_PREFIX}/lib/kde4/libexec/kdm-bin_config
-	@${MV} ${KDE4_PREFIX}/lib/kde4/libexec/kdm_greet ${KDE4_PREFIX}/lib/kde4/libexec/kdm-bin_greet
-	@${INSTALL_SCRIPT} ${WRKDIR}/kdm ${KDE4_PREFIX}/bin
+	${CHGRP} kmem ${PREFIX}/bin/ksysguardd && \
+		${CHMOD} g+s ${PREFIX}/bin/ksysguardd
+	@${LN} -sf ${PREFIX}/bin/startkde ${PREFIX}/bin/startkde4
+	@${MV} ${PREFIX}/bin/kdm ${PREFIX}/bin/kdm-bin
+	@${MV} ${PREFIX}/lib/kde4/libexec/kdm_config ${PREFIX}/lib/kde4/libexec/kdm-bin_config
+	@${MV} ${PREFIX}/lib/kde4/libexec/kdm_greet ${PREFIX}/lib/kde4/libexec/kdm-bin_greet
+	@${INSTALL_SCRIPT} ${WRKDIR}/kdm ${PREFIX}/bin
 
 .include <bsd.port.mk>

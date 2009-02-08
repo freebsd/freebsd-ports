@@ -27,7 +27,6 @@ share/locale/kk/LC_MESSAGES/katefiletemplates.mo
 share/locale/kk/LC_MESSAGES/katehelloworld.mo
 share/locale/kk/LC_MESSAGES/katehtmltools.mo
 share/locale/kk/LC_MESSAGES/katekjswrapper.mo
-share/locale/kk/LC_MESSAGES/katemake.mo
 share/locale/kk/LC_MESSAGES/kateopenheader.mo
 share/locale/kk/LC_MESSAGES/katepart4.mo
 share/locale/kk/LC_MESSAGES/katepybrowse.mo
@@ -41,10 +40,17 @@ share/locale/kk/LC_MESSAGES/kblankscrn.mo
 share/locale/kk/LC_MESSAGES/kcalc.mo
 share/locale/kk/LC_MESSAGES/kcertpart.mo
 share/locale/kk/LC_MESSAGES/kcharselect.mo
+share/locale/kk/LC_MESSAGES/kcm_autostart.mo
+share/locale/kk/LC_MESSAGES/kcm_desktopthemedetails.mo
+share/locale/kk/LC_MESSAGES/kcm_emoticons.mo
 share/locale/kk/LC_MESSAGES/kcm_krfb.mo
+share/locale/kk/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/kk/LC_MESSAGES/kcm_memory.mo
+share/locale/kk/LC_MESSAGES/kcm_partition.mo
+share/locale/kk/LC_MESSAGES/kcm_pci.mo
 share/locale/kk/LC_MESSAGES/kcm_phonon.mo
-share/locale/kk/LC_MESSAGES/kcm_phononxine.mo
 share/locale/kk/LC_MESSAGES/kcm_solid.mo
+share/locale/kk/LC_MESSAGES/kcm_standard_actions.mo
 share/locale/kk/LC_MESSAGES/kcmaccess.mo
 share/locale/kk/LC_MESSAGES/kcmaudiocd.mo
 share/locale/kk/LC_MESSAGES/kcmbackground.mo
@@ -67,6 +73,7 @@ share/locale/kk/LC_MESSAGES/kcmkabconfig.mo
 share/locale/kk/LC_MESSAGES/kcmkclock.mo
 share/locale/kk/LC_MESSAGES/kcmkded.mo
 share/locale/kk/LC_MESSAGES/kcmkdnssd.mo
+share/locale/kk/LC_MESSAGES/kcmkeyboard.mo
 share/locale/kk/LC_MESSAGES/kcmkeys.mo
 share/locale/kk/LC_MESSAGES/kcmkgamma.mo
 share/locale/kk/LC_MESSAGES/kcmkio.mo
@@ -83,14 +90,15 @@ share/locale/kk/LC_MESSAGES/kcmlilo.mo
 share/locale/kk/LC_MESSAGES/kcmlocale.mo
 share/locale/kk/LC_MESSAGES/kcmnic.mo
 share/locale/kk/LC_MESSAGES/kcmnotify.mo
+share/locale/kk/LC_MESSAGES/kcmopengl.mo
 share/locale/kk/LC_MESSAGES/kcmperformance.mo
 share/locale/kk/LC_MESSAGES/kcmsamba.mo
 share/locale/kk/LC_MESSAGES/kcmscreensaver.mo
 share/locale/kk/LC_MESSAGES/kcmshell.mo
 share/locale/kk/LC_MESSAGES/kcmsmartcard.mo
 share/locale/kk/LC_MESSAGES/kcmsmserver.mo
+share/locale/kk/LC_MESSAGES/kcmsolidproc.mo
 share/locale/kk/LC_MESSAGES/kcmstyle.mo
-share/locale/kk/LC_MESSAGES/kcmtaskbar.mo
 share/locale/kk/LC_MESSAGES/kcmusb.mo
 share/locale/kk/LC_MESSAGES/kcmview1394.mo
 share/locale/kk/LC_MESSAGES/kcmxinerama.mo
@@ -98,6 +106,7 @@ share/locale/kk/LC_MESSAGES/kcron.mo
 share/locale/kk/LC_MESSAGES/kdat.mo
 share/locale/kk/LC_MESSAGES/kde-menu.mo
 share/locale/kk/LC_MESSAGES/kdebugdialog.mo
+share/locale/kk/LC_MESSAGES/kded_phononserver.mo
 share/locale/kk/LC_MESSAGES/kdelibs4.mo
 share/locale/kk/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/kk/LC_MESSAGES/kdepasswd.mo
@@ -138,17 +147,21 @@ share/locale/kk/LC_MESSAGES/kfindpart.mo
 share/locale/kk/LC_MESSAGES/kfloppy.mo
 share/locale/kk/LC_MESSAGES/kfmclient.mo
 share/locale/kk/LC_MESSAGES/kfontinst.mo
+share/locale/kk/LC_MESSAGES/kgeography.mo
 share/locale/kk/LC_MESSAGES/kget.mo
 share/locale/kk/LC_MESSAGES/kgpg.mo
 share/locale/kk/LC_MESSAGES/kgreet_classic.mo
+share/locale/kk/LC_MESSAGES/kgreet_generic.mo
 share/locale/kk/LC_MESSAGES/kgreet_winbind.mo
 share/locale/kk/LC_MESSAGES/khelpcenter.mo
 share/locale/kk/LC_MESSAGES/khotkeys.mo
 share/locale/kk/LC_MESSAGES/khotnewstuff.mo
 share/locale/kk/LC_MESSAGES/khtmlkttsd.mo
+share/locale/kk/LC_MESSAGES/kiconfinder.mo
 share/locale/kk/LC_MESSAGES/kinetd.mo
 share/locale/kk/LC_MESSAGES/kinfocenter.mo
 share/locale/kk/LC_MESSAGES/kio4.mo
+share/locale/kk/LC_MESSAGES/kio_applications.mo
 share/locale/kk/LC_MESSAGES/kio_archive.mo
 share/locale/kk/LC_MESSAGES/kio_audiocd.mo
 share/locale/kk/LC_MESSAGES/kio_finger.mo
@@ -164,7 +177,6 @@ share/locale/kk/LC_MESSAGES/kio_nfs.mo
 share/locale/kk/LC_MESSAGES/kio_nntp.mo
 share/locale/kk/LC_MESSAGES/kio_pop3.mo
 share/locale/kk/LC_MESSAGES/kio_remote.mo
-share/locale/kk/LC_MESSAGES/kio_settings.mo
 share/locale/kk/LC_MESSAGES/kio_sftp.mo
 share/locale/kk/LC_MESSAGES/kio_sieve.mo
 share/locale/kk/LC_MESSAGES/kio_smb.mo
@@ -236,7 +248,6 @@ share/locale/kk/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/kk/LC_MESSAGES/kthememanager.mo
 share/locale/kk/LC_MESSAGES/ktimer.mo
 share/locale/kk/LC_MESSAGES/ktimetracker.mo
-share/locale/kk/LC_MESSAGES/ktnef.mo
 share/locale/kk/LC_MESSAGES/ktraderclient.mo
 share/locale/kk/LC_MESSAGES/kuiserver.mo
 share/locale/kk/LC_MESSAGES/kurifilter.mo
@@ -276,9 +287,12 @@ share/locale/kk/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/kk/LC_MESSAGES/plasma_applet_desktop.mo
 share/locale/kk/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/kk/LC_MESSAGES/plasma_applet_dig_clock.mo
-share/locale/kk/LC_MESSAGES/plasma_applet_knewsticker.mo
-share/locale/kk/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/kk/LC_MESSAGES/plasma_runner_locations.mo
+share/locale/kk/LC_MESSAGES/plasma_runner_nepomuksearchrunner.mo
+share/locale/kk/LC_MESSAGES/plasma_runner_recentdocuments.mo
+share/locale/kk/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/kk/LC_MESSAGES/plasmaengineexplorer.mo
+share/locale/kk/LC_MESSAGES/powerdevil.mo
 share/locale/kk/LC_MESSAGES/processcore.mo
 share/locale/kk/LC_MESSAGES/processui.mo
 share/locale/kk/LC_MESSAGES/solid-bluetooth.mo
@@ -293,5 +307,3 @@ share/locale/kk/LC_MESSAGES/systemsettings.mo
 share/locale/kk/LC_MESSAGES/timezones4.mo
 share/locale/kk/LC_MESSAGES/useraccount.mo
 share/locale/kk/entry.desktop
-@dirrm share/locale/kk/LC_MESSAGES
-@dirrm share/locale/kk

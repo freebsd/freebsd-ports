@@ -8,20 +8,13 @@
 
 PORTNAME=	kdebase-runtime
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
-
-LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb \
-		xcb.2:${PORTSDIR}/x11/libxcb \
-		xine.1:${PORTSDIR}/multimedia/libxine \
-		xklavier.12:${PORTSDIR}/x11/libxklavier
-RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
@@ -33,7 +26,18 @@ USE_GETTEXT=	yes
 
 MAN1=  kdesu.1
 
+OPTIONS=	PULSEAUDIO "Enable playback via PulseAudio soundserver" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PULSEAUDIO)
+CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=ON
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+.else
+CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=OFF
+.endif
+
 post-extract:
 	${MKDIR} ${WRKSRC}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,17 +1,18 @@
---- ../cmake/modules/KDE4Defaults.cmake.orig	2008-05-21 13:06:10.000000000 +0200
-+++ ../cmake/modules/KDE4Defaults.cmake	2008-05-27 18:51:10.000000000 +0200
-@@ -29,11 +29,11 @@
- 
+--- ../cmake/modules/KDE4Defaults.cmake.orgi	2009-01-22 23:26:08.000000000 +0100
++++ ../cmake/modules/KDE4Defaults.cmake	2009-01-22 23:27:02.000000000 +0100
+@@ -24,12 +24,12 @@
  # define the generic version of the libraries here
  # this makes it easy to advance it when the next KDE release comes
--set(GENERIC_LIB_VERSION "4.1.0")
+ # Use this version number for libraries which are at version n in KDE version n
+-set(GENERIC_LIB_VERSION "4.2.0")
 -set(GENERIC_LIB_SOVERSION "4")
-+set(GENERIC_LIB_VERSION "5.0.0")
++set(GENERIC_LIB_VERSION "5.0.1")
 +set(GENERIC_LIB_SOVERSION "5")
  
--set(KDE_NON_GENERIC_LIB_VERSION "5.1.0")
+ # Use this version number for libraries which are already at version n+1 in KDE version n
+-set(KDE_NON_GENERIC_LIB_VERSION "5.2.0")
 -set(KDE_NON_GENERIC_LIB_SOVERSION "5")
-+set(KDE_NON_GENERIC_LIB_VERSION "7.0.0")
++set(KDE_NON_GENERIC_LIB_VERSION "7.0.1")
 +set(KDE_NON_GENERIC_LIB_SOVERSION "7")
  
  # windows does not support LD_LIBRARY_PATH or similar

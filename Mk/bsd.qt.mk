@@ -93,7 +93,7 @@ QT4_VERSION?=		4.4.3
 _QT_COMPONENTS_ALL=	accessible assistant assistant-adp assistantclient \
 			clucene codecs-cn codecs-jp codecs-kr codecs-tw corelib \
 			dbus designer doc help help-tools gui iconengines imageformats \
-			inputmethods linguist makeqpf moc network opengl \
+			inputmethods linguist l10n makeqpf moc network opengl \
 			pixeltool porting  phonon phonon-gst qdbusviewer \
 			qmake qt3support qtconfig qtestlib qvfb rcc script \
 			sql svg uic uic3 webkit xml xmlpatterns xmlpatterns-tool
@@ -119,6 +119,7 @@ iconengines_DEPENDS=	graphics/qt4-iconengines
 imageformats_DEPENDS=	graphics/qt4-imageformats
 inputmethods_DEPENDS=	x11/qt4-inputmethods
 linguist_DEPENDS=	devel/qt4-linguist
+l10n_DEPENDS=		misc/qt4-l10n
 makeqpf_DEPENDS=	devel/qt4-makeqpf
 moc_DEPENDS=		devel/qt4-moc
 network_DEPENDS=	net/qt4-network
@@ -165,6 +166,7 @@ iconengines_build_DEPENDS=	${iconengines_DEPENDS}
 imageformats_build_DEPENDS=	${imageformats_DEPENDS}
 inputmethods_build_DEPENDS=	${inputmethods_DEPENDS}
 linguist_build_DEPENDS=		${linguist_DEPENDS}
+l10n_build_DEPENDS=		${l10n_DEPENDS}
 makeqpf_build_DEPENDS=		${makeqpf_DEPENDS}
 moc_build_DEPENDS=		${moc_DEPENDS}
 network_build_DEPENDS=		${network_DEPENDS}
@@ -211,6 +213,7 @@ iconengines_run_DEPENDS=	${iconengines_DEPENDS}
 imageformats_run_DEPENDS=	${imageformats_DEPENDS}
 inputmethods_run_DEPENDS=	${inputmethods_DEPENDS}
 linguist_run_DEPENDS=		${linguist_DEPENDS}
+l10n_run_DEPENDS=		${l10n_DEPENDS}
 makeqpf_run_DEPENDS=		${makeqpf_DEPENDS}
 moc_run_DEPENDS=		${moc_DEPENDS}
 network_run_DEPENDS=		${network_DEPENDS}
@@ -262,9 +265,6 @@ RUN_DEPENDS+=	${${ext}_QT4_PREFIX}${${ext}_NAME}>=${${ext}_QT4_VERSION}:${PORTSD
 IGNORE= cannot install: unknown Qt4 component -- ${ext}
 .endif
 .endfor
-.else
-BUILD_DEPENDS+=		qt4>=${QT4_VERSION}:${PORTSDIR}/devel/qt4
-RUN_DEPENDS+=		qt4>=${QT4_VERSION}:${PORTSDIR}/devel/qt4
 .endif
 
 .endif

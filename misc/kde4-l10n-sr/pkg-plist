@@ -1,14 +1,6 @@
-share/apps/desktoptheme/default/widgets/l10n/sr/branding.svg
-share/apps/desktoptheme/default/widgets/l10n/sr@latin/branding.svg
-share/apps/desktoptheme/heron/widgets/l10n/sr/picture-frame-default.svg
-share/apps/desktoptheme/slim-glow/widgets/l10n/sr/notes.svg
-share/apps/desktoptheme/slim-glow/widgets/l10n/sr/picture-frame-default.svg
-share/apps/desktoptheme/slim-glow/widgets/l10n/sr@latin/notes.svg
-share/apps/katepart/syntax/logohighlightstyle.sr.xml
-share/apps/katepart/syntax/logohighlightstyle.sr@latin.xml
+share/apps/desktoptheme/default/widgets/l10n/sr/branding.svgz
+share/apps/desktoptheme/default/widgets/l10n/sr@latin/branding.svgz
 share/apps/khangman/sr@latin.txt
-share/apps/ksplash/Themes/Default/1600x1200/l10n/sr/rectangle.png
-share/apps/ksplash/Themes/Default/1600x1200/l10n/sr@latin/rectangle.png
 share/apps/ktuberling/sounds/sr.soundtheme
 share/apps/ktuberling/sounds/sr/brkovi.wav
 share/apps/ktuberling/sounds/sr/cigara.wav
@@ -26,16 +18,6 @@ share/apps/ktuberling/sounds/sr/usta.wav
 share/apps/ktuberling/sounds/sr/uvo.wav
 share/apps/ktuberling/sounds/sr/znacka.wav
 share/apps/ktuberling/sounds/sr@latin.soundtheme
-share/apps/kturtle/data/logokeywords.sr.xml
-share/apps/kturtle/data/logokeywords.sr@latin.xml
-share/apps/kturtle/examples/sr/curly.logo
-share/apps/kturtle/examples/sr/example1.logo
-share/apps/kturtle/examples/sr/square.logo
-share/apps/kturtle/examples/sr/triangle.logo
-share/apps/kturtle/examples/sr@latin/curly.logo
-share/apps/kturtle/examples/sr@latin/example1.logo
-share/apps/kturtle/examples/sr@latin/square.logo
-share/apps/kturtle/examples/sr@latin/triangle.logo
 share/apps/kvtml/sr/animals.kvtml
 share/apps/kvtml/sr/easy.kvtml
 share/apps/kvtml/sr/hard.kvtml
@@ -55,6 +37,57 @@ share/doc/HTML/sr/khelpcenter/help.docbook
 share/doc/HTML/sr/khelpcenter/index.cache.bz2
 share/doc/HTML/sr/khelpcenter/index.docbook
 share/doc/HTML/sr/khelpcenter/support.docbook
+share/doc/HTML/sr/khelpcenter/userguide/accessibility.docbook
+share/doc/HTML/sr/khelpcenter/userguide/base-kde-applications.docbook
+share/doc/HTML/sr/khelpcenter/userguide/browser-fine-tuning.docbook
+share/doc/HTML/sr/khelpcenter/userguide/burning-cds.docbook
+share/doc/HTML/sr/khelpcenter/userguide/common
+share/doc/HTML/sr/khelpcenter/userguide/control-center.docbook
+share/doc/HTML/sr/khelpcenter/userguide/creating-graphics.docbook
+share/doc/HTML/sr/khelpcenter/userguide/credits-and-license.docbook
+share/doc/HTML/sr/khelpcenter/userguide/customizing-desktop.docbook
+share/doc/HTML/sr/khelpcenter/userguide/email.docbook
+share/doc/HTML/sr/khelpcenter/userguide/extragear-applications.docbook
+share/doc/HTML/sr/khelpcenter/userguide/file-sharing.docbook
+share/doc/HTML/sr/khelpcenter/userguide/font-installation.docbook
+share/doc/HTML/sr/khelpcenter/userguide/getting-help.docbook
+share/doc/HTML/sr/khelpcenter/userguide/glossary.docbook
+share/doc/HTML/sr/khelpcenter/userguide/groupware-kontact.docbook
+share/doc/HTML/sr/khelpcenter/userguide/index.cache.bz2
+share/doc/HTML/sr/khelpcenter/userguide/index.docbook
+share/doc/HTML/sr/khelpcenter/userguide/internet-shortcuts.docbook
+share/doc/HTML/sr/khelpcenter/userguide/kde-as-root.docbook
+share/doc/HTML/sr/khelpcenter/userguide/kde-edutainment.docbook
+share/doc/HTML/sr/khelpcenter/userguide/kde-for-admins.docbook
+share/doc/HTML/sr/khelpcenter/userguide/kde-office.docbook
+share/doc/HTML/sr/khelpcenter/userguide/konsole-intro.docbook
+share/doc/HTML/sr/khelpcenter/userguide/messaging-intro.docbook
+share/doc/HTML/sr/khelpcenter/userguide/migrator-applications.docbook
+share/doc/HTML/sr/khelpcenter/userguide/migrator-dictionary.docbook
+share/doc/HTML/sr/khelpcenter/userguide/net-connection-setup.docbook
+share/doc/HTML/sr/khelpcenter/userguide/networking-with-windows.docbook
+share/doc/HTML/sr/khelpcenter/userguide/panel-and-desktop.docbook
+share/doc/HTML/sr/khelpcenter/userguide/pdf-files.docbook
+share/doc/HTML/sr/khelpcenter/userguide/playing-audiocds.docbook
+share/doc/HTML/sr/khelpcenter/userguide/playing-movies.docbook
+share/doc/HTML/sr/khelpcenter/userguide/playing-music.docbook
+share/doc/HTML/sr/khelpcenter/userguide/printer-setup.docbook
+share/doc/HTML/sr/khelpcenter/userguide/printing-from-apps.docbook
+share/doc/HTML/sr/khelpcenter/userguide/programs-and-documents.docbook
+share/doc/HTML/sr/khelpcenter/userguide/programs-controlling.docbook
+share/doc/HTML/sr/khelpcenter/userguide/removable-disks.docbook
+share/doc/HTML/sr/khelpcenter/userguide/screen-captures.docbook
+share/doc/HTML/sr/khelpcenter/userguide/shared-sessions.docbook
+share/doc/HTML/sr/khelpcenter/userguide/standard-menu-entries.docbook
+share/doc/HTML/sr/khelpcenter/userguide/switching-sessions.docbook
+share/doc/HTML/sr/khelpcenter/userguide/the-filemanager.docbook
+share/doc/HTML/sr/khelpcenter/userguide/troubleshooting-network-x.docbook
+share/doc/HTML/sr/khelpcenter/userguide/troubleshooting-no-open.docbook
+share/doc/HTML/sr/khelpcenter/userguide/under-the-hood.docbook
+share/doc/HTML/sr/khelpcenter/userguide/usenet.docbook
+share/doc/HTML/sr/khelpcenter/userguide/where-next.docbook
+share/doc/HTML/sr/khelpcenter/userguide/windows-how-to.docbook
+share/doc/HTML/sr/khelpcenter/userguide/your-kde-account.docbook
 share/doc/HTML/sr/khelpcenter/welcome.docbook
 share/doc/HTML/sr/khelpcenter/whatiskde.docbook
 share/doc/HTML/sr/lokalize/common
@@ -72,6 +105,57 @@ share/doc/HTML/sr@latin/khelpcenter/help.docbook
 share/doc/HTML/sr@latin/khelpcenter/index.cache.bz2
 share/doc/HTML/sr@latin/khelpcenter/index.docbook
 share/doc/HTML/sr@latin/khelpcenter/support.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/accessibility.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/base-kde-applications.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/browser-fine-tuning.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/burning-cds.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/common
+share/doc/HTML/sr@latin/khelpcenter/userguide/control-center.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/creating-graphics.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/credits-and-license.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/customizing-desktop.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/email.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/extragear-applications.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/file-sharing.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/font-installation.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/getting-help.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/glossary.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/groupware-kontact.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/index.cache.bz2
+share/doc/HTML/sr@latin/khelpcenter/userguide/index.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/internet-shortcuts.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/kde-as-root.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/kde-edutainment.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/kde-for-admins.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/kde-office.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/konsole-intro.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/messaging-intro.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/migrator-applications.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/migrator-dictionary.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/net-connection-setup.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/networking-with-windows.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/panel-and-desktop.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/pdf-files.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/playing-audiocds.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/playing-movies.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/playing-music.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/printer-setup.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/printing-from-apps.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/programs-and-documents.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/programs-controlling.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/removable-disks.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/screen-captures.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/shared-sessions.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/standard-menu-entries.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/switching-sessions.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/the-filemanager.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/troubleshooting-network-x.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/troubleshooting-no-open.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/under-the-hood.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/usenet.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/where-next.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/windows-how-to.docbook
+share/doc/HTML/sr@latin/khelpcenter/userguide/your-kde-account.docbook
 share/doc/HTML/sr@latin/khelpcenter/welcome.docbook
 share/doc/HTML/sr@latin/khelpcenter/whatiskde.docbook
 share/doc/HTML/sr@latin/lokalize/common
@@ -142,7 +226,9 @@ share/locale/sr/LC_MESSAGES/kabc_net.mo
 share/locale/sr/LC_MESSAGES/kabcformat_binary.mo
 share/locale/sr/LC_MESSAGES/kaccess.mo
 share/locale/sr/LC_MESSAGES/kappfinder.mo
+share/locale/sr/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/sr/LC_MESSAGES/kate.mo
+share/locale/sr/LC_MESSAGES/katebuild-plugin.mo
 share/locale/sr/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/sr/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/sr/LC_MESSAGES/katefiletemplates.mo
@@ -153,7 +239,6 @@ share/locale/sr/LC_MESSAGES/kateinsertcommand.mo
 share/locale/sr/LC_MESSAGES/katekjswrapper.mo
 share/locale/sr/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/sr/LC_MESSAGES/katemailfilesplugin.mo
-share/locale/sr/LC_MESSAGES/katemake.mo
 share/locale/sr/LC_MESSAGES/kateopenheader.mo
 share/locale/sr/LC_MESSAGES/katepart4.mo
 share/locale/sr/LC_MESSAGES/katepybrowse.mo
@@ -167,6 +252,7 @@ share/locale/sr/LC_MESSAGES/katexmltools.mo
 share/locale/sr/LC_MESSAGES/kblankscrn.mo
 share/locale/sr/LC_MESSAGES/kcertpart.mo
 share/locale/sr/LC_MESSAGES/kcm_autostart.mo
+share/locale/sr/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/sr/LC_MESSAGES/kcm_emoticons.mo
 share/locale/sr/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/sr/LC_MESSAGES/kcm_memory.mo
@@ -175,6 +261,7 @@ share/locale/sr/LC_MESSAGES/kcm_pci.mo
 share/locale/sr/LC_MESSAGES/kcm_phonon.mo
 share/locale/sr/LC_MESSAGES/kcm_phononxine.mo
 share/locale/sr/LC_MESSAGES/kcm_solid.mo
+share/locale/sr/LC_MESSAGES/kcm_standard_actions.mo
 share/locale/sr/LC_MESSAGES/kcmaccess.mo
 share/locale/sr/LC_MESSAGES/kcmaudiocd.mo
 share/locale/sr/LC_MESSAGES/kcmbackground.mo
@@ -219,12 +306,13 @@ share/locale/sr/LC_MESSAGES/kcmsmartcard.mo
 share/locale/sr/LC_MESSAGES/kcmsmserver.mo
 share/locale/sr/LC_MESSAGES/kcmsolidproc.mo
 share/locale/sr/LC_MESSAGES/kcmstyle.mo
-share/locale/sr/LC_MESSAGES/kcmtaskbar.mo
 share/locale/sr/LC_MESSAGES/kcmusb.mo
 share/locale/sr/LC_MESSAGES/kcmview1394.mo
 share/locale/sr/LC_MESSAGES/kcmxinerama.mo
 share/locale/sr/LC_MESSAGES/kde-menu.mo
+share/locale/sr/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/sr/LC_MESSAGES/kdebugdialog.mo
+share/locale/sr/LC_MESSAGES/kded_phononserver.mo
 share/locale/sr/LC_MESSAGES/kdelibs4.mo
 share/locale/sr/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/sr/LC_MESSAGES/kdepasswd.mo
@@ -248,6 +336,7 @@ share/locale/sr/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/sr/LC_MESSAGES/kfindpart.mo
 share/locale/sr/LC_MESSAGES/kfmclient.mo
 share/locale/sr/LC_MESSAGES/kfontinst.mo
+share/locale/sr/LC_MESSAGES/kget.mo
 share/locale/sr/LC_MESSAGES/kgreet_classic.mo
 share/locale/sr/LC_MESSAGES/kgreet_generic.mo
 share/locale/sr/LC_MESSAGES/kgreet_winbind.mo
@@ -258,8 +347,10 @@ share/locale/sr/LC_MESSAGES/khtmlkttsd.mo
 share/locale/sr/LC_MESSAGES/kiconfinder.mo
 share/locale/sr/LC_MESSAGES/kinfocenter.mo
 share/locale/sr/LC_MESSAGES/kio4.mo
+share/locale/sr/LC_MESSAGES/kio_applications.mo
 share/locale/sr/LC_MESSAGES/kio_archive.mo
 share/locale/sr/LC_MESSAGES/kio_audiocd.mo
+share/locale/sr/LC_MESSAGES/kio_bookmarks.mo
 share/locale/sr/LC_MESSAGES/kio_finger.mo
 share/locale/sr/LC_MESSAGES/kio_fish.mo
 share/locale/sr/LC_MESSAGES/kio_floppy.mo
@@ -268,11 +359,11 @@ share/locale/sr/LC_MESSAGES/kio_imap4.mo
 share/locale/sr/LC_MESSAGES/kio_ldap.mo
 share/locale/sr/LC_MESSAGES/kio_man.mo
 share/locale/sr/LC_MESSAGES/kio_mbox.mo
+share/locale/sr/LC_MESSAGES/kio_nepomuksearch.mo
 share/locale/sr/LC_MESSAGES/kio_nfs.mo
 share/locale/sr/LC_MESSAGES/kio_nntp.mo
 share/locale/sr/LC_MESSAGES/kio_pop3.mo
 share/locale/sr/LC_MESSAGES/kio_remote.mo
-share/locale/sr/LC_MESSAGES/kio_settings.mo
 share/locale/sr/LC_MESSAGES/kio_sftp.mo
 share/locale/sr/LC_MESSAGES/kio_sieve.mo
 share/locale/sr/LC_MESSAGES/kio_smb.mo
@@ -297,15 +388,6 @@ share/locale/sr/LC_MESSAGES/krandr.mo
 share/locale/sr/LC_MESSAGES/krdb.mo
 share/locale/sr/LC_MESSAGES/kreadconfig.mo
 share/locale/sr/LC_MESSAGES/krunner.mo
-share/locale/sr/LC_MESSAGES/krunner_bookmarksrunner.mo
-share/locale/sr/LC_MESSAGES/krunner_calculatorrunner.mo
-share/locale/sr/LC_MESSAGES/krunner_contacts.mo
-share/locale/sr/LC_MESSAGES/krunner_converterrunner.mo
-share/locale/sr/LC_MESSAGES/krunner_locationsrunner.mo
-share/locale/sr/LC_MESSAGES/krunner_sessions.mo
-share/locale/sr/LC_MESSAGES/krunner_shellrunner.mo
-share/locale/sr/LC_MESSAGES/krunner_webshortcutsrunner.mo
-share/locale/sr/LC_MESSAGES/krunner_xesam.mo
 share/locale/sr/LC_MESSAGES/kscd.mo
 share/locale/sr/LC_MESSAGES/kscreensaver.mo
 share/locale/sr/LC_MESSAGES/kshorturifilter.mo
@@ -316,6 +398,7 @@ share/locale/sr/LC_MESSAGES/kstyle_config.mo
 share/locale/sr/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/sr/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/sr/LC_MESSAGES/ksysguard.mo
+share/locale/sr/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/sr/LC_MESSAGES/ksystraycmd.mo
 share/locale/sr/LC_MESSAGES/kteatime.mo
 share/locale/sr/LC_MESSAGES/ktexteditor_plugins.mo
@@ -324,6 +407,7 @@ share/locale/sr/LC_MESSAGES/ktraderclient.mo
 share/locale/sr/LC_MESSAGES/ktux.mo
 share/locale/sr/LC_MESSAGES/kuiserver.mo
 share/locale/sr/LC_MESSAGES/kurifilter.mo
+share/locale/sr/LC_MESSAGES/kwalletd.mo
 share/locale/sr/LC_MESSAGES/kweather.mo
 share/locale/sr/LC_MESSAGES/kwin.mo
 share/locale/sr/LC_MESSAGES/kwin_art_clients.mo
@@ -354,17 +438,24 @@ share/locale/sr/LC_MESSAGES/libkxmlrpcclient.mo
 share/locale/sr/LC_MESSAGES/libmailtransport.mo
 share/locale/sr/LC_MESSAGES/libphonon.mo
 share/locale/sr/LC_MESSAGES/libplasma.mo
+share/locale/sr/LC_MESSAGES/libplasmaclock.mo
 share/locale/sr/LC_MESSAGES/libtaskmanager.mo
 share/locale/sr/LC_MESSAGES/lokalize.mo
 share/locale/sr/LC_MESSAGES/nepomuk.mo
+share/locale/sr/LC_MESSAGES/nepomuksearch.mo
 share/locale/sr/LC_MESSAGES/nsplugin.mo
 share/locale/sr/LC_MESSAGES/phonon-xine.mo
 share/locale/sr/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/sr/LC_MESSAGES/phonon_kde.mo
+share/locale/sr/LC_MESSAGES/plasma-overlay.mo
+share/locale/sr/LC_MESSAGES/plasma-shells-common.mo
 share/locale/sr/LC_MESSAGES/plasma.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_battery.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_bball.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_binaryclock.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_bluemarble.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_calculator.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_charselect.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_desktop.mo
@@ -376,22 +467,57 @@ share/locale/sr/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_katesession.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_kolourpicker.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_launcher.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_leavenote.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_life.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_luna.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_news.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_notes.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_panel.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_paste.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_pastebin.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_previewer.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_quicklaunch.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_rssnow.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_showdashboard.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_showdesktop.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_system-monitor.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_systemtray.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_tasks.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_timer.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_twitter.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_weatherstation.mo
+share/locale/sr/LC_MESSAGES/plasma_applet_webbrowser.mo
+share/locale/sr/LC_MESSAGES/plasma_appletscript_qedje.mo
 share/locale/sr/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
-share/locale/sr/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/sr/LC_MESSAGES/plasma_containment_saverdesktop.mo
+share/locale/sr/LC_MESSAGES/plasma_engine_applicationjobs.mo
+share/locale/sr/LC_MESSAGES/plasma_engine_rss.mo
+share/locale/sr/LC_MESSAGES/plasma_runner_contacts.mo
+share/locale/sr/LC_MESSAGES/plasma_runner_converterrunner.mo
+share/locale/sr/LC_MESSAGES/plasma_runner_katesessions.mo
+share/locale/sr/LC_MESSAGES/plasma_runner_locations.mo
+share/locale/sr/LC_MESSAGES/plasma_runner_nepomuksearchrunner.mo
+share/locale/sr/LC_MESSAGES/plasma_runner_powerdevil.mo
+share/locale/sr/LC_MESSAGES/plasma_runner_recentdocuments.mo
+share/locale/sr/LC_MESSAGES/plasma_runner_sessions.mo
+share/locale/sr/LC_MESSAGES/plasma_runner_shell.mo
+share/locale/sr/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
+share/locale/sr/LC_MESSAGES/plasma_runner_webshortcuts.mo
+share/locale/sr/LC_MESSAGES/plasma_scriptengine_qscript.mo
+share/locale/sr/LC_MESSAGES/plasma_wallpaper_color.mo
+share/locale/sr/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/sr/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/sr/LC_MESSAGES/plasmapkg.mo
 share/locale/sr/LC_MESSAGES/plasmoidviewer.mo
+share/locale/sr/LC_MESSAGES/powerdevil.mo
 share/locale/sr/LC_MESSAGES/processcore.mo
 share/locale/sr/LC_MESSAGES/processui.mo
 share/locale/sr/LC_MESSAGES/solid-bluetooth.mo
@@ -405,6 +531,7 @@ share/locale/sr/LC_MESSAGES/timezones4.mo
 share/locale/sr/LC_MESSAGES/useraccount.mo
 share/locale/sr/LC_SCRIPTS/kdelibs4/apps.pmap
 share/locale/sr/LC_SCRIPTS/kdelibs4/apps.pmapc
+share/locale/sr/LC_SCRIPTS/kdelibs4/calendar.pmap
 share/locale/sr/LC_SCRIPTS/kdelibs4/contributors.pmap
 share/locale/sr/LC_SCRIPTS/kdelibs4/countries.pmap
 share/locale/sr/LC_SCRIPTS/kdelibs4/fonts.pmap
@@ -493,46 +620,22 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/icons/hicolor/16x16/actions/l10n
 @dirrm share/doc/HTML/sr@latin/sonnet
 @dirrm share/doc/HTML/sr@latin/lokalize
+@dirrm share/doc/HTML/sr@latin/khelpcenter/userguide
 @dirrm share/doc/HTML/sr@latin/khelpcenter
 @dirrm share/doc/HTML/sr@latin/dolphin
 @dirrm share/doc/HTML/sr@latin
 @dirrm share/doc/HTML/sr/sonnet
 @dirrm share/doc/HTML/sr/lokalize
+@dirrm share/doc/HTML/sr/khelpcenter/userguide
 @dirrm share/doc/HTML/sr/khelpcenter
 @dirrm share/doc/HTML/sr/dolphin
 @dirrm share/apps/kvtml/sr@latin
 @dirrm share/apps/kvtml/sr
 @dirrm share/apps/kvtml
-@dirrm share/apps/kturtle/examples/sr@latin
-@dirrm share/apps/kturtle/examples/sr
-@dirrm share/apps/kturtle/examples
-@dirrm share/apps/kturtle/data
-@dirrm share/apps/kturtle
 @dirrm share/apps/ktuberling/sounds/sr
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
-@dirrm share/apps/ksplash/Themes/Default/1600x1200/l10n/sr@latin
-@dirrm share/apps/ksplash/Themes/Default/1600x1200/l10n/sr
-@dirrm share/apps/ksplash/Themes/Default/1600x1200/l10n
-@dirrm share/apps/ksplash/Themes/Default/1600x1200
-@dirrm share/apps/ksplash/Themes/Default
-@dirrm share/apps/ksplash/Themes
-@dirrm share/apps/ksplash
 @dirrm share/apps/khangman
-@dirrm share/apps/katepart/syntax
-@dirrm share/apps/katepart
-@dirrm share/apps/desktoptheme/slim-glow/widgets/l10n/sr@latin
-@dirrm share/apps/desktoptheme/slim-glow/widgets/l10n/sr
-@dirrm share/apps/desktoptheme/slim-glow/widgets/l10n
-@dirrm share/apps/desktoptheme/slim-glow/widgets
-@dirrm share/apps/desktoptheme/slim-glow
-@dirrm share/apps/desktoptheme/heron/widgets/l10n/sr
-@dirrm share/apps/desktoptheme/heron/widgets/l10n
-@dirrm share/apps/desktoptheme/heron/widgets
-@dirrm share/apps/desktoptheme/heron
 @dirrm share/apps/desktoptheme/default/widgets/l10n/sr@latin
 @dirrm share/apps/desktoptheme/default/widgets/l10n/sr
 @dirrm share/apps/desktoptheme/default/widgets/l10n
-@dirrm share/apps/desktoptheme/default/widgets
-@dirrm share/apps/desktoptheme/default
-@dirrm share/apps/desktoptheme

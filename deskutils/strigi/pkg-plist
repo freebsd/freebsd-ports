@@ -23,6 +23,7 @@ include/strigi/fileinputstream.h
 include/strigi/indexeddocument.h
 include/strigi/indexmanager.h
 include/strigi/indexplugin.h
+include/strigi/indexpluginloader.h
 include/strigi/indexreader.h
 include/strigi/indexwriter.h
 include/strigi/inputstream.h
@@ -54,20 +55,21 @@ include/strigi/textutils.h
 include/strigi/variant.h
 lib/libsearchclient.so
 lib/libsearchclient.so.0
-lib/libsearchclient.so.0.5.11
+lib/libsearchclient.so.0.6.3
 lib/libstreamanalyzer.so
 lib/libstreamanalyzer.so.0
-lib/libstreamanalyzer.so.0.5.11
+lib/libstreamanalyzer.so.0.6.3
 lib/libstreams.so
 lib/libstreams.so.0
-lib/libstreams.so.0.5.11
+lib/libstreams.so.0.6.3
 lib/libstrigihtmlgui.so
 lib/libstrigihtmlgui.so.0
-lib/libstrigihtmlgui.so.0.5.11
+lib/libstrigihtmlgui.so.0.6.3
 lib/libstrigiqtdbusclient.so
 lib/libstrigiqtdbusclient.so.0
-lib/libstrigiqtdbusclient.so.0.5.11
+lib/libstrigiqtdbusclient.so.0.6.3
 lib/strigi/StrigiConfig.cmake
+lib/strigi/strigiea_jpeg.so
 lib/strigi/strigiindex_clucene.so
 lib/strigi/strigila_cpp.so
 lib/strigi/strigila_deb.so
@@ -91,7 +93,7 @@ share/dbus-1/services/vandenoever.strigi.service
 %%DATADIR%%/fieldproperties/strigi.rdfs
 %%DATADIR%%/fieldproperties/xesam-convenience.rdfs
 %%DATADIR%%/fieldproperties/xesam.rdfs
-@dirrm %%DATADIR%%/fieldproperties
+@dirrmtry %%DATADIR%%/fieldproperties
 @dirrmtry %%DATADIR%%
 @dirrmtry lib/strigi
 @dirrmtry include/strigi/qtdbus

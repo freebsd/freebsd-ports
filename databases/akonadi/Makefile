@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	akonadi
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	databases kde ipv6
 MASTER_SITES=	http://akonadi.omat.nl/
 DIST_SUBDIR=	KDE
@@ -14,16 +13,17 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Storage server for kdepim
 
+LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt4-mysql-plugin \
 		${LOCALBASE}/bin/mysqld_safe:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 RUN_DEPENDS+=	update-mime-database:${PORTSDIR}/misc/shared-mime-info \
-		${LOCALBASE}/bin/mysqld_safe:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
+		${LOCALBASE}/bin/mysqld_safe:${PORTSDIR}/databases/mysql${MYSQL_VER}-server \
+		${QT_PREFIX}/lib/qt4/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt4-mysql-plugin
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
 USE_XORG=	x11
-QT_COMPONENTS=	corelib network qtestlib dbus \
+QT_COMPONENTS=	corelib network qtestlib dbus sql \
 		qmake_build moc_build rcc_build uic_build
 USE_MYSQL=	yes
 USE_KDE4=	kdeprefix kdehier automoc4 sharedmime
@@ -34,9 +34,6 @@ post-extract:
 	${MKDIR} ${WRKSRC}
 
 post-patch:
-#fix finding automoc when PREFIX is not matched KDE4_PREFIX
-	${REINPLACE_CMD} -e 's|NO_DEFAULT_PATH|${KDE4_PREFIX} NO_DEFAULT_PATH|' \
-		${WRKSRC}/../cmake/modules/FindAutomoc4.cmake
 	${REINPLACE_CMD} -e '/akonadi.pc/s|pkgconfig|../libdata/pkgconfig|' \
 		${PATCH_WRKSRC}/CMakeLists.txt
 	${CP} ${PATCH_WRKSRC}/server/src/storage/entities-header.xsl \
@@ -52,7 +49,7 @@ post-patch:
 		${REINPLACE_CMD} -e 's|include "entities.h"|include <entitiesKDE4.h>|g' \
 				-e 's|include <entities.h>|include <entitiesKDE4.h>|g'
 .endfor
-	${REINPLACE_CMD} -e 's| MYSQLD_EXECUTABLE mysqld | MYSQLD_EXECUTABLE mysqld_safe /usr/local/bin |g' \
+	${REINPLACE_CMD} -e '/find_program/s|mysqld|mysqld_safe ${LOCALBASE}/bin|g' \
 		${PATCH_WRKSRC}/server/CMakeLists.txt
 	#prevent updating mime during build
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/d; /SharedMimeInfo/d' \

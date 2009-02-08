@@ -24,6 +24,6 @@ USE_CMAKE=	yes
 USE_GETTEXT=	yes
 
 APP_VER=	1.1.3
-EXTRA_VER=	4.1.2
+EXTRA_VER=	4.2.0
 
 .include <bsd.port.mk>

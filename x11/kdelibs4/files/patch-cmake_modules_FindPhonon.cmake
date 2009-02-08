@@ -1,0 +1,16 @@
+--- ../cmake/modules/FindPhonon.cmake.orig	2008-12-04 11:35:54.000000000 +0300
++++ ../cmake/modules/FindPhonon.cmake	2008-12-15 23:16:39.000000000 +0300
+@@ -27,11 +27,11 @@
+    endif(PHONON_INCLUDE_DIR AND PHONON_LIBRARY)
+ 
+    # As discussed on kde-buildsystem: first look at CMAKE_PREFIX_PATH, then at the suggested PATHS (kde4 install dir)
+-   find_library(PHONON_LIBRARY NAMES phonon PATHS ${KDE4_LIB_INSTALL_DIR} ${QT_LIBRARY_DIR} NO_SYSTEM_ENVIRONMENT_PATH NO_CMAKE_SYSTEM_PATH)
++   find_library(PHONON_LIBRARY NAMES phonon PATHS ${KDE4_PREFIX}/lib ${KDE4_LIB_INSTALL_DIR} ${QT_LIBRARY_DIR} NO_SYSTEM_ENVIRONMENT_PATH NO_CMAKE_SYSTEM_PATH)
+    # then at the default system locations (CMAKE_SYSTEM_PREFIX_PATH, i.e. /usr etc.)
+    find_library(PHONON_LIBRARY NAMES phonon)
+ 
+-   find_path(PHONON_INCLUDE_DIR NAMES phonon/phonon_export.h PATHS ${KDE4_INCLUDE_INSTALL_DIR} ${QT_INCLUDE_DIR} ${INCLUDE_INSTALL_DIR} NO_SYSTEM_ENVIRONMENT_PATH NO_CMAKE_SYSTEM_PATH)
++   find_path(PHONON_INCLUDE_DIR NAMES phonon/phonon_export.h PATHS ${KDE4_PREFIX}/include ${KDE4_INCLUDE_INSTALL_DIR} ${QT_INCLUDE_DIR} ${INCLUDE_INSTALL_DIR} NO_SYSTEM_ENVIRONMENT_PATH NO_CMAKE_SYSTEM_PATH)
+    find_path(PHONON_INCLUDE_DIR NAMES phonon/phonon_export.h)
+ 
+    if(PHONON_INCLUDE_DIR AND PHONON_LIBRARY)

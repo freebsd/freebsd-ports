@@ -19,7 +19,6 @@ share/locale/csb/LC_MESSAGES/kcertpart.mo
 share/locale/csb/LC_MESSAGES/kcm_emoticons.mo
 share/locale/csb/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/csb/LC_MESSAGES/kcm_phonon.mo
-share/locale/csb/LC_MESSAGES/kcm_phononxine.mo
 share/locale/csb/LC_MESSAGES/kcm_solid.mo
 share/locale/csb/LC_MESSAGES/kcmaccess.mo
 share/locale/csb/LC_MESSAGES/kcmbackground.mo
@@ -47,7 +46,6 @@ share/locale/csb/LC_MESSAGES/kcmshell.mo
 share/locale/csb/LC_MESSAGES/kcmsmartcard.mo
 share/locale/csb/LC_MESSAGES/kcmsmserver.mo
 share/locale/csb/LC_MESSAGES/kcmstyle.mo
-share/locale/csb/LC_MESSAGES/kcmtaskbar.mo
 share/locale/csb/LC_MESSAGES/kcmusb.mo
 share/locale/csb/LC_MESSAGES/kcmview1394.mo
 share/locale/csb/LC_MESSAGES/kcmxinerama.mo
@@ -83,6 +81,7 @@ share/locale/csb/LC_MESSAGES/khtmlkttsd.mo
 share/locale/csb/LC_MESSAGES/kiconfinder.mo
 share/locale/csb/LC_MESSAGES/kinfocenter.mo
 share/locale/csb/LC_MESSAGES/kio4.mo
+share/locale/csb/LC_MESSAGES/kio_applications.mo
 share/locale/csb/LC_MESSAGES/kio_archive.mo
 share/locale/csb/LC_MESSAGES/kio_audiocd.mo
 share/locale/csb/LC_MESSAGES/kio_finger.mo
@@ -95,7 +94,6 @@ share/locale/csb/LC_MESSAGES/kio_nfs.mo
 share/locale/csb/LC_MESSAGES/kio_nntp.mo
 share/locale/csb/LC_MESSAGES/kio_pop3.mo
 share/locale/csb/LC_MESSAGES/kio_remote.mo
-share/locale/csb/LC_MESSAGES/kio_settings.mo
 share/locale/csb/LC_MESSAGES/kio_sftp.mo
 share/locale/csb/LC_MESSAGES/kio_smb.mo
 share/locale/csb/LC_MESSAGES/kio_smtp.mo
@@ -116,18 +114,11 @@ share/locale/csb/LC_MESSAGES/konqueror.mo
 share/locale/csb/LC_MESSAGES/konsole.mo
 share/locale/csb/LC_MESSAGES/kpasswdserver.mo
 share/locale/csb/LC_MESSAGES/kpat.mo
-share/locale/csb/LC_MESSAGES/kpercentage.mo
 share/locale/csb/LC_MESSAGES/kquitapp.mo
 share/locale/csb/LC_MESSAGES/krandr.mo
 share/locale/csb/LC_MESSAGES/krdb.mo
 share/locale/csb/LC_MESSAGES/kreadconfig.mo
 share/locale/csb/LC_MESSAGES/krunner.mo
-share/locale/csb/LC_MESSAGES/krunner_bookmarksrunner.mo
-share/locale/csb/LC_MESSAGES/krunner_calculatorrunner.mo
-share/locale/csb/LC_MESSAGES/krunner_locationsrunner.mo
-share/locale/csb/LC_MESSAGES/krunner_sessions.mo
-share/locale/csb/LC_MESSAGES/krunner_webshortcutsrunner.mo
-share/locale/csb/LC_MESSAGES/krunner_xesam.mo
 share/locale/csb/LC_MESSAGES/ksame.mo
 share/locale/csb/LC_MESSAGES/kscreensaver.mo
 share/locale/csb/LC_MESSAGES/kshorturifilter.mo
@@ -186,7 +177,9 @@ share/locale/csb/LC_MESSAGES/plasma_applet_tasks.mo
 share/locale/csb/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/csb/LC_MESSAGES/plasma_applet_twitter.mo
 share/locale/csb/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
-share/locale/csb/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/csb/LC_MESSAGES/plasma_runner_locations.mo
+share/locale/csb/LC_MESSAGES/plasma_runner_sessions.mo
+share/locale/csb/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/csb/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/csb/LC_MESSAGES/plasmapkg.mo
 share/locale/csb/LC_MESSAGES/plasmoidviewer.mo
@@ -203,5 +196,3 @@ share/locale/csb/LC_MESSAGES/systemsettings.mo
 share/locale/csb/LC_MESSAGES/timezones4.mo
 share/locale/csb/LC_MESSAGES/useraccount.mo
 share/locale/csb/entry.desktop
-@dirrm share/locale/csb/LC_MESSAGES
-@dirrm share/locale/csb

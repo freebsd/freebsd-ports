@@ -330,6 +330,7 @@ share/locale/hu/LC_MESSAGES/kaccess.mo
 share/locale/hu/LC_MESSAGES/kaddressbook.mo
 share/locale/hu/LC_MESSAGES/kalarm.mo
 share/locale/hu/LC_MESSAGES/kalzium.mo
+share/locale/hu/LC_MESSAGES/kalzium_qt.mo
 share/locale/hu/LC_MESSAGES/kanagram.mo
 share/locale/hu/LC_MESSAGES/kappfinder.mo
 share/locale/hu/LC_MESSAGES/kapptemplate.mo
@@ -343,7 +344,6 @@ share/locale/hu/LC_MESSAGES/kateinsertcommand.mo
 share/locale/hu/LC_MESSAGES/katekjswrapper.mo
 share/locale/hu/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/hu/LC_MESSAGES/katemailfilesplugin.mo
-share/locale/hu/LC_MESSAGES/katemake.mo
 share/locale/hu/LC_MESSAGES/kateopenheader.mo
 share/locale/hu/LC_MESSAGES/katepart4.mo
 share/locale/hu/LC_MESSAGES/katepybrowse.mo
@@ -360,7 +360,6 @@ share/locale/hu/LC_MESSAGES/kblackbox.mo
 share/locale/hu/LC_MESSAGES/kblankscrn.mo
 share/locale/hu/LC_MESSAGES/kbounce.mo
 share/locale/hu/LC_MESSAGES/kbruch.mo
-share/locale/hu/LC_MESSAGES/kbstateapplet.mo
 share/locale/hu/LC_MESSAGES/kbugbuster.mo
 share/locale/hu/LC_MESSAGES/kcachegrind.mo
 share/locale/hu/LC_MESSAGES/kcalc.mo
@@ -374,7 +373,6 @@ share/locale/hu/LC_MESSAGES/kcm_memory.mo
 share/locale/hu/LC_MESSAGES/kcm_partition.mo
 share/locale/hu/LC_MESSAGES/kcm_pci.mo
 share/locale/hu/LC_MESSAGES/kcm_phonon.mo
-share/locale/hu/LC_MESSAGES/kcm_phononxine.mo
 share/locale/hu/LC_MESSAGES/kcm_solid.mo
 share/locale/hu/LC_MESSAGES/kcmaccess.mo
 share/locale/hu/LC_MESSAGES/kcmaudiocd.mo
@@ -425,7 +423,6 @@ share/locale/hu/LC_MESSAGES/kcmsmartcard.mo
 share/locale/hu/LC_MESSAGES/kcmsmserver.mo
 share/locale/hu/LC_MESSAGES/kcmsolidproc.mo
 share/locale/hu/LC_MESSAGES/kcmstyle.mo
-share/locale/hu/LC_MESSAGES/kcmtaskbar.mo
 share/locale/hu/LC_MESSAGES/kcmusb.mo
 share/locale/hu/LC_MESSAGES/kcmview1394.mo
 share/locale/hu/LC_MESSAGES/kcmxinerama.mo
@@ -494,6 +491,7 @@ share/locale/hu/LC_MESSAGES/kimagemapeditor.mo
 share/locale/hu/LC_MESSAGES/kinetd.mo
 share/locale/hu/LC_MESSAGES/kinfocenter.mo
 share/locale/hu/LC_MESSAGES/kio4.mo
+share/locale/hu/LC_MESSAGES/kio_applications.mo
 share/locale/hu/LC_MESSAGES/kio_archive.mo
 share/locale/hu/LC_MESSAGES/kio_audiocd.mo
 share/locale/hu/LC_MESSAGES/kio_finger.mo
@@ -510,7 +508,6 @@ share/locale/hu/LC_MESSAGES/kio_nfs.mo
 share/locale/hu/LC_MESSAGES/kio_nntp.mo
 share/locale/hu/LC_MESSAGES/kio_pop3.mo
 share/locale/hu/LC_MESSAGES/kio_remote.mo
-share/locale/hu/LC_MESSAGES/kio_settings.mo
 share/locale/hu/LC_MESSAGES/kio_sftp.mo
 share/locale/hu/LC_MESSAGES/kio_sieve.mo
 share/locale/hu/LC_MESSAGES/kio_smb.mo
@@ -565,7 +562,6 @@ share/locale/hu/LC_MESSAGES/kpackage.mo
 share/locale/hu/LC_MESSAGES/kpartsaver.mo
 share/locale/hu/LC_MESSAGES/kpasswdserver.mo
 share/locale/hu/LC_MESSAGES/kpat.mo
-share/locale/hu/LC_MESSAGES/kpercentage.mo
 share/locale/hu/LC_MESSAGES/kpilot.mo
 share/locale/hu/LC_MESSAGES/kppp.mo
 share/locale/hu/LC_MESSAGES/kppplogview.mo
@@ -587,15 +583,6 @@ share/locale/hu/LC_MESSAGES/kreversi.mo
 share/locale/hu/LC_MESSAGES/krfb.mo
 share/locale/hu/LC_MESSAGES/kruler.mo
 share/locale/hu/LC_MESSAGES/krunner.mo
-share/locale/hu/LC_MESSAGES/krunner_bookmarksrunner.mo
-share/locale/hu/LC_MESSAGES/krunner_calculatorrunner.mo
-share/locale/hu/LC_MESSAGES/krunner_contacts.mo
-share/locale/hu/LC_MESSAGES/krunner_converterrunner.mo
-share/locale/hu/LC_MESSAGES/krunner_locationsrunner.mo
-share/locale/hu/LC_MESSAGES/krunner_sessions.mo
-share/locale/hu/LC_MESSAGES/krunner_shellrunner.mo
-share/locale/hu/LC_MESSAGES/krunner_webshortcutsrunner.mo
-share/locale/hu/LC_MESSAGES/krunner_xesam.mo
 share/locale/hu/LC_MESSAGES/ksame.mo
 share/locale/hu/LC_MESSAGES/ksayit.mo
 share/locale/hu/LC_MESSAGES/kscd.mo
@@ -622,7 +609,6 @@ share/locale/hu/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/hu/LC_MESSAGES/kthememanager.mo
 share/locale/hu/LC_MESSAGES/ktimer.mo
 share/locale/hu/LC_MESSAGES/ktimetracker.mo
-share/locale/hu/LC_MESSAGES/ktnef.mo
 share/locale/hu/LC_MESSAGES/ktouch.mo
 share/locale/hu/LC_MESSAGES/ktraderclient.mo
 share/locale/hu/LC_MESSAGES/kttsd.mo
@@ -676,7 +662,6 @@ share/locale/hu/LC_MESSAGES/libmailtransport.mo
 share/locale/hu/LC_MESSAGES/libphonon.mo
 share/locale/hu/LC_MESSAGES/libplasma.mo
 share/locale/hu/LC_MESSAGES/libtaskmanager.mo
-share/locale/hu/LC_MESSAGES/lokalize.mo
 share/locale/hu/LC_MESSAGES/lskat.mo
 share/locale/hu/LC_MESSAGES/nepomuk.mo
 share/locale/hu/LC_MESSAGES/nsplugin.mo
@@ -695,7 +680,6 @@ share/locale/hu/LC_MESSAGES/okular_tiff.mo
 share/locale/hu/LC_MESSAGES/okular_xps.mo
 share/locale/hu/LC_MESSAGES/parley.mo
 share/locale/hu/LC_MESSAGES/phonon-xine.mo
-share/locale/hu/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/hu/LC_MESSAGES/phonon_kde.mo
 share/locale/hu/LC_MESSAGES/plasma.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_battery.mo
@@ -713,7 +697,6 @@ share/locale/hu/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_kget.mo
-share/locale/hu/LC_MESSAGES/plasma_applet_knewsticker.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_kolourpicker.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_launcher.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_luna.mo
@@ -725,11 +708,15 @@ share/locale/hu/LC_MESSAGES/plasma_applet_tasks.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_twitter.mo
 share/locale/hu/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
-share/locale/hu/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/hu/LC_MESSAGES/plasma_runner_contacts.mo
+share/locale/hu/LC_MESSAGES/plasma_runner_converterrunner.mo
+share/locale/hu/LC_MESSAGES/plasma_runner_locations.mo
+share/locale/hu/LC_MESSAGES/plasma_runner_sessions.mo
+share/locale/hu/LC_MESSAGES/plasma_runner_shell.mo
+share/locale/hu/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/hu/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/hu/LC_MESSAGES/plasmapkg.mo
 share/locale/hu/LC_MESSAGES/plasmoidviewer.mo
-share/locale/hu/LC_MESSAGES/printer-applet.mo
 share/locale/hu/LC_MESSAGES/processcore.mo
 share/locale/hu/LC_MESSAGES/processui.mo
 share/locale/hu/LC_MESSAGES/solid-bluetooth.mo
