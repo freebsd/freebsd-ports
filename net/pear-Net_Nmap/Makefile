@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Nmap
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	net pear
 
 MAINTAINER=	wenheping@gmail.com
