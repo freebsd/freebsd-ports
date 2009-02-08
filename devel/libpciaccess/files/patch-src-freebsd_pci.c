@@ -1,6 +1,6 @@
---- src/freebsd_pci.c.orig	2008-10-31 11:40:09.000000000 -0400
-+++ src/freebsd_pci.c	2009-01-29 12:34:31.000000000 -0500
-@@ -53,6 +53,17 @@
+--- src/freebsd_pci.c.orig	2009-01-31 03:55:37.000000000 -0500
++++ src/freebsd_pci.c	2009-01-31 03:55:55.000000000 -0500
+@@ -53,6 +53,20 @@
  #define	PCIS_DISPLAY_3D		0x02
  #define	PCIS_DISPLAY_OTHER	0x80
  
@@ -8,6 +8,9 @@
 +#define PCIR_COMMAND    0x04
 +#define PCIM_CMD_PORTEN         0x0001
 +#define PCIM_CMD_MEMEN          0x0002
++#define PCIR_BIOS	0x30
++#define PCIM_BIOS_ENABLE	0x01
++#define PCIM_BIOS_ADDR_MASK	0xfffff800
 +
 +#define PCI_BAR_IO(x)           (((x) & PCIM_BAR_SPACE) == PCIM_BAR_IO_SPACE)
 +#define PCI_BAR_MEM(x)          (((x) & PCIM_BAR_SPACE) == PCIM_BAR_MEM_SPACE)
@@ -18,7 +21,7 @@
  /**
   * FreeBSD private pci_system structure that extends the base pci_system
   * structure.
-@@ -214,6 +225,10 @@
+@@ -214,6 +228,10 @@
      while ( size > 0 ) {
  	int towrite = (size < 4 ? size : 4);
  
@@ -29,7 +32,62 @@
  	io.pi_reg = offset;
  	io.pi_width = towrite;
  	memcpy( &io.pi_data, data, towrite );
-@@ -300,20 +315,13 @@
+@@ -239,8 +257,12 @@
+ static int
+ pci_device_freebsd_read_rom( struct pci_device * dev, void * buffer )
+ {
++    struct pci_device_private *priv = (struct pci_device_private *) dev;
+     void *bios;
+-    int memfd;
++    pciaddr_t rom_base;
++    uint32_t rom;
++    uint16_t reg;
++    int pci_rom, memfd;
+ 
+     if ( ( dev->device_class & 0x00ffff00 ) !=
+ 	 ( ( PCIC_DISPLAY << 16 ) | ( PCIS_DISPLAY_VGA << 8 ) ) )
+@@ -248,11 +270,27 @@
+ 	return ENOSYS;
+     }
+ 
++    if (priv->rom_base == 0) {
++#if defined(__amd64__) || defined(__i386__)
++	rom_base = 0xc0000;
++	pci_rom = 0;
++#endif
++	return ENOSYS;
++    } else {
++	rom_base = priv->rom_base;
++	pci_rom = 1;
++
++	pci_device_cfg_read_u16( dev, &reg, PCIR_COMMAND );
++	pci_device_cfg_write_u16( dev, reg | PCIM_CMD_MEMEN, PCIR_COMMAND );
++	pci_device_cfg_read_u32( dev, &rom, PCIR_BIOS );
++	pci_device_cfg_write_u32( dev, rom | PCIM_BIOS_ENABLE, PCIR_BIOS );
++    }
++
+     memfd = open( "/dev/mem", O_RDONLY );
+     if ( memfd == -1 )
+ 	return errno;
+ 
+-    bios = mmap( NULL, dev->rom_size, PROT_READ, 0, memfd, 0xc0000 );
++    bios = mmap( NULL, dev->rom_size, PROT_READ, 0, memfd, priv->rom_base );
+     if ( bios == MAP_FAILED ) {
+ 	close( memfd );
+ 	return errno;
+@@ -263,6 +301,11 @@
+     munmap( bios, dev->rom_size );
+     close( memfd );
+ 
++    if (pci_rom) {
++	pci_device_cfg_write_u32( dev, PCIR_BIOS, rom );
++	pci_device_cfg_write_u16( dev, PCIR_COMMAND, reg );
++    }
++
+     return 0;
+ }
+ 
+@@ -300,20 +343,13 @@
  static int
  get_test_val_size( uint32_t testval )
  {
@@ -51,7 +109,7 @@
  }
  
  /**
-@@ -329,6 +337,7 @@
+@@ -329,6 +365,7 @@
  				    int bar )
  {
      uint32_t addr, testval;
@@ -59,7 +117,7 @@
      int err;
  
      /* Get the base address */
-@@ -336,12 +345,35 @@
+@@ -336,12 +373,35 @@
      if (err != 0)
  	return err;
  
@@ -96,7 +154,49 @@
  
      if (addr & 0x01)
  	dev->regions[region].is_IO = 1;
-@@ -495,6 +527,7 @@
+@@ -374,6 +434,7 @@
+ pci_device_freebsd_probe( struct pci_device * dev )
+ {
+     struct pci_device_private *priv = (struct pci_device_private *) dev;
++    uint32_t reg, size;
+     uint8_t irq;
+     int err, i, bar;
+ 
+@@ -400,13 +461,29 @@
+ 	    bar += 0x04;
+     }
+ 
+-    /* If it's a VGA device, set up the rom size for read_rom using the
+-     * 0xc0000 mapping.
+-     */
++    /* If it's a VGA device, set up the rom size for read_rom */
+     if ((dev->device_class & 0x00ffff00) ==
+ 	((PCIC_DISPLAY << 16) | (PCIS_DISPLAY_VGA << 8)))
+     {
+-	dev->rom_size = 64 * 1024;
++	err = pci_device_cfg_read_u32( dev, &reg, PCIR_BIOS );
++	if (err)
++	    return errno;
++
++	if (reg == 0) {
++	    dev->rom_size = 0x10000;
++	    return 0;
++	}
++
++	err = pci_device_cfg_write_u32( dev, ~PCIM_BIOS_ENABLE, PCIR_BIOS );
++	if (err)
++	    return errno;
++	pci_device_cfg_read_u32( dev, &size, PCIR_BIOS );
++	pci_device_cfg_write_u32( dev, reg, PCIR_BIOS );
++
++	if ((reg & PCIM_BIOS_ADDR_MASK) != 0) {
++	    priv->rom_base = (reg & PCIM_BIOS_ADDR_MASK);
++	    dev->rom_size = -(size & PCIM_BIOS_ADDR_MASK);
++	}
+     }
+ 
+     return 0;
+@@ -495,6 +572,7 @@
  	pci_sys->devices[ i ].base.device_id = p->pc_device;
  	pci_sys->devices[ i ].base.subvendor_id = p->pc_subvendor;
  	pci_sys->devices[ i ].base.subdevice_id = p->pc_subdevice;
