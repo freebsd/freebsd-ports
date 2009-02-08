@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_Facebook
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.3
 CATEGORIES=	www pear
 
 MAINTAINER=	wenheping@gmail.com
