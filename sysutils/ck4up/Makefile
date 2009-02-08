@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ck4up
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://jue.li/crux/ck4up/
 
@@ -23,14 +22,16 @@ RUBY_NO_BUILD_DEPENDS=	yes
 
 MAN1=		ck4up.1
 
-PLIST_DIRS=	%%EXAMPLESDIR%%
-PLIST_FILES=	bin/ck4up %%EXAMPLESDIR%%/ck4up.conf
+PORTEXAMPLES=	ck4up.conf
+
+PLIST_FILES=	bin/ck4up
 
 post-patch:
-	@${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/*
+	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
+	    ${WRKSRC}/Makefile
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/ck4up.conf ${EXAMPLESDIR}
 .endif
