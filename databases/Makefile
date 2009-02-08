@@ -399,6 +399,7 @@
     SUBDIR += pear-XML_Query2XML
     SUBDIR += pecl-mdbtools
     SUBDIR += pecl-memcache
+    SUBDIR += pecl-memcached
     SUBDIR += pecl-sqlite
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
