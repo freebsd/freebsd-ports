@@ -60,12 +60,7 @@ CONFIGURE_ARGS+=--with-includes=${LOCALBASE}/include \
 		--enable-ncurses
 
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-.if defined(JAPANESE)
 LIB_DEPENDS+=	slang.2:${PORTSDIR}/japanese/libslang
-.else
-LIB_DEPENDS+=	slang:${PORTSDIR}/devel/libslang
-.endif
 .endif
 
 .if ${INTERFACE} == "tcltk"
