@@ -1,0 +1,8 @@
+--- Makefile.orig	2008-10-29 14:27:57.000000000 +0800
++++ Makefile	2009-02-08 04:35:10.000000000 +0800
+@@ -1,4 +1,4 @@
+-CFLAGS=-O2
++all: dev
+ 
+ pigz: pigz.o yarn.o
+ 	cc -o pigz pigz.o yarn.o -lpthread -lz

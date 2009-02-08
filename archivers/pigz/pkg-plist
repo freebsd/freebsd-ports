@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/pigz
+bin/pigzn
+bin/pigzt
