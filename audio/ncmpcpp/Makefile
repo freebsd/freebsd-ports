@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ncmpcpp
-PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTVERSION=	0.3
 CATEGORIES=	audio
 MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
@@ -19,11 +18,15 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_GNOME=	glib20
+USE_AUTOTOOLS=	automake:110 aclocal:110 libtool:15
+ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lpthread"
-CONFIGURE_ARGS=	--disable-unicode
+#CONFIGURE_ARGS=	--disable-unicode
 
 OPTIONS=	CURL "Enable fetching lyrics from the Internet" on \
+		CLOCK "Enable clock-screen support" on \
+		UTF8 "Enable UTF8 support" on \
 		TAGLIB "Enable taglib support" off
 
 .include <bsd.port.pre.mk>
@@ -50,12 +53,28 @@ CONFIGURE_ARGS+=	--with-curl
 CONFIGURE_ARGS+=	--with-curl=no
 .endif
 
+.if !defined(WITHOUT_CLOCK)
+CONFIGURE_ARGS+=	--enable-clock
+.else
+CONFIGURE_ARGS+=	--disable-clock
+.endif
+
+.if !defined(WITHOUT_UTF8)
+CONFIGURE_ARGS+=	--enable-unicode
+.else
+CONFIGURE_ARGS+=	--disable-unicode
+.endif
+
 .if !defined(WITHOUT_TAGLIB)
 LIB_DEPENDS+=	tag:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=	--with-taglib
 .else
 CONFIGURE_ARGS+=	--with-taglib=no
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/share/i18n/SUPPORTED|${LOCALBASE}/share/locale|g' \
+		-e 's|iconv.h|sys/iconv.h|g' ${WRKSRC}/configure*
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ncmpcpp ${PREFIX}/bin/
