@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	x86info
-PORTVERSION=	1.23
+PORTVERSION=	1.24
 PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.codemonkey.org.uk/projects/x86info/ \

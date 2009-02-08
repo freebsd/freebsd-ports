@@ -1,5 +1,5 @@
---- lsmsr.c.orig	2008-12-16 22:09:47.000000000 +0300
-+++ lsmsr.c	2008-12-30 22:35:23.000000000 +0300
+--- lsmsr.c.orig	2009-02-06 20:10:58.000000000 +0300
++++ lsmsr.c	2009-02-09 01:51:49.000000000 +0300
 @@ -31,6 +31,18 @@
  #include "AMD/fam10h.h"
  #include "generic_msr.h"
@@ -19,7 +19,7 @@
  /* Todos:
   * - add (list and eventually write) support for write-only MSR
   * - add decoding support for bit fields
-@@ -120,6 +132,32 @@
+@@ -117,6 +129,29 @@
  	fprintf(stdout, "%s version %s\n", g.prog, VERSION);
  }
  
@@ -41,18 +41,15 @@
 +#endif
 +		return 0;
 +	}
-+
 +	*val = args.data;
 +
 +	return 0;
 +}
-+
 +#else /* !__FreeBSD__ */
-+
- int get_msr_val(unsigned int msr, unsigned long long *val)
+ static int get_msr_val(unsigned int msr, unsigned long long *val)
  {
  	off64_t off;
-@@ -145,11 +183,17 @@
+@@ -142,11 +177,17 @@
  	return 0;
  }
  
