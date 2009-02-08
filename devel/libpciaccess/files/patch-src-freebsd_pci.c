@@ -1,5 +1,5 @@
---- src/freebsd_pci.c.orig	2009-01-31 03:55:37.000000000 -0500
-+++ src/freebsd_pci.c	2009-01-31 03:55:55.000000000 -0500
+--- src/freebsd_pci.c.orig	2008-10-31 11:40:09.000000000 -0400
++++ src/freebsd_pci.c	2009-02-08 18:03:29.000000000 -0500
 @@ -53,6 +53,20 @@
  #define	PCIS_DISPLAY_3D		0x02
  #define	PCIS_DISPLAY_OTHER	0x80
@@ -46,7 +46,7 @@
  
      if ( ( dev->device_class & 0x00ffff00 ) !=
  	 ( ( PCIC_DISPLAY << 16 ) | ( PCIS_DISPLAY_VGA << 8 ) ) )
-@@ -248,11 +270,27 @@
+@@ -248,11 +270,29 @@
  	return ENOSYS;
      }
  
@@ -54,8 +54,9 @@
 +#if defined(__amd64__) || defined(__i386__)
 +	rom_base = 0xc0000;
 +	pci_rom = 0;
-+#endif
++#else
 +	return ENOSYS;
++#endif
 +    } else {
 +	rom_base = priv->rom_base;
 +	pci_rom = 1;
@@ -66,16 +67,17 @@
 +	pci_device_cfg_write_u32( dev, rom | PCIM_BIOS_ENABLE, PCIR_BIOS );
 +    }
 +
++    printf("Using rom_base = 0x%lx\n", (long)rom_base);
      memfd = open( "/dev/mem", O_RDONLY );
      if ( memfd == -1 )
  	return errno;
  
 -    bios = mmap( NULL, dev->rom_size, PROT_READ, 0, memfd, 0xc0000 );
-+    bios = mmap( NULL, dev->rom_size, PROT_READ, 0, memfd, priv->rom_base );
++    bios = mmap( NULL, dev->rom_size, PROT_READ, 0, memfd, rom_base );
      if ( bios == MAP_FAILED ) {
  	close( memfd );
  	return errno;
-@@ -263,6 +301,11 @@
+@@ -263,6 +303,11 @@
      munmap( bios, dev->rom_size );
      close( memfd );
  
@@ -87,7 +89,7 @@
      return 0;
  }
  
-@@ -300,20 +343,13 @@
+@@ -300,20 +345,13 @@
  static int
  get_test_val_size( uint32_t testval )
  {
@@ -109,7 +111,7 @@
  }
  
  /**
-@@ -329,6 +365,7 @@
+@@ -329,6 +367,7 @@
  				    int bar )
  {
      uint32_t addr, testval;
@@ -117,7 +119,7 @@
      int err;
  
      /* Get the base address */
-@@ -336,12 +373,35 @@
+@@ -336,12 +375,35 @@
      if (err != 0)
  	return err;
  
@@ -154,7 +156,15 @@
  
      if (addr & 0x01)
  	dev->regions[region].is_IO = 1;
-@@ -374,6 +434,7 @@
+@@ -352,6 +414,7 @@
+ 
+     /* Set the size */
+     dev->regions[region].size = get_test_val_size( testval );
++	printf("size = 0x%lx\n", (long)dev->regions[region].size);
+ 
+     /* Set the base address value */
+     if (dev->regions[region].is_64) {
+@@ -374,6 +437,7 @@
  pci_device_freebsd_probe( struct pci_device * dev )
  {
      struct pci_device_private *priv = (struct pci_device_private *) dev;
@@ -162,7 +172,7 @@
      uint8_t irq;
      int err, i, bar;
  
-@@ -400,13 +461,29 @@
+@@ -400,13 +464,29 @@
  	    bar += 0x04;
      }
  
@@ -196,7 +206,7 @@
      }
  
      return 0;
-@@ -495,6 +572,7 @@
+@@ -495,6 +575,7 @@
  	pci_sys->devices[ i ].base.device_id = p->pc_device;
  	pci_sys->devices[ i ].base.subvendor_id = p->pc_subvendor;
  	pci_sys->devices[ i ].base.subdevice_id = p->pc_subdevice;
