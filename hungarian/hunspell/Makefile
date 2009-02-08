@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hunspell
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 CATEGORIES=	hungarian textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S@$@:code@:S@%SUBDIR%@${PORTNAME}@} \
 		${MASTER_SITE_SOURCEFORGE:S@$@:data@:S@%SUBDIR%@magyarispell@}
@@ -31,7 +31,7 @@ ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 MAN1=		hunspell.1
 MAN4=		hunspell.4
 
-DICTVERSION=	1.3
+DICTVERSION=	1.4
 PORTDOCS=	README README.myspell
 
 .include <bsd.port.pre.mk>
