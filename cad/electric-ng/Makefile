@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	electric-ng
-PORTVERSION=	8.07
+PORTVERSION=	8.08
 PORTREVISION=	0
 CATEGORIES=	cad java
 MASTER_SITES=	${MASTER_SITE_GNU} \
@@ -32,7 +32,6 @@ SUB_FILES=	electric-ng
 OPTIONS=	BSH	"Enable embedded java interpreter via BSH"	off \
 		3D	"Enable 3D visualization via Java3D"		off \
 		IRSIM	"Install IRSIM plugin"				off \
-		PIE	"Install PIE plugin"				off \
 		ANIM	"Install 3D animation plugin"			off \
 		AXIS	"Install 3D Axis Controller plugin"		off \
 		RUSSIAN	"Install Russian manual"			off
@@ -53,13 +52,13 @@ LIBFILES+=	${JAVALIBDIR}/bsh.jar
 
 .if defined(WITH_AXIS)
 WITH_3D=	yes
-PLUGINS+=	electricJava3D-8.07
+PLUGINS+=	electricJava3D-8.08
 .endif
 
 .if defined(WITH_ANIM)
 WITH_3D=	yes
 RUN_DEPENDS+=	${JAVALIBDIR}/jmf.jar:${PORTSDIR}/java/jmf
-PLUGINS+=	electricJMF-8.07
+PLUGINS+=	electricJMF-8.08
 .endif
 
 .if exists(${J3DLIB})
@@ -70,15 +69,11 @@ RUN_DEPENDS+=	${J3DLIB}:${PORTSDIR}/java/java3d
 .endif
 
 .if defined(WITH_IRSIM)
-PLUGINS+=	electricIRSIM-8.07
-.endif
-
-.if defined(WITH_PIE)
-PLUGINS+=	electricPIE-8.07
+PLUGINS+=	electricIRSIM-8.08
 .endif
 
 .if defined(WITH_RUSSIAN)
-PLUGINS+=	electricRussianManual-8.07
+PLUGINS+=	electricRussianManual-8.08
 .endif
 
 .if defined(PLUGINS)
