@@ -14,6 +14,7 @@ include/hunspell/hunzip.hxx
 include/hunspell/langnum.hxx
 include/hunspell/license.hunspell
 include/hunspell/phonet.hxx
+include/hunspell/replist.hxx
 include/hunspell/suggestmgr.hxx
 include/hunspell/w_char.hxx
 @dirrm include/hunspell
