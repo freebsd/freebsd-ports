@@ -1,0 +1,10 @@
+py-simplecouchdb is a simple librairy to allow your python
+applicationto use CouchDB.
+
+With simplecouchdb, you can manage documents like you do
+directly with CouchDB, schema-free. So document instance
+(see :ref:schema-ref) are completly dynamic, you could
+add/delete properties in your documents, retrieve them
+without any schema, etc.
+
+WWW:	http://code.google.com/p/py-simplecouchdb/

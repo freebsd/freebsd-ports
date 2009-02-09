@@ -521,6 +521,7 @@
     SUBDIR += py-qt4-sql
     SUBDIR += py-rrdpipe
     SUBDIR += py-rrdtool_lgpl
+    SUBDIR += py-simplecouchdb
     SUBDIR += py-sqlalchemy
     SUBDIR += py-sqlite3
     SUBDIR += py-sqlobject
