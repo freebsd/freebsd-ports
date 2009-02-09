@@ -1,5 +1,5 @@
---- config.mk.orig	2008-05-18 12:01:46.000000000 +0200
-+++ config.mk	2008-05-18 12:05:01.000000000 +0200
+--- config.mk.orig	2009-02-08 23:35:47.000000000 +0100
++++ config.mk	2009-02-08 23:37:06.000000000 +0100
 @@ -3,14 +3,14 @@
  
  # Customize below to fit your system
@@ -10,15 +10,15 @@
 +MANPREFIX = ${PREFIX}/man
  
  INCS = -I. -I/usr/include -I/usr/local/include 
- LIBS = -lc -lutil -lncurses
- LIBS_UTF8 = -lc -lutil -lncursesw
+ LIBS = -lc -lutil -lncursesw
+ #LIBS = -lc -lutil -lncurses
  
 -CFLAGS += -std=c99 -Os ${INCS} -DVERSION=\"${VERSION}\" -DNDEBUG
 +CFLAGS += -std=c99 ${INCS} -DVERSION=\"${VERSION}\" -DNDEBUG
  LDFLAGS += -L/usr/lib -L/usr/local/lib ${LIBS}
  
  # Mouse handling
-@@ -18,4 +18,4 @@
+@@ -20,4 +20,4 @@
  
  DEBUG_CFLAGS = ${CFLAGS} -UNDEBUG -O0 -g -ggdb -Wall
  
