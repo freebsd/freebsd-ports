@@ -1,0 +1,21 @@
+--- Makefile.orig	2009-01-25 18:27:52.000000000 +0100
++++ Makefile	2009-02-07 18:56:15.000000000 +0100
+@@ -1,15 +1,10 @@
+ # Makefile,v 1.8 2009-01-25 17:27:52 lacos Exp
+ .POSIX:
+ 
+-CC=gcc
+-CFLAGS=$$($(SHELL) lfs.sh CFLAGS) -D _XOPEN_SOURCE=500 -pipe -ansi -pedantic \
+-    -O3
++LDFLAGS+=	-s
++LIBS+=		-l pthread -l bz2
+ 
+-
+-
+-
+-LDFLAGS=-s $$($(SHELL) lfs.sh LDFLAGS)
+-LIBS=-l pthread -l bz2 $$($(SHELL) lfs.sh LIBS)
++all: lbzip2
+ 
+ lbzip2: main.o lbzip2.o lbunzip2.o lbunzip2_single.o lacos_rbtree.o
+ 	$(CC) -o lbzip2 $(LDFLAGS) main.o lbzip2.o lbunzip2.o \
