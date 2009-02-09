@@ -1,5 +1,26 @@
---- ./ogg2mp3.orig	2009-02-02 20:13:18.000000000 +0000
-+++ ./ogg2mp3	2009-02-02 20:13:44.000000000 +0000
+--- ./ogg2mp3.orig	2005-05-16 18:07:33.000000000 +0000
++++ ./ogg2mp3	2009-02-08 12:29:27.000000000 +0000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/local/bin/perl
+ 
+ # ogg2mp3
+ #
+@@ -51,10 +51,10 @@
+ print "  Thanks to all who took an interest. Have fun!\n";
+ print " ------------------------------------------------------------------- \n\n";
+ 
+-my $MP3ENC  = "/usr/bin/lame";
+-#my $MP3INFO = "/usr/bin/mp3_check";
+-my $OGGINFO = "/usr/bin/ogginfo";
+-my $OGG123  = "/usr/bin/ogg123";
++my $MP3ENC  = "/usr/local/bin/lame";
++#my $MP3INFO = "/usr/local/bin/mp3_check";
++my $OGGINFO = "/usr/local/bin/ogginfo";
++my $OGG123  = "/usr/local/bin/ogg123";
+ 
+ # check presence of executables
+ stat($MP3ENC) or die "Error: $MP3ENC not present!\n";
 @@ -68,7 +68,7 @@
  
  # build genre hash
@@ -9,3 +30,15 @@
  while(<GENRES>) {
      chomp;
      next if /^\s*$/;
+@@ -308,10 +308,8 @@
+ 	
+ 	$mp3outputfile_escaped = shell_quote($mp3outputfile);
+ 	$oggfile_escaped = shell_quote($oggfile);
+-	# this took me some time to figure
+-	# note that byte order is swapped by lame via -x option
+ 	# TODO: somebody please tell me how to supress the "Assuming bla bla" output without devnull
+-	$result = system("$OGG123 $decquiet -d raw -f - $oggfile_escaped | $MP3ENC $encquiet -r -x -q $quality -b $bitrate -s $frequency -m $channels $infostring - $mp3outputfile_escaped");
++	$result = system("$OGG123 $decquiet -d raw -f - $oggfile_escaped | $MP3ENC $encquiet -r -q $quality -b $bitrate -s $frequency -m $channels $infostring - $mp3outputfile_escaped");
+ 
+ 	# TODO: find some widely used mp3 checker
+ 	# disabled the checking due to lack of checker
