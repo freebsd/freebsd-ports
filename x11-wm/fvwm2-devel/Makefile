@@ -139,7 +139,7 @@ MLINKS=	fvwm.1 fvwm2.1 \
 PLIST_SUB+=	ICONS=""
 post-extract:
 	@${MKDIR} ${WRKDIR}/icons
-	@${TAR} -xzf ${DISTDIR}/${FVWM_ICONS} -C ${WRKDIR}/icons
+	@${TAR} -xzf ${DISTDIR}/${FVWM_ICONS}.tar.bz2 -C ${WRKDIR}/icons
 .else
 PLIST_SUB+=	ICONS="@comment not installed: "
 .endif
