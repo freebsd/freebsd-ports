@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	boinc-milkyway
-PORTVERSION=	0.7
+PORTVERSION=	0.16
 PORTEPOCH=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://milkyway.cs.rpi.edu/milkyway/download/code_release/
-DISTNAME=	milkyway_release_${PORTVERSION}.tar
+DISTNAME=	mw_v${PORTVERSION}.tar
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Modelling the evolution of the Milkyway Galaxy
