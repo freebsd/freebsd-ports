@@ -10,6 +10,7 @@
     SUBDIR += ahwm
     SUBDIR += amaterus
     SUBDIR += amiwm
+    SUBDIR += antiwm
     SUBDIR += awesome
     SUBDIR += badwm
     SUBDIR += bbconf
