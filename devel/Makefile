@@ -2498,6 +2498,7 @@
     SUBDIR += rubygem-json
     SUBDIR += rubygem-json_pure
     SUBDIR += rubygem-linecache
+    SUBDIR += rubygem-lockfile
     SUBDIR += rubygem-main
     SUBDIR += rubygem-metaid
     SUBDIR += rubygem-mocha
