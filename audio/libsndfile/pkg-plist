@@ -1,5 +1,9 @@
+bin/sndfile-cmp
 bin/sndfile-convert
 bin/sndfile-info
+bin/sndfile-jackplay
+bin/sndfile-metadata-get
+bin/sndfile-metadata-set
 bin/sndfile-play
 bin/sndfile-regtest
 include/sndfile.h
@@ -28,11 +32,6 @@ libdata/pkgconfig/sndfile.pc
 %%PORTDOCS%%%%DOCSDIR%%/octave.html
 %%PORTDOCS%%%%DOCSDIR%%/pkgconfig.html
 %%PORTDOCS%%%%DOCSDIR%%/sndfile_info.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/win32.html
-share/octave/site/m/sndfile_load.m
-share/octave/site/m/sndfile_play.m
-share/octave/site/m/sndfile_save.m
-@dirrmtry share/octave/site/m
-@dirrmtry share/octave/site
-@dirrmtry share/octave
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
