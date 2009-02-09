@@ -23,6 +23,7 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		HTTP_ACCESSKEY_MODULE "Enable http_accesskey module" off \
 		HTTP_ADDITION_MODULE "Enable http_addition module" off \
 		HTTP_DAV_MODULE "Enable http_webdav module" off \
+		HTTP_FANCYINDEX_MODULE "Enable http_fancyindex module" off \
 		HTTP_FLV_MODULE "Enable http_flv module" off \
 		HTTP_PERL_MODULE "Enable http_perl module" off \
 		HTTP_RANDOM_INDEX_MODULE "Enable http_random_index module" off \
@@ -103,6 +104,13 @@ CONFIGURE_ARGS+=--with-http_addition_module
 
 .if defined(WITH_HTTP_DAV_MODULE)
 CONFIGURE_ARGS+=--with-http_dav_module
+.endif
+
+.if defined(WITH_HTTP_FANCYINDEX_MODULE)
+NGINX_FANCYINDEX_MODULE_VERSION=	0.1b5
+MASTER_SITES+=	http://furi-ku.org/nginx/fancyindex/:fancyindex
+DISTFILES+=  	nginx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION:S/b/_beta/}.tar.bz2:fancyindex
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION:S/b/_beta/}
 .endif
 
 .if defined(WITH_HTTP_FLV_MODULE)
@@ -217,6 +225,10 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!$$HTTP_ACCESSKEY_MODULE!ngx_http_accesskey_module!' \
 		${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}/config
+.endif
+.if defined(WITH_HTTP_FANCYINDEX_MODULE)
+	@${PATCH} ${PATCH_ARGS} < \
+		${PATCHDIR}/extra-patch-ngx_http_fancyindex_module.c
 .endif
 
 do-build:
