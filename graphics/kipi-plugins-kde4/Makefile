@@ -7,7 +7,7 @@
 
 PORTNAME=	kipi-plugins
 DISTVERSION=	0.2.0-beta6
-CATEGORIES=	multimedia graphics kde
+CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kipi
 PKGNAMESUFFIX=	-kde4
