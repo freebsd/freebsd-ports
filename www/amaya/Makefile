@@ -28,6 +28,8 @@ COMMENT=	The W3C's testbed web editor/browser
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
+FORBIDDEN=	Security issues http://www.vuxml.org/freebsd/a89b76a7-f6bd-11dd-94d9-0030843d3802.html
+
 WRKSRC=		${WRKDIR}/Amaya/obj
 
 USE_XORG=	xft x11 xt
