@@ -23,6 +23,8 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 USE_ANT=	yes
 
+MANUAL_PACKAGE_BUILD=	fetches files in build phase
+
 MAKE_ARGS=	-buildfile build/build.xml
 
 USE_RC_SUBR=	jboss5.sh
