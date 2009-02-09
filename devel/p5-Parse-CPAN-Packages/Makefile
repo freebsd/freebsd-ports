@@ -6,23 +6,24 @@
 #
 
 PORTNAME=	Parse-CPAN-Packages
-PORTVERSION=	2.29
+PORTVERSION=	2.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Parse
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Parse 02packages.details.txt.gz from CPAN
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version \
-		${SITE_PERL}/CPAN/DistnameInfo.pm:${PORTSDIR}/devel/p5-CPAN-DistnameInfo \
-		${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/IO/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Zlib
+BUILD_DEPENDS=	p5-CPAN-DistnameInfo>0:${PORTSDIR}/devel/p5-CPAN-DistnameInfo \
+		p5-Compress-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Zlib \
+		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
+		p5-version>=0:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Parse::CPAN::Packages.3
+MAN3=	Parse::CPAN::Packages.3 \
+	Parse::CPAN::Packages::Distribution.3 \
+	Parse::CPAN::Packages::Package.3
 
 .include <bsd.port.mk>
