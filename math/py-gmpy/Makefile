@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wenheping@gmail.com
-COMMENT=	Read Write And Modify MARC Bibliographic Data
+COMMENT=	Python Extension that Wraps the GMP Library
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
