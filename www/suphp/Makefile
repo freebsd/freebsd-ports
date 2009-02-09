@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	suphp
-PORTVERSION=	0.6.3
+PORTVERSION=	0.7.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|koitsu|}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yzlin@cs.nctu.edu.tw
 COMMENT=	Securely execute PHP scripts under Apache
 
 GNU_CONFIGURE=	yes
@@ -26,14 +26,12 @@ MYPORTDOCS=	apache/CONFIG apache/INSTALL apache/README CONFIG LICENSE INSTALL RE
 
 CONFIGURE_ARGS=	--with-apxs=${APXS}
 
-
 # WITH_SETID_MODE should be a value of "owner", "force", or "paranoid".
 # It's important that you understand the differences between each mode.
 # See /usr/local/share/doc/suphp/INSTALL for details.
 #
 WITH_SETID_MODE?=	owner
 CONFIGURE_ARGS+=	--with-setid-mode=${WITH_SETID_MODE}
-
 
 .include <bsd.port.pre.mk>
 
@@ -48,7 +46,6 @@ CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
-	@${REINPLACE_CMD} -e 's|1.10|1.10.1|g' ${WRKSRC}/aclocal.m4
 	@${CHMOD} 755 ${WRKSRC}/config/install-sh
 
 post-install:
@@ -56,13 +53,13 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/apache
 .for f in ${MYPORTDOCS}
-	@${CP} -Rfp ${WRKSRC}/doc/${f} ${DOCSDIR}/${f}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}/${f}
 .endfor
 .endif
 .if !defined(WITH_DEBUG)
 	@${STRIP_CMD} ${PREFIX}/sbin/suphp
 .endif
-	@${CP} -fp ${WRKSRC}/doc/suphp.conf-example ${PREFIX}/etc/suphp.conf-example
+	@${INSTALL_DATA} ${WRKSRC}/doc/suphp.conf-example ${PREFIX}/etc/suphp.conf-example
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
