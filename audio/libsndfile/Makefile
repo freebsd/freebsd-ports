@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libsndfile
-PORTVERSION=	1.0.17
-PORTREVISION=	2
+PORTVERSION=	1.0.18
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/libsndfile/
 
@@ -16,8 +15,7 @@ COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-justsrc \
-		--disable-gcc-pipe \
+CONFIGURE_ARGS=	--disable-gcc-pipe \
 		--disable-sqlite
 CONFIGURE_ENV=	CPPFLAGS="-isystem /usr/include -isystem ${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -25,18 +23,23 @@ USE_LDCONFIG=	yes
 
 MAN1=		sndfile-convert.1 sndfile-info.1 sndfile-play.1
 
-OPTIONS=	FLAC "Enable flac support" On
+OPTIONS=	EXTERNAL "Enable FLAC and Ogg Vorbis support" on
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_FLAC)
-LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
-CONFIGURE_ARGS+=--enable-flac
+.if defined(WITHOUT_EXTERNAL) || defined(WITH_FLAC)
+CONFIGURE_ARGS+=--disable-external-libs
 .else
 CONFIGURE_ARGS+=--disable-flac
+LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac \
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} \
+		-e 's/vorbis >= 1\.2\.1/vorbis >= 1.2.0/g' \
+		-e 's/vorbisenc >= 1\.2\.1/vorbisenc >= 1.2.0/g' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/ doc / /g' ${WRKSRC}/Makefile.in
 
 post-install:
