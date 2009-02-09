@@ -1,4 +1,5 @@
 bin/phplist
+%%WWWDIR%%/index.html
 %%WWWDIR%%/lists/ut.php
 %%WWWDIR%%/lists/dl.php
 %%WWWDIR%%/lists/styles/styles_unix1.css
