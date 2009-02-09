@@ -4739,7 +4739,7 @@ Note:  Please add new entries to the beginning of this file.
 	<name>ruby+pthreads+oniguruma</name>
 	<name>ruby+oniguruma</name>
 	<range><ge>1.8.*,1</ge><lt>1.8.6.287,1</lt></range>
-	<range><ge>1.9.*,1</ge></range>
+	<range><ge>1.9.*,1</ge><lt>1.9.1.0,1</lt></range>
       </package>
     </affects>
     <description>
@@ -4764,6 +4764,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-08-08</discovery>
       <entry>2008-08-16</entry>
+      <modified>2009-02-09</modified>
     </dates>
   </vuln>
 
@@ -4776,7 +4777,7 @@ Note:  Please add new entries to the beginning of this file.
 	<name>ruby+pthreads+oniguruma</name>
 	<name>ruby+oniguruma</name>
 	<range><ge>1.8.*,1</ge><lt>1.8.6.111_5,1</lt></range>
-	<range><ge>1.9.*,1</ge></range>
+	<range><ge>1.9.*,1</ge><lt>1.9.1.0,1</lt></range>
       </package>
     </affects>
     <description>
@@ -4795,6 +4796,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-08-08</discovery>
       <entry>2008-08-16</entry>
+      <modified>2009-02-09</modified>
     </dates>
   </vuln>
 
@@ -4807,7 +4809,7 @@ Note:  Please add new entries to the beginning of this file.
 	<name>ruby+pthreads+oniguruma</name>
 	<name>ruby+oniguruma</name>
 	<range><ge>1.8.*,1</ge><lt>1.8.6.111_5,1</lt></range>
-	<range><ge>1.9.*,1</ge></range>
+	<range><ge>1.9.*,1</ge><lt>1.9.1.0,1</lt></range>
       </package>
     </affects>
     <description>
@@ -4827,6 +4829,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-08-08</discovery>
       <entry>2008-08-16</entry>
+      <modified>2009-02-09</modified>
     </dates>
   </vuln>
 
