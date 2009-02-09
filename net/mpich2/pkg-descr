@@ -5,4 +5,4 @@ platforms, including clusters, SMPs, and massively parallel processors.
 It also provides a vehicle for MPI implementation research and for developing
 new and better parallel programming environments
 
-WWW: http://www.mcs.anl.gov/mpi/mpich/
+WWW: http://www.mcs.anl.gov/research/projects/mpich2/
