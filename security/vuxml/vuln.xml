@@ -34,6 +34,50 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="71597e3e-f6b8-11dd-94d9-0030843d3802">
+    <topic>websvn -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>websvn</name>
+	<range><lt>2.1.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/32338/">
+	  <p>Some vulnerabilities have been reported in WebSVN, which can be
+	    exploited by malicious users to disclose sensitive information, and by
+	    malicious people to conduct cross-site scripting attacks and
+	    manipulate data.</p>
+	  <p>Input passed in the URL to index.php is not properly sanitised
+	    before being returned to the user. This can be exploited to execute
+	    arbitrary HTML and script code in a user's browser session in context
+	    of an affected site.</p>
+	  <p>Input passed to the "rev" parameter in rss.php is not properly
+	    sanitised before being used. This can be exploited to overwrite
+	    arbitrary files via directory traversal attacks.</p>
+	  <p>Access to restricted repositories is not properly enforced, which
+	    can be exploited to disclose potentially sensitive information by
+	    accessing the repository via "listing.php" and using the "compare with
+	    previous" and "show changed files" links.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5918</cvename>
+      <cvename>CVE-2008-5919</cvename>
+      <cvename>CVE-2009-0240</cvename>
+      <url>http://secunia.com/advisories/32338/</url>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=512191</url>
+      <url>http://www.gulftech.org/?node=research&amp;article_id=00132-10202008</url>
+    </references>
+    <dates>
+      <discovery>2008-10-23</discovery>
+      <entry>2009-02-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="40774927-f6b4-11dd-94d9-0030843d3802">
     <topic>phplist -- local file inclusion vulnerability</topic>
     <affects>
