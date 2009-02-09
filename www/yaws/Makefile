@@ -26,9 +26,17 @@ ONLY_FOR_ARCHS=	i386 amd64 sparc64
 MAN1=		yaws.1
 MAN5=		yaws.conf.5 yaws_api.5 yaws_soap_lib.5
 
+OPTIONS=	SENDFILE "Use native sendfile(2) interface" on
+
 APPDIR=${PREFIX}/lib/erlang/lib/yaws-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_SENDFILE)
+PLIST_SUB+=	WITH_SENDFILE=""
+.else
+PLIST_SUB+=	WITH_SENDFILE="@comment "
+.endif
 
 post-extract:
 	@${FIND} ${WRKSRC} -name .empty | ${XARGS} ${RM}
@@ -38,6 +46,11 @@ post-patch:
 		${WRKSRC}/man/yaws_api.5 ${WRKSRC}/man/yaws.conf.5 \
 		${WRKSRC}/src/yaws_config.erl ${WRKSRC}/scripts/yaws.template
 	@${FIND} ${WRKSRC} -name \*.orig -or -name \*.bak | ${XARGS} ${RM}
+.if defined(WITH_SENDFILE)
+	@${REINPLACE_CMD} -e 's|@HAVE_SENDFILE@|true|g' ${WRKSRC}/include.mk.in
+.else
+	@${REINPLACE_CMD} -e 's|@HAVE_SENDFILE@|false|g' ${WRKSRC}/include.mk.in
+.endif
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/yaws ${PREFIX}/bin
