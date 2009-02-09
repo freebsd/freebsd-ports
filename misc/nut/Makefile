@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	14.2
+PORTVERSION=	14.3
 CATEGORIES=	misc
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	health-
@@ -23,8 +23,6 @@ PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/FOOD_DES.txt \
 		%%DATADIR%%/WEIGHT.txt %%DATADIR%%/sr21.nut
 PLIST_DIRS=	%%DATADIR%%
 MAN1=		${PORTNAME}.1
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-14.2
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local/lib/nut|${DATADIR}|" \
