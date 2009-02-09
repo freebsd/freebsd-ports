@@ -1,6 +1,6 @@
---- doc/Makefile.am.orig	2008-01-30 05:26:50.000000000 +0100
-+++ doc/Makefile.am	2008-06-13 12:18:37.000000000 +0200
-@@ -45,7 +46,7 @@
+--- doc/Makefile.am.orig	2009-02-06 13:25:21.000000000 +0100
++++ doc/Makefile.am	2009-02-06 13:27:06.000000000 +0100
+@@ -44,7 +44,7 @@
  
  all: makedoc-all
  
@@ -9,7 +9,7 @@
  
  install-data-local: makedoc-all instdoc
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
-@@ -67,9 +68,6 @@
+@@ -66,9 +66,6 @@
  		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
  	done
  	-$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir)
@@ -19,15 +19,14 @@
  	$(INSTALL) -m 644 Muttrc $(DESTDIR)$(sysconfdir)/Muttrc.dist
  	-if [ -f $(DESTDIR)$(pkgdatadir)/Muttrc ] ; then \
  		mv $(DESTDIR)$(pkgdatadir)/Muttrc* $(DESTDIR)$(sysconfdir) ; \
-@@ -100,10 +98,7 @@
+@@ -99,9 +96,7 @@
  
  check:
- manual.txt: manual.html db-cleanup.xsl
--	-xsltproc --nonet -o manual-txt.html $(srcdir)/db-cleanup.xsl manual.html || cp manual.html manual-txt.html
--	-lynx -dump -nolist -with_backspaces manual-txt.html > $@ || \
--	w3m -dump manual-txt.html > $@ || \
--	elinks -dump -no-numbering -no-references manual-txt.html > $@
-+	-lynx -dump -nolist -with_backspaces manual.html > $@
+ manual.txt: manual.html
+-	-LC_ALL=C lynx -dump -nolist -with_backspaces manual.html > $@ || \
+-	LC_ALL=C w3m -dump manual.html > $@ || \
+-	LC_ALL=C elinks -dump -no-numbering -no-references manual.html | sed -e 's,\\001, ,g' > $@
++	-LC_ALL=C lynx -dump -nolist -with_backspaces manual.html > $@
  
  Muttrc: stamp-doc-rc
  

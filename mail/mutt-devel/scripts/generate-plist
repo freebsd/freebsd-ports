@@ -69,7 +69,6 @@ if [ "$MUTT_PORTDOCS" = "yes" ]; then
 %%DOCSDIR%%/ABOUT-NLS
 %%DOCSDIR%%/COPYRIGHT
 %%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/ChangeLog.old
 %%DOCSDIR%%/GPL
 %%DOCSDIR%%/INSTALL
 %%DOCSDIR%%/NEWS
