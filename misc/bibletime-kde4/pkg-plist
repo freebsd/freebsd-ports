@@ -1,5 +1,4 @@
 bin/bibletime
-libdata/ldconfig/bibletime
 share/applications/bibletime.desktop
 %%DATADIR%%/display-templates/Blue.tmpl
 %%DATADIR%%/display-templates/Crazy.tmpl
