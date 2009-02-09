@@ -44,6 +44,7 @@
     SUBDIR += kio_p7zip
     SUBDIR += kzip
     SUBDIR += lbrate
+    SUBDIR += lbzip2
     SUBDIR += lcab
     SUBDIR += lha
     SUBDIR += lha-ac
