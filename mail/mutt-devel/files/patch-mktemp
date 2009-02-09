@@ -1,6 +1,6 @@
---- muttlib.c.orig	Fri Feb  4 08:09:25 2005
-+++ muttlib.c	Fri Feb  4 08:13:37 2005
-@@ -664,7 +664,11 @@
+--- muttlib.c.orig	2009-02-06 13:39:51.000000000 +0100
++++ muttlib.c	2009-02-06 13:42:35.000000000 +0100
+@@ -733,7 +733,11 @@
  
  void _mutt_mktemp (char *s, const char *src, int line)
  {
@@ -10,6 +10,6 @@
 +  snprintf (s, _POSIX_PATH_MAX-6, "%s/mutt-%s-XXXXXXXX", NONULL(Tempdir), NONULL(Hostname));
 +  mktemp (s);
 +  strncat(s, t, 6);
-   dprint (1, (debugfile, "%s:%d: mutt_mktemp returns \"%s\".\n", src, line, s));
+   dprint (3, (debugfile, "%s:%d: mutt_mktemp returns \"%s\".\n", src, line, s));
    unlink (s);
  }

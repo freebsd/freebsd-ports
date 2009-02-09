@@ -116,8 +116,8 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.18
-PORTREVISION?=	4
+PORTVERSION=	1.5.19
+PORTREVISION?=	0
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -168,7 +168,7 @@ CONFIGURE_ARGS=	--disable-fcntl --with-ssl=${OPENSSLBASE} \
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
 
-USE_AUTOTOOLS=	automake:19 autoconf:262
+USE_AUTOTOOLS=	automake:110 autoconf:262
 USE_OPENSSL=	yes
 
 PLIST=		${WRKDIR}/PLIST
@@ -213,6 +213,9 @@ WITH_MUTT_IMAP_HEADER_CACHE=	yes
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
 .if defined(WITH_MUTT_NNTP)
 IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_NNTP are not compatible
+.endif
+.if defined(WITH_MUTT_GREETING_PATCH)
+IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_GREETING_PATCH are not compatible
 .endif
 .endif
 .if ${OSVERSION} >= 700033 || (${OSVERSION} < 700000 && ${OSVERSION} >= 602107)
