@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -563,7 +563,7 @@
+ 
+ # FIXME MONO_XMLSERIALIZER_THS=no works around Ximian Bugzilla #58194
+ AmazonSearchService.cs: AmazonSearchService.wsdl
+-	MONO_XMLSERIALIZER_THS=no wsdl -namespace:Amazon $(srcdir)/AmazonSearchService.wsdl
++	MONO_XMLSERIALIZER_THS=no wsdl1 -namespace:Amazon $(srcdir)/AmazonSearchService.wsdl
+ 
+ $(WRAPPER): $(srcdir)/$(WRAPPER).in
+ 	sed -e "s|\@prefix\@|$(prefix)|g" 		\

@@ -7,14 +7,11 @@
 #
 
 PORTNAME=	muine
-PORTVERSION=	0.8.8
-PORTREVISION=	2
+PORTVERSION=	0.8.10
 CATEGORIES=	audio gnome
-MASTER_SITES=	http://muine-player.org/releases/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	tmclaugh/muine
+MASTER_SITES=	GNOME
 
-MAINTAINER=	bsd-sharp@googlegroups.com
+MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono based Gnome audio player
 
 LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
@@ -22,7 +19,8 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		gdbm:${PORTSDIR}/databases/gdbm \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
-RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-glib-1.0.pc:${PORTSDIR}/devel/ndesk-dbus-glib
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
@@ -61,8 +59,8 @@ post-patch:
 		${WRKSRC}/data/Makefile.in
 	@${REINPLACE_CMD} -e 's|libmusicbrainz.so.4|libmusicbrainz.so|g' \
 		${WRKSRC}/src/muine.exe.config.in
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e \
-	    	's|-DG.*_DISABLE_DEPRECATED||g'
+	@${REINPLACE_CMD} -e 's|/bin/bash|/usr/bin/env bash|g' \
+		${WRKSRC}/src/muine.in
 
 post-install:
 	${MKDIR} ${PREFIX}/lib/muine/plugins

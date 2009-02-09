@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	gtk-sharp
-PORTVERSION=	2.10.2
-PORTREVISION=	2
+PORTVERSION=	2.12.5
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
+MASTER_SITES=	GNOME
 
-MAINTAINER=	bsd-sharp@googlegroups.com
+MAINTAINER=	mono@FreeBSD.org
 COMMENT=	GTK+ and GNOME interfaces for the .NET runtime
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \

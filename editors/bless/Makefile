@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	bless
-PORTVERSION=	0.5.0
-PORTREVISION=	3
+PORTVERSION=	0.6.0
 PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://download.gna.org/bless/
 
-MAINTAINER=	bsd-sharp@googlegroups.com
+MAINTAINER=	mono@FreeBSD.org
 COMMENT=	A high quality, full featured hex editor
 
 USE_GNOME=	gnomehack gnomeprefix gnometarget gnomedocutils gtksharp20

@@ -6,6 +6,9 @@ lib/gtk-sharp-2.0/gapi-parser.exe
 lib/gtk-sharp-2.0/gapi2xml.pl
 lib/gtk-sharp-2.0/gapi_codegen.exe
 lib/gtk-sharp-2.0/gapi_pp.pl
+lib/libatksharpglue-2.a
+lib/libatksharpglue-2.la
+lib/libatksharpglue-2.so
 lib/libgdksharpglue-2.a
 lib/libgdksharpglue-2.la
 lib/libgdksharpglue-2.so
@@ -21,20 +24,34 @@ lib/libgtksharpglue-2.so
 lib/libpangosharpglue-2.a
 lib/libpangosharpglue-2.la
 lib/libpangosharpglue-2.so
-lib/mono/gac/atk-sharp/2.10.0.0__35e10195dab3c99f/atk-sharp.dll
-lib/mono/gac/atk-sharp/2.10.0.0__35e10195dab3c99f/atk-sharp.dll.config
-lib/mono/gac/gdk-sharp/2.10.0.0__35e10195dab3c99f/gdk-sharp.dll
-lib/mono/gac/gdk-sharp/2.10.0.0__35e10195dab3c99f/gdk-sharp.dll.config
-lib/mono/gac/glade-sharp/2.10.0.0__35e10195dab3c99f/glade-sharp.dll
-lib/mono/gac/glade-sharp/2.10.0.0__35e10195dab3c99f/glade-sharp.dll.config
-lib/mono/gac/glib-sharp/2.10.0.0__35e10195dab3c99f/glib-sharp.dll
-lib/mono/gac/glib-sharp/2.10.0.0__35e10195dab3c99f/glib-sharp.dll.config
-lib/mono/gac/gtk-dotnet/2.10.0.0__35e10195dab3c99f/gtk-dotnet.dll
-lib/mono/gac/gtk-dotnet/2.10.0.0__35e10195dab3c99f/gtk-dotnet.dll.config
-lib/mono/gac/gtk-sharp/2.10.0.0__35e10195dab3c99f/gtk-sharp.dll
-lib/mono/gac/gtk-sharp/2.10.0.0__35e10195dab3c99f/gtk-sharp.dll.config
-lib/mono/gac/pango-sharp/2.10.0.0__35e10195dab3c99f/pango-sharp.dll
-lib/mono/gac/pango-sharp/2.10.0.0__35e10195dab3c99f/pango-sharp.dll.config
+lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/atk-sharp.dll
+lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/atk-sharp.dll.config
+lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/gdk-sharp.dll
+lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/gdk-sharp.dll.config
+lib/mono/gac/glade-sharp/2.12.0.0__35e10195dab3c99f/glade-sharp.dll
+lib/mono/gac/glade-sharp/2.12.0.0__35e10195dab3c99f/glade-sharp.dll.config
+lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/glib-sharp.dll
+lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/glib-sharp.dll.config
+lib/mono/gac/gtk-dotnet/2.12.0.0__35e10195dab3c99f/gtk-dotnet.dll
+lib/mono/gac/gtk-dotnet/2.12.0.0__35e10195dab3c99f/gtk-dotnet.dll.config
+lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll
+lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll.config
+lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/pango-sharp.dll
+lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/pango-sharp.dll.config
+lib/mono/gac/policy.2.10.atk-sharp/0.0.0.0__35e10195dab3c99f/policy.2.10.atk-sharp.dll
+lib/mono/gac/policy.2.10.atk-sharp/0.0.0.0__35e10195dab3c99f/policy.2.10.config
+lib/mono/gac/policy.2.10.gdk-sharp/0.0.0.0__35e10195dab3c99f/policy.2.10.config
+lib/mono/gac/policy.2.10.gdk-sharp/0.0.0.0__35e10195dab3c99f/policy.2.10.gdk-sharp.dll
+lib/mono/gac/policy.2.10.glade-sharp/0.0.0.0__35e10195dab3c99f/policy.2.10.config
+lib/mono/gac/policy.2.10.glade-sharp/0.0.0.0__35e10195dab3c99f/policy.2.10.glade-sharp.dll
+lib/mono/gac/policy.2.10.glib-sharp/0.0.0.0__35e10195dab3c99f/policy.2.10.config
+lib/mono/gac/policy.2.10.glib-sharp/0.0.0.0__35e10195dab3c99f/policy.2.10.glib-sharp.dll
+lib/mono/gac/policy.2.10.gtk-dotnet/0.0.0.0__35e10195dab3c99f/policy.2.10.config
+lib/mono/gac/policy.2.10.gtk-dotnet/0.0.0.0__35e10195dab3c99f/policy.2.10.gtk-dotnet.dll
+lib/mono/gac/policy.2.10.gtk-sharp/0.0.0.0__35e10195dab3c99f/policy.2.10.config
+lib/mono/gac/policy.2.10.gtk-sharp/0.0.0.0__35e10195dab3c99f/policy.2.10.gtk-sharp.dll
+lib/mono/gac/policy.2.10.pango-sharp/0.0.0.0__35e10195dab3c99f/policy.2.10.config
+lib/mono/gac/policy.2.10.pango-sharp/0.0.0.0__35e10195dab3c99f/policy.2.10.pango-sharp.dll
 lib/mono/gac/policy.2.4.atk-sharp/0.0.0.0__35e10195dab3c99f/policy.2.4.atk-sharp.dll
 lib/mono/gac/policy.2.4.atk-sharp/0.0.0.0__35e10195dab3c99f/policy.2.4.config
 lib/mono/gac/policy.2.4.gdk-sharp/0.0.0.0__35e10195dab3c99f/policy.2.4.config
@@ -84,6 +101,13 @@ lib/mono/gtk-sharp-2.0/glib-sharp.dll
 lib/mono/gtk-sharp-2.0/gtk-dotnet.dll
 lib/mono/gtk-sharp-2.0/gtk-sharp.dll
 lib/mono/gtk-sharp-2.0/pango-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.10.atk-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.10.gdk-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.10.glade-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.10.glib-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.10.gtk-dotnet.dll
+lib/mono/gtk-sharp-2.0/policy.2.10.gtk-sharp.dll
+lib/mono/gtk-sharp-2.0/policy.2.10.pango-sharp.dll
 lib/mono/gtk-sharp-2.0/policy.2.4.atk-sharp.dll
 lib/mono/gtk-sharp-2.0/policy.2.4.gdk-sharp.dll
 lib/mono/gtk-sharp-2.0/policy.2.4.glade-sharp.dll
@@ -116,9 +140,9 @@ libdata/pkgconfig/gtk-sharp-2.0.pc
 share/gapi-2.0/atk-api.xml
 share/gapi-2.0/gdk-api.xml
 share/gapi-2.0/glade-api.xml
+share/gapi-2.0/glib-api.xml
 share/gapi-2.0/gtk-api.xml
 share/gapi-2.0/pango-api.xml
-@dirrmtry share/gapi-2.0
 @dirrmtry lib/mono/gtk-sharp-2.0
 @dirrm lib/mono/gac/policy.2.8.pango-sharp/0.0.0.0__35e10195dab3c99f
 @dirrm lib/mono/gac/policy.2.8.pango-sharp
@@ -162,18 +186,33 @@ share/gapi-2.0/pango-api.xml
 @dirrm lib/mono/gac/policy.2.4.gdk-sharp
 @dirrm lib/mono/gac/policy.2.4.atk-sharp/0.0.0.0__35e10195dab3c99f
 @dirrm lib/mono/gac/policy.2.4.atk-sharp
-@dirrm lib/mono/gac/pango-sharp/2.10.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.10.pango-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.10.pango-sharp
+@dirrm lib/mono/gac/policy.2.10.gtk-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.10.gtk-sharp
+@dirrm lib/mono/gac/policy.2.10.gtk-dotnet/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.10.gtk-dotnet
+@dirrm lib/mono/gac/policy.2.10.glib-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.10.glib-sharp
+@dirrm lib/mono/gac/policy.2.10.glade-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.10.glade-sharp
+@dirrm lib/mono/gac/policy.2.10.gdk-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.10.gdk-sharp
+@dirrm lib/mono/gac/policy.2.10.atk-sharp/0.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/policy.2.10.atk-sharp
+@dirrm lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f
 @dirrmtry lib/mono/gac/pango-sharp
-@dirrm lib/mono/gac/gtk-sharp/2.10.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f
 @dirrmtry lib/mono/gac/gtk-sharp
-@dirrm lib/mono/gac/gtk-dotnet/2.10.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/gtk-dotnet/2.12.0.0__35e10195dab3c99f
 @dirrmtry lib/mono/gac/gtk-dotnet
-@dirrm lib/mono/gac/glib-sharp/2.10.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f
 @dirrmtry lib/mono/gac/glib-sharp
-@dirrm lib/mono/gac/glade-sharp/2.10.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/glade-sharp/2.12.0.0__35e10195dab3c99f
 @dirrmtry lib/mono/gac/glade-sharp
-@dirrm lib/mono/gac/gdk-sharp/2.10.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f
 @dirrmtry lib/mono/gac/gdk-sharp
-@dirrm lib/mono/gac/atk-sharp/2.10.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f
 @dirrmtry lib/mono/gac/atk-sharp
 @dirrmtry lib/gtk-sharp-2.0
+@dirrmtry share/gapi-2.0

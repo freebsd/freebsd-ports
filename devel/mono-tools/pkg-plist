@@ -1,24 +1,63 @@
+@comment $FreeBSD$
 bin/create-native-map
 bin/gasnview
+bin/gendarme
+bin/gendarme-wizard
 bin/gnunit
 bin/gnunit2
+bin/gui-compare
 bin/ilcontrast
 bin/monodoc
+bin/mprof-decoder
+bin/mprof-heap-viewer
 lib/create-native-map/MapAttribute.cs
 lib/create-native-map/create-native-map.exe
+lib/gendarme/Gendarme.Framework.dll
+lib/gendarme/Gendarme.Rules.BadPractice.dll
+lib/gendarme/Gendarme.Rules.Concurrency.dll
+lib/gendarme/Gendarme.Rules.Correctness.dll
+lib/gendarme/Gendarme.Rules.Design.dll
+lib/gendarme/Gendarme.Rules.Exceptions.dll
+lib/gendarme/Gendarme.Rules.Interoperability.dll
+lib/gendarme/Gendarme.Rules.Maintainability.dll
+lib/gendarme/Gendarme.Rules.Naming.dll
+lib/gendarme/Gendarme.Rules.Performance.dll
+lib/gendarme/Gendarme.Rules.Portability.dll
+lib/gendarme/Gendarme.Rules.Security.dll
+lib/gendarme/Gendarme.Rules.Serialization.dll
+lib/gendarme/Gendarme.Rules.Smells.dll
+lib/gendarme/Gendarme.Rules.Ui.dll
+lib/gendarme/gendarme-wizard.exe
+lib/gendarme/gendarme.exe
+lib/gendarme/rules.xml
+lib/gui-compare/Mono.Cecil.dll
+lib/gui-compare/gui-compare.exe
 lib/ilcontrast/ilcontrast.exe
+lib/mono-tools/mprof-decoder-library.dll
+lib/mono-tools/mprof-decoder-library.dll.mdb
+lib/mono-tools/mprof-decoder.exe
+lib/mono-tools/mprof-decoder.exe.mdb
+lib/mono-tools/mprof-heap-snapshot-explorer.dll
+lib/mono-tools/mprof-heap-snapshot-explorer.dll.mdb
+lib/mono-tools/mprof-heap-viewer.exe
+lib/mono-tools/mprof-heap-viewer.exe.mdb
 lib/mono/1.0/gasnview.exe
 lib/mono/1.0/gnunit.exe
 lib/mono/2.0/gnunit2.exe
 lib/monodoc/GeckoHtmlRender.dll
 lib/monodoc/GtkHtmlHtmlRender.dll
+lib/monodoc/MonoWebBrowserHtmlRender.dll
 lib/monodoc/browser.exe
 libdata/pkgconfig/create-native-map.pc
+libdata/pkgconfig/gendarme-framework.pc
 share/applications/ilcontrast.desktop
 share/applications/monodoc.desktop
+share/applications/mprof-heap-viewer.desktop
 share/pixmaps/ilcontrast.png
 share/pixmaps/monodoc.png
-@dirrmtry share/applications
-@dirrmtry lib/ilcontrast
 @dirrmtry lib/monodoc
+@dirrm lib/mono-tools
+@dirrmtry lib/ilcontrast
+@dirrm lib/gui-compare
+@dirrm lib/gendarme
 @dirrm lib/create-native-map

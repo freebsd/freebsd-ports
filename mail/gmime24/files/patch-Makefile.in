@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig
++++ Makefile.in
+@@ -231,7 +231,7 @@
+ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = util gmime src $(am__append_1) tests docs $(am__append_2) \
++SUBDIRS = util gmime $(am__append_1) tests docs $(am__append_2) \
+ 	tools .
+ DISTCLEANFILES = iconv-detect.h
+ EXTRA_DIST = \

@@ -42,6 +42,7 @@
     SUBDIR += gdl
     SUBDIR += gigi
     SUBDIR += gnocl
+    SUBDIR += gnome-desktop-sharp20
     SUBDIR += gnome-sharp20
     SUBDIR += gnomemm
     SUBDIR += gnustep-art

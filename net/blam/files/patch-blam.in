@@ -1,9 +1,0 @@
---- blam.in.orig	Sun Apr 15 16:58:55 2007
-+++ blam.in	Sun Apr 15 16:59:02 2007
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
- 
- LD_LIBRARY_PATH="@prefix@/lib/blam:@MOZILLA_HOME@${LD_LIBRARY_PATH+:$LD_LIBRARY_PATH}" MOZILLA_FIVE_HOME=@MOZILLA_HOME@ \
--MOZILLA_HOME=@MOZILLA_HOME@ exec -a 'blam' mono @prefix@/lib/blam/blam.exe $@
-+MOZILLA_HOME=@MOZILLA_HOME@ exec mono @prefix@/lib/blam/blam.exe $@

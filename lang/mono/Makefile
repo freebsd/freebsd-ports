@@ -3,33 +3,35 @@
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.94 2007/10/03 01:34:13 killfill Exp $
+#   $Id: Makefile,v 1.98 2007/12/13 19:31:45 killfill Exp $
 #
 
 PORTNAME=	mono
-PORTVERSION=	1.2.5.1
-PORTREVISION=	1
+PORTVERSION=	2.0.1
+PORTREVISION=	6
 CATEGORIES=	lang
-MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
+MASTER_SITES=	ftp://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
-MAINTAINER=	bsd-sharp@googlegroups.com
+MAINTAINER=	mono@FreeBSD.org
 COMMENT=	An open source implementation of .NET Development Framework
 
-CONFLICTS=	mono-devel-[0-9]* mono-svn-[0-9]*
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
 USE_BZIP2=	yes
 USE_BISON=	build
 USE_GNOME=	gnomehack glib20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
+USE_PERL5_BUILD=	yes
 LIBTOOLFILES=	configure libgc/configure
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--program-transform-name=\'\' \
-		--with-gc=included \
-		--with-tls=pthread \
+		--with-moonlinght=no \
+		--with-preview=yes \
+		--with-sigaltstack=no \
 		--mandir=${PREFIX}/man
 MAKE_ARGS=	EXTERNAL_MCS=false
 
@@ -39,25 +41,25 @@ MONO_SHARED_DIR=${WRKDIR}
 # LC_ALL is set in order to work around issues people are having when using
 # other languages.  This has shown itself in build fails and possibly other
 # strange crashes.
-MAKE_ENV=	LC_ALL=C
+MAKE_ENV=	MONO_SHARED_DIR="${MONO_SHARED_DIR}" \
+		LC_ALL=C
 
-# Removed amd64 arch because builds are exhibiting semaphore problems on
-# pointyhat runs causing failure to build.
 ONLY_FOR_ARCHS= i386 amd64
 
 MAN1=		al.1 cert2spc.1 certmgr.1 chktrust.1 cilc.1 disco.1 dtd2xsd.1 \
-		gacutil.1 genxs.1 ilasm.1 jay.1 macpack.1 makecert.1 mcs.1 \
-		mint.1 mkbundle.1 mono-service.1 mono-shlib-cop.1 mono.1 \
-		monoburg.1 monodis.1 monop.1 monostyle.1 mozroots.1 oldmono.1 \
-		permview.1 prj2make.1 secutil.1 setreg.1 signcode.1 sn.1 \
-		soapsuds.1 sqlsharp.1 wsdl.1 xsd.1 mono-xmltool.1 sgen.1 \
-		httpcfg.1 vbnc.1 resgen.1 monolinker.1
+		gacutil.1 genxs.1 httpcfg.1 ilasm.1 jay.1 macpack.1 makecert.1 \
+		mconfig.1 mcs.1 mint.1 mkbundle.1 mono-service.1 mono-shlib-cop.1 \
+		mono-xmltool.1 mono.1 monoburg.1 monodis.1 monolinker.1 monop.1 \
+		monostyle.1 mozroots.1 oldmono.1 permview.1 prj2make.1 secutil.1 \
+		setreg.1 sgen.1 signcode.1 sn.1 soapsuds.1 sqlsharp.1 vbnc.1 \
+		wsdl.1 xsd.1 resgen.1
 MAN5=		mono-config.5
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
 USE_FAM=	yes
+MAKE_ARGS+=	MONO_GENERIC_SHARING=none #https://bugzilla.novell.com/show_bug.cgi?id=434457
 .endif
 
 pre-everything::
@@ -77,7 +79,21 @@ post-patch:
 		${WRKSRC}/mcs/class/System/System.IO/FAMWatcher.cs
 	@${REINPLACE_CMD} -e 's|^#!/bin/bash|#!/bin/sh|g' \
 		${WRKSRC}/mcs/class/Managed.Windows.Forms/build-csproj \
-		${WRKSRC}/mcs/class/Managed.Windows.Forms/build-csproj2k5
+		${WRKSRC}/mcs/class/Managed.Windows.Forms/build-csproj2k5 \
+		${WRKSRC}/mcs/class/Mono.WebBrowser/build-csproj2k5 \
+		${WRKSRC}/mcs/class/Mono.Cairo/Samples/gtk/compile.sh \
+		${WRKSRC}/mcs/class/Mono.Cairo/Samples/png/compile.sh \
+		${WRKSRC}/mcs/class/Mono.Cairo/Samples/win32/compile.sh \
+		${WRKSRC}/mcs/class/Mono.Cairo/Samples/x11/compile.sh
+	@${REINPLACE_CMD} -e 's|^#!/bin/perl|#!/usr/bin/env perl|g' \
+		${WRKSRC}/mcs/errors/do-tests.pl \
+		${WRKSRC}/mcs/tools/scan-tests.pl \
+		${WRKSRC}/msvc/create-windef.pl \
+		${WRKSRC}/mono/benchmark/test-driver \
+		${WRKSRC}/mono/cil/make-opcodes-def.pl \
+		${WRKSRC}/mono/metadata/make-bundle.pl \
+		${WRKSRC}/mono/mini/genmdesc.pl \
+		${WRKSRC}/mono/tests/stress-runner.pl
 
 .if ${OSVERSION} >= 700000 && ${OSVERSION} < 800000
 	@${REINPLACE_CMD} -e 's|freebsd6|freebsd7|g' \

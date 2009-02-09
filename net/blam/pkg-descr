@@ -2,7 +2,7 @@ Blam is a tool that helps you keep track of the growing number of news
 feeds distributed as RSS. Blam lets you subscribe to any number of feeds
 and provides an easy to use and clean interface to stay up to date.  It
 is written in C# and uses Mono, GTK#, and RSS.NET.
-
+ 
 Among the features are:
 
 * Support for RSS and RDF feeds
@@ -10,4 +10,4 @@ Among the features are:
 * Print the news entries you like
 * Automatically update the feeds at regular intervals
 
-WWW: http://www.cmartin.tk/blam.html
+WWW: http://www.cmartin.tk/blam2.html

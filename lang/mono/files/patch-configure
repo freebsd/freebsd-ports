@@ -1,6 +1,30 @@
---- configure.orig	Sun Aug 26 00:12:42 2007
-+++ configure	Sun Aug 26 00:12:59 2007
-@@ -39673,8 +39673,8 @@
+--- configure.orig	2008-12-09 19:49:56.000000000 -0300
++++ configure	2008-12-09 19:50:22.000000000 -0300
+@@ -3003,7 +3003,8 @@
+ 			LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
+ 			libmono_ldflags="$PTHREAD_LIBS"
+ 		fi
+-		CPPFLAGS="$CPPFLAGS -DPLATFORM_BSD -DPLATFORM_BSD6"
++		CPPFLAGS="$CPPFLAGS -DPLATFORM_BSD -DPLATFORM_BSD6 -D_GNU_SOURCE -D_REENTRANT -DUSE_MMAP -DUSE_MUNMAP"
++		libmono_cflags="$libmono_cflags -D_REENTRANT"
+ 		need_link_unlink=yes
+ 		cat >>confdefs.h <<\_ACEOF
+ #define PTHREAD_POINTER_ID 1
+@@ -3011,11 +3012,11 @@
+ 
+ 		libdl=
+ 		libgc_threads=pthreads
+-		with_sigaltstack=yes
++#		with_sigaltstack=yes
+ # TLS is only partially implemented on -CURRENT (compiler support
+ # but NOT library support)
+ #
+-		with_tls=pthread
++#		with_tls=pthread
+ 		;;
+ 	*-*-*openbsd*)
+ 		platform_win32=no
+@@ -38211,8 +38212,8 @@
  INTERP_SUPPORTED=no
  LIBC="libc.so.6"
  INTL="libc.so.6"

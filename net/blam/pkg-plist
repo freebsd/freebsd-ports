@@ -1,43 +1,48 @@
+@comment $FreeBSD$
 bin/blam
-lib/blam/Atom.NET.dll
-lib/blam/RSS.NET.dll
+lib/blam/AtomFeed.dll
+lib/blam/RSSFeed.dll
 lib/blam/blam.exe
 lib/blam/blam.exe.config
-lib/blam/libblam.a
-lib/blam/libblam.la
-lib/blam/libblam.so
-lib/blam/libblam.so.0
 share/applications/blam.desktop
-share/blam/themes/planet/theme.html
-share/blam/themes/planet/planet.css
-share/blam/themes/planet/bubble-top.png
-share/blam/themes/planet/bubble-top-right.png
-share/blam/themes/planet/bubble-top-left.png
-share/blam/themes/planet/bubble-right.png
-share/blam/themes/planet/bubble-nipple.png
-share/blam/themes/planet/bubble-left.png
-share/blam/themes/planet/bubble-bottom.png
-share/blam/themes/planet/bubble-bottom-right.png
-share/blam/themes/planet/bubble-bottom-left.png
-share/blam/themes/pimped/theme.html
-share/blam/themes/pimped/pimped.css
-share/blam/themes/pimped/news.png
-share/blam/themes/pimped/blam.png
-share/blam/themes/blam/theme.html
-share/blam/themes/blam/blam-box-top-right.png
-share/blam/themes/blam/blam-box-top-left.png
-share/blam/themes/blam/blam-box-pad.png
-share/blam/themes/blam/blam-box-bottom-right.png
-share/blam/themes/blam/blam-box-bottom-left.png
-share/blam/themes/akregator/theme.html
-share/blam/collection.xml
-share/pixmaps/blam.png
+%%DATADIR%%/collection.xml
+%%DATADIR%%/themes/akregator/theme.html
+%%DATADIR%%/themes/blam/blam-box-bottom-left.png
+%%DATADIR%%/themes/blam/blam-box-bottom-right.png
+%%DATADIR%%/themes/blam/blam-box-pad.png
+%%DATADIR%%/themes/blam/blam-box-top-left.png
+%%DATADIR%%/themes/blam/blam-box-top-right.png
+%%DATADIR%%/themes/blam/blam.css
+%%DATADIR%%/themes/blam/theme.html
+%%DATADIR%%/themes/pimped/blam.png
+%%DATADIR%%/themes/pimped/news.png
+%%DATADIR%%/themes/pimped/pimped.css
+%%DATADIR%%/themes/pimped/theme.html
+%%DATADIR%%/themes/planet/bubble-bottom-left.png
+%%DATADIR%%/themes/planet/bubble-bottom-right.png
+%%DATADIR%%/themes/planet/bubble-bottom.png
+%%DATADIR%%/themes/planet/bubble-left.png
+%%DATADIR%%/themes/planet/bubble-nipple.png
+%%DATADIR%%/themes/planet/bubble-right.png
+%%DATADIR%%/themes/planet/bubble-top-left.png
+%%DATADIR%%/themes/planet/bubble-top-right.png
+%%DATADIR%%/themes/planet/bubble-top.png
+%%DATADIR%%/themes/planet/planet.css
+%%DATADIR%%/themes/planet/theme.html
+share/icons/hicolor/16x16/apps/blam.png
+share/icons/hicolor/22x22/apps/blam.png
+share/icons/hicolor/24x24/apps/blam.png
+share/icons/hicolor/32x32/apps/blam.png
+share/icons/hicolor/48x48/apps/blam.png
+share/icons/hicolor/scalable/apps/blam.svg
+share/locale/ar/LC_MESSAGES/blam.mo
 share/locale/bg/LC_MESSAGES/blam.mo
 share/locale/bs/LC_MESSAGES/blam.mo
 share/locale/ca/LC_MESSAGES/blam.mo
 share/locale/cs/LC_MESSAGES/blam.mo
 share/locale/da/LC_MESSAGES/blam.mo
 share/locale/de/LC_MESSAGES/blam.mo
+share/locale/dz/LC_MESSAGES/blam.mo
 share/locale/el/LC_MESSAGES/blam.mo
 share/locale/en_CA/LC_MESSAGES/blam.mo
 share/locale/en_GB/LC_MESSAGES/blam.mo
@@ -57,36 +62,29 @@ share/locale/lv/LC_MESSAGES/blam.mo
 share/locale/nb/LC_MESSAGES/blam.mo
 share/locale/ne/LC_MESSAGES/blam.mo
 share/locale/nl/LC_MESSAGES/blam.mo
+share/locale/oc/LC_MESSAGES/blam.mo
 share/locale/pa/LC_MESSAGES/blam.mo
 share/locale/pl/LC_MESSAGES/blam.mo
 share/locale/pt/LC_MESSAGES/blam.mo
 share/locale/pt_BR/LC_MESSAGES/blam.mo
-share/locale/rw/LC_MESSAGES/blam.mo
 share/locale/ru/LC_MESSAGES/blam.mo
+share/locale/rw/LC_MESSAGES/blam.mo
+share/locale/sk/LC_MESSAGES/blam.mo
+share/locale/sl/LC_MESSAGES/blam.mo
 share/locale/sq/LC_MESSAGES/blam.mo
 share/locale/sr/LC_MESSAGES/blam.mo
 share/locale/sr@Latn/LC_MESSAGES/blam.mo
 share/locale/sv/LC_MESSAGES/blam.mo
-share/locale/sk/LC_MESSAGES/blam.mo
 share/locale/tr/LC_MESSAGES/blam.mo
 share/locale/uk/LC_MESSAGES/blam.mo
 share/locale/vi/LC_MESSAGES/blam.mo
 share/locale/zh_CN/LC_MESSAGES/blam.mo
 share/locale/zh_HK/LC_MESSAGES/blam.mo
 share/locale/zh_TW/LC_MESSAGES/blam.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ne/LC_MESSAGES
-@dirrmtry share/locale/ne
-@dirrm share/blam/themes/planet
-@dirrm share/blam/themes/pimped
-@dirrm share/blam/themes/blam
-@dirrm share/blam/themes/akregator
-@dirrm share/blam/themes
-@dirrm share/blam
+@dirrm %%DATADIR%%/themes/planet
+@dirrm %%DATADIR%%/themes/pimped
+@dirrm %%DATADIR%%/themes/blam
+@dirrm %%DATADIR%%/themes/akregator
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%
 @dirrm lib/blam
-@dirrmtry share/applications

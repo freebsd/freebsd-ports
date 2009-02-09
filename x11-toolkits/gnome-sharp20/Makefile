@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	gnome-sharp
-PORTVERSION=	2.16.0
-PORTREVISION=	5
+PORTVERSION=	2.24.0
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 
-MAINTAINER=	bsd-sharp@googlegroups.com
+MAINTAINER=	mono@FreeBSD.org
 COMMENT=	GNOME interfaces for the .NET runtime
 
 LATEST_LINK=	gnome-sharp20
@@ -21,15 +21,11 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
-USE_GNOME=	gnomehack gnomepanel gtkhtml3 gtksharp20 librsvg2 vte \
-		libgnomeprintui
+USE_GNOME=	gnomehack gnomepanel gtksharp20 librsvg2 vte libgnomeprintui
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^#!/usr/bin/perl|#!${PERL}|'
-	@${REINPLACE_CMD} -e 's|libgtkhtml-3.8|libgtkhtml-3.14|g' \
-		-e 's|GTKHTML_VERSION=3.8|GTKHTML_VERSION=3.14|g' \
-	    	${WRKSRC}/configure
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
