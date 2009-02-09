@@ -1,0 +1,14 @@
+--- ./kuser/CMakeLists.txt.orig	2008-12-26 15:33:16.000000000 +0000
++++ ./kuser/CMakeLists.txt	2008-12-26 15:34:03.000000000 +0000
+@@ -71,10 +71,7 @@
+ 
+ kde4_add_executable(kuser ${kuser_SRCS})
+ 
+-target_link_libraries(kuser ${KDE4_KIO_LIBS} ${KDE4_KLDAP_LIBS} kntlm)
+-if(HAVE_CRYPT_H)
+-	target_link_libraries(kuser crypt)
+-endif(HAVE_CRYPT_H)
++target_link_libraries(kuser ${KDE4_KIO_LIBS} ${KDE4_KLDAP_LIBS} kntlm crypt)
+ 
+ install(TARGETS kuser ${INSTALL_TARGETS_DEFAULT_ARGS})
+ 
