@@ -9,7 +9,7 @@ PORTNAME=	larswm
 PORTVERSION=	7.5.3
 PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.lab1702.net/fnurt/larswm/
+MASTER_SITES=	http://www.safereconnect.com/fnurt/larswm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiling Window Manager for X
