@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	trollop
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF/trollop
 
