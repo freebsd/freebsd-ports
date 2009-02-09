@@ -34,6 +34,62 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="653606e9-f6ac-11dd-94d9-0030843d3802">
+    <topic>typo -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>typo3</name>
+	<range><lt>4.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/33617/">
+	  <p>Some vulnerabilities have been reported in Typo3, which can be
+	    exploited by malicious people to bypass certain security restrictions,
+	    conduct cross-site scripting and session fixation attacks, and
+	    compromise a vulnerable system.</p>
+	  <p>The "Install tool" system extension uses insufficiently random
+	    entropy sources to generate an encryption key, resulting in weak
+	    security.</p>
+	  <p>The authentication library does not properly invalidate supplied
+	    session tokens, which can be exploited to hijack a user's
+	    session.</p>
+	  <p>Certain unspecified input passed to the "Indexed Search Engine"
+	    system extension is not properly sanitised before being used to invoke
+	    commands. This can be exploited to inject and execute arbitrary shell
+	    commands.</p>
+	  <p>Input passed via the name and content of files to the "Indexed Search
+	    Engine" system extension is not properly sanitised before being returned
+	    to the user. This can be exploited to execute arbitrary HTML and script
+	    code in a user's browser session in context of an affected site.</p>
+	  <p>Certain unspecified input passed to the Workspace module is not
+	    properly sanitised before being returned to the user. This can be
+	    exploited to execute arbitrary HTML and script code in a user's
+	    browser session in context of an affected site.</p>
+	  <p>Note: It is also reported that certain unspecified input passed to
+	    test scripts of the "ADOdb" system extension is not properly sanitised
+	    before being returned to the user. This can be exploited to execute
+	    arbitrary HTML and script code in a user's browser session in context
+	    of an affected website.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-0255</cvename>
+      <cvename>CVE-2009-0256</cvename>
+      <cvename>CVE-2009-0257</cvename>
+      <cvename>CVE-2009-0258</cvename>
+      <url>http://secunia.com/advisories/33617/</url>
+      <url>http://typo3.org/teams/security/security-bulletins/typo3-sa-2009-001/</url>
+    </references>
+    <dates>
+      <discovery>2009-02-27</discovery>
+      <entry>2009-02-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="13d6d997-f455-11dd-8516-001b77d09812">
     <topic>sudo -- certain authorized users could run commands as any user</topic>
     <affects>
