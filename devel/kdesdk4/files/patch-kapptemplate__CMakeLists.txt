@@ -1,0 +1,11 @@
+--- ../kapptemplate/CMakeLists.txt.orig	2008-12-10 16:13:41.000000000 +0000
++++ ../kapptemplate/CMakeLists.txt	2008-12-30 20:15:18.000000000 +0000
+@@ -5,7 +5,7 @@
+ include(KAppTemplateMacro)
+ 
+ add_subdirectory(icons)
+-add_subdirectory(templates)
++# add_subdirectory(templates)
+ add_subdirectory(tests)
+ 
+ set(kapptemplate_SRCS
