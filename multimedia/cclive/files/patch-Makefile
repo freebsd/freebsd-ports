@@ -1,0 +1,52 @@
+--- Makefile.orig	2009-02-07 00:40:50.864414331 +0000
++++ Makefile	2009-02-07 01:23:32.655384692 +0000
+@@ -1,31 +1,26 @@
+ # GNU Makefile for cclive.
+ 
+-SHELL = /bin/sh
+-
+ .SUFFIXES:
+ .SUFFIXES: .c .o
+ 
+-prefix      = $(HOME)
++prefix      = $(PREFIX)
+ bindir      = $(prefix)/bin
+ exec_prefix = $(prefix)
+ datarootdir = $(prefix)/share
+ datadir     = $(datarootdir)
+-mandir      = $(datarootdir)/man
++mandir      = $(MANPREFIX)/man
+ man1dir     = $(mandir)/man1
+ 
+-CC          = cc
+ RM          = rm -f
+-INSTALL     = install -c
+-INSTALL_D   = install -d
+-INSTALL_M   = install
++INSTALL     = $(BSD_INSTALL_PROGRAM)
++INSTALL_D   = mkdir -p
++INSTALL_M   = $(BSD_INSTALL_MAN)
+ UNAME       = uname
+ AWK         = awk
+ CURL_CONFIG = curl-config
+ GENGETOPT   = gengetopt
+ POD2MAN     = pod2man
+ 
+-WITH_MAN    = yes
+-
+ ifndef V
+ QUIET_CC        = @echo '  ' CC $@;
+ QUIET_LINK      = @echo '  ' LINK $@;
+@@ -39,11 +34,9 @@
+ CURL_CFLAGS  := $(shell sh -c "$(CURL_CONFIG) --cflags")
+ CURL_LDFLAGS := $(shell sh -c "$(CURL_CONFIG) --libs")
+ 
+-CFLAGS      = -g -Wall
+ ALL_CFLAGS  = -D_GNU_SOURCE -DOSNAME=\"$(OS_NAME)\" -I. $(CFLAGS)
+ ALL_CFLAGS += $(CURL_CFLAGS)
+ 
+-LDFLAGS     =
+ ALL_LDFLAGS = $(LDFLAGS)
+ ALL_LDFLAGS += $(CURL_LDFLAGS)
+ 
+a7e

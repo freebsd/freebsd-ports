@@ -17,6 +17,7 @@
     SUBDIR += bsdbktr_tvtune
     SUBDIR += camserv
     SUBDIR += castpodder
+    SUBDIR += cclive
     SUBDIR += cheese
     SUBDIR += clive
     SUBDIR += clive1
