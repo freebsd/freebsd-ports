@@ -7,7 +7,7 @@
 
 PORTNAME=	pwlib
 PORTVERSION=	1.12.0
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE}
@@ -32,9 +32,6 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800059
-BROKEN=		does not build
-.endif
 
 CFLAGS=		-O1
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -O1 -I${WRKSRC}/include -I${LOCALBASE}/include" \
