@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	trommler
-PORTVERSION=	3.4
-PORTREVISION=	5
+PORTVERSION=	3.8
 CATEGORIES=	audio
 MASTER_SITES=	http://muth.org/Robert/Trommler/
-DISTNAME=	trommler.3.4
+DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK based drum machine
 
 WRKSRC=		${WRKDIR}/Trommler
 
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20
 USE_GMAKE=	yes
 
 post-patch:
@@ -32,10 +31,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|"/Drums"|"${PREFIX}/share/trommler/Drums"|' \
 		${WRKSRC}/gui.c
-
-pre-build:
-#remove stale linux binaries
-	@${RM} ${WRKSRC}/playsample ${WRKSRC}/wav2smp
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/playsample ${PREFIX}/bin
