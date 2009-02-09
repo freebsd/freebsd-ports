@@ -15,8 +15,7 @@ MAINTAINER=	nick@foobar.org
 COMMENT=	A web based customer relationship management suite
 
 IGNORE_WITH_MYSQL=	323 40
-USE_PHP=	gd mysql session pcre xml zlib mbstring curl imap spl posix \
-		curl
+USE_PHP=	gd mysql session pcre xml zlib mbstring curl imap spl posix
 USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/SugarCE-Full-${PORTVERSION}
