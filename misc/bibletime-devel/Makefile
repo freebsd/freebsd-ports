@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	1.7.r1
+PORTVERSION=	1.7
 CATEGORIES=	misc kde
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	tabthorpe@FreeBSD.org
-COMMENT=	A powerful Bible study application for KDE4
+COMMENT=	A Bible study application for KDE4
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.5.11.so:${PORTSDIR}/misc/sword \
 		${LOCALBASE}/lib/libclucene.so:${PORTSDIR}/textproc/clucene
@@ -20,7 +19,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python \
 		phonon.4:${PORTSDIR}/multimedia/phonon
 
-USE_BZIP2=	yes
 USE_OPENSSL=	yes
 KDE4_BUILDENV=	yes
 USE_KDE4=	kdeprefix kdelibs runtime workspace automoc4
@@ -29,8 +27,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui xml webkit qmake_build moc_build uic_build rcc_build
 
 post-extract:
-	${MV} ${WRKDIR}/${DISTNAME} ${WRKDIR}/${PORTNAME}-${PORTVERSION}
-	${MKDIR} ${WRKSRC}
+	${MKDIR} ${WRKSRC}/build
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CMAKE_ENV} ${CMAKE_BIN} \
