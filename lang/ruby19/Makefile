@@ -23,7 +23,10 @@ WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--enable-shared \
 		--enable-pthread \
-		--with-openssl-include=${OPENSSLINC}
+		--with-openssl-include=${OPENSSLINC} \
+		--with-ruby-version=minor \
+		--with-sitedir="${PREFIX}/lib/ruby/site_ruby" \
+		--with-vendordir="${PREFIX}/lib/ruby/vendor_ruby"
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
@@ -102,7 +105,8 @@ EXTDOCS=	bigdecimal/bigdecimal_*.html	\
 		syslog/syslog.txt		\
 		zlib/doc/zlib.rd
 
-MAN1=		${RUBY_NAME}.1
+MAN1=		${RUBY_NAME}.1 erb${RUBY_SUFFIX}.1  irb${RUBY_SUFFIX}.1 \
+		rake${RUBY_SUFFIX}.1 ri${RUBY_SUFFIX}.1
 
 # Macros to change variables in rbconfig.rb
 RB_SET_CONF_VAR=${SH} -c '${REINPLACE_CMD} -E -e "s,(CONFIG\[\"$$0\"\][[:space:]]*=[[:space:]]*)(\(?)(.*)(\)?),\1\2$$1\4," ${WRKSRC}/rbconfig.rb' --
@@ -223,9 +227,9 @@ plist::
 # Includes
 #
 	@${FIND} -ds ${PREFIX}/include/ruby-${RUBY_VER} ! -type d | \
-		${SED} 's,^${PREFIX},,' >> pkg-plist
+		${SED} 's,^${PREFIX}/*,,' >> pkg-plist
 	@${FIND} -ds ${PREFIX}/include/ruby-${RUBY_VER} -type d | \
-		${SED} 's,^${PREFIX},@dirrm ,' >> pkg-plist
+		${SED} 's,^${PREFIX}/*,@dirrm ,' >> pkg-plist
 
 #
 # Vendor and site libs
