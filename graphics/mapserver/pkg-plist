@@ -12,12 +12,8 @@ bin/sortshp
 %%WITH_PERL%%%%SITE_PERL%%/mach/auto/mapscript/mapscript.bs
 %%WITH_PERL%%%%SITE_PERL%%/mach/auto/mapscript/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/mach/mapscript.pm
+%%WITH_PERL%%lib/perl5/%%PERL_VER%%/mach/perllocal.pod
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/mach/auto/mapscript
 %%WITH_PHP%%%%PHP_EXTENSION_DIR%%/php_mapscript.so
-%%WITH_PHP%%@exec mkdir -p %D/etc/php
-%%WITH_PHP%%@exec echo extension=php_mapscript.so >> %D/etc/php/extensions.ini
-%%WITH_PHP%%@unexec cp %D/etc/php/extensions.ini %D/etc/php/extensions.ini.orig
-%%WITH_PHP%%@unexec grep -v php_mapscript\\.so %D/etc/php/extensions.ini.orig > %D/etc/php/extensions.ini || true
-%%WITH_PHP%%@unexec rm %D/etc/php/extensions.ini.orig
-%%WITH_PHP%%@unexec [ -s %D/etc/php/extensions.ini ] || rm %D/etc/php/extensions.ini
+%%WITH_PHP%%@dirrmtry %%PHP_EXTENSION_DIR%%
 %%WITH_PHP%%@dirrmtry etc/php

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		mapserver
-PORTVERSION=		5.2.0
-PORTREVISION=		1
+PORTVERSION=		5.2.1
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -23,7 +22,8 @@ CONFIGURE_ARGS=		--enable-runpath \
 			--with-gd=${LOCALBASE} \
 			--with-proj=${LOCALBASE}
 
-OPTIONS=		TIFF "Support for TIFF (but not GeoTIFF) files" off \
+OPTIONS=		AGG "Support for AGG image rendering (req: FreeType)" off \
+			TIFF "Support for TIFF (but not GeoTIFF) files" off \
 			MING "Support for Macromedia Flash output" off \
 			PDF "Support for PDF output via pdflib" off \
 			GDAL "Support for a number of input raster formats" off \
@@ -36,6 +36,11 @@ OPTIONS=		TIFF "Support for TIFF (but not GeoTIFF) files" off \
 			DEBUG "Enable debugging output" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_AGG)
+LIB_DEPENDS+=		agg.2:${PORTSDIR}/graphics/agg
+CONFIGURE_ARGS+=	--with-agg=${LOCALBASE} --with-freetype=${LOCALBASE}
+.endif
 
 .if defined(WITH_TIFF)
 .if !defined(WITH_GDAL)
@@ -79,17 +84,9 @@ CONFIGURE_ARGS+=	--with-postgis=${LOCALBASE}/bin/pg_config
 .endif
 
 .if defined(WITH_PHP)
-.BEGIN:
-# make sure php was built with regex=system
-	@if [ `grep -q 'define REGEX 0' ${LOCALBASE}/include/php/main/php_config.h` ]; then \
-		${ECHO_MSG} "This port currently requires your php to have been built specifying the"; \
-		${ECHO_MSG} "flag --with-regex=system. To specify this flag when building php from ports,"; \
-		${ECHO_MSG} "use 'WITH_REGEX_TYPE=system'."; \
-		${ECHO_MSG} ""; \
-		sleep 2; \
-	fi
-USE_PHP=	yes
-CONFIGURE_ARGS+=	--with-php=${LOCALBASE}
+BUILD_DEPENDS+=		${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php5
+RUN_BUILDS=		${BUILD_DEPENDS}
+CONFIGURE_ARGS+=	--with-php=${LOCALBASE}/include/php/
 PHP_EXTENSION_DIR!=	${LOCALBASE}/bin/php-config --extension-dir | ${SED} -e 's,/usr/local/,,'
 PLIST_SUB+=		PHP_EXTENSION_DIR=${PHP_EXTENSION_DIR}
 PLIST_SUB+=		WITH_PHP=""
@@ -139,10 +136,14 @@ do-install:
 .if defined(WITH_PHP)
 	@${MKDIR} ${LOCALBASE}/${PHP_EXTENSION_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/mapscript/php3/php_mapscript.so ${LOCALBASE}/${PHP_EXTENSION_DIR}/
-	${ECHO} "extension=php_mapscript.so" >> ${LOCALBASE}/etc/php/extensions.ini
 .endif
 .if defined(WITH_PERL)
 	(cd ${WRKSRC}/mapscript/perl && make install)
+.endif
+
+post-install:
+.if defined(WITH_PHP)
+	@${ECHO_MSG} "Please add the line extension=php_mapscript.so to ${LOCALBASE}/etc/php/extensions.ini"
 .endif
 
 .include <bsd.port.post.mk>
