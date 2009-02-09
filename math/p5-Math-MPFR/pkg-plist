@@ -1,0 +1,7 @@
+%%SITE_PERL%%/mach/Math/MPFR.pm
+%%SITE_PERL%%/mach/auto/Math/MPFR/.packlist
+%%SITE_PERL%%/mach/auto/Math/MPFR/MPFR.bs
+%%SITE_PERL%%/mach/auto/Math/MPFR/MPFR.so
+@dirrm %%SITE_PERL%%/mach/Math
+@dirrm %%SITE_PERL%%/mach/auto/Math/MPFR
+@dirrmtry %%SITE_PERL%%/mach/auto/Math
