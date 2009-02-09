@@ -1,0 +1,47 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/client/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/client/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/client/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/client/database.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/client/database.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/client/database.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/client/server.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/client/server.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/client/server.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/client/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/client/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/client/utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/client/view.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/client/view.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/client/view.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/resource.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/resource.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/resource.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/schema/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/schema/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/schema/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/schema/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/schema/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/schema/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/schema/properties/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/schema/properties/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/schema/properties/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/schema/properties/view.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/schema/properties/view.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/schema/properties/view.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/url.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/url.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/url.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/client
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/schema/properties
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb/schema
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/simplecouchdb
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
