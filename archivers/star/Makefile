@@ -36,7 +36,7 @@ PORTDOCS=	README README.crash README.mtio README.pattern STARvsGNUTAR \
 post-patch:
 	@${FIND} ${WRKSRC} -type f -print \
 		| ${XARGS} ${REINPLACE_CMD} -e "s@/etc/default@${PREFIX}/etc@g"
-	@${MV} -v ${WRKSRC}/rmt/rmt.1 ${WRKSRC}/rmt/srmt.1
+	@${MV} ${WRKSRC}/rmt/rmt.1 ${WRKSRC}/rmt/srmt.1
 
 do-build:
 	@cd ${WRKSRC} && ${MAKE_ENV} ${LOCALBASE}/bin/smake
