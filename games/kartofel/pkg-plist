@@ -25,7 +25,7 @@ bin/kartofel
 %%DATADIR%%/levels/7.txt
 %%DATADIR%%/levels/8.txt
 %%DATADIR%%/levels/9.txt
-%%DATADIR%%/music/moonlight.mp3
+%%DATADIR%%/music/moonlight.ogg
 %%DATADIR%%/sounds/click01.wav
 %%DATADIR%%/sounds/click02.wav
 %%DATADIR%%/sounds/click03.wav
