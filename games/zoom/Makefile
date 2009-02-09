@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	zoom
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.logicalshift.co.uk/unix/zoom/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Z-Interpreter for X with full V6 support
 
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
