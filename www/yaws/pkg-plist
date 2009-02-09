@@ -47,7 +47,7 @@ etc/yaws.conf.sample
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/envelope.xsd
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/epam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/lib/setuid_drv.so
-%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/lib/yaws_sendfile_drv.so
+%%WITH_SENDFILE%%%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/lib/yaws_sendfile_drv.so
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/mime.types
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/soap.xsd
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/wsdl.xsd
