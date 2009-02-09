@@ -3807,3 +3807,4 @@ chinese/stardict2-dict-zh_TW||2009-02-03|Has expired: has been broken for more t
 x11-themes/gtk-industrial-theme||2009-02-03|Has expired: has been broken for more than 6 months
 sysutils/srmt||2009-02-07|Moved into archivers/star
 devel/libslang|devel/libslang2|2009-02-07|Abandoned upstream, replaced by devel/libslang2
+graphics/processing-devel|graphics/processing|2009-02-09|Retire, as non-devel port was updated to newer version
