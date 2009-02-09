@@ -6,9 +6,9 @@
 
 PORTNAME=	mp3burn
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	adox@mcx2.org
 COMMENT=	Command line tool for making audio CDs from mp3s
@@ -29,7 +29,9 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/mp3burn
 
 post-patch:
-	@${PERL} -pi -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/mp3burn
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|g' \
+		-e 's|/bin/uname|/usr/bin/uname|g' \
+		-e 's|x86_64|amd64|g' ${WRKSRC}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mp3burn ${PREFIX}/bin
