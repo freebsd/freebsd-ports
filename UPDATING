@@ -30,7 +30,6 @@ upgrades.
   should be recompiled.
 
    # portupgrade -o devel/libslang2 devel/libslang
-   # portupgrade -fr devel/libslang2
 
 20090130:
   AFFECTS: users of www/httptunnel
