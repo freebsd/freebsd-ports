@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	hudson
-PORTVERSION=	1.281
+PORTVERSION=	1.282
 CATEGORIES=	www java devel
-MASTER_SITES=	https://hudson.dev.java.net/files/documents/2402/125881/
+MASTER_SITES=	https://hudson.dev.java.net/files/documents/2402/126367/
 DISTNAME=	hudson
 EXTRACT_SUFX=	.war
 EXTRACT_ONLY=
