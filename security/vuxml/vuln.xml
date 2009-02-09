@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="40774927-f6b4-11dd-94d9-0030843d3802">
+    <topic>phplist -- local file inclusion vulnerability</topic>
+    <affects>
+      <package>
+	<name>phplist</name>
+	<range><lt>2.10.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/33533/">
+	  <p>Input passed to the "_SERVER[ConfigFile]" parameter in
+	    admin/index.php is not properly verified before being used to include
+	    files. This can be exploited to include arbitrary files from local
+	    resources.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-0422</cvename>
+      <url>http://secunia.com/advisories/33533/</url>
+    </references>
+    <dates>
+      <discovery>2009-01-15</discovery>
+      <entry>2009-02-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9c2460a4-f6b1-11dd-94d9-0030843d3802">
     <topic>squid -- remote denial of service vulnerability</topic>
     <affects>
