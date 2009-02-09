@@ -1560,6 +1560,7 @@ clisp                           ports/lang/clisp
 clisp-hyperspec                 ports/devel/clisp-hyperspec
 clit                            ports/textproc/clit
 clive                           ports/multimedia/clive
+clive1                          ports/multimedia/clive1
 cln                             ports/math/cln
 cloc                            ports/misc/cloc
 clockspeed                      ports/sysutils/clockspeed
@@ -6482,6 +6483,7 @@ kfreerings                      ports/games/kfreerings
 kftpgrabber                     ports/ftp/kftpgrabber
 kgpg                            ports/security/kgpg
 kgraphviewer                    ports/graphics/kgraphviewer
+kgrubeditor                     ports/sysutils/kgrubeditor
 kgtk                            ports/sysutils/kgtk
 khacc                           ports/finance/khacc
 khtml2png                       ports/www/khtml2png
@@ -7416,7 +7418,6 @@ libsigc++12                     ports/devel/libsigc++12
 libsigc++20                     ports/devel/libsigc++20
 libsigcx                        ports/devel/libsigcx
 libsigsegv                      ports/devel/libsigsegv
-libslang                        ports/devel/libslang
 libslang2                       ports/devel/libslang2
 libsmi                          ports/net-mgmt/libsmi
 libsndfile                      ports/audio/libsndfile
@@ -17167,6 +17168,7 @@ php-dbg2                        ports/devel/php-dbg2
 php-dyn                         ports/www/php-dyn
 php-gtk                         ports/x11-toolkits/php-gtk
 php-java-bridge                 ports/devel/php-java-bridge
+php-libawl                      ports/devel/php-libawl
 php-magickwand                  ports/graphics/php-magickwand
 php-mode.el                     ports/lang/php-mode.el
 php-screw                       ports/www/php-screw
@@ -20609,7 +20611,6 @@ sredird                         ports/comms/sredird
 srg                             ports/www/srg
 srilm                           ports/textproc/srilm
 srm                             ports/security/srm
-srmt                            ports/sysutils/srmt
 srp                             ports/security/srp
 srvx                            ports/irc/srvx
 ss                              ports/math/ss
@@ -20933,6 +20934,8 @@ tcl84                           ports/lang/tcl84
 tcl84-thread                    ports/lang/tcl84-thread
 tcl85                           ports/lang/tcl85
 tcl85-thread                    ports/lang/tcl85-thread
+tcl86                           ports/lang/tcl86
+tcl86-thread                    ports/lang/tcl86-thread
 tclExpat                        ports/textproc/tclExpat
 tclX                            ports/lang/tclX
 tclcheck                        ports/devel/tclcheck
@@ -21200,6 +21203,8 @@ tk84                            ports/x11-toolkits/tk84
 tk84-thread                     ports/x11-toolkits/tk84-thread
 tk85                            ports/x11-toolkits/tk85
 tk85-thread                     ports/x11-toolkits/tk85-thread
+tk86                            ports/x11-toolkits/tk86
+tk86-thread                     ports/x11-toolkits/tk86-thread
 tkXwin                          ports/x11/tkXwin
 tkabber                         ports/net-im/tkabber
 tkabber-devel                   ports/net-im/tkabber-devel
