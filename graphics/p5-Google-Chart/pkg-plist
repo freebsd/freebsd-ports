@@ -1,0 +1,43 @@
+%%SITE_PERL%%/Google/Chart.pm
+%%SITE_PERL%%/Google/Chart/Marker.pm
+%%SITE_PERL%%/Google/Chart/Size.pm
+%%SITE_PERL%%/Google/Chart/Color.pm
+%%SITE_PERL%%/Google/Chart/Axis.pm
+%%SITE_PERL%%/Google/Chart/Title.pm
+%%SITE_PERL%%/Google/Chart/Type.pm
+%%SITE_PERL%%/Google/Chart/Types.pm
+%%SITE_PERL%%/Google/Chart/QueryComponent.pm
+%%SITE_PERL%%/Google/Chart/Grid.pm
+%%SITE_PERL%%/Google/Chart/Legend.pm
+%%SITE_PERL%%/Google/Chart/Data.pm
+%%SITE_PERL%%/Google/Chart/Fill.pm
+%%SITE_PERL%%/Google/Chart/Type/Bar.pm
+%%SITE_PERL%%/Google/Chart/Type/Line.pm
+%%SITE_PERL%%/Google/Chart/Type/QRcode.pm
+%%SITE_PERL%%/Google/Chart/Type/Venn.pm
+%%SITE_PERL%%/Google/Chart/Type/Pie.pm
+%%SITE_PERL%%/Google/Chart/Type/Radar.pm
+%%SITE_PERL%%/Google/Chart/Type/ScatterPlot.pm
+%%SITE_PERL%%/Google/Chart/Type/SparkLine.pm
+%%SITE_PERL%%/Google/Chart/Type/Simple.pm
+%%SITE_PERL%%/Google/Chart/Axis/Item.pm
+%%SITE_PERL%%/Google/Chart/Axis/Style.pm
+%%SITE_PERL%%/Google/Chart/Data/Simple.pm
+%%SITE_PERL%%/Google/Chart/Data/Text.pm
+%%SITE_PERL%%/Google/Chart/Data/Extended.pm
+%%SITE_PERL%%/Google/Chart/QueryComponent/Simple.pm
+%%SITE_PERL%%/Google/Chart/Fill/LinearGradient.pm
+%%SITE_PERL%%/Google/Chart/Fill/Solid.pm
+%%SITE_PERL%%/Google/Chart/Fill/LinearStripes.pm
+@dirrm %%SITE_PERL%%/Google/Chart/Type
+@dirrm %%SITE_PERL%%/Google/Chart/Fill
+@dirrm %%SITE_PERL%%/Google/Chart/QueryComponent
+@dirrm %%SITE_PERL%%/Google/Chart/Data
+@dirrm %%SITE_PERL%%/Google/Chart/Axis
+@dirrm %%SITE_PERL%%/Google/Chart
+@dirrmtry %%SITE_PERL%%/Google
+%%SITE_PERL%%/mach/auto/Google/Chart/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/Google/Chart
+@dirrm %%SITE_PERL%%/mach/auto/Google
+@dirrmtry %%SITE_PERL%%/mach/auto
+@dirrmtry %%SITE_PERL%%/mach
