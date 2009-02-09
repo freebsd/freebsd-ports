@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	snd
-PORTVERSION=	10.2
-PORTREVISION=	2
+PORTVERSION=	10.3
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://mirror.mcx2.org/
@@ -19,7 +18,6 @@ OPTIONS=	ESD	"Use Enlightened Sound Daemon"		on  \
 		FFTW3	"Use FFTW"				on  \
 		GSL	"Use GNU Scientific Library"		on  \
 		GUILE	"Use Guile as the extension language"	on  \
-		GAUCHE	"Use Gauche as the extension language"	off  \
 		S7	"Use S7 as the extension language"	off  \
 		LADSPA	"Include support for LADSPA plugins"	on  \
 		NLS	"Native Language Support"		on  \
@@ -67,14 +65,6 @@ LIB_DEPENDS+=	guile.20:${PORTSDIR}/lang/guile
 PLIST_SUB+=	SCHEME=""
 .else
 CONFIGURE_ARGS+=	--without-guile
-.endif
-
-.if !defined(WITHOUT_GAUCHE)
-CONFIGURE_ARGS+=	--with-gauche
-LIB_DEPENDS+=	gauche.0:${PORTSDIR}/lang/gauche
-PLIST_SUB+=	SCHEME=""
-.else
-CONFIGURE_ARGS+=	--without-gauche
 .endif
 
 .if !defined(WITHOUT_S7)

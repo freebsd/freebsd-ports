@@ -291,6 +291,8 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/pix/tanh100.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/tanh3.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/tanhexs.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/tanhsinderiv.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/tanhsininteg.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/tanhsum.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/title.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/toc-blank.png
@@ -309,6 +311,7 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/pix/wavo.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/white-noise.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/wt.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/xex.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/zramp.png
 %%PORTDOCS%%%%DOCSDIR%%/quick.html
 %%PORTDOCS%%%%DOCSDIR%%/snd-contents.html
@@ -365,7 +368,6 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/env.scm
 %%SCHEME%%%%DATADIR%%/enved.scm
 %%SCHEME%%%%DATADIR%%/eval-c.scm
-%%SCHEME%%%%DATADIR%%/event.scm
 %%SCHEME%%%%DATADIR%%/examp.scm
 %%SCHEME%%%%DATADIR%%/export-all.scm
 %%SCHEME%%%%DATADIR%%/extensions.scm
@@ -384,6 +386,7 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/hooks.scm
 %%SCHEME%%%%DATADIR%%/index.scm
 %%SCHEME%%%%DATADIR%%/jcrev.scm
+%%SCHEME%%%%DATADIR%%/jcvoi.scm
 %%SCHEME%%%%DATADIR%%/kmenu.scm
 %%SCHEME%%%%DATADIR%%/ladspa-help.scm
 %%SCHEME%%%%DATADIR%%/ladspa.scm
@@ -448,6 +451,7 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/snd7.scm
 %%SCHEME%%%%DATADIR%%/snd8.scm
 %%SCHEME%%%%DATADIR%%/snd9.scm
+%%SCHEME%%%%DATADIR%%/snd10.scm
 %%SCHEME%%%%DATADIR%%/snd_conffile.scm
 %%SCHEME%%%%DATADIR%%/snddiff.scm
 %%SCHEME%%%%DATADIR%%/sndlib-ws.scm
