@@ -657,7 +657,6 @@
     SUBDIR += preview
     SUBDIR += price
     SUBDIR += processing
-    SUBDIR += processing-devel
     SUBDIR += proj
     SUBDIR += pstoedit
     SUBDIR += pstoepsi
