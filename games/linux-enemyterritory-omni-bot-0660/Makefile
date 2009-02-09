@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	omni-bot
-PORTVERSION=	0.660
+PORTVERSION=	0.710
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
@@ -37,16 +37,12 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME} ${PREFIX}/bin
 .endfor
 	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/omni-bot/omnibot_et.so ${DATADIR}
-	cd ${WRKSRC}/omni-bot && ${CP} -R et global_scripts ${DATADIR}
+	${CP} -R ${WRKSRC}/omni-bot/* ${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/omnibot/qagame.mp.i386.so ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/omnibot/omnibot_et.pk3 ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.   for f in *.txt omni-bot/*.txt
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.   endfor
-	${CP} -R ${WRKSRC}/omni-bot/docs ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
