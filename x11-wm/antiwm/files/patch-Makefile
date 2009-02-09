@@ -1,0 +1,47 @@
+--- Makefile.orig	2008-08-01 02:59:17.000000000 +0200
++++ Makefile	2009-02-01 10:00:20.000000000 +0100
+@@ -1,22 +1,36 @@
+ # install directory
+-INSTALL_DIR=/usr/local/bin
++PREFIX?= /usr/local/
+ 
+ # enable debug messages 
+ DEBUG = -DDEBUG
+ 
+-CC = gcc
+-LIBS = -lX11
+-LDFLAGS = -L/usr/lib
+-CFLAGS = -O2 -Wall -I/usr/X11R6/include 
++# compiler and linker
++CC?= gcc
++
++# paths
++X11INC = $(LOCALBASE)/include
++X11LIB = $(LOCALBASE)/lib
++
++# includes and libs
++INCS = -I. -I/usr/include -I${X11INC}
++LIBS = -L/usr/lib -lc -L${X11LIB} -lX11
++
++# flags
++LDFLAGS+= ${LIBS}
++CFLAGS+= ${INCS}
+ 
+ SRC = main.o events.o manage.o list.o bar.o
+ HEADERS = bar.h conf.h data.h events.h list.h manage.h antiwm.h
+ 
++all: antiwm
++
+ antiwm: $(SRC)
+-	gcc $(SRC) -o $@ $(CFLAGS) $(LDFLAGS) $(LIBS) 
++	gcc $(SRC) -o $@ $(CFLAGS) $(LDFLAGS)
+ 
+-install: antiwm
+-	cp antiwm $(INSTALL_DIR)
++install: all
++	@mkdir -p ${DESTDIR}${PREFIX}/bin
++	@cp -f antiwm ${PREFIX}/bin
++	@chmod 755 ${DESTDIR}${PREFIX}/bin/antiwm
+ 
+ %.o : %.c $(HEADERS)
+ 	$(CC) -c $(CFLAGS) $(DEBUG) $< -o $@
