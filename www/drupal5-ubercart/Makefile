@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ubercart
-DISTVERSION=	5.x-1.0-beta5
+DISTVERSION=	5.x-1.7
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
@@ -118,7 +118,8 @@ MODULE_FILES=	contrib/README.txt \
 		payment/uc_credit/uc_credit.install \
 		payment/uc_credit/uc_credit.js \
 		payment/uc_credit/uc_credit.module \
-		payment/uc_cybersource/HOP.php \
+		payment/uc_cybersource/uc_cybersource.install \
+		payment/uc_cybersource/uc_cybersource.soap.inc \
 		payment/uc_cybersource/po/uc_cybersource.pot \
 		payment/uc_cybersource/uc_cybersource.info \
 		payment/uc_cybersource/uc_cybersource.module \
@@ -131,9 +132,9 @@ MODULE_FILES=	contrib/README.txt \
 		payment/uc_payment/uc_payment.module \
 		payment/uc_payment/uc_payment_checkout_pane.inc \
 		payment/uc_payment/uc_payment_order_pane.inc \
-		payment/uc_payment/uc_payment_payment_method.inc \
 		payment/uc_payment/uc_payment_workflow.inc \
 		payment/uc_payment_pack/uc_payment_pack.info \
+		payment/uc_payment_pack/uc_payment_pack.install \
 		payment/uc_payment_pack/uc_payment_pack.module \
 		payment/uc_paypal/po/uc_paypal.pot \
 		payment/uc_paypal/uc_paypal.info \
@@ -212,12 +213,10 @@ MODULE_FILES=	contrib/README.txt \
 		uc_googleanalytics/po/uc_googleanalytics.pot \
 		uc_googleanalytics/uc_googleanalytics.info \
 		uc_googleanalytics/uc_googleanalytics.module \
-		uc_importer/README.txt \
 		uc_importer/po/uc_importer.pot \
 		uc_importer/uc_importer.info \
 		uc_importer/uc_importer.install \
 		uc_importer/uc_importer.module \
-		uc_importer/uc_importer_php4.module \
 		uc_notify/po/uc_notify.pot \
 		uc_notify/uc_notify.info \
 		uc_notify/uc_notify.install \
@@ -270,14 +269,23 @@ MODULE_FILES=	contrib/README.txt \
 		uc_stock/uc_stock.info \
 		uc_stock/uc_stock.install \
 		uc_stock/uc_stock.module \
+		uc_stock/uc_stock_workflow.inc \
 		uc_store/countries/afghanistan_4_1.cif \
+		uc_store/countries/andorra_20_1.cif \
+		uc_store/countries/antigua_barbuda_28_1.cif \
+		uc_store/countries/argentina_32_1.cif \
 		uc_store/countries/aruba_533_1.cif \
 		uc_store/countries/australia_36_2.cif \
 		uc_store/countries/austria_40_1.cif \
 		uc_store/countries/belgium_56_1.cif \
+		uc_store/countries/bermuda_60_1.cif \
 		uc_store/countries/brazil_76_1.cif \
+		uc_store/countries/bulgaria_100_1.cif \
 		uc_store/countries/canada_124_1.cif \
 		uc_store/countries/chile_152_1.cif \
+		uc_store/countries/china_156_1.cif \
+		uc_store/countries/costa_rica_188_1.cif \
+		uc_store/countries/croatia_191_1.cif \
 		uc_store/countries/czech_203_1.cif \
 		uc_store/countries/dominican_republic_214_1.cif \
 		uc_store/countries/egypt_818_1.cif \
@@ -285,6 +293,8 @@ MODULE_FILES=	contrib/README.txt \
 		uc_store/countries/france_250_1.cif \
 		uc_store/countries/germany_276_1.cif \
 		uc_store/countries/greece_300_1.cif \
+		uc_store/countries/hong_kong_344_1.cif \
+		uc_store/countries/hungary_348_1.cif \
 		uc_store/countries/india_356_1.cif \
 		uc_store/countries/indonesia_360_1.cif \
 		uc_store/countries/iran_364_1.cif \
@@ -292,28 +302,37 @@ MODULE_FILES=	contrib/README.txt \
 		uc_store/countries/israel_376_1.cif \
 		uc_store/countries/italy_380_1.cif \
 		uc_store/countries/japan_392_1.cif \
+		uc_store/countries/kazakhstan_398_1.cif \
 		uc_store/countries/korea_republic_of_410_1.cif \
 		uc_store/countries/latvia_428_1.cif \
+		uc_store/countries/lithuania_440_1.cif \
+		uc_store/countries/malaysia_458_1.cif \
 		uc_store/countries/mexico_484_1.cif \
+		uc_store/countries/mozambique_508_1.cif \
 		uc_store/countries/netherlands_528_1.cif \
-		uc_store/countries/new_zealand_554_2.cif \
+		uc_store/countries/new_zealand_554_3.cif \
 		uc_store/countries/norway_578_1.cif \
 		uc_store/countries/peru_604_1.cif \
 		uc_store/countries/philippines_608_2.cif \
 		uc_store/countries/poland_616_1.cif \
 		uc_store/countries/romania_642_1.cif \
+		uc_store/countries/portugal_620_1.cif \
 		uc_store/countries/russia_643_1.cif \
 		uc_store/countries/saint_lucia_662_1.cif \
 		uc_store/countries/singapore_702_1.cif \
+		uc_store/countries/slovak_703_1.cif \
 		uc_store/countries/south_africa_710_1.cif \
 		uc_store/countries/spain_724_1.cif \
 		uc_store/countries/sweden_752_1.cif \
 		uc_store/countries/switzerland_756_1.cif \
 		uc_store/countries/taiwan_158_1.cif \
 		uc_store/countries/turkey_792_1.cif \
+		uc_store/countries/ukraine_804_1.cif \
 		uc_store/countries/united_kingdom_826_1.cif \
 		uc_store/countries/united_states_840_1.cif \
 		uc_store/countries/venezuela_862_1.cif \
+		uc_store/countries/vietnam_704_1.cif \
+		uc_store/countries/zimbabwe_716_1.cif \
 		uc_store/images/address_book.gif \
 		uc_store/images/alert.gif \
 		uc_store/images/copy.gif \
@@ -337,7 +356,6 @@ MODULE_FILES=	contrib/README.txt \
 		uc_store/images/print.gif \
 		uc_store/images/store_monitor.gif \
 		uc_store/images/store_monitor_small.gif \
-		uc_store/includes/XML2Array.php \
 		uc_store/includes/simplexml.php \
 		uc_store/po/es.po \
 		uc_store/po/uc_store.pot \
