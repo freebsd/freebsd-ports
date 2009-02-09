@@ -566,6 +566,7 @@
     SUBDIR += py-mutagen
     SUBDIR += py-ogg
     SUBDIR += py-openal
+    SUBDIR += py-pyliblo
     SUBDIR += py-sdl_mixer
     SUBDIR += py-speex
     SUBDIR += py-taglib
