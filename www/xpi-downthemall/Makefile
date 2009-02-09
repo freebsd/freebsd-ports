@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	downthemall
-PORTVERSION=	0.9.9.10
-DISTVERSIONSUFFIX=	-fx+tb+fl
+PORTVERSION=	1.1.0
+DISTVERSIONSUFFIX=	-fx+tb+sm
 CATEGORIES=	www
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -17,9 +17,45 @@ XPI_DISTNAME=	downthemall!
 WRKSRC=		${WRKDIR}/${DISTNAME:S/!/_/}
 XPI_ID=		{DDC359D1-844A-42a7-9AA1-88A850A938A8}
 XPI_NUM=	201
-XPI_FILES=	chrome/dta.jar chrome.manifest components/privacycontrol.js \
-		defaults/preferences/privacycontrol.js gpl.txt install.rdf notice.txt
-XPI_DIRS=	chrome components defaults/preferences defaults
+USE_XPI=	www/firefox3:firefox3
+
+XPI_FILES=	components/migrationService.js \
+		components/debugService.xpt \
+		components/debugService.js \
+		components/contenthandling.idl \
+		components/filterManager.idl \
+		components/contenthandling.xpt \
+		components/privacycontrol.js \
+		components/contentHandling.js \
+		components/filterManager.xpt \
+		components/filterManager.js \
+		components/debugService.idl \
+		LICENSE \
+		GPL \
+		install.rdf \
+		defaults/preferences/dta.js \
+		defaults/preferences/filters.js \
+		defaults/preferences/privacycontrol.js \
+		modules/preferences.jsm \
+		modules/cothread.jsm \
+		modules/utils.jsm \
+		modules/mediator.jsm \
+		modules/prompts.jsm \
+		modules/version.jsm \
+		MPL \
+		chrome/icons/default/DownThemAll.xpm \
+		chrome/icons/default/DownThemAll.ico \
+		chrome/chrome.jar \
+		chrome.manifest \
+		LGPL
+
+XPI_DIRS=	components \
+		defaults/preferences \
+		defaults \
+		modules \
+		chrome/icons/default \
+		chrome/icons \
+		chrome
 
 post-extract:
 	@${FIND} ${WRKSRC} -name .svn|${XARGS} ${RM} -rf
