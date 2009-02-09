@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	spreadmodule
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	net python
-MASTER_SITES=	${MASTER_SITE_PYTHON}
-MASTER_SITE_SUBDIR=other/spread
+MASTER_SITES=	http://www.zope.org/Members/tim_one/spread/SpreadModule-1.5/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SpreadModule-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	A python extension module for the Spread group communcations package
 
 LIB_DEPENDS=	spread.1:${PORTSDIR}/net/spread
