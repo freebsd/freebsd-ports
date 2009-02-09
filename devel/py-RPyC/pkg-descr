@@ -1,0 +1,8 @@
+RPyC(pronounced like 'are-pie-see'), or Remote Python Call, is a
+transparent and symmetrical python library for remote procedure
+calls, clustering and distributed-computing. RPyC makes use of
+object-proxying, a technique that employs python's dynamic nature,
+to overcome the physical boundaries between processes and computers,
+so that remote objects can be manipulated as if they were local.
+
+WWW:	http://pypi.python.org/pypi/RPyC/
