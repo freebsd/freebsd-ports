@@ -2,6 +2,7 @@ bin/gprename
 share/locale/ca/LC_MESSAGES/gprename.mo
 share/locale/de/LC_MESSAGES/gprename.mo
 share/locale/es/LC_MESSAGES/gprename.mo
+share/locale/et/LC_MESSAGES/gprename.mo
 share/locale/fr/LC_MESSAGES/gprename.mo
 share/locale/id/LC_MESSAGES/gprename.mo
 share/locale/it/LC_MESSAGES/gprename.mo

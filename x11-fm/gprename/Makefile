@@ -2,12 +2,12 @@
 # Date created:				2004-03-15
 # Whom:					trevor
 #
-# $Carpetsmoker: ports/x11-fm/gprename/Makefile,v 1.10 2008/07/14 16:39:53 carpetsmoker Exp $
+#
 # $FreeBSD$
 #
 
 PORTNAME=	gprename
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 PORTEPOCH=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
