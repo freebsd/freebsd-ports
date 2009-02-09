@@ -1,0 +1,10 @@
+The Nmap::Parser library provides a Ruby interface to
+Nmap's scan data.  It can run Nmap and parse its XML
+output directly from the scan, parse a file containing
+the XML data from a separate scan, parse a String of
+XML data from a scan, or parse XML data from an object
+via its read() method.  This information is presented
+in an easy-to-use and intuitive fashion for storage
+and manipulation.
+
+WWW: http://rubynmap.sourceforge.net/
