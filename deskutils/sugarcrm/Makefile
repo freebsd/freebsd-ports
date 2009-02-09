@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	sugarcrm
-PORTVERSION=	5.1.0a
+PORTVERSION=	5.2.0a
 CATEGORIES=	deskutils www
 MASTER_SITES=	SF
 MASTER_SITES_SUBDIR=	sugarcrm
@@ -15,7 +15,8 @@ MAINTAINER=	nick@foobar.org
 COMMENT=	A web based customer relationship management suite
 
 IGNORE_WITH_MYSQL=	323 40
-USE_PHP=	gd mysql session pcre xml zlib mbstring curl imap
+USE_PHP=	gd mysql session pcre xml zlib mbstring curl imap spl posix \
+		curl
 USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/SugarCE-Full-${PORTVERSION}

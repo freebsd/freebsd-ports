@@ -2,6 +2,23 @@
 %%WWWDIR%%/vCard.php
 %%WWWDIR%%/themes/menu.js
 %%WWWDIR%%/themes/default/sugarColors.xml
+%%WWWDIR%%/themes/default/images/Print_Email.gif
+%%WWWDIR%%/themes/default/images/WorkFlow.gif
+%%WWWDIR%%/themes/default/images/icon_ConnectorConfig.gif
+%%WWWDIR%%/themes/default/images/icon_ConnectorConfigOver.gif
+%%WWWDIR%%/themes/default/images/icon_ConnectorConfig_16.gif
+%%WWWDIR%%/themes/default/images/icon_ConnectorEnable.gif
+%%WWWDIR%%/themes/default/images/icon_ConnectorEnableOver.gif
+%%WWWDIR%%/themes/default/images/icon_ConnectorEnable_16.gif
+%%WWWDIR%%/themes/default/images/icon_ConnectorMap.gif
+%%WWWDIR%%/themes/default/images/icon_ConnectorMapOver.gif
+%%WWWDIR%%/themes/default/images/icon_ConnectorMap_16.gif
+%%WWWDIR%%/themes/default/images/icon_ConnectorSearchFields.gif
+%%WWWDIR%%/themes/default/images/icon_ConnectorSearchFieldsOver.gif
+%%WWWDIR%%/themes/default/images/icon_ConnectorSearchFields_16.gif
+%%WWWDIR%%/themes/default/images/icon_Connectors.gif
+%%WWWDIR%%/themes/default/images/icon_SugarFeed.gif
+%%WWWDIR%%/themes/default/images/icon_SugarFeed_32.gif
 %%WWWDIR%%/themes/default/images/yellow_camp.gif
 %%WWWDIR%%/themes/default/images/xls_image_inline.gif
 %%WWWDIR%%/themes/default/images/txt_image_inline.gif
@@ -671,6 +688,7 @@
 %%WWWDIR%%/themes/WhiteSands/images/arrow.gif
 %%WWWDIR%%/themes/WhiteSands/images/advanced_search.gif
 %%WWWDIR%%/themes/WhiteSands/images/accept_inline.gif
+%%WWWDIR%%/themes/WhiteSands/images/ACLRoles.gif
 %%WWWDIR%%/themes/WhiteSands/images/MoreDetail.png
 %%WWWDIR%%/themes/WhiteSands/header.php
 %%WWWDIR%%/themes/WhiteSands/header.html
@@ -682,6 +700,7 @@
 %%WWWDIR%%/themes/VintageSugar/navigation.css
 %%WWWDIR%%/themes/VintageSugar/menu.js
 %%WWWDIR%%/themes/VintageSugar/layout_utils.php
+%%WWWDIR%%/themes/VintageSugar/images/ACLRoles.gif
 %%WWWDIR%%/themes/VintageSugar/images/welcomeBg.gif
 %%WWWDIR%%/themes/VintageSugar/images/view_status.gif
 %%WWWDIR%%/themes/VintageSugar/images/view_inline.gif
@@ -797,6 +816,7 @@
 %%WWWDIR%%/themes/TrailBlazers/navigation.css
 %%WWWDIR%%/themes/TrailBlazers/menu.js
 %%WWWDIR%%/themes/TrailBlazers/layout_utils.php
+%%WWWDIR%%/themes/TrailBlazers/images/ACLRoles.gif
 %%WWWDIR%%/themes/TrailBlazers/images/view_status.gif
 %%WWWDIR%%/themes/TrailBlazers/images/view_inline.gif
 %%WWWDIR%%/themes/TrailBlazers/images/view.gif
@@ -888,6 +908,7 @@
 %%WWWDIR%%/themes/Sunset/navigation.css
 %%WWWDIR%%/themes/Sunset/menu.js
 %%WWWDIR%%/themes/Sunset/layout_utils.php
+%%WWWDIR%%/themes/Sunset/images/ACLRoles.gif
 %%WWWDIR%%/themes/Sunset/images/welcomeBar_bg.gif
 %%WWWDIR%%/themes/Sunset/images/view_status.gif
 %%WWWDIR%%/themes/Sunset/images/view_inline.gif
@@ -972,6 +993,7 @@
 %%WWWDIR%%/themes/SugarLite/navigation.css
 %%WWWDIR%%/themes/SugarLite/menu.js
 %%WWWDIR%%/themes/SugarLite/layout_utils.php
+%%WWWDIR%%/themes/SugarLite/images/ACLRoles.gif
 %%WWWDIR%%/themes/SugarLite/images/view_status.gif
 %%WWWDIR%%/themes/SugarLite/images/view_inline.gif
 %%WWWDIR%%/themes/SugarLite/images/view.gif
@@ -1054,6 +1076,7 @@
 %%WWWDIR%%/themes/SugarClassic/navigation.css
 %%WWWDIR%%/themes/SugarClassic/menu.js
 %%WWWDIR%%/themes/SugarClassic/layout_utils.php
+%%WWWDIR%%/themes/SugarClassic/images/ACLRoles.gif
 %%WWWDIR%%/themes/SugarClassic/images/view_status.gif
 %%WWWDIR%%/themes/SugarClassic/images/view_inline.gif
 %%WWWDIR%%/themes/SugarClassic/images/view.gif
@@ -1151,6 +1174,7 @@
 %%WWWDIR%%/themes/Sugar2006/navigation.css
 %%WWWDIR%%/themes/Sugar2006/menu.js
 %%WWWDIR%%/themes/Sugar2006/layout_utils.php
+%%WWWDIR%%/themes/Sugar2006/images/ACLRoles.gif
 %%WWWDIR%%/themes/Sugar2006/images/view_status.gif
 %%WWWDIR%%/themes/Sugar2006/images/view_inline.gif
 %%WWWDIR%%/themes/Sugar2006/images/view.gif
@@ -1286,6 +1310,7 @@
 %%WWWDIR%%/themes/Sugar/navigation.css
 %%WWWDIR%%/themes/Sugar/menu.js
 %%WWWDIR%%/themes/Sugar/layout_utils.php
+%%WWWDIR%%/themes/Sugar/images/ACLRoles.gif
 %%WWWDIR%%/themes/Sugar/images/view_status.gif
 %%WWWDIR%%/themes/Sugar/images/view_inline.gif
 %%WWWDIR%%/themes/Sugar/images/view.gif
@@ -1426,6 +1451,7 @@
 %%WWWDIR%%/themes/Shred/navigation.css
 %%WWWDIR%%/themes/Shred/menu.js
 %%WWWDIR%%/themes/Shred/layout_utils.php
+%%WWWDIR%%/themes/Shred/images/ACLRoles.gif
 %%WWWDIR%%/themes/Shred/images/view_status.gif
 %%WWWDIR%%/themes/Shred/images/view_inline.gif
 %%WWWDIR%%/themes/Shred/images/view.gif
@@ -1526,6 +1552,7 @@
 %%WWWDIR%%/themes/RipCurl/navigation.css
 %%WWWDIR%%/themes/RipCurl/menu.js
 %%WWWDIR%%/themes/RipCurl/layout_utils.php
+%%WWWDIR%%/themes/RipCurl/images/ACLRoles.gif
 %%WWWDIR%%/themes/RipCurl/images/welcomeBarBg.gif
 %%WWWDIR%%/themes/RipCurl/images/view_status.gif
 %%WWWDIR%%/themes/RipCurl/images/view_inline.gif
@@ -1618,6 +1645,7 @@
 %%WWWDIR%%/themes/Retro/navigation.css
 %%WWWDIR%%/themes/Retro/menu.js
 %%WWWDIR%%/themes/Retro/layout_utils.php
+%%WWWDIR%%/themes/Retro/images/ACLRoles.gif
 %%WWWDIR%%/themes/Retro/images/view_status.gif
 %%WWWDIR%%/themes/Retro/images/view_inline.gif
 %%WWWDIR%%/themes/Retro/images/view.gif
@@ -1702,6 +1730,7 @@
 %%WWWDIR%%/themes/Pipeline/navigation.css
 %%WWWDIR%%/themes/Pipeline/menu.js
 %%WWWDIR%%/themes/Pipeline/layout_utils.php
+%%WWWDIR%%/themes/Pipeline/images/ACLRoles.gif
 %%WWWDIR%%/themes/Pipeline/images/welcomeBarBg.gif
 %%WWWDIR%%/themes/Pipeline/images/view_status.gif
 %%WWWDIR%%/themes/Pipeline/images/view_inline.gif
@@ -1808,6 +1837,7 @@
 %%WWWDIR%%/themes/Paradise/navigation.css
 %%WWWDIR%%/themes/Paradise/menu.js
 %%WWWDIR%%/themes/Paradise/layout_utils.php
+%%WWWDIR%%/themes/Paradise/images/ACLRoles.gif
 %%WWWDIR%%/themes/Paradise/images/view_status.gif
 %%WWWDIR%%/themes/Paradise/images/view_inline.gif
 %%WWWDIR%%/themes/Paradise/images/view.gif
@@ -1907,6 +1937,7 @@
 %%WWWDIR%%/themes/Love/navigation.css
 %%WWWDIR%%/themes/Love/menu.js
 %%WWWDIR%%/themes/Love/layout_utils.php
+%%WWWDIR%%/themes/Love/images/ACLRoles.gif
 %%WWWDIR%%/themes/Love/images/view_status.gif
 %%WWWDIR%%/themes/Love/images/view_inline.gif
 %%WWWDIR%%/themes/Love/images/view.gif
@@ -2035,6 +2066,7 @@
 %%WWWDIR%%/themes/Links/navigation.css
 %%WWWDIR%%/themes/Links/menu.js
 %%WWWDIR%%/themes/Links/layout_utils.php
+%%WWWDIR%%/themes/Links/images/ACLRoles.gif
 %%WWWDIR%%/themes/Links/images/view_status.gif
 %%WWWDIR%%/themes/Links/images/view_inline.gif
 %%WWWDIR%%/themes/Links/images/view.gif
@@ -2140,10 +2172,283 @@
 %%WWWDIR%%/themes/Links/chart.css
 %%WWWDIR%%/themes/Links/calendar-win2k-cold-1.css
 %%WWWDIR%%/themes/Links/ReassignRecords.gif
+%%WWWDIR%%/themes/Legacy/images/Administration.gif
+%%WWWDIR%%/themes/Legacy/images/AllNews.gif
+%%WWWDIR%%/themes/Legacy/images/Backup.gif
+%%WWWDIR%%/themes/Legacy/images/Backups.gif
+%%WWWDIR%%/themes/Legacy/images/CreateContracts.gif
+%%WWWDIR%%/themes/Legacy/images/CreateMailboxes.gif
+%%WWWDIR%%/themes/Legacy/images/CreateQuery.gif
+%%WWWDIR%%/themes/Legacy/images/CreateQuotes.gif
+%%WWWDIR%%/themes/Legacy/images/CreateWebToLeadForm.gif
+%%WWWDIR%%/themes/Legacy/images/Currencies.gif
+%%WWWDIR%%/themes/Legacy/images/DocumentRevisions.gif
+%%WWWDIR%%/themes/Legacy/images/Dropdown.gif
+%%WWWDIR%%/themes/Legacy/images/EditLayout.gif
+%%WWWDIR%%/themes/Legacy/images/EmailDiagnostic.gif
+%%WWWDIR%%/themes/Legacy/images/EmailReports.gif
+%%WWWDIR%%/themes/Legacy/images/FieldLabels.gif
+%%WWWDIR%%/themes/Legacy/images/Layout.gif
+%%WWWDIR%%/themes/Legacy/images/LeadReports.gif
+%%WWWDIR%%/themes/Legacy/images/Meetings.gif
+%%WWWDIR%%/themes/Legacy/images/MyReports.gif
+%%WWWDIR%%/themes/Legacy/images/Opportunities.gif
+%%WWWDIR%%/themes/Legacy/images/Product_Categories.gif
+%%WWWDIR%%/themes/Legacy/images/Products.gif
+%%WWWDIR%%/themes/Legacy/images/Prospects.gif
+%%WWWDIR%%/themes/Legacy/images/Schedulers.gif
+%%WWWDIR%%/themes/Legacy/images/Users.gif
+%%WWWDIR%%/themes/Legacy/images/arrow.gif
+%%WWWDIR%%/themes/Legacy/images/basic_search.gif
+%%WWWDIR%%/themes/Legacy/images/calendar_next.gif
+%%WWWDIR%%/themes/Legacy/images/close.gif
+%%WWWDIR%%/themes/Legacy/images/delete.gif
+%%WWWDIR%%/themes/Legacy/images/detailViewPaginationBg.gif
+%%WWWDIR%%/themes/Legacy/images/edit_wizard.gif
+%%WWWDIR%%/themes/Legacy/images/end_off.gif
+%%WWWDIR%%/themes/Legacy/images/formButtonBgOn.gif
+%%WWWDIR%%/themes/Legacy/images/h2bg.gif
+%%WWWDIR%%/themes/Legacy/images/listViewBg.gif
+%%WWWDIR%%/themes/Legacy/images/loadSignedDocument.gif
+%%WWWDIR%%/themes/Legacy/images/mass_update.gif
+%%WWWDIR%%/themes/Legacy/images/pdf_image_inline.gif
+%%WWWDIR%%/themes/Legacy/images/red_camp.gif
+%%WWWDIR%%/themes/Legacy/images/rightarrow.gif
+%%WWWDIR%%/themes/Legacy/images/sqsWait.gif
+%%WWWDIR%%/themes/Legacy/images/sugar_document.png
+%%WWWDIR%%/themes/Legacy/images/sugarupdate.gif
+%%WWWDIR%%/themes/Legacy/images/tabRowBg.gif
+%%WWWDIR%%/themes/Legacy/images/unpublish_inline.gif
+%%WWWDIR%%/themes/Legacy/images/view_inline.gif
+%%WWWDIR%%/themes/Legacy/images/CreateWorkflowDefinition.gif
+%%WWWDIR%%/themes/Legacy/images/CreateProjectTask.gif
+%%WWWDIR%%/themes/Legacy/images/ProspectLists.gif
+%%WWWDIR%%/themes/Legacy/images/Newsletters.gif
+%%WWWDIR%%/themes/Legacy/images/menuarrow.gif
+%%WWWDIR%%/themes/Legacy/images/monthCalBodyWeekDDBg.gif
+%%WWWDIR%%/themes/Legacy/images/TaskReports.gif
+%%WWWDIR%%/themes/Legacy/images/buttonOnBg.gif
+%%WWWDIR%%/themes/Legacy/images/topAppleBar_bg.gif
+%%WWWDIR%%/themes/Legacy/images/CreateCustomQuery.gif
+%%WWWDIR%%/themes/Legacy/images/ForecastReports.gif
+%%WWWDIR%%/themes/Legacy/images/CreateUsers.gif
+%%WWWDIR%%/themes/Legacy/images/Tasks.gif
+%%WWWDIR%%/themes/Legacy/images/Rebuild.gif
+%%WWWDIR%%/themes/Legacy/images/Upgrade.gif
+%%WWWDIR%%/themes/Legacy/images/blank.gif
+%%WWWDIR%%/themes/Legacy/images/h3subpanelTabFormbg.gif
+%%WWWDIR%%/themes/Legacy/images/tabRowOcherBg.gif
+%%WWWDIR%%/themes/Legacy/images/Forecasts.gif
+%%WWWDIR%%/themes/Legacy/images/CallReports.gif
+%%WWWDIR%%/themes/Legacy/images/StickyThread.gif
+%%WWWDIR%%/themes/Legacy/images/scheduled_inline.gif
+%%WWWDIR%%/themes/Legacy/images/AllRSS.gif
+%%WWWDIR%%/themes/Legacy/images/Documents.gif
+%%WWWDIR%%/themes/Legacy/images/unscheduled_inline.gif
+%%WWWDIR%%/themes/Legacy/images/LanguagePacks.gif
+%%WWWDIR%%/themes/Legacy/images/company_logo.png
+%%WWWDIR%%/themes/Legacy/images/CreateProspects.gif
+%%WWWDIR%%/themes/Legacy/images/jscalendar.gif
+%%WWWDIR%%/themes/Legacy/images/previous_off.gif
+%%WWWDIR%%/themes/Legacy/images/check_inline.gif
+%%WWWDIR%%/themes/Legacy/images/Rebuild2.gif
+%%WWWDIR%%/themes/Legacy/images/Emails.gif
+%%WWWDIR%%/themes/Legacy/images/CreateOpportunities.gif
+%%WWWDIR%%/themes/Legacy/images/SchedulerTest.gif
+%%WWWDIR%%/themes/Legacy/images/Themes.gif
+%%WWWDIR%%/themes/Legacy/images/QuoteReports.gif
+%%WWWDIR%%/themes/Legacy/images/ModuleLoader.gif
+%%WWWDIR%%/themes/Legacy/images/view_status.gif
+%%WWWDIR%%/themes/Legacy/images/tabRowBlueBg.gif
+%%WWWDIR%%/themes/Legacy/images/Accounts.gif
+%%WWWDIR%%/themes/Legacy/images/ProductCategories.gif
+%%WWWDIR%%/themes/Legacy/images/txt_image_inline.gif
+%%WWWDIR%%/themes/Legacy/images/Diagnostic.gif
+%%WWWDIR%%/themes/Legacy/images/edit.gif
+%%WWWDIR%%/themes/Legacy/images/uparrow_inline.gif
+%%WWWDIR%%/themes/Legacy/images/company_logo.gif
+%%WWWDIR%%/themes/Legacy/images/start.gif
+%%WWWDIR%%/themes/Legacy/images/end.gif
+%%WWWDIR%%/themes/Legacy/images/OpportunityReports.gif
+%%WWWDIR%%/themes/Legacy/images/ImportCustomFields.gif
+%%WWWDIR%%/themes/Legacy/images/close_inline.gif
+%%WWWDIR%%/themes/Legacy/images/Reports.gif
+%%WWWDIR%%/themes/Legacy/images/Cases.gif
+%%WWWDIR%%/themes/Legacy/images/FavoriteReports.gif
+%%WWWDIR%%/themes/Legacy/images/Teams.gif
+%%WWWDIR%%/themes/Legacy/images/ExportCustomFields.gif
+%%WWWDIR%%/themes/Legacy/images/ProductTemplates.gif
+%%WWWDIR%%/themes/Legacy/images/tabRowPurpleBg.gif
+%%WWWDIR%%/themes/Legacy/images/decline_inline.gif
+%%WWWDIR%%/themes/Legacy/images/emptyTabSpace.gif
+%%WWWDIR%%/themes/Legacy/images/CreateScheduler.gif
+%%WWWDIR%%/themes/Legacy/images/OnlineDocumentation.gif
+%%WWWDIR%%/themes/Legacy/images/MeetingReports.gif
+%%WWWDIR%%/themes/Legacy/images/DataSets.gif
+%%WWWDIR%%/themes/Legacy/images/ContactReports.gif
+%%WWWDIR%%/themes/Legacy/images/QueryBuilder.gif
+%%WWWDIR%%/themes/Legacy/images/export.gif
+%%WWWDIR%%/themes/Legacy/images/next.gif
+%%WWWDIR%%/themes/Legacy/images/CreateProspectLists.gif
+%%WWWDIR%%/themes/Legacy/images/Manufacturers.gif
+%%WWWDIR%%/themes/Legacy/images/uparrow_big.gif
+%%WWWDIR%%/themes/Legacy/images/RenameTabs.gif
+%%WWWDIR%%/themes/Legacy/images/slot.gif
+%%WWWDIR%%/themes/Legacy/images/CreateBugs.gif
+%%WWWDIR%%/themes/Legacy/images/Roles.gif
+%%WWWDIR%%/themes/Legacy/images/Dashboard.gif
+%%WWWDIR%%/themes/Legacy/images/Notes.gif
+%%WWWDIR%%/themes/Legacy/images/attachment.gif
+%%WWWDIR%%/themes/Legacy/images/CreateProject.gif
+%%WWWDIR%%/themes/Legacy/images/Price_List.gif
+%%WWWDIR%%/themes/Legacy/images/Calls.gif
+%%WWWDIR%%/themes/Legacy/images/green_camp.gif
+%%WWWDIR%%/themes/Legacy/images/Employees.gif
+%%WWWDIR%%/themes/Legacy/images/CreateContacts.gif
+%%WWWDIR%%/themes/Legacy/images/MailboxesTestImport.gif
+%%WWWDIR%%/themes/Legacy/images/Product_Types.gif
+%%WWWDIR%%/themes/Legacy/images/MoreDetail.png
+%%WWWDIR%%/themes/Legacy/images/leftarrow.gif
+%%WWWDIR%%/themes/Legacy/images/RSS.gif
+%%WWWDIR%%/themes/Legacy/images/CustomQueries.gif
+%%WWWDIR%%/themes/Legacy/images/Calendar.gif
+%%WWWDIR%%/themes/Legacy/images/CreateTasks.gif
+%%WWWDIR%%/themes/Legacy/images/Support.gif
+%%WWWDIR%%/themes/Legacy/images/ForecastWorksheet.gif
+%%WWWDIR%%/themes/Legacy/images/Thumbs.db
+%%WWWDIR%%/themes/Legacy/images/MigrateFields.gif
+%%WWWDIR%%/themes/Legacy/images/CreateDocuments.gif
+%%WWWDIR%%/themes/Legacy/images/help.gif
+%%WWWDIR%%/themes/Legacy/images/minus_inline.gif
+%%WWWDIR%%/themes/Legacy/images/ReportMaker.gif
+%%WWWDIR%%/themes/Legacy/images/def_image_inline.gif
+%%WWWDIR%%/themes/Legacy/images/Contracts.gif
+%%WWWDIR%%/themes/Legacy/images/Bugs.gif
+%%WWWDIR%%/themes/Legacy/images/bgBlue.gif
+%%WWWDIR%%/themes/Legacy/images/tentative_inline.gif
+%%WWWDIR%%/themes/Legacy/images/downarrow_big.gif
+%%WWWDIR%%/themes/Legacy/images/Search.gif
+%%WWWDIR%%/themes/Legacy/images/EmailTemplates.gif
+%%WWWDIR%%/themes/Legacy/images/xls_image_inline.gif
+%%WWWDIR%%/themes/Legacy/images/bgGrayButton.gif
+%%WWWDIR%%/themes/Legacy/images/formButtonBg.gif
+%%WWWDIR%%/themes/Legacy/images/next_off.gif
+%%WWWDIR%%/themes/Legacy/images/bgh3Row.gif
+%%WWWDIR%%/themes/Legacy/images/Contacts.gif
+%%WWWDIR%%/themes/Legacy/images/downarrow_inline.gif
+%%WWWDIR%%/themes/Legacy/images/Repair.gif
+%%WWWDIR%%/themes/Legacy/images/CreateCases.gif
+%%WWWDIR%%/themes/Legacy/images/Feeds.gif
+%%WWWDIR%%/themes/Legacy/images/iFrames.gif
+%%WWWDIR%%/themes/Legacy/images/Leads.gif
+%%WWWDIR%%/themes/Legacy/images/searchMore.gif
+%%WWWDIR%%/themes/Legacy/images/EmailSetupWizard.gif
+%%WWWDIR%%/themes/Legacy/images/CreateTeams.gif
+%%WWWDIR%%/themes/Legacy/images/Shippers.gif
+%%WWWDIR%%/themes/Legacy/images/PriceList.gif
+%%WWWDIR%%/themes/Legacy/images/arrow_up.gif
+%%WWWDIR%%/themes/Legacy/images/CreateMeetings.gif
+%%WWWDIR%%/themes/Legacy/images/CreateReport.gif
+%%WWWDIR%%/themes/Legacy/images/delete_inline.gif
+%%WWWDIR%%/themes/Legacy/images/Campaigns.gif
+%%WWWDIR%%/themes/Legacy/images/more.gif
+%%WWWDIR%%/themes/Legacy/images/WorkflowSequence.gif
+%%WWWDIR%%/themes/Legacy/images/ppt_image_inline.gif
+%%WWWDIR%%/themes/Legacy/images/publish_inline.gif
+%%WWWDIR%%/themes/Legacy/images/doc_image_inline.gif
+%%WWWDIR%%/themes/Legacy/images/CreateRoles.gif
+%%WWWDIR%%/themes/Legacy/images/rightarrow_big.gif
+%%WWWDIR%%/themes/Legacy/images/Import.gif
+%%WWWDIR%%/themes/Legacy/images/Workflow.gif
+%%WWWDIR%%/themes/Legacy/images/AccountReports.gif
+%%WWWDIR%%/themes/Legacy/images/yellow_camp.gif
+%%WWWDIR%%/themes/Legacy/images/MyProject.gif
+%%WWWDIR%%/themes/Legacy/images/CreateNotes.gif
+%%WWWDIR%%/themes/Legacy/images/spacer.gif
+%%WWWDIR%%/themes/Legacy/images/CreateDropdown.gif
+%%WWWDIR%%/themes/Legacy/images/OfflineClient.gif
+%%WWWDIR%%/themes/Legacy/images/plus_inline.gif
+%%WWWDIR%%/themes/Legacy/images/License.gif
+%%WWWDIR%%/themes/Legacy/images/CreateCalls.gif
+%%WWWDIR%%/themes/Legacy/images/downarrow.gif
+%%WWWDIR%%/themes/Legacy/images/EmailMan.gif
+%%WWWDIR%%/themes/Legacy/images/edit_inline.gif
+%%WWWDIR%%/themes/Legacy/images/TimePeriods.gif
+%%WWWDIR%%/themes/Legacy/images/buttonBg.gif
+%%WWWDIR%%/themes/Legacy/images/h3Arrow.gif
+%%WWWDIR%%/themes/Legacy/images/CreateEmployees.gif
+%%WWWDIR%%/themes/Legacy/images/leftarrow_big.gif
+%%WWWDIR%%/themes/Legacy/images/CreateProducts.gif
+%%WWWDIR%%/themes/Legacy/images/ProjectTask.gif
+%%WWWDIR%%/themes/Legacy/images/show.gif
+%%WWWDIR%%/themes/Legacy/images/leftColumnModuleNameBg.gif
+%%WWWDIR%%/themes/Legacy/images/PatchUpgrades.gif
+%%WWWDIR%%/themes/Legacy/images/ConfigureTabs.gif
+%%WWWDIR%%/themes/Legacy/images/minus.gif
+%%WWWDIR%%/themes/Legacy/images/ContractReports.gif
+%%WWWDIR%%/themes/Legacy/images/BugReports.gif
+%%WWWDIR%%/themes/Legacy/images/accept_inline.gif
+%%WWWDIR%%/themes/Legacy/images/CreateDataSet.gif
+%%WWWDIR%%/themes/Legacy/images/hide.gif
+%%WWWDIR%%/themes/Legacy/images/CreateiFrames.gif
+%%WWWDIR%%/themes/Legacy/images/view.gif
+%%WWWDIR%%/themes/Legacy/images/bgGray.gif
+%%WWWDIR%%/themes/Legacy/images/CreateLeads.gif
+%%WWWDIR%%/themes/Legacy/images/close_dashboard.gif
+%%WWWDIR%%/themes/Legacy/images/previous.gif
+%%WWWDIR%%/themes/Legacy/images/Quotes.gif
+%%WWWDIR%%/themes/Legacy/images/arrow_down.gif
+%%WWWDIR%%/themes/Legacy/images/EmailFolder.gif
+%%WWWDIR%%/themes/Legacy/images/CampaignsWizard.gif
+%%WWWDIR%%/themes/Legacy/images/h3bg.gif
+%%WWWDIR%%/themes/Legacy/images/plus.gif
+%%WWWDIR%%/themes/Legacy/images/getLatestDocument.gif
+%%WWWDIR%%/themes/Legacy/images/CreateCampaigns.gif
+%%WWWDIR%%/themes/Legacy/images/start_off.gif
+%%WWWDIR%%/themes/Legacy/images/tabRowGreenBg.gif
+%%WWWDIR%%/themes/Legacy/images/CaseReports.gif
+%%WWWDIR%%/themes/Legacy/images/advanced_search.gif
+%%WWWDIR%%/themes/Legacy/images/TaxRates.gif
+%%WWWDIR%%/themes/Legacy/images/CreateEmails.gif
+%%WWWDIR%%/themes/Legacy/images/print.gif
+%%WWWDIR%%/themes/Legacy/images/AlertEmailTemplates.gif
+%%WWWDIR%%/themes/Legacy/images/refresh.gif
+%%WWWDIR%%/themes/Legacy/images/uparrow.gif
+%%WWWDIR%%/themes/Legacy/images/listViewHR.gif
+%%WWWDIR%%/themes/Legacy/images/Releases.gif
+%%WWWDIR%%/themes/Legacy/images/CreateAccounts.gif
+%%WWWDIR%%/themes/Legacy/images/ProductTypes.gif
+%%WWWDIR%%/themes/Legacy/images/calendar_previous.gif
+%%WWWDIR%%/themes/Legacy/images/Project.gif
+%%WWWDIR%%/themes/Legacy/images/InboundEmail.gif
+%%WWWDIR%%/themes/Legacy/images/detailViewBg.gif
+%%WWWDIR%%/themes/Legacy/images/CreateTimePeriods.gif
+%%WWWDIR%%/themes/Legacy/images/monthCalBodyWeekBg.gif
+%%WWWDIR%%/themes/Legacy/groupTabs.js
+%%WWWDIR%%/themes/Legacy/menu.js
+%%WWWDIR%%/themes/Legacy/fonts.largest.icon.gif
+%%WWWDIR%%/themes/Legacy/fonts.largest.css
+%%WWWDIR%%/themes/Legacy/layout_utils.php
+%%WWWDIR%%/themes/Legacy/navigation.css
+%%WWWDIR%%/themes/Legacy/cookie.js
+%%WWWDIR%%/themes/Legacy/fonts.larger.css
+%%WWWDIR%%/themes/Legacy/style.css
+%%WWWDIR%%/themes/Legacy/chart.css
+%%WWWDIR%%/themes/Legacy/header.html
+%%WWWDIR%%/themes/Legacy/sugarColors.xml
+%%WWWDIR%%/themes/Legacy/config.php
+%%WWWDIR%%/themes/Legacy/header.php
+%%WWWDIR%%/themes/Legacy/fonts.larger.icon.gif
+%%WWWDIR%%/themes/Legacy/style.js
+%%WWWDIR%%/themes/Legacy/calendar-win2k-cold-1.css
+%%WWWDIR%%/themes/Legacy/fonts.normal.css
+%%WWWDIR%%/themes/Legacy/colors.basic.css
+%%WWWDIR%%/themes/Legacy/fonts.normal.icon.gif
 %%WWWDIR%%/themes/GoldenGate/style.css
 %%WWWDIR%%/themes/GoldenGate/navigation.css
 %%WWWDIR%%/themes/GoldenGate/menu.js
 %%WWWDIR%%/themes/GoldenGate/layout_utils.php
+%%WWWDIR%%/themes/GoldenGate/images/ACLRoles.gif
 %%WWWDIR%%/themes/GoldenGate/images/view_status.gif
 %%WWWDIR%%/themes/GoldenGate/images/view_inline.gif
 %%WWWDIR%%/themes/GoldenGate/images/view.gif
@@ -2248,6 +2553,7 @@
 %%WWWDIR%%/themes/FinalFrontier/navigation.css
 %%WWWDIR%%/themes/FinalFrontier/menu.js
 %%WWWDIR%%/themes/FinalFrontier/layout_utils.php
+%%WWWDIR%%/themes/FinalFrontier/images/ACLRoles.gif
 %%WWWDIR%%/themes/FinalFrontier/images/welcomeBarBg.gif
 %%WWWDIR%%/themes/FinalFrontier/images/view_status.gif
 %%WWWDIR%%/themes/FinalFrontier/images/view_inline.gif
@@ -2356,6 +2662,7 @@
 %%WWWDIR%%/themes/BoldMove/navigation.css
 %%WWWDIR%%/themes/BoldMove/menu.js
 %%WWWDIR%%/themes/BoldMove/layout_utils.php
+%%WWWDIR%%/themes/BoldMove/images/ACLRoles.gif
 %%WWWDIR%%/themes/BoldMove/images/welcomeBg.gif
 %%WWWDIR%%/themes/BoldMove/images/view_status.gif
 %%WWWDIR%%/themes/BoldMove/images/view_inline.gif
@@ -2485,6 +2792,7 @@
 %%WWWDIR%%/themes/Awesome80s/navigation.css
 %%WWWDIR%%/themes/Awesome80s/menu.js
 %%WWWDIR%%/themes/Awesome80s/layout_utils.php
+%%WWWDIR%%/themes/Awesome80s/images/ACLRoles.gif
 %%WWWDIR%%/themes/Awesome80s/images/welcomeBar_right.gif
 %%WWWDIR%%/themes/Awesome80s/images/welcomeBar_left.gif
 %%WWWDIR%%/themes/Awesome80s/images/welcomeBarBg.gif
@@ -2600,6 +2908,9 @@
 %%WWWDIR%%/modules/vCals/field_arrays.php
 %%WWWDIR%%/modules/vCals/Server.php
 %%WWWDIR%%/modules/vCals/HTTP_WebDAV_Server_vCal.php
+%%WWWDIR%%/modules/iFrames/Dashlets/iFrameDashlet/configure.tpl
+%%WWWDIR%%/modules/iFrames/Dashlets/iFrameDashlet/iFrameDashlet.meta.php
+%%WWWDIR%%/modules/iFrames/Dashlets/iFrameDashlet/iFrameDashlet.php
 %%WWWDIR%%/modules/iFrames/vardefs.php
 %%WWWDIR%%/modules/iFrames/language/en_us.lang.php
 %%WWWDIR%%/modules/iFrames/language/en_us.help.index.html
@@ -2745,6 +3056,7 @@
 %%WWWDIR%%/modules/Tasks/views/view.edit.php
 %%WWWDIR%%/modules/Tasks/vardefs.php
 %%WWWDIR%%/modules/Tasks/tpls/QuickCreate.tpl
+%%WWWDIR%%/modules/Tasks/metadata/subpanels/default.php
 %%WWWDIR%%/modules/Tasks/metadata/subpanels/ForHistory.php
 %%WWWDIR%%/modules/Tasks/metadata/subpanels/ForEmails.php
 %%WWWDIR%%/modules/Tasks/metadata/subpanels/ForActivities.php
@@ -2772,6 +3084,33 @@
 %%WWWDIR%%/modules/Tasks/Dashlets/MyTasksDashlet/MyTasksDashlet.meta.php
 %%WWWDIR%%/modules/Tasks/Dashlets/MyTasksDashlet/MyTasksDashlet.data.php
 %%WWWDIR%%/modules/TableDictionary.php
+%%WWWDIR%%/modules/SugarFeed/AdminSettings.php
+%%WWWDIR%%/modules/SugarFeed/AdminSettings.tpl
+%%WWWDIR%%/modules/SugarFeed/Dashlets/SugarFeedDashlet/Options.tpl
+%%WWWDIR%%/modules/SugarFeed/Dashlets/SugarFeedDashlet/SugarFeedDashlet.meta.php
+%%WWWDIR%%/modules/SugarFeed/Dashlets/SugarFeedDashlet/SugarFeedDashlet.php
+%%WWWDIR%%/modules/SugarFeed/Dashlets/SugarFeedDashlet/SugarFeedScript.tpl
+%%WWWDIR%%/modules/SugarFeed/Dashlets/SugarFeedDashlet/UserPostForm.tpl
+%%WWWDIR%%/modules/SugarFeed/Forms.php
+%%WWWDIR%%/modules/SugarFeed/SugarFeed.php
+%%WWWDIR%%/modules/SugarFeed/SugarFeedFlush.php
+%%WWWDIR%%/modules/SugarFeed/feedLogicBase.php
+%%WWWDIR%%/modules/SugarFeed/language/en_us.help.AdminSettings.html
+%%WWWDIR%%/modules/SugarFeed/language/en_us.lang.php
+%%WWWDIR%%/modules/SugarFeed/linkHandlers/Image.php
+%%WWWDIR%%/modules/SugarFeed/linkHandlers/Link.php
+%%WWWDIR%%/modules/SugarFeed/linkHandlers/YouTube.php
+%%WWWDIR%%/modules/SugarFeed/metadata/SearchFields.php
+%%WWWDIR%%/modules/SugarFeed/metadata/dashletviewdefs.php
+%%WWWDIR%%/modules/SugarFeed/metadata/detailviewdefs.php
+%%WWWDIR%%/modules/SugarFeed/metadata/editviewdefs.php
+%%WWWDIR%%/modules/SugarFeed/metadata/listviewdefs.php
+%%WWWDIR%%/modules/SugarFeed/metadata/metafiles.php
+%%WWWDIR%%/modules/SugarFeed/metadata/popupdefs.php
+%%WWWDIR%%/modules/SugarFeed/metadata/searchdefs.php
+%%WWWDIR%%/modules/SugarFeed/metadata/sidecreateviewdefs.php
+%%WWWDIR%%/modules/SugarFeed/metadata/subpanels/default.php
+%%WWWDIR%%/modules/SugarFeed/vardefs.php
 %%WWWDIR%%/modules/Studio/ygDDListStudio.js
 %%WWWDIR%%/modules/Studio/wizards/StudioWizard.php
 %%WWWDIR%%/modules/Studio/wizards/EditDropDownWizard.php
@@ -3062,6 +3401,7 @@
 %%WWWDIR%%/modules/Opportunities/SubPanelViewProjects.html
 %%WWWDIR%%/modules/Opportunities/SubPanelView.php
 %%WWWDIR%%/modules/Opportunities/SubPanelView.html
+%%WWWDIR%%/modules/Opportunities/SugarFeeds/OppFeed.php
 %%WWWDIR%%/modules/Opportunities/SaveOverload.php
 %%WWWDIR%%/modules/Opportunities/Save.php
 %%WWWDIR%%/modules/Opportunities/OpportunityFormBase.php
@@ -3339,6 +3679,7 @@
 %%WWWDIR%%/modules/Leads/controller.php
 %%WWWDIR%%/modules/Leads/SubPanelView.php
 %%WWWDIR%%/modules/Leads/SubPanelView.html
+%%WWWDIR%%/modules/Leads/SugarFeeds/LeadFeed.php
 %%WWWDIR%%/modules/Leads/Save.php
 %%WWWDIR%%/modules/Leads/Popup_picker.html
 %%WWWDIR%%/modules/Leads/MyLeads.php
@@ -3719,6 +4060,7 @@
 %%WWWDIR%%/modules/EmailMan/Forms.php
 %%WWWDIR%%/modules/EmailMan/EmailManDelivery.php
 %%WWWDIR%%/modules/EmailMan/EmailMan.php
+%%WWWDIR%%/modules/EmailAddresses/language/en_us.lang.php
 %%WWWDIR%%/modules/EmailAddresses/vardefs.php
 %%WWWDIR%%/modules/EmailAddresses/EmailAddress.php
 %%WWWDIR%%/modules/EditCustomFields/vardefs.php
@@ -3913,6 +4255,7 @@
 %%WWWDIR%%/modules/Contacts/controller.php
 %%WWWDIR%%/modules/Contacts/contactSeedData_jp.php
 %%WWWDIR%%/modules/Contacts/contactSeedData.php
+%%WWWDIR%%/modules/Contacts/SugarFeeds/ContactFeed.php
 %%WWWDIR%%/modules/Contacts/ShowDuplicates.php
 %%WWWDIR%%/modules/Contacts/ShowDuplicates.html
 %%WWWDIR%%/modules/Contacts/SaveContactOpportunityRelationship.php
@@ -3938,6 +4281,45 @@
 %%WWWDIR%%/modules/Contacts/BusinessCard.html
 %%WWWDIR%%/modules/Contacts/Address_picker.html
 %%WWWDIR%%/modules/Contacts/AcceptDecline.php
+%%WWWDIR%%/modules/Connectors/Connector.js
+%%WWWDIR%%/modules/Connectors/ConnectorRecord.php
+%%WWWDIR%%/modules/Connectors/Forms.php
+%%WWWDIR%%/modules/Connectors/Menu.php
+%%WWWDIR%%/modules/Connectors/action_view_map.php
+%%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest/linkedin/linkedin.php
+%%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest/linkedin/tpls/default.tpl
+%%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest/linkedin/tpls/linkedin.gif
+%%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/linkedin/config.php
+%%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/linkedin/language/en_us.lang.php
+%%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/linkedin/linkedin.php
+%%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/linkedin/mapping.php
+%%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/linkedin/vardefs.php
+%%WWWDIR%%/modules/Connectors/controller.php
+%%WWWDIR%%/modules/Connectors/language/en_us.help.ConnectorSettings.html
+%%WWWDIR%%/modules/Connectors/language/en_us.help.ModifyDisplay.html
+%%WWWDIR%%/modules/Connectors/language/en_us.help.ModifyMapping.html
+%%WWWDIR%%/modules/Connectors/language/en_us.help.ModifyProperties.html
+%%WWWDIR%%/modules/Connectors/language/en_us.help.ModifySearch.html
+%%WWWDIR%%/modules/Connectors/language/en_us.help.Step1.html
+%%WWWDIR%%/modules/Connectors/language/en_us.help.Step2.html
+%%WWWDIR%%/modules/Connectors/language/en_us.lang.php
+%%WWWDIR%%/modules/Connectors/tpls/administration.tpl
+%%WWWDIR%%/modules/Connectors/tpls/display_properties.tpl
+%%WWWDIR%%/modules/Connectors/tpls/listview.tpl
+%%WWWDIR%%/modules/Connectors/tpls/mapping_properties.tpl
+%%WWWDIR%%/modules/Connectors/tpls/modify_display.tpl
+%%WWWDIR%%/modules/Connectors/tpls/modify_mapping.tpl
+%%WWWDIR%%/modules/Connectors/tpls/modify_properties.tpl
+%%WWWDIR%%/modules/Connectors/tpls/search_form.tpl
+%%WWWDIR%%/modules/Connectors/tpls/source_properties.tpl
+%%WWWDIR%%/modules/Connectors/tpls/tabs.css
+%%WWWDIR%%/modules/Connectors/views/view.connectorsettings.php
+%%WWWDIR%%/modules/Connectors/views/view.displayproperties.php
+%%WWWDIR%%/modules/Connectors/views/view.mappingproperties.php
+%%WWWDIR%%/modules/Connectors/views/view.modifydisplay.php
+%%WWWDIR%%/modules/Connectors/views/view.modifymapping.php
+%%WWWDIR%%/modules/Connectors/views/view.modifyproperties.php
+%%WWWDIR%%/modules/Connectors/views/view.sourceproperties.php
 %%WWWDIR%%/modules/Configurator/language/en_us.lang.php
 %%WWWDIR%%/modules/Configurator/language/en_us.help.EditView.html
 %%WWWDIR%%/modules/Configurator/index.php
@@ -4013,6 +4395,7 @@
 %%WWWDIR%%/modules/Cases/field_arrays.php
 %%WWWDIR%%/modules/Cases/Menu.php
 %%WWWDIR%%/modules/Cases/Forms.php
+%%WWWDIR%%/modules/Cases/SugarFeeds/CaseFeed.php
 %%WWWDIR%%/modules/Cases/Dashlets/MyCasesDashlet/MyCasesDashlet.php
 %%WWWDIR%%/modules/Cases/Dashlets/MyCasesDashlet/MyCasesDashlet.meta.php
 %%WWWDIR%%/modules/Cases/Dashlets/MyCasesDashlet/MyCasesDashlet.data.php
@@ -4227,6 +4610,7 @@
 %%WWWDIR%%/modules/Administration/repairDatabase.php
 %%WWWDIR%%/modules/Administration/ncc_config.php
 %%WWWDIR%%/modules/Administration/metadata/SearchFields.php
+%%WWWDIR%%/modules/Administration/index.tpl
 %%WWWDIR%%/modules/Administration/language/en_us_help.Backups.html
 %%WWWDIR%%/modules/Administration/language/en_us.lang.php
 %%WWWDIR%%/modules/Administration/language/en_us.lang.Updater.html
@@ -4503,6 +4887,10 @@
 %%WWWDIR%%/jssource/src_files/themes/Love/cookie.js
 %%WWWDIR%%/jssource/src_files/themes/Links/menu.js
 %%WWWDIR%%/jssource/src_files/themes/Links/cookie.js
+%%WWWDIR%%/jssource/src_files/themes/Legacy/cookie.js
+%%WWWDIR%%/jssource/src_files/themes/Legacy/groupTabs.js
+%%WWWDIR%%/jssource/src_files/themes/Legacy/menu.js
+%%WWWDIR%%/jssource/src_files/themes/Legacy/style.js
 %%WWWDIR%%/jssource/src_files/themes/GoldenGate/menu.js
 %%WWWDIR%%/jssource/src_files/themes/GoldenGate/cookie.js
 %%WWWDIR%%/jssource/src_files/themes/FinalFrontier/menu.js
@@ -4531,6 +4919,7 @@
 %%WWWDIR%%/jssource/src_files/modules/EmailTemplates/EmailTemplate.js
 %%WWWDIR%%/jssource/src_files/modules/Documents/documents.js
 %%WWWDIR%%/jssource/src_files/modules/Contacts/Contact.js
+%%WWWDIR%%/jssource/src_files/modules/Connectors/Connector.js
 %%WWWDIR%%/jssource/src_files/modules/Campaigns/wizard.js
 %%WWWDIR%%/jssource/src_files/modules/Campaigns/WebToLead.js
 %%WWWDIR%%/jssource/src_files/modules/Campaigns/DetailView.js
@@ -4648,6 +5037,7 @@
 %%WWWDIR%%/jssource/src_files/include/javascript/ext-1.1.1/adapter/yui/ext-yui-adapter.js
 %%WWWDIR%%/jssource/src_files/include/javascript/dashlets.js
 %%WWWDIR%%/jssource/src_files/include/javascript/cookie.js
+%%WWWDIR%%/jssource/src_files/include/connectors/formatters/default/company_detail.js
 %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/Datetimecombo/Datetimecombo.js
 %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/Address/SugarFieldAddress.js
 %%WWWDIR%%/jssource/src_files/include/SugarEmailAddress/SugarEmailAddress.js
@@ -4725,6 +5115,7 @@
 %%WWWDIR%%/install/language/fr_fr.lang.php
 %%WWWDIR%%/install/language/es_es.lang.php
 %%WWWDIR%%/install/language/en_us.lang.php
+%%WWWDIR%%/install/language/zh_cn.lang.php
 %%WWWDIR%%/install/install_utils.php
 %%WWWDIR%%/install/install_defaults.php
 %%WWWDIR%%/install/installType.php
@@ -5723,6 +6114,19 @@
 %%WWWDIR%%/include/contextMenus/menuDefs/sugarObject.php
 %%WWWDIR%%/include/contextMenus/menuDefs/sugarAccount.php
 %%WWWDIR%%/include/contextMenus/contextMenu.php
+%%WWWDIR%%/include/connectors/ConnectorFactory.php
+%%WWWDIR%%/include/connectors/component.php
+%%WWWDIR%%/include/connectors/formatters/FormatterFactory.php
+%%WWWDIR%%/include/connectors/formatters/default/company_detail.js
+%%WWWDIR%%/include/connectors/formatters/default/formatter.php
+%%WWWDIR%%/include/connectors/formatters/ext/rest/tpls/default.tpl
+%%WWWDIR%%/include/connectors/formatters/ext/soap/tpls/default.tpl
+%%WWWDIR%%/include/connectors/sources/SourceFactory.php
+%%WWWDIR%%/include/connectors/sources/default/source.php
+%%WWWDIR%%/include/connectors/sources/ext/rest/rest.php
+%%WWWDIR%%/include/connectors/sources/ext/soap/soap.php
+%%WWWDIR%%/include/connectors/sources/loc/xml.php
+%%WWWDIR%%/include/connectors/utils/ConnectorUtils.php
 %%WWWDIR%%/include/charts/vBarF.swf
 %%WWWDIR%%/include/charts/pieF.swf
 %%WWWDIR%%/include/charts/lineF.swf
@@ -5854,6 +6258,7 @@
 %%WWWDIR%%/include/SugarObjects/implements/team_security/language/en_us.lang.php
 %%WWWDIR%%/include/SugarObjects/implements/assignable/vardefs.php
 %%WWWDIR%%/include/SugarObjects/implements/assignable/language/en_us.lang.php
+%%WWWDIR%%/include/SugarObjects/SugarSession.php
 %%WWWDIR%%/include/SugarObjects/VardefManager.php
 %%WWWDIR%%/include/SugarObjects/SugarRegistry.php
 %%WWWDIR%%/include/SugarObjects/SugarConfig.php
@@ -5980,6 +6385,8 @@
 %%WWWDIR%%/include/SubPanel/SubPanelDynamic.html
 %%WWWDIR%%/include/SubPanel/SubPanelDefinitions.php
 %%WWWDIR%%/include/SubPanel/SubPanel.php
+%%WWWDIR%%/include/Smarty/plugins/function.sugar_connector_display.php
+%%WWWDIR%%/include/Smarty/plugins/function.sugarvar_connector.php
 %%WWWDIR%%/include/Smarty/plugins/shared.make_timestamp.php
 %%WWWDIR%%/include/Smarty/plugins/shared.escape_special_chars.php
 %%WWWDIR%%/include/Smarty/plugins/outputfilter.trimwhitespace.php
@@ -6113,6 +6520,7 @@
 %%WWWDIR%%/include/MySugar/MySugar.php
 %%WWWDIR%%/include/MySugar/DashletsDialog/DashletsDialog.php
 %%WWWDIR%%/include/MassUpdate.php
+%%WWWDIR%%/include/MVC/View/views/view.ajax.php
 %%WWWDIR%%/include/MVC/View/views/view.xml.php
 %%WWWDIR%%/include/MVC/View/views/view.vcard.php
 %%WWWDIR%%/include/MVC/View/views/view.sidequickcreate.php
@@ -6323,6 +6731,8 @@
 @dirrm %%WWWDIR%%/themes/Love
 @dirrm %%WWWDIR%%/themes/Links/images
 @dirrm %%WWWDIR%%/themes/Links
+@dirrm %%WWWDIR%%/themes/Legacy/images
+@dirrm %%WWWDIR%%/themes/Legacy
 @dirrm %%WWWDIR%%/themes/GoldenGate/images
 @dirrm %%WWWDIR%%/themes/GoldenGate
 @dirrm %%WWWDIR%%/themes/FinalFrontier/images
@@ -6334,6 +6744,8 @@
 @dirrm %%WWWDIR%%/themes
 @dirrm %%WWWDIR%%/soap
 @dirrm %%WWWDIR%%/modules/vCals
+@dirrm %%WWWDIR%%/modules/iFrames/Dashlets/iFrameDashlet
+@dirrm %%WWWDIR%%/modules/iFrames/Dashlets
 @dirrm %%WWWDIR%%/modules/iFrames/language
 @dirrm %%WWWDIR%%/modules/iFrames
 @dirrm %%WWWDIR%%/modules/Versions/language
@@ -6364,6 +6776,13 @@
 @dirrm %%WWWDIR%%/modules/Tasks/Dashlets/MyTasksDashlet
 @dirrm %%WWWDIR%%/modules/Tasks/Dashlets
 @dirrm %%WWWDIR%%/modules/Tasks
+@dirrm %%WWWDIR%%/modules/SugarFeed/Dashlets/SugarFeedDashlet
+@dirrm %%WWWDIR%%/modules/SugarFeed/Dashlets
+@dirrm %%WWWDIR%%/modules/SugarFeed/language
+@dirrm %%WWWDIR%%/modules/SugarFeed/linkHandlers
+@dirrm %%WWWDIR%%/modules/SugarFeed/metadata/subpanels
+@dirrm %%WWWDIR%%/modules/SugarFeed/metadata
+@dirrm %%WWWDIR%%/modules/SugarFeed
 @dirrm %%WWWDIR%%/modules/Studio/wizards
 @dirrm %%WWWDIR%%/modules/Studio/parsers
 @dirrm %%WWWDIR%%/modules/Studio/language
@@ -6423,6 +6842,7 @@
 @dirrm %%WWWDIR%%/modules/Opportunities/metadata/subpanels
 @dirrm %%WWWDIR%%/modules/Opportunities/metadata
 @dirrm %%WWWDIR%%/modules/Opportunities/language
+@dirrm %%WWWDIR%%/modules/Opportunities/SugarFeeds
 @dirrm %%WWWDIR%%/modules/Opportunities/Dashlets/MyOpportunitiesDashlet
 @dirrm %%WWWDIR%%/modules/Opportunities/Dashlets/MyClosedOpportunitiesDashlet
 @dirrm %%WWWDIR%%/modules/Opportunities/Dashlets
@@ -6463,6 +6883,7 @@
 @dirrm %%WWWDIR%%/modules/Leads/metadata/subpanels
 @dirrm %%WWWDIR%%/modules/Leads/metadata
 @dirrm %%WWWDIR%%/modules/Leads/language
+@dirrm %%WWWDIR%%/modules/Leads/SugarFeeds
 @dirrm %%WWWDIR%%/modules/Leads/Dashlets/MyLeadsDashlet
 @dirrm %%WWWDIR%%/modules/Leads/Dashlets
 @dirrm %%WWWDIR%%/modules/Leads
@@ -6518,6 +6939,7 @@
 @dirrm %%WWWDIR%%/modules/EmailMan/metadata
 @dirrm %%WWWDIR%%/modules/EmailMan/language
 @dirrm %%WWWDIR%%/modules/EmailMan
+@dirrm %%WWWDIR%%/modules/EmailAddresses/language
 @dirrm %%WWWDIR%%/modules/EmailAddresses
 @dirrm %%WWWDIR%%/modules/EditCustomFields/language
 @dirrm %%WWWDIR%%/modules/EditCustomFields
@@ -6548,9 +6970,30 @@
 @dirrm %%WWWDIR%%/modules/Contacts/metadata/subpanels
 @dirrm %%WWWDIR%%/modules/Contacts/metadata
 @dirrm %%WWWDIR%%/modules/Contacts/language
+@dirrm %%WWWDIR%%/modules/Contacts/SugarFeeds
 @dirrm %%WWWDIR%%/modules/Contacts/Dashlets/MyContactsDashlet
 @dirrm %%WWWDIR%%/modules/Contacts/Dashlets
 @dirrm %%WWWDIR%%/modules/Contacts
+@dirrm %%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest/linkedin/tpls
+@dirrm %%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest/linkedin
+@dirrm %%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest
+@dirrm %%WWWDIR%%/modules/Connectors/connectors/formatters/ext/soap/hoovers
+@dirrm %%WWWDIR%%/modules/Connectors/connectors/formatters/ext/soap/jigsaw
+@dirrm %%WWWDIR%%/modules/Connectors/connectors/formatters/ext/soap
+@dirrm %%WWWDIR%%/modules/Connectors/connectors/formatters/ext
+@dirrm %%WWWDIR%%/modules/Connectors/connectors/formatters
+@dirrm %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/linkedin/language
+@dirrm %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/linkedin
+@dirrm %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest
+@dirrm %%WWWDIR%%/modules/Connectors/connectors/sources/ext/soap
+@dirrm %%WWWDIR%%/modules/Connectors/connectors/sources/ext
+@dirrm %%WWWDIR%%/modules/Connectors/connectors/sources
+@dirrm %%WWWDIR%%/modules/Connectors/connectors
+@dirrm %%WWWDIR%%/modules/Connectors/language
+@dirrm %%WWWDIR%%/modules/Connectors/metadata
+@dirrm %%WWWDIR%%/modules/Connectors/tpls
+@dirrm %%WWWDIR%%/modules/Connectors/views
+@dirrm %%WWWDIR%%/modules/Connectors
 @dirrm %%WWWDIR%%/modules/Configurator/language
 @dirrm %%WWWDIR%%/modules/Configurator
 @dirrm %%WWWDIR%%/modules/Charts/language
@@ -6569,6 +7012,7 @@
 @dirrm %%WWWDIR%%/modules/Cases/metadata/subpanels
 @dirrm %%WWWDIR%%/modules/Cases/metadata
 @dirrm %%WWWDIR%%/modules/Cases/language
+@dirrm %%WWWDIR%%/modules/Cases/SugarFeeds
 @dirrm %%WWWDIR%%/modules/Cases/Dashlets/MyCasesDashlet
 @dirrm %%WWWDIR%%/modules/Cases/Dashlets
 @dirrm %%WWWDIR%%/modules/Cases
@@ -6657,6 +7101,7 @@
 @dirrm %%WWWDIR%%/jssource/src_files/themes/Paradise
 @dirrm %%WWWDIR%%/jssource/src_files/themes/Love
 @dirrm %%WWWDIR%%/jssource/src_files/themes/Links
+@dirrm %%WWWDIR%%/jssource/src_files/themes/Legacy
 @dirrm %%WWWDIR%%/jssource/src_files/themes/GoldenGate
 @dirrm %%WWWDIR%%/jssource/src_files/themes/FinalFrontier
 @dirrm %%WWWDIR%%/jssource/src_files/themes/BoldMove
@@ -6675,6 +7120,7 @@
 @dirrm %%WWWDIR%%/jssource/src_files/modules/EmailTemplates
 @dirrm %%WWWDIR%%/jssource/src_files/modules/Documents
 @dirrm %%WWWDIR%%/jssource/src_files/modules/Contacts
+@dirrm %%WWWDIR%%/jssource/src_files/modules/Connectors
 @dirrm %%WWWDIR%%/jssource/src_files/modules/Campaigns
 @dirrm %%WWWDIR%%/jssource/src_files/modules/Administration/javascript
 @dirrm %%WWWDIR%%/jssource/src_files/modules/Administration
@@ -6703,6 +7149,9 @@
 @dirrm %%WWWDIR%%/jssource/src_files/include/javascript/ext-1.1.1/adapter
 @dirrm %%WWWDIR%%/jssource/src_files/include/javascript/ext-1.1.1
 @dirrm %%WWWDIR%%/jssource/src_files/include/javascript
+@dirrm %%WWWDIR%%/jssource/src_files/include/connectors/formatters/default
+@dirrm %%WWWDIR%%/jssource/src_files/include/connectors/formatters
+@dirrm %%WWWDIR%%/jssource/src_files/include/connectors
 @dirrm %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/Datetimecombo
 @dirrm %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/Address
 @dirrm %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields
@@ -6866,6 +7315,21 @@
 @dirrm %%WWWDIR%%/include/domit_rss
 @dirrm %%WWWDIR%%/include/domit
 @dirrm %%WWWDIR%%/include/database
+@dirrm %%WWWDIR%%/include/connectors/utils
+@dirrm %%WWWDIR%%/include/connectors/formatters/default
+@dirrm %%WWWDIR%%/include/connectors/formatters/ext/rest/tpls
+@dirrm %%WWWDIR%%/include/connectors/formatters/ext/rest
+@dirrm %%WWWDIR%%/include/connectors/formatters/ext/soap/tpls
+@dirrm %%WWWDIR%%/include/connectors/formatters/ext/soap
+@dirrm %%WWWDIR%%/include/connectors/formatters/ext
+@dirrm %%WWWDIR%%/include/connectors/formatters
+@dirrm %%WWWDIR%%/include/connectors/sources/default
+@dirrm %%WWWDIR%%/include/connectors/sources/ext/rest
+@dirrm %%WWWDIR%%/include/connectors/sources/ext/soap
+@dirrm %%WWWDIR%%/include/connectors/sources/ext
+@dirrm %%WWWDIR%%/include/connectors/sources/loc
+@dirrm %%WWWDIR%%/include/connectors/sources
+@dirrm %%WWWDIR%%/include/connectors
 @dirrm %%WWWDIR%%/include/controller
 @dirrm %%WWWDIR%%/include/contextMenus/menuDefs
 @dirrm %%WWWDIR%%/include/contextMenus
