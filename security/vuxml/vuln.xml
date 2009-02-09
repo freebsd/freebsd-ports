@@ -34,6 +34,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a89b76a7-f6bd-11dd-94d9-0030843d3802">
+    <topic>amaya -- multiple buffer overflow vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>amaya</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/32848/">
+	  <p>A boundary error when processing "div" HTML tags can be exploited
+	    to cause a stack-based buffer overflow via an overly long "id"
+	    parameter.</p>
+	  <p>A boundary error exists when processing overly long links. This can
+	    be exploited to cause a stack-based buffer overflow by tricking the
+	    user into e.g. editing a malicious link.</p>
+	  <p>A boundary error when processing e.g. a "bdo" HTML tag having an
+	    overly long "dir" attribute can be exploited to cause a stack-based
+	    buffer overflow.</p>
+	  <p>A boundary error when processing "input" HTML tags can be
+	  exploited to cause a stack-based buffer overflow via an overly long
+	  e.g. "type" attribute.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5282</cvename>
+      <cvename>CVE-2009-0323</cvename>
+      <url>http://secunia.com/advisories/32848/</url>
+      <url>http://www.bmgsec.com.au/advisory/41/</url>
+      <url>http://www.bmgsec.com.au/advisory/40/</url>
+      <url>http://milw0rm.com/exploits/7467</url>
+      <url>http://www.coresecurity.com/content/amaya-buffer-overflows</url>
+    </references>
+    <dates>
+      <discovery>2008-11-25</discovery>
+      <entry>2009-02-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="71597e3e-f6b8-11dd-94d9-0030843d3802">
     <topic>websvn -- multiple vulnerabilities</topic>
     <affects>
