@@ -7,39 +7,26 @@
 #
 
 PORTNAME=	blam
-PORTVERSION=	1.8.4
-PORTREVISION=	2
-CATEGORIES=	net gnome
-MASTER_SITES=	http://www.cmartin.tk/blam/
+PORTVERSION=	1.8.6
+PORTREVISION=	1
+CATEGORIES=	net
+MASTER_SITES=	http://www.cmartin.tk/${PORTNAME}/
 
-MAINTAINER=	bsd-sharp@googlegroups.com
-COMMENT=	Mono based RSS feed reader
+MAINTAINER=	mono@FreeBSD.org
+COMMENT=	A simple feed reader for GNOME
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gecko-sharp-2.0.pc:${PORTSDIR}/www/gecko-sharp20
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gecko-sharp-2.0.pc:${PORTSDIR}/www/gecko-sharp20
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext \
+		${LOCALBASE}/libdata/pkgconfig/webkit-sharp-1.0.pc:${PORTSDIR}/www/webkit-sharp
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/webkit-sharp-1.0.pc:${PORTSDIR}/www/webkit-sharp
 
-USE_GECKO=	firefox mozilla
-USE_GNOME=	gnomeprefix gnomehack intlhack intltool libgnomeui gnomesharp20
-USE_BZIP2=	yes
-USE_GETTEXT=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-mozilla=${GECKO}
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-
-MAN1=	blam.1
-
+USE_GMAKE=	yes
+CONFIGURE_ENV=	GMSGFMT="${LOCALBASE}/bin/msgfmt" DATADIRNAME="share"
+USE_GNOME=	gnomesharp20
+USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	blam.schemas
 
-post-patch:
-	@${REINPLACE_CMD} 's|img src="|img src="file://${PREFIX}/share/blam/themes/blam/|g' \
-		${WRKSRC}/themes/blam/theme.html
-	@${REINPLACE_CMD} 's|img src="|img src="file://${PREFIX}/share/blam/themes/pimped/|g' \
-		${WRKSRC}/themes/pimped/theme.html
+MAN1=		blam.1
 
-
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

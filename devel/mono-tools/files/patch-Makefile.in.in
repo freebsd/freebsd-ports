@@ -1,10 +1,10 @@
---- po/Makefile.in.in.orig	Fri Jun 17 01:34:05 2005
-+++ po/Makefile.in.in	Fri Jun 17 01:39:12 2005
-@@ -32,6 +32,7 @@
- gettextsrcdir = $(datadir)/glib-2.0/gettext/po
- subdir = po
+--- po/Makefile.in.in.orig	2007-11-24 13:32:28.000000000 +0000
++++ po/Makefile.in.in	2007-11-24 13:32:48.000000000 +0000
+@@ -35,6 +35,7 @@
  
-+mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  INSTALL = @INSTALL@
  INSTALL_DATA = @INSTALL_DATA@
++top_builddir = ..
  
+ CC = @CC@
+ GENCAT = @GENCAT@

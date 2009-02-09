@@ -1544,6 +1544,7 @@
     SUBDIR += webglimpse
     SUBDIR += webinject
     SUBDIR += webkit-gtk2
+    SUBDIR += webkit-sharp
     SUBDIR += weblint
     SUBDIR += weblint++
     SUBDIR += webobjects

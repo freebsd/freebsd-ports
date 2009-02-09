@@ -1,0 +1,109 @@
+@comment $FreeBSD$
+lib/libgnomepanelsharpglue-2.a
+lib/libgnomepanelsharpglue-2.la
+lib/libgnomepanelsharpglue-2.so
+lib/libgtksourceview2sharpglue-2.so
+lib/libgtksourceview2sharpglue-2.la
+lib/libgtksourceview2sharpglue-2.a
+lib/libnautilusburnsharpglue-2.so
+lib/libnautilusburnsharpglue-2.la
+lib/libnautilusburnsharpglue-2.a
+lib/libgtkhtmlsharpglue-2.a
+lib/libgtkhtmlsharpglue-2.la
+lib/libgtkhtmlsharpglue-2.so
+lib/libvtesharpglue-2.a
+lib/libvtesharpglue-2.la
+lib/libvtesharpglue-2.so
+lib/libwncksharpglue-2.a
+lib/libwncksharpglue-2.la
+lib/libwncksharpglue-2.so
+lib/mono/gac/gnome-panel-sharp/2.24.0.0__35e10195dab3c99f/gnome-panel-sharp.dll
+lib/mono/gac/gnome-panel-sharp/2.24.0.0__35e10195dab3c99f/gnome-panel-sharp.dll.config
+lib/mono/gac/gnome-print-sharp/2.18.0.0__35e10195dab3c99f/gnome-print-sharp.dll
+lib/mono/gac/gnome-print-sharp/2.18.0.0__35e10195dab3c99f/gnome-print-sharp.dll.config
+lib/mono/gac/gnomedesktop-sharp/2.20.0.0__35e10195dab3c99f/gnomedesktop-sharp.dll
+lib/mono/gac/gnomedesktop-sharp/2.20.0.0__35e10195dab3c99f/gnomedesktop-sharp.dll.config
+lib/mono/gac/gtkhtml-sharp/3.16.0.0__35e10195dab3c99f/gtkhtml-sharp.dll
+lib/mono/gac/gtkhtml-sharp/3.16.0.0__35e10195dab3c99f/gtkhtml-sharp.dll.config
+lib/mono/gac/gtksourceview2-sharp/2.0.0.0__35e10195dab3c99f/gtksourceview2-sharp.dll
+lib/mono/gac/gtksourceview2-sharp/2.0.0.0__35e10195dab3c99f/gtksourceview2-sharp.dll.config
+lib/mono/gac/nautilusburn-sharp/2.20.0.0__35e10195dab3c99f/nautilusburn-sharp.dll
+lib/mono/gac/nautilusburn-sharp/2.20.0.0__35e10195dab3c99f/nautilusburn-sharp.dll.config
+lib/mono/gac/rsvg2-sharp/2.18.0.0__35e10195dab3c99f/rsvg2-sharp.dll
+lib/mono/gac/rsvg2-sharp/2.18.0.0__35e10195dab3c99f/rsvg2-sharp.dll.config
+lib/mono/gac/vte-sharp/0.16.0.0__35e10195dab3c99f/vte-sharp.dll
+lib/mono/gac/vte-sharp/0.16.0.0__35e10195dab3c99f/vte-sharp.dll.config
+lib/mono/gac/wnck-sharp/2.20.0.0__35e10195dab3c99f/wnck-sharp.dll
+lib/mono/gac/wnck-sharp/2.20.0.0__35e10195dab3c99f/wnck-sharp.dll.config
+lib/mono/gnome-panel-sharp-2.24/gnome-panel-sharp.dll
+lib/mono/gnome-print-sharp-2.18/gnome-print-sharp.dll
+lib/mono/gnomedesktop-sharp-2.20/gnomedesktop-sharp.dll
+lib/mono/gtkhtml-sharp-3.14/gtkhtml-sharp.dll
+lib/mono/gtksourceview2-sharp-2.0/gtksourceview2-sharp.dll
+lib/mono/nautilusburn-sharp-2.20/nautilusburn-sharp.dll
+lib/mono/rsvg2-sharp-2.0/rsvg2-sharp.dll
+lib/mono/vte-sharp-0.16/vte-sharp.dll
+lib/mono/wnck-sharp-2.20/wnck-sharp.dll
+libdata/pkgconfig/gnome-desktop-sharp-2.0.pc
+libdata/pkgconfig/gnome-panel-sharp-2.24.pc
+libdata/pkgconfig/gnome-print-sharp-2.18.pc
+libdata/pkgconfig/gtkhtml-sharp-3.14.pc
+libdata/pkgconfig/gtksourceview2-sharp.pc
+libdata/pkgconfig/nautilusburn-sharp.pc
+libdata/pkgconfig/rsvg2-sharp-2.0.pc
+libdata/pkgconfig/vte-sharp-0.16.pc
+libdata/pkgconfig/wnck-sharp-1.0.pc
+share/gnome-panel-sharp/2.24/gnome-panel-api.xml
+share/gnome-print-sharp/2.18/gnome-print-api.xml
+share/gnomedesktop-sharp/2.20/gnomedesktop-api.xml
+share/gtkhtml-sharp/3.14/gtkhtml-api.xml
+share/gtksourceview2-sharp/2.0/gtksourceview2-api.xml
+share/nautilusburn-sharp/2.20/nautilusburn-api.xml
+share/rsvg2-sharp/2.0/rsvg2-api.xml
+share/vte-sharp/0.16/vte-api.xml
+share/wnck-sharp/2.20/wnck-api.xml
+@dirrm share/wnck-sharp/2.20
+@dirrm share/wnck-sharp
+@dirrm share/vte-sharp/0.16
+@dirrm share/vte-sharp
+@dirrm share/rsvg2-sharp/2.0
+@dirrm share/rsvg2-sharp
+@dirrm share/nautilusburn-sharp/2.20
+@dirrm share/nautilusburn-sharp
+@dirrm share/gtksourceview2-sharp/2.0
+@dirrm share/gtksourceview2-sharp
+@dirrm share/gtkhtml-sharp/3.14
+@dirrm share/gtkhtml-sharp
+@dirrm share/gnomedesktop-sharp/2.20
+@dirrm share/gnomedesktop-sharp
+@dirrm share/gnome-print-sharp/2.18
+@dirrm share/gnome-print-sharp
+@dirrm share/gnome-panel-sharp/2.24
+@dirrm share/gnome-panel-sharp
+@dirrm lib/mono/wnck-sharp-2.20
+@dirrm lib/mono/vte-sharp-0.16
+@dirrm lib/mono/rsvg2-sharp-2.0
+@dirrm lib/mono/nautilusburn-sharp-2.20
+@dirrm lib/mono/gtksourceview2-sharp-2.0
+@dirrm lib/mono/gtkhtml-sharp-3.14
+@dirrm lib/mono/gnomedesktop-sharp-2.20
+@dirrm lib/mono/gnome-print-sharp-2.18
+@dirrm lib/mono/gnome-panel-sharp-2.24
+@dirrm lib/mono/gac/wnck-sharp/2.20.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/wnck-sharp
+@dirrm lib/mono/gac/vte-sharp/0.16.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/vte-sharp
+@dirrm lib/mono/gac/rsvg2-sharp/2.18.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/rsvg2-sharp
+@dirrm lib/mono/gac/nautilusburn-sharp/2.20.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/nautilusburn-sharp
+@dirrm lib/mono/gac/gtksourceview2-sharp/2.0.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/gtksourceview2-sharp
+@dirrm lib/mono/gac/gtkhtml-sharp/3.16.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/gtkhtml-sharp
+@dirrm lib/mono/gac/gnomedesktop-sharp/2.20.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/gnomedesktop-sharp
+@dirrm lib/mono/gac/gnome-print-sharp/2.18.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/gnome-print-sharp
+@dirrm lib/mono/gac/gnome-panel-sharp/2.24.0.0__35e10195dab3c99f
+@dirrm lib/mono/gac/gnome-panel-sharp

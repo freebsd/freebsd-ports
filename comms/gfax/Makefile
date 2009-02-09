@@ -21,6 +21,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/sendfax:${PORTSDIR}/comms/hylafax \
 		bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/libdata/pkgconfig/evolution-sharp.pc:${PORTSDIR}/mail/evolution-sharp
 
+BROKEN=		doesn't build with mono 2.0.1
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gnomehier libgnomeprint gnomesharp20
