@@ -26,7 +26,7 @@ upgrades.
 
   devel/libslang has been removed in favor of devel/libslang2
   after not being released in the last 5yrs.  WITH_SLANG2 is
-  nolonger a valid ports KNOB.  All ports depending on devel/libslang
+  no longer a valid ports KNOB.  All ports depending on devel/libslang
   should be recompiled.
 
    # portupgrade -o devel/libslang devel/libslang2
@@ -44,7 +44,7 @@ upgrades.
   AUTHOR: kwm@FreeBSD.org
 
   The gstapp library moved from the gstreamer-plugins-bad package
-  to gstreamer-plugins. It will be nessasary to rebuild the
+  to gstreamer-plugins. It will be necessary to rebuild the
   gstreamer-plugins port. After updating your installed ports do:
 
   portupgrade users:
