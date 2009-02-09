@@ -15,7 +15,6 @@
 %%WWWDIR%%/confirm.php
 %%WWWDIR%%/convert_note.php
 %%WWWDIR%%/css/dtree.css
-%%WWWDIR%%/css/dynCalendar.css
 %%WWWDIR%%/css/style.css
 %%WWWDIR%%/csv.php
 %%WWWDIR%%/custom_fields.php
@@ -204,6 +203,7 @@
 %%WWWDIR%%/include/class.history.php
 %%WWWDIR%%/include/class.impact_analysis.php
 %%WWWDIR%%/include/class.issue.php
+%%WWWDIR%%/include/class.issue_field.php
 %%WWWDIR%%/include/class.language.php
 %%WWWDIR%%/include/class.link_filter.php
 %%WWWDIR%%/include/class.lock.php
@@ -335,10 +335,14 @@
 %%WWWDIR%%/js/expandable_cell.js
 %%WWWDIR%%/js/global.js
 %%WWWDIR%%/js/httpclient.js
+%%WWWDIR%%/js/jquery/field.js
+%%WWWDIR%%/js/jquery/form.js
+%%WWWDIR%%/js/jquery/jquery.js
+%%WWWDIR%%/js/jquery/ui.datepicker.css
+%%WWWDIR%%/js/jquery/ui.datepicker.js
 %%WWWDIR%%/js/overlib.js
 %%WWWDIR%%/js/overlib_mini.js
 %%WWWDIR%%/js/post_load.js
-%%WWWDIR%%/js/prototype.js
 %%WWWDIR%%/js/validation.js
 %%WWWDIR%%/list.php
 %%WWWDIR%%/login.php
@@ -388,19 +392,27 @@
 %%WWWDIR%%/misc/cli/include/class.command_line.php
 %%WWWDIR%%/misc/cli/include/class.misc.php
 %%WWWDIR%%/misc/cli/include/pear/PEAR.php
-%%WWWDIR%%/misc/cli/include/pear/XML_RPC/RPC.php
+%%WWWDIR%%/misc/cli/include/pear/XML/RPC.php
 %%WWWDIR%%/misc/download_emails.php
 %%WWWDIR%%/misc/irc/bot.php
 %%WWWDIR%%/misc/irc/restart.php
 %%WWWDIR%%/misc/localization/Makefile
+%%WWWDIR%%/misc/localization/de.po
+%%WWWDIR%%/misc/localization/de/LC_MESSAGES/eventum.mo
+%%WWWDIR%%/misc/localization/es.po
+%%WWWDIR%%/misc/localization/es/LC_MESSAGES/eventum.mo
 %%WWWDIR%%/misc/localization/eventum.c
 %%WWWDIR%%/misc/localization/eventum.pot
 %%WWWDIR%%/misc/localization/fi.po
 %%WWWDIR%%/misc/localization/fi/LC_MESSAGES/eventum.mo
 %%WWWDIR%%/misc/localization/it.po
 %%WWWDIR%%/misc/localization/it/LC_MESSAGES/eventum.mo
+%%WWWDIR%%/misc/localization/nl.po
+%%WWWDIR%%/misc/localization/nl/LC_MESSAGES/eventum.mo
 %%WWWDIR%%/misc/localization/pl.po
 %%WWWDIR%%/misc/localization/pl/LC_MESSAGES/eventum.mo
+%%WWWDIR%%/misc/localization/pt_BR.po
+%%WWWDIR%%/misc/localization/pt_BR/LC_MESSAGES/eventum.mo
 %%WWWDIR%%/misc/localization/ru.po
 %%WWWDIR%%/misc/localization/ru/LC_MESSAGES/eventum.mo
 %%WWWDIR%%/misc/localization/sv.po
@@ -414,8 +426,12 @@
 %%WWWDIR%%/misc/scm/process_svn_commits.php
 %%WWWDIR%%/misc/upgrade/flush_compiled_templates.php
 %%WWWDIR%%/misc/upgrade/index.html
+%%WWWDIR%%/misc/upgrade/patches/01_notes.php
+%%WWWDIR%%/misc/upgrade/patches/02_usr_alias.php
+%%WWWDIR%%/misc/upgrade/patches/03_prj_mail_aliases.php
 %%WWWDIR%%/misc/upgrade/snapshot_to_v1.1/fix_system_account.php
 %%WWWDIR%%/misc/upgrade/snapshot_to_v1.1/set_history_type.php
+%%WWWDIR%%/misc/upgrade/update-database.php
 %%WWWDIR%%/misc/upgrade/v1.1_to_v1.2/database_changes.php
 %%WWWDIR%%/misc/upgrade/v1.1_to_v1.2/set_support_email_usr_id.php
 %%WWWDIR%%/misc/upgrade/v1.2.1_to_v1.2.2/database_changes.php
@@ -476,6 +492,10 @@
 %%WWWDIR%%/misc/upgrade/v2.0_to_v2.1/database_changes.php
 %%WWWDIR%%/misc/upgrade/v2.0_to_v2.1/index.html
 %%WWWDIR%%/misc/upgrade/v2.0_to_v2.1/update_custom_field_by_type.php
+%%WWWDIR%%/misc/upgrade/v2.1.1_to_v2.2/convert-utf8.php
+%%WWWDIR%%/misc/upgrade/v2.1.1_to_v2.2/db_version.php
+%%WWWDIR%%/misc/upgrade/v2.1.1_to_v2.2/fix-charset.php
+%%WWWDIR%%/misc/upgrade/v2.1.1_to_v2.2/index.html
 %%WWWDIR%%/misc/upgrade/v2.1_to_v2.1.1/index.html
 %%WWWDIR%%/new.php
 %%WWWDIR%%/news.php
@@ -488,6 +508,7 @@
 %%WWWDIR%%/preferences.php
 %%WWWDIR%%/redeem_incident.php
 %%WWWDIR%%/removed_emails.php
+%%WWWDIR%%/reports/category_statuses.php
 %%WWWDIR%%/reports/custom_fields.php
 %%WWWDIR%%/reports/custom_fields_graph.php
 %%WWWDIR%%/reports/customer_stats.php
@@ -530,6 +551,7 @@
 %%WWWDIR%%/templates/add_time_tracking.tpl.html
 %%WWWDIR%%/templates/adv_search.tpl.html
 %%WWWDIR%%/templates/app_info.tpl.html
+%%WWWDIR%%/templates/app_messages.tpl.html
 %%WWWDIR%%/templates/associate.tpl.html
 %%WWWDIR%%/templates/attached_emails.tpl.html
 %%WWWDIR%%/templates/attachments.tpl.html
@@ -597,6 +619,9 @@
 %%WWWDIR%%/templates/help_link.tpl.html
 %%WWWDIR%%/templates/history.tpl.html
 %%WWWDIR%%/templates/impact_analysis.tpl.html
+%%WWWDIR%%/templates/include/issue_field.tpl.html
+%%WWWDIR%%/templates/include/issue_fields.tpl.html
+%%WWWDIR%%/templates/include/issue_fields/assignee.tpl.html
 %%WWWDIR%%/templates/index.tpl.html
 %%WWWDIR%%/templates/js/dynamic_custom_field.tpl.js
 %%WWWDIR%%/templates/latest_news.tpl.html
@@ -643,6 +668,7 @@
 %%WWWDIR%%/templates/notification.tpl.html
 %%WWWDIR%%/templates/notifications/account_details.tpl.text
 %%WWWDIR%%/templates/notifications/assigned.tpl.text
+%%WWWDIR%%/templates/notifications/bounced_email.tpl.text
 %%WWWDIR%%/templates/notifications/closed.tpl.text
 %%WWWDIR%%/templates/notifications/files.tpl.text
 %%WWWDIR%%/templates/notifications/new.tpl.text
@@ -669,6 +695,7 @@
 %%WWWDIR%%/templates/reminders/email_alert.tpl.text
 %%WWWDIR%%/templates/reminders/sms_alert.tpl.text
 %%WWWDIR%%/templates/removed_emails.tpl.html
+%%WWWDIR%%/templates/reports/category_statuses.tpl.html
 %%WWWDIR%%/templates/reports/custom_fields.tpl.html
 %%WWWDIR%%/templates/reports/customer_stats.tpl.html
 %%WWWDIR%%/templates/reports/estimated_dev_time.tpl.html
@@ -721,6 +748,8 @@
 @dirrm %%WWWDIR%%/templates/notifications
 @dirrm %%WWWDIR%%/templates/manage
 @dirrm %%WWWDIR%%/templates/js
+@dirrm %%WWWDIR%%/templates/include/issue_fields
+@dirrm %%WWWDIR%%/templates/include
 @dirrm %%WWWDIR%%/templates/help
 @dirrm %%WWWDIR%%/templates/expandable_cell
 @dirrm %%WWWDIR%%/templates/customer/example
@@ -730,6 +759,7 @@
 @dirrm %%WWWDIR%%/rpc
 @dirrm %%WWWDIR%%/reports
 @dirrm %%WWWDIR%%/misc/upgrade/v2.1_to_v2.1.1
+@dirrm %%WWWDIR%%/misc/upgrade/v2.1.1_to_v2.2
 @dirrm %%WWWDIR%%/misc/upgrade/v2.0_to_v2.1
 @dirrm %%WWWDIR%%/misc/upgrade/v2.0-beta_to_v2.0
 @dirrm %%WWWDIR%%/misc/upgrade/v1.7.1_to_v2.0
@@ -749,6 +779,7 @@
 @dirrm %%WWWDIR%%/misc/upgrade/v1.2.1_to_v1.2.2
 @dirrm %%WWWDIR%%/misc/upgrade/v1.1_to_v1.2
 @dirrm %%WWWDIR%%/misc/upgrade/snapshot_to_v1.1
+@dirrm %%WWWDIR%%/misc/upgrade/patches
 @dirrm %%WWWDIR%%/misc/upgrade
 @dirrm %%WWWDIR%%/misc/scm
 @dirrm %%WWWDIR%%/misc/routed_notes
@@ -758,6 +789,8 @@
 @dirrm %%WWWDIR%%/misc/localization/sv
 @dirrm %%WWWDIR%%/misc/localization/ru/LC_MESSAGES
 @dirrm %%WWWDIR%%/misc/localization/ru
+@dirrm %%WWWDIR%%/misc/localization/pt_BR/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/pt_BR
 @dirrm %%WWWDIR%%/misc/localization/pl/LC_MESSAGES
 @dirrm %%WWWDIR%%/misc/localization/pl
 @dirrm %%WWWDIR%%/misc/localization/nl/LC_MESSAGES
@@ -776,7 +809,7 @@
 @dirrm %%WWWDIR%%/misc/localization/de
 @dirrm %%WWWDIR%%/misc/localization
 @dirrm %%WWWDIR%%/misc/irc
-@dirrm %%WWWDIR%%/misc/cli/include/pear/XML_RPC
+@dirrm %%WWWDIR%%/misc/cli/include/pear/XML
 @dirrm %%WWWDIR%%/misc/cli/include/pear
 @dirrm %%WWWDIR%%/misc/cli/include
 @dirrm %%WWWDIR%%/misc/cli
@@ -784,6 +817,7 @@
 @dirrm %%WWWDIR%%/manage
 @dirrmtry %%WWWDIR%%/logs
 @dirrm %%WWWDIR%%/locks
+@dirrm %%WWWDIR%%/js/jquery
 @dirrm %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/include/workflow
 @dirrm %%WWWDIR%%/include/php-gettext
