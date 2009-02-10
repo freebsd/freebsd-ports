@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	medusa
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.foofus.net/jmk/tools/ \
 		http://redundancy.redundancy.org/mirror/
@@ -15,14 +15,12 @@ MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A speedy, massively parallel, modular, login brute-forcer
 
 OPTIONS=	SVN "Enable Subversion module" off \
-		POSTGRESQL "Enable PostgreSQL module" off \
-		WEBFORM "Enable web form module" off \
-		SMTPAUTH "Enable web form module" off
+		POSTGRESQL "Enable PostgreSQL module" off
 
 LIB_DEPENDS+=	ssh2:${PORTSDIR}/security/libssh2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--program-transform= --disable-module-ncp
+CONFIGURE_ARGS+=	--program-transform= #--disable-module-ncp
 
 MAN1=		medusa.1
 
@@ -46,21 +44,12 @@ PLIST_SUB+=	POSTGRESQL=""
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--enable-module-postgres
 .else
+CONFIGURE_ARGS+=	--enable-module-postgres=no
 PLIST_SUB+=	POSTGRESQL="@comment "
 .endif
 
-.if defined(WITH_WEBFORM)
-PLIST_SUB+=	WEBFORM=""
-CONFIGURE_ARGS+=	--enable-module-web-form
-.else
-PLIST_SUB+=	WEBFORM="@comment "
-.endif
-
-.if defined(WITH_SMTPAUTH)
-PLIST_SUB+=	SMTPAUTH=""
-CONFIGURE_ARGS+=	--enable-module-smtp-auth
-.else
-PLIST_SUB+=	SMTPAUTH="@comment "
-.endif
+post-install:
+	${MKDIR} ${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/misc/zsh/_medusa ${PREFIX}/share/zsh/site-functions/_medusa
 
 .include <bsd.port.post.mk>
