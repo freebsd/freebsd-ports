@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: cf-execd
+# REQUIRE: SERVERS
+# BEFORE:  DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable cf-execd(8)
+#
+# cf-execd_enable (bool):        Set to "NO" by default.
+#                               Set it to "YES" to enable cf-execd.
+# cf-execd_flags (str):          Custom additional arguments to be passed
+#                               to cf-execd (default empty).
+#
+
+. %%RC_SUBR%%
+
+name="cf-execd"
+rcvar=${name}_enable
+
+command="%%PREFIX%%/sbin/${name}"
+
+load_rc_config $name
+
+: ${cf-execd_enable="NO"}
+: ${cf-execd_flags=""}
+
+run_rc_command "$1"
