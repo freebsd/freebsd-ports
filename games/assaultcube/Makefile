@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	assaultcube
-PORTVERSION=	0.93
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	games
 MASTER_SITES=	SF/actiongame
 DISTNAME=	AssaultCube_v${PORTVERSION}
@@ -15,11 +14,12 @@ DISTNAME=	AssaultCube_v${PORTVERSION}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Total conversion of the FPS game called Cube
 
+LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	libenet
-WRKSRC=		${WRKDIR}/${DISTNAME:C/_v.*//}
 CONFIGURE_WRKSRC=	${WRKSRC}/source/enet
 BUILD_WRKSRC=	${WRKSRC}/source/src
 
@@ -70,14 +70,14 @@ do-install:
 .endfor
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${CP} -r bot config packages ${DATADIR}
-	@${FIND} ${DATADIR} -type d | ${XARGS} ${CHMOD} ${BINMODE}
-	@${FIND} ${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
+	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
-	@${FIND} ${DOCSDIR} -type d | ${XARGS} ${CHMOD} ${BINMODE}
-	@${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@${FIND} ${DOCSDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
+	@${FIND} ${DOCSDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
 .endif
 
 .include <bsd.port.post.mk>
