@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	Text-Greeking-zh_TW
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.4
 CATEGORIES=	chinese textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate meaningless Chinese text that creates the illusion of the document
 
 PERL_CONFIGURE=	yes
