@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 PKGNAMEPREFIX=	ossp-
 
-MAINTAINER=	davidyu@ucsd.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OSSP ex is a small exception handling library for use in C
 
 USE_GMAKE=	yes
