@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Digest/TransformPath.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/TransformPath/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/TransformPath
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest
 @dirrmtry %%SITE_PERL%%/Digest
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/TransformPath

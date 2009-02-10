@@ -21,4 +21,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Digest::TransformPath.3
 
+test:	build
+	(@cd ${WRKSRC} && make test)
+
 .include <bsd.port.mk>
