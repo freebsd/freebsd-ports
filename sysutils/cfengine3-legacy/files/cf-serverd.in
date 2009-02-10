@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: cf-serverd
+# REQUIRE: SERVERS
+# BEFORE:  DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable cf-serverd(8)
+#
+# cf-serverd_enable (bool):        Set to "NO" by default.
+#                               Set it to "YES" to enable cf-serverd.
+# cf-serverd_flags (str):          Custom additional arguments to be passed
+#                               to cf-serverd (default empty).
+#
+
+. %%RC_SUBR%%
+
+name="cf-serverd"
+rcvar=${name}_enable
+
+command="%%PREFIX%%/sbin/${name}"
+
+load_rc_config $name
+
+: ${cf-serverd_enable="NO"}
+: ${cf-serverd_flags=""}
+
+run_rc_command "$1"

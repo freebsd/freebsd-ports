@@ -86,6 +86,7 @@
     SUBDIR += cdrtools-cjk
     SUBDIR += cdrtools-devel
     SUBDIR += cfengine
+    SUBDIR += cfengine3
     SUBDIR += cfvers
     SUBDIR += checkservice
     SUBDIR += chgrep
