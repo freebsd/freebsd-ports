@@ -1,3 +1,4 @@
+@exec mkdir -p %D/share/rpc2
 bin/rp2gen
 include/rpc2/errors.h
 include/rpc2/multi.h
