@@ -31,7 +31,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=${WRKSRC}/config
 
 EXPIRATION_DATE=   2009-03-18
-DEPRECATED=    BROKEN with devel/libslang2
+BROKEN=		does not build with devel/libslang2
 
 post-build:
 	@${RM} -r ${WRKSRC}/*/CVS
