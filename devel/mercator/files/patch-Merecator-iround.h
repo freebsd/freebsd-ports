@@ -1,6 +1,6 @@
 --- Mercator/iround.h.orig	Tue Oct  4 01:25:06 2005
 +++ Mercator/iround.h	Tue Oct  4 01:31:36 2005
-@@ -9,6 +9,16 @@
+@@ -9,6 +9,17 @@
  #error iround.h must be included after config.h
  #endif
  
@@ -12,6 +12,7 @@
 +extern float rintf __P((float));
 +}
 +#endif
++#include <cmath>
 +#endif
 +
  #ifdef HAVE_LRINTF
