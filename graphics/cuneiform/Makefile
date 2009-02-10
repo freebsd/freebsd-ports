@@ -7,6 +7,7 @@
 
 PORTNAME=	cuneiform
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://launchpad.net/cuneiform-linux/${PORTVERSION:R}/${PORTVERSION:R}/+download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
@@ -34,7 +35,7 @@ OPTIONS=	IMAGEMAGICK "Enable support of different graphic formats" off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 post-extract:

@@ -7,6 +7,7 @@
 
 PORTNAME=	rmagick
 PORTVERSION=	2.9.1
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +18,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A Ruby binding for ImageMagick
 
-LIB_DEPENDS=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
