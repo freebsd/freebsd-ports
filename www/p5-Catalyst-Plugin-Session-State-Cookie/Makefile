@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Session-State-Cookie
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,8 @@ COMMENT=	Stores a Catalyst Session in a Cookie
 
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7010:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Plugin-Session>=0.19:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
-		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
