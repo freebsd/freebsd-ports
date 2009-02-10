@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Lingua-Identify
-PORTVERSION=	0.21
+PORTVERSION=	0.23
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,6 @@ TAGS=		lang detect identify
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/Factory/Util.pm:${PORTSDIR}/devel/p5-Class-Factory-Util \
 		${SITE_PERL}/Text/Affixes.pm:${PORTSDIR}/textproc/p5-Text-Affixes \
-		${SITE_PERL}/${PERL_ARCH}/Text/ExtractWords.pm:${PORTSDIR}/textproc/p5-Text-ExtractWords \
 		${SITE_PERL}/${PERL_ARCH}/Text/Ngram.pm:${PORTSDIR}/textproc/p5-Text-Ngram
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
