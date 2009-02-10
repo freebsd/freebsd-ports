@@ -76,6 +76,7 @@ include/osg/Hint
 include/osg/Image
 include/osg/ImageSequence
 include/osg/ImageStream
+include/osg/ImageUtils
 include/osg/KdTree
 include/osg/LOD
 include/osg/Light
@@ -177,8 +178,30 @@ include/osg/fast_back_stack
 include/osg/io_utils
 include/osg/observer_ptr
 include/osg/ref_ptr
+include/osgAnimation/Animation
+include/osgAnimation/AnimationManagerBase
+include/osgAnimation/Assert
+include/osgAnimation/BasicAnimationManager
+include/osgAnimation/Bone
+include/osgAnimation/Channel
+include/osgAnimation/CubicBezier
+include/osgAnimation/EaseMotion
+include/osgAnimation/Export
+include/osgAnimation/Interpolator
+include/osgAnimation/Keyframe
+include/osgAnimation/LinkVisitor
+include/osgAnimation/Sampler
+include/osgAnimation/Skeleton
+include/osgAnimation/Skinning
+include/osgAnimation/Target
+include/osgAnimation/Timeline
+include/osgAnimation/TimelineAnimationManager
+include/osgAnimation/UpdateCallback
+include/osgAnimation/Vec3Packed
+include/osgAnimation/VertexInfluence
 include/osgDB/Archive
 include/osgDB/AuthenticationMap
+include/osgDB/ConvertUTF
 include/osgDB/DatabasePager
 include/osgDB/DotOsgWrapper
 include/osgDB/DynamicLibrary
@@ -186,6 +209,7 @@ include/osgDB/Export
 include/osgDB/Field
 include/osgDB/FieldReader
 include/osgDB/FieldReaderIterator
+include/osgDB/FileCache
 include/osgDB/FileNameUtils
 include/osgDB/FileUtils
 include/osgDB/ImageOptions
@@ -197,9 +221,11 @@ include/osgDB/PluginQuery
 include/osgDB/ReadFile
 include/osgDB/ReaderWriter
 include/osgDB/Registry
+include/osgDB/Serializer
 include/osgDB/SharedStateManager
 include/osgDB/Version
 include/osgDB/WriteFile
+include/osgDB/fstream
 include/osgFX/AnisotropicLighting
 include/osgFX/BumpMapping
 include/osgFX/Cartoon
@@ -213,6 +239,7 @@ include/osgFX/Technique
 include/osgFX/Validator
 include/osgFX/Version
 include/osgGA/AnimationPathManipulator
+include/osgGA/CameraViewSwitchManipulator
 include/osgGA/DriveManipulator
 include/osgGA/EventQueue
 include/osgGA/EventVisitor
@@ -291,16 +318,25 @@ include/osgParticle/SmokeTrailEffect
 include/osgParticle/VariableRateCounter
 include/osgParticle/Version
 include/osgParticle/range
+include/osgShadow/ConvexPolyhedron
+include/osgShadow/DebugShadowMap
 include/osgShadow/Export
+include/osgShadow/LightSpacePerspectiveShadowMap
+include/osgShadow/MinimalCullBoundsShadowMap
+include/osgShadow/MinimalDrawBoundsShadowMap
+include/osgShadow/MinimalShadowMap
 include/osgShadow/OccluderGeometry
 include/osgShadow/ParallelSplitShadowMap
+include/osgShadow/ProjectionShadowMap
 include/osgShadow/ShadowMap
 include/osgShadow/ShadowTechnique
 include/osgShadow/ShadowTexture
 include/osgShadow/ShadowVolume
 include/osgShadow/ShadowedScene
 include/osgShadow/SoftShadowMap
+include/osgShadow/StandardShadowMap
 include/osgShadow/Version
+include/osgShadow/ViewDependentShadowTechnique
 include/osgSim/BlinkSequence
 include/osgSim/ColorRange
 include/osgSim/DOFTransform
@@ -395,7 +431,18 @@ include/osgViewer/ViewerBase
 include/osgViewer/ViewerEventHandlers
 include/osgViewer/api/X11/GraphicsWindowX11
 include/osgViewer/api/X11/PixelBufferX11
+include/osgVolume/Export
+include/osgVolume/FixedFunctionTechnique
+include/osgVolume/Layer
+include/osgVolume/Locator
+include/osgVolume/Property
+include/osgVolume/RayTracedTechnique
+include/osgVolume/Version
+include/osgVolume/Volume
+include/osgVolume/VolumeTechnique
+include/osgVolume/VolumeTile
 include/osgWidget/Box
+include/osgWidget/Browser
 include/osgWidget/Canvas
 include/osgWidget/EventInterface
 include/osgWidget/Export
@@ -403,6 +450,7 @@ include/osgWidget/Frame
 include/osgWidget/Input
 include/osgWidget/Label
 include/osgWidget/Lua
+include/osgWidget/PdfReader
 include/osgWidget/Python
 include/osgWidget/ScriptEngine
 include/osgWidget/StyleInterface
@@ -413,15 +461,19 @@ include/osgWidget/UIObjectParent
 include/osgWidget/Util
 include/osgWidget/Version
 include/osgWidget/ViewerEventHandlers
+include/osgWidget/VncClient
 include/osgWidget/Widget
 include/osgWidget/Window
 include/osgWidget/WindowManager
 lib/libOpenThreads.so
-lib/libOpenThreads.so.11
-lib/libOpenThreads.so.2.3.0
+lib/libOpenThreads.so.%%OPENTHREADS_VERSION%%
+lib/libOpenThreads.so.%%OPENTHREADS_SHLIBVER%%
 lib/libosg.so
 lib/libosg.so.%%OSG_VERSION%%
 lib/libosg.so.%%OSG_SHLIBVER%%
+lib/libosgAnimation.so
+lib/libosgAnimation.so.%%OSG_VERSION%%
+lib/libosgAnimation.so.%%OSG_SHLIBVER%%
 lib/libosgDB.so
 lib/libosgDB.so.%%OSG_VERSION%%
 lib/libosgDB.so.%%OSG_SHLIBVER%%
@@ -455,6 +507,9 @@ lib/libosgUtil.so.%%OSG_SHLIBVER%%
 lib/libosgViewer.so
 lib/libosgViewer.so.%%OSG_VERSION%%
 lib/libosgViewer.so.%%OSG_SHLIBVER%%
+lib/libosgVolume.so
+lib/libosgVolume.so.%%OSG_VERSION%%
+lib/libosgVolume.so.%%OSG_SHLIBVER%%
 lib/libosgWidget.so
 lib/libosgWidget.so.%%OSG_VERSION%%
 lib/libosgWidget.so.%%OSG_SHLIBVER%%
@@ -462,17 +517,24 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_3dc.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_3ds.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_ac.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_bmp.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_bsp.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_bvh.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_cfg.so
 %%CURL%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_curl.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_dds.so
+%%ITK%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_dicom.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_dot.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_dw.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_dxf.so
+%%OPENEXR%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_exr.so
 %%FREETYPE%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_freetype.so
 %%GDAL%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_gdal.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_geo.so
 %%GIF%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_gif.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_glsl.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_gz.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_hdr.so
+%%INVENTOR%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_iv.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_ive.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_jpeg.so
 %%JASPER%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_jp2.so
@@ -480,12 +542,14 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_logo.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_lwo.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_lws.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_md2.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_mdl.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_normals.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_obj.so
 %%GDAL%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_ogr.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_openflight.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osg.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osga.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_osganimation.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgfx.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgparticle.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgshadow.so
@@ -494,7 +558,9 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgterrain.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgtext.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgtgz.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgviewer.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgvolume.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgwidget.so
+%%PDF%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_pdf.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_pic.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_png.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_pnm.so
@@ -503,18 +569,24 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_rot.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_scale.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_shp.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_stl.so
+%%SVG%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_svg.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_tga.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_tgz.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_tiff.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_trans.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_txf.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_txp.so
+%%VNC%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_vnc.so
 %%OPENVRML%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_vrml.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_vtf.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_x.so
 %%XINE%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_xine.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_zip.so
+libdata/pkgconfig/openscenegraph.pc
+libdata/pkgconfig/openthreads.pc
 @dirrm lib/osgPlugins-%%OSG_VERSION%%
 @dirrm include/osgWidget
+@dirrm include/osgVolume
 @dirrm include/osgViewer/api/X11
 @dirrm include/osgViewer/api
 @dirrm include/osgViewer
@@ -528,5 +600,6 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_zip.so
 @dirrm include/osgGA
 @dirrm include/osgFX
 @dirrm include/osgDB
+@dirrm include/osgAnimation
 @dirrm include/osg
 @dirrm include/OpenThreads
