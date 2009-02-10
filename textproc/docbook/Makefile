@@ -13,7 +13,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	#
 DISTFILES=	#
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Meta-port for the different versions of the DocBook DTD
 
 NO_BUILD=	yes
