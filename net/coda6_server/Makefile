@@ -5,11 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	coda
-PORTVERSION=	6.9.3
-PORTREVISION=	2
+PORTVERSION=	6.9.4
 CATEGORIES=	net
-# as of 5 Oct 2006 the archive is not present on ftp.wu-wien.ac.at
-# but maybe it'll appear there soon
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/src/ \
 		ftp://ftp.planetmirror.com/pub/coda/src/ \
 		ftp://ftp.nctu.edu.tw/mirror/Coda/src/ \
