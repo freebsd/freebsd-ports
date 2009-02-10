@@ -665,6 +665,7 @@
     SUBDIR += sbniconfig
     SUBDIR += scan_ffs
     SUBDIR += scanbuttond
+    SUBDIR += scprotect
     SUBDIR += screen
     SUBDIR += screenie
     SUBDIR += sdd
