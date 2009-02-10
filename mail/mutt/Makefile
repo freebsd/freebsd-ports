@@ -60,7 +60,7 @@ USE_ICONV=	yes
 .endif
 
 .if defined(WITH_SLANG)
-LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
 .elif defined(WITH_NCURSES_PORT)
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
