@@ -1,0 +1,20 @@
+--- src/osgViewer/CMakeLists.txt.orig	2008-08-05 19:32:03.000000000 +0400
++++ src/osgViewer/CMakeLists.txt	2009-02-09 23:35:48.000000000 +0300
+@@ -78,7 +78,6 @@
+         SET(LIB_PUBLIC_HEADERS ${LIB_PUBLIC_HEADERS}
+             ${HEADER_PATH}/api/X11/GraphicsWindowX11
+             ${HEADER_PATH}/api/X11/PixelBufferX11
+-            ${XRANDR_INCLUDE_DIRS}
+         )
+         SET(LIB_COMMON_FILES ${LIB_COMMON_FILES} 
+             GraphicsWindowX11.cpp 
+@@ -89,8 +88,7 @@
+             INCLUDE(FindPkgConfig)
+             PKG_CHECK_MODULES(XRANDR REQUIRED xrandr)
+             ADD_DEFINITIONS(-DOSGVIEWER_USE_XRANDR)
+-            SET(LIB_PUBLIC_HEADERS ${LIB_PUBLIC_HEADERS} ${XRANDR_INCLUDE_DIRS})
+-            LINK_LIBRARIES(Xrandr)
++            LINK_LIBRARIES(${XRANDR_LDFLAGS})
+         ENDIF(OSGVIEWER_USE_XRANDR)
+ 
+         # X11 on Apple requires X11 library plus OpenGL linking hack on Leopard

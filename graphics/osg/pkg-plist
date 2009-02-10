@@ -417,8 +417,8 @@ include/osgWidget/Widget
 include/osgWidget/Window
 include/osgWidget/WindowManager
 lib/libOpenThreads.so
-lib/libOpenThreads.so.11
-lib/libOpenThreads.so.2.3.0
+lib/libOpenThreads.so.%%OPENTHREADS_VERSION%%
+lib/libOpenThreads.so.%%OPENTHREADS_SHLIBVER%%
 lib/libosg.so
 lib/libosg.so.%%OSG_VERSION%%
 lib/libosg.so.%%OSG_SHLIBVER%%
@@ -473,6 +473,7 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_geo.so
 %%GIF%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_gif.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_glsl.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_hdr.so
+%%INVENTOR%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_iv.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_ive.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_jpeg.so
 %%JASPER%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_jp2.so
@@ -503,6 +504,7 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_rot.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_scale.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_shp.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_stl.so
+%%SVG%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_svg.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_tga.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_tgz.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_tiff.so
