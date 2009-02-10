@@ -471,6 +471,7 @@ ant-xinclude-task               ports/textproc/ant-xinclude-task
 anteater                        ports/sysutils/anteater
 antipolix                       ports/games/antipolix
 antivirus-milter                ports/mail/antivirus-milter
+antiwm                          ports/x11-wm/antiwm
 antiword                        ports/textproc/antiword
 antlr                           ports/devel/antlr
 antlrworks                      ports/devel/antlrworks
@@ -542,6 +543,7 @@ ar-arabtex                      ports/arabic/arabtex
 ar-aspell                       ports/arabic/aspell
 ar-kacst_fonts                  ports/arabic/kacst_fonts
 ar-kde3-i18n                    ports/arabic/kde3-i18n
+ar-kde4-l10n                    ports/arabic/kde4-l10n
 ar-khotot                       ports/arabic/khotot
 ar-koffice-i18n                 ports/arabic/koffice-i18n
 ar-libitl                       ports/arabic/libitl
@@ -1320,6 +1322,7 @@ ccdoc                           ports/devel/ccdoc
 cchess                          ports/games/cchess
 cciss_vol_status                ports/sysutils/cciss_vol_status
 cclient                         ports/mail/cclient
+cclive                          ports/multimedia/cclive
 ccmalloc                        ports/devel/ccmalloc
 ccmath                          ports/math/ccmath
 ccmsn                           ports/net-im/ccmsn
@@ -2429,6 +2432,7 @@ drupal5-xmlsitemap              ports/www/drupal5-xmlsitemap
 drupal6                         ports/www/drupal6
 drupal6-advanced_help           ports/www/drupal6-advanced_help
 drupal6-cck                     ports/www/drupal6-cck
+drupal6-mimedetect              ports/www/drupal6-mimedetect
 drupal6-nice_menus              ports/www/drupal6-nice_menus
 drupal6-print                   ports/www/drupal6-print
 drupal6-tagadelic               ports/www/drupal6-tagadelic
@@ -2693,6 +2697,7 @@ eif                             ports/games/eif
 eiffel                          ports/lang/eiffel
 eiffelstudio                    ports/devel/eiffelstudio
 eigen                           ports/math/eigen
+eigen2                          ports/math/eigen2
 eights                          ports/games/eights
 einstein                        ports/games/einstein
 eispack                         ports/math/eispack
@@ -4168,6 +4173,8 @@ gmidimonitor                    ports/audio/gmidimonitor
 gmime                           ports/mail/gmime
 gmime2                          ports/mail/gmime2
 gmime2-sharp                    ports/mail/gmime2-sharp
+gmime24                         ports/mail/gmime24
+gmime24-sharp                   ports/mail/gmime24-sharp
 gmimms                          ports/multimedia/gmimms
 gmines                          ports/games/gmines
 gmixer                          ports/audio/gmixer
@@ -4251,6 +4258,7 @@ gnome-cups-manager              ports/print/gnome-cups-manager
 gnome-db                        ports/databases/gnome-db
 gnome-desktop                   ports/x11/gnome-desktop
 gnome-desktop-reference         ports/x11/gnome-desktop-reference
+gnome-desktop-sharp20           ports/x11-toolkits/gnome-desktop-sharp20
 gnome-devel-docs                ports/misc/gnome-devel-docs
 gnome-device-manager            ports/sysutils/gnome-device-manager
 gnome-doc-utils                 ports/textproc/gnome-doc-utils
@@ -5528,6 +5536,7 @@ iw-elmar-fonts                  ports/hebrew/elmar-fonts
 iw-he2                          ports/hebrew/he2
 iw-hspell                       ports/hebrew/hspell
 iw-kde3-i18n                    ports/hebrew/kde3-i18n
+iw-kde4-l10n                    ports/hebrew/kde4-l10n
 iw-koffice-i18n                 ports/hebrew/koffice-i18n
 iwebcal                         ports/www/iwebcal
 iwi-firmware                    ports/net/iwi-firmware
@@ -6375,6 +6384,8 @@ kde3-i18n-zu                    ports/misc/kde3-i18n-zu
 kde4                            ports/x11/kde4
 kde4-l10n                       ports/misc/kde4-l10n
 kde4-l10n-bg                    ports/misc/kde4-l10n-bg
+kde4-l10n-bn_IN                 ports/misc/kde4-l10n-bn_IN
+kde4-l10n-bn_in                 ports/misc/kde4-l10n-bn_IN
 kde4-l10n-ca                    ports/misc/kde4-l10n-ca
 kde4-l10n-cs                    ports/misc/kde4-l10n-cs
 kde4-l10n-csb                   ports/misc/kde4-l10n-csb
@@ -6385,28 +6396,36 @@ kde4-l10n-en_gb                 ports/misc/kde4-l10n-en_GB
 kde4-l10n-eo                    ports/misc/kde4-l10n-eo
 kde4-l10n-es                    ports/misc/kde4-l10n-es
 kde4-l10n-et                    ports/misc/kde4-l10n-et
+kde4-l10n-eu                    ports/misc/kde4-l10n-eu
 kde4-l10n-fi                    ports/misc/kde4-l10n-fi
 kde4-l10n-fy                    ports/misc/kde4-l10n-fy
 kde4-l10n-ga                    ports/misc/kde4-l10n-ga
 kde4-l10n-gl                    ports/misc/kde4-l10n-gl
+kde4-l10n-gu                    ports/misc/kde4-l10n-gu
 kde4-l10n-hi                    ports/misc/kde4-l10n-hi
+kde4-l10n-is                    ports/misc/kde4-l10n-is
 kde4-l10n-it                    ports/misc/kde4-l10n-it
 kde4-l10n-kk                    ports/misc/kde4-l10n-kk
 kde4-l10n-km                    ports/misc/kde4-l10n-km
+kde4-l10n-kn                    ports/misc/kde4-l10n-kn
 kde4-l10n-ku                    ports/misc/kde4-l10n-ku
 kde4-l10n-lt                    ports/misc/kde4-l10n-lt
 kde4-l10n-lv                    ports/misc/kde4-l10n-lv
+kde4-l10n-mai                   ports/misc/kde4-l10n-mai
 kde4-l10n-mk                    ports/misc/kde4-l10n-mk
 kde4-l10n-ml                    ports/misc/kde4-l10n-ml
+kde4-l10n-mr                    ports/misc/kde4-l10n-mr
 kde4-l10n-nb                    ports/misc/kde4-l10n-nb
 kde4-l10n-nds                   ports/misc/kde4-l10n-nds
 kde4-l10n-nl                    ports/misc/kde4-l10n-nl
 kde4-l10n-nn                    ports/misc/kde4-l10n-nn
 kde4-l10n-pa                    ports/misc/kde4-l10n-pa
+kde4-l10n-ro                    ports/misc/kde4-l10n-ro
 kde4-l10n-sl                    ports/misc/kde4-l10n-sl
 kde4-l10n-sr                    ports/misc/kde4-l10n-sr
 kde4-l10n-sv                    ports/misc/kde4-l10n-sv
 kde4-l10n-ta                    ports/misc/kde4-l10n-ta
+kde4-l10n-tg                    ports/misc/kde4-l10n-tg
 kde4-l10n-th                    ports/misc/kde4-l10n-th
 kde4-l10n-tr                    ports/misc/kde4-l10n-tr
 kde4-l10n-wa                    ports/misc/kde4-l10n-wa
@@ -6507,6 +6526,7 @@ kinterbasdb                     ports/databases/kinterbasdb
 kio_locate                      ports/deskutils/kio_locate
 kio_p7zip                       ports/archivers/kio_p7zip
 kipi-plugins                    ports/graphics/kipi-plugins
+kipi-plugins-kde4               ports/graphics/kipi-plugins-kde4
 kirocker                        ports/audio/kirocker
 kismet                          ports/net-mgmt/kismet
 kisomandel                      ports/graphics/kisomandel
@@ -17026,6 +17046,7 @@ pecl-mailparse                  ports/mail/pecl-mailparse
 pecl-mcve                       ports/devel/pecl-mcve
 pecl-mdbtools                   ports/databases/pecl-mdbtools
 pecl-memcache                   ports/databases/pecl-memcache
+pecl-memcached                  ports/databases/pecl-memcached
 pecl-oauth                      ports/net/pecl-oauth
 pecl-operator                   ports/devel/pecl-operator
 pecl-params                     ports/devel/pecl-params
@@ -17622,6 +17643,7 @@ pokerth                         ports/games/pokerth
 policyd2                        ports/mail/policyd2
 policykit                       ports/sysutils/policykit
 policykit-gnome                 ports/sysutils/policykit-gnome
+policykit-kde                   ports/sysutils/policykit-kde
 polipo                          ports/www/polipo
 poly1305aes                     ports/security/poly1305aes
 polygraph                       ports/benchmarks/polygraph
@@ -18185,6 +18207,7 @@ py-funkload                     ports/www/py-funkload
 py-fusefs                       ports/devel/py-fusefs
 py-game                         ports/devel/py-game
 py-gamin                        ports/devel/py-gamin
+py-gammu                        ports/comms/py-gammu
 py-gato                         ports/math/py-gato
 py-gchartwrapper                ports/graphics/py-gchartwrapper
 py-gd                           ports/graphics/py-gd
@@ -18507,6 +18530,7 @@ py-sgflib                       ports/games/py-sgflib
 py-sgfsummary                   ports/games/py-sgfsummary
 py-sgrep                        ports/textproc/py-sgrep
 py-shapely                      ports/devel/py-shapely
+py-simplecouchdb                ports/databases/py-simplecouchdb
 py-simplejson                   ports/devel/py-simplejson
 py-simpleparse                  ports/devel/py-simpleparse
 py-simpletal                    ports/devel/py-simpletal
@@ -19285,6 +19309,7 @@ rshell                          ports/net/rshell
 rsibreak                        ports/x11/rsibreak
 rsnapshot                       ports/sysutils/rsnapshot
 rss2email                       ports/mail/rss2email
+rss2html                        ports/textproc/rss2html
 rssh                            ports/shells/rssh
 rssowl                          ports/www/rssowl
 rsstail                         ports/www/rsstail
@@ -19705,6 +19730,7 @@ rubygem-json_pure               ports/devel/rubygem-json_pure
 rubygem-kirbybase               ports/databases/rubygem-kirbybase
 rubygem-layout-yullio           ports/www/rubygem-layout-yullio
 rubygem-linecache               ports/devel/rubygem-linecache
+rubygem-lockfile                ports/devel/rubygem-lockfile
 rubygem-macaddr                 ports/net/rubygem-macaddr
 rubygem-mailfactory             ports/mail/rubygem-mailfactory
 rubygem-main                    ports/devel/rubygem-main
@@ -19726,6 +19752,7 @@ rubygem-net-scp                 ports/security/rubygem-net-scp
 rubygem-net-sftp                ports/security/rubygem-net-sftp
 rubygem-net-ssh                 ports/security/rubygem-net-ssh
 rubygem-net-ssh-gateway         ports/security/rubygem-net-ssh-gateway
+rubygem-nmap-parser             ports/security/rubygem-nmap-parser
 rubygem-oauth                   ports/net/rubygem-oauth
 rubygem-objectdetect            ports/graphics/rubygem-objectdetect
 rubygem-open4                   ports/devel/rubygem-open4
@@ -19733,9 +19760,11 @@ rubygem-openid                  ports/net/rubygem-openid
 rubygem-parsetree               ports/devel/rubygem-parsetree
 rubygem-passenger               ports/www/rubygem-passenger
 rubygem-pdfwriter               ports/print/rubygem-pdfwriter
+rubygem-pg                      ports/databases/rubygem-pg
 rubygem-platform                ports/devel/rubygem-platform
 rubygem-postgres                ports/databases/rubygem-postgres
 rubygem-prawn                   ports/print/rubygem-prawn
+rubygem-prawn-layout            ports/print/rubygem-prawn-layout
 rubygem-ptreloaded              ports/devel/rubygem-ptreloaded
 rubygem-rack                    ports/www/rubygem-rack
 rubygem-railroad                ports/graphics/rubygem-railroad
@@ -22079,6 +22108,7 @@ webglimpse                      ports/www/webglimpse
 webinject                       ports/www/webinject
 webjob                          ports/sysutils/webjob
 webkit-gtk2                     ports/www/webkit-gtk2
+webkit-sharp                    ports/www/webkit-sharp
 weblint                         ports/www/weblint
 weblint++                       ports/www/weblint++
 webmagick                       ports/www/WebMagick
