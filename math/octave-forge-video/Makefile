@@ -7,10 +7,10 @@
 
 PORTNAME=	octave-forge-video
 PORTVERSION=	1.0.1
-CATEGORIES=     math
+CATEGORIES=	math
 
 MAINTAINER=	stephen@math.missouri.edu
-COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
+COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 
