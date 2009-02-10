@@ -1,3 +1,18 @@
-Implements the TransformPath concept
+The Digest::TransformPath module implements the TransformPath concept.
+A TransformPath is a complex higher-order key that is designed for use
+with chains of functions that sequentially transform a piece of data.
 
-WWW:	http://search.cpan.org/dist/Digest-TransformPath/
+The concept starts with a sizable chunk of data, for example an image,
+for which we can determine a unique identifier, and for which we can
+cheaply determine if and when the source material has changed. A series
+of resource-intensive transforms might be applied to this original data
+to produce another piece of data. In the image example, we might auto-level,
+crop, scale, rotate, colour-balance and then thumbnail the image. This
+transformed data would be put into a cache.  If at some future point
+we wish to obtain the same image, but would preferably like to use the
+cached version, we would have to take the original image, reapply the
+transforms, and then compare to the result the first time around.
+
+Further documentation is found within the module.
+
+WWW: http://search.cpan.org/dist/Digest-TransformPath/
