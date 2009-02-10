@@ -8,7 +8,7 @@
 PORTNAME=	anki
 PORTVERSION=	0.9.9.5
 CATEGORIES=	games
-MASTER_SITES=	http://ichi2.net/anki/download/
+MASTER_SITES=	http://ichi2.net/anki/download/files/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
