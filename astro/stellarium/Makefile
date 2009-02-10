@@ -20,6 +20,8 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 
+BROKEN=		does not compile
+
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake moc gui rcc uic opengl
 USE_GETTEXT=	yes
