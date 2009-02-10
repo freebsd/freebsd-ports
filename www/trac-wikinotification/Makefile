@@ -19,6 +19,8 @@ COMMENT=	Allow email notifications on wiki page changes
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		${PYTHON_SITELIBDIR}/TracCtxtnavAdd-1.1_r1-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-ctxtnavadd
 
+BROKEN=		bad depobj
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=easy_install

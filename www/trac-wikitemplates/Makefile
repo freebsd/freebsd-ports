@@ -19,6 +19,8 @@ COMMENT=	Templates for the Trac wiki
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		${PYTHON_SITELIBDIR}/TracCtxtnavAdd-1.1_r1-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-ctxtnavadd
 
+BROKEN=		bad depobj
+
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	easy_install
