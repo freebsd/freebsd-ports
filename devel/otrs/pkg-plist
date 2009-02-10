@@ -283,6 +283,7 @@ otrs/var/httpd/htdocs/images/Standard/yellowled-small.png
 otrs/var/httpd/htdocs/images/Standard/yellowled.png
 otrs/var/httpd/htdocs/images/Standard/zoom.png
 otrs/var/httpd/htdocs/prototype.js
+otrs/var/packages/Support-1.0.13.opm
 @unexec [ -s %D/otrs/var/log/TicketCounter.log ] || rm -f %D/otrs/var/log/TicketCounter.log
 @unexec if cmp -s %D/otrs/Kernel/Config.pm %D/otrs/Kernel/Config.pm.dist; then rm -f %D/otrs/Kernel/Config.pm; fi
 otrs/Kernel/Config.pm.dist
@@ -414,6 +415,7 @@ otrs/Kernel/Modules/CustomerTicketSearch.pm
 otrs/Kernel/Modules/CustomerTicketZoom.pm
 otrs/Kernel/Modules/CustomerZoom.pm
 otrs/Kernel/Modules/Installer.pm
+otrs/Kernel/Modules/PublicDefault.pm
 otrs/Kernel/Modules/PublicRepository.pm
 otrs/Kernel/Modules/Test.pm
 otrs/Kernel/Output/HTML/ArticleAttachmentDownload.pm
@@ -610,6 +612,7 @@ otrs/Kernel/Output/HTML/Standard/NoPermission.dtl
 otrs/Kernel/Output/HTML/Standard/Notify.dtl
 otrs/Kernel/Output/HTML/Standard/PrintFooter.dtl
 otrs/Kernel/Output/HTML/Standard/PrintHeader.dtl
+otrs/Kernel/Output/HTML/Standard/PublicDefault.dtl
 otrs/Kernel/Output/HTML/Standard/Redirect.dtl
 otrs/Kernel/Output/HTML/Standard/Test.dtl
 otrs/Kernel/Output/HTML/Standard/Warning.dtl
@@ -793,6 +796,7 @@ otrs/Kernel/cpan-lib/HTML/Safe.pm
 @dirrm otrs/Kernel/System/Crypt
 @dirrm otrs/Kernel/System/Cache
 @dirrm otrs/Kernel/System/AuthSession
+@dirrm otrs/Kernel/System/Auth/Sync
 @dirrm otrs/Kernel/System/Auth
 @dirrm otrs/Kernel/System
 @dirrm otrs/Kernel/Output/XML
@@ -814,6 +818,7 @@ otrs/Kernel/cpan-lib/HTML/Safe.pm
 @dirrm otrs/var/pics/images
 @dirrm otrs/var/pics
 @dirrmtry otrs/var/log
+@dirrm otrs/var/packages
 @dirrm otrs/var/httpd/htdocs/images/Standard
 @dirrm otrs/var/httpd/htdocs/images
 @dirrm otrs/var/httpd/htdocs

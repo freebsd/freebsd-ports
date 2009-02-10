@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	otrs
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/Date/Pcalc.pm:${PORTSDIR}/devel/p5-Date-Pcalc \
 		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
+		p5-MIME-Tools>=5.427:${PORTSDIR}/mail/p5-MIME-Tools \
 		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/Net/POP3.pm:${PORTSDIR}/net/p5-Net \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
@@ -31,7 +31,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/PDF/API2.pm:${PORTSDIR}/textproc/p5-PDF-API2 \
+		p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2 \
 		${SITE_PERL}/Text/CSV.pm:${PORTSDIR}/textproc/p5-Text-CSV \
 		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
 		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
@@ -64,7 +64,8 @@ DOCS_FILES_LIST=	C* INSTALL RE* TODO UPGRADING
 
 SCRIPTS_DIRS_LIST=	"" database/update test tools
 CLEAN_CPAN_DIRS=	Algorithm Authen Crypt Date Email File IO Mail MIME Net Text XML auto
-CLEAN_FILES=	scripts/apache2-httpd.include.conf scripts/suse* scripts/redhat*
+CLEAN_FILES=	scripts/apache2-httpd.include.conf scripts/suse* scripts/redhat* \
+		var/httpd/htdocs/yui
 
 USE_APACHE=	1.3+
 USE_PERL5=	yes
@@ -108,8 +109,8 @@ do-build:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 	@${FIND} ${WRKSRC}/Kernel -type d | ${XARGS} ${CHMOD} 0755
 	@${FIND} ${WRKSRC}/Kernel -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
-	@${RM} -rf ${CLEAN_CPAN_DIRS:S!^!${WRKSRC}/Kernel/cpan-lib/!}
-	@${RM} -f ${CLEAN_FILES:S!^!${WRKSRC}/!}
+	@${RM} -rf ${CLEAN_CPAN_DIRS:S!^!${WRKSRC}/Kernel/cpan-lib/!} \
+		${CLEAN_FILES:S!^!${WRKSRC}/!}
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${SED} -i '' \
 		-e "s=/opt/=${PREFIX}/=g;s=wwwrun=${WWWOWN}=g;"
 .ifdef WITH_ISPELL
