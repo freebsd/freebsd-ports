@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.0.19
+PORTVERSION?=	8.0.20
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -98,7 +98,7 @@ OPTIONS+=	HIER  "Builds with query hierarchy (server)" off
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
 
 .  if (defined(SERVER_ONLY) && defined(WITH_HIER)) || make(makesum)
-PATCH_SITES+=	http://gppl.moonbone.ru/:hier801055
+PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-hier/:hier801055
 PATCHFILES+=	hier-Pg8.0.3-0.5.5.diff.gz:hier801055
 USE_BISON=	build
 .  endif
