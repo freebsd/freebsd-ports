@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kftseng@iyard.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Strip scripting constructs out of HTML
 
 PERL_CONFIGURE=	yes
