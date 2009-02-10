@@ -37,6 +37,7 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		HTTP_UPLOAD_MODULE "Enable upload module" off \
 		HTTP_UPSTREAM_KEEPALIVE "Enable upstream keepalive module" off \
 		HTTP_XSLT_MODULE "Enable http_xslt module" off \
+		HTTP_ZIP_MODULE "Enable http_zip module" off \
 		MAIL_MODULE "Enable IMAP4/POP3/SMTP proxy module" off \
 		MAIL_IMAP_MODULE "Enable IMAP4 proxy module" off \
 		MAIL_POP3_MODULE "Enable POP3 proxy module" off \
@@ -173,6 +174,14 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_upstream_keepalive-${NGINX_UPSTR
 .if defined(WITH_HTTP_XSLT_MODULE)
 USE_GNOME=	libxml2 libxslt
 CONFIGURE_ARGS+=--with-http_xslt_module
+.endif
+
+.if defined(WITH_HTTP_ZIP_MODULE)
+NGINX_ZIP_MODULE_VERSION=	1.1.4
+MASTER_SITES+=	${MASTER_SITE_LOCAL}:zip
+MASTER_SITE_SUBDIR=	osa/:zip
+DISTFILES+=	nginx_mod_zip-${NGINX_ZIP_MODULE_VERSION}.tar.gz:zip
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_MODULE_VERSION}
 .endif
 
 .if defined(WITHOUT_HTTP_REWRITE_MODULE) || defined(WITHOUT_PCRE)
