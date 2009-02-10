@@ -7,6 +7,7 @@
 
 PORTNAME=	imagick
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,7 +17,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Provides a wrapper to the ImageMagick/GraphicsMagick library
 
-LIB_DEPENDS=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

@@ -8,7 +8,7 @@
 
 PORTNAME=	ale
 PORTVERSION=	0.8.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://auricle.dyndns.org/ALE/download/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -41,7 +41,7 @@ MAKE_ARGS+=	FFTW=1
 .endif
 
 .if !defined(WITHOUT_IMAGEMAGICK)
-LIB_DEPENDS+=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick
 MAKE_ARGS+=	IMAGEMAGICK=1
 .endif
 
