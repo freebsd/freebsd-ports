@@ -1,0 +1,5 @@
+%%SITE_PERL%%/String/BufferStack.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/BufferStack/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/BufferStack
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
+@dirrmtry %%SITE_PERL%%/String

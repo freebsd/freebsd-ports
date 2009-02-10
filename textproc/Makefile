@@ -546,6 +546,7 @@
     SUBDIR += p5-Spreadsheet-WriteExcel
     SUBDIR += p5-Spreadsheet-WriteExcel-FromXML
     SUBDIR += p5-Spreadsheet-WriteExcelXML
+    SUBDIR += p5-String-BufferStack
     SUBDIR += p5-String-CamelCase
     SUBDIR += p5-String-Divert
     SUBDIR += p5-String-Format
