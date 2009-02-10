@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-GUID
-PORTVERSION=	0.043
+PORTVERSION=	0.045
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	Generate globally unique identifiers
 
 BUILD_DEPENDS=	${SITE_PERL}/Sub/Install.pm:${PORTSDIR}/devel/p5-Sub-Install \
 		${SITE_PERL}/Sub/Exporter.pm:${PORTSDIR}/devel/p5-Sub-Exporter \
-		${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID
+		p5-Data-UUID>=1.148:${PORTSDIR}/devel/p5-Data-UUID
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
