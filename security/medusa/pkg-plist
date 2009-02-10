@@ -21,8 +21,11 @@ lib/medusa/modules/cvs.mod
 lib/medusa/modules/vmauthd.mod
 lib/medusa/modules/snmp.mod
 lib/medusa/modules/smtp-vrfy.mod
-%%SMTPAUTH%%lib/medusa/modules/smtp-auth.mod
+lib/medusa/modules/smtp.mod
 %%SVN%%lib/medusa/modules/svn.mod
-%%WEBFORM%%lib/medusa/modules/web-form.mod
+lib/medusa/modules/web-form.mod
+share/zsh/site-functions/_medusa
+@unexec [ -f %D/bin/zsh ] || rmdir %D/share/zsh/site-functions 2>/dev/null || true
+@dirrmtry share/zsh
 @dirrm lib/medusa/modules
 @dirrm lib/medusa

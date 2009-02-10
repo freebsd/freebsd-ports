@@ -1,28 +1,28 @@
---- configure.old	2007-12-11 11:53:36.000000000 -0800
-+++ configure	2007-12-11 11:54:16.000000000 -0800
-@@ -5794,8 +5794,8 @@
+--- configure.orig	2009-02-10 08:05:24.000000000 -0800
++++ configure	2009-02-10 08:06:05.000000000 -0800
+@@ -7702,8 +7702,8 @@
  
  else
    if test "${ac_cv_header_apr_1_0_apr_tables_h+set}" = set; then
--  { echo "$as_me:$LINENO: checking for apr-1.0/apr_tables.h" >&5
--echo $ECHO_N "checking for apr-1.0/apr_tables.h... $ECHO_C" >&6; }
-+  { echo "$as_me:$LINENO: checking for apr-1/apr_tables.h" >&5
-+echo $ECHO_N "checking for apr-1/apr_tables.h... $ECHO_C" >&6; }
+-  { $as_echo "$as_me:$LINENO: checking for apr-1.0/apr_tables.h" >&5
+-$as_echo_n "checking for apr-1.0/apr_tables.h... " >&6; }
++  { $as_echo "$as_me:$LINENO: checking for apr-1/apr_tables.h" >&5
++$as_echo_n "checking for apr-1/apr_tables.h... " >&6; }
  if test "${ac_cv_header_apr_1_0_apr_tables_h+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+   $as_echo_n "(cached) " >&6
  fi
-@@ -5803,8 +5803,8 @@
- echo "${ECHO_T}$ac_cv_header_apr_1_0_apr_tables_h" >&6; }
+@@ -7711,8 +7711,8 @@
+ $as_echo "$ac_cv_header_apr_1_0_apr_tables_h" >&6; }
  else
    # Is the header compilable?
--{ echo "$as_me:$LINENO: checking apr-1.0/apr_tables.h usability" >&5
--echo $ECHO_N "checking apr-1.0/apr_tables.h usability... $ECHO_C" >&6; }
-+{ echo "$as_me:$LINENO: checking apr-1/apr_tables.h usability" >&5
-+echo $ECHO_N "checking apr-1/apr_tables.h usability... $ECHO_C" >&6; }
+-{ $as_echo "$as_me:$LINENO: checking apr-1.0/apr_tables.h usability" >&5
+-$as_echo_n "checking apr-1.0/apr_tables.h usability... " >&6; }
++{ $as_echo "$as_me:$LINENO: checking apr-1/apr_tables.h usability" >&5
++$as_echo_n "checking apr-1/apr_tables.h usability... " >&6; }
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -5812,7 +5812,7 @@
+@@ -7720,7 +7720,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -31,14 +31,14 @@
  _ACEOF
  rm -f conftest.$ac_objext
  if { (ac_try="$ac_compile"
-@@ -5844,15 +5844,15 @@
- echo "${ECHO_T}$ac_header_compiler" >&6; }
+@@ -7753,15 +7753,15 @@
+ $as_echo "$ac_header_compiler" >&6; }
  
  # Is the header present?
--{ echo "$as_me:$LINENO: checking apr-1.0/apr_tables.h presence" >&5
--echo $ECHO_N "checking apr-1.0/apr_tables.h presence... $ECHO_C" >&6; }
-+{ echo "$as_me:$LINENO: checking apr-1/apr_tables.h presence" >&5
-+echo $ECHO_N "checking apr-1/apr_tables.h presence... $ECHO_C" >&6; }
+-{ $as_echo "$as_me:$LINENO: checking apr-1.0/apr_tables.h presence" >&5
+-$as_echo_n "checking apr-1.0/apr_tables.h presence... " >&6; }
++{ $as_echo "$as_me:$LINENO: checking apr-1/apr_tables.h presence" >&5
++$as_echo_n "checking apr-1/apr_tables.h presence... " >&6; }
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
@@ -50,52 +50,52 @@
  _ACEOF
  if { (ac_try="$ac_cpp conftest.$ac_ext"
  case "(($ac_try" in
-@@ -5885,30 +5885,30 @@
+@@ -7795,30 +7795,30 @@
  # So?  What about this header?
  case $ac_header_compiler:$ac_header_preproc:$ac_c_preproc_warn_flag in
    yes:no: )
--    { echo "$as_me:$LINENO: WARNING: apr-1.0/apr_tables.h: accepted by the compiler, rejected by the preprocessor!" >&5
--echo "$as_me: WARNING: apr-1.0/apr_tables.h: accepted by the compiler, rejected by the preprocessor!" >&2;}
--    { echo "$as_me:$LINENO: WARNING: apr-1.0/apr_tables.h: proceeding with the compiler's result" >&5
--echo "$as_me: WARNING: apr-1.0/apr_tables.h: proceeding with the compiler's result" >&2;}
-+    { echo "$as_me:$LINENO: WARNING: apr-1/apr_tables.h: accepted by the compiler, rejected by the preprocessor!" >&5
-+echo "$as_me: WARNING: apr-1/apr_tables.h: accepted by the compiler, rejected by the preprocessor!" >&2;}
-+    { echo "$as_me:$LINENO: WARNING: apr-1/apr_tables.h: proceeding with the compiler's result" >&5
-+echo "$as_me: WARNING: apr-1/apr_tables.h: proceeding with the compiler's result" >&2;}
+-    { $as_echo "$as_me:$LINENO: WARNING: apr-1.0/apr_tables.h: accepted by the compiler, rejected by the preprocessor!" >&5
+-$as_echo "$as_me: WARNING: apr-1.0/apr_tables.h: accepted by the compiler, rejected by the preprocessor!" >&2;}
+-    { $as_echo "$as_me:$LINENO: WARNING: apr-1.0/apr_tables.h: proceeding with the compiler's result" >&5
+-$as_echo "$as_me: WARNING: apr-1.0/apr_tables.h: proceeding with the compiler's result" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: apr-1/apr_tables.h: accepted by the compiler, rejected by the preprocessor!" >&5
++$as_echo "$as_me: WARNING: apr-1/apr_tables.h: accepted by the compiler, rejected by the preprocessor!" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: apr-1/apr_tables.h: proceeding with the compiler's result" >&5
++$as_echo "$as_me: WARNING: apr-1/apr_tables.h: proceeding with the compiler's result" >&2;}
      ac_header_preproc=yes
      ;;
    no:yes:* )
--    { echo "$as_me:$LINENO: WARNING: apr-1.0/apr_tables.h: present but cannot be compiled" >&5
--echo "$as_me: WARNING: apr-1.0/apr_tables.h: present but cannot be compiled" >&2;}
--    { echo "$as_me:$LINENO: WARNING: apr-1.0/apr_tables.h:     check for missing prerequisite headers?" >&5
--echo "$as_me: WARNING: apr-1.0/apr_tables.h:     check for missing prerequisite headers?" >&2;}
--    { echo "$as_me:$LINENO: WARNING: apr-1.0/apr_tables.h: see the Autoconf documentation" >&5
--echo "$as_me: WARNING: apr-1.0/apr_tables.h: see the Autoconf documentation" >&2;}
--    { echo "$as_me:$LINENO: WARNING: apr-1.0/apr_tables.h:     section \"Present But Cannot Be Compiled\"" >&5
--echo "$as_me: WARNING: apr-1.0/apr_tables.h:     section \"Present But Cannot Be Compiled\"" >&2;}
--    { echo "$as_me:$LINENO: WARNING: apr-1.0/apr_tables.h: proceeding with the preprocessor's result" >&5
--echo "$as_me: WARNING: apr-1.0/apr_tables.h: proceeding with the preprocessor's result" >&2;}
--    { echo "$as_me:$LINENO: WARNING: apr-1.0/apr_tables.h: in the future, the compiler will take precedence" >&5
--echo "$as_me: WARNING: apr-1.0/apr_tables.h: in the future, the compiler will take precedence" >&2;}
-+    { echo "$as_me:$LINENO: WARNING: apr-1/apr_tables.h: present but cannot be compiled" >&5
-+echo "$as_me: WARNING: apr-1/apr_tables.h: present but cannot be compiled" >&2;}
-+    { echo "$as_me:$LINENO: WARNING: apr-1/apr_tables.h:     check for missing prerequisite headers?" >&5
-+echo "$as_me: WARNING: apr-1/apr_tables.h:     check for missing prerequisite headers?" >&2;}
-+    { echo "$as_me:$LINENO: WARNING: apr-1/apr_tables.h: see the Autoconf documentation" >&5
-+echo "$as_me: WARNING: apr-1/apr_tables.h: see the Autoconf documentation" >&2;}
-+    { echo "$as_me:$LINENO: WARNING: apr-1/apr_tables.h:     section \"Present But Cannot Be Compiled\"" >&5
-+echo "$as_me: WARNING: apr-1/apr_tables.h:     section \"Present But Cannot Be Compiled\"" >&2;}
-+    { echo "$as_me:$LINENO: WARNING: apr-1/apr_tables.h: proceeding with the preprocessor's result" >&5
-+echo "$as_me: WARNING: apr-1/apr_tables.h: proceeding with the preprocessor's result" >&2;}
-+    { echo "$as_me:$LINENO: WARNING: apr-1/apr_tables.h: in the future, the compiler will take precedence" >&5
-+echo "$as_me: WARNING: apr-1/apr_tables.h: in the future, the compiler will take precedence" >&2;}
+-    { $as_echo "$as_me:$LINENO: WARNING: apr-1.0/apr_tables.h: present but cannot be compiled" >&5
+-$as_echo "$as_me: WARNING: apr-1.0/apr_tables.h: present but cannot be compiled" >&2;}
+-    { $as_echo "$as_me:$LINENO: WARNING: apr-1.0/apr_tables.h:     check for missing prerequisite headers?" >&5
+-$as_echo "$as_me: WARNING: apr-1.0/apr_tables.h:     check for missing prerequisite headers?" >&2;}
+-    { $as_echo "$as_me:$LINENO: WARNING: apr-1.0/apr_tables.h: see the Autoconf documentation" >&5
+-$as_echo "$as_me: WARNING: apr-1.0/apr_tables.h: see the Autoconf documentation" >&2;}
+-    { $as_echo "$as_me:$LINENO: WARNING: apr-1.0/apr_tables.h:     section \"Present But Cannot Be Compiled\"" >&5
+-$as_echo "$as_me: WARNING: apr-1.0/apr_tables.h:     section \"Present But Cannot Be Compiled\"" >&2;}
+-    { $as_echo "$as_me:$LINENO: WARNING: apr-1.0/apr_tables.h: proceeding with the preprocessor's result" >&5
+-$as_echo "$as_me: WARNING: apr-1.0/apr_tables.h: proceeding with the preprocessor's result" >&2;}
+-    { $as_echo "$as_me:$LINENO: WARNING: apr-1.0/apr_tables.h: in the future, the compiler will take precedence" >&5
+-$as_echo "$as_me: WARNING: apr-1.0/apr_tables.h: in the future, the compiler will take precedence" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: apr-1/apr_tables.h: present but cannot be compiled" >&5
++$as_echo "$as_me: WARNING: apr-1/apr_tables.h: present but cannot be compiled" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: apr-1/apr_tables.h:     check for missing prerequisite headers?" >&5
++$as_echo "$as_me: WARNING: apr-1/apr_tables.h:     check for missing prerequisite headers?" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: apr-1/apr_tables.h: see the Autoconf documentation" >&5
++$as_echo "$as_me: WARNING: apr-1/apr_tables.h: see the Autoconf documentation" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: apr-1/apr_tables.h:     section \"Present But Cannot Be Compiled\"" >&5
++$as_echo "$as_me: WARNING: apr-1/apr_tables.h:     section \"Present But Cannot Be Compiled\"" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: apr-1/apr_tables.h: proceeding with the preprocessor's result" >&5
++$as_echo "$as_me: WARNING: apr-1/apr_tables.h: proceeding with the preprocessor's result" >&2;}
++    { $as_echo "$as_me:$LINENO: WARNING: apr-1/apr_tables.h: in the future, the compiler will take precedence" >&5
++$as_echo "$as_me: WARNING: apr-1/apr_tables.h: in the future, the compiler will take precedence" >&2;}
  
      ;;
  esac
--{ echo "$as_me:$LINENO: checking for apr-1.0/apr_tables.h" >&5
--echo $ECHO_N "checking for apr-1.0/apr_tables.h... $ECHO_C" >&6; }
-+{ echo "$as_me:$LINENO: checking for apr-1/apr_tables.h" >&5
-+echo $ECHO_N "checking for apr-1/apr_tables.h... $ECHO_C" >&6; }
+-{ $as_echo "$as_me:$LINENO: checking for apr-1.0/apr_tables.h" >&5
+-$as_echo_n "checking for apr-1.0/apr_tables.h... " >&6; }
++{ $as_echo "$as_me:$LINENO: checking for apr-1/apr_tables.h" >&5
++$as_echo_n "checking for apr-1/apr_tables.h... " >&6; }
  if test "${ac_cv_header_apr_1_0_apr_tables_h+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+   $as_echo_n "(cached) " >&6
  else
