@@ -11,7 +11,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kftseng@iyard.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for OpenSSL X509 API
 
 PERL_CONFIGURE=	yes
