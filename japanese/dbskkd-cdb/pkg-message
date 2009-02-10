@@ -1,10 +1,8 @@
-Note for inetd users:
 
-Add following line to /etc/inetd.conf
-   skkserv stream tcp nowait root /usr/local/libexec/dbskkd-cdb dbskkd-cdb
+Note:
+Dbskkd-cdb is designed to run with inetd or daemontools.  Example config
+for both superdaemons are available at /usr/local/share/doc/dbskkd-cdb.
 
-If dbskkd-cdb 1.01 was running, please update your /etc/inetd.conf line.
-
-Also note that dbskkd-cdb should run as root (not 'nobody' as of 1.01),
-since it chroot(8)s to the default dictionary directory, ${PREFIX}/share/skk.
+Also note that dbskkd-cdb no longer required to run 'root' (1.71dev does),
+nor chroot(8) to the dictionary directory.
 

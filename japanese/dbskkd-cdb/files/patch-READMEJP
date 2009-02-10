@@ -1,13 +1,26 @@
---- READMEJP.dist	Fri Apr 28 22:06:12 2000
-+++ READMEJP	Fri Oct 29 16:13:21 2004
-@@ -49,8 +49,8 @@
+--- READMEJP.dist	2009-02-06 11:56:47.000000000 +0900
++++ READMEJP	2009-02-11 01:30:09.000000000 +0900
+@@ -40,11 +40,11 @@
  
- 4. $BE:IU$N(Bmakeskkcdb.sh$B$r<B9T$9$k!#$3$N%9%/%j%W%H$G$O(B
-    $B<-=q%U%!%$%k$O(Bskktocdbm.sh$B$NI8=`F~NO$KM?$($k$h$&$K$J$C$F$$$k!#(B
--   $B%G%U%)%k%H$O(B /usr/local/share/skk/SKK-JISYO.L$B$r;XDj$7$F$$$k!#(B
--   $B$^$?!"%G%U%)%k%H$G$O%+%l%s%H%G%#%l%/%H%j$K(BSKK-JISYO.L.cdb$B$,:n$i$l$k!#(B
-+   $B%G%U%)%k%H$O(B %%PREFIX%%/%%SKKDIR%%/%%JISYONAME%%$B$r;XDj$7$F$$$k!#(B
-+   $B$^$?!"%G%U%)%k%H$G$O%+%l%s%H%G%#%l%/%H%j$K(B%%JISYONAME%%.cdb$B$,:n$i$l$k!#(B
-    $B$3$N<-=q%U%!%$%k$O%$%s%9%H!<%k$N:](B dbskkd-cdb $B$,(B chroot $B$9$k(B
-    $B%G%#%l%/%H%j$KCV$/!#(B
+ 1. ÅºÉÕ¤Î makeskkcdb.sh ¤ò¼Â¹Ô¤¹¤ë¡¥¤³¤Î¥¹¥¯¥ê¥×¥È¤Ç¤Ï
+    ¼­½ñ¥Õ¥¡¥¤¥ë¤Ï skktocdbm.sh ¤ÎÉ¸½àÆþÎÏ¤ËÍ¿¤¨¤ë¡¥
+-   ¥Õ¥¡¥¤¥ëÌ¾¤Î´ûÄêÃÍ¤Ï /usr/local/share/skk/SKK-JISYO.L ¤Ç¤¢¤ë¡¥
+-   ¼Â¹Ô¤¹¤ë¤È¥«¥ì¥ó¥È¥Ç¥£¥ì¥¯¥È¥ê¤Ë SKK-JISYO.L.cdb ¤¬ºî¤é¤ì¤ë¡¥
++   ¥Õ¥¡¥¤¥ëÌ¾¤Î´ûÄêÃÍ¤Ï %%PREFIX%%/%%SKKDIR%%/%%JISYONAME%% ¤Ç¤¢¤ë¡¥
++   ¼Â¹Ô¤¹¤ë¤È¥«¥ì¥ó¥È¥Ç¥£¥ì¥¯¥È¥ê¤Ë %%JISYONAME%%.cdb ¤¬ºî¤é¤ì¤ë¡¥
+    ¤³¤Î¼­½ñ¥Õ¥¡¥¤¥ë¤Ï¥¤¥ó¥¹¥È¡¼¥ë¤ÎºÝ dbskkd-cdb.c Ãæ¤Î
+    JISYO_FILE ¤Ç»ØÄê¤¹¤ë¥Ç¥£¥ì¥¯¥È¥ê¤ËÃÖ¤¯¡¥
+-   JISYO_FILE ¤Îµ¬ÄêÃÍ¤Ï /usr/local/share/skk/SKK-JISYO.L.cdb ¤Ç¤¢¤ë¡¥
++   JISYO_FILE ¤Îµ¬ÄêÃÍ¤Ï %%PREFIX%%/%%SKKDIR%%/%%JISYONAME%%.cdb ¤Ç¤¢¤ë¡¥
+    Ãí°Õ: 1.x ¤Ç¤Ï¤³¤Î¥Þ¥¯¥í¤Ï "JISHO_FILE" ¤ÈÄêµÁ¤·¤Æ¤¤¤¿¤¬¡¤
+    ¼­½ñ¥Õ¥¡¥¤¥ë¤È¤ÎÌ¾Á°¤ÎÀ°¹çÀ­¤ò¼è¤ë¤¿¤á¤Ë¤³¤Î¤è¤¦¤Ë¤·¤¿¡¥
+ 
+@@ -53,7 +53,7 @@
+    ¤Þ¤¿ TinyCDB Ãæ¤Î libcdb.a ¤ò¥ê¥ó¥¯¤¹¤ë¡¥
+ 
+ 3. make install ¤Ç dbskkd-cdb ¤ò¼Â¹Ô¥Ç¥£¥ì¥¯¥È¥ê¤Ë¥³¥Ô¡¼¤¹¤ë¡¥
+-   ´ûÄêÃÍ¤Ç¤Ï /usr/local/libexec ¤Ø¥³¥Ô¡¼¤¹¤ë¡¥
++   ´ûÄêÃÍ¤Ç¤Ï %%PREFIX%%/libexec ¤Ø¥³¥Ô¡¼¤¹¤ë¡¥
+ 
+ ¡ü¥¤¥ó¥¹¥È¡¼¥ë¤ÎºÝ¤ÎÃí°Õ
  
