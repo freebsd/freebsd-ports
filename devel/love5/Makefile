@@ -18,6 +18,8 @@ LIB_DEPENDS=	IL.1:${PORTSDIR}/graphics/devil \
 		freetype.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer
