@@ -7,7 +7,7 @@
 
 PORTNAME=	metisse
 DISTVERSION=	0.4.0-rc4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://insitu.lri.fr/metisse/download/latest/ \
 		http://freebsd.nsu.ru/distfiles/metisse/
@@ -29,13 +29,13 @@ CONFIGURE_ARGS=	--with-fontdir=${LOCALBASE}/lib/X11/fonts
 MAKE_ARGS=	METISSE_DOC_DIR="${DOCSDIR}"
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
+USE_PYTHON=	yes
 USE_XORG=	xrender
 WANT_GNOME=	yes
 
 OPTIONS=	MMX	"Enable MMX optimizations"		on \
 		GLX	"Enable GLX extension"			on \
 		GLX_X86	"GLX with x86 optimizations"		on \
-		PYTHON	"Build with Python bits and pieces"	off \
 		SPI	"Enable widget tracking support"	off \
 		STROKE	"Enable support for mouse gestures"	off \
 		RPLAY	"Enable RPlay support in FvwmEvent"	off \
@@ -56,16 +56,6 @@ CONFIGURE_ARGS+=	--enable-glx
 
 .if ${ARCH} == "i386" && !defined(WITHOUT_GLX_X86)
 CONFIGURE_ARGS+=	--enable-glx-x86
-.endif
-
-.if defined(WITH_PYTHON)
-USE_PYTHON=	yes
-# Since USE_PYTHON is defined after including <bsd.port.pre.mk>,
-# get required python-related framework bits manually.
-.include "${PORTSDIR}/Mk/bsd.python.mk"
-PLIST_SUB+=	PYTHON=""
-.else
-PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if defined(WITH_SPI)

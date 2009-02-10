@@ -13,9 +13,9 @@ bin/fvwm-perllib
 bin/fvwm-root
 bin/fvwmi
 bin/fvwmi-config
-%%PYTHON%%bin/metisse-combo2radio
-%%PYTHON%%bin/metisse-combo2radio-edit
-%%PYTHON%%bin/metisse-demo-address-app
+bin/metisse-combo2radio
+bin/metisse-combo2radio-edit
+bin/metisse-demo-address-app
 bin/metisse-dummy-win
 bin/metisse-start-fvwm
 bin/metisse-xlib
@@ -23,9 +23,9 @@ bin/opale-start-fvwmi
 include/libmetisse/auth.h
 include/libmetisse/proto.h
 @dirrm include/libmetisse
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/facade_setup.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/facade_setup.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/facade_setup.pyo
+%%PYTHON_SITELIBDIR%%/facade_setup.py
+%%PYTHON_SITELIBDIR%%/facade_setup.pyc
+%%PYTHON_SITELIBDIR%%/facade_setup.pyo
 lib/libmetisse.a
 lib/libmetisse.la
 %%FBSD6%%lib/libmetisse.so
