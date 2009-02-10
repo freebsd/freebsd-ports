@@ -398,6 +398,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/Asia/Kamchatka
 %%TZDATA%%share/postgresql/timezone/Asia/Karachi
 %%TZDATA%%share/postgresql/timezone/Asia/Kashgar
+%%TZDATA%%share/postgresql/timezone/Asia/Kathmandu
 %%TZDATA%%share/postgresql/timezone/Asia/Katmandu
 %%TZDATA%%share/postgresql/timezone/Asia/Kolkata
 %%TZDATA%%share/postgresql/timezone/Asia/Krasnoyarsk
