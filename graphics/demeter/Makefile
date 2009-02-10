@@ -18,6 +18,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library to render 3D terrains using OpenGL
 
+BROKEN=		does not compile
+
 USE_GMAKE=	yes
 USE_GL=		gl glu
 WANT_GNOME=	yes
