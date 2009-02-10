@@ -1,4 +1,15 @@
 ===========================================================================
+Note: FreeBSD's ext2fs module, as of release 7.1, cannot mount ext2 file
+systems with 256-byte large inodes, only 128 byte sized.  Unfortunately,
+256 byte is the default size with many recent Linux distributions.
+The inode size cannot be changed after creation of a file system either.
+This port overrides the default to 128 bytes, but this only applies to ext2
+file systems created with this particular mke2fs.  If you format ext2 file
+systems with other operating systems, make sure that mke2fs is called with
+"-I 128" for partitions that you plan to share with FreeBSD.
+Remember to backup your data before re-formatting any existing file
+systems!
+---------------------------------------------------------------------------
 Note: this is a modified version of the e2fsprogs package, not the official
 package. Report all building and run-time trouble that originates in the
 package to the port maintainer, <matthias.andree@gmx.de>.

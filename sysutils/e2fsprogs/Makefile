@@ -7,7 +7,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.41.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -58,10 +58,6 @@ PLIST_SUB=	NLS=""
 libintl=	"${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
 post-patch::
 	@${REINPLACE_CMD} -E -e \
 		's:\$$\(libdir\)/pkgconfig:${PREFIX}/libdata/pkgconfig:' \
@@ -107,6 +103,9 @@ post-build:
 	@${ECHO_CMD} '===>  Running e2fsprogs self-test suite'
 	cd ${WRKSRC}/tests && ${GMAKE} check \
 	    || { head -n30000 ${WRKSRC}/tests/*.failed 2>/dev/null ; exit 1 ; }
+# Now patch mke2fs.conf to default to 128 byte inodes - we need to do this
+# after self tests since they assume 256 byte inodes.
+	${PATCH} -N -d ${WRKSRC} <${FILESDIR}/diff-inode_size
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${PREFIX}/sbin/

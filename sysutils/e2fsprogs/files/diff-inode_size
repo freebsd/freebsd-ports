@@ -1,0 +1,14 @@
+# do not call this patch-* - we need to apply this after running self-tests!
+# -- Matthias Andree, 2009-02-10
+
+--- ./misc/mke2fs.conf.orig	2009-02-10 18:32:45.000000000 +0900
++++ ./misc/mke2fs.conf	2009-02-10 18:32:52.000000000 +0900
+@@ -1,7 +1,7 @@
+ [defaults]
+ 	base_features = sparse_super,filetype,resize_inode,dir_index,ext_attr
+ 	blocksize = 4096
+-	inode_size = 256
++	inode_size = 128
+ 	inode_ratio = 16384
+ 
+ [fs_types]
