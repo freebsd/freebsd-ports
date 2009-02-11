@@ -6,7 +6,7 @@
  
 +#if defined(__FreeBSD__)
 +#include <osreldate.h>
-+#if __FreeBSD_version <= 800057
++#if (__FreeBSD_version >= 800000 && __FreeBSD_version <= 800057) || __FreeBSD_version <= 701101
 +static char *strndup(const char *str, size_t len) {
 +	char *ret;
 +	
