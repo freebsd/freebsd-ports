@@ -7,6 +7,7 @@
 
 PORTNAME=	philesight
 PORTVERSION=	20090105
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://zevv.nl/play/code/philesight/
 EXTRACT_SUFX=	.tgz
@@ -21,8 +22,11 @@ USE_RUBY=	yes
 NO_BUILD=	yes
 RUBY_SHEBANG_FILES=	${PORTNAME} ${PORTNAME}.rb ${PORTNAME}.cgi
 
-PORTEXAMPLES=	${PORTNAME}.cgi
 PLIST_FILES=	bin/${PORTNAME} ${RUBY_SITELIBDIR:C,^${PREFIX}/?,,}/${PORTNAME}.rb
+
+.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	${PORTNAME}.cgi
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -34,7 +38,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.rb ${RUBY_SITELIBDIR}/
 
-.if !defined(WITHOUT_EXAMPLES)
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}/
 . for FILE in ${PORTEXAMPLES}
 	${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${EXAMPLESDIR}/
