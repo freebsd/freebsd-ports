@@ -64,6 +64,8 @@ MOZ_OPTIONS+=	--disable-gnomeui
 IGNORE=	does not run, update to 6.2-RELEASE or newer
 .endif
 
+FORBIDDEN=	Security issues http://www.vuxml.org/freebsd/8b491182-f842-11dd-94d9-0030843d3802.html
+
 MOZ_OPTIONS+=	--enable-svg --enable-svg-renderer=cairo
 
 post-extract::
