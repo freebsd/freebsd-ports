@@ -1,16 +1,15 @@
 # New ports collection makefile for: xiphos
-# Date created:   April 27, 2007
+# Date created:   February 2, 2009
 # Whom:           Thomas Abthorpe <tabthorpe@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	xiphos
-PORTVERSION=	2.4.1
+PORTVERSION=	3.0.0
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	gnomesword
-DISTNAME=	gnomesword-${PORTVERSION}
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A bible interface utilizing the sword framework
@@ -18,6 +17,7 @@ COMMENT=	A bible interface utilizing the sword framework
 RUN_DEPENDS=	${LOCALBASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnome-spell \
 		${LOCALBASE}/lib/libsword-1.5.11.so:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=	${RUN_DEPENDS}
+LIB_DEPENDS=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick
 
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
@@ -26,14 +26,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--enable-gtkhtml --enable-exporter
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS ChangeLog INSTALL NEWS README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+CONFIGURE_ARGS+=	--enable-gtkhtml --disable-maintainer-mode --enable-paratab
 
 .include <bsd.port.mk>
