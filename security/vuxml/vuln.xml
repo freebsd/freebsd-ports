@@ -34,7 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
-   <vuln vid="b07f3254-f83a-11dd-85a4-ea653f0746ab">
+  <vuln vid="83574d5a-f828-11dd-9fdf-0050568452ac">
+    <topic>codeigniter -- arbitrary script execution in the new Form Validation class</topic>
+    <affects>
+      <package>
+	<name>codeigniter</name>
+	<range><ge>1.7.0</ge><lt>1.7.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>znirkel reports:</p>
+        <blockquote cite="http://secunia.com/advisories/33829/">
+	  <p>The eval() function in _reset_post_array crashes when posting
+	    certain data. By passing in carefully-crafted input data, the eval()
+	    function could also execute malicious PHP code.</p>
+	  <p>Note that CodeIgniter applications that either do not use the
+	    new Form Validation class or use the old Validation class are not
+	    affected by this vulnerability.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://codeigniter.com/bug_tracker/bug/6068/</url>
+    </references>
+    <dates>
+      <discovery>2008-11-28</discovery>
+      <entry>2009-02-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b07f3254-f83a-11dd-85a4-ea653f0746ab">
     <topic>pyblosxom -- atom flavor multiple XML injection vulnerabilities</topic>
     <affects>
       <package>
