@@ -13,6 +13,7 @@ include/lapackpp/fmd.h
 include/lapackpp/genmd.h
 include/lapackpp/gfd.h
 include/lapackpp/gfqrc.h
+include/lapackpp/gfqrd.h
 include/lapackpp/gmc.h
 include/lapackpp/gmd.h
 include/lapackpp/gmf.h
