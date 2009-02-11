@@ -568,6 +568,7 @@
     SUBDIR += pfstat
     SUBDIR += pftop
     SUBDIR += phantom
+    SUBDIR += philesight
     SUBDIR += php4-posix
     SUBDIR += php5-posix
     SUBDIR += phplogcon

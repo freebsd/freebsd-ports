@@ -1,0 +1,12 @@
+Philesight is a tool to browse your filesystem and see where the diskspace
+is being used at a glance. Philesight is implemented as a simple command
+line program that generates PNG files; a wrapper CGI script is supplied to
+allow navigating through the filesystem.
+
+Philesight is actually a clone of the filelight program. Wheres filelight
+is ment as an interactive, user friendly application for the X-windows
+desktop, philesight is designed to run on a remote server without
+graphical user interface.
+
+Author:	Ico Doornekamp <philesight@zevv.nl>
+WWW:	http://zevv.nl/play/code/philesight/
