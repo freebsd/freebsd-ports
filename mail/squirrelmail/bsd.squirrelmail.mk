@@ -7,12 +7,23 @@
 # Created & tested by 
 # Thomas Abthorpe <tabthorpe@FreeBSD.org>
 # Philippe Audeoud <jadawin@FreeBSD.org>
+# Some enhancements by
+# Ion-Mihai "IOnut" Tetcu <itetcu@FreeBSD.org>
 #
 # This code is still a work in progress, and will likely need further
 # tweaking. Feedback is always welcome.
 #
 
-RUN_DEPENDS+=		 ${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
+CATEGORIES?=	mail www
+MASTER_SITES?=	http://www.squirrelmail.org/plugins/
+PKGNAMEPREFIX?=	squirrelmail-
+PKGNAMESUFFIX?=	-plugin
+
+RUN_DEPENDS+=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
+
+.ifdef USE_SM_COMPAT
+RUN_DEPENDS+=	${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
+.endif
 
 NO_BUILD=		yes
 NO_WRKSUBDIR=		yes
@@ -20,7 +31,7 @@ USE_PERL5_BUILD=	yes
 USE_PHP=		yes
 WANT_PHP_WEB=		yes
 
-SQUIRREL_PLUGIN_NAME=   ${PORTNAME}
+SQUIRREL_PLUGIN_NAME?=   ${PORTNAME}
 
 .ifdef SQUIRRELDIR
 PLIST_SUB+=     SQUIRRELDIR=${SQUIRRELDIR}
@@ -38,6 +49,11 @@ SUB_LIST+=      SQUIRRELDIR=squirrelmail
 .endif
 PLIST_SUB+=     SQUIRREL_PLUGIN_NAME=${SQUIRREL_PLUGIN_NAME}
 
+.if exists(${FILESDIR}/pkg-message.in)
+SUB_LIST+=	SQUIRREL_PLUGIN_NAME=${SQUIRREL_PLUGIN_NAME}
+SUB_FILES=	pkg-message
+.endif
+
 pre-everything::
 	@${ECHO_CMD} ""
 .ifndef WITHOUT_ACTIVATE
@@ -54,9 +70,10 @@ pre-everything::
 _SMSRCDIR?=	${SQUIRREL_PLUGIN_NAME}
 
 do-install:
-	${CP} -R ${WRKSRC}/${_SMSRCDIR} ${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME}
+	cd ${WRKSRC}/${_SMSRCDIR} && ${FIND} -d . | \
+		${CPIO} -dump ${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME} >/dev/null 2>&1 && \
 	${FIND} ${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME} \
-		-type d -exec chmod 755 {} \;
+		-type d -exec chmod 755 {} \; && \
 	${FIND} ${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME} \
 		-type f -exec chmod 644 {} \;
 
