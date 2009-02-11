@@ -1,0 +1,241 @@
+
+$FreeBSD$
+
+This patch fixes an issue in the py-openssl package that can lead to
+interpreter crash with the following error code:
+
+Fatal Python error: ceval: tstate mix-up
+Abort trap: 6 (core dumped)
+
+Detailed explanation and analysis can be found here:
+
+https://sourceforge.net/tracker2/?func=detail&aid=2543118&group_id=31249&atid=401760 
+
+--- src/ssl/connection.c.orig
++++ src/ssl/connection.c
+@@ -260,9 +260,9 @@
+     if (!PyArg_ParseTuple(args, "s#|i:send", &buf, &len, &flags))
+         return NULL;
+ 
+-    MY_BEGIN_ALLOW_THREADS(self->tstate)
++    MY_BEGIN_ALLOW_THREADS(self->context)
+     ret = SSL_write(self->ssl, buf, len);
+-    MY_END_ALLOW_THREADS(self->tstate)
++    MY_END_ALLOW_THREADS(self->context)
+ 
+     if (PyErr_Occurred())
+     {
+@@ -305,9 +305,9 @@
+         return NULL;
+ 
+     do {
+-        MY_BEGIN_ALLOW_THREADS(self->tstate)
++        MY_BEGIN_ALLOW_THREADS(self->context)
+         ret = SSL_write(self->ssl, buf, len);
+-        MY_END_ALLOW_THREADS(self->tstate)
++        MY_END_ALLOW_THREADS(self->context)
+         if (PyErr_Occurred())
+         {
+             flush_error_queue();
+@@ -358,9 +358,9 @@
+     if (buf == NULL)
+         return NULL;
+ 
+-    MY_BEGIN_ALLOW_THREADS(self->tstate)
++    MY_BEGIN_ALLOW_THREADS(self->context)
+     ret = SSL_read(self->ssl, PyString_AsString(buf), bufsiz);
+-    MY_END_ALLOW_THREADS(self->tstate)
++    MY_END_ALLOW_THREADS(self->context)
+ 
+     if (PyErr_Occurred())
+     {
+@@ -399,9 +399,9 @@
+     if (!PyArg_ParseTuple(args, ":renegotiate"))
+         return NULL;
+ 
+-    MY_BEGIN_ALLOW_THREADS(self->tstate);
++    MY_BEGIN_ALLOW_THREADS(self->context);
+     ret = SSL_renegotiate(self->ssl);
+-    MY_END_ALLOW_THREADS(self->tstate);
++    MY_END_ALLOW_THREADS(self->context);
+ 
+     if (PyErr_Occurred())
+     {
+@@ -428,9 +428,9 @@
+     if (!PyArg_ParseTuple(args, ":do_handshake"))
+         return NULL;
+ 
+-    MY_BEGIN_ALLOW_THREADS(self->tstate);
++    MY_BEGIN_ALLOW_THREADS(self->context);
+     ret = SSL_do_handshake(self->ssl);
+-    MY_END_ALLOW_THREADS(self->tstate);
++    MY_END_ALLOW_THREADS(self->context);
+ 
+     if (PyErr_Occurred())
+     {
+@@ -643,9 +643,9 @@
+     if (!PyArg_ParseTuple(args, ":shutdown"))
+         return NULL;
+ 
+-    MY_BEGIN_ALLOW_THREADS(self->tstate)
++    MY_BEGIN_ALLOW_THREADS(self->context)
+     ret = SSL_shutdown(self->ssl);
+-    MY_END_ALLOW_THREADS(self->tstate)
++    MY_END_ALLOW_THREADS(self->context)
+ 
+     if (PyErr_Occurred())
+     {
+@@ -969,8 +969,6 @@
+     Py_INCREF(Py_None);
+     self->app_data = Py_None;
+ 
+-    self->tstate = NULL;
+-
+     fd = PyObject_AsFileDescriptor(self->socket);
+     if (fd < 0)
+     {
+
+$FreeBSD$
+
+--- src/ssl/context.c.orig
++++ src/ssl/context.c
+@@ -80,7 +80,7 @@
+      * we invoke might segfault or blow up the sun.  The reverse will be done
+      * before returning.
+      */
+-    MY_END_ALLOW_THREADS(ctx->tstate);
++    MY_END_ALLOW_THREADS(ctx);
+ 
+     /* The Python callback is called with a (maxlen,verify,userdata) tuple */
+     argv = Py_BuildValue("(iiO)", maxlen, verify, ctx->passphrase_userdata);
+@@ -136,7 +136,7 @@
+     /*
+      * This function is returning into OpenSSL.  Release the GIL again.
+      */
+-    MY_BEGIN_ALLOW_THREADS(ctx->tstate);
++    MY_BEGIN_ALLOW_THREADS(ctx);
+     return len;
+ }
+ 
+@@ -162,7 +162,7 @@
+     ssl = (SSL *)X509_STORE_CTX_get_app_data(x509_ctx);
+     conn = (ssl_ConnectionObj *)SSL_get_app_data(ssl);
+ 
+-    MY_END_ALLOW_THREADS(conn->tstate);
++    MY_END_ALLOW_THREADS(conn->context);
+ 
+     cert = crypto_X509_New(X509_STORE_CTX_get_current_cert(x509_ctx), 0);
+     errnum = X509_STORE_CTX_get_error(x509_ctx);
+@@ -182,7 +182,7 @@
+         c_ret = 0;
+     }
+ 
+-    MY_BEGIN_ALLOW_THREADS(conn->tstate);
++    MY_BEGIN_ALLOW_THREADS(conn->context);
+     return c_ret;
+ }
+ 
+@@ -207,7 +207,7 @@
+      * we invoke might segfault or blow up the sun.  The reverse will be done
+      * before returning.
+      */
+-    MY_END_ALLOW_THREADS(conn->tstate);
++    MY_END_ALLOW_THREADS(conn->context);
+ 
+     argv = Py_BuildValue("(Oii)", (PyObject *)conn, where, _ret);
+     ret = PyEval_CallObject(conn->context->info_callback, argv);
+@@ -225,7 +225,7 @@
+     /*
+      * This function is returning into OpenSSL.  Release the GIL again.
+      */
+-    MY_BEGIN_ALLOW_THREADS(conn->tstate);
++    MY_BEGIN_ALLOW_THREADS(conn->context);
+     return;
+ }
+ 
+@@ -478,9 +478,9 @@
+     if (!PyArg_ParseTuple(args, "s|i:use_privatekey_file", &keyfile, &filetype))
+         return NULL;
+ 
+-    MY_BEGIN_ALLOW_THREADS(self->tstate);
++    MY_BEGIN_ALLOW_THREADS(self);
+     ret = SSL_CTX_use_PrivateKey_file(self->ctx, keyfile, filetype);
+-    MY_END_ALLOW_THREADS(self->tstate);
++    MY_END_ALLOW_THREADS(self);
+ 
+     if (PyErr_Occurred())
+     {
+
+$FreeBSD$
+
+--- src/ssl/ssl.c
++++ src/ssl/ssl.c
+@@ -32,8 +32,6 @@
+ 
+ void **crypto_API;
+ 
+-int _pyOpenSSL_tstate_key;
+-
+ /* Exceptions defined by the SSL submodule */
+ PyObject *ssl_Error,                   /* Base class              */
+          *ssl_ZeroReturnError,         /* Used with SSL_get_error */
+@@ -203,13 +201,6 @@
+     if (!init_ssl_connection(dict))
+         goto error;
+ 
+-#ifdef WITH_THREAD
+-    /*
+-     * Initialize this module's threading support structures.
+-     */
+-    _pyOpenSSL_tstate_key = PyThread_create_key();
+-#endif
+-
+   error:
+     ;
+ }
+
+$FreeBSD$
+
+--- src/ssl/ssl.h
++++ src/ssl/ssl.h
+@@ -46,10 +46,6 @@
+ 
+ #define ssl_API_pointers          2
+ 
+-#ifdef WITH_THREAD
+-extern int _pyOpenSSL_tstate_key;
+-#endif /* WITH_THREAD */
+-
+ #ifdef SSL_MODULE
+ 
+ extern ssl_Context_New_RETURN    ssl_Context_New    ssl_Context_New_PROTO;
+
+$FreeBSD$
+
+--- src/util.h.orig
++++ src/util.h
+@@ -36,18 +36,18 @@
+  * in this thread can get it, if it needs to restore the threadstate to run
+  * some Python.
+  */
+-#  define MY_BEGIN_ALLOW_THREADS(ignored)                               \
+-    PyThread_set_key_value(_pyOpenSSL_tstate_key, PyEval_SaveThread());
++#  define MY_BEGIN_ALLOW_THREADS(context)                               \
++    (context)->tstate = PyEval_SaveThread();
+ 
+ /*
+  * Get the previous Python threadstate and restore it.
+  */
+-#  define MY_END_ALLOW_THREADS(ignored)                                 \
+-    PyEval_RestoreThread(PyThread_get_key_value(_pyOpenSSL_tstate_key));
++#  define MY_END_ALLOW_THREADS(context)                                 \
++    PyEval_RestoreThread((context)->tstate);
+ 
+ #else
+-#  define MY_BEGIN_ALLOW_THREADS(st)
+-#  define MY_END_ALLOW_THREADS(st)      { st = NULL; }
++#  define MY_BEGIN_ALLOW_THREADS(context)
++#  define MY_END_ALLOW_THREADS(context)      { (context)->tstate = NULL; }
+ #endif
+ 
+ #if !defined(PY_MAJOR_VERSION) || PY_VERSION_HEX < 0x02000000
