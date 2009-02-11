@@ -5,7 +5,6 @@
 
 # PROVIDE: lisa
 # REQUIRE: LOGIN
-# KEYWORD: FreeBSD
 
 lisa_enable="NO"
 lisa_conffile="%%PREFIX%%/etc/lisarc"
