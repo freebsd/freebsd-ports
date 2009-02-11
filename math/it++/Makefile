@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	it++
-PORTVERSION=	3.8.1
+PORTVERSION=	4.0.6
 PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	itpp
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	itpp-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mathematical, signal processing and communication library
@@ -27,23 +27,22 @@ LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas -latlas
 .else
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-BLAS=           -lblas
+BLAS=		-lblas
 .endif
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	opt
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-lapack --without-fft
+USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_FORTRAN=	yes
+MAN1=		itpp-config.1
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|sparc|__sparc__|" \
-		-e "s|alpha|__alpha__|" ${WRKSRC}/include/base/machdep.h
 	@${REINPLACE_CMD} -e "s|[$$]{it_dir}|${LOCALBASE}|g" ${WRKSRC}/configure
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/it-config ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/libit++.a ${PREFIX}/lib
-	${CP} -R ${WRKSRC}/include ${PREFIX}/include/it++
-	${FIND} ${PREFIX}/include/it++ -name \*.orig -delete
+post-install:
+	@${RM} -f ${PREFIX}/lib/libitpp.la \
+	          ${PREFIX}/lib/pkgconfig/itpp.pc
+	@-${RMDIR} ${PREFIX}/lib/pkgconfig
 
 .include <bsd.port.post.mk>
