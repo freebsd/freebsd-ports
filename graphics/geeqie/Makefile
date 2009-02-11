@@ -1,17 +1,16 @@
 # New ports collection makefile for:	graphics/geeqie
 # Date created:				17 May 2008
-# Whom:					Martin Tournoij <carpetsmoker@xs4all.nl>
+# Whom:					Martin Tournoij <carpetsmoker@rwxrwxrwx.net>
 #
-# $Carpetsmoker: ports/graphics/geeqie/Makefile,v 1.2 2008/05/17 19:35:22 carpetsmoker Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	geeqie
-DISTVERSION=	1.0alpha1
+DISTVERSION=	1.0alpha3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	carpetsmoker@rwxrwxrwx.net
 COMMENT=	Lightweight image viewer forked from GQview
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
@@ -22,29 +21,40 @@ CONFIGURE_ARGS=	--docdir="${DOCSDIR}" \
 		--htmldir="${DOCSDIR}/html" \
 		--with-htmldir="${DOCSDIR}/html" \
 		--with-readmedir="${DOCSDIR}"
+CFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	CPPFLAGS="${CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ARGS+=	top_builddir="${WRKSRC}"
 
 PORTDOCS=	*
-
 MAN1=		geeqie.1
+USE_GETTEXT=	yes
 
 OPTIONS=	EXIV2 "Enable EXIV2 for metadata editing" on \
 		LCMS "Enable LCMS for color adjusting" on
+# Build fails with lirc enabled, disable it for now
+#		LIRC "Enable lirc for remote control" off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_EXIV2)
 LIB_DEPENDS+=	exiv2.3:${PORTSDIR}/graphics/exiv2
-CONFIGURE_ARGS+=--with-exiv2
+CONFIGURE_ARGS+=--enable-exiv2
 .else
-CONFIGURE_ARGS+=--without-exiv2
+CONFIGURE_ARGS+=--disable-exiv2
 .endif
 
 .if defined(WITH_LCMS)
 LIB_DEPENDS+=	lcms.1:${PORTSDIR}/graphics/lcms
-CONFIGURE_ARGS+=--with-lcms
+CONFIGURE_ARGS+=--enable-lcms
 .else
-CONFIGURE_ARGS+=--without-lcms
+CONFIGURE_ARGS+=--disable-lcms
+.endif
+
+.if defined(WITH_LIRC)
+LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
+CONFIGURE_ARGS+=--enable-lirc
+.else
+CONFIGURE_ARGS+=--disable-lirc
 .endif
 
 post-patch:
