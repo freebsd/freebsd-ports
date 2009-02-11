@@ -34,6 +34,67 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8b491182-f842-11dd-94d9-0030843d3802">
+    <topic>firefox -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox3</name>
+	<range><lt>3.0.6,1</lt></range>
+      </package>
+      <package>
+	<name>firefox</name>
+	<name>linux-firefox</name>
+	<name>linux-firefox-devel</name>
+	<name>linux-seamonkey-devel</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<name>linux-seamonkey</name>
+	<range><lt>1.1.14_1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<name>linux-thunderbird</name>
+	<range><lt>2.0.0.19_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mozilla Foundation reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/firefox30.html">
+	  <p>MFSA 2009-06: Directives to not cache pages ignored</p>
+	  <p>MFSA 2009-05: XMLHttpRequest allows reading HTTPOnly cookies</p>
+	  <p>MFSA 2009-04: Chrome privilege escalation via local .desktop
+	    files</p>
+	  <p>MFSA 2009-03: Local file stealing with SessionStore</p>
+	  <p>MFSA 2009-02: XSS using a chrome XBL method and window.eval</p>
+	  <p>MFSA 2009-01: Crashes with evidence of memory corruption (rv:1.9.0.6)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-0352</cvename>
+      <cvename>CVE-2009-0353</cvename>
+      <cvename>CVE-2009-0354</cvename>
+      <cvename>CVE-2009-0355</cvename>
+      <cvename>CVE-2009-0356</cvename>
+      <cvename>CVE-2009-0357</cvename>
+      <cvename>CVE-2009-0358</cvename>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-01.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-02.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-03.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-04.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-05.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-06.html</url>
+      <url>http://secunia.com/advisories/33799/</url>
+    </references>
+    <dates>
+      <discovery>2009-02-04</discovery>
+      <entry>2009-02-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="83574d5a-f828-11dd-9fdf-0050568452ac">
     <topic>codeigniter -- arbitrary script execution in the new Form Validation class</topic>
     <affects>
