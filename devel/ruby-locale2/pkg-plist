@@ -1,0 +1,104 @@
+%%RUBY_SITELIBDIR%%/locale.rb
+%%RUBY_SITELIBDIR%%/locale/data/languages.tab.gz
+%%RUBY_SITELIBDIR%%/locale/data/regions.tab.gz
+%%RUBY_SITELIBDIR%%/locale/driver/cgi.rb
+%%RUBY_SITELIBDIR%%/locale/driver/env.rb
+%%RUBY_SITELIBDIR%%/locale/driver/jruby.rb
+%%RUBY_SITELIBDIR%%/locale/driver/posix.rb
+%%RUBY_SITELIBDIR%%/locale/driver/win32.rb
+%%RUBY_SITELIBDIR%%/locale/driver/win32_table.rb
+%%RUBY_SITELIBDIR%%/locale/info.rb
+%%RUBY_SITELIBDIR%%/locale/info/language.rb
+%%RUBY_SITELIBDIR%%/locale/info/region.rb
+%%RUBY_SITELIBDIR%%/locale/tag.rb
+%%RUBY_SITELIBDIR%%/locale/tag/cldr.rb
+%%RUBY_SITELIBDIR%%/locale/tag/common.rb
+%%RUBY_SITELIBDIR%%/locale/tag/illegular.rb
+%%RUBY_SITELIBDIR%%/locale/tag/posix.rb
+%%RUBY_SITELIBDIR%%/locale/tag/rfc.rb
+%%RUBY_SITELIBDIR%%/locale/tag/simple.rb
+%%RUBY_SITELIBDIR%%/locale/taglist.rb
+%%RUBY_SITELIBDIR%%/locale/util/memoizable.rb
+%%RUBY_SITELIBDIR%%/locale/version.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Driver.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Driver/CGI.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Driver/Env.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Driver/JRuby.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Driver/Posix.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Driver/Win32.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Driver/Win32Table.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Info.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Info/Language.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Info/Region.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Tag/Cldr.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Tag/Common.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Tag/Illegular.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Tag/Posix.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Tag/Rfc.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Tag/Simple.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/TagList.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Util.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Util/Memoizable.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/created.rid
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/ChangeLog.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/README.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/driver/cgi_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/driver/env_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/driver/jruby_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/driver/posix_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/driver/win32_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/driver/win32_table_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/info/language_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/info/region_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/info_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/tag/cldr_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/tag/common_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/tag/illegular_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/tag/posix_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/tag/rfc_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/tag/simple_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/tag_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/taglist_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/util/memoizable_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/version_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_class_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_file_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_method_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc-style.css
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/cgi/README
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/cgi/cookie.cgi
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/cgi/http.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/cgi/index.cgi
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/cgi/locale.css
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample_1.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample_info.rb
+%%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi
+%%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%RUBY_EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/locale/util
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/locale/tag
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/locale/info
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/locale/driver
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/locale
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/Locale/Util
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/Locale/Tag
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/Locale/Info
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/Locale/Driver
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/Locale
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
+@dirrm %%RUBY_SITELIBDIR%%/locale/util
+@dirrm %%RUBY_SITELIBDIR%%/locale/tag
+@dirrm %%RUBY_SITELIBDIR%%/locale/info
+@dirrm %%RUBY_SITELIBDIR%%/locale/driver
+@dirrm %%RUBY_SITELIBDIR%%/locale/data
+@dirrm %%RUBY_SITELIBDIR%%/locale
+@dirrmtry %%RUBY_SITELIBDIR%%
+@dirrmtry lib/ruby/site_ruby
+@dirrmtry lib/ruby

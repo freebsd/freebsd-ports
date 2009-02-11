@@ -2446,6 +2446,7 @@
     SUBDIR += ruby-jttui
     SUBDIR += ruby-libglade2
     SUBDIR += ruby-locale
+    SUBDIR += ruby-locale2
     SUBDIR += ruby-metaruby
     SUBDIR += ruby-mmap
     SUBDIR += ruby-multi
