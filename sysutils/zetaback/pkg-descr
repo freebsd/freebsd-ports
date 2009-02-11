@@ -1,15 +1,14 @@
-hdup is a little, spiffy, backup tool.
+Zetaback ZFS backup and recovery management system.
 
-Features are:
-- simple to use
-- small and versatile backup program
-- support for incremental backups
-- support for backups over the network (with ssh)
-- support for network restore (with ssh)
-- support for encrypted backups (using mcrypt, gnupg)
-- support for split up archives (called chunks)
-- support for .nobackup files (to exclude certain directories)
-- flexible regular expression based include/exclude mechanism
-- designed to be run from cron
+Zetaback is a thin-agent based ZFS backup tool. It is designed to:
 
-WWW: http://www.miek.nl/projects/hdup2
+    * run from a central host
+    * scan clients for new ZFS filesystems
+    * manage varying desired backup intervals (per host) for
+          o full backups
+          o incremental backups 
+    * maintain varying retention policies (per host)
+    * summarize existing backups
+    * restore any host:fs backup at any point in time to any target host 
+
+https://labs.omniti.com/trac/zetaback

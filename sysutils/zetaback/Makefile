@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	https://labs.omniti.com/zetaback/tags/1.0/
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	ZFS backup and recovery management system
+COMMENT=	Zetaback ZFS backup and recovery management system
 
 USE_PERL5_RUN=	YES
 GNU_CONFIGURE=	yes
