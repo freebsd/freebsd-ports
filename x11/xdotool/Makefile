@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdotool
-DISTVERSION=	20080606
+DISTVERSION=	20090126
 CATEGORIES=	x11
 MASTER_SITES=	http://semicomplete.googlecode.com/files/
 
@@ -22,6 +22,7 @@ PLIST_FILES=	bin/xdotool
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xdotool ${PREFIX}/bin
 
+# Older GCC on RELENG_6 doesn't like -Wno-missing-field-initializers
 post-patch:
 	@${REINPLACE_CMD} -e 's,-Wno-missing-field-initializers,,' ${WRKSRC}/Makefile
 
