@@ -38,8 +38,8 @@ Note:  Please add new entries to the beginning of this file.
     <topic>firefox -- multiple vulnerabilities</topic>
     <affects>
       <package>
-	<name>firefox3</name>
-	<range><lt>3.0.6,1</lt></range>
+	<name>firefox</name>
+	<range><gt>3.*,1</gt><lt>3.0.6,1</lt></range>
       </package>
       <package>
 	<name>firefox</name>
