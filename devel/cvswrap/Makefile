@@ -22,7 +22,7 @@ MAN5=		cvswrap.conf.5
 .include <bsd.port.pre.mk>
 
 # Redefines strndup(3)
-.if ${OSVERSION} >= 800058
+.if ${OSVERSION} >= 800058 || (${OSVERSION} >= 701101 && ${OSVERSION} < 800000)
 BROKEN=		does not build
 .endif
 
