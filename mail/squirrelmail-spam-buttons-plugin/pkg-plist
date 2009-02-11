@@ -11,6 +11,7 @@
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/compose_functions-1.5.2.php
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config.sample.php
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/configtest.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/contrib/confirm_action.diff
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/contrib/sa-postfix-en.html
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/contrib/sa-wrapper.html
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/functions.php
