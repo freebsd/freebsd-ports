@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pidgimpd
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1
 CATEGORIES=	net-im audio
 MASTER_SITES=	http://ayeon.org/projects/pidgimpd/
 PKGNAMEPREFIX=	pidgin-
