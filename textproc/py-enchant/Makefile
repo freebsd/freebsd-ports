@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enchant
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	textproc devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	py${PORTNAME}
@@ -17,17 +17,13 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A spellchecking library for Python based on the Enchant library
 
 LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant
-BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 USE_WX=	2.8
 WX_COMPS=	python:run
 
 PYDISTUTILS_PKGNAME=	pyenchant
-PYDISTUTILS_INSTALL_TARGET=	install_lib
-PYDISTUTILS_INSTALLARGS=
-PYDISTUTILS_NOEGGINFO=	yes
 
 MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 
