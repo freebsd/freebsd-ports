@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.gna.org/gaupol/${PORTVERSION:C/^([0-9]+\.[0-9]+).*
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subtitle editor
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/enchant/__init__.py:${PORTSDIR}/textproc/py-enchant \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=1.5.1:${PORTSDIR}/textproc/py-enchant \
 		${PYTHON_SITELIBDIR}/chardet/__init__.py:${PORTSDIR}/textproc/py-chardet \
 		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
