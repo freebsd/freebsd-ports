@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	2.7.0
+PORTVERSION=	2.7.1
 CATEGORIES=	german www
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://static.wordpress-deutschland.org/de-edition/
 PKGNAMEPREFIX=	de-
-DISTNAME=	wp_de_270
+DISTNAME=	wordpress_271-de
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A state-of-the-art semantic personal publishing platform
