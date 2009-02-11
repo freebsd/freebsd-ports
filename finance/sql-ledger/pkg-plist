@@ -1181,6 +1181,39 @@ sql-ledger/locale/it/qe
 sql-ledger/locale/it/rc
 sql-ledger/locale/it/rp
 sql-ledger/locale/it/vr
+sql-ledger/locale/ja_utf/COPYING
+sql-ledger/locale/ja_utf/LANGUAGE
+sql-ledger/locale/ja_utf/aa
+sql-ledger/locale/ja_utf/admin
+sql-ledger/locale/ja_utf/all
+sql-ledger/locale/ja_utf/am
+sql-ledger/locale/ja_utf/ap
+sql-ledger/locale/ja_utf/ar
+sql-ledger/locale/ja_utf/arap
+sql-ledger/locale/ja_utf/arapprn
+sql-ledger/locale/ja_utf/bp
+sql-ledger/locale/ja_utf/ca
+sql-ledger/locale/ja_utf/cp
+sql-ledger/locale/ja_utf/ct
+sql-ledger/locale/ja_utf/gl
+sql-ledger/locale/ja_utf/hr
+sql-ledger/locale/ja_utf/ic
+sql-ledger/locale/ja_utf/im
+sql-ledger/locale/ja_utf/io
+sql-ledger/locale/ja_utf/ir
+sql-ledger/locale/ja_utf/is
+sql-ledger/locale/ja_utf/jc
+sql-ledger/locale/ja_utf/locales.pl
+sql-ledger/locale/ja_utf/login
+sql-ledger/locale/ja_utf/menu
+sql-ledger/locale/ja_utf/oe
+sql-ledger/locale/ja_utf/pe
+sql-ledger/locale/ja_utf/pos
+sql-ledger/locale/ja_utf/ps
+sql-ledger/locale/ja_utf/pw
+sql-ledger/locale/ja_utf/rc
+sql-ledger/locale/ja_utf/rp
+sql-ledger/locale/ja_utf/vr
 sql-ledger/locale/lt/COPYING
 sql-ledger/locale/lt/LANGUAGE
 sql-ledger/locale/lt/aa
@@ -1897,8 +1930,6 @@ sql-ledger/sql/Estonian_UTF8-chart.sql
 sql-ledger/sql/France-chart.sql
 sql-ledger/sql/German-Sample-chart.sql
 sql-ledger/sql/German-Sample-gifi.sql
-sql-ledger/sql/Germany-DATEV-SKR03-chart.sql
-sql-ledger/sql/Germany-DATEV-SKR03-gifi.sql
 sql-ledger/sql/Germany-SKR03-chart.sql
 sql-ledger/sql/Germany-SKR03-gifi.sql
 sql-ledger/sql/Hungary-chart.sql
@@ -2882,6 +2913,7 @@ sql-ledger/vr.pl
 @dirrm sql-ledger/locale/mx
 @dirrm sql-ledger/locale/lv
 @dirrm sql-ledger/locale/lt
+@dirrm sql-ledger/locale/ja_utf
 @dirrm sql-ledger/locale/it
 @dirrm sql-ledger/locale/is
 @dirrm sql-ledger/locale/id
