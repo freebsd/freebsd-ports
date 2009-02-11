@@ -1,0 +1,6 @@
+bin/zetaback
+bin/zetaback_agent
+etc/zetaback.conf
+etc/zetaback.conf.sample
+etc/zetaback_agent.conf
+etc/zetaback_agent.conf.sample

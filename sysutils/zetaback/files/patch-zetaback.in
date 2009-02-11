@@ -1,0 +1,54 @@
+--- zetaback.in.orig	2008-12-16 13:23:27.000000000 -0800
++++ zetaback.in	2009-02-11 12:39:49.596107102 -0800
+@@ -319,11 +319,15 @@
+ The retention time (in seconds) for backups.  Defaults to (14 * 86400), or two
+ weeks.
+ 
++=item compressionprogram
++
++Compress files using gzip or bzip2. Defaults to gzip.
++
+ =item compressionlevel
+ 
+-Compress files using gzip at the specified compression level. 0 means no
+-compression. Accepted values are 1-9. Defaults to 1 (fastest/minimal
+-compression.)
++Compress files using gzip or bzip2 at the specified compression level.
++0 means no compression. Accepted values are 1-9. Defaults to 1
++(fastest/minimal compression.)
+ 
+ =item ssh_config
+ 
+@@ -525,9 +529,18 @@
+   print "Using custom ssh config file: $ssh_config\n" if($DEBUG);
+ 
+   # Do it. yeah.
++  my $cp = config_get($host, 'compressionprogram');
++  if ($cp != "bzip2" && $cp != "gzip" && $cp != "") {
++      die "zfs_full_backup: unsupported compression program specified\n";
++  } elsif ($cp == "") {
++      $cp = "gzip";
++      $cl = 1;
++  } else {
++      $cl = 1;
++  }
+   my $cl = config_get($host, 'compressionlevel');
+   if ($cl >= 1 && $cl <= 9) {
+-    open(LBACKUP, "|gzip -$cl >$store/.$dumpfile") ||
++    open(LBACKUP, "|$cp -$cl >$store/.$dumpfile") ||
+       die "zfs_full_backup: cannot create dump\n";
+   } else {
+     open(LBACKUP, ">$store/.$dumpfile") ||
+@@ -799,10 +812,10 @@
+   }
+   print " => piping $file to $command\n" if($DEBUG);
+   if($NEUTERED) {
+-    print "gzip -dfc $file | ssh $ssh_config $host $command\n" if ($DEBUG);
++    print "bzip2 -dfc $file | gzip -dfc | ssh $ssh_config $host $command\n" if ($DEBUG);
+   }
+   else {
+-    open(DUMP, "gzip -dfc $file |");
++    open(DUMP, "bzip2 -dfc $file | gzip -dfc |");
+     eval {
+       open(RECEIVER, "| ssh $ssh_config $host $command");
+       my $buffer;
