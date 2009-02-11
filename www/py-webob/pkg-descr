@@ -1,0 +1,8 @@
+WebOb provides wrappers around the WSGI request environment, and an
+object to help create WSGI responses.
+
+The objects map much of the specified behavior of HTTP, including
+header parsing and accessors for other standard parts of the
+environment.
+
+WWW:	http://pythonpaste.org/webob/

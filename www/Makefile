@@ -1271,6 +1271,7 @@
     SUBDIR += py-urljr
     SUBDIR += py-utidy
     SUBDIR += py-webhelpers
+    SUBDIR += py-webob
     SUBDIR += py-webunit
     SUBDIR += py-webware
     SUBDIR += py-webware-component
