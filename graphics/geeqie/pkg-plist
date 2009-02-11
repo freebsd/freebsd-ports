@@ -1,4 +1,39 @@
 bin/geeqie
-share/pixmaps/geeqie.png
 share/applications/geeqie.desktop
+share/locale/ar/LC_MESSAGES/geeqie.mo
+share/locale/be/LC_MESSAGES/geeqie.mo
+share/locale/bg/LC_MESSAGES/geeqie.mo
+share/locale/ca/LC_MESSAGES/geeqie.mo
+share/locale/cs/LC_MESSAGES/geeqie.mo
+share/locale/da/LC_MESSAGES/geeqie.mo
+share/locale/de/LC_MESSAGES/geeqie.mo
+share/locale/eo/LC_MESSAGES/geeqie.mo
+share/locale/es/LC_MESSAGES/geeqie.mo
+share/locale/et/LC_MESSAGES/geeqie.mo
+share/locale/eu/LC_MESSAGES/geeqie.mo
+share/locale/fi/LC_MESSAGES/geeqie.mo
+share/locale/fr/LC_MESSAGES/geeqie.mo
+share/locale/hu/LC_MESSAGES/geeqie.mo
+share/locale/id/LC_MESSAGES/geeqie.mo
+share/locale/it/LC_MESSAGES/geeqie.mo
+share/locale/ja/LC_MESSAGES/geeqie.mo
+share/locale/ko/LC_MESSAGES/geeqie.mo
+share/locale/nb/LC_MESSAGES/geeqie.mo
+share/locale/nl/LC_MESSAGES/geeqie.mo
+share/locale/pl/LC_MESSAGES/geeqie.mo
+share/locale/pt_BR/LC_MESSAGES/geeqie.mo
+share/locale/ro/LC_MESSAGES/geeqie.mo
+share/locale/ru/LC_MESSAGES/geeqie.mo
+share/locale/sk/LC_MESSAGES/geeqie.mo
+share/locale/sl/LC_MESSAGES/geeqie.mo
+share/locale/sv/LC_MESSAGES/geeqie.mo
+share/locale/th/LC_MESSAGES/geeqie.mo
+share/locale/tr/LC_MESSAGES/geeqie.mo
+share/locale/uk/LC_MESSAGES/geeqie.mo
+share/locale/vi/LC_MESSAGES/geeqie.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/geeqie.mo
+share/locale/zh_TW/LC_MESSAGES/geeqie.mo
+share/pixmaps/geeqie.png
 @dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
