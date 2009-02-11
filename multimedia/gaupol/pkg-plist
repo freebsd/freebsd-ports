@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/__init__.py
 %%PYTHON_SITELIBDIR%%/gaupol/__init__.pyc
@@ -41,51 +42,51 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/agents/util.py
 %%PYTHON_SITELIBDIR%%/gaupol/agents/util.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/agents/util.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/base/__init__.py
-%%PYTHON_SITELIBDIR%%/gaupol/base/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/base/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/base/const.py
-%%PYTHON_SITELIBDIR%%/gaupol/base/const.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/base/const.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/base/contractual.py
-%%PYTHON_SITELIBDIR%%/gaupol/base/contractual.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/base/contractual.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/base/delegate.py
-%%PYTHON_SITELIBDIR%%/gaupol/base/delegate.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/base/delegate.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/base/mutables.py
-%%PYTHON_SITELIBDIR%%/gaupol/base/mutables.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/base/mutables.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/base/observable.py
-%%PYTHON_SITELIBDIR%%/gaupol/base/observable.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/base/observable.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/base/singleton.py
-%%PYTHON_SITELIBDIR%%/gaupol/base/singleton.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/base/singleton.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/align.py
+%%PYTHON_SITELIBDIR%%/gaupol/align.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/align.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/calculator.py
 %%PYTHON_SITELIBDIR%%/gaupol/calculator.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/calculator.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/clipboard.py
 %%PYTHON_SITELIBDIR%%/gaupol/clipboard.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/clipboard.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/const.py
-%%PYTHON_SITELIBDIR%%/gaupol/const.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/const.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/containers.py
+%%PYTHON_SITELIBDIR%%/gaupol/containers.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/containers.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/contractual.py
+%%PYTHON_SITELIBDIR%%/gaupol/contractual.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/contractual.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/converter.py
 %%PYTHON_SITELIBDIR%%/gaupol/converter.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/converter.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/countries.py
 %%PYTHON_SITELIBDIR%%/gaupol/countries.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/countries.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/deco.py
+%%PYTHON_SITELIBDIR%%/gaupol/deco.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/deco.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/delegate.py
+%%PYTHON_SITELIBDIR%%/gaupol/delegate.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/delegate.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/determiner.py
 %%PYTHON_SITELIBDIR%%/gaupol/determiner.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/determiner.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/documents.py
+%%PYTHON_SITELIBDIR%%/gaupol/documents.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/documents.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/encodings.py
 %%PYTHON_SITELIBDIR%%/gaupol/encodings.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/encodings.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/enumeration.py
+%%PYTHON_SITELIBDIR%%/gaupol/enumeration.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/enumeration.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/errors.py
 %%PYTHON_SITELIBDIR%%/gaupol/errors.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/errors.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/file.py
+%%PYTHON_SITELIBDIR%%/gaupol/file.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/file.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/files/__init__.py
 %%PYTHON_SITELIBDIR%%/gaupol/files/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/files/__init__.pyo
@@ -104,9 +105,6 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/files/ssa.py
 %%PYTHON_SITELIBDIR%%/gaupol/files/ssa.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/files/ssa.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/files/subfile.py
-%%PYTHON_SITELIBDIR%%/gaupol/files/subfile.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/files/subfile.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/files/subrip.py
 %%PYTHON_SITELIBDIR%%/gaupol/files/subrip.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/files/subrip.pyo
@@ -119,15 +117,21 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/finder.py
 %%PYTHON_SITELIBDIR%%/gaupol/finder.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/finder.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/formats.py
+%%PYTHON_SITELIBDIR%%/gaupol/formats.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/formats.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/framerates.py
+%%PYTHON_SITELIBDIR%%/gaupol/framerates.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/framerates.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/__init__.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/action.py
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/action.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/action.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/actions/__init__.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/actions/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/actions/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/actions/action.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/actions/action.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/actions/action.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/actions/edit.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/actions/edit.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/actions/edit.pyo
@@ -203,42 +207,9 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/application.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/application.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/application.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/__init__.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/__init__.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/assistant.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/assistant.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/assistant.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/capitalization.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/capitalization.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/capitalization.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/confirmation.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/confirmation.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/confirmation.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/error.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/error.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/error.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/hearing.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/hearing.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/hearing.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/introduction.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/introduction.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/introduction.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/line.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/line.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/line.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/locale.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/locale.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/locale.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/page.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/page.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/page.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/progress.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/progress.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text/progress.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants.py
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/__init__.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/__init__.pyo
@@ -254,15 +225,15 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/validate.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/validate.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf/validate.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/const.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/const.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/const.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/__init__.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/__init__.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/about.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/about.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/about.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/append.py
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/append.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/append.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/debug.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/debug.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/debug.pyo
@@ -272,24 +243,9 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/encoding.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/encoding.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/encoding.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file/__init__.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file/append.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file/append.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file/append.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file/open.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file/open.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file/open.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file/save.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file/save.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file/save.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file/subtitle.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file/subtitle.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file/subtitle.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file/video.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file/video.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file/video.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file.py
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/framerate.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/framerate.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/framerate.pyo
@@ -311,12 +267,18 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/multiclose.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/multiclose.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/multiclose.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/open.py
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/open.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/open.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/preferences.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/preferences.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/preferences.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/previewerr.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/previewerr.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/previewerr.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/save.py
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/save.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/save.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/search.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/search.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/search.pyo
@@ -335,12 +297,18 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/transform.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/transform.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/transform.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/video.py
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/video.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/video.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/entries.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/entries.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/entries.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/errors.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/errors.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/errors.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/fields.py
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/fields.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/fields.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/main.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/main.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/main.pyo
@@ -368,9 +336,18 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/runner.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/runner.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/runner.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/tooltips.py
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/tooltips.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/gtk/tooltips.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/styles.py
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/styles.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/styles.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/targets.py
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/targets.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/targets.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/units.py
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/units.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/units.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/unittest.py
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/unittest.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/gtk/unittest.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/util.py
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/util.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/gtk/util.pyo
@@ -389,6 +366,21 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/locales.py
 %%PYTHON_SITELIBDIR%%/gaupol/locales.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/locales.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/markup.py
+%%PYTHON_SITELIBDIR%%/gaupol/markup.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/markup.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/modes.py
+%%PYTHON_SITELIBDIR%%/gaupol/modes.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/modes.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/mutables.py
+%%PYTHON_SITELIBDIR%%/gaupol/mutables.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/mutables.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/newlines.py
+%%PYTHON_SITELIBDIR%%/gaupol/newlines.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/newlines.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/observable.py
+%%PYTHON_SITELIBDIR%%/gaupol/observable.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/observable.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/parser.py
 %%PYTHON_SITELIBDIR%%/gaupol/parser.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/parser.pyo
@@ -401,15 +393,24 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/patternman.py
 %%PYTHON_SITELIBDIR%%/gaupol/patternman.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/patternman.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/players.py
+%%PYTHON_SITELIBDIR%%/gaupol/players.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/players.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/project.py
 %%PYTHON_SITELIBDIR%%/gaupol/project.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/project.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/registers.py
+%%PYTHON_SITELIBDIR%%/gaupol/registers.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/registers.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/revertable.py
 %%PYTHON_SITELIBDIR%%/gaupol/revertable.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/revertable.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/scripts.py
 %%PYTHON_SITELIBDIR%%/gaupol/scripts.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/scripts.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/singleton.py
+%%PYTHON_SITELIBDIR%%/gaupol/singleton.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/singleton.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/subtitle.py
 %%PYTHON_SITELIBDIR%%/gaupol/subtitle.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/subtitle.pyo
@@ -437,15 +438,15 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/tags/subviewer2.py
 %%PYTHON_SITELIBDIR%%/gaupol/tags/subviewer2.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/tags/subviewer2.pyo
-%%PYTHON_SITELIBDIR%%/gaupol/tags/taglib.py
-%%PYTHON_SITELIBDIR%%/gaupol/tags/taglib.pyc
-%%PYTHON_SITELIBDIR%%/gaupol/tags/taglib.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/tags/tmplayer.py
 %%PYTHON_SITELIBDIR%%/gaupol/tags/tmplayer.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/tags/tmplayer.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/temp.py
 %%PYTHON_SITELIBDIR%%/gaupol/temp.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/temp.pyo
+%%PYTHON_SITELIBDIR%%/gaupol/unittest.py
+%%PYTHON_SITELIBDIR%%/gaupol/unittest.pyc
+%%PYTHON_SITELIBDIR%%/gaupol/unittest.pyo
 %%PYTHON_SITELIBDIR%%/gaupol/urls.py
 %%PYTHON_SITELIBDIR%%/gaupol/urls.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/urls.pyo
@@ -453,41 +454,43 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/util.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/util.pyo
 share/applications/gaupol.desktop
+%%DATADIR%%/codes/iso_15924.xml
 %%DATADIR%%/codes/iso_3166.xml
 %%DATADIR%%/codes/iso_639.xml
 %%DATADIR%%/codes/locales.txt
 %%DATADIR%%/gaupol.gtk.conf.spec
-%%DATADIR%%/glade/debug-dialog.glade
-%%DATADIR%%/glade/duration-dialog.glade
-%%DATADIR%%/glade/encoding-dialog.glade
-%%DATADIR%%/glade/framerate-dialog.glade
-%%DATADIR%%/glade/header-dialog.glade
-%%DATADIR%%/glade/insert-dialog.glade
-%%DATADIR%%/glade/language-dialog.glade
-%%DATADIR%%/glade/multiclose-dialog.glade
-%%DATADIR%%/glade/open-dialog.glade
-%%DATADIR%%/glade/preferences-dialog.glade
-%%DATADIR%%/glade/previewerr-dialog.glade
-%%DATADIR%%/glade/save-dialog.glade
-%%DATADIR%%/glade/search-dialog.glade
-%%DATADIR%%/glade/shift-dialog.glade
-%%DATADIR%%/glade/spellcheck-dialog.glade
-%%DATADIR%%/glade/split-dialog.glade
-%%DATADIR%%/glade/text-assistant-capitalization-page.glade
-%%DATADIR%%/glade/text-assistant-common-error-page.glade
-%%DATADIR%%/glade/text-assistant-confirmation-page.glade
-%%DATADIR%%/glade/text-assistant-hearing-impaired-page.glade
-%%DATADIR%%/glade/text-assistant-introduction-page.glade
-%%DATADIR%%/glade/text-assistant-line-break-options-page.glade
-%%DATADIR%%/glade/text-assistant-line-break-page.glade
-%%DATADIR%%/glade/text-assistant-progress-page.glade
-%%DATADIR%%/glade/transform-dialog.glade
-%%DATADIR%%/gtkrc
-%%DATADIR%%/headers/ass.txt
-%%DATADIR%%/headers/microdvd.txt
-%%DATADIR%%/headers/mpsub.txt
-%%DATADIR%%/headers/ssa.txt
-%%DATADIR%%/headers/subviewer2.txt
+%%DATADIR%%/glade/assistants/text/capitalization.glade
+%%DATADIR%%/glade/assistants/text/common-error.glade
+%%DATADIR%%/glade/assistants/text/confirmation.glade
+%%DATADIR%%/glade/assistants/text/hearing-impaired.glade
+%%DATADIR%%/glade/assistants/text/introduction.glade
+%%DATADIR%%/glade/assistants/text/line-break-options.glade
+%%DATADIR%%/glade/assistants/text/line-break.glade
+%%DATADIR%%/glade/assistants/text/progress.glade
+%%DATADIR%%/glade/dialogs/debug.glade
+%%DATADIR%%/glade/dialogs/duration.glade
+%%DATADIR%%/glade/dialogs/encoding.glade
+%%DATADIR%%/glade/dialogs/framerate.glade
+%%DATADIR%%/glade/dialogs/header.glade
+%%DATADIR%%/glade/dialogs/insert.glade
+%%DATADIR%%/glade/dialogs/language.glade
+%%DATADIR%%/glade/dialogs/multiclose.glade
+%%DATADIR%%/glade/dialogs/open.glade
+%%DATADIR%%/glade/dialogs/preferences.glade
+%%DATADIR%%/glade/dialogs/previewerr.glade
+%%DATADIR%%/glade/dialogs/save.glade
+%%DATADIR%%/glade/dialogs/search.glade
+%%DATADIR%%/glade/dialogs/shift.glade
+%%DATADIR%%/glade/dialogs/spellcheck.glade
+%%DATADIR%%/glade/dialogs/split.glade
+%%DATADIR%%/glade/dialogs/transform.glade
+%%DATADIR%%/headers/ass
+%%DATADIR%%/headers/microdvd
+%%DATADIR%%/headers/mpsub
+%%DATADIR%%/headers/ssa
+%%DATADIR%%/headers/subviewer2
+%%DATADIR%%/patterns/Latn-en-US.common-error
+%%DATADIR%%/patterns/Latn-en-US.common-error.conf
 %%DATADIR%%/patterns/Latn-en.capitalization
 %%DATADIR%%/patterns/Latn-en.capitalization.conf
 %%DATADIR%%/patterns/Latn-en.common-error
@@ -506,7 +509,8 @@ share/applications/gaupol.desktop
 %%DATADIR%%/patterns/Latn.line-break.conf
 %%DATADIR%%/patterns/Zyyy.common-error
 %%DATADIR%%/patterns/Zyyy.common-error.conf
-%%DATADIR%%/ui.xml
+%%DATADIR%%/ui/gtkrc
+%%DATADIR%%/ui/ui.xml
 share/icons/hicolor/16x16/apps/gaupol.png
 share/icons/hicolor/22x22/apps/gaupol.png
 share/icons/hicolor/24x24/apps/gaupol.png
@@ -516,25 +520,25 @@ share/locale/ca/LC_MESSAGES/gaupol.mo
 share/locale/es/LC_MESSAGES/gaupol.mo
 share/locale/pl/LC_MESSAGES/gaupol.mo
 share/locale/sv/LC_MESSAGES/gaupol.mo
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol/agents
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol/base
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol/files
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol/gtk/actions
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol/gtk/agents
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants/text
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol/gtk/assistants
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs/file
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol/gtk/renderers
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol/gtk
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol/tags
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol
-@dirrm %%DATADIR%%/codes
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%/headers
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/patterns
+@dirrm %%DATADIR%%/headers
+@dirrm %%DATADIR%%/glade/dialogs
+@dirrm %%DATADIR%%/glade/assistants/text
+@dirrm %%DATADIR%%/glade/assistants
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/codes
 @dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/gaupol/tags
+@dirrm %%PYTHON_SITELIBDIR%%/gaupol/gtk/renderers
+@dirrm %%PYTHON_SITELIBDIR%%/gaupol/gtk/dialogs
+@dirrm %%PYTHON_SITELIBDIR%%/gaupol/gtk/conf
+@dirrm %%PYTHON_SITELIBDIR%%/gaupol/gtk/agents
+@dirrm %%PYTHON_SITELIBDIR%%/gaupol/gtk/actions
+@dirrm %%PYTHON_SITELIBDIR%%/gaupol/gtk
+@dirrm %%PYTHON_SITELIBDIR%%/gaupol/files
+@dirrm %%PYTHON_SITELIBDIR%%/gaupol/agents
+@dirrm %%PYTHON_SITELIBDIR%%/gaupol
 @dirrmtry share/applications
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
