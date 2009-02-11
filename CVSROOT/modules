@@ -6881,6 +6881,7 @@ lbpp                            ports/devel/lbpp
 lbrate                          ports/archivers/lbrate
 lbreakout                       ports/games/lbreakout
 lbreakout2                      ports/games/lbreakout2
+lbzip2                          ports/archivers/lbzip2
 lc                              ports/misc/lc
 lcab                            ports/archivers/lcab
 lcdproc                         ports/sysutils/lcdproc
@@ -9579,6 +9580,7 @@ openoffice.org-3-devel          ports/editors/openoffice.org-3-devel
 openoffice.org-3-rc             ports/editors/openoffice.org-3-RC
 openospfd                       ports/net/openospfd
 openpbx.org                     ports/net/openpbx.org
+openpgpsdk                      ports/security/openpgpsdk
 openproj                        ports/deskutils/openproj
 openquicktime                   ports/multimedia/openquicktime
 openradius                      ports/net/openradius
@@ -9664,6 +9666,7 @@ oscommerce                      ports/www/oscommerce
 osdclock                        ports/x11-clocks/osdclock
 osdmixer                        ports/audio/osdmixer
 osg                             ports/graphics/osg
+osg-devel                       ports/graphics/osg-devel
 osgg                            ports/games/osgg
 osh                             ports/shells/osh
 osiris                          ports/security/osiris
@@ -11017,6 +11020,7 @@ p5-Gnome2-GConf                 ports/devel/p5-Gnome2-GConf
 p5-Gnome2-VFS                   ports/x11-toolkits/p5-Gnome2-VFS
 p5-GnuPG-Interface              ports/security/p5-GnuPG-Interface
 p5-Goo                          ports/deskutils/p5-Goo
+p5-Google-Chart                 ports/graphics/p5-Google-Chart
 p5-Google-Checkout              ports/devel/p5-Google-Checkout
 p5-Google-Data-JSON             ports/textproc/p5-Google-Data-JSON
 p5-Gopher-Server                ports/net/p5-Gopher-Server
@@ -11185,6 +11189,7 @@ p5-Hash-AsObject                ports/devel/p5-Hash-AsObject
 p5-Hash-Case                    ports/devel/p5-Hash-Case
 p5-Hash-Merge                   ports/textproc/p5-Hash-Merge
 p5-Hash-MultiKey                ports/devel/p5-Hash-MultiKey
+p5-Hash-Union                   ports/devel/p5-Hash-Union
 p5-Hash-Util-FieldHash-Compat   ports/devel/p5-Hash-Util-FieldHash-Compat
 p5-Hash-WithDefaults            ports/devel/p5-Hash-WithDefaults
 p5-Hatena-Keyword               ports/textproc/p5-Hatena-Keyword
@@ -11533,6 +11538,7 @@ p5-Math-Interpolate             ports/math/p5-Math-Interpolate
 p5-Math-Intersection-StraightLine  ports/math/p5-Math-Intersection-StraightLine
 p5-Math-LinearCombination       ports/math/p5-Math-LinearCombination
 p5-Math-Logic                   ports/math/p5-Math-Logic
+p5-Math-MPFR                    ports/math/p5-Math-MPFR
 p5-Math-Matrix                  ports/math/p5-Math-Matrix
 p5-Math-NumberCruncher          ports/math/p5-Math-NumberCruncher
 p5-Math-Pari                    ports/math/p5-Math-Pari
@@ -12317,6 +12323,7 @@ p5-Storable                     ports/devel/p5-Storable
 p5-Storable-AMF                 ports/converters/p5-Storable-AMF
 p5-Stream                       ports/devel/p5-Stream
 p5-String-Approx                ports/devel/p5-String-Approx
+p5-String-BufferStack           ports/textproc/p5-String-BufferStack
 p5-String-CRC32                 ports/devel/p5-String-CRC32
 p5-String-CamelCase             ports/textproc/p5-String-CamelCase
 p5-String-Checker               ports/devel/p5-String-Checker
@@ -14298,6 +14305,7 @@ p5-gnome2-gconf                 ports/devel/p5-Gnome2-GConf
 p5-gnome2-vfs                   ports/x11-toolkits/p5-Gnome2-VFS
 p5-gnupg-interface              ports/security/p5-GnuPG-Interface
 p5-goo                          ports/deskutils/p5-Goo
+p5-google-chart                 ports/graphics/p5-Google-Chart
 p5-google-checkout              ports/devel/p5-Google-Checkout
 p5-google-data-json             ports/textproc/p5-Google-Data-JSON
 p5-gopher-server                ports/net/p5-Gopher-Server
@@ -14337,6 +14345,7 @@ p5-hash-asobject                ports/devel/p5-Hash-AsObject
 p5-hash-case                    ports/devel/p5-Hash-Case
 p5-hash-merge                   ports/textproc/p5-Hash-Merge
 p5-hash-multikey                ports/devel/p5-Hash-MultiKey
+p5-hash-union                   ports/devel/p5-Hash-Union
 p5-hash-util-fieldhash-compat   ports/devel/p5-Hash-Util-FieldHash-Compat
 p5-hash-withdefaults            ports/devel/p5-Hash-WithDefaults
 p5-hatena-keyword               ports/textproc/p5-Hatena-Keyword
@@ -14804,6 +14813,7 @@ p5-math-intersection-straightline  ports/math/p5-Math-Intersection-StraightLine
 p5-math-linearcombination       ports/math/p5-Math-LinearCombination
 p5-math-logic                   ports/math/p5-Math-Logic
 p5-math-matrix                  ports/math/p5-Math-Matrix
+p5-math-mpfr                    ports/math/p5-Math-MPFR
 p5-math-numbercruncher          ports/math/p5-Math-NumberCruncher
 p5-math-pari                    ports/math/p5-Math-Pari
 p5-math-polygon                 ports/math/p5-Math-Polygon
@@ -15612,6 +15622,7 @@ p5-storable                     ports/devel/p5-Storable
 p5-storable-amf                 ports/converters/p5-Storable-AMF
 p5-stream                       ports/devel/p5-Stream
 p5-string-approx                ports/devel/p5-String-Approx
+p5-string-bufferstack           ports/textproc/p5-String-BufferStack
 p5-string-camelcase             ports/textproc/p5-String-CamelCase
 p5-string-checker               ports/devel/p5-String-Checker
 p5-string-crc32                 ports/devel/p5-String-CRC32
@@ -17893,7 +17904,6 @@ privman                         ports/devel/privman
 privoxy                         ports/www/privoxy
 privoxy+ipv6                    ports/www/privoxy+ipv6
 processing                      ports/graphics/processing
-processing-devel                ports/graphics/processing-devel
 procmail                        ports/mail/procmail
 procmap                         ports/sysutils/procmap
 prodosemu                       ports/emulators/prodosemu
@@ -18062,11 +18072,13 @@ py-Lightbox                     ports/www/py-Lightbox
 py-MySQL                        ports/databases/py-MySQL
 py-MySQLdb                      ports/databases/py-MySQLdb
 py-MySQLdb-devel                ports/databases/py-MySQLdb-devel
+py-PF                           ports/security/py-PF
 py-Pmw                          ports/x11-toolkits/py-Pmw
 py-PyGreSQL                     ports/databases/py-PyGreSQL
 py-PySQLite10                   ports/databases/py-PySQLite10
 py-PySQLite11                   ports/databases/py-PySQLite11
 py-PyX                          ports/graphics/py-PyX
+py-RPyC                         ports/devel/py-RPyC
 py-SQLDict                      ports/databases/py-SQLDict
 py-SciParam                     ports/x11-toolkits/py-SciParam
 py-TurboJinja                   ports/devel/py-TurboJinja
@@ -18397,6 +18409,7 @@ py-pdf                          ports/print/py-pdf
 py-pefile                       ports/devel/py-pefile
 py-period                       ports/devel/py-period
 py-pexpect                      ports/misc/py-pexpect
+py-pf                           ports/security/py-PF
 py-pg8000                       ports/databases/py-pg8000
 py-pg_pqueue                    ports/databases/py-pg_pqueue
 py-phpserialize                 ports/devel/py-phpserialize
@@ -18447,6 +18460,7 @@ py-pygpx                        ports/devel/py-pygpx
 py-pygresql                     ports/databases/py-PyGreSQL
 py-pyke                         ports/devel/py-pyke
 py-pylib                        ports/devel/py-pylib
+py-pyliblo                      ports/audio/py-pyliblo
 py-pylons                       ports/www/py-pylons
 py-pymarc                       ports/devel/py-pymarc
 py-pymc                         ports/math/py-pymc
@@ -18506,6 +18520,7 @@ py-rlcompleter2                 ports/devel/py-rlcompleter2
 py-ro                           ports/devel/py-ro
 py-routes                       ports/www/py-routes
 py-roxlib                       ports/devel/py-roxlib
+py-rpyc                         ports/devel/py-RPyC
 py-rrdpipe                      ports/databases/py-rrdpipe
 py-rrdtool_lgpl                 ports/databases/py-rrdtool_lgpl
 py-rss2gen                      ports/textproc/py-rss2gen
