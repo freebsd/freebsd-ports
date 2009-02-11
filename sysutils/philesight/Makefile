@@ -7,7 +7,7 @@
 
 PORTNAME=	philesight
 PORTVERSION=	20090105
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://zevv.nl/play/code/philesight/
 EXTRACT_SUFX=	.tgz
@@ -16,7 +16,9 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Shows a graphics representation of the filesystem usage
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/cairo.so:${PORTSDIR}/graphics/ruby-cairo \
-		${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
+		${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb \
+		${RUBY_SITELIBDIR}/locale.rb:${PORTSDIR}/devel/ruby-locale2 \
+		${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv
 
 USE_RUBY=	yes
 NO_BUILD=	yes
