@@ -6,6 +6,7 @@
 
 PORTNAME=	kdegraphics
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -41,7 +42,7 @@ KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	opengl gui svg iconengines pixeltool \
-		moc_build rcc_build uic_build
+		moc_build rcc_build uic_build qmake_build
 
 post-extract:
 	${MKDIR} ${WRKSRC}
