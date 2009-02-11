@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adstudio
-PORTVERSION=	7.0.22
+PORTVERSION=	7.0.33
 CATEGORIES=	databases devel java
 MASTER_SITES=	http://download.aquafold.com/download/v${PORTVERSION:R}.0/java/
 DISTNAME=	ads-java-novm-${PORTVERSION}
@@ -16,8 +16,6 @@ COMMENT=	A database query and administration tool
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper	\
 		${LOCALBASE}/lib/libjogl.so:${PORTSDIR}/graphics/jogl
-
-BROKEN=		size mismatch
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
