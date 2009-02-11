@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	codeigniter
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	www
 MASTER_SITES=	http://codeigniter.com/download_files/ \
 		LOCAL/glarkin
