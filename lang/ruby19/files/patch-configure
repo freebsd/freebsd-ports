@@ -1,5 +1,5 @@
 --- configure.orig	2009-01-30 18:26:04.000000000 +0300
-+++ configure	2009-02-09 19:17:18.000000000 +0300
++++ configure	2009-02-11 03:22:46.000000000 +0300
 @@ -20418,7 +20418,7 @@
  
  
@@ -9,3 +9,12 @@
  	as_ac_Lib=`$as_echo "ac_cv_lib_$pthread_lib''_pthread_kill" | $as_tr_sh`
  { $as_echo "$as_me:$LINENO: checking for pthread_kill in -l$pthread_lib" >&5
  $as_echo_n "checking for pthread_kill in -l$pthread_lib... " >&6; }
+@@ -22406,7 +22406,7 @@
+     rubyw_install_name="$RUBYW_INSTALL_NAME"
+     ;;
+ esac
+-RUBY_LIB_PREFIX=`eval echo \\"${libdir}/${RUBY_INSTALL_NAME}\\"`
++RUBY_LIB_PREFIX=`eval echo \\"${libdir}/ruby\\"`
+ 
+ 
+ # Check whether --with-ruby-version was given.
