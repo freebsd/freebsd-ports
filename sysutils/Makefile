@@ -871,6 +871,7 @@
     SUBDIR += yawho
     SUBDIR += zccron
     SUBDIR += zeroer
+    SUBDIR += zetaback
     SUBDIR += zfs-replicate
     SUBDIR += zfs-snapshot-mgmt
     SUBDIR += zidrav
