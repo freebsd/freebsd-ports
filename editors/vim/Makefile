@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	vim
-PATCHLEVEL=	69
+PATCHLEVEL=	106
 PORTVERSION=	7.2.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
 PORTREVISION?=	0
@@ -19,7 +19,7 @@ PATCH_SITES=	${MASTER_SITES:S|unix|patches/${PORTVERSION:C/\.[0-9a-z]*$//}|}
 PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES=	007 027 030 036 041 049
+BADPATCHES=	007 027 030 036 041 049 071 072 074 088 089 093 101
 #.if !defined(WITH_LANG)
 #BADPATCHES+=
 #.endif
@@ -247,7 +247,7 @@ cklatest:
 		| fgrep ${PORTVERSION:C/[0-9]*$//} | ${TAIL}
 
 find-bad-patches:
-	cd ${DISTDIR} ; egrep -l \
+	@cd ${DISTDIR} ; egrep -l \
 		'(src/if_ole|src/gui_(w32|w48|mac)|src/os_(riscos|cyg|os2|vms|amiga|win32|mswin))|src/Make_(cyg|vms|mvc)'\
 		vim/${PORTVERSION:C/\.[0-9a-z]*$//}*
 
