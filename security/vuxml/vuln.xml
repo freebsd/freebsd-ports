@@ -39,10 +39,9 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>firefox</name>
-	<range><gt>3.*,1</gt><lt>3.0.6,1</lt></range>
+	<range><lt>3.0.6,1</lt></range>
       </package>
       <package>
-	<name>firefox</name>
 	<name>linux-firefox</name>
 	<name>linux-firefox-devel</name>
 	<name>linux-seamonkey-devel</name>
@@ -92,6 +91,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-02-04</discovery>
       <entry>2009-02-11</entry>
+      <modified>2009-02-11</modified>
     </dates>
   </vuln>
 
