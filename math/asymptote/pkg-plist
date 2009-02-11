@@ -245,14 +245,15 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/makepen.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/markers1.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/markers2.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/markregular.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mexicanhat.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/monthaxis.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mosaic.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mosquito.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multicontour.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/near_earth.asy
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oneoverx.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/onecontour.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oneoverx.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/orthocenter.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parametricelevation.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parametricgraph.asy
