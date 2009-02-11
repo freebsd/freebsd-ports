@@ -1,0 +1,30 @@
+--- philesight.rb.orig	2009-02-11 21:59:28.000000000 +0300
++++ philesight.rb	2009-02-11 22:00:07.000000000 +0300
+@@ -257,7 +257,7 @@
+ 			if(level < @ringcount) then
+ 				draw_ring(cr, level+1, ang_from, ang_to, f_full)
+ 			else
+-				draw_section(cr, ang_from, ang_to, r_to, r_to+5, 0.5) if(cr && child_f.nitems > 0)
++				draw_section(cr, ang_from, ang_to, r_to, r_to+5, 0.5) if(cr && child_f.size > 0)
+ 			end
+ 
+ 			# Generate and save labels of filenames/sizes
+@@ -428,12 +428,12 @@
+ 		i=6 if(i>6)
+ 
+ 		case i
+-		when 0, 6: 	r=v; g=n; b=m
+-		when 1: 	r=n; g=v; b=m
+-		when 2: 	r=m; g=v; b=n
+-		when 3: 	r=m; g=n; b=v
+-		when 4: 	r=n; g=m; b=v
+-		when 5: 	r=v; g=m; b=n
++		when 0, 6 then 	r=v; g=n; b=m
++		when 1 then 	r=n; g=v; b=m
++		when 2 then 	r=m; g=v; b=n
++		when 3 then 	r=m; g=n; b=v
++		when 4 then 	r=n; g=m; b=v
++		when 5 then 	r=v; g=m; b=n
+ 		end
+ 
+ 		[r, g, b]
