@@ -22,6 +22,8 @@ GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
+BROKEN=		Fails to compile with GCC 4.3
+
 DIST_SUBDIR=	kaskade
 WRKSRC=		${WRKDIR}/3.2.1
 
