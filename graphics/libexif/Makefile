@@ -10,7 +10,7 @@ PORTVERSION=	0.6.17
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marius@nuenneri.ch
 COMMENT=	Library to read digital camera file meta-data
 
 USE_BZIP2=	yes
