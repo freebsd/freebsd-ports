@@ -9,9 +9,9 @@ PORTNAME=	oniguruma
 PORTVERSION=	2.5.8
 CATEGORIES=	devel textproc
 MASTER_SITES=	http://www.geocities.jp/kosako3/oniguruma/archive/:onig \
-		ftp://ftp.SpringDaemons.com/dustheap/:ruby186
+		http://www.SpringDaemons.com/stas/:ruby
 DISTFILES=	onigd${PORTVERSION:S/./_/g}${EXTRACT_SUFX}:onig \
-		ruby186p286-oniguruma.patch:ruby186
+		ruby187p72-oniguruma.patch:ruby
 DIST_SUBDIR=	ruby
 EXTRACT_ONLY=	onigd${PORTVERSION:S/./_/g}${EXTRACT_SUFX}
 
@@ -28,8 +28,8 @@ GNU_CONFIGURE=	yes
 DOCS=		HISTORY README doc/*
 
 post-patch:
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/ruby186p286-oniguruma.patch \
-		${WRKSRC}/ruby186.patch
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/ruby187p72-oniguruma.patch \
+		${WRKSRC}/ruby187.patch
 
 post-configure:
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|' \

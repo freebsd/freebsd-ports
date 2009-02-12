@@ -1,11 +1,11 @@
---- Makefile.in.orig	Thu Apr  5 13:12:00 2007
-+++ Makefile.in	Thu Apr  5 13:12:25 2007
+--- Makefile.in.orig	2006-11-08 08:45:50.000000000 +0300
++++ Makefile.in	2009-02-12 18:37:58.000000000 +0300
 @@ -214,6 +214,9 @@
  185: cpruby
  	patch -d $(RUBYDIR) -p0 < $(srcdir)/ruby185.patch
  
-+186: cpruby
-+	patch -d $(RUBYDIR) -p0 < $(srcdir)/ruby186.patch
++187: cpruby
++	patch -d $(RUBYDIR) -p0 < $(srcdir)/ruby187.patch
 +
  18: 185
  
