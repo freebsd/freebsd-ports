@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	1.3.99
+PORTVERSION=	1.3.102
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dcc-servers.net/dcc/source/old/ \
 		http://www.rhyolite.com/anti-spam/dcc/source/old/ \
 		ftp://ftp.dcc-servers.net/src/dcc/old/ \
 		ftp://ftp.rhyolite.com/src/dcc/old/
-DISTNAME=	dcc-1.3.99
+DISTNAME=	dcc-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	cgreen@sentex.net
