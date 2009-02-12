@@ -90,6 +90,7 @@ etc/lynx.lss
 %%NLS%%share/locale/de/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/en/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/et/LC_MESSAGES/lynx.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/id/LC_MESSAGES/lynx.mo
