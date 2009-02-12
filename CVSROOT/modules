@@ -1377,6 +1377,7 @@ centerim                        ports/net-im/centerim
 centerim-devel                  ports/net-im/centerim-devel
 cfdg                            ports/graphics/cfdg
 cfengine                        ports/sysutils/cfengine
+cfengine3                       ports/sysutils/cfengine3
 cfgstoragemk                    ports/net-mgmt/cfgstoragemk
 cfitsio                         ports/astro/cfitsio
 cflow                           ports/devel/cflow
@@ -19991,6 +19992,7 @@ scotty3                         ports/net-mgmt/scotty3
 scourge                         ports/games/scourge
 scourge-data                    ports/games/scourge-data
 scponly                         ports/shells/scponly
+scprotect                       ports/sysutils/scprotect
 scr2png                         ports/graphics/scr2png
 scr2txt                         ports/textproc/scr2txt
 scr_ipfm                        ports/net/scr_ipfm
