@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-www/gregarius/.DS_Store
 www/gregarius/.htaccess
 www/gregarius/COPYING
 www/gregarius/INSTALL
@@ -10,9 +9,9 @@ www/gregarius/admin/ds.php
 www/gregarius/admin/folders.php
 www/gregarius/admin/index.php
 www/gregarius/admin/items.php
-www/gregarius/admin/markallasread.php
 www/gregarius/admin/opml.php
 www/gregarius/admin/plugins.php
+www/gregarius/admin/tags.php
 www/gregarius/admin/themes.php
 www/gregarius/admin/users.php
 www/gregarius/ajax.php
@@ -24,12 +23,14 @@ www/gregarius/cls/channels.php
 www/gregarius/cls/config.php
 www/gregarius/cls/db/ParsingQuery.class.php
 www/gregarius/cls/db/db.mysql.php
+www/gregarius/cls/db/db.mysqli.php
 www/gregarius/cls/db/db.php
 www/gregarius/cls/db/db.sqlite.php
 www/gregarius/cls/debugfeed.php
 www/gregarius/cls/errorhandler.php
 www/gregarius/cls/header.php
 www/gregarius/cls/items.php
+www/gregarius/cls/l10n.php
 www/gregarius/cls/nav.php
 www/gregarius/cls/profiler.php
 www/gregarius/cls/rdf.php
@@ -49,6 +50,7 @@ www/gregarius/cls/wrappers/itemlist.php
 www/gregarius/cls/wrappers/misc.php
 www/gregarius/cls/wrappers/nav.php
 www/gregarius/cls/wrappers/searchform.php
+www/gregarius/cls/wrappers/toolkit.php
 www/gregarius/cls/wrappers/user.php
 www/gregarius/constants.php
 www/gregarius/core.php
@@ -56,42 +58,105 @@ www/gregarius/css/opml.xsl
 www/gregarius/css/print.css
 www/gregarius/db.php
 www/gregarius/dbinit.php.sample
+www/gregarius/extlib/JSON.php
 www/gregarius/extlib/README.MagpieRSS
 www/gregarius/extlib/README.kses
+www/gregarius/extlib/README.uri_util
 www/gregarius/extlib/Sajax.php
 www/gregarius/extlib/Snoopy.class.inc
 www/gregarius/extlib/browser.php
 www/gregarius/extlib/favicon.php
 www/gregarius/extlib/fcollapse.js
 www/gregarius/extlib/kses.php
+www/gregarius/extlib/l10n/gettext.php
+www/gregarius/extlib/l10n/streams.php
 www/gregarius/extlib/md5.js
 www/gregarius/extlib/rss_cache.inc
 www/gregarius/extlib/rss_dbcache.inc
 www/gregarius/extlib/rss_fetch.inc
 www/gregarius/extlib/rss_parse.inc
 www/gregarius/extlib/rss_utils.inc
+www/gregarius/extlib/uri_util.php
 www/gregarius/feed.php
 www/gregarius/index.php
 www/gregarius/init.php
 www/gregarius/install.php
-www/gregarius/intl/.DS_Store
-www/gregarius/intl/cn_s.php
-www/gregarius/intl/cn_t.php
-www/gregarius/intl/de.php
-www/gregarius/intl/dk.php
-www/gregarius/intl/en.php
-www/gregarius/intl/es.php
-www/gregarius/intl/fr.php
-www/gregarius/intl/he.php
-www/gregarius/intl/it.php
-www/gregarius/intl/pt_BR.php
-www/gregarius/intl/ru.php
-www/gregarius/intl/sv.php
+www/gregarius/intl/ar/LC_MESSAGES/messages.mo
+www/gregarius/intl/ar/LC_MESSAGES/messages.po
+www/gregarius/intl/ar/langinfo.txt
+www/gregarius/intl/da/LC_MESSAGES/messages.mo
+www/gregarius/intl/da/LC_MESSAGES/messages.po
+www/gregarius/intl/da/langinfo.txt
+www/gregarius/intl/de/LC_MESSAGES/messages.mo
+www/gregarius/intl/de/LC_MESSAGES/messages.po
+www/gregarius/intl/de/langinfo.txt
+www/gregarius/intl/el/LC_MESSAGES/messages.mo
+www/gregarius/intl/el/LC_MESSAGES/messages.po
+www/gregarius/intl/el/langinfo.txt
+www/gregarius/intl/es/LC_MESSAGES/messages.mo
+www/gregarius/intl/es/LC_MESSAGES/messages.po
+www/gregarius/intl/es/langinfo.txt
+www/gregarius/intl/fr/LC_MESSAGES/messages.mo
+www/gregarius/intl/fr/LC_MESSAGES/messages.po
+www/gregarius/intl/fr/langinfo.txt
+www/gregarius/intl/gl/LC_MESSAGES/messages.mo
+www/gregarius/intl/gl/LC_MESSAGES/messages.po
+www/gregarius/intl/gl/langinfo.txt
+www/gregarius/intl/he/LC_MESSAGES/messages.mo
+www/gregarius/intl/he/LC_MESSAGES/messages.po
+www/gregarius/intl/he/langinfo.txt
+www/gregarius/intl/hu/LC_MESSAGES/messages.mo
+www/gregarius/intl/hu/LC_MESSAGES/messages.po
+www/gregarius/intl/hu/langinfo.txt
+www/gregarius/intl/id/LC_MESSAGES/messages.mo
+www/gregarius/intl/id/LC_MESSAGES/messages.po
+www/gregarius/intl/id/langinfo.txt
+www/gregarius/intl/it/LC_MESSAGES/messages.mo
+www/gregarius/intl/it/LC_MESSAGES/messages.po
+www/gregarius/intl/it/langinfo.txt
+www/gregarius/intl/ja/LC_MESSAGES/messages.mo
+www/gregarius/intl/ja/LC_MESSAGES/messages.po
+www/gregarius/intl/ja/langinfo.txt
+www/gregarius/intl/messages.pot
+www/gregarius/intl/mk/LC_MESSAGES/messages.mo
+www/gregarius/intl/mk/LC_MESSAGES/messages.po
+www/gregarius/intl/mk/langinfo.txt
+www/gregarius/intl/nl/LC_MESSAGES/messages.mo
+www/gregarius/intl/nl/LC_MESSAGES/messages.po
+www/gregarius/intl/nl/langinfo.txt
+www/gregarius/intl/pl/LC_MESSAGES/messages.mo
+www/gregarius/intl/pl/LC_MESSAGES/messages.po
+www/gregarius/intl/pl/langinfo.txt
+www/gregarius/intl/pt/LC_MESSAGES/messages.mo
+www/gregarius/intl/pt/LC_MESSAGES/messages.po
+www/gregarius/intl/pt/langinfo.txt
+www/gregarius/intl/pt_BR/LC_MESSAGES/messages.mo
+www/gregarius/intl/pt_BR/LC_MESSAGES/messages.po
+www/gregarius/intl/pt_BR/langinfo.txt
+www/gregarius/intl/ru/LC_MESSAGES/messages.mo
+www/gregarius/intl/ru/LC_MESSAGES/messages.po
+www/gregarius/intl/ru/langinfo.txt
+www/gregarius/intl/sv/LC_MESSAGES/messages.mo
+www/gregarius/intl/sv/LC_MESSAGES/messages.po
+www/gregarius/intl/sv/langinfo.txt
+www/gregarius/intl/tr/LC_MESSAGES/messages.mo
+www/gregarius/intl/tr/LC_MESSAGES/messages.po
+www/gregarius/intl/tr/langinfo.txt
+www/gregarius/intl/uk/LC_MESSAGES/messages.mo
+www/gregarius/intl/uk/LC_MESSAGES/messages.po
+www/gregarius/intl/uk/langinfo.txt
+www/gregarius/intl/vi/LC_MESSAGES/messages.mo
+www/gregarius/intl/vi/LC_MESSAGES/messages.po
+www/gregarius/intl/vi/langinfo.txt
+www/gregarius/intl/zh_CN/LC_MESSAGES/messages.mo
+www/gregarius/intl/zh_CN/LC_MESSAGES/messages.po
+www/gregarius/intl/zh_CN/langinfo.txt
 www/gregarius/opml.php
 www/gregarius/plugins.php
 www/gregarius/plugins/dblclicktoread.php
 www/gregarius/plugins/delicious.php
 www/gregarius/plugins/extrabutton.php
+www/gregarius/plugins/keyboardnavigation.php
 www/gregarius/plugins/markallread.php
 www/gregarius/plugins/newwindow.php
 www/gregarius/plugins/roundedcorners.php
@@ -115,6 +180,11 @@ www/gregarius/state.php
 www/gregarius/tags.php
 www/gregarius/themes.php
 www/gregarius/themes/default/.themeinfo
+www/gregarius/themes/default/atom/feed.php
+www/gregarius/themes/default/atom/index.php
+www/gregarius/themes/default/atom/item.php
+www/gregarius/themes/default/atom/itemlist.php
+www/gregarius/themes/default/atom/overrides.php
 www/gregarius/themes/default/config.php
 www/gregarius/themes/default/media/busy.gif
 www/gregarius/themes/default/media/edit.gif
@@ -129,6 +199,7 @@ www/gregarius/themes/default/mobile/error.php
 www/gregarius/themes/default/mobile/feed.php
 www/gregarius/themes/default/mobile/feeds.php
 www/gregarius/themes/default/mobile/feedsfeed.php
+www/gregarius/themes/default/mobile/feedsfolder.php
 www/gregarius/themes/default/mobile/footer.php
 www/gregarius/themes/default/mobile/header.php
 www/gregarius/themes/default/mobile/index.php
@@ -147,6 +218,7 @@ www/gregarius/themes/default/rss/feed.php
 www/gregarius/themes/default/rss/index.php
 www/gregarius/themes/default/rss/item.php
 www/gregarius/themes/default/rss/itemlist.php
+www/gregarius/themes/default/rss/overrides.php
 www/gregarius/themes/default/rss/searchform.php
 www/gregarius/themes/default/shot.png
 www/gregarius/themes/default/web/catfolder.php
@@ -164,6 +236,7 @@ www/gregarius/themes/default/web/header.php
 www/gregarius/themes/default/web/index.php
 www/gregarius/themes/default/web/item.php
 www/gregarius/themes/default/web/itemlist.php
+www/gregarius/themes/default/web/media/arrow_refresh.png
 www/gregarius/themes/default/web/media/busy.gif
 www/gregarius/themes/default/web/media/edit.gif
 www/gregarius/themes/default/web/media/folder.gif
@@ -202,7 +275,8 @@ www/gregarius/themes/lilina/web/css/media/sr.gif
 www/gregarius/themes/lilina/web/feed.php
 www/gregarius/themes/lilina/web/index.php
 www/gregarius/themes/lilina/web/item.php
-www/gregarius/themes/lilina/web/js/lilina.js
+www/gregarius/themes/lilina/web/js/lilina_footer.js
+www/gregarius/themes/lilina/web/js/lilina_header.js
 www/gregarius/themes/lilina/web/media/edit.gif
 www/gregarius/themes/lilina/web/media/folder.gif
 www/gregarius/themes/lilina/web/media/mark_off.gif
@@ -235,12 +309,60 @@ www/gregarius/util.php
 @dirrmtry www/gregarius/themes/default/mobile
 @dirrmtry www/gregarius/themes/default/media/installer
 @dirrmtry www/gregarius/themes/default/media
+@dirrmtry www/gregarius/themes/default/atom
 @dirrmtry www/gregarius/themes/default
 @dirrmtry www/gregarius/themes
 @dirrmtry www/gregarius/plugins/stickyflag
 @dirrmtry www/gregarius/plugins/extlib
 @dirrmtry www/gregarius/plugins
+@dirrmtry www/gregarius/intl/zh_CN/LC_MESSAGES
+@dirrmtry www/gregarius/intl/zh_CN
+@dirrmtry www/gregarius/intl/vi/LC_MESSAGES
+@dirrmtry www/gregarius/intl/vi
+@dirrmtry www/gregarius/intl/uk/LC_MESSAGES
+@dirrmtry www/gregarius/intl/uk
+@dirrmtry www/gregarius/intl/tr/LC_MESSAGES
+@dirrmtry www/gregarius/intl/tr
+@dirrmtry www/gregarius/intl/sv/LC_MESSAGES
+@dirrmtry www/gregarius/intl/sv
+@dirrmtry www/gregarius/intl/ru/LC_MESSAGES
+@dirrmtry www/gregarius/intl/ru
+@dirrmtry www/gregarius/intl/pt_BR/LC_MESSAGES
+@dirrmtry www/gregarius/intl/pt_BR
+@dirrmtry www/gregarius/intl/pt/LC_MESSAGES
+@dirrmtry www/gregarius/intl/pt
+@dirrmtry www/gregarius/intl/pl/LC_MESSAGES
+@dirrmtry www/gregarius/intl/pl
+@dirrmtry www/gregarius/intl/nl/LC_MESSAGES
+@dirrmtry www/gregarius/intl/nl
+@dirrmtry www/gregarius/intl/mk/LC_MESSAGES
+@dirrmtry www/gregarius/intl/mk
+@dirrmtry www/gregarius/intl/ja/LC_MESSAGES
+@dirrmtry www/gregarius/intl/ja
+@dirrmtry www/gregarius/intl/it/LC_MESSAGES
+@dirrmtry www/gregarius/intl/it
+@dirrmtry www/gregarius/intl/id/LC_MESSAGES
+@dirrmtry www/gregarius/intl/id
+@dirrmtry www/gregarius/intl/hu/LC_MESSAGES
+@dirrmtry www/gregarius/intl/hu
+@dirrmtry www/gregarius/intl/he/LC_MESSAGES
+@dirrmtry www/gregarius/intl/he
+@dirrmtry www/gregarius/intl/gl/LC_MESSAGES
+@dirrmtry www/gregarius/intl/gl
+@dirrmtry www/gregarius/intl/fr/LC_MESSAGES
+@dirrmtry www/gregarius/intl/fr
+@dirrmtry www/gregarius/intl/es/LC_MESSAGES
+@dirrmtry www/gregarius/intl/es
+@dirrmtry www/gregarius/intl/el/LC_MESSAGES
+@dirrmtry www/gregarius/intl/el
+@dirrmtry www/gregarius/intl/de/LC_MESSAGES
+@dirrmtry www/gregarius/intl/de
+@dirrmtry www/gregarius/intl/da/LC_MESSAGES
+@dirrmtry www/gregarius/intl/da
+@dirrmtry www/gregarius/intl/ar/LC_MESSAGES
+@dirrmtry www/gregarius/intl/ar
 @dirrmtry www/gregarius/intl
+@dirrmtry www/gregarius/extlib/l10n
 @dirrmtry www/gregarius/extlib
 @dirrmtry www/gregarius/css
 @dirrmtry www/gregarius/cls/wrappers
