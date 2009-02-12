@@ -1,8 +1,8 @@
---- Reflow.pm~	Thu Oct 23 17:58:32 2003
-+++ Reflow.pm	Thu Oct  7 14:30:16 2004
+--- Reflow.pm.orig	2009-02-07 14:24:01.000000000 +0000
++++ Reflow.pm	2009-02-12 16:47:20.000000000 +0000
 @@ -32,7 +32,7 @@
  
- $Text::Reflow::VERSION = "1.05";
+ $Text::Reflow::VERSION = "1.06";
  
 -bootstrap Text::Reflow $Text::Reflow::VERSION;
 +#bootstrap Text::Reflow $Text::Reflow::VERSION;
@@ -58,6 +58,6 @@
  			 $result);
 -  @linkbreak = unpack("N*", pack("H*", $result));
 +  @linkbreak = unpack("j*", pack("H*", $result));
-   @linkbreak = map { $_ + 0 } @linkbreak;
+   # Convert @linkbreak from unsigned to signed:
+   @linkbreak = map { $_ > 0xF0000000 ? -((0xFFFFFFFF - $_) + 1) : $_ + 0 } @linkbreak;
    $lastbreak = shift(@linkbreak);
-   compute_output();
