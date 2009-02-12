@@ -26,7 +26,6 @@ USE_RUBY=	yes
 USE_RUBY_FEATURES=	optparse ruby18
 
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
-LDCONFIG_DIRS=	%%PREFIX%%/lib/compat/pkg
 
 MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}"
 
@@ -56,7 +55,6 @@ INSTALL_TARGET+=	install-doc
 .endif
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
 .if defined(WITH_BDB4)
 # For PKG_DBDRIVER={bdb_btree,bdb_hash}
@@ -85,7 +83,7 @@ pre-extract:
 	@exit 1
 .endif
 
-post-install: install-ldconfig-file
+post-install:
 	if [ ! -f ${PREFIX}/etc/pkgtools.conf ]; then \
 		${CP} -p ${PREFIX}/etc/pkgtools.conf.sample ${PREFIX}/etc/pkgtools.conf; \
 	fi
