@@ -21,8 +21,6 @@ USE_BZIP2=	yes
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64 alpha sparc64
 PLIST=		${PKGDIR}/pkg-plist.${ARCH}
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/compat
 TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat
 USE_LDCONFIG=	${TARGET_DIR}
@@ -46,13 +44,7 @@ do-install:
 	(cd ${WRKSRC}/lib32 && ${INSTALL_DATA} *.so.* ${TARGET32_DIR})
 .endif
 
-# Include this file to use install-ldconfig-file
-.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
-
-post-install:	install-ldconfig-file
-.if ${ARCH} == amd64
-	@${LDCONFIG} -32 -m ${TARGET32_DIR}
-.endif
+post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

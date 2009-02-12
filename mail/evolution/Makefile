@@ -27,8 +27,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack evolutiondataserver gtkhtml3 \
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/evolution/%%VERSION%%
+USE_LDCONFIG=	${PREFIX}/lib/evolution/${EVO_VERSION}
 CONFIGURE_ARGS=	--enable-nss=yes \
 		--enable-mono=no \
 		--with-sub-version=" FreeBSD GNOME Team Port"
@@ -55,9 +54,6 @@ OPTIONS=	PILOT "Enable Palm Pilot sync support" off \
 		SPAMASSASSIN "Enable SpamAssassin spam filtering" off
 
 .include <bsd.port.pre.mk>
-
-USE_LDCONFIG=	${PREFIX}/lib/evolution/${EVO_VERSION}
-.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
 .if defined(WITH_PILOT)
 LIB_DEPENDS+=	gpilotdconduit.2:${PORTSDIR}/palm/gnome-pilot
@@ -100,7 +96,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/sbin|${LOCALBASE}/bin|g' \
 		${WRKSRC}/plugins/sa-junk-plugin/em-junk-filter.c
 
-post-install: install-ldconfig-file
+post-install:
 	${MKDIR} ${PREFIX}/include/evolution-${EVO_VERSION}/composer
 	${INSTALL_DATA} ${WRKSRC}/composer/e-msg*.h ${PREFIX}/include/evolution-${EVO_VERSION}/composer
 

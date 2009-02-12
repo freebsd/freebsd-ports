@@ -23,12 +23,9 @@ RUN_DEPENDS=	${LOCALBASE}/share/compat/locale/UTF-8/LC_CTYPE:${PORTSDIR}/misc/lo
 WRKSRC=		${WRKDIR}/usr/lib/compat
 
 NO_BUILD=	yes
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/compat
 TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat
 LDCONFIG_LIB32=	${LDCONFIG} -32
-USE_LDCONFIG=	${TARGET_DIR}
 
 .include <bsd.port.pre.mk>
 
@@ -63,9 +60,8 @@ PLIST_SUB+=		I386_ONLY="@comment "
 PLIST_SUB+=		AMD64_ONLY="" AMD64NA="@comment "
 PLIST_SUB+=		LDCONFIG_LIB32="${LDCONFIG} -32"
 USE_LDCONFIG32=		${TARGET32_DIR}
-.undef USE_LDCONFIG
-USE_LDCONFIG=		no
 .else
+USE_LDCONFIG=		${TARGET_DIR}
 PLIST_SUB+=		AMD64_ONLY="@comment " AMD64NA=""
 .endif
 
@@ -109,13 +105,7 @@ do-install:
 	${LN} -sf ${lib}.compat4x ${TARGET_DIR}/${lib}
 .endfor
 
-# Include to automatic install file in libdata/ldconfig{,32}
-.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
-
-post-install:	install-ldconfig-file
-.if ${ARCH} == amd64
-	${LDCONFIG} -32 -m ${TARGET32_DIR}
-.endif
+post-install:
 	@${CAT} ${PKGMESSAGE}
 
 pre-clean:
