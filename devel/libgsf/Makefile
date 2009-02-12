@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-USE_GNOME?=	gnomehack gnomeprefix glib20 libxml2 gconf2 ltverhack intlhack
+USE_GNOME?=	gnomehack gnomeprefix glib20 libxml2 ltverhack intlhack
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS?=--without-gnome-vfs --without-python --with-gio \
 		--without-bonobo
@@ -32,8 +32,15 @@ CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !defined(GSF_SLAVE)
-GCONF_SCHEMAS=	gsf-office-thumbnailer.schemas
 MAN1=		gsf.1 gsf-office-thumbnailer.1 gsf-vba-dump.1
+.endif
+
+.if !defined(WITHOUT_GCONF) || exists(${LOCALBASE}/bin/gconftool-2)
+USE_GNOME+=	gconf2
+PLIST_SUB+=	THUMB=""
+GCONF_SCHEMAS=	gsf-office-thumbnailer.schemas
+.else
+PLIST_SUB+=	THUMB="@comment "
 .endif
 
 .include <bsd.port.mk>
