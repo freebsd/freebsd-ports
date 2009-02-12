@@ -23,8 +23,8 @@ PLIST_FILES=	bin/fuser
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800000
-BROKEN=		does not compile
+.if (${OSVERSION} > 800000)
+EXTRA_PATCHES+=	${FILESDIR}/extra::patch-fuser.c
 .endif
 
 do-install:
