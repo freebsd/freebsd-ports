@@ -1,5 +1,5 @@
 bin/gsf
-bin/gsf-office-thumbnailer
+%%THUMB%%bin/gsf-office-thumbnailer
 bin/gsf-vba-dump
 include/libgsf-1/gsf/gsf-blob.h
 include/libgsf-1/gsf/gsf-clip-data.h
