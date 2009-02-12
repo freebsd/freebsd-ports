@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dev.yorhel.nl/download/ CENKES
 
-MAINTAINER=	131620
+MAINTAINER=	corky1951@comcast.net
 COMMENT=	Ncurses du(1)
 
 GNU_CONFIGURE=	yes
