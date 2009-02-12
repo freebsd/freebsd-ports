@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DateTime-TimeZone
-PORTVERSION=	0.77.01
-DISTVERSION=	${PORTVERSION:C/\.(..)$/\1/}
+PORTVERSION=	0.84
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,7 +24,7 @@ MAN3=		DateTime::TimeZone.3 DateTime::TimeZone::Floating.3 \
 		DateTime::TimeZone::Local.3 DateTime::TimeZone::Local::Unix.3 \
    		DateTime::TimeZone::Local::VMS.3 DateTime::TimeZone::Local::Win32.3 \
 	  	DateTime::TimeZone::OffsetOnly.3 DateTime::TimeZone::OlsonDB.3 \
-		DateTime::TimeZone::UTC.3 DateTime::TimeZoneCatalog.3
+		DateTime::TimeZone::UTC.3 DateTime::TimeZone::Catalog.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
