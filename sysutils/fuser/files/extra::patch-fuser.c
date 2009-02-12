@@ -1,5 +1,5 @@
---- fuser.c.orig	2009-02-13 02:11:34.000000000 +0300
-+++ fuser.c	2009-02-13 02:19:21.000000000 +0300
+--- fuser.c.orig	2006-03-14 14:07:08.000000000 +0300
++++ fuser.c	2009-02-13 02:33:58.000000000 +0300
 @@ -65,6 +65,7 @@
   */
  
@@ -21,12 +21,25 @@
  #include <fs/devfs/devfs.h>
  #include <fs/devfs/devfs_int.h>
  #undef _KERNEL
-@@ -729,7 +731,7 @@
- 		return -1;
- 	}
+@@ -717,19 +719,12 @@
+  */
+ dev_t
+ dev2udev(dev)
+-	const struct cdev	*dev;
++	struct cdev	*dev;
+ {
+-	struct cdev		dv;
+ 	struct cdev_priv	priv;
+ 	int			ret;
  
+-	ret = KVM_READ(kd, dev, &dv, sizeof(struct cdev));
+-	if (ret != sizeof(struct cdev)) {
+-		warnx("can't read cdev at %p\n", dev);
+-		return -1;
+-	}
+-
 -	ret = KVM_READ(kd, dv.si_priv, &priv, sizeof(priv));
-+	ret = KVM_READ(kd, cdev2priv(&dv), &priv, sizeof(priv));
++	ret = KVM_READ(kd, cdev2priv(dev), &priv, sizeof(priv));
  	if (ret != sizeof(priv)) {
  		warnx("can't read priv at %p\n", dev);
  		return -1;

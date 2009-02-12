@@ -7,6 +7,7 @@
 
 PORTNAME=	fuser
 PORTVERSION=	1142334561
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 
@@ -24,7 +25,8 @@ PLIST_FILES=	bin/fuser
 .include <bsd.port.pre.mk>
 
 .if (${OSVERSION} > 800000)
-EXTRA_PATCHES+=	${FILESDIR}/extra::patch-fuser.c
+EXTRA_PATCHES+=	${FILESDIR}/extra::patch-fuser.c \
+		${FILESDIR}/extra::patch-fuser.h
 .endif
 
 do-install:
