@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dev.yorhel.nl/download/ CENKES
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	131620
 COMMENT=	Ncurses du(1)
 
 GNU_CONFIGURE=	yes
