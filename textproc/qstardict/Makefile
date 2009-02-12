@@ -6,23 +6,20 @@
 #
 
 PORTNAME=	qstardict
-PORTVERSION=	0.12.9
+PORTVERSION=	0.13.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://qstardict.ylsoftware.com/files/ \
-		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
+MASTER_SITES=	http://qstardict.ylsoftware.com/files/
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A StarDict clone written with using Qt4
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui network xml qmake_build uic_build moc_build rcc_build
-QMAKE_ARGS+=	 -recursive SEPARATE_TRANSLATIONS=1
+QMAKE_ARGS+=	-recursive
 USE_DOS2UNIX=	qstardict.pri
 
-DICPATH=	${PREFIX}/share/stardict/dic
-
-PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README THANKS
+DICPATH=	${LOCALBASE}/share/stardict/dic
 
 OPTIONS=	DBUS "Enable D-BUS support" on
 
@@ -44,8 +41,10 @@ LIB_DEPENDS+=	QtDBus.4:${PORTSDIR}/devel/dbus-qt4
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr|${PREFIX}|g" \
 		${WRKSRC}/qstardict.pri
+.if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e "/^INSTALLS/s|docs||g" \
 		${WRKSRC}/qstardict.pro
+.endif
 	@${REINPLACE_CMD} -e "s|/usr/share/stardict/dic|${DICPATH}|g" \
 		${WRKSRC}/plugins/stardict/stardict.cpp
 
@@ -57,12 +56,6 @@ post-configure:
 		's|^CC .*|CC=${CC}|; s|^CXX .*|CXX=${CXX}|; s|^LINK .*|LINK=${CXX}|'
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
