@@ -7,7 +7,7 @@
 
 PORTNAME=	kqemu
 PORTVERSION=	1.3.0.p11
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://bellard.org/qemu/ \
 		http://qemu.org/ \
