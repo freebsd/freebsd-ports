@@ -15,8 +15,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Dictionary/spellchecking framework
 
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
-
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
@@ -28,15 +26,9 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		enchant.1
 
-.ifndef(WITHOUT_ASPELL)
-LIB_DEPENDS+=	pspell.16:${PORTSDIR}/textproc/aspell
-CONFIGURE_ARGS+=--enable-aspell \
-		--with-aspell-prefix=${LOCALBASE}
-PLIST_SUB+=	ASPELL=""
-.else
-CONFIGURE_ARGS+=--disable-aspell
-PLIST_SUB+=	ASPELL="@comment "
-.endif
+OPTIONS=	ASPELL "Enable aspell support" on \
+		ZEMBEREK "Enable zemberek backend (requires DBUS)" off
+		
 
 .include <bsd.port.pre.mk>
 
@@ -54,17 +46,23 @@ PLIST_SUB+=	ASPELL="@comment "
 #PLIST_SUB+=	HSPELL="@comment "
 #.endif
 
-pre-everything::
-.if !defined(WITHOUT_ASPELL) || !defined(WITH_HSPELL)
-	@${ECHO_CMD} '===> The following options are available for this port:'
-.if !defined(WITHOUT_ASPELL)
-	@${ECHO_CMD} '===>'
-	@${ECHO_CMD} '===> Define WITHOUT_ASPELL to disable aspell support'
+.ifndef(WITHOUT_ASPELL)
+LIB_DEPENDS+=	pspell.16:${PORTSDIR}/textproc/aspell
+CONFIGURE_ARGS+=--enable-aspell \
+		--with-aspell-prefix=${LOCALBASE}
+PLIST_SUB+=	ASPELL=""
+.else
+CONFIGURE_ARGS+=--disable-aspell
+PLIST_SUB+=	ASPELL="@comment "
 .endif
-#.if !defined(WITH_HSPELL)
-#	@${ECHO_CMD} '===>'
-#	@${ECHO_CMD} '===> Define WITH_HSPELL to enable hspell (Hebrew) support'
-#.endif
+
+.if defined(WITH_ZEMBEREK) && !defined(WITHOUT_DBUS)
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+CONFIGURE_ARGS+=	--enable-zemberek
+PLIST_SUB+=	ZEMBEREK=""
+.else
+PLIST_SUB+=	ZEMBEREK="@comment "
+CONFIGURE_ARGS+=	--disable-zemberek
 .endif
 
 post-patch:
