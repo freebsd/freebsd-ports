@@ -20,7 +20,8 @@ MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSIO
 MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat \
+		${LOCALBASE}/include/X11/xpm.h:${PORTSDIR}/x11/libXpm
 LIB_DEPENDS=	tar.0:${PORTSDIR}/devel/libtar \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
@@ -390,7 +391,7 @@ CONFIGURE_ARGS+=--disable-a52
 .endif
 
 .if defined(WITH_VLC_MOZILLA_PLUGIN) && !defined(WITHOUT_VLC_MOZILLA_PLUGIN)
-USE_GECKO=	firefox mozilla seamonkey nvu
+USE_GECKO=	firefox xulrunner seamonkey
 USE_WEBPLUGINS=	gecko*
 WEBPLUGINS_FILES=libvlcplugin.so
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
