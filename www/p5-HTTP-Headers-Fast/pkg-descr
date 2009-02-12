@@ -1,0 +1,5 @@
+HTTP::Headers::Fast is a perl class for parsing/writing HTTP headers.
+
+The interface is same as HTTP::Headers.
+
+WWW: http://search.cpan.org/dist/HTTP-Headers-Fast/

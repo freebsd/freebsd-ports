@@ -912,6 +912,7 @@
     SUBDIR += p5-HTTP-Engine
     SUBDIR += p5-HTTP-GHTTP
     SUBDIR += p5-HTTP-HeaderParser-XS
+    SUBDIR += p5-HTTP-Headers-Fast
     SUBDIR += p5-HTTP-Lite
     SUBDIR += p5-HTTP-MHTTP
     SUBDIR += p5-HTTP-MobileAgent
