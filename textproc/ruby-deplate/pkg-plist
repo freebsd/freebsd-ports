@@ -1,12 +1,13 @@
 bin/deplate
 %%RUBY_SITELIBDIR%%/deplate.rb
-%%RUBY_SITELIBDIR%%/ps2ppm.rb
 %%RUBY_SITELIBDIR%%/deplate/abstract-class.rb
 %%RUBY_SITELIBDIR%%/deplate/bib.rb
 %%RUBY_SITELIBDIR%%/deplate/builtin.rb
 %%RUBY_SITELIBDIR%%/deplate/cache.rb
 %%RUBY_SITELIBDIR%%/deplate/commands.rb
 %%RUBY_SITELIBDIR%%/deplate/common.rb
+%%RUBY_SITELIBDIR%%/deplate/compat.rb
+%%RUBY_SITELIBDIR%%/deplate/compat/parsedate.rb
 %%RUBY_SITELIBDIR%%/deplate/converter.rb
 %%RUBY_SITELIBDIR%%/deplate/core.rb
 %%RUBY_SITELIBDIR%%/deplate/counters.rb
@@ -14,6 +15,7 @@ bin/deplate
 %%RUBY_SITELIBDIR%%/deplate/deplate-string.rb
 %%RUBY_SITELIBDIR%%/deplate/docbook.rb
 %%RUBY_SITELIBDIR%%/deplate/elements.rb
+%%RUBY_SITELIBDIR%%/deplate/encoding.rb
 %%RUBY_SITELIBDIR%%/deplate/ents/general-latin1.entities
 %%RUBY_SITELIBDIR%%/deplate/ents/general-utf-8.entities
 %%RUBY_SITELIBDIR%%/deplate/etc.rb
@@ -29,6 +31,7 @@ bin/deplate
 %%RUBY_SITELIBDIR%%/deplate/once-method.rb
 %%RUBY_SITELIBDIR%%/deplate/output.rb
 %%RUBY_SITELIBDIR%%/deplate/particles.rb
+%%RUBY_SITELIBDIR%%/deplate/ps2ppm.rb
 %%RUBY_SITELIBDIR%%/deplate/regions.rb
 %%RUBY_SITELIBDIR%%/deplate/skeletons.rb
 %%RUBY_SITELIBDIR%%/deplate/structured.rb
@@ -55,6 +58,7 @@ bin/deplate
 %%RUBY_SITELIBDIR%%/deplate/fmt/php.rb
 %%RUBY_SITELIBDIR%%/deplate/fmt/phpsite.rb
 %%RUBY_SITELIBDIR%%/deplate/fmt/plain.rb
+%%RUBY_SITELIBDIR%%/deplate/fmt/sweave.rb
 %%RUBY_SITELIBDIR%%/deplate/fmt/template.rb
 %%RUBY_SITELIBDIR%%/deplate/fmt/xhtml10t.rb
 %%RUBY_SITELIBDIR%%/deplate/fmt/xhtml11m.rb
@@ -74,6 +78,7 @@ bin/deplate
 %%RUBY_SITELIBDIR%%/deplate/mod/code-gvim71.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/code-highlight.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/colored-log.rb
+%%RUBY_SITELIBDIR%%/deplate/mod/encode.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/endnotes.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/entities-decode.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/entities-encode.rb
@@ -132,6 +137,9 @@ bin/deplate
 %%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/css/presentation_website.css
 %%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/resources/spacer.png
 %%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/templates/presentation.html
+%%RUBY_SITELIBDIR%%/deplate/themes/s5.xhtml/README.TXT
+%%RUBY_SITELIBDIR%%/deplate/themes/s5.xhtml/theme.ini
+%%RUBY_SITELIBDIR%%/deplate/themes/s5.xhtml/templates/s5.xhtml
 %%DATADIR%%/css/article.css
 %%DATADIR%%/css/deplate.css
 %%DATADIR%%/css/doc.css
@@ -188,15 +196,19 @@ bin/deplate
 %%DATADIR%%/templates/html-tabbar-right.html
 %%DATADIR%%/templates/html-tabbar-top.html
 %%DATADIR%%/templates/html-tabbar.html
+@dirrm %%RUBY_SITELIBDIR%%/deplate/compat
 @dirrm %%RUBY_SITELIBDIR%%/deplate/ents
 @dirrm %%RUBY_SITELIBDIR%%/deplate/fmt
 @dirrm %%RUBY_SITELIBDIR%%/deplate/input
 @dirrm %%RUBY_SITELIBDIR%%/deplate/metadata
 @dirrm %%RUBY_SITELIBDIR%%/deplate/mod
+@dirrm %%RUBY_SITELIBDIR%%/deplate/themes/s5.xhtml/templates
+@dirrm %%RUBY_SITELIBDIR%%/deplate/themes/s5.xhtml
 @dirrm %%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/css
 @dirrm %%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/resources
 @dirrm %%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/templates
 @dirrm %%RUBY_SITELIBDIR%%/deplate/themes/presentation.html
+@dirrmtry %%RUBY_SITELIBDIR%%/deplate/themes/navbar-right.html
 @dirrm %%RUBY_SITELIBDIR%%/deplate/themes
 @dirrm %%RUBY_SITELIBDIR%%/deplate
 @dirrm %%DATADIR%%/css
