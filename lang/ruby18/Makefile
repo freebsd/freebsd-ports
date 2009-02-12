@@ -193,7 +193,8 @@ pre-su-install:
 			${RUBY_EXAMPLESDIR}	\
 			${RUBY_RIDIR}		\
 			${RUBY_SITERIDIR}	\
-			${RUBY_SITEARCHLIBDIR}
+			${RUBY_SITEARCHLIBDIR}	\
+			${RUBY_VENDORARCHLIBDIR}
 
 	${SETENV} LC_TIME=C /bin/date > ${RUBY_RIDIR}/created.rid
 	${SETENV} LC_TIME=C /bin/date > ${RUBY_SITERIDIR}/created.rid
@@ -201,6 +202,7 @@ pre-su-install:
 	${TOUCH} ${RUBY_EXAMPLESDIR}/.keep_me
 	${TOUCH} ${RUBY_DOCDIR}/.keep_me
 	${TOUCH} ${RUBY_SITEARCHLIBDIR}/.keep_me
+	${TOUCH} ${RUBY_VENDORARCHLIBDIR}/.keep_me
 
 post-install:
 #
@@ -305,9 +307,13 @@ plist::
 		${SED} -E -e 's,^${RUBY_LIBDIR}(.*),@dirrm %%RUBY_LIBDIR%%\1,' >> pkg-plist
 
 	@${ECHO_CMD} "%%RUBY_SITEARCHLIBDIR%%/.keep_me" >> pkg-plist
+	@${ECHO_CMD} "%%RUBY_VENDORARCHLIBDIR%%/.keep_me" >> pkg-plist
 	@${ECHO_CMD} "@dirrmtry %%RUBY_SITEARCHLIBDIR%%" >> pkg-plist
 	@${ECHO_CMD} "@dirrmtry %%RUBY_SITELIBDIR%%" >> pkg-plist
 	@${ECHO_CMD} "@dirrmtry lib/ruby/site_ruby" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry %%RUBY_VENDORARCHLIBDIR%%" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry %%RUBY_VENDORLIBDIR%%" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry lib/ruby/vendor_ruby" >> pkg-plist
 	@${ECHO_CMD} "@dirrmtry lib/ruby" >> pkg-plist
 
 	@${SED} -i "" -E -e "s,${RUBY_ARCH},%%RUBY_ARCH%%,g" pkg-plist

@@ -29,7 +29,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bigdecimal/bigdecimal_en.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bigdecimal/bigdecimal_ja.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dl/dl.txt
-%%PORTDOCS%%%%RUBY_DOCDIR%%/enumerator/enumerator.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/etc/etc.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/etc/etc.txt.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/forwardable.rd
@@ -53,7 +52,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pty
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/irb
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/etc
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/enumerator
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/dl
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/bigdecimal
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/README
@@ -123,6 +121,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/speeds.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dualstack-fetch.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dualstack-httpd.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/erb/erb4html.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/eval.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/export.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/exyacc.rb
@@ -136,7 +135,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/from.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fullpath.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/getopts.test
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/goodfriday.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/less.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/list.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/list2.rb
@@ -208,6 +206,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/optparse
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/openssl
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/logger
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/erb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/drb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/dl
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/curses
@@ -292,12 +291,10 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/dl.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/dlconfig.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/dln.h
-%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enumerator.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/env.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/etc.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/fcntl.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/intern.h
-%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/largefile.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/io/wait.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/missing.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/nkf.so
@@ -395,6 +392,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/openssl/buffering.rb
 %%RUBY_LIBDIR%%/openssl/cipher.rb
 %%RUBY_LIBDIR%%/openssl/digest.rb
+%%RUBY_LIBDIR%%/openssl/pkcs7.rb
 %%RUBY_LIBDIR%%/openssl/ssl.rb
 %%RUBY_LIBDIR%%/openssl/x509.rb
 %%RUBY_LIBDIR%%/openssl.rb
@@ -494,8 +492,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rexml/encodings/UTF-8.rb
 %%RUBY_LIBDIR%%/rexml/entity.rb
 %%RUBY_LIBDIR%%/rexml/functions.rb
-%%RUBY_LIBDIR%%/rexml/formatters/default.rb                                    
-%%RUBY_LIBDIR%%/rexml/formatters/pretty.rb                                     
+%%RUBY_LIBDIR%%/rexml/formatters/default.rb
+%%RUBY_LIBDIR%%/rexml/formatters/pretty.rb
 %%RUBY_LIBDIR%%/rexml/formatters/transitive.rb
 %%RUBY_LIBDIR%%/rexml/instruction.rb
 %%RUBY_LIBDIR%%/rexml/light/node.rb
@@ -533,17 +531,29 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rss/0.9.rb
 %%RUBY_LIBDIR%%/rss/1.0.rb
 %%RUBY_LIBDIR%%/rss/2.0.rb
+%%RUBY_LIBDIR%%/rss/atom.rb
+%%RUBY_LIBDIR%%/rss/content/1.0.rb
+%%RUBY_LIBDIR%%/rss/content/2.0.rb
 %%RUBY_LIBDIR%%/rss/content.rb
 %%RUBY_LIBDIR%%/rss/converter.rb
+%%RUBY_LIBDIR%%/rss/dublincore/1.0.rb
+%%RUBY_LIBDIR%%/rss/dublincore/2.0.rb
+%%RUBY_LIBDIR%%/rss/dublincore/atom.rb
 %%RUBY_LIBDIR%%/rss/dublincore.rb
 %%RUBY_LIBDIR%%/rss/image.rb
+%%RUBY_LIBDIR%%/rss/itunes.rb
 %%RUBY_LIBDIR%%/rss/maker/0.9.rb
 %%RUBY_LIBDIR%%/rss/maker/1.0.rb
 %%RUBY_LIBDIR%%/rss/maker/2.0.rb
+%%RUBY_LIBDIR%%/rss/maker/atom.rb
 %%RUBY_LIBDIR%%/rss/maker/base.rb
 %%RUBY_LIBDIR%%/rss/maker/content.rb
 %%RUBY_LIBDIR%%/rss/maker/dublincore.rb
+%%RUBY_LIBDIR%%/rss/maker/entry.rb
+%%RUBY_LIBDIR%%/rss/maker/feed.rb
 %%RUBY_LIBDIR%%/rss/maker/image.rb
+%%RUBY_LIBDIR%%/rss/maker/itunes.rb
+%%RUBY_LIBDIR%%/rss/maker/slash.rb
 %%RUBY_LIBDIR%%/rss/maker/syndication.rb
 %%RUBY_LIBDIR%%/rss/maker/taxonomy.rb
 %%RUBY_LIBDIR%%/rss/maker/trackback.rb
@@ -551,11 +561,13 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rss/parser.rb
 %%RUBY_LIBDIR%%/rss/rexmlparser.rb
 %%RUBY_LIBDIR%%/rss/rss.rb
+%%RUBY_LIBDIR%%/rss/slash.rb
 %%RUBY_LIBDIR%%/rss/syndication.rb
 %%RUBY_LIBDIR%%/rss/taxonomy.rb
 %%RUBY_LIBDIR%%/rss/trackback.rb
 %%RUBY_LIBDIR%%/rss/utils.rb
 %%RUBY_LIBDIR%%/rss/xml-stylesheet.rb
+%%RUBY_LIBDIR%%/rss/xml.rb
 %%RUBY_LIBDIR%%/rss/xmlparser.rb
 %%RUBY_LIBDIR%%/rss/xmlscanner.rb
 %%RUBY_LIBDIR%%/rss.rb
@@ -568,6 +580,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/runit/testsuite.rb
 %%RUBY_LIBDIR%%/runit/topublic.rb
 %%RUBY_LIBDIR%%/scanf.rb
+%%RUBY_LIBDIR%%/securerandom.rb
 %%RUBY_LIBDIR%%/set.rb
 %%RUBY_LIBDIR%%/sha1.rb
 %%RUBY_LIBDIR%%/shell/builtin-command.rb
@@ -656,6 +669,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/uri/http.rb
 %%RUBY_LIBDIR%%/uri/https.rb
 %%RUBY_LIBDIR%%/uri/ldap.rb
+%%RUBY_LIBDIR%%/uri/ldaps.rb
 %%RUBY_LIBDIR%%/uri/mailto.rb
 %%RUBY_LIBDIR%%/uri.rb
 %%RUBY_LIBDIR%%/weakref.rb
@@ -835,6 +849,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 @dirrm %%RUBY_LIBDIR%%/runit/cui
 @dirrm %%RUBY_LIBDIR%%/runit
 @dirrm %%RUBY_LIBDIR%%/rss/maker
+@dirrm %%RUBY_LIBDIR%%/rss/dublincore
+@dirrm %%RUBY_LIBDIR%%/rss/content
 @dirrm %%RUBY_LIBDIR%%/rss
 @dirrm %%RUBY_LIBDIR%%/rinda
 @dirrm %%RUBY_LIBDIR%%/rexml/validation
@@ -880,7 +896,11 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 @dirrm %%RUBY_LIBDIR%%/bigdecimal
 @dirrm %%RUBY_LIBDIR%%/
 %%RUBY_SITEARCHLIBDIR%%/.keep_me
+%%RUBY_VENDORARCHLIBDIR%%/.keep_me
 @dirrmtry %%RUBY_SITEARCHLIBDIR%%
 @dirrmtry %%RUBY_SITELIBDIR%%
 @dirrmtry lib/ruby/site_ruby
+@dirrmtry %%RUBY_VENDORARCHLIBDIR%%
+@dirrmtry %%RUBY_VENDORLIBDIR%%
+@dirrmtry lib/ruby/vendor_ruby
 @dirrmtry lib/ruby
