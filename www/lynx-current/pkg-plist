@@ -140,3 +140,5 @@ share/lynx_help/lynx_url_support.html.gz
 @dirrm share/lynx_help
 %%NLS%%@dirrmtry share/locale/id/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/id
+%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi
