@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	haxml
-PORTVERSION=	1.19.4
+PORTVERSION=	1.19.6
 CATEGORIES=	textproc haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/HaXml/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
 RUN_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
 		hs-polyparse-ghc>=1.1:${PORTSDIR}/textproc/hs-polyparse-ghc
 
-CONFIGURE_ARGS= --ghc --prefix=${PREFIX}
+CONFIGURE_ARGS=	--ghc --prefix=${PREFIX}
 
 GHC_VERSION=	6.8.3
 PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} \

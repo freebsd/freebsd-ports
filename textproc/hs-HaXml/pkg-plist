@@ -13,6 +13,8 @@ bin/XtractLazy
 %%SUBDIR%%/Text/XML/HaXml/Html/Parse.hi
 %%SUBDIR%%/Text/XML/HaXml/Html/ParseLazy.hi
 %%SUBDIR%%/Text/XML/HaXml/Html/Pretty.hi
+%%SUBDIR%%/Text/XML/HaXml/XmlContent/Parser.hi
+%%SUBDIR%%/Text/XML/HaXml/XmlContent/Haskell.hi
 %%SUBDIR%%/Text/XML/HaXml/Xtract/Combinators.hi
 %%SUBDIR%%/Text/XML/HaXml/Xtract/Lex.hi
 %%SUBDIR%%/Text/XML/HaXml/Xtract/Parse.hi
@@ -39,6 +41,7 @@ bin/XtractLazy
 %%SUBDIR%%/libHSHaXml-%%PORTVERSION%%.a
 @dirrm %%SUBDIR%%/Text/XML/HaXml/DtdToHaskell
 @dirrm %%SUBDIR%%/Text/XML/HaXml/Html
+@dirrm %%SUBDIR%%/Text/XML/HaXml/XmlContent
 @dirrm %%SUBDIR%%/Text/XML/HaXml/Xtract
 @dirrm %%SUBDIR%%/Text/XML/HaXml
 @dirrmtry %%SUBDIR%%/Text/XML
