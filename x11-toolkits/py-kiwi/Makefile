@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kiwi
-PORTVERSION=	1.9.22
+PORTVERSION=	1.9.24
 #PORTREVISION=	0
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://download.gnome.org/sources/${PORTNAME}/1.9/ \
@@ -31,18 +31,16 @@ FETCH_ARGS=	-rRp
 
 post-install:
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/doc && \
-	${COPYTREE_SHARE} . ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
-	cd ${WRKSRC}/examples && \
-	${COPYTREE_SHARE} . ${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if defined (WITH_ZOPEINTERFACE)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}zopeInterface>=3.3.0:${PORTSDIR}/www/py-zopeInterface
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}zopeInterface>=3.3.0:${PORTSDIR}/devel/py-zopeInterface
 .endif
 
 .if defined (WITH_PYGOBJECT)
