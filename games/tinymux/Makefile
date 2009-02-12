@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	tinymux
-PORTVERSION=	2.3.5.${PATCHLEVEL}
-PORTREVISION=	1
+PORTVERSION=	2.6.5.${PATCHLEVEL}
 CATEGORIES=	games net
-MASTER_SITES=	ftp://ftp.tinymux.org/TinyMUX/tinymux-2.3/${PATCHLEVEL}/ \
-		http://www.tinymux.org/ \
-		http://www.moosh.net/pub/mush/servers/tinymux/TinyMUX-2.x/tinymux-2.3/${PATCHLEVEL}/
+MASTER_SITES=	ftp://ftp.tinymux.org/TinyMUX/tinymux-2.6/${PATCHLEVEL}/ \
+		http://www.tinymux.org/
 DISTNAME=	mux-${PORTVERSION}.unix
 
 MAINTAINER=	ports@FreeBSD.org
@@ -23,8 +21,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-PATCHLEVEL=	26
-WRKSRC=		${WRKDIR}/mux2.3/src
+PATCHLEVEL=	30
+WRKSRC=		${WRKDIR}/mux2.6/src
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
@@ -66,7 +64,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../${file} ${DOCSDIR}
 .endfor
 .for file in BACKUPS CONFIGURATION CONVERSION CREDITS DISTRIBUTIONS GUESTS \
-	LIMITS MEMORY PATCHES REALMS muxman.pdf
+	LIMITS MEMORY PATCHES REALMS
 	${INSTALL_DATA} ${WRKSRC}/../docs/${file} ${DOCSDIR}
 .endfor
 .endif
