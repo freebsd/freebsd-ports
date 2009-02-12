@@ -136,7 +136,6 @@ lib/ImageMagick-%%PORTVERSION%%/config/francais.xml
 lib/ImageMagick-%%PORTVERSION%%/config/locale.xml
 lib/ImageMagick-%%PORTVERSION%%/config/type.xml
 lib/ImageMagick-%%PORTVERSION%%/config/type-ghostscript.xml
-lib/ImageMagick-%%PORTVERSION%%/config/type-solaris.xml
 lib/ImageMagick-%%PORTVERSION%%/config/type-windows.xml
 lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/.keep
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/art.a
