@@ -36,6 +36,8 @@ _RUBY_SYSLIBDIR=	${PREFIX}/lib
 
 .ifdef(WITH_OPENSSL_PORT)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ext_openssl_openssl_missing.h
+.else
+WITH_OPENSSL_BASE=	yes	# prefer base openssl
 .endif
 
 OPTIONS=	PTHREADS "Enable pthreads support (may break some apps)" off \
@@ -126,7 +128,6 @@ EXTSAMPLES=	bigdecimal/sample/*.rb	\
 
 EXTDOCS=	bigdecimal/bigdecimal_*.html	\
 		dl/doc/dl.txt			\
-		enumerator/enumerator.txt	\
 		etc/etc.txt*			\
 		pty/README*			\
 		readline/README*		\
@@ -313,5 +314,11 @@ plist::
 
 test:
 	@(cd ${WRKSRC}; ${MAKE} test)
+
+validate::
+	@${MKDIR} ${WRKSRC}/rubyspec
+	(cd ${WRKSRC}/rubyspec && git clone git://github.com/rubyspec/rubyspec.git)
+	(cd ${WRKSRC}/rubyspec && git clone git://github.com/rubyspec/mspec.git)
+	(cd ${WRKSRC}/rubyspec/rubyspec && env PATH=${WRKSRC}/rubyspec/mspec/bin:${PATH} mspec -t ${PREFIX}/bin/ruby${RUBY_SUFFIX})
 
 .include <bsd.port.post.mk>
