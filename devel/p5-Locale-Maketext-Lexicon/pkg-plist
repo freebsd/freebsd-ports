@@ -1,6 +1,15 @@
 @comment $FreeBSD$
 bin/xgettext.pl
 %%SITE_PERL%%/Locale/Maketext/Extract.pm
+%%SITE_PERL%%/Locale/Maketext/Extract/Plugin/Base.pm
+%%SITE_PERL%%/Locale/Maketext/Extract/Plugin/FormFu.pm
+%%SITE_PERL%%/Locale/Maketext/Extract/Plugin/Generic.pm
+%%SITE_PERL%%/Locale/Maketext/Extract/Plugin/Mason.pm
+%%SITE_PERL%%/Locale/Maketext/Extract/Plugin/PPI.pm
+%%SITE_PERL%%/Locale/Maketext/Extract/Plugin/Perl.pm
+%%SITE_PERL%%/Locale/Maketext/Extract/Plugin/TT2.pm
+%%SITE_PERL%%/Locale/Maketext/Extract/Plugin/TextTemplate.pm
+%%SITE_PERL%%/Locale/Maketext/Extract/Plugin/YAML.pm
 %%SITE_PERL%%/Locale/Maketext/Extract/Run.pm
 %%SITE_PERL%%/Locale/Maketext/Lexicon.pm
 %%SITE_PERL%%/Locale/Maketext/Lexicon/Auto.pm
@@ -12,6 +21,7 @@ bin/xgettext.pl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Maketext
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale
 @dirrm %%SITE_PERL%%/Locale/Maketext/Lexicon
+@dirrmtry %%SITE_PERL%%/Locale/Maketext/Extract/Plugin
 @dirrmtry %%SITE_PERL%%/Locale/Maketext/Extract
 @dirrmtry %%SITE_PERL%%/Locale/Maketext
 @dirrmtry %%SITE_PERL%%/Locale

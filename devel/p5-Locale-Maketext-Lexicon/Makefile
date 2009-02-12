@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Locale-Maketext-Lexicon
-PORTVERSION=	0.66
+PORTVERSION=	0.77
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +20,15 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	YES
 
 MAN3=		Locale::Maketext::Extract.3 \
+		Locale::Maketext::Extract::Plugin::Base.3 \
+		Locale::Maketext::Extract::Plugin::FormFu.3 \
+		Locale::Maketext::Extract::Plugin::Generic.3 \
+		Locale::Maketext::Extract::Plugin::Mason.3 \
+		Locale::Maketext::Extract::Plugin::PPI.3 \
+		Locale::Maketext::Extract::Plugin::Perl.3 \
+		Locale::Maketext::Extract::Plugin::TT2.3 \
+		Locale::Maketext::Extract::Plugin::TextTemplate.3 \
+		Locale::Maketext::Extract::Plugin::YAML.3 \
 		Locale::Maketext::Extract::Run.3 \
 		Locale::Maketext::Lexicon::Auto.3 \
 		Locale::Maketext::Lexicon::Gettext.3 \
