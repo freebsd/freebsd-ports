@@ -7,7 +7,7 @@
 
 PORTNAME=	freebsd
 PORTVERSION=	0.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~perky/distfiles/
@@ -32,7 +32,9 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/freebsd.so \
 .if ${OSVERSION} >= 700000
 EXTRA_PATCHES+=	${FILESDIR}/freebsd7_patch-src-netstat.c
 .endif
-.if ${OSVERSION} >= 800056
+# Multi-IPv4/v6/no-IP jails.
+.if ${OSVERSION} >= 800056 || \
+    (${OSVERSION} < 800000 && ${OSVERSION} >= 701103)
 EXTRA_PATCHES+=	${FILESDIR}/freebsd8_patch-src-jail.c
 .endif
 
