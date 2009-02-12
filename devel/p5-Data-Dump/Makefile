@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Dump
-PORTVERSION=	1.08
+PORTVERSION=	1.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	Pretty printing of data structures
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Data::Dump.3
+MAN3=		Data::Dump.3 Data::Dump::Trace.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
