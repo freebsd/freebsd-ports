@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	qgis
-PORTVERSION=	0.11.0
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/qgis/src/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	Geographical Information System (GIS) data viewer
 
 LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
