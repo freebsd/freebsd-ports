@@ -11,7 +11,7 @@ CATEGORIES=	dns python
 MASTER_SITES=	http://www.dnspython.org/kits/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	greenwood.andy@gmail.com
 COMMENT=	A DNS toolkit for Python
 
 USE_PYTHON=		yes
