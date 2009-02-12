@@ -92,12 +92,12 @@ etc/lynx.lss
 %%NLS%%share/locale/et/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/lynx.mo
+%%NLS%%share/locale/id/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/it/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/lynx.mo
-%%NLS%%share/locale/rw/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/lynx.mo
@@ -137,5 +137,5 @@ share/lynx_help/lynx_url_support.html.gz
 @dirrm %%DOCSDIR%%
 @dirrm share/lynx_help/keystrokes
 @dirrm share/lynx_help
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw
+%%NLS%%@dirrmtry share/locale/id/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/id
