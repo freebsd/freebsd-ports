@@ -63,6 +63,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Argentina/La_Rioja.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Mendoza.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Rio_Gallegos.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Salta.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Argentina/San_Juan.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Argentina/San_Luis.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Tucuman.pm
@@ -163,6 +164,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Regina.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Resolute.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Rio_Branco.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Santarem.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Santiago.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Santo_Domingo.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Sao_Paulo.pm
@@ -228,7 +230,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Kamchatka.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Karachi.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Kashgar.pm
-%%SITE_PERL%%/DateTime/TimeZone/Asia/Katmandu.pm
+%%SITE_PERL%%/DateTime/TimeZone/Asia/Kathmandu.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Kolkata.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Krasnoyarsk.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Kuala_Lumpur.pm
@@ -290,7 +292,10 @@
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Melbourne.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Perth.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Sydney.pm
+%%SITE_PERL%%/DateTime/TimeZone/CET.pm
 %%SITE_PERL%%/DateTime/TimeZone/CST6CDT.pm
+%%SITE_PERL%%/DateTime/TimeZone/Catalog.pm
+%%SITE_PERL%%/DateTime/TimeZone/EET.pm
 %%SITE_PERL%%/DateTime/TimeZone/EST.pm
 %%SITE_PERL%%/DateTime/TimeZone/EST5EDT.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Amsterdam.pm
@@ -351,8 +356,9 @@
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Reunion.pm
 %%SITE_PERL%%/DateTime/TimeZone/Local.pm
 %%SITE_PERL%%/DateTime/TimeZone/Local/Unix.pm
-%%SITE_PERL%%/DateTime/TimeZone/Local/Win32.pm
 %%SITE_PERL%%/DateTime/TimeZone/Local/VMS.pm
+%%SITE_PERL%%/DateTime/TimeZone/Local/Win32.pm
+%%SITE_PERL%%/DateTime/TimeZone/MET.pm
 %%SITE_PERL%%/DateTime/TimeZone/MST.pm
 %%SITE_PERL%%/DateTime/TimeZone/MST7MDT.pm
 %%SITE_PERL%%/DateTime/TimeZone/OffsetOnly.pm
@@ -397,7 +403,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Wake.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Wallis.pm
 %%SITE_PERL%%/DateTime/TimeZone/UTC.pm
-%%SITE_PERL%%/DateTime/TimeZoneCatalog.pm
+%%SITE_PERL%%/DateTime/TimeZone/WET.pm
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/Pacific
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/Local
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/Indian
