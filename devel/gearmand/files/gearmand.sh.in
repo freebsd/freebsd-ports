@@ -13,11 +13,9 @@ command="%%PREFIX%%/bin/gearmand"
 
 load_rc_config "$name"
 : ${gearmand_enable="NO"}
-: ${gearmand_flags="-p 4730 -v"}
+: ${gearmand_flags="-d -v"}
 : ${gearmand_group="daemon"}
 : ${gearmand_user="daemon"}
-
-command_args="&"
 
 run_rc_command "$1"
 
