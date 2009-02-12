@@ -7,7 +7,7 @@
 
 PORTNAME=	monitor-core
 PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils net parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ganglia
@@ -88,7 +88,8 @@ MAN5=		gmond.conf.5
 
 CONF_DIR=	${PREFIX}/etc
 
-FIX_CONF_FILES=	ganglia.pod \
+FIX_CONF_FILES=	README \
+		ganglia.pod \
 		mans/gmetad.1 \
 		mans/gmond.1 \
 		gmetad/cmdline.c \
@@ -102,13 +103,16 @@ FIX_DB_FILES=	ganglia.pod \
 		gmetad/conf.c \
 		gmetad/gmetad.conf
 FIX_USER_FILES=	ganglia.pod \
+		gmetad/conf.c.in \
 		gmetad/conf.c \
 		gmetad/gmetad.conf \
+		gmetad/gmetad.conf.in \
 		gmond/conf.pod \
 		gmond/gmond.conf.5 \
 		gmond/gmond.conf.html \
 		gmond/g25_config.c \
-		lib/libgmond.c
+		lib/libgmond.c \
+		lib/default_conf.h.in
 
 MODULES=	modcpu.so \
 		moddisk.so \
@@ -121,7 +125,7 @@ MODULES=	modcpu.so \
 		modsys.so
 
 post-patch:
-	${REINPLACE_CMD} -e "s|/etc/\(gm[a-z]*d.conf\)|${PREFIX}/etc/\1|g" \
+	${REINPLACE_CMD} -e "s|/etc/ganglia/\(gm[a-z]*d.conf\)|${PREFIX}/etc/\1|g" \
 	    ${FIX_CONF_FILES:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e "s|/var/lib/ganglia|/var/db/ganglia|g" \
 	    ${FIX_DB_FILES:S|^|${WRKSRC}/|}
