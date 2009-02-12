@@ -39,7 +39,24 @@ $FreeBSD$
  static struct oh323_ep *find_oh323_ep(char *epname, char *host, char *user);
  void oh323_atexit(void);
  unsigned int generate_uid(void);
-@@ -4110,7 +4114,7 @@
+@@ -1595,6 +1599,8 @@
+ 			ast_log(LOG_DEBUG, "%s: Call progress.\n", c->name);
+ 		p->fr.frametype = AST_FRAME_CONTROL;
+ 		p->fr.subclass = AST_CONTROL_PROGRESS;
++/* The code below is broken with asterisk 1.4.23.1 */
++#if 0
+ 	/* -- Call transfer */
+ 	} else if (e->type == OH323EXC_CALL_TRANSFER) {
+ 		/* XXX Asterisk MUST read first the frame returned by this exception
+@@ -1608,6 +1614,7 @@
+ 			memcpy(c->dtmfq, e->data, strlen(e->data));
+ 			write(p->event_pipe[1], notify_buf, 1);
+ 		}
++#endif
+ 	/* -- Call establishment notification */
+ 	} else if (e->type == OH323EXC_CALL_ESTABLISHED) {
+ 		memset(p->rtp.local_addr, 0, sizeof(p->rtp.local_addr));
+@@ -4110,7 +4117,7 @@
  /******************************************************************************/
  /* Monitoring thread and queue call-back functions ****************************/
  
@@ -48,7 +65,7 @@ $FreeBSD$
  {
  	struct request_oh323 *e;
  	int res, i;
-@@ -4217,7 +4221,7 @@
+@@ -4217,7 +4224,7 @@
  	return(0);
  }
  
@@ -57,7 +74,7 @@ $FreeBSD$
  {
  	struct chan_oh323_pvt *pvt = (struct chan_oh323_pvt *)data;
  	int index;
-@@ -4240,7 +4244,7 @@
+@@ -4240,7 +4247,7 @@
  	return(0);
  }
  
@@ -66,7 +83,7 @@ $FreeBSD$
  {
  	char gkname[256];
  
-@@ -4443,7 +4447,7 @@
+@@ -4443,7 +4450,7 @@
  				return(-1);
  			}
  		}
