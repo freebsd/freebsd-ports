@@ -13,9 +13,11 @@ include/gm_metric.h
 include/gm_msg.h
 include/gm_protocol.h
 include/gm_value.h
+lib/libganglia-3.1.1.so
 lib/libganglia-3.1.1.so.0
 lib/libganglia.a
 lib/libganglia.la
+lib/libganglia.so
 lib/ganglia/modcpu.so
 lib/ganglia/moddisk.so
 lib/ganglia/modload.so
@@ -28,5 +30,6 @@ lib/ganglia/modsys.so
 %%GMETAD%%sbin/gmetad
 %%GMETAD%%sbin/gmetasnap
 sbin/gmond
+@dirrm lib/ganglia
 @dirrmtry var/db/ganglia/rrds
 @dirrmtry var/db/ganglia
