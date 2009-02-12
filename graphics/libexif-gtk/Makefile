@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libexif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marius@nuenneri.ch
 COMMENT=	GTK+ widgets to display/edit EXIF tags
 
 LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif

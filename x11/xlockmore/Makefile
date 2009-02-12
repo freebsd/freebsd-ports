@@ -12,7 +12,7 @@ CATEGORIES?=	x11
 MASTER_SITES=	ftp://ibiblio.org/pub/Linux/X11/screensavers/ \
 		CRITICAL
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	marius@nuenneri.ch
 COMMENT=	Like XLock session locker/screen saver, but just more
 
 USE_BZIP2=	yes
