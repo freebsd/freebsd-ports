@@ -260,6 +260,10 @@ pre-install: build
 		${SED} -e 's|^|lib/|' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm lib/|' >> ${PLIST}
+	cd ${FAKEDIR}/libdata && ${FIND} -s * -type f -o -type l| \
+		${SED} -e 's|^|libdata/|' >> ${PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's|^|@dirrm libdata/|' >> ${PLIST}
 .for dir in vlc
 	cd ${FAKEDIR}/share/${dir} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/${dir}/|' >> ${PLIST} \
@@ -296,6 +300,8 @@ do-install:
 		${CPIO} -vpdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include
 	cd ${FAKEDIR}/lib && ${FIND} . | \
 		${CPIO} -vpdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib
+	cd ${FAKEDIR}/libdata && ${FIND} . | \
+		${CPIO} -vpdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/libdata
 	cd ${FAKEDIR}/share && ${FIND} . | \
 		${CPIO} -vpdm -L -R ${SHAREOWN} ${PREFIX}/share
 .if defined(WITH_VLC_MOZILLA_PLUGIN) && !defined(WITHOUT_VLC_MOZILLA_PLUGIN)
