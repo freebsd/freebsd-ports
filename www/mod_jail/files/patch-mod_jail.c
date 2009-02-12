@@ -4,7 +4,7 @@
      p_jail_cfg_t cfg = (p_jail_cfg_t) ap_pcalloc(p, sizeof(jail_cfg_t));
  
      cfg->jail_scrlevel = 3; /* good default value */
-+#if __FreeBSD_version < 800056
++#if ((__FreeBSD_version >= 800000 && __FreeBSD_version < 800056) || __FreeBSD_version < 701103)
      cfg->jail.version = 0;
 +#else
 +    cfg->jail.version = JAIL_API_VERSION;
@@ -16,7 +16,7 @@
      if (!inet_aton(arg, &in)) {
  	return "could not make sense of jail ip address";
      }
-+#if __FreeBSD_version < 800056
++#if ((__FreeBSD_version >= 800000 && __FreeBSD_version < 800056) || __FreeBSD_version < 701103)
      cfg->jail.ip_number = ntohl(in.s_addr);
 +#else
 +    cfg->jail.ip4s = 1;
@@ -30,7 +30,7 @@
  	return NULL;
      }
      cfg->jail_scrlevel = 3; /* good default value */
-+#if __FreeBSD_version < 800056
++#if ((__FreeBSD_version >= 800000 && __FreeBSD_version < 800056) || __FreeBSD_version < 701103)
      cfg->jail.version = 0;
 +#else
 +    cfg->jail.version = JAIL_API_VERSION;
@@ -42,7 +42,7 @@
      if (!inet_aton(arg, &in)) {
  	return "could not make sense of jail ip address";
      }
-+#if __FreeBSD_version < 800056
++#if ((__FreeBSD_version >= 800000 && __FreeBSD_version < 800056) || __FreeBSD_version < 701103)
      cfg->jail.ip_number = ntohl(in.s_addr);
 +#else
 +    cfg->jail.ip4s = 1;
