@@ -1,0 +1,31 @@
+
+To enable dma please edit /etc/mail/mailer.conf to replace all lines
+referring to another MTA with the following:
+
+sendmail	%%PREFIX%%/libexec/dma
+send-mail	%%PREFIX%%/libexec/dma
+
+If you need sendmail -t compatibility, e.g. for send-pr(1), you may use the
+ruby wrapper script instead (make sure to install lang/ruby as well):
+
+sendmail	%%PREFIX%%/libexec/dma.rb
+send-mail	%%PREFIX%%/libexec/dma.rb
+
+Note that the ruby wrapper only supports a subset of what is considered valid
+email address syntax by the relevant RFCs.
+
+If you not need sendmail anymore, please add in your rc.conf:
+
+sendmail_enable="NO"
+sendmail_submit_enable="NO"
+sendmail_outbound_enable="NO"
+sendmail_msp_queue_enable="NO"
+
+And you can disable some sendmail specific daily maintenance routines in your
+/etc/periodic.conf file:
+
+daily_clean_hoststat_enable="NO"
+daily_status_mail_rejects_enable="NO"
+daily_status_include_submit_mailq="NO"
+daily_submit_queuerun="NO"
+

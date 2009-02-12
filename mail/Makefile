@@ -90,6 +90,7 @@
     SUBDIR += dkim-milter
     SUBDIR += dkimap4
     SUBDIR += dkimproxy
+    SUBDIR += dma
     SUBDIR += dovecot
     SUBDIR += dovecot-antispam
     SUBDIR += dovecot-devel

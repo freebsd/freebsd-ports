@@ -1,0 +1,14 @@
+libexec/dma
+libexec/dma.rb
+@unexec if cmp -s %D/etc/dma/dma.conf.sample %D/etc/dma/dma.conf; then rm -f %D/etc/dma/dma.conf; fi
+etc/dma/dma.conf.sample
+@exec if [ ! -f %B/dma.conf ] ; then cp -p %B/%f %B/dma.conf; fi
+@unexec if cmp -s %D/etc/dma/auth.conf.sample %D/etc/dma/auth.conf; then rm -f %D/etc/dma/auth.conf; fi
+etc/dma/auth.conf.sample
+@exec if [ ! -f %B/auth.conf ] ; then cp -p %B/%f %B/auth.conf; fi
+@unexec if cmp -s %D/etc/dma/virtusertable.sample %D/etc/dma/virtusertable; then rm -f %D/etc/dma/virtusertable; fi
+etc/dma/virtusertable.sample
+@exec if [ ! -f %B/virtusertable ] ; then cp -p %B/%f %B/virtusertable; fi
+@dirrmtry etc/dma
+@exec install -d -o root -g mail -m 770 /var/spool/dma
+@unexec rmdir /var/spool/dma 2>/dev/null || true
