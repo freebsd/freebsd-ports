@@ -45,6 +45,7 @@ FAAC			FAAC AAC and MP4 audio encoder support
 FAAD			FAAD AAC and MP4 audio decoder support
 FIREBIRD		Firebird (Interbase) database support
 FLAC			Flac audio support
+GCONF			Use gconf/gconf2
 GHC			Prefer/use Glasgow Haskell Compiler
 GNOME			Adds GNOME support
 GNUTLS			Adds GnuTLS support
@@ -55,6 +56,7 @@ GSSAPI			GSSAPI (Kerberos) support
 GSTREAMER		Gstreamer multimedia support
 GTK1			Adds Gtk+1 support
 GTK2			Adds Gtk+2 support
+HAL			Adds support for HAL
 IMAGEMAGICK		ImageMagick graphics support
 IMAP			Adds support for IMAP mail protocol
 IODBC			Use IODBC as the ODBC driver
