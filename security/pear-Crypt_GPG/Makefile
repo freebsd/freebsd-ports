@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt_GPG
-PORTVERSION=	0.7.1
+PORTVERSION=	1.0.0
 CATEGORIES=	security www pear
 
 MAINTAINER=	miwi@FreeBSD.org
