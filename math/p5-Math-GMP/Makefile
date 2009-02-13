@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Math-GMP
-PORTVERSION=	2.04
-PORTREVISION=	1
+PORTVERSION=	2.05
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +22,7 @@ MAN3=		Math::GMP.3
 
 post-patch:
 	@${PERL} -pi -e "s!-lgmp!-L${LOCALBASE}/lib $$&!;" \
-		     -e "if (/LIBS/) { print qq!'INC' => '-I${LOCALBASE}/include',!; }" \
+		     -e "if (/'LIBS'/) { print qq!'INC' => '-I${LOCALBASE}/include',!; }" \
 		${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
