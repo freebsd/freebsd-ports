@@ -1573,6 +1573,7 @@
     SUBDIR += p5-MooseX-Types-Path-Class
     SUBDIR += p5-Mouse
     SUBDIR += p5-MouseX-Getopt
+    SUBDIR += p5-MouseX-Types
     SUBDIR += p5-NEXT
     SUBDIR += p5-Net-DBus
     SUBDIR += p5-Number-Bytes-Human

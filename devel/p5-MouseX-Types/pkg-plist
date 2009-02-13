@@ -1,0 +1,8 @@
+%%SITE_PERL%%/MouseX/Types/TypeDecorator.pm
+%%SITE_PERL%%/MouseX/Types/Mouse.pm
+%%SITE_PERL%%/MouseX/Types.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/Types/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/Types
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX
+@dirrmtry %%SITE_PERL%%/MouseX/Types
+@dirrmtry %%SITE_PERL%%/MouseX
