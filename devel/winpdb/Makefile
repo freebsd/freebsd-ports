@@ -7,24 +7,20 @@
 #
 
 PORTNAME=	winpdb
-PORTVERSION=	1.0.8
-PORTREVISION=	2
+PORTVERSION=	1.4.4
 CATEGORIES=	devel python
-MASTER_SITES=	SF
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITE_SUBDIR=	winpdb
 
-MAINTAINER=	python@FreeBSD.org
+MAINTAINER=	mva@Fsysfault.org
 COMMENT=	An advanced Python debugger
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_WX=		2.6
+USE_WX=		2.6+
 WX_COMPS=	python
-
-post-install:
-.for file in rpdb2 winpdb
-	@${MV} -f ${PREFIX}/bin/_${file}.py ${PREFIX}/bin/${file}
-.endfor
+WANT_UNICODE=	yes
 
 .include <bsd.port.mk>
