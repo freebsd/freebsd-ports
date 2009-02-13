@@ -6,16 +6,16 @@
 ### Scalar::Util     1.18                 core
 ### Text::ParseWords 3.24                 core
 
-CLI_DEPS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
+CLI_DEPS=	p5-Term-ReadKey>=2.30:${PORTSDIR}/devel/p5-Term-ReadKey \
   			p5-Getopt-Long>=2.24:${PORTSDIR}/devel/p5-Getopt-Long \
-			${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-			${SITE_PERL}/Term/ReadLine/Perl.pm:${PORTSDIR}/devel/p5-ReadLine-Perl \
+			p5-libwww>=5.823:${PORTSDIR}/www/p5-libwww \
+			p5-ReadLine-Perl>=1.0302:${PORTSDIR}/devel/p5-ReadLine-Perl \
 			p5-Net-SSLeay>=1.35:${PORTSDIR}/security/p5-Net-SSLeay
 
 CORE_DEPS=	p5-Encode>=2.13:${PORTSDIR}/converters/p5-Encode \
-			${SITE_PERL}/Class/ReturnValue.pm:${PORTSDIR}/devel/p5-Class-ReturnValue \
-  			${SITE_PERL}/Text/Quoted.pm:${PORTSDIR}/textproc/p5-Text-Quoted \
-			${SITE_PERL}/CSS/Squish.pm:${PORTSDIR}/textproc/p5-CSS-Squish \
+			p5-Class-ReturnValue>=0.55:${PORTSDIR}/devel/p5-Class-ReturnValue \
+  			p5-Text-Quoted>=2.05:${PORTSDIR}/textproc/p5-Text-Quoted \
+			p5-CSS-Squish>=0.07:${PORTSDIR}/textproc/p5-CSS-Squish \
 			p5-Module-Versions-Report>=1.05:${PORTSDIR}/devel/p5-Module-Versions-Report \
 			p5-Devel-StackTrace>=1.19:${PORTSDIR}/devel/p5-Devel-StackTrace \
 			p5-Digest-MD5>=2.27:${PORTSDIR}/security/p5-Digest-MD5 \
@@ -24,8 +24,8 @@ CORE_DEPS=	p5-Encode>=2.13:${PORTSDIR}/converters/p5-Encode \
 			p5-HTML-Scrubber>=0.08:${PORTSDIR}/www/p5-HTML-Scrubber \
 			p5-DBIx-SearchBuilder>=1.53:${PORTSDIR}/databases/p5-DBIx-SearchBuilder \
 			p5-Mail-Tools>=1.57:${PORTSDIR}/mail/p5-Mail-Tools \
-			${SITE_PERL}/File/ShareDir.pm:${PORTSDIR}/devel/p5-File-ShareDir \
-			${SITE_PERL}/Cache/Simple/TimedExpiry.pm:${PORTSDIR}/devel/p5-Cache-Simple-TimedExpiry \
+			p5-File-ShareDir>=1.00:${PORTSDIR}/devel/p5-File-ShareDir \
+			p5-Cache-Simple-TimedExpiry>=0.27:${PORTSDIR}/devel/p5-Cache-Simple-TimedExpiry \
 			${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch \
 			${SITE_PERL}/Email/Address.pm:${PORTSDIR}/mail/p5-Email-Address \
 			${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
@@ -42,7 +42,7 @@ CORE_DEPS=	p5-Encode>=2.13:${PORTSDIR}/converters/p5-Encode \
 			${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 			${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn
 
-DASHBOARD_DEPS=	${SITE_PERL}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types \
+DASHBOARD_DEPS=	p5-MIME-Types>=1.25:${PORTSDIR}/mail/p5-MIME-Types \
 			p5-HTML-RewriteAttributes>=0.02:${PORTSDIR}/textproc/p5-HTML-RewriteAttributes
 
 DEV_DEPS=	${SITE_PERL}/Log/Dispatch/Perl.pm:${PORTSDIR}/devel/p5-Log-Dispatch-Perl \
@@ -76,10 +76,10 @@ MAILGATE_DEPS=	${SITE_PERL}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree \
 			${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
 MASON_DEPS=	p5-Storable>=2.08:${PORTSDIR}/devel/p5-Storable \
-  			${SITE_PERL}/CSS/Squish.pm:${PORTSDIR}/textproc/p5-CSS-Squish \
-			${SITE_PERL}/Text/WikiFormat.pm:${PORTSDIR}/textproc/p5-Text-WikiFormat \
+  			p5-CSS-Squish>=0.07:${PORTSDIR}/textproc/p5-CSS-Squish \
+			p5-Text-WikiFormat>=0.79:${PORTSDIR}/textproc/p5-Text-WikiFormat \
 			p5-Digest-MD5>=2.27:${PORTSDIR}/security/p5-Digest-MD5 \
-			${SITE_PERL}/Errno.pm:${PORTSDIR}/devel/p5-Errno \
+			p5-Errno>=1.10:${PORTSDIR}/devel/p5-Errno \
 			p5-Apache-Session>=1.53:${PORTSDIR}/www/p5-Apache-Session \
 			p5-Devel-StackTrace>=1.19:${PORTSDIR}/devel/p5-Devel-StackTrace \
 			p5-CGI.pm>=1.20:${PORTSDIR}/www/p5-CGI.pm \
@@ -87,8 +87,8 @@ MASON_DEPS=	p5-Storable>=2.08:${PORTSDIR}/devel/p5-Storable \
 			p5-XML-RSS>=1.05:${PORTSDIR}/textproc/p5-XML-RSS \
 			p5-HTML-Mason>=1.36:${PORTSDIR}/www/p5-HTML-Mason
 
-SMTP_DEPS=	${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
+SMTP_DEPS=	p5-Net>=1.22:${PORTSDIR}/net/p5-Net
 
-STANDALONE_DEPS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
+STANDALONE_DEPS=	p5-Net-Server>=0.97:${PORTSDIR}/net/p5-Net-Server \
 				p5-HTTP-Server-Simple>=0.34:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 				p5-HTTP-Server-Siple-Mason>=0.09:${PORTSDIR}/www/p5-HTTP-Server-Simple-Mason
