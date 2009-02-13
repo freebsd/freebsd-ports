@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SFE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Perl Audio Converter
 
 RUN_DEPENDS=	p5-MP3-Tag>0:${PORTSDIR}/audio/p5-MP3-Tag \

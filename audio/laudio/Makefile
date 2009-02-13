@@ -11,7 +11,7 @@ CATEGORIES=	audio linux
 MASTER_SITES=	http://www.lossless-audio.com/ CENKES
 DISTNAME=	la04
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	A free lossless audio codec
 
 ONLY_FOR_ARCHS=	amd64 i386

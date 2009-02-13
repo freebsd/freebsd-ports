@@ -11,7 +11,7 @@ CATEGORIES=	audio linux
 MASTER_SITES=	CENKES
 DISTNAME=	OptimFROG_All_Linux_x86_${DISTVERSION:S/.//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Lossless audio codec
 
 ONLY_FOR_ARCHS=	amd64 i386
