@@ -2,4 +2,4 @@ Winpdb is a GPL python debugger, with support for smart breakpoints, multiple
 threads, namespace modification, embedded debugging, password encrypted
 communication and speed of up to 20 times that of pdb.
 
-WWW: http://winpdb.sourceforge.net/
+WWW: http://www.winpdb.org
