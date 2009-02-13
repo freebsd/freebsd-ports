@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Lossless WAV file compressor
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
