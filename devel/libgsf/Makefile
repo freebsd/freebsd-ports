@@ -38,7 +38,9 @@ MAN1=		gsf.1 gsf-office-thumbnailer.1 gsf-vba-dump.1
 .if !defined(WITHOUT_GCONF) || exists(${LOCALBASE}/bin/gconftool-2)
 USE_GNOME+=	gconf2
 PLIST_SUB+=	THUMB=""
+. if !defined(GSF_SLAVE)
 GCONF_SCHEMAS=	gsf-office-thumbnailer.schemas
+. endif
 .else
 PLIST_SUB+=	THUMB="@comment "
 .endif
