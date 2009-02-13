@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dhcprelya
-PORTVERSION=	2.3
+PORTVERSION=	3.0
 CATEGORIES=	net
 MASTER_SITES=	http://people.yandex-team.ru/~sem/
 
@@ -17,7 +17,7 @@ USE_RC_SUBR=	dhcprelya
 
 PORTDOCS=	README
 
-PLIST_FILES=	sbin/${PORTNAME}
+PLIST_FILES=	sbin/${PORTNAME} lib/${PORTNAME}_log_plugin.so
 
 post-install:
 .if !defined(NOPORTDOCS)

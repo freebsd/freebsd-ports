@@ -1,8 +1,8 @@
-dhcprelya is a light DHCP relay agent written for Yandex company for
+dhcprelya is a lightweight DHCP relay agent written for Yandex company for
 high loaded routers with tens interfaces and thousands hosts behind them.
 
 It's fast, independed from any side libraries, and it does not turn on
-a promisc mode for listen interfaces.
+a promisc mode for listening interfaces.
 
 It's distributed under BSD license.
 
