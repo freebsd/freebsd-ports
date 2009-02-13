@@ -393,10 +393,10 @@ DOC_DIR=	${GEMS_BASE_DIR}/doc
 CACHE_DIR=	${GEMS_BASE_DIR}/cache
 SPEC_DIR=	${GEMS_BASE_DIR}/specifications
 GEM_NAME?=	${PORTNAME}-${PORTVERSION}
-GEM_LIB_DIR=	${GEMS_DIR}/${GEM_NAME}
-GEM_DOC_DIR=	${DOC_DIR}/${GEM_NAME}
-GEM_SPEC=	${SPEC_DIR}/${GEM_NAME}.gemspec
-GEM_CACHE=	${CACHE_DIR}/${GEM_NAME}.gem
+GEM_LIB_DIR?=	${GEMS_DIR}/${GEM_NAME}
+GEM_DOC_DIR?=	${DOC_DIR}/${GEM_NAME}
+GEM_SPEC?=	${SPEC_DIR}/${GEM_NAME}.gemspec
+GEM_CACHE?=	${CACHE_DIR}/${GEM_NAME}.gem
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
 		REV="${RUBY_GEM}" \
@@ -425,6 +425,29 @@ do-install:
 .for _D in ${GEMFILES}
 	${SETENV} ${GEM_ENV} ${RUBYGEMBIN} install -l --no-update-sources --no-ri --install-dir ${PREFIX}/lib/ruby/gems/${RUBY_VER} ${DISTDIR}/${DIST_SUBDIR}/${_D} -- --build-args ${CONFIGURE_ARGS}
 .endfor
+
+. if defined(RUBYGEM_AUTOPLIST)
+.  if !target(post-install-script)
+post-install-script:
+	@${ECHO} ${GEM_CACHE} >> ${TMPPLIST}
+	@${ECHO} ${GEM_SPEC} >> ${TMPPLIST}
+	@${FIND} -ds ${PREFIX}/${GEM_DOC_DIR} -type f -print | ${SED} -E -e \
+		's,^${PREFIX}/?,,' >> ${TMPPLIST}
+	@${FIND} -ds ${PREFIX}/${GEM_DOC_DIR} -type d -print | ${SED} -E -e \
+		's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
+	@${FIND} -ds ${PREFIX}/${GEM_LIB_DIR} -type f -print | ${SED} -E -e \
+		's,^${PREFIX}/?,,' >> ${TMPPLIST}
+	@${FIND} -ds ${PREFIX}/${GEM_LIB_DIR} -type d -print | ${SED} -E -e \
+		's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${GEMS_DIR} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${DOC_DIR} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${CACHE_DIR} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${SPEC_DIR} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${GEMS_BASE_DIR} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby/gems 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby 2>/dev/null || true" >> ${TMPPLIST}
+.  endif
+. endif
 
 .endif # USE_RUBYGEMS
 
