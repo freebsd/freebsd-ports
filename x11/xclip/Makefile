@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://people.debian.org/~kims/xclip/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eitanadlerlist@gmail.com
 COMMENT=	An interface to X selections ("the clipboard") from the command line
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
