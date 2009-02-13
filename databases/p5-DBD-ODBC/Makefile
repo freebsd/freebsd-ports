@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBD-ODBC
-PORTVERSION=	1.16
+PORTVERSION=	1.18
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -56,7 +56,7 @@ post-install:
 post-patch:
 	@${REINPLACE_CMD} -e 's/[[:<:]]our[[:>:]]/my/g' \
 			  -e 's/^    @$$(NOOP)/	@$$(NOOP)/g' ${WRKSRC}/Makefile.PL
-	@${PERL} -pi -e '$$_ .= "\$$myodbc = \"${MYODBC}\";" if ($$. == 297);' \
+	@${PERL} -pi -e '$$_ .= "\$$myodbc = \"${MYODBC}\";" if ($$. == 365);' \
 		${WRKSRC}/Makefile.PL
 
 .include <bsd.port.post.mk>
