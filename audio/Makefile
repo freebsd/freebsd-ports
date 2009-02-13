@@ -772,7 +772,6 @@
     SUBDIR += xmms-flac
     SUBDIR += xmms-fxt
     SUBDIR += xmms-gbsplay
-    SUBDIR += xmms-imms
     SUBDIR += xmms-infopipe
     SUBDIR += xmms-jack
     SUBDIR += xmms-jackasyn

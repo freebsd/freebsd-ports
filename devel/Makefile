@@ -648,7 +648,6 @@
     SUBDIR += libglade2-reference
     SUBDIR += libglademm
     SUBDIR += libglademm24
-    SUBDIR += libgnugetopt
     SUBDIR += libgpc
     SUBDIR += libgsf
     SUBDIR += libgsf-gnome

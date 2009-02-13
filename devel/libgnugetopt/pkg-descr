@@ -1,2 +1,0 @@
-GNU getopt library similar but more powerful than the standard getopt(3).
-It includes the GNU-style getopt_long() function.
