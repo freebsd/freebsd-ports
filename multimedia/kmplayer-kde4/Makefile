@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	kmplayer
-DISTVERSION=	0.11.0-rc4
-PORTREVISION=	1
-PORTEPOCH=	2
+PORTVERSION=	0.11.0a
+PORTEPOCH=	3
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://kmplayer.kde.org/pkgs/
 PKGNAMESUFFIX=	-kde4
@@ -16,8 +15,11 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	kris@pcbsd.org
 COMMENT=	KDE frontend to Phonon / KDE4
 
+LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		cairo.2:${PORTSDIR}/graphics/cairo
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
+USE_GNOME=	gtk20
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
