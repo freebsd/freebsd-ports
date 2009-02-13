@@ -19,7 +19,7 @@ EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.gz
 
 PATCH_SITES=	http://www.caam.rice.edu/software/ARPACK/SRC/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stephen@math.missouri.edu
 COMMENT=	Argand Library: large eigenvalue subroutines (serial version)
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
