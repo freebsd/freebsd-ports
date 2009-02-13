@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pythontidy
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.lacusveris.com/PythonTidy/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
