@@ -49,4 +49,14 @@ doc-install:
 .endfor
 .endif
 
+post-install:
+.if !defined(NOPORTDOCS)
+	@${FIND} -ds ${RUBY_MODDOCDIR} -type f -print | ${SED} -E -e \
+		's,^${PREFIX}/?,,' >> ${TMPPLIST}
+	@${FIND} -ds ${RUBY_MODDOCDIR} -type d -print | ${SED} -E -e \
+		's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/share/doc/${RUBY_NAME} \
+		2>/dev/null || true" >> ${TMPPLIST}
+.endif
+
 .include <bsd.port.post.mk>
