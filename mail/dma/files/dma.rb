@@ -35,7 +35,8 @@ dma = $0.gsub(/.rb$/, '')
 
 if ARGV.delete "-t"
 	msg = STDIN.read
-	head, cr, body = msg.split(/(?<=\n)(\r?)\n/, 2)
+	head, cr, body = msg.split(/\n(\r?)\n/, 2)
+	head = head + "\n"
 	tmphead = head.gsub(/\n\s+/m, ' ')
 	rcpts = []
 	tmphead.gsub(/^(?:to|cc|bcc):\s.*$/i) do |match|
