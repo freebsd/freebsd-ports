@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mairix
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jjuanino@gmail.com
 COMMENT=	Indexing and searching in Maildir, MH or mbox folders
 
 USE_GMAKE=	yes
