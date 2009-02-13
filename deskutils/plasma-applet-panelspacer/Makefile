@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	panelspacer
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	deskutils kde
-MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
+MASTER_SITES=	http://danakil.free.fr/linux/releases/${PORTNAME}-${PORTVERSION}/
 PKGNAMEPREFIX=	plasma-applet-
-DISTNAME=	89304-${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}-plasmoid-${PORTVERSION}
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Panel spacer plasma applet for KDE4
@@ -21,9 +21,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui dbus network opengl svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 
-BROKEN=		Does not compile with KDE 4.2
-
-WRKSRC=		${WRKDIR}/plasmaspacer_${PORTVERSION}
+WRKSRC=		${WRKDIR}/Panelspacer_from_svn_pour_kdelook-tmp
 
 PLIST_FILES=	lib/kde4/plasma_applet_panelspacer.so \
 		share/kde4/services/plasma-applet-panelspacer.desktop
