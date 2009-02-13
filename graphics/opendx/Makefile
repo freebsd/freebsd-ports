@@ -13,7 +13,7 @@ CATEGORIES=	graphics math
 MASTER_SITES=	http://opendx.npaci.edu/source/
 DISTNAME=	dx-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stephen@math.missouri.edu
 COMMENT=	IBM's Open Visualization Data Explorer
 
 LIB_DEPENDS=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick	\
