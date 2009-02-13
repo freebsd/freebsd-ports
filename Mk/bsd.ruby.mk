@@ -62,6 +62,9 @@ Ruby_Include_MAINTAINER=	stas@FreeBSD.org
 #			  documents from. If this is defined and not empty,
 #			  USE_RUBY_RDTOOL is implied and RUBY_RD_HTML_FILES is
 #			  defined.
+# USE_RUBYGEMS		- Says that the port uses rubygems packaging system.
+# RUBYGEM_AUTOPLIST	- Generate packing list for rubygems based port
+#			  automatically.
 #
 #
 # [variables that each port should not (re)define]
