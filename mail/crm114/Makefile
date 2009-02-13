@@ -17,7 +17,7 @@ MASTER_SITES=	http://crm114.sourceforge.net/tarballs/
 # .css extention.
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${CRM114RELEASENAME}.src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	An Markov based SpamFilter
 
 LIB_DEPENDS=	tre.6:${PORTSDIR}/textproc/libtre
