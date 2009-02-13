@@ -1,5 +1,0 @@
-@comment $FreeBSD$
-include/getopt.h
-lib/libgnugetopt.a
-lib/libgnugetopt.so
-lib/libgnugetopt.so.1

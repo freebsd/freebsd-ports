@@ -145,7 +145,6 @@
     SUBDIR += nfdump
     SUBDIR += nfdump-devel
     SUBDIR += nfsen
-    SUBDIR += nfsen-devel
     SUBDIR += ng_ipacct
     SUBDIR += nipper
     SUBDIR += nitpicker

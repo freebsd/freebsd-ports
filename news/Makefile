@@ -87,7 +87,6 @@
     SUBDIR += rawdog
     SUBDIR += rkive
     SUBDIR += s-news
-    SUBDIR += sabnzbd
     SUBDIR += sabnzbdplus
     SUBDIR += slnr
     SUBDIR += slrn

@@ -3808,3 +3808,9 @@ x11-themes/gtk-industrial-theme||2009-02-03|Has expired: has been broken for mor
 sysutils/srmt||2009-02-07|Moved into archivers/star
 devel/libslang|devel/libslang2|2009-02-07|Abandoned upstream, replaced by devel/libslang2
 graphics/processing-devel|graphics/processing|2009-02-09|Retire, as non-devel port was updated to newer version
+audio/xmms-imms||2009-02-13|Has expired: does not configure or build
+devel/libgnugetopt||2009-02-13|Has expired: was only relevant on FreeBSD 4.x
+games/planeshift||2009-02-13|Has expired: Depends on broken, expired port
+net-mgmt/nfsen-devel||2009-02-13|Has expired: no separate development version exists anymore
+www/ocaml-wdialog||2009-02-13|Has expired: has been broken for more than 6 months
+news/sabnzbd||2009-02-13|Has expired: no longer developed, use news/sabnzbdplus instead

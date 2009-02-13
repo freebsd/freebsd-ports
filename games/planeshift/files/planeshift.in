@@ -1,8 +1,0 @@
-#!/bin/sh
-
-export CRYSTAL=%%LOCALBASE%%/lib/planeshift
-export CEL=%%LOCALBASE%%/lib/cel
-export CSCONFPATH=%%LOCALBASE%%/etc/crystalspace
-
-cd %%PREFIX%%/lib/planeshift
-exec ./psclient $1

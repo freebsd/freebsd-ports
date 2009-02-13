@@ -549,7 +549,6 @@
     SUBDIR += nspluginwrapper
     SUBDIR += nvu
     SUBDIR += ocaml-net
-    SUBDIR += ocaml-wdialog
     SUBDIR += ocsigen
     SUBDIR += ojs2
     SUBDIR += oops
