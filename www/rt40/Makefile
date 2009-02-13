@@ -6,16 +6,13 @@
 
 # TODO:
 # o etc/rt38 files permissions
-# o install etc/rt38/RT_SiteConfig.pm in pkg-plist for packages, fix make install
-# o patch etc/rt38/RT_SiteConfig.pm and -dist perl -c path
 # o GRANTS
 # o Schema
 # - Vhost Config
 #   o install a sample into etc/apache22/Includes
 
 PORTNAME=	rt
-PORTVERSION=	3.8.1
-PORTREVISION=	5
+PORTVERSION=	3.8.2
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
@@ -40,7 +37,8 @@ OPTIONS=	MYSQL 		"Enable MySQL backend" 		on  \
 		STANDALONE	"Enable standalone server"	off \
 		APACHE		"Enable Apache1.3.x server"	off \
 		MODPERL		"Enable mod_perl support"	off \
-		FASTCGI		"Enable FastCGI support" 	off
+		FASTCGI		"Enable FastCGI support" 	off \
+		GRAPHVIZ	"Enable GraphViz charts"	on
 
 .include "${.CURDIR}/Makefile.cpan"
 
@@ -49,7 +47,6 @@ BUILD_DEPENDS+=	${CORE_DEPS} \
 		${DASHBOARD_DEPS} \
 		${GD_DEPS} \
 		${GPG_DEPS} \
-		${GRAPHVIZ_DEPS} \
 		${ICAL_DEPS} \
 		${MAILGATE_DEPS} \
 		${MASON_DEPS} \
@@ -83,6 +80,11 @@ USE_APACHE=	1.3+
 .if defined(WITH_FASTCGI)
 BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
+.endif
+
+.if defined(WITH_GRAPHVIZ)
+BUILD_DEPENDS+=	${GRAPVIZ_DEPS}
+RUN_DEPENDS+=	${GRAPVIZ_DEPS}
 .endif
 
 .if defined(WITH_MODPERL2)
@@ -151,8 +153,8 @@ DB_PASSWORD?=	rt_pass
 DB_HOST?=	localhost
 DB_DATABASE?=	rt3
 
-WEB_USER?=	www
-WEB_GROUP?=	www
+WEB_USER?=	${WWWOWN}
+WEB_GROUP?=	${WWWGRP}
 LIBS_GROUP?=	wheel
 
 LATEST_LINK=	rt38
@@ -173,6 +175,7 @@ CONFIGURE_ARGS=	--enable-layout=${RT_LAYOUT} \
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
+SUB_LIST=	RT_ETC_PATH=${RT_ETC_PATH}
 
 run-autotools::	run-autotools-autoconf
 
@@ -196,14 +199,15 @@ post-patch:
 	@${RM} -f ${WRKSRC}/lib/RT.pm.in.orig
 	@${REINPLACE_CMD} -e 's!%%PREFIX%%!${PREFIX}!g' ${WRKSRC}/config.layout
 	@${REINPLACE_CMD} -e 's!%%SITE_PERL%%!${SITE_PERL}!g' ${WRKSRC}/config.layout
+	@${REINPLACE_CMD} -e 's!/path/to/your/etc!${RT_ETC_PATH}!g' ${WRKSRC}/etc/RT_SiteConfig.pm
 
 pre-install:
 	@${RM} -f ${WRKSRC}/lib/RT.pm.in
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@[ -f ${RT_ETC_PATH}/RT_SiteConfig.pm-dist ] || \
-		${CP} -p ${RT_ETC_PATH}/RT_SiteConfig.pm ${RT_ETC_PATH}/RT_SiteConfig.pm-dist
+	@[ -f ${RT_ETC_PATH}/RT_SiteConfig.pm ] || \
+		${CP} -p ${RT_ETC_PATH}/RT_SiteConfig.pm-dist ${RT_ETC_PATH}/RT_SiteConfig.pm
 	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

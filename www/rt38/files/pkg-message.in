@@ -2,8 +2,8 @@
 
 To complete the installation of this port, please follow these steps:
 
-1. Edit %%LOCALBASE%%/etc/rt38/RT_SiteConfig.pm, by referring to
-   the default config file (%%LOCALBASE%%/etc/rt38/RT_Config.pm).
+1. Edit %%RT_ETC_PATH%%/RT_SiteConfig.pm, by referring to
+   the default config file (%%RT_ETC_PATH%%/RT_Config.pm).
 2. Configure the email and web gateways.  Please refer to
    'SETTING UP THE MAIL GATEWAY' in %%DOCSDIR%%/README
 3. Restart Apache.

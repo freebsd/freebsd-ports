@@ -1,5 +1,14 @@
---- ./Makefile.in.orig	2008-08-18 11:13:58.000000000 -0400
-+++ ./Makefile.in	2008-12-28 23:12:31.000000000 -0500
+--- Makefile.in.orig	2008-08-18 11:13:58.000000000 -0400
++++ Makefile.in	2009-01-25 11:57:09.000000000 -0500
+@@ -58,7 +58,7 @@
+ 
+ CONFIG_FILE_PATH	=	@CONFIG_FILE_PATH_R@
+ CONFIG_FILE		= 	$(CONFIG_FILE_PATH)/RT_Config.pm
+-SITE_CONFIG_FILE		= 	$(CONFIG_FILE_PATH)/RT_SiteConfig.pm
++SITE_CONFIG_FILE		= 	$(CONFIG_FILE_PATH)/RT_SiteConfig.pm-dist
+ 
+ 
+ RT_VERSION_MAJOR	=	@RT_VERSION_MAJOR@
 @@ -107,7 +107,7 @@
  RT_VAR_PATH		=	@RT_VAR_PATH_R@
  RT_DOC_PATH		=	@RT_DOC_PATH_R@
@@ -18,12 +27,27 @@
  
  
  # {{{ dependencies
-@@ -361,9 +361,9 @@
+@@ -301,14 +301,6 @@
+ 
+ # {{{ fixperms
+ fixperms:
+-	# Make the libraries readable
+-	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_PATH)
+-	chown -R $(LIBS_OWNER) $(DESTDIR)$(RT_LIB_PATH)
+-	chgrp -R $(LIBS_GROUP) $(DESTDIR)$(RT_LIB_PATH)
+-	chmod -R  u+rwX,go-w,go+rX 	$(DESTDIR)$(RT_LIB_PATH)
+-
+-
+-	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_BIN_PATH)
+ 
+ 	chmod 0755 $(DESTDIR)$(RT_ETC_PATH)
+ 	cd $(DESTDIR)$(RT_ETC_PATH) && chmod 0400 $(ETC_FILES)
+@@ -361,9 +353,9 @@
  	$(INSTALL) -m 0755 -d $(DESTDIR)$(LOCAL_LEXICON_PATH)
  # }}}
  
 -install: testdeps config-install dirs files-install fixperms instruct
-+install: config-install dirs files-install
++install: config-install dirs files-install fixperms
  
 -files-install: libs-install etc-install config-install bin-install sbin-install html-install local-install doc-install
 +files-install: libs-install etc-install config-install bin-install sbin-install html-install doc-install

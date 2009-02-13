@@ -1,4 +1,6 @@
+@comment $FreeBSD$
 @unexec if cmp -s %D/etc/rt38/RT_SiteConfig.pm %D/etc/rt38/RT_SiteConfig.pm-dist; then rm -f %D/etc/rt38/RT_SiteConfig.pm; fi
+@exec [ -f %D/etc/rt38/RT_SiteConfig.pm ] || cp %D/rt38/RT_SiteConfig.pm-dist %D/etc/rt38/RT_SiteConfig.pm
 bin/mason_handler.fcgi
 bin/mason_handler.scgi
 bin/mason_handler.svc
@@ -45,6 +47,12 @@ etc/rt38/schema.mysql-4.1
 %%SITE_PERL%%/RT/Action/SendEmail.pm
 %%SITE_PERL%%/RT/Action/SetPriority.pm
 %%SITE_PERL%%/RT/Action/UserDefined.pm
+%%SITE_PERL%%/RT/Approval.pm
+%%SITE_PERL%%/RT/Approval/Rule.pm
+%%SITE_PERL%%/RT/Approval/Rule/Created.pm
+%%SITE_PERL%%/RT/Approval/Rule/NewPending.pm
+%%SITE_PERL%%/RT/Approval/Rule/Passed.pm
+%%SITE_PERL%%/RT/Approval/Rule/Rejected.pm
 %%SITE_PERL%%/RT/Attachment.pm
 %%SITE_PERL%%/RT/Attachment_Overlay.pm
 %%SITE_PERL%%/RT/Attachments.pm
@@ -113,17 +121,17 @@ etc/rt38/schema.mysql-4.1
 %%SITE_PERL%%/RT/I18N/id.po
 %%SITE_PERL%%/RT/I18N/it.po
 %%SITE_PERL%%/RT/I18N/ja.po
+%%SITE_PERL%%/RT/I18N/nb.po
 %%SITE_PERL%%/RT/I18N/nl.po
-%%SITE_PERL%%/RT/I18N/no.po
 %%SITE_PERL%%/RT/I18N/pl.po
-%%SITE_PERL%%/RT/I18N/pt_br.po
-%%SITE_PERL%%/RT/I18N/pt_pt.po
+%%SITE_PERL%%/RT/I18N/pt.po
+%%SITE_PERL%%/RT/I18N/pt_BR.po
 %%SITE_PERL%%/RT/I18N/rt.pot
 %%SITE_PERL%%/RT/I18N/ru.po
 %%SITE_PERL%%/RT/I18N/sv.po
 %%SITE_PERL%%/RT/I18N/tr.po
-%%SITE_PERL%%/RT/I18N/zh_cn.po
-%%SITE_PERL%%/RT/I18N/zh_tw.po
+%%SITE_PERL%%/RT/I18N/zh_CN.po
+%%SITE_PERL%%/RT/I18N/zh_TW.po
 %%SITE_PERL%%/RT/Installer.pm
 %%SITE_PERL%%/RT/Interface/CLI.pm
 %%SITE_PERL%%/RT/Interface/Email.pm
@@ -166,6 +174,8 @@ etc/rt38/schema.mysql-4.1
 %%SITE_PERL%%/RT/Reminders.pm
 %%SITE_PERL%%/RT/Report/Tickets.pm
 %%SITE_PERL%%/RT/Report/Tickets/Entry.pm
+%%SITE_PERL%%/RT/Rule.pm
+%%SITE_PERL%%/RT/Ruleset.pm
 %%SITE_PERL%%/RT/SQL.pm
 %%SITE_PERL%%/RT/SavedSearch.pm
 %%SITE_PERL%%/RT/SavedSearches.pm
@@ -230,6 +240,7 @@ etc/rt38/schema.mysql-4.1
 %%SITE_PERL%%/RT/Templates.pm
 %%SITE_PERL%%/RT/Templates_Overlay.pm
 %%SITE_PERL%%/RT/Test.pm
+%%SITE_PERL%%/RT/Test/Email.pm
 %%SITE_PERL%%/RT/Test/Web.pm
 %%SITE_PERL%%/RT/Ticket.pm
 %%SITE_PERL%%/RT/Ticket_Overlay.pm
@@ -370,12 +381,16 @@ share/rt38/html/Approvals/Elements/Approve
 share/rt38/html/Approvals/Elements/PendingMyApproval
 share/rt38/html/Approvals/Elements/ShowDependency
 share/rt38/html/Approvals/Elements/Tabs
+share/rt38/html/Approvals/autohandler
 share/rt38/html/Approvals/index.html
 share/rt38/html/CalPopup.html
 share/rt38/html/Dashboards/Elements/DashboardsForObject
 share/rt38/html/Dashboards/Elements/DashboardsForObjects
+share/rt38/html/Dashboards/Elements/HiddenSearches
 share/rt38/html/Dashboards/Elements/SelectPrivacy
 share/rt38/html/Dashboards/Elements/ShowDashboards
+share/rt38/html/Dashboards/Elements/ShowPortlet/component
+share/rt38/html/Dashboards/Elements/ShowPortlet/search
 share/rt38/html/Dashboards/Elements/ShowSubscription
 share/rt38/html/Dashboards/Elements/Tabs
 share/rt38/html/Dashboards/Modify.html
@@ -422,6 +437,7 @@ share/rt38/html/Elements/ListActions
 share/rt38/html/Elements/ListMenu
 share/rt38/html/Elements/Login
 share/rt38/html/Elements/Logo
+share/rt38/html/Elements/Logout
 share/rt38/html/Elements/MakeClicky
 share/rt38/html/Elements/Menu
 share/rt38/html/Elements/MessageBox
@@ -482,6 +498,7 @@ share/rt38/html/Elements/ShowMemberships
 share/rt38/html/Elements/ShowSearch
 share/rt38/html/Elements/ShowUser
 share/rt38/html/Elements/ShowUserConcise
+share/rt38/html/Elements/ShowUserEmailFrequency
 share/rt38/html/Elements/ShowUserVerbose
 share/rt38/html/Elements/SimpleSearch
 share/rt38/html/Elements/Submit
@@ -507,6 +524,102 @@ share/rt38/html/Install/autohandler
 share/rt38/html/Install/index.html
 share/rt38/html/NoAuth/Logout.html
 share/rt38/html/NoAuth/Reminder.html
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckcontextmenu.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckdataprocessor.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckdocumentfragment_gecko.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckdocumentfragment_ie.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckdomrange.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckdomrange_gecko.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckdomrange_ie.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckdomrangeiterator.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckeditingarea.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckelementpath.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckenterkey.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckevents.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckhtmliterator.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckicon.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckiecleanup.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckimagepreloader.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckkeystrokehandler.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckmenublock.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckmenublockpanel.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckmenuitem.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckpanel.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckplugin.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckspecialcombo.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckstyle.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbar.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarbreak_gecko.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarbreak_ie.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarbutton.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarbuttonui.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarfontformatcombo.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarfontscombo.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarfontsizecombo.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarpanelbutton.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarspecialcombo.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fcktoolbarstylecombo.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckw3crange.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckxml.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckxml_gecko.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckxml_ie.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fck_othercommands.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckblockquotecommand.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckcorestylecommand.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckfitwindow.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckindentcommands.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckjustifycommands.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fcklistcommands.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fcknamedcommand.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckpasteplaintextcommand.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckpastewordcommand.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckremoveformatcommand.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckshowblocks.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckspellcheckcommand_gecko.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckspellcheckcommand_ie.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fckstylecommand.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fcktablecommand.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses/fcktextcolorcommand.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/fckconstants.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/fckeditorapi.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/fckjscoreextensions.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/fckscriptloader.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fck.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fck_contextmenu.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fck_gecko.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fck_ie.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckbrowserinfo.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckcodeformatter.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckcommands.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckconfig.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckdebug.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckdebug_empty.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckdialog.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckdocumentprocessor.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckdomtools.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcklanguagemanager.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcklisthandler.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcklistslib.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckplugins.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckregexlib.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckselection.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckselection_gecko.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckselection_ie.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckstyles.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcktablehandler.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcktablehandler_gecko.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcktablehandler_ie.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcktoolbaritems.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcktoolbarset.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcktools.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcktools_gecko.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fcktools_ie.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckundo.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckurlparams.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckxhtml.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckxhtml_gecko.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckxhtml_ie.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals/fckxhtmlentities.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/behaviors/disablehandles.htc
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/behaviors/showtableborders.htc
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/fck_editorarea.css
@@ -527,6 +640,7 @@ share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/fck_anchor.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/fck_flashlogo.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/fck_hiddenfield.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/fck_pagebreak.gif
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images/fck_plugin.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/common/fck_dialog_common.css
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/common/fck_dialog_common.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/common/images/locked.gif
@@ -535,10 +649,12 @@ share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/common/images/unlocked.g
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_about.html
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_about/logo_fckeditor.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_about/logo_fredck.gif
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_about/sponsors/spellchecker_net.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_anchor.html
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_button.html
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_checkbox.html
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_colorselector.html
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_div.html
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_docprops.html
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_docprops/fck_document_preview.html
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_flash.html
@@ -564,6 +680,9 @@ share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages.html
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/blank.html
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/controlWindow.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/controls.html
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.cfm
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.php
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.pl
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/spellChecker.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/spellchecker.html
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/spellerStyle.css
@@ -583,77 +702,6 @@ share/rt38/html/NoAuth/RichText/FCKeditor/editor/fckdebug.html
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/fckdialog.html
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/fckeditor.html
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/fckeditor.original.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/browser.css
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/browser.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/frmactualfolder.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/frmcreatefolder.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/frmfolders.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/frmresourceslist.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/frmresourcetype.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/frmupload.html
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/ButtonArrow.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/Folder.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/Folder32.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/FolderOpened.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/FolderOpened32.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/FolderUp.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/ai.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/avi.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/bmp.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/cs.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/default.icon.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/dll.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/doc.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/exe.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/fla.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/gif.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/htm.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/html.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/jpg.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/js.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/mdb.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/mp3.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/pdf.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/png.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/ppt.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/rdp.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/swf.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/swt.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/txt.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/vsd.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/xls.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/xml.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32/zip.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/ai.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/avi.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/bmp.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/cs.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/default.icon.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/dll.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/doc.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/exe.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/fla.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/gif.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/htm.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/html.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/jpg.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/js.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/mdb.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/mp3.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/pdf.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/png.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/ppt.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/rdp.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/swf.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/swt.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/txt.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/vsd.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/xls.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/xml.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/zip.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/spacer.gif
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/js/common.js
-share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/js/fckxml.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/anchor.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/arrow_ltr.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/arrow_rtl.gif
@@ -680,6 +728,7 @@ share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/tounge_smile.
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/whatchutalkingabout_smile.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn/wink_smile.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/spacer.gif
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/js/fckadobeair.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/js/fckeditorcode_gecko.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/js/fckeditorcode_ie.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/_translationstatus.txt
@@ -704,8 +753,10 @@ share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/eu.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/fa.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/fi.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/fo.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/fr-ca.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/fr.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/gl.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/gu.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/he.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/hi.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/lang/hr.js
@@ -746,6 +797,7 @@ share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder/fck_placeho
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder/fckplugin.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder/lang/de.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder/lang/en.js
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder/lang/es.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder/lang/fr.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder/lang/it.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/placeholder/lang/pl.js
@@ -754,8 +806,14 @@ share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/simplecommands/fckplugi
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/plugins/tablecommands/fckplugin.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/_fckviewstrips.html
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/fck_dialog.css
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/fck_dialog_ie6.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/fck_editor.css
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/fck_strip.gif
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/dialog.sides.gif
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/dialog.sides.png
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/dialog.sides.rtl.png
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/sprites.gif
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/sprites.png
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/toolbar.arrowright.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/toolbar.buttonarrow.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/toolbar.collapse.gif
@@ -764,8 +822,14 @@ share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/toolbar.ex
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/toolbar.separator.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/default/images/toolbar.start.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/fck_dialog.css
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/fck_dialog_ie6.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/fck_editor.css
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/fck_strip.gif
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/dialog.sides.gif
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/dialog.sides.png
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/dialog.sides.rtl.png
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/sprites.gif
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/sprites.png
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/toolbar.arrowright.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/toolbar.bg.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/toolbar.buttonarrow.gif
@@ -775,8 +839,14 @@ share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/toolbar
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/toolbar.separator.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images/toolbar.start.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/fck_dialog.css
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/fck_dialog_ie6.js
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/fck_editor.css
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/fck_strip.gif
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/dialog.sides.gif
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/dialog.sides.png
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/dialog.sides.rtl.png
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/sprites.gif
+share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/sprites.png
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/toolbar.arrowright.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/toolbar.buttonarrow.gif
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images/toolbar.buttonbg.gif
@@ -829,7 +899,6 @@ share/rt38/html/NoAuth/css/web2/admin.css
 share/rt38/html/NoAuth/css/web2/base.css
 share/rt38/html/NoAuth/css/web2/boxes.css
 share/rt38/html/NoAuth/css/web2/forms.css
-share/rt38/html/NoAuth/css/web2/gradient-glossy.png
 share/rt38/html/NoAuth/css/web2/images/dhandler
 share/rt38/html/NoAuth/css/web2/images/source/background-gradient.png
 share/rt38/html/NoAuth/css/web2/layout.css
@@ -873,6 +942,7 @@ share/rt38/html/NoAuth/images/css/rollup-arrow.gif
 share/rt38/html/NoAuth/images/empty_star.gif
 share/rt38/html/NoAuth/images/favicon.png
 share/rt38/html/NoAuth/images/star.gif
+share/rt38/html/NoAuth/images/test.png
 share/rt38/html/NoAuth/js/IE7/IE7.js
 share/rt38/html/NoAuth/js/IE7/IE8.js
 share/rt38/html/NoAuth/js/IE7/blank.gif
@@ -896,8 +966,14 @@ share/rt38/html/Prefs/Other.html
 share/rt38/html/Prefs/Quicksearch.html
 share/rt38/html/Prefs/Search.html
 share/rt38/html/Prefs/SearchOptions.html
+share/rt38/html/REST/1.0/Forms/attachment/default
+share/rt38/html/REST/1.0/Forms/group/customfields
+share/rt38/html/REST/1.0/Forms/group/default
+share/rt38/html/REST/1.0/Forms/group/ns
+share/rt38/html/REST/1.0/Forms/queue/customfields
 share/rt38/html/REST/1.0/Forms/queue/default
 share/rt38/html/REST/1.0/Forms/queue/ns
+share/rt38/html/REST/1.0/Forms/queue/ticketcustomfields
 share/rt38/html/REST/1.0/Forms/ticket/attachments
 share/rt38/html/REST/1.0/Forms/ticket/comment
 share/rt38/html/REST/1.0/Forms/ticket/default
@@ -1082,6 +1158,8 @@ share/rt38/html/l
 @dirrm share/rt38/html/REST/1.0/Forms/transaction
 @dirrm share/rt38/html/REST/1.0/Forms/ticket
 @dirrm share/rt38/html/REST/1.0/Forms/queue
+@dirrm share/rt38/html/REST/1.0/Forms/group
+@dirrm share/rt38/html/REST/1.0/Forms/attachment
 @dirrm share/rt38/html/REST/1.0/Forms
 @dirrm share/rt38/html/REST/1.0
 @dirrm share/rt38/html/REST
@@ -1121,16 +1199,10 @@ share/rt38/html/l
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley/msn
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/images/smiley
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/images
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/js
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons/32
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images/icons
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default/images
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser/default
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager/browser
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/filemanager
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dtd
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_template/images
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_template
+@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages/spellerpages
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_spellerpages
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_select
@@ -1138,6 +1210,7 @@ share/rt38/html/l
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_image
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_flash
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_docprops
+@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_about/sponsors
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/fck_about
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/common/images
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/dialog/common
@@ -1145,6 +1218,10 @@ share/rt38/html/l
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/behaviors
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/css
+@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals
+@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses
+@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes
+@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor
 @dirrm share/rt38/html/NoAuth/RichText
@@ -1166,6 +1243,7 @@ share/rt38/html/l
 @dirrm share/rt38/html/Download/Tabular
 @dirrm share/rt38/html/Download/CustomFieldValue
 @dirrm share/rt38/html/Download
+@dirrm share/rt38/html/Dashboards/Elements/ShowPortlet
 @dirrm share/rt38/html/Dashboards/Elements
 @dirrm share/rt38/html/Dashboards
 @dirrm share/rt38/html/Approvals/Elements
@@ -1209,6 +1287,8 @@ share/rt38/html/l
 @dirrm %%SITE_PERL%%/RT/CustomFieldValues
 @dirrm %%SITE_PERL%%/RT/Crypt
 @dirrm %%SITE_PERL%%/RT/Condition
+@dirrm %%SITE_PERL%%/RT/Approval/Rule
+@dirrm %%SITE_PERL%%/RT/Approval
 @dirrm %%SITE_PERL%%/RT/Action
 @dirrm %%SITE_PERL%%/RT
 @dirrm etc/rt38
