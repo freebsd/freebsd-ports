@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	cheetahtemplate
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Cheetah-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	HTML template engine for Python
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
