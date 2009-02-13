@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="78f5606b-f9d1-11dd-b79c-0030843d3802">
+    <topic>tor -- multiple vulnerabilites</topic>
+    <affects>
+      <package>
+	<name>tor</name>
+	<range><lt>0.2.0.34</lt></range>
+      </package>
+      <package>
+        <name>tor-devel</name>
+	<range><lt>0.2.12-alpha</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/33880/">
+	  <p>Some vulnerabilities have been reported in Tor, where one has an
+	    unknown impact and others can be exploited by malicious people to
+	    cause a DoS.</p>
+	  <p>An error when running Tor as a directory authority can be exploited
+	    to trigger the execution of an infinite loop.</p>
+	  <p>An unspecified error exists when running on Windows systems prior
+	    to Windows XP. No further information is currently available.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/33880/</url>
+      <url>http://archives.seul.org/or/announce/Feb-2009/msg00000.html</url>
+    </references>
+    <dates>
+      <discovery>2009-02-10</discovery>
+      <entry>2009-02-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8b491182-f842-11dd-94d9-0030843d3802">
     <topic>firefox -- multiple vulnerabilities</topic>
     <affects>
