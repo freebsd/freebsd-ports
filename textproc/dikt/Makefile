@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dikt
-PORTVERSION=	1
-PORTREVISION=	2
+PORTVERSION=	1a
 CATEGORIES=	textproc net kde
 MASTER_SITES=	http://diktv1.googlepages.com/	\
 		LOCAL/beech
