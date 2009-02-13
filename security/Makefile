@@ -185,6 +185,7 @@
     SUBDIR += hmap
     SUBDIR += horde-jeta
     SUBDIR += hostsentry
+    SUBDIR += hotssh
     SUBDIR += hs-digest-ghc
     SUBDIR += httprint
     SUBDIR += hunch
