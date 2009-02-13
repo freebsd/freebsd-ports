@@ -32,6 +32,7 @@ BLAS=		-lblas
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-lapack --without-fft
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_FORTRAN=	yes
