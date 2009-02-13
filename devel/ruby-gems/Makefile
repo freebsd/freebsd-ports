@@ -55,6 +55,15 @@ post-install:
 	@${TOUCH} ${PREFIX}/${GEMS_DOC_BASE_DIR}/.keep_this
 	@${LN} -sf ${PREFIX}/bin/gem18 ${PREFIX}/bin/gem
 
+	@${FIND} -ds ${PREFIX}/lib/ruby/gems/${RUBY_VER}/doc/${DISTNAME} \
+		-type f -print | ${SED} -E -e 's,^${PREFIX}/?,,' >> ${TMPPLIST}
+	@${FIND} -ds ${PREFIX}/lib/ruby/gems/${RUBY_VER}/doc/${DISTNAME} \
+		 -type d -print | ${SED} -E -e 's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby/gems/${RUBY_VER}/doc 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby/gems/${RUBY_VER} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby/gems 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby 2>/dev/null || true" >> ${TMPPLIST}
+
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
 	${ECHO} bin/gem > pkg-plist.new
