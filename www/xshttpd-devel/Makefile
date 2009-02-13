@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.7b05
+DISTVERSION=	3.7b08
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -18,6 +18,7 @@ COMMENT=	A webserver with CGI as own user and SSL suport
 
 RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support \
 		ppmtogif:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 CONFLICTS+=	xshttpd-[0-9]*
 
@@ -31,8 +32,7 @@ USE_RC_SUBR=	xshttpd.sh
 
 GNU_CONFIGURE=	yes
 
-OPTIONS=	PCRE "Enable pcre rewriting support" On \
-		LDAP "Enable ldap support" Off \
+OPTIONS=	LDAP "Enable ldap support" Off \
 		CURL "Enable curl (proxy) support" Off \
 		M4_CONFIG "Enable m4 configuration preprocessor" Off \
 		PERSISTENT_PERL "Enable persistent perl interpreter" Off
@@ -42,7 +42,6 @@ PORTDOCS=	README COPYING ChangeLog
 .include <bsd.port.pre.mk>
 # By default XS-HTTPD stores its data in ${PREFIX}/lib/httpd
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
-CONFIGURE_ARGS+=--with-rootdir=${WWWDIR} --with-ssl --with-pcre
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
@@ -68,13 +67,6 @@ CONFIGURE_ARGS+=--without-perl
 PLIST_SUB+=	PERL="@comment "
 .endif
 
-.if defined(WITH_PCRE)
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
-CONFIGURE_ARGS+=--with-pcre=yes
-.else
-CONFIGURE_ARGS+=--with-pcre=no
-.endif
-
 .if defined(WITH_CURL)
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-curl
@@ -83,11 +75,12 @@ CONFIGURE_ARGS+=--without-curl
 .endif
 
 post-patch:
-.for i in man/httpd.1.in man/httpd.conf.5 config/httpd.conf.sample \
+.for i in man/httpd.1.in man/httpd.conf.5 config/httpd.conf.sample dirs.conf\
 	contrib/SSL-Makefile contrib/logrotate.sh
 	@${REINPLACE_CMD} \
 		-e 's|/wwwsys|${WWWDIR}|g' \
 		-e 's|/usr/local/lib/httpd|${WWWDIR}|g' \
+		-e 's|.(prefix)/lib/httpd|${WWWDIR}|g' \
 		-e 's|nobody|${WWWOWN}|g' \
 		-e 's|nogroup|${WWWGRP}|g' \
 		${WRKSRC}/$i
