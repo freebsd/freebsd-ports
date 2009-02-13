@@ -291,7 +291,9 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/bundled-libs/docs/WordsSmashedTogether.wiki.txt
 %%SERENDIPITY%%/bundled-libs/docs/free links.wiki.txt
 %%SERENDIPITY%%/bundled-libs/docs/stylesheet.css
+%%SERENDIPITY%%/bundled-libs/serendipity_generateFTPChecksums.php
 %%SERENDIPITY%%/bundled-libs/tests/README
+%%SERENDIPITY%%/checksums.inc.php
 %%SERENDIPITY%%/comment.php
 %%SERENDIPITY%%/deployment/archives/.ignore
 %%SERENDIPITY%%/deployment/comment.php
@@ -319,27 +321,49 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/docs/UPGRADE
 %%SERENDIPITY%%/docs/upgrade.sh
 %%SERENDIPITY%%/exit.php
-%%SERENDIPITY%%/htmlarea/ChangeLog
-%%SERENDIPITY%%/htmlarea/dialog.js
+%%SERENDIPITY%%/htmlarea/Xinha.css
+%%SERENDIPITY%%/htmlarea/XinhaCore.js
+%%SERENDIPITY%%/htmlarea/XinhaLoader.js
+%%SERENDIPITY%%/htmlarea/XinhaLoader_readme.txt
+%%SERENDIPITY%%/htmlarea/contrib/php-xinha.php
 %%SERENDIPITY%%/htmlarea/examples/2-areas.html
+%%SERENDIPITY%%/htmlarea/examples/ExtendedDemo.html
+%%SERENDIPITY%%/htmlarea/examples/Newbie.html
+%%SERENDIPITY%%/htmlarea/examples/XinhaConfig.js
 %%SERENDIPITY%%/htmlarea/examples/context-menu.html
 %%SERENDIPITY%%/htmlarea/examples/core.html
 %%SERENDIPITY%%/htmlarea/examples/css.html
 %%SERENDIPITY%%/htmlarea/examples/custom.css
+%%SERENDIPITY%%/htmlarea/examples/files/Extended.html
+%%SERENDIPITY%%/htmlarea/examples/files/custom.css
+%%SERENDIPITY%%/htmlarea/examples/files/dynamic.css
+%%SERENDIPITY%%/htmlarea/examples/files/ext_example-body.html
+%%SERENDIPITY%%/htmlarea/examples/files/ext_example-dest.php
+%%SERENDIPITY%%/htmlarea/examples/files/ext_example-menu.php
+%%SERENDIPITY%%/htmlarea/examples/files/full_example.css
+%%SERENDIPITY%%/htmlarea/examples/files/stylist.css
 %%SERENDIPITY%%/htmlarea/examples/full-page.html
 %%SERENDIPITY%%/htmlarea/examples/fully-loaded.html
 %%SERENDIPITY%%/htmlarea/examples/index.html
+%%SERENDIPITY%%/htmlarea/examples/simple_example.html
 %%SERENDIPITY%%/htmlarea/examples/spell-checker.html
 %%SERENDIPITY%%/htmlarea/examples/table-operations.html
+%%SERENDIPITY%%/htmlarea/examples/testbed.html
 %%SERENDIPITY%%/htmlarea/htmlarea.css
 %%SERENDIPITY%%/htmlarea/htmlarea.js
+%%SERENDIPITY%%/htmlarea/images/de/bold.gif
+%%SERENDIPITY%%/htmlarea/images/de/italic.gif
+%%SERENDIPITY%%/htmlarea/images/de/underline.gif
 %%SERENDIPITY%%/htmlarea/images/ed_about.gif
+%%SERENDIPITY%%/htmlarea/images/ed_align.gif
 %%SERENDIPITY%%/htmlarea/images/ed_align_center.gif
 %%SERENDIPITY%%/htmlarea/images/ed_align_justify.gif
 %%SERENDIPITY%%/htmlarea/images/ed_align_left.gif
 %%SERENDIPITY%%/htmlarea/images/ed_align_right.gif
 %%SERENDIPITY%%/htmlarea/images/ed_blank.gif
+%%SERENDIPITY%%/htmlarea/images/ed_buttons_main.gif
 %%SERENDIPITY%%/htmlarea/images/ed_charmap.gif
+%%SERENDIPITY%%/htmlarea/images/ed_clearfonts.gif
 %%SERENDIPITY%%/htmlarea/images/ed_color_bg.gif
 %%SERENDIPITY%%/htmlarea/images/ed_color_fg.gif
 %%SERENDIPITY%%/htmlarea/images/ed_copy.gif
@@ -363,6 +387,7 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/htmlarea/images/ed_link.gif
 %%SERENDIPITY%%/htmlarea/images/ed_list_bullet.gif
 %%SERENDIPITY%%/htmlarea/images/ed_list_num.gif
+%%SERENDIPITY%%/htmlarea/images/ed_overwrite.gif
 %%SERENDIPITY%%/htmlarea/images/ed_paste.gif
 %%SERENDIPITY%%/htmlarea/images/ed_print.gif
 %%SERENDIPITY%%/htmlarea/images/ed_redo.gif
@@ -371,75 +396,745 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/htmlarea/images/ed_s9yimage.gif
 %%SERENDIPITY%%/htmlarea/images/ed_save.gif
 %%SERENDIPITY%%/htmlarea/images/ed_save.png
+%%SERENDIPITY%%/htmlarea/images/ed_saveas.gif
+%%SERENDIPITY%%/htmlarea/images/ed_selectall.gif
 %%SERENDIPITY%%/htmlarea/images/ed_show_border.gif
+%%SERENDIPITY%%/htmlarea/images/ed_splitblock.gif
 %%SERENDIPITY%%/htmlarea/images/ed_splitcel.gif
 %%SERENDIPITY%%/htmlarea/images/ed_undo.gif
+%%SERENDIPITY%%/htmlarea/images/ed_word_cleaner.gif
+%%SERENDIPITY%%/htmlarea/images/fr/bold.gif
+%%SERENDIPITY%%/htmlarea/images/fr/strikethrough.gif
+%%SERENDIPITY%%/htmlarea/images/fr/underline.gif
 %%SERENDIPITY%%/htmlarea/images/fullscreen_maximize.gif
 %%SERENDIPITY%%/htmlarea/images/fullscreen_minimize.gif
 %%SERENDIPITY%%/htmlarea/images/insert_table.gif
+%%SERENDIPITY%%/htmlarea/images/insertfilelink.gif
+%%SERENDIPITY%%/htmlarea/images/insertmacro.png
+%%SERENDIPITY%%/htmlarea/images/tidy.gif
+%%SERENDIPITY%%/htmlarea/images/toggle_borders.gif
+%%SERENDIPITY%%/htmlarea/images/xinha_logo.gif
 %%SERENDIPITY%%/htmlarea/index.html
 %%SERENDIPITY%%/htmlarea/lang/b5.js
 %%SERENDIPITY%%/htmlarea/lang/ch.js
 %%SERENDIPITY%%/htmlarea/lang/cs-iso.js
-%%SERENDIPITY%%/htmlarea/lang/cs-utf.js
 %%SERENDIPITY%%/htmlarea/lang/cs-win.js
 %%SERENDIPITY%%/htmlarea/lang/cz.js
-%%SERENDIPITY%%/htmlarea/lang/da-utf.js
 %%SERENDIPITY%%/htmlarea/lang/da.js
-%%SERENDIPITY%%/htmlarea/lang/de-utf.js
 %%SERENDIPITY%%/htmlarea/lang/de.js
 %%SERENDIPITY%%/htmlarea/lang/ee.js
 %%SERENDIPITY%%/htmlarea/lang/el.js
 %%SERENDIPITY%%/htmlarea/lang/en.js
-%%SERENDIPITY%%/htmlarea/lang/es-utf.js
 %%SERENDIPITY%%/htmlarea/lang/es.js
+%%SERENDIPITY%%/htmlarea/lang/eu.js
+%%SERENDIPITY%%/htmlarea/lang/fa.js
 %%SERENDIPITY%%/htmlarea/lang/fi.js
-%%SERENDIPITY%%/htmlarea/lang/fr-utf.js
 %%SERENDIPITY%%/htmlarea/lang/fr.js
 %%SERENDIPITY%%/htmlarea/lang/gb.js
 %%SERENDIPITY%%/htmlarea/lang/he.js
 %%SERENDIPITY%%/htmlarea/lang/hu.js
-%%SERENDIPITY%%/htmlarea/lang/it-utf.js
 %%SERENDIPITY%%/htmlarea/lang/it.js
 %%SERENDIPITY%%/htmlarea/lang/ja-euc.js
 %%SERENDIPITY%%/htmlarea/lang/ja-jis.js
 %%SERENDIPITY%%/htmlarea/lang/ja-sjis.js
 %%SERENDIPITY%%/htmlarea/lang/ja-utf8.js
+%%SERENDIPITY%%/htmlarea/lang/ja.js
 %%SERENDIPITY%%/htmlarea/lang/lt.js
 %%SERENDIPITY%%/htmlarea/lang/lv.js
 %%SERENDIPITY%%/htmlarea/lang/nb.js
-%%SERENDIPITY%%/htmlarea/lang/nl-utf.js
 %%SERENDIPITY%%/htmlarea/lang/nl.js
-%%SERENDIPITY%%/htmlarea/lang/no-utf.js
 %%SERENDIPITY%%/htmlarea/lang/no.js
 %%SERENDIPITY%%/htmlarea/lang/pl.js
 %%SERENDIPITY%%/htmlarea/lang/pt_br.js
-%%SERENDIPITY%%/htmlarea/lang/pt_pt-utf.js
 %%SERENDIPITY%%/htmlarea/lang/pt_pt.js
 %%SERENDIPITY%%/htmlarea/lang/ro.js
 %%SERENDIPITY%%/htmlarea/lang/ru.js
-%%SERENDIPITY%%/htmlarea/lang/se-utf.js
 %%SERENDIPITY%%/htmlarea/lang/se.js
+%%SERENDIPITY%%/htmlarea/lang/sh.js
 %%SERENDIPITY%%/htmlarea/lang/si.js
+%%SERENDIPITY%%/htmlarea/lang/sr.js
+%%SERENDIPITY%%/htmlarea/lang/sv.js
+%%SERENDIPITY%%/htmlarea/lang/th.js
 %%SERENDIPITY%%/htmlarea/lang/vn.js
 %%SERENDIPITY%%/htmlarea/license.txt
+%%SERENDIPITY%%/htmlarea/modules/ColorPicker/ColorPicker.js
+%%SERENDIPITY%%/htmlarea/modules/ColorPicker/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/modules/CreateLink/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/modules/CreateLink/link.html
+%%SERENDIPITY%%/htmlarea/modules/CreateLink/link.js
+%%SERENDIPITY%%/htmlarea/modules/Dialogs/dialog.js
+%%SERENDIPITY%%/htmlarea/modules/Dialogs/inline-dialog.js
+%%SERENDIPITY%%/htmlarea/modules/Dialogs/panel-dialog.js
+%%SERENDIPITY%%/htmlarea/modules/Dialogs/popupwin.js
+%%SERENDIPITY%%/htmlarea/modules/FullScreen/full-screen.js
+%%SERENDIPITY%%/htmlarea/modules/FullScreen/lang/de.js
+%%SERENDIPITY%%/htmlarea/modules/FullScreen/lang/fr.js
+%%SERENDIPITY%%/htmlarea/modules/FullScreen/lang/ja.js
+%%SERENDIPITY%%/htmlarea/modules/FullScreen/lang/nb.js
+%%SERENDIPITY%%/htmlarea/modules/FullScreen/lang/pl.js
+%%SERENDIPITY%%/htmlarea/modules/FullScreen/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/modules/FullScreen/lang/ru.js
+%%SERENDIPITY%%/htmlarea/modules/FullScreen/lang/sv.js
+%%SERENDIPITY%%/htmlarea/modules/Gecko/Gecko.js
+%%SERENDIPITY%%/htmlarea/modules/Gecko/paraHandlerBest.js
+%%SERENDIPITY%%/htmlarea/modules/GetHtml/DOMwalk.js
+%%SERENDIPITY%%/htmlarea/modules/GetHtml/TransformInnerHTML.js
+%%SERENDIPITY%%/htmlarea/modules/GetHtml/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/modules/InsertImage/insert_image.html
+%%SERENDIPITY%%/htmlarea/modules/InsertImage/insert_image.js
+%%SERENDIPITY%%/htmlarea/modules/InsertTable/insert_table.html
+%%SERENDIPITY%%/htmlarea/modules/InsertTable/insert_table.js
+%%SERENDIPITY%%/htmlarea/modules/InternetExplorer/InternetExplorer.js
+%%SERENDIPITY%%/htmlarea/modules/Opera/Opera.js
+%%SERENDIPITY%%/htmlarea/modules/WebKit/WebKit.js
+%%SERENDIPITY%%/htmlarea/plugins/Abbreviation/abbr/de.js
+%%SERENDIPITY%%/htmlarea/plugins/Abbreviation/abbr/en.js
+%%SERENDIPITY%%/htmlarea/plugins/Abbreviation/abbreviation.css
+%%SERENDIPITY%%/htmlarea/plugins/Abbreviation/abbreviation.js
+%%SERENDIPITY%%/htmlarea/plugins/Abbreviation/img/ed_abbreviation.gif
+%%SERENDIPITY%%/htmlarea/plugins/Abbreviation/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/Abbreviation/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/Abbreviation/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/Abbreviation/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/Abbreviation/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/Abbreviation/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/Abbreviation/popups/abbreviation.html
+%%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/background-image.js
+%%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/backgrounds/blufur.jpg
+%%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/backgrounds/palecnvs.jpg
+%%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/backgrounds/ppplcnvs.jpg
+%%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/backgrounds/thumbnails/blufur.jpg
+%%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/backgrounds/thumbnails/palecnvs.jpg
+%%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/backgrounds/thumbnails/ppplcnvs.jpg
+%%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/backgrounds/thumbnails/ylwsand.jpg
+%%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/backgrounds/ylwsand.jpg
+%%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/img/ed_bgimage.gif
+%%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/popups/bgimage.html
 %%SERENDIPITY%%/htmlarea/plugins/CSS/css.js
 %%SERENDIPITY%%/htmlarea/plugins/CSS/lang/en.js
+%%SERENDIPITY%%/htmlarea/plugins/CharCounter/char-counter.js
+%%SERENDIPITY%%/htmlarea/plugins/CharCounter/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/CharCounter/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/CharCounter/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/CharCounter/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/CharCounter/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/CharCounter/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/CharacterMap/CharacterMap.css
+%%SERENDIPITY%%/htmlarea/plugins/CharacterMap/character-map.js
+%%SERENDIPITY%%/htmlarea/plugins/CharacterMap/img/ed_charmap.gif
+%%SERENDIPITY%%/htmlarea/plugins/CharacterMap/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/CharacterMap/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/CharacterMap/lang/it.js
+%%SERENDIPITY%%/htmlarea/plugins/CharacterMap/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/CharacterMap/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/CharacterMap/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/CharacterMap/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/CharacterMap/lang/ru.js
+%%SERENDIPITY%%/htmlarea/plugins/CharacterMap/lang/sv.js
+%%SERENDIPITY%%/htmlarea/plugins/CharacterMap/popups/select_character.html
+%%SERENDIPITY%%/htmlarea/plugins/ClientsideSpellcheck/clientside-spellcheck.js
+%%SERENDIPITY%%/htmlarea/plugins/ClientsideSpellcheck/img/clientside-spellcheck.gif
+%%SERENDIPITY%%/htmlarea/plugins/ClientsideSpellcheck/img/he-spell-check.gif
+%%SERENDIPITY%%/htmlarea/plugins/ClientsideSpellcheck/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/ClientsideSpellcheck/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/ClientsideSpellcheck/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/ClientsideSpellcheck/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/ClientsideSpellcheck/lang/pt_br.js
 %%SERENDIPITY%%/htmlarea/plugins/ContextMenu/context-menu.js
 %%SERENDIPITY%%/htmlarea/plugins/ContextMenu/lang/de.js
 %%SERENDIPITY%%/htmlarea/plugins/ContextMenu/lang/el.js
 %%SERENDIPITY%%/htmlarea/plugins/ContextMenu/lang/en.js
+%%SERENDIPITY%%/htmlarea/plugins/ContextMenu/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/ContextMenu/lang/he.js
+%%SERENDIPITY%%/htmlarea/plugins/ContextMenu/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/ContextMenu/lang/nb.js
 %%SERENDIPITY%%/htmlarea/plugins/ContextMenu/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/ContextMenu/lang/pl.js
 %%SERENDIPITY%%/htmlarea/plugins/ContextMenu/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/ContextMenu/lang/sv.js
 %%SERENDIPITY%%/htmlarea/plugins/ContextMenu/menu.css
+%%SERENDIPITY%%/htmlarea/plugins/DefinitionList/definition-list.css
+%%SERENDIPITY%%/htmlarea/plugins/DefinitionList/definition-list.js
+%%SERENDIPITY%%/htmlarea/plugins/DefinitionList/img/ed_dd.gif
+%%SERENDIPITY%%/htmlarea/plugins/DefinitionList/img/ed_dl.gif
+%%SERENDIPITY%%/htmlarea/plugins/DefinitionList/img/ed_dt.gif
+%%SERENDIPITY%%/htmlarea/plugins/DefinitionList/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/DefinitionList/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/DefinitionList/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/DoubleClick/double-click.js
+%%SERENDIPITY%%/htmlarea/plugins/DynamicCSS/dynamiccss.js
+%%SERENDIPITY%%/htmlarea/plugins/DynamicCSS/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/DynamicCSS/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/DynamicCSS/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/DynamicCSS/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/DynamicCSS/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/DynamicCSS/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/EditTag/edit-tag.js
+%%SERENDIPITY%%/htmlarea/plugins/EditTag/img/ed_edit_tag.gif
+%%SERENDIPITY%%/htmlarea/plugins/EditTag/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/EditTag/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/EditTag/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/EditTag/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/EditTag/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/EditTag/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/EditTag/popups/edit_tag.html
+%%SERENDIPITY%%/htmlarea/plugins/Equation/ASCIIMathML.js
+%%SERENDIPITY%%/htmlarea/plugins/Equation/equation.js
+%%SERENDIPITY%%/htmlarea/plugins/Equation/example.html
+%%SERENDIPITY%%/htmlarea/plugins/Equation/img/abs_value.gif
+%%SERENDIPITY%%/htmlarea/plugins/Equation/img/diag_fraction.gif
+%%SERENDIPITY%%/htmlarea/plugins/Equation/img/divide.gif
+%%SERENDIPITY%%/htmlarea/plugins/Equation/img/dsp_greater_equal.gif
+%%SERENDIPITY%%/htmlarea/plugins/Equation/img/dsp_less_equal.gif
+%%SERENDIPITY%%/htmlarea/plugins/Equation/img/dsp_notequal.gif
+%%SERENDIPITY%%/htmlarea/plugins/Equation/img/equation.gif
+%%SERENDIPITY%%/htmlarea/plugins/Equation/img/equation.old.gif
+%%SERENDIPITY%%/htmlarea/plugins/Equation/img/greater_equal_than.gif
+%%SERENDIPITY%%/htmlarea/plugins/Equation/img/hor_fraction.gif
+%%SERENDIPITY%%/htmlarea/plugins/Equation/img/less_equal_than.gif
+%%SERENDIPITY%%/htmlarea/plugins/Equation/img/mul.gif
+%%SERENDIPITY%%/htmlarea/plugins/Equation/img/notequal.gif
+%%SERENDIPITY%%/htmlarea/plugins/Equation/img/parenthesis.gif
+%%SERENDIPITY%%/htmlarea/plugins/Equation/img/root.gif
+%%SERENDIPITY%%/htmlarea/plugins/Equation/img/square_root.gif
+%%SERENDIPITY%%/htmlarea/plugins/Equation/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/Equation/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/Equation/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/Equation/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/Equation/popups/dialog.html
+%%SERENDIPITY%%/htmlarea/plugins/Equation/readme.txt
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/Classes/ExtendedFileManager.php
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/Readme.txt
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/assets/EditorContent.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/assets/ImageEditor.css
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/assets/dialog.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/assets/dragTableCols.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/assets/editor.css
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/assets/editor.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/assets/editorFrame.css
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/assets/editorFrame.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/assets/hover.htc
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/assets/imagelist.css
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/assets/images.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/assets/manager.css
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/assets/manager.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/assets/popup.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/assets/slider.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/assets/wz_jsgraphics.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/backend.php
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/config.inc.php
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/demo_images/.htaccess
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/demo_images/bikerpeep.jpg
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/demo_images/linux/linux.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/demo_images/wesnoth078.jpg
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/editor.php
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/editorFrame.php
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/extended-file-manager.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/def.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/def_small.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/doc.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/doc_small.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/fla.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/fla_small.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/folder.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/folder_small.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/gif_small.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/gz.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/gz_small.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/html.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/html_small.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/jpg_small.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/js.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/js_small.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/mov.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/mov_small.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/pdf.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/pdf_small.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/php.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/php_small.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/png_small.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/ppt.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/ppt_small.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/rar.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/rar_small.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/txt.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/txt_small.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/xls.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/xls_small.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/zip.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons/zip_small.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/images.php
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/1x1_transparent.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/2x2.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/2x2_w.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/btnFolderNew.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/btnFolderNew1.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/btnFolderUp.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/btnFolderUp1.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/btn_cancel.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/btn_ok.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/crop.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/default.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/div.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/dots.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/ed_linkfile.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/ed_linkfile1.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/edit_active.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/edit_copy.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/edit_cut.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/edit_paste.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/edit_pencil.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/edit_rename.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/edit_trash.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/folder.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/hand.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/islocked2.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/locked.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/measure.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/noimages.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/rotate.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/save.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/scale.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/spacer.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/t_black.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/t_white.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/unlocked.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/unlocked2.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img/unlocked_empty.gif
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/lang/es.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/lang/pl.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/manager.php
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/prompt.html
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/resizer.php
+%%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/thumbs.php
+%%SERENDIPITY%%/htmlarea/plugins/Filter/filter.js
+%%SERENDIPITY%%/htmlarea/plugins/Filter/filters/paragraph.js
+%%SERENDIPITY%%/htmlarea/plugins/Filter/filters/word.js
+%%SERENDIPITY%%/htmlarea/plugins/Filter/img/ed_filter.gif
+%%SERENDIPITY%%/htmlarea/plugins/Filter/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/Filter/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/Filter/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/FindReplace/find-replace.js
+%%SERENDIPITY%%/htmlarea/plugins/FindReplace/fr_engine.js
+%%SERENDIPITY%%/htmlarea/plugins/FindReplace/img/ed_find.gif
+%%SERENDIPITY%%/htmlarea/plugins/FindReplace/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/FindReplace/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/FindReplace/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/FindReplace/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/FindReplace/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/FindReplace/lang/pl.js
+%%SERENDIPITY%%/htmlarea/plugins/FindReplace/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/FindReplace/lang/ru.js
+%%SERENDIPITY%%/htmlarea/plugins/FindReplace/lang/sv.js
+%%SERENDIPITY%%/htmlarea/plugins/FindReplace/popups/find_replace.html
+%%SERENDIPITY%%/htmlarea/plugins/FormOperations/README
+%%SERENDIPITY%%/htmlarea/plugins/FormOperations/default_form.html
+%%SERENDIPITY%%/htmlarea/plugins/FormOperations/form-operations.js
+%%SERENDIPITY%%/htmlarea/plugins/FormOperations/formmail.php
+%%SERENDIPITY%%/htmlarea/plugins/FormOperations/iframe.css
+%%SERENDIPITY%%/htmlarea/plugins/FormOperations/img/buttons.gif
+%%SERENDIPITY%%/htmlarea/plugins/FormOperations/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/FormOperations/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/FormOperations/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/FormOperations/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/FormOperations/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/FormOperations/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/FormOperations/panel.html
+%%SERENDIPITY%%/htmlarea/plugins/Forms/forms.css
+%%SERENDIPITY%%/htmlarea/plugins/Forms/forms.js
+%%SERENDIPITY%%/htmlarea/plugins/Forms/img/ed_button.gif
+%%SERENDIPITY%%/htmlarea/plugins/Forms/img/ed_checkbox.gif
+%%SERENDIPITY%%/htmlarea/plugins/Forms/img/ed_fieldset.gif
+%%SERENDIPITY%%/htmlarea/plugins/Forms/img/ed_file.gif
+%%SERENDIPITY%%/htmlarea/plugins/Forms/img/ed_form.gif
+%%SERENDIPITY%%/htmlarea/plugins/Forms/img/ed_hidden.gif
+%%SERENDIPITY%%/htmlarea/plugins/Forms/img/ed_image.gif
+%%SERENDIPITY%%/htmlarea/plugins/Forms/img/ed_label.gif
+%%SERENDIPITY%%/htmlarea/plugins/Forms/img/ed_password.gif
+%%SERENDIPITY%%/htmlarea/plugins/Forms/img/ed_radio.gif
+%%SERENDIPITY%%/htmlarea/plugins/Forms/img/ed_reset.gif
+%%SERENDIPITY%%/htmlarea/plugins/Forms/img/ed_select.gif
+%%SERENDIPITY%%/htmlarea/plugins/Forms/img/ed_submit.gif
+%%SERENDIPITY%%/htmlarea/plugins/Forms/img/ed_text.gif
+%%SERENDIPITY%%/htmlarea/plugins/Forms/img/ed_textarea.gif
+%%SERENDIPITY%%/htmlarea/plugins/Forms/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/Forms/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/Forms/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/Forms/popups/fieldset.html
+%%SERENDIPITY%%/htmlarea/plugins/Forms/popups/form.html
+%%SERENDIPITY%%/htmlarea/plugins/Forms/popups/input.html
+%%SERENDIPITY%%/htmlarea/plugins/Forms/popups/label.html
+%%SERENDIPITY%%/htmlarea/plugins/Forms/popups/select.html
+%%SERENDIPITY%%/htmlarea/plugins/Forms/popups/textarea.html
 %%SERENDIPITY%%/htmlarea/plugins/FullPage/full-page.js
 %%SERENDIPITY%%/htmlarea/plugins/FullPage/img/docprop.gif
+%%SERENDIPITY%%/htmlarea/plugins/FullPage/lang/de.js
 %%SERENDIPITY%%/htmlarea/plugins/FullPage/lang/en.js
+%%SERENDIPITY%%/htmlarea/plugins/FullPage/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/FullPage/lang/he.js
+%%SERENDIPITY%%/htmlarea/plugins/FullPage/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/FullPage/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/FullPage/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/FullPage/lang/pl.js
 %%SERENDIPITY%%/htmlarea/plugins/FullPage/lang/pt_br.js
 %%SERENDIPITY%%/htmlarea/plugins/FullPage/lang/pt_pt.js
 %%SERENDIPITY%%/htmlarea/plugins/FullPage/lang/ro.js
 %%SERENDIPITY%%/htmlarea/plugins/FullPage/popups/docprop.html
 %%SERENDIPITY%%/htmlarea/plugins/FullPage/test.html
+%%SERENDIPITY%%/htmlarea/plugins/GenericPlugin/generic-plugin.js
+%%SERENDIPITY%%/htmlarea/plugins/GetHtml/get-html.js
+%%SERENDIPITY%%/htmlarea/plugins/HorizontalRule/horizontal-rule.js
+%%SERENDIPITY%%/htmlarea/plugins/HorizontalRule/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/HorizontalRule/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/HorizontalRule/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/HorizontalRule/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/HorizontalRule/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/HorizontalRule/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/HorizontalRule/popups/edit_horizontal_rule.html
+%%SERENDIPITY%%/htmlarea/plugins/HtmlEntities/Entities.js
+%%SERENDIPITY%%/htmlarea/plugins/HtmlEntities/html-entities.js
+%%SERENDIPITY%%/htmlarea/plugins/HtmlEntities/iso-8859-1.js
+%%SERENDIPITY%%/htmlarea/plugins/HtmlTidy/README
+%%SERENDIPITY%%/htmlarea/plugins/HtmlTidy/html-tidy-config.cfg
+%%SERENDIPITY%%/htmlarea/plugins/HtmlTidy/html-tidy-logic.php
+%%SERENDIPITY%%/htmlarea/plugins/HtmlTidy/html-tidy.js
+%%SERENDIPITY%%/htmlarea/plugins/HtmlTidy/img/html-tidy.gif
+%%SERENDIPITY%%/htmlarea/plugins/HtmlTidy/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/HtmlTidy/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/HtmlTidy/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/HtmlTidy/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/HtmlTidy/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/HtmlTidy/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/Classes/Files.php
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/Classes/GD.php
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/Classes/IM.php
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/Classes/ImageEditor.php
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/Classes/ImageManager.php
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/Classes/NetPBM.php
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/Classes/Thumbnail.php
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/Classes/Transform.php
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/README.txt
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/assets/EditorContent.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/assets/ImageEditor.css
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/assets/dialog.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/assets/editor.css
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/assets/editor.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/assets/editorFrame.css
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/assets/editorFrame.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/assets/hover.htc
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/assets/imagelist.css
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/assets/images.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/assets/manager.css
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/assets/manager.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/assets/popup.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/assets/slider.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/assets/wz_jsgraphics.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/backend.php
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/config.inc.php
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/ddt.php
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/demo_images/bikerpeep.jpg
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/demo_images/linux/linux.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/demo_images/wesnoth078.jpg
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/editor.php
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/editorFrame.php
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/image-manager.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/image-picker.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/images.php
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/2x2.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/2x2_w.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/btnFolderNew.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/btnFolderUp.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/btn_cancel.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/btn_ok.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/crop.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/default.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/div.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/dots.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/edit_active.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/edit_pencil.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/edit_trash.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/folder.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/hand.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/islocked2.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/locked.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/measure.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/noimages.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/rotate.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/save.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/scale.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/spacer.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/t_black.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/t_white.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/unlocked.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/img/unlocked2.gif
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/lang/es.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/lang/pl.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/lang/ru.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/lang/sv.js
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/manager.php
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/newFolder.html
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/resizer.php
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/thumbs.php
+%%SERENDIPITY%%/htmlarea/plugins/InsertAnchor/img/insert-anchor.gif
+%%SERENDIPITY%%/htmlarea/plugins/InsertAnchor/img/placeholder.gif
+%%SERENDIPITY%%/htmlarea/plugins/InsertAnchor/insert-anchor.css
+%%SERENDIPITY%%/htmlarea/plugins/InsertAnchor/insert-anchor.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertAnchor/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertAnchor/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertAnchor/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertAnchor/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertAnchor/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertAnchor/lang/pl.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertAnchor/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertAnchor/popups/insert_anchor.html
+%%SERENDIPITY%%/htmlarea/plugins/InsertMarquee/img/ed_marquee.gif
+%%SERENDIPITY%%/htmlarea/plugins/InsertMarquee/insert-marquee.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertMarquee/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertMarquee/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertMarquee/lang/it.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertMarquee/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertMarquee/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertMarquee/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertMarquee/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertMarquee/popups/insert_marquee.html
+%%SERENDIPITY%%/htmlarea/plugins/InsertPagebreak/img/pagebreak.gif
+%%SERENDIPITY%%/htmlarea/plugins/InsertPagebreak/insert-pagebreak.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertPagebreak/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertPagebreak/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertPagebreak/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertPagebreak/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertPagebreak/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertPagebreak/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertPicture/InsertPicture.php
+%%SERENDIPITY%%/htmlarea/plugins/InsertPicture/demo_pictures/bikerpeep.jpg
+%%SERENDIPITY%%/htmlarea/plugins/InsertPicture/demo_pictures/wesnoth078.jpg
+%%SERENDIPITY%%/htmlarea/plugins/InsertPicture/img/btn_open.gif
+%%SERENDIPITY%%/htmlarea/plugins/InsertPicture/img/nopic.gif
+%%SERENDIPITY%%/htmlarea/plugins/InsertPicture/insert-picture.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertPicture/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertPicture/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertPicture/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertPicture/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertPicture/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertPicture/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertPicture/lang/sv.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertPicture/viewpicture.html
+%%SERENDIPITY%%/htmlarea/plugins/InsertSmiley/README.txt
+%%SERENDIPITY%%/htmlarea/plugins/InsertSmiley/img/ed_smiley.gif
+%%SERENDIPITY%%/htmlarea/plugins/InsertSmiley/insert-smiley.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertSmiley/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertSmiley/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertSmiley/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertSmiley/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertSmiley/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertSmiley/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertSmiley/popups/insertsmiley.html
+%%SERENDIPITY%%/htmlarea/plugins/InsertSmiley/smileys.txt
+%%SERENDIPITY%%/htmlarea/plugins/InsertSnippet/InsertSnippet.css
+%%SERENDIPITY%%/htmlarea/plugins/InsertSnippet/demosnippets.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertSnippet/img/ed_snippet.gif
+%%SERENDIPITY%%/htmlarea/plugins/InsertSnippet/insert-snippet.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertSnippet/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertSnippet/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertSnippet/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertSnippet/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertSnippet/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/InsertSnippet/popups/insertsnippet.html
+%%SERENDIPITY%%/htmlarea/plugins/InsertSnippet/readme.html
+%%SERENDIPITY%%/htmlarea/plugins/InsertSnippet/snippets.html
+%%SERENDIPITY%%/htmlarea/plugins/InsertSnippet/snippets.php
+%%SERENDIPITY%%/htmlarea/plugins/InsertWords/insert-words.js
+%%SERENDIPITY%%/htmlarea/plugins/LangMarks/lang-marks.css
+%%SERENDIPITY%%/htmlarea/plugins/LangMarks/lang-marks.js
+%%SERENDIPITY%%/htmlarea/plugins/LangMarks/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/LangMarks/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/LangMarks/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/LangMarks/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/LangMarks/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/LangMarks/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/api.html
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/dtree.css
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/dtree.js
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/example01.html
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/base.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/cd.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/copy.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/empty.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/folder.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/folderopen.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/globe.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/imgfolder.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/join.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/joinbottom.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/line.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/minus.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/minusbottom.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/move.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/musicfolder.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/nolines_minus.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/nolines_plus.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/offline.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/offline.png
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/page.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/plus.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/plusbottom.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/question.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img/trash.gif
+%%SERENDIPITY%%/htmlarea/plugins/Linker/dialog.html
+%%SERENDIPITY%%/htmlarea/plugins/Linker/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/Linker/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/Linker/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/Linker/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/Linker/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/Linker/lang/pl.js
+%%SERENDIPITY%%/htmlarea/plugins/Linker/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/Linker/linker.js
+%%SERENDIPITY%%/htmlarea/plugins/Linker/scan.php
+%%SERENDIPITY%%/htmlarea/plugins/ListType/ListType.css
+%%SERENDIPITY%%/htmlarea/plugins/ListType/img/circle.png
+%%SERENDIPITY%%/htmlarea/plugins/ListType/img/decimal.png
+%%SERENDIPITY%%/htmlarea/plugins/ListType/img/disc.png
+%%SERENDIPITY%%/htmlarea/plugins/ListType/img/lower-alpha.png
+%%SERENDIPITY%%/htmlarea/plugins/ListType/img/lower-roman.png
+%%SERENDIPITY%%/htmlarea/plugins/ListType/img/none.png
+%%SERENDIPITY%%/htmlarea/plugins/ListType/img/square.png
+%%SERENDIPITY%%/htmlarea/plugins/ListType/img/upper-alpha.png
+%%SERENDIPITY%%/htmlarea/plugins/ListType/img/upper-roman.png
+%%SERENDIPITY%%/htmlarea/plugins/ListType/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/ListType/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/ListType/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/ListType/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/ListType/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/ListType/lang/pl.js
+%%SERENDIPITY%%/htmlarea/plugins/ListType/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/ListType/lang/ru.js
+%%SERENDIPITY%%/htmlarea/plugins/ListType/lang/sv.js
+%%SERENDIPITY%%/htmlarea/plugins/ListType/list-type.js
+%%SERENDIPITY%%/htmlarea/plugins/NoteServer/img/note.gif
+%%SERENDIPITY%%/htmlarea/plugins/NoteServer/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/NoteServer/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/NoteServer/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/NoteServer/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/NoteServer/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/NoteServer/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/NoteServer/note-server.js
+%%SERENDIPITY%%/htmlarea/plugins/NoteServer/popups/codenote.html
+%%SERENDIPITY%%/htmlarea/plugins/PasteText/img/ed_paste_text.gif
+%%SERENDIPITY%%/htmlarea/plugins/PasteText/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/PasteText/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/PasteText/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/PasteText/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/PasteText/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/PasteText/lang/pl.js
+%%SERENDIPITY%%/htmlarea/plugins/PasteText/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/PasteText/lang/ru.js
+%%SERENDIPITY%%/htmlarea/plugins/PasteText/paste-text.js
+%%SERENDIPITY%%/htmlarea/plugins/PasteText/popups/paste_text.html
+%%SERENDIPITY%%/htmlarea/plugins/PreserveScripts/js.png
+%%SERENDIPITY%%/htmlarea/plugins/PreserveScripts/php.png
+%%SERENDIPITY%%/htmlarea/plugins/PreserveScripts/php.svg
+%%SERENDIPITY%%/htmlarea/plugins/PreserveScripts/preserve-scripts.js
+%%SERENDIPITY%%/htmlarea/plugins/QuickTag/img/ed_quicktag.gif
+%%SERENDIPITY%%/htmlarea/plugins/QuickTag/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/QuickTag/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/QuickTag/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/QuickTag/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/QuickTag/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/QuickTag/lang/pl.js
+%%SERENDIPITY%%/htmlarea/plugins/QuickTag/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/QuickTag/popups/quicktag.html
+%%SERENDIPITY%%/htmlarea/plugins/QuickTag/quick-tag.js
+%%SERENDIPITY%%/htmlarea/plugins/QuickTag/tag-lib.js
+%%SERENDIPITY%%/htmlarea/plugins/SaveSubmit/README.txt
+%%SERENDIPITY%%/htmlarea/plugins/SaveSubmit/img/ed_save_green.gif
+%%SERENDIPITY%%/htmlarea/plugins/SaveSubmit/img/ed_save_red.gif
+%%SERENDIPITY%%/htmlarea/plugins/SaveSubmit/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/SaveSubmit/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/SaveSubmit/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/SaveSubmit/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/SaveSubmit/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/SaveSubmit/lang/ru.js
+%%SERENDIPITY%%/htmlarea/plugins/SaveSubmit/save-submit.js
+%%SERENDIPITY%%/htmlarea/plugins/SetId/img/placeholder.gif
+%%SERENDIPITY%%/htmlarea/plugins/SetId/img/set-id.gif
+%%SERENDIPITY%%/htmlarea/plugins/SetId/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/SetId/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/SetId/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/SetId/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/SetId/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/SetId/popups/set_id.html
+%%SERENDIPITY%%/htmlarea/plugins/SetId/set-id.css
+%%SERENDIPITY%%/htmlarea/plugins/SetId/set-id.js
+%%SERENDIPITY%%/htmlarea/plugins/SmartReplace/dialog.html
+%%SERENDIPITY%%/htmlarea/plugins/SmartReplace/img/smartquotes.gif
+%%SERENDIPITY%%/htmlarea/plugins/SmartReplace/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/SmartReplace/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/SmartReplace/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/SmartReplace/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/SmartReplace/readme.txt
+%%SERENDIPITY%%/htmlarea/plugins/SmartReplace/smart-replace.js
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/README
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/aspell_setup.php
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/img/he-spell-check.gif
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/img/spell-check.gif
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/lang/cz.js
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/lang/da.js
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/lang/he.js
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/lang/hu.js
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/lang/ro.js
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/readme-tech.html
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/spell-check-logic.cgi
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/spell-check-logic.php
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/spell-check-savedicts.php
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/spell-check-style.css
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/spell-check-ui.html
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/spell-check-ui.js
+%%SERENDIPITY%%/htmlarea/plugins/SpellChecker/spell-checker.js
+%%SERENDIPITY%%/htmlarea/plugins/Stylist/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/Stylist/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/Stylist/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/Stylist/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/Stylist/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/Stylist/lang/pl.js
+%%SERENDIPITY%%/htmlarea/plugins/Stylist/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/Stylist/lang/ru.js
+%%SERENDIPITY%%/htmlarea/plugins/Stylist/stylist.js
+%%SERENDIPITY%%/htmlarea/plugins/SuperClean/dialog.html
+%%SERENDIPITY%%/htmlarea/plugins/SuperClean/filters/paragraph.js
+%%SERENDIPITY%%/htmlarea/plugins/SuperClean/filters/word.js
+%%SERENDIPITY%%/htmlarea/plugins/SuperClean/img/ed_superclean.gif
+%%SERENDIPITY%%/htmlarea/plugins/SuperClean/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/SuperClean/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/SuperClean/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/SuperClean/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/SuperClean/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/SuperClean/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/SuperClean/super-clean.js
+%%SERENDIPITY%%/htmlarea/plugins/SuperClean/tidy.php
 %%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/cell-delete.gif
 %%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/cell-insert-after.gif
 %%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/cell-insert-before.gif
@@ -462,14 +1157,45 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/el.js
 %%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/en.js
 %%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/fi.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/he.js
 %%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/hu.js
 %%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/it.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/nb.js
 %%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/nl.js
 %%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/no.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/pl.js
 %%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/pt_br.js
 %%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/pt_pt.js
 %%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/ro.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/ru.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/sv.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/popups/merge_cells.html
 %%SERENDIPITY%%/htmlarea/plugins/TableOperations/table-operations.js
+%%SERENDIPITY%%/htmlarea/plugins/Template/img/ed_template.gif
+%%SERENDIPITY%%/htmlarea/plugins/Template/img/layout_01.gif
+%%SERENDIPITY%%/htmlarea/plugins/Template/img/layout_02.gif
+%%SERENDIPITY%%/htmlarea/plugins/Template/img/layout_03.gif
+%%SERENDIPITY%%/htmlarea/plugins/Template/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/Template/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/Template/lang/it.js
+%%SERENDIPITY%%/htmlarea/plugins/Template/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/Template/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/Template/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/Template/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/Template/popups/template.html
+%%SERENDIPITY%%/htmlarea/plugins/Template/template.css
+%%SERENDIPITY%%/htmlarea/plugins/Template/template.js
+%%SERENDIPITY%%/htmlarea/plugins/UnFormat/img/unformat.gif
+%%SERENDIPITY%%/htmlarea/plugins/UnFormat/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/UnFormat/lang/fr.js
+%%SERENDIPITY%%/htmlarea/plugins/UnFormat/lang/ja.js
+%%SERENDIPITY%%/htmlarea/plugins/UnFormat/lang/nb.js
+%%SERENDIPITY%%/htmlarea/plugins/UnFormat/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/UnFormat/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/UnFormat/popups/unformat.html
+%%SERENDIPITY%%/htmlarea/plugins/UnFormat/un-format.js
 %%SERENDIPITY%%/htmlarea/popupdiv.js
 %%SERENDIPITY%%/htmlarea/popups/about.html
 %%SERENDIPITY%%/htmlarea/popups/blank.html
@@ -481,11 +1207,52 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/htmlarea/popups/link.html
 %%SERENDIPITY%%/htmlarea/popups/old-fullscreen.html
 %%SERENDIPITY%%/htmlarea/popups/old_insert_image.html
+%%SERENDIPITY%%/htmlarea/popups/popup.css
 %%SERENDIPITY%%/htmlarea/popups/popup.js
 %%SERENDIPITY%%/htmlarea/popups/select_color.html
 %%SERENDIPITY%%/htmlarea/popupwin.js
 %%SERENDIPITY%%/htmlarea/reference.html
-%%SERENDIPITY%%/htmlarea/release-notes.html
+%%SERENDIPITY%%/htmlarea/release-notes.txt
+%%SERENDIPITY%%/htmlarea/skins/blue-look/button-background.png
+%%SERENDIPITY%%/htmlarea/skins/blue-look/separator.gif
+%%SERENDIPITY%%/htmlarea/skins/blue-look/skin.css
+%%SERENDIPITY%%/htmlarea/skins/blue-metallic/button-background.png
+%%SERENDIPITY%%/htmlarea/skins/blue-metallic/separator.gif
+%%SERENDIPITY%%/htmlarea/skins/blue-metallic/skin.css
+%%SERENDIPITY%%/htmlarea/skins/green-look/button-background.gif
+%%SERENDIPITY%%/htmlarea/skins/green-look/separator.gif
+%%SERENDIPITY%%/htmlarea/skins/green-look/skin.css
+%%SERENDIPITY%%/htmlarea/skins/inditreuse/README
+%%SERENDIPITY%%/htmlarea/skins/inditreuse/back.png
+%%SERENDIPITY%%/htmlarea/skins/inditreuse/button-background.png
+%%SERENDIPITY%%/htmlarea/skins/inditreuse/hover.png
+%%SERENDIPITY%%/htmlarea/skins/inditreuse/selected.png
+%%SERENDIPITY%%/htmlarea/skins/inditreuse/separator.png
+%%SERENDIPITY%%/htmlarea/skins/inditreuse/skin.css
+%%SERENDIPITY%%/htmlarea/skins/silva/dialog.jpg
+%%SERENDIPITY%%/htmlarea/skins/silva/html.gif
+%%SERENDIPITY%%/htmlarea/skins/silva/skin.css
+%%SERENDIPITY%%/htmlarea/skins/silva/statusbar.png
+%%SERENDIPITY%%/htmlarea/skins/silva/toolbar.png
+%%SERENDIPITY%%/htmlarea/skins/titan/README
+%%SERENDIPITY%%/htmlarea/skins/titan/back.png
+%%SERENDIPITY%%/htmlarea/skins/titan/button-background.png
+%%SERENDIPITY%%/htmlarea/skins/titan/hover.png
+%%SERENDIPITY%%/htmlarea/skins/titan/selected.png
+%%SERENDIPITY%%/htmlarea/skins/titan/separator.png
+%%SERENDIPITY%%/htmlarea/skins/titan/skin.css
+%%SERENDIPITY%%/htmlarea/skins/xp-blue/back.png
+%%SERENDIPITY%%/htmlarea/skins/xp-blue/button-background.png
+%%SERENDIPITY%%/htmlarea/skins/xp-blue/hover.png
+%%SERENDIPITY%%/htmlarea/skins/xp-blue/selected.png
+%%SERENDIPITY%%/htmlarea/skins/xp-blue/separator.png
+%%SERENDIPITY%%/htmlarea/skins/xp-blue/skin.css
+%%SERENDIPITY%%/htmlarea/skins/xp-green/back.png
+%%SERENDIPITY%%/htmlarea/skins/xp-green/button-background.png
+%%SERENDIPITY%%/htmlarea/skins/xp-green/hover.png
+%%SERENDIPITY%%/htmlarea/skins/xp-green/selected.png
+%%SERENDIPITY%%/htmlarea/skins/xp-green/separator.png
+%%SERENDIPITY%%/htmlarea/skins/xp-green/skin.css
 %%SERENDIPITY%%/include/admin/category.inc.php
 %%SERENDIPITY%%/include/admin/comments.inc.php
 %%SERENDIPITY%%/include/admin/configuration.inc.php
@@ -509,6 +1276,8 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/include/admin/importers/phpbb.inc.php
 %%SERENDIPITY%%/include/admin/importers/pivot.inc.php
 %%SERENDIPITY%%/include/admin/importers/pmachine.inc.php
+%%SERENDIPITY%%/include/admin/importers/serendipity.inc.php
+%%SERENDIPITY%%/include/admin/importers/smf.inc.php
 %%SERENDIPITY%%/include/admin/importers/sunlog.inc.php
 %%SERENDIPITY%%/include/admin/importers/textpattern.inc.php
 %%SERENDIPITY%%/include/admin/importers/voodoopad.inc.php
@@ -1098,6 +1867,7 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_hu.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_ja.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_ko.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_nl.inc.php
@@ -1114,6 +1884,7 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_hu.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_ja.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_ko.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_nl.inc.php
@@ -1503,6 +2274,7 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/plugin_remoterss.tpl
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/plugin_remoterss_nasaiotd.tpl
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/serendipity_plugin_remoterss.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_cn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_cs.inc.php
@@ -1636,9 +2408,9 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/sql/db_update_1.2-alpha1_1.2_alpha2_mysql.sql
 %%SERENDIPITY%%/sql/db_update_1.2-alpha1_1.2_alpha2_postgres.sql
 %%SERENDIPITY%%/sql/db_update_1.2-alpha1_1.2_alpha2_sqlite.sql
-%%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.1-alpha3_mysql.sql
-%%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.1-alpha3_postgres.sql
-%%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.1-alpha3_sqlite.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.2-alpha3_mysql.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.2-alpha3_postgres.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.2-alpha3_sqlite.sql
 %%SERENDIPITY%%/sql/db_update_1.2-alpha3_1.2_alpha4_mysql.sql
 %%SERENDIPITY%%/sql/db_update_1.2-alpha3_1.2_alpha4_postgres.sql
 %%SERENDIPITY%%/sql/db_update_1.2-alpha3_1.2_alpha4_sqlite.sql
@@ -1657,20 +2429,10 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_banner.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_banner_fluid.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_default.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_default_a.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_default_h.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_frontpage.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_frontpage_a.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_frontpage_h.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_logout.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_logout_a.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_logout_h.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_personal.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_personal_a.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_personal_h.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_weblog.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_weblog_a.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_weblog_h.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_footer.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_infopane.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_infopane_fluid.png
@@ -1684,7 +2446,7 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_sidebar_further.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_sidebar_media.png
 %%SERENDIPITY%%/templates/bulletproof/admin/style.css
-%%SERENDIPITY%%/templates/bulletproof/admin/style_fluid.css
+%%SERENDIPITY%%/templates/bulletproof/admin/style_fixed.css
 %%SERENDIPITY%%/templates/bulletproof/base.css
 %%SERENDIPITY%%/templates/bulletproof/blank_style.css
 %%SERENDIPITY%%/templates/bulletproof/blue_style.css
@@ -1693,6 +2455,7 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/templates/bulletproof/comments.tpl
 %%SERENDIPITY%%/templates/bulletproof/config.inc.php
 %%SERENDIPITY%%/templates/bulletproof/content.tpl
+%%SERENDIPITY%%/templates/bulletproof/default_style.css
 %%SERENDIPITY%%/templates/bulletproof/entries.tpl
 %%SERENDIPITY%%/templates/bulletproof/entries_archives.tpl
 %%SERENDIPITY%%/templates/bulletproof/entries_summary.tpl
@@ -1708,6 +2471,13 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/templates/bulletproof/img/blue_header.jpg
 %%SERENDIPITY%%/templates/bulletproof/img/blue_xml.png
 %%SERENDIPITY%%/templates/bulletproof/img/bulletproof_button.png
+%%SERENDIPITY%%/templates/bulletproof/img/configure.png
+%%SERENDIPITY%%/templates/bulletproof/img/default_back.png
+%%SERENDIPITY%%/templates/bulletproof/img/default_banner.jpg
+%%SERENDIPITY%%/templates/bulletproof/img/default_body.jpg
+%%SERENDIPITY%%/templates/bulletproof/img/default_forward.png
+%%SERENDIPITY%%/templates/bulletproof/img/default_graph_bar.png
+%%SERENDIPITY%%/templates/bulletproof/img/default_sitenav_back.png
 %%SERENDIPITY%%/templates/bulletproof/img/forward.png
 %%SERENDIPITY%%/templates/bulletproof/img/graph_bar_horisontal.png
 %%SERENDIPITY%%/templates/bulletproof/img/green_back.png
@@ -2051,9 +2821,6 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/templates/mt-rusty/preview.png
 %%SERENDIPITY%%/templates/mt-rusty/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt-rusty/style.css
-%%SERENDIPITY%%/templates/mt-stormy/inactive.txt
-%%SERENDIPITY%%/templates/mt-stormy/info.txt
-%%SERENDIPITY%%/templates/mt-stormy/style.css
 %%SERENDIPITY%%/templates/mt-trendy/htmlarea.css
 %%SERENDIPITY%%/templates/mt-trendy/img/back.png
 %%SERENDIPITY%%/templates/mt-trendy/img/forward.png
@@ -2116,7 +2883,6 @@ www/serendipity/bundled-libs/.current_version
 @dirrm %%SERENDIPITY%%/templates/mt3-chalkboard
 @dirrm %%SERENDIPITY%%/templates/mt-trendy/img
 @dirrm %%SERENDIPITY%%/templates/mt-trendy
-@dirrm %%SERENDIPITY%%/templates/mt-stormy
 @dirrm %%SERENDIPITY%%/templates/mt-rusty/img
 @dirrm %%SERENDIPITY%%/templates/mt-rusty
 @dirrm %%SERENDIPITY%%/templates/mt-plainjane
@@ -2236,22 +3002,201 @@ www/serendipity/bundled-libs/.current_version
 @dirrm %%SERENDIPITY%%/include/admin/importers
 @dirrm %%SERENDIPITY%%/include/admin
 @dirrm %%SERENDIPITY%%/include
+@dirrm %%SERENDIPITY%%/htmlarea/skins/xp-green
+@dirrm %%SERENDIPITY%%/htmlarea/skins/xp-blue
+@dirrm %%SERENDIPITY%%/htmlarea/skins/titan
+@dirrm %%SERENDIPITY%%/htmlarea/skins/silva
+@dirrm %%SERENDIPITY%%/htmlarea/skins/inditreuse
+@dirrm %%SERENDIPITY%%/htmlarea/skins/green-look
+@dirrm %%SERENDIPITY%%/htmlarea/skins/blue-metallic
+@dirrm %%SERENDIPITY%%/htmlarea/skins/blue-look
+@dirrm %%SERENDIPITY%%/htmlarea/skins
 @dirrm %%SERENDIPITY%%/htmlarea/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/UnFormat/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/UnFormat/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/UnFormat/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/UnFormat
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Template/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Template/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Template/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Template
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/TableOperations/popups
 @dirrm %%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang
 @dirrm %%SERENDIPITY%%/htmlarea/plugins/TableOperations/img
 @dirrm %%SERENDIPITY%%/htmlarea/plugins/TableOperations
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/SuperClean/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/SuperClean/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/SuperClean/filters
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/SuperClean
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Stylist/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Stylist
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/SpellChecker/personal_dicts
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/SpellChecker/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/SpellChecker/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/SpellChecker
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/SmartReplace/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/SmartReplace/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/SmartReplace
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/SetId/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/SetId/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/SetId/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/SetId
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/SaveSubmit/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/SaveSubmit/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/SaveSubmit
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/QuickTag/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/QuickTag/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/QuickTag/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/QuickTag
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/PreserveScripts
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/PasteText/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/PasteText/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/PasteText/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/PasteText
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/NoteServer/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/NoteServer/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/NoteServer/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/NoteServer
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ListType/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ListType/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ListType
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Linker/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Linker/dTree/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Linker/dTree
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Linker
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/LangMarks/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/LangMarks
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertWords
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertSnippet/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertSnippet/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertSnippet/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertSnippet
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertSmiley/smileys
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertSmiley/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertSmiley/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertSmiley/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertSmiley
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertPicture/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertPicture/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertPicture/demo_pictures
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertPicture
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertPagebreak/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertPagebreak/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertPagebreak
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertMarquee/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertMarquee/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertMarquee/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertMarquee
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertAnchor/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertAnchor/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertAnchor/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/InsertAnchor
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ImageManager/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ImageManager/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ImageManager/demo_images/linux
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ImageManager/demo_images
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ImageManager/assets
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ImageManager/Classes
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ImageManager
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/HtmlTidy/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/HtmlTidy/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/HtmlTidy
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/HtmlEntities
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/HorizontalRule/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/HorizontalRule/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/HorizontalRule/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/HorizontalRule
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/GetHtml
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/GenericPlugin
 @dirrm %%SERENDIPITY%%/htmlarea/plugins/FullPage/popups
 @dirrm %%SERENDIPITY%%/htmlarea/plugins/FullPage/lang
 @dirrm %%SERENDIPITY%%/htmlarea/plugins/FullPage/img
 @dirrm %%SERENDIPITY%%/htmlarea/plugins/FullPage
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Forms/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Forms/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Forms/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Forms
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/FormOperations/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/FormOperations/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/FormOperations
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/FindReplace/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/FindReplace/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/FindReplace/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/FindReplace
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Filter/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Filter/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Filter/filters
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Filter
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/icons
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/demo_images/linux
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/demo_images
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/assets
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager/Classes
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ExtendedFileManager
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Equation/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Equation/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Equation/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Equation
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/EditTag/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/EditTag/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/EditTag/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/EditTag
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/DynamicCSS/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/DynamicCSS
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/DoubleClick
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/DefinitionList/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/DefinitionList/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/DefinitionList
 @dirrm %%SERENDIPITY%%/htmlarea/plugins/ContextMenu/lang
 @dirrm %%SERENDIPITY%%/htmlarea/plugins/ContextMenu
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ClientsideSpellcheck/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ClientsideSpellcheck/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ClientsideSpellcheck
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/CharacterMap/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/CharacterMap/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/CharacterMap/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/CharacterMap
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/CharCounter/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/CharCounter
 @dirrm %%SERENDIPITY%%/htmlarea/plugins/CSS/lang
 @dirrm %%SERENDIPITY%%/htmlarea/plugins/CSS
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/backgrounds/thumbnails
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/BackgroundImage/backgrounds
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/BackgroundImage
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Abbreviation/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Abbreviation/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Abbreviation/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Abbreviation/abbr
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/Abbreviation
 @dirrm %%SERENDIPITY%%/htmlarea/plugins
+@dirrm %%SERENDIPITY%%/htmlarea/modules/WebKit
+@dirrm %%SERENDIPITY%%/htmlarea/modules/Opera
+@dirrm %%SERENDIPITY%%/htmlarea/modules/InternetExplorer
+@dirrm %%SERENDIPITY%%/htmlarea/modules/InsertTable
+@dirrm %%SERENDIPITY%%/htmlarea/modules/InsertImage
+@dirrm %%SERENDIPITY%%/htmlarea/modules/GetHtml/lang
+@dirrm %%SERENDIPITY%%/htmlarea/modules/GetHtml
+@dirrm %%SERENDIPITY%%/htmlarea/modules/Gecko
+@dirrm %%SERENDIPITY%%/htmlarea/modules/FullScreen/lang
+@dirrm %%SERENDIPITY%%/htmlarea/modules/FullScreen
+@dirrm %%SERENDIPITY%%/htmlarea/modules/Dialogs
+@dirrm %%SERENDIPITY%%/htmlarea/modules/CreateLink/lang
+@dirrm %%SERENDIPITY%%/htmlarea/modules/CreateLink
+@dirrm %%SERENDIPITY%%/htmlarea/modules/ColorPicker/lang
+@dirrm %%SERENDIPITY%%/htmlarea/modules/ColorPicker
+@dirrm %%SERENDIPITY%%/htmlarea/modules
 @dirrm %%SERENDIPITY%%/htmlarea/lang
+@dirrm %%SERENDIPITY%%/htmlarea/images/fr
+@dirrm %%SERENDIPITY%%/htmlarea/images/de
 @dirrm %%SERENDIPITY%%/htmlarea/images
+@dirrm %%SERENDIPITY%%/htmlarea/examples/files
 @dirrm %%SERENDIPITY%%/htmlarea/examples
+@dirrm %%SERENDIPITY%%/htmlarea/contrib
 @dirrm %%SERENDIPITY%%/htmlarea
 @dirrm %%SERENDIPITY%%/docs
 @dirrm %%SERENDIPITY%%/deployment/uploads
