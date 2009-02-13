@@ -22,7 +22,7 @@ MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
 		ftp://ftp.cs.tu-berlin.de/pub/net/news/tin/stable/ \
 		ftp://ftp.informatik.uni-hamburg.de/pub/soft/news/tin/stable/
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	johans@stack.nl
 COMMENT=	Easy-to-use threaded newsreader with NOV/NNTP support
 
 LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib \

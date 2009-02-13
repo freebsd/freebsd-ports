@@ -8,9 +8,10 @@
 PORTNAME=	trn
 PORTVERSION=	3.6
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.uu.net/networking/news/readers/trn/
+MASTER_SITES=	ftp://ftp.uu.net/networking/news/readers/trn/ \
+		ftp://ftp.funet.fi/pub/unix/news/trn/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	Threaded Read News newsreader
 
 RUN_DEPENDS=	munpack:${PORTSDIR}/converters/mpack

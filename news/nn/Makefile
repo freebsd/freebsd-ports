@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.sourcefiles.org/Internet/News/Usenet_Clients/  \
 		http://www.wa.apana.org.au/~dean/sources/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	Newsreader
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -Iconf" LDFLAGS="${LDFLAGS} -s"
