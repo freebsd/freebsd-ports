@@ -7,6 +7,7 @@
 
 PORTNAME=	teacooker
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-
@@ -20,8 +21,6 @@ USE_KDE4=	automoc4 kdeprefix workspace
 USE_QT_VER=	4
 QT_COMPONENTS=	gui dbus network opengl svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
-
-BROKEN=		Does not compile with KDE 4.2
 
 WRKSRC=		${WRKDIR}/TeaCooker
 
