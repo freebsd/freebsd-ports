@@ -2259,6 +2259,7 @@ dlint                           ports/dns/dlint
 dlume                           ports/deskutils/dlume
 dlv                             ports/lang/dlv
 dlx                             ports/emulators/dlx
+dma                             ports/mail/dma
 dmachine                        ports/ftp/dmachine
 dmake                           ports/devel/dmake
 dmalloc                         ports/devel/dmalloc
@@ -11164,6 +11165,7 @@ p5-HTTP-DAV                     ports/www/p5-HTTP-DAV
 p5-HTTP-Engine                  ports/www/p5-HTTP-Engine
 p5-HTTP-GHTTP                   ports/www/p5-HTTP-GHTTP
 p5-HTTP-HeaderParser-XS         ports/www/p5-HTTP-HeaderParser-XS
+p5-HTTP-Headers-Fast            ports/www/p5-HTTP-Headers-Fast
 p5-HTTP-Lite                    ports/www/p5-HTTP-Lite
 p5-HTTP-MHTTP                   ports/www/p5-HTTP-MHTTP
 p5-HTTP-MobileAgent             ports/www/p5-HTTP-MobileAgent
@@ -14467,6 +14469,7 @@ p5-http-dav                     ports/www/p5-HTTP-DAV
 p5-http-engine                  ports/www/p5-HTTP-Engine
 p5-http-ghttp                   ports/www/p5-HTTP-GHTTP
 p5-http-headerparser-xs         ports/www/p5-HTTP-HeaderParser-XS
+p5-http-headers-fast            ports/www/p5-HTTP-Headers-Fast
 p5-http-lite                    ports/www/p5-HTTP-Lite
 p5-http-mhttp                   ports/www/p5-HTTP-MHTTP
 p5-http-mobileagent             ports/www/p5-HTTP-MobileAgent
@@ -17185,6 +17188,7 @@ phatbeat                        ports/audio/phatbeat
 phc                             ports/lang/phc
 phd2fasta                       ports/biology/phd2fasta
 phex                            ports/net-p2p/phex
+philesight                      ports/sysutils/philesight
 phluid                          ports/x11-wm/phluid
 pho                             ports/graphics/pho
 phonon                          ports/multimedia/phonon
@@ -18665,6 +18669,7 @@ py-vorbis                       ports/audio/py-vorbis
 py-vte                          ports/x11-toolkits/py-vte
 py-wax                          ports/x11-toolkits/py-wax
 py-webhelpers                   ports/www/py-webhelpers
+py-webob                        ports/www/py-webob
 py-webunit                      ports/www/py-webunit
 py-webware                      ports/www/py-webware
 py-webware-component            ports/www/py-webware-component
@@ -19563,6 +19568,7 @@ ruby-libpng                     ports/graphics/ruby-libpng
 ruby-libxml                     ports/textproc/ruby-libxml
 ruby-liquid                     ports/textproc/ruby-liquid
 ruby-locale                     ports/devel/ruby-locale
+ruby-locale2                    ports/devel/ruby-locale2
 ruby-log4r                      ports/sysutils/ruby-log4r
 ruby-lua                        ports/lang/ruby-lua
 ruby-lua4                       ports/lang/ruby-lua4
@@ -23471,6 +23477,7 @@ zephulor                        ports/games/zephulor
 zeroer                          ports/sysutils/zeroer
 zeroinstall-injector            ports/devel/zeroinstall-injector
 zerowait-httpd                  ports/www/zerowait-httpd
+zetaback                        ports/sysutils/zetaback
 zfs-replicate                   ports/sysutils/zfs-replicate
 zfs-snapshot-mgmt               ports/sysutils/zfs-snapshot-mgmt
 zgv                             ports/graphics/zgv
