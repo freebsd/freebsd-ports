@@ -24,6 +24,7 @@ SAMBA_PORT=		samba3
 MASTERDIR=		${.CURDIR}/../../net/${SAMBA_PORT}
 MD5_FILE=		${.CURDIR}/distinfo
 DESCR=			${.CURDIR}/pkg-descr
+PORTSCOUT=		limit:^3\.0\.\d+
 
 # Maintainer's note:
 #   Don't forget to test with WITH_ADS, WITH_QUOTAS,
