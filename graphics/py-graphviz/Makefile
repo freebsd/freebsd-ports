@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	graphviz
-PORTVERSION=	0.33
-PORTREVISION=	2
+PORTVERSION=	0.99.1
 CATEGORIES=	graphics python
-MASTER_SITES=	http://networkx.lanl.gov/download/pygraphviz/
+MASTER_SITES=	CHEESESHOP \
+		http://networkx.lanl.gov/download/pygraphviz/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pygraphviz-${PORTVERSION}
 
@@ -21,7 +21,8 @@ RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	pygraphviz
-PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g}
+
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+; \

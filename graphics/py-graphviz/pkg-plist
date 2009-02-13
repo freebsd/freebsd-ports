@@ -8,22 +8,27 @@
 %%PYTHON_SITELIBDIR%%/pygraphviz/graphviz.py
 %%PYTHON_SITELIBDIR%%/pygraphviz/graphviz.pyc
 %%PYTHON_SITELIBDIR%%/pygraphviz/graphviz.pyo
+%%PYTHON_SITELIBDIR%%/pygraphviz/release.py
+%%PYTHON_SITELIBDIR%%/pygraphviz/release.pyc
+%%PYTHON_SITELIBDIR%%/pygraphviz/release.pyo
 %%PYTHON_SITELIBDIR%%/pygraphviz/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/pygraphviz/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pygraphviz/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pygraphviz/tests/attributes.txt
+%%PYTHON_SITELIBDIR%%/pygraphviz/tests/graph.txt
+%%PYTHON_SITELIBDIR%%/pygraphviz/tests/layout_draw.txt
+%%PYTHON_SITELIBDIR%%/pygraphviz/tests/subgraph.txt
 %%PYTHON_SITELIBDIR%%/pygraphviz/tests/test.py
 %%PYTHON_SITELIBDIR%%/pygraphviz/tests/test.pyc
 %%PYTHON_SITELIBDIR%%/pygraphviz/tests/test.pyo
-%%DOCSDIR%%/API.txt
-%%DOCSDIR%%/Examples.txt
-%%DOCSDIR%%/FAQ.txt
-%%DOCSDIR%%/License.txt
-%%DOCSDIR%%/Readme.txt
-%%DOCSDIR%%/Tutorial.txt
+%%DOCSDIR%%/INSTALL.txt
+%%DOCSDIR%%/README.txt
+%%DOCSDIR%%/examples/attributes.py
+%%DOCSDIR%%/examples/django_simple.py
 %%DOCSDIR%%/examples/miles.py
 %%DOCSDIR%%/examples/simple.py
 %%DOCSDIR%%/examples/star.py
-%%DOCSDIR%%/examples/miles.dat
+%%DOCSDIR%%/examples/subgraph.py
 @dirrm %%PYTHON_SITELIBDIR%%/pygraphviz/tests
 @dirrm %%PYTHON_SITELIBDIR%%/pygraphviz
 @dirrm %%DOCSDIR%%/examples

@@ -1,11 +1,24 @@
---- setup.py.orig	Sun Mar 12 23:09:05 2006
-+++ setup.py	Sun Sep 24 15:05:50 2006
-@@ -25,7 +19,7 @@
+--- setup.py.orig
++++ setup.py
+@@ -20,8 +20,8 @@
+     print "To install, run 'python setup.py install'"
+     print
  
- # If setting the prefix failed you should attempt to set the prefix here:
- # prefix="/usr" # unix, Linux
--# prefix="/usr/local" # unix, alternate
-+prefix="%%LOCALBASE%%" # unix, alternate
- # prefix="/sw"  # OSX, fink
- # prefix="/opt/local"  # OSX, darwin-ports? 
+-library_path=None
+-include_path=None
++#library_path=None
++#include_path=None
  
+ 
+ # If the setup script couldn't find your graphviz installation you can
+@@ -33,8 +33,8 @@
+ #include_path='/usr/include/graphviz'
+ 
+ # UNIX, Linux alternate
+-#library_path='/usr/local/lib/graphviz'
+-#include_path='/usr/local/include/graphviz'
++library_path='%%LOCALBASE%%/lib/graphviz'
++include_path='%%LOCALBASE%%/include/graphviz'
+ 
+ # Mac OS X (Fink)
+ #library_path='/sw/lib/graphviz'
