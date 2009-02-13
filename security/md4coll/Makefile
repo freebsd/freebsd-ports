@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}.c
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	daniel@roe.ch
 COMMENT=	Fast MD4 collision generator
 
 NO_WRKSUBDIR=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	1.6
 CATEGORIES=	security
 MASTER_SITES=	http://monkey.org/~dugsong/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	daniel@roe.ch
 COMMENT=	Tool for testing network IDS implementations
 
 GNU_CONFIGURE=	yes
