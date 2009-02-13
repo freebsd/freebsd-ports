@@ -10,7 +10,7 @@ PORTVERSION=	0.64
 CATEGORIES=	lang
 MASTER_SITES=	SF/tiny-cobol
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glen.j.barber@gmail.com
 COMMENT=	A tiny COBOL compiler for IA32 platforms
 
 ONLY_FOR_ARCHS=	i386

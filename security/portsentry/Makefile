@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sentrytools
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glen.j.barber@gmail.com
 COMMENT=	Port scan detection and active defense
 
 SUB_FILES=	portsentry.sh

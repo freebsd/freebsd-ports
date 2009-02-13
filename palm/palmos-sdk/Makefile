@@ -11,7 +11,7 @@ CATEGORIES=	palm
 MASTER_SITES=
 DISTFILES=	palmos-sdk-${SDKVER}r3-1.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glen.j.barber@gmail.com
 COMMENT=	Palm OS SDK
 
 RESTRICTED=	License agreement is required.

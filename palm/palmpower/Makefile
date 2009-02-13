@@ -17,7 +17,7 @@ CATEGORIES=	palm
 # but that site doesn't allow direct HTTP transfers.
 #
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glen.j.barber@gmail.com
 COMMENT=	Disassembler and other tools for PalmOS binaries
 
 GNU_CONFIGURE=	yes
