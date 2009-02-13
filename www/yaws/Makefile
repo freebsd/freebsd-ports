@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yaws
-PORTVERSION=	1.79
+PORTVERSION=	1.80
 CATEGORIES=	www
 MASTER_SITES=	http://yaws.hyber.org/download/
 
@@ -35,6 +35,7 @@ APPDIR=${PREFIX}/lib/erlang/lib/yaws-${PORTVERSION}
 .if defined(WITH_SENDFILE)
 PLIST_SUB+=	WITH_SENDFILE=""
 .else
+CONFIGURE_ARGS+=--disable-sendfile
 PLIST_SUB+=	WITH_SENDFILE="@comment "
 .endif
 
@@ -46,11 +47,6 @@ post-patch:
 		${WRKSRC}/man/yaws_api.5 ${WRKSRC}/man/yaws.conf.5 \
 		${WRKSRC}/src/yaws_config.erl ${WRKSRC}/scripts/yaws.template
 	@${FIND} ${WRKSRC} -name \*.orig -or -name \*.bak | ${XARGS} ${RM}
-.if defined(WITH_SENDFILE)
-	@${REINPLACE_CMD} -e 's|@HAVE_SENDFILE@|true|g' ${WRKSRC}/include.mk.in
-.else
-	@${REINPLACE_CMD} -e 's|@HAVE_SENDFILE@|false|g' ${WRKSRC}/include.mk.in
-.endif
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/yaws ${PREFIX}/bin
