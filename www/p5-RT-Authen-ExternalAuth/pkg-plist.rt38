@@ -1,10 +1,13 @@
-lib/RT/Authen/ExternalAuth.pm
-lib/RT/User_Vendor.pm
 man/auto/RT/Authen/ExternalAuth/.packlist
 %%RTHOME%%/plugins/RT-Authen-ExternalAuth/etc/RT_SiteConfig.pm
 %%RTHOME%%/plugins/RT-Authen-ExternalAuth/html/Callbacks/ExternalAuth/autohandler/Auth
 %%RTHOME%%/plugins/RT-Authen-ExternalAuth/lib/RT/Authen/ExternalAuth.pm
 %%RTHOME%%/plugins/RT-Authen-ExternalAuth/lib/RT/User_Vendor.pm
+%%RTHOME%%/plugins/RT-Authen-ExternalAuth/lib/RT/Authen/ExternalAuth/DBI.pm
+%%RTHOME%%/plugins/RT-Authen-ExternalAuth/lib/RT/Authen/ExternalAuth/DBI/Cookie.pm
+%%RTHOME%%/plugins/RT-Authen-ExternalAuth/lib/RT/Authen/ExternalAuth/LDAP.pm
+@dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/lib/RT/Authen/ExternalAuth/DBI
+@dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/lib/RT/Authen/ExternalAuth
 @dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/lib/RT/Authen
 @dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/lib/RT
 @dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/lib
