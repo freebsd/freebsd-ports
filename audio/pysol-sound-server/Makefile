@@ -12,7 +12,7 @@ CATEGORIES=	audio games
 MASTER_SITES=	http://www.pysol.org/download/pysol/ \
 		ftp://ftp.is.co.za/linux/distributions/gentoo/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	serg@tmn.ru
 COMMENT=	Python extension module to play sounds and background music
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
