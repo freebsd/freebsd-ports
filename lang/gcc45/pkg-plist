@@ -12,7 +12,6 @@ bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
 bin/%%GNU_HOST%%-gcc%%SUFFIX%%
 bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
 info/gcc%%SUFFIX%%/dir
-%%JAVA%%bin/addr2name.awk%%SUFFIX%%
 %%JAVA%%bin/aot-compile%%SUFFIX%%
 %%JAVA%%bin/gappletviewer%%SUFFIX%%
 %%JAVA%%bin/gc-analyze%%SUFFIX%%
