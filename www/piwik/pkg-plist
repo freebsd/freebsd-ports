@@ -155,6 +155,7 @@
 %%WWWDIR%%/lang/en.php
 %%WWWDIR%%/lang/es.php
 %%WWWDIR%%/lang/fr.php
+%%WWWDIR%%/lang/hu.php
 %%WWWDIR%%/lang/it.php
 %%WWWDIR%%/lang/ja.php
 %%WWWDIR%%/lang/nl.php
@@ -311,7 +312,6 @@
 %%WWWDIR%%/libs/Zend/Cache/Frontend/Output.php
 %%WWWDIR%%/libs/Zend/Cache/Frontend/Page.php
 %%WWWDIR%%/libs/Zend/Cache/TODO.txt
-%%WWWDIR%%/libs/Zend/Cache.php
 %%WWWDIR%%/libs/Zend/Config/Exception.php
 %%WWWDIR%%/libs/Zend/Config/Ini.php
 %%WWWDIR%%/libs/Zend/Config/Xml.php
@@ -732,6 +732,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/go.mail.ru.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/guide.opendns.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/hledani.tiscali.cz.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/holmes.ge.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/hotbox.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/images.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/images.google.fr.png
@@ -1228,7 +1229,6 @@
 %%WWWDIR%%/themes/default/simple_structure.css
 %%WWWDIR%%/themes/default/simple_structure_footer.tpl
 %%WWWDIR%%/themes/default/simple_structure_header.tpl
-@dirrm %%WWWDIR%%/config
 @dirrm %%WWWDIR%%/core/API
 @dirrm %%WWWDIR%%/core/Archive/Array
 @dirrm %%WWWDIR%%/core/Archive
@@ -1387,5 +1387,6 @@
 @dirrm %%WWWDIR%%/themes/default/images
 @dirrm %%WWWDIR%%/themes/default
 @dirrm %%WWWDIR%%/themes
-@dirrm %%WWWDIR%%/tmp
-@dirrm %%WWWDIR%%
+@dirrmtry %%WWWDIR%%/config
+@dirrmtry %%WWWDIR%%/tmp
+@dirrmtry %%WWWDIR%%
