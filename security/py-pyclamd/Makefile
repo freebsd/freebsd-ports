@@ -7,7 +7,7 @@
 
 PORTNAME=	pyclamd
 PORTVERSION=	0.1.1
-CATEGORIES=	mail python
+CATEGORIES=	security python
 MASTER_SITES=	http://xael.org/norman/python/pyclamd/
 DISTFILES=	pyclamd.py
 
