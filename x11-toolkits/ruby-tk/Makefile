@@ -7,7 +7,6 @@
 
 PORTNAME=	tk
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	2
 PORTREVISION=	${RUBY_PORTREVISION}
 PORTEPOCH=	1
 CATEGORIES+=	x11-toolkits ruby tcl tk
@@ -26,27 +25,14 @@ USE_XORG=	x11
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-TK_VERSION?=	8.4
-.if defined(WITH_TCLTK_JP)
-TCLPORTDIR?=	${PORTSDIR}/japanese/tcl
-TKPORTDIR?=	${PORTSDIR}/japanese/tk
-.else
-TCLPORTDIR?=	${PORTSDIR}/lang/tcl
-TKPORTDIR?=	${PORTSDIR}/x11-toolkits/tk
-.endif
-
-LIB_DEPENDS=	tcl${TK_VERSION:S/.//}:${TCLPORTDIR}${TK_VERSION:C/[^0-9]//g} \
-		tk${TK_VERSION:S/.//}:${TKPORTDIR}${TK_VERSION:C/[^0-9]//g}
+USE_TK=		84+
 
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--with-X11-dir=${LOCALBASE} \
-		--with-tcl-include=${LOCALBASE}/include/tcl${TK_VERSION} \
-		--with-tk-include=${LOCALBASE}/include/tk${TK_VERSION}
-.if defined(WITH_TCLTK_JP)
-CONFIGURE_ARGS+=--with-tcllib=tcl${TK_VERSION:S/.//} --with-tklib=tk${TK_VERSION:S/.//}
-.endif
+		--with-tcl-include=${TCL_INCLUDEDIR} \
+		--with-tk-include=${TK_INCLUDEDIR}
 
 MAKE_ARGS=	sitelibdir='$$(rubylibdir)'
 
@@ -59,6 +45,10 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -sf `cd ${PORTSDIR}/${RUBY_PORT}; ${MAKE} -V WRKDIR`/${PORTNAME} ${WRKDIR}/
+
+pre-configure:
+	@${REINPLACE_CMD} -e "s/8\.5 8\.4 8\.3 8\.2 8\.1 8\.0 .\../${TCL_VER}/g" \
+		${WRKSRC}/extconf.rb
 
 post-build:
 	@(cd ${BUILD_WRKSRC}/tkutil; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
