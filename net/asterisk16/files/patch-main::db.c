@@ -1,21 +1,21 @@
 
 $FreeBSD$
 
---- main/db.c.orig	Fri Jan 13 11:05:32 2006
-+++ main/db.c	Fri Jan 13 11:06:55 2006
-@@ -35,6 +35,7 @@
- #include <errno.h>
- #include <unistd.h>
+--- main/db.c
++++ main/db.c
+@@ -36,6 +36,7 @@
+ #include <sys/time.h>
+ #include <signal.h>
  #include <dirent.h>
 +#include <db.h>
  
- #include "asterisk.h"
- 
-@@ -51,7 +52,6 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revisi
+ #include "asterisk/channel.h"
+ #include "asterisk/file.h"
+@@ -46,7 +47,6 @@
  #include "asterisk/utils.h"
  #include "asterisk/lock.h"
  #include "asterisk/manager.h"
 -#include "db1-ast/include/db.h"
  
- #ifdef __CYGWIN__
- #define dbopen __dbopen
+ static DB *astdb;
+ AST_MUTEX_DEFINE_STATIC(dblock);

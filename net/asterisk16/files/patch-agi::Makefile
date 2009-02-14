@@ -1,5 +1,8 @@
---- agi/Makefile.orig	Sat Dec 16 23:14:34 2006
-+++ agi/Makefile	Wed Mar 28 11:13:21 2007
+
+$FreeBSD$
+
+--- agi/Makefile
++++ agi/Makefile
 @@ -13,7 +13,9 @@
  
  .PHONY: clean all uninstall
@@ -11,7 +14,7 @@
  
  ifeq ($(OSARCH),SunOS)
    LIBS+=-lsocket -lnsl
-@@ -31,8 +33,9 @@ eagi-test: eagi-test.o strcompat.o
+@@ -40,8 +42,9 @@
  eagi-sphinx-test: eagi-sphinx-test.o
  
  install: all

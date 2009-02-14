@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- channels/Makefile.orig
+--- channels/Makefile
 +++ channels/Makefile
-@@ -32,9 +32,10 @@
+@@ -27,9 +27,10 @@
  endif
  
  ifeq ($(OSARCH),FreeBSD)
@@ -16,7 +16,7 @@ $FreeBSD$
  endif
  
  ifeq ($(OSARCH),NetBSD)
-@@ -78,12 +79,13 @@
+@@ -69,12 +70,13 @@
  h323/libchanh323.a h323/Makefile.ast:
  	$(CMD_PREFIX) $(MAKE) -C h323
  	$(CMD_PREFIX) rm -f ../main/asterisk
@@ -26,7 +26,7 @@ $FreeBSD$
 -	$(CMD_PREFIX) echo
 -	$(CMD_PREFIX) echo "***************************************************************"
 -	$(CMD_PREFIX) exit 1
-+	$(CMD_PREFIX) $(MAKE) -C . chan_h323.so
++	$(MAKE) -C . chan_h323.so
 +#	$(CMD_PREFIX) echo "***************************************************************"
 +#	$(CMD_PREFIX) echo
 +#	$(CMD_PREFIX) echo "********** Re-run 'make' to pick up H.323 parameters **********"
@@ -36,7 +36,7 @@ $FreeBSD$
  endif
  
  dist-clean::
-@@ -113,8 +115,12 @@
+@@ -89,8 +91,12 @@
  else
  chan_h323.so: chan_h323.o h323/libchanh323.a
  	$(ECHO_PREFIX) echo "   [LD] $^ -> $@"
