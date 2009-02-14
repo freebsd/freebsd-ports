@@ -506,7 +506,6 @@
     SUBDIR += py-libgmail
     SUBDIR += py-milter
     SUBDIR += py-ppolicy
-    SUBDIR += py-pyclamd
     SUBDIR += py-spambayes
     SUBDIR += py-spf
     SUBDIR += py-turbomail

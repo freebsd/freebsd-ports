@@ -3816,3 +3816,5 @@ www/ocaml-wdialog||2009-02-13|Has expired: has been broken for more than 6 month
 news/sabnzbd||2009-02-13|Has expired: no longer developed, use news/sabnzbdplus instead
 devel/erlslang||2009-02-14|Broken with libslang2; no upstream development
 net/ntp-rc|net/ntp|2009-02-14|NTP is no longer in release candidate status. Use net/ntp instead.
+mail/py-pyclamd|security/py-pyclamd|2000-27-14|Category change
+
