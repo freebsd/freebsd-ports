@@ -16,5 +16,7 @@ COMMENT=	Simplistic script which automates rubyforge operations
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/rubyforge
 
 .include <bsd.port.mk>
