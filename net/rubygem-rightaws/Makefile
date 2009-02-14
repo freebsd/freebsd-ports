@@ -19,6 +19,7 @@ RUN_DEPENDS=	rubygem-righthttpconnection>=1.2.1:${PORTSDIR}/net/rubygem-righthtt
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
+RUBYGEM_AUTOPLIST=	yes
 UNIQUENAME=	${PORTNAME}
 
 OPTIONS=	LIBXML "Use libxml instead of REXML" Off
