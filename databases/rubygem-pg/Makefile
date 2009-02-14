@@ -17,6 +17,7 @@ COMMENT=		Ruby interface to PostgreSQL library
 USE_PGSQL=		yes
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
+RUBYGEM_AUTOPLIST=	yes
 
 PG_CONFIG=		${LOCALBASE}/bin/pg_config
 CONFIGURE_ARGS=		--with-pgsql-include-dir=`${PG_CONFIG} --includedir` \
