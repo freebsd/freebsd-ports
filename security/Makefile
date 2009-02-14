@@ -654,6 +654,7 @@
     SUBDIR += py-paramiko
     SUBDIR += py-posix1e
     SUBDIR += py-pow
+    SUBDIR += py-pyclamd
     SUBDIR += py-pycrypto
     SUBDIR += py-pycryptopp
     SUBDIR += py-pyme
