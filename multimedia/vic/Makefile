@@ -18,8 +18,8 @@ COMMENT=	MBONE video tool
 BUILD_DEPENDS+= v4l_compat>=1.0.20060801:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	uclmmbase:${PORTSDIR}/devel/uclmmbase
 
-USE_TK=		yes
-USE_TK_BUILD=	yes
+USE_TK=		84
+USE_TK_BUILD=	84
 
 USE_AUTOTOOLS=	autoconf:213
 USE_XORG=	xext

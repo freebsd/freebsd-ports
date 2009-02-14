@@ -18,10 +18,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	A nifty editor based on Tcl/Tk
 
-USE_TCL=	yes
-USE_TCL_BUILD=	yes
-USE_TK=		yes
-USE_TK_BUILD=	yes
+USE_TCL=	84
+USE_TCL_BUILD=	84
+USE_TK=		84
+USE_TK_BUILD=	84
 USE_XORG=	x11 xt
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
