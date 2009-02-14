@@ -17,5 +17,6 @@ COMMENT=	A Ruby library to access information on mp3 files
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
