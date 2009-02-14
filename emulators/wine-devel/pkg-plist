@@ -151,6 +151,7 @@ include/wine/windows/d3dx9.h
 include/wine/windows/d3dx9core.h
 include/wine/windows/d3dx9math.h
 include/wine/windows/d3dx9math.inl
+include/wine/windows/d3dx9mesh.h
 include/wine/windows/d3dx9shader.h
 include/wine/windows/d3dx9tex.h
 include/wine/windows/dbghelp.h
@@ -467,6 +468,8 @@ include/wine/windows/svrapi.h
 include/wine/windows/tapi.h
 include/wine/windows/tchar.h
 include/wine/windows/textserv.h
+include/wine/windows/textstor.h
+include/wine/windows/textstor.idl
 include/wine/windows/tlhelp32.h
 include/wine/windows/tmschema.h
 include/wine/windows/tom.h
