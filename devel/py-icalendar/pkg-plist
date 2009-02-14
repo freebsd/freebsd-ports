@@ -1,12 +1,11 @@
-@exec %%EASY_INSTALL_CMD%% -q -N -S %D/%%PYTHON_SITELIBDIR%% %%PYICALENDAR_EGG_VER%%
-@unexec %%EASY_INSTALL_CMD%% -q -m -S %D/%%PYTHON_SITELIBDIR%% %%PYICALENDAR_EGG_VER%%
-%%PYTHON_SITELIBDIR%%/%%PYICALENDAR_EGG%%
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 %%PORTDOCS%%%%DOCSDIR%%/example.txt
 %%PORTDOCS%%%%DOCSDIR%%/groupscheduled.ics
 %%PORTDOCS%%%%DOCSDIR%%/groupscheduled.txt
 %%PORTDOCS%%%%DOCSDIR%%/multiple.ics
 %%PORTDOCS%%%%DOCSDIR%%/multiple.txt
+%%PORTDOCS%%%%DOCSDIR%%/recurrence.ics
+%%PORTDOCS%%%%DOCSDIR%%/recurrence.txt
 %%PORTDOCS%%%%DOCSDIR%%/small.ics
 %%PORTDOCS%%%%DOCSDIR%%/small.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%PYTHON_SITELIBDIR%%
