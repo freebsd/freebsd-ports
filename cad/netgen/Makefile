@@ -18,8 +18,8 @@ COMMENT=	An automatic 3D tetrahedral mesh generator
 LIB_DEPENDS=	tix8184:${PORTSDIR}/x11-toolkits/tix
 
 USE_GMAKE=	yes
-USE_TK=		yes
-USE_TK_BUILD=	yes
+USE_TK=		84
+USE_TK_BUILD=	84
 USE_GL=		yes
 USE_XORG=	xmu xi
 

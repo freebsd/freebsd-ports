@@ -35,6 +35,8 @@ VTK_KITS=	Common Filtering Graphics Hybrid IO Imaging Rendering Parallel Patente
 
 PLIST_SUB+=	LIBVER=${LIBVER} PKGNAME=${PKGNAME}
 
+USE_TK=		84
+
 .include <bsd.port.pre.mk>
 
 .if defined(WRAP) || !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX}=="-headers"
