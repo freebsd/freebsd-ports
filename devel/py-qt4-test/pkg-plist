@@ -1,12 +1,9 @@
 %%PYTHON_SITELIBDIR%%/PyQt4/QtTest.so
-%%SIPFILES%%%%SIPDIR%%/QtTest/QtTestmod.sip
-%%SIPFILES%%%%SIPDIR%%/QtTest/qtestcase.sip
-%%SIPFILES%%%%SIPDIR%%/QtTest/qtestkeyboard.sip
-%%SIPFILES%%%%SIPDIR%%/QtTest/qtestmouse.sip
-%%SIPFILES%%%%SIPDIR%%/QtTest/qtestsystem.sip
-%%SIPFILES%%@dirrm %%SIPDIR%%/QtTest
-@cwd %%LOCALBASE%%
-%%API%%%%APIFILE%%
-%%API%%@dirrmtry share/qt4/qsci/api/python
-%%API%%@dirrmtry share/qt4/qsci/api
-%%API%%@dirrmtry share/qt4/qsci
+%%SIP%%share/py-sip/QtTest/QtTestmod.sip
+%%SIP%%share/py-sip/QtTest/qtestcase.sip
+%%SIP%%share/py-sip/QtTest/qtestkeyboard.sip
+%%SIP%%share/py-sip/QtTest/qtestmouse.sip
+%%SIP%%share/py-sip/QtTest/qtestsystem.sip
+%%API%%share/qt4/qsci/api/python/QtTest.api
+%%SIP%%@dirrm share/py-sip/QtTest
+@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

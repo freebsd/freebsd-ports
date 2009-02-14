@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=-fast ${CUPS} -platform ${QMAKESPEC} \
 		-libdir ${PREFIX}/${QT_LIBDIR_REL} \
 		-docdir ${PREFIX}/share/doc/qt4 \
 		-headerdir ${PREFIX}/${QT_INCDIR_REL} \
-		-plugindir ${PREFIX}/lib/qt4/plugins \
+		-plugindir ${PREFIX}/${QT_PLUGINDIR_REL} \
 		-datadir ${PREFIX}/share/qt4 \
 		-translationdir ${PREFIX}/share/qt4/translations \
 		-sysconfdir ${PREFIX}/etc/xdg \
@@ -61,10 +61,16 @@ CONFIGURE_ARGS+=-verbose
 
 QT_INCDIR_REL=	include/qt4
 QT_LIBDIR_REL=	lib/qt4
+QT_PLUGINDIR_REL=	lib/qt4/plugins
+
+PLIST_SUB+=	QT_INCDIR_REL=${QT_INCDIR_REL} \
+		QT_LIBDIR_REL=${QT_LIBDIR_REL} \
+		QT_PLUGINDIR_REL=${QT_PLUGINDIR_REL}
 
 QT_PREFIX?=	${LOCALBASE}
 QT_INCDIR?=	${QT_PREFIX}/${QT_INCDIR_REL}
 QT_LIBDIR?=	${QT_PREFIX}/${QT_LIBDIR_REL}
+QT_PLUGINDIR?=	${QT_PREFIX}/${QT_PLUGINDIR_REL}
 MOC?=		${QT_PREFIX}/bin/moc-qt4
 UIC?=		${QT_PREFIX}/bin/uic-qt4
 QMAKE?=		${QT_PREFIX}/bin/qmake-qt4

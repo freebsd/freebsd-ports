@@ -1,11 +1,14 @@
 %%PYTHON_SITELIBDIR%%/PyQt4/QtScript.so
-%%SIPFILES%%%%SIPDIR%%/QtScript/QtScriptmod.sip
-%%SIPFILES%%%%SIPDIR%%/QtScript/qscriptcontext.sip
-%%SIPFILES%%%%SIPDIR%%/QtScript/qscriptengine.sip
-%%SIPFILES%%%%SIPDIR%%/QtScript/qscriptvalue.sip
-%%SIPFILES%%%%SIPDIR%%/QtScript/qscriptvalueiterator.sip
-%%SIPFILES%%@dirrm %%SIPDIR%%/QtScript
-%%API%%%%APIFILE%%
-%%API%%@dirrmtry share/qt4/qsci/api/python
-%%API%%@dirrmtry share/qt4/qsci/api
-%%API%%@dirrmtry share/qt4/qsci
+%%SIP%%share/py-sip/QtScript/QtScriptmod.sip
+%%SIP%%share/py-sip/QtScript/qscriptclass.sip
+%%SIP%%share/py-sip/QtScript/qscriptclasspropertyiterator.sip
+%%SIP%%share/py-sip/QtScript/qscriptcontext.sip
+%%SIP%%share/py-sip/QtScript/qscriptcontextinfo.sip
+%%SIP%%share/py-sip/QtScript/qscriptengine.sip
+%%SIP%%share/py-sip/QtScript/qscriptengineagent.sip
+%%SIP%%share/py-sip/QtScript/qscriptstring.sip
+%%SIP%%share/py-sip/QtScript/qscriptvalue.sip
+%%SIP%%share/py-sip/QtScript/qscriptvalueiterator.sip
+%%API%%share/qt4/qsci/api/python/QtScript.api
+%%SIP%%@dirrm share/py-sip/QtScript
+@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

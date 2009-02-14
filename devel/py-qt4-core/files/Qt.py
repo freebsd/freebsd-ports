@@ -12,6 +12,10 @@ try:
 except ImportError:
     pass
 try:
+    from PyQt4.QtXmlPatterns import *
+except ImportError:
+    pass
+try:
     from PyQt4.QtAssistant import *
 except ImportError:
     pass
@@ -41,6 +45,18 @@ except ImportError:
     pass
 try:
     from PyQt4.QtTest import *
+except ImportError:
+    pass
+try:
+    from PyQt4.QtHelp import *
+except ImportError:
+    pass
+try:
+    from PyQt4.QtWebKit import *
+except ImportError:
+    pass
+try:
+    from PyQt4.phonon import *
 except ImportError:
     pass
 try:

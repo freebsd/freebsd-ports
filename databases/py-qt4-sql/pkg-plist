@@ -1,20 +1,18 @@
 %%PYTHON_SITELIBDIR%%/PyQt4/QtSql.so
-%%SIPFILES%%%%SIPDIR%%/QtSql/QtSqlmod.sip
-%%SIPFILES%%%%SIPDIR%%/QtSql/qsql.sip
-%%SIPFILES%%%%SIPDIR%%/QtSql/qsqldatabase.sip
-%%SIPFILES%%%%SIPDIR%%/QtSql/qsqldriver.sip
-%%SIPFILES%%%%SIPDIR%%/QtSql/qsqlerror.sip
-%%SIPFILES%%%%SIPDIR%%/QtSql/qsqlfield.sip
-%%SIPFILES%%%%SIPDIR%%/QtSql/qsqlindex.sip
-%%SIPFILES%%%%SIPDIR%%/QtSql/qsqlquery.sip
-%%SIPFILES%%%%SIPDIR%%/QtSql/qsqlquerymodel.sip
-%%SIPFILES%%%%SIPDIR%%/QtSql/qsqlrecord.sip
-%%SIPFILES%%%%SIPDIR%%/QtSql/qsqlrelationaldelegate.sip
-%%SIPFILES%%%%SIPDIR%%/QtSql/qsqlrelationaltablemodel.sip
-%%SIPFILES%%%%SIPDIR%%/QtSql/qsqlresult.sip
-%%SIPFILES%%%%SIPDIR%%/QtSql/qsqltablemodel.sip
-%%SIPFILES%%@dirrm %%SIPDIR%%/QtSql
-%%API%%%%APIFILE%%
-%%API%%@dirrmtry share/qt4/qsci/api/python
-%%API%%@dirrmtry share/qt4/qsci/api
-%%API%%@dirrmtry share/qt4/qsci
+%%SIP%%share/py-sip/QtSql/QtSqlmod.sip
+%%SIP%%share/py-sip/QtSql/qsql.sip
+%%SIP%%share/py-sip/QtSql/qsqldatabase.sip
+%%SIP%%share/py-sip/QtSql/qsqldriver.sip
+%%SIP%%share/py-sip/QtSql/qsqlerror.sip
+%%SIP%%share/py-sip/QtSql/qsqlfield.sip
+%%SIP%%share/py-sip/QtSql/qsqlindex.sip
+%%SIP%%share/py-sip/QtSql/qsqlquery.sip
+%%SIP%%share/py-sip/QtSql/qsqlquerymodel.sip
+%%SIP%%share/py-sip/QtSql/qsqlrecord.sip
+%%SIP%%share/py-sip/QtSql/qsqlrelationaldelegate.sip
+%%SIP%%share/py-sip/QtSql/qsqlrelationaltablemodel.sip
+%%SIP%%share/py-sip/QtSql/qsqlresult.sip
+%%SIP%%share/py-sip/QtSql/qsqltablemodel.sip
+%%API%%share/qt4/qsci/api/python/QtSql.api
+%%SIP%%@dirrmtry share/py-sip/QtSql
+@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

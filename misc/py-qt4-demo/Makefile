@@ -6,15 +6,13 @@
 
 PORTNAME=	demo
 PORTVERSION=	${PYQT4_VERSION}
-PORTREVISION=	2
 PORTEPOCH=	1
-
 CATEGORIES=	misc devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
 DISTNAME=	${PYQT4_DISTNAME}
 
-MAINTAINER=	${PYQT_MAINTAINER}
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt4 toolkit, Qt demo and examples
 
 USE_PYTHON=	yes
@@ -28,7 +26,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-qt4
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_PYQT4)
-RUN_DEPENDS=	${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-core \
+RUN_DEPENDS+=	${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-core \
 		${PKGNAMEPREFIX}gui>=${PYQT4_VERSION}:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		${PKGNAMEPREFIX}network>=${PYQT4_VERSION}:${PORTSDIR}/net/py-qt4-network \
 		${PKGNAMEPREFIX}xml>=${PYQT4_VERSION}:${PORTSDIR}/textproc/py-qt4-xml \
@@ -40,7 +38,11 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-cor
 		${PKGNAMEPREFIX}test>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-test \
 		${PKGNAMEPREFIX}designer>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-designer \
 		${PKGNAMEPREFIX}designerplugin>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-designerplugin \
-		${PKGNAMEPREFIX}dbus>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-dbus
+		${PKGNAMEPREFIX}dbus>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-dbus \
+		${PKGNAMEPREFIX}xmlpatterns>=${PYQT4_VERSION}:${PORTSDIR}/textproc/py-qt4-xmlpatterns \
+		${PKGNAMEPREFIX}help>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-help \
+		${PKGNAMEPREFIX}webkit>=${PYQT4_VERSION}:${PORTSDIR}/www/py-qt4-webkit \
+		${PKGNAMEPREFIX}phonon>=${PYQT4_VERSION}:${PORTSDIR}/multimedia/py-qt4-phonon
 .if !defined(NOPORTDOCS)
 RUN_DEPENDS+=	${PKGNAMEPREFIX}doc>=${PYQT4_VERSION}:${PORTSDIR}/misc/py-qt4-doc
 .endif
@@ -55,10 +57,9 @@ do-build:
 
 do-install:
 .if !defined(NOPORTEXAMPLES)
-	cd ${WRKSRC} &&\
-		${RM} -f examples/designer/plugins/plugins.py.orig &&\
-		${MKDIR} ${EXAMPLESDIR} &&\
-		${CP} -R examples/ ${EXAMPLESDIR}
+	${RM} -f ${WRKSRC}/examples/designer/plugins/plugins.py.orig
+	${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
 .else
 	@${ECHO} "NOPORTEXAMPLES is set -- installing nothing."
 .endif

@@ -1,0 +1,23 @@
+%%PYTHON_SITELIBDIR%%/PyQt4/phonon.so
+%%SIP%%share/py-sip/phonon/abstractaudiooutput.sip
+%%SIP%%share/py-sip/phonon/abstractvideooutput.sip
+%%SIP%%share/py-sip/phonon/audiooutput.sip
+%%SIP%%share/py-sip/phonon/backendcapabilities.sip
+%%SIP%%share/py-sip/phonon/effect.sip
+%%SIP%%share/py-sip/phonon/effectparameter.sip
+%%SIP%%share/py-sip/phonon/effectwidget.sip
+%%SIP%%share/py-sip/phonon/mediacontroller.sip
+%%SIP%%share/py-sip/phonon/medianode.sip
+%%SIP%%share/py-sip/phonon/mediaobject.sip
+%%SIP%%share/py-sip/phonon/mediasource.sip
+%%SIP%%share/py-sip/phonon/objectdescription.sip
+%%SIP%%share/py-sip/phonon/path.sip
+%%SIP%%share/py-sip/phonon/phononmod.sip
+%%SIP%%share/py-sip/phonon/phononnamespace.sip
+%%SIP%%share/py-sip/phonon/seekslider.sip
+%%SIP%%share/py-sip/phonon/videoplayer.sip
+%%SIP%%share/py-sip/phonon/videowidget.sip
+%%SIP%%share/py-sip/phonon/volumeslider.sip
+%%API%%share/qt4/qsci/api/python/phonon.api
+%%SIP%%@dirrm share/py-sip/phonon
+@dirrm %%PYTHON_SITELIBDIR%%/PyQt4

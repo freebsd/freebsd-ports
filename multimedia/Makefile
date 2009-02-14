@@ -215,6 +215,7 @@
     SUBDIR += py-kaa-imlib2
     SUBDIR += py-kaa-metadata
     SUBDIR += py-pybmp
+    SUBDIR += py-qt4-phonon
     SUBDIR += qdvdauthor
     SUBDIR += qt4-phonon
     SUBDIR += qt4-phonon-gst
