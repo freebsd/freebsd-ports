@@ -35,6 +35,9 @@ TK_LIB=		libtk80.so
 
 OPTIONS=	TK80_MAN "Install tk 8.0 manpages" off
 
+DEPRECATED=		tcl8.0 support is going to be dropped
+EXPIRATION_DATE=	2009-03-22
+
 .include <bsd.port.pre.mk>
 
 .if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK80_MAN)
