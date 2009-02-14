@@ -7,6 +7,7 @@
 
 PORTNAME=	anki
 PORTVERSION=	0.9.9.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://ichi2.net/anki/download/files/
 EXTRACT_SUFX=	.tgz
@@ -26,7 +27,7 @@ USE_GETTEXT=	yes
 USE_PYDISTUTILS=easy_install
 USE_PYTHON=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	moc
+QT_COMPONENTS=	moc_build
 PYDISTUTILS_PKGNAME=	ankiqt
 PORT_VERBS=	ankiqt
 
