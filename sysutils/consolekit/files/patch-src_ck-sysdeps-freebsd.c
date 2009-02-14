@@ -1,5 +1,5 @@
 --- src/ck-sysdeps-freebsd.c.orig	2008-04-03 20:36:21.000000000 -0400
-+++ src/ck-sysdeps-freebsd.c	2009-01-30 17:03:00.000000000 -0500
++++ src/ck-sysdeps-freebsd.c	2009-02-14 15:26:37.000000000 -0500
 @@ -27,6 +27,7 @@
  #include <unistd.h>
  #include <string.h>
@@ -24,7 +24,52 @@
                  *stat = NULL;
          }
  
-@@ -327,38 +326,38 @@ gboolean
+@@ -235,21 +234,25 @@ ck_unix_pid_get_env_hash (pid_t pid)
+ {
+         GHashTable       *hash;
+         char            **penv;
++        char              errbuf[_POSIX2_LINE_MAX];
+         kvm_t            *kd;
+         struct kinfo_proc p;
+         int               i;
+ 
+-        kd = kvm_openfiles (_PATH_DEVNULL, _PATH_DEVNULL, NULL, O_RDONLY, NULL);
++        kd = kvm_openfiles (_PATH_DEVNULL, _PATH_DEVNULL, NULL, O_RDONLY, errbuf);
+         if (kd == NULL) {
++                g_warning ("kvm_openfiles failed: %s", errbuf);
+                 return NULL;
+         }
+ 
+         if (! get_kinfo_proc (pid, &p)) {
++                g_warning ("get_kinfo_proc failed: %s", g_strerror(errno));
+                 return NULL;
+         }
+ 
+         penv = kvm_getenvv (kd, &p, 0);
+         if (penv == NULL) {
++                g_warning ("kvm_getenvv failed");
+                 return NULL;
+         }
+ 
+@@ -280,7 +283,7 @@ ck_unix_pid_get_env (pid_t       pid,
+                      const char *var)
+ {
+         GHashTable *hash;
+-        char       *val;
++        char       *val = NULL;
+ 
+         /*
+          * Would probably be more efficient to just loop through the
+@@ -288,6 +291,8 @@ ck_unix_pid_get_env (pid_t       pid,
+          * table, but this works for now.
+          */
+         hash = ck_unix_pid_get_env_hash (pid);
++        if (hash == NULL)
++                return val;
+         val  = g_strdup (g_hash_table_lookup (hash, var));
+         g_hash_table_destroy (hash);
+ 
+@@ -327,38 +332,38 @@ gboolean
  ck_get_max_num_consoles (guint *num)
  {
          int      max_consoles;
@@ -44,7 +89,7 @@
 +        g.gl_offs = 0;
 +        glob ("/dev/ttyv*", GLOB_DOOFFS | GLOB_NOSORT, NULL, &g);
 +        for (i = 0; i < g.gl_pathc && g.gl_pathv[i] != NULL; i++) {
-+		struct stat sb;
++                struct stat sb;
 +                char *cdev;
  
 -        while ((t = getttyent ()) != NULL) {
@@ -80,7 +125,7 @@
  }
  
  char *
-@@ -369,7 +368,12 @@ ck_get_console_device_for_num (guint num
+@@ -369,7 +374,12 @@ ck_get_console_device_for_num (guint num
          /* The device number is always one less than the VT number. */
          num--;
  
@@ -94,7 +139,7 @@
  
          return device;
  }
-@@ -379,6 +383,7 @@ ck_get_console_num_from_device (const ch
+@@ -379,6 +389,7 @@ ck_get_console_num_from_device (const ch
                                  guint      *num)
  {
          guint    n;
@@ -102,7 +147,7 @@
          gboolean ret;
  
          n = 0;
-@@ -388,7 +393,11 @@ ck_get_console_num_from_device (const ch
+@@ -388,7 +399,11 @@ ck_get_console_num_from_device (const ch
                  return FALSE;
          }
  
@@ -115,7 +160,7 @@
                  /* The VT number is always one more than the device number. */
                  n++;
                  ret = TRUE;
-@@ -408,6 +417,7 @@ ck_get_active_console_num (int    consol
+@@ -408,6 +423,7 @@ ck_get_active_console_num (int    consol
          gboolean ret;
          int      res;
          int      active;
@@ -123,7 +168,7 @@
  
          g_assert (console_fd != -1);
  
-@@ -420,7 +430,12 @@ ck_get_active_console_num (int    consol
+@@ -420,7 +436,12 @@ ck_get_active_console_num (int    consol
                  goto out;
          }
  
