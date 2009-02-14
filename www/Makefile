@@ -1664,6 +1664,7 @@
     SUBDIR += xpi-tabmixplus
     SUBDIR += xpi-togglewordwrap
     SUBDIR += xpi-torbutton
+    SUBDIR += xpi-twitterfox
     SUBDIR += xpi-unplug
     SUBDIR += xpi-urllink
     SUBDIR += xpi-videodownloader
