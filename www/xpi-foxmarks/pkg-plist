@@ -27,6 +27,8 @@
 %%XPI_XPIDIR%%/chrome/content/foxmarks-nodes.js
 %%XPI_XPIDIR%%/chrome/content/foxmarks-overlay.js
 %%XPI_XPIDIR%%/chrome/content/foxmarks-overlay.xul
+%%XPI_XPIDIR%%/chrome/content/foxmarks-ownserverdlg.js
+%%XPI_XPIDIR%%/chrome/content/foxmarks-ownserverdlg.xul
 %%XPI_XPIDIR%%/chrome/content/foxmarks-parentconflict.xul
 %%XPI_XPIDIR%%/chrome/content/foxmarks-password.js
 %%XPI_XPIDIR%%/chrome/content/foxmarks-passwordconflict.js
@@ -50,6 +52,8 @@
 %%XPI_XPIDIR%%/chrome/content/foxmarks-statusbar.js
 %%XPI_XPIDIR%%/chrome/content/foxmarks-statusbar.xul
 %%XPI_XPIDIR%%/chrome/content/foxmarks-test.js
+%%XPI_XPIDIR%%/chrome/content/foxmarks-turbotags.js
+%%XPI_XPIDIR%%/chrome/content/foxmarks-turbotags.xul
 %%XPI_XPIDIR%%/chrome/content/foxmarks-uitools.js
 %%XPI_XPIDIR%%/chrome/content/foxmarks-unittest.js
 %%XPI_XPIDIR%%/chrome/content/foxmarks-update.js
@@ -57,6 +61,7 @@
 %%XPI_XPIDIR%%/chrome/content/shared/Base64.js
 %%XPI_XPIDIR%%/chrome/content/shared/CreateAESManager.js
 %%XPI_XPIDIR%%/chrome/content/shared/passwordmeter.js
+%%XPI_XPIDIR%%/chrome/locale/.DS_Store
 %%XPI_XPIDIR%%/chrome/locale/bg-BG/conflicts.dtd
 %%XPI_XPIDIR%%/chrome/locale/bg-BG/foxmarks.dtd
 %%XPI_XPIDIR%%/chrome/locale/bg-BG/foxmarks.properties
@@ -174,7 +179,7 @@
 %%XPI_XPIDIR%%/chrome/locale/zh-TW/foxmarks.properties
 %%XPI_XPIDIR%%/chrome/locale/zh-TW/setup.dtd
 %%XPI_XPIDIR%%/chrome/skin/modern/foxmarks.css
-%%XPI_XPIDIR%%/chrome/skin/modern/images/Throbber-small.gif
+%%XPI_XPIDIR%%/chrome/skin/modern/images/.DS_Store
 %%XPI_XPIDIR%%/chrome/skin/modern/images/check-24.png
 %%XPI_XPIDIR%%/chrome/skin/modern/images/dirty.png
 %%XPI_XPIDIR%%/chrome/skin/modern/images/error.png
@@ -183,10 +188,13 @@
 %%XPI_XPIDIR%%/chrome/skin/modern/images/foxmarks-hover.png
 %%XPI_XPIDIR%%/chrome/skin/modern/images/foxmarks.ico
 %%XPI_XPIDIR%%/chrome/skin/modern/images/foxmarks_bug.png
+%%XPI_XPIDIR%%/chrome/skin/modern/images/foxmarks_tiny.png
+%%XPI_XPIDIR%%/chrome/skin/modern/images/information.png
 %%XPI_XPIDIR%%/chrome/skin/modern/images/pane-selector-advanced.png
 %%XPI_XPIDIR%%/chrome/skin/modern/images/pane-selector-bg-hover.png
 %%XPI_XPIDIR%%/chrome/skin/modern/images/pane-selector-bg-selected.png
 %%XPI_XPIDIR%%/chrome/skin/modern/images/pane-selector-bg.png
+%%XPI_XPIDIR%%/chrome/skin/modern/images/pane-selector-discovery.png
 %%XPI_XPIDIR%%/chrome/skin/modern/images/pane-selector-general.png
 %%XPI_XPIDIR%%/chrome/skin/modern/images/pane-selector-icons.png
 %%XPI_XPIDIR%%/chrome/skin/modern/images/pane-selector-macosx-bg-sel.png
