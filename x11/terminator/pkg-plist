@@ -29,6 +29,9 @@ bin/terminator
 %%PYTHON_SITELIBDIR%%/terminatorlib/terminatorterm.py
 %%PYTHON_SITELIBDIR%%/terminatorlib/terminatorterm.pyc
 %%PYTHON_SITELIBDIR%%/terminatorlib/terminatorterm.pyo
+%%PYTHON_SITELIBDIR%%/terminatorlib/tests.py
+%%PYTHON_SITELIBDIR%%/terminatorlib/tests.pyc
+%%PYTHON_SITELIBDIR%%/terminatorlib/tests.pyo
 %%PYTHON_SITELIBDIR%%/terminatorlib/version.py
 %%PYTHON_SITELIBDIR%%/terminatorlib/version.pyc
 %%PYTHON_SITELIBDIR%%/terminatorlib/version.pyo
@@ -40,6 +43,7 @@ share/icons/hicolor/16x16/actions/terminator_horiz.png
 share/icons/hicolor/16x16/actions/terminator_vert.png
 share/icons/hicolor/22x22/apps/terminator.png
 share/icons/hicolor/24x24/apps/terminator.png
+share/icons/hicolor/32x32/apps/terminator.png
 share/icons/hicolor/48x48/apps/terminator.png
 %%NLS%%share/locale/ar/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/terminator.mo
