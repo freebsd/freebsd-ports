@@ -12,7 +12,7 @@ CATEGORIES=	audio kld
 MASTER_SITES=	http://www.matey.org/au88x0/
 DISTNAME=	au88x0-${PORTVERSION}_${DISTREVISION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.kworr@gmail.com
 COMMENT=	A FreeBSD Driver for Aureal Vortex based soundcards
 
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
