@@ -7205,7 +7205,6 @@ libgnomeui                      ports/x11-toolkits/libgnomeui
 libgnomeui-reference            ports/x11-toolkits/libgnomeui-reference
 libgnomeuimm                    ports/x11-toolkits/libgnomeuimm
 libgnomeuimm26                  ports/x11-toolkits/libgnomeuimm26
-libgnugetopt                    ports/devel/libgnugetopt
 libgpc                          ports/devel/libgpc
 libgpg-error                    ports/security/libgpg-error
 libgphoto2                      ports/graphics/libgphoto2
@@ -9111,7 +9110,6 @@ nexuiz                          ports/games/nexuiz
 nfdump                          ports/net-mgmt/nfdump
 nfdump-devel                    ports/net-mgmt/nfdump-devel
 nfsen                           ports/net-mgmt/nfsen
-nfsen-devel                     ports/net-mgmt/nfsen-devel
 nfsshell                        ports/net/nfsshell
 ng_car                          ports/net/ng_car
 ng_daphne                       ports/net/ng_daphne
@@ -9349,7 +9347,6 @@ ocaml-sqlite3                   ports/databases/ocaml-sqlite3
 ocaml-ssl                       ports/security/ocaml-ssl
 ocaml-typeconv                  ports/devel/ocaml-typeconv
 ocaml-ulex                      ports/devel/ocaml-ulex
-ocaml-wdialog                   ports/www/ocaml-wdialog
 ocaml-xstr                      ports/devel/ocaml-xstr
 ocaml-xstrp4                    ports/devel/ocaml-xstrp4
 ocaml-yaxpo                     ports/textproc/ocaml-yaxpo
@@ -11651,6 +11648,7 @@ p5-MooseX-Types                 ports/devel/p5-MooseX-Types
 p5-MooseX-Types-Path-Class      ports/devel/p5-MooseX-Types-Path-Class
 p5-Mouse                        ports/devel/p5-Mouse
 p5-MouseX-Getopt                ports/devel/p5-MouseX-Getopt
+p5-MouseX-Types                 ports/devel/p5-MouseX-Types
 p5-Music-Audioscrobbler-MPD     ports/audio/p5-Music-Audioscrobbler-MPD
 p5-Music-Audioscrobbler-Submit  ports/audio/p5-Music-Audioscrobbler-Submit
 p5-MusicBrainz-Client           ports/audio/p5-MusicBrainz-Client
@@ -14947,6 +14945,7 @@ p5-moosex-types                 ports/devel/p5-MooseX-Types
 p5-moosex-types-path-class      ports/devel/p5-MooseX-Types-Path-Class
 p5-mouse                        ports/devel/p5-Mouse
 p5-mousex-getopt                ports/devel/p5-MouseX-Getopt
+p5-mousex-types                 ports/devel/p5-MouseX-Types
 p5-mp3-find                     ports/audio/p5-MP3-Find
 p5-mp3-id3v1tag                 ports/audio/p5-MP3-ID3v1Tag
 p5-mp3-info                     ports/audio/p5-MP3-Info
@@ -17566,7 +17565,6 @@ pl-trf                          ports/polish/trf
 pl-webalizer2                   ports/polish/webalizer2
 plan                            ports/deskutils/plan
 plan9port                       ports/devel/plan9port
-planeshift                      ports/games/planeshift
 planet                          ports/www/planet
 planets                         ports/astro/planets
 planner                         ports/deskutils/planner
@@ -19874,7 +19872,6 @@ sabernetdcs-client              ports/finance/sabernetdcs-client
 sablevm                         ports/java/sablevm
 sablevm-classpath               ports/java/sablevm-classpath
 sablotron                       ports/textproc/sablotron
-sabnzbd                         ports/news/sabnzbd
 sabnzbdplus                     ports/news/sabnzbdplus
 safe-rm                         ports/sysutils/safe-rm
 safecat                         ports/sysutils/safecat
@@ -22963,7 +22960,6 @@ xmms-fxt                        ports/audio/xmms-fxt
 xmms-gbsplay                    ports/audio/xmms-gbsplay
 xmms-gdancer                    ports/graphics/xmms-gdancer
 xmms-goom                       ports/graphics/xmms-goom
-xmms-imms                       ports/audio/xmms-imms
 xmms-infinity                   ports/graphics/xmms-infinity
 xmms-infopipe                   ports/audio/xmms-infopipe
 xmms-iris                       ports/graphics/xmms-iris
