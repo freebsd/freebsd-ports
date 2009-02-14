@@ -60,7 +60,6 @@ lib/pd/pd~/pd~-help.pd
 lib/pd/pd~/pd~-subprocess.pd
 lib/pd/pd~/pd~.c
 lib/pd/pd~/pd~.pd_linux
-lib/pd/pd~/z.pd
 lib/pd/pique/makefile
 lib/pd/pique/pique-help.pd
 lib/pd/pique/pique.c
