@@ -16,7 +16,7 @@ DISTNAME=	itcl${PORTVERSION}
 MAINTAINER=	erik@smluc.org
 COMMENT=	Object-oriented extension to Tcl [incr Tcl]
 
-USE_TCL=	84+
+USE_TCL=	84
 
 USE_LDCONFIG=	yes
 MAKE_ENV+=	${PLIST_SUB} \

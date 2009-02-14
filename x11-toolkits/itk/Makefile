@@ -18,7 +18,7 @@ COMMENT=	Object-oriented extension to Tk [incr Tk]
 
 LIB_DEPENDS=	itcl.${MAJOR}:${PORTSDIR}/lang/itcl
 
-USE_TK=		84+
+USE_TK=		84
 USE_LDCONFIG=	yes
 MAKE_ENV+=	${PLIST_SUB} \
 		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
