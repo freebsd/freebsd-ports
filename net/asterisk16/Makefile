@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.4.22.1
-PORTREVISION=	1
+PORTVERSION=	1.6.0.5
+PKGNAMESUFFIX=	16
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.digium.com/pub/asterisk/ \
 		http://downloads.digium.com/pub/asterisk/old-releases/ \
@@ -41,8 +41,10 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		OPENH323DIR=${LOCALBASE}/share/openh323 \
 		OSVERSION=${OSVERSION} \
 		NOISY_BUILD=YES \
+		DOCSDIR=${DOCSDIR} \
 		ASTCFLAGS="${CFLAGS}"
 MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
+CONFLICTS=	asterisk*-1.2* asterisk*-1.4*
 
 OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		ODBC		"Enable ODBC support" on \
@@ -53,14 +55,14 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		FREETDS		"Enable FreeTDS support" on \
 		JABBER		"Enable Jabber and Gtalk support" on \
 		SQLITE          "Enable SQLITE support" on \
-		CODEC_PATCH	"Apply codec negotiation patch" off \
 		ILBC		"Enable iLBC codec" off \
-		MISC_PATCHES	"Apply additional patches" off
+#		CODEC_PATCH	"Apply codec negotiation patch" off \
+#		MISC_PATCHES	"Apply additional patches" off
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
-OPTIONS+=	ZAPTEL		"Enable Zaptel support" off
+#OPTIONS+=	ZAPTEL		"Enable Zaptel support" off
 
 # Include this since we have altered OPTIONS.
 .include "$(PORTSDIR)/Mk/bsd.port.options.mk"

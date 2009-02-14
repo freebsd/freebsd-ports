@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- main/utils.c.orig
+--- main/utils.c
 +++ main/utils.c
-@@ -914,8 +914,8 @@
+@@ -936,8 +936,8 @@
  		pthread_attr_init(attr);
  	}
  
