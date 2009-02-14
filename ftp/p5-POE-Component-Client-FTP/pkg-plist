@@ -1,9 +1,9 @@
 %%SITE_PERL%%/POE/Component/Client/FTP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/FTP/.packlist
-%%PORTDOCS%%%%EXAMPLESDIR%%/dotfer.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/list.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/sync.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dotfer.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/list.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sync.pl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/FTP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
