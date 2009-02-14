@@ -15,4 +15,8 @@ WITH_TCLTK_JP=	yes
 
 MASTERDIR=	${.CURDIR}/../../x11-toolkits/ruby-tk
 
+BROKEN=		won't work with current ruby-tk
+DEPRECATED=	uses old Tk, not required with newver versions
+EXPIRATION_DATE=2009-02-21
+
 .include "${MASTERDIR}/Makefile"
