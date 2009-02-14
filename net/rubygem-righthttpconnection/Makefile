@@ -18,5 +18,6 @@ COMMENT=	Persistent HTTP/HTTPS connections with error retries
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

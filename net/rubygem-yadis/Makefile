@@ -17,6 +17,7 @@ COMMENT=	A Yadis Service discovery library written in pure Ruby
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
+RUBYGEM_AUTOPLIST=	yes
 
 post-install:
 	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -name "*~" -delete
