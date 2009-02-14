@@ -311,7 +311,6 @@
     SUBDIR += eric
     SUBDIR += eric4
     SUBDIR += eris
-    SUBDIR += erlslang
     SUBDIR += error
     SUBDIR += esdl
     SUBDIR += esvn
