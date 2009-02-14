@@ -17,6 +17,8 @@ RUN_DEPENDS=	rubygem-mechanize>=0.7.6:${PORTSDIR}/www/rubygem-mechanize
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/yapra
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
