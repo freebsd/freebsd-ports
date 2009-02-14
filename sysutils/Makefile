@@ -208,6 +208,7 @@
     SUBDIR += fileprune
     SUBDIR += fileschanged
     SUBDIR += finfo
+    SUBDIR += fio
     SUBDIR += flasher
     SUBDIR += flexbackup
     SUBDIR += flock
