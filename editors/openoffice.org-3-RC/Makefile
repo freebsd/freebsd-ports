@@ -7,8 +7,7 @@
 #
 
 PORTNAME?=	openoffice.org
-PORTVERSION?=	3.0.${SNAPDATE}
-PORTREVISION?=	1
+PORTVERSION?=	3.1.${SNAPDATE}
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://openoffice.lunarshells.com/sources/ \
@@ -73,11 +72,11 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-MILESTONE?=		15
-OOOTAG?=		OOO300_m${MILESTONE}
+MILESTONE?=		1
+OOOTAG?=		OOO310_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20090113
+SNAPDATE=		20090214
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 .if defined(WITH_CWS)
@@ -134,7 +133,6 @@ LIB_DEPENDS+=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 USE_BISON=	build
 GNU_CONFIGURE=	yes
 WRKSRC?=		${WRKDIR}/${OOOTAG}
-CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 MAXPROCESSES?=	1
