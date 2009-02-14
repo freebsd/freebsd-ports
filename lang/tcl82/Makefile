@@ -30,6 +30,9 @@ PLIST_SUB=	TCL_VER=8.2 SHORT_TCL_VER=82
 
 OPTIONS=	TCL82_MAN "Install tcl 8.2 manpages" off
 
+DEPRECATED=		tcl82 support is going to be dropped
+EXPIRATION_DATE=	2009-04-22
+
 .include <bsd.port.pre.mk>
 
 .if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL82_MAN)

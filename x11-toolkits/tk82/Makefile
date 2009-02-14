@@ -37,6 +37,9 @@ MANCOMPRESSED=	no
 
 OPTIONS=	TK82_MAN "Install tk 8.2 manpages" off
 
+DEPRECATED=		tcl82 support is going to be dropped
+EXPIRATION_DATE=	2009-04-22
+
 .include <bsd.port.pre.mk>
 
 .if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK82_MAN)
