@@ -90,6 +90,7 @@
     SUBDIR += cdparanoia
     SUBDIR += cdplay
     SUBDIR += cdplayer.app
+    SUBDIR += celt
     SUBDIR += checkmate
     SUBDIR += cheesetracker
     SUBDIR += chordpack
