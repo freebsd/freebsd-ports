@@ -6,28 +6,31 @@
 #
 
 PORTNAME=	tile
-PORTVERSION=	0.7.8
-PORTREVISION=	1
+PORTVERSION=	0.8.2
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/tktable
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Themed widget set for Tk
 
-USE_TK=		yes
+USE_TK=		84+
+
+USE_AUTOTOOLS=	autoconf:262
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
-		--with-tk=${TK_LIBDIR} \
-		--exec-prefix=${PREFIX} --enable-shared
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${TCL_INCLUDES} ${TK_INCLUDES}"
-TCL_INCLUDES=	-I${LOCALBASE}/include/tcl${TK_VER} -I${LOCALBASE}/include/tcl${TK_VER}/generic
-TK_INCLUDES=	-I${LOCALBASE}/include/tk${TK_VER} -I${LOCALBASE}/include/tk${TK_VER}/generic
 TKPKG=		${PORTNAME}${PORTVERSION}
 PLIST_SUB=	VER=${PORTVERSION} TKPKG=${TKPKG}
-USE_LDCONFIG=	${PREFIX}/lib/${TKPKG}
 
-post-install:
-	@${LN} -sf ${USE_LDCONFIG}/lib${TKPKG}.so ${USE_LDCONFIG}/lib${TKPKG}.so.0
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR} \
+		--with-tk=${TK_LIBDIR} \
+		--exec-prefix=${PREFIX} --enable-shared
+CONFIGURE_ENV+=	TCL_INCLUDEDIR="${TCL_INCLUDEDIR}" \
+		TK_INCLUDEDIR="${TK_INCLUDEDIR}"
+
+pre-configure:
+	@${REINPLACE_CMD} -e "s/package require Tcl 8\../package require Tcl ${TCL_VER}/g" \
+		${WRKSRC}/Makefile.in
+
+.include <bsd.port.post.mk>
