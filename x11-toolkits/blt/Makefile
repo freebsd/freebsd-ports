@@ -30,7 +30,7 @@ WRKSRC=		${WRKDIR}/blt2.4z
 GNU_CONFIGURE=	yes
 
 USE_TK=		80+
-INVALID_TK_VER=	85
+INVALID_TK_VER=	85 86
 USE_XORG=	x11
 
 .include <bsd.port.pre.mk>
