@@ -19,5 +19,6 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/RMagick2.so:${PORTSDIR}/graphics/ruby-rmagic
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
