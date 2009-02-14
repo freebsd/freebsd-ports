@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.4.0
-PORTREVISION=	20090130
+PORTREVISION=	20090213
 CATEGORIES=	lang java
 VERSIONSTRING=	4.4-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -157,11 +157,6 @@ pre-configure:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
 	@${RM} -f ${SRCDIR}/gcc/*/*.info*
 	@${MKDIR} ${CONFIGURE_WRKSRC}
-
-post-build:
-	@${ECHO_MSG} "Consider running 'make check' before 'make install', especially"
-	@${ECHO_MSG} "if you have not performed this build on -STABLE or -CURRENT."
-	@${ECHO_MSG} "This assumes that you have the dejagnu port installed."
 
 check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
