@@ -2,6 +2,7 @@
 %%SITE_PERL%%/Algorithm/Dependency/Item.pm
 %%SITE_PERL%%/Algorithm/Dependency/Ordered.pm
 %%SITE_PERL%%/Algorithm/Dependency/Source.pm
+%%SITE_PERL%%/Algorithm/Dependency/Source/Invert.pm
 %%SITE_PERL%%/Algorithm/Dependency/Source/File.pm
 %%SITE_PERL%%/Algorithm/Dependency/Source/HoA.pm
 %%SITE_PERL%%/Algorithm/Dependency/Weight.pm

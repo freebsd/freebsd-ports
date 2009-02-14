@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	Algorithm-Dependency
-PORTVERSION=	1.106
+PORTVERSION=	1.108
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	Base class for implementing various dependency trees
 
-RUN_DEPENDS=	p5-Params-Util>=0.06:${PORTSDIR}/devel/p5-Params-Util
+RUN_DEPENDS=	p5-Params-Util>=0.31:${PORTSDIR}/devel/p5-Params-Util
 BUILD_DEPENDS=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	p5-Test-ClassAPI>=0.6:${PORTSDIR}/devel/p5-Test-ClassAPI
+BUILD_DEPENDS+=	p5-Test-ClassAPI>=0.6:${PORTSDIR}/devel/p5-Test-ClassAPI \
+		p5-PathTools>=3.29:${PORTSDIR}/devel/p5-PathTools \
+		p5-Test-Simple>=0.47:${PORTSDIR}/devel/p5-Test-Simple
 
 MAN3=	Algorithm::Dependency.3 \
 	Algorithm::Dependency::Item.3 \
@@ -24,14 +26,9 @@ MAN3=	Algorithm::Dependency.3 \
 	Algorithm::Dependency::Source.3 \
 	Algorithm::Dependency::Source::File.3 \
 	Algorithm::Dependency::Source::HoA.3 \
+	Algorithm::Dependency::Source::Invert.3 \
 	Algorithm::Dependency::Weight.3
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500801
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.11:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
