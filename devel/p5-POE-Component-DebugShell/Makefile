@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-DebugShell
-PORTVERSION=	1.18
+PORTVERSION=	1.412
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,12 +18,8 @@ BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${SITE_PERL}/POE/API/Peek.pm:${PORTSDIR}/devel/p5-POE-API-Peek
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		POE::Component::DebugShell.3
-
-post-patch:
-	${RM} ${WRKSRC}/inc/Module/Install/AutoInstall.pm
-	${PERL} -pi -e 's/^auto_install.*//;' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
