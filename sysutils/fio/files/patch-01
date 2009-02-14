@@ -1,0 +1,8 @@
+--- fio_generate_plots.orig	2009-02-06 14:13:52.000000000 +0100
++++ fio_generate_plots	2009-02-14 20:00:49.000000000 +0100
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ 
+ # Use gnuplot to generate plots from fio run with -l and/or -w
+ 
