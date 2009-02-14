@@ -1,8 +1,8 @@
---- audio.c	2005-11-27 16:55:24.000000000 +0800
-+++ audio.c	2008-05-24 22:12:15.000000000 +0800
-@@ -31,20 +31,8 @@
- #include <string.h>
+--- audio.c.orig	2009-02-14 06:54:45.932023788 +0800
++++ audio.c	2009-02-14 06:55:01.958134649 +0800
+@@ -32,20 +32,8 @@
  #include <sys/types.h>
+ #include <math.h>
  
 -#ifdef _WIN32
 -#include <io.h>
@@ -18,6 +18,6 @@
 -#include <malloc.h>
 -#endif
 -
- #include <math.h>
  #include "config.h"
  #include "audio.h"
+ #include "i18n.h"
