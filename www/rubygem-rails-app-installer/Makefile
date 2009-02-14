@@ -22,6 +22,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/rails-app-installer-setup \
+		bin/rails-backup \
+		bin/rails-restore
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:

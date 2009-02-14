@@ -15,5 +15,6 @@ COMMENT=	Wrapper for the poorly documented OpenSSL ruby library
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

@@ -16,5 +16,6 @@ COMMENT=	A module for using Systax highlighting in Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
