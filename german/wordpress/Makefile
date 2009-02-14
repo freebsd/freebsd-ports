@@ -9,7 +9,8 @@
 PORTNAME=	wordpress
 PORTVERSION=	2.7.1
 CATEGORIES=	german www
-MASTER_SITES=	http://static.wordpress-deutschland.org/de-edition/
+MASTER_SITES=	http://static.wordpress-deutschland.org/de-edition/ \
+		http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	de-
 DISTNAME=	wordpress_271-de
 
