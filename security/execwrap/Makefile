@@ -8,7 +8,7 @@
 PORTNAME=	execwrap
 PORTVERSION=	0.5
 CATEGORIES=	security
-MASTER_SITES=	http://cyanite.org/execwrap/ CENKES
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTNAME=	ExecWrap-${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 
