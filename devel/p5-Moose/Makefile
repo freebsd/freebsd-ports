@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.68
+PORTVERSION=	0.69
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DR/DROLSKY
@@ -20,7 +20,6 @@ RUN_DEPENDS=	\
 	p5-Class-MOP>=0.76:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-List-MoreUtils>=0.12:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-Sub-Exporter>=0.972:${PORTSDIR}/devel/p5-Sub-Exporter \
-	p5-Filter-Simple>=0:${PORTSDIR}/textproc/p5-Filter-Simple \
 	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
