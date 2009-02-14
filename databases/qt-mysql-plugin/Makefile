@@ -8,7 +8,7 @@
 
 PORTNAME=	qt-${DB}-plugin
 PORTVERSION=	3.3.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
@@ -16,8 +16,6 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A plugin for QT to connect to MySQL-Databases
-
-CONFLICTS=	qt4-mysql-plugin-4.2.* qt4-mysql-plugin-4.3.0
 
 DB=		mysql
 
