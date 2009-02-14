@@ -20,7 +20,8 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	INC='-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2'
+CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2" \
+		LIBS="-L${LOCALBASE}/lib"
 
 MAN3=		XML::LibXSLT.3
 
