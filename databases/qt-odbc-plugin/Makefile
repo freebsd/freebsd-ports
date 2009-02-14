@@ -17,11 +17,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@freebsd.org
 COMMENT=	A plugin for QT to connect to ODBC-compatible databases
 
-CONFLICTS=	qt4-odbc-plugin-4.2.* qt4-odbc-plugin-4.3.0
-
 DB=		odbc
-
-BROKEN=		does not compile
 
 LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC \
 		qt-mt:${PORTSDIR}/x11-toolkits/qt33
