@@ -22,5 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
+RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/twitter
 
 .include <bsd.port.mk>

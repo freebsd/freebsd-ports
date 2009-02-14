@@ -16,5 +16,7 @@ COMMENT=	library and command-line utility for tar archives
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/minitar
 
 .include <bsd.port.mk>
