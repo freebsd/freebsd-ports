@@ -15,5 +15,6 @@ COMMENT=	Caches(Ruby source) Files as Might Be Used in a Debugger
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

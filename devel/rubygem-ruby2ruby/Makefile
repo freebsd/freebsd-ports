@@ -20,6 +20,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/r2r_show
 
 x-generate-plist:
 	${ECHO} bin/r2r_show > pkg-plist.new

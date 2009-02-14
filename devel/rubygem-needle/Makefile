@@ -16,6 +16,7 @@ COMMENT=	Dependency-injection/inversion-of-control container
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 FETCH_CMD=	/usr/bin/fetch -Rr
 

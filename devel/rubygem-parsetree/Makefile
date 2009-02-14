@@ -20,6 +20,11 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/parse_tree_abc	\
+		bin/parse_tree_audit	\
+		bin/parse_tree_deps	\
+		bin/parse_tree_show
 
 GEM_NAME=	${DISTNAME}
 

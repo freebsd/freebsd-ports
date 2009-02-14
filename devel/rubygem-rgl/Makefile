@@ -19,5 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/ruby/gems/1.8/specifications/stream-0.5.gemspec:${
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 USE_RAKE=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

@@ -15,5 +15,7 @@ COMMENT=	Parse JSON texts and generate them from ruby data structures
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/edit_json.rb
 
 .include <bsd.port.mk>

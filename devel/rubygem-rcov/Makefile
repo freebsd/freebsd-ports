@@ -15,5 +15,7 @@ COMMENT=	Code coverage tool for Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/rcov
 
 .include <bsd.port.mk>
