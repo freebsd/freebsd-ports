@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.10.0.2
+PORTVERSION=	2.10.0.3
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 
@@ -119,7 +119,7 @@ PLIST_SUB+=		EMAILCONF="@comment "
 .endif
 
 .if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-dgdebug
+CONFIGURE_ARGS+=	--with-dgdebug
 .endif
 
 #.if defined(NOPORTDOCS)
