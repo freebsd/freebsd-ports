@@ -17,5 +17,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/install_rubigen_scripts	\
+		bin/rubigen			\
+		bin/ruby_app
 
 .include <bsd.port.mk>

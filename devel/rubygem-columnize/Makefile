@@ -15,5 +15,6 @@ COMMENT=	Sorts an Array in Column Order
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

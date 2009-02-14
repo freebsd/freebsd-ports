@@ -17,5 +17,6 @@ RUN_DEPENDS=	rubygem-linecache>=0.30:${PORTSDIR}/devel/rubygem-linecache
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

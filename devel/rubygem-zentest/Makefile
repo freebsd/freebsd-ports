@@ -21,5 +21,11 @@ GEM_NAME=	${DISTNAME}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/autotest \
+		bin/multiruby \
+		bin/rails_test_audit \
+		bin/unit_diff \
+		bin/zentest
 
 .include <bsd.port.mk>
