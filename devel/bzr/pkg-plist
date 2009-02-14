@@ -275,6 +275,7 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/help_topics/en/configuration.txt
 %%PYTHON_SITELIBDIR%%/bzrlib/help_topics/en/conflicts.txt
 %%PYTHON_SITELIBDIR%%/bzrlib/help_topics/en/hooks.txt
+%%PYTHON_SITELIBDIR%%/bzrlib/help_topics/en/log-formats.txt
 %%PYTHON_SITELIBDIR%%/bzrlib/help_topics/en/patterns.txt
 %%PYTHON_SITELIBDIR%%/bzrlib/help_topics/en/rules.txt
 %%PYTHON_SITELIBDIR%%/bzrlib/hooks.py
@@ -403,6 +404,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_lp_directory.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_lp_directory.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_lp_directory.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_lp_open.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_lp_open.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_lp_open.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_lp_service.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_lp_service.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_lp_service.pyo
@@ -814,6 +818,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_create_checkout.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_create_checkout.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_create_checkout.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_dotted_revno_to_revision_id.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_dotted_revno_to_revision_id.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_dotted_revno_to_revision_id.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_get_revision_id_to_revno_map.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_get_revision_id_to_revno_map.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_get_revision_id_to_revno_map.pyo
@@ -823,6 +830,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_http.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_http.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_http.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_iter_merge_sorted_revisions.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_iter_merge_sorted_revisions.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_iter_merge_sorted_revisions.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_last_revision_info.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_last_revision_info.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_last_revision_info.pyo
@@ -847,6 +857,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_revision_history.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_revision_history.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_revision_history.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_revision_id_to_dotted_revno.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_revision_id_to_dotted_revno.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_revision_id_to_dotted_revno.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_revision_id_to_revno.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_revision_id_to_revno.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_revision_id_to_revno.pyo
