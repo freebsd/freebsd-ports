@@ -8,9 +8,12 @@
 PORTNAME=	libimg-tk83
 CATEGORIES=	graphics tk
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 
 USE_TK=		83
 MASTERDIR=	${.CURDIR}/../libimg
+
+DEPRECATED=		tcl8.3 support is going to be dropped
+EXPIRATION_DATE=	2009-05-22
 
 .include "${MASTERDIR}/Makefile"

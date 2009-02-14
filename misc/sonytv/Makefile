@@ -16,6 +16,9 @@ COMMENT=	Sony-compatible TV remote
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
+DEPRECATED=		tcl8.3 support is going to be dropped
+EXPIRATION_DATE=	2009-05-22
+
 NO_BUILD=	yes
 
 IS_INTERACTIVE=	yes

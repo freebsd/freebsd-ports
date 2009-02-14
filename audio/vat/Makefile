@@ -15,6 +15,9 @@ DISTFILES=	vatsrc-4.0b2.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Visual Audio Tool - multicast audioconferencing
 
+DEPRECATED=		tcl8.3 support is going to be dropped
+EXPIRATION_DATE=	2009-05-22
+
 GSM_DIR=	${.CURDIR}/../../audio/gsm
 GSM_WORK=	${WRKDIRPREFIX}${GSM_DIR}/work/gsm-1.0-pl12
 
