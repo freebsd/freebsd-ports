@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet Image(or other data) Multicaster (and receiver)
 
-USE_TK=		yes
+USE_TK=		84
 WRKSRC=		${WRKDIR}/mnm
 
 PORTDOCS=	README imm_readme.txt
