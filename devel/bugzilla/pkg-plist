@@ -577,6 +577,7 @@
 %%BUGZILLADIR%%/template/en/default/global/choose-product.html.tmpl
 %%BUGZILLADIR%%/template/en/default/global/code-error.html.tmpl
 %%BUGZILLADIR%%/template/en/default/global/common-links.html.tmpl
+%%BUGZILLADIR%%/template/en/default/global/confirm-action.html.tmpl
 %%BUGZILLADIR%%/template/en/default/global/confirm-user-match.html.tmpl
 %%BUGZILLADIR%%/template/en/default/global/docslinks.html.tmpl
 %%BUGZILLADIR%%/template/en/default/global/field-descs.none.tmpl
