@@ -6,32 +6,27 @@
 #
 
 PORTNAME=	tkpng
-PORTVERSION=	0.7
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	graphics tk
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}${PORTVERSION}-src
+DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	PNG support for Tcl/Tk
 
-USE_TK=		yes
+USE_TK=		84+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
-		--with-tk=${LOCALBASE}/lib/tk${TK_VER} \
-		--with-tclinclude=${LOCALBASE}/include/tcl${TK_VER}/generic \
-		--with-tkinclude=${LOCALBASE}/include/tk${TK_VER}/generic \
+
+.include <bsd.port.pre.mk>
+CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
+		--with-tk=${TK_LIBDIR} \
+		--with-tclinclude=${TCL_INCLUDEDIR}/generic \
+		--with-tkinclude=${TK_INCLUDEDIR}/generic \
 		--exec-prefix=${PREFIX} --enable-shared
-CPPFLAGS=	-I${LOCALBASE}/include/tk${TK_VER}/generic -I${LOCALBASE}/include
+CPPFLAGS=	-I${TK_INCLUDEDIR}/generic -I${LOCALBASE}/include
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
 TKPKG=		${PORTNAME}${PORTVERSION}
 PLIST_SUB=	VER=${PORTVERSION} TKPKG=${TKPKG} TKLIBVER=${TKLIBVER}
-USE_LDCONFIG=	${PREFIX}/lib/${TKPKG}
-WRKSRC=		${WRKDIR}/${TKPKG}
 
-post-install:
-	@${LN} -sf ${PREFIX}/lib/${TKPKG}/lib${TKPKG}.so \
-		${PREFIX}/lib/${TKPKG}/lib${TKPKG}.so.0
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
