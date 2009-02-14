@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wavegain
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.8
 CATEGORIES=	audio
 MASTER_SITES=	http://www.rarewares.org/files/others/
 DISTNAME=	${PORTNAME}-${PORTVERSION}srcs${EXTRACT_SUFFIX}

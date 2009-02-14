@@ -1,5 +1,5 @@
---- wavegain.c	2005-11-27 16:58:46.000000000 +0800
-+++ wavegain.c	2008-05-25 03:23:17.000000000 +0800
+--- wavegain.c.orig	2009-02-14 07:27:18.005266616 +0800
++++ wavegain.c	2009-02-14 07:29:15.783066588 +0800
 @@ -19,20 +19,8 @@
  #include <string.h>
  #include <ctype.h>
@@ -20,62 +20,41 @@
 -
  #include "gain_analysis.h"
  #include "i18n.h"
- #include "config.h"
-@@ -58,6 +46,14 @@
+ #include "getopt.h"
+@@ -57,6 +45,9 @@
  #define ROUND64(x)   ( doubletmp = (x) + Dither.Add + (Int64_t)0x001FFFFD80000000L, *(Int64_t*)(&doubletmp) - (Int64_t)0x433FFFFD80000000L )
  #endif
  
-+
-+
-+# include <errno.h>
++#include <errno.h>
 +static int xrename(const char *oldpath, const char *newpath);
 +
-+
-+
-+
- extern int          write_log;
+ extern int          write_to_log;
  dither_t            Dither;
  double              doubletmp;
-@@ -584,16 +580,26 @@
- 		close_audio_file(infile, aufile, wg_opts);
- 		fclose(infile);
- 
--		if (!settings->std_out) {
-+	        if (!settings->std_out) {               
-+		       		        
- 			if (remove(filename) != 0) {
- 				fprintf(stderr, " Error deleting old file '%s'\n", filename);
+@@ -639,7 +630,14 @@
  				goto exit;
  			}
--    
+     
 -			if (rename(TEMP_NAME, filename) != 0) {
-+						
-+			/* 
-+			* int rename(const char *old, const char *new);
-+			* In POSIX, rename will fail if the 'old' and 'new' names are on different mounted file systems.
-+			* ( From http://en.wikipedia.org/wiki/Rename_%28C%29 )
-+			* Function 'xrename' from 'normalize-0.7.6' is one clever solution
-+			*/
-+								   
-+			/*if (rename(TEMP_NAME, filename) != 0) { */			
-+			if (xrename(TEMP_NAME, filename) != 0) {
++                       /*
++                       * int rename(const char *old, const char *new);
++                       * In POSIX, rename will fail if the 'old' and 'new' names are on different mounted file systems.
++                       * ( From http://en.wikipedia.org/wiki/Rename_%28C%29 )
++                       * Function 'xrename' from 'normalize-0.7.6' is one clever solution
++                       */
++                       /*if (rename(TEMP_NAME, filename) != 0) {*/
++                        if (xrename(TEMP_NAME, filename) != 0) {
  				fprintf(stderr, " Error renaming '" TEMP_NAME "' to '%s' (uh-oh)\n", filename);
  				goto exit;
  			}
-+			
- 		}
-     
- 		result = 1;
-@@ -603,3 +609,65 @@
+@@ -650,4 +648,61 @@
+ 	return result;
  }
  
- 
-+
-+
 +/* From normalize-0.7.6/nid3lib/write.c
 + * Move the file "oldpath" to "newpath", or copy and delete if they
 + * are on different filesystems.
-+ */
++*/
 +static int
 +xrename(const char *oldpath, const char *newpath)
 +{
@@ -95,40 +74,38 @@
 +    if (errno == EXDEV) {
 +      /* files are on different filesystems, so we have to copy */
 +      if (unlink(newpath) == -1 && errno != ENOENT)
-+	return -1;
++       return -1;
 +
 +      in = fopen(oldpath, "rb");
 +      if (in == NULL)
-+	return -1;
++       return -1;
 +      out = fopen(newpath, "wb");
 +      if (out == NULL) {
-+	fclose(in);
-+	return -1;
++       fclose(in);
++       return -1;
 +      }
 +
 +      while ((sz = fread(buf, 1, 4096, in)) > 0)
-+	fwrite(buf, 1, sz, out);
++       fwrite(buf, 1, sz, out);
 +
 +      if (ferror(in) || ferror(out)) {
-+	fclose(in);
-+	fclose(out);
-+	return -1;
++       fclose(in);
++       fclose(out);
++       return -1;
 +      }
 +      if (fclose(in) == EOF) {
-+	fclose(out);
-+	return -1;
++       fclose(out);
++       return -1;
 +      }
 +      if (fclose(out) == EOF)
-+	return -1;
++       return -1;
 +
 +      if (unlink(oldpath) == -1)
-+	return -1;
++       return -1;
 +    } else {
 +      return -1;
 +    }
 +  }
-+
+ 
 +  return 0;
 +}
-+
-+
