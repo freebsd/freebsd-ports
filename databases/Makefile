@@ -68,6 +68,7 @@
     SUBDIR += fpc-pxlib
     SUBDIR += fpc-sqlite
     SUBDIR += freetds
+    SUBDIR += freetds-devel
     SUBDIR += freetds-msdblib
     SUBDIR += frontbase
     SUBDIR += frontbase-jdbc
