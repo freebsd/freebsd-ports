@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	swig
-PORTVERSION=	1.3.37
-PORTREVISION=	1
+PORTVERSION=	1.3.38
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -50,6 +49,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|$$RUBY |${RUBY} |; \
 		s|^PHP4CONFIG=.*$$|PHP4CONFIG=php-config|; \
 		s|OCTAVEDIR=".*"|OCTAVEDIR="${LOCALBASE}/include/octave-$${OCTAVE_VER}"|; \
+		s|MZSCHEME --mute-banner|MZSCHEME|; \
+		/^MZDYNOBJ/s|`$$|\| tail -n 1`|; \
 		' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
 		${WRKSRC}/Lib/lua/luarun.swg
