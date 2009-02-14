@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.openidenabled.com/resources/downloads/ruby-openid/
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	A Yadis Service discovery library written in pure Ruby
+COMMENT=	An OpenID library written in pure Ruby
 
 BUILD_DEPENDS=	rubygem-yadis>=0.3.4:${PORTSDIR}/net/rubygem-yadis
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -20,6 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
+RUBYGEM_AUTOPLIST=	yes
 
 post-install:
 	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -name "*~" -delete
