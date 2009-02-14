@@ -14,7 +14,7 @@ MASTER_SITES=	http://www3.sympatico.ca/john.vanderhoek/tim/src/president/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Play the cardgame President (or Ass) against 3 AIs
 
-USE_TK=		yes
+USE_TK=		84
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-carddir=${PREFIX}/share/games/tvp
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/tcl8.4 \
