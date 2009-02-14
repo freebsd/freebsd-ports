@@ -19,6 +19,9 @@ COMMENT=	Graphical toolkit for TCL
 USE_TCL=	83
 USE_TCL_BUILD=	83
 
+DEPRECATED=		tcl8.3 support is going to be dropped
+EXPIRATION_DATE=	2009-05-22
+
 PORTSCOUT=	skipv:8.3b1,8.3b2,8.4.0
 
 LATEST_LINK=	tk83

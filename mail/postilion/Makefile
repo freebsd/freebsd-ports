@@ -18,6 +18,9 @@ COMMENT=	Mail client with the NeXt look
 LIB_DEPENDS=	c-client4:${PORTSDIR}/mail/cclient
 RUN_DEPENDS=	${LOCALBASE}/lib/Img1.2/pkgIndex.tcl:${PORTSDIR}/graphics/libimg-tk83
 
+DEPRECATED=		tcl8.3 support is going to be dropped
+EXPIRATION_DATE=	2009-05-22
+
 USE_TK=		83
 USE_TK_BUILD=	83
 
