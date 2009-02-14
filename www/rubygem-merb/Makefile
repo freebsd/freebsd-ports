@@ -40,28 +40,41 @@ BUILD_DEPENDS+=	rubygem-rubigen>0:${PORTSDIR}/devel/rubygem-rubigen
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+PLIST_FILES=	bin/merb \
+		bin/merb-gen \
+		bin/frozen-merb
 
-PLIST_SUB+=	GEM_LIB_DIR_CORE=${GEMS_DIR}/${PORTNAME}-core-${PORTVERSION}
-PLIST_SUB+=	GEM_DOC_DIR_CORE=${DOC_DIR}/${PORTNAME}-core-${PORTVERSION}
-PLIST_SUB+=	GEM_LIB_DIR_ACTION=${GEMS_DIR}/${PORTNAME}-action-args-${PORTVERSION}
-PLIST_SUB+=	GEM_DOC_DIR_ACTION=${DOC_DIR}/${PORTNAME}-action-args-${PORTVERSION}
-PLIST_SUB+=	GEM_LIB_DIR_ASSETS=${GEMS_DIR}/${PORTNAME}-assets-${PORTVERSION}
-PLIST_SUB+=	GEM_DOC_DIR_ASSETS=${DOC_DIR}/${PORTNAME}-assets-${PORTVERSION}
-PLIST_SUB+=	GEM_LIB_DIR_GEN=${GEMS_DIR}/${PORTNAME}-gen-${PORTVERSION}
-PLIST_SUB+=	GEM_DOC_DIR_GEN=${DOC_DIR}/${PORTNAME}-gen-${PORTVERSION}
-PLIST_SUB+=	GEM_LIB_DIR_HAML=${GEMS_DIR}/${PORTNAME}-haml-${PORTVERSION}
-PLIST_SUB+=	GEM_DOC_DIR_HAML=${DOC_DIR}/${PORTNAME}-haml-${PORTVERSION}
-PLIST_SUB+=	GEM_LIB_DIR_BUILDER=${GEMS_DIR}/${PORTNAME}-builder-${PORTVERSION}
-PLIST_SUB+=	GEM_DOC_DIR_BUILDER=${DOC_DIR}/${PORTNAME}-builder-${PORTVERSION}
-PLIST_SUB+=	GEM_LIB_DIR_PARTS=${GEMS_DIR}/${PORTNAME}-parts-${PORTVERSION}
-PLIST_SUB+=	GEM_DOC_DIR_PARTS=${DOC_DIR}/${PORTNAME}-parts-${PORTVERSION}
-PLIST_SUB+=	GEM_LIB_DIR_CACHE=${GEMS_DIR}/${PORTNAME}-cache-${PORTVERSION}
-PLIST_SUB+=	GEM_DOC_DIR_CACHE=${DOC_DIR}/${PORTNAME}-cache-${PORTVERSION}
-PLIST_SUB+=	GEM_LIB_DIR_MAILER=${GEMS_DIR}/${PORTNAME}-mailer-${PORTVERSION}
-PLIST_SUB+=	GEM_DOC_DIR_MAILER=${DOC_DIR}/${PORTNAME}-mailer-${PORTVERSION}
-PLIST_SUB+=	GEM_LIB_DIR_FREEZER=${GEMS_DIR}/${PORTNAME}-freezer-${PORTVERSION}
-PLIST_SUB+=	GEM_DOC_DIR_FREEZER=${DOC_DIR}/${PORTNAME}-freezer-${PORTVERSION}
-PLIST_SUB+=	GEM_LIB_DIR_MORE=${GEMS_DIR}/${PORTNAME}-more-${PORTVERSION}
-PLIST_SUB+=	GEM_DOC_DIR_MORE=${DOC_DIR}/${PORTNAME}-more-${PORTVERSION}
+MERB_MODULES=	action-args	\
+		assets		\
+		builder		\
+		cache		\
+		core		\
+		freezer		\
+		gen		\
+		haml		\
+		mailer		\
+		more		\
+		parts
+
+post-install:
+.for M in ${MERB_MODULES:S,^,merb-,g:S,$,-${PORTVERSION},g} merb-${PORTVERSION}
+	@${ECHO} ${CACHE_DIR}/${M}.gem >> ${TMPPLIST}
+	@${ECHO} ${SPEC_DIR}/${M}.gemspec >> ${TMPPLIST}
+	@${FIND} -ds ${PREFIX}/${DOC_DIR}/${M} -type f \
+		-print | ${SED} -E -e 's,^${PREFIX}/?,,' >> ${TMPPLIST}
+	@${FIND} -ds ${PREFIX}/${DOC_DIR}/${M} -type d \
+		-print | ${SED} -E -e 's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
+	@${FIND} -ds ${PREFIX}/${GEMS_DIR}/${M} -type f \
+		-print | ${SED} -E -e 's,^${PREFIX}/?,,' >> ${TMPPLIST}
+	@${FIND} -ds ${PREFIX}/${GEMS_DIR}/${M} -type d \
+		-print | ${SED} -E -e 's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
+.endfor
+	@${ECHO_CMD} "@unexec rmdir %D/${GEMS_DIR} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${DOC_DIR} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${CACHE_DIR} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${SPEC_DIR} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${GEMS_BASE_DIR} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby/gems 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
