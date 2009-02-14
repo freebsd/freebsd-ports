@@ -14,6 +14,7 @@ COMMENT=	A toolkit to convert your script to a controllable daemon
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
