@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08010
+PORTVERSION=	0.08012
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,19 +16,21 @@ COMMENT=	Extensible and flexible object <-> relational mapper
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
-		p5-SQL-Abstract>=1.20:${PORTSDIR}/databases/p5-SQL-Abstract \
-		p5-SQL-Abstract-Limit>=0.101:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
+		p5-SQL-Abstract>=1.24:${PORTSDIR}/databases/p5-SQL-Abstract \
+		p5-SQL-Abstract-Limit>=0.141:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
 		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
-		p5-Class-C3>=0.13:${PORTSDIR}/devel/p5-Class-C3 \
+		p5-Class-C3>=0.20:${PORTSDIR}/devel/p5-Class-C3 \
 		p5-Class-C3-Componentised>=0:${PORTSDIR}/devel/p5-Class-C3-Componentised \
 		p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-DBI>=1.40:${PORTSDIR}/databases/p5-DBI \
 		p5-Module-Find>=0:${PORTSDIR}/devel/p5-Module-Find \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
-		p5-Class-Accessor-Grouped>=0.05002:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
-		p5-JSON-Any>=1.00:${PORTSDIR}/converters/p5-JSON-Any
+		p5-Class-Accessor-Grouped>=0.08002:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
+		p5-JSON-Any>=1.17:${PORTSDIR}/converters/p5-JSON-Any \
+		p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils
 
 PERL_CONFIGURE=	5.8.1+
+CONFIGURE_ENV=	DBICTEST_NO_SQLITE_CHECK=1
 
 MAN1=	dbicadmin.1
 MAN3=	DBIx::Class.3 \
@@ -102,6 +104,6 @@ MAN3=	DBIx::Class.3 \
 	SQL::Translator::Producer::DBIx::Class::File.3
 
 post-extract:
-	@${PERL} -i.bak -ne 'print unless /^\s*build_requires/' ${WRKSRC}/Makefile.PL
+	@${PERL} -i.bak -ne 'print unless /^test_requires/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
