@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	c_icap-${PORTVERSION}rc1
 
-MAINTAINER=	b3k@mail.ru
+MAINTAINER=	tofig@freebsd.az
 COMMENT=	An implementation of an ICAP server
 
 GNU_CONFIGURE=	yes
@@ -30,10 +30,6 @@ OPTIONS=	CLAMAV "Build with srv_clamav service" on \
 			LARGE_FILES "Enable large files support" off \
 			IPV6 "Enable IPv6 support" off
 #		PERL "With Perl support" off
-
-BROKEN=	Doesn't build with clamav-0.93 or higher
-DEPRECATED=	has been broken for more than 6 months
-EXPIRATION_DATE=2009-01-19
 
 .include <bsd.port.pre.mk>
 
