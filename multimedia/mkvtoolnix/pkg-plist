@@ -1,0 +1,24 @@
+bin/mkvextract
+bin/mkvinfo
+bin/mkvmerge
+%%GUI%%bin/mmg
+%%DATADIR%%/images/addingremovingattachments.gif
+%%DATADIR%%/images/addremovefiles.gif
+%%DATADIR%%/images/attachmentoptions.gif
+%%DATADIR%%/images/audiotrackoptions.gif
+%%DATADIR%%/images/chaptereditor.gif
+%%DATADIR%%/images/generaltrackoptions.gif
+%%DATADIR%%/images/jobmanager.gif
+%%DATADIR%%/images/movietitle.gif
+%%DATADIR%%/images/muxingwindow.gif
+%%DATADIR%%/images/selectmkvmergeexecutable.gif
+%%DATADIR%%/images/splitting.gif
+%%DATADIR%%/images/textsubtitlestrackoptions.gif
+%%DATADIR%%/images/trackselection.gif
+%%DATADIR%%/images/videotrackoptions.gif
+%%DATADIR%%/mkvmerge-gui.hhc
+%%DATADIR%%/mkvmerge-gui.hhk
+%%DATADIR%%/mkvmerge-gui.hhp
+%%DATADIR%%/mkvmerge-gui.html
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%
