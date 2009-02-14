@@ -60,8 +60,8 @@ post-install:
 		-type f -print | ${SED} -E -e 's,^${PREFIX}/?,,' >> ${TMPPLIST}
 	@${FIND} -ds ${PREFIX}/lib/ruby/gems/${RUBY_VER}/doc/${DISTNAME} \
 		 -type d -print | ${SED} -E -e 's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby/gems/${RUBY_VER}/doc 2>/dev/null || true" >> ${TMPPLIST}
 .endif
+	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby/gems/${RUBY_VER}/doc 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby/gems/${RUBY_VER} 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby/gems 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby 2>/dev/null || true" >> ${TMPPLIST}
