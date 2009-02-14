@@ -1,6 +1,6 @@
---- configure.py.orig	2007-12-05 18:36:11.000000000 +0100
-+++ configure.py	2007-12-06 21:12:28.000000000 +0100
-@@ -29,6 +29,10 @@
+--- configure.py.orig	2008-11-08 21:55:49.000000000 +1000
++++ configure.py	2009-01-03 23:09:03.000000000 +1000
+@@ -42,6 +42,10 @@
  
  import sipconfig
  
@@ -10,8 +10,8 @@
 +if freebsd: freebsd_port = os.environ['PYQT4_COMPONENT']
  
  # Initialise the globals.
- pyqt_version = 0x040303
-@@ -61,7 +65,6 @@
+ pyqt_version = 0x040404
+@@ -74,7 +78,6 @@
  dbuslibdirs = []
  dbuslibs = []
  
@@ -19,7 +19,7 @@
  # Under Windows qmake and the Qt DLLs must be into the system PATH otherwise
  # the dynamic linker won't be able to resolve the symbols.  On other systems we
  # assume we can just run qmake by using its full pathname.
-@@ -288,14 +291,23 @@
+@@ -310,14 +313,23 @@
          elif sipcfg.universal:
              sipconfig.inform("QtDesigner module disabled with universal binaries.")
          else:
@@ -46,7 +46,7 @@
  
      def code(self):
          cons_xtra_incdirs = []
-@@ -316,6 +328,10 @@
+@@ -338,6 +350,10 @@
              cons_xtra_libs.extend(sp_libs)
  
              generate_code("QtCore")
@@ -57,7 +57,7 @@
          else:
              generate_code("QtCore", extra_include_dirs=sp_incdirs,
                          extra_lib_dirs=sp_libdirs, extra_libs=sp_libs)
-@@ -487,19 +503,28 @@
+@@ -521,19 +537,28 @@
              sipconfig.inform("Unable to find the following static plugins: %s" % ", ".join(opts.staticplugins))
  
          # Generate the QScintilla API file.
@@ -95,7 +95,7 @@
  
      def _static_plugins(self, mname):
          """Return a tuple of the libraries (in platform neutral format) and the
-@@ -570,7 +595,13 @@
+@@ -604,7 +629,13 @@
          return libs, libdirs
  
      def module_installs(self):
@@ -110,7 +110,7 @@
  
      def qpylibs(self):
          # See which QPy libraries to build.
-@@ -656,23 +687,43 @@
+@@ -690,23 +721,43 @@
          # Create the pyuic4 wrapper.  Use the GUI version on MacOS (so that
          # previews work properly and normal console use will work anyway), but
          # not on Windows (so that normal console use will work).
@@ -167,7 +167,7 @@
  
          if "QtXml" in pyqt_modules:
              sipconfig.inform("Creating pylupdate4 Makefile...")
-@@ -709,7 +760,10 @@
+@@ -743,7 +794,10 @@
              makefile.generate()
              tool.append("pyrcc")
          else:
@@ -177,18 +177,18 @@
 +            else:
 +                sipconfig.inform("pylupdate4 and pyrcc4 will not be built because the Qt XML module is missing.")
  
-         if "QtDesigner" in pyqt_modules:
-             enabled = True
-@@ -734,11 +788,17 @@
-                       glob.glob("%s/lib/libpython%d.%d*" % (ducfg["prefix"], py_major, py_minor))):
-                     lib_dir_flag = quote("-L%s/lib" % ducfg["prefix"])
+         if opts.designer_plugin and "QtDesigner" in pyqt_modules:
+             py_major = sipcfg.py_version >> 16
+@@ -766,11 +820,17 @@
+                       glob.glob("%s/lib/libpython%d.%d*" % (ducfg["exec_prefix"], py_major, py_minor))):
+                     lib_dir_flag = quote("-L%s/lib" % ducfg["exec_prefix"])
                      link = "%s -lpython%d.%d" % (lib_dir_flag, py_major, py_minor)
 +                elif freebsd:
 +                    lib_dir_flag = quote("-L%s/lib" % ducfg["prefix"])
 +                    link = "%s -lpython%d.%d" % (lib_dir_flag, py_major, py_minor)
                  else:
                      sipconfig.inform("Qt Designer plugin disabled because Python library is static")
-                     enabled = False
+                     opts.designer_plugin = False
  
 -                pysh_lib = ducfg["LDLIBRARY"]
 +                if freebsd:
@@ -196,15 +196,16 @@
 +                else:
 +                    pysh_lib = ducfg["LDLIBRARY"]
  
-             if enabled:
+             if opts.designer_plugin:
                  sipconfig.inform("Creating Qt Designer plugin Makefile...")
-@@ -806,19 +866,44 @@
+@@ -839,21 +899,44 @@
      sipconfig.inform("The %s Qt libraries are in %s." % (lib_type, qt_libdir))
      sipconfig.inform("The Qt binaries are in %s." % qt_bindir)
      sipconfig.inform("The Qt mkspecs directory is in %s." % qt_datadir)
 -    sipconfig.inform("These PyQt modules will be built: %s." % string.join(pyqt_modules))
 -    sipconfig.inform("The PyQt Python package will be installed in %s." % opts.pyqtmoddir)
--    sipconfig.inform("The Designer plugin will be installed in %s." % os.path.join(opts.plugindir, "designer"))
+-
+-    if opts.designer_plugin:
 +    if freebsd:
 +        if not freebsd_port in ('dbus', 'demo', 'designerplugin'):
 +            sipconfig.inform("This PyQt module will be built: %s." % pyqt_modules[-1])
@@ -214,7 +215,7 @@
 +    else:
 +        sipconfig.inform("These PyQt modules will be built: %s." % string.join(pyqt_modules))
 +        sipconfig.inform("The PyQt Python package will be installed in %s." % opts.pyqtmoddir)
-+        sipconfig.inform("The Designer plugin will be installed in %s." % os.path.join(opts.plugindir, "designer"))
+         sipconfig.inform("The Designer plugin will be installed in %s." % os.path.join(opts.plugindir, "designer"))
  
      if opts.api:
 -        sipconfig.inform("The QScintilla API file will be installed in %s." % os.path.join(opts.qscidir, "api", "python"))
@@ -250,7 +251,7 @@
  
      if opts.vendorcheck:
          sipconfig.inform("PyQt will only be usable with signed interpreters.")
-@@ -1186,7 +1271,11 @@
+@@ -1253,7 +1336,11 @@
      of libraries.
      extra_sip_flags is an optional list of additional flags to pass to SIP.
      """
@@ -263,7 +264,7 @@
  
      mk_clean_dir(mname)
  
-@@ -1258,7 +1347,11 @@
+@@ -1325,7 +1412,11 @@
          sipconfig.error("Unable to create the C++ code.")
  
      # Generate the Makefile.
@@ -276,7 +277,7 @@
  
      installs = []
  
-@@ -1679,6 +1772,10 @@
+@@ -1764,6 +1855,10 @@
          p.print_help()
          sys.exit(2)
  
@@ -287,7 +288,7 @@
      sipcfg.set_build_macros(macros)
  
      # Check Qt is what we need.
-@@ -1686,7 +1783,7 @@
+@@ -1771,7 +1866,7 @@
  
      # Check the licenses are compatible.
      check_license()
@@ -296,7 +297,7 @@
      # Check which modules to build.
      pyqt.check_modules()
  
-@@ -1708,9 +1805,18 @@
+@@ -1793,9 +1888,18 @@
      installs=[(pyqt.module_installs(), pyqt_modroot)]
  
      if opts.api:
@@ -317,7 +318,7 @@
  
      if opts.bigqt:
          xtra_modules.append("_qt")
-@@ -1721,14 +1827,31 @@
+@@ -1806,14 +1910,31 @@
          if opts.mwg_qwt_dir:
              xtra_modules.append("Qwt5")
  

@@ -15,6 +15,16 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/activeqt/webbrowser/ui_mainwindow.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/activeqt/webbrowser/webbrowser.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/activeqt/webbrowser/webbrowser.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/embeddeddialogs/No-Ones-Laughing-3.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/embeddeddialogs/embeddeddialog.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/embeddeddialogs/embeddeddialog.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/embeddeddialogs/embeddeddialog.ui
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/embeddeddialogs/embeddeddialogs.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/embeddeddialogs/embeddeddialogs.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/embeddeddialogs/embeddeddialogs.qrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/embeddeddialogs/embeddeddialogs_rc.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/embeddeddialogs/embeddeddialogs_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/calculatorform/calculatorform.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/calculatorform/calculatorform.pyc
@@ -29,10 +39,14 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/python/bubbleswidgetplugin.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/python/counterlabelplugin.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/python/counterlabelplugin.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/python/datetimeeditplugin.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/python/datetimeeditplugin.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/python/helloglwidgetplugin.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/python/helloglwidgetplugin.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/python/highlightedtexteditplugin.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/python/highlightedtexteditplugin.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/python/multipagewidgetplugin.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/python/multipagewidgetplugin.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/python/polygonwidgetplugin.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/python/polygonwidgetplugin.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/python/pydemoplugin.py
@@ -45,16 +59,29 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/bubbleswidget.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/counterlabel.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/counterlabel.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/datetimeedit.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/datetimeedit.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/helloglwidget.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/helloglwidget.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/highlightedtextedit.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/highlightedtextedit.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/multipagewidget.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/multipagewidget.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/polygonwidget.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/polygonwidget.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/pydemo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/pydemo.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/pythonconsolewidget.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets/pythonconsolewidget.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/systray/images/bad.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/systray/images/heart.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/systray/images/trash.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/systray/systray.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/systray/systray.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/systray/systray.qrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/systray/systray_rc.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/systray/systray_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/complexwizard.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/complexwizard.pyc
@@ -110,14 +137,51 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/collidingmice/mice.qrc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/collidingmice/mice_rc.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/collidingmice/mice_rc.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot/images/head.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot/dragdroprobot_rc.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot/dragdroprobot.qrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/diagramscene.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/diagramscene.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/diagramscene.qrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/diagramscene_rc.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/diagramscene_rc.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/images/background1.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/images/background2.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/images/background3.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/images/background4.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/images/bold.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/images/bringtofront.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/images/delete.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/images/floodfill.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/images/italic.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/images/linecolor.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/images/linepointer.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/images/pointer.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/images/sendtoback.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/images/textpointer.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/diagramscene/images/underline.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot/dragdroprobot.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot/dragdroprobot.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot/dragdroprobot.qrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot/dragdroprobot_rc.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot/dragdroprobot_rc.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot/images/head.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/elasticnodes.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/elasticnodes.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/backside.ui
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/images/artsfftscope.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/images/blue_angle_swirl.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/images/kontact_contacts.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/images/kontact_journal.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/images/kontact_mail.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/images/kontact_notes.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/images/kopeteavailable.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/images/metacontact_online.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/images/minitools.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/padnavigator.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/padnavigator.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/padnavigator.qrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/padnavigator_rc.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/padnavigator_rc.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/ui_backside.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/padnavigator/ui_backside.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/basicsortfiltermodel.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/basicsortfiltermodel.pyc
@@ -130,8 +194,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/chart/qtdata.cht
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/dirview.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/dirview.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/pixelator/images/qt.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/pixelator/images.qrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/pixelator/images/qt.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/pixelator/pixelator.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/pixelator/pixelator.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/pixelator/pixelator_rc.py
@@ -274,6 +338,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/svgviewer/svgviewer_rc.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/transformations.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/transformations.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/phonon/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/phonon/capabilities.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/phonon/capabilities.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/phonon/musicplayer.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/phonon/musicplayer.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pyuic/compile-on-the-fly.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pyuic/compile-on-the-fly.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pyuic/demo.ui
@@ -482,80 +551,90 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml/saxbookmarks/jennifer.xbel
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml/saxbookmarks/saxbookmarks.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml/saxbookmarks/saxbookmarks.pyc
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/activeqt/webbrowser/icons
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/activeqt/webbrowser
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/activeqt
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/calculatorform
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/python
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins/widgets
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer/plugins
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designer
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/configdialog/images
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs/configdialog
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialogs
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/draggableicons/images
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/draggableicons
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/draggabletext
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/fridgemagnets
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop/puzzle
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/collidingmice/images
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/collidingmice
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot/images/
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/chart
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/pixelator/images
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/pixelator
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/puzzle
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/simpletreemodel
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layouts
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/application/images
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/application
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/dockwidgets/images
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/dockwidgets
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/mdi/images
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/mdi
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/sdi/images
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows/sdi
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindows
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/ftp/images
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/network/ftp
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/network
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/opengl/textures/images
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/opengl/textures
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/opengl
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/basicdrawing/images
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/basicdrawing
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/svgviewer/files
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting/svgviewer
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/painting
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pyuic
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/richtext/syntaxhighlighter/examples
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/richtext/syntaxhighlighter
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/richtext
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/script
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sql
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/threads
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/codecs/encodedfiles
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/codecs
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/i18n/translations
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/i18n
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/qtdemo/images
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/qtdemo
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/settingseditor/inifiles/
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools/settingseditor
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tools
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/icons/images
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/icons
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/movie/icons
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/movie
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/tooltips/images
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/tooltips
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml/dombookmarks
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml/saxbookmarks
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xml/saxbookmarks
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xml/dombookmarks
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xml
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets/tooltips/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets/tooltips
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets/movie/icons
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets/movie
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets/icons/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets/icons
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tools/settingseditor/inifiles
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tools/settingseditor
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tools/qtdemo/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tools/qtdemo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tools/i18n/translations
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tools/i18n
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tools/codecs/encodedfiles
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tools/codecs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tools
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/threads
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sql
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/script
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/richtext/syntaxhighlighter/examples
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/richtext/syntaxhighlighter
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/richtext
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pyuic
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/phonon
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/painting/svgviewer/files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/painting/svgviewer
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/painting/basicdrawing/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/painting/basicdrawing
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/painting
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/opengl/textures/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/opengl/textures
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/opengl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/network/ftp/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/network/ftp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/network
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mainwindows/sdi/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mainwindows/sdi
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mainwindows/mdi/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mainwindows/mdi
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mainwindows/dockwidgets/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mainwindows/dockwidgets
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mainwindows/application/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mainwindows/application
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mainwindows
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/layouts
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/itemviews/simpletreemodel
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/itemviews/puzzle
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/itemviews/pixelator/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/itemviews/pixelator
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/itemviews/chart
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/itemviews
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphicsview/padnavigator/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphicsview/padnavigator
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphicsview/dragdroprobot/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphicsview/dragdroprobot
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphicsview/diagramscene/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphicsview/diagramscene
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphicsview/collidingmice/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphicsview/collidingmice
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphicsview
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/draganddrop/puzzle
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/draganddrop/fridgemagnets
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/draganddrop/draggabletext
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/draganddrop/draggableicons/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/draganddrop/draggableicons
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/draganddrop
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dialogs/configdialog/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dialogs/configdialog
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dialogs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/desktop/systray/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/desktop/systray
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/desktop
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/designer/plugins/widgets
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/designer/plugins/python
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/designer/plugins
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/designer/calculatorform
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/designer
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/embeddeddialogs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/activeqt/webbrowser/icons
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/activeqt/webbrowser
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/activeqt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

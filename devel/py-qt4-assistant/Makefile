@@ -6,15 +6,13 @@
 
 PORTNAME=	assistant
 PORTVERSION=	${PYQT4_VERSION}
-PORTREVISION=	2
 PORTEPOCH=	1
-
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
 DISTNAME=	${PYQT4_DISTNAME}
 
-MAINTAINER=	${PYQT_MAINTAINER}
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt4 toolkit, QtAssistant module
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip
@@ -24,7 +22,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}gui>=${PYQT4_VERSION}:${PORTSDIR}/x11-toolkits/py-q
 HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
 USE_QT_VER=	4
-QT_COMPONENTS=	assistantclient qmake
+QT_COMPONENTS=	assistantclient qmake_build
 
 OPTIONS=	API		"Install QtAssistant API for QScintilla2" on \
 		DEBUG		"Enable debugging in generated code" off \
@@ -34,11 +32,14 @@ OPTIONS=	API		"Install QtAssistant API for QScintilla2" on \
 PATCHDIR=	${PORTSDIR}/devel/py-qt4-core/files
 OPTIONSFILE=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 SIPDIR=		${PREFIX}/share/py-sip
+QSCIDIR=	${PREFIX}/share/qt4/qsci
 CONFIGURE_ENV+=	PYQT4_COMPONENT="${PORTNAME}"
 ARGS=		-b ${PREFIX}/bin\
-		-d ${PYTHON_SITELIBDIR}\
-		-q ${QT_PREFIX}/bin/qmake-qt4\
-		--confirm-license
+		-d ${PYTHONPREFIX_SITELIBDIR}\
+		-p ${PREFIX}/${QT_PLUGINDIR_REL}\
+		-q ${QMAKE}\
+		--confirm-license\
+		--enable QtAssistant
 
 .include "../py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
@@ -49,26 +50,21 @@ ARGS+=		--debug
 .if defined(WITHOUT_API)
 ARGS+=		--no-qsci-api
 PLIST_SUB+=	API="@comment "
-PLIST_SUB+=	APIFILE="@comment "
 .else
-LIB_DEPENDS+=	qscintilla2.3:${PORTSDIR}/devel/qscintilla2
-ARGS+=		--qsci-api
+LIB_DEPENDS+=	qscintilla2.5:${PORTSDIR}/devel/qscintilla2
+ARGS+=		--qsci-api --qsci-api-destdir=${QSCIDIR}
 PLIST_SUB+=	API=""
-PLIST_SUB+=	APIFILE="share/qt4/qsci/api/python/QtAssistant.api"
 .endif
 .if defined(WITHOUT_SIPFILES)
 ARGS+=		--no-sip-files
-PLIST_SUB+=	SIPFILES="@comment "
-PLIST_SUB+=	SIPDIR="@comment "
+PLIST_SUB+=	SIP="@comment "
 .else
 ARGS+=		--sipdir ${SIPDIR}
-PLIST_SUB+=	SIPFILES=""
-PLIST_SUB+=	SIPDIR="share/py-sip"
+PLIST_SUB+=	SIP=""
 .endif
 .if defined(WITH_TRACING)
 ARGS+=		--trace
 .endif
-ARGS+=		--enable QtAssistant
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV}\

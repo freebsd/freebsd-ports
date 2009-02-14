@@ -1,0 +1,17 @@
+%%PYTHON_SITELIBDIR%%/PyQt4/QtXmlPatterns.so
+%%SIP%%share/py-sip/QtXmlPatterns/QtXmlPatternsmod.sip
+%%SIP%%share/py-sip/QtXmlPatterns/qabstractmessagehandler.sip
+%%SIP%%share/py-sip/QtXmlPatterns/qabstracturiresolver.sip
+%%SIP%%share/py-sip/QtXmlPatterns/qabstractxmlnodemodel.sip
+%%SIP%%share/py-sip/QtXmlPatterns/qabstractxmlreceiver.sip
+%%SIP%%share/py-sip/QtXmlPatterns/qsimplexmlnodemodel.sip
+%%SIP%%share/py-sip/QtXmlPatterns/qsourcelocation.sip
+%%SIP%%share/py-sip/QtXmlPatterns/qxmlformatter.sip
+%%SIP%%share/py-sip/QtXmlPatterns/qxmlname.sip
+%%SIP%%share/py-sip/QtXmlPatterns/qxmlnamepool.sip
+%%SIP%%share/py-sip/QtXmlPatterns/qxmlquery.sip
+%%SIP%%share/py-sip/QtXmlPatterns/qxmlresultitems.sip
+%%SIP%%share/py-sip/QtXmlPatterns/qxmlserializer.sip
+%%API%%share/qt4/qsci/api/python/QtXmlPatterns.api
+%%SIP%%@dirrm share/py-sip/QtXmlPatterns
+@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

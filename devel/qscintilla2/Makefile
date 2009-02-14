@@ -6,68 +6,56 @@
 
 PORTNAME=	qscintilla2
 PORTVERSION=	${QSCI2_VERSION}
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
-
 MASTER_SITES=	${MASTER_SITES_QSCI2}
 DISTNAME=	${QSCI2_DISTNAME}
 
-MAINTAINER=	${PYQT_MAINTAINER}
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt4 port of the Scintilla C++ editor class
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake moc gui xml designer
+QT_COMPONENTS=	qmake_build moc_build gui xml designer
 HAS_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
-OPTIONS=	HEADERS		"Install Qsci headers" on \
-		TRANSLATIONS	"Install translations (de, fr, pt_br, ru)" off
+BUILD_WRKSRC=		${WRKSRC}/Qt4
+INSTALL_WRKSRC=		${BUILD_WRKSRC}
 
-PLIST_SUB+=	QT_LIBDIR_REL=${QT_LIBDIR_REL}
+QMAKE_ARGS=	-unix PREFIX=${PREFIX}
 
 .include "../py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_HEADERS)
-PLIST_SUB+=	HEADERS="@comment "
+.if !defined(WITHOUT_NLS)
+PLIST_SUB+=	NLS=""
 .else
-PLIST_SUB+=	HEADERS=""
-PLIST_SUB+=	QT_INCDIR_REL=${QT_INCDIR_REL}
-.endif
-.if defined(WITH_TRANSLATIONS)
-PLIST_SUB+=	TRANSLATIONS=""
-.else
-PLIST_SUB+=	TRANSLATIONS="@comment "
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-	cd ${WRKSRC}/Qt4 && ${REINPLACE_CMD} -e \
-		's|$$$$\[QT_INSTALL_LIBS\]|${WRKSRC}/lib|' qscintilla.pro
-.if defined(WITHOUT_HEADERS)
-	cd ${WRKSRC}/Qt4 && ${REINPLACE_CMD} -e \
-		's|header trans qsci|trans qsci|' qscintilla.pro
-.endif
-.if !defined(WITH_TRANSLATIONS)
-	cd ${WRKSRC}/Qt4 && ${REINPLACE_CMD} -e \
+	cd ${BUILD_WRKSRC} && ${REINPLACE_CMD} -e \
+		's|$$$$\[QT_INSTALL_HEADERS\]|${PREFIX}/${QT_INCDIR_REL}|; \
+		s|$$$$\[QT_INSTALL_LIBS\]|${PREFIX}/${QT_LIBDIR_REL}|; \
+		s|$$$$\[QT_INSTALL_TRANSLATIONS\]|${PREFIX}/share/qt4/translations|; \
+		s|$$$$\[QT_INSTALL_DATA\]|${PREFIX}/share/qt4|' \
+		qscintilla.pro
+
+.if defined(WITHOUT_NLS)
+	cd ${BUILD_WRKSRC} && ${REINPLACE_CMD} -e \
 		's|trans qsci|qsci|' qscintilla.pro
 .endif
 
 do-configure:
-	cd ${WRKSRC}/Qt4 && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} -unix PREFIX=${PREFIX} qscintilla.pro
+	cd ${BUILD_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+		${QMAKE} ${QMAKE_ARGS} qscintilla.pro
 
-do-build:
-	cd ${WRKSRC}/Qt4 && ${MAKE}
-
-do-install:
-	cd ${WRKSRC}/Qt4 && ${MAKE} install
-	cd ${WRKSRC}/lib &&\
-		${MV} libqscintilla2.so.3.0.0 libqscintilla2.so.3 &&\
-		${INSTALL_DATA} libqscintilla2.so.3 ${PREFIX}/${QT_LIBDIR_REL} &&\
-		cd ${PREFIX}/${QT_LIBDIR_REL} &&\
-		${LN} -sf libqscintilla2.so.3 libqscintilla2.so &&\
-		${RM} ${PREFIX}/share/qt4/qsci/api/python/Python-2.4.api
+post-configure:
+	${REINPLACE_CMD} -e \
+		's|^CC .*|CC=${CC}|; \
+		s|^CXX .*|CXX=${CXX}|; \
+		s|^LINK .*|LINK=${CXX}|' \
+		${BUILD_WRKSRC}/Makefile
 
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC} &&\

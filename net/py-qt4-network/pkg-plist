@@ -1,25 +1,30 @@
 %%PYTHON_SITELIBDIR%%/PyQt4/QtNetwork.so
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/QtNetworkmod.sip
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/qabstractsocket.sip
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/qauthenticator.sip
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/qftp.sip
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/qhostaddress.sip
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/qhostinfo.sip
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/qhttp.sip
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/qnetworkinterface.sip
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/qnetworkproxy.sip
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/qssl.sip
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/qsslcertificate.sip
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/qsslcipher.sip
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/qsslerror.sip
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/qsslkey.sip
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/qsslsocket.sip
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/qtcpserver.sip
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/qtcpsocket.sip
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/qudpsocket.sip
-%%SIPFILES%%%%SIPDIR%%/QtNetwork/qurlinfo.sip
-%%SIPFILES%%@dirrm %%SIPDIR%%/QtNetwork
-%%API%%%%APIFILE%%
-%%API%%@dirrmtry share/qt4/qsci/api/python
-%%API%%@dirrmtry share/qt4/qsci/api
-%%API%%@dirrmtry share/qt4/qsci
+%%SIP%%share/py-sip/QtNetwork/QtNetworkmod.sip
+%%SIP%%share/py-sip/QtNetwork/qabstractsocket.sip
+%%SIP%%share/py-sip/QtNetwork/qauthenticator.sip
+%%SIP%%share/py-sip/QtNetwork/qftp.sip
+%%SIP%%share/py-sip/QtNetwork/qhostaddress.sip
+%%SIP%%share/py-sip/QtNetwork/qhostinfo.sip
+%%SIP%%share/py-sip/QtNetwork/qhttp.sip
+%%SIP%%share/py-sip/QtNetwork/qlocalserver.sip
+%%SIP%%share/py-sip/QtNetwork/qlocalsocket.sip
+%%SIP%%share/py-sip/QtNetwork/qnetworkaccessmanager.sip
+%%SIP%%share/py-sip/QtNetwork/qnetworkcookie.sip
+%%SIP%%share/py-sip/QtNetwork/qnetworkinterface.sip
+%%SIP%%share/py-sip/QtNetwork/qnetworkproxy.sip
+%%SIP%%share/py-sip/QtNetwork/qnetworkreply.sip
+%%SIP%%share/py-sip/QtNetwork/qnetworkrequest.sip
+%%SIP%%share/py-sip/QtNetwork/qssl.sip
+%%SIP%%share/py-sip/QtNetwork/qsslcertificate.sip
+%%SIP%%share/py-sip/QtNetwork/qsslcipher.sip
+%%SIP%%share/py-sip/QtNetwork/qsslconfiguration.sip
+%%SIP%%share/py-sip/QtNetwork/qsslerror.sip
+%%SIP%%share/py-sip/QtNetwork/qsslkey.sip
+%%SIP%%share/py-sip/QtNetwork/qsslsocket.sip
+%%SIP%%share/py-sip/QtNetwork/qtcpserver.sip
+%%SIP%%share/py-sip/QtNetwork/qtcpsocket.sip
+%%SIP%%share/py-sip/QtNetwork/qudpsocket.sip
+%%SIP%%share/py-sip/QtNetwork/qurlinfo.sip
+%%API%%share/qt4/qsci/api/python/QtNetwork.api
+%%SIP%%@dirrm share/py-sip/QtNetwork
+@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

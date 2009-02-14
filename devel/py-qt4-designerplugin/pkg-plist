@@ -1,4 +1,4 @@
-lib/qt4/plugins/designer/libpythonplugin.so
-@exec mkdir -p %D/lib/qt4/plugins/designer/python
-@dirrmtry lib/qt4/plugins/designer/python
-@dirrmtry lib/qt4/plugins/designer
+%%QT_PLUGINDIR_REL%%/designer/libpythonplugin.so
+@exec mkdir -p %D/%%QT_PLUGINDIR_REL%%/designer/python
+@dirrmtry %%QT_PLUGINDIR_REL%%/designer/python
+@dirrmtry %%QT_PLUGINDIR_REL%%/designer

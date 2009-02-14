@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITES_SIP} ${MASTER_SITE_LOCAL}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${SIP_DISTNAME}
 
-MAINTAINER=	${PYQT_MAINTAINER}
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python to C and C++ bindings generator
 
 USE_PYTHON=	2.5+
@@ -22,8 +22,8 @@ OPTIONS=	DEBUG "Build with debugging symbols" off
 DATADIR=	${PREFIX}/share/py-${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-ARGS=		-b ${PREFIX}/bin -d ${PYTHON_SITELIBDIR}\
-		-e ${PYTHON_INCLUDEDIR} -v ${DATADIR}
+ARGS=		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR}\
+		-e ${PYTHONPREFIX_INCLUDEDIR} -v ${DATADIR}
 
 .include "files/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
@@ -46,11 +46,11 @@ post-configure:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR} && cd ${WRKSRC} && ${INSTALL_DATA}\
-		doc/default.css doc/sipref.txt doc/sipref.html\
+		doc/sipref.txt doc/sipref.html\
 		NEWS LICENSE ${DOCSDIR}
 .endif
 	${MKDIR} ${DATADIR} &&\
-		cd ${PYTHON_SITELIBDIR} &&\
+		cd ${PYTHONPREFIX_SITELIBDIR} &&\
 		${PYTHON_CMD} -c "import sipconfig" &&\
 		${PYTHON_CMD} -O -c "import sipconfig" &&\
 		${PYTHON_CMD} -c "import sipdistutils" &&\

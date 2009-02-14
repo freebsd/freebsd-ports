@@ -1,6 +1,47 @@
+%%QT_INCDIR_REL%%/Qsci/qsciabstractapis.h
+%%QT_INCDIR_REL%%/Qsci/qsciapis.h
+%%QT_INCDIR_REL%%/Qsci/qscicommand.h
+%%QT_INCDIR_REL%%/Qsci/qscicommandset.h
+%%QT_INCDIR_REL%%/Qsci/qscidocument.h
+%%QT_INCDIR_REL%%/Qsci/qsciglobal.h
+%%QT_INCDIR_REL%%/Qsci/qscilexer.h
+%%QT_INCDIR_REL%%/Qsci/qscilexerbash.h
+%%QT_INCDIR_REL%%/Qsci/qscilexerbatch.h
+%%QT_INCDIR_REL%%/Qsci/qscilexercmake.h
+%%QT_INCDIR_REL%%/Qsci/qscilexercpp.h
+%%QT_INCDIR_REL%%/Qsci/qscilexercsharp.h
+%%QT_INCDIR_REL%%/Qsci/qscilexercss.h
+%%QT_INCDIR_REL%%/Qsci/qscilexerd.h
+%%QT_INCDIR_REL%%/Qsci/qscilexerdiff.h
+%%QT_INCDIR_REL%%/Qsci/qscilexerfortran.h
+%%QT_INCDIR_REL%%/Qsci/qscilexerfortran77.h
+%%QT_INCDIR_REL%%/Qsci/qscilexerhtml.h
+%%QT_INCDIR_REL%%/Qsci/qscilexeridl.h
+%%QT_INCDIR_REL%%/Qsci/qscilexerjava.h
+%%QT_INCDIR_REL%%/Qsci/qscilexerjavascript.h
+%%QT_INCDIR_REL%%/Qsci/qscilexerlua.h
+%%QT_INCDIR_REL%%/Qsci/qscilexermakefile.h
+%%QT_INCDIR_REL%%/Qsci/qscilexerpascal.h
+%%QT_INCDIR_REL%%/Qsci/qscilexerperl.h
+%%QT_INCDIR_REL%%/Qsci/qscilexerpostscript.h
+%%QT_INCDIR_REL%%/Qsci/qscilexerpov.h
+%%QT_INCDIR_REL%%/Qsci/qscilexerproperties.h
+%%QT_INCDIR_REL%%/Qsci/qscilexerpython.h
+%%QT_INCDIR_REL%%/Qsci/qscilexerruby.h
+%%QT_INCDIR_REL%%/Qsci/qscilexersql.h
+%%QT_INCDIR_REL%%/Qsci/qscilexertcl.h
+%%QT_INCDIR_REL%%/Qsci/qscilexertex.h
+%%QT_INCDIR_REL%%/Qsci/qscilexervhdl.h
+%%QT_INCDIR_REL%%/Qsci/qscilexerxml.h
+%%QT_INCDIR_REL%%/Qsci/qscilexeryaml.h
+%%QT_INCDIR_REL%%/Qsci/qscimacro.h
+%%QT_INCDIR_REL%%/Qsci/qsciprinter.h
+%%QT_INCDIR_REL%%/Qsci/qsciscintilla.h
+%%QT_INCDIR_REL%%/Qsci/qsciscintillabase.h
 %%QT_LIBDIR_REL%%/libqscintilla2.so
-%%QT_LIBDIR_REL%%/libqscintilla2.so.3
-share/qt4/qsci/api/python/Python-2.5.api
+%%QT_LIBDIR_REL%%/libqscintilla2.so.5
+%%QT_LIBDIR_REL%%/libqscintilla2.so.5.0
+%%QT_LIBDIR_REL%%/libqscintilla2.so.5.0.1
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -23,6 +64,8 @@ share/qt4/qsci/api/python/Python-2.5.api
 %%PORTDOCS%%%%DOCSDIR%%/html/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciAPIs-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciAPIs.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciAbstractAPIs-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciAbstractAPIs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciCommand-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciCommand.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciCommandSet-members.html
@@ -35,20 +78,22 @@ share/qt4/qsci/api/python/Python-2.5.api
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerBash.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerBatch-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerBatch.html
-%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerCMake.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerCMake-members.html
-%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerVHDL.html
-%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerVHDL-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerCMake.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerCPP-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerCPP.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerCSS-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerCSS.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerCSharp-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerCSharp.html
-%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerD.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerD-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerD.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerDiff-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerDiff.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerFortran-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerFortran.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerFortran77-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerFortran77.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerHTML-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerHTML.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerIDL-members.html
@@ -63,8 +108,12 @@ share/qt4/qsci/api/python/Python-2.5.api
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerMakefile.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerPOV-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerPOV.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerPascal-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerPascal.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerPerl-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerPerl.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerPostScript-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerPostScript.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerProperties-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerProperties.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerPython-members.html
@@ -73,8 +122,16 @@ share/qt4/qsci/api/python/Python-2.5.api
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerRuby.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerSQL-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerSQL.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerTCL-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerTCL.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerTeX-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerTeX.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerVHDL-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerVHDL.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerXML-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerXML.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerYAML-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classQsciLexerYAML.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciMacro-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciMacro.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciPrinter-members.html
@@ -83,8 +140,8 @@ share/qt4/qsci/api/python/Python-2.5.api
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciScintilla.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciScintillaBase-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciScintillaBase.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dir_944256396c06c0295aa2eca7dcfea282.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dir_d32dfe2bcddd0b2d894b9fb13d6bdd4d.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_556434f8084a0975d5f9aa83df897544.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_e71f21f8efaf379e3645c15d5d7e326c.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dirs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png
@@ -167,60 +224,35 @@ share/qt4/qsci/api/python/Python-2.5.api
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_l.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_r.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/tabs.css
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qsciapis.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscicommand.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscicommandset.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscidocument.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qsciglobal.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexer.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerbash.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerbatch.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexercpp.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexercsharp.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexercmake.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexercss.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerd.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerdiff.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerhtml.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexeridl.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerjava.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerjavascript.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerlua.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexermakefile.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerperl.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerpov.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerproperties.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerpython.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerruby.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexersql.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexertex.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexervhdl.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscimacro.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qsciprinter.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qsciscintilla.h
-%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qsciscintillabase.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/application.pro
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/application.qrc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/copy.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/cut.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/new.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/open.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/paste.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/save.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/application.pro
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/application.qrc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/main.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindow.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mainwindow.h
-%%TRANSLATIONS%%share/qt4/translations/qscintilla_de.qm
-%%TRANSLATIONS%%share/qt4/translations/qscintilla_fr.qm
-%%TRANSLATIONS%%share/qt4/translations/qscintilla_pt_br.qm
-%%TRANSLATIONS%%share/qt4/translations/qscintilla_ru.qm
+share/qt4/qsci/api/python/Python-2.4.api
+share/qt4/qsci/api/python/Python-2.5.api
+share/qt4/qsci/api/python/Python-2.6.api
+%%NLS%%share/qt4/translations/qscintilla_cs.qm
+%%NLS%%share/qt4/translations/qscintilla_de.qm
+%%NLS%%share/qt4/translations/qscintilla_fr.qm
+%%NLS%%share/qt4/translations/qscintilla_pt_br.qm
+%%NLS%%share/qt4/translations/qscintilla_ru.qm
+%%NLS%%@dirrmtry share/qt4/translations
 @dirrmtry share/qt4/qsci/api/python
 @dirrmtry share/qt4/qsci/api
 @dirrmtry share/qt4/qsci
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Scintilla
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/qt4
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%HEADERS%%@dirrm %%QT_INCDIR_REL%%/Qsci
-%%TRANSLATIONS%%@dirrmtry share/qt4/translations
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Scintilla
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%QT_LIBDIR_REL%%
+@dirrm %%QT_INCDIR_REL%%/Qsci
+@dirrmtry %%QT_INCDIR_REL%%

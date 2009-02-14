@@ -1,31 +1,29 @@
 %%PYTHON_SITELIBDIR%%/PyQt4/QtDesigner.so
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/QtDesignermod.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/abstractactioneditor.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/abstractformbuilder.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/abstractformeditor.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/abstractformwindow.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/abstractformwindowcursor.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/abstractformwindowmanager.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/abstractobjectinspector.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/abstractpropertyeditor.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/abstractwidgetbox.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/container.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/customwidget.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/default_extensionfactory.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/extension.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/formbuilder.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/membersheet.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/propertysheet.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/qextensionmanager.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/qpydesignercontainerextension.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/qpydesignercustomwidgetcollectionplugin.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/qpydesignercustomwidgetplugin.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/qpydesignermembersheetextension.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/qpydesignerpropertysheetextension.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/qpydesignertaskmenuextension.sip
-%%SIPFILES%%%%SIPDIR%%/QtDesigner/taskmenu.sip
-%%SIPFILES%%@dirrm %%SIPDIR%%/QtDesigner
-%%API%%%%APIFILE%%
-%%API%%@dirrmtry share/qt4/qsci/api/python
-%%API%%@dirrmtry share/qt4/qsci/api
-%%API%%@dirrmtry share/qt4/qsci
+%%SIP%%share/py-sip/QtDesigner/QtDesignermod.sip
+%%SIP%%share/py-sip/QtDesigner/abstractactioneditor.sip
+%%SIP%%share/py-sip/QtDesigner/abstractformbuilder.sip
+%%SIP%%share/py-sip/QtDesigner/abstractformeditor.sip
+%%SIP%%share/py-sip/QtDesigner/abstractformwindow.sip
+%%SIP%%share/py-sip/QtDesigner/abstractformwindowcursor.sip
+%%SIP%%share/py-sip/QtDesigner/abstractformwindowmanager.sip
+%%SIP%%share/py-sip/QtDesigner/abstractobjectinspector.sip
+%%SIP%%share/py-sip/QtDesigner/abstractpropertyeditor.sip
+%%SIP%%share/py-sip/QtDesigner/abstractwidgetbox.sip
+%%SIP%%share/py-sip/QtDesigner/container.sip
+%%SIP%%share/py-sip/QtDesigner/customwidget.sip
+%%SIP%%share/py-sip/QtDesigner/default_extensionfactory.sip
+%%SIP%%share/py-sip/QtDesigner/extension.sip
+%%SIP%%share/py-sip/QtDesigner/formbuilder.sip
+%%SIP%%share/py-sip/QtDesigner/membersheet.sip
+%%SIP%%share/py-sip/QtDesigner/propertysheet.sip
+%%SIP%%share/py-sip/QtDesigner/qextensionmanager.sip
+%%SIP%%share/py-sip/QtDesigner/qpydesignercontainerextension.sip
+%%SIP%%share/py-sip/QtDesigner/qpydesignercustomwidgetcollectionplugin.sip
+%%SIP%%share/py-sip/QtDesigner/qpydesignercustomwidgetplugin.sip
+%%SIP%%share/py-sip/QtDesigner/qpydesignermembersheetextension.sip
+%%SIP%%share/py-sip/QtDesigner/qpydesignerpropertysheetextension.sip
+%%SIP%%share/py-sip/QtDesigner/qpydesignertaskmenuextension.sip
+%%SIP%%share/py-sip/QtDesigner/taskmenu.sip
+%%API%%share/qt4/qsci/api/python/QtDesigner.api
+%%SIP%%@dirrm share/py-sip/QtDesigner
+@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

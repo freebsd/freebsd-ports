@@ -1,11 +1,9 @@
 %%PYTHON_SITELIBDIR%%/PyQt4/QtSvg.so
-%%SIPFILES%%%%SIPDIR%%/QtSvg/QtSvgmod.sip
-%%SIPFILES%%%%SIPDIR%%/QtSvg/qgraphicssvgitem.sip
-%%SIPFILES%%%%SIPDIR%%/QtSvg/qsvggenerator.sip
-%%SIPFILES%%%%SIPDIR%%/QtSvg/qsvgrenderer.sip
-%%SIPFILES%%%%SIPDIR%%/QtSvg/qsvgwidget.sip
-%%SIPFILES%%@dirrm %%SIPDIR%%/QtSvg
-%%API%%%%APIFILE%%
-%%API%%@dirrmtry share/qt4/qsci/api/python
-%%API%%@dirrmtry share/qt4/qsci/api
-%%API%%@dirrmtry share/qt4/qsci
+%%SIP%%share/py-sip/QtSvg/QtSvgmod.sip
+%%SIP%%share/py-sip/QtSvg/qgraphicssvgitem.sip
+%%SIP%%share/py-sip/QtSvg/qsvggenerator.sip
+%%SIP%%share/py-sip/QtSvg/qsvgrenderer.sip
+%%SIP%%share/py-sip/QtSvg/qsvgwidget.sip
+%%API%%share/qt4/qsci/api/python/QtSvg.api
+%%SIP%%@dirrm share/py-sip/QtSvg
+@dirrm %%PYTHON_SITELIBDIR%%/PyQt4
