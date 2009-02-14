@@ -15,8 +15,8 @@ MASTER_SITE_SUBDIR=	msmith
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI Ports Collection management tool
 
-USE_TK=		yes
-USE_TK_BUILD=	yes
+USE_TK=		84
+USE_TK_BUILD=	84
 
 .include <bsd.port.pre.mk>
 
