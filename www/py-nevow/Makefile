@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	nevow
-PORTVERSION=	0.9.18
-PORTREVISION=	2
+PORTVERSION=	0.9.32
+PORTREVISION=	0
 CATEGORIES=	www python devel
-MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/
+MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/ \
+		http://nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Nevow-${PORTVERSION}
 EXTRACT_SUFX=	.tar.gz?format=raw
@@ -27,9 +28,17 @@ PYDISTUTILS_PKGNAME=	Nevow
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKSRC}/pkg-message
 
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/docutils/__init__.py:${PORTSDIR}/textproc/py-docutils
 .endif
+
+REINPLACE_ARGS=	-i '' -e 's,%%PYTHONPREFIX_SITELIBDIR%%,${PYTHONPREFIX_SITELIBDIR},g'
+post-patch:
+	${REINPLACE_CMD} ${WRKSRC}/doc/txt2html.py
+	${RM} ${WRKSRC}/doc/txt2html.py.orig
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -39,18 +48,17 @@ post-install:
 
 	@${ECHO_CMD} -n ">> Installing documents to ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/doc && \
-		${FIND} . -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
-		${FIND} . -not -type d -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
 	@${ECHO_MSG} " [ DONE ]"
 .endif
+.if !defined(NOPORTEXAMPLES)
 	@${PYTHON_CMD} -c "import compileall; compileall.compile_dir('${WRKSRC}/examples')"
 
 	@${ECHO_CMD} -n ">> Installing examples to ${EXAMPLESDIR}..."
-	@cd ${WRKSRC}/examples && \
-		${FIND} . -type d -exec ${MKDIR} "${EXAMPLESDIR}/{}" \; && \
-		${FIND} . -not -type d -exec ${INSTALL_DATA} "{}" "${EXAMPLESDIR}/{}" \;
+	@${MKDIR} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 	@${ECHO_MSG} " [ DONE ]"
+.endif
 
 	@${CAT} ${PKGMESSAGE}
 
