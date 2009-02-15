@@ -8,11 +8,11 @@
 +
 +\DeclareFontFamily{C70}{b5song}{\hyphenchar \font\m@ne}
 +
-+\DeclareFontShape{C70}{b5song}{m}{n}{<-> CJK * arb5sungu}{}
++\DeclareFontShape{C70}{b5song}{m}{n}{<-> CJK * arb5sungu}{\CJKnormal}
 +\DeclareFontShape{C70}{b5song}{bx}{n}{<-> CJKb * arb5sungu}{\CJKbold}
-+\DeclareFontShape{C70}{b5song}{m}{sl}{<-> CJK * arb5sungusl}{}
++\DeclareFontShape{C70}{b5song}{m}{sl}{<-> CJK * arb5sungusl}{\CJKnormal}
 +\DeclareFontShape{C70}{b5song}{bx}{sl}{<-> CJKb * arb5sungusl}{\CJKbold}
-+\DeclareFontShape{C70}{b5song}{m}{it}{<-> CJK * arb5sungusl}{}
++\DeclareFontShape{C70}{b5song}{m}{it}{<-> CJK * arb5sungusl}{\CJKnormal}
 +\DeclareFontShape{C70}{b5song}{bx}{it}{<-> CJKb * arb5sungusl}{\CJKbold}
 +
 +\endinput
@@ -26,11 +26,11 @@
 +
 +\DeclareFontFamily{C70}{b5kai}{\hyphenchar \font\m@ne}
 +
-+\DeclareFontShape{C70}{b5kai}{m}{n}{<-> CJK * arb5kaiu}{}
++\DeclareFontShape{C70}{b5kai}{m}{n}{<-> CJK * arb5kaiu}{\CJKnormal}
 +\DeclareFontShape{C70}{b5kai}{bx}{n}{<-> CJKb * arb5kaiu}{\CJKbold}
-+\DeclareFontShape{C70}{b5kai}{m}{sl}{<-> CJK * arb5kaiusl}{}
++\DeclareFontShape{C70}{b5kai}{m}{sl}{<-> CJK * arb5kaiusl}{\CJKnormal}
 +\DeclareFontShape{C70}{b5kai}{bx}{sl}{<-> CJKb * arb5kaiusl}{\CJKbold}
-+\DeclareFontShape{C70}{b5kai}{m}{it}{<-> CJK * arb5kaiusl}{}
++\DeclareFontShape{C70}{b5kai}{m}{it}{<-> CJK * arb5kaiusl}{\CJKnormal}
 +\DeclareFontShape{C70}{b5kai}{bx}{it}{<-> CJKb * arb5kaiusl}{\CJKbold}
 +
 +\endinput
@@ -44,11 +44,11 @@
 +
 +\DeclareFontFamily{C70}{gbsong}{\hyphenchar \font\m@ne}
 +
-+\DeclareFontShape{C70}{gbsong}{m}{n}{<-> CJK * argbsungu}{}
++\DeclareFontShape{C70}{gbsong}{m}{n}{<-> CJK * argbsungu}{\CJKnormal}
 +\DeclareFontShape{C70}{gbsong}{bx}{n}{<-> CJKb * argbsungu}{\CJKbold}
-+\DeclareFontShape{C70}{gbsong}{m}{sl}{<-> CJK * argbsungusl}{}
++\DeclareFontShape{C70}{gbsong}{m}{sl}{<-> CJK * argbsungusl}{\CJKnormal}
 +\DeclareFontShape{C70}{gbsong}{bx}{sl}{<-> CJKb * argbsungusl}{\CJKbold}
-+\DeclareFontShape{C70}{gbsong}{m}{it}{<-> CJK * argbsungusl}{}
++\DeclareFontShape{C70}{gbsong}{m}{it}{<-> CJK * argbsungusl}{\CJKnormal}
 +\DeclareFontShape{C70}{gbsong}{bx}{it}{<-> CJKb * argbsungusl}{\CJKbold}
 +
 +\endinput
@@ -62,11 +62,11 @@
 +
 +\DeclareFontFamily{C70}{gbkai}{\hyphenchar \font\m@ne}
 +
-+\DeclareFontShape{C70}{gbkai}{m}{n}{<-> CJK * argbkaiu}{}
++\DeclareFontShape{C70}{gbkai}{m}{n}{<-> CJK * argbkaiu}{\CJKnormal}
 +\DeclareFontShape{C70}{gbkai}{bx}{n}{<-> CJKb * argbkaiu}{\CJKbold}
-+\DeclareFontShape{C70}{gbkai}{m}{sl}{<-> CJK * argbkaiusl}{}
++\DeclareFontShape{C70}{gbkai}{m}{sl}{<-> CJK * argbkaiusl}{\CJKnormal}
 +\DeclareFontShape{C70}{gbkai}{bx}{sl}{<-> CJKb * argbkaiusl}{\CJKbold}
-+\DeclareFontShape{C70}{gbkai}{m}{it}{<-> CJK * argbkaiusl}{}
++\DeclareFontShape{C70}{gbkai}{m}{it}{<-> CJK * argbkaiusl}{\CJKnormal}
 +\DeclareFontShape{C70}{gbkai}{bx}{it}{<-> CJKb * argbkaiusl}{\CJKbold}
 +
 +\endinput

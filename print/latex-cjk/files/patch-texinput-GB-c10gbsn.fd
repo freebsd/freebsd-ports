@@ -1,16 +1,16 @@
---- texinput/GB/c10gbsn.fd.orig	Thu Aug 11 12:41:52 2005
-+++ texinput/GB/c10gbsn.fd	Wed Feb 22 07:41:08 2006
+--- texinput/GB/c10gbsn.fd.orig	2008-12-29 07:00:00.000000000 +0800
++++ texinput/GB/c10gbsn.fd	2009-02-15 14:38:24.000000000 +0800
 @@ -19,7 +19,11 @@
  
  \DeclareFontFamily{C10}{gbsn}{\hyphenchar \font\m@ne}
  
--\DeclareFontShape{C10}{gbsn}{m}{n}{<-> CJK * gbsnlp}{}
+-\DeclareFontShape{C10}{gbsn}{m}{n}{<-> CJK * gbsnlp}{\CJKnormal}
 -\DeclareFontShape{C10}{gbsn}{bx}{n}{<-> CJKb * gbsnlp}{\CJKbold}
-+\DeclareFontShape{C10}{gbsn}{m}{n}{<-> CJK * argbsung}{}
++\DeclareFontShape{C10}{gbsn}{m}{n}{<-> CJK * argbsung}{\CJKnormal}
 +\DeclareFontShape{C10}{gbsn}{bx}{n}{<-> CJKb * argbsung}{\CJKbold}
-+\DeclareFontShape{C10}{gbsn}{m}{sl}{<-> CJK * argbsungsl}{}
++\DeclareFontShape{C10}{gbsn}{m}{sl}{<-> CJK * argbsungsl}{\CJKnormal}
 +\DeclareFontShape{C10}{gbsn}{bx}{sl}{<-> CJKb * argbsungsl}{\CJKbold}
-+\DeclareFontShape{C10}{gbsn}{m}{it}{<-> CJK * argbsungsl}{}
++\DeclareFontShape{C10}{gbsn}{m}{it}{<-> CJK * argbsungsl}{\CJKnormal}
 +\DeclareFontShape{C10}{gbsn}{bx}{it}{<-> CJKb * argbsungsl}{\CJKbold}
  
  \endinput
