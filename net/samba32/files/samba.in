@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net/samba32/files/Attic/samba.in,v 1.1 2008-10-12 01:37:46 timur Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/samba32/files/Attic/samba.in,v 1.2 2009-02-15 03:36:49 timur Exp $
 #
 
 # PROVIDE: nmbd smbd
