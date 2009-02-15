@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Encode
-PORTVERSION=	2.27
+PORTVERSION=	2.29
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -45,5 +45,8 @@ post-patch:
 post-configure:
 	@${FIND} ${WRKSRC}/ -name Makefile -exec \
 		${REINPLACE_CMD} -e 's,^CC =,CC ?=,' {} \;
+
+regression-test:
+	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.post.mk>
