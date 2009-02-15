@@ -7,27 +7,61 @@
 #
 
 PORTNAME=	gnotime
-PORTVERSION=	2.2.2
-PORTREVISION=	11
+PORTVERSION=	2.3.0
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	SF/gttr
+MASTER_SITES=	SF/gttr:gttr SF/qof:qof
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gttr \
+		${QOF_DISTNAME}${EXTRACT_SUFX}:qof
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GnoTime is a time tracker for gnome2
+COMMENT=	A time tracker for gnome2
 
 LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile
 
-USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnomehack gnomeprefix intlhack gtkhtml3 libgnomeui
+USE_XORG=	xscrnsaver
+USE_GNOME=	gnomehack gnomeprefix gtkhtml3 intlhack libgnomeui
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-INSTALLS_OMF=	yes
+USE_AUTOTOOLS=	libtool:15 libltdl:15
+LIBTOOLFILES=	configure ../${QOF_DISTNAME}/configure
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		LIBQOF_CFLAGS="${LIBQOF_CFLAGS}" LIBQOF_LIBS="${LIBQOF_LIBS}"
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+INSTALLS_OMF=	yes
 
-MAN1=		gnotime.1
+MAN1=		gnotime.1 gnotime-remote.1
 GCONF_SCHEMAS=	gnotime.schemas
 
+QOF_DISTNAME=	qof-0.7.5
+QOF_WRKSRC=	${WRKDIR}/${QOF_DISTNAME}
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+LIBQOF_CFLAGS=	-I${QOF_WRKSRC}/qof
+LIBQOF_LIBS=	-L${QOF_WRKSRC}/qof/.libs -lqof
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/CFLAGS=/s|-g2||g' ${QOF_WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|__isleap|qof_date_isleap|g' ${QOF_WRKSRC}/qof/qofdate.c
+	@${FIND} ${QOF_WRKSRC} -name "Makefile.in" -print0 | \
+		${XARGS} -0 ${REINPLACE_CMD} -e \
+		'/^AM_CFLAGS =/s|-g||g ; \
+		 s|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g'
+
+pre-configure:
+	@(cd ${QOF_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+		CC="${CC}" CFLAGS="${CFLAGS}" \
+		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+		./configure --prefix=${PREFIX} --disable-error-on-warning \
+		--disable-sqlite --disable-gdasql)
+
+pre-build:
+	@(cd ${QOF_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+
+pre-install:
+	@(cd ${QOF_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .include <bsd.port.mk>
