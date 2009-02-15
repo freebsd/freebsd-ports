@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tailor
-PORTVERSION=	0.9.34
+PORTVERSION=	0.9.35
 CATEGORIES=	devel python
 MASTER_SITES=	http://darcs.arstecnica.it/
 
