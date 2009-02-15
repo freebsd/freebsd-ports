@@ -8,11 +8,11 @@
 # Note: This port tracks the "production release" of ExifTool as given
 # by http://www.sno.phy.queensu.ca/~phil/exiftool/history.html
 #
-# Please check that the you are updating to the latest production
-# release before updating the version of this port.
+# Please make sure you are updating to the latest production release
+# before updating the version of this port.
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	7.60
+PORTVERSION=	7.67
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/ \
 		CPAN
@@ -32,14 +32,16 @@ MANTAGS=	AFCP AIFF APE APP12 ASF BMP BigTIFF BuildTagLookup BZZ	 \
 		NikonCapture Olympus PDF PICT PNG PPM Panasonic Pentax	 \
 		PhotoMechanic Photoshop PostScript PrintIM QuickTime	 \
 		Rawzor RIFF Real Ricoh Sanyo Shift Shortcuts Sigma	 \
-		SigmaRaw Sony TagLookup TagNames Unknown Vorbis		 \
-		WriteCanonRaw WriteExif WriteIPTC WritePDF WritePNG	 \
-		WritePhotoshop WritePostScript WriteXMP Writer XMP XMP2	 \
-		ZIP
+		SigmaRaw Sony TagInfoXML TagLookup TagNames Unknown	 \
+		Vorbis WriteCanonRaw WriteExif WriteIPTC WritePDF	 \
+		WritePNG WritePhotoshop WritePostScript WriteXMP Writer	 \
+		XMP XMP2 ZIP
+LANGTAGS=	ch_s cz de en_ca en_gb es fr it jp nl pl
 
-MAN3=		File::RandomAccess.3	\
-		Image::ExifTool.3 Image::ExifTool::MIEUnits.3 \
-		${MANTAGS:S/^/Image::ExifTool::/:S/$/.3/}
+MAN3=		File::RandomAccess.3				\
+		Image::ExifTool.3 Image::ExifTool::MIEUnits.3	\
+		${MANTAGS:S/^/Image::ExifTool::/:S/$/.3/}	\
+		${LANGTAGS:S/^/Image::ExifTool::Lang::/:S/$/.3/}
 
 MAN1=		exiftool.1
 
