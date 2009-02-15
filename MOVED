@@ -3817,4 +3817,5 @@ news/sabnzbd||2009-02-13|Has expired: no longer developed, use news/sabnzbdplus 
 devel/erlslang||2009-02-14|Broken with libslang2; no upstream development
 net/ntp-rc|net/ntp|2009-02-14|NTP is no longer in release candidate status. Use net/ntp instead.
 mail/py-pyclamd|security/py-pyclamd|2009-02-14|Category change
-
+deskutils/zbgset|deskutils/p5-ZConf-BGSet|2009-02-15|Integrated into deskutils/p5-ZConf-BGSet.
+deskutils/zbgset-admin|deskutils/p5-ZConf-BGSet|2009-02-15|Integrated into deskutils/p5-ZConf-BGSet.
