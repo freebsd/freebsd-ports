@@ -16,7 +16,7 @@ COMMENT=	Generic Catalyst Session plugin
 
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7010:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Object-Signature>=0:${PORTSDIR}/devel/p5-Object-Signature \
-		p5-MRO-Compat>=0::${PORTSDIR}/devel/p5-MRO-Compat \
+		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Tie-RefHash>=1.34:${PORTSDIR}/devel/p5-Tie-RefHash
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
