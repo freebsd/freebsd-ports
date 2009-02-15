@@ -47,7 +47,7 @@ do
 		# found it, splice before diff part with diff
 		esc=`echo $file | sed -e 's,/,\\\\/,g'`
 		{ sed -e "/^--- $esc.orig/,\$ d" <$i
-		    (cd $PATCH_WRKSRC && diff ${DIFF_ARGS} -u $file.orig $file) } >$i.new
+		    (cd $PATCH_WRKSRC && diff -p ${DIFF_ARGS} -u $file.orig $file) } >$i.new
 		# did it change ? mark it as changed
 		if diff ${DIFF_ARGS} -u --ignore-matching-lines="^--- $file.orig	.*" \
 		    --ignore-matching-lines="^+++ $file	.*" $i $i.new 1>&2
