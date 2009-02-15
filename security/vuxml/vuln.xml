@@ -47,23 +47,26 @@ Note:  Please add new entries to the beginning of this file.
         <p>SecurityFocus reports:</p>
         <blockquote cite="http://www.securityfocus.com/bid/33712">
           <p>Varnish is prone to a remote denial-of-service
-          vulnerability because the application fails to handle
-          certain HTTP requests.</p>
+	    vulnerability because the application fails to handle
+	    certain HTTP requests.</p>
           <p>Successfully exploiting this issue allows remote
-          attackers to crash the affected application denying further
-          service to legitimate users.</p>
+	    attackers to crash the affected application denying further
+	    service to legitimate users.</p>
         </blockquote>
       </body>
     </description>
     <references>
       <bid>33712</bid>
-      <url>http://www.securityfocus.com/bid/33712</url>
+      <url>http://secunia.com/advisories/33852/</url>
+      <url>http://varnish.projects.linpro.no/wiki/WikiStart</url>
     </references>
     <dates>
       <discovery>2008-10-17</discovery>
       <entry>2009-02-14</entry>
+      <modified>2009-02-15</modified>
     </dates>
   </vuln>
+
   <vuln vid="78f5606b-f9d1-11dd-b79c-0030843d3802">
     <topic>tor -- multiple vulnerabilites</topic>
     <affects>
