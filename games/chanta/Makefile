@@ -9,7 +9,7 @@ PORTNAME=	chanta
 PORTVERSION=	0.15
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/chanta/descargas/
+MASTER_SITES=	http://www.losersjuegos.com.ar/_media/juegos/chanta/descargas/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free 2D jump and run game
