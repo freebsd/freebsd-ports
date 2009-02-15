@@ -1,21 +1,18 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/Net/BitTorrent.pm
+%%SITE_PERL%%/Net/BitTorrent/ConfigData.pm
 %%SITE_PERL%%/Net/BitTorrent/DHT.pm
-%%SITE_PERL%%/Net/BitTorrent/DHT/Node/Mainline.pm
-%%SITE_PERL%%/Net/BitTorrent/DHT/Node/Azureus.pm
-%%SITE_PERL%%/Net/BitTorrent/Session.pm
-%%SITE_PERL%%/Net/BitTorrent/Session/File.pm
-%%SITE_PERL%%/Net/BitTorrent/Session/Peer.pm
-%%SITE_PERL%%/Net/BitTorrent/Session/Peer/Request.pm
-%%SITE_PERL%%/Net/BitTorrent/Session/Piece.pm
-%%SITE_PERL%%/Net/BitTorrent/Session/Piece/Block.pm
-%%SITE_PERL%%/Net/BitTorrent/Session/Tracker.pm
+%%SITE_PERL%%/Net/BitTorrent/Peer.pm
+%%SITE_PERL%%/Net/BitTorrent/Protocol.pm
+%%SITE_PERL%%/Net/BitTorrent/Torrent.pm
+%%SITE_PERL%%/Net/BitTorrent/Torrent/File.pm
+%%SITE_PERL%%/Net/BitTorrent/Torrent/Tracker.pm
+%%SITE_PERL%%/Net/BitTorrent/Torrent/Tracker/HTTP.pm
+%%SITE_PERL%%/Net/BitTorrent/Torrent/Tracker/UDP.pm
 %%SITE_PERL%%/Net/BitTorrent/Util.pm
-bin/client.pl
-@dirrmtry %%SITE_PERL%%/Net/BitTorrent/DHT/Node
+%%SITE_PERL%%/Net/BitTorrent/Version.pm
 @dirrmtry %%SITE_PERL%%/Net/BitTorrent/DHT
-@dirrmtry %%SITE_PERL%%/Net/BitTorrent/Session/Piece
-@dirrmtry %%SITE_PERL%%/Net/BitTorrent/Session/Peer
-@dirrmtry %%SITE_PERL%%/Net/BitTorrent/Session
+@dirrm %%SITE_PERL%%/Net/BitTorrent/Torrent/Tracker
+@dirrmtry %%SITE_PERL%%/Net/BitTorrent/Torrent
 @dirrmtry %%SITE_PERL%%/Net/BitTorrent
 @dirrmtry %%SITE_PERL%%/Net

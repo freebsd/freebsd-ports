@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-BitTorrent
-PORTVERSION=	0.025
+PORTVERSION=	0.050
 CATEGORIES=	net-p2p perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/S/SA/SANKO
@@ -25,20 +25,17 @@ CONFIGURE_ARGS=	</dev/null
 PERL_MODBUILD=	yes
 
 MAN3=		Net::BitTorrent.3 \
+		Net::BitTorrent::ConfigData.3 \
 		Net::BitTorrent::DHT.3 \
-		Net::BitTorrent::DHT::Node::Azureus.3 \
-		Net::BitTorrent::DHT::Node::Mainline.3 \
-		Net::BitTorrent::Session.3 \
-		Net::BitTorrent::Session::File.3 \
-		Net::BitTorrent::Session::Peer.3 \
-		Net::BitTorrent::Session::Peer::Request.3 \
-		Net::BitTorrent::Session::Piece.3 \
-		Net::BitTorrent::Session::Piece::Block.3 \
-		Net::BitTorrent::Session::Tracker.3 \
-		Net::BitTorrent::Util.3
-
-post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/client.pl ${PREFIX}/bin
+		Net::BitTorrent::Peer.3 \
+		Net::BitTorrent::Protocol.3 \
+		Net::BitTorrent::Torrent.3 \
+		Net::BitTorrent::Torrent::File.3 \
+		Net::BitTorrent::Torrent::Tracker.3 \
+		Net::BitTorrent::Torrent::Tracker::HTTP.3 \
+		Net::BitTorrent::Torrent::Tracker::UDP.3 \
+		Net::BitTorrent::Util.3 \
+		Net::BitTorrent::Version.3
 
 .include <bsd.port.pre.mk>
 
