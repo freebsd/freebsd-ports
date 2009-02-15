@@ -2233,6 +2233,7 @@
     SUBDIR += py-instant
     SUBDIR += py-ipaddr
     SUBDIR += py-istring
+    SUBDIR += py-itools
     SUBDIR += py-jcc
     SUBDIR += py-json-py
     SUBDIR += py-jsonlib
