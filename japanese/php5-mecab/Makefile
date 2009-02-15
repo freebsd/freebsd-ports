@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mecab
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.opendogs.org/pub/ \
 		http://dist.bsdlab.org/
