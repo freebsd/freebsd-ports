@@ -21,14 +21,8 @@ LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack pkgconfig gtksourceview
-
-PLIST_FILES=	bin/gobby \
-		share/pixmaps/gobby.png \
-		share/pixmaps/gobby/userlist.png \
-		share/pixmaps/gobby/doclist.png \
-		share/pixmaps/gobby/chat.png
-PLIST_DIRS=	share/pixmaps/gobby
+USE_GNOME=	gnomehack pkgconfig gtksourceview2
+USE_GMAKE=	yes
 
 MAN1=	gobby.1
 
