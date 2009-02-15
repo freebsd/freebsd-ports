@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	github_creator
-PORTVERSION=	0.13
+PORTVERSION=	0.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/B/BD/BDFOY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create a Github repository for your Perl module
 
 RUN_DEPENDS=	p5-Config-IniFiles>0:${PORTSDIR}/devel/p5-Config-IniFiles	\
