@@ -1,6 +1,6 @@
---- Makefile.orig	2009-02-07 00:40:50.864414331 +0000
-+++ Makefile	2009-02-07 01:23:32.655384692 +0000
-@@ -1,31 +1,26 @@
+--- Makefile.orig	2009-02-15 18:25:44.000000000 +0200
++++ Makefile	2009-02-15 18:27:39.000000000 +0200
+@@ -1,30 +1,26 @@
  # GNU Makefile for cclive.
  
 -SHELL = /bin/sh
@@ -32,21 +32,22 @@
  GENGETOPT   = gengetopt
  POD2MAN     = pod2man
  
--WITH_MAN    = yes
--
+-WITH_MAN        = yes
+ WITH_SIGWINCH   = yes
+ 
  ifndef V
- QUIET_CC        = @echo '  ' CC $@;
- QUIET_LINK      = @echo '  ' LINK $@;
-@@ -39,11 +34,9 @@
+@@ -40,14 +36,12 @@
  CURL_CFLAGS  := $(shell sh -c "$(CURL_CONFIG) --cflags")
  CURL_LDFLAGS := $(shell sh -c "$(CURL_CONFIG) --libs")
  
 -CFLAGS      = -g -Wall
  ALL_CFLAGS  = -D_GNU_SOURCE -DOSNAME=\"$(OS_NAME)\" -I. $(CFLAGS)
  ALL_CFLAGS += $(CURL_CFLAGS)
+ ifeq ($(WITH_SIGWINCH),yes)
+ ALL_CFLAGS += -DWITH_SIGWINCH
+ endif
  
 -LDFLAGS     =
  ALL_LDFLAGS = $(LDFLAGS)
  ALL_LDFLAGS += $(CURL_LDFLAGS)
  
-a7e

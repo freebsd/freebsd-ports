@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cclive
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	multimedia net
 MASTER_SITES=	GOOGLE_CODE
 
@@ -15,7 +15,7 @@ COMMENT=	Lightweight command line video extraction utility
 
 LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
-.if !defined(NO_INSTALL_MANPAGES)
+.if !defined(WITHOUT_MAN)
 MAKE_ENV=	WITH_MAN=yes
 MAN1=		cclive.1
 .endif
