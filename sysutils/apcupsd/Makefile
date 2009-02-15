@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	apcupsd
-PORTVERSION=	3.14.4
-PORTREVISION=	1
+PORTVERSION=	3.14.5
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:src_sf/g} \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/:src_bk \
