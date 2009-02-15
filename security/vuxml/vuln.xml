@@ -5167,7 +5167,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="ecedde1c-5128-11dd-a4e1-0030843d3802">
-    <topic>drupal -- multiple vulnerabilities </topic>
+    <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>drupal5</name>
@@ -8606,7 +8606,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="b2571f88-a867-11dc-a6f0-00a0cce0781e">
-    <topic>smbftpd -- format string vulnerability </topic>
+    <topic>smbftpd -- format string vulnerability</topic>
     <affects>
       <package>
 	<name>smbftpd</name>
@@ -9376,7 +9376,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="5b47c279-8cb5-11dc-8878-0016179b2dd5">
-    <topic>perl --  regular expressions unicode data buffer overflow</topic>
+    <topic>perl -- regular expressions unicode data buffer overflow</topic>
     <affects>
       <package>
 	<name>perl</name>
@@ -11915,7 +11915,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="32d38cbb-2632-11dc-94da-0016179b2dd5">
-    <topic>flac123 -- stack overflow in comment parsing </topic>
+    <topic>flac123 -- stack overflow in comment parsing</topic>
     <affects>
       <package>
 	<name>flac123</name>
@@ -12503,6 +12503,7 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2007-05-24</entry>
     </dates>
   </vuln>
+
   <vuln vid="8e01ab5b-0949-11dc-8163-000e0c2e438a">
     <topic>FreeBSD -- heap overflow in file(1)</topic>
     <affects>
@@ -15058,7 +15059,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="666b8c9e-8212-11db-851e-0016179b2dd5">
-    <topic>tdiary  -- cross site scripting vulnerability</topic>
+    <topic>tdiary -- cross site scripting vulnerability</topic>
     <affects>
       <package>
 	<name>ja-tdiary</name>
