@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile/AirHJIS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile/Character.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile/Charnames.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile/ConvertPictogramSJIS.pm
