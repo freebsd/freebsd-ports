@@ -8,7 +8,7 @@
 
 PORTNAME=	firefox
 DISTVERSION=	2.0.0.20
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
@@ -63,8 +63,6 @@ MOZ_OPTIONS+=	--disable-gnomeui
 .if ${ARCH} == "sparc64" && ${OSVERSION} < 601101
 IGNORE=	does not run, update to 6.2-RELEASE or newer
 .endif
-
-FORBIDDEN=	Security issues http://www.vuxml.org/freebsd/8b491182-f842-11dd-94d9-0030843d3802.html
 
 MOZ_OPTIONS+=	--enable-svg --enable-svg-renderer=cairo
 

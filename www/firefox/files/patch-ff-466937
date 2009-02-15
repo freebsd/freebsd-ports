@@ -1,0 +1,46 @@
+Index: browser/components/sessionstore/src/nsSessionStore.js
+===================================================================
+RCS file: /cvsroot/mozilla/browser/components/sessionstore/src/nsSessionStore.js,v
+retrieving revision 1.5.2.54
+diff -u -8 -d -p -r1.5.2.54 nsSessionStore.js
+--- browser/components/sessionstore/src/nsSessionStore.js	20 Nov 2008 22:12:06 -0000	1.5.2.54
++++ browser/components/sessionstore/src/nsSessionStore.js	27 Nov 2008 21:00:18 -0000
+@@ -919,17 +919,18 @@ SessionStoreService.prototype = {
+    * @returns bool
+    */
+   _saveTextData: function sss_saveTextData(aPanel, aTextarea) {
+     var wrappedTextarea = XPCNativeWrapper(aTextarea);
+     var id = wrappedTextarea.id ? "#" + wrappedTextarea.id :
+                                   wrappedTextarea.name;
+     if (!id
+       || !(wrappedTextarea instanceof Ci.nsIDOMHTMLTextAreaElement 
+-      || wrappedTextarea instanceof Ci.nsIDOMHTMLInputElement && wrappedTextarea.type != "password")) {
++      || wrappedTextarea instanceof Ci.nsIDOMHTMLInputElement &&
++         wrappedTextarea.type != "password" && wrappedTextarea.type != "file")) {
+       return false; // nothing to save
+     }
+     if (/^(?:\d+\|)+/.test(id)) {
+       // text could be restored into a subframe, so skip it (see bug 463206)
+       return false;
+     }
+     
+     if (!aPanel.__SS_text) {
+@@ -1498,17 +1499,17 @@ SessionStoreService.prototype = {
+     
+     var textArray = this.__SS_restore_text ? this.__SS_restore_text.split(" ") : [];
+     function restoreTextData(aContent, aPrefix, aURL) {
+       textArray.forEach(function(aEntry) {
+         if (/^((?:\d+\|)*)(#?)([^\s=]+)=(.*)$/.test(aEntry) &&
+             RegExp.$1 == aPrefix && hasExpectedURL(aContent.document, aURL)) {
+           var document = aContent.document;
+           var node = RegExp.$2 ? document.getElementById(RegExp.$3) : document.getElementsByName(RegExp.$3)[0] || null;
+-          if (node && "value" in node) {
++          if (node && "value" in node && node.type != "file") {
+             node.value = decodeURI(RegExp.$4);
+             
+             var event = document.createEvent("UIEvents");
+             event.initUIEvent("input", true, true, aContent, 0);
+             node.dispatchEvent(event);
+           }
+         }
+       });
