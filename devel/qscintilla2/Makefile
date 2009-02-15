@@ -57,6 +57,7 @@ post-configure:
 		s|^LINK .*|LINK=${CXX}|' \
 		${BUILD_WRKSRC}/Makefile
 
+post-install:
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC} &&\
 		${MKDIR} ${DOCSDIR}/html ${DOCSDIR}/Scintilla &&\
