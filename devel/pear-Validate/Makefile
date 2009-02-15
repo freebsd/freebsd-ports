@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Validate
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	amistry@am-productions.biz
