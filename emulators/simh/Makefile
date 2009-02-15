@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	simh
-PORTVERSION=	3.8.0
-PORTREVISION=	1
+PORTVERSION=	3.8.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/
-DISTNAME=	${PORTNAME}v38-0
+DISTNAME=	${PORTNAME}v38-1
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
