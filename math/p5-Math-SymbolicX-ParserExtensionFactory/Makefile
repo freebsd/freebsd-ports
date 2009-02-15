@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-SymbolicX-ParserExtensionFactory
-PORTVERSION=	2.01
+PORTVERSION=	3.01
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
