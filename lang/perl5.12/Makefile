@@ -7,6 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
+PORTREVISION=	1
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -14,7 +15,7 @@ MASTER_SITES=	CPAN \
 MASTER_SITE_SUBDIR=	../../src \
 			skv/:local
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		BSDPAN-${PERL_VER}${EXTRACT_SUFX}:local
+		BSDPAN-${BSDPAN_VERSION}${EXTRACT_SUFX}:local
 DIST_SUBDIR=	perl
 
 PATCH_SITES=	${MASTER_SITE_LOCAL:S!$!skv/!} \
@@ -141,6 +142,7 @@ BSDPAN_FILES=	BSDPAN.pm BSDPAN/Override.pm Config.pm \
 		ExtUtils/MM_Unix.pm \
 		ExtUtils/MakeMaker.pm \
 		ExtUtils/Packlist.pm
+BSDPAN_VERSION=	${PORTVERSION}_1
 BSDPAN_WRKSRC=	${WRKDIR}/BSDPAN-${PORTVERSION}
 
 PKGINSTALL=	${WRKDIR}/pkg-install
