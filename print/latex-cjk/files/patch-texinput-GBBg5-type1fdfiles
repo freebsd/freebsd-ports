@@ -8,11 +8,11 @@
 +
 +\DeclareFontFamily{C00}{t1song}{\hyphenchar \font\m@ne}
 +
-+\DeclareFontShape{C00}{t1song}{m}{n}{<-> CJK * t1arb5sung}{}
++\DeclareFontShape{C00}{t1song}{m}{n}{<-> CJK * t1arb5sung}{\CJKnormal}
 +\DeclareFontShape{C00}{t1song}{bx}{n}{<-> CJKb * t1arb5sung}{\CJKbold}
-+\DeclareFontShape{C00}{t1song}{m}{sl}{<-> CJK * t1arb5sungsl}{}
++\DeclareFontShape{C00}{t1song}{m}{sl}{<-> CJK * t1arb5sungsl}{\CJKnormal}
 +\DeclareFontShape{C00}{t1song}{bx}{sl}{<-> CJKb * t1arb5sungsl}{\CJKbold}
-+\DeclareFontShape{C00}{t1song}{m}{it}{<-> CJK * t1arb5sungsl}{}
++\DeclareFontShape{C00}{t1song}{m}{it}{<-> CJK * t1arb5sungsl}{\CJKnormal}
 +\DeclareFontShape{C00}{t1song}{bx}{it}{<-> CJKb * t1arb5sungsl}{\CJKbold}
 +
 +\endinput
@@ -26,11 +26,11 @@
 +
 +\DeclareFontFamily{C00}{t1kai}{\hyphenchar \font\m@ne}
 +
-+\DeclareFontShape{C00}{t1kai}{m}{n}{<-> CJK * t1arb5kai}{}
++\DeclareFontShape{C00}{t1kai}{m}{n}{<-> CJK * t1arb5kai}{\CJKnormal}
 +\DeclareFontShape{C00}{t1kai}{bx}{n}{<-> CJKb * t1arb5kai}{\CJKbold}
-+\DeclareFontShape{C00}{t1kai}{m}{sl}{<-> CJK * t1arb5kaisl}{}
++\DeclareFontShape{C00}{t1kai}{m}{sl}{<-> CJK * t1arb5kaisl}{\CJKnormal}
 +\DeclareFontShape{C00}{t1kai}{bx}{sl}{<-> CJKb * t1arb5kaisl}{\CJKbold}
-+\DeclareFontShape{C00}{t1kai}{m}{it}{<-> CJK * t1arb5kaisl}{}
++\DeclareFontShape{C00}{t1kai}{m}{it}{<-> CJK * t1arb5kaisl}{\CJKnormal}
 +\DeclareFontShape{C00}{t1kai}{bx}{it}{<-> CJKb * t1arb5kaisl}{\CJKbold}
 +
 +\endinput
@@ -44,11 +44,11 @@
 +
 +\DeclareFontFamily{C10}{t1song}{\hyphenchar \font\m@ne}
 +
-+\DeclareFontShape{C10}{t1song}{m}{n}{<-> CJK * t1argbsung}{}
++\DeclareFontShape{C10}{t1song}{m}{n}{<-> CJK * t1argbsung}{\CJKnormal}
 +\DeclareFontShape{C10}{t1song}{bx}{n}{<-> CJKb * t1argbsung}{\CJKbold}
-+\DeclareFontShape{C10}{t1song}{m}{sl}{<-> CJK * t1argbsungsl}{}
++\DeclareFontShape{C10}{t1song}{m}{sl}{<-> CJK * t1argbsungsl}{\CJKnormal}
 +\DeclareFontShape{C10}{t1song}{bx}{sl}{<-> CJKb * t1argbsungsl}{\CJKbold}
-+\DeclareFontShape{C10}{t1song}{m}{it}{<-> CJK * t1argbsungsl}{}
++\DeclareFontShape{C10}{t1song}{m}{it}{<-> CJK * t1argbsungsl}{\CJKnormal}
 +\DeclareFontShape{C10}{t1song}{bx}{it}{<-> CJKb * t1argbsungsl}{\CJKbold}
 +
 +\endinput
@@ -62,11 +62,11 @@
 +
 +\DeclareFontFamily{C10}{t1kai}{\hyphenchar \font\m@ne}
 +
-+\DeclareFontShape{C10}{t1kai}{m}{n}{<-> CJK * t1argbkai}{}
++\DeclareFontShape{C10}{t1kai}{m}{n}{<-> CJK * t1argbkai}{\CJKnormal}
 +\DeclareFontShape{C10}{t1kai}{bx}{n}{<-> CJKb * t1argbkai}{\CJKbold}
-+\DeclareFontShape{C10}{t1kai}{m}{sl}{<-> CJK * t1argbkaisl}{}
++\DeclareFontShape{C10}{t1kai}{m}{sl}{<-> CJK * t1argbkaisl}{\CJKnormal}
 +\DeclareFontShape{C10}{t1kai}{bx}{sl}{<-> CJKb * t1argbkaisl}{\CJKbold}
-+\DeclareFontShape{C10}{t1kai}{m}{it}{<-> CJK * t1argbkaisl}{}
++\DeclareFontShape{C10}{t1kai}{m}{it}{<-> CJK * t1argbkaisl}{\CJKnormal}
 +\DeclareFontShape{C10}{t1kai}{bx}{it}{<-> CJKb * t1argbkaisl}{\CJKbold}
 +
 +\endinput

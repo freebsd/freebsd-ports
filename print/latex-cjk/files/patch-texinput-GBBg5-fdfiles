@@ -4,13 +4,13 @@
  
  \DeclareFontFamily{C00}{kai}{}
  
--\DeclareFontShape{C00}{kai}{m}{n}{<-> CJK * b5ka12}{}
+-\DeclareFontShape{C00}{kai}{m}{n}{<-> CJK * b5ka12}{\CJKnormal}
 -\DeclareFontShape{C00}{kai}{bx}{n}{<-> CJKb * b5ka12}{\CJKbold}
-+\DeclareFontShape{C00}{kai}{m}{n}{<-> CJK * arb5kai}{}
++\DeclareFontShape{C00}{kai}{m}{n}{<-> CJK * arb5kai}{\CJKnormal}
 +\DeclareFontShape{C00}{kai}{bx}{n}{<-> CJKb * arb5kai}{\CJKbold}
-+\DeclareFontShape{C00}{kai}{m}{sl}{<-> CJK * arb5kaisl}{}
++\DeclareFontShape{C00}{kai}{m}{sl}{<-> CJK * arb5kaisl}{\CJKnormal}
 +\DeclareFontShape{C00}{kai}{bx}{sl}{<-> CJKb * arb5kaisl}{\CJKbold}
-+\DeclareFontShape{C00}{kai}{m}{it}{<-> CJK * arb5kaisl}{}
++\DeclareFontShape{C00}{kai}{m}{it}{<-> CJK * arb5kaisl}{\CJKnormal}
 +\DeclareFontShape{C00}{kai}{bx}{it}{<-> CJKb * arb5kaisl}{\CJKbold}
  
  \endinput
@@ -22,11 +22,11 @@
  
 -\DeclareFontShape{C00}{song}{m}{n}{<-> CJKsub * kai/m/n}{}
 -\DeclareFontShape{C00}{song}{bx}{n}{<-> CJKsub * kai/bx/n}{}
-+\DeclareFontShape{C00}{song}{m}{n}{<-> CJK * arb5sung}{}
++\DeclareFontShape{C00}{song}{m}{n}{<-> CJK * arb5sung}{\CJKnormal}
 +\DeclareFontShape{C00}{song}{bx}{n}{<-> CJKb * arb5sung}{\CJKbold}
-+\DeclareFontShape{C00}{song}{m}{sl}{<-> CJK * arb5sungsl}{}
++\DeclareFontShape{C00}{song}{m}{sl}{<-> CJK * arb5sungsl}{\CJKnormal}
 +\DeclareFontShape{C00}{song}{bx}{sl}{<-> CJKb * arb5sungsl}{\CJKbold}
-+\DeclareFontShape{C00}{song}{m}{it}{<-> CJK * arb5sungsl}{}
++\DeclareFontShape{C00}{song}{m}{it}{<-> CJK * arb5sungsl}{\CJKnormal}
 +\DeclareFontShape{C00}{song}{bx}{it}{<-> CJKb * arb5sungsl}{\CJKbold}
  
  \endinput
@@ -52,11 +52,11 @@
 +
 +\DeclareFontFamily{C10}{kai}{}
 +
-+\DeclareFontShape{C10}{kai}{m}{n}{<-> CJK * argbkai}{}
++\DeclareFontShape{C10}{kai}{m}{n}{<-> CJK * argbkai}{\CJKnormal}
 +\DeclareFontShape{C10}{kai}{bx}{n}{<-> CJKb * argbkai}{\CJKbold}
-+\DeclareFontShape{C10}{kai}{m}{sl}{<-> CJK * argbkaisl}{}
++\DeclareFontShape{C10}{kai}{m}{sl}{<-> CJK * argbkaisl}{\CJKnormal}
 +\DeclareFontShape{C10}{kai}{bx}{sl}{<-> CJKb * argbkaisl}{\CJKbold}
-+\DeclareFontShape{C10}{kai}{m}{it}{<-> CJK * argbkaisl}{}
++\DeclareFontShape{C10}{kai}{m}{it}{<-> CJK * argbkaisl}{\CJKnormal}
 +\DeclareFontShape{C10}{kai}{bx}{it}{<-> CJKb * argbkaisl}{\CJKbold}
 +
 +\endinput
@@ -68,11 +68,11 @@
  
 -\DeclareFontShape{C10}{song}{m}{n}{<-> CJKsub * fs/m/n}{}
 -\DeclareFontShape{C10}{song}{bx}{n}{<-> CJKsub * fs/bx/n}{}
-+\DeclareFontShape{C10}{song}{m}{n}{<-> CJK * argbsung}{}
++\DeclareFontShape{C10}{song}{m}{n}{<-> CJK * argbsung}{\CJKnormal}
 +\DeclareFontShape{C10}{song}{bx}{n}{<-> CJKb * argbsung}{\CJKbold}
-+\DeclareFontShape{C10}{song}{m}{sl}{<-> CJK * argbsungsl}{}
++\DeclareFontShape{C10}{song}{m}{sl}{<-> CJK * argbsungsl}{\CJKnormal}
 +\DeclareFontShape{C10}{song}{bx}{sl}{<-> CJKb * argbsungsl}{\CJKbold}
-+\DeclareFontShape{C10}{song}{m}{it}{<-> CJK * argbsungsl}{}
++\DeclareFontShape{C10}{song}{m}{it}{<-> CJK * argbsungsl}{\CJKnormal}
 +\DeclareFontShape{C10}{song}{bx}{it}{<-> CJKb * argbsungsl}{\CJKbold}
  
  \endinput

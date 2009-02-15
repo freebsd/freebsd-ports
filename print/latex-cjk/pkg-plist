@@ -22,12 +22,12 @@ bin/sjislatex
 bin/sjispdflatex
 %%PORTDOCS%%%%DOCSDIR%%/CEF.txt
 %%PORTDOCS%%%%DOCSDIR%%/CJK.txt
+%%PORTDOCS%%%%DOCSDIR%%/CJKnumb.txt
 %%PORTDOCS%%%%DOCSDIR%%/CJKspace.txt
 %%PORTDOCS%%%%DOCSDIR%%/CJKutf8.txt
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/TDS.txt
-%%PORTDOCS%%%%DOCSDIR%%/TeXLive.txt
 %%PORTDOCS%%%%DOCSDIR%%/chinese/README
 %%PORTDOCS%%%%DOCSDIR%%/chinese/READMEb5.tex
 %%PORTDOCS%%%%DOCSDIR%%/chinese/READMEgb.tex
@@ -1781,9 +1781,12 @@ share/emacs/site-lisp/CJK/mule-2.3/cjk-enc.el
 %%CJKDIR%%/UTF8/c70bsmi.fdx
 %%CJKDIR%%/UTF8/c70gbkai.fd
 %%CJKDIR%%/UTF8/c70gbsn.fd
+%%CJKDIR%%/UTF8/c70gbsn.fdx
 %%CJKDIR%%/UTF8/c70gbsong.fd
 %%CJKDIR%%/UTF8/c70gkai.fd
+%%CJKDIR%%/UTF8/c70gkai.fdx
 %%CJKDIR%%/UTF8/c70mj.fd
+%%CJKDIR%%/UTF8/c70mj.fdx
 %%CJKDIR%%/UTF8/c70song.fd
 %%CJKDIR%%/UTF8/ja.cpx
 %%CJKDIR%%/UTF8/ko-Hang.cpx
