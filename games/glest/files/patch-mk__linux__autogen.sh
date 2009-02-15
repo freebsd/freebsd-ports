@@ -1,5 +1,5 @@
---- autogen.sh.orig	Thu Dec  1 09:52:33 2005
-+++ autogen.sh	Thu Dec  1 09:53:14 2005
+--- mk/linux/autogen.sh	Thu Dec  1 09:52:33 2005
++++ mk/linux/autogen.sh	Thu Dec  1 09:53:14 2005
 @@ -8,11 +8,11 @@
  
  echo "aclocal..."
