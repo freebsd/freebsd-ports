@@ -1,0 +1,66 @@
+--- .pc/380418-candidate.patch/content/base/src/nsXMLHttpRequest.cpp	2009-01-05 03:48:53.000000000 +0100
++++ content/base/src/nsXMLHttpRequest.cpp	2009-01-05 03:54:08.000000000 +0100
+@@ -762,16 +762,28 @@ nsXMLHttpRequest::GetAllResponseHeaders(
+ /* ACString getResponseHeader (in AUTF8String header); */
+ NS_IMETHODIMP
+ nsXMLHttpRequest::GetResponseHeader(const nsACString& header,
+                                     nsACString& _retval)
+ {
+   nsresult rv = NS_OK;
+   _retval.Truncate();
+ 
++  // See bug #380418. Hide "Set-Cookie" headers from non-chrome scripts.
++  PRBool chrome = PR_FALSE; // default to false in case IsCapabilityEnabled fails
++  nsIScriptSecurityManager *secMan = nsContentUtils::GetSecurityManager();
++  secMan->IsCapabilityEnabled("UniversalXPConnect", &chrome);
++  if (!chrome &&
++       (header.LowerCaseEqualsASCII("set-cookie") ||
++        header.LowerCaseEqualsASCII("set-cookie2"))) {
++    NS_WARNING("blocked access to response header");
++    _retval.SetIsVoid(PR_TRUE);
++    return NS_OK;
++  }
++
+   nsCOMPtr<nsIHttpChannel> httpChannel = GetCurrentHttpChannel();
+ 
+   if (!mDenyResponseDataAccess && httpChannel) {
+     rv = httpChannel->GetResponseHeader(header, _retval);
+   }
+ 
+   if (rv == NS_ERROR_NOT_AVAILABLE) {
+     // Means no header
+@@ -2183,20 +2195,30 @@ nsXMLHttpRequest::AppendReachableList(ns
+ }
+ 
+ 
+ NS_IMPL_ISUPPORTS1(nsXMLHttpRequest::nsHeaderVisitor, nsIHttpHeaderVisitor)
+ 
+ NS_IMETHODIMP nsXMLHttpRequest::
+ nsHeaderVisitor::VisitHeader(const nsACString &header, const nsACString &value)
+ {
+-    mHeaders.Append(header);
+-    mHeaders.Append(": ");
+-    mHeaders.Append(value);
+-    mHeaders.Append('\n');
++    // See bug #380418. Hide "Set-Cookie" headers from non-chrome scripts.
++    PRBool chrome = PR_FALSE; // default to false in case IsCapabilityEnabled fails
++    nsIScriptSecurityManager *secMan = nsContentUtils::GetSecurityManager();
++    secMan->IsCapabilityEnabled("UniversalXPConnect", &chrome);
++    if (!chrome &&
++         (header.LowerCaseEqualsASCII("set-cookie") ||
++          header.LowerCaseEqualsASCII("set-cookie2"))) {
++        NS_WARNING("blocked access to response header");
++    } else {
++        mHeaders.Append(header);
++        mHeaders.Append(": ");
++        mHeaders.Append(value);
++        mHeaders.Append('\n');
++    }
+     return NS_OK;
+ }
+ 
+ // DOM event class to handle progress notifications
+ nsXMLHttpProgressEvent::nsXMLHttpProgressEvent(nsIDOMEvent * aInner, PRUint64 aCurrentProgress, PRUint64 aMaxProgress)
+ {
+   mInner = aInner; 
+   mCurProgress = aCurrentProgress;

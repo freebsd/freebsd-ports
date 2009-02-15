@@ -1,0 +1,440 @@
+--- .pc/460425_att352061-backport2.patch/content/base/src/nsSyncLoadService.cpp	2006-06-10 00:48:43.000000000 +0200
++++ content/base/src/nsSyncLoadService.cpp	2009-01-30 12:39:37.000000000 +0100
+@@ -424,19 +424,28 @@ nsSyncLoader::OnChannelRedirect(nsIChann
+     nsresult rv = aOldChannel->GetURI(getter_AddRefs(oldURI)); // The original URI
+     NS_ENSURE_SUCCESS(rv, rv);
+ 
+     nsCOMPtr<nsIURI> newURI;
+     rv = aNewChannel->GetURI(getter_AddRefs(newURI)); // The new URI
+     NS_ENSURE_SUCCESS(rv, rv);
+ 
+     rv = nsContentUtils::GetSecurityManager()->CheckSameOriginURI(oldURI, newURI);
++    NS_ENSURE_SUCCESS(rv, rv);
+ 
++    nsCOMPtr<nsIURI> newOrigURI;
++    rv = aNewChannel->GetOriginalURI(getter_AddRefs(newOrigURI));
+     NS_ENSURE_SUCCESS(rv, rv);
+ 
++    if (newOrigURI != newURI) {
++        rv = nsContentUtils::GetSecurityManager()->
++            CheckSameOriginURI(oldURI, newOrigURI);
++        NS_ENSURE_SUCCESS(rv, rv);
++    }
++
+     mChannel = aNewChannel;
+ 
+     return NS_OK;
+ }
+ 
+ NS_IMETHODIMP
+ nsSyncLoader::GetInterface(const nsIID & aIID,
+                            void **aResult)
+--- .pc/460425_att352061-backport2.patch/content/base/src/nsXMLHttpRequest.cpp	2009-01-28 17:30:42.000000000 +0100
++++ content/base/src/nsXMLHttpRequest.cpp	2009-01-30 12:39:37.000000000 +0100
+@@ -2058,16 +2058,27 @@ nsXMLHttpRequest::OnChannelRedirect(nsIC
+       return rv;
+ 
+     nsCOMPtr<nsIScriptSecurityManager> secMan =
+              do_GetService(NS_SCRIPTSECURITYMANAGER_CONTRACTID, &rv);
+     if (NS_FAILED(rv))
+       return rv;
+ 
+     rv = secMan->CheckSameOriginURI(oldURI, newURI);
++
++    if (NS_SUCCEEDED(rv)) {
++      nsCOMPtr<nsIURI> newOrigURI;
++      rv = aNewChannel->GetOriginalURI(getter_AddRefs(newOrigURI));
++      NS_ENSURE_SUCCESS(rv, rv);
++
++      if (newOrigURI != newURI) {
++        rv = secMan->CheckSameOriginURI(oldURI, newOrigURI);
++      }
++    }
++
+     if (NS_FAILED(rv)) {
+       mDenyResponseDataAccess = PR_TRUE;
+       return rv;
+     }
+   }
+ 
+   if (mChannelEventSink) {
+     nsresult rv =
+--- .pc/460425_att352061-backport2.patch/content/xml/document/src/nsXMLDocument.cpp	2008-08-15 23:57:22.000000000 +0200
++++ content/xml/document/src/nsXMLDocument.cpp	2009-01-30 12:39:37.000000000 +0100
+@@ -297,18 +297,34 @@ nsXMLDocument::OnChannelRedirect(nsIChan
+   nsCOMPtr<nsIURI> oldURI;
+   nsresult rv = aOldChannel->GetURI(getter_AddRefs(oldURI));
+   NS_ENSURE_SUCCESS(rv, rv);
+ 
+   nsCOMPtr<nsIURI> newURI;
+   rv = aNewChannel->GetURI(getter_AddRefs(newURI));
+   NS_ENSURE_SUCCESS(rv, rv);
+ 
+-  return nsContentUtils::GetSecurityManager()->
++  rv = nsContentUtils::GetSecurityManager()->
+     CheckSameOriginURI(oldURI, newURI);
++  NS_ENSURE_SUCCESS(rv, rv);
++
++  nsCOMPtr<nsIURI> newOrigURI;
++  rv = aNewChannel->GetOriginalURI(getter_AddRefs(newOrigURI));
++  NS_ENSURE_SUCCESS(rv, rv);
++
++  if (newOrigURI != newURI) {
++    rv = nsContentUtils::GetSecurityManager()->
++    CheckSameOriginURI(oldURI, newOrigURI);
++  }
++
++  if (NS_FAILED(rv)) {
++    return rv;
++  }
++
++  return NS_OK;
+ }
+ 
+ NS_IMETHODIMP
+ nsXMLDocument::EvaluateFIXptr(const nsAString& aExpression, nsIDOMRange **aRange)
+ {
+   nsresult rv;
+   nsCOMPtr<nsIFIXptrEvaluator> e =
+     do_CreateInstance("@mozilla.org/xmlextras/fixptrevaluator;1", &rv);
+--- .pc/460425_att352061-backport2.patch/extensions/transformiix/source/xslt/txMozillaStylesheetCompiler.cpp	2006-07-07 03:06:03.000000000 +0200
++++ extensions/transformiix/source/xslt/txMozillaStylesheetCompiler.cpp	2009-01-30 12:39:37.000000000 +0100
+@@ -383,17 +383,29 @@ txStylesheetSink::OnChannelRedirect(nsIC
+     nsCOMPtr<nsIURI> oldURI;
+     rv = aOldChannel->GetURI(getter_AddRefs(oldURI)); // The original URI
+     NS_ENSURE_SUCCESS(rv, rv);
+ 
+     nsCOMPtr<nsIURI> newURI;
+     rv = aNewChannel->GetURI(getter_AddRefs(newURI)); // The new URI
+     NS_ENSURE_SUCCESS(rv, rv);
+ 
+-    return secMan->CheckSameOriginURI(oldURI, newURI);
++    rv = secMan->CheckSameOriginURI(oldURI, newURI);
++    NS_ENSURE_SUCCESS(rv, rv);
++
++    nsCOMPtr<nsIURI> newOrigURI;
++    rv = aNewChannel->GetOriginalURI(getter_AddRefs(newOrigURI));
++    NS_ENSURE_SUCCESS(rv, rv);
++
++    if (newOrigURI != newURI) {
++        rv = secMan->CheckSameOriginURI(oldURI, newOrigURI);
++        NS_ENSURE_SUCCESS(rv, rv);
++    }
++
++    return NS_OK;
+ }
+ 
+ NS_IMETHODIMP
+ txStylesheetSink::GetInterface(const nsIID& aIID, void** aResult)
+ {
+     if (aIID.Equals(NS_GET_IID(nsIAuthPrompt))) {
+         NS_ENSURE_ARG(aResult);
+         *aResult = nsnull;
+--- .pc/460425_att352061-backport2.patch/extensions/xforms/nsXFormsInstanceElement.cpp	2008-07-27 02:35:16.000000000 +0200
++++ extensions/xforms/nsXFormsInstanceElement.cpp	2009-01-30 12:39:37.000000000 +0100
+@@ -203,21 +203,25 @@ nsXFormsInstanceElement::GetInterface(co
+ NS_IMETHODIMP
+ nsXFormsInstanceElement::OnChannelRedirect(nsIChannel *OldChannel,
+                                            nsIChannel *aNewChannel,
+                                            PRUint32    aFlags)
+ {
+   NS_PRECONDITION(aNewChannel, "Redirect without a channel?");
+   NS_PRECONDITION(!mLazy, "Loading an instance document for a lazy instance?");
+ 
+-  nsCOMPtr<nsIURI> newURI;
++  nsCOMPtr<nsIURI> newURI, newOrigURI;
+   nsresult rv = aNewChannel->GetURI(getter_AddRefs(newURI));
+   NS_ENSURE_SUCCESS(rv, rv);
++  rv = aNewChannel->GetOriginalURI(getter_AddRefs(newOrigURI));
++  NS_ENSURE_SUCCESS(rv, rv);
+ 
+-  if (!nsXFormsUtils::CheckConnectionAllowed(mElement, newURI)) {
++  if (!nsXFormsUtils::CheckConnectionAllowed(mElement, newURI) ||
++      (newOrigURI != newURI &&
++       !nsXFormsUtils::CheckConnectionAllowed(mElement, newOrigURI))) {
+     const PRUnichar *strings[] = { NS_LITERAL_STRING("instance").get() };
+     nsXFormsUtils::ReportError(NS_LITERAL_STRING("externalLinkLoadOrigin"),
+                                strings, 1, mElement, mElement);
+     return NS_ERROR_ABORT;
+   }
+ 
+   return NS_OK;
+ }
+--- .pc/460425_att352061-backport2.patch/extensions/xforms/nsXFormsMessageElement.cpp	2008-03-04 23:47:45.000000000 +0100
++++ extensions/xforms/nsXFormsMessageElement.cpp	2009-01-30 12:39:37.000000000 +0100
+@@ -1062,21 +1062,25 @@ nsXFormsMessageElement::GetInterface(con
+ 
+ NS_IMETHODIMP
+ nsXFormsMessageElement::OnChannelRedirect(nsIChannel *OldChannel,
+                                           nsIChannel *aNewChannel,
+                                           PRUint32    aFlags)
+ {
+   NS_PRECONDITION(aNewChannel, "Redirect without a channel?");
+ 
+-  nsCOMPtr<nsIURI> newURI;
++  nsCOMPtr<nsIURI> newURI, newOrigURI;
+   nsresult rv = aNewChannel->GetURI(getter_AddRefs(newURI));
+   NS_ENSURE_SUCCESS(rv, rv);
+-  
+-  if (!nsXFormsUtils::CheckConnectionAllowed(mElement, newURI)) {
++  rv = aNewChannel->GetOriginalURI(getter_AddRefs(newOrigURI));
++  NS_ENSURE_SUCCESS(rv, rv);
++
++  if (!nsXFormsUtils::CheckConnectionAllowed(mElement, newURI) ||
++      (newOrigURI != newURI &&
++       !nsXFormsUtils::CheckConnectionAllowed(mElement, newOrigURI))) {
+     nsAutoString tagName;
+     mElement->GetLocalName(tagName);
+     const PRUnichar *strings[] = { tagName.get() };
+     nsXFormsUtils::ReportError(NS_LITERAL_STRING("externalLinkLoadOrigin"),
+                                strings, 1, mElement, mElement);
+     mStopType = eStopType_Security;
+     return NS_ERROR_ABORT;
+   }
+--- .pc/460425_att352061-backport2.patch/extensions/xforms/nsXFormsSubmissionElement.cpp	2008-08-07 23:03:52.000000000 +0200
++++ extensions/xforms/nsXFormsSubmissionElement.cpp	2009-01-30 12:39:37.000000000 +0100
+@@ -400,27 +400,30 @@ nsXFormsSubmissionElement::OnChannelRedi
+                                              nsIChannel *aNewChannel,
+                                              PRUint32    aFlags)
+ {
+   if (!mElement) {
+     return NS_OK;
+   }
+ 
+   NS_PRECONDITION(aNewChannel, "Redirect without a channel?");
+-  nsCOMPtr<nsIURI> newURI;
++  nsCOMPtr<nsIURI> newURI, newOrigURI;
+   nsresult rv = aNewChannel->GetURI(getter_AddRefs(newURI));
+   NS_ENSURE_SUCCESS(rv, rv);
++  rv = aNewChannel->GetOriginalURI(getter_AddRefs(newOrigURI));
++  NS_ENSURE_SUCCESS(rv, rv);
+ 
+   NS_ENSURE_STATE(mElement);
+   nsCOMPtr<nsIDOMDocument> domDoc;
+   mElement->GetOwnerDocument(getter_AddRefs(domDoc));
+   nsCOMPtr<nsIDocument> doc(do_QueryInterface(domDoc));
+   NS_ENSURE_STATE(doc);
+ 
+-  if (!CheckSameOrigin(doc, newURI)) {
++  if (!CheckSameOrigin(doc, newURI) ||
++      (newOrigURI != newURI && !CheckSameOrigin(doc, newOrigURI))) {
+     nsXFormsUtils::ReportError(NS_LITERAL_STRING("submitSendOrigin"),
+                                mElement);
+     return NS_ERROR_ABORT;
+   }
+ 
+   return NS_OK;
+ }
+ 
+--- .pc/460425_att352061-backport2.patch/netwerk/protocol/file/src/nsFileChannel.cpp	2008-10-29 06:22:55.000000000 +0100
++++ netwerk/protocol/file/src/nsFileChannel.cpp	2009-01-30 12:44:19.000000000 +0100
+@@ -94,17 +94,16 @@ CopyProperties(const nsAString &key, nsI
+ void
+ nsFileChannel::HandleRedirect(nsIChannel* newChannel)
+ {
+     if (NS_SUCCEEDED(mStatus)) {
+         nsIURI* originalURI = mOriginalURI;
+         if (!originalURI)
+             originalURI = mURL;
+     
+-        newChannel->SetOriginalURI(originalURI);
+         newChannel->SetLoadGroup(mLoadGroup);
+         newChannel->SetNotificationCallbacks(mCallbacks);
+         newChannel->SetLoadFlags(mLoadFlags | LOAD_REPLACE);
+ 
+         nsCOMPtr<nsIWritablePropertyBag> bag = do_QueryInterface(newChannel);
+         if (bag)
+             mPropertyHash.EnumerateRead(CopyProperties, bag.get());
+ 
+@@ -119,17 +118,21 @@ nsFileChannel::HandleRedirect(nsIChannel
+             nsCOMPtr<nsIChannelEventSink> channelEventSink;
+             // Give our consumer a chance to observe/block this redirect.
+             NS_QueryNotificationCallbacks(mCallbacks, mLoadGroup,
+                                           channelEventSink);
+             if (channelEventSink) {
+                 rv = channelEventSink->OnChannelRedirect(this, newChannel,
+                                                          redirectFlags);
+                 if (NS_SUCCEEDED(rv)) {
+-                    rv = newChannel->AsyncOpen(mListener, mListenerContext);
++                   // Make sure to do this _after_ making all the  OnChannelRedirect calls
++                   nsCOMPtr<nsIURI> origURI;
++                   GetOriginalURI(getter_AddRefs(origURI));
++                   newChannel->SetOriginalURI(origURI);
++                   rv = newChannel->AsyncOpen(mListener, mListenerContext);
+                 }
+             }
+         }
+ 
+         if (NS_FAILED(rv))
+             Cancel(rv);
+     }
+ 
+--- .pc/460425_att352061-backport2.patch/netwerk/protocol/http/src/nsHttpChannel.cpp	2006-07-21 00:59:31.000000000 +0200
++++ netwerk/protocol/http/src/nsHttpChannel.cpp	2009-01-30 12:39:37.000000000 +0100
+@@ -997,16 +997,19 @@ nsHttpChannel::ReplaceWithProxy(nsIProxy
+         return rv;
+ 
+     // Inform consumers about this fake redirect
+     PRUint32 flags = nsIChannelEventSink::REDIRECT_INTERNAL;
+     rv = gHttpHandler->OnChannelRedirect(this, newChannel, flags);
+     if (NS_FAILED(rv))
+         return rv;
+ 
++    // Make sure to do this _after_ calling OnChannelRedirect
++    newChannel->SetOriginalURI(mOriginalURI);
++
+     // open new channel
+     rv = newChannel->AsyncOpen(mListener, mListenerContext);
+     if (NS_FAILED(rv))
+         return rv;
+ 
+     mStatus = NS_BINDING_REDIRECTED;
+     mListener = nsnull;
+     mListenerContext = nsnull;
+@@ -1906,17 +1909,16 @@ nsHttpChannel::SetupReplacementChannel(n
+     // SSL, then no need to inhibit persistent caching.  however, if the
+     // original channel was not using SSL and has INHIBIT_PERSISTENT_CACHING
+     // set, then allow the flag to apply to the redirected channel as well.
+     // since we force set INHIBIT_PERSISTENT_CACHING on all HTTPS channels,
+     // we only need to check if the original channel was using SSL.
+     if (mConnectionInfo->UsingSSL())
+         newLoadFlags &= ~INHIBIT_PERSISTENT_CACHING;
+ 
+-    newChannel->SetOriginalURI(mOriginalURI);
+     newChannel->SetLoadGroup(mLoadGroup); 
+     newChannel->SetNotificationCallbacks(mCallbacks);
+     newChannel->SetLoadFlags(newLoadFlags);
+ 
+     nsCOMPtr<nsIHttpChannel> httpChannel = do_QueryInterface(newChannel);
+     if (!httpChannel)
+         return NS_OK; // no other options to set
+ 
+@@ -2087,16 +2089,19 @@ nsHttpChannel::ProcessRedirection(PRUint
+     if (redirectType == 301) // Moved Permanently
+         redirectFlags = nsIChannelEventSink::REDIRECT_PERMANENT;
+     else
+         redirectFlags = nsIChannelEventSink::REDIRECT_TEMPORARY;
+     rv = gHttpHandler->OnChannelRedirect(this, newChannel, redirectFlags);
+     if (NS_FAILED(rv))
+         return rv;
+ 
++    // Make sure to do this _after_ calling OnChannelRedirect
++    newChannel->SetOriginalURI(mOriginalURI);
++
+     // And now, the deprecated way
+     nsCOMPtr<nsIHttpEventSink> httpEventSink;
+     GetCallback(httpEventSink);
+     if (httpEventSink) {
+         // NOTE: nsIHttpEventSink is only used for compatibility with pre-1.8
+         // versions.
+         rv = httpEventSink->OnRedirect(this, newChannel);
+         if (NS_FAILED(rv)) return rv;
+--- .pc/460425_att352061-backport2.patch/uriloader/base/nsDocLoader.cpp	2006-02-06 20:52:11.000000000 +0100
++++ uriloader/base/nsDocLoader.cpp	2009-01-30 12:39:37.000000000 +0100
+@@ -1397,25 +1397,16 @@ PRInt64 nsDocLoader::CalculateMaxProgres
+ }
+ 
+ NS_IMETHODIMP nsDocLoader::OnChannelRedirect(nsIChannel *aOldChannel,
+                                              nsIChannel *aNewChannel,
+                                              PRUint32    aFlags)
+ {
+   if (aOldChannel)
+   {
+-    nsresult rv;
+-    nsCOMPtr<nsIURI> oldURI, newURI;
+-
+-    rv = aOldChannel->GetOriginalURI(getter_AddRefs(oldURI));
+-    if (NS_FAILED(rv)) return rv;
+-
+-    rv = aNewChannel->GetURI(getter_AddRefs(newURI));
+-    if (NS_FAILED(rv)) return rv;
+-
+     nsLoadFlags loadFlags = 0;
+     PRInt32 stateFlags = nsIWebProgressListener::STATE_REDIRECTING |
+                          nsIWebProgressListener::STATE_IS_REQUEST;
+ 
+     aOldChannel->GetLoadFlags(&loadFlags);
+     // If the document channel is being redirected, then indicate that the
+     // document is being redirected in the notification...
+     if (loadFlags & nsIChannel::LOAD_DOCUMENT_URI)
+--- .pc/460425_att352061-backport2.patch/xpcom/io/nsLocalFileUnix.cpp	2008-10-29 06:06:16.000000000 +0100
++++ xpcom/io/nsLocalFileUnix.cpp	2009-01-30 12:58:52.000000000 +0100
+@@ -1295,21 +1295,16 @@ nsLocalFile::IsReadable(PRBool *_retval)
+ 
+ NS_IMETHODIMP
+ nsLocalFile::IsExecutable(PRBool *_retval)
+ {
+     CHECK_mPath();
+     NS_ENSURE_ARG_POINTER(_retval);
+     struct stat buf;
+ 
+-    if (IsDesktopFile()) {
+-        *_retval = PR_TRUE;
+-        return NS_OK;
+-    }
+-    
+     *_retval = (stat(mPath.get(), &buf) == 0);
+     if (*_retval || errno == EACCES) {
+         *_retval = *_retval && (buf.st_mode & (S_IXUSR | S_IXGRP | S_IXOTH ));
+         return NS_OK;
+     }
+     return NSRESULT_FOR_ERRNO();
+ }
+ #else
+@@ -1350,21 +1345,16 @@ nsLocalFile::IsReadable(PRBool *_retval)
+ }
+ 
+ NS_IMETHODIMP
+ nsLocalFile::IsExecutable(PRBool *_retval)
+ {
+     CHECK_mPath();
+     NS_ENSURE_ARG_POINTER(_retval);
+ 
+-    if (IsDesktopFile()) {
+-        *_retval = PR_TRUE;
+-        return NS_OK;
+-    }
+-    
+     *_retval = (access(mPath.get(), X_OK) == 0);
+     if (*_retval || errno == EACCES)
+         return NS_OK;
+     return NSRESULT_FOR_ERRNO();
+ }
+ #endif
+ NS_IMETHODIMP
+ nsLocalFile::IsDirectory(PRBool *_retval)
+@@ -1780,18 +1770,8 @@ void
+ nsLocalFile::GlobalInit()
+ {
+ }
+ 
+ void
+ nsLocalFile::GlobalShutdown()
+ {
+ }
+-
+-PRBool
+-nsLocalFile::IsDesktopFile()
+-{
+-    // Just needs to be good enough to match nsFileProtocolHandler::ReadURLFile
+-    nsCAutoString leafName;
+-    nsresult rv = GetNativeLeafName(leafName);
+-    return NS_FAILED(rv) ||
+-        StringEndsWith(leafName, NS_LITERAL_CSTRING(".desktop"));
+-}
+--- .pc/460425_att352061-backport2.patch/xpcom/io/nsLocalFileUnix.h	2009-01-30 12:58:27.000000000 +0100
++++ xpcom/io/nsLocalFileUnix.h	2009-01-30 12:58:57.000000000 +0100
+@@ -122,13 +122,11 @@ protected:
+ 
+     void InvalidateCache() {
+         mHaveCachedStat = PR_FALSE;
+     }
+     nsresult FillStatCache();
+ 
+     nsresult CreateAndKeepOpen(PRUint32 type, PRIntn flags,
+                                PRUint32 permissions, PRFileDesc **_retval);
+-
+-    PRBool IsDesktopFile();
+ };
+ 
+ #endif /* _nsLocalFileUNIX_H_ */
