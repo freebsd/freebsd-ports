@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5a021595-fba9-11dd-86f3-0030843d3802">
+    <topic>pycrypto -- ARC2 module buffer overflow</topic>
+    <affects>
+      <package>
+	<name>py-pycrypto</name>
+	<range><lt>2.0.1_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dwayne C. Litzenberger reports:</p>
+	<blockquote cite="http://lists.dlitz.net/pipermail/pycrypto/2009q1/000062.html">
+	  <p>pycrypto is exposed to a buffer overflow issue because it fails to
+	    adequately verify user-supplied input. This issue resides in the ARC2
+	    module. This issue can be triggered with specially crafted ARC2 keys
+	    in excess of 128 bytes.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.dlitz.net/pipermail/pycrypto/2009q1/000062.html</url>
+    </references>
+    <dates>
+      <discovery>2009-02-06</discovery>
+      <entry>2009-02-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bcee3989-d106-4f60-948f-835375634710">
     <topic>varnish -- Varnish HTTP Request Parsing Denial of Service</topic>
     <affects>
