@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Gearman
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.0
 CATEGORIES=	devel pear
 
 MAINTAINER=	gslin@gslin.org
@@ -15,7 +15,7 @@ COMMENT=	Gearman client libraray for PHP
 BUILD_DEPENDS=	${LOCALBASE}/share/pear/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PHP=	mbstring
+USE_PHP=	json mbstring
 
 FILES=		Net/Gearman/Client.php Net/Gearman/Connection.php Net/Gearman/Exception.php \
 		Net/Gearman/Job.php Net/Gearman/Manager.php Net/Gearman/Set.php \
