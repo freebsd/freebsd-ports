@@ -16,6 +16,9 @@ etc/sams.conf.sample
 %%DATADIR%%/bin/updateuserlist
 %%DATADIR%%/config.php
 %%DATADIR%%/createpdf.php
+%%DATADIR%%/data/sams_db.sql
+%%DATADIR%%/data/squid_db.sql
+%%DATADIR%%/data/upgrade_mysql_table.php
 %%DATADIR%%/doc/EN/admin.html
 %%DATADIR%%/doc/EN/apache.html
 %%DATADIR%%/doc/EN/faq.html
@@ -29,36 +32,36 @@ etc/sams.conf.sample
 %%DATADIR%%/doc/EN/sams_conf.html
 %%DATADIR%%/doc/EN/squid.html
 %%DATADIR%%/doc/EN/upgrade.html
+%%DATADIR%%/doc/RU/about.html
+%%DATADIR%%/doc/RU/addusers.html
+%%DATADIR%%/doc/RU/adldap.html
+%%DATADIR%%/doc/RU/apache.html
+%%DATADIR%%/doc/RU/backup.html
+%%DATADIR%%/doc/RU/faq.html
+%%DATADIR%%/doc/RU/filerecovery.html
+%%DATADIR%%/doc/RU/groups.html
+%%DATADIR%%/doc/RU/gui.html
+%%DATADIR%%/doc/RU/index.html
+%%DATADIR%%/doc/RU/install.html
+%%DATADIR%%/doc/RU/localhost.html
+%%DATADIR%%/doc/RU/log.html
+%%DATADIR%%/doc/RU/mysql.html
+%%DATADIR%%/doc/RU/mysql_install.html
+%%DATADIR%%/doc/RU/osandsoft.html
+%%DATADIR%%/doc/RU/pdfreport.html
 %%DATADIR%%/doc/RU/redirector.html
+%%DATADIR%%/doc/RU/samba.html
+%%DATADIR%%/doc/RU/samba3.html
+%%DATADIR%%/doc/RU/sams_conf.html
 %%DATADIR%%/doc/RU/script.html
 %%DATADIR%%/doc/RU/settings.html
-%%DATADIR%%/doc/RU/samba.html
-%%DATADIR%%/doc/RU/apache.html
-%%DATADIR%%/doc/RU/groups.html
-%%DATADIR%%/doc/RU/users.html
-%%DATADIR%%/doc/RU/about.html
-%%DATADIR%%/doc/RU/gui.html
-%%DATADIR%%/doc/RU/urllists.html
-%%DATADIR%%/doc/RU/addusers.html
-%%DATADIR%%/doc/RU/shablons.html
-%%DATADIR%%/doc/RU/install.html
-%%DATADIR%%/doc/RU/osandsoft.html
-%%DATADIR%%/doc/RU/filerecovery.html
-%%DATADIR%%/doc/RU/log.html
 %%DATADIR%%/doc/RU/several.html
+%%DATADIR%%/doc/RU/shablons.html
 %%DATADIR%%/doc/RU/soft.html
 %%DATADIR%%/doc/RU/squid.html
-%%DATADIR%%/doc/RU/samba3.html
-%%DATADIR%%/doc/RU/pdfreport.html
-%%DATADIR%%/doc/RU/mysql_install.html
-%%DATADIR%%/doc/RU/adldap.html
-%%DATADIR%%/doc/RU/backup.html
-%%DATADIR%%/doc/RU/localhost.html
 %%DATADIR%%/doc/RU/upgrade.html
-%%DATADIR%%/doc/RU/index.html
-%%DATADIR%%/doc/RU/mysql.html
-%%DATADIR%%/doc/RU/sams_conf.html
-%%DATADIR%%/doc/RU/faq.html
+%%DATADIR%%/doc/RU/urllists.html
+%%DATADIR%%/doc/RU/users.html
 %%DATADIR%%/doc/img/10.jpg
 %%DATADIR%%/doc/img/11.jpg
 %%DATADIR%%/doc/img/12.jpg
@@ -143,9 +146,6 @@ etc/sams.conf.sample
 %%DATADIR%%/doc/img/usergroup_32.jpg
 %%DATADIR%%/doc/img/userlog-32.gif
 %%DATADIR%%/doc/img/websettings.jpg
-%%DATADIR%%/data/upgrade_mysql_table.php
-%%DATADIR%%/data/sams_db.sql
-%%DATADIR%%/data/squid_db.sql
 %%DATADIR%%/icon/bumper/adir.gif
 %%DATADIR%%/icon/bumper/allow_48.jpg
 %%DATADIR%%/icon/bumper/backup_48.jpg
@@ -284,6 +284,8 @@ etc/sams.conf.sample
 %%DATADIR%%/icon/classic/blank.gif
 %%DATADIR%%/icon/classic/cache_32.jpg
 %%DATADIR%%/icon/classic/cache_48.jpg
+%%DATADIR%%/icon/bumper/cache_32.jpg
+%%DATADIR%%/icon/bumper/cache_48.jpg
 %%DATADIR%%/icon/classic/chname_32.jpg
 %%DATADIR%%/icon/classic/chname_48.jpg
 %%DATADIR%%/icon/classic/config_20.jpg
@@ -388,6 +390,8 @@ etc/sams.conf.sample
 %%DATADIR%%/icon/classic/proxy_big.gif
 %%DATADIR%%/icon/classic/proxyes_32.jpg
 %%DATADIR%%/icon/classic/proxyes_48.jpg
+%%DATADIR%%/icon/bumper/proxyes_32.jpg
+%%DATADIR%%/icon/bumper/proxyes_48.jpg
 %%DATADIR%%/icon/classic/psite.gif
 %%DATADIR%%/icon/classic/puser.gif
 %%DATADIR%%/icon/classic/puser_open.gif
@@ -641,7 +645,6 @@ etc/sams.conf.sample
 %%DATADIR%%/src/userbuttom_2_traffic.php
 %%DATADIR%%/src/userbuttom_3_file.php
 %%DATADIR%%/src/userbuttom_4_site.php
-%%DATADIR%%/src/usersbuttom_4_site.php
 %%DATADIR%%/src/userbuttom_4_time.php
 %%DATADIR%%/src/userbuttom_5_clear.php
 %%DATADIR%%/src/userbuttom_6_chpasswd.php
@@ -654,6 +657,7 @@ etc/sams.conf.sample
 %%DATADIR%%/src/usersbuttom_2_traffic.php
 %%DATADIR%%/src/usersbuttom_3_file.php
 %%DATADIR%%/src/usersbuttom_4_percent.php
+%%DATADIR%%/src/usersbuttom_4_site.php
 %%DATADIR%%/src/usersbuttom_5_recalc.php
 %%DATADIR%%/src/usersbuttom_6_clear.php
 %%DATADIR%%/src/usersbuttom_7_pdf.php
@@ -674,8 +678,8 @@ etc/sams.conf.sample
 @dirrm %%DATADIR%%/icon/bumper
 @dirrm %%DATADIR%%/icon
 @dirrm %%DATADIR%%/doc/img
-@dirrm %%DATADIR%%/doc/EN
 @dirrm %%DATADIR%%/doc/RU
+@dirrm %%DATADIR%%/doc/EN
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/bin
