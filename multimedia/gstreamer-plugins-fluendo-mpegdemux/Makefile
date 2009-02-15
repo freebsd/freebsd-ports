@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gstreamer-plugins-fluendo-mpegdemux
-PORTVERSION=	0.10.15
-PORTREVISION=	1
+PORTVERSION=	0.10.23
 CATEGORIES=	multimedia
 MASTER_SITES=	http://core.fluendo.com/gstreamer/src/gst-fluendo-mpegdemux/
 DISTNAME=	gst-fluendo-mpegdemux-${PORTVERSION}
@@ -18,8 +17,7 @@ COMMENT=	MPEG2 demuxing gstreamer plugin from fluendo
 CFLAGS:=	${CFLAGS} -O2
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
-PLIST_FILES=	lib/gstreamer-0.10/libgstflumpegdemux.a \
-		lib/gstreamer-0.10/libgstflumpegdemux.la \
+PLIST_FILES=	lib/gstreamer-0.10/libgstflumpegdemux.la \
 		lib/gstreamer-0.10/libgstflumpegdemux.so
 
 .include <bsd.port.mk>
