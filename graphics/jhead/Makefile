@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jhead
-PORTVERSION=	2.84
+PORTVERSION=	2.86
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.sentex.net/~mwandel/jhead/ \
 		http://www.is-root.com/myports/
@@ -17,7 +17,6 @@ COMMENT=	Exif Jpeg camera setting parser, rotator and much more
 RUN_DEPENDS=	jpegtran:${PORTSDIR}/graphics/jpeg
 
 MAKEFILE=	makefile
-MANCOMPRESSED=	yes
 
 PORTDOCS=	usage.html
 PLIST_FILES=	bin/jhead
@@ -25,7 +24,7 @@ MAN1=		jhead.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jhead ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/jhead.1.gz ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/jhead.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/usage.html ${DOCSDIR}
