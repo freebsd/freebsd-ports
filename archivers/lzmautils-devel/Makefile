@@ -6,28 +6,31 @@
 #
 
 PORTNAME=	lzmautils
-DISTVERSION=	4.999.3alpha
+DISTVERSION=	4.999.8
 CATEGORIES=	archivers
-MASTER_SITES=	http://tukaani.org/lzma/
-PKGNAMESUFFIX?=	-devel
-DISTNAME=	lzma-${DISTVERSION}
+MASTER_SITES=	http://tukaani.org/xz/
+PKGNAMESUFFIX=	-devel
+DISTNAME=	xz-${DISTVERSION}beta
 
-MAINTAINER=	naylor.b.david@gmail.com
+MAINTAINER=	dragonsa@highveldmail.co.za
 COMMENT=	LZMA compression and decompression tools
 
-CONFLICTS=	lzma-[0-9]* lzmautils-4.[0-3]* lzmautils-[0-3]*
+CONFLICTS=	lzma-[0-9]* lzmautils-4.[0-3]* lzmautils-[0-3]* lzmalib-[0-9]*
 
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 
+CONFIGURE_ARGS+=	--disable-static --disable-nls  # No translations apparent
+
+.if defined(WITHOUT_THREADS)
+CONFIGURE_ARGS+=	--disable-threads
+.endif
+
 MAN1=		lzdiff.1 lzgrep.1 lzmore.1
-MLINKS=		lzma.1 unlzma.1 \
-		lzma.1 lzcat.1 \
-		lzdiff.1 lzcmp.1 \
+MLINKS=		lzdiff.1 lzcmp.1 \
 		lzgrep.1 lzegrep.1 \
 		lzgrep.1 lzfgrep.1 \
-		lzmore.1 lzless.1			
+		lzmore.1 lzless.1
 
 .include <bsd.port.mk>
