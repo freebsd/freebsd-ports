@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Encode-HanConvert
-PORTVERSION=	0.34
+PORTVERSION=	0.35
 CATEGORIES=	chinese perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,5 +18,8 @@ USE_PERL5=	5.7.3+
 PERL_CONFIGURE=	yes
 
 MAN1=		b2g.pl.1 g2b.pl.1
+
+regression-test:
+	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.mk>
