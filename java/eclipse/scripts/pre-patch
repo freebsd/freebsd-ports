@@ -5,7 +5,7 @@ copy_file()
 {
 	srcfile="$1"
 	dstfile="$2"
-	
+
 	case $distfile in
 		*.zip)
 			#We may not want to push all files through sed			echo "zip file"
@@ -32,8 +32,8 @@ copy_dir()
 		find "$dstdir" -name \*.so.\* -delete
 		find "$dstdir" -type f -print0 | \
 		xargs -0 sed -i '.bak' 's/linux/freebsd/g; s/Linux/FreeBSD/g; s/x86_64/amd64/g'
-		find "$dstdir" -name \*.bak -delete 
-	fi 
+		find "$dstdir" -name \*.bak -delete
+	fi
 }
 
 prepare_files()
@@ -74,35 +74,31 @@ features/org.eclipse.equinox.executable/bin/gtk/linux
 features/org.eclipse.equinox.executable/bin/gtk/linux/x86
 features/org.eclipse.equinox.executable/bin/gtk/linux/x86_64
 features/org.eclipse.equinox.executable/library/gtk/make_linux.mak
+plugins/org.eclipse.core.filesystem/natives/unix/linux
 plugins/org.eclipse.core.filesystem.linux.x86
 plugins/org.eclipse.core.filesystem.linux.x86_64
 plugins/org.eclipse.core.filesystem.linux.x86/os/linux
 plugins/org.eclipse.core.filesystem.linux.x86_64/os/linux
-plugins/org.eclipse.core.filesystem/natives/unix/linux
-plugins/org.eclipse.jdt.source.linux.gtk.x86
-plugins/org.eclipse.jdt.source.linux.gtk.x86_64
-plugins/org.eclipse.pde.source.linux.gtk.x86
-plugins/org.eclipse.pde.source.linux.gtk.x86_64
-plugins/org.eclipse.platform.source.linux.gtk.x86
-plugins/org.eclipse.platform.source.linux.gtk.x86_64
-plugins/org.eclipse.rcp.source.linux.gtk.x86
-plugins/org.eclipse.rcp.source.linux.gtk.x86_64
-plugins/org.eclipse.swt.gtk.linux.x86
-plugins/org.eclipse.swt.gtk.linux.x86_64
-plugins/org.eclipse.update.core.linux
-plugins/org.eclipse.update.core.linux/os/linux
-plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.linux.x86
-plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.linux.x86_64
-plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.linux.x86/launcher.gtk.linux.x86.properties
-plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.linux.x86_64/launcher.gtk.linux.x86_64.properties
+plugins/org.eclipse.core.net.linux.x86
+plugins/org.eclipse.core.net/fragments/org.eclipse.core.net.linux.x86
 plugins/org.eclipse.equinox.launcher.gtk.linux.x86
+plugins/org.eclipse.equinox.launcher.gtk.linux.x86/launcher.gtk.linux.x86.properties
 plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64
 plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64/launcher.gtk.linux.x86_64.properties
-plugins/org.eclipse.equinox.launcher.gtk.linux.x86/launcher.gtk.linux.x86.properties
-plugins/org.eclipse.cvs.source.linux.gtk.x86
-plugins/org.eclipse.cvs.source.linux.gtk.x86_64
+plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.linux.x86
+plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.linux.x86/launcher.gtk.linux.x86.properties
+plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.linux.x86_64
+plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.linux.x86_64/launcher.gtk.linux.x86_64.properties
 plugins/org.eclipse.jface/src/org/eclipse/jface/resource/jfacefonts_linux.properties
 plugins/org.eclipse.jface/src/org/eclipse/jface/resource/jfacefonts_linux_gtk.properties
+plugins/org.eclipse.swt.gtk.linux.x86
+plugins/org.eclipse.swt.gtk.linux.x86
+plugins/org.eclipse.swt.gtk.linux.x86.source
+plugins/org.eclipse.swt.gtk.linux.x86_64
+plugins/org.eclipse.swt.gtk.linux.x86_64.source
+plugins/org.eclipse.update.core.linux
+plugins/org.eclipse.update.core.linux/os/linux
+plugins/org.eclipse.update.core.linux.source
 "
 
 SWTGTK="plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library"

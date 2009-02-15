@@ -1,7 +1,7 @@
 [Desktop Entry]
 Comment=Eclipse IDE
-Name=Eclipse
-Exec=%%PREFIX%%/bin/eclipse
+Name=%%ECLIPSE%%
+Exec=%%PREFIX%%/bin/%%ECLIPSE%%
 Encoding=UTF-8
 Terminal=false
 Type=Application
