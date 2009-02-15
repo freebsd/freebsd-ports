@@ -1,3 +1,3 @@
-MD5 (Catalyst-Plugin-Session-Store-Memcached-0.02.tar.gz) = e84aeb94978e10810383553c9bf91dd1
-SHA256 (Catalyst-Plugin-Session-Store-Memcached-0.02.tar.gz) = 2241052ae836a09e5ec967241bb000b4f2bf05112d6590d71d346793a7b68191
-SIZE (Catalyst-Plugin-Session-Store-Memcached-0.02.tar.gz) = 4199
+MD5 (Catalyst-Plugin-Session-Store-Memcached-0.03.tar.gz) = 7bb4e6e1c28e6be2faf39fd8d7d16906
+SHA256 (Catalyst-Plugin-Session-Store-Memcached-0.03.tar.gz) = a2cd6f2abaf11345995e672cf21792c8237d0dab0bd30cebcabbcc44b3fd92b3
+SIZE (Catalyst-Plugin-Session-Store-Memcached-0.03.tar.gz) = 20827
