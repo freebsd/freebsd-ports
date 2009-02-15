@@ -43,6 +43,17 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Jpeg2000.pm
 %%SITE_PERL%%/Image/ExifTool/Kodak.pm
 %%SITE_PERL%%/Image/ExifTool/KyoceraRaw.pm
+%%SITE_PERL%%/Image/ExifTool/Lang/ch_s.pm
+%%SITE_PERL%%/Image/ExifTool/Lang/cz.pm
+%%SITE_PERL%%/Image/ExifTool/Lang/de.pm
+%%SITE_PERL%%/Image/ExifTool/Lang/en_ca.pm
+%%SITE_PERL%%/Image/ExifTool/Lang/en_gb.pm
+%%SITE_PERL%%/Image/ExifTool/Lang/es.pm
+%%SITE_PERL%%/Image/ExifTool/Lang/fr.pm
+%%SITE_PERL%%/Image/ExifTool/Lang/it.pm
+%%SITE_PERL%%/Image/ExifTool/Lang/jp.pm
+%%SITE_PERL%%/Image/ExifTool/Lang/nl.pm
+%%SITE_PERL%%/Image/ExifTool/Lang/pl.pm
 %%SITE_PERL%%/Image/ExifTool/Leaf.pm
 %%SITE_PERL%%/Image/ExifTool/MIE.pm
 %%SITE_PERL%%/Image/ExifTool/MIEUnits.pod
@@ -78,6 +89,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Sigma.pm
 %%SITE_PERL%%/Image/ExifTool/SigmaRaw.pm
 %%SITE_PERL%%/Image/ExifTool/Sony.pm
+%%SITE_PERL%%/Image/ExifTool/TagInfoXML.pm
 %%SITE_PERL%%/Image/ExifTool/TagLookup.pm
 %%SITE_PERL%%/Image/ExifTool/TagNames.pod
 %%SITE_PERL%%/Image/ExifTool/Unknown.pm
@@ -188,6 +200,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/index.html
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/ExifTool
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
+@dirrm %%SITE_PERL%%/Image/ExifTool/Lang
 @dirrm %%SITE_PERL%%/Image/ExifTool
 @dirrmtry %%SITE_PERL%%/Image
 @dirrmtry %%SITE_PERL%%/File
