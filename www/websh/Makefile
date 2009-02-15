@@ -21,7 +21,7 @@ OPTIONS+=	WSSTATIC "Link the objects into the module statically" off
 
 TCL_DVER=	${TCL_VER:S/.//}
 
-USE_TCL=	yes
+USE_TCL=	84
 USE_AUTOTOOLS=	autoconf:262
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/unix
 CONFIGURE_ARGS+=--with-tclinclude=${TCL_INCLUDEDIR} \

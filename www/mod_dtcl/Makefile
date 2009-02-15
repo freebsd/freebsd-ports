@@ -15,8 +15,8 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Embeds a TCL8 interpreter in the Apache server
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
-USE_TCL=	yes
-USE_TCL_BUILD=	yes
+USE_TCL=	84
+USE_TCL_BUILD=	84
 
 WRKSRC=		${WRKDIR}/mod_dtcl
 MAKEFILE=	${FILESDIR}/Makefile.bsd
