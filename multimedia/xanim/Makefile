@@ -25,6 +25,7 @@ MAN1=		xanim.1
 MAKE_ARGS+=	-j 2 # safe and helps even the single-CPU machines
 DLLDIR=		${PREFIX}/lib/X11/xanim
 PLIST_FILES+=	bin/xanim
+NO_CDROM=	without fee
 
 post-extract:
 	${CP} ${WRKSRC}/docs/xanim.man ${WRKSRC}
