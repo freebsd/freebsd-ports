@@ -1,0 +1,14 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Amazon/SimpleDB/.packlist
+%%SITE_PERL%%/Amazon/SimpleDB.pm
+%%SITE_PERL%%/Amazon/SimpleDB/Domain.pm
+%%SITE_PERL%%/Amazon/SimpleDB/ErrorResponse.pm
+%%SITE_PERL%%/Amazon/SimpleDB/GetAttributesResponse.pm
+%%SITE_PERL%%/Amazon/SimpleDB/Item.pm
+%%SITE_PERL%%/Amazon/SimpleDB/ListDomainsResponse.pm
+%%SITE_PERL%%/Amazon/SimpleDB/QueryResponse.pm
+%%SITE_PERL%%/Amazon/SimpleDB/Response.pm
+@dirrmtry %%SITE_PERL%%/Amazon/SimpleDB
+@dirrmtry %%SITE_PERL%%/Amazon
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Amazon/SimpleDB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Amazon
