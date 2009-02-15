@@ -2859,7 +2859,6 @@ erlang-doc                      ports/lang/erlang-doc
 erlang-lite                     ports/lang/erlang-lite
 erlang-mysql                    ports/databases/erlang-mysql
 erlang_xmlrpc                   ports/net/erlang_xmlrpc
-erlslang                        ports/devel/erlslang
 ermixer                         ports/audio/ermixer
 eroaster                        ports/sysutils/eroaster
 error                           ports/devel/error
@@ -5047,6 +5046,7 @@ horde-wicked                    ports/www/horde-wicked
 hostsentry                      ports/security/hostsentry
 hot-babe                        ports/deskutils/hot-babe
 hotkeys                         ports/misc/hotkeys
+hotssh                          ports/security/hotssh
 hotwayd                         ports/mail/hotwayd
 hotwire-shell                   ports/x11/hotwire-shell
 hourglass                       ports/sysutils/hourglass
@@ -23174,6 +23174,7 @@ xpi-tabletools                  ports/www/xpi-tabletools
 xpi-tabmixplus                  ports/www/xpi-tabmixplus
 xpi-togglewordwrap              ports/www/xpi-togglewordwrap
 xpi-torbutton                   ports/www/xpi-torbutton
+xpi-twitterfox                  ports/www/xpi-twitterfox
 xpi-unplug                      ports/www/xpi-unplug
 xpi-urllink                     ports/www/xpi-urllink
 xpi-videodownloader             ports/www/xpi-videodownloader
