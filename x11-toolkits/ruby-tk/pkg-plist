@@ -77,7 +77,7 @@
 %%RUBY_LIBDIR%%/tk/textwindow.rb
 %%RUBY_LIBDIR%%/tk/timer.rb
 %%RUBY_LIBDIR%%/tk/toplevel.rb
-%%RUBY19%%%%RUBY_LIBDIR%%/tk/ttk_selector.rb
+%%RUBY_LIBDIR%%/tk/ttk_selector.rb
 %%RUBY_LIBDIR%%/tk/txtwin_abst.rb
 %%RUBY_LIBDIR%%/tk/validation.rb
 %%RUBY_LIBDIR%%/tk/variable.rb
@@ -373,6 +373,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/check2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/clrpick.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/colors.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/combo.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/cscroll.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/ctext.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/dialog1.rb
@@ -399,15 +400,17 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/items.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/ixset
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/ixset2
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/knightstour.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/label.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/labelframe.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/mclist.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/menu.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/menu84.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/menubu.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/msgbox.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/msgbox2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/paned1.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/paned2.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/patch_1.1c1
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/pendulum.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/plot.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/puzzle.rb
@@ -416,7 +419,6 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/radio3.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/rmt
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/rolodex
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/rolodex-j
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/ruler.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/sayings.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/search.rb
@@ -426,8 +428,16 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/style.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/tcolor
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/text.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/textpeer.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/timer
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/tkencoding.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/toolbar.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/tree.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/ttkbut.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/ttknote.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/ttkmenu.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/ttkpane.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/ttkprogress.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/twind.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/twind2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-en/unicodeout.rb
@@ -501,6 +511,18 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/tcolor
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/text.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/timer
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/toolbar.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/ttknote.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/ttkpane.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/knightstour.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/combo.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/mclist.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/tree.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/ttkbut.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/msgbox2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/textpeer.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/ttkmenu.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/ttkprogress.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/twind.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/twind2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/unicodeout.rb
@@ -986,6 +1008,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/scrollframe.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/irbtk.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cd_timer.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/figmemo_sample.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/24hr_clock.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tktextio.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tkrttimer.rb
@@ -998,11 +1021,13 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tkmultilistframe.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tkoptdb-safeTk.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tkoptdb.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tksleep_sample.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tktextframe.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tktimer2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tktimer3.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tktree.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tktree.tcl
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ttk_wrapper.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/vu
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/tktable
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/tkHTML/page4
