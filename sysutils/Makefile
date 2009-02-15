@@ -536,6 +536,7 @@
     SUBDIR += p5-SyslogScan
     SUBDIR += p5-Tie-Syslog
     SUBDIR += p5-Unix-ConfigFile
+    SUBDIR += p5-Unix-Lsof
     SUBDIR += p5-Unix-Mknod
     SUBDIR += p5-Unix-Processors
     SUBDIR += p5-Unix-Syslog
