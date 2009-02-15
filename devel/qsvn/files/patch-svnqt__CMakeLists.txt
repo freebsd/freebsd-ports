@@ -1,0 +1,11 @@
+--- ./svnqt/CMakeLists.txt.orig	2009-01-07 14:30:07.000000000 +0300
++++ ./svnqt/CMakeLists.txt	2009-02-15 13:23:03.000000000 +0300
+@@ -98,7 +98,7 @@
+ SET(TOASCII "toAscii")
+ SET(HOMEDIR "homePath")
+ IF(NOT svnqt-name)
+-SET(svnqt-name svnqt)
++SET(svnqt-name svnqt4)
+ ENDIF(NOT svnqt-name)
+ 
+ SET(QDATABASE "QSqlDatabase")
