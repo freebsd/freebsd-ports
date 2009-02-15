@@ -14,8 +14,8 @@ MASTER_SITES=	http://www.flightlab.com/~joe/cost/
 MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	SGML/XML application programming tool
 
-USE_TCL=	yes
-USE_TCL_BUILD=	yes
+USE_TCL=	84
+USE_TCL_BUILD=	84
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=--with-tcl=${LOCALBASE}/lib/tcl8.4 \
