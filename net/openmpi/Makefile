@@ -9,9 +9,9 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-DISTVERSION=	1.2.8
+DISTVERSION=	1.3
 CATEGORIES=	net parallel
-MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.2/downloads/
+MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.3/downloads/
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	A High Performance Message Passing Library
@@ -21,7 +21,6 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_FORTRAN=	yes
 
 MPIBASE?=	mpi
 MPIDIR?=	${MPIBASE}/${UNIQUENAME}
@@ -39,26 +38,50 @@ USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
 MANPREFIX=	${PREFIX}/${MPIDIR}
 .include "${.CURDIR}/Makefile.man"
 
+OPTIONS=	FORTRAN "Enable Fortran support" on \
+		TORQUE "Enable Torque support" off \
+		SGE "Enable SGE support" off
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
 
-.if exists(${LOCALBASE}/lib/libtorque.so)
-WITH_TORQUE=	yes
+.if defined(WITH_FORTRAN)
+USE_FORTRAN=	yes
+PLIST_SUB+=	FORTRAN=""
+.else
+CONFIGURE_ARGS+=	--disable-mpi-f77 --disable-mpi-f90
+PLIST_SUB+=	FORTRAN="@comment "
+.endif
+
+.if defined(WITH_SGE)
+SGE_BASE?=      sge
+SGE_ROOT=       ${LOCALBASE}/${SGE_BASE}
+SGE_ARCH=	fbsd-${ARCH}
+RUN_DEPENDS+=	${SGE_ROOT}/fbsd-${ARCH}/qrsh:${PORTSDIR}/sysutils/sge62
+CONFIGURE_ARGS+=	--with-sge
+CONFIGURE_ENV+=	SGE_ROOT=${SGE_ROOT}
+PLIST_FILES+=	${MPIDIR}/lib/openmpi/mca_ras_gridengine.la \
+		${MPIDIR}/lib/openmpi/mca_ras_gridengine.so \
+		${MPIDIR}/share/openmpi/help-ras-gridengine.txt
+.else
+CONFIGURE_ARGS+=	--without-sge
 .endif
 
 .if defined(WITH_TORQUE)
 LIB_DEPENDS+=	torque.2:${PORTSDIR}/sysutils/torque
 CONFIGURE_ARGS+=	--with-tm=${LOCALBASE}
-PLIST_SUB+=	TORQUE=""
+PLIST_FILES+=	${MPIDIR}/lib/openmpi/mca_plm_tm.so \
+		${MPIDIR}/lib/openmpi/mca_plm_tm.la \
+		${MPIDIR}/lib/openmpi/mca_ras_tm.la \
+		${MPIDIR}/lib/openmpi/mca_ras_tm.so \
+		${MPIDIR}/share/openmpi/help-plm-tm.txt \
+		${MPIDIR}/share/openmpi/help-ras-tm.txt
 .else
-PLIST_SUB+=	TORQUE="@comment "
+CONFIGURE_ARGS+=	--without-tm
 .endif
-
-post-install:
-	cd ${WRKSRC}/ompi/mpi && make install-man
 
 #######################################################################
 # The following targets are for the port maintainer.  Use at your own #
@@ -68,12 +91,16 @@ post-install:
 # some effort and there's only one entry at this time.                #
 #######################################################################
 build-plist: Makefile
-	${RM} ${PLIST}
+	${RM} -f ${PLIST}
 	${FIND} ${PREFIX}/${MPIDIR} -name man -prune -o -type f -print | \
-	    ${SED} -e 's|${PREFIX}/${MPIDIR}|%%MPIDIR%%|' | \
+	    ${SED} -e 's|${PREFIX}/${MPIDIR}|%%MPIDIR%%|' \
+		-e 's|^\(.*f77.*\)|%%FORTRAN%%\1|' \
+		-e 's|^\(.*f90.*\)|%%FORTRAN%%\1|' | \
 	    ${SORT} >> ${PLIST}
 	${FIND} ${PREFIX}/${MPIDIR} -name man -prune -o -type l -print | \
-	    ${SED} -e 's|${PREFIX}/${MPIDIR}|%%MPIDIR%%|' | \
+	    ${SED} -e 's|${PREFIX}/${MPIDIR}|%%MPIDIR%%|' \
+		-e 's|^\(.*f77.*\)|%%FORTRAN%%\1|' \
+		-e 's|^\(.*f90.*\)|%%FORTRAN%%\1|' | \
 	    ${SORT} >> ${PLIST}
 	${FIND} ${PREFIX}/${MPIDIR} -type d | \
 	    ${EGREP} -v "${PREFIX}/${MPIDIR}$$" | \
