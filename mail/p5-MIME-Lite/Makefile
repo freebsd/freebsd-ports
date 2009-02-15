@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	MIME-Lite
-PORTVERSION=	3.02.3
+PORTVERSION=	3.02.4
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.([0-9]+)$/\1/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	A simple interface for creating (not parsing!) MIME messages
 
 RUN_DEPENDS=	p5-Email-Date-Format>=1.000:${PORTSDIR}/mail/p5-Email-Date-Format \
