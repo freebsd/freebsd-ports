@@ -15,7 +15,7 @@ DISTNAME=	${TKPKG}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System tray icon support
 
-USE_TK=		yes
+USE_TK=		84
 USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR} \
