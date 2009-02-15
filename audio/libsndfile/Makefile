@@ -15,6 +15,7 @@ COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 CONFIGURE_ARGS=	--disable-gcc-pipe \
 		--disable-sqlite
 CONFIGURE_ENV=	CPPFLAGS="-isystem /usr/include -isystem ${LOCALBASE}/include" \
