@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Sys-Sig
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Return signal constants for this host
 
 PERL_CONFIGURE=	yes
