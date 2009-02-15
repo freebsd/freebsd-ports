@@ -1,0 +1,17 @@
+clive-utils contains additional utilities that can be used together with 
+clive(1) (Historically, these utilities were part of clive(1) 1.x and were
+written in Python/Newt; they have now been rewritten in Perl/Tk to replace
+the features that were removed in clive 2.0):
+
+-clivefeed(1), a utility that parses RSS feeds containing video page links
+	and uses clive(1) to extract them;
+
+-clivescan(1), a utility that scans video pages for video links and uses
+	clive(1) to extract them; and
+
+-clivepass(1), a utility that can be used to create and change passwords
+	for websites used by clive(1). The passwords are encrypted and
+	saved along with the username information. Access is restricted
+	by using a global passphrase.
+
+WWW:	http://code.google.com/p/clive-utils/

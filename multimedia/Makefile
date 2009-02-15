@@ -20,6 +20,7 @@
     SUBDIR += cclive
     SUBDIR += cheese
     SUBDIR += clive
+    SUBDIR += clive-utils
     SUBDIR += clive1
     SUBDIR += clutter-gst
     SUBDIR += cx88
