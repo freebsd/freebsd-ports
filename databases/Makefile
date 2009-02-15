@@ -209,6 +209,7 @@
     SUBDIR += oracle7-client
     SUBDIR += oracle8-client
     SUBDIR += oracle_odbc_driver
+    SUBDIR += p5-Amazon-SimpleDB
     SUBDIR += p5-ApacheDBILogConfig
     SUBDIR += p5-ApacheDBILogger
     SUBDIR += p5-AsciiDB-TagFile
