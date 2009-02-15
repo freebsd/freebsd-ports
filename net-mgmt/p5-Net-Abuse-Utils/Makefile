@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Net-Abuse-Utils
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Routines useful for processing network abuse
 
 RUN_DEPENDS=	p5-Email-Address>0:${PORTSDIR}/mail/p5-Email-Address \
