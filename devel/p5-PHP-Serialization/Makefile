@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	PHP-Serialization
-PORTVERSION=	0.27
+PORTVERSION=	0.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	PHP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Converting the output of PHP serialize() into the Perl
 
 PERL_CONFIGURE=	5.8.0+
