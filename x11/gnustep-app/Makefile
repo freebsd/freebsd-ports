@@ -219,6 +219,7 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	Melodie:audio/etoile-melodie \
 	StepChat:net-im/etoile-stepchat \
 	LaternaMagica:graphics/laternamagica \
+	SimpleAgenda:deskutils/simpleagenda \
 
 #	CameraTransfer:graphics/cameratransfer \
 #	Mantella:www/etoile-mantella \
