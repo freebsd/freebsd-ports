@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libfirm
-PORTVERSION=	1.15.0
+PORTVERSION=	1.16.0
 CATEGORIES=	devel lang
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	christoph.mallon@gmx.de
 COMMENT=	A graph-based SSA intermediate representation library for compilers
@@ -26,6 +25,8 @@ OPTIONS=	DEBUG "Build a debug version of libFIRM" OFF
 
 .ifdef WITH_DEBUG
 CONFIGURE_ARGS+=	--enable-debug
+.else
+CONFIGURE_ARGS+=	--disable-debug
 .endif
 
 .include <bsd.port.post.mk>
