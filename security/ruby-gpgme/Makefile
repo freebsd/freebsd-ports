@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby interface to GnuPG Made Easy (GPGME)
 
 LIB_DEPENDS=	gpgme03.9:${PORTSDIR}/security/gpgme03
@@ -36,13 +36,18 @@ post-build:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
-.for f in ${DOCS}
-	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-.endfor
+	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} ${DOCS} ${RUBY_MODDOCDIR}/)
+
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
 .endfor
+	@${FIND} -ds ${RUBY_MODDOCDIR} -type f -print | ${SED} -E -e \
+		's,^${PREFIX}/?,,' >> ${TMPPLIST}
+	@${FIND} -ds ${RUBY_MODDOCDIR} -type d -print | ${SED} -E -e \
+		's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/share/doc/ruby18/ 2>/dev/null || true" \
+		>> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
