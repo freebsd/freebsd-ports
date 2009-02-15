@@ -15,4 +15,6 @@ VMware backdoor function and I have cut many corners writing them.
 * vmshrink: virtual disk shrink program
 * vmftp: host-guest file transfer program
 
+LICENSE: no particular restriction on redistribution
+
 WWW: http://chitchat.at.infoseek.co.jp/vmware/vmtools.html

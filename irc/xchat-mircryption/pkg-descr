@@ -19,6 +19,6 @@ unobtrusive.
 temporarily disable & re-enable encryption on a channel, send plain
 text quicky, etc.
 
-WWW: http://www.donationcoder.com/Software/Mouser/mircryption/index.php
+LICENSE: free without any limitation
 
--- lioux@FreeBSD.org
+WWW: http://www.donationcoder.com/Software/Mouser/mircryption/index.php
