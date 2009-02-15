@@ -1,3 +1,4 @@
 @comment $FreeBSD$
 @exec mkdir -p %%PEBBLE_HOME%%
 @unexec if cmp -s %D/etc/pebble.properties.sample %D/etc/pebble.properties; then rm -f %D/etc/pebble.properties; fi
+etc/pebble.properties.sample

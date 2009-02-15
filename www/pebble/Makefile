@@ -38,7 +38,7 @@ PORTDOCS=	configuration.html credits.html images index.html \
 		screenshots.html security.html upgrading1x.html \
 		upgrading2x.html
 .endif
-PLIST_FILES=	${WEBAPP_SUBDIR}/${PORTNAME}.war etc/pebble.properties.sample
+PLIST_FILES=	${WEBAPP_SUBDIR}/${PORTNAME}.war
 PEBBLE_CONTEXT=	WEB-INF/applicationContext-pebble.xml
 
 do-patch:
