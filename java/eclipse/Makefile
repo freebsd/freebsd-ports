@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	eclipse
-PORTVERSION=	3.3.2
+PORTVERSION=	3.4.1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200802211800
+MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200809111700
 DISTNAME=	eclipse-sourceBuild-srcIncluded-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
@@ -17,8 +17,9 @@ MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	An open extensible IDE for anything and nothing in particular
 
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
-		zip:${PORTSDIR}/archivers/zip
-BUILD_DEPENDS+=	${EXTRACT_DEPENDS}
+		zip:${PORTSDIR}/archivers/zip \
+		unzip:${PORTSDIR}/archivers/unzip
+PATCH_DEPENDS+=	gpatch:${PORTSDIR}/devel/patch
 
 ECLIPSE=	${PORTNAME}
 
@@ -27,12 +28,14 @@ USE_GMAKE=	yes
 USE_ZIP=	yes
 USE_GL=		glu
 
+PATCH=		${LOCALBASE}/bin/gpatch
+
 .if !defined(WITHOUT_MOZILLA)
-USE_GECKO=	xulrunner firefox mozilla seamonkey
+USE_GECKO=	firefox xulrunner seamonkey
 .endif
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6
 JAVA_OS=	native
 
 NO_WRKSUBDIR=	yes
@@ -59,10 +62,6 @@ MAKE_CAIRO=	make_cairo
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-JAVA_VERSION=	1.6
-.endif
 
 .if ${OSVERSION} >= 800000
 JAVA_VENDOR=	bsdjava
@@ -96,36 +95,62 @@ MAKE_ENV+=	BROWSER=${BROWSER} \
 
 PLIST_FILES=	bin/${ECLIPSE} share/applications/${ECLIPSE}.desktop
 
-SWTCAIRO=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/cairo/library
+SWTBASE=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT
 SWTGTK=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI
 SWTMOZ=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT Mozilla
 
-post-patch:
-	@${PATCH} ${PATCH_DIST_ARGS} "${WRKSRC}/plugins/org.eclipse.core.filesystem/natives/unix/freebsd/Makefile" ${FILESDIR}/post-patch-plugins-org.eclipse.core.filesystem-natives-unix-freebsd-Makefile
-	@${PATCH} ${PATCH_DIST_ARGS} "${WRKSRC}/plugins/org.eclipse.update.core.freebsd/src/update.c" ${FILESDIR}/post-patch-plugins-org.eclipse.update.core.freebsd-src-update.c
-	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/gtk/library/build.sh" ${FILESDIR}/post-patch-plugins-swt-gtk-build.sh
-	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/gtk/library/build.xml" ${FILESDIR}/post-patch-plugins-swt-PI-gtk-library-build.xml
-	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/gtk/library/make_freebsd.mak" ${FILESDIR}/post-patch-plugins-swt-gtk-make_freebsd.mak
-	@${PATCH} ${PATCH_DIST_ARGS} "${SWTMOZ}/gtk/org/eclipse/swt/browser/MozillaDelegate.java" ${FILESDIR}/post-patch-plugins-swt-mozilla-gtk-swt-browser-MozillaDelegate.java
-	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/gtk/org/eclipse/swt/internal/gtk/OS.java" ${FILESDIR}/post-patch-plugins-swt-gtk-swt-internal-gtk-OS.java
-	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/gtk/library/os.c" ${FILESDIR}/post-patch-plugins-swt-gtk-library-os.c
-	@${PATCH} ${PATCH_DIST_ARGS} "${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT/gtk/org/eclipse/swt/widgets/FileDialog.java" ${FILESDIR}/post-patch-plugins-swt-gtk-swt-FileDialog.java
+ECLIPSE_IU=FreeBSD Eclipse SDK
+ECLIPSE_IU_VERSION=${PORTVERSION}.${PORTREVISION}
 
-	@${REINPLACE_CMD} -e 's|%%GECKO%%|${GECKO}|g' \
-		"${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh" \
-		"${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_freebsd.mak"
-	@${RM} ${WRKSRC}/features/org.eclipse.platform/build.xml
-	@${CP} ${FILESDIR}/org.eclipse.platform-build.xml ${WRKSRC}/features/org.eclipse.platform/build.xml
-	@${RM} ${WRKSRC}/features/org.eclipse.rcp/build.xml
-	@${CP} ${FILESDIR}/org.eclipse.rcp-build.xml ${WRKSRC}/features/org.eclipse.rcp/build.xml
+post-patch:
+	@${PATCH} ${PATCH_DIST_ARGS} -d "${SWTBASE}" -i ${FILESDIR}/post-patch-plugins-org.eclipse.swt-Eclipse_SWT-gtk-org-eclipse-swt-widgets-FileDialog.java
+	@${PATCH} ${PATCH_DIST_ARGS} -d "${SWTBASE}" -i ${FILESDIR}/post-patch-plugins-org.eclipse.swt-Eclipse_SWT-gtk-org-eclipse-swt-widgets-DirectoryDialog.java
+	@${PATCH} ${PATCH_DIST_ARGS} -d "${SWTGTK}" -i ${FILESDIR}/post-patch-plugins-org.eclipse.swt-Eclipse_SWT_PI-gtk-library-build.sh
+	@${PATCH} ${PATCH_DIST_ARGS} -d "${SWTGTK}" -i ${FILESDIR}/post-patch-plugins-org.eclipse.swt-Eclipse_SWT_PI-gtk-library-build.xml
+	@${PATCH} ${PATCH_DIST_ARGS} -d "${SWTGTK}" -i ${FILESDIR}/post-patch-plugins-org.eclipse.swt-Eclipse_SWT_PI-gtk-library-make_freebsd.mak
+	@${PATCH} ${PATCH_DIST_ARGS} -d "${SWTGTK}" -i ${FILESDIR}/post-patch-plugins-org.eclipse.swt-Eclipse_SWT_PI-gtk-org-eclipse-swt-internal-gtk-OS.java
+	@${PATCH} ${PATCH_DIST_ARGS} -d "${SWTMOZ}" -i ${FILESDIR}/post-patch-plugins-org.eclipse.swt-Eclipse_SWT_Mozilla-gtk-org-eclipse-swt-browser-MozillaDelegate.java
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
 	./build -os ${ECLIPSE_OS} -ws ${ECLIPSE_WS} -arch ${ECLIPSE_ARCH} -compilelibs)
+	@${JAVA} \
+	  -jar ${WRKSRC}/eclipse/plugins/org.eclipse.equinox.launcher_1.0.101.R34x_v20080819.jar \
+	  -data ${WRKSRC}/workspace \
+	  -application org.eclipse.equinox.p2.metadata.generator.EclipseGenerator \
+	  -flavor tooling \
+	  -metadataRepositoryName "FreeBSD Eclipse" \
+	  -artifactRepositoryName "FreeBSD Eclipse" \
+	  -metadataRepository "file:${WRKSRC}/eclipse/metadata" \
+	  -artifactRepository "file:${WRKSRC}/eclipse/metadata" \
+	  -root "${ECLIPSE_IU}" \
+	  -rootVersion "${ECLIPSE_IU_VERSION}" \
+	  -source ${WRKSRC}/eclipse \
+	  -append \
+	  -publishArtifacts
 
 do-install:
 	@${MKDIR} ${PORTDESTDIR}
-	@${CP} -R ${WRKSRC}/eclipse/ ${PORTDESTDIR}
+	@${JAVA} \
+	  -Declipse.p2.data.area="file:${PORTDESTDIR}/p2" \
+	  -jar ${WRKSRC}/eclipse/plugins/org.eclipse.equinox.launcher_1.0.101.R34x_v20080819.jar \
+	  -data ${WRKSRC}/workspace \
+	  -application org.eclipse.equinox.p2.director.app.application \
+	  -flavor tooling \
+	  -metadataRepository "file:${WRKSRC}/eclipse/metadata" \
+	  -artifactRepository "file:${WRKSRC}/eclipse/metadata" \
+	  -installIU "${ECLIPSE_IU}" \
+	  -version "${ECLIPSE_IU_VERSION}" \
+	  -p2.os ${ECLIPSE_OS} \
+	  -p2.ws ${ECLIPSE_WS} \
+	  -p2.arch ${ECLIPSE_ARCH} \
+	  -profile SDKProfile \
+	  -profileProperties org.eclipse.update.install.features=true \
+	  -destination "${PORTDESTDIR}" \
+	  -bundlepool "${PORTDESTDIR}" \
+	  -roaming
+	(cd ${WRKSRC}/eclipse; \
+	  ${CP} -R about.html epl-v10.html icon.xpm notice.html readme ${PORTDESTDIR})
 	@${SED} \
 	  -e "s+%%ECLIPSE_HOME%%+${PORTDESTDIR}+g" \
 	  -e "s+%%PREFIX%%+${PREFIX}+g" \
@@ -134,31 +159,33 @@ do-install:
 	  -e "s+%%BROWSER%%+${BROWSER}+g" \
 	  -e "s,%%JAVA_VERSION%%,${JAVA_VERSION},g" \
 	  -e "s+%%JAVA_OS%%+${JAVA_OS}+g" \
-	${FILESDIR}/eclipse.in > ${WRKSRC}/eclipse.tmp
+	  ${FILESDIR}/eclipse.in > ${WRKSRC}/eclipse.tmp
 .if defined(JAVA_VENDOR)
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 	  -e "s+%%JAVA_VENDOR_SPECIFICATION%%+JAVA_VENDOR=\"${JAVA_VENDOR}\"+g" \
 	  ${WRKSRC}/eclipse.tmp
 .else
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 	  -e "s+%%JAVA_VENDOR_SPECIFICATION%%++g" \
 	  ${WRKSRC}/eclipse.tmp
 .endif
-	${INSTALL_SCRIPT} ${WRKSRC}/eclipse.tmp ${PREFIX}/bin/${ECLIPSE}
+	@${INSTALL_SCRIPT} ${WRKSRC}/eclipse.tmp ${PREFIX}/bin/${ECLIPSE}
 	@${SED} \
 	  -e "s+%%ECLIPSE_HOME%%+${PORTDESTDIR}+g" \
+	  -e "s+%%ECLIPSE%%+${ECLIPSE}+g" \
 	  -e "s+%%PREFIX%%+${PREFIX}+g" \
-	${FILESDIR}/eclipse.desktop > ${WRKSRC}/eclipse.desktop.tmp
-	${MKDIR} ${PREFIX}/share/applications/ || ${TRUE}
-	${INSTALL_DATA} ${WRKSRC}/eclipse.desktop.tmp ${PREFIX}/share/applications/${ECLIPSE}.desktop
-	${INSTALL_PROGRAM} ${WRKSRC}/features/org.eclipse.equinox.executable/library/gtk/eclipse ${PORTDESTDIR}/eclipse
+	  ${FILESDIR}/eclipse.desktop > ${WRKSRC}/eclipse.desktop.tmp
+	@${MKDIR} ${PREFIX}/share/applications/ || ${TRUE}
+	@${INSTALL_DATA} ${WRKSRC}/eclipse.desktop.tmp ${PREFIX}/share/applications/${ECLIPSE}.desktop
 	@-update-desktop-database
-	@(cd ${WRKSRC}; ${FIND} -s eclipse -not -type d) \
-	  | ${SED} -e "s+^eclipse+${ECLIPSE}+g" >> ${TMPPLIST}
+	@(cd ${PREFIX}; ${FIND} -s ${ECLIPSE} -not -type d) >> ${TMPPLIST}
 	@echo '@exec ${PREFIX}/bin/update-desktop-database > /dev/null || /usr/bin/true' >> ${TMPPLIST}
-	@(cd ${WRKSRC}; ${FIND} -s -d eclipse -type d) \
-	  | ${SED} -e "s+^eclipse+${ECLIPSE}+g" \
-	    -ne 's,^,@dirrm ,p' >> ${TMPPLIST}
+	@(cd ${PREFIX}; ${FIND} -s -d ${ECLIPSE} -type d) | ${SED} -ne 's,^,@dirrm ,p' >> ${TMPPLIST}
 	@echo '@unexec ${PREFIX}/bin/update-desktop-database > /dev/null || /usr/bin/true' >> ${TMPPLIST}
 
+setup-user:
+	@echo 'Preparing Eclipse configuration for user ${USER}'
+	@${PREFIX}/bin/${ECLIPSE} -initialize -clean -consoleLog
+	@${FIND} ${HOME}/.eclipse -exec touch {} \;
+	
 .include <bsd.port.post.mk>

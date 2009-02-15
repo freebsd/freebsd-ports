@@ -1,16 +1,17 @@
---- build.xml.orig	2007-09-22 02:02:44.000000000 +0900
-+++ build.xml	2007-10-19 13:37:04.000000000 +0900
-@@ -10,6 +10,7 @@
+--- build.xml.orig	2008-09-29 19:16:32.000000000 -0400
++++ build.xml	2008-09-29 19:19:37.000000000 -0400
+@@ -1,7 +1,7 @@
+ <project name="Eclipse SDK Source Build" default="run" basedir=".">
  
- 	<target name="fetch" depends="init" if="srcFetch">
- 		<touch file="${cvspass}" />
-+		
- 		<property name="featureOnly" value="true" />
- 		<property name="featureAndPlugins" value="true" />
- 		<property name="featuresRecursively" value="true" />
-@@ -21,6 +22,17 @@
- 		<mkdir dir="${linux.motif.rootfiles}" />
- 		<copy tofile="${linux.motif.rootfiles}/about.html" file="${buildDirectory}/plugins/org.eclipse.swt.motif.linux.x86/about.html" />
+ 	<!--  default target that runs complete build  -->
+-	<target name="run" depends="fetch,insertBuildId,compile,install" />
++	<target name="run" depends="fetch,insertBuildId,compilelibs,compile,install" />
+ 
+ 	<!--  all features required to build eclipse sdk and javadoc  -->
+ 	<target name="allElements">
+@@ -41,6 +41,16 @@
+ 		<mkdir dir="${linux.gtk.s390x.rootfiles}" />
+ 		<copy tofile="${linux.gtk.s390x.rootfiles}/about.html" file="${buildDirectory}/plugins/org.eclipse.swt.gtk.linux.s390x/about.html" />
  
 +		<!--copy freebsd gtk x86 about_files to in temp location where it will be copied into root of eclipse at assembly time-->
 +		<property name="freebsd.gtk.x86.rootfiles" value="${buildDirectory}/features/org.eclipse.platform/about_files/freebsd.gtk.x86" />
@@ -22,66 +23,53 @@
 +		<mkdir dir="${freebsd.gtk.amd64.rootfiles}" />
 +		<copy tofile="${freebsd.gtk.amd64.rootfiles}/about.html" file="${buildDirectory}/plugins/org.eclipse.swt.gtk.freebsd.amd64/about.html" />
 +
-+
- 		<!--copy linux gtk x86 about_files to in temp location where it will be copied into root of eclipse at assembly time-->
- 		<property name="linux.gtk.x86.rootfiles" value="${buildDirectory}/features/org.eclipse.platform/about_files/linux.gtk.x86" />
- 		<mkdir dir="${linux.gtk.x86.rootfiles}" />
-@@ -108,11 +120,18 @@
- 		</copy>
- 
- 		<!-- build liblocalfile -->
-+		<!--
- 		<exec dir="plugins/org.eclipse.core.filesystem/natives/unix/linux" executable="make" failonerror="true" />
- 		<move file="plugins/org.eclipse.core.filesystem/natives/unix/linux/liblocalfile_1_0_0.so" todir="plugins/org.eclipse.core.filesystem.linux.${installArch}/os/linux/${installArch}">
-+		  -->
-+		<exec dir="plugins/org.eclipse.core.filesystem/natives/unix/freebsd" executable="make" failonerror="true" />
-+		<move file="plugins/org.eclipse.core.filesystem/natives/unix/freebsd/liblocalfile_1_0_0.so" todir="plugins/org.eclipse.core.filesystem.freebsd.${installArch}/os/freebsd/${installArch}">
- 		</move>
- 		<!-- build libupdate -->
-+		<!--
- 		<ant dir="plugins/org.eclipse.update.core.linux/src" antfile="build.xml" />
-+		-->
-+		<ant dir="plugins/org.eclipse.update.core.freebsd/src" antfile="build.xml" />
- 
+ 		<copy todir="${linux.gtk.x86_64.rootfiles}">
+ 			<fileset dir="${buildDirectory}/plugins/org.eclipse.swt.gtk.linux.x86_64" includes="
+ 				about_files/mpl-v11.txt" />
+@@ -71,6 +81,25 @@
+ 		<record name="compilelog.txt" action="stop" />
  	</target>
  
-@@ -305,8 +324,16 @@
- 		</fail>
- 
- 		<property name="compilerArg" value="-enableJavadoc -encoding ISO-8859-1" />
--		<property name="javacSource" value="1.6" />
--		<property name="javacTarget" value="1.6" />
-+		<property name="javacSource" value="1.5" />
-+		<property name="javacTarget" value="1.5" />
-+               <!-- for jdk1.6 -->
-+		<condition property="javacSource" value="1.6">
-+		  <isset property="JavaSE-1.6"/>
-+		</condition>
-+		<condition property="javacTarget" value="1.6">
-+		  <isset property="JavaSE-1.6"/>
-+		</condition>
++        <target name="compilelibs" depends="init,clean" if="libsconfig">
++		<echo message="Compiling SWT native libraries..."/>
++		<ant dir="${buildDirectory}/plugins/org.eclipse.swt.${installWs}.${installOs}.${installArch}" antfile="build.xml" target="build.jnilibs"/>
 +
- 		<property name="javacDebugInfo" value="true" />
- 		<property name="javacFailOnError" value="true" />
- 
-@@ -322,6 +349,8 @@
- 		<!-- determines if libraries need to be recompiled for specific platforms -->
- 		<condition property="libsconfig">
- 			<or>
-+				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="freebsd-gtk-x86" />
-+				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="freebsd-gtk-amd64" />
- 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="linux-gtk-ppc64" />
++		<echo message="Compiling native launcher..."/>
++                <property name="launcherlibs" value="${buildDirectory}/features/org.eclipse.equinox.executable" />
++                <exec dir="${launcherlibs}/library/${installWs}/" executable="sh" failonerror="true">
++                        <arg line="build.sh install" />
++                </exec>
++
++		<echo message="Compiling liblocalfile..."/>
++                <exec dir="plugins/org.eclipse.core.filesystem/natives/unix/freebsd" executable="make" failonerror="true" />
++                <move file="plugins/org.eclipse.core.filesystem/natives/unix/freebsd/liblocalfile_1_0_0.so" todir="plugins/org.eclipse.core.filesystem.freebsd.${installArch}/os/freebsd/${installArch}">
++                </move>
++
++		<echo message="Compiling native update library..."/>
++                <ant dir="plugins/org.eclipse.update.core.${installOs}/src" antfile="build.xml" />
++        </target>
++
+ 	<!--create an installable eclipse runtime-->
+ 	<target name="install" depends="init">
+ 		<echo message="Assembling..." />
+@@ -277,6 +306,8 @@
  				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="linux-motif-x86" />
  				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="linux-gtk-s390" />
-@@ -335,7 +364,10 @@
+ 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="linux-gtk-s390x" />								
++				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="freebsd-gtk-x86" />
++				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="freebsd-gtk-amd64" />
+ 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="solaris-gtk-x86" />
+ 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="hpux-motif-PA_RISC" />
+ 			</or>
+@@ -284,7 +315,10 @@
  
  		<!--used to add doc plug-ins to result after initial assembly-->
  		<condition property="archive.format" value="tar">
-+		    <or>
- 			<equals arg1="${installOs}" arg2="linux" />
-+			<equals arg1="${installOs}" arg2="freebsd" />
-+		    </or>
+-			<equals arg1="${installOs}" arg2="linux" />
++			<or>
++				<equals arg1="${installOs}" arg2="linux" />
++				<equals arg1="${installOs}" arg2="freebsd" />
++			</or>
  		</condition>
  		<property name="archive.format" value="zip" />
  	</target>
-
