@@ -163,6 +163,7 @@
     SUBDIR += tpad
     SUBDIR += tree-widget
     SUBDIR += treeform
+    SUBDIR += tweak
     SUBDIR += uemacs
     SUBDIR += uzap
     SUBDIR += ved
