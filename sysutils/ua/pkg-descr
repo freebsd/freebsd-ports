@@ -6,4 +6,6 @@ event of waiting too long for a shell script using sorts, md5sums, diffs
 and the like to finish finding identical files. While there are many tools
 out there, we needed a tool that can ignore white spaces and runs quite fast.
 
+LICENSE: GPL2 or later
+
 WWW: http://oss.euedge.com/wiki/UaMainPage

@@ -6,6 +6,6 @@ private chat and channel encryption. A secure key-exchange system
 is included as well. Please read the file FiSH-xchat.txt, especially the
 'Installation' section, before installing it!
 
-WWW: http://fish.sekure.us/
+LICENSE: Copyleft 
 
--- lioux@FreeBSD.org
+oldWWW: http://fish.sekure.us/

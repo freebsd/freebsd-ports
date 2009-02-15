@@ -9,4 +9,6 @@ edit nearly every aspect of them using Gorm's powerful inspectors.
 With its intuitive interface Gorm makes creating, editing and testing complex
 user interfaces a piece of cake.
 
+LICENSE: GPL3
+
 WWW: http://www.gnustep.org/experience/Gorm.html

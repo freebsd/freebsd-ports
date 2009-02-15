@@ -10,6 +10,8 @@ The following programs are included:
   - c1541, a stand-alone disk image maintenance utility;
   - petcat, a CBM BASIC de-tokenizer;
 
+LICENSE: GPL2 or later
+
 WWW: http://www.viceteam.org/
 
 The ROM files are Copyright by Commodore Business Machines.
