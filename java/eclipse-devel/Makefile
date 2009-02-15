@@ -47,6 +47,8 @@ ECLIPSE_OS=	freebsd
 
 ECLIPSE_WS=	gtk
 
+IGNORE=		eclipse 3.4.x is now in java/eclipse, please use that instead
+
 .if defined(WITHOUT_GNOMEVFS)
 MAKE_GNOME=
 USE_GNOME=	gtk20 pkgconfig desktopfileutils
