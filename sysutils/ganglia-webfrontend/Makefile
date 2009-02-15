@@ -16,6 +16,7 @@ DISTNAME=	ganglia-${PORTVERSION}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, web frontend
 
+BUILD_DEPENDS+=	apr-1-config:${PORTSDIR}/devel/apr
 RUN_DEPENDS+=	${LOCALBASE}/sbin/gmetad:${PORTSDIR}/sysutils/ganglia-monitor-core
 
 PKGINSTALL=	${WRKDIR}/pkg-install
