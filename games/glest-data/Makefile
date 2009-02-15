@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	data
-PORTVERSION=	3.1.2
+PORTVERSION=	3.2.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	glest
@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/glest_game
 
 DATADIR=	share/${PKGNAMEPREFIX:S/-//}
 DOCSDIR=	share/doc/${PKGNAMEPREFIX:S/-//}
-GLESTDATADIRE=	data maps scenarios techs tilesets
+GLESTDATADIRE=	data maps scenarios techs tilesets tutorials
 
 post-extract:
 	@${MV} ${WRKSRC}/docs/license.txt ${WRKSRC}/docs/license-data.txt
@@ -35,7 +35,7 @@ post-extract:
 pre-install:
 	@${RM} -f ${PLIST}
 
-.	for FILE in configuration.xml glest.ico glest_irc.url glest_web.url servers.ini
+.	for FILE in glest.ico servers.ini
 		@${ECHO_CMD} "%%DATADIR%%/${FILE}" >> ${PLIST}
 .	endfor
 
@@ -60,7 +60,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/readme.txt ${PREFIX}/${DOCSDIR}
 .endif
 	@${MKDIR} ${PREFIX}/${DATADIR}
-.for FILE in configuration.xml glest.ico glest_irc.url glest_web.url servers.ini
+.for FILE in glest.ico servers.ini
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${DATADIR}
 .endfor
 
