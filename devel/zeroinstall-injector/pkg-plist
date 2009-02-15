@@ -169,6 +169,7 @@ etc/xdg/menus/applications-merged/zeroinstall.menu
 %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore/__init__.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore/__init__.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/zerostore/_unlzma
 %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore/cli.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore/cli.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore/cli.pyo

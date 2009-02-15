@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zeroinstall-injector
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=zero-install
