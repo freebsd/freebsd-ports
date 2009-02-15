@@ -76,9 +76,14 @@ post-install:
 	${CP} -R ${WRKSRC}/test/* ${RUBY_MODEXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKDIR}/createlang.sql ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}
-.for f in ${DOCS}
-	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-.endfor
+	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} ${DOCS} ${RUBY_MODDOCDIR}/)
+
+	@${FIND} -ds ${RUBY_MODDOCDIR} -type f -print | ${SED} -E -e \
+		's,^${PREFIX}/?,,' >> ${TMPPLIST}
+	@${FIND} -ds ${RUBY_MODDOCDIR} -type d -print | ${SED} -E -e \
+		's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/share/doc/ruby18/ 2>/dev/null || true" \
+		>> ${TMPPLIST}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
