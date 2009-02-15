@@ -1,0 +1,11 @@
+CGI::Application::Plugin::ConfigAuto adds easy access to config file
+variables to your CGI::Application modules. Lazy loading is used to
+prevent the config file from being parsed if no configuration variables
+are accessed during the request.
+
+The format is detected automatically using Config::Auto. It it known to
+support the following formats: colon separated, space separated, equals
+separated, XML, Perl code, and Windows INI. See that modules
+documentation for complete details.
+
+WWW: http://search.cpan.org/dist/CGI-Application-Plugin-ConfigAuto/
