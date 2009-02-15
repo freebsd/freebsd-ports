@@ -9,7 +9,7 @@ PORTNAME=	ceferino
 PORTVERSION=	0.97.8
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/ceferino/descargas/
+MASTER_SITES=	http://www.losersjuegos.com.ar/_media/juegos/ceferino/descargas/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Game similar to Super Pang
