@@ -58,13 +58,15 @@ CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 .endif
 .endif
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EXAMPLESDIR} -xf -
 	${CHOWN} -R ${BINOWN}:${BINGRP} ${EXAMPLESDIR}
 	${FIND} ${EXAMPLESDIR} -type d -print | ${XARGS} ${CHMOD} 0555
 	${FIND} ${EXAMPLESDIR} -type f -print | ${XARGS} ${CHMOD} 0444
+.endif
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/MAPPING ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/THREADS ${DOCSDIR}
