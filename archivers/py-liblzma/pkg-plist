@@ -1,0 +1,4 @@
+%%PYTHON_SITELIBDIR%%/liblzma.py
+%%PYTHON_SITELIBDIR%%/lzma.so
+%%PYTHON_SITELIBDIR%%/liblzma.pyc
+%%PYTHON_SITELIBDIR%%/liblzma.pyo
