@@ -7,6 +7,7 @@
 
 PORTNAME=	DBIx-Class
 PORTVERSION=	0.08012
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -101,6 +102,7 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Storage::TxnScopeGuard.3 \
 	DBIx::Class::Test::SQLite.3 \
 	DBIx::Class::UTF8Columns.3 \
+	SQL::Translator::Parser::DBIx::Class.3 \
 	SQL::Translator::Producer::DBIx::Class::File.3
 
 post-extract:
