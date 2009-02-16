@@ -1,0 +1,29 @@
+--- GNUmakefile.orig	2009-02-01 18:23:59.000000000 +0800
++++ GNUmakefile	2009-02-01 18:26:04.000000000 +0800
+@@ -28,7 +28,7 @@
+ 
+ .PHONY: dist qwt-5.0 qwt-5.1
+ 
+-all: 3 4
++all: 4
+ 
+ debug: 3d 4d
+ 
+@@ -41,7 +41,7 @@
+ 
+ 4:
+ 	cd configure \
+-	&& python configure.py -4 -Q $(QWT) -j $(JOBS) \
++	&& python configure.py -4 -I/usr/local/include/qwt -L/usr/local/lib -lqwt -j $(JOBS) \
+ 	&& $(MAKE) -j $(JOBS)
+ 
+ 
+@@ -72,7 +72,7 @@
+ install-4: 4
+ 	make -C configure install
+ 
+-install: install-3 install-4
++install: install-4
+ 
+ install-3d: 3d
+ 	make -C configure install

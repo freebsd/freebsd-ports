@@ -1,0 +1,12 @@
+PyQwt is a set of Python bindings for the Qwt  C++ class library which
+extends the Qt framework with widgets for scientific and engineering
+applications. It provides a widget to plot 2-dimensional data and
+various widgets to display and control bounded or unbounded floating
+point values.
+
+PyQwt addresses the problem of integrating PyQt, Qt, Qwt, NumPy and
+optionally SciPy. Look at the Command Line Interface (CLI) examples and
+the Graphical User Interface (GUI) examples to get an idea of what you
+can do with PyQwt.
+
+WWW:	http://pyqwt.sourceforge.net/
