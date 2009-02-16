@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/:src_sf
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src_sf,src_bk \
 		${PORTNAME}.pdf:doc_sf,doc_bk
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-#IGNOREFILES=	${PORTNAME}.pdf
+IGNOREFILES=	${PORTNAME}.pdf
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Set of programs for controlling APC UPS
