@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slgtk
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://space.mit.edu/pub/cxc/modules/slgtk/
 
@@ -43,8 +43,6 @@ post-patch:
 		${WRKSRC}/examples/main.sl
 	@${REINPLACE_CMD} -e '/rm -f devel/d ; /ln -sf @prefix@ devel/d' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|"\.\./images/test\.xpm"|path_concat(SLGTK_IMAGES_DIR,"test\.xpm")|' ${WRKSRC}/examples/textview.sl \
-		${WRKSRC}/examples/wmhints.sl
 
 post-install:
 .if !defined(NOPORTDOCS)
