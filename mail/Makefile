@@ -564,6 +564,7 @@
     SUBDIR += ricochet
     SUBDIR += ripmime
     SUBDIR += rlytest
+    SUBDIR += rmilter
     SUBDIR += roundcube
     SUBDIR += rss2email
     SUBDIR += ruby-rfilter

@@ -1,0 +1,4 @@
+Rambler milter is milter plugin that makes clamav, spf, dcc, regexp and
+other checks for incoming e-mail.
+
+WWW:  http://cebka.pp.ru/hg/rmilter/
