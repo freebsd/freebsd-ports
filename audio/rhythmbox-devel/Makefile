@@ -50,6 +50,7 @@ OPTIONS=	DAAP "Enable iTunes music sharing" off \
 		NOTIFY "Enable libnotify support" on \
 		VORBIS "Enable Ogg/Vorbis support" on \
 		LIRC "Enable Infrared syncing support" off \
+		MTP "Enable Microsoft's Media Transfer Protocol support" off \
 		GECKO_PLUGIN "Enable iTunes browser plugin" on
 #		GDA "Enable GDA database storage" off
 
@@ -81,6 +82,15 @@ CONFIGURE_ARGS+=--enable-lirc
 .else
 CONFIGURE_ARGS+=--disable-lirc
 PLIST_SUB+=	LIRC="@comment "
+.endif
+
+.if defined(WITH_MTP)
+LIB_DEPENDS+=		mtp.8:${PORTSDIR}/audio/libmtp
+PLIST_SUB+=		MTP=""
+CONFIGURE_ARGS+=	--with-mtp
+.else
+CONFIGURE_ARGS+=	--without-mtp
+PLIST_SUB+=		MTP="@comment "
 .endif
 
 .if defined(WITH_DAAP)
