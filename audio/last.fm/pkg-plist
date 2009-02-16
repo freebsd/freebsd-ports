@@ -108,8 +108,10 @@ bin/last.fm
 %%DATADIR%%/services/libsrv_itunesdevice.so
 %%DATADIR%%/services/libsrv_mp3transcode.so
 %%DATADIR%%/services/libsrv_rtaudioplayback.so
+share/applications/last.fm.desktop
 share/services/lastfm.protocol
 @dirrmtry share/services
+@dirrmtry share/applications
 @dirrm %%DATADIR%%/services
 @dirrm %%DATADIR%%/extensions
 @dirrm %%DATADIR%%/data/icons
