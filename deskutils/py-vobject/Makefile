@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	vobject
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.1b
 CATEGORIES=	deskutils python
-MASTER_SITES=	http://vobject.skyhouseconsulting.com/ CENKES
+MASTER_SITES=	http://vobject.skyhouseconsulting.com/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jun-g@daemonfreaks.com
 COMMENT=	ICalendar library
 
 RUN_DEPENDS=	py*-dateutil>=1.1:${PORTSDIR}/devel/py-dateutil
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=easy_install
-PYDISTUTILS_NOEGGINFO=yes
 
 .include <bsd.port.mk>
