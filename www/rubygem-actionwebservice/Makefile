@@ -17,6 +17,10 @@ BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/actionpack-1.13.6.gemspec:${PORTSDIR}/ww
 		${LOCALBASE}/${SPEC_DIR}/activerecord-1.15.6.gemspec:${PORTSDIR}/databases/rubygem-activerecord
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		require actionpack == 1.13.6, but actionpack is 2.2.2
+DEPRECATED=	from rails 2.0 www/rubygem-rails use www/rubygem-activeresource instead
+EXPIRATION_DATE=2009-03-01
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 
