@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jun-g@daemonfreaks.com
 COMMENT=	A lightweight weblog system
 
 USE_PYTHON=	2.3+
