@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-appengine
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.9
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	www devel python
