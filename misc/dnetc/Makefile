@@ -74,9 +74,15 @@ WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
 
 .if ${ARCH} == sparc64
 REVISION=	0
+.if ${OSVERSION} >= 700055
+VERSION=	2.9103.509
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}-elf
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}-elf
+.else
 VERSION=	2.9101.507
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
+.endif
 .endif
 
 .if ${ARCH} == alpha
