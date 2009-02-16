@@ -1017,7 +1017,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/output/test_pty
 %%PYTHON_LIBDIR%%/test/output/test_pyexpat
 %%PYTHON_LIBDIR%%/test/output/test_regex
-%%PYTHON_LIBDIR%%/test/output/test_resource
 %%PYTHON_LIBDIR%%/test/output/test_rgbimg
 %%PYTHON_LIBDIR%%/test/output/test_scope
 %%PYTHON_LIBDIR%%/test/output/test_signal

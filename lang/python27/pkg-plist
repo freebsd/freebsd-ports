@@ -685,9 +685,9 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/json/tool.py
 %%PYTHON_LIBDIR%%/keyword.py
 %%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/Grammar2.6.0.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/Grammar2.6.1.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.6.0.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.6.1.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/__init__.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_base.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_util.py
@@ -699,6 +699,12 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_dict.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_except.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_exec.py
+%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_getcwdu.py
+%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_set_literal.py
+%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_getcwdu.pyc
+%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_set_literal.pyc
+%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_getcwdu.pyo
+%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_set_literal.pyo
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_execfile.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_filter.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_funcattrs.py
@@ -995,6 +1001,9 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/cjkencodings_test.py
 %%PYTHON_LIBDIR%%/test/cmath_testcases.txt
 %%PYTHON_LIBDIR%%/test/curses_tests.py
+%%PYTHON_LIBDIR%%/test/test_future5.py
+%%PYTHON_LIBDIR%%/test/test_future5.pyc
+%%PYTHON_LIBDIR%%/test/test_future5.pyo
 %%PYTHON_LIBDIR%%/test/decimaltestdata/abs.decTest
 %%PYTHON_LIBDIR%%/test/decimaltestdata/add.decTest
 %%PYTHON_LIBDIR%%/test/decimaltestdata/and.decTest
