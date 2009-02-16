@@ -667,6 +667,7 @@ asterisk-stat                   ports/www/asterisk-stat
 asterisk12                      ports/net/asterisk12
 asterisk12-addons               ports/net/asterisk12-addons
 asterisk12-app-ldap             ports/net/asterisk12-app-ldap
+asterisk16                      ports/net/asterisk16
 astfax                          ports/net/astfax
 astime                          ports/x11-clocks/astime
 astk-client                     ports/cad/astk-client
@@ -1371,6 +1372,7 @@ cegui                           ports/graphics/cegui
 celestia                        ports/astro/celestia
 celestia-gnome                  ports/astro/celestia-gnome
 celestia-gtk                    ports/astro/celestia-gtk
+celt                            ports/audio/celt
 cenon                           ports/graphics/cenon
 centericq                       ports/net-im/centericq
 centerim                        ports/net-im/centerim
@@ -1564,6 +1566,7 @@ clisp                           ports/lang/clisp
 clisp-hyperspec                 ports/devel/clisp-hyperspec
 clit                            ports/textproc/clit
 clive                           ports/multimedia/clive
+clive-utils                     ports/multimedia/clive-utils
 clive1                          ports/multimedia/clive1
 cln                             ports/math/cln
 cloc                            ports/misc/cloc
@@ -2194,6 +2197,7 @@ digest                          ports/security/digest
 digger-vgl                      ports/games/digger-vgl
 digikam                         ports/graphics/digikam
 digikam-doc                     ports/graphics/digikam-doc
+digikam-kde4                    ports/graphics/digikam-kde4
 digitizer                       ports/math/digitizer
 dikt                            ports/textproc/dikt
 dillo                           ports/www/dillo
@@ -2520,6 +2524,7 @@ dxpc                            ports/x11/dxpc
 dylan                           ports/lang/dylan
 dynagen                         ports/emulators/dynagen
 dynagen-devel                   ports/emulators/dynagen-devel
+dynagui                         ports/emulators/dynagui
 dynamag                         ports/x11/dynamag
 dynamechs                       ports/graphics/dynamechs
 dynamips                        ports/emulators/dynamips
@@ -3238,6 +3243,7 @@ findhier                        ports/cad/findhier
 findmtu                         ports/net/findmtu
 findutils                       ports/misc/findutils
 finfo                           ports/sysutils/finfo
+fio                             ports/sysutils/fio
 firebird-client                 ports/databases/firebird-client
 firebird-server                 ports/databases/firebird-server
 firebird20-client               ports/databases/firebird20-client
@@ -3606,6 +3612,7 @@ freesweep                       ports/games/freesweep
 freesynd                        ports/games/freesynd
 freetar                         ports/archivers/freetar
 freetds                         ports/databases/freetds
+freetds-devel                   ports/databases/freetds-devel
 freetds-msdblib                 ports/databases/freetds-msdblib
 freetennis                      ports/games/freetennis
 freetxl                         ports/lang/freetxl
@@ -9243,7 +9250,6 @@ ntl                             ports/math/ntl
 ntlmaps                         ports/net/ntlmaps
 ntop                            ports/net/ntop
 ntp-devel                       ports/net/ntp-devel
-ntp-rc                          ports/net/ntp-rc
 ntraceroute                     ports/net/ntraceroute
 nttcp                           ports/benchmarks/nttcp
 nuclearchess                    ports/games/nuclearchess
@@ -12728,6 +12734,7 @@ p5-Unicode-String               ports/converters/p5-Unicode-String
 p5-Unicode-UTF8simple           ports/converters/p5-Unicode-UTF8simple
 p5-Unicode-Unihan               ports/textproc/p5-Unicode-Unihan
 p5-Unix-ConfigFile              ports/sysutils/p5-Unix-ConfigFile
+p5-Unix-Lsof                    ports/sysutils/p5-Unix-Lsof
 p5-Unix-Mknod                   ports/sysutils/p5-Unix-Mknod
 p5-Unix-Processors              ports/sysutils/p5-Unix-Processors
 p5-Unix-Statgrab                ports/devel/p5-Unix-Statgrab
@@ -16048,6 +16055,7 @@ p5-universal-moniker            ports/devel/p5-UNIVERSAL-moniker
 p5-universal-require            ports/devel/p5-UNIVERSAL-require
 p5-universal-which              ports/devel/p5-UNIVERSAL-which
 p5-unix-configfile              ports/sysutils/p5-Unix-ConfigFile
+p5-unix-lsof                    ports/sysutils/p5-Unix-Lsof
 p5-unix-mknod                   ports/sysutils/p5-Unix-Mknod
 p5-unix-processors              ports/sysutils/p5-Unix-Processors
 p5-unix-statgrab                ports/devel/p5-Unix-Statgrab
@@ -18448,7 +18456,7 @@ py-pyPgSQL                      ports/databases/py-pyPgSQL
 py-pybmp                        ports/multimedia/py-pybmp
 py-pycallgraph                  ports/devel/py-pycallgraph
 py-pychess                      ports/games/py-pychess
-py-pyclamd                      ports/mail/py-pyclamd
+py-pyclamd                      ports/security/py-pyclamd
 py-pycrypto                     ports/security/py-pycrypto
 py-pycryptopp                   ports/security/py-pycryptopp
 py-pydasm                       ports/devel/py-pydasm
@@ -18500,14 +18508,18 @@ py-qt4-designer                 ports/devel/py-qt4-designer
 py-qt4-designerplugin           ports/devel/py-qt4-designerplugin
 py-qt4-doc                      ports/misc/py-qt4-doc
 py-qt4-gui                      ports/x11-toolkits/py-qt4-gui
+py-qt4-help                     ports/devel/py-qt4-help
 py-qt4-network                  ports/net/py-qt4-network
 py-qt4-opengl                   ports/x11/py-qt4-opengl
+py-qt4-phonon                   ports/multimedia/py-qt4-phonon
 py-qt4-qscintilla2              ports/devel/py-qt4-qscintilla2
 py-qt4-script                   ports/devel/py-qt4-script
 py-qt4-sql                      ports/databases/py-qt4-sql
 py-qt4-svg                      ports/graphics/py-qt4-svg
 py-qt4-test                     ports/devel/py-qt4-test
+py-qt4-webkit                   ports/www/py-qt4-webkit
 py-qt4-xml                      ports/textproc/py-qt4-xml
+py-qt4-xmlpatterns              ports/textproc/py-qt4-xmlpatterns
 py-radix                        ports/net/py-radix
 py-rbtree                       ports/devel/py-rbtree
 py-rdflib                       ports/textproc/py-rdflib
@@ -19892,7 +19904,7 @@ samba-pdbsql                    ports/net/samba-pdbsql
 samba-smbclient                 ports/net/samba-smbclient
 samba-vscan                     ports/security/samba-vscan
 samba3                          ports/net/samba3
-samba32-devel                   ports/net/samba32-devel
+samba32                         ports/net/samba32
 samba4wins                      ports/net/samba4wins
 sambasentinel                   ports/net/sambasentinel
 samefile                        ports/sysutils/samefile
