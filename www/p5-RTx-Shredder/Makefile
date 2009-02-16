@@ -7,6 +7,7 @@
 
 PORTNAME=	RTx-Shredder
 PORTVERSION=	0.07
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,15 +28,16 @@ PLIST_SUB+=	RTHOME=${RTHOME}
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV+=	RTHOME=${PREFIX}/${RTHOME}
 
-MAN3=		RTx::Shredder::Plugin::Base.3		\
-		RTx::Shredder::Plugin::Attachments.3	\
-		RTx::Shredder::Dependencies.3		\
-		RTx::Shredder::Plugin::Tickets.3	\
-		RTx::Shredder.3				\
-		RTx::Shredder::Plugin.3			\
+MAN3=		RTx::Shredder.3				\
 		RTx::Shredder::Constants.3		\
+		RTx::Shredder::Dependencies.3		\
+		RTx::Shredder::Plugin.3			\
+		RTx::Shredder::Plugin::Attachments.3	\
+		RTx::Shredder::Plugin::Base.3		\
+		RTx::Shredder::Plugin::Objects.3	\
+		RTx::Shredder::Plugin::Tickets.3	\
 		RTx::Shredder::Plugin::Users.3		\
-		RTx::Shredder::Plugin::Objects.3
+		RTx::Shredder::Record.3
 
 # Don't use normal CONFIGURE_ARGS.  Disable doc_?????_indstall targets to
 # suppress installing perllocal.pod.  This duplicates code from bsd.perl.mk
