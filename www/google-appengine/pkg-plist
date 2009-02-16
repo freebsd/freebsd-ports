@@ -242,6 +242,15 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/datastore/datastore_index.py
 %%DATADIR%%/google/appengine/datastore/datastore_pb.py
 %%DATADIR%%/google/appengine/datastore/entity_pb.py
+%%DATADIR%%/google/appengine/dist/__init__.py
+%%DATADIR%%/google/appengine/dist/ftplib.py
+%%DATADIR%%/google/appengine/dist/httplib.py
+%%DATADIR%%/google/appengine/dist/neo_cgi.py
+%%DATADIR%%/google/appengine/dist/py_imp.py
+%%DATADIR%%/google/appengine/dist/select.py
+%%DATADIR%%/google/appengine/dist/socket.py
+%%DATADIR%%/google/appengine/dist/subprocess.py
+%%DATADIR%%/google/appengine/dist/tempfile.py
 %%DATADIR%%/google/appengine/ext/__init__.py
 %%DATADIR%%/google/appengine/ext/admin/__init__.py
 %%DATADIR%%/google/appengine/ext/admin/templates/base.html
@@ -269,6 +278,7 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/ext/remote_api/__init__.py
 %%DATADIR%%/google/appengine/ext/remote_api/handler.py
 %%DATADIR%%/google/appengine/ext/remote_api/remote_api_pb.py
+%%DATADIR%%/google/appengine/ext/remote_api/remote_api_stub.py
 %%DATADIR%%/google/appengine/ext/search/__init__.py
 %%DATADIR%%/google/appengine/ext/webapp/__init__.py
 %%DATADIR%%/google/appengine/ext/webapp/template.py
@@ -281,6 +291,7 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/tools/appcfg.py
 %%DATADIR%%/google/appengine/tools/appengine_rpc.py
 %%DATADIR%%/google/appengine/tools/bulkload_client.py
+%%DATADIR%%/google/appengine/tools/bulkloader.py
 %%DATADIR%%/google/appengine/tools/dev_appserver.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_index.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_info.py
@@ -1452,6 +1463,7 @@ bin/dev_appserver.py
 @dirrm %%DATADIR%%/google/appengine/ext/admin/templates
 @dirrm %%DATADIR%%/google/appengine/ext/admin
 @dirrm %%DATADIR%%/google/appengine/ext
+@dirrm %%DATADIR%%/google/appengine/dist
 @dirrm %%DATADIR%%/google/appengine/datastore
 @dirrm %%DATADIR%%/google/appengine/cron
 @dirrm %%DATADIR%%/google/appengine/base
