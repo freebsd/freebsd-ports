@@ -1,3 +1,6 @@
 MD5 (dnetc507-freebsd6-sparc64-elf.tar.gz) = 830c8f41742e5786bcfc2b6101ff5f09
 SHA256 (dnetc507-freebsd6-sparc64-elf.tar.gz) = be0f7dfbb599b472e96122af10a2ff06fa8e5bfae84cb42a471c8bf93aeed01f
 SIZE (dnetc507-freebsd6-sparc64-elf.tar.gz) = 823197
+MD5 (dnetc509-freebsd7-sparc64-elf.tar.gz) = b71eb4c974dbb80a85b8ab0f3bc0d012
+SHA256 (dnetc509-freebsd7-sparc64-elf.tar.gz) = 6b1d000943cdc2d63f5f1e78e3014b6218317d574850ad6d4b2fff11d67066c8
+SIZE (dnetc509-freebsd7-sparc64-elf.tar.gz) = 928361
