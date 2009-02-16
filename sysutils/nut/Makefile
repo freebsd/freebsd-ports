@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	2.2.2
+PORTVERSION=	2.4.0
 #PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
@@ -30,6 +30,7 @@ OPTIONS=	SERIAL		"SERIAL support"	on \
 		USB		"USB support"	on \
 		SNMP		"SNMP support"	on \
 		NEON		"NEON XML/HTTP support"	on \
+		PDU		"Powerman PDU support"	off \
 		HAL		"HAL support"	off \
 		IPV6		"IPV6 support"  on \
 		DEVEL		"Install header files"	off \
@@ -43,7 +44,7 @@ MAN5=		ups.conf.5 upsd.conf.5 upsd.users.5 upsmon.conf.5 \
 		upssched.conf.5
 
 MAN8=		nutupsdrv.8 upsc.8 upscmd.8 upsd.8 upsdrvctl.8 \
-		upslog.8 upsmon.8 upsrw.8 upssched.8
+		upslog.8 upsmon.8 upsrw.8 upssched.8 blazer.8
 
 PORTDOCS=	*
 
@@ -58,7 +59,6 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-altpidpath=${STATEDIR} \
 		--with-pidpath=${STATEDIR} \
 		--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig \
-		--with-linux-hiddev=no \
 		--with-user=${NUT_USER} \
 		--with-group=${NUT_GROUP}
 
@@ -82,11 +82,11 @@ PLIST_SUB+=	NUT_CGI="@comment "
 
 .if !defined(WITHOUT_SERIAL)
 CONFIGURE_ARGS+=	--with-serial
-MAN8+=		al175.8 apcsmart.8 bcmxcp.8 belkin.8 belkinunv.8 \
-		bestuferrups.8 bestups.8 bestfcom.8 cpsups.8 cyberpower.8 \
+MAN8+=		apcsmart.8 bcmxcp.8 belkin.8 belkinunv.8 \
+		bestuferrups.8 bestups.8 bestfcom.8 cyberpower.8 \
 		dummy-ups.8 etapro.8 everups.8 gamatronic.8 genericups.8 \
 		isbmex.8 liebert.8 masterguard.8 megatec.8 metasys.8 \
-		mge-shut.8 mge-utalk.8 nitram.8 nutupsdrv.8 oneac.8 optiups.8 \
+		mge-shut.8 mge-utalk.8 oneac.8 optiups.8 \
 		powercom.8 powerpanel.8 rhino.8 safenet.8 solis.8 tripplite.8 \
 		tripplitesu.8 upscode2.8 victronups.8
 PLIST_SUB+=	NUT_SERIAL=""
@@ -98,7 +98,8 @@ PLIST_SUB+=	NUT_SERIAL="@comment "
 .if !defined(WITHOUT_USB)
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 CONFIGURE_ARGS+=	--with-usb=auto
-MAN8+=		bcmxcp_usb.8 megatec_usb.8 tripplite_usb.8 usbhid-ups.8
+MAN8+=		bcmxcp_usb.8 megatec_usb.8 richcomm_usb.8 tripplite_usb.8 \
+		usbhid-ups.8
 PLIST_SUB+=	NUT_USB=""
 .else
 CONFIGURE_ARGS+=	--without-usb
@@ -127,6 +128,16 @@ PLIST_SUB+=	NUT_NEON=""
 .else
 CONFIGURE_ARGS+=	--without-neonxml
 PLIST_SUB+=	NUT_NEON="@comment "
+.endif
+
+.if defined(WITH_PDU)
+LIB_DEPENDS+=	powerman.0:${PORTSDIR}/sysutils/powerman
+CONFIGURE_ARGS+=	--with-powerman
+MAN8+=		powerman-pdu.8
+PLIST_SUB+=	NUT_PDU=""
+.else
+CONFIGURE_ARGS+=	--without-powerman
+PLIST_SUB+=	NUT_PDU="@comment "
 .endif
 
 .if defined(WITH_HAL)
