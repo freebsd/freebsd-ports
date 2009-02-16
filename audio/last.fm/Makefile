@@ -7,6 +7,7 @@
 
 PORTNAME=	last.fm
 PORTVERSION=	1.3.2.14
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://cdn.last.fm/client/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -47,7 +48,8 @@ post-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/last.fm ${PREFIX}/bin/last.fm
-	${MKDIR} ${PREFIX}/share/services
+	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/services
+	${INSTALL_DATA} ${FILESDIR}/last.fm.desktop ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FILESDIR}/lastfm.protocol ${PREFIX}/share/services
 	${MKDIR} ${DATADIR}
 	${CP} -Rp ${WRKSRC}/bin/* ${DATADIR}/
