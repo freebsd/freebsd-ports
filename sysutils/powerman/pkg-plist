@@ -1,21 +1,49 @@
+@stopdaemon powerman
 bin/pm
 bin/powerman
 etc/powerman/apc.dev
+etc/powerman/apc7900.dev
 etc/powerman/apcnew.dev
+etc/powerman/apcold.dev
+etc/powerman/apcpdu.dev
+etc/powerman/apcpdu3.dev
+etc/powerman/bashfun.dev
 etc/powerman/baytech-rpc28-nc.dev
 etc/powerman/baytech-rpc3-nc.dev
 etc/powerman/baytech.dev
+etc/powerman/cb-7050.dev
+etc/powerman/cyclades-pm10.dev
+etc/powerman/cyclades-pm20.dev
+etc/powerman/cyclades-pm42.dev
 etc/powerman/cyclades-pm8.dev
-etc/powerman/ibmh8.dev
+etc/powerman/dli.dev
+etc/powerman/hp3488.dev
+etc/powerman/ibmbladecenter.dev
 etc/powerman/icebox.dev
 etc/powerman/icebox3.dev
+etc/powerman/ics8064.dev
+etc/powerman/ilom.dev
 etc/powerman/ipmi.dev
 etc/powerman/ipmipower.dev
 etc/powerman/phantom.dev
-etc/powerman/phantom4.dev
+etc/powerman/plmpower.dev
+etc/powerman/powerman.conf.example
+etc/powerman/powerman.dev
+etc/powerman/swpdu.dev
 etc/powerman/vpc.dev
 etc/powerman/wti-rps10.dev
 etc/powerman/wti.dev
-etc/rc.d/powermand.sh
+include/libpowerman.h
+lib/libpowerman.a
+lib/libpowerman.la
+lib/libpowerman.so
+lib/libpowerman.so.0
+libdata/pkgconfig/libpowerman.pc
+sbin/httppower
+sbin/plmpower
 sbin/powermand
-@dirrm etc/powerman
+sbin/vpcd
+@dirrmtry etc/powerman
+@cwd /
+@dirrmtry /var/run/powerman
+@cwd %%PREFIX%%

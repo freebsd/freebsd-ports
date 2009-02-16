@@ -3,4 +3,4 @@ devices from a central location. Several RPC varieties are supported
 natively by PowerMan and Expect-like configurability simplifies the
 addition of new devices.
 
-WWW: http://www.llnl.gov/linux/powerman/
+WWW: http://powerman.sf.net/

@@ -1,0 +1,13 @@
+--- scripts/Makefile.in.orig	2009-02-13 18:58:48.000000000 +0100
++++ scripts/Makefile.in	2009-02-13 18:59:00.000000000 +0100
+@@ -371,10 +371,6 @@
+ 
+ install-data-local:
+ 	-$(top_srcdir)/config/install-sh -m 755 -d \
+-		$(DESTDIR)$(sysconfdir)/init.d
+-	$(top_srcdir)/config/install-sh -m 755 $(srcdir)/powerman.init \
+-		$(DESTDIR)$(sysconfdir)/init.d/powerman
+-	-$(top_srcdir)/config/install-sh -m 755 -d \
+ 		$(DESTDIR)$(localstatedir)/run
+ 	-$(top_srcdir)/config/install-sh -o $(RUN_AS_USER) -m 755 -d \
+ 		$(DESTDIR)$(localstatedir)/run/powerman
