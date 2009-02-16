@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bind9
-PORTVERSION=	9.4.2.1
-PORTREVISION=	1
+PORTVERSION=	9.4.3.1
 CATEGORIES=	dns net ipv6
-MASTER_SITES=	${MASTER_SITE_ISC}
+MASTER_SITES=	${MASTER_SITE_ISC} \
+		http://dougbarton.us/Downloads/%SUBDIR%/
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
 PKGNAMESUFFIX=	-sdb-ldap
 DISTNAME=	bind-${ISCVERSION}
@@ -23,22 +23,57 @@ USE_OPENLDAP=	yes
 
 CONFLICTS=	bind9-9.* bind9-sdb-postgresql-* host-* skalibs-*
 
-# ISC releases things like 9.3.0rc1, which our versioning doesn't like
-ISCVERSION=	9.4.2-P1
+# ISC releases things like 9.4.0b3, which our versioning doesn't like
+ISCVERSION=	9.4.3-P1
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps --with-openssl \
+CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--with-randomdev=/dev/random
 
+OPTIONS=	SSL "Building without OpenSSL removes DNSSEC" on \
+		REPLACE_BASE "Replace base BIND with this version" off \
+		LARGE_FILE "64-bit file support" off \
+		SIGCHASE "dig/host/nslookup will do DNSSEC validation" off \
+		IPV6 "IPv6 Support (autodetected by default)" off
+
+# Just in case
 USE_OPENSSL=	yes
 
-.if !defined(WITHOUT_BIND9_THREADS) || defined(PACKAGE_BUILDING)
+.include <bsd.port.pre.mk>
+
+# We are ok by default from 7.0-RELEASE on
+.if ${OSVERSION} >= 700055
+OPTIONS+=	THREADS "Compile with thread support" on
+.else
+OPTIONS+=	THREADS "Compile w/threads (Not Recommended <FreeBSD-7)" off
+.endif
+
+.if !defined(WITHOUT_SSL)
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+.else
+CONFIGURE_ARGS+=	--disable-openssl-version-check
+CONFIGURE_ARGS+=	--without-openssl
+.endif
+
+.if defined(WITH_LARGE_FILE)
+CONFIGURE_ARGS+=	--enable-largefile
+.endif
+
+.if defined(WITH_SIGCHASE)
+CONFIGURE_ARGS+=	STD_CDEFINES="-DDIG_SIGCHASE=1"
+.endif
+
+.if defined(WITH_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
+.endif
+
+.if !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
 .endif
 
-.if defined(WITH_PORT_REPLACES_BASE_BIND9)
+.if defined(WITH_REPLACE_BASE)
 PKGNAMESUFFIX=	-sdb-ldap-base
 PREFIX=		/usr
 BIND_DESTETC=	/etc/namedb
@@ -50,7 +85,7 @@ BIND_DESTETC=	${PREFIX}/etc
 
 PLIST_SUB=	BIND_DESTETC="${BIND_DESTETC}"
 
-MAN1=	dig.1 host.1 nslookup.1
+MAN1=	dig.1 host.1 nslookup.1 nsupdate.1
 MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
 	lwres_buffer_back.3 lwres_buffer_clear.3 lwres_buffer_first.3 \
 	lwres_buffer_forward.3 lwres_buffer_getmem.3 lwres_buffer_getuint16.3 \
@@ -86,24 +121,14 @@ MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
 	lwres_sethostent_r.3 lwres_string_parse.3
 MAN5=	named.conf.5 rndc.conf.5
 MAN8=	dnssec-keygen.8 dnssec-signzone.8 lwresd.8 named-checkconf.8 \
-	named-checkzone.8 named.8 nsupdate.8 rndc-confgen.8 rndc.8
+	named-checkzone.8 named.8 rndc-confgen.8 rndc.8
 MLINKS=	named-checkzone.8 named-compilezone.8
 
-pre-fetch:
-.if defined(PORT_REPLACES_BASE_BIND9)
-	@${ECHO} ""
-	@${ECHO} "***************************************************"
-	@${ECHO} "Support for the old PORT_REPLACES_BASE_BIND9 option"
-	@${ECHO} "will be removed in future versions of the port."
-	@${ECHO} "Use WITH_PORT_REPLACES_BASE_BIND9 instead."
-	@${ECHO} "***************************************************"
-	@${ECHO} ""
-	@/bin/sleep 5
-WITH_PORT_REPLACES_BASE_BIND9=	true
-.endif
+verify:	checksum
+	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
 post-patch:
-.for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.8 \
+.for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
 	rndc/rndc.8
 	@${MV} ${WRKSRC}/bin/${FILE} ${WRKSRC}/bin/${FILE}.Dist
 	@${SED} -e 's#/etc/named.conf#${BIND_DESTETC}/named.conf#g' \
@@ -116,7 +141,8 @@ post-install:
 		${BIND_DESTETC}/rndc.conf.sample
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/arm ${DOCSDIR}/misc
-	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM*html ${DOCSDIR}/arm
+	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.html ${DOCSDIR}/arm
+	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* ${DOCSDIR}/misc
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
 		${WRKSRC}/README ${DOCSDIR}/
@@ -124,4 +150,4 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

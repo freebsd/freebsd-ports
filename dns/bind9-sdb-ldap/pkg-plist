@@ -74,8 +74,8 @@ include/dst/dst.h
 include/dst/lib.h
 include/dst/result.h
 include/isc/app.h
-include/isc/atomic.h
 include/isc/assertions.h
+include/isc/atomic.h
 include/isc/base64.h
 include/isc/bitstring.h
 include/isc/boolean.h
@@ -195,6 +195,7 @@ sbin/named-checkzone
 sbin/named-compilezone
 sbin/rndc
 sbin/rndc-confgen
+%%PORTDOCS%%%%DOCSDIR%%/Bv9ARM.pdf
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
@@ -210,6 +211,16 @@ sbin/rndc-confgen
 %%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch09.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch10.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/man.dig.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/man.dnssec-keygen.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/man.dnssec-signzone.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/man.host.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/man.named-checkconf.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/man.named-checkzone.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/man.named.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/man.rndc-confgen.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/man.rndc.conf.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/man.rndc.html
 %%PORTDOCS%%%%DOCSDIR%%/misc/dnssec
 %%PORTDOCS%%%%DOCSDIR%%/misc/format-options.pl
 %%PORTDOCS%%%%DOCSDIR%%/misc/ipv6
@@ -219,6 +230,7 @@ sbin/rndc-confgen
 %%PORTDOCS%%%%DOCSDIR%%/misc/rfc-compliance
 %%PORTDOCS%%%%DOCSDIR%%/misc/roadmap
 %%PORTDOCS%%%%DOCSDIR%%/misc/sdb
+%%PORTDOCS%%%%DOCSDIR%%/misc/sort-options.pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/arm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/misc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
