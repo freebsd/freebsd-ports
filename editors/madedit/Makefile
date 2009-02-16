@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	madedit
-PORTVERSION=	0.2.8
-PORTREVISION=	2
+PORTVERSION=	0.2.9
 CATEGORIES=	editors
 MASTER_SITES=	SF
 
@@ -23,6 +22,7 @@ LIB_DEPENDS+=	boost_regex:${PORTSDIR}/devel/boost
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-wx-config=${WX_CONFIG}
 CONFIGURE_ENV+=	PKG_CONFIG="${PKG_CONFIG}" glib_gtk2_CFLAGS="${glib_gtk2_CFLAGS}" glib_gtk2_LIBS="${glib_gtk2_LIBS}"
+CXXFLAGS+=	${glib_gtk2_CFLAGS}
 
 PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
 glib_gtk2_CFLAGS=`${PKG_CONFIG} --cflags gtk+-2.0`

@@ -1,6 +1,7 @@
 bin/madedit
 share/locale/zh_CN/LC_MESSAGES/madedit.mo
 share/locale/zh_TW/LC_MESSAGES/madedit.mo
+share/locale/ja_JP/LC_MESSAGES/madedit.mo
 share/locale/it_IT/LC_MESSAGES/madedit.mo
 share/pixmaps/madedit.xpm
 %%DATADIR%%/syntax/extension.list
@@ -49,5 +50,7 @@ share/applications/madedit.desktop
 @dirrmtry share/applications
 @dirrmtry %%DATADIR%%/syntax
 @dirrmtry %%DATADIR%%
+@dirrmtry share/locale/ja_JP/LC_MESSAGES
+@dirrmtry share/locale/ja_JP
 @dirrmtry share/locale/it_IT/LC_MESSAGES
 @dirrmtry share/locale/it_IT
