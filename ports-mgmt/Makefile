@@ -58,6 +58,7 @@
    SUBDIR += psearch
    SUBDIR += qtpkg
    SUBDIR += tinderbox
+   SUBDIR += tinderbox-devel
    SUBDIR += vulnerability-test-port
    SUBDIR += xps
 
