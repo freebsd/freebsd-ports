@@ -7,6 +7,7 @@
 
 PORTNAME=	oss
 DISTVERSION=	4.1-build1051
+PORTREVISION=	1
 CATEGORIES=	audio kld
 MASTER_SITES=	http://www.opensound.com/developer/sources/stable/bsd/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-bsd
@@ -24,21 +25,19 @@ WRKSRC=		${WRKDIR}/build
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 SUB_FILES=	pkg-install pkg-deinstall
 ONLY_FOR_ARCHS=	amd64 i386
+MANCOMPRESSED=	yes
 
-MAN1=		ossinfo.1.gz ossmix.1.gz osspartysh.1.gz ossplay.1.gz \
-		ossrecord.1.gz osstest.1.gz ossxmix.1.gz soundoff.1.gz \
-		soundon.1.gz
-MAN7=		oss_ali5455.7.gz oss_atiaudio.7.gz oss_audigyls.7.gz \
-		oss_audioloop.7.gz oss_audiopci.7.gz oss_cmi878x.7.gz \
-		oss_cmpci.7.gz oss_cs4281.7.gz oss_cs461x.7.gz \
-		oss_digi96.7.gz	oss_emu10k1x.7.gz oss_envy24.7.gz \
-		oss_envy24ht.7.gz oss_fmedia.7.gz oss_geode.7.gz \
-		oss_hdaudio.7.gz oss_ich.7.gz oss_imux.7.gz \
-		oss_midiloop.7.gz oss_midimix.7.gz oss_sblive.7.gz \
-		oss_sbpci.7.gz oss_sbxfi.7.gz oss_solo.7.gz \
-		oss_trident.7.gz oss_via823x.7.gz oss_via97.7.gz \
-		oss_ymf7xx.7.gz osscore.7.gz
-MAN8=		ossdetect.8.gz ossdevlinks.8.gz savemixer.8.gz vmixctl.8.gz
+MAN1=		ossinfo.1 ossmix.1 osspartysh.1 ossplay.1 ossrecord.1 \
+		osstest.1 ossxmix.1 soundoff.1 soundon.1
+MAN7=		oss_ali5455.7 oss_atiaudio.7 oss_audigyls.7 oss_audioloop.7 \
+		oss_audiopci.7 oss_cmi878x.7 oss_cmpci.7 oss_cs4281.7 \
+		oss_cs461x.7 oss_digi96.7 oss_emu10k1x.7 oss_envy24.7 \
+		oss_envy24ht.7 oss_fmedia.7 oss_geode.7 oss_hdaudio.7 \
+		oss_ich.7 oss_imux.7 oss_midiloop.7 oss_midimix.7 \
+		oss_sblive.7 oss_sbpci.7 oss_sbxfi.7 oss_solo.7 \
+		oss_trident.7 oss_via823x.7 oss_via97.7 oss_ymf7xx.7 \
+		osscore.7
+MAN8=		ossdetect.8 ossdevlinks.8 savemixer.8 vmixctl.8
 
 CONF_FILES=	oss_audigyls oss_audioloop oss_cs461x oss_emu10k1x \
 		oss_envy24 oss_envy24ht oss_fmedia oss_hdaudio oss_ich \
@@ -59,10 +58,6 @@ IGNORE=		requires kernel source to be installed
 .include <bsd.port.pre.mk>
 
 pre-patch:
-	${REINPLACE_CMD} -e 's|"/usr/include/stdarg.h"|<machine/stdarg.h>|g' \
-	    -e "s|<i386/include/intr_machdep.h>|<machine/intr_machdep.h>|g" \
-	    ${WRKDIR}/${DISTNAME}/setup/FreeBSD/oss/build/module.inc \
-	    ${WRKDIR}/${DISTNAME}/setup/FreeBSD/oss/build/osscore.c
 	${FIND} ${WRKDIR}/${DISTNAME} -type f \
 	    -name configure -or -name '*.[ch]' -or -name '*.man' | \
 	    ${XARGS} ${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|g' \
