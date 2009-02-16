@@ -1,6 +1,15 @@
---- src/ftpd.c	2006-02-21 14:14:49.000000000 +0100
-+++ src/ftpd.c	2007-12-20 14:53:56.000000000 +0100
-@@ -3439,14 +3439,14 @@ void dofeat(void)
+--- src/ftpd.c.orig	2006-02-21 16:14:49.000000000 +0300
++++ src/ftpd.c	2009-02-13 17:55:48.000000000 +0300
+@@ -2541,7 +2541,7 @@
+     tm.tm_mon--;
+     tm.tm_year -= 1900;
+     if (tm.tm_mon < 0 || tm.tm_year <= 0 ||
+-	(ts = mktime(&tm)) == (time_t) -1) {
++	(ts = timegm(&tm)) == (time_t) -1) {
+ 	addreply_noformat(501, MSG_TIMESTAMP_FAILURE);
+ 	return;
+     }
+@@ -3439,14 +3439,14 @@
  # define FEAT_UTF8 ""
  #endif
      
@@ -17,5 +26,3 @@
      }
  #endif
      addreply_noformat(0, feat);
-
-
