@@ -5,7 +5,7 @@ lib/slang/v2/modules/gtk-module.so
 lib/slang/v2/modules/gtkextra-module.so
 lib/slang/v2/modules/libslgtk.so
 lib/slang/v2/modules/libslgtk.so.0
-lib/slang/v2/modules/libslgtk.so.0.7.4
+lib/slang/v2/modules/libslgtk.so.0.7.5
 %%PORTDOCS%%%%DOCSDIR%%/slgtk.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/buttonbox.sl
