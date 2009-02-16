@@ -5,36 +5,32 @@
 # $FreeBSD$
 
 PORTNAME=	powerman
-PORTVERSION=	1.0.20
-PORTREVISION=	1
+PORTVERSION=	2.3.4
+#PORTREVISION=	1
 CATEGORIES=	sysutils parallel
-MASTER_SITES=	ftp://ftp.llnl.gov/pub/linux/powerman/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	SF/powerman
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PowerMan is a tool for doing remote power control
 
-USE_BISON=	build
-USE_GMAKE=	yes
-USE_RC_SUBR=	yes
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+USE_PERL5_BUILD=	yes
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-httppower --localstatedir=${DESTDIR}/var \
+		--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+USE_LDCONFIG=	yes
+USE_RC_SUBR=	powerman.sh
 
-MAN1=		powerman.1
-MAN5=		powerman.conf.5
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+MAN1=		pm.1 powerman.1
+MAN3=		libpowerman.3
+MAN5=		powerman.conf.5 powerman.dev.5
 MAN7=		powerman-devices.7
-MAN8=		powermand.8
-
-post-patch:
-.for file in ${MAN1} ${MAN5} powermand.1
-	@${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:" "${WRKSRC}/man/${file}"
-.endfor
-	@${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:" \
-		"${WRKSRC}/src/powerman.h"
-	@${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:" \
-		-e "s:%%RC_SUBR%%:${RC_SUBR}:" \
-		"${WRKSRC}/scripts/powerman.init"
+MAN8=		httppower.8 plmpower.8 powermand.8 vpcd.8
 
 .include <bsd.port.mk>
