@@ -16,6 +16,7 @@ libdata/pkgconfig/flickcurl.pc
 %%DOCSDIR%%/flickcurl-section-blogs.html
 %%DOCSDIR%%/flickcurl-section-category.html
 %%DOCSDIR%%/flickcurl-section-comment.html
+%%DOCSDIR%%/flickcurl-section-commons.html
 %%DOCSDIR%%/flickcurl-section-contact.html
 %%DOCSDIR%%/flickcurl-section-context.html
 %%DOCSDIR%%/flickcurl-section-core.html
