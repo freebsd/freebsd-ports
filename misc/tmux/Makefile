@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmux
-DISTVERSION=	0.6
+DISTVERSION=	0.7
 CATEGORIES=	misc
 MASTER_SITES=	SF
 
@@ -29,7 +29,7 @@ post-install:
 
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-.for i in n-marriott.sh n-marriott.conf tmux.vim screen-keys.conf
+.for i in n-marriott.sh n-marriott.conf screen-keys.conf tmux.vim
 	${INSTALL_DATA} ${WRKSRC}/examples/${i} ${EXAMPLESDIR}
 .endfor
 .endif
