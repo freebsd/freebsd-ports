@@ -25,6 +25,8 @@ CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=	--enable-sendmail
 .endif
 
+LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
+
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 502102
 IGNORE=				using libspf2 requires a thread safe resolver
