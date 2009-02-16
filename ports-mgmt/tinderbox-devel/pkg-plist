@@ -1,4 +1,5 @@
 etc/rc.d/tinderbox
+tinderbox/scripts/.version
 tinderbox/scripts/README
 tinderbox/scripts/ds.ph.dist
 tinderbox/scripts/etc/env/.keep_me
@@ -48,7 +49,9 @@ tinderbox/scripts/upgrade/config.map
 tinderbox/scripts/upgrade/hooks.map
 tinderbox/scripts/upgrade/jails.map
 tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.0_to_3.1.sql
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.1_to_3.2.sql
 tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.0_to_3.1.sql
+tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.1_to_3.2.sql
 tinderbox/scripts/upgrade/order.lst
 tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%tinderbox/scripts/webui/core/Build.php
