@@ -8,7 +8,8 @@
 PORTNAME=	lzmautils
 DISTVERSION=	4.999.8
 CATEGORIES=	archivers
-MASTER_SITES=	http://tukaani.org/xz/
+MASTER_SITES=	http://tukaani.org/xz/ \
+		http://freebsd.unixfreunde.de/sources/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	xz-${DISTVERSION}beta
 
