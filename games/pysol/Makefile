@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	tg/:support
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:support \
 		${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX}:source
 
-MAINTAINER=	serg@tmn.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Solitaire game, written in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysolsoundserver.so:${PORTSDIR}/audio/pysol-sound-server \

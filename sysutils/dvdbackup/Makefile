@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dvd-create.sourceforge.net/ GENTOO/distfiles
 
-MAINTAINER=	serg@tmn.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Backup content from DVD to hard disk
 
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread

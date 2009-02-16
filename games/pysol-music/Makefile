@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
 
-MAINTAINER=	serg@tmn.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of background music for use with PySol
 
 RUN_DEPENDS=	pysol:${PORTSDIR}/games/pysol

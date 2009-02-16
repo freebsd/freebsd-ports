@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	id3v2
 
-MAINTAINER=	serg@tmn.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line id3v2 tag editor
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib

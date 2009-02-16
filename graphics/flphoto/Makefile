@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fltk
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	serg@tmn.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A basic image management and display program
 
 LIB_DEPENDS=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
