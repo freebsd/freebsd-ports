@@ -1575,6 +1575,7 @@ bin/swig%%VER%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/funcptr.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/function_typedef.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/fvirtual.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/global_namespace.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/global_ns_arg.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/global_vars.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/grouping.i
@@ -1675,6 +1676,7 @@ bin/swig%%VER%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/enum_thorough_typeunsafe_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/extend_default_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/extern_declaration_runme.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/global_namespace_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/ignore_parameter_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/imports_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/inctest_runme.java
@@ -2203,6 +2205,7 @@ bin/swig%%VER%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/contract_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/cpp_enum_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/cpp_namespace_runme.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/cpp_static_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/default_args_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/default_constructor_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/director_abstract_runme.py
@@ -2293,6 +2296,7 @@ bin/swig%%VER%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/profiletest_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/profiletestc_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/python_abstractbase_runme3.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/python_append_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/python_kwargs_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/python_nondynamic_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/python_overload_simple_cast_runme.py
@@ -2361,6 +2365,7 @@ bin/swig%%VER%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/voidtest_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/wrapmacro_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python_abstractbase.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python_append.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python_autodoc.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python_kwargs.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python_nondynamic.i
