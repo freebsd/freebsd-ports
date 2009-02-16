@@ -6,16 +6,22 @@
 %%CACTIDIR%%/cacti.sql
 %%CACTIDIR%%/cdef.php
 %%CACTIDIR%%/cli/.htaccess
+%%CACTIDIR%%/cli/add_data_query.php
 %%CACTIDIR%%/cli/add_device.php
+%%CACTIDIR%%/cli/add_graph_template.php
 %%CACTIDIR%%/cli/add_graphs.php
 %%CACTIDIR%%/cli/add_perms.php
 %%CACTIDIR%%/cli/add_tree.php
 %%CACTIDIR%%/cli/copy_user.php
+%%CACTIDIR%%/cli/host_update_template.php
+%%CACTIDIR%%/cli/poller_data_sources_reapply_names.php
 %%CACTIDIR%%/cli/poller_graphs_reapply_names.php
 %%CACTIDIR%%/cli/poller_output_empty.php
 %%CACTIDIR%%/cli/poller_reindex_hosts.php
 %%CACTIDIR%%/cli/rebuild_poller_cache.php
 %%CACTIDIR%%/cli/repair_database.php
+%%CACTIDIR%%/cli/structure_rra_paths.php
+%%CACTIDIR%%/cli/upgrade_database.php
 %%CACTIDIR%%/cmd.php
 %%CACTIDIR%%/color.php
 %%CACTIDIR%%/data_input.php
@@ -43,7 +49,9 @@
 %%CACTIDIR%%/docs/html/check_rrd_owner.html
 %%CACTIDIR%%/docs/html/check_rrd_updating.html
 %%CACTIDIR%%/docs/html/check_zero_values.html
+%%CACTIDIR%%/docs/html/cli_add_data_query.html
 %%CACTIDIR%%/docs/html/cli_add_device.html
+%%CACTIDIR%%/docs/html/cli_add_graph_template.html
 %%CACTIDIR%%/docs/html/cli_add_graphs.html
 %%CACTIDIR%%/docs/html/cli_add_perms.html
 %%CACTIDIR%%/docs/html/cli_add_tree.html
@@ -72,6 +80,9 @@
 %%CACTIDIR%%/docs/html/host_templates.html
 %%CACTIDIR%%/docs/html/host_variables.html
 %%CACTIDIR%%/docs/html/how_to.html
+%%CACTIDIR%%/docs/html/images/data_source_title_example1.png
+%%CACTIDIR%%/docs/html/images/data_source_title_example2.png
+%%CACTIDIR%%/docs/html/images/data_source_title_template.png
 %%CACTIDIR%%/docs/html/images/data_template.png
 %%CACTIDIR%%/docs/html/images/export_template.png
 %%CACTIDIR%%/docs/html/images/graph_template.png
@@ -123,6 +134,7 @@
 %%CACTIDIR%%/docs/html/user_management.html
 %%CACTIDIR%%/docs/html/using_spine.html
 %%CACTIDIR%%/docs/html/variables.html
+%%CACTIDIR%%/docs/pdf/README
 %%CACTIDIR%%/docs/text/manual.txt
 %%CACTIDIR%%/gprint_presets.php
 %%CACTIDIR%%/graph.php
@@ -209,23 +221,6 @@
 %%CACTIDIR%%/include/global_arrays.php
 %%CACTIDIR%%/include/global_settings.php
 %%CACTIDIR%%/include/global_constants.php
-%%CACTIDIR%%/include/html/inc_data_source_filter_table.php
-%%CACTIDIR%%/include/html/inc_data_template_filter_table.php
-%%CACTIDIR%%/include/html/inc_device_filter_table.php
-%%CACTIDIR%%/include/html/inc_dq_view_filter_table.php
-%%CACTIDIR%%/include/html/inc_dt_view_filter_table.php
-%%CACTIDIR%%/include/html/inc_graph_filter_table.php
-%%CACTIDIR%%/include/html/inc_graph_items_filter_table.php
-%%CACTIDIR%%/include/html/inc_graph_template_filter_table.php
-%%CACTIDIR%%/include/html/inc_graph_view_filter_table.php
-%%CACTIDIR%%/include/html/inc_host_template_filter_table.php
-%%CACTIDIR%%/include/html/inc_poller_item_filter_table.php
-%%CACTIDIR%%/include/html/inc_snmp_cache_filter_table.php
-%%CACTIDIR%%/include/html/inc_timespan_selector.php
-%%CACTIDIR%%/include/html/inc_timespan_settings.php
-%%CACTIDIR%%/include/html/inc_user_admin_filter_table.php
-%%CACTIDIR%%/include/html/inc_user_log_filter_table.php
-%%CACTIDIR%%/include/html/inc_view_logfile_table.php
 %%CACTIDIR%%/include/jscalendar/calendar-setup.js
 %%CACTIDIR%%/include/jscalendar/calendar.js
 %%CACTIDIR%%/include/jscalendar/lang/calendar-af.js
@@ -303,6 +298,8 @@
 %%CACTIDIR%%/install/0_8_6j_to_0_8_7.php
 %%CACTIDIR%%/install/0_8_7_to_0_8_7a.php
 %%CACTIDIR%%/install/0_8_7a_to_0_8_7b.php
+%%CACTIDIR%%/install/0_8_7b_to_0_8_7c.php
+%%CACTIDIR%%/install/0_8_7c_to_0_8_7d.php
 %%CACTIDIR%%/install/0_8_to_0_8_1.php
 %%CACTIDIR%%/install/index.php
 %%CACTIDIR%%/install/install_finish.gif
@@ -423,6 +420,7 @@
 %%CACTIDIR%%/lib/sort.php
 %%CACTIDIR%%/lib/template.php
 %%CACTIDIR%%/lib/time.php
+%%CACTIDIR%%/lib/timespan_settings.php
 %%CACTIDIR%%/lib/tree.php
 %%CACTIDIR%%/lib/utility.php
 %%CACTIDIR%%/lib/variables.php
@@ -490,10 +488,10 @@
 @dirrm %%CACTIDIR%%/include/treeview
 @dirrm %%CACTIDIR%%/include/jscalendar/lang
 @dirrm %%CACTIDIR%%/include/jscalendar
-@dirrm %%CACTIDIR%%/include/html
 @dirrmtry %%CACTIDIR%%/include
 @dirrm %%CACTIDIR%%/images
 @dirrm %%CACTIDIR%%/docs/text
+@dirrm %%CACTIDIR%%/docs/pdf
 @dirrm %%CACTIDIR%%/docs/html/images
 @dirrm %%CACTIDIR%%/docs/html
 @dirrm %%CACTIDIR%%/docs

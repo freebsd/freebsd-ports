@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	cacti
-PORTVERSION=	0.8.7b${PATCHLEVEL}
-PORTREVISION=	2
+PORTVERSION=	0.8.7d${PATCHLEVEL}
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.cacti.net/downloads/
 DISTFILES=	${PORTNAME}-${SITEDISTVERSION}${EXTRACT_SUFX}
 
 # Vendor's patches
 PATCH_SITES=	http://www.cacti.net/downloads/patches/${SITEDISTVERSION}/
-PATCHFILES=	snmp_auth_none_notice.patch reset_each_patch.patch
+PATCHFILES=
 
 PATCH_DIST_STRIP=	-p1
 
@@ -23,7 +22,7 @@ COMMENT=	Web-driven graphing interface for RRDTool
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 
-PATCHLEVEL=	.2
+PATCHLEVEL=
 PATCH_STRIP=	-p1
 USE_MYSQL=	yes
 USE_PHP=	mysql pcre session sockets snmp xml
