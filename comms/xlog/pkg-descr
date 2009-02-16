@@ -9,9 +9,4 @@ It also has the ability to customise log fields which makes it ideal for
 use in those countries that have odd logging rules such as the U.K. Also
 included is the ability to log using the FCC emissions codes.
 
-There is a new format for exporting the log called 'labels'. This will
-save some fields of the log in a TAB separated file. This file can be
-imported into glabels (deskutils/glabels) using the template
-called qsllabels.glabels in the xlog /usr/local/share/xlog directory.
-
 WWW: http://pg4i.chronos.org.uk/linux/xlog.html

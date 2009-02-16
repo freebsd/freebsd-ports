@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xlog
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://pg4i.chronos.org.uk/download/ \
 		http://www.qsl.net/pg4i/download/
@@ -16,25 +15,32 @@ MAINTAINER=	matt@chronos.org.uk
 COMMENT=	Amateur Radio logging application
 
 USE_GETTEXT=	yes
-USE_GNOME=	libgnomeprint gtk20
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-mime-update
+CONFIGURE_ARGS=	--with-mime-update \
+		CFLAGS="-I${PREFIX}/include" \
+		LDFLAGS="-L${PREFIX}/lib"
 
 LIB_DEPENDS+=	hamlib:${PORTSDIR}/comms/hamlib
 
 MAN1=		xlog.1
 
-.if defined (WITHOUT_NLS)
+.if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
-WITHNLS=	"@comment "
+PLIST_SUB+=		NLS="@comment "
 .else
-WITHNLS=	""
+PLIST_SUB+=		NLS=""
 .endif
-
-PLIST_SUB+=	WITHNLS=${WITHNLS}
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-D.*_DISABLE_DEPRECATED||g'
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's|desktop doc dxcc|desktop dxcc|g' \
+	${WRKSRC}/data/Makefile.in
+	@${REINPLACE_CMD} -e \
+	's|install-data-am: install-glabelsDATA|install-data-am:|g' \
+	${WRKSRC}/data/glabels/Makefile.in
+.endif
 
 .include <bsd.port.mk>
