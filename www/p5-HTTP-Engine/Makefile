@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Engine
-PORTVERSION=	0.0.21
+PORTVERSION=	0.1.3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,11 +15,12 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for HTTP Server Engine Drivers
 
 RUN_DEPENDS=	\
-	p5-Moose>=0.59:${PORTSDIR}/devel/p5-Moose \
-	p5-MooseX-Types>=0.04:${PORTSDIR}/devel/p5-MooseX-Types \
+	p5-Mouse>=0.16:${PORTSDIR}/devel/p5-Mouse \
+	p5-MouseX-Types>=0.01:${PORTSDIR}/devel/p5-MouseX-Types \
+	p5-Class-Method-Modifiers>=0:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
 	p5-CGI-Simple>=1.103:${PORTSDIR}/www/p5-CGI-Simple \
-	p5-HTTP-Body>=1.04:${PORTSDIR}/www/p5-HTTP-Body \
-	p5-libwww>=5.810:${PORTSDIR}/www/p5-libwww \
+	p5-HTTP-Body>=1.05:${PORTSDIR}/www/p5-HTTP-Body \
+	p5-HTTP-Headers-Fast>=0.05:${PORTSDIR}/www/p5-HTTP-Headers-Fast \
 	p5-URI>=1.36:${PORTSDIR}/net/p5-URI \
 	p5-HTTP-Server-Simple>=0.35:${PORTSDIR}/www/p5-HTTP-Server-Simple
 BUILD_DEPENDS=	${RUN_DEPENDS}
@@ -35,6 +36,7 @@ MAN3=		HTTP::Engine.3 \
 		HTTP::Engine::Interface::ServerSimple.3 \
 		HTTP::Engine::Interface::Standalone.3 \
 		HTTP::Engine::Interface::Test.3 \
+		HTTP::Engine::MinimalCGI.3 \
 		HTTP::Engine::Request.3 \
 		HTTP::Engine::Request::Upload.3 \
 		HTTP::Engine::Response.3 \
