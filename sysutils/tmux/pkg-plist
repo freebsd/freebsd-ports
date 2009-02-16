@@ -5,6 +5,6 @@ bin/tmux
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/n-marriott.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/n-marriott.sh
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tmux.vim
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/screen-keys.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tmux.vim
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
