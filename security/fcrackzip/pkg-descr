@@ -3,4 +3,4 @@ portable C (and optional x86 assembly). It allows the user to recover
 forgotten ZIP archive passwords, using either a brute force or
 dictionary attack on the provided files.
 
-WWW:	http://www.goof.com/pcg/marc/fcrackzip.html
+WWW:	http://home.schmorp.de/marc/fcrackzip.html
