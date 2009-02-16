@@ -10,7 +10,7 @@
 +  . %%PREFIX%%/etc/oss.conf
  else
 -  OSSLIBDIR=/usr/lib/oss
-+  OSSLIBDIR=%%PREFIX%%/usr/lib/oss
++  OSSLIBDIR=%%PREFIX%%/lib/oss
  fi
  
  if ! /sbin/kldstat | grep -q osscore.ko
