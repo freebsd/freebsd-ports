@@ -5,7 +5,7 @@
  #ifndef VDEV_SUPPORT
    struct fileinfo _fi, * fi = &_fi;
 +#if __FreeBSD_version >= 800062
-+  dev = minor (dev2unit (bsd_dev));
++  dev = dev2unit (bsd_dev);
 +#else
    dev = minor (bsd_dev);
 +#endif
@@ -17,7 +17,7 @@
  #ifndef VDEV_SUPPORT
    struct fileinfo _fi, * fi = &_fi;
 +#if __FreeBSD_version >= 800062
-+  dev = minor (dev2unit (bsd_dev));
++  dev = dev2unit (bsd_dev);
 +#else
    dev = minor (bsd_dev);
 +#endif
@@ -29,7 +29,7 @@
  oss_open (struct cdev *bsd_dev, int flags, int mode, struct thread *p)
  {
 +#if __FreeBSD_version >= 800062
-+  int dev = minor (dev2unit (bsd_dev));
++  int dev = dev2unit (bsd_dev);
 +#else
    int dev = minor (bsd_dev);
 +#endif
@@ -41,7 +41,7 @@
  #ifndef VDEV_SUPPORT
    struct fileinfo _fi, * fi = &_fi;
 +#if __FreeBSD_version >= 800062
-+  dev = minor (dev2unit (bsd_dev));
++  dev = dev2unit (bsd_dev);
 +#else
    dev = minor (bsd_dev);
 +#endif
@@ -53,7 +53,7 @@
  #ifndef VDEV_SUPPORT
    struct fileinfo _fi, * fi = &_fi;
 +#if __FreeBSD_version >= 800062
-+  dev = minor (dev2unit (bsd_dev));
++  dev = dev2unit (bsd_dev);
 +#else
    dev = minor (bsd_dev);
 +#endif
@@ -65,7 +65,7 @@
  #ifndef VDEV_SUPPORT
    struct fileinfo _fi, * fi = &_fi;
 +#if __FreeBSD_version >= 800062
-+  dev = minor (dev2unit (bsd_dev));
++  dev = dev2unit (bsd_dev);
 +#else
    dev = minor (bsd_dev);
 +#endif
@@ -77,7 +77,7 @@
    int err;
  #ifndef VDEV_SUPPORT
 +#if __FreeBSD_version >= 800062
-+  dev = minor (dev2unit (bsd_dev));
++  dev = dev2unit (bsd_dev);
 +#else
    dev = minor (bsd_dev);
 +#endif
