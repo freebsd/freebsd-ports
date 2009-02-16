@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.0.75
+PORTVERSION=	5.0.77
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -26,7 +26,6 @@ CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-bench \
 		--without-extra-tools \
 		--with-libwrap \
-		--with-mysqlfs \
 		--with-low-memory \
 		--with-comment='FreeBSD port: ${PKGNAME}' \
 		--enable-thread-safe-client
