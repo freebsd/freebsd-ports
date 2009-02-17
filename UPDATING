@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090216:
+  AFFECTS: users of net/openldap24-{client,server}
+  AUTHOR: delphij@FreeBSD.org
+
+  OpenLDAP has been upgraded to 2.4.14, which requires a shared
+  library version bump.  Therefore, you need to reinstall all
+  ports depending on it.  Run something like:
+
+	# portupgrade -fr net/openldap24-client
+
 20090209:
   AFFECTS: users of multimedia/phonon, x11/kdelibs4, x11/kdebase4*,
   deskutils/kdepimlib4, deskutils/kdepim4, devel/automoc4
