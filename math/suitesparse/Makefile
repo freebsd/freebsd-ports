@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	suitesparse
-PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTVERSION=	3.2.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/SuiteSparse/
 DISTNAME=	SuiteSparse-${PORTVERSION}
-DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SuiteSparse is a set of packages for sparse matrices calculation
@@ -66,6 +64,7 @@ WRKSRC_SHARED=${WRKSRC}_shared
 CFLAGS_SHARED=${CFLAGS} ${FPIC}
 FFLAGS_SHARED=${CFLAGS} ${FPIC}
 SVERSION=1
+FORTRANRUNTIME=-lgfortran -lgfortranbegin
 
 .if defined (WITH_METIS)
 METIS=${LOCALBASE}/lib/libmetis.a
@@ -78,9 +77,10 @@ CHOLMOD_CONFIG = -DNPARTITION
 post-patch:
 	${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
 	@${REINPLACE_CMD} -e 's,%%CC%%,${CC},g' \
+			  -e 's,%%CXX%%,${CXX},g' \
 			  -e 's,%%F77%%,${F77},g' \
-			  -e 's,%%FC%%,${FC},g' \
 			  -e 's,%%BLAS%%,-L${LOCALBASE}/lib ${BLAS},g' \
+			  -e 's,%%FORTRANRUNTIME%%,${FORTRANRUNTIME},g' \
 			  -e 's,%%LAPACK%%,-L${LOCALBASE}/lib ${LAPACK},g' \
 			  -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 			  -e 's,%%METIS_PATH%%,${METIS_PATH},g' \
@@ -89,21 +89,17 @@ post-patch:
 				 ${WRKSRC}/UFconfig/UFconfig.mk \
 				 ${WRKSRC_SHARED}/UFconfig/UFconfig.mk\
 				 ${WRKSRC}/CSparse/Lib/Makefile \
-				 ${WRKSRC_SHARED}/CSparse/Lib/Makefile \
-				 ${WRKSRC}/CXSparse/Lib/Makefile \
-				 ${WRKSRC_SHARED}/CXSparse/Lib/Makefile
+				 ${WRKSRC_SHARED}/CSparse/Lib/Makefile
 
 	@${REINPLACE_CMD}  -e 's,%%CFLAGS%%,${CFLAGS},g' \
 			   -e 's,%%FFLAGS%%,${FFLAGS},g' \
 				 ${WRKSRC}/UFconfig/UFconfig.mk \
-				 ${WRKSRC}/CSparse/Lib/Makefile \
-				 ${WRKSRC}/CXSparse/Lib/Makefile
+				 ${WRKSRC}/CSparse/Lib/Makefile
 
 	@${REINPLACE_CMD}  -e 's,%%CFLAGS%%,${CFLAGS_SHARED},g' \
 			   -e 's,%%FFLAGS%%,${FFLAGS_SHARED},g' \
 				 ${WRKSRC_SHARED}/UFconfig/UFconfig.mk \
-				 ${WRKSRC_SHARED}/CSparse/Lib/Makefile \
-				 ${WRKSRC_SHARED}/CXSparse/Lib/Makefile
+				 ${WRKSRC_SHARED}/CSparse/Lib/Makefile
 
 do-build:
 	cd ${WRKSRC} ; ${GMAKE}
