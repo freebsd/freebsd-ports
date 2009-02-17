@@ -10,7 +10,7 @@ PORTVERSION=	1.7.6
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chifeng@gmail.com
 COMMENT=	Greylisting policy server for Postfix using an SQL backend
 
 RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \

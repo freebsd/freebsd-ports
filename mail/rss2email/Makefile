@@ -11,7 +11,7 @@ CATEGORIES=	mail python
 MASTER_SITES=	CENKES
 # http://rss2email.infogami.com/rss2email.py
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chifeng@gmail.com
 COMMENT=	Read newsfeeds in your email client
 
 RUN_DEPENDS=	py*-feedparser>=0:${PORTSDIR}/textproc/py-feedparser \
