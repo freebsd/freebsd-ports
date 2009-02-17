@@ -37,7 +37,7 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 DEFAULT_OPENLDAP_VER?=	24
 # OpenLDAP client versions currently supported
 OPENLDAP23_LIBVER=	2.3.2
-OPENLDAP24_LIBVER=	2.4.5
+OPENLDAP24_LIBVER=	2.4.6
 
 .if exists(${LOCALBASE}/bin/ldapwhoami)
 _OPENLDAP_VER!=	${LOCALBASE}/bin/ldapwhoami -VV 2>&1 | ${GREP} ldapwhoami | ${SED} -E 's/.*OpenLDAP: ldapwhoami (2)\.(3|4).*/\1\2/'
