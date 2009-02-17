@@ -1,0 +1,11 @@
+bin/linwarrior
+%%DATADIR%%/sound/ambient.wav
+%%DATADIR%%/sound/explosion.wav
+%%DATADIR%%/sound/homingmissile.wav
+%%DATADIR%%/sound/machinegun.wav
+%%DATADIR%%/sound/plasmagun.wav
+%%DATADIR%%/sound/pow.wav
+%%DATADIR%%/sound/raybeam.wav
+%%DATADIR%%/sound/sparkgun.wav
+@dirrm %%DATADIR%%/sound
+@dirrm %%DATADIR%%
