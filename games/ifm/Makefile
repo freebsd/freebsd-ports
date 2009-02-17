@@ -7,17 +7,16 @@
 
 PORTNAME=	ifm
 PORTVERSION=	5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games tk
-MASTER_SITES=	http://www.ifarchive.org/%SUBDIR%/
-MASTER_SITE_SUBDIR=	if-archive/mapping-tools
+MASTER_SITES=	http://www.ibiblio.org/pub/docs/interactive-fiction/mapping-tools/
 
 MAINTAINER=	akosela@andykosela.com
 COMMENT=	Interactive Fiction mapper and walkthrough generator
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
-USE_ZIP=	yes
+USE_GZIP=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
