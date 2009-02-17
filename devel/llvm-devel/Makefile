@@ -7,7 +7,6 @@
 
 PORTNAME=	llvm
 DISTVERSION=	2.4.snap${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -26,7 +25,7 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .if defined(BOOTSTRAP)
 SVN_SNAPDATE!=	date -v-1d +%Y-%m-%d
 .else
-SVN_SNAPDATE=	2008-11-05
+SVN_SNAPDATE=	2009-02-15
 .endif
 
 SNAPDATE=	${SVN_SNAPDATE:S/-//g}
@@ -42,7 +41,7 @@ CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
 CONFIGURE_ARGS+=	--enable-optimized
 .endif
 
-MAN1=		bugpoint.1 llc.1 lli.1 llvm-ar.1 \
+MAN1=		bugpoint.1 llc.1 lli.1 llvmc.1 llvm-ar.1 \
 		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-db.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
 		llvm-prof.1 llvm-ranlib.1 llvmgcc.1 \
@@ -74,21 +73,13 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/tools/clang/utils/scan-build
 
-post-build:
-	cd ${WRKSRC}/tools/clang; ${GMAKE}
-
 post-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/Release/bin/clang ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/utils/ccc \
-	    ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/utils/ccc-analyzer \
 	    ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/utils/scan-build \
 	    ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/tools/clang/utils/sorttable.js ${DATADIR}
-	@${RM} ${PREFIX}/bin/.dir \
-	   ${PREFIX}/lib/.dir
 
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check)'
 regression-test: ${BUILD_COOKIE}
@@ -98,5 +89,35 @@ regression-test: ${BUILD_COOKIE}
 	else \
 		${SH} -c ${TEST_CMD}; \
 	fi
+
+MANUAL_BINS=	bin/bugpoint \
+		bin/ccc \
+		bin/ccc-analyzer \
+		bin/clang \
+		bin/gccas \
+		bin/gccld \
+		bin/llc \
+		bin/lli \
+		bin/opt \
+		bin/scan-build
+build-plist:
+	${RM} ${PLIST}
+	cd ${PREFIX} && \
+	    (ls ${MANUAL_BINS} bin/llvm* bin/ccclib/* \
+		lib/LLVM* lib/libLLVM* lib/plugin_llvm* lib/libclang* ; \
+	     ${FIND} include/llvm-c -type f; ${FIND} include/llvm -type f) | \
+	    ${SORT} >> ${PLIST}
+	${FIND} ${DATADIR} -type f | ${SORT} | \
+	    ${SED} -e 's|${DATADIR}|%%DATADIR%%|' >> ${PLIST}
+	${FIND} ${DOCSDIR} -type f | ${SORT} | \
+	    ${SED} -e 's|${DOCSDIR}|%%DOCSDIR%%|' >> ${PLIST}
+	cd ${PREFIX} && \
+	    (echo bin/ccclib; \
+	     ${FIND} include/llvm-c -type d; ${FIND} include/llvm -type d) | \
+	    ${SORT} -r | ${SED} -e 's|^|@dirrm |' >> ${PLIST}
+	${FIND} ${DATADIR} -type d | ${SORT} -r | \
+	    ${SED} -e 's|${DATADIR}|%%DATADIR%%|' -e 's|^|@dirrm |' >> ${PLIST}
+	${FIND} ${DOCSDIR} -type d | ${SORT} -r | \
+	    ${SED} -e 's|${DOCSDIR}|%%DOCSDIR%%|' -e 's|^|@dirrm |' >> ${PLIST}
 
 .include <bsd.port.post.mk>

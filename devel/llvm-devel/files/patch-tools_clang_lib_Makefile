@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- tools/clang/lib/Makefile.orig
++++ tools/clang/lib/Makefile
+@@ -8,7 +8,7 @@
+ ##===----------------------------------------------------------------------===##
+ LEVEL = ../../..
+ 
+-PARALLEL_DIRS = Headers Basic Lex Parse AST Sema CodeGen Analysis Rewrite Driver
++PARALLEL_DIRS = Basic Lex Parse AST Sema CodeGen Analysis Rewrite Driver
+ 
+ include $(LEVEL)/Makefile.common
+ 
