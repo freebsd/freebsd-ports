@@ -1,0 +1,32 @@
+bin/gobby
+share/pixmaps/gobby/userlist.png
+share/pixmaps/gobby/doclist.png
+share/pixmaps/gobby/chat.png
+share/icons/HighContrastLargePrintInverse/scalable/apps/gobby.svg
+share/icons/HighContrastLargePrintInverse/48x48/apps/gobby.png
+share/icons/HighContrastLargePrintInverse/icon-theme.cache
+share/icons/hicolor/48x48/apps/gobby.png
+share/icons/hicolor/icon-theme.cache
+share/icons/hicolor/scalable/apps/gobby.svg
+share/locale/ca/LC_MESSAGES/gobby.mo
+share/locale/de/LC_MESSAGES/gobby.mo
+share/locale/el/LC_MESSAGES/gobby.mo
+share/locale/es/LC_MESSAGES/gobby.mo
+share/locale/fr/LC_MESSAGES/gobby.mo
+share/locale/he/LC_MESSAGES/gobby.mo
+share/locale/it/LC_MESSAGES/gobby.mo
+share/locale/ja/LC_MESSAGES/gobby.mo
+share/locale/ko/LC_MESSAGES/gobby.mo
+share/locale/nl/LC_MESSAGES/gobby.mo
+share/locale/pl/LC_MESSAGES/gobby.mo
+share/locale/pt/LC_MESSAGES/gobby.mo
+share/locale/pt_BR/LC_MESSAGES/gobby.mo
+share/locale/ru/LC_MESSAGES/gobby.mo
+share/locale/sv/LC_MESSAGES/gobby.mo
+share/locale/zh_CN/LC_MESSAGES/gobby.mo
+@dirrm share/pixmaps/gobby
+@dirrm share/icons/HighContrastLargePrintInverse/scalable/apps
+@dirrm share/icons/HighContrastLargePrintInverse/scalable
+@dirrm share/icons/HighContrastLargePrintInverse/48x48/apps
+@dirrm share/icons/HighContrastLargePrintInverse/48x48
+@dirrm share/icons/HighContrastLargePrintInverse
