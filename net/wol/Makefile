@@ -13,7 +13,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ahh
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cm@therek.net
 COMMENT=	Tool to wake up Wake-On-LAN compliant computers
 
 GNU_CONFIGURE=		yes

@@ -12,7 +12,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cm@therek.net
 COMMENT=	Perl5 module to read directives from a configuration file
 
 USE_PERL5=	YES
