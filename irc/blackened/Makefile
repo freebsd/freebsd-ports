@@ -19,4 +19,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 MAN1=		blackened.1
 
+DEPRECATED=	Broken and abandonware
+EXPIRATION_DATE=	2009-03-17
+
 .include <bsd.port.mk>
