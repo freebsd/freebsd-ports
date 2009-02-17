@@ -13,6 +13,8 @@ MASTER_SITES=	SF
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Automated system from compile/test cycle to validate code changes
 
+BROKEN=		does not package
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 USE_TWISTED_RUN=	mail web words
