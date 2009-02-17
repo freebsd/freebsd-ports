@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.6.0.5
+PORTREVISION=	1
 PKGNAMESUFFIX=	16
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.digium.com/pub/asterisk/ \
@@ -163,7 +164,8 @@ CONFIGURE_ARGS+=	--without-sqlite
 .else
 PLIST_SUB+=	WITH_SQLITE=""
 CONFIGURE_ARGS+= --with-sqlite
-LIB_DEPENDS+=	sqlite:${PORTSDIR}/databases/sqlite2
+LIB_DEPENDS+=	sqlite:${PORTSDIR}/databases/sqlite2 \
+		sqlite3:${PORTSDIR}/databases/sqlite3
 .endif
 
 .if !defined(WITH_ILBC)
