@@ -93,6 +93,9 @@ lib/libklu.so.1
 lib/libldl.a
 lib/libldl.so
 lib/libldl.so.1
+lib/libspqr.a
+lib/libspqr.so
+lib/libspqr.so.1
 lib/libumfpack.a
 lib/libumfpack.so
 lib/libumfpack.so.1
