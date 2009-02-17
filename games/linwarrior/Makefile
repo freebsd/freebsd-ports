@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linwarrior
-PORTVERSION=	20081224
+PORTVERSION=	20090208
 CATEGORIES=	games
 MASTER_SITES=	http://www.hackcraft.de/games/linwarrior_3d/downloads/ \
 		http://mirror.amdmi3.ru/
@@ -15,25 +15,22 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Navigate a mech through a 3D world and fire at enemies
 
-USE_SDL=	sdl mixer
+LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
+		alut.1:${PORTSDIR}/audio/freealut
+
+USE_GMAKE=	yes
 USE_GL=		gl glu
+USE_SDL=	sdl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PLIST_FILES=	bin/linwarrior
-
-SRCS=		cBackground cBuilding cController cMech cMission cObject \
-		cTree cWeapon cWorld main
-
-do-build:
-.for s in ${SRCS}
-	cd ${WRKSRC}/source && ${CXX} ${CXXFLAGS} `${SDL_CONFIG} --cflags` \
-	       	-I.. -I../psi3d -c ${s}.cpp -o ${s}.o
-.endfor
-	cd ${WRKSRC}/source && ${CXX} `${SDL_CONFIG} --libs` -lGL -lGLU \
-	       	${SRCS:C/$/.o/} -o ${PORTNAME}
+post-patch:
+	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' ${WRKSRC}/source/cMech.cpp \
+		${WRKSRC}/source/cWeapon.cpp ${WRKSRC}/source/main.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/source/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dist/${PORTNAME} ${PREFIX}/bin
+	${MKDIR} ${DATADIR}/sound
+	${INSTALL_DATA} ${WRKSRC}/data/sound/*.wav ${DATADIR}/sound
 
 .include <bsd.port.mk>
