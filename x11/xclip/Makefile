@@ -7,18 +7,18 @@
 #
 
 PORTNAME=	xclip
-PORTVERSION=	0.08
-PORTREVISION=	1
+PORTVERSION=	0.11
 CATEGORIES=	x11
-MASTER_SITES=	http://people.debian.org/~kims/xclip/
+MASTER_SITES=	SF
 
 MAINTAINER=	eitanadlerlist@gmail.com
 COMMENT=	An interface to X selections ("the clipboard") from the command line
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_IMAKE=	yes
+USE_XORG=	x11 xproto xmu
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
 MAN1=		xclip.1
-PLIST_FILES=	bin/xclip
+PLIST_FILES=	bin/xclip bin/xclip-copyfile bin/xclip-cutfile bin/xclip-pastefile
 
 .include <bsd.port.mk>
