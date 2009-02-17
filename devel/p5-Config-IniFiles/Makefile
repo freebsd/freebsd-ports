@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/G/GC/GCARLS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cm@therek.net
 COMMENT=	Perl5 module for reading .ini-style configuration files
 
 PERL_CONFIGURE=	YES

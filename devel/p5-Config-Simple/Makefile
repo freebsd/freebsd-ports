@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/Config/SHERZODR
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cm@therek.net
 COMMENT=	Simple configuration file class
 
 PERL_CONFIGURE=	yes

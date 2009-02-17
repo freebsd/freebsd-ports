@@ -10,7 +10,7 @@ PORTVERSION=	0.41
 CATEGORIES=	net
 MASTER_SITES=	http://gsd.di.uminho.pt/jpo/software/wakeonlan/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cm@therek.net
 COMMENT=	Sends magic packets to WOL enabled NIC to switch on the called PC
 
 PERL_CONFIGURE=	yes
