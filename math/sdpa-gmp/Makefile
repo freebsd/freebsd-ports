@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sdpa-gmp
-PORTVERSION=	7.1.1
-PORTREVISION=	1
+PORTVERSION=	7.1.2
 CATEGORIES=	math
 MASTER_SITES=	http://sdpa.indsys.chuo-u.ac.jp/sdpa/files/
 DISTFILES=	${SRCFILE} ${MANUALFILE}
@@ -19,10 +18,11 @@ COMMENT=	Multi pricision arithmetic version of math/sdpa
 
 .include <bsd.port.pre.mk>
 
-SRCDATE=	20080618
+SRCDATE=	20090204
 MANDATE=	20080618
+MANUALVER=	7.1.1
 SRCFILE=	${PORTNAME}.${PORTVERSION}.src.${SRCDATE}.tar.gz
-MANUALFILE=	sdpa.${PORTVERSION}.manual.${MANDATE}.pdf
+MANUALFILE=	sdpa.${MANUALVER}.manual.${MANDATE}.pdf
 GNU_CONFIGURE=	yes
 LIB_DEPENDS+=	spooles:${PORTSDIR}/math/spooles \
 		gmp.7:${PORTSDIR}/math/libgmp4 \
