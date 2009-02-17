@@ -1,16 +1,26 @@
 @unexec if cmp -s %D/etc/pythonfilter.conf %D/etc/pythonfilter.conf.sample; then rm -f %D/etc/pythonfilter.conf; fi
 etc/pythonfilter.conf.sample
-@exec if [ ! -e %D/etc/pythonfilter.conf ]; then cp -p %D/etc/pythonfilter.conf.sample %D/etc/pythonfilter.conf; fi
+@exec if [ ! -f %D/etc/pythonfilter.conf ]; then cp -p %D/etc/pythonfilter.conf.sample %D/etc/pythonfilter.conf; fi
+@unexec if cmp -s %D/etc/pythonfilter-modules.conf %D/etc/pythonfilter-modules.conf.sample; then rm -f %D/etc/pythonfilter-modules.conf; fi
+etc/pythonfilter-modules.conf.sample
+@exec if [ ! -f %D/etc/pythonfilter-modules.conf ]; then cp -p %D/etc/pythonfilter-modules.conf.sample %D/etc/pythonfilter-modules.conf; fi
 libexec/filters/pythonfilter
+libexec/filters/pythonfilter-quarantine
 %%PYTHON_SITELIBDIR%%/courier/__init__.py
 %%PYTHON_SITELIBDIR%%/courier/__init__.pyc
 %%PYTHON_SITELIBDIR%%/courier/__init__.pyo
+%%PYTHON_SITELIBDIR%%/courier/authdaemon.py
+%%PYTHON_SITELIBDIR%%/courier/authdaemon.pyc
+%%PYTHON_SITELIBDIR%%/courier/authdaemon.pyo
 %%PYTHON_SITELIBDIR%%/courier/config.py
 %%PYTHON_SITELIBDIR%%/courier/config.pyc
 %%PYTHON_SITELIBDIR%%/courier/config.pyo
 %%PYTHON_SITELIBDIR%%/courier/control.py
 %%PYTHON_SITELIBDIR%%/courier/control.pyc
 %%PYTHON_SITELIBDIR%%/courier/control.pyo
+%%PYTHON_SITELIBDIR%%/courier/quarantine.py
+%%PYTHON_SITELIBDIR%%/courier/quarantine.pyc
+%%PYTHON_SITELIBDIR%%/courier/quarantine.pyo
 %%PYTHON_SITELIBDIR%%/courier/xfilter.py
 %%PYTHON_SITELIBDIR%%/courier/xfilter.pyc
 %%PYTHON_SITELIBDIR%%/courier/xfilter.pyo
@@ -20,6 +30,9 @@ libexec/filters/pythonfilter
 %%PYTHON_SITELIBDIR%%/pythonfilter/TtlDb.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/TtlDb.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/TtlDb.pyo
+%%PYTHON_SITELIBDIR%%/pythonfilter/add_signature.py
+%%PYTHON_SITELIBDIR%%/pythonfilter/add_signature.pyc
+%%PYTHON_SITELIBDIR%%/pythonfilter/add_signature.pyo
 %%PYTHON_SITELIBDIR%%/pythonfilter/attachments.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/attachments.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/attachments.pyo
@@ -35,24 +48,42 @@ libexec/filters/pythonfilter
 %%PYTHON_SITELIBDIR%%/pythonfilter/debug.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/debug.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/debug.pyo
+%%PYTHON_SITELIBDIR%%/pythonfilter/deliveredto.py
+%%PYTHON_SITELIBDIR%%/pythonfilter/deliveredto.pyc
+%%PYTHON_SITELIBDIR%%/pythonfilter/deliveredto.pyo
 %%PYTHON_SITELIBDIR%%/pythonfilter/dialback.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/dialback.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/dialback.pyo
 %%PYTHON_SITELIBDIR%%/pythonfilter/greylist.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/greylist.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/greylist.pyo
+%%PYTHON_SITELIBDIR%%/pythonfilter/localsenders.py
+%%PYTHON_SITELIBDIR%%/pythonfilter/localsenders.pyc
+%%PYTHON_SITELIBDIR%%/pythonfilter/localsenders.pyo
+%%PYTHON_SITELIBDIR%%/pythonfilter/log_aliases.py
+%%PYTHON_SITELIBDIR%%/pythonfilter/log_aliases.pyc
+%%PYTHON_SITELIBDIR%%/pythonfilter/log_aliases.pyo
 %%PYTHON_SITELIBDIR%%/pythonfilter/noduplicates.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/noduplicates.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/noduplicates.pyo
+%%PYTHON_SITELIBDIR%%/pythonfilter/noreceivedheaders.py
+%%PYTHON_SITELIBDIR%%/pythonfilter/noreceivedheaders.pyc
+%%PYTHON_SITELIBDIR%%/pythonfilter/noreceivedheaders.pyo
 %%PYTHON_SITELIBDIR%%/pythonfilter/nosuccessdsn.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/nosuccessdsn.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/nosuccessdsn.pyo
 %%PYTHON_SITELIBDIR%%/pythonfilter/privateaddr.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/privateaddr.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/privateaddr.pyo
+%%PYTHON_SITELIBDIR%%/pythonfilter/quota.py
+%%PYTHON_SITELIBDIR%%/pythonfilter/quota.pyc
+%%PYTHON_SITELIBDIR%%/pythonfilter/quota.pyo
 %%PYTHON_SITELIBDIR%%/pythonfilter/ratelimit.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/ratelimit.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/ratelimit.pyo
+%%PYTHON_SITELIBDIR%%/pythonfilter/spamassassin.py
+%%PYTHON_SITELIBDIR%%/pythonfilter/spamassassin.pyc
+%%PYTHON_SITELIBDIR%%/pythonfilter/spamassassin.pyo
 %%PYTHON_SITELIBDIR%%/pythonfilter/spfcheck.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/spfcheck.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/spfcheck.pyo

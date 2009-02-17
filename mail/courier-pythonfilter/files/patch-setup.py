@@ -1,9 +1,11 @@
---- setup.py.orig      Mon Mar 13 20:44:45 2006
-+++ setup.py   Wed Jul 26 21:21:34 2006
-@@ -15,5 +15,5 @@
-       scripts=['pythonfilter'],
+--- setup.py.orig	2009-01-03 06:18:54.000000000 +0100
++++ setup.py	2009-01-03 09:35:47.000000000 +0100
+@@ -15,6 +15,6 @@
+       scripts=['pythonfilter', 'pythonfilter-quarantine'],
        packages=['courier', 'pythonfilter'],
-       package_dir = {'pythonfilter': 'filters'},
--      data_files=[('/etc/', ['pythonfilter.conf'])]
-+      data_files=[('/usr/local/etc/', ['pythonfilter.conf.sample'])]
+       package_dir={'pythonfilter': 'filters'},
+-      data_files=[('/etc/', ['pythonfilter.conf',
+-                             'pythonfilter-modules.conf'])]
++      data_files=[('/usr/local/etc/', ['pythonfilter.conf.sample',
++                                       'pythonfilter-modules.conf.sample'])]
       )
