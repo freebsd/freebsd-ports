@@ -44,7 +44,7 @@ MAN5=		ups.conf.5 upsd.conf.5 upsd.users.5 upsmon.conf.5 \
 		upssched.conf.5
 
 MAN8=		nutupsdrv.8 upsc.8 upscmd.8 upsd.8 upsdrvctl.8 \
-		upslog.8 upsmon.8 upsrw.8 upssched.8 blazer.8
+		upslog.8 upsmon.8 upsrw.8 upssched.8
 
 PORTDOCS=	*
 
@@ -83,7 +83,7 @@ PLIST_SUB+=	NUT_CGI="@comment "
 .if !defined(WITHOUT_SERIAL)
 CONFIGURE_ARGS+=	--with-serial
 MAN8+=		apcsmart.8 bcmxcp.8 belkin.8 belkinunv.8 \
-		bestuferrups.8 bestups.8 bestfcom.8 cyberpower.8 \
+		bestuferrups.8 bestups.8 bestfcom.8 blazer.8 cyberpower.8 \
 		dummy-ups.8 etapro.8 everups.8 gamatronic.8 genericups.8 \
 		isbmex.8 liebert.8 masterguard.8 megatec.8 metasys.8 \
 		mge-shut.8 mge-utalk.8 oneac.8 optiups.8 \
