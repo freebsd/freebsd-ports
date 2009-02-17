@@ -49,6 +49,10 @@ GDC_INC=	${PREFIX}/include/d/${GCC_VERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800000
+BROKEN=		fails to link any executables on 8.x
+.endif
+
 .ifndef TARGET_GCC
 .if ${OSVERSION} >= 700000 || ${ARCH} == "amd64"
 TARGET_GCC=	4.1
