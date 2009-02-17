@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	iozone
-PORTVERSION=	3.283
-PORTREVISION=	1
+PORTVERSION=	3.319
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iozone.org/src/current/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
@@ -40,9 +39,12 @@ CFLAGS+=-DNO_THREADS
 .endif
 
 .if defined (WITH_SSH)
-post-patch:
-	${REINPLACE_CMD} -e 's|shell\,\"rsh\"|shell\,\"ssh\"|' ${WRKSRC}/iozone.c
+post-patch::
+	@${REINPLACE_CMD} -e 's|shell\,\"rsh\"|shell\,\"ssh\"|' ${WRKSRC}/iozone.c
 .endif
+
+post-patch::
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/makefile
 
 do-install:
 	${STRIP_CMD} ${WRKSRC}/iozone
