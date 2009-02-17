@@ -6,96 +6,98 @@
 #
 
 PORTNAME=	sdpara
-PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTVERSION=	7.2.1
 CATEGORIES=	math parallel
 MASTER_SITES=   http://sdpa.indsys.chuo-u.ac.jp/sdpa/files/
-DISTFILES=	${PORTNAME}.${PORTVERSION}.src.tar.gz
-.if !defined(NOPORTDOCS)
-DISTFILES+=	${PORTNAME}.1.0.0.install.txt
-.endif
-DIST_SUBDIR=	sdpara
-EXTRACT_ONLY=	${PORTNAME}.${PORTVERSION}.src.tar.gz
+DISTFILES=	${SRCFILE}#${MANUALFILE}
+DIST_SUBDIR=	sdpa
+EXTRACT_ONLY=	${SRCFILE}
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SDPARA paralell version of SDPA (math/sdpa)
 
-LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas \
-		scalapack:${PORTSDIR}/math/scalapack \
+.include <bsd.port.pre.mk>
+
+SRCDATE=	20090109
+MANDATE=	20080618
+MANUALVER=	7.1.1
+SRCFILE=	${PORTNAME}.${PORTVERSION}.src.${SRCDATE}.tar.gz
+#MANUALFILE=	${PORTNAME}.${MANUALVER}.manual.${MANDATE}.pdf
+USE_FORTRAN=	yes
+USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
+USE_BLAS?=	reference
+
+LIB_DEPENDS=	scalapack:${PORTSDIR}/math/scalapack \
 		blacs:${PORTSDIR}/math/blacs \
 		mpich:${PORTSDIR}/net/mpich2
 
-USE_FORTRAN=	yes
-USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+.if exists(${LOCALBASE}/lib/libgoto.so)
+USE_BLAS=     gotoblas
+.elif exists(${LOCALBASE}/lib/libatlas_r.so)
+USE_BLAS=     atlas
+.endif
 
-#Atlas is always required as lapack.h and blas.h is required.
-#no blaswarp.h at the moment.
-LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
-WITH_ATLAS=     yes
-.if defined(WITH_ATLAS)
-BLAS=		-lcblas -lf77blas -latlas
-LAPACK=		-lalapack
-CXXFLAGS+=	-DNON_ATLAS_SDPA=0
-.else
-LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=   lapack.4:${PORTSDIR}/math/lapack
+. if ${USE_BLAS} == reference
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
-CXXFLAGS+=	-DNON_ATLAS_SDPA=1
-.endif
-FORTRANLIBS=	-lgfortranbegin -lgfortran
-GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
-PLIST_SUB+=     PORTVERSION="${PORTVERSION}"
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_OPTIMIZED_FLAGS)
-.if ${ARCH} == "amd64"
-FFLAGS+=	-pipe -O3 -ffast-math -funroll-all-loops -fpeel-loops -ftracer -funswitch-loops -funit-at-a-time
-CFLAGS+=	-pipe -O3 -ffast-math -funroll-all-loops -fpeel-loops -ftracer -funswitch-loops -funit-at-a-time
-.elif ${ARCH} == "i386"
-FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double -mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
-CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double -mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
-.else
-FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -Wno-multichar
-CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -Wno-multichar
-.endif
+.elif ${USE_BLAS} == gotoblas
+LIB_DEPENDS+=	goto:${PORTSDIR}/math/gotoblas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+BLAS=		-lgotop
+LAPACK=		-lgotop -llapack
+.elif ${USE_BLAS} == atlas
+LIB_DEPENDS+=   atlas:${PORTSDIR}/math/atlas
+BLAS=		-lptf77blas -lptcblas -latlas_r
+LAPACK=		-lalapack_r
 .endif
 
-pre-build:
+#PLIST_SUB+=	MANUALFILE=${MANUALFILE}
+
+SCALAPACK = -L/usr/local/lib -lscalapack -lblacs -lblacsc
+FORTRAN_LIBS= -lgfortran
+GCCLIBDIR = -L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
+
+pre-patch:
 	${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
-			      s|%%LOCALBASE%%|${LOCALBASE}|g ; \
-			      s|%%CXXFLAGS%%|${CXXFLAGS}|g ; \
-			      s|%%FFLAGS%%|${FFLAGS}|g ; \
-			      s|%%LAPACK%%|${LAPACK}|g ; \
-			      s|%%BLAS%%|${BLAS}|g ; \
-			      s|%%GCCLIBDIR%%|${GCCLIBDIR}|g ; \
-			      s|%%FORTRANLIBS%%|${FORTRANLIBS}|g '  ${WRKSRC}/Makefile
-.if !defined(WITH_OPTIMIZED_FLAGS)
-	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
-.endif
+	@${REINPLACE_CMD} -e 's|%%MPICC%%|mpicc|g ; \
+				s|%%MPICXX%%|mpicxx|g ; \
+				s|%%MPIF77%%|mpif77|g ; \
+				s|%%CFLAGS%%|${CFLAGS}|g ; \
+				s|%%CXXFLAGS%%|${CXXFLAGS}|g ; \
+				s|%%FFLAGS%%|${FFLAGS}|g ; \
+				s|%%BLAS%%|${BLAS}|g ; \
+				s|%%LAPACK%%|${LAPACK}|g ; \
+				s|%%SCALAPACK%%|${SCALAPACK}|g ; \
+				s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g ; \
+				s|%%FORTRAN_LIBS%%|${GCCLIBDIR} ${FORTRAN_LIBS}|g '  ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|%%MPICC%%|mpicc|g ; \
+				s|%%MPICXX%%|mpicxx|g ; \
+				s|%%MPIF77%%|mpif77|g ; \
+				s|%%CFLAGS%%|${CFLAGS}|g ; \
+				s|%%CXXFLAGS%%|${CXXFLAGS}|g ; \
+				s|%%FFLAGS%%|${FFLAGS}|g ; \
+				s|%%BLAS%%|${BLAS}|g ; \
+				s|%%LAPACK%%|${LAPACK}|g ' ${WRKSRC}/mumps/Makefile
+
+do-build:
+	cd ${WRKSRC} ; ${GMAKE} mumps
+	cd ${WRKSRC} ; ${GMAKE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sdpara ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA}    ${WRKSRC}/param.sdpa ${DATADIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in sdpara.1.0.0.install.txt
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${i} ${DOCSDIR}
-.endfor
 	@${MKDIR} ${EXAMPLESDIR}
-
-.for i in example1.dat example1.dat-s example1.ini \
-	example1.ini-s example2.dat
-	${INSTALL_DATA}    ${WRKSRC}/${i} ${EXAMPLESDIR}
-.endfor
+	${INSTALL_DATA}    ${WRKSRC}/example* ${EXAMPLESDIR}
 	${INSTALL_DATA}    ${WRKSRC}/param.sdpa ${EXAMPLESDIR}
-
-.endif
+#.if !defined(NOPORTDOCS)
+#	@${MKDIR} ${DOCSDIR}
+#	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${MANUALFILE} ${DOCSDIR}
+#.endif
 
 .include <bsd.port.post.mk>
