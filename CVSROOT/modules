@@ -9762,6 +9762,7 @@ p5-Altoids                      ports/net-mgmt/p5-Altoids
 p5-Alzabo                       ports/devel/p5-Alzabo
 p5-Alzabo-GUI-Mason             ports/devel/p5-Alzabo-GUI-Mason
 p5-Amazon-SQS-Simple            ports/net/p5-Amazon-SQS-Simple
+p5-Amazon-SimpleDB              ports/databases/p5-Amazon-SimpleDB
 p5-AnyData                      ports/devel/p5-AnyData
 p5-AnyEvent                     ports/devel/p5-AnyEvent
 p5-AnyEvent-HTTP                ports/www/p5-AnyEvent-HTTP
@@ -10007,6 +10008,7 @@ p5-CGI-Application-Plugin-AnyTemplate  ports/www/p5-CGI-Application-Plugin-AnyTe
 p5-CGI-Application-Plugin-Authentication  ports/www/p5-CGI-Application-Plugin-Authentication
 p5-CGI-Application-Plugin-Authorization  ports/www/p5-CGI-Application-Plugin-Authorization
 p5-CGI-Application-Plugin-AutoRunmode  ports/www/p5-CGI-Application-Plugin-AutoRunmode
+p5-CGI-Application-Plugin-ConfigAuto  ports/www/p5-CGI-Application-Plugin-ConfigAuto
 p5-CGI-Application-Plugin-DBH   ports/www/p5-CGI-Application-Plugin-DBH
 p5-CGI-Application-Plugin-DebugScreen  ports/www/p5-CGI-Application-Plugin-DebugScreen
 p5-CGI-Application-Plugin-DevPopup  ports/www/p5-CGI-Application-Plugin-DevPopup
@@ -12975,6 +12977,7 @@ p5-Yahoo-BBAuth                 ports/security/p5-Yahoo-BBAuth
 p5-Yahoo-Lifestyle              ports/www/p5-Yahoo-Lifestyle
 p5-Yahoo-Search                 ports/www/p5-Yahoo-Search
 p5-ZConf                        ports/net/p5-ZConf
+p5-ZConf-BGSet                  ports/net/p5-ZConf-BGSet
 p5-ZConf-Mail                   ports/net/p5-ZConf-Mail
 p5-ZConf-Runner                 ports/deskutils/p5-ZConf-Runner
 p5-ZML                          ports/devel/p5-ZML
@@ -13030,6 +13033,7 @@ p5-aliased                      ports/devel/p5-aliased
 p5-altoids                      ports/net-mgmt/p5-Altoids
 p5-alzabo                       ports/devel/p5-Alzabo
 p5-alzabo-gui-mason             ports/devel/p5-Alzabo-GUI-Mason
+p5-amazon-simpledb              ports/databases/p5-Amazon-SimpleDB
 p5-amazon-sqs-simple            ports/net/p5-Amazon-SQS-Simple
 p5-amf-perl                     ports/www/p5-AMF-Perl
 p5-anydata                      ports/devel/p5-AnyData
@@ -13409,6 +13413,7 @@ p5-cgi-application-plugin-anytemplate  ports/www/p5-CGI-Application-Plugin-AnyTe
 p5-cgi-application-plugin-authentication  ports/www/p5-CGI-Application-Plugin-Authentication
 p5-cgi-application-plugin-authorization  ports/www/p5-CGI-Application-Plugin-Authorization
 p5-cgi-application-plugin-autorunmode  ports/www/p5-CGI-Application-Plugin-AutoRunmode
+p5-cgi-application-plugin-configauto  ports/www/p5-CGI-Application-Plugin-ConfigAuto
 p5-cgi-application-plugin-dbh   ports/www/p5-CGI-Application-Plugin-DBH
 p5-cgi-application-plugin-debugscreen  ports/www/p5-CGI-Application-Plugin-DebugScreen
 p5-cgi-application-plugin-devpopup  ports/www/p5-CGI-Application-Plugin-DevPopup
@@ -16319,6 +16324,7 @@ p5-yape-html                    ports/textproc/p5-YAPE-HTML
 p5-yape-regex                   ports/textproc/p5-YAPE-Regex
 p5-yape-regex-explain           ports/textproc/p5-YAPE-Regex-Explain
 p5-zconf                        ports/net/p5-ZConf
+p5-zconf-bgset                  ports/net/p5-ZConf-BGSet
 p5-zconf-mail                   ports/net/p5-ZConf-Mail
 p5-zconf-runner                 ports/deskutils/p5-ZConf-Runner
 p5-zen-koans                    ports/misc/p5-Zen-Koans
@@ -18297,6 +18303,7 @@ py-ipaddr                       ports/devel/py-ipaddr
 py-ipy                          ports/net-mgmt/py-ipy
 py-irclib                       ports/irc/py-irclib
 py-istring                      ports/devel/py-istring
+py-itools                       ports/devel/py-itools
 py-jabber                       ports/net-im/py-jabber
 py-jaxml                        ports/textproc/py-jaxml
 py-jcc                          ports/devel/py-jcc
@@ -18320,6 +18327,7 @@ py-levenshtein                  ports/devel/py-levenshtein
 py-libdnet                      ports/net/py-libdnet
 py-libgmail                     ports/mail/py-libgmail
 py-libgsf                       ports/devel/py-libgsf
+py-liblzma                      ports/archivers/py-liblzma
 py-libmpdclient                 ports/audio/py-libmpdclient
 py-libnet                       ports/net/py-libnet
 py-librtfcomp                   ports/archivers/py-librtfcomp
@@ -19269,6 +19277,7 @@ rlwrap                          ports/devel/rlwrap
 rlytest                         ports/mail/rlytest
 rman                            ports/textproc/rman
 rmap                            ports/astro/rmap
+rmilter                         ports/mail/rmilter
 rmonitor                        ports/sysutils/rmonitor
 rmsg                            ports/net/rmsg
 rname                           ports/misc/rname
@@ -21573,6 +21582,7 @@ tvrss                           ports/net-p2p/tvrss
 tvtwm                           ports/x11-wm/tvtwm
 tw_cli                          ports/sysutils/tw_cli
 twander                         ports/x11-fm/twander
+tweak                           ports/editors/tweak
 twelf                           ports/lang/twelf
 twhttpd                         ports/www/twhttpd
 twig                            ports/www/twig
@@ -23470,8 +23480,6 @@ zangband                        ports/games/zangband
 zaptel                          ports/misc/zaptel
 zatacka                         ports/games/zatacka
 zbase32                         ports/converters/zbase32
-zbgset                          ports/deskutils/zbgset
-zbgset-admin                    ports/deskutils/zbgset-admin
 zccron                          ports/sysutils/zccron
 zebedee                         ports/security/zebedee
 zebra                           ports/net/zebra
