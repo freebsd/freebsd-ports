@@ -20,7 +20,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 
 .if defined(NOPORTDATA)
-.undef NOPORTDATA
+IGNORE=		needs data file to run, unset NOPORTDATA
 .endif
 
 PLIST_FILES=	bin/freecol
