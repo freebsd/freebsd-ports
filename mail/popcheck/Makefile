@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.ludd.luth.se/~staham/linux/programs/ \
 		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}/sources/
 DISTNAME=	popcheck
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chifeng@gmail.com
 COMMENT=	Preview and delete messages in POP3 mailbox
 
 ALL_TARGET=	popcheck

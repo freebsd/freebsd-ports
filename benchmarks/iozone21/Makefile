@@ -12,7 +12,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/others/
 EXTRACT_SUFX=	.shar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chifeng@gmail.com
 COMMENT=	Performance Test of Sequential File I/O (older version)
 
 CONFLICTS=	iozone-3.*

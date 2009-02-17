@@ -11,7 +11,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chifeng@gmail.com
 COMMENT=	Perl module for basic IMAP server administration
 
 PERL_CONFIGURE=	YES
