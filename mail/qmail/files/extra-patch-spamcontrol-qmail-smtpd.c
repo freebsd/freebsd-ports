@@ -1,6 +1,6 @@
---- qmail-smtpd.c.orig	Wed Jan 31 13:03:47 2007
-+++ qmail-smtpd.c	Wed Jan 31 13:22:36 2007
-@@ -129,6 +129,27 @@
+--- qmail-smtpd.c.orig	2008-12-01 12:55:54.000000000 -0200
++++ qmail-smtpd.c	2008-12-01 12:57:31.000000000 -0200
+@@ -136,6 +136,27 @@
    logs(s1,s2,s3,s4,s5,s6,s7);
    return;
    }
@@ -28,7 +28,7 @@
  void err_brcptto(s1,s2,s3,s4,s5,s6,s7) char *s1, *s2, *s3, *s4, *s5, *s6, *s7; {
    out("550 sorry, your envelope recipient is in my badrcptto list (#5.7.1)\r\n");
    logs(s1,s2,s3,s4,s5,s6,s7);
-@@ -270,6 +291,8 @@
+@@ -280,6 +301,8 @@
  
  char *auth;
  char *reqauth;
@@ -37,17 +37,17 @@
  int smtpauth = 0;
  int seenauth = 0;
  
-@@ -388,6 +411,9 @@
-   if(env_get("UCSPITLS")) starttls = 1;
-   if(starttls) reqttls = env_get("REQUIRETLS");
+@@ -403,6 +426,9 @@
+   if (env_get("UCSPITLS")) starttls = 1;
+   if (starttls) reqttls = env_get("REQUIRETLS");
  
 +  rbl2smtpd = env_get("RBL2SMTPD");
 +  rblmatch = env_get("RBLMATCH");
 +
- #ifdef RELAYMAILFROM
-   if (!relayclient) {
-     relaymailfromok = control_readfile(&relaymailfrom,"control/relaymailfrom",0);
-@@ -876,6 +902,10 @@
+ #ifdef DELIVERTO
+   delivermailto = env_get("DELIVERTO");
+ #endif
+@@ -891,6 +917,10 @@
        flagerrcpts++;
        return; 
      } 
