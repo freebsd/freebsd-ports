@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.gna.org/pychart/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyChart-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Create high quality Encapsulated Postscript, PDF, or PNG charts
 
 USE_GHOSTSCRIPT_RUN=	yes
