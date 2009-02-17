@@ -17,6 +17,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 		gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
+BROKEN=		does not package
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GSTREAMER=	yes
