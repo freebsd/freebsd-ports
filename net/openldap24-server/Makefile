@@ -39,10 +39,12 @@ BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
 PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	0
+PORTREVISION_SERVER=	1
 
 .if !defined(CLIENT_ONLY)
 OPTIONS=	SASL "With (Cyrus) SASL2 support" off \
+		DYNACL "Run-time loadable ACL (experimental)" off \
+		ACI "Per-object ACI (experimental)" off \
 		DNSSRV "With Dnssrv backend" off \
 		PASSWD "With Passwd backend" off \
 		PERL "With Perl backend" off \
@@ -57,9 +59,10 @@ OPTIONS=	SASL "With (Cyrus) SASL2 support" off \
 		BDB "With BerkeleyDB support" on \
 		ACCESSLOG "With In-Directory Access Logging overlay" off \
 		AUDITLOG "With Audit Logging overlay" off \
+		COLLECT "With Collect overy Services overlay" off \
 		CONSTRAINT "With Attribute Constraint overlay" off \
-		DDS "Dynamic Directory Services overlay" off \
-		DENYOP "With Deny Operation overlay" off \
+		DDS "With Dynamic Directory Services overlay" off \
+		DEREF "With Dereference overlay" off \
 		DYNGROUP "With Dynamic Group overlay" off \
 		DYNLIST "With Dynamic List overlay" off \
 		LASTMOD "With Last Modification overlay" off \
@@ -129,7 +132,7 @@ PLIST=			${PKGDIR}/pkg-plist${OPENLDAP_PKGFILESUFX}
 
 SCHEMATA=		collective corba core cosine duaconf dyngroup \
 			inetorgperson java misc nadf \
-			nis openldap ppolicy
+			nis openldap pmi ppolicy
 
 LDAP_RUN_DIR?=		/var/run/openldap
 LOCALSTATEDIR?=		/var/db
@@ -212,6 +215,10 @@ CONFIGURE_ARGS+=	--enable-accesslog
 CONFIGURE_ARGS+=	--enable-auditlog
 .endif
 
+.if defined(WITH_COLLECT)
+CONFIGURE_ARGS+=	--enable-collect
+.endif
+
 .if defined(WITH_CONSTRAINT)
 CONFIGURE_ARGS+=	--enable-constraint
 .endif
@@ -220,8 +227,8 @@ CONFIGURE_ARGS+=	--enable-constraint
 CONFIGURE_ARGS+=	--enable-dds
 .endif
 
-.if defined(WITH_DENYOP)
-CONFIGURE_ARGS+=	--enable-denyop
+.if defined(WITH_DEREF)
+CONFIGURE_ARGS+=	--enable-deref
 .endif
 
 .if defined(WITH_DYNGROUP)
