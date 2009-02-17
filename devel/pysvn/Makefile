@@ -17,6 +17,8 @@ BUILD_DEPENDS=	py${PYTHON_SUFFIX}-cxx>=5.4.2:${PORTSDIR}/devel/py-cxx
 LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion \
 		neon.28:${PORTSDIR}/www/neon28
 
+BROKEN=		does not compile
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_NOEGGINFO=yes
