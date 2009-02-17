@@ -1,43 +1,37 @@
---- Makefile.orig	Fri Oct  8 15:08:59 2004
-+++ Makefile	Thu May 12 14:02:57 2005
-@@ -18,11 +18,10 @@
- # This file is Makefile of SDPARA
- # $Id: Makefile,v 1.2 2004/10/08 05:57:48 makoto Exp $
+--- Makefile.orig	2009-01-09 11:26:29.000000000 +0900
++++ Makefile	2009-02-17 14:11:48.000000000 +0900
+@@ -4,20 +4,20 @@
+ # you edit here along your environment
+ ############################################################
  
--LAPACK = $(HOME)/lapack
-+LAPACK = %%LOCALBASE%%
- RSDPA  = .
+-CC       = mpicc
+-CXX      = mpicxx
+-FC       = mpif77
+-CFLAGS   = -O3
+-CXXFLAGS = -O3
+-FFLAGS   = -O3
+-
+-LAPACK_LIBS = /usr/local/lapack/lib/liblapack.a
+-BLAS_LIBS   = /usr/local/lapack/lib/libblas.a
+-
+-SCALAPACK_LIBS  = /usr/local/scalapack/lib/libscalapack.a /usr/local/BLACS/LIB/blacs_MPI-LINUX-0.a /usr/local/BLACS/LIB/blacsCinit_MPI-LINUX-0.a /usr/local/BLACS/LIB/blacs_MPI-LINUX-0.a
+-
+-FORTRAN_LIBS = -lgfortran
+-PTHERAD_LIBS = -lpthread
++CC       = %%MPICC%%
++CXX      = %%MPICXX%%
++F77      = %%MPIF77%%
++CFLAGS   = %%CFLAGS%%
++CXXFLAGS = %%CXXFLAGS%%
++F77FLAGS = %%FFLAGS%%
++
++LAPACK_LIBS = %%LAPACK%%
++BLAS_LIBS   = %%BLAS%%
++  
++SCALAPACK_LIBS  = %%SCALAPACK%%
++  
++FORTRAN_LIBS = %%FORTRAN_LIBS%%
++PTHERAD_LIBS = %%PTHREAD_LIBS%%
  
--LAPACK_LIB =  -llapack -lcblaswr -lcblas \
--              -lf77blas -lI77 -lF77 -latlas
-+LAPACK_LIB = %%LAPACK%% %%BLAS%% %%GCCLIBDIR%% %%FORTRANLIBS%%
- 
- # if you use BLAS in clapack.tgz, use next line
- # and set NON_ATLAS_SDPA in rsdpa_include.h to 1.
-@@ -36,10 +35,12 @@
- #RSDPA_LIB_NAME = rsdpa
- RSDPA_LIB = -l$(RSDPA_LIB_NAME)
- 
--MPIBIN=
--CC = $(MPIBIN)mpicxx
-+MPIBIN= %%LOCALBASE%%/mpich2/bin/
-+CC = $(MPIBIN)mpicxx
- F77 = $(MPIBIN)mpif77
- OPTION = -O3  #-g
-+FFLAGS = %%FFLAGS%%
-+CXXFLAGS = %%CXXFLAGS%% -DMPICH_IGNORE_CXX_SEEK
- 
- TARGET_EXE = $(RSDPA_LIB_NAME)
- #TARGET_EXE = rsdpa_main.exe
-@@ -60,9 +61,9 @@
- 	  -L$(LAPACK)/lib $(SCALAPACK_LIB) $(LAPACK_LIB)
- 
- .cpp.o:
--	$(CC) $(OPTION) -c -I$(RSDPA) -I$(LAPACK)/include $<
-+	$(CC) $(CXXFLAGS) -c -I$(RSDPA) -I$(LAPACK)/include $<
- .f.o:
--	$(F77) $(OPTION) -c $<
-+	$(F77) $(FFLAGS) -c $<
- 
- force: clean now
- forceall: clean all
+ # F77_FUNC 
+ DEF_F77_FUNC = -DF77_FUNC\(name,NAME\)=name\ \#\#\ _ 
