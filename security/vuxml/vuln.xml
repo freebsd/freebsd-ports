@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+   <vuln vid="25eb365c-fd11-11dd-8424-c213de35965d">
+    <topic>dia -- remote command execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>dia</name>
+	<range><lt>0.96.1_6,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Security Focus reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/33448/">
+	  <p>An attacker could exploit this issue by enticing an
+	    unsuspecting victim to execute the vulnerable
+	    application in a directory containing a malicious
+	    Python file. A successful exploit will allow arbitrary
+	    Python commands to run within the privileges of the currently
+	    logged-in user.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>33448</bid>
+      <cvename>CVE-2008-5984</cvename>
+      <url>http://secunia.com/advisories/33672</url>
+    </references>
+    <dates>
+      <discovery>2009-01-26</discovery>
+      <entry>2009-02-17</entry>
+    </dates>
+  </vuln>
+     
+
   <vuln vid="5a021595-fba9-11dd-86f3-0030843d3802">
     <topic>pycrypto -- ARC2 module buffer overflow</topic>
     <affects>
