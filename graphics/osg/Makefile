@@ -95,7 +95,8 @@ PLIST_SUB+=	GIF="@comment "
 
 .if defined(WITH_INVENTOR)
 FORCE_REQUIRE+=	Inventor
-LIB_DEPENDS+=	Inventor:${PORTSDIR}/graphics/inventor
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libInventor.so:${PORTSDIR}/graphics/inventor
+RUN_DEPENDS+=	${LOCALBASE}/lib/libInventor.so:${PORTSDIR}/graphics/inventor
 PLIST_SUB+=	INVENTOR=""
 .else
 FORCE_IGNORE+=	Inventor
