@@ -38,7 +38,6 @@ BARRIER_SMTP_AUTH_PATCH=	yes
 
 .if defined(SLAVE_LDAP)
 BARRIER_BIG_CONCURRENCY_PATCH=	yes
-BARRIER_DNS_PATCH=		yes
 BARRIER_EXTTODO_PATCH=		yes
 BARRIER_OUTGOINGIP_PATCH=	yes
 .endif
@@ -49,6 +48,7 @@ BARRIER_QMTPC_PATCH=		yes
 BARRIER_DISCBOUNCES_PATCH=	yes
 BARRIER_SENDMAIL_F_PATCH=	yes
 BARRIER_BIG_TODO_PATCH=		yes
+BARRIER_DNS_PATCH=		yes
 .endif
 
 .if defined(SLAVE_LDAP) || \
@@ -177,11 +177,13 @@ LDAP_PARAMS=	ALTQUEUE BIGBROTHER BIGTODO BIND_8_COMPAT\
 		QMQP_COMPRESS QUOTATRASH SMTPEXECCHECK
 
 .elif defined(SLAVE_SPAMCONTROL)
-OPTIONS+=	RELAYMAILFROM	"Open relay based on mailfrom" off \
-		REQBRACKETS	"Require brackets in <addresses>" on \
+OPTIONS+=	REQBRACKETS	"Require brackets in <addresses>" on \
 		VERP		"VERP addresses for recipients" on \
 		MOREIPME	"Add control files (more|not)ipme" off \
 		BIGTODO		"Bruce Guenter's BigToDo patch" off \
+		DELIVERTO	"smtpd can deliver identified spam" off \
+		NEWLINE		"smtpd accept bare line feeds" off \
+		PAM111421	"smtpd allow email in case PAM failure" on \
 		SMTPEXTFORK	"Allow qmail-smtpd fork external progs" off \
 		XF_QUITASAP	"Close SMTP session ASAP (SMTPEXTFORK)" off
 .endif
@@ -286,7 +288,7 @@ DOCFILES_WRKDIR_doc+=	FILES.spamcontrol HISTORY.spamcontrol \
 			README.wildmat README_spamcontrol.html \
 			RELEASE_22.spamcontrol RELEASE_23.spamcontrol \
 			SMTPREPLY.spamcontrol TODO.spamcontrol badloadertypes \
-			badmailfrom badmimetypes badrcptto tarpitcount
+			badmailfrom badmimetypes badrcptto
 SCRIPTS+=	qmail-alias2recipients qmail-pwd2recipients \
 		qmail-users2recipients qmail-vpopmail2recipients
 .endif
@@ -374,7 +376,7 @@ PATCHFILES+=	qmail-discard-double-bounces.patch:doublebounce
 .if defined(WITH_SPF_PATCH) && !defined(BARRIER_SPF_PATCH)
 . if defined(SLAVE_TLS) || defined(SLAVE_SPAMCONTROL)
 .  if defined(SLAVE_SPAMCONTROL)
-SPF_SPAMCONTROL_PATCH=	qmail-spf-rc5.patch-spamcontrol
+SPF_SPAMCONTROL_PATCH=	qmail-spf-rc5.patch-spamcontrol-25
 MASTER_SITES+=		${MASTER_SITE_LOCAL:S/$/:spf_spamcontrol/}
 MASTER_SITE_SUBDIR+=	garga/qmail/:spf_spamcontrol
 DISTFILES+=		${SPF_SPAMCONTROL_PATCH}:spf_spamcontrol
@@ -452,7 +454,7 @@ PATCHFILES+=	qmail-1.03-qmtpc_outgoingip.patch:qmtpc_outgoingip
 .elif defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH) && defined(SLAVE_SPAMCONTROL)
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:outgoingip_spamcontrol/}
 MASTER_SITE_SUBDIR+=	garga/qmail/:outgoingip_spamcontrol
-DISTFILES+=	outgoingip.patch-spamcontrol:outgoingip_spamcontrol
+DISTFILES+=	outgoingip.patch-spamcontrol-25:outgoingip_spamcontrol
 .elif defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)
 PATCHFILES+=	outgoingip.patch
 .elif defined(WITH_QMTPC_PATCH) && !defined(BARRIER_QMTPC_PATCH)
@@ -471,7 +473,7 @@ PATCHFILES+=	tarpit.patch:tarpit
 
 .if defined(WITH_SMTPEXTFORK) && ( defined(SLAVE_SPAMCONTROL) || defined(SLAVE_LDAP) )
 . if defined(SLAVE_SPAMCONTROL)
-SMTPEXTFORK_PATCH=	smtpextfork-spamcontrol-${SPAMCONTROL_VERSION}_1_2.patch
+SMTPEXTFORK_PATCH=	smtpextfork-spamcontrol-${SPAMCONTROL_VERSION}.patch
 . else
 SMTPEXTFORK_PATCH=	smtpextfork-ldap-${LDAP_PATCH_DATE}.patch
 . endif
@@ -503,11 +505,6 @@ RCDLINK=	\#
 
 # Fill SELECTED_OPTIONS with options to write conf-spamcontrol
 .if defined(SLAVE_SPAMCONTROL)
-. if defined(WITH_RELAYMAILFROM)
-SELECTED_OPTIONS+=	relaymailfrom=yes
-. else
-SELECTED_OPTIONS+=	relaymailfrom=no
-. endif
 
 . if defined(WITH_REQBRACKETS)
 SELECTED_OPTIONS+=	reqbrackets=yes
@@ -531,6 +528,24 @@ SELECTED_OPTIONS+=	moreipme=no
 SELECTED_OPTIONS+=	bigtodo=yes
 . else
 SELECTED_OPTIONS+=	bigtodo=no
+. endif
+
+. if defined(WITH_DELIVERTO)
+SELECTED_OPTIONS+=	deliverto=yes
+. else
+SELECTED_OPTIONS+=	deliverto=no
+. endif
+
+. if defined(WITH_NEWLINE)
+SELECTED_OPTIONS+=	newline=yes
+. else
+SELECTED_OPTIONS+=	newline=no
+. endif
+
+. if defined(WITH_PAM111421)
+SELECTED_OPTIONS+=	pam111421=yes
+. else
+SELECTED_OPTIONS+=	pam111421=no
 . endif
 
 .endif
@@ -603,7 +618,7 @@ post-patch:
 .  endif
 . endif
 . if defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)
-	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/outgoingip.patch-spamcontrol
+	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/outgoingip.patch-spamcontrol-25
 . endif
 . if defined(WITH_SMTPEXTFORK)
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${SMTPEXTFORK_PATCH}
