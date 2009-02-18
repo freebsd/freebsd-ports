@@ -34,7 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
-   <vuln vid="25eb365c-fd11-11dd-8424-c213de35965d">
+  <vuln vid="cf495fd4-fdcd-11dd-9a86-0050568452ac">
+    <topic>Zend Framework -- Local File Inclusion vulnerability in Zend_View::render()</topic>
+    <affects>
+      <package>
+	<name>ZendFramework</name>
+	<range><lt>1.7.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Matthew Weier O'Phinney reports:</p>
+        <blockquote cite="http://weierophinney.net/matthew/archives/206-Zend-Framework-1.7.5-Released-Important-Note-Regarding-Zend_View.html">
+	  <p>A potential Local File Inclusion (LFI) vulnerability exists in
+	    the Zend_View::render() method. If user input is used to
+	    specify the script path, then it is possible to trigger the
+	    LFI.</p>
+	  <p>Note that Zend Framework applications that never call the
+	    Zend_View::render() method with a user-supplied parameter are
+	    not affected by this vulnerability.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://framework.zend.com/issues/browse/ZF-5748</url>
+    </references>
+    <dates>
+      <discovery>2009-02-11</discovery>
+      <entry>2009-02-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="25eb365c-fd11-11dd-8424-c213de35965d">
     <topic>dia -- remote command execution vulnerability</topic>
     <affects>
       <package>
