@@ -22,13 +22,18 @@ MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	The FlightGear flight simulator
 
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
-		osg.48:${PORTSDIR}/graphics/osg \
 		boost_thread.4:${PORTSDIR}/devel/boost
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear \
 		${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/flightgear-data
+
+.if defined(WITH_OSG_DEVEL)
+LIB_DEPENDS+=	osg.54:${PORTSDIR}/graphics/osg-devel
+.else
+LIB_DEPENDS+=	osg.48:${PORTSDIR}/graphics/osg
+.endif
 
 USE_XORG=	ice sm x11 xext xi xt xmu
 USE_GL=		gl glu glut
