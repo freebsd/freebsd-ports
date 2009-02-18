@@ -7,10 +7,9 @@
 
 PORTNAME=	nepenthes
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	nepenthes
+MASTER_SITES=	SF
 
 MAINTAINER=	systemoperator@gmail.com
 COMMENT=	Determine the malware activity on a network
@@ -21,9 +20,8 @@ LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
 		adns.1:${PORTSDIR}/dns/adns
 
 .if defined(WITH_PRELUDE)
-LIB_DEPENDS+=		prelude.17:${PORTSDIR}/security/libprelude
+LIB_DEPENDS+=		prelude.19:${PORTSDIR}/security/libprelude
 CONFIGURE_ARGS+=	--enable-prelude
-EXTRA_PATCHES=		${FILESDIR}/prelude_modules_log-prelude_Makefile.in.patch
 .endif
 
 .if defined(WITH_DEBUG_LOGGING)
