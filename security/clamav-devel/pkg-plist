@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/clamav-config
+bin/clamconf
 bin/clamscan
 bin/clamdscan
 bin/freshclam
@@ -26,6 +27,8 @@ etc/clamd.conf.default
 @exec [ -f %B/clamd.conf ] || cp %B/%f %B/clamd.conf
 @unexec if cmp -s %D/etc/freshclam.conf %D/etc/freshclam.conf.default; then rm -f %D/etc/freshclam.conf; fi
 etc/freshclam.conf.default
+%%CLAMAV-MILTER%%@unexec if cmp -s %D/etc/clamav-milter.conf %D/etc/clamav-milter.conf.default; then rm -f %D/etc/clamav-milter.conf; fi
+%%CLAMAV-MILTER%%etc/clamav-milter.conf.default
 @exec [ -f %B/freshclam.conf ] || cp %B/%f %B/freshclam.conf
 @unexec [ -s %%DBDIR%%/daily.cvd ] || rm -f %%DBDIR%%/daily.cvd || true
 @unexec [ -s %%DBDIR%%/main.cvd ] || rm -f %%DBDIR%%/main.cvd || true

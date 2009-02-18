@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20090107
+PORTVERSION=	20090218
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		${MASTER_SITE_LOCAL}
@@ -93,7 +93,7 @@ SUB_LIST+=	DBDIR=${DBDIR} \
 
 SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?((Update)?LogFile) .*/([a-z]+\.log)$$|\1 ${LOGDIR}/\3|' \
-		-e 's|^\#?(PidFile) .*/([a-z]+\.pid)$$|\1 ${RUNDIR}/\2|' \
+		-e 's|^\#?(PidFile) .*/([a-z\-]+\.pid)$$|\1 ${RUNDIR}/\2|' \
 		-e 's|^\#?(LocalSocket) .*$$|\1 ${CLAMAV_CLAMD_SOCKET}|' \
 		-e 's|^\#?(User) .*$$|\1 ${CLAMAVUSER}|' \
 		-e 's|^\#?(AllowSupplementaryGroups).*$$|\1 yes|' \
@@ -101,7 +101,9 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(DatabaseDirectory) .*$$|\1 ${DBDIR}|' \
 		-e 's|^\#?(DatabaseOwner) .*$$|\1 ${CLAMAVUSER}|' \
 		-e 's|^\#?(FixStaleSocket).*$$|\1 yes|' \
-		-e 's|^\#?(NotifyClamd) .*$$|\1 ${PREFIX}/etc/clamd.conf|'
+		-e 's|^\#?(NotifyClamd) .*$$|\1 ${PREFIX}/etc/clamd.conf|' \
+		-e 's|^\#?(MilterSocket) */tmp.*$$|\1 ${CLAMAV_MILTER_SOCKET}|' \
+		-e 's|^\#?(ClamdSocket).*$$|\1 unix:${CLAMAV_CLAMD_SOCKET}|'
 
 PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 		CLAMAVGROUP=${CLAMAVGROUP}
@@ -162,9 +164,12 @@ post-patch:
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -E 's,^(pkgconfigdir = ).*$$,\1$$(prefix)/libdata/pkgconfig,g' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/PidFile *\/var\/run\/clamd.pid/ s,clamd.pid,clamav-milter.pid,' \
+		${WRKSRC}/etc/clamav-milter.conf
 	@${REINPLACE_CMD} ${SED_CONF} \
 		${WRKSRC}/etc/clamd.conf \
-		${WRKSRC}/etc/freshclam.conf
+		${WRKSRC}/etc/freshclam.conf \
+		${WRKSRC}/etc/clamav-milter.conf
 	@${REINPLACE_CMD} -e 's|0x100000000|0x100000000ULL|g' \
 		${WRKSRC}/libclamunrar/unrar.c
 
@@ -173,7 +178,7 @@ pre-su-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/clamav-config.h ${PREFIX}/include
-.for c in clamd freshclam
+.for c in clamd freshclam clamav-milter
 	@[ -f ${PREFIX}/etc/${c}.conf ] || \
 		${CP} -v ${PREFIX}/etc/${c}.conf.default ${PREFIX}/etc/${c}.conf
 .endfor
