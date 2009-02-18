@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	swt-devel
-DISTVERSION=	3.5M3
+DISTVERSION=	3.5M5
 #PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits devel java
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=	S-${DISTVERSION}-200810301917
+MASTER_SITE_SUBDIR=	S-${DISTVERSION}-200902021535
 DISTNAME=	swt-${DISTVERSION}-${DIST_EXT}
 
 MAINTAINER=	rnoland@FreeBSD.org
@@ -19,7 +19,7 @@ COMMENT=	Standard Widget Toolkit for Java
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-SWT_VERSION=	3514
+SWT_VERSION=	3529
 OUTPUT_JAR=	swt-devel.jar
 
 USE_ZIP=	yes
@@ -61,17 +61,13 @@ MAKE_GNOME=	make_gnome
 .endif
 
 .if defined(WITH_BROWSER)
-USE_GECKO=	firefox seamonkey mozilla
-
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
-
+USE_GECKO=	xulrunner firefox mozilla
 PLIST_FILES+=	lib/libswt-mozilla-gtk-%%BUILD%%.so
-MAKE_MOZILLA=	make_mozilla
 .endif
 
 MAKE_ENV+=	MAKE_CAIRO=${MAKE_CAIRO} \
 		MAKE_GNOME=${MAKE_GNOME} \
-		MAKE_MOZILLA=${MAKE_MOZILLA}
+		GECKO=${GECKO}
 
 .if (${ARCH} == "amd64")
 DIST_EXT=	gtk-linux-x86_64
@@ -82,10 +78,6 @@ DIST_EXT=	gtk-linux-x86
 post-extract:
 	@(cd ${WRKSRC} && ${UNZIP_CMD} -qo "*.zip")
 	@${RM} -f ${WRKSRC}/*.o ${WRKSRC}/*.so ${WRKSRC}/*.jar
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|mozilla-|${GECKO}-|' \
-		${WRKSRC}/build.sh
 
 do-install:
 	${MKDIR} ${JAVAJARDIR}
