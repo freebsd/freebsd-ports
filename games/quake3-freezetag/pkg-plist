@@ -5,5 +5,5 @@
 %%DATADIR%%/ft.config
 %%MISSIONPACK%%%%Q3DIR%%/missionpack/freeze_ta0.pk3
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
-@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
