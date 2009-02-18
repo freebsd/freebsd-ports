@@ -15,14 +15,12 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Automated system from compile/test cycle to validate code changes
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 USE_TWISTED_RUN=	conch mail web words
-PYDISTUTILS_NOEGGINFO=	yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 ${REINPLACE_CMD} -e \
 		's|/usr/bin/python|${PYTHON_CMD}|g'
 	@${FIND} ${WRKSRC} -name \*.bak -delete
-	${REINPLACE_CMD} -e 's/twisted/Twsited/' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
