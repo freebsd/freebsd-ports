@@ -1,0 +1,2 @@
+Note: dfu-util may not work on the first run, it might be necessary to run it
+twice before it detects the device correctly.

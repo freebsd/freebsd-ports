@@ -23,6 +23,7 @@
     SUBDIR += conserver-com
     SUBDIR += cutecom
     SUBDIR += cwdaemon
+    SUBDIR += dfu-util
     SUBDIR += ebook2cw
     SUBDIR += echolinux
     SUBDIR += efax
