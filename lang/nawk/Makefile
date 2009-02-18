@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.cs.princeton.edu/~bwk/btl.mirror/
 DISTNAME=	awk
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ota@j.email.ne.jp
 COMMENT=	Brian Kernighan's pattern scanning and processing language
 
 NO_WRKSUBDIR=	yes

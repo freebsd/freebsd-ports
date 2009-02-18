@@ -15,7 +15,7 @@ PATCH_SITES=	http://www.hinadori.atnifty.com/~wills/program/
 PATCHFILES=	${PORTNAME}mb115.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ota@j.email.ne.jp
 COMMENT=	GNU awk + multi-byte extension
 
 GNU_CONFIGURE=	yes
