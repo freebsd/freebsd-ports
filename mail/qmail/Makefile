@@ -473,7 +473,7 @@ PATCHFILES+=	tarpit.patch:tarpit
 
 .if defined(WITH_SMTPEXTFORK) && ( defined(SLAVE_SPAMCONTROL) || defined(SLAVE_LDAP) )
 . if defined(SLAVE_SPAMCONTROL)
-SMTPEXTFORK_PATCH=	smtpextfork-spamcontrol-${SPAMCONTROL_VERSION}.patch
+SMTPEXTFORK_PATCH=	smtpextfork-spamcontrol-2519.patch
 . else
 SMTPEXTFORK_PATCH=	smtpextfork-ldap-${LDAP_PATCH_DATE}.patch
 . endif
