@@ -18488,6 +18488,7 @@ py-pypcap                       ports/net/py-pypcap
 py-pypgsql                      ports/databases/py-pyPgSQL
 py-pyproj                       ports/graphics/py-pyproj
 py-pyquery                      ports/www/py-pyquery
+py-pyqwt                        ports/x11-toolkits/py-pyqwt
 py-pyro                         ports/devel/py-pyro
 py-pyscript                     ports/print/py-pyscript
 py-pysearch                     ports/www/py-pysearch
@@ -21235,6 +21236,7 @@ timidity++-xaw                  ports/audio/timidity++-xaw
 timidity++-xskin                ports/audio/timidity++-xskin
 tin                             ports/news/tin
 tinc                            ports/security/tinc
+tinderbox-devel                 ports/ports-mgmt/tinderbox-devel
 tinker                          ports/biology/tinker
 tint                            ports/x11/tint
 tintfu                          ports/graphics/tintfu
