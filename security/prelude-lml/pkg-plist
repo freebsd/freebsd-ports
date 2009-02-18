@@ -58,6 +58,7 @@ etc/prelude-lml/ruleset/sonicwall.rules
 etc/prelude-lml/ruleset/spamassassin.rules
 etc/prelude-lml/ruleset/squid.rules
 etc/prelude-lml/ruleset/ssh.rules
+etc/prelude-lml/ruleset/su.rules
 etc/prelude-lml/ruleset/sudo.rules
 etc/prelude-lml/ruleset/suhosin.rules
 etc/prelude-lml/ruleset/tripwire.rules
