@@ -15,6 +15,7 @@
 # MAILDROP_TRUSTED_USERS=<user> Specify users allowed to use the -d option
 # NO_MAILWRAPPER=yes	If defined, let configure guess which sendmail binary
 #			to use
+# MAILDROP_LOG_COLUMNS	lenght of 'File:' line in log - 8; default: 72
 
 PORTNAME=	maildrop
 PORTVERSION=	2.0.4
@@ -37,6 +38,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+
+MAILDROP_LOG_COLUMNS?=	72	# lenght of 'File:' line in log
 
 .if defined(WITH_AUTHLIB)
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.opt)
@@ -73,18 +76,19 @@ USE_FAM=	yes
 CONFIGURE_ARGS+=	--enable-trusted-users="${MAILDROP_TRUSTED_USERS}"
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e "s/l= 72 - szbuf.Length();/l= ${MAILDROP_LOG_COLUMNS} - szbuf.Length();/" \
+		${WRKSRC}/maildrop/log.C
 .if defined(WITH_AUTHLIB)
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
 .endif
-BUILD_DEPENDS+=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-RUN_DEPENDS+=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-CONFIGURE_ARGS+=	--enable-authlib
-
-post-patch:
 	@${REINPLACE_CMD} -e 's|@LIBS@|@LIBS@ \
 		-rpath=:${LOCALBASE}/lib/courier-authlib|' \
 		${WRKSRC}/maildrop/Makefile.in
+BUILD_DEPENDS+=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
+RUN_DEPENDS+=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
+CONFIGURE_ARGS+=	--enable-authlib
 .else
 CONFIGURE_ARGS+=	--disable-authlib
 .endif
