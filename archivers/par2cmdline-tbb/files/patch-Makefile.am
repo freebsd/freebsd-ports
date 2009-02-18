@@ -1,0 +1,44 @@
+--- Makefile.am.orig	2009-02-09 13:44:21.426445712 +0100
++++ Makefile.am	2009-02-09 13:45:18.592707625 +0100
+@@ -22,23 +22,23 @@
+ bin_PROGRAMS = par2
+ 
+ if AMD64
+-ARCH = x86_64
++ARCH_SCALAR = x86_64
+ ARCH_MMX = x86_64
+ endif
+ if X86MMX
+-ARCH = i386
++ARCH_SCALAR = i386
+ ARCH_MMX = i686
+ else
+ if X86CPU
+-ARCH = i386
++ARCH_SCALAR = i386
+ ARCH_MMX = i686
+ endif
+ endif
+ if PPC64
+-ARCH = ppc64
++ARCH_SCALAR = ppc64
+ endif
+ if PPC32
+-ARCH = ppc
++ARCH_SCALAR = ppc
+ endif
+ 
+ if PLATFORM_DARWIN
+@@ -55,10 +55,10 @@
+ endif
+ 
+ if AMD64
+-ASMSOURCES = reedsolomon-$(ARCH)-scalar-$(PLATFORM).s reedsolomon-$(ARCH_MMX)-mmx-$(PLATFORM).s
++ASMSOURCES = reedsolomon-$(ARCH_SCALAR)-scalar-$(PLATFORM).s reedsolomon-$(ARCH_MMX)-mmx-$(PLATFORM).s
+ endif
+ if X86CPU
+-ASMSOURCES = reedsolomon-$(ARCH)-scalar-$(PLATFORM).s reedsolomon-$(ARCH_MMX)-mmx-$(PLATFORM).s $(ASMSOURCES_PLATFORM)
++ASMSOURCES = reedsolomon-$(ARCH_SCALAR)-scalar-$(PLATFORM).s reedsolomon-$(ARCH_MMX)-mmx-$(PLATFORM).s $(ASMSOURCES_PLATFORM)
+ endif
+ 
+ if GPGPU_CUDA
