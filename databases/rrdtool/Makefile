@@ -7,6 +7,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -43,6 +44,8 @@ OPTIONS=	PYTHON_MODULE	"Build PYTHON bindings" off \
 
 .if defined(WITH_PYTHON_MODULE)
 USE_PYTHON=	yes
+INSTALLS_EGGINFO=yes
+PYDISTUTILS_EGGINFO=py_rrdtool-0.2.1-${PYTHON_VERSION:S/thon//}.egg-info
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 PLIST_SUB+=	WITH_PYTHON=""
 CONFIGURE_ARGS+=	--enable-python
