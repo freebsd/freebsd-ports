@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_authnz_external
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.unixpapa.com/software/
 DIST_SUBDIR=	apache22
