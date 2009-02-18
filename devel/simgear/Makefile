@@ -19,8 +19,13 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		alut.1:${PORTSDIR}/audio/freealut \
-		osg.48:${PORTSDIR}/graphics/osg \
 		boost_thread.4:${PORTSDIR}/devel/boost
+
+.if defined(WITH_OSG_DEVEL)
+LIB_DEPENDS+=	osg.54:${PORTSDIR}/graphics/osg-devel
+.else
+LIB_DEPENDS+=	osg.48:${PORTSDIR}/graphics/osg
+.endif
 
 USE_XORG=	ice sm x11 xext xi xt xmu
 USE_GL=		gl glu glut
