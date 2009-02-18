@@ -60,9 +60,6 @@ SCALAPACK = -L/usr/local/lib -lscalapack -lblacs -lblacsc
 FORTRAN_LIBS= -lgfortran
 GCCLIBDIR = -L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
-pre-patch:
-	${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%MPICC%%|mpicc|g ; \
 				s|%%MPICXX%%|mpicxx|g ; \
@@ -83,6 +80,9 @@ post-patch:
 				s|%%FFLAGS%%|${FFLAGS}|g ; \
 				s|%%BLAS%%|${BLAS}|g ; \
 				s|%%LAPACK%%|${LAPACK}|g ' ${WRKSRC}/mumps/Makefile
+
+pre-build:
+	${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 
 do-build:
 	cd ${WRKSRC} ; ${GMAKE} mumps
