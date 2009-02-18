@@ -5,16 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	prelude-manager
-PORTVERSION=	0.9.12.1
+PORTVERSION=	0.9.14.2
 PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
-		http://www.prelude-ids.org/download/releases/old/
+MASTER_SITES=   http://www.prelude-ids.com/download/releases/%SUBDIR%/
+MASTER_SITE_SUBDIR=     ${PORTNAME} ${PORTNAME}/old
 
 MAINTAINER=	r.gruyters@snow.nl
 COMMENT=	Prelude Network Intrusion Detection System central logging point
 
-LIB_DEPENDS+=	prelude.17:${PORTSDIR}/security/libprelude \
+LIB_DEPENDS+=	prelude.19:${PORTSDIR}/security/libprelude \
 		gnutls.26:${PORTSDIR}/security/gnutls
 
 USE_GMAKE=	yes
@@ -23,8 +23,6 @@ GNU_CONFIGURE=	yes
 USE_RC_SUBR=	prelude-manager.sh
 CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc \
 			--localstatedir=/var
-
-BROKEN=		does not build with current lib
 
 PRELUDEUSER?=	prelude
 PRELUDEGROUP?=	prelude
@@ -67,5 +65,10 @@ post-install:
 	   ${CP} -p ${PREFIX}/etc/prelude-manager/prelude-manager.conf-dist \
 	      ${PREFIX}/etc/prelude-manager/prelude-manager.conf ; \
 	fi
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}/smtp
+	${INSTALL_DATA} ${WRKSRC}/plugins/reports/smtp/template.example ${EXAMPLESDIR}/smtp/template.example
+.endif
 
 .include <bsd.port.post.mk>
