@@ -146,6 +146,10 @@ CONFIGURE_ARGS+=	--disable-vorbis
 PLIST_SUB+=	VORBIS="@comment "
 .endif
 
+.if ${ARCH} == "sparc64"
+IGNORE=		Does not compile on sparc64 (invokes i386 asm)
+.endif
+
 pre-configure:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
