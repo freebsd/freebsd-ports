@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	20090218
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		${MASTER_SITE_LOCAL}
@@ -33,6 +34,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 USE_GMAKE=	yes
+CONF_FILES=	clamd freshclam
 
 PORTDOCS=	*
 
@@ -137,6 +139,7 @@ CONFIGURE_ARGS+=--without-iconv
 
 .if defined(WITH_MILTER)
 USE_RC_SUBR+=	clamav-milter
+CONF_FILES+=	clamav-milter
 . if defined(WITH_LDAP) && exists(${LOCALBASE}/lib/libldap.so)
 USE_OPENLDAP=	yes
 LDFLAGS+=	-lldap
@@ -178,7 +181,7 @@ pre-su-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/clamav-config.h ${PREFIX}/include
-.for c in clamd freshclam clamav-milter
+.for c in ${CONF_FILES}
 	@[ -f ${PREFIX}/etc/${c}.conf ] || \
 		${CP} -v ${PREFIX}/etc/${c}.conf.default ${PREFIX}/etc/${c}.conf
 .endfor
