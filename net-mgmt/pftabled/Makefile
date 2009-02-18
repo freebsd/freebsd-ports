@@ -10,7 +10,7 @@ PORTVERSION=	1.06
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.wolfermann.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chifeng@gmail.com
 COMMENT=	The pftabled is a tool to manage your pf tables remotely
 
 USE_RC_SUBR=	pftabled

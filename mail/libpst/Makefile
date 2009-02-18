@@ -10,7 +10,7 @@ PORTVERSION=	0.6.27
 CATEGORIES=	mail converters
 MASTER_SITES=	http://www.five-ten-sg.com/libpst/packages/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chifeng@gmail.com
 COMMENT=	A tool for converting Outlook .pst files to mbox and other formats
 
 GNU_CONFIGURE=	yes
