@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libpst
-PORTVERSION=	0.6.24
+PORTVERSION=	0.6.27
 CATEGORIES=	mail converters
 MASTER_SITES=	http://www.five-ten-sg.com/libpst/packages/
 
