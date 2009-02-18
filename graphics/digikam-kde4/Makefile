@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	digikam
-DISTVERSION=	0.10.0-rc1
+DISTVERSION=	0.10.0-rc2
 CATEGORIES=	graphics kde
 MASTER_SITES=	SFE
 
