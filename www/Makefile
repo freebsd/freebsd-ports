@@ -408,6 +408,7 @@
     SUBDIR += mod_auth_useragent
     SUBDIR += mod_auth_xradius
     SUBDIR += mod_authenticache
+    SUBDIR += mod_authn_sasl
     SUBDIR += mod_authnz_external
     SUBDIR += mod_authz_unixgroup
     SUBDIR += mod_backhand
