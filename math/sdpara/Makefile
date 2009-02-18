@@ -16,6 +16,10 @@ EXTRACT_ONLY=	${SRCFILE}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SDPARA paralell version of SDPA (math/sdpa)
 
+LIB_DEPENDS=	scalapack:${PORTSDIR}/math/scalapack \
+		blacs:${PORTSDIR}/math/blacs \
+		mpich:${PORTSDIR}/net/mpich2
+
 .include <bsd.port.pre.mk>
 
 SRCDATE=	20090109
@@ -27,10 +31,6 @@ USE_FORTRAN=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 USE_BLAS?=	reference
-
-LIB_DEPENDS=	scalapack:${PORTSDIR}/math/scalapack \
-		blacs:${PORTSDIR}/math/blacs \
-		mpich:${PORTSDIR}/net/mpich2
 
 .if exists(${LOCALBASE}/lib/libgoto.so)
 USE_BLAS=     gotoblas
@@ -61,9 +61,9 @@ FORTRAN_LIBS= -lgfortran
 GCCLIBDIR = -L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%MPICC%%|mpicc|g ; \
-				s|%%MPICXX%%|mpicxx|g ; \
-				s|%%MPIF77%%|mpif77|g ; \
+	@${REINPLACE_CMD} -e 's|%%MPICC%%|${LOCALBASE}/mpich2/bin/mpicc|g ; \
+				s|%%MPICXX%%|${LOCALBASE}/mpich2/bin/mpicxx|g ; \
+				s|%%MPIF77%%|${LOCALBASE}/mpich2/bin/mpif77|g ; \
 				s|%%CFLAGS%%|${CFLAGS}|g ; \
 				s|%%CXXFLAGS%%|${CXXFLAGS}|g ; \
 				s|%%FFLAGS%%|${FFLAGS}|g ; \
@@ -72,9 +72,9 @@ post-patch:
 				s|%%SCALAPACK%%|${SCALAPACK}|g ; \
 				s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g ; \
 				s|%%FORTRAN_LIBS%%|${GCCLIBDIR} ${FORTRAN_LIBS}|g '  ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|%%MPICC%%|mpicc|g ; \
-				s|%%MPICXX%%|mpicxx|g ; \
-				s|%%MPIF77%%|mpif77|g ; \
+	@${REINPLACE_CMD} -e 's|%%MPICC%%|${LOCALBASE}/mpich2/bin/mpicc|g ; \
+				s|%%MPICXX%%|${LOCALBASE}/mpich2/bin/mpicxx|g ; \
+				s|%%MPIF77%%|${LOCALBASE}/mpich2/bin/mpif77|g ; \
 				s|%%CFLAGS%%|${CFLAGS}|g ; \
 				s|%%CXXFLAGS%%|${CXXFLAGS}|g ; \
 				s|%%FFLAGS%%|${FFLAGS}|g ; \
