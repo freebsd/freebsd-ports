@@ -59,22 +59,16 @@ include/libprelude/prelude-string.h
 include/libprelude/prelude-thread.h
 include/libprelude/prelude-timer.h
 include/libprelude/prelude.h
-include/libprelude/variable.h
 lib/libprelude.la
 lib/libprelude.so
-lib/libprelude.so.17
+lib/libprelude.so.19
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Prelude.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/Prelude.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/Prelude.so
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/PreludeEasy.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeEasy/.packlist
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeEasy/PreludeEasy.bs
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeEasy/PreludeEasy.so
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeEasy
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/_prelude.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/prelude-0.0.0-py%%PYTHON_VER%%.egg-info
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/prelude-0.9.21.2-py%%PYTHON_VER%%.egg-info
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/prelude.py
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/prelude.pyc
 share/aclocal/libprelude.m4
