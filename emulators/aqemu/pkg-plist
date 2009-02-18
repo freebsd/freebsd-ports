@@ -23,16 +23,18 @@ share/applications/aqemu.desktop
 %%DATADIR%%/os_icons/suse.png
 %%DATADIR%%/os_icons/symphony.png
 %%DATADIR%%/os_icons/ubuntu.png
+%%DATADIR%%/os_templates/FreeBSD_4.aqvmt
+%%DATADIR%%/os_templates/FreeBSD_7.aqvmt
 %%DATADIR%%/os_templates/Linux_2_0.aqvmt
 %%DATADIR%%/os_templates/Linux_2_4.aqvmt
 %%DATADIR%%/os_templates/Linux_2_6.aqvmt
 %%DATADIR%%/os_templates/Linux_x86_64.aqvmt
 %%DATADIR%%/os_templates/Windows_2000.aqvmt
-%%DATADIR%%/os_templates/Windows_95.aqvmt
-%%DATADIR%%/os_templates/Windows_98.aqvmt
+%%DATADIR%%/os_templates/Windows_9X.aqvmt
 %%DATADIR%%/os_templates/Windows_Vista.aqvmt
+%%DATADIR%%/os_templates/Windows_Vista_x64.aqvmt
 %%DATADIR%%/os_templates/Windows_XP.aqvmt
-%%DATADIR%%/os_templates/Windows_x64.aqvmt
+%%DATADIR%%/os_templates/Windows_XP_x64.aqvmt
 share/pixmaps/aqemu_48x48.png
 share/pixmaps/aqemu_64x64.png
 @dirrm %%DATADIR%%/os_templates
