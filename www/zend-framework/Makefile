@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZendFramework
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.5
 CATEGORIES=	www
 MASTER_SITES=	http://framework.zend.com/releases/${DISTNAME}/ GENTOO/distfiles
 
@@ -135,6 +135,17 @@ do-install:
 	@${ECHO_CMD} '@exec ${FIND} ${EXAMPLESDIR} -type d -print0 | \
 		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 .endif
+
+# Maintainer-mode target to speed up fixup of output from genplist
+fix-new-plist:
+	@if [ -f pkg-plist.new ]; then \
+		${PERL} -ni.bak -e 'next if /PORTDOCS/; \
+				s#^(.*%%DATADIR%%/externals)#%%DOJO%%$$1#g; \
+				s#^(.*%%DATADIR%%/incubator)#%%INCUBATOR%%$$1#g; \
+				print;' pkg-plist.new; \
+	else \
+		${ECHO_CMD} Please run genplist to create pkg-plist.new; \
+	fi
 
 post-install:
 .if !defined(NOPORTDOCS)

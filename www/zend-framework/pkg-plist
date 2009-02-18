@@ -3215,23 +3215,6 @@
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Reflection/Method.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Reflection/Parameter.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Reflection/Property.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Abstract.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Apache/File.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Exception.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Php/Abstract.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Php/Body.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Php/Class.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Php/Docblock.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Php/Docblock/Tag.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Php/Docblock/Tag/Param.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Php/Docblock/Tag/Return.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Php/Exception.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Php/File.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Php/Member/Abstract.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Php/Member/Container.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Php/Method.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Php/Parameter.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Php/Property.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/Abstract.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/Cli.php
 %%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/Cli/ArgumentParser.php
@@ -3971,6 +3954,8 @@
 %%DATADIR%%/library/Zend/Gdata/Spreadsheets/WorksheetEntry.php
 %%DATADIR%%/library/Zend/Gdata/Spreadsheets/WorksheetFeed.php
 %%DATADIR%%/library/Zend/Gdata/YouTube.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/ActivityEntry.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/ActivityFeed.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/CommentEntry.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/CommentFeed.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/ContactEntry.php
@@ -4805,6 +4790,7 @@
 %%DATADIR%%/library/Zend/Search/Lucene/Analysis/TokenFilter/StopWords.php
 %%DATADIR%%/library/Zend/Search/Lucene/Document.php
 %%DATADIR%%/library/Zend/Search/Lucene/Document/Docx.php
+%%DATADIR%%/library/Zend/Search/Lucene/Document/Exception.php
 %%DATADIR%%/library/Zend/Search/Lucene/Document/Html.php
 %%DATADIR%%/library/Zend/Search/Lucene/Document/OpenXml.php
 %%DATADIR%%/library/Zend/Search/Lucene/Document/Pptx.php
@@ -5341,9 +5327,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/numberAmf3Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/objectAmf0Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/sparseArrayAmf0Response.bin
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/stringKeyArrayAmf0Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/stringAmf0Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/stringAmf3Response.bin
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/stringKeyArrayAmf0Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock/typedObjectAmf0Response.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/ResponseTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/ServerTest.php
@@ -6047,6 +6033,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/WhenTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/WhereTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/WhoTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/YouTube/ActivityEntryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/YouTube/ActivityFeedTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/YouTube/CommentEntryTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/YouTube/CommentFeedTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/YouTube/ContactEntryTest.php
@@ -6061,6 +6049,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/YouTube/VideoEntryTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/YouTube/VideoFeedTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/YouTube/VideoQueryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/YouTube/_files/ActivityEntryDataSample1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/YouTube/_files/ActivityFeedDataSample1.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/YouTube/_files/CommentEntryDataSample1.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/YouTube/_files/CommentFeedDataSample1.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/YouTube/_files/ContactEntryDataSample1.xml
@@ -7653,12 +7643,6 @@
 %%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/Cli
 %%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework/Client
 %%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Php/Member
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Php/Docblock/Tag
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Php/Docblock
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Php
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator/Apache
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/CodeGenerator
 %%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool
 %%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Reflection/Docblock/Tag
 %%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Reflection/Docblock
