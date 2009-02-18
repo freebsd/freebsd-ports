@@ -40,6 +40,10 @@ JAM_ARGS=	-qa
 CFLAGS+=	-DUSE_ADDR64
 .endif
 
+.if ${ARCH} == "sparc64"
+IGNORE=		Does not configure on sparc64
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%AUTOHEADER%%|${AUTOHEADER}|g" -e "s|%%AUTOCONF%%|${AUTOCONF}|g" -e \
 		"s|%%ACLOCAL%%|${ACLOCAL}|g" -e "s|%%LIBTOOLIZE%%|${LIBTOOLIZE}|g" -e \
