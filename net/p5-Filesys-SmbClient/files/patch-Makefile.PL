@@ -1,6 +1,6 @@
---- Makefile.PL.orig	Sun Aug 10 11:25:48 2003
-+++ Makefile.PL	Sun Aug 10 11:29:22 2003
-@@ -5,36 +5,8 @@
+--- Makefile.PL.orig	2005-03-03 16:36:04.000000000 +0100
++++ Makefile.PL	2009-02-16 13:07:09.000000000 +0100
+@@ -5,39 +5,11 @@
  # special flag for AIX
  ($^O =~ m/AIX/i) ? ($ccfl = '-qcpluscmt') : ($ccfl = '');
  
@@ -38,4 +38,8 @@
 +my $lib = '%%LOCALBASE%%/lib/';
  
  # Create config.h for alloca via configure
- system("./configure") == 0 or die "Can't run configure:$!\n";
+-my $prefix = $include;
++my $prefix = '%%LOCALBASE%%';
+ $prefix=$1 = $1 if $include=~m!(.*)include$!;
+ system("./configure --with-samba-prefix=$prefix") == 0
+   or die "Can't run configure:$!\n";
