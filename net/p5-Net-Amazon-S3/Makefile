@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Amazon-S3
-PORTVERSION=	0.49
+PORTVERSION=	0.50
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ COMMENT=	Use the Amazon S3 - Simple Storage Service
 
 RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Data-Stream-Bulk>=0:${PORTSDIR}/devel/p5-Data-Stream-Bulk \
+		p5-DateTime-Format-HTTP>=0:${PORTSDIR}/devel/p5-DateTime-Format-HTTP \
 		p5-DateTime-Format-ISO8601>=0:${PORTSDIR}/devel/p5-DateTime-Format-ISO8601 \
 		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-Digest-MD5-File>=0:${PORTSDIR}/security/p5-Digest-MD5-File \
