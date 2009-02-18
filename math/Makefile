@@ -418,6 +418,7 @@
     SUBDIR += qscanplot
     SUBDIR += qtiplot
     SUBDIR += qtiplot-doc
+    SUBDIR += qtoctave
     SUBDIR += qwtplot3d
     SUBDIR += qwtplot3d-qt4
     SUBDIR += rapid
