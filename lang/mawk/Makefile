@@ -12,7 +12,7 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/languages/mawk/ \
 		ftp://ftp.whidbey.net/pub/brennan/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ota@j.email.ne.jp
 COMMENT=	An implementation of new/posix awk
 
 GNU_CONFIGURE=	yes
