@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vuze
-PORTVERSION=	4.0.0.4
+PORTVERSION=	4.1.0.0
 #PORTREVISION=	1
 CATEGORIES=	net-p2p java
 MASTER_SITES=	SF
@@ -32,6 +32,7 @@ org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java \
 org/gudy/azureus2/platform/unix/ScriptBeforeStartup.java \
 org/gudy/azureus2/platform/PlatformManagerFactory.java \
 org/gudy/azureus2/ui/swt/test/PrintTransferTypes.java \
+org/gudy/azureus2/ui/swt/views/table/impl/TableViewSWTImpl.java \
 com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterStream.java \
 com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterTransparent.java
 
