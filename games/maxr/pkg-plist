@@ -1,7 +1,5 @@
 bin/maxr
 %%DATADIR%%/AUTHORS
-%%DATADIR%%/COPYING
-%%DATADIR%%/COPYING.README
 %%DATADIR%%/MANUAL
 %%DATADIR%%/buildings/barracks/data.xml
 %%DATADIR%%/buildings/barracks/img.pcx
@@ -83,7 +81,6 @@ bin/maxr
 %%DATADIR%%/buildings/fac_small/info.pcx
 %%DATADIR%%/buildings/fac_small/shw.pcx
 %%DATADIR%%/buildings/fac_small/video.pcx
-%%DATADIR%%/buildings/goldraff/.directory
 %%DATADIR%%/buildings/goldraff/data.xml
 %%DATADIR%%/buildings/goldraff/effect.pcx
 %%DATADIR%%/buildings/goldraff/effect_org.pcx
@@ -258,12 +255,15 @@ bin/maxr
 %%DATADIR%%/gfx/edock.pcx
 %%DATADIR%%/gfx/ehangar.pcx
 %%DATADIR%%/gfx/fac_build_screen.pcx
+%%DATADIR%%/gfx/fuel.pcx
+%%DATADIR%%/gfx/gold.pcx
 %%DATADIR%%/gfx/hand.pcx
 %%DATADIR%%/gfx/hangar.pcx
 %%DATADIR%%/gfx/help.pcx
 %%DATADIR%%/gfx/help_screen.pcx
 %%DATADIR%%/gfx/hotseatplayers.pcx
 %%DATADIR%%/gfx/hud_bottom.pcx
+%%DATADIR%%/gfx/hud_extra_players.pcx
 %%DATADIR%%/gfx/hud_left.pcx
 %%DATADIR%%/gfx/hud_right.pcx
 %%DATADIR%%/gfx/hud_stuff.pcx
@@ -315,10 +315,8 @@ bin/maxr
 %%DATADIR%%/languages/lang_rus.xml
 %%DATADIR%%/maps/Delta.wrl
 %%DATADIR%%/maps/Three Isles.wrl
-%%DATADIR%%/max.xml
-%%DATADIR%%/maxr
-%%DATADIR%%/maxr.png
 %%DATADIR%%/maxr.bmp
+%%DATADIR%%/maxr.png
 %%DATADIR%%/music/music.xml
 %%DATADIR%%/sounds/Chat.wav
 %%DATADIR%%/sounds/absorb.wav
@@ -721,7 +719,6 @@ bin/maxr
 %%DATADIR%%/vehicles/infantery/img2_10.pcx
 %%DATADIR%%/vehicles/infantery/img2_11.pcx
 %%DATADIR%%/vehicles/infantery/img2_12.pcx
-%%DATADIR%%/vehicles/infantery/img3.xcf
 %%DATADIR%%/vehicles/infantery/img3_00.pcx
 %%DATADIR%%/vehicles/infantery/img3_01.pcx
 %%DATADIR%%/vehicles/infantery/img3_02.pcx

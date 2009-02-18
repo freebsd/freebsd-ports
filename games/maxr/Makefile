@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	maxr
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	games
-MASTER_SITES=	http://www.maxthegame.de/downloads/ \
+MASTER_SITES=	http://www.maxr.org/downloads/ \
 		http://mirror.amdmi3.ru/
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -21,13 +21,8 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^LIBS=/ s|-lSDL_|`${SDL_CONFIG} --libs` &|' \
+		-e '/^LIBS=/ s|-lSDL |`${SDL_CONFIG} --libs` |' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/SettingsData.*Path =/ s|"\(.*\)"|"${DATADIR}/\1"|' \
-		${WRKSRC}/src/loaddata.cpp
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/maxr ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/data && ${COPYTREE_SHARE} "*" ${DATADIR}
+	@${REINPLACE_CMD} -e 's|cp -a|cp -RpP|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
