@@ -520,6 +520,7 @@
     SUBDIR += py-pysqlite21
     SUBDIR += py-pysqlite22
     SUBDIR += py-pysqlite23
+    SUBDIR += py-pytc
     SUBDIR += py-qt4-sql
     SUBDIR += py-rrdpipe
     SUBDIR += py-rrdtool_lgpl
