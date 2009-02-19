@@ -13,8 +13,7 @@
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	2.8.1
-PORTREVISION=	2
+PORTVERSION=	2.8.2
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -52,9 +51,9 @@ PLIST_FILES=	etc/mail/dkim-filter.conf.sample include/dkim.h \
 PLIST_DIRS=	etc/mail
 PORTDOCS=	FEATURES INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
 		autorespond.csh \
-		draft-hoffman-dac-vbr-05.txt draft-ietf-dkim-deployment-02.txt \
-		draft-ietf-dkim-overview-10.txt draft-ietf-dkim-ssp-08.txt \
-		draft-kucherawy-dkim-reporting-04.txt draft-kucherawy-sender-auth-header-19.txt \
+		draft-hoffman-dac-vbr-05.txt draft-ietf-dkim-deployment-03.txt \
+		draft-ietf-dkim-overview-10.txt draft-ietf-dkim-ssp-09.txt \
+		draft-kucherawy-dkim-reporting-04.txt draft-kucherawy-sender-auth-header-20.txt \
 		draft-shafranovich-feedback-report-06.txt rfc4686.txt rfc4871.txt rfc5016.txt
 .if !defined(NOPORTDOCS)
 LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
@@ -163,21 +162,18 @@ SITE_SUB+=	-e 's|%%STATIC%%|dnl |g'
 SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR:S/.sh$//}${RC_SUBR_SUFFIX}"
 
 .if defined(WITH_LIBDKIM_SHARED)
-.if ${ARCH} == "amd64"
-BROKEN=		The devtools do not support the feature
-.endif
+PLIST_SUB+=	LIBDKIMSHARED=""
 SITE_SUB+=	-e '\|bld_LIBDKIM_SHARED|s/^dnl //g'
+USE_LDCONFIG=	yes
 .else
+PLIST_SUB+=	LIBDKIMSHARED="@comment "
 .endif
 .if defined(WITH_LIBDKIM_INSTALL)
 SITE_SUB+=	-e '\|bld_LIBDKIM_INSTALL|s/^dnl //g'
 .if defined(WITH_LIBDKIM_SHARED)
 PLIST_SUB+=	LIBDKIM="@comment "
-PLIST_SUB+=	LIBDKIMSHARED=""
-USE_LDCONFIG=	yes
 .else
 PLIST_SUB+=	LIBDKIM=""
-PLIST_SUB+=	LIBDKIMSHARED="@comment "
 .endif
 .else
 PLIST_SUB+=	LIBDKIM="@comment "
