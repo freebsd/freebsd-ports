@@ -5,31 +5,30 @@
 # $FreeBSD$
 
 PORTNAME=	stream
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	5.8
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.cs.virginia.edu/stream/FTP/Code/
 DISTFILES=	stream.c
-DIST_SUBDIR=	stream-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}-1.0
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shuvaev@physik.uni-wuerzburg.de
 COMMENT=	Synthetic benchmark program that measures sustainable memory bandwidth
 
-PLIST_FILES=	bin/stream
+PLIST_FILES=	bin/stream_bench
 PORTDOCS=	stream.c
 
 do-extract:
-	@${MKDIR} ${BUILD_WRKSRC}
-	@${CP} ${_DISTDIR}/stream.c ${BUILD_WRKSRC}
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${_DISTDIR}/stream.c ${WRKSRC}
 
 do-build:
-	(cd ${BUILD_WRKSRC} ; ${CC} ${CFLAGS} -o stream stream.c -lm)
+	(cd ${WRKSRC} ; ${CC} ${CFLAGS} -o stream_bench stream.c -lm)
 
 do-install:
-	(cd ${BUILD_WRKSRC}; ${INSTALL_PROGRAM} stream ${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/stream_bench ${PREFIX}/bin
 .	if !defined(NOPORTDOCS)
 		${MKDIR} ${DOCSDIR}
-		(cd ${_DISTDIR}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+		${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .	endif
 
 .include <bsd.port.mk>
