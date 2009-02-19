@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zentest
-PORTVERSION=	3.9.2
+PORTVERSION=	3.10.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 DISTNAME=	ZenTest-${PORTVERSION}
@@ -24,6 +24,7 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/autotest \
 		bin/multiruby \
+		bin/multiruby_setup \
 		bin/rails_test_audit \
 		bin/unit_diff \
 		bin/zentest
