@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ruby-ole
-PORTVERSION=	1.2.8.1
-PORTREVISION=	1
+PORTVERSION=	1.2.8.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
@@ -17,14 +16,8 @@ COMMENT=	A library for easy read/write access to OLE compound documents
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
-post-install:
-	@${ECHO} bin/oletool > ${TMPPLIST}
-	@${ECHO} ${GEM_CACHE} >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},${GEM_DOC_DIR},' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},${GEM_LIB_DIR},' >> ${TMPPLIST}
-	@${ECHO} ${GEM_SPEC} >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},@dirrm ${GEM_LIB_DIR},' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},@dirrm ${GEM_DOC_DIR},' >> ${TMPPLIST}
+PLIST_FILES=	bin/oletool
 
 .include <bsd.port.mk>
