@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	anyremote2html
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	www deskutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	anyremote
@@ -19,7 +19,7 @@ RUN_DEPENDS=	anyremote:${PORTSDIR}/comms/anyremote
 GNU_CONFIGURE=	yes
 USE_PYTHON_RUN=	yes
 
-PORTDOCS=	NEWS README COPYING VERSION AUTHORS
+PORTDOCS=	ChangeLog README COPYING AUTHORS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' ${WRKSRC}/${PORTNAME}
