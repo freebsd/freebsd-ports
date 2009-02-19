@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2009-02-18 18:30:54.000000000 +0800
++++ CMakeLists.txt	2009-02-18 18:31:34.000000000 +0800
+@@ -397,7 +397,7 @@
+ # WARNING: Use only relative paths; full paths break CPack!
+ # DESTINATION option is mandatory; skipping it breaks CPack!
+ 
+-install(FILES AUTHORS CHANGES LICENSE LICENSE.FREE_USE LICENSE.LGPL LICENSE.QPL DESTINATION ${CGAL_INSTALL_DOC_DIR} )
++#install(FILES AUTHORS CHANGES LICENSE LICENSE.FREE_USE LICENSE.LGPL LICENSE.QPL DESTINATION ${CGAL_INSTALL_DOC_DIR} )
+ 
+ 
+ install(DIRECTORY include/CGAL                       DESTINATION ${CGAL_INSTALL_INC_DIR} )
+@@ -435,7 +435,7 @@
+   install(DIRECTORY src                                     DESTINATION ${CGAL_INSTALL_ROOT_DIR} )
+ else()
+   install(FILES ${CMAKE_BINARY_DIR}/config/CGALConfig.cmake DESTINATION ${CGAL_INSTALL_CMAKE_DIR} )
+-  install(FILES auxiliary/cgal_create_cmake_script.1 DESTINATION ${CGAL_INSTALL_MAN_DIR} )
++#  install(FILES auxiliary/cgal_create_cmake_script.1 DESTINATION ${CGAL_INSTALL_MAN_DIR} )
+ endif()
+ 
+ 
