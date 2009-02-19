@@ -1,4 +1,11 @@
 bin/anyremote2html
+share/pixmaps/anyremote2html/64/bottom.png
+share/pixmaps/anyremote2html/64/top.png
+share/pixmaps/anyremote2html/64/last.png
+share/pixmaps/anyremote2html/64/ok.png
+share/pixmaps/anyremote2html/64/first.png
+share/pixmaps/anyremote2html/64/record.png
+share/pixmaps/anyremote2html/64/favorites.png
 share/pixmaps/anyremote2html/64/prev.png
 share/pixmaps/anyremote2html/64/question.png
 share/pixmaps/anyremote2html/64/play.png
@@ -21,7 +28,6 @@ share/pixmaps/anyremote2html/64/right.png
 share/pixmaps/anyremote2html/64/fullscreen.png
 share/pixmaps/anyremote2html/64/pause.png
 share/pixmaps/anyremote2html/64/file.png
-share/pixmaps/anyremote2html/64/view_tree.png
 share/pixmaps/anyremote2html/64/fit.png
 share/pixmaps/anyremote2html/64/click_icon.png
 share/pixmaps/anyremote2html/64/refresh.png
@@ -29,6 +35,13 @@ share/pixmaps/anyremote2html/64/exit.png
 share/pixmaps/anyremote2html/64/next.png
 share/pixmaps/anyremote2html/64/plus.png
 share/pixmaps/anyremote2html/64/info.png
+share/pixmaps/anyremote2html/32/bottom.png
+share/pixmaps/anyremote2html/32/top.png
+share/pixmaps/anyremote2html/32/last.png
+share/pixmaps/anyremote2html/32/ok.png
+share/pixmaps/anyremote2html/32/first.png
+share/pixmaps/anyremote2html/32/record.png
+share/pixmaps/anyremote2html/32/favorites.png
 share/pixmaps/anyremote2html/32/prev.png
 share/pixmaps/anyremote2html/32/question.png
 share/pixmaps/anyremote2html/32/play.png
@@ -51,7 +64,6 @@ share/pixmaps/anyremote2html/32/right.png
 share/pixmaps/anyremote2html/32/fullscreen.png
 share/pixmaps/anyremote2html/32/pause.png
 share/pixmaps/anyremote2html/32/file.png
-share/pixmaps/anyremote2html/32/view_tree.png
 share/pixmaps/anyremote2html/32/fit.png
 share/pixmaps/anyremote2html/32/click_icon.png
 share/pixmaps/anyremote2html/32/refresh.png
@@ -59,6 +71,13 @@ share/pixmaps/anyremote2html/32/exit.png
 share/pixmaps/anyremote2html/32/next.png
 share/pixmaps/anyremote2html/32/plus.png
 share/pixmaps/anyremote2html/32/info.png
+share/pixmaps/anyremote2html/16/bottom.png
+share/pixmaps/anyremote2html/16/top.png
+share/pixmaps/anyremote2html/16/last.png
+share/pixmaps/anyremote2html/16/ok.png
+share/pixmaps/anyremote2html/16/first.png
+share/pixmaps/anyremote2html/16/record.png
+share/pixmaps/anyremote2html/16/favorites.png
 share/pixmaps/anyremote2html/16/prev.png
 share/pixmaps/anyremote2html/16/question.png
 share/pixmaps/anyremote2html/16/play.png
@@ -81,7 +100,6 @@ share/pixmaps/anyremote2html/16/right.png
 share/pixmaps/anyremote2html/16/fullscreen.png
 share/pixmaps/anyremote2html/16/pause.png
 share/pixmaps/anyremote2html/16/file.png
-share/pixmaps/anyremote2html/16/view_tree.png
 share/pixmaps/anyremote2html/16/fit.png
 share/pixmaps/anyremote2html/16/click_icon.png
 share/pixmaps/anyremote2html/16/refresh.png
