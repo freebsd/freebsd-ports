@@ -1,0 +1,22 @@
+# Ports collection makefile for:	rubygem-activeresource
+# Date created:				30 Jan 2009
+# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
+#
+# $FreeBSD$
+
+PORTNAME=	activeresource
+PORTVERSION=	2.2.2
+CATEGORIES=	www rubygems
+MASTER_SITES=	RF
+
+MAINTAINER=	clsung@FreeBSD.org
+COMMENT=	A coherent wrapper object-relational mapping for REST web services
+
+BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-2.2.2.gemspec:${PORTSDIR}/devel/rubygem-activesupport
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+
+.include <bsd.port.mk>

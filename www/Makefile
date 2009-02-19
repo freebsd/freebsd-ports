@@ -1321,6 +1321,7 @@
     SUBDIR += ruby-tmpl
     SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-actionwebservice
+    SUBDIR += rubygem-activeresource
     SUBDIR += rubygem-amazon-ecs
     SUBDIR += rubygem-bluecloth
     SUBDIR += rubygem-erubis
