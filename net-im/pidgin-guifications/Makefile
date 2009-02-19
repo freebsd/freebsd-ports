@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pidgin-guifications
-PORTVERSION=	2.14
-PORTREVISION=	3
+PORTVERSION=	2.16
 CATEGORIES=	net-im
 MASTER_SITES=	http://downloads.guifications.org/plugins/Guifications2/
 
