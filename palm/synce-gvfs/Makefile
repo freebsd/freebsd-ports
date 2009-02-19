@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	synce-gvfs
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	palm
 MASTER_SITES=	SF/synce
 
