@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	celt
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.us.xiph.org/releases/celt/
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	The CELT ultra-low delay audio codec
+
+LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

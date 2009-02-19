@@ -1,3 +1,5 @@
+bin/celtenc
+bin/celtdec
 include/celt/celt.h
 include/celt/celt_types.h
 include/celt/celt_header.h
