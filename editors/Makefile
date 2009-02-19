@@ -130,7 +130,6 @@
     SUBDIR += richtext
     SUBDIR += rospell
     SUBDIR += rox-edit
-    SUBDIR += sam
     SUBDIR += scite
     SUBDIR += scribes
     SUBDIR += semi
