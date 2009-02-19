@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	gorky17_demo
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Gorky17 Demo - a tactical shooter similiar to Jagged Alliance
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \

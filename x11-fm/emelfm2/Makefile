@@ -10,7 +10,7 @@ PORTVERSION=	0.5.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://emelfm2.net/rel/
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	The gtk2 port of emelfm, a fast graphical filemanager
 
 USE_BZIP2=	yes

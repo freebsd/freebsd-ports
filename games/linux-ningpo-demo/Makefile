@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	ningpo_demo
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	NingPo Mahjong Demo - a feature rich Mahjong game
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \

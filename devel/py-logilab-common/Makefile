@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.logilab.fr/pub/common/ \
 MASTER_SITE_SUBDIR=	dryice
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Common low-level libraries shared among logilab projects
 
 USE_PYTHON=	2.4+

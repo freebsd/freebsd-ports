@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.red-bean.com/cvsutils/releases/
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	CVS utilities which facilitate working with local working directories
 
 USE_PERL5=	yes

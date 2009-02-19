@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.logilab.org/pub/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	logilab-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Extension for Python compiler.ast module
 
 RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/logilab/__init__.py:${PORTSDIR}/devel/py-logilab-common

@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	candycruncher_demo
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Candy Cruncher Demo - a fast puzzle game with lots of candies
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \

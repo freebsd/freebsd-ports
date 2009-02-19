@@ -13,7 +13,7 @@ MASTER_SITES=	http://pygame.seul.org/ftp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}release
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A module designed to write games in Python
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg

@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.pl
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	CVS-log-message-to-ChangeLog conversion script
 
 USE_PERL5=	yes

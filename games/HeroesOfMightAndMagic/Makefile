@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=
 DISTFILES=
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	BSD Installation of the Linux game "Heroes of Might and Magic III"
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk

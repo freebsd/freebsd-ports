@@ -12,7 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	SF
 DISTNAME=	ht-${PORTVERSION}
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A file editor/viewer/analyzer for executables
 
 USE_BZIP2=	yes

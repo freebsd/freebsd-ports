@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.introversion.co.uk/defcon/linux/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Defcon for Linux
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \

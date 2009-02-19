@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	majesty_demo
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Majesty Gold Demo
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \

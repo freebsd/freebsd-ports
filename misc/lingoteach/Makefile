@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME}-ui-${PORTVERSION}.tar.gz
 DISTFILES+=	${PORTNAME}-sound-${SOUNDV}.tar.gz
 .endif
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A language teaching program with sound
 
 LIB_DEPENDS=	lingoteach.3:${PORTSDIR}/textproc/liblingoteach

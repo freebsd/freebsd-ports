@@ -13,7 +13,7 @@ CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A C-library for generating multi page PostScript documents
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

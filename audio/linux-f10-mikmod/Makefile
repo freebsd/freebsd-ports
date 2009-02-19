@@ -10,7 +10,7 @@ DISTVERSION=	3.1.6
 CATEGORIES=	audio linux
 DISTNAME=	${PORTNAME}-${PORTVERSION}-34
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	MikMod Sound Library (Linux version)
 
 ONLY_FOR_ARCHS=	i386 amd64

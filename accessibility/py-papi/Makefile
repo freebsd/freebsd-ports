@@ -11,7 +11,7 @@ CATEGORIES=	accessibility devel python
 MASTER_SITES=	SF/ocemp
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	ATK accessibility wrapper for python
 
 USE_GNOME=	atk
