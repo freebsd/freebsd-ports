@@ -1328,6 +1328,7 @@
     SUBDIR += rubygem-haml
     SUBDIR += rubygem-hpricot
     SUBDIR += rubygem-htauth
+    SUBDIR += rubygem-httparty
     SUBDIR += rubygem-layout-yullio
     SUBDIR += rubygem-maruku
     SUBDIR += rubygem-mechanize
