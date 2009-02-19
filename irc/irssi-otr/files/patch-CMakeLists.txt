@@ -3,12 +3,12 @@ $FreeBSD$
 
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -194,7 +194,7 @@
+@@ -231,7 +231,7 @@
  
- ADD_LIBRARY(otr SHARED otr.c otrutil.c otr_ops.c otr_key.c ui.c ${PROJECT_BINARY_DIR}/otr-formats.c)
- 
--TARGET_LINK_LIBRARIES(otr ${GLIB_LIBRARIES} ${LIBOTR_LIBRARIES})
-+TARGET_LINK_LIBRARIES(otr ${GLIB_LDFLAGS} ${LIBOTR_LIBRARIES})
- 
- # cscope
- 
+ IF(HAVE_IRSSI)
+   ADD_LIBRARY(irssiotr SHARED irssi_otr.c otr_util.c otr_ops.c otr_key.c ${PROJECT_BINARY_DIR}/otr-formats.c)
+-  TARGET_LINK_LIBRARIES(irssiotr ${GLIB_LIBRARIES} ${LIBOTR_LIBRARIES})
++  TARGET_LINK_LIBRARIES(irssiotr ${GLIB_LDFLAGS} ${LIBOTR_LIBRARIES})
+   SET_TARGET_PROPERTIES(irssiotr PROPERTIES 
+     COMPILE_FLAGS -DTARGET_IRSSI
+     OUTPUT_NAME "otr"
