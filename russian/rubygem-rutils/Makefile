@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rutils
-PORTVERSION=	0.2.5
+PORTVERSION=	1.0.2
 CATEGORIES=	russian devel rubygems
 MASTER_SITES=	RF
 
@@ -14,15 +14,8 @@ COMMENT=	Simple processing of russian strings
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
-post-install:
-	@${ECHO} bin/gilensize > ${TMPPLIST}
-	@${ECHO} bin/rutilize >> ${TMPPLIST}
-	@${ECHO} ${GEM_CACHE} >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},${GEM_DOC_DIR},' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},${GEM_LIB_DIR},' >> ${TMPPLIST}
-	@${ECHO} ${GEM_SPEC} >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},@dirrm ${GEM_LIB_DIR},' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},@dirrm ${GEM_DOC_DIR},' >> ${TMPPLIST}
+PLIST_FILES=	bin/gilensize bin/rutilize
 
 .include <bsd.port.mk>
