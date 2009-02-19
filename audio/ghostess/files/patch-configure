@@ -1,7 +1,7 @@
---- configure.orig	Tue Nov 28 17:09:13 2006
-+++ configure	Sat Jan 13 20:08:31 2007
-@@ -21405,14 +21405,9 @@
- echo "GTK support: $with_gtk"
+--- configure.orig	2008-12-14 01:50:58.000000000 +0100
++++ configure	2009-01-11 15:27:38.000000000 +0100
+@@ -11766,15 +11766,9 @@
+ 
  
  case "${host_os}" in
 -darwin*)
@@ -13,6 +13,7 @@
 -_ACEOF
 -
 -
-   succeeded=no
- 
-   if test -z "$PKG_CONFIG"; then
+-
+ if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
+ 	if test -n "$ac_tool_prefix"; then
+   # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
