@@ -1,0 +1,21 @@
+--- CMakeLists.txt.orig	2009-02-19 11:27:44.292036727 -0500
++++ CMakeLists.txt	2009-02-19 11:28:03.932046002 -0500
+@@ -156,18 +156,6 @@
+ 
+ INSTALL(
+     FILES
+-        "AUTHORS"
+-        "INSTALL"
+-        "README"
+-        "README.win32.txt"
+-        "TODO"
+-        "USAGE"
+-    DESTINATION
+-        "share/doc/freecell-solver/"
+-)
+-
+-INSTALL(
+-    FILES
+         "fcs_cl.h"
+         "fcs_enums.h"
+         "fcs_move.h"

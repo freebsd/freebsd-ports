@@ -8,7 +8,7 @@
 
 PORTNAME=	freecell-solver
 PORTVERSION=	2.14.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	fc-solve
@@ -19,7 +19,10 @@ COMMENT=	A program that automatically solves games of Freecell
 USE_PERL5_BUILD=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-PORTDOCS=	*
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	AUTHORS README TODO USAGE README.win32.txt INSTALL
+.endif
 
 MAN6=	fc-solve-board_gen.6 \
 	fc-solve.6 \
@@ -28,5 +31,13 @@ MAN6=	fc-solve-board_gen.6 \
 	make-gnome-freecell-board.6 \
 	make_pysol_freecell_board.py.6 \
 	pi-make-microsoft-freecell-board.6
+
+.if !defined(NOPORTDOCS)
+post-install:
+	${MKDIR} ${DOCSDIR}
+.for DOCFILE in PORTDOCS
+	${INSTALL_DATA} ${WRKSRC}/${DOCFILE}
+.endfor
+.endif
 
 .include <bsd.port.mk>
