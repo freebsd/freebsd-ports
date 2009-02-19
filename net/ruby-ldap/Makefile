@@ -34,6 +34,25 @@ IGNORE=		you should set WITH_LDAP variable to openldap1, openldap2 or ldapsdk
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${WITH_LDAP} == openldap2
+. if exists(${LOCALBASE}/bin/ldapwhoami)
+_OPENLDAP_VER!= ${LOCALBASE}/bin/ldapwhoami -VV 2>&1 | ${GREP} ldapwhoami | ${SED} -E 's/.*OpenLDAP: ldapwhoami (2)\.(3|4).*/\1\2/'
+. endif
+
+. if defined(_OPENLDAP_VER)
+LDAPVER=	${_OPENLDAP_VER}
+. elif defined(DEFAULT_OPENLDAP_VER)
+LDAPVER=	${DEFAULT_OPENLDAP_VER}
+. else
+LDAPVER=	24
+. endif
+. if ${LDAPVER} == 24
+EXTRA_PATCHES=	${FILESDIR}/extra::patch-ldap.c ${FILESDIR}/extra::patch-conn.c
+. endif
+.endif
+
 # Configure options:
 #   --with-ldap		specify the ldap directory
 #   --with-ldap-incdir	specify the directory which contains ldap.h and lber.h
@@ -70,4 +89,4 @@ post-install:
 	${INSTALL_DATA} ${DOCS_EN:S,^,${WRKSRC}/,} ${RUBY_MODDOCDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
