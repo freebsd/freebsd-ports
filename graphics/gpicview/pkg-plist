@@ -11,6 +11,12 @@ share/applications/gpicview.desktop
 %%NLS%%share/locale/sk/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/no/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gpicview.mo
 %%DATADIR%%/pixmaps/clockwise.png
 %%DATADIR%%/pixmaps/counterclockwise.png
 %%DATADIR%%/pixmaps/fullscreen.png
