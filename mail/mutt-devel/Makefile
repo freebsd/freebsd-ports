@@ -23,8 +23,6 @@
 # and SLANG (WITH_MUTT_SLANG). Note that you may have to set the variables
 # COLORTERM=yes and COLORFGBG="color1;color2" in your environment to get slang
 # function properly.
-# The default version for slang is 1.x. Define WITH_MUTT_SLANG2 if you want
-# to use the slang version 2.x
 # The default version for ncurses is that which comes with the operating
 # system. If you want to use the ncurses supplied by the ports-system define
 # WITH_MUTT_NCURSES_PORT.
@@ -117,7 +115,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.19
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -210,14 +208,6 @@ VC_PATCH_VERSION=	${PORTVERSION}
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
 WITH_MUTT_IMAP_HEADER_CACHE=	yes
 .endif
-.if defined(WITH_MUTT_SIDEBAR_PATCH)
-.if defined(WITH_MUTT_NNTP)
-IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_NNTP are not compatible
-.endif
-.if defined(WITH_MUTT_GREETING_PATCH)
-IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_GREETING_PATCH are not compatible
-.endif
-.endif
 .if ${OSVERSION} >= 700033 || (${OSVERSION} < 700000 && ${OSVERSION} >= 602107)
 NCURSES_IS_DEFAULT=	yes
 .else
@@ -271,11 +261,6 @@ WITH_MUTT_NCURSES=	yes
 .endif
 .if defined(WITH_MUTT_SLANG) || defined(WITH_SLANG)
 MUTT_USES_SLANG=	yes
-MUTT_USES_SLANG1=	yes
-.endif
-.if defined(WITH_MUTT_SLANG2)
-MUTT_USES_SLANG=	yes
-MUTT_USES_SLANG2=	yes
 .endif
 .if defined(WITH_MUTT_NCURSES) && !defined(MUTT_USES_SLANG)
 MUTT_USES_NCURSES=	yes
@@ -283,7 +268,6 @@ MUTT_USES_NCURSES=	yes
 .if !defined(MUTT_USES_SLANG) && !defined(WITHOUT_MUTT_SLANG) && !defined(MUTT_USES_NCURSES)
 .if defined(SLANG_IS_DEFAULT)
 MUTT_USES_SLANG=	yes
-MUTT_USES_SLANG1=	yes
 .elif defined(NCURSES_IS_DEFAULT)
 MUTT_USES_NCURSES=	yes
 .endif
@@ -314,9 +298,7 @@ MUTT_USES_NCURSES_PORT=	yes
 .if defined(MUTT_USES_NCURSES_PORT)
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 CFLAGS+=	-I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include
-.elif defined(MUTT_USES_SLANG1)
-LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
-.elif defined(MUTT_USES_SLANG2)
+.elif defined(MUTT_USES_SLANG)
 LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL2)
@@ -455,14 +437,14 @@ pre-patch::
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-SIDEBAR_PATCH=	patch-1.5.18.sidebar.20080611.txt
-DISTFILES+=	${SIDEBAR_PATCH}:tchan
 XML_NEEDED=	yes
-pre-patch::
-	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/${SIDEBAR_PATCH} > ${WRKDIR}/patch-sidebar
-	@${REINPLACE_CMD} -E '/^diff.*\/Makefile.in$$/,/^diff/d' \
-		 ${WRKDIR}/patch-sidebar
-	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-sidebar
+.if defined(WITH_MUTT_NNTP)
+post-patch::
+	@${PATCH} ${PATCH_ARGS} -p0 < ${PATCHDIR}/extra-patch-sidebar-nntp
+.else
+post-patch::
+	@${PATCH} ${PATCH_ARGS} -p0 < ${PATCHDIR}/extra-patch-sidebar
+.endif
 .endif
 .if defined(WITH_MUTT_GREETING_PATCH)
 PATCHFILES+=	mutt-${VC_PATCH_VERSION}.vc.greeting:vc
