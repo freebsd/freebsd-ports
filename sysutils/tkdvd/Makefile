@@ -7,6 +7,7 @@
 
 PORTNAME=	tkdvd
 PORTVERSION=	4.0.9
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://regis.damongeot.free.fr/tkdvd/dl/ \
 		http://mirror.amdmi3.ru/
@@ -36,6 +37,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|tclsh|${TCLSH}|' ${WRKSRC}/install.tcl \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|wish|${WISH}|' ${WRKSRC}/TkDVD.sh
+	@${REINPLACE_CMD} -e 's|/dev/sr0|/dev/cd0|' ${WRKSRC}/TkDVD.sh \
+		${WRKSRC}/src/save_load_options.tcl
 
 do-build:
 	cd ${WRKSRC} && ${TCLSH} install.tcl
