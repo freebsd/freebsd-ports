@@ -1,0 +1,48 @@
+%%RTHOME%%/plugins/RTx-Calendar/lib/RTx/Calendar.pm
+%%RTHOME%%/plugins/RTx-Calendar/html/Search/Calendar.html
+%%RTHOME%%/plugins/RTx-Calendar/html/Prefs/Elements/CalendarFeed
+%%RTHOME%%/plugins/RTx-Calendar/html/Prefs/Calendar.html
+%%RTHOME%%/plugins/RTx-Calendar/html/NoAuth/images/updated.png
+%%RTHOME%%/plugins/RTx-Calendar/html/NoAuth/images/starts_due.png
+%%RTHOME%%/plugins/RTx-Calendar/html/NoAuth/images/starts.png
+%%RTHOME%%/plugins/RTx-Calendar/html/NoAuth/images/started.png
+%%RTHOME%%/plugins/RTx-Calendar/html/NoAuth/images/resolved.png
+%%RTHOME%%/plugins/RTx-Calendar/html/NoAuth/images/reminder.png
+%%RTHOME%%/plugins/RTx-Calendar/html/NoAuth/images/due.png
+%%RTHOME%%/plugins/RTx-Calendar/html/NoAuth/images/created_due.png
+%%RTHOME%%/plugins/RTx-Calendar/html/NoAuth/images/created.png
+%%RTHOME%%/plugins/RTx-Calendar/html/NoAuth/css/calendar.css
+%%RTHOME%%/plugins/RTx-Calendar/html/NoAuth/Calendar/dhandler
+%%RTHOME%%/plugins/RTx-Calendar/html/Elements/MyCalendar
+%%RTHOME%%/plugins/RTx-Calendar/html/Elements/CalendarEvent
+%%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/User/Elements/Tabs/Default
+%%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Ticket/Elements/Tabs/Default
+%%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Elements/Header/Head
+man/auto/RTx/Calendar/.packlist
+lib/RTx/Calendar.pm
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/lib/RTx
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/lib
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Search
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Prefs/Elements
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Prefs
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/NoAuth/images
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/NoAuth/css
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/NoAuth/Calendar
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/NoAuth
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Elements
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/User/Elements/Tabs
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/User/Elements
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/User
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Ticket/Elements/Tabs
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Ticket/Elements
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Ticket
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Elements/Header
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Elements
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks
+@dirrm %%RTHOME%%/plugins/RTx-Calendar/html
+@dirrm %%RTHOME%%/plugins/RTx-Calendar
+@dirrm man/auto/RTx/Calendar
+@dirrmtry man/auto/RTx
+@dirrmtry man/auto
+@dirrmtry lib/RTx
