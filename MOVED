@@ -3820,3 +3820,4 @@ mail/py-pyclamd|security/py-pyclamd|2009-02-14|Category change
 deskutils/zbgset|deskutils/p5-ZConf-BGSet|2009-02-15|Integrated into deskutils/p5-ZConf-BGSet.
 deskutils/zbgset-admin|deskutils/p5-ZConf-BGSet|2009-02-15|Integrated into deskutils/p5-ZConf-BGSet.
 net/samba32-devel|net/samba32|2009-02-16|Samba 3.2 became stable enough to be used in production.
+editors/sam||2009-02-19|Has expired: distfile and homepage disappeared
