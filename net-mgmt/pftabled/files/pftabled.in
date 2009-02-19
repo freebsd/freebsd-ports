@@ -22,7 +22,7 @@ rcvar=${name}_enable
 load_rc_config $name
 
 : ${pftabled_enable="NO"}
-: ${pftabled_flags=""}
+: ${pftabled_flags="-d"}
 
 command="%%PREFIX%%/sbin/${name}"
 
