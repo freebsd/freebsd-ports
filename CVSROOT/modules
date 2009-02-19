@@ -8461,6 +8461,7 @@ mod_auth_remote                 ports/www/mod_auth_remote
 mod_auth_useragent              ports/www/mod_auth_useragent
 mod_auth_xradius                ports/www/mod_auth_xradius
 mod_authenticache               ports/www/mod_authenticache
+mod_authn_sasl                  ports/www/mod_authn_sasl
 mod_authnz_external             ports/www/mod_authnz_external
 mod_authz_unixgroup             ports/www/mod_authz_unixgroup
 mod_backhand                    ports/www/mod_backhand
@@ -18499,6 +18500,7 @@ py-pysqlite20                   ports/databases/py-pysqlite20
 py-pysqlite21                   ports/databases/py-pysqlite21
 py-pysqlite22                   ports/databases/py-pysqlite22
 py-pysqlite23                   ports/databases/py-pysqlite23
+py-pytc                         ports/databases/py-pytc
 py-pytz                         ports/devel/py-pytz
 py-pyutil                       ports/devel/py-pyutil
 py-pywebdav                     ports/www/py-pywebdav
@@ -18821,6 +18823,7 @@ q15                             ports/games/q15
 q2p                             ports/games/q2p
 q2pro                           ports/games/q2pro
 q3cellshading                   ports/games/q3cellshading
+q4wine                          ports/deskutils/q4wine
 qadsl                           ports/net/qadsl
 qalculate                       ports/math/qalculate
 qar-bufo                        ports/mail/qar-bufo
@@ -18994,6 +18997,7 @@ qtfw                            ports/security/qtfw
 qtiplot                         ports/math/qtiplot
 qtiplot-doc                     ports/math/qtiplot-doc
 qtm                             ports/deskutils/qtm
+qtoctave                        ports/math/qtoctave
 qtools                          ports/mail/qtools
 qtorrent                        ports/net-p2p/qtorrent
 qtpfsgui                        ports/graphics/qtpfsgui
