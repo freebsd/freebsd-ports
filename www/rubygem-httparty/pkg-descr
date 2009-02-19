@@ -1,0 +1,12 @@
+httparty is a Ruby library that makes HTTP fun again!
+
+It's feautures:
+
+* Easy get, post, put, delete requests
+* Basic http authentication
+* Default request query string parameters (ie: for api
+keys that are needed on each request)
+* Automatic parsing of JSON and XML into ruby hashes
+based on response content-type
+
+WWW:	http://rubyforge.org/projects/httparty/
