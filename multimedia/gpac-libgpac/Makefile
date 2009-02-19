@@ -28,7 +28,8 @@ LIBVER=	1
 
 CONFIGURE_ARGS=	--cc="${CC}" \
 		--extra-cflags="${CFLAGS} ${PTHREAD_CFLAGS} -fPIC" \
-		--extra-ldflags="${LDFLAGS} ${PTHREAD_LIBS}"
+		--extra-ldflags="${LDFLAGS} ${PTHREAD_LIBS}" \
+		--disable-opengl
 
 post-patch:
 	${CHMOD} +x ${WRKSRC}/configure
