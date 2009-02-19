@@ -13,7 +13,7 @@ MASTER_SITES=	GOOGLE_CODE \
 		SF
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	legatvs@gmail.com
 COMMENT=	Video extraction utility for YouTube, GoogleVideo, and others
 
 RUN_DEPENDS=	p5-BerkeleyDB>=0.36:${PORTSDIR}/databases/p5-BerkeleyDB \

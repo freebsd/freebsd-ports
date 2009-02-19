@@ -11,7 +11,7 @@ CATEGORIES=	multimedia net perl5
 MASTER_SITES=	GOOGLE_CODE
 DIST_SUBDIR=	clive
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	legatvs@gmail.com
 COMMENT=	Passwords, RSS parsing, and link extraction for clive
 
 USE_PERL5_RUN=	5.8.2+
