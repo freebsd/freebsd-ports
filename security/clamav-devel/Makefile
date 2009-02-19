@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20090218
-PORTREVISION=	1
+PORTVERSION=	20090219
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		${MASTER_SITE_LOCAL}
@@ -167,8 +166,6 @@ post-patch:
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -E 's,^(pkgconfigdir = ).*$$,\1$$(prefix)/libdata/pkgconfig,g' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '/PidFile *\/var\/run\/clamd.pid/ s,clamd.pid,clamav-milter.pid,' \
-		${WRKSRC}/etc/clamav-milter.conf
 	@${REINPLACE_CMD} ${SED_CONF} \
 		${WRKSRC}/etc/clamd.conf \
 		${WRKSRC}/etc/freshclam.conf \
