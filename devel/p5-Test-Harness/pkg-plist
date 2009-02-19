@@ -4,10 +4,14 @@ bin/%%P5_PREFIX%%prove
 %%SITE_PERL%%/App/Prove/State/Result.pm
 %%SITE_PERL%%/App/Prove/State/Result/Test.pm
 %%SITE_PERL%%/TAP/Base.pm
+%%SITE_PERL%%/TAP/Formatter/Base.pm
 %%SITE_PERL%%/TAP/Formatter/Color.pm
 %%SITE_PERL%%/TAP/Formatter/Console.pm
 %%SITE_PERL%%/TAP/Formatter/Console/ParallelSession.pm
 %%SITE_PERL%%/TAP/Formatter/Console/Session.pm
+%%SITE_PERL%%/TAP/Formatter/File.pm
+%%SITE_PERL%%/TAP/Formatter/File/Session.pm
+%%SITE_PERL%%/TAP/Formatter/Session.pm
 %%SITE_PERL%%/TAP/Harness.pm
 %%SITE_PERL%%/TAP/Object.pm
 %%SITE_PERL%%/TAP/Parser.pm
@@ -49,6 +53,7 @@ bin/%%P5_PREFIX%%prove
 @dirrmtry %%SITE_PERL%%/TAP/Parser/Result
 @dirrmtry %%SITE_PERL%%/TAP/Parser/Iterator
 @dirrmtry %%SITE_PERL%%/TAP/Parser
+@dirrmtry %%SITE_PERL%%/TAP/Formatter/File
 @dirrmtry %%SITE_PERL%%/TAP/Formatter/Console
 @dirrmtry %%SITE_PERL%%/TAP/Formatter
 @dirrmtry %%SITE_PERL%%/TAP
