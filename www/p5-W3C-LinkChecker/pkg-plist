@@ -1,4 +1,6 @@
 bin/checklink
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/W3C/LinkChecker/.packlist
+%%SITE_PERL%%/W3C/LinkChecker.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/W3C/LinkChecker
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/W3C
+@dirrm %%SITE_PERL%%/W3C
