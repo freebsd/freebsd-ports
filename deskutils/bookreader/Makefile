@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://kbookreader.org/system/files/
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A KDE twin-panel e-text/e-book viewer
 
 USE_BZIP2=	yes
@@ -19,6 +19,5 @@ USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>
