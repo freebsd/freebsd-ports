@@ -95,6 +95,22 @@ share/applications/lyx.desktop
 %%DATADIR%%/doc/clipart/referenceQt4.png
 %%DATADIR%%/doc/clipart/with_fntright.pdf
 %%DATADIR%%/doc/clipart/without_fntright.pdf
+%%DATADIR%%/doc/ca/Intro.lyx
+%%DATADIR%%/doc/ca/TOC.lyx
+%%DATADIR%%/doc/uk/Intro.lyx
+%%DATADIR%%/doc/uk/TOC.lyx
+%%DATADIR%%/doc/uk/clipart/FootnoteQT4.png
+%%DATADIR%%/examples/ca/ItemizeBullets.lyx
+%%DATADIR%%/examples/ca/mathed.lyx
+%%DATADIR%%/layouts/elsarticle.layout
+%%DATADIR%%/layouts/sigplanconf.layout
+%%DATADIR%%/layouts/singlecol.layout
+%%DATADIR%%/layouts/svglobal3.layout
+%%DATADIR%%/lyx2lyx/lyx_1_6.py
+%%DATADIR%%/lyx2lyx/lyx_1_6.pyc
+%%DATADIR%%/lyx2lyx/lyx_1_6.pyo
+%%DATADIR%%/templates/ACM-sigplan.lyx
+%%DATADIR%%/templates/elsarticle.lyx
 %%DATADIR%%/doc/cs/TOC.lyx
 %%DATADIR%%/doc/cs/Tutorial.lyx
 %%DATADIR%%/doc/da/Intro.lyx
@@ -230,7 +246,6 @@ share/applications/lyx.desktop
 %%DATADIR%%/examples/Foils.lyx
 %%DATADIR%%/examples/ItemizeBullets.lyx
 %%DATADIR%%/examples/Literate.lyx
-%%DATADIR%%/examples/Minipage.lyx
 %%DATADIR%%/examples/aa_sample.lyx
 %%DATADIR%%/examples/aas_sample.lyx
 %%DATADIR%%/examples/addressExample.adr
@@ -258,7 +273,6 @@ share/applications/lyx.desktop
 %%DATADIR%%/examples/de/Dezimal.lyx
 %%DATADIR%%/examples/de/ItemizeBullets.lyx
 %%DATADIR%%/examples/de/Lebenslauf.lyx
-%%DATADIR%%/examples/de/Minipage.lyx
 %%DATADIR%%/examples/de/beispiel_gelyxt.lyx
 %%DATADIR%%/examples/de/beispiel_roh.lyx
 %%DATADIR%%/examples/de/multicol.lyx
@@ -281,7 +295,6 @@ share/applications/lyx.desktop
 %%DATADIR%%/examples/fr/AlignementDecimal.lyx
 %%DATADIR%%/examples/fr/Foils.lyx
 %%DATADIR%%/examples/fr/ListesPuces.lyx
-%%DATADIR%%/examples/fr/Minipage.lyx
 %%DATADIR%%/examples/fr/exemple_brut.lyx
 %%DATADIR%%/examples/fr/exemple_lyxifie.lyx
 %%DATADIR%%/examples/fr/multicol.lyx
@@ -304,7 +317,6 @@ share/applications/lyx.desktop
 %%DATADIR%%/examples/ja/splash.lyx
 %%DATADIR%%/examples/landslide.lyx
 %%DATADIR%%/examples/listerrors.lyx
-%%DATADIR%%/examples/listings.lyx
 %%DATADIR%%/examples/modernCV.lyx
 %%DATADIR%%/examples/multicol.lyx
 %%DATADIR%%/examples/nl/multicol.lyx
@@ -1232,7 +1244,6 @@ share/applications/lyx.desktop
 %%DATADIR%%/templates/de_beamer-conference-ornate-20min.lyx
 %%DATADIR%%/templates/dinbrief.lyx
 %%DATADIR%%/templates/docbook_article.lyx
-%%DATADIR%%/templates/elsart.lyx
 %%DATADIR%%/templates/fr_beamer-conference-ornate-20min.lyx
 %%DATADIR%%/templates/g-brief-de.lyx
 %%DATADIR%%/templates/g-brief-en.lyx
@@ -1290,6 +1301,8 @@ share/pixmaps/lyx.xpm
 @dirrm %%DATADIR%%/examples/cs
 @dirrm %%DATADIR%%/examples/ca
 @dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/doc/uk/clipart
+@dirrm %%DATADIR%%/doc/uk
 @dirrm %%DATADIR%%/doc/sv
 @dirrm %%DATADIR%%/doc/sl
 @dirrm %%DATADIR%%/doc/sk
@@ -1314,6 +1327,7 @@ share/pixmaps/lyx.xpm
 @dirrm %%DATADIR%%/doc/da
 @dirrm %%DATADIR%%/doc/cs
 @dirrm %%DATADIR%%/doc/clipart
+@dirrm %%DATADIR%%/doc/ca
 @dirrm %%DATADIR%%/doc/biblio
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/bind/sv
