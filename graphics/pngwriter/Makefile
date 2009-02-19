@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	pngwriter
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	graphics devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library for creating PNG images
@@ -23,6 +21,15 @@ BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
 USE_GNOME=	pkgconfig
 CXXFLAGS+=	`pkg-config --cflags freetype2 libpng12` -I${LOCALBASE}/include
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PLIST_FILES=	include/pngwriter.h \
+		lib/libpngwriter.a \
+		%%DATADIR%%/fonts/FreeMonoBold.ttf \
+		%%DATADIR%%/fonts/FreeSansBold.ttf
+PLIST_DIRS=	%%DATADIR%%/fonts \
+		%%DATADIR%%
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "\.*" -delete
@@ -36,15 +43,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/pngwriter.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/src/libpngwriter.a ${PREFIX}/lib
 	@${MKDIR} ${DATADIR}/fonts
-	cd ${WRKSRC}/fonts && ${FIND} . | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/fonts
+	@(cd ${WRKSRC}/fonts && ${COPYTREE_SHARE} . ${DATADIR}/fonts)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${FIND} . | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR})
 	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${FIND} . | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
