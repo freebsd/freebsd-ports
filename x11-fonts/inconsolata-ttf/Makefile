@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	inconsolata-ttf
-PORTVERSION=	20080816
+PORTVERSION=	20090215
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.levien.com/type/myfonts/
 DISTNAME=	Inconsolata
