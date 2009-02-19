@@ -32,9 +32,8 @@ USE_FORTRAN=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC
-FFLAGS+=	-fPIC
+.if ${ARCH} == "amd64"
+BROKEN=		Does not compile on amd64
 .endif
 
 .include <bsd.port.post.mk>

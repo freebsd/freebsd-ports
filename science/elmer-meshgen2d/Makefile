@@ -23,4 +23,10 @@ ALL_TARGET=
 PLIST_FILES=	bin/ElmerMesh2D \
 		bin/Mesh2D
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		Does not compile on amd64
+.endif
+
+.include <bsd.port.post.mk>
