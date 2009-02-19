@@ -10,7 +10,7 @@ PORTVERSION=	0.8.1
 CATEGORIES=	devel games
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A small, efficient C++ GUI library designed for games
 
 USE_AUTOTOOLS=	libtool:15

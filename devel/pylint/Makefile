@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.logilab.org/pub/pylint/	\
 		http://ftp.logilab.org/pub/pylint/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Analyzes python source code looking for bugs and signs of poor quality
 
 RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/logilab/astng/__init__.py:${PORTSDIR}/devel/py-astng

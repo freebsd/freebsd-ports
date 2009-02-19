@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lingoteach
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A library for parsing lesson files based on the LingoTeach DTD
 
 USE_AUTOTOOLS=	libtool:15

@@ -12,7 +12,7 @@ CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Accessibility testing and poking tool
 
 USE_GMAKE=	yes

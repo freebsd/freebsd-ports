@@ -14,7 +14,7 @@ DISTNAME=	rt2-demo
 EXTRACT_SUFX=	.run
 EXTRACT_ONLY=
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	The free demo of Railroad Tycoon II
 
 NO_WRKSUBDIR=	yes

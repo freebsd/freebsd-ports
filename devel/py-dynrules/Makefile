@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://sysfault.org/projects/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Dynamic Scripting for adaptive AI systems
 
 USE_PYTHON=	yes

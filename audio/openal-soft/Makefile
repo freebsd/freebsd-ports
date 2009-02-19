@@ -10,7 +10,7 @@ PORTVERSION=	1.6.372
 CATEGORIES=	audio
 MASTER_SITES=	http://kcat.strangesoft.net/openal-releases/
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A software implementation of the OpenAL specification
 
 CONFLICTS=	openal-200[0-9]*

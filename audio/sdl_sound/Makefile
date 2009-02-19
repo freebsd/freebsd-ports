@@ -12,7 +12,7 @@ MASTER_SITES=	http://offload1.icculus.org:9090/SDL_sound/downloads/ \
 		http://offload2.icculus.org:9090/SDL_sound/downloads/
 DISTNAME=	SDL_sound-${PORTVERSION}
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A SDL audio library and player for some popular sound file formats
 
 USE_AUTOTOOLS=	libtool:15

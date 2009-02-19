@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_net/release/
 DISTNAME=	SDL_net-${PORTVERSION}
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A small sample cross-platform networking library
 
 USE_AUTOTOOLS=	libtool:15

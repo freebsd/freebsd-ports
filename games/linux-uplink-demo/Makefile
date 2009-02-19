@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${PORTVERSION}DEMO
 EXTRACT_SUFX=	.sh
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	High tech computer crime and industrial espionage on the Internet
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \

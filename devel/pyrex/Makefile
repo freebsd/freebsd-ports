@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/
 PKGNAMEPREFIX=	${PYTHONPKGNAMEPREFIX}
 DISTNAME=	Pyrex-${PORTVERSION}
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Programming Language for writing Python extension modules
 
 USE_PYTHON=	yes

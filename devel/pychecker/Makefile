@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Python source code checking tool to help hunting common bugs
 
 USE_PYTHON=		yes

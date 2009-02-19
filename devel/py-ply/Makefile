@@ -12,7 +12,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://www.dabeaz.com/ply/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mva@sysfault.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Python Lex-Yacc
 
 USE_PYTHON=	yes
