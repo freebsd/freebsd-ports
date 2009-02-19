@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	177.80
+DISTVERSION?=	180.29
 PORTREVISION?=	0			# As a reminder it can be overridden
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
@@ -75,6 +75,12 @@ MAKE_ENV+=	WITHOUT_LINUX=yes
 LIB_DEPENDS+=	m.3:${PORTSDIR}/misc/compat5x
 
 post-patch: .SILENT
+
+.if ${OSVERSION} >= 800049
+	${REINPLACE_CMD} -e 's,minor(,dev2unit(,' \
+	    ${WRKSRC}/src/nvidia_dev.c ${WRKSRC}/src/nvidia_subr.c
+.endif
+
 # We should support -CURRENT: kill the check
 	${REINPLACE_CMD} '24,26d' ${WRKSRC}/src/nv-freebsd.h
 # Fix `agpvar.h' location on recent -CURRENT
@@ -119,10 +125,10 @@ pre-su-install:
 	@${MKDIR} ${PREFIX}/${MODULESDIR}/drivers
 # xorg-server-1.4 installs its own ${LOCALBASE}/lib/xorg/modules/libwfb.so,
 # so back it up so it can be later restored similarly to what NVidia does:
-.if ${NVVERSION} >= 974600
-	@${MV} -f ${PREFIX}/${MODULESDIR}/libwfb.so \
-		${PREFIX}/${MODULESDIR}/XXX-libwfb.so.%%.${XSERVVERSION}
-.endif
+#.if ${NVVERSION} >= 974600
+#	@${MV} -f ${PREFIX}/${MODULESDIR}/libwfb.so \
+#		${PREFIX}/${MODULESDIR}/XXX-libwfb.so.%%.${XSERVVERSION}
+#.endif
 
 post-install:
 # pkg-plist is already overbloated, so use this hack instead of PLIST_SUB's
