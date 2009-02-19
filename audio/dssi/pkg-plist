@@ -4,11 +4,14 @@ bin/dssi_osc_update
 bin/trivial_synth
 bin/less_trivial_synth
 bin/trivial_sampler
+bin/karplong
 include/dssi.h
 lib/dssi/trivial_synth.so
 lib/dssi/trivial_synth.la
 lib/dssi/less_trivial_synth.so
 lib/dssi/less_trivial_synth.la
+lib/dssi/karplong.so
+lib/dssi/karplong.la
 %%WITH_QT%%lib/dssi/less_trivial_synth/LTS_qt
 lib/dssi/trivial_sampler.so
 lib/dssi/trivial_sampler.la

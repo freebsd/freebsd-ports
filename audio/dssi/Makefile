@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dssi
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dssi
@@ -27,6 +26,7 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
+MAN1=		dssi_osc_send.1 dssi_osc_update.1 jack-dssi-host.1
 
 .if defined(WITH_QT)
 USE_QT_VER=	3
