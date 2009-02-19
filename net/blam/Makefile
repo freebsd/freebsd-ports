@@ -10,7 +10,8 @@ PORTNAME=	blam
 PORTVERSION=	1.8.6
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www.cmartin.tk/${PORTNAME}/
+MASTER_SITES=	http://www.cmartin.tk/${PORTNAME}/ \
+		http://romain.blogreen.org/distfiles/
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	A simple feed reader for GNOME
