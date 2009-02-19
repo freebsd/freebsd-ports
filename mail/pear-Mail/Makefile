@@ -19,7 +19,7 @@ FILES=		Mail.php Mail/mail.php Mail/null.php Mail/sendmail.php	\
 		Mail/smtp.php Mail/RFC822.php
 TESTS=		rfc822.phpt smtp_error.phpt
 
-PORTSCOUT=	skipv:1.2.0b1
+PORTSCOUT=	skipv:1.2.0b1,1.2.0a1,1.2.0a2
 
 LATEST_LINK=	pear-${PORTNAME}
 OPTIONS=	PEAR_NET_SMTP "PEAR::Net_SMTP support" off
