@@ -7,15 +7,16 @@
 
 PORTNAME=	tyrquake
 PORTVERSION=	0.59
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://disenchant.net/files/engine/
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	rsmith@xs4all.nl
 COMMENT=	Very conservative branch of the Quake source code
 
+USE_XORG=	x11 xxf86vm xdamage xfixes xau xext xdmcp
 USE_GL=		yes
 USE_GMAKE=	yes
-USE_XORG=	xxf86dga
 MAKE_ENV=	QBASEDIR="${Q1DIR}"
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on \

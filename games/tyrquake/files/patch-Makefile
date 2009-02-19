@@ -1,0 +1,11 @@
+--- Makefile.orig	2008-04-26 13:05:35.000000000 +0200
++++ Makefile	2009-01-24 16:53:10.000000000 +0100
+@@ -124,7 +124,7 @@
+ NQ_W32_SW_LIBS = mgllt ddraw
+ NQ_W32_GL_LIBS = opengl32 comctl32
+ 
+-NQ_UNIX_COMMON_LIBS = m X11 Xext Xxf86dga Xxf86vm
++NQ_UNIX_COMMON_LIBS = m X11 Xext Xxf86vm
+ NQ_UNIX_GL_LIBS = GL
+ 
+ NQ_W32_SW_LFLAGS  := $(patsubst %,-l%,$(NQ_W32_SW_LIBS) $(NQ_W32_COMMON_LIBS))
