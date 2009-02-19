@@ -22,6 +22,3 @@ SIZE (mutt/p0-patch-1.5.18.dw.mbox-hook.1) = 6812
 MD5 (mutt/mutt-1.5.16.vc.greeting) = 4bd9beeb74d075e4418e86e8ed887aa0
 SHA256 (mutt/mutt-1.5.16.vc.greeting) = cf05aeab5f1813864aa72b68f59a579c46dacf2fbd8e5fd064b920012320b986
 SIZE (mutt/mutt-1.5.16.vc.greeting) = 4526
-MD5 (mutt/patch-1.5.18.sidebar.20080611.txt) = 0f6565cecfc7fd72eaf33756abbc3088
-SHA256 (mutt/patch-1.5.18.sidebar.20080611.txt) = a94bc11072dbfe9a4a7d5a761105bf40a496bb2706e9940978de7b64d1555fa7
-SIZE (mutt/patch-1.5.18.sidebar.20080611.txt) = 52201
