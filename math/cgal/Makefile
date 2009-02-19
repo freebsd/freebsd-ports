@@ -6,68 +6,43 @@
 #
 
 PORTNAME=	cgal
-PORTVERSION=	3.1
+PORTVERSION=	3.4
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.mpi-sb.mpg.de/pub/outgoing/CGAL/
+MASTER_SITES=	http://gforge.inria.fr/frs/download.php/15692/
 DISTNAME=	CGAL-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-doc_html${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${DISTNAME}-doc_html${EXTRACT_SUFX} \
+		${PORTNAME}_manual.pdf
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-doc_html${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	A computational geometry library
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost
 RUN_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	GLU.1:${PORTSDIR}/graphics/libGLU \
+		gmp.7:${PORTSDIR}/math/libgmp4 \
+		mpfr.3:${PORTSDIR}/math/mpfr
 
-USE_LDCONFIG=	yes
-SHLIB_VERSION=	0
-
+USE_LDCONFIG=		yes
+USE_CMAKE=		yes
+USE_QT_VER=		4
+CMAKE_USE_PTHREAD=	yes
+QT_COMPONENTS=		corelib opengl qmake_build gui moc_build rcc_build
 HAS_CONFIGURE=		yes
-CONFIGURE_SCRIPT=	install_cgal
-CONFIGURE_ENV=		SHLIB_VERSION="${SHLIB_VERSION}"
-CONFIGURE_ARGS=		-ni "${CXX}" --CUSTOM_CXXFLAGS "${CXXFLAGS} -I${LOCALBASE}/include"
+DOCSDIR=		${PREFIX}/share/doc/CGAL-3.4
+CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
 
-PLIST=		${WRKDIR}/pkg-plist
-PLIST_FILES=	lib/libCGAL.a lib/libCGAL.so lib/libCGAL.so.${SHLIB_VERSION}
-PORTDOCS=	*
+MAN1=			cgal_create_cmake_script.1
 
-INVOKE=		cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS}
-
-post-patch:
-	@for d in ${WRKSRC}/include/CGAL ${WRKSRC}/examples ${WRKDIR}/doc_html/cgal_manual; do \
-		${FIND} $$d -name '*.orig' -delete; \
-	done
-
-do-build:
-.for t in lib sharedlib
-	@cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} makefile_${t} ${MAKE_ARGS}
-.endfor
-
-pre-install:
-	@${RM} -f ${PLIST}
-	@${INVOKE} cgal-plist SRC=include/CGAL DST=include/CGAL
-	@${INVOKE} cgal-plist SRC=examples DST=%%EXAMPLESDIR%%
-
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/src/libCGAL.a ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/src/libCGAL.so.${SHLIB_VERSION} ${PREFIX}/lib
-	${LN} -sf libCGAL.so.${SHLIB_VERSION} ${PREFIX}/lib/libCGAL.so
-	@${INVOKE} cgal-install SRC=${WRKSRC}/include/CGAL DST=${PREFIX}/include/CGAL
-	@${INVOKE} cgal-install SRC=${WRKSRC}/examples DST=${EXAMPLESDIR}
+post-install:
 .if !defined(NOPORTDOCS)
-	@${INVOKE} cgal-install SRC=${WRKDIR}/doc_html/cgal_manual DST=${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+.for i in AUTHORS CHANGES LICENSE LICENSE.FREE_USE LICENSE.LGPL LICENSE.QPL
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}_manual.pdf ${DOCSDIR}
 .endif
-
-cgal-plist:
-	@cd ${WRKSRC}/${SRC} && \
-	${FIND} * -type f | ${SORT} \
-		| ${SED} -e 's|^|${DST}/|' >> ${PLIST} && \
-	${FIND} * -type d | ${SORT} -r \
-		| ${SED} -e 's|^|@dirrm ${DST}/|' >> ${PLIST}
-	@${ECHO_CMD} '@dirrm ${DST}' >> ${PLIST}
-
-cgal-install:
-	cd ${SRC} && \
-	${FIND} * -type d -exec ${MKDIR} "${DST}/{}" \; && \
-	${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DST}/{}" \;
+	${INSTALL_MAN} ${WRKSRC}/auxiliary/cgal_create_cmake_script.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
