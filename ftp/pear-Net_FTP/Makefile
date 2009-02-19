@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 USE_PHP=	ftp
 
-PORTSCOUT=	skipv:1.4.0a2
+PORTSCOUT=	skipv:1.4.0a2,1.4.0a1
 CATEGORY=	Net
 FILES=		FTP.php FTP/Observer.php FTP/Socket.php
 EXAMPLES=	extensions.ini index.php observer.php socket.php
