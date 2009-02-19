@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gpac-libgpac
+PORTNAME=	gpac
 PORTVERSION=	0.4.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gpac
-DISTNAME=	gpac-${DISTVERSION}
+MASTER_SITE_SUBDIR=${PORTNAME}
+PKGNAMESUFFIX=	-libgpac
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Gpac MPEG-4 Systems library and headers
@@ -26,10 +27,24 @@ BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKSRC}/bin/gcc
 LIBVER=	1
 
-CONFIGURE_ARGS=	--cc="${CC}" \
-		--extra-cflags="${CFLAGS} ${PTHREAD_CFLAGS} -fPIC" \
-		--extra-ldflags="${LDFLAGS} ${PTHREAD_LIBS}" \
-		--disable-opengl
+OPTIONS=	IPV6	"IPv6 support"		on \
+		OPENGL	"OpenGL support"	on
+
+CONFIGURE_ARGS=	--cc="${CC}" --X11-path="${X11BASE}" \
+		--extra-cflags="${CFLAGS}" --extra-ldflags="${LDFLAGS}"
+CONFIGURE_ENV+=	LIBVER="${LIBVER}" PTHREAD_LIBS="${PTHREAD_LIBS}"
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
+.if defined(WITHOUT_OPENGL)
+CONFIGURE_ARGS+=	--disable-opengl
+.else
+USE_GL=		gl glu
+.endif
 
 post-patch:
 	${CHMOD} +x ${WRKSRC}/configure
@@ -42,4 +57,4 @@ do-install:
 	${LN} -sf libgpac.so.${LIBVER} ${PREFIX}/lib/libgpac.so
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/libgpac_static.a ${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
