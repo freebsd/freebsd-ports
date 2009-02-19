@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ghostess
-PORTVERSION=	20061127
-PORTREVISION=	3
+PORTVERSION=	20081213
 CATEGORIES=	audio
-MASTER_SITES=	http://home.jps.net/~musound/
+MASTER_SITES=	http://www.smbolton.com/linux/
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Graphical DSSI host with JACK MIDI support
@@ -28,6 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jackmidi
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
+USE_BZIP2=	yes
 
 PLIST_FILES=	bin/ghostess bin/ghostess_universal_gui
 
