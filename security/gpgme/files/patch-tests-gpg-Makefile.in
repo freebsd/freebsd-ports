@@ -1,9 +1,9 @@
---- tests/gpg/Makefile.in.orig	Sat Dec 11 18:25:43 2004
-+++ tests/gpg/Makefile.in	Sat Dec 11 18:25:04 2004
-@@ -329,6 +329,7 @@
+--- ./tests/gpg/Makefile.in.orig	2009-01-22 18:31:01.000000000 -0500
++++ ./tests/gpg/Makefile.in	2009-01-22 18:32:46.000000000 -0500
+@@ -355,6 +355,7 @@
  AM_CPPFLAGS = @GPG_ERROR_CFLAGS@
- LDADD = ../../gpgme/libgpgme.la
- t_thread1_LDADD = ../../gpgme/libgpgme-pthread.la
+ LDADD = ../../src/libgpgme.la
+ t_thread1_LDADD = ../../src/libgpgme-pthread.la
 +t_thread1_LDFLAGS= $(PTH_LDFLAGS)
  all: all-am
  
