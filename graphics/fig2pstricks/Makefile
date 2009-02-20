@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fig2pstricks
-PORTVERSION=	0.6.9
+PORTVERSION=	0.7.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://homes.eco.auckland.ac.nz/chan079/fig2pstricks/
 
@@ -16,16 +16,16 @@ COMMENT=	Convert xfig to pstricks
 
 USE_GMAKE=	yes
 
-PLIST_FILES=	bin/fig2pstricks
+PLIST_FILES=	bin/fig2pstricks bin/fig2epspdf
+
+CFLAGS+=	-DVERSION=\\\"${PORTVERSION}\\\"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|$$(CC)|g ; \
 		 s|^CFLAGS|#CFLAGS|g' ${WRKSRC}/Makefile
-	@cd ${WRKSRC} && ${TR} -d '\r' < fig2pstricks.c > fig2pstricks.c.bak \
-		&& ${SED} -e 's:0.6.6:${PORTNAME}:g' < fig2pstricks.c.bak \
-		> fig2pstricks.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/fig2epspdf ${PREFIX}/bin
 
 .include <bsd.port.mk>
