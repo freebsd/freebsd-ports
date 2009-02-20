@@ -15,18 +15,10 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A Mesh Generation Utility for use with the ELMER FEM package
 
-USE_FORTRAN=	yes
-
 GNU_CONFIGURE=	yes
 ALL_TARGET=
 
 PLIST_FILES=	bin/ElmerMesh2D \
 		bin/Mesh2D
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		Does not compile on amd64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
