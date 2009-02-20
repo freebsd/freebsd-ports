@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	devil
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.7
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/openil
@@ -26,6 +26,7 @@ OPTIONS=	JPEG	"Enable JPEG support"		on \
 
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
+USE_GNOME=	pkgconfig
 USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 libtool:15
 ACLOCAL_ARGS=	-I m4 -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing
@@ -35,7 +36,6 @@ CONFIGURE_ARGS=	--enable-ILU \
 		--disable-altivec --disable-sse --disable-sse2 --disable-sse3
 USE_LDCONFIG=	yes
 
-CFLAGS+=	-DIL_NO_VTF
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
@@ -99,8 +99,9 @@ CONFIGURE_ARGS+=--disable-sdl
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|docs||g' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e '/^pkgdir=/s|$$(libdir)/|$$(prefix)/libdata/|g' \
+		${WRKSRC}/data/Makefile.am
 
 post-install:
 .if !defined(NOPORTDOCS)
