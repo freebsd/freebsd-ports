@@ -128,7 +128,7 @@ do-install:
 .endfor
 .endif
 
-.if !defined(WITH_NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${CP} -p ${WRKSRC}/README ${WRKSRC}/doc/
 	@${INSTALL} -d ${DOCSDIR}/
 	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
