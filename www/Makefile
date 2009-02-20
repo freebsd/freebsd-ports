@@ -911,6 +911,7 @@
     SUBDIR += p5-HTTP-Cookies-w3m
     SUBDIR += p5-HTTP-DAV
     SUBDIR += p5-HTTP-Engine
+    SUBDIR += p5-HTTP-Engine-Middleware
     SUBDIR += p5-HTTP-GHTTP
     SUBDIR += p5-HTTP-HeaderParser-XS
     SUBDIR += p5-HTTP-Headers-Fast
