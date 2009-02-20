@@ -117,6 +117,7 @@ include/libecasound/file-preset.h
 include/libecasound/generic-controller.h
 include/libecasound/generic-linear-envelope.h
 include/libecasound/global-preset.h
+include/libecasound/jack-connections.h
 include/libecasound/layer.h
 include/libecasound/linear-envelope.h
 include/libecasound/midi-cc.h
