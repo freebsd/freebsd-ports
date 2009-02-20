@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gonvert
-PORTVERSION=	0.2.19
-PORTREVISION=	1
+PORTVERSION=	0.2.20
 CATEGORIES=	misc python gnome
 MASTER_SITES=	http://www.unihedron.com/projects/gonvert/downloads/
 
@@ -34,7 +33,7 @@ do-install:
 	@${MKDIR} ${DATADIR}/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.png ${DATADIR}/pixmaps
 	@${MKDIR} ${PREFIX}/share/pixmaps
-	${LN} -sf ${WRKSRC}/pixmaps/gonvert.png ${PREFIX}/share/pixmaps
+	${LN} -sf ${DATADIR}/pixmaps/gonvert.png ${PREFIX}/share/pixmaps
 	@${MKDIR} ${PREFIX}/share/locale/pl/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/i18n/pl_messages.gmo \
 		${PREFIX}/share/locale/pl/LC_MESSAGES/gonvert.mo
