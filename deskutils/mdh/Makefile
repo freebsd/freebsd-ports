@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mdh
-PORTVERSION=	1.9.59
-PORTREVISION=	6
+PORTVERSION=	1.9.60
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gozer.org/programs/gtk/files/
 
@@ -15,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2-based toolbar, like a smaller GNOME panel
 
 USE_BZIP2=	yes
-USE_GNOME=	gnometarget gtk20
+USE_GNOME=	gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
