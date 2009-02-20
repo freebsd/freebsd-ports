@@ -15,12 +15,6 @@ COMMENT=	Add bits of DHTML to any web page to change its behavior
 
 XPI_ID=		{e4a8a97b-f2ed-450b-b12d-ee082ba24781}
 XPI_NUM=	748
-XPI_FILES=	chrome/greasemonkey.jar chrome.manifest \
-		components/gmIBrowserWindow.xpt \
-		components/gmIGreasemonkeyService.xpt \
-		components/gmIMenuCommand.xpt components/greasemonkey.js \
-		defaults/preferences/greasemonkey.js install.rdf license.txt 
-XPI_DIRS=	chrome components defaults/preferences defaults
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
