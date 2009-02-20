@@ -17,27 +17,22 @@ COMMENT=	A high quality, full featured hex editor
 
 USE_GNOME=	gnomehack gnomeprefix gnometarget gnomedocutils gtksharp20
 USE_GMAKE=	yes
-INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 
-DOCS=		AUTHORS COPYING ChangeLog NEWS README
+.if !defined(NOPORTDOCS)
+INSTALLS_OMF=	yes
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|data tests|data|g' \
+	@${REINPLACE_CMD} -e 's|tests$$||g' \
 		${WRKSRC}/Makefile.in
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|$$(datadir)/doc/$$(PACKAGE_NAME)-$$(PACKAGE_VERSION)|${DOCSDIR}|g'
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|src doc|src|g' \
+	@${REINPLACE_CMD} -e 's|data doc|data|g' \
+			  -e '/^install-data-local:/,/^$$/d' \
+			  -e 's|install-data-local||' \
 		${WRKSRC}/Makefile.in
-.endif
-
-.ifndef (NOPORTDOCS)
-post-install:
-	@${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
 .endif
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
