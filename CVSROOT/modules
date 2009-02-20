@@ -2147,6 +2147,7 @@ devtodo                         ports/devel/devtodo
 dfileserver                     ports/www/dfileserver
 dfm                             ports/x11-fm/dfm
 dft++                           ports/science/dft++
+dfu-util                        ports/comms/dfu-util
 dfuife-curses                   ports/devel/dfuife-curses
 dgd                             ports/net/dgd
 dgd-lpmud                       ports/net/dgd-lpmud
@@ -19730,6 +19731,7 @@ rubygem-actionwebservice        ports/www/rubygem-actionwebservice
 rubygem-activerecord            ports/databases/rubygem-activerecord
 rubygem-activerecord-jdbc-adapter  ports/databases/rubygem-activerecord-jdbc-adapter
 rubygem-activerecord-jdbcmysql-adapter  ports/databases/rubygem-activerecord-jdbcmysql-adapter
+rubygem-activeresource          ports/www/rubygem-activeresource
 rubygem-activesupport           ports/devel/rubygem-activesupport
 rubygem-amazon-ecs              ports/www/rubygem-amazon-ecs
 rubygem-analogger               ports/devel/rubygem-analogger
@@ -19768,6 +19770,7 @@ rubygem-hoe                     ports/devel/rubygem-hoe
 rubygem-hpricot                 ports/www/rubygem-hpricot
 rubygem-htauth                  ports/www/rubygem-htauth
 rubygem-htmltools               ports/textproc/rubygem-htmltools
+rubygem-httparty                ports/www/rubygem-httparty
 rubygem-ini                     ports/textproc/rubygem-ini
 rubygem-inline                  ports/devel/rubygem-inline
 rubygem-jdbc-mysql              ports/databases/rubygem-jdbc-mysql
@@ -19910,7 +19913,6 @@ saint                           ports/security/saint
 sakai                           ports/www/sakai
 sakura                          ports/x11-toolkits/sakura
 salias                          ports/misc/salias
-sam                             ports/editors/sam
 sam2p                           ports/graphics/sam2p
 samba-libsmbclient              ports/net/samba-libsmbclient
 samba-nmblookup                 ports/net/samba-nmblookup
