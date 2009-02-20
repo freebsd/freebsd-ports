@@ -11,6 +11,7 @@ share/applications/xiphos.desktop
 %%DOCSDIR%%/RELEASE-NOTES
 %%DOCSDIR%%/TODO
 %%DOCSDIR%%/Xiphos.ogg
+%%DOCSDIR%%/xiphos.pdf
 share/gnome/help/xiphos/C/authors.xml
 share/gnome/help/xiphos/C/figures/first_start.png
 share/gnome/help/xiphos/C/figures/gtkhtml3-vs-mozembed.png
