@@ -23,7 +23,7 @@ CONFIGURE_ARGS+=--enable-klog --disable-static --enable-mail \
 CONFIGURE_ARGS+=--enable-rtinst --enable-debug
 .endif
 
-PORTSCOUT=	skipv:3.21.9,3.21.10,3.21.8,3.21.7,3.21.6,3.21.5,3.21.4,3.21.3,3.21.2,3.21.1,3.21.0 
+PORTSCOUT=	skipv:3.21.10,3.21.9,3.21.8,3.21.7,3.21.6,3.21.5,3.21.4,3.21.3,3.21.2,3.21.1,3.21.0 
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
