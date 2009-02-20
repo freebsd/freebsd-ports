@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/editors/nano-devel/pkg-plist,v 1.1 2008-11-16 23:59:19 wxs Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/editors/nano-devel/pkg-plist,v 1.2 2009-02-20 18:46:39 naddy Exp $
 bin/nano
 bin/rnano
 %%NLS%%share/locale/bg/LC_MESSAGES/nano.mo
@@ -47,6 +47,9 @@ share/nano/c.nanorc
 share/nano/groff.nanorc
 share/nano/html.nanorc
 share/nano/java.nanorc
+share/nano/man-html/nano.1.html
+share/nano/man-html/nanorc.5.html
+share/nano/man-html/rnano.1.html
 share/nano/man.nanorc
 share/nano/mutt.nanorc
 share/nano/nanorc.nanorc
@@ -57,6 +60,7 @@ share/nano/python.nanorc
 share/nano/ruby.nanorc
 share/nano/sh.nanorc
 share/nano/tex.nanorc
+@dirrm share/nano/man-html
 @dirrm share/nano
 @dirrm %%EXAMPLESDIR%%
 %%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
