@@ -1,14 +1,23 @@
---- platform/gtk-x11/setup.py.orig	2008-05-28 16:05:13.000000000 +0200
-+++ platform/gtk-x11/setup.py	2008-06-14 15:40:32.000000000 +0200
-@@ -61,6 +61,7 @@
- ###############################################################################
+--- platform/gtk-x11/setup.py.orig	2009-02-12 06:37:07.000000000 +0900
++++ platform/gtk-x11/setup.py	2009-02-15 05:49:26.000000000 +0900
+@@ -111,12 +111,13 @@
+ # XPCOM_LIB = "firefox-xpcom"
+ # GTKMOZEMBED_LIB = "firefox-gtkmozembed"
+ # XULRUNNER_19 = False
+-XPCOM_LIB = None
+-GTKMOZEMBED_LIB = None
+-XULRUNNER_19 = None
++XPCOM_LIB = "%%GECKO%%-xpcom"
++GTKMOZEMBED_LIB = "%%GECKO%%-gtkmozembed"
++XULRUNNER_19 = False
  
+ # The name of the boost library.  Used for building extensions.
  BOOST_LIB = 'boost_python'
-+BOOST_LIB_PATH = '/usr/local/lib'
++BOOST_LIB_PATH = '%%LOCALBASE%%/lib'
  
- USE_XINE_HACK = True #use_xine_hack_default()
  
-@@ -222,6 +223,9 @@
+ ###############################################################################
+@@ -282,6 +283,9 @@
              options_dict['library_dirs'].append(rest)
          elif prefix == '-l':
              options_dict['libraries'].append(rest)
@@ -17,65 +26,139 @@
 +            continue
          else:
              options_dict['extra_compile_args'].append(comp)
+ 
+@@ -292,7 +296,7 @@
      return options_dict
-@@ -231,6 +235,7 @@
-     Extension("miro.fasttypes", 
+ 
+ def compile_xine_extractor():
+-    rv = os.system("gcc %s -o %s `pkg-config --libs --cflags gdk-pixbuf-2.0 glib-2.0 libxine`" %
++    rv = os.system("%%CC%% %s -o %s `pkg-config --libs --cflags gdk-pixbuf-2.0 glib-2.0 libxine` %%PTHREAD_LIBS%%" %
+                    (os.path.join(platform_dir, "xine/xine_extractor.c"), os.path.join(platform_dir, "xine/xine_extractor")))
+     if rv != 0:
+         raise RuntimeError("xine_extractor compilation failed.  Possibly missing libxine, gdk-pixbuf-2.0, or glib-2.0.")
+@@ -330,7 +334,7 @@
+         exit;
+     fi
+ 
+-    %(runtimelib)s$GDB -ex 'set breakpoint pending on' -ex 'break gdk_x_error' -ex 'run' --args $PYTHON ./miro.real --sync "$@"
++    %(runtimelib)s$GDB -ex 'set breakpoint pending on' -ex 'break gdk_x_error' -ex 'run' --args $PYTHON %%PREFIX%%/bin/miro.real --sync "$@"
+ else
+     %(runtimelib)smiro.real "$@"
+ fi
+@@ -343,6 +347,7 @@
+     Extension("miro.fasttypes",
          sources = [os.path.join(portable_dir, 'fasttypes.cpp')],
          libraries = [BOOST_LIB],
 +        library_dirs = [BOOST_LIB_PATH],
      )
  
- ##### The libtorrent extension ####
-@@ -243,21 +248,17 @@
-     sys.exit("Package config error:\n%s" % (error,))
  
- xulrunner19 = False
--if re.search("^libxul", packages, re.MULTILINE):
--    xulrunner19 = True
--    xpcom = 'libxul'
--    gtkmozembed = 'libxul'
--elif re.search("^xulrunner-xpcom", packages, re.MULTILINE):
--    xpcom = 'xulrunner-xpcom'
--    gtkmozembed = 'xulrunner-gtkmozembed'
-+if re.search("^firefox-xpcom", packages, re.MULTILINE):
-+    xpcom = 'firefox-xpcom'
-+    gtkmozembed = 'firefox-gtkmozembed'
-+elif re.search("^seamonkey-xpcom", packages, re.MULTILINE):
-+    xpcom = 'seamonkey-xpcom'
-+    gtkmozembed = 'seamonkey-gtkmozembed'
- elif re.search("^mozilla-xpcom", packages, re.MULTILINE):
-     xpcom = 'mozilla-xpcom'
-     gtkmozembed = 'mozilla-gtkmozembed'
--elif re.search("^firefox-xpcom", packages, re.MULTILINE):
--    xpcom = 'firefox-xpcom'
--    gtkmozembed = 'firefox-gtkmozembed'
- else:
--    sys.exit("Can't find libxul, xulrunner-xpcom, mozilla-xpcom or firefox-xpcom")
-+    sys.exit("Can't find seamonkey-xpcom, mozilla-xpcom or firefox-xpcom")
+@@ -381,14 +386,14 @@
+                           "-DHAVE___INCLUDE_LIBTORRENT_ASIO_HPP=1",
+                           "-DHAVE___INCLUDE_LIBTORRENT_ASIO_SSL_STREAM_HPP=1",
+                           "-DHAVE___INCLUDE_LIBTORRENT_ASIO_IP_TCP_HPP=1",
+-                          "-DHAVE_PTHREAD=1", "-DTORRENT_USE_OPENSSL=1", "-DHAVE_SSL=1",
+-                          "-DNDEBUG=1", "-O2"]
++                          "-DHAVE_PTHREAD=1", "-DTORRENT_USE_OPENSSL=1",
++                          "-DHAVE_SSL=1"]
  
- if not "clean" in sys.argv:
-     # build a miro script that wraps the miro.real script with an LD_LIBRARY_PATH
-@@ -383,7 +384,7 @@
+     if is_x64():
+         extra_compile_args.append("-DAMD64")
+ 
+     # check for mt
+-    libraries = ['z', 'pthread', 'ssl']
++    libraries = ['z', 'ssl']
+     all_libs = []
+     if os.path.exists(os.path.join(sysconfig.PREFIX, "lib")):
+         all_libs.extend(os.listdir(os.path.join(sysconfig.PREFIX, "lib")))
+@@ -430,6 +435,7 @@
+     return Extension("miro.libtorrent",
+                      include_dirs=include_dirs,
+                      libraries=libraries,
++                     library_dirs=[BOOST_LIB_PATH],
+                      extra_compile_args=extra_compile_args,
+                      sources=sources)
+ 
+@@ -552,7 +558,7 @@
+ xlib_ext = \
+     Extension("miro.plat.xlibhelper",
+         [ os.path.join(platform_package_dir,'xlibhelper.pyx') ],
+-        library_dirs = ['/usr/X11R6/lib'],
++        library_dirs = ['%%LOCALBASE%%/lib'],
+         libraries = ['X11'],
+     )
+ 
+@@ -638,29 +644,29 @@
+ # filter out app.config.template (which is handled specially)
+ files = [f for f in listfiles(resource_dir) \
+         if os.path.basename(f) != 'app.config.template']
+-data_files.append(('/usr/share/miro/resources/', files))
++data_files.append(('%%PREFIX%%/share/miro/resources/', files))
+ # handle the sub directories.
+ for dir in ('searchengines', 'images', 'testdata',
+         os.path.join('testdata', 'stripperdata'),
+         os.path.join('testdata', 'locale', 'fr', 'LC_MESSAGES')):
+     source_dir = os.path.join(resource_dir, dir)
+-    dest_dir = os.path.join('/usr/share/miro/resources/', dir)
++    dest_dir = os.path.join('%%PREFIX%%/share/miro/resources/', dir)
+     data_files.append((dest_dir, listfiles(source_dir)))
+ 
+ 
  # add the desktop file, icons, mime data, and man page.
- 
- if not "clean" in sys.argv:
--    rv = os.system ("gcc %s -o %s `pkg-config --libs --cflags gdk-pixbuf-2.0 glib-2.0 libxine`" % (os.path.join(platform_dir, "xine/xine_extractor.c"), os.path.join(platform_dir, "xine/xine_extractor")))
-+    rv = os.system ("gcc %s -o %s `pkg-config --libs --cflags gdk-pixbuf-2.0 glib-2.0 libxine` %%PTHREAD_LIBS%%" % (os.path.join(platform_dir, "xine/xine_extractor.c"), os.path.join(platform_dir, "xine/xine_extractor")))
- 
-     if rv != 0:
-         raise RuntimeError("xine_extractor compilation failed.  Possibly missing libxine, gdk-pixbuf-2.0, or glib-2.0.")
-@@ -391,11 +392,11 @@
  data_files += [
-     ('/usr/share/pixmaps', 
+-    ('/usr/share/pixmaps',
++    ('%%PREFIX%%/share/pixmaps',
       glob(os.path.join(platform_dir, 'miro-*.png'))),
--    ('/usr/share/applications', 
-+    ('/usr/local/share/applications', 
+-    ('/usr/share/applications',
++    ('%%PREFIX%%/share/applications',
       [os.path.join(platform_dir, 'miro.desktop')]),
--    ('/usr/share/mime/packages', 
-+    ('/usr/local/share/mime/packages', 
+-    ('/usr/share/mime/packages',
++    ('%%PREFIX%%/share/mime/packages',
       [os.path.join(platform_dir, 'miro.xml')]),
 -    ('/usr/share/man/man1',
-+    ('/usr/local/man/man1',
++    ('%%MANPREFIX%%/man/man1',
       [os.path.join(platform_dir, 'miro.1.gz')]),
-     ('/usr/libexec/',
+-    ('/usr/share/man/man1',
++    ('%%MANPREFIX%%/man/man1',
+      [os.path.join(platform_dir, 'miro.real.1.gz')]),
+-    ('/usr/lib/miro/',
++    ('%%PREFIX%%/libexec/miro',
       [os.path.join(platform_dir, 'xine/xine_extractor')]),
+ ]
+ 
+@@ -684,7 +690,7 @@
+ 
+     def install_app_config(self):
+         source = os.path.join(resource_dir, 'app.config.template')
+-        dest = '/usr/share/miro/resources/app.config'
++        dest = '%%PREFIX%%/share/miro/resources/app.config'
+ 
+         config_file = util.read_simple_config_file(source)
+         print "Trying to figure out the svn revision...."
+@@ -724,7 +730,7 @@
+ 
+         for source in glob (os.path.join (locale_dir, "*.mo")):
+             lang = os.path.basename(source)[:-3]
+-            dest = '/usr/share/locale/%s/LC_MESSAGES/miro.mo' % lang
++            dest = '%%PREFIX%%/share/locale/%s/LC_MESSAGES/miro.mo' % lang
+             if self.root:
+                 dest = change_root(self.root, dest)
+             self.mkpath(os.path.dirname(dest))
+@@ -753,7 +759,7 @@
+ 
+ #### install_theme installs a specifified theme .zip
+ class install_theme(Command):
+-    description = 'Install a provided theme to /usr/share/miro/themes'
++    description = 'Install a provided theme to %%PREFIX%%/share/miro/themes'
+     user_options = [("theme=", None, 'ZIP file containing the theme')]
+ 
+     def initialize_options(self):
+@@ -781,7 +787,7 @@
+             raise DistutilsOptionError, "invalid theme file"
+         self.zipfile = zf
+         self.theme_name = themeName
+-        self.theme_dir = '/usr/share/miro/themes/%s' % themeName
++        self.theme_dir = '%%PREFIX%%/share/miro/themes/%s' % themeName
+ 
+     def run(self):
+         if os.path.exists(self.theme_dir):
