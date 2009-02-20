@@ -1,0 +1,34 @@
+--- mplayerxp/configure.orig	2009-01-25 17:00:03.000000000 +0900
++++ mplayerxp/configure	2009-02-03 00:18:15.000000000 +0900
+@@ -85,13 +85,11 @@
+   --enable-dga           build with DGA1 or DGA2 support [autodetect]
+   --enable-vesa          build with VESA support [autodetect]
+   --enable-sdl           build with SDL render support [autodetect]
+-  --enable-vm            build with XF86VidMode support for X11 [autodetect]
+   --enable-x11           build with X11 render support [autodetect]
+   --enable-xdpms         build with X11 DPMS support [autodetect]
+   --enable-xinerama      build with Xinerama support for X11 [autodetect]
+   --enable-xf86vm        build with Xf86vm support for X11 [autodetect]
+   --enable-xv            build with Xv render support for X 4.x [autodetect]
+-  --enable-xv            build with Xv render support for X 4.x [autodetect]
+   --enable-fbdev         build with FBDev render support [autodetect]
+   --enable-fbdev=nocopy  yuv12 converts directly into framebuffer
+   --enable-mlib          build with MLIB support (Solaris only) [autodetect]
+@@ -431,6 +429,8 @@
+   --disable-libdvdplay)	libdvdplay=no	;;
+   --enable-xinerama)	xinerama=yes	;;
+   --disable-xinerama)	xinerama=no	;;
++  --enable-xf86vm)	xf86vm=yes	;;
++  --disable-xf86vm)	xf86vm=no	;;
+   --enable-alsa)	alsa=yes	;;
+   --disable-alsa)	alsa=no		;;
+   --enable-tv)		tv=yes		;;
+@@ -806,7 +806,7 @@
+ print_config HAVE_ config.h config.mak xv
+ 
+ enabled xinerama	&& require2 xinerama "X11/Xlib.h X11/extensions/Xinerama.h" XineramaIsActive -lXinerama
+-print_config HAVE_ config.h config.mak xv
++print_config HAVE_ config.h config.mak xinerama
+ 
+ # Note: the -lXxf86vm library is the VideoMode extension and though it's not
+ # needed for DGA, AFAIK every distribution packages together with DGA stuffs

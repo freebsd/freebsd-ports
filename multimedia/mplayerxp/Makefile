@@ -6,23 +6,30 @@
 #
 
 PORTNAME=	mplayerxp
-PORTVERSION=	0.6.2
-PORTREVISION=	5
+PORTVERSION=	0.7.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-threaded branch of the well known mplayer media player
 
-LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		vcdinfo.2:${PORTSDIR}/multimedia/vcdimager
 RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/multimedia/mplayer-fonts
 
+OPTIONS=	DVDNAV       	"Enable libdvdnav support"   	off \
+		DVDPLAY      	"Enable libdvdplay support"    	off \
+		CDPARANOIA   	"Enable CDDA support"         	off \
+		OCFLAGS     	"Use optimized compiler flags"	off \
+		SDL          	"Enable SDL video output"     	off \
+		TERMCAP      	"Enable termcap key support"  	off \
+		WIN32        	"Enable win32 codec set"      	on
+
 ONLY_FOR_ARCHS=	i386
 
 USE_BZIP2=	yes
+USE_XORG=	xinerama xv xxf86dga xxf86vm
 USE_ICONV=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
@@ -35,127 +42,73 @@ WIN32_CODEC_PREFIX=	${LOCALBASE}/lib/win32
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 # add this after <bsd.port.pre.mk> so that we inherit /etc/make.conf
 CONFIGURE_ARGS+=	--with-extralibdir=${LOCALBASE}/lib \
 		--with-extraincdir=${LOCALBASE}/include \
-		--with-x11incdir=${LOCALBASE}/include \
-		--with-x11libdir=${LOCALBASE}/lib \
 		--cc=${CC} \
 		--prefix=${PREFIX} \
-		--confdir=${PREFIX}/etc/${PORTNAME} \
+		--confdir=${ETCDIR} \
 		--datadir=${LOCALBASE}/share/mplayer \
+		--libdir=${PREFIX}/lib \
 		--disable-fbdev \
 		--disable-lirc \
 		--disable-rtc \
-		--disable-vm \
 		--disable-tv-v4l
 CONFIGURE_ENV+=	LANG=C
 # insure CC,LD safeness
-MAKE_ARGS+=	CC="${CC}" LD="${LD}"
+MAKE_ARGS+=	CC="${CC}" LD="${LD}" INSTALL="${INSTALL}"
 
 CFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-fomit-frame-pointer
 
 ##
-## Feature detection
-##
-
-# xine libdvdnav
-.if exists(${LOCALBASE}/lib/libdvdnav.so)
-WITH_DVD=yes
-WITH_LIBDVDNAV=yes
-.endif
-.if exists(${LOCALBASE}/lib/libdvdplay.a)
-# ogle's libdvdplay
-WITH_DVD=yes
-WITH_DVDPLAY=yes
-.endif
-# cdparanoia (cdda support)
-.if exists(${LOCALBASE}/lib/libcdda_paranoia.so)
-WITH_CDPARANOIA=yes
-.endif
-# ogle's libdvdread (dvd support)
-.if exists(${LOCALBASE}/lib/libdvdread.a)
-WITH_DVD=yes
-.endif
-# sdl
-.if ${HAVE_SDL:Msdl}!=""
-WITH_SDL=yes
-.endif
-# sdl_image
-.if ${HAVE_SDL:Mimage}!=""
-WITH_SDL_IMAGE=yes
-.endif
-# xvid
-.if exists(${LOCALBASE}/lib/libxvidcore.so)
-WITH_XVID=yes
-.endif
-
-##
 ## Feature activation and Library Dependencies
 ##
 
-# libdvdnav does not currently work
-.undef WITH_LIBDVDNAV
-WITHOUT_LIBDVDNAV=yes
-
-# compilation optimizations
-.if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=	-O3 -ffast-math
-.endif
 # cdda support
 .if defined(WITH_CDPARANOIA)
 LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
+
+CONFIGURE_ARGS+=	--enable-cdparanoia
 .else
 CONFIGURE_ARGS+=	--disable-cdparanoia
 .endif
 # dvd support
-.if defined(WITH_DVD)
+.if defined(WITH_DVDNAV) || defined(WITH_DVDPLAY)
 LIB_DEPENDS+=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
-CONFIGURE_ARGS+=	--with-csslibdir=${LOCALBASE}/lib
-PLIST_SUB+=	DVD=''
+CONFIGURE_ARGS+=	--enable-libdvdread
 .else
-PLIST_SUB+=	DVD='@comment '
+CONFIGURE_ARGS+=	--disable-libdvdread
 .endif
 # xine libdvdnav
-.if defined(WITH_LIBDVDNAV) && !defined(WITHOUT_LIBDVDNAV)
+.if defined(WITH_DVDNAV)
 LIB_DEPENDS+=	dvdnav.4:${PORTSDIR}/multimedia/libdvdnav
 
-CONFIGURE_ARGS+=	--with-libdvdnav=${LOCALBASE}
+CONFIGURE_ARGS+=	--enable-libdvdnav
+.else
+CONFIGURE_ARGS+=	--disable-libdvdnav
 .endif
 # ogle's libdvdplay
-.if defined(WITH_LIBDVDPLAY) && !defined(WITHOUT_LIBDVDPLAY)
+.if defined(WITH_DVDPLAY)
 LIB_DEPENDS+=	dvdplay.0:${PORTSDIR}/multimedia/libdvdplay
 
-CONFIGURE_ARGS+=	--with-libdvdplay=${LOCALBASE}
+CONFIGURE_ARGS+=	--enable-libdvdplay
+.else
+CONFIGURE_ARGS+=	--disable-libdvdplay
+.endif
+# compilation optimizations
+.if defined(WITH_OCFLAGS)
+CFLAGS+=	-O3 -ffast-math
+.else
+MAKE_ARGS+=	OPTFLAGS="${CFLAGS}" SHCFLAGS="${CFLAGS} -PIC"
 .endif
 # sdl
 .if defined(WITH_SDL)
-USE_SDL=	sdl
-CONFIGURE_ARGS+=	--enable-sdl
+USE_SDL=	image sdl
+CONFIGURE_ARGS+=	--enable-sdl --enable-sdl-image
 .else
-CONFIGURE_ARGS+=	--disable-sdl
-.endif
-# sdl_image
-.if defined(WITH_SDL_IMAGE)
-USE_SDL+=	image
-CONFIGURE_ARGS+=	--enable-sdl-image
-.else
-CONFIGURE_ARGS+=	--disable-sdl-image
-.endif
-# xvid
-.if defined(WITH_XVID)
-LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
-
-CONFIGURE_ARGS+=	--enable-xvid \
-			--with-xvidcore=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--disable-xvid
+CONFIGURE_ARGS+=	--disable-sdl --disable-sdl-image
 .endif
 # termcap key support
 # mplayerxp does not clean up after itself yet
@@ -172,76 +125,41 @@ CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 .endif
 
-pre-everything::
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===> You can enable additional compilation optimizations'
-	@${ECHO_MSG} '		by defining WITH_OPTIMIZED_CFLAGS.'
-.endif
-.if !defined(WITH_CDPARANOIA)
-	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===> You can enable cdda support by defining WITH_CDPARANOIA.'
-.endif
-.if !defined(WITH_DVD)
-	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===> You can enable DVD support by defining WITH_DVD.'
-.endif
-.if !defined(WITH_LIBDVDNAV)
-	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===> You can enable LIBDVDNAV support by defining WITH_LIBDVDNAV.'
-.endif
-.if !defined(WITH_LIBDVDNAV)
-	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===> You can enable LIBDVDPLAY support by defining WITH_LIBDVDPLAY.'
-.endif
-.if !defined(WITH_SDL)
-	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===> You can enable SDL support by defining WITH_SDL.'
-.endif
-.if !defined(WITH_SDL_IMAGE)
-	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===> You can enable SDL_image support by defining WITH_SDL_IMAGE.'
-.endif
-.if !defined(WITH_TERMCAP)
-	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===> You can enable termcap key database support by defining WITH_TERMCAP.'
-.endif
-.if !defined(WITH_XVID)
-	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===> You can enable XVID support by defining WITH_XVID.'
-.endif
-.if !defined(WITHOUT_WIN32_CODECS)
-	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===> You can disable support for Win32 codecs by defining WITHOUT_WIN32_CODECS'
-.endif
-	@${ECHO_MSG} '===>'
-
 post-patch:
 # win32 codec location
-	@${REINPLACE_CMD} -E -e \
-		's|WIN32_PATH|"${WIN32_CODEC_PREFIX}"|' \
-		${WRKSRC}/loader/win32.c
+	@${REINPLACE_CMD} -e \
+		's|WIN32_PATH|"${WIN32_CODEC_PREFIX}"|' ${WRKSRC}/loader/win32.c
 # FreeBSD's install utility does not support -D flag
-	@${FIND} ${WRKSRC} -name Makefile | \
-		${XARGS} -x -n 10 ${REINPLACE_CMD} -E -e \
-		's,(\$$\(INSTALL\)|install)(.*)-D,${INSTALL}\2,'
+	@${FIND} ${WRKSRC} -name "Makefile" -print0 | \
+		${XARGS} -0 ${REINPLACE_CMD} -e \
+		'/INSTALL/s| -D | |g ; \
+		 /install/s| -D | |g'
 # PTHREAD_{CFLAGS,LIBS}
-# stdint.h -> inttypes.h
-	@${REINPLACE_CMD} -E -e  \
-		's|-lpthread|${PTHREAD_LIBS}|; \
-		s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|; \
-		s|<stdint\.h>|<inttypes.h>|' \
-		${WRKSRC}/mplayerxp/configure
-# ffmpeg currently is not compatible with mplayerxp
-#.for file in ad_ffmp3.c vd_ffmpeg.c
-#	@${REINPLACE_CMD} -e 's|libavcodec.so|libNOTavcodec.so|' \
-#		${WRKSRC}/mplayerxp/libmpcodecs/${file}
-#.endfor
-# native libdivxdecore is not compatible with mplayerxp
-.for file in vd_divx4.c vd_xvid.c
-	@${REINPLACE_CMD} -e 's|libdivxdecore|libNOTdivxdecore|' \
-		${WRKSRC}/mplayerxp/libmpcodecs/${file}
-.endfor
+	@${REINPLACE_CMD} -e \
+		'/pthread/s|_ld_i in .* ;|_ld_i in "${PTHREAD_LIBS}" ;|g ; \
+		 s|pkg-config|true|g ; \
+		 s|^MAKE=|#MAKE=|g' ${WRKSRC}/codecs/configure
+	@${REINPLACE_CMD} -e \
+		'/pthread/s|_ld_i in .* ;|_ld_i in "${PTHREAD_LIBS}" ;|g ; \
+		 s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g' ${WRKSRC}/mplayerxp/configure
+#
+	@${REINPLACE_CMD} -e \
+		's|-Wl,-rpath |-Wl,-rpath,|g' ${WRKSRC}/codecs/common.mak
+	@${REINPLACE_CMD} -e \
+		'/install -d/d' ${WRKSRC}/codecs/subdir.mak
+
+post-configure:
+	@cd ${WRKSRC}/codecs && ./configure --cc=${CC} \
+		--prefix=${PREFIX} \
+		--confdir=${ETCDIR} \
+		--datadir=${LOCALBASE}/share/mplayer \
+		--libdir=${PREFIX}/lib
+.if !defined(WITH_OCFLAGS)
+	@${FIND} ${WRKSRC} -name "config.h" -print0 | \
+		${XARGS} -0 ${REINPLACE_CMD} -e \
+		'/CAN_COMPILE_/s|^#define|// #undef|g ; \
+		 /_CLOBBERED/s|^#define|// #undef|g'
+.endif
 
 pre-install:
 # create dirs before installation since the port uses a install
@@ -249,5 +167,8 @@ pre-install:
 .for dir in etc/mplayerxp lib/mplayerxp/codecs lib/mplayerxp/wine
 	@${MKDIR} ${PREFIX}/${dir}
 .endfor
+
+post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/mplayerxp
 
 .include <bsd.port.post.mk>
