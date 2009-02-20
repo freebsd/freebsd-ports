@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ecasound
-PORTVERSION=	2.5.2
+PORTVERSION=	2.6.0
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
@@ -29,9 +29,8 @@ CONFIGURE_ARGS=	--disable-pyecasound \
 		--enable-sys-readline
 USE_LDCONFIG=	yes
 
-MAN1=		ecasound-iam.1 ecasound.1 ecatools.1 ecaconvert.1 \
-		ecafixdc.1 ecalength.1 ecamonitor.1 ecanormalize.1 \
-		ecaplay.1 ecasignalview.1
+MAN1=		ecasound-iam.1 ecasound.1 ecatools.1 ecafixdc.1 ecalength.1 \
+		ecamonitor.1 ecanormalize.1 ecaplay.1 ecasignalview.1
 MAN5=		ecasoundrc.5
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
