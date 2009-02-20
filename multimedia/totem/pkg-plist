@@ -160,6 +160,15 @@ share/gnome/help/totem/it/figures/totem_start_window.png
 share/gnome/help/totem/it/figures/totem_volume_maximum_button.png
 share/gnome/help/totem/it/figures/totem_volume_mute_button.png
 share/gnome/help/totem/it/totem.xml
+share/gnome/help/totem/ja/figures/totem_next_button.png
+share/gnome/help/totem/ja/figures/totem_pause_button.png
+share/gnome/help/totem/ja/figures/totem_play_button.png
+share/gnome/help/totem/ja/figures/totem_previous_button.png
+share/gnome/help/totem/ja/figures/totem_show_playlist_button.png
+share/gnome/help/totem/ja/figures/totem_start_window.png
+share/gnome/help/totem/ja/figures/totem_volume_maximum_button.png
+share/gnome/help/totem/ja/figures/totem_volume_mute_button.png
+share/gnome/help/totem/ja/totem.xml
 share/gnome/help/totem/oc/figures/totem_next_button.png
 share/gnome/help/totem/oc/figures/totem_pause_button.png
 share/gnome/help/totem/oc/figures/totem_play_button.png
@@ -287,6 +296,7 @@ share/locale/ka/LC_MESSAGES/totem.mo
 share/locale/kn/LC_MESSAGES/totem.mo
 share/locale/ko/LC_MESSAGES/totem.mo
 share/locale/ku/LC_MESSAGES/totem.mo
+share/locale/la/LC_MESSAGES/totem.mo
 share/locale/lt/LC_MESSAGES/totem.mo
 share/locale/lv/LC_MESSAGES/totem.mo
 share/locale/mg/LC_MESSAGES/totem.mo
@@ -335,6 +345,7 @@ share/omf/totem/totem-en_GB.omf
 share/omf/totem/totem-es.omf
 share/omf/totem/totem-fr.omf
 share/omf/totem/totem-it.omf
+share/omf/totem/totem-ja.omf
 share/omf/totem/totem-oc.omf
 share/omf/totem/totem-pa.omf
 share/omf/totem/totem-pl.omf
@@ -378,6 +389,8 @@ share/vala/vapi/totem.vapi
 @dirrm share/gnome/help/totem/pa
 @dirrm share/gnome/help/totem/oc/figures
 @dirrm share/gnome/help/totem/oc
+@dirrm share/gnome/help/totem/ja/figures
+@dirrm share/gnome/help/totem/ja
 @dirrm share/gnome/help/totem/it/figures
 @dirrm share/gnome/help/totem/it
 @dirrm share/gnome/help/totem/fr/figures
