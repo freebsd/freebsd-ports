@@ -1,0 +1,23 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Engine/Middleware/.packlist
+%%SITE_PERL%%/HTTP/Engine/Middleware.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/DebugRequest.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/DebugScreen.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/DoCoMoGUID.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/Encode.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/FillInForm.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/HTTPSession.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/MethodOverride.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/MobileAttribute.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/ModuleReload.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/Profile.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/Profile/Role.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/Profile/Runtime.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/ReverseProxy.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/Role.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/Role/Logger.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/Static.pm
+@dirrm %%SITE_PERL%%/HTTP/Engine/Middleware/Role
+@dirrm %%SITE_PERL%%/HTTP/Engine/Middleware/Profile
+@dirrm %%SITE_PERL%%/HTTP/Engine/Middleware
+@dirrmtry %%SITE_PERL%%/HTTP/Engine
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Engine/Middleware
