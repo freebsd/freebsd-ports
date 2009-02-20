@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	barner@FreeBSD.org
+MAINTAINER=	churanov.port.maintainer@gmail.com
 COMMENT=	Free peer-reviewed portable C++ source libraries
 
 USE_BZIP2=	yes
