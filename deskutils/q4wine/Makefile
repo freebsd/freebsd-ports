@@ -9,7 +9,7 @@ PORTVERSION=	0.111
 CATEGORIES=	deskutils emulators
 MASTER_SITES=	SF
 
-MAINTAINER=	sergey.dyatko@mail.com
+MAINTAINER=	sergey.dyatko@gmail.com
 COMMENT=	QT4 front-end for WINE
 
 RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo \
