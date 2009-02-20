@@ -22,14 +22,6 @@ CONFLICTS=	neon26-[0-9]*
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.endif
-
 .ifndef WITHOUT_OPENSSL
 USE_OPENSSL=	yes
 .endif
@@ -41,6 +33,18 @@ CONFIGURE_ARGS=	--with-ssl \
 		--enable-shared \
 		--with-expat \
 		--with-libs=${LOCALBASE}:${PREFIX}
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
+.if defined(WITHOUT_GSSAPI)
+CONFIGURE_ARGS+=--without-gssapi
+.endif
 
 MAN1=	neon-config.1
 MAN3=	ne_add_request_header.3 ne_addr_resolve.3 ne_buffer.3 \
