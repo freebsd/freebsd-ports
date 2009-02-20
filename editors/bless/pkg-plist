@@ -66,11 +66,11 @@ share/applications/bless.desktop
 %%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_tab_close.png
 %%PORTDOCS%%%%DOCSDIR%%/user/index.html
 %%PORTDOCS%%%%DOCSDIR%%/user/legal.xml
-share/omf/bless/bless-manual.omf
+%%PORTDOCS%%share/omf/bless/bless-manual.omf
 share/pixmaps/bless-48x48.png
 @dirrm %%DATADIR%%
-@dirrm share/omf/bless
-@dirrmtry share/omf
+%%PORTDOCS%%@dirrm share/omf/bless
+%%PORTDOCS%%@dirrmtry share/omf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/user/figures
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/user
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
