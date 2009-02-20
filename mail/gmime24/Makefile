@@ -19,6 +19,7 @@ CONFLICTS=	gmime-1.0.*
 
 SLAVEDIRS=	mail/gmime2-sharp
 
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}24
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME?=	gnomehack gnometarget glib20
@@ -32,16 +33,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 LATEST_LINK?=	${PORTNAME}2
 
-PORTDOCS=	*
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|stdint.h|inttypes.h|" ${WRKSRC}/zentimer.h
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}24
+	@${MKDIR} ${DOCSDIR}/
 .for i in docs/reference/html/*
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}24
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
 .endfor
 .endif
 
