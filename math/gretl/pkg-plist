@@ -4,6 +4,7 @@ bin/gretlcli
 include/gretl/adf_kpss.h
 include/gretl/bhhh_max.h
 include/gretl/bootstrap.h
+include/gretl/boxplots.h
 include/gretl/calendar.h
 include/gretl/compare.h
 include/gretl/compat.h
@@ -18,6 +19,7 @@ include/gretl/forecast.h
 include/gretl/genfuncs.h
 include/gretl/genmain.h
 include/gretl/graphing.h
+include/gretl/gretl_bfgs.h
 include/gretl/gretl_commands.h
 include/gretl/gretl_errors.h
 include/gretl/gretl_f2c.h
@@ -46,7 +48,6 @@ include/gretl/libset.h
 include/gretl/matrix_extra.h
 include/gretl/missing.h
 include/gretl/modelprint.h
-include/gretl/modelspec.h
 include/gretl/monte_carlo.h
 include/gretl/nls.h
 include/gretl/nonparam.h
@@ -101,6 +102,9 @@ lib/gretl-gtk2/gretlzip.so
 lib/gretl-gtk2/heckit.a
 lib/gretl-gtk2/heckit.la
 lib/gretl-gtk2/heckit.so
+lib/gretl-gtk2/interval.a
+lib/gretl-gtk2/interval.la
+lib/gretl-gtk2/interval.so
 lib/gretl-gtk2/jmulti_import.a
 lib/gretl-gtk2/jmulti_import.la
 lib/gretl-gtk2/jmulti_import.so
@@ -146,6 +150,9 @@ lib/gretl-gtk2/quantreg.so
 lib/gretl-gtk2/range-mean.a
 lib/gretl-gtk2/range-mean.la
 lib/gretl-gtk2/range-mean.so
+lib/gretl-gtk2/spss_import.a
+lib/gretl-gtk2/spss_import.la
+lib/gretl-gtk2/spss_import.so
 lib/gretl-gtk2/stata_import.a
 lib/gretl-gtk2/stata_import.la
 lib/gretl-gtk2/stata_import.so
@@ -298,6 +305,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/misc/djclose.gdt
 %%DATADIR%%/data/misc/ects_nls.gdt
 %%DATADIR%%/data/misc/engel.gdt
+%%DATADIR%%/data/misc/galton.gdt
 %%DATADIR%%/data/misc/hall.gdt
 %%DATADIR%%/data/misc/hamilton.gdt
 %%DATADIR%%/data/misc/hendry_jae.gdt
@@ -320,6 +328,8 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/misc/rac3d.gdt
 %%DATADIR%%/data/misc/sw_ch12.gdt
 %%DATADIR%%/data/misc/sw_ch14.gdt
+%%DATADIR%%/data/misc/theil.gdt
+%%DATADIR%%/data/misc/wtp.gdt
 %%DATADIR%%/data/nist/Filip.dat
 %%DATADIR%%/data/nist/Longley.dat
 %%DATADIR%%/data/nist/NoInt1.dat
@@ -372,6 +382,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/helpfigs/ell.png
 %%DATADIR%%/helpfigs/garch_h.png
 %%DATADIR%%/helpfigs/greene_Cfunc.png
+%%DATADIR%%/helpfigs/hqc.png
 %%DATADIR%%/helpfigs/hsk.png
 %%DATADIR%%/helpfigs/hurst.png
 %%DATADIR%%/helpfigs/influence.png
@@ -436,6 +447,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/misc/sw_ch14.inp
 %%DATADIR%%/scripts/misc/weibull.inp
 %%DATADIR%%/scripts/misc/wg_nls.inp
+%%DATADIR%%/scripts/misc/wtp.inp
 %%DATADIR%%/scripts/ps10-1.inp
 %%DATADIR%%/scripts/ps10-10.inp
 %%DATADIR%%/scripts/ps10-11.inp
@@ -520,13 +532,12 @@ share/locale/es/LC_MESSAGES/gretl.mo
 share/locale/eu/LC_MESSAGES/gretl.mo
 share/locale/fr/LC_MESSAGES/gretl.mo
 share/locale/it/LC_MESSAGES/gretl.mo
-share/locale/ja/LC_MESSAGES/gretl.mo
 share/locale/pl/LC_MESSAGES/gretl.mo
 share/locale/pt/LC_MESSAGES/gretl.mo
 share/locale/pt_BR/LC_MESSAGES/gretl.mo
 share/locale/ru/LC_MESSAGES/gretl.mo
-share/locale/rw/LC_MESSAGES/gretl.mo
 share/locale/tr/LC_MESSAGES/gretl.mo
+share/locale/zh_TW/LC_MESSAGES/gretl.mo
 %%GNOME:%%share/mime-info/gretl.keys
 %%GNOME:%%share/mime-info/gretl.mime
 %%GNOME:%%share/pixmaps/gnome-application-x-gretldata.png
