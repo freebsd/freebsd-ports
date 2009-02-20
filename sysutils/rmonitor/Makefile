@@ -7,6 +7,7 @@
 
 PORTNAME=	rmonitor
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://gwdu111.gwdg.de/pub/FreeBSD/misc/ \
 		ftp://gwdu112.gwdg.de/pub/FreeBSD/misc/
@@ -16,5 +17,7 @@ COMMENT=	Remote system monitoring utility
 
 MAN1=		rmonitor.1
 MANCOMPRESSED=	yes
+
+#CFLAGS+=	-w
 
 .include <bsd.port.mk>
