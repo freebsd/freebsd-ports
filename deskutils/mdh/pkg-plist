@@ -3,7 +3,15 @@ bin/mdh
 %%DATADIR%%/icons/default.png
 %%DATADIR%%/icons/mixer.png
 %%DATADIR%%/icons/weather/0.png
-%%DATADIR%%/icons/weather/1.png
+%%DATADIR%%/icons/weather/01.png
+%%DATADIR%%/icons/weather/02.png
+%%DATADIR%%/icons/weather/03.png
+%%DATADIR%%/icons/weather/04.png
+%%DATADIR%%/icons/weather/05.png
+%%DATADIR%%/icons/weather/06.png
+%%DATADIR%%/icons/weather/07.png
+%%DATADIR%%/icons/weather/08.png
+%%DATADIR%%/icons/weather/09.png
 %%DATADIR%%/icons/weather/10.png
 %%DATADIR%%/icons/weather/11.png
 %%DATADIR%%/icons/weather/12.png
@@ -14,7 +22,6 @@ bin/mdh
 %%DATADIR%%/icons/weather/17.png
 %%DATADIR%%/icons/weather/18.png
 %%DATADIR%%/icons/weather/19.png
-%%DATADIR%%/icons/weather/2.png
 %%DATADIR%%/icons/weather/20.png
 %%DATADIR%%/icons/weather/21.png
 %%DATADIR%%/icons/weather/22.png
@@ -25,7 +32,6 @@ bin/mdh
 %%DATADIR%%/icons/weather/27.png
 %%DATADIR%%/icons/weather/28.png
 %%DATADIR%%/icons/weather/29.png
-%%DATADIR%%/icons/weather/3.png
 %%DATADIR%%/icons/weather/30.png
 %%DATADIR%%/icons/weather/31.png
 %%DATADIR%%/icons/weather/32.png
@@ -36,7 +42,6 @@ bin/mdh
 %%DATADIR%%/icons/weather/37.png
 %%DATADIR%%/icons/weather/38.png
 %%DATADIR%%/icons/weather/39.png
-%%DATADIR%%/icons/weather/4.png
 %%DATADIR%%/icons/weather/40.png
 %%DATADIR%%/icons/weather/41.png
 %%DATADIR%%/icons/weather/42.png
@@ -45,12 +50,6 @@ bin/mdh
 %%DATADIR%%/icons/weather/45.png
 %%DATADIR%%/icons/weather/46.png
 %%DATADIR%%/icons/weather/47.png
-%%DATADIR%%/icons/weather/5.png
-%%DATADIR%%/icons/weather/6.png
-%%DATADIR%%/icons/weather/7.png
-%%DATADIR%%/icons/weather/8.png
-%%DATADIR%%/icons/weather/9.png
-%%DATADIR%%/icons/weather/na.png
 @dirrm %%DATADIR%%/icons/weather
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
