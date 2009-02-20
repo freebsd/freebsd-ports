@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 #PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
@@ -86,7 +86,7 @@ MAN8+=		apcsmart.8 bcmxcp.8 belkin.8 belkinunv.8 \
 		bestuferrups.8 bestups.8 bestfcom.8 blazer.8 cyberpower.8 \
 		dummy-ups.8 etapro.8 everups.8 gamatronic.8 genericups.8 \
 		isbmex.8 liebert.8 masterguard.8 megatec.8 metasys.8 \
-		mge-shut.8 mge-utalk.8 oneac.8 optiups.8 \
+		mge-shut.8 mge-utalk.8 microdowell.8 oneac.8 optiups.8 \
 		powercom.8 powerpanel.8 rhino.8 safenet.8 solis.8 tripplite.8 \
 		tripplitesu.8 upscode2.8 victronups.8
 PLIST_SUB+=	NUT_SERIAL=""
