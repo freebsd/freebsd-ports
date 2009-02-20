@@ -1822,6 +1822,7 @@
     SUBDIR += p5-Test-MockObject
     SUBDIR += p5-Test-MockRandom
     SUBDIR += p5-Test-MockTime
+    SUBDIR += p5-Test-Most
     SUBDIR += p5-Test-NoWarnings
     SUBDIR += p5-Test-Number-Delta
     SUBDIR += p5-Test-Object
