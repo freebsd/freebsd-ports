@@ -1,5 +1,5 @@
---- src/orca/orca.in.orig	2008-10-16 14:56:18.000000000 -0500
-+++ src/orca/orca.in	2008-10-16 15:04:04.000000000 -0500
+--- src/orca/orca.in.orig	2009-01-23 22:35:24.000000000 +0100
++++ src/orca/orca.in	2009-02-20 23:30:59.000000000 +0100
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -21,7 +21,7 @@
      USERID=`id | cut -f2 -d= | cut -f1 -d\(`
 -    PIDS=`ps -eo pid,ruid,args | grep $USERID | \
 +    PIDS=`ps -exo pid,ruid,args | grep $USERID | \
- 	egrep "orca[.]orca|synthesis-driver|festival [-][-]server" | \
+ 	egrep "orca[.]orca|OAFIID[:]GNOME_Speech|OAFIID[:]GNOME_Magnifier|festival [-][-]server"|\
  	grep -v grep | awk '{ print $1 }'`
      IFS='
 @@ -137,7 +137,7 @@
