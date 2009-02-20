@@ -7,7 +7,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.20.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -276,7 +276,7 @@ PLIST_SUB+=		WITH_MING="@comment "
 .if defined(WITH_DEVIL)
 CONFIGURE_ARGS+=	--with-devil
 PLIST_SUB+=		WITH_DEVIL=""
-LIB_DEPENDS+=		IL.1:${PORTSDIR}/graphics/devil
+LIB_DEPENDS+=		IL.2:${PORTSDIR}/graphics/devil
 .else
 CONFIGURE_ARGS+=	--without-devil
 PLIST_SUB+=		WITH_DEVIL="@comment "

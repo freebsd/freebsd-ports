@@ -7,7 +7,7 @@
 
 PORTNAME=	cegui
 PORTVERSION=	0.6.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=crayzedsgui
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A library providing windowing and widgets for graphics APIs
 
-LIB_DEPENDS=	IL.1:${PORTSDIR}/graphics/devil \
+LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		freetype.9:${PORTSDIR}/print/freetype2
 
