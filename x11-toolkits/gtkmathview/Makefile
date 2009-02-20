@@ -7,29 +7,27 @@
 #
 
 PORTNAME=	gtkmathview
-PORTVERSION=	0.7.7
-PORTREVISION=	2
+PORTVERSION=	0.8.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://helm.cs.unibo.it/mml-widget/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK Widget to Render MathML Documents
 
-LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gmetadom_gdome_cpp_smart:${PORTSDIR}/textproc/gmetadom \
-		popt.0:${PORTSDIR}/devel/popt \
-		xslt.2:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
+		t1:${PORTSDIR}/devel/t1lib \
+		gmetadom_gdome_cpp_smart:${PORTSDIR}/textproc/gmetadom
 
-USE_ICONV=	yes
-USE_GNOME=	glib20 gtk20 gnomehack
-USE_AUTOTOOLS=	libtool:15
-CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
-LDFLAGS=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+USE_GNOME=	gnomehack gtk20 libxml2
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
-MAN1=	mathmlviewer.1
+MAN1=		mathmlviewer.1
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
