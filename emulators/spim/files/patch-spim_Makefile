@@ -1,19 +1,19 @@
---- spim/Makefile.orig	2006-08-29 11:23:19.000000000 +0900
-+++ spim/Makefile	2008-04-23 01:36:01.000000000 +0900
+--- spim/Makefile.orig	2009-01-02 04:51:25.000000000 +0900
++++ spim/Makefile	2009-01-21 03:38:23.000000000 +0900
 @@ -54,13 +54,13 @@
  
  
  # Full path for the directory that will hold the executable files:
--BIN_DIR = /usr/local/bin
+-BIN_DIR = /usr/bin
 +BIN_DIR = ${PREFIX}/bin
  
  # Full path for the directory that will hold the exception handler:
--EXCEPTION_DIR = /usr/local/lib
+-EXCEPTION_DIR = /usr/lib/spim
 +EXCEPTION_DIR = ${PREFIX}/share/spim
  
  # Full path for the directory that will hold the man files:
--MAN_DIR = /usr/man/mann
-+MAN_DIR = ${PREFIX}/man/man1
+-MAN_DIR = /usr/share/man/en
++MAN_DIR = ${MANPREFIX}/man/man1
  
  
  # If you have flex, use it instead of lex.  If you use flex, define this
@@ -24,7 +24,7 @@
 -CC = gcc
 -CFLAGS = -I. -I$(CPU_DIR) $(DEFINES) -g -Wall
 -YFLAGS = -d --file-prefix=y
-+CC? = gcc
++CC ?= gcc
 +CFLAGS += -I. -I$(CPU_DIR) $(DEFINES) -Wall
 +YFLAGS = -d
  YCFLAGS =

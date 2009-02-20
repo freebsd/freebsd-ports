@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	spim
-PORTVERSION=	7.3
-PORTREVISION=	1
+PORTVERSION=	7.4
 CATEGORIES=	emulators
 MASTER_SITES=	http://pages.cs.wisc.edu/~larus/SPIM/
 
@@ -21,8 +20,8 @@ BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 INSTALL_WRKSRC=	${WRKSRC}/${PORTNAME}
 
 ALL_TARGET=	${PORTNAME}
-MAN1=		spim.1
 
+MAN1=		spim.1
 PORTDOCS=	cycle.ps.gz spim.ps.gz SPIM.html
 PLIST_FILES=	bin/spim %%DATADIR%%/exceptions.s
 PLIST_DIRS=	%%DATADIR%%
