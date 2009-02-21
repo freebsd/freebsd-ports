@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uim-el
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -21,6 +21,7 @@ CONFLICTS?=	uim-el-xemacs21-mule-[0-9]* \
 
 RUN_DEPENDS=	uim-el-agent:${PORTSDIR}/textproc/uim
 
+USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
