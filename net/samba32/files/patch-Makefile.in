@@ -1,20 +1,26 @@
---- ./Makefile.in.orig	2008-09-18 08:49:02.000000000 +0200
-+++ ./Makefile.in	2008-09-23 01:38:57.000000000 +0200
-@@ -122,7 +122,7 @@
+--- Makefile.in.orig	2008-12-15 08:11:28.000000000 +0000
++++ Makefile.in	2009-01-26 01:58:03.000000000 +0000
+@@ -124,9 +124,8 @@
  # These can be overridden by command line switches (see smbd(8))
  # or in smb.conf (see smb.conf(5))
  LOGFILEBASE = @logfilebase@
 -CONFIGFILE = $(CONFIGDIR)/smb.conf
 +CONFIGFILE = $(CONFIGDIR)/%%SAMBA_CONFIG%%
  LMHOSTSFILE = $(CONFIGDIR)/lmhosts
- CTDBDIR = @ctdbdir@
+-CTDBDIR = @ctdbdir@
  
-@@ -961,7 +961,7 @@
+ # This is where smbpasswd et al go
+ PRIVATEDIR = @privatedir@
+@@ -153,10 +152,10 @@
+ # the directory where pid files go
+ PIDDIR = @piddir@
  
- WINBIND_WINS_NSS_OBJ = nsswitch/wins.o $(PARAM_OBJ) \
- 	$(LIBSMB_OBJ) $(LIB_NONSMBD_OBJ) $(NSSWINS_OBJ) $(KRBCLIENT_OBJ) \
--	$(LIBNDR_GEN_OBJ0)
-+	$(LIBNDR_GEN_OBJ0) @WINBIND_WINS_NSS_EXTRA_OBJS@
+-FLAGS1 = $(CFLAGS) @FLAGS1@ @SAMBA_CPPFLAGS@ $(CPPFLAGS)
++FLAGS1 = @FLAGS1@ @SAMBA_CPPFLAGS@ $(CPPFLAGS) $(CFLAGS)
+ FLAGS2 =
+ FLAGS3 =
+-FLAGS4 = -I$(CTDBDIR)/include
++FLAGS4 =
+ FLAGS5 = $(FLAGS1) $(FLAGS2) $(FLAGS3) $(FLAGS4)
+ FLAGS  = $(ISA) $(FLAGS5) -I$(srcdir)/lib -D_SAMBA_BUILD_=3
  
- PAM_SMBPASS_OBJ_0 = pam_smbpass/pam_smb_auth.o pam_smbpass/pam_smb_passwd.o \
- 		pam_smbpass/pam_smb_acct.o pam_smbpass/support.o
