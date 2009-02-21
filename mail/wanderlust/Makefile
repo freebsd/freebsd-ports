@@ -23,7 +23,7 @@ USE_EMACS=	yes
 .include <bsd.port.pre.mk>
 
 MIMEUI_PORT_NAME?=	${MIMEUI_PRODUCT}
-.if (${EMACS_PORT_NAME} == "emacs22")
+.if (${EMACS_PORT_NAME} == "emacs22") || (${EMACS_PORT_NAME} == "emacs-devel")
 BITMAP_PORT_NAME=	bitmap
 .endif
 EMACS_W3M_PORT_NAME?=	emacs-w3m
@@ -76,8 +76,11 @@ PLIST_SUB+=	EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
 		WL_LISPDIR=${WL_LISPDIR} \
 		WL_ICONDIR=${WL_ICONDIR} \
 		SHIMBUN=${SHIMBUN}
-
+.if (${EMACS_PORT_NAME} == "emacs-devel")
+PLIST=		${PKGDIR}/pkg-plist.emacs22
+.else
 PLIST=		${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
+.endif
 WRK_STARTUP_FILE=	${WRKDIR}/wanderlust-startup.el
 MAKE_ARGS+=	EMACS=${EMACS_CMD} XEMACS=${EMACS_CMD} \
 		LISPDIR=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} \
@@ -91,13 +94,19 @@ MAKE_ARGS+=	INFODIR=${INFODIR}
 post-extract:
 	@${CP} ${FILESDIR}/WL-CFG ${WRKSRC}
 
+.if (${EMACS_PORT_NAME} == "emacs-devel")
+STARTUP_TMPL=	${FILESDIR}/wanderlust-startup.emacs22.el.tmpl
+.else
+STARTUP_TMPL=	${FILESDIR}/wanderlust-startup.${EMACS_PORT_NAME}.el.tmpl
+.endif
+
 post-configure:
 	@${SED} \
 		-e "s,%%PREFIX%%,${PREFIX},g" \
 		-e "s,%%EMACS_LIBDIR%%,${EMACS_LIBDIR},g" \
 		-e "s,%%EMACS_LIBDIR_WITH_VER%%,${EMACS_LIBDIR_WITH_VER},g" \
 		-e "s,%%EMACS_PACKAGESDIR%%,${EMACS_PACKAGESDIR},g" \
-		< ${FILESDIR}/wanderlust-startup.${EMACS_PORT_NAME}.el.tmpl > ${WRKDIR}/wanderlust-startup.el
+		< ${STARTUP_TMPL} > ${WRKDIR}/wanderlust-startup.el
 
 pre-build:
 .if defined(EMACS_PACKAGESDIR)
