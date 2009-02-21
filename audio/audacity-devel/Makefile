@@ -38,7 +38,7 @@ OPTIONS=	VORBIS		"Use libvorbis for Ogg Vorbis support"	on \
 		FLAC		"Use libFLAC for FLAC support" on \
 		ID3TAG		"Use libid3tag for mp3 id3 tag support" on \
 		SBSMS		"Use libsbsms for pitch and tempo changing" on \
-		SOUNDTOUCH 	"Use libsbsms for pitch and tempo changing" on\
+		SOUNDTOUCH 	"Use libSoundTouch for pitch and tempo changing" on\
 		TWOLAME		"Use libtwolame for MP2 export support" on \
 		FFMPEG		"Use ffmpeg for import and export support" on \
 		MIDI		"Use portSMF for Midi support" on
