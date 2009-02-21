@@ -19,6 +19,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui svg xml qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DWITH_UseRPMTools:Bool=Off
+CMAKE_USE_PTHREAD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 
 .include <bsd.port.mk>
