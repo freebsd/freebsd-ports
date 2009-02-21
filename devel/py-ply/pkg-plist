@@ -1,18 +1,23 @@
 %%PYTHON_SITELIBDIR%%/ply/__init__.py
 %%PYTHON_SITELIBDIR%%/ply/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ply/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ply/cpp.py
+%%PYTHON_SITELIBDIR%%/ply/cpp.pyc
+%%PYTHON_SITELIBDIR%%/ply/cpp.pyo
+%%PYTHON_SITELIBDIR%%/ply/ctokens.py
+%%PYTHON_SITELIBDIR%%/ply/ctokens.pyc
+%%PYTHON_SITELIBDIR%%/ply/ctokens.pyo
 %%PYTHON_SITELIBDIR%%/ply/lex.py
 %%PYTHON_SITELIBDIR%%/ply/lex.pyc
 %%PYTHON_SITELIBDIR%%/ply/lex.pyo
 %%PYTHON_SITELIBDIR%%/ply/yacc.py
 %%PYTHON_SITELIBDIR%%/ply/yacc.pyc
 %%PYTHON_SITELIBDIR%%/ply/yacc.pyo
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/ply.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ansic/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ansic/clex.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ansic/cparse.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/calc/calc.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calcdebug/calc.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/classcalc/calc.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/closurecalc/calc.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hedit/hedit.py
@@ -26,6 +31,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yply/yply.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BASIC/sqrt2.bas
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BASIC/basiclex.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BASIC/basiclog.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BASIC/basinterp.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BASIC/basparse.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BASIC/dim.bas
@@ -55,8 +61,8 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hedit
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/classcalc
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/closurecalc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calcdebug
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calc
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ansic
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/ply
