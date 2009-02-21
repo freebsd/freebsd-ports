@@ -7,7 +7,7 @@
 
 PORTNAME=	dir2ogg
 PORTVERSION=	0.11.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://jak-linux.org/projects/dir2ogg/0.11/ \
 		LOCAL/chinsan

@@ -7,7 +7,7 @@
 
 PORTNAME=	faad2
 PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/faac
 PKGNAMEPREFIX=	bmp-
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	bmp-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Beep Media Player (BMP) plugin for faad
 
-LIB_DEPENDS=	faad.0:${PORTSDIR}/audio/faad \
+LIB_DEPENDS=	faad.2:${PORTSDIR}/audio/faad \
 		beep.2:${PORTSDIR}/multimedia/beep-media-player
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

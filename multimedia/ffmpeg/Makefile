@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2008-07-27
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -132,7 +132,7 @@ CONFIGURE_ARGS+=	--disable-libfaac
 
 ## faad
 .ifndef(WITHOUT_FAAD)
-LIB_DEPENDS+=		faad.0:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=		faad.2:${PORTSDIR}/audio/faad
 CONFIGURE_ARGS+=	--enable-libfaad \
 			--enable-libfaadbin
 .else

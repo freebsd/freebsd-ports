@@ -7,6 +7,7 @@
 
 PORTNAME=	streamripper
 PORTVERSION=	1.64.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://gd.tuwien.ac.at/hci/cdk/:cdk
@@ -46,7 +47,7 @@ CDK_VERSION=	5.0-20060507
 .if defined(WITHOUT_FAAD)
 CONFIGURE_ARGS+=	ac_cv_lib_faad_NeAACDecDecode2=no
 .else
-LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
 .endif
 
 .if defined(WITHOUT_VORBIS)

@@ -7,7 +7,7 @@
 
 PORTNAME=	libquicktime
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SFE
 
@@ -121,7 +121,7 @@ CONFIGURE_ARGS+=	--without-faac
 .endif
 
 .if !defined(WITHOUT_FAAD)
-LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
 PLIST_SUB+=	FAAD=""
 CONFIGURE_ARGS+=	--with-faad2
 .else
