@@ -6,38 +6,42 @@
 #
 
 PORTNAME=	faad2
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.7
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	faac
+MASTER_SITES=	SFE/faac
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG-2 and MPEG-4 AAC audio decoder
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
+USE_BZIP2=	yes
 USE_DOS2UNIX=	yes
-USE_AUTOTOOLS=	automake:15 autoheader:262 libtool:15
-AUTOMAKE_ARGS=	--add-missing
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 libtool:15
+ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+USE_LDCONFIG=	yes
+
+MAN1=		faad.1
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|<stdint\.h>|<inttypes.h>|g' \
-		${WRKSRC}/common/mp4ff/mp4ff_int_types.h
+post-extract:
+	@${LN} -sf faad.man ${WRKSRC}/frontend/faad.1
 
-pre-configure:
-	${MKDIR} ${WRKSRC}/plugins/bmp
-	@cd ${WRKSRC}; ${ACLOCAL} -I ${ACLOCAL_DIR} -I .; \
-		${SETENV} ${SCRIPTS_ENV} ${LIBTOOLIZE} --automake
+post-patch:
+	@${REINPLACE_CMD} -e '/AC_CONFIG_FILES(plugins/d' \
+		${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's|faad.man|faad.1|g' \
+		${WRKSRC}/frontend/Makefile.am
+	@${REINPLACE_CMD} -e 's|^AM_CFLAGS|AM_CPPFLAGS|g ; \
+		 s|-iquote |-I|g' ${WRKSRC}/libfaad/Makefile.am
 	@${ECHO_CMD} "SUBDIRS = libfaad common frontend" > \
 		${WRKSRC}/Makefile.am
+
+pre-configure:
+	@cd ${WRKSRC}; ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} --automake
 
 .include <bsd.port.post.mk>
