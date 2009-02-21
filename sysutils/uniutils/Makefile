@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	uniutils
-PORTVERSION=	2.26
-PORTREVISION=	1
+PORTVERSION=	2.27
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
@@ -21,23 +20,30 @@ CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"		\
 		LIBS="-lintl"
 USE_GETTEXT=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 TESTFILES=	Test1.ann Test1.u Test2.ann Test2.u Test3.ann Test3.u	\
-		Test4.ann Test4.u
+		Test4.ann Test4.u Test5.ann Test5.u
 PORTDOCS=	AUTHORS NEWS README
 
 MAN1=		ExplicateUTF8.1 unidesc.1 unifuzz.1 unihist.1 uniname.1	\
 		unireverse.1
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|TestData|${EXAMPLESDIR}|' ${WRKSRC}/README
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|TestData|${EXAMPLESDIR}|' ${WRKSRC}/README
+
+regression-test:
+	(cd ${WRKSRC} &&		\
+	./unidesc TestData/Test1.u &&	\
+	./uniname TestData/Test1.ann)
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${TESTFILES:S|^|${WRKSRC}/TestData/|} ${EXAMPLESDIR}
 .endif
 
