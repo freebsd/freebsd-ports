@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://gael.roualland.free.fr/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Network interface statistics monitoring tool
 
 GNU_CONFIGURE=	yes
