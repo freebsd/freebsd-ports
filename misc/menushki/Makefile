@@ -14,6 +14,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Menu converter between varieties of Window Managers
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+EXPIRATION_DATE=2009-03-22
+
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

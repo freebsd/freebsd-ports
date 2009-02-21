@@ -25,6 +25,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A libg++ container classes for EGCS and later versions of GCC
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+EXPIRATION_DATE=2009-03-22
+
 USE_GCC=	2.95
 PLIST_SUB=	GCC28SUBDIR=${GCC28DIR}
 

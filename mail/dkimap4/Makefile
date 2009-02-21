@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IMAP4rev1 and POP3 server from the DBOX BBS package
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+EXPIRATION_DATE=2009-03-22
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	2.95

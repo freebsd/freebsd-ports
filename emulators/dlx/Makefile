@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Assembler for Hennessy and Patterson's DLX architecture
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+EXPIRATION_DATE=2009-03-22
+
 ONLY_FOR_ARCHS=	i386
 USE_GCC=	2.95
 MAKE_ENV=	prefix=${PREFIX} INSTALLDIR=${PREFIX}/bin

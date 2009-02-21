@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to edit encoded mpeg streams
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+EXPIRATION_DATE=2009-03-22
+
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
 USE_XORG=	x11 xext

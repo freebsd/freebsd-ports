@@ -19,6 +19,9 @@ DIST_SUBDIR=	${DISTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System for physically based photo-realistic image synthesis
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+EXPIRATION_DATE=2009-03-22
+
 USE_GL=		glut
 
 .ifdef (WITH_XRML)
