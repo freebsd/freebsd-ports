@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES?=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
 .endif
@@ -17,6 +16,7 @@ PKGNAMESUFFIX=	-nox11
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Input method library
 
+USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 USE_GNOME+=	gnometarget glib20
@@ -60,6 +60,10 @@ PLIST_SUB+=	X11=""
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+CONFIGURE_ARGS+=	--enable-storage=fatty
+.endif
 
 .for _x in x xft gtk2 qt anthy canna m17nlib prime scim dict
 .if ${CONFIGURE_ARGS:M--with-${_x}} == ""
