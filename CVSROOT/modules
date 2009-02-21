@@ -4648,6 +4648,7 @@ gstreamer-plugins-buzztard      ports/multimedia/gstreamer-plugins-buzztard
 gstreamer-plugins-bz2           ports/multimedia/gstreamer-plugins-bz2
 gstreamer-plugins-cairo         ports/graphics/gstreamer-plugins-cairo
 gstreamer-plugins-cdaudio       ports/audio/gstreamer-plugins-cdaudio
+gstreamer-plugins-cdio          ports/sysutils/gstreamer-plugins-cdio
 gstreamer-plugins-cdparanoia    ports/audio/gstreamer-plugins-cdparanoia
 gstreamer-plugins-core          ports/multimedia/gstreamer-plugins-core
 gstreamer-plugins-dts           ports/multimedia/gstreamer-plugins-dts
@@ -11170,6 +11171,7 @@ p5-HTTP-Cookies-iCab            ports/www/p5-HTTP-Cookies-iCab
 p5-HTTP-Cookies-w3m             ports/www/p5-HTTP-Cookies-w3m
 p5-HTTP-DAV                     ports/www/p5-HTTP-DAV
 p5-HTTP-Engine                  ports/www/p5-HTTP-Engine
+p5-HTTP-Engine-Middleware       ports/www/p5-HTTP-Engine-Middleware
 p5-HTTP-GHTTP                   ports/www/p5-HTTP-GHTTP
 p5-HTTP-HeaderParser-XS         ports/www/p5-HTTP-HeaderParser-XS
 p5-HTTP-Headers-Fast            ports/www/p5-HTTP-Headers-Fast
@@ -12488,6 +12490,7 @@ p5-Test-MockModule              ports/devel/p5-Test-MockModule
 p5-Test-MockObject              ports/devel/p5-Test-MockObject
 p5-Test-MockRandom              ports/devel/p5-Test-MockRandom
 p5-Test-MockTime                ports/devel/p5-Test-MockTime
+p5-Test-Most                    ports/devel/p5-Test-Most
 p5-Test-NoWarnings              ports/devel/p5-Test-NoWarnings
 p5-Test-Number-Delta            ports/devel/p5-Test-Number-Delta
 p5-Test-Object                  ports/devel/p5-Test-Object
@@ -14479,6 +14482,7 @@ p5-http-cookies-mozilla         ports/www/p5-HTTP-Cookies-Mozilla
 p5-http-cookies-w3m             ports/www/p5-HTTP-Cookies-w3m
 p5-http-dav                     ports/www/p5-HTTP-DAV
 p5-http-engine                  ports/www/p5-HTTP-Engine
+p5-http-engine-middleware       ports/www/p5-HTTP-Engine-Middleware
 p5-http-ghttp                   ports/www/p5-HTTP-GHTTP
 p5-http-headerparser-xs         ports/www/p5-HTTP-HeaderParser-XS
 p5-http-headers-fast            ports/www/p5-HTTP-Headers-Fast
@@ -15822,6 +15826,7 @@ p5-test-mockmodule              ports/devel/p5-Test-MockModule
 p5-test-mockobject              ports/devel/p5-Test-MockObject
 p5-test-mockrandom              ports/devel/p5-Test-MockRandom
 p5-test-mocktime                ports/devel/p5-Test-MockTime
+p5-test-most                    ports/devel/p5-Test-Most
 p5-test-nowarnings              ports/devel/p5-Test-NoWarnings
 p5-test-number-delta            ports/devel/p5-Test-Number-Delta
 p5-test-object                  ports/devel/p5-Test-Object
