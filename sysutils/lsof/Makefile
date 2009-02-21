@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lsof
-PORTVERSION=	4.82A
+PORTVERSION=	4.82C
 PORTEPOCH=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
