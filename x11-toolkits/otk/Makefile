@@ -6,31 +6,34 @@
 #
 
 PORTNAME=	otk
-PORTVERSION=	0.64
-PORTREVISION=	1
+PORTVERSION=	0.80
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}_lib_${DISTVERSION}
+DISTNAME=	${PORTNAME}_lib_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Widget library based on OpenGL
 
+WRKSRC=		${WRKDIR}/${PORTNAME}_lib
+
+USE_XORG=	xmu xext x11
 USE_GL=		glut glu gl
 USE_LDCONFIG=	yes
-USE_XORG=	xmu xext x11
-WRKSRC=		${WRKDIR}/${PORTNAME}_lib
-CFLAGS+=	-I${LOCALBASE}/include -fPIC
+
+PLIST_FILES=	include/gadget_lib.h include/otk_lib.h \
+		lib/libotk.so lib/libotk.so.0 
+
+CPPFLAGS=	-I${LOCALBASE}/include -fPIC
 LDFLAGS=	-lGLU -lGL -lXmu -lXext -lX11 -L${LOCALBASE}/lib
-PLIST_FILES=	lib/libotk.so lib/libotk.so.0 include/gadget_lib.h include/otk_lib.h
 
 do-build:
-	@cd ${WRKSRC}/&&\
-		${CC} ${CFLAGS} ${LDFLAGS} -shared ./otk_lib.c -o libotk.so.0
+	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -shared otk_lib.c \
+		-o libotk.so.0 ${LDFLAGS}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/libotk.so.0 ${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/libotk.so.0 ${PREFIX}/lib
 	@${LN} -sf libotk.so.0 ${PREFIX}/lib/libotk.so
-	@${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/
+	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include
 
 .include <bsd.port.mk>
