@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mtools
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.5
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://mtools.linux.lu/
