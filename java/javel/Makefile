@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java disassembler
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+EXPIRATION_DATE=2009-03-22
+
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 USE_GCC=	2.95

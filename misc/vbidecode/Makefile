@@ -17,6 +17,9 @@ DISTNAME=		bttv-0.6.4
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Get Videotext/Teletext (.vtx) and other VBI data from TV channels
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+EXPIRATION_DATE=2009-03-22
+
 PLIST_FILES=		bin/vbidecode
 WRKSRC=			${WRKDIR}/bttv/apps/vbidecode
 USE_GCC=		2.95

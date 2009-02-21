@@ -14,6 +14,9 @@ DISTFILES=	wamcc2.23.tar.gz prg.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prolog-to-C translator from Inria
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+EXPIRATION_DATE=2009-03-22
+
 DIST_SUBDIR=	wamcc
 NO_WRKSUBDIR=	yes
 

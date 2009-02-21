@@ -15,6 +15,9 @@ MASTER_SITES=	ftp://ftp.unicamp.br/pub/languages/java/guavac/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java compiler and decompiler developed under GPL
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+EXPIRATION_DATE=2009-03-22
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAN1=		guavac.1

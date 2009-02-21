@@ -16,6 +16,9 @@ DIST_SUBDIR=	RenderPark
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible scene graph library based on VRML'97
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+EXPIRATION_DATE=2009-03-22
+
 WRKSRC=		${WRKDIR}/${PORTNAME:U}
 
 USE_GMAKE=	yes

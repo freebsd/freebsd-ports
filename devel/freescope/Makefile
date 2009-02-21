@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Source code browsing on UNIX-like operating systems
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+EXPIRATION_DATE=2009-03-22
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 GNU_CONFIGURE=	yes
