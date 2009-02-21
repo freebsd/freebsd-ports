@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	xine
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	An alternative GUI for the Xine media player
 
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine

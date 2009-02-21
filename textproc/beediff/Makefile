@@ -11,7 +11,7 @@ CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.beesoft.org/download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	QT4 based diff frontend
 
 USE_QT_VER=	4

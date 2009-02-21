@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	ID3 tags charset converter
 
 LIB_DEPENDS=	tag.6:${PORTSDIR}/audio/taglib/

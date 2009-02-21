@@ -13,7 +13,7 @@ CATEGORIES=	misc kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=kbfx
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A new K-menu for KDE
 
 USE_CMAKE=	yes

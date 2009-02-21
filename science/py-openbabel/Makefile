@@ -11,7 +11,7 @@ CATEGORIES=	science python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Python bindings for openbabel
 
 LIB_DEPENDS=	openbabel.3:${PORTSDIR}/science/openbabel

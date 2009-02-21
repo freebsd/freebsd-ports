@@ -10,7 +10,7 @@ PORTVERSION=	0.4.4
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Draws Mandelbrot and Julia fractals
 
 USE_BZIP2=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.notmart.org/files/
 PKGNAMEPREFIX=	kde4-style-
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	KDE style and window decoration
 
 USE_BZIP2=	yes

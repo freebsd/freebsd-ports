@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	x11 kde
 MASTER_SITES=	http://dp0154.debowypark.waw.pl/
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	KDE utility to configure the X server
 
 USE_BZIP2=	yes

@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	SF
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Chemistry file translation program
 
 USE_GNOME=	gnomehack gnometarget libxml2

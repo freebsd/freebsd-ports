@@ -12,7 +12,7 @@ CATEGORIES=	graphics math
 MASTER_SITES=	SF
 DISTNAME=	XaoS-${PORTVERSION}
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A real-time fractal browser for X11 and ASCII terminals
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
