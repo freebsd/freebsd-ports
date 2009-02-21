@@ -45,12 +45,12 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 .include <bsd.port.pre.mk>
 
 .if defined(EMACS_PORT_NAME)
-.if (${EMACS_PORT_NAME} == "emacs22")
+.if (${EMACS_PORT_NAME} == "emacs22") || (${EMACS_PORT_NAME} == "emacs-devel")
 DEPPORT_SUFFIX=
 .else
 DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
 .endif
-.if (${EMACS_PORT_NAME} == "emacs21") || (${EMACS_PORT_NAME} == "emacs22")
+.if (${EMACS_PORT_NAME} == "emacs21") || (${EMACS_PORT_NAME} == "emacs22") || (${EMACS_PORT_NAME} == "emacs-devel")
 PLIST=		${PKGDIR}/pkg-plist.emacs21
 .endif
 # depends on apel (case of xemacs-21.x or later)
