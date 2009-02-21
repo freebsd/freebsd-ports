@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.2.7
+PORTVERSION?=		3.2.8
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
@@ -15,7 +15,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p/pre/:S/.r/rc/}
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
-CONFLICTS?=		*samba-2.* *samba-3.0* sharity-light-1.* tdb-1.*
+CONFLICTS?=		*samba-2.* *samba-3.[03].* sharity-light-1.* tdb-1.*
 
 USE_GMAKE=		yes
 USE_ICONV=		yes
@@ -295,13 +295,13 @@ MAN1=		findsmb.1 ldbadd.1 ldbdel.1 ldbedit.1 ldbmodify.1 ldbsearch.1 \
 MAN3=		ldb.3
 MAN5=		lmhosts.5 smb.conf.5 smbgetrc.5 smbpasswd.5
 MAN7=		samba.7
-
 MAN8=		eventlogadm.8 net.8 nmbd.8 pdbedit.8 smbd.8 smbpasswd.8 \
 		smbspool.8 tdbbackup.8 tdbdump.8 tdbtool.8 \
 		idmap_nss.8 idmap_tdb.8 \
 		vfs_audit.8 vfs_cap.8 vfs_default_quota.8 vfs_extd_audit.8 \
 		vfs_fake_perms.8 vfs_full_audit.8 vfs_netatalk.8 \
-		vfs_readonly.8 vfs_recycle.8 vfs_readahead.8 vfs_shadow_copy.8 \
+		vfs_readahead.8 vfs_readonly.8 vfs_recycle.8 vfs_shadow_copy.8 \
+		vfs_shadow_copy2.8 vfs_smb_traffic_analyzer.8 \
 		vfs_streams_xattr.8 vfs_xattr_tdb.8
 
 .if !defined(WITHOUT_WINBIND)
@@ -383,11 +383,13 @@ pre-fetch:
 .endif
 
 pre-configure:
+	@${FIND} ${WRKDIR}/${DISTNAME} -type d | ${XARGS} ${CHMOD} u+w,a+rx
+	@${FIND} ${WRKDIR}/${DISTNAME} -type f | ${XARGS} ${CHMOD} u+w,a+r
+
+post-configure:
 # It's in another port
 	@${RM} -f ${WRKDIR}/${DISTNAME}/docs/htmldocs/manpages/libsmbclient.7.html
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/examples/libsmbclient
-	@${FIND} ${WRKDIR}/${DISTNAME} -type d | ${XARGS} ${CHMOD} u+w,a+rx
-	@${FIND} ${WRKDIR}/${DISTNAME} -type f | ${XARGS} ${CHMOD} u+w,a+r
 
 pre-install:
 	-@${FIND} "${SAMBA_MODULEDIR}" -type f -o -type l 2>/dev/null | ${SORT} | ${SED} -E 's|^${PREFIX}/?||;' > ${WRKDIR}/.PLIST.exclude
@@ -416,9 +418,9 @@ post-install:
 .if !defined(WITHOUT_WINBIND)
 	${INSTALL_PROGRAM} "${WRKSRC}/nsswitch/nss_winbind.so" "${SAMBA_LIBDIR}/nss_winbind.so.1"
 	${INSTALL_PROGRAM} "${WRKSRC}/nsswitch/nss_wins.so" "${SAMBA_LIBDIR}/nss_wins.so.1"
+	${INSTALL_PROGRAM} "${WRKSRC}/bin/pam_winbind.so" "${SAMBA_LIBDIR}"
 	@${ECHO_CMD} "${SAMBA_LIB}/nss_winbind.so.1" >> ${TMPPLIST};
 	@${ECHO_CMD} "${SAMBA_LIB}/nss_wins.so.1" >> ${TMPPLIST};
-	${INSTALL_PROGRAM} "${WRKSRC}/bin/pam_winbind.so" "${SAMBA_LIBDIR}"
 	@${ECHO_CMD} "${SAMBA_LIB}/pam_winbind.so" >> ${TMPPLIST};
 .endif
 .if defined(WITH_PAM_SMBPASS)

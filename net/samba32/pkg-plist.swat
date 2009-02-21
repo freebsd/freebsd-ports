@@ -259,6 +259,7 @@ share/swat/help/manpages/vfs_commit.8.html
 share/swat/help/manpages/vfs_default_quota.8.html
 share/swat/help/manpages/vfs_extd_audit.8.html
 share/swat/help/manpages/vfs_fake_perms.8.html
+share/swat/help/manpages/vfs_fileid.8.html
 share/swat/help/manpages/vfs_full_audit.8.html
 share/swat/help/manpages/vfs_gpfs.8.html
 share/swat/help/manpages/vfs_netatalk.8.html
@@ -268,6 +269,7 @@ share/swat/help/manpages/vfs_readahead.8.html
 share/swat/help/manpages/vfs_readonly.8.html
 share/swat/help/manpages/vfs_recycle.8.html
 share/swat/help/manpages/vfs_shadow_copy.8.html
+share/swat/help/manpages/vfs_shadow_copy2.8.html
 share/swat/help/manpages/vfs_smb_traffic_analyzer.8.html
 share/swat/help/manpages/vfs_streams_depot.8.html
 share/swat/help/manpages/vfs_streams_xattr.8.html
