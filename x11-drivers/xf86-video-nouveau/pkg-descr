@@ -1,0 +1,7 @@
+nouveau is an X.Org Foundation and Freedesktop.org project which was
+initially based on the obfuscated 2D-only free and open source "nv"
+driver, aiming to develop free software drivers for NVIDIA graphics
+cards, by reverse engineering NVIDIA's current proprietary drivers for
+Linux.
+
+WWW: http://nouveau.freedesktop.org/
