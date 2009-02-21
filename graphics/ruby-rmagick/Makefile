@@ -29,7 +29,8 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		RUBY="${RUBY}"
-CONFIGURE_ARGS=	--doc-dir="${RUBY_MODDOCDIR}" --prefix="${PREFIX}"
+CONFIGURE_ARGS=	--doc-dir="${RUBY_MODDOCDIR}" --prefix="${PREFIX}" \
+		--allow-example-errors
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--disable-htmldoc
 .endif
