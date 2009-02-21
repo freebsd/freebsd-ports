@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	faac
-PORTVERSION=	1.26
-PORTREVISION=	1
+PORTVERSION=	1.28
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	faac
+MASTER_SITES=	SFE
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG-2 and MPEG-4 AAC audio encoder
@@ -18,23 +16,26 @@ COMMENT=	MPEG-2 and MPEG-4 AAC audio encoder
 LIB_DEPENDS=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 
 RESTRICTED=	Distribution in binary form is prohibited
-WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USE_BZIP2=	yes
 USE_DOS2UNIX=	yes
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	automake:19 autoheader:262 libtool:15
-AUTOMAKE_ARGS=	--add-missing
 USE_GMAKE=	yes
-USE_DOS2UNIX=	yes
+USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 libtool:15
+ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-lmp4v2"
+USE_LDCONFIG=	yes
+
+MAN1=		faac.1
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+	@${ECHO_CMD} "" >> ${WRKSRC}/libfaac/psych.h
+
 pre-configure:
-	@${ECHO_CMD} "" >>${WRKSRC}/libfaac/psych.h
-	@cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I .; \
-		${SETENV} ${SCRIPTS_ENV} ${LIBTOOLIZE} --automake
+	@cd ${WRKSRC}; ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} --automake
 
 .include <bsd.port.post.mk>
