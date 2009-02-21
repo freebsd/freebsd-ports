@@ -35,8 +35,8 @@ MAN6=	fc-solve-board_gen.6 \
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${DOCSDIR}
-.for DOCFILE in PORTDOCS
-	${INSTALL_DATA} ${WRKSRC}/${DOCFILE}
+.for DOCFILE in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${DOCFILE} ${DOCSDIR}
 .endfor
 .endif
 
