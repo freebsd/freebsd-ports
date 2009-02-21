@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ifm
-PORTVERSION=	5.2
-PORTREVISION=	2
+PORTVERSION=	5.4
 CATEGORIES=	games tk
-MASTER_SITES=	http://www.ibiblio.org/pub/docs/interactive-fiction/mapping-tools/
+MASTER_SITES=	http://www.ifarchive.org/%SUBDIR%/
+MASTER_SITE_SUBDIR=	if-archive/mapping-tools
 
 MAINTAINER=	akosela@andykosela.com
 COMMENT=	Interactive Fiction mapper and walkthrough generator
@@ -22,15 +22,10 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	WISH=${LOCALBASE}/bin/wish8.4
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|lib doc progs|lib progs|g' ${WRKSRC}/Makefile.in
+MAN1=		ifm.1
 
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/ifm.pdf ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKSRC}/doc/ifm/* ${DOCSDIR}/html
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's/lib doc man/lib man/g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/docdir/d' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
