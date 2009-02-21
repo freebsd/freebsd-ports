@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ogmrip
-PORTVERSION=	0.12.2
-PORTREVISION=	1
+PORTVERSION=	0.12.3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -17,6 +16,8 @@ COMMENT=	Application and libraries for encoding DVDs into DivX/OGM files
 BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \
 		gsed:${PORTSDIR}/textproc/gsed
 LIB_DEPENDS=	enca.5:${PORTSDIR}/converters/enca \
+		png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff \
 		dvdread.4:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
@@ -136,6 +137,8 @@ post-patch:
 		 s|^CPPFLAGS=|#CPPFLAGS=|g ; \
 		 s|^LDFLAGS=|#LDFLAGS|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^SUBDIRS|#SUBDIRS|g' ${WRKSRC}/docs/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/PROGRAM/s|MP4Box|mp4box|g' ${WRKSRC}/libogmrip/ogmrip-mp4.c
 
 post-install:
 	@${ECHO_CMD} ""
