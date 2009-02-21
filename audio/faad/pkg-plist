@@ -1,7 +1,10 @@
 bin/faad
 include/faad.h
+include/mp4ff.h
+include/mp4ffint.h
 include/neaacdec.h
 lib/libfaad.a
 lib/libfaad.la
 lib/libfaad.so
-lib/libfaad.so.0
+lib/libfaad.so.2
+lib/libmp4ff.a
