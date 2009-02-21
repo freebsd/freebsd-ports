@@ -1,7 +1,7 @@
 bin/gattrib
-lib/locale/de_DE/LC_MESSAGES/geda-gattrib.mo
-lib/locale/es_ES/LC_MESSAGES/geda-gattrib.mo
-lib/locale/nl_NL/LC_MESSAGES/geda-gattrib.mo
+%%NLS%%lib/locale/de_DE/LC_MESSAGES/geda-gattrib.mo
+%%NLS%%lib/locale/es_ES/LC_MESSAGES/geda-gattrib.mo
+%%NLS%%lib/locale/nl_NL/LC_MESSAGES/geda-gattrib.mo
 share/applications/geda-gattrib.desktop
 %%DATADIR%%/gattrib-menus.xml
 %%DATADIR%%/system-gattribrc
@@ -15,10 +15,10 @@ share/icons/hicolor/scalable/apps/geda-gattrib.svg
 @dirrmtry share/icons
 @dirrmtry %%DATADIR%%
 @dirrmtry share/applications
-@dirrmtry lib/locale/nl_NL/LC_MESSAGES
-@dirrmtry lib/locale/nl_NL
-@dirrmtry lib/locale/es_ES/LC_MESSAGES
-@dirrmtry lib/locale/es_ES
-@dirrmtry lib/locale/de_DE/LC_MESSAGES
-@dirrmtry lib/locale/de_DE
-@dirrmtry lib/locale
+%%NLS%%@dirrmtry lib/locale/nl_NL/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/nl_NL
+%%NLS%%@dirrmtry lib/locale/es_ES/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/es_ES
+%%NLS%%@dirrmtry lib/locale/de_DE/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/de_DE
+%%NLS%%@dirrmtry lib/locale

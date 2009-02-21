@@ -7,6 +7,7 @@
 
 PORTNAME=	examples
 PORTVERSION=	1.4.3
+PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/release/v1.4/${PORTVERSION}/ \
 		http://geda.seul.org/release/v1.4/${PORTVERSION}/

@@ -7,6 +7,7 @@
 
 PORTNAME=	utils
 PORTVERSION=	1.4.3
+PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/release/v1.4/${PORTVERSION}/ \
 		http://geda.seul.org/release/v1.4/${PORTVERSION}/
@@ -25,6 +26,8 @@ DATADIR=	${PREFIX}/share/geda
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
+USE_PERL5_RUN=	yes
+USE_PYTHON_RUN=	yes
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -35,5 +38,9 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e "s,^(DATADIR[[:space:]]*=[[:space:]]*)gEDA,\1geda," \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -E \
+		-e "s,^(#!)/usr/bin/perl,\1${PERL}," \
+		-e "s,^(#!)/usr/bin/python,\1${PYTHON_CMD}," \
+		${WRKSRC}/scripts/*
 
 .include <bsd.port.mk>

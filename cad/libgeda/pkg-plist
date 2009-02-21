@@ -35,10 +35,10 @@ share/icons/hicolor/48x48/mimetypes/application-x-geda-symbol-48.png
 share/icons/hicolor/scalable/mimetypes/application-x-geda-gsch2pcb-project.svg
 share/icons/hicolor/scalable/mimetypes/application-x-geda-schematic.svg
 share/icons/hicolor/scalable/mimetypes/application-x-geda-symbol.svg
-share/locale/de_DE/LC_MESSAGES/libgeda33.mo
-share/locale/en_GB/LC_MESSAGES/libgeda33.mo
-share/locale/es_ES/LC_MESSAGES/libgeda33.mo
-share/locale/nl_NL/LC_MESSAGES/libgeda33.mo
+%%NLS%%share/locale/de_DE/LC_MESSAGES/libgeda33.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/libgeda33.mo
+%%NLS%%share/locale/es_ES/LC_MESSAGES/libgeda33.mo
+%%NLS%%share/locale/nl_NL/LC_MESSAGES/libgeda33.mo
 share/mime/packages/libgeda.xml
 share/mimelnk/application/x-geda-gsch2pcb-project.desktop
 share/mimelnk/application/x-geda-schematic.desktop
@@ -47,10 +47,10 @@ share/mimelnk/application/x-geda-symbol.desktop
 @dirrmtry share/mimelnk
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
-@dirrmtry share/locale/nl_NL/LC_MESSAGES
-@dirrmtry share/locale/nl_NL
-@dirrmtry share/locale/de_DE/LC_MESSAGES
-@dirrmtry share/locale/de_DE
+%%NLS%%@dirrmtry share/locale/nl_NL/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl_NL
+%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de_DE
 @dirrmtry share/icons/hicolor/scalable/mimetypes
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/48x48/mimetypes
