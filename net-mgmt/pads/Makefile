@@ -7,9 +7,9 @@
 
 PORTNAME=	pads
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	passive
+MASTER_SITES=	SF/passive
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passively detect network assets
