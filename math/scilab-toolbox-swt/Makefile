@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	scwt
 PKGNAMEPREFIX=	scilab-toolbox-
 DISTNAME=	${PORTNAME}${DISTVERSION}
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Scilab 1-D and 2-D Wavelet Toolbox
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/scilab:${PORTSDIR}/math/scilab

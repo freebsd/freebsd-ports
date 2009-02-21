@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=qwt
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qwt widget library for technical purposes (old version)
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

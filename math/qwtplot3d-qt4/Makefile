@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 PKGNAMESUFFIX=	-qt4
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	3D plotting widgets for scientific data and math expressions
 
 USE_QT_VER=	4

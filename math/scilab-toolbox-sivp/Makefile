@@ -12,7 +12,7 @@ CATEGORIES=	math graphics multimedia
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	scilab-toolbox-
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Scilab Image and Video Processing Toolbox
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/scilab:${PORTSDIR}/math/scilab \

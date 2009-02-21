@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=${PORTNAME}-rally
 DISTFILES=	trigger-${PORTVERSION}-src${EXTRACT_SUFX} \
 		trigger-${DATAVERSION}-data${EXTRACT_SUFX}
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A rally car racing game
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam

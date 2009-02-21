@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=wikipedia
 DISTNAME=	${PORTNAME}-linux-x86-${PORTVERSION}
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Convert latex equations to HTML, MathML, PNG
 
 USE_OCAML=	yes

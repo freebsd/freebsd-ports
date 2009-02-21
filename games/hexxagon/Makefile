@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.nesqi.se/hexxagon/hexxagon/download/
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A strategy hexagon game
 
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
