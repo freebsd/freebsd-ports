@@ -2163,6 +2163,7 @@
     SUBDIR += pth
     SUBDIR += pth-hard
     SUBDIR += pthsem
+    SUBDIR += ptlib
     SUBDIR += ptmalloc
     SUBDIR += ptmalloc2
     SUBDIR += pty

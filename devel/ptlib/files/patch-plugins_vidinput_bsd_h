@@ -1,0 +1,11 @@
+--- plugins/vidinput_bsd/vidinput_bsd.h.orig	2009-01-11 17:52:59.000000000 -0500
++++ plugins/vidinput_bsd/vidinput_bsd.h	2009-01-26 17:55:00.000000000 -0500
+@@ -62,7 +62,7 @@
+ 
+   static PStringList GetInputDeviceNames();
+ 
+-  PStringList GetDeviceNames() const
++  PStringArray GetDeviceNames() const
+   { return GetInputDeviceNames(); }
+ 
+   PINDEX GetMaxFrameBytes();
