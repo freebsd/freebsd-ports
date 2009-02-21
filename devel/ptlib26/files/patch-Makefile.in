@@ -1,0 +1,24 @@
+--- Makefile.in.orig	2009-01-11 17:53:18.000000000 -0500
++++ Makefile.in	2009-01-26 15:09:22.000000000 -0500
+@@ -120,9 +120,9 @@
+ 	$(INSTALL) -m 755 make/ptlib-config $(DESTDIR)$(PREFIX)/share/ptlib/make/
+ 	(cd $(DESTDIR)$(PREFIX)/bin; rm -f ptlib-config ; ln -snf ../share/ptlib/make/ptlib-config ptlib-config)
+ 
+-	mkdir -p $(DESTDIR)$(LIBDIR)/pkgconfig
+-	chmod 755 $(DESTDIR)$(LIBDIR)/pkgconfig
+-	$(INSTALL) -m 644 ptlib.pc $(DESTDIR)$(LIBDIR)/pkgconfig/
++	mkdir -p $(DESTDIR)$(PREFIX)/libdata/pkgconfig
++	chmod 755 $(DESTDIR)$(PREFIX)/libdata/pkgconfig
++	$(INSTALL) -m 644 ptlib.pc $(DESTDIR)$(PREFIX)/libdata/pkgconfig/
+ uninstall:
+ 	rm -rf $(DESTDIR)$(PREFIX)/include/ptlib \
+ 	       $(DESTDIR)$(PREFIX)/include/ptclib \
+@@ -130,7 +130,7 @@
+ 	       $(DESTDIR)$(PREFIX)/include/ptbuildopts.h \
+ 	       $(DESTDIR)$(PREFIX)/share/ptlib \
+ 	       $(DESTDIR)$(LIBDIR)/$(DEV_PLUGIN_DIR) \
+-	       $(DESTDIR)$(LIBDIR)/pkgconfig/ptlib.pc
++	       $(DESTDIR)$(PREFIX)/libdata/pkgconfig/ptlib.pc
+ 	rm -f $(DESTDIR)$(LIBDIR)/lib$(PTLIB_BASE)_s.a \
+ 	      $(DESTDIR)$(LIBDIR)/$(PTLIB_FILE) \
+ 	      $(DESTDIR)$(LIBDIR)/$(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@@BUILD_TYPE@@BUILD_NUMBER@
