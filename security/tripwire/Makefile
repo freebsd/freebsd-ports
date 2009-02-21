@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tripwire
-PORTVERSION=	2.4.0.1
+PORTVERSION=	2.4.1.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,8 +19,7 @@ LATEST_LINK=	${PORTNAME}
 MAN5=		twfiles.5 twconfig.5 twpolicy.5
 MAN8=		siggen.8 tripwire.8 twadmin.8 twintro.8 twprint.8
 NO_PACKAGE=	"requires local database to be built"
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-BUILD_WRKSRC=	${WRKSRC}/src
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -70,9 +69,9 @@ install-config-files:
 	@ cd ${WRKSRC} && ${LN} -sf install/install.cfg install/install.sh .
 .if ( defined(TRIPWIRE_CLOBBER) && ${TRIPWIRE_CLOBBER} == "YES" ) || \
     ( defined(TRIPWIRE_CLOBBER) && ${TRIPWIRE_CLOBBER} == "yes" )
-	@ cd ${WRKSRC} && PREFIX=${PREFIX} ./install.sh -f
+	@ cd ${WRKSRC} && PREFIX=${PREFIX} CLOBBER=true ${GMAKE} install-data-hook
 .else
-	@ cd ${WRKSRC} && PREFIX=${PREFIX} ./install.sh
+	@ cd ${WRKSRC} && PREFIX=${PREFIX} ${GMAKE} install-data-hook
 .endif
 
 create-database:
