@@ -8,7 +8,7 @@
 
 PORTNAME=	abiword-plugins
 PORTVERSION=	2.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -175,7 +175,7 @@ PLIST_SUB+=		LATEX:="@comment "
 .endif
 
 .if defined(WITH_MATHVIEW) || defined(PACKAGE_BUILDING)
-LIB_DEPENDS+=		mathview_backend_gtk.7:${PORTSDIR}/x11-toolkits/gtkmathview
+LIB_DEPENDS+=		mathview_backend_gtk.8:${PORTSDIR}/x11-toolkits/gtkmathview
 CONFIGURE_ARGS+=	--enable-abimathview
 PLIST_SUB+=		MATHVIEW:=""
 .else
