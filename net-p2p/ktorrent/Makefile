@@ -6,9 +6,7 @@
 #
 
 PORTNAME=	ktorrent
-PORTVERSION=	3.1.6
-DISTVERSIONSUFFIX=	-4
-PORTREVISION=	1
+PORTVERSION=	3.2
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${PORTVERSION}/
 
@@ -28,6 +26,30 @@ USE_CMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+OPTIONS=	SYNDICATION "Enable RSS/Atom plugin" on \
+		PLASMA "Enable Ktorrent Plasma applet" on
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_SYNDICATION)
+USE_KDE4+=	pimlibs
+PLIST_SUB+=	SYNDICATION=""
+.else
+CMAKE_ARGS+=	-DENABLE_SYNDICATION_PLUGIN=false
+PLIST_SUB+=	SYNDICATION="@comment "
+.endif
+
+.if !defined(WITHOUT_PLASMA)
+USE_KDE4+=	workspace
+PLIST_SUB+=	PLASMA=""
+.else
+PLIST_SUB+=	PLASMA="@comment "
+.endif
+
+pre-configure:
+.if defined(WITHOUT_PLASMA)
+	${REINPLACE_CMD} -e '/add_subdirectory(applet)/d' \
+		${WRKSRC}/plasma/CMakeLists.txt
+.endif
+
+.include <bsd.port.post.mk>
