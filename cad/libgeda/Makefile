@@ -8,6 +8,7 @@
 PORTNAME=	libgeda
 PORTVERSION=	1.4.3
 PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/release/v1.4/${PORTVERSION}/ \
 		http://geda.seul.org/release/v1.4/${PORTVERSION}/
@@ -26,6 +27,14 @@ CONFIGURE_ARGS=	--disable-update-mime-database \
 		--disable-update-desktop-database
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E \

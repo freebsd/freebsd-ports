@@ -7,6 +7,7 @@
 
 PORTNAME=	gattrib
 PORTVERSION=	1.4.3
+PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/release/v1.4/${PORTVERSION}/ \
 		http://geda.seul.org/release/v1.4/${PORTVERSION}/
@@ -25,10 +26,19 @@ DOCSDIR=	${PREFIX}/share/doc/geda
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 glib20
 USE_GMAKE=	yes
+INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--with-docdir="${DOCSDIR}" --disable-update-mime-database \
 		--disable-update-desktop-database
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E \
