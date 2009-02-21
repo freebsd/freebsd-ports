@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=${PORTNAME}
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A Qt4 front-end to DOSBox
 
 RUN_DEPENDS=	dosbox:${PORTSDIR}/emulators/dosbox
