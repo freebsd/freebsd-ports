@@ -139,7 +139,7 @@ PLIST_SUB+=	CDDA="@comment "
 .endif
 
 .if !defined(WITHOUT_FAAD)
-LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
 PLIST_SUB+=	FAAD=""
 .else
 EXCLUDE+=	--without-plugins="faad" --without-plugins="mp4"

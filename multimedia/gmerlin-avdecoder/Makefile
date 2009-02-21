@@ -7,7 +7,7 @@
 
 PORTNAME=	gmerlin-avdecoder
 PORTVERSION=	0.1.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin
 
@@ -123,7 +123,7 @@ CONFIGURE_ARGS+=--disable-libpng
 .endif
 
 .if !defined(WITHOUT_FAAD)
-LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
 .else
 CONFIGURE_ARGS+=--disable-faad2
 .endif

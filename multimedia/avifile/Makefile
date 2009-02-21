@@ -7,7 +7,7 @@
 
 PORTNAME=	avifile
 PORTVERSION=	0.7.43
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -110,7 +110,7 @@ PLIST_SUB+=	A52="@comment "
 
 # faad
 .if !defined(WITHOUT_FAAD)
-LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
 
 CONFIGURE_ARGS+=	--with-faad-prefix=${LOCALBASE}
 .else

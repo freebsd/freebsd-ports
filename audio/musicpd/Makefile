@@ -7,6 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.14.1
+PORTREVISION=	1
 CATEGORIES=	audio ipv6
 MASTER_SITES=   SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -74,7 +75,7 @@ LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
 .endif
 
 .if defined(WITH_AAC)
-LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
 .else
 CONFIGURE_ARGS+=--disable-aac
 .endif

@@ -8,6 +8,7 @@
 
 PORTNAME=	muine
 PORTVERSION=	0.8.10
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 
@@ -41,7 +42,7 @@ OPTIONS=	XINE "Enable Xine backend" off \
 
 .include <bsd.port.pre.mk>
 .if defined (WITH_FAAD)
-LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
 .else
 CONFIGURE_ARGS+=	--disable-faad2
 .endif

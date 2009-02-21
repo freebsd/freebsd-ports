@@ -7,7 +7,7 @@
 
 PORTNAME=	mpeg4ip
 PORTVERSION=	1.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	LOCAL/ahze
 # http://sourceforge.net/forum/forum.php?thread_id=1839453&forum_id=59136
@@ -21,7 +21,7 @@ COMMENT=	Standards-based system to encode, stream and play MPEG-4 audio/video
 BUILD_DEPENDS=	mpeg4ip-libmp4v2>=1.6.1:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \
 		${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	faac.0:${PORTSDIR}/audio/faac \
-		faad.0:${PORTSDIR}/audio/faad \
+		faad.2:${PORTSDIR}/audio/faad \
 		mp3lame.0:${PORTSDIR}/audio/lame \
 		id3tag.0:${PORTSDIR}/audio/libid3tag \
 		a52.0:${PORTSDIR}/audio/liba52 \
