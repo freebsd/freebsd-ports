@@ -33,6 +33,7 @@ include/xine/video_overlay.h
 include/xine/vo_scale.h
 include/xine/xine_buffer.h
 include/xine/xine_internal.h
+include/xine/xine_mmx.h
 include/xine/xine_plugin.h
 include/xine/xineintl.h
 include/xine/xineutils.h
@@ -179,6 +180,7 @@ share/aclocal/xine.m4
 %%DOCSDIR%%/hackersguide/post_frame.png
 share/locale/cs/LC_MESSAGES/libxine1.mo
 share/locale/de/LC_MESSAGES/libxine1.mo
+share/locale/en_US/LC_MESSAGES/libxine1.mo
 share/locale/eo/LC_MESSAGES/libxine1.mo
 share/locale/es/LC_MESSAGES/libxine1.mo
 share/locale/eu/LC_MESSAGES/libxine1.mo

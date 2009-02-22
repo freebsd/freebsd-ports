@@ -1,0 +1,13 @@
+--- src/combined/ffmpeg/Makefile.in.orig	2009-02-22 09:21:57.000000000 +0900
++++ src/combined/ffmpeg/Makefile.in	2009-02-22 09:51:00.000000000 +0900
+@@ -889,8 +889,8 @@
+ 
+ avcodec_audio.list avcodec_video.list:
+ 	echo '#include "$(srcdir)/ffmpeg_decoder.h"' | $(AV_CPP) - |\
+-	  sed -e $(AV_CODECS)'! d; s/^\s*//; s/[=,].*//; /^$$/ d' |\
+-	  head -n -1 >$@
++	  sed -e $(AV_CODECS)'! d; s/^\s*//; s/[=,].*//; /^$$/ d' >$@
++	sed -i.bak -e '$$d' $@
+ 
+ # Generate the mappings. These are #included where needed.
+ ff_%_list.h: $(srcdir)/mkcodeclist.pl avcodec_%.list $(srcdir)/xine_%.list
