@@ -54,7 +54,6 @@ post-install:
 
 .if defined(WITH_APACHELOG)
 .if defined(WITH_APACHE2)
-BROKEN=		Broken due the new mod_perl2 API
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 .else
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
