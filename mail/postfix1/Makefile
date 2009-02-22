@@ -44,7 +44,6 @@ OPTIONS=	PCRE		"Perl Compatible Regular Expressions"			on \
 		TEST		"SMTP/LMTP test server and generator"			off
 
 DEPRECATED=	Not supported anymore by vendor. Please choose a new one version.
-BROKEN=		${DEPRECATED}
 EXPIRATION_DATE=	2009-03-08
 
 MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
