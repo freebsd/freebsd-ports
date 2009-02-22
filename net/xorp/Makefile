@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xorp
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	net
 MASTER_SITES=	http://www.xorp.org/releases/${PORTVERSION}/	\
 		http://www2.xorp.org/releases/${PORTVERSION}/	\
@@ -51,10 +51,6 @@ pre-everything::
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800059
-BROKEN=		XORP 1.5 does not compile due to RTF_LLINFO removal
-.endif
 
 XORP_GROUP=	xorp
 USE_RC_SUBR=	xorp

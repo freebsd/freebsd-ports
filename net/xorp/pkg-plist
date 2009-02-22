@@ -6,6 +6,7 @@ bgp/xorp_bgp
 bgp/tools/xorpsh_print_peers
 bgp/tools/xorpsh_print_routes
 cli/tools/send_cli_processor_xrl
+cli/tools/cli_generic
 contrib/olsr/tools/clear_database
 contrib/olsr/tools/print_databases
 contrib/olsr/xorp_olsr4
@@ -73,6 +74,7 @@ rip/xorp_ripng
 rip/tools/show_peer_stats
 rip/tools/show_stats
 static_routes/xorp_static_routes
+vrrp/xorp_vrrp
 xrl/targets/bgp.xrls
 xrl/targets/bgp4_mib.xrls
 xrl/targets/cli.xrls
@@ -106,6 +108,7 @@ xrl/targets/test_peer.xrls
 xrl/targets/test_socket4.xrls
 xrl/targets/test_socket6.xrls
 xrl/targets/test_xrls.xrls
+xrl/targets/vrrp.xrls
 xrl/targets/xorp_if_mib.xrls
 xrl/targets/xorpsh.xrls
 %%XORP_SNMP%%libdata/ldconfig/xorp
@@ -133,6 +136,7 @@ xrl/targets/xorpsh.xrls
 @dirrm ospf/tools
 @dirrm ospf
 @dirrm mld6igmp
+@dirrm vrrp
 %%XORP_SNMP%%@dirrm mibs/snmpdscripts
 %%XORP_SNMP%%@dirrm mibs
 @dirrm libxipc
