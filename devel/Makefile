@@ -1936,6 +1936,7 @@
     SUBDIR += p5-accessors
     SUBDIR += p5-aliased
     SUBDIR += p5-base
+    SUBDIR += p5-boolean
     SUBDIR += p5-capitalization
     SUBDIR += p5-constant-lexical
     SUBDIR += p5-doxygenfilter
