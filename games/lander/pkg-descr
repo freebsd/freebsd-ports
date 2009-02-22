@@ -1,0 +1,7 @@
+This is a Lunar Lander clone written in C++ and OpenGL. Use the
+arrow keys to move the ship and avoid crashing into obstacles.
+Collect all the spinning keys and then land the ship on one of the
+landing pads. The levels are randomly generated and become
+progressively harder.
+
+WWW: http://www.doof.me.uk/lunar-lander/
