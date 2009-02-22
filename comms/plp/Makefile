@@ -14,8 +14,11 @@ MASTER_SITES=	http://www.proudman51.freeserve.co.uk/psion/ \
 MASTER_SITE_SUBDIR=	kris
 DISTNAME=	${PORTNAME}_1_8
 
-MAINTAINER=	maurice@castro.aus.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transfer data between a Psion Series 5(mx) and Unix
+
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+EXPIRATION_DATE=2009-03-22
 
 USE_GMAKE=	yes
 USE_GCC=	2.95
