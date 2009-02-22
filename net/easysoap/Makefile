@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	easysoap
-PORTVERSION=	0.6
+PORTVERSION=	0.8.0
 PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	EasySoap++-${PORTVERSION}
 
-MAINTAINER=	gabriel_ambuehl@buz.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ SOAP Library based on expat
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
@@ -23,14 +23,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
-USE_GCC=	2.95
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 	    ${WRKSRC}/configure
-
-pre-configure:
-	@${ECHO_MSG} "CPPFLAGS=${CPPFLAGS} CXXFLAGS=${CXXFLAGS}"
 
 post-install:
 	@${RM} -f ${PREFIX}/lib/libeasysoap.la
