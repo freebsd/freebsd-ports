@@ -6,45 +6,43 @@
 #
 
 PORTNAME=	cimg
-PORTVERSION=	1.2.9
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 PORTEPOCH=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF
-DISTNAME=	CImg-${DISTVERSION}
+DISTNAME=	CImg_${DISTVERSION}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION},${PORTEPOCH}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	The C++ Template Image Processing Library
 
-USE_ZIP=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME:C/_/-/}
 BUILD_WRKSRC=	${WRKSRC}/examples
-MAKE_ENV=	CPPFLAGS="${CFLAGS} ${LAPACK_DEF} ${PTHREAD_CFLAGS}"		\
-		LDFLAGS="${LDFLAGS} ${LAPACK_LIB} ${PTHREAD_LIBS} -lstdc++"	\
+MAKE_ENV=	CPPFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"	\
+		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"	\
 		X11PATH=${LOCALBASE}
 
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 USE_GMAKE=	yes
 REINPLACE_ARGS=	-i ""
 LIB_DEPENDS+=	board.0:${PORTSDIR}/graphics/libboard
-. if !defined(WITHOUT_LAPACK)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas -lf77blas -L`${CAT} ${WRKSRC}/LIBDIR`/../../.. -lgfortran -latlas
-LAPACK_DEF=	-Dcimg_lapack
-. endif
 
 USE_FORTRAN=	yes
 
-. if !defined(WITHOUT_OPTIMIZATIONS)
+. if !defined(WITH_DEBUG)
 LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png		\
 		jpeg:${PORTSDIR}/graphics/jpeg		\
 		tiff:${PORTSDIR}/graphics/tiff		\
 		Magick:${PORTSDIR}/graphics/ImageMagick	\
+		gimp-2.0:${PORTSDIR}/graphics/gimp-app	\
 		fftw3:${PORTSDIR}/math/fftw3
 ALL_TARGET=	oFreeBSD
 . else
 ALL_TARGET=	dFreeBSD
+WITHOUT_GM=	yes
+WITHOUT_MEDCON=	yes
+WITHOUT_FFMPEG=	yes
+WITHOUT_LAPACK=	yes
 . endif
 
 . if !defined(WITHOUT_GM)
@@ -54,56 +52,69 @@ RUN_DEPENDS+=	gm:${PORTSDIR}/graphics/GraphicsMagick
 RUN_DEPENDS+=	medcon:${PORTSDIR}/graphics/xmedcon
 . endif
 . if !defined(WITHOUT_FFMPEG)
-RUN_DEPENDS+=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	avformat.1:${PORTSDIR}/multimedia/ffmpeg
 . endif
 
 DOCBASE=	CHANGES.txt README.txt
-DOCREFS=	CImg.doxygen CImg_documentation.h CImg_reference.pdf	\
-		download.shtml favicon.ico favicon.png footer.html header.html	\
-		header_reference.html img index.shtml links.shtml news.shtml	\
-		reference screenshots.shtml
+PROGS=		CImg_demo gmic use_jpeg_buffer greycstoration4gimp gmic4gimp
 .else
 NO_BUILD=	yes
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if !defined(NOPORTDOCS)
+. if !defined(WITHOUT_LAPACK)
+.  if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=	yes
+.  endif
+.  if defined(WITH_ATLAS)
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas -lf77blas -L`${CAT} ${WRKSRC}/LIBDIR`/../../.. -lgfortran -latlas
+.  else
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LAPACK_LIB=	-L${LOCALBASE}/lib -llapack -lblas -L`${CAT} ${WRKSRC}/LIBDIR`/../../.. -lgfortran
+.  endif
+. endif
+.endif
+
 pre-configure:
 .if !defined(NOPORTDOCS)
-	${DIRNAME} `${LOCALBASE}/bin/${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
+	${DIRNAME} `${LOCALBASE}/bin/${FC} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 	${REINPLACE_CMD} -e 's|make|${GMAKE}|' ${BUILD_WRKSRC}/Makefile
 .else
-	${REINPLACE_CMD} -e 's|^OPTFLAGS|#OPTFLAGS|' ${BUILD_WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|^OPTFLAGS|#OPTFLAGS|'${BUILD_WRKSRC}/Makefile
 .endif
 . if !defined(WITHOUT_FFMPEG)
-	${REINPLACE_CMD} -e 's|#.*$$(CIMG_FFMPEG_FLAGS)|	$$(CIMG_FFMPEG_FLAGS)|'	\
+	${REINPLACE_CMD} -e 's|#CIMG_FFMPEG_CFLAGS|CIMG_FFMPEG_CFLAGS|'	\
+		-e 's|#CIMG_FFMPEG_LDFLAGS|CIMG_FFMPEG_LDFLAGS|'	\
 		${BUILD_WRKSRC}/Makefile
 . endif
 . if !defined(WITHOUT_LAPACK)
-	${REINPLACE_CMD} -e 's|#.*$$(CIMG_LAPACK_FLAGS)|	$$(CIMG_LAPACK_FLAGS)|'	\
+	${REINPLACE_CMD} -e 's|#CIMG_LAPACK_CFLAGS|CIMG_LAPACK_CFLAGS|'	\
+		-e 's|#CIMG_LAPACK_LDFLAGS|CIMG_LAPACK_LDFLAGS|'	\
+		-e 's|-lblas -llapack|${LAPACK_LIB}|'			\
 		${BUILD_WRKSRC}/Makefile
 . endif
-
-.if !defined(NOPORTDOCS)
-post-build:
-	cd ${WRKSRC}/documentation && doxygen CImg.doxygen
-.endif
+	${REINPLACE_CMD} -e 's|-pedantic|${CFLAGS}|'			\
+		-e 's|-lpthread|${PTHREAD_LIBS}|' ${BUILD_WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/CImg.h ${PREFIX}/include
 .if !defined(NOPORTDOCS)
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/CImg_demo ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${PROGS:C|^|${BUILD_WRKSRC}/|} ${PREFIX}/bin
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DOCBASE:S|^|${WRKSRC}/|} ${DOCSDIR}
-. for doc in ${DOCREFS}
-	${CP} -R ${WRKSRC}/documentation/${doc} ${DOCSDIR}
-. endfor
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	cd ${WRKSRC}/html && ${COPYTREE_SHARE} \* ${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
 	@(cd ${EXAMPLESDIR} && ${GMAKE} clean)
+	@${RM} ${EXAMPLESDIR}/Makefile.orig
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 	${FIND} ${DOCSDIR} ${EXAMPLESDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
