@@ -185,7 +185,6 @@ etc/wolfpack/schedule
 %%DATADIR%%/info.nr/lookout
 %%DATADIR%%/info.nr/lost
 %%DATADIR%%/info.nr/lradar
-%%DATADIR%%/info.nr/lrange
 %%DATADIR%%/info.nr/lretreat
 %%DATADIR%%/info.nr/lstat
 %%DATADIR%%/info.nr/ltend
