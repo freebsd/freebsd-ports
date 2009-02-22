@@ -35,7 +35,7 @@ post-patch:
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
