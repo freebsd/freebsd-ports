@@ -17,7 +17,7 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/dvdnav/ \
 		ftp://ftp2.mplayerhq.hu/MPlayer/releases/dvdnav/
 
 MAINTAINER=	ganael.laplanche@martymac.com
-COMMENT=	Mplayer version of the lidvdread project
+COMMENT=	MPlayer version of the libdvdread project
 
 USE_BZIP2=	yes
 CFLAGS+=	"-I${LOCALBASE}/include"
