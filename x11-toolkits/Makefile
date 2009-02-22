@@ -271,6 +271,7 @@
     SUBDIR += tktable
     SUBDIR += tktray
     SUBDIR += tktreectrl
+    SUBDIR += unique
     SUBDIR += v
     SUBDIR += vdk
     SUBDIR += vdkbuilder
