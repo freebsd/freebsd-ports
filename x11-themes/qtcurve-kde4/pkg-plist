@@ -19,8 +19,4 @@ share/apps/color-schemes/QtCurve.colors
 share/apps/kstyle/themes/qtc_klearlooks.themerc
 share/apps/kstyle/themes/qtcurve.themerc
 share/apps/kwin/qtcurve.desktop
-@dirrm share/apps/kstyle/themes
-@dirrm share/apps/kstyle
-@dirrm share/apps/color-schemes
 @dirrm share/apps/QtCurve
-@dirrm lib/kde4/plugins/styles
