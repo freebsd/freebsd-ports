@@ -1,12 +1,12 @@
-# New ports collection makefile for:   net-mgmt/p5-Net-IP-Match-Regexp
-# Date created:                                1 Aug 2006
-# Whom:                                        Timur I. Bakeyev <bat@cpan.org>
+# New ports collection makefile for:	net-mgmt/p5-Net-IP-Match-Regexp
+# Date created:				1 Aug 2006
+# Whom:					Timur I. Bakeyev <bat@cpan.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	Net-IP-Match-Regexp
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 PORTREVISION=	1
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
