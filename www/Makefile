@@ -857,6 +857,7 @@
     SUBDIR += p5-HTML-SimpleLinkExtor
     SUBDIR += p5-HTML-SimpleParse
     SUBDIR += p5-HTML-StickyQuery
+    SUBDIR += p5-HTML-StickyQuery-DoCoMoGUID
     SUBDIR += p5-HTML-Stream
     SUBDIR += p5-HTML-Strip
     SUBDIR += p5-HTML-StripScripts
