@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_2
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graphical toolkit for TCL
 
 USE_TCL=	82
@@ -36,9 +36,6 @@ TCL82_PORT?=	lang/tcl82
 MANCOMPRESSED=	no
 
 OPTIONS=	TK82_MAN "Install tk 8.2 manpages" off
-
-DEPRECATED=		tcl82 support is going to be dropped
-EXPIRATION_DATE=	2009-04-22
 
 .include <bsd.port.pre.mk>
 

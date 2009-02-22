@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_2
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tool Command Language
 
 PORTSCOUT=	skipv:8.2b1,8.2b2,8.2b3
@@ -29,9 +29,6 @@ NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 PLIST_SUB=	TCL_VER=8.2 SHORT_TCL_VER=82
 
 OPTIONS=	TCL82_MAN "Install tcl 8.2 manpages" off
-
-DEPRECATED=		tcl82 support is going to be dropped
-EXPIRATION_DATE=	2009-04-22
 
 .include <bsd.port.pre.mk>
 
