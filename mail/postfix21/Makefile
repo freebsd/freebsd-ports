@@ -41,7 +41,6 @@ USE_SUBMAKE=	yes
 USE_RC_SUBR=	postfix.sh
 
 DEPRECATED=	Not supported anymore by vendor. Please choose a new one version.
-BROKEN=		${DEPRECATED}
 EXPIRATION_DATE=	2009-03-08
 
 MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
