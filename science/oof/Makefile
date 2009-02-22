@@ -23,7 +23,7 @@ WITH_ATLAS=	yes
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 BLAS_LIBS=	-lf77blas -latlas
 .else
-LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 BLAS_LIBS=	-lblas
 .endif
 
@@ -52,9 +52,8 @@ PLIST_FILES+=	bin/oof2abaqus
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
+BROKEN=		Broken with GCC 4.2 and beyond
+EXPIRATION_DATE=2009-03-22
 
 .if ${ARCH}==sparc64
 BROKEN=		does not compile on ${ARCH}
