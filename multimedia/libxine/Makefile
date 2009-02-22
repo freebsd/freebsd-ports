@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.1.15
-PORTREVISION=	5
+PORTVERSION=	1.1.16.2
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	lib
@@ -63,13 +62,14 @@ OPTIONS=	ARTS "Enable aRts support" off \
 		AALIB "Enable aalib support" off \
 		IMAGEMAGICK "Enable ImageMagick support" off \
 		GTK2 "Enable gdkpixbuf support" off \
-		WAVPACK "Enable WavPack support" on
+		WAVPACK "Enable WavPack support" on \
+		FAAD "Enable external faad support" off
 
 MAN1=	xine-config.1 xine-list-1.1.1
 MAN5=	xine.5
 
 DOCSDIR=	${PREFIX}/share/doc/xine-lib
-PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/1.24"
+PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/1.25"
 
 .include <bsd.port.pre.mk>
 
@@ -175,6 +175,13 @@ CONFIGURE_ARGS+=	--with-wavpack
 .else
 PLIST_SUB+=	WITH_WAVPACK="@comment "
 CONFIGURE_ARGS+=	--without-wavpack
+.endif
+
+.if defined(WITH_FAAD)
+LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
+CONFIGURE_ARGS+=	--with-external-libfaad=yes
+.else
+CONFIGURE_ARGS+=	--with-external-libfaad=no
 .endif
 
 .if ${CONFIGURE_ARGS:M*--without-imagemagick*} == "" || ${CONFIGURE_ARGS:M*-disable-gdkpixbuf*} == ""
