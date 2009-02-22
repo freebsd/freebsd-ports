@@ -417,6 +417,7 @@
     SUBDIR += kuklomenos
     SUBDIR += kwappen
     SUBDIR += ladder
+    SUBDIR += lander
     SUBDIR += lapispuzzle
     SUBDIR += latrine
     SUBDIR += laughingman
