@@ -6,12 +6,14 @@
 #
 
 PORTNAME=		libboard
-PORTVERSION=		0.8.2
+DISTVERSION=		0.8.6b-2
 CATEGORIES=		graphics
 MASTER_SITES=		SF
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		A vector graphics C++ library
+
+BUILD_DEPENDS=		doxygen:${PORTSDIR}/devel/doxygen
 
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS=		--prefix=${PREFIX}
@@ -20,12 +22,14 @@ CONFIGURE_ENV=		CXX=${CXX}
 USE_GMAKE=		yes
 USE_LDCONFIG=		yes
 
+WRKSRC=		${WRKDIR}/${DISTNAME:C/-.$//}
+
 PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != i386
-CFLAGS+=	-fPIC
+CXXFLAGS+=	-fPIC
 .endif
 
 pre-configure:
@@ -42,6 +46,7 @@ post-install:
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/
+	cd ${WRKSRC}/bin/ && ${COPYTREE_BIN} . ${EXAMPLESDIR}/
 	${RM} -rf ${EXAMPLESDIR}/.svn
 .endif
 
