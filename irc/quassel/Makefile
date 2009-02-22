@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quassel
-DISTVERSION=	0.3.1
+DISTVERSION=	0.4.0
 CATEGORIES=	irc
 MASTER_SITES=	http://www.quassel-irc.org/pub/
 
@@ -27,7 +27,8 @@ OPTIONS=	MONO "Quassel standalone client" on \
 
 CMAKE_ARGS+=	-DWANT_MONO=${QUASSEL_MONO} \
 		-DWANT_CORE=${QUASSEL_CORE} \
-		-DWANT_QTCLIENT=${QUASSEL_CLIENT}
+		-DWANT_QTCLIENT=${QUASSEL_CLIENT} \
+		-DWITH_PHONON=OFF
 
 .include <bsd.port.pre.mk>
 
