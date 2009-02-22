@@ -1,0 +1,14 @@
+Most programming languages have a native "Boolean" data type.  Perl
+does not.
+
+Perl has a simple and well known Truth System. The following scalar
+values are false:
+
+ @false = (undef, 0, 0.0, '', '0');
+
+Every other scalar value is true.
+
+This module provides basic Boolean support, by defining two special
+objects: "true" and "false".
+
+WWW:	http://search.cpan.org/dist/boolean/
