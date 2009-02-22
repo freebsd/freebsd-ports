@@ -19,17 +19,14 @@ COMMENT=	An X11 interface to Internet Relay Chat
 # zircon will start with tk84, but a lot of functions won't work
 # a lot of variable names conflicts with new functions.
 .if defined(ZIRCON_WITH_TCL84) || defined(ZIRCON_WITH_TK84)
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+USE_TK=		84
+USE_TCL=	84
 .else
-RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
+USE_TK=		83
+USE_TCL=	83
 .endif
 
 NO_BUILD=	yes
-.if defined(ZIRCON_WITH_TCL84) || defined(ZIRCON_WITH_TK84)
-TCL_VER=	8.4
-.else
-TCL_VER=	8.3
-.endif
 
 do-configure:
 	${REINPLACE_CMD} -e 's=%%WISH%%=wish${TCL_VER}=' \

@@ -18,11 +18,11 @@ PATCHFILES=	${PORTNAME}-${PORTVERSION}.patch.gz
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Spread sheet for X Window System
 
-LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
-		tk82.1:${PORTSDIR}/x11-toolkits/tk82
-
 USE_GMAKE=	yes
 USE_XORG=	x11
+USE_TK=		82
+USE_TCL=	82
+
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 CFLAGS+=	-I$(LOCALBASE)/include \
 		-I$(LOCALBASE)/include/tcl8.2 \
