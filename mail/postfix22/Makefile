@@ -38,6 +38,10 @@ NO_LATEST_LINK=	yes
 USE_SUBMAKE=	yes
 USE_RC_SUBR=	postfix.sh
 
+DEPRECATED=	Not supported anymore by vendor. Please choose a new one version.
+BROKEN=		${DEPRECATED}
+EXPIRATION_DATE=	2009-03-08
+
 MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
 	postlock.1 postlog.1 postmap.1 postqueue.1 postsuper.1 sendmail.1
 
