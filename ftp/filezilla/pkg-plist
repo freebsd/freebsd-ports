@@ -72,6 +72,7 @@ share/pixmaps/filezilla.png
 %%DATADIR%%/resources/16x16/remotetreeview.png
 %%DATADIR%%/resources/16x16/server.png
 %%DATADIR%%/resources/16x16/sitemanager.png
+%%DATADIR%%/resources/16x16/synchronize.png
 %%DATADIR%%/resources/16x16/unknown.png
 %%DATADIR%%/resources/16x16/upload.png
 %%DATADIR%%/resources/16x16/uploadadd.png
