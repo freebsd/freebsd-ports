@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libspf2
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.libspf2.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	spf
