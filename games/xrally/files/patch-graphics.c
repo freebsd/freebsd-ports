@@ -1,59 +1,39 @@
---- menu.c	2001/01/01 18:49:16	1.22 XRALLY_1_1
-+++ menu.c	2001/01/11 15:28:03	1.23 HEAD
+--- graphics.c.orig	2000-12-09 04:42:47.000000000 +1100
++++ graphics.c	2009-02-22 14:41:51.000000000 +1100
 @@ -5,7 +5,7 @@
      copyright            : (C) 2000 by Perdig
      email                : perdig@linuxbr.com.br
-
--    $Id: menu.c,v 1.22 2001/01/01 18:49:16 perdig Exp $
-+    $Id: menu.c,v 1.23 2001/01/11 15:28:03 perdig Exp $
-  ***************************************************************************/
-
- /***************************************************************************
-@@ -25,7 +25,9 @@
- #include "level.h"
- #include "score.h"
- #include "dirent.h"
-+#ifdef USE_SOUND
- #include "sound.h"
-+#endif
- #include "limits.h"
- #include <stdio.h>
- #include <string.h>
---- graphics.c	2000/12/07 12:44:10	1.15 XRALLY_1_1
-+++ graphics.c	2001/01/11 15:28:03	1.16 HEAD
-@@ -5,7 +5,7 @@
-     copyright            : (C) 2000 by Perdig
-     email                : perdig@linuxbr.com.br
-
+ 
 -    $Id: graphics.c,v 1.15 2000/12/07 12:44:10 perdig Exp $
 +    $Id: graphics.c,v 1.16 2001/01/11 15:28:03 perdig Exp $
   ***************************************************************************/
-
+ 
  /***************************************************************************
-@@ -18,12 +18,13 @@
+@@ -18,12 +18,14 @@
   ***************************************************************************/
  #include "graphics.h"
  #include "global.h"
 +#include <unistd.h>
++#include <string.h>
  #include <sys/time.h>
-
+ 
  // Internal functions
-
+ 
  static char ** _split_text(const char *_txt);
 -static int _check_event(XEvent *xev);
 +static int _check_event(XEvent *xev, int blocking);
  long time_diff(struct timeval *rt);
-
+ 
  // Basic X11 variables
-@@ -401,10 +402,15 @@
+@@ -401,10 +403,15 @@
  	return double_buffer;
  }
-
+ 
 -static int _check_event(XEvent *xev) {
 +static int _check_event(XEvent *xev, int blocking) {
  	XEvent *last = NULL;
 +  int a = 0;
-
+ 
 -	while (XCheckMaskEvent(dpy, KeyPressMask | ExposureMask, xev)) {
 +	do {
 +    if (blocking)
@@ -63,7 +43,7 @@
  		switch (xev->type) {
  			case KeyPress:
  				last = xev;
-@@ -417,7 +423,7 @@
+@@ -417,7 +424,7 @@
  			default:
  				break;
  		}
@@ -72,8 +52,8 @@
  	// No events
  	xev = last;
  	return (last) ? true : false;
-@@ -426,32 +432,35 @@
-
+@@ -426,32 +433,35 @@
+ 
  KeySym check_key() {
  	XEvent xev;
 -	if (_check_event(&xev) && xev.type == KeyPress)
@@ -82,7 +62,7 @@
  	// No events
  	return XK_VoidSymbol;
  }
-
+ 
  KeySym wait_key() {
 -	KeySym key = XK_VoidSymbol;
 -	while (key == XK_VoidSymbol) {
@@ -93,7 +73,7 @@
 +  _check_event(&xev, 1);
 +  return XLookupKeysym(&xev.xkey, 0);
  }
-
+ 
  void wait_time(long time_wait) {
 -	struct timeval it;
 +	struct timeval it, tmp;
@@ -109,7 +89,7 @@
 +		_check_event(&xev, 0);
 +  }
  }
-
+ 
  KeySym wait_char(char *str) {
  	KeySym key = XK_VoidSymbol;
  	XEvent xev;
@@ -118,29 +98,3 @@
  	XLookupString(&xev.xkey, str, 3, &key,  NULL);
  	return key;
  }
---- global.h	2001/01/01 18:49:16	1.9 XRALLY_1_1
-+++ global.h	2001/01/11 15:28:03	1.10
-@@ -5,7 +5,7 @@
-     copyright            : (C) 2000 by Perdig
-     email                : perdig@linuxbr.com.br
-
--    $Id: global.h,v 1.9 2001/01/01 18:49:16 perdig Exp $
-+    $Id: global.h,v 1.10 2001/01/11 15:28:03 perdig Exp $
-  ***************************************************************************/
-
- /***************************************************************************
-@@ -212,5 +212,14 @@
-
-
- #define PLAYABLE
-+
-+#ifndef USE_SOUND
-+#define sound_switch()
-+#define sound_stop()
-+#define sound_volume(a)
-+#define sound_start()
-+#define sound_select(a)
-+#define sound_load(a)
-+#endif
-
- #endif
