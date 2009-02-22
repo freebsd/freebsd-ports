@@ -6,6 +6,7 @@
 
 PORTNAME=	python26
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -83,7 +84,7 @@ CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 .endif # !defined(WITHOUT_THREADS)
 
 .if !defined(WITHOUT_UCS4) && !defined(WITH_UCS2)
-CONFIGURE_ARGS-=	--enable-unicode=ucs4
+CONFIGURE_ARGS+=	--enable-unicode=ucs4
 .endif
 
 .if defined(WITHOUT_PYMALLOC)
