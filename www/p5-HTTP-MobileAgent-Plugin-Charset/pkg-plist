@@ -1,0 +1,5 @@
+%%SITE_PERL%%/HTTP/MobileAgent/Plugin/Charset.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MobileAgent/Plugin/Charset/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MobileAgent/Plugin/Charset
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MobileAgent/Plugin
+@dirrmtry %%SITE_PERL%%/HTTP/MobileAgent/Plugin
