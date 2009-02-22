@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.70
+PORTVERSION=	0.71
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DR/DROLSKY
@@ -29,6 +29,7 @@ MAN3=	Moose.3 \
 	Moose::Cookbook.3 \
 	Moose::Cookbook::Basics::Recipe1.3 \
 	Moose::Cookbook::Basics::Recipe10.3 \
+	Moose::Cookbook::Basics::Recipe11.3 \
 	Moose::Cookbook::Basics::Recipe2.3 \
 	Moose::Cookbook::Basics::Recipe3.3 \
 	Moose::Cookbook::Basics::Recipe4.3 \
@@ -48,6 +49,7 @@ MAN3=	Moose.3 \
 	Moose::Cookbook::Meta::Recipe5.3 \
 	Moose::Cookbook::Roles::Recipe1.3 \
 	Moose::Cookbook::Roles::Recipe2.3 \
+	Moose::Cookbook::Roles::Recipe3.3 \
 	Moose::Cookbook::Snack::Keywords.3 \
 	Moose::Cookbook::Snack::Types.3 \
 	Moose::Cookbook::Style.3 \
