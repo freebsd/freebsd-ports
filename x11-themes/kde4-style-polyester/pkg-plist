@@ -5,9 +5,3 @@ share/apps/color-schemes/PolyesterOrangeJuice.colors
 share/apps/kstyle/themes/polyester.themerc
 share/locale/it/LC_MESSAGES/kstyle_polyester_config.mo
 share/locale/pl/LC_MESSAGES/kstyle_polyester_config.mo
-@dirrmtry share/apps/kstyle/themes
-@dirrmtry share/apps/kstyle
-@dirrmtry share/apps/color-schemes
-@dirrmtry lib/kde4/plugins/styles
-@dirrmtry lib/kde4/plugins
-@dirrmtry lib/kde4
