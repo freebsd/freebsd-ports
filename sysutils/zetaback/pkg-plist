@@ -1,6 +1,5 @@
 bin/zetaback
 bin/zetaback_agent
-etc/zetaback.conf
 etc/zetaback.conf.sample
-etc/zetaback_agent.conf
 etc/zetaback_agent.conf.sample
+@unexec echo If permanently deleting this package, %%PREFIX%%/etc/zetaback.conf and %%PREFIX%%/etc/zetaback.conf must be removed manually
