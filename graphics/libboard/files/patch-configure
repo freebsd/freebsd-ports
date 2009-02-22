@@ -1,15 +1,6 @@
---- configure.orig	2007-12-17 11:15:52.000000000 +0100
-+++ configure	2008-11-19 19:05:16.000000000 +0100
-@@ -60,7 +60,7 @@
- ##
- ## Are we on a powerpc (Mac ?)
- ##
--if [ `arch` = "ppc" ]; then
-+if [ `uname -m` = "ppc" ]; then
-     LDFLAGSLIB=-dynamiclib
-     DYNLIB_EXTENSION=dynlib
- fi
-@@ -68,23 +68,23 @@
+--- configure.orig	2009-02-02 12:12:55.000000000 +0100
++++ configure	2009-02-06 10:28:55.000000000 +0100
+@@ -109,23 +109,23 @@
  ##
  ## Are we on a 64 bits arch
  ##
@@ -38,7 +29,7 @@
 +# return n == 0xFFFFFFFF;
 +#}
 +#EOF
-+#gcc -o is64 is64.c
++#$(CXX) -o is64 is64.c
 +#if is64; then
 +#CXX64FLAGS="-fPIC"
 +#echo yes
@@ -48,5 +39,5 @@
 +#fi
 +#rm -f is64 is64.c
  
- 
  cat > Makefile <<EOF
+ 
