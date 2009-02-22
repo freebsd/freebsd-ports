@@ -18025,6 +18025,7 @@ pth-hard                        ports/devel/pth-hard
 pthsem                          ports/devel/pthsem
 ptiger                          ports/astro/ptiger
 ptkei                           ports/games/ptkei
+ptlib                           ports/devel/ptlib
 ptlink-ircd                     ports/irc/ptlink-ircd
 ptlink-services                 ports/irc/ptlink-services
 ptmalloc                        ports/devel/ptmalloc
@@ -22692,6 +22693,7 @@ xf86-video-mach64               ports/x11-drivers/xf86-video-mach64
 xf86-video-mga                  ports/x11-drivers/xf86-video-mga
 xf86-video-neomagic             ports/x11-drivers/xf86-video-neomagic
 xf86-video-newport              ports/x11-drivers/xf86-video-newport
+xf86-video-nouveau              ports/x11-drivers/xf86-video-nouveau
 xf86-video-nsc                  ports/x11-drivers/xf86-video-nsc
 xf86-video-nv                   ports/x11-drivers/xf86-video-nv
 xf86-video-openchrome           ports/x11-drivers/xf86-video-openchrome
