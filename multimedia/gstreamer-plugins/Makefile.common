@@ -224,7 +224,7 @@ gst_faac_DIST=	bad
 
 # faad
 gst_faad_USE_GSTREAMER+=	bad
-gst_faad_LIB_DEPENDS+=	faad.1:${PORTSDIR}/audio/faad
+gst_faad_LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
 gst_faad_PLIST_FILES=	${GST_LIB_DIR}/libgstfaad.la \
 		${GST_LIB_DIR}/libgstfaad.so
 gst_faad_DIST=	bad
