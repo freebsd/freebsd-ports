@@ -1,12 +1,12 @@
 # New ports collection makefile for:	devel/p5-File-ExtAttr
 # Date created:				01 June 2007
-# Whom:					Timur Bakeyev <bat@cpan.org>
+# Whom:					Timur I. Bakeyev <bat@cpan.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=		File-ExtAttr
-PORTVERSION=		1.07
+PORTVERSION=		1.08
 CATEGORIES=		devel perl5
 MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
