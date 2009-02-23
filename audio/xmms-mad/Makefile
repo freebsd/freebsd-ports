@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmms-mad
-PORTVERSION=	0.1.1
-PORTREVISION=	6
+PORTVERSION=	0.10
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -15,19 +14,22 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A XMMS input plugin that uses libmad
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
-		id3tag.0:${PORTSDIR}/audio/libid3tag
-BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+		id3tag.0:${PORTSDIR}/audio/libid3tag \
+		xmms.4:${PORTSDIR}/multimedia/xmms
 
-PLIST_FILES=	lib/xmms/Input/libxmmsmad.so
+USE_BZIP2=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -L${LOCALBASE}/lib"
+PLIST_FILES=	lib/xmms/Input/libxmmsmad.so
 
-post-patch:
-	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
+do-install:
+	cd ${WRKSRC}/src/.libs \
+		&& ${INSTALL_DATA} libxmmsmad.so ${PREFIX}/lib/xmms/Input
 
 .include <bsd.port.mk>
