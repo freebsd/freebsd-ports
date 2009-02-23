@@ -1,5 +1,5 @@
 --- configure.orig	2009-02-02 12:12:55.000000000 +0100
-+++ configure	2009-02-06 10:28:55.000000000 +0100
++++ configure	2009-02-23 18:56:43.000000000 +0100
 @@ -109,23 +109,23 @@
  ##
  ## Are we on a 64 bits arch
@@ -40,4 +40,15 @@
 +#rm -f is64 is64.c
  
  cat > Makefile <<EOF
+ 
+@@ -204,10 +204,6 @@
+ 	cp include/board/*.h \$(PREFIX)/include/board
+ 	chmod 644 \$(PREFIX)/include/Board.h
+ 	chmod 644 \$(PREFIX)/include/board/*.h
+-	install -d \$(PREFIX)/share/libboard/examples
+-	cp examples/*.cpp \$(PREFIX)/share/libboard/examples
+-	cp examples/README \$(PREFIX)/share/libboard/examples
+-	cp ${LICENSE} \$(PREFIX)/share/libboard/
+ 
+ doc: doc/html/index.html
  
