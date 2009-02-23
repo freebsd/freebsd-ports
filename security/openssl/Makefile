@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/openssl/%SUBDIR%/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source
-PKGNAMESUFFIX?=	${BETA_SUFFIX}${BASE_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -25,14 +24,6 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-.if defined(WITH_OPENSSL_BETA)
-BETA_SUFFIX=		-beta
-CONFLICTS?=		openssl-0.* openssl-stable-0.*
-NO_LATEST_LINK=		yes
-.endif
-PLIST_SUB+=		OPENSSL_BETA=""
-PLIST_SUB+=		OPENSSL_STABLE="@comment "
-CONFLICTS?=		openssl-beta-0.* openssl-stable-0.*
 EXTRACONFIGURE+=	enable-camellia
 
 MAKE_ARGS+=		WHOLE_ARCHIVE_FLAG=--whole-archive
