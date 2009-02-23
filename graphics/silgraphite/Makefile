@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silgraphite
-PORTVERSION=	2.3
+PORTVERSION=	2.3.1
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF
 
@@ -18,8 +18,7 @@ OPTIONS=	FREETYPE "Build with Freetype support" on
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CFLAGS+=	"-I${LOCALBASE}/include" "-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--without-xft --without-pangographite
 
 .include <bsd.port.pre.mk>
@@ -33,5 +32,9 @@ PLIST_SUB+=	WITH_FREETYPE=""
 CONFIGURE_ARGS+=	--without-freetype
 PLIST_SUB+=	WITH_FREETYPE="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$${PREFIX}/libdata/pkgconfig|g' \
+		${WRKSRC}/engine/Makefile.in
 
 .include <bsd.port.post.mk>
