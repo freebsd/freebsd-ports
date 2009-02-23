@@ -7,6 +7,7 @@
 
 PORTNAME=	openssl
 PORTVERSION=	0.9.8j
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -27,10 +28,10 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 EXTRACONFIGURE+=	enable-camellia
 
 MAKE_ARGS+=		WHOLE_ARCHIVE_FLAG=--whole-archive
+MAKE_ENV+=		LIBRPATH="${PREFIX}/lib"
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
 NOPRECIOUSSOFTMAKEVARS=	Too many _MLINKS for fetch
 USE_PERL5_BUILD=	yes
-CFLAGS+=		-Wl,-rpath,${LOCALBASE}/lib
 
 MAN1=	CA.pl.1 asn1parse.1 ca.1 ciphers.1 crl.1 crl2pkcs7.1 dgst.1 dhparam.1 \
 	dsa.1 dsaparam.1 ec.1 ecparam.1 enc.1 errstr.1 gendsa.1 genrsa.1 \
