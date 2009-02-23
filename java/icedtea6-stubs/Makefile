@@ -14,12 +14,14 @@ DISTNAME=	jdk-7-icedtea-plugs-$(PORTVERSION)
 MAINTAINER=	brian@experts-exchange.com
 COMMENT=	IcedTea6 binary plugs for openjdk
 
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
 WRKSRC=		$(WRKDIR)/jdk-7-icedtea-plugs
 
 USE_JAVA=	yes
 JAVA_VENDOR=	freebsd bsdjava
 JAVA_VERSION=	1.6
-USE_ANT=	1
+USE_ANT=	yes
 
 pre-build:
 	cd $(WRKSRC) && ${UNZIP_CMD} -u src.zip
