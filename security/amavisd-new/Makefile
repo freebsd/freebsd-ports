@@ -9,6 +9,7 @@
 PORTNAME=	amavisd-new
 PORTVERSION=	2.6.2
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
 		http://mirrors.catpipe.net/amavisd-new/ \
@@ -26,7 +27,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Un
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/IO/Wrap.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6 \
 		p5-Net-Server>=0.93:${PORTSDIR}/net/p5-Net-Server \
 		p5-Mail-DKIM>=0.31:${PORTSDIR}/mail/p5-Mail-DKIM
