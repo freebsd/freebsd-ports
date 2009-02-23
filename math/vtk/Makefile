@@ -35,6 +35,7 @@ VTK_KITS=	Common Filtering Graphics Hybrid IO Imaging Rendering Parallel Patente
 
 PLIST_SUB+=	LIBVER=${LIBVER} PKGNAME=${PKGNAME}
 
+USE_TCL=	84
 USE_TK=		84
 
 .include <bsd.port.pre.mk>
