@@ -1,0 +1,12 @@
+OpenJDK is an open-source implementation of the Java Platform, Standard Edition.
+
+The version has all of Sun's bug fixes up to JDK 6 Release 11 and should be
+the runtime equivelent to JDK6 Release 11.
+
+Much of the OpenJDK code is licensed under the GPL version 2 with the
+Classpath exception. The Java Hotspot virtual machine source code is
+licensed under the GPL version 2 only.
+
+OpenJDK 6 should supercede the java/jdk16 port at some point in time.
+
+WWW: http://openjdk.java.net/
