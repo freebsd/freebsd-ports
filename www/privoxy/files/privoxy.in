@@ -4,7 +4,7 @@
 #
 #
 # PROVIDE: privoxy
-# REQUIRE: NETWORKING
+# REQUIRE: DAEMON
 # BEFORE: LOGIN
 #
 # This rc script understands the following variables
@@ -34,14 +34,23 @@ load_rc_config ${name}
 : ${privoxy_user="privoxy"}
 : ${privoxy_pidfile="/var/run/privoxy/privoxy.pid"}
 
-start_precmd="if [ ! -e ${privoxy_config} ]; then\
- echo ${privoxy_config} not found. Copying default configuration.;\
- cp %%PREFIX%%/share/examples/privoxy/config ${privoxy_config};\
- chown ${privoxy_user}:${privoxy_user} ${privoxy_config};\
-fi"
+config_file_check () {
+    if [ ! -e ${privoxy_config} ]; then
+        echo config file not found. Copying the example file to ${privoxy_config}.
+        cp %%PREFIX%%/share/examples/privoxy/config ${privoxy_config}
+        chown ${privoxy_user}:${privoxy_user} ${privoxy_config};
+    fi
+    actionfile="%%PREFIX%%/etc/privoxy/match-all.action"
+    if [ ! -e ${actionfile} ]; then
+        echo ${actionfile} not found. Copying the example file.
+        cp %%PREFIX%%/share/examples/privoxy/match-all.action ${actionfile}
+        chown ${privoxy_user}:${privoxy_user} ${actionfile}
+    fi
+}
+
+start_precmd="config_file_check"
 
 command="%%PREFIX%%/sbin/privoxy"
 command_args="${privoxy_flags} --pidfile ${privoxy_pidfile} ${privoxy_config}"
 
 run_rc_command "$1"
-

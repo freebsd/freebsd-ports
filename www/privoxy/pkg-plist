@@ -1,7 +1,6 @@
 sbin/privoxy
 etc/privoxy/default.action
 etc/privoxy/default.filter
-etc/privoxy/standard.action
 etc/privoxy/templates/blocked
 etc/privoxy/templates/cgi-error-404
 etc/privoxy/templates/cgi-error-bad-param
@@ -58,6 +57,7 @@ etc/privoxy/templates/url-info-osd.xml
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/upgradersnote.html
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/whatsnew.html
 %%EXAMPLESDIR%%/config
+%%EXAMPLESDIR%%/match-all.action
 %%EXAMPLESDIR%%/trust
 %%EXAMPLESDIR%%/user.action
 @dirrm %%EXAMPLESDIR%%
