@@ -1,0 +1,13 @@
+bin/grib2nc4
+bin/nc3tonc4
+%%PYTHON_SITELIBDIR%%/netCDF4_utils.py
+%%PYTHON_SITELIBDIR%%/netCDF4_utils.pyc
+%%PYTHON_SITELIBDIR%%/netCDF4_utils.pyo
+%%PYTHON_SITELIBDIR%%/netCDF4.so
+%%PYTHON_SITELIBDIR%%/netcdftime/__init__.py
+%%PYTHON_SITELIBDIR%%/netcdftime/__init__.pyc
+%%PYTHON_SITELIBDIR%%/netcdftime/__init__.pyo
+%%PYTHON_SITELIBDIR%%/netcdftime/netcdftime.py
+%%PYTHON_SITELIBDIR%%/netcdftime/netcdftime.pyc
+%%PYTHON_SITELIBDIR%%/netcdftime/netcdftime.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/netcdftime
