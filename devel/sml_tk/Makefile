@@ -7,6 +7,7 @@
 
 PORTNAME=	sml_tk
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.informatik.uni-bremen.de/~cxl/sml_tk/
 DISTNAME=	smltk

@@ -7,7 +7,7 @@
 
 PORTNAME=	tclreadline
 PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel tcl
 MASTER_SITES=	SF/tclreadline
 

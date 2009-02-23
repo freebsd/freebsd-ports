@@ -8,6 +8,7 @@
 PORTNAME=	pd
 DISTVERSION=	0.42-4
 DISTVERSIONSUFFIX=	.src
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www-crca.ucsd.edu/~msp/Software/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	metakit
 PORTVERSION=	2.4.9.7
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.equi4.com/pub/mk/
 

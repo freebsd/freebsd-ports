@@ -7,6 +7,7 @@
 
 PORTNAME=	tclsasl
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	security tcl
 MASTER_SITES=	http://beepcore-tcl.sourceforge.net/
 EXTRACT_SUFX=	.tgz

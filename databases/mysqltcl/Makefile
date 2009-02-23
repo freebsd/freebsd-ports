@@ -7,6 +7,7 @@
 
 PORTNAME=	mysqltcl
 PORTVERSION=	3.05
+PORTREVISION=	1
 CATEGORIES=	databases tcl
 MASTER_SITES=	http://www.xdobry.de/mysqltcl/
 

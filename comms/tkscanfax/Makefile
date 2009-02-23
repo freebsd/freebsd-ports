@@ -8,6 +8,7 @@
 PORTNAME=	tkscanfax
 PORTVERSION=	1.1.8
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	comms tk
 MASTER_SITES=	http://shino.pos.to/linux/tkscanfax/
 
