@@ -7,7 +7,7 @@
 
 PORTNAME=	cost
 PORTVERSION=	2.2p1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc tcl
 MASTER_SITES=	http://www.flightlab.com/~joe/cost/
 

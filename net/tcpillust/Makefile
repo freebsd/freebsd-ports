@@ -7,6 +7,7 @@
 
 PORTNAME=	tcpillust
 PORTVERSION=	2.01a
+PORTREVISION=	1
 CATEGORIES=	net tcl tk
 MASTER_SITES=	http://www.jp.nishida.org/tcpillust/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	ezquake
 PORTVERSION=	1.9
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	games
 MASTER_SITES=	SF:ezquake \
 		http://www.winimage.com/zLibDll/:minizip

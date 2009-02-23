@@ -8,6 +8,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	5.0.4
+PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/5.0/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/

@@ -7,6 +7,7 @@
 
 PORTNAME=	tclsyslog
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils tcl
 MASTER_SITES=	http://ftp.wagner.pp.ru/pub/tcl/tclsyslog/
 

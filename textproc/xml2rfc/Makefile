@@ -6,6 +6,7 @@
 
 PORTNAME=	xml2rfc
 PORTVERSION=	1.33
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://xml.resource.org/authoring/
 EXTRACT_SUFX=	.tgz

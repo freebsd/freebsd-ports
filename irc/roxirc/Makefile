@@ -7,7 +7,7 @@
 
 PORTNAME=	roxirc
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc tk
 MASTER_SITES=	http://roxirc.lighter.net/download/
 

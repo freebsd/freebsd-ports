@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-tcl-octave
 PORTVERSION=	0.1.7
+PORTREVISION=	1
 CATEGORIES=     math
 
 MAINTAINER=	stephen@math.missouri.edu

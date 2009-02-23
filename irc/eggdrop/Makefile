@@ -7,6 +7,7 @@
 
 PORTNAME=	eggdrop
 PORTVERSION=	1.6.19
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/ \
 		LOCAL/beech

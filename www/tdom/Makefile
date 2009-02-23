@@ -7,6 +7,7 @@
 
 PORTNAME=	tDOM
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.tdom.org/files/
 EXTRACT_SUFX=	.tgz

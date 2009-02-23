@@ -7,6 +7,7 @@
 
 PORTNAME=	tktreectrl
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits tk python
 MASTER_SITES=	http://klappnase.bubble.org/TkinterTreectrl/ CENKES
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

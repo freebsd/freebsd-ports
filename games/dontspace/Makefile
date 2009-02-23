@@ -7,7 +7,7 @@
 
 PORTNAME=	dontspace
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games tk
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/JACOBY/
 

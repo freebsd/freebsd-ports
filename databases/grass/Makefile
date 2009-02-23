@@ -7,7 +7,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	6.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://grass.itc.it/grass62/source/ \

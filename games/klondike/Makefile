@@ -7,7 +7,7 @@
 
 PORTNAME=	klondike
 PORTVERSION=	1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games tk
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/JACOBY/
 

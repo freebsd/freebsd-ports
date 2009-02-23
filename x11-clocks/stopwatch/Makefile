@@ -7,7 +7,7 @@
 
 PORTNAME=	stopwatch
 PORTVERSION=	3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://expect.nist.gov/stopwatch/
 DISTNAME=	stopwatch

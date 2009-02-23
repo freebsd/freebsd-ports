@@ -7,7 +7,7 @@
 
 PORTNAME=	catdoc
 PORTVERSION=	0.94.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://mirror.amdmi3.ru/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|amdmi3|} \
