@@ -1,4 +1,5 @@
 bin/ptlib-config
+include/ptbuildopts.h
 include/ptclib/asnber.h
 include/ptclib/asner.h
 include/ptclib/asnper.h
@@ -55,49 +56,7 @@ include/ptclib/xmpp.h
 include/ptclib/xmpp_c2s.h
 include/ptclib/xmpp_muc.h
 include/ptclib/xmpp_roster.h
-@dirrm include/ptclib
-include/ptlib/unix/ptlib/beaudio.h
-include/ptlib/unix/ptlib/bevideo.h
-include/ptlib/unix/ptlib/channel.h
-include/ptlib/unix/ptlib/conchan.h
-include/ptlib/unix/ptlib/config.h
-include/ptlib/unix/ptlib/contain.h
-include/ptlib/unix/ptlib/critsec.h
-include/ptlib/unix/ptlib/dynalink.h
-include/ptlib/unix/ptlib/ethsock.h
-include/ptlib/unix/ptlib/file.h
-include/ptlib/unix/ptlib/filepath.h
-include/ptlib/unix/ptlib/icmpsock.h
-include/ptlib/unix/ptlib/ipdsock.h
-include/ptlib/unix/ptlib/ipsock.h
-include/ptlib/unix/ptlib/maccoreaudio.h
-include/ptlib/unix/ptlib/mutex.h
-include/ptlib/unix/ptlib/pdirect.h
-include/ptlib/unix/ptlib/pipechan.h
-include/ptlib/unix/ptlib/pmachdep.h
-include/ptlib/unix/ptlib/pprocess.h
-include/ptlib/unix/ptlib/ptime.h
-include/ptlib/unix/ptlib/ptlib.inl
-include/ptlib/unix/ptlib/remconn.h
-include/ptlib/unix/ptlib/resampler.h
-include/ptlib/unix/ptlib/semaphor.h
-include/ptlib/unix/ptlib/serchan.h
-include/ptlib/unix/ptlib/sfile.h
-include/ptlib/unix/ptlib/shmvideo.h
-include/ptlib/unix/ptlib/socket.h
-include/ptlib/unix/ptlib/sound.h
-include/ptlib/unix/ptlib/svcproc.h
-include/ptlib/unix/ptlib/syncpoint.h
-include/ptlib/unix/ptlib/tcpsock.h
-include/ptlib/unix/ptlib/textfile.h
-include/ptlib/unix/ptlib/thread.h
-include/ptlib/unix/ptlib/timeint.h
-include/ptlib/unix/ptlib/timer.h
-include/ptlib/unix/ptlib/udpsock.h
-include/ptlib/unix/ptlib/video.h
-include/ptlib/unix/ptlib/videoio.h
-@dirrm include/ptlib/unix/ptlib
-@dirrm include/ptlib/unix
+include/ptlib.h
 include/ptlib/MacMainIf.h
 include/ptlib/args.h
 include/ptlib/array.h
@@ -156,13 +115,54 @@ include/ptlib/thread.h
 include/ptlib/timeint.h
 include/ptlib/timer.h
 include/ptlib/udpsock.h
+include/ptlib/unix/ptlib/beaudio.h
+include/ptlib/unix/ptlib/bevideo.h
+include/ptlib/unix/ptlib/channel.h
+include/ptlib/unix/ptlib/conchan.h
+include/ptlib/unix/ptlib/config.h
+include/ptlib/unix/ptlib/contain.h
+include/ptlib/unix/ptlib/critsec.h
+include/ptlib/unix/ptlib/dynalink.h
+include/ptlib/unix/ptlib/ethsock.h
+include/ptlib/unix/ptlib/file.h
+include/ptlib/unix/ptlib/filepath.h
+include/ptlib/unix/ptlib/icmpsock.h
+include/ptlib/unix/ptlib/ipdsock.h
+include/ptlib/unix/ptlib/ipsock.h
+include/ptlib/unix/ptlib/maccoreaudio.h
+include/ptlib/unix/ptlib/mutex.h
+include/ptlib/unix/ptlib/pdirect.h
+include/ptlib/unix/ptlib/pipechan.h
+include/ptlib/unix/ptlib/pmachdep.h
+include/ptlib/unix/ptlib/pprocess.h
+include/ptlib/unix/ptlib/ptime.h
+include/ptlib/unix/ptlib/ptlib.inl
+include/ptlib/unix/ptlib/remconn.h
+include/ptlib/unix/ptlib/resampler.h
+include/ptlib/unix/ptlib/semaphor.h
+include/ptlib/unix/ptlib/serchan.h
+include/ptlib/unix/ptlib/sfile.h
+include/ptlib/unix/ptlib/shmvideo.h
+include/ptlib/unix/ptlib/socket.h
+include/ptlib/unix/ptlib/sound.h
+include/ptlib/unix/ptlib/svcproc.h
+include/ptlib/unix/ptlib/syncpoint.h
+include/ptlib/unix/ptlib/tcpsock.h
+include/ptlib/unix/ptlib/textfile.h
+include/ptlib/unix/ptlib/thread.h
+include/ptlib/unix/ptlib/timeint.h
+include/ptlib/unix/ptlib/timer.h
+include/ptlib/unix/ptlib/udpsock.h
+include/ptlib/unix/ptlib/video.h
+include/ptlib/unix/ptlib/videoio.h
 include/ptlib/vconvert.h
 include/ptlib/video.h
 include/ptlib/videoio.h
 include/ptlib/videoio1394dc.h
-@dirrm include/ptlib
-include/ptbuildopts.h
-include/ptlib.h
+lib/libpt.so
+lib/libpt.so.2
+lib/libpt_s.a
+libdata/pkgconfig/ptlib.pc
 share/ptlib/make/common.mak
 share/ptlib/make/lib.mak
 share/ptlib/make/plugins.mak
@@ -170,15 +170,15 @@ share/ptlib/make/ptbuildopts.mak
 share/ptlib/make/ptlib-config
 share/ptlib/make/ptlib.mak
 share/ptlib/make/unix.mak
+%%BSDVIDEO%%lib/ptlib-2.4.4/devices/videoinput/bsdvideo_pwplugin.so
+%%BSDVIDEO%%lib/ptlib-2.4.4/devices/sound/oss_pwplugin.so
 @dirrm share/ptlib/make
 @dirrm share/ptlib
-lib/ptlib-2.4.4/devices/sound/oss_pwplugin.so
-@dirrm lib/ptlib-2.4.4/devices/sound
-lib/ptlib-2.4.4/devices/videoinput/bsdvideo_pwplugin.so
-@dirrm lib/ptlib-2.4.4/devices/videoinput
-@dirrm lib/ptlib-2.4.4/devices
-@dirrm lib/ptlib-2.4.4
-lib/libpt.so.2
-lib/libpt.so
-lib/libpt_s.a
-libdata/pkgconfig/ptlib.pc
+@dirrm include/ptlib/unix/ptlib
+@dirrm include/ptlib/unix
+@dirrm include/ptlib
+@dirrm include/ptclib
+%%BSDVIDEO%%@dirrm lib/ptlib-2.4.4/devices/videoinput
+%%BSDVIDEO%%@dirrm lib/ptlib-2.4.4/devices/sound
+%%BSDVIDEO%%@dirrm lib/ptlib-2.4.4/devices
+%%BSDVIDEO%%@dirrm lib/ptlib-2.4.4
