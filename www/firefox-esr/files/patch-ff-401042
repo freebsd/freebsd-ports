@@ -1,0 +1,57 @@
+--- .pc/401042-backport.patch/layout/generic/nsInlineFrame.cpp	2009-01-05 02:55:09.000000000 +0100
++++ layout/generic/nsInlineFrame.cpp	2009-01-05 02:56:08.000000000 +0100
+@@ -576,27 +576,52 @@ nsInlineFrame::ReflowFrames(nsPresContex
+         ReparentFloatsForInlineChild(irs.mLineContainer, frame, PR_FALSE);
+       }
+       frame->SetParent(this);
+       // We also need to check if frame has a next-in-flow. It it does, then set
+       // its parent frame pointer, too. Otherwise, if we reflow frame and it's
+       // complete we'll fail when deleting its next-in-flow which is no longer
+       // needed. This scenario doesn't happen often, but it can happen
+       nsIFrame* nextInFlow = frame->GetNextInFlow();
+-      while (nextInFlow) {
++      for ( ; nextInFlow; nextInFlow = nextInFlow->GetNextInFlow()) {
+         // Since we only do lazy setting of parent pointers for the frame's
+         // initial reflow, this frame can't have a next-in-flow. That means
+         // the continuing child frame must be in our child list as well. If
+         // not, then something is wrong
+         NS_ASSERTION(mFrames.ContainsFrame(nextInFlow), "unexpected flow");
+         if (havePrevBlock) {
+           ReparentFloatsForInlineChild(irs.mLineContainer, nextInFlow, PR_FALSE);
+         }
+         nextInFlow->SetParent(this);
+-        nextInFlow = nextInFlow->GetNextInFlow();
++      }
++
++      // Fix the parent pointer for ::first-letter child frame next-in-flows,
++      // so nsFirstLetterFrame::Reflow can destroy them safely (bug 401042).
++      nsIFrame* realFrame = nsPlaceholderFrame::GetRealFrameFor(frame);
++      if (realFrame->GetType() == nsLayoutAtoms::letterFrame) {
++        nsIFrame* child = realFrame->GetFirstChild(nsnull);
++        if (child) {
++          nsIFrame* nextInFlow = child->GetNextInFlow();
++          for ( ; nextInFlow; nextInFlow = nextInFlow->GetNextInFlow()) {
++            if (mFrames.ContainsFrame(nextInFlow)) {
++              nextInFlow->SetParent(this);
++            }
++            else {
++#ifdef DEBUG              
++              // Once we find a next-in-flow that isn't ours none of the
++              // remaining next-in-flows should be either.
++              for ( ; nextInFlow; nextInFlow = nextInFlow->GetNextInFlow()) {
++                NS_ASSERTION(!mFrames.ContainsFrame(nextInFlow),
++                             "unexpected letter frame flow");
++              }
++#endif
++              break;
++            }
++          }
++        }
+       }
+     }
+     rv = ReflowInlineFrame(aPresContext, aReflowState, irs, frame, aStatus);
+     if (NS_FAILED(rv)) {
+       done = PR_TRUE;
+       break;
+     }
+     if (NS_INLINE_IS_BREAK(aStatus) || 

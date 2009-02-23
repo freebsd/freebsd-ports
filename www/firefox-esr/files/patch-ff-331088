@@ -1,0 +1,154 @@
+--- .pc/331088-candidate.patch/layout/forms/nsFileControlFrame.cpp	2009-01-07 16:46:32.000000000 +0100
++++ layout/forms/nsFileControlFrame.cpp	2009-01-07 17:02:13.000000000 +0100
+@@ -257,35 +257,37 @@ nsFileControlFrame::ScrollIntoView(nsPre
+                    NS_PRESSHELL_SCROLL_IF_NOT_VISIBLE,NS_PRESSHELL_SCROLL_IF_NOT_VISIBLE);
+     }
+   }
+ }
+ 
+ /**
+  * This is called when our browse button is clicked
+  */
+-nsresult 
+-nsFileControlFrame::MouseClick(nsIDOMEvent* aMouseEvent)
++NS_IMETHODIMP
++nsFileControlFrame::MouseListener::MouseClick(nsIDOMEvent* aMouseEvent)
+ {
++  NS_ASSERTION(mFrame, "We should have been unregistered");
++
+   // only allow the left button
+   nsCOMPtr<nsIDOMMouseEvent> mouseEvent = do_QueryInterface(aMouseEvent);
+   if (mouseEvent) {
+     PRUint16 whichButton;
+     if (NS_SUCCEEDED(mouseEvent->GetButton(&whichButton))) {
+       if (whichButton != 0) {
+         return NS_OK;
+       }
+     }
+   }
+ 
+ 
+   nsresult result;
+ 
+   // Get parent nsIDOMWindowInternal object.
+-  nsIContent* content = GetContent();
++  nsIContent* content = mFrame->GetContent();
+   if (!content)
+     return NS_ERROR_FAILURE;
+ 
+   nsCOMPtr<nsIDocument> doc = content->GetDocument();
+   if (!doc)
+     return NS_ERROR_FAILURE;
+ 
+   nsCOMPtr<nsIDOMWindow> parentWindow =
+@@ -304,17 +306,17 @@ nsFileControlFrame::MouseClick(nsIDOMEve
+   if (NS_FAILED(result))
+     return result;
+ 
+   // Set filter "All Files"
+   filePicker->AppendFilters(nsIFilePicker::filterAll);
+ 
+   // Set default directry and filename
+   nsAutoString defaultName;
+-  GetProperty(nsHTMLAtoms::value, defaultName);
++  mFrame->GetProperty(nsHTMLAtoms::value, defaultName);
+ 
+   nsCOMPtr<nsILocalFile> currentFile = do_CreateInstance("@mozilla.org/file/local;1");
+   if (currentFile && !defaultName.IsEmpty()) {
+     result = currentFile->InitWithPath(defaultName);
+     if (NS_SUCCEEDED(result)) {
+       nsAutoString leafName;
+       currentFile->GetLeafName(leafName);
+       if (!leafName.IsEmpty()) {
+@@ -328,46 +330,46 @@ nsFileControlFrame::MouseClick(nsIDOMEve
+         nsCOMPtr<nsILocalFile> parentLocalFile = do_QueryInterface(parentFile, &result);
+         if (parentLocalFile)
+           filePicker->SetDisplayDirectory(parentLocalFile);
+       }
+     }
+   }
+ 
+   // Tell our textframe to remember the currently focused value
+-  mTextFrame->InitFocusedValue();
++  mFrame->mTextFrame->InitFocusedValue();
+ 
+   // Open dialog
+   PRInt16 mode;
+   result = filePicker->Show(&mode);
+   if (NS_FAILED(result))
+     return result;
+   if (mode == nsIFilePicker::returnCancel)
+     return NS_OK;
+ 
+-  if (!mTextFrame) {
++  if (!mFrame) {
+     // We got destroyed while the filepicker was up.  Don't do anything here.
+     return NS_OK;
+   }
+   
+   // Set property
+   nsCOMPtr<nsILocalFile> localFile;
+   result = filePicker->GetFile(getter_AddRefs(localFile));
+   if (localFile) {
+     nsAutoString unicodePath;
+     result = localFile->GetPath(unicodePath);
+     if (!unicodePath.IsEmpty()) {
+-      mTextFrame->SetProperty(mPresContext, nsHTMLAtoms::value, unicodePath);
+-      nsCOMPtr<nsIFileControlElement> fileControl = do_QueryInterface(mContent);
++      mFrame->mTextFrame->SetProperty(mFrame->mPresContext, nsHTMLAtoms::value, unicodePath);
++      nsCOMPtr<nsIFileControlElement> fileControl = do_QueryInterface(content);
+       if (fileControl) {
+         fileControl->SetFileName(unicodePath, PR_FALSE);
+       }
+       
+       // May need to fire an onchange here
+-      mTextFrame->CheckFireOnChange();
++      mFrame->mTextFrame->CheckFireOnChange();
+       return NS_OK;
+     }
+   }
+ 
+   return NS_FAILED(result) ? result : NS_ERROR_FAILURE;
+ }
+ 
+ 
+@@ -660,18 +662,8 @@ nsFileControlFrame::OnContentReset()
+   return NS_OK;
+ }
+ 
+ ////////////////////////////////////////////////////////////
+ // Mouse listener implementation
+ 
+ NS_IMPL_ISUPPORTS1(nsFileControlFrame::MouseListener, nsIDOMMouseListener)
+ 
+-NS_IMETHODIMP
+-nsFileControlFrame::MouseListener::MouseClick(nsIDOMEvent* aMouseEvent)
+-{
+-  if (mFrame) {
+-    return mFrame->MouseClick(aMouseEvent);
+-  }
+-
+-  return NS_OK;
+-}
+-
+--- .pc/331088-candidate.patch/layout/forms/nsFileControlFrame.h	2009-01-07 17:18:55.000000000 +0100
++++ layout/forms/nsFileControlFrame.h	2009-01-07 17:19:00.000000000 +0100
+@@ -142,18 +142,16 @@ protected:
+     NS_IMETHOD MouseOver(nsIDOMEvent* aMouseEvent) { return NS_OK; }
+     NS_IMETHOD MouseOut(nsIDOMEvent* aMouseEvent) { return NS_OK; }
+     NS_IMETHOD HandleEvent(nsIDOMEvent* aEvent) { return NS_OK; }
+ 
+   private:
+     nsFileControlFrame* mFrame;
+   };
+   
+-  nsresult MouseClick(nsIDOMEvent* aMouseEvent);
+-
+   virtual PRIntn GetSkipSides() const;
+ 
+   /**
+    * The text frame (populated on initial reflow).
+    * @see nsFileControlFrame::Reflow
+    */
+   nsNewFrame* mTextFrame;
+   /**
