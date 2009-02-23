@@ -6,6 +6,7 @@
 
 PORTNAME=	docbook
 PORTVERSION=	4.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/sgml/${PORTVERSION}/
 
@@ -38,6 +39,7 @@ DTDDIR=		${SGMLCATBASE}/${DTD_NAME}/${DTD_VERSION}
 DTD_FILES=	calstblx.dtd catalog.xml dbcentx.mod dbgenent.mod \
 		dbhierx.mod dbnotnx.mod dbpoolx.mod docbook.cat docbook.dcl \
 		docbook.dtd docbookx.dtd htmltblx.mod soextblx.dtd catalog
+DOCSDIR=	${PREFIX}/share/${PORNAME}/${PORTVERSION}
 
 post-extract:
 	${CP} ${WRKSRC}/docbook.cat ${WRKSRC}/catalog
