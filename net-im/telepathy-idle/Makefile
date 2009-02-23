@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	telepathy-idle
-PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTVERSION=	0.1.3
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -28,6 +27,8 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig glib20
+
+MAN8=		telepathy-idle.8
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
