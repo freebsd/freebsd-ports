@@ -38,11 +38,11 @@ USE_JAVA=	yes
 JAVA_VENDOR=	freebsd bsdjava
 JAVA_VERSION=	1.6
 USE_MOTIF=	yes
-USE_ANT=	yes
 USE_XLIB=	yes
 
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+BUILD_DEPENDS+=	${ANT_CMD}:${PORTSDIR}/devel/apache-ant
 BUILD_DEPENDS+=	$(LOCALBASE)/include/X11/Xlib.h:${PORTSDIR}/x11/xorg-libraries
 BUILD_DEPENDS+=	$(JAVAJARDIR)/jdk-7-icedtea-plugs/jre/lib/rt-closed.jar:${PORTSDIR}/java/icedtea6-stubs
 
