@@ -103,6 +103,7 @@
     SUBDIR += psi3
     SUBDIR += py-hcluster
     SUBDIR += py-mdp
+    SUBDIR += py-netCDF4
     SUBDIR += py-openbabel
     SUBDIR += py-paida
     SUBDIR += py-pydicom
