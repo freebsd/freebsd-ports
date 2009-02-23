@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	clive
-PORTVERSION=	2.1.5
-PORTREVISION=	0
+PORTVERSION=	2.1.6
 CATEGORIES=	multimedia
-MASTER_SITES=	GOOGLE_CODE \
-		SF
+MASTER_SITES=	GOOGLE_CODE
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	legatvs@gmail.com
@@ -26,23 +24,16 @@ RUN_DEPENDS=	p5-BerkeleyDB>=0.36:${PORTSDIR}/databases/p5-BerkeleyDB \
 # deskutils/ljclive, multimedia/clive1 (same executable/manpage/distfile name)
 CONFLICTS=	*clive-[0-1]*
 
-NO_BUILD=	yes
+OPTIONS=	PASTE   "Enable pasting from X clipboard" off \
+		PAGER   "Enable pager for viewing cache entries" off \
+		EXPECT  "Enable clivepass interface" off \
+		MANPAGE "Install manual page" on
 
-OPTIONS=	PASTE "Paste URLs from clipboard" off \
-		CLIVEPASS "Enable login passwords" off \
-		SHOW "Show cache entries" off
+PLIST_FILES=	bin/clive
 
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 USE_PERL5=	5.8.2+
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-
-.if !defined(NO_INSTALL_MANPAGES)
-MAN1=	${PORTNAME}.1
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1/
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -50,12 +41,17 @@ post-install:
 RUN_DEPENDS+=	p5-Clipboard>=0.09:${PORTSDIR}/x11/p5-Clipboard
 .endif
 
-.if defined(WITH_SHOW)
+.if defined(WITH_PAGER)
 RUN_DEPENDS+=	p5-IO-Pager-0.06:${PORTSDIR}/devel/p5-IO-Pager
 .endif
 
-.if defined(WITH_CLIVEPASS)
+.if defined(WITH_EXPECT)
 RUN_DEPENDS+=	p5-Expect>=1.21:${PORTSDIR}/lang/p5-Expect
+.endif
+
+.if defined(WITH_MANPAGE)
+MAKE_ENV=	WITH_MAN=yes
+MAN1=		clive.1
 .endif
 
 .include <bsd.port.post.mk>
