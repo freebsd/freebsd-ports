@@ -1,0 +1,7 @@
+TexmakerX is a plain fork of the Free LaTeX IDE Texmaker. The editor
+itself has been replaced with the more powerful QCodeEdit library,
+giving you a lot of extended ways to write your documents. TexmakerX
+extends the Texmaker editor to add new features like interactive
+spellchecking and code folding.
+
+WWW: http://texmakerx.sourceforge.net/
