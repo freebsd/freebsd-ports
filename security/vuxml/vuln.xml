@@ -200,7 +200,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>firefox</name>
-	<range><lt>2.0.0.20_2,1</lt></range>
+	<range><lt>2.0.0.20_3,1</lt></range>
 	<range><gt>3.*,1</gt><lt>3.0.6,1</lt></range>
       </package>
       <package>
