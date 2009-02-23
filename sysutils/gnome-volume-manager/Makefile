@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-volume-manager
-PORTVERSION=	2.24.0
+PORTVERSION=	2.24.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

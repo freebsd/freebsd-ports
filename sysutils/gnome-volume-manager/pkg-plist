@@ -40,6 +40,7 @@ share/locale/ka/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/kn/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/ko/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/ku/LC_MESSAGES/gnome-volume-manager.mo
+share/locale/la/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/lt/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/lv/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/mg/LC_MESSAGES/gnome-volume-manager.mo
@@ -100,6 +101,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-volume-manager.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/la/LC_MESSAGES
+@dirrmtry share/locale/la
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
