@@ -1,5 +1,19 @@
---- Makefile.in.orig	2009-01-11 17:53:18.000000000 -0500
-+++ Makefile.in	2009-01-26 15:09:22.000000000 -0500
+--- Makefile.in.orig	2009-01-12 06:53:18.000000000 +0800
++++ Makefile.in	2009-02-23 10:03:52.000000000 +0800
+@@ -85,11 +85,11 @@
+                      $(DESTDIR)$(PREFIX)/share/ptlib/make ; \
+ 		do mkdir -p $$dir ; chmod 755 $$dir ; \
+ 	done )
+-	$(INSTALL) -m 444 $(PT_LIBDIR)/$(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@@BUILD_TYPE@@BUILD_NUMBER@ $(DESTDIR)$(LIBDIR)
++	$(INSTALL) -m 444 $(PT_LIBDIR)/$(PTLIB_FILE).@MAJOR_VERSION@ $(DESTDIR)$(LIBDIR)
+ 	$(INSTALL) -m 444 $(PT_LIBDIR)/lib$(PTLIB_BASE)_s.a $(DESTDIR)$(LIBDIR)
+ 	(cd $(DESTDIR)$(LIBDIR) ; \
+ 		rm -f  $(PTLIB_FILE) ; \
+-		ln -sf $(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@@BUILD_TYPE@@BUILD_NUMBER@ $(PTLIB_FILE) \
++		ln -sf $(PTLIB_FILE).@MAJOR_VERSION@ $(PTLIB_FILE) \
+ 	)
+ ifeq (1, $(HAS_PLUGINS))
+ 	if test -e $(PT_LIBDIR)/device/; then \
 @@ -120,9 +120,9 @@
  	$(INSTALL) -m 755 make/ptlib-config $(DESTDIR)$(PREFIX)/share/ptlib/make/
  	(cd $(DESTDIR)$(PREFIX)/bin; rm -f ptlib-config ; ln -snf ../share/ptlib/make/ptlib-config ptlib-config)
@@ -13,7 +27,7 @@
  uninstall:
  	rm -rf $(DESTDIR)$(PREFIX)/include/ptlib \
  	       $(DESTDIR)$(PREFIX)/include/ptclib \
-@@ -130,7 +130,7 @@
+@@ -130,9 +130,9 @@
  	       $(DESTDIR)$(PREFIX)/include/ptbuildopts.h \
  	       $(DESTDIR)$(PREFIX)/share/ptlib \
  	       $(DESTDIR)$(LIBDIR)/$(DEV_PLUGIN_DIR) \
@@ -21,4 +35,7 @@
 +	       $(DESTDIR)$(PREFIX)/libdata/pkgconfig/ptlib.pc
  	rm -f $(DESTDIR)$(LIBDIR)/lib$(PTLIB_BASE)_s.a \
  	      $(DESTDIR)$(LIBDIR)/$(PTLIB_FILE) \
- 	      $(DESTDIR)$(LIBDIR)/$(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@@BUILD_TYPE@@BUILD_NUMBER@
+-	      $(DESTDIR)$(LIBDIR)/$(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@@BUILD_TYPE@@BUILD_NUMBER@
++	      $(DESTDIR)$(LIBDIR)/$(PTLIB_FILE).@MAJOR_VERSION@
+ 
+ # End of Makefile.in
