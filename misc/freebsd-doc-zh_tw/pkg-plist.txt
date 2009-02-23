@@ -1,0 +1,15 @@
+@comment $FreeBSD$
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/hubs/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/remote-install/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/book.txt
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/book.txt
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/book.txt
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/book.txt
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/book.txt

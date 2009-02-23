@@ -1,0 +1,3 @@
+@comment $FreeBSD$
+%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/diskless-x/article.txt

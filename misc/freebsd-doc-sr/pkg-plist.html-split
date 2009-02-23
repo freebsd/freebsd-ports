@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/kernel.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/rcconf.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/rules.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/x71.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/x94.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/diskless-x/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/diskless-x/x33.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/diskless-x/x40.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/diskless-x/x46.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/diskless-x/x67.html
