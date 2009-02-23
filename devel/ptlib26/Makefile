@@ -17,12 +17,10 @@ COMMENT=	A cross platform C++ library, used by OpenH323
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-CONFLICTS=	pwlib-*
-
 USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget
+USE_GNOME=	pkgconfig
 WANT_GNOME=	yes
 WANT_SDL=	yes
 USE_OPENSSL=	yes
@@ -42,6 +40,7 @@ CONFIGURE_ARGS+=	\
 		--with-expat-dir="${LOCALBASE}" \
 		--enable-oss \
 		--disable-odbc
+ALL_TARGET=	optshared
 
 # if explicitely asked for, depend upon it
 .if defined(WITH_SDL)
