@@ -6,17 +6,25 @@
 #
 
 PORTNAME=	adsense
-DISTVERSION=	5.x-1.3
-PORTREVISION=	1
+DISTVERSION=	5.x-3.0
 CATEGORIES=	www
-MASTER_SITES=	http://ftp.osuosl.org/pub/drupal/files/projects/
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	Allows web site owners to display ads on their site using Google AdSense
 
 DRUPAL5_MODULE=	yes
-MODULE_FILES=	adsense.info adsense.install adsense.module adsense_click.js \
-		adsense_help.inc
+MODULE_FILES=	adsense.admin.inc adsense.info adsense.install \
+		adsense.module cse/help/adsense_cse.help.inc \
+		cse/adsense_cse.admin.inc cse/adsense_cse.info \
+		cse/adsense_cse.install cse/adsense_cse.js \
+		cse/adsense_cse.module cse/adsense_cse.results.inc \
+		help/adsense.help.inc help/adsense_id_help.inc \
+		includes/adsense.search_options.inc \
+		managed/help/adsense_managed.help.inc \
+		managed/adsense_managed.admin.inc \
+		managed/adsense_managed.info managed/adsense_managed.install \
+		managed/adsense_managed.module po/adsense.pot po/ru.po
+MODULE_DIRS=	cse/help cse help includes managed/help managed po
 DOC_FILES=	LICENSE.txt README.txt
 
 .include <bsd.port.pre.mk>
