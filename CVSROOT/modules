@@ -21172,6 +21172,7 @@ texi2db                         ports/textproc/texi2db
 texi2html                       ports/textproc/texi2html
 texmacs                         ports/editors/texmacs
 texmaker                        ports/editors/texmaker
+texmakerx	ports/editors/texmakerx
 texpower                        ports/print/texpower
 textedit                        ports/editors/textedit
 textedit.app                    ports/editors/textedit.app
