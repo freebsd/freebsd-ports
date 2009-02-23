@@ -4101,6 +4101,9 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>31434</bid>
+      <cvename>CVE-2008-4298</cvename>
+      <cvename>CVE-2008-4359</cvename>
+      <cvename>CVE-2008-4360</cvename>
       <url>http://www.lighttpd.net/security/lighttpd_sa_2008_05.txt</url>
       <url>http://www.lighttpd.net/security/lighttpd_sa_2008_06.txt</url>
       <url>http://www.lighttpd.net/security/lighttpd_sa_2008_07.txt</url>
@@ -4108,6 +4111,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-09-26</discovery>
       <entry>2008-09-27</entry>
+      <modified>2009-02-22</modified>
     </dates>
   </vuln>
 
