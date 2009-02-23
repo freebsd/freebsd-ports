@@ -37,6 +37,7 @@ USE_GMAKE=	yes
 USE_JAVA=	yes
 JAVA_VENDOR=	freebsd bsdjava
 JAVA_VERSION=	1.6
+USE_ANT=	yes
 USE_MOTIF=	yes
 USE_XLIB=	yes
 
