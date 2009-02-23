@@ -155,6 +155,7 @@
     SUBDIR += tetradraw
     SUBDIR += texmacs
     SUBDIR += texmaker
+    SUBDIR += texmakerx
     SUBDIR += textedit
     SUBDIR += textedit.app
     SUBDIR += the
