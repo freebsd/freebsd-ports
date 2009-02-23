@@ -10,7 +10,8 @@ PORTNAME=	lsof
 PORTVERSION=	4.82C
 PORTEPOCH=	3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
+MASTER_SITES=	http://www.SpringDaemons.com/stas/ \
+		http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/NEW/ \
 		http://www.lerctr.org/lsof/ \
