@@ -14,7 +14,8 @@ DISTNAME=	jdk-7-icedtea-plugs-$(PORTVERSION)
 MAINTAINER=	brian@experts-exchange.com
 COMMENT=	IcedTea6 binary plugs for openjdk
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 
 WRKSRC=		$(WRKDIR)/jdk-7-icedtea-plugs
 
