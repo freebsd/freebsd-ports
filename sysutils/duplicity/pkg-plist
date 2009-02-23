@@ -19,12 +19,12 @@ bin/rdiffdir
 %%PYTHON_SITELIBDIR%%/duplicity/backends/ftpbackend.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/ftpbackend.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/ftpbackend.pyo
-%%PYTHON_SITELIBDIR%%/duplicity/backends/gmailimapbackend.py
-%%PYTHON_SITELIBDIR%%/duplicity/backends/gmailimapbackend.pyc
-%%PYTHON_SITELIBDIR%%/duplicity/backends/gmailimapbackend.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/backends/hsibackend.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/hsibackend.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/hsibackend.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/backends/imapbackend.py
+%%PYTHON_SITELIBDIR%%/duplicity/backends/imapbackend.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/backends/imapbackend.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/backends/localbackend.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/localbackend.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/localbackend.pyo
