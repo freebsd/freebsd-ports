@@ -39,6 +39,7 @@ share/locale/vi/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_CN/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_TW/LC_MESSAGES/shared-mime-info.mo
 share/mime/application/andrew-inset.xml
+share/mime/application/annodex.xml
 share/mime/application/atom+xml.xml
 share/mime/application/dicom.xml
 share/mime/application/docbook+xml.xml
@@ -62,9 +63,11 @@ share/mime/application/pgp-signature.xml
 share/mime/application/pkcs10.xml
 share/mime/application/pkcs7-mime.xml
 share/mime/application/pkcs7-signature.xml
+share/mime/application/pkix-pkipath.xml
 share/mime/application/postscript.xml
 share/mime/application/prs.plucker.xml
 share/mime/application/ram.xml
+share/mime/application/rdf+xml.xml
 share/mime/application/rss+xml.xml
 share/mime/application/rtf.xml
 share/mime/application/sdp.xml
@@ -77,13 +80,17 @@ share/mime/application/vnd.hp-pcl.xml
 share/mime/application/vnd.lotus-1-2-3.xml
 share/mime/application/vnd.mozilla.xul+xml.xml
 share/mime/application/vnd.ms-access.xml
+share/mime/application/vnd.ms-cab-compressed.xml
 share/mime/application/vnd.ms-excel.xml
 share/mime/application/vnd.ms-powerpoint.xml
 share/mime/application/vnd.ms-tnef.xml
 share/mime/application/vnd.ms-works.xml
+share/mime/application/vnd.ms-wpl.xml
 share/mime/application/vnd.ms-xpsdocument.xml
+share/mime/application/vnd.oasis.opendocument.chart-template.xml
 share/mime/application/vnd.oasis.opendocument.chart.xml
 share/mime/application/vnd.oasis.opendocument.database.xml
+share/mime/application/vnd.oasis.opendocument.formula-template.xml
 share/mime/application/vnd.oasis.opendocument.formula.xml
 share/mime/application/vnd.oasis.opendocument.graphics-template.xml
 share/mime/application/vnd.oasis.opendocument.graphics.xml
@@ -97,6 +104,9 @@ share/mime/application/vnd.oasis.opendocument.text-template.xml
 share/mime/application/vnd.oasis.opendocument.text-web.xml
 share/mime/application/vnd.oasis.opendocument.text.xml
 share/mime/application/vnd.openofficeorg.extension.xml
+share/mime/application/vnd.openxmlformats-officedocument.presentationml.presentation.xml
+share/mime/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.xml
+share/mime/application/vnd.openxmlformats-officedocument.wordprocessingml.document.xml
 share/mime/application/vnd.rn-realmedia.xml
 share/mime/application/vnd.stardivision.calc.xml
 share/mime/application/vnd.stardivision.chart.xml
@@ -122,6 +132,7 @@ share/mime/application/x-abiword.xml
 share/mime/application/x-ace.xml
 share/mime/application/x-alz.xml
 share/mime/application/x-amipro.xml
+share/mime/application/x-aportisdoc.xml
 share/mime/application/x-applix-spreadsheet.xml
 share/mime/application/x-applix-word.xml
 share/mime/application/x-arc.xml
@@ -137,6 +148,7 @@ share/mime/application/x-bzip-compressed-tar.xml
 share/mime/application/x-bzip.xml
 share/mime/application/x-bzpdf.xml
 share/mime/application/x-bzpostscript.xml
+share/mime/application/x-cb7.xml
 share/mime/application/x-cbr.xml
 share/mime/application/x-cbz.xml
 share/mime/application/x-cd-image.xml
@@ -163,6 +175,7 @@ share/mime/application/x-dvi.xml
 share/mime/application/x-e-theme.xml
 share/mime/application/x-egon.xml
 share/mime/application/x-executable.xml
+share/mime/application/x-fictionbook+xml.xml
 share/mime/application/x-fluid.xml
 share/mime/application/x-font-afm.xml
 share/mime/application/x-font-bdf.xml
@@ -261,7 +274,9 @@ share/mime/application/x-pef-executable.xml
 share/mime/application/x-perl.xml
 share/mime/application/x-php.xml
 share/mime/application/x-pkcs12.xml
+share/mime/application/x-pkcs7-certificates.xml
 share/mime/application/x-planperfect.xml
+share/mime/application/x-pocket-word.xml
 share/mime/application/x-profile.xml
 share/mime/application/x-pw.xml
 share/mime/application/x-python-bytecode.xml
@@ -322,6 +337,7 @@ share/mime/application/zip.xml
 share/mime/audio/AMR-WB.xml
 share/mime/audio/AMR.xml
 share/mime/audio/ac3.xml
+share/mime/audio/annodex.xml
 share/mime/audio/basic.xml
 share/mime/audio/midi.xml
 share/mime/audio/mp2.xml
@@ -337,6 +353,7 @@ share/mime/audio/x-aiffc.xml
 share/mime/audio/x-ape.xml
 share/mime/audio/x-flac+ogg.xml
 share/mime/audio/x-flac.xml
+share/mime/audio/x-gsm.xml
 share/mime/audio/x-iriver-pla.xml
 share/mime/audio/x-it.xml
 share/mime/audio/x-m4b.xml
@@ -369,6 +386,7 @@ share/mime/image/bmp.xml
 share/mime/image/cgm.xml
 share/mime/image/dpx.xml
 share/mime/image/fax-g3.xml
+share/mime/image/fits.xml
 share/mime/image/g3fax.xml
 share/mime/image/gif.xml
 share/mime/image/ief.xml
@@ -379,9 +397,12 @@ share/mime/image/rle.xml
 share/mime/image/svg+xml-compressed.xml
 share/mime/image/svg+xml.xml
 share/mime/image/tiff.xml
+share/mime/image/vnd.adobe.photoshop.xml
 share/mime/image/vnd.djvu.xml
 share/mime/image/vnd.dwg.xml
 share/mime/image/vnd.dxf.xml
+share/mime/image/vnd.microsoft.icon.xml
+share/mime/image/vnd.ms-modi.xml
 share/mime/image/vnd.rn-realpix.xml
 share/mime/image/vnd.wap.wbmp.xml
 share/mime/image/x-3ds.xml
@@ -398,12 +419,10 @@ share/mime/image/x-dib.xml
 share/mime/image/x-emf.xml
 share/mime/image/x-eps.xml
 share/mime/image/x-exr.xml
-share/mime/image/x-fits.xml
 share/mime/image/x-fpx.xml
 share/mime/image/x-fuji-raf.xml
 share/mime/image/x-gzeps.xml
 share/mime/image/x-icns.xml
-share/mime/image/x-ico.xml
 share/mime/image/x-iff.xml
 share/mime/image/x-ilbm.xml
 share/mime/image/x-jng.xml
@@ -427,7 +446,6 @@ share/mime/image/x-portable-anymap.xml
 share/mime/image/x-portable-bitmap.xml
 share/mime/image/x-portable-graymap.xml
 share/mime/image/x-portable-pixmap.xml
-share/mime/image/x-psd.xml
 share/mime/image/x-quicktime.xml
 share/mime/image/x-rgb.xml
 share/mime/image/x-sgi.xml
@@ -480,13 +498,13 @@ share/mime/text/html.xml
 share/mime/text/htmlh.xml
 share/mime/text/mathml.xml
 share/mime/text/plain.xml
-share/mime/text/rdf.xml
 share/mime/text/rfc822-headers.xml
 share/mime/text/richtext.xml
 share/mime/text/sgml.xml
 share/mime/text/spreadsheet.xml
 share/mime/text/tab-separated-values.xml
 share/mime/text/troff.xml
+share/mime/text/vnd.graphviz.xml
 share/mime/text/vnd.rn-realtext.xml
 share/mime/text/vnd.sun.j2me.app-descriptor.xml
 share/mime/text/vnd.wap.wml.xml
@@ -563,6 +581,7 @@ share/mime/text/x-xmi.xml
 share/mime/text/x-xslfo.xml
 share/mime/text/xmcd.xml
 share/mime/video/3gpp.xml
+share/mime/video/annodex.xml
 share/mime/video/dv.xml
 share/mime/video/isivideo.xml
 share/mime/video/mp4.xml
