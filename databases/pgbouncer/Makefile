@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pgbouncer
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1873/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/2092/
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Lightweight connection pooler for PostgreSQL
@@ -41,19 +40,19 @@ PGBOUNCER_LOGDIR?=	/var/log/pgbouncer
 
 .include <bsd.port.pre.mk>
 # Parse ${PORTSDIR}/UIDs and GIDs for the defaults
-USER!=  ${GREP} -E '^${PGBOUNCER_USER}:' ${PORTSDIR}/UIDs | \
+USER!=	${GREP} -E '^${PGBOUNCER_USER}:' ${PORTSDIR}/UIDs | \
 		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):([^:]*)::0:0:([^:]*):([^:]*):([^:]*)$$/USER="\1" UID="\3" GECOS="\5" HOME="\6" SHELL="\7"/'
-GROUP!= ${GREP} -E '^${PGBOUNCER_GROUP}:' ${PORTSDIR}/GIDs | \
+GROUP!=	${GREP} -E '^${PGBOUNCER_GROUP}:' ${PORTSDIR}/GIDs | \
 		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):$$/GROUP="\1" GID="\3"/'
 
 # Apply the defaults where necessary
-PGBOUNCER_USER?=  ${USER:MUSER*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-PGBOUNCER_UID?=   ${USER:MUID*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-PGBOUNCER_GECOS?= ${USER:MGECOS*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-PGBOUNCER_HOME?=  ${USER:MHOME*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-PGBOUNCER_SHELL?= ${USER:MSHELL*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-PGBOUNCER_GROUP?= ${GROUP:MGROUP*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-PGBOUNCER_GID?=   ${GROUP:MGID*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+PGBOUNCER_USER?=	${USER:MUSER*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+PGBOUNCER_UID?=		${USER:MUID*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+PGBOUNCER_GECOS?=	${USER:MGECOS*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+PGBOUNCER_HOME?=	${USER:MHOME*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+PGBOUNCER_SHELL?=	${USER:MSHELL*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+PGBOUNCER_GROUP?=	${GROUP:MGROUP*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+PGBOUNCER_GID?=		${GROUP:MGID*:C/^[^=]*=\"([^\"]*)\"$/\1/}
 
 SUB_LIST+=	PGBOUNCER_USER="${PGBOUNCER_USER}" \
 		PGBOUNCER_UID="${PGBOUNCER_UID}" \
@@ -83,7 +82,7 @@ do-install:
 post-install:
 	@if [ ! -f ${PREFIX}/etc/pgbouncer.ini ]; then \
 		${CP} -p ${PREFIX}/etc/pgbouncer.ini.sample ${PREFIX}/etc/pgbouncer.ini ; \
-        fi
+	fi
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
