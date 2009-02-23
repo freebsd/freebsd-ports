@@ -58,6 +58,7 @@
     SUBDIR += gj
     SUBDIR += gnu-regexp
     SUBDIR += guavac
+    SUBDIR += icedtea6-stubs
     SUBDIR += infobus
     SUBDIR += j2sdkee13
     SUBDIR += jad
