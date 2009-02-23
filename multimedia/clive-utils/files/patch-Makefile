@@ -1,0 +1,33 @@
+--- Makefile.orig	2009-02-19 23:22:22.000000000 +0200
++++ Makefile	2009-02-19 23:23:47.000000000 +0200
+@@ -1,25 +1,21 @@
+ # GNU Makefile
+ 
+-SHELL = /bin/sh
+-
+-prefix      = $(HOME)
++prefix      = $(PREFIX)
+ bindir      = $(prefix)/bin
+ datarootdir = $(prefix)/share
+ datadir     = $(datarootdir)
+-mandir      = $(datarootdir)/man
++mandir      = $(MANPREFIX)/man
+ man1dir     = $(mandir)/man1
+ 
+-INSTALL     = install -c
+-INSTALL_D   = install -d
+-INSTALL_M   = install -c -m 444
++INSTALL     = $(BSD_INSTALL_SCRIPT)
++INSTALL_D   = mkdir -p
++INSTALL_M   = $(BSD_INSTALL_MAN)
+ RM          = rm -f
+ PERL        = perl
+ POD2MAN     = pod2man
+ AWK         = awk
+ TR          = tr
+ 
+-WITH_MAN    = yes
+-
+ RELEASE_scan := \
+     $(shell sh -c "$(AWK) '/constant VERSION/ {print \$$5}' clivescan | \
+         $(TR) -d '[\";]'")
