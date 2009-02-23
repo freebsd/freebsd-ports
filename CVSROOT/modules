@@ -6825,6 +6825,7 @@ lambdamoo                       ports/net/lambdamoo
 lame                            ports/audio/lame
 lamprop                         ports/science/lamprop
 lanbrowsing                     ports/net/lanbrowsing
+lander                          ports/games/lander
 landscape                       ports/graphics/landscape
 lang_mpd                        ports/lang/mpd
 langspec                        ports/java/langspec
@@ -11113,6 +11114,7 @@ p5-HTML-Selector-XPath          ports/www/p5-HTML-Selector-XPath
 p5-HTML-SimpleLinkExtor         ports/www/p5-HTML-SimpleLinkExtor
 p5-HTML-SimpleParse             ports/www/p5-HTML-SimpleParse
 p5-HTML-StickyQuery             ports/www/p5-HTML-StickyQuery
+p5-HTML-StickyQuery-DoCoMoGUID  ports/www/p5-HTML-StickyQuery-DoCoMoGUID
 p5-HTML-Stream                  ports/www/p5-HTML-Stream
 p5-HTML-Strip                   ports/www/p5-HTML-Strip
 p5-HTML-StripScripts            ports/www/p5-HTML-StripScripts
@@ -11178,6 +11180,7 @@ p5-HTTP-Headers-Fast            ports/www/p5-HTTP-Headers-Fast
 p5-HTTP-Lite                    ports/www/p5-HTTP-Lite
 p5-HTTP-MHTTP                   ports/www/p5-HTTP-MHTTP
 p5-HTTP-MobileAgent             ports/www/p5-HTTP-MobileAgent
+p5-HTTP-MobileAgent-Plugin-Charset  ports/www/p5-HTTP-MobileAgent-Plugin-Charset
 p5-HTTP-MobileAttribute         ports/www/p5-HTTP-MobileAttribute
 p5-HTTP-Parser                  ports/www/p5-HTTP-Parser
 p5-HTTP-Proxy                   ports/www/p5-HTTP-Proxy
@@ -13228,6 +13231,7 @@ p5-bit-shiftreg                 ports/math/p5-Bit-ShiftReg
 p5-bit-vector                   ports/math/p5-Bit-Vector
 p5-bit-vector-minimal           ports/math/p5-Bit-Vector-Minimal
 p5-bloom-filter                 ports/textproc/p5-Bloom-Filter
+p5-boolean                      ports/devel/p5-boolean
 p5-bot-basicbot                 ports/irc/p5-Bot-BasicBot
 p5-boulder                      ports/converters/p5-Boulder
 p5-brackup                      ports/sysutils/p5-Brackup
@@ -14424,6 +14428,7 @@ p5-html-selector-xpath          ports/www/p5-HTML-Selector-XPath
 p5-html-simplelinkextor         ports/www/p5-HTML-SimpleLinkExtor
 p5-html-simpleparse             ports/www/p5-HTML-SimpleParse
 p5-html-stickyquery             ports/www/p5-HTML-StickyQuery
+p5-html-stickyquery-docomoguid  ports/www/p5-HTML-StickyQuery-DoCoMoGUID
 p5-html-stream                  ports/www/p5-HTML-Stream
 p5-html-strip                   ports/www/p5-HTML-Strip
 p5-html-stripscripts            ports/www/p5-HTML-StripScripts
@@ -14489,6 +14494,7 @@ p5-http-headers-fast            ports/www/p5-HTTP-Headers-Fast
 p5-http-lite                    ports/www/p5-HTTP-Lite
 p5-http-mhttp                   ports/www/p5-HTTP-MHTTP
 p5-http-mobileagent             ports/www/p5-HTTP-MobileAgent
+p5-http-mobileagent-plugin-charset  ports/www/p5-HTTP-MobileAgent-Plugin-Charset
 p5-http-mobileattribute         ports/www/p5-HTTP-MobileAttribute
 p5-http-parser                  ports/www/p5-HTTP-Parser
 p5-http-proxy                   ports/www/p5-HTTP-Proxy
