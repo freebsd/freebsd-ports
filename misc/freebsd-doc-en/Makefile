@@ -67,7 +67,7 @@ WITH_${F}=		yes
 # translate "WITH_FOO=yes" into "DOCFORMAT+=FOO".
 .for F in ${AVAILABLEFORMATS}
 .if defined(WITH_${F}) && !empty(WITH_${F})
-DOCFORMAT+=	${F:L}
+DOCFORMAT+=	${F:L:S,_,-,}
 .endif
 .endfor
 
