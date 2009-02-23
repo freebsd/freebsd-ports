@@ -6,6 +6,7 @@
 
 PORTNAME=	docbook-xml
 PORTVERSION=	4.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/xml/${PORTVERSION}/
 
@@ -42,6 +43,7 @@ ENT_FILES=	isoamsa.ent isoamsb.ent isoamsc.ent isoamsn.ent \
 		isocyr2.ent isodia.ent isogrk1.ent isogrk2.ent \
 		isogrk3.ent isogrk4.ent isolat1.ent isolat2.ent \
 		isonum.ent isopub.ent isotech.ent
+DOCSDIR=	${PREFIX}/share/${PORTNAME}/${PORTVERSION}
 
 pre-install:
 	@${RM} -f ${PLIST}
