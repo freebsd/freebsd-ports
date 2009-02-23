@@ -1,0 +1,15 @@
+%%SITE_PERL%%/EBook/Tools.pm
+%%SITE_PERL%%/EBook/Tools/EReader.pm
+%%SITE_PERL%%/EBook/Tools/IMP.pm
+%%SITE_PERL%%/EBook/Tools/LZSS.pm
+%%SITE_PERL%%/EBook/Tools/MSReader.pm
+%%SITE_PERL%%/EBook/Tools/Mobipocket.pm
+%%SITE_PERL%%/EBook/Tools/PalmDoc.pm
+%%SITE_PERL%%/EBook/Tools/Unpack.pm
+%%SITE_PERL%%/EBook/ebook.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/EBook/Tools/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/EBook/Tools
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/EBook
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/EBook/Tools
+@dirrmtry %%SITE_PERL%%/EBook
