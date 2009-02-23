@@ -1,0 +1,116 @@
+--- .pc/437142_backport_att350047.patch/layout/base/nsCSSFrameConstructor.cpp	2009-01-26 12:09:32.000000000 +0100
++++ layout/base/nsCSSFrameConstructor.cpp	2009-01-26 12:10:17.000000000 +0100
+@@ -9902,17 +9902,19 @@ nsCSSFrameConstructor::ContentRemoved(ns
+   nsFrameManager *frameManager = mPresShell->FrameManager();
+   nsPresContext *presContext = mPresShell->GetPresContext();
+   nsresult                  rv = NS_OK;
+ 
+   // Find the child frame that maps the content
+   nsIFrame* childFrame;
+   mPresShell->GetPrimaryFrameFor(aChild, &childFrame);
+ 
+-  if (! childFrame) {
++  if (!childFrame || childFrame->GetContent() != aChild) {
++    // XXXbz the GetContent() != aChild check is needed due to bug 135040.
++    // Remove it once that's fixed.
+     frameManager->ClearUndisplayedContentIn(aChild, aContainer);
+   }
+ 
+   // When the last item is removed from a select, 
+   // we need to add a pseudo frame so select gets sized as the best it can
+   // so here we see if it is a select and then we get the number of options
+   if (aContainer && childFrame) {
+     nsCOMPtr<nsIDOMHTMLSelectElement> selectElement = do_QueryInterface(aContainer);
+@@ -9991,17 +9993,19 @@ nsCSSFrameConstructor::ContentRemoved(ns
+       // First update the containing blocks structure by removing the
+       // existing letter frames. This makes the subsequent logic
+       // simpler.
+       RemoveLetterFrames(presContext, mPresShell, frameManager,
+                          containingBlock);
+ 
+       // Recover childFrame and parentFrame
+       mPresShell->GetPrimaryFrameFor(aChild, &childFrame);
+-      if (!childFrame) {
++      if (!childFrame || childFrame->GetContent() != aChild) {
++        // XXXbz the GetContent() != aChild check is needed due to bug 135040.
++        // Remove it once that's fixed.
+         frameManager->ClearUndisplayedContentIn(aChild, aContainer);
+         return NS_OK;
+       }
+       parentFrame = childFrame->GetParent();
+ 
+ #ifdef NOISY_FIRST_LETTER
+       printf("  ==> revised parentFrame=");
+       nsFrame::ListTag(stdout, parentFrame);
+@@ -10502,16 +10506,24 @@ nsCSSFrameConstructor::ProcessRestyledFr
+   }
+ 
+   index = count;
+   while (0 <= --index) {
+     nsIFrame* frame;
+     nsIContent* content;
+     nsChangeHint hint;
+     aChangeList.ChangeAt(index, frame, content, hint);
++    if (frame && frame->GetContent() != content) {
++      // XXXbz this is due to image maps messing with the primary frame map.
++      // See bug 135040.  Remove this block once that's fixed.
++      frame = nsnull;
++      if (!(hint & nsChangeHint_ReconstructFrame)) {
++        continue;
++      }
++    }
+ 
+     // skip any frame that has been destroyed due to a ripple effect
+     if (frame) {
+       nsresult res;
+ 
+       propTable->GetProperty(frame, nsLayoutAtoms::changeListProperty, &res);
+ 
+       if (NS_PROPTABLE_PROP_NOT_THERE == res)
+@@ -10567,16 +10579,21 @@ nsCSSFrameConstructor::ProcessRestyledFr
+   return NS_OK;
+ }
+ 
+ void
+ nsCSSFrameConstructor::RestyleElement(nsIContent     *aContent,
+                                       nsIFrame       *aPrimaryFrame,
+                                       nsChangeHint   aMinHint)
+ {
++  if (aPrimaryFrame && aPrimaryFrame->GetContent() != aContent) {
++    // XXXbz this is due to image maps messing with the primary frame mapping.
++    // See bug 135040.  We can remove this block once that's fixed.
++    aPrimaryFrame = nsnull;
++  }
+ #ifdef ACCESSIBILITY
+   nsIAtom *prevRenderedFrameType = nsnull;
+   if (mPresShell->IsAccessibilityActive()) {
+     prevRenderedFrameType = GetRenderedFrameType(aPrimaryFrame);
+   }
+ #endif
+   if (aMinHint & nsChangeHint_ReconstructFrame) {
+     RecreateFramesForContent(aContent);
+--- .pc/437142_backport_att350047.patch/layout/generic/nsImageMap.cpp	2009-01-26 12:09:32.000000000 +0100
++++ layout/generic/nsImageMap.cpp	2009-01-26 12:10:17.000000000 +0100
+@@ -895,16 +895,22 @@ nsImageMap::AddArea(nsIContent* aArea)
+     return NS_ERROR_OUT_OF_MEMORY;
+ 
+   //Add focus listener to track area focus changes
+   nsCOMPtr<nsIDOMEventReceiver> rec(do_QueryInterface(aArea));
+   if (rec) {
+     rec->AddEventListenerByIID(this, NS_GET_IID(nsIDOMFocusListener));
+   }
+ 
++   
++  // This is a nasty hack.  It needs to go away: see bug 135040.  Once this is
++  // removed, the code added to nsCSSFrameConstructor::RestyleElement,
++  // nsCSSFrameConstructor::ContentRemoved (both hacks there), and
++  // nsCSSFrameConstructor::ProcessRestyledFrames to work around this issue can
++  // be removed.
+   mPresShell->FrameManager()->SetPrimaryFrameFor(aArea, mImageFrame);
+   aArea->SetMayHaveFrame(PR_TRUE);
+   NS_ASSERTION(aArea->MayHaveFrame(), "SetMayHaveFrame failed?");
+ 
+   area->ParseCoords(coords);
+   mAreas.AppendElement(area);
+   return NS_OK;
+ }
