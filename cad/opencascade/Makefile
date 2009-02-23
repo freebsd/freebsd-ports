@@ -27,7 +27,7 @@ LIB_DEPENDS=	itcl.${ITCL_VER}:${PORTSDIR}/lang/itcl		\
 
 USE_BZIP2=	yes
 USE_BISON=	build
-USE_TK=		yes
+USE_TK=		84
 USE_TCL_BUILD=	84
 USE_TCL_RUN=	84
 USE_TCL_THREADS=yes
