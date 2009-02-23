@@ -1,5 +1,5 @@
 --- hald/freebsd/hf-devtree.c.orig	2008-05-07 19:24:03.000000000 -0400
-+++ hald/freebsd/hf-devtree.c	2009-01-30 14:30:57.000000000 -0500
++++ hald/freebsd/hf-devtree.c	2009-02-16 18:48:41.000000000 -0500
 @@ -86,7 +86,11 @@ hf_devtree_cpu_can_throttle (int cpu)
    gboolean can = FALSE;
    char *levels;
@@ -24,7 +24,17 @@
    if (levels)
      {
        sscanf(levels, "%i/", &freq);
-@@ -426,7 +434,13 @@ hf_devtree_probe (void)
+@@ -379,7 +387,8 @@ static Handler handlers[] = {
+   { "pcm",		NULL					},
+   { "psm",		hf_devtree_psm_set_properties		},
+   { "sio",		NULL					},
+-  { "speaker",		NULL					}
++  { "speaker",		NULL					},
++  { "usbus",		NULL					}
+ };
+ 
+ static void
+@@ -426,7 +435,13 @@ hf_devtree_probe (void)
  	  HalDevice *device;
  
  	  device = hf_devtree_device_new(parent, info->handler, info->unit);
@@ -39,7 +49,7 @@
  	}
  
        devices = g_slist_delete_link(devices, root);
-@@ -434,6 +448,17 @@ hf_devtree_probe (void)
+@@ -434,6 +449,17 @@ hf_devtree_probe (void)
      }
  }
  
@@ -57,7 +67,7 @@
  HalDevice *
  hf_devtree_find_from_name (HalDeviceStore *store, const char *name)
  {
-@@ -597,5 +622,6 @@ hf_devtree_is_driver (const char *name, 
+@@ -597,5 +623,6 @@ hf_devtree_is_driver (const char *name, 
  }
  
  HFHandler hf_devtree_handler = {

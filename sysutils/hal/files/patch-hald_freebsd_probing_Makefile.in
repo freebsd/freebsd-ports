@@ -1,6 +1,6 @@
---- hald/freebsd/probing/Makefile.in.orig	2009-01-25 16:54:29.000000000 -0500
-+++ hald/freebsd/probing/Makefile.in	2009-01-25 18:14:20.000000000 -0500
-@@ -34,6 +34,7 @@ build_triplet = @build@
+--- hald/freebsd/probing/Makefile.in.orig	2009-02-15 13:42:09.000000000 -0500
++++ hald/freebsd/probing/Makefile.in	2009-02-18 00:18:00.000000000 -0500
+@@ -34,10 +34,16 @@ build_triplet = @build@
  host_triplet = @host@
  @HALD_COMPILE_FREEBSD_TRUE@libexec_PROGRAMS =  \
  @HALD_COMPILE_FREEBSD_TRUE@	hald-probe-hiddev$(EXEEXT) \
@@ -8,7 +8,25 @@
  @HALD_COMPILE_FREEBSD_TRUE@	hald-probe-scsi$(EXEEXT) \
  @HALD_COMPILE_FREEBSD_TRUE@	hald-probe-smbios$(EXEEXT) \
  @HALD_COMPILE_FREEBSD_TRUE@	hald-probe-storage$(EXEEXT) \
-@@ -54,6 +55,9 @@ PROGRAMS = $(libexec_PROGRAMS)
+-@HALD_COMPILE_FREEBSD_TRUE@	hald-probe-volume$(EXEEXT)
++@HALD_COMPILE_FREEBSD_TRUE@	hald-probe-volume$(EXEEXT) \
++@HALD_COMPILE_FREEBSD_TRUE@	$(am__EXEEXT_1)
++@HALD_COMPILE_FREEBSD_TRUE@@HAVE_LIBUSB20_TRUE@am__append_1 = \
++@HALD_COMPILE_FREEBSD_TRUE@@HAVE_LIBUSB20_TRUE@	hald-probe-usb2-device		\
++@HALD_COMPILE_FREEBSD_TRUE@@HAVE_LIBUSB20_TRUE@	hald-probe-usb2-interface
++
+ subdir = hald/freebsd/probing
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -48,12 +54,17 @@ am__configure_deps = $(am__aclocal_m4_de
+ mkinstalldirs = $(install_sh) -d
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
++@HALD_COMPILE_FREEBSD_TRUE@@HAVE_LIBUSB20_TRUE@am__EXEEXT_1 = hald-probe-usb2-device$(EXEEXT) \
++@HALD_COMPILE_FREEBSD_TRUE@@HAVE_LIBUSB20_TRUE@	hald-probe-usb2-interface$(EXEEXT)
+ am__installdirs = "$(DESTDIR)$(libexecdir)"
+ libexecPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(libexec_PROGRAMS)
  am_hald_probe_hiddev_OBJECTS = probe-hiddev.$(OBJEXT)
  hald_probe_hiddev_OBJECTS = $(am_hald_probe_hiddev_OBJECTS)
  hald_probe_hiddev_DEPENDENCIES = $(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la
@@ -18,23 +36,46 @@
  am_hald_probe_scsi_OBJECTS = probe-scsi.$(OBJEXT)
  hald_probe_scsi_OBJECTS = $(am_hald_probe_scsi_OBJECTS)
  hald_probe_scsi_DEPENDENCIES = $(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la
-@@ -82,10 +86,11 @@ CCLD = $(CC)
+@@ -65,6 +76,17 @@ am_hald_probe_storage_OBJECTS =  \
+ 	hald_probe_storage-probe-storage.$(OBJEXT)
+ hald_probe_storage_OBJECTS = $(am_hald_probe_storage_OBJECTS)
+ hald_probe_storage_DEPENDENCIES = $(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la
++am__hald_probe_usb2_device_SOURCES_DIST = probe-usb2-device.c
++@HAVE_LIBUSB20_TRUE@am_hald_probe_usb2_device_OBJECTS =  \
++@HAVE_LIBUSB20_TRUE@	probe-usb2-device.$(OBJEXT)
++hald_probe_usb2_device_OBJECTS = $(am_hald_probe_usb2_device_OBJECTS)
++@HAVE_LIBUSB20_TRUE@hald_probe_usb2_device_DEPENDENCIES = $(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la
++am__hald_probe_usb2_interface_SOURCES_DIST = probe-usb2-interface.c
++@HAVE_LIBUSB20_TRUE@am_hald_probe_usb2_interface_OBJECTS =  \
++@HAVE_LIBUSB20_TRUE@	probe-usb2-interface.$(OBJEXT)
++hald_probe_usb2_interface_OBJECTS =  \
++	$(am_hald_probe_usb2_interface_OBJECTS)
++@HAVE_LIBUSB20_TRUE@hald_probe_usb2_interface_DEPENDENCIES = $(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la
+ am_hald_probe_volume_OBJECTS =  \
+ 	hald_probe_volume-freebsd_dvd_rw_utils.$(OBJEXT) \
+ 	hald_probe_volume-probe-volume.$(OBJEXT)
+@@ -82,11 +104,17 @@ CCLD = $(CC)
  LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
  	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
  	$(LDFLAGS) -o $@
 -SOURCES = $(hald_probe_hiddev_SOURCES) $(hald_probe_scsi_SOURCES) \
 -	$(hald_probe_smbios_SOURCES) $(hald_probe_storage_SOURCES) \
--	$(hald_probe_volume_SOURCES)
--DIST_SOURCES = $(hald_probe_hiddev_SOURCES) $(hald_probe_scsi_SOURCES) \
 +SOURCES = $(hald_probe_hiddev_SOURCES) $(hald_probe_mouse_SOURCES) \
 +	$(hald_probe_scsi_SOURCES) $(hald_probe_smbios_SOURCES) \
-+	$(hald_probe_storage_SOURCES) $(hald_probe_volume_SOURCES)
++	$(hald_probe_storage_SOURCES) \
++	$(hald_probe_usb2_device_SOURCES) \
++	$(hald_probe_usb2_interface_SOURCES) \
+ 	$(hald_probe_volume_SOURCES)
+-DIST_SOURCES = $(hald_probe_hiddev_SOURCES) $(hald_probe_scsi_SOURCES) \
 +DIST_SOURCES = $(hald_probe_hiddev_SOURCES) \
 +	$(hald_probe_mouse_SOURCES) $(hald_probe_scsi_SOURCES) \
  	$(hald_probe_smbios_SOURCES) $(hald_probe_storage_SOURCES) \
++	$(am__hald_probe_usb2_device_SOURCES_DIST) \
++	$(am__hald_probe_usb2_interface_SOURCES_DIST) \
  	$(hald_probe_volume_SOURCES)
  ETAGS = etags
-@@ -238,6 +243,7 @@ sharedstatedir = @sharedstatedir@
+ CTAGS = ctags
+@@ -238,6 +266,7 @@ sharedstatedir = @sharedstatedir@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
@@ -42,10 +83,20 @@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AM_CPPFLAGS = \
-@@ -254,6 +260,13 @@ hald_probe_hiddev_LDADD = \
+@@ -254,6 +283,23 @@ hald_probe_hiddev_LDADD = \
  	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la	\
  	-lusbhid
  
++@HAVE_LIBUSB20_TRUE@hald_probe_usb2_device_SOURCES = probe-usb2-device.c
++@HAVE_LIBUSB20_TRUE@hald_probe_usb2_device_LDADD = \
++@HAVE_LIBUSB20_TRUE@	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la  \
++@HAVE_LIBUSB20_TRUE@	-lusb20
++
++@HAVE_LIBUSB20_TRUE@hald_probe_usb2_interface_SOURCES = probe-usb2-interface.c
++@HAVE_LIBUSB20_TRUE@hald_probe_usb2_interface_LDADD = \
++@HAVE_LIBUSB20_TRUE@	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la  \
++@HAVE_LIBUSB20_TRUE@	-lusb20
++
 +hald_probe_mouse_SOURCES = probe-mouse.c
 +hald_probe_mouse_CPPFLAGS = $(AM_CPPFLAGS) @GLIB_CFLAGS@
 +hald_probe_mouse_LDADD = \
@@ -56,7 +107,7 @@
  hald_probe_smbios_SOURCES = probe-smbios.c
  hald_probe_smbios_LDADD = \
  	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la
-@@ -340,6 +353,9 @@ clean-libexecPROGRAMS:
+@@ -340,6 +386,9 @@ clean-libexecPROGRAMS:
  hald-probe-hiddev$(EXEEXT): $(hald_probe_hiddev_OBJECTS) $(hald_probe_hiddev_DEPENDENCIES) 
  	@rm -f hald-probe-hiddev$(EXEEXT)
  	$(LINK) $(hald_probe_hiddev_OBJECTS) $(hald_probe_hiddev_LDADD) $(LIBS)
@@ -66,7 +117,20 @@
  hald-probe-scsi$(EXEEXT): $(hald_probe_scsi_OBJECTS) $(hald_probe_scsi_DEPENDENCIES) 
  	@rm -f hald-probe-scsi$(EXEEXT)
  	$(LINK) $(hald_probe_scsi_OBJECTS) $(hald_probe_scsi_LDADD) $(LIBS)
-@@ -359,6 +375,7 @@ mostlyclean-compile:
+@@ -349,6 +398,12 @@ hald-probe-smbios$(EXEEXT): $(hald_probe
+ hald-probe-storage$(EXEEXT): $(hald_probe_storage_OBJECTS) $(hald_probe_storage_DEPENDENCIES) 
+ 	@rm -f hald-probe-storage$(EXEEXT)
+ 	$(LINK) $(hald_probe_storage_OBJECTS) $(hald_probe_storage_LDADD) $(LIBS)
++hald-probe-usb2-device$(EXEEXT): $(hald_probe_usb2_device_OBJECTS) $(hald_probe_usb2_device_DEPENDENCIES) 
++	@rm -f hald-probe-usb2-device$(EXEEXT)
++	$(LINK) $(hald_probe_usb2_device_OBJECTS) $(hald_probe_usb2_device_LDADD) $(LIBS)
++hald-probe-usb2-interface$(EXEEXT): $(hald_probe_usb2_interface_OBJECTS) $(hald_probe_usb2_interface_DEPENDENCIES) 
++	@rm -f hald-probe-usb2-interface$(EXEEXT)
++	$(LINK) $(hald_probe_usb2_interface_OBJECTS) $(hald_probe_usb2_interface_LDADD) $(LIBS)
+ hald-probe-volume$(EXEEXT): $(hald_probe_volume_OBJECTS) $(hald_probe_volume_DEPENDENCIES) 
+ 	@rm -f hald-probe-volume$(EXEEXT)
+ 	$(LINK) $(hald_probe_volume_OBJECTS) $(hald_probe_volume_LDADD) $(LIBS)
+@@ -359,6 +414,7 @@ mostlyclean-compile:
  distclean-compile:
  	-rm -f *.tab.c
  
@@ -74,7 +138,16 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hald_probe_storage-freebsd_dvd_rw_utils.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hald_probe_storage-probe-storage.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hald_probe_volume-freebsd_dvd_rw_utils.Po@am__quote@
-@@ -388,6 +405,20 @@ distclean-compile:
+@@ -366,6 +422,8 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/probe-hiddev.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/probe-scsi.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/probe-smbios.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/probe-usb2-device.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/probe-usb2-interface.Po@am__quote@
+ 
+ .c.o:
+ @am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+@@ -388,6 +446,20 @@ distclean-compile:
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
  @am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ $<
  
