@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	taglib-sharp
-PORTVERSION=	2.0.3.1
+PORTVERSION=	2.0.3.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.taglib-sharp.com/Download/ \
 		http://download.banshee-project.org/${PORTNAME}/${PORTVERSION}/
@@ -24,6 +24,9 @@ OPTIONS=	DOCS "Install documentation" on
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
+
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
+		VERSIONSUFX="db62eba44689b5b0"
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"

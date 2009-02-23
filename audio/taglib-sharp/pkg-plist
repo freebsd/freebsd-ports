@@ -1,14 +1,14 @@
-lib/mono/gac/policy.2.0.taglib-sharp/0.0.0.0__db62eba44689b5b0/policy.2.0.taglib-sharp.config
-lib/mono/gac/policy.2.0.taglib-sharp/0.0.0.0__db62eba44689b5b0/policy.2.0.taglib-sharp.dll
-lib/mono/gac/taglib-sharp/2.0.3.1__db62eba44689b5b0/taglib-sharp.dll
-lib/mono/gac/taglib-sharp/2.0.3.1__db62eba44689b5b0/taglib-sharp.dll.mdb
+lib/mono/gac/policy.2.0.taglib-sharp/0.0.0.0__%%VERSIONSUFX%%/policy.2.0.taglib-sharp.config
+lib/mono/gac/policy.2.0.taglib-sharp/0.0.0.0__%%VERSIONSUFX%%/policy.2.0.taglib-sharp.dll
+lib/mono/gac/taglib-sharp/%%PORTVERSION%%__%%VERSIONSUFX%%/taglib-sharp.dll
+lib/mono/gac/taglib-sharp/%%PORTVERSION%%__%%VERSIONSUFX%%/taglib-sharp.dll.mdb
 lib/mono/taglib-sharp/taglib-sharp.dll
 %%PORTDOCS%%lib/monodoc/sources/taglib-sharp-docs.source
 %%PORTDOCS%%lib/monodoc/sources/taglib-sharp-docs.tree
 %%PORTDOCS%%lib/monodoc/sources/taglib-sharp-docs.zip
 libdata/pkgconfig/taglib-sharp.pc
 @dirrm lib/mono/taglib-sharp
-@dirrm lib/mono/gac/taglib-sharp/2.0.3.1__db62eba44689b5b0
+@dirrm lib/mono/gac/taglib-sharp/%%PORTVERSION%%__%%VERSIONSUFX%%
 @dirrm lib/mono/gac/taglib-sharp
-@dirrm lib/mono/gac/policy.2.0.taglib-sharp/0.0.0.0__db62eba44689b5b0
+@dirrm lib/mono/gac/policy.2.0.taglib-sharp/0.0.0.0__%%VERSIONSUFX%%
 @dirrm lib/mono/gac/policy.2.0.taglib-sharp
