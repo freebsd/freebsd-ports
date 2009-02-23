@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Engine-Middleware
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,9 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for official distribution of HTTP::Engine
 
 RUN_DEPENDS=	\
-	p5-HTTP-Engine>=0.1.3:${PORTSDIR}/www/p5-HTTP-Engine \
+	p5-Any-Moose>=0.04:${PORTSDIR}/devel/p5-Any-Moose \
+	p5-Mouse>=0.17:${PORTSDIR}/devel/p5-Moose \
+	p5-HTTP-Engine>=0.1.4:${PORTSDIR}/www/p5-HTTP-Engine \
 	p5-libwww>0:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
