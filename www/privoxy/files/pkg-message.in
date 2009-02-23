@@ -14,11 +14,10 @@
   For documentation see:
   %%DOCSDIR%%/user-manual or 'man privoxy'
 
-  Note that default.filter, standard.action and
-  default.action get overwritten with each Privoxy
-  update. Instead of changing them you should use
-  your own action and filter files as described in
-  Privoxy's manual.
+  Note that default.filter and default.action get
+  overwritten with each Privoxy update. Instead of
+  changing them you should use your own action and
+  filter files as described in Privoxy's manual.
 
   If you installed Privoxy as package and are using the
   default configuration, you have to make sure the

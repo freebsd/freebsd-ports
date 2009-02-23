@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	privoxy
-PORTVERSION=	3.0.10
+PORTVERSION=	3.0.11
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ijbswa
@@ -83,13 +83,13 @@ do-install:
 	@${MKDIR} ${PREFIX}/etc/privoxy/templates
 	@${INSTALL_PROGRAM} ${WRKSRC}/privoxy ${PREFIX}/sbin
 	@${INSTALL_DATA} ${WRKSRC}/templates/[a-z]* ${PREFIX}/etc/privoxy/templates
-.for defaultfile in default.action standard.action default.filter
+.for defaultfile in default.action default.filter
 	@${INSTALL_DATA} ${WRKSRC}/${defaultfile} ${PREFIX}/etc/privoxy
 	@${CHOWN} privoxy:privoxy ${PREFIX}/etc/privoxy/${defaultfile}
-	@${CHMOD} 0640 ${PREFIX}/etc/privoxy/${defaultfile}
+	@${CHMOD} 0444 ${PREFIX}/etc/privoxy/${defaultfile}
 .endfor
 	@${MKDIR} ${EXAMPLESDIR}
-.for examplefile in config trust user.action
+.for examplefile in config match-all.action trust user.action
 	@${INSTALL_DATA} ${WRKSRC}/${examplefile} ${EXAMPLESDIR}/
 	@${CHOWN} privoxy:privoxy ${EXAMPLESDIR}/${examplefile}
 	@${CHMOD} 0640 ${EXAMPLESDIR}/${examplefile}
