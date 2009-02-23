@@ -1,0 +1,20 @@
+@comment $FreeBSD$
+%%DOCSDIR%%/%%DOCLANG%%/articles/bsdl-gpl/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/formatting-media/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/greek-language-support/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/laptop/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/new-users/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/releng-packages/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/releng/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/book.pdf
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/book.pdf

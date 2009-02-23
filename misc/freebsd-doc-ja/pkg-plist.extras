@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/stage_1.conf.default
+%%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/stage_1.sh
+%%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/stage_2.conf.default
+%%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/stage_2.sh
+%%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/stage_3.mk

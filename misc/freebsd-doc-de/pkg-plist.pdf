@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/laptop/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/new-users/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/book.pdf
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/book.pdf
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/book.pdf
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/book.pdf
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/book.pdf

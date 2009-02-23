@@ -1,0 +1,3 @@
+@comment $FreeBSD$
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/book.txt

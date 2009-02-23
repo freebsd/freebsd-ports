@@ -1,0 +1,24 @@
+@comment $FreeBSD$
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/contrib-how.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/index.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/LEGALNOTICE.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/acknowledgments.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/admin.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/advanced.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/applications.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/commercial.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/disks.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/funnies.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/hardware.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/index.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/install.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/introduction.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/kernelconfig.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/misc.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/networking.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/ppp.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/security.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/serial.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/support.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/troubleshoot.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/x.html

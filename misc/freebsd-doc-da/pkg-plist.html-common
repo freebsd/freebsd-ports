@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+%%DOCSDIR%%/%%DOCLANG%%/articles/euro/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/docbook.css
