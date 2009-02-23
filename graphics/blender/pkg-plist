@@ -127,6 +127,7 @@ bin/blender-bin
 %%DATADIR%%/scripts/import_lightwave_motion.py
 %%DATADIR%%/scripts/import_mdd.py
 %%DATADIR%%/scripts/import_obj.py
+%%DATADIR%%/scripts/import_web3d.py
 %%DATADIR%%/scripts/lightwave_import.py
 %%DATADIR%%/scripts/lightwave_export.py
 %%DATADIR%%/scripts/md2_export.py
