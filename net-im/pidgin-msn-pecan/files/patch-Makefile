@@ -1,7 +1,7 @@
-diff -Naur ./Makefile ../msn-pecan-0.0.17/Makefile
---- ./Makefile	2008-11-29 21:51:30.000000000 +0100
-+++ ../msn-pecan-0.0.17/Makefile	2008-11-29 21:52:42.000000000 +0100
-@@ -29,7 +29,7 @@
+diff -Naur ./Makefile ../msn-pecan-0.0.18/Makefile
+--- ./Makefile	2009-02-22 14:45:40.000000000 +0100
++++ ../msn-pecan-0.0.18/Makefile	2009-02-22 14:46:03.000000000 +0100
+@@ -33,7 +33,7 @@
  OTHER_WARNINGS := -D_FORTIFY_SOURCE=2 -fstack-protector -g3 -Wdisabled-optimization \
  	-Wendif-labels -Wformat=2 -Wstack-protector -Wswitch
  
@@ -10,16 +10,25 @@ diff -Naur ./Makefile ../msn-pecan-0.0.17/Makefile
  
  override CFLAGS += -I. -D PACKAGE='"libmsn-pecan"' -DENABLE_NLS -DHAVE_LIBPURPLE -DPURPLE_DEBUG -D PLUGIN_NAME='msn-pecan'
  
-@@ -43,7 +43,7 @@
+@@ -60,7 +60,7 @@
  # For glib < 2.6 support (libpurple maniacs)
  FALLBACK_CFLAGS := -I./fix_purple
  
 -LDFLAGS := -Wl,--no-undefined
 +LDFLAGS := -Wl,--no-undefined,-lintl,-lc
  
- prefix := $(DESTDIR)/$(PURPLE_PREFIX)
- plugin_dir := $(prefix)/lib/purple-2
-@@ -196,7 +196,7 @@
+ plugin_dir := $(DESTDIR)/$(PURPLE_LIBDIR)/purple-2
+ data_dir := $(DESTDIR)/$(PURPLE_DATADIR)
+@@ -131,7 +131,7 @@
+ deps := $(objects:.o=.d)
+ 
+ PO_TEMPLATE := po/messages.pot
+-CATALOGS := ar da de es fi tr hu it nb nl pt_BR pt ru sr sv tr zh_CN zh_TW
++CATALOGS := ar da de es fi tr hu it nb nl pt_BR pt sr sv tr zh_CN zh_TW
+ 
+ ifeq ($(PLATFORM),Darwin)
+   SHLIBEXT := dylib
+@@ -235,7 +235,7 @@
  
  install_locales: $(foreach e,$(CATALOGS),po/libmsn-pecan-$(e).mo)
  	for x in $(CATALOGS); do \
