@@ -1828,6 +1828,7 @@
     SUBDIR += p5-Test-Number-Delta
     SUBDIR += p5-Test-Object
     SUBDIR += p5-Test-Output
+    SUBDIR += p5-Test-POE-Server-TCP
     SUBDIR += p5-Test-Parser
     SUBDIR += p5-Test-Pod
     SUBDIR += p5-Test-Pod-Coverage
