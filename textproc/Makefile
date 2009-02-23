@@ -395,6 +395,7 @@
     SUBDIR += p5-DelimMatch
     SUBDIR += p5-Devel-TraceSAX
     SUBDIR += p5-DocSet
+    SUBDIR += p5-EBook-Tools
     SUBDIR += p5-Excel-Template
     SUBDIR += p5-Filter-Simple
     SUBDIR += p5-FormValidator-Simple
