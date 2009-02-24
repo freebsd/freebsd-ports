@@ -9,13 +9,9 @@ PORTNAME=	palmpower
 PORTVERSION=	1.0.2
 PORTREVISION=	1
 CATEGORIES=	palm
-#
-# The original MASTER_SITE has disappeared:
-#	http://www.fh-wilhelmshaven.de/~akcaagaa/palmpower/files/
-# It can be downloaded via
-#	http://mxlab.com/files/palm/devel/
-# but that site doesn't allow direct HTTP transfers.
-#
+MASTER_SITES=	http://ftp.linux.in.th/palm/develope/ \
+		http://ftp.ksu.edu.tw/FTP/FreeBSD/distfiles/ \
+		${MASTER_SITE_OPENBSD}
 
 MAINTAINER=	glen.j.barber@gmail.com
 COMMENT=	Disassembler and other tools for PalmOS binaries
@@ -25,11 +21,7 @@ USE_GMAKE=	yes
 
 MAN1=		pilotdis.1
 
-.include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${DISTNAME}.${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-IGNORE=	"Please fetch http://mxlab.com/files/palm/devel/palmpower-1.0.2.tar.gz manually and store it in ${DISTDIR}"
-.endif
+PLIST_FILES=	bin/pila bin/pilotdis bin/splitprc
 
 post-build:
 	cd ${WRKSRC}/utils; ${CC} ${CFLAGS} -o splitprc splitprc.c
@@ -40,4 +32,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/utils/splitprc ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/pilotdis.1 ${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
