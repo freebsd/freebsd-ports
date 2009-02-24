@@ -1,46 +1,11 @@
---- configure.orig	2007-09-16 17:10:01.000000000 -0400
-+++ configure	2007-09-16 17:10:01.000000000 -0400
-@@ -23327,12 +23327,12 @@ if test -n "$PKG_CONFIG"; then
-         pkg_cv_GB_CFLAGS="$GB_CFLAGS"
-     else
-         if test -n "$PKG_CONFIG" && \
--    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"libgb == 1.17\"") >&5
--  ($PKG_CONFIG --exists --print-errors "libgb == 1.17") 2>&5
-+    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"libgb = 1.17\"") >&5
-+  ($PKG_CONFIG --exists --print-errors "libgb = 1.17") 2>&5
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; then
--  pkg_cv_GB_CFLAGS=`$PKG_CONFIG --cflags "libgb == 1.17" 2>/dev/null`
-+  pkg_cv_GB_CFLAGS=`$PKG_CONFIG --cflags "libgb = 1.17" 2>/dev/null`
- else
-   pkg_failed=yes
- fi
-@@ -23345,12 +23345,12 @@ if test -n "$PKG_CONFIG"; then
-         pkg_cv_GB_LIBS="$GB_LIBS"
-     else
-         if test -n "$PKG_CONFIG" && \
--    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"libgb == 1.17\"") >&5
--  ($PKG_CONFIG --exists --print-errors "libgb == 1.17") 2>&5
-+    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"libgb = 1.17\"") >&5
-+  ($PKG_CONFIG --exists --print-errors "libgb = 1.17") 2>&5
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; then
--  pkg_cv_GB_LIBS=`$PKG_CONFIG --libs "libgb == 1.17" 2>/dev/null`
-+  pkg_cv_GB_LIBS=`$PKG_CONFIG --libs "libgb = 1.17" 2>/dev/null`
- else
-   pkg_failed=yes
- fi
-@@ -23369,9 +23369,9 @@ else
-         _pkg_short_errors_supported=no
- fi
-         if test $_pkg_short_errors_supported = yes; then
--	        GB_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "libgb == 1.17"`
-+	        GB_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "libgb = 1.17"`
-         else
--	        GB_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "libgb == 1.17"`
-+	        GB_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "libgb = 1.17"`
-         fi
- 	# Put the nasty error message in config.log where it belongs
- 	echo "$GB_PKG_ERRORS" >&5
+--- configure.orig	2009-02-23 20:47:18.000000000 -0500
++++ configure	2009-02-23 20:48:20.000000000 -0500
+@@ -14117,7 +14117,7 @@ if test "x$gnumeric_with_gtk" = xtrue -a
+ 
+ # Check whether --with-gnome was given.
+ if test "${with_gnome+set}" = set; then
+-  withval=$with_gnome; if test "x$withval" == xyes; then
++  withval=$with_gnome; if test "x$withval" = xyes; then
+ 			ui_msg="Gnome"
+ 			gnumeric_with_gnome=true
+ 		fi

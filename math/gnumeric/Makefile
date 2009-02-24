@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.9.3
-PORTREVISION=	2
+PORTVERSION=	1.9.4
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -30,7 +29,7 @@ INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-guile --with-bonobo
+CONFIGURE_ARGS=	--without-guile --with-bonobo --with-gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}" \
 		python_prog=${PYTHON_VERSION}
@@ -54,9 +53,6 @@ PLIST_SUB+=		GNOMEDB=""
 CONFIGURE_ARGS+=	--without-gda
 PLIST_SUB+=		GNOMEDB="@comment "
 .endif
-
-post-extract:
-	@${CP} ${FILESDIR}/gnumeric-C.omf ${WRKSRC}/doc/C
 
 post-patch:
 	@${RM} -f ${WRKSRC}/GNOME_Gnumeric.server.in
