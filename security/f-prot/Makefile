@@ -22,6 +22,7 @@ RUN_DEPENDS+=	${LOCALBASE}/f-prot/SIGN.DEF:${PORTSDIR}/security/f-prot-sig
 .endif
 
 RESTRICTED=	Free for personal use only
+BROKEN=		This version no longer receives updates
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
