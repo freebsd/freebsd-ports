@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://sjeng.org/ftp/vorbis/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gamato@users.sf.net
 COMMENT=	Calculates the perceived sound level of an Ogg Vorbis file
 
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis

@@ -21,7 +21,7 @@ EXTRACT_ONLY=	DWiconpack1.tar.gz DWiconpack2.tar.gz IconFest-1.2.tgz \
 		KTermIcons-1.0.tar.gz \
 		WindowMaker-extra-0.1.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gamato@users.sf.net
 COMMENT=	Icons mainly for use in Window Maker
 
 GNU_CONFIGURE=	yes
