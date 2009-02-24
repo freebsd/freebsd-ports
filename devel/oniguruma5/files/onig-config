@@ -36,7 +36,7 @@ while test $# -gt 0; do
       echo $exec_prefix
       ;;
     --version)
-      echo 1.2.9
+      echo 5.2.9
       ;;
     --cflags)
       echo -I${prefix}/include
