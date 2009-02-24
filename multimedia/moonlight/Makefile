@@ -61,7 +61,7 @@ CONFIGURE_ARGS+=	--with-ff2=no
 #			FF3_LIBS="-pthread -L${LOCALBASE}/lib/firefox3"
 #.else
 PLIST_SUB+=		FF3="@comment "
-#CONFIGURE_ARGS+=	--with-ff3=no
+CONFIGURE_ARGS+=	--with-ff3=no
 #.endif
 
 # Building the .xpi doesn't actually require embedded cairo, but it's a safer option
