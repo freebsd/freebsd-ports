@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asapm/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gamato@users.sf.net
 COMMENT=	Laptop battery status display for X11
 
 ONLY_FOR_ARCHS=	i386

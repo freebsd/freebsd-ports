@@ -14,7 +14,7 @@ MASTER_SITES=	http://utopia.knoware.nl/~hlub/uck/rlwrap/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	dryice
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gamato@users.sf.net
 COMMENT=	Readline wrapper
 
 GNU_CONFIGURE=		yes
