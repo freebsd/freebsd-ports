@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	k8048
-PORTVERSION=	1.00
+PORTVERSION=	1.04
 CATEGORIES=	devel
 MASTER_SITES=	http://dev.kewl.org/k8048/
 
