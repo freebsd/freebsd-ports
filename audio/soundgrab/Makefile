@@ -20,10 +20,8 @@ RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 		rawplay:${PORTSDIR}/audio/rawrec \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		flac:${PORTSDIR}/audio/flac \
-		${PERL_SITELIBDIR}/${PERL_VER}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu \
-		${PERL_SITELIBDIR}/${PERL_VER}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-
-PERL_SITELIBDIR=	${LOCALBASE}/lib/perl5/site_perl
+		${SITE_PERL}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu \
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
 USE_PERL5=	yes
 NO_BUILD=	yes

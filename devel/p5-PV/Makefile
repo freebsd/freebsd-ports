@@ -23,7 +23,7 @@ NO_BUILD=	YES
 PLIST_FILES=	%%SITE_PERL%%/PV.pm
 
 do-install:
-	${MKDIR} -m 755 ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
-	${INSTALL_DATA} ${WRKSRC}/PV.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
+	${MKDIR} -m 755 ${PREFIX}/${SITE_PERL_REL}/
+	${INSTALL_DATA} ${WRKSRC}/PV.pm ${PREFIX}/${SITE_PERL_REL}/
 
 .include <bsd.port.mk>

@@ -21,9 +21,9 @@ MAN3=		URI::Sequin.3
 
 .ifndef (NOPORTDOCS)
 post-install:
-	@${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/URI/Sequin/examples
+	@${MKDIR} ${PREFIX}/${SITE_PERL_REL}/URI/Sequin/examples
 	@${INSTALL_DATA} ${WRKSRC}/example.pl ${WRKSRC}/ref?.log \
-		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/URI/Sequin/examples
+		${PREFIX}/${SITE_PERL_REL}/URI/Sequin/examples
 .endif
 
 .include <bsd.port.mk>

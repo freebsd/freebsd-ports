@@ -26,10 +26,10 @@ do-build:
 	${MV} ${WRKDIR}/htmlpp.temp ${WRKDIR}/htmlpp
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
+	${MKDIR} ${PREFIX}/${SITE_PERL_REL}
 	${INSTALL_SCRIPT} ${WRKDIR}/htmlpp ${PREFIX}/bin/htmlpp
-	${INSTALL_DATA} ${WRKDIR}/htmlpp.d ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/htmlpp.d
-	(cd ${WRKDIR}; for FILE in *.pl; do ${INSTALL_DATA} $${FILE} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/$${FILE}; done)
+	${INSTALL_DATA} ${WRKDIR}/htmlpp.d ${PREFIX}/${SITE_PERL_REL}/htmlpp.d
+	(cd ${WRKDIR}; for FILE in *.pl; do ${INSTALL_DATA} $${FILE} ${PREFIX}/${SITE_PERL_REL}/$${FILE}; done)
 	(cd ${WRKDIR}; for FILE in *.def; do ${INSTALL_DATA} $${FILE} ${PREFIX}/bin/$${FILE}; done)
 	${INSTALL_DATA} ${WRKDIR}/guru_opt.fmt ${PREFIX}/bin/guru.fmt
 	(cd ${WRKDIR}; ${MKDIR} ${PREFIX}/share/doc/htmlpp; for FILE in *.htm; do ${INSTALL_DATA} $${FILE} ${PREFIX}/share/doc/htmlpp/$${FILE}; done)

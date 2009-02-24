@@ -26,7 +26,7 @@ APACHE_COMPAT=	yes
 MAKE_ENV+=	PERL5=${PERL5}
 DIST_SUBDIR=	wwwstat
 MAN1=		wwwstat.1 splitlog.1
-SITEPERL=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
+SITEPERL=	${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}
 
 do-install:
 	@if [ ! -d ${SITEPERL} ]; then \

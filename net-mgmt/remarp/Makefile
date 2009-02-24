@@ -31,10 +31,10 @@ pre-patch:
 	s|use lib "\$$Bin/../lib";||' ${WRKSRC}/lib/remarp/configure.pm
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/remarp
+	${MKDIR} ${PREFIX}/${SITE_PERL_REL}/remarp
 	${MKDIR} ${REMARP_SPOOL}
 	${INSTALL_DATA} ${WRKSRC}/etc/remarp.conf ${PREFIX}/etc/remarp.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/lib/remarp/*.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/remarp
+	${INSTALL_DATA} ${WRKSRC}/lib/remarp/*.pm ${PREFIX}/${SITE_PERL_REL}/remarp
 	${INSTALL_SCRIPT} ${WRKSRC}/sbin/remarp.pl ${PREFIX}/sbin/remarp
 
 post-install:

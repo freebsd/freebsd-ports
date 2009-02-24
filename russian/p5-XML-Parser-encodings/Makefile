@@ -52,6 +52,6 @@ do-build:
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.enc \
-		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser/Encodings/
+		${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/XML/Parser/Encodings/
 
 .include <bsd.port.mk>
