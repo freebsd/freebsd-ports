@@ -11,6 +11,7 @@ CATEGORIES=	www java devel
 MASTER_SITES=	https://hudson.dev.java.net/files/documents/2402/127179/
 DISTNAME=	hudson
 EXTRACT_SUFX=	.war
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=
 
 MAINTAINER=	hq@FreeBSD.org
