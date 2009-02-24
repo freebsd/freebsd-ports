@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump 
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 PERL_CONFIGURE=	yes
 
 MAN3=		Class::Tom.3

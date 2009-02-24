@@ -40,9 +40,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
-	@${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Bayespam
+	@${MKDIR} ${PREFIX}/${SITE_PERL_REL}/Bayespam
 	@${INSTALL_DATA} ${WRKSRC}/Bayespam/Process.pm \
-		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Bayespam
+		${PREFIX}/${SITE_PERL_REL}/Bayespam
 .for file in ${FILES_SCRIPTS}
 	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
 .endfor

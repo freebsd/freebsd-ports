@@ -20,10 +20,9 @@ USE_PERL5=	YES
 NO_BUILD=	YES
 
 do-install:
-		@ ${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/ConfigReader/
-		@ ${INSTALL_DATA} ${WRKSRC}/DirectiveStyle.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/ConfigReader/
-		@ ${INSTALL_DATA} ${WRKSRC}/Spec.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/ConfigReader/
-		@ ${INSTALL_DATA} ${WRKSRC}/Values.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/ConfigReader/
-		@ ${INSTALL_DATA} ${WRKSRC}/ConfigReader.pod ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
+	${MKDIR} ${PREFIX}/${SITE_PERL_REL}/ConfigReader/
+	${INSTALL_DATA} ${WRKSRC}/DirectiveStyle.pm ${WRKSRC}/Spec.pm \
+		${WRKSRC}/Values.pm ${PREFIX}/${SITE_PERL_REL}/ConfigReader/
+	${INSTALL_DATA} ${WRKSRC}/ConfigReader.pod ${PREFIX}/${SITE_PERL_REL}/
 
 .include <bsd.port.mk>

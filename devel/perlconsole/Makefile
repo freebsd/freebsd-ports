@@ -8,18 +8,17 @@
 PORTNAME=	perlconsole
 PORTVERSION=	0.4
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cpan.org/modules/by-module/Test/SUKRIA/
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../authors/id/S/SU/SUKRIA
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A light program that lets you evaluate Perl code interactively
 
-RUN_DEPENDS=	${BASEP}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
-		${BASEP}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu \
-		${BASEP}/Module/Refresh.pm:${PORTSDIR}/devel/p5-Module-Refresh \
-		${BASEP}/Lexical/Persistence.pm:${PORTSDIR}/devel/p5-Lexical-Persistence \
-		${BASEP}/B/Keywords.pm:${PORTSDIR}/devel/p5-B-Keywords
-
-BASEP=		${SITE_PERL}
+RUN_DEPENDS=	${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
+		${SITE_PERL}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu \
+		${SITE_PERL}/Module/Refresh.pm:${PORTSDIR}/devel/p5-Module-Refresh \
+		${SITE_PERL}/Lexical/Persistence.pm:${PORTSDIR}/devel/p5-Lexical-Persistence \
+		${SITE_PERL}/B/Keywords.pm:${PORTSDIR}/devel/p5-B-Keywords
 
 USE_PERL5=	yes
 PERL_CONFIGURE=	5.8.0+
@@ -29,12 +28,12 @@ PORTDOCS=	README \
 		CHANGES
 
 PLIST_FILES=	bin/perlconsole \
-		lib/perl5/${PERL_VER}/PerlConsole/Commands.pm \
-		lib/perl5/${PERL_VER}/PerlConsole/Console.pm \
-		lib/perl5/${PERL_VER}/PerlConsole/Preferences.pm \
-		lib/perl5/${PERL_VER}/PerlConsole.pm
+		${SITE_PERL_REL}/PerlConsole/Commands.pm \
+		${SITE_PERL_REL}/PerlConsole/Console.pm \
+		${SITE_PERL_REL}/PerlConsole/Preferences.pm \
+		${SITE_PERL_REL}/PerlConsole.pm
 
-PLIST_DIRS=	lib/perl5/${PERL_VER}/PerlConsole
+PLIST_DIRS=	${SITE_PERL_REL}/PerlConsole
 
 do-install:
 .if !defined(NOPORTDOCS)
@@ -43,11 +42,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-	${MKDIR} ${PREFIX}/lib/perl5/${PERL_VER}/PerlConsole/
+	${MKDIR} ${PREFIX}/${SITE_PERL_REL}/PerlConsole/
 	${CP} -R ${WRKSRC}/lib/PerlConsole/ \
-		${PREFIX}/lib/perl5/${PERL_VER}/PerlConsole/
+		${PREFIX}/${SITE_PERL_REL}/PerlConsole/
 	${CP} ${WRKSRC}/lib/PerlConsole.pm \
-		${PREFIX}/lib/perl5/${PERL_VER}/PerlConsole.pm
+		${PREFIX}/${SITE_PERL_REL}/PerlConsole.pm
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 
 .include <bsd.port.mk>
