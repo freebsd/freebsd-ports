@@ -49,6 +49,13 @@ stop_postcmd()
   rm -f $pidfile
 }
 
+reload_cmd=${name}_reload
+
+amavisd_reload()
+{
+  ${command} reload
+}
+
 # set defaults
 
 amavisd_enable=${amavisd_enable:-"NO"}
