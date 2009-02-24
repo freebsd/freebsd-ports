@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTVERSION=	1.6.1.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -25,8 +24,6 @@ RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 		${SITE_PERL}/Net/SMTP/SSL.pm:${PORTSDIR}/mail/p5-Net-SMTP-SSL
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
-
-CONFLICTS=	cogito-0.1[012] git-4.*
 
 MAN1=		git.1 \
 		git-add.1 \
