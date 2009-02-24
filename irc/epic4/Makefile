@@ -60,11 +60,11 @@ CONFIGURE_ARGS+=	--without-tcl
 # The path provided to --with-perl is needed, since the configure script
 # looks for libperl.so in places very specific to Linux.  Possibly a
 # patch to configure would be a better idea, but we need to rely on
-# SITE_PERL and PERL_VER to create the path.
+# SITE_PERL and PERL_VERSION to create the path.
 #
 .if defined(WITH_PERL)
 USE_PERL5=	yes
-CONFIGURE_ARGS+=	--with-perl=${SITE_PERL}/../../${PERL_VER}/mach/CORE
+CONFIGURE_ARGS+=	--with-perl=${SITE_PERL}/../../${PERL_VERSION}/mach/CORE
 .else
 CONFIGURE_ARGS+=	--without-perl
 .endif
