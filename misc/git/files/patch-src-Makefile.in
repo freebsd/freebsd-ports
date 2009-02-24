@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2008-12-26 13:14:46.000000000 +0100
-+++ src/Makefile.in	2008-12-26 13:14:58.000000000 +0100
-@@ -445,7 +445,7 @@
+--- src/Makefile.in.orig	2009-02-18 03:31:26.000000000 +0100
++++ src/Makefile.in	2009-02-24 00:46:11.000000000 +0100
+@@ -575,7 +575,7 @@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  EXTRA_DIST = gitaction gitmkdirs gitmount gitrgrep gitunpack gitxgrep\
@@ -9,11 +9,11 @@
  
  bin_SCRIPTS = gitaction gitmkdirs gitmount gitrgrep gitunpack gitxgrep\
  	      .gitaction gitdpkgname
-@@ -796,7 +796,6 @@
+@@ -926,7 +926,6 @@
  
  
  install-exec-hook:
--@TRANSITION_TRUE@	$(INSTALL_PROGRAM) -m 755 $(srcdir)/git.transition $(DESTDIR)$(bindir)/git
+-@TRANSITION_TRUE@	$(INSTALL_SCRIPT) $(srcdir)/git.transition $(DESTDIR)$(bindir)/git
  	ln -sf gitrgrep $(DESTDIR)$(bindir)/gitregrep
  	ln -sf gitrgrep $(DESTDIR)$(bindir)/gitrfgrep
  

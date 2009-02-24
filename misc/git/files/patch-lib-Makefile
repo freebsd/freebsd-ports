@@ -1,42 +1,11 @@
---- lib/Makefile.am.orig	2008-06-29 01:14:36.000000000 +0200
-+++ lib/Makefile.am	2008-12-26 16:38:05.000000000 +0100
-@@ -324,18 +324,6 @@
- charset_alias = $(DESTDIR)$(libdir)/charset.alias
- charset_tmp = $(DESTDIR)$(libdir)/charset.tmp
- install-exec-local: all-local
--	test $(GLIBC21) != no || $(mkinstalldirs) $(DESTDIR)$(libdir)
--	if test -f $(charset_alias); then \
--	  sed -f ref-add.sed $(charset_alias) > $(charset_tmp) ; \
--	  $(INSTALL_DATA) $(charset_tmp) $(charset_alias) ; \
--	  rm -f $(charset_tmp) ; \
--	else \
--	  if test $(GLIBC21) = no; then \
--	    sed -f ref-add.sed charset.alias > $(charset_tmp) ; \
--	    $(INSTALL_DATA) $(charset_tmp) $(charset_alias) ; \
--	    rm -f $(charset_tmp) ; \
--	  fi ; \
--	fi
- 
- uninstall-local: all-local
- 	if test -f $(charset_alias); then \
---- lib/Makefile.in.orig	2008-06-29 01:14:36.000000000 +0200
-+++ lib/Makefile.in	2008-12-26 16:38:27.000000000 +0100
-@@ -920,18 +920,6 @@
- 
- all-local: charset.alias ref-add.sed ref-del.sed
- install-exec-local: all-local
--	test $(GLIBC21) != no || $(mkinstalldirs) $(DESTDIR)$(libdir)
--	if test -f $(charset_alias); then \
--	  sed -f ref-add.sed $(charset_alias) > $(charset_tmp) ; \
--	  $(INSTALL_DATA) $(charset_tmp) $(charset_alias) ; \
--	  rm -f $(charset_tmp) ; \
--	else \
--	  if test $(GLIBC21) = no; then \
--	    sed -f ref-add.sed charset.alias > $(charset_tmp) ; \
--	    $(INSTALL_DATA) $(charset_tmp) $(charset_alias) ; \
--	    rm -f $(charset_tmp) ; \
--	  fi ; \
--	fi
- 
- uninstall-local: all-local
- 	if test -f $(charset_alias); then \
+--- lib/Makefile.in.orig	2009-02-18 03:31:25.000000000 +0100
++++ lib/Makefile.in	2009-02-24 01:10:55.000000000 +0100
+@@ -1214,7 +1214,7 @@
+ 	  case '$(host_os)' in \
+ 	    darwin[56]*) \
+ 	      need_charset_alias=true ;; \
+-	    darwin* | cygwin* | mingw* | pw32* | cegcc*) \
++	    freebsd* | darwin* | cygwin* | mingw* | pw32* | cegcc*) \
+ 	      need_charset_alias=false ;; \
+ 	    *) \
+ 	      need_charset_alias=true ;; \
