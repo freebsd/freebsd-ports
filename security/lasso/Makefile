@@ -57,7 +57,7 @@ PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
 
 post-install:
-	${RM} -f ${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
+	${RM} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/${PERL_ARCH}/perllocal.pod
 .ifdef(NOPORTDOCS)
 	${RM} -rf ${DOCSDIR}
 .endif
