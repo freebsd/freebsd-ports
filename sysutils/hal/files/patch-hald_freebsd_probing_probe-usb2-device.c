@@ -1,6 +1,6 @@
---- hald/freebsd/probing/probe-usb2-device.c.orig	2009-02-18 00:06:02.000000000 -0500
-+++ hald/freebsd/probing/probe-usb2-device.c	2009-02-18 00:07:31.000000000 -0500
-@@ -0,0 +1,198 @@
+--- hald/freebsd/probing/probe-usb2-device.c.orig	2009-02-24 00:36:27.000000000 -0500
++++ hald/freebsd/probing/probe-usb2-device.c	2009-02-24 00:39:54.000000000 -0500
+@@ -0,0 +1,203 @@
 +/***************************************************************************
 + * CVSID: $Id$
 + *
@@ -28,6 +28,7 @@
 +#  include <config.h>
 +#endif
 +
++#include <sys/param.h>
 +#include <sys/types.h>
 +#include <stdio.h>
 +#include <stdlib.h>
@@ -36,8 +37,12 @@
 +
 +#include <libusb20_desc.h>
 +#include <libusb20.h>
++#if __FreeBSD_version >= 800064
++#include <dev/usb/usb_ioctl.h>
++#else
 +#include <dev/usb2/include/usb2_standard.h>
 +#include <dev/usb2/include/usb2_ioctl.h>
++#endif
 +
 +#include "../libprobe/hfp.h"
 +
