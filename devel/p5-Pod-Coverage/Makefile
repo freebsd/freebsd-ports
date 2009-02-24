@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Pod-Coverage
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	devel textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +26,7 @@ MAN3=		Pod::Coverage.3 \
 		Pod::Coverage::Overloader.3
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	Changes README
+PORTDOCS=	Changes
 EXAMPLES=	examples/check_installed examples/script-covered
 
 post-install:
