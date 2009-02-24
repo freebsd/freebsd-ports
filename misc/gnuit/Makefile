@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Interactive Tools - a file system browser for UNIX systems
 
-CONFLICTS=	git-1.* cogito-[0-9]*
-
 GNU_CONFIGURE=	YES
 MAN1=		git.1 gitaction.1 gitdpkgname.1 gitfm.1 gitinternal.1 \
 		gitkeys.1 gitmount.1 gitps.1 gitregrep.1 gitrfgrep.1 \
