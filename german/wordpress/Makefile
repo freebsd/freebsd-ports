@@ -17,6 +17,8 @@ DISTNAME=	wordpress_271-de
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A state-of-the-art semantic personal publishing platform
 
+BROKEN=		distfile mismatch
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_ZIP=	YES
