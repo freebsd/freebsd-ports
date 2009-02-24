@@ -1,0 +1,6 @@
+Geresh is a multi lingual text editor, but there are a few features
+for the benefit of users of Hebrew and Arabic, such as: the ability
+to display the signs point the Hebrew / Arabic (dash Hebrew) as an
+alternative, convenient editing of characters in the format of the
+BiDi (such as RLM, LRM), an alternative algorithm Greek paragraphs
+to set the emulation of the Hebrew keyboard.
