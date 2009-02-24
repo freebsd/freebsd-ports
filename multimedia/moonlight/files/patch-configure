@@ -1,5 +1,5 @@
 --- configure.orig	2009-01-13 19:53:23.000000000 +0000
-+++ configure	2009-02-13 15:20:45.000000000 +0000
++++ configure	2009-02-24 17:52:38.000000000 +0000
 @@ -23676,6 +23676,9 @@
      *linux* )
      TARGET_PLATFORM="Linux"
@@ -10,17 +10,12 @@
      * )
      { { echo "$as_me:$LINENO: error: Target os $target_os is unknown.
      Please add the appropriate string to configure.ac.
-@@ -24219,10 +24222,14 @@
-                 ;;
- esac
- case "$host" in
--    *-*-*linux*)
-+    *-*-*linux*|*freebsd*)
+@@ -24223,6 +24226,10 @@
                  OSTYPE=linux
  		CODECS_OS_SUPPORTED="yes"
                  ;;
 +    *freebsd*)
-+                OSTYPE=linux
++                OSTYPE=freebsd
 +		CODECS_OS_SUPPORTED="no"
 +                ;;
  esac
