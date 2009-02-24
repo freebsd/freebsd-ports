@@ -7,7 +7,7 @@
 
 PORTNAME=	gps
 PORTVERSION=	1.005
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=greylist
@@ -18,7 +18,8 @@ MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Greylist Policy Service for postfix
 
 LIB_DEPENDS=	dbi.0:${PORTSDIR}/databases/libdbi
-RUN_DEPENDS=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
+RUN_DEPENDS=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers \
+		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 
 SCRIPT_FILES=	gps-maintain.pl gps-db-update.pl
 PLIST_FILES=	etc/gps.conf-dist libexec/gps libexec/gps-maintain.pl libexec/gps-db-update.pl
