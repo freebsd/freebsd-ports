@@ -29,16 +29,10 @@ bin/lli
 bin/llvm-ar
 bin/llvm-as
 bin/llvm-bcanalyzer
-bin/llvm-c++
 bin/llvm-config
-bin/llvm-cpp
 bin/llvm-db
 bin/llvm-dis
 bin/llvm-extract
-bin/llvm-g++
-bin/llvm-gcc
-bin/llvm-gccbug
-bin/llvm-gcov
 bin/llvm-ld
 bin/llvm-link
 bin/llvm-nm
@@ -46,7 +40,6 @@ bin/llvm-prof
 bin/llvm-ranlib
 bin/llvm-stub
 bin/llvmc
-bin/llvmc2
 bin/opt
 bin/scan-build
 include/llvm-c/Analysis.h
@@ -377,12 +370,9 @@ include/llvm/Value.h
 include/llvm/ValueSymbolTable.h
 lib/LLVMARMAsmPrinter.o
 lib/LLVMARMCodeGen.o
-lib/LLVMAlpha.o
 lib/LLVMAlphaAsmPrinter.o
 lib/LLVMAlphaCodeGen.o
 lib/LLVMCBackend.o
-lib/LLVMCBase.o
-lib/LLVMCellSPU.o
 lib/LLVMCellSPUAsmPrinter.o
 lib/LLVMCellSPUCodeGen.o
 lib/LLVMCppBackend.o
@@ -399,7 +389,6 @@ lib/LLVMMips.o
 lib/LLVMPIC16.o
 lib/LLVMPowerPCAsmPrinter.o
 lib/LLVMPowerPCCodeGen.o
-lib/LLVMSparc.o
 lib/LLVMSparcAsmPrinter.o
 lib/LLVMSparcCodeGen.o
 lib/LLVMX86AsmPrinter.o
