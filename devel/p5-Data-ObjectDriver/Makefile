@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-ObjectDriver
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,12 +30,14 @@ MAN3=		Data::ObjectDriver.3 Data::ObjectDriver::BaseObject.3 \
 		Data::ObjectDriver::Driver::Cache::Memcached.3 \
 		Data::ObjectDriver::Driver::DBD.3 \
 		Data::ObjectDriver::Driver::DBD::SQLite.3 \
+		Data::ObjectDriver::Driver::DBD::Oracle.3 \
 		Data::ObjectDriver::Driver::MultiPartition.3 \
 		Data::ObjectDriver::Driver::Multiplexer.3 \
 		Data::ObjectDriver::Driver::Partition.3 \
 		Data::ObjectDriver::Driver::SimplePartition.3 \
 		Data::ObjectDriver::Errors.3 Data::ObjectDriver::Profiler.3 \
 		Data::ObjectDriver::ResultSet.3 \
-		Data::ObjectDriver::SQL.3
+		Data::ObjectDriver::SQL.3 \
+		Data::ObjectDriver::SQL::Oracle.3
 
 .include <bsd.port.mk>
