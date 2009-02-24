@@ -83,8 +83,7 @@ post-patch:
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
 .endif
-	@${REINPLACE_CMD} -e 's|@LIBS@|@LIBS@ \
-		-rpath=:${LOCALBASE}/lib/courier-authlib|' \
+	${REINPLACE_CMD} -e 's|@LIBS@|@LIBS@ -rpath=:${LOCALBASE}/lib/courier-authlib|' \
 		${WRKSRC}/maildrop/Makefile.in
 BUILD_DEPENDS+=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 RUN_DEPENDS+=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
