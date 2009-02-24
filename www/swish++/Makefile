@@ -21,7 +21,7 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} \
-		PERL=${PERL} PERL_VER=${PERL_VER}
+		PERL=${PERL} PERL_VER=${PERL_VERSION}
 
 MAN1=	extract.1 httpindex.1 index.1 search.1 splitmail.1
 MAN3=	WWW.3

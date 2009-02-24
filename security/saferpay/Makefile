@@ -42,8 +42,8 @@ post-build:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} xs)
 post-install:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} installxs)
-	${GZIP_CMD} ${LOCALBASE}/lib/perl5/${PERL_VER}/${PERL_ARCH}/../man/man3/soplex::saferpay::MessageObject.3
-	${GZIP_CMD} ${LOCALBASE}/lib/perl5/${PERL_VER}/${PERL_ARCH}/../man/man3/soplex::saferpay::MessageFactory.3
+	${GZIP_CMD} ${LOCALBASE}/lib/perl5/${PERL_VERSION}/${PERL_ARCH}/../man/man3/soplex::saferpay::MessageObject.3
+	${GZIP_CMD} ${LOCALBASE}/lib/perl5/${PERL_VERSION}/${PERL_ARCH}/../man/man3/soplex::saferpay::MessageFactory.3
 .endif
 
 .include <bsd.port.pre.mk>

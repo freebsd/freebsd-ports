@@ -35,7 +35,7 @@ PLIST_SUB+=	WITH_JAVA="@comment "
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--with-perl
 PLIST_SUB+=	WITH_PERL=""
-MANPREFIX=	${LOCALBASE}/lib/perl5/${PERL_VER}
+MANPREFIX=	${LOCALBASE}/lib/perl5/${PERL_VERSION}
 MAN3=	RDF::Redland.3 \
 	RDF::Redland::Iterator.3 \
 	RDF::Redland::Model.3 \
