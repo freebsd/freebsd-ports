@@ -7,7 +7,7 @@
 
 PORTNAME=	lighttpd
 PORTVERSION=	1.4.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 		http://mirrors.cat.pdx.edu/lighttpd/
@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	lthack
 USE_RC_SUBR=	lighttpd.sh
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/lighttpd
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
