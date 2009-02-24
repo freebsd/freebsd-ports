@@ -11,7 +11,7 @@ CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Media player for KDE
 
 LIB_DEPENDS=	tag.6:${PORTSDIR}/audio/taglib \
