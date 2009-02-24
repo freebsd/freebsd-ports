@@ -1,6 +1,10 @@
---- hald/freebsd/probing/probe-hiddev.c.orig	2009-02-23 18:28:54.000000000 -0500
-+++ hald/freebsd/probing/probe-hiddev.c	2009-02-23 18:51:35.000000000 -0500
-@@ -28,9 +28,17 @@
+--- hald/freebsd/probing/probe-hiddev.c.orig	2008-05-07 19:24:08.000000000 -0400
++++ hald/freebsd/probing/probe-hiddev.c	2009-02-24 00:42:06.000000000 -0500
+@@ -25,12 +25,21 @@
+ #  include <config.h>
+ #endif
+ 
++#include <sys/param.h>
  #include <unistd.h>
  #include <stdlib.h>
  #include <fcntl.h>
@@ -18,7 +22,7 @@
  #include <usbhid.h>
  
  #include "../libprobe/hfp.h"
-@@ -65,7 +73,12 @@ main (int argc, char **argv)
+@@ -65,7 +74,12 @@ main (int argc, char **argv)
    /* give a meaningful process title for ps(1) */
    setproctitle("%s", device_file);
  
