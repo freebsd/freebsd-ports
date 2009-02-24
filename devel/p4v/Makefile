@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	p4v
-PORTVERSION=	2007.3.155579
+PORTVERSION=	2008.2.188141
 CATEGORIES=	devel
 MASTER_SITES=	\
-	http://filehost.perforce.com/perforce/r07.3/bin.freebsd60x86${MACHINE_ARCH:Mamd64:S/^amd/_/}/
+	http://filehost.perforce.com/perforce/r08.2/bin.freebsd60x86${MACHINE_ARCH:Mamd64:S/^amd/_/}/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Visual client for Perforce SCM
+
+LIB_DEPENDS=	pthread.2:${PORTSDIR}/misc/compat6x
 
 NO_CDROM=	Binary redistribution restrictions in effect
 RESTRICTED=	${NO_CDROM}
@@ -30,10 +32,10 @@ MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
 .include <bsd.port.pre.mk>
 
-P4V_BIN= \
-	bin/assistant bin/p4v bin/p4v.bin
+P4V_BIN=	\
+	bin/assistant_adp bin/p4merge bin/p4merge.bin bin/p4v bin/p4v.bin
 
-P4V_LIBS= \
+P4V_LIBS=	\
 	lib/p4v/qt4/lib/libQtAssistantClient.so.4 \
 	lib/p4v/qt4/lib/libQtCore.so.4 \
 	lib/p4v/qt4/lib/libQtGui.so.4 \
@@ -44,20 +46,21 @@ P4V_LIBS= \
 	lib/p4v/qt4/plugins/codecs/libqjpcodecs.so \
 	lib/p4v/qt4/plugins/codecs/libqkrcodecs.so \
 	lib/p4v/qt4/plugins/codecs/libqtwcodecs.so \
-	lib/p4v/qt4/plugins/imageformats/libqtiff.so \
-	lib/p4v/qt4/plugins/imageformats/libqsvg.so \
-	lib/p4v/qt4/plugins/imageformats/libqmng.so \
-	lib/p4v/qt4/plugins/imageformats/libqjpeg.so \
 	lib/p4v/qt4/plugins/imageformats/libqgif.so \
+	lib/p4v/qt4/plugins/imageformats/libqico.so \
+	lib/p4v/qt4/plugins/imageformats/libqjpeg.so \
+	lib/p4v/qt4/plugins/imageformats/libqmng.so \
+	lib/p4v/qt4/plugins/imageformats/libqsvg.so \
+	lib/p4v/qt4/plugins/imageformats/libqtiff.so \
 	lib/p4v/qt4/plugins/inputmethods/libqimsw-multi.so
 
-P4V_ICONS= \
+P4V_ICONS=	\
 	lib/p4v/P4VResources/icons/p4v_16_low.png \
 	lib/p4v/P4VResources/icons/p4v_32_high.png \
 	lib/p4v/P4VResources/icons/p4v_32_low.png \
 	lib/p4v/P4VResources/icons/p4v_48_high.png
 
-P4V_DIRS= \
+P4V_DIRS=	\
 	lib/p4v/qt4/plugins/inputmethods \
 	lib/p4v/qt4/plugins/imageformats \
 	lib/p4v/qt4/plugins/codecs \
@@ -67,20 +70,21 @@ P4V_DIRS= \
 	lib/p4v/qt4 \
 	lib/p4v/P4VResources/p4vhelp/p4images \
 	lib/p4v/P4VResources/p4vhelp \
+	lib/p4v/P4VResources/p4mergehelp/p4images \
+	lib/p4v/P4VResources/p4mergehelp \
 	lib/p4v/P4VResources/icons \
 	lib/p4v/P4VResources \
 	lib/p4v
 
-P4V_DOCS= \
-	lib/p4v/P4VResources/p4vhelp/p4v-gs.pdf \
-	lib/p4v/P4VResources/p4vhelp/p4vhelp.adp \
-	lib/p4v/P4VResources/p4vhelp/revision_graph.html \
-	lib/p4v/P4VResources/p4vhelp/time_lapse.html \
+P4V_DOCS=	\
+	lib/p4v/P4VResources/p4mergehelp/assistant-manual.html \
+	lib/p4v/P4VResources/p4mergehelp/diffing_files.html \
+	lib/p4v/P4VResources/p4mergehelp/diffing_images.html \
+	lib/p4v/P4VResources/p4mergehelp/merging_files.html \
+	lib/p4v/P4VResources/p4mergehelp/p4mergehelp.adp \
 	lib/p4v/P4VResources/p4vhelp/About_Perforce_products.html \
 	lib/p4v/P4VResources/p4vhelp/About_file_icons.html \
 	lib/p4v/P4VResources/p4vhelp/Adding_files_to_the_depot.html \
-	lib/p4v/P4VResources/p4vhelp/Admin_creating_groups.html \
-	lib/p4v/P4VResources/p4vhelp/Admin_creating_users.html \
 	lib/p4v/P4VResources/p4vhelp/Admin_homepage.html \
 	lib/p4v/P4VResources/p4vhelp/Admin_managing_permissions.html \
 	lib/p4v/P4VResources/p4vhelp/Admin_managing_users_and_groups.html \
@@ -100,7 +104,6 @@ P4V_DOCS= \
 	lib/p4v/P4VResources/p4vhelp/Managing_branch_specifications.html \
 	lib/p4v/P4VResources/p4vhelp/Managing_jobs.html \
 	lib/p4v/P4VResources/p4vhelp/Managing_labels.html \
-	lib/p4v/P4VResources/p4vhelp/Managing_users.html \
 	lib/p4v/P4VResources/p4vhelp/Offline.html \
 	lib/p4v/P4VResources/p4vhelp/P4V_shortcuts.html \
 	lib/p4v/P4VResources/p4vhelp/Renaming_files.html \
@@ -114,12 +117,41 @@ P4V_DOCS= \
 	lib/p4v/P4VResources/p4vhelp/custom_tools.html \
 	lib/p4v/P4VResources/p4vhelp/diffing_files.html \
 	lib/p4v/P4VResources/p4vhelp/diffing_folders.html \
+	lib/p4v/P4VResources/p4vhelp/diffing_images.html \
 	lib/p4v/P4VResources/p4vhelp/folder_diff_cheatsheet.html \
-	lib/p4v/P4VResources/p4vhelp/merging_files.html
+	lib/p4v/P4VResources/p4vhelp/merging_files.html \
+	lib/p4v/P4VResources/p4vhelp/p4v-gs.pdf \
+	lib/p4v/P4VResources/p4vhelp/p4vhelp.adp \
+	lib/p4v/P4VResources/p4vhelp/revision_graph.html \
+	lib/p4v/P4VResources/p4vhelp/time_lapse.html
 
-P4V_IMGS= \
+P4V_IMGS=	\
+	lib/p4v/P4VResources/p4mergehelp/p4diff_help.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/addyourstheirs.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/basefile.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/choosechunk.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/deletedyourstheirs.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/editedtext.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/expandme.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/file1.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/file2.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/filediagram.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/find.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/gotoline.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/inline-button.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/inline-off.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/inline-on.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/lineend.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/linenumbers.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/nextdiff.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/p4_merge_help.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/sameyourstheirs.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/theiradd.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/theirdelete.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/youradd.png \
+	lib/p4v/P4VResources/p4mergehelp/p4images/yourdelete.png \
+	lib/p4v/P4VResources/p4mergehelp/p4merge_help.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/P4V_help_128x128.png \
-	lib/p4v/P4VResources/p4vhelp/p4images/P4V_help_16x16.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/addyourstheirs.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/basefile.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/choosechunk.png \
@@ -131,8 +163,13 @@ P4V_IMGS= \
 	lib/p4v/P4VResources/p4vhelp/p4images/filediagram.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/find.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/gotoline.png \
+	lib/p4v/P4VResources/p4vhelp/p4images/inline-button.png \
+	lib/p4v/P4VResources/p4vhelp/p4images/inline-off.png \
+	lib/p4v/P4VResources/p4vhelp/p4images/inline-on.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/lineend.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/linenumbers.png \
+	lib/p4v/P4VResources/p4vhelp/p4images/new_user.png \
+	lib/p4v/P4VResources/p4vhelp/p4images/new_workspace.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/nextdiff.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/p4_merge_help.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/p4diff_help.png \
@@ -149,6 +186,7 @@ P4V_IMGS= \
 	lib/p4v/P4VResources/p4vhelp/p4images/p4v_file_add.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/p4v_file_add_other.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/p4v_file_add_other_ws.png \
+	lib/p4v/P4VResources/p4vhelp/p4images/p4v_file_branch.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/p4v_file_delete.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/p4v_file_delete_notsync.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/p4v_file_delete_other.png \
@@ -189,6 +227,8 @@ P4V_IMGS= \
 	lib/p4v/P4VResources/p4vhelp/p4images/p4v_folder_black_triangle.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/p4v_folder_diff_screenshot.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/p4v_folderdiff.png \
+	lib/p4v/P4VResources/p4vhelp/p4images/p4v_help_16x16.png \
+	lib/p4v/P4VResources/p4vhelp/p4images/p4v_integrate.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/p4v_integration_dialog.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/p4v_main_window.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/p4v_nextdiff.png \
@@ -223,15 +263,17 @@ P4V_IMGS= \
 	lib/p4v/P4VResources/p4vhelp/p4images/youradd.png \
 	lib/p4v/P4VResources/p4vhelp/p4images/yourdelete.png
 
-PLIST_DIRS+= ${P4V_DIRS}
-PLIST_FILES+= ${P4V_BIN} ${P4V_ICONS} ${P4V_LIBS}
+PLIST_DIRS+=	${P4V_DIRS}
+PLIST_FILES+=	${P4V_BIN} ${P4V_ICONS} ${P4V_LIBS}
 .if !defined(NOPORTDOCS)
-PLIST_FILES+= ${P4V_DOCS} ${P4V_IMGS}
+PLIST_FILES+=	${P4V_DOCS} ${P4V_IMGS}
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/assistant ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/assistant_adp ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/p4merge.bin ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/p4v.bin ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/p4merge ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/p4v ${PREFIX}/bin
 .for _DIR in ${P4V_DIRS}
 	${MKDIR} ${PREFIX}/${_DIR}
