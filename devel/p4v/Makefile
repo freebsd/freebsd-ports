@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Visual client for Perforce SCM
 
 LIB_DEPENDS=	pthread.2:${PORTSDIR}/misc/compat6x
