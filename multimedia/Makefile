@@ -162,6 +162,7 @@
     SUBDIR += mmpython
     SUBDIR += mmsclient
     SUBDIR += mmsrip
+    SUBDIR += moonlight
     SUBDIR += motion
     SUBDIR += mpeg
     SUBDIR += mpeg2codec
