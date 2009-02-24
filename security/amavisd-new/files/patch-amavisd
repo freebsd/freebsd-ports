@@ -1,5 +1,5 @@
 --- amavisd.orig	2008-12-15 01:50:09.000000000 +0100
-+++ amavisd	2009-02-21 20:23:55.000000000 +0100
++++ amavisd	2009-02-24 16:28:32.000000000 +0100
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -T
 +#!/usr/local/bin/perl -T
@@ -25,15 +25,6 @@
          or die "Can't create $pe_name file $newpart: $!";
        binmode($outpart, ":bytes") or die "Can't cancel :utf8 mode: $!"
          if $unicode_aware;
-@@ -13181,7 +13182,7 @@
-   Amavis::Lookup::RE->new(@$Amavis::Conf::map_full_type_to_short_type_re);
- 
- # default location of the config file if none specified
--push(@config_files, '/etc/amavisd.conf')  if !@config_files;
-+push(@config_files, '/usr/local/etc/amavisd.conf')  if !@config_files;
- # Read and evaluate config files, which may override default settings
- Amavis::Conf::include_config_files(@config_files);
- Amavis::Conf::supply_after_defaults();
 @@ -18061,7 +18062,8 @@
      else
        { die "File $bsmtp_file_tmp exists??? Refuse to overwrite it, $!" }
