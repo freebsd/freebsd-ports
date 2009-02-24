@@ -27,6 +27,7 @@
     SUBDIR += gpsman
     SUBDIR += gpstk
     SUBDIR += jday
+    SUBDIR += josm
     SUBDIR += libgal
     SUBDIR += libnova
     SUBDIR += libroadnav
