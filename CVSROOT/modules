@@ -3556,6 +3556,26 @@ fraqtive                        ports/graphics/fraqtive
 free-sa                         ports/www/free-sa
 freealut                        ports/audio/freealut
 freebase                        ports/devel/freebase
+freebsd-doc-all                 ports/misc/freebsd-doc-all
+freebsd-doc-bn                  ports/misc/freebsd-doc-bn
+freebsd-doc-da                  ports/misc/freebsd-doc-da
+freebsd-doc-de                  ports/misc/freebsd-doc-de
+freebsd-doc-el                  ports/misc/freebsd-doc-el
+freebsd-doc-en                  ports/misc/freebsd-doc-en
+freebsd-doc-es                  ports/misc/freebsd-doc-es
+freebsd-doc-fr                  ports/misc/freebsd-doc-fr
+freebsd-doc-hu                  ports/misc/freebsd-doc-hu
+freebsd-doc-it                  ports/misc/freebsd-doc-it
+freebsd-doc-ja                  ports/misc/freebsd-doc-ja
+freebsd-doc-mn                  ports/misc/freebsd-doc-mn
+freebsd-doc-nl                  ports/misc/freebsd-doc-nl
+freebsd-doc-pl                  ports/misc/freebsd-doc-pl
+freebsd-doc-pt                  ports/misc/freebsd-doc-pt
+freebsd-doc-ru                  ports/misc/freebsd-doc-ru
+freebsd-doc-sr                  ports/misc/freebsd-doc-sr
+freebsd-doc-tr                  ports/misc/freebsd-doc-tr
+freebsd-doc-zh_cn               ports/misc/freebsd-doc-zh_cn
+freebsd-doc-zh_tw               ports/misc/freebsd-doc-zh_tw
 freebsd-games                   ports/games/freebsd-games
 freebsd-sha1                    ports/sysutils/freebsd-sha1
 freebsd-sha256                  ports/sysutils/freebsd-sha256
@@ -5234,6 +5254,7 @@ iceauth                         ports/x11/iceauth
 icebreaker                      ports/games/icebreaker
 icecast                         ports/audio/icecast
 icecast2                        ports/audio/icecast2
+icedtea6-stubs                  ports/java/icedtea6-stubs
 icegenerator                    ports/audio/icegenerator
 icegradient                     ports/x11-themes/icegradient
 ices                            ports/audio/ices
@@ -9560,6 +9581,7 @@ openh323                        ports/net/openh323
 openhbci                        ports/finance/openhbci
 openjade                        ports/textproc/openjade
 openjazz                        ports/games/openjazz
+openjdk6                        ports/java/openjdk6
 openjit                         ports/java/openjit
 openjpeg                        ports/graphics/openjpeg
 openldap23-client               ports/net/openldap23-client
@@ -9767,6 +9789,7 @@ p5-Alzabo                       ports/devel/p5-Alzabo
 p5-Alzabo-GUI-Mason             ports/devel/p5-Alzabo-GUI-Mason
 p5-Amazon-SQS-Simple            ports/net/p5-Amazon-SQS-Simple
 p5-Amazon-SimpleDB              ports/databases/p5-Amazon-SimpleDB
+p5-Any-Moose                    ports/devel/p5-Any-Moose
 p5-AnyData                      ports/devel/p5-AnyData
 p5-AnyEvent                     ports/devel/p5-AnyEvent
 p5-AnyEvent-HTTP                ports/www/p5-AnyEvent-HTTP
@@ -10765,6 +10788,7 @@ p5-Dir-Purge                    ports/sysutils/p5-Dir-Purge
 p5-Directory-Scratch            ports/devel/p5-Directory-Scratch
 p5-Directory-Scratch-Structured  ports/devel/p5-Directory-Scratch-Structured
 p5-DocSet                       ports/textproc/p5-DocSet
+p5-EBook-Tools                  ports/textproc/p5-EBook-Tools
 p5-EV                           ports/devel/p5-EV
 p5-EasyTCP                      ports/net/p5-EasyTCP
 p5-Email-Abstract               ports/mail/p5-Email-Abstract
@@ -12098,6 +12122,7 @@ p5-Pod-WSDL                     ports/textproc/p5-Pod-WSDL
 p5-Pod-XML                      ports/textproc/p5-Pod-XML
 p5-Pod-Xhtml                    ports/textproc/p5-Pod-Xhtml
 p5-PodToHTML                    ports/www/p5-PodToHTML
+p5-PostScript                   ports/print/p5-PostScript
 p5-PostScript-Simple            ports/print/p5-PostScript-Simple
 p5-Prima                        ports/x11-toolkits/p5-Prima
 p5-Probe-Perl                   ports/sysutils/p5-Probe-Perl
@@ -12498,6 +12523,7 @@ p5-Test-NoWarnings              ports/devel/p5-Test-NoWarnings
 p5-Test-Number-Delta            ports/devel/p5-Test-Number-Delta
 p5-Test-Object                  ports/devel/p5-Test-Object
 p5-Test-Output                  ports/devel/p5-Test-Output
+p5-Test-POE-Server-TCP          ports/devel/p5-Test-POE-Server-TCP
 p5-Test-Parser                  ports/devel/p5-Test-Parser
 p5-Test-Perl-Critic             ports/textproc/p5-Test-Perl-Critic
 p5-Test-Pod                     ports/devel/p5-Test-Pod
@@ -13044,6 +13070,7 @@ p5-alzabo-gui-mason             ports/devel/p5-Alzabo-GUI-Mason
 p5-amazon-simpledb              ports/databases/p5-Amazon-SimpleDB
 p5-amazon-sqs-simple            ports/net/p5-Amazon-SQS-Simple
 p5-amf-perl                     ports/www/p5-AMF-Perl
+p5-any-moose                    ports/devel/p5-Any-Moose
 p5-anydata                      ports/devel/p5-AnyData
 p5-anyevent                     ports/devel/p5-AnyEvent
 p5-anyevent-http                ports/www/p5-AnyEvent-HTTP
@@ -14060,6 +14087,7 @@ p5-dtemplate                    ports/textproc/p5-dTemplate
 p5-dwh_file                     ports/databases/p5-DWH_File
 p5-ePerl                        ports/lang/p5-ePerl
 p5-easytcp                      ports/net/p5-EasyTCP
+p5-ebook-tools                  ports/textproc/p5-EBook-Tools
 p5-email-abstract               ports/mail/p5-Email-Abstract
 p5-email-address                ports/mail/p5-Email-Address
 p5-email-date                   ports/mail/p5-Email-Date
@@ -15422,6 +15450,7 @@ p5-poe-xs-queue-array           ports/devel/p5-POE-XS-Queue-Array
 p5-posix-regex                  ports/textproc/p5-POSIX-Regex
 p5-posix-strptime               ports/devel/p5-POSIX-strptime
 p5-postgresql-plperl            ports/databases/p5-postgresql-plperl
+p5-postscript                   ports/print/p5-PostScript
 p5-postscript-simple            ports/print/p5-PostScript-Simple
 p5-pperl                        ports/devel/p5-PPerl
 p5-ppi                          ports/textproc/p5-PPI
@@ -15841,6 +15870,7 @@ p5-test-parser                  ports/devel/p5-Test-Parser
 p5-test-perl-critic             ports/textproc/p5-Test-Perl-Critic
 p5-test-pod                     ports/devel/p5-Test-Pod
 p5-test-pod-coverage            ports/devel/p5-Test-Pod-Coverage
+p5-test-poe-server-tcp          ports/devel/p5-Test-POE-Server-TCP
 p5-test-portability-files       ports/devel/p5-Test-Portability-Files
 p5-test-randomresults           ports/devel/p5-Test-RandomResults
 p5-test-reporter                ports/devel/p5-Test-Reporter
@@ -18400,7 +18430,9 @@ py-mysqldb                      ports/databases/py-MySQLdb
 py-mysqldb-devel                ports/databases/py-MySQLdb-devel
 py-nautilus                     ports/x11-fm/py-nautilus
 py-ncurses                      ports/devel/py-ncurses
+py-netCDF4                      ports/science/py-netCDF4
 py-netaddr                      ports/net/py-netaddr
+py-netcdf4                      ports/science/py-netCDF4
 py-netstring                    ports/net/py-netstring
 py-networkx                     ports/math/py-networkx
 py-nevow                        ports/www/py-nevow
@@ -21172,7 +21204,7 @@ texi2db                         ports/textproc/texi2db
 texi2html                       ports/textproc/texi2html
 texmacs                         ports/editors/texmacs
 texmaker                        ports/editors/texmaker
-texmakerx	ports/editors/texmakerx
+texmakerx                       ports/editors/texmakerx
 texpower                        ports/print/texpower
 textedit                        ports/editors/textedit
 textedit.app                    ports/editors/textedit.app
@@ -21784,6 +21816,7 @@ uni2ascii                       ports/textproc/uni2ascii
 uniconvertor                    ports/graphics/uniconvertor
 unicornscan                     ports/security/unicornscan
 unieject                        ports/sysutils/unieject
+unique                          ports/x11-toolkits/unique
 unison                          ports/net/unison
 unison-devel                    ports/net/unison-devel
 unison-nox11                    ports/net/unison-nox11
