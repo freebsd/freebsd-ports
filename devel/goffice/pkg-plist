@@ -126,6 +126,7 @@ include/libgoffice-%%SHORT_VER%%/goffice/ms-compat/god-drawing-ms-client-handler
 include/libgoffice-%%SHORT_VER%%/goffice/ms-compat/god-drawing-ms.h
 include/libgoffice-%%SHORT_VER%%/goffice/ms-compat/god-image-ms.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/datetime.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-bezier.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-cairo.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-color.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-file.h
@@ -212,8 +213,12 @@ lib/libgoffice-%%SHORT_VER%%.so.7
 libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/GOComboBox.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOComponent.html
+%%DOCSDIR%%-%%SHORT_VER%%/GODataMatrix.html
+%%DOCSDIR%%-%%SHORT_VER%%/GODataScalar.html
+%%DOCSDIR%%-%%SHORT_VER%%/GODataVector.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOOptionMenu.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOPalette.html
+%%DOCSDIR%%-%%SHORT_VER%%/GOPersist.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOPluginLoader.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOSelector.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOUndoUnary.html
@@ -222,6 +227,7 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/GogObject.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogOutlinedView.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogRegCurve.html
+%%DOCSDIR%%-%%SHORT_VER%%/GogRegEqn.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogSmoothedCurve.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogStyledObject.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogView.html
@@ -294,6 +300,17 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-style.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-theme.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-trend-line.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-GOService.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-GoApp.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-GoFileOpener.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-GoFileSaver.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-GoRange.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-GoReg.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-GoSearchReplace.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-GoUrl.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-GogAxisMap.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-GogEditor.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-GogTool.html
 %%DOCSDIR%%-%%SHORT_VER%%/home.png
 %%DOCSDIR%%-%%SHORT_VER%%/index.html
 %%DOCSDIR%%-%%SHORT_VER%%/index.sgml
@@ -410,6 +427,7 @@ share/pixmaps/goffice/%%VERSION%%/chart_cone_2_2.png
 share/pixmaps/goffice/%%VERSION%%/chart_cone_2_3.png
 share/pixmaps/goffice/%%VERSION%%/chart_cone_3_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_contour_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_contour_2_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_cylinder_1_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_cylinder_1_2.png
 share/pixmaps/goffice/%%VERSION%%/chart_cylinder_1_3.png
