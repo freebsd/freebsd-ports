@@ -9,10 +9,12 @@
 %%SITE_PERL%%/Data/ObjectDriver/Driver/Cache/Memcached.pm
 %%SITE_PERL%%/Data/ObjectDriver/Driver/Cache/RAM.pm
 %%SITE_PERL%%/Data/ObjectDriver/Driver/DBD.pm
+%%SITE_PERL%%/Data/ObjectDriver/Driver/DBD/Oracle.pm
 %%SITE_PERL%%/Data/ObjectDriver/Driver/DBD/Pg.pm
 %%SITE_PERL%%/Data/ObjectDriver/Driver/DBD/SQLite.pm
 %%SITE_PERL%%/Data/ObjectDriver/Driver/DBD/mysql.pm
 %%SITE_PERL%%/Data/ObjectDriver/Driver/DBI.pm
+%%SITE_PERL%%/Data/ObjectDriver/Driver/GearmanDBI.pm
 %%SITE_PERL%%/Data/ObjectDriver/Driver/MultiPartition.pm
 %%SITE_PERL%%/Data/ObjectDriver/Driver/Multiplexer.pm
 %%SITE_PERL%%/Data/ObjectDriver/Driver/Partition.pm
@@ -22,6 +24,8 @@
 %%SITE_PERL%%/Data/ObjectDriver/Profiler.pm
 %%SITE_PERL%%/Data/ObjectDriver/ResultSet.pm
 %%SITE_PERL%%/Data/ObjectDriver/SQL.pm
+%%SITE_PERL%%/Data/ObjectDriver/SQL/Oracle.pm
+@dirrmtry %%SITE_PERL%%/Data/ObjectDriver/SQL
 @dirrmtry %%SITE_PERL%%/Data/ObjectDriver/Driver/DBD
 @dirrmtry %%SITE_PERL%%/Data/ObjectDriver/Driver/Cache
 @dirrmtry %%SITE_PERL%%/Data/ObjectDriver/Driver
