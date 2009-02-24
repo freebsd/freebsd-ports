@@ -1,0 +1,16 @@
+bin/geresh
+bin/pgeresh
+%%DATADIR%%/MANUAL.he
+%%DATADIR%%/kbdtab
+%%DATADIR%%/reprtab
+%%DATADIR%%/transtab
+%%DATADIR%%/themes/default.thm
+%%DATADIR%%/themes/default_bw.thm
+%%DATADIR%%/themes/mc.thm
+%%DATADIR%%/themes/green.thm
+%%DATADIR%%/themes/borland.thm
+%%DATADIR%%/themes/occult.thm
+%%DATADIR%%/themes/arnold.thm
+%%DATADIR%%/themes/README.themes
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%
