@@ -13,32 +13,33 @@ MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
 PKGNAMESUFFIX=	-gdk
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	wmcube-gdk is a modified version of the dockapp wmCube
 
 USE_XORG=	xpm
 USE_GNOME=	gtk12
 MAKEFILE=	Makefile.FREEBSD
+SUB_FILES=	pkg-message
+
+DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+PORTDOCS=	CHANGES README README.GDK TODO
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/wmcube \
-		${PREFIX}/bin/wmcube-gdk
-	@${CHMOD} g+s ${PREFIX}/bin/wmcube-gdk
-	@${CHOWN} root:kmem ${PREFIX}/bin/wmcube-gdk
+	@${INSTALL_PROGRAM} -m 2755 -o root -g kmem ${WRKSRC}/wmcube \
+		${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
 
 post-install:
 .for files in *.wmc
-	@${MKDIR} ${DATADIR}${PKGNAMESUFFIX}
-	@${INSTALL_DATA} ${WRKSRC}/3dObjects/${files} \
-		${DATADIR}${PKGNAMESUFFIX}
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/3dObjects/${files} ${DATADIR}
 .endfor
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}${PKGNAMESUFFIX}
-.for file in CHANGES README README.GDK TODO
-	@${INSTALL_DATA} ${WRKSRC}/${file} \
-		${DOCSDIR}${PKGNAMESUFFIX}
-.endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+. for doc in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+. endfor
 .endif #NOPORTDOCS
-	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
