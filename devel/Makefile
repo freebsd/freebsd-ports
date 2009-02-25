@@ -1565,6 +1565,7 @@
     SUBDIR += p5-MooseX-IOC
     SUBDIR += p5-MooseX-POE
     SUBDIR += p5-MooseX-Policy-SemiAffordanceAccessor
+    SUBDIR += p5-MooseX-SimpleConfig
     SUBDIR += p5-MooseX-Singleton
     SUBDIR += p5-MooseX-Storage
     SUBDIR += p5-MooseX-StrictConstructor
