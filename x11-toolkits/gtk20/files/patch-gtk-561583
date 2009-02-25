@@ -1,0 +1,16 @@
+--- gdk/x11/gdkscreen-x11.orig	2009-02-18 15:29:15.000000000 -0500
++++ gdk/x11/gdkscreen-x11.c	2009-02-18 15:30:03.000000000 -0500
+@@ -915,11 +915,12 @@
+     return;
+ #endif
+ 
++  _gdk_x11_screen_process_monitors_change (screen);
++
+   if (width == gdk_screen_get_width (screen) && 
+       height == gdk_screen_get_height (screen))
+     return;
+ 
+-  _gdk_x11_screen_process_monitors_change (screen);
+   g_signal_emit_by_name (screen, "size_changed");
+ }
+ 
