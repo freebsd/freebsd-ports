@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-BerkeleyDB>=0.36:${PORTSDIR}/databases/p5-BerkeleyDB \
 		p5-XML-Simple>=2.18:${PORTSDIR}/textproc/p5-XML-Simple
 
 # deskutils/ljclive, multimedia/clive1 (same executable/manpage/distfile name)
-CONFLICTS=	*clive-[0-1]*
+CONFLICTS=	clive-[0-1]* ljclive-[0-9]*
 
 OPTIONS=	PASTE   "Enable pasting from X clipboard" off \
 		PAGER   "Enable pager for viewing cache entries" off \
