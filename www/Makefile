@@ -948,6 +948,7 @@
     SUBDIR += p5-LWP-Authen-Wsse
     SUBDIR += p5-LWP-ConnCache-MaxKeepAliveRequests
     SUBDIR += p5-LWP-UserAgent-Determined
+    SUBDIR += p5-LWP-UserAgent-POE
     SUBDIR += p5-LWP-UserAgent-WithCache
     SUBDIR += p5-LWPx-ParanoidAgent
     SUBDIR += p5-Markup-Perl

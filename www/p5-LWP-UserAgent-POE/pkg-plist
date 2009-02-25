@@ -1,0 +1,7 @@
+%%SITE_PERL%%/LWP/UserAgent/POE.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/UserAgent/POE/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/UserAgent/POE
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/UserAgent
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP
+@dirrmtry %%SITE_PERL%%/LWP/UserAgent
+@dirrmtry %%SITE_PERL%%/LWP
