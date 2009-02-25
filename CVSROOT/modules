@@ -5565,6 +5565,7 @@ ivtools                         ports/graphics/ivtools
 iw-aspell                       ports/hebrew/aspell
 iw-culmus                       ports/hebrew/culmus
 iw-elmar-fonts                  ports/hebrew/elmar-fonts
+iw-geresh                       ports/hebrew/geresh
 iw-he2                          ports/hebrew/he2
 iw-hspell                       ports/hebrew/hspell
 iw-kde3-i18n                    ports/hebrew/kde3-i18n
@@ -8623,6 +8624,7 @@ moodle                          ports/www/moodle
 moodriver                       ports/net-p2p/moodriver
 moon-buggy                      ports/games/moon-buggy
 moonlander                      ports/games/moonlander
+moonlight                       ports/multimedia/moonlight
 mooseekd                        ports/net-p2p/mooseekd
 mopac                           ports/biology/mopac
 mopd                            ports/net/mopd
