@@ -1,5 +1,5 @@
 --- hald/freebsd/hf-storage.c.orig	2008-05-07 19:23:57.000000000 -0400
-+++ hald/freebsd/hf-storage.c	2009-02-23 16:39:09.000000000 -0500
++++ hald/freebsd/hf-storage.c	2009-02-25 16:38:35.000000000 -0500
 @@ -30,6 +30,7 @@
  #include <limits.h>
  #include <inttypes.h>
@@ -97,29 +97,16 @@
  	      else
                  geom_obj->type = atoi(fields[10]);
  	    }
-@@ -540,16 +570,34 @@ hf_storage_device_rescan_real (HalDevice
-   hf_storage_device_probe(device, TRUE);
+@@ -541,15 +571,20 @@ hf_storage_device_rescan_real (HalDevice
  }
  
-+#if __FreeBSD_version < 700110
  static gboolean
- hf_storage_conftxt_timeout_cb (gpointer data)
- {
-+  if (hf_is_waiting)
-+    return TRUE;
-+
-+  hf_storage_devd_notify("DEVFS", "CDEV", "CREATE", NULL);
-+
-+  return TRUE;
-+}
-+#endif
-+
-+static gboolean
+-hf_storage_conftxt_timeout_cb (gpointer data)
 +hf_storage_devd_notify (const char *system,
 +		        const char *subsystem,
 +			const char *type,
 +			const char *data)
-+{
+ {
    static GSList *disks = NULL;
    static gboolean first = TRUE;
 +  gboolean handled = FALSE;
@@ -134,7 +121,7 @@
  
    conftxt = hf_get_string_sysctl(NULL, "kern.geom.conftxt");
    new_disks = hf_storage_parse_conftxt(conftxt);
-@@ -572,6 +620,7 @@ hf_storage_conftxt_timeout_cb (gpointer 
+@@ -572,6 +607,7 @@ hf_storage_conftxt_timeout_cb (gpointer 
  	  if (! hf_storage_find_disk(disks, disk->name))
  	    {
  	      osspec_probe();	/* catch new disk(s) */
@@ -142,7 +129,7 @@
  	      break;
  	    }
  	}
-@@ -593,7 +642,10 @@ hf_storage_conftxt_timeout_cb (gpointer 
+@@ -593,7 +629,10 @@ hf_storage_conftxt_timeout_cb (gpointer 
  		  device = hf_devtree_find_from_name(hald_get_gdl(), disk->name);
  		  if (device && hal_device_has_capability(device, "storage") &&
  		      ! hf_storage_device_has_addon(device))
@@ -154,7 +141,7 @@
  		}
  	    }
  	  else
-@@ -601,7 +653,10 @@ hf_storage_conftxt_timeout_cb (gpointer 
+@@ -601,7 +640,10 @@ hf_storage_conftxt_timeout_cb (gpointer 
  	      /* disk removed */
  	      device = hf_devtree_find_from_name(hald_get_gdl(), disk->name);
  	      if (device && hal_device_has_capability(device, "storage"))
@@ -166,13 +153,25 @@
  	    }
  	}
      }
-@@ -610,17 +665,17 @@ hf_storage_conftxt_timeout_cb (gpointer 
+@@ -610,17 +652,30 @@ hf_storage_conftxt_timeout_cb (gpointer 
    g_slist_free(disks);
    disks = new_disks;
  
--  return TRUE;
 +  return handled;
++}
++
++#if __FreeBSD_version < 700110
++static gboolean
++hf_storage_conftxt_timeout_cb (gpointer data)
++{
++  if (hf_is_waiting)
++    return TRUE;
++
++  hf_storage_devd_notify("DEVFS", "CDEV", "CREATE", NULL);
++
+   return TRUE;
  }
++#endif
  
  static void
 -hf_storage_init_geom (void)
