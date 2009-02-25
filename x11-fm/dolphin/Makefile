@@ -9,7 +9,7 @@ PORTNAME=	dolphin
 PORTVERSION=	0.8.2
 PORTREVISION=	2
 CATEGORIES=	x11-fm kde
-MASTER_SITES=	http://enzosworld.gmxhome.de/download/
+MASTER_SITES=	http://www.brueffer.de/distfiles/
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	File manager for KDE
