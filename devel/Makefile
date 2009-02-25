@@ -1563,6 +1563,7 @@
     SUBDIR += p5-MooseX-Daemonize
     SUBDIR += p5-MooseX-Getopt
     SUBDIR += p5-MooseX-IOC
+    SUBDIR += p5-MooseX-Log-Log4perl
     SUBDIR += p5-MooseX-POE
     SUBDIR += p5-MooseX-Policy-SemiAffordanceAccessor
     SUBDIR += p5-MooseX-SimpleConfig
