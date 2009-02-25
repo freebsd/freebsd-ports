@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	nagios
-DISTVERSION=	3.0.3
+DISTVERSION=	3.1.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	nagios
+MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	jarrod@netleader.com.au
@@ -22,13 +21,16 @@ LATEST_LINK=	nagios-devel
 
 USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
+USE_PHP=	yes
 USE_AUTOTOOLS=	autoconf:262 libltdl:15
 USE_RC_SUBR=	nagios.sh
 
-CONFLICTS=	nagios-[12].*
+CONFLICTS=	nagios-[123].*
 
-OPTIONS=	EMBEDDED_PERL "Enable embedded Perl [requires Perl 5.8+]" off \
-		NANOSLEEP "Use nanosleep in event timing" off
+OPTIONS=	EMBEDDED_PERL "Enable embedded Perl [requires Perl 5.8.0+]" off \
+		NANOSLEEP "Use nanosleep in event timing" off \
+		EVENT_BROKER "Enable event broker functionality" off \
+		UNHANDLED_HACK "Display passive checks in unhandled queries" off
 
 GNU_CONFIGURE=	yes
 
@@ -60,7 +62,8 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--sysconfdir=${PREFIX}/etc/nagios \
 		--localstatedir=${NAGIOSDIR} \
 		--with-httpd-conf=${PREFIX}/etc \
-		--with-checkresult-dir=${NAGIOSDIR}/checkresults
+		--with-checkresult-dir=${NAGIOSDIR}/checkresults \
+		--disable-statuswrl
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		CFLAGS="${CFLAGS}" \
@@ -84,17 +87,14 @@ SUB_FILES=	pkg-install \
 		pkg-deinstall \
 		pkg-message
 
+# XXX: Don't remove PREFIX from SUB_LIST here.
 SUB_LIST=	PREFIX=${PREFIX} \
 		${PLIST_SUB}
 
 .if defined(WITH_EMBEDDED_PERL)
-.if ${PERL_LEVEL} >= 500800
-USE_PERL5=	yes
+USE_PERL5=	5.8.0+
 CONFIGURE_ARGS+=	--enable-embedded-perl \
 		--with-perlcache
-.else
-IGNORE=		embedded Perl requires Perl 5.8 or higher (see lang/perl5.8)
-.endif
 PLIST_SUB+=	EMBEDDED_PERL=""
 .else
 PLIST_SUB+=	EMBEDDED_PERL="@comment "
@@ -102,6 +102,18 @@ PLIST_SUB+=	EMBEDDED_PERL="@comment "
 
 .if defined(WITH_NANOSLEEP)
 CONFIGURE_ARGS+=	--enable-nanosleep
+.endif
+
+.if defined(WITH_EVENT_BROKER)
+CONFIGURE_ARGS+=	--enable-event-broker
+.else
+CONFIGURE_ARGS+=	--disable-event-broker
+.endif
+
+post-patch:
+.if defined(WITH_UNHANDLED_HACK)
+	@${REINPLACE_CMD} -e 's#;serviceprops=42\&#;serviceprops=10\&#g' \
+		-e 's#;hostprops=42\"#;hostprops=10\"#g' ${WRKSRC}/html/side.php
 .endif
 
 pre-install:

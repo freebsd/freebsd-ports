@@ -30,10 +30,10 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/cgi-bin/status.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/statusmap.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/statuswml.cgi
-%%NAGIOSWWWDIR%%/cgi-bin/statuswrl.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/summary.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/tac.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/trends.cgi
+%%NAGIOSWWWDIR%%/config.inc.php
 %%NAGIOSWWWDIR%%/contexthelp/A1.html
 %%NAGIOSWWWDIR%%/contexthelp/A2.html
 %%NAGIOSWWWDIR%%/contexthelp/A3.html
@@ -106,6 +106,7 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/docs/cgiauth.html
 %%NAGIOSWWWDIR%%/docs/cgiincludes.html
 %%NAGIOSWWWDIR%%/docs/cgis.html
+%%NAGIOSWWWDIR%%/docs/cgisecurity.html
 %%NAGIOSWWWDIR%%/docs/checkscheduling.html
 %%NAGIOSWWWDIR%%/docs/clusters.html
 %%NAGIOSWWWDIR%%/docs/config.html
@@ -318,7 +319,7 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/images/redundancy.png
 %%NAGIOSWWWDIR%%/images/restart.gif
 %%NAGIOSWWWDIR%%/images/right.gif
-%%NAGIOSWWWDIR%%/images/sblogo.jpg
+%%NAGIOSWWWDIR%%/images/sblogo.png
 %%NAGIOSWWWDIR%%/images/serviceevent.gif
 %%NAGIOSWWWDIR%%/images/splunk1.gif
 %%NAGIOSWWWDIR%%/images/splunk2.gif
@@ -344,13 +345,11 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/images/weblogo1.png
 %%NAGIOSWWWDIR%%/images/zoom1.gif
 %%NAGIOSWWWDIR%%/images/zoom2.gif
-%%NAGIOSWWWDIR%%/index.html
-%%NAGIOSWWWDIR%%/main.html
-%%NAGIOSWWWDIR%%/media/critical.wav
-%%NAGIOSWWWDIR%%/media/hostdown.wav
-%%NAGIOSWWWDIR%%/media/warning.wav
+%%NAGIOSWWWDIR%%/includes/utils.inc.php
+%%NAGIOSWWWDIR%%/index.php
+%%NAGIOSWWWDIR%%/main.php
 %%NAGIOSWWWDIR%%/robots.txt
-%%NAGIOSWWWDIR%%/side.html
+%%NAGIOSWWWDIR%%/side.php
 %%NAGIOSWWWDIR%%/stylesheets/avail.css
 %%NAGIOSWWWDIR%%/stylesheets/checksanity.css
 %%NAGIOSWWWDIR%%/stylesheets/cmd.css
@@ -376,6 +375,7 @@ etc/nagios/resource.cfg-sample
 @dirrm %%NAGIOSWWWDIR%%/docs
 @dirrm %%NAGIOSWWWDIR%%/images/logos
 @dirrm %%NAGIOSWWWDIR%%/images
+@dirrm %%NAGIOSWWWDIR%%/includes
 @dirrm %%NAGIOSWWWDIR%%/media
 @dirrm %%NAGIOSWWWDIR%%/ssi
 @dirrm %%NAGIOSWWWDIR%%/stylesheets

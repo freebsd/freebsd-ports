@@ -1,6 +1,6 @@
---- html/Makefile.in.orig	2008-01-10 04:21:25.000000000 +1030
-+++ html/Makefile.in	2008-01-30 23:02:38.000000000 +1030
-@@ -33,39 +33,39 @@
+--- html/Makefile.in.orig	2008-12-15 04:30:46.000000000 +1030
++++ html/Makefile.in	2009-02-25 10:02:59.000000000 +1030
+@@ -33,42 +33,42 @@
  devclean: distclean
  
  install:
@@ -12,6 +12,7 @@
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/docs/images
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images/logos
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/includes
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/ssi
 -	$(INSTALL) -m 664 $(INSTALL_OPTS) robots.txt $(DESTDIR)$(HTMLDIR)
 -	$(INSTALL) -m 664 $(INSTALL_OPTS) docs/robots.txt $(DESTDIR)$(HTMLDIR)/docs
@@ -23,15 +24,16 @@
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/docs/images
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images/logos
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/includes
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/ssi
 +	$(INSTALL) -m 644 $(INSTALL_OPTS) robots.txt $(DESTDIR)$(HTMLDIR)
 +	$(INSTALL) -m 644 $(INSTALL_OPTS) docs/robots.txt $(DESTDIR)$(HTMLDIR)/docs
- 	for file in *.html; \
+ 	for file in *.php; \
 -	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR); done
 +	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR); done
- 	for file in media/*.wav; \
--	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/media; done
-+	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/media; done
+ #	for file in media/*.wav; \
+-#	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/media; done
++#	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/media; done
  	for file in stylesheets/*.css; \
 -	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/stylesheets; done
 +	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/stylesheets; done
@@ -59,6 +61,9 @@
  	for file in images/logos/*.*; \
 -	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images/logos; done
 +	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images/logos; done
+ 	for file in includes/*.*; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/includes; done
++	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/includes; done
  
  install-unstripped:
  	$(MAKE) install
