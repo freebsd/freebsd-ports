@@ -5,25 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=       cvswrap
+PORTNAME=	cvswrap
 PORTVERSION=	0.2
-CATEGORIES=     devel
+CATEGORIES=	devel
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alfred
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Helper for multiple CVS repositories.
+MAINTAINER=	flo@kasimir.com
+COMMENT=	Helper for multiple CVS repositories
 
 GNU_CONFIGURE=	yes
 
 MAN1=		cvswrap.1
 MAN5=		cvswrap.conf.5
 
-.include <bsd.port.pre.mk>
-
-# Redefines strndup(3)
-.if ${OSVERSION} >= 800058 || (${OSVERSION} >= 701101 && ${OSVERSION} < 800000)
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
