@@ -3,5 +3,4 @@
 %%OCAML_SITELIBDIR%%/csv/csv.cmi
 %%OCAML_SITELIBDIR%%/csv/csv.cmx
 %%OCAML_SITELIBDIR%%/csv/csv.cmxa
-%%OCAML_SITELIBDIR%%/csv/csv.mli
 %%OCAML_SITELIBDIR%%/csv/META

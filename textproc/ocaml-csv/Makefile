@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocaml-csv
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	textproc
 MASTER_SITES=	http://merjis.com/_file/
 
