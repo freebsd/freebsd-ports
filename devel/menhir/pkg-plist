@@ -7,7 +7,11 @@ share/menhir/standard.mly
 %%PORTDOCS%%%%DOCSDIR%%/demos/OMakefile.shared
 %%PORTDOCS%%%%DOCSDIR%%/demos/calc/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/demos/calc/OMakefile
+%%PORTDOCS%%%%DOCSDIR%%/demos/calc/OMakefile.omc
 %%PORTDOCS%%%%DOCSDIR%%/demos/calc/OMakeroot
+%%PORTDOCS%%%%DOCSDIR%%/demos/calc/OMakeroot.omc
+%%PORTDOCS%%%%DOCSDIR%%/demos/calc/.omakedb.lock
+%%PORTDOCS%%%%DOCSDIR%%/demos/calc/.omakedb
 %%PORTDOCS%%%%DOCSDIR%%/demos/calc/README
 %%PORTDOCS%%%%DOCSDIR%%/demos/calc/calc.ml
 %%PORTDOCS%%%%DOCSDIR%%/demos/calc/lexer.mll

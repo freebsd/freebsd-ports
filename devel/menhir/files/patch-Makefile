@@ -1,6 +1,6 @@
---- Makefile.orig	2007-12-12 17:44:32.000000000 +0100
-+++ Makefile	2008-04-25 12:12:02.000000000 +0200
-@@ -20,10 +20,10 @@
+--- Makefile.orig	2008-09-12 13:58:19.000000000 +0200
++++ Makefile	2009-02-24 14:36:26.000000000 +0100
+@@ -28,10 +28,10 @@
    $(error Please define PREFIX)
  endif
  
@@ -14,17 +14,22 @@
 +mandir          ?= ${PREFIX}/share/man/man1
  MANS            := menhir.1
  DOCS            := manual.pdf demos
- LIBS            := standard.mly
-@@ -52,13 +52,15 @@
- install:
+ MLYLIB          := src/standard.mly
+@@ -64,11 +64,9 @@
+ install: src/menhir
  	mkdir -p $(bindir)
  	mkdir -p $(libdir)
 -	mkdir -p $(docdir)
  	mkdir -p $(mandir)
- 	install menhir $(bindir)
- 	install -m 644 $(LIBS) $(libdir)
+ 	install src/menhir $(bindir)
+ 	install -m 644 $(MLYLIB) $(libdir)
 -	cp -r $(DOCS) $(docdir)
  	cp -r $(MANS) $(mandir)
+ 	@cd src && if $(USE_OCAMLFIND) ; then \
+ 	  echo Installing MenhirLib via ocamlfind. ; \
+@@ -78,6 +76,10 @@
+ 	  install -m 644 $(MENHIRLIB) $(libdir) ; \
+ 	fi
  
 +docinstall:
 +	mkdir -p $(docdir)
