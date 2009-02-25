@@ -1,19 +1,28 @@
 LIBSVM is an integrated software for support vector classification, (C-SVC,
-nu-SVC ), regression (epsilon-SVR, nu-SVR) and distribution estimation
-(one-class SVM ). It supports multi-class classification. The basic algorithm
-is a simplification of both SMO by Platt and SVMLight by Joachims. It is also
-a simplification of the modification 2 of SMO by Keerthi et al. 
+nu-SVC), regression (epsilon-SVR, nu-SVR) and distribution estimation
+(one-class SVM). It supports multi-class classification.
 
-Our goal is to help users from other fields to easily use SVM as a tool.
-LIBSVM provides a simple interface where users can easily link it with their
-own programs. Main features of LIBSVM include 
+Since version 2.8, it implements an SMO-type algorithm proposed in this paper:
+R.-E. Fan, P.-H. Chen, and C.-J. Lin. Working set selection using second order
+information for training SVM. Journal of Machine Learning Research 6,
+1889-1918, 2005. You can also find a pseudo code there. (how to cite LIBSVM)
 
-Different SVM formulations 
-Efficient multi-class classification 
-Cross validation for model selection 
-Weighted SVM for unbalanced data 
-Both C++ and Java sources 
-GUI demonstrating SVM classification and regression 
+Our goal is to help users from other fields to easily use SVM as a tool. LIBSVM
+provides a simple interface where users can easily link it with their own
+programs. Main features of LIBSVM include
+
+  * Different SVM formulations
+  * Efficient multi-class classification
+  * Cross validation for model selection
+  * Probability estimates
+  * Weighted SVM for unbalanced data
+  * Both C++ and Java sources
+  * GUI demonstrating SVM classification and regression
+  * Python, R (also Splus), MATLAB, Perl, Ruby, Weka, Common LISP and LabVIEW
+    interfaces. C# .NET code is available.
+    It's also included in some learning environments: YALE and PCP.
+  * Automatic model selection which can generate contour of cross valiation
+    accuracy.
 
 WWW: http://www.csie.ntu.edu.tw/~cjlin/libsvm/
 Author: Chih-Chung Chang and Chih-Jen Lin <cjlin@csie.ntu.edu.tw>
