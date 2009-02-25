@@ -8,7 +8,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	5.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/5.0/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
@@ -25,8 +25,8 @@ LIB_DEPENDS=	expat.[5-6]:${PORTSDIR}/textproc/expat2 \
 LATEST_LINK=	vtk5
 
 USE_QT_VER=	3
-USE_TCL=	yes
-USE_TK=		yes
+USE_TCL=	84
+USE_TK=		84
 USE_PYTHON=	yes
 INSTALLS_EGGINFO=	yes
 
