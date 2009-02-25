@@ -78,6 +78,7 @@
     SUBDIR += nomarch
     SUBDIR += nulib
     SUBDIR += nwreckdum
+    SUBDIR += ocaml-bz2
     SUBDIR += ocaml-zip
     SUBDIR += p5-Archive-Any
     SUBDIR += p5-Archive-Extract

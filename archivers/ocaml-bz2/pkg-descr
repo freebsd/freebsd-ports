@@ -1,0 +1,13 @@
+CamlBZ2 provides OCaml bindings for libbz2 (AKA bzip2), a popular compression
+library which typically compresses better (i.e., smaller resulting files) than
+gzip.
+
+Using CamlBZ2 you can read and write compressed "files", where files can be
+anything offering an in_channel/out_channel abstraction (files, sockets, ...).
+
+Also, with CamlBZ2 you can compress and decompress strings in memory using the
+bzip2 compression algorithm.
+
+Author:	Olivier Andreu <oandrieu@gmail.com> and
+        Stefano Zacchiroli <zack@upsilon.cc>
+WWW:	http://camlbz2.forge.ocamlcore.org
