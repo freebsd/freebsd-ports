@@ -39,7 +39,7 @@ DTDDIR=		${SGMLCATBASE}/${DTD_NAME}/${DTD_VERSION}
 DTD_FILES=	calstblx.dtd catalog.xml dbcentx.mod dbgenent.mod \
 		dbhierx.mod dbnotnx.mod dbpoolx.mod docbook.cat docbook.dcl \
 		docbook.dtd docbookx.dtd htmltblx.mod soextblx.dtd catalog
-DOCSDIR=	${PREFIX}/share/${PORTNAME}/${PORTVERSION}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}/${PORTVERSION}
 
 post-extract:
 	${CP} ${WRKSRC}/docbook.cat ${WRKSRC}/catalog
@@ -58,6 +58,8 @@ pre-install:
 			${ECHO_CMD} "${DOCSDIR:S,^${PREFIX}/,,}/$${F}"; \
 		done;\
 	${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}" ) >> ${PLIST}
+	${ECHO_CMD} "@dirrm ${DOCSDIR:S!^${PREFIX}/!!:S!${PORTVERSION}!!}" >> ${PLIST}
+	${ECHO_CMD} "@dirrmtry ${DOCSDIR:S!^${PREFIX}/!!:S!${PORTNAME}${PORTVERSION}!!}" >> ${PLIST}
 .endif
 	${ECHO_CMD} "@exec ${XMLCATMGR} ${REGIST_CAT_FLAGS_SGML}" >> ${PLIST}
 	${ECHO_CMD} "@unexec ${XMLCATMGR} ${UNREGIST_CAT_FLAGS_SGML}" >> ${PLIST}

@@ -43,7 +43,7 @@ ENT_FILES=	isoamsa.ent isoamsb.ent isoamsc.ent isoamsn.ent \
 		isocyr2.ent isodia.ent isogrk1.ent isogrk2.ent \
 		isogrk3.ent isogrk4.ent isolat1.ent isolat2.ent \
 		isonum.ent isopub.ent isotech.ent
-DOCSDIR=	${PREFIX}/share/${PORTNAME}/${PORTVERSION}
+#DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}/${PORTVERSION}
 
 pre-install:
 	@${RM} -f ${PLIST}
@@ -61,6 +61,7 @@ pre-install:
 	@${ECHO_CMD} "${DOCSDIR:S!^${PREFIX}/!!}/${F}.${PORTVERSION}" >> ${PLIST}
 .endfor
 	@${ECHO_CMD} "@dirrmtry ${DOCSDIR:S!^${PREFIX}/!!}" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry ${DOCSDIR:S!^${PREFIX}/!!:S!${PORTNAME}!!}" >> ${PLIST}
 .endif
 	@${ECHO_CMD} "@exec ${XMLCATMGR} ${REGIST_CAT_FLAGS_XML}" >> ${PLIST}
 	@${ECHO_CMD} "@unexec ${XMLCATMGR} ${UNREGIST_CAT_FLAGS_XML}" >> ${PLIST}
