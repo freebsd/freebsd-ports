@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Classify/.packlist
 %%SITE_PERL%%/Params/Classify.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Classify
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params
