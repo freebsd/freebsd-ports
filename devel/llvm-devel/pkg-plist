@@ -424,6 +424,7 @@ lib/libclangRewrite.a
 lib/libclangSema.a
 lib/plugin_llvmc_Base.o
 lib/plugin_llvmc_Clang.o
+%%DATADIR%%/scanview.css
 %%DATADIR%%/sorttable.js
 %%DOCSDIR%%/html.tar.gz
 %%DOCSDIR%%/html/AliasAnalysis.html

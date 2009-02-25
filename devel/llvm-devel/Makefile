@@ -26,7 +26,7 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .if defined(BOOTSTRAP)
 SVN_SNAPDATE!=	date -v-1d +%Y-%m-%d
 .else
-SVN_SNAPDATE=	2009-02-22
+SVN_SNAPDATE=	2009-02-24
 .endif
 
 SNAPDATE=	${SVN_SNAPDATE:S/-//g}
@@ -80,6 +80,7 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/utils/scan-build \
 	    ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/tools/clang/utils/scanview.css ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/tools/clang/utils/sorttable.js ${DATADIR}
 
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check)'
