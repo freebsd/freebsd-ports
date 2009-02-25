@@ -7,18 +7,17 @@
 
 PORTNAME=	pgtop
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CO/COSIMO
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Display PostgreSQL performance info like top(1)
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg \
-		${SITE_PERL}/${PERL_ARCH}/Bundle/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor \
-		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long
+RUN_DEPENDS=	p5-Term-ReadKey>=2.10:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-DBD-Pg>=1.22:${PORTSDIR}/databases/p5-DBD-Pg \
+		p5-DBI>=1.16:${PORTSDIR}/databases/p5-DBI
 
 PERL_CONFIGURE=	yes
 
