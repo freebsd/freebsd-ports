@@ -332,5 +332,8 @@ libdata/pkgconfig/cairomm-xlib-xrender-1.0.pc
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/win32__surface_8h.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/xlib__surface_8h-source.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/xlib__surface_8h.html
+%%PORTDOCS%%@dirrm share/doc/libcairomm-1.0/reference/html
+%%PORTDOCS%%@dirrm share/doc/libcairomm-1.0/reference
+%%PORTDOCS%%@dirrm share/doc/libcairomm-1.0
 @dirrm include/cairomm-1.0/cairomm
 @dirrm include/cairomm-1.0
