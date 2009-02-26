@@ -8,7 +8,7 @@
 PORTNAME=	beediff
 PORTVERSION=	1.9
 CATEGORIES=	textproc devel
-MASTER_SITES=	http://www.beesoft.org/download/
+MASTER_SITES=	http://www.beesoft.pl/download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
 MAINTAINER=	makc@FreeBSD.org
