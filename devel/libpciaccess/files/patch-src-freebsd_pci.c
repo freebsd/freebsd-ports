@@ -1,6 +1,6 @@
---- src/freebsd_pci.c.orig	2008-10-31 11:40:09.000000000 -0400
-+++ src/freebsd_pci.c	2009-02-08 18:03:29.000000000 -0500
-@@ -53,6 +53,20 @@
+--- src/freebsd_pci.c.orig	2009-02-25 19:30:48.000000000 -0600
++++ src/freebsd_pci.c	2009-02-25 19:30:58.000000000 -0600
+@@ -53,6 +53,25 @@
  #define	PCIS_DISPLAY_3D		0x02
  #define	PCIS_DISPLAY_OTHER	0x80
  
@@ -12,8 +12,13 @@
 +#define PCIM_BIOS_ENABLE	0x01
 +#define PCIM_BIOS_ADDR_MASK	0xfffff800
 +
++#define PCIR_BARS       0x10
++#define PCIR_BAR(x)             (PCIR_BARS + (x) * 4)
 +#define PCI_BAR_IO(x)           (((x) & PCIM_BAR_SPACE) == PCIM_BAR_IO_SPACE)
 +#define PCI_BAR_MEM(x)          (((x) & PCIM_BAR_SPACE) == PCIM_BAR_MEM_SPACE)
++#define PCIM_BAR_MEM_TYPE       0x00000006
++#define PCIM_BAR_MEM_64         4
++#define PCIM_BAR_MEM_PREFETCH   0x00000008
 +#define PCIM_BAR_SPACE          0x00000001
 +#define PCIM_BAR_MEM_SPACE      0
 +#define PCIM_BAR_IO_SPACE       1
@@ -21,7 +26,7 @@
  /**
   * FreeBSD private pci_system structure that extends the base pci_system
   * structure.
-@@ -214,6 +228,10 @@
+@@ -214,6 +233,10 @@
      while ( size > 0 ) {
  	int towrite = (size < 4 ? size : 4);
  
@@ -32,7 +37,7 @@
  	io.pi_reg = offset;
  	io.pi_width = towrite;
  	memcpy( &io.pi_data, data, towrite );
-@@ -239,8 +257,12 @@
+@@ -239,8 +262,12 @@
  static int
  pci_device_freebsd_read_rom( struct pci_device * dev, void * buffer )
  {
@@ -46,7 +51,7 @@
  
      if ( ( dev->device_class & 0x00ffff00 ) !=
  	 ( ( PCIC_DISPLAY << 16 ) | ( PCIS_DISPLAY_VGA << 8 ) ) )
-@@ -248,11 +270,29 @@
+@@ -248,11 +275,29 @@
  	return ENOSYS;
      }
  
@@ -77,7 +82,7 @@
      if ( bios == MAP_FAILED ) {
  	close( memfd );
  	return errno;
-@@ -263,6 +303,11 @@
+@@ -263,6 +308,11 @@
      munmap( bios, dev->rom_size );
      close( memfd );
  
@@ -89,7 +94,81 @@
      return 0;
  }
  
-@@ -300,20 +345,13 @@
+@@ -273,7 +323,7 @@
+ {
+     struct pci_device_private *priv = (struct pci_device_private *) dev;
+ 
+-    switch (priv->header_type & 0x7f) {
++    switch (priv->header_type) {
+     case 0:
+ 	return 6;
+     case 1:
+@@ -286,6 +336,64 @@
+     }
+ }
+ 
++#ifdef PCIOCGETBAR
++
++static int
++pci_device_freebsd_probe( struct pci_device * dev )
++{
++    struct pci_device_private *priv = (struct pci_device_private *) dev;
++    struct pci_bar_io bar;
++    uint8_t irq;
++    int err, i;
++
++#if HAVE_PCI_IO_PC_DOMAIN
++    bar.pbi_sel.pc_domain = dev->domain;
++#endif
++    bar.pbi_sel.pc_bus = dev->bus;
++    bar.pbi_sel.pc_dev = dev->dev;
++    bar.pbi_sel.pc_func = dev->func;
++
++
++    /* Many of the fields were filled in during initial device enumeration.
++     * At this point, we need to fill in regions, rom_size, and irq.
++     */
++
++    err = pci_device_cfg_read_u8( dev, &irq, 60 );
++    if (err)
++	return errno;
++    dev->irq = irq;
++
++    for (i = 0; i < pci_device_freebsd_get_num_regions( dev ); i++) {
++	bar.pbi_reg = PCIR_BAR(i);
++	if ( ioctl( freebsd_pci_sys->pcidev, PCIOCGETBAR, &bar ) < 0 ) 
++	    continue;
++
++	if (PCI_BAR_IO(bar.pbi_base))
++	    dev->regions[i].is_IO = 1;
++
++	if ((bar.pbi_base & PCIM_BAR_MEM_TYPE) == PCIM_BAR_MEM_64)
++	    dev->regions[i].is_64 = 1;
++
++	if (bar.pbi_base & PCIM_BAR_MEM_PREFETCH)
++	    dev->regions[i].is_prefetchable = 1;
++
++	dev->regions[i].base_addr = bar.pbi_base & ~((uint64_t)0xf);
++	dev->regions[i].size = bar.pbi_length;
++    }
++
++    /* If it's a VGA device, set up the rom size for read_rom using the
++     * 0xc0000 mapping.
++     */
++     if ((dev->device_class & 0x00ffff00) ==
++	((PCIC_DISPLAY << 16) | (PCIS_DISPLAY_VGA << 8))) {
++	     dev->rom_size = 64 * 1024;
++     }
++
++     return 0;
++}
++
++#else
++
+ /** Masks out the flag bigs of the base address register value */
+ static uint32_t
+ get_map_base( uint32_t val )
+@@ -300,20 +408,13 @@
  static int
  get_test_val_size( uint32_t testval )
  {
@@ -111,7 +190,7 @@
  }
  
  /**
-@@ -329,6 +367,7 @@
+@@ -329,6 +430,7 @@
  				    int bar )
  {
      uint32_t addr, testval;
@@ -119,7 +198,7 @@
      int err;
  
      /* Get the base address */
-@@ -336,12 +375,35 @@
+@@ -336,12 +438,35 @@
      if (err != 0)
  	return err;
  
@@ -156,7 +235,7 @@
  
      if (addr & 0x01)
  	dev->regions[region].is_IO = 1;
-@@ -352,6 +414,7 @@
+@@ -352,6 +477,7 @@
  
      /* Set the size */
      dev->regions[region].size = get_test_val_size( testval );
@@ -164,7 +243,7 @@
  
      /* Set the base address value */
      if (dev->regions[region].is_64) {
-@@ -374,6 +437,7 @@
+@@ -374,6 +500,7 @@
  pci_device_freebsd_probe( struct pci_device * dev )
  {
      struct pci_device_private *priv = (struct pci_device_private *) dev;
@@ -172,7 +251,18 @@
      uint8_t irq;
      int err, i, bar;
  
-@@ -400,13 +464,29 @@
+@@ -386,10 +513,6 @@
+ 	return errno;
+     dev->irq = irq;
+ 
+-    err = pci_device_cfg_read_u8( dev, &priv->header_type, 0x0e );
+-    if (err)
+-	return errno;
+-
+     bar = 0x10;
+     for (i = 0; i < pci_device_freebsd_get_num_regions( dev ); i++) {
+ 	pci_device_freebsd_get_region_info( dev, i, bar );
+@@ -400,18 +523,36 @@
  	    bar += 0x04;
      }
  
@@ -206,11 +296,21 @@
      }
  
      return 0;
-@@ -495,6 +575,7 @@
+ }
+ 
++#endif
++
+ static void
+ pci_system_freebsd_destroy(void)
+ {
+@@ -495,8 +636,10 @@
  	pci_sys->devices[ i ].base.device_id = p->pc_device;
  	pci_sys->devices[ i ].base.subvendor_id = p->pc_subvendor;
  	pci_sys->devices[ i ].base.subdevice_id = p->pc_subdevice;
 +	pci_sys->devices[ i ].base.revision = p->pc_revid;
  	pci_sys->devices[ i ].base.device_class = (uint32_t)p->pc_class << 16 |
  	    (uint32_t)p->pc_subclass << 8 | (uint32_t)p->pc_progif;
++	pci_sys->devices[ i ].header_type = p->pc_hdr & 0x7f;
      }
+ 
+     return 0;
