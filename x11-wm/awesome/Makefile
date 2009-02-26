@@ -33,6 +33,11 @@ USE_GNOME=	glib20 pango
 USE_LUA=	5.1+
 USE_XORG=	pixman x11 xau xdmcp xext xft xinerama xrandr xrender xproto
 
+MAN1=	awesome.1 \
+	awesome-client.1 \
+	awsetbg.1
+MAN5=	awesomerc.5
+MANCOMPRESSED=	yes
 PORTDOCS=	AUTHORS BUGS LICENSE README
 
 .include <bsd.port.pre.mk>
