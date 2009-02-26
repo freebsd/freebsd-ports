@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	translate
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	misc
 MASTER_SITES=	http://www.freebsdcluster.org/~mich/software/
 
