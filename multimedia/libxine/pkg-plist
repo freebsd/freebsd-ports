@@ -236,6 +236,8 @@ share/locale/tr/LC_MESSAGES/libxine1.mo
 @dirrm %%DOCSDIR%%
 @dirrmtry share/locale/pl_PL/LC_MESSAGES
 @dirrmtry share/locale/pl_PL
+@dirrmtry share/locale/en_US/LC_MESSAGES
+@dirrmtry share/locale/en_US
 @dirrm %%DATADIR%%/libxine1/fonts
 @dirrm %%DATADIR%%/libxine1
 @dirrm %%DATADIR%%
