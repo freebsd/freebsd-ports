@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	liberation-fonts-ttf
-PORTVERSION=	1.0
+PORTVERSION=	1.04
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://www.redhat.com/f/fonts/
+MASTER_SITES=	https://fedorahosted.org/releases/l/i/liberation-fonts/
 DISTNAME=	liberation-fonts
 
 MAINTAINER=	thierry@FreeBSD.org
