@@ -7,6 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.6.b.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -35,7 +36,7 @@ SUB_FILES=	pkgIndex.tcl
 .if !defined(BUILDING_TK_THREADS)
 USE_TCL=	${SHORT_TK_VER}
 
-OPTIONS=	TK86_MAN "Install tk 8.6 manpages" off \
+OPTIONS=	TK86_MAN "Install tk 8.6 function manpages" off \
 		XFT "Use Xft fonts" on \
 		DEMOS "Install demos" off
 .else
@@ -49,11 +50,17 @@ SUB_LIST+=	THREADS_SUFFIX="${THREADS_SUFFIX}"
 
 .include <bsd.port.pre.mk>
 
+DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}
+
 .if !defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=	--enable-xft
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .else
 CONFIGURE_ARGS+=	--disable-xft
+.endif
+
+.if !defined(NO_INSTALL_MANPAGES)
+MAN1=	wish${TCL_VER}${THREADS_SUFFIX}.1
 .endif
 
 .if defined(BUILDING_TK_THREADS)
@@ -75,16 +82,8 @@ PLIST_SUB+=	DEMOS=""
 PLIST_SUB+=	DEMOS="@comment "
 .endif
 
-.if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TK86_MAN)
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK86_MAN)
 
-PLIST_SUB+=	INSTMAN='@comment '
-
-.else
-
-DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}
-PLIST_SUB+=	INSTMAN=''
-
-MAN1=	wish.1
 MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
 	CanvTxtInfo.3 Clipboard.3 ClrSelect.3 ConfigWidg.3 ConfigWind.3 \
 	CoordToWin.3 CrtConsoleChan.3 CrtCmHdlr.3 CrtErrHdlr.3 CrtGenHdlr.3 \
@@ -399,7 +398,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	text.n tk_textCut.n \
 	text.n tk_textPaste.n
 
-.endif
+.endif	#!defined(NO_INSTALL_MANPAGES) && !defined(WITH_TK86_MAN)
 
 .endif	# defined(BUILDING_TK_THREADS)
 
@@ -411,6 +410,10 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|X11/Intrinsic.h|X11/Xlib.h|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|@TK_SHARED_BUILD@|#@TK_SHARED_BUILD@|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|wish |wish${TCL_VER}${THREADS_SUFFIX} |g' -e 's|Wish |Wish${TCL_VER}${THREADS_SUFFIX} |g' \
+		-e 's|wish\\fR|wish${TCL_VER}${THREADS_SUFFIX}\\fR|g' -e 's|Wish\\fR|Wish${TCL_VER}${THREADS_SUFFIX}\\fR|g' \
+		-e 's|^.so man.macros|.so ${DATADIR}/man.macros|' \
+		${WRKSRC}/../doc/wish.1
 .if defined(BUILDING_TK_THREADS)
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		-e 's|$${TCL_TRIM_DOTS}|$${TCL_TRIM_DOTS}${THREADS_SUFFIX}|g' \
@@ -443,15 +446,20 @@ do-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}${THREADS_SUFFIX}/
-.if !defined(BUILDING_TK_THREADS) && !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK86_MAN)
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
+.if !defined(NO_INSTALL_MANPAGES)
+	${MKDIR} ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/../doc/wish.1 ${MANPREFIX}/man/man1/wish${TCL_VER}${THREADS_SUFFIX}.1
+.if !defined(BUILDING_TK_THREADS) && defined(WITH_TK85_MAN)
 . for mp in ${MAN1} ${MAN3} ${MANN}
 	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
 		${WRKSRC}/../doc/${mp}
 . endfor
 	@cd ${WRKSRC} && ${MAKE} -f Makefile install-doc ${MAKE_ENV}
-.endif
+.endif # !defined(BUILDING_TK_THREADS) && defined(WITH_TK85_MAN)
+
+.endif # !defined(NO_INSTALL_MANPAGES)
 
 regression-test:	build
 	cd ${WRKSRC}; ${MAKE} test

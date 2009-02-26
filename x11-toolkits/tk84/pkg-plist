@@ -159,8 +159,8 @@ lib/tk%%TK_VER%%/tkConfig.sh
 lib/tk%%TK_VER%%/tkfbox.tcl
 lib/tk%%TK_VER%%/unsupported.tcl
 lib/tk%%TK_VER%%/xmfbox.tcl
-%%INSTMAN%%%%DATADIR%%/man.macros
-%%INSTMAN%%@dirrm %%DATADIR%%
+%%DATADIR%%/man.macros
+@dirrm %%DATADIR%%
 @dirrm lib/tk%%TK_VER%%/demos/images
 @dirrm lib/tk%%TK_VER%%/demos
 @dirrm lib/tk%%TK_VER%%/images

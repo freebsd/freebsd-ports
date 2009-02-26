@@ -1,5 +1,5 @@
---- Makefile.in.orig	2008-03-28 19:41:53.000000000 +0100
-+++ Makefile.in	2008-04-02 11:49:46.000000000 +0200
+--- Makefile.in.orig	2008-12-22 18:45:06.000000000 +0100
++++ Makefile.in	2009-02-26 11:53:11.121953378 +0100
 @@ -55,6 +55,8 @@
  
  # Directory in which to install the include file tcl.h:
@@ -9,7 +9,7 @@
  
  # Path to the private tcl header dir:
  PRIVATE_INCLUDE_DIR	= @PRIVATE_INCLUDE_DIR@
-@@ -98,7 +100,7 @@
+@@ -101,7 +103,7 @@
  #CFLAGS			= $(CFLAGS_DEBUG)
  #CFLAGS			= $(CFLAGS_OPTIMIZE)
  #CFLAGS			= $(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
@@ -18,9 +18,12 @@
  
  # Flags to pass to the linker
  LDFLAGS_DEBUG		= @LDFLAGS_DEBUG@
-@@ -538,7 +540,8 @@
+@@ -579,9 +581,10 @@
+ SRCS = $(GENERIC_SRCS) $(TOMMATH_SRCS) $(UNIX_SRCS) $(NOTIFY_SRCS) \
+ 	$(OO_SRCS) $(STUB_SRCS) @PLAT_SRCS@ @ZLIB_SRCS@
  
- all: binaries libraries doc
+-all: binaries libraries doc packages
++all: binaries libraries doc
  
 -binaries: ${LIB_FILE} $(STUB_LIB_FILE) $(TCL_BUILD_EXP_FILE) tclsh
 +binaries: ${LIB_FILE} $(STUB_LIB_FILE) $(TCL_BUILD_EXP_FILE) \
@@ -28,7 +31,7 @@
  
  libraries:
  
-@@ -549,6 +552,15 @@
+@@ -592,6 +595,15 @@
  ${LIB_FILE}: ${OBJS} ${STUB_LIB_FILE}
  	rm -f $@
  	@MAKE_LIB@
@@ -44,16 +47,16 @@
  
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
-@@ -697,7 +709,7 @@
+@@ -726,7 +738,7 @@
  dltest.marker: ${STUB_LIB_FILE}
  	cd dltest ; $(MAKE)
  
--INSTALL_TARGETS = install-binaries install-libraries install-doc @EXTRA_INSTALL@
+-INSTALL_TARGETS = install-binaries install-libraries install-doc install-packages @EXTRA_INSTALL@
 +INSTALL_TARGETS = install-binaries install-libraries @EXTRA_INSTALL@
  
  install: $(INSTALL_TARGETS)
  
-@@ -726,6 +738,13 @@
+@@ -755,6 +767,13 @@
  	@echo "Installing $(LIB_FILE) to $(LIB_INSTALL_DIR)/"
  	@@INSTALL_LIB@
  	@chmod 555 "$(LIB_INSTALL_DIR)"/$(LIB_FILE)
@@ -67,7 +70,7 @@
  	@if test "$(TCL_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TCL_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(TCL_BUILD_EXP_FILE) \
-@@ -733,8 +752,9 @@
+@@ -762,8 +781,9 @@
  	    fi
  	@echo "Installing tclsh as $(BIN_INSTALL_DIR)/tclsh$(VERSION)"
  	@$(INSTALL_PROGRAM) tclsh "$(BIN_INSTALL_DIR)"/tclsh$(VERSION)
@@ -79,7 +82,7 @@
  	@if test "$(STUB_LIB_FILE)" != "" ; then \
  	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    @INSTALL_STUB_LIB@ ; \
-@@ -742,7 +762,8 @@
+@@ -771,7 +791,8 @@
  	@EXTRA_INSTALL_BINARIES@
  
  install-libraries: libraries $(INSTALL_TZDATA) install-msgs
@@ -89,36 +92,42 @@
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
-@@ -764,13 +785,17 @@
- 	    chmod +x $(SRC_DIR)/../unix/install-sh; \
+@@ -793,14 +814,21 @@
+ 	    chmod +x $(UNIX_DIR)/install-sh; \
  	    fi
  	@echo "Installing header files";
 -	@for i in $(GENERIC_DIR)/tcl.h $(GENERIC_DIR)/tclDecls.h \
+-		$(GENERIC_DIR)/tclOO.h $(GENERIC_DIR)/tclOODecls.h \
 -		$(GENERIC_DIR)/tclPlatDecls.h \
 -		$(GENERIC_DIR)/tclTomMath.h \
 -		$(GENERIC_DIR)/tclTomMathDecls.h ; \
 +	@for i in $(GENERIC_DIR)/*.h ; \
-+	    do \
-+	    $(INSTALL_DATA) $$i "$(GENERIC_INCLUDE_INSTALL_DIR)"; \
-+	    done;
-+	@for i in $(UNIX_DIR)/*.h ; \
  	    do \
 -	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"; \
-+	    $(INSTALL_DATA) $$i "$(UNIX_INCLUDE_INSTALL_DIR)"; \
++	    $(INSTALL_DATA) $$i "$(GENERIC_INCLUDE_INSTALL_DIR)"; \
  	    done;
++	@for i in $(UNIX_DIR)/*.h ; \
++	    do \
++	    $(INSTALL_DATA) $$i "$(UNIX_INCLUDE_INSTALL_DIR)"; \
++	    done;
 +	@ln -sf "$(GENERIC_INCLUDE_INSTALL_DIR)"/tcl.h "$(INCLUDE_INSTALL_DIR)"/tcl.h
 +	@ln -sf "$(GENERIC_INCLUDE_INSTALL_DIR)"/tclDecls.h "$(INCLUDE_INSTALL_DIR)"/tclDecls.h
 +	@ln -sf "$(GENERIC_INCLUDE_INSTALL_DIR)"/tclPlatDecls.h "$(INCLUDE_INSTALL_DIR)"/tclPlatDecls.h
++	@ln -sf "$(GENERIC_INCLUDE_INSTALL_DIR)"/tclOO.h "$(INCLUDE_INSTALL_DIR)"/tclOO.h
++	@ln -sf "$(GENERIC_INCLUDE_INSTALL_DIR)"/tclOODecls.h "$(INCLUDE_INSTALL_DIR)"/tclOODecls.h
++	@ln -sf "$(GENERIC_INCLUDE_INSTALL_DIR)"/tclTomMath.h "$(INCLUDE_INSTALL_DIR)"/tclTomMath.h
++	@ln -sf "$(GENERIC_INCLUDE_INSTALL_DIR)"/tclTomMathDecls.h "$(INCLUDE_INSTALL_DIR)"/tclTomMathDecls.h
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex \
  		$(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix @DTRACE_SRC@; \
-@@ -838,18 +863,27 @@
+@@ -866,20 +894,25 @@
+ 		else true; \
+ 		fi; \
  	    done;
- 	@echo "Installing and cross-linking top-level (.1) docs";
- 	@for i in $(TOP_DIR)/doc/*.1; do \
+-	@echo "Installing and cross-linking top-level (.1) docs";
+-	@for i in $(TOP_DIR)/doc/*.1; do \
 -	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MAN1_INSTALL_DIR)"; \
-+	    ${BSD_INSTALL_MAN} $$i "$(MAN1_INSTALL_DIR)"; \
- 	done
+-	done
  
  	@echo "Installing and cross-linking C API (.3) docs";
  	@for i in $(TOP_DIR)/doc/*.3; do \
