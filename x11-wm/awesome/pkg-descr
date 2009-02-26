@@ -1,12 +1,10 @@
-awesome is a tiling window manager initially based on a dwm code
-rewriting. It's extremely fast, small, dynamic and awesome.
+awesome is a highly configurable, next generation framework window
+manager for X. It is very fast, small, dynamic, heavily extensible using
+the Lua programming language, and licensed under the GNU GPLv2 license.
 
-Windows can be managed in several layouts: tiled and floating. Each
-layout can be applied on the fly, optimizing the environment for the
-application in use and the task performed.
-
-Managing windows in tiled mode assures that no space will be waste on
-your screen. No gaps, no overlap.
+It is primarly targeted at power users, developers and any people
+dealing with every day computing tasks and who want to have fine-grained
+control on theirs graphical environment.
 
 
 WWW: http://awesome.naquadah.org/
