@@ -7,7 +7,7 @@
 
 PORTNAME=	lynx
 PORTVERSION=	2.8.6.5
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/ \
@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:R}rel.${PORTVERSION:E}
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	A non-graphical, text-based World-Wide Web client
 
-CONFLICTS=	lynx-current*
+CONFLICTS=	lynx-2.8.[7-9]*
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
