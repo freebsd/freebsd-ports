@@ -28,6 +28,7 @@
     SUBDIR += echolinux
     SUBDIR += efax
     SUBDIR += efax-gtk
+    SUBDIR += esmska
     SUBDIR += fldigi
     SUBDIR += gammu
     SUBDIR += garmin-utils
