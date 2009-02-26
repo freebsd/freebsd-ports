@@ -23,4 +23,5 @@ lib/libdrm_intel.la
 lib/libdrm_intel.so
 lib/libdrm_intel.so.1
 libdata/pkgconfig/libdrm.pc
+libdata/pkgconfig/libdrm_intel.pc
 @dirrm include/drm

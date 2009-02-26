@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdrm
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.5
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://dri.freedesktop.org/libdrm/
 
@@ -19,6 +19,8 @@ RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:${PORTSDIR}/devel/
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+#CONFIGURE_ARGS=	--enable-nouveau-experimental-api
 
 pre-patch:
 	@${REINPLACE_CMD} 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|g' \
