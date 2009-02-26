@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinderbox
-PORTVERSION=	3.2.r3
+PORTVERSION=	3.2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
@@ -14,6 +14,8 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Port build tinderbox system, devel version
+
+CONFLICTS=	tinderbox-[0-9]*
 
 OPTIONS=	PGSQL "With pgsql" Off \
 		MYSQL "With mysql" On \
