@@ -8,7 +8,7 @@
 
 PORTNAME=	unique
 PORTVERSION=	1.0.6
-CATEGORIES=	devel
+CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.gnome.org/~ebassi/source/
 
 MAINTAINER=	kwm@FreeBSD.org
