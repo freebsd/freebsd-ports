@@ -203,6 +203,10 @@ bin/zabbix_server
 %%DATADIR%%/php/images/general/bttn/minus.png
 %%DATADIR%%/php/images/general/bttn/help_bb.png
 %%DATADIR%%/php/images/general/bttn/sound_bb.png
+%%DATADIR%%/php/images/general/bttn/down.png
+%%DATADIR%%/php/images/general/bttn/down_bb.png
+%%DATADIR%%/php/images/general/bttn/up.png
+%%DATADIR%%/php/images/general/bttn/up_bb.png
 %%DATADIR%%/php/images/general/inst_current.gif
 %%DATADIR%%/php/images/general/sortdown.gif
 %%DATADIR%%/php/images/general/error_small.gif
@@ -227,6 +231,8 @@ bin/zabbix_server
 %%DATADIR%%/php/images/general/sortdown_off.gif
 %%DATADIR%%/php/images/general/tick.png
 %%DATADIR%%/php/images/general/opened.gif
+%%DATADIR%%/php/images/general/up_icon.png
+%%DATADIR%%/php/images/general/down_icon.png
 %%DATADIR%%/php/create/mysql.sql
 %%DATADIR%%/php/create/data.sql
 %%DATADIR%%/php/discoveryconf.php
