@@ -105,6 +105,7 @@ bin/xasy
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section8.html
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section9.html
 %%PORTDOCS%%%%DOCSDIR%%/asymptote.pdf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/100d.views
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BezierPatch.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BezierSurface.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Bode.asy
@@ -120,6 +121,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Klein.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Pythagoras.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/PythagoreanTree.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/RiemannSurface.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Sierpinski.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/advection.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alignbox.asy
@@ -155,6 +157,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/controlsystem.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cos2theta.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cosaddition.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cpkcolors.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cube.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/curvedlabel.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cyclohexane.asy
@@ -169,6 +172,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dots.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dragon.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eetomumu.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/electromagnetic.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/elevation.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/elliptic.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/epix.asy
@@ -259,6 +263,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parametricgraph.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parametricsurface.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/partialsurface.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pdb.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/penimage.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/phase.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/piicon.eps
