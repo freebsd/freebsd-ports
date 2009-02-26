@@ -39,6 +39,7 @@ USE_GNOME=	gnomehack gnometarget
 USE_GMAKE=	yes
 USE_XORG=	x11 xv xinerama
 USE_GL=		gl glu
+USE_PERL5_BUILD=yes
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-force-addr -I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread" \
