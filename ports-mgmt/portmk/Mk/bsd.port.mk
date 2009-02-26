@@ -1389,7 +1389,7 @@ FILESDIR?=		${MASTERDIR}/files
 SCRIPTDIR?=		${MASTERDIR}/scripts
 PKGDIR?=		${MASTERDIR}
 
-.if defined(USE_IMAKE) && !defined(USE_X_PREFIX)
+.if defined(USE_IMAKE) && !defined(USE_X_PREFIX) && !defined(USE_XORG)
 USE_X_PREFIX=	yes
 .endif
 .if defined(USE_X_PREFIX) && ${USE_X_PREFIX} == "no"
@@ -1447,7 +1447,7 @@ PERL_ARCH?=		mach
 .if ${PERL_LEVEL} >= 500800
 PERL_PORT?=	perl5.8
 .else
-PERL_PORT?=	perl5
+PERL_PORT?=	perl5.6
 .endif
 
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}
@@ -2001,7 +2001,7 @@ PLIST_SUB+=			XAWVER=${XAWVER}
 _GL_gl_LIB_DEPENDS=		GL.1:${PORTSDIR}/graphics/libGL
 _GL_glu_LIB_DEPENDS=		GLU.1:${PORTSDIR}/graphics/libGLU
 _GL_glw_LIB_DEPENDS=		GLw.1:${PORTSDIR}/graphics/libGLw
-_GL_glut_LIB_DEPENDS=		glut.4:${PORTSDIR}/graphics/libglut
+_GL_glut_LIB_DEPENDS=		glut.3:${PORTSDIR}/graphics/libglut
 _GL_linux_RUN_DEPENDS=		${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
 
 .if defined(USE_GL)
@@ -3008,7 +3008,7 @@ check-categories:
 
 VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 	benchmarks biology cad chinese comms converters databases \
-	deskutils devel dns editors elisp emulators finance french ftp \
+	deskutils devel docs dns editors elisp emulators finance french ftp \
 	games geography german gnome gnustep graphics hamradio haskell hebrew hungarian \
 	ipv6 irc japanese java kde kld korean lang linux lisp \
 	mail math mbone misc multimedia net net-im net-mgmt net-p2p news \
