@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Oct 19 19:27:34 2006
-+++ Makefile.in	Mon Mar 12 18:18:40 2007
+--- Makefile.in.orig	2008-04-17 17:14:08.000000000 +0200
++++ Makefile.in	2009-02-26 12:06:12.362017966 +0100
 @@ -64,6 +64,8 @@
  
  # Directory in which to install the include file tk.h:
@@ -18,6 +18,15 @@
  
  # The directory containing the Tcl library archive file appropriate
  # for this version of Tk:
+@@ -107,7 +109,7 @@
+ TK_DBGX			= @TK_DBGX@
+ 
+ # Flag, 1: we're building a shared lib, 0 we're not
+-TK_SHARED_BUILD		= @TK_SHARED_BUILD@
++TK_SHARED_BUILD		= #@TK_SHARED_BUILD@
+ 
+ # Subdirectory of $(libdir) containing the pkgIndex.tcl file for loadable Tk
+ TK_PKG_DIR		= @TK_PKG_DIR@
 @@ -130,7 +132,7 @@
  #CFLAGS			= $(CFLAGS_DEBUG)
  #CFLAGS			= $(CFLAGS_OPTIMIZE)
@@ -36,7 +45,7 @@
  
  # Additional search flags needed to find the various shared libraries
  # at run-time.  The first symbol is for use when creating a binary
-@@ -477,6 +479,8 @@
+@@ -478,6 +480,8 @@
  	default.h ks_names.h tkPatch.h tk.h tkButton.h tkCanvas.h tkInt.h  \
  	tkPort.h tkScrollbar.h tkText.h
  
@@ -45,7 +54,7 @@
  DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
  
  all: binaries libraries doc
-@@ -496,6 +500,12 @@
+@@ -497,6 +501,12 @@
  ${LIB_FILE}: ${OBJS} ${STUB_LIB_FILE} @LIB_RSRC_FILE@
  	rm -f $@
  	@MAKE_LIB@
@@ -58,7 +67,7 @@
  
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
-@@ -601,7 +611,7 @@
+@@ -602,7 +612,7 @@
  	gdb ./wish --command=gdb.run
  	rm gdb.run
  
@@ -67,7 +76,7 @@
  
  install: $(INSTALL_TARGETS)
  
-@@ -614,7 +624,8 @@
+@@ -615,7 +625,8 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -77,7 +86,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) $(PKG_INSTALL_DIR); \
  	    do \
  		if [ ! -d $$i ] ; then \
-@@ -645,10 +656,15 @@
+@@ -646,10 +657,15 @@
  	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
  			$(LIB_INSTALL_DIR)/$(TK_EXP_FILE); \
  	    fi
@@ -95,7 +104,7 @@
  	@if test "$(STUB_LIB_FILE)" != "" ; then \
  	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    @INSTALL_STUB_LIB@ ; \
-@@ -659,6 +675,7 @@
+@@ -660,6 +676,7 @@
  	@if test "$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)" != ""; then \
  	    XLIB_INCLUDE_INSTALL_DIR=$(INCLUDE_INSTALL_DIR)/X11; fi; \
  	for i in $(INCLUDE_INSTALL_DIR) $${XLIB_INCLUDE_INSTALL_DIR} \
@@ -103,7 +112,7 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images \
  		$(SCRIPT_INSTALL_DIR)/msgs; \
  	    do \
-@@ -673,11 +690,14 @@
+@@ -674,11 +691,14 @@
  	    chmod +x $(SRC_DIR)/install-sh; \
  	    fi
  	@echo "Installing header files";
@@ -122,7 +131,7 @@
  	@list='$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)'; for i in $$list ; \
  	    do \
  	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR)/X11; \
-@@ -748,20 +768,13 @@
+@@ -749,20 +769,10 @@
  		else true; \
  		fi; \
  	    done;
@@ -135,13 +144,11 @@
 -	@for i in $(TOP_DIR)/doc/*.3; do \
 -	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MAN3_INSTALL_DIR); \
 -	done
- 
+-
 -	@echo "Installing and cross-linking command (.n) docs";
 -	@for i in $(TOP_DIR)/doc/*.n; do \
 -	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MANN_INSTALL_DIR); \
 -	done
-+	@echo "Installing top-level (.1) docs";
-+	${BSD_INSTALL_MAN} $(TOP_DIR)/doc/*.1 $(MAN1_INSTALL_DIR)
 +	@echo "Installing C API (.3) docs";
 +	${BSD_INSTALL_MAN} $(TOP_DIR)/doc/*.3 $(MAN3_INSTALL_DIR)
 +	@echo "Installing command (.n) docs";

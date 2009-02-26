@@ -822,8 +822,8 @@ lib/tcl8/8.4/platform/shell-1.1.4.tm
 lib/tcl8/8.4/platform-1.0.3.tm
 lib/tcl8/8.5/msgcat-1.4.2.tm
 lib/tcl8/8.5/tcltest-2.3.0.tm
-%%INSTMAN%%%%DATADIR%%/man.macros
-%%INSTMAN%%@dirrm %%DATADIR%%
+%%DATADIR%%/man.macros
+@dirrm %%DATADIR%%
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/US
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/SystemV
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Pacific

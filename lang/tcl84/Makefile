@@ -7,6 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.4.19
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang tcl
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -32,7 +33,7 @@ PLIST_SUB=	TCL_VER="${TCL_VER}" SHORT_TCL_VER="${SHORT_TCL_VER}"
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude compat/
 
 .if !defined(BUILDING_TCL_THREADS)
-OPTIONS=	TCL84_MAN "Install tcl 8.4 manpages" on
+OPTIONS=	TCL84_MAN "Install tcl 8.4 function manpages" off
 .else
 USE_TCL=	${SHORT_TCL_VER}
 PLIST=		${PKGDIR}/pkg-plist.threads
@@ -41,22 +42,20 @@ THREADS_SUFFIX=	-threads
 
 .include <bsd.port.pre.mk>
 
+DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}
+
+.if !defined(NO_INSTALL_MANPAGES)
+MAN1=	tclsh${TCL_VER}${THREADS_SUFFIX}.1
+.endif
+
 .if defined(BUILDING_TCL_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
 CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 .else
 CONFIGURE_ARGS+=	--disable-threads
 
-.if defined(NO_INSTALL_MANPAGES) || defined(WITHOUT_TCL84_MAN)
 
-PLIST_SUB+=	INSTMAN='@comment '
-
-.else
-
-DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}
-PLIST_SUB+=	INSTMAN=''
-
-MAN1=	tclsh.1
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL84_MAN)
 
 MAN3=	Access.3 AddErrInfo.3 Alloc.3 AllowExc.3 AppInit.3 AssocData.3 \
 	Async.3 BackgdErr.3 Backslash.3 BoolObj.3 ByteArrObj.3 CallDel.3 \
@@ -615,8 +614,12 @@ LATEST_LINK=	tcl84${THREADS_SUFFIX}
 
 TCLBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
 
-.if defined(BUILDING_TCL_THREADS)
 post-patch:
+	@${REINPLACE_CMD} -e 's|tclsh |tclsh${TCL_VER}${THREADS_SUFFIX} |g' -e 's|Tclsh |Tclsh${TCL_VER}${THREADS_SUFFIX} |g' \
+		-e 's|tclsh\\fR|tclsh${TCL_VER}${THREADS_SUFFIX}\\fR|g' -e 's|Tclsh\\fR|Tclsh${TCL_VER}${THREADS_SUFFIX}\\fR|g' \
+		-e 's|^.so man.macros|.so ${DATADIR}/man.macros|' \
+		${WRKSRC}/../doc/tclsh.1
+.if defined(BUILDING_TCL_THREADS)
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		-e 's|$${TCL_TRIM_DOTS}|$${TCL_TRIM_DOTS}${THREADS_SUFFIX}|g' \
 		-e 's|-ltcl$${TCL_VERSION}|-ltcl$${TCL_VERSION}${THREADS_SUFFIX}|g' \
@@ -654,19 +657,24 @@ do-install:
 	@cd ${WRKSRC} && ${MAKE_ENV} ${MAKE} -f Makefile install-binaries
 	@${MKDIR} ${PREFIX}/lib/tcl${TCL_VER}${THREADS_SUFFIX}
 	@${LN} -s ${PREFIX}/lib/tcl${TCL_VER}/tclConfig${THREADS_SUFFIX}.sh ${PREFIX}/lib/tcl${TCL_VER}${THREADS_SUFFIX}/tclConfig.sh
-.else
+.endif
+
 post-install:
-.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL84_MAN)
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
-. for mp in ${MAN1} ${MAN3} ${MANN}
+.if !defined(NO_INSTALL_MANPAGES)
+	${MKDIR} ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/../doc/tclsh.1 ${MANPREFIX}/man/man1/tclsh${TCL_VER}${THREADS_SUFFIX}.1
+.if !defined(BUILDING_TCL_THREADS) && defined(WITH_TCL84_MAN)
+. for mp in ${MAN3} ${MANN}
 	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
 		${WRKSRC}/../doc/${mp}
 . endfor
 	@cd ${WRKSRC} && ${MAKE} -f Makefile install-doc ${MAKE_ENV}
-.endif
 
-.endif # !defined(BUILDING_TCL_THREADS)
+.endif # !defined(BUILDING_TCL_THREADS) && defined(WITH_TCL84_MAN)
+
+.endif # !defined(NO_INSTALL_MANPAGES)
 
 regression-test:	build
 	cd ${WRKSRC} && LC_ALL=C ${MAKE} test

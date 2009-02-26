@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.4.19
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -38,7 +38,7 @@ SUB_FILES=	pkgIndex.tcl
 .if !defined(BUILDING_TK_THREADS)
 USE_TCL=	84
 
-OPTIONS=	TK84_MAN "Install tk 8.4 manpages" on
+OPTIONS=	TK84_DOC "Install tk 8.4 function manpages" off
 .else
 USE_TK=		${SHORT_TK_VER}
 PLIST=		${PKGDIR}/pkg-plist.threads
@@ -49,6 +49,12 @@ LIB_DEPENDS=	tcl${SHORT_TK_VER}${THREADS_SUFFIX}:${PORTSDIR}/lang/tcl${SHORT_TK_
 SUB_LIST+=	THREADS_SUFFIX="${THREADS_SUFFIX}"
 
 .include <bsd.port.pre.mk>
+
+DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}
+
+.if !defined(NO_INSTALL_MANPAGES)
+MAN1=	wish${TCL_VER}${THREADS_SUFFIX}.1
+.endif
 
 .if defined(BUILDING_TK_THREADS)
 CONFIGURE_ARGS+=	--enable-threads --with-tcl=${LOCALBASE}/lib/tcl${TK_VER}${THREADS_SUFFIX}
@@ -62,16 +68,9 @@ CONFIGURE_ENV+=		ac_cv_path_tclsh="${TCLSH}"
 
 SUB_LIST+=		TK_PROVIDE=""
 
-.if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TK84_MAN)
 
-PLIST_SUB+=	INSTMAN='@comment '
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK84_DOC)
 
-.else
-
-DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}
-PLIST_SUB+=	INSTMAN=''
-
-MAN1=	wish.1
 MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
 	CanvTxtInfo.3 Clipboard.3 ClrSelect.3 ConfigWidg.3 ConfigWind.3 \
 	CoordToWin.3 CrtCmHdlr.3 CrtErrHdlr.3 CrtGenHdlr.3 CrtImgType.3 \
@@ -385,6 +384,10 @@ post-patch:
 	@(cd ${WRKSRC}/..; ${PATCH} -p0 < ${PATCHDIR}/extra-lastevent-patch)
 	@${REINPLACE_CMD} -e 's|X11/Intrinsic.h|X11/Xlib.h|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|@TK_SHARED_BUILD@|#@TK_SHARED_BUILD@|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|wish |wish${TCL_VER}${THREADS_SUFFIX} |g' -e 's|Wish |Wish${TCL_VER}${THREADS_SUFFIX} |g' \
+		-e 's|wish\\fR|wish${TCL_VER}${THREADS_SUFFIX}\\fR|g' -e 's|Wish\\fR|Wish${TCL_VER}${THREADS_SUFFIX}\\fR|g' \
+		-e 's|^.so man.macros|.so ${DATADIR}/man.macros|' \
+		${WRKSRC}/../doc/wish.1
 .if defined(BUILDING_TK_THREADS)
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		-e 's|$${TCL_TRIM_DOTS}|$${TCL_TRIM_DOTS}${THREADS_SUFFIX}|g' \
@@ -416,15 +419,20 @@ do-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}${THREADS_SUFFIX}/
-.if !defined(BUILDING_TK_THREADS) && !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK84_MAN)
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
+.if !defined(NO_INSTALL_MANPAGES)
+	${MKDIR} ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/../doc/wish.1 ${MANPREFIX}/man/man1/wish${TCL_VER}${THREADS_SUFFIX}.1
+.if !defined(BUILDING_TK_THREADS) && defined(WITH_TK84_MAN)
 .for mp in ${MAN1} ${MAN3} ${MANN}
 	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
 		${WRKSRC}/../doc/${mp}
 .endfor
 	@cd ${WRKSRC} && ${MAKE} install-doc ${MAKE_ENV}
-.endif
+.endif # !defined(BUILDING_TK_THREADS) && defined(WITH_TK84_MAN)
+
+.endif # !defined(NO_INSTALL_MANPAGES)
 
 regression-test:	build
 	cd ${WRKSRC}; ${MAKE} test
