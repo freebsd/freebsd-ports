@@ -7,9 +7,11 @@
 
 PORTNAME=	wmwork
 PORTVERSION=	0.2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc windowmaker afterstep
-MASTER_SITES=	http://www.godisch.de/debian/wmwork/
+MASTER_SITES=	http://people.debian.org/~godisch/wmwork/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	xride
 
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A dockapp that keeps track of time you have spent on something
