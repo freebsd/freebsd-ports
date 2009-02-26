@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME:L}-${PORTVERSION:S/4.//}
 MAINTAINER=	stefanf@FreeBSD.org
 COMMENT=	A portable BSD-licensed compiler suite
 
-CONFLICTS=	swi-pl* slffea-*
+CONFLICTS=	swi-pl* slffea-* tcc-*
 ONLY_FOR_ARCHS=	i386 alpha
 
 DIST_SUBDIR=	${PKGBASE}
