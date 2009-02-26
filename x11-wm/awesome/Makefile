@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	awesome
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://awesome.naquadah.org/download/
+MASTER_SITES=	http://awesome.naquadah.org/download/ \
+		http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	ntarmos@ceid.upatras.gr
 COMMENT=	A tiling window manager initially based on a dwm code rewriting
@@ -32,18 +33,13 @@ USE_GNOME=	glib20 pango
 USE_LUA=	5.1+
 USE_XORG=	pixman x11 xau xdmcp xext xft xinerama xrandr xrender xproto
 
-MAN1=		awesome.1 \
-		awesome-client.1 \
-		awsetbg.1
-MAN5=		awesomerc.5
-MANCOMPRESSED=	yes
 PORTDOCS=	AUTHORS BUGS LICENSE README
 
 .include <bsd.port.pre.mk>
 
 .if	(exists(${LOCALBASE}/libdata/pkgconfig/cairo.pc) && \
 	!exists(${LOCALBASE}/libdata/pkgconfig/cairo-xcb.pc))
-IGNORE= cannot find dependency: The cairo exists but not with XCB support. Please reinstall graphics/cairo with XCB support
+IGNORE=	cannot find dependency: The cairo exists but not with XCB support. Please reinstall graphics/cairo with XCB support
 .endif
 
 pre-configure:
@@ -51,6 +47,7 @@ pre-configure:
 	-e 's/"generate luadoc" ON/\"generate luadoc" OFF/g' \
 		${WRKSRC}/awesomeConfig.cmake
 	@${REINPLACE_CMD} \
+	-e 's,tr ,env LC_ALL="C" tr ,g' \
 	-e 's,gperf,${LOCALBASE}/bin/gperf,g' \
 		${WRKSRC}/build-utils/gperf.sh
 .if defined(NOPORTDOCS)
