@@ -27,9 +27,7 @@
 %%WWWDIR%%/core/Config.php
 %%WWWDIR%%/core/Controller.php
 %%WWWDIR%%/core/Cookie.php
-%%WWWDIR%%/core/DataFiles/Browsers.php
 %%WWWDIR%%/core/DataFiles/Countries.php
-%%WWWDIR%%/core/DataFiles/OS.php
 %%WWWDIR%%/core/DataFiles/SearchEngines.php
 %%WWWDIR%%/core/DataTable/Array.php
 %%WWWDIR%%/core/DataTable/Filter/AddColumnsWhenShowAllColumns.php
@@ -116,6 +114,7 @@
 %%WWWDIR%%/core/Tracker/javascriptTag.tpl
 %%WWWDIR%%/core/Tracker.php
 %%WWWDIR%%/core/Translate.php
+%%WWWDIR%%/core/UpdateCheck.php
 %%WWWDIR%%/core/Updater.php
 %%WWWDIR%%/core/Updates/0.2.10.php
 %%WWWDIR%%/core/Updates/0.2.12.php
@@ -280,6 +279,9 @@
 %%WWWDIR%%/libs/Smarty/plugins/outputfilter.trimwhitespace.php
 %%WWWDIR%%/libs/Smarty/plugins/shared.escape_special_chars.php
 %%WWWDIR%%/libs/Smarty/plugins/shared.make_timestamp.php
+%%WWWDIR%%/libs/UserAgentParser/README
+%%WWWDIR%%/libs/UserAgentParser/test.php
+%%WWWDIR%%/libs/UserAgentParser/UserAgentParser.php
 %%WWWDIR%%/libs/Zend/Auth/Adapter/DbTable.php
 %%WWWDIR%%/libs/Zend/Auth/Adapter/Digest.php
 %%WWWDIR%%/libs/Zend/Auth/Adapter/Exception.php
@@ -1125,8 +1127,10 @@
 %%WWWDIR%%/plugins/UserSettings/images/browsers/SM.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/UNK.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/AIX.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/AND.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/BSD.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/HPX.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/IPD.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/IRI.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/LIN.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/MAC.gif
@@ -1139,6 +1143,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/os/W2K.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/W95.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/W98.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/WI7.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WII.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WME.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WNT.gif
@@ -1226,6 +1231,7 @@
 %%WWWDIR%%/themes/default/images/tagcloud.png
 %%WWWDIR%%/themes/default/images/warning.png
 %%WWWDIR%%/themes/default/images/warning_medium.png
+%%WWWDIR%%/themes/default/images/warning_small.png
 %%WWWDIR%%/themes/default/simple_structure.css
 %%WWWDIR%%/themes/default/simple_structure_footer.tpl
 %%WWWDIR%%/themes/default/simple_structure_header.tpl
@@ -1261,6 +1267,7 @@
 @dirrm %%WWWDIR%%/libs/Smarty/internals
 @dirrm %%WWWDIR%%/libs/Smarty/plugins
 @dirrm %%WWWDIR%%/libs/Smarty
+@dirrm %%WWWDIR%%/libs/UserAgentParser
 @dirrm %%WWWDIR%%/libs/Zend/Auth/Adapter/Http/Resolver
 @dirrm %%WWWDIR%%/libs/Zend/Auth/Adapter/Http
 @dirrm %%WWWDIR%%/libs/Zend/Auth/Adapter
