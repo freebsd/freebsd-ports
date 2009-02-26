@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2009.01.26
+PORTVERSION=	2009.02.23
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	net devel
@@ -184,7 +184,8 @@ BROKEN=		Does not compile
 .endif
 
 post-extract:
-	@${CP} ${FILESDIR}/config.fixed-${OPSYS:L} ${WRKSRC}/
+	@${SED} -e "s|%%CFLAGS%%|${CFLAGS}|" \
+		${FILESDIR}/config.fixed-${OPSYS:L} > ${WRKSRC}/config.fixed-${OPSYS:L}
 
 post-build:
 	@${RM} -f ${PLIST}
