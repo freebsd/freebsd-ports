@@ -10,10 +10,9 @@ Local/Applications/DBModeler.app/Resources/AttributeInspector.gorm/objects.gorm
 Local/Applications/DBModeler.app/Resources/ClassProperty_Diagram.tiff
 Local/Applications/DBModeler.app/Resources/ClassProperty_Header.tiff
 Local/Applications/DBModeler.app/Resources/ClassProperty_On.tiff
-Local/Applications/DBModeler.app/Resources/ConsistencyResults.gorm/data.classes
-Local/Applications/DBModeler.app/Resources/ConsistencyResults.gorm/data.info
-Local/Applications/DBModeler.app/Resources/ConsistencyResults.gorm/objects.gorm
+Local/Applications/DBModeler.app/Resources/ConsistencyResults.gsmarkup
 Local/Applications/DBModeler.app/Resources/DBModeler.desktop
+Local/Applications/DBModeler.app/Resources/DBModeler.icns
 Local/Applications/DBModeler.app/Resources/DBModeler.tiff
 Local/Applications/DBModeler.app/Resources/Info-gnustep.plist
 Local/Applications/DBModeler.app/Resources/Key_Diagram.tiff
@@ -22,6 +21,8 @@ Local/Applications/DBModeler.app/Resources/Key_On.tiff
 Local/Applications/DBModeler.app/Resources/Locking_Diagram.tiff
 Local/Applications/DBModeler.app/Resources/Locking_Header.tiff
 Local/Applications/DBModeler.app/Resources/Locking_On.tiff
+Local/Applications/DBModeler.app/Resources/Menu-Cocoa.gsmarkup
+Local/Applications/DBModeler.app/Resources/Menu-GNUstep.gsmarkup
 Local/Applications/DBModeler.app/Resources/ModelDrag.tiff
 Local/Applications/DBModeler.app/Resources/Preferences.gorm/data.classes
 Local/Applications/DBModeler.app/Resources/Preferences.gorm/data.info
@@ -30,9 +31,7 @@ Local/Applications/DBModeler.app/Resources/RelationshipInspector.gorm/data.class
 Local/Applications/DBModeler.app/Resources/RelationshipInspector.gorm/data.info
 Local/Applications/DBModeler.app/Resources/RelationshipInspector.gorm/objects.gorm
 Local/Applications/DBModeler.app/Resources/RelationshipInspector.tiff
-Local/Applications/DBModeler.app/Resources/SQLGenerator.gorm/data.classes
-Local/Applications/DBModeler.app/Resources/SQLGenerator.gorm/data.info
-Local/Applications/DBModeler.app/Resources/SQLGenerator.gorm/objects.gorm
+Local/Applications/DBModeler.app/Resources/SQLGenerator.gsmarkup
 Local/Applications/DBModeler.app/stamp.make
 Local/Library/ApplicationSupport/Palettes/GDL2.palette/GDL2
 Local/Library/ApplicationSupport/Palettes/GDL2.palette/Resources/GDL2ConnectionInspector.gorm/data.classes
@@ -76,6 +75,7 @@ Local/Library/Headers/EOAccess/EODatabaseOperation.h
 Local/Library/Headers/EOAccess/EODefines.h
 Local/Library/Headers/EOAccess/EODeprecated.h
 Local/Library/Headers/EOAccess/EOEntity.h
+Local/Library/Headers/EOAccess/EOGenericRecord.h
 Local/Library/Headers/EOAccess/EOJoin.h
 Local/Library/Headers/EOAccess/EOModel.h
 Local/Library/Headers/EOAccess/EOModelGroup.h
@@ -176,10 +176,8 @@ System/Library/Makefiles/Auxiliary/gdl2.make
 @dirrm Local/Library/ApplicationSupport/Palettes/GDL2.palette/Resources
 @dirrm Local/Library/ApplicationSupport/Palettes/GDL2.palette
 @dirrm Local/Library/ApplicationSupport/Palettes
-@dirrm Local/Applications/DBModeler.app/Resources/SQLGenerator.gorm
 @dirrm Local/Applications/DBModeler.app/Resources/RelationshipInspector.gorm
 @dirrm Local/Applications/DBModeler.app/Resources/Preferences.gorm
-@dirrm Local/Applications/DBModeler.app/Resources/ConsistencyResults.gorm
 @dirrm Local/Applications/DBModeler.app/Resources/AttributeInspector.gorm
 @dirrm Local/Applications/DBModeler.app/Resources/AdvancedEntityInspector.gorm
 @dirrm Local/Applications/DBModeler.app/Resources
