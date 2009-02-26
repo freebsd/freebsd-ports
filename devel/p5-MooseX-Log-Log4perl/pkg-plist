@@ -3,5 +3,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Log/Log4perl/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Log/Log4perl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Log
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
 @dirrmtry %%SITE_PERL%%/MooseX/Log/Log4perl
 @dirrmtry %%SITE_PERL%%/MooseX/Log
+@dirrmtry %%SITE_PERL%%/MooseX
