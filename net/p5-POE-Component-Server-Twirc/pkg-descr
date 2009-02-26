@@ -1,0 +1,9 @@
+POE::Component::Server::Twirc provides an IRC/Twitter gateway.
+Twitter friends are added to a channel and messages they post on
+twitter appear as channel messages in IRC. The IRC interface supports
+several Twitter features, including posting status updates, following
+and un-following Twitter feeds, enabling and disabling device
+notifications, sending direct messages, and querying information
+about specific Twitter users.
+
+WWW: http://search.cpan.org/dist/POE-Component-Server-Twirc/
