@@ -6,6 +6,7 @@
     SUBDIR += 3dm
     SUBDIR += 44bsd-more
     SUBDIR += 915resolution
+    SUBDIR += DTraceToolkit
     SUBDIR += LPRng
     SUBDIR += LPRngTool
     SUBDIR += Tee
