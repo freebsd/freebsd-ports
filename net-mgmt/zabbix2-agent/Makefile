@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zabbix
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 PORTEPOCH=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
@@ -36,7 +36,7 @@ post-patch:
 		${REINPLACE_CMD} -e 's|/etc/zabbix|${ETCDIR}|;s|/usr/sbin|${LOCALBASE}/sbin|'
 
 do-install:
-	@${ECHO_CMD} '@unexec rmdir %D/${ETCDIR_REL} 2>/dev/null || true' >> ${TMPPLIST}
+	@${ECHO_CMD} '@unexec ${RMDIR} %D/${ETCDIR_REL} 2>/dev/null || true' >> ${TMPPLIST}
 	@${INSTALL_PROGRAM} ${ZABBIX_BINFILES:S,^,${WRKSRC}/src/,} ${PREFIX}/bin/
 	@${INSTALL} -d ${ETCDIR}/
 	@for i in ${ZABBIX_CFGFILES};do\

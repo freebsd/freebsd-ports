@@ -1,12 +1,12 @@
---- configure.orig	2008-11-04 15:45:42.000000000 -0600
-+++ configure	2008-12-19 23:44:25.000000000 -0600
-@@ -580,6 +580,9 @@
+--- configure.orig	2009-01-16 06:20:00.000000000 -0600
++++ configure	2009-01-22 17:18:00.000000000 -0600
+@@ -275,6 +275,9 @@
  # Factoring default headers for most tests.
  ac_includes_default="\
  #include <stdio.h>
 +#include <sys/socket.h>
 +#include <sys/param.h>
 +#include <netinet/in.h>
- #ifdef HAVE_SYS_TYPES_H
+ #if HAVE_SYS_TYPES_H
  # include <sys/types.h>
  #endif
