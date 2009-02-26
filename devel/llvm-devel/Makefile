@@ -7,7 +7,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	2.4.snap${SNAPDATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -34,7 +34,8 @@ SNAPDATE=	${SVN_SNAPDATE:S/-//g}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	yes
+USE_PYTHON_RUN=	yes
 
 .if defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
@@ -73,6 +74,11 @@ post-patch:
 		${WRKSRC}/Makefile.config.in
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/tools/clang/utils/scan-build
+	${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|' \
+	    ${WRKSRC}/tools/clang/tools/ccc/ccc
+	${REINPLACE_CMD} -e 's|/usr/bin/env perl|${PERL}|' \
+	    ${WRKSRC}/tools/clang/utils/ccc-analyzer \
+	    ${WRKSRC}/tools/clang/utils/scan-build
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/utils/ccc-analyzer \
