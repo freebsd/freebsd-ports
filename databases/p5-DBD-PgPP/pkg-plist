@@ -1,5 +1,5 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/DBD/PgPP.pm
-%%SITE_PERL%%/DBD/DBD-PgPP.ja.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/PgPP/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/PgPP
 @dirrmtry %%SITE_PERL%%/DBD
