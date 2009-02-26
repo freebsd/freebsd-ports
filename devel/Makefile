@@ -853,6 +853,7 @@
     SUBDIR += ncurses-devel
     SUBDIR += ndesk-dbus
     SUBDIR += ndesk-dbus-glib
+    SUBDIR += nemiver
     SUBDIR += netscape-java40
     SUBDIR += newfile
     SUBDIR += newt
@@ -1470,7 +1471,6 @@
     SUBDIR += p5-Java
     SUBDIR += p5-Lexical-Alias
     SUBDIR += p5-Lexical-Persistence
-    SUBDIR += p5-libalarm
     SUBDIR += p5-Lingua-JA-Fold
     SUBDIR += p5-List-Cycle
     SUBDIR += p5-List-Group
@@ -1949,6 +1949,7 @@
     SUBDIR += p5-forks
     SUBDIR += p5-github_creator
     SUBDIR += p5-iCal-Parser
+    SUBDIR += p5-libalarm
     SUBDIR += p5-mixin
     SUBDIR += p5-mocked
     SUBDIR += p5-namespace-clean
@@ -2415,8 +2416,8 @@
     SUBDIR += rinfo
     SUBDIR += rlog
     SUBDIR += rlwrap
-    SUBDIR += robodoc
     SUBDIR += roboctl
+    SUBDIR += robodoc
     SUBDIR += root
     SUBDIR += root-doc
     SUBDIR += rote
@@ -2687,9 +2688,9 @@
     SUBDIR += upslug
     SUBDIR += urjtag
     SUBDIR += ustl
-    SUBDIR += valide
     SUBDIR += valgrind
     SUBDIR += valgrind-snapshot
+    SUBDIR += valide
     SUBDIR += varconf
     SUBDIR += vb2c
     SUBDIR += viewvc
