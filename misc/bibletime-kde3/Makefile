@@ -10,6 +10,7 @@ PORTVERSION=	1.6.5.1
 PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	SF
+PKGNAMESUFFIX=	-kde3
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A powerful Bible study application for KDE3
