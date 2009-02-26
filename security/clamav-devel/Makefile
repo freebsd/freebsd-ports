@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20090223
+PORTVERSION=	20090226
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		${MASTER_SITE_LOCAL}
@@ -16,8 +16,6 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Command line virus scanner written entirely in C
-
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 OPTIONS=	ARC "Enable arch archives support" On \
 		ARJ "Enable arj archives support" On \
@@ -32,7 +30,6 @@ OPTIONS=	ARC "Enable arch archives support" On \
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
-USE_GMAKE=	yes
 CONF_FILES=	clamd freshclam
 
 PORTDOCS=	*
@@ -51,8 +48,8 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--disable-clamav \
 		--enable-bigstack \
 		--enable-readdir_r \
-		--disable-dependency-tracking \
 		--enable-gethostbyname_r \
+		--disable-dependency-tracking \
 		--enable-experimental
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS}
@@ -67,7 +64,8 @@ MAN1=		clamconf.1 \
 		clamscan.1 \
 		freshclam.1 \
 		sigtool.1 \
-		clamdscan.1
+		clamdscan.1 \
+		clamdtop.1
 MAN5=		clamd.conf.5 \
 		freshclam.conf.5
 MAN8=		clamd.8 \
@@ -164,7 +162,7 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-patch-shared_output.c
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -E 's,^(pkgconfigdir = ).*$$,\1$$(prefix)/libdata/pkgconfig,g' \
+	@${REINPLACE_CMD} -e 's,^\(pkgconfigdir = \).*$$,\1$$\(prefix\)/libdata/pkgconfig,g' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} ${SED_CONF} \
 		${WRKSRC}/etc/clamd.conf \
@@ -186,9 +184,6 @@ post-install:
 	@${MKDIR} ${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${WRKSRC}/ChangeLog ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/html/* ${DOCSDIR}/html
-. if defined(WITH_MILTER)
-	${INSTALL_DATA} ${WRKSRC}/clamav-milter/INSTALL ${DOCSDIR}/INSTALL.clamav-milter
-. endif
 .endif
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
