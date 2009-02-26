@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	signing-party
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/s/signing-party
@@ -40,7 +39,9 @@ SCRIPTS=	caff/caff caff/pgp-clean caff/pgp-fixkey gpglist/gpglist \
 		gpgsigs/gpgsigs gpg-key2ps/gpg-key2ps \
 		gpg-mailkeys/gpg-mailkeys keylookup/keylookup \
 		sig2dot/sig2dot springgraph/springgraph \
-		gpgparticipants/gpgparticipants
+		gpgparticipants/gpgparticipants \
+		keyanalyze/keyanalyze keyanalyze/process_keys \
+		keyanalyze/pgpring/pgpring
 MANUALS1=	${SCRIPTS:S/$/.1/}
 EXAMPLES=	caff/caffrc.sample gpg-mailkeys/example.gpg-mailkeysrc
 
@@ -54,6 +55,9 @@ post-patch:
 		${WRKSRC}/caff/caff
 	@${REINPLACE_CMD} -e 's|/usr/bin/pinentry-gtk-2|${LOCALBASE}/bin/pinentry-gtk-2|' \
 		${WRKSRC}/caff/README.gpg-agent
+	@${REINPLACE_CMD} -e 's|make|${GMAKE}|' \
+		${WRKSRC}/gpgwrap/Makefile \
+		${WRKSRC}/keyanalyze/Makefile
 
 do-install:
 	${INSTALL_SCRIPT} ${SCRIPTS:S|^|${WRKSRC}/|} ${PREFIX}/bin
