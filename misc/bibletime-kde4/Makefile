@@ -9,6 +9,7 @@ PORTNAME=	bibletime
 PORTVERSION=	1.7
 CATEGORIES=	misc kde
 MASTER_SITES=	SF
+PKGNAMESUFFIX=	-kde4
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A Bible study application for KDE4
