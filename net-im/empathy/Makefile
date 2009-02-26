@@ -53,7 +53,7 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-butterfly:${PORTSDIR}/net-im/telepa
 .endif
 
 .if defined(WITH_IRC)
-RUN_DEPENDS+=	telepathy-idle:${PORTSDIR}/net-im/telepathy-idle
+RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-idle:${PORTSDIR}/net-im/telepathy-idle
 .endif
 
 .if !defined(WITHOUT_SALUT)
