@@ -6175,6 +6175,7 @@ jomp                            ports/java/jomp
 jools                           ports/games/jools
 joomla                          ports/www/joomla
 joomla15                        ports/www/joomla15
+josm                            ports/astro/josm
 jove                            ports/editors/jove
 jp2a                            ports/graphics/jp2a
 jpatch                          ports/graphics/jpatch
@@ -9336,6 +9337,7 @@ obliterate                      ports/sysutils/obliterate
 obmenu                          ports/x11-wm/obmenu
 ocaml                           ports/lang/ocaml
 ocaml-annexlib                  ports/devel/ocaml-annexlib
+ocaml-bz2                       ports/archivers/ocaml-bz2
 ocaml-calendar                  ports/devel/ocaml-calendar
 ocaml-camlidl                   ports/lang/ocaml-camlidl
 ocaml-camljava                  ports/devel/ocaml-camljava
@@ -11374,6 +11376,7 @@ p5-LMAP-CID2SPF                 ports/mail/p5-LMAP-CID2SPF
 p5-LWP-Authen-Wsse              ports/www/p5-LWP-Authen-Wsse
 p5-LWP-ConnCache-MaxKeepAliveRequests  ports/www/p5-LWP-ConnCache-MaxKeepAliveRequests
 p5-LWP-UserAgent-Determined     ports/www/p5-LWP-UserAgent-Determined
+p5-LWP-UserAgent-POE            ports/www/p5-LWP-UserAgent-POE
 p5-LWP-UserAgent-WithCache      ports/www/p5-LWP-UserAgent-WithCache
 p5-LWPx-ParanoidAgent           ports/www/p5-LWPx-ParanoidAgent
 p5-Layout-Manager               ports/graphics/p5-Layout-Manager
@@ -11680,8 +11683,10 @@ p5-MooseX-ConfigFromFile        ports/devel/p5-MooseX-ConfigFromFile
 p5-MooseX-Daemonize             ports/devel/p5-MooseX-Daemonize
 p5-MooseX-Getopt                ports/devel/p5-MooseX-Getopt
 p5-MooseX-IOC                   ports/devel/p5-MooseX-IOC
+p5-MooseX-Log-Log4perl          ports/devel/p5-MooseX-Log-Log4perl
 p5-MooseX-POE                   ports/devel/p5-MooseX-POE
 p5-MooseX-Policy-SemiAffordanceAccessor  ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
+p5-MooseX-SimpleConfig          ports/devel/p5-MooseX-SimpleConfig
 p5-MooseX-Singleton             ports/devel/p5-MooseX-Singleton
 p5-MooseX-Storage               ports/devel/p5-MooseX-Storage
 p5-MooseX-StrictConstructor     ports/devel/p5-MooseX-StrictConstructor
@@ -12644,6 +12649,7 @@ p5-Text-Textile                 ports/textproc/p5-Text-Textile
 p5-Text-Tmpl                    ports/textproc/p5-Text-Tmpl
 p5-Text-Trac                    ports/textproc/p5-Text-Trac
 p5-Text-Trim                    ports/textproc/p5-Text-Trim
+p5-Text-Truncate                ports/textproc/p5-Text-Truncate
 p5-Text-Unaccent                ports/textproc/p5-Text-Unaccent
 p5-Text-Unidecode               ports/converters/p5-Text-Unidecode
 p5-Text-VimColor                ports/textproc/p5-Text-VimColor
@@ -14775,6 +14781,7 @@ p5-luka                         ports/devel/p5-Luka
 p5-lwp-authen-wsse              ports/www/p5-LWP-Authen-Wsse
 p5-lwp-conncache-maxkeepaliverequests  ports/www/p5-LWP-ConnCache-MaxKeepAliveRequests
 p5-lwp-useragent-determined     ports/www/p5-LWP-UserAgent-Determined
+p5-lwp-useragent-poe            ports/www/p5-LWP-UserAgent-POE
 p5-lwp-useragent-withcache      ports/www/p5-LWP-UserAgent-WithCache
 p5-lwpx-paranoidagent           ports/www/p5-LWPx-ParanoidAgent
 p5-mac-filespec-unixish         ports/devel/p5-Mac-FileSpec-Unixish
@@ -14990,8 +14997,10 @@ p5-moosex-configfromfile        ports/devel/p5-MooseX-ConfigFromFile
 p5-moosex-daemonize             ports/devel/p5-MooseX-Daemonize
 p5-moosex-getopt                ports/devel/p5-MooseX-Getopt
 p5-moosex-ioc                   ports/devel/p5-MooseX-IOC
+p5-moosex-log-log4perl          ports/devel/p5-MooseX-Log-Log4perl
 p5-moosex-poe                   ports/devel/p5-MooseX-POE
 p5-moosex-policy-semiaffordanceaccessor  ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
+p5-moosex-simpleconfig          ports/devel/p5-MooseX-SimpleConfig
 p5-moosex-singleton             ports/devel/p5-MooseX-Singleton
 p5-moosex-storage               ports/devel/p5-MooseX-Storage
 p5-moosex-strictconstructor     ports/devel/p5-MooseX-StrictConstructor
@@ -15989,6 +15998,7 @@ p5-text-textile                 ports/textproc/p5-Text-Textile
 p5-text-tmpl                    ports/textproc/p5-Text-Tmpl
 p5-text-trac                    ports/textproc/p5-Text-Trac
 p5-text-trim                    ports/textproc/p5-Text-Trim
+p5-text-truncate                ports/textproc/p5-Text-Truncate
 p5-text-unaccent                ports/textproc/p5-Text-Unaccent
 p5-text-unidecode               ports/converters/p5-Text-Unidecode
 p5-text-vcard                   ports/textproc/p5-Text-vCard
