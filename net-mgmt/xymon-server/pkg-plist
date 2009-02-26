@@ -16,6 +16,7 @@
 %%WWWDIR%%/cgi-bin/hobbit-confreport-critical.sh
 %%WWWDIR%%/cgi-bin/hobbit-ghosts.sh
 %%WWWDIR%%/cgi-bin/hobbit-hostgraphs.sh
+%%WWWDIR%%/cgi-bin/hobbit-hostlist.sh
 %%WWWDIR%%/cgi-bin/hobbit-nkview.sh
 %%WWWDIR%%/cgi-bin/hobbit-nongreen.sh
 %%WWWDIR%%/cgi-bin/hobbitcolumn.sh
@@ -53,6 +54,7 @@
 %%WWWDIR%%/server/bin/hobbit-enadis.cgi
 %%WWWDIR%%/server/bin/hobbit-ghosts.cgi
 %%WWWDIR%%/server/bin/hobbit-hostgraphs.cgi
+%%WWWDIR%%/server/bin/hobbit-hostlist.cgi
 %%WWWDIR%%/server/bin/hobbit-mailack
 %%WWWDIR%%/server/bin/hobbit-nkedit.cgi
 %%WWWDIR%%/server/bin/hobbit-nkview.cgi
@@ -159,6 +161,9 @@
 %%WWWDIR%%/server/web/histlog_header
 %%WWWDIR%%/server/web/hobbitnk_footer
 %%WWWDIR%%/server/web/hobbitnk_header
+%%WWWDIR%%/server/web/hostlist_form
+%%WWWDIR%%/server/web/hostlist_footer
+%%WWWDIR%%/server/web/hostlist_header
 %%WWWDIR%%/server/web/hostgraphs_footer
 %%WWWDIR%%/server/web/hostgraphs_form
 %%WWWDIR%%/server/web/hostgraphs_header
