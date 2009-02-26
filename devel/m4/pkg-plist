@@ -12,6 +12,7 @@ bin/gm4
 %%EXAMPLESDIR%%/foreachq.m4
 %%EXAMPLESDIR%%/foreachq2.m4
 %%EXAMPLESDIR%%/foreachq3.m4
+%%EXAMPLESDIR%%/foreachq4.m4
 %%EXAMPLESDIR%%/forloop.m4
 %%EXAMPLESDIR%%/forloop2.m4
 %%EXAMPLESDIR%%/fstab.m4
