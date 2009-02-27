@@ -11,7 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	SAVANNAH
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tiling, keyboard driven Window Manager written in Common Lisp
 
 BUILD_DEPENDS=	clisp:${PORTSDIR}/lang/clisp

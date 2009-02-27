@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hexen II source port supporting Linux/FreeBSD/Unix/Windows
 
 USE_GMAKE=	yes

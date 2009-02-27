@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/alienarena/Files/
 DISTNAME=	${PORTNAME}2008-linux20080603
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alien Arena 2008 (native version)
 
 RUN_DEPENDS=	${DATADIR}/arena/default.cfg:${PORTSDIR}/games/alienarena-data

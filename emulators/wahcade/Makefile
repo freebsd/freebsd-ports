@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.anti-particle.com/projects/wahcade/
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A frontend for almost any emulator (MameWAH clone)
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \

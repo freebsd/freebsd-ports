@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org:9090/twilight/darkplaces/files/
 DISTNAME=	${PORTNAME}engine${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake engine modification
 
 USE_ZIP=	yes

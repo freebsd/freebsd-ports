@@ -10,7 +10,7 @@ PORTVERSION=	0.11.1
 CATEGORIES=	games
 MASTER_SITES=	SF/freedroid
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modification of the classical Freedroid engine into an RPG
 
 USE_BZIP2=	yes

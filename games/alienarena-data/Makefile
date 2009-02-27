@@ -12,7 +12,7 @@ MASTER_SITES=	http://offload1.icculus.org/alienarena/Files/
 PKGNAMESUFFIX=	-data
 DISTNAME=	${PORTNAME}2008-linux20080603
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alien Arena 2008 (data)
 
 USE_ZIP=	yes

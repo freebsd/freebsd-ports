@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Manager designed for speed, usability and consistency
 
 WANT_GNOME=	yes

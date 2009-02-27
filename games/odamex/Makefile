@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	Odamex-${PORTVERSION}-src
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Standard in Online Multiplayer Doom
 
 USE_BZIP2=	yes

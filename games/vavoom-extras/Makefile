@@ -14,7 +14,7 @@ MASTER_SITES=	SF:sf \
 PKGNAMESUFFIX=	-extras
 DISTFILES=	#
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Doom, Doom II, Heretic, Hexen and Strife source port (extras)
 
 RUN_DEPENDS=	vavoom:${PORTSDIR}/games/vavoom

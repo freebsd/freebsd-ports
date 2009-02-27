@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-${PORTVERSION}-linux${EXTRACT_SUFX}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DOOM style engine aimed at the Total Conversion developer
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
