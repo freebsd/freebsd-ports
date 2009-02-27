@@ -10,7 +10,7 @@ PORTVERSION=	2.3.4
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://kakasi.namazu.org/stable/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ota@j.email.ne.jp
 COMMENT=	Kanji-Kana Simple Inverter, language filter for Japanese
 
 USE_AUTOTOOLS=	libtool:15
