@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Term-Size
-PORTVERSION=	0.2
+PORTVERSION=	0.207
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	brad@kazrak.com
-COMMENT=	A Perl5 module to handle window size changes.
+COMMENT=	A Perl5 module to handle window size changes
 
 PERL_CONFIGURE=	YES
 
