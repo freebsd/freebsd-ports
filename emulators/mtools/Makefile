@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://mtools.linux.lu/
 MASTER_SITE_SUBDIR=	utils/disk-management
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	skreuzer@exit2shell.com
 COMMENT=	A collection of tools for manipulating MSDOS files
 
 USE_BZIP2=	yes
