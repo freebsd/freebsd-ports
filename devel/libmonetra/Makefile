@@ -18,4 +18,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+CONFLICTS=	libproxy-[0-9]*
+
 .include <bsd.port.mk>
