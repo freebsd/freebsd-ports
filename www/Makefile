@@ -1221,6 +1221,7 @@
     SUBDIR += py-GinGin
     SUBDIR += py-HTMLgen
     SUBDIR += py-Lightbox
+    SUBDIR += py-Tempita
     SUBDIR += py-albatross
     SUBDIR += py-amf
     SUBDIR += py-apachelog
