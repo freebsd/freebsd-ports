@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	contact
-PORTVERSION=	0.16
-PORTREVISION=	2
+PORTVERSION=	0.17
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.burtonini.com/computing/
 PKGNAMESUFFIX=	-lookup-applet

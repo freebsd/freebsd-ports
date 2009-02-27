@@ -6,6 +6,7 @@ share/locale/ar/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/bg/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/ca/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/cs/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/da/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/de/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/dz/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/el/LC_MESSAGES/contact-lookup-applet.mo
@@ -15,9 +16,11 @@ share/locale/es/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/eu/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/fi/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/fr/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/he/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/hu/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/it/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/ja/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/ko/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/lt/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/mk/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/nb/LC_MESSAGES/contact-lookup-applet.mo
