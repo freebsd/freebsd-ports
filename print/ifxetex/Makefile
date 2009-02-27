@@ -5,35 +5,29 @@
 # $FreeBSD$
 
 PORTNAME=	ifxetex
-PORTVERSION=	20080729
-PORTREVISION=	1
+PORTVERSION=	20090124
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=	macros/generic/${PORTNAME}
+MASTER_SITE_SUBDIR=	macros/generic/
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.sty
 
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	The file ifxetex.sty tests whether XeTeX is being used
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
-EXTRACT_CMD=	${CP}
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	.
+WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_ZIP=	yes
 
 PLIST=		${WRKDIR}/pkg-plist
 
 TEXMFDIR=	share/texmf-local
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 CLASSDIR=	${TEXMFDIR}/tex/latex/${PORTNAME}
-CLASS_FILES=	${DISTFILES}
+CLASS_FILES=	${PORTNAME}.sty
 
-PLIST_SUB=	CLASSDIR=${CLASSDIR}
-PLIST_FILES=	${CLASSDIR}/${CLASS_FILES}
-PLIST_DIRS=	${CLASSDIR}
+do-build:
+	cd ${WRKSRC}  && latex ${PORTNAME}.ins
 
 pre-install:
 	${ECHO_CMD} "${CLASSDIR}/${CLASS_FILES}" > ${PLIST}
