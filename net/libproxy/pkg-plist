@@ -1,0 +1,13 @@
+bin/proxy
+include/proxy.h
+lib/libproxy.a
+lib/libproxy.la
+lib/libproxy.so
+lib/libproxy.so.0
+lib/libproxy/%%VERSION%%/plugins/envvar.so
+lib/libproxy/%%VERSION%%/plugins/file.so
+libdata/pkgconfig/libproxy-1.0.pc
+%%PYTHON_SITELIBDIR%%/libproxy.py
+@dirrmtry lib/libproxy/%%VERSION%%/plugins
+@dirrmtry lib/libproxy/%%VERSION%%
+@dirrmtry lib/libproxy
