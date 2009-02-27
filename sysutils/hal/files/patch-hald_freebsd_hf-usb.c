@@ -1,5 +1,5 @@
 --- hald/freebsd/hf-usb.c.orig	2008-05-07 19:24:02.000000000 -0400
-+++ hald/freebsd/hf-usb.c	2009-02-24 00:41:03.000000000 -0500
++++ hald/freebsd/hf-usb.c	2009-02-27 14:01:46.000000000 -0500
 @@ -25,13 +25,18 @@
  #  include <config.h>
  #endif
@@ -19,15 +19,19 @@
  
  #include "../logger.h"
  #include "../osspec.h"
-@@ -41,6 +46,7 @@
+@@ -41,6 +46,11 @@
  #include "hf-util.h"
  
  #define HF_USB_DEVICE			"/dev/usb"
++#if __FreeBSD_version < 800066
 +#define HF_USB2_DEVICE			"/dev/usb "
++#else
++#define HF_USB2_DEVICE			"/dev/usbctl"
++#endif
  
  typedef struct
  {
-@@ -231,7 +237,7 @@ hf_usb_get_full_config_descriptor (int f
+@@ -231,7 +241,7 @@ hf_usb_get_full_config_descriptor (int f
   * Adapted from usb_compute_udi() in linux2/physdev.c and
   * usbclass_compute_udi() in linux2/classdev.c.
   */
@@ -36,7 +40,7 @@
  hf_usb_device_compute_udi (HalDevice *device)
  {
    g_return_if_fail(HAL_IS_DEVICE(device));
-@@ -250,12 +256,13 @@ hf_usb_device_compute_udi (HalDevice *de
+@@ -250,12 +260,13 @@ hf_usb_device_compute_udi (HalDevice *de
      hf_device_set_udi(device, "usb_device_%x_%x_%s",
  		      hal_device_property_get_int(device, "usb_device.vendor_id"),
  		      hal_device_property_get_int(device, "usb_device.product_id"),
@@ -52,7 +56,7 @@
  hf_usb_add_webcam_properties (HalDevice *device)
  {
    int unit;
-@@ -575,6 +582,8 @@ hf_usb_probe_device (HalDevice *parent,
+@@ -575,6 +586,8 @@ hf_usb_probe_device (HalDevice *parent,
      {
        if (hal_device_has_capability(device, "hiddev"))
  	hf_runner_run_sync(device, 0, "hald-probe-hiddev", NULL);
@@ -61,7 +65,7 @@
  
        hf_device_add(device);
      }
-@@ -633,9 +642,18 @@ hf_usb_privileged_init (void)
+@@ -633,9 +646,18 @@ hf_usb_privileged_init (void)
  {
    int i;
  
