@@ -1,0 +1,84 @@
+--- src/plugins/Makefile.in.orig	2009-02-27 00:10:06.000000000 -0500
++++ src/plugins/Makefile.in	2009-02-27 00:10:56.000000000 -0500
+@@ -70,21 +70,21 @@ file_la_LINK = $(LIBTOOL) --tag=CC $(AM_
+ 	--mode=link $(CCLD) $(file_la_CFLAGS) $(CFLAGS) \
+ 	$(file_la_LDFLAGS) $(LDFLAGS) -o $@
+ @WITH_FILE_TRUE@am_file_la_rpath = -rpath $(plugindir)
+-gnome_la_DEPENDENCIES = ../lib/libproxy.la
++gnome_la_DEPENDENCIES =
+ am_gnome_la_OBJECTS = gnome_la-gnome.lo gnome_la-xhasclient.lo
+ gnome_la_OBJECTS = $(am_gnome_la_OBJECTS)
+ gnome_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(gnome_la_CFLAGS) $(CFLAGS) \
+ 	$(gnome_la_LDFLAGS) $(LDFLAGS) -o $@
+ @WITH_GNOME_TRUE@am_gnome_la_rpath = -rpath $(plugindir)
+-kde_la_DEPENDENCIES = ../lib/libproxy.la
++kde_la_DEPENDENCIES =
+ am_kde_la_OBJECTS = kde_la-kde.lo kde_la-xhasclient.lo
+ kde_la_OBJECTS = $(am_kde_la_OBJECTS)
+ kde_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(kde_la_CFLAGS) $(CFLAGS) \
+ 	$(kde_la_LDFLAGS) $(LDFLAGS) -o $@
+ @WITH_KDE_TRUE@am_kde_la_rpath = -rpath $(plugindir)
+-mozjs_la_DEPENDENCIES = ../lib/libproxy.la
++mozjs_la_DEPENDENCIES =
+ am_mozjs_la_OBJECTS = mozjs_la-mozjs.lo
+ nodist_mozjs_la_OBJECTS =
+ mozjs_la_OBJECTS = $(am_mozjs_la_OBJECTS) $(nodist_mozjs_la_OBJECTS)
+@@ -92,7 +92,7 @@ mozjs_la_LINK = $(LIBTOOL) --tag=CC $(AM
+ 	--mode=link $(CCLD) $(mozjs_la_CFLAGS) $(CFLAGS) \
+ 	$(mozjs_la_LDFLAGS) $(LDFLAGS) -o $@
+ @WITH_MOZJS_TRUE@am_mozjs_la_rpath = -rpath $(plugindir)
+-networkmanager_la_DEPENDENCIES = ../lib/libproxy.la
++networkmanager_la_DEPENDENCIES =
+ am_networkmanager_la_OBJECTS = networkmanager_la-networkmanager.lo
+ networkmanager_la_OBJECTS = $(am_networkmanager_la_OBJECTS)
+ networkmanager_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+@@ -101,7 +101,7 @@ networkmanager_la_LINK = $(LIBTOOL) --ta
+ 	$(networkmanager_la_LDFLAGS) $(LDFLAGS) -o $@
+ @WITH_NETWORKMANAGER_TRUE@am_networkmanager_la_rpath = -rpath \
+ @WITH_NETWORKMANAGER_TRUE@	$(plugindir)
+-webkit_la_DEPENDENCIES = ../lib/libproxy.la
++webkit_la_DEPENDENCIES =
+ am_webkit_la_OBJECTS = webkit_la-webkit.lo
+ nodist_webkit_la_OBJECTS =
+ webkit_la_OBJECTS = $(am_webkit_la_OBJECTS) \
+@@ -293,33 +293,33 @@ file_la_LDFLAGS = -module -avoid-version
+ # GConf/GNOME Config Plugin
+ gnome_la_SOURCES = gnome.c xhasclient.c
+ gnome_la_CFLAGS = -I$(top_srcdir)/src/lib @GNOME_CFLAGS@
+-gnome_la_LIBADD = ../lib/libproxy.la
++gnome_la_LIBADD = -lproxy
+ gnome_la_LDFLAGS = -module -avoid-version @GNOME_LIBS@
+ 
+ # KDE Config Plugin
+ kde_la_SOURCES = kde.c xhasclient.c
+ kde_la_CFLAGS = -I$(top_srcdir)/src/lib @KDE_CFLAGS@
+-kde_la_LIBADD = ../lib/libproxy.la
++kde_la_LIBADD = -lproxy
+ kde_la_LDFLAGS = -module -avoid-version @KDE_LIBS@
+ 
+ # WebKit (JavaScriptCore) based PAC runner
+ webkit_la_SOURCES = webkit.c
+ webkit_la_CFLAGS = -I$(top_srcdir)/src/lib @WEBKIT_CFLAGS@
+-webkit_la_LIBADD = ../lib/libproxy.la
++webkit_la_LIBADD = -lproxy
+ webkit_la_LDFLAGS = -module -avoid-version @WEBKIT_LIBS@
+ nodist_webkit_la_SOURCES = pacutils.h
+ 
+ # Mozilla (Spidermonkey) based PAC runner
+ mozjs_la_SOURCES = mozjs.c
+ mozjs_la_CFLAGS = -I$(top_srcdir)/src/lib @MOZJS_CFLAGS@
+-mozjs_la_LIBADD = ../lib/libproxy.la
++mozjs_la_LIBADD = -lproxy
+ mozjs_la_LDFLAGS = -module -avoid-version @MOZJS_LIBS@
+ nodist_mozjs_la_SOURCES = pacutils.h
+ 
+ # NetworkManager Plugin
+ networkmanager_la_SOURCES = networkmanager.c
+ networkmanager_la_CFLAGS = -I$(top_srcdir)/src/lib @NETWORKMANAGER_CFLAGS@
+-networkmanager_la_LIBADD = ../lib/libproxy.la
++networkmanager_la_LIBADD = -lproxy
+ networkmanager_la_LDFLAGS = -module -avoid-version @NETWORKMANAGER_LIBS@
+ BUILT_SOURCES = pacutils.h
+ CLEANFILES = pacutils.h

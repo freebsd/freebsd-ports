@@ -1,0 +1,11 @@
+--- src/bin/Makefile.in.orig	2009-02-26 23:50:56.000000000 -0500
++++ src/bin/Makefile.in	2009-02-26 23:51:00.000000000 -0500
+@@ -210,7 +210,7 @@ xmu_LIBS = @xmu_LIBS@
+ # Command line interface to libproxy
+ proxy_SOURCES = proxy.c
+ proxy_CFLAGS = -I$(top_srcdir)/src/lib
+-proxy_LDFLAGS = -ldl
++proxy_LDFLAGS = 
+ proxy_LDADD = ../lib/libproxy.la
+ all: all-am
+ 

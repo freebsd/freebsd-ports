@@ -1,0 +1,95 @@
+--- configure.orig	2009-02-27 00:08:46.000000000 -0500
++++ configure	2009-02-27 00:09:25.000000000 -0500
+@@ -20509,16 +20509,16 @@ fi
+ if test "${with_gnome+set}" = set; then
+   withval=$with_gnome;
+ else
+-  test x$have_gconf == xyes &&
+-             test x$have_x11   == xyes &&
+-             test x$have_xmu   == xyes &&
++  test x$have_gconf = xyes &&
++             test x$have_x11   = xyes &&
++             test x$have_xmu   = xyes &&
+              with_gnome=yes
+ fi
+ 
+ if test x$with_gnome = xyes; then
+-	if test x$have_gconf == xyes && \
+-	   test x$have_x11 == xyes && \
+-	   test x$have_xmu == xyes; then
++	if test x$have_gconf = xyes && \
++	   test x$have_x11 = xyes && \
++	   test x$have_xmu = xyes; then
+ 		GNOME_CFLAGS="$x11_CFLAGS $xmu_CFLAGS $gconf_CFLAGS"
+ 		GNOME_LIBS="$x11_LIBS $xmu_LIBS $gconf_LIBS"
+ 
+@@ -20545,14 +20545,14 @@ fi
+ if test "${with_kde+set}" = set; then
+   withval=$with_kde;
+ else
+-  test x$have_x11   == xyes &&
+-             test x$have_xmu   == xyes &&
++  test x$have_x11   = xyes &&
++             test x$have_xmu   = xyes &&
+              with_kde=yes
+ fi
+ 
+ if test x$with_kde = xyes; then
+-	if test x$have_x11 == xyes && \
+-	   test x$have_xmu == xyes; then
++	if test x$have_x11 = xyes && \
++	   test x$have_xmu = xyes; then
+ 		KDE_CFLAGS="$x11_CFLAGS $xmu_CFLAGS"
+ 		KDE_LIBS="$x11_LIBS $xmu_LIBS"
+ 
+@@ -20579,11 +20579,11 @@ fi
+ if test "${with_webkit+set}" = set; then
+   withval=$with_webkit;
+ else
+-  test x$have_webkit == xyes && with_webkit=yes
++  test x$have_webkit = xyes && with_webkit=yes
+ fi
+ 
+ if test x$with_webkit = xyes; then
+-	if test x$have_webkit == xyes; then
++	if test x$have_webkit = xyes; then
+ 		WEBKIT_CFLAGS="$webkit_CFLAGS"
+ 		WEBKIT_LIBS="$webkit_LIBS"
+ 
+@@ -20610,11 +20610,11 @@ fi
+ if test "${with_mozjs+set}" = set; then
+   withval=$with_mozjs;
+ else
+-  test x$have_mozjs == xyes && with_mozjs=yes
++  test x$have_mozjs = xyes && with_mozjs=yes
+ fi
+ 
+ if test x$with_mozjs = xyes; then
+-	if test x$have_mozjs == xyes; then
++	if test x$have_mozjs = xyes; then
+ 		MOZJS_CFLAGS="$mozjs_CFLAGS"
+ 		MOZJS_LIBS="$mozjs_LIBS"
+ 
+@@ -20641,11 +20641,11 @@ fi
+ if test "${with_networkmanager+set}" = set; then
+   withval=$with_networkmanager;
+ else
+-  test x$have_networkmanager == xyes && with_networkmanager=yes
++  test x$have_networkmanager = xyes && with_networkmanager=yes
+ fi
+ 
+ if test x$with_networkmanager = xyes; then
+-	if test x$have_networkmanager == xyes; then
++	if test x$have_networkmanager = xyes; then
+ 		NETWORKMANAGER_CFLAGS="$NetworkManager_CFLAGS"
+ 		NETWORKMANAGER_LIBS="$NetworkManager_LIBS"
+ 
+@@ -21610,7 +21610,7 @@ fi
+ 
+ PLUGINDIR=$libdir/$PACKAGE_NAME/$PACKAGE_VERSION/plugins
+ 
+-CFLAGS="-g -std=c99 $CFLAGS -DPLUGINDIR=\\\"$PLUGINDIR\\\" -DSYSCONFDIR=\\\"$sysconfdir\\\" -D_POSIX_C_SOURCE=1"
++CFLAGS="-g -std=c99 $CFLAGS -DPLUGINDIR=\\\"$PLUGINDIR\\\" -DSYSCONFDIR=\\\"$sysconfdir\\\""
+ 
+ ### Checks for library functions.
+ 
