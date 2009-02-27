@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snd
-PORTVERSION=	10.3
+PORTVERSION=	10.4
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://mirror.mcx2.org/
