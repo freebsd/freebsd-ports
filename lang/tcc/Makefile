@@ -15,6 +15,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tiny C Compiler
 
 ONLY_FOR_ARCHS=	i386
+CONFLICTS=	TenDRA-*
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
