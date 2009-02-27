@@ -1,0 +1,7 @@
+Libproxy exists to answer the question: Given a network resource, how do I
+reach it?  It handles all the details, enabling you to get back to
+programming.
+
+This plug-in allows Mozilla-based browsers to make use of libproxy.
+
+WWW: http://code.google.com/p/libproxy/
