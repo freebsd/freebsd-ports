@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uftp
-PORTVERSION=	2.6.6
+PORTVERSION=	2.7
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.tcnj.edu/~bush/
 DISTNAME=	uftp
