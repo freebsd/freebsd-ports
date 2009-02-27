@@ -33,7 +33,6 @@ bin/xasy
 %%DATADIR%%/drawtree.asy
 %%DATADIR%%/embed.asy
 %%DATADIR%%/external.asy
-%%DATADIR%%/featpost3D.asy
 %%DATADIR%%/feynman.asy
 %%DATADIR%%/flowchart.asy
 %%DATADIR%%/fontsize.asy
@@ -122,6 +121,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Pythagoras.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/PythagoreanTree.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/RiemannSurface.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/RiemannSurfaceRoot.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Sierpinski.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/advection.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alignbox.asy
@@ -137,6 +137,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/wavepacket.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/wheel.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/annotation.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arrows3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/axis3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bezier.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bezier2.asy
