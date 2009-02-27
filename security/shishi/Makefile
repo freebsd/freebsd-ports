@@ -10,10 +10,10 @@ PORTNAME=	shishi
 PORTVERSION=	0.0.22
 PORTREVISION=	5
 CATEGORIES=	security
-MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/ \
-		${MASTER_SITE_GNU_ALPHA}
+MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A free implementation of the Kerberos 5 network security system
 
 LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn \
