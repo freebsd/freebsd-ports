@@ -21,7 +21,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	sdl mixer
-USE_TCL=	yes
+USE_TCL=	84
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

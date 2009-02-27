@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration tools for the eCos embedded OS
 
 USE_BZIP2=	yes
-USE_TCL_BUILD=	yes
+USE_TCL_BUILD=	84
 USE_WX=		2.4
 WRKSRC=		${WRKDIR}/infra-build
 GNU_CONFIGURE=	yes
