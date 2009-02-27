@@ -1222,6 +1222,7 @@
     SUBDIR += py-HTMLgen
     SUBDIR += py-Lightbox
     SUBDIR += py-WebError
+    SUBDIR += py-WebTest
     SUBDIR += py-albatross
     SUBDIR += py-amf
     SUBDIR += py-apachelog
