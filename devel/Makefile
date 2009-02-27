@@ -2502,6 +2502,7 @@
     SUBDIR += rubygem-fastercsv
     SUBDIR += rubygem-fastthread
     SUBDIR += rubygem-fattr
+    SUBDIR += rubygem-gdata
     SUBDIR += rubygem-gem_plugin
     SUBDIR += rubygem-git
     SUBDIR += rubygem-grit
