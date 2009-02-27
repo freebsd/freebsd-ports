@@ -1,0 +1,13 @@
+--- src/Makefile.in.orig	2009-02-27 17:10:12.000000000 -0500
++++ src/Makefile.in	2009-02-27 17:10:21.000000000 -0500
+@@ -16,8 +16,8 @@
+ 
+ APXS=@APXS@
+ APACHECTL=@APACHECTL@
+-LIBS=-Wl,"@LIBS@" @AVAHI_LIBS@
+-CFLAGS=-Wc,"@CFLAGS@" @AVAHI_CFLAGS@
++LIBS=-Wl,"@LIBS@ @AVAHI_LIBS@"
++CFLAGS=-Wc,"@CFLAGS@ @AVAHI_CFLAGS@"
+ 
+ all: mod_dnssd.la
+ 

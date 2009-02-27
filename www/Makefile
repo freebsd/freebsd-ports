@@ -429,6 +429,7 @@
     SUBDIR += mod_cvs
     SUBDIR += mod_cvs2
     SUBDIR += mod_dav
+    SUBDIR += mod_dnssd
     SUBDIR += mod_domaintree
     SUBDIR += mod_dtcl
     SUBDIR += mod_encoding
