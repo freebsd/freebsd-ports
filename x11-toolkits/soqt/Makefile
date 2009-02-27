@@ -31,4 +31,10 @@ MAN1=		soqt-config.1
 post-install:
 	@${TOUCH} ${PREFIX}/include/Inventor/Qt/engines/.keep_me
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
