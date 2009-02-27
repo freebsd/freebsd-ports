@@ -4,6 +4,7 @@ bin/mmmix
 bin/mmotype
 %%DATADIR%%/README
 %%DATADIR%%/abstime.w
+%%DATADIR%%/alpha.mms
 %%DATADIR%%/boilerplate.w
 %%DATADIR%%/coolcomb.mms
 %%DATADIR%%/copy.mms
