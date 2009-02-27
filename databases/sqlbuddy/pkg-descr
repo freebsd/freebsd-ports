@@ -1,23 +1,24 @@
-Let's be honest - managing a database isn't terribly exciting. 
-But you still want to use a product that looks half-decent and is 
-intuitive to use. SQL Buddy was designed to meet the demands of 
-modern web developers. Oh, and did I mention that its completely 
-open source and free for everyone to use?
-
-Some applications look great in a screenshot, but deliver disappointing 
-results when they are actually used. The driving force behind the 
-development of SQL Buddy was not to produce a great-looking screenshot 
-but rather to create a product that would enable developers to enjoy their 
-work and get more done in less time.
+SQL Buddy is an open source project designed to change 
+the way people think about MySQL. Databases are an 
+essential part of most projects - who knew that working 
+with a database could also be intuitive? 
+Give SQL Buddy a try and you might find yourself having some 
+unexpectedly warm feelings toward MySQL. Who knows, maybe its 
+time to let your database server move in from the garage.
 
 Features:
 
 * No setup
+    Just unzip the files to your server and its ready to use. 
+    Seriously, the next step is logging in.
 * Complete control of users
-* Easy to browse
-* Reduced load times
-* Bookmark to your hearts content
+    Logins are handled directly by MySQL. Create as many or 
+    as few users as you want.
+* Speaks your language
+    The current release is bundled with 29 translations
+    - with more on the way!
 * Import and export
-* Multilanguage
+    Easily move your data into Excel by exporting a .csv file or 
+    shift data between servers by using a .sql file.
 
 WWW: http://www.sqlbuddy.com/
