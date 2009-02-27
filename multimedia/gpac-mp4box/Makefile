@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mp4box
-DISTVERSION=	0.4.4
+DISTVERSION=	0.4.5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gpac
@@ -20,5 +20,8 @@ LIB_DEPENDS=	gpac.1:${PORTSDIR}/multimedia/gpac-libgpac
 
 WRKSRC=		${WRKDIR}/gpac/applications/mp4box
 PLIST_FILES=	bin/mp4box
+
+pre-patch:
+	${RM} -f ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
