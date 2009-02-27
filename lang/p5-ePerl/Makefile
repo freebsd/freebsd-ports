@@ -21,7 +21,7 @@ MAN3=		Parse::ePerl.3 Apache::ePerl.3
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800058
+.if ${OSVERSION} >= 800058 || (${OSVERSION} >= 701101 && ${OSVERSION} < 800000)
 BROKEN=		does not build
 .endif
 
