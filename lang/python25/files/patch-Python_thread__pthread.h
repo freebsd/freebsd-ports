@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- ../Python/thread_pthread.h
-+++ ../Python/thread_pthread.h
+--- Python/thread_pthread.h
++++ Python/thread_pthread.h
 @@ -149,6 +149,7 @@
  {
  	pthread_t th;
