@@ -86,7 +86,9 @@ NLS			Native Language Support via gettext utilities
 OGG			OGG multimedia container format
 OPENAL			Adds OpenAL support
 OPENGL			Adds OpenGL support
+OPTIMIZED_CFLAGS	Enables optimized CFLAGS
 PERL			Adds Perl language/module support
+PGO			Enables Profile-Guided Optimization
 PGSQL			PostgreSQL database support
 POP3			Adds support for POP3 mail protocol
 PYTHON			Adds Python language/module support
