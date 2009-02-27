@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cog
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://nedbatchelder.com/code/cog/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
