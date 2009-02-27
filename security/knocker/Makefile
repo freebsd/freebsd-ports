@@ -11,7 +11,7 @@ CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sbrabez@gmail.com
 COMMENT=	A simple and easy to use TCP only port scanner (Console version)
 
 GNU_CONFIGURE=	yes
