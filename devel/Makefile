@@ -1818,6 +1818,7 @@
     SUBDIR += p5-Test-JSON
     SUBDIR += p5-Test-Kwalitee
     SUBDIR += p5-Test-LectroTest
+    SUBDIR += p5-Test-LoadAllModules
     SUBDIR += p5-Test-Log4perl
     SUBDIR += p5-Test-LongString
     SUBDIR += p5-Test-Manifest
