@@ -377,10 +377,6 @@ lib/LLVMCellSPUAsmPrinter.o
 lib/LLVMCellSPUCodeGen.o
 lib/LLVMCppBackend.o
 lib/LLVMExecutionEngine.o
-lib/LLVMHello.a
-lib/LLVMHello.la
-lib/LLVMHello.so
-lib/LLVMHello.so.0
 lib/LLVMIA64.o
 lib/LLVMInterpreter.o
 lib/LLVMJIT.o
@@ -403,6 +399,7 @@ lib/libLLVMBitWriter.a
 lib/libLLVMCodeGen.a
 lib/libLLVMCore.a
 lib/libLLVMDebugger.a
+lib/libLLVMHello.so
 lib/libLLVMInstrumentation.a
 lib/libLLVMLinker.a
 lib/libLLVMScalarOpts.a
