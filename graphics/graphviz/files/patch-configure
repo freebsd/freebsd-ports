@@ -1,5 +1,5 @@
---- configure.orig	2008-07-07 04:27:21.000000000 +0200
-+++ configure	2008-07-11 11:42:18.000000000 +0200
+--- configure.orig	2008-10-08 01:54:55.000000000 +0200
++++ configure	2009-02-27 11:12:03.000000000 +0100
 @@ -6481,6 +6481,9 @@
  	        *-apple-darwin* )
  	            CFLAGS="${CFLAGS} -fno-common -Wall"
@@ -10,3 +10,25 @@
  	        *-freebsd* )
  	            CFLAGS="${CFLAGS} -Wstrict-prototypes -Wpointer-arith -Wall -ffast-math"
  		    ;;
+@@ -26247,7 +26250,9 @@
+ 
+         LUA_INCLUDES=""
+         LUA_LIBS=""
+-        LUA_INSTALL_DIR=""
++	if test -z "$LUA_INSTALL_DIR" ; then
++	        LUA_INSTALL_DIR=""
++	fi
+ 
+         if test -n "$lua_inc"; then
+            CFLAGS="$CFLAGS -I$lua_inc"
+@@ -27376,8 +27381,8 @@
+   if test "x$use_swig" != "xYes"; then
+     use_php="No (swig not available)"
+   else
+-    if test `$SWIG -help 2>&1 | $GREP -c '\-php5 *- Generate'` = 0; then
+-      use_php="No (swig does not support -php5 option)"
++    if test `$SWIG -help 2>&1 | $GREP -c '\-php *- Generate'` = 0; then
++      use_php="No (swig does not support -php option)"
+     else
+       # Extract the first word of "php", so it can be a program name with args.
+ set dummy php; ac_word=$2

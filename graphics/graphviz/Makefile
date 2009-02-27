@@ -7,7 +7,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.20.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -118,6 +118,7 @@ PLIST_SUB+=		WITH_TK=""
 PLIST_SUB+=		WITH_TK="@comment "
 .endif
 .if defined(WITH_TCL) || defined(WITH_TK)
+BROKEN=			Swig cant build tcl code
 CPPFLAGS+=		-I${TCL_INCLUDEDIR}
 USE_TCL_BUILD=		84+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
@@ -345,7 +346,8 @@ USE_LUA=		yes
 .include "${PORTSDIR}/Mk/bsd.lua.mk"
 CFLAGS+=		-I${LUA_INCDIR}
 LDFLAGS+=		-L${LUA_LIBDIR} -lm
-CONFIGURE_ENV+=		LUA="${LUA_BINDIR}/lua"
+CONFIGURE_ENV+=		LUA="${LUA_BINDIR}/lua" \
+			LUA_INSTALL_DIR=${PREFIX}/lib/lua/${LUA_VER}
 MANN+=			gv_lua.n
 .else
 CONFIGURE_ARGS+=	--disable-lua
@@ -371,7 +373,7 @@ CONFIGURE_ARGS+=	--disable-guile
 PLIST_SUB+=		WITH_GUILE="@comment "
 .endif
 
-pre-patch:
+post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | \
 		${XARGS} ${REINPLACE_CMD} \
 		-e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
@@ -400,7 +402,7 @@ pre-patch:
 		${WRKSRC}/cmd/smyrna/tvnodes.h
 	@${REINPLACE_CMD} -e 's|#include "regex_win32.h"|#include <regex.h>|' \
 		${WRKSRC}/cmd/smyrna/btree.c
-	@${REINPLACE_CMD} -e 's|#! /bin/sh|#! /${LOCALBASE}/bin/bash|g' \
+	@${REINPLACE_CMD} -e 's|#! /bin/sh|#! ${LOCALBASE}/bin/bash|g' \
 		${WRKSRC}/configure
 
 .if defined(WITH_TK)
