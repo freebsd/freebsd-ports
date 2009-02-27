@@ -303,6 +303,7 @@
     SUBDIR += libpcapnav
     SUBDIR += libproxy
     SUBDIR += libproxy-gnome
+    SUBDIR += libproxy-kde
     SUBDIR += librsync
     SUBDIR += libsocket++
     SUBDIR += libsocketcpp
