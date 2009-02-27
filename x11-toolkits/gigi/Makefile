@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.alepulver.com.ar/distfiles/
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL Graphic User Interface Library
 
 LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \

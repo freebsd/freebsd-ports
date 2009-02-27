@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.alepulver.com.ar/distfiles/
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source, platform independent galactic conquest game
 
 LIB_DEPENDS=	GiGi.0:${PORTSDIR}/x11-toolkits/gigi \

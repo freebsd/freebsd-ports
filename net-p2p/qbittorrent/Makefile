@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bittorrent client written in C++ / Qt4 using libtorrent
 
 LIB_DEPENDS=	ccext2-1.6.0:${PORTSDIR}/devel/commoncpp \

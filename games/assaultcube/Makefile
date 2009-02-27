@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/actiongame
 DISTNAME=	AssaultCube_v${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Total conversion of the FPS game called Cube
 
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal

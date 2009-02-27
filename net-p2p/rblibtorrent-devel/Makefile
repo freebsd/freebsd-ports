@@ -12,7 +12,7 @@ MASTER_SITES=	SF/qbittorrent
 PKGNAMEPREFIX=	rb
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library implementing a BitTorrent client (devel version)
 
 LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost

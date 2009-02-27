@@ -10,7 +10,7 @@ PORTVERSION=	1.28
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Doom, Doom II, Heretic, Hexen and Strife source port
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

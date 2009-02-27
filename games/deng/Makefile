@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/-beta/}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An enhanced Doom, Heretic and Hexen source port
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip

@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 DISTFILES=	#
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hexen II source port extras (demos, mods, etc)
 
 RUN_DEPENDS=	${DATADIR}:${PORTSDIR}/games/uhexen2
