@@ -305,6 +305,7 @@
     SUBDIR += libproxy-gnome
     SUBDIR += libproxy-kde
     SUBDIR += libproxy-mozjs
+    SUBDIR += libproxy-webkit
     SUBDIR += librsync
     SUBDIR += libsocket++
     SUBDIR += libsocketcpp
