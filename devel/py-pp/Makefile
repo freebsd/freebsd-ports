@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pp
-PORTVERSION=	1.5.6
+PORTVERSION=	1.5.7
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.parallelpython.com/downloads/pp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
