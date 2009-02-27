@@ -8,7 +8,8 @@
 PORTNAME=	asusoled
 PORTVERSION=	0.10
 CATEGORIES=	sysutils
-MASTER_SITES=	http://people.freebsd.org/~jkim/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jkim
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
