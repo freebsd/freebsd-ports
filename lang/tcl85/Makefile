@@ -755,7 +755,7 @@ post-install:
 	${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/../doc/tclsh.1 ${MANPREFIX}/man/man1/tclsh${TCL_VER}${THREADS_SUFFIX}.1
 .if !defined(BUILDING_TCL_THREADS) && defined(WITH_TCL85_MAN)
-. for mp in ${MAN1} ${MAN3} ${MANN}
+. for mp in ${MAN3} ${MANN}
 	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
 		${WRKSRC}/../doc/${mp}
 . endfor

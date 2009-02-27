@@ -354,6 +354,7 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Argentina/La_Rioja
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Argentina/Mendoza
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Argentina/Rio_Gallegos
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Argentina/Salta
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Argentina/San_Juan
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Argentina/San_Luis
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Argentina/Tucuman
@@ -460,6 +461,7 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Resolute
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Rio_Branco
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Rosario
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Santarem
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Santiago
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Santo_Domingo
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Sao_Paulo
