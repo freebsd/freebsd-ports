@@ -29,8 +29,7 @@ WRKMAN=		${WRKDIR}/PAPI/man
 # Although the package may not install the fortran binaries, it requires the
 # fortran compiler
 USE_FORTRAN=	yes
-
-CONFIGURE_ENV+=	F77="${F77}" FFLAGS="-fdefault-integer-8"
+FFLAGS=		-fdefault-integer-8
 
 OPTIONS=	CTESTS "Install C tests" On
 OPTIONS+=	FTESTS "Install Fortran tests" On
