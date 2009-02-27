@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	mmix
-PORTVERSION=	20060918
+PORTVERSION=	20090205
 CATEGORIES=	lang
-MASTER_SITES=	http://www-cs-faculty.stanford.edu/~knuth/programs/
+MASTER_SITES=	http://www-cs-faculty.stanford.edu/~knuth/programs/ \
+		http://mirror.mcx2.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	A RISC computer designed by Donald E. Knuth
 
 BUILD_DEPENDS=	ctangle:${PORTSDIR}/devel/cweb
