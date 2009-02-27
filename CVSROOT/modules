@@ -167,6 +167,7 @@ BillardGL                       ports/games/BillardGL
 CaribbeanStud                   ports/games/CaribbeanStud
 Cgraph                          ports/graphics/Cgraph
 Coin                            ports/graphics/Coin
+DTraceToolkit                   ports/sysutils/DTraceToolkit
 DarwinStreamingServer           ports/net/DarwinStreamingServer
 EZWGL                           ports/graphics/EZWGL
 ElectricFence                   ports/devel/ElectricFence
@@ -2469,6 +2470,7 @@ dtdinst                         ports/textproc/dtdinst
 dtdparse                        ports/textproc/dtdparse
 dtiquery                        ports/science/dtiquery
 dtmfdial                        ports/audio/dtmfdial
+dtracetoolkit                   ports/sysutils/DTraceToolkit
 dtse                            ports/www/dtse
 dtv                             ports/multimedia/dtv
 du2ps                           ports/sysutils/du2ps
@@ -9022,6 +9024,7 @@ nehquake                        ports/games/nehquake
 neko                            ports/lang/neko
 nekobee                         ports/audio/nekobee
 nemesis                         ports/net/nemesis
+nemiver                         ports/devel/nemiver
 nenscript                       ports/print/nenscript
 neon26                          ports/www/neon26
 neon28                          ports/www/neon28
@@ -12018,6 +12021,7 @@ p5-POE-Component-Server-IRC     ports/irc/p5-POE-Component-Server-IRC
 p5-POE-Component-Server-NNTP    ports/news/p5-POE-Component-Server-NNTP
 p5-POE-Component-Server-SOAP    ports/www/p5-POE-Component-Server-SOAP
 p5-POE-Component-Server-SimpleHTTP  ports/www/p5-POE-Component-Server-SimpleHTTP
+p5-POE-Component-Server-Twirc   ports/net/p5-POE-Component-Server-Twirc
 p5-POE-Component-Server-XMLRPC  ports/devel/p5-POE-Component-Server-XMLRPC
 p5-POE-Component-Spread         ports/net/p5-POE-Component-Spread
 p5-POE-Component-TSTP           ports/devel/p5-POE-Component-TSTP
@@ -12057,6 +12061,7 @@ p5-Params-Classify              ports/devel/p5-Params-Classify
 p5-Params-Coerce                ports/devel/p5-Params-Coerce
 p5-Params-Util                  ports/devel/p5-Params-Util
 p5-Params-Validate              ports/devel/p5-Params-Validate
+p5-Parse-CPAN-Meta              ports/devel/p5-Parse-CPAN-Meta
 p5-Parse-CPAN-Packages          ports/devel/p5-Parse-CPAN-Packages
 p5-Parse-CSV                    ports/textproc/p5-Parse-CSV
 p5-Parse-FixedLength            ports/textproc/p5-Parse-FixedLength
@@ -15297,6 +15302,7 @@ p5-params-coerce                ports/devel/p5-Params-Coerce
 p5-params-util                  ports/devel/p5-Params-Util
 p5-params-validate              ports/devel/p5-Params-Validate
 p5-parent                       ports/devel/p5-parent
+p5-parse-cpan-meta              ports/devel/p5-Parse-CPAN-Meta
 p5-parse-cpan-packages          ports/devel/p5-Parse-CPAN-Packages
 p5-parse-csv                    ports/textproc/p5-Parse-CSV
 p5-parse-fixedlength            ports/textproc/p5-Parse-FixedLength
@@ -15437,6 +15443,7 @@ p5-poe-component-server-irc     ports/irc/p5-POE-Component-Server-IRC
 p5-poe-component-server-nntp    ports/news/p5-POE-Component-Server-NNTP
 p5-poe-component-server-simplehttp  ports/www/p5-POE-Component-Server-SimpleHTTP
 p5-poe-component-server-soap    ports/www/p5-POE-Component-Server-SOAP
+p5-poe-component-server-twirc   ports/net/p5-POE-Component-Server-Twirc
 p5-poe-component-server-xmlrpc  ports/devel/p5-POE-Component-Server-XMLRPC
 p5-poe-component-smtp           ports/mail/p5-POE-Component-SMTP
 p5-poe-component-snmp           ports/net-mgmt/p5-POE-Component-SNMP
