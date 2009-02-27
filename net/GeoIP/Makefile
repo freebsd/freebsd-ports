@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	GeoIP
-PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTVERSION=	1.4.6
 CATEGORIES=	net geography
 MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/c/
 
@@ -18,7 +17,7 @@ USE_GNOME=	gnometarget
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 
-MAN1=		geoiplookup.1 geoipupdate.1
+MAN1=		geoiplookup.1 geoipupdate.1 geoiplookup6.1
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/geoipupdate.sh ${PREFIX}/bin/
