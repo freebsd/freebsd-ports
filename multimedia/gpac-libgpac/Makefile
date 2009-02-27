@@ -7,7 +7,7 @@
 
 PORTNAME=	gpac
 PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -31,7 +31,8 @@ OPTIONS=	IPV6	"IPv6 support"		on \
 		OPENGL	"OpenGL support"	on
 
 CONFIGURE_ARGS=	--cc="${CC}" --X11-path="${X11BASE}" \
-		--extra-cflags="${CFLAGS}" --extra-ldflags="${LDFLAGS}"
+		--extra-cflags="${CFLAGS}" --extra-ldflags="${LDFLAGS}" \
+		--enable-pic
 CONFIGURE_ENV+=	LIBVER="${LIBVER}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
