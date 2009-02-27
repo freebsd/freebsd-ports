@@ -9,7 +9,7 @@ PORTVERSION=	4.5
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/xml/${PORTVERSION}/
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	DocBook/XML DTD V4.5, designed for technical documentation
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
