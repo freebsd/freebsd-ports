@@ -9,7 +9,9 @@ PORTNAME=	safecat
 PORTVERSION=	1.13
 CATEGORIES=	sysutils mail
 MASTER_SITES=	http://jeenyus.net/~budney/linux/software/safecat/ \
-		${MASTER_SITE_SUNSITE}
+		${MASTER_SITE_LOCAL:S/local-distfiles/local-distfiles\/roam/} \
+		${MASTER_SITE_SUNSITE} \
+		http://people.FreeBSD.org/~roam/ports/sysutils/safecat/
 MASTER_SITE_SUBDIR=	utils/file
 
 MAINTAINER=	roam@FreeBSD.org
