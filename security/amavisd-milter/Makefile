@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	amavisd-milter
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	security mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	prehor@gmail.com
 COMMENT=	Milter for amavisd-new
@@ -33,6 +31,7 @@ AMAVISUSER?=	vscan
 AMAVISDIR?=	/var/amavis
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir=${AMAVISDIR} --with-working-dir=tmp
 USE_RC_SUBR=	${PORTNAME}.sh
 
 SUB_FILES=	pkg-message
