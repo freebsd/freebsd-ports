@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	efront
-DISTVERSION=	3.5.1
-PORTREVISION=	1
+DISTVERSION=	3.5.2
 CATEGORIES=	www
-MASTER_SITES=	http://www.efrontlearning.net/versions/
-DISTNAME=	${PORTNAME}_3.5.1_build2760
+MASTER_SITES=	SF/efrontlearning
+DISTNAME=	${PORTNAME}_${PORTVERSION}_build3470
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Elearning and Human Capital Development platform
