@@ -1,0 +1,7 @@
+py-WebTest is a helper to test WSGI applications, it wraps
+any WSGI application and makes it easy to send test requests
+to that application, without starting up an HTTP server.
+It provides convenient full-stack testing of applications
+written with any WSGI-compatible framework.
+
+WWW: http://pythonpaste.org/webtest/
