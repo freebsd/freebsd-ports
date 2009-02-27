@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gxmessage
-PORTVERSION=	2.4.4
-PORTREVISION=	5
+PORTVERSION=	2.6.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://homepages.ihug.co.nz/~trmusson/stuff/
 
