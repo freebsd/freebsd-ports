@@ -1,0 +1,68 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/paster_plugins.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/collector.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/collector.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/collector.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/errormiddleware.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/errormiddleware.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/errormiddleware.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/eval-media/debug.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/eval-media/jquery-1.2.1.min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/eval-media/jquery-1.2.3.pack.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/eval-media/jquery.scrollTo-min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/eval-media/jquery.scrollTo.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/eval-media/minus.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/eval-media/plus.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/eval-media/traceback.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/eval_template.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/evalcontext.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/evalcontext.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/evalcontext.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/evalexception.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/evalexception.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/evalexception.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/exceptions/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/exceptions/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/exceptions/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/exceptions/errormiddleware.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/exceptions/errormiddleware.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/exceptions/errormiddleware.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/formatter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/formatter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/formatter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/pdbcapture.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/pdbcapture.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/pdbcapture.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/reporter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/reporter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/reporter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/util/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/util/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/util/errorapp.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/util/errorapp.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/util/errorapp.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/util/escaping.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/util/escaping.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/util/escaping.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/util/serial_number_generator.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/util/serial_number_generator.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/util/serial_number_generator.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/util/source_encoding.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/util/source_encoding.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/util/source_encoding.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/eval-media
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/exceptions
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror/util
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/weberror
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
