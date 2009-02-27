@@ -1,0 +1,7 @@
+%%PYTHON_SITELIBDIR%%/pytemplate.py
+%%PYTHON_SITELIBDIR%%/pytemplate.pyc
+%%PYTHON_SITELIBDIR%%/pytemplate.pyo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/daemonexample.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/threadexample.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

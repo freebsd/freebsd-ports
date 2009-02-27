@@ -2298,6 +2298,7 @@
     SUBDIR += py-pymarc
     SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
+    SUBDIR += py-pytemplate
     SUBDIR += py-pytz
     SUBDIR += py-pyutil
     SUBDIR += py-qt4-assistant
