@@ -10,7 +10,7 @@ PORTVERSION=	0.4.1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source Remote Desktop Protocol (RDP) server
 
 USE_RC_SUBR=	xrdp
