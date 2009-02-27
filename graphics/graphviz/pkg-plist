@@ -163,6 +163,7 @@ lib/graphviz/libgvplugin_neato_layout.a
 %%WITH_LUA%%lib/graphviz/lua/libgv_lua.a
 %%WITH_LUA%%lib/graphviz/lua/libgv_lua.la
 %%WITH_LUA%%lib/graphviz/lua/libgv_lua.so
+%%WITH_LUA%%lib/lua/%%LUA_VER%%/gv.so
 %%WITH_PERL%%lib/graphviz/perl/gv.so
 %%WITH_PERL%%lib/graphviz/perl/gv.pm
 %%WITH_PERL%%lib/graphviz/perl/libgv_perl.a
