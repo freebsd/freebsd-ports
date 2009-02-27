@@ -9,7 +9,8 @@ PORTNAME=	libx86
 PORTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.codon.org.uk/~mjg59/libx86/downloads/	\
-		http://people.freebsd.org/~jkim/distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jkim
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
