@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/unix/pwdutils/crack/ \
 MASTER_SITE_SUBDIR=	Crackers/crack
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sbrabez@gmail.com
 COMMENT=	The "Sensible" Unix Password Cracker
 
 WRKSRC=		${WRKDIR}/c50a

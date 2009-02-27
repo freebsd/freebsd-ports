@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-${DBDATE}.db:DB
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sbrabez@gmail.com
 COMMENT=	Full operating system stack fingerprinting suite
 
 .if ${PORTNAME} == "Net-SinFP"

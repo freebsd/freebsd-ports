@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=w3af
 DISTNAME=	${PORTNAME}-10Jun2007
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sbrabez@gmail.com
 COMMENT=	Web Application Attack and Audit Framework
 
 LIB_DEPENDS=	tidy-0.99.0:$(PORTSDIR)/www/py-utidy
