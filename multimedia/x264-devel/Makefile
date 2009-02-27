@@ -9,8 +9,12 @@ PORTNAME=	x264
 PORTVERSION=	0.0.20080409
 PORTREVISION?=	2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
+MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/ \
+		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245
+DISTFILES=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245${EXTRACT_SUFX}
+DIST_SUBDIR=	x264
+EXTRACT_ONLY=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245${EXTRACT_SUFX}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	Multimedia library and tool for encoding H.264/AVC video streams
@@ -27,7 +31,8 @@ USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 
 OPTIONS=	DEBUG "Enable Debugging" Off \
-		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off
+		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off \
+		PGO "Enable Profile-Guided Optimization" Off
 
 CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/include -I${LOCALBASE}/include" \
 			--extra-ldflags="${LDFLAGS} -L${LOCALBASE}/lib -L${LOCALBASE}/lib" \
@@ -58,6 +63,19 @@ MAKE_ENV+=	ARCH=${ARCH}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
+.if defined(WITH_PGO) && ${SLAVE_PORT:L}!="yes"
+# y4m sample video
+Y4M_VIDEO=example.y4m
+Y4M_VIDEO_DISTFILE=example.y4m.bz2
+
+DISTFILES+=	${Y4M_VIDEO_DISTFILE}
+ALL_TARGET=	fprofiled
+MAKE_ENV+=	VIDS="${WRKDIR}/${Y4M_VIDEO}"
+
+RESTRICTED=	${Y4M_VIDEO}.bz2 file may not be mirrored
+RESTRICTED_FILES=	${Y4M_VIDEO_DISTFILE}
+.endif
+
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O2 -funroll-loops -ffast-math
 .endif
@@ -71,6 +89,11 @@ CONFIGURE_ARGS+=	--enable-mp4-output
 .if defined(WITH_X11_OUTPUT)
 CONFIGURE_ARGS+=	--enable-visualize
 USE_XORG=	x11
+.endif
+
+post-extract:
+.if defined(WITH_PGO) && ${SLAVE_PORT:L}!="yes"
+	@( cd ${WRKDIR} && ${BZIP2_CMD} -dc ${DISTDIR}/${Y4M_VIDEO_DISTFILE} > ${Y4M_VIDEO} )
 .endif
 
 post-patch:
