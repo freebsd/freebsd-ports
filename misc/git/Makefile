@@ -11,11 +11,12 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Interactive Tools - a file system browser for UNIX systems
 
 GNU_CONFIGURE=	YES
-MAN1=		git.1 gitaction.1 gitdpkgname.1 gitfm.1 gitinternal.1 \
+CONFIGURE_ARGS=	--disable-transition
+MAN1=		gitaction.1 gitdpkgname.1 gitfm.1 gitinternal.1 \
 		gitkeys.1 gitmount.1 gitps.1 gitregrep.1 gitrfgrep.1 \
 		gitrgrep.1 gitunpack.1 gitview.1 gitwipe.1
 

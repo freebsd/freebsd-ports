@@ -9,11 +9,3 @@
  
  bin_SCRIPTS = gitaction gitmkdirs gitmount gitrgrep gitunpack gitxgrep\
  	      .gitaction gitdpkgname
-@@ -926,7 +926,6 @@
- 
- 
- install-exec-hook:
--@TRANSITION_TRUE@	$(INSTALL_SCRIPT) $(srcdir)/git.transition $(DESTDIR)$(bindir)/git
- 	ln -sf gitrgrep $(DESTDIR)$(bindir)/gitregrep
- 	ln -sf gitrgrep $(DESTDIR)$(bindir)/gitrfgrep
- 
