@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_dnssd
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://0pointer.de/lennart/projects/mod_dnssd/
 
@@ -16,7 +17,7 @@ COMMENT=	An Apache module that provides DNS-SD capabilities
 LIB_DEPENDS=	avahi-client.3:${PORTSDIR}/net/avahi-app
 
 USE_GMAKE=	yes
-USE_APACHE=	2.0+
+USE_APACHE=	2.2+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
