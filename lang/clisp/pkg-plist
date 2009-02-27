@@ -94,7 +94,6 @@ lib/clisp/full/regexp.dvi
 %%CLX_MIT%%lib/clisp/full/translate.fas
 %%CLX_MIT%%lib/clisp/full/translate.lisp
 lib/clisp/full/uniname.o
-%%WILDCARD%%lib/clisp/full/wildcard.dvi
 %%WILDCARD%%lib/clisp/full/wildcard.o
 lib/clisp/full/width.o
 %%ZLIB%%lib/clisp/full/zlib.o
@@ -131,20 +130,20 @@ lib/clisp/linkkit/modules.c
 %%DATADIR%%/emacs/clisp-indent.el
 %%DATADIR%%/emacs/clisp-indent.lisp
 %%DATADIR%%/vim/lisp.vim
-share/locale/da/LC_MESSAGES/clisp.mo
-share/locale/da/LC_MESSAGES/clisplow.mo
-share/locale/de/LC_MESSAGES/clisp.mo
-share/locale/de/LC_MESSAGES/clisplow.mo
-share/locale/en/LC_MESSAGES/clisp.mo
-share/locale/en/LC_MESSAGES/clisplow.mo
-share/locale/es/LC_MESSAGES/clisp.mo
-share/locale/es/LC_MESSAGES/clisplow.mo
-share/locale/fr/LC_MESSAGES/clisp.mo
-share/locale/fr/LC_MESSAGES/clisplow.mo
-share/locale/nl/LC_MESSAGES/clisp.mo
-share/locale/nl/LC_MESSAGES/clisplow.mo
-share/locale/ru/LC_MESSAGES/clisp.mo
-share/locale/ru/LC_MESSAGES/clisplow.mo
+%%NLS%%share/locale/da/LC_MESSAGES/clisp.mo
+%%NLS%%share/locale/da/LC_MESSAGES/clisplow.mo
+%%NLS%%share/locale/de/LC_MESSAGES/clisp.mo
+%%NLS%%share/locale/de/LC_MESSAGES/clisplow.mo
+%%NLS%%share/locale/en/LC_MESSAGES/clisp.mo
+%%NLS%%share/locale/en/LC_MESSAGES/clisplow.mo
+%%NLS%%share/locale/es/LC_MESSAGES/clisp.mo
+%%NLS%%share/locale/es/LC_MESSAGES/clisplow.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/clisp.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/clisplow.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/clisp.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/clisplow.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/clisp.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/clisplow.mo
 @dirrm %%DATADIR%%/vim
 @dirrm %%DATADIR%%/emacs
 @dirrm %%DATADIR%%

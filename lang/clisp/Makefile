@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clisp
-PORTVERSION=	2.44.1
-PORTREVISION=	1
+PORTVERSION=	2.47
 CATEGORIES=	lang lisp
 MASTER_SITES=	GNU/${PORTNAME}/release/${PORTVERSION}
 
@@ -19,7 +18,6 @@ LIB_DEPENDS=	readline.5:${PORTSDIR}/devel/readline \
 		sigsegv.0:${PORTSDIR}/devel/libsigsegv
 
 USE_ICONV=	yes
-USE_GETTEXT=	yes
 USE_GHOSTSCRIPT_BUILD=	yes
 WANT_GNOME=	yes
 HAS_CONFIGURE=	yes
@@ -70,6 +68,14 @@ PLIST_SUB+=	${mod}=""
 PLIST_SUB+=	${mod}="@comment "
 .   endif
 .endfor
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.endif
 
 .if defined(WITH_BDB)
 USE_BDB=	43+
@@ -147,15 +153,6 @@ CONFIGURE_ARGS+=--with-module=zlib
 .endif
 
 post-patch:
-.if ${ARCH} == "amd64"
-# Override CONFIGURE_TARGET (amd64 -> x86_64) in configure scripts.
-	@${REINPLACE_CMD} -e \
-		"s|^subdir_configure_args='|&--build=${CONFIGURE_TARGET}|;" \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		"s|^module_configure_flags='|&--build=${CONFIGURE_TARGET}|" \
-		${WRKSRC}/src/makemake.in
-.endif
 .if defined(WITH_ORACLE)
 	@${REINPLACE_CMD} -e 's|-ldl||; s|-lpthread|-lcompat ${PTHREAD_LIBS}|' \
 		${WRKSRC}/modules/oracle/link.sh
