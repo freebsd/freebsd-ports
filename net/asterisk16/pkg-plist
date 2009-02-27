@@ -272,7 +272,7 @@ lib/asterisk/modules/func_version.so
 lib/asterisk/modules/func_vmcount.so
 lib/asterisk/modules/func_volume.so
 lib/asterisk/modules/res_ael_share.so
-lib/asterisk/modules/res_config_curl.so
+%%WITH_CURL%%lib/asterisk/modules/res_config_curl.so
 lib/asterisk/modules/res_config_ldap.so
 %%WITH_SQLITE%%lib/asterisk/modules/res_config_sqlite.so
 lib/asterisk/modules/res_limit.so
@@ -354,7 +354,7 @@ lib/asterisk/modules/codec_a_mu.so
 lib/asterisk/modules/codec_adpcm.so
 lib/asterisk/modules/codec_alaw.so
 lib/asterisk/modules/codec_g726.so
-lib/asterisk/modules/codec_gsm.so
+%%WITH_GSM%%lib/asterisk/modules/codec_gsm.so
 %%WITH_ILBC%%lib/asterisk/modules/codec_ilbc.so
 lib/asterisk/modules/codec_lpc10.so
 lib/asterisk/modules/codec_speex.so
@@ -377,7 +377,7 @@ lib/asterisk/modules/func_base64.so
 lib/asterisk/modules/func_callerid.so
 lib/asterisk/modules/func_cdr.so
 lib/asterisk/modules/func_channel.so
-lib/asterisk/modules/func_curl.so
+%%WITH_CURL%%lib/asterisk/modules/func_curl.so
 lib/asterisk/modules/func_cut.so
 lib/asterisk/modules/func_db.so
 lib/asterisk/modules/func_enum.so

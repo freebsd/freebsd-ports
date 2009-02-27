@@ -19,9 +19,7 @@ COMMENT=	An Open Source PBX and telephony toolkit
 
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
-		newt.51:${PORTSDIR}/devel/newt \
-		gsm.1:${PORTSDIR}/audio/gsm \
-		curl.5:${PORTSDIR}/ftp/curl
+		newt.51:${PORTSDIR}/devel/newt
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 ONLY_FOR_ARCHS=	i386 sparc64 amd64 powerpc
@@ -55,6 +53,8 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		FREETDS		"Enable FreeTDS support" on \
 		JABBER		"Enable Jabber and Gtalk support" on \
 		SQLITE          "Enable SQLITE support" on \
+		GSM		"Enable GSM codec" on \
+		CURL		"Enable CURL support" on \
 		ILBC		"Enable iLBC codec" off \
 #		CODEC_PATCH	"Apply codec negotiation patch" off \
 #		MISC_PATCHES	"Apply additional patches" off
@@ -172,6 +172,24 @@ PLIST_SUB+=	WITH_ILBC="@comment "
 .else
 PLIST_SUB+=	WITH_ILBC=""
 EXTRA_PATCHES+=	${PATCHDIR}/ilbc_enable.diff
+.endif
+
+.if !defined(WITH_GSM)
+PLIST_SUB+=	WITH_GSM="@comment "
+CONFIGURE_ARGS+= --without-gsm
+.else
+PLIST_SUB+=	WITH_GSM=""
+CONFIGURE_ARGS+= --with-gsm
+LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
+.endif
+
+.if !defined(WITH_CURL)
+PLIST_SUB+=	WITH_CURL="@comment "
+CONFIGURE_ARGS+= --without-curl
+.else
+PLIST_SUB+=	WITH_CURL=""
+CONFIGURE_ARGS+= --with-curl
+LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
 .endif
 
 .if defined(WITH_CODEC_PATCH)
