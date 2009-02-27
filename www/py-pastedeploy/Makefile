@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	PasteDeploy
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	www python
-MASTER_SITES=	http://pypi.python.org/packages/source/P/PasteDeploy/ \
-		${MASTER_SITE_LOCAL} \
-		http://dryice.name/computer/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	dryice
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wenheping@gmail.com
