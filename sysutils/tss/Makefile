@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tss
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pulia.nu/tss/src/
 
