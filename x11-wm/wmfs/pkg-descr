@@ -1,6 +1,6 @@
-WMFS, as known as Window Manager From Scratch, is a very very
-lightweight window manager for X. The goal of this project is
-to make a very basic, lightweight and dynamic WM. The result
-is for now a little WM usable for daily use.
+WMFS (Window Manager From Scratch) is a lightweight tiling
+window manager for X. It can be configured with a configuration
+file (made with LibConfuse), it supports Xft (FreeType) fonts
+and EWMH hints wm standards.
 
-WWW:	http://wmfs.sangor.net/
+WWW:	http://wmfs.malikania.org/
