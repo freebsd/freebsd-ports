@@ -14,6 +14,9 @@ MASTER_SITE=	http://ftp.osuosl.org/pub/drupal/files/projects/
 MAINTAINER=	nick@foobar.org
 COMMENT=	CSS / Javascript pull-down menus for Drupal
 
+DEPRECATED=	Drupal 4.7.x is end-of-life since 200802.  Please migrate to Drupal 6.x
+EXPIRATION_DATE=2009-03-26
+
 DRUPAL4_MODULE=	yes
 MODULE_FILES=	arrow-down.png arrow-left.png arrow-right.png \
 		nice_menus.css nice_menus.js nice_menus.module

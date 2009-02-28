@@ -15,6 +15,9 @@ COMMENT=	An alternative to Drupal's included upload module
 
 RUN_DEPENDS+=	${LOCALBASE}/${DRUPAL_MODDIR}/filemanager.module:${PORTSDIR}/www/drupal4-filemanager
 
+DEPRECATED=	Drupal 4.7.x is end-of-life since 200802.  Please migrate to Drupal 6.x
+EXPIRATION_DATE=2009-03-26
+
 DRUPAL4_MODULE=	yes
 MODULE_FILES=	attachment.install attachment.module
 DOC_FILES=	LICENSE.txt README.txt CREDITS INSTALL
