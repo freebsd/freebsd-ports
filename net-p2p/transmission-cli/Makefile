@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	1.42
-PORTREVISION?=	1
+PORTVERSION=	1.51
+PORTREVISION?=	0
 CATEGORIES?=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
 PKGNAMESUFFIX?=	-cli
@@ -20,7 +20,7 @@ SLAVEPORT?=
 LIB_DEPENDS?=	${GEN_LIB_DEPENDS}
 
 # General dependencies
-GEN_LIB_DEPENDS=curl.5:${PORTSDIR}/ftp/curl
+GEN_LIB_DEPENDS=curl.4:${PORTSDIR}/ftp/curl
 GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/transmission-web
 
 USE_GNOME?=	pkgconfig
@@ -46,9 +46,6 @@ general-patch:
 		${WRKSRC}/third-party/libevent/Makefile.*
 	@${FIND} ${WRKSRC} -name Makefile.* | ${XARGS} ${REINPLACE_CMD} -e \
 		's|noinst_PROGRAMS = |noinst_PROGRAMS = #|g'
-	@${REINPLACE_CMD} -e 's|%%CFLAGS%%|${CFLAGS}|g ; \
-		s|%%CXXFLAGS%%|${CXXFLAGS}|g' \
-			${WRKSRC}/configure.ac
 .if ${SLAVEPORT}!="gtk2"
 	@${REINPLACE_CMD} -e '/#define DISABLE_GETTEXT/s,/\* \(.*\) \*/,\1,' \
 		${WRKSRC}/libtransmission/utils.h

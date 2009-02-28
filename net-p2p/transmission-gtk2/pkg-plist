@@ -12,6 +12,7 @@ share/icons/hicolor/48x48/apps/transmission.png
 share/icons/hicolor/scalable/apps/transmission.svg
 share/locale/ar/LC_MESSAGES/transmission.mo
 share/locale/bg/LC_MESSAGES/transmission.mo
+share/locale/br/LC_MESSAGES/transmission.mo
 share/locale/ca/LC_MESSAGES/transmission.mo
 share/locale/ckb/LC_MESSAGES/transmission.mo
 share/locale/cs/LC_MESSAGES/transmission.mo
@@ -37,6 +38,8 @@ share/locale/is/LC_MESSAGES/transmission.mo
 share/locale/it/LC_MESSAGES/transmission.mo
 share/locale/ja/LC_MESSAGES/transmission.mo
 share/locale/ka/LC_MESSAGES/transmission.mo
+share/locale/kk/LC_MESSAGES/transmission.mo
+share/locale/ko/LC_MESSAGES/transmission.mo
 share/locale/ku/LC_MESSAGES/transmission.mo
 share/locale/li/LC_MESSAGES/transmission.mo
 share/locale/lt/LC_MESSAGES/transmission.mo
@@ -61,6 +64,7 @@ share/locale/sv/LC_MESSAGES/transmission.mo
 share/locale/te/LC_MESSAGES/transmission.mo
 share/locale/tr/LC_MESSAGES/transmission.mo
 share/locale/uk/LC_MESSAGES/transmission.mo
+share/locale/vi/LC_MESSAGES/transmission.mo
 share/locale/zh_CN/LC_MESSAGES/transmission.mo
 share/locale/zh_TW/LC_MESSAGES/transmission.mo
 share/pixmaps/transmission.png
@@ -68,6 +72,8 @@ share/pixmaps/transmission.png
 @dirrmtry share/locale/te
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/ckb/LC_MESSAGES
 @dirrmtry share/locale/ckb
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
