@@ -8,7 +8,7 @@
 
 PORTNAME=	libgda4
 PORTVERSION?=	3.99.12
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/4$//}/${PORTVERSION:R}
@@ -109,10 +109,14 @@ CONFIGURE_ARGS+=	--without-odbc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|include/db.h|${BDB_VER}/include/db.h|g' \
+	@${REINPLACE_CMD} -e 's|include/db.h|include/db${BDB_VER}/db.h|g' \
 		-e 's|ldb47|ldb${BDB_VER}|g' \
 		-e 's|ldb|ldb${BDB_VER}|g' \
+		-e 's|libdb|libdb${BDB_VER}|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|<db\.h>|<db${BDB_VER}/db.h>|' \
+	    	${WRKSRC}/providers/bdb/gda-bdb-provider.c \
+		${WRKSRC}/providers/bdb/gda-bdb-test.c
 .if ${LIBGDA4_SLAVE}!="no"
 #. for d in msql firebird odbc freetds mdb ldap mysql sqlite postgres
 . for d in bdb mdb mysql sqlite postgres
