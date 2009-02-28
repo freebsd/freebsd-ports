@@ -7,14 +7,15 @@
 
 PORTNAME=	mod_dnssd
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://0pointer.de/lennart/projects/mod_dnssd/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An Apache module that provides DNS-SD capabilities
 
-LIB_DEPENDS=	avahi-client.3:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS=	avahi-client.3:${PORTSDIR}/net/avahi-app \
+    		apr-1.3:${PORTSDIR}/devel/apr
 
 USE_GMAKE=	yes
 USE_APACHE=	2.2+
