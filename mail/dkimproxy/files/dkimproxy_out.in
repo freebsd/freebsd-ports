@@ -24,9 +24,7 @@ rcvar=`set_rcvar`
 # set defaults
 
 : ${dkimproxy_out_enable="NO"}
-: ${dkimproxy_out_flags="--keyfile=%%PREFIX%%/etc/dkimproxy/private.key \
-	--selector=selector1 --domain=example.org --method=relaxed \
-	127.0.0.1:10027 127.0.0.1:10028"}
+: ${dkimproxy_out_flags="--conf_file=/usr/local/etc/dkimproxy_out.conf"}
 : ${dkimproxy_out_pidfile="/var/run/dkimproxy_out.pid"}
 : ${dkimproxy_out_user="dkimproxy"}
 
