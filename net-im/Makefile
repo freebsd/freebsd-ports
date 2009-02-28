@@ -136,6 +136,7 @@
     SUBDIR += sim-im-devel
     SUBDIR += tapioca-qt
     SUBDIR += telepathy-butterfly
+    SUBDIR += telepathy-farsight
     SUBDIR += telepathy-gabble
     SUBDIR += telepathy-glib
     SUBDIR += telepathy-haze

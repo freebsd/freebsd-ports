@@ -1,0 +1,11 @@
+--- telepathy-farsight/Makefile.in.orig	2009-02-28 00:03:16.000000000 -0500
++++ telepathy-farsight/Makefile.in	2009-02-28 00:03:37.000000000 -0500
+@@ -250,7 +250,7 @@ libtelepathy_farsight_la_SOURCES = \
+ 
+ nodist_libtelepathy_farsight_la_SOURCES = $(BUILT_SOURCES)
+ lib_LTLIBRARIES = libtelepathy-farsight.la
+-pkgconfigdir = ${libdir}/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = telepathy-farsight.pc
+ AM_CFLAGS = \
+ 	$(ERROR_CFLAGS) \
