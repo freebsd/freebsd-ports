@@ -1,6 +1,6 @@
---- bindings/Makefile.in.orig	2008-11-07 19:43:46.000000000 -0500
-+++ bindings/Makefile.in	2008-11-09 10:57:50.000000000 -0500
-@@ -273,7 +273,7 @@
+--- bindings/Makefile.in.orig	2009-02-25 14:18:37.000000000 -0500
++++ bindings/Makefile.in	2009-02-25 19:53:13.000000000 -0500
+@@ -268,7 +268,7 @@
  program_transform_name = @program_transform_name@
  psdir = @psdir@
  pyexecdir = @pyexecdir@
@@ -8,8 +8,8 @@
 +pythondir = %%PYTHON_SITELIBDIR%%
  sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
- subdirs = @subdirs@
-@@ -289,7 +289,7 @@
+ srcdir = @srcdir@
+@@ -287,7 +287,7 @@
  ##########################################
  # Tcl binding
  tcl_ltlib = hamlibtcl.la

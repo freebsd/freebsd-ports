@@ -39,6 +39,9 @@ lib/hamlib-fodtrack.so
 lib/hamlib-gs232a.so
 lib/hamlib-gs232a.la
 lib/hamlib-gs232a.a
+lib/hamlib-heathkit.so
+lib/hamlib-heathkit.la
+lib/hamlib-heathkit.a
 lib/hamlib-icom.a
 lib/hamlib-icom.la
 lib/hamlib-icom.so
