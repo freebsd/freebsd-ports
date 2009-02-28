@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpsd
-PORTVERSION=	2.37
+PORTVERSION=	2.38
 CATEGORIES=	astro geography
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,6 +24,7 @@ USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+
 MAN1=	cgps.1 cgpxlogger.1 gps.1 gpscat.1 gpsctl.1 gpsfake.1 gpsflash.1 \
 	gpspipe.1 gpsprof.1 rtcmdecode.1 sirfmon.1 xgps.1 xgpsspeed.1
 MAN3=	libgps.3 libgpsd.3 libgpsmm.3
@@ -33,16 +34,27 @@ MANCOMPRESSED=	no
 
 OPTIONS=	XGPS "Build xgps and xgpsspeed (require X)" off \
 		NMEA "NMEA support" on \
-		SIRFII "SiRF-II chipset support" on \
+		SIRF "SiRF chipset support" on \
+		SUPERSTARII "SuperStarII support" off \
 		TSIP "Trimble TSIP support" on \
 		FV18 "San Jose Navigation FV-18 support" on \
 		TRIPMATE "DeLorme TripMate support" on \
 		EARTHMATE "DeLorme EarthMate Zodiac support" on \
 		ITRAX "iTrax support" on \
-		ITALK "iTalk support" on \
+		ASHTECH "Ashtech support" on \
+		NAVCOM "Navcom support" on \
+		GARMIN "Garmin kernel driver support" on \
+		GARMINTXT "Garmin Simple Text support" off \
 		TNT "True North Technologies support" off \
+		OCEANSERVER "Oceanserver support" off \
+		UBX "UBX protocol support" on \
 		EVERMORE "Evermore binary support" on \
-		RTCM104 "rtcm104 support" on \
+		MKT3301 "MKT-3301 support" on \
+		GPSCLOCK "GPSclock support" on \
+		RTCM104V2 "rtcm104v2 support" on \
+		RTCM104V3 "rtcm104v3 support" on \
+		NTRIP "NTRIP support" on \
+		PROFILING "Profiling support" off \
 		NTPSHM "TP time hinting support" on \
 		PPS "PPS time syncing support" off \
 		DBUS "DBUS support" off
@@ -67,8 +79,12 @@ PLIST_SUB+=	X11="@comment "
 CONFIGURE_ARGS+=--disable-nmea
 .endif
 
-.if defined(WITHOUT_SIRFII)
-CONFIGURE_ARGS+=--disable-sirfII
+.if defined(WITHOUT_SIRF)
+CONFIGURE_ARGS+=--disable-sirf
+.endif
+
+.if defined(WITH_SUPERSTARII)
+CONFIGURE_ARGS+=	--enable-superstar2
 .endif
 
 .if defined(WITHOUT_TSIP)
@@ -91,20 +107,60 @@ CONFIGURE_ARGS+=--disable-earthmate
 CONFIGURE_ARGS+=--disable-itrax
 .endif
 
-.if defined(WITHOUT_ITALK)
-CONFIGURE_ARGS+=--disable-italk
+.if defined(WITHOUT_ASHTECH)
+CONFIGURE_ARGS+=--disable-ashtech
+.endif
+
+.if defined(WITHOUT_NAVCOM)
+CONFIGURE_ARGS+=--disable-navcom
+.endif
+
+.if defined(WITHOUT_GARMIN)
+CONFIGURE_ARGS+=--disable-garmin
+.endif
+
+.if defined(WITH_GARMINTXT)
+CONFIGURE_ARGS+=--enable-garmintxt
 .endif
 
 .if defined(WITH_TNT)
 CONFIGURE_ARGS+=--enable-tnt
 .endif
 
+.if defined(WITH_OCEANSERVER)
+CONFIGURE_ARGS+=--enable-oceanserver
+.endif
+
+.if defined(WITHOUT_UBX)
+CONFIGURE_ARGS+=--disable-ubx
+.endif
+
 .if defined(WITHOUT_EVERMORE)
 CONFIGURE_ARGS+=--disable-evermore
 .endif
 
-.if defined(WITHOUT_RTCM104)
-CONFIGURE_ARGS+=--disable-rtcm104
+.if defined(WITHOUT_MKT3301)
+CONFIGURE_ARGS+=--disable-mkt3301
+.endif
+
+.if defined(WITHOUT_GPSCLOCK)
+CONFIGURE_ARGS+=--disable-gpscloclk
+.endif
+
+.if defined(WITHOUT_RTCM104V2)
+CONFIGURE_ARGS+=--disable-rtcm104v2
+.endif
+
+.if defined(WITHOUT_RTCM104V3)
+CONFIGURE_ARGS+=--disable-rtcm104v3
+.endif
+
+.if defined(WITHOUT_NTRIP)
+CONFIGURE_ARGS+=--disable-ntrip
+.endif
+
+.if defined(WITH_PROFILING)
+CONFIGURE_ARGS+=--enable-profiling
 .endif
 
 .if defined(WITHOUT_NTPSHM)
