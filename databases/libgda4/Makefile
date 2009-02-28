@@ -8,7 +8,7 @@
 
 PORTNAME=	libgda4
 PORTVERSION?=	3.99.12
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/4$//}/${PORTVERSION:R}
@@ -24,7 +24,8 @@ LIBGDA4_SLAVE?=	no
 .if !defined(REFERENCE_PORT)
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-    		soup-2.4.1:${PORTSDIR}/devel/libsoup
+    		soup-2.4.1:${PORTSDIR}/devel/libsoup \
+		json-glib-1.0.0:${PORTSDIR}/devel/json-glib
 
 USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
