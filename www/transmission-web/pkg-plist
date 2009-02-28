@@ -10,9 +10,6 @@
 %%DATADIR%%/web/images/buttons/torrent_buttons.png
 %%DATADIR%%/web/images/favicon.ico
 %%DATADIR%%/web/images/favicon.png
-%%DATADIR%%/web/images/graphics/browser_firefox.gif
-%%DATADIR%%/web/images/graphics/browser_opera.gif
-%%DATADIR%%/web/images/graphics/browser_safari.gif
 %%DATADIR%%/web/images/graphics/chrome.png
 %%DATADIR%%/web/images/graphics/filter_bar.png
 %%DATADIR%%/web/images/graphics/filter_icon.png
@@ -35,6 +32,8 @@
 %%DATADIR%%/web/javascript/transmission.js
 %%DATADIR%%/web/javascript/transmission.remote.js
 %%DATADIR%%/web/stylesheets/common.css
+%%DATADIR%%/web/stylesheets/ie6.css
+%%DATADIR%%/web/stylesheets/ie7.css
 %%DATADIR%%/web/stylesheets/iphone.css
 @dirrm %%DATADIR%%/web/stylesheets
 @dirrm %%DATADIR%%/web/javascript/jquery
