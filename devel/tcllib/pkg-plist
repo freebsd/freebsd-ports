@@ -4,6 +4,10 @@ bin/tcldocstrip
 lib/tcllib/aes/aes.tcl
 lib/tcllib/aes/pkgIndex.tcl
 @dirrm lib/tcllib/aes
+lib/tcllib/amazon-s3/pkgIndex.tcl
+lib/tcllib/amazon-s3/S3.tcl
+lib/tcllib/amazon-s3/xsxp.tcl
+@dirrm lib/tcllib/amazon-s3
 lib/tcllib/asn/asn.tcl
 lib/tcllib/asn/pkgIndex.tcl
 @dirrm lib/tcllib/asn
@@ -191,6 +195,7 @@ lib/tcllib/interp/interp.tcl
 lib/tcllib/interp/pkgIndex.tcl
 @dirrm lib/tcllib/interp
 lib/tcllib/irc/irc.tcl
+lib/tcllib/irc/picoirc.tcl
 lib/tcllib/irc/pkgIndex.tcl
 @dirrm lib/tcllib/irc
 lib/tcllib/javascript/javascript.tcl
@@ -377,6 +382,11 @@ lib/tcllib/sha1/sha1v1.tcl
 lib/tcllib/sha1/sha256.tcl
 lib/tcllib/sha1/sha256c.tcl
 @dirrm lib/tcllib/sha1
+lib/tcllib/simulation/annealing.tcl
+lib/tcllib/simulation/montecarlo.tcl
+lib/tcllib/simulation/pkgIndex.tcl
+lib/tcllib/simulation/random.tcl
+@dirrm lib/tcllib/simulation
 lib/tcllib/smtpd/pkgIndex.tcl
 lib/tcllib/smtpd/smtpd.tcl
 @dirrm lib/tcllib/smtpd
@@ -398,10 +408,17 @@ lib/tcllib/stooop/stooop.tcl
 lib/tcllib/stooop/switched.tcl
 lib/tcllib/stooop/xifo.tcl
 @dirrm lib/tcllib/stooop
+lib/tcllib/stringprep/pkgIndex.tcl
+lib/tcllib/stringprep/stringprep.tcl
+lib/tcllib/stringprep/stringprep_data.tcl
+lib/tcllib/stringprep/unicode.tcl
+lib/tcllib/stringprep/unicode_data.tcl
+@dirrm lib/tcllib/stringprep
+lib/tcllib/struct/disjointset.tcl
 lib/tcllib/struct/graph.tcl
+lib/tcllib/struct/graph1.tcl
 lib/tcllib/struct/graph_c.tcl
 lib/tcllib/struct/graph_tcl.tcl
-lib/tcllib/struct/graph1.tcl
 lib/tcllib/struct/list.tcl
 lib/tcllib/struct/matrix.tcl
 lib/tcllib/struct/matrix1.tcl
@@ -409,12 +426,16 @@ lib/tcllib/struct/pkgIndex.tcl
 lib/tcllib/struct/pool.tcl
 lib/tcllib/struct/prioqueue.tcl
 lib/tcllib/struct/queue.tcl
+lib/tcllib/struct/queue_c.tcl
+lib/tcllib/struct/queue_tcl.tcl
 lib/tcllib/struct/record.tcl
 lib/tcllib/struct/sets.tcl
 lib/tcllib/struct/sets_c.tcl
 lib/tcllib/struct/sets_tcl.tcl
 lib/tcllib/struct/skiplist.tcl
 lib/tcllib/struct/stack.tcl
+lib/tcllib/struct/stack_c.tcl
+lib/tcllib/struct/stack_tcl.tcl
 lib/tcllib/struct/struct.tcl
 lib/tcllib/struct/struct1.tcl
 lib/tcllib/struct/tree.tcl
@@ -497,5 +518,9 @@ lib/tcllib/wip/pkgIndex.tcl
 lib/tcllib/wip/wip.tcl
 lib/tcllib/wip/wip2.tcl
 @dirrm lib/tcllib/wip
+lib/tcllib/yaml/huddle.tcl
+lib/tcllib/yaml/pkgIndex.tcl
+lib/tcllib/yaml/yaml.tcl
+@dirrm lib/tcllib/yaml
 lib/tcllib/pkgIndex.tcl
 @dirrm lib/tcllib
