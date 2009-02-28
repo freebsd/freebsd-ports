@@ -32,6 +32,8 @@
 %%PYTHON_SITELIBDIR%%/sabnzbd/articlecache.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/downloader.py
 bin/SABnzbd.py
+%%DATADIR%%/interfaces/Plush/licenses/LICENSE-WebToolkit.txt
+%%DATADIR%%/interfaces/Plush/licenses/LICENSE-GPL3.txt
 %%DATADIR%%/interfaces/Plush/licenses/LICENSE-LGPL.txt
 %%DATADIR%%/interfaces/Plush/licenses/LICENSE-MIT.txt
 %%DATADIR%%/interfaces/Plush/licenses/LICENSE-GPL.txt
