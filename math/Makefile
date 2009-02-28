@@ -452,7 +452,6 @@
     SUBDIR += sedumi
     SUBDIR += simd-viterbi
     SUBDIR += slgrace
-    SUBDIR += slsc
     SUBDIR += snns
     SUBDIR += solitaire
     SUBDIR += spar
