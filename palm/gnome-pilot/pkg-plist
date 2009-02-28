@@ -40,7 +40,6 @@ libdata/bonobo/servers/GNOME_Pilot_Daemon.server
 libdata/pkgconfig/gnome-pilot-2.0.pc
 libexec/gpilot-applet
 libexec/gpilotd
-share/applications/gpilot-applet.desktop
 share/applications/gpilotd-control-applet.desktop
 share/gnome-pilot/conduits/backup.conduit
 share/gnome-pilot/conduits/file.conduit
