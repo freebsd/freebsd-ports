@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/dvdrip
 bin/dvdrip-exec
 bin/dvdrip-master
@@ -9,6 +10,7 @@ bin/dvdrip-splitpipe
 bin/dvdrip-subpng
 bin/dvdrip-thumb
 %%SITE_PERL%%/LocaleData/cs/LC_MESSAGES/video.dvdrip.mo
+%%SITE_PERL%%/LocaleData/da/LC_MESSAGES/video.dvdrip.mo
 %%SITE_PERL%%/LocaleData/de/LC_MESSAGES/video.dvdrip.mo
 %%SITE_PERL%%/LocaleData/es/LC_MESSAGES/video.dvdrip.mo
 %%SITE_PERL%%/LocaleData/fr/LC_MESSAGES/video.dvdrip.mo
@@ -84,6 +86,7 @@ bin/dvdrip-thumb
 %%SITE_PERL%%/Video/DVDRip/icon.xpm
 %%SITE_PERL%%/Video/DVDRip/license.txt
 %%SITE_PERL%%/Video/DVDRip/splash.ca.png
+%%SITE_PERL%%/Video/DVDRip/splash.da.png
 %%SITE_PERL%%/Video/DVDRip/splash.de.png
 %%SITE_PERL%%/Video/DVDRip/splash.en.png
 %%SITE_PERL%%/Video/DVDRip/splash.es.png
@@ -116,6 +119,8 @@ bin/dvdrip-thumb
 @dirrmtry %%SITE_PERL%%/LocaleData/es
 @dirrmtry %%SITE_PERL%%/LocaleData/de/LC_MESSAGES
 @dirrmtry %%SITE_PERL%%/LocaleData/de
+@dirrmtry %%SITE_PERL%%/LocaleData/da/LC_MESSAGES
+@dirrmtry %%SITE_PERL%%/LocaleData/da
 @dirrmtry %%SITE_PERL%%/LocaleData/cs/LC_MESSAGES
 @dirrmtry %%SITE_PERL%%/LocaleData/cs
 @dirrmtry %%SITE_PERL%%/LocaleData
