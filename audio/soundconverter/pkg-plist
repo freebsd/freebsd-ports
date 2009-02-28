@@ -1,15 +1,19 @@
 bin/soundconverter
 lib/locale/ar/LC_MESSAGES/soundconverter.mo
+lib/locale/br/LC_MESSAGES/soundconverter.mo
 lib/locale/ca/LC_MESSAGES/soundconverter.mo
 lib/locale/cs/LC_MESSAGES/soundconverter.mo
 lib/locale/de/LC_MESSAGES/soundconverter.mo
+lib/locale/el/LC_MESSAGES/soundconverter.mo
 lib/locale/en_GB/LC_MESSAGES/soundconverter.mo
 lib/locale/eo/LC_MESSAGES/soundconverter.mo
 lib/locale/es/LC_MESSAGES/soundconverter.mo
 lib/locale/eu/LC_MESSAGES/soundconverter.mo
 lib/locale/fa/LC_MESSAGES/soundconverter.mo
+lib/locale/fi/LC_MESSAGES/soundconverter.mo
 lib/locale/fr/LC_MESSAGES/soundconverter.mo
 lib/locale/he/LC_MESSAGES/soundconverter.mo
+lib/locale/hi/LC_MESSAGES/soundconverter.mo
 lib/locale/hu/LC_MESSAGES/soundconverter.mo
 lib/locale/it/LC_MESSAGES/soundconverter.mo
 lib/locale/ms/LC_MESSAGES/soundconverter.mo
@@ -19,9 +23,10 @@ lib/locale/pt_BR/LC_MESSAGES/soundconverter.mo
 lib/locale/ru/LC_MESSAGES/soundconverter.mo
 lib/locale/sk/LC_MESSAGES/soundconverter.mo
 lib/locale/sr/LC_MESSAGES/soundconverter.mo
-lib/locale/sr@Latn/LC_MESSAGES/soundconverter.mo
+lib/locale/sr@latin/LC_MESSAGES/soundconverter.mo
 lib/locale/sv/LC_MESSAGES/soundconverter.mo
-lib/locale/sv_SE/LC_MESSAGES/soundconverter.mo
+lib/locale/te/LC_MESSAGES/soundconverter.mo
+lib/locale/tr/LC_MESSAGES/soundconverter.mo
 lib/locale/zh_CN/LC_MESSAGES/soundconverter.mo
 share/applications/soundconverter.desktop
 share/icons/hicolor/48x48/apps/soundconverter.png
@@ -38,12 +43,16 @@ share/icons/hicolor/scalable/apps/soundconverter.svg
 @dirrmtry share/applications
 @dirrmtry lib/locale/zh_CN/LC_MESSAGES
 @dirrmtry lib/locale/zh_CN
+@dirrmtry lib/locale/tr/LC_MESSAGES
+@dirrmtry lib/locale/tr
+@dirrmtry lib/locale/te/LC_MESSAGES
+@dirrmtry lib/locale/te
 @dirrmtry lib/locale/sv_SE/LC_MESSAGES
 @dirrmtry lib/locale/sv_SE
 @dirrmtry lib/locale/sv/LC_MESSAGES
 @dirrmtry lib/locale/sv
-@dirrmtry lib/locale/sr@Latn/LC_MESSAGES
-@dirrmtry lib/locale/sr@Latn
+@dirrmtry lib/locale/sr@latin/LC_MESSAGES
+@dirrmtry lib/locale/sr@latin
 @dirrmtry lib/locale/sr/LC_MESSAGES
 @dirrmtry lib/locale/sr
 @dirrmtry lib/locale/sk/LC_MESSAGES
@@ -62,10 +71,14 @@ share/icons/hicolor/scalable/apps/soundconverter.svg
 @dirrmtry lib/locale/it
 @dirrmtry lib/locale/hu/LC_MESSAGES
 @dirrmtry lib/locale/hu
+@dirrmtry lib/locale/hi/LC_MESSAGES
+@dirrmtry lib/locale/hi
 @dirrmtry lib/locale/he/LC_MESSAGES
 @dirrmtry lib/locale/he
 @dirrmtry lib/locale/fr/LC_MESSAGES
 @dirrmtry lib/locale/fr
+@dirrmtry lib/locale/fi/LC_MESSAGES
+@dirrmtry lib/locale/fi
 @dirrmtry lib/locale/fa/LC_MESSAGES
 @dirrmtry lib/locale/fa
 @dirrmtry lib/locale/eu/LC_MESSAGES
@@ -76,12 +89,16 @@ share/icons/hicolor/scalable/apps/soundconverter.svg
 @dirrmtry lib/locale/eo
 @dirrmtry lib/locale/en_GB/LC_MESSAGES
 @dirrmtry lib/locale/en_GB
+@dirrmtry lib/locale/el/LC_MESSAGES
+@dirrmtry lib/locale/el
 @dirrmtry lib/locale/de/LC_MESSAGES
 @dirrmtry lib/locale/de
 @dirrmtry lib/locale/cs/LC_MESSAGES
 @dirrmtry lib/locale/cs
 @dirrmtry lib/locale/ca/LC_MESSAGES
 @dirrmtry lib/locale/ca
+@dirrmtry lib/locale/br/LC_MESSAGES
+@dirrmtry lib/locale/br
 @dirrmtry lib/locale/ar/LC_MESSAGES
 @dirrmtry lib/locale/ar
 @dirrmtry lib/locale
