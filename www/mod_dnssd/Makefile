@@ -22,6 +22,7 @@ USE_APACHE=	2.2+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-lynx
 
 post-install:
 .if !defined(NOPORTDOCS)
