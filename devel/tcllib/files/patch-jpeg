@@ -1,0 +1,9 @@
+--- modules/jpeg/jpeg.tcl	2008-10-17 01:14:26.000000000 -0400
++++ modules/jpeg/jpeg.tcl	2009-02-27 15:45:23.000000000 -0500
+@@ -52,5 +52,5 @@
+ 
+ proc ::jpeg::imageInfo {file} {
+-    set fh [openJFIF $file r+]
++    set fh [openJFIF $file r]
+     set data {}
+     if {[set app0 [lsearch -inline [markers $fh] "e0 *"]] != ""} {
