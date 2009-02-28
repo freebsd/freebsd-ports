@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.cacti.net/downloads/${PORTNAME}/
 DISTNAME=	cacti-${PORTNAME}-0.8.7a
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	skreuzer@exit2shell.com
 COMMENT=	A multithreaded poller for Cacti written in C
 
 LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
