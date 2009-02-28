@@ -941,8 +941,8 @@ biabam                          ports/mail/biabam
 bib2html                        ports/textproc/bib2html
 bibcursed                       ports/print/bibcursed
 bibelot                         ports/palm/bibelot
-bibletime                       ports/misc/bibletime
-bibletime-devel                 ports/misc/bibletime-devel
+bibletime-kde3                  ports/misc/bibletime-kde3
+bibletime-kde4                  ports/misc/bibletime-kde4
 biblical-curse                  ports/misc/biblical-curse
 bibtex2html                     ports/textproc/bibtex2html
 bibtool                         ports/textproc/bibtool
@@ -2881,6 +2881,7 @@ es-ispell                       ports/textproc/es-ispell
 esdl                            ports/devel/esdl
 esh                             ports/shells/esh
 esmart                          ports/graphics/esmart
+esmska                          ports/comms/esmska
 esmtp                           ports/mail/esmtp
 esniper                         ports/misc/esniper
 esound                          ports/audio/esound
@@ -7429,6 +7430,11 @@ libpreludedb                    ports/security/libpreludedb
 libpri                          ports/misc/libpri
 libpri-bristuff                 ports/misc/libpri-bristuff
 libproplist                     ports/devel/libPropList
+libproxy                        ports/net/libproxy
+libproxy-gnome                  ports/net/libproxy-gnome
+libproxy-kde                    ports/net/libproxy-kde
+libproxy-mozjs                  ports/net/libproxy-mozjs
+libproxy-webkit                 ports/net/libproxy-webkit
 libpst                          ports/mail/libpst
 libpthread-stubs                ports/devel/libpthread-stubs
 libpurple                       ports/net-im/libpurple
@@ -12522,6 +12528,7 @@ p5-Test-Inline                  ports/devel/p5-Test-Inline
 p5-Test-JSON                    ports/devel/p5-Test-JSON
 p5-Test-Kwalitee                ports/devel/p5-Test-Kwalitee
 p5-Test-LectroTest              ports/devel/p5-Test-LectroTest
+p5-Test-LoadAllModules          ports/devel/p5-Test-LoadAllModules
 p5-Test-Log4perl                ports/devel/p5-Test-Log4perl
 p5-Test-LongString              ports/devel/p5-Test-LongString
 p5-Test-Manifest                ports/devel/p5-Test-Manifest
@@ -15871,6 +15878,7 @@ p5-test-inline                  ports/devel/p5-Test-Inline
 p5-test-json                    ports/devel/p5-Test-JSON
 p5-test-kwalitee                ports/devel/p5-Test-Kwalitee
 p5-test-lectrotest              ports/devel/p5-Test-LectroTest
+p5-test-loadallmodules          ports/devel/p5-Test-LoadAllModules
 p5-test-log4perl                ports/devel/p5-Test-Log4perl
 p5-test-longstring              ports/devel/p5-Test-LongString
 p5-test-manifest                ports/devel/p5-Test-Manifest
@@ -19822,6 +19830,7 @@ rubygem-fattr                   ports/devel/rubygem-fattr
 rubygem-ferret                  ports/textproc/rubygem-ferret
 rubygem-formosa                 ports/textproc/rubygem-formosa
 rubygem-gd2                     ports/graphics/rubygem-gd2
+rubygem-gdata                   ports/devel/rubygem-gdata
 rubygem-gem_plugin              ports/devel/rubygem-gem_plugin
 rubygem-git                     ports/devel/rubygem-git
 rubygem-god                     ports/sysutils/rubygem-god
