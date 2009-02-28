@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	fbreader
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 DISTVERSIONPREFIX=	sources-
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.fbreader.org/ CENKES
+MASTER_SITES=	http://www.fbreader.org/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	yuri.pankov@gmail.com
