@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+bin/oak-apply-ri
+bin/oak-block-account
+bin/oak-kill-slow-queries
+bin/oak-modify-charset
+bin/oak-purge-master-logs
+bin/oak-security-audit
+bin/oak-show-limits
+bin/oak-show-replication-status
