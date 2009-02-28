@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome-pilot
-PORTVERSION=	2.0.16
+PORTVERSION=	2.0.17
 CATEGORIES=	palm comms gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
