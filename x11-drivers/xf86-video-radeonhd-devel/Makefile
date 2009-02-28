@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xf86-video-radeonhd
-PORTVERSION=	1.2.3.20081114
-PORTREVISION=	1
+PORTVERSION=	1.2.4.20090301
+PORTREVISION=	0
 CATEGORIES=	x11-drivers
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nork
@@ -16,7 +16,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	X.Org ati RadeonHD display driver development version
 
-BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/xorg-macros.m4:${PORTSDIR}/devel/xorg-macros
+BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/xorg-macros.m4:${PORTSDIR}/devel/xorg-macros \
+		${LOCALBASE}/libdata/pkgconfig/gl.pc:${PORTSDIR}/graphics/libGL
 
 .if !exists(${LOCALBASE}/lib/libpci.so.2)
 OPTIONS=	UTILS "Install rhd_conntest and rhd_dump utilities" off
@@ -32,8 +33,6 @@ CONFLICTS=	xf86-video-radeonhd-[0-9]* xf86-video-ati-[0-9]*
 
 MAN4=		radeonhd.4x
 
-# EXA is usable rather than XAA.  DRI is not usable in this time.
-CONFIGURE_ARGS=	--enable-exa --disable-dri
 ACLOCAL_ARGS=	--acdir=${LOCALBASE}/share/aclocal
 
 pre-configure:
