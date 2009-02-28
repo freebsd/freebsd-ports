@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	dvdrip
-PORTVERSION=	0.98.8
-PORTREVISION=	1
+PORTVERSION=	0.98.10
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/ \
 		CPAN
+MASTER_SITE_SUBDIR=	../by-authors/id/J/JR/JRED
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Perl Gtk+ based dvd-ripper
