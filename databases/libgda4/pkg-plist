@@ -66,7 +66,6 @@ include/libgda-%%VERSION%%/libgda/gda-server-provider.h
 include/libgda-%%VERSION%%/libgda/gda-set.h
 include/libgda-%%VERSION%%/libgda/gda-statement-extra.h
 include/libgda-%%VERSION%%/libgda/gda-statement.h
-include/libgda-%%VERSION%%/libgda/gda-threader.h
 include/libgda-%%VERSION%%/libgda/gda-transaction-status-private.h
 include/libgda-%%VERSION%%/libgda/gda-transaction-status.h
 include/libgda-%%VERSION%%/libgda/gda-util.h
