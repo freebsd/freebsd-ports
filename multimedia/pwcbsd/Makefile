@@ -27,6 +27,10 @@ OPTIONS=	PROGRAMS	"Build the programs"			on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 800063
+BROKEN=		Does not build with USB2
+.endif
+
 .if !exists(/usr/src/sys/Makefile)
 IGNORE=		requires kernel source files
 .endif
