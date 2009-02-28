@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	brooks
 MAINTAINER=	nick@foobar.org
 COMMENT=	Textile markup module for Drupal
 
+DEPRECATED=	Drupal 4.7.x is end-of-life since 200802.  Please migrate to Drupal 6.x
+EXPIRATION_DATE=2009-03-26
+
 DRUPAL4_MODULE=	yes
 MODULE_DIRS=	textilephp
 MODULE_FILES=	textile.module textilephp/Textile.php DrupalTextile.inc
