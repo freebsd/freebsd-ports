@@ -21,7 +21,7 @@ rcvar=`set_rcvar`
 # set defaults
 
 : ${dkimproxy_in_enable="NO"}
-: ${dkimproxy_in_flags="127.0.0.1:10025 127.0.0.1:10026"}
+: ${dkimproxy_in_flags="--conf_file=/usr/local/etc/dkimproxy_in.conf"}
 : ${dkimproxy_in_pidfile="/var/run/dkimproxy_in.pid"}
 : ${dkimproxy_in_user="dkimproxy"}
 
