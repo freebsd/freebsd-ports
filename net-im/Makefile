@@ -26,6 +26,7 @@
     SUBDIR += etoile-stepchat
     SUBDIR += etoile-xmppkit
     SUBDIR += eva
+    SUBDIR += farsight2
     SUBDIR += finch
     SUBDIR += firetalk
     SUBDIR += fugu
