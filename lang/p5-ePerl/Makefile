@@ -12,17 +12,11 @@ MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	tool/${PORTNAME}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flo@kasimir.com
 COMMENT=	Perl Modules of ePerl package: Parse::ePerl, Apache::ePerl
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Parse::ePerl.3 Apache::ePerl.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800058 || (${OSVERSION} >= 701101 && ${OSVERSION} < 800000)
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
