@@ -7,7 +7,7 @@
 
 PORTNAME=	mkhexgrid
 PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.nomic.net/~uckelman/mkhexgrid/releases/ \
 		http://aaron.daltons.ca/freebsd/
@@ -24,18 +24,12 @@ USE_GMAKE=	yes
 PORTDOCS=	mkhexgrid.html
 PLIST_FILES=	bin/mkhexgrid
 
-post-patch:
-	@${REINPLACE_CMD} -e 's:^LDFLAGS=:LDFLAGS=-L${LOCALBASE}/lib :' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's:^CPPFLAGS=:CPPFLAGS=-I${LOCALBASE}/include :' ${WRKSRC}/Makefile
-
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mkhexgrid ${PREFIX}/bin
-
-post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/mkhexgrid.html ${DOCSDIR}
-	@${ECHO} "Documentation has been installed in ${DOCSDIR}."
+	@${ECHO} "Documentation has been installed into ${DOCSDIR}."
 .endif
 
 .include <bsd.port.mk>
