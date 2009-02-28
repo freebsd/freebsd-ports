@@ -48,7 +48,7 @@ CONFIGURE_ARGS=	--with-frontend=qt4 \
 		--with-extra-prefix=${LOCALBASE}
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
-ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
+#ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
 MAN1=		lyx.1 tex2lyx.1 lyxclient.1
 
