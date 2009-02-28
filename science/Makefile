@@ -101,6 +101,7 @@
     SUBDIR += pcp
     SUBDIR += pnetcdf
     SUBDIR += psi3
+    SUBDIR += psychopy
     SUBDIR += py-hcluster
     SUBDIR += py-mdp
     SUBDIR += py-netCDF4
