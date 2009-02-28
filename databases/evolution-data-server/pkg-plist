@@ -554,6 +554,7 @@ share/doc/camel/camel-camel-net-utils.html
 share/doc/camel/camel-camel-operation.html
 share/doc/camel/camel-camel-process.html
 share/doc/camel/camel-camel-provider.html
+share/doc/camel/camel-camel-search-sql-sexp.html
 share/doc/camel/camel-camel-search-sql.html
 share/doc/camel/camel-camel-string-utils.html
 share/doc/camel/camel-camel-trie.html
