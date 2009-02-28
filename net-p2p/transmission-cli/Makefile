@@ -7,7 +7,7 @@
 
 PORTNAME=	transmission
 PORTVERSION=	1.51
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
 PKGNAMESUFFIX?=	-cli
@@ -20,7 +20,7 @@ SLAVEPORT?=
 LIB_DEPENDS?=	${GEN_LIB_DEPENDS}
 
 # General dependencies
-GEN_LIB_DEPENDS=curl.4:${PORTSDIR}/ftp/curl
+GEN_LIB_DEPENDS=curl.5:${PORTSDIR}/ftp/curl
 GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/transmission-web
 
 USE_GNOME?=	pkgconfig
