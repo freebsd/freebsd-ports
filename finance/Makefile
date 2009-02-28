@@ -26,6 +26,7 @@
     SUBDIR += libstocks
     SUBDIR += mybudget
     SUBDIR += myphpmoney
+    SUBDIR += openerp-server
     SUBDIR += openhbci
     SUBDIR += opentaxsolver
     SUBDIR += p5-Business-CreditCard
