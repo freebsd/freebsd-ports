@@ -1,0 +1,40 @@
+bin/stunbdc
+bin/stund
+include/nice/address.h
+include/nice/agent.h
+include/nice/candidate.h
+include/nice/debug.h
+include/nice/nice.h
+include/nice/pseudossl.h
+include/nice/socket.h
+include/nice/socks5.h
+include/nice/tcp-bsd.h
+include/nice/tcp-turn.h
+include/nice/turn.h
+include/nice/udp-bsd.h
+lib/gstreamer-0.10/libgstnice.a
+lib/gstreamer-0.10/libgstnice.la
+lib/gstreamer-0.10/libgstnice.so
+lib/libnice.a
+lib/libnice.la
+lib/libnice.so
+lib/libnice.so.0
+libdata/pkgconfig/nice.pc
+share/gtk-doc/html/libnice/ch01.html
+share/gtk-doc/html/libnice/home.png
+share/gtk-doc/html/libnice/index.html
+share/gtk-doc/html/libnice/index.sgml
+share/gtk-doc/html/libnice/left.png
+share/gtk-doc/html/libnice/libnice-Debug-messages.html
+share/gtk-doc/html/libnice/libnice-NiceAddress.html
+share/gtk-doc/html/libnice/libnice-NiceAgent.html
+share/gtk-doc/html/libnice/libnice-NiceCandidate.html
+share/gtk-doc/html/libnice/libnice.devhelp
+share/gtk-doc/html/libnice/libnice.devhelp2
+share/gtk-doc/html/libnice/right.png
+share/gtk-doc/html/libnice/style.css
+share/gtk-doc/html/libnice/up.png
+@dirrm share/gtk-doc/html/libnice
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+@dirrm include/nice

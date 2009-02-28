@@ -69,6 +69,7 @@
     SUBDIR += libicq2000
     SUBDIR += libjingle
     SUBDIR += libmsn
+    SUBDIR += libnice
     SUBDIR += libpurple
     SUBDIR += libtelepathy
     SUBDIR += libyahoo2
