@@ -18,10 +18,7 @@ COMMENT=	Read CD digital audio and video data via the SCSI bus
 MAN1=		pcmfade.1 pcmplay.1 tosha.1
 MANCOMPRESSED=	yes
 
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/tosha bin/pcmplay \
+		bin/pcmfade etc/tosharc
 
-.if ${OSVERSION} >= 800058 || (${OSVERSION} >= 701101 && ${OSVERSION} < 800000)
-BROKEN=	does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
