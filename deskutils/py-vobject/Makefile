@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vobject
-PORTVERSION=	0.8.1b
+PORTVERSION=	0.8.1c
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://vobject.skyhouseconsulting.com/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
