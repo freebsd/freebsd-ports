@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Storable-AMF
-PORTVERSION=	0.49
+PORTVERSION=	0.52
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vovkasm@gmail.com
 COMMENT=	Perl extension for serialize/deserialize AMF0/AMF3 data
 
-USE_PERL=	5.8.0+
-
-PERL_CONFIGURE=	yes
+USE_PERL5=	5.8.0+
+PERL_MODBUILD=	0.21+
 
 MAN3=	Storable::AMF.3 \
 	Storable::AMF0.3 \
