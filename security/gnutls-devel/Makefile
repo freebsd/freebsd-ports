@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	2.7.5
+PORTVERSION=	2.7.6
 CATEGORIES=	security net
 MASTER_SITES=	http://alpha.gnu.org/gnu/gnutls/
 PKGNAMESUFFIX=	-devel
@@ -69,6 +69,8 @@ EXAMPLES=	doc/examples/*.c
 pre-configure:
 	@${REINPLACE_CMD} -e 's,(libdir)/pkgconfig,(prefix)/libdata/pkgconfig,' \
 		${WRKSRC}/lib/Makefile.in ${WRKSRC}/libextra/Makefile.in
+	@${REINPLACE_CMD} -e 's,(top_builddir)$$,(top_builddir) -I$$(top_builddir)/lib/includes -I$$(top_builddir)/libextra/includes,' \
+		${WRKSRC}/doc/Makefile.in
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
