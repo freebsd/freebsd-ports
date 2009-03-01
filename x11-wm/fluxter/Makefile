@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	fluxter
-PORTVERSION=	0.1.0
-PORTREVISION=	4
+PORTVERSION=	0.2.0
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://benedict.isomedia.com/homes/stevencooper/files/
+MASTER_SITES=	http://www.hydrus.org.uk/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop pager for the Fluxbox Slit
