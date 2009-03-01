@@ -22,14 +22,10 @@ COMMENT=	A text converter from plain to any format
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}p${PORTVERSION:E}.orig
 BUILD_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}p${PORTVERSION:E}.orig/src
 
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DBSD -DKANJI -DPICTURE -DHTML -fwritable-strings"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DBSD -DKANJI -DPICTURE -DHTML"
 ALL_TARGET=	${PORTNAME}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
