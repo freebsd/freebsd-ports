@@ -1689,6 +1689,7 @@
     SUBDIR += p5-RunApp
     SUBDIR += p5-SDL
     SUBDIR += p5-SNMP-Persist
+    SUBDIR += p5-SOAP-WSDL
     SUBDIR += p5-SPOPS
     SUBDIR += p5-SSN-Validate
     SUBDIR += p5-SVN-ACL
