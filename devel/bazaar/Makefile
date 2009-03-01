@@ -7,7 +7,7 @@
 
 PORTNAME=	bazaar
 PORTVERSION=	1.4.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar-vcs.org/releases/src/obsolete/
 DISTNAME=	bazaar_${PORTVERSION}
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
 		gdiff:${PORTSDIR}/textproc/diffutils \
 		gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS=	${BUILD_DEPENDS}
-LIB_DEPENDS=	neon.26:${PORTSDIR}/www/neon26 \
+LIB_DEPENDS=	neon.28:${PORTSDIR}/www/neon28 \
 		gpgme.17:${PORTSDIR}/security/gpgme
 
 USE_GMAKE=	yes
