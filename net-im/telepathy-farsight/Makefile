@@ -7,6 +7,7 @@
 
 PORTNAME=	telepathy-farsight
 PORTVERSION=	0.0.4
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -25,6 +26,7 @@ RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack pkgconfig glib20
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
