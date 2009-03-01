@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	pvpgn
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	pvpgn
-DISTFILES=	${EXTRACT_ONLY} pvpgn-support-1.0.tar.gz
+DISTFILES=	${EXTRACT_ONLY} pvpgn-support-1.2.tar.gz
 DIST_SUBDIR=	pvpgn
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -75,7 +75,7 @@ PLIST_SUB+=	WITH_D2=""
 ## support files
 
 SUPPORT_SUFFX=	.tar.gz
-SUPPORT_FILES=	pvpgn-support-1.0
+SUPPORT_FILES=	pvpgn-support-1.2
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/${SUPPORT_FILES}
@@ -87,10 +87,10 @@ post-build:
 
 post-install:
 	@${ECHO_MSG} ">>>   installing support files ..."
-.for i in IX86ver1.mpq PMACver1.mpq WAR3IX86.mpq XMACver1.mpq \
-		bnserver-D2DV.ini bnserver-D2XP.ini bnserver-WAR3.ini bnserver.ini \
-		icons-WAR3.bni icons.bni icons_STAR.bni matchmaking-war3-default.dat \
-		matchmaking-war3-enUS.dat
+.for i in IX86ver1.mpq PMACver1.mpq XMACver1.mpq bnserver-D2DV.ini \
+	bnserver-D2XP.ini bnserver-WAR3.ini bnserver.ini icons-WAR3.bni \
+	icons.bni icons_STAR.bni ver-ix86-1.mpq
+
 	${INSTALL_DATA} ${WRKSRC}/${SUPPORT_FILES}/${i} ${DATADIR}/files
 .endfor
 
