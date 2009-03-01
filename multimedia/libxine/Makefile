@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.1.16.2
+PORTREVISION=	1
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	lib
@@ -50,7 +51,8 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-force-addr -I${LOCALBASE}/include -I${LOCA
 		EXTRA_X_LIBS="-lGL -lGLU -lXext -lX11 -lm"
 CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 --enable-ipv6 \
 		--with-external-libmad \
-		--with-external-libdts --with-libflac --disable-v4l
+		--with-external-libdts --with-libflac --disable-v4l \
+		--with-external-ffmpeg=no
 
 OPTIONS=	ARTS "Enable aRts support" off \
 		CACA "Enable libcaca support" off \
