@@ -1,0 +1,37 @@
+@comment $FreeBSD$
+%%FONTDIR%%/License.txt
+%%FONTDIR%%/Readme.txt
+%%FONTDIR%%/STIXGeneral.otf
+%%FONTDIR%%/STIXGeneralBol.otf
+%%FONTDIR%%/STIXGeneralBolIta.otf
+%%FONTDIR%%/STIXGeneralItalic.otf
+%%FONTDIR%%/STIXIntDis.otf
+%%FONTDIR%%/STIXIntDisBol.otf
+%%FONTDIR%%/STIXIntSma.otf
+%%FONTDIR%%/STIXIntSmaBol.otf
+%%FONTDIR%%/STIXIntUp.otf
+%%FONTDIR%%/STIXIntUpBol.otf
+%%FONTDIR%%/STIXIntUpDis.otf
+%%FONTDIR%%/STIXIntUpDisBol.otf
+%%FONTDIR%%/STIXIntUpSma.otf
+%%FONTDIR%%/STIXIntUpSmaBol.otf
+%%FONTDIR%%/STIXNonUni.otf
+%%FONTDIR%%/STIXNonUniBol.otf
+%%FONTDIR%%/STIXNonUniBolIta.otf
+%%FONTDIR%%/STIXNonUniIta.otf
+%%FONTDIR%%/STIXSiz1Sym.otf
+%%FONTDIR%%/STIXSiz1SymBol.otf
+%%FONTDIR%%/STIXSiz2Sym.otf
+%%FONTDIR%%/STIXSiz2SymBol.otf
+%%FONTDIR%%/STIXSiz3Sym.otf
+%%FONTDIR%%/STIXSiz3SymBol.otf
+%%FONTDIR%%/STIXSiz4Sym.otf
+%%FONTDIR%%/STIXSiz4SymBol.otf
+%%FONTDIR%%/STIXSiz5Sym.otf
+%%FONTDIR%%/STIXVar.otf
+%%FONTDIR%%/STIXVarBol.otf
+%%FONTDIR%%/fonts.dir
+%%FONTDIR%%/fonts.scale
+@exec %%FCCACHE%% %D/%%FONTDIR%% 2>/dev/null || true
+@unexec rm %D/%%FONTDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
+@dirrm %%FONTDIR%%
