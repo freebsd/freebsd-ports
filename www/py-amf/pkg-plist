@@ -40,6 +40,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters.PackageImporter-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._decimal-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._decimal-pysrc.html
+%%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._django_db_models_base-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._django_db_models_base-pysrc.html
+%%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._django_db_models_base.DjangoClassAlias-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._django_db_models_fields-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._django_db_models_fields-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._django_db_models_query-module.html
@@ -47,6 +50,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._google_appengine_ext_db-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._google_appengine_ext_db-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._google_appengine_ext_db.DataStoreClassAlias-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._google_appengine_ext_db.GAEReferenceCollection-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._google_appengine_ext_db.ModelStub-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._sets-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._sets-pysrc.html
@@ -165,6 +169,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/toc-pyamf-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/toc-pyamf.adapters-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/toc-pyamf.adapters._decimal-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/toc-pyamf.adapters._django_db_models_base-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/toc-pyamf.adapters._django_db_models_fields-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/toc-pyamf.adapters._django_db_models_query-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/toc-pyamf.adapters._google_appengine_ext_db-module.html
@@ -196,6 +201,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_pyamf_ad_2.gif
 %%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_pyamf_ad_3.gif
 %%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_pyamf_ad_4.gif
+%%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_pyamf_ad_5.gif
+%%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_pyamf_ad_6.gif
 %%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_pyamf_am.gif
 %%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_pyamf_am_10.gif
 %%PORTDOCS%%%%DOCSDIR%%/api/uml_class_diagram_for_pyamf_am_11.gif
