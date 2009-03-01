@@ -3108,6 +3108,7 @@ farblazer                       ports/games/farblazer
 farbot                          ports/sysutils/farbot
 fargoal                         ports/games/fargoal
 farsifonts                      ports/x11-fonts/farsifonts
+farsight2                       ports/net-im/farsight2
 fasm                            ports/lang/fasm
 fasta                           ports/biology/fasta
 fasta3                          ports/biology/fasta3
@@ -7180,6 +7181,7 @@ libgda3-odbc                    ports/databases/libgda3-odbc
 libgda3-postgresql              ports/databases/libgda3-postgresql
 libgda3-reference               ports/databases/libgda3-reference
 libgda4                         ports/databases/libgda4
+libgda4-bdb                     ports/databases/libgda4-bdb
 libgda4-mdb                     ports/databases/libgda4-mdb
 libgda4-mysql                   ports/databases/libgda4-mysql
 libgda4-postgresql              ports/databases/libgda4-postgresql
@@ -7354,6 +7356,7 @@ libnet10                        ports/net/libnet10
 libnetdude                      ports/net/libnetdude
 libneural                       ports/math/libneural
 libnewmail                      ports/mail/libnewmail
+libnice                         ports/net-im/libnice
 libnids                         ports/net/libnids
 libnjb                          ports/audio/libnjb
 libnoise                        ports/audio/libnoise
@@ -8516,6 +8519,7 @@ mod_curb                        ports/www/mod_curb
 mod_cvs                         ports/www/mod_cvs
 mod_cvs2                        ports/www/mod_cvs2
 mod_dav                         ports/www/mod_dav
+mod_dnssd                       ports/www/mod_dnssd
 mod_domaintree                  ports/www/mod_domaintree
 mod_dtcl                        ports/www/mod_dtcl
 mod_encoding                    ports/www/mod_encoding
@@ -9557,6 +9561,7 @@ openal-soft                     ports/audio/openal-soft
 openalchemist                   ports/games/openalchemist
 openam                          ports/net/openam
 openarena                       ports/games/openarena
+openark-kit                     ports/databases/openark-kit
 openastromenace                 ports/games/openastromenace
 openbabel                       ports/science/openbabel
 openbase-jdbc                   ports/databases/openbase-jdbc
@@ -9581,6 +9586,7 @@ opendd                          ports/dns/opendd
 opendis                         ports/graphics/opendis
 opendx                          ports/graphics/opendx
 opendylan                       ports/lang/opendylan
+openerp-server                  ports/finance/openerp-server
 openexr                         ports/graphics/OpenEXR
 openexr_ctl                     ports/graphics/openexr_ctl
 openfire                        ports/net-im/openfire
@@ -10346,6 +10352,7 @@ p5-Class-Singleton              ports/devel/p5-Class-Singleton
 p5-Class-Spiffy                 ports/devel/p5-Class-Spiffy
 p5-Class-StateMachine           ports/devel/p5-Class-StateMachine
 p5-Class-Std                    ports/devel/p5-Class-Std
+p5-Class-Std-Fast               ports/devel/p5-Class-Std-Fast
 p5-Class-StrongSingleton        ports/devel/p5-Class-StrongSingleton
 p5-Class-Tangram                ports/devel/p5-Class-Tangram
 p5-Class-Throwable              ports/devel/p5-Class-Throwable
@@ -13630,6 +13637,7 @@ p5-class-singleton              ports/devel/p5-Class-Singleton
 p5-class-spiffy                 ports/devel/p5-Class-Spiffy
 p5-class-statemachine           ports/devel/p5-Class-StateMachine
 p5-class-std                    ports/devel/p5-Class-Std
+p5-class-std-fast               ports/devel/p5-Class-Std-Fast
 p5-class-stl-containers         ports/devel/p5-Class-STL-Containers
 p5-class-strongsingleton        ports/devel/p5-Class-StrongSingleton
 p5-class-tangram                ports/devel/p5-Class-Tangram
@@ -18059,6 +18067,7 @@ psutils-a4                      ports/print/psutils-a4
 psutils-letter                  ports/print/psutils-letter
 psvn                            ports/devel/psvn
 psybnc                          ports/irc/psybnc
+psychopy                        ports/science/psychopy
 pt-acroread8                    ports/portuguese/acroread8
 pt-aspell-pt_BR                 ports/portuguese/aspell-pt_BR
 pt-aspell-pt_PT                 ports/portuguese/aspell-pt_PT
@@ -18169,7 +18178,10 @@ py-PyX                          ports/graphics/py-PyX
 py-RPyC                         ports/devel/py-RPyC
 py-SQLDict                      ports/databases/py-SQLDict
 py-SciParam                     ports/x11-toolkits/py-SciParam
+py-Tempita                      ports/textproc/py-Tempita
 py-TurboJinja                   ports/devel/py-TurboJinja
+py-WebError                     ports/www/py-WebError
+py-WebTest                      ports/www/py-WebTest
 py-YABT                         ports/misc/py-YABT
 py-adns                         ports/dns/py-adns
 py-aipy                         ports/astro/py-aipy
@@ -18573,6 +18585,7 @@ py-pysqlite21                   ports/databases/py-pysqlite21
 py-pysqlite22                   ports/databases/py-pysqlite22
 py-pysqlite23                   ports/databases/py-pysqlite23
 py-pytc                         ports/databases/py-pytc
+py-pytemplate                   ports/devel/py-pytemplate
 py-pytz                         ports/devel/py-pytz
 py-pyutil                       ports/devel/py-pyutil
 py-pywebdav                     ports/www/py-pywebdav
@@ -18692,6 +18705,7 @@ py-taglib                       ports/audio/py-taglib
 py-tagpy                        ports/audio/py-tagpy
 py-tarfile                      ports/archivers/py-tarfile
 py-tconfpy                      ports/devel/py-tconfpy
+py-tempita                      ports/textproc/py-Tempita
 py-testgears                    ports/devel/py-testgears
 py-testoob                      ports/devel/py-testoob
 py-textile                      ports/www/py-textile
@@ -18761,8 +18775,10 @@ py-vobject                      ports/deskutils/py-vobject
 py-vorbis                       ports/audio/py-vorbis
 py-vte                          ports/x11-toolkits/py-vte
 py-wax                          ports/x11-toolkits/py-wax
+py-weberror                     ports/www/py-WebError
 py-webhelpers                   ports/www/py-webhelpers
 py-webob                        ports/www/py-webob
+py-webtest                      ports/www/py-WebTest
 py-webunit                      ports/www/py-webunit
 py-webware                      ports/www/py-webware
 py-webware-component            ports/www/py-webware-component
@@ -21178,6 +21194,7 @@ tel                             ports/deskutils/tel
 telak                           ports/graphics/telak
 telbook                         ports/misc/telbook
 telepathy-butterfly             ports/net-im/telepathy-butterfly
+telepathy-farsight              ports/net-im/telepathy-farsight
 telepathy-gabble                ports/net-im/telepathy-gabble
 telepathy-glib                  ports/net-im/telepathy-glib
 telepathy-haze                  ports/net-im/telepathy-haze
