@@ -1,0 +1,22 @@
+bin/gnome-mplayer
+share/applications/gnome-mplayer.desktop
+share/locale/bg/LC_MESSAGES/gnome-mplayer.mo
+share/locale/de/LC_MESSAGES/gnome-mplayer.mo
+share/locale/en/LC_MESSAGES/gnome-mplayer.mo
+share/locale/es/LC_MESSAGES/gnome-mplayer.mo
+share/locale/fr/LC_MESSAGES/gnome-mplayer.mo
+share/locale/it/LC_MESSAGES/gnome-mplayer.mo
+share/locale/ko/LC_MESSAGES/gnome-mplayer.mo
+share/locale/pl/LC_MESSAGES/gnome-mplayer.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-mplayer.mo
+share/locale/ro/LC_MESSAGES/gnome-mplayer.mo
+share/locale/ru/LC_MESSAGES/gnome-mplayer.mo
+share/locale/sr/LC_MESSAGES/gnome-mplayer.mo
+share/locale/sr@latin/LC_MESSAGES/gnome-mplayer.mo
+share/locale/sv/LC_MESSAGES/gnome-mplayer.mo
+share/locale/tr/LC_MESSAGES/gnome-mplayer.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-mplayer.mo
+share/locale/zh_HK/LC_MESSAGES/gnome-mplayer.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-mplayer.mo
+share/pixmaps/gnome-mplayer.png
+@dirrmtry share/applications

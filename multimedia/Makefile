@@ -62,6 +62,7 @@
     SUBDIR += gmerlin
     SUBDIR += gmerlin-avdecoder
     SUBDIR += gmimms
+    SUBDIR += gnome-mplayer
     SUBDIR += gnome-subtitles
     SUBDIR += gnustep-mplayer
     SUBDIR += goggles
