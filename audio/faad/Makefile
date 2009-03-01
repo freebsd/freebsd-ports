@@ -38,6 +38,8 @@ post-patch:
 		${WRKSRC}/frontend/Makefile.am
 	@${REINPLACE_CMD} -e 's|^AM_CFLAGS|AM_CPPFLAGS|g ; \
 		 s|-iquote |-I|g' ${WRKSRC}/libfaad/Makefile.am
+	@${REINPLACE_CMD} -e 's|= -DUSE_|= -fPIC -DPIC -DUSE_|g' \
+		${WRKSRC}/common/mp4ff/Makefile.am
 	@${ECHO_CMD} "SUBDIRS = libfaad common frontend" > \
 		${WRKSRC}/Makefile.am
 
