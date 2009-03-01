@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/MoreUtils/.packlist
+%%SITE_PERL%%/Hash/MoreUtils.pm
+@dirrmtry %%SITE_PERL%%/Hash
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/MoreUtils
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash
