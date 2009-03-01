@@ -1401,6 +1401,7 @@
     SUBDIR += p5-Gtk2-Spell
     SUBDIR += p5-Hash-AsObject
     SUBDIR += p5-Hash-Case
+    SUBDIR += p5-Hash-MoreUtils
     SUBDIR += p5-Hash-MultiKey
     SUBDIR += p5-Hash-Union
     SUBDIR += p5-Hash-Util-FieldHash-Compat
