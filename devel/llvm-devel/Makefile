@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	llvm
-DISTVERSION=	2.4.r${SVN_REV}
+DISTVERSION=	2.6.r${SVN_REV}
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -25,7 +25,7 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .if defined(BOOTSTRAP)
 SVN_REV!=	svn info http://llvm.org/svn/llvm-project/ | grep Revision | cut -d' ' -f2
 .else
-SVN_REV=	65584
+SVN_REV=	65789
 .endif
 
 GNU_CONFIGURE=	yes
@@ -59,9 +59,15 @@ FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 
 do-fetch:
 	${MKDIR} ${WRKDIR}
-	svn export -r ${SVN_REV} http://llvm.org/svn/llvm-project/llvm/trunk ${WRKSRC}
-	svn export -r ${SVN_REV} http://llvm.org/svn/llvm-project/cfe/trunk  ${WRKSRC}/tools/clang
+	svn export -r ${SVN_REV} \
+	    http://llvm.org/svn/llvm-project/llvm/trunk ${WRKSRC}
+	svn export -r ${SVN_REV} \
+	    http://llvm.org/svn/llvm-project/cfe/trunk ${WRKSRC}/tools/clang
 	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
+.if ${USER} == brooks
+	scp ${DISTDIR}/${DISTNAME}.tar.bz2 \
+	    freefall.freebsd.org:public_distfiles/
+.endif
 .endif
 
 post-patch:

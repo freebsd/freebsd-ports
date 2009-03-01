@@ -466,6 +466,7 @@ lib/plugin_llvmc_Clang.o
 %%DOCSDIR%%/html/GetElementPtr.html
 %%DOCSDIR%%/html/GettingStarted.html
 %%DOCSDIR%%/html/GettingStartedVS.html
+%%DOCSDIR%%/html/GoldPlugin.html
 %%DOCSDIR%%/html/HowToReleaseLLVM.html
 %%DOCSDIR%%/html/HowToSubmitABug.html
 %%DOCSDIR%%/html/InternalsManual.html
