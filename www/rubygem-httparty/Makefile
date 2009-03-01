@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	httparty
-PORTVERSION=	0.1.3
+PORTVERSION=	0.3.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 
@@ -18,5 +18,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
+PLIST_FILES=	bin/httparty
 
 .include <bsd.port.mk>
