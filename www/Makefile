@@ -1329,6 +1329,7 @@
     SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-actionwebservice
     SUBDIR += rubygem-activeresource
+    SUBDIR += rubygem-addressable
     SUBDIR += rubygem-amazon-ecs
     SUBDIR += rubygem-bluecloth
     SUBDIR += rubygem-erubis
