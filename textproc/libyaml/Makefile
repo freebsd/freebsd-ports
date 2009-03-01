@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libyaml
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://pyyaml.org/download/libyaml/
 DISTNAME=	yaml-${PORTVERSION}
@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/yaml.h \
 		lib/libyaml-0.so \
-		lib/libyaml-0.so.1 \
+		lib/libyaml-0.so.2 \
 		lib/libyaml.a \
 		lib/libyaml.so
 
