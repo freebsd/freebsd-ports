@@ -15,6 +15,8 @@ DISTNAME=	 ${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Fast paced multiplayer pac-man clone
 
+BROKEN=		does not build
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"CPPFLAGS=-I${LOCALBASE}/include"
