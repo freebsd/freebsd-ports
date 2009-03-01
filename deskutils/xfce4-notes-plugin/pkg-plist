@@ -19,6 +19,7 @@ share/locale/fr/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/gl/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/it/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/lv/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/nb_NO/LC_MESSAGES/xfce4-notes-plugin.mo
@@ -26,6 +27,8 @@ share/locale/nl/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/pt_PT/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/sv/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/tr/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/ur/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-notes-plugin.mo
