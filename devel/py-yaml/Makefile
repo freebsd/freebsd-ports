@@ -8,6 +8,7 @@
 
 PORTNAME=	yaml
 PORTVERSION=	3.07
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://pyyaml.org/download/pyyaml/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -40,7 +41,7 @@ PYDISTUTILS_BUILD_TARGET=	build_ext
 PYDISTUTILS_BUILDARGS+=	--include-dirs=${LOCALBASE}/include \
 			--library-dirs=${LOCALBASE}/lib
 
-LIB_DEPENDS+=		yaml-0.1:${PORTSDIR}/textproc/libyaml
+LIB_DEPENDS+=		yaml-0.2:${PORTSDIR}/textproc/libyaml
 
 PLIST_SUB+=	YAML=""
 .else
