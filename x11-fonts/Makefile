@@ -117,6 +117,7 @@
     SUBDIR += sgifonts
     SUBDIR += sharefonts
     SUBDIR += showfont
+    SUBDIR += stix-fonts
     SUBDIR += suxus
     SUBDIR += terminus-font
     SUBDIR += texcm-ttf
