@@ -28,7 +28,7 @@ HAS_CONFIGURE=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-SVN_REVISION=	2304
+SVN_REVISION=	2759
 
 .if defined(WITH_CSCOPE)
 RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
@@ -36,7 +36,7 @@ RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
 
 post-patch:
 	${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|g' \
-	    ${WRKSRC}/configure ${WRKSRC}/makefile.base
+	    ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|$${cur_rev}|${SVN_REVISION}|' \
 	    ${WRKSRC}/le_makerevision.sh
 # 	CTags already installed
@@ -58,11 +58,10 @@ do-install:
 	${MKDIR} ${DATADIR}/debuggers
 	${MKDIR} ${DATADIR}/plugins
 	${MKDIR} ${DATADIR}/images
-	${INSTALL_PROGRAM} ${WRKSRC}/Runtime/CodeLiteUR ${PREFIX}/bin/CodeLite
+	${INSTALL_PROGRAM} ${WRKSRC}/Runtime/codelite ${PREFIX}/bin/CodeLite
 	${INSTALL_SCRIPT} ${WRKSRC}/Runtime/le_dos2unix.sh ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/Runtime/le_exec.sh ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/Runtime/le_killproc.sh ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/sdk/ctags/ctags-le ${PREFIX}/bin
 	(cd ${WRKSRC}/Runtime/config/ && ${COPYTREE_SHARE} \* ${DATADIR}/config)
 	(cd ${WRKSRC}/Runtime/rc/ && ${COPYTREE_SHARE} \*.xrc ${DATADIR}/rc)
 	(cd ${WRKSRC}/Runtime/templates && ${COPYTREE_SHARE} \* ${DATADIR}/templates)
