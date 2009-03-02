@@ -2,6 +2,7 @@ bin/xfce4-appfinder
 share/applications/xfce4-appfinder.desktop
 share/icons/hicolor/48x48/apps/xfce4-appfinder.png
 share/locale/am/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/ar/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/da/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/de/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/dz/LC_MESSAGES/xfce4-appfinder.mo
@@ -20,6 +21,7 @@ share/locale/id/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/it/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/ja/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/ka/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/ku/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/lt/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/lv/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/mk/LC_MESSAGES/xfce4-appfinder.mo
@@ -29,6 +31,7 @@ share/locale/pt_BR/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/pt_PT/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/ru/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/si/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/sq/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/sv/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/tr/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/ur/LC_MESSAGES/xfce4-appfinder.mo
@@ -37,9 +40,9 @@ share/locale/ca/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/cs/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/el/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/fi/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/nb_NO/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/gl/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/ko/LC_MESSAGES/xfce4-appfinder.mo
-share/locale/nb_NO/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/pl/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/ro/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/sk/LC_MESSAGES/xfce4-appfinder.mo
@@ -49,21 +52,7 @@ share/locale/zh_TW/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/mr/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/bn_IN/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/hy/LC_MESSAGES/xfce4-appfinder.mo
-share/xfce4/doc/C/images/appfinder-handle-popup.png
-share/xfce4/doc/C/images/appfinder-item-popup.png
-share/xfce4/doc/C/images/default_appfinder.png
-share/xfce4/doc/C/xfce4-appfinder.html
-share/xfce4/doc/fr/images/appfinder-handle-popup.png
-share/xfce4/doc/fr/images/appfinder-item-popup.png
-share/xfce4/doc/fr/images/default_appfinder.png
-share/xfce4/doc/fr/xfce4-appfinder.html
 @dirrmtry share/applications
-@dirrmtry share/xfce4/doc/C/images
-@dirrmtry share/xfce4/doc/C
-@dirrmtry share/xfce4/doc/fr/images
-@dirrmtry share/xfce4/doc/fr
-@dirrmtry share/xfce4/doc
-@dirrmtry share/xfce4
 @dirrmtry share/icons
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
@@ -73,5 +62,4 @@ share/xfce4/doc/fr/xfce4-appfinder.html
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO
+

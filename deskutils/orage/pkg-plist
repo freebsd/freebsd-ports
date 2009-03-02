@@ -1,10 +1,10 @@
+bin/globaltime
 bin/orage
 libexec/xfce4/panel-plugins/orageclock
-lib/xfce4/mcs-plugins/orage_plugin.so
-lib/xfce4/mcs-plugins/orage_plugin.la
-lib/xfce4/mcs-plugins/orage_plugin.a
 share/applications/xfcalendar.desktop
 share/applications/xfce-xfcalendar-settings.desktop
+share/dbus-1/services/org.xfce.calendar.service
+share/dbus-1/services/org.xfce.orage.service
 share/icons/hicolor/48x48/apps/xfcalendar.png
 share/icons/hicolor/scalable/apps/xfcalendar.svg
 share/locale/am/LC_MESSAGES/orage.mo
@@ -30,6 +30,7 @@ share/locale/id/LC_MESSAGES/orage.mo
 share/locale/it/LC_MESSAGES/orage.mo
 share/locale/ja/LC_MESSAGES/orage.mo
 share/locale/ka/LC_MESSAGES/orage.mo
+share/locale/ku/LC_MESSAGES/orage.mo
 share/locale/lt/LC_MESSAGES/orage.mo
 share/locale/lv/LC_MESSAGES/orage.mo
 share/locale/mk/LC_MESSAGES/orage.mo
@@ -39,6 +40,7 @@ share/locale/pa/LC_MESSAGES/orage.mo
 share/locale/pt_BR/LC_MESSAGES/orage.mo
 share/locale/pt_PT/LC_MESSAGES/orage.mo
 share/locale/ru/LC_MESSAGES/orage.mo
+share/locale/sq/LC_MESSAGES/orage.mo
 share/locale/sv/LC_MESSAGES/orage.mo
 share/locale/ta/LC_MESSAGES/orage.mo
 share/locale/tr/LC_MESSAGES/orage.mo
@@ -71,10 +73,13 @@ share/orage/doc/C/images/orage_calendar_file_menu.png
 share/orage/doc/C/images/orage_calendar_help_menu.png
 share/orage/doc/C/images/orage_calendar_view_menu.png
 share/orage/doc/C/images/orage_desktop_menuitem.png
-share/orage/doc/C/images/orage_preferences_archives.png
 share/orage/doc/C/images/orage_preferences_display.png
-share/orage/doc/C/images/orage_preferences_sound.png
-share/orage/doc/C/images/orage_preferences_timezone.png
+share/orage/doc/C/images/orage_daylist.png
+share/orage/doc/C/images/orage_exchange_impexp.png
+share/orage/doc/C/images/orage_exchange_oragefiles.png
+share/orage/doc/C/images/orage_exchange_foreign.png
+share/orage/doc/C/images/orage_preferences_main.png
+share/orage/doc/C/images/orage_preferences_extra.png
 share/orage/doc/C/orage.html
 share/orage/sounds/Boiling.wav
 share/orage/sounds/KDE_Beep_Digital_1.ogg
@@ -136,6 +141,11 @@ share/orage/zoneinfo/Africa/Timbuktu.ics
 share/orage/zoneinfo/Africa/Tripoli.ics
 share/orage/zoneinfo/Africa/Tunis.ics
 share/orage/zoneinfo/Africa/Windhoek.ics
+share/orage/zoneinfo/America/Argentina/Buenos_Aires.ics
+share/orage/zoneinfo/America/Argentina/Catamarca.ics
+share/orage/zoneinfo/America/Argentina/Cordoba.ics
+share/orage/zoneinfo/America/Argentina/Jujuy.ics
+share/orage/zoneinfo/America/Argentina/Mendoza.ics
 share/orage/zoneinfo/America/Adak.ics
 share/orage/zoneinfo/America/Anchorage.ics
 share/orage/zoneinfo/America/Anguilla.ics
@@ -459,11 +469,11 @@ share/orage/zoneinfo/Pacific/Wallis.ics
 share/orage/zoneinfo/Pacific/Yap.ics
 share/orage/zoneinfo/zones.tab
 share/xfce4/panel-plugins/orageclock.desktop
-@dirrmtry lib/xfce4/mcs-plugins
-@dirrmtry lib/xfce4
 @dirrmtry libexec/xfce4/panel-plugins
 @dirrmtry libexec/xfce4
 @dirrmtry share/applications
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
 @dirrm share/orage/doc/C/images
 @dirrm share/orage/doc/C
 @dirrm share/orage/doc

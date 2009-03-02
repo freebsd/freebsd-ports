@@ -1,5 +1,6 @@
 bin/Thunar
 bin/thunar
+bin/thunar-settings
 %%PLUGIN_UCA%%etc/xdg/Thunar/uca.xml
 include/thunar-vfs-1/thunar-vfs/thunar-vfs-config.h
 include/thunar-vfs-1/thunar-vfs/thunar-vfs-enum-types.h
@@ -42,6 +43,8 @@ lib/libthunarx-1.so.5
 %%PLUGIN_SBR%%lib/thunarx-1/thunar-sbr.so
 %%PLUGIN_UCA%%lib/thunarx-1/thunar-uca.la
 %%PLUGIN_UCA%%lib/thunarx-1/thunar-uca.so
+%%PLUGIN_WALL%%lib/thunarx-1/thunar-wallpaper-plugin.so
+%%PLUGIN_WALL%%lib/thunarx-1/thunar-wallpaper-plugin.la
 libdata/pkgconfig/thunar-vfs-1.pc
 libdata/pkgconfig/thunarx-1.pc
 libexec/ThunarBulkRename
@@ -56,6 +59,7 @@ share/Thunar/sendto/thunar-sendto-email.desktop
 share/applications/Thunar-bulk-rename.desktop
 share/applications/Thunar-folder-handler.desktop
 share/applications/Thunar.desktop
+share/applications/thunar-settings.desktop
 %%WITH_DBUS%%share/dbus-1/services/org.xfce.FileManager.service
 %%WITH_DBUS%%share/dbus-1/services/org.xfce.Thunar.service
 share/gtk-doc/html/thunar-vfs/ThunarVfsGroup.html
@@ -299,6 +303,27 @@ share/gtk-doc/html/thunarx/up.png
 %%DOCSDIR%%/html/ru/using-removable-media.html
 %%DOCSDIR%%/html/ru/working-with-files-and-folders.html
 %%DOCSDIR%%/html/thunar.css
+%%DOCSDIR%%/html/tr/images/bulk-rename.png
+%%DOCSDIR%%/html/tr/images/file-manager-window.png
+%%DOCSDIR%%/html/tr/images/file-properties.png
+%%DOCSDIR%%/html/tr/images/preferences-advanced.png
+%%DOCSDIR%%/html/tr/images/preferences-behavior.png
+%%DOCSDIR%%/html/tr/images/preferences-side-pane.png
+%%DOCSDIR%%/html/tr/images/preferences-views.png
+%%DOCSDIR%%/html/tr/images/removable-drives-and-media.png
+%%DOCSDIR%%/html/tr/images/removable-media-unmount.png
+%%DOCSDIR%%/html/tr/images/sendto-menu.png
+%%DOCSDIR%%/html/tr/images/visible-columns.png
+%%DOCSDIR%%/html/tr/advanced-topics.html
+%%DOCSDIR%%/html/tr/copyright.html
+%%DOCSDIR%%/html/tr/customizing-thunar.html
+%%DOCSDIR%%/html/tr/faq.html
+%%DOCSDIR%%/html/tr/index.html
+%%DOCSDIR%%/html/tr/preferences.html
+%%DOCSDIR%%/html/tr/support.html
+%%DOCSDIR%%/html/tr/the-file-manager-window.html
+%%DOCSDIR%%/html/tr/using-removable-media.html
+%%DOCSDIR%%/html/tr/working-with-files-and-folders.html
 %%DOCSDIR%%/html/zh_TW/advanced-topics.html
 %%DOCSDIR%%/html/zh_TW/copyright.html
 %%DOCSDIR%%/html/zh_TW/customizing-thunar.html
@@ -405,6 +430,8 @@ share/thumbnailers/thunar-vfs-font-thumbnailer-1.desktop
 @dirrm %%DOCSDIR%%/html/pl
 @dirrmtry %%DOCSDIR%%/html/ru/images
 @dirrm %%DOCSDIR%%/html/ru
+@dirrmtry %%DOCSDIR%%/html/tr/images
+@dirrm %%DOCSDIR%%/html/tr
 @dirrmtry %%DOCSDIR%%/html/zh_TW/images
 @dirrm %%DOCSDIR%%/html/zh_TW
 @dirrm %%DOCSDIR%%/html
@@ -428,4 +455,6 @@ share/thumbnailers/thunar-vfs-font-thumbnailer-1.desktop
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/nn_NO/LC_MESSAGES
 @dirrmtry share/locale/nn_NO
+@dirrmtry share/locale/tr/LC_MESSAGES
+@dirrmtry share/locale/tr
 @dirrm share/thumbnailers

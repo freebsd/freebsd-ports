@@ -1,4 +1,4 @@
-# New ports collection makefile for:	libxfce4util
+# New ports collection makefile for:	xfce4-utils
 # Date created:		7 June 2003
 # Whom:			James Earl <jdearl@telus.net>
 #
@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-utils
-PORTVERSION=	4.4.3
-PORTREVISION=	0
+PORTVERSION=	4.6.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	xfce-utils-${PORTVERSION}
@@ -16,13 +15,14 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 essential utilities and scripts
 
+CONFIGURE_ARGS+=--with-xsession-prefix=${PREFIX}
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
-USE_XFCE=	configenv libgui libmcs libutil mcsmanager panel
+USE_XFCE=	configenv libgui libutil panel
 
 OPTIONS=	DBUS	"Enable D-BUS support"			on
 

@@ -6,8 +6,7 @@
 #    $MCom: ports/x11/libexo/Makefile,v 1.1 2006/10/02 21:05:55 ahze Exp $
 
 PORTNAME=	libexo
-PORTVERSION=	0.3.4
-PORTREVISION=	2
+PORTVERSION=	0.3.100
 CATEGORIES=	x11 xfce
 DISTNAME=	exo-${PORTVERSION}
 MASTER_SITES=	${MASTER_SITE_XFCE}
@@ -29,12 +28,11 @@ USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
-USE_XFCE=	configenv libutil mcsmanager
+USE_XFCE=	configenv libutil
 
 OPTIONS=	HAL	"Enable HAL support"			on \
 		NOTIFY  "Enable notification support"		on \
 		PYTHON	"Enable Python support"			off \
-		MCS	"Build with xfce4-mcs-manager support"	on
 
 MAN1=		exo-csource.1 exo-open.1
 
@@ -66,16 +64,6 @@ PLIST_SUB+=	PYTHON=""
 .else
 CONFIGURE_ARGS+=--disable-python
 PLIST_SUB+=	PYTHON="@comment "
-.endif
-
-.if !defined(WITHOUT_MCS)
-CONFIGURE_ARGS+=--enable-mcs-plugin
-BUILD_DEPENDS+=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
-RUN_DEPENDS+=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
-PLIST_SUB+=	MCS_MANAGER=""
-.else
-CONFIGURE_ARGS+=--disable-mcs-plugin
-PLIST_SUB+=	MCS_MANAGER="@comment "
 .endif
 
 post-patch:

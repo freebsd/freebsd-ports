@@ -1,63 +1,30 @@
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libxfce.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libxfce.so
 share/themes/Xfce-4.0/gtk-2.0/gtkrc
-share/themes/Xfce-4.0/ICON.png
-share/themes/Xfce-4.0/README.html
 share/themes/Xfce-4.2/gtk-2.0/gtkrc
-share/themes/Xfce-4.2/ICON.png
-share/themes/Xfce-4.2/README.html
-share/themes/Xfce-b5/ICON.png
-share/themes/Xfce-b5/README.html
+share/themes/Xfce-4.4/gtk-2.0/gtkrc
 share/themes/Xfce-b5/gtk-2.0/gtkrc
-share/themes/Xfce-basic/ICON.png
-share/themes/Xfce-basic/README.html
 share/themes/Xfce-basic/gtk-2.0/gtkrc
 share/themes/Xfce-cadmium/gtk-2.0/gtkrc
-share/themes/Xfce-cadmium/ICON.png
-share/themes/Xfce-cadmium/README.html
-share/themes/Xfce-curve/ICON.png
-share/themes/Xfce-curve/README.html
 share/themes/Xfce-curve/gtk-2.0/gtkrc
 share/themes/Xfce-dawn/gtk-2.0/gtkrc
-share/themes/Xfce-dawn/ICON.png
-share/themes/Xfce-dawn/README.html
 share/themes/Xfce-dusk/gtk-2.0/gtkrc
-share/themes/Xfce-dusk/ICON.png
-share/themes/Xfce-dusk/README.html
-share/themes/Xfce-kde2/ICON.png
-share/themes/Xfce-kde2/README.html
 share/themes/Xfce-kde2/gtk-2.0/gtkrc
-share/themes/Xfce-kolors/ICON.png
-share/themes/Xfce-kolors/README.html
 share/themes/Xfce-kolors/gtk-2.0/gtkrc
-share/themes/Xfce-light/ICON.png
-share/themes/Xfce-light/README.html
 share/themes/Xfce-light/gtk-2.0/gtkrc
-share/themes/Xfce-orange/ICON.png
-share/themes/Xfce-orange/README.html
 share/themes/Xfce-orange/gtk-2.0/gtkrc
-share/themes/Xfce-redmondxp/ICON.png
-share/themes/Xfce-redmondxp/README.html
 share/themes/Xfce-redmondxp/gtk-2.0/gtkrc
-share/themes/Xfce-saltlake/ICON.png
-share/themes/Xfce-saltlake/README.html
 share/themes/Xfce-saltlake/gtk-2.0/gtkrc
-share/themes/Xfce-smooth/ICON.png
-share/themes/Xfce-smooth/README.html
 share/themes/Xfce-smooth/gtk-2.0/gtkrc
-share/themes/Xfce-stellar/ICON.png
-share/themes/Xfce-stellar/README.html
 share/themes/Xfce-stellar/gtk-2.0/gtkrc
 share/themes/Xfce-winter/gtk-2.0/gtkrc
-share/themes/Xfce-winter/ICON.png
-share/themes/Xfce-winter/README.html
-share/themes/Xfce/ICON.png
-share/themes/Xfce/README.html
 share/themes/Xfce/gtk-2.0/gtkrc
 @dirrm share/themes/Xfce-4.0/gtk-2.0
 @dirrm share/themes/Xfce-4.0
 @dirrm share/themes/Xfce-4.2/gtk-2.0
 @dirrm share/themes/Xfce-4.2
+@dirrm share/themes/Xfce-4.4/gtk-2.0
+@dirrm share/themes/Xfce-4.4
 @dirrm share/themes/Xfce/gtk-2.0
 @dirrmtry share/themes/Xfce
 @dirrm share/themes/Xfce-cadmium/gtk-2.0

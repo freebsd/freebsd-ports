@@ -850,8 +850,6 @@
     SUBDIR += xfce4-cpugraph-plugin
     SUBDIR += xfce4-fsguard-plugin
     SUBDIR += xfce4-genmon-plugin
-    SUBDIR += xfce4-mcs-manager
-    SUBDIR += xfce4-mcs-plugins
     SUBDIR += xfce4-minicmd-plugin
     SUBDIR += xfce4-netload-plugin
     SUBDIR += xfce4-places-plugin

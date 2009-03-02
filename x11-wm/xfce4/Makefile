@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce
-PORTVERSION=	4.4.3
-PORTREVISION=	0
+PORTVERSION=	4.6.0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -16,19 +15,22 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	The "meta-port" for the XFce 4 desktop environment
 
-RUN_DEPENDS=	${LOCALBASE}/lib/xfce4/mcs-plugins/ui_plugin.so:${PORTSDIR}/sysutils/xfce4-mcs-plugins \
-		xfwm4:${PORTSDIR}/x11-wm/xfce4-wm \
-		xfce4-appfinder:${PORTSDIR}/misc/xfce4-appfinder \
+OPTIONS=	ICONS		"Install a full icon theme"		on  \
+		ORAGE		"Install the Xfce calendar application"	on  \
+		MOUSEPAD	"Install the Xfce text editor"		on  \
+		TERMINAL	"Install the Xfce terminal application"	on  \
+		APPFINDER	"Install the Xfce application finder"	on  \
+		MIXER		"Install the Xfce mixer application"	on  \
+		PRINT		"Install the Xfce printing helper"	on  \
+		GDM		"Install the login manager gdm"		off
+
+RUN_DEPENDS=	xfwm4:${PORTSDIR}/x11-wm/xfce4-wm \
 		xfce4-session:${PORTSDIR}/x11-wm/xfce4-session \
 		xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel \
 		xfdesktop:${PORTSDIR}/x11-wm/xfce4-desktop \
 		startxfce4:${PORTSDIR}/sysutils/xfce4-utils \
-		xfprint4:${PORTSDIR}/print/xfce4-print \
 		${LOCALBASE}/lib/gtk-2.0/2.10.0/engines/libxfce.so:${PORTSDIR}/x11-themes/gtk-xfce-engine \
-		thunar:${PORTSDIR}/x11-fm/thunar \
-		orage:${PORTSDIR}/deskutils/orage \
-		mousepad:${PORTSDIR}/editors/mousepad \
-		Terminal:${PORTSDIR}/x11/Terminal
+		xfsettingsd:${PORTSDIR}/sysutils/xfce4-settings
 
 NO_BUILD=	yes
 LATEST_LINK=	xfce4
@@ -39,22 +41,41 @@ LATEST_LINK=	xfce4
 WITH_GDM=	yes
 .endif
 
-.if defined(WITH_GDM)
+.if !defined(WITH_GDM)
+PLIST_SUB+=	GDM="@comment "
+.else
 RUN_DEPENDS+=	${LOCALBASE}/sbin/gdm:${PORTSDIR}/x11/gdm
 PLIST_SUB+=	GDM=""
-.else
-PLIST_SUB+=	GDM="@comment "
 .endif
 
-.if !defined(WITHOUT_EXTRAS)
-.if !defined(WITHOUT_THEMES)
+.if !defined(WITHOUT_ICONS)
 RUN_DEPENDS+=	${LOCALBASE}/share/xfce4/mime/Rodent.mime.xml:${PORTSDIR}/x11-themes/xfce4-icon-theme \
-		${LOCALBASE}/share/themes/Xfce/xfwm4/themerc:${PORTSDIR}/misc/xfce4-wm-themes
+		${LOCALBASE}/share/themes/Xfce/xfwm4/themerc:${PORTSDIR}/misc/xfce4-wm-themes \
+		icons-tango-extras>=0.1.0:${PORTSDIR}/x11-themes/icons-tango-extras
 .endif
 
-.if !defined(WITHOUT_PLUGINS)
-RUN_DEPENDS+=	${LOCALBASE}/lib/xfce4/modules/libxfce4mixer.so:${PORTSDIR}/audio/xfce4-mixer
+.if !defined(WITHOUT_ORAGE)
+RUN_DEPENDS+=	orage:${PORTSDIR}/deskutils/orage
 .endif
+
+.if !defined(WITHOUT_MOUSEPAD)
+RUN_DEPENDS+=	mousepad:${PORTSDIR}/editors/mousepad
+.endif
+
+.if !defined(WITHOUT_TERMINAL)
+RUN_DEPENDS+=	Terminal:${PORTSDIR}/x11/Terminal
+.endif
+
+.if !defined(WITHOUT_APPFINDER)
+RUN_DEPENDS+=	xfce4-appfinder:${PORTSDIR}/misc/xfce4-appfinder
+.endif
+
+.if !defined(WITHOUT_MIXER)
+RUN_DEPENDS+=	${LOCALBASE}/bin/xfce4-mixer:${PORTSDIR}/audio/xfce4-mixer
+.endif
+
+.if !defined(WITHOUT_PRINT)
+RUN_DEPENDS+=	xfprint4:${PORTSDIR}/print/xfce4-print
 .endif
 
 do-install:	# empty
@@ -66,5 +87,25 @@ post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/XFce4 ${PREFIX}/etc/gdm/Sessions
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' ${FILESDIR}/XFce4.desktop > ${PREFIX}/etc/dm/Sessions/XFce4.desktop
 .endif
+	@${ECHO} "================================================================"
+	@${ECHO}
+	@${ECHO} "If you want to allow users to restart or shutdown the system,"
+	@${ECHO} "do not forget to add the following lines between the <config>"
+	@${ECHO} "tags in your PolicyKit.conf file."
+	@${ECHO} "  ${PREFIX}/etc/PolicyKit/PolicyKit.conf
+	@${ECHO} ""
+	@${ECHO} "<match action=\"org.freedesktop.hal.power-management.shutdown\">"
+	@${ECHO} "    <return result=\"yes\"/>"
+	@${ECHO} "</match>"
+	@${ECHO} ""
+	@${ECHO} "<match action=\"org.freedesktop.hal.power-management.reboot\">"
+	@${ECHO} "    <return result=\"yes\"/>"
+	@${ECHO} "</match>"
+	@${ECHO}
+	@${ECHO} "Make also sure, hald_enable, dbus_enable and polkitd_enable"
+	@${ECHO} "is set to YES in your /etc/rc.conf"
+	@${ECHO}
+	@${ECHO} "================================================================"
+
 
 .include <bsd.port.post.mk>

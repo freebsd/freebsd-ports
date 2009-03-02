@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-print
-PORTVERSION=	4.4.3
-PORTREVISION=	0
+PORTVERSION=	4.6.0
 CATEGORIES=	print xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	xfprint-${PORTVERSION}
@@ -23,7 +22,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
-USE_XFCE=	configenv libgui libmcs libutil mcsmanager
+USE_XFCE=	configenv libgui libutil xfconf
 
 OPTIONS=	LPR	"Use lpr as printing system"		on \
 		CUPS	"Use cups as printing system"		off \

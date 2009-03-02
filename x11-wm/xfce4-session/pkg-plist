@@ -1,22 +1,15 @@
-bin/xfce4-autostart-editor
 bin/xfce4-session
 bin/xfce4-session-logout
+bin/xfce4-session-settings
 bin/xfce4-tips
 etc/xdg/autostart/xfce4-tips-autostart.desktop
-etc/xdg/xfce4-session/xfce4-session.rc
-include/xfce4/xfce4-session-4.2/libxfsm/xfsm-splash-engine.h
-include/xfce4/xfce4-session-4.2/libxfsm/xfsm-splash-rc.h
-lib/libxfsm-4.2.a
-lib/libxfsm-4.2.la
-lib/libxfsm-4.2.so
-lib/libxfsm-4.2.so.0
-libdata/pkgconfig/xfce4-session-1.0.pc
-lib/xfce4/mcs-plugins/session_settings.a
-lib/xfce4/mcs-plugins/session_settings.la
-lib/xfce4/mcs-plugins/session_settings.so
-lib/xfce4/mcs-plugins/splash_settings.a
-lib/xfce4/mcs-plugins/splash_settings.la
-lib/xfce4/mcs-plugins/splash_settings.so
+etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
+include/xfce4/xfce4-session-4.6/libxfsm/xfsm-splash-engine.h
+include/xfce4/xfce4-session-4.6/libxfsm/xfsm-splash-rc.h
+lib/libxfsm-4.6.a
+lib/libxfsm-4.6.la
+lib/libxfsm-4.6.so
+lib/libxfsm-4.6.so.0
 lib/xfce4/splash/engines/libbalou.a
 lib/xfce4/splash/engines/libbalou.la
 lib/xfce4/splash/engines/libbalou.so
@@ -26,16 +19,18 @@ lib/xfce4/splash/engines/libmice.so
 lib/xfce4/splash/engines/libsimple.a
 lib/xfce4/splash/engines/libsimple.la
 lib/xfce4/splash/engines/libsimple.so
+libdata/pkgconfig/xfce4-session-2.0.pc
 libexec/balou-export-theme
 libexec/balou-install-theme
 libexec/xfsm-shutdown-helper
-share/applications/xfce4-autostart-editor.desktop
 share/applications/xfce-session-settings.desktop
-share/applications/xfce-splash-settings.desktop
 share/icons/hicolor/128x128/apps/xfce4-session.png
+share/icons/hicolor/48x48/apps/xfce4-autostart-editor.png
 share/icons/hicolor/48x48/apps/xfce4-session.png
 share/icons/hicolor/48x48/apps/xfce4-splash.png
+share/icons/hicolor/48x48/apps/xfsm-hibernate.png
 share/icons/hicolor/48x48/apps/xfsm-shutdown.png
+share/icons/hicolor/48x48/apps/xfsm-suspend.png
 share/icons/hicolor/64x64/apps/xfsm-gnome-kde-logo.png
 share/icons/hicolor/72x72/apps/xfsm-trash-hilight.png
 share/icons/hicolor/72x72/apps/xfsm-trash-normal.png
@@ -71,7 +66,6 @@ share/locale/it/LC_MESSAGES/xfce4-session.mo
 share/locale/ja/LC_MESSAGES/xfce4-session.mo
 share/locale/ka/LC_MESSAGES/xfce4-session.mo
 share/locale/ko/LC_MESSAGES/xfce4-session.mo
-share/locale/ku/LC_MESSAGES/xfce4-session.mo
 share/locale/lt/LC_MESSAGES/xfce4-session.mo
 share/locale/lv/LC_MESSAGES/xfce4-session.mo
 share/locale/mk/LC_MESSAGES/xfce4-session.mo
@@ -87,11 +81,12 @@ share/locale/ro/LC_MESSAGES/xfce4-session.mo
 share/locale/ru/LC_MESSAGES/xfce4-session.mo
 share/locale/si/LC_MESSAGES/xfce4-session.mo
 share/locale/sk/LC_MESSAGES/xfce4-session.mo
+share/locale/sq/LC_MESSAGES/xfce4-session.mo
 share/locale/sv/LC_MESSAGES/xfce4-session.mo
 share/locale/ta/LC_MESSAGES/xfce4-session.mo
 share/locale/tr/LC_MESSAGES/xfce4-session.mo
-share/locale/ur/LC_MESSAGES/xfce4-session.mo
 share/locale/uk/LC_MESSAGES/xfce4-session.mo
+share/locale/ur/LC_MESSAGES/xfce4-session.mo
 share/locale/vi/LC_MESSAGES/xfce4-session.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-session.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-session.mo
@@ -107,14 +102,15 @@ share/xfce4/doc/fr/images/xfsm-splash.png
 share/xfce4/doc/fr/xfce4-session.html
 share/xfce4/tips/tips
 share/xfce4/tips/tips.dat
-share/icons/hicolor/48x48/apps/xfce4-autostart-editor.png
 share/icons/hicolor/48x48/apps/xfsm-logout.png
 share/icons/hicolor/48x48/apps/xfsm-reboot.png
 @dirrm etc/xdg/autostart
-@dirrm etc/xdg/xfce4-session
+@dirrm etc/xdg/xfce4/xfconf/xfce-perchannel-xml
+@dirrm etc/xdg/xfce4/xfconf
+@dirrm etc/xdg/xfce4
 @dirrmtry etc/xdg
-@dirrm include/xfce4/xfce4-session-4.2/libxfsm
-@dirrm include/xfce4/xfce4-session-4.2
+@dirrm include/xfce4/xfce4-session-4.6/libxfsm
+@dirrm include/xfce4/xfce4-session-4.6
 @dirrmtry include/xfce4
 @dirrmtry share/applications
 @dirrmtry share/icons/hicolor/48x48/apps
@@ -137,9 +133,7 @@ share/icons/hicolor/48x48/apps/xfsm-reboot.png
 @dirrmtry share/xfce4
 @dirrmtry lib/xfce4/splash/engines
 @dirrmtry lib/xfce4/splash
-@dirrmtry lib/xfce4/mcs-plugins
 @dirrmtry lib/xfce4
-@dirrmtry lib/pkgconfig
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor/72x72/apps
@@ -148,4 +142,3 @@ share/icons/hicolor/48x48/apps/xfsm-reboot.png
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
-

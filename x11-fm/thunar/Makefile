@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Thunar
-PORTVERSION=	0.9.3
-PORTREVISION=	0
+PORTVERSION=	1.0.0
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
@@ -16,9 +15,6 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 file manager
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-
-PATCHFILES=	Thunar-0.9.0-missing-audio-cds-for-volman.patch
-PATCH_SITES=	http://thunar.xfce.org/download/sources/Thunar/0.9.0/
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
@@ -31,16 +27,17 @@ USE_XFCE=	configenv libexo libutil
 
 OPTIONS=	DBUS		"Enable D-BUS support"				on  \
 		JPEG		"Enable JPEG support"				on  \
-		FAM		"Enable FAM support"				off \
-		HAL		"Enable HAL support"				on \
+		FAM		"Enable FAM support"				on  \
+		HAL		"Enable HAL support"				on  \
 		GCONF		"Enable GCONF support"				off \
 		STARTUP		"Enable startup notification support"		on  \
-		PLUG_APR	"Thunar Advanced Properties plugin"		on \
+		PLUG_APR	"Thunar Advanced Properties plugin"		on  \
 		PLUG_APR_EXIF	"Exif support for the APR plugin"		off \
-		PLUG_SBR	"Thunar Simple Builtin Renamers plugin"		on \
+		PLUG_SBR	"Thunar Simple Builtin Renamers plugin"		on  \
 		PLUG_SBR_PCRE	"Regular expression support for the SBR plugin"	off \
-		PLUG_TPA	"Thunar Trash Panel Applet plugin"		on \
-		PLUG_UCA	"Thunar User Customizable Actions plugin"	on
+		PLUG_TPA	"Thunar Trash Panel Applet plugin"		on  \
+		PLUG_UCA	"Thunar User Customizable Actions plugin"	on  \
+		PLUG_WALL	"Thunar Wallpaper plugin"			on
 
 
 MAN1=		Thunar.1
@@ -122,6 +119,14 @@ PLIST_SUB+=	PLUGIN_UCA=""
 .else
 CONFIGURE_ARGS+=--disable-uca-plugin
 PLIST_SUB+=	PLUGIN_UCA="@comment "
+.endif
+
+.if !defined(WITHOUT_PLUG_WALL)
+CONFIGURE_ARGS+=--enable-wallpaper-plugin
+PLIST_SUB+=	PLUGIN_WALL=""
+.else
+CONFIGURE_ARGS+=--disable-wallpaper-plugin
+PLIST_SUB+=	PLUGIN_WALL="@comment "
 .endif
 
 .if !defined(WITHOUT_STARTUP)

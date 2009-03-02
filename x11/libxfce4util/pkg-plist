@@ -12,13 +12,14 @@ include/xfce4/libxfce4util/xfce-i18n.h
 include/xfce4/libxfce4util/xfce-kiosk.h
 include/xfce4/libxfce4util/xfce-license.h
 include/xfce4/libxfce4util/xfce-miscutils.h
+include/xfce4/libxfce4util/xfce-posix-signal-handler.h
 include/xfce4/libxfce4util/xfce-rc.h
 include/xfce4/libxfce4util/xfce-resource.h
 include/xfce4/libxfce4util/xfce-utf8.h
 lib/libxfce4util.a
 lib/libxfce4util.la
 lib/libxfce4util.so
-lib/libxfce4util.so.4
+lib/libxfce4util.so.5
 libdata/pkgconfig/libxfce4util-1.0.pc
 sbin/xfce4-kiosk-query
 share/gtk-doc/html/libxfce4util/home.png
@@ -29,6 +30,7 @@ share/gtk-doc/html/libxfce4util/libxfce4util-Desktop-entries.html
 share/gtk-doc/html/libxfce4util/libxfce4util-File-Utilities.html
 share/gtk-doc/html/libxfce4util/libxfce4util-Internationalisation.html
 share/gtk-doc/html/libxfce4util/libxfce4util-Miscellaneous-Utilities.html
+share/gtk-doc/html/libxfce4util/libxfce4util-POSIX-Signal-Handling.html
 share/gtk-doc/html/libxfce4util/libxfce4util-Resource-Config-File-Support.html
 share/gtk-doc/html/libxfce4util/libxfce4util-Resource-lookup-functions.html
 share/gtk-doc/html/libxfce4util/libxfce4util-Unicode-Support-Functions.html
@@ -51,9 +53,11 @@ share/locale/ar/LC_MESSAGES/libxfce4util.mo
 share/locale/ca/LC_MESSAGES/libxfce4util.mo
 share/locale/cs/LC_MESSAGES/libxfce4util.mo
 share/locale/cy/LC_MESSAGES/libxfce4util.mo
+share/locale/da/LC_MESSAGES/libxfce4util.mo
 share/locale/de/LC_MESSAGES/libxfce4util.mo
 share/locale/dz/LC_MESSAGES/libxfce4util.mo
 share/locale/en_GB/LC_MESSAGES/libxfce4util.mo
+share/locale/es/LC_MESSAGES/libxfce4util.mo
 share/locale/et/LC_MESSAGES/libxfce4util.mo
 share/locale/eu/LC_MESSAGES/libxfce4util.mo
 share/locale/fi/LC_MESSAGES/libxfce4util.mo
@@ -61,7 +65,6 @@ share/locale/fr/LC_MESSAGES/libxfce4util.mo
 share/locale/gl/LC_MESSAGES/libxfce4util.mo
 share/locale/he/LC_MESSAGES/libxfce4util.mo
 share/locale/id/LC_MESSAGES/libxfce4util.mo
-share/locale/it/LC_MESSAGES/libxfce4util.mo
 share/locale/ja/LC_MESSAGES/libxfce4util.mo
 share/locale/ka/LC_MESSAGES/libxfce4util.mo
 share/locale/ko/LC_MESSAGES/libxfce4util.mo
@@ -75,12 +78,12 @@ share/locale/pt_BR/LC_MESSAGES/libxfce4util.mo
 share/locale/pt_PT/LC_MESSAGES/libxfce4util.mo
 share/locale/ro/LC_MESSAGES/libxfce4util.mo
 share/locale/si/LC_MESSAGES/libxfce4util.mo
-share/locale/sk/LC_MESSAGES/libxfce4util.mo
 share/locale/sq/LC_MESSAGES/libxfce4util.mo
-share/locale/th/LC_MESSAGES/libxfce4util.mo
+share/locale/sv/LC_MESSAGES/libxfce4util.mo
 share/locale/tr/LC_MESSAGES/libxfce4util.mo
 share/locale/uk/LC_MESSAGES/libxfce4util.mo
 share/locale/ur/LC_MESSAGES/libxfce4util.mo
+share/locale/zh_CN/LC_MESSAGES/libxfce4util.mo
 @dirrmtry share/locale/nb_NO/LC_MESSAGES
 @dirrmtry share/locale/nb_NO
 @dirrmtry share/locale/ur/LC_MESSAGES
