@@ -7,7 +7,6 @@
     SUBDIR += aqmoney
     SUBDIR += beanie
     SUBDIR += cbb
-    SUBDIR += eqonomize
     SUBDIR += eqonomize-kde3
     SUBDIR += eqonomize-kde4
     SUBDIR += expense
