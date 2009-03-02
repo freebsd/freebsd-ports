@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	skystar2
-PORTVERSION=	12
+PORTVERSION=	1.31
+PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	http://paradox.org.ua/ \
+MASTER_SITES=	http://paradox.lissyara.su/ \
 		http://lissyara.su/patch/skystar2/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}
 
 MAINTAINER=	admin@lissyara.su
 COMMENT=	Kernel module and program for SkyStar2, ver. ${PORTVERSION}
 
 USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 SYSDIR?=	${SRC_BASE}/sys
 KMODDIR=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
