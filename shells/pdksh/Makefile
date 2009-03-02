@@ -17,9 +17,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/p.*//}
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${DISTNAME}-patches.1 ${DISTNAME}-patches.2
-PATCH_DIST_STRIP= -p2
+PATCH_DIST_STRIP=	-p2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	skreuzer@exit2shell.com
 COMMENT=	The Public Domain Korn Shell
 
 GNU_CONFIGURE=	yes
