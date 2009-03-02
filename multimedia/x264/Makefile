@@ -93,7 +93,7 @@ USE_XORG=	x11
 
 post-extract:
 .if defined(WITH_PGO) && ${SLAVE_PORT:L}!="yes"
-	@( cd ${WRKDIR} && ${BZIP2_CMD} -dc ${DISTDIR}/${Y4M_VIDEO_DISTFILE} > ${Y4M_VIDEO} )
+	@( cd ${WRKDIR} && ${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/${Y4M_VIDEO_DISTFILE} > ${Y4M_VIDEO} )
 .endif
 
 post-patch:
