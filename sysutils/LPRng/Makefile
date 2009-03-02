@@ -67,10 +67,6 @@ MAN8=	lpc.8 checkpc.8 lpd.8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800045
-BROKEN=		does not build
-.endif
-
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
