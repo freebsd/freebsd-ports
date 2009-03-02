@@ -7,7 +7,7 @@
 
 PORTNAME=	heirloom
 PORTVERSION=	070715
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -96,10 +96,4 @@ install-doc:
 #. endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800045
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
