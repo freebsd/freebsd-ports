@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.7.38
+PORTVERSION=	0.7.39
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -18,6 +18,7 @@ MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
 
 OPTIONS=	DEBUG "Enable nginx debugging" off \
+		IPV6 "Enable IPv6" off \
 		GOOGLE_PERFTOOLS "Enable google perftools module" off \
 		HTTP_MODULE "Enable HTTP module" on \
 		HTTP_ACCESSKEY_MODULE "Enable http_accesskey module" off \
@@ -78,6 +79,11 @@ IGNORE=		requires at least HTTP_MODULE or MAIL_MODULE to \
 CFLAGS+=	-g -DNGX_DEBUG_MALLOC
 CONFIGURE_ARGS+=--with-debug
 STRIP=		#do not strip if nginx with debug information
+.endif
+
+.if defined(WITH_IPV6)
+CONFIGURE_ARGS+=--with-ipv6
+CATEGORIES+=	ipv6
 .endif
 
 .if defined(WITH_GOOGLE_PERFTOOLS)
