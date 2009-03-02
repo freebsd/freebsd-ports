@@ -4331,6 +4331,7 @@ gnome-media                     ports/audio/gnome-media
 gnome-menus                     ports/x11/gnome-menus
 gnome-mime-data                 ports/misc/gnome-mime-data
 gnome-mount                     ports/sysutils/gnome-mount
+gnome-mplayer                   ports/multimedia/gnome-mplayer
 gnome-mud                       ports/net/gnome-mud
 gnome-netstatus                 ports/net/gnome-netstatus
 gnome-nettool                   ports/net/gnome-nettool
@@ -12249,6 +12250,7 @@ p5-SOAP-Data-Builder            ports/net/p5-SOAP-Data-Builder
 p5-SOAP-Lite                    ports/net/p5-SOAP-Lite
 p5-SOAP-Lite-060                ports/net/p5-SOAP-Lite-060
 p5-SOAP-MySOAP                  ports/net/p5-SOAP-MySOAP
+p5-SOAP-WSDL                    ports/devel/p5-SOAP-WSDL
 p5-SPOPS                        ports/devel/p5-SPOPS
 p5-SQL-Abstract                 ports/databases/p5-SQL-Abstract
 p5-SQL-Abstract-Limit           ports/databases/p5-SQL-Abstract-Limit
@@ -12900,6 +12902,7 @@ p5-WebService-YouTube           ports/www/p5-WebService-YouTube
 p5-What                         ports/net/p5-What
 p5-WordNet-QueryData            ports/textproc/p5-WordNet-QueryData
 p5-WordNet-Similarity           ports/textproc/p5-WordNet-Similarity
+p5-WordPress-XMLRPC             ports/www/p5-WordPress-XMLRPC
 p5-Workflow                     ports/devel/p5-Workflow
 p5-X11-GUITest                  ports/x11/p5-X11-GUITest
 p5-X11-IdleTime                 ports/x11/p5-X11-IdleTime
@@ -15656,6 +15659,7 @@ p5-soap-data-builder            ports/net/p5-SOAP-Data-Builder
 p5-soap-lite                    ports/net/p5-SOAP-Lite
 p5-soap-lite-060                ports/net/p5-SOAP-Lite-060
 p5-soap-mysoap                  ports/net/p5-SOAP-MySOAP
+p5-soap-wsdl                    ports/devel/p5-SOAP-WSDL
 p5-socket-multicast6            ports/net/p5-Socket-Multicast6
 p5-socket6                      ports/net/p5-Socket6
 p5-socks                        ports/net/p5-Socks
@@ -16203,6 +16207,7 @@ p5-webservice-youtube           ports/www/p5-WebService-YouTube
 p5-what                         ports/net/p5-What
 p5-wordnet-querydata            ports/textproc/p5-WordNet-QueryData
 p5-wordnet-similarity           ports/textproc/p5-WordNet-Similarity
+p5-wordpress-xmlrpc             ports/www/p5-WordPress-XMLRPC
 p5-workflow                     ports/devel/p5-Workflow
 p5-www-atmovies-tv              ports/www/p5-WWW-AtMovies-TV
 p5-www-babelfish                ports/www/p5-WWW-Babelfish
@@ -19820,6 +19825,7 @@ rubygem-activerecord-jdbc-adapter  ports/databases/rubygem-activerecord-jdbc-ada
 rubygem-activerecord-jdbcmysql-adapter  ports/databases/rubygem-activerecord-jdbcmysql-adapter
 rubygem-activeresource          ports/www/rubygem-activeresource
 rubygem-activesupport           ports/devel/rubygem-activesupport
+rubygem-addressable             ports/www/rubygem-addressable
 rubygem-amazon-ecs              ports/www/rubygem-amazon-ecs
 rubygem-analogger               ports/devel/rubygem-analogger
 rubygem-archive-tar-minitar     ports/archivers/rubygem-archive-tar-minitar
@@ -20468,7 +20474,6 @@ slrn                            ports/news/slrn
 slrnconf                        ports/news/slrnconf
 slrnface                        ports/news/slrnface
 sls                             ports/misc/sls
-slsc                            ports/math/slsc
 slst                            ports/sysutils/slst
 slump                           ports/games/slump
 slune                           ports/games/slune
@@ -20850,6 +20855,7 @@ stepmania-devel                 ports/games/stepmania-devel
 steptalk                        ports/lang/steptalk
 stepulator                      ports/math/stepulator
 stfl                            ports/devel/stfl
+stix-fonts                      ports/x11-fonts/stix-fonts
 stk                             ports/lang/STk
 stklos                          ports/lang/stklos
 stl2pov                         ports/graphics/stl2pov
