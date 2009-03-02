@@ -13,7 +13,7 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	ftp://ftp.faceprint.com/pub/software/scripts/
 EXTRACT_SUFX=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Convert MP3 files to Ogg Vorbis files
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
