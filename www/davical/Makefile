@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	davical
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.6.2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=		rscds
-DISTNAME=	libawl-php-0.25.tar.gz \
-		rscds-${PORTVERSION}
+DISTNAME=	davical_${PORTVERSION}
 
 MAINTAINER=	maurice@castro.aus.net
 COMMENT=	A simple CalDAV server using a postgres backend
@@ -20,36 +19,38 @@ RUN_DEPENDS=	${LOCALBASE}/include/php/ext/pgsql:${PORTSDIR}/databases/php5-pgsql
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
 		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg \
-		${LOCALBASE}/bin/pwgen:${PORTSDIR}/sysutils/pwgen
+		${LOCALBASE}/bin/pwgen:${PORTSDIR}/sysutils/pwgen \
+		php-libawl>=0.34:${PORTSDIR}/devel/php-libawl
+
+WRKSRC=		${WRKDIR}/davical-${PORTVERSION}
 
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message httpd-davical.conf
-WRKSRC=		${WRKDIR}/rscds-${PORTVERSION}
+WWWDIR?=	${PREFIX}/www/${PORTNAME}
 
-DAVICALDIR?=	${PREFIX}/www/${PORTNAME}
-DOCDIR?=	${PREFIX}/share/doc/DAViCal
+post-patch:
+	${RM} ${WRKSRC}/inc/always.php.orig
+	${RM} ${WRKSRC}/htdocs/index.php.orig
 
 do-install:
-	${MKDIR} ${DAVICALDIR}
-	${CP} -rpv ${WRKSRC}/htdocs ${DAVICALDIR}
-	${RM} ${DAVICALDIR}/htdocs/*.orig
-	${CP} -rpv ${WRKSRC}/inc ${DAVICALDIR}
-	${CP} -rpv ${WRKDIR}/libawl-php-0.25/inc ${DAVICALDIR}
-	${CP} -rpv ${WRKDIR}/libawl-php-0.25/dba ${DAVICALDIR}
-	${MKDIR} ${DAVICALDIR}/config
-	${CP} -pv ${WRKSRC}/config/example-config.php ${DAVICALDIR}/config/config.php
-	${MKDIR} ${DOCDIR}
-	${CP} -prv ${WRKSRC}/config ${DOCDIR}
-	${CP} -prv ${WRKSRC}/docs ${DOCDIR}
-	${CP} -prv ${WRKSRC}/scripts ${DOCDIR}
-	${CP} -prv ${WRKSRC}/dba ${DOCDIR}
-	${SED} 's:AWLDIR="$${DBADIR}/../../awl":AWLDIR="${PREFIX}/www/davical":' ${WRKSRC}/dba/create-database.sh > ${DOCDIR}/dba/create-database.sh
-	${CP} -pv ${WRKDIR}/httpd-davical.conf ${DOCDIR}
-	${CP} -pv ${WRKSRC}/README ${DOCDIR}
-	${CP} -pv ${WRKSRC}/INSTALL ${DOCDIR}
+	${MKDIR} ${WWWDIR} ${WWWDIR}/htdocs ${WWWDIR}/inc ${WWWDIR}/config
+	cd ${WRKSRC}/htdocs && ${COPYTREE_SHARE} . ${WWWDIR}/htdocs
+	cd ${WRKSRC}/inc && ${COPYTREE_SHARE} . ${WWWDIR}/inc
+	${CP} -pv ${WRKSRC}/config/example-config.php ${WWWDIR}/config/
 
 post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR} ${DOCSDIR}/config ${DOCSDIR}/docs ${DOCSDIR}/scripts ${DOCSDIR}/dba
+	cd ${WRKSRC}/config && ${COPYTREE_SHARE} . ${DOCSDIR}/config
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}/docs
+	cd ${WRKSRC}/scripts && ${COPYTREE_SHARE} . ${DOCSDIR}/scripts
+	cd ${WRKSRC}/dba && ${COPYTREE_SHARE} . ${DOCSDIR}/dba
+	${CP} -pv ${WRKDIR}/httpd-davical.conf ${DOCSDIR}
+	${CP} -pv ${WRKSRC}/README ${DOCSDIR}
+	${CP} -pv ${WRKSRC}/INSTALL ${DOCSDIR}
+.endif
+
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

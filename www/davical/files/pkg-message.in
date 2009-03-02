@@ -6,7 +6,7 @@ To complete the installation of DAViCal:
 
 2. Create DAViCal's database
 
-	su pgsql %%PREFIX%%/share/doc/DAViCal/dba/create-database.sh
+	su pgsql %%DOCSDIR%%/dba/create-database.sh
 
 3. Fix permissions
 
@@ -24,5 +24,9 @@ To complete the installation of DAViCal:
 
 	psql -U pgsql davical -c "grant all on database davical to general;"
 
-6. Enable in apache by copying the httpd-davical.conf from the
+4. Copy and edit your config file 
+
+	cp %%WWWDIR%%/config/example-config.php %%WWWDIR%%/config/config.php
+
+5. Enable in apache by copying the httpd-davical.conf from the
 documentation directory to the Apache Include directory and restart Apache. 
