@@ -1,5 +1,5 @@
---- common/device/bluetoth/bluez.c.orig	2007-03-10 19:47:59.000000000 +0300
-+++ common/device/bluetoth/bluez.c	2007-06-29 20:00:48.000000000 +0400
+--- libgammu/device/bluetoth/bluez.c.orig	2007-03-10 19:47:59.000000000 +0300
++++ libgammu/device/bluetoth/bluez.c	2007-06-29 20:00:48.000000000 +0400
 @@ -23,6 +23,8 @@
  #ifdef GSM_ENABLE_BLUETOOTHDEVICE
  #ifdef GSM_ENABLE_BLUEZ
@@ -38,7 +38,7 @@
 -	fd = socket(PF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM);
 +	fd = socket(PF_BLUETOOTH, SOCK_STREAM, BLUETOOTH_PROTO_RFCOMM);
  	if (fd < 0) {
- 		dbgprintf("Can't create socket\n");
+ 		smprintf(s, "Can't create socket\n");
  		return ERR_DEVICENODRIVER;
  	}
  
