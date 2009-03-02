@@ -2,10 +2,10 @@ bin/CodeLite
 bin/le_dos2unix.sh
 bin/le_exec.sh
 bin/le_killproc.sh
-bin/ctags-le
 %%DATADIR%%/config/accelerators.conf.default
 %%DATADIR%%/config/build_settings.xml.default
 %%DATADIR%%/config/build_settings.xml.default.win
+%%DATADIR%%/config/build_settings.xml.default.mac
 %%DATADIR%%/config/codelite.layout.default
 %%DATADIR%%/config/codelite.xml.default
 %%DATADIR%%/config/codelite.xml.default.gtk
@@ -25,6 +25,8 @@ bin/ctags-le
 %%DATADIR%%/templates/projects/static-library-wx-enabled/static-library-wx-enabled.project
 %%DATADIR%%/templates/projects/UnitTest++/UnitTest++.project
 %%DATADIR%%/templates/projects/UnitTest++/main.cpp
+%%DATADIR%%/templates/projects/non-code-project/non-code.project
+%%DATADIR%%/templates/projects/custom-makefile/custom-makefile.project
 %%DATADIR%%/templates/gizmos/wxmain.project.wizard
 %%DATADIR%%/templates/gizmos/mainframe.cpp.wizard
 %%DATADIR%%/templates/gizmos/app.cpp.wizard
@@ -36,6 +38,7 @@ bin/ctags-le
 %%DATADIR%%/templates/gizmos/wxproject.project.wizard
 %%DATADIR%%/templates/gizmos/plugin.cpp.wizard
 %%DATADIR%%/templates/formbuilder/DialogTemplate.fbp
+%%DATADIR%%/templates/formbuilder/DialogTemplateWithButtons.fbp
 %%DATADIR%%/templates/formbuilder/FrameTemplate.fbp
 %%DATADIR%%/templates/formbuilder/PanelTemplate.fbp
 %%DATADIR%%/plugins/CodeFormatter.so
@@ -76,6 +79,8 @@ bin/ctags-le
 %%DATADIR%%/astyle.sample
 %%DATADIR%%/svnreport.html
 share/applications/codelite.desktop
+@dirrm %%DATADIR%%/templates/projects/non-code-project
+@dirrm %%DATADIR%%/templates/projects/custom-makefile
 @dirrm %%DATADIR%%/templates/projects/vc-static-lib
 @dirrm %%DATADIR%%/templates/projects/vc-executable
 @dirrm %%DATADIR%%/templates/projects/vc-dynamic-library
