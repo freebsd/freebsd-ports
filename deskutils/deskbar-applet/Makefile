@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_SITELIBDIR}/simplejson-2.0.9-py2.5-freebsd-7.1-STABLE-i386.egg:${PORTSDIR}/devel/py-simplejson
+		${PYTHON_SITELIBDIR}/simplejson-2.0.9-py${PYTHON_VER}-${OPSYS:L}-${_OSRELEASE}-${ARCH}.egg:${PORTSDIR}/devel/py-simplejson
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -39,6 +39,8 @@ GCONF_SCHEMAS=	deskbar-applet.schemas
 OPTIONS=	EVO "Enable evolution support" on
 
 .include <bsd.port.pre.mk>
+
+_OSRELEASE!=	${UNAME} -r
 
 .if !defined(WITHOUT_EVO)
 USE_GNOME+=	evolutiondataserver
