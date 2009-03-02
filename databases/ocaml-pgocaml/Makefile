@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pgocaml
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	databases
-MASTER_SITES=	http://merjis.com/_file/
+MASTER_SITES=	BERLIOS
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	tcrimi@gmail.com
