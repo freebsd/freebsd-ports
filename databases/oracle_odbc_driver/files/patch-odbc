@@ -1,0 +1,366 @@
+--- src/SQLBindCol.c.orig	2009-03-03 01:25:53.000000000 +0600
++++ src/SQLBindCol.c	2009-03-03 01:31:04.000000000 +0600
+@@ -109,12 +109,12 @@
+     SQLUSMALLINT    ColumnNumber,
+     SQLSMALLINT        TargetType,
+     SQLPOINTER        TargetValuePtr,
+-    SQLINTEGER        BufferLength,
+-    SQLINTEGER        *StrLen_or_IndPtr )
++    SQLLEN            BufferLength,
++    SQLLEN            *StrLen_or_IndPtr )
+ {
+     hStmt_T *stmt=(hStmt_T*)StatementHandle;
+     SQLRETURN status=SQL_SUCCESS;
+-    SQLINTEGER *tmp;
++    SQLLEN *tmp;
+ 
+ 
+   tmp=0;
+--- src/SQLBindParameter.c.orig	2009-03-03 01:27:42.000000000 +0600
++++ src/SQLBindParameter.c	2009-03-03 01:28:45.000000000 +0600
+@@ -81,11 +81,11 @@
+     SQLSMALLINT            InputOutputType,
+     SQLSMALLINT            ValueType,
+     SQLSMALLINT            ParameterType,
+-    SQLUINTEGER            ColumnSize,
++    SQLULEN                ColumnSize,
+     SQLSMALLINT            DecimalDigits,
+     SQLPOINTER            ParameterValuePtr,
+-    SQLINTEGER            BufferLength,
+-    SQLINTEGER            *StrLen_or_IndPtr )
++    SQLLEN                BufferLength,
++    SQLLEN                *StrLen_or_IndPtr )
+ {
+     hStmt_T* stmt=(hStmt_T*)StatementHandle;
+     SQLRETURN status=SQL_SUCCESS;
+--- src/SQLColAttribute.c.orig	2009-03-03 01:29:17.000000000 +0600
++++ src/SQLColAttribute.c	2009-03-03 01:37:14.000000000 +0600
+@@ -72,7 +72,7 @@
+     SQLPOINTER            CharacterAttributePtr,
+     SQLSMALLINT            BufferLength,
+     SQLSMALLINT            *StringLengthPtr,
+-    SQLPOINTER            NumericAttributePtr )
++    SQLLEN                 *NumericAttributePtr )
+ {
+     hStmt_T *stmt=(hStmt_T*)StatementHandle;
+     struct ar_TAG *ar;
+@@ -99,7 +99,7 @@
+    switch(FieldIdentifier)
+     {
+         case SQL_DESC_AUTO_UNIQUE_VALUE:
+-            *((SQLINTEGER*)NumericAttributePtr)=ar->auto_unique;
++            *NumericAttributePtr=ar->auto_unique;
+ //#define UNIX_DEBUG
+ #ifdef UNIX_DEBUG
+ fprintf(stderr,"SQL_DESC_AUTO_UNIQUE_VALUE=%d %s %d\n",*((SQLINTEGER*)NumericAttributePtr),__FILE__,__LINE__);
+@@ -149,7 +149,7 @@
+ #ifdef UNIX_DEBUG
+       fprintf(stderr,"SQL_DESC_CASE_SENSITIVE %s %d\n",__FILE__,__LINE__);
+ #endif
+-      *((SQLINTEGER*)NumericAttributePtr)=ar->case_sensitive;
++      *NumericAttributePtr=ar->case_sensitive;
+       break;
+       
+     case SQL_DESC_CATALOG_NAME:
+@@ -169,44 +169,44 @@
+       *((SQLINTEGER*)NumericAttributePtr)=ood_ocitype_to_sqltype_imp(stmt,ColumnNumber);
+       */
+ 
+-      *((SQLINTEGER*)NumericAttributePtr)=ar->data_type;
++      *NumericAttributePtr=ar->data_type;
+       break;
+       
+     case SQL_DESC_COUNT:
+     case SQL_COLUMN_COUNT:
+-      *((SQLINTEGER*)NumericAttributePtr)=
++      *NumericAttributePtr=
+ 	(SQLINTEGER)stmt->current_ir->num_recs;
+ #ifdef UNIX_DEBUG
+-      fprintf(stderr,"%s %d %d SQL_DESC_COUNT %d\n",
++      fprintf(stderr,"%s %d %d SQL_DESC_COUNT %ld\n",
+ 	      __FILE__,__LINE__,ColumnNumber,
+-	      *((SQLINTEGER*)NumericAttributePtr));
++	      *NumericAttributePtr);
+ #endif
+       break;
+       
+     case SQL_DESC_DISPLAY_SIZE:
+-      *((SQLINTEGER*)NumericAttributePtr)=ar->display_size;
++      *NumericAttributePtr=ar->display_size;
+ #ifdef UNIX_DEBUG
+-      fprintf(stderr,"%s %d %d display size %d\n",
++      fprintf(stderr,"%s %d %d display size %ld\n",
+ 	      __FILE__,__LINE__,ColumnNumber,
+-	      *((SQLINTEGER*)NumericAttributePtr));
++	      *NumericAttributePtr);
+ #endif
+       break;
+       
+     case SQL_DESC_OCTET_LENGTH:
+     case SQL_DESC_LENGTH:
+     case SQL_COLUMN_LENGTH:
+-      *((SQLINTEGER*)NumericAttributePtr)=ar->octet_length;
++      *NumericAttributePtr=ar->octet_length;
+ #ifdef UNIX_DEBUG
+-      fprintf(stderr,"%s %d %d octet length %d\n",
++      fprintf(stderr,"%s %d %d octet length %ld\n",
+ 	      __FILE__,__LINE__,ColumnNumber,
+-	      *((SQLINTEGER*)NumericAttributePtr));
++	      *NumericAttributePtr);
+ #endif
+       break;
+       
+     case SQL_DESC_FIXED_PREC_SCALE:
+-      *((SQLINTEGER*)NumericAttributePtr)=ar->fixed_prec_scale;
++      *NumericAttributePtr=ar->fixed_prec_scale;
+ #ifdef UNIX_DEBUG
+-      fprintf(stderr,"SQL_DESC_FIXED_PREC_SCALE=%d %s %d\n",*((SQLINTEGER*)NumericAttributePtr),__FILE__,__LINE__);
++      fprintf(stderr,"SQL_DESC_FIXED_PREC_SCALE=%d %s %ld\n",*NumericAttributePtr,__FILE__,__LINE__);
+ #endif
+       break;
+       
+@@ -253,25 +253,25 @@
+ #ifdef UNIX_DEBUG
+       fprintf(stderr,"SQL_DESC_NULLABLE %s %d\n",__FILE__,__LINE__);
+ #endif
+-      *((SQLINTEGER*)NumericAttributePtr)=ar->nullable;
++      *NumericAttributePtr=ar->nullable;
+       break;
+       
+     case SQL_DESC_NUM_PREC_RADIX:
+ #ifdef UNIX_DEBUG
+       fprintf(stderr,"SQL_DESC_NUM_PREC_RADIX %s %d\n",__FILE__,__LINE__);
+ #endif
+-      *((SQLINTEGER*)NumericAttributePtr)=ar->num_prec_radix;
++      *NumericAttributePtr=ar->num_prec_radix;
+       break;
+       
+     case SQL_DESC_PRECISION:
+ #ifdef UNIX_DEBUG
+       fprintf(stderr,"SQL_DESC_PRECISION %s %d\n",__FILE__,__LINE__);
+ #endif
+-      *((SQLINTEGER*)NumericAttributePtr)=ar->precision;
++      *NumericAttributePtr=ar->precision;
+ 
+ #ifdef UNIX_DEBUG
+-      fprintf(stderr,"SQL_DESC_PRECISION = %d\n",
+-	      *((SQLINTEGER*)NumericAttributePtr));
++      fprintf(stderr,"SQL_DESC_PRECISION = %ld\n",
++	      *NumericAttributePtr);
+ #endif
+ 
+       break;
+@@ -281,11 +281,11 @@
+ #ifdef UNIX_DEBUG
+       fprintf(stderr,"SQL_DESC_SCALE %s %d\n",__FILE__,__LINE__);
+ #endif
+-      *((SQLINTEGER*)NumericAttributePtr)=ar->scale;
++      *NumericAttributePtr=ar->scale;
+ 
+ #ifdef UNIX_DEBUG
+       fprintf(stderr,"SQL_DESC_SCALE = %d\n",
+-	      *((SQLINTEGER*)NumericAttributePtr));
++	      *NumericAttributePtr);
+ #endif
+ 
+       break;
+@@ -304,14 +304,14 @@
+ #ifdef UNIX_DEBUG
+       fprintf(stderr,"SQL_DESC_SEARCHABLE %s %d\n",__FILE__,__LINE__);
+ #endif
+-      *((SQLINTEGER*)NumericAttributePtr)=ar->searchable;
++      *NumericAttributePtr=ar->searchable;
+       break;
+       
+     case SQL_DESC_TYPE:
+ #ifdef UNIX_DEBUG
+       fprintf(stderr,"SQL_DESC_TYPE %s %d\n",__FILE__,__LINE__);
+ #endif
+-      *((SQLINTEGER*)NumericAttributePtr)=ar->data_type;
++      *NumericAttributePtr=ar->data_type;
+       break;
+       
+     case SQL_DESC_TYPE_NAME:
+@@ -359,20 +359,20 @@
+ #ifdef UNIX_DEBUG
+       fprintf(stderr,"SQL_DESC_UNNAMED %s %d\n",__FILE__,__LINE__);
+ #endif
+-      *((SQLINTEGER*)NumericAttributePtr)=SQL_NAMED;
++      *NumericAttributePtr=SQL_NAMED;
+       break;
+       
+     case SQL_DESC_UNSIGNED:
+ #ifdef UNIX_DEBUG
+       fprintf(stderr,"SQL_DESC_UNSIGNED %s %d\n",__FILE__,__LINE__);
+ #endif
+-      *((SQLINTEGER*)NumericAttributePtr)=ar->un_signed;
++      *NumericAttributePtr=ar->un_signed;
+       break;
+       
+     case SQL_DESC_UPDATABLE:
+-      *((SQLINTEGER*)NumericAttributePtr)=ar->updateable;
++      *NumericAttributePtr=ar->updateable;
+ #ifdef UNIX_DEBUG
+-      fprintf(stderr,"SQL_DESC_UPDATABLE=%d %s %d\n",*((SQLINTEGER*)NumericAttributePtr),__FILE__,__LINE__);
++      fprintf(stderr,"SQL_DESC_UPDATABLE=%d %s %ld\n",*NumericAttributePtr,__FILE__,__LINE__);
+ #endif
+       break;
+       
+@@ -402,7 +402,7 @@
+             (SQLHANDLE)NULL,status,"sii",
+ 			"FieldIdentifier",odbc_desc_type(FieldIdentifier),
+ 			"ColumnNnumber",ColumnNumber,
+-			"*NumericAttributePtr",*(SQLINTEGER*)NumericAttributePtr);
++			"*NumericAttributePtr", *NumericAttributePtr);
+ //#undef  UNIX_DEBUG
+ }
+     return status;
+--- src/SQLDescribeCol.c.orig	2009-03-03 01:38:19.000000000 +0600
++++ src/SQLDescribeCol.c	2009-03-03 01:38:54.000000000 +0600
+@@ -78,7 +78,7 @@
+     SQLSMALLINT            BufferLength,
+     SQLSMALLINT            *NameLengthPtr,
+     SQLSMALLINT            *DataTypePtr,
+-    SQLUINTEGER            *ColumnSizePtr,
++    SQLULEN                *ColumnSizePtr,
+     SQLSMALLINT            *DecimalDigitsPtr,
+     SQLSMALLINT            *NullablePtr )
+ {
+--- src/SQLDescribeParam.c.orig	2009-03-03 01:39:20.000000000 +0600
++++ src/SQLDescribeParam.c	2009-03-03 01:39:53.000000000 +0600
+@@ -71,7 +71,7 @@
+     SQLHSTMT            StatementHandle,
+     SQLUSMALLINT        ParameterNumber,
+     SQLSMALLINT            *DataTypePtr,
+-    SQLUINTEGER            *ParameterSizePtr,
++    SQLULEN                *ParameterSizePtr,
+     SQLSMALLINT            *DecimalDigitsPtr,
+     SQLSMALLINT            *NullablePtr )
+ {
+--- src/SQLExtendedFetch.c.orig	2009-03-03 01:53:12.000000000 +0600
++++ src/SQLExtendedFetch.c	2009-03-03 01:53:46.000000000 +0600
+@@ -65,8 +65,8 @@
+ SQLRETURN SQL_API SQLExtendedFetch(
+     SQLHSTMT           hstmt,
+     SQLUSMALLINT       fFetchType,
+-    SQLINTEGER         irow,
+-    SQLUINTEGER           *pcrow,
++    SQLLEN             irow,
++    SQLULEN               *pcrow,
+     SQLUSMALLINT          *rgfRowStatus)
+ {
+ 	SQLRETURN status;
+--- src/SQLFetchScroll.c.orig	2009-03-03 01:40:15.000000000 +0600
++++ src/SQLFetchScroll.c	2009-03-03 01:40:53.000000000 +0600
+@@ -73,7 +73,7 @@
+ SQLRETURN SQL_API SQLFetchScroll(
+     SQLHSTMT            StatementHandle,
+     SQLSMALLINT            FetchOrientation,
+-    SQLINTEGER            FetchOffset )
++    SQLLEN                 FetchOffset )
+ {   
+ 	hStmt_T* stmt=(hStmt_T*)StatementHandle;
+     SQLRETURN status=SQL_SUCCESS;
+--- src/SQLGetData.c.orig	2009-03-03 01:41:12.000000000 +0600
++++ src/SQLGetData.c	2009-03-03 01:47:33.000000000 +0600
+@@ -306,9 +306,14 @@
+     SQLUSMALLINT        ColumnNumber,
+     SQLSMALLINT            TargetType,
+     SQLPOINTER            TargetValuePtr,
+-    SQLINTEGER            BufferLength,
+-    SQLINTEGER            *StrLen_or_indPtr )
++    SQLLEN                BufferLength,
++    SQLLEN                *StrLen_or_indPtr )
+ {
+-    return _SQLGetData(StatementHandle,ColumnNumber,TargetType,TargetValuePtr,
+-                BufferLength,StrLen_or_indPtr);
++    SQLINTEGER strlen_or_indptr;
++    SQLRETURN status;
++
++    status = _SQLGetData(StatementHandle,ColumnNumber,TargetType,TargetValuePtr,
++                BufferLength,&strlen);
++    if (status == SQL_SUCCESS)
++	    *StrLen_or_indPtr = strlen_or_indptr;
+ }
+--- src/SQLGetDescRec.c.orig	2009-03-03 01:48:15.000000000 +0600
++++ src/SQLGetDescRec.c	2009-03-03 01:49:07.000000000 +0600
+@@ -67,7 +67,7 @@
+     SQLSMALLINT            *StringLengthPtr,
+     SQLSMALLINT            *TypePtr,
+     SQLSMALLINT            *SubTypePtr,
+-    SQLINTEGER            *LengthPtr,
++    SQLLEN                 *LengthPtr,
+     SQLSMALLINT            *PrecisionPtr,
+     SQLSMALLINT            *ScalePtr,
+     SQLSMALLINT            *NullablePtr )
+--- src/SQLPutData.c.orig	2009-03-03 01:49:38.000000000 +0600
++++ src/SQLPutData.c	2009-03-03 01:50:05.000000000 +0600
+@@ -72,7 +72,7 @@
+ SQLRETURN SQL_API SQLPutData( 
+     SQLHSTMT              StatementHandle,
+     SQLPOINTER            DataPtr,
+-    SQLINTEGER            StrLen_or_Ind )
++    SQLLEN                StrLen_or_Ind )
+ {
+     hStmt_T* stmt=(hStmt_T*)StatementHandle;
+     SQLRETURN status=SQL_SUCCESS;
+--- src/SQLRowCount.c.orig	2009-03-03 01:50:20.000000000 +0600
++++ src/SQLRowCount.c	2009-03-03 01:50:51.000000000 +0600
+@@ -74,7 +74,7 @@
+ 
+ SQLRETURN SQL_API SQLRowCount(
+     SQLHSTMT            StatementHandle,
+-    SQLINTEGER            *RowCountPtr )
++    SQLLEN                *RowCountPtr )
+ {
+     hStmt_T *stmt=(hStmt_T*)StatementHandle;
+     if(!stmt||HANDLE_TYPE(stmt)!=SQL_HANDLE_STMT)
+@@ -88,7 +88,7 @@
+     ood_clear_diag((hgeneric*)stmt);
+     ood_mutex_lock_stmt(stmt);
+ 
+-	*RowCountPtr=(SQLINTEGER)abs(stmt->num_result_rows);
++	*RowCountPtr=abs(stmt->num_result_rows);
+ 
+     ood_mutex_unlock_stmt(stmt);
+ if(ENABLE_TRACE){
+--- src/SQLSetDescRec.c.orig	2009-03-03 01:51:07.000000000 +0600
++++ src/SQLSetDescRec.c	2009-03-03 01:51:58.000000000 +0600
+@@ -68,12 +68,12 @@
+     SQLSMALLINT         RecNumber,
+     SQLSMALLINT         Type,
+     SQLSMALLINT         SubType,
+-    SQLINTEGER          Length,
++    SQLLEN              Length,
+     SQLSMALLINT         Precision,
+     SQLSMALLINT         Scale,
+     SQLPOINTER          DataPtr,
+-    SQLINTEGER          *StringLengthPtr,
+-    SQLINTEGER          *IndicatorPtr )
++    SQLLEN              *StringLengthPtr,
++    SQLLEN              *IndicatorPtr )
+ {
+     hDesc_T* desc=(hDesc_T*)DescriptorHandle;
+     SQLRETURN status=SQL_SUCCESS;
+--- src/SQLSetPos.c.orig	2009-03-03 01:52:19.000000000 +0600
++++ src/SQLSetPos.c	2009-03-03 01:52:50.000000000 +0600
+@@ -68,7 +68,7 @@
+ 
+ SQLRETURN SQL_API SQLSetPos( 
+     SQLHSTMT            StatementHandle,
+-    SQLUSMALLINT        RowNumber,
++    SQLSETPOSIROW       RowNumber,
+     SQLUSMALLINT        Operation,
+     SQLUSMALLINT        LockType )
+ {
+--- src/string_functions.h.orig	2009-03-03 01:30:22.000000000 +0600
++++ src/string_functions.h	2009-03-03 01:30:33.000000000 +0600
+@@ -62,7 +62,7 @@
+ char* ood_xtoSQLNTS(SQLCHAR* str,SQLINTEGER str_len);
+ char* ood_xtoSQLNTS_orig(SQLCHAR* str,SQLINTEGER str_len);
+ char* ood_fast_strcat(char *dest,char *src,char *endptr);
+-int ood_bounded_strcpy(char *dest,char* src, int limit);
++int ood_bounded_strcpy(char *dest, const char* src, int limit);
+ char *ood_con_strtok(char* str);
+ void return_to_space(char *s);
+ #endif

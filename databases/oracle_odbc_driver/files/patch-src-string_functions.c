@@ -1,5 +1,5 @@
---- src/string_functions.c.orig	Thu Jun  9 18:18:53 2005
-+++ src/string_functions.c	Thu Jun  9 18:18:36 2005
+--- src/string_functions.c.orig	2003-02-10 21:43:54.000000000 +0600
++++ src/string_functions.c	2009-03-03 01:30:14.000000000 +0600
 @@ -81,19 +81,25 @@
  {
      char *local_str=NULL;
@@ -32,4 +32,13 @@
 +    for(i=0; i<str_len; i++)local_str[i]=toupper((unsigned char) local_str[i]);
      return(local_str);
  }
+ 
+@@ -149,7 +155,7 @@
+  * 1) Will alway NULL terminate
+  * 2) returns true if all OK, false if a bounds checking or other error occurs.
+  */ 
+-int ood_bounded_strcpy(char *dest,char* src, int limit)
++int ood_bounded_strcpy(char *dest, const char* src, int limit)
+ {
+     int i;
  
