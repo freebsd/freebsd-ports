@@ -8,7 +8,7 @@
 
 PORTNAME=	hal
 DISTVERSION=	0.5.11
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
@@ -84,6 +84,12 @@ PLIST_SUB+=	MEDIA="@comment "
 
 .if defined(WITH_FIXED_MOUNTPOINTS)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-tools_hal-storage-mount.c
+.endif
+
+.if ${OSVERSION} >= 800063
+PLIST_SUB+=	USB2=""
+.else
+PLIST_SUB+=	USB2="@comment "
 .endif
 
 post-patch:
