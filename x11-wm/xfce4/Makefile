@@ -49,8 +49,7 @@ PLIST_SUB+=	GDM=""
 .endif
 
 .if !defined(WITHOUT_ICONS)
-RUN_DEPENDS+=	${LOCALBASE}/share/xfce4/mime/Rodent.mime.xml:${PORTSDIR}/x11-themes/xfce4-icon-theme \
-		${LOCALBASE}/share/themes/Xfce/xfwm4/themerc:${PORTSDIR}/misc/xfce4-wm-themes \
+RUN_DEPENDS+=	${LOCALBASE}/share/themes/Xfce/xfwm4/themerc:${PORTSDIR}/misc/xfce4-wm-themes \
 		icons-tango-extras>=0.1.0:${PORTSDIR}/x11-themes/icons-tango-extras
 .endif
 
