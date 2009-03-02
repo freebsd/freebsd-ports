@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	iso-codes
-PORTVERSION=	3.2
-PORTREVISION=	1
+PORTVERSION=	3.6
 CATEGORIES=	misc
 MASTER_SITES=	ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/
 
