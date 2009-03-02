@@ -325,6 +325,7 @@
     SUBDIR += t3x
     SUBDIR += tcc
     SUBDIR += tcl-manual
+    SUBDIR += tcl-modules
     SUBDIR += tcl-wrapper
     SUBDIR += tcl80
     SUBDIR += tcl82
