@@ -1,0 +1,40 @@
+qt-bugs@ issue : N227209
+Trolltech task ID : none yet
+bugs.kde.org number : 174065
+applied: yes
+author: Szymon Tomasz Stefanek <s.stefanek@gmail.com>
+
+This patch fixes a crash deep inside the qt painting engine.
+
+The toplevel shared painter is instantiated by the topmost window
+which "owns" the backingstore buffer. The topmost window then recursively
+asks the children to paint themselves with the shared painter.
+With certain widget hierarchies it turns out that the topmost window
+may be asked to paint itself deep inside the recursive painting stack:
+a sort of "hierarchy-looping recursion".
+The window will do the job and then happily destroy the shared
+painter leaving the outer stack frames with a dangling pointer.
+
+This patch stops the "looping recursion" when it's triggered
+with a shared painter already active. The bug doesn't seem to
+be present in qt 4.5 snapshots, but in the meantime we need this fix.
+
+
+Index: src/gui/painting/qbackingstore.cpp
+===================================================================
+--- src/gui/painting/qbackingstore.cpp	(revision 879741)
++++ src/gui/painting/qbackingstore.cpp	(working copy)
+@@ -987,8 +987,12 @@
+             return;
+         }
+ 
+-        if (tlw->updatesEnabled()) {
++        // With certain widget hierarchies we may end up being called recursively
++        // on the same toplevel. This is likely to explode once the painter is released
++        // in the code below (since there is no reference counting). Avoid it.
++        bool alreadyPainting = tlwExtra->sharedPainter && tlwExtra->sharedPainter->isActive();
+ 
++        if (tlw->updatesEnabled() && !alreadyPainting) {
+             // hw: XXX the toClean region is not correct if !dirtyWidgets.isEmpty()
+ 
+             // Pre render config
