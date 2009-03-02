@@ -6,6 +6,7 @@
 
 PORTNAME=	qca-ossl
 DISTVERSION=	2.0.0-beta3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://delta.affinix.com/download/qca/2.0/plugins/
 
@@ -26,10 +27,12 @@ CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 		PTHREAD_LDFLAGS=${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--plugins-path=${PREFIX}/${QT_PLUGINDIR} --qtdir=${LOCALBASE} \
-		--with-qca=${LOCALBASE}
+		--with-qca=${LOCALBASE} \
+		--with-openssl-inc=${OPENSSLINC} \
+		--with-openssl-lib=${OPENSSLLIB}
 
 QT_PLUGINDIR=	lib/qt4/plugins
-
+++ qca-ossl.cpp	2009-02-26 06:41:17.000000000 +0100
 PLIST_SUB+=	QT_PLUGINDIR="${QT_PLUGINDIR}"
 
 .include <bsd.port.mk>
