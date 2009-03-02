@@ -46,6 +46,7 @@ bin/lander
 %%DATADIR%%/sounds/missile.wav
 %%DATADIR%%/sounds/select.wav
 share/locale/en_GB/LC_MESSAGES/lander.mo
+share/locale/sv/LC_MESSAGES/lander.mo
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
