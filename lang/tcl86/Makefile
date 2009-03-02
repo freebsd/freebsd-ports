@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.6.b.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -17,6 +17,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.b.1/b1/}-src
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Tool Command Language
 
+LATEST_LINK?=	tcl86
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}/unix
 ALL_TARGET=	all
@@ -38,6 +39,7 @@ OPTIONS=	TCL86_MAN "Install tcl 8.6 function manpages" off \
 USE_TCL=	${SHORT_TCL_VER}
 PLIST=		${PKGDIR}/pkg-plist.threads
 THREADS_SUFFIX=		-threads
+LATEST_LINK=	tcl86${THREADS_SUFFIX}
 .endif
 
 .include <bsd.port.pre.mk>
@@ -696,8 +698,6 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	safe.n SafeBase.n
 .endif
 .endif # defined(BUILDING_TCL_THREADS)
-
-LATEST_LINK=	tcl86${THREADS_SUFFIX}
 
 TCLBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
 
