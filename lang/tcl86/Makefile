@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.6.b.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -34,7 +34,8 @@ EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude compat/
 
 .if !defined(BUILDING_TCL_THREADS)
 OPTIONS=	TCL86_MAN "Install tcl 8.6 function manpages" off \
-		TZDATA "Install tcl timezone data" off
+		TZDATA "Install tcl timezone data" off \
+		TCL_MODULES "Install tcl common modules" on
 .else
 USE_TCL=	${SHORT_TCL_VER}
 PLIST=		${PKGDIR}/pkg-plist.threads
@@ -43,6 +44,10 @@ LATEST_LINK=	tcl86${THREADS_SUFFIX}
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_TCL_MODULES)
+RUN_DEPENDS+=	${LOCALBASE}/lib/tcl8/8.5/tcltest-2.3.0.tm:${PORTSDIR}/lang/tcl-modules
+.endif
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}
 

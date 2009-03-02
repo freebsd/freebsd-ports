@@ -5,17 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=	tcl
+PORTNAME?=	tcl
 PORTVERSION=	8.5.6
-PORTREVISION=	2
+PORTREVISION?=	3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
 PKGNAMESUFFIX?=		${THREADS_SUFFIX}${PKGNAMESUFFIX2}
-DISTNAME=	${PORTNAME}${PORTVERSION}-src
+DISTNAME=	tcl${PORTVERSION}-src
 
 MAINTAINER=	mm@FreeBSD.org
-COMMENT=	Tool Command Language
+COMMENT?=	Tool Command Language
 
 LATEST_LINK?=	tcl85
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
@@ -32,17 +32,29 @@ NOPRECIOUSMAKEVARS=	Too many _MLINKS for README.html
 PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=${SHORT_TCL_VER}
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude compat/
 
-.if !defined(BUILDING_TCL_THREADS)
+.if !defined(BUILDING_TCL_THREADS) && !defined(BUILDING_TCL_TM)
 OPTIONS=	TCL85_MAN "Install tcl 8.5 function manpages" off \
-		TZDATA "Install tcl timezone data" off
-.else
+		TZDATA "Install tcl timezone data" off \
+		TCL_MODULES "Install tcl common modules" on
+.elif defined(BUILDING_TCL_THREADS)
 USE_TCL=	${SHORT_TCL_VER}
 PLIST=		${PKGDIR}/pkg-plist.threads
 THREADS_SUFFIX=		-threads
 LATEST_LINK=	tcl85${THREADS_SUFFIX}
+.elif defined(BUILDING_TCL_TM)
+LATEST_LINK=	tcl-modules
+NO_BUILD=	yes
+INSTALL_TARGET=	install-tm
+PLIST=		${PKGDIR}/pkg-plist.tm
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if !defined(BUILDING_TCL_TM)
+
+.if !defined(WITHOUT_TCL_MODULES)
+RUN_DEPENDS+=	${LOCALBASE}/lib/tcl8/8.5/tcltest-2.3.0.tm:${PORTSDIR}/lang/tcl-modules
+.endif
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}
 
@@ -766,5 +778,7 @@ post-install:
 
 regression-test:	build
 	cd ${WRKSRC} && LC_ALL=C ${MAKE} test
+
+.endif # !defined(BUILDING_TCL_TM)
 
 .include <bsd.port.post.mk>

@@ -827,11 +827,6 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/US/Pacific-New
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/US/Samoa
 lib/tcl%%TCL_VER%%/word.tcl
-lib/tcl8/8.4/http-2.7.2.tm
-lib/tcl8/8.4/platform/shell-1.1.4.tm
-lib/tcl8/8.4/platform-1.0.3.tm
-lib/tcl8/8.5/msgcat-1.4.2.tm
-lib/tcl8/8.5/tcltest-2.3.0.tm
 %%DATADIR%%/man.macros
 @dirrm %%DATADIR%%
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/US
@@ -861,12 +856,6 @@ lib/tcl8/8.5/tcltest-2.3.0.tm
 @dirrm lib/tcl%%TCL_VER%%/http1.0
 @dirrm lib/tcl%%TCL_VER%%/encoding
 @dirrmtry lib/tcl%%TCL_VER%%
-@dirrmtry lib/tcl8/8.3
-@dirrmtry lib/tcl8/8.4/platform
-@dirrmtry lib/tcl8/8.4
-@dirrmtry lib/tcl8/8.5
-@dirrmtry lib/tcl8/8.6
-@dirrmtry lib/tcl8
 @dirrm include/tcl%%TCL_VER%%/unix
 @dirrm include/tcl%%TCL_VER%%/generic
 @dirrm include/tcl%%TCL_VER%%
