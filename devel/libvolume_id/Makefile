@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvolume_id
-PORTVERSION=	0.81.0
+PORTVERSION=	0.81.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.marcuscom.com/downloads/
 
