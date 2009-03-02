@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	An image viewer that utilizes Imlib2
 
 LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib

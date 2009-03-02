@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=markm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	FreeBSD-modified "Standard" BSD games
 
 USE_BZIP2=	yes
