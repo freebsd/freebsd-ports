@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	eqonomize
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	finance
 MASTER_SITES=	SF
+PKGNAMESUFFIX=	-kde3
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A peronal accounting software
+MAINTAINER=	cm@therek.com
+COMMENT=	A personal accounting software package
 
+USE_GETTXT=	yes
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
