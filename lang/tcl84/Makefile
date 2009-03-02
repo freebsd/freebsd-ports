@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.4.19
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	lang tcl
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,6 +18,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Tool Command Language
 
+LATEST_LINK?=	tcl84
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 ALL_TARGET=	all	# test
@@ -38,6 +39,7 @@ OPTIONS=	TCL84_MAN "Install tcl 8.4 function manpages" off
 USE_TCL=	${SHORT_TCL_VER}
 PLIST=		${PKGDIR}/pkg-plist.threads
 THREADS_SUFFIX=	-threads
+LATEST_LINK=	tcl84${THREADS_SUFFIX}
 .endif
 
 .include <bsd.port.pre.mk>
@@ -53,7 +55,6 @@ CONFIGURE_ARGS+=	--enable-threads
 CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 .else
 CONFIGURE_ARGS+=	--disable-threads
-
 
 .if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL84_MAN)
 
@@ -609,8 +610,6 @@ MLINKS=	Access.3 Tcl_Access.3 \
 .endif
 
 .endif # defined(BUILDING_TCL_THREADS)
-
-LATEST_LINK=	tcl84${THREADS_SUFFIX}
 
 TCLBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
 
