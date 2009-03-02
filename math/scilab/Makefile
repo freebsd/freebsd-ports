@@ -7,7 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	4.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math cad parallel
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz
@@ -16,11 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free Matlab clone by INRIA & ENPC
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
-BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		pvm:${PORTSDIR}/net/pvm
-RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
-    		pvm:${PORTSDIR}/net/pvm
+RUN_DEPENDS+=	pvm:${PORTSDIR}/net/pvm
 
 USE_FORTRAN=yes
 USE_XORG=	x11
@@ -29,12 +27,13 @@ USE_GETTEXT=	yes
 WANT_GNOME=	yes
 USE_GNOME=	pkgconfig gtk20 libgtkhtml vte
 USE_AUTOTOOLS=	autoconf:262
+USE_TK=		yes
 
 CONFIGURE_ARGS=	--with-tk \
 		--with-tk-library=${LOCALBASE}/lib \
-		--with-tk-include=${LOCALBASE}/include/tk8.4 \
+		--with-tk-include=${TK_INCLUDEDIR} \
 		--with-tcl-library=${LOCALBASE}/lib \
-		--with-tcl-include=${LOCALBASE}/include/tcl8.4 \
+		--with-tcl-include=${TCL_INCLUDEDIR} \
 		--with-xaw3d \
 		--x-include=${LOCALBASE}/include \
 		--x-libraries=${LOCALBASE}/lib \
