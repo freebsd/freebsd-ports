@@ -21,7 +21,8 @@ COMMENT=	Command-line tools for building TCP client-server applications
 OPTIONS=	MAN "Install man(1) pages" on \
 		RSS_DIFF "Patch rblsmtpd for qmail users" off \
 		SSL "Adds support for SSL (Secure Socket Layer)" off \
-		RBL2SMTPD "Don't drop connection, pass envvar to smtpd" off
+		RBL2SMTPD "Don't drop connection, pass envvar to smtpd" off \
+		LIMITS "Implement per-connection and other limits" off
 
 ALL_TARGET=	prog install instcheck
 
@@ -51,6 +52,11 @@ SCRIPTS=	date@ \
 		tcpcat
 
 .include <bsd.port.pre.mk>
+
+# SSL and LIMITS can't coexist
+.if defined(WITH_SSL) && defined(WITH_LIMITS)
+BROKEN=	SSL and LIMITS options cannot coexist, please choose one of them
+.endif
 
 # Restrict optimization to -O - -O2 causes problems at least on amd64
 .if ${ARCH} == "amd64"
@@ -82,6 +88,11 @@ PATCHFILES+=	ucspi-tcp-ssl-20050405.patch.gz:ssl
 
 .if defined(WITH_RBL2SMTPD)
 PATCHFILES+=	ucspi-tcp_rbl2smtpd.diff:rbl2smtpd
+.endif
+
+.if defined(WITH_LIMITS)
+PATCH_SITES+=	http://linux.voyager.hr/ucspi-tcp/files/:limits
+PATCHFILES+=	tcpserver-limits-2006-01-26.diff:limits
 .endif
 
 PATCH_SITES+=		${MASTER_SITE_LOCAL:S/$/:rss,ssl,rbl2smtpd/}
