@@ -1,5 +1,5 @@
 --- Makefile.in.orig	2008-12-22 15:16:08.000000000 +0100
-+++ Makefile.in	2009-02-26 11:52:42.428721740 +0100
++++ Makefile.in	2009-03-03 00:11:50.256476506 +0100
 @@ -55,6 +55,8 @@
  
  # Directory in which to install the include file tcl.h:
@@ -89,6 +89,15 @@
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
+@@ -751,7 +772,7 @@
+ 		else true; \
+ 		fi; \
+ 	    done;
+-	@for i in opt0.4 http1.0 encoding ../tcl8 ../tcl8/8.3 ../tcl8/8.4  ../tcl8/8.4/platform ../tcl8/8.5; \
++	@for i in opt0.4 http1.0 encoding; \
+ 	    do \
+ 	    if [ ! -d "$(SCRIPT_INSTALL_DIR)"/$$i ] ; then \
+ 		echo "Making directory $(SCRIPT_INSTALL_DIR)/$$i"; \
 @@ -764,13 +785,17 @@
  	    chmod +x $(SRC_DIR)/../unix/install-sh; \
  	    fi
@@ -98,21 +107,73 @@
 -		$(GENERIC_DIR)/tclTomMath.h \
 -		$(GENERIC_DIR)/tclTomMathDecls.h ; \
 +	@for i in $(GENERIC_DIR)/*.h ; \
++	    do \
++	    $(INSTALL_DATA) $$i "$(GENERIC_INCLUDE_INSTALL_DIR)"; \
++	    done;
++	@for i in $(UNIX_DIR)/*.h ; \
  	    do \
 -	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"; \
-+	    $(INSTALL_DATA) $$i "$(GENERIC_INCLUDE_INSTALL_DIR)"; \
- 	    done;
-+	@for i in $(UNIX_DIR)/*.h ; \
-+	    do \
 +	    $(INSTALL_DATA) $$i "$(UNIX_INCLUDE_INSTALL_DIR)"; \
-+	    done;
+ 	    done;
 +	@ln -sf "$(GENERIC_INCLUDE_INSTALL_DIR)"/tcl.h "$(INCLUDE_INSTALL_DIR)"/tcl.h
 +	@ln -sf "$(GENERIC_INCLUDE_INSTALL_DIR)"/tclDecls.h "$(INCLUDE_INSTALL_DIR)"/tclDecls.h
 +	@ln -sf "$(GENERIC_INCLUDE_INSTALL_DIR)"/tclPlatDecls.h "$(INCLUDE_INSTALL_DIR)"/tclPlatDecls.h
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex \
  		$(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix @DTRACE_SRC@; \
-@@ -836,20 +861,25 @@
+@@ -782,22 +807,11 @@
+ 	    do \
+ 	    $(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)"/http1.0; \
+ 	    done;
+-	@echo "Installing package http 2.7.2 as a Tcl Module";
+-	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/http-2.7.2.tm;
+ 	@echo "Installing library opt0.4 directory";
+ 	@for i in $(TOP_DIR)/library/opt/*.tcl ; \
+ 	    do \
+ 	    $(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)"/opt0.4; \
+ 	    done;
+-	@echo "Installing package msgcat 1.4.2 as a Tcl Module";
+-	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.5/msgcat-1.4.2.tm;
+-	@echo "Installing package tcltest 2.3.0 as a Tcl Module";
+-	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.5/tcltest-2.3.0.tm;
+-
+-	@echo "Installing package platform 1.0.3 as a Tcl Module";
+-	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/platform-1.0.3.tm;
+-	@echo "Installing package platform::shell 1.1.4 as a Tcl Module";
+-	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/shell.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/platform/shell-1.1.4.tm;
+ 
+ 	@echo "Installing library encoding directory";
+ 	@for i in $(TOP_DIR)/library/encoding/*.enc ; do \
+@@ -809,6 +823,28 @@
+ 	        "$(SCRIPT_INSTALL_DIR)"/tm.tcl; \
+ 	fi
+ 
++install-tm:
++	@for i in ../tcl8 ../tcl8/8.3 ../tcl8/8.4  ../tcl8/8.4/platform ../tcl8/8.5 ../tcl8/8.6; \
++	    do \
++	    if [ ! -d "$(SCRIPT_INSTALL_DIR)"/$$i ] ; then \
++		echo "Making directory $(SCRIPT_INSTALL_DIR)/$$i"; \
++		mkdir -p "$(SCRIPT_INSTALL_DIR)"/$$i; \
++		chmod 755 "$(SCRIPT_INSTALL_DIR)"/$$i; \
++		else true; \
++		fi; \
++	    done;
++	@echo "Installing package http 2.7.2 as a Tcl Module";
++	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/http-2.7.2.tm;
++	@echo "Installing package msgcat 1.4.2 as a Tcl Module";
++	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.5/msgcat-1.4.2.tm;
++	@echo "Installing package tcltest 2.3.0 as a Tcl Module";
++	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.5/tcltest-2.3.0.tm;
++
++	@echo "Installing package platform 1.0.3 as a Tcl Module";
++	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/platform-1.0.3.tm;
++	@echo "Installing package platform::shell 1.1.4 as a Tcl Module";
++	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/shell.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/platform/shell-1.1.4.tm;
++
+ install-tzdata: tclsh
+ 	@echo "Installing time zone data"
+ 	@@LD_LIBRARY_PATH_VAR@="`pwd`:$${@LD_LIBRARY_PATH_VAR@}"; export @LD_LIBRARY_PATH_VAR@; \
+@@ -836,20 +872,25 @@
  		else true; \
  		fi; \
  	    done;
