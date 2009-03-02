@@ -11,7 +11,7 @@ CATEGORIES=	finance
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-kde3
 
-MAINTAINER=	cm@therek.com
+MAINTAINER=	cm@therek.net
 COMMENT=	A personal accounting software package
 
 USE_GETTXT=	yes
