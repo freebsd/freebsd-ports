@@ -23,6 +23,12 @@ USE_LDCONFIG=	yes
 
 MAN1=		gen-ctl-io.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on FreeBSD 6.X
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -33,4 +39,4 @@ post-install:
 	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
