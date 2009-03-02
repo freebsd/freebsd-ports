@@ -2,17 +2,5 @@ bin/lhs2TeX
 share/texmf-local/tex/latex/polytable/lazylist.sty
 share/texmf-local/tex/latex/polytable/polytable.sty
 @dirrm share/texmf-local/tex/latex/polytable
-%%DATADIR%%/lhs2tex-1.13/colorcode.fmt
-%%DATADIR%%/lhs2tex-1.13/forall.fmt
-%%DATADIR%%/lhs2tex-1.13/greek.fmt
-%%DATADIR%%/lhs2tex-1.13/jfpcompat.fmt
-%%DATADIR%%/lhs2tex-1.13/lhs2TeX.fmt
-%%DATADIR%%/lhs2tex-1.13/lhs2TeX.sty
-%%DATADIR%%/lhs2tex-1.13/polycode.fmt
-%%DATADIR%%/lhs2tex-1.13/spacing.fmt
-@dirrm %%DATADIR%%/lhs2tex-1.13
-@dirrm %%DATADIR%%
-%%PORTDOCS%%%%DOCSDIR%%/Guide2.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec %D/bin/mktexlsr
 @unexec %D/bin/mktexlsr
