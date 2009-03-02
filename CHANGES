@@ -6,7 +6,7 @@ copyrighted by the FreeBSD Foundation.
 This file contains major changes to ports and the ports infrastructure.
 Intended audience are ports committers, maintainers and other
 developers. User oriented changes should be submitted for inclusion
-in the release notes.
+in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
@@ -1465,7 +1465,7 @@ listed here, and it only starts on January 29, 2004.
 
 Copyright information:
 
-Copyright 2004-2007 FreeBSD Foundation All Rights Reserved.
+Copyright 2004-2009 FreeBSD Foundation All Rights Reserved.
 
 Redistribution, publication, translation and use, with or without
 modification, in full or in part, in any form or format of this
