@@ -7,16 +7,15 @@
 #
 
 PORTNAME=	cscope
-PORTVERSION=	15.6
-PORTREVISION=	1
+PORTVERSION=	15.7
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	An interactive C program browser
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-yacc
 
 PLIST_FILES=	bin/cscope \
 		bin/ocs
