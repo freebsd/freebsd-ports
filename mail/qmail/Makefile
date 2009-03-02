@@ -475,7 +475,7 @@ PATCHFILES+=	tarpit.patch:tarpit
 . if defined(SLAVE_SPAMCONTROL)
 SMTPEXTFORK_PATCH=	smtpextfork-spamcontrol-2519.patch
 . else
-SMTPEXTFORK_PATCH=	smtpextfork-ldap-${LDAP_PATCH_DATE}.patch
+SMTPEXTFORK_PATCH=	smtpextfork-ldap-${LDAP_PATCH_DATE}_3.patch
 . endif
 
 MASTER_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail-smtpextfork/patches/:extfork \
