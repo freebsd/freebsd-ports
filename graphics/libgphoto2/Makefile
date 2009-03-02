@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	gphoto
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	A universal digital camera picture control tool
 
-LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb \
-		exif.12:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
 
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget pkgconfig ltverhack
@@ -36,6 +35,14 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800064
+LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+.else
+CONFIGURE_ENV+=	LIBUSB_LIBS="-L/usr/lib -lusb20" LIBUSB_CFLAGS="-I/usr/include"
+.endif
+
 post-patch:
 .for file in configure libgphoto2_port/configure
 	@${REINPLACE_CMD} -e \
@@ -46,4 +53,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|linux-hotplug ||' ${WRKSRC}/packaging/Makefile.in
 	@${REINPLACE_CMD} -e 's|@HAVE_DOXYGEN_TRUE@|#| ; s|@HAVE_DOXYGEN_FALSE@||' ${WRKSRC}/doc/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
