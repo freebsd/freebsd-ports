@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	xfce4-panel
-PORTVERSION=	4.4.3
-PORTREVISION=	0
+PORTVERSION=	4.6.0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 panel module
+
+LIB_DEPENDS=	wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck
 
 CONFLICTS=	xfce4-systray-*
 GNU_CONFIGURE=	yes
@@ -23,7 +24,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
-USE_XFCE=	configenv libgui libmcs libutil mcsmanager
+USE_XFCE=	configenv libexo libgui libutil
 
 OPTIONS=	GTKDOC	"install the library documentation"	off \
 		STARTUP "Enable startup notification support"	on

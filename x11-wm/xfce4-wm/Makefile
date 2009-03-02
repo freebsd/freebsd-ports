@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-wm
-PORTVERSION=	4.4.3
-PORTREVISION=	0
+PORTVERSION=	4.6.0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	xfwm4-${PORTVERSION}
@@ -24,7 +23,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
-USE_XFCE=	configenv libmcs libutil libgui mcsmanager panel
+USE_XFCE=	configenv libutil libgui panel xfconf
 
 OPTIONS=	COMPOSITE	"Support the experimental X11 Composite extension"	on \
 		STARTUP 	"Enable startup notification support"			on \

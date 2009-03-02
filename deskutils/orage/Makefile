@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	orage
-PORTVERSION=	4.4.3
+PORTVERSION=	4.6.0
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
@@ -20,12 +20,14 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
-USE_XFCE=	configenv libgui libmcs mcsmanager panel
+USE_XFCE=	configenv libgui panel
 USE_XORG=	xext xrender xinerama xi xrandr xcursor xcomposite xdamage x11 \
 		xfixes
 
 OPTIONS=	BDB	"Enable BDB support"		off \
 		ICAL	"Enable libical support"	off
+
+MAN1=		globaltime.1 orage.1
 
 .include <bsd.port.pre.mk>
 

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-session
-PORTVERSION=	4.4.3
-PORTREVISION=	0
+PORTVERSION=	4.6.0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
@@ -17,6 +16,8 @@ COMMENT=	Session manager for the Xfce 4 desktop environment
 
 BUILD_DEPENDS=	iceauth:${PORTSDIR}/x11/iceauth
 RUN_DEPENDS=	iceauth:${PORTSDIR}/x11/iceauth
+LIB_DEPENDS=	wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck \
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -25,7 +26,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
-USE_XFCE=	configenv libgui libmcs libutil mcsmanager
+USE_XFCE=	configenv libgui libutil xfconf
 USE_XORG=	x11 sm ice
 
 MAN1=		xfce4-session.1 xfce4-session-logout.1

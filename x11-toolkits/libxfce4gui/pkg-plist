@@ -1,3 +1,4 @@
+etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 include/xfce4/libxfcegui4/dialogs.h
 include/xfce4/libxfcegui4/gtk_style.h
 include/xfce4/libxfcegui4/gtktoxevent.h
@@ -8,7 +9,6 @@ include/xfce4/libxfcegui4/libxfcegui4.h
 include/xfce4/libxfcegui4/libxfcegui4-config.h
 include/xfce4/libxfcegui4/netk-application.h
 include/xfce4/libxfcegui4/netk-enum-types.h
-include/xfce4/libxfcegui4/netk-marshal.h
 include/xfce4/libxfcegui4/netk-pager.h
 include/xfce4/libxfcegui4/netk-screen.h
 include/xfce4/libxfcegui4/netk-tasklist.h
@@ -25,7 +25,6 @@ include/xfce4/libxfcegui4/xfce_decorbutton.h
 include/xfce4/libxfcegui4/xfce_decortoggle.h
 include/xfce4/libxfcegui4/xfce_framebox.h
 include/xfce4/libxfcegui4/xfce_iconbutton.h
-include/xfce4/libxfcegui4/xfce_marshal.h
 include/xfce4/libxfcegui4/xfce_menubutton.h
 include/xfce4/libxfcegui4/xfce_movehandler.h
 include/xfce4/libxfcegui4/xfce_scaled_image.h
@@ -45,11 +44,23 @@ include/xfce4/libxfcegui4/xfce-widget-helpers.h
 include/xfce4/libxfcegui4/netk-class-group.h
 include/xfce4/libxfcegui4/netk-window-action-menu.h
 include/xfce4/libxfcegui4/xinerama.h
+include/xfce4/libxfce4kbd-private/xfce-shortcuts-provider.h
+include/xfce4/libxfce4kbd-private/xfce-shortcuts-grabber.h
+include/xfce4/libxfce4kbd-private/xfce-shortcut-dialog.h
+include/xfce4/libxfce4kbd-private/xfce-shortcuts.h
+lib/libglade/2.0/libxfce4.a
+lib/libglade/2.0/libxfce4.la
+lib/libglade/2.0/libxfce4.so
 lib/libxfcegui4.a
 lib/libxfcegui4.la
 lib/libxfcegui4.so
-lib/libxfcegui4.so.6
+lib/libxfcegui4.so.7
+lib/libxfce4kbd-private.a
+lib/libxfce4kbd-private.la
+lib/libxfce4kbd-private.so
+lib/libxfce4kbd-private.so.5
 libdata/pkgconfig/libxfcegui4-1.0.pc
+libdata/pkgconfig/libxfce4kbd-private-1.0.pc
 share/gtk-doc/html/libxfcegui4/XfceAboutDialog.html
 share/gtk-doc/html/libxfcegui4/XfceAppMenuItem.html
 share/gtk-doc/html/libxfcegui4/XfceFramebox.html
@@ -89,13 +100,85 @@ share/icons/hicolor/48x48/apps/xfce-terminal.png
 share/icons/hicolor/48x48/apps/xfce-unknown.png
 share/icons/hicolor/48x48/apps/xfce-utils.png
 share/icons/hicolor/scalable/apps/xfce-filemanager.svg
+share/locale/am/LC_MESSAGES/libxfcegui4.mo
+share/locale/ar/LC_MESSAGES/libxfcegui4.mo
+share/locale/be/LC_MESSAGES/libxfcegui4.mo
+share/locale/bn_IN/LC_MESSAGES/libxfcegui4.mo
+share/locale/ca/LC_MESSAGES/libxfcegui4.mo
+share/locale/cs/LC_MESSAGES/libxfcegui4.mo
+share/locale/cy/LC_MESSAGES/libxfcegui4.mo
+share/locale/da/LC_MESSAGES/libxfcegui4.mo
+share/locale/de/LC_MESSAGES/libxfcegui4.mo
+share/locale/dz/LC_MESSAGES/libxfcegui4.mo
+share/locale/el/LC_MESSAGES/libxfcegui4.mo
+share/locale/en_GB/LC_MESSAGES/libxfcegui4.mo
+share/locale/eo/LC_MESSAGES/libxfcegui4.mo
+share/locale/es/LC_MESSAGES/libxfcegui4.mo
+share/locale/et/LC_MESSAGES/libxfcegui4.mo
+share/locale/eu/LC_MESSAGES/libxfcegui4.mo
+share/locale/fa/LC_MESSAGES/libxfcegui4.mo
+share/locale/fi/LC_MESSAGES/libxfcegui4.mo
+share/locale/fr/LC_MESSAGES/libxfcegui4.mo
+share/locale/gl/LC_MESSAGES/libxfcegui4.mo
+share/locale/gu/LC_MESSAGES/libxfcegui4.mo
+share/locale/he/LC_MESSAGES/libxfcegui4.mo
+share/locale/hu/LC_MESSAGES/libxfcegui4.mo
+share/locale/hy/LC_MESSAGES/libxfcegui4.mo
+share/locale/id/LC_MESSAGES/libxfcegui4.mo
+share/locale/it/LC_MESSAGES/libxfcegui4.mo
+share/locale/ja/LC_MESSAGES/libxfcegui4.mo
+share/locale/ka/LC_MESSAGES/libxfcegui4.mo
+share/locale/ko/LC_MESSAGES/libxfcegui4.mo
+share/locale/ku/LC_MESSAGES/libxfcegui4.mo
+share/locale/lt/LC_MESSAGES/libxfcegui4.mo
+share/locale/lv/LC_MESSAGES/libxfcegui4.mo
+share/locale/mk/LC_MESSAGES/libxfcegui4.mo
+share/locale/mr/LC_MESSAGES/libxfcegui4.mo
+share/locale/nb_NO/LC_MESSAGES/libxfcegui4.mo
+share/locale/nl/LC_MESSAGES/libxfcegui4.mo
+share/locale/pa/LC_MESSAGES/libxfcegui4.mo
+share/locale/pl/LC_MESSAGES/libxfcegui4.mo
+share/locale/pt_BR/LC_MESSAGES/libxfcegui4.mo
+share/locale/pt_PT/LC_MESSAGES/libxfcegui4.mo
+share/locale/ro/LC_MESSAGES/libxfcegui4.mo
+share/locale/ru/LC_MESSAGES/libxfcegui4.mo
+share/locale/si/LC_MESSAGES/libxfcegui4.mo
+share/locale/sk/LC_MESSAGES/libxfcegui4.mo
+share/locale/sq/LC_MESSAGES/libxfcegui4.mo
+share/locale/sv/LC_MESSAGES/libxfcegui4.mo
+share/locale/ta/LC_MESSAGES/libxfcegui4.mo
+share/locale/tr/LC_MESSAGES/libxfcegui4.mo
+share/locale/uk/LC_MESSAGES/libxfcegui4.mo
+share/locale/ur/LC_MESSAGES/libxfcegui4.mo
+share/locale/zh_CN/LC_MESSAGES/libxfcegui4.mo
+share/locale/zh_TW/LC_MESSAGES/libxfcegui4.mo
 @dirrm include/xfce4/libxfcegui4
 @dirrmtry include/xfce4/xfce4-modules
+@dirrm include/xfce4/libxfce4kbd-private
 @dirrmtry include/xfce4
 @dirrmtry lib/xfce4/modules
 @dirrmtry lib/xfce4
-@dirrmtry share/xfce4/mime
-@dirrmtry share/xfce4
+@comment @dirrmtry share/xfce4/mime
+@comment @dirrmtry share/xfce4
 @dirrm share/gtk-doc/html/libxfcegui4
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrm etc/xdg/xfce4/xfconf/xfce-perchannel-xml
+@dirrm etc/xdg/xfce4/xfconf
+@dirrm etc/xdg/xfce4
+@dirrm etc/xdg
+

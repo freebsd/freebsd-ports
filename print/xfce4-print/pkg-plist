@@ -1,5 +1,6 @@
 bin/xfprint4-manager
 bin/xfprint4
+bin/xfprint-settings
 include/xfce4/libxfprint/common.h
 include/xfce4/libxfprint/job.h
 include/xfce4/libxfprint/libxfprint.h
@@ -11,9 +12,6 @@ lib/libxfprint.so.0
 lib/libxfprint.so
 lib/libxfprint.la
 lib/libxfprint.a
-lib/xfce4/mcs-plugins/xfprint_plugin.a
-lib/xfce4/mcs-plugins/xfprint_plugin.la
-lib/xfce4/mcs-plugins/xfprint_plugin.so
 %%LPR%%lib/xfce4/xfprint-plugins/bsdlpr_plugin.a
 %%LPR%%lib/xfce4/xfprint-plugins/bsdlpr_plugin.la
 %%LPR%%lib/xfce4/xfprint-plugins/bsdlpr_plugin.so
@@ -23,7 +21,7 @@ lib/xfce4/mcs-plugins/xfprint_plugin.so
 libdata/pkgconfig/xfprint-1.0.pc
 share/applications/xfprint.desktop
 share/applications/xfprint-manager.desktop
-share/applications/xfce-xfprint-settings.desktop
+share/applications/xfprint-settings.desktop
 share/gtk-doc/html/libxfprint/PrinterListWindow.html
 share/gtk-doc/html/libxfprint/PrinterQueueWindow.html
 share/gtk-doc/html/libxfprint/PrintingSystem.html
@@ -78,7 +76,6 @@ share/locale/lv/LC_MESSAGES/xfprint.mo
 share/locale/mk/LC_MESSAGES/xfprint.mo
 share/locale/mr/LC_MESSAGES/xfprint.mo
 share/locale/ms/LC_MESSAGES/xfprint.mo
-share/locale/nb_NO/LC_MESSAGES/xfprint.mo
 share/locale/nl/LC_MESSAGES/xfprint.mo
 share/locale/pa/LC_MESSAGES/xfprint.mo
 share/locale/pl/LC_MESSAGES/xfprint.mo
@@ -88,6 +85,7 @@ share/locale/ro/LC_MESSAGES/xfprint.mo
 share/locale/ru/LC_MESSAGES/xfprint.mo
 share/locale/si/LC_MESSAGES/xfprint.mo
 share/locale/sk/LC_MESSAGES/xfprint.mo
+share/locale/sq/LC_MESSAGES/xfprint.mo
 share/locale/sv/LC_MESSAGES/xfprint.mo
 share/locale/ta/LC_MESSAGES/xfprint.mo
 share/locale/tr/LC_MESSAGES/xfprint.mo

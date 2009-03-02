@@ -205,7 +205,6 @@
     SUBDIR += xcursor-themes
     SUBDIR += xenophilia
     SUBDIR += xenostep
-    SUBDIR += xfce4-icon-theme
     SUBDIR += xmms-bluecurve-theme
     SUBDIR += xmms-eq-skins
     SUBDIR += xmms-vumeter-skins

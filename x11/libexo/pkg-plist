@@ -51,9 +51,6 @@ lib/libexo-hal-0.3.so.5
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.pyo
-%%MCS_MANAGER%%lib/xfce4/mcs-plugins/exo-preferred-applications-settings.a
-%%MCS_MANAGER%%lib/xfce4/mcs-plugins/exo-preferred-applications-settings.la
-%%MCS_MANAGER%%lib/xfce4/mcs-plugins/exo-preferred-applications-settings.so
 libdata/pkgconfig/exo-0.3.pc
 libdata/pkgconfig/exo-hal-0.3.pc
 libexec/exo-compose-mail-0.3
@@ -112,7 +109,6 @@ share/gtk-doc/html/exo/left.png
 share/gtk-doc/html/exo/right.png
 share/gtk-doc/html/exo/style.css
 share/gtk-doc/html/exo/up.png
-
 share/icons/hicolor/24x24/apps/preferences-desktop-default-applications.png
 share/icons/hicolor/48x48/apps/applications-internet.png
 share/icons/hicolor/48x48/apps/applications-other.png
@@ -122,6 +118,7 @@ share/locale/be/LC_MESSAGES/libexo-0.3.mo
 share/locale/ca/LC_MESSAGES/libexo-0.3.mo
 share/locale/cy/LC_MESSAGES/libexo-0.3.mo
 share/locale/cs/LC_MESSAGES/libexo-0.3.mo
+share/locale/da/LC_MESSAGES/libexo-0.3.mo
 share/locale/de/LC_MESSAGES/libexo-0.3.mo
 share/locale/dz/LC_MESSAGES/libexo-0.3.mo
 share/locale/el/LC_MESSAGES/libexo-0.3.mo
@@ -134,9 +131,11 @@ share/locale/fr/LC_MESSAGES/libexo-0.3.mo
 share/locale/gl/LC_MESSAGES/libexo-0.3.mo
 share/locale/he/LC_MESSAGES/libexo-0.3.mo
 share/locale/hu/LC_MESSAGES/libexo-0.3.mo
+share/locale/id/LC_MESSAGES/libexo-0.3.mo
 share/locale/it/LC_MESSAGES/libexo-0.3.mo
 share/locale/ja/LC_MESSAGES/libexo-0.3.mo
 share/locale/ka/LC_MESSAGES/libexo-0.3.mo
+share/locale/ku/LC_MESSAGES/libexo-0.3.mo
 share/locale/lt/LC_MESSAGES/libexo-0.3.mo
 share/locale/lv/LC_MESSAGES/libexo-0.3.mo
 share/locale/mk/LC_MESSAGES/libexo-0.3.mo
@@ -150,7 +149,10 @@ share/locale/ro/LC_MESSAGES/libexo-0.3.mo
 share/locale/ru/LC_MESSAGES/libexo-0.3.mo
 share/locale/sq/LC_MESSAGES/libexo-0.3.mo
 share/locale/sv/LC_MESSAGES/libexo-0.3.mo
+share/locale/tr/LC_MESSAGES/libexo-0.3.mo
+share/locale/uk/LC_MESSAGES/libexo-0.3.mo
 share/locale/ur/LC_MESSAGES/libexo-0.3.mo
+share/locale/zh_CN/LC_MESSAGES/libexo-0.3.mo
 share/locale/zh_TW/LC_MESSAGES/libexo-0.3.mo
 share/pixmaps/exo-0.3/exo-thumbnail-frame.png
 %%PYTHON%%share/pygtk/2.0/defs/exo-0.3/exo.defs
@@ -164,11 +166,31 @@ share/xfce4/doc/fr/images/exo-preferred-applications-internet.png
 share/xfce4/doc/fr/images/exo-preferred-applications-utilities.png
 share/xfce4/doc/fr/images/exo-preferred-applications-webbrowser-custom.png
 share/xfce4/doc/fr/images/exo-preferred-applications-webbrowser-menu.png
+share/xfce4/doc/es/images/exo-preferred-applications-internet.png
+share/xfce4/doc/es/images/exo-preferred-applications-utilities.png
+share/xfce4/doc/es/images/exo-preferred-applications-webbrowser-custom.png
+share/xfce4/doc/es/images/exo-preferred-applications-webbrowser-menu.png
+share/xfce4/doc/es/exo-preferred-applications.html
+share/xfce4/doc/id/images/exo-preferred-applications-internet.png
+share/xfce4/doc/id/images/exo-preferred-applications-utilities.png
+share/xfce4/doc/id/images/exo-preferred-applications-webbrowser-custom.png
+share/xfce4/doc/id/images/exo-preferred-applications-webbrowser-menu.png
+share/xfce4/doc/id/exo-preferred-applications.html
 share/xfce4/doc/ja/exo-preferred-applications.html
 share/xfce4/doc/ja/images/exo-preferred-applications-internet.png
 share/xfce4/doc/ja/images/exo-preferred-applications-utilities.png
 share/xfce4/doc/ja/images/exo-preferred-applications-webbrowser-custom.png
 share/xfce4/doc/ja/images/exo-preferred-applications-webbrowser-menu.png
+share/xfce4/doc/pt_BR/images/exo-preferred-applications-internet.png
+share/xfce4/doc/pt_BR/images/exo-preferred-applications-utilities.png
+share/xfce4/doc/pt_BR/images/exo-preferred-applications-webbrowser-custom.png
+share/xfce4/doc/pt_BR/images/exo-preferred-applications-webbrowser-menu.png
+share/xfce4/doc/pt_BR/exo-preferred-applications.html
+share/xfce4/doc/tr/images/exo-preferred-applications-internet.png
+share/xfce4/doc/tr/images/exo-preferred-applications-utilities.png
+share/xfce4/doc/tr/images/exo-preferred-applications-webbrowser-custom.png
+share/xfce4/doc/tr/images/exo-preferred-applications-webbrowser-menu.png
+share/xfce4/doc/tr/exo-preferred-applications.html
 share/xfce4/helpers/Terminal.desktop
 share/xfce4/helpers/aterm.desktop
 share/xfce4/helpers/balsa.desktop
@@ -185,6 +207,7 @@ share/xfce4/helpers/kmail.desktop
 share/xfce4/helpers/konqueror.desktop
 share/xfce4/helpers/links.desktop
 share/xfce4/helpers/lynx.desktop
+share/xfce4/helpers/midori.desktop
 share/xfce4/helpers/mozilla-browser.desktop
 share/xfce4/helpers/mozilla-mailer.desktop
 share/xfce4/helpers/mutt.desktop
@@ -204,7 +227,6 @@ share/xfce4/helpers/xterm.desktop
 @dirrm include/exo-0.3/exo
 @dirrm include/exo-0.3/exo-hal
 @dirrm include/exo-0.3
-@dirrmtry lib/xfce4/mcs-plugins
 @dirrmtry lib/xfce4
 @dirrm share/gtk-doc/html/exo
 @dirrmtry share/gtk-doc/html
@@ -226,10 +248,18 @@ share/xfce4/helpers/xterm.desktop
 @dirrm share/pixmaps/exo-0.3
 @dirrmtry share/xfce4/doc/C/images
 @dirrmtry share/xfce4/doc/C
+@dirrmtry share/xfce4/doc/es/images
+@dirrmtry share/xfce4/doc/es
 @dirrmtry share/xfce4/doc/fr/images
 @dirrmtry share/xfce4/doc/fr
+@dirrmtry share/xfce4/doc/id/images
+@dirrmtry share/xfce4/doc/id
 @dirrmtry share/xfce4/doc/ja/images
 @dirrmtry share/xfce4/doc/ja
+@dirrmtry share/xfce4/doc/pt_BR/images
+@dirrmtry share/xfce4/doc/pt_BR
+@dirrmtry share/xfce4/doc/tr/images
+@dirrmtry share/xfce4/doc/tr
 @dirrmtry share/xfce4/doc
 @dirrmtry share/xfce4/helpers
 @dirrmtry share/xfce4
