@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	eqonomize
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6
 CATEGORIES=	finance
 MASTER_SITES=	SF
+PKGNAMESUFFIX=	-kde4
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A peronal accounting software
+MAINTAINER=	cm@therek.net
+COMMENT=	A personal accounting software
 
-USE_KDELIBS_VER=3
-GNU_CONFIGURE=	yes
-USE_PERL5=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_KDE4=	kdelibs kdeprefix kdehier automoc4
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib dbus gui network svg xml qmake_build moc_build uic_build rcc_build
+USE_CMAKE=	yes
+USE_GETTEXT=	yes
+USE_ICONV=	yes
 INSTALLS_ICONS=	yes
 
 DATADIR=	${PREFIX}/share/apps/${PORTNAME}
-DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}
-
-post-patch:
-	@${REINPLACE_CMD} 's|%%LOCALBASE%%/bin/bash|/bin/sh|g' ${WRKSRC}/configure
+DOCSDIR=	${PREFIX}/share/doc
 
 .include <bsd.port.mk>
