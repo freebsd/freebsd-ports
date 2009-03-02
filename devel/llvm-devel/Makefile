@@ -7,6 +7,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	2.6.r${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -111,10 +112,11 @@ MANUAL_BINS=	bin/bugpoint \
 		bin/lli \
 		bin/opt \
 		bin/scan-build
+MANUAL_LIBS=	lib/libLTO.so
 build-plist:
 	${RM} ${PLIST}
 	cd ${PREFIX} && \
-	    (ls ${MANUAL_BINS} bin/llvm* bin/ccclib/* \
+	    (ls ${MANUAL_BINS} bin/llvm* bin/ccclib/* ${MANUAL_LIBS} \
 		lib/LLVM* lib/libLLVM* lib/plugin_llvm* lib/libclang* ; \
 	     ${FIND} include/llvm-c -type f; ${FIND} include/llvm -type f) | \
 	    ${SORT} >> ${PLIST}

@@ -410,6 +410,7 @@ lib/libLLVMTarget.a
 lib/libLLVMTransformUtils.a
 lib/libLLVMipa.a
 lib/libLLVMipo.a
+lib/libLTO.so
 lib/libclangAST.a
 lib/libclangAnalysis.a
 lib/libclangBasic.a
