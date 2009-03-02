@@ -225,6 +225,7 @@ lib/gstreamermm-%%GST_VERSION%%/proc/m4/convert.m4
 lib/gstreamermm-%%GST_VERSION%%/proc/m4/convert_gst.m4
 lib/gstreamermm-%%GST_VERSION%%/proc/m4/shared.m4
 lib/libgstreamermm-%%GST_VERSION%%.la
+lib/libgstreamermm-%%GST_VERSION%%.so
 lib/libgstreamermm-%%GST_VERSION%%.so.2
 libdata/pkgconfig/gstreamermm-%%GST_VERSION%%.pc
 @dirrm lib/gstreamermm-%%GST_VERSION%%/proc/m4
