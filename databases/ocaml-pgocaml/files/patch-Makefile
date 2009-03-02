@@ -20,17 +20,3 @@
  
  ifeq ($(wildcard .depend),.depend)
  include .depend
-@@ -109,11 +109,11 @@
- # Install.
- 
- findlib_install:
--	ocamlfind install pgocaml META pgocaml.{,cm{,x}}a pGOCaml.cm[ix] pa_pgsql.cmo
-+	ocamlfind install pgocaml META pgocaml.*a pGOCaml.cm[ix] pa_pgsql.cmo
- 
- reinstall:
- 	ocamlfind remove pgocaml
--	ocamlfind install pgocaml META pgocaml.{,cm{,x}}a pGOCaml.cm[ix] pa_pgsql.cmo
-+	ocamlfind install pgocaml META pgocaml.*a pGOCaml.cm[ix] pa_pgsql.cmo
- 
- install:
- 	rm -rf $(DESTDIR)$(OCAMLLIBDIR)/pgocaml
