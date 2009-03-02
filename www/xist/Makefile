@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xist
-PORTVERSION=	3.6
+PORTVERSION=	3.6.2
 CATEGORIES=	www python
 MASTER_SITES=	http://ftp.livinglogic.de/xist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
