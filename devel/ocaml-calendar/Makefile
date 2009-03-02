@@ -7,6 +7,7 @@
 
 PORTNAME=	calendar
 PORTVERSION=	2.01.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lri.fr/~signoles/prog/calendar/
 PKGNAMEPREFIX=	ocaml-
