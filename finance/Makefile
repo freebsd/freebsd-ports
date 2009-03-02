@@ -8,6 +8,7 @@
     SUBDIR += beanie
     SUBDIR += cbb
     SUBDIR += eqonomize
+    SUBDIR += eqonomize-kde3
     SUBDIR += expense
     SUBDIR += gfp
     SUBDIR += gnofin
