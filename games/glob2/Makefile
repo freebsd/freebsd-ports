@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		glob2
-PORTVERSION=		0.9.3
+PORTVERSION=		0.9.4
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -19,15 +19,21 @@ LIB_DEPENDS=		vorbis.4:${PORTSDIR}/audio/libvorbis	\
 			speex.1:${PORTSDIR}/audio/speex		\
 			fribidi.0:${PORTSDIR}/converters/fribidi\
 			freetype.9:${PORTSDIR}/print/freetype2
+# Should work with portaudio v19_20071207
+# Can be built with portaudio2 but does not run cleanly
+#LIB_DEPENDS+=		portaudio.2:${PORTSDIR}/audio/portaudio2
 
 USE_SDL=		image net sdl ttf
 USE_GL=			gl
 USE_GMAKE=		yes
 USE_SCONS=		yes
+#SCONS_ARGS=		--portaudio=true
 INSTALLS_ICONS=		yes
 SCONS_BUILDENV=		${SCONS_ENV}
+#CFLAGS+=		${PTHREAD_CFLAGS} -I. `pkg-config --cflags portaudio-2.0` -I${LOCALBASE}/include
+CFLAGS+=		${PTHREAD_CFLAGS} -I. -I${LOCALBASE}/include
+#LINKFLAGS=		${PTHREAD_LIBS} `pkg-config --libs portaudio-2.0` -L${LOCALBASE}/lib
 LINKFLAGS=		${PTHREAD_LIBS} -L${LOCALBASE}/lib
-CFLAGS+=		${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 
