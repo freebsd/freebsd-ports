@@ -8,6 +8,7 @@
 
 PORTNAME=	deskbar-applet
 PORTVERSION=	2.24.3
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,7 +19,8 @@ COMMENT=	Omnipresent versatile search interface
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree \
-		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
+		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
+		${PYTHON_SITELIBDIR}/simplejson-2.0.9-py2.5-freebsd-7.1-STABLE-i386.egg:${PORTSDIR}/devel/py-simplejson
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
