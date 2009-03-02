@@ -9,7 +9,7 @@ PORTNAME=	tcl-modules
 PORTREVISION=
 
 MAINTAINER=	mm@FreeBSD.org
-COMMENT?=	Tcl common modules
+COMMENT=	Tcl common modules
 
 BUILDING_TCL_TM=	yes
 
