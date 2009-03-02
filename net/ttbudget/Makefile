@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	ttbudget
-PORTVERSION=	4
+PORTVERSION=	5.3
 CATEGORIES=	net
-MASTER_SITES=	http://paradox.org.ua/ \
+MASTER_SITES=	http://paradox.lissyara.su/ \
 		http://lissyara.su/patch/skystar3/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}
 
 MAINTAINER=	admin@lissyara.su
 COMMENT=	Driver for 'TechnoTrend budget DVB S-1401' (SkyStar3)
 
 USE_BZIP2=	yes
-BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}
 SYSDIR?=	${SRC_BASE}/sys
 KMODDIR=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
