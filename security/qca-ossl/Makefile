@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--plugins-path=${PREFIX}/${QT_PLUGINDIR} --qtdir=${LOCALBASE} \
 		--with-openssl-lib=${OPENSSLLIB}
 
 QT_PLUGINDIR=	lib/qt4/plugins
-++ qca-ossl.cpp	2009-02-26 06:41:17.000000000 +0100
+
 PLIST_SUB+=	QT_PLUGINDIR="${QT_PLUGINDIR}"
 
 .include <bsd.port.mk>
