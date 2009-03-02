@@ -7,19 +7,18 @@
 
 PORTNAME=	gstreamermm
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	GNOME
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	C++ wrapper library for the multimedia library GStreamer
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GSTREAMER=	yes
+USE_GSTREAMER=	theora vorbis cdparanoia gio pango
 USE_GNOME=	pkgconfig gnomeprefix gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docs --disable-examples
