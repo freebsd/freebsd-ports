@@ -1,0 +1,13 @@
+CHI provides a unified caching API, designed to assist a developer in
+persisting data for a specified period of time.
+
+The CHI interface is implemented by driver classes that support
+fetching, storing and clearing of data. Driver classes exist or will
+exist for the gamut of storage backends available to Perl, such as
+memory, plain files, memory mapped files, memcached, and DBI.
+
+CHI is intended as an evolution of DeWitt Clinton's Cache::Cache
+package, adhering to the basic Cache API but adding new features and
+addressing limitations in the Cache::Cache implementation.
+
+WWW: http://search.cpan.org/dist/CHI/
