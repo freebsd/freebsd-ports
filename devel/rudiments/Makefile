@@ -24,10 +24,4 @@ CONFIGURE_ARGS=	--with-ssl-includes=-I${OPENSSLINC} \
 		--disable-pcre
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800045
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
