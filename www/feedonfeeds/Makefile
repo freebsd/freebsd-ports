@@ -7,18 +7,21 @@
 #
 
 PORTNAME=	feedonfeeds
-PORTVERSION=	0.1.9
+PORTVERSION=	0.5
 CATEGORIES=	www
-MASTER_SITES=	http://feedonfeeds.com/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wtp@bsdserwis.com
 COMMENT=	Server side personal RSS (and Atom) aggregator
 
-USE_PHP=	mysql xml
+PROJECTHOST=	feed-on-feeds
+USE_PHP=	mysql xml zlib curl mbstring iconv
 WANT_PHP_WEB=	yes
 USE_MYSQL=	yes
 NO_BUILD=	yes
-DATADIR?=	${PREFIX}/www/data/feedonfeeds
+DATADIR?=	${PREFIX}/www/data/feed-on-feeds
+WRKSRC=	${WRKDIR}/${PROJECTHOST}
 
 do-install:
 	${MKDIR} ${DATADIR}

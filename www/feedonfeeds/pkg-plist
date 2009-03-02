@@ -1,42 +1,63 @@
-%%DATADIR%%/CHANGELOG
-%%DATADIR%%/LICENSE
-%%DATADIR%%/add.php
-%%DATADIR%%/config.php
-%%DATADIR%%/delete.php
+%%DATADIR%%/prototype/prototype.js
+%%DATADIR%%/image/feed-icon.png
+%%DATADIR%%/image/grippy.png
+%%DATADIR%%/image/star-off.gif
+%%DATADIR%%/image/star-on.gif
+%%DATADIR%%/image/star-pending.gif
+%%DATADIR%%/image/throbber.gif
+%%DATADIR%%/plugins/wordpress.png
+%%DATADIR%%/plugins/balancetags.php
+%%DATADIR%%/plugins/delicious.php
+%%DATADIR%%/plugins/delicious.png
+%%DATADIR%%/plugins/enclosures.php
+%%DATADIR%%/plugins/fixdivs.php
+%%DATADIR%%/plugins/mediaplayer.swf
+%%DATADIR%%/plugins/mini_podcast.png
+%%DATADIR%%/plugins/place_audio.png
+%%DATADIR%%/plugins/place_video.png
+%%DATADIR%%/plugins/plain.php
+%%DATADIR%%/plugins/share-off.gif
+%%DATADIR%%/plugins/share-on.gif
+%%DATADIR%%/plugins/sharing.php
+%%DATADIR%%/plugins/wordpress.php
+%%DATADIR%%/plugins/autotag.php
+%%DATADIR%%/classes/fof-prefs.php
+%%DATADIR%%/simplepie/simplepie.inc
+%%DATADIR%%/simplepie/simplepie.patch
+%%DATADIR%%/fof-config-sample.php
+%%DATADIR%%/fof-db.php
+%%DATADIR%%/fof-main.php
+%%DATADIR%%/fof-render.php
 %%DATADIR%%/fof.css
 %%DATADIR%%/fof.js
-%%DATADIR%%/frames/add.php
-%%DATADIR%%/frames/delete.php
-%%DATADIR%%/frames/feeds.php
-%%DATADIR%%/frames/fof-frames.css
-%%DATADIR%%/frames/index.php
-%%DATADIR%%/frames/menu.php
-%%DATADIR%%/frames/update.php
-%%DATADIR%%/frames/view-action.php
-%%DATADIR%%/frames/view.php
+%%DATADIR%%/footer.php
+%%DATADIR%%/header.php
 %%DATADIR%%/index.php
-%%DATADIR%%/init.php
 %%DATADIR%%/install.php
-%%DATADIR%%/magpierss/AUTHORS
-%%DATADIR%%/magpierss/CHANGES
-%%DATADIR%%/magpierss/ChangeLog
-%%DATADIR%%/magpierss/README
-%%DATADIR%%/magpierss/extlib/Snoopy.class.inc
-%%DATADIR%%/magpierss/rss_cache.inc
-%%DATADIR%%/magpierss/rss_fetch.inc
-%%DATADIR%%/magpierss/rss_parse.inc
-%%DATADIR%%/magpierss/rss_utils.inc
-%%DATADIR%%/mark-read.php
+%%DATADIR%%/item.php
+%%DATADIR%%/items.php
+%%DATADIR%%/LICENSE
+%%DATADIR%%/login.php
+%%DATADIR%%/logout.php
 %%DATADIR%%/opml.php
-%%DATADIR%%/panel-menu.html
+%%DATADIR%%/prefs.php
+%%DATADIR%%/set-prefs.php
+%%DATADIR%%/shared.php
+%%DATADIR%%/sidebar.php
 %%DATADIR%%/uninstall.php
 %%DATADIR%%/update-quiet.php
+%%DATADIR%%/update-single.php
 %%DATADIR%%/update.php
+%%DATADIR%%/add-single.php
 %%DATADIR%%/view-action.php
-%%DATADIR%%/view-menu.html
-%%DATADIR%%/view.php
-@dirrm %%DATADIR%%/frames
-@dirrm %%DATADIR%%/magpierss/extlib
-@dirrm %%DATADIR%%/magpierss
+%%DATADIR%%/add-tag.php
+%%DATADIR%%/add.php
+%%DATADIR%%/delete.php
+%%DATADIR%%/favicon.php
+@dirrm %%DATADIR%%/prototype
+@dirrm %%DATADIR%%/image
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/classes
+@dirrm %%DATADIR%%/simplepie
 @dirrmtry %%DATADIR%%
 @dirrmtry www/data
