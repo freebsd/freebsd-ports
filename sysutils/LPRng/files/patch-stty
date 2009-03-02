@@ -1,0 +1,24 @@
+$FreeBSD$
+
+--- src/common/stty.c
++++ src/common/stty.c
+@@ -761,11 +761,19 @@
+ 	{"CR3", CR3, CRDLY},
+ #endif
+ #ifdef TABDLY
++#ifdef TAB0
+ 	{"TAB0", TAB0, TABDLY},
++#endif
++#ifdef TAB1
+ 	{"TAB1", TAB1, TABDLY},
++#endif
++#ifdef TAB2
+ 	{"TAB2", TAB2, TABDLY},
++#endif
++#ifdef TAB3
+ 	{"TAB3", TAB3, TABDLY},
+ #endif
++#endif
+ #ifdef BSDLY
+ 	{"BS0", BS0, BSDLY},
+ 	{"BS1", BS1, BSDLY},
