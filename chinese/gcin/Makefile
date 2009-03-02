@@ -39,6 +39,10 @@ MAN1=		gcin.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile
+.endif
+
 .if defined(WITH_ANTHY)
 RUN_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
 .endif
