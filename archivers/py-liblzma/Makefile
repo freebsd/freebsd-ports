@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblzma
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	archivers python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP}source/p/pyliblzma/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	lzma.0:${PORTSDIR}/archivers/lzmautils-devel
 
 USE_BZIP2=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.6+
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	py${PORTNAME}
 
