@@ -17,7 +17,6 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	XFCE bindings for Python
 
 LIB_DEPENDS=	xfcegui4:${PORTSDIR}/x11-toolkits/libxfce4gui \
-		xfce4mcs-manager:${PORTSDIR}/x11/libxfce4mcs \
 		xfce4panel:${PORTSDIR}/x11-wm/xfce4-panel \
 		xfce4util:${PORTSDIR}/x11/libxfce4util
 
