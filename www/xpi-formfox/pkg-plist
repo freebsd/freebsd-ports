@@ -1,0 +1,17 @@
+%%XPI_XPIDIR%%/__MACOSX/._chrome
+%%XPI_XPIDIR%%/__MACOSX/._defaults
+%%XPI_XPIDIR%%/__MACOSX/._install.rdf
+%%XPI_XPIDIR%%/__MACOSX/chrome/._formfox.jar
+%%XPI_XPIDIR%%/__MACOSX/defaults/._preferences
+%%XPI_XPIDIR%%/__MACOSX/defaults/preferences/._prefs.js
+%%XPI_XPIDIR%%/chrome/formfox.jar
+%%XPI_XPIDIR%%/defaults/preferences/prefs.js
+%%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/chrome.manifest
+@dirrm %%XPI_XPIDIR%%/__MACOSX/chrome
+@dirrm %%XPI_XPIDIR%%/__MACOSX/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/__MACOSX/defaults
+@dirrm %%XPI_XPIDIR%%/__MACOSX
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
