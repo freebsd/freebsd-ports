@@ -1,0 +1,57 @@
+bin/xfconf-query
+include/xfce4/xfconf-0/xfconf/xfconf-binding.h
+include/xfce4/xfconf-0/xfconf/xfconf-channel.h
+include/xfce4/xfconf-0/xfconf/xfconf-errors.h
+include/xfce4/xfconf-0/xfconf/xfconf-types.h
+include/xfce4/xfconf-0/xfconf/xfconf.h
+lib/libxfconf-0.so.2
+lib/libxfconf-0.so
+lib/libxfconf-0.la
+lib/libxfconf-0.a
+libdata/pkgconfig/libxfconf-0.pc
+libexec/xfconfd
+share/dbus-1/services/org.xfce.Xfconf.service
+share/gtk-doc/html/xfconf/ch01.html
+share/gtk-doc/html/xfconf/ch02.html
+share/gtk-doc/html/xfconf/ch03.html
+share/gtk-doc/html/xfconf/home.png
+share/gtk-doc/html/xfconf/index.html
+share/gtk-doc/html/xfconf/index.sgml
+share/gtk-doc/html/xfconf/left.png
+share/gtk-doc/html/xfconf/right.png
+share/gtk-doc/html/xfconf/style.css
+share/gtk-doc/html/xfconf/up.png
+share/gtk-doc/html/xfconf/xfconf-xfconf-backend.html
+share/gtk-doc/html/xfconf/xfconf-xfconf-binding.html
+share/gtk-doc/html/xfconf/xfconf-xfconf-channel.html
+share/gtk-doc/html/xfconf/xfconf-xfconf-errors.html
+share/gtk-doc/html/xfconf/xfconf-xfconf-types.html
+share/gtk-doc/html/xfconf/xfconf-xfconf.html
+share/gtk-doc/html/xfconf/xfconf.devhelp
+share/gtk-doc/html/xfconf/xfconf.devhelp2
+share/locale/ca/LC_MESSAGES/xfconf.mo
+share/locale/cs/LC_MESSAGES/xfconf.mo
+share/locale/da/LC_MESSAGES/xfconf.mo
+share/locale/de/LC_MESSAGES/xfconf.mo
+share/locale/es/LC_MESSAGES/xfconf.mo
+share/locale/eu/LC_MESSAGES/xfconf.mo
+share/locale/fi/LC_MESSAGES/xfconf.mo
+share/locale/fr/LC_MESSAGES/xfconf.mo
+share/locale/hu/LC_MESSAGES/xfconf.mo
+share/locale/id/LC_MESSAGES/xfconf.mo
+share/locale/ja/LC_MESSAGES/xfconf.mo
+share/locale/nb/LC_MESSAGES/xfconf.mo
+share/locale/nl/LC_MESSAGES/xfconf.mo
+share/locale/pt_BR/LC_MESSAGES/xfconf.mo
+share/locale/ro/LC_MESSAGES/xfconf.mo
+share/locale/ru/LC_MESSAGES/xfconf.mo
+share/locale/sv/LC_MESSAGES/xfconf.mo
+share/locale/tr/LC_MESSAGES/xfconf.mo
+share/locale/uk/LC_MESSAGES/xfconf.mo
+share/locale/zh_CN/LC_MESSAGES/xfconf.mo
+@dirrm share/gtk-doc/html/xfconf
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+@dirrm include/xfce4/xfconf-0/xfconf
+@dirrm include/xfce4/xfconf-0
+@dirrmtry include/xfce4
