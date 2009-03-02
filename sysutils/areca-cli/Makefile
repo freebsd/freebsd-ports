@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.unnet.nl/pub/areca/RaidCards/AP_Drivers/FreeBSD/CLI/ \
 PKGNAMESUFFIX=	-${ARCH}
 DISTNAME=	v${CLI_VER}_${CLI_REV}
 
-MAINTAINER=	rink@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command Line Interface for the Areca ARC-xxxx RAID controllers
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -23,8 +23,8 @@ PERIODICSCRIPT=	407.status-areca-raid
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-CLI_VER=	1.80A
-CLI_REV=	71012
+CLI_VER=	1.82
+CLI_REV=	81103
 
 SUB_FILES+=	${PERIODICSCRIPT}
 
