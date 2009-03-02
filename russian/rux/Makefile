@@ -6,16 +6,12 @@
 #
 
 PORTNAME=	rux
-PORTVERSION=	0.78
+PORTVERSION=	0.79
 CATEGORIES=	russian
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://asdf2087.narod.ru/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	ghos@mail.ru
+MAINTAINER=	anikinsl@gmail.com
 COMMENT=	The best cyrillic text viewer and code page converter
-
-WRKSRC=		${WRKDIR}
 
 MAN1=		rux.1
 MANLANG=	"" ru.KOI8-R
