@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lander
-PORTVERSION=	0.5
+PORTVERSION=	0.5.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.nickg.me.uk/files/ \
 		http://mirror.amdmi3.ru/
@@ -23,8 +23,6 @@ USE_GL=		gl glu
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.1
 
 PORTDOCS=	*
 
