@@ -6,11 +6,20 @@
 #
 
 PORTNAME=	cherokee
-PORTVERSION=	0.11.6
-PORTREVISION=	3
+PORTVERSION=	0.99.2
 CATEGORIES=	www
-MASTER_SITES=	http://www.cherokee-project.com/download/0.11/${PORTVERSION}/ \
-		LOCAL/beech
+MASTER_SITES=	http://www.cherokee-project.com/download/0.99/${PORTVERSION}/ \
+		http://cherokee.osuosl.org/0.99/${PORTVERSION}/ \
+		ftp://mirrors.secution.com/cherokee/0.99/${PORTVERSION}/ \
+		ftp://ftp.easynet.be/cherokee/0.99/${PORTVERSION}/ \
+		http://ftp.heanet.ie/mirrors/cherokee/0.99/${PORTVERSION}/ \
+		http://www.ftp.ne.jp/infosystems/cherokee/0.99/${PORTVERSION}/ \
+		http://www.ring.gr.jp/archives/net/cherokee/0.99/${PORTVERSION}/ \
+		http://cherokee-project.pl/mirror/cherokee/0.99/${PORTVERSION}/ \
+		http://ftp.nluug.nl/pub/internet/cherokee/0.99/${PORTVERSION}/ \
+		http://ftp.surfnet.nl/pub/internet/cherokee/0.99/${PORTVERSION}/ \
+		http://ftp.saix.net/Cherokee/0.99/${PORTVERSION}/ \
+		http://mirror.is.co.za/mirrors/cherokee/0.99/${PORTVERSION}/
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Extremely fast and flexible web server
@@ -24,6 +33,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	cherokee.sh
 USE_BISON=	build
 USE_PYTHON=	2.4+
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -35,7 +45,7 @@ CONFIGURE_ARGS=	--with-wwwroot=${PREFIX}/www/cherokee \
 DEFCONFS=	cherokee.conf
 CONFSUBDIRS=	ssl mods-available mods-enabled sites-available sites-enabled
 MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee-admin.1 \
-		spawn-fcgi.1 cherokee-tweak.1 cherokee-worker.1
+		cherokee-tweak.1 cherokee-worker.1
 PORTDOCS=	*
 
 OPTIONS=	OPENSSL	"TLS/SSL support via openssl"	on \
@@ -62,19 +72,19 @@ CONFIGURE_ARGS+=--disable-ipv6
 .ifdef WITH_MYSQL
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql=yes
-PLIST_SUB+=     MYSQL=""
+PLIST_SUB+=	MYSQL=""
 .else
 CONFIGURE_ARGS+=--with-mysql=no
-PLIST_SUB+=     MYSQL="@comment "
+PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .ifdef WITH_LDAP
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-ldap=yes
-PLIST_SUB+=     LDAP=""
+PLIST_SUB+=	LDAP=""
 .else
 CONFIGURE_ARGS+=--with-ldap=no
-PLIST_SUB+=     LDAP="@comment "
+PLIST_SUB+=	LDAP="@comment "
 .endif
 
 post-patch:
@@ -106,6 +116,10 @@ post-patch:
 		${WRKSRC}/contrib/08to09.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/contrib/09to010.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/contrib/011to098.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/contrib/098to099.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/qa/fcgi.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \

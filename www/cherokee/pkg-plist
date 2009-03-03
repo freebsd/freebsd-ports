@@ -2,7 +2,6 @@ bin/cget
 bin/cherokee-config
 bin/cherokee-panic
 bin/cherokee-tweak
-bin/spawn-fcgi
 @unexec for i in `find %D/etc/cherokee -name \*.default`;do if cmp -s $i ${i%%.default};then rm -f ${i%%.default};fi;done
 @unexec for i in `find %D/etc/cherokee -name \*.sample`;do if cmp -s $i ${i%%.sample};then rm -f ${i%%.sample};fi;done
 etc/cherokee/cherokee.conf.default
@@ -56,6 +55,8 @@ lib/cherokee/libplugin_and.la
 lib/cherokee/libplugin_and.so
 lib/cherokee/libplugin_authlist.la
 lib/cherokee/libplugin_authlist.so
+lib/cherokee/libplugin_bind.la
+lib/cherokee/libplugin_bind.so
 lib/cherokee/libplugin_cgi.la
 lib/cherokee/libplugin_cgi.so
 lib/cherokee/libplugin_combined.la
@@ -98,6 +99,8 @@ lib/cherokee/libplugin_htpasswd.la
 lib/cherokee/libplugin_htpasswd.so
 %%LDAP%%lib/cherokee/libplugin_ldap.la
 %%LDAP%%lib/cherokee/libplugin_ldap.so
+lib/cherokee/libplugin_ip_hash.la
+lib/cherokee/libplugin_ip_hash.so
 lib/cherokee/libplugin_libssl.la
 lib/cherokee/libplugin_libssl.so
 lib/cherokee/libplugin_method.la
@@ -132,6 +135,8 @@ lib/cherokee/libplugin_server_info.la
 lib/cherokee/libplugin_server_info.so
 lib/cherokee/libplugin_ssi.la
 lib/cherokee/libplugin_ssi.so
+lib/cherokee/libplugin_streaming.la
+lib/cherokee/libplugin_streaming.so
 lib/cherokee/libplugin_w3c.la
 lib/cherokee/libplugin_w3c.so
 lib/libcherokee-base.la
@@ -167,6 +172,8 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/admin/ModuleAuthlist.pyc
 %%DATADIR%%/admin/ModuleBalancer.py
 %%DATADIR%%/admin/ModuleBalancer.pyc
+%%DATADIR%%/admin/ModuleBind.py
+%%DATADIR%%/admin/ModuleBind.pyc
 %%DATADIR%%/admin/ModuleCgi.py
 %%DATADIR%%/admin/ModuleCgi.pyc
 %%DATADIR%%/admin/ModuleCommon.py
@@ -203,6 +210,8 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/admin/ModuleHtdigest.pyc
 %%DATADIR%%/admin/ModuleHtpasswd.py
 %%DATADIR%%/admin/ModuleHtpasswd.pyc
+%%DATADIR%%/admin/ModuleIpHash.py
+%%DATADIR%%/admin/ModuleIpHash.pyc
 %%DATADIR%%/admin/ModuleLdap.py
 %%DATADIR%%/admin/ModuleLdap.pyc
 %%DATADIR%%/admin/ModuleMethod.py
@@ -229,6 +238,8 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/admin/ModuleServerInfo.pyc
 %%DATADIR%%/admin/ModuleSsi.py
 %%DATADIR%%/admin/ModuleSsi.pyc
+%%DATADIR%%/admin/ModuleStreaming.py
+%%DATADIR%%/admin/ModuleStreaming.pyc
 %%DATADIR%%/admin/Page.py
 %%DATADIR%%/admin/Page.pyc
 %%DATADIR%%/admin/PageAdvanced.py
@@ -546,17 +557,26 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/admin/static/images/macFFBgHack.png
 %%DATADIR%%/admin/static/images/menu-active.png
 %%DATADIR%%/admin/static/images/menu-highlight.png
+%%DATADIR%%/admin/static/images/menu-sep.png
 %%DATADIR%%/admin/static/images/offline.png
 %%DATADIR%%/admin/static/images/online.png
+%%DATADIR%%/admin/static/images/tab.png
+%%DATADIR%%/admin/static/images/top-bar.png
+%%DATADIR%%/admin/static/images/web_proud.jpg
 %%DATADIR%%/admin/static/images/workarea.png
 %%DATADIR%%/admin/static/js/common.js
 %%DATADIR%%/admin/static/js/icons.js
-%%DATADIR%%/admin/static/js/jquery-1.2.3.min.js
-%%DATADIR%%/admin/static/js/jquery.accordion.js
+%%DATADIR%%/admin/static/js/jquery-1.2.6.min.js
+%%DATADIR%%/admin/static/js/jquery.cookie.js
 %%DATADIR%%/admin/static/js/jquery.dimensions.js
 %%DATADIR%%/admin/static/js/jquery.easing.js
 %%DATADIR%%/admin/static/js/jquery.tablednd.js
 %%DATADIR%%/admin/static/js/thickbox.js
+%%DATADIR%%/admin/static/js/ui.core.js
+%%DATADIR%%/admin/static/js/ui.dialog.js
+%%DATADIR%%/admin/static/js/ui.draggable.js
+%%DATADIR%%/admin/static/js/ui.resizable.js
+%%DATADIR%%/admin/static/js/ui.tabs.js
 %%DATADIR%%/admin/status.template.html
 %%DATADIR%%/admin/validations.py
 %%DATADIR%%/admin/validations.pyc
@@ -568,6 +588,7 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/deps/fcgi.deps
 %%DATADIR%%/deps/phpcgi.deps
 %%DATADIR%%/deps/scgi.deps
+%%DATADIR%%/deps/streaming.deps
 %%DATADIR%%/icons/README.txt
 %%DATADIR%%/icons/arrow_turn_left.png
 %%DATADIR%%/icons/blank.png
@@ -596,7 +617,6 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/icons/printer.png
 %%DATADIR%%/icons/ruby.png
 %%DATADIR%%/icons/script.png
-%%DATADIR%%/mime_types.txt
 %%DATADIR%%/themes/default/entry.html
 %%DATADIR%%/themes/default/footer.html
 %%DATADIR%%/themes/default/header.html
@@ -606,12 +626,18 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/themes/firefox3/footer.html
 %%DATADIR%%/themes/firefox3/header.html
 %%DATADIR%%/themes/firefox3/theme.css
+%%DATADIR%%/themes/plain/entry.html
+%%DATADIR%%/themes/plain/footer.html
+%%DATADIR%%/themes/plain/header.html
+%%DATADIR%%/themes/plain/theme.css
 www/cherokee/images/cherokee-logo.png
 www/cherokee/images/default-bg.png
+www/cherokee/images/favicon.ico
 www/cherokee/images/powered_by_cherokee.png
 www/cherokee/index.html
 @dirrm www/cherokee/images
 @dirrm www/cherokee
+@dirrm %%DATADIR%%/themes/plain
 @dirrm %%DATADIR%%/themes/firefox3
 @dirrm %%DATADIR%%/themes/default
 @dirrm %%DATADIR%%/themes
