@@ -2,6 +2,7 @@ bin/gammu
 bin/gammu-config
 bin/gammu-smsd
 bin/gammu-smsd-inject
+bin/gammu-smsd-monitor
 bin/jadmaker
 include/gammu/gammu-backup.h
 include/gammu/gammu-bitmap.h
