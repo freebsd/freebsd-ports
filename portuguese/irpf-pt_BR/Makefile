@@ -6,55 +6,101 @@
 #
 
 PORTNAME=	irpf
-PORTVERSION=	2008.1.0
-PORTREVISION=	3
+PORTVERSION=	2009.1.0
 CATEGORIES=	portuguese finance java
-MASTER_SITES=	http://www.receita.fazenda.gov.br/Publico/programas/irpf/2008/PGDIrpf2008/Java/ZIP/
+MASTER_SITES=	http://www.receita.fazenda.gov.br/Publico/programas/irpf/2009/PGDIrpf2009/Java/ZIP/
 PKGNAMEPREFIX?=	pt_BR-
-DISTNAME=	irpf2008v1.0
+DISTNAME=	IRPF2009v1.0
 
 MAINTAINER=	lioux@FreeBSD.org
-COMMENT=	Programa do Imposto de Renda Pessoa Fisica 2007 versao Java
+COMMENT=	Programa do Imposto de Renda Pessoa Fisica 2009 versao Java
 
 USE_ZIP=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}2008
+WRKSRC=		${WRKDIR}/${PORTNAME}2009
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_OS=	native
 
 NO_BUILD=	yes
-SUB_FILES=	pkg-message
 PLIST_SUB=	JAR_DIR=${JAR_DIR}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 JAVAVM=		${LOCALBASE}/bin/java
 
 JAR_DIR=	${JAVAJARDIR:S,^${PREFIX}/,,}/${PORTNAME}
 
+#
+## Files to install
+#
+
+# images
+IMAGE_FILES=	\
+		offline.png \
+		online.png
+# jar
 JAR_FILES=	\
 		irpf.jar \
-		jhall.jar
+		lib/commons-beanutils-1.7.jar \
+		lib/commons-collections-2.1.jar \
+		lib/commons-digester-1.8.jar \
+		lib/commons-logging-1.0.2.jar \
+		lib/forms-1.0.3.jar \
+		lib/foxtrot.jar \
+		lib/itext-1.02b.jar \
+		lib/jasperreports-2.0.3.jar \
+		lib/jdt-compiler-3.1.1.jar \
+		lib/jhall.jar \
+		lib/looks-1.3.1.jar \
+		lib/ppgd-formatosext-2.9.jar \
+		lib/ppgd-gui-2.9.jar \
+		lib/ppgd-gui-beans-2.9.jar \
+		lib/ppgd-infra-2.9.jar \
+		lib/ppgd-negocio-2.9.jar \
+		lib/ppgd-persistencia-2.9.jar \
+		lib/ppgd-swixml.jar \
+		lib/serpro.jar \
+		lib/swing-layout-0.7.jar \
+		lib/xalan.jar
 
+#
+## PLIST generation
+#
+
+# wrapper
 PLIST_FILES+=	bin/${PORTNAME}
 
+# jars
 .for jar in ${JAR_FILES}
-PLIST_FILES+=	%%JAR_DIR%%/${jar}
+PLIST_FILES+=	%%JAR_DIR%%/${jar:C/^lib\///}
 .endfor
 
+# jar dir
 PLIST_DIRS+=	\
 		%%JAR_DIR%%
 
+# DATADIR files
+PORTDATA=	*
+
 post-patch:
-	@${SED} -e  "s|%%JAR_DIR%%|${JAR_DIR}|; \
+	@${SED} -e  "s|%%DATADIR%%|${DATADIR}|; \
+		s|%%DATA_FILES%%|${IMAGE_FILES}|; \
+		s|%%JAR_DIR%%|${JAR_DIR}|; \
 		s|%%JAR_FILE%%|${JAR_FILE}|; \
-		s|%%JAR_FILES%%|${JAR_FILES}|; \
+		s|%%JAR_FILES%%|${JAR_FILES:C/^lib\///}|; \
 		s|%%JAVA_VERSION%%|${JAVA_VERSION}|; \
 		s|%%JAVAVM%%|${JAVAVM}|;s|%%PREFIX%%|${PREFIX}|" \
 		${FILESDIR}/wrapper.sh > ${WRKDIR}/wrapper.sh
 
 do-install:
+# jar dir
 	@${MKDIR} ${PREFIX}/${JAR_DIR}
+# data dir
+	@${MKDIR} ${DATADIR}
+# images
+.for file in ${IMAGE_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} \
+		${DATADIR}
+.endfor
 # jars
 .for jar in ${JAR_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${jar} \
@@ -63,9 +109,6 @@ do-install:
 # wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh \
 		${PREFIX}/bin/${PORTNAME}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
 
