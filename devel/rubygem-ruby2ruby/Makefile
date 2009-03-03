@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ruby2ruby
-PORTVERSION=	1.1.8
+PORTVERSION=	1.2.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	seattlerb
@@ -14,22 +14,13 @@ MASTER_SITE_SUBDIR=	seattlerb
 MAINTAINER=	tota@rtfm.jp
 COMMENT=	A pure ruby code generator easily from ParseTree's Sexps
 
-BUILD_DEPENDS=	rubygem-parsetree>=0.0:${PORTSDIR}/devel/rubygem-parsetree \
-		rubygem-hoe>=1.4.0:${PORTSDIR}/devel/rubygem-hoe
+BUILD_DEPENDS=	rubygem-parsetree>=3.0:${PORTSDIR}/devel/rubygem-parsetree \
+		rubygem-hoe>=1.8.2:${PORTSDIR}/devel/rubygem-hoe
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/r2r_show
-
-x-generate-plist:
-	${ECHO} bin/r2r_show > pkg-plist.new
-	${ECHO} %%GEM_CACHE%% >> pkg-plist.new
-	${FIND} ${PREFIX}/${GEM_DOC_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},%%GEM_DOC_DIR%%,' >> pkg-plist.new
-	${FIND} ${PREFIX}/${GEM_LIB_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},%%GEM_LIB_DIR%%,' >> pkg-plist.new
-	${ECHO} %%GEM_SPEC%% >> pkg-plist.new
-	${FIND} ${PREFIX}/${GEM_LIB_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},@dirrm %%GEM_LIB_DIR%%,' >> pkg-plist.new
-	${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},@dirrm %%GEM_DOC_DIR%%,' >> pkg-plist.new
 
 .include <bsd.port.mk>
