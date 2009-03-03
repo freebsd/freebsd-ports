@@ -64,6 +64,10 @@ OPTIONS+=	XLIB		"XLib (xorg) graphics support"		On
 
 MAN3!=		${CAT} ${FILESDIR}/man3
 
+.if ${OSVERSION} > 800063
+CONFIGURE_ARGS+=--disable-joystick
+.endif
+
 .if defined(WITHOUT_AALIB)
 CONFIGURE_ARGS+=--disable-video-aalib
 .else
