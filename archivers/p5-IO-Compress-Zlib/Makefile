@@ -26,4 +26,7 @@ MAN3=		IO::Uncompress::RawInflate.3 IO::Uncompress::Unzip.3 \
 		IO::Compress::RawDeflate.3 IO::Uncompress::AnyInflate.3 \
 		IO::Compress::Gzip.3
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/5.009/5.666/' ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>

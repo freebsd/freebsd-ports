@@ -25,4 +25,7 @@ MAN3=		IO::Uncompress::AnyUncompress.3 IO::Uncompress::Base.3 \
 RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/5.009/5.666/' ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.post.mk>

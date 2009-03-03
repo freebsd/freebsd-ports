@@ -22,4 +22,7 @@ PERL_CONFIGURE=	YES
 
 MAN3=		IO::Compress::Bzip2.3 IO::Uncompress::Bunzip2.3
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/5.009/5.666/' ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>
