@@ -7,6 +7,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	2.6.r${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -101,36 +102,41 @@ regression-test: ${BUILD_COOKIE}
 		${SH} -c ${TEST_CMD}; \
 	fi
 
-MANUAL_BINS=	bin/bugpoint \
-		bin/ccc \
-		bin/ccc-analyzer \
-		bin/clang \
-		bin/gccas \
-		bin/gccld \
-		bin/llc \
-		bin/lli \
-		bin/opt \
-		bin/scan-build
-MANUAL_LIBS=	lib/libLTO.so
+PLIST_FILE_LIST=	bin/bugpoint \
+			bin/ccc \
+			bin/ccc-analyzer \
+			bin/clang* \
+			bin/gccas \
+			bin/gccld \
+			bin/llc \
+			bin/lli \
+			bin/llvm* \
+			bin/opt \
+			bin/scan-build \
+			lib/CompilerDriver.o \
+			lib/LLVM* \
+			lib/libLTO.so \
+			lib/libLLVM* \
+			lib/libclang* \
+			lib/plugin_llvm*
+PLIST_DIR_LIST=		bin/ccclib \
+			include/llvm-c \
+			include/llvm \
+			lib/clang
 build-plist:
 	${RM} ${PLIST}
 	cd ${PREFIX} && \
-	    (ls ${MANUAL_BINS} bin/llvm* bin/ccclib/* ${MANUAL_LIBS} \
-		lib/LLVM* lib/libLLVM* lib/plugin_llvm* lib/libclang* ; \
-	     ${FIND} include/llvm-c -type f; ${FIND} include/llvm lib/clang \
-	      -type f) | \
+	    (ls ${PLIST_FILE_LIST}; ${FIND} ${PLIST_DIR_LIST} -type f) | \
 	    ${SORT} >> ${PLIST}
-	${FIND} ${DATADIR} -type f | ${SORT} | \
-	    ${SED} -e 's|${DATADIR}|%%DATADIR%%|' >> ${PLIST}
-	${FIND} ${DOCSDIR} -type f | ${SORT} | \
-	    ${SED} -e 's|${DOCSDIR}|%%DOCSDIR%%|' >> ${PLIST}
+	${FIND} ${DATADIR} ${DOCSDIR} -type f | \
+	    ${SED} -e 's|${DATADIR}|%%DATADIR%%|' \
+	     -e 's|${DOCSDIR}|%%DOCSDIR%%|' | ${SORT} >> ${PLIST}
 	cd ${PREFIX} && \
-	    (echo bin/ccclib; \
-	     ${FIND} include/llvm-c -type d; ${FIND} include/llvm -type d) | \
+	    ${FIND} ${PLIST_DIR_LIST} -type d | \
 	    ${SORT} -r | ${SED} -e 's|^|@dirrm |' >> ${PLIST}
-	${FIND} ${DATADIR} -type d | ${SORT} -r | \
-	    ${SED} -e 's|${DATADIR}|%%DATADIR%%|' -e 's|^|@dirrm |' >> ${PLIST}
-	${FIND} ${DOCSDIR} -type d | ${SORT} -r | \
-	    ${SED} -e 's|${DOCSDIR}|%%DOCSDIR%%|' -e 's|^|@dirrm |' >> ${PLIST}
+	${FIND} ${DATADIR} ${DOCSDIR} -type d | ${SORT} -r | \
+	    ${SED} -e 's|${DATADIR}|%%DATADIR%%|' \
+	     -e 's|${DOCSDIR}|%%DOCSDIR%%|' \
+	     -e 's|^|@dirrm |' >> ${PLIST}
 
 .include <bsd.port.post.mk>
