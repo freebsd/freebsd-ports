@@ -6,6 +6,7 @@
 
 PORTNAME=	freetds
 PORTVERSION=	0.82.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
@@ -35,9 +36,10 @@ MAN1=		datacopy.1 freebcp.1 tsql.1 bsqldb.1 bsqlodbc.1 \
 MAN5=		freetds.conf.5
 
 OPTIONS=	OPENSSL "Use openssl" off       \
+		GNUTLS "Use GNUTLS" off \
 		IODBC   "Use iodbc (Mutually Exclusive)" off    \
 		UNIXODBC "Use unixodbc (Mutually Exclusive)" off        \
-		MSDBLIB "MS SQL Server support (breaks databases/sybtcl)"       off
+		MSDBLIB "MS SQL Server support (breaks databases/sybtcl)" off
 
 CONFLICTS=	freetds-0.64.[0-9]
 
@@ -46,6 +48,11 @@ CONFLICTS=	freetds-0.64.[0-9]
 .if defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
+.endif
+
+.if defined(WITH_GNUTLS)
+LIB_DEPENDS+=3D gnutls:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=3D--with-gnutls
 .endif
 
 .if defined(WITH_IODBC)
