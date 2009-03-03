@@ -1,0 +1,54 @@
+--- modules/freebsd/vmhgfs/vfsops.c.orig	2009-02-28 23:15:30.000000000 +0100
++++ modules/freebsd/vmhgfs/vfsops.c	2009-02-28 23:16:38.000000000 +0100
+@@ -145,7 +145,11 @@
+     * Since Hgfs requires the caller to be root, only allow mount attempts made
+     * by the superuser.
+     */
++#if __FreeBSD_version >= 800001
++   if ((ret = priv_check(td, PRIV_VFS_MOUNT)) != 0) {
++#else
+    if ((ret = suser(td)) != 0) {
++#endif
+       return ret;
+    }
+ 
+--- modules/freebsd/vmhgfs/vnops.c.orig	2009-02-18 17:02:35.000000000 +0900
++++ modules/freebsd/vmhgfs/vnops.c	2009-03-01 17:47:10.000000000 +0900
+@@ -325,7 +325,11 @@
+ */
+ {
+    struct vnode *vp = ap->a_vp;
++#if __FreeBSD_version >= 800001
++   int mode = ap->a_accmode;
++#else
+    int mode = ap->a_mode;
++#endif
+    HgfsAccessMode accessMode = 0;
+    Bool isDir = vp->v_type == VDIR;
+    if (mode & VREAD) {
+--- modules/freebsd/vmblock/vnops.c.orig	2009-02-28 23:21:43.000000000 +0100
++++ modules/freebsd/vmblock/vnops.c	2009-02-28 23:26:23.000000000 +0100
+@@ -723,7 +723,11 @@
+        * NB:  Allowing only the superuser to open this directory breaks
+        *      readdir() of the filesystem root for non-privileged users.
+        */
++#if __FreeBSD_version >= 800001
++      if ((retval = priv_check(ap->a_td, PRIV_VFS_GETFH)) == 0) {
++#else
+       if ((retval = suser(ap->a_td)) == 0) {
++#endif
+ #if __FreeBSD_version >= 700000
+          fp = ap->a_fp;
+ #else
+@@ -1007,7 +1011,11 @@
+ */
+ {
+    struct vnode *vp = ap->a_vp;
++#if __FreeBSD_version >= 800001
++   mode_t mode = ap->a_accmode;
++#else
+    mode_t mode = ap->a_mode;
++#endif
+ 
+    /*
+     * Disallow write attempts on read-only layers; unless the file is a

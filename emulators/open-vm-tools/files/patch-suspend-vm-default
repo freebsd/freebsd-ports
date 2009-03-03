@@ -1,0 +1,26 @@
+--- scripts/freebsd/suspend-vm-default.orig	2009-02-28 23:36:59.000000000 +0100
++++ scripts/freebsd/suspend-vm-default	2009-02-28 23:38:56.000000000 +0100
+@@ -34,16 +34,16 @@
+ 
+ # Release the IP if DHCP is used.
+ case "`uname -r`" in
+-6.*) # 'PID dhclient: em0' => 'em0'
+-     for intf in `pgrep -fl dhclient | cut -d" " -f3 | sort | uniq`; do
+-        ifconfig "$intf" down
+-        ifconfig "$intf" delete
+-     done
+-     ;;
+-*)   # Have dhclient running => release lease
++[45].*) # Have dhclient running => release lease
+      ps auxw | grep -q dhclient
+      if [ "$?" -eq 0 ]; then
+         dhclient -r
+      fi
+      ;;
++*)   # 'PID dhclient: em0' => 'em0'
++     for intf in `pgrep -fl dhclient | cut -d" " -f3 | sort | uniq`; do
++        ifconfig "$intf" down
++        ifconfig "$intf" delete
++     done
++     ;;
+ esac
