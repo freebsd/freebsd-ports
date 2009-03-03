@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-kde3
 MAINTAINER=	cm@therek.net
 COMMENT=	A personal accounting software package
 
-USE_GETTXT=	yes
+USE_GETTEXT=	yes
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
