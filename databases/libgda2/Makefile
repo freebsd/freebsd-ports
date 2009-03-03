@@ -67,9 +67,10 @@ WITHOUT_FIREBIRD=yes
 WITH_FREETDS=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libsybdb.so)
-WITH_SYBASE=	yes
-.endif
+# Sybase backend is linux only
+#.if exists(${LOCALBASE}/lib/libsybdb.so)
+#WITH_SYBASE=	yes
+#.endif
 
 .if exists(${LOCALBASE}/lib/libmdbsql.so)
 WITH_MDB=	yes
@@ -132,6 +133,7 @@ PLIST_SUB+=		FREETDS:="@comment "
 LIB_DEPENDS+=		sybdb.5:${PORTSDIR}/databases/freetds
 CONFIGURE_ARGS+=	--with-sybase=${LOCALBASE}
 PLIST_SUB+=		SYBASE:=""
+BROKEN=	Sybase backend is linux only
 .else
 CONFIGURE_ARGS+=	--without-sybase
 PLIST_SUB+=		SYBASE:="@comment "
