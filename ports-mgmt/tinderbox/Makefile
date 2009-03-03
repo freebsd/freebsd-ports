@@ -5,18 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	tinderbox
-PORTVERSION=	3.1.2
-PORTREVISION=	2
+PORTVERSION=	3.2
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://tinderbox.marcuscom.com/:SOURCES \
-		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/:SOURCES,FAVICON
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:SOURCES \
-		favicon.ico:FAVICON
-DIST_SUBDIR=	tinderbox
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://tinderbox.marcuscom.com/ \
+		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Port build tinderbox system
+
+CONFLICTS=	tinderbox-devel-[0-9]*
 
 OPTIONS=	PGSQL "With pgsql" Off \
 		MYSQL "With mysql" On \
@@ -24,7 +22,8 @@ OPTIONS=	PGSQL "With pgsql" Off \
 		CVSUP "Use cvsup for updates" Off \
 		WEBUI   "Install web interface" On \
 		APACHE "Use Apache for web interface" On \
-		LIGHTTPD "Use LightHTTPD for web interface" Off
+		LIGHTTPD "Use LightHTTPD for web interface" Off \
+		CHECK_FOR_ROOT "Check it ./tc is run by uid 0" On
 
 NO_BUILD=	yes
 WANT_PERL=	yes
@@ -33,7 +32,7 @@ SUB_FILES=	pkg-message
 MAN1=		tc-configCcache.1 tc-configDistfile.1 tc-configGet.1 \
 		tc-configJail.1 tc-configTinderd.1 tc-init.1
 
-PATCH_STRIP=	-p2
+#PATCH_STRIP=	-p2
 
 .include <bsd.port.pre.mk>
 
@@ -42,7 +41,6 @@ IGNORE=	is useless without a database. Please (re)run 'make config' and choose o
 .endif
 
 .if defined(WITH_WEBUI)
-EXTRA_PATCHES=	${PATCHDIR}/exta-webui-patch-3.1.2_to_20081227.diff
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 WANT_PHP_WEB=	yes
 USE_PHP=	session
@@ -93,13 +91,14 @@ pre-everything::
 .if !defined(WITH_WEBUI)
 post-extract:
 	@${RM} -R ${WRKSRC}/webui
-.else
-post-extract:
-	@${CP} ${_DISTDIR}/favicon.ico ${WRKSRC}/webui
 .endif
 
 post-patch:
+.ifdef WITHOUT_CHECK_FOR_ROOT
+	${REINPLACE_CMD} -e 's/^if \[ `id -u` != 0 \]; then/if false; then/' \
+			${WRKSRC}/tc
 	@cd ${WRKSRC} && ${FIND} . -name '*.orig' -exec ${RM} {} \;
+.endif
 
 do-install:
 	@${MKDIR} ${PREFIX}/tinderbox/scripts
@@ -110,6 +109,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/etc/rc.d/tinderd ${PREFIX}/etc/rc.d/${PORTNAME}
 	@${ECHO_CMD} "Installing tinderbox ..."
 	${CP} -R ${WRKSRC}/* ${PREFIX}/tinderbox/scripts
+	${CP} ${WRKSRC}/.version ${PREFIX}/tinderbox/scripts
 	@${ECHO_CMD} "All Done"
 
 post-install:
