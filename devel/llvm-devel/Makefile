@@ -7,7 +7,6 @@
 
 PORTNAME=	llvm
 DISTVERSION=	2.6.r${SVN_REV}
-PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -26,7 +25,7 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .if defined(BOOTSTRAP)
 SVN_REV!=	svn info http://llvm.org/svn/llvm-project/ | grep Revision | cut -d' ' -f2
 .else
-SVN_REV=	65789
+SVN_REV=	65948
 .endif
 
 GNU_CONFIGURE=	yes
@@ -118,7 +117,8 @@ build-plist:
 	cd ${PREFIX} && \
 	    (ls ${MANUAL_BINS} bin/llvm* bin/ccclib/* ${MANUAL_LIBS} \
 		lib/LLVM* lib/libLLVM* lib/plugin_llvm* lib/libclang* ; \
-	     ${FIND} include/llvm-c -type f; ${FIND} include/llvm -type f) | \
+	     ${FIND} include/llvm-c -type f; ${FIND} include/llvm lib/clang \
+	      -type f) | \
 	    ${SORT} >> ${PLIST}
 	${FIND} ${DATADIR} -type f | ${SORT} | \
 	    ${SED} -e 's|${DATADIR}|%%DATADIR%%|' >> ${PLIST}

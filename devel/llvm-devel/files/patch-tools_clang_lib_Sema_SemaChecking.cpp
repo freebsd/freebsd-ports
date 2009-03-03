@@ -3,7 +3,16 @@ $FreeBSD$
 
 --- tools/clang/lib/Sema/SemaChecking.cpp.orig
 +++ tools/clang/lib/Sema/SemaChecking.cpp
-@@ -699,7 +699,6 @@
+@@ -142,7 +142,7 @@
+ 
+   // Printf checking.
+   if (const FormatAttr *Format = FDecl->getAttr<FormatAttr>()) {
+-    if (Format->getType() == "printf") {
++    if (Format->getType() == "printf" || Format->getType() == "printf0") {
+       bool HasVAListArg = Format->getFirstArg() == 0;
+       if (!HasVAListArg) {
+         if (const FunctionProtoType *Proto 
+@@ -701,7 +701,6 @@
      case 'u': 
      case 'x':
      case 'X':
@@ -11,7 +20,7 @@ $FreeBSD$
      case 'O':
      case 'U':
      case 'e':
-@@ -715,9 +714,16 @@
+@@ -717,9 +716,16 @@
      case 'S':
      case 's':
      case 'p': 
