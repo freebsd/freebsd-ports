@@ -1,5 +1,5 @@
---- build/src/gcc.mak.orig	Tue Jun 21 22:28:54 2005
-+++ build/src/gcc.mak	Wed Sep 14 10:00:26 2005
+--- build/src/gcc.mak.orig	2008-01-20 17:13:34.000000000 +0900
++++ build/src/gcc.mak	2009-01-29 01:34:48.000000000 +0900
 @@ -8,14 +8,14 @@
  #==========================================================================
  
@@ -32,13 +32,22 @@
 +SHIORI_PYTHON = yes
  
  ## Global options
--CFLAGS  = -Os -I. -DNDEBUG -Wall -fomit-frame-pointer
+-CFLAGS  = -O1 -I. -DNDEBUG -Wall -fomit-frame-pointer
 -LDFLAGS = -s
 +CFLAGS  += -Os -I. -DNDEBUG -Wall -fomit-frame-pointer
 +LDFLAGS += -s
  
  #==========================================================================
  # Directories
+@@ -70,7 +70,7 @@
+ ifeq ($(STLport),yes)
+ 	CFLAGS  := $(CFLAGS_STLP) -DHAVE_SSTREAM $(CFLAGS)
+ 	LDFLAGS := $(LDFLAGS) $(LDFLAGS_STLP)
+-	LIBS    := $(LIBS) $(LIBS_STLP)
++	LIBS    := $(LIBS) -L${PYTHONBASE}/lib -l${PYTHON_VERSION}
+ endif
+ 
+ ifeq ($(SAORI_NATIVE),yes)
 @@ -104,7 +104,7 @@
  	ifndef CFLAGS_PYTHON
  		CFLAGS_PYTHON = -I$(shell python -c "import sys; print sys.prefix+'/include/python'+sys.version[:3]")
@@ -53,7 +62,7 @@
  .PHONY: clean cleanall depend upx
  
 -all : $(ALLTARGET) upx
-+#all : $(ALLTARGET) 
++#all : $(ALLTARGET) upx
 +all : $(ALLTARGET) $(UPX)
  
  $(MACH)/$(DYNLIBPREFIX)$(SHIORI)$(DYNLIBEXT) : $(SHIOOBJ) $(COREOBJ) $(DEPLIB)
