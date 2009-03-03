@@ -26,6 +26,8 @@ post-patch:
 		${WRKSRC}/mk/lib.mk ${WRKSRC}/mk/hdr.mk
 	@${REINPLACE_CMD} -e 's|\.sowk|.awk|' ${WRKSRC}/mk/hdr.mk
 	@${REINPLACE_CMD} -e 's|\(echo.*\)AR\(.*\)|\1LD\2|' ${WRKSRC}/mk/lib.mk
+	@${REINPLACE_CMD} -e 's|CFLAGS += $$(DEBUGCFLAGS) -O0 $$(INCS)|& -fPIC|' \
+		${WRKSRC}/config.mk
 	@${REINPLACE_CMD} -e 's|VERSION|"${PORTVERSION}.${PORTREVISION}"|' \
 		${WRKSRC}/cmd/ixpc.c
 
