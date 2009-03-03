@@ -1,5 +1,5 @@
---- hald/freebsd/hf-usb.c.orig	2008-05-07 19:24:02.000000000 -0400
-+++ hald/freebsd/hf-usb.c	2009-02-27 14:01:46.000000000 -0500
+--- hald/freebsd/hf-usb.c.orig	2008-05-08 01:24:02.000000000 +0200
++++ hald/freebsd/hf-usb.c	2009-03-02 04:23:32.000000000 +0100
 @@ -25,13 +25,18 @@
  #  include <config.h>
  #endif
@@ -31,7 +31,7 @@
  
  typedef struct
  {
-@@ -231,7 +241,7 @@ hf_usb_get_full_config_descriptor (int f
+@@ -231,7 +241,7 @@
   * Adapted from usb_compute_udi() in linux2/physdev.c and
   * usbclass_compute_udi() in linux2/classdev.c.
   */
@@ -40,7 +40,7 @@
  hf_usb_device_compute_udi (HalDevice *device)
  {
    g_return_if_fail(HAL_IS_DEVICE(device));
-@@ -250,12 +260,13 @@ hf_usb_device_compute_udi (HalDevice *de
+@@ -250,12 +260,13 @@
      hf_device_set_udi(device, "usb_device_%x_%x_%s",
  		      hal_device_property_get_int(device, "usb_device.vendor_id"),
  		      hal_device_property_get_int(device, "usb_device.product_id"),
@@ -56,7 +56,16 @@
  hf_usb_add_webcam_properties (HalDevice *device)
  {
    int unit;
-@@ -575,6 +586,8 @@ hf_usb_probe_device (HalDevice *parent,
+@@ -424,7 +435,7 @@
+     hf_devtree_device_set_name(device, di->udi_devnames[0]);
+ 
+   if ((devname = hf_usb_get_devname(di, "ukbd")))	/* USB keyboard */
+-    hf_device_set_input(device, "keyboard", devname);
++    hf_device_set_input(device, "keyboard", NULL);
+   else if ((devname = hf_usb_get_devname(di, "ums")))	/* USB mouse */
+     hf_device_set_input(device, "mouse", devname);
+   else if ((devname = hf_usb_get_devname(di, "uhid")))	/* UHID device */
+@@ -575,6 +586,8 @@
      {
        if (hal_device_has_capability(device, "hiddev"))
  	hf_runner_run_sync(device, 0, "hald-probe-hiddev", NULL);
@@ -65,7 +74,7 @@
  
        hf_device_add(device);
      }
-@@ -633,9 +646,18 @@ hf_usb_privileged_init (void)
+@@ -633,9 +646,18 @@
  {
    int i;
  

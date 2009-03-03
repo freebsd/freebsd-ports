@@ -1,5 +1,5 @@
---- hald/freebsd/hf-usb2.c.orig	2009-02-17 18:58:44.000000000 -0500
-+++ hald/freebsd/hf-usb2.c	2009-02-17 23:22:47.000000000 -0500
+--- hald/freebsd/hf-usb2.c.orig	2009-03-02 20:16:10.000000000 -0600
++++ hald/freebsd/hf-usb2.c	2009-03-02 20:33:13.000000000 -0600
 @@ -0,0 +1,287 @@
 +/***************************************************************************
 + * CVSID: $Id$
@@ -101,7 +101,7 @@
 +	  if (driver)
 +            {
 +	      if (! strcmp(driver, "ukbd"))
-+                hf_device_set_input(device, "keyboard", devname);
++                hf_device_set_input(device, "keyboard", NULL);
 +	      else if (! strcmp(driver, "ums"))
 +                {
 +                  hf_device_set_input(device, "mouse", devname);
