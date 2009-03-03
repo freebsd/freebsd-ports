@@ -58,10 +58,6 @@ BARRIER_RFC2821_PATCH=		yes
 BARRIER_TARPIT_PATCH=		yes
 .endif
 
-.if !defined(SLAVE_LDAP)
-BARRIER_CUSTOM_ERROR_PATCH=	yes
-.endif
-		
 PATCH_DIST_STRIP+=	-p1
 
 .if !defined(BARRIER_DNS_PATCH)
@@ -189,10 +185,6 @@ OPTIONS+=	REQBRACKETS	"Require brackets in <addresses>" on \
 .endif
 
 OPTIONS+=	QEXTRA		"enable QUEUE_EXTRA copy feature" off
-
-.if !defined(BARRIER_CUSTOM_ERROR_PATCH)
-OPTIONS+=	CUSTOM_ERROR	"Add custom reject error message" off
-.endif
 
 .if !defined(SLAVE_LDAP)
 OPTIONS+=	RCDLINK		"create rc.d/qmail.sh symlink" on
@@ -483,11 +475,6 @@ MASTER_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail-smtpextfork/
 MASTER_SITE_SUBDIR+=	garga/qmail/:extfork
 DISTFILES+=	${SMTPEXTFORK_PATCH:S/$/:extfork/} \
 		README.smtpextfork:extfork
-.endif
-
-.if defined(WITH_CUSTOM_ERROR) && !defined(BARRIER_CUSTOM_ERROR_PATCH)
-PATCH_SITES+=	${MASTER_SITE_GENTOO:S/$/distfiles\/:custom_error/}
-PATCHFILES+=	qmail-ldap-1.03-queue-custom-error.patch:custom_error
 .endif
 
 # Some default values, these can be modified by make command line
