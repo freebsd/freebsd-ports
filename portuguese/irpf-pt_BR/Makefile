@@ -7,6 +7,7 @@
 
 PORTNAME=	irpf
 PORTVERSION=	2009.1.0
+PORTREVISION=	1
 CATEGORIES=	portuguese finance java
 MASTER_SITES=	http://www.receita.fazenda.gov.br/Publico/programas/irpf/2009/PGDIrpf2009/Java/ZIP/
 PKGNAMEPREFIX?=	pt_BR-
@@ -69,17 +70,22 @@ JAR_FILES=	\
 # wrapper
 PLIST_FILES+=	bin/${PORTNAME}
 
+# images
+.for image in ${IMAGE_FILES}
+PLIST_FILES+=	%%DATADIR%%/${image}
+.endfor
+
 # jars
 .for jar in ${JAR_FILES}
 PLIST_FILES+=	%%JAR_DIR%%/${jar:C/^lib\///}
 .endfor
 
+# data dir
+PLIST_DIRS+=	\
+		%%DATADIR%%
 # jar dir
 PLIST_DIRS+=	\
 		%%JAR_DIR%%
-
-# DATADIR files
-PORTDATA=	*
 
 post-patch:
 	@${SED} -e  "s|%%DATADIR%%|${DATADIR}|; \
