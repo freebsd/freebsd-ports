@@ -7,7 +7,6 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
-PORTREVISION=		7
 CATEGORIES=		emulators kld
 MASTER_SITES=		SF
 DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
@@ -15,23 +14,30 @@ DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
 MAINTAINER=		mbr@freebsd.org
 COMMENT?=		Open VMware tools for FreeBSD VMware guests
 
-RELEASE_DATE=		2008.07.01
-BUILD_VER=		102166
+RELEASE_DATE=		2009.02.18
+BUILD_VER=		148847
 
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 
-CONFIGURE_ARGS+=	--without-procps
+CONFIGURE_ARGS+=	--without-procps --sysconfdir=${LOCALBASE}/etc
 .if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--without-x
+LIB_DEPENDS+=		glib-2.0:${PORTSDIR}/devel/glib20
+CONFIGURE_ARGS+=	--without-x --without-gtk2 --without-gtkmm
 PLIST_SUB+=		X11="@comment "
 CONFLICTS=		open-vm-tools-[0-9]*
 .else
-CONFIGURE_ARGS+=	--with-x
+.if !defined(WITHOUT_LIBNOTIFY)
+LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
+.endif
+.if defined(WITHOUT_UNITY)
+CONFIGURE_ARGS+=	--disable-unity
+.endif
+CONFIGURE_ARGS+=	--with-x --without-gtkmm
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 USE_XORG=		x11 ice xineramaproto xinerama xrandr xtst
-USE_GNOME=		gtk20
+USE_GNOME=		gtk20 glib20
 PLIST_SUB+=		X11=""
 CONFLICTS=		open-vm-tools-nox11-[0-9]*
 .endif
@@ -62,11 +68,6 @@ IGNORE=		not yet ported to sparc64
 PLIST_SUB+=	LIB32DIR=${LIB32DIR}
 
 SUB_LIST+=	LIB32DIR=${LIB32DIR}
-
-post-patch:
-.if defined(WITHOUT_X11)
-	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/optpatch-nox11
-.endif
 
 post-build:
 	(cd ${WRKSRC}/modules && ${MAKE})
