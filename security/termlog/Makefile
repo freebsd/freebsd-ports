@@ -7,6 +7,7 @@
 
 PORTNAME=	termlog
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	security sysutils
 MASTER_SITES=	http://www.seccuris.com/documents/downloads/
 MASTER_SITE_SUBDIR=	termlog
@@ -15,6 +16,7 @@ MAINTAINER=	csjp@FreeBSD.org
 COMMENT=	Monitor or log multiple system terminals synchronously
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_RC_SUBR=	${PORTNAME}
 
 MAN1=		termlog.1
 PLIST_FILES=	bin/termlog
