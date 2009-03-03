@@ -7,7 +7,7 @@
 
 PORTNAME=	irpf
 PORTVERSION=	2009.1.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	portuguese finance java
 MASTER_SITES=	http://www.receita.fazenda.gov.br/Publico/programas/irpf/2009/PGDIrpf2009/Java/ZIP/
 PKGNAMEPREFIX?=	pt_BR-
@@ -20,6 +20,7 @@ USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}2009
 
 USE_JAVA=	yes
+JAVA_RUN=	yes
 JAVA_VERSION=	1.4+
 JAVA_OS=	native
 
@@ -29,6 +30,13 @@ PLIST_SUB=	JAR_DIR=${JAR_DIR}
 JAVAVM=		${LOCALBASE}/bin/java
 
 JAR_DIR=	${JAVAJARDIR:S,^${PREFIX}/,,}/${PORTNAME}
+
+DESKTOP_ENTRIES=	"Imposto de Renda Pessoa Fisica 2009" \
+			"${COMMENT}" \
+			"" \
+			"${PORTNAME}" \
+			"Office;Finance;" \
+			"true"
 
 #
 ## Files to install
