@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	pykawari
-PORTVERSION=	8.2.4
-PORTREVISION=	2
+PORTVERSION=	8.2.8
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kawari
 DISTNAME=	kawari-${PORTVERSION:S/.//g}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	A real kawari8 module for ninix-aya
@@ -28,15 +26,12 @@ PLIST_SUB=	LOCALBASE=${LOCALBASE}
 
 USE_PYTHON=	yes
 USE_GMAKE=	yes
+USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/kawari-${PORTVERSION:S/.//g}
 CFLAGS+=	${PTHREAD_CFLAGS} -fPIC
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
