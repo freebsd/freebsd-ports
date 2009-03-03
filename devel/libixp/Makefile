@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	libixp
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	devel
-MASTER_SITES=	http://www.suckless.org/download/
+MASTER_SITES=	http://code.suckless.org/dl/libs/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sbrabez@gmail.com
 COMMENT=	Standalone client/server 9P library
 
 USE_LDCONFIG=	yes
@@ -20,31 +20,27 @@ MAKE_ARGS=	PREFIX="${PREFIX}" CC="${CC} -c" LD="${CC}" \
 		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		ixpc.1
-PLIST_FILES=	bin/ixpc include/ixp.h include/ixp_fcall.h \
-		lib/libixp.so lib/libixp.so.1 \
-		lib/libixp_pthread.so lib/libixp_pthread.so.1
 
-post-patch: .SILENT
-	${REINPLACE_CMD} -e 's|\.a|.so|g; s|{AR}|{LD} -shared -fPIC -o|' \
+post-patch:
+	@${REINPLACE_CMD} -e 's|\.a|.so|g; s|(AR)|(LD) -shared -fPIC -o|' \
 		${WRKSRC}/mk/lib.mk ${WRKSRC}/mk/hdr.mk
-# Fix garbled "awk" strings after previous sed(1) invocation
-	${REINPLACE_CMD} -e 's|\.sowk|.awk|' ${WRKSRC}/mk/hdr.mk
-	${REINPLACE_CMD} -e 's|\(echo.*\)AR|\1LD|' ${WRKSRC}/mk/lib.mk
-	${REINPLACE_CMD} -e 's|$${ROOT}/lib/libixp.a|-lixp|' \
-		${WRKSRC}/cmd/Makefile
-	${REINPLACE_CMD} -e 's|VERSION|"${PORTVERSION}"|' \
+	@${REINPLACE_CMD} -e 's|\.sowk|.awk|' ${WRKSRC}/mk/hdr.mk
+	@${REINPLACE_CMD} -e 's|\(echo.*\)AR\(.*\)|\1LD\2|' ${WRKSRC}/mk/lib.mk
+	@${REINPLACE_CMD} -e 's|VERSION|"${PORTVERSION}.${PORTREVISION}"|' \
 		${WRKSRC}/cmd/ixpc.c
 
-# XXX Apparently, vendor's install: target is broken for us XXX
+do-build:
+	cd ${WRKSRC}; ${MAKE};
+
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/include/ixp.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/include/ixp_fcall.h ${PREFIX}/include
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/libixp.so ${PREFIX}/lib/libixp.so.1
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/libixp_pthread.so \
+	@${INSTALL_DATA} ${WRKSRC}/include/ixp.h ${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/include/ixp_srvutil.h ${PREFIX}/include
+	@${INSTALL_PROGRAM} ${WRKSRC}/lib/libixp.so ${PREFIX}/lib/libixp.so.1
+	@${INSTALL_PROGRAM} ${WRKSRC}/lib/libixp_pthread.so \
 		${PREFIX}/lib/libixp_pthread.so.1
-	${LN} -sf libixp.so.1 ${PREFIX}/lib/libixp.so
-	${LN} -sf libixp_pthread.so.1 ${PREFIX}/lib/libixp_pthread.so
-	${INSTALL_PROGRAM} ${WRKSRC}/cmd/ixpc.O ${PREFIX}/bin/ixpc
-	${INSTALL_MAN} ${WRKSRC}/man/ixpc.1 ${MANPREFIX}/man/man1
+	@${LN} -sf libixp.so.1 ${PREFIX}/lib/libixp.so
+	@${LN} -sf libixp_pthread.so.1 ${PREFIX}/lib/libixp_pthread.so
+	@${INSTALL_PROGRAM} ${WRKSRC}/cmd/ixpc.O ${PREFIX}/bin/ixpc
+	@${INSTALL_MAN} ${WRKSRC}/man/ixpc.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
