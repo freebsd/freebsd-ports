@@ -6,6 +6,9 @@
 export JAVA_VERSION
 
 PREFIX="%%PREFIX%%"
+# data
+DATADIR="%%DATADIR%%"
+DATA_FILES="%%DATA_FILES%%"
 # java
 JAVA_VERSION="%%JAVA_VERSION%%"
 JAVAVM="%%JAVAVM%%"
@@ -15,26 +18,31 @@ JAR_FILE="%%JAR_FILE%%"
 # home
 HOME_DIR=${HOME}/.irpf
 
-configure_java_classpath () {
-  if [ -z "${CLASSPATH}" ]
-  then
-        CLASSPATH=./irpf.jar:./jhall.jar
-  else
-        CLASSPATH=./irpf.jar:./jhall.jar:${CLASSPATH}
-  fi
-}
-
 prepare_home_dir () {
   # create home dir staging area
   if [ ! -d ${HOME_DIR}/aplicacao/dados ]
   then
 	mkdir -p ${HOME_DIR}/aplicacao/dados
   fi
+  # create the lib dir
+  if [ ! -d ${HOME_DIR}/lib ]
+  then
+	mkdir -p ${HOME_DIR}/lib 2>/dev/null
+  fi
+  # link the data files
+  for data in ${DATA_FILES}
+  do
+	rm -f ${HOME_DIR}/${data} 2>/dev/null
+	cp -f ${DATADIR}/${data} ${HOME_DIR}/${data} 2>/dev/null
+  done
+  # link the jar file
+  rm -f ${HOME_DIR}/${JAR_FILE} 2>/dev/null
+  cp -f ${PREFIX}/${JAR_DIR}/${JAR_FILE} ${HOME_DIR}/${JAR_FILE} 2>/dev/null
   # link the jar files
   for jar in ${JAR_FILES}
   do
-	rm -f ${HOME_DIR}/${jar} 2>/dev/null
-	cp -f ${PREFIX}/${JAR_DIR}/${jar} ${HOME_DIR}/${jar} 2>/dev/null
+	rm -f ${HOME_DIR}/lib/${jar} 2>/dev/null
+	cp -f ${PREFIX}/${JAR_DIR}/${jar} ${HOME_DIR}/lib/${jar} 2>/dev/null
   done
 }
 
@@ -44,21 +52,33 @@ start_irpf () {
 }
 
 clean_home_dir () {
+  # remove the data files
+  for data in ${DATA_FILES}
+  do
+	if [ -f ${HOME_DIR}/${data} ]
+	then
+		rm -f ${HOME_DIR}/${data} 2>/dev/null
+	fi
+  done
+  # remove the jar file
+  rm -f ${HOME_DIR}/${JAR_FILE} 2>/dev/null
   # remove the jar files
   for jar in ${JAR_FILES}
   do
-	if [ -f ${HOME_DIR}/${jar} ]
+	if [ -f ${HOME_DIR}/lib/${jar} ]
 	then
-		rm -f ${HOME_DIR}/${jar} 2>/dev/null
+		rm -f ${HOME_DIR}/lib/${jar} 2>/dev/null
 	fi
   done
+  # remove the lib dir
+  if [ -d ${HOME_DIR}/lib ]
+  then
+	rmdir ${HOME_DIR}/lib 2>/dev/null
+  fi
 }
 
 # always verify that home dir staging area is pristine
 prepare_home_dir
-
-# prepare java CLASSPATH
-configure_java_classpath
 
 start_irpf
 
