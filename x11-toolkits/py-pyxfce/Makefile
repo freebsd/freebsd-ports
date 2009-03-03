@@ -25,5 +25,6 @@ GNU_CONFIGURE=	yes
 
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
+BROKEN=		no new version released so far to match xfce 4.6.0
 
 .include <bsd.port.mk>
