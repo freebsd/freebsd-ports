@@ -6,7 +6,7 @@
 
 PORTNAME=	freetds
 PORTVERSION=	0.64
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
@@ -26,12 +26,26 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-tdsver=${TDS_VER}
 USE_LDCONFIG=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+PORTDOCS=	*
+
 MAN1=		datacopy.1 freebcp.1 tsql.1 bsqldb.1 defncopy.1
+
+OPTIONS=	OPENSSL "Use openssl" off       \
+		GNUTLS "Use GNUTLS" off \
+		IODBC   "Use iodbc (Mutually Exclusive)" off    \
+		UNIXODBC "Use unixodbc (Mutually Exclusive)" off        \
+		MSDBLIB "MS SQL Server support (breaks databases/sybtcl)" off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
+.endif
+
+.if defined(WITH_GNUTLS)
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=--with-gnutls
 .endif
 
 .if defined(WITH_IODBC)
@@ -56,10 +70,6 @@ PLIST_SUB+=	ODBC="@comment "
 CONFIGURE_ARGS+=	--enable-msdblib
 .endif
 
-.if defined(NOPORTDOCS)
-EXTRA_PATCHES=	${PATCHDIR}/noportdocs-patch-doc__Makefile.in
-.endif
-
 post-extract:
 	@cd ${WRKSRC} && ${LN} -s freetds.conf freetds.conf.dist
 	@cd ${WRKSRC} && ${LN} -s locales.conf locales.conf.dist
@@ -74,9 +84,13 @@ post-patch:
 		 s| common.h||g'
 
 post-install:
+.if !defined(NOPORTDOCS)
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} images ${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} doc ${DOCSDIR}
+.endif
 	@${MKDIR} ${PREFIX}/etc/freetds
 	@${INSTALL_DATA} ${WRKSRC}/interfaces ${PREFIX}/etc/freetds/interfaces.dist
 	@${ECHO_CMD} "Sample configuration files have been installed in ${PREFIX}/etc"
 	@${ECHO_CMD} "You should edit them and remove the .dist-suffix from their names"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
