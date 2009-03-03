@@ -1,5 +1,6 @@
+@unexec if cmp -s  %%PREFIX%%/etc/zetaback.conf %%PREFIX%%/etc/zetaback.conf.sample; then rm -f %%PREFIX%%/etc/zetaback.conf; else echo If permanently deleting this package, %%PREFIX%%/etc/zetaback.conf must be removed manually.; fi
+@unexec if cmp -s  %%PREFIX%%/etc/zetaback_agent.conf %%PREFIX%%/etc/zetaback_agent.conf.sample; then rm -f %%PREFIX%%/etc/zetaback_agent.conf; else echo If permanently deleting this package, %%PREFIX%%/etc/zetaback_agent.conf must be removed manually.; fi
 bin/zetaback
 bin/zetaback_agent
 etc/zetaback.conf.sample
 etc/zetaback_agent.conf.sample
-@unexec echo If permanently deleting this package, %%PREFIX%%/etc/zetaback.conf and %%PREFIX%%/etc/zetaback.conf must be removed manually
