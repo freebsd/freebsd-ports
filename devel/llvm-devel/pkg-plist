@@ -22,6 +22,7 @@ bin/ccclib/Util.pyc
 bin/ccclib/__init__.py
 bin/ccclib/__init__.pyc
 bin/clang
+bin/clang-driver
 bin/gccas
 bin/gccld
 bin/llc
@@ -370,6 +371,7 @@ include/llvm/Use.h
 include/llvm/User.h
 include/llvm/Value.h
 include/llvm/ValueSymbolTable.h
+lib/CompilerDriver.o
 lib/LLVMARMAsmPrinter.o
 lib/LLVMARMCodeGen.o
 lib/LLVMAlphaAsmPrinter.o
@@ -546,6 +548,9 @@ lib/plugin_llvmc_Clang.o
 %%DOCSDIR%%/ps/llvmgxx.ps
 %%DOCSDIR%%/ps/opt.ps
 %%DOCSDIR%%/ps/tblgen.ps
+@dirrm lib/clang/1.0/include
+@dirrm lib/clang/1.0
+@dirrm lib/clang
 @dirrm include/llvm/Transforms/Utils
 @dirrm include/llvm/Transforms/IPO
 @dirrm include/llvm/Transforms
