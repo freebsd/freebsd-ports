@@ -2858,7 +2858,8 @@ epstools                        ports/mail/epstools
 epydoc                          ports/devel/epydoc
 epylog                          ports/sysutils/epylog
 eqe                             ports/textproc/eqe
-eqonomize                       ports/finance/eqonomize
+eqonomize-kde3                  ports/finance/eqonomize-kde3
+eqonomize-kde4                  ports/finance/eqonomize-kde4
 eric                            ports/devel/eric
 eric4                           ports/devel/eric4
 eris                            ports/devel/eris
@@ -7604,6 +7605,7 @@ libxevie                        ports/x11/libXevie
 libxext                         ports/x11/libXext
 libxfce4gui                     ports/x11-toolkits/libxfce4gui
 libxfce4mcs                     ports/x11/libxfce4mcs
+libxfce4menu                    ports/x11/libxfce4menu
 libxfce4util                    ports/x11/libxfce4util
 libxfixes                       ports/x11/libXfixes
 libxfont                        ports/x11-fonts/libXfont
@@ -10103,6 +10105,7 @@ p5-CGI-XMLApplication           ports/www/p5-CGI-XMLApplication
 p5-CGI-modules                  ports/www/p5-CGI-modules
 p5-CGI.pm                       ports/www/p5-CGI.pm
 p5-CGI_Lite                     ports/www/p5-CGI_Lite
+p5-CHI                          ports/devel/p5-CHI
 p5-CLASS                        ports/devel/p5-CLASS
 p5-CPAN-DistnameInfo            ports/devel/p5-CPAN-DistnameInfo
 p5-CPAN-Mini                    ports/devel/p5-CPAN-Mini
@@ -11248,6 +11251,7 @@ p5-Handel                       ports/www/p5-Handel
 p5-Hash-AsObject                ports/devel/p5-Hash-AsObject
 p5-Hash-Case                    ports/devel/p5-Hash-Case
 p5-Hash-Merge                   ports/textproc/p5-Hash-Merge
+p5-Hash-MoreUtils               ports/devel/p5-Hash-MoreUtils
 p5-Hash-MultiKey                ports/devel/p5-Hash-MultiKey
 p5-Hash-Union                   ports/devel/p5-Hash-Union
 p5-Hash-Util-FieldHash-Compat   ports/devel/p5-Hash-Util-FieldHash-Compat
@@ -13536,6 +13540,7 @@ p5-chatbot-eliza                ports/misc/p5-Chatbot-Eliza
 p5-check-isa                    ports/devel/p5-Check-ISA
 p5-chemistry-elements           ports/science/p5-Chemistry-Elements
 p5-chess-pgn-parse              ports/textproc/p5-Chess-PGN-Parse
+p5-chi                          ports/devel/p5-CHI
 p5-chklinks                     ports/www/p5-chklinks
 p5-chooser                      ports/devel/p5-Chooser
 p5-cisco-hash                   ports/security/p5-Cisco-Hash
@@ -14425,6 +14430,7 @@ p5-handel                       ports/www/p5-Handel
 p5-hash-asobject                ports/devel/p5-Hash-AsObject
 p5-hash-case                    ports/devel/p5-Hash-Case
 p5-hash-merge                   ports/textproc/p5-Hash-Merge
+p5-hash-moreutils               ports/devel/p5-Hash-MoreUtils
 p5-hash-multikey                ports/devel/p5-Hash-MultiKey
 p5-hash-union                   ports/devel/p5-Hash-Union
 p5-hash-util-fieldhash-compat   ports/devel/p5-Hash-Util-FieldHash-Compat
@@ -22825,6 +22831,7 @@ xfce4-appfinder                 ports/misc/xfce4-appfinder
 xfce4-artwork                   ports/misc/xfce4-artwork
 xfce4-battery-plugin            ports/sysutils/xfce4-battery-plugin
 xfce4-clipman-plugin            ports/x11/xfce4-clipman-plugin
+xfce4-conf                      ports/x11/xfce4-conf
 xfce4-cpugraph-plugin           ports/sysutils/xfce4-cpugraph-plugin
 xfce4-datetime-plugin           ports/x11-clocks/xfce4-datetime-plugin
 xfce4-desktop                   ports/x11-wm/xfce4-desktop
@@ -22850,6 +22857,7 @@ xfce4-print                     ports/print/xfce4-print
 xfce4-quicklauncher-plugin      ports/x11/xfce4-quicklauncher-plugin
 xfce4-screenshooter-plugin      ports/x11/xfce4-screenshooter-plugin
 xfce4-session                   ports/x11-wm/xfce4-session
+xfce4-settings                  ports/sysutils/xfce4-settings
 xfce4-smartbookmark-plugin      ports/www/xfce4-smartbookmark-plugin
 xfce4-systemload-plugin         ports/sysutils/xfce4-systemload-plugin
 xfce4-taskmanager               ports/x11/xfce4-taskmanager
