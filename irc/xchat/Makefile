@@ -96,12 +96,13 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if defined(WITH_TCL)
-LIB_DEPENDS+=	tcl84.1:${PORTSDIR}/lang/tcl84
-CONFIGURE_ARGS+=--enable-tcl=${LOCALBASE}/lib/tcl8.4
+USE_TCL=	84+
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
+CONFIGURE_ARGS+=--enable-tcl=${TCL_LIBDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
-		-I${LOCALBASE}/include/tcl8.4" \
+		-I${TCL_INCLUDEDIR}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} \
-		-L${LOCALBASE}/lib/tcl8.4"
+		-L${TCL_LIBDIR}"
 PLIST_SUB+=	TCL=""
 .else
 CONFIGURE_ARGS+=--enable-tcl=no
