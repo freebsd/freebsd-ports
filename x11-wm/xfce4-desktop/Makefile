@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-desktop
 PORTVERSION=	4.6.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	xfdesktop-${PORTVERSION}
@@ -24,7 +25,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
-USE_XFCE=	configenv libgui libutil panel xfconf
+USE_XFCE=	configenv libgui libmenu libutil panel xfconf
 
 OPTIONS=	FAM	"Enable FAM support"		on \
 		THUNAR	"Enable thunar support"		on
