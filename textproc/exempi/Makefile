@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	exempi
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://libopenraw.freedesktop.org/download/
 
@@ -19,7 +19,8 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	ltverhack gnomehack gnometarget
 CONFIGURE_ARGS=	--enable-unittest=no
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-liconv"
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
@@ -30,8 +31,8 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
+#.if ${ARCH} == "sparc64"
+#BROKEN=		Does not compile on sparc64
+#.endif
 
 .include <bsd.port.post.mk>
