@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# PROVIDE: termlog
+# REQUIRE: cron devfs syslogd
+
+. /etc/rc.subr
+
+load_rc_config termlog
+
+name=termlog
+rcvar=`set_rcvar`
+
+command="/usr/local/bin/termlog"
+
+# default to disable
+termlog_enable=${termlog_enable:-"NO"}
+# logging path
+termlog_log_dir=${termlog_log_dir:-"/var/log/termlog/"}
+# maximum monitored consoles
+termlog_max_cons=${termlog_max_cons:-"30"}
+termlog_flags=${termlog_flags:-" -C $termlog_log_dir -f -n $termlog_max_cons &"}
+
+start_precmd=start_precmd
+
+start_precmd()
+{
+	mkdir -p $termlog_log_dir
+	chmod 0700 $termlog_log_dir
+}
+
+run_rc_command "$1"
