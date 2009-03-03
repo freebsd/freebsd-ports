@@ -1,0 +1,21 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/WebBackForwardList.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/WebView.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/WebFrame.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/WebHistoryItem.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/NetworkRequest.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/index.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/Install/webkit.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/Install/webkit-autogen.h
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/WebKit/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/WebKit/WebKit.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/WebKit/WebKit.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/WebSettings.pod
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/Install
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/WebKit
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
