@@ -1,6 +1,32 @@
+bin/xfce4-popup-menu
 bin/xfdesktop
 bin/xfdesktop-settings
+etc/xdg/menus/xfce-applications.menu
+lib/xfce4/modules/xfce4_desktop_menu.so
+lib/xfce4/modules/xfce4_desktop_menu.la
+lib/xfce4/modules/xfce4_desktop_menu.a
+libexec/xfce4/panel-plugins/xfce4-menu-plugin
+share/applications/xfce4-about-xfce.desktop
+share/applications/xfce4-file-manager.desktop
+share/applications/xfce4-help.desktop
+share/applications/xfce4-logout.desktop
+share/applications/xfce4-run-program.desktop
+share/applications/xfce4-terminal.desktop
+share/applications/xfce4-web-browser.desktop
 share/applications/xfce-backdrop-settings.desktop
+share/desktop-directories/xfce-accessories.directory
+share/desktop-directories/xfce-development.directory
+share/desktop-directories/xfce-education.directory
+share/desktop-directories/xfce-games.directory
+share/desktop-directories/xfce-graphics.directory
+share/desktop-directories/xfce-multimedia.directory
+share/desktop-directories/xfce-network.directory
+share/desktop-directories/xfce-office.directory
+share/desktop-directories/xfce-other.directory
+share/desktop-directories/xfce-screensavers.directory
+share/desktop-directories/xfce-settings.directory
+share/desktop-directories/xfce-system.directory
+share/xfce4/panel-plugins/xfce4-menu.desktop
 share/icons/hicolor/32x32/apps/xfce4-backdrop.png
 share/icons/hicolor/32x32/apps/xfce4-menueditor.png
 share/icons/hicolor/48x48/apps/xfce4-backdrop.png
@@ -102,13 +128,16 @@ share/xfce4/doc/ja/images/xfdesktop-background-tab.png
 share/xfce4/doc/ja/images/xfdesktop-icons-tab.png
 share/xfce4/doc/ja/images/xfdesktop-menus-tab.png
 share/xfce4/doc/ja/xfdesktop.html
-@dirrmtry share/applications
+@dirrmtry etc/xdg/menus
+@dirrmtry etc/xdg
 @dirrmtry etc/xfce4
 @dirrmtry lib/xfce4/mcs-plugins
 @dirrmtry lib/xfce4/modules
 @dirrmtry lib/xfce4
 @dirrmtry libexec/xfce4/panel-plugins
 @dirrmtry libexec/xfce4
+@dirrmtry share/applications
+@dirrmtry share/desktop-directories
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/mr/LC_MESSAGES
