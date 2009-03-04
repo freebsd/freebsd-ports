@@ -30,7 +30,7 @@ CONFLICTS=		open-vm-tools-[0-9]*
 .if !defined(WITHOUT_LIBNOTIFY)
 LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
 .endif
-.if defined(WITHOUT_UNITY)
+.if !defined(WITH_UNITY)
 CONFIGURE_ARGS+=	--disable-unity
 .endif
 CONFIGURE_ARGS+=	--with-x --without-gtkmm
