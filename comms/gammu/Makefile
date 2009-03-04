@@ -21,16 +21,19 @@ CMAKE_ARGS+=	-DINSTALL_LIBDATA_DIR=${LOCALBASE}/libdata
 USE_CMAKE=	yes
 USE_GNOME=	pkgconfig
 
-.if defined(NOPORTDOCS)
-EXTRA_PATCHES=files/extra-patch-CMakeLists.txt
+.if defined(WITH_PYTHON_GAMMU)
+USE_PYTHON=	YES
+PLIST_SUB=	WITH_PYTHON_GAMMU=""
 .else
+PLIST_SUB=	WITH_PYTHON_GAMMU="@comment "
+.endif
+
 MAN1=		gammu.1 gammu-config.1 jadmaker.1 gammu-smsd.1 gammu-smsd-inject.1 \
 		gammu-smsd-monitor.1
 MAN5=		gammu-smsdrc.5 gammurc.5
 MAN7=		gammu-smsd-files.7 gammu-smsd-mysql.7 gammu-smsd-pgsql.7 \
 		gammu-smsd-dbi.7 gammu-smsd-tables.7
 PORTDOCS=	*
-.endif
 
 .include <bsd.port.pre.mk>
 
