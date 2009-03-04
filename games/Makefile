@@ -157,6 +157,7 @@
     SUBDIR += cultivation
     SUBDIR += cursive
     SUBDIR += d2x
+    SUBDIR += d2x-xl
     SUBDIR += daimonin-client
     SUBDIR += dangen
     SUBDIR += dangerdeep
