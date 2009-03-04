@@ -116,7 +116,7 @@ CONFIGURE_ARGS+=--enable-oss
 .endif
 
 .if defined(WITH_PULSEAUDIO)
-CONFIGURE_ARGS+=--enable-pulseaudio
+LIB_DEPENDS+=	pulse-simple.0:${PORTSDIR}/audio/pulseaudio
 .else
 CONFIGURE_ARGS+=--disable-pulseaudio
 .endif
