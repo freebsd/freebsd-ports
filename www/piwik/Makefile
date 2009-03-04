@@ -8,8 +8,7 @@
 PORTNAME=	piwik
 PORTVERSION=	0.2.30
 CATEGORIES=	www
-MASTER_SITES=	http://piwik.org/
-DISTNAME=	last
+MASTER_SITES=	http://piwik.org/builds/
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Open Source Web Analytics Software Program
