@@ -19,4 +19,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+BROKEN=		fails to package
+
 .include <bsd.port.mk>
