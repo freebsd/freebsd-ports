@@ -7604,7 +7604,6 @@ libxdmcp                        ports/x11/libXdmcp
 libxevie                        ports/x11/libXevie
 libxext                         ports/x11/libXext
 libxfce4gui                     ports/x11-toolkits/libxfce4gui
-libxfce4mcs                     ports/x11/libxfce4mcs
 libxfce4menu                    ports/x11/libxfce4menu
 libxfce4util                    ports/x11/libxfce4util
 libxfixes                       ports/x11/libXfixes
@@ -11109,6 +11108,7 @@ p5-Gtk2-Html2                   ports/x11-toolkits/p5-Gtk2-Html2
 p5-Gtk2-ImageView               ports/x11-toolkits/p5-Gtk2-ImageView
 p5-Gtk2-Spell                   ports/devel/p5-Gtk2-Spell
 p5-Gtk2-TrayIcon                ports/x11-toolkits/p5-Gtk2-TrayIcon
+p5-Gtk2-WebKit                  ports/www/p5-Gtk2-WebKit
 p5-GtkXmHTML                    ports/x11-toolkits/p5-GtkXmHTML
 p5-Gungho                       ports/www/p5-Gungho
 p5-HTML-Adsense                 ports/www/p5-HTML-Adsense
@@ -14424,6 +14424,7 @@ p5-gtk2-html2                   ports/x11-toolkits/p5-Gtk2-Html2
 p5-gtk2-imageview               ports/x11-toolkits/p5-Gtk2-ImageView
 p5-gtk2-spell                   ports/devel/p5-Gtk2-Spell
 p5-gtk2-trayicon                ports/x11-toolkits/p5-Gtk2-TrayIcon
+p5-gtk2-webkit                  ports/www/p5-Gtk2-WebKit
 p5-gtkxmhtml                    ports/x11-toolkits/p5-GtkXmHTML
 p5-gungho                       ports/www/p5-Gungho
 p5-handel                       ports/www/p5-Handel
@@ -21100,6 +21101,7 @@ tcd                             ports/audio/tcd
 tcl-Mysql                       ports/databases/tcl-Mysql
 tcl-manual                      ports/lang/tcl-manual
 tcl-memchan                     ports/devel/tcl-memchan
+tcl-modules                     ports/lang/tcl-modules
 tcl-mysql                       ports/databases/tcl-Mysql
 tcl-neo                         ports/devel/tcl-neo
 tcl-trf                         ports/devel/tcl-trf
@@ -22839,10 +22841,7 @@ xfce4-dev-tools                 ports/devel/xfce4-dev-tools
 xfce4-dict-plugin               ports/textproc/xfce4-dict-plugin
 xfce4-fsguard-plugin            ports/sysutils/xfce4-fsguard-plugin
 xfce4-genmon-plugin             ports/sysutils/xfce4-genmon-plugin
-xfce4-icon-theme                ports/x11-themes/xfce4-icon-theme
 xfce4-mailwatch-plugin          ports/mail/xfce4-mailwatch-plugin
-xfce4-mcs-manager               ports/sysutils/xfce4-mcs-manager
-xfce4-mcs-plugins               ports/sysutils/xfce4-mcs-plugins
 xfce4-media                     ports/multimedia/xfce4-media
 xfce4-messenger-plugin          ports/net-im/xfce4-messenger-plugin
 xfce4-minicmd-plugin            ports/sysutils/xfce4-minicmd-plugin
