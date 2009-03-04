@@ -36,4 +36,9 @@ lib/libGammu.a
 lib/libgsmsd.a
 libdata/pkgconfig/gammu.pc
 libdata/pkgconfig/gammu-smsd.pc
+%%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/__init__.py
+%%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/_gammu.so
+%%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/Data.py
+%%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/Worker.py
 @dirrm include/gammu
+%%WITH_PYTHON_GAMMU%%@dirrm %%PYTHON_SITELIBDIR%%/gammu
