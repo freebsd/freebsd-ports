@@ -11,6 +11,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://www.tcnj.edu/~bush/
 DISTNAME=	uftp
 EXTRACT_SUFX=	.tar
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A multicast capable FTP client and server
