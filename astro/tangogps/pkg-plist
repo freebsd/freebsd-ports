@@ -1,0 +1,17 @@
+bin/tangogps
+share/applications/tangogps.desktop
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
+share/pixmaps/tangogps-friend.png
+share/pixmaps/tangogps-myposition.png
+share/pixmaps/tangogps-photo.png
+share/pixmaps/tangogps-poi.png
+share/pixmaps/tangogps-wp.png
+share/pixmaps/tangogps.png
+@dirrm %%DOCSDIR%%
+@dirrmtry share/applications

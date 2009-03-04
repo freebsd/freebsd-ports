@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2009-03-04 23:32:30.000000000 +0300
++++ Makefile.in	2009-03-04 23:33:22.000000000 +0300
+@@ -221,7 +221,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ SUBDIRS = po src pixmaps data
+-tangogpsdocdir = ${prefix}/doc/tangogps
++tangogpsdocdir = ${prefix}/share/doc/tangogps
+ tangogpsdoc_DATA = \
+ 	README\
+ 	COPYING\

@@ -77,6 +77,7 @@
     SUBDIR += stellarium
     SUBDIR += sunclock
     SUBDIR += swe
+    SUBDIR += tangogps
     SUBDIR += tclgeomap
     SUBDIR += tkgeomap
     SUBDIR += viking

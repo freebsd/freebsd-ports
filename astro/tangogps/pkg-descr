@@ -1,0 +1,11 @@
+Tangogps is an easy to use, fast and lightweight mapping application for
+use with or without GPS. By default tangoGPS uses map data from the
+Openstreetmap project. Additionally a variety of other repositories
+can be easily added.
+
+The maps are automagically downloaded and cached for offline use while
+you drag or zoom the map. Furthermore you can conveniently pre-cache
+areas with tangoGPS.
+
+Author:	Marcus Bauer <marcus.bauer+tangogps@gmail.com>
+WWW:	http://www.tangogps.org
