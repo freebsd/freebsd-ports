@@ -1,4 +1,7 @@
+include/clutter-0.8/clutter-box2d/clutter-box2d-collision.h
+include/clutter-0.8/clutter-box2d/clutter-box2d-contact.h
 include/clutter-0.8/clutter-box2d/clutter-box2d-joint.h
+include/clutter-0.8/clutter-box2d/clutter-box2d-marshal.h
 include/clutter-0.8/clutter-box2d/clutter-box2d-util.h
 include/clutter-0.8/clutter-box2d/clutter-box2d.h
 lib/libclutter-box2d-0.8.a
@@ -6,6 +9,7 @@ lib/libclutter-box2d-0.8.la
 lib/libclutter-box2d-0.8.so
 lib/libclutter-box2d-0.8.so.0
 libdata/pkgconfig/clutter-box2d-0.8.pc
+%%DOCSDIR%%/ClutterBox2D.html
 %%DOCSDIR%%/ch01.html
 %%DOCSDIR%%/ch02.html
 %%DOCSDIR%%/clutter-box2d-ClutterBox2D-Actor.html

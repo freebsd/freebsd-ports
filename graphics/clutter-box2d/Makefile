@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clutter-box2d
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.clutter-project.org/sources/${PORTNAME}/0.8/
 
