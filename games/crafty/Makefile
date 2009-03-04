@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crafty
-PORTVERSION=	22.1
+PORTVERSION=	22.10
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/pgn/:data \
 		ftp://ftp.cis.uab.edu/pub/hyatt/documentation/:doc \
@@ -17,7 +17,7 @@ DISTFILES=	crafty-${PORTVERSION}.zip:src \
 DIST_SUBDIR=	crafty
 EXTRACT_ONLY=	crafty-${PORTVERSION}.zip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flo@kasimir.com
 COMMENT=	A chess programm for playing and analyzing games
 
 USE_ZIP=	yes
@@ -26,27 +26,18 @@ USE_GMAKE=	yes
 .if !defined(NOPORTDOCS)
 DOCFILES=	crafty.doc.ascii crafty.doc.ps
 DISTFILES+=	${DOCFILES:S/$/:doc/}
-UTILS=		bitmaps.tgz sound.zip
+UTILS=		bitmaps.tgz sound.zip book.bin books.bin
 DISTFILES+=	${UTILS:S/$/:utils/}
 .endif
 
 ALL_TARGET=	freebsd
 
-.if !defined(WITH_BOOKDIR)
-WITH_BOOKDIR=	${PREFIX}/lib/crafty
-.endif
-.if !defined(WITH_LOGDIR)
-WITH_LOGDIR=	/tmp
-.endif
-.if !defined(WITH_RCDIR)
-WITH_RCDIR=	~/
-.endif
-.if !defined(WITH_TBDIR)
-WITH_TBDIR=	${PREFIX}/lib/crafty/TB
-.endif
-.if !defined(WITH_PERSDIR)
-WITH_PERSDIR=	${PREFIX}/lib/crafty/cpf
-.endif
+WITH_BOOKDIR?=	${PREFIX}/lib/crafty
+WITH_LOGDIR?=	/tmp
+WITH_RCDIR?=	~/
+WITH_TBDIR?=	${PREFIX}/lib/crafty/TB
+WITH_PERSDIR?=	${PREFIX}/lib/crafty/cpf
+
 OPT=		-DCPUS=4 -DHASHSTATS -DTRACE -DBOOKDIR=\\\"${WITH_BOOKDIR}\\\" \
 		-DLOGDIR=\\\"${WITH_LOGDIR}\\\" \
 		-DRCDIR=\\\"${WITH_RCDIR}\\\" \
@@ -67,6 +58,8 @@ MAKE_ENV+=	opt="${OPT}" target=${OPSYS} CXFLAGS="${CXXFLAGS}"
 
 post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/start.pgn ${WRKSRC}/start.pgn
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/book.bin ${WRKSRC}/book.bin
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/books.bin ${WRKSRC}/books.bin
 
 post-build:
 	(cd ${WRKSRC}; ./crafty bookpath=. <${FILESDIR}/books-building)
