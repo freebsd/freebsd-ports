@@ -30,6 +30,10 @@ MAN4=	hso.4
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 800063
+BROKEN=	Does not build with USB2
+.endif
+
 .if !defined(WITHOUT_HSOCTL)
 HSOCTL_VERSION=	20081023
 DISTFILES+=	hsoctl-${HSOCTL_VERSION}${EXTRACT_SUFX}
