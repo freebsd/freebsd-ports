@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5d433534-f41c-402e-ade5-e0a2259a7cb6">
+    <topic>curl -- cURL/libcURL Location: Redirect URLs Security Bypass</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><ge>5.11</ge><lt>7.19.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/34138/">
+	  <p>The security issue is caused due to cURL following HTTP Location:
+redirects to e.g. scp:// or file:// URLs which can be exploited
+by a malicious HTTP server to overwrite or disclose the content of
+arbitrary local files and potentially execute arbitrary commands via
+specially crafted redirect URLs.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+     <cvename>CVE-2009-0037</cvename>
+     <url>http://secunia.com/advisories/34138/</url>
+    </references>
+    <dates>
+      <discovery>2009-03-03</discovery>
+      <entry>2009-03-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cf495fd4-fdcd-11dd-9a86-0050568452ac">
     <topic>Zend Framework -- Local File Inclusion vulnerability in Zend_View::render()</topic>
     <affects>
