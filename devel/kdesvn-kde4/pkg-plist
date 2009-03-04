@@ -40,9 +40,9 @@ include/svnqt/wc.hpp
 lib/kde4/kded_kdesvnd.so
 lib/kde4/kdesvnpart.so
 lib/kde4/kio_ksvn.so
-lib/libsvnqt4.so
-lib/libsvnqt4.so.5
-lib/libsvnqt4.so.5.0.1
+lib/libsvnqt.so
+lib/libsvnqt.so.5
+lib/libsvnqt.so.5.0.1
 share/applications/kde4/kdesvn.desktop
 share/apps/kconf_update/kdesvn-use-external-update.sh
 share/apps/kconf_update/kdesvnpartrc-use-external.upd

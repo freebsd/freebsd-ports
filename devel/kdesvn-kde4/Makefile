@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdesvn
-DISTVERSION=	1.2.2
+DISTVERSION=	1.2.4
 CATEGORIES=	devel kde
 MASTER_SITES=	http://kdesvn.alwins-world.de/downloads/
 PKGNAMESUFFIX=	-kde4
