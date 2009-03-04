@@ -6,6 +6,34 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080304:
+  AFFECTS: users of x11-wm/xfce4
+  AUTHOR: oliver@FreeBSD.org
+
+  When upgrading from xfce 4.4 to 4.6 make sure you uninstall the following
+  ports:
+        x11/libxfce4mcs
+        sysutils/xfce4-mcs-manager
+        sysutils/xfce4-mcs-plugins
+        x11-themes/xfce4-icon-theme
+  You may uninstall them before you start the upgrade procedure (preferred)
+  or even afterwards when the upgrade went fine.
+
+  Please also note, that xfce 4.6 does not come with an icon theme any more.
+  Xfce 4.6 now depends on the Tango theme which is now installed by default.
+  The default installation of xfce is also adjusted to use this icon theme
+  instead of the xfce 4.4 standard Rodent theme. If you are upgrading from
+  xfce 4.4 to 4.6 you probably still have the Rodent theme selected. This
+  will lead to several "missing" icons when starting up xfce.
+  Make sure to switch as well to the Tango theme. To do this just open the
+  Settings Manager and select Appearance. Inside the Appearance dialog
+  switch to the Icons tab and select the "Tango" entry in the list on the
+  left side of the Icons tab.
+
+  For enabling the Reboot/Shutdown functionality of xfce's logout dialog
+  please read the note which gets printed out after the installation of
+  x11-wm/xfce4 about how to configure PolicyKit.
+
 20090223:
   AFFECTS: users of Tcl/Tk
   AUTHOR: mm@FreeBSD.org
