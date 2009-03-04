@@ -15,7 +15,7 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 # or WANT_[DATABSE]_VER will include this file too.
 #
 ##
-# USE_MYSQL		- Add MySQL client dependency.
+# USE_MYSQL		- Add MySQL (client/server/embedded) dependency. (default: client)
 #				  If no version is given (by the maintainer via the port or
 #				  by the user via defined variable), try to find the
 #				  currently installed version.  Fall back to default if
@@ -130,12 +130,12 @@ IGNORE=	cannot install: MySQL versions mismatch: mysql${_MYSQL_VER}-client is in
 .endif
 .endif
 
+.if (${USE_MYSQL} == "embedded")
+IGNORE_WITH_MYSQL=	323 40 41
+.endif
+
 # And now we are checking if we can use it
 .if defined(MYSQL${MYSQL_VER}_LIBVER)
-# compatability shim
-.if defined(BROKEN_WITH_MYSQL)
-IGNORE_WITH_MYSQL=${BROKEN_WITH_MYSQL}
-.endif
 .if defined(IGNORE_WITH_MYSQL)
 .	for VER in ${IGNORE_WITH_MYSQL}
 .		if (${MYSQL_VER} == "${VER}")
@@ -143,7 +143,14 @@ IGNORE=		cannot install: doesn't work with MySQL version : ${MYSQL_VER} (Doesn't
 .		endif
 .	endfor
 .endif # IGNORE_WITH_MYSQL
+.if (${USE_MYSQL} == "server" || ${USE_MYSQL} == "embedded")
+RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
+.if (${USE_MYSQL} == "embedded")
+BUILD_DEPENDS+=	${LOCALBASE}/lib/mysql/libmysqld.a:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
+.endif
+.else
 LIB_DEPENDS+=	mysqlclient.${MYSQL${MYSQL_VER}_LIBVER}:${PORTSDIR}/databases/mysql${MYSQL_VER}-client
+.endif
 .else
 IGNORE=		cannot install: unknown MySQL version: ${MYSQL_VER}
 .endif # Check for correct libs
