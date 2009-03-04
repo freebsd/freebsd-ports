@@ -1,11 +1,11 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP/.packlist
+%%SITE_PERL%%/XML/Compile/Operation.pm
+%%SITE_PERL%%/XML/Compile/Operation.pod
 %%SITE_PERL%%/XML/Compile/SOAP.pm
 %%SITE_PERL%%/XML/Compile/SOAP.pod
 %%SITE_PERL%%/XML/Compile/SOAP/Client.pm
 %%SITE_PERL%%/XML/Compile/SOAP/Client.pod
-%%SITE_PERL%%/XML/Compile/SOAP/Encoding.pm
-%%SITE_PERL%%/XML/Compile/SOAP/Encoding.pod
 %%SITE_PERL%%/XML/Compile/SOAP/Server.pm
 %%SITE_PERL%%/XML/Compile/SOAP/Server.pod
 %%SITE_PERL%%/XML/Compile/SOAP/Tester.pm
@@ -18,31 +18,24 @@
 %%SITE_PERL%%/XML/Compile/SOAP11.pod
 %%SITE_PERL%%/XML/Compile/SOAP11/Client.pm
 %%SITE_PERL%%/XML/Compile/SOAP11/Client.pod
+%%SITE_PERL%%/XML/Compile/SOAP11/Encoding.pm
+%%SITE_PERL%%/XML/Compile/SOAP11/Encoding.pod
+%%SITE_PERL%%/XML/Compile/SOAP11/Operation.pm
+%%SITE_PERL%%/XML/Compile/SOAP11/Operation.pod
 %%SITE_PERL%%/XML/Compile/SOAP11/Server.pm
 %%SITE_PERL%%/XML/Compile/SOAP11/Server.pod
 %%SITE_PERL%%/XML/Compile/SOAP11/xsd/soap-encoding.xsd
+%%SITE_PERL%%/XML/Compile/SOAP11/xsd/soap-envelope-patch.xsd
 %%SITE_PERL%%/XML/Compile/SOAP11/xsd/soap-envelope.xsd
-%%SITE_PERL%%/XML/Compile/SOAP12.pm
-%%SITE_PERL%%/XML/Compile/SOAP12.pod
-%%SITE_PERL%%/XML/Compile/SOAP12/Client.pm
-%%SITE_PERL%%/XML/Compile/SOAP12/Client.pod
-%%SITE_PERL%%/XML/Compile/SOAP12/Server.pm
-%%SITE_PERL%%/XML/Compile/SOAP12/Server.pod
-%%SITE_PERL%%/XML/Compile/SOAP12/xsd/2003-soap-encoding.xsd
-%%SITE_PERL%%/XML/Compile/SOAP12/xsd/2003-soap-envelope.xsd
-%%SITE_PERL%%/XML/Compile/SOAP12/xsd/2003-soap-rpc.xsd
 %%SITE_PERL%%/XML/Compile/Transport.pm
 %%SITE_PERL%%/XML/Compile/Transport.pod
 %%SITE_PERL%%/XML/Compile/Transport/SOAPHTTP.pm
 %%SITE_PERL%%/XML/Compile/Transport/SOAPHTTP.pod
 %%SITE_PERL%%/XML/Compile/WSDL11.pm
 %%SITE_PERL%%/XML/Compile/WSDL11.pod
-%%SITE_PERL%%/XML/Compile/WSDL11/Operation.pm
-%%SITE_PERL%%/XML/Compile/WSDL11/Operation.pod
 %%SITE_PERL%%/XML/Compile/WSDL11/xsd/wsdl-http.xsd
 %%SITE_PERL%%/XML/Compile/WSDL11/xsd/wsdl-mime.xsd
 %%SITE_PERL%%/XML/Compile/WSDL11/xsd/wsdl-soap.xsd
-%%SITE_PERL%%/XML/Compile/WSDL11/xsd/wsdl-soap12.xsd
 %%SITE_PERL%%/XML/Compile/WSDL11/xsd/wsdl.xsd
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile
@@ -50,8 +43,6 @@
 @dirrmtry %%SITE_PERL%%/XML/Compile/WSDL11/xsd
 @dirrmtry %%SITE_PERL%%/XML/Compile/WSDL11
 @dirrmtry %%SITE_PERL%%/XML/Compile/Transport
-@dirrmtry %%SITE_PERL%%/XML/Compile/SOAP12/xsd
-@dirrmtry %%SITE_PERL%%/XML/Compile/SOAP12
 @dirrmtry %%SITE_PERL%%/XML/Compile/SOAP11/xsd
 @dirrmtry %%SITE_PERL%%/XML/Compile/SOAP11
 @dirrmtry %%SITE_PERL%%/XML/Compile/SOAP
