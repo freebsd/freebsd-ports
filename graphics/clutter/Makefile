@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clutter
-PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTVERSION=	0.8.8
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.clutter-project.org/sources/${PORTNAME}/0.8/
 
