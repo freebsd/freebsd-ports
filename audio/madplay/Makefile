@@ -37,6 +37,8 @@ PLIST_SUB+=		NLS="@comment "
 
 .include <bsd.port.pre.mk>
 
+CFLAGS+=	-I${LOCALBASE}/include
+
 .if ${HAVE_GNOME:Mesound} != ""
 USE_GNOME+=	esound
 PKGNAMESUFFIX=	-esound
