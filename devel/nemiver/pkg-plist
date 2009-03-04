@@ -199,6 +199,7 @@ share/locale/ja/LC_MESSAGES/nemiver.mo
 share/locale/nb/LC_MESSAGES/nemiver.mo
 share/locale/nl/LC_MESSAGES/nemiver.mo
 share/locale/oc/LC_MESSAGES/nemiver.mo
+share/locale/pt_BR/LC_MESSAGES/nemiver.mo
 share/locale/sv/LC_MESSAGES/nemiver.mo
 share/locale/th/LC_MESSAGES/nemiver.mo
 %%DATADIR%%/glade/workbench.glade
