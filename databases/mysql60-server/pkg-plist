@@ -10,6 +10,8 @@ bin/myisam_ftdump
 bin/myisamchk
 bin/myisamlog
 bin/myisampack
+bin/mysqltest_embedded
+bin/mysql_client_test_embedded
 bin/mysql_install_db
 bin/mysql_tzinfo_to_sql
 bin/mysql_waitpid
@@ -74,6 +76,7 @@ lib/mysql/libheap.a
 lib/mysql/libmaria.a
 lib/mysql/libmyisam.a
 lib/mysql/libmyisammrg.a
+lib/mysql/libmysqld.a
 lib/mysql/libmystrings.a
 lib/mysql/libmystrings.la
 lib/mysql/libmysys.a
