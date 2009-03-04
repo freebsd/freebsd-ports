@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	hyperestraier
-PORTVERSION=	0.10.7
+PORTVERSION=	0.10.8
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}${PKGNAMESUFFIX}
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/exapmle.py ${EXAMPLESDIR}/example.py
+	${INSTALL_DATA} ${WRKSRC}/example.py ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/asyn_example.py ${EXAMPLESDIR}/
 .endif
 
