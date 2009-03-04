@@ -1,6 +1,8 @@
 @comment $FreeBSD$
+bin/%%GNU_HOST%%-cpp-%%GCC_VER%%
 bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
 bin/%%GNU_HOST%%-llvm-c++
+bin/%%GNU_HOST%%-llvm-cpp
 bin/%%GNU_HOST%%-llvm-g++
 bin/%%GNU_HOST%%-llvm-gcc
 bin/llvm-c++
