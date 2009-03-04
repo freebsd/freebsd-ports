@@ -1,3 +1,3 @@
-MD5 (llvm-gcc-4.2-2.4.source.tar.gz) = ecd93e09debb62adc9a61b5c1442b3e5
-SHA256 (llvm-gcc-4.2-2.4.source.tar.gz) = bb5860166dffc25ef2459fdd3bdee8fc5124a3d77209e87538692e8072267df2
-SIZE (llvm-gcc-4.2-2.4.source.tar.gz) = 49273036
+MD5 (llvm-gcc-4.2-2.5.source.tar.gz) = c5800d85059fcf80429a86c536127595
+SHA256 (llvm-gcc-4.2-2.5.source.tar.gz) = 5b60f8503de3c1d90e4d9e1af545a1d4f7bc6a268ebf359ce15f74cb076fb193
+SIZE (llvm-gcc-4.2-2.5.source.tar.gz) = 49219649

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcc4
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	llvm-
@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--disable-shared
 .endif
 
 .if ${ARCH} == "sparc64"
-IGNORE=		Does not install: not yet supported on sparc64
+IGNORE=		does not install: not yet supported on sparc64
 .endif
 
 post-extract:
