@@ -14,6 +14,7 @@
 
 PORTNAME=	dkim-milter
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -182,8 +183,18 @@ PLIST_SUB+=	LIBDKIMSHARED="@comment "
 .if defined(WITH_DEBUG)
 SITE_SUB+=	-e '\|confOPTIMIZE.*-g|s/^dnl //g'
 .endif
+.if defined(WITH_UNBOUND) && !defined(WITHOUT_UNBOUND)
+.if defined(WITH_ARLIB)
+IGNORE=		libar cannot be used simultaneously with unbound
+.endif
+LIB_DEPENDS+=	unbound:${PORTSDIR}/dns/unbound
+SITE_SUB+=	-e 's|%%UNBOUND%%||g' \
+		-e '\|bld_USE_UNBOUND.*true|s/^dnl //g'
+.else
+SITE_SUB+=	-e 's|%%UNBOUND%%|dnl |g'
 .if !defined(WITHOUT_ARLIB)
-SITE_SUB+=	-e '\|bld_USE_ARLIB|s/^dnl //g'
+SITE_SUB+=	-e '\|bld_USE_ARLIB.*true|s/^dnl //g'
+.endif
 .endif
 .if defined(WITH_POPAUTH) && !defined(WITHOUT_POPAUTH)
 SITE_SUB+=	-e '/-DPOPAUTH/s/^dnl //g'
@@ -243,7 +254,7 @@ pre-fetch:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "If you do not have OpenSSL 0.9.8 or later installed,"
 	@${ECHO_MSG} "set WITH_OPENSSL_PORT=yes to support rsa-sha256 algorithm"
-	@${ECHO_MSG} "which is requied in the latest specification."
+	@${ECHO_MSG} "which is required in the latest specification."
 	@${ECHO_MSG}
 	@${ECHO_MSG} "dkim-milter has the following tunable option(s):"
 	@${ECHO_MSG} " WITH_POPAUTH=yes		Query POP-before-SMTP authentication database"
@@ -253,6 +264,7 @@ pre-fetch:
 	@${ECHO_MSG} " WITH_SENDMAIL_PORT=yes		Build to run with ports' sendmail"
 	@${ECHO_MSG} " WITH_POSTFIX=yes		Build to run with postfix port"
 	@${ECHO_MSG} " WITH_LIBDKIM_INSTALL=yes	Install libdkim library"
+	@${ECHO_MSG} " WITH_UNBOUND=yes		Link against libunbound"
 	@${ECHO_MSG}
 	@sleep 5
 
