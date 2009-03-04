@@ -23,6 +23,8 @@ SCRIPTS=	msfcli msfconsole msfd msfencode msflicense msfopcode \
 
 RESTRICTED=	May not be re-sold for more than the cost of duplication, nor redistributed after patching
 
+BROKEN=		unsatisfiable dependency
+
 NO_BUILD=	yes
 USE_RUBY=	yes
 
