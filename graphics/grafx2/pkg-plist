@@ -1,0 +1,11 @@
+bin/grafx2
+bin/gfxcfg
+%%DATADIR%%/grafx2
+%%DATADIR%%/gfxcfg
+%%DATADIR%%/gfx2.dat
+%%DATADIR%%/gfx2.gif
+%%DATADIR%%/gfx2cfg.gif
+%%DATADIR%%/fonts/Tuffy.ttf
+%%DATADIR%%/fonts/8pxfont.png
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%

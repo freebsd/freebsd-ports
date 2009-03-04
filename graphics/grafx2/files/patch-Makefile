@@ -1,0 +1,14 @@
+--- ./Makefile.orig	2009-02-23 14:20:42.000000000 +0100
++++ ./Makefile	2009-02-23 14:20:42.000000000 +0100
+@@ -169,9 +169,9 @@
+         # Compiles a regular linux exectutable for the native platform
+         BIN = grafx2
+         CFGBIN = gfxcfg
+-        COPT = -W -Wall -Wdeclaration-after-statement -pedantic -std=c99 -c -g `sdl-config --cflags` $(TTFCOPT)
++        COPT = $(CFLAGS) -pedantic -std=c99 -c -g `sdl-config --cflags` $(TTFCOPT)
+         LOPT = `sdl-config --libs` -lSDL_image $(TTFLOPT)
+-        CC = gcc
++        CC ?= gcc
+         OBJDIR = obj/unix
+         X11LOPT = -lX11
+       endif

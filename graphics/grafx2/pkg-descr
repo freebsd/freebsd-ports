@@ -1,0 +1,5 @@
+A bitmap paint program that allows you to draw in more than 60 video
+resolutions. It was written to run under DOS, but the code you'll find here was
+modified to use SDL and modern operating systems. 
+
+WWW: http://code.google.com/p/grafx2/

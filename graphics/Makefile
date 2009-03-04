@@ -267,6 +267,7 @@
     SUBDIR += gqview-devel
     SUBDIR += gracula
     SUBDIR += grads
+    SUBDIR += grafx2
     SUBDIR += graphopt
     SUBDIR += graphviz
     SUBDIR += gridpix
