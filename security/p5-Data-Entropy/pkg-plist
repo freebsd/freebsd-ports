@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Entropy/.packlist
 %%SITE_PERL%%/Data/Entropy.pm
 %%SITE_PERL%%/Data/Entropy/Algorithms.pm
 %%SITE_PERL%%/Data/Entropy/RawSource/CryptCounter.pm
