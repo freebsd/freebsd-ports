@@ -395,13 +395,9 @@ lib/LLVMX86AsmPrinter.o
 lib/LLVMX86CodeGen.o
 lib/LLVMXCore.o
 lib/clang/1.0/include/emmintrin.h
-lib/clang/1.0/include/float.h
-lib/clang/1.0/include/iso646.h
-lib/clang/1.0/include/limits.h
 lib/clang/1.0/include/mm_malloc.h
 lib/clang/1.0/include/mmintrin.h
 lib/clang/1.0/include/pmmintrin.h
-lib/clang/1.0/include/tgmath.h
 lib/clang/1.0/include/tmmintrin.h
 lib/clang/1.0/include/xmmintrin.h
 lib/libLLVMAnalysis.a
