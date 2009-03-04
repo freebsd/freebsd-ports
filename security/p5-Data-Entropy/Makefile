@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Entropy
-PORTVERSION=	0.004
+PORTVERSION=	0.005
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/Rijndael.pm:${PORTSDIR}/security/p5
 		${SITE_PERL}/Params/Classify.pm:${PORTSDIR}/devel/p5-Params-Classify \
 		p5-Data-Float>=0.002:${PORTSDIR}/math/p5-Data-Float
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Data::Entropy::Algorithms.3 \
 		Data::Entropy::RawSource::CryptCounter.3 \
