@@ -70,7 +70,7 @@ PLIST_FILES+=	etc/netams.conf.sample \
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=		yes
-BROKEN_WITH_MYSQL=	323
+IGNORE_WITH_MYSQL=	323
 PLIST_FILES+=	%%DATADIR%%/cardtool_schema.sql \
 		%%DATADIR%%/mysql_rotate.pl
 .endif
