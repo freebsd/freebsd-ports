@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	clutter-gtk
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.clutter-project.org/sources/${PORTNAME}/0.8/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GTK+ Integration library for Clutter
 
-LIB_DEPENDS=	clutter-glx-0.8:${PORTSDIR}/graphics/clutter \
+LIB_DEPENDS=	clutter-glx-0.8:${PORTSDIR}/graphics/clutter
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
