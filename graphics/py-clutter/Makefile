@@ -7,6 +7,7 @@
 
 PORTNAME=	clutter
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.clutter-project.org/sources/pyclutter/0.8/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +16,9 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python modules for Clutter toolkit
 
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer \
+    		${PYTHON_SITELIBDIR}/gtk-2.0/gobject/__init__.py:${PORTSDIR}/devel/py-gobject \
+		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gobject/__init__.py:${PORTSDIR}/devel/py-gobject \
 		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo
