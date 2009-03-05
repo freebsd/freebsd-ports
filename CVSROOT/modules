@@ -1945,6 +1945,7 @@ cyrus-sasl2-saslauthd           ports/security/cyrus-sasl2-saslauthd
 cyrus2courier                   ports/mail/cyrus2courier
 cython                          ports/lang/cython
 d2x                             ports/games/d2x
+d2x-xl                          ports/games/d2x-xl
 da-aspell                       ports/textproc/da-aspell
 daa2iso                         ports/sysutils/daa2iso
 dact                            ports/archivers/dact
@@ -4569,6 +4570,7 @@ gracetmpl                       ports/math/gracetmpl
 gracula                         ports/graphics/gracula
 grads                           ports/graphics/grads
 graft                           ports/sysutils/graft
+grafx2                          ports/graphics/grafx2
 grails                          ports/www/grails
 gramofile                       ports/audio/gramofile
 gramps                          ports/science/gramps
