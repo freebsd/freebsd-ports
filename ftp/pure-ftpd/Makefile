@@ -7,7 +7,7 @@
 
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.21
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -34,7 +34,6 @@ CONFIGURE_ARGS=	--with-everything \
 		--with-paranoidmsg \
 		--with-virtualchroot \
 		--with-tls \
-		--with-largefile \
 		--sysconfdir=${PREFIX}/etc
 
 MAN8=		pure-ftpd.8 pure-ftpwho.8 pure-mrtginfo.8 pure-statsdecode.8 \
@@ -51,7 +50,8 @@ OPTIONS=	LDAP		"Support for users in LDAP directories" off \
 		BANNER		"Show ${PORTNAME} welcome upon session start" on \
 		UPLOADSCRIPT	"Support uploadscript daemon" off \
 		UTF8		"Support for charset conversion (expreimental)" off \
-		SENDFILE	"Support for the sendfile syscall" on
+		SENDFILE	"Support for the sendfile syscall" on \
+		LARGEFILE	"Support downloading files larger than 2Gb" off
 
 .include <bsd.port.pre.mk>
 
@@ -123,6 +123,12 @@ CONFIGURE_ARGS+=	--with-rfc2640
 CONFIGURE_ARGS+=	--with-sendfile
 .else
 CONFIGURE_ARGS+=	--without-sendfile
+.endif
+
+.if defined(WITH_LARGEFILE)
+CONFIGURE_ARGS+=	--with-largefile
+.else
+CONFIGURE_ARGS+=	--disable-largefile
 .endif
 
 PAM_TEMPL?=	${FILESDIR}/pam.conf.5
