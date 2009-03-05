@@ -37,7 +37,7 @@
 +
 +#include <libusb20_desc.h>
 +#include <libusb20.h>
-+#if __FreeBSD_version >= 80064
++#if __FreeBSD_version >= 800064
 +#include <dev/usb/usb_ioctl.h>
 +#else
 +#include <dev/usb2/include/usb2_standard.h>
