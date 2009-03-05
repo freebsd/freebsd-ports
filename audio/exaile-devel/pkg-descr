@@ -5,5 +5,7 @@ libraries, lyrics fetching, artist/album information via the wikipedia,
 last.fm support, optional iPod support (assuming you have python-gpod
 installed).
 
+This version follows the developmental track for the 0.3.x series.
+
 WWW: http://www.exaile.org/
 Author: Adam Olsen <arolsen@gmail.com>
