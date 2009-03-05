@@ -1,0 +1,11 @@
+HTML::ExtractContent is a module for extracting content from HTML with
+scoring heuristics.
+
+It guesses which block of HTML looks like content according to scores
+depending on the amount of punctuation marks and the lengths of non-tag
+texts.
+
+It also guesses whether content end in the block or continue to the next
+block.
+
+WWW: http://search.cpan.org/dist/HTML-ExtractContent/
