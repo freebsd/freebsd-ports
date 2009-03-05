@@ -7,6 +7,7 @@
 
 PORTNAME=	mucommander
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	x11-fm java
 MASTER_SITES=	http://www.mucommander.com/download/
 DISTNAME=	${PORTNAME}-0_8_3
