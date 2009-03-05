@@ -158,6 +158,7 @@
     SUBDIR += msql
     SUBDIR += msql3
     SUBDIR += mtop
+    SUBDIR += mydumper
     SUBDIR += mylibrary
     SUBDIR += mysql++
     SUBDIR += mysql++1
