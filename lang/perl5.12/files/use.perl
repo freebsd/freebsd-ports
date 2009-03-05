@@ -28,9 +28,6 @@ if [ "x$this" = "xuse.perl" ]; then
 		need_spam_manpath=yes
 	elif [ "$1" = "system" ] ; then
 		need_remove_links=yes
-		if [ $osreldate -lt 500036 ] ; then
-			need_base_system_perl=yes
-		fi
 		need_cleanup_make_conf=yes
 		need_cleanup_manpath=yes
 	else
@@ -42,19 +39,14 @@ if [ "x$this" = "xuse.perl" ]; then
 else
 	if [ "$2" = "POST-INSTALL" ] ; then
 		need_remove_links=yes
-		if [ $osreldate -ge 500036 ] ; then
-			need_create_links=yes
-			need_cleanup_make_conf=yes
-			need_cleanup_manpath=yes
-			need_spam_make_conf=yes
-			need_spam_manpath=yes
-		fi
+		need_create_links=yes
+		need_cleanup_make_conf=yes
+		need_cleanup_manpath=yes
+		need_spam_make_conf=yes
+		need_spam_manpath=yes
 		need_post_install=yes
 	elif [ "$2" = "POST-DEINSTALL" ] ; then
 		need_remove_links=yes
-		if [ $osreldate -lt 500036 ] ; then
-			need_base_system_perl=yes
-		fi
 		need_cleanup_make_conf=yes
 		need_cleanup_manpath=yes
 	else
@@ -62,26 +54,6 @@ else
 	fi
 fi
 
-link_list="
-	a2p
-	c2ph
-	find2perl
-	h2ph
-	h2xs
-	perlbug
-	perlcc
-	perldoc
-	pl2pm
-	pod2html
-	pod2latex
-	pod2man
-	pod2text
-	s2p
-	splain
-	suidperl"
-if [ $osreldate -ge 500036 ] ; then
-	link_list=""
-fi
 special_link_list="
 	perl
 	perl5"
@@ -89,7 +61,7 @@ special_link_list="
 do_remove_links()
 {
 	echo "Removing stale symlinks from /usr/bin..."
-	for binary in $link_list $special_link_list
+	for binary in $special_link_list
 	do
 		if [ -L "/usr/bin/$binary" ] ; then
 			echo "    Removing /usr/bin/$binary"
@@ -112,21 +84,6 @@ do_remove_links()
 do_create_links()
 {
 	echo "Creating various symlinks in /usr/bin..."
-	for binary in $link_list
-	do
-		if [ -f "/usr/bin/$binary" ] ; then
-			echo "    Backing up /usr/bin/$binary as /usr/bin/$binary.freebsd"
-			/bin/mv -f "/usr/bin/$binary" "/usr/bin/$binary.freebsd"
-		fi
-		if [ -e "/usr/bin/$binary" ] ; then
-			echo "    *** /usr/bin/$binary is still there, which should not happen"
-		elif [ -e "$PKG_PREFIX/bin/$binary" ] ; then
-			echo "    Symlinking $PKG_PREFIX/bin/$binary to /usr/bin/$binary"
-			/bin/ln -sf "$PKG_PREFIX/bin/$binary" "/usr/bin/$binary"
-		else
-			echo "    *** $PKG_PREFIX/bin/$binary is not there, a symlink won't do any good"
-		fi
-	done
 	for binary in $special_link_list
 	do
 		if [ -f "/usr/bin/$binary" ] ; then
@@ -141,54 +98,6 @@ do_create_links()
 			/bin/ln -sf "$PKG_PREFIX/bin/${bin}%%PERL_VERSION%%" "/usr/bin/$binary"
 		else
 			echo "    *** $PKG_PREFIX/bin/${bin}%%PERL_VERSION%% is not there, a symlink won't do any good"
-		fi
-	done
-	echo "Done."
-}
-
-do_base_system_perl()
-{
-	echo "Restoring base system perl binaries..."
-	for binary in $link_list
-	do
-		if [ -e "/usr/bin/$binary" ] ; then
-			echo "    *** /usr/bin/$binary is there, which should not happen"
-		else
-			if [ -f "/usr/bin/$binary.freebsd" ] ; then
-				echo "    Moving /usr/bin/$binary.freebsd to /usr/bin/$binary"
-				/bin/mv -f "/usr/bin/$binary.freebsd" "/usr/bin/$binary"
-			else
-				echo "    *** /usr/bin/$binary.freebsd is NOT there, nothing to restore"
-			fi
-		fi
-	done
-	for binary in $special_link_list
-	do
-		if [ -e "/usr/bin/$binary" ] ; then
-			echo "    *** /usr/bin/$binary is there, which should not happen"
-		else
-			bin=`echo $binary | /usr/bin/sed -e 's!perl5!perl!'`
-			bin=`echo $bin | /usr/bin/sed -e 's!suidperl!sperl!'`
-			bins=`/bin/ls /usr/bin/${bin}5.* 2>/dev/null | /usr/bin/sort`
-			bin=""
-			for b in $bins
-			do
-				if [ -f $b -a ! -L $b ] ; then
-					bin=$b
-				fi
-			done
-			if [ -z $bin ] ; then
-				echo "    *** cannot find what /usr/bin/$binary shall be restored FROM"
-			elif [ -f $bin ] ; then
-				echo "    Hardlinking $bin to /usr/bin/$binary"
-				ln -f "$bin" "/usr/bin/$binary"
-			else
-				echo "    *** $bin is NOT there, nothing to restore"
-			fi
-			if [ -f "/usr/bin/$binary.freebsd" ] ; then
-				echo "    Removing backup copy /usr/bin/$binary.freebsd"
-				rm -f "/usr/bin/$binary.freebsd"
-			fi
 		fi
 	done
 	echo "Done."
@@ -239,11 +148,7 @@ do_spam_make_conf()
 {
 	echo -n "Spamming ${MAKE_CONF}..."
 	echo "$banner" >>${MAKE_CONF}
-	echo "PERL_VER=%%PERL_VER%%" >>${MAKE_CONF}
 	echo "PERL_VERSION=%%PERL_VERSION%%" >>${MAKE_CONF}
-	if [ $osreldate -lt 500036 ] ; then
-		echo "NOPERL=yes" >>${MAKE_CONF}
-	fi
 	echo " Done."
 }
 
@@ -258,7 +163,6 @@ do_spam_manpath()
 
 [ $need_remove_links ] && do_remove_links
 [ $need_create_links ] && do_create_links
-[ $need_base_system_perl ] && do_base_system_perl
 [ $need_post_install ] && do_post_install
 [ $need_cleanup_make_conf ] && do_cleanup_make_conf
 [ $need_spam_make_conf ] && do_spam_make_conf

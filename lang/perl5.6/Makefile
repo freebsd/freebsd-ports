@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	perl
-PORTVERSION=	${PERL_VER}
+PORTVERSION=	${PERL_VERSION}
 PORTREVISION=	2
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
@@ -15,7 +15,7 @@ MASTER_SITES=	CPAN \
 MASTER_SITE_SUBDIR=	../../src \
 			tobez/:local
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		BSDPAN-${PERL_VER}${EXTRACT_SUFX}:local
+		BSDPAN-${PERL_VERSION}${EXTRACT_SUFX}:local
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
@@ -25,22 +25,21 @@ DEPRECATED=	no longer under development, please use lang/perl5.8 or lang/perl5.1
 
 CONFLICTS=	perl-5.8.* perl-5.10.*
 
-PERL_VER=	5.6.2
+PERL_VERSION=	5.6.2
 PERL_ARCH=	mach
-PERL_VERSION=	${PERL_VER}
-SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}
+SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VERSION}
 SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
-	-Darchlib=${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH} \
-	-Dprivlib=${PREFIX}/lib/perl5/${PERL_VER} \
-	-Dman3dir=${PREFIX}/lib/perl5/${PERL_VER}/perl/man/man3 \
+	-Darchlib=${PREFIX}/lib/perl5/${PERL_VERSION}/${PERL_ARCH} \
+	-Dprivlib=${PREFIX}/lib/perl5/${PERL_VERSION} \
+	-Dman3dir=${PREFIX}/lib/perl5/${PERL_VERSION}/perl/man/man3 \
 	-Dman1dir=${PREFIX}/man/man1 \
 	-Dsitearch=${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH} \
 	-Dsitelib=${PREFIX}/${SITE_PERL_REL} -Dscriptdir=${PREFIX}/bin \
-	-Dsiteman3dir=${PREFIX}/lib/perl5/${PERL_VER}/man/man3 \
+	-Dsiteman3dir=${PREFIX}/lib/perl5/${PERL_VERSION}/man/man3 \
 	-Dsiteman1dir=${PREFIX}/man/man1 \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl \
 	-Dcc="${CC}" -Doptimize="${CFLAGS}" -Duseshrplib \
@@ -55,7 +54,7 @@ MAKE_ENV+=	${LOCALE_CLEANUP}
 .include <bsd.port.pre.mk>
 
 PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
-		PERL_VER=${PERL_VER} \
+		PERL_VER=${PERL_VERSION} \
 		PERL_ARCH=${PERL_ARCH} \
 		SITE_PERL=${SITE_PERL:S|^${LOCALBASE}/||}
 
@@ -105,12 +104,12 @@ PLIST_SUB+=		NEED_USE_PERL=""
 .if defined(WITH_GDBM)
 MAN3+=	GDBM_File.3
 .endif
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}/perl
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}/perl
 
 test:
 	@(cd ${WRKSRC}; make test)
 
-BSDPAN_DEST=	${PREFIX}/lib/perl5/${PERL_VER}/BSDPAN
+BSDPAN_DEST=	${PREFIX}/lib/perl5/${PERL_VERSION}/BSDPAN
 BSDPAN_FILES=	BSDPAN.pm BSDPAN/Override.pm Config.pm \
 		ExtUtils/MM_Unix.pm \
 		ExtUtils/MakeMaker.pm \
@@ -122,7 +121,6 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 post-patch:
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|g;' \
-		-e 's|%%PERL_VER%%|${PERL_VER}|g;' \
 		-e 's|%%PERL_VERSION%%|${PERL_VERSION}|g;' \
 		-e 's|%%PERL_ARCH%%|${PERL_ARCH}|g;' \
 		-e 's|%%MAKE_CONF%%|${__MAKE_CONF}|g;' \
@@ -132,13 +130,13 @@ post-patch:
 	${CP} ${WRKDIR}/use.perl ${PKGDEINSTALL}
 
 pre-su-install:
-	@${RM} -f ${PREFIX}/bin/perl${PERL_VER}
+	@${RM} -f ${PREFIX}/bin/perl${PERL_VERSION}
 	@${RM} -f ${PREFIX}/bin/perl
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/perl${PERL_VER}
+	@${STRIP_CMD} ${PREFIX}/bin/perl${PERL_VERSION}
 	@${STRIP_CMD} ${PREFIX}/bin/perl
-	@${LN} -sf ${PREFIX}/bin/perl${PERL_VER} ${PREFIX}/bin/perl5
+	@${LN} -sf ${PREFIX}/bin/perl${PERL_VERSION} ${PREFIX}/bin/perl5
 .for file in ${BSDPAN_FILES}
 	${MKDIR} ${BSDPAN_DEST}/${file:H}
 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${NOBINMODE} \
