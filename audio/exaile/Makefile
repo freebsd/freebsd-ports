@@ -7,6 +7,7 @@
 
 PORTNAME=	exaile
 DISTVERSION=	0.2.14
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.exaile.org/files/ \
 		http://wickedmachine.net/~jsa/FreeBSD/distfiles/
@@ -22,6 +23,8 @@ RUN_DEPENDS=	py*-dbus>=0.82.1:${PORTSDIR}/devel/py-dbus \
 		py*-sexy>=0.1.9:${PORTSDIR}/x11-toolkits/py-sexy \
 		py*-cddb>=1.4:${PORTSDIR}/audio/py-cddb \
 		py*-pysqlite>=2.3.3:${PORTSDIR}/databases/py-pysqlite23
+
+CONFLICTS=	exaile-0.2.99*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
