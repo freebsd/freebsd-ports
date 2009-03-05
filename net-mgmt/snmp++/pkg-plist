@@ -1,3 +1,4 @@
+include/snmp_pp/IPv6Utility.h
 include/snmp_pp/address.h
 include/snmp_pp/asn1.h
 include/snmp_pp/auth_priv.h
