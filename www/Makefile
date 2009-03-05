@@ -831,6 +831,7 @@
     SUBDIR += p5-HTML-Element-Library
     SUBDIR += p5-HTML-Embperl
     SUBDIR += p5-HTML-Encoding
+    SUBDIR += p5-HTML-ExtractContent
     SUBDIR += p5-HTML-FillInForm
     SUBDIR += p5-HTML-FillInForm-ForceUTF8
     SUBDIR += p5-HTML-FormFu
