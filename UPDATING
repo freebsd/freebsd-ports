@@ -6,7 +6,7 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
-20080304:
+20090304:
   AFFECTS: users of comms/py-gammu
   AUTHOR: bsam@FreeBSD.org
 
@@ -14,7 +14,7 @@ upgrades.
   1.23.0. Delete comms/py-gammu first and then deinstall/reinstall
   comms/gammu with option WITH_PYTHON_GAMMU=YES.
 
-20080304:
+20090304:
   AFFECTS: users of x11-wm/xfce4
   AUTHOR: oliver@FreeBSD.org
 
