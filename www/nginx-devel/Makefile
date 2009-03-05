@@ -139,11 +139,10 @@ CONFIGURE_ARGS+=--with-http_realip_module
 .endif
 
 .if defined(WITH_HTTP_RESPONSE_MODULE)
-NGINX_RESPONSE_MODULE_VERSION=	0.2
-PATCH_SITES+=	http://catap.ru/patches/nginx/:response
-PATCHFILES+=	ngx_http_response-${NGINX_RESPONSE_MODULE_VERSION}.dpatch:response
-PATCH_DIST_STRIP=	-p1
-CONFIGURE_ARGS+=--with-http_response_module
+NGINX_RESPONSE_MODULE_VERSION=	0.3
+MASTER_SITES+=	http://catap.ru/downloads/nginx/:response
+DISTFILES+=	ngx_http_response-${NGINX_RESPONSE_MODULE_VERSION}.tar.gz:response
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_response-${NGINX_RESPONSE_MODULE_VERSION}
 .endif
 
 .if defined(WITH_HTTP_SECURE_LINK_MODULE)
