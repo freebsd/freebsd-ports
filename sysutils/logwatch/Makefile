@@ -22,6 +22,8 @@ DOCS=		HOWTO-Customize-LogWatch License README
 
 NO_BUILD=	yes
 
+MAKE_ENV+=	SITE_PERL_REL=${SITE_PERL_REL}
+
 pre-configure:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
