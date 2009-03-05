@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ea2411a4-08e8-11de-b88a-0022157515b2">
+    <topic>pngcrush -- libpng Uninitialised Pointer Arrays Vulnerability</topic>
+    <affects>
+      <package>
+	<name>pngcrush</name>
+	<range><lt>1.6.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/33976/">
+	  <p>A vulnerability has been reported in Pngcrush, which
+	    can be exploited by malicious people to potentially
+	    compromise a user's system.</p>
+	  <p>The vulnerability is caused due to the use of vulnerable
+	    libpng code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>33827</bid>
+      <cvename>CVE-2009-0040</cvename>
+      <url>http://secunia.com/advisories/33976</url>
+      <url>http://xforce.iss.net/xforce/xfdb/48819</url>
+    </references>
+    <dates>
+      <discovery>2009-02-19</discovery>
+      <entry>2009-03-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5d433534-f41c-402e-ade5-e0a2259a7cb6">
     <topic>curl -- cURL/libcURL Location: Redirect URLs Security Bypass</topic>
     <affects>
