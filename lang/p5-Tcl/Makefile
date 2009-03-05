@@ -7,7 +7,7 @@
 
 PORTNAME=	Tcl
 PORTVERSION=	0.97
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,8 +17,11 @@ COMMENT=	A Tcl extension module for Perl5
 
 USE_TCL=	84+
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	--tclsh tclsh${TCL_VER}
 
 MAN3=		Tcl.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS= --tclsh ${TCLSH}
+
+.include <bsd.port.post.mk>
