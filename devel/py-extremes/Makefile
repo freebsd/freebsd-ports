@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Extremes
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
 MASTER_SITE_SUBDIR=	source/E/Extremes
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	yzlin@cs.nctu.edu.tw
 COMMENT=	Production-quality 'Min' and 'Max' objects (adapted from PEP 326)
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
 USE_ZIP=	yes
