@@ -20,6 +20,8 @@ RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+IGNORE=		is out of work units.  No FreeBSD app exists for current batch of work
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 STRIP=		#
