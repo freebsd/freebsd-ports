@@ -74,8 +74,8 @@ OPTIONS=	X11				"X11 support" on \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GHOSTSCRIPT_GNU) && !defined(WITHOUT_IMAGEMAGICK_PDF)
-IGNORE=		requires newer version of ghostscript
+.if !defined(WITHOUT_IMAGEMAGICK_PDF) && defined(WITH_GHOSTSCRIPT_VER) && $(WITH_GHOSTSCRIPT_VER) == "7"
+IGNORE=		support for the PDF format requires ghostscript 8 and higher
 .endif
 
 .if defined(WITH_IMAGEMAGICK_HDRI)
