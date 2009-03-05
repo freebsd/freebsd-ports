@@ -165,7 +165,8 @@ OPTIONS+=	TLS		"SMTP TLS support" on \
 		AUTOHOMEDIRMAKE	"auto-homedir-make feature" on \
 		LDAP_DEBUG	"possibility to log and debug imap/pop" off \
 		SMTPEXTFORK	"Allow qmail-smtpd fork external progs" off \
-		XF_QUITASAP	"Close SMTP session ASAP (SMTPEXTFORK)" off
+		XF_QUITASAP	"Close SMTP session ASAP (SMTPEXTFORK)" off \
+		SENDERCHECK4	"LOOSE checks exclusively for RELAY clients" off
 
 LDAP_PARAMS=	ALTQUEUE BIGBROTHER BIGTODO BIND_8_COMPAT\
 		CLEARTEXTPASSWD DASH_EXT DATA_COMPRESS\
@@ -475,6 +476,13 @@ MASTER_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail-smtpextfork/
 MASTER_SITE_SUBDIR+=	garga/qmail/:extfork
 DISTFILES+=	${SMTPEXTFORK_PATCH:S/$/:extfork/} \
 		README.smtpextfork:extfork
+.endif
+
+.if defined(SLAVE_LDAP)
+PATCH_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail/:sendercheck4 \
+		${MASTER_SITE_LOCAL:S/$/:sendercheck4/}
+PATCH_SITE_SUBDIR+=	garga/qmail/:sendercheck4
+PATCHFILES+=	qmail-ldap-1.03_qmail-smtpd_SENDERCHECK4.patch:sendercheck4
 .endif
 
 # Some default values, these can be modified by make command line
