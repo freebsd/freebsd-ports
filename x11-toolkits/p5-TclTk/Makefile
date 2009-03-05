@@ -19,15 +19,15 @@ COMMENT=	Perl5 module to access to Tk via the Tcl extension
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tcl.pm:${PORTSDIR}/lang/p5-Tcl
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
+BROKEN=		does not build, use x11-toolkits/p5-Tcl-Tk instead
+DEPRECATED=	replaced by x11-toolkits/p5-Tcl-Tk
+EXPIRATION_DATE=	2009-05-05
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Tcl::Tk.3
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=		something segfaults during build
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/Makefile.PL
