@@ -5,7 +5,6 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
 MASTERDIR=	${.CURDIR}/../../lang/php5

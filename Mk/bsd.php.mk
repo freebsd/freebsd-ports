@@ -49,7 +49,6 @@ PHP_VER?=	${DEFAULT_PHP_VER}
 PHP_EXT_DIR=	20020429
 .else
 PHP_EXT_DIR=	20060613
-PHP_EXT_INC=	pcre
 .endif
 
 HTTPD?=		${LOCALBASE}/sbin/httpd
@@ -162,7 +161,9 @@ do-phpize:
 	@(cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ${PHPBASE}/bin/phpize)
 .endif
 
-.if defined(USE_PHPEXT)
+.endif
+
+.if defined(_POSTMKINCLUDED) && defined(USE_PHPEXT)
 PHP_MODNAME?=	${PORTNAME}
 PHP_HEADER_DIRS?=	""
 
@@ -228,8 +229,6 @@ php-ini:
 	@${ECHO_CMD} "extension=${PHP_MODNAME}.so"
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "****************************************************************************"
-.endif
-
 .endif
 
 # Extensions

@@ -5,7 +5,6 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
 CATEGORIES=	graphics
 
 MASTERDIR=	${.CURDIR}/../../lang/php5
