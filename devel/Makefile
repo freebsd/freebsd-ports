@@ -1393,7 +1393,6 @@
     SUBDIR += p5-Getopt-Euclid
     SUBDIR += p5-Getopt-Long
     SUBDIR += p5-Getopt-Long-Descriptive
-    SUBDIR += p5-Getopt-Mixed
     SUBDIR += p5-Getopt-Popt
     SUBDIR += p5-Git-PurePerl
     SUBDIR += p5-Glib2
