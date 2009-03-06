@@ -22,14 +22,24 @@ INSTALL_TARGET=	install-wrapper
 
 MAN1=	cfv.1
 
-OPTIONS=	PSYCO "Enable devel/py-psyco optimization support" off
+OPTIONS=	# start blank to enable it through the pre.mk fence
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/Makefile
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "i386"
+OPTIONS+=	PSYCO "Enable devel/py-psyco optimization support" off
+.else
+.undef WITH_PSYCO
+
+WITHOUT_PSYCO=	yes
+.endif
+
 .if defined(WITH_PSYCO)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
+
 EXTRA_PATCHES+=	${FILESDIR}/extra-psyco-patch-Makefile
 .endif
 
