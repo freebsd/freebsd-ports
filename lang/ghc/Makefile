@@ -6,7 +6,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	6.8.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot \
@@ -111,7 +111,7 @@ MASTER_SITES+=	http://hackage.haskell.org/packages/archive/haddock/2.1.0/:docs \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/contrib/:docs
 
 DISTFILES+=	haddock-2.1.0.tar.gz:docs \
-		hscolour-1.10.1.tar.gz:docs
+		hscolour-1.12.tar.gz:docs
 
 EXTRACT_ONLY=	${_DISTFILES:C/hscolour.*$//g:C/haddock.*$//g}
 
