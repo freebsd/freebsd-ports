@@ -7,7 +7,7 @@
 
 PORTNAME=	HGL
 PORTVERSION=	3.2.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -41,7 +41,7 @@ PLIST_SUB+=		NOPORTDOCS="@comment "
 BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock \
 		HsColour:${PORTSDIR}/print/hs-hscolour
 
-HSCOLOUR_VERSION=	1.10.1
+HSCOLOUR_VERSION=	1.12
 HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
 
 PORTDOCS=	*
