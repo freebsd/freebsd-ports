@@ -1,0 +1,107 @@
+--- dsirc.orig	1998-03-10 04:55:50.000000000 -0800
++++ dsirc	2009-03-05 00:34:19.000000000 -0800
+@@ -52,6 +52,7 @@
+ }
+ 
+ if ($] >= 5 && (eval "use Socket;", $@ eq '')) {
++    use Socket6;
+ } elsif (-f "$libdir/sircsock.ph") {
+   do "$libdir/sircsock.ph";
+ } elsif (-f $ENV{'HOME'}."/sircsock.ph") {
+@@ -95,6 +96,7 @@
+ $restrict=$opt_R;
+ $set{"LOCALHOST"}=$opt_H || $ENV{"SIRCHOST"} || $ENV{"IRCHOST"} ||
+ 		$ENV{"LOCALHOST"} || "";
++$use_ipv6=0;   # enabled when the given server gets resolved by gethostbyname2
+ 
+ if ($set{"LOCALHOST"}) {
+   $bindaddr=&resolve($set{"LOCALHOST"});
+@@ -148,7 +150,16 @@
+   } elsif ($_[0] =~ /^(\d+)\.(\d+)\.(\d+)\.(\d+)$/) {
+     return pack("c4", $1, $2, $3, $4);
+   } else {
+-    return (gethostbyname($_[0]))[4];
++      local $rc;
++
++      $rc = (gethostbyname2($_[0], AF_INET6))[4];
++
++      if ($rc) {
++	  $use_ipv6 = 1;
++	  return $rc;
++      } else {
++	  return (gethostbyname($_[0]))[4];
++      }
+   }
+ }
+ 
+@@ -162,19 +173,31 @@
+   local($fh, $host, $port)=@_;
+   local($adr, $otherend)=&resolve($host);
+   &tell("*\cbE\cb* Hostname `$host' not found"), return 0 unless $adr;
+-  $otherend=pack("S n a4 x8", &AF_INET, $port, $adr);
+-  &print("*\cbE\cb* Out of file descriptors"), return 0
+-    unless socket($fh, &PF_INET, &SOCK_STREAM, 0);
+-  if ($set{"LOCALHOST"}) {
+-    bind($fh, pack("S n a4 x8", &AF_INET, 0, $bindaddr)) ||
+-      &tell("*\cbE\cb* Warning: can't bind to sirc host ".$set{'LOCALHOST'});
++  if ($use_ipv6) {
++      $otherend=pack_sockaddr_in6($port, $adr);
++      &print("*\cbE\cb* Out of file descriptors"), return 0
++	  unless socket($fh, &PF_INET6, &SOCK_STREAM, 0);
++  } else {
++      $otherend=pack_sockaddr_in($port, $adr);
++      &print("*\cbE\cb* Out of file descriptors"), return 0
++	  unless socket($fh, &PF_INET, &SOCK_STREAM, 0);
++  }
++  if (! $use_ipv6) {
++      if ($set{"LOCALHOST"}) {
++	  bind($fh, pack("S n a4 x8", &AF_INET, 0, $bindaddr)) ||
++	      &tell("*\cbE\cb* Warning: can't bind to sirc host ".$set{'LOCALHOST'});
++      }
+   }
+   $trysock=$fh;
+   $SIG{'QUIT'}='sigquit';
+   &print("*\cbE\cb* Can't connect to host: $!"), close $fh,
+     $SIG{'QUIT'}='IGNORE', return 0 unless connect($fh, $otherend);
+   $SIG{'QUIT'}='IGNORE';
+-  $bindaddr=(unpack("S n a4", getsockname($fh)))[2] if !$bindaddr;
++  if ($use_ipv6) {
++      $bindaddr=(unpack_sockaddr_in6(getsockname($fh)))[2] if !$bindaddr;
++  } else {
++      $bindaddr=(unpack_sockaddr_in(getsockname($fh)))[2] if !$bindaddr;
++  }
+   select($fh); $|=1; select(STDOUT);
+   return 1;
+ }
+@@ -183,15 +206,26 @@
+   $_[0]=&newfh;
+   local($fh, $port)=@_;
+   local($thisend);
+-  $bindaddr=pack("x4", 0) unless $bindaddr;
+-  $thisend=pack("S n a4 x8", &AF_INET, $port+0, $bindaddr);
+-  &tell("*\cbE\cb* Out of file descriptors"), return 0
+-    unless socket($fh, &PF_INET, &SOCK_STREAM, 0);
++  if ($use_ipv6) {
++      $bindaddr=pack_sockaddr_in6(0, 0) unless $bindaddr;
++      $thisend=pack_sockaddr_in6($port+0, $bindaddr);
++      &tell("*\cbE\cb* Out of file descriptors"), return 0
++	  unless socket($fh, &PF_INET6, &SOCK_STREAM, 0);
++  } else {
++      $bindaddr=pack_sockaddr_in(0, 0) unless $bindaddr;
++      $thisend=pack_sockaddr_in($port+0, $bindaddr);
++      &tell("*\cbE\cb* Out of file descriptors"), return 0
++	  unless socket($fh, &PF_INET, &SOCK_STREAM, 0);
++  }
+   &tell("*\cbE\cb* Can't bind local socket!"), close $fh, return 0
+     unless bind($fh, $thisend);
+   &tell("*\cbE\cb* Can't listen to socket!"), close $fh, return
+     unless listen($fh, 5);
+-  return (unpack("S n", getsockname($fh)))[1];
++  if ($use_ipv6) {
++      return (unpack_sockaddr_in6(getsockname($fh)))[1];
++  } else {
++      return (unpack_sockaddr_in(getsockname($fh)))[1];
++  }
+ }
+ 
+ sub accept {
