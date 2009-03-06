@@ -7,7 +7,6 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
-PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
 		ftp://opera.inode.at/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
@@ -30,11 +29,11 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}${OPERA_MINVER}-freebsd${OPERA_TYPE}-shared-qt
 MAINTAINER=	freebsd-maintainer@opera.com
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser, devel version
 
-OPERA_VER=	9.63
+OPERA_VER=	9.64
 OPERA_MINVER=
 OPERA_REL=	final
-OPERA_DATE=	20081215
-OPERA_BUILD=	2474
+OPERA_DATE=	20090302
+OPERA_BUILD=	2480
 OPERA_LIB=	shared
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
@@ -54,11 +53,7 @@ OPTIONS=	ASPELL	"Use the aspell library for spell checking"	on
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-.if ${ARCH} == amd64
-OPERA_ARCH=	amd64
-.else
-OPERA_ARCH=	intel
-.endif
+OPERA_ARCH=	${ARCH:S,i386,intel,}
 
 .if ${OSVERSION} >= 700000
 OPERA_TYPE=	7
