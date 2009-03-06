@@ -1,0 +1,15 @@
+--- Makefile.orig	2009-03-02 20:22:53.000000000 +0100
++++ Makefile	2009-03-03 22:49:59.000000000 +0100
+@@ -92,6 +92,12 @@
+ clean:
+ 	rm -f src/*.o test/*.o testrunner cppcheck tools/dmake tools/errmsg
+ 
++DB2MAN=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl
++XP=	xsltproc -''-nonet -''-param man.charmap.use.subset "0"
++
++cppcheck.1: man/cppcheck.1.xml
++	$(XP) $(DB2MAN) $<
++
+ install:	cppcheck
+ 	install -d ${BIN}
+ 	install cppcheck ${BIN}

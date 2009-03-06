@@ -188,6 +188,7 @@
     SUBDIR += cook
     SUBDIR += cpan-upload
     SUBDIR += cppadvio
+    SUBDIR += cppcheck
     SUBDIR += cppi
     SUBDIR += cppunit
     SUBDIR += cproto
