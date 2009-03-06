@@ -3830,3 +3830,4 @@ sysutils/xfce4-mcs-manager||2009-03-02|got obsolete by xfce 4.6 update
 sysutils/xfce4-mcs-plugins||2009-03-02|got obsolete by xfce 4.6 update
 x11-themes/xfce4-icon-theme||2009-03-02|got obsolete by xfce 4.6 update
 comms/py-gammu||2009-03-04|incorporated into comms/gammu
+devel/p5-Getopt-Mixed||2009-03-03|Use Getopt::Long
