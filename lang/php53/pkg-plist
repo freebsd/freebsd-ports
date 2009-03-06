@@ -72,13 +72,6 @@ include/php/ext/date/lib/timelib_config.h
 include/php/ext/date/lib/timelib_structs.h
 include/php/ext/date/php_date.h
 include/php/ext/libxml/php_libxml.h
-include/php/ext/pcre/pcrelib/config.h
-include/php/ext/pcre/pcrelib/pcre.h
-include/php/ext/pcre/pcrelib/pcre_internal.h
-include/php/ext/pcre/pcrelib/pcreposix.h
-include/php/ext/pcre/pcrelib/ucp.h
-include/php/ext/pcre/pcrelib/ucptable.h
-include/php/ext/pcre/php_pcre.h
 include/php/ext/standard/base64.h
 include/php/ext/standard/basic_functions.h
 include/php/ext/standard/crc32.h
@@ -206,8 +199,6 @@ lib/php/build/shtool
 @dirrm include/php/ext/date/lib
 @dirrm include/php/ext/date
 @dirrm include/php/ext/libxml
-@dirrm include/php/ext/pcre/pcrelib
-@dirrm include/php/ext/pcre
 @dirrm include/php/ext/standard
 @dirrmtry include/php/ext
 @dirrm include/php/main/streams

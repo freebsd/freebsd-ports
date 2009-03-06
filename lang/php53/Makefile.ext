@@ -75,7 +75,11 @@ CONFIGURE_ARGS+=--enable-exif
 .endif
 
 .if ${PHP_MODNAME} == "filter"
-CONFIGURE_ARGS+=--enable-filter
+CONFIGURE_ARGS+=--enable-filter \
+		--with-pcre-dir=${LOCALBASE}
+
+USE_PHP=	pcre
+USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "ftp"
@@ -245,6 +249,10 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--enable-pcntl
 .endif
 
+.if ${PHP_MODNAME} == "pcre"  	 
+OPTIONS=	BUNDLED_PCRE "Select if you use apache 2.0.x" off
+.endif
+
 .if ${PHP_MODNAME} == "pdo"
 CONFIGURE_ARGS+=--enable-pdo
 .endif
@@ -392,7 +400,7 @@ CONFIGURE_ARGS+=--enable-spl \
 
 USE_GNOME=	libxml2
 
-USE_PHP=	simplexml
+USE_PHP=	pcre simplexml
 USE_PHP_BUILD=	yes
 .endif
 
@@ -459,7 +467,7 @@ USE_GNOME=	libxml2
 .endif
 
 .if ${PHP_MODNAME} == "xmlreader"
-CONFIGURE_ARGS+=--with-xmlreader \
+CONFIGURE_ARGS+=--enable-xmlreader \
 		--with-libxml-dir=${LOCALBASE}
 
 USE_GNOME=	libxml2
@@ -483,7 +491,7 @@ USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "xmlwriter"
-CONFIGURE_ARGS+=--with-xmlwriter \
+CONFIGURE_ARGS+=--enable-xmlwriter \
                 --with-libxml-dir=${LOCALBASE}
 
 USE_GNOME=      libxml2
@@ -529,10 +537,10 @@ LIB_DEPENDS+=	qdbm.14:${PORTSDIR}/databases/qdbm
 CONFIGURE_ARGS+=--with-qdbm=${LOCALBASE}
 .	endif
 .	if defined(WITHOUT_INIFILE)
-CONFIGURE_ARGS+=--without-inifile
+CONFIGURE_ARGS+=--disable-inifile
 .	endif
 .	if defined(WITHOUT_FLATFILE)
-CONFIGURE_ARGS+=--without-flatfile
+CONFIGURE_ARGS+=--disable-flatfile
 .	endif
 .endif
 
@@ -568,6 +576,21 @@ pre-configure:
 		/usr/bin/ar x $${lib}.a; \
 	done; \
 	/usr/bin/ar rcs liboci8.a *.o
+.endif
+
+.if ${PHP_MODNAME} == "pcre"  	 
+.	if defined(WITH_BUNDLED_PCRE)
+CONFIGURE_ARGS+=--with-pcre-regex=yes
+
+PHP_HEADER_DIRS=pcrelib
+.	else
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+
+CONFIGURE_ARGS+=--with-pcre-regex=${LOCALBASE}
+.	endif
+
+post-extract:  	 
+	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
 .endif
 
 .if ${PHP_MODNAME} == "pdo_dblib"

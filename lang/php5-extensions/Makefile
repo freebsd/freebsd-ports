@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	lang
 MASTER_SITES=	# none
 PKGNAMESUFFIX=	-extensions
@@ -28,6 +28,7 @@ WITH_FILTER=	yes
 WITH_HASH=	yes
 WITH_ICONV=	yes
 WITH_JSON=	yes
+WITH_PCRE=	yes
 WITH_PDO=	yes
 WITH_PDO_SQLITE=yes
 WITH_POSIX=	yes
@@ -73,6 +74,7 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		ODBC            "unixODBC support" off \
 		OPENSSL         "OpenSSL support" off \
 		PCNTL           "pcntl support (CLI only)" off \
+		PCRE            "Perl Compatible Regular Expression support" on \
 		PDF             "PDFlib support (implies GD)" off \
 		PDO             "PHP Data Objects Interface (PDO)" on \
 		PDO_SQLITE      "PDO sqlite driver" on \
@@ -117,7 +119,7 @@ ALL_OPTIONS=	BCMATH BZ2 CALENDAR CTYPE CURL DBA DBASE \
 		DOM EXIF FILEINFO FILTER FRIBIDI FTP GD GETTEXT \
 		GMP HASH ICONV IMAP INTERBASE JSON LDAP MBSTRING MCRYPT \
 		MHASH MING MSSQL MYSQL MYSQLI NCURSES \
-		ODBC OPENSSL PCNTL PDF PDO PDO_SQLITE PGSQL POSIX \
+		ODBC OPENSSL PCNTL PCRE PDF PDO PDO_SQLITE PGSQL POSIX \
 		PSPELL READLINE RECODE SESSION SHMOP SIMPLEXML SNMP SOAP \
 		SOCKETS SPL SQLITE SYBASE_CT SYSVMSG SYSVSEM SYSVSHM \
 		TIDY TOKENIZER WDDX XML XMLREADER XMLRPC XMLWRITER XSL \
