@@ -7,6 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 # getgnash.org is slow
 MASTER_SITES=	${MASTER_SITE_GNU} \
@@ -35,10 +36,6 @@ USE_GNOME=	pkgconfig libxml2
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm
 USE_AUTOTOOLS=	libltdl:15
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS} ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
 		--disable-testsuite \
@@ -57,16 +54,13 @@ OPTIONS=	PLUGIN		"Enable browser plugin" on \
 		CYGNAL		"Enable Cygnal media server" off \
 		GTK		"GUI: GTK (required for Mozilla/Firefox plugin)" on \
 		KDE		"GUI: KDE 3.x (required for Konqueror 3.x plugin)" off \
+		KDE4		"GUI: KDE 4.x (required for Konqueror 4.x plugin)" off \
 		AGG		"Renderer: AGG" on \
 		OPENGL		"Renderer: OpenGL (broken)" off \
 		CAIRO		"Renderer: Cairo (experimental)" off \
 		FFMPEG		"Media handler: ffmpeg (+SDL sound output)" on \
 		GSTREAMER	"Media handler: GStreamer" off \
 		SPEEX		"Speex codec support" on
-
-# kde4-gnash segfaults, so that's still work in progress; feel free
-# to try though, plist and everything else should be correct
-#		KDE4		"GUI: KDE 4.x (required for Konqueror 4.x plugin)" off \
 
 .include <bsd.port.options.mk>
 
@@ -146,12 +140,14 @@ USE_QT_VER=	4
 QT_COMPONENTS=	moc_build
 USE_KDE4=	kdehier kdelibs
 CONFIGURE_ENV+=	KDE4_CONFIG="${KDE4_PREFIX}/bin/kde4-config"
+.	if exists(${LOCALBASE}/lib/libkdeui.so)
+IGNORE=		KDE4 GUI can't be built when KDE3 is installed. Please rerun 'make config' and disable KDE4 GUI or deinstall kdelibs-3
+.	endif
 .else
 PLIST_SUB+=	KDE4="@comment "
 .endif
 
 .if defined(WITH_KDE) && defined defined(WITH_KDE4)
-# This is problem of FreeBSD ports, not Gnash
 IGNORE=		KDE and KDE4 GUIs are mutually exclusive. Please rerun 'make config' and disable one of these
 .endif
 
