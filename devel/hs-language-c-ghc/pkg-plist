@@ -1,0 +1,49 @@
+@comment $FreeBSD$
+%%SUBDIR%%/Language/C.hi
+%%SUBDIR%%/Language/C/Analysis/AstAnalysis.hi
+%%SUBDIR%%/Language/C/Analysis/Debug.hi
+%%SUBDIR%%/Language/C/Analysis/DeclAnalysis.hi
+%%SUBDIR%%/Language/C/Analysis/DefTable.hi
+%%SUBDIR%%/Language/C/Analysis/Export.hi
+%%SUBDIR%%/Language/C/Analysis/NameSpaceMap.hi
+%%SUBDIR%%/Language/C/Analysis/SemError.hi
+%%SUBDIR%%/Language/C/Analysis/SemRep.hi
+%%SUBDIR%%/Language/C/Analysis/TravMonad.hi
+%%SUBDIR%%/Language/C/Data/Error.hi
+%%SUBDIR%%/Language/C/Data/Ident.hi
+%%SUBDIR%%/Language/C/Data/InputStream.hi
+%%SUBDIR%%/Language/C/Data/Name.hi
+%%SUBDIR%%/Language/C/Data/Node.hi
+%%SUBDIR%%/Language/C/Data/Position.hi
+%%SUBDIR%%/Language/C/Data/RList.hi
+%%SUBDIR%%/Language/C/Parser/Builtin.hi
+%%SUBDIR%%/Language/C/Parser/Lexer.hi
+%%SUBDIR%%/Language/C/Parser/Parser.hi
+%%SUBDIR%%/Language/C/Parser/ParserMonad.hi
+%%SUBDIR%%/Language/C/Parser/Tokens.hi
+%%SUBDIR%%/Language/C/Syntax/AST.hi
+%%SUBDIR%%/Language/C/Syntax/Constants.hi
+%%SUBDIR%%/Language/C/Syntax/Ops.hi
+%%SUBDIR%%/Language/C/System/GCC.hi
+%%SUBDIR%%/Language/C/System/Preprocess.hi
+%%SUBDIR%%/Language/C/Analysis.hi
+%%SUBDIR%%/Language/C/Data.hi
+%%SUBDIR%%/Language/C/Parser.hi
+%%SUBDIR%%/Language/C/Pretty.hi
+%%SUBDIR%%/Language/C/Syntax.hi
+%%SUBDIR%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%SUBDIR%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%SUBDIR%%/%%PORTNAME%%-register.sh
+@dirrm %%SUBDIR%%/Language/C/Analysis
+@dirrm %%SUBDIR%%/Language/C/Data
+@dirrm %%SUBDIR%%/Language/C/Parser
+@dirrm %%SUBDIR%%/Language/C/Syntax
+@dirrm %%SUBDIR%%/Language/C/System
+@dirrm %%SUBDIR%%/Language/C
+@dirrmtry %%SUBDIR%%/Language
+%%RMLIC%%%%DOCSDIR%%/LICENSE
+%%RMLIC%%@dirrm %%DOCSDIR%%
+@exec sh %D/%%SUBDIR%%/%%PORTNAME%%-register.sh
+@exec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec ghc-pkg unregister %%PORTNAME%%
+@unexec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

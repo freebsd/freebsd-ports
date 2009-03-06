@@ -505,6 +505,7 @@
     SUBDIR += hs-hdoc
     SUBDIR += hs-hmake
     SUBDIR += hs-idoc
+    SUBDIR += hs-language-c-ghc
     SUBDIR += hs-pcre-light-ghc
     SUBDIR += hs-utf8-string-ghc
     SUBDIR += hs-uuagc
