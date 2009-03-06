@@ -11,7 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://code.suckless.org/dl/tools/
 DISTNAME=	sic-${PORTVERSION}
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	An extremly simple IRC client
 
 MAN1=		simpleirc.1

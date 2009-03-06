@@ -12,7 +12,7 @@ MASTER_SITES=	SF \
 		http://mirror.mcx2.org/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	C++ class library of common digital signal processing functions
 
 WRKSRC=		${WRKDIR}/libdsp-src-${PORTVERSION}/${PORTNAME:S/dsp/DSP/}-${PORTVERSION}

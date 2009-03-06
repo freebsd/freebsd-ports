@@ -10,7 +10,7 @@ DISTVERSION=	0.61.09
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A vector based 2D animation package
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ETL.pc:${PORTSDIR}/devel/etl

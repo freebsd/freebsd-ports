@@ -11,7 +11,7 @@ CATEGORIES=	devel lang
 MASTER_SITES=	SF/synfig
 DISTNAME=	ETL-0.04.12
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Voria Extended Class and Template Library
 
 USE_GNOME=	gnomehack gnometarget pkgconfig

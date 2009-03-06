@@ -10,7 +10,7 @@ PORTVERSION=	1.8.0
 CATEGORIES=	irc
 MASTER_SITES=	SF
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A set of IRC services for IRC networks
 
 USE_GMAKE=	yes

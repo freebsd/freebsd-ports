@@ -11,7 +11,7 @@ PORTVERSION=	0.12.3
 CATEGORIES=	astro
 MASTER_SITES=	SF
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Astronomical Calculation Library
 
 USE_AUTOTOOLS=	libtool:15

@@ -10,7 +10,7 @@ PORTVERSION=	1.12
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF/trollop
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A commandline option parser for Ruby that gets out of your way
 
 USE_RUBY=	yes

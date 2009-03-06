@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A ncurses mpd client, clone of ncmpc with some new features
 
 USE_BZIP2=	yes

@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Command line tool for making audio CDs from mp3s
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/jocr
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	An OCR (Optical Character Recognition) program
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm

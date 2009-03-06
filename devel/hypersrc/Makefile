@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.jimbrooks.org/hypersrc/%SUBDIR%/ \
 		http://www.home.earthlink.net/~jebrooks1/ftp/hypersrc/%SUBDIR%/
 MASTER_SITE_SUBDIR=	latest old
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Source code browser
 
 RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags

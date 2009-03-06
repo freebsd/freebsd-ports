@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Receive, filter, read, compose and send mail at the text console
 
 CONFLICTS=	elmo-[0-9]*

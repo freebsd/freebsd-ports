@@ -12,7 +12,7 @@ MASTER_SITES=	http://bobcopeland.com/gstfs/releases/ \
 		http://mirror.mcx2.org/
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	On-demand, transcoding filesystem (using GStreamer pipeline)
 
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod

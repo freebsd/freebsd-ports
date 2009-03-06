@@ -12,7 +12,7 @@ MASTER_SITES=	http://bok.net/MonteCarlo/downloads/
 DISTNAME=	MonteCarlo-PCF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A monospace font
 
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
