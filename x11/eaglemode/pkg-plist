@@ -257,6 +257,7 @@ lib/eaglemode/include/emCore/emStd1.h
 lib/eaglemode/include/emCore/emStd2.h
 lib/eaglemode/include/emCore/emString.h
 lib/eaglemode/include/emCore/emSubViewPanel.h
+lib/eaglemode/include/emCore/emThread.h
 lib/eaglemode/include/emCore/emTimer.h
 lib/eaglemode/include/emCore/emTmpFile.h
 lib/eaglemode/include/emCore/emToolkit.h
@@ -304,7 +305,7 @@ lib/eaglemode/include/emPs/emPsPagePanel.h
 lib/eaglemode/include/emPs/emPsRenderer.h
 lib/eaglemode/include/emRas/emRasImageFileModel.h
 lib/eaglemode/include/emRgb/emRgbImageFileModel.h
-lib/eaglemode/include/emTestPanel/emTestPanel.h
+lib/eaglemode/include/emTest/emTestPanel.h
 lib/eaglemode/include/emText/emTextFileModel.h
 lib/eaglemode/include/emText/emTextFilePanel.h
 lib/eaglemode/include/emTga/emTgaImageFileModel.h
@@ -329,6 +330,7 @@ lib/eaglemode/include/emX11/emX11WindowPort.h
 lib/eaglemode/include/emXbm/emXbmImageFileModel.h
 lib/eaglemode/include/emXpm/emXpmImageFileModel.h
 %%EMAV%%lib/eaglemode/lib/emAv/emAvServerProc_xine
+lib/eaglemode/lib/emClock/emTimeZonesProc
 lib/eaglemode/lib/emTmpConv/emTmpConvProc
 lib/eaglemode/lib/libSilChess.so
 %%EMAV%%lib/eaglemode/lib/libemAv.so
@@ -410,6 +412,7 @@ lib/eaglemode/res/icons/em-error-unknown-icon.tga
 @dirrm lib/eaglemode/res/emAv
 @dirrm lib/eaglemode/res
 @dirrm lib/eaglemode/lib/emTmpConv
+@dirrm lib/eaglemode/lib/emClock
 %%EMAV%%@dirrm lib/eaglemode/lib/emAv
 @dirrm lib/eaglemode/lib
 @dirrm lib/eaglemode/include/emXpm
@@ -421,7 +424,7 @@ lib/eaglemode/res/icons/em-error-unknown-icon.tga
 @dirrm lib/eaglemode/include/emTiff
 @dirrm lib/eaglemode/include/emTga
 @dirrm lib/eaglemode/include/emText
-@dirrm lib/eaglemode/include/emTestPanel
+@dirrm lib/eaglemode/include/emTest
 @dirrm lib/eaglemode/include/emRgb
 @dirrm lib/eaglemode/include/emRas
 @dirrm lib/eaglemode/include/emPs
