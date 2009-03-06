@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ftwin
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://meroware.com/~joke/sources/ftwin/
 
