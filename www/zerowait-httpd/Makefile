@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.0w.ru/httpd/ \
 PKGNAMESUFFIX=	-httpd
 DISTNAME=	0W-httpd-${PORTVERSION}
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Lightweight and fast http server
 
 USE_GMAKE=	yes
