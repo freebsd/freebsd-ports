@@ -12,6 +12,7 @@ lib/surfraw/amazon
 lib/surfraw/archpkg
 lib/surfraw/arxiv
 lib/surfraw/ask
+lib/surfraw/aur
 lib/surfraw/austlii
 lib/surfraw/bbcnews
 lib/surfraw/cddb
@@ -56,6 +57,7 @@ lib/surfraw/lastfm
 lib/surfraw/leodict
 lib/surfraw/musicbrainz
 lib/surfraw/netbsd
+lib/surfraw/ntrs
 lib/surfraw/openbsd
 lib/surfraw/opensearch
 lib/surfraw/pgpkeys
@@ -67,14 +69,17 @@ lib/surfraw/rfc
 lib/surfraw/rhyme
 lib/surfraw/scaleplus
 lib/surfraw/scholar
+lib/surfraw/scicom
 lib/surfraw/scpan
 lib/surfraw/slashdot
 lib/surfraw/slinuxdoc
 lib/surfraw/sourceforge
+lib/surfraw/springer
 lib/surfraw/stockquote
 lib/surfraw/sunonesearch
 lib/surfraw/thesaurus
 lib/surfraw/translate
+lib/surfraw/urban
 lib/surfraw/w3css
 lib/surfraw/w3html
 lib/surfraw/w3link
@@ -93,6 +98,7 @@ man/man1/altavista.1sr.gz
 man/man1/amazon.1sr.gz
 man/man1/archpkg.1sr.gz
 man/man1/ask.1sr.gz
+man/man1/aur.1sr.gz
 man/man1/arxiv.1sr.gz
 man/man1/austlii.1sr.gz
 man/man1/bbcnews.1sr.gz
@@ -138,6 +144,7 @@ man/man1/leodict.1sr.gz
 man/man1/lsm.1sr.gz
 man/man1/musicbrainz.1sr.gz
 man/man1/netbsd.1sr.gz
+man/man1/ntrs.1sr.gz
 man/man1/openbsd.1sr.gz
 man/man1/pgpkeys.1sr.gz
 man/man1/piratebay.1sr.gz
@@ -149,13 +156,16 @@ man/man1/rhyme.1sr.gz
 man/man1/scaleplus.1sr.gz
 man/man1/scholar.1sr.gz
 man/man1/scpan.1sr.gz
+man/man1/scicom.1sr.gz
 man/man1/slashdot.1sr.gz
 man/man1/slinuxdoc.1sr.gz
 man/man1/sourceforge.1sr.gz
 man/man1/stockquote.1sr.gz
 man/man1/sunonesearch.1sr.gz
+man/man1/springer.1sr.gz
 man/man1/thesaurus.1sr.gz
 man/man1/translate.1sr.gz
+man/man1/urban.1sr.gz
 man/man1/w3css.1sr.gz
 man/man1/w3html.1sr.gz
 man/man1/w3link.1sr.gz
