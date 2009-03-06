@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hamsterdb
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	databases
 MASTER_SITES=	http://hamsterdb.com/public/dl/
 
