@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smplayer-themes
-PORTVERSION=	0.1.18
+PORTVERSION=	0.1.19
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/smplayer
 

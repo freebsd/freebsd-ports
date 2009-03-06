@@ -181,6 +181,7 @@
 %%DATADIR%%/themes/Gnome/angle.png
 %%DATADIR%%/themes/Gnome/aspect.png
 %%DATADIR%%/themes/Gnome/audio_channels.png
+%%DATADIR%%/themes/Gnome/audio_delay.png
 %%DATADIR%%/themes/Gnome/audio_down.png
 %%DATADIR%%/themes/Gnome/audio_equalizer.png
 %%DATADIR%%/themes/Gnome/audio_filters.png
@@ -208,6 +209,8 @@
 %%DATADIR%%/themes/Gnome/dvd.png
 %%DATADIR%%/themes/Gnome/dvd_drive.png
 %%DATADIR%%/themes/Gnome/dvd_hd.png
+%%DATADIR%%/themes/Gnome/dvdnav_menu.png
+%%DATADIR%%/themes/Gnome/dvdnav_prev.png
 %%DATADIR%%/themes/Gnome/equalizer.png
 %%DATADIR%%/themes/Gnome/exit.png
 %%DATADIR%%/themes/Gnome/faq.png
@@ -261,7 +264,6 @@
 %%DATADIR%%/themes/Gnome/pref_subtitles.png
 %%DATADIR%%/themes/Gnome/prefs.png
 %%DATADIR%%/themes/Gnome/previous.png
-%%DATADIR%%/themes/Gnome/recents.png
 %%DATADIR%%/themes/Gnome/repeat.png
 %%DATADIR%%/themes/Gnome/resize_window.png
 %%DATADIR%%/themes/Gnome/rewind10m.png
@@ -277,6 +279,7 @@
 %%DATADIR%%/themes/Gnome/stereo_mode.png
 %%DATADIR%%/themes/Gnome/stop.png
 %%DATADIR%%/themes/Gnome/sub.png
+%%DATADIR%%/themes/Gnome/sub_delay.png
 %%DATADIR%%/themes/Gnome/sub_down.png
 %%DATADIR%%/themes/Gnome/sub_up.png
 %%DATADIR%%/themes/Gnome/systray.png
@@ -286,12 +289,12 @@
 %%DATADIR%%/themes/Gnome/translators.png
 %%DATADIR%%/themes/Gnome/unload.png
 %%DATADIR%%/themes/Gnome/up.png
-%%DATADIR%%/themes/Gnome/upscaling.png
 %%DATADIR%%/themes/Gnome/url.png
 %%DATADIR%%/themes/Gnome/url_big.png
 %%DATADIR%%/themes/Gnome/vcd.png
 %%DATADIR%%/themes/Gnome/video.png
 %%DATADIR%%/themes/Gnome/video_filters.png
+%%DATADIR%%/themes/Gnome/video_preview.png
 %%DATADIR%%/themes/Gnome/video_size.png
 %%DATADIR%%/themes/Gnome/video_track.png
 %%DATADIR%%/themes/Gnome/volume.png
