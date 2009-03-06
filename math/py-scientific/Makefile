@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	scientific
-PORTVERSION=	2.6.1
+PORTVERSION=	2.8
 CATEGORIES=	math python
-MASTER_SITES=	http://sourcesup.cru.fr/frs/download.php/1674/
+MASTER_SITES=	http://sourcesup.cru.fr/frs/download.php/2309/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ScientificPython-${PORTVERSION}
 
 MAINTAINER=	fmysh@iijmio-mail.jp
 COMMENT=	Collection of Python modules for scientific computing
 
-BUILD_DEPENDS=	${PYNUMERIC}
+BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
-RUN_DEPENDS=	${PYNUMERIC}
+RUN_DEPENDS=	${PYNUMPY}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
