@@ -1,0 +1,9 @@
+GNU Robbo is a free open source reimplementation of LK Avalon's
+Robbo for the Atari XE/XL from the late 1980s. The gameplay of the
+original is faithfully reproduced with a few modifications :-
+
+ * Lives has been removed and suicide replaced with level restart
+ * Scoring has been removed: goal is level advancement
+ * Bear logic has been enhanced: fixed endlessly spinning bears
+
+WWW: http://gnurobbo.sourceforge.net/

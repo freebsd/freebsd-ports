@@ -1,0 +1,31 @@
+--- Makefile.orig	2009-03-02 21:56:14.000000000 +0300
++++ Makefile	2009-03-05 17:58:17.000000000 +0300
+@@ -8,9 +8,9 @@
+ #BINDIR=$(HOME)/Games/$(TARGET)/
+ #DOCDIR=$(HOME)/Games/$(TARGET)/
+ # The current folder:
+-PACKAGE_DATA_DIR=./data/
+-BINDIR=./
+-DOCDIR=./
++PACKAGE_DATA_DIR=${DATADIR}
++BINDIR=${PREFIX}/bin
++DOCDIR=${DOCSDIR}
+ 
+ #You won't need to alter these
+ TARGET=gnurobbo
+@@ -19,11 +19,10 @@
+ VERSION=`cat VERSION`
+ 
+ #These should be ok for most
+-CC=gcc
+-CFLAGS=-O3 -pipe -Wall -fomit-frame-pointer -I/usr/include `sdl-config --cflags` -DPLATFORM_PC -DVERSION=\"$(VERSION)\" -DPACKAGE_DATA_DIR=\"$(PACKAGE_DATA_DIR)/\" 
+-LINK=gcc
+-LDFLAGS=-L/usr/lib
+-LIBS=`sdl-config --libs` -lSDL_ttf
++CFLAGS+=-Wall `$(SDL_CONFIG) --cflags` -DPLATFORM_PC -DVERSION=\"$(VERSION)\" -DPACKAGE_DATA_DIR=\"$(PACKAGE_DATA_DIR)/\" 
++LINK=$(CC)
++LDFLAGS=
++LIBS=`$(SDL_CONFIG) --libs` -lSDL_ttf
+ 
+ #You won't need to alter anything below
+ all: $(SOURCES) $(TARGET)

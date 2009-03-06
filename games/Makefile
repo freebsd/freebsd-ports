@@ -322,6 +322,7 @@
     SUBDIR += gnuchess
     SUBDIR += gnudoku
     SUBDIR += gnugo
+    SUBDIR += gnurobbo
     SUBDIR += gnurobots
     SUBDIR += gnushogi
     SUBDIR += gnustep-ladder
