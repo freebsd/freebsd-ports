@@ -26,3 +26,7 @@ Exposed-Modules:
 	Language.Haskell.HsColour.General
 	Language.Haskell.HsColour.MIRC
 	Language.Haskell.HsColour.CSS
+	Language.Haskell.HsColour.Output
+	Language.Haskell.HsColour.Options
+
+Executable:	HsColour
