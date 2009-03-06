@@ -11,7 +11,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Libdnet interface
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet

@@ -10,7 +10,7 @@ PORTVERSION=	2.3.1
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Font engine for complex non-Roman writing systems
 
 OPTIONS=	FREETYPE "Build with Freetype support" on

@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://mirror.mcx2.org/
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Multitracking sound editor and utilities
 
 OPTIONS=	ESD	"Use Enlightened Sound Daemon"		on  \

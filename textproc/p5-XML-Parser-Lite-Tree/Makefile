@@ -12,7 +12,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Lightweight XML tree builder
 
 PERL_CONFIGURE=	yes

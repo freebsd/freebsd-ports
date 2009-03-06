@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.xach.com/multisort/ \
 		http://mirror.mcx2.org/
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A small program to take multiple httpd logfiles into one
 
 PLIST_FILES=	bin/multisort

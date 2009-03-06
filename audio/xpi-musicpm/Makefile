@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	mpm_${PORTVERSION}
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Music Player Minion
 
 XPI_ID=		Music_Player_Minion@code.google.com

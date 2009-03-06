@@ -11,7 +11,7 @@ PORTVERSION=	1.13
 CATEGORIES=	devel
 MASTER_SITES=	SF/ctrio
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A fully matured and stable set of printf and string functions
 
 GNU_CONFIGURE=	yes

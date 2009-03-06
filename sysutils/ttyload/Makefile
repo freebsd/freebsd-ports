@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.daveltd.com/src/util/ttyload/ \
 		http://mirror.mcx2.org/
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Give a color-coded graph of load averages over time
 
 ALL_TARGET=	default

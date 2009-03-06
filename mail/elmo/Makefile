@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Receive, filter, read, compose and send mail at the text console
 
 CONFLICTS=	elmo-devel-*

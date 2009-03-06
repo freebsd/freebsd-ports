@@ -11,7 +11,7 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Perl extension for Sound Mixer control
 
 PERL_CONFIGURE=	YES

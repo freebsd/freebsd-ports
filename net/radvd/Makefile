@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.litech.org/radvd/dist/
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A Linux/BSD IPv6 router advertisement daemon
 
 GNU_CONFIGURE=	yes

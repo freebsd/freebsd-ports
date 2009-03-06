@@ -11,7 +11,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://wwwasd.web.cern.ch/wwwasd/lhc++/clhep/DISTRIBUTION/distributions/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Object-oriented toolkit for particle physics applications by CERN
 
 WRKSRC=		${WRKDIR}/${PORTVERSION}/${PORTNAME:U}

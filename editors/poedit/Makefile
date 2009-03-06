@@ -12,7 +12,7 @@ PORTVERSION=	1.4.2
 CATEGORIES=	editors
 MASTER_SITES=	SF
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Gettext catalogs (.po files) editor
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip

@@ -11,7 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://files.malikania.org/ \
 		http://mirror.mcx2.org/
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A floating and tiling Window Manager From Scratch
 
 BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \

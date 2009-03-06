@@ -15,7 +15,7 @@ MASTER_SITES=	http://humdi.net/vnstat/ \
 		ftp://ftp.jpix.ad.jp/pub/FreeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_bsd
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A console-based network traffic monitor
 
 MAN1=	vnstat.1

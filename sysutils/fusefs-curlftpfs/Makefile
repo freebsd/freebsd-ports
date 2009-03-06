@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Mount remote ftp directories
 
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs \

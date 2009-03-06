@@ -10,7 +10,7 @@ PORTVERSION=	1.4.6
 CATEGORIES=	net geography
 MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/c/
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Find the country that any IP address or hostname originates from
 
 USE_GNOME=	gnometarget

@@ -10,7 +10,7 @@ PORTVERSION=	0.9.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://memberwebs.com/stef/software/rrdbot/
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Threaded SNMP polling daemon which stores data in RRDs
 
 LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool

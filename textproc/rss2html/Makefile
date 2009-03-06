@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://mirror.mcx2.org/ \
 		ftp://ftp.nopcode.org/prj/rss2html/
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	RSS to HTML converter
 
 LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl

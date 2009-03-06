@@ -10,7 +10,7 @@ PORTVERSION=	0.0.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A minimalist window manager inspired by Ratpoison
 
 USE_XORG=	x11

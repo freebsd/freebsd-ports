@@ -10,7 +10,7 @@ PORTVERSION=	1.4.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF/codeforpeople
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A ruby library for creating NFS safe lockfiles
 
 USE_RUBY=	yes

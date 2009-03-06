@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.willhackforsushi.com/code/cowpatty/4.3/ \
 		http://mcx2.org/files/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Brute-force dictionary attack against WPA-PSK
 
 PORTDOCS=	FAQ README

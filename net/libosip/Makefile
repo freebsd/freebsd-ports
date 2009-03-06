@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	GNU/osip
 DISTNAME=	${PORTNAME}2-${PORTVERSION}
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A low layer of SIP implementation
 
 CONFLICTS=	libosip2-2*

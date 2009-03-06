@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.puchalla-online.de/ \
 		http://mirror.mcx2.org/
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A small and fast command line MP3 editor
 
 USE_BZIP2=	yes

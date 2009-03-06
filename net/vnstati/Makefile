@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://humdi.net/vnstat/ \
 		http://mirror.mcx2.org/
 
-MAINTAINER=	adox@mcx2.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	PNG image output support for vnStat
 
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
