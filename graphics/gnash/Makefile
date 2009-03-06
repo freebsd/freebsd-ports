@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	gnash
-PORTVERSION=	0.8.4
-PORTREVISION=	3
+PORTVERSION=	0.8.5
 CATEGORIES=	graphics
-MASTER_SITES=	http://getgnash.org/packages/releases/ \
-		${MASTER_SITE_GNU}
+# getgnash.org is slow
+MASTER_SITES=	${MASTER_SITE_GNU} \
+		http://mirror.amdmi3.ru/ \
+		http://getgnash.org/packages/releases/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -40,8 +41,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS} ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
-		--with-npapi-plugindir="${WEBPLUGINS_DIR}" \
-		--with-kde-pluginprefix="${PREFIX}"
+		--disable-testsuite \
+		--with-plugins-install=system
 
 GNASHVER=	${PORTVERSION}
 
@@ -50,38 +51,24 @@ PLIST_SUB+=	GNASHVER="${GNASHVER}"
 
 USE_LDCONFIG=	${PREFIX}/lib/gnash
 
-MAN1=		cygnal.1 gnash.1 gprocessor.1 soldumper.1 dumpshm.1
+MAN1=		cygnal.1 dumpshm.1 flvdumper.1 gnash.1 gprocessor.1 soldumper.1
 
 OPTIONS=	PLUGIN		"Enable browser plugin" on \
 		CYGNAL		"Enable Cygnal media server" off \
 		GTK		"GUI: GTK (required for Mozilla/Firefox plugin)" on \
-		KDE		"GUI: KDE (required for Konqueror plugin)" off \
+		KDE		"GUI: KDE 3.x (required for Konqueror 3.x plugin)" off \
 		AGG		"Renderer: AGG" on \
 		OPENGL		"Renderer: OpenGL (broken)" off \
 		CAIRO		"Renderer: Cairo (experimental)" off \
 		FFMPEG		"Media handler: ffmpeg (+SDL sound output)" on \
-		GSTREAMER	"Media handler: GStreamer" off
+		GSTREAMER	"Media handler: GStreamer" off \
+		SPEEX		"Speex codec support" on
 
-.include <bsd.port.pre.mk>
+# kde4-gnash segfaults, so that's still work in progress; feel free
+# to try though, plist and everything else should be correct
+#		KDE4		"GUI: KDE 4.x (required for Konqueror 4.x plugin)" off \
 
-# Plugin option processing
-.if !defined(WITHOUT_GTK) && !defined(WITHOUT_PLUGIN)
-USE_WEBPLUGINS=		native
-WEBPLUGINS_FILES=	libgnashplugin.so
-.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
-PLIST_SUB+=	FFPLUGIN=""
-.else
-PLIST_SUB+=	FFPLUGIN="@comment "
-CONFIGURE_ARGS+=	--disable-nsapi
-.endif
-
-.if defined(WITH_KDE) && !defined(WITHOUT_PLUGIN)
-PLIST_SUB+=	KONQPLUGIN=""
-USE_LDCONFIG+=	${PREFIX}/lib/kde3
-.else
-PLIST_SUB+=	KONQPLUGIN="@comment "
-CONFIGURE_ARGS+=	--disable-kparts
-.endif
+.include <bsd.port.options.mk>
 
 # Cygnal option processing
 .if defined(WITH_CYGNAL)
@@ -102,6 +89,36 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 #
+# Plugin configuration
+#
+.if !defined(WITHOUT_GTK) && !defined(WITHOUT_PLUGIN)
+USE_WEBPLUGINS=		native
+WEBPLUGINS_FILES=	libgnashplugin.so
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
+PLIST_SUB+=	NPAPI=""
+CONFIGURE_ARGS+=--with-npapi-plugindir="${WEBPLUGINS_DIR}"
+.else
+PLIST_SUB+=	NPAPI="@comment "
+CONFIGURE_ARGS+=	--disable-npapi
+.endif
+
+.if defined(WITH_KDE) && !defined(WITHOUT_PLUGIN)
+PLIST_SUB+=	KPARTS=""
+USE_LDCONFIG+=	${PREFIX}/lib/kde3
+.else
+PLIST_SUB+=	KPARTS="@comment "
+CONFIGURE_ARGS+=	--disable-kparts
+.endif
+
+.if defined(WITH_KDE4) && !defined(WITHOUT_PLUGIN)
+PLIST_SUB+=	KPARTS4=""
+USE_LDCONFIG+=	${KDE4_PREFIX}/lib/kde4
+.else
+PLIST_SUB+=	KPARTS4="@comment "
+CONFIGURE_ARGS+=	--disable-kparts4
+.endif
+
+#
 # GUI options processing
 #
 GNASH_GUIS=
@@ -115,19 +132,31 @@ PLIST_SUB+=	GTK="@comment "
 .endif
 
 .if defined(WITH_KDE)
-GNASH_GUIS+=	kde
+GNASH_GUIS+=	kde3
 PLIST_SUB+=	KDE=""
-# We have to use this lame way to depend on kdelibs, as USE_KDELIBS_VER won't
-# work after bsd.port.pre.mk, and bsd.port.options.mk is unavailable until
-# 5.5/6.2 EOL. We could also include bsd.kde.mk here, but that's much more
-# likely to bring more trouble
-LIB_DEPENDS+=	kimproxy:${PORTSDIR}/x11/kdelibs3
+USE_KDELIBS_VER=3
 .else
 PLIST_SUB+=	KDE="@comment "
 .endif
 
+.if defined(WITH_KDE4)
+GNASH_GUIS+=	kde4
+PLIST_SUB+=	KDE4=""
+USE_QT_VER=	4
+QT_COMPONENTS=	moc_build
+USE_KDE4=	kdehier kdelibs
+CONFIGURE_ENV+=	KDE4_CONFIG="${KDE4_PREFIX}/bin/kde4-config"
+.else
+PLIST_SUB+=	KDE4="@comment "
+.endif
+
+.if defined(WITH_KDE) && defined defined(WITH_KDE4)
+# This is problem of FreeBSD ports, not Gnash
+IGNORE=		KDE and KDE4 GUIs are mutually exclusive. Please rerun 'make config' and disable one of these
+.endif
+
 .if ${GNASH_GUIS} == ""
-IGNORE=		needs at least one GUI enabled. Please rerun 'make config' and enable GTK, KDE or both GUIs
+IGNORE=		needs at least one GUI enabled. Please rerun 'make config' and enable GTK, KDE or KDE4
 .endif
 
 CONFIGURE_ARGS+=	--enable-gui=`${ECHO} ${GNASH_GUIS} | ${TR} ' ' ,`
@@ -139,14 +168,17 @@ CONFIGURE_ARGS+=	--enable-gui=`${ECHO} ${GNASH_GUIS} | ${TR} ' ' ,`
 LIB_DEPENDS+=		agg.2:${PORTSDIR}/graphics/agg
 CONFIGURE_ARGS+=	--enable-renderer=agg
 .elif !defined(WITH_AGG) && defined(WITH_OPENGL) && !defined(WITH_CAIRO)
+.	if defined(WITH_KDE4)
+IGNORE=			doesn't support OpenGL renderer with KDE4 gui yet. Please rerun 'make config' and select different renderer or disable KDE4 GUI
+.	endif
 USE_GL=			yes
 .	if !defined(WITHOUT_GTK)
 LIB_DEPENDS+=		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 .	endif
 CONFIGURE_ARGS+=	--enable-renderer=ogl
 .elif !defined(WITH_AGG) && !defined(WITH_OPENGL) && defined(WITH_CAIRO)
-.	if defined(WITH_KDE)
-IGNORE=			doesn't support Cairo renderer with KDE gui. Please rerun 'make config' and select different renderer or disable KDE GUI
+.	if defined(WITH_KDE) || defined(WITH_KDE4)
+IGNORE=			doesn't support Cairo renderer with KDE/KDE4 gui. Please rerun 'make config' and select different renderer or disable KDE/KDE4 GUIs
 .	endif
 LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
 CONFIGURE_ARGS+=	--enable-renderer=cairo
@@ -171,6 +203,18 @@ CONFIGURE_ARGS+=	--enable-media=none
 IGNORE=			can't be built with multiple media handlers enabled. Please rerun 'make config' and leave one or none of them (ffmpeg|gstreamer)
 .endif
 
+#
+# Other options
+#
+.if !defined(WITHOUT_SPEEX)
+LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
+CONFIGURE_ARGS+=	--enable-speex
+.else
+CONFIGURE_ARGS+=	--disable-speex
+.endif
+
+.include <bsd.port.pre.mk>
+
 pre-everything::
 .if defined(WITH_OPENGL)
 	@${ECHO_CMD} "OpenGL support is currently broken (Gnash hangs using 100% CPU). Use at your own risk"
@@ -178,13 +222,16 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^PTHREAD_[LC][IF]*=/ d' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^PTHREAD_[LC][IF]*=/ d; s|-lpthread|${PTHREAD_LIBS}|' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
 		s|/lib64|/lib|g; \
 		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure \
 		${WRKSRC}/macros/libslist ${WRKSRC}/macros/incllist
 	@${REINPLACE_CMD} -e '/sysconfDATA_INSTALL/ s|/$$$$f|&.dist|' \
 		${WRKSRC}/libbase/Makefile.in
+	@${REINPLACE_CMD} -e '/KDE4_APPSDATADIR=/ s|share/kde4|share|' \
+		${WRKSRC}/configure
 
 post-install:
 	if [ ! -f ${PREFIX}/etc/gnashrc ]; then \
@@ -198,11 +245,16 @@ post-install:
 
 .if !defined(WITHOUT_PLUGIN)
 .if !defined(WITHOUT_GTK)
+	${MKDIR} ${WEBPLUGINS_DIR}
 	@cd ${INSTALL_WRKSRC}/plugin && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install-plugin
 .endif
 .if defined(WITH_KDE)
 	@cd ${INSTALL_WRKSRC}/plugin/klash && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install-plugin
+.endif
+.if defined(WITH_KDE4)
+	@cd ${INSTALL_WRKSRC}/plugin/klash4 && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install-plugin
 .endif
 .endif
