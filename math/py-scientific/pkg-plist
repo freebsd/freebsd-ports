@@ -1,8 +1,11 @@
 bin/bsp_virtual
+bin/task_manager
 %%PYTHON_INCLUDEDIR%%/Scientific/PyBSP_API.h
 %%PYTHON_INCLUDEDIR%%/Scientific/PyMPI_API.h
+%%PYTHON_INCLUDEDIR%%/Scientific/arrayobject.h
 %%PYTHON_INCLUDEDIR%%/Scientific/bspmodule.h
 %%PYTHON_INCLUDEDIR%%/Scientific/mpimodule.h
+%%PYTHON_INCLUDEDIR%%/Scientific/netcdf.h
 %%PYTHON_INCLUDEDIR%%/Scientific/netcdfmodule.h
 %%PYTHON_SITELIBDIR%%/Scientific/BSP/Console.py
 %%PYTHON_SITELIBDIR%%/Scientific/BSP/Console.pyc
@@ -19,9 +22,27 @@ bin/bsp_virtual
 %%PYTHON_SITELIBDIR%%/Scientific/BSP/core.py
 %%PYTHON_SITELIBDIR%%/Scientific/BSP/core.pyc
 %%PYTHON_SITELIBDIR%%/Scientific/BSP/core.pyo
+%%PYTHON_SITELIBDIR%%/Scientific/Clustering/AffinityPropagation.py
+%%PYTHON_SITELIBDIR%%/Scientific/Clustering/AffinityPropagation.pyc
+%%PYTHON_SITELIBDIR%%/Scientific/Clustering/AffinityPropagation.pyo
+%%PYTHON_SITELIBDIR%%/Scientific/Clustering/__init__.py
+%%PYTHON_SITELIBDIR%%/Scientific/Clustering/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Scientific/Clustering/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Scientific/DictWithDefault.py
 %%PYTHON_SITELIBDIR%%/Scientific/DictWithDefault.pyc
 %%PYTHON_SITELIBDIR%%/Scientific/DictWithDefault.pyo
+%%PYTHON_SITELIBDIR%%/Scientific/DistributedComputing/MasterSlave.py
+%%PYTHON_SITELIBDIR%%/Scientific/DistributedComputing/MasterSlave.pyc
+%%PYTHON_SITELIBDIR%%/Scientific/DistributedComputing/MasterSlave.pyo
+%%PYTHON_SITELIBDIR%%/Scientific/DistributedComputing/TaskManager.py
+%%PYTHON_SITELIBDIR%%/Scientific/DistributedComputing/TaskManager.pyc
+%%PYTHON_SITELIBDIR%%/Scientific/DistributedComputing/TaskManager.pyo
+%%PYTHON_SITELIBDIR%%/Scientific/DistributedComputing/__init__.py
+%%PYTHON_SITELIBDIR%%/Scientific/DistributedComputing/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Scientific/DistributedComputing/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Scientific/FFT.py
+%%PYTHON_SITELIBDIR%%/Scientific/FFT.pyc
+%%PYTHON_SITELIBDIR%%/Scientific/FFT.pyo
 %%PYTHON_SITELIBDIR%%/Scientific/Functions/Derivatives.py
 %%PYTHON_SITELIBDIR%%/Scientific/Functions/Derivatives.pyc
 %%PYTHON_SITELIBDIR%%/Scientific/Functions/Derivatives.pyo
@@ -85,6 +106,9 @@ bin/bsp_virtual
 %%PYTHON_SITELIBDIR%%/Scientific/IO/PDBExportFilters.py
 %%PYTHON_SITELIBDIR%%/Scientific/IO/PDBExportFilters.pyc
 %%PYTHON_SITELIBDIR%%/Scientific/IO/PDBExportFilters.pyo
+%%PYTHON_SITELIBDIR%%/Scientific/IO/PDBSpaceGroups.py
+%%PYTHON_SITELIBDIR%%/Scientific/IO/PDBSpaceGroups.pyc
+%%PYTHON_SITELIBDIR%%/Scientific/IO/PDBSpaceGroups.pyo
 %%PYTHON_SITELIBDIR%%/Scientific/IO/TextFile.py
 %%PYTHON_SITELIBDIR%%/Scientific/IO/TextFile.pyc
 %%PYTHON_SITELIBDIR%%/Scientific/IO/TextFile.pyo
@@ -109,6 +133,9 @@ bin/bsp_virtual
 %%PYTHON_SITELIBDIR%%/Scientific/N.py
 %%PYTHON_SITELIBDIR%%/Scientific/N.pyc
 %%PYTHON_SITELIBDIR%%/Scientific/N.pyo
+%%PYTHON_SITELIBDIR%%/Scientific/NRNG.py
+%%PYTHON_SITELIBDIR%%/Scientific/NRNG.pyc
+%%PYTHON_SITELIBDIR%%/Scientific/NRNG.pyo
 %%PYTHON_SITELIBDIR%%/Scientific/NumberDict.py
 %%PYTHON_SITELIBDIR%%/Scientific/NumberDict.pyc
 %%PYTHON_SITELIBDIR%%/Scientific/NumberDict.pyo
@@ -190,14 +217,14 @@ bin/bsp_virtual
 %%PYTHON_SITELIBDIR%%/Scientific/__pkginfo__.py
 %%PYTHON_SITELIBDIR%%/Scientific/__pkginfo__.pyc
 %%PYTHON_SITELIBDIR%%/Scientific/__pkginfo__.pyo
+%%PYTHON_SITELIBDIR%%/Scientific/%%PYTHON_PLATFORM%%/Scientific_affinitypropagation.so
+%%PYTHON_SITELIBDIR%%/Scientific/%%PYTHON_PLATFORM%%/Scientific_interpolation.so
 %%PYTHON_SITELIBDIR%%/Scientific/%%PYTHON_PLATFORM%%/Scientific_netcdf.so
+%%PYTHON_SITELIBDIR%%/Scientific/%%PYTHON_PLATFORM%%/Scientific_numerics_package_id.so
 %%PYTHON_SITELIBDIR%%/Scientific/%%PYTHON_PLATFORM%%/Scientific_vector.so
 %%PYTHON_SITELIBDIR%%/Scientific/indexing.py
 %%PYTHON_SITELIBDIR%%/Scientific/indexing.pyc
 %%PYTHON_SITELIBDIR%%/Scientific/indexing.pyo
-%%PYTHON_SITELIBDIR%%/Scientific/use_numeric/__init__.py
-%%PYTHON_SITELIBDIR%%/Scientific/use_numeric/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Scientific/use_numeric/__init__.pyo
 %%PORTDOCS%%%%DOCSDIR%%/BSP_Tutorial.pdf
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
@@ -210,8 +237,6 @@ bin/bsp_virtual
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.BSP.Console.ParallelConsole-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.BSP.Console.ParallelInterpreter-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.BSP.IO-module.html
-%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.BSP.IO._ParNetCDFFile-class.html
-%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.BSP.IO._ParNetCDFVariable-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.BSP.ParAccumulator-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.BSP.ParBase-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.BSP.ParClass-class.html
@@ -223,11 +248,28 @@ bin/bsp_virtual
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.BSP.ParIterator-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.BSP.ParMessages-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.BSP.ParRootFunction-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.BSP.ParRootSequence-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.BSP.ParSequence-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.BSP.ParTuple-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.BSP.ParValue-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Clustering-module.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Clustering.AffinityPropagation-module.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Clustering.AffinityPropagation.DataSet-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.DictWithDefault-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.DictWithDefault.DictWithDefault-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.DistributedComputing-module.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.DistributedComputing.MasterSlave-module.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.DistributedComputing.MasterSlave.GlobalStateValue-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.DistributedComputing.MasterSlave.MasterProcess-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.DistributedComputing.MasterSlave.SlaveProcess-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.DistributedComputing.TaskManager-module.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.DistributedComputing.TaskManager.Task-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.DistributedComputing.TaskManager.TaskManager-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.DistributedComputing.TaskManager.TaskManagerTermination-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.DistributedComputing.TaskManager.TaskQueue-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.DistributedComputing.TaskManager.TaskRaisedException-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.DistributedComputing.TaskManager.Watchdog-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.FFT-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Functions-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Functions.Derivatives-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Functions.Derivatives.DerivVar-class.html
@@ -263,8 +305,13 @@ bin/bsp_virtual
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Geometry.TensorAnalysis.TensorField-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Geometry.TensorAnalysis.VectorField-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Geometry.Transformation-module.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Geometry.Transformation.Inversion-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Geometry.Transformation.LinearTransformation-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Geometry.Transformation.RigidBodyTransformation-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Geometry.Transformation.Rotation-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Geometry.Transformation.RotationTranslation-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Geometry.Transformation.Scaling-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Geometry.Transformation.Shear-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Geometry.Transformation.Transformation-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Geometry.Transformation.Translation-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Geometry.Vector-class.html
@@ -290,6 +337,8 @@ bin/bsp_virtual
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.IO.PDB.Residue-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.IO.PDB.ResidueNumber-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.IO.PDB.Structure-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.IO.PDBSpaceGroups-module.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.IO.PDBSpaceGroups.SpaceGroup-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.IO.TextFile-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.IO.TextFile.TextFile-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.IterationCountExceededError-class.html
@@ -297,7 +346,6 @@ bin/bsp_virtual
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.MPI.IO-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.MPI.IO.LogFile-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.MPI.MPICommunicator-class.html
-%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.MPI.MPIError-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.MPI.MPIOperationObject-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.MPI.MPIRequest-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.MPI.band-class.html
@@ -313,6 +361,7 @@ bin/bsp_virtual
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.MPI.prod-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.MPI.replace-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.MPI.sum-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.NRNG-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.NumberDict-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.NumberDict.NumberDict-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Physics-module.html
@@ -446,7 +495,7 @@ bin/bsp_virtual
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Visualization.VRML2.Sphere-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.Visualization.VRML2.VRMLObject-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.indexing-module.html
-%%PORTDOCS%%%%DOCSDIR%%/Reference/Scientific.indexing._index_expression_class-class.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/api-objects.txt
 %%PORTDOCS%%%%DOCSDIR%%/Reference/class-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/crarr.png
 %%PORTDOCS%%%%DOCSDIR%%/Reference/epydoc.css
@@ -458,13 +507,19 @@ bin/bsp_virtual
 %%PORTDOCS%%%%DOCSDIR%%/Reference/index.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/int-class.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/module-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/Reference/sys-module.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/redirect.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/term-index.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.BSP-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.BSP.Console-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.BSP.IO-module.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.Clustering-module.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.Clustering.AffinityPropagation-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.DictWithDefault-module.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.DistributedComputing-module.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.DistributedComputing.MasterSlave-module.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.DistributedComputing.TaskManager-module.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.FFT-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.Functions-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.Functions.Derivatives-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.Functions.FindRoot-module.html
@@ -484,9 +539,11 @@ bin/bsp_virtual
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.IO.FortranFormat-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.IO.NetCDF-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.IO.PDB-module.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.IO.PDBSpaceGroups-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.IO.TextFile-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.MPI-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.MPI.IO-module.html
+%%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.NRNG-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.NumberDict-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.Physics-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.Physics.PhysicalQuantities-module.html
@@ -512,7 +569,6 @@ bin/bsp_virtual
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.Visualization.VRML2-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-Scientific.indexing-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc-everything.html
-%%PORTDOCS%%%%DOCSDIR%%/Reference/toc-sys-module.html
 %%PORTDOCS%%%%DOCSDIR%%/Reference/toc.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BSP/example1.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BSP/example1_array.py
@@ -521,13 +577,15 @@ bin/bsp_virtual
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BSP/example4.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demomodule.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/master.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/master_slave_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mpi.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netcdf_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slave.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/BSP
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Reference
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/Scientific/use_numeric
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/%%PYTHON_PLATFORM%%
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/Visualization
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/TkWidgets
@@ -540,6 +598,8 @@ bin/bsp_virtual
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/IO
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/Geometry
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/Functions
+@dirrm %%PYTHON_SITELIBDIR%%/Scientific/DistributedComputing
+@dirrm %%PYTHON_SITELIBDIR%%/Scientific/Clustering
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/BSP
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific
 @dirrm %%PYTHON_INCLUDEDIR%%/Scientific
