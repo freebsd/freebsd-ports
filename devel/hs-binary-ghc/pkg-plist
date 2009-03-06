@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%SUBDIR%%/Data/Binary.hi
 %%SUBDIR%%/Data/Binary/Builder.hi
 %%SUBDIR%%/Data/Binary/Get.hi
@@ -7,6 +8,8 @@
 %%SUBDIR%%/%%PORTNAME%%-register.sh
 @dirrmtry %%SUBDIR%%/Data/Binary
 @dirrmtry %%SUBDIR%%/Data
+%%RMLIC%%%%DOCSDIR%%/LICENSE
+%%RMLIC%%@dirrm %%DOCSDIR%%
 @exec sh %D/%%SUBDIR%%/%%PORTNAME%%-register.sh
 @exec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec ghc-pkg unregister %%PORTNAME%%
