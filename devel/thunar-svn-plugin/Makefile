@@ -7,6 +7,7 @@
 
 PORTNAME=	thunar-svn-plugin
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	devel xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/thunar-svn-plugin/
 DIST_SUBDIR=	xfce4
