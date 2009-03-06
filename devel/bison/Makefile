@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	bison
-PORTVERSION=	2.3
-PORTREVISION=	4
+PORTVERSION=	2.4.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	A parser generator from FSF, (mostly) compatible with Yacc
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
@@ -44,6 +43,7 @@ PLIST_SUB+=	NLS=""
 
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/bison.info*
+	@${REINPLACE_CMD} 's/MANS = yacc.1/MANS =/' ${WRKSRC}/doc/Makefile.in
 
 #
 # Requires texinfo 4.8 or above
