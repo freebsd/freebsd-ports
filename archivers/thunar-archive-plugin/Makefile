@@ -7,6 +7,7 @@
 
 PORTNAME=	thunar-archive-plugin
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	archivers xfce
 MASTER_SITES=	BERLIOS
 MASTER_SITE_SUBDIR=	xfce-goodies
