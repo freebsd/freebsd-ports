@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	binary
-PORTVERSION=	0.4.4
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -35,9 +34,9 @@ CONFIGURE_ARGS=	--ghc --prefix=${PREFIX} --libdir=${PREFIX}/${CABALDIR} --libsub
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
+PLIST_SUB+=	RMLIC="@comment "
 .else
-PLIST_DIRS+=	%%DOCSDIR%%
-PLIST_FILES+=	%%DOCSDIR%%/LICENSE
+PLIST_SUB+=	RMLIC=""
 .endif
 
 do-configure:
