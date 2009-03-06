@@ -325,6 +325,7 @@
     SUBDIR += healthd
     SUBDIR += heartbeat
     SUBDIR += heirloom
+    SUBDIR += hidesvn
     SUBDIR += highlnk
     SUBDIR += hilite
     SUBDIR += hourglass
