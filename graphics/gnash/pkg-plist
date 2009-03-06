@@ -4,14 +4,22 @@ bin/gnash
 bin/gprocessor
 bin/soldumper
 %%GTK%%bin/gtk-gnash
-%%KDE%%bin/kde-gnash
+%%KDE%%bin/kde3-gnash
+%%KDE4%%bin/kde4-gnash
 %%CYGNAL%%bin/cygnal
-%%FFPLUGIN%%%%WEBPLUGINS_DIR%%/libgnashplugin.so
-%%KONQPLUGIN%%share/apps/klash/pluginsinfo
-%%KONQPLUGIN%%share/apps/klash/klashpartui.rc
-%%KONQPLUGIN%%share/services/klash_part.desktop
-%%KONQPLUGIN%%lib/kde3/libklashpart.so
-%%KONQPLUGIN%%lib/kde3/libklashpart.la
+%%NPAPI%%%%WEBPLUGINS_DIR%%/libgnashplugin.so
+@comment Should be //KPARTS//, but it is installed regardless of whether plugin is enabled
+%%KDE%%share/apps/klash/pluginsinfo
+%%KPARTS%%share/apps/klash/klashpartui.rc
+@comment Should be //KPARTS//, but it is installed regardless of whether plugin is enabled
+%%KDE%%share/services/klash_part.desktop
+%%KPARTS%%lib/kde3/libklashpart.so
+%%KPARTS%%lib/kde3/libklashpart.la
+%%KPARTS4%%kde4/share/apps/klash/pluginsinfo
+%%KPARTS4%%kde4/share/apps/klash/klashpartui.rc
+%%KPARTS4%%kde4/share/kde4/services/klash_part.desktop
+%%KPARTS4%%kde4/lib/kde4/libklashpart.so
+%%KPARTS4%%kde4/lib/kde4/libklashpart.la
 @unexec if cmp -s %D/etc/gnashpluginrc.dist %D/etc/gnashpluginrc; then rm -f %D/etc/gnashpluginrc; fi
 etc/gnashpluginrc.dist
 @exec if [ ! -f %B/gnashpluginrc ]; then cp -p %D/%F %B/gnashpluginrc; fi
@@ -33,9 +41,12 @@ lib/gnash/libgnashmedia.so
 lib/gnash/libgnashnet.la
 lib/gnash/libgnashnet.so
 lib/gnash/libgnashnet.so.0
-%%GTK%%lib/gnash/libmozsdk.la
-%%GTK%%lib/gnash/libmozsdk.so
-%%GTK%%lib/gnash/libmozsdk.so.0
+lib/gnash/libgnashsound-%%GNASHVER%%.so
+lib/gnash/libgnashsound.la
+lib/gnash/libgnashsound.so
+%%NPAPI%%lib/gnash/libmozsdk.la
+%%NPAPI%%lib/gnash/libmozsdk.so
+%%NPAPI%%lib/gnash/libmozsdk.so.0
 %%DOCSDIR%%/gnashuser.html
 %%DOCSDIR%%/images/car_crash.png
 %%DOCSDIR%%/images/rtmp.png
@@ -49,10 +60,11 @@ share/locale/fi/LC_MESSAGES/gnash.mo
 share/locale/fr/LC_MESSAGES/gnash.mo
 share/locale/it/LC_MESSAGES/gnash.mo
 share/locale/ja/LC_MESSAGES/gnash.mo
-share/locale/sv/LC_MESSAGES/gnash.mo
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%/images
 @dirrm %%DOCSDIR%%
 @dirrm lib/gnash
-%%KONQPLUGIN%%@dirrm share/apps/klash
-%%FFPLUGIN%%@dirrmtry %%WEBPLUGINS_DIR%%
+@comment Should be //KPARTS//, but it is installed regardless of whether plugin is enabled
+%%KDE%%@dirrm share/apps/klash
+%%KPARTS4%%@dirrm kde4/share/apps/klash
+%%NPAPI%%@dirrmtry %%WEBPLUGINS_DIR%%
