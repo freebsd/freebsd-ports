@@ -7,7 +7,7 @@
 
 PORTNAME?=	djbdns
 PORTVERSION?=	${DJBDNS_VER}
-PORTREVISION?=	12
+PORTREVISION?=	13
 CATEGORIES?=	dns
 MASTER_SITES=	http://cr.yp.to/djbdns/ \
 		ftp://cr.yp.to/djbdns/
@@ -32,7 +32,7 @@ OPTIONS=	DUMPCACHE	"persistent cache for dnscache" off \
 
 .if defined(WITH_JUMBO)
 .if defined(WITH_IPV6) || defined(WITH_IGNOREIP) || defined(WITH_SRV)
-BROKEN=		"The jumbo patch currently conflicts with the IPv6 and ignoreip2 patches"
+BROKEN=		The jumbo patch currently conflicts with the IPv6 and ignoreip2 patches
 .endif
 
 PATCH_SITES+=	http://www.ro.kde.org/djbdns/mywork/jumbo/:jumbo
@@ -69,7 +69,7 @@ EXTRA_PATCHES+=	${FILESDIR}/uint32.patch
 
 .if defined(WITH_DUMPCACHE) && !defined(WITH_JUMBO)
 .if defined(WITH_IPV6)
-BROKEN=		"The IPv6 and dnscache-dumpcache patches are currently in conflict"
+BROKEN=		The IPv6 and dnscache-dumpcache patches are currently in conflict
 .endif
 PATCH_SITES+=	http://efge.free.fr/djbdns/:dumpcache
 PATCHFILES+=	patch-dnscache-dumpcache-v4.txt:dumpcache
