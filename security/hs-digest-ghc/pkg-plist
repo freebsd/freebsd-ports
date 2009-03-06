@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%SUBDIR%%/Data/Digest/Adler32.hi
 %%SUBDIR%%/Data/Digest/CRC32.hi
 %%SUBDIR%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
