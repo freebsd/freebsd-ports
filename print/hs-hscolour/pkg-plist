@@ -11,6 +11,8 @@ bin/HsColour
 %%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/HTML.hi
 %%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/LaTeX.hi
 %%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/MIRC.hi
+%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/Options.hi
+%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/Output.hi
 %%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/TTY.hi
 %%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHShscolour-%%HSCOLOUR_VERSION%%.a
 %%HSCOLOUR_LIBDIR_REL%%/register.sh
