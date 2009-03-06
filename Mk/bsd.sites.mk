@@ -1160,7 +1160,8 @@ MASTER_SITE_SAVANNAH+= \
 	http://www.very-clever.com/download/nongnu/%SUBDIR%/ \
 	http://ftp.twaren.net/Unix/NonGNU/%SUBDIR%/ \
 	ftp://ftp.cc.uoc.gr/mirrors/nongnu.org/%SUBDIR%/ \
-	ftp://ftp.twaren.net/Unix/NonGNU/%SUBDIR%/
+	ftp://ftp.twaren.net/Unix/NonGNU/%SUBDIR%/ \
+	http://download.savannah.gnu.org/releases-noredirect/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
