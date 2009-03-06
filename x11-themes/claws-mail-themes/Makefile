@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	claws-mail-themes
-PORTVERSION=	20090102
+PORTVERSION=	20090225
 CATEGORIES=	x11-themes mail
 MASTER_SITES=	http://www.claws-mail.org/themes/
 
