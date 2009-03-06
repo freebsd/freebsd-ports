@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	c2hs
-PORTVERSION=	0.15.1
-PORTREVISION=	1
+PORTVERSION=	0.16.0
 CATEGORIES=	devel haskell
-MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/c2hs/
+MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	C->Haskell, an Interface Generator for Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
-		happy:${PORTSDIR}/devel/hs-happy \
-		alex:${PORTSDIR}/devel/hs-alex
+		hs-language-c-ghc>=0.3.1.1:${PORTSDIR}/devel/hs-language-c-ghc
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
