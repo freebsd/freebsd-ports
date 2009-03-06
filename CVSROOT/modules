@@ -8877,6 +8877,7 @@ mybashburn                      ports/sysutils/mybashburn
 mybb                            ports/www/mybb
 mybudget                        ports/finance/mybudget
 mydns                           ports/dns/mydns
+mydumper                        ports/databases/mydumper
 myfaces                         ports/www/myfaces
 myghty                          ports/www/myghty
 mylibrary                       ports/databases/mylibrary
@@ -18333,7 +18334,6 @@ py-funkload                     ports/www/py-funkload
 py-fusefs                       ports/devel/py-fusefs
 py-game                         ports/devel/py-game
 py-gamin                        ports/devel/py-gamin
-py-gammu                        ports/comms/py-gammu
 py-gato                         ports/math/py-gato
 py-gchartwrapper                ports/graphics/py-gchartwrapper
 py-gd                           ports/graphics/py-gd
@@ -21084,6 +21084,7 @@ talkfilters                     ports/misc/talkfilters
 talksoup                        ports/irc/talksoup
 tamago                          ports/editors/tamago
 tamago-emacs21                  ports/editors/tamago-emacs21
+tangogps                        ports/astro/tangogps
 tank                            ports/games/tank
 tap-plugins                     ports/audio/tap-plugins
 tapidbus                        ports/net/tapidbus
