@@ -90,6 +90,7 @@ PERL			Adds Perl language/module support
 PGO			Enables Profile-Guided Optimization
 PGSQL			PostgreSQL database support
 POP3			Adds support for POP3 mail protocol
+PSYCO			Adds Python Psyco optimization support
 PYTHON			Adds Python language/module support
 QT			Adds Qt support
 QUICKTIME 		Quicktime audio/video support
