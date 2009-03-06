@@ -1,0 +1,35 @@
+bin/gnurobbo
+%%DATADIR%%/levels/original.dat
+%%DATADIR%%/levels/robboix.dat
+%%DATADIR%%/levels/robbovii.dat
+%%DATADIR%%/levels/robboviii.dat
+%%DATADIR%%/locales/en_GB/localerc
+%%DATADIR%%/locales/en_GB/text
+%%DATADIR%%/locales/pl_PL/localerc
+%%DATADIR%%/locales/pl_PL/text
+%%DATADIR%%/skins/original/LICENSE-font
+%%DATADIR%%/skins/original/alpha16.bmp
+%%DATADIR%%/skins/original/alpha32.bmp
+%%DATADIR%%/skins/original/ciphers16.bmp
+%%DATADIR%%/skins/original/ciphers32.bmp
+%%DATADIR%%/skins/original/icons16.bmp
+%%DATADIR%%/skins/original/icons32.bmp
+%%DATADIR%%/skins/original/robbo.ttf
+%%DATADIR%%/skins/original/skinrc
+%%DATADIR%%/skins/tronic/LICENSE-font
+%%DATADIR%%/skins/tronic/alpha16.bmp
+%%DATADIR%%/skins/tronic/alpha32.bmp
+%%DATADIR%%/skins/tronic/ciphers16.bmp
+%%DATADIR%%/skins/tronic/ciphers32.bmp
+%%DATADIR%%/skins/tronic/icons16.bmp
+%%DATADIR%%/skins/tronic/icons32.bmp
+%%DATADIR%%/skins/tronic/robbo.ttf
+%%DATADIR%%/skins/tronic/skinrc
+@dirrm %%DATADIR%%/skins/tronic
+@dirrm %%DATADIR%%/skins/original
+@dirrm %%DATADIR%%/skins
+@dirrm %%DATADIR%%/locales/pl_PL
+@dirrm %%DATADIR%%/locales/en_GB
+@dirrm %%DATADIR%%/locales
+@dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%
