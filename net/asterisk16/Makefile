@@ -17,7 +17,6 @@ MASTER_SITES=	http://downloads.digium.com/pub/asterisk/ \
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
 
-BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		newt.51:${PORTSDIR}/devel/newt
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
