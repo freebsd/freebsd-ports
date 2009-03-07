@@ -21,6 +21,7 @@ include/znc/Utils.h
 include/znc/ZNCString.h
 include/znc/main.h
 include/znc/znc.h
+lib/znc/admin.so
 lib/znc/autoattach.so
 lib/znc/autocycle.so
 lib/znc/autoop.so
@@ -29,6 +30,7 @@ lib/znc/awaynick.so
 lib/znc/chansaver.so
 lib/znc/crypt.so
 lib/znc/email.so
+lib/znc/fail2ban.so
 lib/znc/imapauth.so
 lib/znc/keepnick.so
 lib/znc/kickrejoin.so
