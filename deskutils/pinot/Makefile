@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pinot
-PORTVERSION=	0.90
+PORTVERSION=	0.91
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
@@ -60,8 +60,8 @@ MAN1=		pinot-dbus-daemon.1 pinot-index.1 pinot-label.1 pinot-search.1 pinot.1
 
 PORTDOCS=	AUTHORS ChangeLog ChangeLog-dijon INSTALL NEWS README TODO
 
-LM2FIX=		textcat_conf.txt textcat3_conf.txt
-SHR2FIX=	IndexSearch/pinot-search.1 README
+LM2FIX=		textcat_conf.txt textcat3_conf.txt IndexSearch/Google/Makefile.in
+SHR2FIX=	Core/pinot-search.1 README
 UL2FIX=		Utils/xdgmime/xdgmime.c
 
 LDESKBAR_MOD=	lib/deskbar-applet/modules-2.20-compatible
