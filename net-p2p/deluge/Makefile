@@ -7,6 +7,7 @@
 
 PORTNAME=	deluge
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://ftp.osuosl.org/pub/deluge/source/${PORTVERSION}/
 
@@ -17,7 +18,8 @@ BUILD_DEPENDS=	easy_install-${PYTHON_VER}:${PORTSDIR}/devel/py-setuptools
 LIB_DEPENDS=	boost_python.4:${PORTSDIR}/devel/boost-python
 RUN_DEPENDS=	easy_install-${PYTHON_VER}:${PORTSDIR}/devel/py-setuptools \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
-		${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
+		${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl \
+		${PYTHONPREFIX_SITELIBDIR}/gtk-2.0/gobject/__init__.py:${PORTSDIR}/devel/py-gobject
 
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
