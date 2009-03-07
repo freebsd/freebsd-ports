@@ -494,6 +494,7 @@
     SUBDIR += nip2
     SUBDIR += npretty
     SUBDIR += nurbs++
+    SUBDIR += nvidia-texture-tools
     SUBDIR += ocaml-images
     SUBDIR += ocaml-lablgl
     SUBDIR += ocrad

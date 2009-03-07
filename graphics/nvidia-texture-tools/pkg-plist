@@ -1,0 +1,13 @@
+bin/nvassemble
+bin/nvcompress
+%%COMPRESSUI%%bin/nvcompressui
+bin/nvddsinfo
+bin/nvdecompress
+bin/nvimgdiff
+bin/nvzoom
+include/nvtt/nvtt.h
+lib/libnvcore.a
+lib/libnvimage.a
+lib/libnvmath.a
+lib/libnvtt.a
+@dirrm include/nvtt
