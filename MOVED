@@ -3833,3 +3833,4 @@ comms/py-gammu||2009-03-04|incorporated into comms/gammu
 devel/p5-Getopt-Mixed||2009-03-06|Use Getopt::Long
 x11-toolkits/scx||2009-03-06|Abandoned upstream
 x11-toolkits/xg||2009-03-06|Abandoned upstream
+audio/quelcom||2009-03-07|Abandoned upstream, requires obsolete version of GCC
