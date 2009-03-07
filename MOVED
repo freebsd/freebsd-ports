@@ -3835,3 +3835,5 @@ x11-toolkits/scx||2009-03-06|Abandoned upstream
 x11-toolkits/xg||2009-03-06|Abandoned upstream
 audio/quelcom||2009-03-07|Abandoned upstream, requires obsolete version of GCC
 math/cxsc||2009-03-07|Abandoned upstream, requires obsolete version of GCC
+devel/prcs||2009-03-07|Abandoned upstream, requires obsolete version of GCC
+devel/tvision||2009-03-07|Abandoned upstream, requires obsolete version of GCC
