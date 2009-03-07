@@ -1,0 +1,33 @@
+bin/xspf_check
+bin/xspf_strip
+include/xspf/ProjectOpus/ProjectOpusPlaylistExtension.h
+include/xspf/ProjectOpus/ProjectOpusPlaylistExtensionReader.h
+include/xspf/ProjectOpus/ProjectOpusPlaylistExtensionWriter.h
+include/xspf/Xspf.h
+include/xspf/XspfChunkCallback.h
+include/xspf/XspfData.h
+include/xspf/XspfDateTime.h
+include/xspf/XspfDefines.h
+include/xspf/XspfExtension.h
+include/xspf/XspfExtensionReader.h
+include/xspf/XspfExtensionReaderFactory.h
+include/xspf/XspfExtensionWriter.h
+include/xspf/XspfIndentFormatter.h
+include/xspf/XspfProps.h
+include/xspf/XspfReader.h
+include/xspf/XspfReaderCallback.h
+include/xspf/XspfSeamlessFormatter.h
+include/xspf/XspfStack.h
+include/xspf/XspfToolbox.h
+include/xspf/XspfTrack.h
+include/xspf/XspfVersion.h
+include/xspf/XspfWriter.h
+include/xspf/XspfXmlFormatter.h
+include/xspf/xspf_c.h
+lib/libxspf.a
+lib/libxspf.la
+lib/libxspf.so
+lib/libxspf.so.4
+libdata/pkgconfig/xspf.pc
+@dirrm include/xspf/ProjectOpus
+@dirrm include/xspf
