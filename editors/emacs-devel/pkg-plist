@@ -231,6 +231,11 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/contact.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/copy.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/copy.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/custom/README
+%%DATADIR%%/%%EMACS_VER%%/etc/images/custom/down-pushed.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/custom/down.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/custom/right-pushed.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/custom/right.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/cut.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/cut.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/data-save.pbm
@@ -968,6 +973,7 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/button.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/button.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calc/README
+%%DATADIR%%/%%EMACS_VER%%/lisp/calc/README.prev
 %%DATADIR%%/%%EMACS_VER%%/lisp/calc/calc-aent.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calc/calc-aent.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calc/calc-alg.el.gz
@@ -2347,6 +2353,7 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/newcomment.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/novice.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/novice.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/nxml/TODO
 %%DATADIR%%/%%EMACS_VER%%/lisp/nxml/nxml-enc.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/nxml/nxml-enc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/nxml/nxml-glyph.el.gz
@@ -3215,6 +3222,7 @@ var/games/emacs/tetris-scores
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/gud
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/custom
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/gnus
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/e
