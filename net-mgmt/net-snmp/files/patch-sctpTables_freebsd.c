@@ -1,6 +1,10 @@
---- agent/mibgroup/sctp-mib/sctpTables_freebsd.c.orig	1970-01-01 09:00:00.000000000 +0900
-+++ agent/mibgroup/sctp-mib/sctpTables_freebsd.c	2009-01-23 23:52:37.000000000 +0900
-@@ -0,0 +1,245 @@
+--- agent/mibgroup/sctp-mib/sctpTables_freebsd.c.orig	2009-03-07 23:31:54.000000000 +0900
++++ agent/mibgroup/sctp-mib/sctpTables_freebsd.c	2009-03-07 23:55:04.000000000 +0900
+@@ -0,0 +1,249 @@
++#include <net-snmp/net-snmp-config.h>
++#include <net-snmp/net-snmp-includes.h>
++#include <net-snmp/agent/net-snmp-agent-includes.h>
++
 +#include "sctpAssocTable.h"
 +#include "sctpAssocLocalAddrTable.h"
 +#include "sctpAssocRemAddrTable.h"
