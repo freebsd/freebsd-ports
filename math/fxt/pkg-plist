@@ -71,6 +71,7 @@ include/fxt/bits/bitgraypermute.h
 include/fxt/bits/bithigh.h
 include/fxt/bits/bitlex.h
 include/fxt/bits/bitlow.h
+include/fxt/bits/bitlow-edge.h
 include/fxt/bits/bitmrotate.h
 include/fxt/bits/bitperiodic.h
 include/fxt/bits/bitrotate.h
@@ -313,6 +314,7 @@ include/fxt/haar/haari2i.h
 include/fxt/haar/haarnn.h
 include/fxt/haar/haarrevnn.h
 include/fxt/haar/mers-haar.h
+include/fxt/haar/prefix-transform.h
 include/fxt/haar/transposedhaarnn.h
 include/fxt/haar/transposedhaarrevnn.h
 include/fxt/jjassert.h
