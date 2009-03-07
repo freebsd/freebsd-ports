@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2008.11.01
+PORTVERSION=	2009.02.07
 CATEGORIES=	www
 MASTER_SITES=	http://www.arrakis.es/~rggi3/youtube-dl/
-DISTNAME=	youtube-dl-${PORTVERSION}
+DISTNAME=	youtube-dl
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
@@ -44,7 +44,7 @@ RUN_DEPENDS+=	flv2mpeg4:${PORTSDIR}/multimedia/flv2mpeg4
 .endif
 
 post-extract:
-	@${CP} ${DISTDIR}/youtube-dl-${PORTVERSION} ${WRKSRC}/youtube-dl
+	@${CP} ${DISTDIR}/youtube-dl ${WRKSRC}/youtube-dl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' ${WRKSRC}/youtube-dl

@@ -1,6 +1,6 @@
---- youtube-dl.orig	2008-10-12 16:49:43.000000000 +0400
-+++ youtube-dl	2008-10-12 16:54:22.000000000 +0400
-@@ -309,6 +309,20 @@
+--- youtube-dl.orig	2009-02-18 15:18:40.981138312 +0800
++++ youtube-dl	2009-02-18 15:20:30.904521591 +0800
+@@ -315,6 +315,20 @@
  						retcode = self.trouble('ERROR: postprocessing: %s' % str(err))
  						continue
  
@@ -21,7 +21,7 @@
  				break
  			if not suitable_found:
  				retcode = self.trouble('ERROR: no suitable InfoExtractor: %s' % url)
-@@ -859,6 +873,8 @@
+@@ -964,6 +978,8 @@
  				action='store_true', dest='useliteral', help='use literal title in file name', default=False)
  		parser.add_option('-n', '--netrc',
  				action='store_true', dest='usenetrc', help='use .netrc authentication data', default=False)
@@ -30,11 +30,11 @@
  		parser.add_option('-g', '--get-url',
  				action='store_true', dest='geturl', help='simulate, quiet but print URL', default=False)
  		parser.add_option('-e', '--get-title',
-@@ -915,6 +931,7 @@
+@@ -1037,6 +1053,7 @@
  				or u'%(id)s.%(ext)s'),
  			'ignoreerrors': opts.ignoreerrors,
  			'ratelimit': opts.ratelimit,
 +			'useavi': opts.useavi,
+ 			'nooverwrites': opts.nooverwrites,
  			})
- 		fd.add_info_extractor(youtube_pl_ie)
- 		fd.add_info_extractor(metacafe_ie)
+ 		fd.add_info_extractor(youtube_search_ie)
