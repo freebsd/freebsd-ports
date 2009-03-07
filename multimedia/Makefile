@@ -139,6 +139,7 @@
     SUBDIR += libtheora
     SUBDIR += libtuner
     SUBDIR += libxine
+    SUBDIR += libxspf
     SUBDIR += linux-divx4linux
     SUBDIR += linux-divx4linux4
     SUBDIR += linux-gspca-kmod
