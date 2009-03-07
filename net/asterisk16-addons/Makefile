@@ -5,17 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=	asterisk-addons
-PORTVERSION=	1.4.6
-PORTREVISION=	4
+PORTNAME=	asterisk16-addons
+PORTVERSION=	1.6.0.1
 CATEGORIES=	net
-MASTER_SITES=	http://ftp.digium.com/pub/asterisk/releases/
+MASTER_SITES=	http://downloads.digium.com/pub/asterisk/ \
+		http://downloads.digium.com/pub/asterisk/old-releases/ \
+		http://ftp.digium.com/pub/asterisk/ \
+		http://ftp.digium.com/pub/asterisk/old-releases/
+DISTNAME=	asterisk-addons-${DISTVERSION}
 
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	GPL modules for the Asterisk Open Source PBX
 
-BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
-RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
+BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk16
+RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk16
 
 OPTIONS=	SAMPLE_CONFIG	"Install sample configuration files" off
 
@@ -24,6 +27,14 @@ USE_AUTOTOOLS=	libtool:15
 USE_MYSQL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		OSVERSION=${OSVERSION} \
+		NOISY_BUILD=YES \
+		DOCSDIR=${DOCSDIR} \
+		ASTCFLAGS="${CFLAGS}"
+
+CONFLICTS=	asterisk*-1.2* asterisk*-1.4*
 
 .include <bsd.port.pre.mk>
 
@@ -33,11 +44,11 @@ PLIST_SUB+=	SAMPLE_CONFIG=""
 PLIST_SUB+=	SAMPLE_CONFIG="@comment "
 .endif
 
-pre-configure:
-	if ${GREP} -sq fixup_codecs ${LOCALBASE}/include/asterisk/channel.h; \
-	then \
-		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/codecnego.diff; \
-	fi
+#pre-configure:
+#	if ${GREP} -sq fixup_codecs ${LOCALBASE}/include/asterisk/channel.h; \
+#	then \
+#		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/codecnego.diff; \
+#	fi
 
 post-install:
 .if defined(WITH_SAMPLE_CONFIG)
