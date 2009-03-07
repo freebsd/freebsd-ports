@@ -41,7 +41,6 @@
     SUBDIR += convertall
     SUBDIR += coq
     SUBDIR += cvc3
-    SUBDIR += cxsc
     SUBDIR += dcdflib
     SUBDIR += diehard
     SUBDIR += dieharder
