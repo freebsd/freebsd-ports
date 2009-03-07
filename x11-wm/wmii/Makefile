@@ -7,7 +7,7 @@
 
 PORTNAME=	wmii
 DISTVERSION=	3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.suckless.org/download/
 
@@ -33,6 +33,8 @@ post-patch: .SILENT
 		${WRKSRC}/cmd/Makefile
 # Strip debug build options
 	${REINPLACE_CMD} -E 's| -g( -O0)?||' ${WRKSRC}/config.mk
+	${REINPLACE_CMD} -e 's|CFLAGS += -DIXPlint|& -DIXP_NEEDAPI=89|' \
+		${WRKSRC}/config.mk$
 # Make actual compile/link command appear in the build log
 	${REINPLACE_CMD} -e 's|^COMPILE=|& noisycc=yes | ; \
 		s|^LINK=|& noisycc=yes |' ${WRKSRC}/mk/hdr.mk
