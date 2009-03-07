@@ -8,4 +8,5 @@ lib/liburiparser.a
 lib/liburiparser.la
 lib/liburiparser.so
 lib/liburiparser.so.1
+libdata/pkgconfig/liburiparser.pc
 @dirrm include/uriparser
