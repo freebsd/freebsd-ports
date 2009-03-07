@@ -40,7 +40,7 @@ PLIST_SUB+=	NLS=""
 .if ${OSVERSION} < 800064
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 .else
-CONFIGURE_ENV+=	LIBUSB_LIBS="-L/usr/lib -lusb20" LIBUSB_CFLAGS="-I/usr/include"
+CONFIGURE_ENV+=	LIBUSB_LIBS="-L/usr/lib -lusb20" LIBUSB_CFLAGS="-I/usr/include/dev/usb"
 .endif
 
 post-patch:
