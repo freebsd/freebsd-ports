@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.19.2
+PORTVERSION=	7.19.4
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -19,6 +19,8 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+
+PATCH_STRIP=	-p1
 
 MAN1=		curl.1 curl-config.1
 MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 \
@@ -179,7 +181,7 @@ CONFIGURE_ARGS+=	--disable-proxy
 .endif
 
 .if defined(ADDFLAGS)
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 .endif
 
 DOCS=		BINDINGS BUGS CONTRIBUTE DISTRO-DILEMMA FAQ FEATURES \
@@ -195,6 +197,8 @@ post-install:
 	${INSTALL_DATA} ${DOCS:S@^@${WRKSRC}/docs/@} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/libcurl
 	(cd ${WRKSRC}/docs/libcurl && exec ${INSTALL_DATA} ABI *.html *.pdf *.m4 ${DOCSDIR}/libcurl/)
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/examples/README ${WRKSRC}/docs/examples/Makefile.example ${WRKSRC}/docs/examples/makefile* ${WRKSRC}/docs/examples/*.c ${WRKSRC}/docs/examples/*.cc ${EXAMPLESDIR}/
 .endif

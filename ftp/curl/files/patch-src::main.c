@@ -1,7 +1,8 @@
-diff -urN -x .svn ../../vendor/curl/src/main.c ./src/main.c
---- ../../vendor/curl/src/main.c	2008-10-29 00:12:02.000000000 +0200
-+++ ./src/main.c	2009-01-21 16:12:11.000000000 +0200
-@@ -4313,31 +4313,32 @@
+Use fstat() instead of stat() to avoid a race condition.
+
+--- a/src/main.c
++++ b/src/main.c
+@@ -4355,31 +4355,32 @@
               (-1 == create_dir_hierarchy(outfile, config->errors)))
              return CURLE_WRITE_ERROR;
  
@@ -52,38 +53,3 @@ diff -urN -x .svn ../../vendor/curl/src/main.c ./src/main.c
            }
            else {
              outs.stream = NULL; /* open when needed */
-@@ -5288,12 +5289,13 @@
- static const char *
- msdosify (const char *file_name)
- {
--  static char dos_name[PATH_MAX*2];
-+  static char dos_name[PATH_MAX + 16];
-   static const char illegal_chars_dos[] = ".+, ;=[]|<>\\\":?*";
-   static const char *illegal_chars_w95 = &illegal_chars_dos[8];
-   int idx, dot_idx;
-   const char *s = file_name;
-   char *d = dos_name;
-+  char *dlimit = dos_name + PATH_MAX;
-   const char *illegal_aliens = illegal_chars_dos;
-   size_t len = sizeof (illegal_chars_dos) - 1;
-   int lfn = 0;
-@@ -5314,7 +5316,7 @@
-     *d++ = *s++;
-   }
- 
--  for (idx = 0, dot_idx = -1; *s; s++, d++) {
-+  for (idx = 0, dot_idx = -1; *s && d < dlimit; s++, d++) {
-     if (memchr (illegal_aliens, *s, len)) {
-       /* Dots are special: DOS doesn't allow them as the leading character,
-          and a file name cannot have more than a single dot.  We leave the
-@@ -5371,6 +5373,10 @@
-       idx++;
-   }
- 
-+  if(d >= dlimit) {
-+    /* should some kind of error be raised? */
-+    d = dlimit - 1;
-+  }
-   *d = '\0';
-   return dos_name;
- }

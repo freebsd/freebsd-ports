@@ -1,14 +1,14 @@
-diff -urN -x .svn ../../vendor/curl/configure ./configure
---- ../../vendor/curl/configure	2008-11-02 00:09:51.000000000 +0200
-+++ ./configure	2009-01-21 16:12:08.000000000 +0200
-@@ -32237,8 +32237,10 @@
+Do not needlessly add /usr/include and /usr/lib to the compiler and
+linker flags if the base system OpenSSL is used.
+
+--- a/configure
++++ b/configure
+@@ -23435,7 +23435,7 @@
          PKGTEST="no"
      PREFIX_OPENSSL=$OPT_SSL
      LIB_OPENSSL="$PREFIX_OPENSSL/lib$libsuff"
-+    if ! [ "$PREFIX_OPENSSL" = "/usr" ]; then
-     LDFLAGS="$LDFLAGS -L$LIB_OPENSSL"
-     CPPFLAGS="$CPPFLAGS -I$PREFIX_OPENSSL/include/openssl -I$PREFIX_OPENSSL/include"
-+    fi
-     ;;
-   esac
- 
+-    if  "$PREFIX_OPENSSL" != "/usr"  ; then
++    if [ "$PREFIX_OPENSSL" != "/usr" ] ; then
+       LDFLAGS="$LDFLAGS -L$LIB_OPENSSL"
+       CPPFLAGS="$CPPFLAGS -I$PREFIX_OPENSSL/include"
+     fi

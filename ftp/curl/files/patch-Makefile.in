@@ -1,6 +1,7 @@
-diff -urN -x .svn ../../vendor/curl/Makefile.in ./Makefile.in
---- ../../vendor/curl/Makefile.in	2008-11-05 14:00:46.000000000 +0200
-+++ ./Makefile.in	2009-01-21 16:12:08.000000000 +0200
+Build and install the documentation as usual, no special handling.
+
+--- a/Makefile.in
++++ b/Makefile.in
 @@ -273,9 +273,9 @@
   libcurl.pc.in vc6curl.dsw
  
