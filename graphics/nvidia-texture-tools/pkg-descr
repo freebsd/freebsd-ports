@@ -1,0 +1,12 @@
+The NVIDIA Texture Tools is a collection of image processing and
+texture manipulation tools, designed to be integrated in game tools
+and asset conditioning pipelines.
+
+The primary features of the library are mipmap and normal map
+generation, format conversion and DXT compression.
+
+DXT compression is based on Simon Brown's squish library. The library
+also contains an alternative GPU-accelerated compressor that uses
+CUDA and is one order of magnitude faster.
+
+WWW: http://code.google.com/p/nvidia-texture-tools/
