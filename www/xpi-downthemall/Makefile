@@ -17,7 +17,7 @@ XPI_DISTNAME=	downthemall!
 WRKSRC=		${WRKDIR}/${DISTNAME:S/!/_/}
 XPI_ID=		{DDC359D1-844A-42a7-9AA1-88A850A938A8}
 XPI_NUM=	201
-USE_XPI=	www/firefox3:firefox3
+USE_XPI=	firefox3
 
 XPI_FILES=	components/migrationService.js \
 		components/debugService.xpt \
