@@ -35,6 +35,9 @@ RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
 .endif
 
 post-patch:
+.if ${ARCH} == "amd64"
+	${REINPLACE_CMD} -e '58s|=|= -fPIC|' ${WRKSRC}/configure
+.endif
 	${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|g' \
 	    ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|$${cur_rev}|${SVN_REVISION}|' \
