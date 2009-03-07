@@ -6,32 +6,39 @@
 #
 
 PORTNAME=	mosh
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.7
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	katsuji.ishikawa@gmail.com
 COMMENT=	A Fast R6RS Scheme interpreter
 
-BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
-
 PROJECTHOST=	mosh-scheme
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GCC=	4.2+
 
-# Compilation tends to eat extreme amounts of memory otherwise
-CFLAGS+=	"-O0"
-CXXFLAGS+=	"-O0"
-
-SCMS=		all-tests.scm repl.scm r6rs-examples/psyntax.scm
+SCMS=		all-tests.scm repl.scm tools/psyntax-r6rs/rev10_to_10/psyntax.scm
+SS1=		lib/srfi/%3A8.ss lib/srfi/%3A98.ss
+SS2=		lib/mosh/test.ss
 
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${DATADIR}/lib
+	${MKDIR} ${DATADIR}/lib/srfi
+	${MKDIR} ${DATADIR}/lib/mosh
+
 .for F in ${SCMS}
 	${INSTALL_DATA} ${WRKSRC}/${F} ${DATADIR}/
 .endfor
+
+.for F in ${SS1}
+	${INSTALL_DATA} ${WRKSRC}/${F} ${DATADIR}/lib/srfi/
+.endfor
+
+.for F in ${SS2}
+	${INSTALL_DATA} ${WRKSRC}/${F} ${DATADIR}/lib/mosh/
+.endfor
+
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 
 .include <bsd.port.mk>

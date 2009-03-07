@@ -2,4 +2,10 @@ bin/mosh
 %%DATADIR%%/all-tests.scm
 %%DATADIR%%/psyntax.scm
 %%DATADIR%%/repl.scm
+%%DATADIR%%/lib/srfi/%3A8.ss
+%%DATADIR%%/lib/srfi/%3A98.ss
+%%DATADIR%%/lib/mosh/test.ss
+@dirrmtry %%DATADIR%%/lib/srfi
+@dirrmtry %%DATADIR%%/lib/mosh
+@dirrmtry %%DATADIR%%/lib
 @dirrmtry %%DATADIR%%
