@@ -326,7 +326,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  installed from a port, but without the version number.
 #				  Use this if you need to replace "#!" lines in scripts.
 # PERL_VERSION	- Full version of perl5 (see below for current value).
-# PERL_VER		- Short version of perl5 (see below for current value).
 # PERL_LEVEL	- Perl version as an integer of the form MNNNPP, where
 #				  M is major version, N is minor version, and P is
 #				  the patch level. E.g., PERL_VERSION=5.6.1 would give
@@ -1424,7 +1423,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .if !defined(_PERL_REFACTORING_COMPLETE)
 
 PERL_VERSION?=	5.8.9
-PERL_VER?=	5.8.9
 
 .if !defined(PERL_LEVEL) && defined(PERL_VERSION)
 perl_major=		${PERL_VERSION:C|^([1-9]+).*|\1|}
@@ -1450,7 +1448,7 @@ PERL_PORT?=	perl5.8
 PERL_PORT?=	perl5.6
 .endif
 
-SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}
+SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VERSION}
 SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 
 PERL5=		${LOCALBASE}/bin/perl${PERL_VERSION}
@@ -1490,13 +1488,13 @@ PERL=		${LOCALBASE}/bin/perl
 .endif
 .endif
 
-#.if defined(USE_PERL5) || defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) || defined(PERL_CONFIGURE) || defined(PERL_MODBUILD)
+.if defined(USE_PERL5) || defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) || defined(PERL_CONFIGURE) || defined(PERL_MODBUILD)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.perl.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.perl.mk"
 .else
 .include "${PORTSDIR}/Mk/bsd.perl.mk"
 .endif
-#.endif
+.endif
 
 .if defined(USE_PHP)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.php.mk)
@@ -2044,7 +2042,7 @@ IGNORE=	uses unknown USE_BISON construct
 
 .if !defined(_PERL_REFACTORING_COMPLETE)
 PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
-				PERL_VER=${PERL_VER} \
+				PERL_VER=${PERL_VERSION} \
 				PERL_ARCH=${PERL_ARCH} \
 				SITE_PERL=${SITE_PERL_REL}
 .endif  # !defined(_PERL_REFACTORING_COMPLETE)
@@ -2131,13 +2129,13 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .endif
 .endif
 
-#.if defined(USE_PERL5) || defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) || defined(PERL_CONFIGURE) || defined(PERL_MODBUILD)
+.if defined(USE_PERL5) || defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) || defined(PERL_CONFIGURE) || defined(PERL_MODBUILD)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.perl.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.perl.mk"
 .else
 .include "${PORTSDIR}/Mk/bsd.perl.mk"
 .endif
-#.endif
+.endif
 
 .if defined(USE_PHP)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.php.mk)
