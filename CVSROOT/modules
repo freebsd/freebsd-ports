@@ -1924,7 +1924,6 @@ cwtext                          ports/textproc/cwtext
 cx88                            ports/multimedia/cx88
 cxmon                           ports/devel/cxmon
 cxref                           ports/devel/cxref
-cxsc                            ports/math/cxsc
 cxxtest                         ports/devel/cxxtest
 cy-aspell                       ports/textproc/cy-aspell
 cyberbit-ttfonts                ports/x11-fonts/cyberbit-ttfonts
