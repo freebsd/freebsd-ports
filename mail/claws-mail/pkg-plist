@@ -113,6 +113,7 @@ include/claws-mail/gtk/pluginwindow.h
 include/claws-mail/gtk/prefswindow.h
 include/claws-mail/gtk/progressdialog.h
 include/claws-mail/gtk/quicksearch.h
+include/claws-mail/gtk/spell_entry.h
 include/claws-mail/gtk/sslcertwindow.h
 include/claws-mail/headerview.h
 include/claws-mail/html.h
