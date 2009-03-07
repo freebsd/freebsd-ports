@@ -15,8 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_102
 MAINTAINER=	mauricio@arareko.net
 COMMENT=	A collection of Perl modules for bioinformatics (developer release)
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/${PERL_VER}/Text/Wrap.pm:${PORTSDIR}/lang/perl5.8 \
-		${LOCALBASE}/lib/perl5/${PERL_VER}/${PERL_ARCH}/DB_File.pm:${PORTSDIR}/lang/perl5.8 \
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/${PERL_VERSION}/Text/Wrap.pm:${PORTSDIR}/lang/${PERL_PORT} \
+		${LOCALBASE}/lib/perl5/${PERL_VERSION}/${PERL_ARCH}/DB_File.pm:${PORTSDIR}/lang/${PERL_PORT} \
 		${SITE_PERL}/Bio/ASN1/EntrezGene.pm:${PORTSDIR}/biology/p5-Bio-ASN1-EntrezGene \
 		${SITE_PERL}/Class/AutoClass.pm:${PORTSDIR}/devel/p5-Class-AutoClass \
 		${SITE_PERL}/Data/Stag/ITextWriter.pm:${PORTSDIR}/devel/p5-Data-Stag \
