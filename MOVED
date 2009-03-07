@@ -3667,7 +3667,6 @@ databases/firebird2-server|databases/firebird20-server|2008-11-24|Renamed
 emulators/linux_base-gentoo-stage2||2008-11-24|Removed
 emulators/linux_dist-gentoo-stage2||2008-11-24|Removed
 mail/libspf-alt||2008-12-03|Removed
-devel/php5-pcre|lang/php5|2008-12-07|Integrated in base php
 portuguese/aspell|portuguese/aspell-pt_PT|2008-12-07|Repocopy finished for proper package naming
 x11-wm/flwm||2008-12-07|Has expired: Project is dead, and uses obsolete version of fltk
 x11-wm/kahakai||2008-12-07|Has expired: "Development ceased"
