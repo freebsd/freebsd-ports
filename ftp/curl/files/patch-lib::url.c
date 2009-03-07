@@ -1,6 +1,7 @@
-diff -urN -x .svn ../../vendor/curl/lib/url.c ./lib/url.c
---- ../../vendor/curl/lib/url.c	2008-11-03 18:24:56.000000000 +0200
-+++ ./lib/url.c	2009-01-21 16:12:49.000000000 +0200
+Different handling of signals and threads.
+
+--- a/lib/url.c
++++ b/lib/url.c
 @@ -719,6 +719,10 @@
      data->set.httpauth = CURLAUTH_BASIC;  /* defaults to basic */
      data->set.proxyauth = CURLAUTH_BASIC; /* defaults to basic */

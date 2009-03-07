@@ -1,6 +1,7 @@
-diff -urN -x .svn ../../vendor/curl/tests/libtest/lib505.c ./tests/libtest/lib505.c
---- ../../vendor/curl/tests/libtest/lib505.c	2008-09-22 00:15:55.000000000 +0300
-+++ ./tests/libtest/lib505.c	2009-01-21 16:12:24.000000000 +0200
+Use fstat() instead of stat() to avoid a race condition.
+
+--- a/tests/libtest/lib505.c
++++ b/tests/libtest/lib505.c
 @@ -56,12 +56,24 @@
      return -1;
    }
