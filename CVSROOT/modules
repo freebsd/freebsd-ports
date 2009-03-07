@@ -17990,7 +17990,6 @@ prado                           ports/www/prado
 prayer                          ports/mail/prayer
 prboom                          ports/games/prboom
 prc-tools                       ports/palm/prc-tools
-prcs                            ports/devel/prcs
 predict                         ports/comms/predict
 preferencepanes                 ports/deskutils/preferencepanes
 preferences.app                 ports/deskutils/preferences.app
@@ -21689,7 +21688,6 @@ tv-fonts                        ports/x11-fonts/tv-fonts
 tv_grab_au                      ports/multimedia/tv_grab_au
 tvark                           ports/net/tvark
 tvbrowser                       ports/misc/tvbrowser
-tvision                         ports/devel/tvision
 tvmet                           ports/math/tvmet
 tvp                             ports/games/tvp
 tvrss                           ports/net-p2p/tvrss

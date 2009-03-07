@@ -2162,7 +2162,6 @@
     SUBDIR += powerpc-rtems-gdb
     SUBDIR += powerpc-rtems-objc
     SUBDIR += ppl
-    SUBDIR += prcs
     SUBDIR += premake
     SUBDIR += preps-gui
     SUBDIR += prepstools
@@ -2686,7 +2685,6 @@
     SUBDIR += tpg
     SUBDIR += trio
     SUBDIR += truc
-    SUBDIR += tvision
     SUBDIR += u-boot
     SUBDIR += uclmmbase
     SUBDIR += ucpp
