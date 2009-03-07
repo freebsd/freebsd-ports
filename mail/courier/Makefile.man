@@ -49,6 +49,7 @@ MAN8=	\
 	mkimapdcert.8 \
 	mkpop3dcert.8 \
 	pop3d.8 \
+	pop3d-ssl.8 \
 	submit.8
 
 MLINKS=	dot-forward.1 dotforward.1 \

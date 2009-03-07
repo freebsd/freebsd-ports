@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier
-PORTVERSION=	0.60.0
+PORTVERSION=	0.61.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -54,7 +54,6 @@ MAILUID=	465
 MAILGID=	465
 ETCDIR=		${PREFIX}/etc
 SYSCONFDIR=	${ETCDIR}/courier
-USERDB?=	${ETCDIR}/userdb
 LIBEXECDIR=	${PREFIX}/libexec
 LOCALSTATEDIR=	/var/spool/courier
 CACHEDIR=	/var/spool/webmail
@@ -79,7 +78,8 @@ CONFIGURE_ENV=	CPPFLAGS='${CPPFLAGS}' \
 		LDFLAGS='${LDFLAGS}'
 MAKE_ENV:=	${CONFIGURE_ENV}
 
-CONFIGURE_ARGS=	--disable-root-check --with-db=db \
+CONFIGURE_ARGS=	--disable-root-check \
+		--with-db=db \
 		--enable-syslog=1 --enable-use-flock \
 		--program-transform-name=s,^,, \
 		--enable-utf7-folder-encoding \
@@ -90,7 +90,6 @@ CONFIGURE_ARGS=	--disable-root-check --with-db=db \
 		--with-mailgid=${MAILGID} \
 		--with-etcdir=${ETCDIR} \
 		--sysconfdir=${SYSCONFDIR} \
-		--with-userdb=${USERDB} \
 		--datadir=${DATADIR} \
 		--libexecdir=${LIBEXECDIR} \
 		--localstatedir=${LOCALSTATEDIR} \
@@ -170,6 +169,27 @@ OPTIONS+=off
 
 OPTIONS+=IPV6 "IPv6 support"
 .if defined(WITH_IPV6)
+OPTIONS+=on
+.else
+OPTIONS+=off
+.endif
+
+OPTIONS+=MAILDROPFLAGS "maildrop set flags patch"
+.if defined(WITH_MAILDROPFLAGS)
+OPTIONS+=on
+.else
+OPTIONS+=off
+.endif
+
+OPTIONS+=WEBMAILXFACE "experimental webmail X-Face patch"
+.if defined(WITH_WEBMAILXFACE)
+OPTIONS+=on
+.else
+OPTIONS+=off
+.endif
+
+OPTIONS+=WEBMAILRSENT "enable Autorename Sent folder"
+.if !defined(WITHOUT_WEBMAILRSENT)
 OPTIONS+=on
 .else
 OPTIONS+=off
@@ -256,6 +276,20 @@ PLIST_SUB+=	WITHUUCP="@comment "
 CONFIGURE_ARGS+=--with-ipv6
 .else
 CONFIGURE_ARGS+=--without-ipv6
+.endif
+
+.if defined(WITH_MAILDROPFLAGS) || !defined(WITHOUT_MAILDROPFLAGS)
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-maildrop__maildir.C
+.endif
+
+.if defined(WITH_WEBMAILXFACE) || !defined(WITHOUT_WEBMAILXFACE)
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-webmail__msg2html.c
+.endif
+
+.if defined(WITH_WEBMAILRSENT) || !defined(WITHOUT_WEBMAILRSENT)
+CONFIGURE_ARGS+=--enable-autorenamesent
+.else
+CONFIGURE_ARGS+=--disable-autorenamesent
 .endif
 
 pre-everything::
