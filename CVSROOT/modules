@@ -4436,6 +4436,7 @@ gnuplot                         ports/math/gnuplot
 gnuplot+                        ports/math/gnuplot+
 gnupod                          ports/audio/gnupod
 gnuradio                        ports/comms/gnuradio
+gnurobbo                        ports/games/gnurobbo
 gnurobots                       ports/games/gnurobots
 gnuserv                         ports/editors/gnuserv
 gnusget                         ports/ftp/gnusget
@@ -11069,7 +11070,6 @@ p5-Getopt-Euclid                ports/devel/p5-Getopt-Euclid
 p5-Getopt-Long                  ports/devel/p5-Getopt-Long
 p5-Getopt-Long-Descriptive      ports/devel/p5-Getopt-Long-Descriptive
 p5-Getopt-Lucid                 ports/textproc/p5-Getopt-Lucid
-p5-Getopt-Mixed                 ports/devel/p5-Getopt-Mixed
 p5-Getopt-Popt                  ports/devel/p5-Getopt-Popt
 p5-Git-PurePerl                 ports/devel/p5-Git-PurePerl
 p5-Glade2                       ports/x11-toolkits/p5-Glade2
@@ -11132,6 +11132,7 @@ p5-HTML-Encoding                ports/www/p5-HTML-Encoding
 p5-HTML-Entities-ImodePictogram  ports/textproc/p5-HTML-Entities-ImodePictogram
 p5-HTML-Entities-Numbered       ports/textproc/p5-HTML-Entities-Numbered
 p5-HTML-EscapeEvil              ports/textproc/p5-HTML-EscapeEvil
+p5-HTML-ExtractContent          ports/www/p5-HTML-ExtractContent
 p5-HTML-FillInForm              ports/www/p5-HTML-FillInForm
 p5-HTML-FillInForm-ForceUTF8    ports/www/p5-HTML-FillInForm-ForceUTF8
 p5-HTML-FormFu                  ports/www/p5-HTML-FormFu
@@ -14379,7 +14380,6 @@ p5-getopt-euclid                ports/devel/p5-Getopt-Euclid
 p5-getopt-long                  ports/devel/p5-Getopt-Long
 p5-getopt-long-descriptive      ports/devel/p5-Getopt-Long-Descriptive
 p5-getopt-lucid                 ports/textproc/p5-Getopt-Lucid
-p5-getopt-mixed                 ports/devel/p5-Getopt-Mixed
 p5-getopt-popt                  ports/devel/p5-Getopt-Popt
 p5-gis-distance                 ports/math/p5-GIS-Distance
 p5-git-pureperl                 ports/devel/p5-Git-PurePerl
@@ -14464,6 +14464,7 @@ p5-html-encoding                ports/www/p5-HTML-Encoding
 p5-html-entities-imodepictogram  ports/textproc/p5-HTML-Entities-ImodePictogram
 p5-html-entities-numbered       ports/textproc/p5-HTML-Entities-Numbered
 p5-html-escapeevil              ports/textproc/p5-HTML-EscapeEvil
+p5-html-extractcontent          ports/www/p5-HTML-ExtractContent
 p5-html-fillinform              ports/www/p5-HTML-FillInForm
 p5-html-fillinform-forceutf8    ports/www/p5-HTML-FillInForm-ForceUTF8
 p5-html-format                  ports/textproc/p5-HTML-Format
@@ -17421,6 +17422,7 @@ php5-oci8                       ports/databases/php5-oci8
 php5-odbc                       ports/databases/php5-odbc
 php5-openssl                    ports/security/php5-openssl
 php5-pcntl                      ports/devel/php5-pcntl
+php5-pcre                       ports/devel/php5-pcre
 php5-pdo                        ports/databases/php5-pdo
 php5-pdo_dblib                  ports/databases/php5-pdo_dblib
 php5-pdo_firebird               ports/databases/php5-pdo_firebird
@@ -20152,7 +20154,6 @@ scummvm                         ports/games/scummvm
 scummvm-tools                   ports/games/scummvm-tools
 scv                             ports/cad/scv
 scwm-icons                      ports/graphics/scwm-icons
-scx                             ports/x11-toolkits/scx
 scythia                         ports/ftp/scythia
 sdb                             ports/games/sdb
 sdcc                            ports/lang/sdcc
