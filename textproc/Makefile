@@ -273,7 +273,6 @@
     SUBDIR += lacheck
     SUBDIR += latex-service
     SUBDIR += latex2html
-    SUBDIR += latte
     SUBDIR += lemmatizer
     SUBDIR += lemmatizer2
     SUBDIR += libcroco
@@ -353,7 +352,6 @@
     SUBDIR += mxml
     SUBDIR += nb-aspell
     SUBDIR += nds-aspell
-    SUBDIR += nicetext
     SUBDIR += nl-aspell
     SUBDIR += nl-ispell
     SUBDIR += nltk
