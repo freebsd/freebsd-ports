@@ -44,10 +44,6 @@ post-patch:
 	    ${RM} ${WRKSRC}/CodeLite/readtags.h; \
 	 fi; \
 	)
-.if ${ARCH} == "amd64"
-	${REINPLACE_CMD} -e 's|-Wall|-fPIC -Wall|g' \
-		${WRKSRC}/configure ${WRKSRC}/makefile.base
-.endif
 
 do-install:
 	${MKDIR} ${DATADIR}
