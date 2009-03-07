@@ -1,0 +1,25 @@
+--- Makefile.orig	2009-03-07 18:16:51.000000000 +0100
++++ Makefile	2009-03-07 18:19:50.000000000 +0100
+@@ -7,18 +7,18 @@
+ 
+ 
+ # Set the install directory for the executable
+-INSTALLDIR = /usr/local/bin
++INSTALLDIR = %%PREFIX%%/bin
+ 
+ 
+ # Set the compilation flags and such
+-CXX = g++
++CXX = %%CXX%%
+ CDEFS = -D_REENTRANT
+ CPPFLAGS = -ggdb -Wall
+ #CPPFLAGS = -ggdb -Wall -O2
+-INCLUDES = -I/usr/X11R6/include/X11 -I/usr/X11R6/include/X11/extensions -I./src
++INCLUDES = -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/X11 -I%%LOCALBASE%%/include/X11/extensions -I./src
+ COMPILE = $(CXX) $(CDEFS) $(INCLUDES) $(CPPFLAGS)
+ LINK = $(CXX) $(LDFLAGS) $(LDLIBS)
+-LDLIBS = -L/usr/X11R6/lib  -lX11 -lXext
++LDLIBS = -L%%LOCALBASE%%/lib  -lX11 -lXext
+ 
+ 
+ 
