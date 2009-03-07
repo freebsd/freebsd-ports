@@ -19152,7 +19152,6 @@ quat-gui                        ports/graphics/quat-gui
 qucs                            ports/cad/qucs
 qudos                           ports/games/qudos
 queequeg                        ports/textproc/queequeg
-quelcom                         ports/audio/quelcom
 quesa                           ports/graphics/quesa
 queso                           ports/net/queso
 quetoo                          ports/games/quetoo

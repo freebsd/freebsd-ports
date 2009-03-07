@@ -581,7 +581,6 @@
     SUBDIR += qjackctl
     SUBDIR += qmpdclient
     SUBDIR += qsynth
-    SUBDIR += quelcom
     SUBDIR += raop_play
     SUBDIR += raproxy
     SUBDIR += raul
