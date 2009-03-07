@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	check_ports
-PORTVERSION=	0.5.6
+PORTVERSION=	0.6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://code.adminlife.net/check_ports/files/
 PKGNAMEPREFIX=	nagios-
@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	nagios-
 MAINTAINER=	freebsd@troback.com
 COMMENT=	Nagios Plugin to monitor your FreeBSD Ports
 
-RUN_DEPENDS=	portaudit:${PORTSDIR}/ports-mgmt/portaudit \
-		portversion:${PORTSDIR}/ports-mgmt/portupgrade
+RUN_DEPENDS=	portaudit:${PORTSDIR}/ports-mgmt/portaudit
 
 NO_BUILD=	yes
 
