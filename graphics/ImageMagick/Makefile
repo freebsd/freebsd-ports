@@ -7,6 +7,7 @@
 
 PORTNAME=	ImageMagick
 DISTVERSION=	6.4.9-8
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
@@ -79,6 +80,7 @@ IGNORE=		support for the PDF format requires ghostscript 8 and higher
 .endif
 
 .if defined(WITH_IMAGEMAGICK_HDRI)
+BROKEN=			hdri support broken, disable in options
 CONFIGURE_ARGS+=	--enable-hdri
 .else
 CONFIGURE_ARGS+=	--disable-hdri
