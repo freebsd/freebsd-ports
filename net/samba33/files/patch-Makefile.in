@@ -1,0 +1,24 @@
+--- Makefile.in.orig	2009-02-24 07:38:16.000000000 +0000
++++ Makefile.in	2009-02-25 03:21:29.000000000 +0000
+@@ -124,7 +124,7 @@
+ # These can be overridden by command line switches (see smbd(8))
+ # or in smb.conf (see smb.conf(5))
+ LOGFILEBASE = @logfilebase@
+-CONFIGFILE = $(CONFIGDIR)/smb.conf
++CONFIGFILE = $(CONFIGDIR)/%%SAMBA_CONFIG%%
+ LMHOSTSFILE = $(CONFIGDIR)/lmhosts
+ 
+ # This is where smbpasswd et al go
+@@ -152,10 +152,10 @@
+ # the directory where pid files go
+ PIDDIR = @piddir@
+ 
+-FLAGS1 = $(CFLAGS) @FLAGS1@ @SAMBA_CPPFLAGS@ $(CPPFLAGS)
++FLAGS1 = @FLAGS1@ @SAMBA_CPPFLAGS@ $(CPPFLAGS) $(CFLAGS)
+ FLAGS2 =
+ FLAGS3 =
+-FLAGS4 = -I$(CTDBDIR)/include
++FLAGS4 =
+ FLAGS5 = $(FLAGS1) $(FLAGS2) $(FLAGS3) $(FLAGS4)
+ FLAGS  = $(ISA) $(FLAGS5) -I$(srcdir)/lib -D_SAMBA_BUILD_=3
+ 

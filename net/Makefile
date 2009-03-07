@@ -843,6 +843,7 @@
     SUBDIR += samba-smbclient
     SUBDIR += samba3
     SUBDIR += samba32
+    SUBDIR += samba33
     SUBDIR += samba4wins
     SUBDIR += sambasentinel
     SUBDIR += sbd
