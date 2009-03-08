@@ -2503,6 +2503,7 @@
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-columnize
     SUBDIR += rubygem-daemons
+    SUBDIR += rubygem-ditz
     SUBDIR += rubygem-eventmachine
     SUBDIR += rubygem-extlib
     SUBDIR += rubygem-facets
