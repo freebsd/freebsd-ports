@@ -71,6 +71,7 @@ share/locale/ja/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ka/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/kn/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ko/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/la/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/li/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/lt/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/lv/LC_MESSAGES/libgnomeprintui-2.2.mo
@@ -134,6 +135,8 @@ share/locale/zh_TW/LC_MESSAGES/libgnomeprintui-2.2.mo
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/la/LC_MESSAGES
+@dirrmtry share/locale/la
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
