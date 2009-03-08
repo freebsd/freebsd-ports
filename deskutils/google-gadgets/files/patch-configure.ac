@@ -3,9 +3,9 @@ $FreeBSD$
 
 --- configure.ac.orig
 +++ configure.ac
-@@ -371,6 +371,13 @@
-     GGL_PLATFORM_SHORT=\"linux\"
-     GGL_PLATFORM=\"linux\"
+@@ -422,6 +422,13 @@
+     GGL_PLATFORM_SHORT="\"linux\""
+     GGL_PLATFORM="\"linux\""
      ;;
 +  *freebsd* )
 +    ggl_host_type=freebsd
@@ -17,7 +17,7 @@ $FreeBSD$
    *solaris* )
      ggl_host_type=solaris
      PREDEFINED_MACROS="$PREDEFINED_MACROS -DGGL_HOST_SOLARIS=1"
-@@ -389,6 +396,7 @@
+@@ -442,6 +449,7 @@
  AM_CONDITIONAL([GGL_HOST_MACOSX], [test x$ggl_host_type = xmacosx])
  AM_CONDITIONAL([GGL_HOST_LINUX], [test x$ggl_host_type = xlinux])
  AM_CONDITIONAL([GGL_HOST_SOLARIS], [test x$ggl_host_type = xsolaris])
@@ -25,7 +25,7 @@ $FreeBSD$
  
  AC_SUBST(PREDEFINED_MACROS)
  AC_SUBST(DEFAULT_COMPILE_FLAGS)
-@@ -489,7 +497,7 @@
+@@ -558,7 +566,7 @@
  has_qtnetwork=no
  has_qtwebkit=no
  has_qtscript=no
@@ -34,3 +34,32 @@ $FreeBSD$
    PKG_CHECK_MODULES(QT4, [QtGui >= 4.3 QtCore >= 4.3 QtNetwork >= 4.3],
  		    [has_qt4=yes
  		     MOC=`$PKG_CONFIG --variable=moc_location QtCore`],
+@@ -749,12 +757,12 @@
+                         [has_gtkmozembed=xulrunner-gtkmozembed],
+         [has_gtkmozembed=no])
+       ;;
+-    firefox2)
++    firefox2-gtkmozembed)
+       PKG_CHECK_MODULES(GTKMOZEMBED, [firefox2-gtkmozembed],
+                         [has_gtkmozembed=firefox2-gtkmozembed],
+         [has_gtkmozembed=no])
+       ;;
+-    firefox)
++    firefox-gtkmozembed)
+       PKG_CHECK_MODULES(GTKMOZEMBED, [firefox-gtkmozembed],
+                         [has_gtkmozembed=firefox-gtkmozembed],
+         [has_gtkmozembed=no])
+@@ -783,11 +791,11 @@
+     PKG_CHECK_MODULES(LIBMOZJS, [xulrunner-js],
+ 		      [has_libmozjs=xulrunner-js],
+ 		      [has_gtkmozembed=no]) ;;
+-  firefox2)
++  firefox2-gtkmozembed)
+     PKG_CHECK_MODULES(LIBMOZJS, [firefox2-js],
+ 		      [has_libmozjs=firefox2-js],
+ 		      [has_gtkmozembed=no]) ;;
+-  firefox)
++  firefox-gtkmozembed)
+     PKG_CHECK_MODULES(LIBMOZJS, [firefox-js],
+ 		      [has_libmozjs=firefox-js],
+ 		      [has_gtkmozembed=no]) ;;

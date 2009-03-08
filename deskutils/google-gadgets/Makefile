@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	google-gadgets
-PORTVERSION=	0.10.4
-PORTREVISION=	1
+PORTVERSION=	0.10.5
 CATEGORIES=	deskutils
 MASTER_SITES=	http://google-gadgets-for-linux.googlecode.com/files/
 DISTNAME=	${PORTNAME}-for-linux-${PORTVERSION}
@@ -64,7 +63,7 @@ CONFIGURE_ARGS+=	--disable-gtk-host --disable-libggadget-gtk --disable-gtkmoz-br
 .elif defined(WITH_GTK)
 USE_GNOME=	gtk20
 PLIST_SUB+=	GTK=""
-CONFIGURE_ARGS+=	--enable-gtk-host
+CONFIGURE_ARGS+=	--enable-gtk-host --with-gtkmozembed=firefox-gtkmozembed
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/libstartup-notification-1.0.pc:${PORTSDIR}/x11/startup-notification
 LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 .endif
