@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pgpool-II
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1843/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/2108/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A connection pool server for PostgreSQL
@@ -16,6 +16,7 @@ COMMENT=	A connection pool server for PostgreSQL
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_PGSQL=	yes
+USE_LDCONFIG=	yes
 
 CONFLICTS=	pgpool-3.*
 USE_RC_SUBR=	pgpool
@@ -40,7 +41,7 @@ pre-install:
 	${MKDIR} ${DATADIR} ${EXAMPLESDIR}
 
 post-install:
-	@cd ${WRKSRC}/sql/pgpool-recovery && ${GMAKE} install
+	@cd ${WRKSRC}/sql/pgpool-recovery && ${GMAKE} ${INSTALL_TARGET}
 	${INSTALL_DATA} ${WRKSRC}/sample/dist_def_pgbench.sql ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/replicate_def_pgbench.sql ${DATADIR}
 .for f in pgpool_recovery pgpool_recovery_pitr pgpool_remote_start
