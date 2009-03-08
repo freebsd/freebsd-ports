@@ -258,10 +258,10 @@ share/pixmaps/google-gadgets.png
 @dirrm lib/google-gadgets/include/ggadget
 @dirrm lib/google-gadgets/include
 @dirrm lib/google-gadgets
-%%QT%%@dirrm include/google-gadgets/ggadget/qt
-@dirrm include/google-gadgets/ggadget/js
-@dirrm include/google-gadgets/ggadget/npapi
 @dirrm include/google-gadgets/ggadget/xdg
+%%QT%%@dirrm include/google-gadgets/ggadget/qt
+@dirrm include/google-gadgets/ggadget/npapi
+@dirrm include/google-gadgets/ggadget/js
 %%GTK%%@dirrm include/google-gadgets/ggadget/gtk
 @dirrm include/google-gadgets/ggadget/dbus
 @dirrm include/google-gadgets/ggadget
