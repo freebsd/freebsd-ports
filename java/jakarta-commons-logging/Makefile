@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	commons-logging
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.1.1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_BINARIES}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
 PKGNAMEPREFIX=	jakarta-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Generic logging wrapper library
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.3+
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
@@ -34,7 +36,7 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
-	@cd ${WRKSRC}/docs \
+	@cd ${WRKSRC}/site \
 	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
 	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
