@@ -1,0 +1,12 @@
+bin/torsocks
+bin/usewithtor
+etc/torsocks.conf.sample
+lib/libtorsocks.a
+lib/libtorsocks.la
+lib/libtorsocks.so
+lib/libtorsocks.so.1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tsocks.conf.complex.example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tsocks.conf.simple.example
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

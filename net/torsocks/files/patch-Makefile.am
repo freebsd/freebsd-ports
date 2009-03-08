@@ -1,0 +1,21 @@
+--- src/Makefile.am.orig	2009-02-07 11:48:12.000000000 +0100
++++ src/Makefile.am	2009-02-18 17:29:26.000000000 +0100
+@@ -1,7 +1,7 @@
+ # Makefile used by configure to create real Makefile
+ 
+-LIBS = -ldl -lc -lresolv
+-libdir = @prefix@/lib/torsocks
++LIBS = -lc
++libdir = @prefix@/lib
+ 
+ # Install helper programs
+ #bin_PROGRAMS = validateconf inspectsocks saveme
+@@ -16,7 +16,7 @@
+ 
+ # Install configuration file
+ usewithtorconfdir = $(CONFDIR)/
+-usewithtorconf_DATA = torsocks.conf
++usewithtorconf_DATA = torsocks.conf.sample
+ 
+ # Install invocation scripts
+ bin_SCRIPTS = torsocks usewithtor

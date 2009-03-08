@@ -1,0 +1,37 @@
+--- src/torsocks.in.orig	2008-12-08 23:43:55.000000000 +0200
++++ src/torsocks.in	2009-03-01 22:31:16.263795616 +0200
+@@ -72,16 +72,16 @@
+   on)
+     if [ -z "$LD_PRELOAD" ]
+       then
+-        export LD_PRELOAD="@prefix@/lib/torsocks/libtorsocks.so"
++        export LD_PRELOAD="@prefix@/lib/libtorsocks.so"
+       else
+-        echo $LD_PRELOAD | grep -q "@prefix@/lib/torsocks/libtorsocks\.so" || \
+-        export LD_PRELOAD="@prefix@/lib/torsocks/libtorsocks.so $LD_PRELOAD"
++        echo $LD_PRELOAD | grep -q "@prefix@/lib/libtorsocks\.so" || \
++        export LD_PRELOAD="@prefix@/lib/libtorsocks.so $LD_PRELOAD"
+     fi
+   ;;
+   off)
+     #replace '/' with '\/' in @prefix@
+     escprefix=`echo '@prefix@' |sed 's/\\//\\\\\//g'`
+-    export LD_PRELOAD=`echo -n $LD_PRELOAD | sed "s/$escprefix\/lib\/torsocks\/libtorsocks.so \?//"`
++    export LD_PRELOAD=`echo -n $LD_PRELOAD | sed "s/$escprefix\/lib\/libtorsocks.so \?//"`
+     if [ -z "$LD_PRELOAD" ]
+       then
+         unset LD_PRELOAD
+@@ -96,10 +96,10 @@
+   *)
+     if [ -z "$LD_PRELOAD" ]
+     then
+-      export LD_PRELOAD="@prefix@/lib/torsocks/libtorsocks.so"
++      export LD_PRELOAD="@prefix@/lib/libtorsocks.so"
+     else
+-      echo $LD_PRELOAD | grep -q "@prefix@/lib/torsocks/libtorsocks\.so" || \
+-      export LD_PRELOAD="@prefix@/lib/torsocks/libtorsocks.so $LD_PRELOAD"
++      echo $LD_PRELOAD | grep -q "@prefix@/lib/libtorsocks\.so" || \
++      export LD_PRELOAD="@prefix@/lib/libtorsocks.so $LD_PRELOAD"
+     fi
+ 
+     if [ $# = 0 ]
