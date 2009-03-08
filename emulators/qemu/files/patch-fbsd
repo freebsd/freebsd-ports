@@ -1,6 +1,6 @@
 Index: qemu/Makefile
-@@ -25,7 +25,10 @@
- DOCS=
+@@ -38,7 +38,10 @@
+ LIBS+=-lwinmm -lws2_32 -liphlpapi
  endif
  
 -all: $(TOOLS) $(DOCS) recurse-all
@@ -9,27 +9,47 @@ Index: qemu/Makefile
 +bsd/libmath.a:
 +	( cd bsd ; $(BSD_MAKE) CC=$(CC) )
  
- subdir-%: dyngen$(EXESUF)
- 	$(MAKE) -C $(subst subdir-,,$@) all
-@@ -40,6 +43,7 @@
+ SUBDIR_RULES=$(patsubst %,subdir-%, $(TARGET_DIRS))
+ 
+@@ -195,6 +198,7 @@
  
  clean:
  # avoid old build problems by removing potentially incorrect old files
 +	( cd bsd ; $(BSD_MAKE) clean )
- 	rm -f config.mak config.h op-i386.h opc-i386.h gen-op-i386.h op-arm.h opc-arm.h gen-op-arm.h 
- 	rm -f *.o *.a $(TOOLS) dyngen$(EXESUF) TAGS *.pod *~ */*~
- 	$(MAKE) -C tests clean
+ 	rm -f config.mak config.h op-i386.h opc-i386.h gen-op-i386.h op-arm.h opc-arm.h gen-op-arm.h
+ 	rm -f *.o *.d *.a $(TOOLS) TAGS cscope.* *.pod *~ */*~
+ 	rm -f slirp/*.o slirp/*.d audio/*.o audio/*.d
 Index: qemu/Makefile.target
-@@ -571,7 +571,7 @@
- SDL_LIBS := $(filter-out -mwindows, $(SDL_LIBS)) -mconsole
+@@ -417,7 +417,7 @@
+ # WARNING: this LDFLAGS is _very_ tricky : qemu is an ELF shared object
+ # that the kernel ELF loader considers as an executable. I think this
+ # is the simplest way to make it self virtualizable!
+-LDFLAGS+=-Wl,-shared
++#LDFLAGS+=-Wl,-shared
+ endif
  endif
  
--$(QEMU_SYSTEM): $(VL_OBJS) ../libqemu_common.a libqemu.a
-- 	$(CC) $(VL_LDFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS) $(SDL_LIBS) $(COCOA_LIBS) $(VL_LIBS)
-+$(QEMU_SYSTEM): $(VL_OBJS) ../libqemu_common.a libqemu.a ../bsd/libmath.a
-+	$(CC) $(VL_LDFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS) $(SDL_LIBS) $(COCOA_LIBS) $(VL_LIBS) ../bsd/libmath.a
+@@ -491,7 +491,7 @@
+ # cpu_signal_handler() in cpu-exec.c.
+ signal.o: CFLAGS += $(HELPER_CFLAGS)
  
- depend: $(SRCS)
+-$(QEMU_PROG): $(OBJS) ../libqemu_user.a
++$(QEMU_PROG): $(OBJS) ../libqemu_user.a ../bsd/libmath.a
+ 	$(LINK)
+ 
+ endif #CONFIG_BSD_USER
+@@ -717,9 +717,9 @@
+ main.o: CFLAGS+=-p
+ endif
+ 
+-$(QEMU_PROG): LIBS += $(SDL_LIBS) $(COCOA_LIBS) $(CURSES_LIBS) $(BRLAPI_LIBS) $(VDE_LIBS)
++$(QEMU_PROG): LIBS += $(SDL_LIBS) $(COCOA_LIBS) $(CURSES_LIBS) $(BRLAPI_LIBS) $(VDE_LIBS) ../bsd/libmath.a
+ 
+-$(QEMU_PROG): $(OBJS) ../libqemu_common.a libqemu.a
++$(QEMU_PROG): $(OBJS) ../libqemu_common.a libqemu.a ../bsd/libmath.a
+ 	$(LINK)
+ 
+ endif # !CONFIG_USER_ONLY
 Index: qemu/fpu/softfloat-native.c
 @@ -2,11 +2,16 @@
     context is supported */
@@ -89,17 +109,16 @@ Index: qemu/fpu/softfloat-native.h
  #define fabsf(f) ((float)fabs(f))
  #else
  #include <fenv.h>
-@@ -60,7 +80,9 @@
- /*----------------------------------------------------------------------------
+@@ -109,6 +109,8 @@
  | Software IEC/IEEE floating-point rounding mode.
  *----------------------------------------------------------------------------*/
 -#if (defined(_BSD) && !defined(__APPLE__)) || defined(HOST_SOLARIS)
 +#if (defined(_BSD) && !defined(__APPLE__) && \
-+     (!defined(__FreeBSD__) || __FreeBSD_version < 500000)) || \
-+    defined(HOST_SOLARIS)
- enum {
-     float_round_nearest_even = FP_RN,
-     float_round_down         = FP_RM,
++      (!defined(__FreeBSD__) || __FreeBSD_version < 500000)) || \
++     defined(HOST_SOLARIS)
+ #if defined(__OpenBSD__)
+ #define FE_RM FP_RM
+ #define FE_RP FP_RP
 Index: qemu/fpu/softfloat.h
 @@ -84,7 +84,8 @@
  #define FLOAT128
@@ -112,20 +131,20 @@ Index: qemu/fpu/softfloat.h
  #endif
  #endif /* !CONFIG_SOFTFLOAT */
 Index: qemu/target-ppc/op_helper.c
-@@ -303,6 +303,13 @@
-     FT0 = sqrt(FT0);
+@@ -293,6 +293,13 @@
+     uint32_t exp = (u.ll >> 52) & 0x7FF;
+     return ((0 < exp) && (exp < 0x7FF));
  }
- 
++#else
 +#ifndef isnormal
 +#define isnormal(x)					\
 +    ((sizeof (x) == sizeof (float)) ? __isnormalf(x)	\
 +    : (sizeof (x) == sizeof (double)) ? __isnormal(x)	\
 +    : __isnormall(x))
 +#endif
-+
- void do_fres (void)
- {
-     union {
+ #endif
+ 
+ uint32_t helper_compute_fprf (uint64_t arg, uint32_t set_fprf)
 Index: qemu/x86_64.ld
 @@ -2,7 +2,7 @@
  OUTPUT_FORMAT("elf64-x86-64", "elf64-x86-64", "elf64-x86-64")
@@ -136,3 +155,23 @@ Index: qemu/x86_64.ld
  SECTIONS
  {
    /* Read-only sections, merged into text segment: */
+@@ -59,8 +59,6 @@
+   .rodata         : { *(.rodata .rodata.* .gnu.linkonce.r.*) }
+   .rodata1        : { *(.rodata1) }
+   .eh_frame_hdr : { *(.eh_frame_hdr) }
+-  .eh_frame       : ONLY_IF_RO { KEEP (*(.eh_frame)) }
+-  .gcc_except_table   : ONLY_IF_RO { *(.gcc_except_table) }
+   /* Adjust the address for the data segment.  We want to adjust up to
+      the same address within the page on the next page up.  */
+   . = ALIGN (0x100000) - ((0x100000 - .) & (0x100000 - 1)); . = DATA_SEGMENT_ALIGN (0x100000, 0x1000);
+@@ -86,8 +84,8 @@
+   .data1          : { *(.data1) }
+   .tdata	  : { *(.tdata .tdata.* .gnu.linkonce.td.*) }
+   .tbss		  : { *(.tbss .tbss.* .gnu.linkonce.tb.*) *(.tcommon) }
+-  .eh_frame       : ONLY_IF_RW { KEEP (*(.eh_frame)) }
+-  .gcc_except_table   : ONLY_IF_RW { *(.gcc_except_table) }
++  .eh_frame       : { KEEP (*(.eh_frame)) }
++  .gcc_except_table   : { *(.gcc_except_table) }
+   .dynamic        : { *(.dynamic) }
+   .ctors          :
+   {

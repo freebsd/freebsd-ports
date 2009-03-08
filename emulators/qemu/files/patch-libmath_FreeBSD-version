@@ -1,0 +1,150 @@
+diff -ru qemu.orig/bsd/Makefile qemu/bsd/Makefile
+--- qemu.orig/bsd/Makefile	2009-01-19 23:30:09.124413041 -0600
++++ qemu/bsd/Makefile	2009-01-19 23:40:20.180704580 -0600
+@@ -1,23 +1,90 @@
+-SRCS=	${MACHINE_ARCH}/e_atan2l.c 	\
+-	${MACHINE_ARCH}/e_logl.S	\
+-	${MACHINE_ARCH}/e_powl.S	\
+-	${MACHINE_ARCH}/e_remainderl.S	\
+-	${MACHINE_ARCH}/e_sqrtl.c	\
+-	${MACHINE_ARCH}/s_ceill.S	\
+-	${MACHINE_ARCH}/s_cosl.S	\
+-	${MACHINE_ARCH}/s_floorl.S	\
+-	${MACHINE_ARCH}/s_isnormal.c	\
+-	${MACHINE_ARCH}/s_llrint.S	\
+-	${MACHINE_ARCH}/s_llrintf.S	\
+-	${MACHINE_ARCH}/s_llrintl.S	\
+-	${MACHINE_ARCH}/s_lrint.S	\
+-	${MACHINE_ARCH}/s_lrintf.S	\
+-	${MACHINE_ARCH}/s_lrintl.S	\
+-	${MACHINE_ARCH}/s_rintl.c	\
+-	${MACHINE_ARCH}/s_round.c	\
+-	${MACHINE_ARCH}/s_sinl.S	\
+-	${MACHINE_ARCH}/s_tanl.S	\
+-	${MACHINE_ARCH}/s_ldexpl.c
++AWK=	/usr/bin/awk
++SYSCTL=	/sbin/sysctl
++
++.if !defined(OSVERSION)
++.if exists(/usr/include/sys/param.h)
++OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < /usr/include/sys/param.h
++.elif exists(/usr/src/sys/sys/param.h)
++OSVERSION!=	${AWK} '/^\#define[[:blank::]]__FreeBSD_version/ {print $$3}' < /usr/src/sys/sys/param.h
++.else
++OSVERSION!=	${SYSCTL} -n kern.osreldate
++.endif
++.endif
++
++# Need to be implemented
++_logl=		${MACHINE_ARCH}/e_logl.S
++_powl=		${MACHINE_ARCH}/e_powl.S
++
++# Implemented in -CURRENT
++.if ${OSVERSION} < 800042
++_atan2l=	${MACHINE_ARCH}/e_atan2l.c
++.endif
++
++.if ${OSVERSION} < 800030
++_remainderl=	${MACHINE_ARCH}/e_remainderl.S
++.endif
++
++.if ${OSVERSION} < 800025
++_sqrtl=		${MACHINE_ARCH}/e_sqrtl.c
++.endif
++
++.if ${OSVERSION} < 800022
++_cosl=		${MACHINE_ARCH}/s_cosl.S
++_sinl=		${MACHINE_ARCH}/s_sinl.S
++_tanl=		${MACHINE_ARCH}/s_tanl.S
++.endif
++
++.if ${OSVERSION} < 800012
++_lrintl=	${MACHINE_ARCH}/s_lrintl.S
++_llrintl=	${MACHINE_ARCH}/s_llrintl.S
++_rintl=		${MACHINE_ARCH}/s_rintl.c
++.endif
++
++.if ${OSVERSION} < 600020
++_ldexpl=	${MACHINE_ARCH}/s_ldexpl.c
++.endif
++
++.if ${OSVERSION} < 600008
++_ceill=		${MACHINE_ARCH}/s_ceill.S
++_floorl=	${MACHINE_ARCH}/s_floorl.S
++_llrint=	${MACHINE_ARCH}/s_llrint.S
++_llrintf=	${MACHINE_ARCH}/s_llrintf.S
++_lrint=		${MACHINE_ARCH}/s_lrint.S
++_lrintf=	${MACHINE_ARCH}/s_lrintf.S
++.endif
++
++.if ${OSVERSION} < 502121
++_isnormal=	${MACHINE_ARCH}/s_isnormal.c
++.endif
++
++.if ${OSVERSION} < 502114
++_round=		${MACHINE_ARCH}/s_round.c
++.endif
++
++#.if ${OSVERSION} < 501113
++#_fabsl=		${MACHINE_ARCH}/e_fabsl.c
++#.endif
++
++SRCS=	${_atan2l} 	\
++	${_logl}	\
++	${_powl}	\
++	${_remainderl}	\
++	${_sqrtl}	\
++	${_ceill}	\
++	${_cosl}	\
++	${_floorl}	\
++	${_isnormal}	\
++	${_llrint}	\
++	${_llrintf}	\
++	${_llrintl}	\
++	${_lrint}	\
++	${_lrintf}	\
++	${_lrintl}	\
++	${_rintl}	\
++	${_round}	\
++	${_sinl}	\
++	${_tanl}	\
++	${_ldexpl}
+ 
+ OBJS=	${SRCS:R:S/$/.o/}
+ 
+diff -ru qemu.orig/fpu/softfloat-native.h qemu/fpu/softfloat-native.h
+--- qemu.orig/fpu/softfloat-native.h	2009-01-19 23:30:08.833416100 -0600
++++ qemu/fpu/softfloat-native.h	2009-01-19 23:28:08.682949000 -0600
+@@ -1,15 +1,26 @@
++#ifndef SOFTFLOAT_NATIVE_H
++#define SOFTFLOAT_NATIVE_H
++
+ /* Native implementation of soft float functions */
+ #include <math.h>
+ 
+ #ifdef __FreeBSD__
+ #include <osreldate.h>
++#if __FreeBSD_version < 501113
+ long double fabsl(long double x);
++#endif
++#if __FreeBSD_version < 800030
+ long double remainderl(long double x, long double y);
++#endif
++#if __FreeBSD_version < 800025
+ long double sqrtl(long double x);
++#endif
++#if __FreeBSD_version < 800012
+ long double rintl(long double x);
+ long lrintl(long double x);
+ long long llrintl(long double x);
+ #endif
++#endif
+ 
+ #if (defined(_BSD) && !defined(__APPLE__) && \
+      (!defined(__FreeBSD__) || __FreeBSD_version < 500000)) || \
+@@ -516,3 +527,5 @@
+ }
+ 
+ #endif
++
++#endif /* SOFTFLOAT_NATIVE_H */

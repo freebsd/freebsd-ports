@@ -1,4 +1,4 @@
-Index: qemu/vl.c
+Index: qemu/qemu-char.c
 @@ -1606,10 +1606,13 @@
      cfsetospeed(&tty, spd);
  

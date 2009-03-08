@@ -1,0 +1,64 @@
+Index: qemu/target-i386/op_helper.c
+@@ -517,6 +517,12 @@
+ #endif
+ }
+ 
++#if 1
++#define IOPL_WORKAROUND
++#define VMPORT 0x5658
++int vmware_svga_io_base;
++#endif
++
+ /* check if Port I/O is allowed in TSS */
+ static inline void check_io(int addr, int size)
+ {
+@@ -527,6 +533,27 @@
+         ((env->tr.flags >> DESC_TYPE_SHIFT) & 0xf) != 9 ||
+         env->tr.limit < 103)
+         goto fail;
++#ifdef IOPL_WORKAROUND
++    if (addr == VMPORT) {
++        static int last_vmport_iopl = -1;
++        int iopl = (env->eflags >> IOPL_SHIFT) & 3;
++        if (iopl != last_vmport_iopl) {
++            printf("check_io: vmport workaround: iopl = %d\n", iopl);
++            last_vmport_iopl = iopl;
++        }
++        return;
++    }
++    if (vmware_svga_io_base &&
++        addr >= vmware_svga_io_base && addr < vmware_svga_io_base + 3) {
++        static int last_svga_iopl = -1;
++        int iopl = (env->eflags >> IOPL_SHIFT) & 3;
++        if (iopl != last_svga_iopl) {
++            printf("check_io: vmware svga workaround: iopl = %d\n", iopl);
++            last_svga_iopl = iopl;
++        }
++        return;
++    }
++#endif
+     io_offset = lduw_kernel(env->tr.base + 0x66);
+     io_offset += (addr >> 3);
+     /* Note: the check needs two bytes */
+Index: qemu/hw/vmware_vga.c
+@@ -1175,12 +1175,20 @@
+     return 0;
+ }
+ 
++#if 1 && defined(TARGET_I386)
++#define IOPL_WORKAROUND
++extern int vmware_svga_io_base;
++#endif
++
+ static void pci_vmsvga_map_ioport(PCIDevice *pci_dev, int region_num,
+                 uint32_t addr, uint32_t size, int type)
+ {
+     struct pci_vmsvga_state_s *d = (struct pci_vmsvga_state_s *) pci_dev;
+     struct vmsvga_state_s *s = &d->chip;
+ 
++#ifdef IOPL_WORKAROUND
++    vmware_svga_io_base = addr + SVGA_IO_MUL * SVGA_INDEX_PORT;
++#endif
+     register_ioport_read(addr + SVGA_IO_MUL * SVGA_INDEX_PORT,
+                     1, 4, vmsvga_index_read, s);
+     register_ioport_write(addr + SVGA_IO_MUL * SVGA_INDEX_PORT,
