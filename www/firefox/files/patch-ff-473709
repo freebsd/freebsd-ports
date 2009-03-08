@@ -1,0 +1,29 @@
+diff --git a/js/src/jsregexp.c b/js/src/jsregexp.c
+--- js/src/jsregexp.c
++++ js/src/jsregexp.c
+@@ -4148,20 +4148,22 @@ js_NewRegExpObject(JSContext *cx, JSToke
+     JSString *str;
+     JSObject *obj;
+     JSRegExp *re;
+     JSTempValueRooter tvr;
+ 
+     str = js_NewStringCopyN(cx, chars, length, 0);
+     if (!str)
+         return NULL;
++    JS_PUSH_TEMP_ROOT_STRING(cx, str, &tvr);
+     re = js_NewRegExp(cx, ts,  str, flags, JS_FALSE);
+-    if (!re)
+-        return NULL;
+-    JS_PUSH_TEMP_ROOT_STRING(cx, str, &tvr);
++    if (!re) {
++        JS_POP_TEMP_ROOT(cx, &tvr);
++        return NULL;
++    }
+     obj = js_NewObject(cx, &js_RegExpClass, NULL, NULL);
+     if (!obj || !JS_SetPrivate(cx, obj, re)) {
+         js_DestroyRegExp(cx, re);
+         obj = NULL;
+     }
+     if (obj && !js_SetLastIndex(cx, obj, 0))
+         obj = NULL;
+     JS_POP_TEMP_ROOT(cx, &tvr);
