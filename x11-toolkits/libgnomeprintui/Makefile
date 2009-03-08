@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libgnomeprintui
-PORTVERSION=	2.18.3
+PORTVERSION=	2.18.4
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
