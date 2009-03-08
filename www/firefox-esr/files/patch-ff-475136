@@ -1,0 +1,108 @@
+diff -up mozilla/content/base/src/nsStyleLinkElement.cpp.475136 mozilla/content/base/src/nsStyleLinkElement.cpp
+--- content/base/src/nsStyleLinkElement.cpp.475136	2005-04-19 03:27:09.000000000 +0200
++++ content/base/src/nsStyleLinkElement.cpp	2009-02-17 18:01:21.000000000 +0100
+@@ -63,10 +63,7 @@ nsStyleLinkElement::nsStyleLinkElement()
+ 
+ nsStyleLinkElement::~nsStyleLinkElement()
+ {
+-  nsCOMPtr<nsICSSStyleSheet> cssSheet = do_QueryInterface(mStyleSheet);
+-  if (cssSheet) {
+-    cssSheet->SetOwningNode(nsnull);
+-  }
++  nsStyleLinkElement::SetStyleSheet(nsnull);
+ }
+ 
+ NS_IMETHODIMP 
+@@ -199,7 +196,7 @@ nsStyleLinkElement::UpdateStyleSheet(nsI
+     aOldDocument->BeginUpdate(UPDATE_STYLE);
+     aOldDocument->RemoveStyleSheet(mStyleSheet);
+     aOldDocument->EndUpdate(UPDATE_STYLE);
+-    mStyleSheet = nsnull;
++    nsStyleLinkElement::SetStyleSheet(nsnull);
+   }
+ 
+   if (mDontLoadStyle || !mUpdatesEnabled) {
+@@ -245,7 +242,7 @@ nsStyleLinkElement::UpdateStyleSheet(nsI
+     doc->BeginUpdate(UPDATE_STYLE);
+     doc->RemoveStyleSheet(mStyleSheet);
+     doc->EndUpdate(UPDATE_STYLE);
+-    mStyleSheet = nsnull;
++    nsStyleLinkElement::SetStyleSheet(nsnull);
+   }
+ 
+   if (!uri && !isInline) {
+diff -up mozilla/content/base/src/nsStyleLinkElement.h.475136 mozilla/content/base/src/nsStyleLinkElement.h
+--- content/base/src/nsStyleLinkElement.h.475136	2004-09-09 19:32:34.000000000 +0200
++++ content/base/src/nsStyleLinkElement.h	2009-02-17 18:12:08.000000000 +0100
+@@ -72,6 +72,7 @@ public:
+ 
+   static void ParseLinkTypes(const nsAString& aTypes, nsStringArray& aResult);
+ 
++
+ protected:
+   virtual void GetStyleSheetURL(PRBool* aIsInline,
+                                 nsIURI** aURI) = 0;
+@@ -79,13 +80,16 @@ protected:
+                                  nsAString& aType,
+                                  nsAString& aMedia,
+                                  PRBool* aIsAlternate) = 0;
++  nsIStyleSheet* GetStyleSheet() { return mStyleSheet; }
+ 
+ 
+-  nsCOMPtr<nsIStyleSheet> mStyleSheet;
+   nsCOMPtr<nsIParser> mParser;
+   PRPackedBool mDontLoadStyle;
+   PRPackedBool mUpdatesEnabled;
+   PRUint32 mLineNumber;
++
++private:
++  nsCOMPtr<nsIStyleSheet> mStyleSheet;
+ };
+ 
+ #endif /* nsStyleLinkElement_h___ */
+diff -up mozilla/content/html/content/src/nsHTMLLinkElement.cpp.475136 mozilla/content/html/content/src/nsHTMLLinkElement.cpp
+--- content/html/content/src/nsHTMLLinkElement.cpp.475136	2005-08-10 22:21:42.000000000 +0200
++++ content/html/content/src/nsHTMLLinkElement.cpp	2009-02-17 18:14:51.000000000 +0100
+@@ -159,7 +159,7 @@ NS_IMPL_DOM_CLONENODE(nsHTMLLinkElement)
+ NS_IMETHODIMP
+ nsHTMLLinkElement::GetDisabled(PRBool* aDisabled)
+ {
+-  nsCOMPtr<nsIDOMStyleSheet> ss(do_QueryInterface(mStyleSheet));
++  nsCOMPtr<nsIDOMStyleSheet> ss(do_QueryInterface(GetStyleSheet()));
+   nsresult result = NS_OK;
+ 
+   if (ss) {
+@@ -174,7 +174,7 @@ nsHTMLLinkElement::GetDisabled(PRBool* a
+ NS_IMETHODIMP 
+ nsHTMLLinkElement::SetDisabled(PRBool aDisabled)
+ {
+-  nsCOMPtr<nsIDOMStyleSheet> ss(do_QueryInterface(mStyleSheet));
++  nsCOMPtr<nsIDOMStyleSheet> ss(do_QueryInterface(GetStyleSheet()));
+   nsresult result = NS_OK;
+ 
+   if (ss) {
+diff -up mozilla/content/html/content/src/nsHTMLStyleElement.cpp.475136 mozilla/content/html/content/src/nsHTMLStyleElement.cpp
+--- content/html/content/src/nsHTMLStyleElement.cpp.475136	2005-04-19 00:58:30.000000000 +0200
++++ content/html/content/src/nsHTMLStyleElement.cpp	2009-02-17 18:01:21.000000000 +0100
+@@ -141,8 +141,8 @@ nsHTMLStyleElement::GetDisabled(PRBool* 
+ {
+   nsresult result = NS_OK;
+   
+-  if (mStyleSheet) {
+-    nsCOMPtr<nsIDOMStyleSheet> ss(do_QueryInterface(mStyleSheet));
++  if (GetStyleSheet()) {
++    nsCOMPtr<nsIDOMStyleSheet> ss(do_QueryInterface(GetStyleSheet()));
+ 
+     if (ss) {
+       result = ss->GetDisabled(aDisabled);
+@@ -160,8 +160,8 @@ nsHTMLStyleElement::SetDisabled(PRBool a
+ {
+   nsresult result = NS_OK;
+   
+-  if (mStyleSheet) {
+-    nsCOMPtr<nsIDOMStyleSheet> ss(do_QueryInterface(mStyleSheet));
++  if (GetStyleSheet()) {
++    nsCOMPtr<nsIDOMStyleSheet> ss(do_QueryInterface(GetStyleSheet()));
+ 
+     if (ss) {
+       result = ss->SetDisabled(aDisabled);

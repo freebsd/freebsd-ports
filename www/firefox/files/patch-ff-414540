@@ -1,0 +1,118 @@
+diff -up mozilla/rdf/base/src/Makefile.in.414540 mozilla/rdf/base/src/Makefile.in
+--- rdf/base/src/Makefile.in.414540	2005-06-24 09:49:43.000000000 +0200
++++ rdf/base/src/Makefile.in	2009-02-20 22:48:06.000000000 +0100
+@@ -49,6 +49,9 @@ LIBXUL_LIBRARY  = 1
+ REQUIRES	= xpcom \
+ 		  string \
+ 		  rdfutil \
++		  js \
++		  caps \
++		  xpconnect \
+ 		  necko \
+ 		  content \
+ 		  htmlparser \
+diff -up mozilla/rdf/base/src/nsRDFXMLDataSource.cpp.414540 mozilla/rdf/base/src/nsRDFXMLDataSource.cpp
+--- rdf/base/src/nsRDFXMLDataSource.cpp.414540	2005-06-24 09:49:43.000000000 +0200
++++ rdf/base/src/nsRDFXMLDataSource.cpp	2009-02-20 23:20:55.000000000 +0100
+@@ -122,6 +122,9 @@
+ #include "prlog.h"
+ #include "nsNameSpaceMap.h"
+ #include "nsCRT.h"
++#include "nsIScriptSecurityManager.h"
++#include "nsIChannelEventSink.h"
++#include "nsNetUtil.h"
+ 
+ #include "rdfIDataSource.h"
+ 
+@@ -218,7 +221,9 @@ class RDFXMLDataSourceImpl : public nsIR
+                              public nsIRDFXMLSink,
+                              public nsIRDFXMLSource,
+                              public nsIStreamListener,
+-                             public rdfIDataSource
++                             public rdfIDataSource,
++                             public nsIInterfaceRequestor,
++                             public nsIChannelEventSink
+ {
+ protected:
+     enum LoadState {
+@@ -389,6 +394,12 @@ public:
+     // nsIStreamListener
+     NS_DECL_NSISTREAMLISTENER
+ 
++    // nsIInterfaceRequestor
++    NS_DECL_NSIINTERFACEREQUESTOR
++
++    // nsIChannelEventSink
++    NS_DECL_NSICHANNELEVENTSINK
++
+     // rdfIDataSource
+     NS_IMETHOD VisitAllSubjects(rdfITripleVisitor *aVisitor) {
+         nsresult rv;
+@@ -537,15 +548,23 @@ RDFXMLDataSourceImpl::~RDFXMLDataSourceI
+ }
+ 
+ 
+-NS_IMPL_ISUPPORTS7(RDFXMLDataSourceImpl,
++NS_IMPL_ISUPPORTS9(RDFXMLDataSourceImpl,
+                    nsIRDFDataSource,
+                    nsIRDFRemoteDataSource,
+                    nsIRDFXMLSink,
+                    nsIRDFXMLSource,
+                    nsIRequestObserver,
+                    nsIStreamListener,
+-                   rdfIDataSource)
+-
++                   rdfIDataSource,
++                   nsIInterfaceRequestor,
++                   nsIChannelEventSink)
++
++// nsIInterfaceRequestor
++NS_IMETHODIMP 
++RDFXMLDataSourceImpl::GetInterface(const nsIID& aIID, void** aSink) 
++{ 
++  return QueryInterface(aIID, aSink); 
++} 
+ 
+ nsresult
+ RDFXMLDataSourceImpl::BlockingParse(nsIURI* aURL, nsIStreamListener* aConsumer)
+@@ -924,6 +943,31 @@ RDFXMLDataSourceImpl::SetReadOnly(PRBool
+ 
+ #include "nsITimelineService.h"
+ 
++// nsIChannelEventSink
++
++NS_IMETHODIMP
++RDFXMLDataSourceImpl::OnChannelRedirect(nsIChannel *aOldChannel,
++                                        nsIChannel *aNewChannel,
++                                        PRUint32 aFlags)
++{
++  NS_PRECONDITION(aNewChannel, "Redirecting to null channel?");
++
++  nsresult rv;
++  nsCOMPtr<nsIScriptSecurityManager> secMan =
++      do_GetService(NS_SCRIPTSECURITYMANAGER_CONTRACTID, &rv);
++  NS_ENSURE_SUCCESS(rv, rv);
++
++  nsCOMPtr<nsIURI> oldURI;
++  rv = aOldChannel->GetURI(getter_AddRefs(oldURI));
++  NS_ENSURE_SUCCESS(rv, rv);
++
++  nsCOMPtr<nsIURI> newURI;
++  rv = aNewChannel->GetURI(getter_AddRefs(newURI));
++  NS_ENSURE_SUCCESS(rv, rv);
++
++  return secMan->CheckSameOriginURI(oldURI, newURI);
++}
++
+ NS_IMETHODIMP
+ RDFXMLDataSourceImpl::Refresh(PRBool aBlocking)
+ {
+@@ -972,7 +1016,7 @@ RDFXMLDataSourceImpl::Refresh(PRBool aBl
+     }
+     else {
+         // Null LoadGroup ?
+-        rv = NS_OpenURI(this, nsnull, mURL, nsnull);
++        rv = NS_OpenURI(this, nsnull, mURL, nsnull, nsnull, this);
+         if (NS_FAILED(rv)) return rv;
+ 
+         // So we don't try to issue two asynchronous loads at once.
