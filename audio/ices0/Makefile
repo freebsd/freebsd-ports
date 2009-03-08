@@ -11,7 +11,7 @@ PORTREVISION=	8
 CATEGORIES=	audio net
 MASTER_SITES=	http://svn.xiph.org/releases/ices/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	steinex@nognu.de
 COMMENT=	An mp3 streaming source client for icecast 2
 
 LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2 \
