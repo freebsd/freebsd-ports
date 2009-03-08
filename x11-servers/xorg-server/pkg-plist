@@ -243,7 +243,6 @@ lib/xorg/modules/multimedia/uda1380_drv.la
 lib/xorg/modules/multimedia/uda1380_drv.so
 lib/xorg/protocol.txt
 libdata/pkgconfig/xorg-server.pc
-share/X11/xkb/compiled/README.compiled
 share/aclocal/xorg-server.m4
 @dirrm include/xorg
 @dirrm lib/xorg/modules/fonts

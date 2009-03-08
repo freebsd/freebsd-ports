@@ -7,8 +7,8 @@
 
 PORTNAME=	xorg-server
 PORTVERSION=	1.5.3
+PORTREVISION=	7
 PORTEPOCH=	1
-PORTREVISION=	6
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://xorg.freedesktop.org/releases/individual/xserver/
 DISTFILES=	xorg-server-${PORTVERSION}.tar.bz2
