@@ -8,7 +8,7 @@
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.24
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 PKGNAMESUFFIX?=	-app
@@ -106,6 +106,9 @@ avahi-post-patch:
 		${WRKSRC}/configure \
 		${WRKSRC}/avahi-client/Makefile.in \
 		${WRKSRC}/avahi-daemon/Makefile.in
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
+	    	${REINPLACE_CMD} -e 's|(LIBINTL)|(LTLIBINTL)|g ; \
+		s|(LIBICONV)|(LTLIBICONV)|g'
 	@${REINPLACE_CMD} -e 's|%%RC_SUBR%%|${RC_SUBR}| ; \
 	    	s|%%GNOME_SUBR%%|${GNOME_SUBR}|' \
 		${WRKSRC}/initscript/freebsd/avahi-dnsconfd.sh.in \
