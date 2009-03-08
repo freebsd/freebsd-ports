@@ -8,7 +8,7 @@
 # NOTE: Remind to update comms/gfax plist when PORTVERSION change.
 
 PORTNAME=	libgnomeprint
-PORTVERSION=	2.18.5
+PORTVERSION=	2.18.6
 CATEGORIES=	print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
