@@ -11,7 +11,13 @@ Index: qemu/Makefile
  else
  DOCS=
  endif
-@@ -225,8 +229,6 @@
+@@ -221,12 +225,12 @@
+ 
+ install-doc: $(DOCS)
++ifndef NOPORTDOCS
+ 	mkdir -p "$(DESTDIR)$(docdir)"
+ 	$(INSTALL) -m 644 qemu-doc.html  qemu-tech.html "$(DESTDIR)$(docdir)"
++endif
  ifndef CONFIG_WIN32
  	mkdir -p "$(DESTDIR)$(mandir)/man1"
  	$(INSTALL) -m 644 qemu.1 qemu-img.1 "$(DESTDIR)$(mandir)/man1"
