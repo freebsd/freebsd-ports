@@ -120,6 +120,20 @@ for details; cpuset isn't avalable before 7.1.  This can only be a problem
 on smp hosts.)
 - the new sparc64-bsd-user target (qemu-sparc64) is entirely untested and
 probably only works on amd64 hosts, if at all.
+- (not FreeBSD-specific:) there have been reports of qcow2 corruption with
+(at least) win2k guests on recent kvm (which uses similar qcow2 code than
+qemu now, see this thread:
+	http://lists.gnu.org/archive/html/qemu-devel/2009-02/msg00713.html -
+the consensus on that thread seems to be that qcow(2) code has always
+been experimental and you should use raw images if you want reliability;
+raw is also usually faster.)  You should be able to migrate existing images
+to raw using qemu-img(1)'s convert function; raw doesn't support advanced
+features like snapshots tho.
+- (also not FreeBSD-specific:)  It is recommended to pass raw images using
+the new -drive syntax, specifying format=raw explicitly in order to avoid
+malicious guests being able to exploit the format autodetection thats
+otherwise getting used.  (Not that you should run malicious guests anyway,
+but this eleminates at least a known attack vector.)
 - The default configuration location (qemu-ifup script etc.) has been
 changed from /etc to PREFIX/etc (usually /usr/local/etc).  Move your
 files accordingly.
