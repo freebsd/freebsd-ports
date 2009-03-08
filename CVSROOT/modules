@@ -1752,6 +1752,7 @@ cpmtools27                      ports/emulators/cpmtools27
 cpp-xmms2                       ports/audio/cpp-xmms2
 cpp2latex                       ports/print/cpp2latex
 cppadvio                        ports/devel/cppadvio
+cppcheck                        ports/devel/cppcheck
 cppi                            ports/devel/cppi
 cppunit                         ports/devel/cppunit
 cproto                          ports/devel/cproto
@@ -5028,6 +5029,7 @@ hi-aspell                       ports/textproc/hi-aspell
 hiawatha                        ports/www/hiawatha
 hicolor-icon-theme              ports/misc/hicolor-icon-theme
 hidentd                         ports/net/hidentd
+hidesvn                         ports/sysutils/hidesvn
 highlight                       ports/textproc/highlight
 highlighterkit                  ports/devel/highlighterkit
 highlnk                         ports/sysutils/highlnk
@@ -5130,6 +5132,7 @@ hs-hmake                        ports/devel/hs-hmake
 hs-hscolour                     ports/print/hs-hscolour
 hs-hscolour-docs                ports/print/hs-hscolour-docs
 hs-idoc                         ports/devel/hs-idoc
+hs-language-c-ghc               ports/devel/hs-language-c-ghc
 hs-opengl-ghc                   ports/x11-toolkits/hs-opengl-ghc
 hs-pcre-light-ghc               ports/devel/hs-pcre-light-ghc
 hs-polyparse-ghc                ports/textproc/hs-polyparse-ghc
@@ -7636,6 +7639,7 @@ libxres                         ports/x11/libXres
 libxscrnsaver                   ports/x11/libXScrnSaver
 libxslt                         ports/textproc/libxslt
 libxslt-reference               ports/textproc/libxslt-reference
+libxspf                         ports/multimedia/libxspf
 libxt                           ports/x11-toolkits/libXt
 libxtrans                       ports/x11/libXtrans
 libxtrap                        ports/x11/libXTrap
@@ -9322,6 +9326,7 @@ nvidia-driver-173               ports/x11/nvidia-driver-173
 nvidia-driver-71xx              ports/x11/nvidia-driver-71xx
 nvidia-driver-96xx              ports/x11/nvidia-driver-96xx
 nvidia-settings                 ports/x11/nvidia-settings
+nvidia-texture-tools            ports/graphics/nvidia-texture-tools
 nvidia-xconfig                  ports/x11/nvidia-xconfig
 nvtv                            ports/sysutils/nvtv
 nvu                             ports/www/nvu
@@ -9353,6 +9358,7 @@ objcunit                        ports/devel/objcunit
 objectivelib                    ports/devel/objectivelib
 obliterate                      ports/sysutils/obliterate
 obmenu                          ports/x11-wm/obmenu
+obpager                         ports/x11-wm/obpager
 ocaml                           ports/lang/ocaml
 ocaml-annexlib                  ports/devel/ocaml-annexlib
 ocaml-bz2                       ports/archivers/ocaml-bz2
@@ -20023,6 +20029,7 @@ samba-smbclient                 ports/net/samba-smbclient
 samba-vscan                     ports/security/samba-vscan
 samba3                          ports/net/samba3
 samba32                         ports/net/samba32
+samba33                         ports/net/samba33
 samba4wins                      ports/net/samba4wins
 sambasentinel                   ports/net/sambasentinel
 samefile                        ports/sysutils/samefile
@@ -22551,8 +22558,6 @@ wyvern                          ports/www/wyvern
 wzdftpd                         ports/ftp/wzdftpd
 wzip                            ports/archivers/wzip
 x-files                         ports/x11-fm/x-files
-x11-fonts_xg                    ports/x11-fonts/Xg
-x11-toolkits_xg                 ports/x11-toolkits/xg
 x11_bitmap                      ports/x11/bitmap
 x11_blast                       ports/x11/blast
 x11_silo                        ports/x11/silo
@@ -22899,6 +22904,7 @@ xfsm                            ports/sysutils/xfsm
 xfsprogs                        ports/sysutils/xfsprogs
 xfstt                           ports/x11-servers/Xfstt
 xfwp                            ports/x11/xfwp
+xg                              ports/x11-fonts/Xg
 xgalaga                         ports/games/xgalaga
 xgame                           ports/games/xgame
 xgamma                          ports/x11/xgamma
