@@ -1,16 +1,16 @@
---- src/args.c.orig	Mon Nov 11 06:02:48 2002
-+++ src/args.c	Mon Mar  1 20:21:53 2004
-@@ -122,6 +122,7 @@
- static int exp_hnl  = 0;
+--- src/args.c.orig	2008-03-11 19:50:42.000000000 +0100
++++ src/args.c	2009-03-08 13:04:43.000000000 +0100
+@@ -163,6 +163,7 @@
  static int exp_i    = 0;
+ static int exp_il   = 0;
  static int exp_ip   = 0;
 +static int exp_knf  = 0;
  static int exp_kr   = 0;
  static int exp_l    = 0;
  static int exp_lc   = 0;
-@@ -189,6 +190,30 @@
-                                  * variable must share the explicit flag.  */
- } pro_ty;
+@@ -237,6 +238,30 @@
+ 
+ static void usage (void); 
  
 +#define BSD_PRO_SETTINGS	{"orig", PRO_SETTINGS, 0, ONOFF_NA,\
 +   (int *) "-nbap\0-nbad\0-bbo\0-hnl\0-bc\0-br\0-brs\0-c33\0-cd33\0-cdb\0-ce\0\
@@ -37,9 +37,9 @@
 +   &exp_gnu}
 +
  #ifdef BERKELEY_DEFAULTS
- /* Settings for original defaults */
- const pro_ty pro[] =
-@@ -212,61 +237,64 @@
+ 
+ /**
+@@ -264,63 +289,66 @@
  #endif
      {"pi",      PRO_INT,                               -1, ONOFF_NA, &settings.paren_indent,                     &exp_pi},
      {"pcs",     PRO_BOOL,                           false,       ON, &settings.proc_calls_space,                 &exp_pcs},
@@ -99,6 +99,7 @@
      {"nbadp",   PRO_BOOL,                           false,      OFF, &settings.blanklines_after_declarations_at_proctop,  &exp_badp},
      {"nbad",    PRO_BOOL,                           false,      OFF, &settings.blanklines_after_declarations,    &exp_bad},
      {"nbacc",   PRO_BOOL,                           false,      OFF, &settings.blanklines_around_conditional_compilation, &exp_bacc},
+     {"linux",   PRO_SETTINGS,                           0, ONOFF_NA, LINUX_SETTINGS_STRING,                      &exp_linux},
      {"lps",     PRO_BOOL,                           false,       ON, &settings.leave_preproc_space,              &exp_lps},
 -    {"lp",      PRO_BOOL,                            true,       ON, &settings.lineup_to_parens,                 &exp_lp},
 +    {"lp",      PRO_BOOL,                           false,       ON, &settings.lineup_to_parens,                 &exp_lp},
@@ -112,6 +113,7 @@
 +    KNF_PRO_SETTINGS,
 +    {"ip",      PRO_INT,                                8, ONOFF_NA, &settings.indent_parameters,                &exp_ip},
 +    {"i",       PRO_INT,                                8, ONOFF_NA, &settings.ind_size,                         &exp_i},
+     {"il",      PRO_INT,             DEFAULT_LABEL_INDENT, ONOFF_NA, &settings.label_offset,                     &exp_il},
      {"hnl",     PRO_BOOL,                            true,       ON, &settings.honour_newlines,                  &exp_hnl},
      {"h",       PRO_FUNCTION,                           0, ONOFF_NA, (int *) usage,                              &exp_version},
 -    {"gnu",     PRO_SETTINGS,                           0, ONOFF_NA, GNU_SETTINGS_STRING,                        &exp_gnu},
@@ -130,7 +132,7 @@
      {"cp",      PRO_INT,                               33, ONOFF_NA, &settings.else_endif_col,                   &exp_cp},
      {"cli",     PRO_INT,                                0, ONOFF_NA, &settings.case_indent,                      &exp_cli},
      {"ci",      PRO_INT,                                4, ONOFF_NA, &settings.continuation_indent,              &exp_ci},
-@@ -287,12 +315,12 @@
+@@ -341,12 +369,12 @@
      {"bl",      PRO_BOOL,                            true,      OFF, &settings.btype_2,                          &exp_bl},
      {"bfda",    PRO_BOOL,                           false,       ON, &settings.break_function_decl_args,         &exp_bfda},
      {"bfde",    PRO_BOOL,                           false,       ON, &settings.break_function_decl_args_end,     &exp_bfde},
@@ -147,7 +149,7 @@
      {"bacc",    PRO_BOOL,                           false,       ON, &settings.blanklines_around_conditional_compilation, &exp_bacc},
      {"T",       PRO_KEY,                                0, ONOFF_NA, 0,                                          &exp_T},
      {"ppi",     PRO_INT,                                0, ONOFF_NA, &settings.force_preproc_width,              &exp_ppi},
-@@ -324,7 +352,7 @@
+@@ -381,7 +409,7 @@
  #endif
      {"pi",      PRO_INT,                               -1, ONOFF_NA, &settings.paren_indent,                     &exp_pi},
      {"pcs",     PRO_BOOL,                            true,       ON, &settings.proc_calls_space,                 &exp_pcs},
@@ -156,13 +158,14 @@
      {"o",       PRO_BOOL,                           false,       ON, &settings.expect_output_file,               &exp_o},
      {"nv",      PRO_BOOL,                           false,      OFF, &settings.verbose,                          &exp_v},
      {"nut",     PRO_BOOL,                            true,      OFF, &settings.use_tabs,                         &exp_ut},
-@@ -367,13 +395,14 @@
+@@ -425,14 +453,15 @@
      {"lp",      PRO_BOOL,                            true,       ON, &settings.lineup_to_parens,                 &exp_lp},
      {"lc",      PRO_INT,     DEFAULT_RIGHT_COMMENT_MARGIN, ONOFF_NA, &settings.comment_max_col,                  &exp_lc},
      {"l",       PRO_INT,             DEFAULT_RIGHT_MARGIN, ONOFF_NA, &settings.max_col,                          &exp_l},
 -    {"kr",      PRO_SETTINGS,                           0, ONOFF_NA, KR_SETTINGS_STRING,                         &exp_kr},
 +    KR_PRO_SETTINGS,
 +    KNF_PRO_SETTINGS,
+     {"il",      PRO_INT,             DEFAULT_LABEL_INDENT, ONOFF_NA, &settings.label_offset,                     &exp_il},
      {"ip",      PRO_INT,                                5, ONOFF_NA, &settings.indent_parameters,                &exp_ip},
      {"i",       PRO_INT,                                2, ONOFF_NA, &settings.ind_size,                         &exp_i},
      {"hnl",     PRO_BOOL,                            true,       ON, &settings.honour_newlines,                  &exp_hnl},
@@ -173,7 +176,7 @@
      {"fca",     PRO_BOOL,                           false,       ON, &settings.format_comments,                  &exp_fca},
      {"fc1",     PRO_BOOL,                           false,       ON, &settings.format_col1_comments,             &exp_fc1},
      {"eei",     PRO_BOOL,                           false,       ON, &settings.extra_expression_indent,          &exp_eei},
-@@ -531,6 +560,9 @@
+@@ -593,6 +622,9 @@
      {"blank-lines-after-declarations",              "bad"},
      {"blank-lines-after-commas",                    "bc"},
      {"blank-before-sizeof",                         "bs"},
