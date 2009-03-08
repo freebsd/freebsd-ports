@@ -1,0 +1,12 @@
+Simple setup file was copied to %%PREFIX%%/etc/torsocks.conf.sample
+An example of a more complex setup file can be found in
+%%PREFIX%%/share/examples/torsocks/
+
+Once you have installed torsocks, just launch it like so: 
+	usewithtor [application] 
+
+So, for example you can use ssh to a some.ssh.com by doing: 
+	usewithtor ssh username@some.ssh.com -l <user>
+
+or launch pidgin by doing: 
+	usewithtor pidgin
