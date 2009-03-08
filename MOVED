@@ -3838,3 +3838,4 @@ devel/prcs||2009-03-07|Abandoned upstream, requires obsolete version of GCC
 devel/tvision||2009-03-07|Abandoned upstream, requires obsolete version of GCC
 textproc/latte||2009-03-07|Abandoned upstream, requires obsolete version of GCC
 textproc/nicetext||2009-03-07|Abandoned upstream, requires obsolete version of GCC
+multimedia/libspiff|multimedia/libxspf|2009-03-08|Project renamed
