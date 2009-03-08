@@ -1,4 +1,4 @@
-Index: qemu/vl.c
+Index: qemu/net.c
 @@ -76,6 +76,11 @@
  #endif
  #endif
@@ -19,7 +19,7 @@ Index: qemu/vl.c
 +#define LOAD_QUIETLY	1
 +#define LOAD_VERBOSLY	2
 +
-+int
++static int
 +loadmodules(int how, const char *module, ...)
 +{
 +  int loaded = 0;

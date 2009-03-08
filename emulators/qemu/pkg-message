@@ -34,12 +34,14 @@ in this message: http://docs.freebsd.org/cgi/mid.cgi?200510131428.21211.jkim
 really match the emulated nic exactly, it just `happens' to work with
 6.0-RC1's driver.)
 - if you want to use usb devices connected to the host in the guest
-(usb_add host:... monitor command) you need to make sure the host isn't
-claiming them, e.g. for umass devices (like memory sticks or external
-harddrives) make sure umass isn't in the kernel (you can then still load it
-as a kld when needed), also unless you are running qemu as root you then
-need to fix permissions for /dev/ugen* device nodes: if you are on 5.x or
-later (devfs) put a rule in /etc/devfs.rules, activate it in /etc/rc.conf
+(usb_add host:... monitor command; this doesn't work on -current atm
+because of the new usb stack - help updating the usb-bsd.c code is
+more than welcome here!) you need to make sure the host isn't claiming
+them, e.g. for umass devices (like memory sticks or external harddrives)
+make sure umass isn't in the kernel (you can then still load it as a kld
+when needed), also unless you are running qemu as root you then need to
+fix permissions for /dev/ugen* device nodes: if you are on 5.x or later
+(devfs) put a rule in /etc/devfs.rules, activate it in /etc/rc.conf
 and run /etc/rc.d/devfs restart.  example devfs.rules:
 	[ugen_ruleset=20]
 	add path 'ugen*' mode 660 group operator
@@ -56,9 +58,10 @@ rtl8139 timer by building the port with RTL8139_TIMER enabled.
 (the rtl8139c+ that model=rtl8139 emulates needs less cpu than qemu's
 default ne2k nic which is driven by ed(4), it has not been made default
 only because it may not work with all guests yet.  btw qemu now also can
-emulate a few intel eepro100 nics which seem to be a tad more efficient
-even, and at least i82557b works without tweaks for FreeBSD guests - driven
-by fxp(4) - and Linux guests too.)
+emulate a few intel eepro100 and e1000 nics which seem to be a tad more
+efficient even, and at least i82557b and e1000 work without tweaks for
+FreeBSD guests - driven by fxp(4) and em(4) repectively - and Linux
+guests too.)
 - if you get repeated `atapi_poll called!' console messages with FreeBSD
 guests or other weird cdrom problems then thats probably because the guest
 has atapicam loaded, which for reasons still to be determined has problems
@@ -80,21 +83,13 @@ itself also.
 kernel (like with any kld installed outside of base), i.e.  rebuild its
 port whenever you update the kernel - especially if you are switching
 branches or are following a -stable or even -current branch!
-- you can enable autoloading of kqemu (and aio) at boot by adding a line
+- you can enable autoloading of kqemu at boot by adding a line
 	kqemu_enable=YES
 to /etc/rc.conf
 - kqemu liked to panic the host on amd64 SMP until before 1.3.0.p11_6
 (revision 1.25 of /usr/ports/emulators/kqemu-kmod/Makefile), so if your
 host is such you might want to make sure your kqemu-kmod port is new enough.
 (and don't forget to reload it...)
-- also remember that on amd64 you need to run the amd64 (x86_64) system
-emulation if you want to use kqemu, i.e. run qemu-system-x86_64 instead of
-qemu (the latter only emulates a 32 bit system.)  Unfortunately there can
-still be guests that don't run correctly in the amd64 emulation even when
-they do run in the 32 bit one, the same is true about kqemu and -kernel-kqemu
-on amd64 - not much you can do about that other than help debugging (k)qemu's
-amd64 emulation... (well or falling back to unaccellerated, possibly 32 bit
-qemu/leaving out -kernel-kqemu if its that what's causing the problems.)
 - qemu's network boot roms (-boot n) have a bug when bootfiles sizes are a
 multiple of blksize, if this affects you (like with FreeBSD's /boot/pxeboot)
 you can do like
@@ -106,8 +101,25 @@ extracted out of
 	ftp://ftp.freebsd.org/pub/FreeBSD/snapshots/200805/7.0-STABLE-200805-i386-bootonly.iso
 and placed it here:
 	http://people.freebsd.org/~nox/qemu/pxeboot-qemu
-- qemu now uses aio at least for ide dma, so if you get `Invalid system call'
-crashes that is because aio is not (kld)loaded.
+- if you use slirp (usernet, the default) and want to mount nfs into the
+guest and you are not running qemu as root, then mountd(8) on the exporting
+box needs to be run with -n in order to accept requests from ports >= 1024.
+- unfortunately there can still be guests that don't run correctly with
+kqemu and -kernel-kqemu especially on amd64 - not much you can do about that
+other than help debugging (k)qemu... (well or falling back to unaccellerated
+qemu/leaving out -kernel-kqemu if its that what's causing the problems.
+note however that kqemu now can also be used with the 32 bit qemu even
+on amd64 hosts as of the 20080620 update.)
+- the new (optional) pcap code cannot talk to the host on 6.x because
+the necessary bpf feature (BIOCFEEDBACK) hasn't (yet?) been merged there.
+- kqemu passes the host tsc to the guest as-is so depending on your cpu and
+guest you _may_ need to tell the guest to avoid relying on the tsc (notsc
+kernel parameter with linux), or if that doesn't work force qemu onto
+a single cpu by doing e.g. `cpuset -l 0 qemu ..' (see the cpuset(1) manpage
+for details; cpuset isn't avalable before 7.1.  This can only be a problem
+on smp hosts.)
+- the new sparc64-bsd-user target (qemu-sparc64) is entirely untested and
+probably only works on amd64 hosts, if at all.
 - The default configuration location (qemu-ifup script etc.) has been
 changed from /etc to PREFIX/etc (usually /usr/local/etc).  Move your
 files accordingly.

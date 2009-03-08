@@ -55,13 +55,3 @@ Index: qemu/bsd/amd64/s_ldexpl.c
 +}
 +
 +weak_alias(__ldexpl,ldexpl)
-Index: qemu/target-i386/helper.c
-@@ -2886,6 +2886,8 @@
-     ST0 = floatx_round_to_int(ST0, &env->fp_status);
- }
- 
-+long double	ldexpl(long double, int);
-+
- void helper_fscale(void)
- {
-     ST0 = ldexp (ST0, (int)(ST1)); 

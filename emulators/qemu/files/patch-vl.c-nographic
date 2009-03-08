@@ -1,9 +1,0 @@
-Index: qemu/vl.c
-@@ -7131,6 +7131,7 @@
-             case QEMU_OPTION_nographic:
-                 pstrcpy(serial_devices[0], sizeof(serial_devices[0]), "stdio");
-                 pstrcpy(monitor_device, sizeof(monitor_device), "stdio");
-+                pstrcpy(parallel_devices[0], sizeof(parallel_devices[0]), "null");
-                 nographic = 1;
-                 break;
-             case QEMU_OPTION_kernel:
