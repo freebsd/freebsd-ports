@@ -1,12 +1,14 @@
---- doc/Makefile.in.orig	Wed May 22 04:01:16 2002
-+++ doc/Makefile.in	Sun Sep 15 03:21:16 2002
-@@ -364,9 +364,9 @@
+--- doc/Makefile.in.orig	2008-03-11 19:54:15.000000000 +0100
++++ doc/Makefile.in	2009-03-08 13:35:49.000000000 +0100
+@@ -602,10 +602,10 @@
+ 	uninstall-pdf-am uninstall-ps-am
  
  
- all-local: html
+-all-local: html
 -install-data-local: install-html
 -installdirs-local: installdirs-html
 -uninstall-local: uninstall-html
++all-local: # html
 +install-data-local: # install-html
 +installdirs-local: # installdirs-html
 +uninstall-local: # uninstall-html
