@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Localize/.packlist
+%%SITE_PERL%%/Data/Localize.pm
+%%SITE_PERL%%/Data/Localize/Auto.pm
+%%SITE_PERL%%/Data/Localize/Gettext.pm
+%%SITE_PERL%%/Data/Localize/Localizer.pm
+%%SITE_PERL%%/Data/Localize/Namespace.pm
+@dirrmtry %%SITE_PERL%%/Data/Localize
+@dirrmtry %%SITE_PERL%%/Data
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Localize
