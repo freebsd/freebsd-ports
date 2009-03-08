@@ -152,6 +152,7 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%DOCSDIR%%/class-atktable.html
 %%DOCSDIR%%/class-atktext.html
 %%DOCSDIR%%/class-atkvalue.html
+%%DOCSDIR%%/class-gdkapplaunchcontext.html
 %%DOCSDIR%%/class-gdkatom.html
 %%DOCSDIR%%/class-gdkcairocontext.html
 %%DOCSDIR%%/class-gdkcolor.html
@@ -273,6 +274,7 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%DOCSDIR%%/class-gtkmenutoolbutton.html
 %%DOCSDIR%%/class-gtkmessagedialog.html
 %%DOCSDIR%%/class-gtkmisc.html
+%%DOCSDIR%%/class-gtkmountoperation.html
 %%DOCSDIR%%/class-gtknotebook.html
 %%DOCSDIR%%/class-gtkobject.html
 %%DOCSDIR%%/class-gtkoptionmenu.html
@@ -336,6 +338,7 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%DOCSDIR%%/class-gtktoolbar.html
 %%DOCSDIR%%/class-gtktoolbutton.html
 %%DOCSDIR%%/class-gtktoolitem.html
+%%DOCSDIR%%/class-gtktoolshell.html
 %%DOCSDIR%%/class-gtktooltip.html
 %%DOCSDIR%%/class-gtktooltips.html
 %%DOCSDIR%%/class-gtktreedragdest.html
@@ -535,10 +538,14 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%DOCSDIR%%/icons/stock_no_20.png
 %%DOCSDIR%%/icons/stock_ok_20.png
 %%DOCSDIR%%/icons/stock_open_24.png
+%%DOCSDIR%%/icons/stock_page_setup_24.png
 %%DOCSDIR%%/icons/stock_paste_24.png
 %%DOCSDIR%%/icons/stock_preferences_24.png
 %%DOCSDIR%%/icons/stock_print_24.png
+%%DOCSDIR%%/icons/stock_print_error_24.png
+%%DOCSDIR%%/icons/stock_print_paused_24.png
 %%DOCSDIR%%/icons/stock_print_preview_24.png
+%%DOCSDIR%%/icons/stock_print_report_24.png
 %%DOCSDIR%%/icons/stock_properties_24.png
 %%DOCSDIR%%/icons/stock_redo_24.png
 %%DOCSDIR%%/icons/stock_redo_rtl_24.png
@@ -568,11 +575,20 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%DOCSDIR%%/icons/stock_undo_24.png
 %%DOCSDIR%%/icons/stock_undo_rtl_24.png
 %%DOCSDIR%%/icons/stock_up_arrow_24.png
+%%DOCSDIR%%/icons/stock_print_warning_24.png
 %%DOCSDIR%%/icons/stock_yes_20.png
 %%DOCSDIR%%/icons/stock_zoom_1_24.png
 %%DOCSDIR%%/icons/stock_zoom_fit_24.png
 %%DOCSDIR%%/icons/stock_zoom_in_24.png
 %%DOCSDIR%%/icons/stock_zoom_out_24.png
+%%DOCSDIR%%/images/layout-btlr.png
+%%DOCSDIR%%/images/layout-btrl.png
+%%DOCSDIR%%/images/layout-lrbt.png
+%%DOCSDIR%%/images/layout-lrtb.png
+%%DOCSDIR%%/images/layout-rlbt.png
+%%DOCSDIR%%/images/layout-rltb.png
+%%DOCSDIR%%/images/layout-tblr.png
+%%DOCSDIR%%/images/layout-tbrl.png
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/pango-class-reference.html
@@ -699,7 +715,10 @@ share/pygtk/2.0/defs/gtk-base.defs
 share/pygtk/2.0/defs/gtk-extrafuncs.defs
 share/pygtk/2.0/defs/gtk-types.defs
 share/pygtk/2.0/defs/gtk.defs
-share/pygtk/2.0/defs/gtkunixprint.defs
+share/pygtk/2.0/defs/gtkunixprint-2.12.defs
+share/pygtk/2.0/defs/gtkunixprint-2.14.defs
+share/pygtk/2.0/defs/gtkunixprint-base-types.defs
+share/pygtk/2.0/defs/gtkunixprint-base.defs
 share/pygtk/2.0/defs/libglade.defs
 share/pygtk/2.0/defs/pango-types.defs
 share/pygtk/2.0/defs/pango.defs
@@ -719,6 +738,7 @@ share/pygtk/2.0/defs/pangocairo.override
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/glade
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/atk
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%/images
 @dirrm %%DOCSDIR%%/icons
 @dirrm %%DOCSDIR%%/cursors
 @dirrm %%DOCSDIR%%
