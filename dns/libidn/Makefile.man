@@ -1,4 +1,5 @@
 MAN1+= idn.1
+MAN3+= idn_free.3
 MAN3+= idna_to_ascii_4i.3
 MAN3+= idna_to_ascii_4z.3
 MAN3+= idna_to_ascii_8z.3
