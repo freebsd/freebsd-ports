@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	libnice
-PORTVERSION=	0.0.4
+PORTVERSION=	0.0.5
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://nice.freedesktop.org/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library and transmitter that implements ICE-19
 
-WRKSRC=		${WRKDIR}/nice-${PORTVERSION}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig glib20 ltverhack gnometarget
 USE_GSTREAMER=	yes
 USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_GETIFADDRS" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|__BYTE_ORDER|_BYTE_ORDER|g ; \
