@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	cpdup
-PORTVERSION=	1.09
+PORTVERSION=	1.11
 CATEGORIES=	sysutils
-MASTER_SITES=	http://apollo.backplane.com/FreeBSDPorts/ \
+MASTER_SITES=	http://apollo.backplane.com/FreeSrc/ \
 		http://utenti.gufi.org/~gmarco/files/distfiles/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gmarco@gufi.org
 COMMENT=	A comprehensive filesystem mirroring and backup program
