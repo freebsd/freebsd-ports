@@ -19,6 +19,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.5.11.so:${PORTSDIR}/misc/sword \
 		${LOCALBASE}/lib/libclucene.so:${PORTSDIR}/textproc/clucene
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+PORTSCOUT=	ignore:1
+
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
