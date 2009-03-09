@@ -63,6 +63,7 @@ OPTIONS+=	X264 "Enable H.264/AVC codec support" On
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_XORG=	xpm
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnometarget libxml2
 WANT_SDL=	yes
