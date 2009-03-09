@@ -396,7 +396,6 @@
     SUBDIR += libexif-gtk
     SUBDIR += libflash
     SUBDIR += libfpx
-    SUBDIR += libgdgeda
     SUBDIR += libgeotiff
     SUBDIR += libgfx
     SUBDIR += libggi
