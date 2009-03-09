@@ -153,15 +153,6 @@
     s[0] = '0' + color;
     Epplet_modify_config("color", s);
     Epplet_save_config();
-@@ -257,7 +336,7 @@
-    memset(cpu_hist, 0x00, sizeof(int) * cpu_hist_size);
-    hist_pos = 0;
- 
--   Epplet_Init("E-WIRELESS", "0.1", "E 802.11 signal monitoring epplet",
-+   Epplet_Init("E-Wireless", "0.1", "E 802.11 signal monitoring epplet",
- 	       3, 3, argc, argv, 0);
- 
-    Epplet_load_config();
 @@ -283,10 +362,10 @@
  
     p = Epplet_create_popup();
