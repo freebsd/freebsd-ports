@@ -10,7 +10,7 @@ PORTVERSION=	2.01
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://mping.uninett.no/
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Mping network statistics collector
 
 GNU_CONFIGURE=	yes

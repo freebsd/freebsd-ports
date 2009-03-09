@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikindx
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Bibliographic and quotations/notes management system
 
 USE_PHP=	session mysql xml ctype
