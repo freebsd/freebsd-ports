@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	textpattern
-PORTVERSION=	4.0.5
-PORTREVISION=	1
+PORTVERSION=	4.0.8
 CATEGORIES=	www
-MASTER_SITES=	http://textpattern.com/file_download/37/
+MASTER_SITES=	http://textpattern.com/file_download/52/
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A free, flexible, elegant, easy-to-use content management system
 
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 USE_PHP=	mbstring xml mysql pcre
+WRKSRC=		${WRKDIR}/${PORTNAME}-4.0.5/
 
 SUB_FILES=	pkg-message
 
