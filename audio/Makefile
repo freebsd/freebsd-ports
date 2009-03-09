@@ -28,6 +28,7 @@
     SUBDIR += alienwah
     SUBDIR += amarok
     SUBDIR += amarok-fs
+    SUBDIR += amarok-kde4
     SUBDIR += amb-plugins
     SUBDIR += amp
     SUBDIR += ampache
