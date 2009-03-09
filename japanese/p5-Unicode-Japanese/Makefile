@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Unicode-Japanese
-PORTVERSION=	0.37
+PORTVERSION=	0.46
 CATEGORIES=	japanese converters perl5
 MASTER_SITES=	CPAN
 
@@ -14,7 +14,7 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Perl5 module to handle Japanese character encodings
 
 PERL_CONFIGURE=	5.8.0+
-MAN1=		ujconv.1
+MAN1=		ujconv.1 ujguess.1
 MAN3=		Unicode::Japanese.3 Unicode::Japanese::JA.3
 
 .include <bsd.port.pre.mk>
@@ -22,3 +22,5 @@ MAN3=		Unicode::Japanese.3 Unicode::Japanese::JA.3
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
 
 .include <bsd.port.post.mk>
+
+CONFIGURE_ARGS:=	${CONFIGURE_ARGS:NCCFLAGS=*}
