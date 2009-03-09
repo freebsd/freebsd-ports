@@ -98,7 +98,6 @@ lib/goblin/browserLogOpt.tk
 lib/goblin/browserOptions.tk
 lib/goblin/browserTraceOpt.tk
 lib/goblin/camera.gif
-lib/goblin/composeRandom.tk
 lib/goblin/convertArchive.tk
 lib/goblin/delButton.gif
 lib/goblin/editArcLabels.tk
@@ -115,6 +114,7 @@ lib/goblin/editNewNode.gif
 lib/goblin/editNodeLabels.tk
 lib/goblin/editPivot.tk
 lib/goblin/editPred.gif
+lib/goblin/editRandom.tk
 lib/goblin/editRedirect.gif
 lib/goblin/editRow.tk
 lib/goblin/editVar.tk
