@@ -1,0 +1,19 @@
+--- ./xine/CMakeLists.txt.orig	2009-01-08 17:47:18.000000000 +0300
++++ ./xine/CMakeLists.txt	2009-02-21 01:19:39.000000000 +0300
+@@ -27,6 +27,7 @@
+    endif (NOT _OFFT_IS_64BIT)
+ endif (UNIX)
+ 
++find_package(Phonon)
+ macro_optional_find_package(Xine)
+ macro_optional_find_package(XCB)
+ 
+@@ -97,7 +98,7 @@
+ 
+ 
+ if(XINE_FOUND)
+-    include_directories(${XINE_INCLUDE_DIR})
++    include_directories(${PHONON_INCLUDES} ${XINE_INCLUDE_DIR})
+ 
+     configure_file(config-xine-widget.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-xine-widget.h )
+     

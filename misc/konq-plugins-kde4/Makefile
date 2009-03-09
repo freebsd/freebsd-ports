@@ -15,6 +15,10 @@ DIST_SUBDIR=	KDE/extragear
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Additonal plugins and features for Konqueror
 
+LIB_DEPENDS=	tidy-0.99.0:${PORTSDIR}/www/tidy-lib
+
+LATEST_LINK=	${PORTNAME}-kde4
+
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdebase kdeprefix kdehier automoc4
 USE_QT_VER=	4

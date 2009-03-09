@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	eigen
-DISTVERSION=	2.0-beta3
+DISTVERSION=	2.0.0
 CATEGORIES=	math
 MASTER_SITES=	http://download.tuxfamily.org/eigen/
 
@@ -14,6 +14,5 @@ COMMENT=	Lightweight library for vector and matrix math
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}2
 
 .include <bsd.port.mk>

@@ -58,9 +58,6 @@ post-extract:
 pre-configure:
 	${REINPLACE_CMD} -e 's|<qhash.h>|<QHash>|'\
 		${WRKSRC}/../kwin/effects/thumbnailaside.h
-	${REINPLACE_CMD} -e 's|<qdir.h>|<QDir>|'\
-		-e 's|<qfile.h>|<QFile>|'\
-		${WRKSRC}/../kwin/effects/videorecord.cpp
 .for item in b2/b2client.cpp kwmtheme/kwmthemeclient.cpp\
 		laptop/laptopclient.cpp modernsystem/modernsys.cpp\
 		redmond/redmond.cpp

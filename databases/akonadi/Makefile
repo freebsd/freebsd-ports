@@ -14,18 +14,15 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Storage server for kdepim
 
 LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python
-BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/bin/mysqld_safe:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
-RUN_DEPENDS+=	update-mime-database:${PORTSDIR}/misc/shared-mime-info \
-		${LOCALBASE}/bin/mysqld_safe:${PORTSDIR}/databases/mysql${MYSQL_VER}-server \
-		${QT_PREFIX}/lib/qt4/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt4-mysql-plugin
+RUN_DEPENDS=	${QT_PREFIX}/lib/qt4/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt4-mysql-plugin
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
-USE_XORG=	x11
 QT_COMPONENTS=	corelib network qtestlib dbus sql \
 		qmake_build moc_build rcc_build uic_build
-USE_MYSQL=	yes
+USE_MYSQL=	server
 USE_KDE4=	kdeprefix kdehier automoc4 sharedmime
 KDE4_BUILDENV=	yes
 PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -44,7 +44,6 @@ lib/kde4/kcm_knotify.so
 lib/kde4/kcm_locale.so
 lib/kde4/kcm_nepomuk.so
 lib/kde4/kcm_phonon.so
-lib/kde4/kcm_phononxine.so
 lib/kde4/kcm_trash.so
 lib/kde4/kcmspellchecking.so
 lib/kde4/kded_desktopnotifier.so
@@ -839,6 +838,7 @@ share/icons/oxygen/128x128/apps/preferences-system-windows.png
 share/icons/oxygen/128x128/apps/preferences-web-browser-identification.png
 share/icons/oxygen/128x128/apps/scribus.png
 share/icons/oxygen/128x128/apps/semn.png
+share/icons/oxygen/128x128/apps/showfoto.png
 share/icons/oxygen/128x128/apps/strigi.png
 share/icons/oxygen/128x128/apps/system-diagnosis.png
 share/icons/oxygen/128x128/apps/system-file-manager.png
@@ -1678,6 +1678,7 @@ share/icons/oxygen/16x16/apps/preferences-web-browser-shortcuts.png
 share/icons/oxygen/16x16/apps/preferences-web-browser-stylesheets.png
 share/icons/oxygen/16x16/apps/scribus.png
 share/icons/oxygen/16x16/apps/semn.png
+share/icons/oxygen/16x16/apps/showfoto.png
 share/icons/oxygen/16x16/apps/strigi.png
 share/icons/oxygen/16x16/apps/system-file-manager.png
 share/icons/oxygen/16x16/apps/system-software-update.png
@@ -2553,6 +2554,7 @@ share/icons/oxygen/22x22/apps/preferences-web-browser-shortcuts.png
 share/icons/oxygen/22x22/apps/preferences-web-browser-stylesheets.png
 share/icons/oxygen/22x22/apps/scribus.png
 share/icons/oxygen/22x22/apps/semn.png
+share/icons/oxygen/22x22/apps/showfoto.png
 share/icons/oxygen/22x22/apps/strigi.png
 share/icons/oxygen/22x22/apps/system-file-manager.png
 share/icons/oxygen/22x22/apps/system-software-update.png
@@ -3440,6 +3442,7 @@ share/icons/oxygen/32x32/apps/preferences-web-browser-shortcuts.png
 share/icons/oxygen/32x32/apps/preferences-web-browser-stylesheets.png
 share/icons/oxygen/32x32/apps/scribus.png
 share/icons/oxygen/32x32/apps/semn.png
+share/icons/oxygen/32x32/apps/showfoto.png
 share/icons/oxygen/32x32/apps/strigi.png
 share/icons/oxygen/32x32/apps/system-file-manager.png
 share/icons/oxygen/32x32/apps/system-software-update.png
@@ -4315,6 +4318,7 @@ share/icons/oxygen/48x48/apps/preferences-web-browser-shortcuts.png
 share/icons/oxygen/48x48/apps/preferences-web-browser-stylesheets.png
 share/icons/oxygen/48x48/apps/scribus.png
 share/icons/oxygen/48x48/apps/semn.png
+share/icons/oxygen/48x48/apps/showfoto.png
 share/icons/oxygen/48x48/apps/strigi.png
 share/icons/oxygen/48x48/apps/system-file-manager.png
 share/icons/oxygen/48x48/apps/system-software-update.png
@@ -4942,6 +4946,7 @@ share/icons/oxygen/64x64/apps/preferences-system-windows-move.png
 share/icons/oxygen/64x64/apps/preferences-system-windows.png
 share/icons/oxygen/64x64/apps/scribus.png
 share/icons/oxygen/64x64/apps/semn.png
+share/icons/oxygen/64x64/apps/showfoto.png
 share/icons/oxygen/64x64/apps/strigi.png
 share/icons/oxygen/64x64/apps/system-file-manager.png
 share/icons/oxygen/64x64/apps/system-software-update.png
@@ -6220,6 +6225,7 @@ share/icons/oxygen/scalable/apps/preferences-web-browser-shortcuts.svgz
 share/icons/oxygen/scalable/apps/preferences-web-browser-stylesheets.svgz
 share/icons/oxygen/scalable/apps/scribus.svgz
 share/icons/oxygen/scalable/apps/semn.svg
+share/icons/oxygen/scalable/apps/showfoto.svgz
 share/icons/oxygen/scalable/apps/small/16x16/accessories-calculator.svgz
 share/icons/oxygen/scalable/apps/small/16x16/accessories-character-map.svgz
 share/icons/oxygen/scalable/apps/small/16x16/accessories-dictionary.svgz
@@ -7442,7 +7448,6 @@ share/kde4/services/jpegthumbnail.desktop
 share/kde4/services/kcm_kdnssd.desktop
 share/kde4/services/kcm_nepomuk.desktop
 share/kde4/services/kcm_phonon.desktop
-share/kde4/services/kcm_phononxine.desktop
 share/kde4/services/kcmcgi.desktop
 share/kde4/services/kcmkded.desktop
 share/kde4/services/kcmnotify.desktop

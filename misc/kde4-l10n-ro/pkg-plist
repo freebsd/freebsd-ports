@@ -425,6 +425,7 @@ share/locale/ro/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/ro/LC_MESSAGES/knode.mo
 share/locale/ro/LC_MESSAGES/knotes.mo
 share/locale/ro/LC_MESSAGES/knotify4.mo
+share/locale/ro/LC_MESSAGES/kode.mo
 share/locale/ro/LC_MESSAGES/kolf.mo
 share/locale/ro/LC_MESSAGES/kollision.mo
 share/locale/ro/LC_MESSAGES/kolourpaint.mo
@@ -471,6 +472,7 @@ share/locale/ro/LC_MESSAGES/ksaneplugin.mo
 share/locale/ro/LC_MESSAGES/ksayit.mo
 share/locale/ro/LC_MESSAGES/kscd.mo
 share/locale/ro/LC_MESSAGES/kscreensaver.mo
+share/locale/ro/LC_MESSAGES/ksendemail.mo
 share/locale/ro/LC_MESSAGES/kshisen.mo
 share/locale/ro/LC_MESSAGES/kshorturifilter.mo
 share/locale/ro/LC_MESSAGES/ksirk.mo

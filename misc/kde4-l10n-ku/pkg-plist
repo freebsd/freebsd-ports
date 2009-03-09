@@ -3,8 +3,10 @@ share/locale/ku/LC_MESSAGES/ark.mo
 share/locale/ku/LC_MESSAGES/audiorename_plugin.mo
 share/locale/ku/LC_MESSAGES/display.mo
 share/locale/ku/LC_MESSAGES/dolphin.mo
+share/locale/ku/LC_MESSAGES/dragonplayer.mo
 share/locale/ku/LC_MESSAGES/drkonqi.mo
 share/locale/ku/LC_MESSAGES/filetypes.mo
+share/locale/ku/LC_MESSAGES/gwenview.mo
 share/locale/ku/LC_MESSAGES/htmlsearch.mo
 share/locale/ku/LC_MESSAGES/imagerename_plugin.mo
 share/locale/ku/LC_MESSAGES/joystick.mo
@@ -43,6 +45,7 @@ share/locale/ku/LC_MESSAGES/kcminit.mo
 share/locale/ku/LC_MESSAGES/kcminput.mo
 share/locale/ku/LC_MESSAGES/kcmioslaveinfo.mo
 share/locale/ku/LC_MESSAGES/kcmkclock.mo
+share/locale/ku/LC_MESSAGES/kcolorchooser.mo
 share/locale/ku/LC_MESSAGES/kcmkded.mo
 share/locale/ku/LC_MESSAGES/kcmkdnssd.mo
 share/locale/ku/LC_MESSAGES/kcmkeyboard.mo
@@ -193,6 +196,17 @@ share/locale/ku/LC_MESSAGES/nepomuk.mo
 share/locale/ku/LC_MESSAGES/nepomuksearch.mo
 share/locale/ku/LC_MESSAGES/nsplugin.mo
 share/locale/ku/LC_MESSAGES/okular.mo
+share/locale/ku/LC_MESSAGES/okular_chm.mo
+share/locale/ku/LC_MESSAGES/okular_comicbook.mo
+share/locale/ku/LC_MESSAGES/okular_djvu.mo
+share/locale/ku/LC_MESSAGES/okular_epub.mo
+share/locale/ku/LC_MESSAGES/okular_fax.mo
+share/locale/ku/LC_MESSAGES/okular_fictionbook.mo
+share/locale/ku/LC_MESSAGES/okular_ghostview.mo
+share/locale/ku/LC_MESSAGES/okular_kimgio.mo
+share/locale/ku/LC_MESSAGES/okular_plucker.mo
+share/locale/ku/LC_MESSAGES/okular_tiff.mo
+share/locale/ku/LC_MESSAGES/okular_xps.mo
 share/locale/ku/LC_MESSAGES/phonon-xine.mo
 share/locale/ku/LC_MESSAGES/phonon_kde.mo
 share/locale/ku/LC_MESSAGES/plasma-overlay.mo
@@ -267,6 +281,7 @@ share/locale/ku/LC_MESSAGES/powerdevil.mo
 share/locale/ku/LC_MESSAGES/printer-applet.mo
 share/locale/ku/LC_MESSAGES/processcore.mo
 share/locale/ku/LC_MESSAGES/processui.mo
+share/locale/ku/LC_MESSAGES/svgpart.mo
 share/locale/ku/LC_MESSAGES/solid-bluetooth.mo
 share/locale/ku/LC_MESSAGES/solid-hardware.mo
 share/locale/ku/LC_MESSAGES/solid-network.mo

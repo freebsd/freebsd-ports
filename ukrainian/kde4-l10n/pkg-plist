@@ -145,6 +145,9 @@ share/doc/HTML/uk/kabcclient/man-kabcclient.1.docbook
 share/doc/HTML/uk/kaddressbook/common
 share/doc/HTML/uk/kaddressbook/index.cache.bz2
 share/doc/HTML/uk/kaddressbook/index.docbook
+share/doc/HTML/uk/kalarm/common
+share/doc/HTML/uk/kalarm/index.cache.bz2
+share/doc/HTML/uk/kalarm/index.docbook
 share/doc/HTML/uk/kalgebra/common
 share/doc/HTML/uk/kalgebra/index.cache.bz2
 share/doc/HTML/uk/kalgebra/index.docbook
@@ -211,6 +214,9 @@ share/doc/HTML/uk/kbruch/man-kbruch.1.docbook
 share/doc/HTML/uk/kbugbuster/common
 share/doc/HTML/uk/kbugbuster/index.cache.bz2
 share/doc/HTML/uk/kbugbuster/index.docbook
+share/doc/HTML/uk/kcachegrind/common
+share/doc/HTML/uk/kcachegrind/index.cache.bz2
+share/doc/HTML/uk/kcachegrind/index.docbook
 share/doc/HTML/uk/kcalc/commands.docbook
 share/doc/HTML/uk/kcalc/common
 share/doc/HTML/uk/kcalc/index.cache.bz2
@@ -784,6 +790,20 @@ share/doc/HTML/uk/knetattach/index.docbook
 share/doc/HTML/uk/knetwalk/common
 share/doc/HTML/uk/knetwalk/index.cache.bz2
 share/doc/HTML/uk/knetwalk/index.docbook
+share/doc/HTML/uk/knode/commands.docbook
+share/doc/HTML/uk/knode/common
+share/doc/HTML/uk/knode/credits.docbook
+share/doc/HTML/uk/knode/faq.docbook
+share/doc/HTML/uk/knode/gloss.docbook
+share/doc/HTML/uk/knode/index.cache.bz2
+share/doc/HTML/uk/knode/index.docbook
+share/doc/HTML/uk/knode/install.docbook
+share/doc/HTML/uk/knode/introduction.docbook
+share/doc/HTML/uk/knode/journey.docbook
+share/doc/HTML/uk/knode/more.docbook
+share/doc/HTML/uk/knode/using-firststart.docbook
+share/doc/HTML/uk/knode/using-morefeatures.docbook
+share/doc/HTML/uk/knode/using-subscribing.docbook
 share/doc/HTML/uk/knotes/common
 share/doc/HTML/uk/knotes/index.cache.bz2
 share/doc/HTML/uk/knotes/index.docbook
@@ -812,6 +832,9 @@ share/doc/HTML/uk/kommander/q-and-a.docbook
 share/doc/HTML/uk/kommander/specials.docbook
 share/doc/HTML/uk/kommander/tutorials.docbook
 share/doc/HTML/uk/kommander/widgets.docbook
+share/doc/HTML/uk/kompare/common
+share/doc/HTML/uk/kompare/index.cache.bz2
+share/doc/HTML/uk/kompare/index.docbook
 share/doc/HTML/uk/konqueror/basics.docbook
 share/doc/HTML/uk/konqueror/bookmarks.docbook
 share/doc/HTML/uk/konqueror/browser.docbook
@@ -1567,6 +1590,7 @@ share/locale/uk/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/uk/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_kalzium.mo
@@ -1703,11 +1727,13 @@ share/locale/uk/entry.desktop
 @dirrm share/doc/HTML/uk/konsole
 @dirrm share/doc/HTML/uk/konquest
 @dirrm share/doc/HTML/uk/konqueror
+@dirrm share/doc/HTML/uk/kompare
 @dirrm share/doc/HTML/uk/kommander
 @dirrm share/doc/HTML/uk/kolourpaint
 @dirrm share/doc/HTML/uk/kollision
 @dirrm share/doc/HTML/uk/kolf
 @dirrm share/doc/HTML/uk/knotes
+@dirrm share/doc/HTML/uk/knode
 @dirrm share/doc/HTML/uk/knetwalk
 @dirrm share/doc/HTML/uk/knetattach
 @dirrm share/doc/HTML/uk/kmplot
@@ -1867,6 +1893,7 @@ share/locale/uk/entry.desktop
 @dirrm share/doc/HTML/uk/kcontrol
 @dirrm share/doc/HTML/uk/kcharselect
 @dirrm share/doc/HTML/uk/kcalc
+@dirrm share/doc/HTML/uk/kcachegrind
 @dirrm share/doc/HTML/uk/kbugbuster
 @dirrm share/doc/HTML/uk/kbruch
 @dirrm share/doc/HTML/uk/kbreakout
@@ -1882,6 +1909,7 @@ share/locale/uk/entry.desktop
 @dirrm share/doc/HTML/uk/kanagram
 @dirrm share/doc/HTML/uk/kalzium
 @dirrm share/doc/HTML/uk/kalgebra
+@dirrm share/doc/HTML/uk/kalarm
 @dirrm share/doc/HTML/uk/kaddressbook
 @dirrm share/doc/HTML/uk/kabcclient
 @dirrm share/doc/HTML/uk/juk

@@ -14,6 +14,7 @@ MAN1=	adddebug.1 \
 	extend_dmalloc.1 \
 	extractrc.1 \
 	fixincludes.1 \
+	kabcclient.1 \
 	kalzium.1 \
 	kappfinder.1 \
 	kate.1 \
@@ -52,4 +53,5 @@ MAN7=	kdeoptions.7 \
 MAN8=	kbuildsycoca4.8 \
 	kcookiejar4.8 \
 	kdeinit4.8 \
+	kded4.8 \
 	meinproc4.8

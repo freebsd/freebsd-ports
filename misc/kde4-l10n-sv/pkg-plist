@@ -74,6 +74,9 @@ share/doc/HTML/sv/blinken/blinken_nickprompt.png
 share/doc/HTML/sv/blinken/common
 share/doc/HTML/sv/blinken/index.cache.bz2
 share/doc/HTML/sv/blinken/index.docbook
+share/doc/HTML/sv/bomber/common
+share/doc/HTML/sv/bomber/index.cache.bz2
+share/doc/HTML/sv/bomber/index.docbook
 share/doc/HTML/sv/bovo/common
 share/doc/HTML/sv/bovo/index.cache.bz2
 share/doc/HTML/sv/bovo/index.docbook
@@ -123,6 +126,7 @@ share/doc/HTML/sv/juk/search-playlist.png
 share/doc/HTML/sv/kabcclient/common
 share/doc/HTML/sv/kabcclient/index.cache.bz2
 share/doc/HTML/sv/kabcclient/index.docbook
+share/doc/HTML/sv/kabcclient/man-kabcclient.1.docbook
 share/doc/HTML/sv/kaddressbook/addhost.png
 share/doc/HTML/sv/kaddressbook/common
 share/doc/HTML/sv/kaddressbook/conf.png
@@ -783,6 +787,51 @@ share/doc/HTML/sv/kinfocenter/usb/index.docbook
 share/doc/HTML/sv/kinfocenter/xserver/common
 share/doc/HTML/sv/kinfocenter/xserver/index.cache.bz2
 share/doc/HTML/sv/kinfocenter/xserver/index.docbook
+share/doc/HTML/sv/kioslave/audiocd/common
+share/doc/HTML/sv/kioslave/audiocd/index.cache.bz2
+share/doc/HTML/sv/kioslave/audiocd/index.docbook
+share/doc/HTML/sv/kioslave/bookmarks/common
+share/doc/HTML/sv/kioslave/bookmarks/index.cache.bz2
+share/doc/HTML/sv/kioslave/bookmarks/index.docbook
+share/doc/HTML/sv/kioslave/bzip2/common
+share/doc/HTML/sv/kioslave/bzip2/index.cache.bz2
+share/doc/HTML/sv/kioslave/bzip2/index.docbook
+share/doc/HTML/sv/kioslave/cgi/common
+share/doc/HTML/sv/kioslave/cgi/index.cache.bz2
+share/doc/HTML/sv/kioslave/cgi/index.docbook
+share/doc/HTML/sv/kioslave/finger/common
+share/doc/HTML/sv/kioslave/finger/index.cache.bz2
+share/doc/HTML/sv/kioslave/finger/index.docbook
+share/doc/HTML/sv/kioslave/fish/common
+share/doc/HTML/sv/kioslave/fish/index.cache.bz2
+share/doc/HTML/sv/kioslave/fish/index.docbook
+share/doc/HTML/sv/kioslave/floppy/common
+share/doc/HTML/sv/kioslave/floppy/index.cache.bz2
+share/doc/HTML/sv/kioslave/floppy/index.docbook
+share/doc/HTML/sv/kioslave/gzip/common
+share/doc/HTML/sv/kioslave/gzip/index.cache.bz2
+share/doc/HTML/sv/kioslave/gzip/index.docbook
+share/doc/HTML/sv/kioslave/info/common
+share/doc/HTML/sv/kioslave/info/index.cache.bz2
+share/doc/HTML/sv/kioslave/info/index.docbook
+share/doc/HTML/sv/kioslave/man/common
+share/doc/HTML/sv/kioslave/man/index.cache.bz2
+share/doc/HTML/sv/kioslave/man/index.docbook
+share/doc/HTML/sv/kioslave/nfs/common
+share/doc/HTML/sv/kioslave/nfs/index.cache.bz2
+share/doc/HTML/sv/kioslave/nfs/index.docbook
+share/doc/HTML/sv/kioslave/sftp/common
+share/doc/HTML/sv/kioslave/sftp/index.cache.bz2
+share/doc/HTML/sv/kioslave/sftp/index.docbook
+share/doc/HTML/sv/kioslave/smb/common
+share/doc/HTML/sv/kioslave/smb/index.cache.bz2
+share/doc/HTML/sv/kioslave/smb/index.docbook
+share/doc/HTML/sv/kioslave/tar/common
+share/doc/HTML/sv/kioslave/tar/index.cache.bz2
+share/doc/HTML/sv/kioslave/tar/index.docbook
+share/doc/HTML/sv/kioslave/thumbnail/common
+share/doc/HTML/sv/kioslave/thumbnail/index.cache.bz2
+share/doc/HTML/sv/kioslave/thumbnail/index.docbook
 share/doc/HTML/sv/kiriki/common
 share/doc/HTML/sv/kiriki/index.cache.bz2
 share/doc/HTML/sv/kiriki/index.docbook
@@ -2020,6 +2069,7 @@ share/locale/sv/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/sv/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_kalzium.mo
@@ -2180,6 +2230,22 @@ share/locale/sv/entry.desktop
 @dirrm share/doc/HTML/sv/kjots
 @dirrm share/doc/HTML/sv/kiten
 @dirrm share/doc/HTML/sv/kiriki
+@dirrm share/doc/HTML/sv/kioslave/thumbnail
+@dirrm share/doc/HTML/sv/kioslave/tar
+@dirrm share/doc/HTML/sv/kioslave/smb
+@dirrm share/doc/HTML/sv/kioslave/sftp
+@dirrm share/doc/HTML/sv/kioslave/nfs
+@dirrm share/doc/HTML/sv/kioslave/man
+@dirrm share/doc/HTML/sv/kioslave/info
+@dirrm share/doc/HTML/sv/kioslave/gzip
+@dirrm share/doc/HTML/sv/kioslave/floppy
+@dirrm share/doc/HTML/sv/kioslave/fish
+@dirrm share/doc/HTML/sv/kioslave/finger
+@dirrm share/doc/HTML/sv/kioslave/cgi
+@dirrm share/doc/HTML/sv/kioslave/bzip2
+@dirrm share/doc/HTML/sv/kioslave/bookmarks
+@dirrm share/doc/HTML/sv/kioslave/audiocd
+@dirrm share/doc/HTML/sv/kioslave
 @dirrm share/doc/HTML/sv/kinfocenter/xserver
 @dirrm share/doc/HTML/sv/kinfocenter/usb
 @dirrm share/doc/HTML/sv/kinfocenter/sound
@@ -2312,6 +2378,7 @@ share/locale/sv/entry.desktop
 @dirrm share/doc/HTML/sv/dolphin
 @dirrm share/doc/HTML/sv/cervisia
 @dirrm share/doc/HTML/sv/bovo
+@dirrm share/doc/HTML/sv/bomber
 @dirrm share/doc/HTML/sv/blinken
 @dirrm share/doc/HTML/sv/ark
 @dirrm share/doc/HTML/sv/amor

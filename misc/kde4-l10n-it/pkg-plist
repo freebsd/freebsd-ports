@@ -1650,6 +1650,7 @@ share/locale/it/LC_MESSAGES/plasma-overlay.mo
 share/locale/it/LC_MESSAGES/plasma-shells-common.mo
 share/locale/it/LC_MESSAGES/plasma.mo
 share/locale/it/LC_MESSAGES/plasma_applet_battery.mo
+share/locale/it/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/it/LC_MESSAGES/plasma_applet_bball.mo
 share/locale/it/LC_MESSAGES/plasma_applet_binaryclock.mo
 share/locale/it/LC_MESSAGES/plasma_applet_bluemarble.mo

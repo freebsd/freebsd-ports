@@ -429,6 +429,7 @@ share/locale/hu/LC_MESSAGES/kcmxinerama.mo
 share/locale/hu/LC_MESSAGES/kcolorchooser.mo
 share/locale/hu/LC_MESSAGES/kcron.mo
 share/locale/hu/LC_MESSAGES/kdat.mo
+share/locale/hu/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/hu/LC_MESSAGES/kde-menu.mo
 share/locale/hu/LC_MESSAGES/kdebugdialog.mo
 share/locale/hu/LC_MESSAGES/kdelibs4.mo
@@ -680,6 +681,7 @@ share/locale/hu/LC_MESSAGES/okular_tiff.mo
 share/locale/hu/LC_MESSAGES/okular_xps.mo
 share/locale/hu/LC_MESSAGES/parley.mo
 share/locale/hu/LC_MESSAGES/phonon-xine.mo
+share/locale/hu/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/hu/LC_MESSAGES/phonon_kde.mo
 share/locale/hu/LC_MESSAGES/plasma.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_battery.mo
@@ -719,6 +721,7 @@ share/locale/hu/LC_MESSAGES/plasmapkg.mo
 share/locale/hu/LC_MESSAGES/plasmoidviewer.mo
 share/locale/hu/LC_MESSAGES/processcore.mo
 share/locale/hu/LC_MESSAGES/processui.mo
+share/locale/hu/LC_MESSAGES/powerdevil.mo
 share/locale/hu/LC_MESSAGES/solid-bluetooth.mo
 share/locale/hu/LC_MESSAGES/solid-hardware.mo
 share/locale/hu/LC_MESSAGES/solid-network.mo

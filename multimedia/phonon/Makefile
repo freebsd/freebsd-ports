@@ -5,17 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	phonon
-PORTVERSION=	4.3.0
-PORTREVISION=	1
+PORTVERSION=	4.3.1
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE4 phonon applications
-
-LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
+COMMENT=	Multimedia framework for KDE4
 
 CONFLICTS=	qt4-phonon-4* kdebase-runtime-4.1.[0-4]*
 
@@ -23,9 +20,8 @@ USE_BZIP2=	yes
 USE_KDE4=	kdehier automoc4 kdeprefix
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib opengl dbus qt3support designer network svg qtestlib \
+QT_COMPONENTS=	gui dbus xml qtestlib \
 		qmake_build moc_build rcc_build uic_build
-USE_GSTREAMER=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -45,5 +41,8 @@ pre-configure:
 	${REINPLACE_CMD} -e '/phonon.pc/s|pkgconfig|../libdata/pkgconfig|' \
 			-e 's|{QT_INCLUDES}|{QT_INCLUDES} ${LOCALBASE}/include|'\
 		${WRKSRC}/../CMakeLists.txt
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

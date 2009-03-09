@@ -1188,6 +1188,7 @@ share/locale/ru/LC_MESSAGES/liboktetacore.mo
 share/locale/ru/LC_MESSAGES/libphonon.mo
 share/locale/ru/LC_MESSAGES/libplasma.mo
 share/locale/ru/LC_MESSAGES/libplasmaclock.mo
+share/locale/ru/LC_MESSAGES/libksane.mo
 share/locale/ru/LC_MESSAGES/libtaskmanager.mo
 share/locale/ru/LC_MESSAGES/lokalize.mo
 share/locale/ru/LC_MESSAGES/lskat.mo
@@ -1219,7 +1220,9 @@ share/locale/ru/LC_MESSAGES/phonon_kde.mo
 share/locale/ru/LC_MESSAGES/plasma.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_binaryclock.mo
+share/locale/ru/LC_MESSAGES/plasma_applet_bluemarble.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_calculator.mo
+share/locale/ru/LC_MESSAGES/plasma_applet_charselect.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_desktop.mo
@@ -1231,6 +1234,7 @@ share/locale/ru/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_incomingmsg.mo
+share/locale/ru/LC_MESSAGES/plasma_runner_katesessions.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_kolourpicker.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_launcher.mo

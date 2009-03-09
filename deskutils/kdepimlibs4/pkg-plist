@@ -333,10 +333,10 @@ include/syndication/specificitem.h
 include/syndication/specificitemvisitor.h
 include/syndication/syndication.h
 include/syndication/tools.h
-lib/KdepimLibs-%%KDE4_VERSION%%/cmake/KDEPimLibsLibraryTargetsWithPrefix-%%KDE4_BUILD_TYPE%%.cmake
-lib/KdepimLibs-%%KDE4_VERSION%%/cmake/KDEPimLibsLibraryTargetsWithPrefix.cmake
-lib/KdepimLibs-%%KDE4_VERSION%%/cmake/KdepimLibsConfig.cmake
-lib/KdepimLibs-%%KDE4_VERSION%%/cmake/KdepimLibsConfigVersion.cmake
+lib/KdepimLibs/cmake/KDEPimLibsLibraryTargetsWithPrefix-%%KDE4_BUILD_TYPE%%.cmake
+lib/KdepimLibs/cmake/KDEPimLibsLibraryTargetsWithPrefix.cmake
+lib/KdepimLibs/cmake/KdepimLibsConfig.cmake
+lib/KdepimLibs/cmake/KdepimLibsConfigVersion.cmake
 lib/gpgmepp/GpgmeppConfig.cmake
 lib/gpgmepp/GpgmeppLibraryDepends.cmake
 lib/kde4/kabc_directory.so
@@ -483,8 +483,8 @@ share/kde4/servicetypes/kresources_plugin.desktop
 @dirrm share/doc/HTML/en/kcontrol/kresources
 @dirrm share/apps/akonadi-kde
 @dirrm lib/gpgmepp
-@dirrm lib/KdepimLibs-%%KDE4_VERSION%%/cmake
-@dirrm lib/KdepimLibs-%%KDE4_VERSION%%
+@dirrm lib/KdepimLibs/cmake
+@dirrm lib/KdepimLibs
 @dirrm include/syndication/rss2
 @dirrm include/syndication/rdf
 @dirrm include/syndication/atom

@@ -532,6 +532,7 @@ share/apps/kalarm/kalarmui.rc
 share/apps/kconf_update/kalarm-1.2.1-general.pl
 share/apps/kconf_update/kalarm-1.9.5-defaults.pl
 share/apps/kconf_update/kalarm-2.0.2-general.pl
+share/apps/kconf_update/kalarm-2.1.5-general.pl
 share/apps/kconf_update/kalarm-version.pl
 share/apps/kconf_update/kalarm.upd
 share/apps/kconf_update/kmail-3.1-update-new-mail-notification-settings.pl
@@ -795,6 +796,7 @@ share/apps/libkholidays/holiday_quebec
 share/apps/libkholidays/holiday_ro
 share/apps/libkholidays/holiday_ru
 share/apps/libkholidays/holiday_se
+share/apps/libkholidays/holiday_sk
 share/apps/libkholidays/holiday_si
 share/apps/libkholidays/holiday_th
 share/apps/libkholidays/holiday_ua
