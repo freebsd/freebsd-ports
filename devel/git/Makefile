@@ -199,12 +199,13 @@ PLIST_SUB+=	HTMLDOCS="@comment "
 .endif
 
 .ifndef (WITHOUT_GUI)
+USE_TK=		84+
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
 MAN1+=		git-citool.1 \
 		git-gui.1 \
 		gitk.1
 PLIST_SUB+=	GUI=""
-RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
-MAKE_ENV+=	TCL_PATH=tclsh8.4 TCLTK_PATH=wish8.4
+MAKE_ENV+=	TCL_PATH=${TCLSH} TCLTK_PATH=${WISH}
 .else
 PLIST_SUB+=	GUI="@comment "
 MAKE_ENV+=	NO_TCLTK=yes
