@@ -10,7 +10,7 @@ PORTVERSION=	1.38
 CATEGORIES=	games www
 MASTER_SITES=	SF
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A real-time stats parser for Half Life & its mods
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql

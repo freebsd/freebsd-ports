@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	http://net.doit.wisc.edu/~plonka/junipoll/
 MASTER_SITE_SUBDIR=	. old
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JUNIper router snmp POLLer for firewall filter counters
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \

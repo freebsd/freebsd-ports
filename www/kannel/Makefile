@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.kannel.org/download/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	gateway-${PORTVERSION}
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WAP / SMS Gateway
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre

@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	poxy
 DISTNAME=	poxy-${DISTVERSION}
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP based web proxy
 
 NO_BUILD=	YES

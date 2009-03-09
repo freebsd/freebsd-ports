@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://rsug.itd.umich.edu/software/nefu/files/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A network monitoring daemon
 
 GNU_CONFIGURE=		yes

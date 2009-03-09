@@ -14,7 +14,7 @@ MASTER_SITES=	http://nuovext.pwsp.net/snowish/files/ \
 MASTER_SITE_SUBDIR=	tmclaugh
 DISTNAME=	SnowIsh-${PORTVERSION}_PNG
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Mac inspired icon theme for GNOME
 
 RESTRICTED=	${REASON}

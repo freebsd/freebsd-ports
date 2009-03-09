@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/pupnp
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Universal Plug and Play Software Development Kit
 
 CONFLICTS=	upnp-1.0.*

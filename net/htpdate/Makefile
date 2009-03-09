@@ -10,7 +10,7 @@ PORTVERSION=	1.0.4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.clevervest.com/htp/archive/c/
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Time synchronization over http utility
 
 USE_BZIP2=	yes

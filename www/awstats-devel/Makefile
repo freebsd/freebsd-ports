@@ -13,7 +13,7 @@ MASTER_SITES=	http://awstats.sourceforge.net/files/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 
 RUN_DEPENDS=	${SITE_PERL}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois

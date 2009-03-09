@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net devel
 MASTER_SITES=	SF
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library for writing servers
 
 USE_GNOME=	glib20 gnomehack gnometarget

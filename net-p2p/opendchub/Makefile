@@ -11,7 +11,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unofficial Unix version of the Direct Connect Hub software
 
 USE_PERL5=	yes

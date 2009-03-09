@@ -12,7 +12,7 @@ CATEGORIES=	games www
 MASTER_SITES=	http://www.hlstatsx.com/downloads/
 DISTNAME=	HLstatsX_V${PORTVERSION}
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time player and clan rankings and statistics for HL2 and mods
 
 NO_BUILD=	yes
