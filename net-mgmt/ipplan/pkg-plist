@@ -1,4 +1,3 @@
-@unexec if cmp -s %D/%%IPPLANDIR%%/config.php %D/%%IPPLANDIR%%/config.php.sample ; then rm -f %D/%%IPPLANDIR%%/config.php; fi
 %%IPPLANDIR%%/CHANGELOG
 %%IPPLANDIR%%/CONTRIBUTORS
 %%IPPLANDIR%%/INSTALL
@@ -9,6 +8,7 @@
 %%IPPLANDIR%%/INTERNALS
 %%IPPLANDIR%%/IPplan.jpg
 %%IPPLANDIR%%/LICENSE
+%%IPPLANDIR%%/PORTERS
 %%IPPLANDIR%%/README
 %%IPPLANDIR%%/README.html
 %%IPPLANDIR%%/README.sgml
@@ -18,7 +18,6 @@
 %%IPPLANDIR%%/TRIGGERS
 %%IPPLANDIR%%/UPGRADE
 %%IPPLANDIR%%/admin/changepassword.php
-%%IPPLANDIR%%/user/changesettings.php
 %%IPPLANDIR%%/admin/deletebounds.php
 %%IPPLANDIR%%/admin/displayauditlog.php
 %%IPPLANDIR%%/admin/displayboundsform.php
@@ -201,18 +200,26 @@
 %%IPPLANDIR%%/class.phpmailer.php
 %%IPPLANDIR%%/class.smtp.php
 %%IPPLANDIR%%/class.templib.php
+%%IPPLANDIR%%/class.xptlib.php
+%%IPPLANDIR%%/config.php
 %%IPPLANDIR%%/config.php.sample
 %%IPPLANDIR%%/contrib/bind9_revzone.xsl
 %%IPPLANDIR%%/contrib/bind9_zone.dtd
 %%IPPLANDIR%%/contrib/bind9_zone.xsl
+%%IPPLANDIR%%/contrib/bind9_zone.xsl.rej
 %%IPPLANDIR%%/contrib/create-test-users.sh
 %%IPPLANDIR%%/contrib/dumproute.sh
 %%IPPLANDIR%%/contrib/dumproute.txt
 %%IPPLANDIR%%/contrib/ipplan-poller.php
+%%IPPLANDIR%%/contrib/ipplan2pc.README
+%%IPPLANDIR%%/contrib/ipplan2pc.xsl
 %%IPPLANDIR%%/contrib/isc_dhcp1.xsl
 %%IPPLANDIR%%/contrib/isc_dhcp2.xsl
 %%IPPLANDIR%%/contrib/process-exports.pl
+%%IPPLANDIR%%/contrib/process-exports.pl.rej
 %%IPPLANDIR%%/contrib/process-exports.txt
+%%IPPLANDIR%%/contrib/qipImport-public.README
+%%IPPLANDIR%%/contrib/qipImport-public.pl
 %%IPPLANDIR%%/cookies.js
 %%IPPLANDIR%%/docu.css
 %%IPPLANDIR%%/gpl.html
@@ -463,6 +470,7 @@
 %%IPPLANDIR%%/schema.php
 %%IPPLANDIR%%/templates/display/basetemplate-dhcp.xml
 %%IPPLANDIR%%/templates/display/basetemplate.xml
+%%IPPLANDIR%%/templates/display/basetemplate.xml.dhcp
 %%IPPLANDIR%%/templates/display/custtemplate-ripe.xml
 %%IPPLANDIR%%/templates/display/custtemplate.xml
 %%IPPLANDIR%%/templates/display/fwdzonetemplate.xml
@@ -478,8 +486,11 @@
 %%IPPLANDIR%%/templates/swip_wdb1.4_new.xsl
 %%IPPLANDIR%%/themes/default-safari.css
 %%IPPLANDIR%%/themes/default.css
+%%IPPLANDIR%%/themes/img_red_grey/head-bg.png
+%%IPPLANDIR%%/themes/img_red_grey/page-bg.png
 %%IPPLANDIR%%/themes/pastel.css
 %%IPPLANDIR%%/themes/penguin.css
+%%IPPLANDIR%%/themes/red_grey.css
 %%IPPLANDIR%%/user/Net/DNS.php
 %%IPPLANDIR%%/user/Net/DNS/Header.php
 %%IPPLANDIR%%/user/Net/DNS/Packet.php
@@ -499,6 +510,7 @@
 %%IPPLANDIR%%/user/Net/DNS/RR/TSIG.php
 %%IPPLANDIR%%/user/Net/DNS/RR/TXT.php
 %%IPPLANDIR%%/user/Net/DNS/Resolver.php
+%%IPPLANDIR%%/user/changesettings.php
 %%IPPLANDIR%%/user/createarea.php
 %%IPPLANDIR%%/user/createrange.php
 %%IPPLANDIR%%/user/createsubnet.php
@@ -519,6 +531,7 @@
 %%IPPLANDIR%%/user/dns.php
 %%IPPLANDIR%%/user/emailswip.php
 %%IPPLANDIR%%/user/exportdhcp.php
+%%IPPLANDIR%%/user/exportview.php
 %%IPPLANDIR%%/user/findfree.php
 %%IPPLANDIR%%/user/findfreeform.php
 %%IPPLANDIR%%/user/logout.php
@@ -530,6 +543,7 @@
 %%IPPLANDIR%%/user/modifydns.php
 %%IPPLANDIR%%/user/modifydnsform.php
 %%IPPLANDIR%%/user/modifydnsrecord.php
+%%IPPLANDIR%%/user/modifydnsrecord.php.rej
 %%IPPLANDIR%%/user/modifydnsrecordform.php
 %%IPPLANDIR%%/user/modifyipform.php
 %%IPPLANDIR%%/user/modifyipformmul.php
@@ -545,11 +559,11 @@
 %%IPPLANDIR%%/user/treeview.php
 %%IPPLANDIR%%/user/whois.php
 %%IPPLANDIR%%/xmllib.php
-%%IPPLANDIR%%/PORTERS
 @dirrm %%IPPLANDIR%%/user/Net/DNS/RR
 @dirrm %%IPPLANDIR%%/user/Net/DNS
 @dirrm %%IPPLANDIR%%/user/Net
 @dirrm %%IPPLANDIR%%/user
+@dirrm %%IPPLANDIR%%/themes/img_red_grey
 @dirrm %%IPPLANDIR%%/themes
 @dirrm %%IPPLANDIR%%/templates/display
 @dirrm %%IPPLANDIR%%/templates

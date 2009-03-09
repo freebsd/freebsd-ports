@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	ipplan
-PORTVERSION=	4.86.0.1
-DISTVERSION=	4.86a
-PORTREVISION=	1
+PORTVERSION=	4.90
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	iptrack
+MASTER_SITES=	SF/iptrack
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	IP address management and tracking
 
 RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
