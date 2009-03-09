@@ -3842,3 +3842,6 @@ multimedia/libspiff|multimedia/libxspf|2009-03-08|Project renamed
 graphics/libgdgeda||2009-03-09|Has expired: is not required anymore
 japanese/ruby-tk||2009-03-09|Has expired: uses old Tk, not required with newer versions
 www/p5-Cookie-XS|p5-CGI-Cookie-XS|2009-03-09|Renamed
+databases/rubygem-rrdtool||2009-03-09|Has expired: port no longer maintained by upstream use rrdtools own ruby bindings instead
+graphics/crystalentitylayer-devel||2009-03-09|Has expired: Depends on broken, expired port
+graphics/crystalspace-devel||2009-03-09|Has expired: Has been broken for more than 6 months
