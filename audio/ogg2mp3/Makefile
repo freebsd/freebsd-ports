@@ -8,7 +8,7 @@ PORTNAME=	ogg2mp3
 PORTVERSION=	0.5
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://amor.cms.hu-berlin.de/~h0444y2j/pub/
+MASTER_SITES=	http://www.atarininja.org/distfiles/
 
 MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Perl script that converts Ogg Vorbis files to MP3 format
