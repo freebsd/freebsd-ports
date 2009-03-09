@@ -7,7 +7,6 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://download.java.net/tiger/
@@ -50,10 +49,10 @@ POLICYFILE=	jce_policy-${JDK_VERSION:S/./_/g}.zip
 TZUPDATEFILE=	tzupdater-${TZUPDATE_VERSION}-${TZUPDATE_TZVERSION}.zip
 
 JDK_VERSION=	1.5.0
-JDK_UPDATE_VERSION=	14
-JDK_PATCHSET_VERSION=	8
-JDK_BUILD_NUMBER=	03
-JDK_BUILD_DATE=		05_oct_2007
+JDK_UPDATE_VERSION=	16
+JDK_PATCHSET_VERSION=	9
+JDK_BUILD_NUMBER=	02
+JDK_BUILD_DATE=		28_may_2008
 LATEST_LINK=	jdk15
 
 TZUPDATE_VERSION=	1_3_11
@@ -128,6 +127,8 @@ NO_CDROM=	Redistribution of pre-compiled binaries is not permitted
 
 MAKE_ENV+=	ALT_BOOTDIR="${BOOTSTRAPJDKDIR}" \
 		ALT_MOTIF_DIR="${LOCALBASE}" \
+		X11DIR="${LOCALBASE}" \
+		LOCALDIR="${LOCALBASE}" \
 		DEFAULT_LD_LIBRARY_PATH="/usr/lib:${LOCALBASE}/lib" \
 		SYS_CFLAGS="${CFLAGS}" \
 		LANG="C" \
@@ -173,15 +174,14 @@ PTHREAD_FILES=	../../hotspot/build/bsd/makefiles/vm.make \
 		../../j2se/make/sun/cmm/Makefile \
 		../../j2se/make/sun/xawt/Makefile
 X11_FILES=	../../j2se/src/share/classes/com/sun/java/swing/plaf/gtk/GTKLookAndFeel.java \
-		../../j2se/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java \
-		../../j2se/src/solaris/native/sun/awt/fontpath.c
+		../../j2se/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java
 
 # Check for JDK sources and patch file
 .if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || (defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
 DISTFILE_INSTRUCTIONS=\n\
 Due to licensing restrictions, certain files must be fetched manually.\n\n
 .if !exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE})#{
-DISTFILE_INSTRUCTIONS += Please open http://download.java.net/tiger/archive/tiger_u14/\n\
+DISTFILE_INSTRUCTIONS += Please open http://download.java.net/tiger/\n\
 in a web browser.  Download the\n
 .if !exists(${DISTDIR}/${JRL_SRCFILE})#{
 DISTFILE_INSTRUCTIONS += Update ${JDK_UPDATE_VERSION} Source, ${JRL_SRCFILE}
