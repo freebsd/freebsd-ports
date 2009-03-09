@@ -1,0 +1,21 @@
+--- icmake/library.orig	2007-11-13 14:48:17.000000000 +0100
++++ icmake/library	2009-03-06 10:26:55.000000000 +0100
+@@ -120,6 +120,7 @@
+     int idx;
+     string compiler;
+     string file;
++    string objDir; /* for 8-CURRENT */
+ 
+     compiler = COMPILER;
+ 
+@@ -128,8 +129,9 @@
+     #endif
+ 
+     compiler +=  " -c -o " + srcDir + "/o/" + (string)prefix;
++    objDir = srcDir + "/o";
+ 
+-    md(srcDir + "/o");
++    md(objDir);
+ 
+     for (idx = sizeof(cfiles); idx--; )
+     {

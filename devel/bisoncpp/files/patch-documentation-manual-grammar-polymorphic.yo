@@ -1,0 +1,11 @@
+--- documentation/manual/grammar/polymorphic.yo.orig	2007-10-18 13:15:45.000000000 +0200
++++ documentation/manual/grammar/polymorphic.yo	2009-03-05 16:11:43.000000000 +0100
+@@ -1,7 +1,6 @@
+ Below the way Bisonc++ may use a polymorphic semantic value is discussed. The
+ approach discussed below is a direct result of an suggestion initially made by
+-Dallas A. Clement in September 2007. All sources of the example discussed
+-below are found in the link(here)(poly).
++Dallas A. Clement in September 2007.
+ 
+ One may wonder why a tt(union) is still used by Bisonc++ as bf(C++) offers
+ inherently superior approaches to combine multiple types in one type. The
