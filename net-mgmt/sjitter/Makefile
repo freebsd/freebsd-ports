@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt net
 MASTER_SITES=	http://www.alcasat.net/dev/sjitter/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A client/server jitter measurement utility
 
 WRKSRC=		${WRKDIR}

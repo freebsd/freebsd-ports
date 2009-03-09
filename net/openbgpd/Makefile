@@ -17,7 +17,7 @@ DISTFILES+=	if_media.h:freebsd hash.h:freebsd strtonum.c:freebsd
 DIST_SUBDIR=	openbgpd
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tgz
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free implementation of the Border Gateway Protocol, Version 4
 
 CONFLICTS=	zebra-0* quagga-0*

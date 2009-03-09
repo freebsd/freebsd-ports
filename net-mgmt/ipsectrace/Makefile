@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://chewies.net/ \
 		http://farrokhi.net/distfiles/
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPSEC Traffic Profiler
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

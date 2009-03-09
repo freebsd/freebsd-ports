@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ioplex.com/~miallen/libmba/dl/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	miwi
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of C modules potentially useful to any project
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

@@ -12,7 +12,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.unixified.net/distfiles/ \
 		http://www.farsiweb.info/font/
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard set of Unicode Persian fonts
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir

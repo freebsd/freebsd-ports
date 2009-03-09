@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	gnatsperl
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl interface to GNU Gnats daemon
 
 PERL_CONFIGURE=	yes

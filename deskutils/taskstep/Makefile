@@ -11,7 +11,7 @@ CATEGORIES=	deskutils www
 MASTER_SITES=	http://taskstep.cunningtitle.co.uk/releases/
 DISTNAME=	${PORTNAME}-06
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web based to-do list manager written in php
 
 NO_BUILD=	YES

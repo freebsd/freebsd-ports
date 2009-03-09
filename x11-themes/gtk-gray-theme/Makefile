@@ -12,7 +12,7 @@ CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	34132-Gray
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gray theme for GTK+ 2.0
 
 RUN_DEPENDS=	${LOCALBASE}/share/icons/Tango:${PORTSDIR}/x11-themes/icons-tango

@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.tcpdump.org/weekly/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for extracting portions of pcap files
 
 MAN1=		tcpslice.1

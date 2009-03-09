@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.cs.cmu.edu/~hnn/pathneck/ \
 		http://www.unixified.net/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Active network path probing tool
 
 PLIST_FILES=	sbin/pathneck \

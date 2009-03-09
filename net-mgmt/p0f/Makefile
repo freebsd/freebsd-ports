@@ -12,7 +12,7 @@ MASTER_SITES=	http://lcamtuf.coredump.cx/p0f/ \
 		http://farrokhi.net/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passive OS fingerprinting tool
 
 USE_GMAKE=	yes

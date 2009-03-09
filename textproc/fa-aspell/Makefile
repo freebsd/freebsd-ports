@@ -11,7 +11,7 @@ PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	textproc
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aspell Persian (Farsi) dictionary
 
 DICT=	 	fa

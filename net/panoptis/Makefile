@@ -12,7 +12,7 @@ CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Detect and block DoS/DDoS attacks
 
 LIB_DEPENDS=	ccgnu2-1.6.0:${PORTSDIR}/devel/commoncpp

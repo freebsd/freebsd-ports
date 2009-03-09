@@ -11,7 +11,7 @@ CATEGORIES=	net net-mgmt
 MASTER_SITES=	http://quozl.us.netrek.org/tcpxd/ \
 		http://fresh.t-systems-sfr.com/unix/src/privat2/
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose TCP/IP relay
 
 HAS_CONFIGURE=	yes

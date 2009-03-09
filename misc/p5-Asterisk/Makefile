@@ -12,7 +12,7 @@ MASTER_SITES=		http://asterisk.gnuinter.net/files/
 PKGNAMEPREFIX=		p5-
 DISTNAME=		asterisk-perl-${PORTVERSION}
 
-MAINTAINER=		farrokhi@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Asterisk perl library
 
 PERL_CONFIGURE=		yes
