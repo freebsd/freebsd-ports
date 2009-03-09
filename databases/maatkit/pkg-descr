@@ -2,4 +2,4 @@ Maatkit is a collection of essential command-line utilities for MySQL.
 Each is completely stand-alone, without dependencies other than core Perl
 and the DBI drivers needed to connect to MySQL.
 
-WWW:	http://maatkit.sourceforge.net
+WWW:	http://www.maatkit.org/
