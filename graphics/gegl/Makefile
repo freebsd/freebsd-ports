@@ -16,14 +16,18 @@ COMMENT=	A graph based image processing framework
 
 LIB_DEPENDS=	babl-0.0:${PORTSDIR}/x11/babl \
     		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
-		cairo.2:${PORTSDIR}/graphics/cairo \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		rsvg-2.2:${PORTSDIR}/graphics/librsvg2
 
-USE_GNOME=	glib20 gtk20 pango pkgconfig gnomehack
-USE_SDL=	sdl
+OPTIONS=	CAIRO	"Enable Cairo" on \
+		FFMPEG	"Enable ffmpeg" on \
+		GTK	"Enable GTK+" on \
+		JPEG	"Enable JPEG" on \
+		OPENEXR	"Enable OpenEXR" on \
+		OPENRAW	"Enable OpenRAW" on \
+		PANGO	"Enable Pango" on \
+		RSVG	"Enable RSVG" on \
+		SDL	"Enable SDL" on
+
+USE_GNOME=	glib20 pkgconfig gnomehack
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/gegl-0.0
@@ -34,11 +38,49 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS+=--disable-sse \
 		--disable-mmx
 
-GEGL_MINOR=	20
+GEGL_MINOR=	22
 PLIST_SUB+=	GEGL_MINOR="${GEGL_MINOR}"
 
 EXAMPLES=	2geglbuffer gegl-paint geglbuffer-add-image \
 		geglbuffer-clock hello-world hello-world-video
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_CAIRO)
+LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+.endif
+
+.if !defined(WITHOUT_FFMPEG)
+LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+.endif
+
+.if !defined(WITHOUT_GTK)
+USE_GNOME+=	gtk20
+.endif
+
+.if !defined(WITHOUT_JPEG)
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+.endif
+
+.if !defined(WITHOUT_OPENEXR)
+LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
+.endif
+
+.if !defined(WITHOUT_OPENRAW)
+LIB_DEPENDS+=	openraw.5:${PORTSDIR}/graphics/libopenraw
+.endif
+
+.if !defined(WITHOUT_PANGO)
+USE_GNOME+=	pango
+.endif
+
+.if !defined(WITHOUT_RSVG)
+LIB_DEPENDS+=	rsvg-2.2:${PORTSDIR}/graphics/librsvg2
+.endif
+
+.if !defined(WITHOUT_SDL)
+USE_SDL=	sdl
+.endif
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	a2x:${PORTSDIR}/textproc/asciidoc
@@ -72,4 +114,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

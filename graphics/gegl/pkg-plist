@@ -3,7 +3,9 @@ include/gegl-0.0/gegl-buffer.h
 include/gegl-0.0/gegl-chant.h
 include/gegl-0.0/gegl-color.h
 include/gegl-0.0/gegl-curve.h
+include/gegl-0.0/gegl-matrix.h
 include/gegl-0.0/gegl-paramspecs.h
+include/gegl-0.0/gegl-path.h
 include/gegl-0.0/gegl-plugin.h
 include/gegl-0.0/gegl-utils.h
 include/gegl-0.0/gegl-simd.h
@@ -84,8 +86,6 @@ lib/gegl-0.0/exr-load.la
 lib/gegl-0.0/exr-load.so
 lib/gegl-0.0/ff-load.la
 lib/gegl-0.0/ff-load.so
-lib/gegl-0.0/fill.la
-lib/gegl-0.0/fill.so
 lib/gegl-0.0/fractal-explorer.la
 lib/gegl-0.0/fractal-explorer.so
 lib/gegl-0.0/gamma.la
@@ -130,10 +130,14 @@ lib/gegl-0.0/opacity.la
 lib/gegl-0.0/opacity.so
 lib/gegl-0.0/open-buffer.la
 lib/gegl-0.0/open-buffer.so
+lib/gegl-0.0/openraw.la
+lib/gegl-0.0/openraw.so
 lib/gegl-0.0/over.la
 lib/gegl-0.0/over.so
 lib/gegl-0.0/overlay.la
 lib/gegl-0.0/overlay.so
+lib/gegl-0.0/path.la
+lib/gegl-0.0/path.so
 lib/gegl-0.0/pixbuf.la
 lib/gegl-0.0/pixbuf.so
 lib/gegl-0.0/plus.la
@@ -205,6 +209,10 @@ lib/gegl-0.0/write-buffer.so
 lib/gegl-0.0/xor.la
 lib/gegl-0.0/xor.so
 libdata/pkgconfig/gegl.pc
+%%PORTDOCS%%share/gtk-doc/html/gegl/operations.html
+%%PORTDOCS%%share/gtk-doc/html/gegl/api.html
+%%PORTDOCS%%share/gtk-doc/html/gegl/gegl.devhelp
+%%PORTDOCS%%share/gtk-doc/html/gegl/gegl.css
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/api.html
 %%PORTDOCS%%%%DOCSDIR%%/brightness-contrast.c.html
@@ -250,6 +258,9 @@ libdata/pkgconfig/gegl.pc
 @dirrm include/gegl-0.0/operation
 @dirrm include/gegl-0.0
 @dirrm lib/gegl-0.0
+%%PORTDOCS%%@dirrm share/gtk-doc/html/gegl
+%%PORTDOCS%%@dirrm share/gtk-doc/html
+%%PORTDOCS%%@dirrm share/gtk-doc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/gallery
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/data
