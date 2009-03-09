@@ -5,128 +5,67 @@
 # $FreeBSD$
 
 PORTNAME=	amarok
-PORTVERSION=	1.4.10
-PORTREVISION=	2
+PORTVERSION=	2.0.2
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
 
-MAINTAINER=	makc@FreeBSD.org
-COMMENT=	Media player for KDE
+MAINTAINER=	datahead4@gmail.com
+COMMENT=	Media player for KDE4
 
 LIB_DEPENDS=	tag.6:${PORTSDIR}/audio/taglib \
-		tunepimp.5:${PORTSDIR}/audio/libtunepimp \
-		mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \
-		xine.1:${PORTSDIR}/multimedia/libxine
+		mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 
-MIN_OPTIONS_VER=	${PORTNAME}-1.4.1
+LATEST_LINK=	${PORTNAME}-kde4
 
 USE_BZIP2=	yes
-USE_KDEBASE_VER=3
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_KDE4=	kdehier kdeprefix kdelibs automoc4
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui network opengl script svg webkit \
+		qmake_build moc_build rcc_build uic_build
 USE_GETTEXT=	yes
-USE_SDL=	sdl
-USE_RUBY=	yes
+USE_MYSQL=	embedded
+USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 OPTIONS=	GPOD "iPod support" on \
-		NJB "Creative Nomad and Dell support" on \
 		MTP "MTP device support" on \
-		LIBVISUAL "libvisual support" off \
-		OPENGL "OpenGL support" on \
-		AMAZON "Amazon cover fetching support" on \
-		MYSQL "Use MySQL as collection backend" off \
-		POSTGRESQL "Use PostgreSQL as collection backend" off \
-		HIDEMENUBAR "Revert the 'Hide Menubar' feature" off \
+		LOUDMOUTH "Loudmouth support" on
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS+=--without-exscalibar \
-		--with-mp4v2 \
-		--with-mp4v2-dir=${PREFIX}
+.if ${OSVERSION} < 700000
+CMAKE_USE_PTHREAD=	yes
+.endif
 
-.if !defined(WITH_GPOD)
-PLIST_SUB+=	GPOD="@comment "
-CONFIGURE_ARGS+=--without-libgpod
-.else
+.if defined(WITH_GPOD)
 LIB_DEPENDS+=	gpod.3:${PORTSDIR}/audio/libgpod
-CONFIGURE_ARGS+=--with-libgpod
 PLIST_SUB+=	GPOD=""
+.else
+CMAKE_ARGS+=	-DWITH_Ipod:BOOL=Off
+PLIST_SUB+=	GPOD="@comment "
 .endif
 
-.if !defined(WITH_NJB)
-PLIST_SUB+=	NJB="@comment "
-.else
-LIB_DEPENDS+=	njb.6:${PORTSDIR}/audio/libnjb
-CONFIGURE_ARGS+=--with-libnjb
-PLIST_SUB+=	NJB=""
-.endif
-
-.if !defined(WITH_MTP)
-PLIST_SUB+=	MTP="@comment "
-.else
+.if defined(WITH_MTP)
 LIB_DEPENDS+=	mtp.8:${PORTSDIR}/audio/libmtp
-CONFIGURE_ARGS+=--with-libmtp
 PLIST_SUB+=	MTP=""
-.endif
-
-.if defined(WITHOUT_LIBVISUAL)
-CONFIGURE_ARGS+=--without-libvisual
 .else
-LIB_DEPENDS+=	visual-0.4:${PORTSDIR}/graphics/libvisual04
+CMAKE_ARGS+=	-DWITH_Mtp:BOOL=Off
+PLIST_SUB+=	MTP="@comment "
 .endif
 
-.if defined(WITHOUT_OPENGL)
-CONFIGURE_ARGS+=--without-opengl
+.if defined(WITH_LOUDMOUTH)
+LIB_DEPENDS+=	loudmouth-1.0:${PORTSDIR}/net-im/loudmouth
+PLIST_SUB+=	LOUDMOUTH=""
+.else
+CMAKE_ARGS+=	-DWITH_Loudmouth:BOOL=Off
+PLIST_SUB+=	LOUDMOUTH="@comment "
 .endif
 
-.if defined(WITHOUT_AMAZON)
-CONFIGURE_ARGS+=--disable-amazon
-.endif
-
-.if defined(WITH_MYSQL)
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=--enable-mysql
-.endif
-
-.if defined(WITH_POSTGRESQL)
-USE_PGSQL=	yes
-CONFIGURE_ARGS+=--enable-postgresql
-.endif
-
-.if defined(WITH_HIDEMENUBAR)
-EXTRA_PATCHES=	${PATCHDIR}/hide-main-menu-bar-feature.patch
-.endif
-
-.if defined(DEBUG)
-CONFIGURE_ARGS+=--enable-debug=full
-STRIP=		# none
-.endif
-
-pre-extract:	check-options-version
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's|LIBS="-ltunepimp  $$LIBS"|LIBS="-ltunepimp -liconv $$LIBS"|g' \
-	${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's|xx||g' ${WRKSRC}/po/Makefile.in
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${TOUCH}
-
-post-install:
-.if defined(WITH_MTP) || defined(WITH_NJB) || defined(WITH_GPOD)
-	@${CAT} ${PKGMESSAGE}
-.endif
-
-check-options-version:
-.ifdef(_OPTIONS_READ)
-	@(if ${PKG_VERSION} -t ${_OPTIONS_READ} ${MIN_OPTIONS_VER} | ${GREP} -q '<'; \
-	 then	${ECHO_CMD} ""; \
-		${ECHO_CMD} "===> You have unsupported (old) OPTIONS, please do a 'make rmconfig; make'"; \
-		${ECHO_CMD} ""; \
-		exit 1; \
-	fi)
-.endif
+post-extract:
+	${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
+		${WRKSRC}/cmake/modules/FindIpod.cmake \
+		${WRKSRC}/cmake/modules/FindLoudmouth.cmake \
+		${WRKSRC}/cmake/modules/FindGdk.cmake
 
 .include <bsd.port.post.mk>
