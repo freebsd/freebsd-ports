@@ -49,6 +49,10 @@ BUILD_DEPENDS+=	${JAVAJARDIR}/jdk-7-icedtea-plugs/jre/lib/rt-closed.jar:${PORTSD
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} <= 700000
+BROKEN=		does not compile, including unistd.h is needed
+.endif
+
 .if defined(WITH_IPV6)
 CATEGORIES+=	ipv6
 .endif
