@@ -39,7 +39,9 @@ CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS
 .endif
 
 .if defined(WITH_USB)
+. if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+. endif
 CONFIGURE_ARGS+=--enable-libusb
 CONFIGURE_ENV+=LDFLAGS="${LDFLAGS} -L${PREFIX}/lib -lusb"
 

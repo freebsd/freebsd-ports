@@ -14,8 +14,7 @@ MASTER_SITES=	http://www.gnokii.org/download/gnocky/
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A graphical (GTK+2) frontend for gnokii
 
-LIB_DEPENDS=	gnokii.4:${PORTSDIR}/comms/gnokii \
-		usb-0.1.8:${PORTSDIR}/devel/libusb
+LIB_DEPENDS=	gnokii.4:${PORTSDIR}/comms/gnokii
 
 USE_GNOME=	gtk20 libglade2
 GNU_CONFIGURE=	yes

@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800063
+.if ${OSVERSION} < 800069
 IGNORE=		requires new USB stack in FreeBSD 8
 .endif
 

@@ -12,12 +12,19 @@ MASTER_SITES=	http://www.lexort.com/pkgsrc/distfiles/
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A gps file translating tool
 
-LIB_DEPENDS=	usb:${PORTSDIR}/devel/libusb \
-		expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
 USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/gpsbabel
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
+.else
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-libusb
+.endif
+
+.include <bsd.port.post.mk>

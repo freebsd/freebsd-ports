@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Utility for ASUS USB OLED Display
 
-LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 RUN_DEPENDS=	${FONTDIR}/TTF/luxisr.ttf:${PORTSDIR}/x11-fonts/font-bh-ttf
 
 USE_SDL=	image sdl ttf
@@ -29,6 +28,12 @@ SUB_FILES=	asusoled.sh oled_clock.sh pkg-message
 MAKE_ARGS+=	TTF_FONT=${FONTDIR}/TTF/luxisr.ttf
 
 FONTDIR?=	${LOCALBASE}/lib/X11/fonts
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+.endif
 
 post-install:
 .if !defined(NOPORTDATA)
@@ -48,4 +53,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

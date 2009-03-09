@@ -19,4 +19,10 @@ pre-build:
 
 MAN3=		libgamepad.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800069
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-gamepad_usbhid.c
+.endif
+
+.include <bsd.port.post.mk>

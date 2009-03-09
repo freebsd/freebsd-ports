@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	pesho.petrov@gmail.com
 COMMENT=	Media Transfer Protocol (MTP) library
 
-LIB_DEPENDS=	usb:${PORTSDIR}/devel/libusb \
-		iconv:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
@@ -26,7 +25,12 @@ USE_LDCONFIG=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -liconv
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

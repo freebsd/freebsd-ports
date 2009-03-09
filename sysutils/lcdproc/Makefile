@@ -65,7 +65,11 @@ LCDPROC_DRIVERS=bayrad \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_USB)
+. if ${OSVERSION} < 800069
 LIB_DEPENDS+=		usb-0.1.8:${PORTSDIR}/devel/libusb
+. else
+CONFIGURE_ARGS+=	--with-libusb-libraries=/usr
+. endif
 CONFIGURE_ARGS+=	--enable-libusb
 PLIST_SUB+=		USB=""
 LCDPROC_DRIVERS+=	IOWarrior

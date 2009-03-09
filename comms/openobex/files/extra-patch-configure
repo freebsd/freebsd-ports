@@ -1,0 +1,14 @@
+--- configure.orig	2009-03-07 19:35:55.000000000 +0300
++++ configure	2009-03-07 19:36:21.000000000 +0300
+@@ -10736,6 +10736,11 @@
+ 		USB_LIBS="-lusb"
+ 		usb_lib_found=yes
+ 		;;
++	*-*-freebsd*)
++		USB_CFLAGS=""
++		USB_LIBS="-lusb"
++		usb_lib_found=yes
++		;;
+ 	*)
+ 
+ pkg_failed=no

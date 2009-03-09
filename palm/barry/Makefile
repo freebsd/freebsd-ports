@@ -13,8 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	meitolake@gmail.com
 COMMENT=	C++ library for interfacing with the BlackBerry Handheld
 
-LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb \
-		boost_thread.4:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
@@ -30,6 +29,10 @@ OPTIONS=	GUI "Build the GUI" On \
 		DOXYGEN "Build API documentation" Off
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+.endif
 
 .if defined(WITH_GUI)
 LIB_DEPENDS+=	glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \

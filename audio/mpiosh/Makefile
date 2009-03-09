@@ -14,8 +14,6 @@ DISTNAME=	mpio-${PORTVERSION:S|.p|_pre|}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digit@lway MPIO MP3 player tool
 
-LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb
-
 USE_AUTOTOOLS=	libtool:15
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
@@ -23,4 +21,18 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
+.else
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure.in
+USE_AUTOTOOLS=	autoconf:262
+.endif
+
+post-patch:
+.if ${OSVERSION} >= 800069
+	${RM} -f ${WRKSRC}/configure
+.endif
+
+.include <bsd.port.post.mk>

@@ -14,12 +14,17 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
 COMMENT=	Lego NXT library
 
-LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
 		python:${PORTSDIR}/lang/python
 
 SUB_FILES=	pkg-message
 USE_LDCONFIG=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+.endif
 
 do-build:
 	(cd ${WRKSRC}; scons)
@@ -37,4 +42,4 @@ do-install:
 post-install:
 	@${CAT} ${WRKDIR}/pkg-message
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

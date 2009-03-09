@@ -49,7 +49,9 @@ CONFIGURE_ARGS+=	--without-libiconv-prefix
 
 .if defined(WITH_LIBUSB)
 CONFIGURE_ARGS+=	--with-libusb=${LOCALBASE}
+. if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+. endif
 .else
 CONFIGURE_ARGS+=	--without-libusb
 .endif

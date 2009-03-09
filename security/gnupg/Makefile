@@ -93,7 +93,9 @@ PLIST_SUB+=	NLS="@comment "
 
 .if defined(WITH_SCDAEMON)
 CONFIGURE_ARGS+=--enable-scdaemon
+. if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
+. endif
 PLIST_SUB+=	SCDAEMON=""
 .else
 CONFIGURE_ARGS+=--disable-scdaemon

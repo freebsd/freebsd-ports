@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	linux-usb
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	Utility for listing USB devices
 
-LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -24,6 +22,10 @@ MAN8=		lsusb.8
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)

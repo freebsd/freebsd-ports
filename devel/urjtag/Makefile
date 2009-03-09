@@ -39,7 +39,11 @@ CONFIGURE_ARGS+=	--enable-jedec
 
 .if !defined(WITHOUT_USB)
 CONFIGURE_ARGS+=	--with-libusb
+.if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
+.else
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-usb
+. endif
 .endif
 
 .if !defined(WITHOUT_FTDI)

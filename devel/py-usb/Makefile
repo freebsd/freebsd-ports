@@ -16,11 +16,16 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	R.Mahmatkhanov@SKYLINK.ru
 COMMENT=	Python wrapper around libusb
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libusb.so:${PORTSDIR}/devel/libusb
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/usb.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	${LOCALBASE}/lib/libusb.so:${PORTSDIR}/devel/libusb
+.endif
+
+.include <bsd.port.post.mk>

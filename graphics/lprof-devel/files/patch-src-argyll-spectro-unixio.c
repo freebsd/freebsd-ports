@@ -1,6 +1,14 @@
 --- src/argyll/spectro/unixio.c.orig	2008-02-20 00:02:24.000000000 +0300
-+++ src/argyll/spectro/unixio.c	2008-08-03 21:47:17.000000000 +0400
-@@ -585,9 +585,8 @@
++++ src/argyll/spectro/unixio.c	2009-03-07 21:19:48.000000000 +0300
+@@ -35,6 +35,7 @@
+ #include "insttypes.h"
+ #include "icoms.h"
+ #include "usbio.h"
++#include <dirent.h>
+ 
+ #undef DEBUG
+ 
+@@ -585,9 +586,8 @@
  				break;
  
  			if (!(

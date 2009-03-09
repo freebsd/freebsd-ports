@@ -38,8 +38,14 @@ MAN5=		reader.conf.5
 MAN8=		pcscd.8 update-reader.conf.8
 
 .if !defined(WITHOUT_USB)
+. if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-CONFIGURE_ARGS+=--enable-libusb=${LOCALBASE} \
+USBBASE=	${LOCALBASE}
+. else
+USBBASE=	/usr
+CONFIGURE_ENV+=	LIBUSB_LIBS="-lusb"
+. endif
+CONFIGURE_ARGS+=--enable-libusb=${USBBASE} \
 		--disable-libhal
 .else
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
