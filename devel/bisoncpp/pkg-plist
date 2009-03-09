@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+bin/bisonc++
+share/bisoncpp-%%PORTVERSION%%/bisonc++.cc
+share/bisoncpp-%%PORTVERSION%%/bisonc++.h
+share/bisoncpp-%%PORTVERSION%%/bisonc++.ih
+share/bisoncpp-%%PORTVERSION%%/bisonc++base.h
+@dirrm share/bisoncpp-%%PORTVERSION%%

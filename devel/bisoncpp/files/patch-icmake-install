@@ -1,0 +1,23 @@
+--- icmake/install.orig	2007-03-22 21:28:58.000000000 +0100
++++ icmake/install	2009-03-05 16:50:49.000000000 +0100
+@@ -8,17 +8,15 @@
+     md(where + SKEL);
+     run("cp share/* " + where + SKEL);
+ 
+-    if (all)
+-    {
+         printf("  installing the manual page bisonc++.1\n");
+         md(where + MAN);
+         run("gzip -9 < tmp/man/bisonc++.1 > " + 
+                                         where + MAN + "/bisonc++.1.gz");
+ 
+-        printf("  installing the manual page bisonc++man.html\n");
+-        md(where + DOC + "/man");
+-        run("cp tmp/manhtml/bisonc++man.html " + where + DOC + "/man");
++    if (all)
++    {
+     
++        md(where + DOC);
+         printf("  installing the information directly in and under $DOC\n");
+         run("gzip -9 < changelog > " + where + DOC + "/changelog.gz");
+     
