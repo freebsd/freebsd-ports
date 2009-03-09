@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	rkhunter
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.3.4
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Rootkit detection tool
 
 OPTIONS=	LSOF "Use LSOF" on \
