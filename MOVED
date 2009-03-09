@@ -3845,3 +3845,9 @@ www/p5-Cookie-XS|p5-CGI-Cookie-XS|2009-03-09|Renamed
 databases/rubygem-rrdtool||2009-03-09|Has expired: port no longer maintained by upstream use rrdtools own ruby bindings instead
 graphics/crystalentitylayer-devel||2009-03-09|Has expired: Depends on broken, expired port
 graphics/crystalspace-devel||2009-03-09|Has expired: Has been broken for more than 6 months
+ftp/downloader||2009-03-09|Has expired: sources unavailable - website dissappeared
+devel/rubygem-mojombo-grit||2009-03-09|Has expired: Obsolete, use devel/rubygem-grit instead
+mail/postfix1||2009-03-09|Has expired: Not supported anymore by vendor. Please choose a new one version.
+mail/postfix21||2009-03-09|Has expired: Not supported anymore by vendor. Please choose a new one version.
+mail/postfix22||2009-03-09|Has expired: Not supported anymore by vendor. Please choose a new one version.
+www/rubygem-actionwebservice||2009-03-09|Has expired: from rails 2.0 www/rubygem-rails use www/rubygem-activeresource instead

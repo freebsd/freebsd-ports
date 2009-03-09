@@ -2528,7 +2528,6 @@
     SUBDIR += rubygem-main
     SUBDIR += rubygem-metaid
     SUBDIR += rubygem-mocha
-    SUBDIR += rubygem-mojombo-grit
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-open4
     SUBDIR += rubygem-parsetree

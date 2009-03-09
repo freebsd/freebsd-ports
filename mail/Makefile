@@ -485,9 +485,6 @@
     SUBDIR += postfix-policyd-spf-perl
     SUBDIR += postfix-policyd-weight
     SUBDIR += postfix-postfwd
-    SUBDIR += postfix1
-    SUBDIR += postfix21
-    SUBDIR += postfix22
     SUBDIR += postfix23
     SUBDIR += postfix24
     SUBDIR += postfixadmin
