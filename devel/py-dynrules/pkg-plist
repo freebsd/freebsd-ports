@@ -19,8 +19,18 @@ include/%%PYTHON_VERSION%%/dynrules/dynrules.h
 %%PYTHON_SITELIBDIR%%/dynrules/RuleSet.py
 %%PYTHON_SITELIBDIR%%/dynrules/RuleSet.pyc
 %%PYTHON_SITELIBDIR%%/dynrules/RuleSet.pyo
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/capi.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/intro.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/pyapi.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/ref/pyclearnsystem.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/ref/pycrule.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/ref/pycruleset.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/ref/pylearnsystem.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/ref/pymmaprulemanagement.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/ref/pyrule.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/ref/pyrulemanagement.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/ref/pyruleset.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/usage.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/contents.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/default.css
@@ -37,17 +47,29 @@ include/%%PYTHON_VERSION%%/dynrules/dynrules.h
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/stickysidebar.css
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/traditional.css
 %%PORTDOCS%%%%DOCSDIR%%/html/genindex.html
+%%PORTDOCS%%%%DOCSDIR%%/html/capi.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/intro.html
 %%PORTDOCS%%%%DOCSDIR%%/html/objects.inv
+%%PORTDOCS%%%%DOCSDIR%%/html/pyapi.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ref/pyclearnsystem.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ref/pycrule.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ref/pycruleset.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ref/pylearnsystem.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ref/pymmaprulemanagement.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ref/pyrule.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ref/pyrulemanagement.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ref/pyruleset.html
 %%PORTDOCS%%%%DOCSDIR%%/html/search.html
 %%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/html/usage.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/learnsystem.py
 @dirrm %%PYTHON_SITELIBDIR%%/dynrules
 @dirrm include/%%PYTHON_VERSION%%/dynrules
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_sources/ref
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_sources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_static
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ref
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
