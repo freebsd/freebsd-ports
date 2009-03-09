@@ -1,7 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cookie/XS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cookie/XS/XS.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cookie/XS/XS.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Cookie/XS.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cookie/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cookie
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Cookie
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Cookie/XS/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Cookie/XS/XS.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Cookie/XS/XS.so
+%%SITE_PERL%%/%%PERL_ARCH%%/CGI/Cookie/XS.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Cookie/XS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Cookie
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/CGI/Cookie
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/CGI
