@@ -1,10 +1,11 @@
---- lib/Makefile.orig	Sat Dec  9 20:39:45 2006
-+++ lib/Makefile	Sat Dec  9 20:39:49 2006
-@@ -1,7 +1,6 @@
+--- lib/Makefile.orig	2009-03-09 09:14:29.000000000 +0100
++++ lib/Makefile	2009-03-09 09:14:35.000000000 +0100
+@@ -1,7 +1,7 @@
  OCAMLMAKEFILE = ../OCamlMakefile
  
- SOURCES   = pcre.mli pcre.ml pcre_stubs.c
--CFLAGS    = -O2
- CLIBS	  = pcre
- RESULT    = pcre
- 
+ SOURCES := pcre.mli pcre.ml pcre_stubs.c
+-CFLAGS := -O2 $(shell pcre-config --cflags)
++CFLAGS += $(shell pcre-config --cflags)
+ PCRE_FLAGS := $(shell pcre-config --libs)
+ OCAMLLDFLAGS := -cclib "$(PCRE_FLAGS)"
+ OCAMLMKLIB_FLAGS := $(PCRE_FLAGS)
