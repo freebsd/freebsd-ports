@@ -40,6 +40,9 @@
 %%PYTHON_SITELIBDIR%%/rpyc/servers/registry_server.py
 %%PYTHON_SITELIBDIR%%/rpyc/servers/registry_server.pyc
 %%PYTHON_SITELIBDIR%%/rpyc/servers/registry_server.pyo
+%%PYTHON_SITELIBDIR%%/rpyc/servers/vdbconf.py
+%%PYTHON_SITELIBDIR%%/rpyc/servers/vdbconf.pyc
+%%PYTHON_SITELIBDIR%%/rpyc/servers/vdbconf.pyo
 %%PYTHON_SITELIBDIR%%/rpyc/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/rpyc/utils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/rpyc/utils/__init__.pyo
