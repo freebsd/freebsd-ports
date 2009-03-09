@@ -5,7 +5,6 @@
 %%DATADIR%%/E-docs/E_autoraise_settings.png
 %%DATADIR%%/E-docs/E_backgrounds_menu.png
 %%DATADIR%%/E-docs/E_backgrounds_menu_view.png
-%%DATADIR%%/E-docs/E_backgrounds_settings.pl.png
 %%DATADIR%%/E-docs/E_backgrounds_settings.png
 %%DATADIR%%/E-docs/E_border_selector.png
 %%DATADIR%%/E-docs/E_deskarray.png
@@ -20,7 +19,6 @@
 %%DATADIR%%/E-docs/E_iconbox.png
 %%DATADIR%%/E-docs/E_iconbox_menu.png
 %%DATADIR%%/E-docs/E_iconbox_settings.png
-%%DATADIR%%/E-docs/E_kde_settings.png
 %%DATADIR%%/E-docs/E_keyboard.png
 %%DATADIR%%/E-docs/E_logo.png
 %%DATADIR%%/E-docs/E_maint_menu.png
@@ -39,9 +37,6 @@
 %%DATADIR%%/E-docs/E_tooltips.png
 %%DATADIR%%/E-docs/E_virtual_desk_settings.png
 %%DATADIR%%/E-docs/E_window.png
-%%DATADIR%%/E-docs/E_window_diagram.pl.png
 %%DATADIR%%/E-docs/E_window_diagram.png
 %%DATADIR%%/E-docs/Edoc_bg.png
 %%DATADIR%%/E-docs/MAIN
-%%DATADIR%%/E-docs/Vera.ttf
-%%DATADIR%%/E-docs/VeraBd.ttf

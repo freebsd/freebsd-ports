@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enlightenment-docs
-PORTVERSION=	0.16.8.0.1
+PORTVERSION=	0.16.8.0.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/enlightenment
 DISTNAME=	e16-docs-${PORTVERSION}
