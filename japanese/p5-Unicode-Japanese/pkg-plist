@@ -1,6 +1,7 @@
 bin/ujconv
 bin/ujguess
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Japanese.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Japanese.mlpod
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Japanese/JA.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Japanese/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Japanese/Japanese.bs
