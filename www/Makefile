@@ -669,6 +669,7 @@
     SUBDIR += p5-CGI-Cache
     SUBDIR += p5-CGI-Compress-Gzip
     SUBDIR += p5-CGI-Cookie-Splitter
+    SUBDIR += p5-CGI-Cookie-XS
     SUBDIR += p5-CGI-Deurl-XS
     SUBDIR += p5-CGI-Ex
     SUBDIR += p5-CGI-Expand
@@ -801,7 +802,6 @@
     SUBDIR += p5-ClearSilver
     SUBDIR += p5-Compress-LeadingBlankSpaces
     SUBDIR += p5-Continuity
-    SUBDIR += p5-Cookie-XS
     SUBDIR += p5-DBIx-Class-HTMLWidget
     SUBDIR += p5-Data-TreeDumper-Renderer-DHTML
     SUBDIR += p5-Data-Validate-URI
