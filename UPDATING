@@ -7,6 +7,22 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20090309:
+  AFFECTS: users of devel/libusb on CURRENT
+  AUTHOR: stas@FreeBSD.org
+
+  FreeBSD libusb20 was renamed to libusb in r189585 and thus,
+  being fully compatible with libusb20, replaces devel/libusb
+  on HEAD. devel/libusb should not be used on these systems. Users
+  of libusb-dependent ports are advised to remove libusb package
+  from their systems, and rebuild all libusb dependencies. One
+  of possible ways to achive this is listed below:
+	# set tempfile=`mktemp /tmp/usbports.XX`
+	# pkg_info -qR /var/db/pkg/libusb-* > ${tempfile}
+  	# pkg_delete -f /var/db/pkg/libusb-*
+	# cat ${tempfile} | xargs portupgrade -f 
+	# rm -f ${tempfile}
+
+20090309:
   AFFECTS: users of multimedia/phonon
   AUTHOR: kde@FreeBSD.org
 
