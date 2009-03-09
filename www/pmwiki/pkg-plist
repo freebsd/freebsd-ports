@@ -49,8 +49,9 @@
 %%PMWIKIDIR%%/scripts/.htaccess
 %%PMWIKIDIR%%/scripts/author.php
 %%PMWIKIDIR%%/scripts/authuser.php
+%%PMWIKIDIR%%/scripts/blocklist.php
 %%PMWIKIDIR%%/scripts/caches.php
-%%PMWIKIDIR%%/scripts/compat1x.php
+%%PMWIKIDIR%%/scripts/creole.php
 %%PMWIKIDIR%%/scripts/crypt.php
 %%PMWIKIDIR%%/scripts/diag.php
 %%PMWIKIDIR%%/scripts/draft.php
@@ -59,7 +60,7 @@
 %%PMWIKIDIR%%/scripts/guiedit.php
 %%PMWIKIDIR%%/scripts/httpauth.php
 %%PMWIKIDIR%%/scripts/intermap.txt
-%%PMWIKIDIR%%/scripts/mailposts.php
+%%PMWIKIDIR%%/scripts/markupexpr.php
 %%PMWIKIDIR%%/scripts/notify.php
 %%PMWIKIDIR%%/scripts/pagelist.php
 %%PMWIKIDIR%%/scripts/pagerev.php
@@ -74,11 +75,13 @@
 %%PMWIKIDIR%%/scripts/stdmarkup.php
 %%PMWIKIDIR%%/scripts/trails.php
 %%PMWIKIDIR%%/scripts/transition.php
+%%PMWIKIDIR%%/scripts/upgrades.php
 %%PMWIKIDIR%%/scripts/upload.php
 %%PMWIKIDIR%%/scripts/urlapprove.php
 %%PMWIKIDIR%%/scripts/vardoc.php
 %%PMWIKIDIR%%/scripts/version.php
 %%PMWIKIDIR%%/scripts/wikistyles.php
+%%PMWIKIDIR%%/scripts/wikiwords.php
 %%PMWIKIDIR%%/scripts/xlpage-utf-8.php
 %%PMWIKIDIR%%/wikilib.d/Main.HomePage
 %%PMWIKIDIR%%/wikilib.d/Main.WikiSandbox
@@ -89,9 +92,9 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.BackupAndRestore
 %%PMWIKIDIR%%/wikilib.d/PmWiki.BasicEditing
 %%PMWIKIDIR%%/wikilib.d/PmWiki.BasicVariables
+%%PMWIKIDIR%%/wikilib.d/PmWiki.Blocklist
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Categories
 %%PMWIKIDIR%%/wikilib.d/PmWiki.ChangeLog
-%%PMWIKIDIR%%/wikilib.d/PmWiki.ChangesFromPmWiki1
 %%PMWIKIDIR%%/wikilib.d/PmWiki.ConditionalMarkup
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Contributors
 %%PMWIKIDIR%%/wikilib.d/PmWiki.CreatingNewPages
@@ -123,6 +126,7 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.LocalCustomizations
 %%PMWIKIDIR%%/wikilib.d/PmWiki.MailPosts
 %%PMWIKIDIR%%/wikilib.d/PmWiki.MailingLists
+%%PMWIKIDIR%%/wikilib.d/PmWiki.MarkupExpressions
 %%PMWIKIDIR%%/wikilib.d/PmWiki.MarkupMasterIndex
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Notify
 %%PMWIKIDIR%%/wikilib.d/PmWiki.OtherVariables
@@ -188,6 +192,10 @@
 %%PMWIKIDIR%%/wikilib.d/Site.SideBar
 %%PMWIKIDIR%%/wikilib.d/Site.Site
 %%PMWIKIDIR%%/wikilib.d/Site.UploadQuickReference
+%%PMWIKIDIR%%/wikilib.d/SiteAdmin.AuthList
+%%PMWIKIDIR%%/wikilib.d/SiteAdmin.AuthUser
+%%PMWIKIDIR%%/wikilib.d/SiteAdmin.GroupAttributes
+%%PMWIKIDIR%%/wikilib.d/SiteAdmin.Status
 @dirrm %%PMWIKIDIR%%/wikilib.d
 @dirrm %%PMWIKIDIR%%/wiki.d
 @dirrm %%PMWIKIDIR%%/scripts

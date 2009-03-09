@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	pmwiki
-PORTVERSION=	2.1.27
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	SF
+MASTER_SITES=	http://pmwiki.org/pub/pmwiki/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A WikiWikiWeb clone using PHP
 
 USE_PHP=	mbstring session
