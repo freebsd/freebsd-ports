@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memcache
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -26,7 +26,7 @@ USE_DOS2UNIX=	yes
 
 CONFIGURE_ARGS=	--with-zlib-dir=/usr
 
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example.php ${EXAMPLESDIR}

@@ -1,2 +1,2 @@
-%%PORTDOCS%%%%EXAMPLESDIR%%/example.php
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.php
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
