@@ -37,6 +37,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 MAN5=		reader.conf.5
 MAN8=		pcscd.8 update-reader.conf.8
 
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_USB)
 . if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
@@ -79,4 +81,4 @@ post-install:
 		${WRKDIR}/pkg-message
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
