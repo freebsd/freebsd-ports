@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	svn_load_dirs
-PORTVERSION=	1.4.3
-PORTREVISION=	2
+PORTVERSION=	1.5.6
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/
 DISTNAME=	subversion-${DISTVERSION}
@@ -21,7 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 USE_BZIP2=	yes
 USE_PERL5=	5.8.0+
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/contrib/client-side
+WRKSRC=		${WRKDIR}/${DISTNAME}/contrib/client-side/svn_load_dirs
 
 do-build:
 	${SED} -E \
