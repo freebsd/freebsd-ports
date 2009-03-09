@@ -7,6 +7,7 @@
 
 PORTNAME=	Catalyst-Engine-HTTP-Prefork
 PORTVERSION=	0.50
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,5 +25,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	5.8.1+
 
 MAN3=		Catalyst::Engine::HTTP::Prefork.3
+
+post-patch:
+	${REINPLACE_CMD} -e 's/Cookie::XS/CGI::Cookie::XS/g' \
+		${WRKSRC}/lib/Catalyst/Engine/HTTP/Prefork/Handler.pm
 
 .include <bsd.port.mk>
