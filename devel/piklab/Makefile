@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=piklab
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	KDE IDE for microcontroller development
 
-LIB_DEPENDS=	usb:${PORTSDIR}/devel/libusb
-
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -29,6 +27,12 @@ MAN1=		piklab-hex.1 piklab-prog.1 piklab.1x
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
+.endif
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
+. else
+CONFIGURE_ENV+=	LIBUSB_LIBS="-lusb"
 .endif
 
 .include <bsd.port.post.mk>

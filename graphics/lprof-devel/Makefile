@@ -19,8 +19,7 @@ COMMENT=	Open source color profiler
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		vigraimpex.2:${PORTSDIR}/graphics/vigra \
-		usb-0.1.8:${PORTSDIR}/devel/libusb
+		vigraimpex.2:${PORTSDIR}/graphics/vigra
 
 USE_BZIP2=	yes
 USE_XORG=	x11 xext sm ice xxf86vm
@@ -33,6 +32,12 @@ CMAKE_USE_PTHREAD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/asm\/types.h/ d' ${WRKSRC}/src/argyll/spectro/hidio.c
 	@${REINPLACE_CMD} -e '/DESTINATION/ s|data/|share/${PORTNAME}/data/|' \
@@ -41,4 +46,4 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/icons/lprof.png ${PREFIX}/share/pixmaps
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

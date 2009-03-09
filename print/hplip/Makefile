@@ -18,7 +18,6 @@ COMMENT=	Drivers and utilities for HP Printers and All-in-One devices
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		sane.1:${PORTSDIR}/graphics/sane-backends \
 		cups.2:${PORTSDIR}/print/cups-base \
-		usb:${PORTSDIR}/devel/libusb \
 		netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2 \
@@ -53,6 +52,10 @@ OPTIONS=	GUI "build with Python QT" on
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} IJSVER=2.7.4
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
+.endif
 
 .if !defined(WITHOUT_GUI) || exists(${LOCALBASE}/bin/pylupdate)
 RUN_DEPENDS+=	pylupdate:${PORTSDIR}/x11-toolkits/py-qt

@@ -19,6 +19,10 @@ OPTIONS=	SGML "Install developer guide from SGML" off
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800069
+IGNORE=		has been already included into base system
+.endif
+
 .if defined(WITH_SGML)
 BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/jade/catalog:${PORTSDIR}/textproc/jade \
 		${LOCALBASE}/share/sgml/docbook/dsssl/modular/catalog:${PORTSDIR}/textproc/dsssl-docbook-modular \

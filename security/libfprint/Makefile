@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	fprint
 MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Library for fingerprint reader devices
 
-LIB_DEPENDS+=	Magick:${PORTSDIR}/graphics/ImageMagick \
-		usb:${PORTSDIR}/devel/libusb
+LIB_DEPENDS+=	Magick:${PORTSDIR}/graphics/ImageMagick
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -28,4 +27,12 @@ CONFIGURE_ENV+=	CRYPTO_CFLAGS=-I${OPENSSLINC} \
 		CRYPTO_LIBS=-lcrypto \
 		CFLAGS="${CFLAGS} -DHAVE_MEMMEM"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
+.else
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-usb
+.endif
+
+.include <bsd.port.post.mk>

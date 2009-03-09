@@ -14,18 +14,20 @@ MASTER_SITES=	http://www.reynoldsnet.org/s10sh/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	USB/serial userspace driver for the Canon PowerShot digital cameras
 
-.if defined(NOUSB) || defined(WITHOUT_USB)
-MAKE_ENV+=	WITHOUT_USB=YES
-.else
-LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
-.endif
-
 # Don't extract the libusb bundled with s10sh:
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude '*/libusb*'
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 .include <bsd.port.pre.mk>
+
+.if defined(NOUSB) || defined(WITHOUT_USB)
+MAKE_ENV+=	WITHOUT_USB=YES
+.else
+. if ${OSVERSION} < 800069
+LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
+. endif
+.endif
 
 .if !defined(NOPORTDOCS)
 post-install:

@@ -15,13 +15,23 @@ MASTER_SITE_SUBDIR=	ifp-driver
 MAINTAINER=	riggs@rrr.de
 COMMENT=	Command line interface to iRiver music players
 
-LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
-
 MAN1=		ifp.1
 
 PLIST_FILES+=	bin/ifp
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+.endif
+
+post-patch:
+.if ${OSVERSION} >= 800069
+	@${REINPLACE_CMD} -E -e 's,`libusb-config --cflags`,,g' \
+		-e 's,`libusb-config --libs`,-lusb,g' ${WRKSRC}/Makefile
+.endif
+
 post-install:
 	@${CAT} ${.CURDIR}/pkg-message
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

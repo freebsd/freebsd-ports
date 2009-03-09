@@ -12,8 +12,7 @@ MASTER_SITES=	http://alioth.debian.org/frs/download.php/2656/
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 
-LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb \
-		pcsclite.1:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -31,6 +30,10 @@ MAN1=		RSA_SecurID_getpasswd.1
 MAN8=		Kobil_mIDentity_switch.8
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s,use warnings;,," ${WRKSRC}/src/create_Info_plist.pl

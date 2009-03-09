@@ -20,7 +20,6 @@ USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 BUILD_DEPENDS+=	${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/bin/swig1.3:${PORTSDIR}/devel/swig13
@@ -28,4 +27,12 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man --without-doxygen
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+.else
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-usb
+.endif
+
+.include <bsd.port.post.mk>

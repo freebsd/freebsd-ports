@@ -14,7 +14,6 @@ MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	API for communications with Lego and Vex robot controllers
 
-LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgamepad.a:${PORTSDIR}/devel/libgamepad
 
 OPTIONS=	CUTECOM "Install cutecom for Vex debugging" On
@@ -24,8 +23,18 @@ MAN3=		roboctl.3
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
+.endif
+
 .if defined(WITH_CUTECOM)
 RUN_DEPENDS+=	cutecom:${PORTSDIR}/comms/cutecom
+.endif
+
+post-patch:
+.if ${OSVERSION} >= 800069
+	@${REINPLACE_CMD} -E -e 's,/usr/local/include/usb.h,/usr/include/usb.h,g' \
+	    ${WRKSRC}/Libs/C/Makefile.depend
 .endif
 
 post-install:

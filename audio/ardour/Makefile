@@ -25,7 +25,6 @@ LIB_DEPENDS=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		lo.6:${PORTSDIR}/audio/liblo \
 		SoundTouch.0:${PORTSDIR}/audio/soundtouch \
-		usb:${PORTSDIR}/devel/libusb \
 		fftw3f:${PORTSDIR}/math/fftw3-float \
 		fftw3:${PORTSDIR}/math/fftw3 \
 		aubio.3:${PORTSDIR}/audio/aubio
@@ -51,6 +50,10 @@ OPTIONS=	OPTIMIZED_CFLAGS "Builds with compiler optimizations" on \
 
 .if ${OSVERSION} < 700000
 BROKEN=		needs posix_memalign()
+.endif
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 .endif
 
 .if defined(WITH_VST)

@@ -23,8 +23,7 @@ BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake \
 		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2 \
-		smbclient:${PORTSDIR}/net/samba-libsmbclient \
-		usb-0.1:${PORTSDIR}/devel/libusb
+		smbclient:${PORTSDIR}/net/samba-libsmbclient
 
 CONFLICTS=	kdeartwork-3.[2-3]* kdelibs-3.[0-4]* kdeutils-3.[0-2]*
 
@@ -58,6 +57,10 @@ OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on \
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
+.endif
 
 .if !defined(WITHOUT_ARTSWRAPPER)
 RUN_DEPENDS+=	artswrapper:${PORTSDIR}/audio/artswrapper

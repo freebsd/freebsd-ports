@@ -1,0 +1,31 @@
+--- configure.in.orig	2008-10-31 15:43:21.000000000 +0300
++++ configure.in	2009-03-07 01:08:46.000000000 +0300
+@@ -170,6 +169,28 @@
+       AC_DEFINE(HAVE_LIBUSB, 1)
+       CFLAGS="$CFLAGS -Imac/libusb/"
+       ;;
++    *-*-freebsd*)
++	GBSER=gbser_posix.o
++	AC_MSG_CHECKING(for libusb)
++	if test "$with_libusb" = no ; then
++		AC_MSG_RESULT(check not done)
++		OSJEEPS=jeeps/gpsusbstub.o
++	else
++		OLDFLAGS=$LDFLAGS
++		OCFLAGS=$CFLAGS
++		LDFLAGS="$LDFLAGS -lusb"
++		CFLAGS="$OCFLAGS"
++
++		AC_CHECK_LIB([usb], [usb_interrupt_read],
++			AC_DEFINE(HAVE_LIBUSB, 1, [Defined if you have libusb])
++			[USB_CFLAGS=""]
++			[USB_LIBS="-lusb"]
++#			,[AC_MSG_ERROR([libusb is needed])]
++			)
++		OSJEEPS=jeeps/gpslibusb.o
++		CFLAGS="$OCFLAGS"
++	fi
++	;;
+     *)
+ 	GBSER=gbser_posix.o
+ 	AC_MSG_CHECKING(for libusb)

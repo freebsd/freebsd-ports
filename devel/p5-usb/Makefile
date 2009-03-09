@@ -17,7 +17,6 @@ MAINTAINER=	jwbacon@tds.net
 COMMENT=	Perl wrapper for libusb
 
 BUILD_DEPENDS=	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline
-LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 
 WRKSRC=		${WRKDIR}/Device-USB-0.21
 PERL_CONFIGURE=	yes
@@ -31,4 +30,10 @@ MAN3=		Device::USB.3 \
 		Device::USB::FAQ.3 \
 		Device::dump_usb.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+.endif
+
+.include <bsd.port.post.mk>

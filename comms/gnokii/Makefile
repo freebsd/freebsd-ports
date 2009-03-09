@@ -55,8 +55,10 @@ OPTIONS=	ICAL	"Build with IETF iCal support"		off \
 LIB_DEPENDS+=	ical.42:${PORTSDIR}/devel/libical
 .endif
 
-.if exists(${LOCALBASE}/lib/libusb.so) || defined(WITH_USB)
+.if ${OSVERSION} < 800069
+. if exists(${LOCALBASE}/lib/libusb.so) || defined(WITH_USB)
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+. endif
 .endif
 
 .if exists(${LOCALBASE}/lib/libpcsclite.so) || defined(WITH_PCSC)

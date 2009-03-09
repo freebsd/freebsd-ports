@@ -1,0 +1,17 @@
+--- configure.ac.orig	2009-03-07 01:48:24.000000000 +0300
++++ configure.ac	2009-03-07 01:49:07.000000000 +0300
+@@ -74,13 +74,7 @@
+     AC_MSG_RESULT(yes)
+     AC_DEFINE_UNQUOTED(WITH_LIBUSB)
+ 
+-    AC_PATH_PROG(LIBUSB_CONFIG,libusb-config)
+-    if test -n "${LIBUSB_CONFIG}"; then
+-       CFLAGS="`${LIBUSB_CONFIG} --cflags` $CFLAGS"
+-       LIBS="`${LIBUSB_CONFIG} --libs` $LIBS"
+-    else
+-       AC_MSG_ERROR(Can't find libusb)
+-    fi
++       LIBS="-lusb $LIBS"
+ 
+     AC_CHECK_LIB(usb, usb_open)
+     AC_SUBST(WITH_LIBUSB)

@@ -15,8 +15,6 @@ DISTNAME=	spectools-2007-10-R2
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	Tools for the 2.4GHz Wi-Spy spectrum analyzers from MetaGeek LLC
 
-LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -32,6 +30,10 @@ OPTIONS=	GTK "Enable graphical client" On
 IGNORE=	is unsupported on systems prior to FreeBSD v602101
 .elif ${OSVERSION} > 700000 && ${OSVERSION} < 700027
 IGNORE=	is unsupported on systems prior to FreeBSD v700027
+.endif
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
 .endif
 
 ALL_TARGET=	spectool_net spectool_raw

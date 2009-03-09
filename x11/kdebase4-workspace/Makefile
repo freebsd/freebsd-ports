@@ -16,8 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
-LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb \
-		qimageblitz.4:${PORTSDIR}/x11/qimageblitz\
+LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz\
 		dbus-1.3:${PORTSDIR}/devel/dbus \
 		hal.1:${PORTSDIR}/sysutils/hal \
 		xklavier.12:${PORTSDIR}/x11/libxklavier
@@ -52,6 +51,12 @@ CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 #Xmms and Googlegadgets could be enabled,
 #QEdje has not been ported yet.
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+.endif
+
 post-extract:
 	${MKDIR} ${WRKSRC}
 
@@ -74,4 +79,4 @@ post-install:
 	@${MV} ${PREFIX}/lib/kde4/libexec/kdm_greet ${PREFIX}/lib/kde4/libexec/kdm-bin_greet
 	@${INSTALL_SCRIPT} ${WRKDIR}/kdm ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

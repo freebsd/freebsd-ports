@@ -23,7 +23,6 @@ BUILD_DEPENDS=	sdcc:${PORTSDIR}/lang/sdcc \
 		guile:${PORTSDIR}/lang/guile
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		fftw3f:${PORTSDIR}/math/fftw3-float \
-		usb:${PORTSDIR}/devel/libusb \
 		boost_python:${PORTSDIR}/devel/boost-python
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_SITELIBDIR}/ephem/__init__.py:${PORTSDIR}/astro/pyephem
@@ -49,6 +48,12 @@ CONFIGURE_ARGS=	--with-boost-include-dir="${LOCALBASE}/include/" \
 		--disable-doxygen \
 		--disable-html-docs \
 		--disable-latex-docs
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
@@ -80,4 +85,4 @@ post-install:
 	@${ECHO} without the .sample suffix and edited as needed before use.
 	@${ECHO}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -24,9 +24,13 @@ OPTIONS=	LIBUSB "Enable OBEX over USB" no
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LIBUSB)
+. if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-CONFIGURE_ARGS+=--enable-usb
 CFLAGS+=	-I${PREFIX}/include
+. else
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure
+. endif
+CONFIGURE_ARGS+=--enable-usb
 .else
 CONFIGURE_ARGS+=--disable-usb
 .endif

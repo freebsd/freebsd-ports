@@ -7,10 +7,14 @@ LDADD	+=	-lreadline -ltermcap
 CFLAGS	+=	-DHAVE_READLINE
 
 .if !defined(WITHOUT_USB)
+. if ${OSVERSION} < 800069
 USBLIB	!=	${LOCALBASE}/bin/libusb-config --libs
 LDADD	+=	${USBLIB}
 USBCF   !=      ${LOCALBASE}/bin/libusb-config --cflags
 CFLAGS	+=	${USBCF} -DHAVE_USB_SUPPORT
+. else
+LDADD	+=	-lusb
+. endif
 SRCS	+=	usb.c
 .endif
 

@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	tilp
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI calculator link cables library
 
-LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
-
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack pkgconfig
@@ -24,4 +22,12 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
+.else
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure
+.endif
+
+.include <bsd.port.post.mk>
