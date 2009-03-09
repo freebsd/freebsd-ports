@@ -669,6 +669,7 @@ asterisk12                      ports/net/asterisk12
 asterisk12-addons               ports/net/asterisk12-addons
 asterisk12-app-ldap             ports/net/asterisk12-app-ldap
 asterisk16                      ports/net/asterisk16
+asterisk16-addons               ports/net/asterisk16-addons
 astfax                          ports/net/astfax
 astime                          ports/x11-clocks/astime
 astk-client                     ports/cad/astk-client
@@ -6914,7 +6915,6 @@ latex2slides                    ports/print/latex2slides
 latexdiff                       ports/print/latexdiff
 latexmk                         ports/print/latexmk
 latrine                         ports/games/latrine
-latte                           ports/textproc/latte
 laudio                          ports/audio/laudio
 laughingman                     ports/games/laughingman
 launchy                         ports/deskutils/launchy
@@ -7504,7 +7504,6 @@ libspectrum                     ports/emulators/libspectrum
 libspf                          ports/mail/libspf
 libspf2                         ports/mail/libspf2
 libspf2-10                      ports/mail/libspf2-10
-libspiff                        ports/multimedia/libspiff
 libspiro                        ports/graphics/libspiro
 libsrs                          ports/mail/libsrs
 libsrs2                         ports/mail/libsrs2
@@ -9183,7 +9182,6 @@ ngrep-lib                       ports/net/ngrep-lib
 ngspice_rework                  ports/cad/ngspice_rework
 nhc98                           ports/lang/nhc98
 nibbles                         ports/games/nibbles
-nicetext                        ports/textproc/nicetext
 nickle                          ports/lang/nickle
 nickleby                        ports/x11-wm/nickleby
 nicotine                        ports/net-p2p/nicotine
@@ -19854,6 +19852,7 @@ rubygem-columnize               ports/devel/rubygem-columnize
 rubygem-daemons                 ports/devel/rubygem-daemons
 rubygem-datamapper              ports/databases/rubygem-datamapper
 rubygem-diff-lcs                ports/textproc/rubygem-diff-lcs
+rubygem-ditz                    ports/devel/rubygem-ditz
 rubygem-erubis                  ports/www/rubygem-erubis
 rubygem-eventmachine            ports/devel/rubygem-eventmachine
 rubygem-exifr                   ports/graphics/rubygem-exifr
@@ -21505,6 +21504,7 @@ torrentvolve                    ports/net-p2p/torrentvolve
 torrentzip                      ports/archivers/torrentzip
 torrus                          ports/net-mgmt/torrus
 torsmo                          ports/sysutils/torsmo
+torsocks                        ports/net/torsocks
 tosha                           ports/audio/tosha
 toshctl                         ports/sysutils/toshctl
 tosvcd                          ports/multimedia/tosvcd
