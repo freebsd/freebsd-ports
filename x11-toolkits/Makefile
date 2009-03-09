@@ -91,9 +91,6 @@
     SUBDIR += hs-gtk2hs
     SUBDIR += hs-opengl-ghc
     SUBDIR += inti
-    SUBDIR += inti-gconf
-    SUBDIR += inti-gl
-    SUBDIR += inti-sourceview
     SUBDIR += irrlicht
     SUBDIR += itk
     SUBDIR += iwidgets
