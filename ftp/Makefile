@@ -14,7 +14,6 @@
     SUBDIR += curl
     SUBDIR += curlpp
     SUBDIR += dmachine
-    SUBDIR += downloader
     SUBDIR += emacs-wget
     SUBDIR += fget
     SUBDIR += filezilla

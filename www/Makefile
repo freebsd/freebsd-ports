@@ -1330,7 +1330,6 @@
     SUBDIR += ruby-nora
     SUBDIR += ruby-tmpl
     SUBDIR += rubygem-actionpack
-    SUBDIR += rubygem-actionwebservice
     SUBDIR += rubygem-activeresource
     SUBDIR += rubygem-addressable
     SUBDIR += rubygem-amazon-ecs

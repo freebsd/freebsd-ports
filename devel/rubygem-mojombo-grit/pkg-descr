@@ -1,8 +1,0 @@
-Grit is a Ruby library for extracting information from a git repository in
-an object oriented manner.  Grit gives you object model access to your git
-repository.  Once you have created a repository object, you can traverse it
-to find parent commit(s), trees, blobs, etc.
-
-This is the GitHub version of the grit gem called mojombo-grit.
-
-WWW: http://grit.rubyforge.org/
