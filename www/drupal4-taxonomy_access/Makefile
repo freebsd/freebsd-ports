@@ -16,7 +16,7 @@ MAINTAINER=	nick@foobar.org
 COMMENT=	Access control system for the Drupal based on Taxonomy classification
 
 DEPRECATED=	Drupal 4.7.x is end-of-life since 200802.  Please migrate to Drupal 6.x
-EXPIRATION_DATE=	2009-03-26
+EXPIRATION_DATE=2009-03-26
 
 DRUPAL4_MODULE=	yes
 MODULE_FILES=	taxonomy_access.install taxonomy_access.module taxonomy_access_admin.inc

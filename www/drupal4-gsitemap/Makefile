@@ -15,7 +15,7 @@ MAINTAINER=	nick@foobar.org
 COMMENT=	Produces Google/sitemaps.org compliant XML WWW site maps
 
 DEPRECATED=	Drupal 4.7.x is end-of-life since 200802.  Please migrate to Drupal 6.x
-EXPIRATION_DATE=2009-03-26 
+EXPIRATION_DATE=2009-03-26
 
 DRUPAL4_MODULE=	yes
 MODULE_FILES=	gsitemap.install gsitemap.module
