@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tcpreplay
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +24,8 @@ CONFIGURE_ARGS=	--with-libpcap=${LOCALBASE} \
 		--enable-tcpreplay-edit
 
 MAN1=		tcpreplay.1 tcpprep.1 tcprewrite.1 tcpbridge.1 tcpreplay-edit.1
-PLIST_FILES=	bin/tcpreplay bin/tcpprep bin/tcprewrite bin/tcpbridge
+PLIST_FILES=	bin/tcpreplay bin/tcpprep bin/tcprewrite bin/tcpbridge \
+		bin/tcpreplay-edit
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wall -O3||' ${WRKSRC}/${CONFIGURE_SCRIPT}
