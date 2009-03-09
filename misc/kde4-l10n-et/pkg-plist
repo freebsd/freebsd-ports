@@ -253,6 +253,9 @@ share/doc/HTML/et/kcontrol/smb/index.docbook
 share/doc/HTML/et/kcontrol/spellchecking/common
 share/doc/HTML/et/kcontrol/spellchecking/index.cache.bz2
 share/doc/HTML/et/kcontrol/spellchecking/index.docbook
+share/doc/HTML/et/kcontrol/splashscreen/common
+share/doc/HTML/et/kcontrol/splashscreen/index.cache.bz2
+share/doc/HTML/et/kcontrol/splashscreen/index.docbook
 share/doc/HTML/et/kcontrol/useragent/common
 share/doc/HTML/et/kcontrol/useragent/index.cache.bz2
 share/doc/HTML/et/kcontrol/useragent/index.docbook
@@ -913,6 +916,14 @@ share/doc/HTML/et/ktuberling/common
 share/doc/HTML/et/ktuberling/index.cache.bz2
 share/doc/HTML/et/ktuberling/index.docbook
 share/doc/HTML/et/ktuberling/technical-reference.docbook
+share/doc/HTML/et/kturtle/common
+share/doc/HTML/et/kturtle/getting-started.docbook
+share/doc/HTML/et/kturtle/glossary.docbook
+share/doc/HTML/et/kturtle/index.cache.bz2
+share/doc/HTML/et/kturtle/index.docbook
+share/doc/HTML/et/kturtle/programming-reference.docbook
+share/doc/HTML/et/kturtle/translator-guide.docbook
+share/doc/HTML/et/kturtle/using-kturtle.docbook
 share/doc/HTML/et/kuser/common
 share/doc/HTML/et/kuser/index.cache.bz2
 share/doc/HTML/et/kuser/index.docbook
@@ -954,12 +965,21 @@ share/doc/HTML/et/lskat/index.docbook
 share/doc/HTML/et/okular/common
 share/doc/HTML/et/okular/index.cache.bz2
 share/doc/HTML/et/okular/index.docbook
+share/doc/HTML/et/parley/common
+share/doc/HTML/et/parley/index.cache.bz2
+share/doc/HTML/et/parley/index.docbook
+share/doc/HTML/et/plasma/common
+share/doc/HTML/et/plasma/index.cache.bz2
+share/doc/HTML/et/plasma/index.docbook
 share/doc/HTML/et/sonnet/common
 share/doc/HTML/et/sonnet/index.cache.bz2
 share/doc/HTML/et/sonnet/index.docbook
 share/doc/HTML/et/superkaramba/common
 share/doc/HTML/et/superkaramba/index.cache.bz2
 share/doc/HTML/et/superkaramba/index.docbook
+share/doc/HTML/et/systemsettings/common
+share/doc/HTML/et/systemsettings/index.cache.bz2
+share/doc/HTML/et/systemsettings/index.docbook
 share/doc/HTML/et/umbrello/authors.docbook
 share/doc/HTML/et/umbrello/code_import_and_generation.docbook
 share/doc/HTML/et/umbrello/common
@@ -1019,7 +1039,9 @@ share/locale/et/LC_MESSAGES/kanagram.mo
 share/locale/et/LC_MESSAGES/kapman.mo
 share/locale/et/LC_MESSAGES/kappfinder.mo
 share/locale/et/LC_MESSAGES/kapptemplate.mo
+share/locale/et/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/et/LC_MESSAGES/kate.mo
+share/locale/et/LC_MESSAGES/katebuild-plugin.mo
 share/locale/et/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/et/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/et/LC_MESSAGES/katefiletemplates.mo
@@ -1269,6 +1291,7 @@ share/locale/et/LC_MESSAGES/kopete.mo
 share/locale/et/LC_MESSAGES/korganizer.mo
 share/locale/et/LC_MESSAGES/korn.mo
 share/locale/et/LC_MESSAGES/kpackage.mo
+share/locale/et/LC_MESSAGES/kpartloader.mo
 share/locale/et/LC_MESSAGES/kpartsaver.mo
 share/locale/et/LC_MESSAGES/kpasswdserver.mo
 share/locale/et/LC_MESSAGES/kpat.mo
@@ -1435,6 +1458,7 @@ share/locale/et/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/et/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/et/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/et/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/et/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/et/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/et/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/et/LC_MESSAGES/plasma_applet_kalzium.mo
@@ -1514,8 +1538,11 @@ share/locale/et/LC_MESSAGES/useraccount.mo
 share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/xsldbg
 @dirrm share/doc/HTML/et/umbrello
+@dirrm share/doc/HTML/et/systemsettings
 @dirrm share/doc/HTML/et/superkaramba
 @dirrm share/doc/HTML/et/sonnet
+@dirrm share/doc/HTML/et/plasma
+@dirrm share/doc/HTML/et/parley
 @dirrm share/doc/HTML/et/okular
 @dirrm share/doc/HTML/et/lskat
 @dirrm share/doc/HTML/et/lilo-config
@@ -1526,6 +1553,7 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kwatchgnupg
 @dirrm share/doc/HTML/et/kwallet
 @dirrm share/doc/HTML/et/kuser
+@dirrm share/doc/HTML/et/kturtle
 @dirrm share/doc/HTML/et/ktuberling
 @dirrm share/doc/HTML/et/kttsd
 @dirrm share/doc/HTML/et/ktouch
@@ -1654,6 +1682,7 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kcron
 @dirrm share/doc/HTML/et/kcontrol/windowspecific
 @dirrm share/doc/HTML/et/kcontrol/useragent
+@dirrm share/doc/HTML/et/kcontrol/splashscreen
 @dirrm share/doc/HTML/et/kcontrol/spellchecking
 @dirrm share/doc/HTML/et/kcontrol/smb
 @dirrm share/doc/HTML/et/kcontrol/screensaver

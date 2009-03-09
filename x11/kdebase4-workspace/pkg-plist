@@ -137,10 +137,10 @@ include/taskmanager/taskgroup.h
 include/taskmanager/taskitem.h
 include/taskmanager/taskmanager.h
 include/taskmanager/taskmanager_export.h
-lib/KDE4Workspace-%%KDE4_VERSION%%/cmake/KDE4WorkspaceConfig.cmake
-lib/KDE4Workspace-%%KDE4_VERSION%%/cmake/KDE4WorkspaceConfigVersion.cmake
-lib/KDE4Workspace-%%KDE4_VERSION%%/cmake/KDE4WorkspaceLibraryTargets-%%KDE4_BUILD_TYPE%%.cmake
-lib/KDE4Workspace-%%KDE4_VERSION%%/cmake/KDE4WorkspaceLibraryTargets.cmake
+lib/KDE4Workspace/cmake/KDE4WorkspaceConfig.cmake
+lib/KDE4Workspace/cmake/KDE4WorkspaceConfigVersion.cmake
+lib/KDE4Workspace/cmake/KDE4WorkspaceLibraryTargets-release.cmake
+lib/KDE4Workspace/cmake/KDE4WorkspaceLibraryTargets.cmake
 lib/kconf_update_bin/khotkeys_update
 lib/kconf_update_bin/krdb_clearlibrarypath
 lib/kconf_update_bin/kwin_update_default_rules
@@ -761,9 +761,9 @@ share/doc/HTML/en/kcontrol/kwindecoration/main.png
 share/doc/HTML/en/kcontrol/mouse/common
 share/doc/HTML/en/kcontrol/mouse/index.cache.bz2
 share/doc/HTML/en/kcontrol/mouse/index.docbook
-share/doc/HTML/en/kcontrol/powerdevilconfig/common
-share/doc/HTML/en/kcontrol/powerdevilconfig/index.cache.bz2
-share/doc/HTML/en/kcontrol/powerdevilconfig/index.docbook
+share/doc/HTML/en/kcontrol/powerdevil/common
+share/doc/HTML/en/kcontrol/powerdevil/index.cache.bz2
+share/doc/HTML/en/kcontrol/powerdevil/index.docbook
 share/doc/HTML/en/kcontrol/screensaver/common
 share/doc/HTML/en/kcontrol/screensaver/index.cache.bz2
 share/doc/HTML/en/kcontrol/screensaver/index.docbook
@@ -2001,7 +2001,7 @@ share/wallpapers/default_blue.jpg.desktop
 @dirrm share/doc/HTML/en/kcontrol/windowbehaviour
 @dirrm share/doc/HTML/en/kcontrol/splashscreen
 @dirrm share/doc/HTML/en/kcontrol/screensaver
-@dirrm share/doc/HTML/en/kcontrol/powerdevilconfig
+@dirrm share/doc/HTML/en/kcontrol/powerdevil
 @dirrm share/doc/HTML/en/kcontrol/mouse
 @dirrm share/doc/HTML/en/kcontrol/kwindecoration
 @dirrm share/doc/HTML/en/kcontrol/kwincompositing
@@ -2089,8 +2089,8 @@ share/wallpapers/default_blue.jpg.desktop
 @dirrm share/apps/doc
 @dirrm share/apps/desktoptheme/default/system-monitor
 @dirrm share/apps/desktoptheme/default/calendar
-@dirrm lib/KDE4Workspace-%%KDE4_VERSION%%/cmake
-@dirrm lib/KDE4Workspace-%%KDE4_VERSION%%
+@dirrm lib/KDE4Workspace/cmake
+@dirrm lib/KDE4Workspace
 @dirrm include/taskmanager
 @dirrm include/solid/control/ifaces
 @dirrm include/solid/control

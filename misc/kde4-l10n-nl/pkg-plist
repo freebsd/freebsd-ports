@@ -498,48 +498,93 @@ share/doc/HTML/nl/kinfocenter/usb/index.docbook
 share/doc/HTML/nl/kinfocenter/xserver/common
 share/doc/HTML/nl/kinfocenter/xserver/index.cache.bz2
 share/doc/HTML/nl/kinfocenter/xserver/index.docbook
-share/doc/HTML/nl/kioslave/kioslave/bzip.docbook
-share/doc/HTML/nl/kioslave/kioslave/bzip2.docbook
-share/doc/HTML/nl/kioslave/kioslave/cgi.docbook
-share/doc/HTML/nl/kioslave/kioslave/common
-share/doc/HTML/nl/kioslave/kioslave/data.docbook
-share/doc/HTML/nl/kioslave/kioslave/file.docbook
-share/doc/HTML/nl/kioslave/kioslave/finger.docbook
-share/doc/HTML/nl/kioslave/kioslave/fish.docbook
-share/doc/HTML/nl/kioslave/kioslave/floppy.docbook
-share/doc/HTML/nl/kioslave/kioslave/ftp.docbook
-share/doc/HTML/nl/kioslave/kioslave/gopher.docbook
-share/doc/HTML/nl/kioslave/kioslave/gzip.docbook
-share/doc/HTML/nl/kioslave/kioslave/help.docbook
-share/doc/HTML/nl/kioslave/kioslave/http.docbook
-share/doc/HTML/nl/kioslave/kioslave/https.docbook
-share/doc/HTML/nl/kioslave/kioslave/imap.docbook
-share/doc/HTML/nl/kioslave/kioslave/imaps.docbook
-share/doc/HTML/nl/kioslave/kioslave/index.cache.bz2
-share/doc/HTML/nl/kioslave/kioslave/index.docbook
-share/doc/HTML/nl/kioslave/kioslave/info.docbook
-share/doc/HTML/nl/kioslave/kioslave/lan.docbook
-share/doc/HTML/nl/kioslave/kioslave/ldap.docbook
-share/doc/HTML/nl/kioslave/kioslave/mac.docbook
-share/doc/HTML/nl/kioslave/kioslave/mailto.docbook
-share/doc/HTML/nl/kioslave/kioslave/man.docbook
-share/doc/HTML/nl/kioslave/kioslave/mrml.docbook
-share/doc/HTML/nl/kioslave/kioslave/news.docbook
-share/doc/HTML/nl/kioslave/kioslave/nfs.docbook
-share/doc/HTML/nl/kioslave/kioslave/nntp.docbook
-share/doc/HTML/nl/kioslave/kioslave/pop3.docbook
-share/doc/HTML/nl/kioslave/kioslave/pop3s.docbook
-share/doc/HTML/nl/kioslave/kioslave/print.docbook
-share/doc/HTML/nl/kioslave/kioslave/rlan.docbook
-share/doc/HTML/nl/kioslave/kioslave/rlogin.docbook
-share/doc/HTML/nl/kioslave/kioslave/sftp.docbook
-share/doc/HTML/nl/kioslave/kioslave/smb.docbook
-share/doc/HTML/nl/kioslave/kioslave/smtp.docbook
-share/doc/HTML/nl/kioslave/kioslave/tar.docbook
-share/doc/HTML/nl/kioslave/kioslave/telnet.docbook
-share/doc/HTML/nl/kioslave/kioslave/thumbnail.docbook
-share/doc/HTML/nl/kioslave/kioslave/webdav.docbook
-share/doc/HTML/nl/kioslave/kioslave/webdavs.docbook
+share/doc/HTML/nl/kioslave/audiocd/common
+share/doc/HTML/nl/kioslave/audiocd/index.cache.bz2
+share/doc/HTML/nl/kioslave/audiocd/index.docbook
+share/doc/HTML/nl/kioslave/bookmarks/common
+share/doc/HTML/nl/kioslave/bookmarks/index.cache.bz2
+share/doc/HTML/nl/kioslave/bookmarks/index.docbook
+share/doc/HTML/nl/kioslave/bzip2/common
+share/doc/HTML/nl/kioslave/bzip2/index.cache.bz2
+share/doc/HTML/nl/kioslave/bzip2/index.docbook
+share/doc/HTML/nl/kioslave/cgi/common
+share/doc/HTML/nl/kioslave/cgi/index.cache.bz2
+share/doc/HTML/nl/kioslave/cgi/index.docbook
+share/doc/HTML/nl/kioslave/data/common
+share/doc/HTML/nl/kioslave/data/index.cache.bz2
+share/doc/HTML/nl/kioslave/data/index.docbook
+share/doc/HTML/nl/kioslave/file/common
+share/doc/HTML/nl/kioslave/file/index.cache.bz2
+share/doc/HTML/nl/kioslave/file/index.docbook
+share/doc/HTML/nl/kioslave/finger/common
+share/doc/HTML/nl/kioslave/finger/index.cache.bz2
+share/doc/HTML/nl/kioslave/finger/index.docbook
+share/doc/HTML/nl/kioslave/fish/common
+share/doc/HTML/nl/kioslave/fish/index.cache.bz2
+share/doc/HTML/nl/kioslave/fish/index.docbook
+share/doc/HTML/nl/kioslave/floppy/common
+share/doc/HTML/nl/kioslave/floppy/index.cache.bz2
+share/doc/HTML/nl/kioslave/floppy/index.docbook
+share/doc/HTML/nl/kioslave/ftp/common
+share/doc/HTML/nl/kioslave/ftp/index.cache.bz2
+share/doc/HTML/nl/kioslave/ftp/index.docbook
+share/doc/HTML/nl/kioslave/gzip/common
+share/doc/HTML/nl/kioslave/gzip/index.cache.bz2
+share/doc/HTML/nl/kioslave/gzip/index.docbook
+share/doc/HTML/nl/kioslave/help/common
+share/doc/HTML/nl/kioslave/help/index.cache.bz2
+share/doc/HTML/nl/kioslave/help/index.docbook
+share/doc/HTML/nl/kioslave/http/common
+share/doc/HTML/nl/kioslave/http/index.cache.bz2
+share/doc/HTML/nl/kioslave/http/index.docbook
+share/doc/HTML/nl/kioslave/imap/common
+share/doc/HTML/nl/kioslave/imap/index.cache.bz2
+share/doc/HTML/nl/kioslave/imap/index.docbook
+share/doc/HTML/nl/kioslave/info/common
+share/doc/HTML/nl/kioslave/info/index.cache.bz2
+share/doc/HTML/nl/kioslave/info/index.docbook
+share/doc/HTML/nl/kioslave/ldap/common
+share/doc/HTML/nl/kioslave/ldap/index.cache.bz2
+share/doc/HTML/nl/kioslave/ldap/index.docbook
+share/doc/HTML/nl/kioslave/mailto/common
+share/doc/HTML/nl/kioslave/mailto/index.cache.bz2
+share/doc/HTML/nl/kioslave/mailto/index.docbook
+share/doc/HTML/nl/kioslave/man/common
+share/doc/HTML/nl/kioslave/man/index.cache.bz2
+share/doc/HTML/nl/kioslave/man/index.docbook
+share/doc/HTML/nl/kioslave/nfs/common
+share/doc/HTML/nl/kioslave/nfs/index.cache.bz2
+share/doc/HTML/nl/kioslave/nfs/index.docbook
+share/doc/HTML/nl/kioslave/nntp/common
+share/doc/HTML/nl/kioslave/nntp/index.cache.bz2
+share/doc/HTML/nl/kioslave/nntp/index.docbook
+share/doc/HTML/nl/kioslave/pop3/common
+share/doc/HTML/nl/kioslave/pop3/index.cache.bz2
+share/doc/HTML/nl/kioslave/pop3/index.docbook
+share/doc/HTML/nl/kioslave/rlogin/common
+share/doc/HTML/nl/kioslave/rlogin/index.cache.bz2
+share/doc/HTML/nl/kioslave/rlogin/index.docbook
+share/doc/HTML/nl/kioslave/sftp/common
+share/doc/HTML/nl/kioslave/sftp/index.cache.bz2
+share/doc/HTML/nl/kioslave/sftp/index.docbook
+share/doc/HTML/nl/kioslave/smb/common
+share/doc/HTML/nl/kioslave/smb/index.cache.bz2
+share/doc/HTML/nl/kioslave/smb/index.docbook
+share/doc/HTML/nl/kioslave/smtp/common
+share/doc/HTML/nl/kioslave/smtp/index.cache.bz2
+share/doc/HTML/nl/kioslave/smtp/index.docbook
+share/doc/HTML/nl/kioslave/tar/common
+share/doc/HTML/nl/kioslave/tar/index.cache.bz2
+share/doc/HTML/nl/kioslave/tar/index.docbook
+share/doc/HTML/nl/kioslave/telnet/common
+share/doc/HTML/nl/kioslave/telnet/index.cache.bz2
+share/doc/HTML/nl/kioslave/telnet/index.docbook
+share/doc/HTML/nl/kioslave/thumbnail/common
+share/doc/HTML/nl/kioslave/thumbnail/index.cache.bz2
+share/doc/HTML/nl/kioslave/thumbnail/index.docbook
+share/doc/HTML/nl/kioslave/webdav/common
+share/doc/HTML/nl/kioslave/webdav/index.cache.bz2
+share/doc/HTML/nl/kioslave/webdav/index.docbook
 share/doc/HTML/nl/klines/common
 share/doc/HTML/nl/klines/index.cache.bz2
 share/doc/HTML/nl/klines/index.docbook
@@ -664,12 +709,17 @@ share/doc/HTML/nl/kpilot/index.cache.bz2
 share/doc/HTML/nl/kpilot/index.docbook
 share/doc/HTML/nl/kpilot/sync.docbook
 share/doc/HTML/nl/kpilot/usage.docbook
+share/doc/HTML/nl/kruler/common
+share/doc/HTML/nl/kruler/index.cache.bz2
+share/doc/HTML/nl/kruler/index.docbook
 share/doc/HTML/nl/ksim/common
 share/doc/HTML/nl/ksim/index.cache.bz2
 share/doc/HTML/nl/ksim/index.docbook
 share/doc/HTML/nl/ksnapshot/common
 share/doc/HTML/nl/ksnapshot/index.cache.bz2
 share/doc/HTML/nl/ksnapshot/index.docbook
+share/doc/HTML/nl/ksnapshot/preview.png
+share/doc/HTML/nl/ksnapshot/window.png
 share/doc/HTML/nl/kspaceduel/common
 share/doc/HTML/nl/kspaceduel/index.cache.bz2
 share/doc/HTML/nl/kspaceduel/index.docbook
@@ -830,6 +880,17 @@ share/doc/HTML/nl/marble/measure-1.png
 share/doc/HTML/nl/marble/quick-1.png
 share/doc/HTML/nl/marble/search-1.png
 share/doc/HTML/nl/marble/search-2.png
+share/doc/HTML/nl/plasma/common
+share/doc/HTML/nl/plasma/favorite-widgets.png
+share/doc/HTML/nl/plasma/index.cache.bz2
+share/doc/HTML/nl/plasma/index.docbook
+share/doc/HTML/nl/plasma/taskbar-settings.png
+share/doc/HTML/nl/step/common
+share/doc/HTML/nl/step/examples.docbook
+share/doc/HTML/nl/step/index.cache.bz2
+share/doc/HTML/nl/step/index.docbook
+share/doc/HTML/nl/step/mainwindow.png
+share/doc/HTML/nl/step/tutorials.docbook
 share/locale/nl/LC_MESSAGES/akonaditray.mo
 share/locale/nl/LC_MESSAGES/akregator.mo
 share/locale/nl/LC_MESSAGES/amor.mo
@@ -1291,6 +1352,7 @@ share/locale/nl/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/nl/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_kalzium.mo
@@ -1368,6 +1430,8 @@ share/locale/nl/LC_MESSAGES/timezones4.mo
 share/locale/nl/LC_MESSAGES/umbrello.mo
 share/locale/nl/LC_MESSAGES/useraccount.mo
 share/locale/nl/entry.desktop
+@dirrm share/doc/HTML/nl/step
+@dirrm share/doc/HTML/nl/plasma
 @dirrm share/doc/HTML/nl/marble
 @dirrm share/doc/HTML/nl/lskat
 @dirrm share/doc/HTML/nl/kxkb
@@ -1381,6 +1445,7 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/kspaceduel
 @dirrm share/doc/HTML/nl/ksnapshot
 @dirrm share/doc/HTML/nl/ksim
+@dirrm share/doc/HTML/nl/kruler
 @dirrm share/doc/HTML/nl/kpilot
 @dirrm share/doc/HTML/nl/kpat
 @dirrm share/doc/HTML/nl/kontact
@@ -1398,7 +1463,35 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/kmahjongg
 @dirrm share/doc/HTML/nl/kmag
 @dirrm share/doc/HTML/nl/klines
-@dirrm share/doc/HTML/nl/kioslave/kioslave
+@dirrm share/doc/HTML/nl/kioslave/webdav
+@dirrm share/doc/HTML/nl/kioslave/thumbnail
+@dirrm share/doc/HTML/nl/kioslave/telnet
+@dirrm share/doc/HTML/nl/kioslave/tar
+@dirrm share/doc/HTML/nl/kioslave/smtp
+@dirrm share/doc/HTML/nl/kioslave/smb
+@dirrm share/doc/HTML/nl/kioslave/sftp
+@dirrm share/doc/HTML/nl/kioslave/rlogin
+@dirrm share/doc/HTML/nl/kioslave/pop3
+@dirrm share/doc/HTML/nl/kioslave/nntp
+@dirrm share/doc/HTML/nl/kioslave/nfs
+@dirrm share/doc/HTML/nl/kioslave/man
+@dirrm share/doc/HTML/nl/kioslave/mailto
+@dirrm share/doc/HTML/nl/kioslave/ldap
+@dirrm share/doc/HTML/nl/kioslave/info
+@dirrm share/doc/HTML/nl/kioslave/imap
+@dirrm share/doc/HTML/nl/kioslave/http
+@dirrm share/doc/HTML/nl/kioslave/help
+@dirrm share/doc/HTML/nl/kioslave/gzip
+@dirrm share/doc/HTML/nl/kioslave/ftp
+@dirrm share/doc/HTML/nl/kioslave/floppy
+@dirrm share/doc/HTML/nl/kioslave/fish
+@dirrm share/doc/HTML/nl/kioslave/finger
+@dirrm share/doc/HTML/nl/kioslave/file
+@dirrm share/doc/HTML/nl/kioslave/data
+@dirrm share/doc/HTML/nl/kioslave/cgi
+@dirrm share/doc/HTML/nl/kioslave/bzip2
+@dirrm share/doc/HTML/nl/kioslave/bookmarks
+@dirrm share/doc/HTML/nl/kioslave/audiocd
 @dirrm share/doc/HTML/nl/kioslave
 @dirrm share/doc/HTML/nl/kinfocenter/xserver
 @dirrm share/doc/HTML/nl/kinfocenter/usb

@@ -29,6 +29,7 @@ include/KDE/DNSSD/RemoteService
 include/KDE/DNSSD/ServiceBase
 include/KDE/DNSSD/ServiceBrowser
 include/KDE/DNSSD/ServiceModel
+include/KDE/DNSSD/ServiceTypeBrowser
 include/KDE/DOM/AbstractView
 include/KDE/DOM/Attr
 include/KDE/DOM/CDATASection
@@ -1886,6 +1887,7 @@ share/apps/katepart/katepartui.rc
 share/apps/katepart/script/cstyle.js
 share/apps/katepart/script/jstest.js
 share/apps/katepart/script/lisp.js
+share/apps/katepart/script/lilypond.js
 share/apps/katepart/script/python.js
 share/apps/katepart/script/ruby.js
 share/apps/katepart/script/sort.js
@@ -2054,6 +2056,8 @@ share/apps/kcharselect/kcharselect-data
 share/apps/kcm_componentchooser/kcm_instantmessenger.desktop
 share/apps/kcm_componentchooser/kcm_ktexteditor.desktop
 share/apps/kconf_update/kcookiescfg.upd
+share/apps/kconf_update/ksslcertificatemanager.upd
+share/apps/kconf_update/ksslcertificatemanager.upd.sh
 share/apps/kconf_update/kded.upd
 share/apps/kconf_update/kio_help.upd
 share/apps/kconf_update/kioslave.upd

@@ -1,4 +1,5 @@
-MAN1=	cheatmake.1 \
+MAN1=	adddebug.1 \
+	cheatmake.1 \
 	checkXML.1 \
 	create_cvsignore.1 \
 	create_makefile.1 \

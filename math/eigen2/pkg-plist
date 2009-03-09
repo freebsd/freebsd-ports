@@ -3,19 +3,19 @@ include/eigen2/Eigen/Cholesky
 include/eigen2/Eigen/Core
 include/eigen2/Eigen/Geometry
 include/eigen2/Eigen/LU
+include/eigen2/Eigen/LeastSquares
 include/eigen2/Eigen/QR
-include/eigen2/Eigen/Regression
+include/eigen2/Eigen/QtAlignedMalloc
 include/eigen2/Eigen/SVD
 include/eigen2/Eigen/Sparse
-include/eigen2/Eigen/src/Array/AllAndAny.h
+include/eigen2/Eigen/StdVector
+include/eigen2/Eigen/src/Array/BooleanRedux.h
 include/eigen2/Eigen/src/Array/CwiseOperators.h
 include/eigen2/Eigen/src/Array/Functors.h
 include/eigen2/Eigen/src/Array/Norms.h
 include/eigen2/Eigen/src/Array/PartialRedux.h
 include/eigen2/Eigen/src/Array/Random.h
 include/eigen2/Eigen/src/Array/Select.h
-include/eigen2/Eigen/src/Cholesky/Cholesky.h
-include/eigen2/Eigen/src/Cholesky/CholeskyWithoutSquareRoot.h
 include/eigen2/Eigen/src/Cholesky/LDLT.h
 include/eigen2/Eigen/src/Cholesky/LLT.h
 include/eigen2/Eigen/src/Core/Assign.h
@@ -79,34 +79,49 @@ include/eigen2/Eigen/src/Geometry/Translation.h
 include/eigen2/Eigen/src/LU/Determinant.h
 include/eigen2/Eigen/src/LU/Inverse.h
 include/eigen2/Eigen/src/LU/LU.h
+include/eigen2/Eigen/src/LeastSquares/LeastSquares.h
 include/eigen2/Eigen/src/QR/EigenSolver.h
 include/eigen2/Eigen/src/QR/HessenbergDecomposition.h
 include/eigen2/Eigen/src/QR/QR.h
 include/eigen2/Eigen/src/QR/SelfAdjointEigenSolver.h
 include/eigen2/Eigen/src/QR/Tridiagonalization.h
-include/eigen2/Eigen/src/Regression/Regression.h
 include/eigen2/Eigen/src/SVD/SVD.h
 include/eigen2/Eigen/src/Sparse/AmbiVector.h
 include/eigen2/Eigen/src/Sparse/CholmodSupport.h
+include/eigen2/Eigen/src/Sparse/CompressedStorage.h
 include/eigen2/Eigen/src/Sparse/CoreIterators.h
+include/eigen2/Eigen/src/Sparse/DynamicSparseMatrix.h
+include/eigen2/Eigen/src/Sparse/MappedSparseMatrix.h
 include/eigen2/Eigen/src/Sparse/RandomSetter.h
-include/eigen2/Eigen/src/Sparse/SparseArray.h
+include/eigen2/Eigen/src/Sparse/SparseAssign.h
 include/eigen2/Eigen/src/Sparse/SparseBlock.h
+include/eigen2/Eigen/src/Sparse/SparseCwise.h
+include/eigen2/Eigen/src/Sparse/SparseCwiseBinaryOp.h
+include/eigen2/Eigen/src/Sparse/SparseCwiseUnaryOp.h
+include/eigen2/Eigen/src/Sparse/SparseDot.h
+include/eigen2/Eigen/src/Sparse/SparseFlagged.h
+include/eigen2/Eigen/src/Sparse/SparseFuzzy.h
 include/eigen2/Eigen/src/Sparse/SparseLDLT.h
 include/eigen2/Eigen/src/Sparse/SparseLLT.h
 include/eigen2/Eigen/src/Sparse/SparseLU.h
 include/eigen2/Eigen/src/Sparse/SparseMatrix.h
 include/eigen2/Eigen/src/Sparse/SparseMatrixBase.h
 include/eigen2/Eigen/src/Sparse/SparseProduct.h
+include/eigen2/Eigen/src/Sparse/SparseRedux.h
+include/eigen2/Eigen/src/Sparse/SparseTranspose.h
 include/eigen2/Eigen/src/Sparse/SparseUtil.h
+include/eigen2/Eigen/src/Sparse/SparseVector.h
 include/eigen2/Eigen/src/Sparse/SuperLUSupport.h
 include/eigen2/Eigen/src/Sparse/TaucsSupport.h
 include/eigen2/Eigen/src/Sparse/TriangularSolver.h
 include/eigen2/Eigen/src/Sparse/UmfPackSupport.h
+include/eigen2/Eigen/src/StdVector/StdVector.h
+include/eigen2/Eigen/src/StdVector/UnalignedType.h
+@dirrm include/eigen2/Eigen/src/StdVector
 @dirrm include/eigen2/Eigen/src/Sparse
 @dirrm include/eigen2/Eigen/src/SVD
-@dirrm include/eigen2/Eigen/src/Regression
 @dirrm include/eigen2/Eigen/src/QR
+@dirrm include/eigen2/Eigen/src/LeastSquares
 @dirrm include/eigen2/Eigen/src/LU
 @dirrm include/eigen2/Eigen/src/Geometry
 @dirrm include/eigen2/Eigen/src/Core/util

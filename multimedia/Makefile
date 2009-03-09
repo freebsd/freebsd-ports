@@ -206,6 +206,8 @@
     SUBDIR += p5-Video-Info
     SUBDIR += p5-Video-OpenQuicktime
     SUBDIR += phonon
+    SUBDIR += phonon-gstreamer
+    SUBDIR += phonon-xine
     SUBDIR += podcatcher
     SUBDIR += poe
     SUBDIR += ppm2fli

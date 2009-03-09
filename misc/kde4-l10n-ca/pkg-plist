@@ -76,6 +76,9 @@ share/doc/HTML/ca/kcontrol/background/index.docbook
 share/doc/HTML/ca/kcontrol/bell/common
 share/doc/HTML/ca/kcontrol/bell/index.cache.bz2
 share/doc/HTML/ca/kcontrol/bell/index.docbook
+share/doc/HTML/ca/kcontrol/blockdevices/common
+share/doc/HTML/ca/kcontrol/blockdevices/index.cache.bz2
+share/doc/HTML/ca/kcontrol/blockdevices/index.docbook
 share/doc/HTML/ca/kcontrol/cache/common
 share/doc/HTML/ca/kcontrol/cache/index.cache.bz2
 share/doc/HTML/ca/kcontrol/cache/index.docbook
@@ -1042,6 +1045,7 @@ share/locale/ca/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/ca/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_kalzium.mo
@@ -1258,6 +1262,7 @@ share/locale/ca/entry.desktop
 @dirrm share/doc/HTML/ca/kcontrol/colors
 @dirrm share/doc/HTML/ca/kcontrol/clock
 @dirrm share/doc/HTML/ca/kcontrol/cache
+@dirrm share/doc/HTML/ca/kcontrol/blockdevices
 @dirrm share/doc/HTML/ca/kcontrol/bell
 @dirrm share/doc/HTML/ca/kcontrol/background
 @dirrm share/doc/HTML/ca/kcontrol

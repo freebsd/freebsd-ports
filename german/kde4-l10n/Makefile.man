@@ -16,6 +16,7 @@ MAN1=	adddebug.1 \
 	fixincludes.1 \
 	kalzium.1 \
 	kappfinder.1 \
+	kabcclient.1 \
 	kate.1 \
 	kbookmarkmerger.1 \
 	kbruch.1 \
@@ -42,7 +43,8 @@ MAN1=	adddebug.1 \
 	swappo.1 \
 	transxx.1 \
 	xml2pot.1 \
-	zonetab2pot.py.1
+	zonetab2pot.py.1 \
+	xsldbg.1
 MAN6=	amor.6 \
 	khangman.6 \
 	kpat.6

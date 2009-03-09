@@ -394,6 +394,9 @@ share/doc/HTML/fr/kcontrol/performance/index.docbook
 share/doc/HTML/fr/kcontrol/powerctrl/common
 share/doc/HTML/fr/kcontrol/powerctrl/index.cache.bz2
 share/doc/HTML/fr/kcontrol/powerctrl/index.docbook
+share/doc/HTML/fr/kcontrol/powerdevil/common
+share/doc/HTML/fr/kcontrol/powerdevil/index.cache.bz2
+share/doc/HTML/fr/kcontrol/powerdevil/index.docbook
 share/doc/HTML/fr/kcontrol/proxy/common
 share/doc/HTML/fr/kcontrol/proxy/index.cache.bz2
 share/doc/HTML/fr/kcontrol/proxy/index.docbook
@@ -1339,6 +1342,17 @@ share/doc/HTML/fr/ktuberling/menu.raw.png
 share/doc/HTML/fr/ktuberling/menu.speech.png
 share/doc/HTML/fr/ktuberling/technical-reference.docbook
 share/doc/HTML/fr/ktuberling/toolbar.png
+share/doc/HTML/fr/kturtle/common
+share/doc/HTML/fr/kturtle/getting-started.docbook
+share/doc/HTML/fr/kturtle/glossary.docbook
+share/doc/HTML/fr/kturtle/index.cache.bz2
+share/doc/HTML/fr/kturtle/index.docbook
+share/doc/HTML/fr/kturtle/mainwindow.png
+share/doc/HTML/fr/kturtle/mainwindow_flower_nrs.png
+share/doc/HTML/fr/kturtle/programming-reference.docbook
+share/doc/HTML/fr/kturtle/translator-guide.docbook
+share/doc/HTML/fr/kturtle/using-kturtle.docbook
+share/doc/HTML/fr/kturtle/wrapping.png
 share/doc/HTML/fr/kubrick/common
 share/doc/HTML/fr/kubrick/index.cache.bz2
 share/doc/HTML/fr/kubrick/index.docbook
@@ -1971,6 +1985,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kwallet
 @dirrm share/doc/HTML/fr/kuser
 @dirrm share/doc/HTML/fr/kubrick
+@dirrm share/doc/HTML/fr/kturtle
 @dirrm share/doc/HTML/fr/ktuberling
 @dirrm share/doc/HTML/fr/ktouch
 @dirrm share/doc/HTML/fr/ktnef
@@ -2121,6 +2136,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kcontrol/smb
 @dirrm share/doc/HTML/fr/kcontrol/screensaver
 @dirrm share/doc/HTML/fr/kcontrol/proxy
+@dirrm share/doc/HTML/fr/kcontrol/powerdevil
 @dirrm share/doc/HTML/fr/kcontrol/powerctrl
 @dirrm share/doc/HTML/fr/kcontrol/performance
 @dirrm share/doc/HTML/fr/kcontrol/paths

@@ -6,7 +6,6 @@
 
 PORTNAME=	kdeedu
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -15,11 +14,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Collection of entertaining, educational programs for KDE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/eigen/util.h:${PORTSDIR}/math/eigen \
-		${LOCALBASE}/lib/ocaml/facile/facile.a:${PORTSDIR}/math/facile \
+BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/facile/facile.a:${PORTSDIR}/math/facile \
 		gmm++>=3.0.4:${PORTSDIR}/math/gmm++
-LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb \
-		boost_python:${PORTSDIR}/devel/boost-python \
+LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python \
 		nova:${PORTSDIR}/astro/libnova \
 		openbabel.3:${PORTSDIR}/science/openbabel \
 		cfitsio.0:${PORTSDIR}/astro/cfitsio \

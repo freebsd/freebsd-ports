@@ -641,6 +641,7 @@ share/locale/nds/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_incomingmsg.mo
+share/locale/nds/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_katesession.mo

@@ -1,4 +1,6 @@
-MAN1=	cheatmake.1 \
+MAN1=	adddebug.1 \
+	cheatmake.1 \
+	checkXML.1 \
 	create_cvsignore.1 \
 	create_makefile.1 \
 	create_makefiles.1 \
@@ -12,8 +14,21 @@ MAN1=	cheatmake.1 \
 	extractrc.1 \
 	fixincludes.1 \
 	kalzium.1 \
+	kate.1 \
 	kappfinder.1 \
+	kconfig_compiler.1 \
 	kbookmarkmerger.1 \
+	kde4-config.1 \
+	kdesu.1 \
+	kfind.1 \
+	kjs.1 \
+	kjscmd.1 \
+	kmag.1 \
+	kmousetool.1 \
+	kmouth.1 \
+	kross.1 \
+	makekdewidgets.1 \
+	preparetips.1 \
 	kworldclock.1 \
 	po2xml.1 \
 	pruneemptydirs.1 \
@@ -26,3 +41,10 @@ MAN1=	cheatmake.1 \
 	zonetab2pot.py.1
 MAN6=	amor.6 \
 	kpat.6
+MAN7=	kdeoptions.7 \
+	qtoptions.7
+MAN8=	kbuildsycoca4.8 \
+	kcookiejar4.8 \
+	kded4.8 \
+	kdeinit4.8 \
+	meinproc4.8
