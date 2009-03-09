@@ -194,6 +194,9 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/test/foomod.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/foomod.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/foomod.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_adbh.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_adbh.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_adbh.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_bind.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_bind.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_bind.pyo
@@ -215,6 +218,9 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_db.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_db.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_db.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_decorators.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_decorators.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_decorators.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_fileutils.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_fileutils.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_fileutils.pyo
