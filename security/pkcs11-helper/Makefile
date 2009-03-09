@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkcs11-helper
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
