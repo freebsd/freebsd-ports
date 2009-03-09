@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	e16-themes
-PORTVERSION=	0.16.8.0.2
+PORTVERSION=	0.16.8.0.3
 CATEGORIES=	x11-themes
 MASTER_SITES=	SF/enlightenment
 

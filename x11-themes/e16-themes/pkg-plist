@@ -1,7 +1,6 @@
 %%DATADIR%%/themes/BlueSteel/ABOUT/MAIN
 %%DATADIR%%/themes/BlueSteel/ABOUT/bg.png
 %%DATADIR%%/themes/BlueSteel/ABOUT/logo.png
-%%DATADIR%%/themes/BlueSteel/ABOUT/vixar.ttf
 %%DATADIR%%/themes/BlueSteel/Eterm/Eterm.cfg
 %%DATADIR%%/themes/BlueSteel/Eterm/images/anchor_fg.png
 %%DATADIR%%/themes/BlueSteel/Eterm/images/anchor_hl.png
@@ -333,7 +332,6 @@
 %%DATADIR%%/themes/BlueSteel/windowmatches.cfg
 %%DATADIR%%/themes/BrushedMetal-Tigert/ABOUT/Edoc_bg.png
 %%DATADIR%%/themes/BrushedMetal-Tigert/ABOUT/MAIN
-%%DATADIR%%/themes/BrushedMetal-Tigert/ABOUT/aircut3.ttf
 %%DATADIR%%/themes/BrushedMetal-Tigert/ABOUT/title.png
 %%DATADIR%%/themes/BrushedMetal-Tigert/README
 %%DATADIR%%/themes/BrushedMetal-Tigert/backgrounds/backgrounds.cfg
@@ -671,13 +669,13 @@
 %%DATADIR%%/themes/BrushedMetal-Tigert/tooltips/images/cloud2.png
 %%DATADIR%%/themes/BrushedMetal-Tigert/tooltips/images/cloud_logo.png
 %%DATADIR%%/themes/BrushedMetal-Tigert/tooltips/tooltips.cfg
+%%DATADIR%%/themes/BrushedMetal-Tigert/ttfonts/aircut3.ttf
 %%DATADIR%%/themes/BrushedMetal-Tigert/windowmatches.cfg
 %%DATADIR%%/themes/Ganymede/ABOUT/MAIN
 %%DATADIR%%/themes/Ganymede/ABOUT/background.png
 %%DATADIR%%/themes/Ganymede/ABOUT/bullet.gif
 %%DATADIR%%/themes/Ganymede/ABOUT/econtrol.png
 %%DATADIR%%/themes/Ganymede/ABOUT/ganymede.png
-%%DATADIR%%/themes/Ganymede/ABOUT/ganymede.ttf
 %%DATADIR%%/themes/Ganymede/ABOUT/pulldowns.png
 %%DATADIR%%/themes/Ganymede/ACTIVATE_BUTTONS
 %%DATADIR%%/themes/Ganymede/BUTTON_CONFIG_HOWTO
@@ -1584,7 +1582,6 @@
 %%DATADIR%%/themes/Ganymede/menustyles/images/editor.png
 %%DATADIR%%/themes/Ganymede/menustyles/images/ee.png
 %%DATADIR%%/themes/Ganymede/menustyles/images/focus.png
-%%DATADIR%%/themes/Ganymede/menustyles/images/focus.png.back
 %%DATADIR%%/themes/Ganymede/menustyles/images/focused_more.png
 %%DATADIR%%/themes/Ganymede/menustyles/images/gimp.png
 %%DATADIR%%/themes/Ganymede/menustyles/images/mail.png
@@ -1722,7 +1719,6 @@
 %%DATADIR%%/themes/Ganymede/windowmatches.cfg
 %%DATADIR%%/themes/ShinyMetal/ABOUT/Edoc_bg.png
 %%DATADIR%%/themes/ShinyMetal/ABOUT/MAIN
-%%DATADIR%%/themes/ShinyMetal/ABOUT/aircut3.ttf
 %%DATADIR%%/themes/ShinyMetal/README
 %%DATADIR%%/themes/ShinyMetal/backgrounds/backgrounds.cfg
 %%DATADIR%%/themes/ShinyMetal/borders.cfg
@@ -2054,6 +2050,7 @@
 %%DATADIR%%/themes/ShinyMetal/tooltips/images/ttip_cloud_small.png
 %%DATADIR%%/themes/ShinyMetal/tooltips/images/ttip_help.png
 %%DATADIR%%/themes/ShinyMetal/tooltips/tooltips.cfg
+%%DATADIR%%/themes/ShinyMetal/ttfonts/aircut3.ttf
 %%DATADIR%%/themes/ShinyMetal/ttfonts/rothwell.ttf
 %%DATADIR%%/themes/ShinyMetal/ttfonts/zirkle.ttf
 %%DATADIR%%/themes/ShinyMetal/windowmatches.cfg
@@ -2113,6 +2110,7 @@
 @dirrm %%DATADIR%%/themes/BlueSteel/Eterm
 @dirrm %%DATADIR%%/themes/BlueSteel/ABOUT
 @dirrm %%DATADIR%%/themes/BlueSteel
+@dirrm %%DATADIR%%/themes/BrushedMetal-Tigert/ttfonts/
 @dirrm %%DATADIR%%/themes/BrushedMetal-Tigert/tooltips/images
 @dirrm %%DATADIR%%/themes/BrushedMetal-Tigert/tooltips
 @dirrm %%DATADIR%%/themes/BrushedMetal-Tigert/sound/samples
