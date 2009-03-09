@@ -27,7 +27,6 @@ CUSTOM_PATCH_WRKSRC=	${WRKDIR}/${CUSTOM_UNZIPPED_PATCH_NAME}
 
 OPTIONS=	DEBUG   "Enable debugging support"	off \
 		IPV6    "Enable IPv6 support"	off \
-		WEB "Enable the browser plugin and Java Web Start"	on \
 		POLICY  "Install the Unlimited Strength Policy Files"	off \
 
 # java extracts directly to the cwd
