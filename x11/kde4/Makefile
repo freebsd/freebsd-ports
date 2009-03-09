@@ -28,7 +28,9 @@ OPTIONS=	KDEACCESSIBILITY "Accessibility applications" on \
 		KDESDK "KDE software development kit" on \
 		KDETOYS "Miscellaneous small applications" on \
 		KDEUTILS "Utilities like kcalc, kcharselect, etc" on \
-		KDEWEBDEV "Website development environment" on
+		KDEWEBDEV "Website development environment" on \
+		XINE "Xine backend for Phonon (recommended)" on \
+		GSTREAMER "Gstreamer backend for Phonon" off
 
 USE_KDE4=	kdelibs kdebase pimlibs workspace kdeprefix runtime
 NO_BUILD=	yes
@@ -36,28 +38,28 @@ NO_BUILD=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_KDEACCESSIBILITY)
-RUN_DEPENDS+=   ${KDE4_PREFIX}/bin/kmag:${PORTSDIR}/accessibility/kdeaccessibility4
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kmag:${PORTSDIR}/accessibility/kdeaccessibility4
 .endif
 .if !defined(WITHOUT_KDEADMIN)
-RUN_DEPENDS+=   ${KDE4_PREFIX}/bin/kuser:${PORTSDIR}/sysutils/kdeadmin4
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kuser:${PORTSDIR}/sysutils/kdeadmin4
 .endif
 .if !defined(WITHOUT_KDEARTWORK)
-RUN_DEPENDS+=   ${KDE4_PREFIX}/bin/kbanner.kss:${PORTSDIR}/x11-themes/kdeartwork4
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kbanner.kss:${PORTSDIR}/x11-themes/kdeartwork4
 .endif
 .if !defined(WITHOUT_KDEGAMES)
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kjumpingcube:${PORTSDIR}/games/kdegames4
 .endif
 .if !defined(WITHOUT_KDEEDU)
-RUN_DEPENDS+=   ${KDE4_PREFIX}/bin/khangman:${PORTSDIR}/misc/kdeedu4
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/khangman:${PORTSDIR}/misc/kdeedu4
 .endif
 .if !defined(WITHOUT_KDEGRAPHICS)
-RUN_DEPENDS+=   ${KDE4_PREFIX}/bin/gwenview:${PORTSDIR}/graphics/kdegraphics4
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/gwenview:${PORTSDIR}/graphics/kdegraphics4
 .endif
 .if !defined(WITHOUT_KDENETWORK)
-RUN_DEPENDS+=   ${KDE4_PREFIX}/bin/kppp:${PORTSDIR}/net/kdenetwork4
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kppp:${PORTSDIR}/net/kdenetwork4
 .endif
 .if !defined(WITHOUT_KDEMULTIMEDIA)
-RUN_DEPENDS+=   ${KDE4_PREFIX}/bin/kmix:${PORTSDIR}/multimedia/kdemultimedia4
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kmix:${PORTSDIR}/multimedia/kdemultimedia4
 .endif
 .if !defined(WITHOUT_KDEPIM)
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/korganizer:${PORTSDIR}/deskutils/kdepim4
@@ -66,16 +68,22 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/bin/korganizer:${PORTSDIR}/deskutils/kdepim4
 RUN_DEPENDS+=	kdeplasma-addons>=4:${PORTSDIR}/deskutils/kdeplasma-addons
 .endif
 .if !defined(WITHOUT_KDETOYS)
-RUN_DEPENDS+=   ${KDE4_PREFIX}/bin/amor:${PORTSDIR}/x11-clocks/kdetoys4
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/amor:${PORTSDIR}/x11-clocks/kdetoys4
 .endif
 .if !defined(WITHOUT_KDESDK)
-RUN_DEPENDS+=   ${KDE4_PREFIX}/bin/cervisia:${PORTSDIR}/devel/kdesdk4
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/cervisia:${PORTSDIR}/devel/kdesdk4
 .endif
 .if !defined(WITHOUT_KDEUTILS)
-RUN_DEPENDS+=   ${KDE4_PREFIX}/bin/kdessh:${PORTSDIR}/misc/kdeutils4
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kdessh:${PORTSDIR}/misc/kdeutils4
 .endif
 .if !defined(WITHOUT_KDEWEBDEV)
-RUN_DEPENDS+=   ${KDE4_PREFIX}/bin/kommander:${PORTSDIR}/www/kdewebdev4
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kommander:${PORTSDIR}/www/kdewebdev4
+.endif
+.if !defined(WITHOUT_XINE)
+RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/plugins/phonon_backend/phonon_xine.so:${PORTSDIR}/multimedia/phonon-xine
+.endif
+.if defined(WITH_GSTREAMER)
+RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/plugins/phonon_backend/phonon_gstreamer.so:${PORTSDIR}/multimedia/phonon-gstreamer
 .endif
 
 do-install:
