@@ -1,0 +1,11 @@
+--- INSTALL.im.orig	2008-11-21 15:06:28.000000000 +0100
++++ INSTALL.im	2009-03-04 20:15:22.000000000 +0100
+@@ -9,8 +9,6 @@
+     // Install the headers, remove if not requested
+ #define MANPAGES
+     // Install the manpages, remove if not requested
+-#define MANHTML
+-    // Install the html-versions of the manpages, remove if not requested
+ #define DOCOTHER
+     // Install remaining docs (README, examples, etc), remove if not requested
+ 

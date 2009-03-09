@@ -1,0 +1,10 @@
+--- inetaddress/inetaddress.ih.orig	2007-02-13 13:29:39.000000000 +0100
++++ inetaddress/inetaddress.ih	2009-03-04 12:16:16.000000000 +0100
+@@ -2,6 +2,7 @@
+ 
+ #include <netdb.h>
+ #include <bobcat/gethostent>
++#include <sys/socket.h>
+ 
+ using namespace std;
+ using namespace FBB;
