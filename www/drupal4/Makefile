@@ -18,7 +18,7 @@ COMMENT=	CMS that supports pgsql and mysql
 DRUPAL_PORT=	yes
 
 DEPRECATED=	Drupal 4.7.x is end-of-life since 200802.  Please migrate to Drupal 6.x
-EXPIRATION_DATE=	2009-03-26 
+EXPIRATION_DATE=2009-03-26
 
 USE_PHP=	gd pcre session xml
 WANT_PHP_WEB=	yes
