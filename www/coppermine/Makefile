@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	coppermine
-PORTVERSION=	1.4.19
+PORTVERSION=	1.4.20
 CATEGORIES=	www
 MASTER_SITES=	SF
-DISTNAME=	cpg1.4.19
+DISTNAME=	cpg1.4.20
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A web picture gallery script
 
 USE_PHP=	mysql pcre
