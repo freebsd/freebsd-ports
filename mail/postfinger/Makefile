@@ -8,7 +8,7 @@
 PORTNAME=	postfinger
 PORTVERSION=	1.30
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.wl0.org/postfinger/
+MASTER_SITES=	ftp://ftp.wl0.org/ftp.wl0.org/postfinger/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION} README
 DIST_SUBDIR=	${PORTNAME}
