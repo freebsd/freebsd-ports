@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mwlib
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.11
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ COMMENT=	Python's MediaWiki Parser and Utility Library
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing \
 		${PYTHON_PKGNAMEPREFIX}odfpy>=0.8:${PORTSDIR}/devel/py-odfpy \
-		${PYTHON_PKGNAMEPREFIX}simplejson>1.9:${PORTSDIR}/devel/py-simplejson \
+		${PYTHON_PKGNAMEPREFIX}simplejson>2.0.8:${PORTSDIR}/devel/py-simplejson \
 		${PYTHON_PKGNAMEPREFIX}flup>=1.0:${PORTSDIR}/www/py-flup \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=1.4.1:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
