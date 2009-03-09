@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	php-blog
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP based weblog software
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/File/Archive.php:${PORTSDIR}/archivers/pear-File_Archive

@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	eventum
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Eventum issue tracking system
 
 NO_BUILD=	YES

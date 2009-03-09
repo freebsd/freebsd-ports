@@ -10,7 +10,7 @@ PORTVERSION=	2.2
 CATEGORIES=	www
 MASTER_SITES=	SF
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Powerful PHP based Wiki/CMS/Groupware
 
 USE_PHP=	gettext pcre posix session xml zlib
