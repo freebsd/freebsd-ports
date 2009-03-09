@@ -101,6 +101,7 @@ bin/smtpd%%PYVER%%.py
 %%PYTHON_INCLUDEDIR%%/weakrefobject.h
 lib/lib%%PYTHON_VERSION%%.so
 lib/lib%%PYTHON_VERSION%%.so.1
+lib/lib%%PYTHON_VERSION%%.a
 %%PYTHON_LIBDIR%%/LICENSE.txt
 %%PYTHON_LIBDIR%%/__future__.py
 %%PYTHON_LIBDIR%%/__phello__.foo.py
@@ -290,6 +291,9 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/distutils/tests/test_dist.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_install.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_install_scripts.py
+%%PYTHON_LIBDIR%%/distutils/tests/test_msvc9compiler.py
+%%PYTHON_LIBDIR%%/distutils/tests/test_register.py
+%%PYTHON_LIBDIR%%/distutils/tests/test_sdist.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_sysconfig.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_upload.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_versionpredicate.py
@@ -673,9 +677,9 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib-dynload/unicodedata.so
 %%PYTHON_LIBDIR%%/lib-dynload/zlib.so
 %%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/Grammar3.0.0.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/Grammar3.0.1.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar3.0.0.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar3.0.1.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/__init__.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_base.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_util.py
@@ -699,6 +703,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_imports2.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_input.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_intern.py
+%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_isinstance.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_itertools.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_itertools_imports.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_long.py
@@ -713,6 +718,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_print.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_raise.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_raw_input.py
+%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_reduce.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_renames.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_repr.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_set_literal.py
@@ -742,7 +748,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib2to3/pytree.py
 %%PYTHON_LIBDIR%%/lib2to3/refactor.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/__init__.py
-%%PYTHON_LIBDIR%%/lib2to3/tests/benchmark.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/pytree_idempotency.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/support.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_all_fixers.py
@@ -1259,6 +1264,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_operator.py
 %%PYTHON_LIBDIR%%/test/test_optparse.py
 %%PYTHON_LIBDIR%%/test/test_os.py
+%%PYTHON_LIBDIR%%/test/test_osx_env.py
 %%PYTHON_LIBDIR%%/test/test_ossaudiodev.py
 %%PYTHON_LIBDIR%%/test/test_parser.py
 %%PYTHON_LIBDIR%%/test/test_peepholer.py
@@ -1395,6 +1401,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_zipfile.py
 %%PYTHON_LIBDIR%%/test/test_zipfile64.py
 %%PYTHON_LIBDIR%%/test/test_zipimport.py
+%%PYTHON_LIBDIR%%/test/test_zipimport_support.py
 %%PYTHON_LIBDIR%%/test/test_zlib.py
 %%PYTHON_LIBDIR%%/test/testcodec.py
 %%PYTHON_LIBDIR%%/test/testtar.tar
@@ -1408,6 +1415,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/tokenize_tests.txt
 %%PYTHON_LIBDIR%%/test/warning_tests.py
 %%PYTHON_LIBDIR%%/test/xmltests.py
+%%PYTHON_LIBDIR%%/test/zipdir.zip
 %%PYTHON_LIBDIR%%/textwrap.py
 %%PYTHON_LIBDIR%%/this.py
 %%PYTHON_LIBDIR%%/threading.py
