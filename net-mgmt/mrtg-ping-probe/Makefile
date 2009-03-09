@@ -7,7 +7,7 @@
 
 PORTNAME=	mrtg-ping-probe
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.pwo.de/pub/pwo/mrtg/${PORTNAME}/
 

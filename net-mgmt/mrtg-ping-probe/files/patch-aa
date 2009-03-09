@@ -1,8 +1,17 @@
---- mrtg-ping-probe.org	Sat Jan 17 22:27:33 2004
-+++ mrtg-ping-probe	Sat Jan 17 22:27:53 2004
+--- mrtg-ping-probe.orig	2003-09-14 03:20:24.000000000 +0900
++++ mrtg-ping-probe	2009-03-10 08:01:20.000000000 +0900
 @@ -1,4 +1,4 @@
 -#!/bin/perl
 +#!%%PERL%%
  ##################################################################
  # @(#) $Id: mrtg-ping-probe,v 2.5 2003/09/13 18:04:29 pwo Exp $
  # @(#) mrtg-ping-probe release $Name: Release_2_2_0 $
+@@ -284,7 +284,7 @@
+ 
+ 	# try to find packet loss
+ 	# ToDo: only if requested?)
+-	if ($ping_output =~ m@(\d+)% (?:packet )?loss(?:$|,)@m) {
++	if ($ping_output =~ m@(\d+(?:\.\d+)?)% (?:packet )?loss(?:$|,)@m) {
+ 		# Unix
+ 		$pt{loss} = $1;
+ 		}
