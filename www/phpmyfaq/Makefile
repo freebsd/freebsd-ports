@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	phpmyfaq
-PORTVERSION=	2.0.10
+PORTVERSION=	2.0.12
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpmyfaq.de/download/
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A multilingual, completely database-driven FAQ-system
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
