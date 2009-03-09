@@ -10,7 +10,7 @@ PORTVERSION=	1.3.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://littlesvr.ca/isomaster/releases/
 
-MAINTAINER=	farrokhi@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	GTK2 (bootable) CD ISO Image editor
 
 USE_BZIP2=	yes
