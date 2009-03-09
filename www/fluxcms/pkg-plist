@@ -940,6 +940,7 @@
 %%INSTALLDIR%%/inc/bx/plugins/newsletter.php
 %%INSTALLDIR%%/inc/bx/plugins/openblog.php
 %%INSTALLDIR%%/inc/bx/plugins/permissions.php
+%%INSTALLDIR%%/inc/bx/plugins/randomquotes.php
 %%INSTALLDIR%%/inc/bx/plugins/rss.php
 %%INSTALLDIR%%/inc/bx/plugins/search.php
 %%INSTALLDIR%%/inc/bx/plugins/search2.php
@@ -2341,6 +2342,16 @@
 %%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder/lang/it.js
 %%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder/lang/pl.js
 %%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder/placeholder.gif
+%%INSTALLDIR%%/webinc/fck/editor/plugins/smsymbol/css/smsymbol.css
+%%INSTALLDIR%%/webinc/fck/editor/plugins/smsymbol/docs/help.txt
+%%INSTALLDIR%%/webinc/fck/editor/plugins/smsymbol/docs/hilfe.txt
+%%INSTALLDIR%%/webinc/fck/editor/plugins/smsymbol/fckplugin.js
+%%INSTALLDIR%%/webinc/fck/editor/plugins/smsymbol/img/icon.gif
+%%INSTALLDIR%%/webinc/fck/editor/plugins/smsymbol/img/icon_16x16.gif
+%%INSTALLDIR%%/webinc/fck/editor/plugins/smsymbol/index.html
+%%INSTALLDIR%%/webinc/fck/editor/plugins/smsymbol/js/smsymbol.js
+%%INSTALLDIR%%/webinc/fck/editor/plugins/smsymbol/lang/de.js
+%%INSTALLDIR%%/webinc/fck/editor/plugins/smsymbol/lang/en.js
 %%INSTALLDIR%%/webinc/fck/editor/plugins/tablecommands/fckplugin.js
 %%INSTALLDIR%%/webinc/fck/editor/skins/_fckviewstrips.html
 %%INSTALLDIR%%/webinc/fck/editor/skins/default/fck_dialog.css
@@ -2569,6 +2580,12 @@
 @dirrm %%INSTALLDIR%%/webinc/fck/editor/skins/default
 @dirrm %%INSTALLDIR%%/webinc/fck/editor/skins
 @dirrm %%INSTALLDIR%%/webinc/fck/editor/plugins/tablecommands
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/plugins/smsymbol/lang
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/plugins/smsymbol/js
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/plugins/smsymbol/img
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/plugins/smsymbol/docs
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/plugins/smsymbol/css
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/plugins/smsymbol
 @dirrm %%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder/lang
 @dirrm %%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder
 @dirrm %%INSTALLDIR%%/webinc/fck/editor/plugins

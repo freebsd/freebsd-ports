@@ -7,11 +7,11 @@
 
 PORTNAME=	fluxcms
 PORTVERSION=	1.6.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	http://bitflux.org/download/ \
 		http://www.chruetertee.ch/files/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-snapshot-20081127
+DISTNAME=	${PORTNAME}-${PORTVERSION}-snapshot-20090308
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	beat@FreeBSD.org
