@@ -7,6 +7,7 @@
 
 PORTNAME=	kde-l10n
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -19,10 +20,10 @@ NO_BUILD=	yes
 NO_INSTALL=	yes
 USE_KDE4=	kdeprefix
 
-KDE4_LANG_ALL=	ar bg bn_IN ca cs csb da de el en_GB es et eu fi fr \
-		ga gl gu he hi hu is it ja kk km kn ko ku lt lv \
+KDE4_LANG_ALL=	ar bg bn_IN ca cs csb da de el en_GB eo es et eu fi fr \
+		fy ga gl gu he hi hu is it ja kk km kn ko ku lt lv \
 		mai mk ml mr nb nds nl nn pa pl pt pt_BR ro ru \
-		sl sr sv tg th tr uk wa zh_CN zh_TW
+		sl sr sv ta tg th tr uk wa zh_CN zh_TW
 
 ar_PORT=	arabic/kde4-l10n
 de_PORT=	german/kde4-l10n
