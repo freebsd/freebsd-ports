@@ -597,6 +597,7 @@
     SUBDIR += libbfd
     SUBDIR += libbinio
     SUBDIR += libbnr
+    SUBDIR += libbobcat
     SUBDIR += libbonobo
     SUBDIR += libbonobo-reference
     SUBDIR += libbonobomm
