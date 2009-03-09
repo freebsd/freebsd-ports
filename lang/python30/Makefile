@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	python30
-PORTVERSION=	3.0
+PORTVERSION=	3.0.1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -87,7 +87,7 @@ CONFIGURE_ARGS+=	--enable-unicode=ucs4
 .endif
 
 .if defined(WITHOUT_PYMALLOC)
-CONFIGURE_ARGS+=        --without-pymalloc
+CONFIGURE_ARGS+=	--without-pymalloc
 .endif
 
 .if ${ARCH} == i386
@@ -96,12 +96,12 @@ PLIST_SUB+=	X86_ONLY=""
 PLIST_SUB+=	X86_ONLY="@comment "
 .endif
 .if ${ARCH} == amd64 || ${ARCH} == ia64 || ${ARCH} == sparc64 || ${ARCH} == alpha
-PLIST_SUB+=     32BIT_ONLY="@comment "
+PLIST_SUB+=	32BIT_ONLY="@comment "
 .else
-PLIST_SUB+=     32BIT_ONLY=""
+PLIST_SUB+=	32BIT_ONLY=""
 .endif
 .if ${ARCH} == sparc64
-CFLAGS+=        -DPYTHON_DEFAULT_RECURSION_LIMIT=900
+CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900
 .endif
 
 .if !exists(/usr/bin/ypcat) # the world with NO_NIS
@@ -111,13 +111,13 @@ PLIST_SUB+=	NO_NIS=""
 .endif
 
 .if !defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+= --enable-ipv6
+CONFIGURE_ARGS+=	--enable-ipv6
 .else
-CONFIGURE_ARGS+= --disable-ipv6
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 .if defined(WITH_FPECTL)
-CONFIGURE_ARGS+= --with-fpectl
+CONFIGURE_ARGS+=	--with-fpectl
 .endif
 
 pre-patch:
