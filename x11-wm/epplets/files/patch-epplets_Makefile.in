@@ -43,17 +43,3 @@
  E-Power-data/E-Power-Bat-0.png E-Power-data/E-Power-Bat-10.png \
  E-Power-data/E-Power-Bat-100.png E-Power-data/E-Power-Bat-20.png \
  E-Power-data/E-Power-Bat-30.png E-Power-data/E-Power-Bat-40.png \
-@@ -690,11 +682,11 @@
- E-Toolbox-data/sample.cfg E-Toolbox-data/popup-sample.cfg \
- E-Toolbox-data/default.cfg
- 
--NEED_FONT = E-Clock E-Mixer E-MoonClock E-Mountbox E-NetFlame E-Power E-SD \
-+NEED_FONT = E-Clock E-Mixer E-MoonClock E-NetFlame E-Power E-SD \
- E-ScreenSave E-ScreenShoot Emix E-UrlWatch E-PlayCD E-OpenGL-Demo \
- E-Pinger E-Pants E-Cpu E-Wireless
- 
--NEED_BG = E-Clock E-Mixer E-MoonClock E-Mountbox E-NetFlame E-Power E-SD \
-+NEED_BG = E-Clock E-Mixer E-MoonClock E-NetFlame E-Power E-SD \
- E-ScreenSave E-ScreenShoot Emix E-UrlWatch E-PlayCD E-OpenGL-Demo \
- E-Pinger E-Pants E-Cpu E-Wireless
- 

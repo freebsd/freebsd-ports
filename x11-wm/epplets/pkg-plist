@@ -38,24 +38,45 @@ lib/libepplet.a
 lib/libepplet.la
 lib/libepplet.so
 lib/libepplet.so.3
+share/e16/epplet_icons/E-Biff.icon
+share/e16/epplet_icons/E-Clock.icon
+share/e16/epplet_icons/E-Cpu.icon
+share/e16/epplet_icons/E-Disk.icon
+share/e16/epplet_icons/E-Exec.icon
+share/e16/epplet_icons/E-Load.icon
+share/e16/epplet_icons/E-Magic.icon
+share/e16/epplet_icons/E-MemWatch.icon
+share/e16/epplet_icons/E-Mixer.icon
+share/e16/epplet_icons/E-MoonClock.icon
+share/e16/epplet_icons/E-Net.icon
+share/e16/epplet_icons/E-NetFlame.icon
+share/e16/epplet_icons/E-OpenGL-Demo.icon
+share/e16/epplet_icons/E-Pants.icon
+share/e16/epplet_icons/E-Pinger.icon
+share/e16/epplet_icons/E-PlayCD.icon
+share/e16/epplet_icons/E-Power.icon
+share/e16/epplet_icons/E-SD.icon
+share/e16/epplet_icons/E-ScreenSave.icon
+share/e16/epplet_icons/E-ScreenShoot.icon
+share/e16/epplet_icons/E-Slides.icon
+share/e16/epplet_icons/E-Sys.icon
+share/e16/epplet_icons/E-Time.icon
+share/e16/epplet_icons/E-UrlWatch.icon
+share/e16/epplet_icons/E-Wireless.icon
+share/e16/epplet_icons/Emix.icon
 share/e16/epplet_data/E-Biff/7of9.png
 share/e16/epplet_data/E-Biff/newmail.png
 share/e16/epplet_data/E-Biff/nomail.png
+share/e16/epplet_data/E-Clock/ABOUT/MAIN
 share/e16/epplet_data/E-Clock/E-Clock-Image.png
-share/e16/epplet_data/E-Clock/E-Clock.ABOUT/MAIN
-share/e16/epplet_data/E-Clock/E-Clock.ABOUT/aircut3.ttf
-share/e16/epplet_data/E-Clock/E-Clock.ABOUT/bg.png
-share/e16/epplet_data/E-Cpu/E-Cpu.ABOUT/MAIN
-share/e16/epplet_data/E-Cpu/E-Cpu.ABOUT/aircut3.ttf
-share/e16/epplet_data/E-Cpu/E-Cpu.ABOUT/bg.png
+share/e16/epplet_data/E-Cpu/ABOUT/MAIN
 share/e16/epplet_data/E-Magic/8ball.png
 share/e16/epplet_data/E-Magic/answers.txt
-share/e16/epplet_data/E-Mixer/E-Mixer.ABOUT/E-Mixer-standard.png
-share/e16/epplet_data/E-Mixer/E-Mixer.ABOUT/E-Mixer-tall.png
-share/e16/epplet_data/E-Mixer/E-Mixer.ABOUT/E-Mixer-wide.png
-share/e16/epplet_data/E-Mixer/E-Mixer.ABOUT/MAIN
-share/e16/epplet_data/E-Mixer/E-Mixer.ABOUT/aircut3.ttf
-share/e16/epplet_data/E-Mixer/E-Mixer.ABOUT/bg.png
+share/e16/epplet_data/E-Mixer/ABOUT/E-Mixer-standard.png
+share/e16/epplet_data/E-Mixer/ABOUT/E-Mixer-tall.png
+share/e16/epplet_data/E-Mixer/ABOUT/E-Mixer-wide.png
+share/e16/epplet_data/E-Mixer/ABOUT/MAIN
+share/e16/epplet_data/E-MoonClock/ABOUT/MAIN
 share/e16/epplet_data/E-MoonClock/E-MoonClock-01.png
 share/e16/epplet_data/E-MoonClock/E-MoonClock-02.png
 share/e16/epplet_data/E-MoonClock/E-MoonClock-03.png
@@ -116,32 +137,18 @@ share/e16/epplet_data/E-MoonClock/E-MoonClock-57.png
 share/e16/epplet_data/E-MoonClock/E-MoonClock-58.png
 share/e16/epplet_data/E-MoonClock/E-MoonClock-59.png
 share/e16/epplet_data/E-MoonClock/E-MoonClock-60.png
-share/e16/epplet_data/E-MoonClock/E-MoonClock.ABOUT/MAIN
-share/e16/epplet_data/E-MoonClock/E-MoonClock.ABOUT/aircut3.ttf
-share/e16/epplet_data/E-MoonClock/E-MoonClock.ABOUT/bg.png
-share/e16/epplet_data/E-NetFlame/E-NetFlame.ABOUT/MAIN
-share/e16/epplet_data/E-NetFlame/E-NetFlame.ABOUT/aircut3.ttf
-share/e16/epplet_data/E-NetFlame/E-NetFlame.ABOUT/bg.png
-share/e16/epplet_data/E-OpenGL-Demo/E-OpenGL-Demo.ABOUT/MAIN
-share/e16/epplet_data/E-OpenGL-Demo/E-OpenGL-Demo.ABOUT/aircut3.ttf
-share/e16/epplet_data/E-OpenGL-Demo/E-OpenGL-Demo.ABOUT/bg.png
+share/e16/epplet_data/E-NetFlame/ABOUT/MAIN
+share/e16/epplet_data/E-OpenGL-Demo/ABOUT/MAIN
 share/e16/epplet_data/E-OpenGL-Demo/cube_texture.RGB
-share/e16/epplet_data/E-Pants/E-Pants.ABOUT/MAIN
-share/e16/epplet_data/E-Pants/E-Pants.ABOUT/aircut3.ttf
-share/e16/epplet_data/E-Pants/E-Pants.ABOUT/bg.png
-share/e16/epplet_data/E-Pinger/E-Pinger.ABOUT/MAIN
-share/e16/epplet_data/E-Pinger/E-Pinger.ABOUT/aircut3.ttf
-share/e16/epplet_data/E-Pinger/E-Pinger.ABOUT/bg.png
-share/e16/epplet_data/E-PlayCD/E-PlayCD.ABOUT/E-PlayCD_Controls.png
-share/e16/epplet_data/E-PlayCD/E-PlayCD.ABOUT/EPlayCD.jpg
-share/e16/epplet_data/E-PlayCD/E-PlayCD.ABOUT/MAIN
-share/e16/epplet_data/E-PlayCD/E-PlayCD.ABOUT/aircut3.ttf
-share/e16/epplet_data/E-PlayCD/E-PlayCD.ABOUT/bg.png
-share/e16/epplet_data/E-Power/E-Power.ABOUT/MAIN
-share/e16/epplet_data/E-Power/E-Power.ABOUT/aircut3.ttf
-share/e16/epplet_data/E-Power/E-Power.ABOUT/bg.png
+share/e16/epplet_data/E-Pants/ABOUT/MAIN
+share/e16/epplet_data/E-Pinger/ABOUT/MAIN
+share/e16/epplet_data/E-PlayCD/ABOUT/E-PlayCD_Controls.png
+share/e16/epplet_data/E-PlayCD/ABOUT/EPlayCD.jpg
+share/e16/epplet_data/E-PlayCD/ABOUT/MAIN
+share/e16/epplet_data/E-Power/ABOUT/MAIN
 share/e16/epplet_data/E-Power/E-Power-Bat-0.png
 share/e16/epplet_data/E-Power/E-Power-Bat-10.png
+share/e16/epplet_data/E-Power/E-Power-Bat-100.png
 share/e16/epplet_data/E-Power/E-Power-Bat-20.png
 share/e16/epplet_data/E-Power/E-Power-Bat-30.png
 share/e16/epplet_data/E-Power/E-Power-Bat-40.png
@@ -150,20 +157,13 @@ share/e16/epplet_data/E-Power/E-Power-Bat-60.png
 share/e16/epplet_data/E-Power/E-Power-Bat-70.png
 share/e16/epplet_data/E-Power/E-Power-Bat-80.png
 share/e16/epplet_data/E-Power/E-Power-Bat-90.png
-share/e16/epplet_data/E-Power/E-Power-Bat-100.png
-share/e16/epplet_data/E-SD/E-SD.ABOUT/MAIN
-share/e16/epplet_data/E-SD/E-SD.ABOUT/aircut3.ttf
-share/e16/epplet_data/E-SD/E-SD.ABOUT/bg.png
+share/e16/epplet_data/E-SD/ABOUT/MAIN
 share/e16/epplet_data/E-SD/E-SD_minitime.png
 share/e16/epplet_data/E-SD/E-SD_standby.png
-share/e16/epplet_data/E-ScreenSave/E-ScreenSave.ABOUT/MAIN
-share/e16/epplet_data/E-ScreenSave/E-ScreenSave.ABOUT/aircut3.ttf
-share/e16/epplet_data/E-ScreenSave/E-ScreenSave.ABOUT/bg.png
-share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot.ABOUT/E_ScreenShoot_buttons.png
-share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot.ABOUT/E_ScreenShoot_cloak.png
-share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot.ABOUT/MAIN
-share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot.ABOUT/aircut3.ttf
-share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot.ABOUT/bg.png
+share/e16/epplet_data/E-ScreenSave/ABOUT/MAIN
+share/e16/epplet_data/E-ScreenShoot/ABOUT/E_ScreenShoot_buttons.png
+share/e16/epplet_data/E-ScreenShoot/ABOUT/E_ScreenShoot_cloak.png
+share/e16/epplet_data/E-ScreenShoot/ABOUT/MAIN
 share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot_col.png
 share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot_minitime.png
 share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot_minitime2.png
@@ -180,84 +180,50 @@ share/e16/epplet_data/E-Toolbox/mail.png
 share/e16/epplet_data/E-Toolbox/netscape.png
 share/e16/epplet_data/E-Toolbox/popup-sample.cfg
 share/e16/epplet_data/E-Toolbox/sample.cfg
-share/e16/epplet_data/E-UrlWatch/E-UrlWatch.ABOUT/MAIN
-share/e16/epplet_data/E-UrlWatch/E-UrlWatch.ABOUT/aircut3.ttf
-share/e16/epplet_data/E-UrlWatch/E-UrlWatch.ABOUT/bg.png
+share/e16/epplet_data/E-UrlWatch/ABOUT/MAIN
 share/e16/epplet_data/E-UrlWatch/wooeep.wav
-share/e16/epplet_data/E-Wireless/E-Wireless.ABOUT/MAIN
-share/e16/epplet_data/E-Wireless/E-Wireless.ABOUT/aircut3.ttf
-share/e16/epplet_data/E-Wireless/E-Wireless.ABOUT/bg.png
-share/e16/epplet_data/E-Wireless/E-Wireless.ABOUT/delia.jpg
-share/e16/epplet_data/E-Wireless/E-Wireless.ABOUT/delia.png
-share/e16/epplet_data/Emix/Emix.ABOUT/MAIN
-share/e16/epplet_data/Emix/Emix.ABOUT/aircut3.ttf
-share/e16/epplet_data/Emix/Emix.ABOUT/bg.png
+share/e16/epplet_data/E-Wireless/ABOUT/MAIN
+share/e16/epplet_data/E-Wireless/ABOUT/delia.jpg
+share/e16/epplet_data/E-Wireless/ABOUT/delia.png
+share/e16/epplet_data/Emix/ABOUT/MAIN
 share/e16/epplet_data/Emix/Emix.AUTHORS
 share/e16/epplet_data/Emix/Emix.COPYING
 share/e16/epplet_data/Emix/Emix.README
 share/e16/epplet_data/Emix/Emix.TODO
-share/e16/epplet_data/aircut3.ttf
-share/e16/epplet_data/bg.png
-share/e16/epplet_icons/E-Biff.icon
-share/e16/epplet_icons/E-Clock.icon
-share/e16/epplet_icons/E-Cpu.icon
-share/e16/epplet_icons/E-Disk.icon
-share/e16/epplet_icons/E-Exec.icon
-share/e16/epplet_icons/E-Load.icon
-share/e16/epplet_icons/E-Magic.icon
-share/e16/epplet_icons/E-MemWatch.icon
-share/e16/epplet_icons/E-Mixer.icon
-share/e16/epplet_icons/E-MoonClock.icon
-share/e16/epplet_icons/E-Net.icon
-share/e16/epplet_icons/E-NetFlame.icon
-share/e16/epplet_icons/E-OpenGL-Demo.icon
-share/e16/epplet_icons/E-Pants.icon
-share/e16/epplet_icons/E-Pinger.icon
-share/e16/epplet_icons/E-PlayCD.icon
-share/e16/epplet_icons/E-Power.icon
-share/e16/epplet_icons/E-SD.icon
-share/e16/epplet_icons/E-ScreenSave.icon
-share/e16/epplet_icons/E-ScreenShoot.icon
-share/e16/epplet_icons/E-Slides.icon
-share/e16/epplet_icons/E-Sys.icon
-share/e16/epplet_icons/E-Time.icon
-share/e16/epplet_icons/E-UrlWatch.icon
-share/e16/epplet_icons/E-Wireless.icon
-share/e16/epplet_icons/Emix.icon
-@dirrmtry rmdir %D/share/e16/epplet_icons
-@dirrm share/e16/epplet_data/Emix/Emix.ABOUT
+@dirrmtry share/e16/epplet_icons
+@dirrm share/e16/epplet_data/Emix/ABOUT
 @dirrm share/e16/epplet_data/Emix
-@dirrm share/e16/epplet_data/E-Wireless/E-Wireless.ABOUT
+@dirrm share/e16/epplet_data/E-Wireless/ABOUT
 @dirrm share/e16/epplet_data/E-Wireless
-@dirrm share/e16/epplet_data/E-UrlWatch/E-UrlWatch.ABOUT
+@dirrm share/e16/epplet_data/E-UrlWatch/ABOUT
 @dirrm share/e16/epplet_data/E-UrlWatch
 @dirrm share/e16/epplet_data/E-Toolbox
-@dirrm share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot.ABOUT
+@dirrm share/e16/epplet_data/E-ScreenShoot/ABOUT
 @dirrm share/e16/epplet_data/E-ScreenShoot
-@dirrm share/e16/epplet_data/E-ScreenSave/E-ScreenSave.ABOUT
+@dirrm share/e16/epplet_data/E-ScreenSave/ABOUT
 @dirrm share/e16/epplet_data/E-ScreenSave
-@dirrm share/e16/epplet_data/E-SD/E-SD.ABOUT
+@dirrm share/e16/epplet_data/E-SD/ABOUT
 @dirrm share/e16/epplet_data/E-SD
-@dirrm share/e16/epplet_data/E-Power/E-Power.ABOUT
+@dirrm share/e16/epplet_data/E-Power/ABOUT
 @dirrm share/e16/epplet_data/E-Power
-@dirrm share/e16/epplet_data/E-PlayCD/E-PlayCD.ABOUT
+@dirrm share/e16/epplet_data/E-PlayCD/ABOUT
 @dirrm share/e16/epplet_data/E-PlayCD
-@dirrm share/e16/epplet_data/E-Pinger/E-Pinger.ABOUT
+@dirrm share/e16/epplet_data/E-Pinger/ABOUT
 @dirrm share/e16/epplet_data/E-Pinger
-@dirrm share/e16/epplet_data/E-Pants/E-Pants.ABOUT
+@dirrm share/e16/epplet_data/E-Pants/ABOUT
 @dirrm share/e16/epplet_data/E-Pants
-@dirrm share/e16/epplet_data/E-OpenGL-Demo/E-OpenGL-Demo.ABOUT
+@dirrm share/e16/epplet_data/E-OpenGL-Demo/ABOUT
 @dirrm share/e16/epplet_data/E-OpenGL-Demo
-@dirrm share/e16/epplet_data/E-NetFlame/E-NetFlame.ABOUT
+@dirrm share/e16/epplet_data/E-NetFlame/ABOUT
 @dirrm share/e16/epplet_data/E-NetFlame
-@dirrm share/e16/epplet_data/E-MoonClock/E-MoonClock.ABOUT
+@dirrm share/e16/epplet_data/E-MoonClock/ABOUT
 @dirrm share/e16/epplet_data/E-MoonClock
-@dirrm share/e16/epplet_data/E-Mixer/E-Mixer.ABOUT
+@dirrm share/e16/epplet_data/E-Mixer/ABOUT
 @dirrm share/e16/epplet_data/E-Mixer
 @dirrm share/e16/epplet_data/E-Magic
-@dirrm share/e16/epplet_data/E-Cpu/E-Cpu.ABOUT
+@dirrm share/e16/epplet_data/E-Cpu/ABOUT
 @dirrm share/e16/epplet_data/E-Cpu
-@dirrm share/e16/epplet_data/E-Clock/E-Clock.ABOUT
+@dirrm share/e16/epplet_data/E-Clock/ABOUT
 @dirrm share/e16/epplet_data/E-Clock
 @dirrm share/e16/epplet_data/E-Biff
 @dirrm share/e16/epplet_data
