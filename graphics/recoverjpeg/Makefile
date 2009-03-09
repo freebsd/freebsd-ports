@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	recoverjpeg
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.rfc1149.net/download/recoverjpeg/ \
 		CRITICAL
