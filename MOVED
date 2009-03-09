@@ -3840,3 +3840,4 @@ textproc/latte||2009-03-07|Abandoned upstream, requires obsolete version of GCC
 textproc/nicetext||2009-03-07|Abandoned upstream, requires obsolete version of GCC
 multimedia/libspiff|multimedia/libxspf|2009-03-08|Project renamed
 graphics/libgdgeda||2009-03-09|Has expired: is not required anymore
+japanese/ruby-tk||2009-03-09|Has expired: uses old Tk, not required with newer versions
