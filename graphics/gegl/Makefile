@@ -15,17 +15,19 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A graph based image processing framework
 
 LIB_DEPENDS=	babl-0.0:${PORTSDIR}/x11/babl \
-    		png.5:${PORTSDIR}/graphics/png \
+    		png.5:${PORTSDIR}/graphics/png
 
-OPTIONS=	CAIRO	"Enable Cairo" on \
-		FFMPEG	"Enable ffmpeg" on \
-		GTK	"Enable GTK+" on \
-		JPEG	"Enable JPEG" on \
-		OPENEXR	"Enable OpenEXR" on \
-		OPENRAW	"Enable OpenRAW" on \
-		PANGO	"Enable Pango" on \
-		RSVG	"Enable RSVG" on \
-		SDL	"Enable SDL" on
+OPTIONS=	CAIRO		"Enable Cairo" on \
+		FFMPEG		"Enable ffmpeg" on \
+		GTK		"Enable GTK+" on \
+		GRAPHVIZ	"Enable Graphviz" on \
+		JPEG		"Enable JPEG" on \
+		OPENEXR		"Enable OpenEXR" on \
+		OPENRAW		"Enable OpenRAW" on \
+		PANGO		"Enable Pango" on \
+		RSVG		"Enable RSVG" on \
+		SPIRO		"Enable Spiro" on \
+		SDL		"Enable SDL" on
 
 USE_GNOME=	glib20 pkgconfig gnomehack
 USE_BZIP2=	yes
@@ -48,38 +50,68 @@ EXAMPLES=	2geglbuffer gegl-paint geglbuffer-add-image \
 
 .if !defined(WITHOUT_CAIRO)
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+.else
+CONFIGURE_ARGS+=--without-cairo
 .endif
 
 .if !defined(WITHOUT_FFMPEG)
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	avformat.1:${PORTSDIR}/multimedia/ffmpeg
+.else
+CONFIGURE_ARGS+=--without-libavformat
 .endif
 
 .if !defined(WITHOUT_GTK)
 USE_GNOME+=	gtk20
+.else
+CONFIGURE_ARGS+=--without-gtk
+.endif
+
+.if !defined(WITHOUT_GRAPHVIZ)
+LIB_DEPENDS+=	graph.4:${PORTSDIR}/graphics/graphviz
+.else
+CONFIGURE_ARGS+=--without-graphviz
 .endif
 
 .if !defined(WITHOUT_JPEG)
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+.else
+CONFIGURE_ARGS+=--without-libjpeg
 .endif
 
 .if !defined(WITHOUT_OPENEXR)
 LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
+.else
+CONFIGURE_ARGS+=--without-openexr
 .endif
 
 .if !defined(WITHOUT_OPENRAW)
 LIB_DEPENDS+=	openraw.5:${PORTSDIR}/graphics/libopenraw
+.else
+CONFIGURE_ARGS+=--without-libopenraw
 .endif
 
 .if !defined(WITHOUT_PANGO)
 USE_GNOME+=	pango
+.else
+CONFIGURE_ARGS+=--without-pango
 .endif
 
 .if !defined(WITHOUT_RSVG)
 LIB_DEPENDS+=	rsvg-2.2:${PORTSDIR}/graphics/librsvg2
+.else
+CONFIGURE_ARGS+=--without-librsvg
 .endif
 
 .if !defined(WITHOUT_SDL)
 USE_SDL=	sdl
+.else
+CONFIGURE_ARGS+=--without-sdl
+.endif
+
+.if !defined(WITHOUT_SPIRO)
+LIB_DEPENDS+=	spiro.0:${PORTSDIR}/graphics/libspiro
+.else
+CONFIGURE_ARGS+=--without-libspiro
 .endif
 
 .if !defined(NOPORTDOCS)
