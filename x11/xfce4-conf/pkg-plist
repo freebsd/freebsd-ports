@@ -49,6 +49,19 @@ share/locale/sv/LC_MESSAGES/xfconf.mo
 share/locale/tr/LC_MESSAGES/xfconf.mo
 share/locale/uk/LC_MESSAGES/xfconf.mo
 share/locale/zh_CN/LC_MESSAGES/xfconf.mo
+%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf/Xfconf.so
+%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf/Xfconf.bs
+%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf/.packlist
+%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf/Install/Files.pm
+%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf/Install/xfconfperl.h
+%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf/Install/xfconfperl-autogen.h
+%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf/Install/xfconfperl.typemap
+%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf.pm
+%%PERLBIND%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf
+%%PERLBIND%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4
+%%PERLBIND%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf/Install
+%%PERLBIND%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf
+%%PERLBIND%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Xfce4
 @dirrm share/gtk-doc/html/xfconf
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc

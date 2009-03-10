@@ -26,15 +26,39 @@ USE_GNOME=	glib20 gnometarget gnomehack gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil
 
-OPTIONS=	GTKDOC	"install the library documentation"	off
+OPTIONS=	GTKDOC	"install the library documentation"	off \
+		PERL	"Install Perl bindings"			off
+
+MAN3PREFIX?=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_PERL)
+MAN3=		Xfce4::Xfconf.3
+BUILD_DEPENDS+=	p5-ExtUtils-Depends>=0.300:${PORTSDIR}/devel/p5-ExtUtils-Depends \
+		p5-ExtUtils-PkgConfig>=1.12:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
+		p5-Glib2>=1.200:${PORTSDIR}/devel/p5-Glib2
+RUN_DEPENDS+=	p5-ExtUtils-Depends>=0.300:${PORTSDIR}/devel/p5-ExtUtils-Depends \
+		p5-ExtUtils-PkgConfig>=1.12:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
+		p5-Glib2>=1.200:${PORTSDIR}/devel/p5-Glib2
+CONFIGURE_ARGS+=--enable-perl-bindings
+PLIST_SUB+=	PERLBIND=""
+.else
+CONFIGURE_ARGS+=--disable-perl-bindings
+PLIST_SUB+=	PERLBIND="@comment "
+.endif
 
 .if defined(WITH_GTKDOC)
 BUILD_DEPENDS+=	gtkdocize:${PORTSDIR}/textproc/gtk-doc
 CONFIGURE_ARGS+=--enable-gtk-doc
 .else
 CONFIGURE_ARGS+=--disable-gtk-doc
+.endif
+
+post-build:
+.if defined(WITH_PERL)
+	@${REINPLACE_CMD} -E -e 's! doc_(perl|site|\$$\(INSTALLDIRS\))_install$$!!' \
+		${WRKSRC}/xfconf-perl/Makefile.perl
 .endif
 
 .include <bsd.port.post.mk>
