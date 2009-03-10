@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 
-MAINTAINER=	R.Mahmatkhanov@SKYLINK.RU
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME 2 desktop weblog aggregator written in Python
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
