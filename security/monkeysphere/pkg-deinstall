@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# a package removal script for monkeysphere (borrowing from
+# monkeysphere's debian/monkeysphere.postrm)
+
+# Author: Daniel Kahn Gillmor <dkg@fifthhorseman.net>
+# Copyright 2008,2009
+
+# FIXME: is /var/monkeysphere the right place for this stuff on
+# FreeBSD?
+VARLIB="/var/monkeysphere"
+
+
+case $2 in
+POST-DEINSTALL)
+        USER=monkeysphere
+# FIXME: This doesn't do anything!  Under what circumstances do we
+# want to actually automatically purge all of /var/monkeysphere?
+
+# (note: FreeBSD does not seem to want the package-specific user to be
+# purged at package removal)
+	if pw user show "${USER}" 2>/dev/null >/dev/null; then
+	    echo "Warning: If you will *NOT* use this package anymore, please remove the monkeysphere user manually."
+	fi
+	if [ -d "$VARLIB" ] ; then
+	    echo "Warning: You may want to remove monkeysphere's cached authentication data and keyrings in $VARLIB"
+	fi
+;;
+esac

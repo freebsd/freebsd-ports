@@ -1,0 +1,11 @@
+--- src/monkeysphere-host
++++ src/monkeysphere-host
+@@ -103,7 +103,7 @@ update_gpg_pub_file() {
+ load_fingerprint() {
+     if [ -f "$HOST_KEY_FILE" ] ; then
+ 	HOST_FINGERPRINT=$( \
+-	    (FUBAR=$(mktemp -d) && export GNUPGHOME="$FUBAR" \
++	    (FUBAR=$(msmktempdir) && export GNUPGHOME="$FUBAR" \
+ 	    && gpg --quiet --import \
+ 	    && gpg --quiet --list-keys --with-colons --with-fingerprint \
+ 	    && rm -rf "$FUBAR") <"$HOST_KEY_FILE" \
