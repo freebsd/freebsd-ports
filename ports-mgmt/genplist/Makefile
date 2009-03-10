@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	genplist
-PORTVERSION=	0.1
+PORTVERSION=	0.3
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/
+MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
+		http://jbacon.dyndns.org/~bacon/Ports/distfiles/
 
-MAINTAINER=	bacon@smithers.neuro.mcw.edu
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	Generates a static plist for a port
 
 NO_BUILD=	yes
