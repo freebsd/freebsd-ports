@@ -427,6 +427,7 @@ amanith                         ports/graphics/amanith
 amap                            ports/security/amap
 amarok                          ports/audio/amarok
 amarok-fs                       ports/audio/amarok-fs
+amarok-kde4                     ports/audio/amarok-kde4
 amaterus                        ports/x11-wm/amaterus
 amavis-stats                    ports/security/amavis-stats
 amavisd-milter                  ports/security/amavisd-milter
@@ -990,6 +991,7 @@ bird                            ports/net/bird
 birda                           ports/comms/birda
 birthday                        ports/misc/birthday
 bison                           ports/devel/bison
+bisoncpp                        ports/devel/bisoncpp
 bisongen                        ports/devel/bisongen
 bitchx                          ports/irc/bitchx
 bitcollider                     ports/deskutils/bitcollider
@@ -1810,9 +1812,7 @@ cryptoslam                      ports/games/cryptoslam
 cryptplug                       ports/security/cryptplug
 cryptstring                     ports/security/cryptstring
 crystalentitylayer              ports/graphics/crystalentitylayer
-crystalentitylayer-devel        ports/graphics/crystalentitylayer-devel
 crystalspace                    ports/graphics/crystalspace
-crystalspace-devel              ports/graphics/crystalspace-devel
 cs                              ports/misc/cs
 cs-aspell                       ports/textproc/cs-aspell
 csb-aspell                      ports/textproc/csb-aspell
@@ -2375,7 +2375,6 @@ dovecot-antispam                ports/mail/dovecot-antispam
 dovecot-devel                   ports/mail/dovecot-devel
 dovecot-managesieve             ports/mail/dovecot-managesieve
 dovecot-sieve                   ports/mail/dovecot-sieve
-downloader                      ports/ftp/downloader
 downtime                        ports/sysutils/downtime
 doxygen                         ports/devel/doxygen
 doxymacs                        ports/editors/doxymacs
@@ -5274,6 +5273,7 @@ ices0                           ports/audio/ices0
 icewm                           ports/x11-wm/icewm
 ici                             ports/lang/ici
 ickle                           ports/net-im/ickle
+icmake                          ports/devel/icmake
 icmpchat                        ports/net-im/icmpchat
 icmpinfo                        ports/net/icmpinfo
 icmpmonitor                     ports/net-mgmt/icmpmonitor
@@ -5429,9 +5429,6 @@ interchange                     ports/www/interchange
 intergif                        ports/graphics/intergif
 interlogic                      ports/games/interlogic
 inti                            ports/x11-toolkits/inti
-inti-gconf                      ports/x11-toolkits/inti-gconf
-inti-gl                         ports/x11-toolkits/inti-gl
-inti-sourceview                 ports/x11-toolkits/inti-sourceview
 intlfonts                       ports/x11-fonts/intlfonts
 intltool                        ports/textproc/intltool
 inventor                        ports/graphics/inventor
@@ -5886,7 +5883,6 @@ ja-ruby-rdic                    ports/japanese/ruby-rdic
 ja-ruby-refe                    ports/japanese/ruby-refe
 ja-ruby-romkan                  ports/japanese/ruby-romkan
 ja-ruby-slang                   ports/japanese/ruby-slang
-ja-ruby-tk                      ports/japanese/ruby-tk
 ja-ruby-uconv                   ports/japanese/ruby-uconv
 ja-ruby-usersguide              ports/japanese/ruby-usersguide
 ja-rubygem-jpmobile             ports/japanese/rubygem-jpmobile
@@ -7063,6 +7059,7 @@ libbgpdump                      ports/net/libbgpdump
 libbinio                        ports/devel/libbinio
 libbnr                          ports/devel/libbnr
 libboard                        ports/graphics/libboard
+libbobcat                       ports/devel/libbobcat
 libbonobo                       ports/devel/libbonobo
 libbonobo-reference             ports/devel/libbonobo-reference
 libbonobomm                     ports/devel/libbonobomm
@@ -7194,7 +7191,6 @@ libgda4-mysql                   ports/databases/libgda4-mysql
 libgda4-postgresql              ports/databases/libgda4-postgresql
 libgda4-reference               ports/databases/libgda4-reference
 libgdamm                        ports/databases/libgdamm
-libgdgeda                       ports/graphics/libgdgeda
 libgdiplus                      ports/x11-toolkits/libgdiplus
 libgeda                         ports/cad/libgeda
 libgenome                       ports/biology/libgenome
@@ -10087,6 +10083,7 @@ p5-CGI-Builder-TT2              ports/www/p5-CGI-Builder-TT2
 p5-CGI-Cache                    ports/www/p5-CGI-Cache
 p5-CGI-Compress-Gzip            ports/www/p5-CGI-Compress-Gzip
 p5-CGI-Cookie-Splitter          ports/www/p5-CGI-Cookie-Splitter
+p5-CGI-Cookie-XS                ports/www/p5-CGI-Cookie-XS
 p5-CGI-Deurl-XS                 ports/www/p5-CGI-Deurl-XS
 p5-CGI-Ex                       ports/www/p5-CGI-Ex
 p5-CGI-Expand                   ports/www/p5-CGI-Expand
@@ -10428,7 +10425,6 @@ p5-Convert-Recode               ports/converters/p5-Convert-Recode
 p5-Convert-TNEF                 ports/converters/p5-Convert-TNEF
 p5-Convert-UU                   ports/converters/p5-Convert-UU
 p5-Convert-UUlib                ports/converters/p5-Convert-UUlib
-p5-Cookie-XS                    ports/www/p5-Cookie-XS
 p5-Coro                         ports/devel/p5-Coro
 p5-Crypt-Anubis                 ports/security/p5-Crypt-Anubis
 p5-Crypt-AppleTwoFish           ports/security/p5-Crypt-AppleTwoFish
@@ -10623,6 +10619,7 @@ p5-Data-Hierarchy               ports/devel/p5-Data-Hierarchy
 p5-Data-ICal                    ports/deskutils/p5-Data-ICal
 p5-Data-JavaScript              ports/lang/p5-Data-JavaScript
 p5-Data-Lazy                    ports/devel/p5-Data-Lazy
+p5-Data-Localize                ports/devel/p5-Data-Localize
 p5-Data-ObjectDriver            ports/devel/p5-Data-ObjectDriver
 p5-Data-OptList                 ports/devel/p5-Data-OptList
 p5-Data-Page                    ports/databases/p5-Data-Page
@@ -13514,6 +13511,7 @@ p5-cgi-builder-tt2              ports/www/p5-CGI-Builder-TT2
 p5-cgi-cache                    ports/www/p5-CGI-Cache
 p5-cgi-compress-gzip            ports/www/p5-CGI-Compress-Gzip
 p5-cgi-cookie-splitter          ports/www/p5-CGI-Cookie-Splitter
+p5-cgi-cookie-xs                ports/www/p5-CGI-Cookie-XS
 p5-cgi-deurl-xs                 ports/www/p5-CGI-Deurl-XS
 p5-cgi-ex                       ports/www/p5-CGI-Ex
 p5-cgi-expand                   ports/www/p5-CGI-Expand
@@ -13721,7 +13719,6 @@ p5-convert-recode               ports/converters/p5-Convert-Recode
 p5-convert-tnef                 ports/converters/p5-Convert-TNEF
 p5-convert-uu                   ports/converters/p5-Convert-UU
 p5-convert-uulib                ports/converters/p5-Convert-UUlib
-p5-cookie-xs                    ports/www/p5-Cookie-XS
 p5-coro                         ports/devel/p5-Coro
 p5-cpan-distnameinfo            ports/devel/p5-CPAN-DistnameInfo
 p5-cpan-mini                    ports/devel/p5-CPAN-Mini
@@ -13854,6 +13851,7 @@ p5-data-hierarchy               ports/devel/p5-Data-Hierarchy
 p5-data-ical                    ports/deskutils/p5-Data-ICal
 p5-data-javascript              ports/lang/p5-Data-JavaScript
 p5-data-lazy                    ports/devel/p5-Data-Lazy
+p5-data-localize                ports/devel/p5-Data-Localize
 p5-data-objectdriver            ports/devel/p5-Data-ObjectDriver
 p5-data-optlist                 ports/devel/p5-Data-OptList
 p5-data-page                    ports/databases/p5-Data-Page
@@ -17302,6 +17300,8 @@ philesight                      ports/sysutils/philesight
 phluid                          ports/x11-wm/phluid
 pho                             ports/graphics/pho
 phonon                          ports/multimedia/phonon
+phonon-gstreamer                ports/multimedia/phonon-gstreamer
+phonon-xine                     ports/multimedia/phonon-xine
 phoon                           ports/astro/phoon
 photo_gallery                   ports/www/photo_gallery
 photoclip                       ports/graphics/photoclip
@@ -17685,6 +17685,7 @@ plans                           ports/deskutils/plans
 plasma-applet-panelspacer       ports/deskutils/plasma-applet-panelspacer
 plasma-applet-quicklauncher     ports/deskutils/plasma-applet-quicklauncher
 plasma-applet-teacooker         ports/deskutils/plasma-applet-teacooker
+plasma-applet-yawp              ports/deskutils/plasma-applet-yawp
 plasma-kmod                     ports/graphics/plasma-kmod
 platon                          ports/biology/platon
 play                            ports/audio/play
@@ -17906,9 +17907,6 @@ postfix-policyd-spf             ports/mail/postfix-policyd-spf
 postfix-policyd-spf-perl        ports/mail/postfix-policyd-spf-perl
 postfix-policyd-weight          ports/mail/postfix-policyd-weight
 postfix-postfwd                 ports/mail/postfix-postfwd
-postfix1                        ports/mail/postfix1
-postfix21                       ports/mail/postfix21
-postfix22                       ports/mail/postfix22
 postfix23                       ports/mail/postfix23
 postfix24                       ports/mail/postfix24
 postfixadmin                    ports/mail/postfixadmin
@@ -19831,7 +19829,6 @@ ruby19                          ports/lang/ruby19
 rubygem-abstract                ports/devel/rubygem-abstract
 rubygem-actionmailer            ports/mail/rubygem-actionmailer
 rubygem-actionpack              ports/www/rubygem-actionpack
-rubygem-actionwebservice        ports/www/rubygem-actionwebservice
 rubygem-activerecord            ports/databases/rubygem-activerecord
 rubygem-activerecord-jdbc-adapter  ports/databases/rubygem-activerecord-jdbc-adapter
 rubygem-activerecord-jdbcmysql-adapter  ports/databases/rubygem-activerecord-jdbcmysql-adapter
@@ -19898,7 +19895,6 @@ rubygem-merb                    ports/www/rubygem-merb
 rubygem-metaid                  ports/devel/rubygem-metaid
 rubygem-mime-types              ports/misc/rubygem-mime-types
 rubygem-mocha                   ports/devel/rubygem-mocha
-rubygem-mojombo-grit            ports/devel/rubygem-mojombo-grit
 rubygem-mongrel                 ports/www/rubygem-mongrel
 rubygem-mongrel_cluster         ports/www/rubygem-mongrel_cluster
 rubygem-mp3info                 ports/audio/rubygem-mp3info
@@ -19940,7 +19936,6 @@ rubygem-rgl                     ports/devel/rubygem-rgl
 rubygem-rightaws                ports/net/rubygem-rightaws
 rubygem-righthttpconnection     ports/net/rubygem-righthttpconnection
 rubygem-rparsec                 ports/devel/rubygem-rparsec
-rubygem-rrdtool                 ports/databases/rubygem-rrdtool
 rubygem-rscm                    ports/devel/rubygem-rscm
 rubygem-rspec                   ports/devel/rubygem-rspec
 rubygem-rtags                   ports/devel/rubygem-rtags
