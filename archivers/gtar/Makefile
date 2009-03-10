@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tar
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	g
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	GNU version of the traditional tape archiver
 
-# Actually we need lzma(1), but not the one in archivers/lzma.
-RUN_DEPENDS=	${LOCALBASE}/bin/lzcat:${PORTSDIR}/archivers/lzmautils
-RUN_DEPENDS+=	lzop:${PORTSDIR}/archivers/lzop
+RUN_DEPENDS=	lzop:${PORTSDIR}/archivers/lzop
+# Add xz once the lzma/lzmautils/xz confusion has settled down
+#RUN_DEPENDS+=	xz:${PORTSDIR}/archivers/lzmautils-devel
 
 INFO=		tar
 
