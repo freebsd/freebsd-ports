@@ -60,11 +60,14 @@ share/locale/fr/LC_MESSAGES/libepc.mo
 share/locale/it/LC_MESSAGES/libepc.mo
 share/locale/ja/LC_MESSAGES/libepc.mo
 share/locale/nb/LC_MESSAGES/libepc.mo
+share/locale/pl/LC_MESSAGES/libepc.mo
 share/locale/pt_BR/LC_MESSAGES/libepc.mo
 share/locale/sl/LC_MESSAGES/libepc.mo
 share/locale/sv/LC_MESSAGES/libepc.mo
 @dirrmtry share/locale/sl/LC_MESSAGES
 @dirrmtry share/locale/sl
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
 @dirrmtry share/locale/fi/LC_MESSAGES
 @dirrmtry share/locale/fi
 @dirrmtry share/locale/el/LC_MESSAGES
