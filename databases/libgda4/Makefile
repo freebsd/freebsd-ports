@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libgda4
-PORTVERSION?=	3.99.12
+PORTVERSION?=	3.99.13
 PORTREVISION?=	0
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
@@ -107,6 +107,12 @@ CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
 CONFIGURE_ARGS+=	--without-odbc
 .endif
 
+.if ${LIBGDA4_SLAVE}=="jdbc"
+USE_JAVA=		yes
+.else
+CONFIGURE_ARGS+=	--without-java
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|include/db.h|include/db${BDB_VER}/db.h|g' \
@@ -119,7 +125,7 @@ post-patch:
 		${WRKSRC}/providers/bdb/gda-bdb-test.c
 .if ${LIBGDA4_SLAVE}!="no"
 #. for d in msql firebird odbc freetds mdb ldap mysql sqlite postgres
-. for d in bdb mdb mysql sqlite postgres
+. for d in bdb jdbc mdb mysql sqlite postgres
 	@${REINPLACE_CMD} -e 's|$$(top_builddir)/libgda/libgda-4.0.la|${LOCALBASE}/lib/libgda-4.0.la|g' \
 		${WRKSRC}/providers/${d}/Makefile.in
 . endfor
