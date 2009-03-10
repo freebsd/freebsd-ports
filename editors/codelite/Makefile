@@ -58,6 +58,7 @@ do-install:
 	${MKDIR} ${DATADIR}/plugins
 	${MKDIR} ${DATADIR}/images
 	${INSTALL_PROGRAM} ${WRKSRC}/Runtime/codelite ${PREFIX}/bin/CodeLite
+	${INSTALL_PROGRAM} ${WRKSRC}/Runtime/codelite_indexer ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/Runtime/le_dos2unix.sh ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/Runtime/le_exec.sh ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/Runtime/le_killproc.sh ${PREFIX}/bin/

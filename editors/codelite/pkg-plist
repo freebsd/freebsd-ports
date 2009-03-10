@@ -1,4 +1,5 @@
 bin/CodeLite
+bin/codelite_indexer
 bin/le_dos2unix.sh
 bin/le_exec.sh
 bin/le_killproc.sh
