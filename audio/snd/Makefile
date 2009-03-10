@@ -7,6 +7,7 @@
 
 PORTNAME=	snd
 PORTVERSION=	10.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://mirror.mcx2.org/
@@ -21,8 +22,9 @@ OPTIONS=	ESD	"Use Enlightened Sound Daemon"		on  \
 		S7	"Use S7 as the extension language"	off  \
 		LADSPA	"Include support for LADSPA plugins"	on  \
 		NLS	"Native Language Support"		on  \
-		RUBY	"Use Ruby as the extension language"	off \
-		X11	"Make Snd with Gtk+ graphics support"	on
+		MOTIF	"Make Snd with Motif graphics support"	off \
+		GTK2	"Make Snd with Gtk+ graphics support"	on \
+		X11	"Make Snd with GUI support"	on
 
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
@@ -61,6 +63,7 @@ CONFIGURE_ARGS+=	--without-gsl
 .endif
 
 .if !defined(WITHOUT_GUILE)
+CONFIGURE_ARGS+=	--with-guile
 LIB_DEPENDS+=	guile.20:${PORTSDIR}/lang/guile
 PLIST_SUB+=	SCHEME=""
 .else
@@ -89,20 +92,20 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_RUBY)
-USE_RUBY=	yes
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
-CONFIGURE_ARGS+=	--with-ruby
-PLIST_SUB+=	SCHEME="@comment "
+.if defined(WITH_GTK2)
+USE_GNOME+=	gtk20
+CONFIGURE_ARGS+=	--with-gtk
+PLIST_SUB+=	X11=""
+.endif
+.if defined(WITH_MOTIF)
+USE_MOTIF=	yes
+CONFIGURE_ARGS+=	--with-motif
+PLIST_SUB+=	X11=""
 .endif
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--with-no-gui
 PLIST_SUB+=	X11="@comment "
-.else
-USE_GNOME+=	gtk20
-CONFIGURE_ARGS+=	--with-gtk
-PLIST_SUB+=	X11=""
 .endif
 
 post-patch:
