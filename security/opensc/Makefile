@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	opensc
-PORTVERSION=	0.11.6
-PORTREVISION=	1
+PORTVERSION=	0.11.7
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 		http://www.opensc-project.org/files/${PORTNAME}/testing/
@@ -20,6 +19,7 @@ OPTIONS=	OPENCT "Enable direct OpenCT backend support" on \
 		SIGNER "Enable signer browser plugin" off
 
 USE_AUTOTOOLS=	libltdl:15
+USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -28,13 +28,15 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	LTLIB_CFLAGS="-I${LOCALBASE}/include" \
 		LTLIB_LIBS="-L${LOCALBASE}/lib -lltdl" \
+		ICONV_CFLAGS="-I${LOCALBASE}/include" \
+		ICONV_LIBS="-L${LOCALBASE}/lib -liconv" \
 		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
 
 PORTDOCS=	*
 
 MANCOMPRESSED=	no
-MAN1=		cardos-info.1 cryptoflex-tool.1 netkey-tool.1 \
+MAN1=		cardos-tool.1 cryptoflex-tool.1 netkey-tool.1 \
 		opensc-config.1 opensc-explorer.1 opensc-tool.1 \
 		pkcs11-tool.1 pkcs15-crypt.1 pkcs15-init.1 pkcs15-tool.1
 MAN3=		sc_app_info_t.3 sc_append_record.3 sc_asn1_decode.3 \

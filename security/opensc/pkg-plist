@@ -1,4 +1,5 @@
 bin/cardos-info
+bin/cardos-tool
 bin/cryptoflex-tool
 bin/eidenv
 bin/netkey-tool
@@ -45,13 +46,10 @@ lib/libscconf.a
 lib/libscconf.la
 lib/libscconf.so
 lib/libscconf.so.2
-lib/onepin-opensc-pkcs11.a
 lib/onepin-opensc-pkcs11.la
 lib/onepin-opensc-pkcs11.so
-lib/opensc-pkcs11.a
 lib/opensc-pkcs11.la
 lib/opensc-pkcs11.so
-lib/pkcs11-spy.a
 lib/pkcs11-spy.la
 lib/pkcs11-spy.so
 lib/pkcs11/onepin-opensc-pkcs11.so
