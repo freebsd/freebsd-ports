@@ -1,0 +1,11 @@
+--- src/share/keytrans	2009-03-01 13:39:50.000000000 -0500
++++ src/share/keytrans	2009-03-10 00:39:53.681890554 -0400
+@@ -199,7 +199,7 @@
+ sub simple_checksum {
+   my $bytes = shift;
+ 
+-  return unpack("%32W*",$bytes) % 65536;
++  return unpack("%32U*",$bytes) % 65536;
+ }
+ 
+ # calculate the multiplicative inverse of a mod b this is euclid's

@@ -1,0 +1,49 @@
+sbin/monkeysphere-host
+sbin/monkeysphere-authentication
+share/doc/monkeysphere/TODO
+share/doc/monkeysphere/MonkeySpec
+share/doc/monkeysphere/getting-started-user.mdwn
+share/doc/monkeysphere/getting-started-admin.mdwn
+bin/openpgp2ssh
+bin/pem2openpgp
+bin/monkeysphere
+share/monkeysphere/mh/publish_key
+share/monkeysphere/mh/import_key
+share/monkeysphere/mh/set_expire
+share/monkeysphere/mh/diagnostics
+share/monkeysphere/mh/add_hostname
+share/monkeysphere/mh/add_revoker
+share/monkeysphere/mh/revoke_hostname
+share/monkeysphere/mh/revoke_key
+share/monkeysphere/keytrans
+share/monkeysphere/defaultenv
+share/monkeysphere/VERSION
+share/monkeysphere/transitions/0.23
+share/monkeysphere/transitions/README.txt
+share/monkeysphere/ma/list_certifiers
+share/monkeysphere/ma/add_certifier
+share/monkeysphere/ma/update_users
+share/monkeysphere/ma/setup
+share/monkeysphere/ma/remove_certifier
+share/monkeysphere/ma/diagnostics
+share/monkeysphere/common
+share/monkeysphere/m/gen_subkey
+share/monkeysphere/m/ssh_proxycommand
+share/monkeysphere/m/subkey_to_ssh_agent
+share/monkeysphere/m/import_subkey
+@unexec if cmp -s %D/etc/monkeysphere/monkeysphere.conf.sample %D/etc/monkeysphere/monkeysphere.conf; then rm -f %D/etc/monkeysphere/monkeysphere.conf; fi
+etc/monkeysphere/monkeysphere.conf.sample
+@exec if [ ! -f %D/etc/monkeysphere/monkeysphere.conf ] ; then cp -p %D/%F %B/monkeysphere.conf; fi
+@unexec if cmp -s %D/etc/monkeysphere/monkeysphere-host.conf.sample %D/etc/monkeysphere/monkeysphere-host.conf; then rm -f %D/etc/monkeysphere/monkeysphere-host.conf; fi
+etc/monkeysphere/monkeysphere-host.conf.sample
+@exec if [ ! -f %D/etc/monkeysphere/monkeysphere-host.conf ] ; then cp -p %D/%F %B/monkeysphere-host.conf; fi
+@unexec if cmp -s %D/etc/monkeysphere/monkeysphere-authentication.conf.sample %D/etc/monkeysphere/monkeysphere-authentication.conf; then rm -f %D/etc/monkeysphere/monkeysphere-authentication.conf; fi
+etc/monkeysphere/monkeysphere-authentication.conf.sample
+@exec if [ ! -f %D/etc/monkeysphere/monkeysphere-authentication.conf ] ; then cp -p %D/%F %B/monkeysphere-authentication.conf; fi
+@dirrm share/doc/monkeysphere
+@dirrm share/monkeysphere/transitions
+@dirrm share/monkeysphere/mh
+@dirrm share/monkeysphere/ma
+@dirrm share/monkeysphere/m
+@dirrm share/monkeysphere
+@dirrm etc/monkeysphere

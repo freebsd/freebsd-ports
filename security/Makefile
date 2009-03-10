@@ -280,6 +280,7 @@
     SUBDIR += metasploit
     SUBDIR += mhash
     SUBDIR += mindterm-binary
+    SUBDIR += monkeysphere
     SUBDIR += mosref
     SUBDIR += mussh
     SUBDIR += mypasswordsafe
