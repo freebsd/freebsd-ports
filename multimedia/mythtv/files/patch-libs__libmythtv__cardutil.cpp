@@ -1,6 +1,6 @@
---- libs/libmythtv/cardutil.cpp~	Tue Jul 18 22:05:04 2006
-+++ libs/libmythtv/cardutil.cpp	Fri Feb 23 11:40:25 2007
-@@ -588,7 +588,7 @@
+--- ./libs/libmythtv/cardutil.cpp.orig	2008-02-02 12:42:34.000000000 -0500
++++ ./libs/libmythtv/cardutil.cpp	2009-02-23 09:59:26.000000000 -0500
+@@ -1473,7 +1473,7 @@
  {
      bool ok;
      QStringList ret;

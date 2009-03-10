@@ -1,6 +1,6 @@
---- configure.really-orig	Fri Mar 16 18:11:46 2007
-+++ configure	Thu Mar 29 16:18:29 2007
-@@ -463,6 +463,17 @@
+--- configure.orig	2008-03-04 16:23:23.000000000 -0500
++++ configure	2009-03-03 18:10:09.000000000 -0500
+@@ -1149,6 +1149,17 @@
      fi 
  fi 
  
@@ -15,23 +15,15 @@
 +    fi
 +fi
 +
- # These have to be looked up early for some types of cross-compiling to work
- cpu_overide="no"
- for opt do
-@@ -712,14 +723,14 @@
- ;;
- FreeBSD)
- joystick_menu="no"
--v4l2="no"
-+v4l2="yes"
- bktr="yes"
- audio_oss="yes"
- dv1394="no"
- make="gmake"
- backend="yes"
- v4l="yes"
--CFLAGS="$CFLAGS -pthread"
-+CFLAGS="$CFLAGS -pthread -I/usr/local/include"
- CCONFIG="$CCONFIG freebsd"
- ;;
- GNU/kFreeBSD)
+ # OS
+ targetos=$(tolower $(uname -s))
+ 
+@@ -1466,7 +1477,7 @@
+   x86_64|amd64)
+     arch="x86_32"
+     enable fast_unaligned
+-    canon_arch="`$cc -dumpmachine | sed -e 's,\([^-]*\)-.*,\1,'`"
++    canon_arch="`$cxx -dumpmachine | sed -e 's,\([^-]*\)-.*,\1,'`"
+     if [ x"$canon_arch" = x"x86_64" -o x"$canon_arch" = x"amd64" ]; then
+       if [ -z "`echo $CFLAGS | grep -- -m32`"  ]; then
+         arch="x86_64"

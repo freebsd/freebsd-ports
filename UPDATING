@@ -6,6 +6,25 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090310:
+  AFFECTS: users of multimedia/mythtv
+  AUTHOR: glarkin@FreeBSD.org
+
+  The upgrade from version 0.20 to version 0.21 should be transparent.
+  Any changes to the database structure should be applied automatically.
+
+  However, it is strongly recommended that you back up your database before
+  installing a new version of MythTV.
+
+  Example:
+	$ mysqldump -u mythtv -pmythtv mythconverg -c > mythtv_backup.sql
+
+  To restore: (assuming that you've dropped the database)
+	$ mysql -u root
+	mysql>create database mythconverg;
+	mysql>exit
+	$ mysql -u mythtv -pmythtv mythconverg < mythtv_backup.sql
+
 20090309:
   AFFECTS: users of devel/libusb on CURRENT
   AUTHOR: stas@FreeBSD.org
