@@ -22,6 +22,7 @@ lib/libgthumb.la
 lib/libgthumb.so
 libdata/bonobo/servers/GNOME_GThumb.server
 share/applications/gthumb.desktop
+share/applications/gthumb-import.desktop
 share/gthumb/albumthemes/BestFit/back.png
 share/gthumb/albumthemes/BestFit/BestFit.css
 share/gthumb/albumthemes/BestFit/BestFit.js
@@ -112,6 +113,11 @@ share/gnome/help/gthumb/C/figures/nav-button.png
 share/gnome/help/gthumb/C/figures/preferences.png
 share/gnome/help/gthumb/C/gthumb.xml
 share/gnome/help/gthumb/C/legal.xml
+share/gnome/help/gthumb/de/figures/comment.png
+share/gnome/help/gthumb/de/figures/main-win.png
+share/gnome/help/gthumb/de/figures/nav-button.png
+share/gnome/help/gthumb/de/figures/preferences.png
+share/gnome/help/gthumb/de/gthumb.xml
 share/gnome/help/gthumb/es/figures/comment.png
 share/gnome/help/gthumb/es/figures/main-win.png
 share/gnome/help/gthumb/es/figures/nav-button.png
@@ -128,6 +134,7 @@ share/gnome/help/gthumb/sv/figures/nav-button.png
 share/gnome/help/gthumb/sv/figures/preferences.png
 share/gnome/help/gthumb/sv/gthumb.xml
 share/omf/gthumb/gthumb-C.omf
+share/omf/gthumb/gthumb-de.omf
 share/omf/gthumb/gthumb-es.omf
 share/omf/gthumb/gthumb-fr.omf
 share/omf/gthumb/gthumb-sv.omf
@@ -179,6 +186,7 @@ share/locale/ro/LC_MESSAGES/gthumb.mo
 share/locale/ru/LC_MESSAGES/gthumb.mo
 share/locale/rw/LC_MESSAGES/gthumb.mo
 share/locale/sk/LC_MESSAGES/gthumb.mo
+share/locale/sl/LC_MESSAGES/gthumb.mo
 share/locale/sq/LC_MESSAGES/gthumb.mo
 share/locale/sr/LC_MESSAGES/gthumb.mo
 share/locale/sr@Latn/LC_MESSAGES/gthumb.mo
@@ -198,6 +206,8 @@ share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 @dirrm share/gnome/help/gthumb/fr
 @dirrm share/gnome/help/gthumb/es/figures
 @dirrm share/gnome/help/gthumb/es
+@dirrm share/gnome/help/gthumb/de/figures
+@dirrm share/gnome/help/gthumb/de
 @dirrm share/gnome/help/gthumb/C/figures
 @dirrm share/gnome/help/gthumb/C
 @dirrm share/gnome/help/gthumb
