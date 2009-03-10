@@ -4,7 +4,7 @@ MythTV has now been installed, but it still needs to be configured.
 
 1.  To create the database, use the following command:
 
-	mysql -uroot -p < /usr/local/share/mythtv/database/mc.sql
+	mysql -uroot -p < %%DATADIR%%/database/mc.sql
 
 2.  Next, run mythtv-setup.
 

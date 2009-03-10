@@ -1,0 +1,91 @@
+#!/bin/sh
+# $FreeBSD: /tmp/pcvs/ports/multimedia/mythtv/files/Attic/pkg-install.in,v 1.1 2009-03-10 21:08:51 glarkin Exp $
+
+PW=%%PW%%
+DATADIR=%%DATADIR%%
+LOCALBASE=%%LOCALBASE%%
+MYTHTVUSER=%%MYTHTVUSER%%
+MYTHTVGROUP=%%MYTHTVGROUP%%
+MYTHTVDIR=%%MYTHTVDIR%%
+MYTHTVUID=%%MYTHTVUID%%
+MYTHTVGID=%%MYTHTVGID%%
+PATH=/bin:/usr/sbin:/usr/bin:${LOCALBASE}/bin
+
+case $2 in
+POST-INSTALL)
+
+    if ${PW} group show "${MYTHTVGROUP}" 2>/dev/null; then
+	echo "You already have a group \"${MYTHTVGROUP}\", so I will use it."
+    else
+	if ${PW} groupadd ${MYTHTVGROUP} -g ${MYTHTVGID}; then
+	    echo "Added group \"${MYTHTVGROUP}\"."
+	else
+	    echo "Adding group \"${MYTHTVGROUP}\" failed..."
+	    exit 1
+	fi
+    fi
+
+    if ${PW} user show "${MYTHTVUSER}" 2>/dev/null; then
+	echo "You already have a user \"${MYTHTVUSER}\", so I will use it."
+    else
+	if ${PW} useradd ${MYTHTVUSER} -u ${MYTHTVUID} -g ${MYTHTVGROUP} -h - \
+	    -d ${MYTHTVDIR} -m -s /bin/sh -c "MythTV"
+	then
+	    echo "Added user \"${MYTHTVUSER}\"."
+	else
+	    echo "Adding user \"${MYTHTVUSER}\" failed..."
+	    exit 1
+	fi
+    fi
+
+# Now make the database
+    if [ -f ${LOCALBASE}/etc/rc.d/mysql-server ]; then
+	pgrep mysqld > /dev/null
+	if [ $? -ne 0 ]; then
+	    ${LOCALBASE}/etc/rc.d/mysql-server start
+	    if [ $? -ne 0 ]; then
+		echo '*** Unable to start mysqld'
+		exit 1
+	    else
+		pgrep mysqld > /dev/null
+	        if [ $? -ne 0 ]; then
+		    echo '*** Unable to start mysqld'
+		    exit 1
+		fi
+	    fi
+	fi
+	# Try to create the database
+	mysql < ${DATADIR}/database/mc.sql
+	if [ $? -ne 0 ]; then
+	  cat <<EOF
+*********************************************************************
+Database creation failed.  Please read the output above and create it
+manually.  The commands to create the database are in
+${DATADIR}/database/mc.sql.
+*********************************************************************
+EOF
+	  else
+	    echo Created database mythconverg.	
+	fi
+    else
+	cat <<EOF
+
+No MySQL server found.	If you want to run the database on this
+machine, please install the latest MySQL server and then create the
+database with this command:
+
+    mysql < ${DATADIR}/database/mc.sql
+EOF
+
+    fi
+
+cat <<EOF
+
+To set up mythtv, first assign a password to user mythtv, then log in
+as mythtv and run
+
+    mythtv-setup
+EOF
+    ;;
+
+esac

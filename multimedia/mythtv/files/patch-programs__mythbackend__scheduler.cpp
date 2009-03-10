@@ -1,6 +1,6 @@
---- programs/mythbackend/scheduler.cpp~	Sat Sep  9 13:50:38 2006
-+++ programs/mythbackend/scheduler.cpp	Mon Jan 15 14:06:50 2007
-@@ -1578,7 +1578,7 @@
+--- ./programs/mythbackend/scheduler.cpp.orig	2008-02-20 22:23:22.000000000 -0500
++++ ./programs/mythbackend/scheduler.cpp	2009-02-23 09:59:26.000000000 -0500
+@@ -2054,7 +2054,7 @@
      gContext->dispatch(me);
  
      QString halt_cmd = gContext->GetSetting("ServerHaltCommand",

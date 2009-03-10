@@ -1,5 +1,5 @@
---- libs/libmythfreemheg/Programs.cpp~	Fri Mar 16 18:11:34 2007
-+++ libs/libmythfreemheg/Programs.cpp	Sat Apr  7 11:41:11 2007
+--- ./libs/libmythfreemheg/Programs.cpp.orig	2007-03-29 15:44:23.000000000 -0400
++++ ./libs/libmythfreemheg/Programs.cpp	2009-02-23 09:59:26.000000000 -0500
 @@ -30,7 +30,15 @@
  #include "freemheg.h"
  

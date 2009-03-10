@@ -1,6 +1,6 @@
---- programs/mythtv-setup/backendsettings.cpp~	Sat Aug 26 13:34:08 2006
-+++ programs/mythtv-setup/backendsettings.cpp	Mon Jan 15 14:07:17 2007
-@@ -386,7 +386,7 @@
+--- ./programs/mythtv-setup/backendsettings.cpp.orig	2008-02-05 12:52:11.000000000 -0500
++++ ./programs/mythtv-setup/backendsettings.cpp	2009-02-23 09:59:26.000000000 -0500
+@@ -425,7 +425,7 @@
  {
      GlobalLineEdit *gc = new GlobalLineEdit("ServerHaltCommand");
      gc->setLabel(QObject::tr("Server halt command"));
