@@ -81,7 +81,6 @@ bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator/Schema/Table.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Trigger.pm
 %%SITE_PERL%%/SQL/Translator/Schema/View.pm
-%%SITE_PERL%%/SQL/Translator/Shell.pm
 %%SITE_PERL%%/SQL/Translator/Utils.pm
 %%SITE_PERL%%/Test/SQL/Translator.pm
 @dirrm %%SITE_PERL%%/Test/SQL

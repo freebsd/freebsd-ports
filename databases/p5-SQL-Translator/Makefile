@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SQL-Translator
-PORTVERSION=	0.09.002
+PORTVERSION=	0.09.004
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,23 +15,27 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Manipulate structured data definitions (SQL and more)
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/Base.pm:${PORTSDIR}/devel/p5-Class-Base \
-		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
-		${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz \
-		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
-		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser \
-		${SITE_PERL}/Spreadsheet/ParseExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel \
-		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/Text/RecordParser.pm:${PORTSDIR}/textproc/p5-Text-RecordParser \
-		${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
-		${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		${SITE_PERL}/Class/MakeMethods.pm:${PORTSDIR}/devel/p5-Class-MakeMethods \
-		${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl
+BUILD_DEPENDS=	p5-Class-Base>=0:${PORTSDIR}/devel/p5-Class-Base \
+		p5-Class-Data-Inheritable>=0.02:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-Class-MakeMethods>=0:${PORTSDIR}/devel/p5-Class-MakeMethods \
+		p5-Digest-SHA1>=2.0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-IO>=0:${PORTSDIR}/devel/p5-IO \
+		p5-Parse-RecDescent>=1.94:${PORTSDIR}/devel/p5-Parse-RecDescent \
+		p5-Pod-Parser>=0:${PORTSDIR}/textproc/p5-Pod-Parser \
+		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-Template-Toolkit>=2.10:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
+		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz \
+		p5-Graph>=0:${PORTSDIR}/math/p5-Graph \
+		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
+		p5-Spreadsheet-ParseExcel>=0.2602:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel \
+		p5-Text-ParseWords>=0:${PORTSDIR}/textproc/p5-Text-ParseWords \
+		p5-Text-RecordParser>=0.02:${PORTSDIR}/textproc/p5-Text-RecordParser \
+		p5-XML-Writer>=0.500:${PORTSDIR}/textproc/p5-XML-Writer \
+		p5-XML-XPath>=1.13:${PORTSDIR}/textproc/p5-XML-XPath \
+		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \
+		p5-YAML>=0.39:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
