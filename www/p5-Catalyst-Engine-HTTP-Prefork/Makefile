@@ -27,7 +27,7 @@ PERL_CONFIGURE=	5.8.1+
 MAN3=		Catalyst::Engine::HTTP::Prefork.3
 
 post-patch:
-	${REINPLACE_CMD} -e 's/Cookie::XS/CGI::Cookie::XS/g' \
+	${REINPLACE_CMD} -i '' -e 's/Cookie::XS/CGI::Cookie::XS/g' \
 		${WRKSRC}/lib/Catalyst/Engine/HTTP/Prefork/Handler.pm
 
 .include <bsd.port.mk>
