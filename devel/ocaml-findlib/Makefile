@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	findlib
-PORTVERSION=	1.2.1
-PORTREVISION=	0
+PORTVERSION=	1.2.4
 CATEGORIES=	devel
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	OCaml package manager
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
