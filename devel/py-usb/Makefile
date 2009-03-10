@@ -8,15 +8,12 @@
 PORTNAME=	pyusb
 PORTVERSION=	0.4.1
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		${MASTER_SITE_BERLIOS}
-MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	R.Mahmatkhanov@SKYLINK.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python wrapper around libusb
-
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -25,7 +22,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/usb.so
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800069
-LIB_DEPENDS+=	${LOCALBASE}/lib/libusb.so:${PORTSDIR}/devel/libusb
+LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 .endif
 
 .include <bsd.port.post.mk>
