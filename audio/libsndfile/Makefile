@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsndfile
-PORTVERSION=	1.0.18
+PORTVERSION=	1.0.19
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/libsndfile/
 
@@ -37,10 +37,6 @@ LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's/vorbis >= 1\.2\.1/vorbis >= 1.2.0/g' \
-		-e 's/vorbisenc >= 1\.2\.1/vorbisenc >= 1.2.0/g' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/ doc / /g' ${WRKSRC}/Makefile.in
 
 post-install:
