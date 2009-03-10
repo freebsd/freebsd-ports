@@ -20,9 +20,11 @@ lib/seed7/encoding.s7i
 lib/seed7/field.s7i
 lib/seed7/float.s7i
 lib/seed7/getf.s7i
+lib/seed7/gethttp.s7i
 lib/seed7/graph.s7i
 lib/seed7/gtkserver.s7i
 lib/seed7/gzip.s7i
+lib/seed7/html.s7i
 lib/seed7/html_ent.s7i
 lib/seed7/keybd.s7i
 lib/seed7/line.s7i
@@ -49,6 +51,7 @@ lib/seed7/tee.s7i
 lib/seed7/time.s7i
 lib/seed7/upper.s7i
 lib/seed7/utf8.s7i
+lib/seed7/utf16.s7i
 lib/seed7/window.s7i
 lib/seed7/wrinum.s7i
 %%PORTDOCS%%%%DOCSDIR%%/chlog.txt
@@ -84,6 +87,7 @@ lib/seed7/wrinum.s7i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chkexc.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chkflt.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chkhent.sd7
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chkhsh.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chkint.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chkprc.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chkscan.sd7
@@ -131,6 +135,7 @@ lib/seed7/wrinum.s7i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/red.dna
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rever.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/roman.sd7
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/savehd7.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/self.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shisen.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sl.sd7
