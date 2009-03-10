@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	tokyocabinet
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.9
 CATEGORIES=	databases
-MASTER_SITES=	http://tokyocabinet.sourceforge.net/
+MASTER_SITES=	SOURCEFORGE \
+		http://tokyocabinet.sourceforge.net/
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A modern implementation of DBM
@@ -77,10 +78,10 @@ CONFIGURE_ARGS+=	--disable-pthread
 CONFIGURE_ARGS+=	--disable-shared
 .endif
 
-SHLIB_VER=	7.9.0
+SHLIB_VER=	7.14.0
 SHLIB_VER_MAJ=	7
 
-PLIST_SUB+= SHLIB_VER=${SHLIB_VER} SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
+PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
 
 # Because gnomehack will search "(libdir)" and it doesn't work, we need
 # to patch it manually.
