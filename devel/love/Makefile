@@ -7,7 +7,7 @@
 
 PORTNAME=	love
 DISTVERSION=	0.5-0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games devel
 MASTER_SITES=	SF
 
@@ -18,8 +18,6 @@ LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
 		physfs-1.0.1:${PORTSDIR}/devel/physfs \
 		freetype.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
-
-BROKEN=		does not compile
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
