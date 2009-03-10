@@ -1,0 +1,40 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/NetApp.pm
+%%SITE_PERL%%/NetApp/Aggregate.pm
+%%SITE_PERL%%/NetApp/Aggregate.pod
+%%SITE_PERL%%/NetApp/Aggregate/Plex.pm
+%%SITE_PERL%%/NetApp/Aggregate/Plex.pod
+%%SITE_PERL%%/NetApp/Aggregate/RAIDGroup.pm
+%%SITE_PERL%%/NetApp/Aggregate/RAIDGroup.pod
+%%SITE_PERL%%/NetApp/Filer.pm
+%%SITE_PERL%%/NetApp/Filer.pod
+%%SITE_PERL%%/NetApp/Filer/Export.pm
+%%SITE_PERL%%/NetApp/Filer/Export.pod
+%%SITE_PERL%%/NetApp/Filer/License.pm
+%%SITE_PERL%%/NetApp/Filer/License.pod
+%%SITE_PERL%%/NetApp/Filer/Option.pm
+%%SITE_PERL%%/NetApp/Filer/Option.pod
+%%SITE_PERL%%/NetApp/Filer/TimeoutCache.pm
+%%SITE_PERL%%/NetApp/Filer/Version.pm
+%%SITE_PERL%%/NetApp/Filer/Version.pod
+%%SITE_PERL%%/NetApp/Qtree.pm
+%%SITE_PERL%%/NetApp/Qtree.pod
+%%SITE_PERL%%/NetApp/Snapmirror.pm
+%%SITE_PERL%%/NetApp/Snapmirror.pod
+%%SITE_PERL%%/NetApp/Snapmirror/Destination.pm
+%%SITE_PERL%%/NetApp/Snapmirror/Source.pm
+%%SITE_PERL%%/NetApp/Snapshot.pm
+%%SITE_PERL%%/NetApp/Snapshot.pod
+%%SITE_PERL%%/NetApp/Snapshot/Delta.pm
+%%SITE_PERL%%/NetApp/Snapshot/Delta.pod
+%%SITE_PERL%%/NetApp/Snapshot/Schedule.pm
+%%SITE_PERL%%/NetApp/Snapshot/Schedule.pod
+%%SITE_PERL%%/NetApp/Volume.pm
+%%SITE_PERL%%/NetApp/Volume.pod
+%%SITE_PERL%%/NetApp/Volume/Source.pm
+@dirrmtry %%SITE_PERL%%/NetApp/Volume
+@dirrmtry %%SITE_PERL%%/NetApp/Snapshot
+@dirrmtry %%SITE_PERL%%/NetApp/Snapmirror
+@dirrmtry %%SITE_PERL%%/NetApp/Filer
+@dirrmtry %%SITE_PERL%%/NetApp/Aggregate
+@dirrmtry %%SITE_PERL%%/NetApp

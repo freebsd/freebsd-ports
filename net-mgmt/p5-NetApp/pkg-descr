@@ -1,0 +1,21 @@
+This package provides a suite of modules for managing NetApp's NAS
+devices, commonly referred to as "filers".
+
+This is the first public release of my NetApp Perl API, and although I
+consider the code to be very stable, the API should be considered
+experimental.  The convention I will be following regarding
+non-compatible API changes is as follows.  I'm using a
+major.minor.subminor release naming convention, and I will promise to
+NOT make non-backwards compatible changes between subminor releases.
+
+However, in order to allow the API to evolve, it is entirely possible
+that non-backwards compatible changes will be made between minor
+releases.  IOW, the major.minor release numbers can be considered an
+API version.  Any changes to 1.1.0, 1.1.2, etc. must be backwards
+compatible with the previous 1.1.* releases.
+
+There is no guarantee that 1.2.0 will be 100% backwards compatible,
+although such changes will be made only when justified.  The author
+does not believe in infinite backwards compatibility.
+
+WWW:	http://search.cpan.org/dist/NetApp/
