@@ -85,6 +85,8 @@ share/locale/zh/LC_MESSAGES/rails.mo
 share/locale/zh/LC_MESSAGES/rgettext.mo
 share/locale/zh_TW/LC_MESSAGES/rails.mo
 share/locale/zh_TW/LC_MESSAGES/rgettext.mo
+@dirrmtry share/locale/ua/LC_MESSAGES
+@dirrmtry share/locale/ua
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/README
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/README
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/Rakefile
