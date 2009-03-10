@@ -13,10 +13,10 @@
 %%SITE_PERL%%/Data/ICal/Entry/Todo.pm
 %%SITE_PERL%%/Data/ICal/Property.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ICal/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ICal
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrmtry %%SITE_PERL%%/Data/ICal/Entry/TimeZone
 @dirrmtry %%SITE_PERL%%/Data/ICal/Entry/Alarm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ICal
-@dirrm %%SITE_PERL%%/Data/ICal/Entry
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/Data/ICal/Entry
 @dirrmtry %%SITE_PERL%%/Data/ICal
 @dirrmtry %%SITE_PERL%%/Data
