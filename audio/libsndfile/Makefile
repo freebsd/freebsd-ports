@@ -17,7 +17,8 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--disable-gcc-pipe \
-		--disable-sqlite
+		--disable-sqlite \
+		--disable-octave
 CONFIGURE_ENV=	CPPFLAGS="-isystem /usr/include -isystem ${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
