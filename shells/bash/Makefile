@@ -7,9 +7,9 @@
 #
 
 PORTNAME=		bash
-PATCHLEVEL=		48
-PORTVERSION=		3.2.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=	1
+PATCHLEVEL=		0
+PORTVERSION=		4.0.${PATCHLEVEL:S/^0//g}
+PORTREVISION?=		0
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
 			ftp://ftp.cwru.edu/pub/%SUBDIR%/:faq
@@ -22,9 +22,9 @@ EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 PATCH_SITES=		${MASTER_SITE_GNU} \
 			ftp://ftp.cwru.edu/pub/%SUBDIR%/
 PATCH_SITE_SUBDIR=	${PORTNAME}/${DISTNAME}-patches/
-PATCHFILES!=		/usr/bin/jot -s " " -w \
-			${PORTNAME}${PORTVERSION:R:S/.//g}-%03d \
-			${PATCHLEVEL} 1 ${PATCHLEVEL}
+#PATCHFILES!=		/usr/bin/jot -s " " -w \
+#			${PORTNAME}${PORTVERSION:R:S/.//g}-%03d \
+#			${PATCHLEVEL} 1 ${PATCHLEVEL}
 
 MAINTAINER=		obrien@FreeBSD.org
 COMMENT=		The GNU Project's Bourne Again SHell
