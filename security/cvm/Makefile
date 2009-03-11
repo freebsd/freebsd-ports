@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cvm
-PORTVERSION=	0.82
-PORTREVISION=	2
+PORTVERSION=	0.95
 CATEGORIES=	security
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 		http://untroubled.org/${PORTNAME}/archive/
@@ -15,19 +14,21 @@ MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Credential Validation Modules
 
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool15
 LIB_DEPENDS=	bg.2:${PORTSDIR}/devel/bglibs
 
 CONFLICTS=	bglibs-1.00*
 
-USE_GPG=	yes
-SIG_SUFFIX=	.sig
+USE_AUTOTOOLS=	libtool:15
+LIBTOOLFILES=	#none
 USE_LDCONFIG=	yes
 LDFLAGS?=	-s
 BGLIBS_INC=	${LOCALBASE}/include/bglibs
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
 
 DOCS=		NEWS README TODO *.html
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|libtool|${LIBTOOL}|g' ${WRKSRC}/Makefile
 
 do-configure:
 	${ECHO_CMD} "${PREFIX}"		> ${WRKSRC}/conf-home
