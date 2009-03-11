@@ -7,6 +7,7 @@
 
 PORTNAME=	clive
 PORTVERSION=	0.4.5
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	ljclive
@@ -14,10 +15,17 @@ MASTER_SITE_SUBDIR=	ljclive
 MAINTAINER=	johans@stack.nl
 COMMENT=	A command line client for posting LiveJournal entries
 
+USE_ICONV=	yes
+
 MAN1=	clive.1
 
 GNU_CONFIGURE=	yes
 
 CONFLICTS=	*clive-[1-9]*
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} 's/iconv "iconv/"iconv/' ${WRKSRC}/configure
+
+.include <bsd.port.post.mk>
