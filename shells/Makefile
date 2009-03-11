@@ -7,6 +7,7 @@
     SUBDIR += bash
     SUBDIR += bash-completion
     SUBDIR += bash-static
+    SUBDIR += bash3
     SUBDIR += bashc
     SUBDIR += bush
     SUBDIR += ch
