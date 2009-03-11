@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	wired-tracker
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.zankasoftware.com/dist/
+DISTNAME=	wiredtracker-${PORTVERSION}
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Wired tracker
@@ -17,6 +18,7 @@ COMMENT=	Wired tracker
 # use some common files, like wired/etc/resolv.conf.
 RUN_DEPENDS=	${LOCALBASE}/sbin/wired:${PORTSDIR}/net/wired
 
+WRKSRC=		${WRKDIR}/wired-tracker-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_RC_SUBR=	trackerd.sh
