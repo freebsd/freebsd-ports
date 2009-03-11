@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	roundcube
-DISTVERSION=	0.2
+DISTVERSION=	0.2.1
 PORTEPOCH=	1
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}mail
-DISTNAME=	${PORTNAME}mail-${DISTVERSION}-stable
+DISTNAME=	${PORTNAME}mail-${DISTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 
-WRKSRC=		${WRKDIR}/${PORTNAME}mail-${DISTVERSION}-stable
 NO_BUILD=	yes
 
 RCUBECOMP=	SQL bin config index.php logs program robots.txt skins temp
@@ -87,12 +86,12 @@ post-patch:
 .if defined(WITH_REPLACE_MAIL_URL)
 	@${REINPLACE_CMD} "s/'mail'/'${MAIL}'/g" ${WRKSRC}/index.php \
 		${WRKSRC}/program/include/rcmail.php \
+		${WRKSRC}/program/js/app.js \
 		${WRKSRC}/program/localization/*/labels.inc \
 		${WRKSRC}/program/steps/addressbook/mailto.inc
 	@${REINPLACE_CMD} "s/_task=mail/_task=${MAIL}/g" \
 		${WRKSRC}/program/steps/mail/rss.inc
 	@${REINPLACE_CMD} "s/\"mail\"/\"${MAIL}\"/g" \
-		${WRKSRC}/program/js/app.js \
 		${WRKSRC}/skins/default/includes/header.html \
 		${WRKSRC}/skins/default/includes/taskbar.html
 	@${REINPLACE_CMD} "s/mail.gif/${MAIL}.gif/g" \
