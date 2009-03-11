@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	coppermine
-PORTVERSION=	1.4.20
+PORTVERSION=	1.4.21
 CATEGORIES=	www
 MASTER_SITES=	SF
-DISTNAME=	cpg1.4.20
+DISTNAME=	cpg1.4.21
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A web picture gallery script
@@ -25,7 +25,7 @@ USE_PHP+=	gd
 
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
-WRKSRC=		${WRKDIR}/cpg${PORTVERSION:S/.//g}
+WRKSRC=		${WRKDIR}/cpg14x
 DOCFILES=	CHANGELOG COPYING README.txt
 
 SUB_FILES+=	pkg-message
