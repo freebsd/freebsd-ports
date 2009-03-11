@@ -1,6 +1,6 @@
-bpkg is a simple tool written in sh(1) for displaying information about ports.
-Its main goal is to provide a quick way to display all kinds of useful info
-about installed ports and the whole ports tree.
+bpkg is a simple tool written in sh(1) for displaying information about
+ports.  Its main goal is to provide a quick way to display all kinds of
+useful info about installed ports and the whole ports tree.
 
 -- Andy Kosela
 <akosela@andykosela.com>
