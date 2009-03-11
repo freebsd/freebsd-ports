@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tagadelic
-DISTVERSION=	6.x-1.0
+DISTVERSION=	6.x-1.2
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
@@ -14,10 +14,15 @@ MAINTAINER=	rea-fbsd@codelabs.ru
 COMMENT=	Tagadelic module for Drupal 6
 
 DRUPAL6_MODULE=	yes
-MODULE_DIRS=	po
-MODULE_FILES=	tagadelic.css tagadelic.info tagadelic.module \
-		po/de.po po/es.po po/fr.po po/gl.po po/he.po po/hu.po \
-		po/ja.po po/nl.po po/ru.po po/tagadelic.pot
+MODULE_DIRS=	translations
+MODULE_FILES=	tagadelic.css tagadelic.info tagadelic.install \
+		tagadelic.module \
+		translations/zh-hans.po translations/de.po \
+		translations/es.po translations/fr.po \
+		translations/gl.po translations/he.po \
+		translations/hu.po translations/ja.po \
+		translations/nl.po translations/pl.po \
+		translations/ru.po translations/tagadelic.pot
 DOC_FILES=	LICENSE.txt README.txt
 
 .include <bsd.port.pre.mk>
