@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	TheSchwartz
-PORTVERSION=	1.04
+PORTVERSION=	1.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRADFITZ
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Reliable job queue
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
@@ -21,5 +21,9 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Dig
 PERL_CONFIGURE=	5.8.0+
 
 MAN3=		TheSchwartz.3 TheSchwartz::Job.3 TheSchwartz::Worker.3
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/extras/check_schwartz ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/extras/thetop ${PREFIX}/bin/
 
 .include <bsd.port.mk>
