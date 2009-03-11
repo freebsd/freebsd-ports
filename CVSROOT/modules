@@ -7186,6 +7186,7 @@ libgda3-postgresql              ports/databases/libgda3-postgresql
 libgda3-reference               ports/databases/libgda3-reference
 libgda4                         ports/databases/libgda4
 libgda4-bdb                     ports/databases/libgda4-bdb
+libgda4-jdbc                    ports/databases/libgda4-jdbc
 libgda4-mdb                     ports/databases/libgda4-mdb
 libgda4-mysql                   ports/databases/libgda4-mysql
 libgda4-postgresql              ports/databases/libgda4-postgresql
@@ -8621,6 +8622,7 @@ monit                           ports/sysutils/monit
 monitord                        ports/sysutils/monitord
 monkey                          ports/www/monkey
 monkeybubble                    ports/games/monkeybubble
+monkeysphere                    ports/security/monkeysphere
 monkeytail                      ports/sysutils/monkeytail
 mono                            ports/lang/mono
 mono-addins                     ports/devel/mono-addins
@@ -9994,6 +9996,7 @@ p5-Best                         ports/devel/p5-Best
 p5-Bigtop                       ports/www/p5-Bigtop
 p5-Bio-ASN1-EntrezGene          ports/biology/p5-Bio-ASN1-EntrezGene
 p5-Bio-Das                      ports/biology/p5-Bio-Das
+p5-Bio-Graphics                 ports/biology/p5-Bio-Graphics
 p5-Bio-Phylo                    ports/biology/p5-Bio-Phylo
 p5-Bit-ShiftReg                 ports/math/p5-Bit-ShiftReg
 p5-Bit-Vector                   ports/math/p5-Bit-Vector
@@ -11930,6 +11933,7 @@ p5-NetAddr-IP                   ports/net-mgmt/p5-NetAddr-IP
 p5-NetAddr-IP-Count             ports/net/p5-NetAddr-IP-Count
 p5-NetAddr-IP-Find              ports/textproc/p5-NetAddr-IP-Find
 p5-NetAddr-IP-Lite              ports/net-mgmt/p5-NetAddr-IP-Lite
+p5-NetApp                       ports/net-mgmt/p5-NetApp
 p5-NetCDF                       ports/math/p5-NetCDF
 p5-NetPacket                    ports/net/p5-NetPacket
 p5-News-Article                 ports/news/p5-News-Article
@@ -13287,6 +13291,7 @@ p5-bigtop                       ports/www/p5-Bigtop
 p5-bind-conf_parser             ports/dns/p5-BIND-Conf_Parser
 p5-bio-asn1-entrezgene          ports/biology/p5-Bio-ASN1-EntrezGene
 p5-bio-das                      ports/biology/p5-Bio-Das
+p5-bio-graphics                 ports/biology/p5-Bio-Graphics
 p5-bio-phylo                    ports/biology/p5-Bio-Phylo
 p5-bioperl                      ports/biology/p5-bioperl
 p5-bioperl-devel                ports/biology/p5-bioperl-devel
@@ -15260,6 +15265,7 @@ p5-netaddr-ip                   ports/net-mgmt/p5-NetAddr-IP
 p5-netaddr-ip-count             ports/net/p5-NetAddr-IP-Count
 p5-netaddr-ip-find              ports/textproc/p5-NetAddr-IP-Find
 p5-netaddr-ip-lite              ports/net-mgmt/p5-NetAddr-IP-Lite
+p5-netapp                       ports/net-mgmt/p5-NetApp
 p5-netcdf                       ports/math/p5-NetCDF
 p5-netpacket                    ports/net/p5-NetPacket
 p5-news-article                 ports/news/p5-News-Article
