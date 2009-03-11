@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wire
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.zankasoftware.com/dist/ \
 		${MASTER_SITE_LOCAL}
