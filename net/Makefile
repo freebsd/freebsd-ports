@@ -245,6 +245,7 @@
     SUBDIR += isc-dhcp31-relay
     SUBDIR += isc-dhcp31-server
     SUBDIR += iscsi-target
+    SUBDIR += istgt
     SUBDIR += iwi-firmware
     SUBDIR += iwi-firmware-kmod
     SUBDIR += jags
