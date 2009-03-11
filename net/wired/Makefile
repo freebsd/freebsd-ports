@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wired
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.zankasoftware.com/dist/
 
