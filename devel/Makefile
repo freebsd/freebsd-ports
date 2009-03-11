@@ -983,6 +983,7 @@
     SUBDIR += p5-B-Graph
     SUBDIR += p5-B-Hooks-EndOfScope
     SUBDIR += p5-B-Hooks-OP-Check
+    SUBDIR += p5-B-Hooks-Parser
     SUBDIR += p5-B-Keywords
     SUBDIR += p5-B-OPCheck
     SUBDIR += p5-B-Size
