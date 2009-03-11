@@ -360,6 +360,7 @@
     SUBDIR += lws
     SUBDIR += lynx
     SUBDIR += lynx-current
+    SUBDIR += mahara
     SUBDIR += mambo
     SUBDIR += man2web
     SUBDIR += mathopd
