@@ -1,7 +1,8 @@
 bin/rawstudio
 share/applications/rawstudio.desktop
 share/icons/rawstudio.png
-share/locale/cz/LC_MESSAGES/rawstudio.mo
+share/locale/ca/LC_MESSAGES/rawstudio.mo
+share/locale/cs/LC_MESSAGES/rawstudio.mo
 share/locale/da/LC_MESSAGES/rawstudio.mo
 share/locale/de/LC_MESSAGES/rawstudio.mo
 share/locale/en/LC_MESSAGES/rawstudio.mo
@@ -10,8 +11,11 @@ share/locale/fi/LC_MESSAGES/rawstudio.mo
 share/locale/fr/LC_MESSAGES/rawstudio.mo
 share/locale/it/LC_MESSAGES/rawstudio.mo
 share/locale/nb/LC_MESSAGES/rawstudio.mo
+share/locale/nl/LC_MESSAGES/rawstudio.mo
 share/locale/pl/LC_MESSAGES/rawstudio.mo
+share/locale/pt_BR/LC_MESSAGES/rawstudio.mo
 share/locale/ru/LC_MESSAGES/rawstudio.mo
+share/locale/sv/LC_MESSAGES/rawstudio.mo
 share/pixmaps/rawstudio/overlay_deleted.png
 share/pixmaps/rawstudio/overlay_exported.png
 share/pixmaps/rawstudio/overlay_priority1.png
