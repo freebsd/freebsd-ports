@@ -1,5 +1,5 @@
 --- base/tcppack.c.orig	2002-09-09 21:02:58.000000000 +0000
-+++ base/tcppack.c	2009-03-11 09:09:07.000000000 +0000
++++ base/tcppack.c	2009-03-11 19:40:48.000000000 +0000
 @@ -222,7 +222,6 @@
      int r,_status;
      tcp_seq seq,right_edge;
@@ -61,13 +61,4 @@
 +      _seg.next=stream->oo_queue;
        _seg.p=p;
        _seg.s_seq=seq;
- 
-@@ -422,6 +425,8 @@
-     
-     l=_seq - (s)->s_seq; /* number of bytes to trim
-                             from the left of s */ 
-+    if(l < 1) return(0);
-+
-     off=(s)->p->tcp->th_off*4; 
-     if(l>((s)->p->len-off)) ERETURN(R_BAD_DATA);
  

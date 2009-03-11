@@ -7,7 +7,7 @@
 
 PORTNAME=	ssldump
 PORTVERSION=	0.9b3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net security
 MASTER_SITES=	http://www.rtfm.com/ssldump/
 
