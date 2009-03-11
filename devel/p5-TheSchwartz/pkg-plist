@@ -1,4 +1,7 @@
+@comment $FreeBSD$
+bin/check_schwartz
 bin/schwartzmon
+bin/thetop
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/TheSchwartz/.packlist
 %%SITE_PERL%%/TheSchwartz.pm
 %%SITE_PERL%%/TheSchwartz/Error.pm
