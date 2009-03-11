@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Coro
-PORTVERSION=	4.74.8
+PORTVERSION=	5.13
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -18,6 +18,8 @@ COMMENT=	Coroutine process abstraction for perl
 
 RUN_DEPENDS=	p5-Event>=0.89:${PORTSDIR}/devel/p5-Event \
 		p5-AnyEvent>=2.5.1:${PORTSDIR}/devel/p5-AnyEvent \
+		p5-EV>=3.53:${PORTSDIR}/devel/p5-EV \
+		p5-Storable>=2.15:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/${PERL_ARCH}/IO/AIO.pm:${PORTSDIR}/devel/p5-IO-AIO
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
@@ -28,7 +30,8 @@ MAN3=		Coro.3 Coro::AIO.3 Coro::AnyEvent.3 Coro::Channel.3 \
 		Coro::LWP.3 Coro::MakeMaker.3 Coro::RWLock.3 Coro::Select.3 \
 		Coro::Semaphore.3 Coro::SemaphoreSet.3 Coro::Signal.3 \
 		Coro::Socket.3 Coro::Specific.3 Coro::State.3 Coro::Storable.3 \
-		Coro::Timer.3 Coro::Util.3 Coro::Event.3
+		Coro::Timer.3 Coro::Util.3 Coro::Event.3 \
+		Coro::Intro.3 Coro::EV.3
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
