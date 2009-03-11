@@ -1,10 +1,6 @@
-#
-# new shopt `colonbreakswords'
-# http://lists.gnu.org/archive/html/bug-bash/2004-10/msg00190.html
-#
---- bashline.c.orig	Sat Nov  5 18:07:02 2005
-+++ bashline.c	Wed Dec 28 19:44:28 2005
-@@ -212,6 +212,11 @@
+--- bashline.c.orig	2009-01-08 06:29:24.000000000 -0800
++++ bashline.c	2009-03-08 01:00:50.000000000 -0800
+@@ -226,6 +226,11 @@ int bash_readline_initialized = 0;
     host list. */
  int perform_hostname_completion = 1;
  
@@ -16,7 +12,7 @@
  /* If non-zero, we don't do command completion on an empty line. */
  int no_empty_command_completion;
  
-@@ -222,7 +227,8 @@
+@@ -239,7 +244,8 @@ int dircomplete_spelling = 0;
  
  static char *bash_completer_word_break_characters = " \t\n\"'@><=;|&(:";
  static char *bash_nohostname_word_break_characters = " \t\n\"'><=;|&(:";
@@ -26,7 +22,7 @@
  
  static rl_hook_func_t *old_rl_startup_hook = (rl_hook_func_t *)NULL;
  
-@@ -325,6 +331,80 @@
+@@ -351,6 +357,80 @@ enable_hostname_completion (on_or_off)
    return (old_value);
  }
  
@@ -107,7 +103,7 @@
  /* Called once from parse.y if we are going to use readline. */
  void
  initialize_readline ()
-@@ -485,8 +565,12 @@
+@@ -517,11 +597,16 @@ initialize_readline ()
       completion is enabled. */
    enable_hostname_completion (perform_hostname_completion);
  
@@ -117,34 +113,38 @@
 +  enable_colon_wordbreak (colon_is_wordbreak);
 +
    /* characters that need to be quoted when appearing in filenames. */
--  rl_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!:{";	/*}*/
+ #if 0
+   rl_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!:{";	/*}*/
+ #else
+-  rl_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!:{~";	/*}*/
++//  rl_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!:{~";	/*}*/
+ #endif
    rl_filename_quoting_function = bash_quote_filename;
    rl_filename_dequoting_function = bash_dequote_filename;
-   rl_char_is_quoted_p = char_is_quoted;
---- builtins/shopt.def.orig	Wed Dec 28 19:38:09 2005
-+++ builtins/shopt.def	Wed Dec 28 19:44:28 2005
-@@ -83,6 +83,8 @@
- extern int hist_verify, history_reediting, perform_hostname_completion;
- extern int no_empty_command_completion;
- extern int force_fignore;
+--- builtins/shopt.def.orig	2009-01-13 05:43:16.000000000 -0800
++++ builtins/shopt.def	2009-03-08 01:03:39.000000000 -0800
+@@ -96,6 +97,8 @@ extern int force_fignore;
+ extern int dircomplete_spelling;
+ 
+ extern int enable_hostname_completion __P((int));
 +extern int colon_is_wordbreak;
 +extern int enable_colon_wordbreak __P((int));
- extern int enable_hostname_completion __P((int));
  #endif
  
-@@ -121,6 +123,9 @@
-   { "checkwinsize", &check_window_size, (shopt_set_func_t *)NULL },
- #if defined (HISTORY)
-   { "cmdhist", &command_oriented_history, (shopt_set_func_t *)NULL },
-+#endif
+ #if defined (PROGRAMMABLE_COMPLETION)
+@@ -147,6 +150,9 @@ static struct {
+ #if defined (READLINE)
+   { "dirspell", &dircomplete_spelling, (shopt_set_func_t *)NULL },
+ #endif
 +#if defined (READLINE)
 +  { "colonbreakswords", &colon_is_wordbreak, enable_colon_wordbreak },
- #endif
++#endif
    { "dotglob", &glob_dot_filenames, (shopt_set_func_t *)NULL },
    { "execfail", &no_exit_on_failed_exec, (shopt_set_func_t *)NULL },
---- doc/bash.1.orig	Wed Dec 28 19:38:09 2005
-+++ doc/bash.1	Wed Dec 28 19:44:28 2005
-@@ -7972,6 +7972,18 @@
+   { "expand_aliases", &expand_aliases, (shopt_set_func_t *)NULL },
+--- doc/bash.1.orig	2009-03-08 00:53:01.000000000 -0800
++++ doc/bash.1	2009-03-08 01:05:32.000000000 -0800
+@@ -8473,6 +8473,18 @@ attempts to save all lines of a multiple
  command in the same history entry.  This allows
  easy re-editing of multi-line commands.
  .TP 8
@@ -160,12 +160,12 @@
 +above).
 +This is enabled by default.
 +.TP 8
- .B dotglob
- If set, 
+ .B compat31
+ If set,
  .B bash
---- doc/bashref.texi.orig	Wed Dec 28 19:38:09 2005
-+++ doc/bashref.texi	Wed Dec 28 19:44:28 2005
-@@ -3598,6 +3598,11 @@
+--- doc/bashref.texi.orig	2009-03-08 00:53:01.000000000 -0800
++++ doc/bashref.texi	2009-03-08 01:07:00.000000000 -0800
+@@ -4321,6 +4321,11 @@ attempts to save all lines of a multiple
  command in the same history entry.  This allows
  easy re-editing of multi-line commands.
  
@@ -174,6 +174,3 @@
 +separating word being completed (@pxref{Commands For Completion}).
 +This option is enabled by default.
 +
- @item dotglob
- If set, Bash includes filenames beginning with a `.' in
- the results of filename expansion.
