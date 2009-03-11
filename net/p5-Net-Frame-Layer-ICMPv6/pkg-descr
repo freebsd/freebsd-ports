@@ -1,0 +1,5 @@
+These modules implement the encoding and decoding of the ICMPv6 layer.
+
+RFCs: 2463, 2461, 2460
+
+WWW: http://search.cpan.org/dist/Net-Frame-Layer-ICMPv6/

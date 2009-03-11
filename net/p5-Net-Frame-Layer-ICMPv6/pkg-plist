@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Net/Frame/Layer/ICMPv6.pm
+%%SITE_PERL%%/Net/Frame/Layer/ICMPv6/Echo.pm
+%%SITE_PERL%%/Net/Frame/Layer/ICMPv6/Option.pm
+%%SITE_PERL%%/Net/Frame/Layer/ICMPv6/NeighborAdvertisement.pm
+%%SITE_PERL%%/Net/Frame/Layer/ICMPv6/NeighborSolicitation.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame/Layer/ICMPv6/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame/Layer/ICMPv6
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame/Layer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame
+@dirrm %%SITE_PERL%%/Net/Frame/Layer/ICMPv6
+@dirrmtry %%SITE_PERL%%/Net/Frame/Layer
+@dirrmtry %%SITE_PERL%%/Net/Frame

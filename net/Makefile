@@ -504,6 +504,7 @@
     SUBDIR += p5-Net-Flow
     SUBDIR += p5-Net-Frame
     SUBDIR += p5-Net-Frame-Dump
+    SUBDIR += p5-Net-Frame-Layer-ICMPv6
     SUBDIR += p5-Net-Gnats
     SUBDIR += p5-Net-Google
     SUBDIR += p5-Net-Google-AuthSub
