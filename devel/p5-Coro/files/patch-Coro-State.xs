@@ -1,13 +1,13 @@
---- Coro/State.xs.orig	Tue Aug 10 03:54:35 2004
-+++ Coro/State.xs	Tue Aug 10 16:22:54 2004
-@@ -57,6 +57,10 @@
- 
+--- Coro/State.xs.orig	2008-12-16 03:39:29.000000000 +0800
++++ Coro/State.xs	2009-03-11 23:28:09.000000000 +0800
+@@ -155,6 +155,10 @@
  #include "CoroAPI.h"
+ #define GCoroAPI (&coroapi) /* very sneaky */
  
 +#ifndef PERL_MAGIC_ext
 +#   define PERL_MAGIC_ext            '~'
 +#endif
 +
  #ifdef USE_ITHREADS
- static perl_mutex coro_mutex;
- # define LOCK   do { MUTEX_LOCK (&coro_mutex);   } while (0)
+ # if CORO_PTHREAD
+ static void *coro_thx;
