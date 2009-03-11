@@ -132,7 +132,8 @@ CONFIGURE_ARGS+=--with-zend-vm=GOTO
 
 CONFIGURE_ENV+=	ac_cv_pthreads_lib=${PTHREAD_LIBS} \
 		ac_cv_pthreads_cflags=${PTHREAD_CFLAGS} \
-		pthreads_working="yes"
+		pthreads_working="yes" \
+		lt_cv_path_SED="sed"
 
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
