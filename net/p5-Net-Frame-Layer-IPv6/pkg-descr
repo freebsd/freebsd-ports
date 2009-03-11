@@ -1,0 +1,5 @@
+This module implements the encoding and decoding of the IPv6 layer.
+
+RFC: 2460
+
+WWW: http://search.cpan.org/dist/Net-Frame-Layer-IPv6/
