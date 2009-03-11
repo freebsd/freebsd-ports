@@ -1080,6 +1080,7 @@
     SUBDIR += p5-WWW-NioTV
     SUBDIR += p5-WWW-OpenSVN
     SUBDIR += p5-WWW-OpenSearch
+    SUBDIR += p5-WWW-Pastebin-PastebinCom-Create
     SUBDIR += p5-WWW-Pastebin-RafbNet-Create
     SUBDIR += p5-WWW-Plurk
     SUBDIR += p5-WWW-Robot
