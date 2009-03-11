@@ -345,7 +345,6 @@ share/irc/help/set/dccport
 share/irc/help/set/debug
 share/irc/help/set/decrypt_program
 share/irc/help/set/display
-share/irc/help/set/display_encoding
 share/irc/help/set/eight_bit_characters
 share/irc/help/set/encrypt_program
 share/irc/help/set/exec_protection
@@ -368,12 +367,10 @@ share/irc/help/set/hold_mode
 share/irc/help/set/hold_mode_max
 share/irc/help/set/indent
 share/irc/help/set/input_aliases
-share/irc/help/set/input_encoding
 share/irc/help/set/input_prompt
 share/irc/help/set/input_protection
 share/irc/help/set/insert_mode
 share/irc/help/set/inverse_video
-share/irc/help/set/irc_encoding
 share/irc/help/set/irchost
 share/irc/help/set/lastlog
 share/irc/help/set/lastlog_level
@@ -434,6 +431,7 @@ share/irc/help/set/status_window
 share/irc/help/set/suppress_server_motd
 share/irc/help/set/tab
 share/irc/help/set/tab_max
+share/irc/help/set/translation
 share/irc/help/set/underline_video
 share/irc/help/set/user_information
 share/irc/help/set/user_wallops
@@ -593,6 +591,39 @@ share/irc/script/voice
 share/irc/script/wallopstat
 share/irc/script/whowas
 share/irc/script/window
+share/irc/translation/ASCII
+share/irc/translation/CP437
+share/irc/translation/CP850
+share/irc/translation/DANISH
+share/irc/translation/DEC_MCS
+share/irc/translation/DG_MCS
+share/irc/translation/DUTCH
+share/irc/translation/FINNISH
+share/irc/translation/FRENCH
+share/irc/translation/FRENCH_CANADIAN
+share/irc/translation/GERMAN
+share/irc/translation/HP_MCS
+share/irc/translation/IRV
+share/irc/translation/ITALIAN
+share/irc/translation/JIS
+share/irc/translation/MACINTOSH
+share/irc/translation/NEXT
+share/irc/translation/NORWEGIAN_1
+share/irc/translation/NORWEGIAN_2
+share/irc/translation/POLISH
+share/irc/translation/POLISH_NOPL
+share/irc/translation/PORTUGUESE
+share/irc/translation/PORTUGUESE_COM
+share/irc/translation/RUSSIAN
+share/irc/translation/RUSSIAN_ALT
+share/irc/translation/RUSSIAN_WIN
+share/irc/translation/SPANISH
+share/irc/translation/SWEDISH
+share/irc/translation/SWEDISH_NAMES
+share/irc/translation/SWEDISH_NAMES_COM
+share/irc/translation/SWISS
+share/irc/translation/UNITED_KINGDOM
+share/irc/translation/UNITED_KINGDOM_COM
 @dirrm share/irc/script
 @dirrm share/irc/help/alias
 @dirrm share/irc/help/bind
@@ -605,4 +636,5 @@ share/irc/script/window
 @dirrm share/irc/help/window
 @dirrm share/irc/help/ircii
 @dirrm share/irc/help
+@dirrm share/irc/translation
 @dirrm share/irc
