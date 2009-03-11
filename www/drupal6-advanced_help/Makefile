@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	advanced_help
-DISTVERSION=	6.x-1.0
+DISTVERSION=	6.x-1.1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
@@ -14,7 +14,9 @@ MAINTAINER=	rea-fbsd@codelabs.ru
 COMMENT=	Allows to store module help pages outside the module system
 
 DRUPAL6_MODULE=	yes
-MODULE_DIRS=	help help_example/help help_example
+MODULE_DIRS=	help \
+		help_example/help help_example/translations help_example \
+		translations
 MODULE_FILES=	help/advanced_help.help.ini help/ini-file.html \
 		help/translation.html help/using-advanced-help.html \
 		advanced-help-popup.tpl.php advanced_help.info \
@@ -30,7 +32,11 @@ MODULE_FILES=	help/advanced_help.help.ini help/ini-file.html \
 		help_example/help/syntax.html \
 		help_example/help/usage.html \
 		help_example/help_example.info \
-		help_example/help_example.module
+		help_example/help_example.module \
+		help_example/translations/help_example.de.po \
+		help_example/translations/help_example.pot \
+		translations/advanced_help.de.po \
+		translations/advanced_help.pot
 DOC_FILES=	LICENSE.txt
 
 .include <bsd.port.pre.mk>
