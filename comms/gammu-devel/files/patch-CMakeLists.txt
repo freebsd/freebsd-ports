@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2007-08-08 16:30:55.000000000 +0400
-+++ CMakeLists.txt	2007-08-21 00:18:05.000000000 +0400
-@@ -601,7 +604,7 @@
+--- CMakeLists.txt.orig	2009-02-25 19:46:07.000000000 +0300
++++ CMakeLists.txt	2009-03-11 13:04:48.000000000 +0300
+@@ -547,7 +547,7 @@
  set (INSTALL_DOC_DIR "share/doc/gammu" CACHE STRING "Path for documentation installation")
  mark_as_advanced (INSTALL_DOC_DIR)
  
@@ -8,4 +8,33 @@
 +set (INSTALL_MAN_DIR "man" CACHE STRING "Path for man pages installation")
  mark_as_advanced (INSTALL_MAN_DIR)
  
- # Generate pkgconfig file
+ # Phone and protocol configuration
+@@ -698,11 +698,13 @@
+     COMPONENT "pkgconfig"
+     )
+ 
++if(INSTALL_DOC)
+ install (
+     FILES ${DOCS}
+     DESTINATION "${INSTALL_DOC_DIR}"
+     COMPONENT "docs"
+     )
++endif(INSTALL_DOC)
+ 
+ # We want some tests. Even when cross compiling for Windows tests can be
+ # done in Wine. This is better than nothing, even though Wine is a bit
+@@ -860,10 +860,14 @@
+ 
+ add_subdirectory(utils)
+ 
++option(INSTALL_DOC "Install documentation" ON)
++
++if(INSTALL_DOC)
+ add_subdirectory(docs/config)
+ add_subdirectory(docs/develop)
+ add_subdirectory(docs/sql)
+ add_subdirectory(docs/user)
++endif(WITH_DOC)
+ 
+ add_subdirectory(contrib)
+ 

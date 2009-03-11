@@ -28,12 +28,18 @@ PLIST_SUB=	WITH_PYTHON_GAMMU=""
 PLIST_SUB=	WITH_PYTHON_GAMMU="@comment "
 .endif
 
+PORTDOCS=	*
+
+.if defined(NOPORTDOCS)
+CMAKE_ARGS+=	-DINSTALL_DOC=OFF -DINSTALL_PHP_EXAMPLES=OFF -DINSTALL_MEDIA=OFF \
+		-DINSTALL_GNAPPLET=OFF
+.else
 MAN1=		gammu.1 gammu-config.1 jadmaker.1 gammu-smsd.1 gammu-smsd-inject.1 \
 		gammu-smsd-monitor.1
 MAN5=		gammu-smsdrc.5 gammurc.5
 MAN7=		gammu-smsd-files.7 gammu-smsd-mysql.7 gammu-smsd-pgsql.7 \
 		gammu-smsd-dbi.7 gammu-smsd-tables.7
-PORTDOCS=	*
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -41,6 +47,10 @@ post-patch:
 	@${REINPLACE_CMD} -i '' -e 's:bash:sh:' -e 's:dialog:cdialog:' ${WRKSRC}/utils/gammu-config
 .if ${OSVERSION} < 700042
 	@${REINPLACE_CMD} -e 's@ -Wno-pointer-sign@@g' ${WRKSRC}/CMakeLists.txt
+.endif
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not build at 6.x
 .endif
 
 .include <bsd.port.post.mk>
