@@ -285,6 +285,7 @@
     SUBDIR += e00compr
     SUBDIR += e4graph
     SUBDIR += e_dbus
+    SUBDIR += easygit
     SUBDIR += ebnf2yacc
     SUBDIR += eboxy
     SUBDIR += ecb
