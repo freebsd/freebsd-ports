@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Net/Frame/Layer/IPv6.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame/Layer/IPv6/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame/Layer/IPv6
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame/Layer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame
+@dirrmtry %%SITE_PERL%%/Net/Frame/Layer
+@dirrmtry %%SITE_PERL%%/Net/Frame
