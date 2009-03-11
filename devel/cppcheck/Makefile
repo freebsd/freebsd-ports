@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cppcheck
-PORTVERSION=	1.29
+PORTVERSION=	1.30
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -23,6 +23,10 @@ USE_GMAKE=	yes
 ALL_TARGET=	cppcheck cppcheck.1
 
 PLIST_FILES=	bin/cppcheck
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|CXXFLAGS=|CXXFLAGS= ${CXXFLAGS} |' \
+		${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cppcheck ${PREFIX}/bin
