@@ -6,6 +6,7 @@
 
 PORTNAME=	kdegraphics
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -22,7 +23,7 @@ LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl \
 		lcms:${PORTSDIR}/graphics/lcms \
 		paper:${PORTSDIR}/print/libpaper \
 		poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
-		exiv2.3:${PORTSDIR}/graphics/exiv2 \
+		exiv2.7:${PORTSDIR}/graphics/exiv2 \
 		chm.0:${PORTSDIR}/misc/chmlib \
 		sane.1:${PORTSDIR}/graphics/sane-backends \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
