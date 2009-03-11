@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	self
-PORTVERSION=	0.15
+PORTVERSION=	0.32
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/G/GU/GUGOD/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides "self" and "args" keywords in your OO program
 
-RUN_DEPENDS=	${SITE_PERL}/Sub/Exporter.pm:${PORTSDIR}/devel/p5-Sub-Exporter
+RUN_DEPENDS=	p5-B-Hooks-Parser>0:${PORTSDIR}/devel/p5-B-Hooks-Parser \
+		p5-B-OPCheck>0:${PORTSDIR}/devel/p5-B-OPCheck \
+		p5-Devel-Declare>0:${PORTSDIR}/devel/p5-Devel-Declare \
+		p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter
 
 PERL_CONFIGURE=	yes
 
