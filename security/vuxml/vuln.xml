@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f1892066-0e74-11de-92de-000bcdc1757a">
+    <topic>apache -- Cross-site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>apache</name>
+	<range><gt>2.2.0</gt><lt>2.2.9_2</lt></range>
+	<range><gt>2.0.0</gt><lt>2.0.63_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE Mitre reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2939">
+	  <p>Cross-site scripting (XSS) vulnerability in proxy_ftp.c in the
+	    mod_proxy_ftp module in Apache 2.0.63 and earlier, and mod_proxy_ftp.c
+	    in the mod_proxy_ftp module in Apache 2.2.9 and earlier 2.2 versions,
+	    allows remote attackers to inject arbitrary web script or HTML via a
+	    wildcard in the last directory component in the pathname in an FTP
+	    URI.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-2939</cvename>
+      <url>http://www.rapid7.com/advisories/R7-0033.jsp</url>
+    </references>
+    <dates>
+      <discovery>2008-07-25</discovery>
+      <entry>2009-03-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ea2411a4-08e8-11de-b88a-0022157515b2">
     <topic>pngcrush -- libpng Uninitialised Pointer Arrays Vulnerability</topic>
     <affects>
