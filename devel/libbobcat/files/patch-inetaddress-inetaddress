@@ -1,10 +1,12 @@
---- inetaddress/inetaddress.orig	2009-03-05 23:39:43.000000000 +0100
-+++ inetaddress/inetaddress	2009-03-05 23:37:27.000000000 +0100
-@@ -4,6 +4,7 @@
+--- inetaddress/inetaddress.orig	2008-03-19 15:54:18.000000000 +0100
++++ inetaddress/inetaddress	2009-03-10 05:44:45.000000000 +0100
+@@ -4,6 +4,9 @@
  #include <netinet/in.h>
  #include <string>
  #include <bobcat/errno>
++#ifdef __FreeBSD__
 +#include <sys/socket.h>
++#endif
  
  /*
      int-info coming in or going out: host byte order
