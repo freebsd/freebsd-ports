@@ -12,7 +12,7 @@ MASTER_SITES=	http://releases.ardour.org/
 DISTFILES=	ardour-${DISTVERSION}.tar.bz2
 EXTRACT_ONLY=	ardour-${DISTVERSION}.tar.bz2
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Ardour - a digital audio workstation
 
 LIB_DEPENDS=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
