@@ -1077,6 +1077,7 @@
     SUBDIR += p5-WWW-Mixi
     SUBDIR += p5-WWW-Mixi-Scraper
     SUBDIR += p5-WWW-Myspace
+    SUBDIR += p5-WWW-Nicovideo-Download
     SUBDIR += p5-WWW-NioTV
     SUBDIR += p5-WWW-OpenSVN
     SUBDIR += p5-WWW-OpenSearch
