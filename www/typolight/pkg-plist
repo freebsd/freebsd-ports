@@ -523,6 +523,10 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/fr_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/it.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/it_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/lv.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/lv_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/nl.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/nl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/pl.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/pl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/typobox.html
