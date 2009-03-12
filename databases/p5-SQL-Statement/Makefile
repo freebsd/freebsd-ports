@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	SQL-Statement
-PORTVERSION=	1.15
+PORTVERSION=	1.20
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	A perl5 module for SQL parsing and processing
+
+RUN_DEPENDS=	p5-Clone>=0.30:${PORTSDIR}/devel/p5-Clone \
+		p5-Params-Util>=0.35:${PORTSDIR}/devel/p5-Params-Util
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
