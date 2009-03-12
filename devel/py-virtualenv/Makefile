@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	virtualenv
-PORTVERSION=	1.3.2
-#PORTREVISION=	0
+PORTVERSION=	1.3.3
+PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
