@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	mailfront
-PORTVERSION=	1.11
-PORTREVISION=	2
+PORTVERSION=	1.12
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sergei
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tarkhil@over.ru
 COMMENT=	Mail server network protocol front-ends
 
 LIB_DEPENDS=	cvm-v2client.2:${PORTSDIR}/security/cvm
@@ -31,13 +30,7 @@ MODULES_DIR=	${PREFIX}/libexec/${PORTNAME}
 
 DOCS=		NEWS README TODO *.html
 
-OPTIONS=	DW_AUTH "Include Dale Woolridge's auth patch" off
-
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_DW_AUTH)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mailfront-0.92-dw-auth
-.endif
 
 do-configure:
 	${ECHO_CMD} "${PREFIX}/bin"	> ${WRKSRC}/conf-bin
