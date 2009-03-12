@@ -30,7 +30,7 @@ MAINTAINER=		obrien@FreeBSD.org
 COMMENT=		The GNU Project's Bourne Again SHell
 
 IGNOREFILES=		FAQ
-CONFLICTS=		bash-[0-24-9].*
+CONFLICTS=		bash-[0-35-9].*
 
 .if !defined(WITHOUT_IMPLICITCD)
 EXTRA_PATCHES+=		${PATCHDIR}/xpatch-implicitcd
