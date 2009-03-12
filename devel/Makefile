@@ -1108,6 +1108,7 @@
     SUBDIR += p5-Config-Auto
     SUBDIR += p5-Config-Fast
     SUBDIR += p5-Config-General
+    SUBDIR += p5-Config-INI
     SUBDIR += p5-Config-INI-Simple
     SUBDIR += p5-Config-IniFiles
     SUBDIR += p5-Config-IniHash
