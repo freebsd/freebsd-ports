@@ -532,6 +532,7 @@
     SUBDIR += p5-GD-Thumbnail
     SUBDIR += p5-Geo-EOP
     SUBDIR += p5-Geo-GML
+    SUBDIR += p5-Geo-Gpx
     SUBDIR += p5-Geo-KML
     SUBDIR += p5-Geo-Point
     SUBDIR += p5-Geo-Proj4
