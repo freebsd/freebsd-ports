@@ -12,7 +12,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	WebHelpers-${PORTVERSION}
 
-MAINTAINER=	magik@back-up.pl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python helper functions for writing templates in web applications
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}routes>=1.1:${PORTSDIR}/www/py-routes \
