@@ -1,0 +1,58 @@
+--- configure.orig	2009-03-12 00:42:12.000000000 +0300
++++ configure	2009-03-12 00:43:17.000000000 +0300
+@@ -10623,53 +10623,8 @@
+ echo "${ECHO_T}Using BSD USB driver." >&6
+             ;;
+          *)
+-            # Extract the first word of "libusb-config", so it can be a program name with args.
+-set dummy libusb-config; ac_word=$2
+-echo "$as_me:$LINENO: checking for $ac_word" >&5
+-echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+-if test "${ac_cv_path_usbcfg+set}" = set; then
+-  echo $ECHO_N "(cached) $ECHO_C" >&6
+-else
+-  case $usbcfg in
+-  [\\/]* | ?:[\\/]*)
+-  ac_cv_path_usbcfg="$usbcfg" # Let the user override the test with a path.
+-  ;;
+-  *)
+-  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-for as_dir in $PATH
+-do
+-  IFS=$as_save_IFS
+-  test -z "$as_dir" && as_dir=.
+-  for ac_exec_ext in '' $ac_executable_extensions; do
+-  if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-    ac_cv_path_usbcfg="$as_dir/$ac_word$ac_exec_ext"
+-    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    break 2
+-  fi
+-done
+-done
+-
+-  ;;
+-esac
+-fi
+-usbcfg=$ac_cv_path_usbcfg
+-
+-if test -n "$usbcfg"; then
+-  echo "$as_me:$LINENO: result: $usbcfg" >&5
+-echo "${ECHO_T}$usbcfg" >&6
+-else
+-  echo "$as_me:$LINENO: result: no" >&5
+-echo "${ECHO_T}no" >&6
+-fi
+-
+-            if test x$usbcfg = x ; then
+-               { { echo "$as_me:$LINENO: error: Cannot find libusb-config" >&5
+-echo "$as_me: error: Cannot find libusb-config" >&2;}
+-   { (exit 1); exit 1; }; }
+-            fi
+-
+-            LIBUSB=`$usbcfg --libs`
+-            LIBUSBH=`$usbcfg --prefix`/include/usb.h
++            LIBUSB=-lusb
++            LIBUSBH="/usr/include/usb.h"
+ 
+ 
+             LIBUSBHIDINC="-I\$(topdir)/src/libusbhid"
