@@ -1,7 +1,5 @@
 bin/kchmviewer
-lib/kde4/kio_msits.so
 share/applications/kde4/kchmviewer.desktop
 share/icons/crystalsvg/128x128/apps/kchmviewer.png
 share/icons/crystalsvg/48x48/apps/kchmviewer.png
 share/icons/crystalsvg/64x64/apps/kchmviewer.png
-share/kde4/services/msits.protocol

@@ -1,0 +1,9 @@
+--- ./CMakeLists.txt.orig	2008-12-02 05:31:22.000000000 +0300
++++ ./CMakeLists.txt	2009-03-13 00:09:45.000000000 +0300
+@@ -18,6 +18,5 @@
+ 
+ # Run in those subdirectories
+ ADD_SUBDIRECTORY( lib/libchmfile )
+-ADD_SUBDIRECTORY( lib/kio-msits )
+ ADD_SUBDIRECTORY( src )
+ ADD_SUBDIRECTORY( po )
