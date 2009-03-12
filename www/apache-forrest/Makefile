@@ -6,7 +6,7 @@
 
 PORTNAME=		apache-forrest
 PORTVERSION=		0.8
-PORTREVISION=	2
+PORTREVISION=		3
 CATEGORIES=		www java
 MASTER_SITES=		${MASTER_SITE_APACHE} \
 			http://mirror.tomato.it/apache/forrest/ \
@@ -20,7 +20,7 @@ MAINTAINER=		nivit@FreeBSD.org
 COMMENT=		A tool for rapid development of small sites
 
 USE_JAVA=		yes
-JAVA_VERSION=		1.4+
+JAVA_VERSION=		1.4 1.5
 
 REPLACE_FILES=		${WRKSRC}/bin/forrest ${WRKSRC}/tools/ant/bin/ant
 
