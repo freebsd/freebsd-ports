@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MouseX-Getopt
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MA/MASAKI
@@ -22,6 +22,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		MouseX::Getopt.3 \
-		MouseX::Getopt::OptionTypeMap.3
+		MouseX::Getopt::Meta::Attribute::Getopt.3 \
+		MouseX::Getopt::Meta::Attribute::NoGetopt.3 \
+		MouseX::Getopt::OptionTypeMap.3 \
+		MouseX::Getopt::Strict.3
 
 .include <bsd.port.mk>
