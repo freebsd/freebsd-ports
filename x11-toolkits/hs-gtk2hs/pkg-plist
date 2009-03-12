@@ -1,19 +1,42 @@
 lib/gtk2hs/HScairo.o
 lib/gtk2hs/HSgconf.o
+lib/gtk2hs/HSgio.o
 lib/gtk2hs/HSglade.o
 lib/gtk2hs/HSglib.o
 lib/gtk2hs/HSgnomevfs.o
+lib/gtk2hs/HSgstreamer.o
 lib/gtk2hs/HSgtk.o
+lib/gtk2hs/HSgtkglext.o
+lib/gtk2hs/HSgtksourceview2.o
 lib/gtk2hs/HSmozembed.o
 lib/gtk2hs/HSsoegtk.o
-lib/gtk2hs/HSsourceview.o
 lib/gtk2hs/HSsvgcairo.o
 lib/gtk2hs/cairo.package.conf
 lib/gtk2hs/gconf.package.conf
+lib/gtk2hs/gio.package.conf
 lib/gtk2hs/glade.package.conf
 lib/gtk2hs/glib.package.conf
 lib/gtk2hs/gnomevfs.package.conf
 lib/gtk2hs/gtk.package.conf
+lib/gtk2hs/gtkglext.package.conf
+lib/gtk2hs/gtksourceview2.package.conf
+lib/gtk2hs/gstreamer.package.conf
+lib/gtk2hs/mozembed.package.conf
+lib/gtk2hs/soegtk.package.conf
+lib/gtk2hs/svgcairo.package.conf
+lib/gtk2hs/cairo.cabal
+lib/gtk2hs/glib.cabal
+lib/gtk2hs/svgcairo.cabal
+lib/gtk2hs/gtk.cabal
+lib/gtk2hs/soegtk.cabal
+lib/gtk2hs/gio.cabal
+lib/gtk2hs/glade.cabal
+lib/gtk2hs/gconf.cabal
+lib/gtk2hs/mozembed.cabal
+lib/gtk2hs/gtksourceview2.cabal
+lib/gtk2hs/gtkglext.cabal
+lib/gtk2hs/gstreamer.cabal
+lib/gtk2hs/gnomevfs.cabal
 lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo.hi
 lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal.hi
 lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Drawing/Cairo.hi
@@ -57,26 +80,26 @@ lib/gtk2hs/imports/glib/System/Glib/Signals.hi
 lib/gtk2hs/imports/glib/System/Glib/StoreValue.hi
 lib/gtk2hs/imports/glib/System/Glib/Types.hi
 lib/gtk2hs/imports/glib/System/Glib/UTFString.hi
-lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS.hi
-lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Cancellation.hi
-lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Constants.hi
-lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Directory.hi
-lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Drive.hi
 lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Error.hi
-lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/FileInfo.hi
-lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Hierarchy.hi
-lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Init.hi
-lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/MIME.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Types.hi
 lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Marshal.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Init.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/FileInfo.hi
 lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Monitor.hi
 lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Ops.hi
-lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Signals.hi
-lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Types.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Directory.hi
 lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/URI.hi
 lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Util.hi
-lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Volume.hi
-lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/VolumeMonitor.hi
 lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Xfer.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Cancellation.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Volume.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Drive.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/VolumeMonitor.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/MIME.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Signals.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Hierarchy.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Constants.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Bin.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Box.hi
@@ -120,6 +143,7 @@ lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Cursor.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/DrawWindow.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Drawable.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Enums.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/EventM.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Events.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/GC.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Gdk.hi
@@ -190,10 +214,7 @@ lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/CellRendererProgress.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/CellRendererText.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/CellRendererToggle.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/CellView.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/ComboBox.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/ComboBoxEntry.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/CustomStore.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/EntryCompletion.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/IconView.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/ListStore.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/Sequence.hi
@@ -259,53 +280,131 @@ lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeSelection.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeStore.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeView.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeViewColumn.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeRowReference.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Types.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Windows/AboutDialog.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Windows/Dialog.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Windows/MessageDialog.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Windows/Window.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Windows/WindowGroup.hi
+lib/gtk2hs/imports/gio/System/GIO/AsyncResult.hi
+lib/gtk2hs/imports/gio/System/GIO/Base.hi
+lib/gtk2hs/imports/gio/System/GIO/Cancellable.hi
+lib/gtk2hs/imports/gio/System/GIO/File.hi
+lib/gtk2hs/imports/gio/System/GIO/Types.hi
+lib/gtk2hs/imports/gio/System/GIO/Signals.hi
+lib/gtk2hs/imports/gio/System/GIO/FileAttribute.hi
+lib/gtk2hs/imports/gio/System/GIO.hi
+lib/gtk2hs/imports/gtksourceview2/Graphics/UI/Gtk/SourceView/SourceStyle/Internal.hi
+lib/gtk2hs/imports/gtksourceview2/Graphics/UI/Gtk/SourceView/SourceBuffer.hi
+lib/gtk2hs/imports/gtksourceview2/Graphics/UI/Gtk/SourceView/SourceIter.hi
+lib/gtk2hs/imports/gtksourceview2/Graphics/UI/Gtk/SourceView/SourceLanguage.hi
+lib/gtk2hs/imports/gtksourceview2/Graphics/UI/Gtk/SourceView/SourceLanguageManager.hi
+lib/gtk2hs/imports/gtksourceview2/Graphics/UI/Gtk/SourceView/SourceStyleScheme.hi
+lib/gtk2hs/imports/gtksourceview2/Graphics/UI/Gtk/SourceView/SourceStyleSchemeManager.hi
+lib/gtk2hs/imports/gtksourceview2/Graphics/UI/Gtk/SourceView/SourceView.hi
+lib/gtk2hs/imports/gtksourceview2/Graphics/UI/Gtk/SourceView/SourceMark.hi
+lib/gtk2hs/imports/gtksourceview2/Graphics/UI/Gtk/SourceView/Types.hi
+lib/gtk2hs/imports/gtksourceview2/Graphics/UI/Gtk/SourceView/Signals.hi
+lib/gtk2hs/imports/gtksourceview2/Graphics/UI/Gtk/SourceView/SourceStyle.hi
+lib/gtk2hs/imports/gtksourceview2/Graphics/UI/Gtk/SourceView.hi
+lib/gtk2hs/imports/gtkglext/Graphics/UI/Gtk/OpenGL/Config.hi
+lib/gtk2hs/imports/gtkglext/Graphics/UI/Gtk/OpenGL/Context.hi
+lib/gtk2hs/imports/gtkglext/Graphics/UI/Gtk/OpenGL/Drawable.hi
+lib/gtk2hs/imports/gtkglext/Graphics/UI/Gtk/OpenGL/Pixmap.hi
+lib/gtk2hs/imports/gtkglext/Graphics/UI/Gtk/OpenGL/Window.hi
+lib/gtk2hs/imports/gtkglext/Graphics/UI/Gtk/OpenGL/General.hi
+lib/gtk2hs/imports/gtkglext/Graphics/UI/Gtk/OpenGL/DrawingArea.hi
+lib/gtk2hs/imports/gtkglext/Graphics/UI/Gtk/OpenGL/Types.hi
+lib/gtk2hs/imports/gtkglext/Graphics/UI/Gtk/OpenGL.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/MiniHierarchyBase.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Types.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Init.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Object.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/MiniObject.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Element.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Pad.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/GhostPad.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Bin.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Format.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/ElementFactory.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Caps.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Structure.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Message.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Buffer.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Event.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Query.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Bus.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Clock.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/PadTemplate.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/ImplementsInterface.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Index.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/IndexFactory.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Iterator.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Parse.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Pipeline.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Plugin.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/PluginFeature.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Registry.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Segment.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/SystemClock.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/TagList.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Signals.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Hierarchy.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/MiniHierarchy.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/GObjectHierarchy.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/Constants.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core/HierarchyBase.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Base/Types.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Base/BaseSrc.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Base/BaseSink.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Base/BaseTransform.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Base/PushSrc.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Base/Adapter.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Base/CollectPads.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Base/Hierarchy.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Base/GObjectHierarchy.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Base/Constants.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Controller/Types.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Controller/Controller.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Controller/GObjectHierarchy.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Net/Types.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Net/NetClientClock.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Net/Hierarchy.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/DataProtocol/DataProtocol.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/DataProtocol/Constants.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Audio/Types.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Audio/Audio.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Audio/AudioClock.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Audio/Hierarchy.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Audio/Constants.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Base.hi
+lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer.hi
 lib/gtk2hs/imports/mozembed/Graphics/UI/Gtk/MozEmbed.hi
 lib/gtk2hs/imports/mozembed/Graphics/UI/Gtk/MozEmbed/Types.hi
 lib/gtk2hs/imports/soegtk/Graphics/SOE/Gtk.hi
-lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView.hi
-lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceBuffer.hi
-lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceIter.hi
-lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceLanguage.hi
-lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceLanguagesManager.hi
-lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceMarker.hi
-lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceStyleScheme.hi
-lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceTag.hi
-lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceTagStyle.hi
-lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceTagTable.hi
-lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceView.hi
-lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/Types.hi
 lib/gtk2hs/imports/svgcairo/Graphics/Rendering/Cairo/SVG.hi
 lib/gtk2hs/include/gtk2hs-config.h
 lib/gtk2hs/libHScairo.a
 lib/gtk2hs/libHSgconf.a
+lib/gtk2hs/libHSgio.a
 lib/gtk2hs/libHSglade.a
 lib/gtk2hs/libHSglib.a
 lib/gtk2hs/libHSgnomevfs.a
+lib/gtk2hs/libHSgstreamer.a
 lib/gtk2hs/libHSgtk.a
+lib/gtk2hs/libHSgtkglext.a
+lib/gtk2hs/libHSgtksourceview2.a
 lib/gtk2hs/libHSmozembed.a
 lib/gtk2hs/libHSsoegtk.a
-lib/gtk2hs/libHSsourceview.a
 lib/gtk2hs/libHSsvgcairo.a
-lib/gtk2hs/mozembed.package.conf
-lib/gtk2hs/soegtk.package.conf
-lib/gtk2hs/sourceview.package.conf
-lib/gtk2hs/svgcairo.package.conf
 @dirrm lib/gtk2hs/include
 @dirrm lib/gtk2hs/imports/svgcairo/Graphics/Rendering/Cairo
 @dirrm lib/gtk2hs/imports/svgcairo/Graphics/Rendering
 @dirrm lib/gtk2hs/imports/svgcairo/Graphics
 @dirrm lib/gtk2hs/imports/svgcairo
-@dirrm lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView
-@dirrm lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk
-@dirrm lib/gtk2hs/imports/sourceview/Graphics/UI
-@dirrm lib/gtk2hs/imports/sourceview/Graphics
-@dirrm lib/gtk2hs/imports/sourceview
 @dirrm lib/gtk2hs/imports/soegtk/Graphics/SOE
 @dirrm lib/gtk2hs/imports/soegtk/Graphics
 @dirrm lib/gtk2hs/imports/soegtk
@@ -315,7 +414,6 @@ lib/gtk2hs/svgcairo.package.conf
 @dirrm lib/gtk2hs/imports/mozembed/Graphics
 @dirrm lib/gtk2hs/imports/mozembed
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Windows
-@dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Selectors
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Scrolling
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango
@@ -326,21 +424,18 @@ lib/gtk2hs/svgcairo.package.conf
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/MenuComboToolbar
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Layout
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General
-@dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Entry
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Embedding
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Buttons
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ActionMenuToolbar
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract
+@dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList
+@dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI
 @dirrm lib/gtk2hs/imports/gtk/Graphics
 @dirrm lib/gtk2hs/imports/gtk
-@dirrm lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS
-@dirrm lib/gtk2hs/imports/gnomevfs/System/Gnome
-@dirrm lib/gtk2hs/imports/gnomevfs/System
-@dirrm lib/gtk2hs/imports/gnomevfs
 @dirrm lib/gtk2hs/imports/glib/System/Glib
 @dirrm lib/gtk2hs/imports/glib/System
 @dirrm lib/gtk2hs/imports/glib
@@ -361,5 +456,33 @@ lib/gtk2hs/svgcairo.package.conf
 @dirrm lib/gtk2hs/imports/cairo/Graphics/Rendering
 @dirrm lib/gtk2hs/imports/cairo/Graphics
 @dirrm lib/gtk2hs/imports/cairo
+@dirrm lib/gtk2hs/imports/gio/System/GIO
+@dirrm lib/gtk2hs/imports/gio/System
+@dirrm lib/gtk2hs/imports/gio
+@dirrm lib/gtk2hs/imports/gtksourceview2/Graphics/UI/Gtk/SourceView/SourceStyle
+@dirrm lib/gtk2hs/imports/gtksourceview2/Graphics/UI/Gtk/SourceView
+@dirrm lib/gtk2hs/imports/gtksourceview2/Graphics/UI/Gtk
+@dirrm lib/gtk2hs/imports/gtksourceview2/Graphics/UI
+@dirrm lib/gtk2hs/imports/gtksourceview2/Graphics
+@dirrm lib/gtk2hs/imports/gtksourceview2
+@dirrm lib/gtk2hs/imports/gtkglext/Graphics/UI/Gtk/OpenGL
+@dirrm lib/gtk2hs/imports/gtkglext/Graphics/UI/Gtk
+@dirrm lib/gtk2hs/imports/gtkglext/Graphics/UI
+@dirrm lib/gtk2hs/imports/gtkglext/Graphics
+@dirrm lib/gtk2hs/imports/gtkglext
+@dirrm lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Audio
+@dirrm lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Base
+@dirrm lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Core
+@dirrm lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Controller
+@dirrm lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/DataProtocol
+@dirrm lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer/Net
+@dirrm lib/gtk2hs/imports/gstreamer/Media/Streaming/GStreamer
+@dirrm lib/gtk2hs/imports/gstreamer/Media/Streaming
+@dirrm lib/gtk2hs/imports/gstreamer/Media
+@dirrm lib/gtk2hs/imports/gstreamer
+@dirrm lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS
+@dirrm lib/gtk2hs/imports/gnomevfs/System/Gnome
+@dirrm lib/gtk2hs/imports/gnomevfs/System
+@dirrm lib/gtk2hs/imports/gnomevfs
 @dirrm lib/gtk2hs/imports
 @dirrm lib/gtk2hs

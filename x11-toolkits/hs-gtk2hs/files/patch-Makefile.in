@@ -1,0 +1,16 @@
+--- Makefile.in.orig	2009-02-06 22:30:22.000000000 +0100
++++ Makefile.in	2009-03-08 06:43:06.000000000 +0100
+@@ -4179,11 +4179,11 @@
+ @WIN32_INSTALLER_FALSE@		-e 's|$${modules}|$(call getModules,$(pkgname))|' \
+ @WIN32_INSTALLER_FALSE@		$(call getVar,$(pkgname),CONFIG) \
+ @WIN32_INSTALLER_FALSE@	> $(DESTDIR)/$(pkglibdir)/$(notdir $(call getVar,$(pkgname),CONFIG)).tmp; \
+-@WIN32_INSTALLER_FALSE@	mv $(DESTDIR)/$(pkglibdir)/$(notdir $(call getVar,$(pkgname),CONFIG)){.tmp,} ; \
++@WIN32_INSTALLER_FALSE@	csh -c "mv $(DESTDIR)/$(pkglibdir)/$(notdir $(call getVar,$(pkgname),CONFIG)){.tmp,}" ; \
+ @WIN32_INSTALLER_FALSE@	$(SED)	's|$${modules}|$(call getModules,$(pkgname))|' \
+ @WIN32_INSTALLER_FALSE@		$(patsubst %.package.conf,%.cabal,$(call getVar,$(pkgname),CONFIG)) \
+ @WIN32_INSTALLER_FALSE@	> $(DESTDIR)/$(pkglibdir)/$(notdir $(patsubst %.package.conf,%.cabal,$(call getVar,$(pkgname),CONFIG))).tmp; \
+-@WIN32_INSTALLER_FALSE@	mv $(DESTDIR)/$(pkglibdir)/$(notdir $(patsubst %.package.conf,%.cabal,$(call getVar,$(pkgname),CONFIG))){.tmp,};)
++@WIN32_INSTALLER_FALSE@	csh -c "mv $(DESTDIR)/$(pkglibdir)/$(notdir $(patsubst %.package.conf,%.cabal,$(call getVar,$(pkgname),CONFIG))){.tmp,}";)
+ 
+ # Except on Windows if we're makeing an installer where we delay the variable
+ # substitution, since the installer does that. So we still substitute for the
