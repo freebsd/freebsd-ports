@@ -9,7 +9,8 @@ PORTNAME=	ldapbrowser
 PORTVERSION=	2.8.2
 PORTREVISION=	2
 CATEGORIES=	net java
-MASTER_SITES=	http://www.mcs.anl.gov/~gawor/ldapcommon/bin/
+MASTER_SITES=	http://www.mcs.anl.gov/~gawor/ldapcommon/bin/ \
+		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}/sources/
 DISTNAME=	Browser282b2
 
 MAINTAINER=	ports@FreeBSD.org
