@@ -7,6 +7,7 @@
 
 PORTNAME=	gammu
 PORTVERSION=	1.23.1
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com/gammu/releases/
@@ -47,10 +48,6 @@ post-patch:
 	@${REINPLACE_CMD} -i '' -e 's:bash:sh:' -e 's:dialog:cdialog:' ${WRKSRC}/utils/gammu-config
 .if ${OSVERSION} < 700042
 	@${REINPLACE_CMD} -e 's@ -Wno-pointer-sign@@g' ${WRKSRC}/CMakeLists.txt
-.endif
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not build at 6.x
 .endif
 
 .include <bsd.port.post.mk>
