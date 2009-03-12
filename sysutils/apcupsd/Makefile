@@ -7,6 +7,7 @@
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.14.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:src_sf/g} \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/:src_bk \
@@ -16,10 +17,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/:src_sf
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src_sf,src_bk \
 		${PORTNAME}.pdf:doc_sf,doc_bk
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-IGNOREFILES=	${PORTNAME}.pdf
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Set of programs for controlling APC UPS
+
+IGNOREFILES=	${PORTNAME}.pdf
 
 USE_RC_SUBR=	apcupsd
 SUB_FILES=	pkg-message
@@ -32,9 +34,9 @@ CONFIGURE_ARGS=	--sbindir=${PREFIX}/sbin \
 		--sysconfdir=${ETCDIR} \
 		--with-serial-dev=/dev/usv
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
-		CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"   \
-		LDFLAGS="-L${LOCALBASE}/lib"
+#CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
+#		CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"   \
+#		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN8=		apcupsd.8
 
@@ -128,6 +130,10 @@ CONFIGURE_ARGS+=	--enable-test
 #PLIST_SUB+=		POWERFL=""
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_USB) && ${OSVERSION} >= 800069
+CONFIGURE_ARGS+=	--with-generic-usb
+.endif
 
 pre-configure:
 .if defined(WITH_CLIENT_ONLY) && ( defined(WITH_APCSMART_DRV) || \
