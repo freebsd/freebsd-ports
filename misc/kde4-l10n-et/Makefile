@@ -7,10 +7,11 @@
 
 PORTNAME=	kde-l10n
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	misc kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Esperanto messages and documentation for KDE4
+COMMENT=	Estonian messages and documentation for KDE4
 
 KDE4_L10N=	et
 
