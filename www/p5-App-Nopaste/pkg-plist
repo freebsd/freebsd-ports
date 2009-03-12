@@ -1,0 +1,18 @@
+bin/nopaste
+%%SITE_PERL%%/App/Nopaste.pm
+%%SITE_PERL%%/App/Nopaste/Command.pm
+%%SITE_PERL%%/App/Nopaste/Service.pm
+%%SITE_PERL%%/App/Nopaste/Service/Gist.pm
+%%SITE_PERL%%/App/Nopaste/Service/Husk.pm
+%%SITE_PERL%%/App/Nopaste/Service/Mathbin.pm
+%%SITE_PERL%%/App/Nopaste/Service/PastebinCom.pm
+%%SITE_PERL%%/App/Nopaste/Service/Pastie.pm
+%%SITE_PERL%%/App/Nopaste/Service/Rafb.pm
+%%SITE_PERL%%/App/Nopaste/Service/Shadowcat.pm
+%%SITE_PERL%%/App/Nopaste/Service/Snitch.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Nopaste/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Nopaste
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
+@dirrm %%SITE_PERL%%/App/Nopaste/Service
+@dirrm %%SITE_PERL%%/App/Nopaste
+@dirrm %%SITE_PERL%%/App
