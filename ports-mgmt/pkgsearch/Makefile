@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkgsearch
-PORTVERSION=	1.0.6
+PORTVERSION=	1.1.0
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://dl.sharesource.org/${PORTNAME}/
 
