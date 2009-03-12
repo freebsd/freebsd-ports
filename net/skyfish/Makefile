@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skyfish
-PORTVERSION=	0.85
+PORTVERSION=	0.91
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.lissyara.su/users/nsand/skyfish/
 
