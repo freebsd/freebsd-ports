@@ -2,9 +2,6 @@
 bin/bash
 bin/rbash
 bin/bashbug
-%%NLS%%share/locale/en@boldquot/LC_MESSAGES/bash.mo
-%%NLS%%share/locale/en@quot/LC_MESSAGES/bash.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/bash.mo
 %%HELP%%%%DATADIR%%/alias
 %%HELP%%%%DATADIR%%/arith
 %%HELP%%%%DATADIR%%/arith_for
@@ -19,8 +16,10 @@ bin/bashbug
 %%HELP%%%%DATADIR%%/command
 %%HELP%%%%DATADIR%%/compgen
 %%HELP%%%%DATADIR%%/complete
+%%HELP%%%%DATADIR%%/compopt
 %%HELP%%%%DATADIR%%/conditional
 %%HELP%%%%DATADIR%%/continue
+%%HELP%%%%DATADIR%%/coproc
 %%HELP%%%%DATADIR%%/declare
 %%HELP%%%%DATADIR%%/dirs
 %%HELP%%%%DATADIR%%/disown
@@ -48,11 +47,13 @@ bin/bashbug
 %%HELP%%%%DATADIR%%/let
 %%HELP%%%%DATADIR%%/local
 %%HELP%%%%DATADIR%%/logout
+%%HELP%%%%DATADIR%%/mapfile
 %%HELP%%%%DATADIR%%/popd
 %%HELP%%%%DATADIR%%/printf
 %%HELP%%%%DATADIR%%/pushd
 %%HELP%%%%DATADIR%%/pwd
 %%HELP%%%%DATADIR%%/read
+%%HELP%%%%DATADIR%%/readarray
 %%HELP%%%%DATADIR%%/readonly
 %%HELP%%%%DATADIR%%/return
 %%HELP%%%%DATADIR%%/select
@@ -78,6 +79,31 @@ bin/bashbug
 %%HELP%%%%DATADIR%%/wait
 %%HELP%%%%DATADIR%%/while
 %%HELP%%@dirrm %%DATADIR%%
+%%NLS%%share/locale/af/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/de/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/es/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/et/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/id/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/bash.mo
 %%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en@boldquot
 %%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
