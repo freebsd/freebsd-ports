@@ -6,25 +6,30 @@
 #
 
 PORTNAME=	mpc
-PORTVERSION=	0.12.1
+PORTVERSION=	0.15
 CATEGORIES=	audio ipv6
-MASTER_SITES=	http://musicpd.org/uploads/files/
+MASTER_SITES=	SF/musicpd
 
 MAINTAINER=	ports@mark.reidel.info
 COMMENT=	Command line client for the musicpd
 
+OPTIONS=	ICONV "Support for international characters" on
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-OPTIONS=	ICONV "Support for international characters" on \
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
-CFLAGS+=	-I${PREFIX}/include
+PORTDOCS=	AUTHORS README NEWS
 
-MAN1=		mpc.1
+PLIST_FILES=	bin/${PORTNAME} %%PORTEXAMPLES%%%%EXAMPLESDIR%%/${PORTNAME}-bashrc
+PLIST_DIRS=	%%PORTEXAMPLES%%%%EXAMPLESDIR%%
+
+MAN1=		${PORTNAME}.1
 
 .include <bsd.port.pre.mk>
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
 
 .ifdef(WITHOUT_ICONV)
 CONFIGURE_ARGS+=--disable-iconv
@@ -32,19 +37,18 @@ CONFIGURE_ARGS+=--disable-iconv
 USE_ICONV=	yes
 .endif
 
-PLIST_FILES=	bin/mpc %%EXAMPLESDIR%%/mpc-bashrc
-PLIST_DIRS=	%%EXAMPLESDIR%%
-PORTDOCS=	AUTHORS README
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/mpc ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin/
 .ifndef(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
 .endif
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/mpc-bashrc ${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/mpc.1 ${MAN1PREFIX}/man/man1/
+.ifndef(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}-bashrc ${EXAMPLESDIR}
+.endif
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.post.mk>
