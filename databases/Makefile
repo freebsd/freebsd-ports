@@ -13,6 +13,7 @@
     SUBDIR += aolserver-nsmysql
     SUBDIR += aolserver-nspostgres
     SUBDIR += bbdb
+    SUBDIR += buzhug
     SUBDIR += cdb
     SUBDIR += clip
     SUBDIR += couchdb
