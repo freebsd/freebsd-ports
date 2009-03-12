@@ -37,7 +37,7 @@ if ARGV.delete "-t"
 	msg = STDIN.read
 	head, cr, body = msg.split(/\n(\r?)\n/, 2)
 	head = head + "\n"
-	tmphead = head.gsub(/\n\s+/m, ' ')
+	tmphead = head.gsub(/\r?\n\s+/m, ' ')
 	rcpts = []
 	tmphead.gsub(/^(?:to|cc|bcc):\s.*$/i) do |match|
 		match.sub(/^[^:]+:\s*/, '').split(/\s*[,;]\s*/).each do |addr|
