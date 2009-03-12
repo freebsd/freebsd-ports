@@ -1527,6 +1527,7 @@
     SUBDIR += p5-Memoize
     SUBDIR += p5-Memoize-ExpireLRU
     SUBDIR += p5-Method-Alias
+    SUBDIR += p5-Mixin-Linewise
     SUBDIR += p5-Mknod
     SUBDIR += p5-Module-Build
     SUBDIR += p5-Module-Build-Convert
