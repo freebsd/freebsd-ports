@@ -15,6 +15,8 @@ DISTNAME=	dgd-${PORTVERSION}
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Dworkin's Generic Driver + extra networking support + regexps
 
+BROKEN=		sources not available
+
 NO_CDROM=	no distribution to corporate environment
 RESTRICTED=	license required for commercial use
 
