@@ -2,6 +2,10 @@
 %%JAVAJARDIR%%/beepsasl.jar
 %%JAVAJARDIR%%/beeptls-jsse.jar
 %%JAVAJARDIR%%/beeptls-ptls.jar
+%%PORTDOCS%%%%DOCSDIR%%/GettingStarted.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/README_SASL.htm
 %%EXAMPLESDIR%%/example.jar
 %%EXAMPLESDIR%%/org/beepcore/beep/example/Beepd.java
 %%EXAMPLESDIR%%/org/beepcore/beep/example/Bing.java
@@ -13,3 +17,4 @@
 @dirrm %%EXAMPLESDIR%%/org/beepcore
 @dirrm %%EXAMPLESDIR%%/org
 @dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
