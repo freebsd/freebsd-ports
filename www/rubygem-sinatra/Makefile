@@ -5,26 +5,21 @@
 # $FreeBSD$
 
 PORTNAME=	sinatra
-PORTVERSION=	0.9.0.4
+PORTVERSION=	0.9.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 
 MAINTAINER=	daniel@roe.ch
 COMMENT=	A classy web development framework in ruby
 
-BUILD_DEPENDS=	rubygem-rack>=0.9.0:${PORTSDIR}/www/rubygem-rack
-RUN_DEPENDS=	rubygem-rack>=0.9.0:${PORTSDIR}/www/rubygem-rack
+BUILD_DEPENDS=	rubygem-rack>=0.9.1:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack>=0.9.1:${PORTSDIR}/www/rubygem-rack
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO} ${GEM_CACHE} >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},${GEM_DOC_DIR},' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},${GEM_LIB_DIR},' >> ${TMPPLIST}
-	@${ECHO} ${GEM_SPEC} >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},@dirrm ${GEM_LIB_DIR},' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},@dirrm ${GEM_DOC_DIR},' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
