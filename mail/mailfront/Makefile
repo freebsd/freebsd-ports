@@ -8,9 +8,7 @@
 PORTNAME=	mailfront
 PORTVERSION=	1.12
 CATEGORIES=	mail
-MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	sergei
+MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
 MAINTAINER=	tarkhil@over.ru
 COMMENT=	Mail server network protocol front-ends
