@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WebService-Simple
-PORTVERSION=	0.12
+PORTVERSION=	0.15
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -31,6 +31,7 @@ MAN3=		WebService::Simple::Response.3 \
 		WebService::Simple::Parser::XML::Lite.3 \
 		WebService::Simple::Parser::XML::LibXML.3 \
 		WebService::Simple::Parser::XML::Simple.3 \
+		WebService::Simple::Parser::XML::Feed.3 \
 		WebService::Simple.3 \
 		WebService::Simple::Parser::JSON.3
 
