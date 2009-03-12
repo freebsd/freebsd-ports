@@ -8,14 +8,11 @@
 PORTNAME=	dgd-net
 PORTVERSION=	1.2
 CATEGORIES=	net lang
-MASTER_SITES=	ftp://ftp.dworkin.nl/pub/dgd/archive/ \
-		http://dl.droso.net/ports/
-DISTNAME=	dgd-${PORTVERSION}
+MASTER_SITES=	http://ftp.dworkin.nl/dgd/archive/
+DISTNAME=	${PORTNAME:S/-net//g}-${PORTVERSION}
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Dworkin's Generic Driver + extra networking support + regexps
-
-BROKEN=		sources not available
 
 NO_CDROM=	no distribution to corporate environment
 RESTRICTED=	license required for commercial use
@@ -35,7 +32,6 @@ post-build:
 	@${CHMOD} o+r ${WRKDIR}/dgd/doc/kfun/*
 
 do-install:
-	@-${MV} ${PREFIX}/dgd/bin/driver.net ${PREFIX}/dgd/bin/driver.net.old
 	@${TAR} -C ${WRKDIR} -cf - `${GREP} '^dgd/' ${PLIST}` \
 		| ${TAR} -C ${PREFIX} -xpf -
 
