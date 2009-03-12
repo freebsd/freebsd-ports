@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	ex-lib
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mons@cpan.org
 COMMENT=	Relative use lib in absolute way
+
+RUN_DEPENDS=	p5-PathTools>=3.12:${PORTSDIR}/devel/p5-PathTools
+BUILD_DEPENDS=	p5-PathTools>=3.12:${PORTSDIR}/devel/p5-PathTools
 
 PERL_CONFIGURE=	yes
 
