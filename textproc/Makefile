@@ -821,6 +821,7 @@
     SUBDIR += pecl-html_parse
     SUBDIR += pecl-stem
     SUBDIR += pecl-syck
+    SUBDIR += pecl-wbxml
     SUBDIR += pecl-xdiff
     SUBDIR += pecl-xslcache
     SUBDIR += perl2html
