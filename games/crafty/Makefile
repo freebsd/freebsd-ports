@@ -11,7 +11,8 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/pgn/:data \
 		ftp://ftp.cis.uab.edu/pub/hyatt/documentation/:doc \
 		ftp://ftp.cis.uab.edu/pub/hyatt/source/:src \
-		ftp://ftp.cis.uab.edu/pub/hyatt/book/:utils
+		ftp://ftp.cis.uab.edu/pub/hyatt/book/:utils \
+		ftp://ftp.cis.uab.edu/pub/hyatt/book/:books
 DISTFILES=	crafty-${PORTVERSION}.zip:src \
 		start.pgn:data
 DIST_SUBDIR=	crafty
@@ -23,10 +24,13 @@ COMMENT=	A chess programm for playing and analyzing games
 USE_ZIP=	yes
 USE_GMAKE=	yes
 
+BOOKS=		book.bin books.bin
+DISTFILES+=	${BOOKS:S/$/:books/}
+
 .if !defined(NOPORTDOCS)
 DOCFILES=	crafty.doc.ascii crafty.doc.ps
 DISTFILES+=	${DOCFILES:S/$/:doc/}
-UTILS=		bitmaps.tgz sound.zip book.bin books.bin
+UTILS=		bitmaps.tgz sound.zip
 DISTFILES+=	${UTILS:S/$/:utils/}
 .endif
 
@@ -71,6 +75,7 @@ do-install:
 	${MKDIR} ${PREFIX}/lib/crafty/cpf
 	${CHOWN} -R root:nogroup ${PREFIX}/lib/crafty
 	${CHMOD} 775 ${PREFIX}/lib/crafty ${PREFIX}/lib/crafty/cpf
+	${INSTALL_DATA} ${WRKSRC}/book.bin ${PREFIX}/lib/crafty/book.bin
 	${INSTALL_DATA} ${WRKSRC}/books.bin ${PREFIX}/lib/crafty/books.bin
 	${INSTALL_DATA} ${WRKSRC}/crafty.hlp ${PREFIX}/lib/crafty/crafty.hlp
 	${CHOWN} root:nogroup ${PREFIX}/lib/crafty/book*
