@@ -7,6 +7,7 @@
 
 PORTNAME=	awesome
 PORTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/ \
 		http://redundancy.redundancy.org/mirror/
@@ -18,7 +19,8 @@ BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto \
 		xcb-util>=0.3.3:${PORTSDIR}/x11/xcb-util \
 		xproto>=7.0.11:${PORTSDIR}/x11/xproto \
-		gperf>=3.0.3:${PORTSDIR}/devel/gperf
+		gperf>=3.0.3:${PORTSDIR}/devel/gperf \
+		cmake>=2.6.1_2:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		ev.3:${PORTSDIR}/devel/libev \
 		freetype.9:${PORTSDIR}/print/freetype2 \
