@@ -4,6 +4,13 @@ libexec/zapchain
 %%EXAMPLESDIR%%/adzap.conf
 %%EXAMPLESDIR%%/rc/proxy-home.pac
 %%EXAMPLESDIR%%/rc/proxy-zip.pac
+%%EXAMPLESDIR%%/rc/patterns
+%%EXAMPLESDIR%%/rc/squid/ERR_ACCESS_DENIED
+%%EXAMPLESDIR%%/rc/squid/Mykefile
+%%EXAMPLESDIR%%/rc/squid/ip-ranges@zip.raw
+%%EXAMPLESDIR%%/rc/squid/tplt
+%%EXAMPLESDIR%%/rc/squid/tplt-home
+%%EXAMPLESDIR%%/rc/squid/tplt-zip
 %%EXAMPLESDIR%%/zaps/ad-clear.gif
 %%EXAMPLESDIR%%/zaps/ad-clear.mp3
 %%EXAMPLESDIR%%/zaps/ad-clear.swf
@@ -34,6 +41,7 @@ libexec/zapchain
 %%EXAMPLESDIR%%/zaps/webbug.gif
 %%EXAMPLESDIR%%/zaps/webbug.html
 %%EXAMPLESDIR%%/zaps/webbug.js
+@dirrm %%EXAMPLESDIR%%/rc/squid
 @dirrm %%EXAMPLESDIR%%/rc
 @dirrm %%EXAMPLESDIR%%/zaps
 @dirrm %%EXAMPLESDIR%%
