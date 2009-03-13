@@ -28,6 +28,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-cairo=system \
 		--with-debug=yes
 
+BROKEN=		bad plist
+
 WEBPLUGINS_DIR=		${PREFIX}/lib/moon/plugin
 WEBPLUGINS_FILES=	libmoonloader.so \
 			libmoonplugin.so
