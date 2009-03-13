@@ -6,49 +6,59 @@
 #
 
 PORTNAME=	sdlmame
-PORTVERSION=	0.124
+PORTVERSION=	0.130
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.alepulver.com.ar/distfiles/
+MASTER_SITES=	ftp://ftp.arcadebsd.org/pub/FreeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	elbarto@ArcadeBSD.org
 COMMENT=	SDL port of the popular MAME (Multi Arcade Machine Emulator)
 
 USE_ZIP=	yes
 USE_XORG=	xext xrender xinerama xi
 USE_GL=		gl
+USE_GNOME?=	gtk20 gconf2
 USE_GMAKE=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 USE_SDL=	sdl
 MAKEFILE=	makefile
+ONLY_FOR_ARCH=	i386 amd64
+SUB_FILES=	pkg-message
 
-SUB_FILES=	${PORTNAME} pkg-message
+OPTIONS=	DEBUG "Build sdlmame debugger" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG)
+EXTRA_PATCHES+=		${FILESDIR}/sdl.mak.patch-debug
+.else
+USE_GNOME=		#
+EXTRA_PATCHES+=		${FILESDIR}/sdl.mak.patch
+.endif
+
+.if ${ARCH} == "amd64"
+MAKE_ENV+=	PTR64=1
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|ui.bdf|${DATADIR}/ui.bdf|g" ${WRKSRC}/src/emu/ui.c
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/libexec/sdlmame
-.for f in obj/sdl/mame/build/file2str obj/sdl/mame/build/png2bdc mame \
-	testkeys romcmp chdman jedutil makemeta regrep srcclean
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/libexec/sdlmame
-.endfor
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/ui.bdf ${DATADIR}
-	${CP} -R ${WRKSRC}/keymaps ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
 	${CP} -R ${WRKSRC}/docs ${DOCSDIR}
 .endif
+	${MKDIR} ${DATADIR}
+	${CP} ${WRKSRC}/ui.bdf ${DATADIR}/
+	${CP} -R ${WRKSRC}/keymaps ${DATADIR}/
+	${MKDIR} ${EXAMPLESDIR}
+	${CP} ${FILESDIR}/mame.ini ${EXAMPLESDIR}
 
 post-install:
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
 
 .include <bsd.port.post.mk>

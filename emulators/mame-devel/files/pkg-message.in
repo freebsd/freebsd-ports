@@ -2,12 +2,12 @@
 
 SDLMAME has been installed.
 
-The MAME tools are installed in "%%PREFIX%%/libexec/sdlmame"
-to avoid conflicting with other MAME ports.
+A example configuration file has been installed in "%%EXAMPLESDIR%%/mame.ini"
+Should you create a "~/.mame" directory and place it here or
+launch "sdlmame -createconfig" and place the mame.ini created instead.
 
-A wrapper script "sdlmame" has been installed. It creates a "~/.sdlmame"
-directory mirroring the directory tree under "%%DATADIR%%"
-when you run it for the first time, and starts the program from there. So
-place all MAME files (e.g. ROMs, cheats, etc.) in "~/.sdlmame".
+If you have a non-qwerty keyboard, you should put in your mame.ini :
+keymap      1
+keymap_file %%DATADIR%%/keymaps/km-XX.txt
 
 ==============================================================================
