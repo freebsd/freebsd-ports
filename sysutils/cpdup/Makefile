@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cpdup
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://apollo.backplane.com/FreeSrc/ \
 		http://utenti.gufi.org/~gmarco/files/distfiles/
