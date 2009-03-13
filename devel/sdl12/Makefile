@@ -7,7 +7,7 @@
 
 PORTNAME=	sdl
 PORTVERSION=	1.2.13
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
@@ -63,10 +63,6 @@ OPTIONS+=	XLIB		"XLib (xorg) graphics support"		On
 .include <bsd.port.pre.mk>
 
 MAN3!=		${CAT} ${FILESDIR}/man3
-
-.if ${OSVERSION} > 800063
-CONFIGURE_ARGS+=--disable-joystick
-.endif
 
 .if defined(WITHOUT_AALIB)
 CONFIGURE_ARGS+=--disable-video-aalib
