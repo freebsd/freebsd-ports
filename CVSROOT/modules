@@ -9883,6 +9883,7 @@ p5-App-Cache                    ports/devel/p5-App-Cache
 p5-App-Cmd                      ports/devel/p5-App-Cmd
 p5-App-Control                  ports/devel/p5-App-Control
 p5-App-Info                     ports/devel/p5-App-Info
+p5-App-Nopaste                  ports/www/p5-App-Nopaste
 p5-App-Options                  ports/devel/p5-App-Options
 p5-App-Trace                    ports/devel/p5-App-Trace
 p5-AppConfig                    ports/devel/p5-AppConfig
@@ -10402,6 +10403,7 @@ p5-Config-ApacheFormat          ports/devel/p5-Config-ApacheFormat
 p5-Config-Auto                  ports/devel/p5-Config-Auto
 p5-Config-Fast                  ports/devel/p5-Config-Fast
 p5-Config-General               ports/devel/p5-Config-General
+p5-Config-INI                   ports/devel/p5-Config-INI
 p5-Config-INI-Simple            ports/devel/p5-Config-INI-Simple
 p5-Config-IniFiles              ports/devel/p5-Config-IniFiles
 p5-Config-IniHash               ports/devel/p5-Config-IniHash
@@ -11057,6 +11059,7 @@ p5-Geo-Coordinates-UTM          ports/math/p5-Geo-Coordinates-UTM
 p5-Geo-Distance                 ports/math/p5-Geo-Distance
 p5-Geo-EOP                      ports/graphics/p5-Geo-EOP
 p5-Geo-GML                      ports/graphics/p5-Geo-GML
+p5-Geo-Gpx                      ports/graphics/p5-Geo-Gpx
 p5-Geo-IP                       ports/net/p5-Geo-IP
 p5-Geo-IP-PurePerl              ports/net/p5-Geo-IP-PurePerl
 p5-Geo-IPfree                   ports/net/p5-Geo-IPfree
@@ -11666,6 +11669,7 @@ p5-Memoize                      ports/devel/p5-Memoize
 p5-Memoize-ExpireLRU            ports/devel/p5-Memoize-ExpireLRU
 p5-Metadata                     ports/databases/p5-Metadata
 p5-Method-Alias                 ports/devel/p5-Method-Alias
+p5-Mixin-Linewise               ports/devel/p5-Mixin-Linewise
 p5-Mknod                        ports/devel/p5-Mknod
 p5-Module-Build                 ports/devel/p5-Module-Build
 p5-Module-Build-Convert         ports/devel/p5-Module-Build-Convert
@@ -12877,6 +12881,7 @@ p5-WWW-Mediawiki-Client         ports/www/p5-WWW-Mediawiki-Client
 p5-WWW-Mixi                     ports/www/p5-WWW-Mixi
 p5-WWW-Mixi-Scraper             ports/www/p5-WWW-Mixi-Scraper
 p5-WWW-Myspace                  ports/www/p5-WWW-Myspace
+p5-WWW-Nicovideo-Download       ports/www/p5-WWW-Nicovideo-Download
 p5-WWW-NioTV                    ports/www/p5-WWW-NioTV
 p5-WWW-OpenSVN                  ports/www/p5-WWW-OpenSVN
 p5-WWW-OpenSearch               ports/www/p5-WWW-OpenSearch
@@ -13187,6 +13192,7 @@ p5-app-cli                      ports/devel/p5-App-CLI
 p5-app-cmd                      ports/devel/p5-App-Cmd
 p5-app-control                  ports/devel/p5-App-Control
 p5-app-info                     ports/devel/p5-App-Info
+p5-app-nopaste                  ports/www/p5-App-Nopaste
 p5-app-options                  ports/devel/p5-App-Options
 p5-app-trace                    ports/devel/p5-App-Trace
 p5-appconfig                    ports/devel/p5-AppConfig
@@ -13704,6 +13710,7 @@ p5-config-apacheformat          ports/devel/p5-Config-ApacheFormat
 p5-config-auto                  ports/devel/p5-Config-Auto
 p5-config-fast                  ports/devel/p5-Config-Fast
 p5-config-general               ports/devel/p5-Config-General
+p5-config-ini                   ports/devel/p5-Config-INI
 p5-config-ini-simple            ports/devel/p5-Config-INI-Simple
 p5-config-inifiles              ports/devel/p5-Config-IniFiles
 p5-config-inihash               ports/devel/p5-Config-IniHash
@@ -14377,6 +14384,7 @@ p5-geo-coordinates-utm          ports/math/p5-Geo-Coordinates-UTM
 p5-geo-distance                 ports/math/p5-Geo-Distance
 p5-geo-eop                      ports/graphics/p5-Geo-EOP
 p5-geo-gml                      ports/graphics/p5-Geo-GML
+p5-geo-gpx                      ports/graphics/p5-Geo-Gpx
 p5-geo-ip                       ports/net/p5-Geo-IP
 p5-geo-ip-pureperl              ports/net/p5-Geo-IP-PurePerl
 p5-geo-ipfree                   ports/net/p5-Geo-IPfree
@@ -14994,6 +15002,7 @@ p5-mime-tools                   ports/mail/p5-MIME-Tools
 p5-mime-types                   ports/mail/p5-MIME-Types
 p5-ming                         ports/graphics/p5-ming
 p5-mixin                        ports/devel/p5-mixin
+p5-mixin-linewise               ports/devel/p5-Mixin-Linewise
 p5-mkdoc-xml                    ports/textproc/p5-MKDoc-XML
 p5-mknod                        ports/devel/p5-Mknod
 p5-mldbm                        ports/databases/p5-MLDBM
@@ -16275,6 +16284,7 @@ p5-www-mediawiki-client         ports/www/p5-WWW-Mediawiki-Client
 p5-www-mixi                     ports/www/p5-WWW-Mixi
 p5-www-mixi-scraper             ports/www/p5-WWW-Mixi-Scraper
 p5-www-myspace                  ports/www/p5-WWW-Myspace
+p5-www-nicovideo-download       ports/www/p5-WWW-Nicovideo-Download
 p5-www-niotv                    ports/www/p5-WWW-NioTV
 p5-www-opensearch               ports/www/p5-WWW-OpenSearch
 p5-www-opensvn                  ports/www/p5-WWW-OpenSVN
@@ -17224,6 +17234,7 @@ pecl-tidy                       ports/www/pecl-tidy
 pecl-timezonedb                 ports/misc/pecl-timezonedb
 pecl-uploadprogress             ports/devel/pecl-uploadprogress
 pecl-vld                        ports/devel/pecl-vld
+pecl-wbxml                      ports/textproc/pecl-wbxml
 pecl-xdiff                      ports/textproc/pecl-xdiff
 pecl-xslcache                   ports/textproc/pecl-xslcache
 pecl-yaz                        ports/net/pecl-yaz
@@ -17677,6 +17688,7 @@ pkgsearch                       ports/ports-mgmt/pkgsearch
 pkipplib                        ports/print/pkipplib
 pkpgcounter                     ports/print/pkpgcounter
 pks                             ports/security/pks
+pktanon                         ports/net/pktanon
 pktstat                         ports/net-mgmt/pktstat
 pktsuckers                      ports/security/pktsuckers
 pl-aspell                       ports/polish/aspell
