@@ -7,6 +7,7 @@
 
 PORTNAME=	File-Pid
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,5 +21,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		File::Pid.3
+
+post-patch:
+	${RM} ${WRKSRC}/lib/File/Pid.pm.orig
 
 .include <bsd.port.mk>
