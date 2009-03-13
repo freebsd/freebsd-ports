@@ -13,7 +13,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/ \
 		ftp://ftp.hellug.gr/pub/software/hydra/
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high performance multi-threaded web server
 
 LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls

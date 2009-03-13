@@ -12,7 +12,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	s-notes
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight, configurable sticky notes utility
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

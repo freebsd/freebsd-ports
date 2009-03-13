@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cronolog.org/download/
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web log rotation utility that provides datestamp filenames
 
 INFO=		cronolog

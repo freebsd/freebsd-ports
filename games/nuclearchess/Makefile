@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://user.cs.tu-berlin.de/~karlb/${PORTNAME}/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A chess variant designed to be short and fun for all players
 
 GNU_CONFIGURE=	yes

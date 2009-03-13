@@ -13,7 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.cs.queensu.ca/home/thurston/ragel/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compile regular languages into executable C/C++ code
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf

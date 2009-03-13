@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://homepage.ntlworld.com/robert.debath/dev86/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	16-bit assembler and loader (conflicts with devel/bcc)
 
 BINS=		as/as86 ld/ld86 ld/objchop ld/catimage ld/objdump86

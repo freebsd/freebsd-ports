@@ -13,7 +13,7 @@ CATEGORIES+=	deskutils
 MASTER_SITES=	ftp://plan.ftp.fu-berlin.de/
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X/Motif schedule planner with calendar
 
 USE_MOTIF=	yes

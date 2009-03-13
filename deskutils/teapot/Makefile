@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://www.moria.de/~michael/teapot/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-screen curses based spread sheet program
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="" LIBS="-lcurses -lm" \

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.baschny.de/spf/	\
 		http://mirror.inerd.com/FreeBSD/distfiles/p5-LMAP-CID2SPF/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Module to convert between Microsoft's Caller-ID and SPF		#'
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser

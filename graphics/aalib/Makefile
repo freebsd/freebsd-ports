@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/aa-project
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ascii art library
 
 USE_AUTOTOOLS=	libtool:15

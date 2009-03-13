@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.exolution.de/geschaeft/produkte/wapsh/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system to allow remote shell logins via a WAP phone or web browser
 
 USE_RC_SUBR=	htshd.sh

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Qt-based Jabber client
 
 LIB_DEPENDS=	qca.2:${PORTSDIR}/devel/qca

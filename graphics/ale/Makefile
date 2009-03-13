@@ -13,7 +13,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://auricle.dyndns.org/ALE/download/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti-Lamenessing Engine
 
 OPTIONS=	DOUBLE "64bit Data Precision Support" off \

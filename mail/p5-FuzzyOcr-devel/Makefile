@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME:L}-${DISTVERSION}${PKGNAMESUFFIX}
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for SpamAssassin which scans image attachments for spam
 
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\

@@ -12,7 +12,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	http://binary.is/download/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight file manager inspired by MacOS Finder
 
 USE_BZIP2=	yes

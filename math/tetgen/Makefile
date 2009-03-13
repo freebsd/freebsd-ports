@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.wias-berlin.de/people/si/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Quality Tetrahedral Mesh Generator and Delaunay Triangulator
 
 NO_CDROM=	Tetgen is for academic or personal use only
