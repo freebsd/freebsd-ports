@@ -14,7 +14,7 @@ MASTER_SITES=	http://downloads.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
 DISTNAME=	asterisk-addons-${DISTVERSION}
 
-MAINTAINER=	pneumann@gmail.com
+MAINTAINER=	flo@kasimir.com
 COMMENT=	GPL modules for the Asterisk Open Source PBX
 
 BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk16
