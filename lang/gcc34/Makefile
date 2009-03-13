@@ -83,11 +83,6 @@ pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
 post-install:
-	# man pages can only be generated if Perl >= 5.6 is installed;
-	# fake them otherwise.
-	for mp in ${_MANPAGES}; do \
-	  ${TEST} -e $${mp} || ${TOUCH} ${TOUCH_FLAGS} $${mp}; \
-	done
 	${MV} -f ${PREFIX}/bin/g77${SUFFIX} ${PREFIX}/bin/g77-${SUFFIX}
 	-${MV} -f ${PREFIX}/man/man1/g77${SUFFIX}.1 ${PREFIX}/man/man1/g77-${SUFFIX}.1
 	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
