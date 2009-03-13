@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/local/lib/.packlist
+%%SITE_PERL%%/local/lib.pm
+@dirrmtry %%SITE_PERL%%/local
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/local/lib
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/local

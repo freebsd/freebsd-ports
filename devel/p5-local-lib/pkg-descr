@@ -1,0 +1,10 @@
+This module provides a quick, convenient way of bootstrapping a
+user-local Perl module library located within the user's home
+directory.
+
+It also constructs and prints out for the user the list of environment
+variables using the syntax appropriate for the user's current shell
+(as specified by the SHELL environment variable), suitable for
+directly adding to one's shell configuration file.
+
+WWW: http://search.cpan.org/dist/local-lib/
