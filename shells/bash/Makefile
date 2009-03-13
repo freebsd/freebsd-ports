@@ -9,7 +9,7 @@
 PORTNAME=		bash
 PATCHLEVEL=		10
 PORTVERSION=		4.0.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		1
+PORTREVISION?=		2
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
 			ftp://ftp.cwru.edu/pub/%SUBDIR%/:faq
@@ -44,6 +44,7 @@ MAN1=			bash.1 bashbug.1
 INFO=			bash
 
 GNU_CONFIGURE=		yes
+USE_BISON=		build
 
 .if !defined(NOPORTDOCS)
 .if !defined(WITH_INCLUDED_FAQ)
@@ -92,7 +93,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}" \
-			YACC="${YACC}"
+			YACC="bison"
 
 .include <bsd.port.pre.mk>
 
@@ -127,6 +128,9 @@ post-install:
 .endif
 	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+regress: build
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} test
 
 cklatest:
 	-ncftpls \
