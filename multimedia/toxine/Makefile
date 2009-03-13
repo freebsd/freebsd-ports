@@ -12,10 +12,14 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	toxine
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text user interface using the xine library
 
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
+
+BROKEN=		does not build
+DEPRECATED=	has been inactive for almost 5 years
+EXPIRATION_DATE=2009-04-12
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
