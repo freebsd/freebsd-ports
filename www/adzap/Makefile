@@ -5,14 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	adzap
-PORTVERSION=	20080508
+PORTVERSION=	20090301
 CATEGORIES=	www perl5
-MASTER_SITES=	http://adzapper.sourceforge.net/ LOCAL/kris
+MASTER_SITES=	http://adzapper.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filter out animated ad banners from web pages
-
-WRKSRC=		${WRKDIR}/adzap
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
