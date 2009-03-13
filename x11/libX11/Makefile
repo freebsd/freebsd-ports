@@ -23,7 +23,7 @@ USE_XORG=	bigreqsproto xau xcmiscproto xdmcp xextproto xtrans \
 USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 libtool:15
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
-CONFIGURE_ARGS+=	--enable-xdmauth --datadir=${PREFIX}/lib \
+CONFIGURE_ARGS+=	--datadir=${PREFIX}/lib \
 			--with-xcb=yes
 
 .include "${.CURDIR}/manpages"
