@@ -23,7 +23,7 @@ perl-after-upgrade -- fixup FreeBSD packages that depend on perl
 
 =head1 DESCRIPTION
 
-The standard procedure after a perl port (either lang/perl5 or
+The standard procedure after a perl port (either lang/perl5.6 or
 lang/perl5.8) upgrade is to basically reinstall all other packages that
 depend on perl.  This is always a painful exercise.  The
 perl-after-upgrade utility makes this process mostly unnecessary.
@@ -217,7 +217,6 @@ sub reset
 }
 
 package main;
-use Config;
 use File::Temp qw/tempfile/;
 use File::Copy;
 
@@ -248,48 +247,8 @@ while (@ARGV) {
 	}
 }
 
-my $target =
-	$Config::Config{PERL_REVISION} . "." .
-	$Config::Config{PERL_VERSION} . "." .
-	$Config::Config{PERL_SUBVERSION};
-my $source = "";
-my $api_revision = $Config::Config{api_revision} || 0;
-my $api_version = $Config::Config{api_version} || 0;
-my $api_subversion = $Config::Config{api_subversion} || 0;
-if ($api_revision < $Config::Config{PERL_REVISION}) {
-	$source = ".[";
-	for ($api_revision .. $Config::Config{PERL_REVISION}) {
-		$source .= $_;
-	}
-	$source .= "]\\.\\d+\\.\\d+";
-} elsif ($api_revision > $Config::Config{PERL_REVISION}) {
-	die "internal error, this perl is too old\n";
-} else {
-	$source .= "$Config::Config{PERL_REVISION}\\.";
-	if ($api_version < $Config::Config{PERL_VERSION}) {
-		$source .= "[";
-		for ($api_version .. $Config::Config{PERL_VERSION}) {
-			$source .= $_;
-		}
-		$source .= "]\\.\\d+";
-	} elsif ($api_version > $Config::Config{PERL_VERSION}) {
-		die "internal error, this perl is too old\n";
-	} else {
-		$source .= "$Config::Config{PERL_VERSION}\\.";
-		if ($api_subversion < $Config::Config{PERL_SUBVERSION}) {
-			$source .= "[";
-			for ($api_subversion .. $Config::Config{PERL_SUBVERSION}) {
-				$source .= $_;
-			}
-			$source .= "]";
-		} elsif ($api_subversion > $Config::Config{PERL_SUBVERSION}) {
-			die "internal error, this perl is too old\n";
-		} else {
-			$source .= "$Config::Config{PERL_SUBVERSION}\\.";
-		}
-	}
-}
-print STDERR "- Source re: <$source>\n" if $debug;
+my $target = '%%PERL_VERSION%%';
+my $new_perl_pkgname = '%%PKGNAME%%';
 
 my $fuzzy_source = "5\\.[\\d._]+";
 print STDERR "- Fuzzy source re: <$fuzzy_source>\n" if $debug;
@@ -584,7 +543,7 @@ while (my $pkg = $db->next) {
 		} elsif (/^\@pkgdep\s+perl-(threaded-)?($fuzzy_source)\S*\s*$/) {
 			if ($target ne $2) {
 				my $perlver = $2;
-				s|perl-(threaded-)?\Q$perlver\E|perl-$target|;
+				s|perl-(threaded-)?\Q$perlver\E|$new_perl_pkgname|;
 			}
 		}
 		my $old = $_;
