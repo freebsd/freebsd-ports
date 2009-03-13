@@ -15,7 +15,7 @@ MASTER_SITES=	http://users.own-hero.net/~decoder/${PORTNAME:L}/	\
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME:L}-${DISTVERSION}
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for SpamAssassin which scans image attachments for spam
 
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\

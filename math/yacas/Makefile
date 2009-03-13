@@ -12,7 +12,7 @@ PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://yacas.sourceforge.net/backups/
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Computer Algebra System
 
 LIB_DEPENDS=	gsl.13:${PORTSDIR}/math/gsl

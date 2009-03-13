@@ -12,7 +12,7 @@ CATEGORIES=	editors multimedia www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source development environment for Macromedia Flash
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

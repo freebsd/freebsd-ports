@@ -14,7 +14,7 @@ MASTER_SITES=	http://rhk.dataslab.com/SDL_gui/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 DISTNAME=	SDL_gui-${PORTVERSION}
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Graphical User Interface library for SDL
 
 USE_AUTOTOOLS=	libtool:15

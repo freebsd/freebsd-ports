@@ -14,7 +14,7 @@ MASTER_SITES=	https://support.process-one.net/doc/download/attachments/415/ \
 PKGNAMEPREFIX=	erlang-
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Native MySQL driver for Erlang
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang

@@ -10,7 +10,7 @@ PORTREVISION=	3
 CATEGORIES=	lang tcl tk
 MASTER_SITES=	http://expect.nist.gov/src/
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sophisticated scripter based on tcl/tk
 
 CONFLICTS=	expect-5.44*

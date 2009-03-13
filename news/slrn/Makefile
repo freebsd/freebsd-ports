@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.plig.org/pub/slrn/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SLang-based newsreader
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2

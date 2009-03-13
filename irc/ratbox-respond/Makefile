@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/${PORTNAME}/		\
 		ftp://ftp.parodius.com/pub/ircd-ratbox/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client-side implementation of the challenge oper system in ircd-ratbox
 
 GNU_CONFIGURE=	yes

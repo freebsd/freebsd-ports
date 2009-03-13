@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	FCGI
 PKGNAMEPREFIX=	p5-
 DISTNAME=	FCGI-${PORTVERSION}
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modules for perl5, for enabling FastCGI support in CGI scripts
 
 LIB_DEPENDS=	fcgi.0:${PORTSDIR}/www/fcgi

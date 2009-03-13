@@ -13,7 +13,7 @@ MASTER_SITES=	SF/tuxracer
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		${PORTNAME}-data-${PORTVERSION}.tar.gz
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3d penguin racing game using OpenGL
 
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
