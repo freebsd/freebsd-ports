@@ -1,0 +1,15 @@
+Unhide is a forensic tool to find hidden processes and TCP/UDP ports by
+rootkits / LKMs or by another hidden technique. It consists of two
+programs: unhide and unhide-tcp.
+
+unhide detects hidden processes through:
+   * Comparison of /proc vs /bin/ps output.
+   * Comparison of info gathered from /bin/ps with info gathered from.
+   * Syscalls (syscall scanning).
+   * Full PIDs space ocupation (PIDs bruteforcing).
+
+unhide-tcp identifies TCP/UDP ports that are listening but not listed in
+/bin/netstat by doing brute forcing of all TCP/UDP ports availables.
+
+
+WWW: http://http://www.security-projects.com/?Unhide/
