@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION=	1.2.35
-PORTREVISION=	3
+PORTVERSION=	1.2.37
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
@@ -32,7 +31,7 @@ OPTIONS=	GNOMEDESKTOP	"Enable GNOME desktop support"		off \
 		IMLIB		"Build with Imlib support"		on \
 		ESOUND		"Enable EsounD daemon support"		off \
 		XFT		"Enable Xft support for fonts"		on \
-		XINERAMA	"Enable Xinerama support"		on \
+		XINERAMA	"Enable Xinerama support"		off \
 		X86_ASM		"Use optimized x86 assembly code"	on \
 		BEASTIE		"Use Beastie'fied startup button"	off \
 		NLS		"Enable National Language Support"	on
