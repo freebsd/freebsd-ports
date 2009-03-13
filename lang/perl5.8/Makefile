@@ -154,7 +154,7 @@ post-patch:
 		-e 's|%%MAKE_CONF%%|${__MAKE_CONF}|g;' \
 		${FILESDIR}/use.perl \
 		> ${WRKDIR}/use.perl
-	${SED} -e 's|%%PERL%%|${PERL}|g;' \
+	${SED} -e 's|%%PERL%%|${PERL}|g; s|%%PERL_VERSION%%|${PERL_VERSION}|g; s|%%PKGNAME%%|${PKGNAME}|g' \
 		${FILESDIR}/perl-after-upgrade \
 		> ${WRKDIR}/perl-after-upgrade
 	${CP} ${WRKDIR}/use.perl ${PKGINSTALL}
