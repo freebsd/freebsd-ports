@@ -1,14 +1,4 @@
 bin/sdlmame
-libexec/sdlmame/chdman
-libexec/sdlmame/file2str
-libexec/sdlmame/jedutil
-libexec/sdlmame/makemeta
-libexec/sdlmame/mame
-libexec/sdlmame/png2bdc
-libexec/sdlmame/regrep
-libexec/sdlmame/romcmp
-libexec/sdlmame/srcclean
-libexec/sdlmame/testkeys
 %%PORTDOCS%%%%DOCSDIR%%/SDLMAME.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/license.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/mame.txt
@@ -16,15 +6,16 @@ libexec/sdlmame/testkeys
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/config.txt
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
+%%DATADIR%%/ui.bdf
 %%DATADIR%%/keymaps/km-be.txt
 %%DATADIR%%/keymaps/km-ch.txt
 %%DATADIR%%/keymaps/km-de.txt
 %%DATADIR%%/keymaps/km-fr-OSX.txt
 %%DATADIR%%/keymaps/km-fr.txt
 %%DATADIR%%/keymaps/km_it.txt
-%%DATADIR%%/ui.bdf
-@dirrm %%DATADIR%%/keymaps
-@dirrm %%DATADIR%%
+%%EXAMPLESDIR%%/mame.ini
+@dirrm %%DATADIR%%/keymaps/
+@dirrm %%DATADIR%%/
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/sdlmame
+@dirrm %%EXAMPLESDIR%%
