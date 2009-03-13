@@ -22,6 +22,8 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84	\
 		ElmerSolver:${PORTSDIR}/science/elmer-fem	\
 		ElmerMesh2D:${PORTSDIR}/science/elmer-meshgen2d
 
+BROKEN=		does not compile
+
 # Elmer avoids the new C++ headers because they cause problems
 # on older systems (Irix)
 CXXFLAGS+=	-Wno-deprecated
