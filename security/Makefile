@@ -806,6 +806,7 @@
     SUBDIR += tuntun
     SUBDIR += uberkey
     SUBDIR += umit
+    SUBDIR += unhide
     SUBDIR += unicornscan
     SUBDIR += vida
     SUBDIR += vinetto
