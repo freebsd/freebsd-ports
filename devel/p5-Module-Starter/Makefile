@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	Module-Starter
-PORTVERSION=	1.47.0
+PORTVERSION=	1.50
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A simple starter kit for any Perl module
+
+BUILD_DEPENDS=	${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
 PERL_CONFIGURE=	yes
 
