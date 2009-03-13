@@ -27,10 +27,6 @@ PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
 
-.if ( ${ARCH} == "amd64" || ${ARCH} == "sparc64" ) && ${OSVERSION} >= 700043
-BROKEN=		does not compile
-.endif
-
 post-patch:
 # Allow to build with modern GCC
 	@${REINPLACE_CMD} -e 's,friend,& class,' ${WRKSRC}/XMill/*.?pp \
