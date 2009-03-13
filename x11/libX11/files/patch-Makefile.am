@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2009-03-13 12:20:35.000000000 +0300
++++ Makefile.am	2009-03-13 12:21:02.000000000 +0300
+@@ -5,7 +5,7 @@
+ endif
+ SUBDIRS=include $(ORDER) nls man
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = x11.pc
+ if XCB
+ pkgconfig_DATA += x11-xcb.pc
