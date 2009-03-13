@@ -44,7 +44,6 @@ CONFIGURE_ENV+=	LIBUSB_LIBS="-L/usr/lib -lusb20" LIBUSB_CFLAGS="-I/usr/include/d
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-usb20
 .else
 CONFIGURE_ENV+=	LIBUSB_LIBS="-lusb" LIBUSB_CFLAGS="-I/usr/include"
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-usb20
 .endif
 
 post-patch:
