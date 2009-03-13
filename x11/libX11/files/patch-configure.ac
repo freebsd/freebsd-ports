@@ -1,0 +1,10 @@
+--- configure.ac.orig	2009-03-13 11:46:25.000000000 +0300
++++ configure.ac	2009-03-13 11:46:56.000000000 +0300
+@@ -20,7 +20,6 @@
+ 
+ # Checks for programs.
+ AC_PROG_LIBTOOL
+-DOLT
+ AC_PROG_CC
+ XORG_CWARNFLAGS
+ 
