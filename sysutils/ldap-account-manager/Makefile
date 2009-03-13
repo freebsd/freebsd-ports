@@ -7,6 +7,7 @@
 
 PORTNAME=	ldap-account-manager
 PORTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${PNAME}
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
@@ -44,16 +45,16 @@ do-install:
 .endif
 
 post-install:
-	@if [ ! -f ${WWWDIR}/config/config.conf ]; then \
+	@if [ ! -f ${WWWDIR}/config/config.cfg ]; then \
 	    ${CP} -p ${WWWDIR}/config/config.cfg_sample ${WWWDIR}/config/config.cfg ; \
 	fi
 	@if [ ! -f ${WWWDIR}/config/lam.conf ]; then \
 	    ${CP} -p ${WWWDIR}/config/lam.conf_sample ${WWWDIR}/config/lam.conf ; \
 	fi
-
 	@${FIND} ${WWWDIR} -type f -exec ${CHMOD} 644 {} \;
 	@${FIND} ${WWWDIR} -type d -exec ${CHMOD} 755 {} \;
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/config ${WWWDIR}/sess ${WWWDIR}/tmp
+	@${CHMOD} 755 ${WWWDIR}/lib/lamdaemon.pl
 	@${LN} -sf /etc/shells ${WWWDIR}/config/shells
 	@${CAT} ${PKGMESSAGE}
 
