@@ -90,12 +90,12 @@
 +@HAVE_LIBUSB20_TRUE@hald_probe_usb2_device_SOURCES = probe-usb2-device.c
 +@HAVE_LIBUSB20_TRUE@hald_probe_usb2_device_LDADD = \
 +@HAVE_LIBUSB20_TRUE@	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la  \
-+@HAVE_LIBUSB20_TRUE@	-lusb20
++@HAVE_LIBUSB20_TRUE@	@LIBUSB20_LIBS@
 +
 +@HAVE_LIBUSB20_TRUE@hald_probe_usb2_interface_SOURCES = probe-usb2-interface.c
 +@HAVE_LIBUSB20_TRUE@hald_probe_usb2_interface_LDADD = \
 +@HAVE_LIBUSB20_TRUE@	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la  \
-+@HAVE_LIBUSB20_TRUE@	-lusb20
++@HAVE_LIBUSB20_TRUE@	@LIBUSB20_LIBS@
 +
 +hald_probe_mouse_SOURCES = probe-mouse.c
 +hald_probe_mouse_CPPFLAGS = $(AM_CPPFLAGS) @GLIB_CFLAGS@

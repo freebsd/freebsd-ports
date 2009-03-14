@@ -31,12 +31,12 @@
 +hald_probe_usb2_device_SOURCES = probe-usb2-device.c
 +hald_probe_usb2_device_LDADD = \
 +	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la  \
-+	-lusb20
++	@LIBUSB20_LIBS@
 +
 +hald_probe_usb2_interface_SOURCES = probe-usb2-interface.c
 +hald_probe_usb2_interface_LDADD = \
 +	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la  \
-+	-lusb20
++	@LIBUSB20_LIBS@
 +endif
 +
 +hald_probe_mouse_SOURCES = probe-mouse.c

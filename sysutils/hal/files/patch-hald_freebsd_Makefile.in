@@ -8,7 +8,7 @@
 +@HAVE_LIBUSB20_TRUE@	hf-usb2.c		\
 +@HAVE_LIBUSB20_TRUE@	hf-usb2.h
 +
-+@HAVE_LIBUSB20_TRUE@am__append_2 = -lusb20
++@HAVE_LIBUSB20_TRUE@am__append_2 = @LIBUSB20_LIBS@
  subdir = hald/freebsd
  DIST_COMMON = README $(srcdir)/Makefile.am $(srcdir)/Makefile.in TODO
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
