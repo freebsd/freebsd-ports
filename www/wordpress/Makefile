@@ -20,7 +20,7 @@ COMMENT=	A state-of-the-art semantic personal publishing platform
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_PHP=	mysql pcre xml
+USE_PHP=	mysql pcre xml gd
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 WORDPRESS?=	www/data/wordpress
