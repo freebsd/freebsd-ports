@@ -130,7 +130,6 @@
     SUBDIR += gctpc
     SUBDIR += geekcode
     SUBDIR += getopt
-    SUBDIR += git
     SUBDIR += gkrellm-gamma
     SUBDIR += gkrellm-helium
     SUBDIR += gkrellm-xkb
@@ -155,6 +154,7 @@
     SUBDIR += gnome2-reference
     SUBDIR += gnomehier
     SUBDIR += gnu-watch
+    SUBDIR += gnuit
     SUBDIR += gnuls
     SUBDIR += gnustep-examples
     SUBDIR += goldstr
