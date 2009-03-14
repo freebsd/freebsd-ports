@@ -1,6 +1,6 @@
 ======================================================================
 
-To enable printing with local printer you need to give group cups
+To enable printing with local printer you need to give group 'cups'
 r/w access to printer device:
 
 1) Add following to /etc/devfs.rules (create if it doesn't exist):
@@ -16,9 +16,8 @@ devfs_system_ruleset="system"
 
 3) Restart devfs: /etc/rc.d/devfs restart
 
-In case your system supoorts "devd" you can copy
-$PREFIX/share/examples/lpt-cupsd.conf into $PREFIX/etc/devd/
-
+If your system supports 'devd' you can copy
+$PREFIX/share/examples/lpt-cupsd.conf to $PREFIX/etc/devd/
 
 To enable printing under Gimp and MS-Windows clients do the following:
 
