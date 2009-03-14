@@ -9,7 +9,7 @@ PORTNAME=	manu-gothica
 DISTVERSION=	0
 PORTREVISION=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.bryld.info/downloads/
+MASTER_SITES=	http://www.bryld.info/filer/
 DISTNAME=	manugot19
 EXTRACT_SUFX=	.ttf
 
