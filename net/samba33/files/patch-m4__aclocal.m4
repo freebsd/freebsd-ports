@@ -1,5 +1,22 @@
---- ./m4/aclocal.m4.orig	2008-12-19 13:57:33.000000000 +0000
-+++ ./m4/aclocal.m4	2009-01-06 17:10:53.000000000 +0000
+--- ./m4/aclocal.m4.orig	2009-03-12 09:47:20.000000000 +0000
++++ ./m4/aclocal.m4	2009-03-14 05:49:10.000000000 +0000
+@@ -97,14 +97,14 @@
+ 		build_lib=yes
+ 		;;
+ 	*)
+-		AC_MSG_RESULT(yes)
++		AC_MSG_RESULT(no)
+ 		build_lib=no
+ 		;;
+ esac
+ ],
+ [
+ # if unspecified, default is not to build
+-AC_MSG_RESULT(yes)
++AC_MSG_RESULT(no)
+ build_lib=no
+ ]
+ )
 @@ -416,101 +416,79 @@
    dnl those with the standalone portable libiconv installed).
    AC_MSG_CHECKING(for iconv in $1)

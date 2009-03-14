@@ -272,6 +272,7 @@ share/swat/help/manpages/vfs_gpfs.8.html
 share/swat/help/manpages/vfs_netatalk.8.html
 share/swat/help/manpages/vfs_notify_fam.8.html
 share/swat/help/manpages/vfs_prealloc.8.html
+share/swat/help/manpages/vfs_preopen.8.html
 share/swat/help/manpages/vfs_readahead.8.html
 share/swat/help/manpages/vfs_readonly.8.html
 share/swat/help/manpages/vfs_recycle.8.html

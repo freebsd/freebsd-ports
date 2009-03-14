@@ -1,5 +1,5 @@
---- /dev/null	2009-03-07 03:29:28.000000000 +0000
-+++ nsswitch/wins_freebsd.c	2009-03-07 02:50:40.000000000 +0000
+--- ./nsswitch/wins_freebsd.c.orig	2009-03-14 05:49:10.000000000 +0000
++++ ./nsswitch/wins_freebsd.c	2009-03-14 05:49:10.000000000 +0000
 @@ -0,0 +1,108 @@
 +/* 
 +   Unix SMB/CIFS implementation.

@@ -1,5 +1,5 @@
---- nsswitch/pam_winbind.c.orig	2009-02-24 07:38:16.000000000 +0000
-+++ nsswitch/pam_winbind.c	2009-02-26 02:17:02.000000000 +0000
+--- ./nsswitch/pam_winbind.c.orig	2009-03-12 09:47:20.000000000 +0000
++++ ./nsswitch/pam_winbind.c	2009-03-14 05:49:10.000000000 +0000
 @@ -161,7 +161,6 @@
  }
  #endif
