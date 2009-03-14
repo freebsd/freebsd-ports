@@ -1,0 +1,281 @@
+%%XPI_XPIDIR%%/chrome/content/Behavior/CommonBehaviors.js
+%%XPI_XPIDIR%%/chrome/content/Behavior/CommonFunctions.js
+%%XPI_XPIDIR%%/chrome/content/CanvasHelper/CanvasCareTaker.js
+%%XPI_XPIDIR%%/chrome/content/CanvasHelper/CanvasImpl.js
+%%XPI_XPIDIR%%/chrome/content/CanvasHelper/CanvasMemento.js
+%%XPI_XPIDIR%%/chrome/content/Common/AbstractSymbol.js
+%%XPI_XPIDIR%%/chrome/content/Common/Config.js
+%%XPI_XPIDIR%%/chrome/content/Common/Controller.js
+%%XPI_XPIDIR%%/chrome/content/Common/FirefoxOverlay.js
+%%XPI_XPIDIR%%/chrome/content/Common/IO.js
+%%XPI_XPIDIR%%/chrome/content/Common/MainWindow.js
+%%XPI_XPIDIR%%/chrome/content/Common/MessageDialog.js
+%%XPI_XPIDIR%%/chrome/content/Common/PageDetailDialog.js
+%%XPI_XPIDIR%%/chrome/content/Common/Pencil.js
+%%XPI_XPIDIR%%/chrome/content/Common/PencilNamespaces.js
+%%XPI_XPIDIR%%/chrome/content/Common/ProgressDialog.js
+%%XPI_XPIDIR%%/chrome/content/Common/PropertyDialog.js
+%%XPI_XPIDIR%%/chrome/content/Common/RichTextDialog.js
+%%XPI_XPIDIR%%/chrome/content/Common/SVGRasterizer.js
+%%XPI_XPIDIR%%/chrome/content/Common/StencilEditor.js
+%%XPI_XPIDIR%%/chrome/content/Common/Util.js
+%%XPI_XPIDIR%%/chrome/content/Common/nsDragAndDrop.js
+%%XPI_XPIDIR%%/chrome/content/Common/nsTransferable.js
+%%XPI_XPIDIR%%/chrome/content/Definition/CollectionManager.js
+%%XPI_XPIDIR%%/chrome/content/Definition/Geometry.js
+%%XPI_XPIDIR%%/chrome/content/Definition/ShapeDef.js
+%%XPI_XPIDIR%%/chrome/content/Definition/ShapeDefCollection.js
+%%XPI_XPIDIR%%/chrome/content/Definition/ShapeDefCollectionParser.js
+%%XPI_XPIDIR%%/chrome/content/Document/Document.js
+%%XPI_XPIDIR%%/chrome/content/Document/PersistentHooks.js
+%%XPI_XPIDIR%%/chrome/content/Document/XMLDocumentPersister.js
+%%XPI_XPIDIR%%/chrome/content/Editor/GeometryEditor.js
+%%XPI_XPIDIR%%/chrome/content/Editor/HandleEditor.js
+%%XPI_XPIDIR%%/chrome/content/Editor/OnMenuEditor.js
+%%XPI_XPIDIR%%/chrome/content/Editor/OnMenuTypeEditors.js
+%%XPI_XPIDIR%%/chrome/content/Editor/OnScreenTextEditor-RichTextSupport.js
+%%XPI_XPIDIR%%/chrome/content/Editor/OnScreenTextEditor.js
+%%XPI_XPIDIR%%/chrome/content/Editor/PropertyPageEditor.js
+%%XPI_XPIDIR%%/chrome/content/Editor/SharedFillColorEditor.js
+%%XPI_XPIDIR%%/chrome/content/Editor/SharedFontEditor.js
+%%XPI_XPIDIR%%/chrome/content/Editor/SimpleTextEditor.js
+%%XPI_XPIDIR%%/chrome/content/Icons/16.png
+%%XPI_XPIDIR%%/chrome/content/Icons/24.png
+%%XPI_XPIDIR%%/chrome/content/Icons/32.png
+%%XPI_XPIDIR%%/chrome/content/Icons/48.png
+%%XPI_XPIDIR%%/chrome/content/Pencil.kpf
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Alignment.js
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Bool.js
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Bound.js
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Color.js
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Dimension.js
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Editor/AlignEditor.css
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Editor/AlignEditor.xbl
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Editor/ColorEditor-Preview-Bg.png
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Editor/ColorEditor.css
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Editor/ColorEditor.xbl
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Editor/ColorPickers.css
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Editor/ColorPickers.xbl
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Editor/CommonEditors.css
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Editor/EditorWrapper.css
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Editor/EditorWrapper.xbl
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Editor/FontEditor.css
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Editor/FontEditor.xbl
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Editor/PlainTextEditor.css
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Editor/PlainTextEditor.xbl
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Editor/StrokeEditor.css
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Editor/StrokeEditor.xbl
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Enum.js
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Font.js
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Handle.js
+%%XPI_XPIDIR%%/chrome/content/PropertyType/ImageData.js
+%%XPI_XPIDIR%%/chrome/content/PropertyType/PlainText.js
+%%XPI_XPIDIR%%/chrome/content/PropertyType/Point.js
+%%XPI_XPIDIR%%/chrome/content/PropertyType/RichText.js
+%%XPI_XPIDIR%%/chrome/content/PropertyType/StrokeStyle.js
+%%XPI_XPIDIR%%/chrome/content/Stencil/Annotation/Definition.xml
+%%XPI_XPIDIR%%/chrome/content/Stencil/Annotation/Icons/arrow.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Annotation/Icons/balloon.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Annotation/Icons/bullet.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Annotation/Icons/hollowbox.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Annotation/Icons/icons.ep
+%%XPI_XPIDIR%%/chrome/content/Stencil/Common/Definition.xml
+%%XPI_XPIDIR%%/chrome/content/Stencil/Common/Icons/bitmap.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Common/Icons/hline.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Common/Icons/plain-text.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Common/Icons/rectangle-grad.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Common/Icons/rectangle.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Common/Icons/rich-text.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Definition.xml
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/button.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/callout1.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/callout2.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/checkbox.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/combobox.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/datefield.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/frame.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/label.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/listbox.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/panel.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/progress.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/radio.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/shape1.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/square.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/table.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/test.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/text.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/textbox.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons/window.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Definition.xml
+%%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Icons/activetab.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Icons/button.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Icons/checkbox.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Icons/combobox.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Icons/frame.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Icons/groupbox.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Icons/label.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Icons/menu.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Icons/menuitem.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Icons/progressbar.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Icons/radio.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Icons/scrollbar.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Icons/separator.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Icons/tabheader.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Icons/table.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Icons/tablecolumn.png
+%%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Icons/textbox.png
+%%XPI_XPIDIR%%/chrome/content/Styles/ApplicationStyle.css
+%%XPI_XPIDIR%%/chrome/content/Styles/CollectionPane.css
+%%XPI_XPIDIR%%/chrome/content/Styles/ColorPickerButton.css
+%%XPI_XPIDIR%%/chrome/content/Styles/Dialog.css
+%%XPI_XPIDIR%%/chrome/content/Styles/HtmlForeignObject.css
+%%XPI_XPIDIR%%/chrome/content/Styles/MainWindow.css
+%%XPI_XPIDIR%%/chrome/content/Styles/PCanvas.css
+%%XPI_XPIDIR%%/chrome/content/Styles/RichTextDialog.css
+%%XPI_XPIDIR%%/chrome/content/Target/Group.js
+%%XPI_XPIDIR%%/chrome/content/Target/Null.js
+%%XPI_XPIDIR%%/chrome/content/Target/Shape.js
+%%XPI_XPIDIR%%/chrome/content/Target/TargetSet.js
+%%XPI_XPIDIR%%/chrome/content/UI/CollectionPane.xbl
+%%XPI_XPIDIR%%/chrome/content/UI/ColorPickerButton.xbl
+%%XPI_XPIDIR%%/chrome/content/UI/ColorToolOverlay.xul
+%%XPI_XPIDIR%%/chrome/content/UI/Firefox-Overlay.xul
+%%XPI_XPIDIR%%/chrome/content/UI/GeometryEditor.config.xml
+%%XPI_XPIDIR%%/chrome/content/UI/HandleEditor.config.xml
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/anchor-16.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/blank-note-16.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/blank-note-2416.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/blank-note-32.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/bulleted-list.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/delete-16.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/delete-2416.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/edittrash.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/emails.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/filenew.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/filesave.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/folder-16.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/folder-2416.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/font-box-background.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/horz-rule.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/image.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/indent.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/insert-image.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/link.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/menu-bg.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/numbered-list.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/outdent.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/save-2416.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/size-box-background.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/text_bold.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/text_center.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/text_color.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/text_font.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/text_full.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/text_italic.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/text_left.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/text_right.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/text_size.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/text_strike.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/text_sub.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/text_super.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor/text_under.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/add-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/document-new-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/document-open-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/document-save-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/edit-clear-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/format-indent-less-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/format-indent-more-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/format-text-bold-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/format-text-italic-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/format-text-strikethrough-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/format-text-underline-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/insert-link-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/next-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/previous-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/remove-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/stock_text_color_background-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/stock_text_color_foreground-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/zoom-in-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/zoom-original-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock/zoom-out-menu.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/align-bottom.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/align-center-bottom.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/align-center-center.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/align-center-top.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/align-center.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/align-left-bottom.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/align-left-center.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/align-left-top.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/align-left.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/align-middle.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/align-right-bottom.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/align-right-center.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/align-right-top.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/align-right.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/align-top.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/bg-gray20.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/bottom.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/color-fill.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/color-stroke.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/color-wheel-70.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/color-wheel-90.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/down.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/pencil-icon.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/rasterize.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/select.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/top.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/twisty.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/up.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/zoom-1.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/zoom-in.png
+%%XPI_XPIDIR%%/chrome/content/UI/Icons/zoom-out.png
+%%XPI_XPIDIR%%/chrome/content/UI/MessageDialog.xul
+%%XPI_XPIDIR%%/chrome/content/UI/OnScreenTextEditor.config.xml
+%%XPI_XPIDIR%%/chrome/content/UI/PCanvas.xbl
+%%XPI_XPIDIR%%/chrome/content/UI/PageDetailDialog.xul
+%%XPI_XPIDIR%%/chrome/content/UI/ProgressDialog.xul
+%%XPI_XPIDIR%%/chrome/content/UI/PropertyDialog.xul
+%%XPI_XPIDIR%%/chrome/content/UI/RichTextDialog.xul
+%%XPI_XPIDIR%%/chrome/content/UI/TextToolOverlay.xul
+%%XPI_XPIDIR%%/chrome/content/UI/Window.xul
+%%XPI_XPIDIR%%/chrome/content/UI/blank.html
+%%XPI_XPIDIR%%/chrome/content/UI/editor-blank.html
+%%XPI_XPIDIR%%/chrome/content/XHTML.html
+%%XPI_XPIDIR%%/chrome/content/XferHelper/DragObservers.js
+%%XPI_XPIDIR%%/chrome/content/XferHelper/PNGImageXferHelper.js
+%%XPI_XPIDIR%%/chrome/content/XferHelper/RichTextXferHelper.js
+%%XPI_XPIDIR%%/chrome/content/XferHelper/SVGXferHelper.js
+%%XPI_XPIDIR%%/chrome/content/XferHelper/ShapeXferHelper.js
+%%XPI_XPIDIR%%/chrome/content/XferHelper/TargetSetXferHelper.js
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/update.rdf
+@dirrm %%XPI_XPIDIR%%/chrome/content/Behavior
+@dirrm %%XPI_XPIDIR%%/chrome/content/CanvasHelper
+@dirrm %%XPI_XPIDIR%%/chrome/content/Common
+@dirrm %%XPI_XPIDIR%%/chrome/content/Definition
+@dirrm %%XPI_XPIDIR%%/chrome/content/Document
+@dirrm %%XPI_XPIDIR%%/chrome/content/Editor
+@dirrm %%XPI_XPIDIR%%/chrome/content/Icons
+@dirrm %%XPI_XPIDIR%%/chrome/content/PropertyType/Editor
+@dirrm %%XPI_XPIDIR%%/chrome/content/PropertyType
+@dirrm %%XPI_XPIDIR%%/chrome/content/Stencil/Annotation/Icons
+@dirrm %%XPI_XPIDIR%%/chrome/content/Stencil/Annotation
+@dirrm %%XPI_XPIDIR%%/chrome/content/Stencil/Common/Icons
+@dirrm %%XPI_XPIDIR%%/chrome/content/Stencil/Common
+@dirrm %%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI/Icons
+@dirrm %%XPI_XPIDIR%%/chrome/content/Stencil/Gtk.GUI
+@dirrm %%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI/Icons
+@dirrm %%XPI_XPIDIR%%/chrome/content/Stencil/WindowsXP-GUI
+@dirrm %%XPI_XPIDIR%%/chrome/content/Stencil
+@dirrm %%XPI_XPIDIR%%/chrome/content/Styles
+@dirrm %%XPI_XPIDIR%%/chrome/content/Target
+@dirrm %%XPI_XPIDIR%%/chrome/content/UI/Icons/Editor
+@dirrm %%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons/stock
+@dirrm %%XPI_XPIDIR%%/chrome/content/UI/Icons/MozIcons
+@dirrm %%XPI_XPIDIR%%/chrome/content/UI/Icons
+@dirrm %%XPI_XPIDIR%%/chrome/content/UI
+@dirrm %%XPI_XPIDIR%%/chrome/content/XferHelper
+@dirrm %%XPI_XPIDIR%%/chrome/content
+@dirrm %%XPI_XPIDIR%%/chrome

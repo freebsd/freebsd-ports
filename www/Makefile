@@ -1664,6 +1664,7 @@
     SUBDIR += xpi-num2web
     SUBDIR += xpi-passwordmaker
     SUBDIR += xpi-pdf_download
+    SUBDIR += xpi-pencil
     SUBDIR += xpi-permatabs
     SUBDIR += xpi-preferential
     SUBDIR += xpi-quick-locale-switcher
