@@ -3854,3 +3854,4 @@ x11-toolkits/inti-gconf||2009-03-09|Has expired: not maintain by upstream for mo
 x11-toolkits/inti-gl||2009-03-09|Has expired: not maintain by upstream for more than five years and no port depend on this
 x11-toolkits/inti-sourceview||2009-03-09|Has expired: not maintain by upstream for more than five years and no port depend on this
 misc/git|misc/gnuit|2009-03-14|Renamed
+lang/gcc33|lang/gcc43|2009-03-14|Abandoned upstream, superseded by later versions
