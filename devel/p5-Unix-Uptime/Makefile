@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Unix-Uptime
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.3201
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +16,9 @@ COMMENT=	Determine the current uptime in seconds
 
 PERL_MODBUILD=	yes
 
-MAN3=		Unix::Uptime.3
+MAN3=		Unix::Uptime.3 \
+		Unix::Uptime::BSD.3 \
+		Unix::Uptime::FreeBSD.3 \
+		Unix::Uptime::Linux.3
 
 .include <bsd.port.mk>
