@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libzdb
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tildeslash.com/libzdb/dist/
 
@@ -14,48 +14,39 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Thread-safe connection pool library
 
 OPTIONS=	MYSQL "Add MySQL support" on \
-		SQLITE " Add Sqlite support" on \
+		SQLITE "Add Sqlite support" on \
 		PGSQL "Add PgSQL support" on
 
+USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	VERSION=${PORTVERSION}
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
-CONFIGURE_ARGS+=	--with-mysql=${PREFIX}
+CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}/bin/mysql_config
 .else
 CONFIGURE_ARGS+=	--without-mysql
 .endif
 
 .if defined(WITH_SQLITE)
 USE_SQLITE=	3
-CONFIGURE_ARGS+=	--with-sqlite=${PREFIX}
+CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-sqlite
 .endif
 
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
-CONFIGURE_ARGS+=	--with-pgsql=${PREFIX}
+CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}/bin/pg_config
 .else
 CONFIGURE_ARGS+=	--without-pgsql
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread |${PTHREAD_LIBS} |g ; \
-		 s|_mysql/lib |_mysql/lib/mysql |g ; \
-		 s|_mysql/include |_mysql/include/mysql |g ; \
-		 s|_mysql/include"|_mysql/include/mysql"|g ; \
-		 s|_mysql/lib/l|_mysql/lib/mysql/l|g ; \
-		 s|_mysql/lib/ |_mysql/lib/mysql |g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

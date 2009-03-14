@@ -1,12 +1,12 @@
-include/Connection.h
-include/ConnectionPool.h
-include/Exception.h
-include/PreparedStatement.h
-include/ResultSet.h
-include/SQLException.h
-include/URL.h
+include/zdb/Connection.h
+include/zdb/ConnectionPool.h
+include/zdb/Exception.h
+include/zdb/PreparedStatement.h
+include/zdb/ResultSet.h
+include/zdb/SQLException.h
+include/zdb/URL.h
 lib/libzdb.a
 lib/libzdb.la
 lib/libzdb.so
-lib/libzdb-%%VERSION%%.so
-lib/libzdb-%%VERSION%%.so.6
+lib/libzdb.so.6
+@dirrm include/zdb
