@@ -31,6 +31,7 @@ bin/aqualung
 %%DATADIR%%/skin/dark/next.png
 %%DATADIR%%/skin/dark/pause.png
 %%DATADIR%%/skin/dark/play.png
+%%DATADIR%%/skin/dark/play_pause.png
 %%DATADIR%%/skin/dark/prev.png
 %%DATADIR%%/skin/dark/rc
 %%DATADIR%%/skin/dark/repeat.png
@@ -48,6 +49,7 @@ bin/aqualung
 %%DATADIR%%/skin/default/next.png
 %%DATADIR%%/skin/default/pause.png
 %%DATADIR%%/skin/default/play.png
+%%DATADIR%%/skin/default/play_pause.png
 %%DATADIR%%/skin/default/prev.png
 %%DATADIR%%/skin/default/rc
 %%DATADIR%%/skin/default/repeat.png
@@ -63,6 +65,7 @@ bin/aqualung
 %%DATADIR%%/skin/metal/next.png
 %%DATADIR%%/skin/metal/pause.png
 %%DATADIR%%/skin/metal/play.png
+%%DATADIR%%/skin/metal/play_pause.png
 %%DATADIR%%/skin/metal/prev.png
 %%DATADIR%%/skin/metal/rc
 %%DATADIR%%/skin/metal/repeat.png
@@ -73,6 +76,7 @@ bin/aqualung
 %%DATADIR%%/skin/no_skin/next.png
 %%DATADIR%%/skin/no_skin/pause.png
 %%DATADIR%%/skin/no_skin/play.png
+%%DATADIR%%/skin/no_skin/play_pause.png
 %%DATADIR%%/skin/no_skin/prev.png
 %%DATADIR%%/skin/no_skin/rc
 %%DATADIR%%/skin/no_skin/repeat.png
@@ -88,6 +92,7 @@ bin/aqualung
 %%DATADIR%%/skin/ocean/pause.png
 %%DATADIR%%/skin/ocean/pl.png
 %%DATADIR%%/skin/ocean/play.png
+%%DATADIR%%/skin/ocean/play_pause.png
 %%DATADIR%%/skin/ocean/prev.png
 %%DATADIR%%/skin/ocean/rc
 %%DATADIR%%/skin/ocean/repeat.png
@@ -97,6 +102,7 @@ bin/aqualung
 %%DATADIR%%/skin/plain/next.png
 %%DATADIR%%/skin/plain/pause.png
 %%DATADIR%%/skin/plain/play.png
+%%DATADIR%%/skin/plain/play_pause.png
 %%DATADIR%%/skin/plain/prev.png
 %%DATADIR%%/skin/plain/rc
 %%DATADIR%%/skin/plain/repeat.png
@@ -107,6 +113,7 @@ bin/aqualung
 %%DATADIR%%/skin/woody/pause.png
 %%DATADIR%%/skin/woody/pine.png
 %%DATADIR%%/skin/woody/play.png
+%%DATADIR%%/skin/woody/play_pause.png
 %%DATADIR%%/skin/woody/prev.png
 %%DATADIR%%/skin/woody/rc
 %%DATADIR%%/skin/woody/repeat.png
@@ -122,10 +129,32 @@ bin/aqualung
 %%DATADIR%%/skin/woody/wood5.png
 %%DATADIR%%/skin/woody/wood6.png
 %%DATADIR%%/tab-close.png
+%%PORTDOCS%%%%DOCSDIR%%/split.sh
+%%PORTDOCS%%%%DOCSDIR%%/aqualung-doc.css
+%%PORTDOCS%%%%DOCSDIR%%/aqualung-doc.dtd
+%%PORTDOCS%%%%DOCSDIR%%/aqualung-doc.xml
+%%PORTDOCS%%%%DOCSDIR%%/aqualung-latex.xsl
+%%PORTDOCS%%%%DOCSDIR%%/aqualung-man.xsl
+%%PORTDOCS%%%%DOCSDIR%%/aqualung-xhtml-multipage.xsl
+%%PORTDOCS%%%%DOCSDIR%%/aqualung-xhtml-view.xsl
+%%PORTDOCS%%%%DOCSDIR%%/aqualung-xhtml.xsl
+%%PORTDOCS%%%%DOCSDIR%%/external.eps
+%%PORTDOCS%%%%DOCSDIR%%/timer.eps
+%%PORTDOCS%%%%DOCSDIR%%/external.png
+%%PORTDOCS%%%%DOCSDIR%%/jack.png
+%%PORTDOCS%%%%DOCSDIR%%/main.png
+%%PORTDOCS%%%%DOCSDIR%%/playlist.png
+%%PORTDOCS%%%%DOCSDIR%%/settings.png
+%%PORTDOCS%%%%DOCSDIR%%/store.png
+%%PORTDOCS%%%%DOCSDIR%%/systray.png
+%%PORTDOCS%%%%DOCSDIR%%/timer.png
 share/locale/de/LC_MESSAGES/aqualung.mo
 share/locale/hu/LC_MESSAGES/aqualung.mo
 share/locale/it/LC_MESSAGES/aqualung.mo
+share/locale/ru/LC_MESSAGES/aqualung.mo
+share/locale/sv/LC_MESSAGES/aqualung.mo
 share/locale/uk/LC_MESSAGES/aqualung.mo
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrm %%DATADIR%%/skin/dark
 @dirrm %%DATADIR%%/skin/default
 @dirrm %%DATADIR%%/skin/metal
