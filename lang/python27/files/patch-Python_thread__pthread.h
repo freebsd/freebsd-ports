@@ -1,9 +1,34 @@
-
-$FreeBSD$
-
---- Python/thread_pthread.h
-+++ Python/thread_pthread.h
-@@ -149,6 +149,7 @@
+--- Python/thread_pthread.h.orig	2006-06-13 16:04:24.000000000 +0100
++++ Python/thread_pthread.h	2009-03-12 10:55:49.000000000 +0000
+@@ -26,13 +26,18 @@
+ #endif
+ #endif
+ 
++#ifdef __FreeBSD__
++#include <osreldate.h>
++#endif
++
+ /* The POSIX spec says that implementations supporting the sem_*
+    family of functions must indicate this by defining
+    _POSIX_SEMAPHORES. */   
+ #ifdef _POSIX_SEMAPHORES
+ /* On FreeBSD 4.x, _POSIX_SEMAPHORES is defined empty, so 
+    we need to add 0 to make it work there as well. */
+-#if (_POSIX_SEMAPHORES+0) == -1
++#if defined(__FreeBSD__) && __FreeBSD_version < 701104 && \
++    (_POSIX_SEMAPHORES+0) == -1
+ #define HAVE_BROKEN_POSIX_SEMAPHORES
+ #else
+ #include <semaphore.h>
+@@ -44,7 +49,6 @@
+    in default setting.  So the process scope is preferred to get
+    enough number of threads to work. */
+ #ifdef __FreeBSD__
+-#include <osreldate.h>
+ #if __FreeBSD_version >= 500000 && __FreeBSD_version < 504101
+ #undef PTHREAD_SYSTEM_SCHED_SUPPORTED
+ #endif
+@@ -149,6 +153,7 @@
  {
  	pthread_t th;
  	int status;
@@ -11,7 +36,7 @@ $FreeBSD$
  #if defined(THREAD_STACK_SIZE) || defined(PTHREAD_SYSTEM_SCHED_SUPPORTED)
  	pthread_attr_t attrs;
  #endif
-@@ -177,6 +178,8 @@
+@@ -177,6 +182,8 @@
  #if defined(PTHREAD_SYSTEM_SCHED_SUPPORTED)
          pthread_attr_setscope(&attrs, PTHREAD_SCOPE_SYSTEM);
  #endif
@@ -20,7 +45,7 @@ $FreeBSD$
  
  	status = pthread_create(&th, 
  #if defined(THREAD_STACK_SIZE) || defined(PTHREAD_SYSTEM_SCHED_SUPPORTED)
-@@ -188,6 +191,7 @@
+@@ -188,6 +195,7 @@
  				 (void *)arg
  				 );
  
