@@ -1,5 +1,5 @@
---- platform/gtk-x11/setup.py.orig	2009-02-12 06:37:07.000000000 +0900
-+++ platform/gtk-x11/setup.py	2009-02-15 05:49:26.000000000 +0900
+--- platform/gtk-x11/setup.py.orig	2009-03-08 04:21:24.000000000 +0900
++++ platform/gtk-x11/setup.py	2009-03-09 15:35:56.000000000 +0900
 @@ -111,12 +111,13 @@
  # XPCOM_LIB = "firefox-xpcom"
  # GTKMOZEMBED_LIB = "firefox-gtkmozembed"
@@ -40,8 +40,8 @@
          exit;
      fi
  
--    %(runtimelib)s$GDB -ex 'set breakpoint pending on' -ex 'break gdk_x_error' -ex 'run' --args $PYTHON ./miro.real --sync "$@"
-+    %(runtimelib)s$GDB -ex 'set breakpoint pending on' -ex 'break gdk_x_error' -ex 'run' --args $PYTHON %%PREFIX%%/bin/miro.real --sync "$@"
+-    %(runtimelib)s$GDB -ex 'set breakpoint pending on' -ex 'run' --args $PYTHON ./miro.real --sync "$@"
++    %(runtimelib)s$GDB -ex 'set breakpoint pending on' -ex 'run' --args $PYTHON %%PREFIX%%/bin/miro.real --sync "$@"
  else
      %(runtimelib)smiro.real "$@"
  fi
@@ -53,7 +53,7 @@
      )
  
  
-@@ -381,14 +386,14 @@
+@@ -378,14 +383,14 @@
                            "-DHAVE___INCLUDE_LIBTORRENT_ASIO_HPP=1",
                            "-DHAVE___INCLUDE_LIBTORRENT_ASIO_SSL_STREAM_HPP=1",
                            "-DHAVE___INCLUDE_LIBTORRENT_ASIO_IP_TCP_HPP=1",
@@ -71,7 +71,7 @@
      all_libs = []
      if os.path.exists(os.path.join(sysconfig.PREFIX, "lib")):
          all_libs.extend(os.listdir(os.path.join(sysconfig.PREFIX, "lib")))
-@@ -430,6 +435,7 @@
+@@ -427,6 +432,7 @@
      return Extension("miro.libtorrent",
                       include_dirs=include_dirs,
                       libraries=libraries,
@@ -79,7 +79,7 @@
                       extra_compile_args=extra_compile_args,
                       sources=sources)
  
-@@ -552,7 +558,7 @@
+@@ -549,7 +555,7 @@
  xlib_ext = \
      Extension("miro.plat.xlibhelper",
          [ os.path.join(platform_package_dir,'xlibhelper.pyx') ],
@@ -88,7 +88,7 @@
          libraries = ['X11'],
      )
  
-@@ -638,29 +644,29 @@
+@@ -635,31 +641,31 @@
  # filter out app.config.template (which is handled specially)
  files = [f for f in listfiles(resource_dir) \
          if os.path.basename(f) != 'app.config.template']
@@ -109,6 +109,9 @@
 -    ('/usr/share/pixmaps',
 +    ('%%PREFIX%%/share/pixmaps',
       glob(os.path.join(platform_dir, 'miro-*.png'))),
+-    ('/usr/share/pixmaps',
++    ('%%PREFIX%%/share/pixmaps',
+      glob(os.path.join(platform_dir, 'miro.xpm'))),
 -    ('/usr/share/applications',
 +    ('%%PREFIX%%/share/applications',
       [os.path.join(platform_dir, 'miro.desktop')]),
@@ -126,7 +129,7 @@
       [os.path.join(platform_dir, 'xine/xine_extractor')]),
  ]
  
-@@ -684,7 +690,7 @@
+@@ -683,7 +689,7 @@
  
      def install_app_config(self):
          source = os.path.join(resource_dir, 'app.config.template')
@@ -135,7 +138,7 @@
  
          config_file = util.read_simple_config_file(source)
          print "Trying to figure out the svn revision...."
-@@ -724,7 +730,7 @@
+@@ -723,7 +729,7 @@
  
          for source in glob (os.path.join (locale_dir, "*.mo")):
              lang = os.path.basename(source)[:-3]
@@ -144,16 +147,16 @@
              if self.root:
                  dest = change_root(self.root, dest)
              self.mkpath(os.path.dirname(dest))
-@@ -753,7 +759,7 @@
+@@ -752,7 +758,7 @@
  
- #### install_theme installs a specifified theme .zip
+ #### install_theme installs a specified theme .zip
  class install_theme(Command):
 -    description = 'Install a provided theme to /usr/share/miro/themes'
 +    description = 'Install a provided theme to %%PREFIX%%/share/miro/themes'
      user_options = [("theme=", None, 'ZIP file containing the theme')]
  
      def initialize_options(self):
-@@ -781,7 +787,7 @@
+@@ -780,7 +786,7 @@
              raise DistutilsOptionError, "invalid theme file"
          self.zipfile = zf
          self.theme_name = themeName

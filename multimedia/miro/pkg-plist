@@ -110,6 +110,9 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/frontends/cli/__init__.py
 %%PYTHON_SITELIBDIR%%/miro/frontends/cli/__init__.pyc
 %%PYTHON_SITELIBDIR%%/miro/frontends/cli/__init__.pyo
+%%PYTHON_SITELIBDIR%%/miro/frontends/cli/application.py
+%%PYTHON_SITELIBDIR%%/miro/frontends/cli/application.pyc
+%%PYTHON_SITELIBDIR%%/miro/frontends/cli/application.pyo
 %%PYTHON_SITELIBDIR%%/miro/frontends/cli/clidialog.py
 %%PYTHON_SITELIBDIR%%/miro/frontends/cli/clidialog.pyc
 %%PYTHON_SITELIBDIR%%/miro/frontends/cli/clidialog.pyo
@@ -122,9 +125,12 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/frontends/cli/util.py
 %%PYTHON_SITELIBDIR%%/miro/frontends/cli/util.pyc
 %%PYTHON_SITELIBDIR%%/miro/frontends/cli/util.pyo
-%%PYTHON_SITELIBDIR%%/miro/frontends/shell.py
-%%PYTHON_SITELIBDIR%%/miro/frontends/shell.pyc
-%%PYTHON_SITELIBDIR%%/miro/frontends/shell.pyo
+%%PYTHON_SITELIBDIR%%/miro/frontends/shell/__init__.py
+%%PYTHON_SITELIBDIR%%/miro/frontends/shell/__init__.pyc
+%%PYTHON_SITELIBDIR%%/miro/frontends/shell/__init__.pyo
+%%PYTHON_SITELIBDIR%%/miro/frontends/shell/application.py
+%%PYTHON_SITELIBDIR%%/miro/frontends/shell/application.pyc
+%%PYTHON_SITELIBDIR%%/miro/frontends/shell/application.pyo
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/__init__.py
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/__init__.pyc
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/__init__.pyo
@@ -734,12 +740,15 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/images/pref-tab-general.png
 %%DATADIR%%/resources/images/pref-tab-playback.png
 %%DATADIR%%/resources/images/resume-button.png
+%%DATADIR%%/resources/images/search_icon_5min.png
 %%DATADIR%%/resources/images/search_icon_all.png
 %%DATADIR%%/resources/images/search_icon_bliptv.png
 %%DATADIR%%/resources/images/search_icon_blogdigger.png
 %%DATADIR%%/resources/images/search_icon_dailymotion.png
+%%DATADIR%%/resources/images/search_icon_everyzing.png
 %%DATADIR%%/resources/images/search_icon_google.png
 %%DATADIR%%/resources/images/search_icon_mefeedia.png
+%%DATADIR%%/resources/images/search_icon_metavid.png
 %%DATADIR%%/resources/images/search_icon_revver.png
 %%DATADIR%%/resources/images/search_icon_veoh.png
 %%DATADIR%%/resources/images/search_icon_yahoosearch.png
@@ -776,10 +785,13 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/images/volume_track.png
 %%DATADIR%%/resources/images/wtexture.png
 %%DATADIR%%/resources/images/wtexture_inactive.png
+%%DATADIR%%/resources/searchengines/5min.xml
 %%DATADIR%%/resources/searchengines/bliptv.xml
 %%DATADIR%%/resources/searchengines/blogdigger.xml
 %%DATADIR%%/resources/searchengines/dailymotion.xml
+%%DATADIR%%/resources/searchengines/everyzing.xml
 %%DATADIR%%/resources/searchengines/google.xml
+%%DATADIR%%/resources/searchengines/metavid.xml
 %%DATADIR%%/resources/searchengines/revver.xml
 %%DATADIR%%/resources/searchengines/veoh.xml
 %%DATADIR%%/resources/searchengines/yahoosearch.xml
@@ -827,6 +839,7 @@ share/mime/packages/miro.xml
 share/pixmaps/miro-128x128.png
 share/pixmaps/miro-24x24.png
 share/pixmaps/miro-72x72.png
+share/pixmaps/miro.xpm
 @dirrm %%DATADIR%%/resources/testdata/stripperdata
 @dirrm %%DATADIR%%/resources/testdata/locale/fr/LC_MESSAGES
 @dirrm %%DATADIR%%/resources/testdata/locale/fr
@@ -859,6 +872,7 @@ share/pixmaps/miro-72x72.png
 @dirrm %%PYTHON_SITELIBDIR%%/miro/plat
 @dirrm %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/gtk
 @dirrm %%PYTHON_SITELIBDIR%%/miro/frontends/widgets
+@dirrm %%PYTHON_SITELIBDIR%%/miro/frontends/shell
 @dirrm %%PYTHON_SITELIBDIR%%/miro/frontends/cli
 @dirrm %%PYTHON_SITELIBDIR%%/miro/frontends
 @dirrm %%PYTHON_SITELIBDIR%%/miro/dl_daemon/private
