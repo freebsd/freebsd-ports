@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	mysqlsla
-PORTVERSION=	1.7a
+PORTVERSION=	2.03
 CATEGORIES=	databases
 MASTER_SITES=	http://hackmysql.com/scripts/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Mysqlsla analyzes general, slow, and raw MySQL statement logs
@@ -22,15 +21,15 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/mysqlsla
-PORTDOCS=	mysqlsladoc.html
+
+MAN3=		mysqlsla.3
+
+pre-install:
+	@${MKDIR} ${WRKSRC}/doc
+	@pod2man ${WRKSRC}/lib/mysqlsla.pm > ${WRKSRC}/doc/${MAN3}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/mysqlsla ${PREFIX}/bin
-
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	@${INSTALL_SCRIPT} ${WRKSRC}/bin/mysqlsla ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/doc/${MAN3} ${MAN3PREFIX}/man/man3
 
 .include <bsd.port.mk>
