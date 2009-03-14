@@ -3,5 +3,5 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/ConnCache/MaxKeepAliveRequests
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/ConnCache
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP
-@dirrm lib/perl5/site_perl/5.8.9/LWP/ConnCache
-@dirrmtry lib/perl5/site_perl/5.8.9/LWP
+@dirrm %%SITE_PERL%%/LWP/ConnCache
+@dirrmtry %%SITE_PERL%%/LWP
