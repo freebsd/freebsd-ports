@@ -3853,3 +3853,4 @@ www/rubygem-actionwebservice||2009-03-09|Has expired: from rails 2.0 www/rubygem
 x11-toolkits/inti-gconf||2009-03-09|Has expired: not maintain by upstream for more than five years and no port depend on this
 x11-toolkits/inti-gl||2009-03-09|Has expired: not maintain by upstream for more than five years and no port depend on this
 x11-toolkits/inti-sourceview||2009-03-09|Has expired: not maintain by upstream for more than five years and no port depend on this
+misc/git|misc/gnuit|2009-03-14|Renamed
