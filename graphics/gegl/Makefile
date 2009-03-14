@@ -7,31 +7,31 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.0.${GEGL_MINOR}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.0/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A graph based image processing framework
 
-LIB_DEPENDS=	babl-0.0:${PORTSDIR}/x11/babl \
-    		png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	babl-0.0:${PORTSDIR}/x11/babl
 
 OPTIONS=	CAIRO		"Enable Cairo" on \
-		FFMPEG		"Enable ffmpeg" on \
-		GTK		"Enable GTK+" on \
+		FFMPEG		"Enable videos through ffmpeg" on \
 		GRAPHVIZ	"Enable Graphviz" on \
-		JPEG		"Enable JPEG" on \
-		OPENEXR		"Enable OpenEXR" on \
-		OPENRAW		"Enable OpenRAW" on \
-		PANGO		"Enable Pango" on \
-		RSVG		"Enable RSVG" on \
+		JPEG		"Enable JPEG format support" on \
+		OPENEXR		"Enable High Dynamic Range (HDR) format support" on \
+		OPENRAW		"Enable RAW camera format support" on \
+		PANGO		"Enable rendering through Pango " on \
+		PNG		"Enable PNG format support" on \
+		RSVG		"Enable RSVG format support" on \
 		SPIRO		"Enable Spiro" on \
 		SDL		"Enable SDL" on
 
-USE_GNOME=	glib20 pkgconfig gnomehack
+USE_GNOME=	gtk20 glib20 pkgconfig gnomehack
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_RUBY=	build
 USE_LDCONFIG=	${PREFIX}/lib/gegl-0.0
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -50,20 +50,18 @@ EXAMPLES=	2geglbuffer gegl-paint geglbuffer-add-image \
 
 .if !defined(WITHOUT_CAIRO)
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+PLIST_SUB+=	CAIRO=""
 .else
 CONFIGURE_ARGS+=--without-cairo
+PLIST_SUB+=	CAIRO="@comment "
 .endif
 
 .if !defined(WITHOUT_FFMPEG)
 LIB_DEPENDS+=	avformat.1:${PORTSDIR}/multimedia/ffmpeg
+PLIST_SUB+=	FFMPEG=""
 .else
 CONFIGURE_ARGS+=--without-libavformat
-.endif
-
-.if !defined(WITHOUT_GTK)
-USE_GNOME+=	gtk20
-.else
-CONFIGURE_ARGS+=--without-gtk
+PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
 .if !defined(WITHOUT_GRAPHVIZ)
@@ -74,20 +72,26 @@ CONFIGURE_ARGS+=--without-graphviz
 
 .if !defined(WITHOUT_JPEG)
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+PLIST_SUB+=	JPEG=""
 .else
 CONFIGURE_ARGS+=--without-libjpeg
+PLIST_SUB+=	JPEG="@comment "
 .endif
 
 .if !defined(WITHOUT_OPENEXR)
 LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
+PLIST_SUB+=	OPENEXR=""
 .else
 CONFIGURE_ARGS+=--without-openexr
+PLIST_SUB+=	OPENEXR="@comment "
 .endif
 
 .if !defined(WITHOUT_OPENRAW)
 LIB_DEPENDS+=	openraw.5:${PORTSDIR}/graphics/libopenraw
+PLIST_SUB+=	OPENRAW=""
 .else
 CONFIGURE_ARGS+=--without-libopenraw
+PLIST_SUB+=	OPENRAW="@comment "
 .endif
 
 .if !defined(WITHOUT_PANGO)
@@ -96,16 +100,28 @@ USE_GNOME+=	pango
 CONFIGURE_ARGS+=--without-pango
 .endif
 
+.if !defined(WITHOUT_PNG)
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+PLIST_SUB+=	PNG=""
+.else
+CONFIGURE_ARGS+=--without-libpng
+PLIST_SUB+=	PNG="@comment "
+.endif
+
 .if !defined(WITHOUT_RSVG)
 LIB_DEPENDS+=	rsvg-2.2:${PORTSDIR}/graphics/librsvg2
+PLIST_SUB+=	RSVG=""
 .else
 CONFIGURE_ARGS+=--without-librsvg
+PLIST_SUB+=	RSVG="@comment "
 .endif
 
 .if !defined(WITHOUT_SDL)
 USE_SDL=	sdl
+PLIST_SUB+=	SDL=""
 .else
 CONFIGURE_ARGS+=--without-sdl
+PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if !defined(WITHOUT_SPIRO)
