@@ -6,6 +6,7 @@ share/locale/da/LC_MESSAGES/solfege.mo
 share/locale/de/LC_MESSAGES/solfege.mo
 share/locale/es/LC_MESSAGES/solfege.mo
 share/locale/fr/LC_MESSAGES/solfege.mo
+share/locale/gl/LC_MESSAGES/solfege.mo
 share/locale/hu/LC_MESSAGES/solfege.mo
 share/locale/it/LC_MESSAGES/solfege.mo
 share/locale/nb/LC_MESSAGES/solfege.mo
@@ -173,6 +174,7 @@ share/pixmaps/solfege.png
 %%DATADIR%%/help/C/figures/preferences-gui.png
 %%DATADIR%%/help/C/figures/preferences-midi.png
 %%DATADIR%%/help/C/figures/preferences-practise.png
+%%DATADIR%%/help/C/figures/preferences-sound-setup-win32.png
 %%DATADIR%%/help/C/figures/preferences-sound-setup.png
 %%DATADIR%%/help/C/figures/preferences-user.png
 %%DATADIR%%/help/C/figures/progressionlabel-example-1.png
@@ -564,6 +566,58 @@ share/pixmaps/solfege.png
 %%DATADIR%%/help/fr/trainingset-editor.html
 %%DATADIR%%/help/fr/twelvetone.html
 %%DATADIR%%/help/fr/welcome.html
+%%DATADIR%%/help/gl/appendix-not-documentation.html
+%%DATADIR%%/help/gl/bug-reporting.html
+%%DATADIR%%/help/gl/chord-module.html
+%%DATADIR%%/help/gl/chord.html
+%%DATADIR%%/help/gl/compareintervals-module.html
+%%DATADIR%%/help/gl/dictation-module.html
+%%DATADIR%%/help/gl/dictation.html
+%%DATADIR%%/help/gl/ear-training-test-printout-editor.html
+%%DATADIR%%/help/gl/elembuilder-module.html
+%%DATADIR%%/help/gl/elembuilder.html
+%%DATADIR%%/help/gl/extending-solfege.html
+%%DATADIR%%/help/gl/gpl.html
+%%DATADIR%%/help/gl/harmonicinterval-module.html
+%%DATADIR%%/help/gl/harmonicinterval.html
+%%DATADIR%%/help/gl/idbyname-cadences.html
+%%DATADIR%%/help/gl/idbyname-chords.html
+%%DATADIR%%/help/gl/idbyname-intonation.html
+%%DATADIR%%/help/gl/idbyname-module.html
+%%DATADIR%%/help/gl/identifybpm.html
+%%DATADIR%%/help/gl/idproperty-module.html
+%%DATADIR%%/help/gl/idproperty.html
+%%DATADIR%%/help/gl/idtone-module.html
+%%DATADIR%%/help/gl/idtone.html
+%%DATADIR%%/help/gl/index.html
+%%DATADIR%%/help/gl/inverting-intervals.html
+%%DATADIR%%/help/gl/lesson-files.html
+%%DATADIR%%/help/gl/melodicinterval-module.html
+%%DATADIR%%/help/gl/melodicinterval.html
+%%DATADIR%%/help/gl/midi-instrument-names.html
+%%DATADIR%%/help/gl/mpd-module.html
+%%DATADIR%%/help/gl/music-theory.html
+%%DATADIR%%/help/gl/nameinterval-module.html
+%%DATADIR%%/help/gl/nameinterval.html
+%%DATADIR%%/help/gl/online-resources.html
+%%DATADIR%%/help/gl/preferences-window.html
+%%DATADIR%%/help/gl/rhythm-module.html
+%%DATADIR%%/help/gl/rhythm.html
+%%DATADIR%%/help/gl/rhythmtapping-module.html
+%%DATADIR%%/help/gl/rhythmtapping2-module.html
+%%DATADIR%%/help/gl/rhythmtapping2.html
+%%DATADIR%%/help/gl/scales.html
+%%DATADIR%%/help/gl/singanswer-module.html
+%%DATADIR%%/help/gl/singchord-module.html
+%%DATADIR%%/help/gl/singchord.html
+%%DATADIR%%/help/gl/singinterval-module.html
+%%DATADIR%%/help/gl/singinterval.html
+%%DATADIR%%/help/gl/solfege-exercise-helps.html
+%%DATADIR%%/help/gl/solfege-intro.html
+%%DATADIR%%/help/gl/theory-intervals.html
+%%DATADIR%%/help/gl/trainingset-editor.html
+%%DATADIR%%/help/gl/twelvetone.html
+%%DATADIR%%/help/gl/welcome.html
 %%DATADIR%%/help/nb/appendix-not-documentation.html
 %%DATADIR%%/help/nb/bug-reporting.html
 %%DATADIR%%/help/nb/chord-module.html
@@ -1586,6 +1640,7 @@ share/pixmaps/solfege.png
 @dirrm %%DATADIR%%/help/pt_BR
 @dirrm %%DATADIR%%/help/nb/figures
 @dirrm %%DATADIR%%/help/nb
+@dirrm %%DATADIR%%/help/gl
 @dirrm %%DATADIR%%/help/fr/figures
 @dirrm %%DATADIR%%/help/fr
 @dirrm %%DATADIR%%/help/C/scales/images/triads
