@@ -1,0 +1,5 @@
+%%PYTHON_SITELIBDIR%%/ctags/__init__.py
+%%PYTHON_SITELIBDIR%%/ctags/_readtags.so
+%%PYTHON_SITELIBDIR%%/ctags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ctags/__init__.pyo
+@dirrmtry %%PYTHON_SITELIBDIR%%/ctags
