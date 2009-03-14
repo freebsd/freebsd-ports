@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	aqualung
-DISTVERSION=	0.9beta9
-PORTREVISION=	4
+DISTVERSION=	0.9beta10
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Music player with rich features
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
@@ -19,7 +18,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		FLAC.10:${PORTSDIR}/audio/flac \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		oggz.3:${PORTSDIR}/audio/liboggz \
+		oggz.4:${PORTSDIR}/audio/liboggz \
 		speex.1:${PORTSDIR}/audio/speex \
 		mad.2:${PORTSDIR}/audio/libmad \
 		modplug.0:${PORTSDIR}/audio/libmodplug \
@@ -33,7 +32,8 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		strfunc.9:${PORTSDIR}/devel/libstrfunc \
 		wavpack.1:${PORTSDIR}/audio/wavpack \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
-		cddb.4:${PORTSDIR}/audio/libcddb
+		cddb.4:${PORTSDIR}/audio/libcddb \
+		strfunc.9:${PORTSDIR}/devel/libstrfunc
 
 USE_GETTEXT=	yes
 USE_GNOME=	pkgconfig gtk20 libxml2
@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=	--with-systray=no
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -lstrfunc
-PORTDOCS=	README
+PORTDOCS=	*
 MAN1=		${PORTNAME}.1
 
 post-patch:
