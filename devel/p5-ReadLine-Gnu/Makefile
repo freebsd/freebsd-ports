@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	ReadLine-Gnu
-PORTVERSION=	1.17a
+PORTVERSION=	1.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=Term
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Term-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl 5 module that allows Term::ReadLine to use GNU readline
 
 PERL_CONFIGURE=	5.8.0+
