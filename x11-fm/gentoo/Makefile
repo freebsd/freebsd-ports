@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	gentoo
-PORTVERSION=	0.11.57
+PORTVERSION=	0.15.2
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ based, file manager inspired by DirectoryOpus
 
-OPTIONS=	NLS "Native Language Support" on \
-		FAM "File Alteration Monitor Support" off
+OPTIONS=	FAM "File Alteration Monitor Support" off
 
-USE_GNOME=	gnometarget gtk12
+USE_GNOME=	gnomehack gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		MKDIR_P="${MKDIR}"
 
 MAN1=		gentoo.1
 
@@ -27,27 +27,18 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.endif
-
 .if defined(WITH_FAM)
 USE_FAM=	yes
-CPPFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
 .else
 CONFIGURE_ARGS+=	--disable-fam
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|^CFLAGS = @GENTOO_CFLAGS@|CFLAGS = @CFLAGS@|g ; \
-		 s|^MKDIR_P =.*$$|MKDIR_P = ${MKDIR}|g ; \
-		 s|^mkdir_p =.*$$|mkdir_p = ${MKDIR}|g'
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g ; \
+		 s|/bin/mount|/sbin/mount|g ; \
+		 s|/bin/umount|/sbin/umount|g' ${WRKSRC}/gentoorc.in
+	@${REINPLACE_CMD} -e '/^CFLAGS/s|@GENTOO_CFLAGS@|@CFLAGS@|g' \
+		${WRKSRC}/src/Makefile.in
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/gentoo.1x ${MANPREFIX}/man/man1/gentoo.1
