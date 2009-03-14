@@ -19,8 +19,8 @@ include/pari/parisys.h
 include/pari/pariport.h
 include/pari/paridecl.h
 include/pari/genpari.h
-lib/libpari.so.%%MAJOR_VERSION%%.%%MINOR_VERSION%%.%%REV_VERSION%%
-lib/libpari.so.%%MAJOR_VERSION%%
+lib/libpari-gmp.so.%%MAJOR_VERSION%%.%%MINOR_VERSION%%.%%REV_VERSION%%
+lib/libpari-gmp.so.%%MAJOR_VERSION%%
 lib/libpari.so
 lib/pari/pari.cfg
 %%DOCSDIR%%/AUTHORS
