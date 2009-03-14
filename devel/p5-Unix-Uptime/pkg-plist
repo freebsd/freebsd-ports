@@ -1,2 +1,6 @@
 %%SITE_PERL%%/Unix/Uptime.pm
+%%SITE_PERL%%/Unix/Uptime/BSD.pm
+%%SITE_PERL%%/Unix/Uptime/FreeBSD.pm
+%%SITE_PERL%%/Unix/Uptime/Linux.pm
+@dirrm %%SITE_PERL%%/Unix/Uptime
 @dirrmtry %%SITE_PERL%%/Unix
