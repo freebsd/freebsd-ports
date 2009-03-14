@@ -17,9 +17,6 @@ COMMENT=	A golf course theme for Tux Racer
 
 RUN_DEPENDS=	tuxracer:${PORTSDIR}/games/tuxracer
 
-DEPRECATED=		tcl8.3 support is going to be dropped
-EXPIRATION_DATE=	2009-05-22
-
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_SUB+=	"MV=${MV}"
