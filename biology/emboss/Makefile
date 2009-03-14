@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emboss
-PORTVERSION=	5.0.0
+PORTVERSION=	6.0.1
 RELEASE=	${PORTNAME:U}-${PORTVERSION}
 CATEGORIES=	biology
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/ \
