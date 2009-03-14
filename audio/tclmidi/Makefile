@@ -18,9 +18,6 @@ COMMENT=	A language designed for creating and editing standard MIDI files
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 
-DEPRECATED=		tcl82 support is going to be dropped
-EXPIRATION_DATE=	2009-04-22
-
 MAKE_ENV=	TCL_GENERIC_DIR=${LOCALBASE}/include/tcl8.2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tclsh=${LOCALBASE}/bin/tclsh8.2

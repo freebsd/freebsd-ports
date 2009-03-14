@@ -17,9 +17,6 @@ COMMENT=	A pointless puzzle game for Tcl/Tk
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
-DEPRECATED=		tcl82 support is going to be dropped
-EXPIRATION_DATE=	2009-04-22
-
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 

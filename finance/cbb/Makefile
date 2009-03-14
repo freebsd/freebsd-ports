@@ -16,8 +16,6 @@ MAINTAINER=	kline@thought.org
 COMMENT=	Checkbook balancing tool
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
-DEPRECATED=		tcl82 support is going to be dropped
-EXPIRATION_DATE=	2009-04-22
 
 NO_BUILD=	yes
 USE_PERL5=	yes
