@@ -1,29 +1,30 @@
---- lib/Makefile.in.orig	2008-05-23 15:54:06.000000000 +0200
-+++ lib/Makefile.in	2008-05-28 17:40:42.280514020 +0200
-@@ -576,8 +576,6 @@
+--- lib/Makefile.in.orig	2009-03-09 17:51:32.687581242 +0000
++++ lib/Makefile.in	2009-03-09 17:59:43.191630779 +0000
+@@ -879,8 +879,6 @@
  libgnu_la_LDFLAGS = $(AM_LDFLAGS)
  GPERF = gperf
  LINK_WARNING_H = $(top_srcdir)/build-aux/link-warning.h
 -charset_alias = $(DESTDIR)$(libdir)/charset.alias
 -charset_tmp = $(DESTDIR)$(libdir)/charset.tmp
  all: $(BUILT_SOURCES) config.h
- 	$(MAKE) $(AM_MAKEFLAGS) all-am
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
  
-@@ -1107,29 +1105,8 @@
- all-local: charset.alias ref-add.sed ref-del.sed
- install-exec-local: all-local
- 	test $(GLIBC21) != no || $(mkinstalldirs) $(DESTDIR)$(libdir)
+@@ -1610,30 +1608,9 @@
+ 	fi ; \
+ 	if $$need_charset_alias; then \
+ 	  $(mkinstalldirs) $(DESTDIR)$(libdir) ; \
+-	fi ; \
 -	if test -f $(charset_alias); then \
 -	  sed -f ref-add.sed $(charset_alias) > $(charset_tmp) ; \
 -	  $(INSTALL_DATA) $(charset_tmp) $(charset_alias) ; \
 -	  rm -f $(charset_tmp) ; \
 -	else \
--	  if test $(GLIBC21) = no; then \
+-	  if $$need_charset_alias; then \
 -	    sed -f ref-add.sed charset.alias > $(charset_tmp) ; \
 -	    $(INSTALL_DATA) $(charset_tmp) $(charset_alias) ; \
 -	    rm -f $(charset_tmp) ; \
 -	  fi ; \
--	fi
+ 	fi
  
  uninstall-local: all-local
 -	if test -f $(charset_alias); then \
