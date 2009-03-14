@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	anyremote2html
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	www deskutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	anyremote
