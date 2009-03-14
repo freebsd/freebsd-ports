@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	extman
-PORTVERSION=	0.2.5
+PORTVERSION=	1.0.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.chifeng.name/dist/extman/%SUBDIR%/ \
 		http://mirror3.extmail.net/dist/%SUBDIR%/
@@ -32,10 +32,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DB
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/LDAP.pm:${PORTSDIR}/databases/p5-DBD-LDAP
 .endif
 
-OWCGIDIR=	${PREFIX}/www/extman
-
 do-install:
-	@${MKDIR} ${OWCGIDIR}
-	@cd ${WRKSRC} && ${CP} -Rpf * ${OWCGIDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
 
 .include <bsd.port.post.mk>
