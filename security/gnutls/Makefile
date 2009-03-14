@@ -8,12 +8,9 @@
 PORTNAME=	gnutls
 PORTVERSION=	2.6.4
 CATEGORIES=	security net
-MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
-	ftp://ftp.gnutls.org/pub/gnutls/ \
-	${MASTER_SITE_GNUPG} \
-	http://www.mirrors.wiretapped.net/security/network-security/gnutls/ \
-	ftp://ftp.mirrors.wiretapped.net/security/network-security/gnutls/
-MASTER_SITE_SUBDIR=	alpha/gnutls
+MASTER_SITES=	${MASTER_SITE_GNU} \
+		${MASTER_SITE_GNUPG}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
