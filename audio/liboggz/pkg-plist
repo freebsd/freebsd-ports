@@ -1,3 +1,4 @@
+bin/oggz-comment
 bin/oggz-scan
 bin/oggz-validate
 bin/oggzdiff
@@ -6,30 +7,29 @@ bin/oggzinfo
 bin/oggzmerge
 bin/oggzrip
 include/oggz/oggz.h
+include/oggz/oggz_comments.h
 include/oggz/oggz_constants.h
 include/oggz/oggz_deprecated.h
 include/oggz/oggz_io.h
+include/oggz/oggz_off_t.h
+include/oggz/oggz_off_t_generated.h
 include/oggz/oggz_read.h
 include/oggz/oggz_seek.h
 include/oggz/oggz_table.h
 include/oggz/oggz_write.h
 lib/liboggz.a
 lib/liboggz.la
-lib/liboggz.so.3
+lib/liboggz.so.4
 lib/liboggz.so
 libdata/pkgconfig/oggz.pc
-@dirrm include/oggz
-@dirrmtry libdata/pkgconfig
-%%PORTDOCS%%%%DOCSDIR%%/html/dir_000000.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dir_000001.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dirs.html
+%%PORTDOCS%%%%DOCSDIR%%/html/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png
 %%PORTDOCS%%%%DOCSDIR%%/html/files.html
 %%PORTDOCS%%%%DOCSDIR%%/html/forcefeed.png
+%%PORTDOCS%%%%DOCSDIR%%/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/functions_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals.html
-%%PORTDOCS%%%%DOCSDIR%%/html/globals_defs.html
-%%PORTDOCS%%%%DOCSDIR%%/html/globals_enum.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_eval.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_func.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_type.html
@@ -49,12 +49,18 @@ libdata/pkgconfig/oggz.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/modules.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/html/oggz__comments_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/html/oggz__comments_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__constants_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__constants_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__deprecated_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__deprecated_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__io_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__io_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/html/oggz__off__t_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/html/oggz__off__t_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/html/oggz__off__t__generated_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/html/oggz__off__t__generated_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__read_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__read_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__seek_8h-source.html
@@ -63,11 +69,14 @@ libdata/pkgconfig/oggz.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__table_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__write_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__write_8h.html
-%%PORTDOCS%%%%DOCSDIR%%/latex/Helvetica.ttf
+%%PORTDOCS%%%%DOCSDIR%%/html/structOggzComment.html
+%%PORTDOCS%%%%DOCSDIR%%/html/tab_b.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/tab_l.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/tab_r.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/tabs.css
+%%PORTDOCS%%%%DOCSDIR%%/latex/FreeSans.ttf
 %%PORTDOCS%%%%DOCSDIR%%/latex/Makefile
-%%PORTDOCS%%%%DOCSDIR%%/latex/dir_000000.tex
-%%PORTDOCS%%%%DOCSDIR%%/latex/dir_000001.tex
-%%PORTDOCS%%%%DOCSDIR%%/latex/dirs.tex
+%%PORTDOCS%%%%DOCSDIR%%/latex/annotated.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/doxygen.sty
 %%PORTDOCS%%%%DOCSDIR%%/latex/files.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/forcefeed.eps
@@ -86,14 +95,20 @@ libdata/pkgconfig/oggz.pc
 %%PORTDOCS%%%%DOCSDIR%%/latex/index.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/modules.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/oggz_8h.tex
+%%PORTDOCS%%%%DOCSDIR%%/latex/oggz__comments_8h.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/oggz__constants_8h.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/oggz__deprecated_8h.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/oggz__io_8h.tex
+%%PORTDOCS%%%%DOCSDIR%%/latex/oggz__off__t_8h.tex
+%%PORTDOCS%%%%DOCSDIR%%/latex/oggz__off__t__generated_8h.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/oggz__read_8h.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/oggz__seek_8h.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/oggz__table_8h.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/oggz__write_8h.tex
 %%PORTDOCS%%%%DOCSDIR%%/latex/refman.tex
+%%PORTDOCS%%%%DOCSDIR%%/latex/structOggzComment.tex
+@dirrm include/oggz
+@dirrmtry libdata/pkgconfig
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/latex
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
