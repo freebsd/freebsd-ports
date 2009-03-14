@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.4.0
-PORTREVISION=	20090227
+PORTREVISION=	20090313
 CATEGORIES=	lang java
 VERSIONSTRING=	4.4-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -16,14 +16,18 @@ MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
+		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX}
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.4
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		mpfr.3:${PORTSDIR}/math/mpfr
+
+.if defined(MAINTAINER_MODE)
+DISTFILES+=	gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
+BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
+.endif
 
 SUFFIX=		44
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
@@ -98,21 +102,17 @@ MAN1+=		aot-compile${SUFFIX}.1 \
 		gjarsigner${SUFFIX}.1 \
 		gjavah${SUFFIX}.1 \
 		gjdoc${SUFFIX}.1 \
-		gjnih${SUFFIX}.1 \
 		gkeytool${SUFFIX}.1 \
 		gnative2ascii${SUFFIX}.1 \
 		gorbd${SUFFIX}.1 \
 		grmic${SUFFIX}.1 \
 		grmid${SUFFIX}.1 \
 		grmiregistry${SUFFIX}.1 \
-		grepjar${SUFFIX}.1 \
 		gserialver${SUFFIX}.1 \
 		gtnameserv${SUFFIX}.1 \
-		jar${SUFFIX}.1 \
 		jcf-dump${SUFFIX}.1 \
-		jv-scan${SUFFIX}.1 jv-convert${SUFFIX}.1 \
-		rebuild-gcj-db${SUFFIX}.1 \
-		rmic${SUFFIX}.1 rmiregistry${SUFFIX}.1
+		jv-convert${SUFFIX}.1 \
+		rebuild-gcj-db${SUFFIX}.1
 INFO+=		gcc${SUFFIX}/cp-tools \
 		gcc${SUFFIX}/gcj
 PLIST_SUB+=	JAVA=""
@@ -158,15 +158,10 @@ pre-configure:
 	@${RM} -f ${SRCDIR}/gcc/*/*.info*
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
-check: build
+full-regression-test: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
-	# man pages can only be generated if Perl >= 5.6 is installed;
-	# fake them otherwise.
-	for mp in ${_MANPAGES}; do \
-	  ${TEST} -e $${mp} || ${TOUCH} ${TOUCH_FLAGS} $${mp}; \
-	done
 	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
 	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
 	${RM} -f ${TARGLIB}/*.la
