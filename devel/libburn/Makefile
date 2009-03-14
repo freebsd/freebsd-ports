@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libburn
-PORTVERSION=	0.5.4
+PORTVERSION=	0.6.4
 CATEGORIES=	devel
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.pl00${EXTRACT_SUFX}
