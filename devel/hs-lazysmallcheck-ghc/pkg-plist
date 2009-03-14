@@ -1,0 +1,14 @@
+@comment $FreeBSD$
+%%SUBDIR%%/Test/LazySmallCheck.hi
+%%SUBDIR%%/Test/LazySmallCheck/Generic.hi
+%%SUBDIR%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%SUBDIR%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%SUBDIR%%/%%PORTNAME%%-register.sh
+@dirrm    %%SUBDIR%%/Test/LazySmallCheck
+@dirrmtry %%SUBDIR%%/Test
+%%RMLIC%%%%DOCSDIR%%/LICENSE
+%%RMLIC%%@dirrm %%DOCSDIR%%
+@exec sh %D/%%SUBDIR%%/%%PORTNAME%%-register.sh
+@exec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec ghc-pkg unregister %%PORTNAME%%
+@unexec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
