@@ -24,7 +24,7 @@ COMMENT=	GNU Compiler Collection 4.3
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		mpfr.3:${PORTSDIR}/math/mpfr
 
-.if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
+.if defined(MAINTAINER_MODE)
 DISTFILES+=	gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
