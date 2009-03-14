@@ -10,7 +10,7 @@ PORTVERSION=	0.3.3
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
-MAINTAINER=	ntarmos@ceid.upatras.gr
+MAINTAINER=	ntarmos@cs.uoi.gr
 COMMENT=	A module with libxcb/libX11 extension/replacement libraries
 
 LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb

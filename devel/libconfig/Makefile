@@ -10,7 +10,7 @@ PORTVERSION=	1.3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hyperrealm.com/libconfig/
 
-MAINTAINER=	ntarmos@ceid.upatras.gr
+MAINTAINER=	ntarmos@cs.uoi.gr
 COMMENT=	A simple library for manipulating structured configuration files
 
 USE_GNOME=	gnomehack pkgconfig

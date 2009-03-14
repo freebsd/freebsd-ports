@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ntarmos.dyndns.org/Software/FreeBSD/
 
-MAINTAINER=	ntarmos@ceid.upatras.gr
+MAINTAINER=	ntarmos@cs.uoi.gr
 COMMENT=	A daemon monitoring the battery level of ACPI-enabled laptops
 
 MAN1=		battmond.1

@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://nex.scrapping.cc/code/shell-fm/downloads/
 
-MAINTAINER=	ntarmos@ceid.upatras.gr
+MAINTAINER=	ntarmos@cs.uoi.gr
 COMMENT=	A command-line client for Last.FM
 
 LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao \

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/1958/
 
-MAINTAINER=	ntarmos@ceid.upatras.gr
+MAINTAINER=	ntarmos@cs.uoi.gr
 COMMENT=	A user-space HID access library written in C
 
 MAN1=		libhid-detach-device.1
