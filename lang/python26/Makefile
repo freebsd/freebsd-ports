@@ -50,12 +50,29 @@ BINLINKS_SUB=	-e 's,smtpd,smtpd${PYTHON_VER},' \
 
 OPTIONS=	THREADS "Enable thread support" on \
 		HUGE_STACK_SIZE "Use a larger thread stack" off \
+		SEM "Use POSIX semaphores (experimental)" off \
+		PTH "Use GNU Pth for threading/multiprocessing" off \
 		UCS4 "Use UCS4 for unicode support" on \
 		PYMALLOC "Use python's internal malloc" on \
 		IPV6 "Enable IPv6 support" on \
 		FPECTL "Enable floating point exception handling" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_SEM)
+.if ${OSVERSION} >= 701106
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-setup.py
+SEM_MSG=	""
+.else
+IGNORE=		POSIX semaphore support only works in FreeBSD 7-STABLE and later
+.
+.endif # ${OSVERSION} >= 701106
+.else # !defined(WITH_SEM)
+SEM_MSG=	"@comment "
+.endif # defined(WITH_SEM)
+
+SUB_FILES=      pkg-message
+SUB_LIST=       SEM=${SEM_MSG}
 
 .if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
 MLINKS=		${PYTHON_VERSION}.1 python.1
@@ -68,15 +85,25 @@ PLIST_SUB+=	IF_DEFAULT="@comment "
 CFLAGS+=	-D__wchar_t=wchar_t
 
 .if !defined(WITHOUT_THREADS)
+.if defined(WITH_PTH)
+CONFIGURE_ARGS+=	--with-pth
+EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-configure-pth
+LIB_DEPENDS+=		pth:${PORTSDIR}/devel/pth
+_PTH_CPPFLAGS=		"-I${LOCALBASE}/include/pth"
+_PTH_LDFLAGS=		"-L${LOCALBASE}/lib/pth"
+CONFIGURE_ENV+=		CPPFLAGS="${_PTH_CPPFLAGS} ${CPPFLAGS}"
+CONFIGURE_ENV+=		LDFLAGS="${_PTH_LDFLAGS} ${LDFLAGS}"
+.else # !defined(WITH_PTH)
 CONFIGURE_ARGS+=	--with-threads
 CFLAGS+=		${PTHREAD_CFLAGS}
+CONFIGURE_ENV+=		LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
+.endif # defined(WITH_PTH)
 .if defined(WITHOUT_HUGE_STACK_SIZE)
 CFLAGS+=		-DTHREAD_STACK_SIZE=0x20000
 .else
 CFLAGS+=		-DTHREAD_STACK_SIZE=0x100000
 .endif # defined(WITHOUT_HUGE_STACK_SIZE)
-CONFIGURE_ENV+=		LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
-.else
+.else # defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--without-threads
 .if defined(LDFLAGS)
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"

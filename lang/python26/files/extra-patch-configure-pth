@@ -1,0 +1,12 @@
+--- configure.orig	2009-03-12 14:16:24.000000000 +0000
++++ configure	2009-03-12 14:17:16.000000000 +0000
+@@ -5230,6 +5230,9 @@
+ CC="$ac_save_cc"
+ fi
+ 
++# XXX Explicitly disable system pthread libraries.
++ac_cv_pthread=no
++
+ { echo "$as_me:$LINENO: result: $ac_cv_pthread" >&5
+ echo "${ECHO_T}$ac_cv_pthread" >&6; }
+ fi
