@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nuclearchess
-PORTVERSION=	0.9.2
-PORTREVISION=	3
+PORTVERSION=	1.0.0
 CATEGORIES=	games
 MASTER_SITES=	http://user.cs.tu-berlin.de/~karlb/${PORTNAME}/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
