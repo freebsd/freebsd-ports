@@ -18,9 +18,6 @@ COMMENT=	IPv4/v6 Multicast and unicast audio conferencing tool
 USE_TK=		82
 USE_XORG=	x11 xext
 
-DEPRECATED=		tcl82 support is going to be dropped
-EXPIRATION_DATE=	2009-04-22
-
 WRKSRC=		${WRKDIR}/rat-3.0
 
 USE_GMAKE=	yes
