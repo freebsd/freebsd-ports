@@ -1,5 +1,5 @@
 Please make a configure file for extmail.
 
-cp %%PREFIX%%/www/extmail/webmail.cf.default %%PREFIX%%/www/extmail/webmail.cf
+cp %%WWWDIR%%/webmail.cf.default %%WWWDIR%%/webmail.cf
 
 and referrence README and INSTALL to change it's some variable, enable it! 
