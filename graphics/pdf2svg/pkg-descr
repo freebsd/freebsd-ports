@@ -1,0 +1,19 @@
+Under Linux there aren't many freely available vector graphics editors and
+as far as I know there are none that can edit EPS (encapsulated postscript)
+and PDF (portable document format) files. I produce lots of these files in
+my day-to-day work and I would like to be able to edit them. The best vector
+graphics editor I have found so far is Inkscape but it only reads SVG
+files... (Note: the upcoming v0.46 should be able to read PDFs!)
+
+To overcome this problem I have written a very small utility to convert PDF
+files to SVG files using Poppler and Cairo. Version 0.2.1 is available here
+(with modifications by Matthew Flaschen and Ed Grace). This appears to work
+on any PDF document that Poppler can read (try them in XPDF or Evince since
+they both use Poppler).
+
+So now it is possible to easily edit PDF documents with your favourite SVG
+editor! One other alternative would be to use pstoedit but the commercial
+SVG module costs (unsurprisingly!) and the free SVG module is not very good
+at handling text...
+
+WWW: http://www.cityinthesky.co.uk/pdf2svg.html
