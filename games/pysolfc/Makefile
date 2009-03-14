@@ -1,14 +1,15 @@
-# New ports collection makefile for:	PySolFC
+# New ports collection makefile for:	pysolfc
 # Date created:		2009-03-13
 # Whom:			Marcus von Appen
 #
 # $FreeBSD$
 #
 
-PORTNAME=	PySolFC
+PORTNAME=	pysolfc
 PORTVERSION=	1.1
 CATEGORIES=	games
 MASTER_SITES=	SF/pysolfc
+DISTNAME=	PySolFC-${PORTVERSION}
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Solitaire game, written in Python and the sucessor of PySol
@@ -18,7 +19,10 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinte
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	PySolFC
 
+DATADIR=	${PREFIX}/share/PySolFC
+WRKSRC=		${WRKDIR}/${DISTNAME}
 PORTDOCS=	README
 
 OPTIONS=	NLS	"Native language support" on

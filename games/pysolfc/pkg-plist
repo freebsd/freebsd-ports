@@ -2894,6 +2894,8 @@ bin/pysolfc
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/pysol.mo
 share/pixmaps/pysol.xbm
 share/pixmaps/pysol.xpm
+%%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru_RU
 @dirrm %%DATADIR%%/tiles/stretch
 @dirrm %%DATADIR%%/tiles
 @dirrm %%DATADIR%%/themes/clearlooks/clearlooks
