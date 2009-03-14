@@ -22,7 +22,7 @@ BROKEN=		distfile mismatch
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_ZIP=	YES
-USE_PHP=	mysql pcre xml
+USE_PHP=	mysql pcre xml gd
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 WORDPRESS?=	www/wordpress
