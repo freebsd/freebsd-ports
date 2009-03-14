@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	iaxmodem
-PORTVERSION=	0.3.2
+PORTVERSION=	1.2.0
 CATEGORIES=	net comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stucchi@gufi.org
 COMMENT=	Software modem that connects to IAX channel
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
