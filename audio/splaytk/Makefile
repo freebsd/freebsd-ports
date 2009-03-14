@@ -20,9 +20,6 @@ RUN_DEPENDS=	splay:${PORTSDIR}/audio/splay \
 
 WRKSRC=		${WRKDIR}/splay-tk-2.0
 
-DEPRECATED=		tcl82 support is going to be dropped
-EXPIRATION_DATE=	2009-04-22
-
 NO_BUILD=	yes
 
 do-install:

@@ -16,9 +16,6 @@ COMMENT=	A GUI dotfile generator program to create .config files
 
 BUILD_DEPENDS=	formail:${PORTSDIR}/mail/procmail
 
-DEPRECATED=		tcl82 support is going to be dropped
-EXPIRATION_DATE=	2009-04-22
-
 GNU_CONFIGURE=	yes
 PLIST_SUB=	DISTNAME="${DISTNAME}"
 NO_BUILD=	yes

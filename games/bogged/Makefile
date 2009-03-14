@@ -18,9 +18,6 @@ COMMENT=	Word game for X Window System
 
 RUN_DEPENDS=		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
-DEPRECATED=		tcl82 support is going to be dropped
-EXPIRATION_DATE=	2009-04-22
-
 EXTRACT_CMD=		${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKDIR}
