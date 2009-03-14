@@ -180,6 +180,7 @@ www/extmail/html/default/lists.inc
 www/extmail/html/default/loading.html
 www/extmail/html/default/multifile_new.inc
 www/extmail/html/default/netdisk.html
+www/extmail/html/default/notify.html
 www/extmail/html/default/pref.html
 www/extmail/html/default/pref_pop3.html
 www/extmail/html/default/print.html
