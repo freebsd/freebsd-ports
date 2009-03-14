@@ -1,0 +1,21 @@
+--- configure.orig	2007-02-28 05:34:14.000000000 +0900
++++ configure	2009-03-09 02:12:05.000000000 +0900
+@@ -9044,8 +9044,10 @@
+ 
+ glib_save_prefix="$prefix"
+ glib_save_exec_prefix="$exec_prefix"
++glib_save_datarootdir="$datarootdir"
+ test "x$prefix" = xNONE && prefix=$ac_default_prefix
+ test "x$exec_prefix" = xNONE && exec_prefix=$prefix
++datarootdir=`eval echo "${datarootdir}"`
+ if test "x$CATOBJEXT" = "x.mo" ; then
+   localedir=`eval echo "${libdir}/locale"`
+ else
+@@ -9053,6 +9055,7 @@
+ fi
+ prefix="$glib_save_prefix"
+ exec_prefix="$glib_save_exec_prefix"
++datarootdir="$glib_save_datarootdir"
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define LOCALEDIR "$localedir"
