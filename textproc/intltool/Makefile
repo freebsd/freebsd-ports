@@ -6,7 +6,7 @@
 #   $MCom: ports/textproc/intltool/Makefile,v 1.11 2008/10/08 21:37:49 marcus Exp $
 
 PORTNAME=	intltool
-PORTVERSION=	0.40.5
+PORTVERSION=	0.40.6
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
