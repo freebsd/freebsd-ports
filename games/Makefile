@@ -14,7 +14,6 @@
     SUBDIR += CaribbeanStud
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
-    SUBDIR += PySolFC
     SUBDIR += abe
     SUBDIR += abridge
     SUBDIR += abuse
@@ -661,6 +660,7 @@
     SUBDIR += pysol
     SUBDIR += pysol-cardsets
     SUBDIR += pysol-music
+    SUBDIR += pysolfc
     SUBDIR += pysycache
     SUBDIR += pysycache-lang
     SUBDIR += pysycache-themes
