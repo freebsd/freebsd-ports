@@ -143,10 +143,10 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/34138/">
 	  <p>The security issue is caused due to cURL following HTTP Location:
-redirects to e.g. scp:// or file:// URLs which can be exploited
-by a malicious HTTP server to overwrite or disclose the content of
-arbitrary local files and potentially execute arbitrary commands via
-specially crafted redirect URLs.</p>
+	    redirects to e.g. scp:// or file:// URLs which can be exploited
+	    by a malicious HTTP server to overwrite or disclose the content of
+	    arbitrary local files and potentially execute arbitrary commands via
+	    specially crafted redirect URLs.</p>
 	</blockquote>
       </body>
     </description>
