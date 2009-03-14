@@ -16,13 +16,12 @@ MASTER_SITE_SUBDIR=	releases/gcc-${PORTVERSION}
 DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-g++-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-g77-${PORTVERSION}${EXTRACT_SUFX} \
-		gcc-objc-${PORTVERSION}${EXTRACT_SUFX} \
-		gcc-testsuite-${PORTVERSION}${EXTRACT_SUFX}
+		gcc-objc-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 3.3
 
-DEPRECATED=	fails to build on any version of FreeBSD, closed upstream for half a decade
+DEPRECATED=	fails to build on FreeBSD 8 and above, not a single complaint when it failed to build for half a year, closed upstream for half a decade
 EXPIRATION_DATE=2009-03-03
 
 SUFFIX=		33
@@ -53,7 +52,8 @@ SRCDIR=		${WRKDIR}/gcc-${PORTVERSION}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${PORTVERSION}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--disable-nls \
+CONFIGURE_ARGS+=--host=${CONFIGURE_TARGET} --target=${CONFIGURE_TARGET} \
+		--disable-nls \
 		--with-system-zlib \
 		--program-suffix=${SUFFIX} \
 		--libdir=${TARGLIB} \
@@ -88,20 +88,7 @@ pre-configure:
 	@${RM} -f ${SRCDIR}/gcc/*/*.info*
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
-post-build:
-	@${ECHO_MSG} "Consider running 'make check' before 'make install', especially"
-	@${ECHO_MSG} "if you have not performed this build on -STABLE or -CURRENT."
-	@${ECHO_MSG} "This assumes that you have the dejagnu port installed."
-
-check: build
-	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
-
 post-install:
-	# man pages can only be generated if Perl >= 5.6 is installed;
-	# fake them otherwise.
-	for mp in ${_MANPAGES}; do \
-	  ${TEST} -e $${mp} || ${TOUCH} ${TOUCH_FLAGS} $${mp}; \
-	done
 .for f in c++ g77 gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++
 	# gij and jv-convert, for example, are not built on all platforms.
 	if [ -e ${PREFIX}/man/man1/${f}.1 ]; then \
@@ -111,9 +98,9 @@ post-install:
 .endfor
 	${MV} -f ${PREFIX}/bin/g77${SUFFIX} ${PREFIX}/bin/g77-${SUFFIX}
 	-${MV} -f ${PREFIX}/man/man1/g77${SUFFIX}.1 ${PREFIX}/man/man1/g77-${SUFFIX}.1
-	${RM} -f ${TARGLIB}/*.la
 	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
 	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
+	${RM} -f ${TARGLIB}/*.la
 	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
 .for d in ${TARGLIB:S/^${PREFIX}\///} include/gnu
