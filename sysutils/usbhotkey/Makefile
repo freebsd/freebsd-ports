@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=		sysutils
 MASTER_SITES=		SF/usbhotkey
 
-MAINTAINER=		ntarmos@ceid.upatras.gr
+MAINTAINER=		ntarmos@cs.uoi.gr
 COMMENT=		A utility to remap USB keyboards under X11
 
 LIB_DEPENDS=		hid.0:${PORTSDIR}/devel/libhid \
