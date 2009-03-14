@@ -1,6 +1,0 @@
-GCC, the GNU Compiler Collection includes gcc, g++, and g77.
-
-This port installs the various front ends as gcc33, g++33,
-and g77-33 into the ${PREFIX}/bin directory.
-
-WWW: http://gcc.gnu.org/
