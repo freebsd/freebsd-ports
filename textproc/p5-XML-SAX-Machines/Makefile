@@ -7,7 +7,7 @@
 
 PORTNAME=	XML-SAX-Machines
 PORTVERSION=	0.41
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,6 +27,12 @@ MAN3=		XML::Filter::Distributor.3 XML::Filter::DocSplitter.3 \
 		XML::SAX::Machines.3 XML::SAX::Machines::ConfigHelper.3 \
 		XML::SAX::Manifold.3 XML::SAX::Pipeline.3 XML::SAX::Tap.3
 
+regression-test: build
+	${MAKE} -C ${WRKSRC} test
+
+post-patch:
+	${RM} -f ${WRKSRC}/lib/XML/SAX/Machine.pm.orig
+
 post-install:
 .ifndef(NOPORTEXAMPLES)
 		@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
@@ -34,10 +40,4 @@ post-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-EXTRA_PATCHES=	${PATCHDIR}/500503-Makefile.PL
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
