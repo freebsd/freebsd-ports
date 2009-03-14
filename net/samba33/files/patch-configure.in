@@ -1,5 +1,5 @@
---- configure.in.orig	2009-02-24 07:38:16.000000000 +0000
-+++ configure.in	2009-02-26 02:11:50.000000000 +0000
+--- ./configure.in.orig	2009-03-12 09:47:20.000000000 +0000
++++ ./configure.in	2009-03-14 14:06:27.000000000 +0000
 @@ -189,16 +189,6 @@
         fi
  fi
@@ -160,7 +160,7 @@
 +AC_MSG_CHECKING([NSSSONAMEVERSIONSUFFIX])
 +AC_MSG_RESULT([$NSSSONAMEVERSIONSUFFIX])
 +
-+AC_CHECK_LIB(pthread, pthread_mutex_lock, [WINBIND_NSS_PTHREAD="-pthread"
++AC_CHECK_LIB(pthread, pthread_mutex_lock, [WINBIND_NSS_PTHREAD="${PTHREAD_LIBS}"
  			AC_DEFINE(HAVE_PTHREAD, 1, [whether pthread exists])])
  
  AC_SUBST(WINBIND_NSS_PTHREAD)
@@ -201,7 +201,7 @@
  		int main(void)
  		{
  			struct statfs fsd;
-@@ -6501,6 +6533,16 @@
+@@ -6502,6 +6534,16 @@
  
  fi
  
@@ -218,3 +218,12 @@
  dnl Remove -L/usr/lib/? from LDFLAGS and LIBS
  LIB_REMOVE_USR_LIB(LDFLAGS)
  LIB_REMOVE_USR_LIB(LIBS)
+@@ -6558,6 +6600,8 @@
+ 	  pkgconfig/wbclient.pc
+ 	  pkgconfig/netapi.pc
+ 	  pkgconfig/smbsharemodes.pc
++	  lib/talloc/talloc.pc
++	  lib/tdb/tdb.pc
+ 	  ../examples/libsmbclient/Makefile.internal
+ 	  )
+ 

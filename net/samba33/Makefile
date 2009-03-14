@@ -6,7 +6,8 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.3.1
+PORTVERSION?=		3.3.2
+PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
@@ -15,7 +16,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p/pre/:S/.r/rc/}
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
-CONFLICTS?=		*samba-2.* *samba-3.[02].* sharity-light-1.* tdb-1.*
+CONFLICTS?=		*samba-2.* *samba-3.[02].* sharity-light-1.* tdb-1.0.*
 
 USE_GMAKE=		yes
 USE_ICONV=		yes
@@ -27,6 +28,8 @@ AUTOCONF_ARGS=		-I${WRKSRC}/m4 -I${WRKSRC}/lib/replace
 LATEST_LINK?=		${PKGNAMEPREFIX}${PORTNAME}33${PKGNAMESUFFIX}
 WRKSRC=			${WRKDIR}/${DISTNAME}/source
 # directories
+PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
+PKGCONFIGDIR_REL?=	${PKGCONFIGDIR:S|^${PREFIX}/||}
 VARDIR?=		/var
 SAMBA_SPOOL=		${VARDIR}/spool/samba
 SAMBA_LOGDIR=		${VARDIR}/log/samba
@@ -36,14 +39,13 @@ SAMBA_SWATDIR=		${PREFIX}/share/swat
 SAMBA_CONFDIR?=		${PREFIX}/etc
 SAMBA_PRIVATEDIR?=	${SAMBA_CONFDIR}/samba
 SAMBA_CONFIG?=		smb.conf
-SAMBA_LIB=		lib
-SAMBA_LIBDIR=		${PREFIX}/${SAMBA_LIB}
+SAMBA_LIBDIR=		${PREFIX}/lib
 SAMBA_MODULEDIR=	${SAMBA_LIBDIR}/samba
 
 CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}" \
 			--localstatedir="${VARDIR}" \
-	    		--libdir="${SAMBA_LIBDIR}" \
-		        --with-configdir="${SAMBA_CONFDIR}" \
+			--libdir="${SAMBA_LIBDIR}" \
+			--with-configdir="${SAMBA_CONFDIR}" \
 			--with-pammodulesdir="${SAMBA_LIBDIR}" \
 			--with-modulesdir="${SAMBA_MODULEDIR}" \
 			--with-swatdir="${SAMBA_SWATDIR}" \
@@ -59,17 +61,18 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		ADS		"With Active Directory support" off \
 		CUPS		"With CUPS printing support" on \
 		WINBIND		"With WinBIND support" on \
-		SWAT		"With SWAT" off \
+		SWAT		"With SWAT WebGUI" off \
 		ACL_SUPPORT	"With ACL support" off \
 		AIO_SUPPORT	"With Asyncronous IO support" off \
 		FAM_SUPPORT	"With File Alteration Monitor" off \
 		SYSLOG		"With Syslog support" off \
 		QUOTAS		"With Disk quota support" off \
-		UTMP		"With UTMP accounting support" on \
+		UTMP		"With UTMP accounting support" off \
 		PAM_SMBPASS	"With PAM authentication vs passdb backends" off \
 		DNSUPDATE	"With dynamic DNS update(require ADS)" off \
 		DNSSD		"With DNS service discovery support" off \
 		EXP_MODULES	"With experimental modules" off \
+		SHARED_LIBS	"With shared libraries" off \
 		POPT		"With system-wide POPT library" on \
 		MAX_DEBUG	"With maximum debugging" off \
 		SMBTORTURE	"With smbtorture" off
@@ -82,26 +85,31 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 # Samba server itself
 USE_RC_SUBR=		samba
 SUB_FILES=		pkg-install pkg-message pkg-deinstall smb.conf.sample
+SAMBA_SHARED_LIBS=	talloc tdb netapi smbsharemodes
 
 PLIST=			${WRKDIR}/.PLIST
 # We don't (yet) have clustered FS for cluster support
 CONFIGURE_ARGS+=	--with-pam --with-readline --with-included-iniparser \
 			--with-sendfile-support --enable-largefile \
 			--without-cluster-support \
-			--disable-shared-libs \
-			--with-static-libs=libwbclient \
-			--without-libtalloc \
-			--without-libtdb \
-			--without-libnetapi \
 			--without-libsmbclient \
-			--without-libsmbsharemodes \
 			--without-libaddns
-# Sanity checks
-.if exists(${LOCALBASE}/include/tdb.h)
-IGNORE=			doesn't compile when tdb is installed. Uninstall databases/tdb port
-.endif
 # Let process generate meaningful backtrace on a core dump
 LIB_DEPENDS+=		execinfo.1:${PORTSDIR}/devel/libexecinfo
+
+.if !defined(WITH_SHARED_LIBS)
+.	for lib in ${SAMBA_SHARED_LIBS}
+CONFIGURE_ARGS+=	--without-lib${lib}
+.	endfor
+PLIST_SUB+=		SHAREDLIBS="@comment "
+.else
+.	for lib in ${SAMBA_SHARED_LIBS}
+CONFIGURE_ARGS+=	--with-lib${lib}
+.	endfor
+USE_LDCONFIG=		yes
+CONFIGURE_ENV+=		BUILD_LIBWBCLIENT_SHARED="yes"
+PLIST_SUB+=		SHAREDLIBS=""
+.endif
 
 .if !defined(WITHOUT_LDAP)
 SAMBA_WANT_LDAP=	yes
@@ -166,7 +174,6 @@ PLIST_SUB+=		SWAT=""
 CONFIGURE_ARGS+=	--disable-swat
 PLIST_SUB+=		SWAT="@comment "
 .endif
-
 # Add some shared modules
 .if defined(WITH_EXP_MODULES)
 .	if !defined(WANT_EXP_MODULES) || empty(WANT_EXP_MODULES)
@@ -245,14 +252,6 @@ PLIST_SUB+=		SMBTORTURE=""
 PLIST_SUB+=		SMBTORTURE="@comment "
 .endif
 
-.if defined(WITH_SMBTORTURE4_PATH) && exists(${WITH_SMBTORTURE4_PATH})
-CONFIGURE_ARGS+=	--with-smbtorture4-path=${WITH_SMBTORTURE4_PATH}
-.endif
-
-.if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
-CONFIGURE_ARGS+=	--with-shared-modules="${WANT_EXP_MODULES:Q:C/(\\\\ )+/,/g}"
-.endif
-
 ###
 ### Common part for port and it's subports
 ###
@@ -293,6 +292,14 @@ CONFIGURE_ENV+=		PKG_CONFIG="${PKG_CONFIG}"
 BUILD_DEPENDS+=		pkg-config:${PORTSDIR}/devel/pkg-config
 .endif
 
+.if defined(WITH_SMBTORTURE4_PATH) && exists(${WITH_SMBTORTURE4_PATH})
+CONFIGURE_ARGS+=	--with-smbtorture4-path=${WITH_SMBTORTURE4_PATH}
+.endif
+
+.if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
+CONFIGURE_ARGS+=	--with-shared-modules="${WANT_EXP_MODULES:Q:C/(\\\\ )+/,/g}"
+.endif
+
 post-patch:
 		@${REINPLACE_CMD} -e 's/%%SAMBA_CONFIG%%/${SAMBA_CONFIG}/g' \
 		    ${WRKSRC}/Makefile.in
@@ -312,6 +319,7 @@ MAN8=		eventlogadm.8 net.8 nmbd.8 pdbedit.8 smbd.8 smbpasswd.8 \
 		vfs_acl_tdb.8 vfs_acl_xattr.8 \
 		vfs_audit.8 vfs_cap.8 vfs_default_quota.8 vfs_extd_audit.8 \
 		vfs_fake_perms.8 vfs_full_audit.8 vfs_netatalk.8 \
+		vfs_preopen.8 \
 		vfs_readahead.8 vfs_readonly.8 vfs_recycle.8 vfs_shadow_copy.8 \
 		vfs_shadow_copy2.8 vfs_smb_traffic_analyzer.8 \
 		vfs_streams_xattr.8 vfs_xattr_tdb.8
@@ -373,7 +381,8 @@ PLIST_SUB+=	SAMBA_LOGDIR="${SAMBA_LOGDIR}" \
 		SAMBA_RUNDIR="${SAMBA_RUNDIR}" \
 		SAMBA_SWATDIR="${SAMBA_SWATDIR}" \
 		SAMBA_SPOOL="${SAMBA_SPOOL}" \
-		SAMBA_PRIVATEDIR="${SAMBA_PRIVATEDIR}"
+		SAMBA_PRIVATEDIR="${SAMBA_PRIVATEDIR}" \
+		PKGCONFIGDIR="${PKGCONFIGDIR_REL}"
 
 SUB_LIST+=	SAMBA_LOGDIR="${SAMBA_LOGDIR}" \
 		SAMBA_LOCKDIR="${SAMBA_LOCKDIR}" \
@@ -382,8 +391,7 @@ SUB_LIST+=	SAMBA_LOGDIR="${SAMBA_LOGDIR}" \
 		SAMBA_RUNDIR="${SAMBA_RUNDIR}" \
 		SAMBA_SWATDIR="${SAMBA_SWATDIR}" \
 		SAMBA_SPOOL="${SAMBA_SPOOL}" \
-		SAMBA_PRIVATEDIR="${SAMBA_PRIVATEDIR}" \
-		SAMBA_PRIVATE="${SAMBA_PRIVATE}"
+		SAMBA_PRIVATEDIR="${SAMBA_PRIVATEDIR}"
 
 ALL_TARGET=	all
 .if defined(WITH_SMBTORTURE)
@@ -414,6 +422,12 @@ post-configure:
 	@${RM} -f ${WRKDIR}/${DISTNAME}/docs/htmldocs/manpages/libsmbclient.7.html
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/examples/libsmbclient
 
+# This would speedup compilation
+.if !defined(WITHOUT_PCH)
+pre-build:
+	cd ${WRKSRC} && ${MAKE} pch
+.endif
+
 pre-install:
 	-@${FIND} "${SAMBA_MODULEDIR}" -type f -o -type l 2>/dev/null | ${SORT} | ${SED} -E 's|^${PREFIX}/?||;' > ${WRKDIR}/.PLIST.exclude
 	@${CAT} ${PKGDIR}/pkg-plist > ${PLIST}
@@ -442,17 +456,25 @@ post-install:
 	${INSTALL_PROGRAM} "${WRKSRC}/nsswitch/nss_winbind.so" "${SAMBA_LIBDIR}/nss_winbind.so.1"
 	${INSTALL_PROGRAM} "${WRKSRC}/nsswitch/nss_wins.so" "${SAMBA_LIBDIR}/nss_wins.so.1"
 	${INSTALL_PROGRAM} "${WRKSRC}/bin/pam_winbind.so" "${SAMBA_LIBDIR}"
-	@${ECHO_CMD} "${SAMBA_LIB}/nss_winbind.so.1" >> ${TMPPLIST};
-	@${ECHO_CMD} "${SAMBA_LIB}/nss_wins.so.1" >> ${TMPPLIST};
-	@${ECHO_CMD} "${SAMBA_LIB}/pam_winbind.so" >> ${TMPPLIST};
 .endif
 .if defined(WITH_PAM_SMBPASS)
 	${INSTALL_PROGRAM} "${WRKSRC}/bin/pam_smbpass.so" "${SAMBA_LIBDIR}"
-	@${ECHO_CMD} "${SAMBA_LIB}/pam_smbpass.so" >> ${TMPPLIST};
 .endif
 # smbtorture
 .if defined(WITH_SMBTORTURE)
 	${INSTALL_PROGRAM} "${WRKSRC}/bin/smbtorture" "${PREFIX}/bin"
+.endif
+#
+.if defined(WITH_SHARED_LIBS)
+.	for lib in ${SAMBA_SHARED_LIBS} wbclient
+		@if [ "${lib}" = "talloc" ]; then \
+		    ${INSTALL_DATA} ${WRKSRC}/lib/talloc/${lib}.pc	"${PKGCONFIGDIR}" ;\
+		elif [ "${lib}" = "tdb" ]; then \
+		    ${INSTALL_DATA} ${WRKSRC}/lib/tdb/${lib}.pc		"${PKGCONFIGDIR}" ;\
+		else \
+		    ${INSTALL_DATA} ${WRKSRC}/pkgconfig/${lib}.pc	"${PKGCONFIGDIR}" ;\
+		fi
+.	endfor
 .endif
 # Lib
 	@${FIND} "${SAMBA_MODULEDIR}" -type f -o -type l | ${SED} -E 's|^${PREFIX}/?||;' | ${EGREP} -F -v -f ${WRKDIR}/.PLIST.exclude | ${SORT} >> ${TMPPLIST}
@@ -473,7 +495,7 @@ post-install:
 	@${INSTALL_DATA} "${FILESDIR}/README.FreeBSD" "${DOCSDIR}"
 # !NOPORTDOCS
 .endif
-#
+# Run post-install script
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 

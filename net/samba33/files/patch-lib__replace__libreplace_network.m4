@@ -1,5 +1,5 @@
---- lib/replace/libreplace_network.m4.orig	2009-03-05 02:05:18.000000000 +0000
-+++ lib/replace/libreplace_network.m4	2009-03-05 02:06:42.000000000 +0000
+--- ./lib/replace/libreplace_network.m4.orig	2009-03-12 09:47:20.000000000 +0000
++++ ./lib/replace/libreplace_network.m4	2009-03-14 05:49:10.000000000 +0000
 @@ -8,12 +8,15 @@
  
  AC_CHECK_HEADERS(sys/socket.h netinet/in.h netdb.h arpa/inet.h)

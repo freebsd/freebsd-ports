@@ -1,5 +1,5 @@
---- Makefile.in.orig	2009-02-24 07:38:16.000000000 +0000
-+++ Makefile.in	2009-02-25 03:21:29.000000000 +0000
+--- ./Makefile.in.orig	2009-03-12 09:47:20.000000000 +0000
++++ ./Makefile.in	2009-03-14 05:49:10.000000000 +0000
 @@ -124,7 +124,7 @@
  # These can be overridden by command line switches (see smbd(8))
  # or in smb.conf (see smb.conf(5))
@@ -21,4 +21,65 @@
 +FLAGS4 =
  FLAGS5 = $(FLAGS1) $(FLAGS2) $(FLAGS3) $(FLAGS4)
  FLAGS  = $(ISA) $(FLAGS5) -I$(srcdir)/lib -D_SAMBA_BUILD_=3
+ 
+@@ -787,7 +787,8 @@
+ 	     $(LIBADS_OBJ) $(POPT_LIB_OBJ) \
+ 	     $(SMBLDAP_OBJ) $(DCUTIL_OBJ) $(LDB_OBJ) 
+ 
+-PAM_WINBIND_OBJ = nsswitch/pam_winbind.o localedir.o $(WBCOMMON_OBJ) \
++PAM_WINBIND_OBJ = nsswitch/pam_winbind.o localedir.o \
++		  @LIBTALLOC_STATIC@ @LIBWBCLIENT_STATIC@ \
+ 		  $(LIBREPLACE_OBJ) @BUILD_INIPARSER@
+ 
+ LIBSMBCLIENT_OBJ0 = \
+@@ -1218,6 +1219,7 @@
+ 
+ .SUFFIXES:
+ .SUFFIXES: .c .o .lo
++.SUFFIXES: .h .h.gch
+ 
+ SHOWFLAGS::
+ 	@echo "Using FLAGS      = $(FLAGS)"
+@@ -1260,6 +1262,9 @@
+ 		$(COMPILE_CC) >/dev/null 2>&1
+ @BROKEN_CC@	-mv `echo $@ | sed 's%^.*/%%g'` $@
+ 
++.h.h.gch:
++	@echo Compiling $*.h
++
+ PRECOMPILED_HEADER = $(builddir)/include/includes.h.gch
+ 
+ # this adds support for precompiled headers. To use it, install a snapshot
+@@ -2208,8 +2213,11 @@
+ 
+ bin/pam_winbind.@SHLIBEXT@: $(BINARY_PREREQS) $(PAM_WINBIND_OBJ) @LIBTALLOC_SHARED@ @LIBWBCLIENT_SHARED@
+ 	@echo "Linking shared library $@"
+-	@$(SHLD) $(LDSHFLAGS) -o $@ $(PAM_WINBIND_OBJ) -lpam @INIPARSERLIBS@ \
+-		$(PAM_WINBIND_EXTRA_LIBS) $(LIBTALLOC_LIBS) $(WINBIND_LIBS) @SONAMEFLAG@`basename $@`
++	@$(SHLD) $(LDSHFLAGS) -o $@ $(PAM_WINBIND_OBJ) -lpam $(DYNEXP) \
++		$(LIBS) $(LDAP_LIBS) $(KRB5LIBS) $(NSCD_LIBS) \
++		@INIPARSERLIBS@ $(PAM_WINBIND_EXTRA_LIBS) \
++		$(LIBTALLOC_LIBS) $(WINBIND_LIBS) \
++		@SONAMEFLAG@`basename $@`
+ 
+ bin/builtin.@SHLIBEXT@: $(BINARY_PREREQS) $(AUTH_BUILTIN_OBJ)
+ 	@echo "Building plugin $@"
+@@ -2486,7 +2494,8 @@
+ 	@echo "Linking shared library $@"
+ 	@$(SHLD) $(LDSHFLAGS) -o $@ $(PAM_SMBPASS_OBJ) -lpam $(DYNEXP) \
+ 		$(LIBS) $(LDAP_LIBS) $(KRB5LIBS) $(NSCD_LIBS) \
+-		$(LIBTALLOC_LIBS) $(LIBTDB_LIBS) $(WINBIND_LIBS)
++		$(LIBTALLOC_LIBS) $(LIBTDB_LIBS) $(WINBIND_LIBS) \
++		@SONAMEFLAG@`basename $@`
+ 
+ bin/tdbbackup@EXEEXT@: $(BINARY_PREREQS) $(TDBBACKUP_OBJ) @LIBTALLOC_SHARED@ @LIBTDB_SHARED@
+ 	@echo Linking $@
+@@ -2785,7 +2794,7 @@
+ 	@$(LIB_PATH_VAR)=./bin && \
+ 	export $(LIB_PATH_VAR) && \
+ 	for module in $(PAM_MODULES); do \
+-		./script/tests/dlopen.sh -lpam -ldl bin/$${module}.@SHLIBEXT@ \
++		./script/tests/dlopen.sh -lpam bin/$${module}.@SHLIBEXT@ \
+ 			|| exit 1; \
+ 	done
  
