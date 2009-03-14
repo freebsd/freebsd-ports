@@ -48,6 +48,8 @@ OPTIONS=	CUPS	"Use CUPS (Common UNIX Printing System)"	On \
 		LDAP	"Use LDAP"					Off \
 		LIBXSLT	"Use libxslt (only used by msxml3.dll)"		Off
 
+IGNORE=		builds, but fails upon startup
+
 .include <bsd.port.pre.mk>
 
 .ifdef WITHOUT_CUPS
