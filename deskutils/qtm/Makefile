@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	qtm
-PORTVERSION=	0.7.3.2
+PORTVERSION=	0.7.4
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.opendesktop.org/CONTENT/content-files/
-DISTNAME=	56062-${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/catkin
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blog management application based on Qt 4
@@ -18,6 +17,7 @@ USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui network xml \
 		moc_build qmake_build rcc_build uic_build
+USE_OPENSSL=	yes
 USE_CMAKE=	yes
 CMAKE_USE_PTHREAD=	yes
 CMAKE_ARGS=	-DCMAKE_CXX_FLAGS_RELEASE:STRING="-DNDEBUG" \
