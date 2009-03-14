@@ -212,36 +212,36 @@ etc/gentoorc
 %%DATADIR%%/icons/xcf.xpm
 %%DATADIR%%/icons/xpm.xpm
 %%DATADIR%%/icons/xpm2.xpm
-%%NLS%%share/locale/de/LC_MESSAGES/gentoo.mo
-%%NLS%%share/locale/es_MX/LC_MESSAGES/gentoo.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/gentoo.mo
-%%NLS%%share/locale/it/LC_MESSAGES/gentoo.mo
-%%NLS%%share/locale/ja_JP.UTF-8/LC_MESSAGES/gentoo.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/gentoo.mo
-%%NLS%%share/locale/ru_RU.CP1251/LC_MESSAGES/gentoo.mo
-%%NLS%%share/locale/ru_RU.KOI8-R/LC_MESSAGES/gentoo.mo
-%%NLS%%share/locale/ru_RU.UTF-8/LC_MESSAGES/gentoo.mo
-%%NLS%%share/locale/ru_RU.cp1251/LC_MESSAGES/gentoo.mo
-%%NLS%%share/locale/ru_RU.koi8r/LC_MESSAGES/gentoo.mo
-%%NLS%%share/locale/ru_RU.utf8/LC_MESSAGES/gentoo.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/gentoo.mo
-%%NLS%%@dirrmtry share/locale/ru_RU.utf8/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru_RU.utf8
-%%NLS%%@dirrmtry share/locale/ru_RU.koi8r/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru_RU.koi8r
-%%NLS%%@dirrmtry share/locale/ru_RU.cp1251/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru_RU.cp1251
-%%NLS%%@dirrmtry share/locale/ru_RU.UTF-8/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru_RU.UTF-8
-%%NLS%%@dirrmtry share/locale/ru_RU.KOI8-R/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru_RU.KOI8-R
-%%NLS%%@dirrmtry share/locale/ru_RU.CP1251/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru_RU.CP1251
-%%NLS%%@dirrmtry share/locale/ja_JP.UTF-8/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ja_JP.UTF-8
+share/locale/de/LC_MESSAGES/gentoo.mo
+share/locale/es_MX/LC_MESSAGES/gentoo.mo
+share/locale/fr/LC_MESSAGES/gentoo.mo
+share/locale/it/LC_MESSAGES/gentoo.mo
+share/locale/ja_JP.UTF-8/LC_MESSAGES/gentoo.mo
+share/locale/pl/LC_MESSAGES/gentoo.mo
+share/locale/ru_RU.CP1251/LC_MESSAGES/gentoo.mo
+share/locale/ru_RU.KOI8-R/LC_MESSAGES/gentoo.mo
+share/locale/ru_RU.UTF-8/LC_MESSAGES/gentoo.mo
+share/locale/ru_RU.cp1251/LC_MESSAGES/gentoo.mo
+share/locale/ru_RU.koi8r/LC_MESSAGES/gentoo.mo
+share/locale/ru_RU.utf8/LC_MESSAGES/gentoo.mo
+share/locale/sv/LC_MESSAGES/gentoo.mo
+@dirrmtry share/locale/ru_RU.utf8/LC_MESSAGES
+@dirrmtry share/locale/ru_RU.utf8
+@dirrmtry share/locale/ru_RU.koi8r/LC_MESSAGES
+@dirrmtry share/locale/ru_RU.koi8r
+@dirrmtry share/locale/ru_RU.cp1251/LC_MESSAGES
+@dirrmtry share/locale/ru_RU.cp1251
+@dirrmtry share/locale/ru_RU.UTF-8/LC_MESSAGES
+@dirrmtry share/locale/ru_RU.UTF-8
+@dirrmtry share/locale/ru_RU.KOI8-R/LC_MESSAGES
+@dirrmtry share/locale/ru_RU.KOI8-R
+@dirrmtry share/locale/ru_RU.CP1251/LC_MESSAGES
+@dirrmtry share/locale/ru_RU.CP1251
+@dirrmtry share/locale/ja_JP.UTF-8/LC_MESSAGES
+@dirrmtry share/locale/ja_JP.UTF-8
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/scratch
-%%PORTDOCS%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/config
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
