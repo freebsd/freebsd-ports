@@ -8,7 +8,7 @@
 +libhald_freebsd_la_SOURCES += 	\
 +	hf-usb2.c		\
 +	hf-usb2.h
-+libhald_freebsd_la_LDFLAGS += -lusb20
++libhald_freebsd_la_LDFLAGS += @LIBUSB20_LIBS@
 +endif
 +
  EXTRA_DIST = README TODO

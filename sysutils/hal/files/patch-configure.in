@@ -1,25 +1,35 @@
 --- configure.in.orig	2008-05-07 19:24:31.000000000 -0400
-+++ configure.in	2009-02-18 00:28:01.000000000 -0500
-@@ -446,6 +446,7 @@ if test "x$with_libpci" != xno ; then
++++ configure.in	2009-03-14 00:14:25.000000000 -0400
+@@ -446,6 +446,9 @@ if test "x$with_libpci" != xno ; then
  fi 
  AM_CONDITIONAL([HAVE_LIBPCI], [test "x$USE_LIBPCI" = "xyes"])
  
 +USE_LIBUSB20=no
++USE_LIBUSB=no
++LIBUSB20_LIBS=""
  AC_ARG_WITH([backend],
  	    AS_HELP_STRING([--with-backend=<name>],
  	                   [backend to use (linux/solaris/freebsd/dummy)]),
-@@ -473,6 +474,14 @@ AM_CONDITIONAL(HALD_COMPILE_LINUX, [test
+@@ -473,6 +476,22 @@ AM_CONDITIONAL(HALD_COMPILE_LINUX, [test
  AM_CONDITIONAL(HALD_COMPILE_FREEBSD, [test x$HALD_BACKEND = xfreebsd], [Compiling for FreeBSD])
  AM_CONDITIONAL(HALD_COMPILE_SOLARIS, [test x$HALD_BACKEND = xsolaris], [Compiling for Solaris])
  AC_SUBST(HALD_BACKEND)
 +if test "x$HALD_BACKEND" = "xfreebsd"; then
 +    AC_CHECK_LIB([usb20], [libusb20_dev_get_info], [USE_LIBUSB20=yes], [USE_LIBUSB20=no])
 +fi
++if test "x$USE_LIBUSB20" = "xno"; then
++    AC_CHECK_LIB([usb], [libusb20_dev_get_info], [USE_LIBUSB=yes], [USE_LIBUSB=np])
++fi
 +AM_CONDITIONAL([HAVE_LIBUSB20],[test "x$USE_LIBUSB20" = "xyes"])
++AM_CONDITIONAL([HAVE_LIBUSB20],[test "x$USE_LIBUSB" = "xyes"])
 +if test "x$USE_LIBUSB20" = "xyes"; then
 +    AC_DEFINE(HAVE_LIBUSB20, 1, [Set if we need libusb20])
++    LIBUSB20_LIBS="-lusb20"
++elif test "x$USE_LIBUSB" = "xyes"; then
++    AC_DEFINE(HAVE_LIBUSB20, 1, [Set if we need libsub20])
++    LIBUSB20_LIBS="-lusb"
 +fi
-+
++AC_SUBST(LIBUSB20_LIBS)
  
  dnl DBUS API is subject to changes
  AC_DEFINE_UNQUOTED(DBUS_API_SUBJECT_TO_CHANGE, [], [DBUS API is subject to change])
