@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.2.5
-PORTREVISION=	20090218
+PORTREVISION=	20090311
 CATEGORIES=	lang java
 VERSIONSTRING=	4.2-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -91,11 +91,9 @@ MAN1+=		gcj${SUFFIX}.1 \
 		gjnih${SUFFIX}.1 \
 		grmic${SUFFIX}.1 \
 		grmiregistry${SUFFIX}.1 \
-		grepjar${SUFFIX}.1 \
-		jar${SUFFIX}.1 \
 		jcf-dump${SUFFIX}.1 \
-		jv-scan${SUFFIX}.1 jv-convert${SUFFIX}.1 \
-		rmic${SUFFIX}.1 rmiregistry${SUFFIX}.1
+		jv-scan${SUFFIX}.1 \
+		jv-convert${SUFFIX}.1
 INFO+=		gcc${SUFFIX}/gcj
 PLIST_SUB+=	JAVA=""
 
@@ -132,11 +130,6 @@ pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
 post-install:
-	# man pages can only be generated if Perl >= 5.6 is installed;
-	# fake them otherwise.
-	for mp in ${_MANPAGES}; do \
-	  ${TEST} -e $${mp} || ${TOUCH} ${TOUCH_FLAGS} $${mp}; \
-	done
 	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
 	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
 	${RM} -f ${TARGLIB}/*.la
