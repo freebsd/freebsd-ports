@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	xfburn
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://goodies.xfce.org/releases/xfburn/
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	CD/DVD burning tool for Xfce
 
-LIB_DEPENDS=	burn.23:${PORTSDIR}/devel/libburn \
-		isofs.12:${PORTSDIR}/devel/libisofs
+LIB_DEPENDS=	burn.4:${PORTSDIR}/devel/libburn \
+		isofs.6:${PORTSDIR}/devel/libisofs
 RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 
 GNU_CONFIGURE=	yes
@@ -27,6 +26,8 @@ USE_GNOME=	intltool pkgconfig
 USE_XFCE=	configenv libexo libgui
 USE_CDRTOOLS=	yes
 INSTALLS_ICONS=	yes
+
+MAN1=		xfburn.1
 
 OPTIONS =	DBUS		"Enable dbus support"	on\
 		HAL		"Enable hal support"	on\
