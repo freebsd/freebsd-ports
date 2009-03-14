@@ -1222,6 +1222,7 @@ burn                            ports/sysutils/burn
 burrtools                       ports/games/burrtools
 bush                            ports/shells/bush
 buttonbox                       ports/x11/buttonbox
+buzhug                          ports/databases/buzhug
 bvi                             ports/editors/bvi
 bwbasic                         ports/lang/bwbasic
 bwidget                         ports/x11-toolkits/bwidget
@@ -21909,6 +21910,7 @@ undernet-ircu                   ports/irc/undernet-ircu
 undms                           ports/archivers/undms
 unfoo                           ports/archivers/unfoo
 unfs3                           ports/net/unfs3
+unhide                          ports/security/unhide
 uni2ascii                       ports/textproc/uni2ascii
 uniconvertor                    ports/graphics/uniconvertor
 unicornscan                     ports/security/unicornscan
