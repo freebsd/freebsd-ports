@@ -7,22 +7,18 @@
 #
 
 PORTNAME=	csv2latex
-PORTVERSION=	0.9.1
+PORTVERSION=	0.12.3
 PORTEPOCH=	1
-CATEGORIES=	textproc
-MASTER_SITES=	http://brouits.free.fr/csv2latex/
+CATEGORIES=	textproc converters
+MASTER_SITES=	http://ppa.launchpad.net/brouits/ppa/ubuntu/pool/main/c/csv2latex/
 DISTNAME=	${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	Converts a well formed csv file to a LaTeX document
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/csv2latex
-
-do-build:
-	cd ${WRKSRC} && \
-		${CC} ${CPPFLAGS} -o ${PORTNAME} ${PORTNAME}.c ${LDFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
