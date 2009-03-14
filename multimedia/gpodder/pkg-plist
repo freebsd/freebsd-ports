@@ -1,4 +1,5 @@
 bin/gpodder
+bin/gpodder-backup
 %%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%
 %%PYTHON_SITELIBDIR%%/gpodder/SimpleGladeApp.py
 %%PYTHON_SITELIBDIR%%/gpodder/SimpleGladeApp.pyc
@@ -34,6 +35,8 @@ bin/gpodder
 %%PYTHON_SITELIBDIR%%/gpodder/libtagupdate.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/my.py
 %%PYTHON_SITELIBDIR%%/gpodder/my.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/nokiavideocenter.py
+%%PYTHON_SITELIBDIR%%/gpodder/nokiavideocenter.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/opml.py
 %%PYTHON_SITELIBDIR%%/gpodder/opml.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/resolver.py
@@ -44,6 +47,8 @@ bin/gpodder
 %%PYTHON_SITELIBDIR%%/gpodder/sync.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/trayicon.py
 %%PYTHON_SITELIBDIR%%/gpodder/trayicon.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/unittests.py
+%%PYTHON_SITELIBDIR%%/gpodder/unittests.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/util.py
 %%PYTHON_SITELIBDIR%%/gpodder/util.pyc
 share/applications/gpodder.desktop
@@ -54,8 +59,10 @@ share/icons/hicolor/24x24/apps/gpodder.png
 share/icons/hicolor/48x48/apps/gpodder.png
 share/icons/hicolor/scalable/apps/gpodder.svg
 %%NLS%%share/locale/cs/LC_MESSAGES/gpodder.mo
+%%NLS%%share/locale/da/LC_MESSAGES/gpodder.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gpodder.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gpodder.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/gpodder.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gpodder.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/gpodder.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gpodder.mo
