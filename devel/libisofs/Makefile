@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	libisofs
-PORTVERSION=	0.6.10
+PORTVERSION=	0.6.16
 CATEGORIES=	devel
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Libburnia ISO9660 filesystem creation library
 
-LIB_DEPENDS=	burn.23:${PORTSDIR}/devel/libburn
+LIB_DEPENDS=	burn.4:${PORTSDIR}/devel/libburn
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib -liconv"
