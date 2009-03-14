@@ -7,6 +7,7 @@
 
 PORTNAME=	pari
 PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}.${REV_VERSION}
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://pari.math.u-bordeaux.fr/pub/pari/unix/
 DISTNAME=	pari-${MAJOR_VERSION}.${MINOR_VERSION}.${REV_VERSION}
@@ -14,10 +15,12 @@ DISTNAME=	pari-${MAJOR_VERSION}.${MINOR_VERSION}.${REV_VERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mathematics library and advanced calculator package
 
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
-CONFIGURE_ARGS=	--prefix=${PREFIX} --share-prefix=${PREFIX}/share
+CONFIGURE_ARGS=	--prefix=${PREFIX} --share-prefix=${PREFIX}/share --with-gmp
 
 MAKE_ARGS=	gp
 PLIST_SUB=	MAJOR_VERSION=${MAJOR_VERSION} MINOR_VERSION=${MINOR_VERSION} REV_VERSION=${REV_VERSION}
