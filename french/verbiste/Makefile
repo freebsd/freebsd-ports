@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	verbiste
-PORTVERSION=	0.1.23
-PORTREVISION=	2
+PORTVERSION=	0.1.24
 CATEGORIES=	french textproc
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
