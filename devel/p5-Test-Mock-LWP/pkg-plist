@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mock/LWP/.packlist
+%%SITE_PERL%%/Test/Mock/HTTP/Request.pm
+%%SITE_PERL%%/Test/Mock/HTTP/Response.pm
+%%SITE_PERL%%/Test/Mock/LWP/UserAgent.pm
+%%SITE_PERL%%/Test/Mock/LWP.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mock/LWP
+@dirrmtry %%SITE_PERL%%/mach/auto/Test/Mock
+@dirrmtry %%SITE_PERL%%/Test/Mock/LWP
+@dirrmtry %%SITE_PERL%%/Test/Mock/HTTP
+@dirrmtry %%SITE_PERL%%/Test/Mock
