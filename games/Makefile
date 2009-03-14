@@ -14,6 +14,7 @@
     SUBDIR += CaribbeanStud
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
+    SUBDIR += PySolFC
     SUBDIR += abe
     SUBDIR += abridge
     SUBDIR += abuse
