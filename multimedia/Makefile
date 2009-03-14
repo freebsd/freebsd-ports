@@ -3,6 +3,7 @@
 
     COMMENT = Multimedia software
 
+    SUBDIR += abby
     SUBDIR += acidrip
     SUBDIR += atomicparsley
     SUBDIR += audacious
