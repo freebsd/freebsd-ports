@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	2.0.6
+PORTVERSION=	2.1.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	gems
@@ -16,6 +16,7 @@ COMMENT=	Apache module for running Ruby on Rails and Rack applications
 BUILD_DEPENDS=	rubygem-fastthread>=1.0.1:${PORTSDIR}/devel/rubygem-fastthread \
 		rubygem-rack>=0.1.0:${PORTSDIR}/www/rubygem-rack
 
+SUB_LIST+=	GEM_LIB_DIR=${GEM_LIB_DIR} RUBY=${RUBY}
 SUB_FILES=	pkg-message
 
 USE_APACHE=	2.2+
@@ -24,7 +25,7 @@ USE_RUBYGEMS=	yes
 USE_RAKE=	yes
 
 post-install:
-	(cd ${PREFIX}/${GEM_LIB_DIR} && rake clean apache2 )
+	(${PREFIX}/bin/passenger-install-apache2-module --auto )
 	@${CAT}	${PKGMESSAGE}
 	@${ECHO} bin/passenger-config >	${TMPPLIST}
 	@${ECHO} bin/passenger-install-apache2-module >> ${TMPPLIST}
