@@ -6,6 +6,7 @@
 
 PORTNAME=	libgadu
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	polish net
 MASTER_SITES=	http://toxygen.net/libgadu/files/
@@ -19,7 +20,7 @@ USE_GMAKE=		yes
 USE_GNOME=		gnomehack pkgconfig
 GNU_CONFIGURE=		yes
 
-CONFIGURE_ARGS=		--enable-shared --disable-static
+CONFIGURE_ARGS=		--enable-shared --disable-static --with-pthread
 
 USE_LDCONFIG=		yes
 
