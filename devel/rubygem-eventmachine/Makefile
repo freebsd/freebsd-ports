@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	eventmachine
-PORTVERSION=	0.12.4
+PORTVERSION=	0.12.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
@@ -13,7 +13,6 @@ MAINTAINER=	ports@logvinov.com
 COMMENT=	A fast, simple event-processing library for Ruby programs
 
 USE_RUBY=	yes
-USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
