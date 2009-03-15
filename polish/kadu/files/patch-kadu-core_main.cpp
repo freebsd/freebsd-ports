@@ -1,14 +1,11 @@
-Index: kadu-core/main.cpp
-===================================================================
---- kadu-core/main.cpp	2008-02-26 01:07:33.000000000 +0100
-+++ kadu-core/main.cpp	2008-03-12 10:55:42.000000000 +0100
-@@ -50,6 +50,9 @@
- #ifdef HAVE_EXECINFO
- #include <execinfo.h>
+--- kadu-core/main.cpp.orig	2009-01-04 14:18:33.000000000 +0100
++++ kadu-core/main.cpp	2009-03-07 18:12:29.000000000 +0100
+@@ -19,7 +19,7 @@
+ #else
+ #include <winsock2.h>
  #endif
-+#ifdef __FreeBSD__
-+typedef union sigval sigval_t;
-+#endif /* __FreeBSD__ */
- #define OPEN_CHAT_SIGNAL (SIGRTMIN + 7)
- 
- static int sigsegvCount = 0;
+-#ifdef Q_WS_MAC
++#ifdef Q_OS_BSD4
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #endif
