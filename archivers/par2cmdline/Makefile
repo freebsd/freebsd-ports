@@ -7,7 +7,7 @@
 
 PORTNAME=	par2cmdline
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	parchive
@@ -25,7 +25,7 @@ PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
