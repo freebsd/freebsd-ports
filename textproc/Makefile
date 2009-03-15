@@ -597,6 +597,7 @@
     SUBDIR += p5-Text-FillIn
     SUBDIR += p5-Text-Filter
     SUBDIR += p5-Text-Filter-Chain
+    SUBDIR += p5-Text-FindIndent
     SUBDIR += p5-Text-FixEOL
     SUBDIR += p5-Text-FixedLength
     SUBDIR += p5-Text-FixedLength-Extra
