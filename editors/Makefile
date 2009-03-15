@@ -121,6 +121,7 @@
     SUBDIR += openoffice.org-3
     SUBDIR += openoffice.org-3-RC
     SUBDIR += openoffice.org-3-devel
+    SUBDIR += p5-Padre
     SUBDIR += pdfedit
     SUBDIR += pico-alpine
     SUBDIR += poedit

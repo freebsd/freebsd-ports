@@ -1,0 +1,124 @@
+# New ports collection makefile for:	p5-Padre
+# Date created:				March 8th 2009
+# Whom:	      				Cezary Morga <cm@therek.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Padre
+PORTVERSION=	0.28
+CATEGORIES=	editors perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../by-authors/id/S/SZ/SZABGAB
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	cm@therek.net
+COMMENT=	Perl Application Development and Refactoring Environment
+
+BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
+		${SITE_PERL}/Class/Adapter.pm:${PORTSDIR}/devel/p5-Class-Adapter \
+		${SITE_PERL}/Class/Autouse.pm:${PORTSDIR}/devel/p5-Class-Autouse \
+		${SITE_PERL}/Class/Unload.pm:${PORTSDIR}/devel/p5-Class-Unload \
+		${SITE_PERL}/Devel/Dumpvar.pm:${PORTSDIR}/devel/p5-Devel-Dumpvar \
+		${SITE_PERL}/File/Copy/Recursive.pm:${PORTSDIR}/devel/p5-File-Copy-Recursive \
+		${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule \
+		${SITE_PERL}/File/HomeDir.pm:${PORTSDIR}/devel/p5-File-HomeDir \
+		${SITE_PERL}/File/ShareDir.pm:${PORTSDIR}/devel/p5-File-ShareDir \
+		${SITE_PERL}/File/ShareDir/PAR.pm:${PORTSDIR}/devel/p5-File-ShareDir-PAR \
+		${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which \
+		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
+		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
+		${SITE_PERL}/IPC/Cmd.pm:${PORTSDIR}/devel/p5-IPC-Cmd \
+		${SITE_PERL}/Module/Inspector.pm:${PORTSDIR}/devel/p5-Module-Inspector \
+		${SITE_PERL}/Module/Refresh.pm:${PORTSDIR}/devel/p5-Module-Refresh \
+		${SITE_PERL}/Module/Starter.pm:${PORTSDIR}/devel/p5-Module-Starter \
+		${SITE_PERL}/ORLite.pm:${PORTSDIR}/databases/p5-ORLite \
+		${SITE_PERL}/ORLite/Migrate.pm:${PORTSDIR}/databases/p5-ORLite-Migrate \
+		${SITE_PERL}/PAR.pm:${PORTSDIR}/devel/p5-PAR \
+		${SITE_PERL}/PPI.pm:${PORTSDIR}/textproc/p5-PPI \
+		${SITE_PERL}/Parse/ErrorString/Perl.pm:${PORTSDIR}/devel/p5-Parse-ErrorString-Perl \
+		${SITE_PERL}/Pod/POM.pm:${PORTSDIR}/textproc/p5-Pod-POM \
+		${SITE_PERL}/Pod/Simple.pm:${PORTSDIR}/textproc/p5-Pod-Simple \
+		${SITE_PERL}/Pod/Simple/XHTML.pm:${PORTSDIR}/textproc/p5-Pod-Simple \
+		${SITE_PERL}/Probe/Perl.pm:${PORTSDIR}/sysutils/p5-Probe-Perl \
+		${SITE_PERL}/Test/Compile.pm:${PORTSDIR}/devel/p5-Test-Compile \
+		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
+		${SITE_PERL}/Test/NoWarnings.pm:${PORTSDIR}/devel/p5-Test-NoWarnings \
+		${SITE_PERL}/Test/Script.pm:${PORTSDIR}/devel/p5-Test-Script \
+		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
+		${SITE_PERL}/Text/FindIndent.pm:${PORTSDIR}/textproc/p5-Text-FindIndent \
+		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+		${SITE_PERL}/Wx/Perl/ProcessStream.pm:${PORTSDIR}/x11-toolkits/p5-Wx-Perl-ProcessStream \
+		${SITE_PERL}/YAML/Tiny.pm:${PORTSDIR}/textproc/p5-YAML-Tiny \
+		${SITE_PERL}/${PERL_ARCH}/Class/XSAccessor.pm:${PORTSDIR}/devel/p5-Class-XSAccessor \
+		${SITE_PERL}/${PERL_ARCH}/Class/XSAccessor/Array.pm:${PORTSDIR}/devel/p5-Class-XSAccessor-Array \
+		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
+		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
+		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
+		${SITE_PERL}/${PERL_ARCH}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
+		${SITE_PERL}/${PERL_ARCH}/Wx.pm:${PORTSDIR}/x11-toolkits/p5-Wx
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_WX=		2.6+
+WX_COMPS=	wx contrib
+WX_UNICODE=	yes
+USE_DISPLAY=	yes
+PERL_CONFIGURE=	yes
+USE_PERL5=	5.8.5+
+USE_GETTEXT=	yes
+
+PERL_THREADS=	${PERL} -V::usethreads
+
+MAN3=		Padre.3 \
+		Padre::Autosave.3 \
+		Padre::DB.3 \
+		Padre::DB::Bookmark.3 \
+		Padre::DB::History.3 \
+		Padre::DB::HostConfig.3 \
+		Padre::DB::Plugin.3 \
+		Padre::DB::Session.3 \
+		Padre::DB::Snippets.3 \
+		Padre::DocBrowser.3 \
+		Padre::Document.3 \
+		Padre::Document::Perl::Beginner.3 \
+		Padre::Locale.3 \
+		Padre::Manual.3 \
+		Padre::Manual::Hacking.3 \
+		Padre::Plugin.3 \
+		Padre::Plugin::Devel.3 \
+		Padre::Plugin::PopularityContest.3 \
+		Padre::PluginBuilder.3 \
+		Padre::PluginManager.3 \
+		Padre::Pod2HTML.3 \
+		Padre::Task.3 \
+		Padre::Task::Outline.3 \
+		Padre::Task::Outline::Perl.3 \
+		Padre::Task::PPI.3 \
+		Padre::Task::PPI::FindUnmatchedBrace.3 \
+		Padre::Task::PPI::FindVariableDeclaration.3 \
+		Padre::Task::PPI::LexicalReplaceVariable.3 \
+		Padre::Task::SyntaxChecker.3 \
+		Padre::Task::SyntaxChecker::Perl.3 \
+		Padre::TaskManager.3 \
+		Padre::Util.3 \
+		Padre::Wx::App.3 \
+		Padre::Wx::Dialog.3 \
+		Padre::Wx::DocBrowser.3 \
+		Padre::Wx::HtmlWindow.3 \
+		Padre::Wx::Main.3 \
+		Padre::Wx::PodFrame.3 \
+		Wx::Perl::Dialog.3 \
+		Wx::Perl::Dialog::Simple.3 \
+		Wx::Perl::Dialog::SingleChoice.3
+
+pre-configure:
+	@if [ "$$(${PERL_THREADS})" = "'undef';" ]; then \
+		${ECHO_MSG}; \
+		${ECHO_MSG} "===>  ${PKGNAME} requires Perl with thread support built-in!"; \
+		${ECHO_MSG} "      Please, recompile Perl with WITH_THREADS=yes flag and try again."; \
+		${ECHO_MSG}; \
+		exit 2; \
+	fi
+
+.include <bsd.port.mk>
