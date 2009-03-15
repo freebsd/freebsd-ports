@@ -1,22 +1,19 @@
 System/Applications/GSPdf.app/GSPdf
-System/Applications/GSPdf.app/Resources/English.lproj/GSConsole.gorm
-System/Applications/GSPdf.app/Resources/English.lproj/GSPdfDocWin.gorm
-System/Applications/GSPdf.app/Resources/English.lproj/Localizable.strings
 System/Applications/GSPdf.app/Resources/FileEPS.tiff
 System/Applications/GSPdf.app/Resources/FilePDF.tiff
 System/Applications/GSPdf.app/Resources/FilePS.tiff
+System/Applications/GSPdf.app/Resources/GSConsole.gorm
 System/Applications/GSPdf.app/Resources/GSPdf.desktop
 System/Applications/GSPdf.app/Resources/GSPdf.tiff
+System/Applications/GSPdf.app/Resources/GSPdfDocWin.gorm
 System/Applications/GSPdf.app/Resources/Info-gnustep.plist
 System/Applications/GSPdf.app/Resources/hand.tiff
 System/Applications/GSPdf.app/Resources/left.tiff
 System/Applications/GSPdf.app/Resources/page.tiff
-System/Applications/GSPdf.app/Resources/papersizes.plist
 System/Applications/GSPdf.app/Resources/right.tiff
 System/Applications/GSPdf.app/Resources/zoomin.tiff
 System/Applications/GSPdf.app/Resources/zoomout.tiff
 System/Applications/GSPdf.app/stamp.make
 System/Tools/GSPdf
-@dirrm System/Applications/GSPdf.app/Resources/English.lproj
 @dirrm System/Applications/GSPdf.app/Resources
 @dirrm System/Applications/GSPdf.app
