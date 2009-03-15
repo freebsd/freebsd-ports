@@ -1,0 +1,4 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Unload/.packlist
+%%SITE_PERL%%/Class/Unload.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Unload
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
