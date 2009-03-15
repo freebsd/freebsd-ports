@@ -7,7 +7,7 @@
 
 PORTNAME=	haddock-docs
 PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/haddock/dist/
 PKGNAMEPREFIX=	hs-
@@ -34,7 +34,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textpr
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//g}
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
-HSCOLOUR_VERSION=	1.10.1
+HSCOLOUR_VERSION=	1.12
 HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
 
 CABAL_CMD=	runghc Setup.lhs
