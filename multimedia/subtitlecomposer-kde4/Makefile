@@ -36,17 +36,7 @@ RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
 .if defined(WITH_XINE)
-
-. if exists(${LOCALBASE}/bin/xine-config)
-XINE_PLUGINDIR!=	${LOCALBASE}/bin/xine-config --plugindir
-. endif
-
-. if defined(XINE_PLUGINDIR) && !exists(${XINE_PLUGINDIR}/xineplug_vo_out_xcbxv.so)
-IGNORE=		needs XCB support in libxine
-. endif
-
-LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine \
-		xcb.2:${PORTSDIR}/x11/libxcb
+LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
 .else
 CONFIGURE_ARGS+=--without-xine --without-xcb
 .endif
