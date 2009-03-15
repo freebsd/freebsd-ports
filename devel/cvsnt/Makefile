@@ -28,8 +28,8 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2\
 		pcre.0:${PORTSDIR}/devel/pcre
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
-MAN1=		cvs.1
-MAN5=		cvs.5
+MAN1=		cvs.1 cvslockd.1
+MAN5=		cvs.5 PServer.5 Plugins.5
 MLINKS=		cvs.1 cvsnt.1 cvs.5 cvsnt.5
 
 post-configure:
