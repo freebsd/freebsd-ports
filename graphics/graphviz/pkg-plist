@@ -558,9 +558,9 @@ libdata/pkgconfig/libgvc.pc
 @dirrm lib/graphviz
 @dirrm include/graphviz
 @dirrm %%DATADIR%%/demo
-%%PORTDOCS%%@dirrm %%DATADIR%%/doc/html/schema
-%%PORTDOCS%%@dirrm %%DATADIR%%/doc/html
-%%PORTDOCS%%@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/doc/html/schema
+@dirrm %%DATADIR%%/doc/html
+@dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/graphs/directed
 @dirrm %%DATADIR%%/graphs/undirected
