@@ -4,6 +4,7 @@ include/libmpd/libmpd-internal.h
 include/libmpd/libmpd-player.h
 include/libmpd/libmpd-playlist.h
 include/libmpd/libmpd-status.h
+include/libmpd/libmpd-sticker.h
 include/libmpd/libmpd-strfsong.h
 include/libmpd/libmpd-version.h
 include/libmpd/libmpd.h
@@ -11,6 +12,6 @@ include/libmpd/libmpdclient.h
 lib/libmpd.a
 lib/libmpd.la
 lib/libmpd.so
-lib/libmpd.so.0
+lib/libmpd.so.1
 libdata/pkgconfig/libmpd.pc
 @dirrm include/libmpd

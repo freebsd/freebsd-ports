@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmpccaa
-PORTVERSION=	0.17.0
+PORTVERSION=	0.18.0
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 DISTNAME=	gmpc-coveramazon-${PORTVERSION}
