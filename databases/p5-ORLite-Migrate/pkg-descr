@@ -1,0 +1,6 @@
+ORLite::Migrate is a light weight single class Database Schema Migration
+enhancement for ORLite. It provides a simple implementation of schema
+versioning within the SQLite database using the built-in user_version pragma
+(which is set to zero by default).
+
+WWW: http://search.cpan.org/dist/ORLite-Migrate/
