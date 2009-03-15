@@ -1648,6 +1648,7 @@
     SUBDIR += p5-Params-Validate
     SUBDIR += p5-Parse-CPAN-Meta
     SUBDIR += p5-Parse-CPAN-Packages
+    SUBDIR += p5-Parse-ErrorString-Perl
     SUBDIR += p5-Parse-PerlConfig
     SUBDIR += p5-Parse-RecDescent
     SUBDIR += p5-Parse-Yapp
