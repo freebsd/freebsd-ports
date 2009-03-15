@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Auth_OpenID2
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.2
 CATEGORIES=	security www pear
 MASTER_SITES=	http://openidenabled.com/files/php-openid/packages/
 PKGNAMEPREFIX=	php-
@@ -55,7 +55,9 @@ do-install:
 	${CP} ${WRKSRC}/Auth/OpenID/* ${PREFIX}/share/pear/Auth/OpenID
 	${MKDIR} ${PREFIX}/share/pear/Auth/Yadis
 	${CP} -R ${WRKSRC}/Auth/Yadis/* ${PREFIX}/share/pear/Auth/Yadis
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.post.mk>
