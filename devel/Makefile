@@ -1399,6 +1399,7 @@
     SUBDIR += p5-Filter-Template
     SUBDIR += p5-FindBin-libs
     SUBDIR += p5-Forest
+    SUBDIR += p5-FreeBSD-i386-Ptrace
     SUBDIR += p5-FreezeThaw
     SUBDIR += p5-Gearman
     SUBDIR += p5-Gearman-Client-Async
