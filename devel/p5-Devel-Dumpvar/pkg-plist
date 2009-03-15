@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Devel/Dumpvar.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Dumpvar/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Dumpvar
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/Devel

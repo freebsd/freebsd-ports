@@ -1262,6 +1262,7 @@
     SUBDIR += p5-Devel-DProfPP
     SUBDIR += p5-Devel-Declare
     SUBDIR += p5-Devel-Diagram
+    SUBDIR += p5-Devel-Dumpvar
     SUBDIR += p5-Devel-EvalContext
     SUBDIR += p5-Devel-Events
     SUBDIR += p5-Devel-Events-Objects
