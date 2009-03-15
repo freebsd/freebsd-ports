@@ -78,6 +78,7 @@
     SUBDIR += gbib
     SUBDIR += gdbm
     SUBDIR += gdl2
+    SUBDIR += geoserver-mysql-plugin
     SUBDIR += gigabase
     SUBDIR += glom
     SUBDIR += gmysql

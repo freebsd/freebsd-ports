@@ -1,0 +1,9 @@
+
+===============================================================================
+
+A MySQL DataStore implementation was installed, please restart GeoServer.
+
+MySQL should now show up as an option in the GeoServer web admin tool at
+Config -> Data -> DataStores -> New.  Fill out the appropriate params.
+
+===============================================================================
