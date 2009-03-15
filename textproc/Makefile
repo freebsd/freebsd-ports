@@ -538,6 +538,7 @@
     SUBDIR += p5-Search-Saryer
     SUBDIR += p5-Search-VectorSpace
     SUBDIR += p5-Senna
+    SUBDIR += p5-Solr
     SUBDIR += p5-Sort-ArbBiLex
     SUBDIR += p5-Sort-Fields
     SUBDIR += p5-Sort-Naturally
