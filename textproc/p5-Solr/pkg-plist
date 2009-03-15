@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Solr/.packlist
+%%SITE_PERL%%/Solr.pm
+%%SITE_PERL%%/Solr/HTTPUpdateHandler.pm
+%%SITE_PERL%%/Solr/Schema.pm
+@dirrmtry %%SITE_PERL%%/Solr
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Solr
