@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8c5205b4-11a0-11de-a964-0030843d3802">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<name>linux-opera</name>
+	<range><lt>9.64</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Opera Team reports:</p>
+	<blockquote cite="http://www.opera.com/docs/changelogs/freebsd/964/">
+	  <p>An unspecified error in the processing of JPEG images can be
+	    exploited to trigger a memory corruption.</p>
+	  <p>An error can be exploited to execute arbitrary script code in a
+	    different domain via unspecified plugins.</p>
+	  <p>An unspecified error has a "moderately severe" impact. No further
+	    information is available.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.opera.com/docs/changelogs/freebsd/964/</url>
+      <url>http://secunia.com/advisories/34135/</url>
+    </references>
+    <dates>
+      <discovery>2009-03-15</discovery>
+      <entry>2009-03-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e848a92f-0e7d-11de-92de-000bcdc1757a">
     <topic>epiphany -- untrusted search path vulnerability</topic>
     <affects>
