@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flvtool++
-PORTVERSION=	1.1
+PORTVERSION=	1.1.7
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirror.facebook.com/facebook/flvtool++/
 
