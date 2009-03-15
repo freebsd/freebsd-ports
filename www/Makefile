@@ -210,11 +210,11 @@
     SUBDIR += ffproxy
     SUBDIR += fhttpd
     SUBDIR += firefox
-    SUBDIR += firefox3
     SUBDIR += firefox-devel
     SUBDIR += firefox-i18n
-    SUBDIR += firefox3-i18n
     SUBDIR += firefox-remote
+    SUBDIR += firefox3
+    SUBDIR += firefox3-i18n
     SUBDIR += flashplugin-mozilla
     SUBDIR += flat-frog
     SUBDIR += flickcurl
@@ -685,6 +685,7 @@
     SUBDIR += p5-CGI-Response
     SUBDIR += p5-CGI-SSI
     SUBDIR += p5-CGI-Session
+    SUBDIR += p5-CGI-Session-ExpireSessions
     SUBDIR += p5-CGI-Simple
     SUBDIR += p5-CGI-SpeedyCGI
     SUBDIR += p5-CGI-Untaint
@@ -1188,8 +1189,6 @@
     SUBDIR += php4-session
     SUBDIR += php5-session
     SUBDIR += php5-tidy
-    SUBDIR += phpsysinfo
-    SUBDIR += phpsysinfo-dev
     SUBDIR += phpbb
     SUBDIR += phpbb-devel
     SUBDIR += phpbb3
@@ -1199,6 +1198,8 @@
     SUBDIR += phprecipebook
     SUBDIR += phproxy
     SUBDIR += phpsurveyor
+    SUBDIR += phpsysinfo
+    SUBDIR += phpsysinfo-dev
     SUBDIR += phpwebapp
     SUBDIR += phpwebgallery
     SUBDIR += phpwiki

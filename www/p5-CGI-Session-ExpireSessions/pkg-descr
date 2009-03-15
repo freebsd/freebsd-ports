@@ -1,0 +1,11 @@
+CGI::Session::ExpireSessions is a pure Perl module.
+
+It deletes CGI::Session-type sessions which have passed their use-by date.
+
+It works with CGI::Session-type sessions in a database or in disk files,
+but does not appear to work with CGI::Session::PureSQL-type sessions.
+
+The recommended way to use this module is via method expire_sessions(),
+which requires CGI::Session V 4 or later.
+
+WWW: http://search.cpan.org/~rsavage/CGI-Session-ExpireSessions-1.09/
