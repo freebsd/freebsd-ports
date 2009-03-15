@@ -1544,6 +1544,7 @@
     SUBDIR += p5-Module-Find
     SUBDIR += p5-Module-Info
     SUBDIR += p5-Module-Info-File
+    SUBDIR += p5-Module-Inspector
     SUBDIR += p5-Module-Install
     SUBDIR += p5-Module-Install-AuthorTests
     SUBDIR += p5-Module-List
