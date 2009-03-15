@@ -1,0 +1,10 @@
+The Class::XSAccessor::Array module implements fast XS accessors both
+for getting at and setting an object attribute. Additionally, the module
+supports mutators and simple predicates (has_foo() like tests
+for definedness of an attributes). The module works only with objects that
+are implemented as arrays.
+
+A simple benchmark showed more than a factor of two performance advantage over
+writing accessors in Perl.
+
+WWW: http://search.cpan.org/dist/Class-XSAccessor-Array/
