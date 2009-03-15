@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	Test-Output
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Utilities to test STDOUT and STDERR messages
 
-RUN_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
-BUILD_DEPENDS=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	p5-Test-Tester>=0.10.3:${PORTSDIR}/devel/p5-Test-Tester
+RUN_DEPENDS=	p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter
 
 PERL_CONFIGURE=	yes
 
