@@ -3,3 +3,4 @@ etc/axelrc
 %%NLS%%share/locale/de/LC_MESSAGES/axel.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/axel.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/axel.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/axel.mo

@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	axel
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	ftp
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/2659/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/2717/ \
+		http://mirror.mcx2.org/
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	prudhvikrishna@gmail.com
@@ -44,6 +44,9 @@ MAN1=		axel.1
 post-configure:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|; \
 		s|-pthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile.settings
+	@${REINPLACE_CMD} -e '37,38d' \
+		-e 's|cn|CN|g' ${WRKSRC}/Makefile
+	${MV} ${WRKSRC}/zh_cn.po ${WRKSRC}/zh_CN.po
 	@${ECHO} 'CFLAGS+=${CFLAGS}' >> ${WRKSRC}/Makefile.settings
 
 .include <bsd.port.post.mk>
