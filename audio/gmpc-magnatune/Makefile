@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmpc-magnatune
-PORTVERSION=	0.17.0
+PORTVERSION=	0.18.0
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/download/Programs/gmpc/${PORTVERSION}/
 
@@ -14,7 +14,8 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A Autoplaylist plugin for gmpc
 
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
-		curl.5:${PORTSDIR}/ftp/curl
+		curl.5:${PORTSDIR}/ftp/curl \
+		sqlite3:${PORTSDIR}/databases/sqlite3
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 
