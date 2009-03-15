@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	aqemu
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt4 based Qemu frontend
+
+LIB_DEPENDS=	vncclient.0:${PORTSDIR}/net/libvncserver
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
