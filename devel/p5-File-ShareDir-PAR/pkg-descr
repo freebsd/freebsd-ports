@@ -1,0 +1,16 @@
+File::ShareDir::PAR provides the same functionality as File::ShareDir but tries
+hard to be compatible with PAR packaged applications.
+
+The problem is, that the concept of having a distribution or module specific
+share directory becomes a little hazy when you're loading everything from
+a single file. PAR uses an @INC hook to intercept any attempt to load a module.
+File::ShareDir uses the directory structure that is typically found in the
+directories that are listed in @INC for storing the shared data. In a PAR
+enviroment, this is not necessarily possible.
+
+WARNING:
+This module contains highly experimental code. If you want to load
+modules from .par files using PAR and then access their shared directory
+using File::ShareDir, you probably have no choice but to use it.
+
+WWW: http://search.cpan.org/dist/File-ShareDir-PAR/
