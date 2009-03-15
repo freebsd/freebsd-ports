@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	2.20.3
-PORTREVISION=	4
+PORTVERSION=	2.22.2
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -15,7 +14,6 @@ MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2 \
@@ -34,23 +32,22 @@ PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 MAKE_ENV=	EXPR_COMPAT=yes MISSING=${TRUE}
 
-MAN1=		acyclic.1 bcomps.1 ccomps.1 dijkstra.1 dot.1 \
-		dotty.1 gc.1 gvcolor.1 gvpack.1 gvpr.1 gxl2dot.1 \
-		lneato.1 nop.1 prune.1 sccmap.1 tred.1 unflatten.1
-MAN3=		agraph.3 cdt.3 cgraph.3 graph.3 gvc.3 pathplan.3
+MAN1=		acyclic.1 bcomps.1 ccomps.1 dijkstra.1 dot.1 dotty.1 gc.1 \
+		gv2gxl.1 gvgen.1 mm2gv.1 gvcolor.1 gvpack.1 gvpr.1 lneato.1 \
+		nop.1 prune.1 sccmap.1 tred.1 unflatten.1
+MAN3=		cdt.3 cgraph.3 graph.3 gvc.3 pathplan.3
 MAN7=		graphviz.7
 MLINKS=		dot.1 circo.1 \
-		gxl2dot.1 dot2gxl.1 \
 		dot.1 fdp.1 \
 		dot.1 neato.1 \
-		dot.1 twopi.1
+		dot.1 sfdp.1 \
+		dot.1 twopi.1 \
+		gv2gxl.1 gxl2gv.1
+
 FIX_INCLUDE=	ast_common.h \
 		lib/cdt/dthdr.h \
 		lib/graph/libgraph.h lib/graph/triefa.h \
 		lib/graph/parser.h lib/graph/agxbuf.h \
-		lib/agraph/aghdr.h lib/agraph/agraph.h \
-		lib/agraph/malloc.h lib/agraph/vmstub.h \
-		lib/agraph/grammar.h \
 		lib/pathplan/tri.h lib/pathplan/pathplan.h \
 		lib/pathplan/pathutil.h lib/pathplan/solvers.h \
 		lib/pathplan/vis.h lib/pathplan/vispath.h \
@@ -82,6 +79,7 @@ OPTIONS=	ICONV "Build with ICONV support" on \
 		GNOMEUI  "build with libgnomeui support" off \
 		MING "Build with ming plugin" off \
 		DEVIL "Build with devil plugin" off \
+		GHOSTSCRIPT "Build with ghostscript plugin" off \
 		PERL "Perl bindings (swig)" off \
 		PHP "PHP bindings (swig)" off \
 		PYTHON "Python bindings (swig)" off \
@@ -112,19 +110,18 @@ CPPFLAGS+=		-I${TK_INCLUDEDIR}
 USE_TK_BUILD=		84+
 CONFIGURE_ARGS+=	--with-wish=${WISH}
 CONFIGURE_ENV+=		TKCONFIG="${TK_LIBDIR}/tkConfig.sh"
-MANN+=			tkspline.n
+MAN3+=			tkspline.3tk
 PLIST_SUB+=		WITH_TK=""
 .else
 PLIST_SUB+=		WITH_TK="@comment "
 .endif
 .if defined(WITH_TCL) || defined(WITH_TK)
-BROKEN=			Swig cant build tcl code
 CPPFLAGS+=		-I${TCL_INCLUDEDIR}
 USE_TCL_BUILD=		84+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 CONFIGURE_ARGS+=	--with-tclsh=${TCLSH}
 CONFIGURE_ENV+=		TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh"
-MANN+=			gdtclft.n tcldot.n
+MAN3+=			gdtclft.3tcl tcldot.3tcl
 PLIST_SUB+=		TCL_VER="${TCL_VER}"
 .endif
 
@@ -277,7 +274,7 @@ PLIST_SUB+=		WITH_MING="@comment "
 .if defined(WITH_DEVIL)
 CONFIGURE_ARGS+=	--with-devil
 PLIST_SUB+=		WITH_DEVIL=""
-LIB_DEPENDS+=		IL.2:${PORTSDIR}/graphics/devil
+LIB_DEPENDS+=		IL:${PORTSDIR}/graphics/devil
 .else
 CONFIGURE_ARGS+=	--without-devil
 PLIST_SUB+=		WITH_DEVIL="@comment "
@@ -298,7 +295,7 @@ CONFIGURE_ENV+=		SWIG="/nonexistent"
 CONFIGURE_ARGS+=	--enable-perl
 PLIST_SUB+=		WITH_PERL=""
 USE_PERL5=	yes
-MANN+=			gv_perl.n
+MAN3+=			gv.3perl
 .else
 CONFIGURE_ARGS+=	--disable-perl
 PLIST_SUB+=		WITH_PERL="@comment "
@@ -310,7 +307,7 @@ PLIST_SUB+=		WITH_PHP=""
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 CPPFLAGS+=		-I${LOCALBASE}/include/php/Zend
-MANN+=			gv_php.n
+MAN3+=			gv.3php
 .else
 CONFIGURE_ARGS+=	--disable-php
 PLIST_SUB+=		WITH_PHP="@comment "
@@ -322,7 +319,7 @@ PLIST_SUB+=		WITH_PYTHON=""
 USE_PYTHON_BUILD=	yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 LDFLAGS+=		"-L${PYTHON_LIBDIR}"
-MANN+=			gv_python.n
+MAN3+=			gv.3python
 .else
 CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=		WITH_PYTHON="@comment "
@@ -333,7 +330,7 @@ CONFIGURE_ARGS+=	--enable-ruby
 PLIST_SUB+=		WITH_RUBY=""
 USE_RUBY=		yes
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
-MANN+=			gv_ruby.n
+MAN3+=			gv.3ruby
 .else
 CONFIGURE_ARGS+=	--disable-ruby
 PLIST_SUB+=		WITH_RUBY="@comment "
@@ -348,7 +345,7 @@ CFLAGS+=		-I${LUA_INCDIR}
 LDFLAGS+=		-L${LUA_LIBDIR} -lm
 CONFIGURE_ENV+=		LUA="${LUA_BINDIR}/lua" \
 			LUA_INSTALL_DIR=${PREFIX}/lib/lua/${LUA_VER}
-MANN+=			gv_lua.n
+MAN3+=			gv.3lua
 .else
 CONFIGURE_ARGS+=	--disable-lua
 PLIST_SUB+=		WITH_LUA="@comment "
@@ -357,7 +354,7 @@ PLIST_SUB+=		WITH_LUA="@comment "
 .if defined(WITH_TCL)
 CONFIGURE_ARGS+=	--enable-tcl
 PLIST_SUB+=		WITH_TCL=""
-MANN+=			gv_tcl.n
+MAN3+=			gv.3tcl
 .else
 CONFIGURE_ARGS+=	--disable-tcl
 PLIST_SUB+=		WITH_TCL="@comment "
@@ -367,10 +364,17 @@ PLIST_SUB+=		WITH_TCL="@comment "
 CONFIGURE_ARGS+=	--enable-guile
 PLIST_SUB+=		WITH_GUILE=""
 LIB_DEPENDS+=		guile.20:${PORTSDIR}/lang/guile
-MANN+=			gv_guile.n
+MAN3+=			gv.3guile
 .else
 CONFIGURE_ARGS+=	--disable-guile
 PLIST_SUB+=		WITH_GUILE="@comment "
+.endif
+
+.if defined(WITH_GHOSTSCRIPT)
+USE_GHOSTSCRIPT=	yes
+PLIST_SUB+=		WITH_GHOSTSCRIPT=""
+.else
+PLIST_SUB+=		WITH_GHOSTSCRIPT="@comment "
 .endif
 
 post-patch:
@@ -402,17 +406,6 @@ post-patch:
 		${WRKSRC}/cmd/smyrna/tvnodes.h
 	@${REINPLACE_CMD} -e 's|#include "regex_win32.h"|#include <regex.h>|' \
 		${WRKSRC}/cmd/smyrna/btree.c
-	@${REINPLACE_CMD} -e 's|#! /bin/sh|#! ${LOCALBASE}/bin/bash|g' \
-		${WRKSRC}/configure
-
-.if defined(WITH_TK)
-post-install-script:
-	${INSTALL_MAN} \
-		${WRKSRC}/tclpkg/gdtclft/gdtclft.n \
-		${WRKSRC}/tclpkg/tcldot/tcldot.n \
-		${WRKSRC}/tclpkg/tkspline/tkspline.n \
-		${MANNPREFIX}/man/mann/
-.endif
 
 post-install: install-ldconfig-file
 	cd ${WRKSRC}/lib/expr && \
