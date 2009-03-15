@@ -174,6 +174,7 @@
     SUBDIR += p5-Tk-ResizeButton
     SUBDIR += p5-Tk-Splashscreen
     SUBDIR += p5-Tk-TableMatrix
+    SUBDIR += p5-Wx-Perl-ProcessStream
     SUBDIR += pango
     SUBDIR += pango-reference
     SUBDIR += pangomm
