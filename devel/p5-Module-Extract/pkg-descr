@@ -1,0 +1,12 @@
+Module::Extract is a convenience base class for creating module that work with
+Perl distributions. Its purpose is to take care of the mechanisms of locating
+and extracting a Perl distribution so that your module can do something specific
+to the distribution.
+
+This module was originally created to provide an abstraction for the extraction
+logic for both Module::Inspector and Module::P4P and to allow additional
+features to be added in the future without having to modify both of them,
+because the general problem of "locate, download, and expand a distribution"
+is one that is almost ideal for adding additional features down the line.
+
+WWW: http://search.cpan.org/dist/Module-Extract/

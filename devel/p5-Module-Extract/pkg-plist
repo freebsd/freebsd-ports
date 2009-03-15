@@ -1,0 +1,3 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Extract/.packlist
+%%SITE_PERL%%/Module/Extract.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Extract
