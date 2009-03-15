@@ -2141,7 +2141,6 @@ devcpu-data                     ports/sysutils/devcpu-data
 devede                          ports/multimedia/devede
 devel_atlas                     ports/devel/atlas
 devel_atlas-devel               ports/devel/atlas-devel
-devel_git                       ports/devel/git
 devel_lightning                 ports/devel/lightning
 devel_rvm                       ports/devel/rvm
 devhelp                         ports/devel/devhelp
@@ -4079,6 +4078,7 @@ gini                            ports/net/gini
 gio-fam-backend                 ports/devel/gio-fam-backend
 giram                           ports/graphics/giram
 gish-demo                       ports/games/gish-demo
+git                             ports/devel/git
 gittrac                         ports/devel/gittrac
 gj                              ports/java/gj
 gkermit                         ports/comms/gkermit
@@ -4425,6 +4425,7 @@ gnuchess                        ports/games/gnuchess
 gnudatalanguage                 ports/science/gnudatalanguage
 gnudoku                         ports/games/gnudoku
 gnugo                           ports/games/gnugo
+gnuit                           ports/misc/gnuit
 gnuitar                         ports/audio/gnuitar
 gnulibiberty                    ports/devel/gnulibiberty
 gnuls                           ports/misc/gnuls
@@ -5136,6 +5137,7 @@ hs-hscolour                     ports/print/hs-hscolour
 hs-hscolour-docs                ports/print/hs-hscolour-docs
 hs-idoc                         ports/devel/hs-idoc
 hs-language-c-ghc               ports/devel/hs-language-c-ghc
+hs-lazysmallcheck-ghc           ports/devel/hs-lazysmallcheck-ghc
 hs-opengl-ghc                   ports/x11-toolkits/hs-opengl-ghc
 hs-pcre-light-ghc               ports/devel/hs-pcre-light-ghc
 hs-polyparse-ghc                ports/textproc/hs-polyparse-ghc
@@ -8405,7 +8407,6 @@ miro                            ports/multimedia/miro
 mirror                          ports/ftp/mirror
 mirrormagic                     ports/games/mirrormagic
 misc_deco                       ports/misc/deco
-misc_git                        ports/misc/git
 misc_nut                        ports/misc/nut
 miscom                          ports/games/miscom
 missey                          ports/mail/missey
@@ -12568,6 +12569,7 @@ p5-Test-Log4perl                ports/devel/p5-Test-Log4perl
 p5-Test-LongString              ports/devel/p5-Test-LongString
 p5-Test-Manifest                ports/devel/p5-Test-Manifest
 p5-Test-Memory-Cycle            ports/devel/p5-Test-Memory-Cycle
+p5-Test-Mock-LWP                ports/devel/p5-Test-Mock-LWP
 p5-Test-MockModule              ports/devel/p5-Test-MockModule
 p5-Test-MockObject              ports/devel/p5-Test-MockObject
 p5-Test-MockRandom              ports/devel/p5-Test-MockRandom
@@ -12593,6 +12595,7 @@ p5-Test-Strict                  ports/devel/p5-Test-Strict
 p5-Test-SubCalls                ports/devel/p5-Test-SubCalls
 p5-Test-TAP-HTMLMatrix          ports/devel/p5-Test-TAP-HTMLMatrix
 p5-Test-TAP-Model               ports/devel/p5-Test-TAP-Model
+p5-Test-TCP                     ports/devel/p5-Test-TCP
 p5-Test-TempDir                 ports/devel/p5-Test-TempDir
 p5-Test-Tester                  ports/devel/p5-Test-Tester
 p5-Test-URI                     ports/net/p5-Test-URI
@@ -14802,6 +14805,7 @@ p5-lj-cache                     ports/sysutils/p5-LJ-Cache
 p5-lj-spellcheck                ports/textproc/p5-LJ-SpellCheck
 p5-lj-textmessage               ports/sysutils/p5-LJ-TextMessage
 p5-lmap-cid2spf                 ports/mail/p5-LMAP-CID2SPF
+p5-local-lib                    ports/devel/p5-local-lib
 p5-locale-codes                 ports/misc/p5-Locale-Codes
 p5-locale-currency-format       ports/finance/p5-Locale-Currency-Format
 p5-locale-geocode               ports/misc/p5-Locale-Geocode
@@ -15939,6 +15943,7 @@ p5-test-log4perl                ports/devel/p5-Test-Log4perl
 p5-test-longstring              ports/devel/p5-Test-LongString
 p5-test-manifest                ports/devel/p5-Test-Manifest
 p5-test-memory-cycle            ports/devel/p5-Test-Memory-Cycle
+p5-test-mock-lwp                ports/devel/p5-Test-Mock-LWP
 p5-test-mockmodule              ports/devel/p5-Test-MockModule
 p5-test-mockobject              ports/devel/p5-Test-MockObject
 p5-test-mockrandom              ports/devel/p5-Test-MockRandom
@@ -15964,6 +15969,7 @@ p5-test-strict                  ports/devel/p5-Test-Strict
 p5-test-subcalls                ports/devel/p5-Test-SubCalls
 p5-test-tap-htmlmatrix          ports/devel/p5-Test-TAP-HTMLMatrix
 p5-test-tap-model               ports/devel/p5-Test-TAP-Model
+p5-test-tcp                     ports/devel/p5-Test-TCP
 p5-test-tempdir                 ports/devel/p5-Test-TempDir
 p5-test-tester                  ports/devel/p5-Test-Tester
 p5-test-unit                    ports/devel/p5-Test-Unit
@@ -16594,6 +16600,7 @@ pdbar                           ports/palm/pdbar
 pdcurses                        ports/devel/pdcurses
 pdf-renderer                    ports/print/pdf-renderer
 pdf2djvu                        ports/converters/pdf2djvu
+pdf2svg                         ports/graphics/pdf2svg
 pdfcrack                        ports/security/pdfcrack
 pdfcube                         ports/print/pdfcube
 pdfedit                         ports/editors/pdfedit
@@ -18931,6 +18938,7 @@ pysol                           ports/games/pysol
 pysol-cardsets                  ports/games/pysol-cardsets
 pysol-music                     ports/games/pysol-music
 pysol-sound-server              ports/audio/pysol-sound-server
+pysolfc                         ports/games/pysolfc
 pysvn                           ports/devel/pysvn
 pysycache                       ports/games/pysycache
 pysycache-lang                  ports/games/pysycache-lang
@@ -19212,6 +19220,7 @@ qutim                           ports/net-im/qutim
 qvplay                          ports/graphics/qvplay
 qvwm                            ports/x11-wm/qvwm
 qwdtools                        ports/games/qwdtools
+qwit                            ports/net-im/qwit
 qwt4                            ports/x11-toolkits/qwt4
 qwt5                            ports/x11-toolkits/qwt5
 qwtplot3d                       ports/math/qwtplot3d
@@ -20035,6 +20044,7 @@ s10sh                           ports/graphics/s10sh
 s3mod                           ports/audio/s3mod
 s3switch                        ports/graphics/s3switch
 s5                              ports/textproc/s5
+s9fes                           ports/lang/s9fes
 sabbu                           ports/multimedia/sabbu
 sabernetdcs-client              ports/finance/sabernetdcs-client
 sablevm                         ports/java/sablevm
@@ -23328,6 +23338,7 @@ xpi-noscript                    ports/www/xpi-noscript
 xpi-num2web                     ports/www/xpi-num2web
 xpi-passwordmaker               ports/www/xpi-passwordmaker
 xpi-pdf_download                ports/www/xpi-pdf_download
+xpi-pencil                      ports/www/xpi-pencil
 xpi-permatabs                   ports/www/xpi-permatabs
 xpi-preferential                ports/www/xpi-preferential
 xpi-quick-locale-switcher       ports/www/xpi-quick-locale-switcher
