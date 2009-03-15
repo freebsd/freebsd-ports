@@ -1,0 +1,50 @@
+--- ./configure.orig	2008-07-21 21:27:13.000000000 +0400
++++ ./configure	2009-03-15 18:24:58.000000000 +0300
+@@ -799,10 +799,10 @@
+ 		}
+ 
+ 		str = QString(
+-		"prffiles.path = %1/mkspecs/features\n"
++		"prffiles.path = %%PREFIX%%/share/qt4/mkspecs/features\n"
+ 		"prffiles.files = crypto.prf\n"
+ 		"INSTALLS += prffiles\n"
+-		).arg(QLibraryInfo::location(QLibraryInfo::DataPath));
++		);
+ 		conf->addExtra(str);
+ 
+ 		// write pkg-config files
+@@ -852,11 +852,11 @@
+ 			str += pkg_template2.arg("QCA");
+ 			str += pkg_template3.arg("QtCore");
+ 			str += pkg_template4.arg("qca");
+-			f.setFileName("lib/pkgconfig/qca2.pc");
++			f.setFileName("libdata/pkgconfig/qca2.pc");
+ 			if(f.open(QFile::WriteOnly | QFile::Truncate))
+ 				f.write(str.toLatin1());
+ 			f.close();
+-			pcfiles += "lib/pkgconfig/qca2.pc";
++			pcfiles += "libdata/pkgconfig/qca2.pc";
+ 		}
+ 
+ 		if(do_pc_debug)
+@@ -865,17 +865,17 @@
+ 			str += pkg_template2.arg("QCA_debug");
+ 			str += pkg_template3.arg("QtCore_debug");
+ 			str += pkg_template4.arg("qca_debug");
+-			f.setFileName("lib/pkgconfig/qca2_debug.pc");
++			f.setFileName("libdata/pkgconfig/qca2_debug.pc");
+ 			if(f.open(QFile::WriteOnly | QFile::Truncate))
+ 				f.write(str.toLatin1());
+ 			f.close();
+-			pcfiles += "lib/pkgconfig/qca2_debug.pc";
++			pcfiles += "libdata/pkgconfig/qca2_debug.pc";
+ 		}
+ 
+ 		if(!pcfiles.isEmpty())
+ 		{
+         		str = QString(
+-			"pcfiles.path = \$\$LIBDIR/pkgconfig\n"
++			"pcfiles.path = %%PREFIX%%/libdata/pkgconfig\n"
+ 			"pcfiles.files = %1\n"
+ 			"INSTALLS += pcfiles\n"
+ 			).arg(pcfiles.join(" "));

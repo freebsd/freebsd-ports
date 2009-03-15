@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qca
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://delta.affinix.com/download/qca/2.0/
 DISTNAME=	qca-${PORTVERSION}
@@ -16,14 +15,35 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Cross-platform crypto API for QT
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
-CMAKE_USE_PTHREAD=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui qtestlib network qmake_build \
-		moc_build uic_build rcc_build
+QT_COMPONENTS=	corelib qmake_build moc_build
+HAS_CONFIGURE=	yes
+QT_NONSTANDARD=	yes
+CONFIGURE_ARGS+=--prefix=${PREFIX}
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS+=	-DQT_QMAKE_EXECUTABLE=${QMAKE}
+MAN1=		qcatool2.1
+
+.if defined(MAINTAINER_MODE)
+QT_COMPONENTS+=	qtestlib
+.else
+CONFIGURE_ARGS+=--disable-tests
+.endif
+
+.if !defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--release --no-separate-debug-info
+PLIST_SUB+=	DEBUG="@comment "
+.else
+CONFIGURE_ARGS+=--debug
+PLIST_SUB+=	DEBUG=""
+.endif
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/configure
+	${MKDIR} ${WRKSRC}/libdata/pkgconfig
+
+post-install:
+	${STRIP_CMD} ${PREFIX}/bin/qcatool2 ${PREFIX}/lib/libqca.so.${PORTVERSION}
 
 .include <bsd.port.mk>
