@@ -1,4 +1,7 @@
 bin/cython
+%%PYTHON_SITELIBDIR%%/cython.py
+%%PYTHON_SITELIBDIR%%/cython.pyc
+%%PYTHON_SITELIBDIR%%/cython.pyo
 %%PYTHON_SITELIBDIR%%/Cython/__init__.py
 %%PYTHON_SITELIBDIR%%/Cython/CodeWriter.py
 %%PYTHON_SITELIBDIR%%/Cython/Debugging.py
@@ -30,6 +33,12 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Options.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/ParseTreeTransforms.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Parsing.py
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Parsing.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Parsing.so
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Scanning.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Scanning.so
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Visitor.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Visitor.so
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/PyrexTypes.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Scanning.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/StringEncoding.py
@@ -151,6 +160,11 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Unix/LinuxSystem.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Unix/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Unix/LinuxSystem.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Runtime/__init__.py
+%%PYTHON_SITELIBDIR%%/Cython/Runtime/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Runtime/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Runtime/refnanny.pyx
+%%PYTHON_SITELIBDIR%%/Cython/Runtime/refnanny.so
 %%PYTHON_SITELIBDIR%%/Cython/Plex/__init__.py
 %%PYTHON_SITELIBDIR%%/Cython/Plex/Actions.py
 %%PYTHON_SITELIBDIR%%/Cython/Plex/DFA.py
@@ -158,6 +172,7 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Plex/Lexicons.py
 %%PYTHON_SITELIBDIR%%/Cython/Plex/Machines.py
 %%PYTHON_SITELIBDIR%%/Cython/Plex/Regexps.py
+%%PYTHON_SITELIBDIR%%/Cython/Plex/Scanners.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Plex/Scanners.py
 %%PYTHON_SITELIBDIR%%/Cython/Plex/test_tm.py
 %%PYTHON_SITELIBDIR%%/Cython/Plex/Timing.py
@@ -256,6 +271,7 @@ bin/cython
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Mac
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Unix
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Plex
+@dirrm %%PYTHON_SITELIBDIR%%/Cython/Runtime
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Tests
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Includes
 @dirrm %%PYTHON_SITELIBDIR%%/Cython
