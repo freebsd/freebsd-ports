@@ -235,6 +235,7 @@
     SUBDIR += fstyp
     SUBDIR += ftrace
     SUBDIR += ftwin
+    SUBDIR += fusefs-afuse
     SUBDIR += fusefs-chironfs
     SUBDIR += fusefs-cryptofs
     SUBDIR += fusefs-curlftpfs

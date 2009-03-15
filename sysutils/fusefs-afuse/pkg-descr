@@ -1,0 +1,16 @@
+Afuse is an automounting file system implemented in user-space using
+FUSE. Afuse currently implements the most basic functionality that can
+be expected by an automounter; that is it manages a directory of virtual
+directories. If one of these virtual directories is accessed and is not
+already automounted, afuse will attempt to mount a filesystem onto that
+directory. If the mount succeeds the requested access proceeds as normal,
+otherwise it will fail with an error. 
+
+The advantage of using afuse over traditional automounters is that afuse
+is designed to run entirely in user-space by individual users. This way an
+automounting action can take advantage of the invoking users environment,
+for example allowing access to an ssh-agent for password-less sshfs
+mounts, or allowing access to a graphical environment to get user input
+to complete a mount (i.e. popping up a window asking for a password).
+
+WWW: http://afuse.sourceforge.net/
