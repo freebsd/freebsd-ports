@@ -2,6 +2,7 @@ bin/co
 bin/cvs
 bin/cvslockd
 bin/cvsnt
+bin/cvsscript
 bin/rcsdiff
 bin/rlog
 etc/cvsnt/PServer.example
@@ -25,6 +26,8 @@ lib/cvsnt/protocols/sserver.la
 lib/cvsnt/protocols/sserver.so
 lib/cvsnt/protocols/sspi.la
 lib/cvsnt/protocols/sspi.so
+lib/cvsnt/protocols/sync.la
+lib/cvsnt/protocols/sync.so
 lib/cvsnt/triggers/audit.la
 lib/cvsnt/triggers/audit.so
 lib/cvsnt/triggers/checkout.la
@@ -35,13 +38,13 @@ lib/cvsnt/triggers/info.la
 lib/cvsnt/triggers/info.so
 lib/cvsnt/xdiff/extdiff.la
 lib/cvsnt/xdiff/extdiff.so
-lib/libcvsapi-2.5.03.2704.so
+lib/libcvsapi-%%PORTVERSION%%.so
 lib/libcvsapi.la
 lib/libcvsapi.so
-lib/libcvstools-2.5.03.2704.so
+lib/libcvstools-%%PORTVERSION%%.so
 lib/libcvstools.la
 lib/libcvstools.so
-lib/libmdnsclient-2.5.03.2704.so
+lib/libmdnsclient-%%PORTVERSION%%.so
 lib/libmdnsclient.la
 lib/libmdnsclient.so
 @dirrm lib/cvsnt/xdiff
