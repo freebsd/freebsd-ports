@@ -2,18 +2,29 @@
 %%SITE_PERL%%/Git/PurePerl.pm
 %%SITE_PERL%%/Git/PurePerl/DirectoryEntry.pm
 %%SITE_PERL%%/Git/PurePerl/Loose.pm
+%%SITE_PERL%%/Git/PurePerl/NewDirectoryEntry.pm
+%%SITE_PERL%%/Git/PurePerl/NewObject.pm
+%%SITE_PERL%%/Git/PurePerl/NewObject/Blob.pm
+%%SITE_PERL%%/Git/PurePerl/NewObject/Commit.pm
+%%SITE_PERL%%/Git/PurePerl/NewObject/Tag.pm
+%%SITE_PERL%%/Git/PurePerl/NewObject/Tree.pm
 %%SITE_PERL%%/Git/PurePerl/Object.pm
 %%SITE_PERL%%/Git/PurePerl/Object/Blob.pm
 %%SITE_PERL%%/Git/PurePerl/Object/Commit.pm
 %%SITE_PERL%%/Git/PurePerl/Object/Tag.pm
 %%SITE_PERL%%/Git/PurePerl/Object/Tree.pm
 %%SITE_PERL%%/Git/PurePerl/Pack.pm
+%%SITE_PERL%%/Git/PurePerl/Pack/WithIndex.pm
+%%SITE_PERL%%/Git/PurePerl/Pack/WithoutIndex.pm
 %%SITE_PERL%%/Git/PurePerl/PackIndex.pm
 %%SITE_PERL%%/Git/PurePerl/PackIndex/Version1.pm
 %%SITE_PERL%%/Git/PurePerl/PackIndex/Version2.pm
+%%SITE_PERL%%/Git/PurePerl/Protocol.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/PurePerl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
 @dirrm %%SITE_PERL%%/Git/PurePerl/PackIndex
+@dirrm %%SITE_PERL%%/Git/PurePerl/Pack
 @dirrm %%SITE_PERL%%/Git/PurePerl/Object
+@dirrm %%SITE_PERL%%/Git/PurePerl/NewObject
 @dirrm %%SITE_PERL%%/Git/PurePerl
 @dirrmtry %%SITE_PERL%%/Git
