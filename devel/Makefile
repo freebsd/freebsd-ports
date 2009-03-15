@@ -1815,6 +1815,7 @@
     SUBDIR += p5-Test-Class
     SUBDIR += p5-Test-ClassAPI
     SUBDIR += p5-Test-Cmd
+    SUBDIR += p5-Test-Compile
     SUBDIR += p5-Test-Data
     SUBDIR += p5-Test-Debugger
     SUBDIR += p5-Test-Deep

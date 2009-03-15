@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Test/Compile.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Compile/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Compile
