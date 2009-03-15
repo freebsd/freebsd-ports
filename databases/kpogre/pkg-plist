@@ -35,6 +35,7 @@ share/apps/kpogre/pics/box_checked.png
 share/apps/kpogre/pics/box_clear.png
 share/apps/kpogre/pics/breakpoint_disabled.png
 share/apps/kpogre/pics/breakpoint_enabled.png
+share/apps/kpogre/pics/breakpoint_reached.png
 share/apps/kpogre/pics/cast.png
 share/apps/kpogre/pics/check.png
 share/apps/kpogre/pics/column.png
@@ -54,6 +55,7 @@ share/apps/kpogre/pics/column_uuid.png
 share/apps/kpogre/pics/column_xid.png
 share/apps/kpogre/pics/column_xml.png
 share/apps/kpogre/pics/conversion.png
+share/apps/kpogre/pics/currentline.png
 share/apps/kpogre/pics/database.png
 share/apps/kpogre/pics/database_sys.png
 share/apps/kpogre/pics/database_usr.png
@@ -130,6 +132,16 @@ share/doc/HTML/en/kpogre/data_table7.png
 share/doc/HTML/en/kpogre/database.png
 share/doc/HTML/en/kpogre/database_sys.png
 share/doc/HTML/en/kpogre/database_usr.png
+share/doc/HTML/en/kpogre/debugger1.png
+share/doc/HTML/en/kpogre/debugger10.png
+share/doc/HTML/en/kpogre/debugger2.png
+share/doc/HTML/en/kpogre/debugger3.png
+share/doc/HTML/en/kpogre/debugger4.png
+share/doc/HTML/en/kpogre/debugger5.png
+share/doc/HTML/en/kpogre/debugger6.png
+share/doc/HTML/en/kpogre/debugger7.png
+share/doc/HTML/en/kpogre/debugger8.png
+share/doc/HTML/en/kpogre/debugger9.png
 share/doc/HTML/en/kpogre/domain.png
 share/doc/HTML/en/kpogre/edit.png
 share/doc/HTML/en/kpogre/editdelete.png
