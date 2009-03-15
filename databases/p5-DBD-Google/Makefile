@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	DBD-Google
-PORTVERSION=	0.11
+PORTVERSION=	0.50
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	Treat Google as a datasource for DBI
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/Google.pm:${PORTSDIR}/net/p5-Net-Google \
