@@ -1,0 +1,11 @@
+Padre - Perl Application Development and Refactoring Environment
+
+Padre is an Perl IDE that is simple to use for new Perl programmers
+but also supports large multi-lingual and multi-technology projects.
+
+Padre is written in Perl, runs on all three major desktop platforms (Windows,
+Mac OS X and Unix/GTK), and is distributed under the perl license.
+
+WARNING: Padre requires Perl with thread support built-in !
+
+WWW: http://padre.perlide.org/
