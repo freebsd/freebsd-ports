@@ -1,0 +1,6 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Perl/ProcessStream/.packlist
+%%SITE_PERL%%/Wx/Perl/ProcessStream.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Perl/ProcessStream
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Perl
+@dirrmtry %%SITE_PERL%%/Wx/Perl
+@dirrmtry %%SITE_PERL%%/Wx
