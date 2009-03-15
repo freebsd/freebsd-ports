@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	4
-
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	The wxWidgets GUI toolkit (common files)
 
