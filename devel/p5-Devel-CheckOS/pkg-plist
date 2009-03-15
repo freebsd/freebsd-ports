@@ -1,0 +1,68 @@
+bin/use-devel-assertos
+%%SITE_PERL%%/Devel/AssertOS.pm
+%%SITE_PERL%%/Devel/AssertOS/AIX.pm
+%%SITE_PERL%%/Devel/AssertOS/Amiga.pm
+%%SITE_PERL%%/Devel/AssertOS/Apple.pm
+%%SITE_PERL%%/Devel/AssertOS/BSDOS.pm
+%%SITE_PERL%%/Devel/AssertOS/BeOS.pm
+%%SITE_PERL%%/Devel/AssertOS/Cygwin.pm
+%%SITE_PERL%%/Devel/AssertOS/DEC.pm
+%%SITE_PERL%%/Devel/AssertOS/DGUX.pm
+%%SITE_PERL%%/Devel/AssertOS/DragonflyBSD.pm
+%%SITE_PERL%%/Devel/AssertOS/Dynix.pm
+%%SITE_PERL%%/Devel/AssertOS/Extending.pod
+%%SITE_PERL%%/Devel/AssertOS/FreeBSD.pm
+%%SITE_PERL%%/Devel/AssertOS/HPUX.pm
+%%SITE_PERL%%/Devel/AssertOS/Haiku.pm
+%%SITE_PERL%%/Devel/AssertOS/Interix.pm
+%%SITE_PERL%%/Devel/AssertOS/Irix.pm
+%%SITE_PERL%%/Devel/AssertOS/Linux.pm
+%%SITE_PERL%%/Devel/AssertOS/Linux/v2_6.pm
+%%SITE_PERL%%/Devel/AssertOS/MPEiX.pm
+%%SITE_PERL%%/Devel/AssertOS/MSDOS.pm
+%%SITE_PERL%%/Devel/AssertOS/MSWin32.pm
+%%SITE_PERL%%/Devel/AssertOS/MacOSX.pm
+%%SITE_PERL%%/Devel/AssertOS/MacOSX/v10_4.pm
+%%SITE_PERL%%/Devel/AssertOS/MacOSclassic.pm
+%%SITE_PERL%%/Devel/AssertOS/MachTen.pm
+%%SITE_PERL%%/Devel/AssertOS/MicrosoftWindows.pm
+%%SITE_PERL%%/Devel/AssertOS/MirOSBSD.pm
+%%SITE_PERL%%/Devel/AssertOS/NeXT.pm
+%%SITE_PERL%%/Devel/AssertOS/NetBSD.pm
+%%SITE_PERL%%/Devel/AssertOS/Netware.pm
+%%SITE_PERL%%/Devel/AssertOS/OS2.pm
+%%SITE_PERL%%/Devel/AssertOS/OS390.pm
+%%SITE_PERL%%/Devel/AssertOS/OS400.pm
+%%SITE_PERL%%/Devel/AssertOS/OSF.pm
+%%SITE_PERL%%/Devel/AssertOS/OSFeatures/POSIXShellRedirection.pm
+%%SITE_PERL%%/Devel/AssertOS/OpenBSD.pm
+%%SITE_PERL%%/Devel/AssertOS/POSIXBC.pm
+%%SITE_PERL%%/Devel/AssertOS/QNX.pm
+%%SITE_PERL%%/Devel/AssertOS/QNX/Neutrino.pm
+%%SITE_PERL%%/Devel/AssertOS/QNX/v4.pm
+%%SITE_PERL%%/Devel/AssertOS/RISCOS.pm
+%%SITE_PERL%%/Devel/AssertOS/Realtime.pm
+%%SITE_PERL%%/Devel/AssertOS/SCO.pm
+%%SITE_PERL%%/Devel/AssertOS/Solaris.pm
+%%SITE_PERL%%/Devel/AssertOS/Sun.pm
+%%SITE_PERL%%/Devel/AssertOS/SunOS.pm
+%%SITE_PERL%%/Devel/AssertOS/SysVr4.pm
+%%SITE_PERL%%/Devel/AssertOS/SysVr5.pm
+%%SITE_PERL%%/Devel/AssertOS/Unicos.pm
+%%SITE_PERL%%/Devel/AssertOS/Unix.pm
+%%SITE_PERL%%/Devel/AssertOS/VMESA.pm
+%%SITE_PERL%%/Devel/AssertOS/VMS.pm
+%%SITE_PERL%%/Devel/AssertOS/VOS.pm
+%%SITE_PERL%%/Devel/CheckOS.pm
+%%SITE_PERL%%/Devel/CheckOS/Families.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CheckOS/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CheckOS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/Devel/CheckOS
+@dirrmtry %%SITE_PERL%%/Devel/AssertOS/QNX
+@dirrmtry %%SITE_PERL%%/Devel/AssertOS/OSFeatures
+@dirrmtry %%SITE_PERL%%/Devel/AssertOS/MacOSX
+@dirrmtry %%SITE_PERL%%/Devel/AssertOS/Linux
+@dirrmtry %%SITE_PERL%%/Devel/AssertOS
+@dirrmtry %%SITE_PERL%%/Devel
