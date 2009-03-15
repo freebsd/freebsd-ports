@@ -67,9 +67,6 @@
 %%PYTHON_SITELIBDIR%%/odf/office.py
 %%PYTHON_SITELIBDIR%%/odf/office.pyc
 %%PYTHON_SITELIBDIR%%/odf/office.pyo
-%%PYTHON_SITELIBDIR%%/odf/ooostyles.py
-%%PYTHON_SITELIBDIR%%/odf/ooostyles.pyc
-%%PYTHON_SITELIBDIR%%/odf/ooostyles.pyo
 %%PYTHON_SITELIBDIR%%/odf/opendocument.py
 %%PYTHON_SITELIBDIR%%/odf/opendocument.pyc
 %%PYTHON_SITELIBDIR%%/odf/opendocument.pyo
@@ -103,13 +100,12 @@
 %%PYTHON_SITELIBDIR%%/odf/xforms.py
 %%PYTHON_SITELIBDIR%%/odf/xforms.pyc
 %%PYTHON_SITELIBDIR%%/odf/xforms.pyo
-%%PYTHON_SITELIBDIR%%/%%ODF_EGGINFO%%
 @dirrm %%PYTHON_SITELIBDIR%%/odf/
+bin/csv2ods
 bin/mailodf
 bin/odf2mht
 bin/odf2xml
 bin/odf2xhtml
-bin/odf2war
 bin/odfimgimport
 bin/odflint
 bin/odfmeta
