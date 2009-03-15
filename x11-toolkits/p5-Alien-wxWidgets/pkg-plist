@@ -1,0 +1,6 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Alien/wxWidgets/Utility.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Alien/wxWidgets/Config/gtk2_%%WX_UVER%%_%%WX_UNI%%gcc_3_4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Alien/wxWidgets.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Alien/wxWidgets/Config
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Alien/wxWidgets
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Alien
