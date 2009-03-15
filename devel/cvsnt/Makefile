@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cvsnt
-PORTVERSION=	2.5.03.2704
-PORTREVISION=	1
+PORTVERSION=	2.5.04.3236
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cvsnt.org/archive/
 
@@ -16,19 +15,18 @@ COMMENT=	CVS clone
 
 CONFLICTS=	cvs-1*
 
-SUB_FILES=	patch-rcs-common.cpp
-
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	cvslockd.sh
 CONFIGURE_ARGS=	--enable-fork --enable-rcs \
 		--disable-odbc --disable-postgres\
-		--disable-mysql --disable-sqlite
+		--disable-mysql --disable-sqlite\
+		--without-howl
 USE_ICONV=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include"\
-		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"\
-		ac_cv_have_howl=no ac_cv_search_sw_discovery_run=no
+		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2\
 		pcre.0:${PORTSDIR}/devel/pcre
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 MAN1=		cvs.1
 MAN5=		cvs.5
