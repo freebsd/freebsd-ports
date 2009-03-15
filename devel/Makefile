@@ -1092,6 +1092,7 @@
     SUBDIR += p5-Class-Throwable
     SUBDIR += p5-Class-Tom
     SUBDIR += p5-Class-Trigger
+    SUBDIR += p5-Class-Unload
     SUBDIR += p5-Class-Virtual
     SUBDIR += p5-Class-WhiteHole
     SUBDIR += p5-Class-Workflow

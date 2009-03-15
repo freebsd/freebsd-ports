@@ -1,0 +1,16 @@
+Unloads the given class by clearing out its symbol table and removing
+it from %INC.
+
+SYNOPSIS
+
+    use Class::Unload;
+    use Class::Inspector;
+
+    use Some::Class;
+
+    Class::Unload->unload( 'Some::Class' );
+    Class::Inspector->loaded( 'Some::Class' ); # Returns false
+
+    require Some::Class; # Reloads the class
+
+WWW: http://search.cpan.org/dist/Class-Unload/
