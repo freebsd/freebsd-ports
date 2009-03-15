@@ -402,9 +402,9 @@ libdata/pkgconfig/libgvc.pc
 %%WITH_PYTHON%%%%DATADIR%%/demo/modgraph.py
 %%WITH_RUBY%%%%DATADIR%%/demo/modgraph.rb
 %%WITH_TCL%%%%DATADIR%%/demo/modgraph.tcl
-%%PORTDOCS%%%%DATADIR%%/doc/html/schema/arguments.xml
-%%PORTDOCS%%%%DATADIR%%/doc/html/schema/attributes.xml
-%%PORTDOCS%%%%DATADIR%%/doc/html/schema/attributes.xslt
+%%DATADIR%%/doc/html/schema/arguments.xml
+%%DATADIR%%/doc/html/schema/attributes.xml
+%%DATADIR%%/doc/html/schema/attributes.xslt
 %%WITH_SMYRNA%%%%DATADIR%%/examples/4elt.dot
 %%WITH_SMYRNA%%%%DATADIR%%/examples/world.dot
 %%WITH_SMYRNA%%%%DATADIR%%/smyrna/AntiselectRect.png
