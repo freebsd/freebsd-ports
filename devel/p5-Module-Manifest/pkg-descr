@@ -1,0 +1,10 @@
+Module::Manifest is a simple utility module created originally for use
+in Module::Inspector. It allows you to load the MANIFEST file that comes
+in a Perl distribution tarball, examine the contents, and perform some
+simple tasks.
+
+Granted, the functionality needed to do this is quite simple, but the Perl
+distribution MANIFEST specification contains a couple of little idiosyncracies,
+such as line comments and space-seperated inline comments.
+
+WWW: http://search.cpan.org/dist/Module-Manifest/
