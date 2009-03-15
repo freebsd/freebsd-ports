@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geoserver
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.3
 CATEGORIES=	graphics geography java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
@@ -17,29 +17,49 @@ COMMENT=	An Open Source GIS Server
 USE_JAVA=	yes
 USE_ZIP=	yes
 JAVA_VERSION=	1.5+
-NO_BUILD=	YES
+NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-GEOSERVERDIR=	${PREFIX}/lib/${PORTNAME}
+GEOSERVERDIR=	${PREFIX}/${PORTNAME}
+GEODIRS=	data_dir etc lib logs resources webapps
 
-.include <bsd.port.pre.mk>
+USE_RC_SUBR=	${PORTNAME}
+PLIST_SUB=	G="${GEOSERVERDIR:S,^${PREFIX}/,,}"
+SUB_LIST=	GEOSERVERDIR="${GEOSERVERDIR}" JAVA="${JAVA}"
+SUB_FILES=	pkg-message
 
-USE_RC_SUBR=	geoserver.sh
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX}
+pre-patch:
+	@${RM} ${WRKSRC}/webapps/geoserver/editarea/images/Thumbs.db
+.for dir in ${GEODIRS}
+	@(cd ${WRKSRC};${FIND} -E ${dir} -type f -iregex ".*(keystore|\.(xml|properties))") \
+		| while read a; do \
+			${MV} ${WRKSRC}/$$a ${WRKSRC}/$$a.sample; \
+			if [ ! -e "${GEOSERVERDIR}/$$a" ]; then \
+				${CP} ${WRKSRC}/$$a.sample ${WRKSRC}/$$a; \
+			fi; \
+		done
+.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$GEOSERVER_HOME|${GEOSERVERDIR}|g' \
-	    ${WRKSRC}/bin/startup.sh ${WRKSRC}/bin/shutdown.sh
-
-pre-install:
-	@${FIND} ${WRKSRC} -name "*.bak" -o -name "*.orig" | ${XARGS} ${RM}
+		-e 's|%%JAVA%%|${JAVA}|g' \
+		${WRKSRC}/bin/startup.sh ${WRKSRC}/bin/shutdown.sh
 
 do-install:
-	@${MKDIR} ${GEOSERVERDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${GEOSERVERDIR}/
-	@${CHMOD} -R 755 ${GEOSERVERDIR}
+	@${MKDIR} ${GEOSERVERDIR}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.sh ${GEOSERVERDIR}/bin
+.for f in GPL.txt LICENSE.txt README.txt RUNNING.txt start.jar
+	${INSTALL_DATA} ${WRKSRC}/${f} ${GEOSERVERDIR}
+.endfor
+.for dir in ${GEODIRS}
+	@cd ${WRKSRC} && \
+		${FIND} ${dir} -type d -exec \
+			${MKDIR} "${GEOSERVERDIR}/{}" \; && \
+		${FIND} ${dir} -type f -exec \
+			${INSTALL_DATA} "${WRKSRC}/{}" "${GEOSERVERDIR}/{}" \;
+.endfor
 
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g'
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

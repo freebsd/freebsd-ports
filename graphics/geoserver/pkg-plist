@@ -1,862 +1,1423 @@
-lib/geoserver/GPL.txt
-lib/geoserver/LICENSE.txt
-lib/geoserver/README.txt
-lib/geoserver/RUNNING.txt
-lib/geoserver/bin/shutdown.bat
-lib/geoserver/bin/shutdown.sh
-lib/geoserver/bin/startup.bat
-lib/geoserver/bin/startup.sh
-lib/geoserver/data_dir/catalog.xml
-lib/geoserver/data_dir/coverages/arc_sample/info.xml
-lib/geoserver/data_dir/coverages/arc_sample/precip30min.asc
-lib/geoserver/data_dir/coverages/arc_sample/precip30min.prj
-lib/geoserver/data_dir/coverages/img_sample/Pk50095.prj
-lib/geoserver/data_dir/coverages/img_sample/Pk50095.tfw
-lib/geoserver/data_dir/coverages/img_sample/Pk50095.tif
-lib/geoserver/data_dir/coverages/img_sample/info.xml
-lib/geoserver/data_dir/coverages/img_sample/usa.meta
-lib/geoserver/data_dir/coverages/img_sample/usa.png
-lib/geoserver/data_dir/coverages/img_sample/usa.prj
-lib/geoserver/data_dir/coverages/img_sample2_Pk50095/info.xml
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_0.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_0.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_0.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_1.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_1.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_1.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_10.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_10.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_10.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_11.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_11.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_11.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_12.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_12.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_12.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_13.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_13.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_13.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_14.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_14.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_14.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_15.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_15.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_15.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_16.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_16.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_16.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_17.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_17.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_17.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_18.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_18.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_18.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_19.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_19.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_19.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_2.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_2.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_2.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_20.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_20.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_20.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_21.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_21.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_21.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_22.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_22.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_22.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_23.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_23.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_23.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_24.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_24.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_24.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_3.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_3.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_3.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_4.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_4.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_4.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_5.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_5.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_5.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_6.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_6.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_6.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_7.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_7.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_7.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_8.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_8.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_8.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_9.pgw
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_9.png
-lib/geoserver/data_dir/coverages/mosaic_sample/global_mosaic_9.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/info.xml
-lib/geoserver/data_dir/coverages/mosaic_sample/mosaic.dbf
-lib/geoserver/data_dir/coverages/mosaic_sample/mosaic.fix
-lib/geoserver/data_dir/coverages/mosaic_sample/mosaic.prj
-lib/geoserver/data_dir/coverages/mosaic_sample/mosaic.properties
-lib/geoserver/data_dir/coverages/mosaic_sample/mosaic.qix
-lib/geoserver/data_dir/coverages/mosaic_sample/mosaic.shp
-lib/geoserver/data_dir/coverages/mosaic_sample/mosaic.shx
-lib/geoserver/data_dir/coverages/sfDem_dem/info.xml
-lib/geoserver/data_dir/data/nyc/giant_polygon.dbf
-lib/geoserver/data_dir/data/nyc/giant_polygon.prj
-lib/geoserver/data_dir/data/nyc/giant_polygon.qix
-lib/geoserver/data_dir/data/nyc/giant_polygon.shp
-lib/geoserver/data_dir/data/nyc/giant_polygon.shx
-lib/geoserver/data_dir/data/nyc/poi.dbf
-lib/geoserver/data_dir/data/nyc/poi.prj
-lib/geoserver/data_dir/data/nyc/poi.qix
-lib/geoserver/data_dir/data/nyc/poi.shp
-lib/geoserver/data_dir/data/nyc/poi.shx
-lib/geoserver/data_dir/data/nyc/poly_landmarks.dbf
-lib/geoserver/data_dir/data/nyc/poly_landmarks.prj
-lib/geoserver/data_dir/data/nyc/poly_landmarks.qix
-lib/geoserver/data_dir/data/nyc/poly_landmarks.shp
-lib/geoserver/data_dir/data/nyc/poly_landmarks.shx
-lib/geoserver/data_dir/data/nyc/tiger_roads.dbf
-lib/geoserver/data_dir/data/nyc/tiger_roads.prj
-lib/geoserver/data_dir/data/nyc/tiger_roads.qix
-lib/geoserver/data_dir/data/nyc/tiger_roads.shp
-lib/geoserver/data_dir/data/nyc/tiger_roads.shx
-lib/geoserver/data_dir/data/sf/archsites.dbf
-lib/geoserver/data_dir/data/sf/archsites.prj
-lib/geoserver/data_dir/data/sf/archsites.shp
-lib/geoserver/data_dir/data/sf/archsites.shx
-lib/geoserver/data_dir/data/sf/bugsites.dbf
-lib/geoserver/data_dir/data/sf/bugsites.prj
-lib/geoserver/data_dir/data/sf/bugsites.shp
-lib/geoserver/data_dir/data/sf/bugsites.shx
-lib/geoserver/data_dir/data/sf/dem.tfw
-lib/geoserver/data_dir/data/sf/dem.tif
-lib/geoserver/data_dir/data/sf/restricted.dbf
-lib/geoserver/data_dir/data/sf/restricted.prj
-lib/geoserver/data_dir/data/sf/restricted.shp
-lib/geoserver/data_dir/data/sf/restricted.shx
-lib/geoserver/data_dir/data/sf/roads.dbf
-lib/geoserver/data_dir/data/sf/roads.prj
-lib/geoserver/data_dir/data/sf/roads.shp
-lib/geoserver/data_dir/data/sf/roads.shx
-lib/geoserver/data_dir/data/sf/streams.dbf
-lib/geoserver/data_dir/data/sf/streams.prj
-lib/geoserver/data_dir/data/sf/streams.shp
-lib/geoserver/data_dir/data/sf/streams.shx
-lib/geoserver/data_dir/data/shapefiles/states.dbf
-lib/geoserver/data_dir/data/shapefiles/states.prj
-lib/geoserver/data_dir/data/shapefiles/states.shp
-lib/geoserver/data_dir/data/shapefiles/states.shx
-lib/geoserver/data_dir/data/taz_shapes/tasmania_cities.dbf
-lib/geoserver/data_dir/data/taz_shapes/tasmania_cities.prj
-lib/geoserver/data_dir/data/taz_shapes/tasmania_cities.shp
-lib/geoserver/data_dir/data/taz_shapes/tasmania_cities.shx
-lib/geoserver/data_dir/data/taz_shapes/tasmania_roads.dbf
-lib/geoserver/data_dir/data/taz_shapes/tasmania_roads.prj
-lib/geoserver/data_dir/data/taz_shapes/tasmania_roads.shp
-lib/geoserver/data_dir/data/taz_shapes/tasmania_roads.shx
-lib/geoserver/data_dir/data/taz_shapes/tasmania_state_boundaries.dbf
-lib/geoserver/data_dir/data/taz_shapes/tasmania_state_boundaries.prj
-lib/geoserver/data_dir/data/taz_shapes/tasmania_state_boundaries.shp
-lib/geoserver/data_dir/data/taz_shapes/tasmania_state_boundaries.shx
-lib/geoserver/data_dir/data/taz_shapes/tasmania_water_bodies.dbf
-lib/geoserver/data_dir/data/taz_shapes/tasmania_water_bodies.prj
-lib/geoserver/data_dir/data/taz_shapes/tasmania_water_bodies.shp
-lib/geoserver/data_dir/data/taz_shapes/tasmania_water_bodies.shx
-lib/geoserver/data_dir/demo/WCS_describeCoverage.xml
-lib/geoserver/data_dir/demo/WCS_getCapabilities.xml
-lib/geoserver/data_dir/demo/WCS_getCoverage.xml
-lib/geoserver/data_dir/demo/WFS_describeFeatureType-1.0.xml
-lib/geoserver/data_dir/demo/WFS_describeFeatureType-1.1.xml
-lib/geoserver/data_dir/demo/WFS_getCapabilities-1.0.xml
-lib/geoserver/data_dir/demo/WFS_getCapabilities-1.1.xml
-lib/geoserver/data_dir/demo/WFS_getFeature-1.0.xml
-lib/geoserver/data_dir/demo/WFS_getFeature-1.1.xml
-lib/geoserver/data_dir/demo/WFS_getFeatureBBOX-1.0.xml
-lib/geoserver/data_dir/demo/WFS_getFeatureBBOX-1.1.xml
-lib/geoserver/data_dir/demo/WFS_getFeatureBetween-1.0.xml
-lib/geoserver/data_dir/demo/WFS_getFeatureBetween-1.1.xml
-lib/geoserver/data_dir/demo/WFS_getFeatureBetween.url
-lib/geoserver/data_dir/demo/WFS_getFeatureBetweenCQL.url
-lib/geoserver/data_dir/demo/WFS_getFeatureFid.url
-lib/geoserver/data_dir/demo/WFS_getFeatureFidFilter.url
-lib/geoserver/data_dir/demo/WFS_getFeatureIntersects-1.0.xml
-lib/geoserver/data_dir/demo/WFS_getFeatureIntersects-1.1.xml
-lib/geoserver/data_dir/demo/WFS_getFeatureIntersects.url
-lib/geoserver/data_dir/demo/WFS_getFeatureMultiFilter.url
-lib/geoserver/data_dir/demo/WFS_mathGetFeature.url
-lib/geoserver/data_dir/demo/WFS_mathGetFeature.xml
-lib/geoserver/data_dir/demo/WFS_transactionDelete.xml
-lib/geoserver/data_dir/demo/WFS_transactionInsert.xml
-lib/geoserver/data_dir/demo/WFS_transactionUpdate.xml
-lib/geoserver/data_dir/demo/WFS_transactionUpdateGeom.xml
-lib/geoserver/data_dir/demo/WMS_GetLegendGraphic-SLD.url
-lib/geoserver/data_dir/demo/WMS_GetLegendGraphic-SLD_BODY.url
-lib/geoserver/data_dir/demo/WMS_GetLegendGraphic.url
-lib/geoserver/data_dir/demo/WMS_describeLayer.url
-lib/geoserver/data_dir/demo/WMS_featureInfo.url
-lib/geoserver/data_dir/demo/WMS_getCapabilities.url
-lib/geoserver/data_dir/demo/WMS_getMap.url
-lib/geoserver/data_dir/demo/WMS_getMap_OpenLayers.url
-lib/geoserver/data_dir/demo/WMS_getMap_SLD_BODY_LiteralMode.url
-lib/geoserver/data_dir/demo/WMS_getMap_SVG.url
-lib/geoserver/data_dir/demo/WMS_getMap_SVG_Style.url
-lib/geoserver/data_dir/demo/WMS_getMap_fid.url
-lib/geoserver/data_dir/demo/WMS_getMap_fidfilter.url
-lib/geoserver/data_dir/demo/WMS_getMap_inlineFeature.url
-lib/geoserver/data_dir/demo/WMS_getMap_inlineFeatureSmile.xml
-lib/geoserver/data_dir/demo/WMS_getMap_multilayer.url
-lib/geoserver/data_dir/demo/WMS_getMap_multilayer_cql.url
-lib/geoserver/data_dir/demo/WMS_getMap_multilayer_filter.url
-lib/geoserver/data_dir/featureTypes/DS_giant_polygon_giant_polygon/info.xml
-lib/geoserver/data_dir/featureTypes/DS_poi_poi/info.xml
-lib/geoserver/data_dir/featureTypes/DS_poly_landmarks_poly_landmarks/info.xml
-lib/geoserver/data_dir/featureTypes/DS_tiger_roads_tiger_roads/info.xml
-lib/geoserver/data_dir/featureTypes/sfArchsites_archsites/info.xml
-lib/geoserver/data_dir/featureTypes/sfBugsites_bugsites/info.xml
-lib/geoserver/data_dir/featureTypes/sfRestricted_restricted/info.xml
-lib/geoserver/data_dir/featureTypes/sfRoads_roads/info.xml
-lib/geoserver/data_dir/featureTypes/sfStreams_streams/info.xml
-lib/geoserver/data_dir/featureTypes/states/description.ftl
-lib/geoserver/data_dir/featureTypes/states/info.xml
-lib/geoserver/data_dir/featureTypes/states/title.ftl
-lib/geoserver/data_dir/featureTypes/tasmania_cities/info.xml
-lib/geoserver/data_dir/featureTypes/tasmania_roads/info.xml
-lib/geoserver/data_dir/featureTypes/tasmania_state_boundaries/info.xml
-lib/geoserver/data_dir/featureTypes/tasmania_water_bodies/info.xml
-lib/geoserver/data_dir/palettes/dem31.pal
-lib/geoserver/data_dir/palettes/ita31.pal
-lib/geoserver/data_dir/palettes/ny31.pal
-lib/geoserver/data_dir/palettes/popshade.png
-lib/geoserver/data_dir/plugIns/AddressGap.xml
-lib/geoserver/data_dir/plugIns/AddressOverlap.xml
-lib/geoserver/data_dir/plugIns/AngleSize.xml
-lib/geoserver/data_dir/plugIns/Attribute.xml
-lib/geoserver/data_dir/plugIns/Constraint.xml
-lib/geoserver/data_dir/plugIns/ContainsIntegrity.xml
-lib/geoserver/data_dir/plugIns/CrossesIntegrity.xml
-lib/geoserver/data_dir/plugIns/DisjointIntegrity.xml
-lib/geoserver/data_dir/plugIns/Domain.xml
-lib/geoserver/data_dir/plugIns/Equality.xml
-lib/geoserver/data_dir/plugIns/GazetteerName.xml
-lib/geoserver/data_dir/plugIns/IntersectsIntegrity.xml
-lib/geoserver/data_dir/plugIns/IsValidGeometry.xml
-lib/geoserver/data_dir/plugIns/LineCoveredByFeatureLine.xml
-lib/geoserver/data_dir/plugIns/LineCoveredByPolygon.xml
-lib/geoserver/data_dir/plugIns/LineCoveredByPolygonBoundary.xml
-lib/geoserver/data_dir/plugIns/LineEndPointCoveredByLine.xml
-lib/geoserver/data_dir/plugIns/LineIntersectsLineWithNode.xml
-lib/geoserver/data_dir/plugIns/LineMustBeASinglePart.xml
-lib/geoserver/data_dir/plugIns/LineNoDangles.xml
-lib/geoserver/data_dir/plugIns/LineNoPseudoNode.xml
-lib/geoserver/data_dir/plugIns/LineNoSelfIntersect.xml
-lib/geoserver/data_dir/plugIns/LineNoSelfOverlapping.xml
-lib/geoserver/data_dir/plugIns/LineNotTouchingPolygonInterior.xml
-lib/geoserver/data_dir/plugIns/LinesNotIntersect.xml
-lib/geoserver/data_dir/plugIns/LinesNotOverlap.xml
-lib/geoserver/data_dir/plugIns/NameExists.xml
-lib/geoserver/data_dir/plugIns/NameInList.xml
-lib/geoserver/data_dir/plugIns/NullZero.xml
-lib/geoserver/data_dir/plugIns/OverlapsIntegrity.xml
-lib/geoserver/data_dir/plugIns/PointCoveredByEndPointOfLine.xml
-lib/geoserver/data_dir/plugIns/PointCoveredByLine.xml
-lib/geoserver/data_dir/plugIns/PointCoveredByPolygon.xml
-lib/geoserver/data_dir/plugIns/PointCoveredByPolygonBoundary.xml
-lib/geoserver/data_dir/plugIns/PointInsidePolygon.xml
-lib/geoserver/data_dir/plugIns/PolygonBoundaryCoveredByPolygon.xml
-lib/geoserver/data_dir/plugIns/PolygonCoveredByFeaturePolygon.xml
-lib/geoserver/data_dir/plugIns/PolygonCoveredByPolygon.xml
-lib/geoserver/data_dir/plugIns/PolygonNoGaps.xml
-lib/geoserver/data_dir/plugIns/PolygonNotCoveredByPolygon.xml
-lib/geoserver/data_dir/plugIns/PolygonNotOverlappingLine.xml
-lib/geoserver/data_dir/plugIns/PolygonNotOverlappingPolygon.xml
-lib/geoserver/data_dir/plugIns/Range.xml
-lib/geoserver/data_dir/plugIns/RelateIntegrity.xml
-lib/geoserver/data_dir/plugIns/SQL.xml
-lib/geoserver/data_dir/plugIns/SingleValue.xml
-lib/geoserver/data_dir/plugIns/StarNode.xml
-lib/geoserver/data_dir/plugIns/TouchesIntegrity.xml
-lib/geoserver/data_dir/plugIns/UniqueFID.xml
-lib/geoserver/data_dir/plugIns/Uniquity.xml
-lib/geoserver/data_dir/plugIns/WithinIntegrity.xml
-lib/geoserver/data_dir/security/service.properties
-lib/geoserver/data_dir/security/users.properties
-lib/geoserver/data_dir/services.xml
-lib/geoserver/data_dir/styles/Lakes.sld
-lib/geoserver/data_dir/styles/NamedPlaces.sld
-lib/geoserver/data_dir/styles/burg.sld
-lib/geoserver/data_dir/styles/burg02.svg
-lib/geoserver/data_dir/styles/capitals.sld
-lib/geoserver/data_dir/styles/default_line.sld
-lib/geoserver/data_dir/styles/default_line2.sld
-lib/geoserver/data_dir/styles/default_point.sld
-lib/geoserver/data_dir/styles/default_polygon.sld
-lib/geoserver/data_dir/styles/dem.sld
-lib/geoserver/data_dir/styles/giant_polygon.sld
-lib/geoserver/data_dir/styles/grass_fill.png
-lib/geoserver/data_dir/styles/grass_poly.sld
-lib/geoserver/data_dir/styles/green.sld
-lib/geoserver/data_dir/styles/poi.sld
-lib/geoserver/data_dir/styles/poly_landmarks.sld
-lib/geoserver/data_dir/styles/popshade.sld
-lib/geoserver/data_dir/styles/raster.sld
-lib/geoserver/data_dir/styles/restricted.sld
-lib/geoserver/data_dir/styles/simpleRoads.sld
-lib/geoserver/data_dir/styles/simple_streams.sld
-lib/geoserver/data_dir/styles/tiger_roads.sld
-lib/geoserver/data_dir/user_projections/epsg.properties
-lib/geoserver/data_dir/validation/FeatureCheck.xml
-lib/geoserver/data_dir/validation/IntegrityCheck.xml
-lib/geoserver/data_dir/www/ol-demo.html
-lib/geoserver/data_dir/www/openlayers/OpenLayers.js
-lib/geoserver/data_dir/www/openlayers/img/blank.gif
-lib/geoserver/data_dir/www/openlayers/img/close.gif
-lib/geoserver/data_dir/www/openlayers/img/drag-rectangle-off.png
-lib/geoserver/data_dir/www/openlayers/img/drag-rectangle-on.png
-lib/geoserver/data_dir/www/openlayers/img/east-mini.png
-lib/geoserver/data_dir/www/openlayers/img/layer-switcher-maximize.png
-lib/geoserver/data_dir/www/openlayers/img/layer-switcher-minimize.png
-lib/geoserver/data_dir/www/openlayers/img/marker-blue.png
-lib/geoserver/data_dir/www/openlayers/img/marker-gold.png
-lib/geoserver/data_dir/www/openlayers/img/marker-green.png
-lib/geoserver/data_dir/www/openlayers/img/marker.png
-lib/geoserver/data_dir/www/openlayers/img/measuring-stick-off.png
-lib/geoserver/data_dir/www/openlayers/img/measuring-stick-on.png
-lib/geoserver/data_dir/www/openlayers/img/north-mini.png
-lib/geoserver/data_dir/www/openlayers/img/panning-hand-off.png
-lib/geoserver/data_dir/www/openlayers/img/panning-hand-on.png
-lib/geoserver/data_dir/www/openlayers/img/slider.png
-lib/geoserver/data_dir/www/openlayers/img/south-mini.png
-lib/geoserver/data_dir/www/openlayers/img/west-mini.png
-lib/geoserver/data_dir/www/openlayers/img/zoom-minus-mini.png
-lib/geoserver/data_dir/www/openlayers/img/zoom-plus-mini.png
-lib/geoserver/data_dir/www/openlayers/img/zoom-world-mini.png
-lib/geoserver/data_dir/www/openlayers/img/zoombar.png
-lib/geoserver/data_dir/www/openlayers/readme.txt
-lib/geoserver/data_dir/www/openlayers/theme/default/img/add_point_off.png
-lib/geoserver/data_dir/www/openlayers/theme/default/img/add_point_on.png
-lib/geoserver/data_dir/www/openlayers/theme/default/img/drag-rectangle-off.png
-lib/geoserver/data_dir/www/openlayers/theme/default/img/drag-rectangle-on.png
-lib/geoserver/data_dir/www/openlayers/theme/default/img/draw_line_off.png
-lib/geoserver/data_dir/www/openlayers/theme/default/img/draw_line_on.png
-lib/geoserver/data_dir/www/openlayers/theme/default/img/draw_point_off.png
-lib/geoserver/data_dir/www/openlayers/theme/default/img/draw_point_on.png
-lib/geoserver/data_dir/www/openlayers/theme/default/img/draw_polygon_off.png
-lib/geoserver/data_dir/www/openlayers/theme/default/img/draw_polygon_on.png
-lib/geoserver/data_dir/www/openlayers/theme/default/img/move_feature_off.png
-lib/geoserver/data_dir/www/openlayers/theme/default/img/move_feature_on.png
-lib/geoserver/data_dir/www/openlayers/theme/default/img/pan_off.png
-lib/geoserver/data_dir/www/openlayers/theme/default/img/pan_on.png
-lib/geoserver/data_dir/www/openlayers/theme/default/img/panning-hand-off.png
-lib/geoserver/data_dir/www/openlayers/theme/default/img/panning-hand-on.png
-lib/geoserver/data_dir/www/openlayers/theme/default/img/remove_point_off.png
-lib/geoserver/data_dir/www/openlayers/theme/default/img/remove_point_on.png
-lib/geoserver/data_dir/www/openlayers/theme/default/style.css
-lib/geoserver/data_dir/www/styles/green.sld
-lib/geoserver/data_dir/www/styles/remoteOws.sld
-lib/geoserver/data_dir/www/styles/remoteTasmania.sld
-lib/geoserver/data_dir/www/wfs-t.html
-lib/geoserver/etc/jdbcRealm.properties
-lib/geoserver/etc/jetty-jmx-platform.xml
-lib/geoserver/etc/jetty-jmx.xml
-lib/geoserver/etc/jetty-plus.xml
-lib/geoserver/etc/jetty-ssl.xml
-lib/geoserver/etc/jetty.xml
-lib/geoserver/etc/keystore
-lib/geoserver/etc/realm.properties
-lib/geoserver/etc/stresstest.xml
-lib/geoserver/etc/webdefault.xml
-lib/geoserver/lib/ant-1.6.4.jar
-lib/geoserver/lib/ant-optional-1.5.1.jar
-lib/geoserver/lib/commons-el-1.0.jar
-lib/geoserver/lib/commons-logging-1.0.jar
-lib/geoserver/lib/jasper-compiler-5.5.15.jar
-lib/geoserver/lib/jasper-compiler-jdt-5.5.15.jar
-lib/geoserver/lib/jasper-runtime-5.5.15.jar
-lib/geoserver/lib/jsp-api-2.0.jar
-lib/geoserver/lib/log4j-1.2.14.jar
-lib/geoserver/lib/slf4j-simple-1.0.1.jar
-lib/geoserver/lib/xercesImpl-2.6.2.jar
-lib/geoserver/lib/xmlParserAPIs-2.6.2.jar
-lib/geoserver/logs/keepme.txt
-lib/geoserver/resources/log4j.properties
-lib/geoserver/start.jar
-lib/geoserver/webapps/geoserver/WEB-INF/action-servlet.xml
-lib/geoserver/webapps/geoserver/WEB-INF/classes/ApplicationResources.properties
-lib/geoserver/webapps/geoserver/WEB-INF/classes/ApplicationResources_de.properties
-lib/geoserver/webapps/geoserver/WEB-INF/classes/ApplicationResources_es.properties
-lib/geoserver/webapps/geoserver/WEB-INF/classes/ApplicationResources_fr.properties
-lib/geoserver/webapps/geoserver/WEB-INF/classes/ApplicationResources_ja.properties
-lib/geoserver/webapps/geoserver/WEB-INF/classes/ApplicationResources_pt_BR.properties
-lib/geoserver/webapps/geoserver/WEB-INF/classes/ApplicationResources_zh_CN.properties
-lib/geoserver/webapps/geoserver/WEB-INF/classes/applicationContext.xml
-lib/geoserver/webapps/geoserver/WEB-INF/classes/applicationSecurityContext.xml
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/geoserver/GeoserverInitStartupListener.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/AlternativesResponseStream.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/BufferedRequestStream.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/BufferedRequestWrapper$IteratorAsEnumeration.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/BufferedRequestWrapper.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/GZIPFilter.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/GZIPResponseStream.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/GZIPResponseWrapper.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/LoggingFilter.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/geoserver/logging/LoggingStartupContextListener.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/AdminIndexAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/ConfigAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/ConfigIndexAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/DemoRequestAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/FreeJAIMemoryAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/FreeLocksAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/FreeMemoryAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/GeoServerAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/HTMLEncoder.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/LoadXMLAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/LoginAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/LoginEditAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/LogoutAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/MapPreviewAction$1.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/MapPreviewAction$CoverageInfoNameComparator.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/MapPreviewAction$FeatureTypeInfoNameComparator.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/MapPreviewAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/SaveXMLAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/SrsHelpAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/UpdateGSAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/CalculateBoundingBoxAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/CoverageStoresEditorAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/CoverageStoresNewAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/CoverageStoresSelectAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/CoveragesEditorAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataCoveragesNewAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataCoveragesSelectAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataDataStoresEditorAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataDataStoresNewAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataDataStoresSelectAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataFeatureTypesNewAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataFeatureTypesSelectAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataNamespacesEditorAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataNamespacesNewAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataNamespacesSelectAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/SLDWizardAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/StylesEditorAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/StylesNewAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/StylesSelectAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/TypesEditorAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/package.html
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/global/GeoServerConfigurationSubmit.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/validation/TestValidationResults.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/validation/ValidationRunnable.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/validation/ValidationTestDoIt.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/validation/ValidationTestEditorAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/validation/ValidationTestNewAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/validation/ValidationTestSelectAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/validation/ValidationTestSuiteNewAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/validation/ValidationTestSuiteSelectAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wcs/WCSContentAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wcs/WCSDescriptionAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wcs/package.html
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wfs/WFSContentAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wfs/WFSDescriptionAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wfs/package.html
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wms/WMSContentAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wms/WMSDescriptionAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wms/WMSRenderingAction.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wms/package.html
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/config/web/MultipleActionServlet.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/config/web/tiles/MultipleDelegatingTilesRequestProcessor.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/config/web/tiles/definition/MultipleDefinitionsFactory.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/config/web/tiles/taglib/ExtResInsertTag.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/DemoForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/DemoRequestForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/LoginForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/AttributeDisplay.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/AttributeForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/CoverageStoresEditorForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/CoverageStoresNewForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/CoverageStoresSelectForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/CoveragesEditorForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataCoveragesNewForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataCoveragesSelectForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataDataStoresEditorForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataDataStoresNewForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataDataStoresSelectForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataFeatureTypesEditorForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataFeatureTypesNewForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataFeatureTypesSelectForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataNamespacesEditorForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataNamespacesNewForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataNamespacesSelectForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/FormUtils.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/SLDWizardForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/StylesEditorForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/StylesNewForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/StylesSelectForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/TypesEditorForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/package.html
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/global/GeoServerConfigurationForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/package.html
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/validation/ValidationTestEditorForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/validation/ValidationTestNewForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/validation/ValidationTestSelectForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/validation/ValidationTestSuiteNewForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/validation/ValidationTestSuiteSelectForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wcs/DataCoveragePluginsForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wcs/WCSContentForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wcs/WCSDescriptionForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wcs/package.html
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wfs/WFSContentForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wfs/WFSDescriptionForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wfs/package.html
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wms/WMSContentForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wms/WMSDescriptionForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wms/WMSRenderingForm.class
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wms/package.html
-lib/geoserver/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/global/ApplicationState.class
-lib/geoserver/webapps/geoserver/WEB-INF/dispatcher-servlet.xml
-lib/geoserver/webapps/geoserver/WEB-INF/jetty-web.xml
-lib/geoserver/webapps/geoserver/WEB-INF/jsp/include.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/lib/acegi-security-1.0.3.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/ant-optional-1.5.1.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/antlr-2.7.2.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/aopalliance-1.0.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/batik-awt-util-1.6.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/batik-bridge-1.6.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/batik-css-1.6.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/batik-dom-1.6.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/batik-ext-1.6.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/batik-gvt-1.6.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/batik-parser-1.6.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/batik-script-1.6.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/batik-svg-dom-1.6.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/batik-svggen-1.6.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/batik-transcoder-1.6.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/batik-util-1.6.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/batik-xml-1.6.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/common-2.2.1.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/commons-beanutils-1.7.0.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/commons-codec-1.3.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/commons-collections-3.1.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/commons-dbcp-1.2.2.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/commons-digester-1.7.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/commons-httpclient-2.0.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/commons-jxpath-1.2.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/commons-lang-2.1.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/commons-logging-1.0.3.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/commons-pool-1.3.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/commons-validator-1.1.4.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/ecore-2.2.2.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/hsqldb-1.8.0.7.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/imageio-ext-arcgrid-1.0-SNAPSHOT.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/imageio-ext-customstreams-1.0-SNAPSHOT.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/itext-2.0.6.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/jai_codec-1.1.3.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/jai_core-1.1.3.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/jai_imageio-1.1.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/jdom-1.0.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/log4j-1.2.14.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/lucene-1.4.3.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/oro-2.0.8.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/picocontainer-1.2.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/postgis-driver-1.0.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/postgresql-8.1-407.jdbc3.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/standard-1.0.6.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/struts-1.2.9.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/vecmath-1.3.1.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/velocity-1.4.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/velocity-dep-1.4.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/xalan-2.7.0.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/xercesImpl-2.4.0.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/xml-apis-1.0.b2.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/xml-apis-xerces-2.7.1.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/xpp3-1.1.3.4.O.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/xsd-2.2.2.jar
-lib/geoserver/webapps/geoserver/WEB-INF/org.openplans.geoserver-servlet.xml
-lib/geoserver/webapps/geoserver/WEB-INF/pages/Administration.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/Configuration.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/ContactInformation.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/Demo.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/GeoServerConfiguration.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/Login.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/SLDWizard.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/SystemConfigMenu.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/Welcome.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/actionator.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/blank.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/configActions.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/DataConfigDataStoresEditor.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/DataConfigDataStoresNew.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/DataConfigDataStoresSelect.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/DataConfigFormatsEditor.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/DataConfigFormatsNew.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/DataConfigFormatsSelect.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/DataConfigStyles.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/DataMenu.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/coverages/Editor.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/coverages/New.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/coverages/Select.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/featureTypes/Editor.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/featureTypes/New.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/featureTypes/Select.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/featureTypes/attributeTypes/Editor.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/featureTypes/attributeTypes/New.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/featureTypes/attributeTypes/Select.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/featureTypes/featureTypeActions.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/namespaces/Editor.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/namespaces/New.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/namespaces/Select.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/status.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/styles/Editor.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/styles/New.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/data/styles/Select.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/demoRequest.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/editAreaXml.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/errors/Exception.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/layouts/featureTypesLayout.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/layouts/mainLayout.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/locator.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/loginEditor.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/mainPreviewData.html
-lib/geoserver/webapps/geoserver/WEB-INF/pages/mapPreview.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/menuator.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/messages.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/schemaErrors.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/srsList.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/status.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/styleClassic.css
-lib/geoserver/webapps/geoserver/WEB-INF/pages/styleNew.css
-lib/geoserver/webapps/geoserver/WEB-INF/pages/validation/SelectTest.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/validation/SelectTestSuite.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/validation/TestEditor.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/validation/displayResults.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/wcs/DataConfigCoveragePlugins.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/wcs/WCSConfigContent.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/wcs/WCSConfigDescription.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/wcs/WCSConfigMenu.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/wcs/serviceName.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/wcs/status.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/wfs/WFSConfigContent.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/wfs/WFSConfigDescription.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/wfs/WFSConfigMenu.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/wfs/serviceName.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/wfs/status.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/wms/WMSConfigContent.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/wms/WMSConfigDescription.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/wms/WMSConfigMenu.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/wms/WMSConfigRendering.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/wms/serviceName.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/wms/status.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/struts-bean.tld
-lib/geoserver/webapps/geoserver/WEB-INF/struts-config.xml
-lib/geoserver/webapps/geoserver/WEB-INF/struts-html.tld
-lib/geoserver/webapps/geoserver/WEB-INF/struts-logic.tld
-lib/geoserver/webapps/geoserver/WEB-INF/struts-nested.tld
-lib/geoserver/webapps/geoserver/WEB-INF/struts-template.tld
-lib/geoserver/webapps/geoserver/WEB-INF/struts-tiles.tld
-lib/geoserver/webapps/geoserver/WEB-INF/tiles-defs.xml
-lib/geoserver/webapps/geoserver/WEB-INF/tld/spring.tld
-lib/geoserver/webapps/geoserver/WEB-INF/validation.xml
-lib/geoserver/webapps/geoserver/WEB-INF/validator-rules.xml
-lib/geoserver/webapps/geoserver/WEB-INF/web.xml
-lib/geoserver/webapps/geoserver/editarea/edit_area_full.js
-lib/geoserver/webapps/geoserver/editarea/images/Thumbs.db
-lib/geoserver/webapps/geoserver/editarea/images/close.gif
-lib/geoserver/webapps/geoserver/editarea/images/fullscreen.gif
-lib/geoserver/webapps/geoserver/editarea/images/go_to_line.gif
-lib/geoserver/webapps/geoserver/editarea/images/help.gif
-lib/geoserver/webapps/geoserver/editarea/images/highlight.gif
-lib/geoserver/webapps/geoserver/editarea/images/load.gif
-lib/geoserver/webapps/geoserver/editarea/images/move.gif
-lib/geoserver/webapps/geoserver/editarea/images/newdocument.gif
-lib/geoserver/webapps/geoserver/editarea/images/opacity.png
-lib/geoserver/webapps/geoserver/editarea/images/processing.gif
-lib/geoserver/webapps/geoserver/editarea/images/redo.gif
-lib/geoserver/webapps/geoserver/editarea/images/reset_highlight.gif
-lib/geoserver/webapps/geoserver/editarea/images/save.gif
-lib/geoserver/webapps/geoserver/editarea/images/search.gif
-lib/geoserver/webapps/geoserver/editarea/images/smooth_selection.gif
-lib/geoserver/webapps/geoserver/editarea/images/spacer.gif
-lib/geoserver/webapps/geoserver/editarea/images/statusbar_resize.gif
-lib/geoserver/webapps/geoserver/editarea/images/undo.gif
-lib/geoserver/webapps/geoserver/editarea/langs/de.js
-lib/geoserver/webapps/geoserver/editarea/langs/dk.js
-lib/geoserver/webapps/geoserver/editarea/langs/en.js
-lib/geoserver/webapps/geoserver/editarea/langs/fr.js
-lib/geoserver/webapps/geoserver/editarea/langs/hr.js
-lib/geoserver/webapps/geoserver/editarea/langs/it.js
-lib/geoserver/webapps/geoserver/editarea/langs/ja.js
-lib/geoserver/webapps/geoserver/editarea/langs/nl.js
-lib/geoserver/webapps/geoserver/editarea/langs/pl.js
-lib/geoserver/webapps/geoserver/editarea/langs/pt.js
-lib/geoserver/webapps/geoserver/editarea/readme.txt
-lib/geoserver/webapps/geoserver/editarea/reg_syntax/basic.js
-lib/geoserver/webapps/geoserver/editarea/reg_syntax/brainfuck.js
-lib/geoserver/webapps/geoserver/editarea/reg_syntax/c.js
-lib/geoserver/webapps/geoserver/editarea/reg_syntax/cpp.js
-lib/geoserver/webapps/geoserver/editarea/reg_syntax/css.js
-lib/geoserver/webapps/geoserver/editarea/reg_syntax/html.js
-lib/geoserver/webapps/geoserver/editarea/reg_syntax/js.js
-lib/geoserver/webapps/geoserver/editarea/reg_syntax/pas.js
-lib/geoserver/webapps/geoserver/editarea/reg_syntax/php.js
-lib/geoserver/webapps/geoserver/editarea/reg_syntax/python.js
-lib/geoserver/webapps/geoserver/editarea/reg_syntax/vb.js
-lib/geoserver/webapps/geoserver/editarea/reg_syntax/xml.js
-lib/geoserver/webapps/geoserver/gmaps/gmaps.html
-lib/geoserver/webapps/geoserver/gmaps/wms-gs.js
-lib/geoserver/webapps/geoserver/icon-line.png
-lib/geoserver/webapps/geoserver/icon-poly.png
-lib/geoserver/webapps/geoserver/icon.png
-lib/geoserver/webapps/geoserver/index.jsp
-lib/geoserver/webapps/geoserver/openlayers/OpenLayers.js
-lib/geoserver/webapps/geoserver/openlayers/img/blank.gif
-lib/geoserver/webapps/geoserver/openlayers/img/close.gif
-lib/geoserver/webapps/geoserver/openlayers/img/drag-rectangle-off.png
-lib/geoserver/webapps/geoserver/openlayers/img/drag-rectangle-on.png
-lib/geoserver/webapps/geoserver/openlayers/img/east-mini.png
-lib/geoserver/webapps/geoserver/openlayers/img/layer-switcher-maximize.png
-lib/geoserver/webapps/geoserver/openlayers/img/layer-switcher-minimize.png
-lib/geoserver/webapps/geoserver/openlayers/img/marker-blue.png
-lib/geoserver/webapps/geoserver/openlayers/img/marker-gold.png
-lib/geoserver/webapps/geoserver/openlayers/img/marker-green.png
-lib/geoserver/webapps/geoserver/openlayers/img/marker.png
-lib/geoserver/webapps/geoserver/openlayers/img/measuring-stick-off.png
-lib/geoserver/webapps/geoserver/openlayers/img/measuring-stick-on.png
-lib/geoserver/webapps/geoserver/openlayers/img/north-mini.png
-lib/geoserver/webapps/geoserver/openlayers/img/panning-hand-off.png
-lib/geoserver/webapps/geoserver/openlayers/img/panning-hand-on.png
-lib/geoserver/webapps/geoserver/openlayers/img/slider.png
-lib/geoserver/webapps/geoserver/openlayers/img/south-mini.png
-lib/geoserver/webapps/geoserver/openlayers/img/west-mini.png
-lib/geoserver/webapps/geoserver/openlayers/img/zoom-minus-mini.png
-lib/geoserver/webapps/geoserver/openlayers/img/zoom-plus-mini.png
-lib/geoserver/webapps/geoserver/openlayers/img/zoom-world-mini.png
-lib/geoserver/webapps/geoserver/openlayers/img/zoombar.png
-lib/geoserver/webapps/geoserver/openlayers/readme.txt
-lib/geoserver/webapps/geoserver/openlayers/theme/default/img/add_point_off.png
-lib/geoserver/webapps/geoserver/openlayers/theme/default/img/add_point_on.png
-lib/geoserver/webapps/geoserver/openlayers/theme/default/img/drag-rectangle-off.png
-lib/geoserver/webapps/geoserver/openlayers/theme/default/img/drag-rectangle-on.png
-lib/geoserver/webapps/geoserver/openlayers/theme/default/img/draw_line_off.png
-lib/geoserver/webapps/geoserver/openlayers/theme/default/img/draw_line_on.png
-lib/geoserver/webapps/geoserver/openlayers/theme/default/img/draw_point_off.png
-lib/geoserver/webapps/geoserver/openlayers/theme/default/img/draw_point_on.png
-lib/geoserver/webapps/geoserver/openlayers/theme/default/img/draw_polygon_off.png
-lib/geoserver/webapps/geoserver/openlayers/theme/default/img/draw_polygon_on.png
-lib/geoserver/webapps/geoserver/openlayers/theme/default/img/move_feature_off.png
-lib/geoserver/webapps/geoserver/openlayers/theme/default/img/move_feature_on.png
-lib/geoserver/webapps/geoserver/openlayers/theme/default/img/pan_off.png
-lib/geoserver/webapps/geoserver/openlayers/theme/default/img/pan_on.png
-lib/geoserver/webapps/geoserver/openlayers/theme/default/img/panning-hand-off.png
-lib/geoserver/webapps/geoserver/openlayers/theme/default/img/panning-hand-on.png
-lib/geoserver/webapps/geoserver/openlayers/theme/default/img/remove_point_off.png
-lib/geoserver/webapps/geoserver/openlayers/theme/default/img/remove_point_on.png
-lib/geoserver/webapps/geoserver/openlayers/theme/default/style.css
-lib/geoserver/webapps/geoserver/openlayers/wms.cfg
-lib/geoserver/webapps/geoserver/popup_map/add_feature.html
-lib/geoserver/webapps/geoserver/popup_map/index.html
-lib/geoserver/webapps/geoserver/popup_map/original.png
-lib/geoserver/webapps/geoserver/popup_map/pics/22037827-L.jpg
-lib/geoserver/webapps/geoserver/popup_map/pics/22037827-Ti.jpg
-lib/geoserver/webapps/geoserver/popup_map/pics/22037829-L.jpg
-lib/geoserver/webapps/geoserver/popup_map/pics/22037829-Ti.jpg
-lib/geoserver/webapps/geoserver/popup_map/pics/22037839-L.jpg
-lib/geoserver/webapps/geoserver/popup_map/pics/22037839-Ti.jpg
-lib/geoserver/webapps/geoserver/popup_map/pics/22037856-L.jpg
-lib/geoserver/webapps/geoserver/popup_map/pics/22037856-Ti.jpg
-lib/geoserver/webapps/geoserver/popup_map/pics/22037884-L.jpg
-lib/geoserver/webapps/geoserver/popup_map/pics/22037884-Ti.jpg
-lib/geoserver/webapps/geoserver/popup_map/pics/28640984-L.jpg
-lib/geoserver/webapps/geoserver/popup_map/pics/28640984-Ti.jpg
-lib/geoserver/webapps/geoserver/popup_map/styles/giant_polygon.sld
-lib/geoserver/webapps/geoserver/popup_map/styles/poi.sld
-lib/geoserver/webapps/geoserver/popup_map/styles/poly_landmarks.sld
-lib/geoserver/webapps/geoserver/popup_map/styles/readme.txt
-lib/geoserver/webapps/geoserver/popup_map/styles/tiger_roads.sld
-lib/geoserver/webapps/geoserver/rss/gmaps.html
-lib/geoserver/webapps/geoserver/rss/ve.html
-lib/geoserver/webapps/geoserver/rss/ymaps.html
-lib/geoserver/webapps/geoserver/schemas/filter/1.0.0/expr.xsd
-lib/geoserver/webapps/geoserver/schemas/filter/1.0.0/filter.xsd
-lib/geoserver/webapps/geoserver/schemas/filter/1.0.0/filterCapabilities.xsd
-lib/geoserver/webapps/geoserver/schemas/filter/1.1.0/expr.xsd
-lib/geoserver/webapps/geoserver/schemas/filter/1.1.0/filter.xsd
-lib/geoserver/webapps/geoserver/schemas/filter/1.1.0/filterCapabilities.xsd
-lib/geoserver/webapps/geoserver/schemas/filter/1.1.0/sort.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/2.1.2.1/ReadMe.txt
-lib/geoserver/webapps/geoserver/schemas/gml/2.1.2.1/feature.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/2.1.2.1/geometry.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/2.1.2.1/xlinks.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/2.1.2/feature.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/2.1.2/geometry.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/2.1.2/xlinks.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/ReadMe.txt
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/basicTypes.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/coordinateOperations.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/coordinateReferenceSystems.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/coordinateSystems.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/coverage.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/dataQuality.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/datums.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/defaultStyle.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/dictionary.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/direction.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/dynamicFeature.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/feature.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/geometryAggregates.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/geometryBasic0d1d.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/geometryBasic2d.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/geometryComplexes.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/geometryPrimitives.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/gml.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/gmlBase.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/grids.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/measures.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/observation.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/referenceSystems.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/temporal.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/temporalReferenceSystems.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/temporalTopology.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/topology.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/units.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/base/valueObjects.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/readme.txt
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/smil/smil20-language.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/smil/smil20.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/smil/xml-mod.xsd
-lib/geoserver/webapps/geoserver/schemas/gml/3.1.1/xlink/xlinks.xsd
-lib/geoserver/webapps/geoserver/schemas/ows/1.0.0/ReadMe.txt
-lib/geoserver/webapps/geoserver/schemas/ows/1.0.0/ows19115subset.xsd
-lib/geoserver/webapps/geoserver/schemas/ows/1.0.0/owsAll.xsd
-lib/geoserver/webapps/geoserver/schemas/ows/1.0.0/owsCommon.xsd
-lib/geoserver/webapps/geoserver/schemas/ows/1.0.0/owsDataIdentification.xsd
-lib/geoserver/webapps/geoserver/schemas/ows/1.0.0/owsExceptionReport.xsd
-lib/geoserver/webapps/geoserver/schemas/ows/1.0.0/owsGetCapabilities.xsd
-lib/geoserver/webapps/geoserver/schemas/ows/1.0.0/owsOperationsMetadata.xsd
-lib/geoserver/webapps/geoserver/schemas/ows/1.0.0/owsServiceIdentification.xsd
-lib/geoserver/webapps/geoserver/schemas/ows/1.0.0/owsServiceProvider.xsd
-lib/geoserver/webapps/geoserver/schemas/ows/ReadMe.txt
-lib/geoserver/webapps/geoserver/schemas/sld/GetMap.xsd
-lib/geoserver/webapps/geoserver/schemas/sld/StyledLayerDescriptor.xsd
-lib/geoserver/webapps/geoserver/schemas/validate/pluginSchema.xsd
-lib/geoserver/webapps/geoserver/schemas/validate/testSuiteSchema.xsd
-lib/geoserver/webapps/geoserver/schemas/wcs/1.0.0/OGC-exception.xsd
-lib/geoserver/webapps/geoserver/schemas/wcs/1.0.0/describeCoverage.xsd
-lib/geoserver/webapps/geoserver/schemas/wcs/1.0.0/getCoverage.xsd
-lib/geoserver/webapps/geoserver/schemas/wcs/1.0.0/gml4wcs.xsd
-lib/geoserver/webapps/geoserver/schemas/wcs/1.0.0/owsBase.xsd
-lib/geoserver/webapps/geoserver/schemas/wcs/1.0.0/values.xsd
-lib/geoserver/webapps/geoserver/schemas/wcs/1.0.0/wcsCapabilities.xsd
-lib/geoserver/webapps/geoserver/schemas/wfs/1.0.0/OGC-exception.xsd
-lib/geoserver/webapps/geoserver/schemas/wfs/1.0.0/WFS-basic.xsd
-lib/geoserver/webapps/geoserver/schemas/wfs/1.0.0/WFS-capabilities.xsd
-lib/geoserver/webapps/geoserver/schemas/wfs/1.0.0/WFS-transaction.xsd
-lib/geoserver/webapps/geoserver/schemas/wfs/1.0.0/WFS-versioning.xsd
-lib/geoserver/webapps/geoserver/schemas/wfs/1.1.0/wfs.xsd
-lib/geoserver/webapps/geoserver/schemas/wfs/1.1.0/wfsv.xsd
-lib/geoserver/webapps/geoserver/schemas/wms/1.1.1/OGC-exception.xsd
-lib/geoserver/webapps/geoserver/schemas/wms/1.1.1/WMS_DescribeLayerResponse.dtd
-lib/geoserver/webapps/geoserver/schemas/wms/1.1.1/WMS_MS_Capabilities.dtd
-lib/geoserver/webapps/geoserver/schemas/wms/1.1.1/WMS_exception_1_1_1.dtd
-lib/geoserver/webapps/geoserver/schemas/xlink/1.0.0/xlinks.xsd
-lib/geoserver/webapps/geoserver/style.css
+@unexec if cmp -s %D/%%G%%/data_dir/catalog.xml %D/%%G%%/data_dir/catalog.xml.sample; then rm -f %D/%%G%%/data_dir/catalog.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/coverages/arcGridSample_Arc_Sample/info.xml %D/%%G%%/data_dir/coverages/arcGridSample_Arc_Sample/info.xml.sample; then rm -f %D/%%G%%/data_dir/coverages/arcGridSample_Arc_Sample/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/coverages/sfdem_sfdem/info.xml %D/%%G%%/data_dir/coverages/sfdem_sfdem/info.xml.sample; then rm -f %D/%%G%%/data_dir/coverages/sfdem_sfdem/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/coverages/worldImageSample_Img_Sample/info.xml %D/%%G%%/data_dir/coverages/worldImageSample_Img_Sample/info.xml.sample; then rm -f %D/%%G%%/data_dir/coverages/worldImageSample_Img_Sample/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/coverages/arc_sample/info.xml %D/%%G%%/data_dir/coverages/arc_sample/info.xml.sample; then rm -f %D/%%G%%/data_dir/coverages/arc_sample/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/coverages/img_sample/info.xml %D/%%G%%/data_dir/coverages/img_sample/info.xml.sample; then rm -f %D/%%G%%/data_dir/coverages/img_sample/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/coverages/img_sample2_Pk50095/info.xml %D/%%G%%/data_dir/coverages/img_sample2_Pk50095/info.xml.sample; then rm -f %D/%%G%%/data_dir/coverages/img_sample2_Pk50095/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/coverages/mosaic_sample/info.xml %D/%%G%%/data_dir/coverages/mosaic_sample/info.xml.sample; then rm -f %D/%%G%%/data_dir/coverages/mosaic_sample/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/coverages/mosaic_sample/mosaic.properties %D/%%G%%/data_dir/coverages/mosaic_sample/mosaic.properties.sample; then rm -f %D/%%G%%/data_dir/coverages/mosaic_sample/mosaic.properties; fi
+@unexec if cmp -s %D/%%G%%/data_dir/coverages/sfDem_dem/info.xml %D/%%G%%/data_dir/coverages/sfDem_dem/info.xml.sample; then rm -f %D/%%G%%/data_dir/coverages/sfDem_dem/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WCS_describeCoverage.xml %D/%%G%%/data_dir/demo/WCS_describeCoverage.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WCS_describeCoverage.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WCS_getCapabilities.xml %D/%%G%%/data_dir/demo/WCS_getCapabilities.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WCS_getCapabilities.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WCS_getCoverage.xml %D/%%G%%/data_dir/demo/WCS_getCoverage.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WCS_getCoverage.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WFS_describeFeatureType-1.0.xml %D/%%G%%/data_dir/demo/WFS_describeFeatureType-1.0.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WFS_describeFeatureType-1.0.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WFS_describeFeatureType-1.1.xml %D/%%G%%/data_dir/demo/WFS_describeFeatureType-1.1.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WFS_describeFeatureType-1.1.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WFS_getCapabilities-1.0.xml %D/%%G%%/data_dir/demo/WFS_getCapabilities-1.0.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WFS_getCapabilities-1.0.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WFS_getCapabilities-1.1.xml %D/%%G%%/data_dir/demo/WFS_getCapabilities-1.1.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WFS_getCapabilities-1.1.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WFS_getFeature-1.0.xml %D/%%G%%/data_dir/demo/WFS_getFeature-1.0.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WFS_getFeature-1.0.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WFS_getFeature-1.1.xml %D/%%G%%/data_dir/demo/WFS_getFeature-1.1.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WFS_getFeature-1.1.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WFS_getFeatureBBOX-1.0.xml %D/%%G%%/data_dir/demo/WFS_getFeatureBBOX-1.0.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WFS_getFeatureBBOX-1.0.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WFS_getFeatureBBOX-1.1.xml %D/%%G%%/data_dir/demo/WFS_getFeatureBBOX-1.1.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WFS_getFeatureBBOX-1.1.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WFS_getFeatureBetween-1.0.xml %D/%%G%%/data_dir/demo/WFS_getFeatureBetween-1.0.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WFS_getFeatureBetween-1.0.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WFS_getFeatureBetween-1.1.xml %D/%%G%%/data_dir/demo/WFS_getFeatureBetween-1.1.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WFS_getFeatureBetween-1.1.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WFS_getFeatureIntersects-1.0.xml %D/%%G%%/data_dir/demo/WFS_getFeatureIntersects-1.0.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WFS_getFeatureIntersects-1.0.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WFS_getFeatureIntersects-1.1.xml %D/%%G%%/data_dir/demo/WFS_getFeatureIntersects-1.1.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WFS_getFeatureIntersects-1.1.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WFS_mathGetFeature.xml %D/%%G%%/data_dir/demo/WFS_mathGetFeature.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WFS_mathGetFeature.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WFS_transactionDelete.xml %D/%%G%%/data_dir/demo/WFS_transactionDelete.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WFS_transactionDelete.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WFS_transactionInsert.xml %D/%%G%%/data_dir/demo/WFS_transactionInsert.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WFS_transactionInsert.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WFS_transactionUpdate.xml %D/%%G%%/data_dir/demo/WFS_transactionUpdate.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WFS_transactionUpdate.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WFS_transactionUpdateGeom.xml %D/%%G%%/data_dir/demo/WFS_transactionUpdateGeom.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WFS_transactionUpdateGeom.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/demo/WMS_getMap_inlineFeatureSmile.xml %D/%%G%%/data_dir/demo/WMS_getMap_inlineFeatureSmile.xml.sample; then rm -f %D/%%G%%/data_dir/demo/WMS_getMap_inlineFeatureSmile.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/featureTypes/DS_giant_polygon_giant_polygon/info.xml %D/%%G%%/data_dir/featureTypes/DS_giant_polygon_giant_polygon/info.xml.sample; then rm -f %D/%%G%%/data_dir/featureTypes/DS_giant_polygon_giant_polygon/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/featureTypes/DS_poi_poi/info.xml %D/%%G%%/data_dir/featureTypes/DS_poi_poi/info.xml.sample; then rm -f %D/%%G%%/data_dir/featureTypes/DS_poi_poi/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/featureTypes/DS_poly_landmarks_poly_landmarks/info.xml %D/%%G%%/data_dir/featureTypes/DS_poly_landmarks_poly_landmarks/info.xml.sample; then rm -f %D/%%G%%/data_dir/featureTypes/DS_poly_landmarks_poly_landmarks/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/featureTypes/DS_tiger_roads_tiger_roads/info.xml %D/%%G%%/data_dir/featureTypes/DS_tiger_roads_tiger_roads/info.xml.sample; then rm -f %D/%%G%%/data_dir/featureTypes/DS_tiger_roads_tiger_roads/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/featureTypes/sfArchsites_archsites/info.xml %D/%%G%%/data_dir/featureTypes/sfArchsites_archsites/info.xml.sample; then rm -f %D/%%G%%/data_dir/featureTypes/sfArchsites_archsites/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/featureTypes/sfBugsites_bugsites/info.xml %D/%%G%%/data_dir/featureTypes/sfBugsites_bugsites/info.xml.sample; then rm -f %D/%%G%%/data_dir/featureTypes/sfBugsites_bugsites/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/featureTypes/sfRestricted_restricted/info.xml %D/%%G%%/data_dir/featureTypes/sfRestricted_restricted/info.xml.sample; then rm -f %D/%%G%%/data_dir/featureTypes/sfRestricted_restricted/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/featureTypes/sfRoads_roads/info.xml %D/%%G%%/data_dir/featureTypes/sfRoads_roads/info.xml.sample; then rm -f %D/%%G%%/data_dir/featureTypes/sfRoads_roads/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/featureTypes/sfStreams_streams/info.xml %D/%%G%%/data_dir/featureTypes/sfStreams_streams/info.xml.sample; then rm -f %D/%%G%%/data_dir/featureTypes/sfStreams_streams/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/featureTypes/states/info.xml %D/%%G%%/data_dir/featureTypes/states/info.xml.sample; then rm -f %D/%%G%%/data_dir/featureTypes/states/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/featureTypes/tasmania_cities/info.xml %D/%%G%%/data_dir/featureTypes/tasmania_cities/info.xml.sample; then rm -f %D/%%G%%/data_dir/featureTypes/tasmania_cities/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/featureTypes/tasmania_roads/info.xml %D/%%G%%/data_dir/featureTypes/tasmania_roads/info.xml.sample; then rm -f %D/%%G%%/data_dir/featureTypes/tasmania_roads/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/featureTypes/tasmania_state_boundaries/info.xml %D/%%G%%/data_dir/featureTypes/tasmania_state_boundaries/info.xml.sample; then rm -f %D/%%G%%/data_dir/featureTypes/tasmania_state_boundaries/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/featureTypes/tasmania_water_bodies/info.xml %D/%%G%%/data_dir/featureTypes/tasmania_water_bodies/info.xml.sample; then rm -f %D/%%G%%/data_dir/featureTypes/tasmania_water_bodies/info.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/AddressGap.xml %D/%%G%%/data_dir/plugIns/AddressGap.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/AddressGap.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/AddressOverlap.xml %D/%%G%%/data_dir/plugIns/AddressOverlap.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/AddressOverlap.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/AngleSize.xml %D/%%G%%/data_dir/plugIns/AngleSize.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/AngleSize.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/Attribute.xml %D/%%G%%/data_dir/plugIns/Attribute.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/Attribute.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/Constraint.xml %D/%%G%%/data_dir/plugIns/Constraint.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/Constraint.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/ContainsIntegrity.xml %D/%%G%%/data_dir/plugIns/ContainsIntegrity.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/ContainsIntegrity.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/CrossesIntegrity.xml %D/%%G%%/data_dir/plugIns/CrossesIntegrity.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/CrossesIntegrity.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/DisjointIntegrity.xml %D/%%G%%/data_dir/plugIns/DisjointIntegrity.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/DisjointIntegrity.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/Domain.xml %D/%%G%%/data_dir/plugIns/Domain.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/Domain.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/Equality.xml %D/%%G%%/data_dir/plugIns/Equality.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/Equality.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/GazetteerName.xml %D/%%G%%/data_dir/plugIns/GazetteerName.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/GazetteerName.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/IntersectsIntegrity.xml %D/%%G%%/data_dir/plugIns/IntersectsIntegrity.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/IntersectsIntegrity.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/IsValidGeometry.xml %D/%%G%%/data_dir/plugIns/IsValidGeometry.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/IsValidGeometry.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/LineCoveredByFeatureLine.xml %D/%%G%%/data_dir/plugIns/LineCoveredByFeatureLine.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/LineCoveredByFeatureLine.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/LineCoveredByPolygon.xml %D/%%G%%/data_dir/plugIns/LineCoveredByPolygon.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/LineCoveredByPolygon.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/LineCoveredByPolygonBoundary.xml %D/%%G%%/data_dir/plugIns/LineCoveredByPolygonBoundary.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/LineCoveredByPolygonBoundary.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/LineEndPointCoveredByLine.xml %D/%%G%%/data_dir/plugIns/LineEndPointCoveredByLine.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/LineEndPointCoveredByLine.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/LineIntersectsLineWithNode.xml %D/%%G%%/data_dir/plugIns/LineIntersectsLineWithNode.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/LineIntersectsLineWithNode.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/LineMustBeASinglePart.xml %D/%%G%%/data_dir/plugIns/LineMustBeASinglePart.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/LineMustBeASinglePart.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/LineNoDangles.xml %D/%%G%%/data_dir/plugIns/LineNoDangles.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/LineNoDangles.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/LineNoPseudoNode.xml %D/%%G%%/data_dir/plugIns/LineNoPseudoNode.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/LineNoPseudoNode.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/LineNoSelfIntersect.xml %D/%%G%%/data_dir/plugIns/LineNoSelfIntersect.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/LineNoSelfIntersect.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/LineNoSelfOverlapping.xml %D/%%G%%/data_dir/plugIns/LineNoSelfOverlapping.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/LineNoSelfOverlapping.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/LineNotTouchingPolygonInterior.xml %D/%%G%%/data_dir/plugIns/LineNotTouchingPolygonInterior.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/LineNotTouchingPolygonInterior.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/LinesNotIntersect.xml %D/%%G%%/data_dir/plugIns/LinesNotIntersect.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/LinesNotIntersect.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/LinesNotOverlap.xml %D/%%G%%/data_dir/plugIns/LinesNotOverlap.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/LinesNotOverlap.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/NameExists.xml %D/%%G%%/data_dir/plugIns/NameExists.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/NameExists.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/NameInList.xml %D/%%G%%/data_dir/plugIns/NameInList.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/NameInList.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/NullZero.xml %D/%%G%%/data_dir/plugIns/NullZero.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/NullZero.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/OverlapsIntegrity.xml %D/%%G%%/data_dir/plugIns/OverlapsIntegrity.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/OverlapsIntegrity.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/PointCoveredByEndPointOfLine.xml %D/%%G%%/data_dir/plugIns/PointCoveredByEndPointOfLine.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/PointCoveredByEndPointOfLine.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/PointCoveredByLine.xml %D/%%G%%/data_dir/plugIns/PointCoveredByLine.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/PointCoveredByLine.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/PointCoveredByPolygon.xml %D/%%G%%/data_dir/plugIns/PointCoveredByPolygon.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/PointCoveredByPolygon.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/PointCoveredByPolygonBoundary.xml %D/%%G%%/data_dir/plugIns/PointCoveredByPolygonBoundary.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/PointCoveredByPolygonBoundary.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/PointInsidePolygon.xml %D/%%G%%/data_dir/plugIns/PointInsidePolygon.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/PointInsidePolygon.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/PolygonBoundaryCoveredByPolygon.xml %D/%%G%%/data_dir/plugIns/PolygonBoundaryCoveredByPolygon.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/PolygonBoundaryCoveredByPolygon.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/PolygonCoveredByFeaturePolygon.xml %D/%%G%%/data_dir/plugIns/PolygonCoveredByFeaturePolygon.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/PolygonCoveredByFeaturePolygon.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/PolygonCoveredByPolygon.xml %D/%%G%%/data_dir/plugIns/PolygonCoveredByPolygon.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/PolygonCoveredByPolygon.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/PolygonNoGaps.xml %D/%%G%%/data_dir/plugIns/PolygonNoGaps.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/PolygonNoGaps.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/PolygonNotCoveredByPolygon.xml %D/%%G%%/data_dir/plugIns/PolygonNotCoveredByPolygon.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/PolygonNotCoveredByPolygon.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/PolygonNotOverlappingLine.xml %D/%%G%%/data_dir/plugIns/PolygonNotOverlappingLine.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/PolygonNotOverlappingLine.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/PolygonNotOverlappingPolygon.xml %D/%%G%%/data_dir/plugIns/PolygonNotOverlappingPolygon.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/PolygonNotOverlappingPolygon.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/Range.xml %D/%%G%%/data_dir/plugIns/Range.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/Range.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/RelateIntegrity.xml %D/%%G%%/data_dir/plugIns/RelateIntegrity.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/RelateIntegrity.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/SQL.xml %D/%%G%%/data_dir/plugIns/SQL.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/SQL.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/SingleValue.xml %D/%%G%%/data_dir/plugIns/SingleValue.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/SingleValue.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/StarNode.xml %D/%%G%%/data_dir/plugIns/StarNode.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/StarNode.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/TouchesIntegrity.xml %D/%%G%%/data_dir/plugIns/TouchesIntegrity.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/TouchesIntegrity.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/UniqueFID.xml %D/%%G%%/data_dir/plugIns/UniqueFID.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/UniqueFID.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/Uniquity.xml %D/%%G%%/data_dir/plugIns/Uniquity.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/Uniquity.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/plugIns/WithinIntegrity.xml %D/%%G%%/data_dir/plugIns/WithinIntegrity.xml.sample; then rm -f %D/%%G%%/data_dir/plugIns/WithinIntegrity.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/security/layers.properties %D/%%G%%/data_dir/security/layers.properties.sample; then rm -f %D/%%G%%/data_dir/security/layers.properties; fi
+@unexec if cmp -s %D/%%G%%/data_dir/security/service.properties %D/%%G%%/data_dir/security/service.properties.sample; then rm -f %D/%%G%%/data_dir/security/service.properties; fi
+@unexec if cmp -s %D/%%G%%/data_dir/security/users.properties %D/%%G%%/data_dir/security/users.properties.sample; then rm -f %D/%%G%%/data_dir/security/users.properties; fi
+@unexec if cmp -s %D/%%G%%/data_dir/services.xml %D/%%G%%/data_dir/services.xml.sample; then rm -f %D/%%G%%/data_dir/services.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/user_projections/epsg.properties %D/%%G%%/data_dir/user_projections/epsg.properties.sample; then rm -f %D/%%G%%/data_dir/user_projections/epsg.properties; fi
+@unexec if cmp -s %D/%%G%%/data_dir/validation/FeatureCheck.xml %D/%%G%%/data_dir/validation/FeatureCheck.xml.sample; then rm -f %D/%%G%%/data_dir/validation/FeatureCheck.xml; fi
+@unexec if cmp -s %D/%%G%%/data_dir/validation/IntegrityCheck.xml %D/%%G%%/data_dir/validation/IntegrityCheck.xml.sample; then rm -f %D/%%G%%/data_dir/validation/IntegrityCheck.xml; fi
+@unexec if cmp -s %D/%%G%%/etc/jdbcRealm.properties %D/%%G%%/etc/jdbcRealm.properties.sample; then rm -f %D/%%G%%/etc/jdbcRealm.properties; fi
+@unexec if cmp -s %D/%%G%%/etc/jetty-jmx-platform.xml %D/%%G%%/etc/jetty-jmx-platform.xml.sample; then rm -f %D/%%G%%/etc/jetty-jmx-platform.xml; fi
+@unexec if cmp -s %D/%%G%%/etc/jetty-jmx.xml %D/%%G%%/etc/jetty-jmx.xml.sample; then rm -f %D/%%G%%/etc/jetty-jmx.xml; fi
+@unexec if cmp -s %D/%%G%%/etc/jetty-plus.xml %D/%%G%%/etc/jetty-plus.xml.sample; then rm -f %D/%%G%%/etc/jetty-plus.xml; fi
+@unexec if cmp -s %D/%%G%%/etc/jetty-ssl.xml %D/%%G%%/etc/jetty-ssl.xml.sample; then rm -f %D/%%G%%/etc/jetty-ssl.xml; fi
+@unexec if cmp -s %D/%%G%%/etc/jetty.xml %D/%%G%%/etc/jetty.xml.sample; then rm -f %D/%%G%%/etc/jetty.xml; fi
+@unexec if cmp -s %D/%%G%%/etc/keystore %D/%%G%%/etc/keystore.sample; then rm -f %D/%%G%%/etc/keystore; fi
+@unexec if cmp -s %D/%%G%%/etc/realm.properties %D/%%G%%/etc/realm.properties.sample; then rm -f %D/%%G%%/etc/realm.properties; fi
+@unexec if cmp -s %D/%%G%%/etc/stresstest.xml %D/%%G%%/etc/stresstest.xml.sample; then rm -f %D/%%G%%/etc/stresstest.xml; fi
+@unexec if cmp -s %D/%%G%%/etc/webdefault.xml %D/%%G%%/etc/webdefault.xml.sample; then rm -f %D/%%G%%/etc/webdefault.xml; fi
+@unexec if cmp -s %D/%%G%%/resources/log4j.properties %D/%%G%%/resources/log4j.properties.sample; then rm -f %D/%%G%%/resources/log4j.properties; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/action-servlet.xml %D/%%G%%/webapps/geoserver/WEB-INF/action-servlet.xml.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/action-servlet.xml; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources.properties %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources.properties.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources.properties; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_de.properties %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_de.properties.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_de.properties; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_es.properties %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_es.properties.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_es.properties; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_fr.properties %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_fr.properties.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_fr.properties; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_ja.properties %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_ja.properties.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_ja.properties; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_pt_BR.properties %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_pt_BR.properties.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_pt_BR.properties; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_zh_CN.properties %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_zh_CN.properties.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_zh_CN.properties; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_nl.properties %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_nl.properties.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_nl.properties; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_ru.properties %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_ru.properties.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_ru.properties; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/classes/applicationContext.xml %D/%%G%%/webapps/geoserver/WEB-INF/classes/applicationContext.xml.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/classes/applicationContext.xml; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/classes/applicationSecurityContext.xml %D/%%G%%/webapps/geoserver/WEB-INF/classes/applicationSecurityContext.xml.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/classes/applicationSecurityContext.xml; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/dispatcher-servlet.xml %D/%%G%%/webapps/geoserver/WEB-INF/dispatcher-servlet.xml.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/dispatcher-servlet.xml; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/jetty-web.xml %D/%%G%%/webapps/geoserver/WEB-INF/jetty-web.xml.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/jetty-web.xml; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/org.openplans.geoserver-servlet.xml %D/%%G%%/webapps/geoserver/WEB-INF/org.openplans.geoserver-servlet.xml.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/org.openplans.geoserver-servlet.xml; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/struts-config.xml %D/%%G%%/webapps/geoserver/WEB-INF/struts-config.xml.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/struts-config.xml; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/tiles-defs.xml %D/%%G%%/webapps/geoserver/WEB-INF/tiles-defs.xml.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/tiles-defs.xml; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/validation.xml %D/%%G%%/webapps/geoserver/WEB-INF/validation.xml.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/validation.xml; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/validator-rules.xml %D/%%G%%/webapps/geoserver/WEB-INF/validator-rules.xml.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/validator-rules.xml; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/WEB-INF/web.xml %D/%%G%%/webapps/geoserver/WEB-INF/web.xml.sample; then rm -f %D/%%G%%/webapps/geoserver/WEB-INF/web.xml; fi
+@unexec if cmp -s %D/%%G%%/webapps/geoserver/schemas/wcs/1.1.1/interpolationMethods.xml %D/%%G%%/webapps/geoserver/schemas/wcs/1.1.1/interpolationMethods.xml.sample; then rm -f %D/%%G%%/webapps/geoserver/schemas/wcs/1.1.1/interpolationMethods.xml; fi
+%%G%%/GPL.txt
+%%G%%/LICENSE.txt
+%%G%%/README.txt
+%%G%%/RUNNING.txt
+%%G%%/bin/shutdown.sh
+%%G%%/bin/startup.sh
+%%G%%/data_dir/catalog.xml.sample
+@exec [ -f %B/catalog.xml ] || cp %B/%f %B/catalog.xml
+%%G%%/data_dir/coverages/arcGridSample_Arc_Sample/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/coverages/sfdem_sfdem/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/coverages/worldImageSample_Img_Sample/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/coverages/arc_sample/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/coverages/arc_sample/precip30min.asc
+%%G%%/data_dir/coverages/arc_sample/precip30min.prj
+%%G%%/data_dir/coverages/img_sample/Pk50095.prj
+%%G%%/data_dir/coverages/img_sample/Pk50095.tfw
+%%G%%/data_dir/coverages/img_sample/Pk50095.tif
+%%G%%/data_dir/coverages/img_sample/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/coverages/img_sample/usa.meta
+%%G%%/data_dir/coverages/img_sample/usa.png
+%%G%%/data_dir/coverages/img_sample/usa.prj
+%%G%%/data_dir/coverages/img_sample2_Pk50095/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_0.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_0.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_0.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_1.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_1.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_1.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_10.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_10.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_10.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_11.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_11.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_11.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_12.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_12.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_12.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_13.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_13.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_13.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_14.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_14.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_14.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_15.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_15.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_15.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_16.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_16.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_16.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_17.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_17.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_17.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_18.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_18.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_18.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_19.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_19.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_19.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_2.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_2.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_2.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_20.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_20.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_20.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_21.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_21.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_21.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_22.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_22.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_22.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_23.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_23.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_23.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_24.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_24.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_24.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_3.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_3.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_3.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_4.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_4.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_4.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_5.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_5.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_5.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_6.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_6.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_6.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_7.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_7.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_7.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_8.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_8.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_8.prj
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_9.pgw
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_9.png
+%%G%%/data_dir/coverages/mosaic_sample/global_mosaic_9.prj
+%%G%%/data_dir/coverages/mosaic_sample/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/coverages/mosaic_sample/mosaic.dbf
+%%G%%/data_dir/coverages/mosaic_sample/mosaic.fix
+%%G%%/data_dir/coverages/mosaic_sample/mosaic.prj
+%%G%%/data_dir/coverages/mosaic_sample/mosaic.properties.sample
+@exec [ -f %B/mosaic.properties ] || cp %B/%f %B/mosaic.properties
+%%G%%/data_dir/coverages/mosaic_sample/mosaic.qix
+%%G%%/data_dir/coverages/mosaic_sample/mosaic.shp
+%%G%%/data_dir/coverages/mosaic_sample/mosaic.shx
+%%G%%/data_dir/coverages/sfDem_dem/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/data/nyc/giant_polygon.dbf
+%%G%%/data_dir/data/nyc/giant_polygon.prj
+%%G%%/data_dir/data/nyc/giant_polygon.qix
+%%G%%/data_dir/data/nyc/giant_polygon.shp
+%%G%%/data_dir/data/nyc/giant_polygon.shx
+%%G%%/data_dir/data/nyc/poi.dbf
+%%G%%/data_dir/data/nyc/poi.prj
+%%G%%/data_dir/data/nyc/poi.qix
+%%G%%/data_dir/data/nyc/poi.shp
+%%G%%/data_dir/data/nyc/poi.shx
+%%G%%/data_dir/data/nyc/poly_landmarks.dbf
+%%G%%/data_dir/data/nyc/poly_landmarks.prj
+%%G%%/data_dir/data/nyc/poly_landmarks.qix
+%%G%%/data_dir/data/nyc/poly_landmarks.shp
+%%G%%/data_dir/data/nyc/poly_landmarks.shx
+%%G%%/data_dir/data/nyc/tiger_roads.dbf
+%%G%%/data_dir/data/nyc/tiger_roads.prj
+%%G%%/data_dir/data/nyc/tiger_roads.qix
+%%G%%/data_dir/data/nyc/tiger_roads.shp
+%%G%%/data_dir/data/nyc/tiger_roads.shx
+%%G%%/data_dir/data/sf/sfdem.tif
+%%G%%/data_dir/data/sf/archsites.dbf
+%%G%%/data_dir/data/sf/archsites.prj
+%%G%%/data_dir/data/sf/archsites.shp
+%%G%%/data_dir/data/sf/archsites.shx
+%%G%%/data_dir/data/sf/bugsites.dbf
+%%G%%/data_dir/data/sf/bugsites.prj
+%%G%%/data_dir/data/sf/bugsites.shp
+%%G%%/data_dir/data/sf/bugsites.shx
+%%G%%/data_dir/data/sf/restricted.dbf
+%%G%%/data_dir/data/sf/restricted.prj
+%%G%%/data_dir/data/sf/restricted.shp
+%%G%%/data_dir/data/sf/restricted.shx
+%%G%%/data_dir/data/sf/roads.dbf
+%%G%%/data_dir/data/sf/roads.prj
+%%G%%/data_dir/data/sf/roads.shp
+%%G%%/data_dir/data/sf/roads.shx
+%%G%%/data_dir/data/sf/streams.dbf
+%%G%%/data_dir/data/sf/streams.prj
+%%G%%/data_dir/data/sf/streams.shp
+%%G%%/data_dir/data/sf/streams.shx
+%%G%%/data_dir/data/shapefiles/states.dbf
+%%G%%/data_dir/data/shapefiles/states.prj
+%%G%%/data_dir/data/shapefiles/states.shp
+%%G%%/data_dir/data/shapefiles/states.shx
+%%G%%/data_dir/data/taz_shapes/tasmania_cities.dbf
+%%G%%/data_dir/data/taz_shapes/tasmania_cities.prj
+%%G%%/data_dir/data/taz_shapes/tasmania_cities.shp
+%%G%%/data_dir/data/taz_shapes/tasmania_cities.shx
+%%G%%/data_dir/data/taz_shapes/tasmania_roads.dbf
+%%G%%/data_dir/data/taz_shapes/tasmania_roads.prj
+%%G%%/data_dir/data/taz_shapes/tasmania_roads.shp
+%%G%%/data_dir/data/taz_shapes/tasmania_roads.shx
+%%G%%/data_dir/data/taz_shapes/tasmania_state_boundaries.dbf
+%%G%%/data_dir/data/taz_shapes/tasmania_state_boundaries.prj
+%%G%%/data_dir/data/taz_shapes/tasmania_state_boundaries.shp
+%%G%%/data_dir/data/taz_shapes/tasmania_state_boundaries.shx
+%%G%%/data_dir/data/taz_shapes/tasmania_water_bodies.dbf
+%%G%%/data_dir/data/taz_shapes/tasmania_water_bodies.prj
+%%G%%/data_dir/data/taz_shapes/tasmania_water_bodies.shp
+%%G%%/data_dir/data/taz_shapes/tasmania_water_bodies.shx
+%%G%%/data_dir/demo/WFS_getFeatureBBOX.url
+%%G%%/data_dir/demo/WCS_describeCoverage.xml.sample
+@exec [ -f %B/WCS_describeCoverage.xml ] || cp %B/%f %B/WCS_describeCoverage.xml
+%%G%%/data_dir/demo/WCS_getCapabilities.xml.sample
+@exec [ -f %B/WCS_getCapabilities.xml ] || cp %B/%f %B/WCS_getCapabilities.xml
+%%G%%/data_dir/demo/WCS_getCoverage.xml.sample
+@exec [ -f %B/WCS_getCoverage.xml ] || cp %B/%f %B/WCS_getCoverage.xml
+%%G%%/data_dir/demo/WFS_describeFeatureType-1.0.xml.sample
+@exec [ -f %B/WFS_describeFeatureType-1.0.xml ] || cp %B/%f %B/WFS_describeFeatureType-1.0.xml
+%%G%%/data_dir/demo/WFS_describeFeatureType-1.1.xml.sample
+@exec [ -f %B/WFS_describeFeatureType-1.1.xml ] || cp %B/%f %B/WFS_describeFeatureType-1.1.xml
+%%G%%/data_dir/demo/WFS_getCapabilities-1.0.xml.sample
+@exec [ -f %B/WFS_getCapabilities-1.0.xml ] || cp %B/%f %B/WFS_getCapabilities-1.0.xml
+%%G%%/data_dir/demo/WFS_getCapabilities-1.1.xml.sample
+@exec [ -f %B/WFS_getCapabilities-1.1.xml ] || cp %B/%f %B/WFS_getCapabilities-1.1.xml
+%%G%%/data_dir/demo/WFS_getFeature-1.0.xml.sample
+@exec [ -f %B/WFS_getFeature-1.0.xml ] || cp %B/%f %B/WFS_getFeature-1.0.xml
+%%G%%/data_dir/demo/WFS_getFeature-1.1.xml.sample
+@exec [ -f %B/WFS_getFeature-1.1.xml ] || cp %B/%f %B/WFS_getFeature-1.1.xml
+%%G%%/data_dir/demo/WFS_getFeatureBBOX-1.0.xml.sample
+@exec [ -f %B/WFS_getFeatureBBOX-1.0.xml ] || cp %B/%f %B/WFS_getFeatureBBOX-1.0.xml
+%%G%%/data_dir/demo/WFS_getFeatureBBOX-1.1.xml.sample
+@exec [ -f %B/WFS_getFeatureBBOX-1.1.xml ] || cp %B/%f %B/WFS_getFeatureBBOX-1.1.xml
+%%G%%/data_dir/demo/WFS_getFeatureBetween-1.0.xml.sample
+@exec [ -f %B/WFS_getFeatureBetween-1.0.xml ] || cp %B/%f %B/WFS_getFeatureBetween-1.0.xml
+%%G%%/data_dir/demo/WFS_getFeatureBetween-1.1.xml.sample
+@exec [ -f %B/WFS_getFeatureBetween-1.1.xml ] || cp %B/%f %B/WFS_getFeatureBetween-1.1.xml
+%%G%%/data_dir/demo/WFS_getFeatureBetween.url
+%%G%%/data_dir/demo/WFS_getFeatureBetweenCQL.url
+%%G%%/data_dir/demo/WFS_getFeatureFid.url
+%%G%%/data_dir/demo/WFS_getFeatureFidFilter.url
+%%G%%/data_dir/demo/WFS_getFeatureIntersects-1.0.xml.sample
+@exec [ -f %B/WFS_getFeatureIntersects-1.0.xml ] || cp %B/%f %B/WFS_getFeatureIntersects-1.0.xml
+%%G%%/data_dir/demo/WFS_getFeatureIntersects-1.1.xml.sample
+@exec [ -f %B/WFS_getFeatureIntersects-1.1.xml ] || cp %B/%f %B/WFS_getFeatureIntersects-1.1.xml
+%%G%%/data_dir/demo/WFS_getFeatureIntersects.url
+%%G%%/data_dir/demo/WFS_getFeatureMultiFilter.url
+%%G%%/data_dir/demo/WFS_mathGetFeature.url
+%%G%%/data_dir/demo/WFS_mathGetFeature.xml.sample
+@exec [ -f %B/WFS_mathGetFeature.xml ] || cp %B/%f %B/WFS_mathGetFeature.xml
+%%G%%/data_dir/demo/WFS_transactionDelete.xml.sample
+@exec [ -f %B/WFS_transactionDelete.xml ] || cp %B/%f %B/WFS_transactionDelete.xml
+%%G%%/data_dir/demo/WFS_transactionInsert.xml.sample
+@exec [ -f %B/WFS_transactionInsert.xml ] || cp %B/%f %B/WFS_transactionInsert.xml
+%%G%%/data_dir/demo/WFS_transactionUpdate.xml.sample
+@exec [ -f %B/WFS_transactionUpdate.xml ] || cp %B/%f %B/WFS_transactionUpdate.xml
+%%G%%/data_dir/demo/WFS_transactionUpdateGeom.xml.sample
+@exec [ -f %B/WFS_transactionUpdateGeom.xml ] || cp %B/%f %B/WFS_transactionUpdateGeom.xml
+%%G%%/data_dir/demo/WMS_GetLegendGraphic-SLD.url
+%%G%%/data_dir/demo/WMS_GetLegendGraphic-SLD_BODY.url
+%%G%%/data_dir/demo/WMS_GetLegendGraphic.url
+%%G%%/data_dir/demo/WMS_describeLayer.url
+%%G%%/data_dir/demo/WMS_featureInfo.url
+%%G%%/data_dir/demo/WMS_getCapabilities.url
+%%G%%/data_dir/demo/WMS_getMap.url
+%%G%%/data_dir/demo/WMS_getMap_OpenLayers.url
+%%G%%/data_dir/demo/WMS_getMap_SLD_BODY_LiteralMode.url
+%%G%%/data_dir/demo/WMS_getMap_SVG.url
+%%G%%/data_dir/demo/WMS_getMap_SVG_Style.url
+%%G%%/data_dir/demo/WMS_getMap_fid.url
+%%G%%/data_dir/demo/WMS_getMap_fidfilter.url
+%%G%%/data_dir/demo/WMS_getMap_inlineFeature.url
+%%G%%/data_dir/demo/WMS_getMap_inlineFeatureSmile.xml.sample
+@exec [ -f %B/WMS_getMap_inlineFeatureSmile.xml ] || cp %B/%f %B/WMS_getMap_inlineFeatureSmile.xml
+%%G%%/data_dir/demo/WMS_getMap_multilayer.url
+%%G%%/data_dir/demo/WMS_getMap_multilayer_cql.url
+%%G%%/data_dir/demo/WMS_getMap_multilayer_filter.url
+%%G%%/data_dir/featureTypes/DS_giant_polygon_giant_polygon/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/featureTypes/DS_poi_poi/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/featureTypes/DS_poly_landmarks_poly_landmarks/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/featureTypes/DS_tiger_roads_tiger_roads/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/featureTypes/sfArchsites_archsites/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/featureTypes/sfBugsites_bugsites/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/featureTypes/sfRestricted_restricted/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/featureTypes/sfRoads_roads/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/featureTypes/sfStreams_streams/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/featureTypes/states/description.ftl
+%%G%%/data_dir/featureTypes/states/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/featureTypes/states/title.ftl
+%%G%%/data_dir/featureTypes/tasmania_cities/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/featureTypes/tasmania_roads/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/featureTypes/tasmania_state_boundaries/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/featureTypes/tasmania_water_bodies/info.xml.sample
+@exec [ -f %B/info.xml ] || cp %B/%f %B/info.xml
+%%G%%/data_dir/palettes/dem31.pal
+%%G%%/data_dir/palettes/ita31.pal
+%%G%%/data_dir/palettes/ny31.pal
+%%G%%/data_dir/palettes/popshade.png
+%%G%%/data_dir/plugIns/AddressGap.xml.sample
+@exec [ -f %B/AddressGap.xml ] || cp %B/%f %B/AddressGap.xml
+%%G%%/data_dir/plugIns/AddressOverlap.xml.sample
+@exec [ -f %B/AddressOverlap.xml ] || cp %B/%f %B/AddressOverlap.xml
+%%G%%/data_dir/plugIns/AngleSize.xml.sample
+@exec [ -f %B/AngleSize.xml ] || cp %B/%f %B/AngleSize.xml
+%%G%%/data_dir/plugIns/Attribute.xml.sample
+@exec [ -f %B/Attribute.xml ] || cp %B/%f %B/Attribute.xml
+%%G%%/data_dir/plugIns/Constraint.xml.sample
+@exec [ -f %B/Constraint.xml ] || cp %B/%f %B/Constraint.xml
+%%G%%/data_dir/plugIns/ContainsIntegrity.xml.sample
+@exec [ -f %B/ContainsIntegrity.xml ] || cp %B/%f %B/ContainsIntegrity.xml
+%%G%%/data_dir/plugIns/CrossesIntegrity.xml.sample
+@exec [ -f %B/CrossesIntegrity.xml ] || cp %B/%f %B/CrossesIntegrity.xml
+%%G%%/data_dir/plugIns/DisjointIntegrity.xml.sample
+@exec [ -f %B/DisjointIntegrity.xml ] || cp %B/%f %B/DisjointIntegrity.xml
+%%G%%/data_dir/plugIns/Domain.xml.sample
+@exec [ -f %B/Domain.xml ] || cp %B/%f %B/Domain.xml
+%%G%%/data_dir/plugIns/Equality.xml.sample
+@exec [ -f %B/Equality.xml ] || cp %B/%f %B/Equality.xml
+%%G%%/data_dir/plugIns/GazetteerName.xml.sample
+@exec [ -f %B/GazetteerName.xml ] || cp %B/%f %B/GazetteerName.xml
+%%G%%/data_dir/plugIns/IntersectsIntegrity.xml.sample
+@exec [ -f %B/IntersectsIntegrity.xml ] || cp %B/%f %B/IntersectsIntegrity.xml
+%%G%%/data_dir/plugIns/IsValidGeometry.xml.sample
+@exec [ -f %B/IsValidGeometry.xml ] || cp %B/%f %B/IsValidGeometry.xml
+%%G%%/data_dir/plugIns/LineCoveredByFeatureLine.xml.sample
+@exec [ -f %B/LineCoveredByFeatureLine.xml ] || cp %B/%f %B/LineCoveredByFeatureLine.xml
+%%G%%/data_dir/plugIns/LineCoveredByPolygon.xml.sample
+@exec [ -f %B/LineCoveredByPolygon.xml ] || cp %B/%f %B/LineCoveredByPolygon.xml
+%%G%%/data_dir/plugIns/LineCoveredByPolygonBoundary.xml.sample
+@exec [ -f %B/LineCoveredByPolygonBoundary.xml ] || cp %B/%f %B/LineCoveredByPolygonBoundary.xml
+%%G%%/data_dir/plugIns/LineEndPointCoveredByLine.xml.sample
+@exec [ -f %B/LineEndPointCoveredByLine.xml ] || cp %B/%f %B/LineEndPointCoveredByLine.xml
+%%G%%/data_dir/plugIns/LineIntersectsLineWithNode.xml.sample
+@exec [ -f %B/LineIntersectsLineWithNode.xml ] || cp %B/%f %B/LineIntersectsLineWithNode.xml
+%%G%%/data_dir/plugIns/LineMustBeASinglePart.xml.sample
+@exec [ -f %B/LineMustBeASinglePart.xml ] || cp %B/%f %B/LineMustBeASinglePart.xml
+%%G%%/data_dir/plugIns/LineNoDangles.xml.sample
+@exec [ -f %B/LineNoDangles.xml ] || cp %B/%f %B/LineNoDangles.xml
+%%G%%/data_dir/plugIns/LineNoPseudoNode.xml.sample
+@exec [ -f %B/LineNoPseudoNode.xml ] || cp %B/%f %B/LineNoPseudoNode.xml
+%%G%%/data_dir/plugIns/LineNoSelfIntersect.xml.sample
+@exec [ -f %B/LineNoSelfIntersect.xml ] || cp %B/%f %B/LineNoSelfIntersect.xml
+%%G%%/data_dir/plugIns/LineNoSelfOverlapping.xml.sample
+@exec [ -f %B/LineNoSelfOverlapping.xml ] || cp %B/%f %B/LineNoSelfOverlapping.xml
+%%G%%/data_dir/plugIns/LineNotTouchingPolygonInterior.xml.sample
+@exec [ -f %B/LineNotTouchingPolygonInterior.xml ] || cp %B/%f %B/LineNotTouchingPolygonInterior.xml
+%%G%%/data_dir/plugIns/LinesNotIntersect.xml.sample
+@exec [ -f %B/LinesNotIntersect.xml ] || cp %B/%f %B/LinesNotIntersect.xml
+%%G%%/data_dir/plugIns/LinesNotOverlap.xml.sample
+@exec [ -f %B/LinesNotOverlap.xml ] || cp %B/%f %B/LinesNotOverlap.xml
+%%G%%/data_dir/plugIns/NameExists.xml.sample
+@exec [ -f %B/NameExists.xml ] || cp %B/%f %B/NameExists.xml
+%%G%%/data_dir/plugIns/NameInList.xml.sample
+@exec [ -f %B/NameInList.xml ] || cp %B/%f %B/NameInList.xml
+%%G%%/data_dir/plugIns/NullZero.xml.sample
+@exec [ -f %B/NullZero.xml ] || cp %B/%f %B/NullZero.xml
+%%G%%/data_dir/plugIns/OverlapsIntegrity.xml.sample
+@exec [ -f %B/OverlapsIntegrity.xml ] || cp %B/%f %B/OverlapsIntegrity.xml
+%%G%%/data_dir/plugIns/PointCoveredByEndPointOfLine.xml.sample
+@exec [ -f %B/PointCoveredByEndPointOfLine.xml ] || cp %B/%f %B/PointCoveredByEndPointOfLine.xml
+%%G%%/data_dir/plugIns/PointCoveredByLine.xml.sample
+@exec [ -f %B/PointCoveredByLine.xml ] || cp %B/%f %B/PointCoveredByLine.xml
+%%G%%/data_dir/plugIns/PointCoveredByPolygon.xml.sample
+@exec [ -f %B/PointCoveredByPolygon.xml ] || cp %B/%f %B/PointCoveredByPolygon.xml
+%%G%%/data_dir/plugIns/PointCoveredByPolygonBoundary.xml.sample
+@exec [ -f %B/PointCoveredByPolygonBoundary.xml ] || cp %B/%f %B/PointCoveredByPolygonBoundary.xml
+%%G%%/data_dir/plugIns/PointInsidePolygon.xml.sample
+@exec [ -f %B/PointInsidePolygon.xml ] || cp %B/%f %B/PointInsidePolygon.xml
+%%G%%/data_dir/plugIns/PolygonBoundaryCoveredByPolygon.xml.sample
+@exec [ -f %B/PolygonBoundaryCoveredByPolygon.xml ] || cp %B/%f %B/PolygonBoundaryCoveredByPolygon.xml
+%%G%%/data_dir/plugIns/PolygonCoveredByFeaturePolygon.xml.sample
+@exec [ -f %B/PolygonCoveredByFeaturePolygon.xml ] || cp %B/%f %B/PolygonCoveredByFeaturePolygon.xml
+%%G%%/data_dir/plugIns/PolygonCoveredByPolygon.xml.sample
+@exec [ -f %B/PolygonCoveredByPolygon.xml ] || cp %B/%f %B/PolygonCoveredByPolygon.xml
+%%G%%/data_dir/plugIns/PolygonNoGaps.xml.sample
+@exec [ -f %B/PolygonNoGaps.xml ] || cp %B/%f %B/PolygonNoGaps.xml
+%%G%%/data_dir/plugIns/PolygonNotCoveredByPolygon.xml.sample
+@exec [ -f %B/PolygonNotCoveredByPolygon.xml ] || cp %B/%f %B/PolygonNotCoveredByPolygon.xml
+%%G%%/data_dir/plugIns/PolygonNotOverlappingLine.xml.sample
+@exec [ -f %B/PolygonNotOverlappingLine.xml ] || cp %B/%f %B/PolygonNotOverlappingLine.xml
+%%G%%/data_dir/plugIns/PolygonNotOverlappingPolygon.xml.sample
+@exec [ -f %B/PolygonNotOverlappingPolygon.xml ] || cp %B/%f %B/PolygonNotOverlappingPolygon.xml
+%%G%%/data_dir/plugIns/Range.xml.sample
+@exec [ -f %B/Range.xml ] || cp %B/%f %B/Range.xml
+%%G%%/data_dir/plugIns/RelateIntegrity.xml.sample
+@exec [ -f %B/RelateIntegrity.xml ] || cp %B/%f %B/RelateIntegrity.xml
+%%G%%/data_dir/plugIns/SQL.xml.sample
+@exec [ -f %B/SQL.xml ] || cp %B/%f %B/SQL.xml
+%%G%%/data_dir/plugIns/SingleValue.xml.sample
+@exec [ -f %B/SingleValue.xml ] || cp %B/%f %B/SingleValue.xml
+%%G%%/data_dir/plugIns/StarNode.xml.sample
+@exec [ -f %B/StarNode.xml ] || cp %B/%f %B/StarNode.xml
+%%G%%/data_dir/plugIns/TouchesIntegrity.xml.sample
+@exec [ -f %B/TouchesIntegrity.xml ] || cp %B/%f %B/TouchesIntegrity.xml
+%%G%%/data_dir/plugIns/UniqueFID.xml.sample
+@exec [ -f %B/UniqueFID.xml ] || cp %B/%f %B/UniqueFID.xml
+%%G%%/data_dir/plugIns/Uniquity.xml.sample
+@exec [ -f %B/Uniquity.xml ] || cp %B/%f %B/Uniquity.xml
+%%G%%/data_dir/plugIns/WithinIntegrity.xml.sample
+@exec [ -f %B/WithinIntegrity.xml ] || cp %B/%f %B/WithinIntegrity.xml
+%%G%%/data_dir/security/layers.properties.sample
+@exec [ -f %B/layers.properties ] || cp %B/%f %B/layers.properties
+%%G%%/data_dir/security/service.properties.sample
+@exec [ -f %B/service.properties ] || cp %B/%f %B/service.properties
+%%G%%/data_dir/security/users.properties.sample
+@exec [ -f %B/users.properties ] || cp %B/%f %B/users.properties
+%%G%%/data_dir/services.xml.sample
+@exec [ -f %B/services.xml ] || cp %B/%f %B/services.xml
+%%G%%/data_dir/styles/pophatch.sld
+%%G%%/data_dir/styles/rain.sld
+%%G%%/data_dir/styles/Lakes.sld
+%%G%%/data_dir/styles/NamedPlaces.sld
+%%G%%/data_dir/styles/burg.sld
+%%G%%/data_dir/styles/burg02.svg
+%%G%%/data_dir/styles/capitals.sld
+%%G%%/data_dir/styles/default_line.sld
+%%G%%/data_dir/styles/default_line2.sld
+%%G%%/data_dir/styles/default_point.sld
+%%G%%/data_dir/styles/default_polygon.sld
+%%G%%/data_dir/styles/dem.sld
+%%G%%/data_dir/styles/giant_polygon.sld
+%%G%%/data_dir/styles/grass_fill.png
+%%G%%/data_dir/styles/grass_poly.sld
+%%G%%/data_dir/styles/green.sld
+%%G%%/data_dir/styles/poi.sld
+%%G%%/data_dir/styles/poly_landmarks.sld
+%%G%%/data_dir/styles/popshade.sld
+%%G%%/data_dir/styles/raster.sld
+%%G%%/data_dir/styles/restricted.sld
+%%G%%/data_dir/styles/simpleRoads.sld
+%%G%%/data_dir/styles/simple_streams.sld
+%%G%%/data_dir/styles/tiger_roads.sld
+%%G%%/data_dir/user_projections/epsg.properties.sample
+@exec [ -f %B/epsg.properties ] || cp %B/%f %B/epsg.properties
+%%G%%/data_dir/validation/FeatureCheck.xml.sample
+@exec [ -f %B/FeatureCheck.xml ] || cp %B/%f %B/FeatureCheck.xml
+%%G%%/data_dir/validation/IntegrityCheck.xml.sample
+@exec [ -f %B/IntegrityCheck.xml ] || cp %B/%f %B/IntegrityCheck.xml
+%%G%%/data_dir/www/ol-demo.html
+%%G%%/data_dir/www/openlayers/OpenLayers.js
+%%G%%/data_dir/www/openlayers/img/cloud-popup-relative.png
+%%G%%/data_dir/www/openlayers/img/blank.gif
+%%G%%/data_dir/www/openlayers/img/close.gif
+%%G%%/data_dir/www/openlayers/img/drag-rectangle-off.png
+%%G%%/data_dir/www/openlayers/img/drag-rectangle-on.png
+%%G%%/data_dir/www/openlayers/img/east-mini.png
+%%G%%/data_dir/www/openlayers/img/layer-switcher-maximize.png
+%%G%%/data_dir/www/openlayers/img/layer-switcher-minimize.png
+%%G%%/data_dir/www/openlayers/img/marker-blue.png
+%%G%%/data_dir/www/openlayers/img/marker-gold.png
+%%G%%/data_dir/www/openlayers/img/marker-green.png
+%%G%%/data_dir/www/openlayers/img/marker.png
+%%G%%/data_dir/www/openlayers/img/measuring-stick-off.png
+%%G%%/data_dir/www/openlayers/img/measuring-stick-on.png
+%%G%%/data_dir/www/openlayers/img/north-mini.png
+%%G%%/data_dir/www/openlayers/img/panning-hand-off.png
+%%G%%/data_dir/www/openlayers/img/panning-hand-on.png
+%%G%%/data_dir/www/openlayers/img/slider.png
+%%G%%/data_dir/www/openlayers/img/south-mini.png
+%%G%%/data_dir/www/openlayers/img/west-mini.png
+%%G%%/data_dir/www/openlayers/img/zoom-minus-mini.png
+%%G%%/data_dir/www/openlayers/img/zoom-plus-mini.png
+%%G%%/data_dir/www/openlayers/img/zoom-world-mini.png
+%%G%%/data_dir/www/openlayers/img/zoombar.png
+%%G%%/data_dir/www/openlayers/readme.txt
+%%G%%/data_dir/www/openlayers/theme/default/img/blank.gif
+%%G%%/data_dir/www/openlayers/theme/default/img/close.gif
+%%G%%/data_dir/www/openlayers/theme/default/img/editing_tool_bar.png
+%%G%%/data_dir/www/openlayers/theme/default/img/overview_replacement.gif
+%%G%%/data_dir/www/openlayers/theme/default/img/view_next_off.png
+%%G%%/data_dir/www/openlayers/theme/default/img/view_next_on.png
+%%G%%/data_dir/www/openlayers/theme/default/img/view_previous_off.png
+%%G%%/data_dir/www/openlayers/theme/default/img/view_previous_on.png
+%%G%%/data_dir/www/openlayers/theme/default/img/add_point_off.png
+%%G%%/data_dir/www/openlayers/theme/default/img/add_point_on.png
+%%G%%/data_dir/www/openlayers/theme/default/img/drag-rectangle-off.png
+%%G%%/data_dir/www/openlayers/theme/default/img/drag-rectangle-on.png
+%%G%%/data_dir/www/openlayers/theme/default/img/draw_line_off.png
+%%G%%/data_dir/www/openlayers/theme/default/img/draw_line_on.png
+%%G%%/data_dir/www/openlayers/theme/default/img/draw_point_off.png
+%%G%%/data_dir/www/openlayers/theme/default/img/draw_point_on.png
+%%G%%/data_dir/www/openlayers/theme/default/img/draw_polygon_off.png
+%%G%%/data_dir/www/openlayers/theme/default/img/draw_polygon_on.png
+%%G%%/data_dir/www/openlayers/theme/default/img/move_feature_off.png
+%%G%%/data_dir/www/openlayers/theme/default/img/move_feature_on.png
+%%G%%/data_dir/www/openlayers/theme/default/img/pan_off.png
+%%G%%/data_dir/www/openlayers/theme/default/img/pan_on.png
+%%G%%/data_dir/www/openlayers/theme/default/img/panning-hand-off.png
+%%G%%/data_dir/www/openlayers/theme/default/img/panning-hand-on.png
+%%G%%/data_dir/www/openlayers/theme/default/img/remove_point_off.png
+%%G%%/data_dir/www/openlayers/theme/default/img/remove_point_on.png
+%%G%%/data_dir/www/openlayers/theme/default/style.css
+%%G%%/data_dir/www/openlayers/theme/default/framedCloud.css
+%%G%%/data_dir/www/openlayers/ol-demo.cfg
+%%G%%/data_dir/www/styles/green.sld
+%%G%%/data_dir/www/styles/remoteOws.sld
+%%G%%/data_dir/www/styles/remoteTasmania.sld
+%%G%%/data_dir/www/wfs-t.html
+%%G%%/etc/jdbcRealm.properties.sample
+@exec [ -f %B/jdbcRealm.properties ] || cp %B/%f %B/jdbcRealm.properties
+%%G%%/etc/jetty-jmx-platform.xml.sample
+@exec [ -f %B/jetty-jmx-platform.xml ] || cp %B/%f %B/jetty-jmx-platform.xml
+%%G%%/etc/jetty-jmx.xml.sample
+@exec [ -f %B/jetty-jmx.xml ] || cp %B/%f %B/jetty-jmx.xml
+%%G%%/etc/jetty-plus.xml.sample
+@exec [ -f %B/jetty-plus.xml ] || cp %B/%f %B/jetty-plus.xml
+%%G%%/etc/jetty-ssl.xml.sample
+@exec [ -f %B/jetty-ssl.xml ] || cp %B/%f %B/jetty-ssl.xml
+%%G%%/etc/jetty.xml.sample
+@exec [ -f %B/jetty.xml ] || cp %B/%f %B/jetty.xml
+%%G%%/etc/keystore.sample
+@exec [ -f %B/keystore ] || cp %B/%f %B/keystore
+%%G%%/etc/realm.properties.sample
+@exec [ -f %B/realm.properties ] || cp %B/%f %B/realm.properties
+%%G%%/etc/stresstest.xml.sample
+@exec [ -f %B/stresstest.xml ] || cp %B/%f %B/stresstest.xml
+%%G%%/etc/webdefault.xml.sample
+@exec [ -f %B/webdefault.xml ] || cp %B/%f %B/webdefault.xml
+%%G%%/lib/jetty-6.1.8.jar
+%%G%%/lib/jetty-util-6.1.8.jar
+%%G%%/lib/servlet-api-2.5-6.1.8.jar
+%%G%%/lib/ant-1.6.4.jar
+%%G%%/lib/ant-optional-1.5.1.jar
+%%G%%/lib/commons-el-1.0.jar
+%%G%%/lib/commons-logging-1.0.jar
+%%G%%/lib/jasper-compiler-5.5.15.jar
+%%G%%/lib/jasper-compiler-jdt-5.5.15.jar
+%%G%%/lib/jasper-runtime-5.5.15.jar
+%%G%%/lib/jsp-api-2.0.jar
+%%G%%/lib/log4j-1.2.14.jar
+%%G%%/lib/slf4j-simple-1.0.1.jar
+%%G%%/lib/xercesImpl-2.6.2.jar
+%%G%%/lib/xmlParserAPIs-2.6.2.jar
+%%G%%/logs/keepme.txt
+%%G%%/resources/log4j.properties.sample
+@exec [ -f %B/log4j.properties ] || cp %B/%f %B/log4j.properties
+%%G%%/start.jar
+%%G%%/webapps/geoserver/WEB-INF/action-servlet.xml.sample
+@exec [ -f %B/action-servlet.xml ] || cp %B/%f %B/action-servlet.xml
+%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources.properties.sample
+@exec [ -f %B/ApplicationResources.properties ] || cp %B/%f %B/ApplicationResources.properties
+%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_de.properties.sample
+@exec [ -f %B/ApplicationResources_de.properties ] || cp %B/%f %B/ApplicationResources_de.properties
+%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_es.properties.sample
+@exec [ -f %B/ApplicationResources_es.properties ] || cp %B/%f %B/ApplicationResources_es.properties
+%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_fr.properties.sample
+@exec [ -f %B/ApplicationResources_fr.properties ] || cp %B/%f %B/ApplicationResources_fr.properties
+%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_ja.properties.sample
+@exec [ -f %B/ApplicationResources_ja.properties ] || cp %B/%f %B/ApplicationResources_ja.properties
+%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_pt_BR.properties.sample
+@exec [ -f %B/ApplicationResources_pt_BR.properties ] || cp %B/%f %B/ApplicationResources_pt_BR.properties
+%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_zh_CN.properties.sample
+@exec [ -f %B/ApplicationResources_zh_CN.properties ] || cp %B/%f %B/ApplicationResources_zh_CN.properties
+%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_nl.properties.sample
+@exec [ -f %B/ApplicationResources_nl.properties ] || cp %B/%f %B/ApplicationResources_nl.properties
+%%G%%/webapps/geoserver/WEB-INF/classes/ApplicationResources_ru.properties.sample
+@exec [ -f %B/ApplicationResources_ru.properties ] || cp %B/%f %B/ApplicationResources_ru.properties
+%%G%%/webapps/geoserver/WEB-INF/classes/applicationContext.xml.sample
+@exec [ -f %B/applicationContext.xml ] || cp %B/%f %B/applicationContext.xml
+%%G%%/webapps/geoserver/WEB-INF/classes/applicationSecurityContext.xml.sample
+@exec [ -f %B/applicationSecurityContext.xml ] || cp %B/%f %B/applicationSecurityContext.xml
+%%G%%/webapps/geoserver/WEB-INF/classes/org/geoserver/GeoserverInitStartupListener.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/AlternativesResponseStream.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/BufferedRequestStream.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/BufferedRequestWrapper$IteratorAsEnumeration.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/BufferedRequestWrapper.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/GZIPFilter.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/GZIPResponseStream.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/GZIPResponseWrapper.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/LoggingFilter.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/ReverseProxyFilter$1.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/ReverseProxyFilter$CacheingResponseWrapper$DeferredCacheingOutputStream.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/ReverseProxyFilter.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/geoserver/filters/ReverseProxyFilter$CacheingResponseWrapper.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/geoserver/logging/LoggingStartupContextListener.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/AdminIndexAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/ConfigAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/ConfigIndexAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/DemoRequestAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/FreeJAIMemoryAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/FreeLocksAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/FreeMemoryAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/GeoServerAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/HTMLEncoder.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/LoadXMLAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/LoginAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/LoginEditAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/LogoutAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/MapPreviewAction$1.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/MapPreviewAction$CoverageInfoNameComparator.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/MapPreviewAction$FeatureTypeInfoNameComparator.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/MapPreviewAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/SaveXMLAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/SrsHelpAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/UpdateGSAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/CalculateBoundingBoxAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/CoverageStoresEditorAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/CoverageStoresNewAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/CoverageStoresSelectAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/CoveragesEditorAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataCoveragesNewAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataCoveragesSelectAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataDataStoresEditorAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataDataStoresNewAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataDataStoresSelectAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataFeatureTypesNewAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataFeatureTypesSelectAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataNamespacesEditorAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataNamespacesNewAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/DataNamespacesSelectAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/SLDWizardAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/StylesEditorAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/StylesNewAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/StylesSelectAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/TypesEditorAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data/package.html
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/global/GeoServerConfigurationSubmit.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/validation/TestValidationResults.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/validation/ValidationRunnable.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/validation/ValidationTestDoIt.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/validation/ValidationTestEditorAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/validation/ValidationTestNewAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/validation/ValidationTestSelectAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/validation/ValidationTestSuiteNewAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/validation/ValidationTestSuiteSelectAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wcs/WCSContentAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wcs/WCSDescriptionAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wcs/package.html
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wfs/WFSContentAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wfs/WFSDescriptionAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wfs/package.html
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wms/WMSContentAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wms/WMSDescriptionAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wms/WMSRenderingAction.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wms/package.html
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/config/web/MultipleActionServlet.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/config/web/tiles/MultipleDelegatingTilesRequestProcessor.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/config/web/tiles/definition/MultipleDefinitionsFactory.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/config/web/tiles/taglib/ExtResInsertTag.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/DemoForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/DemoRequestForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/LoginForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/AttributeDisplay.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/AttributeForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/CoverageStoresEditorForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/CoverageStoresNewForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/CoverageStoresSelectForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/CoveragesEditorForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataCoveragesNewForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataCoveragesSelectForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataDataStoresEditorForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataDataStoresNewForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataDataStoresSelectForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataFeatureTypesEditorForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataFeatureTypesNewForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataFeatureTypesSelectForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataNamespacesEditorForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataNamespacesNewForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/DataNamespacesSelectForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/FormUtils.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/SLDWizardForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/StylesEditorForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/StylesNewForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/StylesSelectForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/TypesEditorForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data/package.html
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/global/GeoServerConfigurationForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/package.html
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/validation/ValidationTestEditorForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/validation/ValidationTestNewForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/validation/ValidationTestSelectForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/validation/ValidationTestSuiteNewForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/validation/ValidationTestSuiteSelectForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wcs/DataCoveragePluginsForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wcs/WCSContentForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wcs/WCSDescriptionForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wcs/package.html
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wfs/WFSContentForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wfs/WFSDescriptionForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wfs/package.html
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wms/WMSContentForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wms/WMSDescriptionForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wms/WMSRenderingForm.class
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wms/package.html
+%%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/global/ApplicationState.class
+%%G%%/webapps/geoserver/WEB-INF/dispatcher-servlet.xml.sample
+@exec [ -f %B/dispatcher-servlet.xml ] || cp %B/%f %B/dispatcher-servlet.xml
+%%G%%/webapps/geoserver/WEB-INF/jetty-web.xml.sample
+@exec [ -f %B/jetty-web.xml ] || cp %B/%f %B/jetty-web.xml
+%%G%%/webapps/geoserver/WEB-INF/jsp/include.jsp
+%%G%%/webapps/geoserver/WEB-INF/lib/activation-1.1.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/cglib-nodep-2.1_3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/com.noelios.restlet-1.0.8.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/com.noelios.restlet.ext.servlet-1.0.8.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/com.noelios.restlet.ext.simple-1.0.8.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/commons-fileupload-1.2.1.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/commons-io-1.3.2.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/commons-logging-1.1.1.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/data-1.7.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/easymock-2.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/easymockclassextension-2.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/ezmorph-1.0.6.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/freemarker-2.3.13.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/geoapi-2.2-M1.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/geowebcache-1.1.0.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-api-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-arcgrid-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-coverage-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-cql-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-data-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-epsg-hsql-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-geotiff-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-graph-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-gtopo30-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-image-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-imagemosaic-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-jdbc-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-main-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-metadata-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-postgis-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-directory-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-referencing-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-render-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/jts-1.9.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-shapefile-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-shapefile-renderer-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-validation-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-wfs-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-wms-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-xml-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-xsd-core-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-xsd-filter-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-xsd-gml2-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-xsd-gml3-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-xsd-ows-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gt-xsd-wfs-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/gwc-1.7.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/h2-1.1.104.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/imageio-ext-arcgrid-1.0.1.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/imageio-ext-customstreams-1.0.1.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/imageio-ext-tiff-1.0.1.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/jettison-1.0.1.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/json-lib-2.2.3-jdk15.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/jsr-275-1.0-beta-2.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/jstl-1.0.6.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/mail-1.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/main-1.7.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/net.opengis.ows-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/net.opengis.wcs-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/net.opengis.wfs-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/org.json-2.0.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/org.restlet-1.0.8.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/org.restlet.ext.freemarker-1.0.8.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/org.restlet.ext.json-1.0.1.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/org.restlet.ext.spring-1.0.8.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/org.simpleframework-3.1.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/org.w3.xlink-2.5.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/ows-1.7.3-tests.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/ows-1.7.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/platform-1.7.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/rest-1.7.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/spring-aop-2.5.5.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/spring-beans-2.5.5.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/spring-context-2.5.5.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/spring-context-support-2.5.5.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/spring-core-2.5.5.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/spring-jdbc-2.5.5.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/spring-tx-2.5.5.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/spring-web-2.5.5.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/spring-webmvc-2.5.5.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/spring-webmvc-struts-2.5.5.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/stax-api-1.0.1.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/validation-1.7.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/wcs-1.7.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/wcs1_1-1.7.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/wfs-1.7.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/wfs11-1.7.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/wms-1.7.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/xpp3_min-1.1.4c.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/xstream-1.3.1.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/acegi-security-1.0.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/ant-optional-1.5.1.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/antlr-2.7.2.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/aopalliance-1.0.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/batik-awt-util-1.6.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/batik-bridge-1.6.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/batik-css-1.6.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/batik-dom-1.6.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/batik-ext-1.6.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/batik-gvt-1.6.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/batik-parser-1.6.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/batik-script-1.6.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/batik-svg-dom-1.6.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/batik-svggen-1.6.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/batik-transcoder-1.6.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/batik-util-1.6.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/batik-xml-1.6.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/common-2.2.1.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/commons-beanutils-1.7.0.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/commons-codec-1.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/commons-collections-3.1.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/commons-dbcp-1.2.2.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/commons-digester-1.7.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/commons-httpclient-2.0.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/commons-jxpath-1.2.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/commons-lang-2.1.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/commons-pool-1.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/commons-validator-1.1.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/ecore-2.2.2.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/hsqldb-1.8.0.7.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/itext-2.0.6.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/jai_codec-1.1.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/jai_core-1.1.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/jai_imageio-1.1.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/jdom-1.0.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/log4j-1.2.14.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/lucene-1.4.3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/oro-2.0.8.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/picocontainer-1.2.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/postgis-driver-1.0.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/postgresql-8.1-407.jdbc3.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/standard-1.0.6.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/struts-1.2.9.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/vecmath-1.3.1.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/velocity-1.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/velocity-dep-1.4.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/xalan-2.7.0.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/xercesImpl-2.4.0.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/xml-apis-1.0.b2.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/xml-apis-xerces-2.7.1.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/xpp3-1.1.3.4.O.jar
+%%G%%/webapps/geoserver/WEB-INF/lib/xsd-2.2.2.jar
+%%G%%/webapps/geoserver/WEB-INF/org.openplans.geoserver-servlet.xml.sample
+@exec [ -f %B/org.openplans.geoserver-servlet.xml ] || cp %B/%f %B/org.openplans.geoserver-servlet.xml
+%%G%%/webapps/geoserver/WEB-INF/pages/Administration.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/Configuration.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/ContactInformation.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/Demo.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/GeoServerConfiguration.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/Login.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/SLDWizard.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/SystemConfigMenu.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/Welcome.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/actionator.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/blank.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/configActions.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/DataConfigDataStoresEditor.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/DataConfigDataStoresNew.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/DataConfigDataStoresSelect.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/DataConfigFormatsEditor.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/DataConfigFormatsNew.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/DataConfigFormatsSelect.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/DataConfigStyles.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/DataMenu.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/coverages/Editor.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/coverages/New.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/coverages/Select.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/featureTypes/Editor.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/featureTypes/New.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/featureTypes/Select.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/featureTypes/attributeTypes/Editor.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/featureTypes/attributeTypes/New.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/featureTypes/attributeTypes/Select.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/featureTypes/featureTypeActions.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/namespaces/Editor.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/namespaces/New.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/namespaces/Select.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/status.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/styles/Editor.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/styles/New.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/data/styles/Select.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/demoRequest.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/editAreaXml.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/errors/Exception.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/layouts/featureTypesLayout.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/layouts/mainLayout.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/locator.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/loginEditor.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/mainPreviewData.html
+%%G%%/webapps/geoserver/WEB-INF/pages/mapPreview.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/menuator.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/messages.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/schemaErrors.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/srsList.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/status.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/styleClassic.css
+%%G%%/webapps/geoserver/WEB-INF/pages/styleNew.css
+%%G%%/webapps/geoserver/WEB-INF/pages/validation/SelectTest.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/validation/SelectTestSuite.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/validation/TestEditor.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/validation/displayResults.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/wcs/DataConfigCoveragePlugins.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/wcs/WCSConfigContent.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/wcs/WCSConfigDescription.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/wcs/WCSConfigMenu.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/wcs/serviceName.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/wcs/status.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/wfs/WFSConfigContent.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/wfs/WFSConfigDescription.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/wfs/WFSConfigMenu.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/wfs/serviceName.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/wfs/status.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/wms/WMSConfigContent.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/wms/WMSConfigDescription.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/wms/WMSConfigMenu.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/wms/WMSConfigRendering.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/wms/serviceName.jsp
+%%G%%/webapps/geoserver/WEB-INF/pages/wms/status.jsp
+%%G%%/webapps/geoserver/WEB-INF/struts-bean.tld
+%%G%%/webapps/geoserver/WEB-INF/struts-config.xml.sample
+@exec [ -f %B/struts-config.xml ] || cp %B/%f %B/struts-config.xml
+%%G%%/webapps/geoserver/WEB-INF/struts-html.tld
+%%G%%/webapps/geoserver/WEB-INF/struts-logic.tld
+%%G%%/webapps/geoserver/WEB-INF/struts-nested.tld
+%%G%%/webapps/geoserver/WEB-INF/struts-template.tld
+%%G%%/webapps/geoserver/WEB-INF/struts-tiles.tld
+%%G%%/webapps/geoserver/WEB-INF/tiles-defs.xml.sample
+@exec [ -f %B/tiles-defs.xml ] || cp %B/%f %B/tiles-defs.xml
+%%G%%/webapps/geoserver/WEB-INF/tld/spring.tld
+%%G%%/webapps/geoserver/WEB-INF/validation.xml.sample
+@exec [ -f %B/validation.xml ] || cp %B/%f %B/validation.xml
+%%G%%/webapps/geoserver/WEB-INF/validator-rules.xml.sample
+@exec [ -f %B/validator-rules.xml ] || cp %B/%f %B/validator-rules.xml
+%%G%%/webapps/geoserver/WEB-INF/web.xml.sample
+@exec [ -f %B/web.xml ] || cp %B/%f %B/web.xml
+%%G%%/webapps/geoserver/editarea/edit_area_full.js
+%%G%%/webapps/geoserver/editarea/images/close.gif
+%%G%%/webapps/geoserver/editarea/images/fullscreen.gif
+%%G%%/webapps/geoserver/editarea/images/go_to_line.gif
+%%G%%/webapps/geoserver/editarea/images/help.gif
+%%G%%/webapps/geoserver/editarea/images/highlight.gif
+%%G%%/webapps/geoserver/editarea/images/load.gif
+%%G%%/webapps/geoserver/editarea/images/move.gif
+%%G%%/webapps/geoserver/editarea/images/newdocument.gif
+%%G%%/webapps/geoserver/editarea/images/opacity.png
+%%G%%/webapps/geoserver/editarea/images/processing.gif
+%%G%%/webapps/geoserver/editarea/images/redo.gif
+%%G%%/webapps/geoserver/editarea/images/reset_highlight.gif
+%%G%%/webapps/geoserver/editarea/images/save.gif
+%%G%%/webapps/geoserver/editarea/images/search.gif
+%%G%%/webapps/geoserver/editarea/images/smooth_selection.gif
+%%G%%/webapps/geoserver/editarea/images/spacer.gif
+%%G%%/webapps/geoserver/editarea/images/statusbar_resize.gif
+%%G%%/webapps/geoserver/editarea/images/undo.gif
+%%G%%/webapps/geoserver/editarea/langs/de.js
+%%G%%/webapps/geoserver/editarea/langs/dk.js
+%%G%%/webapps/geoserver/editarea/langs/en.js
+%%G%%/webapps/geoserver/editarea/langs/fr.js
+%%G%%/webapps/geoserver/editarea/langs/hr.js
+%%G%%/webapps/geoserver/editarea/langs/it.js
+%%G%%/webapps/geoserver/editarea/langs/ja.js
+%%G%%/webapps/geoserver/editarea/langs/nl.js
+%%G%%/webapps/geoserver/editarea/langs/pl.js
+%%G%%/webapps/geoserver/editarea/langs/pt.js
+%%G%%/webapps/geoserver/editarea/readme.txt
+%%G%%/webapps/geoserver/editarea/reg_syntax/basic.js
+%%G%%/webapps/geoserver/editarea/reg_syntax/brainfuck.js
+%%G%%/webapps/geoserver/editarea/reg_syntax/c.js
+%%G%%/webapps/geoserver/editarea/reg_syntax/cpp.js
+%%G%%/webapps/geoserver/editarea/reg_syntax/css.js
+%%G%%/webapps/geoserver/editarea/reg_syntax/html.js
+%%G%%/webapps/geoserver/editarea/reg_syntax/js.js
+%%G%%/webapps/geoserver/editarea/reg_syntax/pas.js
+%%G%%/webapps/geoserver/editarea/reg_syntax/php.js
+%%G%%/webapps/geoserver/editarea/reg_syntax/python.js
+%%G%%/webapps/geoserver/editarea/reg_syntax/vb.js
+%%G%%/webapps/geoserver/editarea/reg_syntax/xml.js
+%%G%%/webapps/geoserver/gmaps/gmaps.html
+%%G%%/webapps/geoserver/gmaps/wms-gs.js
+%%G%%/webapps/geoserver/icon-line.png
+%%G%%/webapps/geoserver/icon-poly.png
+%%G%%/webapps/geoserver/icon.png
+%%G%%/webapps/geoserver/index.jsp
+%%G%%/webapps/geoserver/images/colorpicker.jpg
+%%G%%/webapps/geoserver/images/delete.png
+%%G%%/webapps/geoserver/images/deleteRed.png
+%%G%%/webapps/geoserver/images/down.png
+%%G%%/webapps/geoserver/images/feed.png
+%%G%%/webapps/geoserver/images/gs.gif
+%%G%%/webapps/geoserver/images/gs.ico
+%%G%%/webapps/geoserver/images/kml-16x16.png
+%%G%%/webapps/geoserver/images/logo.png
+%%G%%/webapps/geoserver/images/page_white.png
+%%G%%/webapps/geoserver/images/page_white_acrobat.png
+%%G%%/webapps/geoserver/images/page_white_text.png
+%%G%%/webapps/geoserver/images/page_white_vector.png
+%%G%%/webapps/geoserver/images/page_white_zip.png
+%%G%%/webapps/geoserver/images/powered-by-geoserver-100x30.png
+%%G%%/webapps/geoserver/images/up.png
+%%G%%/webapps/geoserver/openlayers/OpenLayers.js
+%%G%%/webapps/geoserver/openlayers/img/cancel.png
+%%G%%/webapps/geoserver/openlayers/img/options.png
+%%G%%/webapps/geoserver/openlayers/img/blank.gif
+%%G%%/webapps/geoserver/openlayers/img/close.gif
+%%G%%/webapps/geoserver/openlayers/img/drag-rectangle-off.png
+%%G%%/webapps/geoserver/openlayers/img/drag-rectangle-on.png
+%%G%%/webapps/geoserver/openlayers/img/east-mini.png
+%%G%%/webapps/geoserver/openlayers/img/layer-switcher-maximize.png
+%%G%%/webapps/geoserver/openlayers/img/layer-switcher-minimize.png
+%%G%%/webapps/geoserver/openlayers/img/marker-blue.png
+%%G%%/webapps/geoserver/openlayers/img/marker-gold.png
+%%G%%/webapps/geoserver/openlayers/img/marker-green.png
+%%G%%/webapps/geoserver/openlayers/img/marker.png
+%%G%%/webapps/geoserver/openlayers/img/measuring-stick-off.png
+%%G%%/webapps/geoserver/openlayers/img/measuring-stick-on.png
+%%G%%/webapps/geoserver/openlayers/img/north-mini.png
+%%G%%/webapps/geoserver/openlayers/img/panning-hand-off.png
+%%G%%/webapps/geoserver/openlayers/img/panning-hand-on.png
+%%G%%/webapps/geoserver/openlayers/img/slider.png
+%%G%%/webapps/geoserver/openlayers/img/south-mini.png
+%%G%%/webapps/geoserver/openlayers/img/west-mini.png
+%%G%%/webapps/geoserver/openlayers/img/zoom-minus-mini.png
+%%G%%/webapps/geoserver/openlayers/img/zoom-plus-mini.png
+%%G%%/webapps/geoserver/openlayers/img/zoom-world-mini.png
+%%G%%/webapps/geoserver/openlayers/img/zoombar.png
+%%G%%/webapps/geoserver/openlayers/readme.txt
+%%G%%/webapps/geoserver/openlayers/theme/default/img/add_point_off.png
+%%G%%/webapps/geoserver/openlayers/theme/default/img/add_point_on.png
+%%G%%/webapps/geoserver/openlayers/theme/default/img/drag-rectangle-off.png
+%%G%%/webapps/geoserver/openlayers/theme/default/img/drag-rectangle-on.png
+%%G%%/webapps/geoserver/openlayers/theme/default/img/draw_line_off.png
+%%G%%/webapps/geoserver/openlayers/theme/default/img/draw_line_on.png
+%%G%%/webapps/geoserver/openlayers/theme/default/img/draw_point_off.png
+%%G%%/webapps/geoserver/openlayers/theme/default/img/draw_point_on.png
+%%G%%/webapps/geoserver/openlayers/theme/default/img/draw_polygon_off.png
+%%G%%/webapps/geoserver/openlayers/theme/default/img/draw_polygon_on.png
+%%G%%/webapps/geoserver/openlayers/theme/default/img/move_feature_off.png
+%%G%%/webapps/geoserver/openlayers/theme/default/img/move_feature_on.png
+%%G%%/webapps/geoserver/openlayers/theme/default/img/pan_off.png
+%%G%%/webapps/geoserver/openlayers/theme/default/img/pan_on.png
+%%G%%/webapps/geoserver/openlayers/theme/default/img/panning-hand-off.png
+%%G%%/webapps/geoserver/openlayers/theme/default/img/panning-hand-on.png
+%%G%%/webapps/geoserver/openlayers/theme/default/img/remove_point_off.png
+%%G%%/webapps/geoserver/openlayers/theme/default/img/remove_point_on.png
+%%G%%/webapps/geoserver/openlayers/theme/default/style.css
+%%G%%/webapps/geoserver/openlayers/wms.cfg
+%%G%%/webapps/geoserver/popup_map/add_feature.html
+%%G%%/webapps/geoserver/popup_map/index.html
+%%G%%/webapps/geoserver/popup_map/original.png
+%%G%%/webapps/geoserver/popup_map/pics/22037827-L.jpg
+%%G%%/webapps/geoserver/popup_map/pics/22037827-Ti.jpg
+%%G%%/webapps/geoserver/popup_map/pics/22037829-L.jpg
+%%G%%/webapps/geoserver/popup_map/pics/22037829-Ti.jpg
+%%G%%/webapps/geoserver/popup_map/pics/22037839-L.jpg
+%%G%%/webapps/geoserver/popup_map/pics/22037839-Ti.jpg
+%%G%%/webapps/geoserver/popup_map/pics/22037856-L.jpg
+%%G%%/webapps/geoserver/popup_map/pics/22037856-Ti.jpg
+%%G%%/webapps/geoserver/popup_map/pics/22037884-L.jpg
+%%G%%/webapps/geoserver/popup_map/pics/22037884-Ti.jpg
+%%G%%/webapps/geoserver/popup_map/pics/28640984-L.jpg
+%%G%%/webapps/geoserver/popup_map/pics/28640984-Ti.jpg
+%%G%%/webapps/geoserver/popup_map/styles/giant_polygon.sld
+%%G%%/webapps/geoserver/popup_map/styles/poi.sld
+%%G%%/webapps/geoserver/popup_map/styles/poly_landmarks.sld
+%%G%%/webapps/geoserver/popup_map/styles/readme.txt
+%%G%%/webapps/geoserver/popup_map/styles/tiger_roads.sld
+%%G%%/webapps/geoserver/rss/gmaps.html
+%%G%%/webapps/geoserver/rss/ve.html
+%%G%%/webapps/geoserver/rss/ymaps.html
+%%G%%/webapps/geoserver/schemas/filter/1.0.0/expr.xsd
+%%G%%/webapps/geoserver/schemas/filter/1.0.0/filter.xsd
+%%G%%/webapps/geoserver/schemas/filter/1.0.0/filterCapabilities.xsd
+%%G%%/webapps/geoserver/schemas/filter/1.1.0/expr.xsd
+%%G%%/webapps/geoserver/schemas/filter/1.1.0/filter.xsd
+%%G%%/webapps/geoserver/schemas/filter/1.1.0/filterCapabilities.xsd
+%%G%%/webapps/geoserver/schemas/filter/1.1.0/sort.xsd
+%%G%%/webapps/geoserver/schemas/gml/2.1.2.1/ReadMe.txt
+%%G%%/webapps/geoserver/schemas/gml/2.1.2.1/feature.xsd
+%%G%%/webapps/geoserver/schemas/gml/2.1.2.1/geometry.xsd
+%%G%%/webapps/geoserver/schemas/gml/2.1.2.1/xlinks.xsd
+%%G%%/webapps/geoserver/schemas/gml/2.1.2/feature.xsd
+%%G%%/webapps/geoserver/schemas/gml/2.1.2/geometry.xsd
+%%G%%/webapps/geoserver/schemas/gml/2.1.2/xlinks.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/ReadMe.txt
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/basicTypes.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/coordinateOperations.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/coordinateReferenceSystems.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/coordinateSystems.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/coverage.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/dataQuality.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/datums.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/defaultStyle.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/dictionary.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/direction.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/dynamicFeature.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/feature.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/geometryAggregates.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/geometryBasic0d1d.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/geometryBasic2d.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/geometryComplexes.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/geometryPrimitives.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/gml.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/gmlBase.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/grids.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/measures.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/observation.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/referenceSystems.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/temporal.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/temporalReferenceSystems.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/temporalTopology.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/topology.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/units.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/base/valueObjects.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/readme.txt
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/smil/smil20-language.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/smil/smil20.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/smil/xml-mod.xsd
+%%G%%/webapps/geoserver/schemas/gml/3.1.1/xlink/xlinks.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.0.0/ReadMe.txt
+%%G%%/webapps/geoserver/schemas/ows/1.0.0/ows19115subset.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.0.0/owsAll.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.0.0/owsCommon.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.0.0/owsDataIdentification.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.0.0/owsExceptionReport.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.0.0/owsGetCapabilities.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.0.0/owsOperationsMetadata.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.0.0/owsServiceIdentification.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.0.0/owsServiceProvider.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.1.0/ows19115subset.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.1.0/owsAll.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.1.0/owsCommon.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.1.0/owsContents.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.1.0/owsDataIdentification.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.1.0/owsDomainType.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.1.0/owsExceptionReport.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.1.0/owsGetCapabilities.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.1.0/owsGetResourceByID.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.1.0/owsInputOutputData.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.1.0/owsManifest.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.1.0/owsOperationsMetadata.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.1.0/owsServiceIdentification.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.1.0/owsServiceProvider.xsd
+%%G%%/webapps/geoserver/schemas/ows/1.1.0/ReadMe.txt
+%%G%%/webapps/geoserver/schemas/ows/ReadMe.txt
+%%G%%/webapps/geoserver/schemas/sld/GetMap.xsd
+%%G%%/webapps/geoserver/schemas/sld/StyledLayerDescriptor.xsd
+%%G%%/webapps/geoserver/schemas/validate/pluginSchema.xsd
+%%G%%/webapps/geoserver/schemas/validate/testSuiteSchema.xsd
+%%G%%/webapps/geoserver/schemas/wcs/1.1.1/gml4wcs.xsd
+%%G%%/webapps/geoserver/schemas/wcs/1.1.1/interpolationMethods.xml.sample
+@exec [ -f %B/interpolationMethods.xml ] || cp %B/%f %B/interpolationMethods.xml
+%%G%%/webapps/geoserver/schemas/wcs/1.1.1/wcsAll.xsd
+%%G%%/webapps/geoserver/schemas/wcs/1.1.1/wcsCommon.xsd
+%%G%%/webapps/geoserver/schemas/wcs/1.1.1/wcsContents.xsd
+%%G%%/webapps/geoserver/schemas/wcs/1.1.1/wcsCoverages.xsd
+%%G%%/webapps/geoserver/schemas/wcs/1.1.1/wcsDescribeCoverage.xsd
+%%G%%/webapps/geoserver/schemas/wcs/1.1.1/wcsGetCapabilities.xsd
+%%G%%/webapps/geoserver/schemas/wcs/1.1.1/wcsGetCoverage.xsd
+%%G%%/webapps/geoserver/schemas/wcs/1.1.1/wcsGridCRS.xsd
+%%G%%/webapps/geoserver/schemas/wcs/1.1.1/wcsInterpolationMethod.xsd
+%%G%%/webapps/geoserver/schemas/wcs/1.0.0/OGC-exception.xsd
+%%G%%/webapps/geoserver/schemas/wcs/1.0.0/describeCoverage.xsd
+%%G%%/webapps/geoserver/schemas/wcs/1.0.0/getCoverage.xsd
+%%G%%/webapps/geoserver/schemas/wcs/1.0.0/gml4wcs.xsd
+%%G%%/webapps/geoserver/schemas/wcs/1.0.0/owsBase.xsd
+%%G%%/webapps/geoserver/schemas/wcs/1.0.0/values.xsd
+%%G%%/webapps/geoserver/schemas/wcs/1.0.0/wcsCapabilities.xsd
+%%G%%/webapps/geoserver/schemas/wfs/1.0.0/OGC-exception.xsd
+%%G%%/webapps/geoserver/schemas/wfs/1.0.0/WFS-basic.xsd
+%%G%%/webapps/geoserver/schemas/wfs/1.0.0/WFS-capabilities.xsd
+%%G%%/webapps/geoserver/schemas/wfs/1.0.0/WFS-transaction.xsd
+%%G%%/webapps/geoserver/schemas/wfs/1.0.0/WFS-versioning.xsd
+%%G%%/webapps/geoserver/schemas/wfs/1.1.0/wfs.xsd
+%%G%%/webapps/geoserver/schemas/wfs/1.1.0/wfsv.xsd
+%%G%%/webapps/geoserver/schemas/wms/1.1.1/OGC-exception.xsd
+%%G%%/webapps/geoserver/schemas/wms/1.1.1/WMS_DescribeLayerResponse.dtd
+%%G%%/webapps/geoserver/schemas/wms/1.1.1/WMS_MS_Capabilities.dtd
+%%G%%/webapps/geoserver/schemas/wms/1.1.1/WMS_exception_1_1_1.dtd
+%%G%%/webapps/geoserver/schemas/xlink/1.0.0/xlinks.xsd
+%%G%%/webapps/geoserver/style.css
+%%G%%/webapps/geoserver/options.png
+@dirrmtry %%G%%/webapps/geoserver/schemas/xlink/1.0.0
+@dirrmtry %%G%%/webapps/geoserver/schemas/xlink
+@dirrmtry %%G%%/webapps/geoserver/schemas/wms/1.1.1
+@dirrmtry %%G%%/webapps/geoserver/schemas/wms
+@dirrmtry %%G%%/webapps/geoserver/schemas/wfs/1.0.0
+@dirrmtry %%G%%/webapps/geoserver/schemas/wfs/1.1.0
+@dirrmtry %%G%%/webapps/geoserver/schemas/wfs
+@dirrmtry %%G%%/webapps/geoserver/schemas/wcs/1.0.0
+@dirrmtry %%G%%/webapps/geoserver/schemas/wcs/1.1.1
+@dirrmtry %%G%%/webapps/geoserver/schemas/wcs
+@dirrmtry %%G%%/webapps/geoserver/schemas/validate
+@dirrmtry %%G%%/webapps/geoserver/schemas/sld
+@dirrmtry %%G%%/webapps/geoserver/schemas/ows/1.0.0
+@dirrmtry %%G%%/webapps/geoserver/schemas/ows/1.1.0
+@dirrmtry %%G%%/webapps/geoserver/schemas/ows
+@dirrmtry %%G%%/webapps/geoserver/schemas/gml/3.1.1/xlink
+@dirrmtry %%G%%/webapps/geoserver/schemas/gml/3.1.1/smil
+@dirrmtry %%G%%/webapps/geoserver/schemas/gml/3.1.1/base
+@dirrmtry %%G%%/webapps/geoserver/schemas/gml/3.1.1
+@dirrmtry %%G%%/webapps/geoserver/schemas/gml/2.1.2
+@dirrmtry %%G%%/webapps/geoserver/schemas/gml/2.1.2.1
+@dirrmtry %%G%%/webapps/geoserver/schemas/gml
+@dirrmtry %%G%%/webapps/geoserver/schemas/filter/1.1.0
+@dirrmtry %%G%%/webapps/geoserver/schemas/filter/1.0.0
+@dirrmtry %%G%%/webapps/geoserver/schemas/filter
+@dirrmtry %%G%%/webapps/geoserver/schemas
+@dirrmtry %%G%%/webapps/geoserver/rss
+@dirrmtry %%G%%/webapps/geoserver/popup_map/styles
+@dirrmtry %%G%%/webapps/geoserver/popup_map/pics
+@dirrmtry %%G%%/webapps/geoserver/popup_map
+@dirrmtry %%G%%/webapps/geoserver/openlayers/theme/default/img
+@dirrmtry %%G%%/webapps/geoserver/openlayers/theme/default
+@dirrmtry %%G%%/webapps/geoserver/openlayers/theme
+@dirrmtry %%G%%/webapps/geoserver/openlayers/img
+@dirrmtry %%G%%/webapps/geoserver/openlayers
+@dirrmtry %%G%%/webapps/geoserver/gmaps
+@dirrmtry %%G%%/webapps/geoserver/editarea/reg_syntax
+@dirrmtry %%G%%/webapps/geoserver/editarea/langs
+@dirrmtry %%G%%/webapps/geoserver/editarea/images
+@dirrmtry %%G%%/webapps/geoserver/editarea
+@dirrmtry %%G%%/webapps/geoserver/images
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/pages/wms
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/pages/wfs
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/pages/wcs
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/pages/validation
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/pages/layouts
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/pages/errors
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/pages/data/featureTypes/attributeTypes
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/pages/data/featureTypes
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/pages/data/namespaces
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/pages/data/coverages
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/pages/data/styles
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/pages/data
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/pages
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/lib
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/jsp
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/tld
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/global
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wms
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wfs
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/wcs
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/validation
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/global
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form/data
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/form
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/config/web/tiles/definition
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/config/web/tiles/taglib
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/config/web/tiles
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/config/web
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/config
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wms
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wfs
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/wcs
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/validation
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/global
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action/data
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver/action
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny/geoserver
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/vfny
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/geoserver/logging
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/geoserver/filters
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org/geoserver
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes/org
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF/classes
+@dirrmtry %%G%%/webapps/geoserver/WEB-INF
+@dirrmtry %%G%%/webapps/geoserver
+@dirrmtry %%G%%/data_dir/www/styles
+@dirrmtry %%G%%/data_dir/www/openlayers/theme/default/img
+@dirrmtry %%G%%/data_dir/www/openlayers/theme/default
+@dirrmtry %%G%%/data_dir/www/openlayers/theme
+@dirrmtry %%G%%/data_dir/www/openlayers/img
+@dirrmtry %%G%%/data_dir/www/openlayers
+@dirrmtry %%G%%/data_dir/www
+@dirrmtry %%G%%/data_dir/validation
+@dirrmtry %%G%%/data_dir/user_projections
+@dirrmtry %%G%%/data_dir/styles
+@dirrmtry %%G%%/data_dir/security
+@dirrmtry %%G%%/data_dir/plugIns
+@dirrmtry %%G%%/data_dir/palettes
+@dirrmtry %%G%%/data_dir/featureTypes/tasmania_water_bodies
+@dirrmtry %%G%%/data_dir/featureTypes/tasmania_state_boundaries
+@dirrmtry %%G%%/data_dir/featureTypes/tasmania_roads
+@dirrmtry %%G%%/data_dir/featureTypes/tasmania_cities
+@dirrmtry %%G%%/data_dir/featureTypes/states
+@dirrmtry %%G%%/data_dir/featureTypes/sfStreams_streams
+@dirrmtry %%G%%/data_dir/featureTypes/sfRoads_roads
+@dirrmtry %%G%%/data_dir/featureTypes/sfRestricted_restricted
+@dirrmtry %%G%%/data_dir/featureTypes/sfBugsites_bugsites
+@dirrmtry %%G%%/data_dir/featureTypes/sfArchsites_archsites
+@dirrmtry %%G%%/data_dir/featureTypes/DS_tiger_roads_tiger_roads
+@dirrmtry %%G%%/data_dir/featureTypes/DS_poly_landmarks_poly_landmarks
+@dirrmtry %%G%%/data_dir/featureTypes/DS_poi_poi
+@dirrmtry %%G%%/data_dir/featureTypes/DS_giant_polygon_giant_polygon
+@dirrmtry %%G%%/data_dir/featureTypes
+@dirrmtry %%G%%/data_dir/demo
+@dirrmtry %%G%%/data_dir/data/taz_shapes
+@dirrmtry %%G%%/data_dir/data/shapefiles
+@dirrmtry %%G%%/data_dir/data/sf
+@dirrmtry %%G%%/data_dir/data/nyc
+@dirrmtry %%G%%/data_dir/data
+@dirrmtry %%G%%/data_dir/coverages/sfDem_dem
+@dirrmtry %%G%%/data_dir/coverages/mosaic_sample
+@dirrmtry %%G%%/data_dir/coverages/img_sample
+@dirrmtry %%G%%/data_dir/coverages/arc_sample
+@dirrmtry %%G%%/data_dir/coverages/arcGridSample_Arc_Sample
+@dirrmtry %%G%%/data_dir/coverages/img_sample2_Pk50095
+@dirrmtry %%G%%/data_dir/coverages/sfdem_sfdem
+@dirrmtry %%G%%/data_dir/coverages/worldImageSample_Img_Sample
+@dirrmtry %%G%%/data_dir/coverages
+@dirrmtry %%G%%/bin
+@dirrmtry %%G%%/resources
+@dirrmtry %%G%%/logs
+@dirrmtry %%G%%/lib
+@dirrmtry %%G%%/etc
+@dirrmtry %%G%%/data_dir
+@dirrmtry %%G%%/webapps
+@dirrmtry %%G%%
 @stopdaemon geoserver
-@unexec rm -rf %D/lib/geoserver 2> /dev/null || true

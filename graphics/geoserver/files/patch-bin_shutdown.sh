@@ -26,4 +26,4 @@
  
  cd "$GEOSERVER_HOME"
 -exec "$_RUNJAVA" -DSTOP.PORT=8079 -DSTOP.KEY=geoserver -jar start.jar --stop
-+exec java -DSTOP.PORT=8079 -DSTOP.KEY=geoserver -jar start.jar --stop
++exec %%JAVA%% -DSTOP.PORT=8079 -DSTOP.KEY=geoserver -jar start.jar --stop

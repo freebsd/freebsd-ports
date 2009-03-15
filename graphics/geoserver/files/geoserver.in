@@ -1,0 +1,42 @@
+#!/bin/sh
+# 
+# $FreeBSD$
+#
+# PROVIDE: geoserver
+# REQUIRE: NETWORKING
+#
+# Add the following line to /etc/rc.conf[.local] to enable geoserver
+#
+# geoserver_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable geoserver.
+
+
+. %%RC_SUBR%%
+
+name="geoserver"
+rcvar=${name}_enable
+
+load_rc_config ${name}
+
+: ${geoserver_enable="NO"}
+: ${geoserver_stdout_log="/var/log/geoserver_output.log"}
+: ${geoserver_stderr_log="/var/log/geoserver_error.log"}
+: ${geoserver_user="root"}
+: ${geoserver_chdir="%%GEOSERVERDIR%%"}
+
+java_args="-DGEOSERVER_DATA_DIR=%%GEOSERVERDIR%%/data_dir -Djava.awt.headless=true \
+		-DSTOP.PORT=8079 -DSTOP.KEY=geoserver -jar start.jar"
+log_args=">> ${geoserver_stdout_log} 2>> ${geoserver_stderr_log}"
+
+command="%%JAVA%%"
+command_args="${java_args} ${geoserver_flags} ${log_args} &"
+
+start_precmd=logs_touch
+
+logs_touch()
+{
+    touch $geoserver_stdout_log $geoserver_stderr_log
+    chown $geoserver_user $geoserver_stdout_log $geoserver_stderr_log
+}
+
+run_rc_command "$1"
