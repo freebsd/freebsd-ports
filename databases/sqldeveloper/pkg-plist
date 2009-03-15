@@ -193,6 +193,9 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/searchengines/searchoraclecom.png
 %%DATADIR%%/sqldeveloper/searchengines/searchoraclecom.src
 %%DATADIR%%/timingframework/TimingFramework.jar
+%%PORTDOCS%%%%DOCSDIR%%/relnotes.html
+%%PORTDOCS%%%%DOCSDIR%%/raptor_image.jpg
+%%PORTDOCS%%%%DOCSDIR%%/otn_new.css
 @dirrm %%DATADIR%%/timingframework
 @dirrm %%DATADIR%%/sqldeveloper/searchengines
 @dirrm %%DATADIR%%/sqldeveloper/lib
@@ -234,3 +237,4 @@ bin/sqldeveloper
 @dirrm %%DATADIR%%/BC4J/lib
 @dirrm %%DATADIR%%/BC4J
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

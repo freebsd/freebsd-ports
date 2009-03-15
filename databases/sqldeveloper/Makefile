@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	sqldeveloper
-PORTVERSION=	1.5.3.57.83
-PORTREVISION=	1
+PORTVERSION=	1.5.4.59.40
 DISTVERSIONSUFFIX=-no-jre
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technology/software/products/sql/index.html
-DISTNAME=	${PORTNAME}-5783${DISTVERSIONSUFFIX}
+DISTNAME= ${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 DIST_SUBDIR=	oracle
 
 MAINTAINER=	jjuanino@gmail.com
@@ -57,7 +56,7 @@ do-install:
 			  -e 's|%JAVA_HOME%|${JAVA_HOME}|' \
 	    ${WRKSRC}/sqldeveloper.sh \
 	    ${WRKSRC}/sqlcli
-	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
+	@${REINPLACE_CMD} -e 's|^#!/bin/bash$$|#!${LOCALBASE}/bin/bash|' \
 	    ${WRKSRC}/sqldeveloper.sh \
 	    ${WRKSRC}/sqlcli \
 	    ${WRKSRC}/ide/bin/launcher.sh \
@@ -87,6 +86,11 @@ do-install:
 	@${ECHO_MSG} -n ">> Installing icon ..."
 	@${INSTALL_DATA} ${WRKSRC}/icon.png ${DATADIR}/icon.png
 	@${ECHO_MSG} " [ DONE ]"
+
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_MAN} relnotes.html raptor_image.jpg otn_new.css ${DOCSDIR}
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
