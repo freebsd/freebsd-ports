@@ -1,0 +1,127 @@
+bin/wxperl_overload
+bin/wxperl_xspp
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/AUI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Api.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/App.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/ArtProvider.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Calendar.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/DND.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/DateTime.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/DocView.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/DropSource.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Event.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/FS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Grid.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Help.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Html.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Locale.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/MDI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Media.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Menu.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Mini.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Overload/Driver.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Overload/Handle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Perl/Carp.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Perl/SplashFast.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Perl/TextValidator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Print.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/RadioBox.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/RichText.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/STC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Socket.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Thread.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Timer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Wx_Exp.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XRC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/Driver.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/Grammar.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/Node.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/Parser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/Typemap.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/XSP.yp
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP/XSpp.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/MakeMaker.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/MakeMaker/Any_OS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/MakeMaker/Any_wx_config.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/MakeMaker/Core.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/MakeMaker/Hacks.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/MakeMaker/MacOSX_GCC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/MakeMaker/Win32.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/MakeMaker/Win32_MSVC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/MakeMaker/Win32_MinGW.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/Opt.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/Options.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/Utils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/cpp/chkconfig.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/cpp/compat.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/cpp/constants.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/cpp/e_cback.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/cpp/event.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/cpp/helpers.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/cpp/overload.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/cpp/setup.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/cpp/streams.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/cpp/v_cback.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/cpp/v_cback_def.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/cpp/wxapi.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/AUI/AUI.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/AUI/AUI.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Calendar/Calendar.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Calendar/Calendar.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/DND/DND.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/DND/DND.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/DateTime/DateTime.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/DateTime/DateTime.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/DocView/DocView.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/DocView/DocView.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/FS/FS.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/FS/FS.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Grid/Grid.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Grid/Grid.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Help/Help.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Help/Help.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Html/Html.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Html/Html.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/MDI/MDI.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/MDI/MDI.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Media/Media.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Media/Media.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Print/Print.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Print/Print.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/RichText/RichText.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/RichText/RichText.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/STC/STC.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/STC/STC.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Socket/Socket.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Socket/Socket.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Wx.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Wx.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/XRC/XRC.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/XRC/XRC.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/XRC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Socket
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/STC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/RichText
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Print
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Media
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/MDI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Html
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Help
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Grid
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/FS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/DocView
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/DateTime
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/DND
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/Calendar
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx/AUI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Wx
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Wx/cpp
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Wx/build/MakeMaker
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Wx/build
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Wx/XSP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Perl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Overload
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Wx
