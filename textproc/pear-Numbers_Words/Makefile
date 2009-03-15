@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Numbers_Words
-PORTVERSION=	0.15.0
+PORTVERSION=	0.16.0
 CATEGORIES=	textproc pear
 
 MAINTAINER=	meritus@innervision.pl
@@ -23,8 +23,13 @@ FILES=		Words.php Words/lang.bg.php Words/lang.cs.php \
 		Words/lang.id.php Words/lang.it_IT.php Words/lang.lt.php \
 		Words/lang.nl.php Words/lang.pl.php Words/lang.pt_BR.php \
 		Words/lang.ru.php Words/lang.sv.php
-TESTS=		clitest.php Numbers_Words_Polish_testcase.php \
-		Numbers_Words_Spanish_testcase.php test-numbers-words.php
+TESTS=		AllTests.php BulgarianTest.php \
+		English100Test.php EnglishGbTest.php \
+		EnglishUsTest.php FrenchBeTest.php \
+		FrenchTest.php GermanTest.php \
+		ItalianTest.php PolishTest.php \
+		PortugueseBrazilianTest.php SpanishTest.php \
+		test-numbers-words.php
 DOCS=		ChangeLog README
 _DOCSDIR=	.
 
