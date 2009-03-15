@@ -8,6 +8,7 @@
 
 PORTNAME=	tightvnc
 PORTVERSION=	1.3.10
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	vnc-tight
@@ -17,8 +18,9 @@ MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Enhanced version of VNC
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
-RUN_DEPENDS=	xorg-fonts>=7.2:${PORTSDIR}/x11-fonts/xorg-fonts \
-		xauth:${PORTSDIR}/x11/xauth
+RUN_DEPENDS=	showrgb:${PORTSDIR}/x11/rgb \
+		xauth:${PORTSDIR}/x11/xauth \
+		xorg-fonts>=7.2:${PORTSDIR}/x11-fonts/xorg-fonts
 
 CONFLICTS=	tridiavnc-[0-9]* vnc-[0-9]*
 
