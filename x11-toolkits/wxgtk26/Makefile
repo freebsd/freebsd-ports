@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	wx
-PORTVERSION=	2.6.3
-PORTREVISION?=	1
+PORTVERSION=	2.6.4
+PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/wxwindows
 PKGNAMESUFFIX=	${WXGTK_FLAVOR}
@@ -49,7 +49,6 @@ PLIST=		${.CURDIR}/pkg-plist
 WXGTK_FLAVOR?=	gtk2
 
 .if ${WXGTK_FLAVOR} == "gtk2"
-PORTREVISION=	5
 CONFLICTS=	wxgtk2-contrib-devel-2.5.2*
 .endif
 

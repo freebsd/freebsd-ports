@@ -1,30 +1,11 @@
---- wx-config.in.orig	Wed Mar 22 05:42:05 2006
-+++ wx-config.in	Tue Nov 28 23:49:30 2006
-@@ -25,15 +25,15 @@
- 
- if [ ~ = '~' ]
- then
--    if (bash -c echo) >/dev/null 2>&1
-+    if (/bin/sh -c echo) >/dev/null 2>&1
-     then
--        exec bash "$0" "$@"
-+        exec /bin/sh "$0" "$@"
-     fi
-     if (ksh -c echo) >/dev/null 2>&1
-     then
-         exec ksh "$0" "$@"
-     fi
--    echo "$0: this script requires bash or ksh"
-+    echo "$0: this script requires bourne shell or ksh"
-     exit 1
- fi
-  
-@@ -1143,7 +1143,7 @@
+--- wx-config.in.orig	2007-03-20 21:49:55.000000000 +0600
++++ wx-config.in	2009-03-15 14:05:53.000000000 +0600
+@@ -1129,7 +1129,7 @@
      _include_cppflags="-I${includedir} -I${prefix}/contrib/include"
  fi
  
--_cppflags=$(echo "-I${libdir}/wx/include/@TOOLCHAIN_FULLNAME@" $_include_cppflags "@WXDEBUG_DEFINE@" "@TOOLCHAIN_DEFS@" "@TOOLCHAIN_DLL_DEFS@" $_gui_cppflags "@WXCONFIG_INCLUDE@" "@WX_LARGEFILE_FLAGS@" "@GCC_PRAGMA_FLAGS@")  
-+_cppflags=$(echo "-I${includedir}/wx-@WX_RELEASE@/@TOOLCHAIN_FULLNAME@" $_include_cppflags "@WXDEBUG_DEFINE@" "@TOOLCHAIN_DEFS@" "@TOOLCHAIN_DLL_DEFS@" $_gui_cppflags "@WXCONFIG_INCLUDE@" "@WX_LARGEFILE_FLAGS@" "@GCC_PRAGMA_FLAGS@")  
+-_cppflags=`echo "-I${libdir}/wx/include/@TOOLCHAIN_FULLNAME@" $_include_cppflags "@WXDEBUG_DEFINE@" "@TOOLCHAIN_DEFS@" "@TOOLCHAIN_DLL_DEFS@" $_gui_cppflags "@WXCONFIG_INCLUDE@" "@WX_LARGEFILE_FLAGS@" "@GCC_PRAGMA_FLAGS@"`
++_cppflags=`echo "-I${includedir}/wx-@WX_RELEASE@/@TOOLCHAIN_FULLNAME@" $_include_cppflags "@WXDEBUG_DEFINE@" "@TOOLCHAIN_DEFS@" "@TOOLCHAIN_DLL_DEFS@" $_gui_cppflags "@WXCONFIG_INCLUDE@" "@WX_LARGEFILE_FLAGS@" "@GCC_PRAGMA_FLAGS@"`
  
  # now without further ado, we can answer these too.
  [ -z "$output_option_cppflags" ] || echo $_cppflags

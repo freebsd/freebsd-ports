@@ -462,7 +462,6 @@ share/bakefile/presets/wx26_win32.bkl
 share/locale/ca/LC_MESSAGES/wxstd26.mo
 share/locale/cs/LC_MESSAGES/wxstd26.mo
 share/locale/da/LC_MESSAGES/wxstd26.mo
-share/locale/de/LC_MESSAGES/wxstd26.mo
 share/locale/el/LC_MESSAGES/wxstd26.mo
 share/locale/es/LC_MESSAGES/wxstd26.mo
 share/locale/fi/LC_MESSAGES/wxstd26.mo
