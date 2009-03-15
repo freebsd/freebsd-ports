@@ -26,6 +26,8 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
 
 CONFLICTS=	gnash-[0-9]*
 
+IGNORE=		please use graphics/gnash instead, it is currently newer
+
 REVISION=	10395
 
 USE_GMAKE=	yes
