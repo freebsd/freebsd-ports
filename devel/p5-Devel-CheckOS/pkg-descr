@@ -1,0 +1,5 @@
+Devel::CheckOS provides a more friendly interface to $^O, and also lets you
+check for various OS "families" such as "Unix", which includes things like
+Linux, Solaris, AIX etc.
+
+WWW: http://search.cpan.org/dist/Devel-CheckOS/
