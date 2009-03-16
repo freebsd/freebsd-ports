@@ -86,6 +86,10 @@ EXCEPTFILES=	arc_depend_irix.asc arc_depend_solaris.asc man testsuite
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not configure on sparc64
+.endif
+
 .if defined(WITH_BDB)
 LIB_DEPENDS=	db-4.2:${PORTSDIR}/databases/db42
 PLIST_SUB+=	BDB_SPOOL=
