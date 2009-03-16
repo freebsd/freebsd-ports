@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/multimedia/mythtv/files/Attic/pkg-install.in,v 1.1 2009-03-10 21:08:51 glarkin Exp $
+# $FreeBSD: /tmp/pcvs/ports/multimedia/mythtv/files/Attic/pkg-install.in,v 1.2 2009-03-16 19:10:54 glarkin Exp $
 
 PW=%%PW%%
 DATADIR=%%DATADIR%%
@@ -29,7 +29,7 @@ POST-INSTALL)
 	echo "You already have a user \"${MYTHTVUSER}\", so I will use it."
     else
 	if ${PW} useradd ${MYTHTVUSER} -u ${MYTHTVUID} -g ${MYTHTVGROUP} -h - \
-	    -d ${MYTHTVDIR} -m -s /bin/sh -c "MythTV"
+	    -d ${MYTHTVDIR} -s /bin/sh -c "MythTV"
 	then
 	    echo "Added user \"${MYTHTVUSER}\"."
 	else
