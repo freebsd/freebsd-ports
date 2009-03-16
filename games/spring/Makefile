@@ -44,6 +44,10 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E -e '/FIND_PACKAGE.*(Python|JNI)/ d' \
 		${WRKSRC}/tools/unitsync/CMakeLists.txt
