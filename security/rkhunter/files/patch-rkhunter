@@ -7,7 +7,7 @@
 -		SOCKSTAT_OUTPUT=`${SOCKSTAT_CMD} -n | grep '\*[:.]\*' | cut -c1-55 | grep '\*[:.]' | cut -c39-47 | grep -v '\*' | tr -d ' ' | ${SORT_CMD} | ${UNIQ_CMD}`
 -		NETSTAT_OUTPUT=`${NETSTAT_CMD} -an | egrep -v 'TIME_WAIT|ESTABLISHED|SYN_SENT|CLOSE_WAIT|LAST_ACK|SYN_RECV|CLOSING' | cut -c1-44 | grep '\*\.' | cut -c24-32 | grep -v '\*' | tr -d ' ' | tr -d '\t' | ${SORT_CMD} | ${UNIQ_CMD}`
 +		SOCKSTAT_OUTPUT=`${SOCKSTAT_CMD} | grep '\*[:.]\*' | cut -c1-55 | grep '\*[:.]' | cut -c39-47 | grep -v '\*' | tr -d ' ' | ${SORT_CMD} | ${UNIQ_CMD}`
-+		NETSTAT_OUTPUT=`${NETSTAT_CMD} -an | egrep -v 'TIME_WAIT|ESTABLISHED|SYN_SENT|CLOSE_WAIT|LAST_ACK|SYN_RECV|CLOSING' | cut -c1-44 | grep '\*\.' | cut -c23-31 | grep -v '\*' | tr -d ' ' | tr -d '\t' | ${SORT_CMD} | ${UNIQ_CMD}`
++		NETSTAT_OUTPUT=`${NETSTAT_CMD} -an | egrep -v 'TIME_WAIT|ESTABLISHED|SYN_SENT|CLOSE_WAIT|LAST_ACK|SYN_RECV|CLOSING' | cut -c1-44 | grep '\*\.' | cut -c23-31 | grep -v '\*' | tr -d ' ' | tr -d '\t' | tr -d '.' | ${SORT_CMD} | ${UNIQ_CMD}`
  
  		if [ "${SOCKSTAT_OUTPUT}" = "${NETSTAT_OUTPUT}" ]; then
  			display --to SCREEN+LOG --type PLAIN --result OK --color GREEN --log-indent 2 --screen-indent 4 ROOTKIT_OS_BSD_SOCKNET
