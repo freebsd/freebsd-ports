@@ -34,6 +34,47 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="35c0b572-125a-11de-a964-0030843d3802">
+    <topic>roundcube -- webmail script insertion and php code injection</topic>
+    <affects>
+      <package>
+	<name></name>
+	<range><lt>0.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/33622/">
+	  <p>Some vulnerabilities have been reported in RoundCube Webmail, which
+	    can be exploited by malicious users to compromise a vulnerable system
+	    and by malicious people to conduct script insertion attacks and
+	    compromise a vulnerable system.</p>
+	  <p>The HTML "background" attribute within e.g. HTML emails is not
+	    properly sanitised before being used. This can be exploited to execute
+	    arbitrary HTML and script code in a user's browser session in context
+	    of an affected site if a malicious email is viewed.</p>
+	  <p>Input passed via a vCard is not properly sanitised before being
+	    used in a call to "preg_replace()" with the "e" modifier in
+	    program/include/rcube_vcard.php. This can be exploited to inject and
+	    execute arbitrary PHP code by e.g. tricking a user into importing a
+	    malicious vCard file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-0413</cvename>
+      <url>http://secunia.com/advisories/33622/</url>
+      <url>http://sourceforge.net/forum/forum.php?forum_id=927958</url>
+      <url>http://trac.roundcube.net/changeset/2245</url>
+      <url>http://trac.roundcube.net/ticket/1485689</url>
+    </references>
+    <dates>
+      <discovery>2009-01-21</discovery>
+      <entry>2009-03-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ca0841ff-1254-11de-a964-0030843d3802">
     <topic>proftpd -- multiple sql injection vulnerabilities</topic>
     <affects>
