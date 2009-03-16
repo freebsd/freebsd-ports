@@ -26,6 +26,10 @@ WRKSRC=	${WRKDIR}/WaveGain-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 do-configure:
 	@cd ${WRKSRC} && ${CP} Makefile.linux Makefile
 
