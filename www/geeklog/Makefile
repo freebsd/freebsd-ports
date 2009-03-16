@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	geeklog
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.geeklog.net/filemgmt/upload_dir/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
-MAINTAINER=	chess@chessgriffin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GeekLog is a web content magagement system
 
 USE_MYSQL=	yes
@@ -19,16 +19,14 @@ USE_MYSQL=	yes
 NO_BUILD=	yes
 USE_PHP=	yes
 
-WWW_DIR=	${PREFIX}/www/data
-
 do-install:
-	${MKDIR} ${WWW_DIR}/geeklog
-	${CP} -R ${WRKSRC}/* ${WWW_DIR}/geeklog
-	${CHOWN} -R www:www ${WWW_DIR}/geeklog
-	${CHMOD} -R 775 ${WWW_DIR}/geeklog/logs
-	${CHMOD} -R 775 ${WWW_DIR}/geeklog/public_html/images/articles
-	${CHMOD} -R 775 ${WWW_DIR}/geeklog/public_html/images/userphotos
-	${CHMOD} -R 775 ${WWW_DIR}/geeklog/public_html/backend
+	${MKDIR} ${WWWDIR}
+	${CP} -R ${WRKSRC}/* ${WWWDIR}
+	${CHOWN} -R www:www ${WWWDIR}
+	${CHMOD} -R 775 ${WWWDIR}/logs
+	${CHMOD} -R 775 ${WWWDIR}/public_html/images/articles
+	${CHMOD} -R 775 ${WWWDIR}/public_html/images/userphotos
+	${CHMOD} -R 775 ${WWWDIR}/public_html/backend
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "***********************************************************************"
 	@${ECHO_MSG} "* You now need to create the database that you want GeekLog           *"
