@@ -900,6 +900,7 @@
     SUBDIR += py2html
     SUBDIR += pybook
     SUBDIR += pychm
+    SUBDIR += pystemmer
     SUBDIR += qstardict
     SUBDIR += qt4-clucene
     SUBDIR += qt4-xml
