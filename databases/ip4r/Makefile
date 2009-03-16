@@ -36,4 +36,13 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/README.ip4r \
 		${PREFIX}/share/doc/postgresql/contrib
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not find dependency gcc42
+.endif
+.endif
+
+
+.include <bsd.port.post.mk>
