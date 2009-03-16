@@ -5,6 +5,7 @@ share/locale/de/LC_MESSAGES/gnome-mplayer.mo
 share/locale/en/LC_MESSAGES/gnome-mplayer.mo
 share/locale/es/LC_MESSAGES/gnome-mplayer.mo
 share/locale/fr/LC_MESSAGES/gnome-mplayer.mo
+share/locale/ja/LC_MESSAGES/gnome-mplayer.mo
 share/locale/it/LC_MESSAGES/gnome-mplayer.mo
 share/locale/ko/LC_MESSAGES/gnome-mplayer.mo
 share/locale/pl/LC_MESSAGES/gnome-mplayer.mo
@@ -19,4 +20,8 @@ share/locale/zh_CN/LC_MESSAGES/gnome-mplayer.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-mplayer.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-mplayer.mo
 share/pixmaps/gnome-mplayer.png
+%%PLUGIN%%lib/nautilus/extensions-2.0/libgnome-mplayer-properties-page.so.0
+%%PLUGIN%%lib/nautilus/extensions-2.0/libgnome-mplayer-properties-page.so
+%%PLUGIN%%lib/nautilus/extensions-2.0/libgnome-mplayer-properties-page.la
+%%PLUGIN%%lib/nautilus/extensions-2.0/libgnome-mplayer-properties-page.a
 @dirrmtry share/applications
