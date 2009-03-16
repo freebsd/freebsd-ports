@@ -38,6 +38,8 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
+FORBIDDEN=	multiple vulnerabilities http://www.vuxml.org/freebsd/03140526-1250-11de-a964-0030843d3802.html
+
 .ifndef WITHOUT_JABBER
 USE_JABBER=	yes
 CONFIGURE_ARGS+=--with-jabber=${LOCALBASE}
