@@ -1,0 +1,35 @@
+--- ejabberdctl.template.orig	2009-01-14 12:54:15.000000000 +0300
++++ ejabberdctl.template	2009-01-24 18:32:15.000000000 +0300
+@@ -14,8 +14,8 @@
+ ERL=@erl@
+ ROOTDIR=@rootdir@
+ EJABBERD_CONFIG_PATH=$ROOTDIR/etc/ejabberd/ejabberd.cfg
+-LOGS_DIR=$ROOTDIR/var/log/ejabberd/
+-EJABBERD_DB=$ROOTDIR/var/lib/ejabberd/db/$NODE
++LOGS_DIR=/var/log/ejabberd/
++EJABBERD_DB=/var/spool/ejabberd/$NODE
+ 
+ # read custom configuration
+ CONFIG=$ROOTDIR/etc/ejabberd/ejabberdctl.cfg
+@@ -43,16 +43,16 @@
+ ERLANG_OPTS="+K $POLL -smp $SMP +P $ERL_PROCESSES"
+ 
+ # define additional environment variables
+-EJABBERD_EBIN=$ROOTDIR/var/lib/ejabberd/ebin
+-EJABBERD_MSGS_PATH=$ROOTDIR/var/lib/ejabberd/priv/msgs
+-EJABBERD_SO_PATH=$ROOTDIR/var/lib/ejabberd/priv/lib
+-EJABBERD_BIN_PATH=$ROOTDIR/var/lib/ejabberd/priv/bin
++HOME=$ROOTDIR/lib/erlang/lib/ejabberd
++EJABBERD_EBIN=$HOME/ebin
++EJABBERD_MSGS_PATH=$HOME/priv/msgs
++EJABBERD_SO_PATH=$HOME/priv/lib
++EJABBERD_BIN_PATH=$HOME/priv/bin
+ EJABBERD_LOG_PATH=$LOGS_DIR/ejabberd.log
+ SASL_LOG_PATH=$LOGS_DIR/sasl.log
+ DATETIME=`date "+%Y%m%d-%H%M%S"`
+ ERL_CRASH_DUMP=$LOGS_DIR/erl_crash_$DATETIME.dump
+ ERL_INETRC=$ROOTDIR/etc/ejabberd/inetrc
+-HOME=$ROOTDIR/var/lib/ejabberd
+ 
+ # export global variables
+ export EJABBERD_CONFIG_PATH

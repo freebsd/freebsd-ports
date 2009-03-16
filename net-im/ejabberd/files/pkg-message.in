@@ -1,16 +1,16 @@
-WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING!!!
+------------------------------------------------------------------------
 
-This version of port has several signigicant changes:
+Congratulations, you have installed %%PORTNAME%%!
+
   o To enable ejabberd you need to add following string to your /etc/rc.conf:
 
 	ejabberd_enable="YES"
 
-  o Configs are located in %%PREFIX%%/etc/ejabberd now.
-  o The home directory is /var/spool/ejabberd now instead of
-    /var/run/ejabberd. Please do:
+  o Config samples are located in %%PREFIX%%/etc/ejabberd - please, create
+    working ones before running %%PORTNAME%%.
+  o The home directory is /var/spool/ejabberd
+  o PLEASE NOTE! "ejabberd" user UID and GID have changed from version 2.0.3
+    of this port! Users are advised to check all configuration files and data
+    in /var/spool/ejabberd to ensure everything has the correct owner/group.
 
-	pw usermod ejabberd -d /var/spool/ejabberd
-
-    if you need it.
-
-WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING!!!
+------------------------------------------------------------------------

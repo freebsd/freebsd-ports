@@ -1,21 +1,23 @@
-ejabberd is a Free and Open Source distributed fault-tolerant Jabber server. 
-It writen mostly in Erlang. 
+ejabberd is a high performance Free and Open Source distributed 
+fault-tolerant instant messaging Jabber server.
 
-The main features of ejabberd is:
-	- Works on most of popular platforms: *nix 
-	  (tested on Linux, FreeBSD and NetBSD)
-	- Distributed
-	- Fault-tolerance: 
-	- Built-in Multi-User Chat service 
-	- Built-in IRC transport 
-	- Built-in Publish-Subscribe service 
-	- Built-in Jabber Users Directory service based on users vCards 
-	- SSL support 
-	- Ability to interface with external components (JIT, MSN-t, Yahoo-t, etc) 
-	- Migration from jabberd14 is possible 
-	- Mostly XMPP-compliant 
-	- Support for JEP-0030 (Service Discovery). 
-	- Support for JEP-0039 (Statistics Gathering). 
-	- Support for xml:lang attribute in many XML elements 
+Key features include:
+    - A web administration console and command line administration
+      tools that ensure easy set up
+    - Support for encrypted connections to ensure secure communications
+    - Many built-in services, including Jabber User Directory and Multi-User
+      Chat
+    - Standard Jabber transport compliance to enable communication with other
+      instant messaging networks
+    - Automatic collection of statistics for reporting and system analysis
+    - Virtual hosting, enabling ejabberd to run several virtual domains
+      from a single ejabberd instance
+    - Shared rosters, so that users can have predefined entries in their
+      contacts lists
+    - External storage support
+    - Large numbers of supported protocols (see the supported protocols list
+      for details)
+    - Multi-lingual web administration interface
+    - Full IPv6 support
 
-WWW: http://ejabberd.jabber.ru/
+WWW: http://www.ejabberd.im/
