@@ -6,43 +6,37 @@
 #
 
 PORTNAME=	pyjamas
-PORTVERSION=	0.4
-#PORTREVISION=	0
+PORTVERSION=	0.5
+PORTREVISION=	0
 CATEGORIES=	www python
 MASTER_SITES=	SF
-EXTRACT_SUFX=	.tgz
+DISTNAME=	${PYDISTUTILS_PKGNAME}-${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A port of Google Web Toolkit to Python
 
 USE_PYTHON=	yes
+# install/require some libraries in sys.prefix
+USE_PYTHON_PREFIX=	yes
+USE_PYDISTUTILS=	easy_install
 
-RM_OPTS=	-R
+PYDISTUTILS_PKGNAME=	Pyjamas
 
-REINPLACE_ARGS=	-i '' -e 's,../../builder,${DATADIR}/builder,'
+REINPLACE_ARGS=	-i '' -e 's,../../bin,${PREFIX}/bin,'
 
 post-patch:
 	${FIND} ${WRKSRC}/examples -type f -name "build.sh" -print0 | ${XARGS} -0 ${REINPLACE_CMD}
 
-do-build:
-	cd ${WRKSRC} && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py addons builder library pyjs stubs
-
-do-install:
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${DATADIR}
+post-install:
+.if !defined(NOPORTEXAMPLES)
+	${MV} ${PYTHONPREFIX_SITELIBDIR}/${PYEASYINSTALL_EGG}/share/pyjamas/examples ${EXAMPLESDIR}
+.endif	
+	${MV} ${PYTHONPREFIX_SITELIBDIR}/${PYEASYINSTALL_EGG}/share/pyjamas ${DATADIR}
+	${RMDIR} ${PYTHONPREFIX_SITELIBDIR}/${PYEASYINSTALL_EGG}/share
 
 .if !defined(NOPORTDOCS)
-	${MV} ${DATADIR}/doc ${DOCSDIR}
-.else
-	${RM} ${RM_OPTS} ${DATADIR}/doc
-.endif
-
-post-install:
-	${CHMOD} a+x ${DATADIR}/builder/build.py ${DATADIR}/pyjs/pyjs.py
-.if !defined(NOPORTEXAMPLES)
-	${MV} ${DATADIR}/examples ${EXAMPLESDIR}
-	${FIND} ${EXAMPLESDIR} -type f -name "*.sh" -print0 | ${XARGS} -0 ${CHMOD} a+x
-.else
-	${RM} ${RM_OPTS} ${DATADIR}/examples
+	${MKDIR} ${DOCSDIR}/img
+	cd ${WRKSRC}/doc && ${CP} *.html ${DOCSDIR} && ${CP} img/* ${DOCSDIR}/img
 .endif
 
 .include <bsd.port.mk>
