@@ -89,6 +89,8 @@ post-patch:
 		s|Libs: |&${PTHREAD_LIBS} |;\
 		s|Cflags: |&${PTHREAD_CFLAGS} |' \
 		${WRKSRC}/admin/pkgconfig/openal.pc.in
+# broken openal library will be produced if nasm is installed
+	@${REINPLACE_CMD} -e '/^NASM=/ s|=.*|=no|' ${WRKSRC}/configure
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
