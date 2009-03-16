@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	xpad
-PORTVERSION=	2.14
-PORTREVISION=	2
+PORTVERSION=	3.1
 CATEGORIES=	deskutils
-MASTER_SITES=	SF
+MASTER_SITES=	http://launchpad.net/xpad/stable/${PORTVERSION}/+download/
 
 MAINTAINER=	amyfoub@gmail.com
 COMMENT=	A virtual note-pad system for your X11 desktop
 
+FETCH_ARGS=	"-pRr"
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11 sm
