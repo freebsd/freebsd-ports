@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090316:
+  AFFECTS: users of sysutils/lire
+  AUTHOR: edwin@FreeBSD.org
+
+  Lire now requires DBD::SQLite, which uses SQLite 3.0.
+  This means that the Lire database format has changed. If you have
+  one or more old lire stores, you will need to convert each of
+  them from SQLite2 format to SQLite3 format, like this:
+	$ sqlite oldstore.db .dump | sqlite3 newstore.db
+  This assumes that you have both sqlite2 and sqlite3 installed on
+  your system, and that the names of the command line interface for
+  the old and new version are sqlite and sqlite3 respectively (this
+  is at least correct for Fedora).
+
 20090310:
   AFFECTS: users of multimedia/mythtv
   AUTHOR: glarkin@FreeBSD.org
