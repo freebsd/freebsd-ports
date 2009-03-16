@@ -30,6 +30,8 @@ ALL_TARGET=
 
 USE_FORTRAN=	yes
 
+BROKEN=		Latest version fails to compile
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
