@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4ce3c20b-124b-11de-a964-0030843d3802">
+    <topic>phppgadmin -- directory traversal with register_globals enabled</topic>
+    <affects>
+      <package>
+	<name>phppgadmin</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/33014">
+	  <p>Dun has discovered a vulnerability in phpPgAdmin, which can be
+	    exploited by malicious people to disclose sensitive information.</p>
+	  <p>Input passed via the "_language" parameter to libraries/lib.inc.php
+	    is not properly sanitised before being used to include files. This can
+	    be exploited to include arbitrary files from local resources via
+	    directory traversal attacks and URL-encoded NULL bytes.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>32670</bid>
+      <cvename>CVE-2008-5587</cvename>
+      <url>http://secunia.com/advisories/33014</url>
+    </references>
+    <dates>
+      <discovery>2008-12-08</discovery>
+      <entry>2009-03-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8c5205b4-11a0-11de-a964-0030843d3802">
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
