@@ -3,6 +3,7 @@ bin/coq-interface.opt
 bin/coq-tex
 bin/coq_makefile
 bin/coqc
+bin/coqchk.opt
 bin/coqdep
 bin/coqdoc
 %%IDE%%bin/coqide
@@ -14,23 +15,91 @@ bin/coqtop.byte
 bin/coqtop.opt
 bin/coqwc
 bin/gallina
-bin/parser
-bin/parser.opt
+bin/coq-parser
+bin/coq-parser.opt
+lib/coq/config/coq_config.cmi
+lib/coq/config/coq_config.cmo
+lib/coq/config/coq_config.cmx
+lib/coq/config/coq_config.o
+lib/coq/contrib/cc/ccalgo.cmi
+lib/coq/contrib/cc/ccproof.cmi
+lib/coq/contrib/cc/cctac.cmi
+lib/coq/contrib/cc/g_congruence.cmi
+lib/coq/contrib/contrib.a
+lib/coq/contrib/contrib.cma
+lib/coq/contrib/contrib.cmxa
+lib/coq/contrib/dp/Dp.vo
+lib/coq/contrib/dp/dp.cmi
+lib/coq/contrib/dp/dp_gappa.cmi
+lib/coq/contrib/dp/dp_why.cmi
+lib/coq/contrib/dp/dp_zenon.cmi
+lib/coq/contrib/dp/g_dp.cmi
+lib/coq/contrib/extraction/common.cmi
+lib/coq/contrib/extraction/extract_env.cmi
+lib/coq/contrib/extraction/extraction.cmi
+lib/coq/contrib/extraction/g_extraction.cmi
+lib/coq/contrib/extraction/haskell.cmi
+lib/coq/contrib/extraction/mlutil.cmi
+lib/coq/contrib/extraction/modutil.cmi
+lib/coq/contrib/extraction/ocaml.cmi
+lib/coq/contrib/extraction/scheme.cmi
+lib/coq/contrib/extraction/table.cmi
 lib/coq/contrib/field/LegacyField.vo
 lib/coq/contrib/field/LegacyField_Compl.vo
 lib/coq/contrib/field/LegacyField_Tactic.vo
 lib/coq/contrib/field/LegacyField_Theory.vo
-@dirrm lib/coq/contrib/field
+lib/coq/contrib/field/field.cmi
+lib/coq/contrib/firstorder/formula.cmi
+lib/coq/contrib/firstorder/g_ground.cmi
+lib/coq/contrib/firstorder/ground.cmi
+lib/coq/contrib/firstorder/instances.cmi
+lib/coq/contrib/firstorder/rules.cmi
+lib/coq/contrib/firstorder/sequent.cmi
+lib/coq/contrib/firstorder/unify.cmi
 lib/coq/contrib/fourier/Fourier.vo
 lib/coq/contrib/fourier/Fourier_util.vo
-@dirrm lib/coq/contrib/fourier
+lib/coq/contrib/fourier/fourier.cmi
+lib/coq/contrib/fourier/fourierR.cmi
+lib/coq/contrib/fourier/g_fourier.cmi
+lib/coq/contrib/funind/Recdef.vo
+lib/coq/contrib/funind/functional_principles_proofs.cmi
+lib/coq/contrib/funind/functional_principles_types.cmi
+lib/coq/contrib/funind/g_indfun.cmi
+lib/coq/contrib/funind/indfun.cmi
+lib/coq/contrib/funind/indfun_common.cmi
+lib/coq/contrib/funind/invfun.cmi
+lib/coq/contrib/funind/merge.cmi
+lib/coq/contrib/funind/rawterm_to_relation.cmi
+lib/coq/contrib/funind/rawtermops.cmi
+lib/coq/contrib/funind/recdef.cmi
 lib/coq/contrib/interface/vernacrc
-@dirrm lib/coq/contrib/interface
+lib/coq/contrib/micromega/CheckerMaker.vo
+lib/coq/contrib/micromega/Env.vo
+lib/coq/contrib/micromega/EnvRing.vo
+lib/coq/contrib/micromega/OrderedRing.vo
+lib/coq/contrib/micromega/Psatz.vo
+lib/coq/contrib/micromega/QMicromega.vo
+lib/coq/contrib/micromega/RMicromega.vo
+lib/coq/contrib/micromega/Refl.vo
+lib/coq/contrib/micromega/RingMicromega.vo
+lib/coq/contrib/micromega/Tauto.vo
+lib/coq/contrib/micromega/VarMap.vo
+lib/coq/contrib/micromega/ZCoeff.vo
+lib/coq/contrib/micromega/ZMicromega.vo
+lib/coq/contrib/micromega/certificate.cmi
+lib/coq/contrib/micromega/coq_micromega.cmi
+lib/coq/contrib/micromega/csdpcert
+lib/coq/contrib/micromega/g_micromega.cmi
+lib/coq/contrib/micromega/mfourier.cmi
+lib/coq/contrib/micromega/micromega.cmi
+lib/coq/contrib/micromega/mutils.cmi
+lib/coq/contrib/micromega/vector.cmi
 lib/coq/contrib/omega/Omega.vo
 lib/coq/contrib/omega/OmegaLemmas.vo
-@dirrm lib/coq/contrib/omega
-lib/coq/contrib/recdef/Recdef.vo
-@dirrm lib/coq/contrib/recdef
+lib/coq/contrib/omega/PreOmega.vo
+lib/coq/contrib/omega/coq_omega.cmi
+lib/coq/contrib/omega/g_omega.cmi
+lib/coq/contrib/omega/omega.cmi
 lib/coq/contrib/ring/LegacyArithRing.vo
 lib/coq/contrib/ring/LegacyNArithRing.vo
 lib/coq/contrib/ring/LegacyRing.vo
@@ -42,13 +111,20 @@ lib/coq/contrib/ring/Ring_normalize.vo
 lib/coq/contrib/ring/Setoid_ring.vo
 lib/coq/contrib/ring/Setoid_ring_normalize.vo
 lib/coq/contrib/ring/Setoid_ring_theory.vo
-@dirrm lib/coq/contrib/ring
+lib/coq/contrib/ring/g_quote.cmi
+lib/coq/contrib/ring/g_ring.cmi
+lib/coq/contrib/ring/quote.cmi
+lib/coq/contrib/ring/ring.cmi
 lib/coq/contrib/romega/ROmega.vo
 lib/coq/contrib/romega/ReflOmegaCore.vo
-@dirrm lib/coq/contrib/romega
+lib/coq/contrib/romega/const_omega.cmi
+lib/coq/contrib/romega/g_romega.cmi
+lib/coq/contrib/romega/refl_omega.cmi
 lib/coq/contrib/rtauto/Bintree.vo
 lib/coq/contrib/rtauto/Rtauto.vo
-@dirrm lib/coq/contrib/rtauto
+lib/coq/contrib/rtauto/g_rtauto.cmi
+lib/coq/contrib/rtauto/proof_search.cmi
+lib/coq/contrib/rtauto/refl_tauto.cmi
 lib/coq/contrib/setoid_ring/ArithRing.vo
 lib/coq/contrib/setoid_ring/BinList.vo
 lib/coq/contrib/setoid_ring/Field.vo
@@ -64,46 +140,244 @@ lib/coq/contrib/setoid_ring/Ring_polynom.vo
 lib/coq/contrib/setoid_ring/Ring_tac.vo
 lib/coq/contrib/setoid_ring/Ring_theory.vo
 lib/coq/contrib/setoid_ring/ZArithRing.vo
-@dirrm lib/coq/contrib/setoid_ring
-lib/coq/contrib/subtac/FixSub.vo
-lib/coq/contrib/subtac/FunctionalExtensionality.vo
-lib/coq/contrib/subtac/Heq.vo
-lib/coq/contrib/subtac/Subtac.vo
-lib/coq/contrib/subtac/SubtacTactics.vo
-lib/coq/contrib/subtac/Utils.vo
-@dirrm lib/coq/contrib/subtac
-@dirrm lib/coq/contrib
-lib/coq/contrib.cma
-lib/coq/contrib.cmxa
-lib/coq/grammar.cma
-lib/coq/highparsing.cma
-lib/coq/highparsing.cmxa
-lib/coq/hightactics.cma
-lib/coq/hightactics.cmxa
-lib/coq/ide/.coqide-gtk2rc
-lib/coq/ide/FAQ
-lib/coq/ide/coq.png
-lib/coq/ide/utf8.v
-lib/coq/ide/utf8.vo
-@dirrm lib/coq/ide
-lib/coq/interp.cma
-lib/coq/interp.cmxa
-lib/coq/kernel.cma
-lib/coq/kernel.cmxa
-lib/coq/lib.cma
-lib/coq/lib.cmxa
-lib/coq/library.cma
-lib/coq/library.cmxa
-lib/coq/parsing.cma
-lib/coq/parsing.cmxa
-lib/coq/pretyping.cma
-lib/coq/pretyping.cmxa
-lib/coq/proofs.cma
-lib/coq/proofs.cmxa
+lib/coq/contrib/setoid_ring/newring.cmi
+lib/coq/contrib/subtac/equations.cmi
+lib/coq/contrib/subtac/eterm.cmi
+lib/coq/contrib/subtac/g_eterm.cmi
+lib/coq/contrib/subtac/g_subtac.cmi
+lib/coq/contrib/subtac/subtac.cmi
+lib/coq/contrib/subtac/subtac_cases.cmi
+lib/coq/contrib/subtac/subtac_classes.cmi
+lib/coq/contrib/subtac/subtac_coercion.cmi
+lib/coq/contrib/subtac/subtac_command.cmi
+lib/coq/contrib/subtac/subtac_errors.cmi
+lib/coq/contrib/subtac/subtac_obligations.cmi
+lib/coq/contrib/subtac/subtac_pretyping.cmi
+lib/coq/contrib/subtac/subtac_pretyping_F.cmi
+lib/coq/contrib/subtac/subtac_utils.cmi
+lib/coq/contrib/xml/acic.cmi
+lib/coq/contrib/xml/acic2Xml.cmi
+lib/coq/contrib/xml/cic2Xml.cmi
+lib/coq/contrib/xml/cic2acic.cmi
+lib/coq/contrib/xml/doubleTypeInference.cmi
+lib/coq/contrib/xml/dumptree.cmi
+lib/coq/contrib/xml/proof2aproof.cmi
+lib/coq/contrib/xml/proofTree2Xml.cmi
+lib/coq/contrib/xml/unshare.cmi
+lib/coq/contrib/xml/xml.cmi
+lib/coq/contrib/xml/xmlcommand.cmi
+lib/coq/contrib/xml/xmlentries.cmi
+lib/coq/dllcoqrun.so
+%%IDE%%lib/coq/ide/.coqide-gtk2rc
+%%IDE%%lib/coq/ide/FAQ
+%%IDE%%lib/coq/ide/coq.png
+lib/coq/interp/constrextern.cmi
+lib/coq/interp/constrintern.cmi
+lib/coq/interp/coqlib.cmi
+lib/coq/interp/dumpglob.cmi
+lib/coq/interp/genarg.cmi
+lib/coq/interp/implicit_quantifiers.cmi
+lib/coq/interp/interp.a
+lib/coq/interp/interp.cma
+lib/coq/interp/interp.cmxa
+lib/coq/interp/modintern.cmi
+lib/coq/interp/notation.cmi
+lib/coq/interp/ppextend.cmi
+lib/coq/interp/reserve.cmi
+lib/coq/interp/syntax_def.cmi
+lib/coq/interp/topconstr.cmi
+lib/coq/kernel/cbytecodes.cmi
+lib/coq/kernel/cbytegen.cmi
+lib/coq/kernel/cemitcodes.cmi
+lib/coq/kernel/closure.cmi
+lib/coq/kernel/conv_oracle.cmi
+lib/coq/kernel/cooking.cmi
+lib/coq/kernel/copcodes.cmi
+lib/coq/kernel/csymtable.cmi
+lib/coq/kernel/declarations.cmi
+lib/coq/kernel/entries.cmi
+lib/coq/kernel/environ.cmi
+lib/coq/kernel/esubst.cmi
+lib/coq/kernel/indtypes.cmi
+lib/coq/kernel/inductive.cmi
+lib/coq/kernel/kernel.a
+lib/coq/kernel/kernel.cma
+lib/coq/kernel/kernel.cmxa
+lib/coq/kernel/mod_subst.cmi
+lib/coq/kernel/mod_typing.cmi
+lib/coq/kernel/modops.cmi
+lib/coq/kernel/names.cmi
+lib/coq/kernel/pre_env.cmi
+lib/coq/kernel/reduction.cmi
+lib/coq/kernel/retroknowledge.cmi
+lib/coq/kernel/safe_typing.cmi
+lib/coq/kernel/sign.cmi
+lib/coq/kernel/subtyping.cmi
+lib/coq/kernel/term.cmi
+lib/coq/kernel/term_typing.cmi
+lib/coq/kernel/type_errors.cmi
+lib/coq/kernel/typeops.cmi
+lib/coq/kernel/univ.cmi
+lib/coq/kernel/vconv.cmi
+lib/coq/kernel/vm.cmi
+lib/coq/lib/bigint.cmi
+lib/coq/lib/bstack.cmi
+lib/coq/lib/compat.cmi
+lib/coq/lib/dyn.cmi
+lib/coq/lib/edit.cmi
+lib/coq/lib/envars.cmi
+lib/coq/lib/explore.cmi
+lib/coq/lib/flags.cmi
+lib/coq/lib/gmap.cmi
+lib/coq/lib/gmapl.cmi
+lib/coq/lib/gset.cmi
+lib/coq/lib/hashcons.cmi
+lib/coq/lib/heap.cmi
+lib/coq/lib/lib.a
+lib/coq/lib/lib.cma
+lib/coq/lib/lib.cmxa
+lib/coq/lib/option.cmi
+lib/coq/lib/pp.cmi
+lib/coq/lib/pp_control.cmi
+lib/coq/lib/predicate.cmi
+lib/coq/lib/profile.cmi
+lib/coq/lib/rtree.cmi
+lib/coq/lib/system.cmi
+lib/coq/lib/tlm.cmi
+lib/coq/lib/util.cmi
+lib/coq/libcoqrun.a
+lib/coq/library/decl_kinds.cmi
+lib/coq/library/declare.cmi
+lib/coq/library/declaremods.cmi
+lib/coq/library/decls.cmi
+lib/coq/library/dischargedhypsmap.cmi
+lib/coq/library/global.cmi
+lib/coq/library/goptions.cmi
+lib/coq/library/heads.cmi
+lib/coq/library/impargs.cmi
+lib/coq/library/lib.cmi
+lib/coq/library/libnames.cmi
+lib/coq/library/libobject.cmi
+lib/coq/library/library.a
+lib/coq/library/library.cma
+lib/coq/library/library.cmi
+lib/coq/library/library.cmxa
+lib/coq/library/nameops.cmi
+lib/coq/library/nametab.cmi
+lib/coq/library/states.cmi
+lib/coq/library/summary.cmi
+lib/coq/parsing/egrammar.cmi
+lib/coq/parsing/extend.cmi
+lib/coq/parsing/g_ascii_syntax.cmi
+lib/coq/parsing/g_constr.cmi
+lib/coq/parsing/g_decl_mode.cmi
+lib/coq/parsing/g_intsyntax.cmi
+lib/coq/parsing/g_ltac.cmi
+lib/coq/parsing/g_natsyntax.cmi
+lib/coq/parsing/g_prim.cmi
+lib/coq/parsing/g_proofs.cmi
+lib/coq/parsing/g_rsyntax.cmi
+lib/coq/parsing/g_string_syntax.cmi
+lib/coq/parsing/g_tactic.cmi
+lib/coq/parsing/g_vernac.cmi
+lib/coq/parsing/g_xml.cmi
+lib/coq/parsing/g_zsyntax.cmi
+lib/coq/parsing/grammar.cma
+lib/coq/parsing/highparsing.a
+lib/coq/parsing/highparsing.cma
+lib/coq/parsing/highparsing.cmxa
+lib/coq/parsing/lexer.cmi
+lib/coq/parsing/parsing.a
+lib/coq/parsing/parsing.cma
+lib/coq/parsing/parsing.cmxa
+lib/coq/parsing/pcoq.cmi
+lib/coq/parsing/ppconstr.cmi
+lib/coq/parsing/ppdecl_proof.cmi
+lib/coq/parsing/pptactic.cmi
+lib/coq/parsing/ppvernac.cmi
+lib/coq/parsing/prettyp.cmi
+lib/coq/parsing/printer.cmi
+lib/coq/parsing/printmod.cmi
+lib/coq/parsing/search.cmi
+lib/coq/parsing/tactic_printer.cmi
+lib/coq/pretyping/cases.cmi
+lib/coq/pretyping/cbv.cmi
+lib/coq/pretyping/classops.cmi
+lib/coq/pretyping/clenv.cmi
+lib/coq/pretyping/coercion.cmi
+lib/coq/pretyping/detyping.cmi
+lib/coq/pretyping/evarconv.cmi
+lib/coq/pretyping/evarutil.cmi
+lib/coq/pretyping/evd.cmi
+lib/coq/pretyping/indrec.cmi
+lib/coq/pretyping/inductiveops.cmi
+lib/coq/pretyping/matching.cmi
+lib/coq/pretyping/pattern.cmi
+lib/coq/pretyping/pretype_errors.cmi
+lib/coq/pretyping/pretyping.a
+lib/coq/pretyping/pretyping.cma
+lib/coq/pretyping/pretyping.cmi
+lib/coq/pretyping/pretyping.cmxa
+lib/coq/pretyping/rawterm.cmi
+lib/coq/pretyping/recordops.cmi
+lib/coq/pretyping/reductionops.cmi
+lib/coq/pretyping/retyping.cmi
+lib/coq/pretyping/tacred.cmi
+lib/coq/pretyping/termops.cmi
+lib/coq/pretyping/typeclasses.cmi
+lib/coq/pretyping/typeclasses_errors.cmi
+lib/coq/pretyping/typing.cmi
+lib/coq/pretyping/unification.cmi
+lib/coq/pretyping/vnorm.cmi
+lib/coq/proofs/clenvtac.cmi
+lib/coq/proofs/decl_mode.cmi
+lib/coq/proofs/evar_refiner.cmi
+lib/coq/proofs/logic.cmi
+lib/coq/proofs/pfedit.cmi
+lib/coq/proofs/proof_trees.cmi
+lib/coq/proofs/proof_type.cmi
+lib/coq/proofs/proofs.a
+lib/coq/proofs/proofs.cma
+lib/coq/proofs/proofs.cmxa
+lib/coq/proofs/redexpr.cmi
+lib/coq/proofs/refiner.cmi
+lib/coq/proofs/tacexpr.cmi
+lib/coq/proofs/tacmach.cmi
+lib/coq/proofs/tactic_debug.cmi
 lib/coq/states/initial.coq
-@dirrm lib/coq/states
-lib/coq/tactics.cma
-lib/coq/tactics.cmxa
+lib/coq/tactics/auto.cmi
+lib/coq/tactics/autorewrite.cmi
+lib/coq/tactics/btermdn.cmi
+lib/coq/tactics/class_tactics.cmi
+lib/coq/tactics/contradiction.cmi
+lib/coq/tactics/decl_interp.cmi
+lib/coq/tactics/decl_proof_instr.cmi
+lib/coq/tactics/dhyp.cmi
+lib/coq/tactics/dn.cmi
+lib/coq/tactics/eauto.cmi
+lib/coq/tactics/elim.cmi
+lib/coq/tactics/eqdecide.cmi
+lib/coq/tactics/equality.cmi
+lib/coq/tactics/evar_tactics.cmi
+lib/coq/tactics/extraargs.cmi
+lib/coq/tactics/extratactics.cmi
+lib/coq/tactics/hiddentac.cmi
+lib/coq/tactics/hightactics.a
+lib/coq/tactics/hightactics.cma
+lib/coq/tactics/hightactics.cmxa
+lib/coq/tactics/hipattern.cmi
+lib/coq/tactics/inv.cmi
+lib/coq/tactics/leminv.cmi
+lib/coq/tactics/nbtermdn.cmi
+lib/coq/tactics/refine.cmi
+lib/coq/tactics/tacinterp.cmi
+lib/coq/tactics/tacticals.cmi
+lib/coq/tactics/tactics.a
+lib/coq/tactics/tactics.cma
+lib/coq/tactics/tactics.cmi
+lib/coq/tactics/tactics.cmxa
+lib/coq/tactics/tauto.cmi
+lib/coq/tactics/termdn.cmi
 lib/coq/theories/Arith/Arith.vo
 lib/coq/theories/Arith/Arith_base.vo
 lib/coq/theories/Arith/Between.vo
@@ -125,7 +399,6 @@ lib/coq/theories/Arith/Mult.vo
 lib/coq/theories/Arith/Peano_dec.vo
 lib/coq/theories/Arith/Plus.vo
 lib/coq/theories/Arith/Wf_nat.vo
-@dirrm lib/coq/theories/Arith
 lib/coq/theories/Bool/Bool.vo
 lib/coq/theories/Bool/BoolEq.vo
 lib/coq/theories/Bool/Bvector.vo
@@ -133,36 +406,41 @@ lib/coq/theories/Bool/DecBool.vo
 lib/coq/theories/Bool/IfProp.vo
 lib/coq/theories/Bool/Sumbool.vo
 lib/coq/theories/Bool/Zerob.vo
-@dirrm lib/coq/theories/Bool
+lib/coq/theories/Classes/EquivDec.vo
+lib/coq/theories/Classes/Equivalence.vo
+lib/coq/theories/Classes/Functions.vo
+lib/coq/theories/Classes/Init.vo
+lib/coq/theories/Classes/Morphisms.vo
+lib/coq/theories/Classes/Morphisms_Prop.vo
+lib/coq/theories/Classes/Morphisms_Relations.vo
+lib/coq/theories/Classes/RelationClasses.vo
+lib/coq/theories/Classes/SetoidAxioms.vo
+lib/coq/theories/Classes/SetoidClass.vo
+lib/coq/theories/Classes/SetoidDec.vo
+lib/coq/theories/Classes/SetoidTactics.vo
 lib/coq/theories/FSets/FMapAVL.vo
 lib/coq/theories/FSets/FMapFacts.vo
-lib/coq/theories/FSets/FMapIntMap.vo
+lib/coq/theories/FSets/FMapFullAVL.vo
 lib/coq/theories/FSets/FMapInterface.vo
 lib/coq/theories/FSets/FMapList.vo
 lib/coq/theories/FSets/FMapPositive.vo
-lib/coq/theories/FSets/FMapWeak.vo
-lib/coq/theories/FSets/FMapWeakFacts.vo
-lib/coq/theories/FSets/FMapWeakInterface.vo
 lib/coq/theories/FSets/FMapWeakList.vo
 lib/coq/theories/FSets/FMaps.vo
 lib/coq/theories/FSets/FSetAVL.vo
 lib/coq/theories/FSets/FSetBridge.vo
+lib/coq/theories/FSets/FSetDecide.vo
 lib/coq/theories/FSets/FSetEqProperties.vo
 lib/coq/theories/FSets/FSetFacts.vo
+lib/coq/theories/FSets/FSetFullAVL.vo
 lib/coq/theories/FSets/FSetInterface.vo
 lib/coq/theories/FSets/FSetList.vo
 lib/coq/theories/FSets/FSetProperties.vo
 lib/coq/theories/FSets/FSetToFiniteSet.vo
-lib/coq/theories/FSets/FSetWeak.vo
-lib/coq/theories/FSets/FSetWeakFacts.vo
-lib/coq/theories/FSets/FSetWeakInterface.vo
 lib/coq/theories/FSets/FSetWeakList.vo
-lib/coq/theories/FSets/FSetWeakProperties.vo
 lib/coq/theories/FSets/FSets.vo
 lib/coq/theories/FSets/OrderedType.vo
 lib/coq/theories/FSets/OrderedTypeAlt.vo
 lib/coq/theories/FSets/OrderedTypeEx.vo
-@dirrm lib/coq/theories/FSets
 lib/coq/theories/Init/Datatypes.vo
 lib/coq/theories/Init/Logic.vo
 lib/coq/theories/Init/Logic_Type.vo
@@ -172,29 +450,14 @@ lib/coq/theories/Init/Prelude.vo
 lib/coq/theories/Init/Specif.vo
 lib/coq/theories/Init/Tactics.vo
 lib/coq/theories/Init/Wf.vo
-@dirrm lib/coq/theories/Init
-lib/coq/theories/IntMap/Adalloc.vo
-lib/coq/theories/IntMap/Allmaps.vo
-lib/coq/theories/IntMap/Fset.vo
-lib/coq/theories/IntMap/Lsort.vo
-lib/coq/theories/IntMap/Map.vo
-lib/coq/theories/IntMap/Mapaxioms.vo
-lib/coq/theories/IntMap/Mapc.vo
-lib/coq/theories/IntMap/Mapcanon.vo
-lib/coq/theories/IntMap/Mapcard.vo
-lib/coq/theories/IntMap/Mapfold.vo
-lib/coq/theories/IntMap/Mapiter.vo
-lib/coq/theories/IntMap/Maplists.vo
-lib/coq/theories/IntMap/Mapsubset.vo
-@dirrm lib/coq/theories/IntMap
 lib/coq/theories/Lists/List.vo
 lib/coq/theories/Lists/ListSet.vo
 lib/coq/theories/Lists/ListTactics.vo
 lib/coq/theories/Lists/MonoList.vo
 lib/coq/theories/Lists/SetoidList.vo
+lib/coq/theories/Lists/StreamMemo.vo
 lib/coq/theories/Lists/Streams.vo
 lib/coq/theories/Lists/TheoryList.vo
-@dirrm lib/coq/theories/Lists
 lib/coq/theories/Logic/Berardi.vo
 lib/coq/theories/Logic/ChoiceFacts.vo
 lib/coq/theories/Logic/Classical.vo
@@ -211,16 +474,20 @@ lib/coq/theories/Logic/ConstructiveEpsilon.vo
 lib/coq/theories/Logic/Decidable.vo
 lib/coq/theories/Logic/DecidableType.vo
 lib/coq/theories/Logic/DecidableTypeEx.vo
+lib/coq/theories/Logic/Description.vo
 lib/coq/theories/Logic/Diaconescu.vo
+lib/coq/theories/Logic/Epsilon.vo
 lib/coq/theories/Logic/Eqdep.vo
 lib/coq/theories/Logic/EqdepFacts.vo
 lib/coq/theories/Logic/Eqdep_dec.vo
+lib/coq/theories/Logic/FunctionalExtensionality.vo
 lib/coq/theories/Logic/Hurkens.vo
+lib/coq/theories/Logic/IndefiniteDescription.vo
 lib/coq/theories/Logic/JMeq.vo
 lib/coq/theories/Logic/ProofIrrelevance.vo
 lib/coq/theories/Logic/ProofIrrelevanceFacts.vo
 lib/coq/theories/Logic/RelationalChoice.vo
-@dirrm lib/coq/theories/Logic
+lib/coq/theories/Logic/SetIsType.vo
 lib/coq/theories/NArith/BinNat.vo
 lib/coq/theories/NArith/BinPos.vo
 lib/coq/theories/NArith/NArith.vo
@@ -229,14 +496,83 @@ lib/coq/theories/NArith/Ndigits.vo
 lib/coq/theories/NArith/Ndist.vo
 lib/coq/theories/NArith/Nnat.vo
 lib/coq/theories/NArith/Pnat.vo
-@dirrm lib/coq/theories/NArith
+lib/coq/theories/Numbers/BigNumPrelude.vo
+lib/coq/theories/Numbers/Cyclic/Abstract/CyclicAxioms.vo
+lib/coq/theories/Numbers/Cyclic/Abstract/NZCyclic.vo
+lib/coq/theories/Numbers/Cyclic/DoubleCyclic/DoubleAdd.vo
+lib/coq/theories/Numbers/Cyclic/DoubleCyclic/DoubleBase.vo
+lib/coq/theories/Numbers/Cyclic/DoubleCyclic/DoubleCyclic.vo
+lib/coq/theories/Numbers/Cyclic/DoubleCyclic/DoubleDiv.vo
+lib/coq/theories/Numbers/Cyclic/DoubleCyclic/DoubleDivn1.vo
+lib/coq/theories/Numbers/Cyclic/DoubleCyclic/DoubleLift.vo
+lib/coq/theories/Numbers/Cyclic/DoubleCyclic/DoubleMul.vo
+lib/coq/theories/Numbers/Cyclic/DoubleCyclic/DoubleSqrt.vo
+lib/coq/theories/Numbers/Cyclic/DoubleCyclic/DoubleSub.vo
+lib/coq/theories/Numbers/Cyclic/DoubleCyclic/DoubleType.vo
+lib/coq/theories/Numbers/Cyclic/Int31/Cyclic31.vo
+lib/coq/theories/Numbers/Cyclic/Int31/Int31.vo
+lib/coq/theories/Numbers/Cyclic/ZModulo/ZModulo.vo
+lib/coq/theories/Numbers/Integer/Abstract/ZAdd.vo
+lib/coq/theories/Numbers/Integer/Abstract/ZAddOrder.vo
+lib/coq/theories/Numbers/Integer/Abstract/ZAxioms.vo
+lib/coq/theories/Numbers/Integer/Abstract/ZBase.vo
+lib/coq/theories/Numbers/Integer/Abstract/ZLt.vo
+lib/coq/theories/Numbers/Integer/Abstract/ZMul.vo
+lib/coq/theories/Numbers/Integer/Abstract/ZMulOrder.vo
+lib/coq/theories/Numbers/Integer/BigZ/BigZ.vo
+lib/coq/theories/Numbers/Integer/BigZ/ZMake.vo
+lib/coq/theories/Numbers/Integer/Binary/ZBinary.vo
+lib/coq/theories/Numbers/Integer/NatPairs/ZNatPairs.vo
+lib/coq/theories/Numbers/Integer/SpecViaZ/ZSig.vo
+lib/coq/theories/Numbers/Integer/SpecViaZ/ZSigZAxioms.vo
+lib/coq/theories/Numbers/NaryFunctions.vo
+lib/coq/theories/Numbers/NatInt/NZAdd.vo
+lib/coq/theories/Numbers/NatInt/NZAddOrder.vo
+lib/coq/theories/Numbers/NatInt/NZAxioms.vo
+lib/coq/theories/Numbers/NatInt/NZBase.vo
+lib/coq/theories/Numbers/NatInt/NZMul.vo
+lib/coq/theories/Numbers/NatInt/NZMulOrder.vo
+lib/coq/theories/Numbers/NatInt/NZOrder.vo
+lib/coq/theories/Numbers/Natural/Abstract/NAdd.vo
+lib/coq/theories/Numbers/Natural/Abstract/NAddOrder.vo
+lib/coq/theories/Numbers/Natural/Abstract/NAxioms.vo
+lib/coq/theories/Numbers/Natural/Abstract/NBase.vo
+lib/coq/theories/Numbers/Natural/Abstract/NIso.vo
+lib/coq/theories/Numbers/Natural/Abstract/NMul.vo
+lib/coq/theories/Numbers/Natural/Abstract/NMulOrder.vo
+lib/coq/theories/Numbers/Natural/Abstract/NOrder.vo
+lib/coq/theories/Numbers/Natural/Abstract/NSub.vo
+lib/coq/theories/Numbers/Natural/BigN/BigN.vo
+lib/coq/theories/Numbers/Natural/BigN/NMake.vo
+lib/coq/theories/Numbers/Natural/BigN/Nbasic.vo
+lib/coq/theories/Numbers/Natural/Binary/NBinDefs.vo
+lib/coq/theories/Numbers/Natural/Binary/NBinary.vo
+lib/coq/theories/Numbers/Natural/Peano/NPeano.vo
+lib/coq/theories/Numbers/Natural/SpecViaZ/NSig.vo
+lib/coq/theories/Numbers/Natural/SpecViaZ/NSigNAxioms.vo
+lib/coq/theories/Numbers/NumPrelude.vo
+lib/coq/theories/Numbers/Rational/BigQ/BigQ.vo
+lib/coq/theories/Numbers/Rational/BigQ/QMake.vo
+lib/coq/theories/Numbers/Rational/SpecViaQ/QSig.vo
+lib/coq/theories/Program/Basics.vo
+lib/coq/theories/Program/Combinators.vo
+lib/coq/theories/Program/Equality.vo
+lib/coq/theories/Program/Program.vo
+lib/coq/theories/Program/Subset.vo
+lib/coq/theories/Program/Syntax.vo
+lib/coq/theories/Program/Tactics.vo
+lib/coq/theories/Program/Utils.vo
+lib/coq/theories/Program/Wf.vo
 lib/coq/theories/QArith/QArith.vo
 lib/coq/theories/QArith/QArith_base.vo
+lib/coq/theories/QArith/Qabs.vo
 lib/coq/theories/QArith/Qcanon.vo
+lib/coq/theories/QArith/Qfield.vo
+lib/coq/theories/QArith/Qpower.vo
 lib/coq/theories/QArith/Qreals.vo
 lib/coq/theories/QArith/Qreduction.vo
 lib/coq/theories/QArith/Qring.vo
-@dirrm lib/coq/theories/QArith
+lib/coq/theories/QArith/Qround.vo
 lib/coq/theories/Reals/Alembert.vo
 lib/coq/theories/Reals/AltSeries.vo
 lib/coq/theories/Reals/ArithProp.vo
@@ -274,6 +610,7 @@ lib/coq/theories/Reals/Rgeom.vo
 lib/coq/theories/Reals/RiemannInt.vo
 lib/coq/theories/Reals/RiemannInt_SF.vo
 lib/coq/theories/Reals/Rlimit.vo
+lib/coq/theories/Reals/Rlogic.vo
 lib/coq/theories/Reals/Rpow_def.vo
 lib/coq/theories/Reals/Rpower.vo
 lib/coq/theories/Reals/Rprod.vo
@@ -292,16 +629,11 @@ lib/coq/theories/Reals/SeqSeries.vo
 lib/coq/theories/Reals/SplitAbsolu.vo
 lib/coq/theories/Reals/SplitRmult.vo
 lib/coq/theories/Reals/Sqrt_reg.vo
-@dirrm lib/coq/theories/Reals
-lib/coq/theories/Relations/Newman.vo
 lib/coq/theories/Relations/Operators_Properties.vo
 lib/coq/theories/Relations/Relation_Definitions.vo
 lib/coq/theories/Relations/Relation_Operators.vo
 lib/coq/theories/Relations/Relations.vo
-lib/coq/theories/Relations/Rstar.vo
-@dirrm lib/coq/theories/Relations
 lib/coq/theories/Setoids/Setoid.vo
-@dirrm lib/coq/theories/Setoids
 lib/coq/theories/Sets/Classical_sets.vo
 lib/coq/theories/Sets/Constructive_sets.vo
 lib/coq/theories/Sets/Cpo.vo
@@ -324,16 +656,14 @@ lib/coq/theories/Sets/Relations_2_facts.vo
 lib/coq/theories/Sets/Relations_3.vo
 lib/coq/theories/Sets/Relations_3_facts.vo
 lib/coq/theories/Sets/Uniset.vo
-@dirrm lib/coq/theories/Sets
 lib/coq/theories/Sorting/Heap.vo
 lib/coq/theories/Sorting/PermutEq.vo
 lib/coq/theories/Sorting/PermutSetoid.vo
 lib/coq/theories/Sorting/Permutation.vo
 lib/coq/theories/Sorting/Sorting.vo
-@dirrm lib/coq/theories/Sorting
 lib/coq/theories/Strings/Ascii.vo
 lib/coq/theories/Strings/String.vo
-@dirrm lib/coq/theories/Strings
+lib/coq/theories/Unicode/Utf8.vo
 lib/coq/theories/Wellfounded/Disjoint_Union.vo
 lib/coq/theories/Wellfounded/Inclusion.vo
 lib/coq/theories/Wellfounded/Inverse_Image.vo
@@ -343,13 +673,14 @@ lib/coq/theories/Wellfounded/Transitive_Closure.vo
 lib/coq/theories/Wellfounded/Union.vo
 lib/coq/theories/Wellfounded/Well_Ordering.vo
 lib/coq/theories/Wellfounded/Wellfounded.vo
-@dirrm lib/coq/theories/Wellfounded
 lib/coq/theories/ZArith/BinInt.vo
 lib/coq/theories/ZArith/Int.vo
 lib/coq/theories/ZArith/Wf_Z.vo
 lib/coq/theories/ZArith/ZArith.vo
 lib/coq/theories/ZArith/ZArith_base.vo
 lib/coq/theories/ZArith/ZArith_dec.vo
+lib/coq/theories/ZArith/ZOdiv.vo
+lib/coq/theories/ZArith/ZOdiv_def.vo
 lib/coq/theories/ZArith/Zabs.vo
 lib/coq/theories/ZArith/Zbinary.vo
 lib/coq/theories/ZArith/Zbool.vo
@@ -357,6 +688,7 @@ lib/coq/theories/ZArith/Zcompare.vo
 lib/coq/theories/ZArith/Zcomplements.vo
 lib/coq/theories/ZArith/Zdiv.vo
 lib/coq/theories/ZArith/Zeven.vo
+lib/coq/theories/ZArith/Zgcd_alt.vo
 lib/coq/theories/ZArith/Zhints.vo
 lib/coq/theories/ZArith/Zlogarithm.vo
 lib/coq/theories/ZArith/Zmax.vo
@@ -367,19 +699,111 @@ lib/coq/theories/ZArith/Znat.vo
 lib/coq/theories/ZArith/Znumtheory.vo
 lib/coq/theories/ZArith/Zorder.vo
 lib/coq/theories/ZArith/Zpow_def.vo
+lib/coq/theories/ZArith/Zpow_facts.vo
 lib/coq/theories/ZArith/Zpower.vo
 lib/coq/theories/ZArith/Zsqrt.vo
 lib/coq/theories/ZArith/Zwf.vo
 lib/coq/theories/ZArith/auxiliary.vo
-@dirrm lib/coq/theories/ZArith
-@dirrm lib/coq/theories
 lib/coq/tools/coqdoc/coqdoc.css
 lib/coq/tools/coqdoc/coqdoc.sty
+lib/coq/toplevel/auto_ind_decl.cmi
+lib/coq/toplevel/cerrors.cmi
+lib/coq/toplevel/class.cmi
+lib/coq/toplevel/classes.cmi
+lib/coq/toplevel/command.cmi
+lib/coq/toplevel/coqinit.cmi
+lib/coq/toplevel/coqtop.cmi
+lib/coq/toplevel/discharge.cmi
+lib/coq/toplevel/himsg.cmi
+lib/coq/toplevel/ind_tables.cmi
+lib/coq/toplevel/line_oriented_parser.cmi
+lib/coq/toplevel/metasyntax.cmi
+lib/coq/toplevel/mltop.cmi
+lib/coq/toplevel/protectedtoplevel.cmi
+lib/coq/toplevel/record.cmi
+lib/coq/toplevel/toplevel.a
+lib/coq/toplevel/toplevel.cma
+lib/coq/toplevel/toplevel.cmi
+lib/coq/toplevel/toplevel.cmxa
+lib/coq/toplevel/usage.cmi
+lib/coq/toplevel/vernac.cmi
+lib/coq/toplevel/vernacentries.cmi
+lib/coq/toplevel/vernacexpr.cmi
+lib/coq/toplevel/vernacinterp.cmi
+lib/coq/toplevel/whelp.cmi
+@dirrm lib/coq/config
+@dirrm lib/coq/contrib/cc
+@dirrm lib/coq/contrib/dp
+@dirrm lib/coq/contrib/extraction
+@dirrm lib/coq/contrib/field
+@dirrm lib/coq/contrib/firstorder
+@dirrm lib/coq/contrib/fourier
+@dirrm lib/coq/contrib/funind
+@dirrm lib/coq/contrib/interface
+@dirrm lib/coq/contrib/micromega
+@dirrm lib/coq/contrib/omega
+@dirrm lib/coq/contrib/ring
+@dirrm lib/coq/contrib/romega
+@dirrm lib/coq/contrib/rtauto
+@dirrm lib/coq/contrib/setoid_ring
+@dirrm lib/coq/contrib/subtac
+@dirrm lib/coq/contrib/xml
+@dirrm lib/coq/contrib
+%%IDE%%@dirrm lib/coq/ide
+@dirrm lib/coq/interp
+@dirrm lib/coq/kernel
+@dirrm lib/coq/lib
+@dirrm lib/coq/library
+@dirrm lib/coq/parsing
+@dirrm lib/coq/pretyping
+@dirrm lib/coq/proofs
+@dirrm lib/coq/states
+@dirrm lib/coq/tactics
+@dirrm lib/coq/theories/Arith
+@dirrm lib/coq/theories/Bool
+@dirrm lib/coq/theories/Classes
+@dirrm lib/coq/theories/FSets
+@dirrm lib/coq/theories/Init
+@dirrm lib/coq/theories/Lists
+@dirrm lib/coq/theories/Logic
+@dirrm lib/coq/theories/NArith
+@dirrm lib/coq/theories/Numbers/Cyclic/Abstract
+@dirrm lib/coq/theories/Numbers/Cyclic/DoubleCyclic
+@dirrm lib/coq/theories/Numbers/Cyclic/Int31
+@dirrm lib/coq/theories/Numbers/Cyclic/ZModulo
+@dirrm lib/coq/theories/Numbers/Cyclic
+@dirrm lib/coq/theories/Numbers/Integer/Abstract
+@dirrm lib/coq/theories/Numbers/Integer/BigZ
+@dirrm lib/coq/theories/Numbers/Integer/Binary
+@dirrm lib/coq/theories/Numbers/Integer/NatPairs
+@dirrm lib/coq/theories/Numbers/Integer/SpecViaZ
+@dirrm lib/coq/theories/Numbers/Integer
+@dirrm lib/coq/theories/Numbers/NatInt
+@dirrm lib/coq/theories/Numbers/Natural/Abstract
+@dirrm lib/coq/theories/Numbers/Natural/BigN
+@dirrm lib/coq/theories/Numbers/Natural/Binary
+@dirrm lib/coq/theories/Numbers/Natural/Peano
+@dirrm lib/coq/theories/Numbers/Natural/SpecViaZ
+@dirrm lib/coq/theories/Numbers/Natural
+@dirrm lib/coq/theories/Numbers/Rational/BigQ
+@dirrm lib/coq/theories/Numbers/Rational/SpecViaQ
+@dirrm lib/coq/theories/Numbers/Rational
+@dirrm lib/coq/theories/Numbers
+@dirrm lib/coq/theories/Program
+@dirrm lib/coq/theories/QArith
+@dirrm lib/coq/theories/Reals
+@dirrm lib/coq/theories/Relations
+@dirrm lib/coq/theories/Setoids
+@dirrm lib/coq/theories/Sets
+@dirrm lib/coq/theories/Sorting
+@dirrm lib/coq/theories/Strings
+@dirrm lib/coq/theories/Unicode
+@dirrm lib/coq/theories/Wellfounded
+@dirrm lib/coq/theories/ZArith
+@dirrm lib/coq/theories
 @dirrm lib/coq/tools/coqdoc
 @dirrm lib/coq/tools
-lib/coq/toplevel.cma
-lib/coq/toplevel.cmxa
-@exec mkdir -p %D/lib/coq/user-contrib
+@dirrm lib/coq/toplevel
 @dirrm lib/coq/user-contrib
 @dirrm lib/coq
 share/emacs/site-lisp/coq-inferior.el
