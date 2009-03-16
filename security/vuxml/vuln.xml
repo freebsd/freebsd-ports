@@ -72,7 +72,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>roundcube -- webmail script insertion and php code injection</topic>
     <affects>
       <package>
-	<name></name>
+	<name>roundcube</name>
 	<range><lt>0.2.1</lt></range>
       </package>
     </affects>
