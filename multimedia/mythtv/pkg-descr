@@ -1,21 +1,13 @@
 MythTV is a "Personal Video Recorder", i.e. a computer-based video
 recorder.  It supports pausing and rewinding live TV, multiple tuner
-cards, hardware or software video compression, onscreen program guides
-and a distributed architecture.
-
-The current distributed version of MythTV
-(http://www.mythtv.org/modules.php?name=Downloads&d_op=viewdownload&cid=1)
-is out of date for just about all platforms.  It is also protocol
-incompatible with the "bug fix" version, which is maintained under
-subversion, rather like the FreeBSD -STABLE branch.  This port is a
-snapshot of svn version 13053, dated 15 March 2007.  Later versions of
-this tree are no longer compatible with this port.
+cards, hardware or software video compression, onscreen program
+guides and a distributed architecture.
 
 MythTV requires tuner drivers which support the V4L standard.
 Currently no official FreeBSD driver does so, but the latest version
 of a beta version of the cxm driver is available from
-http://usleepless.110mb.com/pvrxxx_port-10042007.tgz.  Problems have
-been reported with this port; if you use it, you should join the
-FreeBSD-multimedia mailing list and report where appropriate.
+http://usleepless.110mb.com/pvrxxx_port-10042007.tgz.  Problems
+have been reported with this port; if you use it, you should join
+the FreeBSD-multimedia mailing list and report where appropriate.
 
 WWW: http://www.mythtv.org
