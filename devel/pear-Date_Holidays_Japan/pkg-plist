@@ -1,0 +1,5 @@
+share/pear/Date/Holidays/Driver/Japan.php
+share/pear/packages/pear-Date_Holidays_Japan-%%PORTVERSION%%/package.xml
+share/pear/tests/Date_Holidays_Japan/Date_Holidays_Driver_Japan_TestSuite.php
+@dirrm share/pear/tests/Date_Holidays_Japan/
+@dirrm share/pear/packages/pear-Date_Holidays_Japan-%%PORTVERSION%%
