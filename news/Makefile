@@ -47,6 +47,7 @@
     SUBDIR += knews
     SUBDIR += leafnode
     SUBDIR += leafnode+
+    SUBDIR += lottanzb
     SUBDIR += lusernet
     SUBDIR += mmail
     SUBDIR += multisuck
