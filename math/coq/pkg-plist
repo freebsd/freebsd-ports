@@ -3,6 +3,7 @@ bin/coq-interface.opt
 bin/coq-tex
 bin/coq_makefile
 bin/coqc
+bin/coqchk
 bin/coqchk.opt
 bin/coqdep
 bin/coqdoc
