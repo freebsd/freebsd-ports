@@ -1,0 +1,10 @@
+Fabric is a simple pythonic remote deployment tool.
+
+It is designed to upload files to, and run shell commands on, a number
+of servers in parallel or serially. These commands are grouped in tasks
+(regular python functions) and specified in a 'fabfile.'
+
+This is called remote automation, and the primary use case is deploying
+applications to multiple similar hosts.
+
+WWW:	http://www.nongnu.org/fab/

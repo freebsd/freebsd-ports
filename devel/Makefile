@@ -2253,6 +2253,7 @@
     SUBDIR += py-extremes
     SUBDIR += py-ez_xml
     SUBDIR += py-ezpyinline
+    SUBDIR += py-fabric
     SUBDIR += py-fam
     SUBDIR += py-fileutils
     SUBDIR += py-flakes
