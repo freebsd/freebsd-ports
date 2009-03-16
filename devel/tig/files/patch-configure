@@ -1,0 +1,25 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -3656,7 +3656,7 @@
+   return 0;
+ }
+ _ACEOF
+-for ac_lib in '' ncurses; do
++for ac_lib in '' ncursesw; do
+   if test -z "$ac_lib"; then
+     ac_res="none required"
+   else
+@@ -3722,10 +3722,6 @@
+    { (exit 1); exit 1; }; }
+ 	esac
+ 
+-	{ echo "$as_me:$LINENO: WARNING: The found ncurses library does not support wide-char." >&5
+-echo "$as_me: WARNING: The found ncurses library does not support wide-char." >&2;}
+-	{ echo "$as_me:$LINENO: WARNING: This means that tig will not correctly render UTF-8." >&5
+-echo "$as_me: WARNING: This means that tig will not correctly render UTF-8." >&2;}
+ esac
+ 
+ 
