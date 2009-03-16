@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Manifest
-PORTVERSION=	0.04
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	cm@therek.net
 COMMENT=	Parse and examine a Perl distribution MANIFEST file
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
+		${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
