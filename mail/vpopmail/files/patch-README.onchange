@@ -1,6 +1,7 @@
-diff -urN -x .svn ../../vendor/vpopmail/README.onchange ./README.onchange
---- ../../vendor/vpopmail/README.onchange	2007-10-07 23:44:14.000000000 +0300
-+++ ./README.onchange	2007-10-08 11:53:54.000000000 +0300
+Fix a typo.
+
+--- a/README.onchange
++++ b/README.onchange
 @@ -8,7 +8,7 @@
  only the inital call triggers the script.  For example vadddomain uses
  vadduser and vmoduser to create the postmaster user, and set its 

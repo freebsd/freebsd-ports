@@ -1,6 +1,8 @@
-diff -urN -x .svn ../../vendor/vpopmail/vdelivermail.c ./vdelivermail.c
---- ../../vendor/vpopmail/vdelivermail.c	2007-10-07 23:44:14.000000000 +0300
-+++ ./vdelivermail.c	2008-03-17 11:28:45.000000000 +0200
+Add SpamAssassin support.
+Drop the unneeded MAX_ENV_BUFF definition.
+
+--- a/vdelivermail.c
++++ b/vdelivermail.c
 @@ -74,6 +74,7 @@
  int is_spam();
  #endif
@@ -115,7 +117,17 @@ diff -urN -x .svn ../../vendor/vpopmail/vdelivermail.c ./vdelivermail.c
      /* This is an command */
      if ( *address == '|' ) { 
  
-@@ -1207,19 +1251,22 @@
+@@ -895,9 +939,6 @@
+  */
+ void run_command(char *prog)
+ {
+-
+-#define MAX_ENV_BUFF 100
+-
+  int child;
+  char *(args[4]);
+  int wstat;
+@@ -1211,19 +1252,22 @@
   *   * in the email headers for X-Spam-Level: which
   *    * we put in each spam email
   *     *
@@ -142,7 +154,7 @@ diff -urN -x .svn ../../vendor/vpopmail/vdelivermail.c ./vdelivermail.c
  
           /* check for blank line, end of headers */
           for(k=j,found=0;k<i;++k) {
-@@ -1242,13 +1289,19 @@
+@@ -1246,13 +1290,19 @@
           }
           if ( found == 0 ) {
             InHeaders=0;

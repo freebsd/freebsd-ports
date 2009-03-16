@@ -1,6 +1,7 @@
-diff -urN -x .svn ../../vendor/vpopmail/README.vpopmaild ./README.vpopmaild
---- ../../vendor/vpopmail/README.vpopmaild	2007-10-07 23:44:14.000000000 +0300
-+++ ./README.vpopmaild	2007-10-08 12:10:43.000000000 +0300
+Fix a couple of typos and grammatical errors.
+
+--- a/README.vpopmaild
++++ b/README.vpopmaild
 @@ -243,7 +243,7 @@
  
  Rights required: Must be a valid email address.
@@ -19,7 +20,7 @@ diff -urN -x .svn ../../vendor/vpopmail/README.vpopmaild ./README.vpopmaild
  means the user can not change passwords.
  
  no_password_change, no_pop, no_webmail, no_imap, bounce_mail, no_relay,
-@@ -630,7 +630,7 @@
+@@ -631,7 +631,7 @@
  Rights required: SA_ADMIN
  
  Action:  List all domains on the system, and their parent domain.
@@ -28,7 +29,7 @@ diff -urN -x .svn ../../vendor/vpopmail/README.vpopmaild ./README.vpopmaild
  When both are given, the data is broken up into pages with lines_per_page
  lines on each.  The page returned is specified by page.
  
-@@ -1087,7 +1087,7 @@
+@@ -1088,7 +1088,7 @@
  The actual error messages are stored in the file vpopmaild.msg for easy translation.
  Once there are other language files, I'll create a directory to store the various
  language files, and use a symlink to select a language.  Error messages are set

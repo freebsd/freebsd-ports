@@ -1,6 +1,8 @@
-diff -urN -x .svn ../../vendor/vpopmail/vutil.c ./vutil.c
---- ../../vendor/vpopmail/vutil.c	2007-12-25 05:03:25.000000000 +0200
-+++ ./vutil.c	2007-12-25 07:31:16.000000000 +0200
+Optimize a lot of calls by just using access(2).
+Fix a file descriptor and FILE structure leak.
+
+--- a/vutil.c
++++ b/vutil.c
 @@ -76,13 +76,7 @@
    */
  

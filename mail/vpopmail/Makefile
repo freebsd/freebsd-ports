@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.4.26
-PORTREVISION=	1
+PORTVERSION=	5.4.27
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +16,8 @@ COMMENT=	Easy virtual domain and authentication package for use with qmail
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
+
+PATCH_STRIP=	-p1
 
 USE_QMAIL=	yes
 
@@ -119,6 +120,14 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_PREFIX} \
 # WITH_SYBASE_APP - the app for connecting to the Sybase server (vpopmail)
 # WITH_SYBASE_DB  - the name of the Sybase database to connect to (vpopmail)
 #
+# Courier IMAP configuration options for authvchkpw
+#
+# WARNING: This is NOT TESTED, not in the least.
+# Please report any success or failure to the port maintainer,
+# Peter Pentchev <roam@FreeBSD.org>
+#
+# WITH_COURIER_IMAPLOGIN - the path to the imaplogin program
+# WITH_COURIER_IMAPD - the path to the imapd program
 
 RELAYCLEAR?=	30
 SPAM_THRESHOLD?=15
@@ -322,9 +331,13 @@ CONFIGURE_ARGS+=	--enable-spamassassin \
 			--enable-spamc-prog=${LOCALBASE}/bin/spamc \
 			--enable-spam-threshold=${SPAM_THRESHOLD}
 .if defined(WITH_SPAMFOLDER)
-CONFIGURE_ARGS+=       --enable-spam-junkfolder
+CONFIGURE_ARGS+=	--enable-spam-junkfolder
 .endif
 .endif
+
+WITH_COURIER_IMAPLOGIN?=	${LOCALBASE}/sbin/imaplogin
+WITH_VPOPMAIL_AUTHVCHKPW?=	${PREFIX}/vpopmail/bin/authvchkpw
+WITH_COURIER_IMAPD?=		${LOCALBASE}/bin/imapd
 
 DOCS=		README README.activedirectory README.filelocking \
 		README.ipaliasdomains README.ldap README.maildrop \
@@ -387,6 +400,9 @@ pre-configure:
 	${REINPLACE_CMD} -E -e "s/(#define SYBASE_DATABASE.*)vpopmail(.*)/\1${WITH_SYBASE_DB}\2/" ${WRKSRC}/vsybase.h
 .endif
 .endif
+	${REINPLACE_CMD} -E -e "s@(#define PATH_IMAPLOGIN.*)VPOPMAILDIR.*@\1\"${WITH_COURIER_IMAPLOGIN}\"@" ${WRKSRC}/authvchkpw.c
+	${REINPLACE_CMD} -E -e "s@(#define PATH_AUTHVCHKPW.*)VPOPMAILDIR.*@\1\"${WITH_VPOPMAIL_AUTHVCHKPW}\"@" ${WRKSRC}/authvchkpw.c
+	${REINPLACE_CMD} -E -e "s@(#define PATH_IMAPD.*)VPOPMAILDIR.*@\1\"${WITH_COURIER_IMAPD}\"@" ${WRKSRC}/authvchkpw.c
 	${MKDIR} ${VCFGDIR}
 
 post-install:

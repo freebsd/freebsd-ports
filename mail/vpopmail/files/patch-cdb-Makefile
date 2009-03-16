@@ -1,5 +1,7 @@
---- cdb/Makefile.orig	Thu Jun 15 17:00:43 2006
-+++ cdb/Makefile	Thu Jun 15 17:01:23 2006
+Do not unconditionally add -fPIC, this is only done for the shared libs.
+
+--- a/cdb/Makefile
++++ b/cdb/Makefile
 @@ -43,7 +43,7 @@
  compile: \
  warn-auto.sh conf-cc

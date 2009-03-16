@@ -1,6 +1,8 @@
-diff -urN -x .svn ../../vendor/vpopmail/vpgsql.c ./vpgsql.c
---- ../../vendor/vpopmail/vpgsql.c	2007-10-07 23:44:14.000000000 +0300
-+++ vpgsql.c	2007-12-25 03:47:54.000000000 +0200
+Implement valias support.
+Implement SQL_REMOVE_DELETED.
+
+--- a/vpgsql.c
++++ b/vpgsql.c
 @@ -390,13 +390,15 @@
  #endif
  
@@ -62,7 +64,7 @@ diff -urN -x .svn ../../vendor/vpopmail/vpgsql.c ./vpgsql.c
 +
 +    if ( (err=vauth_open(0)) != 0 ) return(NULL);
 +
-+    qnprintf( SqlBufRead, SQL_BUF_SIZE, 
++    qnprintf( SqlBufRead, SQL_BUF_SIZE,
 +        "select distinct alias from valias where domain = '%s' order by alias", domain );
 +
 +  if ( ! (pgres=PQexec(pgc, SqlBufRead))
@@ -84,7 +86,7 @@ diff -urN -x .svn ../../vendor/vpopmail/vpgsql.c ./vpgsql.c
 +    if (valias_current == NULL) valias_current = temp_entry;
 +  }
 +  PQclear (pgres);
-+  pgres = NULL; 
++  pgres = NULL;
 +
 +    if (valias_current == NULL) return NULL; /* no results */
 +    else return(valias_current->data);
@@ -99,7 +101,7 @@ diff -urN -x .svn ../../vendor/vpopmail/vpgsql.c ./vpgsql.c
 +{
 +    if (valias_current == NULL) return NULL;
 +    valias_current = linklist_del (valias_current);
-+ 
++
 +    if (valias_current == NULL) return NULL; /* no results */
 +    else return(valias_current->data);
 +}

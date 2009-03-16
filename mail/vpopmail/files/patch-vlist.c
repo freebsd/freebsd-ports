@@ -1,6 +1,8 @@
-diff -urN -x .svn ../../vendor/vpopmail/vlist.c ./vlist.c
---- ../../vendor/vpopmail/vlist.c	2007-12-25 05:03:25.000000000 +0200
-+++ ./vlist.c	2007-12-25 07:31:17.000000000 +0200
+Do not impose an arbitrary limit of 100 list entries.
+Fix the usage message and an error message.
+
+--- a/vlist.c
++++ b/vlist.c
 @@ -44,6 +44,7 @@
  #include <sys/stat.h>
  #include <sys/wait.h>
