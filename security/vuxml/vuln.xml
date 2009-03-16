@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c5af0747-1262-11de-a964-0030843d3802">
+    <topic>libsndfile -- CAF processing integer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>libsndfile</name>
+	<range><lt>1.0.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/33980/">
+	  <p>The vulnerability is caused due to an integer overflow error in the
+	    processing of CAF description chunks. This can be exploited to cause a
+	    heap-based buffer overflow by tricking the user into processing a
+	    specially crafted CAF audio file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-0186</cvename>
+      <url>http://secunia.com/advisories/33980/</url>
+    </references>
+    <dates>
+      <discovery>2009-03-03</discovery>
+      <entry>2009-03-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6733e1bf-125f-11de-a964-0030843d3802">
     <topic>ffmpeg -- 4xm processing memory corruption vulnerability</topic>
     <affects>
