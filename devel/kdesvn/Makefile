@@ -46,7 +46,7 @@ post-extract:
 .if ${ARCH} == amd64
 BROKEN=		Leaves files behind when deinstalled on amd64
 .endif
-.if ${ARCH} == amd64
+.if ${ARCH} == sparc64
 BROKEN=		Fails to install on sparc64
 .endif
 
