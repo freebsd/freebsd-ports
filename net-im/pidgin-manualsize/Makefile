@@ -10,7 +10,7 @@ PORTVERSION=	0.6a
 PORTREVISION?=	0
 CATEGORIES=	net-im
 MASTER_SITES=	http://myfotomx.com/files/ \
-		http://autocthonia.net/freebsd/distfiles/
+		http://wickedmachine.net/~jsa/FreeBSD/distfiles/
 PKGNAMEPREFIX=	pidgin-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
