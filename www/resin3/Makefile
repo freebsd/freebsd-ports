@@ -6,11 +6,11 @@
 #
 
 PORTNAME=		resin
-PORTVERSION=		3.1.6
+PORTVERSION=		3.1.8
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
-MAINTAINER=		boris@tagnet.ru
+MAINTAINER=		wenheping@gmail.com
 COMMENT=		Resin, a Java-based Application Server, 3.x branch
 
 USE_JAVA=		yes
