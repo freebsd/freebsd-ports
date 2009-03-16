@@ -7,7 +7,7 @@
 
 PORTNAME=	openal
 PORTVERSION=	20060211
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://openal.org/openal_webstf/downloads/
 DISTVERSION=	0.0.8
@@ -74,6 +74,13 @@ CONFIGURE_ARGS+=--enable-smpeg
 CONFIGURE_ARGS+=--disable-smpeg
 .endif
 
+.if ${ARCH} == "i386"
+OPTIONS+=	X86_ASM "Enable x86 assembly code" on
+.if !defined(WITHOUT_X86_ASM)
+BUILD_DEPENDS+=	nasm:${LOCALBASE}/devel/nasm
+.endif
+.endif
+
 NOT_FOR_ARCHS=	ia64
 NOT_FOR_ARCHS_REASON_ia64=	does not compile
 
@@ -89,8 +96,9 @@ post-patch:
 		s|Libs: |&${PTHREAD_LIBS} |;\
 		s|Cflags: |&${PTHREAD_CFLAGS} |' \
 		${WRKSRC}/admin/pkgconfig/openal.pc.in
-# broken openal library will be produced if nasm is installed
+.if defined(WITHOUT_X86_ASM)
 	@${REINPLACE_CMD} -e '/^NASM=/ s|=.*|=no|' ${WRKSRC}/configure
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
