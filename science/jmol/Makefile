@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	jmol
-PORTVERSION=	11.6
+PORTVERSION=	11.6.17
 CATEGORIES=	science java
 MASTER_SITES=	SF:source1 \
-		http://jmol.svn.sourceforge.net/viewvc/*checkout*/jmol/trunk/Jmol/selfSignedCertificate/:source2
+		http://jmol.svn.sourceforge.net/viewvc/jmol/trunk/Jmol/selfSignedCertificate/:source2
 DISTFILES=	${PORTNAME}-${PORTVERSION}-full.tar.gz:source1 \
 		selfSignedCertificate.cer:source2 \
 		selfSignedCertificate.store:source2
