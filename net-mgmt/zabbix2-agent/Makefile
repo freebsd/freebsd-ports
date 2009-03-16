@@ -24,6 +24,8 @@ MAKE_ARGS=	ARCH=freebsd
 CONFIGURE_ARGS+=--enable-ipv6
 .endif
 
+FORBIDDEN=	multiple vulnerabilities http://www.vuxml.org/freebsd/03140526-1250-11de-a964-0030843d3802.html
+
 ZABBIX_BIN=	agent agentd get sender
 ZABBIX_CFG=	agent agentd
 ZABBIX_BINFILES=${ZABBIX_BIN:S|^|zabbix_|:C|.+|&/&|:S|agentd/|agent/|}
