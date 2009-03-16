@@ -1,5 +1,5 @@
 share/pear/Date/Holidays/Driver/Austria.php
-share/pear/packages/pear-Date_Holidays_Austria-0.1.2/package.xml
+share/pear/packages/pear-Date_Holidays_Austria-%%PORTVERSION%%/package.xml
 share/pear/tests/Date_Holidays_Austria/Date_Holidays_Driver_Austria_TestSuite.php
 @dirrm share/pear/tests/Date_Holidays_Austria
-@dirrm share/pear/packages/pear-Date_Holidays_Austria-0.1.2
+@dirrm share/pear/packages/pear-Date_Holidays_Austria-%%PORTVERSION%%

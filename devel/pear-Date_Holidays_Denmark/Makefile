@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Date_Holidays_Denmark
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	devel www pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
