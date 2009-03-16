@@ -3,7 +3,7 @@
 %%APP_NAME%%/lib/ejb-15.jar
 %%APP_NAME%%/lib/hessian.jar
 %%APP_NAME%%/lib/j2ee-management-10.jar
-%%APP_NAME%%/lib/javamail-14.jar
+%%APP_NAME%%/lib/javamail-141.jar
 %%APP_NAME%%/lib/jaxrpc-15.jar
 %%APP_NAME%%/lib/jaxws-api.jar
 %%APP_NAME%%/lib/jca-15.jar
