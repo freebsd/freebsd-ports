@@ -1,124 +1,28 @@
 @comment $FreeBSD$
-bin/awesome
-bin/awesome-client
-bin/awsetbg
-etc/xdg/awesome/rc.lua
+bin/awesome2
+bin/awesome2-client
+bin/awesome2-menu
+bin/awesome2-message
 %%DATADIR%%/icons/awesome16.png
 %%DATADIR%%/icons/awesome32.png
 %%DATADIR%%/icons/awesome48.png
 %%DATADIR%%/icons/awesome64.png
-%%DATADIR%%/icons/invaders/enemy_1.png
-%%DATADIR%%/icons/invaders/enemy_2.png
-%%DATADIR%%/icons/invaders/enemy_3.png
-%%DATADIR%%/icons/invaders/player.png
-%%DATADIR%%/lib/awful/client.lua
-%%DATADIR%%/lib/awful/client.lua.in
-%%DATADIR%%/lib/awful/completion.lua
-%%DATADIR%%/lib/awful/completion.lua.in
-%%DATADIR%%/lib/awful/hooks.lua
-%%DATADIR%%/lib/awful/hooks.lua.in
-%%DATADIR%%/lib/awful/init.lua
-%%DATADIR%%/lib/awful/init.lua.in
-%%DATADIR%%/lib/awful/layout/init.lua
-%%DATADIR%%/lib/awful/layout/init.lua.in
-%%DATADIR%%/lib/awful/layout/suit/fair.lua
-%%DATADIR%%/lib/awful/layout/suit/fair.lua.in
-%%DATADIR%%/lib/awful/layout/suit/floating.lua
-%%DATADIR%%/lib/awful/layout/suit/floating.lua.in
-%%DATADIR%%/lib/awful/layout/suit/init.lua
-%%DATADIR%%/lib/awful/layout/suit/init.lua.in
-%%DATADIR%%/lib/awful/layout/suit/magnifier.lua
-%%DATADIR%%/lib/awful/layout/suit/magnifier.lua.in
-%%DATADIR%%/lib/awful/layout/suit/max.lua
-%%DATADIR%%/lib/awful/layout/suit/max.lua.in
-%%DATADIR%%/lib/awful/layout/suit/tile.lua
-%%DATADIR%%/lib/awful/layout/suit/tile.lua.in
-%%DATADIR%%/lib/awful/menu.lua
-%%DATADIR%%/lib/awful/menu.lua.in
-%%DATADIR%%/lib/awful/mouse.lua
-%%DATADIR%%/lib/awful/mouse.lua.in
-%%DATADIR%%/lib/awful/placement.lua
-%%DATADIR%%/lib/awful/placement.lua.in
-%%DATADIR%%/lib/awful/prompt.lua
-%%DATADIR%%/lib/awful/prompt.lua.in
-%%DATADIR%%/lib/awful/screen.lua
-%%DATADIR%%/lib/awful/screen.lua.in
-%%DATADIR%%/lib/awful/tag.lua
-%%DATADIR%%/lib/awful/tag.lua.in
-%%DATADIR%%/lib/awful/titlebar.lua
-%%DATADIR%%/lib/awful/titlebar.lua.in
-%%DATADIR%%/lib/awful/util.lua
-%%DATADIR%%/lib/awful/util.lua.in
-%%DATADIR%%/lib/awful/widget.lua
-%%DATADIR%%/lib/awful/widget.lua.in
-%%DATADIR%%/lib/beautiful.lua
-%%DATADIR%%/lib/beautiful.lua.in
-%%DATADIR%%/lib/invaders.lua
-%%DATADIR%%/lib/invaders.lua.in
-%%DATADIR%%/lib/naughty.lua
-%%DATADIR%%/lib/naughty.lua.in
-%%DATADIR%%/lib/tabulous.lua
-%%DATADIR%%/lib/tabulous.lua.in
-%%DATADIR%%/lib/telak.lua
-%%DATADIR%%/lib/telak.lua.in
-%%DATADIR%%/themes/default/background.png
-%%DATADIR%%/themes/default/layouts/fairh.png
-%%DATADIR%%/themes/default/layouts/fairhw.png
-%%DATADIR%%/themes/default/layouts/fairv.png
-%%DATADIR%%/themes/default/layouts/fairvw.png
-%%DATADIR%%/themes/default/layouts/floating.png
-%%DATADIR%%/themes/default/layouts/floatingw.png
-%%DATADIR%%/themes/default/layouts/magnifier.png
-%%DATADIR%%/themes/default/layouts/magnifierw.png
-%%DATADIR%%/themes/default/layouts/max.png
-%%DATADIR%%/themes/default/layouts/maxw.png
-%%DATADIR%%/themes/default/layouts/tile.png
-%%DATADIR%%/themes/default/layouts/tilebottom.png
-%%DATADIR%%/themes/default/layouts/tilebottomw.png
-%%DATADIR%%/themes/default/layouts/tileleft.png
-%%DATADIR%%/themes/default/layouts/tileleftw.png
-%%DATADIR%%/themes/default/layouts/tiletop.png
-%%DATADIR%%/themes/default/layouts/tiletopw.png
-%%DATADIR%%/themes/default/layouts/tilew.png
-%%DATADIR%%/themes/default/submenu.png
-%%DATADIR%%/themes/default/taglist/squarefw.png
-%%DATADIR%%/themes/default/taglist/squarew.png
-%%DATADIR%%/themes/default/tasklist/floating.png
-%%DATADIR%%/themes/default/tasklist/floatingw.png
-%%DATADIR%%/themes/default/theme
-%%DATADIR%%/themes/default/theme.in
-%%DATADIR%%/themes/default/titlebar/close.png
-%%DATADIR%%/themes/default/titlebar/closer.png
-%%DATADIR%%/themes/sky/awesome-icon.png
-%%DATADIR%%/themes/sky/layouts/fairh.png
-%%DATADIR%%/themes/sky/layouts/fairv.png
-%%DATADIR%%/themes/sky/layouts/floating.png
-%%DATADIR%%/themes/sky/layouts/fullscreen.png
-%%DATADIR%%/themes/sky/layouts/magnifier.png
-%%DATADIR%%/themes/sky/layouts/max.png
-%%DATADIR%%/themes/sky/layouts/tile.png
-%%DATADIR%%/themes/sky/layouts/tilebottom.png
-%%DATADIR%%/themes/sky/layouts/tileleft.png
-%%DATADIR%%/themes/sky/layouts/tiletop.png
-%%DATADIR%%/themes/sky/sky-background.png
-%%DATADIR%%/themes/sky/theme
-%%DATADIR%%/themes/sky/theme.in
-share/xsessions/awesome.desktop
-@dirrm %%DATADIR%%/icons/invaders
+%%DATADIR%%/icons/layouts/dwindle.png
+%%DATADIR%%/icons/layouts/dwindlew.png
+%%DATADIR%%/icons/layouts/floating.png
+%%DATADIR%%/icons/layouts/floatingw.png
+%%DATADIR%%/icons/layouts/max.png
+%%DATADIR%%/icons/layouts/maxw.png
+%%DATADIR%%/icons/layouts/spiral.png
+%%DATADIR%%/icons/layouts/spiralw.png
+%%DATADIR%%/icons/layouts/tile.png
+%%DATADIR%%/icons/layouts/tilebottom.png
+%%DATADIR%%/icons/layouts/tilebottomw.png
+%%DATADIR%%/icons/layouts/tileleft.png
+%%DATADIR%%/icons/layouts/tileleftw.png
+%%DATADIR%%/icons/layouts/tiletop.png
+%%DATADIR%%/icons/layouts/tiletopw.png
+%%DATADIR%%/icons/layouts/tilew.png
+@dirrm %%DATADIR%%/icons/layouts
 @dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/lib/awful/layout/suit
-@dirrm %%DATADIR%%/lib/awful/layout
-@dirrm %%DATADIR%%/lib/awful
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/themes/default/layouts
-@dirrm %%DATADIR%%/themes/default/taglist
-@dirrm %%DATADIR%%/themes/default/tasklist
-@dirrm %%DATADIR%%/themes/default/titlebar
-@dirrm %%DATADIR%%/themes/default
-@dirrm %%DATADIR%%/themes/sky/layouts
-@dirrm %%DATADIR%%/themes/sky
-@dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
-@dirrmtry etc/xdg/awesome
-@dirrmtry etc/xdg
-@dirrmtry share/xsessions

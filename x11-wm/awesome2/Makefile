@@ -1,67 +1,73 @@
-# New ports collection makefile for:   awesome
-# Date created:                September 26, 2007
-# Whom:                        Nikos Ntarmos <ntarmos@ceid.upatras.gr>
+# New ports collection makefile for:   awesome2
+# Date created:                February 26, 2009
+# Whom:                        Nikos Ntarmos <ntarmos@cs.uoi.gr>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	awesome
-PORTVERSION=	3.2
+PORTNAME=	awesome2
+PORTVERSION=	2.3.5
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://awesome.naquadah.org/download/ \
-		http://redundancy.redundancy.org/mirror/
+MASTER_SITES=	http://awesome.naquadah.org/download/
+DISTNAME=	awesome-${PORTVERSION}
 
-MAINTAINER=	ntarmos@cs.uoi.gr
+MAINTAINER=	ntarmos@ceid.upatras.gr
 COMMENT=	A tiling window manager initially based on a dwm code rewriting
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-		gperf>=3.0.3:${PORTSDIR}/devel/gperf \
-		pango>=1.19.3:${PORTSDIR}/x11-toolkits/pango \
-		xmlto:${PORTSDIR}/textproc/xmlto \
-		xcb-util>=0.3.3:${PORTSDIR}/x11/xcb-util \
-		xproto>=7.0.11:${PORTSDIR}/x11/xproto
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
-		dbus-1.3:${PORTSDIR}/devel/dbus \
-		ev.3:${PORTSDIR}/devel/libev \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		xcb.2:${PORTSDIR}/x11/libxcb \
-		xcb-event.1:${PORTSDIR}/x11/xcb-util
+		xmlto:${PORTSDIR}/textproc/xmlto
+LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse \
+		cairo.2:${PORTSDIR}/graphics/cairo \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_ICONV=	yes
-USE_CMAKE=	yes
-CMAKE_USE_PTHREAD=yes
-CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc
+GNU_CONFIGURE=	yes
 USE_EFL=	imlib2
-USE_GNOME=	glib20 pango
-USE_LUA=	5.1+
-USE_XORG=	pixman x11 xau xdmcp xext xft xinerama xrandr xrender xproto
+USE_GNOME=	pango
+USE_XORG=	x11 xft xext xinerama xt xrandr xproto
 
-MAN1=	awesome.1 \
-	awesome-client.1 \
-	awsetbg.1
-MAN5=	awesomerc.5
-MANCOMPRESSED=	yes
-PORTDOCS=	AUTHORS BUGS LICENSE README
+MAN1=		awesome2.1 \
+		awesome2-client.1 \
+		awesome2-menu.1 \
+		awesome2-message.1
+MAN5=		awesome2rc.5
+PORTDOCS=	AUTHORS LICENSE README STYLE UPGRADE
+PORTEXAMPLES=	awesomerc
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's, "$$(DESTDIR)$$(docdir)";,;,g' \
+			  -e 's,\([[:space:]]\)install-docDATA ,\1,g' \
+			  -e 's,awesome_,awesome2_,g' \
+			  -e 's,awesomerc\.5,awesome2rc\.5,g' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e  "s,PACKAGE='awesome',PACKAGE='awesome2',g" \
+		${WRKSRC}/configure
+.	for man in ${MAN1} ${MAN5}
+		@${MV} ${WRKSRC}/${man:S%awesome2%awesome%}.txt ${WRKSRC}/${man}.txt
+		@${REINPLACE_CMD} -e 's,awesome,awesome2,g' \
+				  -e 's,\~/\.awesome2,~/.awesome,g' \
+			${WRKSRC}/${man}.txt
+.	endfor
 
-.if	(exists(${LOCALBASE}/libdata/pkgconfig/cairo.pc) && \
-	!exists(${LOCALBASE}/libdata/pkgconfig/cairo-xcb.pc))
-IGNORE=	cannot find dependency: The cairo exists but not with XCB support. Please reinstall graphics/cairo with XCB support
-.endif
+post-configure:
+	@${REINPLACE_CMD} -E '/^awesome2_(message_)?LDADD/s/$$/ -liconv/g; \
+			      /^doc_DATA/s/=.*$$/=/g' \
+		${WRKSRC}/Makefile
 
-pre-configure:
-	@${REINPLACE_CMD} \
-	-e 's/"generate luadoc" ON/\"generate luadoc" OFF/g' \
-		${WRKSRC}/awesomeConfig.cmake
-	@${REINPLACE_CMD} \
-	-e 's,tr ,env LC_ALL="C" tr ,g' \
-	-e 's,gperf,${LOCALBASE}/bin/gperf,g' \
-		${WRKSRC}/build-utils/gperf.sh
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} \
-		-e 's/"install port docs" ON/\"install port docs" OFF/g' \
-		${WRKSRC}/awesomeConfig.cmake
-.endif
+post-install:
+.	if !defined(NOPORTDOCS)
+		@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
+		@${MKDIR} ${DOCSDIR}
+.		for doc in ${PORTDOCS}
+			${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.		endfor
+.	endif
+.	if !defined(NOPORTEXAMPLES)
+		@${ECHO_MSG} "installing example config file to ${EXAMPLESDIR}"
+		@${MKDIR} ${EXAMPLESDIR}
+.		for example in ${PORTEXAMPLES}
+			${INSTALL_DATA} ${WRKSRC}/${example} ${EXAMPLESDIR}
+.		endfor
+.	endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
