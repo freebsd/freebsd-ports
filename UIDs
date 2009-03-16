@@ -124,7 +124,7 @@ _bbstored:*:505:505::0:0:BoxBackup Store Daemon:/nonexistent:/bin/sh
 nullmail:*:522:522::0:0:Nullmailer Mail System:/var/spool/nullmailer:/bin/sh
 dkimproxy:*:525:525::0:0:DKIM Proxy Owner:/nonexistent:/usr/sbin/nologin
 pgbouncer:*:534:534::0:0:Pgbouncer Daemon:/nonexistent:/sbin/nologin
-ejabberd:*:544:544::0:0:ejabberd pseudo user:/var/spool/ejabberd:/bin/sh
+ejabberd:*:543:543::0:0:ejabberd pseudo user:/var/spool/ejabberd:/bin/sh
 qtss:*:554:554::0:0:Darwin Streaming Server:/nonexistent:/usr/sbin/nologin
 ircdru:*:555:555::0:0:Russian hybrid IRC server:/nonexistent:/bin/sh
 messagebus:*:556:556::0:0:D-BUS Daemon User:/nonexistent:/usr/sbin/nologin
