@@ -2275,6 +2275,7 @@
     SUBDIR += py-icalendar
     SUBDIR += py-ice
     SUBDIR += py-icu
+    SUBDIR += py-iniparse
     SUBDIR += py-instant
     SUBDIR += py-ipaddr
     SUBDIR += py-istring
