@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	dclib
-PORTVERSION=	0.3.22
+PORTVERSION=	0.3.23
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	wxdcgui
@@ -20,18 +20,19 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 WRKSRC=	${WRKDIR}/${DISTNAME}
 
-USE_AUTOTOOLS=	libtool:15 automake:110
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+
 post-extract:
 	${CHMOD} 0755 ${WRKSRC}/admin/install-sh
 
 post-patch:
-	${REINPLACE_CMD} -e 's/-O2//g; s/-pedantic //g' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+#	${REINPLACE_CMD} -e 's|-O2 ||g; s/-pedantic //g' \
+#		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 	    ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
 	${FIND} ${WRKSRC} -name "Makefile.*" | ${XARGS} \
