@@ -48,6 +48,7 @@
     SUBDIR += gens
     SUBDIR += gngb
     SUBDIR += gngeo
+    SUBDIR += gns3
     SUBDIR += gnuboy
     SUBDIR += gsnes9x
     SUBDIR += gxemul
