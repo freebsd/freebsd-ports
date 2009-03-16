@@ -865,6 +865,7 @@
     SUBDIR += xloadface
     SUBDIR += xlogmaster
     SUBDIR += xmbmon
+    SUBDIR += xorriso
     SUBDIR += xosview
     SUBDIR += xsi
     SUBDIR += xstow
