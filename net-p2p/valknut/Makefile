@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	valknut
-PORTVERSION=	0.4.8
+PORTVERSION=	0.4.9
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	wxdcgui
@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A Direct Connect client QT GUI
 
-LIB_DEPENDS=	dc.4:${PORTSDIR}/net-p2p/dclib \
+LIB_DEPENDS=	dc.5:${PORTSDIR}/net-p2p/dclib \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 WRKSRC=	${WRKDIR}/${DISTNAME}
@@ -29,18 +29,14 @@ QT_COMPONENTS=	corelib gui network qt3support moc uic rcc linguist
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-USE_AUTOTOOLS=	autoconf:262
+GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-CFLAGS+=	-I${QT_INCDIR}
-LDFLAGS+=	-L${QT_LIBDIR}
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" ACLOCAL=true \
-		AUTOCONF=true AUTOMAKE=true AUTOHEADER=true \
-		DCLIB_CFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV+=	CFLAGS=-I${QT_INCDIR} LDFLAGS=-L${QT_LIBDIR} \
+		DCLIB_CFLAGS=-I${LOCALBASE}/include
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-O2||g; s|-lpthread|${PTHREAD_LIBS}|g;\
+	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g;\
 	    s|-D_XOPEN_SOURCE=500||g' \
-	    ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
-	    ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}.in
+	    ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>

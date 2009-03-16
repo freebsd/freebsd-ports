@@ -1,90 +1,100 @@
 bin/valknut
 %%DATADIR%%/COPYING
-%%DATADIR%%/icons/appl/default/back.xpm
-%%DATADIR%%/icons/appl/default/ball_green.xpm
-%%DATADIR%%/icons/appl/default/ball_red.xpm
-%%DATADIR%%/icons/appl/default/ball_yellow.xpm
-%%DATADIR%%/icons/appl/default/bookmark_add.xpm
-%%DATADIR%%/icons/appl/default/bookmark_folder.xpm
-%%DATADIR%%/icons/appl/default/configure.xpm
-%%DATADIR%%/icons/appl/default/configure_32x32.xpm
-%%DATADIR%%/icons/appl/default/connect.xpm
-%%DATADIR%%/icons/appl/default/connect_creating.xpm
-%%DATADIR%%/icons/appl/default/connect_no.xpm
-%%DATADIR%%/icons/appl/default/connected.xpm
-%%DATADIR%%/icons/appl/default/down.xpm
-%%DATADIR%%/icons/appl/default/download.xpm
-%%DATADIR%%/icons/appl/default/edit.xpm
-%%DATADIR%%/icons/appl/default/editadd.xpm
-%%DATADIR%%/icons/appl/default/editcopy.xpm
-%%DATADIR%%/icons/appl/default/editdelete.xpm
-%%DATADIR%%/icons/appl/default/exit.xpm
-%%DATADIR%%/icons/appl/default/fileclose.xpm
-%%DATADIR%%/icons/appl/default/filefind.xpm
-%%DATADIR%%/icons/appl/default/filetype-application.xpm
-%%DATADIR%%/icons/appl/default/filetype-archive.xpm
-%%DATADIR%%/icons/appl/default/filetype-audio.xpm
-%%DATADIR%%/icons/appl/default/filetype-document.xpm
-%%DATADIR%%/icons/appl/default/filetype-picture.xpm
-%%DATADIR%%/icons/appl/default/filetype-unknown.xpm
-%%DATADIR%%/icons/appl/default/filetype-video.xpm
-%%DATADIR%%/icons/appl/default/find.xpm
-%%DATADIR%%/icons/appl/default/find_32x32.xpm
-%%DATADIR%%/icons/appl/default/fish.xpm
-%%DATADIR%%/icons/appl/default/flag_bosnian.xpm
-%%DATADIR%%/icons/appl/default/flag_brazilian.xpm
-%%DATADIR%%/icons/appl/default/flag_czech.xpm
-%%DATADIR%%/icons/appl/default/flag_denmark.xpm
-%%DATADIR%%/icons/appl/default/flag_english.xpm
-%%DATADIR%%/icons/appl/default/flag_finland.xpm
-%%DATADIR%%/icons/appl/default/flag_france.xpm
-%%DATADIR%%/icons/appl/default/flag_germany.xpm
-%%DATADIR%%/icons/appl/default/flag_greek.xpm
-%%DATADIR%%/icons/appl/default/flag_hungary.xpm
-%%DATADIR%%/icons/appl/default/flag_iceland.xpm
-%%DATADIR%%/icons/appl/default/flag_italy.xpm
-%%DATADIR%%/icons/appl/default/flag_latvian.xpm
-%%DATADIR%%/icons/appl/default/flag_netherland.xpm
-%%DATADIR%%/icons/appl/default/flag_norway.xpm
-%%DATADIR%%/icons/appl/default/flag_poland.xpm
-%%DATADIR%%/icons/appl/default/flag_romania.xpm
-%%DATADIR%%/icons/appl/default/flag_russia.xpm
-%%DATADIR%%/icons/appl/default/flag_serbia.xpm
-%%DATADIR%%/icons/appl/default/flag_slovak.xpm
-%%DATADIR%%/icons/appl/default/flag_spain.xpm
-%%DATADIR%%/icons/appl/default/flag_sweden.xpm
-%%DATADIR%%/icons/appl/default/folder_blue.xpm
-%%DATADIR%%/icons/appl/default/folder_blue_open.xpm
-%%DATADIR%%/icons/appl/default/folder_red.xpm
-%%DATADIR%%/icons/appl/default/globe.xpm
-%%DATADIR%%/icons/appl/default/gv.xpm
-%%DATADIR%%/icons/appl/default/help.xpm
-%%DATADIR%%/icons/appl/default/icon_22x22.xpm
-%%DATADIR%%/icons/appl/default/info.xpm
-%%DATADIR%%/icons/appl/default/message.xpm
-%%DATADIR%%/icons/appl/default/notconnected.xpm
-%%DATADIR%%/icons/appl/default/open.xpm
-%%DATADIR%%/icons/appl/default/player_pause.xpm
-%%DATADIR%%/icons/appl/default/player_play.xpm
-%%DATADIR%%/icons/appl/default/reload.xpm
-%%DATADIR%%/icons/appl/default/reload_32x32.xpm
-%%DATADIR%%/icons/appl/default/save.xpm
-%%DATADIR%%/icons/appl/default/server.xpm
-%%DATADIR%%/icons/appl/default/splash.xpm
-%%DATADIR%%/icons/appl/default/spy.xpm
-%%DATADIR%%/icons/appl/default/ssl_no.xpm
-%%DATADIR%%/icons/appl/default/ssl_yes.xpm
-%%DATADIR%%/icons/appl/default/transfer.xpm
-%%DATADIR%%/icons/appl/default/translate.xpm
-%%DATADIR%%/icons/appl/default/up.xpm
-%%DATADIR%%/icons/appl/default/update.xpm
-%%DATADIR%%/icons/appl/default/users.xpm
-%%DATADIR%%/icons/appl/default/users_32x32.xpm
-%%DATADIR%%/icons/appl/default/view_sidetree.xpm
+%%DATADIR%%/icons/appl/default/back.png
+%%DATADIR%%/icons/appl/default/ball_green.png
+%%DATADIR%%/icons/appl/default/ball_red.png
+%%DATADIR%%/icons/appl/default/ball_yellow.png
+%%DATADIR%%/icons/appl/default/bookmark_add.png
+%%DATADIR%%/icons/appl/default/bookmark_folder.png
+%%DATADIR%%/icons/appl/default/choose-language.png
+%%DATADIR%%/icons/appl/default/configure.png
+%%DATADIR%%/icons/appl/default/configure_22x22.png
+%%DATADIR%%/icons/appl/default/configure_32x32.png
+%%DATADIR%%/icons/appl/default/connect.png
+%%DATADIR%%/icons/appl/default/connect_creating.png
+%%DATADIR%%/icons/appl/default/connect_no.png
+%%DATADIR%%/icons/appl/default/connected.png
+%%DATADIR%%/icons/appl/default/down.png
+%%DATADIR%%/icons/appl/default/download.png
+%%DATADIR%%/icons/appl/default/download_as.png
+%%DATADIR%%/icons/appl/default/edit.png
+%%DATADIR%%/icons/appl/default/editadd.png
+%%DATADIR%%/icons/appl/default/editcopy.png
+%%DATADIR%%/icons/appl/default/editdelete.png
+%%DATADIR%%/icons/appl/default/emoticon.png
+%%DATADIR%%/icons/appl/default/exit.png
+%%DATADIR%%/icons/appl/default/fileclose.png
+%%DATADIR%%/icons/appl/default/filefind.png
+%%DATADIR%%/icons/appl/default/filetype-application.png
+%%DATADIR%%/icons/appl/default/filetype-archive.png
+%%DATADIR%%/icons/appl/default/filetype-audio.png
+%%DATADIR%%/icons/appl/default/filetype-document.png
+%%DATADIR%%/icons/appl/default/filetype-picture.png
+%%DATADIR%%/icons/appl/default/filetype-unknown.png
+%%DATADIR%%/icons/appl/default/filetype-video.png
+%%DATADIR%%/icons/appl/default/find.png
+%%DATADIR%%/icons/appl/default/find_22x22.png
+%%DATADIR%%/icons/appl/default/find_32x32.png
+%%DATADIR%%/icons/appl/default/flag_bosnia.png
+%%DATADIR%%/icons/appl/default/flag_brazil.png
+%%DATADIR%%/icons/appl/default/flag_britain.png
+%%DATADIR%%/icons/appl/default/flag_czech.png
+%%DATADIR%%/icons/appl/default/flag_denmark.png
+%%DATADIR%%/icons/appl/default/flag_finland.png
+%%DATADIR%%/icons/appl/default/flag_france.png
+%%DATADIR%%/icons/appl/default/flag_germany.png
+%%DATADIR%%/icons/appl/default/flag_greece.png
+%%DATADIR%%/icons/appl/default/flag_hungary.png
+%%DATADIR%%/icons/appl/default/flag_iceland.png
+%%DATADIR%%/icons/appl/default/flag_italy.png
+%%DATADIR%%/icons/appl/default/flag_latvia.png
+%%DATADIR%%/icons/appl/default/flag_netherlands.png
+%%DATADIR%%/icons/appl/default/flag_norway.png
+%%DATADIR%%/icons/appl/default/flag_poland.png
+%%DATADIR%%/icons/appl/default/flag_romania.png
+%%DATADIR%%/icons/appl/default/flag_russia.png
+%%DATADIR%%/icons/appl/default/flag_serbia.png
+%%DATADIR%%/icons/appl/default/flag_slovakia.png
+%%DATADIR%%/icons/appl/default/flag_spain.png
+%%DATADIR%%/icons/appl/default/flag_sweden.png
+%%DATADIR%%/icons/appl/default/folder_blue.png
+%%DATADIR%%/icons/appl/default/folder_blue_open.png
+%%DATADIR%%/icons/appl/default/folder_red.png
+%%DATADIR%%/icons/appl/default/globe.png
+%%DATADIR%%/icons/appl/default/help.png
+%%DATADIR%%/icons/appl/default/icon_22x22.png
+%%DATADIR%%/icons/appl/default/info.png
+%%DATADIR%%/icons/appl/default/message.png
+%%DATADIR%%/icons/appl/default/next.png
+%%DATADIR%%/icons/appl/default/notconnected.png
+%%DATADIR%%/icons/appl/default/open.png
+%%DATADIR%%/icons/appl/default/player_pause.png
+%%DATADIR%%/icons/appl/default/player_play.png
+%%DATADIR%%/icons/appl/default/reload.png
+%%DATADIR%%/icons/appl/default/reload_22x22.png
+%%DATADIR%%/icons/appl/default/reload_32x32.png
+%%DATADIR%%/icons/appl/default/save.png
+%%DATADIR%%/icons/appl/default/server.png
+%%DATADIR%%/icons/appl/default/sort-down-arrow.png
+%%DATADIR%%/icons/appl/default/splash.png
+%%DATADIR%%/icons/appl/default/spy.png
+%%DATADIR%%/icons/appl/default/ssl_no.png
+%%DATADIR%%/icons/appl/default/ssl_yes.png
+%%DATADIR%%/icons/appl/default/text-select-all.png
+%%DATADIR%%/icons/appl/default/transfer.png
+%%DATADIR%%/icons/appl/default/translate.png
+%%DATADIR%%/icons/appl/default/up.png
+%%DATADIR%%/icons/appl/default/update.png
+%%DATADIR%%/icons/appl/default/users.png
+%%DATADIR%%/icons/appl/default/users_22x22.png
+%%DATADIR%%/icons/appl/default/users_32x32.png
+%%DATADIR%%/icons/appl/default/view_sidetree.png
+%%DATADIR%%/icons/appl/default/zoom-in.png
+%%DATADIR%%/icons/appl/default/zoom-out.png
 %%DATADIR%%/icons/emot/default/emoticons.xml
 %%DATADIR%%/icons/emot/default/emoticons.xpm
 %%DATADIR%%/icons/emot/simple/emoticons.xml
-%%DATADIR%%/icons/emot/simple/simple-tango.xpm
+%%DATADIR%%/icons/emot/simple/simple-gnome.png
 %%DATADIR%%/icons/user/default/usericons.xpm
 %%DATADIR%%/translation/valknut.bs.qm
 %%DATADIR%%/translation/valknut.cs.qm
@@ -106,44 +116,44 @@ bin/valknut
 %%DATADIR%%/translation/valknut.ro.qm
 %%DATADIR%%/translation/valknut.rus.qm
 %%DATADIR%%/translation/valknut.sk.qm
-%%DATADIR%%/translation/valknut.sr@latin.qm
 %%DATADIR%%/translation/valknut.sr.qm
+%%DATADIR%%/translation/valknut.sr@latin.qm
 %%DATADIR%%/translation/valknut.sv.qm
 share/applications/valknut.desktop
+share/icons/hicolor/128x128/apps/valknut.png
 share/icons/hicolor/16x16/apps/valknut.png
 share/icons/hicolor/22x22/apps/valknut.png
 share/icons/hicolor/24x24/apps/valknut.png
 share/icons/hicolor/32x32/apps/valknut.png
 share/icons/hicolor/48x48/apps/valknut.png
 share/icons/hicolor/64x64/apps/valknut.png
-share/icons/hicolor/128x128/apps/valknut.png
 share/pixmaps/valknut.png
 @dirrm %%DATADIR%%/translation
 @dirrm %%DATADIR%%/sounds/default
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/icons/user/default
 @dirrm %%DATADIR%%/icons/user
-@dirrm %%DATADIR%%/icons/emot/default
 @dirrm %%DATADIR%%/icons/emot/simple
+@dirrm %%DATADIR%%/icons/emot/default
 @dirrm %%DATADIR%%/icons/emot
 @dirrm %%DATADIR%%/icons/appl/default
 @dirrm %%DATADIR%%/icons/appl
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/applications
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor/128x128/apps
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications
