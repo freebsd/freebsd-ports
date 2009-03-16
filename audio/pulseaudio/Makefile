@@ -49,6 +49,10 @@ MAN5=		default.pa.5 pulse-client.conf.5 pulse-daemon.conf.5
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 .if defined(WITH_JACK)
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 PLIST_SUB+=	JACK=""
