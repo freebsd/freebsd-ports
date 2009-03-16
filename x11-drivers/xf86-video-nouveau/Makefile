@@ -17,4 +17,6 @@ XORG_CAT=	driver
 USE_XORG=	videoproto xextproto xf86driproto glproto
 MAN4=		nouveau.4x
 
+BROKEN=		does not compile
+
 .include <bsd.port.mk>
