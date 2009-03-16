@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	decorator
-PORTVERSION=	2.3.1
+PORTVERSION=	3.0.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.phyast.pitt.edu/~micheles/python/ \
-		http://pylonshq.com/download/0.9.5/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dsh@vlink.ru
@@ -17,17 +16,13 @@ COMMENT=	Better living through Python with decorators
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	easy_install
-USE_ZIP=	yes
-
-EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-PORTDOCS=	documentation.*
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/documentation.* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
