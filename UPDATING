@@ -7,6 +7,15 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20090316:
+  AFFECTS: users of www/geeklog
+  AUTHOR: beat@FreeBSD.org
+
+  To follow the standards this port has received a small reworking.
+
+  WWW_DIR (that defaulted to PREFIX/www/data/geeklog) is deprecated,
+  use WWWDIR (defaults to PREFIX/www/geeklog).
+
+20090316:
   AFFECTS: users of net-im/ejabberd
   AUTHOR: skylord@linkline.ru
 
