@@ -12,6 +12,7 @@
     SUBDIR += amiwm
     SUBDIR += antiwm
     SUBDIR += awesome
+    SUBDIR += awesome2
     SUBDIR += badwm
     SUBDIR += bbconf
     SUBDIR += bbkeys
