@@ -35,6 +35,10 @@ OPTIONS=	OPENGL "Use OpenGL for 3D graphics" on
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 .if !defined(WITHOUT_OPENGL)
 USE_GL=		gl glu glut
 CONFIGURE_ARGS+=--with-opengl
