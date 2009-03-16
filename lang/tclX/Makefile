@@ -16,6 +16,8 @@ DISTNAME=	tclx${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Extended TCL
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_TCL_BUILD=	84
 USE_TCL=	84

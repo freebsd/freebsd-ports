@@ -19,6 +19,8 @@ COMMENT=	X.Org ati RadeonHD display driver development version
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/xorg-macros.m4:${PORTSDIR}/devel/xorg-macros \
 		${LOCALBASE}/libdata/pkgconfig/gl.pc:${PORTSDIR}/graphics/libGL
 
+BROKEN=		does not compile
+
 .if !exists(${LOCALBASE}/lib/libpci.so.2)
 OPTIONS=	UTILS "Install rhd_conntest and rhd_dump utilities" off
 .else
