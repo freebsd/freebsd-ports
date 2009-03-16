@@ -61,6 +61,7 @@ share/zoneinfo/America/Argentina/Jujuy
 share/zoneinfo/America/Argentina/La_Rioja
 share/zoneinfo/America/Argentina/Mendoza
 share/zoneinfo/America/Argentina/Rio_Gallegos
+share/zoneinfo/America/Argentina/Salta
 share/zoneinfo/America/Argentina/San_Juan
 share/zoneinfo/America/Argentina/San_Luis
 share/zoneinfo/America/Argentina/Tucuman
@@ -233,11 +234,11 @@ share/zoneinfo/Asia/Kabul
 share/zoneinfo/Asia/Kamchatka
 share/zoneinfo/Asia/Karachi
 share/zoneinfo/Asia/Kashgar
-share/zoneinfo/Asia/Katmandu
 share/zoneinfo/Asia/Kolkata
 share/zoneinfo/Asia/Krasnoyarsk
 share/zoneinfo/Asia/Kuala_Lumpur
 share/zoneinfo/Asia/Kuching
+share/zoneinfo/Asia/Kathmandu
 share/zoneinfo/Asia/Kuwait
 share/zoneinfo/Asia/Macau
 share/zoneinfo/Asia/Magadan
