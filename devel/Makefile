@@ -2027,6 +2027,7 @@
     SUBDIR += pear-Date_Holidays_Iceland
     SUBDIR += pear-Date_Holidays_Ireland
     SUBDIR += pear-Date_Holidays_Italy
+    SUBDIR += pear-Date_Holidays_Japan
     SUBDIR += pear-Date_Holidays_Netherlands
     SUBDIR += pear-Date_Holidays_Norway
     SUBDIR += pear-Date_Holidays_PHPdotNet
