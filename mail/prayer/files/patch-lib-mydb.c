@@ -1,5 +1,5 @@
---- prayer/mydb.c.orig	Thu Feb 17 23:09:40 2005
-+++ prayer/mydb.c	Thu Feb 17 23:06:11 2005
+--- lib/mydb.c.orig	Thu Feb 17 23:09:40 2005
++++ lib/mydb.c	Thu Feb 17 23:06:11 2005
 @@ -49,12 +49,12 @@
  #include <string.h>
  #include <stdio.h>
