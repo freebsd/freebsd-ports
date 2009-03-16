@@ -12,8 +12,7 @@
 #
 
 PORTNAME=	lire
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.logreport.org/pub/
 
@@ -26,7 +25,7 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 		${SITE_PERL}/Time/Timezone.pm:${PORTSDIR}/devel/p5-Time-modules \
-		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite2.pm:${PORTSDIR}/databases/p5-DBD-SQLite2 \
+		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses \
 		${SITE_PERL}/Curses/UI.pm:${PORTSDIR}/devel/p5-Curses-UI \
