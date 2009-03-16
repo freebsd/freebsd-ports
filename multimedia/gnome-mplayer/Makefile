@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome-mplayer
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GOOGLE_CODE
 
@@ -20,7 +20,8 @@ OPTIONS=	GIO	"Use GIO for file I/O"			off \
 		GCONF	"Use Gconf to store preferences"	off \
 		NOTIFY	"Send notifications of new media"	off \
 		GPOD	"Add support for libgpod"		off \
-		BRAINZ3	"Add support for libmusicbrainz3"	off
+		BRAINZ3	"Add support for libmusicbrainz3"	off \
+		NAUPLUG	"Enable Nautilus plugin"		off
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
@@ -68,6 +69,15 @@ LIB_DEPENDS+=	musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3
 CONFIGURE_ARGS+=	--with-libmusicbrainz3
 .else
 CONFIGURE_ARGS+=	--without-libmusicbrainz3
+.endif
+
+.if defined(WITH_NAUPLUG)
+USE_GNOME+=	nautilus2
+PLIST_SUB+=	PLUGIN=""
+CONFIGURE_ARGS+=	--enable-nautilus
+.else
+PLIST_SUB+=	PLUGIN="@comment "
+CONFIGURE_ARGS+=	--enable-nautilus=no
 .endif
 
 post-patch:
