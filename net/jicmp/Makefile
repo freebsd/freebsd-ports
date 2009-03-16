@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jicmp
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	net java
 MASTER_SITES=	SF/opennms
 
@@ -21,10 +21,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME}
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	automake:19
-
-PLIST_FILES=	%%JAVAJARDIR%%/jicmp.jar \
-		lib/libjicmp.la \
-		lib/libjicmp.so
 
 pre-everything::
 	@${ECHO_MSG}	""
