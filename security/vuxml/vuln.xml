@@ -35,7 +35,7 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="03140526-1250-11de-a964-0030843d3802">
-    <topic>zappix -- php frontend multiple vulnerabilities</topic>
+    <topic>zabbix -- php frontend multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>zabbix</name>
