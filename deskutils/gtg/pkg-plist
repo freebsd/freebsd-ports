@@ -1,0 +1,121 @@
+bin/gtg
+%%PYTHON_SITELIBDIR%%/GTG/__init__.py
+%%PYTHON_SITELIBDIR%%/GTG/__init__.pyc
+%%PYTHON_SITELIBDIR%%/GTG/__init__.pyo
+%%PYTHON_SITELIBDIR%%/GTG/backends/__init__.py
+%%PYTHON_SITELIBDIR%%/GTG/backends/__init__.pyc
+%%PYTHON_SITELIBDIR%%/GTG/backends/__init__.pyo
+%%PYTHON_SITELIBDIR%%/GTG/backends/localfile.py
+%%PYTHON_SITELIBDIR%%/GTG/backends/localfile.pyc
+%%PYTHON_SITELIBDIR%%/GTG/backends/localfile.pyo
+%%PYTHON_SITELIBDIR%%/GTG/core/__init__.py
+%%PYTHON_SITELIBDIR%%/GTG/core/__init__.pyc
+%%PYTHON_SITELIBDIR%%/GTG/core/__init__.pyo
+%%PYTHON_SITELIBDIR%%/GTG/core/datastore.py
+%%PYTHON_SITELIBDIR%%/GTG/core/datastore.pyc
+%%PYTHON_SITELIBDIR%%/GTG/core/datastore.pyo
+%%PYTHON_SITELIBDIR%%/GTG/core/requester.py
+%%PYTHON_SITELIBDIR%%/GTG/core/requester.pyc
+%%PYTHON_SITELIBDIR%%/GTG/core/requester.pyo
+%%PYTHON_SITELIBDIR%%/GTG/core/tagstore.py
+%%PYTHON_SITELIBDIR%%/GTG/core/tagstore.pyc
+%%PYTHON_SITELIBDIR%%/GTG/core/tagstore.pyo
+%%PYTHON_SITELIBDIR%%/GTG/core/task.py
+%%PYTHON_SITELIBDIR%%/GTG/core/task.pyc
+%%PYTHON_SITELIBDIR%%/GTG/core/task.pyo
+%%PYTHON_SITELIBDIR%%/GTG/gtg.py
+%%PYTHON_SITELIBDIR%%/GTG/gtg.pyc
+%%PYTHON_SITELIBDIR%%/GTG/gtg.pyo
+%%PYTHON_SITELIBDIR%%/GTG/taskbrowser/CellRendererTags.py
+%%PYTHON_SITELIBDIR%%/GTG/taskbrowser/CellRendererTags.pyc
+%%PYTHON_SITELIBDIR%%/GTG/taskbrowser/CellRendererTags.pyo
+%%PYTHON_SITELIBDIR%%/GTG/taskbrowser/__init__.py
+%%PYTHON_SITELIBDIR%%/GTG/taskbrowser/__init__.pyc
+%%PYTHON_SITELIBDIR%%/GTG/taskbrowser/__init__.pyo
+%%PYTHON_SITELIBDIR%%/GTG/taskbrowser/browser.py
+%%PYTHON_SITELIBDIR%%/GTG/taskbrowser/browser.pyc
+%%PYTHON_SITELIBDIR%%/GTG/taskbrowser/browser.pyo
+%%PYTHON_SITELIBDIR%%/GTG/taskbrowser/taskbrowser.glade
+%%PYTHON_SITELIBDIR%%/GTG/taskbrowser/treetools.py
+%%PYTHON_SITELIBDIR%%/GTG/taskbrowser/treetools.pyc
+%%PYTHON_SITELIBDIR%%/GTG/taskbrowser/treetools.pyo
+%%PYTHON_SITELIBDIR%%/GTG/taskeditor/__init__.py
+%%PYTHON_SITELIBDIR%%/GTG/taskeditor/__init__.pyc
+%%PYTHON_SITELIBDIR%%/GTG/taskeditor/__init__.pyo
+%%PYTHON_SITELIBDIR%%/GTG/taskeditor/editor.py
+%%PYTHON_SITELIBDIR%%/GTG/taskeditor/editor.pyc
+%%PYTHON_SITELIBDIR%%/GTG/taskeditor/editor.pyo
+%%PYTHON_SITELIBDIR%%/GTG/taskeditor/taskeditor.glade
+%%PYTHON_SITELIBDIR%%/GTG/taskeditor/taskview.py
+%%PYTHON_SITELIBDIR%%/GTG/taskeditor/taskview.pyc
+%%PYTHON_SITELIBDIR%%/GTG/taskeditor/taskview.pyo
+%%PYTHON_SITELIBDIR%%/GTG/taskeditor/taskviewserial.py
+%%PYTHON_SITELIBDIR%%/GTG/taskeditor/taskviewserial.pyc
+%%PYTHON_SITELIBDIR%%/GTG/taskeditor/taskviewserial.pyo
+%%PYTHON_SITELIBDIR%%/GTG/tools/__init__.py
+%%PYTHON_SITELIBDIR%%/GTG/tools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/GTG/tools/__init__.pyo
+%%PYTHON_SITELIBDIR%%/GTG/tools/cleanxml.py
+%%PYTHON_SITELIBDIR%%/GTG/tools/cleanxml.pyc
+%%PYTHON_SITELIBDIR%%/GTG/tools/cleanxml.pyo
+%%PYTHON_SITELIBDIR%%/GTG/tools/colors.py
+%%PYTHON_SITELIBDIR%%/GTG/tools/colors.pyc
+%%PYTHON_SITELIBDIR%%/GTG/tools/colors.pyo
+%%PYTHON_SITELIBDIR%%/GTG/tools/dates.py
+%%PYTHON_SITELIBDIR%%/GTG/tools/dates.pyc
+%%PYTHON_SITELIBDIR%%/GTG/tools/dates.pyo
+%%PYTHON_SITELIBDIR%%/GTG/tools/listes.py
+%%PYTHON_SITELIBDIR%%/GTG/tools/listes.pyc
+%%PYTHON_SITELIBDIR%%/GTG/tools/listes.pyo
+%%PYTHON_SITELIBDIR%%/GTG/tools/taskxml.py
+%%PYTHON_SITELIBDIR%%/GTG/tools/taskxml.pyc
+%%PYTHON_SITELIBDIR%%/GTG/tools/taskxml.pyo
+share/applications/gtg.desktop
+%%DATADIR%%/firstrun_tasks.xml
+%%DATADIR%%/icons/hicolor/16x16/actions/gtg-note-new.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gtg-task-dismiss.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gtg-task-done.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gtg-task-new.png
+%%DATADIR%%/icons/hicolor/16x16/apps/gtg.png
+%%DATADIR%%/icons/hicolor/16x16/categories/gtg-tags-all.png
+%%DATADIR%%/icons/hicolor/16x16/categories/gtg-tags-none.png
+%%DATADIR%%/icons/hicolor/16x16/emblems/gtg-home.png
+%%DATADIR%%/icons/hicolor/16x16/emblems/gtg-people.png
+%%DATADIR%%/icons/hicolor/16x16/emblems/gtg-work.png
+%%DATADIR%%/icons/hicolor/22x22/actions/gtg-note-new.png
+%%DATADIR%%/icons/hicolor/22x22/actions/gtg-task-dismiss.png
+%%DATADIR%%/icons/hicolor/22x22/actions/gtg-task-done.png
+%%DATADIR%%/icons/hicolor/22x22/actions/gtg-task-new.png
+%%DATADIR%%/icons/hicolor/22x22/actions/gtg-task-undismiss.png
+%%DATADIR%%/icons/hicolor/22x22/actions/gtg-task-undone.png
+%%DATADIR%%/icons/hicolor/22x22/apps/gtg.png
+%%DATADIR%%/icons/hicolor/22x22/categories/items-tags.png
+%%DATADIR%%/icons/hicolor/24x24/apps/gtg.png
+%%DATADIR%%/icons/hicolor/scalable/apps/gtg.svg
+share/icons/hicolor/16x16/apps/gtg.png
+share/icons/hicolor/22x22/apps/gtg.png
+share/icons/hicolor/24x24/apps/gtg.png
+share/icons/hicolor/scalable/apps/gtg.svg
+@dirrm %%DATADIR%%/icons/hicolor/scalable/apps
+@dirrm %%DATADIR%%/icons/hicolor/scalable
+@dirrm %%DATADIR%%/icons/hicolor/24x24/apps
+@dirrm %%DATADIR%%/icons/hicolor/24x24
+@dirrm %%DATADIR%%/icons/hicolor/22x22/categories
+@dirrm %%DATADIR%%/icons/hicolor/22x22/apps
+@dirrm %%DATADIR%%/icons/hicolor/22x22/actions
+@dirrm %%DATADIR%%/icons/hicolor/22x22
+@dirrm %%DATADIR%%/icons/hicolor/16x16/emblems
+@dirrm %%DATADIR%%/icons/hicolor/16x16/categories
+@dirrm %%DATADIR%%/icons/hicolor/16x16/apps
+@dirrm %%DATADIR%%/icons/hicolor/16x16/actions
+@dirrm %%DATADIR%%/icons/hicolor/16x16
+@dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons
+@dirrmtry share/applications
+@dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/GTG/tools
+@dirrm %%PYTHON_SITELIBDIR%%/GTG/taskeditor
+@dirrm %%PYTHON_SITELIBDIR%%/GTG/taskbrowser
+@dirrm %%PYTHON_SITELIBDIR%%/GTG/core
+@dirrm %%PYTHON_SITELIBDIR%%/GTG/backends
+@dirrm %%PYTHON_SITELIBDIR%%/GTG

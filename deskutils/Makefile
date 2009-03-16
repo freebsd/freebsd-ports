@@ -92,6 +92,7 @@
     SUBDIR += gourmet
     SUBDIR += griffith
     SUBDIR += gruler
+    SUBDIR += gtg
     SUBDIR += gtimer
     SUBDIR += gtkjournal
     SUBDIR += gtodo

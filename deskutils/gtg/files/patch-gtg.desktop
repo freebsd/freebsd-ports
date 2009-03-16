@@ -1,0 +1,11 @@
+--- gtg.desktop.orig	2009-03-01 18:58:12.000000000 +0300
++++ gtg.desktop	2009-03-16 01:23:24.000000000 +0300
+@@ -3,7 +3,7 @@
+ Name=Getting Things Gnome!
+ Icon=gtg
+ Comment=Personal organizer for the GNOME desktop environment.
+-Exec=/usr/bin/gtg %F
++Exec=/usr/local/bin/gtg %F
+ Terminal=false
+ Type=Application
+ Categories=GNOME;GTK;Utility;
