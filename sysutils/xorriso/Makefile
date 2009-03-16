@@ -5,17 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=	libisoburn
-PORTVERSION=	0.2.8
+PORTNAME=	xorriso
+PORTVERSION=	0.3.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.libburnia-project.org/releases/
-DISTFILES=	${PORTNAME}-${PORTVERSION}.pl00${EXTRACT_SUFX}
+DISTNAME=	libisoburn
+DISTFILES=	${DISTNAME}-${PORTVERSION}.pl00${EXTRACT_SUFX}
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	ISO image manipulation tool based on Libburnia
 
-LIB_DEPENDS=	burn.23:${PORTSDIR}/devel/libburn \
-		isofs.12:${PORTSDIR}/devel/libisofs
+LIB_DEPENDS=	burn.4:${PORTSDIR}/devel/libburn \
+		isofs.6:${PORTSDIR}/devel/libisofs
+
+WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CFLAGS="-I${PREFIX}/include" \
