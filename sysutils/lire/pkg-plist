@@ -97,6 +97,8 @@ libexec/lire/lr_getbody
 libexec/lire/lr_mail
 libexec/lire/lr_processmail
 libexec/lire/lr_spool
+libexec/lire/www/dlf2combined
+libexec/lire/www/merge2combined
 sbin/lr_vendor_cron
 share/doc/lire/BUGS
 share/doc/lire/ChangeLog.2000.gz
@@ -817,6 +819,7 @@ share/perl5/LocaleData/nl/LC_MESSAGES/lire.mo
 @dirrm share/doc/lire/examples
 @dirrm share/doc/lire/dev-manual
 @dirrm share/doc/lire
+@dirrm libexec/lire/www
 @dirrm libexec/lire/convertors
 @dirrm libexec/lire
 @dirrm etc/lire/plugins
@@ -826,8 +829,8 @@ share/perl5/LocaleData/nl/LC_MESSAGES/lire.mo
 @dirrmtry var/lib/lire/data
 @dirrmtry var/lib/lire
 @dirrmtry var/lib
-@dirrmtry var
 @dirrmtry var/spool/lire
 @dirrmtry var/spool
+@dirrmtry var
 
 @dirrmtry share/perl5
