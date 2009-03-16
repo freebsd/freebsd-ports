@@ -1,0 +1,5 @@
+share/pear/Date/Holidays/Driver/Italy.php
+share/pear/packages/pear-Date_Holidays_Italy-%%PORTVERSION%%/package.xml
+share/pear/tests/Date_Holidays_Italy/Date_Holidays_Driver_Italy_TestSuite.php
+@dirrm share/pear/tests/Date_Holidays_Italy/
+@dirrm share/pear/packages/pear-Date_Holidays_Italy-%%PORTVERSION%%
