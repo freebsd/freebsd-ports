@@ -1,0 +1,4 @@
+%%PYTHON_SITELIBDIR%%/_cmemcache.so
+%%PYTHON_SITELIBDIR%%/cmemcache.py
+%%PYTHON_SITELIBDIR%%/cmemcache.pyc
+%%PYTHON_SITELIBDIR%%/cmemcache.pyo
