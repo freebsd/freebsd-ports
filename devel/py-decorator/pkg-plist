@@ -8,3 +8,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/decorator.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+%%PORTDOCS%%%%DOCSDIR%%/documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/documentation.pdf
+%%PORTDOCS%%%%DOCSDIR%%/documentation.py
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
