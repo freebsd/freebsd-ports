@@ -1,5 +1,5 @@
 %%ECS_HOME%%/bin/ecs
-%%ECS_HOME%%/doc
+%%PORTDOCS%%%%ECS_HOME%%/doc
 %%CS_HOME%%/arch/FreeBSD/bin/cs13.exe
 %%CS_HOME%%/arch/FreeBSD/lib/libsaturneBASE.a
 %%CS_HOME%%/arch/FreeBSD/lib/libsaturneCFBL.a
