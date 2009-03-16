@@ -12,6 +12,7 @@
     SUBDIR += bblimage
     SUBDIR += bft
     SUBDIR += bodr
+    SUBDIR += brian
     SUBDIR += buddy
     SUBDIR += cdcl
     SUBDIR += cdf
