@@ -1,6 +1,7 @@
-diff -urN -x .svn ../../vendor/vpopmail/vpalias.c ./vpalias.c
---- ../../vendor/vpopmail/vpalias.c	2007-12-25 05:03:25.000000000 +0200
-+++ ./vpalias.c	2007-12-25 07:31:16.000000000 +0200
+Honor the correct limits.
+
+--- a/vpalias.c
++++ b/vpalias.c
 @@ -30,11 +30,11 @@
  
  /* Globals */

@@ -1,6 +1,11 @@
-diff -urN -x .svn ../../vendor/vpopmail/vpopmail.c ./vpopmail.c
---- ../../vendor/vpopmail/vpopmail.c	2007-12-25 05:03:25.000000000 +0200
-+++ ./vpopmail.c	2007-12-25 07:31:16.000000000 +0200
+Implement SpamAssassin support.
+Honor limits correctly.
+Wait for the correct child process - waitpid() instead of wait().
+Check for a couple more errors.
+Add a closedir() to fix a file descriptor leak.
+
+--- a/vpopmail.c
++++ b/vpopmail.c
 @@ -945,6 +945,7 @@
  
            /* print error message and return and error */
@@ -14,7 +19,7 @@ diff -urN -x .svn ../../vendor/vpopmail/vpopmail.c ./vpopmail.c
     }
  
 -k = strlen(s) - i - 1; 
-+k = strlen(s) - i; 
++k = strlen(s) - i;
  
  if( i>0 ) {
     for( j=0; j<k; j++ )  {

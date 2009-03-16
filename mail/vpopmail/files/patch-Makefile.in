@@ -1,8 +1,62 @@
---- ../../vendor/vpopmail/Makefile.in	2007-10-07 23:44:14.000000000 +0300
-+++ Makefile.in	2007-10-08 16:26:04.000000000 +0300
-@@ -299,12 +299,11 @@
- noinst_HEADERS = md5.h vpopmail.h file_lock.h vauth.h vlimits.h maildirquota.h vcdb.h vldap.h vmysql.h voracle.h vpgsql.h vsybase.h vlog.h global.h hmac_md5.h seek.h
- COMMONSOURCES = vpopmail.c md5.c bigdir.c vauth.c file_lock.c vpalias.c seek.c vlimits.c maildirquota.c
+Install the config files with a -dist extension.
+Do not unconditionally add -fPIC, this is done only for shared libs.
+Attach backfill.c and authvchkpw.c to the build.
+
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -44,7 +44,7 @@
+ 	valias$(EXEEXT) vuserinfo$(EXEEXT) vmkpasswd$(EXEEXT) \
+ 	vipmap$(EXEEXT) vdominfo$(EXEEXT) vconvert$(EXEEXT) \
+ 	vkill$(EXEEXT) vmoddomlimits$(EXEEXT) vchangepw$(EXEEXT) \
+-	dotqmail2valias$(EXEEXT) vpopmaild$(EXEEXT) vlist$(EXEEXT)
++	dotqmail2valias$(EXEEXT) vpopmaild$(EXEEXT) vlist$(EXEEXT) authvchkpw$(EXEEXT)
+ subdir = .
+ DIST_COMMON = README $(am__configure_deps) $(noinst_HEADERS) \
+ 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+@@ -71,7 +71,8 @@
+ 	libvpopmail_a-vpalias.$(OBJEXT) libvpopmail_a-seek.$(OBJEXT) \
+ 	libvpopmail_a-vlimits.$(OBJEXT) \
+ 	libvpopmail_a-maildirquota.$(OBJEXT) \
+-	libvpopmail_a-vutil.$(OBJEXT) libvpopmail_a-vlistlib.$(OBJEXT)
++	libvpopmail_a-vutil.$(OBJEXT) libvpopmail_a-vlistlib.$(OBJEXT) \
++	libvpopmail_a-backfill.$(OBJEXT)
+ am_libvpopmail_a_OBJECTS = $(am__objects_1)
+ libvpopmail_a_OBJECTS = $(am_libvpopmail_a_OBJECTS)
+ am__installdirs = "$(DESTDIR)$(vpopmailbindir)"
+@@ -147,6 +148,9 @@
+ am_vpopmaild_OBJECTS = vpopmaild.$(OBJEXT)
+ vpopmaild_OBJECTS = $(am_vpopmaild_OBJECTS)
+ vpopmaild_DEPENDENCIES = libvpopmail.a
++am_authvchkpw_OBJECTS = authvchkpw.$(OBJEXT) hmac_md5.$(OBJEXT)
++authvchkpw_OBJECTS = $(am_authvchkpw_OBJECTS)
++authvchkpw_DEPENDENCIES = libvpopmail.a
+ am_vsetuserquota_OBJECTS = vsetuserquota.$(OBJEXT)
+ vsetuserquota_OBJECTS = $(am_vsetuserquota_OBJECTS)
+ vsetuserquota_DEPENDENCIES = libvpopmail.a
+@@ -170,7 +174,7 @@
+ 	$(vlist_SOURCES) $(vmkpasswd_SOURCES) $(vmoddomlimits_SOURCES) \
+ 	$(vmoduser_SOURCES) $(vpasswd_SOURCES) $(vpopbull_SOURCES) \
+ 	$(vpopmaild_SOURCES) $(vsetuserquota_SOURCES) \
+-	$(vuserinfo_SOURCES)
++	$(vuserinfo_SOURCES) $(authvchkpw_SOURCES)
+ DIST_SOURCES = $(libvpopmail_a_SOURCES) $(clearopensmtp_SOURCES) \
+ 	$(dotqmail2valias_SOURCES) $(vaddaliasdomain_SOURCES) \
+ 	$(vadddomain_SOURCES) $(vadduser_SOURCES) $(valias_SOURCES) \
+@@ -181,7 +185,7 @@
+ 	$(vlist_SOURCES) $(vmkpasswd_SOURCES) $(vmoddomlimits_SOURCES) \
+ 	$(vmoduser_SOURCES) $(vpasswd_SOURCES) $(vpopbull_SOURCES) \
+ 	$(vpopmaild_SOURCES) $(vsetuserquota_SOURCES) \
+-	$(vuserinfo_SOURCES)
++	$(vuserinfo_SOURCES) $(authvchkpw_SOURCES)
+ RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
+ 	html-recursive info-recursive install-data-recursive \
+ 	install-dvi-recursive install-exec-recursive \
+@@ -310,14 +314,13 @@
+ SUBDIRS = cdb
+ EXTRA_DIST = README.* cdb/* vcdb.c vldap.c vmysql.c voracle.pc vpgsql.c vsybase.c
+ noinst_HEADERS = md5.h vpopmail.h file_lock.h vauth.h vlimits.h maildirquota.h vcdb.h vldap.h vmysql.h voracle.h vpgsql.h vsybase.h vlog.h global.h hmac_md5.h seek.h vutil.h
+-COMMONSOURCES = vpopmail.c md5.c bigdir.c vauth.c file_lock.c vpalias.c seek.c vlimits.c maildirquota.c vutil.c vlistlib.c
++COMMONSOURCES = vpopmail.c md5.c bigdir.c vauth.c file_lock.c vpalias.c seek.c vlimits.c maildirquota.c vutil.c vlistlib.c backfill.c
  CONFIG_CLEAN_FILES = vauth.c cdb/conf-cc cdb/conf-ld cdb/compile cdb/load
 -MYSQLCONF = $(DESTDIR)@vpopmaildir@/etc/vpopmail.mysql
 -VLIMITS = $(DESTDIR)@vpopmaildir@/etc/vlimits.default
@@ -15,3 +69,35 @@
  vpopmailbindir = @vpopmaildir@/bin
  vuserinfo_SOURCES = vuserinfo.c maildirquota.c
  vuserinfo_LDADD = libvpopmail.a @auth_libs@
+@@ -325,6 +328,8 @@
+ vlist_LDADD = libvpopmail.a @auth_libs@
+ vpopmaild_SOURCES = vpopmaild.c
+ vpopmaild_LDADD = libvpopmail.a @auth_libs@
++authvchkpw_SOURCES = authvchkpw.c hmac_md5.c
++authvchkpw_LDADD = libvpopmail.a @auth_libs@
+ vdominfo_SOURCES = vdominfo.c
+ vdominfo_LDADD = libvpopmail.a @auth_libs@
+ vchkpw_SOURCES = vchkpw.c md5.c hmac_md5.c
+@@ -524,6 +529,9 @@
+ vpopmaild$(EXEEXT): $(vpopmaild_OBJECTS) $(vpopmaild_DEPENDENCIES) 
+ 	@rm -f vpopmaild$(EXEEXT)
+ 	$(LINK) $(vpopmaild_OBJECTS) $(vpopmaild_LDADD) $(LIBS)
++authvchkpw$(EXEEXT): $(authvchkpw_OBJECTS) $(authvchkpw_DEPENDENCIES) 
++	@rm -f authvchkpw$(EXEEXT)
++	$(LINK) $(authvchkpw_OBJECTS) $(authvchkpw_LDADD) $(LIBS)
+ vsetuserquota$(EXEEXT): $(vsetuserquota_OBJECTS) $(vsetuserquota_DEPENDENCIES) 
+ 	@rm -f vsetuserquota$(EXEEXT)
+ 	$(LINK) $(vsetuserquota_OBJECTS) $(vsetuserquota_LDADD) $(LIBS)
+@@ -609,6 +617,12 @@
+ libvpopmail_a-vlistlib.obj: vlistlib.c
+ 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libvpopmail_a_CFLAGS) $(CFLAGS) -c -o libvpopmail_a-vlistlib.obj `if test -f 'vlistlib.c'; then $(CYGPATH_W) 'vlistlib.c'; else $(CYGPATH_W) '$(srcdir)/vlistlib.c'; fi`
+ 
++libvpopmail_a-backfill.o: backfill.c
++	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libvpopmail_a_CFLAGS) $(CFLAGS) -c -o libvpopmail_a-backfill.o `test -f 'backfill.c' || echo '$(srcdir)/'`backfill.c
++
++libvpopmail_a-backfill.obj: backfill.c
++	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libvpopmail_a_CFLAGS) $(CFLAGS) -c -o libvpopmail_a-backfill.obj `if test -f 'backfill.c'; then $(CYGPATH_W) 'backfill.c'; else $(CYGPATH_W) '$(srcdir)/backfill.c'; fi`
++
+ # This directory's subdirectories are mostly independent; you can cd
+ # into them and run `make' without going through this Makefile.
+ # To change the values of `make' variables: instead of editing Makefiles,

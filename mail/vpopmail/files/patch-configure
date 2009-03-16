@@ -1,7 +1,14 @@
-diff -urN -x .svn ../../vendor/vpopmail/configure ./configure
---- ../../vendor/vpopmail/configure	2007-12-25 00:51:28.000000000 +0200
-+++ ./configure	2007-12-25 04:16:03.000000000 +0200
-@@ -1308,6 +1308,8 @@
+Add the --enable-spam-threshold and --enable-spam-junkfolder options.
+Do not try to create the etc/vpopmail directory and tcp.smtp in place,
+this is done by the port at install time.
+FreeBSD does not have libresolv.
+Pass the correct compiler and linker flags to the cdb build.
+FreeBSD does not need -R $libdir (a.k.a. --rpath) - the MySQL client
+library is added to ldconfig's search path in its own startup script.
+
+--- a/configure
++++ b/configure
+@@ -1326,6 +1326,8 @@
    --enable-onchange-script   Enable onchange script. See README.onchange for more info.
    --enable-spamassassin      Enable spamassassin. See  README.spamassassin for more info.
    --enable-spamc-prog=PATH   Full path to spamc program /usr/{local/}bin/spamc.
@@ -10,7 +17,7 @@ diff -urN -x .svn ../../vendor/vpopmail/configure ./configure
    --enable-maildrop          Enable maildrop. See  README.maildrop for more info.
    --enable-maildrop-prog=PATH    Full path to maildrop program /usr/{local/}bin/maildrop.
    --enable-domains-dir=TEXT  Directory in ~vpopmail to store domains (default=domains).
-@@ -6729,27 +6731,6 @@
+@@ -6504,27 +6506,6 @@
  
  #----------------------------------------------------------------------
  
@@ -38,7 +45,7 @@ diff -urN -x .svn ../../vendor/vpopmail/configure ./configure
  { echo "$as_me:$LINENO: checking whether roaming-users has been enabled" >&5
  echo $ECHO_N "checking whether roaming-users has been enabled... $ECHO_C" >&6; }
  # Check whether --enable-roaming-users was given.
-@@ -6836,30 +6817,9 @@
+@@ -6611,30 +6592,9 @@
      # Check whether --enable-tcpserver_file was given.
  if test "${enable_tcpserver_file+set}" = set; then
    enableval=$enable_tcpserver_file; tcpserver_file="$enableval"
@@ -70,7 +77,7 @@ diff -urN -x .svn ../../vendor/vpopmail/configure ./configure
      { echo "$as_me:$LINENO: result: yes" >&5
  echo "${ECHO_T}yes" >&6; }
  
-@@ -7368,6 +7328,44 @@
+@@ -7143,6 +7103,44 @@
  #define SPAMC_PROG "$spamc_prog"
  _ACEOF
  
@@ -115,7 +122,16 @@ diff -urN -x .svn ../../vendor/vpopmail/configure ./configure
  
        ;;
  esac
-@@ -7688,7 +7686,7 @@
+@@ -7396,7 +7394,7 @@
+    { (exit 1); exit 1; }; }
+     fi
+ 
+-    auth_libs="-Xlinker -R -Xlinker $libdir -L$libdir $extralibflags -lmysqlclient -lz -lm"
++    auth_libs="-L$libdir $extralibflags -lmysqlclient -lz -lm"
+ 
+     ;;
+ 
+@@ -7463,7 +7461,7 @@
  #define USE_LDAP $USE_LDAP
  _ACEOF
  
@@ -124,7 +140,7 @@ diff -urN -x .svn ../../vendor/vpopmail/configure ./configure
  
      auth_inc="-I/usr/local/include"
  
-@@ -10204,8 +10202,8 @@
+@@ -9954,8 +9952,8 @@
      ;;
  esac
  

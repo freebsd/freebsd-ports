@@ -1,6 +1,8 @@
-diff -urN -x .svn ../../vendor/vpopmail/vchkpw.c ./vchkpw.c
---- ../../vendor/vpopmail/vchkpw.c	Tue Oct  3 17:40:12 2006
-+++ ./vchkpw.c	Tue Oct  3 17:58:48 2006
+Fix the SMTP auth calculations - use the correct order of arguments.
+Only applied if requested at port build time.
+
+--- a/vchkpw.c
++++ b/vchkpw.c
 @@ -441,7 +441,8 @@
      /* Check CRAM-MD5 auth */
      if(ConnType == SMTP_CONN) {

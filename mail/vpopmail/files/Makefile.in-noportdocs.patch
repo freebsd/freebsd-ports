@@ -1,7 +1,9 @@
-diff -urN -x .svn ../../freebsd-port/vpopmail/Makefile.in ./Makefile.in
---- ../../freebsd-port/vpopmail/Makefile.in	Fri Jan 26 17:13:24 2007
-+++ ./Makefile.in	Mon Jan  8 13:17:46 2007
-@@ -863,7 +863,7 @@
+Do not install the documentation files.
+Only applied if NOPORTDOCS is defined during the port's build.
+
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -998,7 +998,7 @@
  @SET_MAKE@
  
  install-exec-am:
@@ -10,11 +12,10 @@ diff -urN -x .svn ../../freebsd-port/vpopmail/Makefile.in ./Makefile.in
  	  if test ! -d $(DESTDIR)@vpopmaildir@/$$d; then \
  	    $(INSTALL) -d -g @vpopgroup@ -m 0755 -o @vpopuser@ \
  	      $(DESTDIR)@vpopmaildir@/$$d ; \
-@@ -919,14 +919,6 @@
- 	    $(INSTALL) -o root -m 0444 $$include \
+@@ -1054,14 +1054,6 @@
  		$(DESTDIR)@vpopmaildir@/include/ ; \
  	done
--
+ 
 -	$(INSTALL) -d $(DESTDIR)@vpopmaildir@/doc/man_html
 -	$(INSTALL) -d $(DESTDIR)@vpopmaildir@/doc/doc_html
 -	$(INSTALL) -o @vpopuser@ -m 0444 -g @vpopgroup@ \
@@ -22,6 +23,7 @@ diff -urN -x .svn ../../freebsd-port/vpopmail/Makefile.in ./Makefile.in
 -
 -	$(INSTALL) -o @vpopuser@ -m 0444 -g @vpopgroup@ \
 -	  doc/doc_html/*.* $(DESTDIR)@vpopmaildir@/doc/doc_html/
- 
+-
  fix-priv:
  	if test -r $(MYSQLCONF); then \
+ 	  chown @vpopuser@  $(MYSQLCONF) ; \

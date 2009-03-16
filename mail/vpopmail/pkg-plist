@@ -1,3 +1,4 @@
+vpopmail/bin/authvchkpw
 vpopmail/bin/clearopensmtp
 vpopmail/bin/dotqmail2valias
 vpopmail/bin/vaddaliasdomain

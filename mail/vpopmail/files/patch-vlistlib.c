@@ -1,6 +1,12 @@
-diff -urN -x .svn ../../vendor/vpopmail/vlistlib.c ./vlistlib.c
---- ../../vendor/vpopmail/vlistlib.c	2007-12-25 05:03:25.000000000 +0200
-+++ ./vlistlib.c	2007-12-25 07:31:17.000000000 +0200
+Honor lots of limits - convert sprintf() to snprintf(), use the correct
+limit size, etc.
+Check a couple more calls for errors.
+Wait for the correct child process - waitpid() instead of wait().
+Add two closedir()'s to fix file descriptor leaks.
+Look for the arguments properly if progname should ever containing spaces.
+
+--- a/vlistlib.c
++++ b/vlistlib.c
 @@ -193,26 +193,26 @@
  
      if( DomainOnly ) {    //   Have domain

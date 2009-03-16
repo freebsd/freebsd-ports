@@ -1,6 +1,8 @@
-diff -urN -x .svn ../../vendor/vpopmail/vmysql.c ./vmysql.c
---- ../../vendor/vpopmail/vmysql.c	2007-10-07 23:44:14.000000000 +0300
-+++ vmysql.c	2007-12-25 03:47:54.000000000 +0200
+Fix the virtual alias support.
+Implement SQL_REMOVE_DELETED.
+
+--- a/vmysql.c
++++ b/vmysql.c
 @@ -596,12 +596,14 @@
  #endif
  

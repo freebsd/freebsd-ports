@@ -1,6 +1,7 @@
-diff -urN -x .svn ../../vendor/vpopmail/README.vdelivermail ./README.vdelivermail
---- ../../vendor/vpopmail/README.vdelivermail	2007-10-07 23:44:14.000000000 +0300
-+++ ./README.vdelivermail	2007-10-08 11:53:30.000000000 +0300
+Fix a typo.
+
+--- a/README.vdelivermail
++++ b/README.vdelivermail
 @@ -57,7 +57,7 @@
  
  If you are not sure what you are doing writing .qmail files, and mucking around

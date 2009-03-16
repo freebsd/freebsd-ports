@@ -1,7 +1,9 @@
-diff -urN -x .svn ../../freebsd-port/vpopmail/config.h.in ./config.h.in
---- ../../freebsd-port/vpopmail/config.h.in	Wed Oct  4 15:59:54 2006
-+++ ./config.h.in	Wed Oct  4 16:02:18 2006
-@@ -354,3 +354,5 @@
+Activate the SQL_REMOVE_DELETED code.
+Only applied if this is requested at port build time.
+
+--- a/config.h.in
++++ b/config.h.in
+@@ -371,3 +371,5 @@
  
  /* Define to `int' if <sys/types.h> doesn't define. */
  #undef uid_t
