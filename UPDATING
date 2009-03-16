@@ -7,6 +7,14 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20090316:
+  AFFECTS: users of net-im/ejabberd
+  AUTHOR: skylord@linkline.ru
+
+  ejabberd's UID and GID have changed (PR ports/105122). Users are advised
+  to check all configuration files and data in /var/spool/ejabberd to
+  ensure everything has the correct owner/group.
+
+20090316:
   AFFECTS: users of sysutils/lire
   AUTHOR: edwin@FreeBSD.org
 
