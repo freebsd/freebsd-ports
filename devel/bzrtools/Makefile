@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	bzrtools
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.0
 CATEGORIES=	devel
-MASTER_SITES=	https://code.launchpad.net/bzrtools/stable/${PORTVERSION}/+download/
+MASTER_SITES=	https://launchpadlibrarian.net/23740588/
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Extensions to devel/bazaar-ng
 
 RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
 
-OPTIONS=	GRAPHVIZ "Enable graphviz for graph-ancestry" on \
+OPTIONS=	GRAPHVIZ "Enable graphviz for graph-ancestry" off \
 		RSYNC    "Enable rsync for rspush" on
 
 WRKSRC=	${WRKDIR}/bzrtools
@@ -25,7 +25,7 @@ PYDISTUTILS_PKGNAME=	BzrTools
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_GRAPHVIZ)
+.if defined(WITH_GRAPHVIZ)
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 .endif
 
