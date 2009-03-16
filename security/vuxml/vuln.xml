@@ -73,7 +73,7 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://gstreamer.freedesktop.org/releases/gst-plugins-good/0.10.12.html</url>
     </references>
     <dates>
-      <discovery>2009-03-FIXME</discovery>
+      <discovery>2009-01-22</discovery>
       <entry>2009-03-16</entry>
     </dates>
   </vuln>
