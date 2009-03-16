@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	ejabberd
-PORTVERSION=	1.1.4
-PORTREVISION=	2
+PORTVERSION=	2.0.3
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/ejabberd/${PORTVERSION}/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
-
-OPTIONS=	ODBC	"Enable ODBC support"		off
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
@@ -25,13 +22,16 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_OPENSSL=	yes
-USE_RC_SUBR=	${PORTNAME}.sh
+USE_RC_SUBR=	${PORTNAME}
 NOPRECIOUSMAKEVARS=	yes
+
+OPTIONS=	ODBC	"Enable ODBC support"		off
 
 MAKE_ENV=	PORTVERSION=${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
+PKGINSTALL=	${WRKDIR}/pkg-install
 PLIST_SUB=	PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}
-SUB_FILES=	${PORTNAME} pkg-message
+SUB_FILES=	pkg-message pkg-install
 SUB_LIST=	PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
@@ -44,28 +44,16 @@ PLIST_SUB+=	ODBC=""
 PLIST_SUB+=	ODBC="@comment "
 .endif
 
-pre-install:
-	@${FIND} ${WRKSRC} '(' -name \*.orig -or -name \*.bak ')' -delete
-	@${RM} -f ${WRKSRC}/../doc/release_note_1.1.2.txt
-
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${WRKSRC}/../tools/${PORTNAME}ctl ${PREFIX}/bin
-
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.defaults ${PREFIX}/etc/${PORTNAME}/${PORTNAME}.defaults.example
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.inetrc ${PREFIX}/etc/${PORTNAME}/${PORTNAME}.inetrc.example
-.if !exists(${PREFIX}/etc/${PORTNAME}/${PORTNAME}.inetrc)
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.inetrc ${PREFIX}/etc/${PORTNAME}/${PORTNAME}.inetrc
-.endif
-
-	${FIND} ${PREFIX}/lib/erlang/lib/${DISTNAME} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	${FIND} ${PREFIX}/lib/erlang/lib/${DISTNAME} -type f -print0 | ${XARGS} -0 ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../doc/* ${DOCSDIR}
+	@(cd ${WRKSRC}/../doc/ && ${INSTALL_DATA} COPYING *.html *.png *.txt ${DOCSDIR})
 .endif
 
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${FIND} ${PREFIX}/lib/erlang/lib/${DISTNAME} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
+	${FIND} ${PREFIX}/lib/erlang/lib/${DISTNAME} -type f -print0 | ${XARGS} -0 ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

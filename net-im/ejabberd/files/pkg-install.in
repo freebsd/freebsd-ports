@@ -6,7 +6,7 @@ fi
 
 USER=ejabberd
 GROUP=${USER}
-UID=544
+UID=543
 GID=${UID}
 USERS_HOME="/var/spool/ejabberd"
 
@@ -31,5 +31,8 @@ if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
 fi
 
 install -d -m 750 -o ${USER} -g ${GROUP} ${USERS_HOME} /var/log/ejabberd
+
+chown -R ${USER}:${GROUP}  %%PREFIX%%/etc/%%PORTNAME%%
+chown -R ${USER}:${GROUP}  %%PREFIX%%/lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
 
 exit 0

@@ -1,32 +1,43 @@
---- Makefile.in.orig	2007-04-30 08:08:01.000000000 +0100
-+++ Makefile.in	2007-10-30 01:26:29.000000000 +0000
-@@ -32,15 +32,15 @@
- SOURCES = $(wildcard *.erl)
+--- Makefile.in.orig	2009-01-14 12:54:15.000000000 +0300
++++ Makefile.in	2009-01-24 18:45:50.000000000 +0300
+@@ -56,18 +56,18 @@
+ ERLBEHAVBEAMS = $(ERLBEHAVS:.erl=.beam)
  BEAMS = $(SOURCES:.erl=.beam)
  
--DESTDIR = 
+-DESTDIR =
 -
--EJABBERDDIR = $(DESTDIR)@prefix@/var/lib/ejabberd
+-EJABBERDDIR = $(DESTDIR)@localstatedir@/lib/ejabberd
 +DESTDIR = @prefix@
 +  
 +EJABBERDDIR = $(DESTDIR)/lib/erlang/lib/ejabberd-$(PORTVERSION)
  BEAMDIR = $(EJABBERDDIR)/ebin
+-SPOOLDIR = $(EJABBERDDIR)/db
++SPOOLDIR = /var/spool/ejabberd
  PRIVDIR = $(EJABBERDDIR)/priv
  SODIR = $(PRIVDIR)/lib
+ PBINDIR = $(PRIVDIR)/bin
  MSGSDIR = $(PRIVDIR)/msgs
--LOGDIR = $(DESTDIR)@prefix@/var/log/ejabberd
--ETCDIR = $(DESTDIR)@prefix@/etc/ejabberd
+-LOGDIR = $(DESTDIR)@localstatedir@/log/ejabberd
+-ETCDIR = $(DESTDIR)@sysconfdir@/ejabberd
+-SBINDIR = $(DESTDIR)@sbindir@
 +LOGDIR = /var/log/ejabberd
 +ETCDIR = $(DESTDIR)/etc/ejabberd
++SBINDIR = @sbindir@
  
- ASN_FLAGS = -bber_bin +der +compact_bit_string +optimize +noobj
- 
-@@ -89,7 +89,7 @@
+ ifeq ($(shell uname),Darwin)
+ DYNAMIC_LIB_CFLAGS = -fPIC -bundle -flat_namespace -undefined suppress
+@@ -122,10 +122,10 @@
  	install -d $(MSGSDIR)
  	install -m 644 msgs/*.msg $(MSGSDIR)
- 	install -d $(ETCDIR)
+ 	install -d -m 750 $(ETCDIR)
 -	[ -f $(ETCDIR)/ejabberd.cfg ] && install -b -m 644 ejabberd.cfg.example $(ETCDIR)/ejabberd.cfg-new || install -b -m 644 ejabberd.cfg.example $(ETCDIR)/ejabberd.cfg
-+	install -b -m 644 ejabberd.cfg.example $(ETCDIR)
- 	install -d $(LOGDIR)
- 
- clean: clean-recursive clean-local
+-	sed -e "s*@rootdir@*@prefix@*" -e "s*@erl@*@ERL@*" ejabberdctl.template > ejabberdctl.example
+-	[ -f $(ETCDIR)/ejabberdctl.cfg ] && install -b -m 644 ejabberdctl.cfg.example $(ETCDIR)/ejabberdctl.cfg-new || install -b -m 644 ejabberdctl.cfg.example $(ETCDIR)/ejabberdctl.cfg
+-	install -b -m 644 inetrc $(ETCDIR)/inetrc
++	install -m 640 ejabberd.cfg.example $(ETCDIR)
++	sed -e "s*@rootdir@*@prefix@*" -e "s*@erl@*@ERL@*" -e "s*lib/erlang/lib/ejabberd*lib/erlang/lib/ejabberd-$(PORTVERSION)*" ejabberdctl.template > ejabberdctl.example
++	install -m 640 ejabberdctl.cfg.example $(ETCDIR)
++	install -m 640 inetrc $(ETCDIR)/inetrc.example
+ 	install -d $(SBINDIR)
+ 	install -m 755 ejabberdctl.example $(SBINDIR)/ejabberdctl
+ 	install -d -m 750 $(LOGDIR)
