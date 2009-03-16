@@ -30,4 +30,12 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/fio_generate_plots ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/fio.1 ${PREFIX}/man/man1/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64-6
+.endif
+.endif
+
+.include <bsd.port.post.mk>
