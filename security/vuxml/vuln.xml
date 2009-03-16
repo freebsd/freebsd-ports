@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6733e1bf-125f-11de-a964-0030843d3802">
+    <topic>ffmpeg -- 4xm processing memory corruption vulnerability</topic>
+    <affects>
+      <package>
+	<name>ffmpeg</name>
+	<range><lt>2008.07.27_9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/33711/">
+	  <p>Tobias Klein has reported a vulnerability in FFmpeg, which
+	    potentially can be exploited by malicious people to compromise an
+	    application using the library.</p>
+	  <p>The vulnerability is caused due to a signedness error within the
+	    "fourxm_read_header()" function in libavformat/4xm.c. This can be
+	    exploited to corrupt arbitrary memory via a specially crafted 4xm
+	    file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>33502</bid>
+      <cvename>CVE-2009-0385</cvename>
+      <url>http://secunia.com/advisories/33711/</url>
+      <url>http://trapkit.de/advisories/TKADV2009-004.txt</url>
+    </references>
+    <dates>
+      <discovery>2009-01-28</discovery>
+      <entry>2009-03-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="35c0b572-125a-11de-a964-0030843d3802">
     <topic>roundcube -- webmail script insertion and php code injection</topic>
     <affects>
