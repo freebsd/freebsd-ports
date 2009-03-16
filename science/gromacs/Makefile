@@ -32,6 +32,10 @@ OPTIONS=	FFTW3	"Use FFT routines from math/fftw3"		on  \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 .if !defined(WITHOUT_FFTW3) && defined(WITH_FFTW2)
 IGNORE=		Cannot build with FFTW3 and FFTW2. Run 'make config' again and choose only one of them.
 .endif
