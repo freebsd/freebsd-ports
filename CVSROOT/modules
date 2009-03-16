@@ -234,6 +234,7 @@ aamath                          ports/math/aamath
 aap                             ports/devel/aap
 abacus                          ports/deskutils/abacus
 abakus                          ports/math/abakus
+abby                            ports/multimedia/abby
 abc2mtex                        ports/print/abc2mtex
 abcde                           ports/audio/abcde
 abck                            ports/sysutils/abck
@@ -3727,6 +3728,7 @@ funktrackergold                 ports/audio/funktrackergold
 funnelweb                       ports/devel/funnelweb
 funnyboat                       ports/games/funnyboat
 fuse                            ports/emulators/fuse
+fusefs-afuse                    ports/sysutils/fusefs-afuse
 fusefs-chironfs                 ports/sysutils/fusefs-chironfs
 fusefs-cryptofs                 ports/sysutils/fusefs-cryptofs
 fusefs-curlftpfs                ports/sysutils/fusefs-curlftpfs
@@ -3860,7 +3862,6 @@ gcalctool                       ports/math/gcalctool
 gcb                             ports/x11/gcb
 gcc-ooo                         ports/lang/gcc-ooo
 gcc295                          ports/lang/gcc295
-gcc33                           ports/lang/gcc33
 gcc34                           ports/lang/gcc34
 gcc42                           ports/lang/gcc42
 gcc42-withgcjawt                ports/lang/gcc42-withgcjawt
@@ -9816,6 +9817,7 @@ p5-Algorithm-RabinKarp          ports/textproc/p5-Algorithm-RabinKarp
 p5-Algorithm-SVM                ports/devel/p5-Algorithm-SVM
 p5-Algorithm-SVMLight           ports/science/p5-Algorithm-SVMLight
 p5-Alias                        ports/devel/p5-Alias
+p5-Alien-wxWidgets              ports/x11-toolkits/p5-Alien-wxWidgets
 p5-Altoids                      ports/net-mgmt/p5-Altoids
 p5-Alzabo                       ports/devel/p5-Alzabo
 p5-Alzabo-GUI-Mason             ports/devel/p5-Alzabo-GUI-Mason
@@ -10377,11 +10379,13 @@ p5-Class-Tangram                ports/devel/p5-Class-Tangram
 p5-Class-Throwable              ports/devel/p5-Class-Throwable
 p5-Class-Tom                    ports/devel/p5-Class-Tom
 p5-Class-Trigger                ports/devel/p5-Class-Trigger
+p5-Class-Unload                 ports/devel/p5-Class-Unload
 p5-Class-Virtual                ports/devel/p5-Class-Virtual
 p5-Class-WhiteHole              ports/devel/p5-Class-WhiteHole
 p5-Class-Workflow               ports/devel/p5-Class-Workflow
 p5-Class-XPath                  ports/devel/p5-Class-XPath
 p5-Class-XSAccessor             ports/devel/p5-Class-XSAccessor
+p5-Class-XSAccessor-Array       ports/devel/p5-Class-XSAccessor-Array
 p5-ClearSilver                  ports/www/p5-ClearSilver
 p5-Clipboard                    ports/x11/p5-Clipboard
 p5-Clone                        ports/devel/p5-Clone
@@ -10744,6 +10748,7 @@ p5-DelimMatch                   ports/textproc/p5-DelimMatch
 p5-Devel-Arena                  ports/devel/p5-Devel-Arena
 p5-Devel-Caller                 ports/devel/p5-Devel-Caller
 p5-Devel-Callsite               ports/devel/p5-Devel-Callsite
+p5-Devel-CheckOS                ports/devel/p5-Devel-CheckOS
 p5-Devel-Constants              ports/devel/p5-Devel-Constants
 p5-Devel-CoreStack              ports/devel/p5-Devel-CoreStack
 p5-Devel-Cover                  ports/devel/p5-Devel-Cover
@@ -10751,6 +10756,7 @@ p5-Devel-Cycle                  ports/devel/p5-Devel-Cycle
 p5-Devel-DProfPP                ports/devel/p5-Devel-DProfPP
 p5-Devel-Declare                ports/devel/p5-Devel-Declare
 p5-Devel-Diagram                ports/devel/p5-Devel-Diagram
+p5-Devel-Dumpvar                ports/devel/p5-Devel-Dumpvar
 p5-Devel-EvalContext            ports/devel/p5-Devel-EvalContext
 p5-Devel-Events                 ports/devel/p5-Devel-Events
 p5-Devel-Events-Objects         ports/devel/p5-Devel-Events-Objects
@@ -10930,6 +10936,7 @@ p5-File-Find-Object             ports/devel/p5-File-Find-Object
 p5-File-Find-Rule               ports/devel/p5-File-Find-Rule
 p5-File-Find-Rule-Filesys-Virtual  ports/devel/p5-File-Find-Rule-Filesys-Virtual
 p5-File-Find-Rule-Perl          ports/devel/p5-File-Find-Rule-Perl
+p5-File-Find-Rule-VCS           ports/devel/p5-File-Find-Rule-VCS
 p5-File-Finder                  ports/devel/p5-File-Finder
 p5-File-Flat                    ports/devel/p5-File-Flat
 p5-File-Flock                   ports/devel/p5-File-Flock
@@ -10961,6 +10968,7 @@ p5-File-RsyncP                  ports/net/p5-File-RsyncP
 p5-File-Scan                    ports/security/p5-File-Scan
 p5-File-Scan-ClamAV             ports/security/p5-File-Scan-ClamAV
 p5-File-ShareDir                ports/devel/p5-File-ShareDir
+p5-File-ShareDir-PAR            ports/devel/p5-File-ShareDir-PAR
 p5-File-Slurp                   ports/devel/p5-File-Slurp
 p5-File-Slurp-Tree              ports/devel/p5-File-Slurp-Tree
 p5-File-Sort                    ports/misc/p5-File-Sort
@@ -11682,16 +11690,20 @@ p5-Module-Compile               ports/devel/p5-Module-Compile
 p5-Module-CoreList              ports/devel/p5-Module-CoreList
 p5-Module-Dependency            ports/devel/p5-Module-Dependency
 p5-Module-Depends               ports/devel/p5-Module-Depends
+p5-Module-Extract               ports/devel/p5-Module-Extract
 p5-Module-ExtractUse            ports/devel/p5-Module-ExtractUse
 p5-Module-Find                  ports/devel/p5-Module-Find
 p5-Module-Info                  ports/devel/p5-Module-Info
 p5-Module-Info-File             ports/devel/p5-Module-Info-File
+p5-Module-Inspector             ports/devel/p5-Module-Inspector
 p5-Module-Install               ports/devel/p5-Module-Install
 p5-Module-Install-AuthorTests   ports/devel/p5-Module-Install-AuthorTests
 p5-Module-List                  ports/devel/p5-Module-List
 p5-Module-Load                  ports/devel/p5-Module-Load
 p5-Module-Load-Conditional      ports/devel/p5-Module-Load-Conditional
 p5-Module-Loaded                ports/devel/p5-Module-Loaded
+p5-Module-Manifest              ports/devel/p5-Module-Manifest
+p5-Module-Math-Depends          ports/devel/p5-Module-Math-Depends
 p5-Module-Pluggable             ports/devel/p5-Module-Pluggable
 p5-Module-Pluggable-Fast        ports/devel/p5-Module-Pluggable-Fast
 p5-Module-Pluggable-Ordered     ports/devel/p5-Module-Pluggable-Ordered
@@ -11971,6 +11983,8 @@ p5-OAI-Harvester                ports/net/p5-OAI-Harvester
 p5-OLE-Storage_Lite             ports/devel/p5-OLE-Storage_Lite
 p5-OOTools                      ports/devel/p5-OOTools
 p5-ORBit                        ports/devel/p5-ORBit
+p5-ORLite                       ports/databases/p5-ORLite
+p5-ORLite-Migrate               ports/databases/p5-ORLite-Migrate
 p5-Object-Accessor              ports/devel/p5-Object-Accessor
 p5-Object-Array                 ports/devel/p5-Object-Array
 p5-Object-Declare               ports/devel/p5-Object-Declare
@@ -12091,6 +12105,7 @@ p5-PV                           ports/devel/p5-PV
 p5-Package-Constants            ports/devel/p5-Package-Constants
 p5-Package-Generator            ports/devel/p5-Package-Generator
 p5-PadWalker                    ports/devel/p5-PadWalker
+p5-Padre                        ports/editors/p5-Padre
 p5-Palm                         ports/palm/p5-Palm
 p5-Palm-PalmDoc                 ports/palm/p5-Palm-PalmDoc
 p5-Parallel-ForkManager         ports/devel/p5-Parallel-ForkManager
@@ -12105,6 +12120,7 @@ p5-Params-Validate              ports/devel/p5-Params-Validate
 p5-Parse-CPAN-Meta              ports/devel/p5-Parse-CPAN-Meta
 p5-Parse-CPAN-Packages          ports/devel/p5-Parse-CPAN-Packages
 p5-Parse-CSV                    ports/textproc/p5-Parse-CSV
+p5-Parse-ErrorString-Perl       ports/devel/p5-Parse-ErrorString-Perl
 p5-Parse-FixedLength            ports/textproc/p5-Parse-FixedLength
 p5-Parse-Flex                   ports/textproc/p5-Parse-Flex
 p5-Parse-IRC                    ports/irc/p5-Parse-IRC
@@ -12541,6 +12557,7 @@ p5-Test-Block                   ports/devel/p5-Test-Block
 p5-Test-Class                   ports/devel/p5-Test-Class
 p5-Test-ClassAPI                ports/devel/p5-Test-ClassAPI
 p5-Test-Cmd                     ports/devel/p5-Test-Cmd
+p5-Test-Compile                 ports/devel/p5-Test-Compile
 p5-Test-Data                    ports/devel/p5-Test-Data
 p5-Test-DatabaseRow             ports/databases/p5-Test-DatabaseRow
 p5-Test-Debugger                ports/devel/p5-Test-Debugger
@@ -12644,6 +12661,7 @@ p5-Text-FIGlet                  ports/misc/p5-Text-FIGlet
 p5-Text-FillIn                  ports/textproc/p5-Text-FillIn
 p5-Text-Filter                  ports/textproc/p5-Text-Filter
 p5-Text-Filter-Chain            ports/textproc/p5-Text-Filter-Chain
+p5-Text-FindIndent              ports/textproc/p5-Text-FindIndent
 p5-Text-FixEOL                  ports/textproc/p5-Text-FixEOL
 p5-Text-FixedLength             ports/textproc/p5-Text-FixedLength
 p5-Text-FixedLength-Extra       ports/textproc/p5-Text-FixedLength-Extra
@@ -12936,6 +12954,8 @@ p5-WordNet-QueryData            ports/textproc/p5-WordNet-QueryData
 p5-WordNet-Similarity           ports/textproc/p5-WordNet-Similarity
 p5-WordPress-XMLRPC             ports/www/p5-WordPress-XMLRPC
 p5-Workflow                     ports/devel/p5-Workflow
+p5-Wx                           ports/x11-toolkits/p5-Wx
+p5-Wx-Perl-ProcessStream        ports/x11-toolkits/p5-Wx-Perl-ProcessStream
 p5-X11-GUITest                  ports/x11/p5-X11-GUITest
 p5-X11-IdleTime                 ports/x11/p5-X11-IdleTime
 p5-X11-Protocol                 ports/x11/p5-X11-Protocol
@@ -13126,6 +13146,7 @@ p5-algorithm-svm                ports/devel/p5-Algorithm-SVM
 p5-algorithm-svmlight           ports/science/p5-Algorithm-SVMLight
 p5-alias                        ports/devel/p5-Alias
 p5-aliased                      ports/devel/p5-aliased
+p5-alien-wxwidgets              ports/x11-toolkits/p5-Alien-wxWidgets
 p5-altoids                      ports/net-mgmt/p5-Altoids
 p5-alzabo                       ports/devel/p5-Alzabo
 p5-alzabo-gui-mason             ports/devel/p5-Alzabo-GUI-Mason
@@ -13685,11 +13706,13 @@ p5-class-tangram                ports/devel/p5-Class-Tangram
 p5-class-throwable              ports/devel/p5-Class-Throwable
 p5-class-tom                    ports/devel/p5-Class-Tom
 p5-class-trigger                ports/devel/p5-Class-Trigger
+p5-class-unload                 ports/devel/p5-Class-Unload
 p5-class-virtual                ports/devel/p5-Class-Virtual
 p5-class-whitehole              ports/devel/p5-Class-WhiteHole
 p5-class-workflow               ports/devel/p5-Class-Workflow
 p5-class-xpath                  ports/devel/p5-Class-XPath
 p5-class-xsaccessor             ports/devel/p5-Class-XSAccessor
+p5-class-xsaccessor-array       ports/devel/p5-Class-XSAccessor-Array
 p5-clearsilver                  ports/www/p5-ClearSilver
 p5-clipboard                    ports/x11/p5-Clipboard
 p5-clone                        ports/devel/p5-Clone
@@ -14062,6 +14085,7 @@ p5-delimmatch                   ports/textproc/p5-DelimMatch
 p5-devel-arena                  ports/devel/p5-Devel-Arena
 p5-devel-caller                 ports/devel/p5-Devel-Caller
 p5-devel-callsite               ports/devel/p5-Devel-Callsite
+p5-devel-checkos                ports/devel/p5-Devel-CheckOS
 p5-devel-constants              ports/devel/p5-Devel-Constants
 p5-devel-corestack              ports/devel/p5-Devel-CoreStack
 p5-devel-cover                  ports/devel/p5-Devel-Cover
@@ -14069,6 +14093,7 @@ p5-devel-cycle                  ports/devel/p5-Devel-Cycle
 p5-devel-declare                ports/devel/p5-Devel-Declare
 p5-devel-diagram                ports/devel/p5-Devel-Diagram
 p5-devel-dprofpp                ports/devel/p5-Devel-DProfPP
+p5-devel-dumpvar                ports/devel/p5-Devel-Dumpvar
 p5-devel-ebug                   ports/devel/p5-Devel-ebug
 p5-devel-evalcontext            ports/devel/p5-Devel-EvalContext
 p5-devel-events                 ports/devel/p5-Devel-Events
@@ -14260,6 +14285,7 @@ p5-file-find-object             ports/devel/p5-File-Find-Object
 p5-file-find-rule               ports/devel/p5-File-Find-Rule
 p5-file-find-rule-filesys-virtual  ports/devel/p5-File-Find-Rule-Filesys-Virtual
 p5-file-find-rule-perl          ports/devel/p5-File-Find-Rule-Perl
+p5-file-find-rule-vcs           ports/devel/p5-File-Find-Rule-VCS
 p5-file-finder                  ports/devel/p5-File-Finder
 p5-file-flat                    ports/devel/p5-File-Flat
 p5-file-flock                   ports/devel/p5-File-Flock
@@ -14293,6 +14319,7 @@ p5-file-rsyncp                  ports/net/p5-File-RsyncP
 p5-file-scan                    ports/security/p5-File-Scan
 p5-file-scan-clamav             ports/security/p5-File-Scan-ClamAV
 p5-file-sharedir                ports/devel/p5-File-ShareDir
+p5-file-sharedir-par            ports/devel/p5-File-ShareDir-PAR
 p5-file-slurp                   ports/devel/p5-File-Slurp
 p5-file-slurp-tree              ports/devel/p5-File-Slurp-Tree
 p5-file-sort                    ports/misc/p5-File-Sort
@@ -15022,16 +15049,20 @@ p5-module-corelist              ports/devel/p5-Module-CoreList
 p5-module-cpants-analyse        ports/devel/p5-Module-CPANTS-Analyse
 p5-module-dependency            ports/devel/p5-Module-Dependency
 p5-module-depends               ports/devel/p5-Module-Depends
+p5-module-extract               ports/devel/p5-Module-Extract
 p5-module-extractuse            ports/devel/p5-Module-ExtractUse
 p5-module-find                  ports/devel/p5-Module-Find
 p5-module-info                  ports/devel/p5-Module-Info
 p5-module-info-file             ports/devel/p5-Module-Info-File
+p5-module-inspector             ports/devel/p5-Module-Inspector
 p5-module-install               ports/devel/p5-Module-Install
 p5-module-install-authortests   ports/devel/p5-Module-Install-AuthorTests
 p5-module-list                  ports/devel/p5-Module-List
 p5-module-load                  ports/devel/p5-Module-Load
 p5-module-load-conditional      ports/devel/p5-Module-Load-Conditional
 p5-module-loaded                ports/devel/p5-Module-Loaded
+p5-module-manifest              ports/devel/p5-Module-Manifest
+p5-module-math-depends          ports/devel/p5-Module-Math-Depends
 p5-module-pluggable             ports/devel/p5-Module-Pluggable
 p5-module-pluggable-fast        ports/devel/p5-Module-Pluggable-Fast
 p5-module-pluggable-ordered     ports/devel/p5-Module-Pluggable-Ordered
@@ -15344,6 +15375,8 @@ p5-openxpki-client-scep         ports/security/p5-openxpki-client-scep
 p5-openxpki-deployment          ports/security/p5-openxpki-deployment
 p5-openxpki-i18n                ports/security/p5-openxpki-i18n
 p5-orbit                        ports/devel/p5-ORBit
+p5-orlite                       ports/databases/p5-ORLite
+p5-orlite-migrate               ports/databases/p5-ORLite-Migrate
 p5-oryx                         ports/databases/p5-Oryx
 p5-orz                          ports/devel/p5-orz
 p5-ournet-bbs                   ports/net/p5-OurNet-BBS
@@ -15352,6 +15385,7 @@ p5-p4                           ports/devel/p5-P4
 p5-p4-client                    ports/devel/p5-P4-Client
 p5-package-constants            ports/devel/p5-Package-Constants
 p5-package-generator            ports/devel/p5-Package-Generator
+p5-padre                        ports/editors/p5-Padre
 p5-padwalker                    ports/devel/p5-PadWalker
 p5-palm                         ports/palm/p5-Palm
 p5-palm-palmdoc                 ports/palm/p5-Palm-PalmDoc
@@ -15371,6 +15405,7 @@ p5-parent                       ports/devel/p5-parent
 p5-parse-cpan-meta              ports/devel/p5-Parse-CPAN-Meta
 p5-parse-cpan-packages          ports/devel/p5-Parse-CPAN-Packages
 p5-parse-csv                    ports/textproc/p5-Parse-CSV
+p5-parse-errorstring-perl       ports/devel/p5-Parse-ErrorString-Perl
 p5-parse-fixedlength            ports/textproc/p5-Parse-FixedLength
 p5-parse-flex                   ports/textproc/p5-Parse-Flex
 p5-parse-irc                    ports/irc/p5-Parse-IRC
@@ -15915,6 +15950,7 @@ p5-test-block                   ports/devel/p5-Test-Block
 p5-test-class                   ports/devel/p5-Test-Class
 p5-test-classapi                ports/devel/p5-Test-ClassAPI
 p5-test-cmd                     ports/devel/p5-Test-Cmd
+p5-test-compile                 ports/devel/p5-Test-Compile
 p5-test-data                    ports/devel/p5-Test-Data
 p5-test-databaserow             ports/databases/p5-Test-DatabaseRow
 p5-test-debugger                ports/devel/p5-Test-Debugger
@@ -16020,6 +16056,7 @@ p5-text-figlet                  ports/misc/p5-Text-FIGlet
 p5-text-fillin                  ports/textproc/p5-Text-FillIn
 p5-text-filter                  ports/textproc/p5-Text-Filter
 p5-text-filter-chain            ports/textproc/p5-Text-Filter-Chain
+p5-text-findindent              ports/textproc/p5-Text-FindIndent
 p5-text-fixedlength             ports/textproc/p5-Text-FixedLength
 p5-text-fixedlength-extra       ports/textproc/p5-Text-FixedLength-Extra
 p5-text-fixeol                  ports/textproc/p5-Text-FixEOL
@@ -16321,6 +16358,8 @@ p5-www-venusenvy                ports/www/p5-WWW-VenusEnvy
 p5-www-webarchive               ports/www/p5-WWW-WebArchive
 p5-www-wikipedia                ports/www/p5-WWW-Wikipedia
 p5-www-yandex-tic               ports/www/p5-WWW-Yandex-TIC
+p5-wx                           ports/x11-toolkits/p5-Wx
+p5-wx-perl-processstream        ports/x11-toolkits/p5-Wx-Perl-ProcessStream
 p5-x11-guitest                  ports/x11/p5-X11-GUITest
 p5-x11-idletime                 ports/x11/p5-X11-IdleTime
 p5-x11-protocol                 ports/x11/p5-X11-Protocol
@@ -18308,6 +18347,7 @@ py-crack                        ports/security/py-crack
 py-cryptkit                     ports/security/py-cryptkit
 py-cssutils                     ports/www/py-cssutils
 py-csv                          ports/textproc/py-csv
+py-ctags                        ports/devel/py-ctags
 py-ctypes                       ports/devel/py-ctypes
 py-cups                         ports/print/py-cups
 py-curl                         ports/ftp/py-curl
