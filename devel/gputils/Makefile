@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	gputils
-PORTVERSION=	0.13.6
+PORTVERSION=	0.13.7
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of utilities for Microchip PIC microcontrollers
 
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 
 MANLANG=	"" fr
