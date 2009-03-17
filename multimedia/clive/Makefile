@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	clive
-PORTVERSION=	2.1.6
+PORTVERSION=	2.1.7
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	legatvs@gmail.com
 COMMENT=	Video extraction utility for YouTube, GoogleVideo, and others
@@ -18,8 +17,7 @@ RUN_DEPENDS=	p5-BerkeleyDB>=0.36:${PORTSDIR}/databases/p5-BerkeleyDB \
 		p5-Config-Tiny>=2.12:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA \
 		p5-HTML-Parser>=3.59:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-WWW-Curl>=4.05:${PORTSDIR}/www/p5-WWW-Curl \
-		p5-XML-Simple>=2.18:${PORTSDIR}/textproc/p5-XML-Simple
+		p5-WWW-Curl>=4.05:${PORTSDIR}/www/p5-WWW-Curl
 
 # deskutils/ljclive, multimedia/clive1 (same executable/manpage/distfile name)
 CONFLICTS=	clive-[0-1]* ljclive-[0-9]*
