@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yaws
-PORTVERSION=	1.80
+PORTVERSION=	1.81
 CATEGORIES=	www
 MASTER_SITES=	http://yaws.hyber.org/download/
 
@@ -68,10 +68,6 @@ do-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/www/yaws
 	@${INSTALL_MAN} ${WRKSRC}/man/*.1 ${MANPREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/man/*.5 ${MANPREFIX}/man/man5
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/yaws.pdf ${DOCSDIR}
-.endif
 
 post-install:
 	@${LN} -sf ${PORTNAME}-${PORTVERSION} ${PREFIX}/lib/erlang/lib/${PORTNAME}
