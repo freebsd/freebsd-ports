@@ -12,8 +12,11 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nagios
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jarrod@netleader.com.au
 COMMENT=	Nagios Remote Plugin Executor
+
+DEPRECATED=	Obsolete version, consider migration to net-mgmt/nrpe2
+EXPIRATION_DATE=	2009-04-17
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 

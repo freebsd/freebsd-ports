@@ -15,6 +15,9 @@ MASTER_SITES=	SF
 MAINTAINER=	jarrod@netleader.com.au
 COMMENT=	Extremely powerful network monitoring system
 
+DEPRECATED=	Obsolete version, consider migration to net-mgmt/nagios
+EXPIRATION_DATE=	2009-04-17
+
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
