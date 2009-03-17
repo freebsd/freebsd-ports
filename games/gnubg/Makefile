@@ -30,7 +30,7 @@ WRKSRC=	${WRKDIR}/gnubg
 OPTIONS=	ESOUND	"Enable sound support" ON	\
 		NLS	"Enable gettext support" ON
 
-CONFIGURE_ARGS=	--enable-nls --with-board3d
+CONFIGURE_ARGS=	--with-board3d
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		ac_cv_path_ARTSC_CONFIG=no ac_cv_path_LIBART_CONFIG=no
