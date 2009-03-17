@@ -1,9 +1,6 @@
 bin/subtitlecomposer
-share/applications/kde/subtitlecomposer.desktop
+share/applications/kde4/subtitlecomposer.desktop
 share/apps/subtitlecomposer/input.conf
-share/apps/subtitlecomposer/pics/audio-volume-high.png
-share/apps/subtitlecomposer/pics/audio-volume-low.png
-share/apps/subtitlecomposer/pics/audio-volume-muted.png
 share/apps/subtitlecomposer/pics/current-line-follows-video.png
 share/apps/subtitlecomposer/pics/flags.png
 share/apps/subtitlecomposer/pics/logo-gstreamer.png
@@ -21,16 +18,11 @@ share/icons/hicolor/32x32/apps/subtitlecomposer.png
 share/icons/hicolor/64x64/apps/subtitlecomposer.png
 share/locale/el/LC_MESSAGES/subtitlecomposer.mo
 share/locale/es/LC_MESSAGES/subtitlecomposer.mo
+share/locale/pl/LC_MESSAGES/subtitlecomposer.mo
 share/locale/sr/LC_MESSAGES/subtitlecomposer.mo
-share/locale/sr@Latn/LC_MESSAGES/subtitlecomposer.mo
-share/mimelnk/subtitle/x-advsubstationalpha.desktop
-share/mimelnk/subtitle/x-microdvd.desktop
-share/mimelnk/subtitle/x-mplayer.desktop
-share/mimelnk/subtitle/x-subrip.desktop
-share/mimelnk/subtitle/x-substationalpha.desktop
-share/mimelnk/subtitle/x-subviewer.desktop
-@dirrmtry share/mimelnk/subtitle
-@dirrmtry share/config
+share/locale/sr@latin/LC_MESSAGES/subtitlecomposer.mo
+share/mime/packages/subtitlecomposer.xml
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrm share/apps/subtitlecomposer/pics
 @dirrm share/apps/subtitlecomposer
-@dirrmtry share/applications/kde
