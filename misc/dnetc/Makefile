@@ -50,38 +50,37 @@ SUB_LIST=	BINDIR="${BINDIR}" \
 
 .if ${ARCH} == i386
 REVISION=	0
-VERSION=	2.9102.508
+VERSION=	2.9103.509
 .if ${OSVERSION} >= 700055
-DISTNAME=	dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}-elf
-WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}-elf
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}
 .else
-DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
-WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
 .endif
 .endif
 
 .if ${ARCH} == amd64
 REVISION=	0
-VERSION=	2.9101.507
+VERSION=	2.9103.509
 .if ${OSVERSION} >= 700055
-DISTNAME=	dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}-elf
-WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}-elf
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}
 .else
-DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
-WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
 .endif
 .endif
 
 .if ${ARCH} == sparc64
 REVISION=	0
-.if ${OSVERSION} >= 700055
 VERSION=	2.9103.509
+.if ${OSVERSION} >= 700055
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}-elf
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}-elf
 .else
-VERSION=	2.9101.507
-DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
-WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
 .endif
 .endif
 
