@@ -30,4 +30,12 @@ MAN1=		fileschanged.1
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
 PLIST_FILES=	bin/fileschanged
 
+.if !defined(NOPORTDOCS)
+post-install:
+	${MKDIR} ${DOCSDIR}
+.for DOCFILE in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${DOCFILE} ${DOCSDIR}
+.endfor
+.endif
+
 .include <bsd.port.mk>
