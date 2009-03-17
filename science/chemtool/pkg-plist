@@ -31,15 +31,10 @@ bin/cht
 %%EXAMPLESDIR%%/reaction.cht
 %%EXAMPLESDIR%%/rutamycin_b.cht
 %%EXAMPLESDIR%%/sample.sdf
+%%EXAMPLESDIR%%/textsizes.cht
 %%EXAMPLESDIR%%/tbutylazulene.cht
 %%EXAMPLESDIR%%/tcdd.cht
 %%EXAMPLESDIR%%/tetracyclin.cht
 %%EXAMPLESDIR%%/v3000.mol
 %%EXAMPLESDIR%%/viagra.cht
-share/locale/cs/LC_MESSAGES/chemtool.mo
-share/locale/de/LC_MESSAGES/chemtool.mo
-share/locale/fr/LC_MESSAGES/chemtool.mo
-share/locale/pl/LC_MESSAGES/chemtool.mo
-share/locale/pt_BR/LC_MESSAGES/chemtool.mo
-share/locale/ru/LC_MESSAGES/chemtool.mo
 @dirrm %%EXAMPLESDIR%%
