@@ -7,6 +7,7 @@
 
 PORTNAME=	awesome2
 PORTVERSION=	2.3.5
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 DISTNAME=	awesome-${PORTVERSION}
@@ -42,6 +43,8 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e  "s,PACKAGE='awesome',PACKAGE='awesome2',g" \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e  "s,awesomerc,awesome2rc,g" \
+		${WRKSRC}/common/configopts.c
 .	for man in ${MAN1} ${MAN5}
 		@${MV} ${WRKSRC}/${man:S%awesome2%awesome%}.txt ${WRKSRC}/${man}.txt
 		@${REINPLACE_CMD} -e 's,awesome,awesome2,g' \
