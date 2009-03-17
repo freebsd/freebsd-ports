@@ -71,6 +71,7 @@ etc/yaws.conf.sample
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_dav.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_debug.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_debug.hrl
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_dime.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_generated.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_html.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_jsonrpc.erl
@@ -95,7 +96,6 @@ etc/yaws.conf.sample
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_xmlrpc.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_zlib.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/ymnesia.erl
-%%PORTDOCS%%%%DOCSDIR%%/yaws.pdf
 %%WWWDIR%%/END
 %%WWWDIR%%/END2
 %%WWWDIR%%/HEAD
@@ -274,17 +274,17 @@ etc/yaws.conf.sample
 %%WWWDIR%%/session1.yaws
 %%WWWDIR%%/setcookie.yaws
 %%WWWDIR%%/setpcookie.yaws
-%%WWWDIR%%/shopingcart/Makefile
-%%WWWDIR%%/shopingcart/buy.yaws
-%%WWWDIR%%/shopingcart/index.yaws
-%%WWWDIR%%/shopingcart/junk.jpg
-%%WWWDIR%%/shopingcart/loginpost.yaws
-%%WWWDIR%%/shopingcart/logout.yaws
-%%WWWDIR%%/shopingcart/shopcart.beam
-%%WWWDIR%%/shopingcart/shopcart.erl
-%%WWWDIR%%/shopingcart/shopcart_form.yaws
-%%WWWDIR%%/shopingcart/source.html
-%%WWWDIR%%/shopingcart/style.css
+%%WWWDIR%%/shoppingcart/Makefile
+%%WWWDIR%%/shoppingcart/buy.yaws
+%%WWWDIR%%/shoppingcart/index.yaws
+%%WWWDIR%%/shoppingcart/junk.jpg
+%%WWWDIR%%/shoppingcart/loginpost.yaws
+%%WWWDIR%%/shoppingcart/logout.yaws
+%%WWWDIR%%/shoppingcart/shopcart.beam
+%%WWWDIR%%/shoppingcart/shopcart.erl
+%%WWWDIR%%/shoppingcart/shopcart_form.yaws
+%%WWWDIR%%/shoppingcart/source.html
+%%WWWDIR%%/shoppingcart/style.css
 %%WWWDIR%%/simple.yaws
 %%WWWDIR%%/simple_ex1.yaws
 %%WWWDIR%%/simple_ex2.yaws
@@ -314,7 +314,7 @@ etc/yaws.conf.sample
 %%WWWDIR%%/yman.yaws
 @dirrm %%WWWDIR%%/testdir
 @dirrm %%WWWDIR%%/ssi
-@dirrm %%WWWDIR%%/shopingcart
+@dirrm %%WWWDIR%%/shoppingcart
 @dirrm %%WWWDIR%%/jsolait/lib
 @dirrm %%WWWDIR%%/jsolait
 @dirrm %%WWWDIR%%/icons/small
@@ -322,7 +322,6 @@ etc/yaws.conf.sample
 @dirrm %%WWWDIR%%/code
 @dirrm %%WWWDIR%%/cgi-bin
 @dirrm %%WWWDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src
 @dirrm %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/lib
 @dirrm %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv
