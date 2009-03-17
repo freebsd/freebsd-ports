@@ -22,6 +22,7 @@ include/spserver/sprequest.hpp
 include/spserver/spresponse.hpp
 include/spserver/spserver.hpp
 include/spserver/spsession.hpp
+include/spserver/spsmtp.hpp
 include/spserver/spthread.hpp
 include/spserver/spthreadpool.hpp
 include/spserver/sputils.hpp
