@@ -1829,6 +1829,7 @@
     SUBDIR += p5-Test-Compile
     SUBDIR += p5-Test-Data
     SUBDIR += p5-Test-Debugger
+    SUBDIR += p5-Test-Declare
     SUBDIR += p5-Test-Deep
     SUBDIR += p5-Test-Dependencies
     SUBDIR += p5-Test-Differences
