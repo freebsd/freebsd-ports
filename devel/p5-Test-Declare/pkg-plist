@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Declare/.packlist
+%%SITE_PERL%%/Test/Declare.pm
+@dirrmtry %%SITE_PERL%%/Test
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Declare
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
