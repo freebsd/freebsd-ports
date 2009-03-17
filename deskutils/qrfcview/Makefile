@@ -7,19 +7,19 @@
 
 PORTNAME=	qrfcview
 PORTVERSION=	0.62
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	CENKES BERLIOS
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical RFC viewer
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui network corelib designer qmake uic moc rcc
+QT_COMPONENTS=	gui network corelib qmake_build uic_build moc_build rcc_build
 PLIST_FILES=	bin/qRFCView
 
-pre-build:
+do-configure:
 	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE} -unix rfcview.pro
 
 do-install:
