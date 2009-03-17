@@ -801,6 +801,7 @@ avrdude                         ports/devel/avrdude
 awale                           ports/games/awale
 awele                           ports/games/awele
 awesome                         ports/x11-wm/awesome
+awesome2                        ports/x11-wm/awesome2
 awffull                         ports/www/awffull
 awka                            ports/lang/awka
 awstats                         ports/www/awstats
@@ -1145,6 +1146,7 @@ brag                            ports/news/brag
 braincurses                     ports/games/braincurses
 brainworkshop                   ports/games/brainworkshop
 brasero                         ports/sysutils/brasero
+brian                           ports/science/brian
 brickshooter                    ports/games/brickshooter
 bricolage                       ports/www/bricolage
 bricons                         ports/x11/bricons
@@ -3981,6 +3983,7 @@ geomview                        ports/graphics/geomview
 geonext                         ports/math/geonext
 geos                            ports/graphics/geos
 geoserver                       ports/graphics/geoserver
+geoserver-mysql-plugin          ports/databases/geoserver-mysql-plugin
 geotrace                        ports/net/geotrace
 gephex                          ports/graphics/gephex
 geramik                         ports/x11-themes/geramik
@@ -10111,6 +10114,7 @@ p5-CGI-Prototype                ports/www/p5-CGI-Prototype
 p5-CGI-Response                 ports/www/p5-CGI-Response
 p5-CGI-SSI                      ports/www/p5-CGI-SSI
 p5-CGI-Session                  ports/www/p5-CGI-Session
+p5-CGI-Session-ExpireSessions   ports/www/p5-CGI-Session-ExpireSessions
 p5-CGI-Simple                   ports/www/p5-CGI-Simple
 p5-CGI-SpeedyCGI                ports/www/p5-CGI-SpeedyCGI
 p5-CGI-Untaint                  ports/www/p5-CGI-Untaint
@@ -11023,6 +11027,7 @@ p5-FreeBSD-Pkgs                 ports/ports-mgmt/p5-FreeBSD-Pkgs
 p5-FreeBSD-Portindex            ports/ports-mgmt/p5-FreeBSD-Portindex
 p5-FreeBSD-Ports                ports/ports-mgmt/p5-FreeBSD-Ports
 p5-FreeBSD-Ports-INDEXhash      ports/ports-mgmt/p5-FreeBSD-Ports-INDEXhash
+p5-FreeBSD-i386-Ptrace          ports/devel/p5-FreeBSD-i386-Ptrace
 p5-FreezeThaw                   ports/devel/p5-FreezeThaw
 p5-Frontier-RPC                 ports/net/p5-Frontier-RPC
 p5-Fuse                         ports/sysutils/p5-Fuse
@@ -12393,6 +12398,7 @@ p5-Snort-Rule                   ports/security/p5-Snort-Rule
 p5-Socket-Multicast6            ports/net/p5-Socket-Multicast6
 p5-Socket6                      ports/net/p5-Socket6
 p5-Socks                        ports/net/p5-Socks
+p5-Solr                         ports/textproc/p5-Solr
 p5-Sort-ArbBiLex                ports/textproc/p5-Sort-ArbBiLex
 p5-Sort-Array                   ports/devel/p5-Sort-Array
 p5-Sort-ArrayOfArrays           ports/devel/p5-Sort-ArrayOfArrays
@@ -13574,6 +13580,7 @@ p5-cgi-modules                  ports/www/p5-CGI-modules
 p5-cgi-prototype                ports/www/p5-CGI-Prototype
 p5-cgi-response                 ports/www/p5-CGI-Response
 p5-cgi-session                  ports/www/p5-CGI-Session
+p5-cgi-session-expiresessions   ports/www/p5-CGI-Session-ExpireSessions
 p5-cgi-simple                   ports/www/p5-CGI-Simple
 p5-cgi-speedycgi                ports/www/p5-CGI-SpeedyCGI
 p5-cgi-ssi                      ports/www/p5-CGI-SSI
@@ -14369,6 +14376,7 @@ p5-forest                       ports/devel/p5-Forest
 p5-forks                        ports/devel/p5-forks
 p5-formvalidator-lite           ports/textproc/p5-FormValidator-Lite
 p5-formvalidator-simple         ports/textproc/p5-FormValidator-Simple
+p5-freebsd-i386-ptrace          ports/devel/p5-FreeBSD-i386-Ptrace
 p5-freebsd-pkgs                 ports/ports-mgmt/p5-FreeBSD-Pkgs
 p5-freebsd-portindex            ports/ports-mgmt/p5-FreeBSD-Portindex
 p5-freebsd-ports                ports/ports-mgmt/p5-FreeBSD-Ports
@@ -15746,6 +15754,7 @@ p5-soap-wsdl                    ports/devel/p5-SOAP-WSDL
 p5-socket-multicast6            ports/net/p5-Socket-Multicast6
 p5-socket6                      ports/net/p5-Socket6
 p5-socks                        ports/net/p5-Socks
+p5-solr                         ports/textproc/p5-Solr
 p5-sort-arbbilex                ports/textproc/p5-Sort-ArbBiLex
 p5-sort-array                   ports/devel/p5-Sort-Array
 p5-sort-arrayofarrays           ports/devel/p5-Sort-ArrayOfArrays
@@ -16710,6 +16719,8 @@ pear-Date_Holidays_EnglandWales  ports/devel/pear-Date_Holidays_EnglandWales
 pear-Date_Holidays_Germany      ports/devel/pear-Date_Holidays_Germany
 pear-Date_Holidays_Iceland      ports/devel/pear-Date_Holidays_Iceland
 pear-Date_Holidays_Ireland      ports/devel/pear-Date_Holidays_Ireland
+pear-Date_Holidays_Italy        ports/devel/pear-Date_Holidays_Italy
+pear-Date_Holidays_Japan        ports/devel/pear-Date_Holidays_Japan
 pear-Date_Holidays_Netherlands  ports/devel/pear-Date_Holidays_Netherlands
 pear-Date_Holidays_Norway       ports/devel/pear-Date_Holidays_Norway
 pear-Date_Holidays_PHPdotNet    ports/devel/pear-Date_Holidays_PHPdotNet
@@ -16972,6 +16983,8 @@ pear-date_holidays_englandwales  ports/devel/pear-Date_Holidays_EnglandWales
 pear-date_holidays_germany      ports/devel/pear-Date_Holidays_Germany
 pear-date_holidays_iceland      ports/devel/pear-Date_Holidays_Iceland
 pear-date_holidays_ireland      ports/devel/pear-Date_Holidays_Ireland
+pear-date_holidays_italy        ports/devel/pear-Date_Holidays_Italy
+pear-date_holidays_japan        ports/devel/pear-Date_Holidays_Japan
 pear-date_holidays_netherlands  ports/devel/pear-Date_Holidays_Netherlands
 pear-date_holidays_norway       ports/devel/pear-Date_Holidays_Norway
 pear-date_holidays_phpdotnet    ports/devel/pear-Date_Holidays_PHPdotNet
@@ -18393,6 +18406,7 @@ py-eyed3                        ports/audio/py-eyed3
 py-ez_web                       ports/www/py-ez_web
 py-ez_xml                       ports/devel/py-ez_xml
 py-ezpyinline                   ports/devel/py-ezpyinline
+py-fabric                       ports/devel/py-fabric
 py-fail2ban                     ports/security/py-fail2ban
 py-fam                          ports/devel/py-fam
 py-fastaudio                    ports/audio/py-fastaudio
