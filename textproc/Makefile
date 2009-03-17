@@ -189,6 +189,7 @@
     SUBDIR += google-ctemplate
     SUBDIR += gpp
     SUBDIR += grap
+    SUBDIR += grc-aspell
     SUBDIR += gsed
     SUBDIR += gtk-doc
     SUBDIR += gtkdiff
