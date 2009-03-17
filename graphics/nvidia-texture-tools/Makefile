@@ -40,6 +40,10 @@ PLIST_SUB+=	COMPRESSUI="@comment "
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+IGNORE=		does not build: not yet ported to sparc64
+.endif
+
 post-patch:
 .if defined(WITH_COMPRESSUI)
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*Qt4/ s|)$$| REQUIRED&|' \
