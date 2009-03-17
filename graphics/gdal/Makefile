@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gdal
-PORTVERSION=	1.5.0
-PORTREVISION=	2
+PORTVERSION=	1.6.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/ \
 		http://www.gdal.org/dl/ \
@@ -268,5 +267,8 @@ post-patch:
 		s,%%WRKSRC%%,${WRKSRC},; \
 		' ${WRKSRC}/swig/python/GNUmakefile
 .endif
+
+post-install:
+	${INSTALL_MAN} ${FILESDIR}/gdalwarp.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.post.mk>

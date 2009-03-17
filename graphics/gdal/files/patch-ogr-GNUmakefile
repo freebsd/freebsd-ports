@@ -1,6 +1,6 @@
---- ogr/GNUmakefile.orig	Fri Nov  9 11:11:24 2007
-+++ ogr/GNUmakefile	Wed Dec 26 12:30:59 2007
-@@ -15,7 +15,7 @@
+--- ogr/GNUmakefile.orig	2009-03-02 23:42:30.000000000 +0300
++++ ogr/GNUmakefile	2009-03-02 23:42:35.000000000 +0300
+@@ -19,7 +19,7 @@
  
  default:	lib
  
