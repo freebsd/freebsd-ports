@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Date_Holidays_Japan
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
