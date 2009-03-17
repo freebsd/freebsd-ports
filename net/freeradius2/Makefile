@@ -51,6 +51,10 @@ OPTIONS=	USER		"Run as user freeradius, group freeradius" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64" && ${OSVERSION} < 700000
+BROKEN=		Does not build on sparc64-6
+.endif
+
 # Default requirements for rc script
 _REQUIRE=	NETWORKING SERVERS
 
