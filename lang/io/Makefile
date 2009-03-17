@@ -59,4 +59,10 @@ post-install:
 	@cd ${WRKSRC}/samples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64: dumps core
+.endif
+
+.include <bsd.port.post.mk>
