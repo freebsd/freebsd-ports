@@ -35,6 +35,11 @@ WEBPLUGINS_FILES=	libmoonloader.so \
 			libmoonplugin.so
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+IGNORE=		does not build: not yet ported to sparc64
+.endif
+
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
 .if !defined(WITHOUT_FF2) || exists(${LOCALBASE}/bin/firefox)
