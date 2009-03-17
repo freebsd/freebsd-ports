@@ -77,7 +77,7 @@ CONFIGURE_ARGS+=--disable-smpeg
 .if ${ARCH} == "i386"
 OPTIONS+=	X86_ASM "Enable x86 assembly code" on
 .if !defined(WITHOUT_X86_ASM)
-BUILD_DEPENDS+=	nasm:${LOCALBASE}/devel/nasm
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
 .endif
 
