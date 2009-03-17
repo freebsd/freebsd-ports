@@ -49,7 +49,6 @@ include/libgda-%%VERSION%%/libgda/gda-decl.h
 include/libgda-%%VERSION%%/libgda/gda-easy.h
 include/libgda-%%VERSION%%/libgda/gda-enum-types.h
 include/libgda-%%VERSION%%/libgda/gda-enums.h
-include/libgda-%%VERSION%%/libgda/gda-error.h
 include/libgda-%%VERSION%%/libgda/gda-holder.h
 include/libgda-%%VERSION%%/libgda/gda-lockable.h
 include/libgda-%%VERSION%%/libgda/gda-log.h
