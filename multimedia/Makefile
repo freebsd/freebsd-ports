@@ -248,6 +248,7 @@
     SUBDIR += subconv
     SUBDIR += sublib
     SUBDIR += subtitlecomposer
+    SUBDIR += subtitlecomposer-kde4
     SUBDIR += subtitleeditor
     SUBDIR += subtitleoffsetmodifier
     SUBDIR += subtitleripper
