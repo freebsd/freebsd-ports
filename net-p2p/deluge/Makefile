@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	deluge
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	net-p2p python
-MASTER_SITES=	http://ftp.osuosl.org/pub/deluge/source/${PORTVERSION}/
+MASTER_SITES=	http://ftp.osuosl.org/pub/deluge/source/
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A Bittorrent client, using Python, GTK+2 and Rasterbar libtorrent
@@ -20,6 +20,7 @@ RUN_DEPENDS=	easy_install-${PYTHON_VER}:${PORTSDIR}/devel/py-setuptools \
 		${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gobject/__init__.py:${PORTSDIR}/devel/py-gobject
 
+USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 USE_PYTHON=	yes
