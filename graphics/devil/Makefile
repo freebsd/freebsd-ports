@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	devil
-PORTVERSION=	1.7.7
+PORTVERSION=	1.7.8
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/openil
@@ -102,6 +102,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|docs||g' ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e '/^pkgdir=/s|$$(libdir)/|$$(prefix)/libdata/|g' \
 		${WRKSRC}/data/Makefile.am
+	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' \
+		${WRKSRC}/src-ILU/ilur/ilur.c
 
 post-install:
 .if !defined(NOPORTDOCS)
