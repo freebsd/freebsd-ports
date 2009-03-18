@@ -1,83 +1,49 @@
---- ./makefile.sdl.orig	2008-03-26 20:35:31.000000000 -0300
-+++ ./makefile.sdl	2008-04-21 16:26:24.000000000 -0300
-@@ -104,11 +104,13 @@
- # uncomment next line to include the internal profiler
- # PROFILER = 1
+--- makefile.sdl.orig	2009-03-13 16:53:53.000000000 +0000
++++ makefile.sdl	2009-03-17 23:44:38.000000000 +0000
+@@ -59,7 +59,7 @@
+ ifeq ($(OSD),windows)
+ TARGETOS = win32
+ else
+-TARGETOS = unix
++TARGETOS = freebsd
+ endif
+ endif
  
-+ifeq ($(ARCH),i386)
- # uncomment next line to use DRC MIPS3 engine
- X86_MIPS3_DRC = 1
- 
- # uncomment next line to use DRC PowerPC engine
- X86_PPC_DRC = 1
-+endif
- 
- # uncomment next line to build using unix-style libsdl on Mac OS X
- # (vs. the native framework port).  Normal users should not enable this.
-@@ -121,7 +123,9 @@
- #-------------------------------------------------
- 
- # uncomment next line if you are building for a 64-bit target
--# PTR64 = 1
-+ifeq ($(ARCH),amd64)
-+PTR64 = 1
-+endif
- 
- # uncomment next line if you are building for a big-endian target
- # BIGENDIAN = 1
-@@ -198,8 +202,8 @@
+@@ -197,8 +197,8 @@
  
  # compiler, linker and utilities
  AR = @ar
 -CC = @gcc
 -LD = @gcc
 +CC := @$(CC)
-+LD := @$(CC)
++LD = @$(CC)
  MD = -mkdir$(EXE)
  RM = @rm -f
  
-@@ -223,7 +227,7 @@
+@@ -227,7 +227,7 @@
  endif
  
  # fullname is prefix+name+suffix+debugsuffix
--FULLNAME = $(PREFIX)$(NAME)$(SUFFIX)$(DEBUGSUFFIX)
-+FULLNAME = $(NAME)
+-FULLNAME = $(PREFIX)$(NAME)$(CPPSUFFIX)$(SUFFIX)$(DEBUGSUFFIX)
++FULLNAME = sdl$(NAME)$(CPPSUFFIX)$(SUFFIX)$(DEBUGSUFFIX)
  
  # add an EXE suffix to get the final emulator name
  EMULATOR = $(FULLNAME)$(EXE)
-@@ -293,7 +297,7 @@
- #-------------------------------------------------
- 
- # we compile to C89 standard with GNU extensions
--CFLAGS = -std=gnu89
-+CFLAGS += -std=gnu89
- 
- # this speeds it up a bit by piping between the preprocessor/compiler/assembler
- CFLAGS += -pipe
-@@ -331,9 +335,6 @@
+@@ -337,7 +337,7 @@
  # and make all errors into warnings
  ifneq ($(OPTIMIZE),0)
- CFLAGS += $(ARCHOPTS) -fno-strict-aliasing
--ifneq ($(TARGETOS),os2)
--CFLAGS += -Werror
--endif
+ ifneq ($(TARGETOS),os2)
+-CCOMFLAGS += -Werror -fno-strict-aliasing $(ARCHOPTS)
++CCOMFLAGS += -fno-strict-aliasing $(ARCHOPTS)
+ else
+ CCOMFLAGS += -fno-strict-aliasing $(ARCHOPTS)
  endif
- 
- # if symbols are on, make sure we have frame pointers
-@@ -358,6 +359,7 @@
- 	-I$(SRC)/lib/util \
- 	-I$(SRC)/osd \
- 	-I$(SRC)/osd/$(OSD) \
-+        -I$(LOCALBASE)/include
- 
- 
- 
-@@ -370,7 +372,7 @@
- LDFLAGS =
+@@ -392,7 +392,7 @@
  ifneq ($(TARGETOS),macosx)
  ifneq ($(TARGETOS),os2)
+ ifneq ($(TARGETOS),solaris)
 -LDFLAGS = -Wl,--warn-common
-+LDFLAGS = -Wl,--warn-common -L$(LOCALBASE)/lib
++LDFLAGS = -Wl,--warn-common $(PTHREAD_LIBS) -L$(LOCALBASE)/lib
  endif
  endif
- LDFLAGSEMULATOR =
+ endif
