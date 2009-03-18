@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="72cba7b0-13cd-11de-a964-0030843d3802">
+    <topic>netatalk -- arbitrary command execution in papd daemon</topic>
+    <affects>
+      <package>
+	<name>netatalk</name>
+	<range><lt>2.0.3_5,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/33227">
+	  <p>A vulnerability has been reported in Netatalk, which potentially
+	    can be exploited by malicious users to compromise a vulnerable system.</p>
+	  <p>The vulnerability is caused due to the papd daemon improperly
+	    sanitising several received parameters before passing them in a call
+	    to "popen()". This can be exploited to execute arbitrary commands via
+	    a specially crafted printing request.</p>
+	  <p>Successful exploitation requires that a printer is configured to
+	    pass arbitrary values as parameters to a piped command.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5718</cvename>
+      <url>http://secunia.com/advisories/33227</url>
+    </references>
+    <dates>
+      <discovery>2008-12-19</discovery>
+      <entry>2009-03-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="37a365ed-1269-11de-a964-0030843d3802">
     <topic>gstreamer-plugins-good -- multiple memory overflows</topic>
     <affects>
