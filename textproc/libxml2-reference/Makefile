@@ -18,8 +18,10 @@ PLIST_FILES=	${EXAMPLES:S|^|%%EXAMPLESDIR%%/|}
 PLIST_DIRS=	%%EXAMPLESDIR%%
 
 do-install:
+.if !defined(NOPORTDOCS)
 .for d in . doc doc/devhelp doc/examples
 	@cd ${PARENT_WRKSRC}/${d} && ${GMAKE} install-data-local
 .endfor
+.endif
 
 .include "${.CURDIR}/../../devel/glib20-reference/bsd.gnome-reference.mk"
