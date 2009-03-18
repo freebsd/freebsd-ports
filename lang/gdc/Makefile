@@ -49,8 +49,8 @@ GDC_INC=	${PREFIX}/include/d/${GCC_VERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800000
-BROKEN=		fails to link any executables on 8.x
+.if ${OSVERSION} >= 800041
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc-d-phobos-std-math.d
 .endif
 
 .ifndef TARGET_GCC
