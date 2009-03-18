@@ -10,7 +10,7 @@ PORTVERSION=	0.5.9.4
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://ftp.osuosl.org/pub/deluge/source/${PORTVERSION}/
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Bittorrent client, using Python, GTK+2 and Rasterbar libtorrent
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost

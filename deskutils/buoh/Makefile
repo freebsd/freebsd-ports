@@ -12,7 +12,7 @@ PORTREVISION=	4
 CATEGORIES=	deskutils www gnome
 MASTER_SITES=	http://buoh.steve-o.org/downloads/
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A reader for online strips comics
 
 LIB_DEPENDS=	soup-2.2.8:${PORTSDIR}/devel/libsoup22

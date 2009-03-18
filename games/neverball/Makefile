@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org:9090/neverball/ \
 		http://offload2.icculus.org:9090/neverball/
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tilt the floor to guide a ball through an obstacle course
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \

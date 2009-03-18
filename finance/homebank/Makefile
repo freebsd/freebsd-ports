@@ -10,7 +10,7 @@ PORTVERSION=	4.0.2
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manage your personal accounts at home
 
 USE_GMAKE=	yes
