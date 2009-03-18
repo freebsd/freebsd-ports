@@ -1,56 +1,60 @@
 bin/sdlmess
 libexec/sdlmess/chdman
-libexec/sdlmess/dat2html
-libexec/sdlmess/file2str
-libexec/sdlmess/png2bdc
+libexec/sdlmess/ldresample
+libexec/sdlmess/ldverify
+libexec/sdlmess/testkeys
 libexec/sdlmess/imgtool
 libexec/sdlmess/jedutil
-libexec/sdlmess/makemeta
-libexec/sdlmess/mess
-libexec/sdlmess/messtest
-libexec/sdlmess/regrep
-libexec/sdlmess/romcmp
-libexec/sdlmess/srcclean
-libexec/sdlmess/src2html
-libexec/sdlmess/testkeys
 %%PORTDOCS%%%%DOCSDIR%%/SDLMESS.txt
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/config.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/credits.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/faq.htm
-%%PORTDOCS%%%%DOCSDIR%%/docs/images/logo.gif
 %%PORTDOCS%%%%DOCSDIR%%/docs/imgtool.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/license.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/mame.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/messnew.txt
-%%PORTDOCS%%%%DOCSDIR%%/docs/config.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/newvideo.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/wintoc.xml
+%%PORTDOCS%%%%DOCSDIR%%/docs/images/logo.gif
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/choice.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/compile.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/config.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/control.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/guiconf.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/guiuse.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/install.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/instbios.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/instroms.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/main.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/mgebios.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/mgeroms.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/osmenu.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/runsw.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/suppsys.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/update.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/win32cmd.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/command.gif
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/frog.gif
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/gui.gif
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/guiaudit.gif
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/iniicon.gif
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/keybcnt.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/logo.gif
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/newmenu.gif
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/oldmenu.gif
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/prop.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/propadv.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/propctrlr.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/propd3d.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/propmisc.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/props.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/propsnd.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/propvec.gif
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/startup.gif
-%%PORTDOCS%%%%DOCSDIR%%/docs/windows/install.htm
-%%PORTDOCS%%%%DOCSDIR%%/docs/windows/instbios.htm
-%%PORTDOCS%%%%DOCSDIR%%/docs/windows/main.htm
-%%PORTDOCS%%%%DOCSDIR%%/docs/windows/mgebios.htm
-%%PORTDOCS%%%%DOCSDIR%%/docs/windows/osmenu.htm
-%%PORTDOCS%%%%DOCSDIR%%/docs/windows/runsw.htm
-%%PORTDOCS%%%%DOCSDIR%%/docs/windows/suppsys.htm
-%%PORTDOCS%%%%DOCSDIR%%/docs/windows/update.htm
-%%PORTDOCS%%%%DOCSDIR%%/docs/windows/win32cmd.htm
-%%PORTDOCS%%%%DOCSDIR%%/docs/wintoc.xml
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/tree.gif
+%%DATADIR%%/artwork/aim65.zip
 %%DATADIR%%/artwork/amsterd.zip
 %%DATADIR%%/artwork/avigo.zip
 %%DATADIR%%/artwork/dallas.zip
@@ -60,8 +64,12 @@ libexec/sdlmess/testkeys
 %%DATADIR%%/artwork/floppyr.png
 %%DATADIR%%/artwork/floppyw.png
 %%DATADIR%%/artwork/glasgow.zip
+%%DATADIR%%/artwork/hp48g.zip
+%%DATADIR%%/artwork/hp48gp.zip
+%%DATADIR%%/artwork/hp48gx.zip
+%%DATADIR%%/artwork/hp48s.zip
+%%DATADIR%%/artwork/hp48sx.zip
 %%DATADIR%%/artwork/kim1.zip
-%%DATADIR%%/artwork/aim65.zip
 %%DATADIR%%/artwork/ledoff.png
 %%DATADIR%%/artwork/ledon.png
 %%DATADIR%%/artwork/mk1.zip
@@ -138,8 +146,10 @@ libexec/sdlmess/testkeys
 %%DATADIR%%/hash/pce.hsi
 %%DATADIR%%/hash/pdp1.hsi
 %%DATADIR%%/hash/pet.hsi
+%%DATADIR%%/hash/pico.hsi
 %%DATADIR%%/hash/pokemini.hsi
 %%DATADIR%%/hash/psx.hsi
+%%DATADIR%%/hash/samcoupe.hsi
 %%DATADIR%%/hash/sms.hsi
 %%DATADIR%%/hash/snes.hsi
 %%DATADIR%%/hash/sordm5.hsi
@@ -159,14 +169,15 @@ libexec/sdlmess/testkeys
 %%DATADIR%%/keymaps/km-fr-OSX.txt
 %%DATADIR%%/keymaps/km-fr.txt
 %%DATADIR%%/keymaps/km_it.txt
-%%DATADIR%%/sysinfo.dat
-@dirrm %%DATADIR%%/keymaps
-@dirrm %%DATADIR%%/hash
+%%DATADIR%%/ui.bdf
+%%EXAMPLESDIR%%/mess.ini
 @dirrm %%DATADIR%%/artwork
+@dirrm %%DATADIR%%/hash
+@dirrm %%DATADIR%%/keymaps
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/windows/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/windows
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/sdlmess
+@dirrm %%EXAMPLESDIR%%

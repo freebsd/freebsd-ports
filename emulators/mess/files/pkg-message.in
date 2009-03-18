@@ -2,12 +2,12 @@
 
 SDLMESS has been installed.
 
-The MESS tools are installed in "%%PREFIX%%/libexec/sdlmess"
-to avoid conflicting with other MESS ports.
+A example configuration file has been installed in "%%EXAMPLESDIR%%/mess.ini"
+Should you create a "~/.mess" directory and place it here or
+launch "sdlmess -createconfig" and place the mess.ini created instead.
 
-A wrapper script "sdlmess" has been installed. It creates a "~/.sdlmess"
-directory mirroring the directory tree under "%%DATADIR%%"
-when you run it for the first time, and starts the program from there. So
-place all MESS files (e.g. ROMs, cheats, etc.) in "~/.sdlmess".
+If you have a non-qwerty keyboard, you should put in your mame.ini :
+keymap 	    1
+keymap_file %%DATADIR%%/keymaps/km-XX.txt
 
 ==============================================================================
