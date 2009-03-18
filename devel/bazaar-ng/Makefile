@@ -7,8 +7,9 @@
 
 PORTNAME=	bazaar-ng
 PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpad.net/bzr/${PORTVERSION}/${PORTVERSION}/+download/
+MASTER_SITES=	https://launchpadlibrarian.net/23889955/
 DISTNAME=	bzr-${PORTVERSION}
 
 MAINTAINER=	fullermd@over-yonder.net
@@ -32,6 +33,9 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementt
 .if !defined(WITHOUT_SFTP)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/paramiko/__init__.py:${PORTSDIR}/security/py-paramiko
 .endif
+
+# Needed for 1.13 for files normally pre-built
+BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/bzr.1 ${MAN1PREFIX}/man/man1/
