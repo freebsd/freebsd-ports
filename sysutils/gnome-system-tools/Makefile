@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-system-tools
-PORTVERSION=	2.22.1
+PORTVERSION=	2.22.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
