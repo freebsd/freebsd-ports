@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	banshee
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.4.3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://download.banshee-project.org/banshee/
 DISTNAME=	${PORTNAME}-1-${PORTVERSION}
