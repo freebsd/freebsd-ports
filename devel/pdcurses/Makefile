@@ -7,13 +7,15 @@
 
 PORTNAME=	pdcurses
 PORTVERSION=	3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF
 DISTNAME=	PDCurses-${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Curses library implementation for Win32, DOS, OS/2 and X11
+
+CONFLICTS=	pdcurses-the-[0-9]*
 
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xext sm ice xt xaw

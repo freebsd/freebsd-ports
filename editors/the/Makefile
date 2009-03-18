@@ -7,6 +7,7 @@
 
 PORTNAME=	the
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	SF/hessling-editor
 DISTNAME=	THE-${PORTVERSION}
@@ -40,7 +41,8 @@ LIB_DEPENDS+=	Xaw3d.8:${PORTSDIR}/x11-toolkits/Xaw3d
 CONFIGURE_ARGS+=--with-xcurses \
 		--with-cursesincdir=${LOCALBASE}/include \
 		--with-curseslibdir=${LOCALBASE}/lib
-LIB_DEPENDS+=	XCurses.2:${PORTSDIR}/devel/pdcurses
+BUILD_DEPENDS+=	pdcurses-the>=3.2:${PORTSDIR}/devel/pdcurses-the
+LIB_DEPENDS+=	XCurses.2:${PORTSDIR}/devel/pdcurses-the
 PLIST_SUB=	XCURSES="" NCURSES="@comment "
 .else
 PLIST_SUB=	XCURSES="@comment " NCURSES=""
