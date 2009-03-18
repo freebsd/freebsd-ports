@@ -200,6 +200,7 @@ OpenEXR                         ports/graphics/OpenEXR
 PDL                             ports/math/PDL
 PicMonger                       ports/news/PicMonger
 R                               ports/math/R
+R-sp                            ports/math/R-sp
 STk                             ports/lang/STk
 Sather                          ports/lang/Sather
 SciPlot                         ports/graphics/SciPlot
@@ -4413,6 +4414,7 @@ gnosamba                        ports/net/gnosamba
 gnotepad+                       ports/editors/gnotepad+
 gnotime                         ports/deskutils/gnotime
 gnowavcut                       ports/audio/gnowavcut
+gns3                            ports/emulators/gns3
 gnu-radius                      ports/net/gnu-radius
 gnu-regexp                      ports/java/gnu-regexp
 gnu-unifont                     ports/x11-fonts/gnu-unifont
@@ -4602,6 +4604,7 @@ grappa                          ports/biology/grappa
 grass                           ports/databases/grass
 graveman                        ports/sysutils/graveman
 grc                             ports/misc/grc
+grc-aspell                      ports/textproc/grc-aspell
 grdesktop                       ports/net/grdesktop
 greed                           ports/games/greed
 gregarius                       ports/www/gregarius
@@ -4749,6 +4752,7 @@ gsystem                         ports/science/gsystem
 gtamsanalyzer                   ports/science/gtamsanalyzer
 gtar                            ports/archivers/gtar
 gtetrinet                       ports/games/gtetrinet
+gtg                             ports/deskutils/gtg
 gtgt                            ports/devel/gtgt
 gthumb                          ports/graphics/gthumb
 gtic                            ports/net/gtic
@@ -7296,7 +7300,6 @@ libiptcdata                     ports/graphics/libiptcdata
 libiqxmlrpc                     ports/devel/libiqxmlrpc
 libircclient                    ports/irc/libircclient
 libirman                        ports/comms/libirman
-libisoburn                      ports/sysutils/libisoburn
 libisofs                        ports/devel/libisofs
 libixp                          ports/devel/libixp
 libjackasyn                     ports/audio/libjackasyn
@@ -7977,6 +7980,7 @@ loop                            ports/misc/loop
 lopster                         ports/net-p2p/lopster
 lordsawar                       ports/games/lordsawar
 lostirc                         ports/irc/lostirc
+lottanzb                        ports/news/lottanzb
 loudmouth                       ports/net-im/loudmouth
 lout                            ports/print/lout
 love                            ports/games/love
@@ -12567,6 +12571,7 @@ p5-Test-Compile                 ports/devel/p5-Test-Compile
 p5-Test-Data                    ports/devel/p5-Test-Data
 p5-Test-DatabaseRow             ports/databases/p5-Test-DatabaseRow
 p5-Test-Debugger                ports/devel/p5-Test-Debugger
+p5-Test-Declare                 ports/devel/p5-Test-Declare
 p5-Test-Deep                    ports/devel/p5-Test-Deep
 p5-Test-Dependencies            ports/devel/p5-Test-Dependencies
 p5-Test-Differences             ports/devel/p5-Test-Differences
@@ -15963,6 +15968,7 @@ p5-test-compile                 ports/devel/p5-Test-Compile
 p5-test-data                    ports/devel/p5-Test-Data
 p5-test-databaserow             ports/databases/p5-Test-DatabaseRow
 p5-test-debugger                ports/devel/p5-Test-Debugger
+p5-test-declare                 ports/devel/p5-Test-Declare
 p5-test-deep                    ports/devel/p5-Test-Deep
 p5-test-dependencies            ports/devel/p5-Test-Dependencies
 p5-test-differences             ports/devel/p5-Test-Differences
@@ -18354,6 +18360,7 @@ py-clamav                       ports/security/py-clamav
 py-clientform                   ports/www/py-clientform
 py-clutter                      ports/graphics/py-clutter
 py-cmdln                        ports/devel/py-cmdln
+py-cmemcache                    ports/databases/py-cmemcache
 py-cog                          ports/devel/py-cog
 py-configobj                    ports/devel/py-configobj
 py-crack                        ports/security/py-crack
@@ -18495,6 +18502,7 @@ py-igraph                       ports/math/py-igraph
 py-imaging                      ports/graphics/py-imaging
 py-imdbpy                       ports/www/py-imdbpy
 py-impacket                     ports/net/py-impacket
+py-iniparse                     ports/devel/py-iniparse
 py-instant                      ports/devel/py-instant
 py-ipaddr                       ports/devel/py-ipaddr
 py-ipy                          ports/net-mgmt/py-ipy
@@ -18993,6 +19001,7 @@ pysol-cardsets                  ports/games/pysol-cardsets
 pysol-music                     ports/games/pysol-music
 pysol-sound-server              ports/audio/pysol-sound-server
 pysolfc                         ports/games/pysolfc
+pystemmer                       ports/textproc/pystemmer
 pysvn                           ports/devel/pysvn
 pysycache                       ports/games/pysycache
 pysycache-lang                  ports/games/pysycache-lang
@@ -19280,6 +19289,7 @@ qwt5                            ports/x11-toolkits/qwt5
 qwtplot3d                       ports/math/qwtplot3d
 qwtplot3d-qt4                   ports/math/qwtplot3d-qt4
 r                               ports/math/R
+r-sp                            ports/math/R-sp
 r1q2                            ports/games/r1q2
 rabbitmq                        ports/net/rabbitmq
 rabl_client                     ports/mail/rabl_client
@@ -23312,6 +23322,7 @@ xorg-server                     ports/x11-servers/xorg-server
 xorg-vfbserver                  ports/x11-servers/xorg-vfbserver
 xoris                           ports/graphics/xoris
 xorp                            ports/net/xorp
+xorriso                         ports/sysutils/xorriso
 xorsearch                       ports/security/xorsearch
 xoscope                         ports/audio/xoscope
 xosd                            ports/misc/xosd
