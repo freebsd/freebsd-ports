@@ -45,7 +45,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Secunia reports:</p>
-	<blockquote cite="http://secunia.com/advisories/33227">
+	<blockquote cite="http://secunia.com/advisories/33227/">
 	  <p>A vulnerability has been reported in Netatalk, which potentially
 	    can be exploited by malicious users to compromise a vulnerable system.</p>
 	  <p>The vulnerability is caused due to the papd daemon improperly
@@ -59,7 +59,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2008-5718</cvename>
-      <url>http://secunia.com/advisories/33227</url>
+      <url>http://secunia.com/advisories/33227/</url>
     </references>
     <dates>
       <discovery>2008-12-19</discovery>
@@ -422,8 +422,7 @@ Note:  Please add new entries to the beginning of this file.
 	    Epiphany 2.22.3, and possibly other versions, allows local users to
 	    execute arbitrary code via a Trojan horse Python file in the current
 	    working directory, related to a vulnerability in the PySys_SetArgv
-	    function (CVE-2008-5983).
-	  </p>
+	    function (CVE-2008-5983).</p>
 	</blockquote>
       </body>
     </description>
@@ -455,8 +454,7 @@ Note:  Please add new entries to the beginning of this file.
 	    in the mod_proxy_ftp module in Apache 2.2.9 and earlier 2.2 versions,
 	    allows remote attackers to inject arbitrary web script or HTML via a
 	    wildcard in the last directory component in the pathname in an FTP
-	    URI.
-	  </p>
+	    URI.</p>
 	</blockquote>
       </body>
     </description>
@@ -594,7 +592,6 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2009-02-17</entry>
     </dates>
   </vuln>
-     
 
   <vuln vid="5a021595-fba9-11dd-86f3-0030843d3802">
     <topic>pycrypto -- ARC2 module buffer overflow</topic>
