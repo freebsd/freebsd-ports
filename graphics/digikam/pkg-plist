@@ -6,7 +6,6 @@ include/digikam/bcgmodifier.h
 include/digikam/cietonguewidget.h
 include/digikam/colorgradientwidget.h
 include/digikam/colormodifier.h
-include/digikam/ctrlpaneldlg.h
 include/digikam/curveswidget.h
 include/digikam/dcolor.h
 include/digikam/dcolorblend.h
@@ -34,14 +33,12 @@ include/digikam/iccprofilewidget.h
 include/digikam/icctransform.h
 include/digikam/imagecurves.h
 include/digikam/imagedialog.h
-include/digikam/imagedlgbase.h
-include/digikam/imageguidedlg.h
 include/digikam/imageguidewidget.h
 include/digikam/imagehistogram.h
 include/digikam/imageiface.h
 include/digikam/imagelevels.h
 include/digikam/imagepaniconwidget.h
-include/digikam/imagepannelwidget.h
+include/digikam/imagepanelwidget.h
 include/digikam/imageplugin.h
 include/digikam/imageregionwidget.h
 include/digikam/imagewidget.h
@@ -696,6 +693,7 @@ share/apps/digikam/themes/Blue
 share/apps/digikam/themes/Clean
 share/apps/digikam/themes/DLR
 share/apps/digikam/themes/Dark
+share/apps/digikam/themes/DarkRoom
 share/apps/digikam/themes/Dessert
 share/apps/digikam/themes/Digikasa
 share/apps/digikam/themes/Dreary
