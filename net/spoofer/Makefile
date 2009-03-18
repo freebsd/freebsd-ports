@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spoofer
-PORTVERSION=	0.7
+PORTVERSION=	0.7.1
 CATEGORIES=	net
 MASTER_SITES=	http://spoofer.csail.mit.edu/ CENKES
 
