@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	paperkey
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.jabberwocky.com/software/paperkey/
 
@@ -17,9 +17,6 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	all check
 
 MAN1=		paperkey.1
-
-post-patch:
-		${REINPLACE_CMD} -e 's@/usr/share/doc/paperkey/README.gz@${DOCSDIR}/README@' ${WRKSRC}/paperkey.1
 
 .if !defined(NOPORTDOCS)
 post-install:
