@@ -114,9 +114,9 @@
      def _on_set_proxies(self, key, value):
          for k, v in value.items():
              if v["type"]:
---- deluge/ui/gtkui/glade/main_window.glade.orig	2009-01-17 11:39:28.000000000 -0600
-+++ deluge/ui/gtkui/glade/main_window.glade	2009-01-17 11:41:55.000000000 -0600
-@@ -2385,196 +2385,6 @@
+--- deluge/ui/gtkui/glade/main_window.glade.orig	2009-03-17 22:54:36.000000000 -0500
++++ deluge/ui/gtkui/glade/main_window.glade	2009-03-17 22:55:10.000000000 -0500
+@@ -2404,196 +2404,6 @@
        </widget>
      </child>
    </widget>
@@ -189,14 +189,23 @@
 -                    <property name="column_spacing">10</property>
 -                    <property name="row_spacing">2</property>
 -                    <child>
--                      <widget class="GtkLabel" id="label_available_version">
+-                      <widget class="GtkLabel" id="label24">
+-                        <property name="visible">True</property>
+-                        <property name="xalign">0</property>
+-                        <property name="label" translatable="yes">&lt;i&gt;Current Version:&lt;/i&gt;</property>
+-                        <property name="use_markup">True</property>
+-                      </widget>
+-                      <packing>
+-                        <property name="x_options">GTK_FILL</property>
+-                      </packing>
+-                    </child>
+-                    <child>
+-                      <widget class="GtkLabel" id="label_current_version">
 -                        <property name="visible">True</property>
 -                      </widget>
 -                      <packing>
 -                        <property name="left_attach">1</property>
 -                        <property name="right_attach">2</property>
--                        <property name="top_attach">1</property>
--                        <property name="bottom_attach">2</property>
 -                        <property name="x_options"></property>
 -                      </packing>
 -                    </child>
@@ -214,24 +223,15 @@
 -                      </packing>
 -                    </child>
 -                    <child>
--                      <widget class="GtkLabel" id="label_current_version">
+-                      <widget class="GtkLabel" id="label_available_version">
 -                        <property name="visible">True</property>
 -                      </widget>
 -                      <packing>
 -                        <property name="left_attach">1</property>
 -                        <property name="right_attach">2</property>
+-                        <property name="top_attach">1</property>
+-                        <property name="bottom_attach">2</property>
 -                        <property name="x_options"></property>
--                      </packing>
--                    </child>
--                    <child>
--                      <widget class="GtkLabel" id="label24">
--                        <property name="visible">True</property>
--                        <property name="xalign">0</property>
--                        <property name="label" translatable="yes">&lt;i&gt;Current Version:&lt;/i&gt;</property>
--                        <property name="use_markup">True</property>
--                      </widget>
--                      <packing>
--                        <property name="x_options">GTK_FILL</property>
 -                      </packing>
 -                    </child>
 -                  </widget>
