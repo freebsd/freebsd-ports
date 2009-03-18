@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmailadmin
-PORTVERSION=	1.2.10
+PORTVERSION=	1.2.12
 PORTEPOCH=	1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -67,6 +67,8 @@ WANT_QMAIL=	yes
 # SPAM_COMMAND		- the command to use to check for spam;
 #			  default is "|preline /usr/local/bin/maildrop /etc/mailfilter"
 #			  do not forget the "|" at the start
+# WITH_SPAM_NEEDS_EMAIL	- append the user's e-mail address as the last
+#			  argument to the spam command
 #
 
 CGIBINDIR?=	www/cgi-bin.default
@@ -123,6 +125,11 @@ CONFIGURE_ARGS+=	--enable-help
 CONFIGURE_ARGS+=	--enable-modify-spam=y
 .if defined(SPAM_COMMAND)
 CONFIGURE_ARGS+=	--enable-spam-command="${SPAM_COMMAND}"
+.endif
+.if defined(WITH_SPAM_NEEDS_EMAIL)
+CONFIGURE_ARGS+=	--enable-spamcmd-needs-email
+.else
+CONFIGURE_ARGS+=	--disable-spamcmd-needs-email
 .endif
 .endif
 
