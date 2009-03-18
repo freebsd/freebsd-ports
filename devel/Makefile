@@ -2011,6 +2011,7 @@
     SUBDIR += pcre++
     SUBDIR += pcsc-lite
     SUBDIR += pdcurses
+    SUBDIR += pdcurses-the
     SUBDIR += pear
     SUBDIR += pear-Config
     SUBDIR += pear-Console_Color
