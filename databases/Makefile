@@ -290,6 +290,7 @@
     SUBDIR += p5-DBIx-AnyDBD
     SUBDIR += p5-DBIx-Browse
     SUBDIR += p5-DBIx-Class
+    SUBDIR += p5-DBIx-Class-AsFdat
     SUBDIR += p5-DBIx-Class-DigestColumns
     SUBDIR += p5-DBIx-Class-DynamicSubclass
     SUBDIR += p5-DBIx-Class-EncodeColumns
