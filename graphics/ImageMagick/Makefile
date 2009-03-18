@@ -319,6 +319,10 @@ INSTALL_TARGET=	install install-data-html
 #WITHOUT_IMAGEMAGICK_TESTS=yes
 #.endif
 
+.if ${ARCH} == sparc64
+WITHOUT_IMAGEMAGICK_TESTS=yes
+.endif
+
 post-patch:
 # prevent perllocal.pod from being written
 	@${REINPLACE_CMD} -e "/PERL/s|install$$|pure_install|" ${WRKSRC}/Makefile.in
