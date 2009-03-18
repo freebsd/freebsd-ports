@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openal-soft
-PORTVERSION=	1.6.372
+PORTVERSION=	1.7.411
 CATEGORIES=	audio
 MASTER_SITES=	http://kcat.strangesoft.net/openal-releases/
 
@@ -19,6 +19,7 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 CMAKE_USE_PTHREAD=	yes
-CMAKE_ARGS=	-DALSA:BOOL=OFF
+CMAKE_ARGS+=	-DALSA:BOOL=OFF -DPORTAUDIO:BOOL=OFF -DSOLARIS:BOOL=OFF \
+		-DDSOUND:BOOL=OFF
 
 .include <bsd.port.mk>
