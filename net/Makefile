@@ -219,6 +219,7 @@
     SUBDIR += iffinder
     SUBDIR += ifstat
     SUBDIR += ifstated
+    SUBDIR += igmpproxy
     SUBDIR += ilbc
     SUBDIR += imapproxy
     SUBDIR += iodine
