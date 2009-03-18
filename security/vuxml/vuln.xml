@@ -50,7 +50,7 @@ Note:  Please add new entries to the beginning of this file.
 	    can be exploited by malicious users to compromise a vulnerable system.</p>
 	  <p>The vulnerability is caused due to the papd daemon improperly
 	    sanitising several received parameters before passing them in a call
-	    to "popen()". This can be exploited to execute arbitrary commands via
+	    to popen(). This can be exploited to execute arbitrary commands via
 	    a specially crafted printing request.</p>
 	  <p>Successful exploitation requires that a printer is configured to
 	    pass arbitrary values as parameters to a piped command.</p>
@@ -58,12 +58,15 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>32925</bid>
       <cvename>CVE-2008-5718</cvename>
       <url>http://secunia.com/advisories/33227/</url>
+      <url>http://www.openwall.com/lists/oss-security/2009/01/13/3</url>
     </references>
     <dates>
       <discovery>2008-12-19</discovery>
       <entry>2009-03-18</entry>
+      <modified>2009-03-18</modified>
     </dates>
   </vuln>
 
