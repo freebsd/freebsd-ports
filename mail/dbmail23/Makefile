@@ -7,6 +7,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	2.3.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.3/
 
@@ -16,7 +17,7 @@ COMMENT=	An SQL database-based mail system (POP3 and IMAP)
 LIB_DEPENDS+=	event-1.4:${PORTSDIR}/devel/libevent
 LIB_DEPENDS+=	gmime-2.0.4:${PORTSDIR}/mail/gmime2
 LIB_DEPENDS+=	mhash.2:${PORTSDIR}/security/mhash
-LIB_DEPENDS+=	zdb-2.3:${PORTSDIR}/databases/libzdb
+LIB_DEPENDS+=	zdb.6:${PORTSDIR}/databases/libzdb
 
 CONFLICTS=	dbmail-*-2.0.* dbmail-2.1.* dbmail-2.2.*
 
@@ -34,7 +35,7 @@ USE_RC_SUBR=	dbmail-pop3d.sh dbmail-lmtpd.sh dbmail-imapd.sh dbmail-timsieved.sh
 USE_GNOME=	glib20 pkgconfig
 USE_OPENSSL=	YES
 
-CFLAGS+=	-fPIC -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CFLAGS+=	-fPIC -I${LOCALBASE}/include -I${LOCALBASE}/include/zdb ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" LOCALBASE=${LOCALBASE}
 CONFIGURE_ARGS+=--with-pkglibdir=${LOCALBASE}/lib/dbmail \
