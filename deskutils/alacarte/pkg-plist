@@ -24,12 +24,14 @@ share/icons/hicolor/32x32/apps/alacarte.png
 share/icons/hicolor/48x48/apps/alacarte.png
 share/locale/ar/LC_MESSAGES/alacarte.mo
 share/locale/as/LC_MESSAGES/alacarte.mo
+share/locale/ast/LC_MESSAGES/alacarte.mo
 share/locale/be/LC_MESSAGES/alacarte.mo
 share/locale/be@latin/LC_MESSAGES/alacarte.mo
 share/locale/bg/LC_MESSAGES/alacarte.mo
 share/locale/bn/LC_MESSAGES/alacarte.mo
 share/locale/bn_IN/LC_MESSAGES/alacarte.mo
 share/locale/ca/LC_MESSAGES/alacarte.mo
+share/locale/crh/LC_MESSAGES/alacarte.mo
 share/locale/cs/LC_MESSAGES/alacarte.mo
 share/locale/da/LC_MESSAGES/alacarte.mo
 share/locale/de/LC_MESSAGES/alacarte.mo
@@ -130,9 +132,13 @@ share/locale/zh_TW/LC_MESSAGES/alacarte.mo
 @dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
