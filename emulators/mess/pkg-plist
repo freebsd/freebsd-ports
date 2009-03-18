@@ -181,3 +181,4 @@ libexec/sdlmess/jedutil
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
+@dirrm libexec/sdlmess
