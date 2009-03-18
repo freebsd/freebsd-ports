@@ -8,7 +8,9 @@ share/applications/galculator.desktop
 %%DATADIR%%/glade/dispctrl_right.glade
 %%DATADIR%%/glade/dispctrl_right_vertical.glade
 %%DATADIR%%/glade/main_frame.glade
+%%DATADIR%%/glade/main_frame_hildon.glade
 %%DATADIR%%/glade/paper_view.glade
+%%DATADIR%%/glade/prefs-ume.glade
 %%DATADIR%%/glade/prefs.glade
 %%DATADIR%%/glade/scientific_buttons.glade
 share/locale/de/LC_MESSAGES/galculator.mo
@@ -21,8 +23,9 @@ share/locale/pt_BR/LC_MESSAGES/galculator.mo
 share/locale/ro/LC_MESSAGES/galculator.mo
 share/locale/ru/LC_MESSAGES/galculator.mo
 share/locale/sk/LC_MESSAGES/galculator.mo
+share/pixmaps/galculator.png
 share/pixmaps/galculator.svg
-share/pixmaps/galculator_48x48.png
+share/pixmaps/galculator.xpm
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
