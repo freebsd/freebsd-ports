@@ -1,0 +1,1082 @@
+--- src/Makefile.orig	2005-08-20 13:34:18.000000000 +0100
++++ src/Makefile	2009-03-18 14:39:19.000000000 +0000
+@@ -1,12 +1,12 @@
+ 
+ #BINDIR=../bin
+ BINDIR=/usr/local/bin
+-ETCDIR=/etc
+-MANDIR=/usr/share/man
++ETCDIR=/usr/local/etc
++MANDIR=/usr/local/man
+ 
+ 
+ # CFLAGS=-g
+-CFLAGS=-O
++CFLAGS+=-O2 -Wall -Wextra -fno-builtin-log
+ 
+ default : build.h igmpproxy
+ 
+@@ -21,8 +21,11 @@
+ 	cp ../doc/igmpproxy.conf.5 ${MANDIR}/man5
+ 	if [ ! -e ${ETCDIR}/igmpproxy.conf ]; then cp igmpproxy.conf ${ETCDIR}; fi
+ 
+-igmpproxy : igmpproxy.o config.o confread.o request.o udpsock.o mcgroup.o rttable.o \
+-			igmp.o ifvc.o callout.o kern.o syslog.o lib.o mroute-api.o
++SRC = igmpproxy.c config.c confread.c request.c mcgroup.c rttable.c \
++      igmp.c ifvc.c callout.c kern.c syslog.c lib.c mroute-api.c
++OBJS = ${SRC:.c=.o}
++igmpproxy: build.h ${OBJS}
++	$(CC) ${CFLAGS} ${OBJS} -o igmpproxy
+ 
+ build.h	:  
+ 	echo '#define BUILD "' `date +%y%m%d` '"' >build.h
+--- src/config.c.orig	2005-05-24 16:49:29.000000000 +0100
++++ src/config.c	2009-03-18 14:35:31.000000000 +0000
+@@ -177,7 +177,7 @@
+     }
+ 
+     // Loop through all VIFs...
+-    for ( Ix = 0; Dp = getIfByIx( Ix ); Ix++ ) {
++    for ( Ix = 0; (Dp = getIfByIx( Ix )); Ix++ ) {
+         if ( Dp->InAdr.s_addr && ! (Dp->Flags & IFF_LOOPBACK) ) {
+ 
+             // Now try to find a matching config...
+@@ -255,7 +255,7 @@
+     while(token != NULL) {
+         if(strcmp("altnet", token)==0) {
+             // Altnet...
+-            struct in_addr  networkAddr;
++            //struct in_addr  networkAddr;
+ 
+             token = nextConfigToken();
+             IF_DEBUG log(LOG_DEBUG, 0, "Config: IF: Got altnet token %s.",token);
+@@ -347,7 +347,7 @@
+         mask <<= (32 - bitcnt);
+     }
+ 
+-    if(addr == -1 || addr == 0) {
++    if(addr == (uint32) -1 || addr == 0) {
+         log(LOG_WARNING, 0, "Unable to parse address token '%s'.", addrstr);
+         return NULL;
+     }
+--- src/defs.h.orig	2005-08-20 13:44:47.000000000 +0100
++++ src/defs.h	2009-03-18 14:35:31.000000000 +0000
+@@ -40,10 +40,18 @@
+ #include <stdlib.h>
+ #include <syslog.h>
+ #include <signal.h>
+-
+ #include <sys/socket.h>
++
++#ifdef __FreeBSD__
++#include <string.h>
++#include <unistd.h>
++#include <fcntl.h>
++#include <sys/ioctl.h>
++
++#else
+ #include <sys/un.h>
+ #include <sys/time.h>
++#endif
+ 
+ #include <net/if.h>
+ 
+@@ -52,15 +60,25 @@
+     #include <linux/in.h>
+     #include <linux/mroute.h>
+ #else
++#ifdef __FreeBSD__
++    #include <alias.h>
++    #include <net/route.h>
+     #include <netinet/in.h>
++    #include <netinet/ip_mroute.h>
++#endif
++    #include <netinet/in.h>
++    #include <netinet/in_systm.h>
+     #include <netinet/ip.h>
+     #include <netinet/igmp.h>
+     #include <arpa/inet.h>
+ #endif
+ 
+-
+ // The default path for the config file...
++#ifdef __FreeBSD__
++#define     IGMPPROXY_CONFIG_FILEPATH     "/usr/local/etc/igmpproxy.conf"
++#else
+ #define     IGMPPROXY_CONFIG_FILEPATH     "/etc/igmpproxy.conf"
++#endif
+ #define     ENABLE_DEBUG    1
+ 
+ /*
+@@ -72,9 +90,31 @@
+ 
+ #define MAX_MC_VIFS    32     // !!! check this const in the specific includes
+ 
++#ifndef IGMP_MEMBERSHIP_QUERY
++#define IGMP_MEMBERSHIP_QUERY IGMP_HOST_MEMBERSHIP_QUERY
++#endif
++#ifndef IGMP_V1_MEMBERSHIP_REPORT
++#define IGMP_V1_MEMBERSHIP_REPORT IGMP_v1_HOST_MEMBERSHIP_REPORT
++#endif
++#ifndef IGMP_V2_MEMBERSHIP_REPORT
++#define IGMP_V2_MEMBERSHIP_REPORT IGMP_v2_HOST_MEMBERSHIP_REPORT
++#endif
++#ifndef IGMP_V2_LEAVE_GROUP
++#define IGMP_V2_LEAVE_GROUP IGMP_HOST_LEAVE_MESSAGE
++#endif
++
++#ifndef INADDR_ALLRTRS_GROUP
++/* address for multicast mtrace msg */
++#define INADDR_ALLRTRS_GROUP    (u_int32_t)0xe0000002   /* 224.0.0.2 */
++#endif
++
+ // Useful macros..          
++#ifndef MIN
+ #define MIN( a, b ) ((a) < (b) ? (a) : (b))
++#endif
++#ifndef MAX
+ #define MAX( a, b ) ((a) < (b) ? (b) : (a))
++#endif
+ #define VCMC( Vc )  (sizeof( Vc ) / sizeof( (Vc)[ 0 ] ))
+ #define VCEP( Vc )  (&(Vc)[ VCMC( Vc ) ])
+ 
+@@ -126,7 +166,12 @@
+ 
+ #define	    IF_DEBUG	if(Log2Stderr & LOG_DEBUG)
+ 
+-void log( int Serverity, int Errno, const char *FmtSt, ... );
++#ifdef DEVEL_LOGGING
++#define log(Severity, Errno, Fmt, args...)     _log((Severity), (Errno), __FUNCTION__, __LINE__, (Fmt), ##args)
++void _log( int Serverity, int Errno, const char *func, int line, const char *FmtSt, ...);
++#else
++void log( int Serverity, int Errno, const char *FmtSt, ...);
++#endif
+ 
+ /* ifvc.c
+  */
+@@ -196,6 +241,7 @@
+ struct IfDesc *getIfByName( const char *IfName );
+ struct IfDesc *getIfByIx( unsigned Ix );
+ struct IfDesc *getIfByAddress( uint32 Ix );
++int isAdressValidForIf( struct IfDesc* intrface, uint32 ipaddr );
+ 
+ /* mroute-api.c
+  */
+@@ -235,7 +281,7 @@
+ char   *fmtInAdr( char *St, struct in_addr InAdr );
+ char   *inetFmt(uint32 addr, char *s);
+ char   *inetFmts(uint32 addr, uint32 mask, char *s);
+-int     inetCksum(u_short *addr, u_int len);
++int     inetChksum(u_short *addr, u_int len);
+ 
+ /* kern.c
+  */
+@@ -264,7 +310,7 @@
+ void initRouteTable();
+ void clearAllRoutes();
+ int insertRoute(uint32 group, int ifx);
+-int activateRoute(uint32 group, uint32 originAddr);
++int activateRoute(uint32 group, uint32 originAddr, int downIf);
+ void ageActiveRoutes();
+ void setRouteLastMemberMode(uint32 group);
+ int lastMemberGroupAge(uint32 group);
+--- src/ifvc.c.orig	2005-05-24 16:49:18.000000000 +0100
++++ src/ifvc.c	2009-03-18 14:35:31.000000000 +0000
+@@ -32,7 +32,11 @@
+ */
+ 
+ #include "defs.h"
++#ifdef __FreeBSD__
++#include <ifaddrs.h>
++#else
+ #include <linux/sockios.h>
++#endif
+ 
+ struct IfDesc IfDescVc[ MAX_IF ], *IfDescEp = IfDescVc;
+ 
+@@ -42,119 +46,91 @@
+ **          
+ */
+ void buildIfVc() {
+-    struct ifreq IfVc[ sizeof( IfDescVc ) / sizeof( IfDescVc[ 0 ] )  ];
+-    struct ifreq *IfEp;
++    struct ifaddrs *ifap, *ifa;
++    struct IfDesc *ifp;
++    struct SubnetList *net;
+ 
+-    int Sock;
+-
+-    if ( (Sock = socket( AF_INET, SOCK_DGRAM, 0 )) < 0 )
+-        log( LOG_ERR, errno, "RAW socket open" );
+-
+-    /* get If vector
+-     */
+-    {
+-        struct ifconf IoCtlReq;
+-
+-        IoCtlReq.ifc_buf = (void *)IfVc;
+-        IoCtlReq.ifc_len = sizeof( IfVc );
+-
+-        if ( ioctl( Sock, SIOCGIFCONF, &IoCtlReq ) < 0 )
+-            log( LOG_ERR, errno, "ioctl SIOCGIFCONF" );
+-
+-        IfEp = (void *)((char *)IfVc + IoCtlReq.ifc_len);
+-    }
++    if (getifaddrs(&ifap) < 0)
++       log( LOG_ERR, errno, "getifaddrs" );
+ 
+     /* loop over interfaces and copy interface info to IfDescVc
+      */
+     {
+-        struct ifreq  *IfPt;
+-        struct IfDesc *IfDp;
+-
+         // Temp keepers of interface params...
+         uint32 addr, subnet, mask;
+ 
+-        for ( IfPt = IfVc; IfPt < IfEp; IfPt++ ) {
+-            struct ifreq IfReq;
++        for (ifa = ifap; ifa; ifa = ifa->ifa_next) {
+             char FmtBu[ 32 ];
+ 
+-            strncpy( IfDescEp->Name, IfPt->ifr_name, sizeof( IfDescEp->Name ) );
+-
+-            // Currently don't set any allowed nets...
+-            //IfDescEp->allowednets = NULL;
+-
+-            // Set the index to -1 by default.
+-            IfDescEp->index = -1;
++           if (IfDescEp >= &IfDescVc[ MAX_IF ]) {
++               log(LOG_WARNING, 0, "Too many interfaces, skipping %d", ifa->ifa_name);
++                continue;
++           }
+ 
+-            /* don't retrieve more info for non-IP interfaces
++            /* ignore non-IP interfaces
+              */
+-            if ( IfPt->ifr_addr.sa_family != AF_INET ) {
+-                IfDescEp->InAdr.s_addr = 0;  /* mark as non-IP interface */
+-                IfDescEp++;
++            if ( ifa->ifa_addr->sa_family != AF_INET )
+                 continue;
+-            }
+-
+-            // Get the interface adress...
+-            IfDescEp->InAdr = ((struct sockaddr_in *)&IfPt->ifr_addr)->sin_addr;
+-            addr = IfDescEp->InAdr.s_addr;
+-
+-            memcpy( IfReq.ifr_name, IfDescEp->Name, sizeof( IfReq.ifr_name ) );
+-
+-            // Get the subnet mask...
+-            if (ioctl(Sock, SIOCGIFNETMASK, &IfReq ) < 0)
+-                log(LOG_ERR, errno, "ioctl SIOCGIFNETMASK for %s", IfReq.ifr_name);
+-            mask = ((struct sockaddr_in *)&IfReq.ifr_addr)->sin_addr.s_addr;
+-            subnet = addr & mask;
+ 
+-            // Get the physical index of the Interface
+-            if (ioctl(Sock, SIOCGIFINDEX, &IfReq ) < 0)
+-                log(LOG_ERR, errno, "ioctl SIOCGIFINDEX for %s", IfReq.ifr_name);
+-            
+-            log(LOG_DEBUG, 0, "Physical Index value of IF '%s' is %d",
+-                IfDescEp->Name, IfReq.ifr_ifindex);
++           if ((ifp = getIfByName(ifa->ifa_name)) == NULL) {
+ 
++               strlcpy( IfDescEp->Name, ifa->ifa_name, sizeof( IfDescEp->Name ) );
+ 
+-            /* get if flags
+-            **
+-            ** typical flags:
+-            ** lo    0x0049 -> Running, Loopback, Up
+-            ** ethx  0x1043 -> Multicast, Running, Broadcast, Up
+-            ** ipppx 0x0091 -> NoArp, PointToPoint, Up 
+-            ** grex  0x00C1 -> NoArp, Running, Up
+-            ** ipipx 0x00C1 -> NoArp, Running, Up
+-            */
+-            if ( ioctl( Sock, SIOCGIFFLAGS, &IfReq ) < 0 )
+-                log( LOG_ERR, errno, "ioctl SIOCGIFFLAGS" );
++               log(LOG_DEBUG, 0, "Adding Physical Index value of IF '%s' is %d",
++                   IfDescEp->Name, if_nametoindex(IfDescEp->Name));
+ 
+-            IfDescEp->Flags = IfReq.ifr_flags;
++               // Set the index to -1 by default.
++               IfDescEp->index = -1;
++
++               // Get the interface adress...
++               IfDescEp->InAdr = ((struct sockaddr_in *)ifa->ifa_addr)->sin_addr;
++
++               /* get if flags
++               **
++               ** typical flags:
++               ** lo    0x0049 -> Running, Loopback, Up
++               ** ethx  0x1043 -> Multicast, Running, Broadcast, Up
++               ** ipppx 0x0091 -> NoArp, PointToPoint, Up 
++               ** grex  0x00C1 -> NoArp, Running, Up
++               ** ipipx 0x00C1 -> NoArp, Running, Up
++               */
++
++               IfDescEp->Flags = ifa->ifa_flags;
++
++               // Set the default params for the IF...
++               IfDescEp->state         = IF_STATE_DOWNSTREAM;
++               IfDescEp->robustness    = DEFAULT_ROBUSTNESS;
++               IfDescEp->threshold     = DEFAULT_THRESHOLD;   /* ttl limit */
++               IfDescEp->ratelimit     = DEFAULT_RATELIMIT; 
++               IfDescEp->allowednets   = NULL;
++               ifp = IfDescEp++;
++           }
+ 
+             // Insert the verified subnet as an allowed net...
+-            IfDescEp->allowednets = (struct SubnetList *)malloc(sizeof(struct SubnetList));
+-            if(IfDescEp->allowednets == NULL) log(LOG_ERR, 0, "Out of memory !");
++            addr = ((struct sockaddr_in *)ifa->ifa_addr)->sin_addr.s_addr;
++            mask = ((struct sockaddr_in *)ifa->ifa_netmask)->sin_addr.s_addr;
++            subnet = addr & mask;
++
++            net = (struct SubnetList *)malloc(sizeof(struct SubnetList));
++            if(net == NULL) log(LOG_ERR, 0, "Out of memory !");
+             
+             // Create the network address for the IF..
+-            IfDescEp->allowednets->next = NULL;
+-            IfDescEp->allowednets->subnet_mask = mask;
+-            IfDescEp->allowednets->subnet_addr = subnet;
+-
+-            // Set the default params for the IF...
+-            IfDescEp->state         = IF_STATE_DOWNSTREAM;
+-            IfDescEp->robustness    = DEFAULT_ROBUSTNESS;
+-            IfDescEp->threshold     = DEFAULT_THRESHOLD;   /* ttl limit */
+-            IfDescEp->ratelimit     = DEFAULT_RATELIMIT; 
++            net->next = ifp->allowednets;
++            net->subnet_mask = mask;
++            net->subnet_addr = subnet;
++            ifp->allowednets = net;
+             
+-
+             // Debug log the result...
+             IF_DEBUG log( LOG_DEBUG, 0, "buildIfVc: Interface %s Addr: %s, Flags: 0x%04x, Network: %s",
+-                 IfDescEp->Name,
+-                 fmtInAdr( FmtBu, IfDescEp->InAdr ),
+-                 IfDescEp->Flags,
++                 ifp->Name,
++                 fmtInAdr( FmtBu, ifp->InAdr ),
++                 ifp->Flags,
+                  inetFmts(subnet,mask, s1));
+ 
+-            IfDescEp++;
+         } 
+-    }
+ 
+-    close( Sock );
++    }
++    freeifaddrs(ifap);
+ }
+ 
+ /*
+--- src/igmp.c.orig	2005-05-24 16:49:16.000000000 +0100
++++ src/igmp.c	2009-03-18 14:35:31.000000000 +0000
+@@ -105,7 +105,7 @@
+     struct igmp *igmp;
+     int ipdatalen, iphdrlen, igmpdatalen;
+ 
+-    if (recvlen < sizeof(struct ip)) {
++    if (recvlen < (int) sizeof(struct ip)) {
+         log(LOG_WARNING, 0,
+             "received packet too short (%u bytes) for IP header", recvlen);
+         return;
+@@ -128,6 +128,7 @@
+         }
+         else {
+             struct IfDesc *checkVIF;
++           int downIf = -1;
+             
+             // Check if the source address matches a valid address on upstream vif.
+             checkVIF = getIfByIx( upStreamVif );
+@@ -141,23 +142,44 @@
+                 return;
+             }
+             else if(!isAdressValidForIf(checkVIF, src)) {
+-                log(LOG_WARNING, 0, "The source address %s for group %s, is not in any valid net for upstream VIF.",
+-                    inetFmt(src, s1), inetFmt(dst, s2));
+-                return;
++               unsigned Ix;
++               struct IfDesc *Dp;
++               for ( Ix = 0; (Dp = getIfByIx( Ix )); Ix++ ) {
++                   if ((Dp->state == IF_STATE_DOWNSTREAM) &&isAdressValidForIf(Dp, src)) {
++                       downIf = Ix;
++                       break;
++                   }
++               }
++               
++               if (downIf == -1) {
++                    log(LOG_WARNING, 0, "The source address %s for group %s, is not in any valid net for upstream VIF.",
++                        inetFmt(src, s1), inetFmt(dst, s2));
++                    return;
++               } else {
++                   log(LOG_NOTICE, 0, "The source address %s for group %s, is valid DOWNSTREAM VIF #%d.",
++                       inetFmt(src, s1), inetFmt(dst, s2), downIf);
++               }
+             }
+             
+             // Activate the route.
+-            IF_DEBUG log(LOG_DEBUG, 0, "Route activate request from %s to %s",
+-                         inetFmt(src,s1), inetFmt(dst,s2));
+-            activateRoute(dst, src);
++            IF_DEBUG log(LOG_DEBUG, 0, "Route activate request from %s to %s, downIf %d",
++                         inetFmt(src,s1), inetFmt(dst,s2), downIf);
++            activateRoute(dst, src, downIf);
+             
+ 
+         }
+         return;
+     }
+ 
++    log(LOG_DEBUG, 0, "Packet from %s: proto: %d hdrlen: %d iplen: %d or %d", 
++                   inetFmt(src, s1), ip->ip_p, ip->ip_hl << 2, ip->ip_len, ntohs(ip->ip_len));
++
+     iphdrlen  = ip->ip_hl << 2;
++#ifdef RAW_INPUT_IS_RAW
+     ipdatalen = ntohs(ip->ip_len) - iphdrlen;
++#else
++    ipdatalen = ip->ip_len;
++#endif    
+ 
+     if (iphdrlen + ipdatalen != recvlen) {
+         log(LOG_WARNING, 0,
+@@ -176,9 +198,9 @@
+         return;
+     }
+ 
+-    log(LOG_NOTICE, 0, "RECV %s from %-15s to %s",
++    log(LOG_NOTICE, 0, "RECV %s from %-15s to %s (ip_hl %d, data %d)",
+         igmpPacketKind(igmp->igmp_type, igmp->igmp_code),
+-        inetFmt(src, s1), inetFmt(dst, s2) );
++        inetFmt(src, s1), inetFmt(dst, s2), iphdrlen, ipdatalen);
+ 
+     switch (igmp->igmp_type) {
+     case IGMP_V1_MEMBERSHIP_REPORT:
+@@ -190,13 +212,10 @@
+         acceptLeaveMessage(src, group);
+         return;
+     
+-        /*
+     case IGMP_MEMBERSHIP_QUERY:
+         //accept_membership_query(src, dst, group, igmp->igmp_code);
+         return;
+ 
+-    */
+-
+     default:
+         log(LOG_INFO, 0,
+             "ignoring unknown IGMP message type %x from %s to %s",
+@@ -220,8 +239,9 @@
+     ip->ip_src.s_addr       = src;
+     ip->ip_dst.s_addr       = dst;
+     ip->ip_len              = MIN_IP_HEADER_LEN + IGMP_MINLEN + datalen;
++#ifdef RAW_OUTPUT_IS_RAW
+     ip->ip_len              = htons(ip->ip_len);
+-
++#endif
+     if (IN_MULTICAST(ntohl(dst))) {
+         ip->ip_ttl = curttl;
+     } else {
+--- src/igmpproxy.c.orig	2005-08-20 13:56:32.000000000 +0100
++++ src/igmpproxy.c	2009-03-18 14:35:31.000000000 +0000
+@@ -80,7 +80,7 @@
+ *   on commandline. The number of commandline arguments, and a
+ *   pointer to the arguments are recieved on the line...
+ */    
+-int main( int ArgCn, const char *ArgVc[] ) {
++int main( int ArgCn, char *ArgVc[] ) {
+ 
+     int debugMode = 0;
+ 
+@@ -155,17 +155,8 @@
+         if ( ! debugMode ) {
+     
+             IF_DEBUG log( LOG_DEBUG, 0, "Starting daemon mode.");
+-    
+-            // Only daemon goes past this line...
+-            if (fork()) exit(0);
+-    
+-            // Detach deamon from terminal
+-            if ( close( 0 ) < 0 || close( 1 ) < 0 || close( 2 ) < 0 
+-                 || open( "/dev/null", 0 ) != 0 || dup2( 0, 1 ) < 0 || dup2( 0, 2 ) < 0
+-                 || setpgrp() < 0
+-               ) {
++           if (daemon(1, 0) != 0)
+                 log( LOG_ERR, errno, "failed to detach deamon" );
+-            }
+         }
+         
+         // Go to the main loop.
+@@ -218,7 +209,7 @@
+         int     vifcount = 0;
+         upStreamVif = -1;
+ 
+-        for ( Ix = 0; Dp = getIfByIx( Ix ); Ix++ ) {
++        for ( Ix = 0; (Dp = getIfByIx( Ix )); Ix++ ) {
+ 
+             if ( Dp->InAdr.s_addr && ! (Dp->Flags & IFF_LOOPBACK) ) {
+                 if(Dp->state == IF_STATE_UPSTREAM) {
+@@ -237,7 +228,7 @@
+ 
+         // If there is only one VIF, or no defined upstream VIF, we send an error.
+         if(vifcount < 2 || upStreamVif < 0) {
+-            log(LOG_ERR, 0, "There must be at least 2 Vif's where one is upstream.");
++            log(LOG_ERR, 0, "There must be at least 2 Vif's where one is upstream. (vifcount %d, upStreamVif %d)", vifcount, upStreamVif);
+         }
+     }  
+     
+@@ -275,7 +266,7 @@
+     register int recvlen;
+     int     MaxFD, Rt, secs;
+     fd_set  ReadFDS;
+-    int     dummy = 0;
++    socklen_t  dummy = 0;
+     struct  timeval  curtime, lasttime, difftime, tv; 
+     // The timeout is a pointer in order to set it to NULL if nessecary.
+     struct  timeval  *timeout = &tv;
+--- src/igmpproxy.conf.orig	2005-04-29 20:27:50.000000000 +0100
++++ src/igmpproxy.conf	2009-03-18 14:35:31.000000000 +0000
+@@ -25,22 +25,22 @@
+ 
+ 
+ ##------------------------------------------------------
+-## Configuration for eth0 (Upstream Interface)
++## Configuration for em0 (Upstream Interface)
+ ##------------------------------------------------------
+-phyint eth0 upstream  ratelimit 0  threshold 1
++phyint em0 upstream  ratelimit 0  threshold 1
+         altnet 10.0.0.0/8 
+         altnet 192.168.0.0/24
+ 
+ 
+ ##------------------------------------------------------
+-## Configuration for eth1 (Downstream Interface)
++## Configuration for em1 (Downstream Interface)
+ ##------------------------------------------------------
+-phyint eth1 downstream  ratelimit 0  threshold 1
++phyint em1 downstream  ratelimit 0  threshold 1
+ 
+ 
+ ##------------------------------------------------------
+-## Configuration for eth2 (Disabled Interface)
++## Configuration for xl0 (Disabled Interface)
+ ##------------------------------------------------------
+-phyint eth2 disabled
++phyint xl0 disabled
+ 
+ 
+--- src/mcgroup.c.orig	2005-08-20 13:54:37.000000000 +0100
++++ src/mcgroup.c	2009-03-18 14:35:31.000000000 +0000
+@@ -49,7 +49,6 @@
+     CtlReq.imr_interface.s_addr = IfDp->InAdr.s_addr;
+     
+     {
+-        char FmtBu[ 32 ];
+         log( LOG_NOTICE, 0, "%sMcGroup: %s on %s", CmdSt, 
+             inetFmt( mcastaddr, s1 ), IfDp ? IfDp->Name : "<any>" );
+     }
+--- src/mroute-api.c.orig	2005-05-24 16:48:33.000000000 +0100
++++ src/mroute-api.c	2009-03-18 14:35:31.000000000 +0000
+@@ -37,7 +37,9 @@
+ */
+ 
+ 
++#ifndef __FreeBSD__
+ #define USE_LINUX_IN_H
++#endif
+ #include "defs.h"
+ 
+ // MAX_MC_VIFS from mclab.h must have same value as MAXVIFS from mroute.h
+@@ -47,7 +49,7 @@
+      
+ // need an IGMP socket as interface for the mrouted API
+ // - receives the IGMP messages
+-int         MRouterFD;        /* socket for all network I/O  */
++int         MRouterFD = -1;        /* socket for all network I/O  */
+ char        *recv_buf;           /* input packet buffer         */
+ char        *send_buf;           /* output packet buffer        */
+ 
+@@ -177,13 +179,15 @@
+         log( LOG_NOTICE, 0, "Adding MFC: %s -> %s, InpVIf: %d", 
+              fmtInAdr( FmtBuO, CtlReq.mfcc_origin ), 
+              fmtInAdr( FmtBuM, CtlReq.mfcc_mcastgrp ),
+-             CtlReq.mfcc_parent == ALL_VIFS ? -1 : CtlReq.mfcc_parent
++             CtlReq.mfcc_parent
+            );
+     }
+ 
+     if ( setsockopt( MRouterFD, IPPROTO_IP, MRT_ADD_MFC,
+                      (void *)&CtlReq, sizeof( CtlReq ) ) )
+         log( LOG_WARNING, errno, "MRT_ADD_MFC" );
++
++    return 0;
+ }
+ 
+ /*
+@@ -210,13 +214,15 @@
+         log( LOG_NOTICE, 0, "Removing MFC: %s -> %s, InpVIf: %d", 
+              fmtInAdr( FmtBuO, CtlReq.mfcc_origin ), 
+              fmtInAdr( FmtBuM, CtlReq.mfcc_mcastgrp ),
+-             CtlReq.mfcc_parent == ALL_VIFS ? -1 : CtlReq.mfcc_parent
++             CtlReq.mfcc_parent
+            );
+     }
+ 
+     if ( setsockopt( MRouterFD, IPPROTO_IP, MRT_DEL_MFC,
+                      (void *)&CtlReq, sizeof( CtlReq ) ) )
+         log( LOG_WARNING, errno, "MRT_DEL_MFC" );
++
++    return 0;
+ }
+ 
+ /*
+--- src/request.c.orig	2005-05-24 16:48:29.000000000 +0100
++++ src/request.c	2009-03-18 14:35:31.000000000 +0000
+@@ -88,10 +88,11 @@
+ 
+     } else {
+         // Log the state of the interface the report was recieved on.
+-        log(LOG_INFO, 0, "Mebership report was recieved on %s. Ignoring.",
++        log(LOG_INFO, 0, "Membership report was received on %s. Ignoring.",
+             sourceVif->state==IF_STATE_UPSTREAM?"the upstream interface":"a disabled interface");
+     }
+ 
++    log(LOG_DEBUG, 0, "Eliminate compiler warning for field type = %u", type);
+ }
+ 
+ /**
+@@ -136,7 +137,7 @@
+ 
+     } else {
+         // just ignore the leave request...
+-        IF_DEBUG log(LOG_DEBUG, 0, "The found if for %s was not downstream. Ignoring leave request.");
++        IF_DEBUG log(LOG_DEBUG, 0, "The found if for %s was not downstream. Ignoring leave request.",  inetFmt(src, s1));
+     }
+ }
+ 
+@@ -184,7 +185,7 @@
+     int             Ix;
+ 
+     // Loop through all downstream vifs...
+-    for ( Ix = 0; Dp = getIfByIx( Ix ); Ix++ ) {
++    for ( Ix = 0; (Dp = getIfByIx( Ix )); Ix++ ) {
+         if ( Dp->InAdr.s_addr && ! (Dp->Flags & IFF_LOOPBACK) ) {
+             if(Dp->state == IF_STATE_DOWNSTREAM) {
+                 // Send the membership query...
+--- src/rttable.c.orig	2005-08-20 13:46:20.000000000 +0100
++++ src/rttable.c	2009-03-18 14:35:31.000000000 +0000
+@@ -38,15 +38,22 @@
+ */
+ 
+ #include "defs.h"
++#include <sys/queue.h>
+     
+ /**
+ *   Routing table structure definition. Double linked list...
+ */
++struct Origin {
++    TAILQ_ENTRY(Origin) next;
++    uint32             originAddr;
++    int                        flood;
++    uint32             pktcnt;
++};
++
+ struct RouteTable {
+     struct RouteTable   *nextroute;     // Pointer to the next group in line.
+     struct RouteTable   *prevroute;     // Pointer to the previous group in line.
+     uint32              group;          // The group to route
+-    uint32              originAddr;     // The origin adress (only set on activated routes)
+     uint32              vifBits;        // Bits representing recieving VIFs.
+ 
+     // Keeps the upstream membership state...
+@@ -56,6 +63,7 @@
+     uint32              ageVifBits;     // Bits representing aging VIFs.
+     int                 ageValue;       // Downcounter for death.          
+     int                 ageActivity;    // Records any acitivity that notes there are still listeners.
++    TAILQ_HEAD(originhead, Origin) originList; // The origin adresses (non-empty on activated routes)
+ };
+ 
+                  
+@@ -65,19 +73,17 @@
+ // Prototypes
+ void logRouteTable(char *header);
+ int  internAgeRoute(struct RouteTable*  croute);
+-
+-// Socket for sending join or leave requests.
+-int mcGroupSock = 0;
++int internUpdateKernelRoute(struct RouteTable *route, int activate, struct Origin *o);
+ 
+ 
+ /**
+ *   Function for retrieving the Multicast Group socket.
+ */
+ int getMcGroupSock() {
+-    if( ! mcGroupSock ) {
+-        mcGroupSock = openUdpSocket( INADDR_ANY, 0 );;
++    if (MRouterFD < 0) {
++           log(LOG_ERR, errno, "no MRouterFD.");
+     }
+-    return mcGroupSock;
++    return MRouterFD;
+ }
+  
+ /**
+@@ -91,7 +97,7 @@
+     routing_table = NULL;
+ 
+     // Join the all routers group on downstream vifs...
+-    for ( Ix = 0; Dp = getIfByIx( Ix ); Ix++ ) {
++    for ( Ix = 0; (Dp = getIfByIx( Ix )); Ix++ ) {
+         // If this is a downstream vif, we should join the All routers group...
+         if( Dp->InAdr.s_addr && ! (Dp->Flags & IFF_LOOPBACK) && Dp->state == IF_STATE_DOWNSTREAM) {
+             IF_DEBUG log(LOG_DEBUG, 0, "Joining all-routers group %s on vif %s",
+@@ -160,6 +166,7 @@
+ */
+ void clearAllRoutes() {
+     struct RouteTable   *croute, *remainroute;
++    struct Origin *o;
+ 
+     // Loop through all routes...
+     for(croute = routing_table; croute; croute = remainroute) {
+@@ -171,7 +178,7 @@
+                      inetFmt(croute->group, s1));
+ 
+         // Uninstall current route
+-        if(!internUpdateKernelRoute(croute, 0)) {
++        if(!internUpdateKernelRoute(croute, 0, NULL)) {
+             log(LOG_WARNING, 0, "The removal from Kernel failed.");
+         }
+ 
+@@ -179,6 +186,10 @@
+         sendJoinLeaveUpstream(croute, 0);
+ 
+         // Clear memory, and set pointer to next route...
++        while ((o = TAILQ_FIRST(&croute->originList))) {
++            TAILQ_REMOVE(&croute->originList, o, next);
++            free(o);
++        }
+         free(croute);
+     }
+     routing_table = NULL;
+@@ -212,7 +223,6 @@
+     
+     struct Config *conf = getCommonConfig();
+     struct RouteTable*  croute;
+-    int result = 1;
+ 
+     // Sanitycheck the group adress...
+     if( ! IN_MULTICAST( ntohl(group) )) {
+@@ -241,7 +251,8 @@
+         newroute = (struct RouteTable*)malloc(sizeof(struct RouteTable));
+         // Insert the route desc and clear all pointers...
+         newroute->group      = group;
+-        newroute->originAddr = 0;
++        TAILQ_INIT(&newroute->originList);
++
+         newroute->nextroute  = NULL;
+         newroute->prevroute  = NULL;
+ 
+@@ -325,10 +336,10 @@
+             inetFmt(croute->group, s1), ifx);
+ 
+         // If the route is active, it must be reloaded into the Kernel..
+-        if(croute->originAddr != 0) {
++        if(!TAILQ_EMPTY(&croute->originList)) {
+ 
+             // Update route in kernel...
+-            if(!internUpdateKernelRoute(croute, 1)) {
++            if(!internUpdateKernelRoute(croute, 1, NULL)) {
+                 log(LOG_WARNING, 0, "The insertion into Kernel failed.");
+                 return 0;
+             }
+@@ -351,7 +362,7 @@
+ *   activated, it's reinstalled in the kernel. If
+ *   the route is activated, no originAddr is needed.
+ */
+-int activateRoute(uint32 group, uint32 originAddr) {
++int activateRoute(uint32 group, uint32 originAddr, int downIf) {
+     struct RouteTable*  croute;
+     int result = 0;
+ 
+@@ -369,21 +380,42 @@
+     }
+ 
+     if(croute != NULL) {
++       struct Origin *o = NULL;
++       int found = 0;
++
+         // If the origin address is set, update the route data.
+-        if(originAddr > 0) {
+-            if(croute->originAddr > 0 && croute->originAddr!=originAddr) {
+-                log(LOG_WARNING, 0, "The origin for route %s changed from %s to %s",
+-                    inetFmt(croute->group, s1),
+-                    inetFmt(croute->originAddr, s2),
+-                    inetFmt(originAddr, s3));
+-            }
+-            croute->originAddr = originAddr;
+-        }
++       if(originAddr > 0) {
+ 
+-        // Only update kernel table if there are listeners !
+-        if(croute->vifBits > 0) {
+-            result = internUpdateKernelRoute(croute, 1);
+-        }
++           TAILQ_FOREACH(o, &croute->originList, next) {
++               log(LOG_INFO, 0, "Origin for route %s have %s, new %s",
++                   inetFmt(croute->group, s1),
++                   inetFmt(o->originAddr, s2),
++                   inetFmt(originAddr, s3));
++               if (o->originAddr==originAddr) {
++                   found++;
++                   break;
++               }
++           }
++           if (!found) {
++               log(LOG_NOTICE, 0, "New origin for route %s is %s, flood %d",
++                   inetFmt(croute->group, s1),
++                   inetFmt(originAddr, s3), downIf);
++               o = malloc(sizeof(*o));
++               o->originAddr = originAddr;
++               o->flood = downIf;
++               o->pktcnt = 0;
++               TAILQ_INSERT_TAIL(&croute->originList, o, next);
++           } else {
++               log(LOG_INFO, 0, "Have origin for route %s at %s, pktcnt %d",
++                   inetFmt(croute->group, s1),
++                   inetFmt(o->originAddr, s3),
++                   o->pktcnt);
++           }
++       }
++
++        // Only update kernel table if there are listeners, but flood upstream!
++        if(croute->vifBits > 0 || downIf >= 0)
++            result = internUpdateKernelRoute(croute, 1, o);
+     }
+     IF_DEBUG logRouteTable("Activate Route");
+ 
+@@ -443,7 +475,6 @@
+ *   route is not found, or not in this state, 0 is returned.
+ */
+ int lastMemberGroupAge(uint32 group) {
+-    struct Config       *conf = getCommonConfig();
+     struct RouteTable   *croute;
+ 
+     croute = findRoute(group);
+@@ -463,6 +494,7 @@
+ */
+ int removeRoute(struct RouteTable*  croute) {
+     struct Config       *conf = getCommonConfig();
++    struct Origin *o;
+     int result = 1;
+     
+     // If croute is null, no routes was found.
+@@ -477,7 +509,7 @@
+     //BIT_ZERO(croute->vifBits);
+ 
+     // Uninstall current route from kernel
+-    if(!internUpdateKernelRoute(croute, 0)) {
++    if(!internUpdateKernelRoute(croute, 0, NULL)) {
+         log(LOG_WARNING, 0, "The removal from Kernel failed.");
+         result = 0;
+     }
+@@ -503,7 +535,12 @@
+             croute->nextroute->prevroute = croute->prevroute;
+         }
+     }
++
+     // Free the memory, and set the route to NULL...
++    while ((o = TAILQ_FIRST(&croute->originList))) {
++       TAILQ_REMOVE(&croute->originList, o, next);
++       free(o);
++    }
+     free(croute);
+     croute = NULL;
+ 
+@@ -551,6 +588,36 @@
+         }
+     }
+ 
++    {
++       struct Origin *o, *nxt;
++       struct sioc_sg_req sg_req;
++
++       sg_req.grp.s_addr = croute->group;
++       for (o = TAILQ_FIRST(&croute->originList); o; o = nxt) {
++           nxt = TAILQ_NEXT(o, next);
++           sg_req.src.s_addr = o->originAddr;
++           if (ioctl(MRouterFD, SIOCGETSGCNT, (char *)&sg_req) < 0) {
++               log(LOG_WARNING, errno, "%s (%s %s)",
++                   "age_table_entry: SIOCGETSGCNT failing for",
++                   inetFmt(o->originAddr, s1),
++                   inetFmt(croute->group, s2));
++               /* Make sure it gets deleted below */
++               sg_req.pktcnt = o->pktcnt;
++           }
++           log(LOG_DEBUG, 0, "Aging Origin %s Dst %s PktCnt %d -> %d",
++               inetFmt(o->originAddr, s1), inetFmt(croute->group, s2),
++               o->pktcnt, sg_req.pktcnt);
++           if (sg_req.pktcnt == o->pktcnt) {
++               /* no traffic, remove from kernel cache */
++               internUpdateKernelRoute(croute, 0, o);
++               TAILQ_REMOVE(&croute->originList, o, next);
++               free(o);
++           } else {
++               o->pktcnt = sg_req.pktcnt;
++           }
++       }
++    }
++
+     // If the aging counter has reached zero, its time for updating...
+     if(croute->ageValue == 0) {
+         // Check for activity in the aging process,
+@@ -560,7 +627,7 @@
+                          inetFmt(croute->group,s1));
+             
+             // Just update the routing settings in kernel...
+-            internUpdateKernelRoute(croute, 1);
++            internUpdateKernelRoute(croute, 1, NULL);
+     
+             // We append the activity counter to the age, and continue...
+             croute->ageValue = croute->ageActivity;
+@@ -586,34 +653,57 @@
+ /**
+ *   Updates the Kernel routing table. If activate is 1, the route
+ *   is (re-)activated. If activate is false, the route is removed.
++*   if 'origin' is given, only the route with 'origin' will be
++*   updated, otherwise all MFC routes for the group will updated.
+ */
+-int internUpdateKernelRoute(struct RouteTable *route, int activate) {
++int internUpdateKernelRoute(struct RouteTable *route, int activate, struct Origin *origin) {
+     struct   MRouteDesc     mrDesc;
+     struct   IfDesc         *Dp;
+     unsigned                Ix;
+-    
+-    if(route->originAddr>0) {
++    struct Origin *o;
++
++    if (TAILQ_EMPTY(&route->originList)) {
++        log(LOG_NOTICE, 0, "Route is not active. No kernel updates done.");
++        return 1;
++    }
++    TAILQ_FOREACH(o, &route->originList, next) {
++       if (origin && origin != o)
++       continue;
+ 
+         // Build route descriptor from table entry...
+         // Set the source address and group address...
+         mrDesc.McAdr.s_addr     = route->group;
+-        mrDesc.OriginAdr.s_addr = route->originAddr;
++        mrDesc.OriginAdr.s_addr = o->originAddr;
+     
+         // clear output interfaces 
+         memset( mrDesc.TtlVc, 0, sizeof( mrDesc.TtlVc ) );
+     
+-        IF_DEBUG log(LOG_DEBUG, 0, "Vif bits : 0x%08x", route->vifBits);
+-
++        IF_DEBUG log(LOG_DEBUG, 0, "Origin %s Vif bits : 0x%08x", inetFmt(o->originAddr, s1), route->vifBits);
+         // Set the TTL's for the route descriptor...
+-        for ( Ix = 0; Dp = getIfByIx( Ix ); Ix++ ) {
+-            if(Dp->state == IF_STATE_UPSTREAM) {
+-                //IF_DEBUG log(LOG_DEBUG, 0, "Identified VIF #%d as upstream.", Dp->index);
+-                mrDesc.InVif = Dp->index;
+-            }
+-            else if(BIT_TST(route->vifBits, Dp->index)) {
+-                IF_DEBUG log(LOG_DEBUG, 0, "Setting TTL for Vif %d to %d", Dp->index, Dp->threshold);
+-                mrDesc.TtlVc[ Dp->index ] = Dp->threshold;
+-            }
++        for ( Ix = 0; (Dp = getIfByIx( Ix )); Ix++ ) {
++           if (o->flood >= 0) {
++               if(Ix == (unsigned) o->flood) {
++                   IF_DEBUG log(LOG_DEBUG, 0, "Identified Input VIF #%d as DOWNSTREAM.", Dp->index);
++                   mrDesc.InVif = Dp->index;
++               }
++               else if(Dp->state == IF_STATE_UPSTREAM) {
++                   IF_DEBUG log(LOG_DEBUG, 0, "Setting TTL for UPSTREAM Vif %d to %d", Dp->index, Dp->threshold);
++                   mrDesc.TtlVc[ Dp->index ] = Dp->threshold;
++               }
++               else if(BIT_TST(route->vifBits, Dp->index)) {
++                   IF_DEBUG log(LOG_DEBUG, 0, "Setting TTL for DOWNSTREAM Vif %d to %d", Dp->index, Dp->threshold);
++                   mrDesc.TtlVc[ Dp->index ] = Dp->threshold;
++               }
++           } else {
++               if(Dp->state == IF_STATE_UPSTREAM) {
++                   IF_DEBUG log(LOG_DEBUG, 0, "Identified VIF #%d as upstream.", Dp->index);
++                   mrDesc.InVif = Dp->index;
++               }
++               else if(BIT_TST(route->vifBits, Dp->index)) {
++                   IF_DEBUG log(LOG_DEBUG, 0, "Setting TTL for Vif %d to %d", Dp->index, Dp->threshold);
++                   mrDesc.TtlVc[ Dp->index ] = Dp->threshold;
++               }
++           }
+         }
+     
+         // Do the actual Kernel route update...
+@@ -625,9 +715,6 @@
+             // Delete the route from Kernel...
+             delMRoute( &mrDesc );
+         }
+-
+-    } else {
+-        log(LOG_NOTICE, 0, "Route is not active. No kernel updates done.");
+     }
+ 
+     return 1;
+@@ -647,16 +734,17 @@
+             log(LOG_DEBUG, 0, "No routes in table...");
+         } else {
+             do {
+-                /*
+-                log(LOG_DEBUG, 0, "#%d: Src: %s, Dst: %s, Age:%d, St: %s, Prev: 0x%08x, T: 0x%08x, Next: 0x%08x",
+-                    rcount, inetFmt(croute->originAddr, s1), inetFmt(croute->group, s2),
+-                    croute->ageValue,(croute->originAddr>0?"A":"I"),
+-                    croute->prevroute, croute, croute->nextroute);
+-                */
+-                log(LOG_DEBUG, 0, "#%d: Src: %s, Dst: %s, Age:%d, St: %s, OutVifs: 0x%08x",
+-                    rcount, inetFmt(croute->originAddr, s1), inetFmt(croute->group, s2),
+-                    croute->ageValue,(croute->originAddr>0?"A":"I"),
+-                    croute->vifBits);
++               log(LOG_DEBUG, 0, "#%d: Dst: %s, Age:%d, St: %s, OutVifs: 0x%08x",
++                   rcount, inetFmt(croute->group, s2),
++                   croute->ageValue,(TAILQ_EMPTY(&croute->originList)?"I":"A"),
++                   croute->vifBits);
++               {
++                   struct Origin *o;
++                   TAILQ_FOREACH(o, &croute->originList, next) {
++                       log(LOG_DEBUG, 0, "#%d: Origin: %s floodIf %d pktcnt %d",
++                           rcount, inetFmt(o->originAddr, s1), o->flood, o->pktcnt);
++                   }
++               }
+                   
+                 croute = croute->nextroute; 
+         
+--- src/syslog.c.orig	2005-05-24 16:48:19.000000000 +0100
++++ src/syslog.c	2009-03-18 14:38:38.000000000 +0000
+@@ -53,12 +53,16 @@
+ ** is logged to 'stderr'.
+ **          
+ */
++#ifdef DEVEL_LOGGING
++void _log( int Serverity, int Errno, const char *func, int line, const char *FmtSt, ... )
++#else
+ void log( int Serverity, int Errno, const char *FmtSt, ... )
++#endif
+ {
+   const char ServVc[][ 5 ] = { "EMER", "ALER", "CRIT", "ERRO", 
+ 			       "Warn", "Note", "Info", "Debu" };
+ 
+-  const char *ServPt = Serverity < 0 || Serverity >= VCMC( ServVc ) ? 
++  const char *ServPt = Serverity < 0 || Serverity >= (int) VCMC( ServVc ) ? 
+                        "!unknown serverity!" : ServVc[ Serverity ];
+  
+   const char *ErrSt = (Errno <= 0) ? NULL : (const char *)strerror( Errno ); 
+@@ -69,6 +73,9 @@
+ 
+     va_start( ArgPt, FmtSt );
+     Ln  = snprintf( LogLastMsg, sizeof( LogLastMsg ), "%s: ", ServPt );
++#ifdef DEVEL_LOGGING
++    Ln += snprintf( LogLastMsg + Ln, sizeof( LogLastMsg ) - Ln, "%s():%d: ", func, line);
++#endif    
+     Ln += vsnprintf( LogLastMsg + Ln, sizeof( LogLastMsg ) - Ln, FmtSt, ArgPt );
+     if( ErrSt )
+       snprintf( LogLastMsg + Ln, sizeof( LogLastMsg ) - Ln, "; Errno(%d): %s", Errno, ErrSt );
