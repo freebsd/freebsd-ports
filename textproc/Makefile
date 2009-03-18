@@ -63,6 +63,7 @@
     SUBDIR += code2html
     SUBDIR += cole
     SUBDIR += colordiff
+    SUBDIR += confget
     SUBDIR += cost
     SUBDIR += crimson
     SUBDIR += cs-aspell

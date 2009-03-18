@@ -1,0 +1,14 @@
+The confget utility examines a INI-style configuration file and retrieves
+the value of the specified variables from the specified section.
+Its intended use is to let shell scripts use the same INI-style
+configuration files as other programs, to avoid duplication of data.
+
+The confget utility may retrieve the values of one or more variables,
+list all the variables in a specified section, list only those whose names
+or values match a specified pattern (shell glob or regular expression), or
+check if a variable is present in the file at all.  It has a "shell-quoting"
+output mode that quotes the variable values in a way suitable for passing
+them directly to a Bourne-style shell.
+
+WWW:		http://devel.ringlet.net/textproc/confget/
+Author:		Peter Pentchev <roam@ringlet.net>
