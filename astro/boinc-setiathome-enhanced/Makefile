@@ -66,6 +66,12 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
 		BOINC_DIR="${LOCALBASE}"
 CONFIGURE_FLAGS+=	--disable-static-client --with-boinc-platform=${ARCH}-portbld-freebsd --build=${ARCH}-portbld-freebsd
 
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
+.endif
+
 .if defined(WITHOUT_SETI_APP) && defined(WITHOUT_AP_APP)
 IGNORE=	neither SETI@home nor Astropulse selected
 .endif
