@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils python gnome
 MASTER_SITES=	http://www.infinicode.org/code/${PORTNAME}/
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mass file renamer written in PyGTK
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/eyeD3/__init__.py:${PORTSDIR}/audio/py-eyed3

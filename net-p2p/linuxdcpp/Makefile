@@ -10,7 +10,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	net-p2p
 MASTER_SITES=	BERLIOS
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A port of the win32 DC++ direct connect client to POSIX-like systems
 
 USE_BZIP2=	yes

@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${RUBY_GNOME_DISTNAME}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby binding for Libart2
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

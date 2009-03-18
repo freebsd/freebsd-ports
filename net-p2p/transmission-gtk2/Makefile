@@ -8,7 +8,7 @@
 PORTREVISION=	1
 PKGNAMESUFFIX=	-gtk2
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast and lightweight GTK+2 BitTorrent client
 
 LIB_DEPENDS=	${GEN_LIB_DEPENDS} \

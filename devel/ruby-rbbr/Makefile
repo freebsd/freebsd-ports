@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/rev/}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+2-based Ruby module browser
 
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/locale_system.so:${PORTSDIR}/devel/ruby-gettext

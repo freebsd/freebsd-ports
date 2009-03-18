@@ -10,7 +10,7 @@ PORTVERSION=	1.1.5
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://ftp.osuosl.org/pub/deluge/source/
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Bittorrent client, using Python, GTK+2 and Rasterbar libtorrent
 
 BUILD_DEPENDS=	easy_install-${PYTHON_VER}:${PORTSDIR}/devel/py-setuptools
