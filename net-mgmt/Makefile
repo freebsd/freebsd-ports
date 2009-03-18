@@ -38,6 +38,7 @@
     SUBDIR += cdpr
     SUBDIR += cfgstoragemk
     SUBDIR += cflowd
+    SUBDIR += check_multi
     SUBDIR += check_snmp_pkgvuln
     SUBDIR += chillispot
     SUBDIR += choparp
