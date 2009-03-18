@@ -38,6 +38,10 @@ OPTIONS=	LIBEVENT "is useful when using many (10000) outgoing ports" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64" && ${OSVERSION} < 700000
+BROKEN=		Does not build on sparc64-6
+.endif
+
 .if defined(WITH_LIBEVENT)
 LIB_DEPENDS+=		event-1.4:${PORTSDIR}/devel/libevent
 CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE}
