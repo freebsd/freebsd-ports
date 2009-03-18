@@ -14,6 +14,8 @@ EXTRACT_ONLY=
 USE_GMAKE=	yes
 
 do-install:
+.if !defined(NOPORTDOCS)
 	@cd ${PARENT_WRKSRC}/doc && ${GMAKE} install-data-local
+.endif
 
 .include "${.CURDIR}/../../devel/glib20-reference/bsd.gnome-reference.mk"
