@@ -64,6 +64,10 @@ EXAMPLES=	example.sql api/sphinxapi.php api/test.php api/test2.php
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64" && ${OSVERSION} < 700000
+BROKEN=		Does not build on sparc64-6
+.endif
+
 # The port will successfully compile with both PGSQL and MYSQL support
 # simultaneously.  Not sure how useful that is in practice though.
 
