@@ -38,6 +38,10 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/xpi/firefoxonwooztalk@kurioos-itech.com:${PORTSDI
 BROKEN=		run only on 7.x
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64
+.endif
+
 do-install:
 	@${MKDIR} ${DATADIR}/img
 	@${MKDIR} ${DATADIR}/sounds
