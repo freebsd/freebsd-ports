@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.openjpeg.org/ \
 MASTER_SITE_SUBDIR=	trasz
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/g}
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An open-source JPEG 2000 codec
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
