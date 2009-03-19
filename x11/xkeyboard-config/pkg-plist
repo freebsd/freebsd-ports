@@ -296,34 +296,34 @@ share/X11/xkb/types/numpad
 share/X11/xkb/types/pc
 share/X11/xkb/types/README
 share/X11/xkb/xkbcomp
-share/locale/af/LC_MESSAGES/xkeyboard-config.mo
-share/locale/az/LC_MESSAGES/xkeyboard-config.mo
-share/locale/bg/LC_MESSAGES/xkeyboard-config.mo
-share/locale/cs/LC_MESSAGES/xkeyboard-config.mo
-share/locale/da/LC_MESSAGES/xkeyboard-config.mo
-share/locale/el/LC_MESSAGES/xkeyboard-config.mo
-share/locale/en_GB/LC_MESSAGES/xkeyboard-config.mo
-share/locale/es/LC_MESSAGES/xkeyboard-config.mo
-share/locale/fi/LC_MESSAGES/xkeyboard-config.mo
-share/locale/fr/LC_MESSAGES/xkeyboard-config.mo
-share/locale/hu/LC_MESSAGES/xkeyboard-config.mo
-share/locale/it/LC_MESSAGES/xkeyboard-config.mo
-share/locale/ka/LC_MESSAGES/xkeyboard-config.mo
-share/locale/ko/LC_MESSAGES/xkeyboard-config.mo
-share/locale/nl/LC_MESSAGES/xkeyboard-config.mo
-share/locale/ru/LC_MESSAGES/xkeyboard-config.mo
-share/locale/rw/LC_MESSAGES/xkeyboard-config.mo
-share/locale/sk/LC_MESSAGES/xkeyboard-config.mo
-share/locale/sl/LC_MESSAGES/xkeyboard-config.mo
-share/locale/sq/LC_MESSAGES/xkeyboard-config.mo
-share/locale/sr/LC_MESSAGES/xkeyboard-config.mo
-share/locale/sr@Latn/LC_MESSAGES/xkeyboard-config.mo
-share/locale/sv/LC_MESSAGES/xkeyboard-config.mo
-share/locale/tr/LC_MESSAGES/xkeyboard-config.mo
-share/locale/uk/LC_MESSAGES/xkeyboard-config.mo
-share/locale/vi/LC_MESSAGES/xkeyboard-config.mo
-share/locale/zh_CN/LC_MESSAGES/xkeyboard-config.mo
-share/locale/zh_TW/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/af/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/az/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/da/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/el/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/it/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/sr@Latn/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/xkeyboard-config.mo
 @exec mkdir -p /var/lib/xkb
 @dirrm share/X11/xkb/compat
 @dirrm share/X11/xkb/geometry/digital_vndr
@@ -352,5 +352,5 @@ share/locale/zh_TW/LC_MESSAGES/xkeyboard-config.mo
 @dirrm share/X11/xkb
 @dirrmtry share/X11
 @dirrmtry /var/lib/xkb
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rw

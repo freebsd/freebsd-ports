@@ -17,16 +17,26 @@ COMMENT=	X Keyboard Configuration Database
 BUILD_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp
 
 USE_BZIP2=	yes
-USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intlhack
-USE_GETTEXT=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xkb-base=${PREFIX}/share/X11/xkb \
 			--with-xkb-rules-symlink=xorg
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls --with-included-gettext
+CONFIGURE_ENV+=	MSGFMT="/bin/echo '(GNU '" \
+		XGETTEXT="/bin/echo '(GNU '" \
+		MSGMERGE="/bin/echo '(GNU '"
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_ICONV=	yes
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 post-install:
 	${MKDIR} /var/lib/xkb
