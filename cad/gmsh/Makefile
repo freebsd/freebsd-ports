@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.sfr-fresh.com/unix/privat/ \
 				http://www.geuz.org/gmsh/src/
@@ -17,8 +17,7 @@ MAINTAINER=	stephen@math.missouri.edu
 COMMENT=	An automatic 3D finite element mesh generator
 
 RUN_DEPENDS=	getdp:${PORTSDIR}/science/getdp
-LIB_DEPENDS=	gsl.13:${PORTSDIR}/math/gsl \
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 SLAVEDIRS=	cad/gmsh-occ
 
