@@ -377,8 +377,6 @@ www/ilias/Modules/ILinc/classes/class.ilObjiLincUserGUI.php
 www/ilias/Modules/ILinc/classes/class.ilnetucateResponse.php
 www/ilias/Modules/ILinc/classes/class.ilnetucateXMLAPI.php
 www/ilias/Modules/ILinc/module.xml
-www/ilias/Modules/ILinc/templates/default/tpl.icla_edit.html
-www/ilias/Modules/ILinc/templates/default/tpl.icrs_edit.html
 www/ilias/Modules/ILinc/templates/default/tpl.icrs_members.html
 www/ilias/Modules/ILinc/templates/default/tpl.icrs_members_gallery.html
 www/ilias/Modules/ILinc/templates/default/tpl.icrs_usr_edit.html
@@ -1976,6 +1974,7 @@ www/ilias/Services/Component/templates/default/tpl.table_row_plugin.html
 www/ilias/Services/Container/classes/class.ilContainer.php
 www/ilias/Services/Container/classes/class.ilContainerByTypeContentGUI.php
 www/ilias/Services/Container/classes/class.ilContainerContentGUI.php
+www/ilias/Services/Container/classes/class.ilContainerILincContentGUI.php
 www/ilias/Services/Container/classes/class.ilContainerGUI.php
 www/ilias/Services/Container/classes/class.ilContainerLinkListGUI.php
 www/ilias/Services/Container/classes/class.ilContainerObjectiveGUI.php
@@ -3230,6 +3229,7 @@ www/ilias/Services/WebServices/ECS/classes/class.ilECSUtils.php
 www/ilias/Services/WebServices/ECS/templates/default/tpl.content_row.html
 www/ilias/Services/WebServices/ECS/templates/default/tpl.ecs_communities.html
 www/ilias/Services/WebServices/ECS/templates/default/tpl.ecs_imported.html
+www/ilias/Services/WebServices/ECS/templates/default/tpl.ecs_import_id_form.html
 www/ilias/Services/WebServices/ECS/templates/default/tpl.ecs_released.html
 www/ilias/Services/WebServices/ECS/templates/default/tpl.ecs_settings.html
 www/ilias/Services/WebServices/ECS/templates/default/tpl.participant_row.html
@@ -3749,147 +3749,6 @@ www/ilias/Services/YUI/templates/default/DragDropList.css
 www/ilias/Services/YUI/templates/default/tpl.dragdroplist.html
 www/ilias/Services/YUI/templates/default/tpl.simpledialog.css
 www/ilias/Services/YUI/templates/default/tpl.yes_no_dialog.js
-www/ilias/calendar/classes/class.Database.php
-www/ilias/calendar/classes/class.Gui.php
-www/ilias/calendar/classes/class.TimestampToDate.php
-www/ilias/calendar/classes/class.ilCalInterface.php
-www/ilias/calendar/classes/class.ilCalendarGUI.php
-www/ilias/calendar/classes/class.ilMiniCal.php
-www/ilias/calendar/config/conf.dateplaner.php
-www/ilias/calendar/config/conf.gui.php
-www/ilias/calendar/config/conf.interface.php
-www/ilias/calendar/date.php
-www/ilias/calendar/day.php
-www/ilias/calendar/error.php
-www/ilias/calendar/freetime.php
-www/ilias/calendar/inbox.php
-www/ilias/calendar/includes/inc.dates.php
-www/ilias/calendar/includes/inc.day.php
-www/ilias/calendar/includes/inc.dp.header.php
-www/ilias/calendar/includes/inc.freetime.php
-www/ilias/calendar/includes/inc.inbox.php
-www/ilias/calendar/includes/inc.keywords.php
-www/ilias/calendar/includes/inc.list.php
-www/ilias/calendar/includes/inc.minicalendar.php
-www/ilias/calendar/includes/inc.month.php
-www/ilias/calendar/includes/inc.output.php
-www/ilias/calendar/includes/inc.parse.php
-www/ilias/calendar/includes/inc.session.php
-www/ilias/calendar/includes/inc.sortdates.php
-www/ilias/calendar/includes/inc.week.php
-www/ilias/calendar/js/AnchorPosition.js
-www/ilias/calendar/js/CalendarPopup.js
-www/ilias/calendar/js/PopupWindow.js
-www/ilias/calendar/js/date.js
-www/ilias/calendar/js/dpFunctions.js
-www/ilias/calendar/lang/DateplanerHelpFiles/filelist.xml
-www/ilias/calendar/lang/DateplanerHelpFiles/image001.gif
-www/ilias/calendar/lang/DateplanerHelpFiles/image002.gif
-www/ilias/calendar/lang/DateplanerHelpFiles/image003.gif
-www/ilias/calendar/lang/dp_da.lang
-www/ilias/calendar/lang/dp_de.lang
-www/ilias/calendar/lang/dp_en.lang
-www/ilias/calendar/lang/dp_help_da.html
-www/ilias/calendar/lang/dp_help_de.html
-www/ilias/calendar/lang/dp_help_en.html
-www/ilias/calendar/list.php
-www/ilias/calendar/month.php
-www/ilias/calendar/properties.php
-www/ilias/calendar/templates/default/blueshadow.css
-www/ilias/calendar/templates/default/blueshadow/images/blind.gif
-www/ilias/calendar/templates/default/blueshadow/images/cellpic1.gif
-www/ilias/calendar/templates/default/blueshadow/images/cellpic2.jpg
-www/ilias/calendar/templates/default/blueshadow/images/cellpic3.gif
-www/ilias/calendar/templates/default/blueshadow/images/cellpic4.gif
-www/ilias/calendar/templates/default/blueshadow/images/cellpic5.gif
-www/ilias/calendar/templates/default/date_btndel.htm
-www/ilias/calendar/templates/default/date_btnexit.htm
-www/ilias/calendar/templates/default/date_btnin.htm
-www/ilias/calendar/templates/default/date_btnupd.htm
-www/ilias/calendar/templates/default/date_content.htm
-www/ilias/calendar/templates/default/date_enddate.htm
-www/ilias/calendar/templates/default/date_enddate_ro.htm
-www/ilias/calendar/templates/default/date_group.htm
-www/ilias/calendar/templates/default/date_group_ro.htm
-www/ilias/calendar/templates/default/date_keyword.htm
-www/ilias/calendar/templates/default/date_main.htm
-www/ilias/calendar/templates/default/date_msg.htm
-www/ilias/calendar/templates/default/date_msgdelrotation.htm
-www/ilias/calendar/templates/default/date_rotation.htm
-www/ilias/calendar/templates/default/date_rotation_ro.htm
-www/ilias/calendar/templates/default/date_startdate.htm
-www/ilias/calendar/templates/default/date_startdate_ro.htm
-www/ilias/calendar/templates/default/date_text.htm
-www/ilias/calendar/templates/default/date_text_ro.htm
-www/ilias/calendar/templates/default/day_main.htm
-www/ilias/calendar/templates/default/day_navigation.htm
-www/ilias/calendar/templates/default/default.css
-www/ilias/calendar/templates/default/delos.css
-www/ilias/calendar/templates/default/frames_set.htm
-www/ilias/calendar/templates/default/freetime_main.htm
-www/ilias/calendar/templates/default/functions.js
-www/ilias/calendar/templates/default/images/01.gif
-www/ilias/calendar/templates/default/images/02.gif
-www/ilias/calendar/templates/default/images/03.gif
-www/ilias/calendar/templates/default/images/04.gif
-www/ilias/calendar/templates/default/images/05.gif
-www/ilias/calendar/templates/default/images/06.gif
-www/ilias/calendar/templates/default/images/07.gif
-www/ilias/calendar/templates/default/images/08.gif
-www/ilias/calendar/templates/default/images/09.gif
-www/ilias/calendar/templates/default/images/10.gif
-www/ilias/calendar/templates/default/images/11.gif
-www/ilias/calendar/templates/default/images/12.gif
-www/ilias/calendar/templates/default/images/13.gif
-www/ilias/calendar/templates/default/images/14.gif
-www/ilias/calendar/templates/default/images/15.gif
-www/ilias/calendar/templates/default/images/16.gif
-www/ilias/calendar/templates/default/images/17.gif
-www/ilias/calendar/templates/default/images/18.gif
-www/ilias/calendar/templates/default/images/19.gif
-www/ilias/calendar/templates/default/images/20.gif
-www/ilias/calendar/templates/default/images/21.gif
-www/ilias/calendar/templates/default/images/22.gif
-www/ilias/calendar/templates/default/images/23.gif
-www/ilias/calendar/templates/default/images/24.gif
-www/ilias/calendar/templates/default/images/25.gif
-www/ilias/calendar/templates/default/images/26.gif
-www/ilias/calendar/templates/default/images/27.gif
-www/ilias/calendar/templates/default/images/28.gif
-www/ilias/calendar/templates/default/images/29.gif
-www/ilias/calendar/templates/default/images/30.gif
-www/ilias/calendar/templates/default/images/31.gif
-www/ilias/calendar/templates/default/images/bin.png
-www/ilias/calendar/templates/default/images/blind.gif
-www/ilias/calendar/templates/default/images/blind_1515.gif
-www/ilias/calendar/templates/default/images/cal.gif
-www/ilias/calendar/templates/default/images/filler.gif
-www/ilias/calendar/templates/default/images/help.gif
-www/ilias/calendar/templates/default/images/new.gif
-www/ilias/calendar/templates/default/images/new_o.gif
-www/ilias/calendar/templates/default/images/no.png
-www/ilias/calendar/templates/default/images/ok.png
-www/ilias/calendar/templates/default/images/open.gif
-www/ilias/calendar/templates/default/images/open_o.gif
-www/ilias/calendar/templates/default/inbox_btnexecute.htm
-www/ilias/calendar/templates/default/inbox_dates.htm
-www/ilias/calendar/templates/default/inbox_main.htm
-www/ilias/calendar/templates/default/inbox_tblheadchangeddates.htm
-www/ilias/calendar/templates/default/inbox_tblheaddeleteddates.htm
-www/ilias/calendar/templates/default/inbox_tblheadnewdates.htm
-www/ilias/calendar/templates/default/left.htm
-www/ilias/calendar/templates/default/list_main.htm
-www/ilias/calendar/templates/default/list_navigation.htm
-www/ilias/calendar/templates/default/list_print.htm
-www/ilias/calendar/templates/default/main.htm
-www/ilias/calendar/templates/default/menue.htm
-www/ilias/calendar/templates/default/menue_keyword.htm
-www/ilias/calendar/templates/default/month_main.htm
-www/ilias/calendar/templates/default/month_navigation.htm
-www/ilias/calendar/templates/default/properties_main.htm
-www/ilias/calendar/templates/default/week_main.htm
-www/ilias/calendar/templates/default/week_navigation.htm
-www/ilias/calendar/week.php
 www/ilias/classes/OLE/OLE.php
 www/ilias/classes/OLE/PPS.php
 www/ilias/classes/OLE/PPS/File.php
@@ -3981,7 +3840,6 @@ www/ilias/cron/classes/class.ilCronLinkCheck.php
 www/ilias/cron/classes/class.ilCronMailNotification.php
 www/ilias/cron/classes/class.ilCronWebResourceCheck.php
 www/ilias/cron/cron.php
-www/ilias/dateplaner.php
 www/ilias/error.php
 www/ilias/favicon.ico
 www/ilias/feed.php
@@ -5167,18 +5025,6 @@ www/ilias/xml/netucateXMLAPI.dtd
 @dirrm www/ilias/classes/OLE/PPS
 @dirrm www/ilias/classes/OLE
 @dirrm www/ilias/classes
-@dirrm www/ilias/calendar/templates/default/images
-@dirrm www/ilias/calendar/templates/default/blueshadow/images
-@dirrm www/ilias/calendar/templates/default/blueshadow
-@dirrm www/ilias/calendar/templates/default
-@dirrm www/ilias/calendar/templates
-@dirrm www/ilias/calendar/lang/DateplanerHelpFiles
-@dirrm www/ilias/calendar/lang
-@dirrm www/ilias/calendar/js
-@dirrm www/ilias/calendar/includes
-@dirrm www/ilias/calendar/config
-@dirrm www/ilias/calendar/classes
-@dirrm www/ilias/calendar
 @dirrm www/ilias/Services/YUI/templates/default
 @dirrm www/ilias/Services/YUI/templates
 @dirrm www/ilias/Services/YUI/js/2_5_0/yuitest/assets/skins/sam
