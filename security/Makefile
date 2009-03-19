@@ -665,6 +665,8 @@
     SUBDIR += py-twistedConch
     SUBDIR += py-twofish
     SUBDIR += py-xmlsec
+    SUBDIR += qca-cyrus-sasl
+    SUBDIR += qca-gnupg
     SUBDIR += qca-ossl
     SUBDIR += qca-tls
     SUBDIR += qident
