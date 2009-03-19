@@ -6,4 +6,4 @@ JAVA="%%LOCALBASE%%/bin/java"
 JARPATH="%%JAVALIBDIR%%"
 export JAVA_VERSION="%%JAVA_VERSION%%"
 
-exec "${JAVA}" -jar "${JARPATH}/%%JARNAME%%" "$@"
+exec "${JAVA}" -Xmx256m -jar "${JARPATH}/%%JARNAME%%" "$@"
