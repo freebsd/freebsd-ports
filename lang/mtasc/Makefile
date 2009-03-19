@@ -63,7 +63,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mtasc-bin	${PREFIX}/bin/mtasc
 .if !defined(NOPORTDATA)
 	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/mtasc && ${FIND} ${PORTDATA} -type f | ${CPIO} -pdmnu ${DATADIR})
+	(cd ${WRKSRC}/mtasc && ${FIND} ${PORTDATA} -type f | ${CPIO} -pdmu ${DATADIR})
 	@${FIND} ${DATADIR} -type d -exec ${CHMOD} 555 {} \;
 	@${FIND} ${DATADIR} -type f -exec ${CHMOD} 444 {} \;
 .endif
