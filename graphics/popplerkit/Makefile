@@ -9,7 +9,7 @@ PORTNAME=	popplerkit
 PORTVERSION=	1.0.1
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
-DISTNAME=	etoile-0.4.0
+DISTNAME=	etoile-0.4.1
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Framework that supports rendering of PDF content
@@ -24,7 +24,7 @@ USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 USE_GNOME=	gnomeprefix gnomehack gtk20
 
-WRKSRC=	${WRKDIR}/Etoile-0.4.0
+WRKSRC=	${WRKDIR}/Etoile-0.4.1
 USE_GNUSTEP_MAKE_DIRS+=	Frameworks/PopplerKit
 
 .include <bsd.port.mk>
