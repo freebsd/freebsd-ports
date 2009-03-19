@@ -1,9 +1,9 @@
---- contrib/src/ogl/Makefile.in.orig	Sun Oct 10 22:18:52 2004
-+++ contrib/src/ogl/Makefile.in	Wed Nov 24 21:41:00 2004
-@@ -201,6 +201,8 @@
+--- contrib/src/ogl/Makefile.in.orig	2009-03-06 18:18:06.000000000 +0600
++++ contrib/src/ogl/Makefile.in	2009-03-20 00:07:59.000000000 +0600
+@@ -235,6 +235,8 @@
  all: $(__ogldll___depname) $(__ogllib___depname)
  
- install: all $(__install_ogldll___depname) $(__install_ogllib___depname)
+ install: $(__install_ogldll___depname) $(__install_ogllib___depname)
 +
 +install-common:
  	$(INSTALL_DIR) $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)

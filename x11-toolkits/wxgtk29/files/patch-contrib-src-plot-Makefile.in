@@ -1,9 +1,9 @@
---- contrib/src/plot/Makefile.in.orig	Sun Oct 10 22:18:52 2004
-+++ contrib/src/plot/Makefile.in	Wed Nov 24 21:41:16 2004
-@@ -179,6 +179,8 @@
+--- contrib/src/plot/Makefile.in.orig	2009-03-06 18:18:00.000000000 +0600
++++ contrib/src/plot/Makefile.in	2009-03-20 00:07:59.000000000 +0600
+@@ -213,6 +213,8 @@
  all: $(__plotdll___depname) $(__plotlib___depname)
  
- install: all $(__install_plotdll___depname) $(__install_plotlib___depname)
+ install: $(__install_plotdll___depname) $(__install_plotlib___depname)
 +
 +install-common:
  	$(INSTALL_DIR) $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)

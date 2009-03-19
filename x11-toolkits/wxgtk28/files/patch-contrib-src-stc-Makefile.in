@@ -1,9 +1,9 @@
---- contrib/src/stc/Makefile.in.orig	Sun Oct 10 22:18:53 2004
-+++ contrib/src/stc/Makefile.in	Wed Nov 24 21:41:31 2004
-@@ -310,6 +310,8 @@
+--- contrib/src/stc/Makefile.in.orig	2009-03-06 18:18:00.000000000 +0600
++++ contrib/src/stc/Makefile.in	2009-03-20 00:07:59.000000000 +0600
+@@ -369,6 +369,8 @@
  all: $(__stcdll___depname) $(__stclib___depname)
  
- install: all $(__install_stcdll___depname) $(__install_stclib___depname)
+ install: $(__install_stcdll___depname) $(__install_stclib___depname)
 +
 +install-common:
  	$(INSTALL_DIR) $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)

@@ -1,9 +1,9 @@
---- contrib/src/fl/Makefile.in.orig	Sun Oct 10 22:18:49 2004
-+++ contrib/src/fl/Makefile.in	Wed Nov 24 21:40:16 2004
-@@ -211,6 +211,8 @@
+--- contrib/src/fl/Makefile.in.orig	2009-03-06 18:18:00.000000000 +0600
++++ contrib/src/fl/Makefile.in	2009-03-20 00:07:59.000000000 +0600
+@@ -245,6 +245,8 @@
  all: $(__fldll___depname) $(__fllib___depname)
  
- install: all $(__install_fldll___depname) $(__install_fllib___depname)
+ install: $(__install_fldll___depname) $(__install_fllib___depname)
 +
 +install-common:
  	$(INSTALL_DIR) $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)

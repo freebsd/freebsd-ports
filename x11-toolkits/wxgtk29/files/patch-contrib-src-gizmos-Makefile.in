@@ -1,9 +1,9 @@
---- contrib/src/gizmos/Makefile.in.orig	Thu Apr 21 00:33:08 2005
-+++ contrib/src/gizmos/Makefile.in	Thu May  5 16:22:48 2005
-@@ -277,6 +277,8 @@
+--- contrib/src/gizmos/Makefile.in.orig	2009-03-06 18:18:00.000000000 +0600
++++ contrib/src/gizmos/Makefile.in	2009-03-20 00:07:59.000000000 +0600
+@@ -308,6 +308,8 @@
  all: $(__gizmosdll___depname) $(__gizmos_xrcdll___depname) $(__gizmoslib___depname) $(__gizmos_xrclib___depname)
  
- install: all $(__install_gizmosdll___depname) $(__install_gizmos_xrcdll___depname) $(__install_gizmoslib___depname) $(__install_gizmos_xrclib___depname)
+ install: $(__install_gizmosdll___depname) $(__install_gizmos_xrcdll___depname) $(__install_gizmoslib___depname) $(__install_gizmos_xrclib___depname)
 +
 +install-common:
  	$(INSTALL_DIR) $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)
