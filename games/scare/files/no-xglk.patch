@@ -1,5 +1,8 @@
---- source/Makefile	Sun Jan 21 23:18:36 2007
-+++ source/Makefile.noglk	Sun Jan 21 23:21:08 2007
+Properly disable the use of the xglk library if the port's XGLK option
+has been turned off.
+
+--- source/Makefile.orig
++++ source/Makefile
 @@ -73,8 +73,9 @@
  # If your make can't handle sinclude or -include, and you're not building
  # for Glk, comment out the include line.

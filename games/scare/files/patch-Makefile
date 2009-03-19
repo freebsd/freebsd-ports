@@ -1,5 +1,8 @@
---- source/Makefile.old	Sun Jan 21 23:16:03 2007
-+++ source/Makefile	Sun Jan 21 23:18:36 2007
+Only set the Makefile variables conditionally so that they may be
+overridden by the FreeBSD port.
+
+--- source/Makefile.orig
++++ source/Makefile
 @@ -26,18 +26,19 @@
  #
  
