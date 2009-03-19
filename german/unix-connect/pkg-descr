@@ -16,6 +16,9 @@ zu lesen. Dieser Einsatzmoeglichkeit widmet die Dokumentation ein eigenes
 Kapitel, da hierbei sehr viele Konfigurationsprobleme von vornherein 
 vermieden werden koennen.
 
+LICENSE: GPL2 or later
+LICENSE: BSD (rsmtp)
+
 FTP: ftp://unix-connect.sf.net/pub/unix-connect/
 FTP: ftp://ftp.dinoex.org/pub/unix-connect/
 WWW: http://www.dinoex.de/unix-connect.html

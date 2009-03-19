@@ -15,7 +15,7 @@ standard text format or gzip compressed.
 
 Keywords:      Web Analysis, Log Analysis, Usage Statistics, Linux, Unix 
 Author:        Bradford L. Barrett 
-Maintained-by: Bradford L. Barrett 
-Copying-policy: GPL
+
+LICENSE: GPL2 or later
+
 WWW: http://www.mrunix.net/webalizer/
-WWW: http://sysd.org/stas/node/10
