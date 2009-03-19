@@ -29,9 +29,13 @@ USE_QT_VER=	3
 USE_MYSQL=	51
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+LOCALE_CLEANUP= LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
+		LC_MESSAGES="" LC_MONETARY="" LC_NUMERIC="" \
+		LC_TIME=""
 CONFIGURE_ENV=	QMAKESPEC="${QMAKESPEC}" \
-		CFLAGS="${CFLAGS}"
-MAKE_ENV=	QTDIR="${QT_PREFIX}" QMAKESPEC="${QMAKESPEC}"
+		CFLAGS="${CFLAGS}" ${LOCALE_CLEANUP}
+MAKE_ENV=	QTDIR="${QT_PREFIX}" QMAKESPEC="${QMAKESPEC}" \
+		${LOCALE_CLEANUP}
 USE_RC_SUBR=	mythbackend
 USE_LDCONFIG=	${PREFIX}/lib/mythtv/filters
 
@@ -77,13 +81,16 @@ RUN_DEPENDS+=	mysqld_safe:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 .endif
 
 post-extract:
-		${ECHO_CMD} export QMAKESPEC=${QMAKESPEC}
+		@${ECHO_CMD} export QMAKESPEC=${QMAKESPEC}
 
 do-configure:
-		@cd ${WRKSRC} && QMAKESPEC=${QMAKESPEC} ./configure ${CONFIG}
+		@${ECHO_CMD} CONFIGURE_ENV: ${CONFIGURE_ENV}
+		@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+			./configure ${CONFIG}
 		@${ECHO_CMD} MAKE_ENV: ${MAKE_ENV}
 		@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
-			-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ mythtv.pro
+			-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
+			mythtv.pro
 
 post-install:
 		@${INSTALL} -d ${PREFIX}/share/mythtv/database
