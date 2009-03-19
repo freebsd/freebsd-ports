@@ -41,14 +41,12 @@ USE_LDCONFIG=	yes
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800069
-BROKEN=	does not compile due to changes in USB stack
-.endif
-
 .if defined(WITHOUT_USB)
 CONFIGURE_ARGS+=	--disable-libusb
 .else
+.if ${OSVERSION} < 800069
 LIB_DEPENDS+=		usb-0.1.8:${PORTSDIR}/devel/libusb
+.endif
 .endif
 
 .if defined(WITHOUT_NLS)
