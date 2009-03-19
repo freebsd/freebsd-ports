@@ -19,7 +19,6 @@
 %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Ticket/Elements/Tabs/Default
 %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Elements/Header/Head
 man/auto/RTx/Calendar/.packlist
-lib/RTx/Calendar.pm
 @dirrm %%RTHOME%%/plugins/RTx-Calendar/lib/RTx
 @dirrm %%RTHOME%%/plugins/RTx-Calendar/lib
 @dirrm %%RTHOME%%/plugins/RTx-Calendar/html/Search
@@ -45,4 +44,3 @@ lib/RTx/Calendar.pm
 @dirrm man/auto/RTx/Calendar
 @dirrmtry man/auto/RTx
 @dirrmtry man/auto
-@dirrmtry lib/RTx
