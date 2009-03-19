@@ -11,7 +11,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_LOCAL} http://freebsd.nsu.ru/distfiles/
 MASTER_SITE_SUBDIR=	danfe
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A port of the DC++ direct connect client to POSIX-like systems
 
 USE_BZIP2=	yes
