@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncmpcpp
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	audio
 MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
@@ -22,6 +22,8 @@ USE_AUTOTOOLS=	automake:110 aclocal:110 libtool:15
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lpthread"
+
+MAN1=	ncmpcpp.1
 
 OPTIONS=	CURL "Enable fetching lyrics from the Internet" on \
 		CLOCK "Enable clock-screen support" on \
