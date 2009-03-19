@@ -18,6 +18,7 @@ RUN_DEPENDS+=	sdlmess:${PORTSDIR}/emulators/sdlmess
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GL=		yes
 USE_SDL=	sdl
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build gui qtestlib xml phonon
