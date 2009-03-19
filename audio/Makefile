@@ -461,6 +461,7 @@
     SUBDIR += mpmf20
     SUBDIR += mt-daapd
     SUBDIR += muine
+    SUBDIR += mumble
     SUBDIR += muse
     SUBDIR += musepack
     SUBDIR += musica
