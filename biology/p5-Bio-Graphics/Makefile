@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bio-Graphics
-PORTVERSION=	1.84
+PORTVERSION=	1.90
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,9 +15,10 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	Generate GD Images of Bio::Seq Objects
 
 BUILD_DEPENDS=	p5-GD>=2.3:${PORTSDIR}/graphics/p5-GD \
-		p5-GD-SVG>=0:${PORTSDIR}/graphics/p5-GD-SVG \
+		p5-GD-SVG>=0.32:${PORTSDIR}/graphics/p5-GD-SVG \
+		p5-Statistics-Descriptive>=2.6:${PORTSDIR}/math/p5-Statistics-Descriptive \
 		p5-bioperl>=1.6.0:${PORTSDIR}/biology/p5-bioperl \
-		p5-Text-ParseWords>=0:${PORTSDIR}/textproc/p5-Text-ParseWords \
+		p5-Text-ParseWords>=3.26:${PORTSDIR}/textproc/p5-Text-ParseWords \
 		p5-ExtUtils-MakeMaker>=0:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -62,6 +63,7 @@ MAN3=	Bio::Graphics.3 \
 	Bio::Graphics::Glyph::heat_map.3 \
 	Bio::Graphics::Glyph::heat_map_ideogram.3 \
 	Bio::Graphics::Glyph::heterogeneous_segments.3 \
+	Bio::Graphics::Glyph::hybrid_plot.3 \
 	Bio::Graphics::Glyph::ideogram.3 \
 	Bio::Graphics::Glyph::image.3 \
 	Bio::Graphics::Glyph::lightning.3 \
