@@ -49,8 +49,8 @@ share/emacs/site-lisp/quilt.el
 %%DATADIR%%/compat/date
 %%DATADIR%%/compat/sed
 %%DATADIR%%/compat/patch
-%%DATADIR%%/compat/sendmail
-%%RPMBUILD%%share/libexec/quilt/compat/rpmbuild
+%%SENDMAIL%%%%DATADIR%%/compat/sendmail
+%%RPMBUILD%%%%DATADIR%%/compat/rpmbuild
 @dirrmtry etc/bash_completion.d
 @dirrmtry lib/quilt
 @dirrm %%DATADIR%%/compat

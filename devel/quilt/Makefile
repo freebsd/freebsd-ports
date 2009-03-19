@@ -12,9 +12,9 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	quilt
 
 MAINTAINER=	doj@cubic.org
-COMMENT=	A collection of bash scripts to ease working with patch files
+COMMENT=	A collection of bash3 scripts to ease working with patch files
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash3 \
 		gcp:${PORTSDIR}/sysutils/coreutils \
 		gsed:${PORTSDIR}/textproc/gsed \
 		gpatch:${PORTSDIR}/devel/patch \
@@ -52,6 +52,12 @@ USE_GETTEXT=	yes
 .else
 PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=	--disable-nls
+.endif
+
+.if !exists(${LOCALBASE}/sbin/sendmail)
+PLIST_SUB+=	SENDMAIL=""
+.else
+PLIST_SUB+=	SENDMAIL="@comment "
 .endif
 
 .if defined(NOPORTDOCS)
