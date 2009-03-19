@@ -18,6 +18,8 @@ MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Etoile Project's Nesedah Camaelon Theme
 
 BROKEN=		conflicts with its own dependency
+DEPRECATED=	now included in camaelon
+EXPIRATION_DATE=	2009-03-30
 
 CONFLICTS=	etoile-camaelon-0.2*
 
