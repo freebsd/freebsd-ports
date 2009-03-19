@@ -25,6 +25,9 @@ CONFLICTS=	p5-bioperl-run-1.[02468]*
 
 LATEST_LINK=	p5-bioperl-run-devel
 
+DEPRECATED=	no longer under development
+EXPIRATION_DATE=	2009-05-31
+
 PERL_CONFIGURE=	YES
 
 MAN3=		Bio::Factory::EMBOSS.3 \

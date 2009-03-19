@@ -58,6 +58,9 @@ CONFLICTS=	p5-bioperl-1.[02468]*
 
 LATEST_LINK=	p5-bioperl-devel
 
+DEPRECATED=	no longer under development
+EXPIRATION_DATE=	2009-05-31
+
 PERL_MODBUILD=	YES
 
 MAN1=		bp_aacomp.pl.1 \
