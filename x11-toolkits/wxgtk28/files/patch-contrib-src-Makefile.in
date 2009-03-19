@@ -1,5 +1,5 @@
---- contrib/src/Makefile.in.orig	Fri Dec  1 00:58:54 2006
-+++ contrib/src/Makefile.in	Fri Dec  1 01:39:18 2006
+--- contrib/src/Makefile.in.orig	2009-03-06 18:18:00.000000000 +0600
++++ contrib/src/Makefile.in	2009-03-20 00:07:59.000000000 +0600
 @@ -2,15 +2,25 @@
  
  CONTRIB_SUBDIRS=fl gizmos mmedia ogl plot stc svg #deprecated #applet

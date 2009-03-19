@@ -1,9 +1,9 @@
---- contrib/src/svg/Makefile.in.orig	Sun Oct 10 22:18:54 2004
-+++ contrib/src/svg/Makefile.in	Wed Nov 24 21:41:44 2004
-@@ -179,6 +179,8 @@
+--- contrib/src/svg/Makefile.in.orig	2009-03-06 18:18:00.000000000 +0600
++++ contrib/src/svg/Makefile.in	2009-03-20 00:07:59.000000000 +0600
+@@ -213,6 +213,8 @@
  all: $(__svgdll___depname) $(__svglib___depname)
  
- install: all $(__install_svgdll___depname) $(__install_svglib___depname)
+ install: $(__install_svgdll___depname) $(__install_svglib___depname)
 +
 +install-common:
  	$(INSTALL_DIR) $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)

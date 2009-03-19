@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wx
-PORTVERSION=	2.8.9
+PORTVERSION=	2.8.10
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/wxwindows
@@ -49,10 +49,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"\
 PLIST=		${.CURDIR}/pkg-plist
 
 WXGTK_FLAVOR?=	gtk2
-
-.if ${WXGTK_FLAVOR} == "gtk2"
-PORTREVISION=	0
-.endif
 
 .if ${WXGTK_FLAVOR} != "gtk2-common"
 RUN_DEPENDS=	${LOCALBASE}/include/wx-2.8/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk28-common
