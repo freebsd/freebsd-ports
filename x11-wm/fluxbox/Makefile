@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beat@FreeBSD.org
 COMMENT=	A small and fast window manager based on BlackBox
 
 RUN_DEPENDS=	xmessage:${PORTSDIR}/x11/xmessage
