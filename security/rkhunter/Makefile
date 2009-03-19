@@ -38,6 +38,10 @@ RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
 RUN_DEPENDS+=	nmap:${PORTSDIR}/security/nmap
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|{SHAREDIR}/man/man8|{PREFIX}/man/man8|g' \
+		${WRKSRC}/installer.sh
+
 do-install:
 	cd ${WRKSRC} && ./installer.sh --layout custom ${PREFIX} --install
 	${INSTALL_MAN} ${WRKSRC}/files/rkhunter.8 \
