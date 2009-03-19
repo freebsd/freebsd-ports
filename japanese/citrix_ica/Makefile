@@ -14,10 +14,9 @@ DISTNAME=	${PORTNAME}-linuxx86-ja-${PORTVERSION}
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Citrix(R) Presentation Server(TM) client
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.3:${PORTSDIR}/x11-toolkits/linux-openmotif
-
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
+USE_LINUX_APPS=	openmotif
 RESTRICTED=	License prohibits redistribution
 IS_INTERACTIVE=	"Noisy license agreement ignores stdin"
 

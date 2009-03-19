@@ -13,10 +13,9 @@ DISTNAME=	libtiff-${PORTVERSION}-6.fc4.2
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	TIFF library, Linux/i386 binary
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg
-
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX_RPM=	yes
+USE_LINUX_APPS=	jpeg
 LINUX_DIST_VER=	4
 USE_LDCONFIG=	yes
 BRANDELF_DIRS=	usr/bin

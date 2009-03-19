@@ -21,7 +21,7 @@ EXTRACT_DEPENDS=rpm2cpio:${PORTSDIR}/archivers/rpm
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 EXTRACT_CMD=	rpm2cpio
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS= | ${CPIO} -id --quiet

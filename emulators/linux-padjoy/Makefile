@@ -17,13 +17,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PSEmu Pro joystick plugin (Linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk \
-		/boot/modules/linux_js.ko:${PORTSDIR}/devel/linux-js
+RUN_DEPENDS=	/boot/modules/linux_js.ko:${PORTSDIR}/devel/linux-js
 
 WRKSRC=		${WRKDIR}/padJoy
 NO_BUILD=	yes
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	gtk xorglibs
 
 ONLY_FOR_ARCHS=	i386 amd64
 

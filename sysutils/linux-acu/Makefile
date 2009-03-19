@@ -16,8 +16,6 @@ DISTNAME=	Linux-ACU-Driver-v${PORTVERSION}
 MAINTAINER=	matt@peterson.org
 COMMENT=	Aironet Cisco Utilities for 802.11 wireless NIC's
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
-
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
@@ -31,7 +29,7 @@ IGNORE=		may not be automatically fetched due to licensing\
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	gtk xorglibs
 NO_WRKSUBDIR=	yes
 RESTRICTED=	"Redistribution not allowed"
 

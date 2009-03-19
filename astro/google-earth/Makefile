@@ -25,8 +25,8 @@ RESTRICTED=	Not sure about redistribution rights
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\..*//g}/
 
 USE_LINUX=	yes
+USE_LINUX_APPS=	xorglibs
 USE_GNOME=	desktopfileutils
-USE_XLIB=	yes
 
 .include <bsd.port.pre.mk>
 

@@ -32,7 +32,7 @@ FETCH_DEPENDS=	${LINUX_BASE_PORT}
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 NO_CDROM=	'Deve ser obtido diretamente do site da Sun via interface www'
 CD_MOUNTPT=	'/cdrom'
 IS_INTERACTIVE=	yes

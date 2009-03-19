@@ -23,7 +23,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/XnViewMP
 
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 
 PLIST_FILES=	bin/xnview-mp lib/xnview-mp/libQtCore.so.4 \
 		lib/xnview-mp/libQtGui.so.4 lib/xnview-mp/xnview

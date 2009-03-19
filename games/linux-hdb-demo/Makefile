@@ -16,15 +16,9 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Hyperspace Delivery Boy Demo - deliver mail and packages
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
-		${LINUXBASE}/usr/lib/libSDL_mixer-1.2.so.0:${PORTSDIR}/audio/linux-sdl_mixer \
-		${LINUXBASE}/usr/lib/libmikmod.so.2:${PORTSDIR}/audio/linux-mikmod \
-		${LINUXBASE}/usr/lib/libogg.so.0:${PORTSDIR}/audio/linux-libogg \
-		${LINUXBASE}/usr/lib/libvorbis.so.0:${PORTSDIR}/audio/linux-libvorbis
-
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	sdl12 sdlmixer mikmod libogg libvorbis xorglibs
 NO_CDROM=	Redistribution is limited, see license
 NO_BUILD=	yes
 

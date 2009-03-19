@@ -16,15 +16,9 @@ EXTRACT_SUFX=	.sh
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	High tech computer crime and industrial espionage on the Internet
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
-		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
-		${LINUXBASE}/usr/lib/libSDL_mixer-1.2.so.0:${PORTSDIR}/audio/linux-sdl_mixer \
-		${LINUXBASE}/usr/lib/libmikmod.so.2:${PORTSDIR}/audio/linux-mikmod \
-		${LINUXBASE}/usr/lib/libvorbisfile.so.3:${PORTSDIR}/audio/linux-libvorbis
-
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	sdl12 jpeg sdlmixer mikmod libvorbis xorglibs
 USE_LDCONFIG=	yes
 NO_CDROM=	Redistribution is limited, see license
 NO_BUILD=	yes

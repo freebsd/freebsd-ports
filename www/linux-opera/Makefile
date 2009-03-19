@@ -24,12 +24,10 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}.gcc4-static-qt3.i386
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libaspell.so.15:${PORTSDIR}/textproc/linux-aspell
-
 WRKSRC=		${WRKDIR}/${DISTNAME:S/.gcc/-${OPERA_BUILD}.gcc/}
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_LINUX=	yes
+USE_LINUX_APPS=	aspell xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 
 NO_BUILD=	yes

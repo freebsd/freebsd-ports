@@ -17,15 +17,12 @@ DIST_SUBDIR=	acroread
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Adobe Reader for view, print, and search PDF documents (${ADOBE_LANG})
 
-RUN_DEPENDS=	acroreadwrapper>=0.0.20080906:${PORTSDIR}/print/acroreadwrapper \
-		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
-		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango \
-		${LOCALBASE}/lib/linux-nvu/libgtkembedmoz.so:${PORTSDIR}/www/linux-nvu \
-		${LINUXBASE}/usr/lib/gtk-2.0/immodules/im-scim.so:${PORTSDIR}/textproc/linux-scim-gtk
+RUN_DEPENDS=	acroreadwrapper>=0.0.20080906:${PORTSDIR}/print/acroreadwrapper
 
 RESTRICTED=	Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
+USE_LINUX_APPS=	gtk2 pango scimgtk webauth
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 #USE_GNOME=	desktopfileutils

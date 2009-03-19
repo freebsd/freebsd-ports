@@ -14,9 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1.fc${LINUX_DIST_VER}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free implementation of OpenAL's ALUT standard (Linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libopenal.so.0:${PORTSDIR}/audio/linux-openal
-
 USE_LINUX_RPM=	yes
+USE_LINUX_APPS=	openal
 LINUX_DIST_VER=	4
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 amd64

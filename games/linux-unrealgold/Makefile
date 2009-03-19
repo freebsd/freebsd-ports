@@ -18,11 +18,10 @@ MAINTAINER=	ports@logvinov.com
 COMMENT=	Unreal Gold for Linux
 
 BUILD_DEPENDS=	ut:${PORTSDIR}/games/linux-ut
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
-		ut:${PORTSDIR}/games/linux-ut
+RUN_DEPENDS=	ut:${PORTSDIR}/games/linux-ut
 
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	sdl12 xorglibs
 NO_BUILD=	yes
 NO_PACKAGE=	Distribution is 131MB; set FORCE_PACKAGE if you really want\
 		to build this package

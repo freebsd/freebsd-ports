@@ -14,14 +14,11 @@ DISTNAME=	gishdemo
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A platform game with a gelatinous 12-pound ball of tar named Gish (Demo version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libvorbis.so.0:${PORTSDIR}/audio/linux-libvorbis \
-		${LINUXBASE}/usr/lib/libopenal.so.0:${PORTSDIR}/audio/linux-openal \
-		${LINUXBASE}/usr/lib/libalut.so.0:${PORTSDIR}/audio/linux-freealut
-
 RESTRICTED=	(c) Copyright 2004 Chronic Logic All rights reserved
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	is an i386 Linux binary
 USE_LINUX=	yes
+USE_LINUX_APPS=	freealut libvorbis openal
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 SUB_FILES=	rungish.sh

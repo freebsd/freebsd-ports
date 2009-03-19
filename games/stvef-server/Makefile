@@ -17,7 +17,7 @@ COMMENT=	Star Trek Voyager: Elite Forces dedicated server for Linux
 ONLY_FOR_ARCHS=	i386
 USE_ZIP=	yes
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 WRKSRC=		${WRKDIR}/Linux
 
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755

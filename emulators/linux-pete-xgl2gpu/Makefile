@@ -14,8 +14,6 @@ DISTNAME=	gpupetexgl${MAJOR}0${MINOR}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PSEmu Pro GPU plugin using a modern OpenGL renderer (Linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
-
 .if defined(WITH_NVIDIA_GL)
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 .else
@@ -25,7 +23,7 @@ RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_d
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	gtk xorglibs
 
 ONLY_FOR_ARCHS=	i386 amd64
 

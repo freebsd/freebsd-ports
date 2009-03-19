@@ -15,9 +15,8 @@ DISTNAME=	SDL_image-${PORTVERSION}-1
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A simple library to load images as SDL interfaces (linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
-
 USE_LINUX_RPM=	yes
+USE_LINUX_APPS=	sdl12
 INSTALL_SHLIB=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 DIST_SUBDIR=	rpm

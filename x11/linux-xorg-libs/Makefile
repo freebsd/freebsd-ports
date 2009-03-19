@@ -15,11 +15,10 @@ DISTFILES=		xorg-x11-libs-${PORTVERSION}-37.FC4.49.2.1.${LINUX_RPM_ARCH}.rpm \
 MAINTAINER=		freebsd-emulation@FreeBSD.org
 COMMENT=		Xorg libraries, linux binaries
 
-RUN_DEPENDS=		${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig
-
 CONFLICTS=		linux-XFree86-libs
 
 USE_LINUX_RPM=		yes
+USE_LINUX_APPS=		fontconfig
 LINUX_DIST_VER=		4
 USE_LDCONFIG=		yes
 

@@ -16,14 +16,11 @@ MASTER_SITE_SRC_SUBDIR=	${LINUX_DIST}/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/SRPMS.
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux cairo binary
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1.0.4:${PORTSDIR}/x11-fonts/linux-fontconfig \
-		${LINUXBASE}/usr/lib/libpng.so.3.1.2.8:${PORTSDIR}/graphics/linux-png
-
 ONLY_FOR_ARCHS=	i386 amd64
 LINUX_DIST_VER=	4
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	fontconfig png xorglibs
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 .include <bsd.port.mk>

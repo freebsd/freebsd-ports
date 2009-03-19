@@ -18,7 +18,7 @@ COMMENT=	A Commercial Spreadsheet
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 
 NO_WRKSUBDIR=	yes
 

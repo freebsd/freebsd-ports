@@ -19,10 +19,9 @@ DISTNAME=	chaosl-${PORTVERSION}
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	An unusual and spectacular shoot-em-up for the PC
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
-
 USE_ZIP=	yes
 USE_LINUX=	yes
+USE_LINUX_APPS=	sdl12
 
 NO_BUILD=	yes
 

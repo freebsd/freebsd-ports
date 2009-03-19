@@ -25,7 +25,7 @@ ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Must be downloaded direct from Sun via www interface'
 
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 IS_INTERACTIVE=	yes
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_CMD=	${CAT}

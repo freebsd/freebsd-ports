@@ -14,10 +14,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-13
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Linux/i386 binary of Fontconfig
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
-
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
+USE_LINUX_APPS=	expat
 LINUX_DIST_VER=	4
 USE_LDCONFIG=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"

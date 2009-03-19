@@ -23,8 +23,8 @@ BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
+USE_LINUX_APPS=	xorglibs
 USE_LINUX_PREFIX=	yes
-USE_XLIB=	yes
 NO_BUILD=	yes
 MD5_FILE=	${MASTERDIR}/distinfo.i386
 

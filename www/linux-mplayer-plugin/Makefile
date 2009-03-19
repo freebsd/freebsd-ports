@@ -17,14 +17,11 @@ PKGNAMEPREFIX=	linux-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embed MPlayer into browser
 
-RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
-		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
-		${LINUXBASE}/usr/lib/libatk-1.0.so.0:${PORTSDIR}/accessibility/linux-atk \
-		${LINUXBASE}/usr/lib/libpangoxft-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango
+RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 NO_BUILD=	yes
 USE_LINUX_RPM=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	atk gtk2 pango xorglibs
 LINUX_DIST=	fedora
 LINUX_DIST_VER=	4
 PREFIX?=	${LOCALBASE}

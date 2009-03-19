@@ -19,10 +19,9 @@ EXTRACT_ONLY=	install_flash_player_9.tar.gz
 MAINTAINER=	jamie@bishopston.net
 COMMENT=	Adobe Flash Player NPAPI Plugin
 
-RUN_DEPENDS=	${LINUXBASE}/lib/libssl.so.5:${PORTSDIR}/security/linux-openssl
-
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
+USE_LINUX_APPS=	openssl
 
 RESTRICTED=	Redistribution not allowed
 RESTRICTED_FILES=	${DISTFILES:Nlibflashsupport*:C/:[^:]+$//}

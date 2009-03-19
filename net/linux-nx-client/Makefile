@@ -15,13 +15,10 @@ DISTNAME=		nxclient-${PORTVERSION}-17.i386
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		The NoMachine NX client
 
-RUN_DEPENDS=		${LINUXBASE}/usr/lib/libaudiofile.so.0:${PORTSDIR}/audio/linux-libaudiofile \
-			${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
-			${LINUXBASE}/usr/lib/libpng12.so.0:${PORTSDIR}/graphics/linux-png
-
 NO_WRKSUBDIR=		yes
 ONLY_FOR_ARCHS=		i386 amd64
 USE_LINUX=		yes
+USE_LINUX_APPS=		libaudiofile jpeg png
 NO_BUILD=		yes
 INSTALL_ICONS=		yes
 

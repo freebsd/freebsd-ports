@@ -16,10 +16,8 @@ DISTNAME=	epsxe160lin
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Sony Playstation emulator (Linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
-
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	gtk xorglibs
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

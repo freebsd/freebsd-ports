@@ -16,8 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Adobe SVG browser plugin (Linux version)
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_XLIB=	yes
 USE_LINUX=	yes
+USE_LINUX_APPS=	xorglibs
 
 RESTRICTED=	"Redistribution prohibited"
 NO_BUILD=	yes

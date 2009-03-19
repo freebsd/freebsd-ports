@@ -31,7 +31,7 @@ ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Must be bought and downloaded direct from Sun via www interface'
 
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 IS_INTERACTIVE=	yes
 NO_BUILD=	yes
 SOVERSION=	${PORTNAME}${PORTVERSION}

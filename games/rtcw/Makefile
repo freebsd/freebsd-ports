@@ -19,8 +19,8 @@ COMMENT=	Return to Castle Wolfenstein for Linux
 
 USE_MAKESELF=	yes
 USE_LINUX=	yes
+USE_LINUX_APPS=	xorglibs
 USE_GL=		linux
-USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
 
 SUB_FILES=	pkg-message

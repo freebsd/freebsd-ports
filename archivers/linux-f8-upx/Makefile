@@ -14,9 +14,8 @@ DISTNAME=		${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=		emulation@FreeBSD.org
 COMMENT=		RPM of UPX, a high-performance executable packer
 
-RUN_DEPENDS=		${LINUXBASE}/usr/lib/libucl.so.1:${PORTSDIR}/archivers/linux-ucl
-
 USE_LINUX_RPM=		yes
+USE_LINUX_APPS=		ucl
 RPMVERSION=		4
 LINUX_DIST_VER=		4
 BRANDELF_FILES=		usr/bin/upx

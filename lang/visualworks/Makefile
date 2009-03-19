@@ -19,7 +19,7 @@ MAINTAINER=		chris@chrisburkert.de
 COMMENT=		A high performance Smalltalk environment
 
 USE_LINUX=		yes
-USE_XLIB=		yes
+USE_LINUX_APPS=		xorglibs
 ONLY_FOR_ARCHS=		i386
 NO_BUILD=		yes
 PLIST_FILES=		bin/visual

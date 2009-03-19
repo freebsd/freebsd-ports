@@ -16,10 +16,10 @@ MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Cross-platform game programming library (linux version)
 
 USE_LINUX_RPM=		yes
+USE_LINUX_APPS=		xorglibs
 ONLY_FOR_ARCHS=		i386 amd64
 DIST_SUBDIR=		rpm
 USE_LDCONFIG=		yes
-USE_XLIB=		yes
 SRC_DISTFILES=
 
 MD5_FILE=	${MASTERDIR}/distinfo

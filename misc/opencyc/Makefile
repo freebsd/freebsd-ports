@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General knowledge base and commonsense reasoning engine
 
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 NO_BUILD=	yes
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"

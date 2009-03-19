@@ -19,7 +19,7 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Doom III for Linux
 
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 NO_CDROM=	Redistribution is limited, see license
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

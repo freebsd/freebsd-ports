@@ -20,11 +20,10 @@ EXTRACT_ONLY=	${MAINFILE}
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Unreal Tournament Dedicated Server for Linux
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
-
 OPTIONS=	BONUSPACKS	"install the official bonus packs collection" on
 
 USE_LINUX=	yes
+USE_LINUX_APPS=	sdl12
 NO_CDROM=	Size; the data set is much too big
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/ut-server

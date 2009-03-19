@@ -14,9 +14,8 @@ DISTNAME=	SDL_ttf-${PORTVERSION}-1
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A library to use TrueType fonts in SDL applications (linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
-
 USE_LINUX_RPM=	yes
+USE_LINUX_APPS=	sdl12
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 DIST_SUBDIR=	rpm

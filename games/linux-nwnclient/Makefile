@@ -17,8 +17,7 @@ DISTFILES=	nwclient129.tar.gz \
 MAINTAINER=	sean-freebsd@farley.org
 COMMENT=	Neverwinter Nights Linux (x86) Client
 
-RUN_DEPENDS=	${LOCALBASE}/share/nwndata/NWNv129.txt:${PORTSDIR}/games/nwndata \
-		${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
+RUN_DEPENDS=	${LOCALBASE}/share/nwndata/NWNv129.txt:${PORTSDIR}/games/nwndata
 
 .ifdef WITH_NVIDIA_GL
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver \
@@ -29,8 +28,8 @@ RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_d
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
-USE_XLIB=	yes
 USE_LINUX=	yes
+USE_LINUX_APPS=	sdl12 xorglibs
 NWNDATADIR=	${LOCALBASE}/share/nwndata
 
 PLIST_SUB+=	NWNVERSION="${PORTVERSION:S/.//}"

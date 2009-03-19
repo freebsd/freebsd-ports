@@ -12,17 +12,12 @@ MASTER_SITE_SUBDIR?=	${PORTNAME}/releases/${DISTVERSION}
 .endif
 PKGNAMEPREFIX?=		linux-
 
-RUN_DEPENDS?=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
-		${LINUXBASE}/usr/lib/libatk-1.0.so.0:${PORTSDIR}/accessibility/linux-atk \
-		${LINUXBASE}/usr/lib/libpangoxft-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango\
-		${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
-		${LINUXBASE}/usr/share/icons/hicolor/index.theme:${PORTSDIR}/x11-themes/linux-hicolor-icon-theme
-
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 APP_NAME=	${PKGBASE}
 BIN_NAME?=	${PORTNAME}
 USE_LINUX=	yes
+USE_LINUX_APPS=	atk fontconfig gtk2 hicontheme pango
 WRKSRC?=	${WRKDIR}/${BIN_NAME}
 FDIR=		${PREFIX}/lib/${APP_NAME}
 COMMON_DIR=	${.CURDIR}/../../www/linux-seamonkey

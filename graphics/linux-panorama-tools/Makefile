@@ -21,16 +21,13 @@ DISTNAME=	PanoTools
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Software to View, Create, Edit and Remap Panoramic Images
 
-RUN_DEPENDS=	${LINUXBASE}/usr/bin/jpegtran:${PORTSDIR}/graphics/linux-jpeg \
-		${LINUXBASE}/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff \
-		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png10
-
 NO_BUILD=	yes
 USE_LINUX_PREFIX=yes
 USE_LDCONFIG=	yes
 # USE_LINUX is supposed to be defined automatically when USE_LINUX_PREFIX and
 # USE_LDCONFIG are defined but it is not :-/
 USE_LINUX=	yes
+USE_LINUX_APPS=	jpeg png10 tiff
 
 WRKSRC=	${WRKDIR}/PTLinux
 

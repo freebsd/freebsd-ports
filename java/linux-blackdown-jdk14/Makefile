@@ -25,7 +25,7 @@ EXTRACT_BEFORE_ARGS=	+592
 EXTRACT_AFTER_ARGS=	| ${BZIP2_CMD} -dc | ${TAR} xf -
 USE_BZIP2=	yes
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 LATEST_LINK=	linux-blackdown-jdk14
 
 WRKSRC=		${WRKDIR}/j2sdk${PORTVERSION}

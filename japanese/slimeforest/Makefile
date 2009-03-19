@@ -17,10 +17,9 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A NES RPG game for learning KANA and KANJI (linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL_image-1.2.so.0:${PORTSDIR}/graphics/linux-sdl_image
-
 NO_BUILD=	yes
 USE_LINUX=	yes
+USE_LINUX_APPS=	sdlimage
 
 WRKSRC=		${WRKDIR}/slimeforest
 FIND_DIRS=	-type d \! -empty

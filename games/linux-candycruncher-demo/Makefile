@@ -16,17 +16,9 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Candy Cruncher Demo - a fast puzzle game with lots of candies
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
-		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
-		${LINUXBASE}/usr/lib/libSDL_mixer-1.2.so.0:${PORTSDIR}/audio/linux-sdl_mixer \
-		${LINUXBASE}/usr/lib/libmikmod.so.2:${PORTSDIR}/audio/linux-mikmod \
-		${LINUXBASE}/usr/lib/libogg.so.0:${PORTSDIR}/audio/linux-libogg \
-		${LINUXBASE}/usr/lib/libvorbis.so.0:${PORTSDIR}/audio/linux-libvorbis \
-		${LINUXBASE}/lib/libasound.so.2:${PORTSDIR}/audio/linux-alsa-lib
-
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	alsalib jpeg libogg libvorbis mikmod sdl12 sdlmixer xorglibs
 NO_CDROM=	Redistribution is limited, see license
 NO_BUILD=	yes
 

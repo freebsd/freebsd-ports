@@ -15,11 +15,9 @@ DISTNAME=	${PORTNAME}_linux_sdl_${PORTVERSION}
 MAINTAINER=	arundel@h3c.de
 COMMENT=	The only GP32 emulator for i386
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
-
 ONLY_FOR_ARCHS=	i386
-USE_XLIB=	yes
 USE_LINUX=	yes
+USE_LINUX_APPS=	sdl12 xorglibs
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

@@ -16,13 +16,9 @@ EXTRACT_SUFX=	.sh
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Real-time action strategy with programs
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
-		${LINUXBASE}/usr/lib/libogg.so.0:${PORTSDIR}/audio/linux-libogg \
-		${LINUXBASE}/usr/lib/libvorbisfile.so.3:${PORTSDIR}/audio/linux-libvorbis
-
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	sdl12 libogg libvorbis xorglibs
 NO_CDROM=	Redistribution is limited, see license
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

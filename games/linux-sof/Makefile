@@ -19,7 +19,7 @@ COMMENT=	Soldier of Fortune for Linux
 PATCH_DEPENDS=	xdelta:${PORTSDIR}/misc/xdelta
 
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 USE_LDCONFIG=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Distribution is 448MB; set FORCE_PACKAGE if you really want\

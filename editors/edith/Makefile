@@ -18,7 +18,7 @@ COMMENT=	A X11 GUI editor for binary and plain text files
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 
 RESTRICTED=	"Redistribution not allowed"
 NO_BUILD=	yes

@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 USE_LINUX=	yes
 USE_LINUX_PREFIX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 
 # don't package this for amd64 until we come up with 32-bit ioctl wrappers for
 # the drm.
