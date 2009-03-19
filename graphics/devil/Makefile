@@ -8,11 +8,12 @@
 PORTNAME=	devil
 PORTVERSION=	1.7.8
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/openil
 DISTNAME=	DevIL-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A full featured cross-platform image library
 
 OPTIONS=	JPEG	"Enable JPEG support"		on \
@@ -33,7 +34,8 @@ AUTOMAKE_ARGS=	--add-missing --copy --force-missing
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-ILU \
 		--disable-allegro --disable-directx8 --disable-directx9 \
-		--disable-altivec --disable-sse --disable-sse2 --disable-sse3
+		--disable-altivec --disable-sse --disable-sse2 --disable-sse3 \
+		--without-nvtt
 USE_LDCONFIG=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include
