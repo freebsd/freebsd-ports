@@ -8,9 +8,10 @@
 PORTNAME=	check_multi
 PORTVERSION=	0.19
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://my-plugin.de/${PORTNAME}/
+#MASTER_SITES=	http://my-plugin.de/${PORTNAME}/
 #PKGNAMEPREFIX=	nagios-
-DISTNAME=	${PORTNAME}-${PORTVERSION}.current
+#DISTNAME=	${PORTNAME}-${PORTVERSION}.current
+MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dinoex@FreeBSD.org
