@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geany
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -19,7 +19,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnuregex"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 OPTIONS=	VTE	"Enable Virtual Terminal Emulation support"	on \
 		NLS	"Enable Native Language support"		on
@@ -44,10 +44,6 @@ CONFIGURE_ARGS+=--disable-vte
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gcc|${CC} ${CFLAGS}|' ${WRKSRC}/scintilla/Makefile.in
-.for file in tagmanager/lregex.c src/encodings.c
-	@${REINPLACE_CMD} -e 's|<regex\.h>|<gnu/regex.h>|g' ${WRKSRC}/${file}
-.endfor
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|doc||' ${WRKSRC}/Makefile.in
 .endif
