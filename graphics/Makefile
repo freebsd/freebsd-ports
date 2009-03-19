@@ -526,6 +526,7 @@
     SUBDIR += p5-GD-Arrow
     SUBDIR += p5-GD-Barcode
     SUBDIR += p5-GD-Graph
+    SUBDIR += p5-GD-Graph-histogram
     SUBDIR += p5-GD-Graph3d
     SUBDIR += p5-GD-SVG
     SUBDIR += p5-GD-TextUtil
