@@ -7,6 +7,7 @@
 
 PORTNAME=	sdlmame
 PORTVERSION=	0.130
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.arcadebsd.org/pub/FreeBSD/ports/distfiles/ \
 		http://rbelmont.mameworld.info/
@@ -47,6 +48,12 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	${MKDIR} ${PREFIX}/libexec/sdlmame
+	${INSTALL_PROGRAM} ${WRKSRC}/chdman ${PREFIX}/libexec/sdlmame
+	${INSTALL_PROGRAM} ${WRKSRC}/ldresample ${PREFIX}/libexec/sdlmame
+	${INSTALL_PROGRAM} ${WRKSRC}/ldverify ${PREFIX}/libexec/sdlmame
+	${INSTALL_PROGRAM} ${WRKSRC}/testkeys ${PREFIX}/libexec/sdlmame
+
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
