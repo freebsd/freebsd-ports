@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	shntool
-PORTVERSION=	3.0.8
+PORTVERSION=	3.0.9
 CATEGORIES=	audio
-MASTER_SITES=	http://www.etree.org/shnutils/shntool/dist/src/ CENKES
+MASTER_SITES=	http://www.etree.org/shnutils/shntool/dist/src/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Multi-purpose .wav processing utility
