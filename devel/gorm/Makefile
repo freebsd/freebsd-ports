@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	dev-apps
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graphical Object Relationship Modeller
 
-RESTRICTED=	GPL3
+NO_PACKAGE=	GPL3
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
