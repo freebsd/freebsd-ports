@@ -19,6 +19,12 @@ USE_GMAKE=	yes
 
 MAN1=		lookat.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800067
+BROKEN=		does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 	's|/etc/lookat.conf|${PREFIX}/etc/lookat.conf|g' ${WRKSRC}/${PORTNAME}.1
@@ -30,10 +36,10 @@ do-install:
 	@${ECHO} "------------------------------------------------------------"
 	@${ECHO} "Sample of configuration file placed at"
 	@${ECHO} "${PREFIX}/etc/lookat.conf.default"
-	@${ECHO} "------------------------------------------------------------
+	@${ECHO} "------------------------------------------------------------"
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
