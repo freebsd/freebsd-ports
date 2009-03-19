@@ -3856,3 +3856,4 @@ x11-toolkits/inti-sourceview||2009-03-09|Has expired: not maintain by upstream f
 misc/git|misc/gnuit|2009-03-14|Renamed
 lang/gcc33|lang/gcc43|2009-03-14|Abandoned upstream, superseded by later versions
 sysutils/libisoburn|sysutils/xorriso|2009-03-16|Project was Renamed
+games/PySolFC|games/pysolfc|2009-03-19|port renamed
