@@ -1,0 +1,3 @@
+%%SITE_PERL%%/GD/Graph/histogram.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph/histogram/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph/histogram
