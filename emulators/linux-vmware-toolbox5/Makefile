@@ -15,8 +15,6 @@ DISTNAME=	VMwareTools-${VMWARE_VER}-${BUILD_VER}
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=VMware toolbox for guest OS (VMware Workstation 5.x, Linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
-
 DISTDIR=	${MOUNT_PT}
 IGNOREFILES=	${DISTFILES}
 PLIST_FILES=	bin/linux-vmware-toolbox bin/linux-vmware-toolbox-gtk \
@@ -25,7 +23,7 @@ WRKSRC=		${WRKDIR}/vmware-tools-distrib
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	gtk xorglibs
 NO_BUILD=	yes
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes

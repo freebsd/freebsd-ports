@@ -15,14 +15,14 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-gtk
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	IDE for Ruby On Rails
 
-RUN_DEPENDS=	${LINUXBASE}/usr/bin/gtk-demo:${PORTSDIR}/x11-toolkits/linux-gtk2 \
-		${LOCALBASE}/bin/rails:${PORTSDIR}/www/rubygem-rails
+RUN_DEPENDS=	${LOCALBASE}/bin/rails:${PORTSDIR}/www/rubygem-rails
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
+USE_LINUX_APPS=	gtk2
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_OS=	linux

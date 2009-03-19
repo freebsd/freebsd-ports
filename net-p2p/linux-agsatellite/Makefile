@@ -20,7 +20,7 @@ WRKSRC=	${WRKDIR}/${DISTNAME:C/-.*//}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 RESTRICTED=	no response from developer on licensing issues
 
 DOCS=	german_readme.txt license.txt readme.txt

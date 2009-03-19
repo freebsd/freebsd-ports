@@ -18,7 +18,6 @@ COMMENT=	A compatibility plugin for Netscape 4 (NPAPI) plugins
 
 EXTRACT_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2
 
 RPMFILE=	${PORTNAME}-i386-${PORTVERSION}-1.x86_64.rpm
 
@@ -26,6 +25,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_BZIP2=	yes
 USE_LINUX=	yes
+USE_LINUX_APPS=	gtk2
 USE_XORG=	x11 xext xt
 USE_GNOME=	glib20 gtk20 pkgconfig
 

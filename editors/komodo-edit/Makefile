@@ -13,13 +13,11 @@ DISTNAME=	Komodo-Edit-${PORTVERSION}-1774-linux-libcpp6-x86
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Multi-language editor from ActiveState
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
-		${LINUXBASE}/usr/bin/gtk-demo:${PORTSDIR}/x11-toolkits/linux-gtk2
-
 ONLY_FOR_ARCH=	i386 amd64
 RESTRICTED=	Distribution not permitted
 NO_BUILD=	yes
 USE_LINUX=	yes
+USE_LINUX_APPS=	gtk2 jpeg
 USE_PYTHON=	yes
 
 post-patch:

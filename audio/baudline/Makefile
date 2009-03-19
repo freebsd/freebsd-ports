@@ -19,8 +19,8 @@ COMMENT=	Real-time signal analysis and time-frequency browser
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
-USE_XLIB=	yes
 USE_LINUX=	yes
+USE_LINUX_APPS=	xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 
 RESTRICTED=	author requests no distribution except from their site

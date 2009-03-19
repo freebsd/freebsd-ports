@@ -16,12 +16,10 @@ DISTNAME=	gpupeopssoftx${MAJOR}${MINOR}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PSEmu Pro GPU plugin using a software X11 renderer (Linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
-
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	gtk xorglibs
 
 ONLY_FOR_ARCHS=	i386 amd64
 

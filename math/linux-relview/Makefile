@@ -16,11 +16,9 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive tool for manipulation of relations
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
-
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	gtk xorglibs
 
 NO_WRKSUBDIR=	yes
 EXTRACT_AFTER_ARGS=	> ${DISTNAME}

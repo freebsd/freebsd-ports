@@ -18,12 +18,11 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Linux RealPlayer 10 from RealNetworks
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2
 
 WRKSRC=		${WRKDIR}/usr/local/RealPlayer
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	gtk2 xorglibs
 RESTRICTED=	Redistribution not allowed
 NO_BUILD=	yes
 WANT_GNOME=	yes

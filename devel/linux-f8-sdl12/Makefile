@@ -18,7 +18,7 @@ MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Cross-platform multi-media development API (linux version)
 
 USE_LINUX_RPM=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 INSTALL_SHLIB=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64

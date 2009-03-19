@@ -24,12 +24,7 @@ EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 RUN_DEPENDS=	stsmon:${PORTSDIR}/print/bjfiltercom \
 		pstops:${PORTSDIR}/print/psutils-${PAPERSIZE}
 .else
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libxml.so.1:${PORTSDIR}/textproc/linux-libxml \
-		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
-		${LINUXBASE}/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff \
-		${LINUXBASE}/usr/lib/libglade.so.0:${PORTSDIR}/devel/linux-libglade \
-		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
-
+USE_LINUX_APPS=	gtk jpeg libglade libxml tiff
 BIN_FILES=	bjcmd  bjfilter  bjprn  lgmon  printui  stsmon
 .endif
 

@@ -14,15 +14,9 @@ MASTER_SITE_SUBDIR=	../extras/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D positional spatialized sound library (Linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/lib/libasound.so.2:${PORTSDIR}/audio/linux-alsa-lib \
-		${LINUXBASE}/usr/lib/libartsc.so.0:${PORTSDIR}/audio/linux-arts \
-		${LINUXBASE}/usr/lib/libesd.so.0:${PORTSDIR}/audio/linux-esound \
-		${LINUXBASE}/usr/lib/libaudiofile.so.0:${PORTSDIR}/audio/linux-libaudiofile \
-		${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
-		${LINUXBASE}/usr/lib/libvorbis.so.0:${PORTSDIR}/audio/linux-libvorbis
-
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
+USE_LINUX_APPS=	alsalib arts esound libaudiofile libvorbis sdl12
 LINUX_DIST_VER=	4
 MASTER_SITE_SRC_SUBDIR=	../extras/${LINUX_DIST_VER}/SRPMS
 USE_LDCONFIG=	yes

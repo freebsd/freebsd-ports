@@ -21,7 +21,7 @@ RUN_DEPENDS=	phred:${PORTSDIR}/biology/phred \
 
 USE_PERL5=	yes
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 
 RESTRICTED=	Redistribution is not permitted in any form. You must request access permission via e-mail to get the tarball. Free for academic use.

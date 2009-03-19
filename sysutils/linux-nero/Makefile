@@ -17,12 +17,11 @@ DIST_SUBDIR=	rpm
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	CD/DVD disk burner
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2
-
 RESTRICTED=	Get a serial number at http://www.nero.com/eng/NeroLINUX.html
 
 ONLY_FOR_ARCH=	i386 amd64
 USE_LINUX_RPM=	yes
+USE_LINUX_APPS=	gtk2                                                        
 USE_LDCONFIG=	yes
 BRANDELF_DIRS=	usr/bin
 SRC_DISTFILES=

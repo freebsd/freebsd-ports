@@ -15,13 +15,11 @@ DISTNAME=	${PORTNAME}-linux-${PORTVERSION}
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Deluxe Snake - snake clone with frogs and mushrooms
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/liballeg.so.4.0:${PORTSDIR}/devel/linux-allegro
-
 RESTRICTED=	Licence forbids any repacking and reselling
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	allegro xorglibs
 WRKSRC=		${WRKDIR}/DeluxeSnake
 
 SUB_FILES=	pkg-install pkg-deinstall

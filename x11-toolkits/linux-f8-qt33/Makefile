@@ -13,11 +13,8 @@ DISTNAME=	qt-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	RPM of QT3
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
-		${LINUXBASE}/usr/lib/libmng.so.1:${PORTSDIR}/graphics/linux-libmng \
-		${LINUXBASE}/usr/lib/libpng12.so.0:${PORTSDIR}/graphics/linux-png
-
 USE_LINUX_RPM=	yes
+USE_LINUX_APPS=	fontconfig libmng png
 RPMVERSION=	15.5
 LINUX_DIST_VER=	4
 USE_LDCONFIG=	yes

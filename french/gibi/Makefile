@@ -25,7 +25,6 @@ COMMENT=	GIBI est la partie mailleur et post de CASTEM
 
 BUILD_DEPENDS+=	${LOCALBASE}/aster/${vaster}/asteru:${PORTSDIR}/french/aster
 RUN_DEPENDS+=	${LOCALBASE}/aster/${vaster}/asteru:${PORTSDIR}/french/aster	\
-		${LINUXBASE}/usr/lib/libg2c.so.0:${PORTSDIR}/lang/linux-libg2c	\
 		${SHELL_RUN_GIBI}:${PORTSDIR}/shells/${SHRGDEP}
 
 RESTRICTED=	Toute personne chargeant le logiciel GIBI s'engage à ne\
@@ -35,6 +34,7 @@ RESTRICTED=	Toute personne chargeant le logiciel GIBI s'engage à ne\
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_LINUX=	yes
+USE_LINUX_APPS=	libg2c
 REINPLACE_ARGS=	-i ""
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}

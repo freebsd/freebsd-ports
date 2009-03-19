@@ -15,14 +15,12 @@ DISTNAME=	# defined below
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Smart Common Input Method platform, gtk module, Linux binary
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
-		${LINUXBASE}/usr/lib/libscim-1.0.so.8:${PORTSDIR}/textproc/linux-scim-libs
-
 MASTER_SITE_SRC_SUBDIR=	# defined below
 SRC_DISTFILES=	scim-${PORTVERSION}-${PORTSUBVERSION}.fc${LINUX_DIST_VER}${SRC_SUFX}
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
+USE_LINUX_APPS=	gtk2 scimlibs
 USE_LDCONFIG=	yes
 PLIST_SUB=	LINUX_RPM_ARCH=${LINUX_RPM_ARCH}
 MD5_FILE=	${PKGDIR}/distinfo.${LINUX_RPM_ARCH}.fc${LINUX_DIST_VER}

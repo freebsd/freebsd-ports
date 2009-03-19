@@ -18,11 +18,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Unreal Tournament for Linux
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
-
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	sdl12 xorglibs
 NO_BUILD=	yes
 NO_PACKAGE=	Distribution is 340MB; set FORCE_PACKAGE if you really want\
 		to build this package

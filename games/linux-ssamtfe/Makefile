@@ -15,12 +15,10 @@ DISTFILES=	${PORTNAME:S|ssam|serious.sam.|}_${PORTVERSION:S|b|beta|}-english-2.r
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Serious Sam: The First Encounter
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
-
 OPTIONS=	VORBIS	"Ogg playing support"	on
 
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	sdl12 xorglibs
 NO_BUILD=	yes
 NO_PACKAGE=	Distribution is 279MB; set FORCE_PACKAGE if you really want\
 		to build this package
@@ -31,7 +29,7 @@ SUB_FILES=	pkg-message
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_VORBIS)
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libvorbis.so.0:${PORTSDIR}/audio/linux-libvorbis
+USE_LINUX_APPS+=libvorbis
 PLIST_SUB+=	VORBIS=""
 .else
 PLIST_SUB+=	VORBIS="@comment "

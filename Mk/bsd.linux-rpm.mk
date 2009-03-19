@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.13 2008-08-15 12:29:42 bsam Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.14 2009-03-19 17:28:30 bsam Exp $
 #
 
 # Variables:
@@ -65,12 +65,24 @@ LINUX_DIST_VER?=	3
 DIST_SUBDIR?=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
 
 .    if ${LINUX_DIST} == "fedora"
+# we do not want to define MASTER_SITES and MASTER_SITE_* if they are already defined
+# ex.: MASTER_SITES=file:///...
 .      ifndef MASTER_SITES
-MASTER_SITES?=			${MASTER_SITE_FEDORA_LINUX}
+MASTER_SITES=			${MASTER_SITE_FEDORA_LINUX}
+.        if ${LINUX_DIST_VER} == 8
+.          if (${LINUX_OSRELEASE} != "2.6.16") && defined(PACKAGE_BUILDING)
+IGNORE=		packages should be built with compat.linux.osrelease=2.6.16
+.          endif
+MASTER_SITE_SUBDIR?=	../releases/${LINUX_DIST_VER}/Everything/${LINUX_RPM_ARCH}/os/Packages \
+			../updates/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}.newkey
+MASTER_SITE_SRC_SUBDIR?=	../releases/${LINUX_DIST_VER}/Everything/source/SRPMS \
+				../updates/${LINUX_DIST_VER}/SRPMS.newkey
+.        else
 MASTER_SITE_SUBDIR?=	${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
 			updates/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}
 MASTER_SITE_SRC_SUBDIR?=	${LINUX_DIST_VER}/SRPMS \
 				updates/${LINUX_DIST_VER}/SRPMS
+.        endif
 .      endif
 .    else
 IGNORE=	unknown LINUX_DIST in port Makefile

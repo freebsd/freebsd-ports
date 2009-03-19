@@ -20,7 +20,7 @@ CONFLICTS=	id-utils-[0-9]* coreutils-[0-9]*
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 REINPLACE_ARGS=	-i ""
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

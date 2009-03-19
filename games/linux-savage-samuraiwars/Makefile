@@ -19,11 +19,9 @@ DIST_SUBDIR=	savage
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	An official mod for Savage game (linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libvorbis.so.0:${PORTSDIR}/audio/linux-libvorbis \
-		${LINUXBASE}/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff
-
 USE_BZIP2=	yes
 USE_LINUX=	yes
+USE_LINUX_APPS=	libvorbis tiff
 NO_BUILD=	yes
 RESTRICTED=	SamuraiWars is freeware, but i am not sure of its license
 NO_PACKAGE=	Package will be 350MB, set FORCE_PACKAGE if you really want it

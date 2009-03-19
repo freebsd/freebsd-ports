@@ -19,9 +19,9 @@ COMMENT=	RPM of the Gtk lib
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_LINUX_RPM=	yes
+USE_LINUX_APPS=	xorglibs
 LINUX_DIST_VER=	4
 USE_LDCONFIG=	yes
 PLIST=		pkg-plist.${LINUX_RPM_ARCH}
-USE_XLIB=	yes
 
 .include <bsd.port.mk>

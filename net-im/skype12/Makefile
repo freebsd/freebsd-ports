@@ -14,11 +14,9 @@ DISTNAME=	skype_staticQT-${PORTVERSION}
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Legacy version P2P VoIP software
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
-		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
-
 USE_BZIP2=	yes
 USE_LINUX=	yes
+USE_LINUX_APPS=	expat fontconfig
 PORTDOCS=	LICENSE README
 SUB_FILES=	pkg-message
 

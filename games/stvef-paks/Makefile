@@ -24,7 +24,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 EXTRACT_ONLY=	# Don't extract anything
 
 GAMEDIR=	${PREFIX}/games/stvef/

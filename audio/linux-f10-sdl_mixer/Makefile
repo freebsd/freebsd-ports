@@ -14,10 +14,9 @@ DISTNAME=	SDL_mixer-${PORTVERSION}-3.fc${LINUX_DIST_VER}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A sample multi-channel audio mixer library (Linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
-
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
+USE_LINUX_APPS=	sdl12
 LINUX_DIST_VER=	4
 USE_LDCONFIG=	yes
 AUTOMATIC_PLIST=yes

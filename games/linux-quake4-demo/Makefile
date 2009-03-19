@@ -18,9 +18,8 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Quake 4 for Linux Demo
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
-
 USE_LINUX=	yes
+USE_LINUX_APPS=	sdl12
 NO_WRKSUBDIR=	yes
 NO_CDROM=	Redistribution is limited, see license
 NO_PACKAGE=	Package will be 337MB, set FORCE_PACKAGE if you really want it

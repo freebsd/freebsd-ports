@@ -13,9 +13,8 @@ DISTNAME=		${PORTNAME}-${PORTVERSION}-1
 MAINTAINER=		mranner@inode.at
 COMMENT=		RPM of libmng
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg
-
 USE_LINUX_RPM=	yes
+USE_LINUX_APPS=	jpeg
 LINUX_DIST_VER=	4
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 amd64

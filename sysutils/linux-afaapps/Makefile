@@ -17,11 +17,10 @@ DIST_SUBDIR=		rpm
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		DELL PowerEdge Raid Controller 2 (apps)
 
-RUN_DEPENDS=		${LINUXBASE}/usr/lib/libartsc.so.0:${PORTSDIR}/audio/linux-arts
-
 RESTRICTED=		"binary redistribution license needs clarification"
 
 USE_LINUX_RPM=	yes
+USE_LINUX_APPS=	arts
 ONLY_FOR_ARCHS=	i386 amd64
 BRANDELF_FILES=	usr/sbin/afacli
 SRC_DISTFILES=	# empty, no sources available

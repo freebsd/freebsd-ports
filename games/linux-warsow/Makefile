@@ -27,10 +27,10 @@ COMMENT=	Free multiplayer first person shooter with cartoon design
 
 IGNORE=		is outdated, does not match games/warsow-data port
 
-RUN_DEPENDS=	${LINUXBASE}/lib/libssl.so.5:${PORTSDIR}/security/linux-openssl \
-		${DATADIR}/data0.pk3:${PORTSDIR}/games/warsow-data
+RUN_DEPENDS=	${DATADIR}/data0.pk3:${PORTSDIR}/games/warsow-data
 
 USE_LINUX=	yes
+USE_LINUX_APPS=	openssl
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
@@ -79,10 +79,7 @@ PLIST_SUB+=	ENGINESUFFIX=${ENGINESUFFIX} \
 .endif
 
 .if !defined(WITHOUT_CLIENT)
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
-		${LINUXBASE}/usr/lib/libvorbis.so.0:${PORTSDIR}/audio/linux-libvorbis \
-		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
-		${LINUXBASE}/usr/lib/libcurl.so.3:${PORTSDIR}/ftp/linux-curl
+USE_LINUX_APPS+=sdl12 libvorbis jpeg curl
 PLIST_SUB+=	CLIENT=""
 WARSOW_TARGET+=	warsow
 WARSOW_EXTRACT+=${PORTNAME}/warsow${ENGINESUFFIX} \

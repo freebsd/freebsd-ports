@@ -15,12 +15,11 @@ DISTFILES=
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	BSD Installation of the Linux game "Heroes of Might and Magic III"
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
-
 PLIST=		${WRKDIR}/PLIST
 IS_INTERACTIVE=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
+USE_LINUX_APPS=	gtk
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 NO_CDROM=	Software is commercial

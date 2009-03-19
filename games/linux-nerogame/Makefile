@@ -15,11 +15,8 @@ DISTNAME=	nero2_linux_i386
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Neuro envolving robotic operatives the game
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libvorbis.so.0:${PORTSDIR}/audio/linux-libvorbis \
-		${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
-		${LINUXBASE}/usr/lib/libtheora.so.0:${PORTSDIR}/multimedia/linux-libtheora
-
 USE_LINUX=	yes
+USE_LINUX_APPS=	libvorbis sdl12 libtheora
 NO_BUILD=	yes
 RESTRICTED=	Nero is freeware, but i am not sure of its license
 

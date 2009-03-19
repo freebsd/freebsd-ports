@@ -18,12 +18,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client side of a group voice chat system
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg
-
 ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	jpeg xorglibs
 NO_BUILD=	yes
 
 TSIMG=		${WRKSRC}/setup.data/image

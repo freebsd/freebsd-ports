@@ -17,14 +17,10 @@ MASTER_SITE_SRC_SUBDIR=	${LINUX_DIST}/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/SRPMS.
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Linux pango binary
 
-# these libraries are required by pango-querymodules
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
-		${LINUXBASE}/usr/lib/libcairo.so.2.2.3:${PORTSDIR}/graphics/linux-cairo \
-		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
-
-USE_XLIB=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
+# these libraries are required by pango-querymodules
+USE_LINUX_APPS=	cairo expat fontconfig xorglibs
 LINUX_DIST_VER=	4
 USE_LDCONFIG=	yes
 BRANDELF_DIRS=	usr/bin

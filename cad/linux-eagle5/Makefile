@@ -29,7 +29,7 @@ RESTRICTED=	Usage permitted for non-commercial purposes only
 NO_CDROM=	Sale for profit is not permitted
 
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

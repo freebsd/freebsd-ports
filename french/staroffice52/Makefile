@@ -36,7 +36,7 @@ FETCH_DEPENDS=	${LINUX_BASE_PORT}
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 NO_CDROM=	'Doit être téléchargé depuis le site web de Sun'
 CD_MOUNTPT=	'/cdrom'
 IS_INTERACTIVE=	yes

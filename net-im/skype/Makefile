@@ -18,20 +18,16 @@ DISTNAME=	skype_static-${DISTVERSION}-oss
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	P2P VoIP software
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
-		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat \
-		${LINUXBASE}/usr/lib/libsigc-2.0.so.0:${PORTSDIR}/devel/linux-libsigc++20 \
-		${LINUXBASE}/lib/libasound.so.2:${PORTSDIR}/audio/linux-alsa-lib
-
 .ifdef WITH_NVIDIA_GL
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
-USE_XLIB=	yes
+USE_LINUX_APPS+=xorglibs
 .else
 USE_GL=	linux
 .endif
 
 USE_BZIP2=	yes
 USE_LINUX=	yes
+USE_LINUX_APPS+=alsalib expat fontconfig libsigcpp20
 RESTRICTED=	Redistribution prohibited.
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_static-${DISTVERSION}-oss

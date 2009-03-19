@@ -21,10 +21,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	The Savage game (linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libvorbis.so.0:${PORTSDIR}/audio/linux-libvorbis \
-		${LINUXBASE}/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff
-
 USE_LINUX=	yes
+USE_LINUX_APPS=	libvorbis tiff
 NO_BUILD=	yes
 RESTRICTED=	Savage is freeware, but i am not sure of its license
 NO_PACKAGE=	Package will be 150MB, set FORCE_PACKAGE if you really want it

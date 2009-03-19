@@ -25,7 +25,7 @@ NO_CDROM=	"Sale for profit is not permitted"
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 USE_LINUX=	yes
-USE_XLIB=	yes
+USE_LINUX_APPS=	xorglibs
 
 WRKSRC=		${WRKDIR}/Revolution-${PORTVERSION}
 DATADIR=	${PREFIX}/share/Revolution-${PORTVERSION}
