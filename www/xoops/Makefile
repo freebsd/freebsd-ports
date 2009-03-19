@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xoops
-PORTVERSION=	2.3.2b
+PORTVERSION=	2.3.3
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -23,16 +23,16 @@ SUB_FILES=	pkg-message
 do-install:
 	${MKDIR} ${WWWDIR}
 .for i in checksum.md5 checksum.php release_notes.txt
-	@cd ${WRKDIR} && ${CP} ${i} ${WWWDIR}/
+	@cd ${WRKSRC} && ${CP} ${i} ${WWWDIR}/
 .endfor
 .for d in docs extras htdocs upgrade
-	@cd ${WRKDIR} && ${COPYTREE_SHARE} ${d} ${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${WWWDIR}
 .endfor
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${CHMOD} -R 755 ${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} 755 -R ${WWWDIR}' \
+	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${WWWDIR}' \
 		>> ${TMPPLIST}
 
 post-install:
