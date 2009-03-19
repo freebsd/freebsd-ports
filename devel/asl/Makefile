@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	devel/lang/assemblers
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Assembler for a variety of microcontrollers/-processors
 
-ONLY_FOR_ARCHS=	i386 alpha
+ONLY_FOR_ARCHS=	i386 alpha amd64
 
 MAN1=	asl.1 p2bin.1 p2hex.1 pbind.1 plist.1
 
