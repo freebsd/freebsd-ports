@@ -1,17 +1,18 @@
-# New ports collection makefile for:	linuxdcpp
+# New ports collection makefile for:	LinuxDC++
 # Date created:				19 June 2005
-# Whom:					Mezz <mezz@FreeBSD.org>
+# Whom:					Jeremy Messenger <mezz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	linuxdcpp
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	net-p2p
-MASTER_SITES=	BERLIOS
+MASTER_SITES=	${MASTER_SITE_LOCAL} http://freebsd.nsu.ru/distfiles/
+MASTER_SITE_SUBDIR=	danfe
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A port of the win32 DC++ direct connect client to POSIX-like systems
+COMMENT=	A port of the DC++ direct connect client to POSIX-like systems
 
 USE_BZIP2=	yes
 USE_GNOME=	libglade2
