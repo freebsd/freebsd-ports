@@ -33,6 +33,7 @@ lib/gcstar/GCImport/GCImportFolder.pm
 lib/gcstar/GCImport/GCImportGCfilms.pm
 lib/gcstar/GCImport/GCImportGCstar.pm
 lib/gcstar/GCImport/GCImportList.pm
+lib/gcstar/GCImport/GCImportMyMovies.pm
 lib/gcstar/GCImport/GCImportTarGz.pm
 lib/gcstar/GCImport/GCImportTellico.pm
 lib/gcstar/GCItemsLists.pm
@@ -325,6 +326,28 @@ lib/gcstar/GCLang/IT/GCModels/GCmusics.pm
 lib/gcstar/GCLang/IT/GCModels/GCwines.pm
 lib/gcstar/GCLang/IT/GCstar.pm
 lib/gcstar/GCLang/IT/README.txt
+lib/gcstar/GCLang/NL/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/NL/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/NL/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/NL/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/NL/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/NL/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/NL/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/NL/GCImport/GCImportFolder.pm
+lib/gcstar/GCLang/NL/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/NL/GCImport/GCImportList.pm
+lib/gcstar/GCLang/NL/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/NL/GCModels/GCTVepisodes.pm
+lib/gcstar/GCLang/NL/GCModels/GCTVseries.pm
+lib/gcstar/GCLang/NL/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/NL/GCModels/GCbooks.pm
+lib/gcstar/GCLang/NL/GCModels/GCcoins.pm
+lib/gcstar/GCLang/NL/GCModels/GCcomics.pm
+lib/gcstar/GCLang/NL/GCModels/GCfilms.pm
+lib/gcstar/GCLang/NL/GCModels/GCgames.pm
+lib/gcstar/GCLang/NL/GCModels/GCmusics.pm
+lib/gcstar/GCLang/NL/GCModels/GCwines.pm
+lib/gcstar/GCLang/NL/GCstar.pm
 lib/gcstar/GCLang/PL/GCExport/GCExportCSV.pm
 lib/gcstar/GCLang/PL/GCExport/GCExportHTML.pm
 lib/gcstar/GCLang/PL/GCExport/GCExportSQL.pm
@@ -514,6 +537,8 @@ lib/gcstar/GCModels/GCfilms.gcm
 lib/gcstar/GCModels/GCgames.gcm
 lib/gcstar/GCModels/GCmusics.gcm
 lib/gcstar/GCModels/GCwines.gcm
+lib/gcstar/GCModule.pm
+lib/gcstar/GCModule/GCModuleFirst.pm
 lib/gcstar/GCOptions.pm
 lib/gcstar/GCPanel.pm
 lib/gcstar/GCPlugins.pm
@@ -551,9 +576,11 @@ lib/gcstar/GCPlugins/GCbooks/GCMareno.pm
 lib/gcstar/GCPlugins/GCbooks/GCMediabooks.pm
 lib/gcstar/GCPlugins/GCbooks/GCMerlin.pm
 lib/gcstar/GCPlugins/GCbooks/GCNUKat.pm
+lib/gcstar/GCPlugins/GCbooks/GCNooSFere.pm
 lib/gcstar/GCPlugins/GCbooks/GCbooksAdlibrisCommon.pm
 lib/gcstar/GCPlugins/GCbooks/GCbooksAmazonCommon.pm
 lib/gcstar/GCPlugins/GCbooks/GCbooksCommon.pm
+lib/gcstar/GCPlugins/GCcomics/GCbedetheque.pm
 lib/gcstar/GCPlugins/GCcomics/GCcomicbookdb.pm
 lib/gcstar/GCPlugins/GCcomics/GCcomicsCommon.pm
 lib/gcstar/GCPlugins/GCfilms/GCAlapage.pm
@@ -606,6 +633,7 @@ lib/gcstar/GCPlugins/GCgames/GCJeuxVideoCom.pm
 lib/gcstar/GCPlugins/GCgames/GCJeuxVideoFr.pm
 lib/gcstar/GCPlugins/GCgames/GCLudus.pm
 lib/gcstar/GCPlugins/GCgames/GCMobyGames.pm
+lib/gcstar/GCPlugins/GCgames/GCTheLegacy.pm
 lib/gcstar/GCPlugins/GCgames/GCgamesAmazonCommon.pm
 lib/gcstar/GCPlugins/GCgames/GCgamesCommon.pm
 lib/gcstar/GCPlugins/GCmusics/GCDiscogs.pm
@@ -617,6 +645,7 @@ lib/gcstar/GCStyle.pm
 lib/gcstar/GCUpdater.pm
 lib/gcstar/GCUtils.pm
 lib/gcstar/GCWidgets.pm
+share/applications/gcstar.desktop
 %%DATADIR%%/LICENSE
 %%DATADIR%%/genres/EN.genres
 %%DATADIR%%/genres/ES.genres
@@ -642,6 +671,7 @@ lib/gcstar/GCWidgets.pm
 %%DATADIR%%/html_models/GCfilms/Tabs.png
 %%DATADIR%%/html_models/GCfilms/Tian
 %%DATADIR%%/html_models/GCfilms/Tian-Mario
+%%DATADIR%%/html_models/GCfilms/Tian-Mario-Kim
 %%DATADIR%%/html_models/GCfilms/Tian-Mario.png
 %%DATADIR%%/html_models/GCfilms/Tian.png
 %%DATADIR%%/html_models/GCfilms/float
@@ -852,6 +882,10 @@ lib/gcstar/GCWidgets.pm
 %%DATADIR%%/xml_models/GCfilms/DVDProfiler
 %%DATADIR%%/xslt/applyXSLT.pl
 %%DATADIR%%/xslt/createGCSValidator.xsl
+share/mime/application/gcstar.xml
+share/pixmaps/gcstar.png
+@dirrmtry share/mime/application
+@dirrmtry share/mime
 @dirrm %%DATADIR%%/xslt
 @dirrm %%DATADIR%%/xml_models/GCfilms
 @dirrm %%DATADIR%%/xml_models
@@ -916,6 +950,7 @@ lib/gcstar/GCWidgets.pm
 @dirrm %%DATADIR%%/helpers
 @dirrm %%DATADIR%%/genres
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrm lib/gcstar/GCPlugins/GCstar
 @dirrm lib/gcstar/GCPlugins/GCmusics
 @dirrm lib/gcstar/GCPlugins/GCgames
@@ -925,6 +960,7 @@ lib/gcstar/GCWidgets.pm
 @dirrm lib/gcstar/GCPlugins/GCboardgames
 @dirrm lib/gcstar/GCPlugins/GCTVepisodes
 @dirrm lib/gcstar/GCPlugins
+@dirrm lib/gcstar/GCModule
 @dirrm lib/gcstar/GCModels
 @dirrm lib/gcstar/GCLang/UK/GCModels
 @dirrm lib/gcstar/GCLang/UK/GCImport
@@ -958,6 +994,10 @@ lib/gcstar/GCWidgets.pm
 @dirrm lib/gcstar/GCLang/PL/GCImport
 @dirrm lib/gcstar/GCLang/PL/GCExport
 @dirrm lib/gcstar/GCLang/PL
+@dirrm lib/gcstar/GCLang/NL/GCModels
+@dirrm lib/gcstar/GCLang/NL/GCImport
+@dirrm lib/gcstar/GCLang/NL/GCExport
+@dirrm lib/gcstar/GCLang/NL
 @dirrm lib/gcstar/GCLang/IT/GCModels
 @dirrm lib/gcstar/GCLang/IT/GCImport
 @dirrm lib/gcstar/GCLang/IT/GCExport

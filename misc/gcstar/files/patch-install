@@ -1,0 +1,31 @@
+--- install.old	2008-09-15 09:43:39.000000000 +0200
++++ install	2008-09-15 09:44:04.000000000 +0200
+@@ -151,28 +151,6 @@
+ 
+ sub installMenu
+ {
+-	my $home = $ENV{HOME};
+-
+-	if (-w '/usr/share/applications')
+-	{
+-        verbosePrint $lang{InstallCopyDesktop}, '/usr/share/applications';
+-		copy 'share/applications/gcstar.desktop', '/usr/share/applications';
+-	}
+-	else
+-	{
+-        verbosePrint $lang{InstallCopyDesktop}, $home.'/.local/share/applications';
+-		copy 'share/applications/gcstar.desktop', $home.'/.local/share/applications';
+-	}
+-
+-	copy 'share/gcstar/icons/gcstar_48x48.png', '/usr/share/pixmaps/gcstar.png'
+-		if (-w '/usr/share/pixmaps');
+-
+-        copy 'share/applications/gcstar.xml', '/usr/share/mime/packages'
+-		if (-w '/usr/share/mime/packages');
+-
+-        system 'update-desktop-database';
+-        system 'update-mime-database /usr/share/mime';
+-
+ }
+ 
+ sub doInstall

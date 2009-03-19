@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcstar
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.3
 CATEGORIES=	misc
 MASTER_SITES=	http://download.gna.org/gcstar/ \
 		http://djdomics.free.fr/distfiles/
@@ -35,10 +35,17 @@ USE_PERL5_RUN=	yes
 
 NO_BUILD=	yes
 
-post-patch:
-	@${FIND} ${WRKSRC}/ -name '*.orig' -delete
-
 do-install:
+		@${MKDIR} ${PREFIX}/share/mime/application
+		@${MKDIR} ${PREFIX}/share/pixmaps
+		@${MKDIR} ${PREFIX}/share/applications
+		@${FIND} ${WRKSRC}/ -name '*.orig' -delete
 		${PERL} ${WRKSRC}/install --prefix ${PREFIX}
+		${INSTALL_DATA} ${WRKSRC}/share/applications/gcstar.desktop \
+			${PREFIX}/share/applications/gcstar.desktop
+		${INSTALL_DATA} ${WRKSRC}/share/applications/gcstar.xml \
+			${PREFIX}/share/mime/application/gcstar.xml
+		${INSTALL_DATA} ${WRKSRC}/share/gcstar/icons/gcstar_48x48.png \
+			${PREFIX}/share/pixmaps/gcstar.png
 
 .include <bsd.port.mk>
