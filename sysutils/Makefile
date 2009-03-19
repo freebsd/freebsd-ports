@@ -126,6 +126,7 @@
     SUBDIR += cvsweb-converters
     SUBDIR += cw
     SUBDIR += daa2iso
+    SUBDIR += dae
     SUBDIR += daedalus
     SUBDIR += daemontools
     SUBDIR += daemontools53
