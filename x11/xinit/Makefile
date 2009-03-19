@@ -7,6 +7,7 @@
 
 PORTNAME=	xinit
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -19,5 +20,8 @@ PLIST_FILES=	bin/startx bin/xinit lib/X11/xinit/xinitrc
 PLIST_DIRS=	lib/X11/xinit
 
 MAN1=		startx.1 xinit.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|hexdump|/usr/bin/hexdump|' ${WRKSRC}/startx.cpp
 
 .include <bsd.port.mk>
