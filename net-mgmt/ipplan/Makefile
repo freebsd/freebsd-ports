@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipplan
-PORTVERSION=	4.91
+PORTVERSION=	4.91a
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/iptrack
 
