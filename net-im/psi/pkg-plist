@@ -8,7 +8,6 @@ share/icons/hicolor/64x64/apps/psi.png
 %%DATADIR%%/COPYING
 %%DATADIR%%/README
 %%DATADIR%%/certs/README
-%%DATADIR%%/certs/rootcerts.pem
 %%DATADIR%%/certs/startcom_ca.crt
 %%DATADIR%%/certs/startcom_ca_new.crt
 %%DATADIR%%/iconsets/emoticons/default/angry.png

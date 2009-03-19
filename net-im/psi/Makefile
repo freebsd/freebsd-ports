@@ -7,6 +7,7 @@
 
 PORTNAME=	psi
 DISTVERSION=	0.12.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
@@ -14,6 +15,8 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A Qt-based Jabber client
 
 LIB_DEPENDS=	qca.2:${PORTSDIR}/devel/qca
+RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl \
+		qca-gnupg>=2.0.0.b3:${PORTSDIR}/security/qca-gnupg
 
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -23,9 +26,7 @@ QT_COMPONENTS=	corelib dbus gui iconengines imageformats qt3support \
 		qmake_build moc_build rcc_build uic_build
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --qtdir=${LOCALBASE} \
-		--disable-growl --disable-ghbnr
-MAKE_ARGS+=	QTDIR=${QT_PREFIX} \
-		QMAKESPEC=${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
+		--disable-growl --disable-ghbnr --disable-bundled-qca
 
 post-patch:
 #fix build when libzip is installed
