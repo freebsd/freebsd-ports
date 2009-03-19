@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scare
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.7
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/programming/adrift/ \
 		http://www.geocities.com/legion_if/
