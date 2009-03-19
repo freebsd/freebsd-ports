@@ -8,6 +8,7 @@
 
 PORTNAME=	lsof
 PORTVERSION=	4.82C
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.SpringDaemons.com/stas/ \
