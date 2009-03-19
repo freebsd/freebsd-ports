@@ -203,6 +203,7 @@
     SUBDIR += plans
     SUBDIR += plasma-applet-panelspacer
     SUBDIR += plasma-applet-quicklauncher
+    SUBDIR += plasma-applet-simpleweatherforecast
     SUBDIR += plasma-applet-teacooker
     SUBDIR += plasma-applet-yawp
     SUBDIR += plopfolio
