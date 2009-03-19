@@ -1,0 +1,3 @@
+The dae program is used to list all daemon control scripts installed
+within the rc.d system. It may also be used to execute any of these
+scripts with the parameters provided.
