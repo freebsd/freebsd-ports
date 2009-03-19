@@ -1429,6 +1429,7 @@ chapping                        ports/games/chapping
 charmap                         ports/deskutils/charmap
 charva                          ports/devel/charva
 chbg                            ports/graphics/chbg
+check_multi                     ports/net-mgmt/check_multi
 check_snmp_pkgvuln              ports/net-mgmt/check_snmp_pkgvuln
 checkbot                        ports/www/checkbot
 checkdns                        ports/dns/checkdns
@@ -1683,6 +1684,7 @@ concorde                        ports/math/concorde
 condor                          ports/sysutils/condor
 conduit                         ports/deskutils/conduit
 cone                            ports/mail/cone
+confget                         ports/textproc/confget
 configkit                       ports/devel/configkit
 confregdecode                   ports/net-mgmt/confregdecode
 conglomerate                    ports/editors/conglomerate
@@ -5351,6 +5353,7 @@ iftop                           ports/net-mgmt/iftop
 ifxetex                         ports/print/ifxetex
 igal                            ports/www/igal
 iglooftp                        ports/ftp/IglooFTP
+igmpproxy                       ports/net/igmpproxy
 igraph                          ports/math/igraph
 ii                              ports/irc/ii
 iiimf-client-lib                ports/textproc/iiimf-client-lib
@@ -10573,6 +10576,7 @@ p5-DBIx-Abstract                ports/databases/p5-DBIx-Abstract
 p5-DBIx-AnyDBD                  ports/databases/p5-DBIx-AnyDBD
 p5-DBIx-Browse                  ports/databases/p5-DBIx-Browse
 p5-DBIx-Class                   ports/databases/p5-DBIx-Class
+p5-DBIx-Class-AsFdat            ports/databases/p5-DBIx-Class-AsFdat
 p5-DBIx-Class-DigestColumns     ports/databases/p5-DBIx-Class-DigestColumns
 p5-DBIx-Class-DynamicSubclass   ports/databases/p5-DBIx-Class-DynamicSubclass
 p5-DBIx-Class-EncodeColumns     ports/databases/p5-DBIx-Class-EncodeColumns
@@ -14057,6 +14061,7 @@ p5-dbix-abstract                ports/databases/p5-DBIx-Abstract
 p5-dbix-anydbd                  ports/databases/p5-DBIx-AnyDBD
 p5-dbix-browse                  ports/databases/p5-DBIx-Browse
 p5-dbix-class                   ports/databases/p5-DBIx-Class
+p5-dbix-class-asfdat            ports/databases/p5-DBIx-Class-AsFdat
 p5-dbix-class-digestcolumns     ports/databases/p5-DBIx-Class-DigestColumns
 p5-dbix-class-dynamicsubclass   ports/databases/p5-DBIx-Class-DynamicSubclass
 p5-dbix-class-encodecolumns     ports/databases/p5-DBIx-Class-EncodeColumns
@@ -16652,6 +16657,7 @@ pd                              ports/audio/pd
 pdb                             ports/net/pdb
 pdbar                           ports/palm/pdbar
 pdcurses                        ports/devel/pdcurses
+pdcurses-the                    ports/devel/pdcurses-the
 pdf-renderer                    ports/print/pdf-renderer
 pdf2djvu                        ports/converters/pdf2djvu
 pdf2svg                         ports/graphics/pdf2svg
@@ -21023,6 +21029,7 @@ subcommander2                   ports/devel/subcommander2
 subconv                         ports/multimedia/subconv
 sublib                          ports/multimedia/sublib
 subtitlecomposer                ports/multimedia/subtitlecomposer
+subtitlecomposer-kde4           ports/multimedia/subtitlecomposer-kde4
 subtitleeditor                  ports/multimedia/subtitleeditor
 subtitleoffsetmodifier          ports/multimedia/subtitleoffsetmodifier
 subtitleripper                  ports/multimedia/subtitleripper
