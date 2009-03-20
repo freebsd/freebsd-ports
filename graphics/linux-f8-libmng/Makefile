@@ -10,7 +10,7 @@ PORTVERSION=		1.0.9
 CATEGORIES=		graphics linux
 DISTNAME=		${PORTNAME}-${PORTVERSION}-1
 
-MAINTAINER=		mranner@inode.at
+MAINTAINER=		michael@ranner.eu
 COMMENT=		RPM of libmng
 
 USE_LINUX_RPM=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.muquit.com/muquit/software/Count/src/wwwcount2.5/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	mranner@inode.at
+MAINTAINER=	michael@ranner.eu
 COMMENT=	Access counter, clock and date for WWW pages
 
 GNU_CONFIGURE=	yes

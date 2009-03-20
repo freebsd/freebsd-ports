@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.kybs.de/boris/sw/
 
-MAINTAINER=	mranner@inode.at
+MAINTAINER=	michael@ranner.eu
 COMMENT=	A packet filter and firewall log analyzer
 
 USE_GETTEXT=	yes

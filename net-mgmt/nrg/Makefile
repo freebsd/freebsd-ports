@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	ftp://nrg.hep.wisc.edu/pub/src/nrg/ \
 		http://www.ranner.jawa.at/stuff/
 
-MAINTAINER=	mranner@inode.at
+MAINTAINER=	michael@ranner.eu
 COMMENT=	Tool for visualizing network and resource utilization data
 
 BUILD_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool \
