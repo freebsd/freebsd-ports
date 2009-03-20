@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	powermenulet
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	sysutils gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-

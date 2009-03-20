@@ -7,4 +7,6 @@ possible to inspect and reshape both User Interface and model objects at
 runtime through direct manipulation. It comes with a library of layouts
 where each one encapsulate a custom and pluggable UI presentation.
 
+LICENSE: BSD
+
 WWW: http://www.etoile-project.org/

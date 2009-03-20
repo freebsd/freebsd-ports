@@ -8,4 +8,6 @@ arbitrary commands in response to corner activations or mouse gestures, and by
 ScriptServices which allows arbitrary shell or Smalltalk scripts to be invoked
 on the current selection from any GNUstep or Etoile application.
 
+LICENSE: BSD
+
 WWW: http://www.etoile-project.org/

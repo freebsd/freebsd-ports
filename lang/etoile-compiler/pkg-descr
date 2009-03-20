@@ -3,4 +3,6 @@ Pragmatic Smalltalk Compiler
 This is an implementation of Smalltalk designed to run
 on top of an Objective-C runtime.
 
+LICENSE: BSD
+
 WWW: http://www.etoile-project.org/

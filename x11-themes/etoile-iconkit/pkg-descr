@@ -4,4 +4,6 @@ The icon compositing is very useful for the consistency accross a set of icons
 (for example, using the same background) and permit to easily create icon
 families. IconKit icon themes are a complement to Camaelon widget themes.
 
+LICENSE: BSD
+
 WWW: http://www.etoile-project.org/

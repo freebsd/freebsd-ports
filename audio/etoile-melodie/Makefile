@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	melodie
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	audio gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-
@@ -29,8 +29,8 @@ USE_GNUSTEP_LOCAL_LIBS+=	CoreObject:${COREOBJECT_PORT}
 USE_GNUSTEP_LOCAL_LIBS+=	IconKit:${ICONKIT_PORT}
 USE_GNUSTEP_LOCAL_LIBS+=	MediaKit:${MEDIAKIT_PORT}
 USE_GNUSTEP_LOCAL_LIBS+=	EtoileUI:${ETOILE_UI_PORT}
-USE_GNUSTEP_LOCAL_LIBS+=	SmalltalkKit:${SMALLTALKKIT_PORT}
 USE_GNUSTEP_LOCAL_LIBS+=	LanguageKit:${LANGUAGEKIT_PORT}
+USE_GNUSTEP_LOCAL_LIBS+=	SmalltalkSupport:${SMALLTALKKIT_PORT}
 USE_GNUSTEP_LOCAL_LIBS+=	ScriptKit:${SCRIPTKIT_PORT}
 
 WRKSRC=	${WRKDIR}/Etoile-${PORTVERSION}
@@ -41,8 +41,8 @@ COREOBJECT_PORT?=	devel/etoile-coreobject
 ICONKIT_PORT?=		x11-themes/etoile-iconkit
 MEDIAKIT_PORT?=		multimedia/etoile-mediakit
 ETOILE_UI_PORT?=	deskutils/etoile-ui
-SMALLTALKKIT_PORT?=	lang/etoile-smalltalkkit
 LANGUAGEKIT_PORT?=	lang/etoile-languagekit
+SMALLTALKKIT_PORT?=	lang/etoile-smalltalkkit
 SCRIPTKIT_PORT?=	lang/etoile-scriptkit
 
 .include <bsd.port.mk>

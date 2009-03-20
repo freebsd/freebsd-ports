@@ -8,4 +8,6 @@ CoreObject uses the EtoileSerialize framework which, in many cases, allows
 objects and messages to be automatically serialized with no extra code being
 written.
 
+LICENSE: MIT
+
 WWW: http://www.etoile-project.org/

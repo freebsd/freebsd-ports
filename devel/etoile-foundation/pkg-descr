@@ -16,4 +16,6 @@ Two sub-frameworks are bundled with it:
   For example, with XML streams used by the XMPP protocol, the XML is received
   in fragments.
 
+LICENSE: BSD
+
 WWW: http://www.etoile-project.org/
