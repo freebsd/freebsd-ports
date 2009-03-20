@@ -1,9 +1,13 @@
 --- ./src/console_output.c.orig	2008-06-12 04:48:13.000000000 +0400
-+++ ./src/console_output.c	2008-06-15 18:04:23.000000000 +0400
-@@ -44,6 +44,153 @@
++++ ./src/console_output.c	2009-03-20 16:18:03.000000000 +0300
+@@ -44,6 +44,159 @@
  #else
  /* defines & functions for gxine */
  
++#if defined(__FreeBSD__)
++#include <osreldate.h>
++#if __FreeBSD_version < 800067
++
 +/* from src/contrib/cvs/lib/getline.h */
 +#if defined (__GNUC__) || (defined (__STDC__) && __STDC__)
 +#define __PROTO(args) args
@@ -150,6 +154,8 @@
 +}
 +
 +/* getline.c */
++#endif /* __FreeBSD_version */
++#endif /* defined(__FreeBSD__) */
 +
  # include <pthread.h>
  # include <string.h>
