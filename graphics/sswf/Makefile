@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sswf
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.4
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -19,7 +19,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_GNOME=	gnometarget pkgconfig
+USE_GNOME=	pkgconfig
 USE_BISON=	build
 USE_ICONV=	yes
 USE_AUTOTOOLS=	libtool:15
