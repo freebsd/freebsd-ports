@@ -131,7 +131,7 @@
     SUBDIR += pymsn
     SUBDIR += qutim
     SUBDIR += qwit
-    SUBDIR += ruby-xmpp4r
+    SUBDIR += rubygem-xmpp4r
     SUBDIR += sendxmpp
     SUBDIR += sim-im
     SUBDIR += sim-im-devel
