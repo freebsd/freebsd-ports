@@ -6,23 +6,28 @@
 #
 
 PORTNAME=	librelp
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.3
 CATEGORIES=	devel
-MASTER_SITES=	CENKES http://download.rsyslog.com/librelp/
+MASTER_SITES=	http://download.rsyslog.com/librelp/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reliable event logging protocol library
 
+USE_GNOME=	gnomehack pkgconfig
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static
-PLIST_FILES=	include/${PORTNAME}.h lib/${PORTNAME}.so lib/${PORTNAME}.so.0 \
-		lib/${PORTNAME}.la libdata/pkgconfig/relp.pc
+
+PLIST_FILES=	include/${PORTNAME}.h \
+		lib/${PORTNAME}.a lib/${PORTNAME}.la \
+		lib/${PORTNAME}.so lib/${PORTNAME}.so.0 \
+		libdata/pkgconfig/relp.pc
+
 PORT_VERBS=	relp
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^pkgconfigdir =/s|=.*| \
-		= ${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
-	@${ECHO_CMD} "#include <sys/types.h>" >> ${WRKSRC}/src/relp.h
+	@${REINPLACE_CMD} -e '/CFLAGS/s| -g||g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^PTHREADS/s|= .*|= ${PTHREAD_LIBS}|g' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
