@@ -1,26 +1,26 @@
-Local/Library/Frameworks/SmalltalkKit.framework/Headers
-Local/Library/Frameworks/SmalltalkKit.framework/Resources
-Local/Library/Frameworks/SmalltalkKit.framework/SmalltalkKit
-Local/Library/Frameworks/SmalltalkKit.framework/SmalltalkKit.framework
-Local/Library/Frameworks/SmalltalkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/SmalltalkCompiler.h
-Local/Library/Frameworks/SmalltalkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/SmalltalkKit.h
-Local/Library/Frameworks/SmalltalkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/SmalltalkParser.h
-Local/Library/Frameworks/SmalltalkKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/SmalltalkKit.framework/Versions/%%MAJORLIBVERSION%%/SmalltalkKit
-Local/Library/Frameworks/SmalltalkKit.framework/Versions/%%MAJORLIBVERSION%%/libSmalltalkKit.so
-Local/Library/Frameworks/SmalltalkKit.framework/Versions/%%MAJORLIBVERSION%%/libSmalltalkKit.so.%%MAJORLIBVERSION%%
-Local/Library/Frameworks/SmalltalkKit.framework/Versions/%%MAJORLIBVERSION%%/libSmalltalkKit.so.%%LIBVERSION%%
-Local/Library/Frameworks/SmalltalkKit.framework/Versions/Current
-Local/Library/Frameworks/SmalltalkKit.framework/libSmalltalkKit.so
-Local/Library/Headers/SmalltalkKit
-Local/Library/Libraries/libSmalltalkKit.so
-Local/Library/Libraries/libSmalltalkKit.so.%%MAJORLIBVERSION%%
-Local/Library/Libraries/libSmalltalkKit.so.%%LIBVERSION%%
+Local/Library/Bundles/LanguageKit/Smalltalk.language/Resources/Info-gnustep.plist
+Local/Library/Bundles/LanguageKit/Smalltalk.language/Smalltalk
+Local/Library/Bundles/LanguageKit/Smalltalk.language/stamp.make
+Local/Library/Frameworks/SmalltalkSupport.framework/Headers
+Local/Library/Frameworks/SmalltalkSupport.framework/Resources
+Local/Library/Frameworks/SmalltalkSupport.framework/SmalltalkSupport
+Local/Library/Frameworks/SmalltalkSupport.framework/SmalltalkSupport.framework
+Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/SmalltalkSupport
+Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/libSmalltalkSupport.so
+Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/libSmalltalkSupport.so.%%MAJORLIBVERSION2%%
+Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/libSmalltalkSupport.so.%%LIBVERSION2%%
+Local/Library/Frameworks/SmalltalkSupport.framework/Versions/Current
+Local/Library/Frameworks/SmalltalkSupport.framework/libSmalltalkSupport.so
+Local/Library/Headers/SmalltalkSupport
 Local/Library/Libraries/libSmalltalkSupport.so
 Local/Library/Libraries/libSmalltalkSupport.so.%%MAJORLIBVERSION2%%
 Local/Library/Libraries/libSmalltalkSupport.so.%%LIBVERSION2%%
-@dirrm Local/Library/Frameworks/SmalltalkKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
-@dirrm Local/Library/Frameworks/SmalltalkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
-@dirrm Local/Library/Frameworks/SmalltalkKit.framework/Versions/%%MAJORLIBVERSION%%
-@dirrm Local/Library/Frameworks/SmalltalkKit.framework/Versions
-@dirrm Local/Library/Frameworks/SmalltalkKit.framework
+@dirrm Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm Local/Library/Frameworks/SmalltalkSupport.framework/Versions
+@dirrm Local/Library/Frameworks/SmalltalkSupport.framework
+@dirrm Local/Library/Bundles/LanguageKit/Smalltalk.language/Resources
+@dirrm Local/Library/Bundles/LanguageKit/Smalltalk.language
+@dirrm Local/Library/Bundles/LanguageKit

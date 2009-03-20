@@ -10,4 +10,6 @@ abstraction support' means. GNOME System tools backend is an example of such
 library that allows to set various settings (like network related ones) without
 having to pay attention on which operating system Etoile is used.
 
+LICENSE: LGPL2 or later
+
 WWW: http://www.etoile-project.org/

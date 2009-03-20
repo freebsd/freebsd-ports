@@ -13,4 +13,6 @@ log a message when the corner was entered was called:
 $ defaults write Corner CornerScript \
 "CornerDelegate extend [ enterTopLeft [ 'Script called' log. ] ]"
 
+LICENSE: BSD
+
 WWW: http://www.etoile-project.org/

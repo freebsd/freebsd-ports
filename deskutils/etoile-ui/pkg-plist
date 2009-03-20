@@ -2,94 +2,96 @@ Local/Library/Frameworks/EtoileUI.framework/EtoileUI
 Local/Library/Frameworks/EtoileUI.framework/EtoileUI.framework
 Local/Library/Frameworks/EtoileUI.framework/Headers
 Local/Library/Frameworks/EtoileUI.framework/Resources
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/EtoileUI
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/Controls+Etoile.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETApplication.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETBrowserLayout.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETCompatibility.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETComputedLayout.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETContainer+Controller.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETContainer.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETContainers.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETEvent.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETFlowLayout.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETFreeLayout.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETInspecting.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETInspector.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETLayer.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETLayout.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETLayoutItem+Events.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETLayoutItem+Factory.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETLayoutItem+Reflection.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETLayoutItem.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETLayoutItemBuilder.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETLayoutItemGroup+Mutation.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETLayoutItemGroup.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETLayoutLine.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETLineLayout.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETObjectBrowserLayout.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETObjectRegistry+EtoileUI.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETOutlineLayout.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETPaneLayout.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETPaneSwitcherLayout.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETPersistencyController.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETPickboard.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETStackLayout.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETStyle.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETStyleRenderer.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETTableLayout.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETTextEditorLayout.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETView.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETViewModelLayout.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETWindowItem.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/EtoileCompatibility.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/EtoileUI.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/FSBrowserCell.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/GNUstep.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSBezierPathCappedBoxes.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSImage+Etoile.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSImage+NiceScaling.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSObject+EtoileUI.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSView+Etoile.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSWindow+Etoile.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/UKNibOwner.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/UKPluginsRegistry+Icons.h
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/BrowserPrototype.gorm/data.classes
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/BrowserPrototype.gorm/data.info
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/BrowserPrototype.gorm/objects.gorm
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/Inspector.gorm/data.classes
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/Inspector.gorm/data.info
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/Inspector.gorm/objects.gorm
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/OutlinePrototype.gorm/data.classes
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/OutlinePrototype.gorm/data.info
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/OutlinePrototype.gorm/objects.gorm
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/RevertToPanel.gorm/data.classes
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/RevertToPanel.gorm/data.info
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/RevertToPanel.gorm/objects.gorm
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/TablePrototype.gorm/data.classes
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/TablePrototype.gorm/data.info
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/TablePrototype.gorm/objects.gorm
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/ViewModelPrototype.gorm/data.classes
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/ViewModelPrototype.gorm/data.info
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/ViewModelPrototype.gorm/objects.gorm
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/libEtoileUI.so
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/libEtoileUI.so.%%LIBVERSION%%
-Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/libEtoileUI.so.%%MAJORLIBVERSION%%
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/EtoileUI
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/Controls+Etoile.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETApplication.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETBrowserLayout.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETCompatibility.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETComputedLayout.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETContainer+Controller.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETContainer.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETContainers.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETEvent.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETFlowLayout.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETFreeLayout.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETGeometry.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETInspecting.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETInspector.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETLayer.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETLayout.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETLayoutItem+Events.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETLayoutItem+Factory.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETLayoutItem+Reflection.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETLayoutItem.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETLayoutItemBuilder.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETLayoutItemGroup+Mutation.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETLayoutItemGroup.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETLayoutLine.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETLineLayout.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETObjectBrowserLayout.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETObjectRegistry+EtoileUI.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETOutlineLayout.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETPaneLayout.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETPaneSwitcherLayout.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETPersistencyController.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETPickboard.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETShape.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETStackLayout.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETStyle.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETStyleRenderer.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETTableLayout.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETTextEditorLayout.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETView.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETViewModelLayout.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/ETWindowItem.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/EtoileCompatibility.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/EtoileUI.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/FSBrowserCell.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/GNUstep.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/NSBezierPathCappedBoxes.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/NSImage+Etoile.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/NSImage+NiceScaling.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/NSObject+EtoileUI.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/NSView+Etoile.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/NSWindow+Etoile.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/UKNibOwner.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers/UKPluginsRegistry+Icons.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/BrowserPrototype.gorm/data.classes
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/BrowserPrototype.gorm/data.info
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/BrowserPrototype.gorm/objects.gorm
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/Inspector.gorm/data.classes
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/Inspector.gorm/data.info
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/Inspector.gorm/objects.gorm
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/OutlinePrototype.gorm/data.classes
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/OutlinePrototype.gorm/data.info
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/OutlinePrototype.gorm/objects.gorm
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/RevertToPanel.gorm/data.classes
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/RevertToPanel.gorm/data.info
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/RevertToPanel.gorm/objects.gorm
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/TablePrototype.gorm/data.classes
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/TablePrototype.gorm/data.info
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/TablePrototype.gorm/objects.gorm
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/ViewModelPrototype.gorm/data.classes
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/ViewModelPrototype.gorm/data.info
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/ViewModelPrototype.gorm/objects.gorm
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/libEtoileUI.so
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/libEtoileUI.so.%%VERSION%%
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/libEtoileUI.so.%%MAJORVERSION%%
 Local/Library/Frameworks/EtoileUI.framework/Versions/Current
 Local/Library/Frameworks/EtoileUI.framework/libEtoileUI.so
 Local/Library/Headers/EtoileUI
 Local/Library/Libraries/libEtoileUI.so
-Local/Library/Libraries/libEtoileUI.so.%%MAJORLIBVERSION%%
-Local/Library/Libraries/libEtoileUI.so.%%LIBVERSION%%
-@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/ViewModelPrototype.gorm
-@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/TablePrototype.gorm
-@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/RevertToPanel.gorm
-@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/OutlinePrototype.gorm
-@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/Inspector.gorm
-@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/BrowserPrototype.gorm
-@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources
-@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers
-@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%
+Local/Library/Libraries/libEtoileUI.so.%%MAJORVERSION%%
+Local/Library/Libraries/libEtoileUI.so.%%VERSION%%
+@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/ViewModelPrototype.gorm
+@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/TablePrototype.gorm
+@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/RevertToPanel.gorm
+@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/OutlinePrototype.gorm
+@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/Inspector.gorm
+@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources/BrowserPrototype.gorm
+@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORVERSION%%
 @dirrm Local/Library/Frameworks/EtoileUI.framework/Versions
 @dirrm Local/Library/Frameworks/EtoileUI.framework

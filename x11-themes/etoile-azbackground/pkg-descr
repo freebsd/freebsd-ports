@@ -2,4 +2,6 @@ A small GNUstep application to set xwindow background.
 AZBackground allows drawing on root window.
 It treats root window as a NSWindow.
 
+LICENSE: BSD
+
 WWW: http://www.etoile-project.org/

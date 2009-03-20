@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scriptkit
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	lang gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-

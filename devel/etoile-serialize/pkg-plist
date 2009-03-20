@@ -19,13 +19,13 @@ Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Hea
 Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
 Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/libEtoileSerialize.so
 Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/libEtoileSerialize.so.%%MAJORVERSION%%
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/libEtoileSerialize.so.%%LIBVERSION%%
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/libEtoileSerialize.so.%%VERSION%%
 Local/Library/Frameworks/EtoileSerialize.framework/Versions/Current
 Local/Library/Frameworks/EtoileSerialize.framework/libEtoileSerialize.so
 Local/Library/Headers/EtoileSerialize
 Local/Library/Libraries/libEtoileSerialize.so
 Local/Library/Libraries/libEtoileSerialize.so.%%MAJORVERSION%%
-Local/Library/Libraries/libEtoileSerialize.so.%%LIBVERSION%%
+Local/Library/Libraries/libEtoileSerialize.so.%%VERSION%%
 @dirrm Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Resources
 @dirrm Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers
 @dirrm Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%

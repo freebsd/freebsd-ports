@@ -7,4 +7,6 @@ level should allow us to scale from PDA to computer environment.
 
 This package installs the Camaelon bundle, the theme engine for GNUstep.
 
+LICENSE: LGPL2 or later
+
 WWW: http://www.etoile-project.org/

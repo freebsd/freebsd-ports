@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	idle
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	x11 gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-

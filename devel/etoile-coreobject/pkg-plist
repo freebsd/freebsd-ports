@@ -27,13 +27,13 @@ Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/
 Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
 Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/libCoreObject.so
 Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/libCoreObject.so.%%MAJORVERSION%%
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/libCoreObject.so.%%LIBVERSION%%
+Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/libCoreObject.so.%%VERSION%%
 Local/Library/Frameworks/CoreObject.framework/Versions/Current
 Local/Library/Frameworks/CoreObject.framework/libCoreObject.so
 Local/Library/Headers/CoreObject
 Local/Library/Libraries/libCoreObject.so
 Local/Library/Libraries/libCoreObject.so.%%MAJORVERSION%%
-Local/Library/Libraries/libCoreObject.so.%%LIBVERSION%%
+Local/Library/Libraries/libCoreObject.so.%%VERSION%%
 @dirrm Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Resources
 @dirrm Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers
 @dirrm Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%
