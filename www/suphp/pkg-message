@@ -44,3 +44,16 @@ Since suPHP 0.6.x, you should use the following:
 Otherwise, Apache will begin serving PHP files as downloadable
 content, rather than parse them with the PHP interpreter.
 -----------------------------------------------------------------
+
+-----------------------------------------------------------------
+For those versions upgraded from 0.6.x to 0.7.x. There are some
+new features and changes for the configuration file:
+
+    - Multiple path (with patterns) & variable substitution
+      support for docroots
+    - Double-quoted strings at section '[handlers]'
+      ex. application/x-httpd-php="php:/usr/local/bin/php-cgi"
+
+These changes may lead to internal server error if without
+modifications of the configuration file from previous version.
+-----------------------------------------------------------------
