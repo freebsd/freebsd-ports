@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	FLV-Info
-PORTVERSION=	0.22
+PORTVERSION=	0.24
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CD/CDOLAN
@@ -38,6 +38,7 @@ MAN3=		FLV::File.3 \
 		FLV::Base.3 \
 		FLV::Body.3 \
 		FLV::Tag.3 \
-		FLV::AudioTag.3
+		FLV::AudioTag.3 \
+		FLV::Splice.3
 
 .include <bsd.port.mk>

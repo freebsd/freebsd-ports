@@ -15,6 +15,7 @@ bin/swf2flv
 %%SITE_PERL%%/FLV/Header.pm
 %%SITE_PERL%%/FLV/Info.pm
 %%SITE_PERL%%/FLV/MetaTag.pm
+%%SITE_PERL%%/FLV/Splice.pm
 %%SITE_PERL%%/FLV/Tag.pm
 %%SITE_PERL%%/FLV/ToMP3.pm
 %%SITE_PERL%%/FLV/ToSWF.pm
