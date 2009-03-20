@@ -202,6 +202,7 @@
     SUBDIR += planner.el
     SUBDIR += plans
     SUBDIR += plasma-applet-panelspacer
+    SUBDIR += plasma-applet-playwolf
     SUBDIR += plasma-applet-quicklauncher
     SUBDIR += plasma-applet-simpleweatherforecast
     SUBDIR += plasma-applet-teacooker
