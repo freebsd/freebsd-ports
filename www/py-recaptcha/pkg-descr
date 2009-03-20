@@ -1,0 +1,8 @@
+Provides a CAPTCHA for Python using the reCAPTCHA service. Does not require
+any imaging libraries because the CAPTCHA is served directly from reCAPTCHA.
+Also allows you to securely obfuscate emails with Mailhide. This functionality
+requires pycrypto. This library requires two types of API keys. If you'd like
+to use the CAPTCHA, you'll need a key from http://recaptcha.net/api/getkey.
+For Mailhide, you'll need a key from http://mailhide.recaptcha.net/apikey.
+
+WWW: http://cheeseshop.python.org/pypi/recaptcha-client

@@ -1274,6 +1274,7 @@
     SUBDIR += py-qp
     SUBDIR += py-qpy
     SUBDIR += py-qt4-webkit
+    SUBDIR += py-recaptcha
     SUBDIR += py-restclient
     SUBDIR += py-routes
     SUBDIR += py-scgi
