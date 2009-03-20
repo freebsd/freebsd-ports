@@ -186,7 +186,10 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fermi.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/filegraph.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/filegraph.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/filesurface.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/filesurface.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fillcontour.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fin.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fjortoft.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/floor.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/flow.asy
