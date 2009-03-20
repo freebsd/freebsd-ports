@@ -1,4 +1,4 @@
-www/piwik/LICENSE
+%%WWWDIR%%/LICENSE
 %%WWWDIR%%/README
 %%WWWDIR%%/config/config.ini.sample.php
 %%WWWDIR%%/config/global.ini.php
