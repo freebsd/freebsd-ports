@@ -715,7 +715,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>thunderbird</name>
 	<name>linux-thunderbird</name>
-	<range><lt>2.0.0.19_1</lt></range>
+	<range><lt>2.0.0.21</lt></range>
       </package>
     </affects>
     <description>
@@ -751,7 +751,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-02-04</discovery>
       <entry>2009-02-11</entry>
-      <modified>2009-02-23</modified>
+      <modified>2009-03-20</modified>
     </dates>
   </vuln>
 
