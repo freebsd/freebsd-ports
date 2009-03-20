@@ -7,7 +7,7 @@
 
 PORTNAME=	ace
 PORTVERSION=	5.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
@@ -39,16 +39,16 @@ MAN1=		ace-gperf.1
 EXTRA_PATCHES=	${FILESDIR}/extra-ace-OS_NS_netdb.inl
 .endif
 
-.if ${OSVERSION} >= 800024
-BROKEN=		does not compile
-.endif
-
 post-extract:
 	@${MKDIR} ${BUILD_WRKSRC}
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|@libdir@/pkgconfig|@prefix@/libdata/pkgconfig|g'
+.if ${OSVERSION} >= 800024
+	@${REINPLACE_CMD} -e 's|cpu_set_t|cpuset_t|g' ${WRKSRC}/ace/OS_NS_Thread.cpp \
+		${WRKSRC}/ace/OS_NS_Thread.h
+.endif
 
 do-configure:
 	@(cd ${BUILD_WRKSRC} && \

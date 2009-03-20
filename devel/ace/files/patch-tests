@@ -1,0 +1,25 @@
+
+--- tests/Proactor_Test.cpp.orig	2006-04-20 00:41:47.000000000 -0700
++++ tests/Proactor_Test.cpp	2008-12-01 11:00:05.000000000 -0800
+@@ -253,7 +253,7 @@
+       break;
+ #  endif /* sun */
+ 
+-#  if !defined(__Lynx__)
++#  if !defined(__Lynx__) && !defined (__FreeBSD__)
+     case CB:
+       ACE_NEW_RETURN (proactor_impl,
+                       ACE_POSIX_CB_Proactor (max_op),
+--- tests/Proactor_Test_IPV6.cpp.orig	2006-04-20 00:41:47.000000000 -0700
++++ tests/Proactor_Test_IPV6.cpp	2008-12-01 17:40:59.000000000 -0800
+@@ -253,7 +253,7 @@
+       break;
+ #  endif /* sun */
+ 
+-#  if !defined(__Lynx__)
++#  if !defined(__Lynx__) && !defined(__FreeBSD__)
+     case CB:
+       ACE_NEW_RETURN (proactor_impl,
+                       ACE_POSIX_CB_Proactor (max_op),
+
+
