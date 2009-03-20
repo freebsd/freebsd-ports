@@ -2,9 +2,11 @@ bin/ufo
 %%UFOSERVER%%bin/ufoded
 %%UFO2MAP%%bin/ufo2map
 lib/ufoai/base/game.so
+lib/ufoai/base/irc_motd.txt
 lib/ufoai/base/i18n/cs/LC_MESSAGES/ufoai.mo
 lib/ufoai/base/i18n/da/LC_MESSAGES/ufoai.mo
 lib/ufoai/base/i18n/de/LC_MESSAGES/ufoai.mo
+lib/ufoai/base/i18n/el/LC_MESSAGES/ufoai.mo
 lib/ufoai/base/i18n/en/LC_MESSAGES/ufoai.mo
 lib/ufoai/base/i18n/es/LC_MESSAGES/ufoai.mo
 lib/ufoai/base/i18n/es_ES/LC_MESSAGES/ufoai.mo
@@ -63,6 +65,8 @@ lib/ufoai/base/ufos
 @dirrm lib/ufoai/base/i18n/es_ES
 @dirrm lib/ufoai/base/i18n/en/LC_MESSAGES
 @dirrm lib/ufoai/base/i18n/en
+@dirrm lib/ufoai/base/i18n/el/LC_MESSAGES
+@dirrm lib/ufoai/base/i18n/el
 @dirrm lib/ufoai/base/i18n/de/LC_MESSAGES
 @dirrm lib/ufoai/base/i18n/de
 @dirrm lib/ufoai/base/i18n/da/LC_MESSAGES
