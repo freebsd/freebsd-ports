@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysqltuner
-PORTVERSION=	0.9.9
+PORTVERSION=	1.0.0
 CATEGORIES=	databases
 MASTER_SITES=	http://mysqltuner.com/releases/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.pl
