@@ -28,6 +28,8 @@ SCONS_BUILDENV=	PYTHON_LIB=${PYTHON_VERSION}
 USE_SDL=	sdl net
 WRKSRC=		${WRKDIR}/${PORTNAME}/FreeOrion
 
+BROKEN=		does not compile with new graphviz
+
 .if defined(WITH_DEBUG)
 SCONS_ARGS+=	debug=1
 .else
