@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	aria2
-DISTVERSION=	0.16.2
+DISTVERSION=	1.2.0
 CATEGORIES=	www
 MASTER_SITES=	SFE
-DISTNAME=	${PORTNAME}c-${DISTVERSION}
+DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Yet another download tool
@@ -29,7 +29,7 @@ LINGUAS=	bg ca da de es en@boldquot en@quot el fi fr he hu id it ja nl nn pl pt_
 		sr th tr uk vi zh_CN zh_TW
 .endif
 PLIST_FILES=	bin/aria2c \
-		${LINGUAS:S|^|share/locale/|:S|$|/LC_MESSAGES/aria2c.mo|}
+		${LINGUAS:S|^|share/locale/|:S|$|/LC_MESSAGES/aria2.mo|}
 MAN1=		aria2c.1
 
 .include <bsd.port.pre.mk>
