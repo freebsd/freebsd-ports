@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	yawp
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	deskutils kde
-MASTER_SITES=	http://marian.kyralovi.cz/data/${PORTNAME}/
+MASTER_SITES=	SF
 PKGNAMEPREFIX=	plasma-applet-
 
 MAINTAINER=	bsdkaffee@gmail.com
