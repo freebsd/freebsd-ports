@@ -24,6 +24,12 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
+BROKEN=		does not compile on FreeBSD/amd64 6.X
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 	    ${WRKSRC}/configure
@@ -31,4 +37,4 @@ post-patch:
 post-install:
 	@${RM} -f ${PREFIX}/lib/libeasysoap.la
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
