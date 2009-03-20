@@ -30,4 +30,8 @@ DEFAULT_LIBVERSION2=	0.1
 PLIST_SUB+=	LIBVERSION2=${DEFAULT_LIBVERSION2}
 PLIST_SUB+=	MAJORLIBVERSION2=${DEFAULT_LIBVERSION2:C/([0-9]).*/\1/1}
 
+do-configure:
+	${REINPLACE_CMD} -e 's|ADDITIONAL_OBJCFLAGS += -march=i586||' \
+		${WRKSRC}/Frameworks/EtoileFoundation/GNUmakefile
+
 .include <bsd.port.mk>
