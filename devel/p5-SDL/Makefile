@@ -96,7 +96,7 @@ post-install:
 		PERL_THREADED=`${PERL} -V | ${GREP} -- -Dusethreads=y || ${TRUE}`; \
 		if [ -z ${PERL_THREADED} ]; then \
 			${ECHO_MSG} "SDL_PERL must be built with a threaded Perl, reinstall Perl with WITH_THREADS=yes"; \
-			${ECHO_MSG} "or lunch any program that use this port with LD_PRELOAD=/usr/lib/libc_r.so"; \
+			${ECHO_MSG} "or launch any program that use this port with LD_PRELOAD=/usr/lib/libc_r.so"; \
 		fi; \
 	fi
  
