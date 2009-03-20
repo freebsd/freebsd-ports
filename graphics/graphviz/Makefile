@@ -424,6 +424,7 @@ post-install: install-ldconfig-file
 .	endfor
 	cd ${DOCSDIR}/pdf && ${LN} -fs gxl2dot.pdf dot2gxl.pdf
 .endif
+.if !defined(NOPORTEXAMPLES)
 	@${ECHO_MSG} "Installing demo data..."
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} \
@@ -444,5 +445,6 @@ post-install: install-ldconfig-file
 	${INSTALL_DATA} \
 		${WRKSRC}/tclpkg/tclpathplan/demo/pathplan_data/*.dat \
 		${EXAMPLESDIR}/pathplan_data/
+.endif
 
 .include <bsd.port.post.mk>

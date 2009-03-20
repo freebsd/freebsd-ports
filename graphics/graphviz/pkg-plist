@@ -374,28 +374,28 @@ libdata/pkgconfig/libgvc.pc
 %%PORTDOCS%%%%DOCSDIR%%/cpl1.0.txt
 %%PORTDOCS%%%%DOCSDIR%%/Dot.ref
 %%PORTDOCS%%%%DOCSDIR%%/latex_suggestions.txt
-%%EXAMPLESDIR%%/entities.tcl
-%%EXAMPLESDIR%%/entities.tcl.README
-%%EXAMPLESDIR%%/doted.tcl
-%%EXAMPLESDIR%%/doted.tcl.README
-%%EXAMPLESDIR%%/gcat.tcl
-%%EXAMPLESDIR%%/gcat.tcl.README
-%%EXAMPLESDIR%%/pathplan_data/boxes.dat
-%%EXAMPLESDIR%%/pathplan_data/dpd.dat
-%%EXAMPLESDIR%%/pathplan_data/funny.dat
-%%EXAMPLESDIR%%/pathplan_data/maze.dat
-%%EXAMPLESDIR%%/pathplan_data/nested.dat
-%%EXAMPLESDIR%%/pathplan_data/northo.dat
-%%EXAMPLESDIR%%/pathplan_data/obs.dat
-%%EXAMPLESDIR%%/pathplan_data/other.dat
-%%EXAMPLESDIR%%/pathplan_data/paths.dat
-%%EXAMPLESDIR%%/pathplan_data/rotor.dat
-%%EXAMPLESDIR%%/pathplan_data/u.dat
-%%EXAMPLESDIR%%/pathplan_data/unknown.dat
-%%EXAMPLESDIR%%/pathplan.tcl
-%%EXAMPLESDIR%%/pathplan.tcl.README
-%%EXAMPLESDIR%%/spline.tcl
-%%EXAMPLESDIR%%/spline.tcl.README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/entities.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/entities.tcl.README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/doted.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/doted.tcl.README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gcat.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gcat.tcl.README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathplan_data/boxes.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathplan_data/dpd.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathplan_data/funny.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathplan_data/maze.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathplan_data/nested.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathplan_data/northo.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathplan_data/obs.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathplan_data/other.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathplan_data/paths.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathplan_data/rotor.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathplan_data/u.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathplan_data/unknown.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathplan.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathplan.tcl.README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spline.tcl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spline.tcl.README
 %%WITH_LUA%%%%DATADIR%%/demo/modgraph.lua
 %%WITH_PERL%%%%DATADIR%%/demo/modgraph.pl
 %%WITH_PHP%%%%DATADIR%%/demo/modgraph.php
@@ -568,8 +568,8 @@ libdata/pkgconfig/libgvc.pc
 @dirrm %%DATADIR%%/lefty
 @dirrm %%DATADIR%%/smyrna
 @dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%/pathplan_data
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pathplan_data
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
