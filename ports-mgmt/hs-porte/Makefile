@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	porte
-PORTVERSION=	0.0.2.1
+PORTVERSION=	0.0.3
 CATEGORIES=	ports-mgmt haskell
-MASTER_SITES=	http://kerneled.org/releases/
+MASTER_SITES=	http://carte.repnop.org/releases/
 
 MAINTAINER=	sbahra@kerneled.org
 COMMENT=	FreeBSD ports index search and statistical analysis tool
