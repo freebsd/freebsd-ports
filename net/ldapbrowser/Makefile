@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.mcs.anl.gov/~gawor/ldapcommon/bin/ \
 		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}/sources/
 DISTNAME=	Browser282b2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ronald@echteman.nl
 COMMENT=	Java/Swing-based LDAP Browser/Editor
 
 RESTRICTED=	No reply from author regarding redistribution licensing
