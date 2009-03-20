@@ -1,6 +1,6 @@
---- ./Makefile.orig	Wed Apr 25 22:23:20 2007
-+++ ./Makefile	Wed Apr 25 22:24:00 2007
-@@ -135,14 +135,12 @@
+--- Makefile.orig	2008-10-24 10:50:41.000000000 +0200
++++ Makefile	2009-03-04 11:19:34.000000000 +0100
+@@ -135,14 +135,9 @@
  print : Lhs2TeX.dvi
  	$(DVIPS) -D600 -f Lhs2TeX.dvi | lpr -Pa -Zl
  
@@ -8,22 +8,27 @@
 +install : bin
  	$(MKINSTDIR) $(DESTDIR)$(bindir)
  	$(INSTALL) -m 755 lhs2TeX $(DESTDIR)$(bindir)
- 	$(MKINSTDIR) $(DESTDIR)$(stydir)
- 	$(INSTALL) -m 644 lhs2TeX.sty lhs2TeX.fmt $(DESTDIR)$(stydir)
- 	$(INSTALL) -m 644 Library/*.fmt $(DESTDIR)$(stydir)
+-	$(MKINSTDIR) $(DESTDIR)$(stydir)
+-	$(INSTALL) -m 644 lhs2TeX.sty lhs2TeX.fmt $(DESTDIR)$(stydir)
+-	$(INSTALL) -m 644 Library/*.fmt $(DESTDIR)$(stydir)
 -	$(MKINSTDIR) $(DESTDIR)$(docdir)
 -	$(INSTALL) -m 644 doc/Guide2.pdf $(DESTDIR)$(docdir)
  	$(MKINSTDIR) $(DESTDIR)$(mandir)/man1
  	$(INSTALL) -m 644 lhs2TeX.1 $(DESTDIR)$(mandir)/man1
  ifeq ($(INSTALL_POLYTABLE),yes)
-@@ -157,6 +155,10 @@
- else
+@@ -158,6 +153,15 @@
  	echo "Please update the TeX filename database."
  endif
-+
+ 
 +install-doc : doc
 +	$(MKINSTDIR) $(DESTDIR)$(docdir)
 +	$(INSTALL) -m 644 doc/Guide2.pdf $(DESTDIR)$(docdir)
- 
++
++install-data : bin
++	$(MKINSTDIR) $(DESTDIR)$(stydir)
++	$(INSTALL) -m 644 lhs2TeX.sty lhs2TeX.fmt $(DESTDIR)$(stydir)
++	$(INSTALL) -m 644 Library/*.fmt $(DESTDIR)$(stydir)
++
  srcdist : INSTALL doc
  	if test -d $(DISTDIR); then $(RM) -rf $(DISTDIR); fi
+ 	$(MKINSTDIR) $(DISTDIR)
