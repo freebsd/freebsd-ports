@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libofx
-PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTVERSION=	0.9.1
 CATEGORIES=	finance
 MASTER_SITES=	SF
 
@@ -18,10 +17,10 @@ LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
 		xml\\+\\+-1.0.1:${PORTSDIR}/textproc/libxml++ \
 		osp.5:${PORTSDIR}/textproc/opensp
 
-USE_GNOME=	gnometarget
 USE_ICONV=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 libtool:15
+ACLOCAL_ARGS=	-I m4
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-doxygen --disable-dot --disable-gengetopt \
 		--with-opensp-includes=${LOCALBASE}/include/OpenSP
@@ -36,9 +35,7 @@ post-install:
 .for file in AUTHORS ChangeLog INSTALL NEWS README totest.txt
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
-	${TAR} -C ${WRKSRC}/doc -cf - html | \
-		${TAR} -C ${DOCSDIR} --unlink -xf -
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	@(cd ${WRKSRC}/doc; ${COPYTREE_SHARE} html ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
