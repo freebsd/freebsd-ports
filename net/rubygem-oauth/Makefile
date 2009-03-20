@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	oauth
-PORTVERSION=	0.2.7
+PORTVERSION=	0.3.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RF/oauth
-#DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Rubygem for Creating both OAuth Consumers and Service Providers
