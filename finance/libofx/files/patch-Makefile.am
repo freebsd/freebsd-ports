@@ -1,0 +1,34 @@
+--- Makefile.am.orig	2007-10-27 20:28:07.000000000 +0900
++++ Makefile.am	2009-03-16 04:05:45.000000000 +0900
+@@ -1,27 +1,23 @@
+ if BUILD_OFXCONNECT
+        MAYBE_OFXCONNECT = ofxconnect
+ endif
+-SUBDIRS = m4 inc dtd lib doc . ofx2qif ofxdump $(MAYBE_OFXCONNECT)
++SUBDIRS = m4 inc dtd lib . ofx2qif ofxdump $(MAYBE_OFXCONNECT)
+ 
+-docdir = ${prefix}/share/doc/libofx
+-
+-doc_DATA = \
++EXTRA_DIST = \
+   AUTHORS \
+   COPYING \
+   INSTALL \
+   NEWS \
+   README \
+   ChangeLog \
+-  totest.txt
+-
+-EXTRA_DIST = \
++  totest.txt \
+   libofx.spec.in \
+   libofx.spec \
+   libofx.pc \
+   totest.txt \
+   libofx.lsm
+ 
+-pkgconfigdir=$(libdir)/pkgconfig
++pkgconfigdir=$(prefix)/libdata/pkgconfig
+ pkgconfig_DATA=libofx.pc
+ 
+ .PHONY: doc
