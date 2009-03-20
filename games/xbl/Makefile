@@ -6,18 +6,42 @@
 #
 
 PORTNAME=	xbl
-PORTVERSION=	1.1.5
-PORTREVISION=	2
+PORTVERSION=	1.1.6
 CATEGORIES=	games
-MASTER_SITES=	http://www710.univ-lyon1.fr/~exco/XBL/ GENTOO/distfiles
+MASTER_SITES=	http://www710.univ-lyon1.fr/~exco/XBL/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D block-dropping game
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
-
-USE_XORG=	x11 xext
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		ac_cv_prog_IMAKE="" ac_cv_prog_XMKMF=""
+MAKE_ARGS=	USE_SETGID="" \
+		GROUP_GID="" \
+		RESOURCEDIR="${PREFIX}/lib/X11/app-defaults" \
+		BINDIR="${PREFIX}/bin" \
+		SCOREDIR="${PREFIX}/lib/X11/xbl" \
+		MANPATH="${MANPREFIX}/man" \
+		LIBS="-lm -lX11" \
+		LDOPTIONS="${LDFLAGS}"
+
 MAN1=		xbl.1
+
+CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|@CFLA@ -g|@CFLA@|g' ${WRKSRC}/Makefile.in
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/bl ${PREFIX}/bin/xbl
+	${INSTALL_MAN} ${WRKSRC}/xbl.man ${MANPREFIX}/man/man1/xbl.1
+	${INSTALL_DATA} ${WRKSRC}/Xbl.ad ${PREFIX}/lib/X11/app-defaults/Xbl
+	@${MKDIR} ${PREFIX}/lib/X11/xbl
+	${INSTALL_DATA} ${WRKSRC}/Xbl.ad ${PREFIX}/lib/X11/xbl/Xbl
+	${INSTALL_DATA} ${WRKSRC}/*.gif ${PREFIX}/lib/X11/xbl
+	${INSTALL_DATA} ${WRKSRC}/*.html ${PREFIX}/lib/X11/xbl
 
 .include <bsd.port.mk>
