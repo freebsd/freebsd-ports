@@ -1576,6 +1576,7 @@
     SUBDIR += webreport
     SUBDIR += webresolve
     SUBDIR += webserver
+    SUBDIR += webservices
     SUBDIR += websh
     SUBDIR += webstats
     SUBDIR += webstone
