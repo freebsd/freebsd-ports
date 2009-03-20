@@ -1,6 +1,6 @@
+bin/canonical-genetic-algorithm.pl
 bin/tide_bitstring.pl
 bin/tide_float.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Evolutionary/.packlist
 %%SITE_PERL%%/Algorithm/Evolutionary.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Experiment.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Fitness/Base.pm
@@ -12,7 +12,6 @@ bin/tide_float.pl
 %%SITE_PERL%%/Algorithm/Evolutionary/Fitness/Royal_Road.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Fitness/String.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Fitness/wP_Peaks.pm
-%%SITE_PERL%%/Algorithm/Evolutionary/Individual
 %%SITE_PERL%%/Algorithm/Evolutionary/Individual/Base.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Individual/BitString.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Individual/Bit_Vector.pm
@@ -50,15 +49,18 @@ bin/tide_float.pl
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/Storing.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/TournamentSelect.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/TreeMutation.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/Uniform_Crossover.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/VectorCrossover.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Run.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Utils.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Wheel.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/XML.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Evolutionary/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Evolutionary
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/Algorithm/Evolutionary/Op
 @dirrmtry %%SITE_PERL%%/Algorithm/Evolutionary/Individual
 @dirrmtry %%SITE_PERL%%/Algorithm/Evolutionary/Fitness
 @dirrmtry %%SITE_PERL%%/Algorithm/Evolutionary
 @dirrmtry %%SITE_PERL%%/Algorithm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Evolutionary
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
