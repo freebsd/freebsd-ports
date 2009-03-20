@@ -1,0 +1,9 @@
+--- uucp/uuto/uuto.in.orig      2003-06-14 05:04:15.000000000 +0100
++++ uucp/uuto/uuto.in   2009-01-10 09:47:01.000000000 +0000
+@@ -55,4 +55,4 @@
+   *) ;;
+ esac
+
+-exec @BINDIR@/uucp -t -R -c $*
++exec @BINDIR@/uucp -t -R -c "$@"
+
