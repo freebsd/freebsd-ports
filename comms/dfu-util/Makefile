@@ -31,7 +31,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dfu-util ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/dfu-util.1 ${MAN1PREFIX}/man/man1
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.post.mk>
