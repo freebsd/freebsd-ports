@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	lucene
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	textproc java devel
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%,lucene/java,}
 DISTNAME=	lucene-${PORTVERSION}
