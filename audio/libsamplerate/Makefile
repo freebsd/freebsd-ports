@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsamplerate
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.7
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/SRC/
 
@@ -16,9 +16,8 @@ COMMENT=	Secret Rabbit Code: a Sample Rate Converter for audio
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		fftw3.4:${PORTSDIR}/math/fftw3
 
+USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnomehack gnometarget pkgconfig
-GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-gcc-pipe
