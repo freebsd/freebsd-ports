@@ -1959,6 +1959,7 @@ da-aspell                       ports/textproc/da-aspell
 daa2iso                         ports/sysutils/daa2iso
 dact                            ports/archivers/dact
 dadadodo                        ports/textproc/dadadodo
+dae                             ports/sysutils/dae
 daedalus                        ports/sysutils/daedalus
 daemonlogger                    ports/net/daemonlogger
 daemontools                     ports/sysutils/daemontools
@@ -8831,6 +8832,7 @@ multisync-backup                ports/deskutils/multisync-backup
 multisync-syncml                ports/deskutils/multisync-syncml
 multitail                       ports/sysutils/multitail
 multivideo                      ports/graphics/multivideo
+mumble                          ports/audio/mumble
 mummer                          ports/biology/mummer
 mumps                           ports/math/mumps
 mumps-mpich                     ports/math/mumps-mpich
@@ -11046,6 +11048,7 @@ p5-GD                           ports/graphics/p5-GD
 p5-GD-Arrow                     ports/graphics/p5-GD-Arrow
 p5-GD-Barcode                   ports/graphics/p5-GD-Barcode
 p5-GD-Graph                     ports/graphics/p5-GD-Graph
+p5-GD-Graph-histogram           ports/graphics/p5-GD-Graph-histogram
 p5-GD-Graph3d                   ports/graphics/p5-GD-Graph3d
 p5-GD-SVG                       ports/graphics/p5-GD-SVG
 p5-GD-SecurityImage             ports/security/p5-GD-SecurityImage
@@ -14413,6 +14416,7 @@ p5-gd                           ports/graphics/p5-GD
 p5-gd-arrow                     ports/graphics/p5-GD-Arrow
 p5-gd-barcode                   ports/graphics/p5-GD-Barcode
 p5-gd-graph                     ports/graphics/p5-GD-Graph
+p5-gd-graph-histogram           ports/graphics/p5-GD-Graph-histogram
 p5-gd-graph3d                   ports/graphics/p5-GD-Graph3d
 p5-gd-securityimage             ports/security/p5-GD-SecurityImage
 p5-gd-svg                       ports/graphics/p5-GD-SVG
@@ -17792,6 +17796,7 @@ planner.el                      ports/deskutils/planner.el
 plans                           ports/deskutils/plans
 plasma-applet-panelspacer       ports/deskutils/plasma-applet-panelspacer
 plasma-applet-quicklauncher     ports/deskutils/plasma-applet-quicklauncher
+plasma-applet-simpleweatherforecast  ports/deskutils/plasma-applet-simpleweatherforecast
 plasma-applet-teacooker         ports/deskutils/plasma-applet-teacooker
 plasma-applet-yawp              ports/deskutils/plasma-applet-yawp
 plasma-kmod                     ports/graphics/plasma-kmod
@@ -19048,6 +19053,8 @@ qar-bufo                        ports/mail/qar-bufo
 qbittorrent                     ports/net-p2p/qbittorrent
 qbrew                           ports/misc/qbrew
 qca                             ports/devel/qca
+qca-cyrus-sasl                  ports/security/qca-cyrus-sasl
+qca-gnupg                       ports/security/qca-gnupg
 qca-ossl                        ports/security/qca-ossl
 qca-tls                         ports/security/qca-tls
 qcad                            ports/cad/qcad
