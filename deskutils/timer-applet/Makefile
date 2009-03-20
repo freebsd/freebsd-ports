@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	timer-applet
-PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTVERSION=	2.1.2
 CATEGORIES=	deskutils
 MASTER_SITES=	SFE/timerapplet
 
@@ -18,8 +17,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/sounds/gtk-events/clicked.wav:${PORTSDIR}/audio/
 		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
 		${LOCALBASE}/libdata/pkgconfig/notify-python.pc:${PORTSDIR}/devel/py-notify
 
-USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack pygnomedesktop
-USE_PYTHON=	yes
+USE_GNOME=	gnomehack gnomeprefix intlhack pygnomedesktop
+USE_PYTHON=	2.5+
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
