@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	impresscms
-PORTVERSION=	1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}_final
@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_final
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Community Developed Content Management System
 
-USE_PHP=	mysql pcre session iconv xml
+USE_PHP=	mysql pcre session iconv xml gd
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
