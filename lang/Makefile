@@ -57,6 +57,7 @@
     SUBDIR += etoile-compiler
     SUBDIR += etoile-io
     SUBDIR += etoile-languagekit
+    SUBDIR += etoile-lkplugins
     SUBDIR += etoile-scriptkit
     SUBDIR += etoile-smalltalkkit
     SUBDIR += execline
