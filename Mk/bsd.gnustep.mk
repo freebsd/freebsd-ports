@@ -90,6 +90,12 @@
 # USE_GNUSTEP_LOCAL_MENULETS+=	PowerMenulet:sysutils/etoile-powermenulet
 #	depends on Menulets installed in Local directrory
 #
+# USE_GNUSTEP_LOCAL_ASTS+=	CommentToLog:lang/etoile-lkplugins
+#	depends on Ast Bundles installed in Local directrory
+#
+# USE_GNUSTEP_LOCAL_BURNS+=	MP3ToWav:audio/mp3towav-bundle
+#	depends on Burn Bundles installed in Local directrory
+#
 # USE_GNUSTEP_SYSTEM_APPS+=	ProjectCenter:devel/projectcenter.app
 #	depends on Application installed in System directrory
 #
@@ -394,6 +400,26 @@ RUN_DEPENDS+=	${GNUSTEP_LOCAL_BUNDLES}/${_GNUSTEP_DEP:C/:.*//}.themeEngine/${_GN
 .for _GNUSTEP_DEP in ${USE_GNUSTEP_LOCAL_MENULETS}
 BUILD_DEPENDS+=	${GNUSTEP_LOCAL_BUNDLES}/${_GNUSTEP_DEP:C/:.*//}.menulet/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 RUN_DEPENDS+=	${GNUSTEP_LOCAL_BUNDLES}/${_GNUSTEP_DEP:C/:.*//}.menulet/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+.endfor
+.endif
+
+# ---------------------------------------------------------------------------
+# source local asts
+#
+.if defined(USE_GNUSTEP_LOCAL_ASTS)
+.for _GNUSTEP_DEP in ${USE_GNUSTEP_LOCAL_ASTS}
+BUILD_DEPENDS+=	${GNUSTEP_LOCAL_BUNDLES}/LanguageKit/${_GNUSTEP_DEP:C/:.*//}.ast/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${GNUSTEP_LOCAL_BUNDLES}/LanguageKit/${_GNUSTEP_DEP:C/:.*//}.ast/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+.endfor
+.endif
+
+# ---------------------------------------------------------------------------
+# source local burns
+#
+.if defined(USE_GNUSTEP_LOCAL_BURNS)
+.for _GNUSTEP_DEP in ${USE_GNUSTEP_LOCAL_BURNS}
+BUILD_DEPENDS+=	${GNUSTEP_LOCAL_ROOT}/Library/Burn/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
+RUN_DEPENDS+=	${GNUSTEP_LOCAL_ROOT}/Library/Burn/${_GNUSTEP_DEP:C/:.*//}.bundle/${_GNUSTEP_DEP:C/:.*//}:${PORTSDIR}/${_GNUSTEP_DEP:C/.*://}
 .endfor
 .endif
 
