@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090318:
+  AFFECTS: users of www/suphp
+  AUTHOR: yzlin@cs.nctu.edu.tw
+
+  The suPHP port has been upgraded to 0.7.x. This new version of suPHP has
+  some new features and changes for the configuration file:
+
+    - Multiple path (with patterns) & variable substitution support for
+      docroots
+    - Double-quoted strings at section '[handlers]'
+      ex. application/x-httpd-php="php:/usr/local/bin/php-cgi"
+
+  These changes may lead to internal server error if without modifications
+  of the configuration file from previous version.
+
 20090316:
   AFFECTS: users of www/geeklog
   AUTHOR: beat@FreeBSD.org
