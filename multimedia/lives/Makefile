@@ -7,7 +7,7 @@
 
 PORTNAME=	lives
 DISTVERSION=	0.9.8.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xs4all.nl/%7Esalsaman/lives/current/ CENKES
 DISTNAME=	LiVES-${DISTVERSION}
