@@ -25,4 +25,8 @@ PHP_MODNAME=	pdf
 
 CONFIGURE_ARGS=	--with-pdflib=${LOCALBASE}
 
+post-extract:
+	@${ECHO_CMD} "#define PHP_PDFLIB_VERSION \"${PORTVERSION}\"" > \
+		${WRKSRC}/php_pdflib.h
+
 .include <bsd.port.mk>
