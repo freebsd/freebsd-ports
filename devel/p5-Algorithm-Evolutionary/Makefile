@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Algorithm-Evolutionary
-PORTVERSION=	0.64
+PORTVERSION=	0.65
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,7 +27,8 @@ RUN_DEPENDS=	p5-Algorithm-Permute>=0.01:${PORTSDIR}/devel/p5-Algorithm-Permute \
 
 PERL_CONFIGURE=	yes
 
-MAN1=	tide_bitstring.pl.1 tide_float.pl.1
+MAN1=	tide_bitstring.pl.1 tide_float.pl.1 \
+	canonical-genetic-algorithm.pl.1
 MAN3=	Algorithm::Evolutionary.3 \
 	Algorithm::Evolutionary::Experiment.3 \
 	Algorithm::Evolutionary::Fitness::Base.3 \
@@ -76,6 +77,7 @@ MAN3=	Algorithm::Evolutionary.3 \
 	Algorithm::Evolutionary::Op::Storing.3 \
 	Algorithm::Evolutionary::Op::TournamentSelect.3 \
 	Algorithm::Evolutionary::Op::TreeMutation.3 \
+	Algorithm::Evolutionary::Op::Uniform_Crossover.3 \
 	Algorithm::Evolutionary::Op::VectorCrossover.3 \
 	Algorithm::Evolutionary::Run.3 \
 	Algorithm::Evolutionary::Utils.3 \
