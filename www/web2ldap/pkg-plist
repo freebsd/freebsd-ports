@@ -215,6 +215,8 @@
 %%DATADIR%%/pylib/w2lapp/schema/plugins/quirks.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/samba.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/samba.pyc
+%%DATADIR%%/pylib/w2lapp/schema/plugins/schac.py
+%%DATADIR%%/pylib/w2lapp/schema/plugins/schac.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/subentries.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/subentries.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/vpim.py
