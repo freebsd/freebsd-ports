@@ -714,7 +714,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>seamonkey</name>
 	<name>linux-seamonkey</name>
-	<range><lt>1.1.14_1</lt></range>
+	<range><lt>1.1.15</lt></range>
       </package>
       <package>
 	<name>thunderbird</name>
