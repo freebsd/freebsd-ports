@@ -21,7 +21,8 @@ USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	sdl
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build gui qtestlib xml phonon
+QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build gui qtestlib xml phonon opengl
+USE_XORG=	xmu
 MAKE_ENV=	QTDIR="${QTDIR}" QMAKE="${QMAKE}" SYSCONFDIR="${PREFIX}/etc"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
