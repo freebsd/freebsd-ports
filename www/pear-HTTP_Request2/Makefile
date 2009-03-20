@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP_Request2
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	www pear
 
 MAINTAINER=	wenheping@gmail.com
