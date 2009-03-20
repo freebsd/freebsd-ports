@@ -8,6 +8,7 @@
 
 PORTNAME=	lhs2tex
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://people.cs.uu.nl/andres/${PORTNAME}/
 
@@ -32,10 +33,14 @@ PORTDATA=	*
 
 .include <bsd.port.pre.mk>
 
-.if defined(NOPORTDOCS)
-INSTALL_TARGET=install
-.else
-INSTALL_TARGET=install install-doc
+INSTALL_TARGET=  install
+
+.if !defined(NOPORTDOCS)
+INSTALL_TARGET+= install-doc
+.endif
+
+.if !defined(NOPORTDATA)
+INSTALL_TARGET+= install-data
 .endif
 
 MAN1=		lhs2TeX.1
