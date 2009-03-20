@@ -34,16 +34,16 @@ diff -u -r1.4 lp_solve_5.5.patch
 
 --- lpsolve/makefile.mk.orig	2008-12-24 09:40:11.000000000 +0900
 +++ lpsolve/makefile.mk	2008-12-24 12:09:06.000000000 +0900
-@@ -46,7 +46,7 @@
- PATCH_FILE_NAME=lp_solve_5.5-windows.patch
+@@ -46,7 +47,7 @@
+ PATCH_FILES=lp_solve_5.5-windows.patch
  .ELSE
- PATCH_FILE_NAME=lp_solve_5.5.patch
+ PATCH_FILES=lp_solve_5.5.patch
 -ADDITIONAL_FILES=lpsolve55$/ccc.solaris lpsolve55$/ccc.os2
 +ADDITIONAL_FILES=lpsolve55$/ccc.solaris lpsolve55$/ccc.os2 lpsolve55$/ccc.freebsd
  .ENDIF
  
  CONFIGURE_DIR=
-@@ -73,11 +73,16 @@
+@@ -73,11 +74,16 @@
  .IF "$(COMNAME)"=="sunpro5"
  BUILD_ACTION=sh ccc.solaris
  .ELSE
@@ -59,4 +59,3 @@ diff -u -r1.4 lp_solve_5.5.patch
 +.ENDIF
  
  OUT2INC=lp_lib.h lp_types.h lp_utils.h lp_Hash.h lp_matrix.h lp_mipbb.h lp_SOS.h
- 
