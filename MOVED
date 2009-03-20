@@ -3857,3 +3857,4 @@ misc/git|misc/gnuit|2009-03-14|Renamed
 lang/gcc33|lang/gcc43|2009-03-14|Abandoned upstream, superseded by later versions
 sysutils/libisoburn|sysutils/xorriso|2009-03-16|Project was Renamed
 games/PySolFC|games/pysolfc|2009-03-19|port renamed
+net-im/ruby-xmpp4r|net-im/rubygem-xmpp4r|2009-03-21|Renamed
