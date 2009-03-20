@@ -106,6 +106,9 @@ share/locale/pl/LC_MESSAGES/namazu.mo
 %%DATADIR%%/pl/codeconv.pl
 %%DATADIR%%/pl/conf.pl
 %%DATADIR%%/pl/document.pl
+%%DATADIR%%/pl/ext.pl
+%%DATADIR%%/pl/extutf8.pl
+%%DATADIR%%/pl/extzip.pl
 %%DATADIR%%/pl/filter.pl
 %%DATADIR%%/pl/gettext.pl
 %%DATADIR%%/pl/gfilter.pl

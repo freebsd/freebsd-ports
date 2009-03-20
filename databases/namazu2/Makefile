@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	namazu
-PORTVERSION=	2.0.18
-PORTREVISION=	1
+PORTVERSION=	2.0.19
 CATEGORIES+=	databases www textproc
 MASTER_SITES=	http://www.namazu.org/stable/
 PKGNAMESUFFIX=	2
@@ -20,7 +19,6 @@ RUN_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic
 
 PM_BASE=	${SITE_PERL}
 
-USE_GNOME=	gnometarget
 USE_PERL5=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
