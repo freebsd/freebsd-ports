@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scriptservices
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-
@@ -22,7 +22,8 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LOCAL_LIBS+=	EtoileFoundation:${FOUNDATION_PORT}
-USE_GNUSTEP_LOCAL_LIBS+=	SmalltalkKit:${SMALLTALKKIT_PORT}
+USE_GNUSTEP_LOCAL_LIBS+=	LanguageKit:${LANGUAGEKIT_PORT}
+USE_GNUSTEP_LOCAL_LIBS+=	SmalltalkSupport:${SMALLTALKKIT_PORT}
 
 WRKSRC=	${WRKDIR}/Etoile-${PORTVERSION}
 USE_GNUSTEP_MAKE_DIRS+=	Services/Private/ScriptServices
@@ -32,6 +33,7 @@ EXAMPLE=	Current_Time_.sh Open_in_Wikipedia.sh \
 		Open_in_Wiktionary.sh today.sh
 
 FOUNDATION_PORT?=	devel/etoile-foundation
+LANGUAGEKIT_PORT?=	lang/etoile-languagekit
 SMALLTALKKIT_PORT?=	lang/etoile-smalltalkkit
 
 post-install:
