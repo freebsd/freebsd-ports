@@ -1,0 +1,52 @@
+--- writerfilter/source/resourcemodel/makefile.mk~	2009-03-20 18:00:57.000000000 +0900
++++ writerfilter/source/resourcemodel/makefile.mk	2009-03-20 18:02:38.000000000 +0900
+@@ -129,9 +129,9 @@
+ OOXMLRESOURCEIDSHXX=$(OOXMLHXXOUTDIR)$/resourceids.hxx
+ 
+ .IF "$(SYSTEM_LIBXSLT)"=="NO"
+-XSLTPROC=$(SOLARVER)$/$(INPATH)$/bin$(UPDMINOREXT)$/xsltproc
++XSLTPROC_EXE=$(SOLARVER)$/$(INPATH)$/bin$(UPDMINOREXT)$/xsltproc
+ .ELSE
+-XSLTPROC=xsltproc
++XSLTPROC_EXE=xsltproc
+ .ENDIF
+ 
+ GENERATEDHEADERS=$(DOCTOKRESOURCEIDSHXX) $(OOXMLRESOURCEIDSHXX) $(SPRMIDSHXX)
+--- solenv/inc/settings.mk~	2009-03-20 18:04:15.000000000 +0900
++++ solenv/inc/settings.mk	2009-03-20 18:00:29.000000000 +0900
+@@ -1023,6 +1023,7 @@
+ # allow seperate handling
+ EXTMAXPROCESS*=$(MAXPROCESS)
+ 
++XSLTPROC*=$(AUGMENT_LIBRARY_PATH) $(XSLTPROC_EXE)
+ HELPEX*=$(AUGMENT_LIBRARY_PATH) helpex
+ IDLC*=$(AUGMENT_LIBRARY_PATH) idlc
+ REGMERGE*=$(AUGMENT_LIBRARY_PATH) regmerge
+--- writerfilter/source/ooxml/makefile.mk~	2009-02-25 03:05:51.000000000 +0900
++++ writerfilter/source/ooxml/makefile.mk	2009-03-20 18:15:12.000000000 +0900
+@@ -181,9 +181,9 @@
+ 	$(TOKENXML)
+ 
+ .IF "$(SYSTEM_LIBXSLT)"=="NO"
+-XSLTPROC=$(SOLARVER)$/$(INPATH)$/bin$(UPDMINOREXT)$/xsltproc
++XSLTPROC_EXE=$(SOLARVER)$/$(INPATH)$/bin$(UPDMINOREXT)$/xsltproc
+ .ELSE
+-XSLTPROC=xsltproc
++XSLTPROC_EXE=xsltproc
+ .ENDIF
+ 
+ $(TOKENXMLTMP): $(SOLARVER)$/$(INPATH)$/inc$(UPDMINOREXT)$/oox$/token.txt
+--- writerfilter/source/doctok/makefile.mk~	2009-02-25 03:05:47.000000000 +0900
++++ writerfilter/source/doctok/makefile.mk	2009-03-20 18:19:10.000000000 +0900
+@@ -127,9 +127,9 @@
+ DOCTOKGENFILES=$(DOCTOKGENHEADERS) $(RESOURCESCXX)
+ 
+ .IF "$(SYSTEM_LIBXSLT)"=="NO"
+-XSLTPROC=$(SOLARVER)$/$(INPATH)$/bin$(UPDMINOREXT)$/xsltproc
++XSLTPROC_EXE=$(SOLARVER)$/$(INPATH)$/bin$(UPDMINOREXT)$/xsltproc
+ .ELSE
+-XSLTPROC=xsltproc
++XSLTPROC_EXE=xsltproc
+ .ENDIF
+ 
+ $(DOCTOKHXXOUTDIRCREATED):

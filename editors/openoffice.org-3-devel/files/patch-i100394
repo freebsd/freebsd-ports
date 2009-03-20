@@ -1,0 +1,21 @@
+--- solenv/inc/settings.mk~	2009-02-25 02:58:24.000000000 +0900
++++ solenv/inc/settings.mk	2009-03-20 16:43:08.000000000 +0900
+@@ -1023,6 +1023,7 @@
+ # allow seperate handling
+ EXTMAXPROCESS*=$(MAXPROCESS)
+ 
++HELPEX*=$(AUGMENT_LIBRARY_PATH) helpex
+ IDLC*=$(AUGMENT_LIBRARY_PATH) idlc
+ REGMERGE*=$(AUGMENT_LIBRARY_PATH) regmerge
+ REGCOMPARE*=$(AUGMENT_LIBRARY_PATH) regcompare
+--- helpcontent2/makefile.pmk~	2009-02-25 02:50:11.000000000 +0900
++++ helpcontent2/makefile.pmk	2009-03-20 16:42:39.000000000 +0900
+@@ -44,7 +44,7 @@
+ 
+ $(COMMONMISC)$/$(TARGET).done : $(HLANGXHPFILES)
+ .IF "$(WITH_LANG)"!=""
+-	@$(WRAPCMD) helpex -QQ -p helpcontent2 -r $(PRJ) -i @$(mktmp $(uniq $(foreach,i,$? $(!eq,$(i:f),$(i:f:s/.xhp//) $(i:f) $(XHPFILES))))) -x $(COMMONMISC) -y $(SHELL_PACKAGE) -l all -lf $(aux_alllangiso:t",") -m localize.sdf && $(TOUCH) $@
++	@$(WRAPCMD) $(HELPEX) -QQ -p helpcontent2 -r $(PRJ) -i @$(mktmp $(uniq $(foreach,i,$? $(!eq,$(i:f),$(i:f:s/.xhp//) $(i:f) $(XHPFILES))))) -x $(COMMONMISC) -y $(SHELL_PACKAGE) -l all -lf $(aux_alllangiso:t",") -m localize.sdf && $(TOUCH) $@
+ .ELSE			# "$(WITH_LANG)"!=""
+ .IF "$(USE_SHELL)"=="4nt"
+ # it's getting real ugly...
