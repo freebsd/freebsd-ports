@@ -684,12 +684,16 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-0936</cvename>
+      <cvename>CVE-2009-0937</cvename>
+      <cvename>CVE-2009-0938</cvename>
       <url>http://secunia.com/advisories/33880/</url>
       <url>http://archives.seul.org/or/announce/Feb-2009/msg00000.html</url>
     </references>
     <dates>
       <discovery>2009-02-10</discovery>
       <entry>2009-02-13</entry>
+      <modified>2009-03-20</modified>
     </dates>
   </vuln>
 
