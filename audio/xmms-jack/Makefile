@@ -4,14 +4,10 @@
 #
 # $FreeBSD$
 
-PORTNAME=	jack
-PORTVERSION=	0.17
-PORTREVISION=	3
+PORTNAME=	xmms-jack
+PORTVERSION=	0.19
 CATEGORIES=	audio
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	xmms-jack
-PKGNAMEPREFIX=	xmms-
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS plugin for jack
@@ -20,30 +16,26 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		jack.0:${PORTSDIR}/audio/jack \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
 
-WRKSRC=		${WRKDIR}/xmms-jack
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GNOME=	gtk12 gnometarget
+USE_GNOME=	gtk12
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-PLIST_FILES=	lib/xmms/Output/libjackout.a \
-		lib/xmms/Output/libjackout.la \
-		lib/xmms/Output/libjackout.so
+PLIST_FILES=	lib/xmms/Output/libjackout.so
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${RM} -rf ${WRKSRC}/.libs
-	@${RM} -rf ${WRKSRC}/autom4te.cache
-	@${RM} -rf ${WRKSRC}/libjackout.la
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		 s|-ldl||g' ${WRKSRC}/configure
 
-	${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS}|g; \
-		s|-ldl||' \
-		${WRKSRC}/configure
+do-install:
+	cd ${WRKSRC}/.libs \
+		&& ${INSTALL_DATA} libjackout.so ${PREFIX}/lib/xmms/Output
 
 .include <bsd.port.post.mk>
