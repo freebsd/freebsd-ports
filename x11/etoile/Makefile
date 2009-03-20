@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	etoile
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	x11 gnustep
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -59,7 +59,7 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	ScriptKit:lang/etoile-scriptkit \
 	MediaKit:multimedia/etoile-mediakit \
 	LanguageKit:lang/etoile-languagekit \
-	SmalltalkKit:lang/etoile-smalltalkkit \
+	SmalltalkSupport:lang/etoile-smalltalkkit \
 	XMPPKit:net-im/etoile-xmppkit \
 
 USE_GNUSTEP_SYSTEM_BUNDLES+=	\
@@ -78,6 +78,9 @@ USE_GNUSTEP_LOCAL_MENULETS+=	\
 	PowerMenulet:sysutils/etoile-powermenulet \
 	ServiceMenulet:deskutils/etoile-servicemenulet \
 	VolumeControlMenulet:audio/etoile-volumecontrolmenulet \
+
+USE_GNUSTEP_LOCAL_ASTS+=	\
+	CommentToLog:lang/etoile-lkplugins \
 
 USE_GNUSTEP_SYSTEM_APPS+=	\
 	Azalea:x11-wm/etoile-azalea \
