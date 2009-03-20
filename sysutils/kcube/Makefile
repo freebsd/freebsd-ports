@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.tuxed.de/kcube/download/
 
-MAINTAINER=	mranner@inode.at
+MAINTAINER=	michael@ranner.eu
 COMMENT=	Another cpu load kicker applet for KDE
 
 USE_KDELIBS_VER=3

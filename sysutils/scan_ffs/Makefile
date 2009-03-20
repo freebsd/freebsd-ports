@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ranner.jawa.at/stuff/
 
-MAINTAINER=	mranner@inode.at
+MAINTAINER=	michael@ranner.eu
 COMMENT=	Scan_ffs recovers lost disklabel
 
 USE_BZIP2=	yes

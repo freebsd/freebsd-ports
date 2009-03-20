@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.jawa.at/stuff/
 PKGNAMEPREFIX=	spamass-
 
-MAINTAINER=	mranner@inode.at
+MAINTAINER=	michael@ranner.eu
 COMMENT=	Automatic updates of custom rulesets for SpamAssassin
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
