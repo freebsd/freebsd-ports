@@ -3,12 +3,11 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/audio/rhythmbox/Makefile,v 1.93 2009/01/10 01:59:21 mezz Exp $
+#   $MCom$
 #
 
 PORTNAME=	rhythmbox
-PORTVERSION=	0.10.1
-PORTREVISION=	11
+PORTVERSION=	0.12.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,11 +16,12 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Audio player for GNOME
 
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
+    		musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
 		id3tag.0:${PORTSDIR}/audio/libid3tag \
 		totem-plparser.12:${PORTSDIR}/multimedia/totem-pl-parser \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		sexy.2:${PORTSDIR}/x11-toolkits/libsexy \
-		soup-2.2.8:${PORTSDIR}/devel/libsoup22 \
+		soup-2.4.1:${PORTSDIR}/devel/libsoup \
 		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media
 
 USE_BZIP2=	yes
@@ -32,7 +32,7 @@ USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui nautiluscdburner
 WANT_GNOME=	yes
 USE_GSTREAMER=	flac mp3 gnomevfs gconf jpeg
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS=	--enable-nautilus-menu --with-playback=gstreamer-0-10
+CONFIGURE_ARGS=	--disable-vala
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LIBS="-lm" \
@@ -46,10 +46,9 @@ OPTIONS=	DAAP "Enable iTunes music sharing" off \
 		FAAD "Enable FAAD decoder support" off \
 		NOTIFY "Enable libnotify support" on \
 		VORBIS "Enable Ogg/Vorbis support" on \
-		LIRC "Enable Infrared syncing support" off
-#		GDA "Enable GDA database storage" off
-
-CONFLICTS=	rhythmbox-0.11.[0-9]*
+		LIRC "Enable Infrared syncing support" off \
+		MTP "Enable MS Media Transfer Protocol support" off \
+		GECKO_PLUGIN "Enable iTunes browser plugin" on
 
 .include <bsd.port.pre.mk>
 
@@ -63,13 +62,6 @@ CONFIGURE_ARGS+=	--disable-vorbis --disable-vorbistest
 USE_GSTREAMER+=		faad
 .endif
 
-#.if defined(WITH_GDA)
-#USE_GNOME+=	libgda2
-#CONFIGURE_ARGS+=--with-database=libgda
-#.else
-CONFIGURE_ARGS+=--with-database=tree
-#.endif
-
 .if defined(WITH_LIRC)
 LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
 PLIST_SUB+=	LIRC=""
@@ -77,6 +69,15 @@ CONFIGURE_ARGS+=--enable-lirc
 .else
 CONFIGURE_ARGS+=--disable-lirc
 PLIST_SUB+=	LIRC="@comment "
+.endif
+
+.if defined(WITH_MTP)
+LIB_DEPENDS+=		mtp.8:${PORTSDIR}/audio/libmtp
+PLIST_SUB+=		MTP=""
+CONFIGURE_ARGS+=	--with-mtp
+.else
+CONFIGURE_ARGS+=	--without-mtp
+PLIST_SUB+=		MTP="@comment "
 .endif
 
 .if defined(WITH_DAAP)
@@ -99,10 +100,10 @@ RUN_DEPENDS+=		${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/no
 CONFIGURE_ARGS+=	--disable-libnotify
 .endif
 
-.if ${HAVE_GNOME:Mpygtk2}!=""
+.if exists(${LOCALBASE}/libdata/pkgconfig/gst-python-0.10.pc)
 USE_PYTHON=	yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
-USE_GNOME+=	pygtk2
+USE_GSTREAMER+=	python
 CONFIGURE_ARGS+=--enable-python
 PLIST_SUB+=	PYTHON=""
 .else
@@ -117,6 +118,22 @@ PLIST_SUB+=	IPOD=""
 .else
 CONFIGURE_ARGS+=--without-ipod
 PLIST_SUB+=	IPOD="@comment "
+.endif
+
+.if !defined(WITHOUT_GECKO_PLUGIN)
+USE_GECKO=	firefox mozilla seamonkey xulrunner<->firefox firefox-devel<->firefox
+.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
+
+USE_WEBPLUGINS=	gecko18
+WEBPLUGINS_FILES=librhythmbox-itms-detection-plugin.so
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
+
+CONFIGURE_ARGS+=--enable-browser-plugin
+CONFIGURE_ENV+=	MOZILLA_PLUGINDIR=${WEBPLUGINS_DIR}
+PLIST_SUB+=	GECKO_PLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-browser-plugin
+PLIST_SUB+=	GECKO_PLUGIN="@comment "
 .endif
 
 .include <bsd.port.post.mk>
