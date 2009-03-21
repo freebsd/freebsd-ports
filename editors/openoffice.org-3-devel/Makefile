@@ -70,11 +70,11 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-MILESTONE?=		42
+MILESTONE?=		43
 OOOTAG?=		DEV300_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20090314
+SNAPDATE=		20090320
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 .if defined(WITH_CWS)
@@ -201,13 +201,13 @@ do-build:
 
 do-install:
 .if ${LOCALIZED_LANG} == "alllangs"
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/en-US/freebsd-*/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/en-US/freebsd/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice_languagepack/bsd/install/ ; ${LS} */freebsd*/*.t?z > ${WRKDIR}/LANGPACKFILES
 	@${RM} -Rf ${WRKDIR}/tmp
 	@${MKDIR} ${WRKDIR}/tmp
 	@for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
 		${ECHO_CMD} "extracting $$i" ; \
-		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/en-US/freebsd-*/$$i ; \
+		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/en-US/freebsd/$$i ; \
 	done
 	@for i in `${CAT} ${WRKDIR}/LANGPACKFILES`; do \
 		${ECHO_CMD} "extracting $$i" ; \
@@ -216,12 +216,12 @@ do-install:
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
 	@cd ${WRKDIR}/tmp/opt/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
 .else
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd-*/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
 	@${RM} -Rf ${WRKDIR}/tmp
 	@${MKDIR} ${WRKDIR}/tmp
 	@for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
 		${ECHO_CMD} "extracting $$i" ; \
-		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd-*/$$i ; \
+		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd/$$i ; \
 	done
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
 	@cd ${WRKDIR}/tmp/opt/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}

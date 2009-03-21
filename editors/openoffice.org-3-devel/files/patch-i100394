@@ -8,14 +8,14 @@
  IDLC*=$(AUGMENT_LIBRARY_PATH) idlc
  REGMERGE*=$(AUGMENT_LIBRARY_PATH) regmerge
  REGCOMPARE*=$(AUGMENT_LIBRARY_PATH) regcompare
---- helpcontent2/makefile.pmk~	2009-02-25 02:50:11.000000000 +0900
-+++ helpcontent2/makefile.pmk	2009-03-20 16:42:39.000000000 +0900
+--- helpcontent2/makefile.pmk~	2009-03-20 21:22:43.000000000 +0900
++++ helpcontent2/makefile.pmk	2009-03-20 21:26:12.000000000 +0900
 @@ -44,7 +44,7 @@
  
  $(COMMONMISC)$/$(TARGET).done : $(HLANGXHPFILES)
  .IF "$(WITH_LANG)"!=""
--	@$(WRAPCMD) helpex -QQ -p helpcontent2 -r $(PRJ) -i @$(mktmp $(uniq $(foreach,i,$? $(!eq,$(i:f),$(i:f:s/.xhp//) $(i:f) $(XHPFILES))))) -x $(COMMONMISC) -y $(SHELL_PACKAGE) -l all -lf $(aux_alllangiso:t",") -m localize.sdf && $(TOUCH) $@
-+	@$(WRAPCMD) $(HELPEX) -QQ -p helpcontent2 -r $(PRJ) -i @$(mktmp $(uniq $(foreach,i,$? $(!eq,$(i:f),$(i:f:s/.xhp//) $(i:f) $(XHPFILES))))) -x $(COMMONMISC) -y $(SHELL_PACKAGE) -l all -lf $(aux_alllangiso:t",") -m localize.sdf && $(TOUCH) $@
+-	@$(AUGMENT_LIBRARY_PATH) $(WRAPCMD) helpex -QQ -p helpcontent2 -r $(PRJ) -i @$(mktmp $(uniq $(foreach,i,$? $(!eq,$(i:f),$(i:f:s/.xhp//) $(i:f) $(XHPFILES))))) -x $(COMMONMISC) -y $(SHELL_PACKAGE) -l all -lf $(aux_alllangiso:t",") -m localize.sdf && $(TOUCH) $@
++	@$(AUGMENT_LIBRARY_PATH) $(WRAPCMD) $(HELPEX) -QQ -p helpcontent2 -r $(PRJ) -i @$(mktmp $(uniq $(foreach,i,$? $(!eq,$(i:f),$(i:f:s/.xhp//) $(i:f) $(XHPFILES))))) -x $(COMMONMISC) -y $(SHELL_PACKAGE) -l all -lf $(aux_alllangiso:t",") -m localize.sdf && $(TOUCH) $@
  .ELSE			# "$(WITH_LANG)"!=""
  .IF "$(USE_SHELL)"=="4nt"
  # it's getting real ugly...
