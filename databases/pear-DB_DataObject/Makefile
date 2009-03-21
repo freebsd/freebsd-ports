@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_DataObject
-PORTVERSION=	1.8.9
+PORTVERSION=	1.8.10
 CATEGORIES=	databases pear
 
 MAINTAINER=	miwi@FreeBSD.org
