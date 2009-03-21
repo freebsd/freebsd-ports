@@ -100,6 +100,10 @@ share/pixmaps/smile.png
 %%DATADIR%%/BIB_ManSlide/Luma/Cercle_001.png
 %%DATADIR%%/BIB_ManSlide/Luma/Pattern_001.png
 %%DATADIR%%/BIB_ManSlide/Luma/Pendule_001.png
+%%DATADIR%%/BIB_ManSlide/Luma/Fractale_001.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Mer_001.png
+%%DATADIR%%/BIB_ManSlide/Luma/Mer_001.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Fractale_001.png
 %%DATADIR%%/Interface/Theme/1leftarrow.png
 %%DATADIR%%/Interface/Theme/mini_p_v.png
 %%DATADIR%%/Interface/Theme/player_stop.png
