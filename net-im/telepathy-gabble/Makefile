@@ -16,12 +16,12 @@ COMMENT=	Jabber Connection Manager for Telepathy Framework
 LIB_PC_DEPENDS=	gobject-2.0.pc:${PORTSDIR}/devel/glib20 \
 		dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib \
 		telepathy-glib.pc:${PORTSDIR}/net-im/telepathy-glib \
-		soup-2.4.1:${PORTSDIR}/devel/libsoup \
 		loudmouth-1.0.pc:${PORTSDIR}/net-im/loudmouth
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
+LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
 RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 
 GNU_CONFIGURE=	yes
