@@ -1,7 +1,7 @@
-Magic is Perl way of enhancing objects. This mechanism let the user add
+Magic is Perl way of enhancing objects. This mechanism lets the user add
 extra data to any variable and overload syntaxical operations (such as
-access, assignation or destruction) that can be applied to it. With this
-module, you can add your own magic to any variable without the pain of the C
-API.
+access, assignment or destruction) that can be applied to it. With this
+module, you can add your own magic to any variable without having to
+write a single line of XS.
 
 WWW: http://search.cpan.org/dist/Variable-Magic/
