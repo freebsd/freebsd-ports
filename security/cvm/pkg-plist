@@ -11,6 +11,7 @@ bin/cvm-v1testclient
 bin/cvm-vmailmgr
 bin/cvm-vmailmgr-local
 bin/cvm-vmailmgr-udp
+%%VCHKPW%%bin/cvm-vchkpw
 include/cvm-sasl.h
 include/cvm/client.h
 include/cvm/credentials.h

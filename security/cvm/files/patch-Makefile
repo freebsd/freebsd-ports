@@ -1,0 +1,15 @@
+--- ./Makefile.orig	2009-03-17 14:53:54.000000000 +0300
++++ ./Makefile	2009-03-17 14:55:41.000000000 +0300
+@@ -155,10 +155,10 @@
+ 	./compile cvm-v1testclient.c
+ 
+ cvm-vchkpw: cvm-vchkpw.o ltload libcvm-module.la crypt.lib shadow.lib s.lib socket.lib
+-	./ltload cvm-vchkpw libcvm-module.la -L/usr/local/vpopmail/lib -L/var/vpopmail/lib -L/usr/local/lib/mysql -lbg -lvpopmail -lmysqlclient `cat crypt.lib` `cat shadow.lib` `cat s.lib` `cat socket.lib`
++	./ltload cvm-vchkpw libcvm-module.la `cat /usr/local/vpopmail/etc/lib_deps` -lbg `cat crypt.lib` `cat shadow.lib` `cat s.lib` `cat socket.lib`
+ 
+ cvm-vchkpw.o: compile cvm-vchkpw.c module.h credentials.h errors.h facts.h
+-	./compile cvm-vchkpw.c
++	./compile cvm-vchkpw.c `cat /usr/local/vpopmail/etc/inc_deps`
+ 
+ cvm-vmailmgr: cvm-vmailmgr.o ltload vmautoconvert.o vmlookup.o getpwnam.o libcvm-module.la libcvm-qmail.la socket.lib crypt.lib
+ 	./ltload cvm-vmailmgr vmautoconvert.o vmlookup.o getpwnam.o libcvm-module.la libcvm-qmail.la -lbg `cat socket.lib` `cat crypt.lib`

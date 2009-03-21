@@ -7,11 +7,12 @@
 
 PORTNAME=	cvm
 PORTVERSION=	0.95
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 		http://untroubled.org/${PORTNAME}/archive/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tarkhil@over.ru
 COMMENT=	Credential Validation Modules
 
 LIB_DEPENDS=	bg.2:${PORTSDIR}/devel/bglibs
@@ -26,6 +27,20 @@ BGLIBS_INC=	${LOCALBASE}/include/bglibs
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
 
 DOCS=		NEWS README TODO *.html
+
+OPTIONS=	VCHKPW "Compile cvm-vchkpw" off
+
+.include <bsd.port.pre.mk>
+
+ALL_TARGET=all
+
+.if defined(WITH_VCHKPW)
+BUILD_DEPENDS+=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+ALL_TARGET+=	cvm-vchkpw
+PLIST_SUB=	VCHKPW=""
+.else
+PLIST_SUB=	VCHKPW="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libtool|${LIBTOOL}|g' ${WRKSRC}/Makefile
@@ -46,4 +61,4 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
