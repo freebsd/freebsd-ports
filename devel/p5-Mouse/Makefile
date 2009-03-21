@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mouse
-PORTVERSION=	0.17
+PORTVERSION=	0.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/S/SA/SARTAK
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Moose minus the antlers
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	5.8.5+
 
 MAN3=	Mouse.3 \
 	Mouse::Meta::Attribute.3 \
