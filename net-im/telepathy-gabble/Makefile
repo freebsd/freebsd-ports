@@ -21,7 +21,7 @@ LIB_PC_DEPENDS=	gobject-2.0.pc:${PORTSDIR}/devel/glib20 \
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
-LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
+LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup
 RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 
 GNU_CONFIGURE=	yes
