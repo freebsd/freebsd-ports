@@ -30,6 +30,8 @@ post-patch:
 .for mkin in ${LB2FIX}
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/${mkin}
 .endfor
+	@${REINPLACE_CMD} -e "s|T_DIVIDE|&S|" ${WRKSRC}/xbsql/xbsql.y \
+		${WRKSRC}/xbsql/lex.yy.c
 
 post-install:
 .if !defined(NOPORTDOCS)
