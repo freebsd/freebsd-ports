@@ -670,6 +670,7 @@
     SUBDIR += liblas
     SUBDIR += libleaftag
     SUBDIR += liblogging
+    SUBDIR += liblouis
     SUBDIR += libltdl15
     SUBDIR += libmaa
     SUBDIR += libmatheval

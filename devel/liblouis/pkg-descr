@@ -1,0 +1,10 @@
+Liblouis is an open-source braille translator and back-translator.
+It features support for computer and literary braille, supports
+contracted and uncontracted translation for many, many languages
+and has support for hyphenation. New languages can easily be added
+through tables that support a rule- or dictionary based approach.
+Included are also tools for testing and debugging tables. Liblouis
+also supports math braille (Nemeth and Marburg). The formatting of
+braille is provided by the companion project liblouisxml.
+
+WWW:   http://code.google.com/p/liblouis/
