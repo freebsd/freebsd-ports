@@ -367,7 +367,7 @@ libexec/gimp/2.2/plug-ins/file-psp
 libexec/gimp/2.2/plug-ins/file-raw
 libexec/gimp/2.2/plug-ins/file-sgi
 libexec/gimp/2.2/plug-ins/file-sunras
-libexec/gimp/2.2/plug-ins/file-svg
+%%SVG%%libexec/gimp/2.2/plug-ins/file-svg
 libexec/gimp/2.2/plug-ins/file-tga
 libexec/gimp/2.2/plug-ins/file-tiff-load
 libexec/gimp/2.2/plug-ins/file-tiff-save
