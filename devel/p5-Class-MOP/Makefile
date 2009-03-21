@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-MOP
-PORTVERSION=	0.77
+PORTVERSION=	0.78
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,15 +14,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	A Meta Object Protocol for Perl 5
 
-RUN_DEPENDS=	p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
-		p5-Sub-Identify>=0.03:${PORTSDIR}/devel/p5-Sub-Identify \
+RUN_DEPENDS=	p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
 		p5-MRO-Compat>=0.05:${PORTSDIR}/devel/p5-MRO-Compat \
-		p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
+		p5-Sub-Identify>=0.03:${PORTSDIR}/devel/p5-Sub-Identify \
+		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
-CONFIGURE_ENV=	PERL5_CPAN_IS_RUNNING=1
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Class::MOP.3 \
 	Class::MOP::Attribute.3 \
@@ -40,7 +39,7 @@ MAN3=	Class::MOP.3 \
 	metaclass.3
 
 post-extract:
-	@${PERL} -i -ne 'print unless m,Test::,' ${WRKSRC}/Makefile.PL
+	@${PERL} -i -ne 'print unless m,^test_req,' ${WRKSRC}/Makefile.PL
 
 post-install:
 .ifndef(NOPORTEXAMPLES)
