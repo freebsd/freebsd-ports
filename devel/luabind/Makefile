@@ -32,6 +32,7 @@ PORTDOCS=	*
 
 post-patch:
 	${MKDIR} ${WRKSRC}/lib
+	@${FIND} ${WRKSRC}/luabind -name "*.orig" -delete
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/libluabind.a ${PREFIX}/lib
