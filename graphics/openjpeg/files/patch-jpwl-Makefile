@@ -1,0 +1,35 @@
+--- jpwl/Makefile.orig	2007-11-05 14:05:07.000000000 +0100
++++ jpwl/Makefile	2009-03-21 11:54:55.000000000 +0100
+@@ -9,10 +9,7 @@
+ INCLUDE = -Ilibopenjpeg_JPWL
+ 
+ # General configuration variables:
+-CC = gcc
+-AR = ar
+ 
+-PREFIX = /usr
+ INSTALL_LIBDIR = $(PREFIX)/lib
+ INSTALL_INCLUDE = $(PREFIX)/include
+ 
+@@ -23,7 +20,7 @@
+ LIBRARIES = -lstdc++
+ 
+ MODULES = $(SRCS:.c=.o)
+-CFLAGS = $(COMPILERFLAGS) $(INCLUDE) -DUSE_JPWL
++CFLAGS += $(COMPILERFLAGS) $(INCLUDE) -DUSE_JPWL
+ 
+ TARGET  = openjpeg_JPWL
+ STATICLIB = lib$(TARGET).a
+@@ -60,10 +57,10 @@
+ 	$(CC) -s -shared -Wl,-soname,$(LIBNAME) -o $@ $(MODULES) $(LIBRARIES)
+ 
+ JPWL_j2k_to_image: ../codec/j2k_to_image.c
+-	gcc $(CFLAGS) ../codec/convert.c ../codec/j2k_to_image.c -o JPWL_j2k_to_image -I ../libopenjpeg/ -L . -lopenjpeg_JPWL -lm -ltiff
++	gcc $(CFLAGS) ../codec/convert.c ../codec/j2k_to_image.c ../codec/index.c -o JPWL_j2k_to_image -I ../libopenjpeg/ -L . -L$(LOCALBASE)/lib -lopenjpeg_JPWL -lm -ltiff
+ 
+ JPWL_image_to_j2k: ../codec/image_to_j2k.c
+-	gcc $(CFLAGS) ../codec/convert.c ../codec/image_to_j2k.c -o JPWL_image_to_j2k -I ../libopenjpeg/ -L . -lopenjpeg_JPWL -lm -ltiff
++	gcc $(CFLAGS) ../codec/convert.c ../codec/image_to_j2k.c ../codec/index.c -o JPWL_image_to_j2k -I ../libopenjpeg/ -L . -L$(LOCALBASE)/lib -lopenjpeg_JPWL -lm -ltiff
+ 
+ install: OpenJPEG
+ 	install -d '$(DESTDIR)$(INSTALL_LIBDIR)' '$(DESTDIR)$(INSTALL_INCLUDE)'
