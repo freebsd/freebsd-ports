@@ -2942,6 +2942,7 @@ etoile-installer                ports/sysutils/etoile-installer
 etoile-io                       ports/lang/etoile-io
 etoile-iterm                    ports/x11/etoile-iterm
 etoile-languagekit              ports/lang/etoile-languagekit
+etoile-lkplugins                ports/lang/etoile-lkplugins
 etoile-login                    ports/x11-wm/etoile-login
 etoile-lookandbehavior          ports/deskutils/etoile-lookandbehavior
 etoile-lucenekit                ports/textproc/etoile-lucenekit
@@ -12986,6 +12987,7 @@ p5-XML-Atom-SimpleFeed          ports/textproc/p5-XML-Atom-SimpleFeed
 p5-XML-Atom-Stream              ports/textproc/p5-XML-Atom-Stream
 p5-XML-Atom-Syndication         ports/textproc/p5-XML-Atom-Syndication
 p5-XML-AutoWriter               ports/textproc/p5-XML-AutoWriter
+p5-XML-Bare                     ports/textproc/p5-XML-Bare
 p5-XML-Canonical                ports/textproc/p5-XML-Canonical
 p5-XML-Catalog                  ports/textproc/p5-XML-Catalog
 p5-XML-Clean                    ports/textproc/p5-XML-Clean
@@ -16397,6 +16399,7 @@ p5-xml-atom-simplefeed          ports/textproc/p5-XML-Atom-SimpleFeed
 p5-xml-atom-stream              ports/textproc/p5-XML-Atom-Stream
 p5-xml-atom-syndication         ports/textproc/p5-XML-Atom-Syndication
 p5-xml-autowriter               ports/textproc/p5-XML-AutoWriter
+p5-xml-bare                     ports/textproc/p5-XML-Bare
 p5-xml-canonical                ports/textproc/p5-XML-Canonical
 p5-xml-catalog                  ports/textproc/p5-XML-Catalog
 p5-xml-clean                    ports/textproc/p5-XML-Clean
@@ -18752,6 +18755,7 @@ py-qt4-xmlpatterns              ports/textproc/py-qt4-xmlpatterns
 py-radix                        ports/net/py-radix
 py-rbtree                       ports/devel/py-rbtree
 py-rdflib                       ports/textproc/py-rdflib
+py-recaptcha                    ports/www/py-recaptcha
 py-repl                         ports/devel/py-repl
 py-reportlab                    ports/print/py-reportlab
 py-reportlab2                   ports/print/py-reportlab2
@@ -22402,6 +22406,7 @@ webredirect                     ports/www/webredirect
 webreport                       ports/www/webreport
 webresolve                      ports/www/webresolve
 webserver                       ports/www/webserver
+webservices                     ports/www/webservices
 websh                           ports/www/websh
 websieve                        ports/mail/websieve
 website                         ports/textproc/website
