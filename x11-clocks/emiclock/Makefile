@@ -21,7 +21,10 @@ LANGRES=	resources/R6/EUC/EmiClock.ad
 LANGDIR=	${LOCALBASE}/lib/X11/ja_JP.eucJP/app-defaults
 LANGDIR2=	${LOCALBASE}/lib/X11/ja_JP.EUC/app-defaults
 EMICLOCKDIR=	${LOCALBASE}/lib/X11/EmiClock
+
+.ifndef NOPORTDOCS
 PORTDOCS=	COPYRIGHT COPYRIGHT.en
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -31,14 +34,16 @@ PLIST_SUB=	SOUND="@comment "
 PLIST_SUB=	SOUND=""
 .endif
 
-pre-install:
+post-install:
 	@${MKDIR} ${EMICLOCKDIR}
 	@${MKDIR} ${LANGDIR}
 	@${MKDIR} ${LANGDIR2}
-	cd ${WRKSRC}; ${INSTALL_DATA} -c -m 0444 ${LANGRES} ${LANGDIR}/EmiClock
-	cd ${WRKSRC}; ${INSTALL_DATA} -c -m 0444 ${LANGRES} ${LANGDIR2}/EmiClock
+	cd ${WRKSRC} && ${INSTALL_DATA} ${LANGRES} ${LANGDIR}/EmiClock
+	cd ${WRKSRC} && ${INSTALL_DATA} ${LANGRES} ${LANGDIR2}/EmiClock
+.ifndef NOPORTDOCS
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}; ${INSTALL_DATA} -c -m 0444 ${PORTDOCS} ${DOCSDIR}
+	cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
 #	cd ${WRKSRC}; make install.man
 
 .include <bsd.port.post.mk>
