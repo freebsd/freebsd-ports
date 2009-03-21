@@ -33,10 +33,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/BSD-COPYRIGHT ${DOCSDIR}/
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800058 || (${OSVERSION} >= 701101 && ${OSVERSION} < 800000)
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
