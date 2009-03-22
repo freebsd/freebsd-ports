@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 COMMENT=	LibDBI output module for rsyslog
+MASTERDIR=	${.CURDIR}/../rsyslog4
 
 MNAME=	libdbi
 LIB_DEPENDS=	dbi.0:${PORTSDIR}/databases/libdbi
-
-.include "${.CURDIR}/../rsyslog4/bsd.rsyslog.mk"
 
 CONFIGURE_ARGS+=--enable-libdbi
 
@@ -21,4 +20,5 @@ do-install:
 		${WRKSRC}/plugins/omlibdbi/.libs/omlibdbi.so ${PREFIX}/lib/rsyslog
 	@${INSTALL_DATA} \
 		${WRKSRC}/plugins/omlibdbi/omlibdbi.la ${PREFIX}/lib/rsyslog
-.include <bsd.port.mk>
+
+.include "${MASTERDIR}/Makefile"

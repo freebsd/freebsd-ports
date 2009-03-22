@@ -6,11 +6,10 @@
 #
 
 COMMENT=	PostgreSQL output module for rsyslog
+MASTERDIR=	${.CURDIR}/../rsyslog4
 
 MNAME=	pgsql
 USE_PGSQL=	yes
-
-.include "${.CURDIR}/../rsyslog4/bsd.rsyslog.mk"
 
 CONFIGURE_ARGS+=--enable-pgsql
 
@@ -24,4 +23,4 @@ post-install:
 	@${INSTALL} -d ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/plugins/ompgsql/createDB.sql ${EXAMPLESDIR}/pgsql_createDB.sql
 .endif
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"

@@ -6,12 +6,11 @@
 #
 
 COMMENT=	RELP input/output module for rsyslog
+MASTERDIR=	${.CURDIR}/../rsyslog4
 
 MNAME=	relp
-BUILD_DEPENDS+= pkg-config:${PORTSDIR}/devel/pkg-config
+BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	relp.0:${PORTSDIR}/devel/librelp
-
-.include "${.CURDIR}/../rsyslog4/bsd.rsyslog.mk"
 
 CONFIGURE_ARGS+=--enable-relp
 
@@ -29,4 +28,4 @@ do-install:
 		${WRKSRC}/plugins/imrelp/.libs/imrelp.so ${PREFIX}/lib/rsyslog
 	@${INSTALL_DATA} \
 		${WRKSRC}/plugins/imrelp/imrelp.la ${PREFIX}/lib/rsyslog
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"
