@@ -5,10 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	arcconf
-DISTVERSION=	v5_30_17509
+DISTVERSION=	v6_10_18359
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.adaptec.com/raid/storage_manager/
-DISTNAME=	cli_freebsd${DIST_EXT}_${DISTVERSION}
+DISTNAME=	asm_freebsd${DIST_EXT}_${DISTVERSION}
+EXTRACT_SUFX=	.pkg.tbz
 
 MAINTAINER=	michael@fuckner.net
 COMMENT=	Adaptec SCSI RAID administration tool
@@ -22,20 +23,16 @@ PLIST_FILES=	sbin/arcconf
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700000
-LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
-.endif
-
 .if ${ARCH} == amd64
-DIST_EXT=	6_x64
+DIST_EXT=	7_x64
 .else
-DIST_EXT=	6_x86
+DIST_EXT=	7_x86
 .endif
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/arcconf ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/opt/StorMan/arcconf  ${PREFIX}/sbin
 
 .include <bsd.port.post.mk>
