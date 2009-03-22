@@ -1,6 +1,6 @@
---- Makefile.orig	2009-02-15 18:25:44.000000000 +0200
-+++ Makefile	2009-02-15 18:27:39.000000000 +0200
-@@ -1,30 +1,26 @@
+--- Makefile.orig	2009-03-10 01:13:54.000000000 +0200
++++ Makefile	2009-03-10 01:15:18.000000000 +0200
+@@ -1,23 +1,20 @@
  # GNU Makefile for cclive.
  
 -SHELL = /bin/sh
@@ -29,23 +29,24 @@
  UNAME       = uname
  AWK         = awk
  CURL_CONFIG = curl-config
- GENGETOPT   = gengetopt
+@@ -25,10 +22,6 @@
  POD2MAN     = pod2man
+ PERL        = perl
  
 -WITH_MAN        = yes
- WITH_SIGWINCH   = yes
- 
+-WITH_SIGWINCH   = yes
+-WITH_PERL       = no
+-
  ifndef V
-@@ -40,14 +36,12 @@
+ QUIET_CC        = @echo '  ' CC $@;
+ QUIET_LINK      = @echo '  ' LINK $@;
+@@ -42,11 +35,9 @@
  CURL_CFLAGS  := $(shell sh -c "$(CURL_CONFIG) --cflags")
  CURL_LDFLAGS := $(shell sh -c "$(CURL_CONFIG) --libs")
  
 -CFLAGS      = -g -Wall
  ALL_CFLAGS  = -D_GNU_SOURCE -DOSNAME=\"$(OS_NAME)\" -I. $(CFLAGS)
  ALL_CFLAGS += $(CURL_CFLAGS)
- ifeq ($(WITH_SIGWINCH),yes)
- ALL_CFLAGS += -DWITH_SIGWINCH
- endif
  
 -LDFLAGS     =
  ALL_LDFLAGS = $(LDFLAGS)
