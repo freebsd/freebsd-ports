@@ -3,6 +3,7 @@ bin/padre
 %%SITE_PERL%%/Padre.pm
 %%SITE_PERL%%/Padre/Autosave.pm
 %%SITE_PERL%%/Padre/Config.pm
+%%SITE_PERL%%/Padre/Config/Constants.pm
 %%SITE_PERL%%/Padre/Config/Host.pm
 %%SITE_PERL%%/Padre/Config/Human.pm
 %%SITE_PERL%%/Padre/Config/Patch.pm
@@ -70,6 +71,7 @@ bin/padre
 %%SITE_PERL%%/Padre/Wx/Dialog/Search.pm
 %%SITE_PERL%%/Padre/Wx/Dialog/Snippets.pm
 %%SITE_PERL%%/Padre/Wx/Dialog/Text.pm
+%%SITE_PERL%%/Padre/Wx/Directory.pm
 %%SITE_PERL%%/Padre/Wx/DocBrowser.pm
 %%SITE_PERL%%/Padre/Wx/Editor.pm
 %%SITE_PERL%%/Padre/Wx/ErrorList.pm

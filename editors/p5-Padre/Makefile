@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Padre
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/S/SZ/SZABGAB
@@ -43,6 +43,7 @@ BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
 		${SITE_PERL}/Probe/Perl.pm:${PORTSDIR}/sysutils/p5-Probe-Perl \
 		${SITE_PERL}/Test/Compile.pm:${PORTSDIR}/devel/p5-Test-Compile \
 		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
+		${SITE_PERL}/Test/Most.pm:${PORTSDIR}/devel/p5-Test-Most \
 		${SITE_PERL}/Test/NoWarnings.pm:${PORTSDIR}/devel/p5-Test-NoWarnings \
 		${SITE_PERL}/Test/Script.pm:${PORTSDIR}/devel/p5-Test-Script \
 		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
@@ -60,18 +61,23 @@ BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
 		${SITE_PERL}/${PERL_ARCH}/Wx.pm:${PORTSDIR}/x11-toolkits/p5-Wx
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_WX=		2.6+
+USE_WX=		2.8+
 WX_COMPS=	wx contrib
 WX_UNICODE=	yes
 USE_DISPLAY=	yes
 PERL_CONFIGURE=	yes
 USE_PERL5=	5.8.5+
 USE_GETTEXT=	yes
+IGNORE=		needs a threaded Perl, install lang/perl5.8 with threads support and try again
 
 PERL_THREADS=	${PERL} -V::usethreads
 
 MAN3=		Padre.3 \
 		Padre::Autosave.3 \
+		Padre::Config.3 \
+		Padre::Config::Constants.3 \
+		Padre::Config::Host.3 \
+		Padre::Config::Human.3 \
 		Padre::DB.3 \
 		Padre::DB::Bookmark.3 \
 		Padre::DB::History.3 \
@@ -120,5 +126,8 @@ pre-configure:
 		${ECHO_MSG}; \
 		exit 2; \
 	fi
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|use File::Spec.*$$||' ${WRKSRC}/lib/Padre/Config/Human.pm
 
 .include <bsd.port.mk>
