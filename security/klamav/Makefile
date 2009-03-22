@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	klamav
-PORTVERSION=	0.44
-PORTREVISION=	1
+PORTVERSION=	0.46
 CATEGORIES=	security
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -15,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	A KDE 3 front-end to Clam Anti-Virus
 
-LIB_DEPENDS=	clamav.5:${PORTSDIR}/security/clamav
+LIB_DEPENDS=	clamav:${PORTSDIR}/security/clamav
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}-${PORTVERSION}
 

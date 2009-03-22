@@ -4,6 +4,7 @@ bin/ScanWithKlamAV
 %%DOCSDIR%%/index.docbook
 %%DOCSDIR%%/index.cache.bz2
 %%DOCSDIR%%/common
+share/locale/uk/LC_MESSAGES/klamav.mo
 share/locale/de/LC_MESSAGES/klamav.mo
 share/locale/cs/LC_MESSAGES/klamav.mo
 share/locale/hu/LC_MESSAGES/klamav.mo
@@ -21,31 +22,19 @@ share/applnk/Utilities/klamav.desktop
 share/apps/konqueror/servicemenus/klamav-dropdown.desktop
 share/apps/klamav/klamavui.rc
 share/config.kcfg/klamavconfig.kcfg
-share/icons/locolor/32x32/apps/klamav.png
-share/icons/locolor/32x32/actions/klamav.png
-share/icons/locolor/16x16/apps/klamav.png
 share/icons/hicolor/48x48/apps/klamav.png
 share/icons/hicolor/32x32/apps/klamav.png
-share/icons/hicolor/22x22/actions/klamav.png
-share/icons/hicolor/32x32/actions/klamav.png
-share/icons/locolor/16x16/actions/klamav.png
-share/apps/klamav/icons/locolor/32x32/apps/klamav.png
-share/apps/klamav/icons/hicolor/32x32/actions/klamavbw.png
-share/apps/klamav/icons/hicolor/32x32/actions/klamavdl.png
-share/apps/klamav/icons/hicolor/32x32/actions/klamavbwdl.png
-share/apps/klamav/icons/hicolor/32x32/apps/klamavbw.png
-share/apps/klamav/icons/hicolor/32x32/apps/klamavdl.png
-share/apps/klamav/icons/hicolor/22x22/actions/klamavbwdl.png
-share/apps/klamav/icons/locolor/32x32/actions/klamav.png
-share/apps/klamav/icons/hicolor/32x32/apps/klamavbwdl.png
-share/apps/klamav/icons/locolor/16x16/apps/klamav.png
-share/apps/klamav/icons/hicolor/48x48/apps/klamav.png
 share/apps/klamav/icons/hicolor/32x32/apps/klamav.png
-share/apps/klamav/icons/hicolor/22x22/actions/klamavbw.png
-share/apps/klamav/icons/hicolor/22x22/actions/klamav.png
-share/apps/klamav/icons/hicolor/22x22/actions/klamavdl.png
-share/apps/klamav/icons/hicolor/32x32/actions/klamav.png
-share/apps/klamav/icons/locolor/16x16/actions/klamav.png
+share/apps/klamav/icons/hicolor/32x32/apps/klamav_update_required.png
+share/apps/klamav/icons/hicolor/32x32/apps/klamav_on_acc_enabled.png
+share/apps/klamav/icons/hicolor/32x32/apps/klamav_error.png
+share/apps/klamav/icons/hicolor/32x32/apps/klamav_quarantining.png
+share/apps/klamav/icons/hicolor/32x32/apps/klamav_on_acc_disabled.png
+share/apps/klamav/icons/hicolor/32x32/apps/klamav_virus.png
+share/apps/klamav/icons/hicolor/32x32/actions/klamav_scanning.png
+share/apps/klamav/icons/hicolor/32x32/actions/klamav_scan_found.png
+share/apps/klamav/icons/hicolor/32x32/actions/klamav_scan_safe.png
+share/apps/klamav/icons/hicolor/48x48/apps/klamav.png
 share/apps/klamav/about/main.html
 share/apps/klamav/about/wait.html
 share/apps/klamav/about/nodb.html
@@ -55,27 +44,14 @@ share/apps/klamav/about/tshirt.png
 @dirrmtry share/applnk/Utilities
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/apps/konqueror/servicemenus
-@dirrmtry share/icons/locolor/32x32/apps
-@dirrmtry share/icons/locolor/32x32/actions
-@dirrmtry share/icons/locolor/16x16/apps
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/32x32/apps
 @dirrmtry share/icons/hicolor/22x22/actions
 @dirrmtry share/icons/hicolor/32x32/actions
-@dirrmtry share/icons/locolor/16x16/actions
-@dirrmtry share/apps/klamav/icons/locolor/32x32/apps
 @dirrmtry share/apps/klamav/icons/hicolor/32x32/actions
 @dirrmtry share/apps/klamav/icons/hicolor/32x32/apps
-@dirrmtry share/apps/klamav/icons/hicolor/22x22/actions
-@dirrmtry share/apps/klamav/icons/locolor/32x32/actions
-@dirrmtry share/apps/klamav/icons/locolor/16x16/apps
 @dirrmtry share/apps/klamav/icons/hicolor/48x48/apps
-@dirrmtry share/apps/klamav/icons/locolor/16x16/actions
-@dirrmtry share/apps/klamav/icons/locolor/32x32
-@dirrmtry share/apps/klamav/icons/locolor/16x16
-@dirrmtry share/apps/klamav/icons/locolor
 @dirrmtry share/apps/klamav/icons/hicolor/32x32
-@dirrmtry share/apps/klamav/icons/hicolor/22x22
 @dirrmtry share/apps/klamav/icons/hicolor/48x48
 @dirrmtry share/apps/klamav/icons/hicolor
 @dirrmtry share/apps/klamav/icons
