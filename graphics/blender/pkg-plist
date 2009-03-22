@@ -1,5 +1,7 @@
 bin/blender
 bin/blender-bin
+%%KETSJI%%bin/blenderplayer
+%%VERSE%%bin/verse
 %%DATADIR%%/.bfont.ttf
 %%DATADIR%%/.Blanguages
 %%NLS%%%%DATADIR%%/locale/ar/LC_MESSAGES/blender.mo

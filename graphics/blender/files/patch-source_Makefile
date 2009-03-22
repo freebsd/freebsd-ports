@@ -1,11 +1,36 @@
---- source/Makefile.orig	2009-01-21 08:14:52.000000000 +0100
-+++ source/Makefile	2008-10-14 19:45:24.000000000 +0200
+--- source/Makefile.orig	2008-10-22 18:36:53.000000000 +0200
++++ source/Makefile	2009-03-21 10:27:55.000000000 +0100
 @@ -106,7 +106,7 @@
  COMLIB += $(OCGDIR)/blender/avi/$(DEBUG_DIR)libavi.a
  COMLIB += $(NAN_JPEG)/lib/libjpeg.a
  COMLIB += $(OCGDIR)/blender/gpu/$(DEBUG_DIR)libgpu.a
 -COMLIB += $(NAN_GLEW)/lib/libglew.a
-+COMLIB += $(NAN_GLEW)/lib/libGLEW.a
++COMLIB += $(NAN_GLEW)/lib/libGLEW.so
  
  ifneq ($(NAN_NO_KETSJI),true)
      COMLIB += $(OCGDIR)/gameengine/bloutines/$(DEBUG_DIR)libbloutines.a
+@@ -190,11 +190,11 @@
+         COMLIB += $(NAN_FREETYPE)/lib/freetype2ST.lib
+       endif
+     else
+-      COMLIB += $(NAN_FTGL)/lib/libftgl.a
++      COMLIB += $(NAN_FTGL)/lib/libftgl.so
+       ifeq ($(OS), irix)
+         COMLIB += $(NAN_FREETYPE)/lib32/libfreetype.a
+         else
+-            COMLIB += $(NAN_FREETYPE)/lib/libfreetype.a
++            COMLIB += $(NAN_FREETYPE)/lib/libfreetype.so
+       endif
+     endif
+ endif
+@@ -353,8 +353,8 @@
+         NAN_SND_LIBS += $(DUMMYSOUND)
+         NAN_SND_LIBS += $(OPENALSOUND)
+         NAN_SND_LIBS += $(SDLSOUND)
+-        NAN_SND_LIBS += $(NAN_OPENAL)/lib/libopenal.a
+-	ALUT = $(wildcard $(NAN_OPENAL)/lib/libalut.a)
++        NAN_SND_LIBS += $(NAN_OPENAL)/lib/libopenal.so
++	ALUT = $(wildcard $(NAN_OPENAL)/lib/libalut.so)
+         NAN_SND_LIBS += $(ALUT)
+         NAN_SND_LIBS += $(SOUNDSYSTEM)
+     else
