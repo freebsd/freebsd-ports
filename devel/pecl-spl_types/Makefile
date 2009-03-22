@@ -24,4 +24,6 @@ PHP_MODNAME=	spl_types
 
 CONFIGURE_ARGS=	--enable-spl-types
 
+BROKEN=		does not compile
+
 .include <bsd.port.mk>
