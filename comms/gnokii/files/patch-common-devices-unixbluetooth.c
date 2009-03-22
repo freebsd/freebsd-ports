@@ -1,11 +1,11 @@
 --- common/devices/unixbluetooth.c.orig	2008-10-05 12:14:31.000000000 +0200
-+++ common/devices/unixbluetooth.c	2008-11-04 22:30:35.000000000 +0100
++++ common/devices/unixbluetooth.c	2009-02-17 17:03:58.000000000 +0100
 @@ -54,6 +54,8 @@
  #include <netgraph/bluetooth/include/ng_hci.h>
  #include <netgraph/bluetooth/include/ng_l2cap.h>
  #include <netgraph/bluetooth/include/ng_btsocket.h>
 +#include <bluetooth.h>
-+#include <sdp.h>
++#include </usr/include/sdp.h>
  
  #define BTPROTO_RFCOMM BLUETOOTH_PROTO_RFCOMM
  #define BDADDR_ANY NG_HCI_BDADDR_ANY

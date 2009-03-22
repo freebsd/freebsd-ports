@@ -1,6 +1,15 @@
---- smsd/Makefile.in.orig	2008-05-03 21:21:32.000000000 +0200
-+++ smsd/Makefile.in	2008-05-29 22:16:37.000000000 +0200
-@@ -416,8 +416,8 @@
+--- smsd/Makefile.in.orig	2008-10-06 08:57:19.000000000 +0200
++++ smsd/Makefile.in	2009-02-26 17:35:49.000000000 +0100
+@@ -86,7 +86,7 @@
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(bin_PROGRAMS)
+ am_smsd_OBJECTS = smsd.$(OBJEXT) lowlevel.$(OBJEXT)
+-smsd_OBJECTS = $(am_smsd_OBJECTS)
++smsd_OBJECTS = $(am_smsd_OBJECTS) /usr/lib/libsdp.so
+ smsd_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(top_builddir)/common/libgnokii.la
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/include
+@@ -421,8 +421,8 @@
  	     || test -f $$p1 \
  	  ; then \
  	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \

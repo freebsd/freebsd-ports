@@ -1,0 +1,11 @@
+--- gnokii/Makefile.in.orig	2009-02-26 17:09:49.000000000 +0100
++++ gnokii/Makefile.in	2009-02-26 17:20:21.000000000 +0100
+@@ -57,7 +57,7 @@
+ 	gnokii-gnokii-security.$(OBJEXT) \
+ 	gnokii-gnokii-settings.$(OBJEXT) gnokii-gnokii-sms.$(OBJEXT) \
+ 	gnokii-gnokii-todo.$(OBJEXT) gnokii-gnokii-utils.$(OBJEXT) \
+-	gnokii-gnokii-wap.$(OBJEXT)
++	gnokii-gnokii-wap.$(OBJEXT) /usr/lib/libsdp.so
+ gnokii_OBJECTS = $(am_gnokii_OBJECTS)
+ am__DEPENDENCIES_1 =
+ gnokii_DEPENDENCIES = $(top_builddir)/common/libgnokii.la \

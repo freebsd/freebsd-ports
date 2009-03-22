@@ -1,5 +1,5 @@
 --- configure.orig	2008-10-06 08:57:27.000000000 +0200
-+++ configure	2008-11-01 00:28:22.000000000 +0100
++++ configure	2009-02-26 17:21:58.000000000 +0100
 @@ -1057,7 +1057,7 @@
  psdir='${docdir}'
  libdir='${exec_prefix}/lib'
@@ -110,7 +110,7 @@
  echo "${ECHO_T}$ac_cv_lib_bluetooth_bt_aton" >&6; }
  if test $ac_cv_lib_bluetooth_bt_aton = yes; then
 -  BLUETOOTH_LIBS="$LIBS -lbluetooth"
-+  BLUETOOTH_LIBS="$LIBS -lsdp -lbluetooth"
++  BLUETOOTH_LIBS="-lsdp -lbluetooth $LIBS"
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_BT_ATON
  _ACEOF
