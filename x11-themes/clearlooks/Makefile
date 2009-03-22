@@ -23,14 +23,14 @@ INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.if defined(PORTNAME) && ${PORTNAME} == "clearlooks"
+.if defined(PORTNAME) && !defined(PKGNAMESUFFIX)
 OPTIONS+=	ANIMATION "Enable experimental animated progressbars" Off \
 		METACITY "Depend on MetaCity Theme" On
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if ${PORTNAME} == "clearlooks"
+.if !defined(PKGNAMESUFFIX)
 CONFLICTS+=	gtk-engines2-[0-9]* clearlooks-themes[0-9]*
 PLIST_SUB+=	ENGINE=""
 .else
@@ -45,7 +45,7 @@ INSTALL_WRKSRC=	${WRKSRC}/themes
 PLIST_SUB+=	ENGINE="@comment "
 .endif
 
-.if !defined(WITHOUT_METACITY) && ${PORTNAME}=="clearlooks"
+.if !defined(WITHOUT_METACITY) && !defined(PKGNAMESUFFIX)
 RUN_DEPENDS+=	${LOCALBASE}/share/themes/Clearlooks/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/clearlooks-metacity
 .endif
 
@@ -53,7 +53,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/themes/Clearlooks/metacity-1/metacity-theme-1.x
 CONFIGURE_ARGS+=	--enable-animation
 .endif
 
-.if ${PORTNAME} == "clearlooks"
+.if !defined(PKGNAMESUFFIX)
 pre-everything::
 	@if [ -n "`${PKG_INFO} -xI '^gtk-engines2*[0-9]*'`" ]; then \
 		${ECHO_MSG} ; \
