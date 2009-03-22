@@ -1619,6 +1619,7 @@
     SUBDIR += xpi-cssviewer
     SUBDIR += xpi-customizegoogle
     SUBDIR += xpi-cutemenus-crystalsvg
+    SUBDIR += xpi-dailymotiononwooztalk
     SUBDIR += xpi-deepestsender
     SUBDIR += xpi-deezeronwooztalk
     SUBDIR += xpi-delicious
