@@ -7,6 +7,7 @@
 
 PORTNAME=	RT-Extension-LDAPImport
 PORTVERSION=	0.04
+PORTREVISION=	1
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,7 +30,8 @@ MAN3=		RT::Extension::LDAPImport.3
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/opt/rt3/lib,${PREFIX}/${RTHOME}/lib,' \
-	    ${WRKSRC}/bin/rtldapimport
+	    ${WRKSRC}/bin/rtldapimport && \
+	    ${RM} ${WRKSRC}/bin/rtldapimport.bak
 
 # Don't use normal CONFIGURE_ARGS.  Disable doc_?????_indstall targets to
 # suppress installing perllocal.pod.  This duplicates code from bsd.perl.mk
