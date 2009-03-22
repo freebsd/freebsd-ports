@@ -6,6 +6,7 @@
     SUBDIR += GiNaC
     SUBDIR += PDL
     SUBDIR += R
+    SUBDIR += R-cran-sm
     SUBDIR += R-sp
     SUBDIR += aamath
     SUBDIR += abakus
