@@ -9,11 +9,13 @@ include/kannel/gw-config.h
 include/kannel/gw/alt_charsets.h
 include/kannel/gw/bb.h
 include/kannel/gw/bb_smscconn_cb.h
+include/kannel/gw/bb_store.h
 include/kannel/gw/bearerbox.h
 include/kannel/gw/dlr.h
 include/kannel/gw/dlr_p.h
 include/kannel/gw/heartbeat.h
 include/kannel/gw/html.h
+include/kannel/gw/load.h
 include/kannel/gw/mime_decompiler.h
 include/kannel/gw/msg-decl.h
 include/kannel/gw/msg.h
@@ -76,6 +78,7 @@ include/kannel/gwlib/gwpoll.h
 include/kannel/gwlib/gwthread.h
 include/kannel/gwlib/html-entities.def
 include/kannel/gwlib/http.h
+include/kannel/gwlib/latin1_to_gsm.h
 include/kannel/gwlib/list.h
 include/kannel/gwlib/log.h
 include/kannel/gwlib/md5.h
