@@ -7,13 +7,13 @@
 
 PORTNAME=	crafty-open-large
 PORTVERSION=	20070909
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dd/crafty
 DISTFILES=	large1.zip large2.zip large3.zip large4.zip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flo@kasimir.com
 COMMENT=	The large opening book for crafty
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
@@ -22,7 +22,7 @@ RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 DIST_SUBDIR=	crafty
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
-CONFLICTS=	crafty-open-enormous-* crafty-open-medium-*
+CONFLICTS=	crafty-open-enormous-* crafty-open-medium-* crafty-open-default-*
 
 post-extract:
 	@${ECHO_MSG} '================================================================'

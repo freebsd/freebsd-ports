@@ -7,13 +7,14 @@
 
 PORTNAME=	crafty-open-enormous
 PORTVERSION=	20070924
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/pgn/ \
 		${MASTER_SITE_LOCAL}
 DISTFILES=	enormous.zip
 EXTRACT_ONLY=	${DISTFILES}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flo@kasimir.com
 COMMENT=	The enormous opening book (about 85-90 MByte) for crafty
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
@@ -23,7 +24,7 @@ DIST_SUBDIR=		crafty
 USE_ZIP=		yes
 NO_WRKSUBDIR=		yes
 NO_PACKAGE=		Package is way too big
-CONFLICTS=		crafty-open-large-* crafty-open-medium-*
+CONFLICTS=		crafty-open-large-* crafty-open-medium-* crafty-open-default-*
 
 .include <bsd.port.pre.mk>
 

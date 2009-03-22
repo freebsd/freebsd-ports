@@ -7,13 +7,13 @@
 
 PORTNAME=	crafty-open-medium
 PORTVERSION=	20070909
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dd/crafty
 DISTNAME=	medium
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flo@kasimir.com
 COMMENT=	The medium opening book (about 1.9 MByte) for crafty
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
@@ -22,7 +22,7 @@ RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 DIST_SUBDIR=	crafty
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
-CONFLICTS=	crafty-open-enormous-* crafty-open-large-*
+CONFLICTS=	crafty-open-enormous-* crafty-open-large-* crafty-open-default-*
 
 do-build:
 	@${ECHO_MSG} '================================================================'
