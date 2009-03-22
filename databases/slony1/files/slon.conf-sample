@@ -3,8 +3,8 @@
 # not all settings are shown here.
 
 syslog 0
-log_level 4
-log_timestamp 1
+log_level 0
+log_timestamp 0
 
 cluster_name sample
 conn_info 'dbname=pgbench user=postgres host=localhost port=5432'
