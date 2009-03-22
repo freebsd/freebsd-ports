@@ -1647,6 +1647,7 @@
     SUBDIR += xpi-httpfox
     SUBDIR += xpi-imagezoom
     SUBDIR += xpi-imdbpreview
+    SUBDIR += xpi-imeemonwooztalk
     SUBDIR += xpi-imglikeopera
     SUBDIR += xpi-infolister
     SUBDIR += xpi-informenter
