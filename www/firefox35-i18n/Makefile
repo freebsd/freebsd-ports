@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox3-i18n
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.7
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -16,28 +16,9 @@ DIST_SUBDIR=	xpi/${DISTNAME}
 MAINTAINER=	yokota@res.otaru-uc.ac.jp
 COMMENT=	Localized interface for Firefox3
 
-.ifndef WITHOUT_SWITCHER
-RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
-.endif
-
-NO_BUILD=	yes
 USE_XPI=	*firefox3
 
-FIREFOX_I18N_ALL=	af ar be bg bn-IN ca cs cy da de el en-GB eo es-AR es-ES et eu fi \
-			fr fy-NL ga-IE gl gu-IN he hi-IN hu id is it ja ka kn \
-			ko ku lt lv mk mn mr nb-NO nl nn-NO oc pa-IN pl pt-BR pt-PT \
-			ro ru si sk sl sq sr sv-SE te th tr uk zh-CN zh-TW 
-.ifdef PACKAGE_BUILDING
-FIREFOX_I18N?=	all
-.else
-FIREFOX_I18N?=	zh-CN zh-TW es-ES ar pt-BR ru ja de fr pa-IN ko it
-.endif
-# http://en.wikipedia.org/wiki/List_of_languages_by_number_of_native_speakers
-
-.if ${FIREFOX_I18N} == all
-FIREFOX_I18N_=	${FIREFOX_I18N_ALL}
-.endif
-FIREFOX_I18N_?=	${FIREFOX_I18N}
+USE_SUBMAKE=	yes
 
 WDIR=	langpack3-*@firefox.mozilla.org
 
@@ -48,15 +29,34 @@ XPI_FILES_${dist}=	chrome.manifest install.rdf chrome/${dist}.jar
 XPI_DIRS_${dist}=	chrome
 .endfor
 
+.include "${.CURDIR}/Makefile.option"
+.include <bsd.port.pre.mk>
+
+.ifndef WITHOUT_SWITCHER
+RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
+.endif
+
+.include "${.CURDIR}/Makefile.lang"
+
+FIREFOX_I18N_?=	${FIREFOX_I18N}
+
+pre-everything::
+	@${ECHO_CMD}
+	@${ECHO_CMD} "Please define FIREFOX_I18N_ALL to install all languages."
+	@${ECHO_CMD}
+	@${MKDIR} ${WRKSRC}
+
 do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR} ${WRKSRC}
 	@for lang in ${FIREFOX_I18N_}; do \
 		if ! (${EXTRACT_CMD} ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack3-$$lang@firefox.mozilla.org);\
 		then \
 			exit 1; \
 		fi \
 	done
+
+.if !exists(${OPTIONSFILE}) && !defined(PACKAGE_BUILDING)
+pre-configure: config
+.endif
 
 do-install:
 	@${INSTALL} -d ${XPI_LIBDIR} ${XPI_SLDIRS_ALL}
@@ -67,7 +67,8 @@ do-install:
 	@${ECHO_CMD} '@exec ${INSTALL} -d ${XPI_SLDIRS_ALL:S,^${PREFIX},%D,}' ${_A}
 	@${ECHO_CMD} '@exec for _dir in ${XPI_LINKFARMS} ; { \
 		${LN} -sf ${XPI_LIBDIR}/${WDIR} $$_dir/ ${_Q}; }' ${_A}
-	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS} ; { ${RM} -f $$_dir/${WDIR} ; }' ${_A}
+	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS} ${XPI_LIBDIR}; { ${RM} -fR $$_dir/${WDIR} ; }' ${_A}
+
 	@${ECHO_CMD} '@unexec ${RMDIR} ${XPI_DIRS_TRY:S,^,%D/,} ${_Q}' ${_A}
 
 post-patch:
@@ -80,4 +81,5 @@ List-Langs:
 		${PERL} -ne 'if(/.*href="([a-zA-Z-]+).xpi.*/){print "$$1 "}'
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
-.include <bsd.port.mk>
+
+.include <bsd.port.post.mk>
