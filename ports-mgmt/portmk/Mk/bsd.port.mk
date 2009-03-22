@@ -489,6 +489,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  RPM ports.
 #				  Implies inclusion of bsd.linux-rpm.mk.
 #
+# LINUX_OSRELEASE	- Contains the value of compat.linux.osrelease sysctl.
+#				  Will be used to distinguish which linux
+#				  infrastructure ports should be used.
+#				  Valid values: 2.4.2, 2.6.16.
 # AUTOMATIC_PLIST
 #				- Set to yes to enable automatic packing list generation.
 #				  Currently has no effect unless USE_LINUX_RPM is set.
@@ -1350,6 +1354,14 @@ ETCDIR?=		${PREFIX}/etc/${PORTNAME}
 .endif
 .endif
 
+.if defined(USE_LINUX_APPS)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.linux-apps.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.linux-apps.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.linux-apps.mk"
+.endif
+.endif
+
 .if defined(X_WINDOW_SYSTEM) && ${X_WINDOW_SYSTEM:L} != "xorg"
 IGNORE=		cannot be installed: bad X_WINDOW_SYSTEM setting; valid value is 'xorg'
 .endif
@@ -1910,6 +1922,10 @@ USE_LINUX?=	yes
 
 .if defined(USE_LINUX)
 
+.  if !defined(LINUX_OSRELEASE)
+LINUX_OSRELEASE!=	${ECHO_CMD} `${SYSCTL} -n compat.linux.osrelease 2>/dev/null`
+.  endif
+
 # install(1) also does a brandelf on strip, so don't strip with FreeBSD tools.
 STRIP=
 .	if exists(${LINUXBASE}/usr/bin/strip)
@@ -2102,6 +2118,14 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .include "${DEVELPORTSDIR}/Mk/bsd.linux-rpm.mk"
 .else
 .include "${PORTSDIR}/Mk/bsd.linux-rpm.mk"
+.endif
+.endif
+
+.if defined(USE_LINUX_APPS)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.linux-apps.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.linux-apps.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.linux-apps.mk"
 .endif
 .endif
 
