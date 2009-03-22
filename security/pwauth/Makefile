@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pwauth
-PORTVERSION=	2.3.2
-PORTREVISION=	1
+PORTVERSION=	2.3.7
 CATEGORIES=	security www
 MASTER_SITES=	http://www.unixpapa.com/software/
 
@@ -29,7 +28,7 @@ post-patch:
 		s/%%MINUID%%/${MINUID}/" ${WRKSRC}/config.h
 
 do-install:
-	-@${MKDIR} -p ${PREFIX}/bin
+	-@${MKDIR} ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/pwauth ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/checkfaillog ${PREFIX}/bin
 	@${CHMOD} u=rxs ${PREFIX}/bin/pwauth
