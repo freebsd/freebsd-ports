@@ -7,6 +7,7 @@
 
 PORTNAME=	crafty
 PORTVERSION=	22.10
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/pgn/:data \
 		ftp://ftp.cis.uab.edu/pub/hyatt/documentation/:doc \
@@ -24,7 +25,7 @@ COMMENT=	A chess programm for playing and analyzing games
 USE_ZIP=	yes
 USE_GMAKE=	yes
 
-BOOKS=		book.bin books.bin
+BOOKS=		books.bin
 DISTFILES+=	${BOOKS:S/$/:books/}
 
 .if !defined(NOPORTDOCS)
@@ -58,11 +59,23 @@ OPT+=		-DINLINE32
 BROKEN=		Does not compile on sparc64
 .endif
 
+.if defined(WITH_BOOK)
+BOOKS+=		book.bin
+DISTFILES+=	${BOOKS:S/$/:books/}
+PKGNAMESUFFIX=	-open-default
+CONFLICTS+=	crafty-open-enormous-* crafty-open-large-* crafty-open-medium-*
+PLIST_SUB+=	BOOK=""
+.else
+PLIST_SUB+=	BOOK="@comment "
+.endif
+
 MAKE_ENV+=	opt="${OPT}" target=${OPSYS} CXFLAGS="${CXXFLAGS}"
 
 post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/start.pgn ${WRKSRC}/start.pgn
+.if defined(WITH_BOOK)
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/book.bin ${WRKSRC}/book.bin
+.endif
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/books.bin ${WRKSRC}/books.bin
 
 post-build:
@@ -75,7 +88,9 @@ do-install:
 	${MKDIR} ${PREFIX}/lib/crafty/cpf
 	${CHOWN} -R root:nogroup ${PREFIX}/lib/crafty
 	${CHMOD} 775 ${PREFIX}/lib/crafty ${PREFIX}/lib/crafty/cpf
+.if defined(WITH_BOOK)
 	${INSTALL_DATA} ${WRKSRC}/book.bin ${PREFIX}/lib/crafty/book.bin
+.endif
 	${INSTALL_DATA} ${WRKSRC}/books.bin ${PREFIX}/lib/crafty/books.bin
 	${INSTALL_DATA} ${WRKSRC}/crafty.hlp ${PREFIX}/lib/crafty/crafty.hlp
 	${CHOWN} root:nogroup ${PREFIX}/lib/crafty/book*
