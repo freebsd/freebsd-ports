@@ -1,11 +1,12 @@
 bin/msn-proxy
 %%ETCDIR%%/msn-proxy.conf
-%%WWWDIR%%/ajax.inc.php
-%%WWWDIR%%/al.inc.php
-%%WWWDIR%%/bl.inc.php
+%%WWWDIR%%/.htaccess
+%%WWWDIR%%/js.inc.php
+%%WWWDIR%%/lists.inc.php
 %%WWWDIR%%/chat-to.php
 %%WWWDIR%%/chat.php
 %%WWWDIR%%/conf.php
+%%WWWDIR%%/class.ctl.php
 %%WWWDIR%%/default.array.cmd.inc.php
 %%WWWDIR%%/default.array.option.inc.php
 %%WWWDIR%%/default.array.status.inc.php
@@ -31,26 +32,16 @@ bin/msn-proxy
 %%WWWDIR%%/imagens/webcam.png
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PGSQL%%%%ETCDIR%%/pgsql/conf
-%%PGSQL%%%%ETCDIR%%/pgsql/tables/sb
-%%PGSQL%%%%ETCDIR%%/pgsql/tables/log
-%%PGSQL%%%%ETCDIR%%/pgsql/tables/users
-%%PGSQL%%%%ETCDIR%%/pgsql/tables/contacts
-%%PGSQL%%%%ETCDIR%%/pgsql/tables/defaults
-%%PGSQL%%%%ETCDIR%%/pgsql/tables/contact_groups
-%%PGSQL%%%%WWWDIR%%/pgsql.inc.php
-%%MYSQL%%%%ETCDIR%%/mysql/conf
-%%MYSQL%%%%ETCDIR%%/mysql/tables/sb
-%%MYSQL%%%%ETCDIR%%/mysql/tables/log
-%%MYSQL%%%%ETCDIR%%/mysql/tables/users
-%%MYSQL%%%%ETCDIR%%/mysql/tables/contacts
-%%MYSQL%%%%ETCDIR%%/mysql/tables/defaults
-%%MYSQL%%%%ETCDIR%%/mysql/tables/contact_groups
-%%MYSQL%%%%WWWDIR%%/mysql.inc.php
-%%PGSQL%%@dirrmtry %%ETCDIR%%/pgsql/tables
-%%PGSQL%%@dirrmtry %%ETCDIR%%/pgsql
-%%MYSQL%%@dirrmtry %%ETCDIR%%/mysql/tables
-%%MYSQL%%@dirrmtry %%ETCDIR%%/mysql
+%%ETCDIR%%/mysql/conf
+%%ETCDIR%%/mysql/tables/sb
+%%ETCDIR%%/mysql/tables/log
+%%ETCDIR%%/mysql/tables/users
+%%ETCDIR%%/mysql/tables/contacts
+%%ETCDIR%%/mysql/tables/defaults
+%%ETCDIR%%/mysql/tables/contact_groups
+%%WWWDIR%%/mysql.inc.php
+@dirrmtry %%ETCDIR%%/mysql/tables
+@dirrmtry %%ETCDIR%%/mysql
 @dirrmtry %%ETCDIR%%
 @dirrmtry %%WWWDIR%%/imagens
 @dirrmtry %%WWWDIR%%
