@@ -3,6 +3,7 @@ bin/ncgen
 include/ncvalues.h
 include/netcdf.h
 include/netcdf.hh
+%%FORTRAN%%include/netcdf.inc
 %%FORTRAN%%include/netcdf.mod
 include/netcdfcpp.h
 %%FORTRAN%%include/typesizes.mod
