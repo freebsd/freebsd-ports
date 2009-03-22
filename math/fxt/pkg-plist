@@ -7,6 +7,7 @@ include/fxt/aux0/csincos.h
 include/fxt/aux0/factorial.h
 include/fxt/aux0/ldn2rc.h
 include/fxt/aux0/randf.h
+include/fxt/aux0/rand-idx.h
 include/fxt/aux0/range.h
 include/fxt/aux0/sign.h
 include/fxt/aux0/sincos.h
@@ -45,8 +46,10 @@ include/fxt/aux2/transpose.h
 include/fxt/aux2/transpose2.h
 include/fxt/bits-all.h
 include/fxt/bits/bin2naf.h
+include/fxt/bits/bit-dragon3.h
 include/fxt/bits/bit-isolate.h
 include/fxt/bits/bit-necklace.h
+include/fxt/bits/bit-paper-fold.h
 include/fxt/bits/bit2adic.h
 include/fxt/bits/bit2pow.h
 include/fxt/bits/bitasm-amd64.h
@@ -69,6 +72,7 @@ include/fxt/bits/bitfibgray.h
 include/fxt/bits/bitgather.h
 include/fxt/bits/bitgraypermute.h
 include/fxt/bits/bithigh.h
+include/fxt/bits/bithigh-edge.h
 include/fxt/bits/bitlex.h
 include/fxt/bits/bitlow.h
 include/fxt/bits/bitlow-edge.h
@@ -221,6 +225,7 @@ include/fxt/comb/perm-gray-wells.h
 include/fxt/comb/perm-heap.h
 include/fxt/comb/perm-heap2-swaps.h
 include/fxt/comb/perm-heap2.h
+include/fxt/comb/perm-involution.h
 include/fxt/comb/perm-ives.h
 include/fxt/comb/perm-lex.h
 include/fxt/comb/perm-lex2.h
@@ -355,6 +360,9 @@ include/fxt/perm/permcompose.h
 include/fxt/perm/perminvert.h
 include/fxt/perm/permq.h
 include/fxt/perm/permrand.h
+include/fxt/perm/permrand-cycle-type.h
+include/fxt/perm/permrand-derange.h
+include/fxt/perm/permrand-self-inverse.h
 include/fxt/perm/printcycles.h
 include/fxt/perm/radixpermute.h
 include/fxt/perm/revbinpermute.h
@@ -477,6 +485,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-necklace-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-nextgray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-nextgray-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-paper-fold-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-paper-fold-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit2adic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit2adic-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bitarray-demo.cc
@@ -524,6 +534,12 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/crc64-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/debruijn-lookup-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/debruijn-lookup-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-curve-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-curve-texpic-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-curve-moves-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-curve-moves-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon3-curve-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon3-curve-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep2-demo.cc
@@ -770,6 +786,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-heap2-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-heap2-swaps-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-heap2-swaps-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-involution-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-involution-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-ives-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-ives-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-l1r2-gray-demo.cc
@@ -1015,6 +1033,10 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permgray-leaders-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permrandcyclic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permrandcyclic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permrand-self-inverse-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permrand-self-inverse-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permrand-derange-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permrand-derange-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permutation-matrix-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permutation-matrix-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/revbin-perm-rec-demo.cc
