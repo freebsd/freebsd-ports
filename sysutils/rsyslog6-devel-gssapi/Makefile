@@ -6,15 +6,9 @@
 #
 
 COMMENT=	GSS API input/output module for rsyslog
+MASTERDIR=	${.CURDIR}/../rsyslog4
 
 MNAME=	gssapi
-
-.include "${.CURDIR}/../rsyslog4/bsd.rsyslog.mk"
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-IGNORE= with gssapi module is only supported on FreeBSD 7.x or later
-.endif
 
 CONFIGURE_ARGS+=--enable-gssapi-krb5
 
@@ -38,4 +32,4 @@ do-install:
 		${WRKSRC}/.libs/lmgssutil.so ${PREFIX}/lib/rsyslog
 	@${INSTALL_DATA} \
 		${WRKSRC}/lmgssutil.la ${PREFIX}/lib/rsyslog
-.include <bsd.port.post.mk>
+.include "${MASTERDIR}/Makefile"

@@ -6,11 +6,10 @@
 #
 
 COMMENT=	MySQL output module for rsyslog
+MASTERDIR=	${.CURDIR}/../rsyslog4
 
 MNAME=	mysql
 USE_MYSQL=	yes
-
-.include "${.CURDIR}/../rsyslog4/bsd.rsyslog.mk"
 
 CONFIGURE_ARGS+=--enable-mysql
 
@@ -24,4 +23,4 @@ post-install:
 	@${INSTALL} -d ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/plugins/ommysql/createDB.sql ${EXAMPLESDIR}/mysql_createDB.sql
 .endif
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"

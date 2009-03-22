@@ -6,24 +6,43 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	4.1.3
+PORTVERSION=	4.1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.rsyslog.com/rsyslog/
+.ifdef MNAME
+PKGNAMESUFFIX?=	-${MNAME}
+.endif
 
 MAINTAINER=	cristianorolim@hotmail.com
-COMMENT=	Syslogd supporting SQL, TCP and TLS
+COMMENT?=	Syslogd supporting SQL, TCP and TLS
 
-MAN8=	rsyslogd.8
-MAN5=	rsyslog.conf.5
+.ifdef MNAME
+RUN_DEPENDS=	rsyslog>=4:${PORTSDIR}/sysutils/rsyslog4
+
+PLIST=		${.CURDIR}/pkg-plist
+.endif
 
 CONFLICTS=	rsyslog-[2-3].[0-9]*
-USE_RC_SUBR=	${PORTNAME}d
-SUB_FILES=	pkg-message
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
+
+.ifdef WITH_DEBUG
+CONFIGURE_ARGS+=--enable-rtinst --enable-debug
+.endif
+
+.include <bsd.port.pre.mk>
+.if ${ARCH} == "i386"
+CPPFLAGS+=-march=i686
+.endif
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+.ifndef MNAME
+MAN8=	rsyslogd.8
+MAN5=	rsyslog.conf.5
+
+USE_RC_SUBR=	${PORTNAME}d
+SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS+=--enable-imfile --enable-mail --enable-imtemplate
 
@@ -46,5 +65,18 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/rsyslog-example.conf ${EXAMPLESDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
+.endif
 
-.include <bsd.port.mk>
+.ifdef MNAME
+
+.if ${MNAME} == "gssapi" && ${OSVERSION} < 700000
+IGNORE=	with gssapi module is only supported on FreeBSD 7.x or later
+.endif
+
+CONFIGURE_ARGS+=	--disable-rsyslogd --disable-klog
+
+DESCR?=		${.CURDIR}/../rsyslog4/pkg-descr
+MD5_FILE?=	${.CURDIR}/../rsyslog4/distinfo
+.endif
+
+.include <bsd.port.post.mk>

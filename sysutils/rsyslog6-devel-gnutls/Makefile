@@ -6,11 +6,10 @@
 #
 
 COMMENT=	GNUTLS module for rsyslog
+MASTERDIR=	${.CURDIR}/../rsyslog4
 
 MNAME=	gnutls
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
-
-.include "${.CURDIR}/../rsyslog4/bsd.rsyslog.mk"
 
 CONFIGURE_ARGS+=--enable-gnutls
 
@@ -22,4 +21,4 @@ do-install:
 		${WRKSRC}/runtime/.libs/lmnsd_gtls.so ${PREFIX}/lib/rsyslog
 	@${INSTALL_DATA} \
 		${WRKSRC}/runtime/lmnsd_gtls.la ${PREFIX}/lib/rsyslog
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"
