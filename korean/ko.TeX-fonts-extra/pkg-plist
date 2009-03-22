@@ -7011,6 +7011,9 @@ share/texmf-local/fonts/afm/kotex/extra/bom/outbmm00.afm
 %%PORTDOCS%%%%DOCSDIR%%/fonts/unfonts/extra-hl/testhl.pdf
 %%PORTDOCS%%%%DOCSDIR%%/fonts/unfonts/extra-hl/testhl-k.tex
 %%PORTDOCS%%%%DOCSDIR%%/fonts/unfonts/extra-hl/README
+@exec %%MKTEXLSR%%
+@exec %%UPDMAP_SYS%% --enable Map=kotex-extra-hlfont.map
+@exec %%UPDMAP_SYS%% --enable Map=kotex-extra.map
 @dirrmtry share/texmf-local/tex/latex/kotex/utf/unfonts
 @dirrmtry share/texmf-local/tex/latex/kotex/utf
 @dirrmtry share/texmf-local/tex/latex/kotex/euc/unfonts
@@ -7108,3 +7111,5 @@ share/texmf-local/fonts/afm/kotex/extra/bom/outbmm00.afm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/fonts/unfonts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/fonts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec %%MKTEXLSR%%
+@unexec %%UPDMAP_SYS%% --syncwithtrees
