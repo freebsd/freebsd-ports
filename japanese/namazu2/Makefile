@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	namazu
-PORTVERSION=	2.0.16
-PORTREVISION=	3
+PORTVERSION=	2.0.19
 CATEGORIES=	japanese databases www textproc
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	2
