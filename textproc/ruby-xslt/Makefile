@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	xslt
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9.6
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://gregoire.lejeune.free.fr/
+MASTER_SITES=	RF
+MASTER_SITE_SUBDIR=	ruby-asp
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	ruby-${PORTNAME}_${PORTVERSION}
+DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	An XSLT processor in pure Ruby
 
 USE_GNOME=	libxslt
 USE_RUBY=	yes
-USE_RUBY_EXTCONF=	yes
-
-WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
+USE_RUBY_SETUP=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
