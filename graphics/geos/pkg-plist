@@ -141,6 +141,7 @@ include/geos/precision.h
 include/geos/precision/CommonBitsOp.h
 include/geos/precision/CommonBitsRemover.h
 include/geos/precision/EnhancedPrecisionOp.h
+include/geos/precision/GeometrySnapper.h
 include/geos/precision/SimpleGeometryPrecisionReducer.h
 include/geos/simplify/DouglasPeuckerSimplifier.h
 include/geos/simplify/TopologyPreservingSimplifier.h

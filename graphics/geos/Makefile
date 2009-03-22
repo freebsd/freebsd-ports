@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geos
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/geos/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
