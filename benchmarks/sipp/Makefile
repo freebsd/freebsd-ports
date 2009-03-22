@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sipp
-PORTVERSION=	3.1.20080826
-PORTREVISION=	1
+PORTVERSION=	3.1.20090121
 CATEGORIES=	benchmarks net
 MASTER_SITES=	http://sipp.sourceforge.net/snapshots/
-DISTNAME=	${PORTNAME}.2008-08-26
+DISTNAME=	${PORTNAME}.2009-01-21
 
 MAINTAINER=	tut@nhamon.com.ua
 COMMENT=	SIP testing tool
@@ -22,6 +21,7 @@ USE_GMAKE=	yes
 MAKE_ENV+=	CPP="${CXX}" \
 		CPPFLAGS="${CXXFLAGS}" \
 		CCLINK="${CXX}"
+WRKSRC=		${WRKDIR}/sipp.svn
 
 OPTIONS=	OPENSSL		"OpenSSL support (for digest auth and SIP over TLS)" on \
 		GSL		"GSL support (for statistical distributed pauses)" off \
