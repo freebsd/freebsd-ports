@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rtpbreak
-PORTVERSION=	1.3
+PORTVERSION=	1.3a
 CATEGORIES=	net
-MASTER_SITES=	http://xenion.antifork.org/rtpbreak/
+MASTER_SITES=	http://xenion.reactive-search.com/rtpbreak/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	prudhvikrishna@gmail.com
