@@ -619,6 +619,7 @@
     SUBDIR += libcoyotl
     SUBDIR += libcwd
     SUBDIR += libdaemon
+    SUBDIR += libdap
     SUBDIR += libdasm
     SUBDIR += libdfui
     SUBDIR += libdict
