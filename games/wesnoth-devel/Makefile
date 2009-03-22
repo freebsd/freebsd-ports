@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.5.7
+PORTVERSION=	1.5.14
 CATEGORIES=	games
 PKGNAMESUFFIX=	-devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -18,8 +18,6 @@ COMMENT=	A fantasy turn-based strategy game
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
 		freetype.9:${PORTSDIR}/print/freetype2
-
-BROKEN=		bad plist
 
 CONFLICTS=	wesnoth-1.4*
 
@@ -34,17 +32,23 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-localedir=${PREFIX}/share/locale
 
-MANLANG=	"" cs da de es fi fr gl hu it ja
+MANLANG=	"" cs da de en_GB es fi fr gl hu it ja
 MANLANG+=	lt nl pl racv sk sr sr@latin sv tr zh_CN zh_TW
 
 MAN6_CS=	wesnoth.6
 MAN6_DE=	wesnoth.6
 MAN6_EN=	wesnoth.6
+MAN6_EN_GB=	wesnoth.6
 MAN6_ES=	wesnoth.6
+MAN6_FI=	wesnoth.6
 MAN6_GL=	wesnoth.6
+MAN6_HU=	wesnoth.6
 MAN6_IT=	wesnoth.6
 MAN6_LT=	wesnoth.6
+MAN6_PL=	wesnoth.6
+MAN6_SK=	wesnoth.6
 MAN6_TR=	wesnoth.6
+MAN6_ZH_CN=	wesnoth.6
 
 OPTIONS=	CAMPAIGN "Enable campaign server" On \
 		EDITOR	"Enable map editor"  On \
@@ -93,6 +97,14 @@ PLIST_SUB+=		TOOLS="@comment "
 .else
 CONFIGURE_ARGS+=	--enable-tools
 PLIST_SUB+=		TOOLS=""
+.endif
+
+.if defined(WITH_FRIBIDI) || exists(${LOCALBASE}/bin/fribidi-config)
+LIB_DEPENDS+=		fribidi.0:${PORTSDIR}/converters/fribidi
+.endif
+
+.if (defined(WITH_CAMPAIGN) || defined(WITH_SERVER) || defined(WITH_TOOLS)) && defined(WITHOUT_NLS)
+BROKEN=		you need NLS support for `campaignd' or `wesnothd' or tools to link against gettext
 .endif
 
 post-configure:
