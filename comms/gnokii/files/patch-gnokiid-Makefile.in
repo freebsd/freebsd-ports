@@ -1,6 +1,15 @@
---- gnokiid/Makefile.in.orig	2008-05-03 21:21:29.000000000 +0200
-+++ gnokiid/Makefile.in	2008-05-29 22:14:16.000000000 +0200
-@@ -322,8 +322,8 @@
+--- gnokiid/Makefile.in.orig	2008-10-06 08:57:16.000000000 +0200
++++ gnokiid/Makefile.in	2009-02-26 17:26:31.000000000 +0100
+@@ -48,7 +48,7 @@
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(bin_PROGRAMS)
+ am_gnokiid_OBJECTS = gnokiid-gnokiid.$(OBJEXT)
+-gnokiid_OBJECTS = $(am_gnokiid_OBJECTS)
++gnokiid_OBJECTS = $(am_gnokiid_OBJECTS) /usr/lib/libsdp.so
+ am__DEPENDENCIES_1 =
+ gnokiid_DEPENDENCIES = $(top_builddir)/common/libgnokii.la \
+ 	$(top_builddir)/common/data/libDATA.la $(am__DEPENDENCIES_1)
+@@ -326,8 +326,8 @@
  	     || test -f $$p1 \
  	  ; then \
  	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
