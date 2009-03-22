@@ -1655,6 +1655,7 @@
     SUBDIR += xpi-jiwaonwooztalk
     SUBDIR += xpi-joga
     SUBDIR += xpi-jsview
+    SUBDIR += xpi-lastfmonwooztalk
     SUBDIR += xpi-leechblock
     SUBDIR += xpi-linkification
     SUBDIR += xpi-live_http_headers
