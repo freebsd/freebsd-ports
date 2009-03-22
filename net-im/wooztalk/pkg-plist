@@ -1,7 +1,6 @@
 bin/wooztalk
-share/locale/en/LC_MESSAGES/wooztalk.po
-share/locale/fr/LC_MESSAGES/wooztalk.po
 %%DATADIR%%/WoozTalk.ico
+%%DATADIR%%/wooztalk.pem
 %%DATADIR%%/img/about.png
 %%DATADIR%%/img/add.png
 %%DATADIR%%/img/all.png
@@ -19,7 +18,6 @@ share/locale/fr/LC_MESSAGES/wooztalk.po
 %%DATADIR%%/img/chatsubscribed.png
 %%DATADIR%%/img/check.png
 %%DATADIR%%/img/cheeky.png
-%%DATADIR%%/img/close.png
 %%DATADIR%%/img/close_event.png
 %%DATADIR%%/img/configURL.png
 %%DATADIR%%/img/confused.png
@@ -36,6 +34,7 @@ share/locale/fr/LC_MESSAGES/wooztalk.po
 %%DATADIR%%/img/newmsg.png
 %%DATADIR%%/img/nochat.png
 %%DATADIR%%/img/nogender.png
+%%DATADIR%%/img/plugins_config.png
 %%DATADIR%%/img/popup.png
 %%DATADIR%%/img/popupdef.png
 %%DATADIR%%/img/postit.png
@@ -78,18 +77,23 @@ share/locale/fr/LC_MESSAGES/wooztalk.po
 %%DATADIR%%/img/venus.png
 %%DATADIR%%/img/wait.png
 %%DATADIR%%/img/website.png
+%%DATADIR%%/img/close.png
 %%DATADIR%%/img/wink.png
-%%DATADIR%%/img/woozie.png
 %%DATADIR%%/img/wooztalk.png
-%%DATADIR%%/resources/en/wooztalk.po
-%%DATADIR%%/resources/fr/wooztalk.po
+%%DATADIR%%/img/woozie.png
 %%DATADIR%%/sounds/message.wav
 %%DATADIR%%/sounds/offline.wav
 %%DATADIR%%/sounds/online.wav
-%%DATADIR%%/wooztalk.pem
-@dirrm %%DATADIR%%/sounds
-@dirrmtry %%DATADIR%%/resources/fr
-@dirrmtry %%DATADIR%%/resources/en
-@dirrmtry %%DATADIR%%/resources
+%%DATADIR%%/resources/fr/wooztalk.po
+%%DATADIR%%/resources/en/wooztalk.po
+share/locale/fr/LC_MESSAGES/wooztalk.po
+share/locale/en/LC_MESSAGES/wooztalk.po
+@dirrm %%DATADIR%%/resources/fr
+@dirrm %%DATADIR%%/resources/en
+@dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%/img
+@dirrm %%DATADIR%%/sounds
+@dirrmtry %%DATADIR%%/plugins
 @dirrmtry %%DATADIR%%
+@dirrmtry share/locale/fr
+@dirrmtry share/locale/fr/LC_MESSAGES

@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	wooztalk
-PORTVERSION=	0.9.8d
-PORTREVISION=	1
+PORTVERSION=	0.9.9a
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.wooztalk.com/common/download/
+MASTER_SITES=	http://www.wooztalk.com/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}-freebsd
 
 MAINTAINER=	tech@wooztalk.com
@@ -26,12 +25,57 @@ NO_BUILD=	yes
 USE_WX=		2.8
 WX_UNICODE=	yes
 
-OPTIONS=	FIREFOX "Install Firefox extension (required)" On
+OPTIONS=	FIREFOX "Firefox extension (required)" On \
+		DAILYMOTION "Dailymotion extension" On \
+		DEEZER "Deezer extension" On \
+		GOOGLEVIDEO "GoogleVideo extension" On \
+		IMEEM "Imeem extension" On \
+		JIWA "Jiwa extension" On \
+		LASTFM "Last.fm extension" On \
+		VIMEO "Vimeo extension" On \
+		VLC "VLC extension" On \
+		YOUTUBE "Youtube extension" On
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FIREFOX)
-RUN_DEPENDS+=	${LOCALBASE}/lib/xpi/firefoxonwooztalk@kurioos-itech.com:${PORTSDIR}/www/xpi-firefoxonwooztalk
+RUN_DEPENDS+=	${LOCALBASE}/lib/xpi/firefoxonwooztalk@wooztalk.com:${PORTSDIR}/www/xpi-firefoxonwooztalk
+.endif
+
+.if defined(WITH_DAILYMOTION)
+RUN_DEPENDS+=	${LOCALBASE}/lib/xpi/dailymotiononwooztalk@wooztalk.com:${PORTSDIR}/www/xpi-dailymotiononwooztalk
+.endif
+
+.if defined(WITH_DEEZER)
+RUN_DEPENDS+=	${LOCALBASE}/lib/xpi/deezeronwooztalk@wooztalk.com:${PORTSDIR}/www/xpi-deezeronwooztalk
+.endif
+
+.if defined(WITH_GOOGLEVIDEO)
+RUN_DEPENDS+=	${LOCALBASE}/lib/xpi/googlevideoonwooztalk@wooztalk.com:${PORTSDIR}/www/xpi-googlevideoonwooztalk
+.endif
+
+.if defined(WITH_IMEEM)
+RUN_DEPENDS+=	${LOCALBASE}/lib/xpi/imeemonwooztalk@wooztalk.com:${PORTSDIR}/www/xpi-imeemonwooztalk
+.endif
+
+.if defined(WITH_JIWA)
+RUN_DEPENDS+=	${LOCALBASE}/lib/xpi/jiwaonwooztalk@wooztalk.com:${PORTSDIR}/www/xpi-jiwaonwooztalk
+.endif
+
+.if defined(WITH_LASTFM)
+RUN_DEPENDS+=	${LOCALBASE}/lib/xpi/lastfmonwooztalk@wooztalk.com:${PORTSDIR}/www/xpi-lastfmonwooztalk
+.endif
+
+.if defined(WITH_VIMEO)
+RUN_DEPENDS+=	${LOCALBASE}/lib/xpi/vimeoonwooztalk@wooztalk.com:${PORTSDIR}/www/xpi-vimeoonwooztalk
+.endif
+
+.if defined(WITH_VLC)
+RUN_DEPENDS+=	${LOCALBASE}/share/vlc/http/wooztalk.html:${PORTSDIR}/multimedia/vlconwooztalk
+.endif
+
+.if defined(WITH_YOUTUBE)
+RUN_DEPENDS+=	${LOCALBASE}/lib/xpi/youtubeonwooztalk@wooztalk.com:${PORTSDIR}/www/xpi-youtubeonwooztalk
 .endif
 
 .if ${OSVERSION} < 700000
