@@ -42,7 +42,7 @@ SUB_FILES=	pkg-message munin-node.sh munin-node-revive.sh
 SUB_LIST=	RC_SUBR=${RC_SUBR}
 USE_RC_SUBR=	YES
 
-pre-install:
+pre-su-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
