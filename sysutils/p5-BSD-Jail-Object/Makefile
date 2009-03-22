@@ -7,6 +7,7 @@
 
 PORTNAME=	BSD-Jail-Object
 PORTVERSION=	0.02
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,10 +22,4 @@ PERL_CONFIGURE=	5.8.6+
 
 MAN3=		BSD::Jail::Object.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800056
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
