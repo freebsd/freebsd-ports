@@ -749,6 +749,7 @@
     SUBDIR += rubygem-captcha
     SUBDIR += rubygem-exifr
     SUBDIR += rubygem-gd2
+    SUBDIR += rubygem-graphviz
     SUBDIR += rubygem-gruff
     SUBDIR += rubygem-objectdetect
     SUBDIR += rubygem-railroad
