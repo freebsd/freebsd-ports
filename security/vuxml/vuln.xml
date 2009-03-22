@@ -53,12 +53,9 @@ Note:  Please add new entries to the beginning of this file.
 	  cite="http://www.wireshark.org/security/wnpa-sec-2009-01.html">
 	  <p>On non-Windows systems Wireshark could crash if the HOME
 	    environment variable contained sprintf-style string formatting
-	    characters.
-	    Wireshark could crash while reading a malformed NetScreen snoop
-	    file.
-	    Wireshark could crash while reading a Tektronix K12 text capture
-	    file.
-	  </p>
+	    characters. Wireshark could crash while reading a malformed
+	    NetScreen snoop file. Wireshark could crash while reading a
+	    Tektronix K12 text capture file.</p>
 	</blockquote>
       </body>
     </description>
