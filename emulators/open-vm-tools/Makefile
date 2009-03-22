@@ -26,6 +26,7 @@ LIB_DEPENDS+=		glib-2.0:${PORTSDIR}/devel/glib20
 CONFIGURE_ARGS+=	--without-x --without-gtk2 --without-gtkmm
 PLIST_SUB+=		X11="@comment "
 CONFLICTS=		open-vm-tools-[0-9]*
+BROKEN=			bad plist
 .else
 .if !defined(WITHOUT_LIBNOTIFY)
 LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
@@ -40,6 +41,7 @@ USE_XORG=		x11 ice xineramaproto xinerama xrandr xtst
 USE_GNOME=		gtk20 glib20
 PLIST_SUB+=		X11=""
 CONFLICTS=		open-vm-tools-nox11-[0-9]*
+BROKEN=			does not configure
 .endif
 
 CONFLICTS+=		vmware-guestd[0-9]* vmware-tools[0-9]*
