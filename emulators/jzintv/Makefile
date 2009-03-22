@@ -41,6 +41,8 @@ PLIST_SUB+=	PL_TOOLS="@comment "
 post-patch:
 	@${REINPLACE_CMD} '227s|/usr/local/share/jzintv|${DATADIR}|' ${BUILD_WRKSRC}/config.h
 	@${CP} ${BUILD_WRKSRC}/Makefile.freebsd ${BUILD_WRKSRC}/Makefile
+	@${FIND} ${WRKSRC} -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e 's|dprintf|dbprintf|g'
+	@${FIND} ${WRKSRC} -name "*.c.bak" -delete
 
 do-install:
 	${MKDIR} ${DATADIR}/rom
