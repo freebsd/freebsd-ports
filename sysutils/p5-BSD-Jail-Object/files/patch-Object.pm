@@ -32,7 +32,7 @@
 +		return (0);
 +	
 +#if ((__FreeBSD_version >= 800000 && __FreeBSD_version < 800056) || __FreeBSD_version < 701103)
-+	if (in.s_addr == xp->pr_ip) {
++	if (in.s_addr == xp->pr_ip)
 +		return (1);
 +#else
 +	if (xp->pr_ip4s == 0)
