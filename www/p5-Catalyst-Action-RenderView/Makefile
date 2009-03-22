@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Action-RenderView
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,8 @@ COMMENT=	Sensible default end action for Catalyst
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Data-Visitor>=0.08:${PORTSDIR}/devel/p5-Data-Visitor
+		p5-Data-Visitor>=0.08:${PORTSDIR}/devel/p5-Data-Visitor \
+		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
 
 PERL_CONFIGURE=	5.8.0+
 
