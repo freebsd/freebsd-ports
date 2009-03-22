@@ -6,6 +6,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.48a
+PORTREVISION=	1
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -16,14 +17,10 @@ COMMENT=	3D modeling/rendering/animation/gaming package
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		freetype.9:${PORTSDIR}/print/freetype2 \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
-		alut.1:${PORTSDIR}/audio/freealut\
-		openal.0:${PORTSDIR}/audio/openal \
-		avutil.1:${PORTSDIR}/multimedia/ffmpeg \
-		GLEW.1:${PORTSDIR}/graphics/glew
+		GLEW.1:${PORTSDIR}/graphics/glew \
+		IlmThread.6:${PORTSDIR}/graphics/ilmbase
 
 USE_XORG=	x11 xext xmu xi
 USE_PYTHON=	2.5+
@@ -43,33 +40,99 @@ LANG=		ar bg ca cs de el es fi fr hr hr_HR it ja ko nl pl pt_BR ro \
 LANG=		ar bg ca cs de el es fi fr hr hr_HR it ja ko nl pl pt_BR ro \
 		ru sr sr@Latn sv uk zh_CN
 
-OPTIONS=	OCFLAGS "Enable optimized CFLAGS" off \
-		NLS	"Native language support" on
+OPTIONS=	DDS		"DDS file format support" on \
+		FFMPEG		"Audio and video support using ffmpeg" on \
+		FREETYPE	"Improved font rendering support" on \
+		ICONV		"Iconv support for localisation (only with NLS)" off \
+		KETSJI		"Build GameEngine and BlenderPlayer" off \
+		NLS		"Native language support" on \
+		OCFLAGS		"Optimized Cflags" off \
+		OPENAL		"3D sound support using OpenAL" off \
+		OPENEXR		"High dynamic-range (HDR) support using OpenEXR" on \
+		OPENMP		"Parallel processing support" off \
+		VERSE		"Shared networking support using Verse" on
 
 .include <bsd.port.pre.mk>
 
-MAKE_ENV+=	NAN_CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
-		-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/OpenEXR \
-		-I${PYTHON_INCLUDEDIR}/"
-MAKE_ENV+=	NAN_FREETYPE="${LOCALBASE}/"
-MAKE_ENV+=	NAN_OPENEXR="${LOCALBASE}/"
-MAKE_ENV+=	NAN_OPENAL="${LOCALBASE}/"
+MAKE_ENV+=	NAN_FMOD="${LOCALBASE}/"
 MAKE_ENV+=	NAN_PYTHON="${LOCALBASE}/"
 MAKE_ENV+=	NAN_PYTHON_VERSION=${PYTHON_VER}
-MAKE_ENV+=	NAN_FMOD="${LOCALBASE}/"
 MAKE_ENV+=	NAN_JPEG="${LOCALBASE}/"
 MAKE_ENV+=	NAN_PNG="${LOCALBASE}/"
 MAKE_ENV+=	NAN_ZLIB="${LOCALBASE}/"
 MAKE_ENV+=	NAN_ODE="${LOCALBASE}/"
 MAKE_ENV+=	NAN_GLEW="${LOCALBASE}/"
+MAKE_ENV+=	NAN_JUST_BLENDERDYNAMIC="true"
+MAKE_ENV+=	WITH_BF_DYNAMICOPENGL="true"
+
 CFLAGS+=	"-I${LOCALBASE}/include"
+NANCPPFLAGS=
+
+.if !defined(WITHOUT_DDS)
+MAKE_ENV+=	WITH_DDS="true"
+.else
+MAKE_ENV+=	WITH_DDS="false"
+.endif
+
+.if defined(WITHOUT_FFMPEG)
+MAKE_ENV+=	WITH_FFMPEG="false"
+.else
+MAKE_ENV+=	WITH_FFMPEG="true"
+MAKE_ENV+=	NAN_USE_FFMPEG_CONFIG="true"
+MAKE_ENV+=	NAN_FFMPEG="${LOCALBASE}/"
+LIB_DEPENDS+=	avutil.1:${PORTSDIR}/multimedia/ffmpeg
+.endif
+
+.if defined(WITHOUT_FREETYPE)
+MAKE_ENV+=	WITH_FREETYPE2="false"
+.else
+MAKE_ENV+=	WITH_FREETYPE2="true"
+MAKE_ENV+=	NAN_FREETYPE="${LOCALBASE}/"
+MAKE_ENV+=	NAN_FTGL="${LOCALBASE}/"
+NANCPPFLAGS+=	"-I${LOCALBASE}/include/freetype2"
+LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	ftgl.2:${PORTSDIR}/graphics/ftgl
+.endif
+
+.if defined(WITH_KETSJI)
+.if ${ARCH} == "amd64"
+BROKEN=		GameEngine and BlenderPlayer cannot be build on amd64
+.endif
+MAKE_ENV+=	NAN_NO_KETSJI="false"
+MAKE_ENV+=	NAN_USE_BULLET="true"
+MAKE_ENV+=	WITH_BF_BLENDERGAMEENGINE="true"
+MAKE_ENV+=	WITH_BF_BLENDERPLAYER="true"
+PLIST_SUB+=	KETSJI=""
+.else
+MAKE_ENV+=	NAN_NO_KETSJI="true"
+MAKE_ENV+=	WITH_BF_BLENDERGAMEENGINE="false"
+MAKE_ENV+=	WITH_BF_BLENDERPLAYER="false"
+PLIST_SUB+=	KETSJI="@comment "
+.endif
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 MAKE_ENV+=	INTERNATIONAL="true"
+
+# Iconv support?
+.if defined(WITH_ICONV)
+USE_ICONV=	yes
+MAKE_ENV+=	WITH_ICONV="true"
+.else
+MAKE_ENV+=	WITH_ICONV="false"
+.endif
+
+.if defined(WITHOUT_FREETYPE)
+# Implies Freetype2 - ignore the without knob.
+MAKE_ENV+=	WITH_FREETYPE2="true"
+MAKE_ENV+=	NAN_FREETYPE="${LOCALBASE}/"
+LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	ftgl.2:${PORTSDIR}/graphics/ftgl
+.endif
+
 PLIST_SUB+=	NLS=""
 .else
+MAKE_ENV+=	WITH_ICONV="false"
 PLIST_SUB+=	NLS="@comment "
 .endif
 
@@ -77,15 +140,44 @@ PLIST_SUB+=	NLS="@comment "
 CFLAGS+=	-O3 -ffast-math
 .endif
 
-.if ${ARCH} == "amd64"
-MAKE_ENV+=	NAN_NO_KETSJI="true"
-MAKE_ENV+=	WITH_BF_BLENDERGAMEENGINE="false"
-MAKE_ENV+=	WITH_BF_BLENDERPLAYER="false"
+.if defined(WITH_OPENAL)
+MAKE_ENV+=	NAN_NO_OPENAL="false"
+MAKE_ENV+=	NAN_OPENAL="${LOCALBASE}/"
+LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal \
+		alut.1:${PORTSDIR}/audio/freealut
 .else
-MAKE_ENV+=	WITH_BF_BLENDERGAMEENGINE="true"
-MAKE_ENV+=	WITH_BF_OPENAL="true"
-MAKE_ENV+=	WITH_BF_BLENDERPLAYER="true"
+MAKE_ENV+=	NAN_NO_OPENAL="true"
 .endif
+
+.if defined(WITHOUT_OPENEXR)
+MAKE_ENV+=	WITH_OPENEXR="false"
+.else
+MAKE_ENV+=	WITH_OPENEXR="true"
+MAKE_ENV+=	NAN_OPENEXR="${LOCALBASE}/"
+LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
+NANCPPFLAGS+=	"-I${LOCALBASE}/include/OpenEXR"
+.endif
+
+.if defined(WITH_OPENMP)
+.if ${OSVERSION} < 700000
+BROKEN=		OpenMP support is not available for FreeBSD 6.x and below
+.else
+MAKE_ENV+=	WITH_BF_OPENMP="true"
+.endif
+.else
+MAKE_ENV+=	WITH_BF_OPENMP="false"
+.endif
+
+.if defined(WITHOUT_VERSE)
+MAKE_ENV+=	WITH_VERSE="false"
+PLIST_SUB+=	VERSE="@comment "
+.else
+MAKE_ENV+=	WITH_VERSE="true"
+PLIST_SUB+=	VERSE=""
+.endif
+
+MAKE_ENV+=	NAN_CPPFLAGS="-I${LOCALBASE}/include -I${PYTHON_INCLUDEDIR} \
+			${NANCPPFLAGS}"
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Fails to link
@@ -94,6 +186,16 @@ BROKEN=		Fails to link
 pre-configure:
 	@${REINPLACE_CMD} -e 's|2.5|${PYTHON_VER}|' \
 		${WRKSRC}/source/nan_definitions.mk
+
+.if defined(WITHOUT_FFMPEG)
+	@${REINPLACE_CMD} -e 's|%%FFMPEGCFLAGS%%||;s|%%FFMPEGLIBS%%||;' \
+		${WRKSRC}/user-def.mk
+.else
+	@${REINPLACE_CMD} -e \
+		's|%%FFMPEGCFLAGS%%|$$\(shell pkg-config --cflags libavcodec libavformat\)|; \
+		s|%%FFMPEGLIBS%%|$$\(shell pkg-config --libs libavcodec libavformat\)|;' \
+		${WRKSRC}/user-def.mk
+.endif
 
 	@${REINPLACE_CMD} -e \
 		's|gcc|${CC}|; \
@@ -115,6 +217,12 @@ pre-configure:
 do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/blender ${PREFIX}/bin/blender
 	@${INSTALL_PROGRAM} ${WRKSRC}/obj/freebsd-${OSREL}-${ARCH}/bin/blender ${PREFIX}/bin/blender-bin
+.if defined(WITH_KETSJI)
+	@${INSTALL_PROGRAM} ${WRKSRC}/obj/freebsd-${OSREL}-${ARCH}/bin/blenderplayer ${PREFIX}/bin/blenderplayer
+.endif
+.if !defined(WITHOUT_VERSE)
+	@${INSTALL_PROGRAM} ${WRKSRC}/obj/freebsd-${OSREL}-${ARCH}/bin/verse ${PREFIX}/bin/verse
+.endif
 
 	@${MKDIR} ${DATADIR}
 	@${CP} -R ${WRKSRC}/release/scripts ${DATADIR}
