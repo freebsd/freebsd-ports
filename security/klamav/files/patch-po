@@ -153,3 +153,20 @@
  "o'. Daha sonra yetkili kullanıcı şifresi sorulacak."
  
  #: klamd.cpp:734 klamd.cpp:735
+--- po/uk.po.orig	2009-03-21 09:54:35.000000000 -0300
++++ po/uk.po	2009-03-21 09:55:24.000000000 -0300
+@@ -999,12 +999,12 @@
+ "I need to load a module called 'dazuko' first. This module will allow KlamAV "
+ "to gain real-time access to files. If you don't want this message to appear "
+ "in future, put the following command in your initialization scripts: "
+-"'modprobe dazuko.o'. You will next be asked for the root password."
++"'kldload dazuko.ko'. You will next be asked for the root password."
+ msgstr ""
+ "Спершу потрібно завантажити модуль, що має назву 'dazuko'. Цей модуль "
+ "дозволить KlamAV отримати доступ до файлів у реальному часі. Якщо Ви не "
+ "бажаєте появи цього повідомлення далі, додайте таку команду до Ваших "
+-"початковий скриптів: 'modprobe dazuko.o'. Зараз Вам потрібно буде ввести "
++"початковий скриптів: 'kldload dazuko.ko'. Зараз Вам потрібно буде ввести "
+ "пароль адміністратора."
+ 
+ #: klamd.cpp:734 klamd.cpp:735
