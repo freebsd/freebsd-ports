@@ -920,6 +920,21 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: see below
 # MAKE_ARGS		- Any extra arguments to sub-make in build and install stages.
 #				  Default: none
+##
+# MAKE_JOBS_SAFE
+#				- This port can safely be built on multiple cpus in parallel.
+#				  The make will be invoked with -jX parameter where X equals
+#				  number of cores present in the system.
+# MAKE_JOBS_UNSAFE
+#				- Disallow multiple jobs even when user set a global override.
+#				  To be used with known bad ports.
+# DISABLE_MAKE_JOBS
+#				- Set to disable the multiple jobs feature.  User settable.
+# FORCE_MAKE_JOBS
+#				- Force all ports to be built with multiple jobs, except ports
+#				  that are explicitly marked MAKE_JOBS_UNSAFE.  User settable.
+# MAKE_JOBS_NUMBER
+#				- Override the number of make jobs to be used.  User settable.
 #
 # For install:
 #
@@ -2155,6 +2170,22 @@ MAKE_ENV+=		PREFIX=${PREFIX} \
 .if ${CC} != "icc"
 .if !empty(CFLAGS:M-O[23s]) && empty(CFLAGS:M-fno-strict-aliasing)
 CFLAGS+=       -fno-strict-aliasing
+.endif
+.endif
+.endif
+
+# Multiple make jobs support
+.if defined(DISABLE_MAKE_JOBS) || defined(MAKE_JOBS_UNSAFE)
+_MAKE_JOBS=		#
+.else
+.if defined(MAKE_JOBS_SAFE) || defined(FORCE_MAKE_JOBS)
+.if defined(MAKE_JOBS_NUMBER)
+_MAKE_JOBS=		-j${MAKE_JOBS_NUMBER}
+.else
+_MAKE_JOBS=		-j`${SYSCTL} -n kern.smp.cpus`
+.endif
+.if defined(FORCE_MAKE_JOBS)
+BUILD_FAIL_MESSAGE+=	"You have chosen to use multiple make jobs (parallelization) for all ports.  This port was not tested for this setting.  Please remove FORCE_MAKE_JOBS and retry the build before reporting the failure to the maintainer."
 .endif
 .endif
 .endif
@@ -3659,9 +3690,19 @@ do-configure:
 .if !target(do-build)
 do-build:
 .if defined(USE_GMAKE)
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}; then \
+		if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
+			${ECHO_MSG} "===> Compilation failed unexpectedly."; \
+			(${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
+			fi; \
+		fi)
 .else
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}; then \
+		if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
+			${ECHO_MSG} "===> Compilation failed unexpectedly."; \
+			(${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
+			fi; \
+		fi)
 .endif
 .endif
 
