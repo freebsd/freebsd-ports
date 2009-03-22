@@ -7325,6 +7325,7 @@ liblinebreak                    ports/textproc/liblinebreak
 liblingoteach                   ports/textproc/liblingoteach
 liblo                           ports/audio/liblo
 liblogging                      ports/devel/liblogging
+liblouis                        ports/devel/liblouis
 liblqr-1                        ports/graphics/liblqr-1
 liblrdf                         ports/textproc/liblrdf
 liblscp                         ports/audio/liblscp
@@ -17798,6 +17799,7 @@ planner                         ports/deskutils/planner
 planner.el                      ports/deskutils/planner.el
 plans                           ports/deskutils/plans
 plasma-applet-panelspacer       ports/deskutils/plasma-applet-panelspacer
+plasma-applet-playwolf          ports/deskutils/plasma-applet-playwolf
 plasma-applet-quicklauncher     ports/deskutils/plasma-applet-quicklauncher
 plasma-applet-simpleweatherforecast  ports/deskutils/plasma-applet-simpleweatherforecast
 plasma-applet-teacooker         ports/deskutils/plasma-applet-teacooker
@@ -19946,7 +19948,6 @@ ruby-xmlscan                    ports/textproc/ruby-xmlscan
 ruby-xmlscan-old                ports/textproc/ruby-xmlscan-old
 ruby-xmms                       ports/audio/ruby-xmms
 ruby-xmms2                      ports/audio/ruby-xmms2
-ruby-xmpp4r                     ports/net-im/ruby-xmpp4r
 ruby-xslt                       ports/textproc/ruby-xslt
 ruby-xtemplate                  ports/textproc/ruby-xtemplate
 ruby-zip                        ports/archivers/ruby-zip
@@ -20101,6 +20102,7 @@ rubygem-tzinfo                  ports/devel/rubygem-tzinfo
 rubygem-uuid                    ports/devel/rubygem-uuid
 rubygem-validatable             ports/devel/rubygem-validatable
 rubygem-warbler                 ports/devel/rubygem-warbler
+rubygem-xmpp4r                  ports/net-im/rubygem-xmpp4r
 rubygem-yadis                   ports/net/rubygem-yadis
 rubygem-yapra                   ports/www/rubygem-yapra
 rubygem-zentest                 ports/devel/rubygem-zentest
