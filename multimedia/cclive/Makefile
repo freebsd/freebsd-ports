@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cclive
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	multimedia net
 MASTER_SITES=	GOOGLE_CODE
 
@@ -15,16 +15,28 @@ COMMENT=	Lightweight command line video extraction utility
 
 LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
-.if !defined(WITHOUT_MAN)
-MAKE_ENV=	WITH_MAN=yes
-MAN1=		cclive.1
-.endif
+OPTIONS=	TITLE 	 "Enable video title parsing (req. Perl)" off \
+		SIGWINCH "Enable SIGWINCH handling; resize progressbar" on
 
-MAKE_ENV+=	V=1
+MAKE_ENV=	V=1
+MAKE_ENV+=	WITH_MAN=yes
+MAN1=		cclive.1
 
 PLIST_FILES=	bin/cclive
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TITLE)
+MAKE_ENV+=	WITH_PERL=yes
+USE_PERL5=	5.8.2+
+RUN_DEPENDS+=	p5-HTML-Parser>=3.59:${PORTSDIR}/www/p5-HTML-Parser
+.endif
+
+.if defined(WITH_SIGWINCH)
+MAKE_ENV+=	WITH_SIGWINCH=yes
+.endif
+
+.include <bsd.port.post.mk>
