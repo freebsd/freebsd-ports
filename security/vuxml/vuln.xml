@@ -13806,7 +13806,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>zope</name>
-	<range><lt>2.8.*</lt></range>
+	<range><lt>2.7.9_2</lt></range>
 	<range><ge>2.8.0</ge><le>2.8.8</le></range>
 	<range><ge>2.9.0</ge><le>2.9.6</le></range>
 	<range><ge>2.10.0</ge><le>2.10.2</le></range>
