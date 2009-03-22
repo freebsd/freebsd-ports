@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kannel
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.kannel.org/download/%SUBDIR%/ \
 		http://farrokhi.net/distfiles/
