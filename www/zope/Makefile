@@ -7,25 +7,21 @@
 
 PORTNAME=	zope
 PORTVERSION=	2.7.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/Zope-${PORTVERSION}/:src \
-		http://www.zope.org/Products/Zope/Hotfix-2006-08-21/Hotfix-20060821/:hotfix
+		http://www.zope.org/Products/Zope/Hotfix-2007-03-20/Hotfix-20070320/:hotfix
 DISTFILES=	Zope-${PORTVERSION}-final.tgz:src \
-		${HOTFIX}.tar.gz:hotfix
+		${HOTFIX}.tgz:hotfix
 
 MAINTAINER=	estartu@augusta.de
 COMMENT=	An object-based web application platform
 
 WRKSRC=		${WRKDIR}/Zope-${PORTVERSION}-final
-USE_PYTHON=	2.3
+USE_PYTHON=	2.4
 USE_RC_SUBR=	yes
 DIST_SUBDIR=	zope
-HOTFIX=		Hotfix_20060821
-
-FORBIDDEN=	contains cross-site scripting vulnerability http://VuXML.FreeBSD.org/34414a1e-e377-11db-b8ab-000c76189c4c.html
-DEPRECATED=	has been forbidden for more than 6 months
-EXPIRATION_DATE=2009-01-19
+HOTFIX=		Hotfix_20070320
 
 # Note: the notes that follow reflect the decisions of prior maintainers
 # of this port. IOW, don't blame me if you don't like the way it's done.
