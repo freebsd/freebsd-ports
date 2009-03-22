@@ -1697,6 +1697,7 @@
     SUBDIR += xpi-unplug
     SUBDIR += xpi-urllink
     SUBDIR += xpi-videodownloader
+    SUBDIR += xpi-vimeoonwooztalk
     SUBDIR += xpi-vimperator
     SUBDIR += xpi-web_developer
     SUBDIR += xpi-wmlbrowser
