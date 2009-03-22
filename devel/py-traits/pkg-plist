@@ -37,6 +37,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/interface_checker.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/interface_checker.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/interface_checker.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/protocols/README.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/protocols/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/protocols/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/protocols/__init__.pyo
@@ -473,3 +474,393 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Adapted_tree_editor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Apply_Revert_handler_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Auto_editable_readonly_table_cells.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Auto_update_TabularEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Date_editor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Dynamic_EnumEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Dynamic_range_trait_and_editor.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Dynamic_views_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/History_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Invalid_state_handling.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/ListStrEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/List_editor_notebook_selection_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/List_editors_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/MVC_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Multi_select_string_list.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Multi_thread_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Multi_thread_demo_2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/NumPy_array_tabular_editor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/NumPy_array_view_editor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Popup_Dialog_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Popup_editors.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Property_List_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Scrubber_editor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Settable_cached_property.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Statusbar_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/String_list_ui_editor.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Table_editor_with_checkbox_column.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Table_editor_with_context_menu_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Table_editor_with_live_search_and_cell_editor.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Tabular_editor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Time_editor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Applications/Python_source_browser.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Applications/converter.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Applications/display_variables.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Applications/images/GG5.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Applications/images/TFB.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Applications/images/blue_ball.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Applications/images/header.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Applications/images/image_LICENSE.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Applications/images/notebook_close.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Applications/images/notebook_open.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Applications/images/red_ball.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Dynamic Forms/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Dynamic Forms/dynamic_form_using_instances.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Dynamic Forms/dynamic_range_editor.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Dynamic Forms/dynamic_selector.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Dynamic Forms/simple_enabled_when.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Dynamic Forms/visible_when.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Extras/Image_editor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Extras/LED_display.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Extras/animated_GIF.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Extras/images/image_LICENSE.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Extras/images/info.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Extras/images/logo_32x32.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Extras/images/logo_48x48.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Extras/images/logo_64x64.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Extras/windows/flash.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Extras/windows/internet_explorer.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/BooleanEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/ButtonEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/CheckListEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/CodeEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/ColorEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/CompoundEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/DirectoryEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/EnumEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/File Dialog/File_Open.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/File Dialog/File_Open_with_Custom_Extension.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/File Dialog/File_Open_with_FileInfo_Extension.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/File Dialog/File_Open_with_ImageInfo_Extension.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/File Dialog/File_Open_with_Multiple_Extensions.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/File Dialog/File_Open_with_TextInfo_Extension.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/FileEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/FontEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/ImageEnumEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/InstanceEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/ListEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/BooleanEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/ButtonEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/CheckListEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/CodeEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/ColorEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/CompoundEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/DirectoryEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/EnumEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/FileEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/FontEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/ImageEnumEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/InstanceEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/ListEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/RangeEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/SetEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/TableEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/TextEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/TreeEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/TupleEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/RangeEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/SetEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/TableEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/TextEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/TitleEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/TreeEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/TupleEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Useful/using_springs.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/examples.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/image_LICENSE.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/traits_ui_demo.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/default.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/default.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/doc_examples.rst
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/adapt_metadata.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/add_class_trait.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/all_traits_features.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/all_wildcard.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/array_editor.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/bad_self_ref.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/cached_prop.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/circular_definition.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/compound.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/configure_traits.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/configure_traits_view.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/configure_traits_view_buttons.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/configure_traits_view_group.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/custom_traithandler.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/default_trait_editors.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/default_traits_view.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/deferring_notification.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/delegate.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/disallow.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/dynamic_notification.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/enum_editor.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/event.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/external_adapter.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/handler_override.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/include_extra.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/instance_editor_selection.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/interface_definition.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/interface_implementation.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/key_bindings.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/keywords.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/lesson.desc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/list_notifier.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/mapped.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/metadata.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/minimal.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/mixed_styles.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/multi_object_view.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/multiple_views.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/object_trait_attrs.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/override_default.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/override_editor.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/prototype_prefix.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/scratch_adapter.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/simple_adapter.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/static_notification.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/temp_wildcard.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/this.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/trait_reuse.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/trait_subclass.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/traitprefixmap.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/transient_metadata.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/tree_editor.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/type_checked_methods.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/use_custom_th.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/view_attributes.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/view_multi_object.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/view_standalone.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/widget.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/wildcard.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/wildcard_all.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/wildcard_name.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/wildcard_rules.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/examples/wizard.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/doc_examples/lesson.desc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/images/image_LICENSE.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/images/next.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/images/parent.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/images/previous.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/images/reload.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/images/run.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/decorators/cached_property.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/decorators/on_trait_change.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/decorators/tutorial.desc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/default.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/delegation/delegation.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/delegation/tutorial.desc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/extended_trait_change/extended_trait_change.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/extended_trait_change/items.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/extended_trait_change/properties.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/extended_trait_change/tutorial.desc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/getstate_setstate/getstate.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/getstate_setstate/tutorial.desc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/interfaces/adaptation.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/interfaces/interfaces.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/interfaces/tutorial.desc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/trait_types/core_traits.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/trait_types/new_types.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/trait_types/trait_types.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/trait_types/tutorial.desc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/buttons.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/deferred.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/editors/animated_gif.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/editors/flash.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/editors/ie_html.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/editors/led.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/editors/tabular_editor/numpy_array.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/editors/tabular_editor/python_source_browser.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/editors/tabular_editor/sm_person_example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/editors/tabular_editor/tabular_editor.rst
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/editors/tabular_editor/tutorial.desc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/editors/tutorial.desc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/model_view.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/tutorial.desc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/tutorial.desc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/tutor.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Advanced
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Applications/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Applications
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Dynamic Forms
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Extras/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Extras/windows
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Extras
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Standard Editors/File Dialog
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Standard Editors
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Useful
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/doc_examples/examples
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/doc_examples
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0/decorators
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0/delegation
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0/extended_trait_change
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0/getstate_setstate
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0/interfaces
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0/trait_types
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/editors/tabular_editor
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/editors
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/Pydoh_T3UMdoc_HOWTO.txt
+%%PORTDOCS%%%%DOCSDIR%%/Traits UI User Guide.doc
+%%PORTDOCS%%%%DOCSDIR%%/Traits UI User Guide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Traits3_UM.doc
+%%PORTDOCS%%%%DOCSDIR%%/Traits3_UM.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Traits3_UM_add.css
+%%PORTDOCS%%%%DOCSDIR%%/api.css
+%%PORTDOCS%%%%DOCSDIR%%/html.zip
+%%PORTDOCS%%%%DOCSDIR%%/source/.static/default.css
+%%PORTDOCS%%%%DOCSDIR%%/source/.static/e-logo-rev.png
+%%PORTDOCS%%%%DOCSDIR%%/source/.static/et.ico
+%%PORTDOCS%%%%DOCSDIR%%/source/.templates/layout.html
+%%PORTDOCS%%%%DOCSDIR%%/source/.templates/search.html
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/advanced_view.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/custom_view.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/factories_advanced_extra.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/factories_basic.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/factory_intro.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/front.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/glossary.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/handler.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/HTML_editor.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/Thumbs.db
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/alter_title_after.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/alter_title_before.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/array_editors.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/array_view_editor.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/boolean_editors.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/button_editors.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/checklist_editors.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/code_editors.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/color_editors.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/color_picker_windows.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/compound_editors.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/custom_enum_editor.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/default_text_editor.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/delete_item_icon.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/directory_editors.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/enum_editors.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/file_editors.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/font_dialog_windows.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/font_editors.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/html_code_editor.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/image_enum_editors.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/insert_item_icon.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/key_binding_editor.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/led_editor.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/list_editors.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/list_string_editor.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/list_with_context_menu.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/move_down_icon.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/move_up_icon.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/no_sort_icon.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/notebook_list_editor.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/range_editors.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/read_only_editor.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/search_table_icon.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/set_editor.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/shell_editor.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/simple_enum_editor_closed.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/simple_enum_editor_open.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/single_instance_editors.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/table_column_selection.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/table_editor.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/table_prefs.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/tabular_editor.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/text_editor.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/text_editor_integers.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/text_editor_strings.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/text_editors_passwords.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/theme_image1.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/theme_image2.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/theme_image3.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/themed_button_editor.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/themed_checkbox_editor.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/themed_notebook_closed.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/themed_notebook_open.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/themed_slide_with_focus.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/themed_slider_no_focus.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/themed_text_editor_no_focus.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/themed_text_editor_with_focus.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/themed_ui1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/themed_ui2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/tree_editor.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/tuple_editors.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/ui_for_ex1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/ui_for_ex12.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/ui_for_ex13.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/ui_for_ex16.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/ui_for_ex2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/ui_for_ex3.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/ui_for_ex4.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/ui_for_ex7.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/unthemed_ui.jpg
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/images/value_editor.gif
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/index.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/intro.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/predefined_traits.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/themes.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/tips.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/TUIUG/view.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/conf.py
+%%PORTDOCS%%%%DOCSDIR%%/source/e-logo-rev.png
+%%PORTDOCS%%%%DOCSDIR%%/source/index.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/traits_user_manual/advanced.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/traits_user_manual/custom.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/traits_user_manual/deferring.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/traits_user_manual/defining.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/traits_user_manual/front.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/traits_user_manual/index.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/traits_user_manual/intro.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/traits_user_manual/notification.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/code_snippets/code_block0.py
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/code_snippets/code_block1.py
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/code_snippets/container.py
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/code_snippets/echo_box.py
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/code_snippets/event_loop.py
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/code_snippets/interactive.py
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/code_snippets/mpl_figure_editor.py
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/code_snippets/thread_example.py
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/code_snippets/traits_thread.py
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/images/application1.png
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/images/application2.png
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/images/application3.png
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/images/code_block1.png
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/images/container.png
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/images/image_LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/images/interactive.png
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/images/mpl_figure_editor.png
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/images/traits_thread.png
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/index.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials/traits_ui_scientific_app.rst
+%%PORTDOCS%%%%DOCSDIR%%/traits_ui.ppt
+%%PORTDOCS%%%%DOCSDIR%%/traits_ui_slides.pdf
+%%PORTDOCS%%%%DOCSDIR%%/traitsdocreadme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/.static
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/.templates
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/TUIUG/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/TUIUG
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/traits_user_manual
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/tutorials/code_snippets
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/tutorials/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/tutorials
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/source
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
