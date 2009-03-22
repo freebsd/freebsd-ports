@@ -1,11 +1,14 @@
 bin/ots_gui
 bin/taxsolve_CA_540_2008
+bin/taxsolve_MA_1_2008
 bin/taxsolve_NC_D400_2008
 bin/taxsolve_NJ_1040_2008
+bin/taxsolve_NY_IT201_2008
 bin/taxsolve_OH_IT1040_2008
 bin/taxsolve_PA_40_2008
 bin/taxsolve_US_1040_2008
 bin/taxsolve_US_1040_Sched_C_2008
+bin/taxsolve_VA_760_2008
 share/ots/otslogo.ppm
 share/ots/examples_and_templates/CA_540/CA_540_2008_example.dat
 share/ots/examples_and_templates/CA_540/CA_540_2008_template.dat
@@ -21,6 +24,7 @@ share/ots/examples_and_templates/NJ_1040/NJ_1040_2008_example.dat
 share/ots/examples_and_templates/NJ_1040/NJ_1040_2008_template.dat
 share/ots/examples_and_templates/NJ_1040/README_NJ_1040.txt
 share/ots/examples_and_templates/NY_IT201/NY_IT201_2008_example.dat
+share/ots/examples_and_templates/NY_IT201/NY_IT201_2008_example.out
 share/ots/examples_and_templates/NY_IT201/NY_IT201_2008_template.dat
 share/ots/examples_and_templates/NY_IT201/README_NY_IT201.txt
 share/ots/examples_and_templates/OH_1040/OH_IT1040_2008_example.dat
