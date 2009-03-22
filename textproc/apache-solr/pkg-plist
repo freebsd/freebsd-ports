@@ -1,0 +1,137 @@
+@comment $FreeBSD$
+%%JAVAJARDIR%%/apache-solr-1.3.0.war
+%%JAVAJARDIR%%/apache-solr-common-1.3.0.jar
+%%JAVAJARDIR%%/apache-solr-core-1.3.0.jar
+%%JAVAJARDIR%%/apache-solr-dataimporthandler-1.3.0.jar
+%%JAVAJARDIR%%/apache-solr-solrj-1.3.0.jar
+%%JAVAJARDIR%%/solrj-lib/commons-codec-1.3.jar
+%%JAVAJARDIR%%/solrj-lib/commons-httpclient-3.1.jar
+%%JAVAJARDIR%%/solrj-lib/commons-io-1.3.1.jar
+%%JAVAJARDIR%%/solrj-lib/commons-logging-1.0.4.jar
+%%JAVAJARDIR%%/solrj-lib/geronimo-stax-api_1.0_spec-1.0.1.jar
+%%JAVAJARDIR%%/solrj-lib/stax-utils.jar
+%%JAVAJARDIR%%/solrj-lib/wstx-asl-3.2.7.jar
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/etc/jetty.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/etc/webdefault.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/hsqldb.zip
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/db/conf/admin-extra.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/db/conf/db-data-config.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/db/conf/elevate.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/db/conf/protwords.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/db/conf/schema.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/db/conf/scripts.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/db/conf/solrconfig.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/db/conf/stopwords.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/db/conf/synonyms.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/db/conf/xslt/example.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/db/conf/xslt/example_atom.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/db/conf/xslt/example_rss.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/db/conf/xslt/luke.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/rss/conf/admin-extra.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/rss/conf/elevate.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/rss/conf/protwords.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/rss/conf/rss-data-config.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/rss/conf/schema.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/rss/conf/scripts.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/rss/conf/solrconfig.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/rss/conf/stopwords.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/rss/conf/synonyms.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-DIH/solr/solr.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampleAnalysis/mem.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampleAnalysis/post.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampleAnalysis/small.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampledocs/books.csv
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampledocs/hd.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampledocs/ipod_other.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampledocs/ipod_video.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampledocs/mem.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampledocs/monitor.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampledocs/monitor2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampledocs/mp500.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampledocs/post.jar
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampledocs/post.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampledocs/sd500.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampledocs/solr.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampledocs/spellchecker.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampledocs/test_utf8.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampledocs/utf8-example.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampledocs/vidcard.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/jetty-6.1.3.jar
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/jetty-util-6.1.3.jar
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/jsp-2.1/ant-1.6.5.jar
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/jsp-2.1/core-3.1.1.jar
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/jsp-2.1/jsp-2.1.jar
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/jsp-2.1/jsp-api-2.1.jar
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/servlet-api-2.5-6.1.3.jar
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/multicore/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/multicore/core0/conf/schema.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/multicore/core0/conf/solrconfig.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/multicore/core1/conf/schema.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/multicore/core1/conf/solrconfig.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/multicore/exampledocs/ipod_other.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/multicore/exampledocs/ipod_video.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/multicore/solr.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/bin/abc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/bin/abo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/bin/backup
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/bin/backupcleaner
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/bin/commit
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/bin/optimize
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/bin/readercycle
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/bin/rsyncd-disable
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/bin/rsyncd-enable
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/bin/rsyncd-start
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/bin/rsyncd-stop
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/bin/scripts-util
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/bin/snapcleaner
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/bin/snapinstaller
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/bin/snappuller
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/bin/snappuller-disable
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/bin/snappuller-enable
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/bin/snapshooter
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/conf/admin-extra.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/conf/elevate.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/conf/protwords.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/conf/schema.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/conf/scripts.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/conf/solrconfig.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/conf/spellings.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/conf/stopwords.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/conf/synonyms.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/conf/xslt/example.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/conf/xslt/example_atom.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/conf/xslt/example_rss.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/solr/conf/xslt/luke.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/start.jar
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/webapps/solr.war
+@dirrmtry %%JAVAJARDIR%%/solrj-lib
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/work
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/webapps
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/solr/conf/xslt
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/solr/conf
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/solr/bin
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/solr
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/multicore/exampledocs
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/multicore/core1/conf
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/multicore/core1
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/multicore/core0/conf
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/multicore/core0
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/multicore
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/logs
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/lib/jsp-2.1
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/lib
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/exampledocs
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/exampleAnalysis
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/example-DIH/solr/rss/conf
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/example-DIH/solr/rss
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/example-DIH/solr/db/lib
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/example-DIH/solr/db/conf/xslt
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/example-DIH/solr/db/conf
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/example-DIH/solr/db
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/example-DIH/solr
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/example-DIH
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr/etc
+%%PORTEXAMPLES%%@dirrm share/examples/apache-solr
