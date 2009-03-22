@@ -110,6 +110,7 @@ PLIST_SUB+=	TCL="@comment "
 .endif
 
 .if defined(WITH_SOCKS)
+ONLY_FOR_ARCHS=	i386
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 CONFIGURE_ARGS+=--enable-socks
 .endif
