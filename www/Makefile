@@ -1704,6 +1704,7 @@
     SUBDIR += xpi-xhtml-ruby-support
     SUBDIR += xpi-xmpp4moz
     SUBDIR += xpi-xpcom-component-viewer
+    SUBDIR += xpi-youtubeonwooztalk
     SUBDIR += xpi-yslow
     SUBDIR += xshttpd
     SUBDIR += xshttpd-devel
