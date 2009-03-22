@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Load mix-ins or components to your C3-based class
 
-RUN_DEPENDS=	p5-Class-C3>=0:${PORTSDIR}/devel/p5-Class-C3 \
+RUN_DEPENDS=	p5-Class-C3>=0.20:${PORTSDIR}/devel/p5-Class-C3 \
+		p5-MRO-Compat>0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
