@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flog
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://oss.ezic.com/flog/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
