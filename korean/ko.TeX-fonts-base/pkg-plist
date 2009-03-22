@@ -6397,4 +6397,4 @@ share/texmf-local/tex/latex/kotex/utf/unfonts/hfontspec.ut
 @dirrmtry share/texmf-local/fonts/afm/kotex
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec %%MKTEXLSR%%
-@unexec %%UPDMAP_SYS%% --disable kotex-base.map
+@unexec %%UPDMAP_SYS%% --syncwithtrees
