@@ -276,6 +276,7 @@
     SUBDIR += vcdpad
     SUBDIR += vcdtools
     SUBDIR += vlc
+    SUBDIR += vlconwooztalk
     SUBDIR += vodcatcher
     SUBDIR += vstream-client
     SUBDIR += vtkmpeg2encode

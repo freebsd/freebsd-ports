@@ -1,0 +1,8 @@
+share/wooztalk/plugins/vlc/vlc_dis.png
+share/wooztalk/plugins/vlc/vlc.png
+share/wooztalk/plugins/vlc/libvlc.so
+share/vlc/http/wooztalk.html
+@dirrmtry share/wooztalk/plugins/vlc
+@dirrmtry share/wooztalk/plugins
+@dirrmtry share/wooztalk
+@dirrmtry share/vlc/http
