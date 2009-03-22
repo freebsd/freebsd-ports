@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	aMule
-PORTVERSION=	2.1.3
-PORTREVISION=	7
+PORTVERSION=	2.2.3
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/amule
-
-PATCH_SITES=	http://cvs.pld-linux.org/cgi-bin/cvsweb/SOURCES/
-PATCHFILES=	aMule-wx.patch?rev=1.2
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	boris@tagnet.ru
 COMMENT=	The all-platform eMule p2p client
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
+		${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+
 LATEST_LINK=	aMule2
-CONFLICTS=	aMule-1.* aMule-devel-[0-9]* ed2k-hash-*
+CONFLICTS=	aMule-1.* aMule-devel-[0-9]* ed2k-hash-1.*
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehier gnomehack gnomeprefix
@@ -44,6 +43,11 @@ OPTIONS=	OPTIMIZE "Build with optimization" on \
 		ALC "Compile aMule Link Creator (+GUI)" on \
 		AMULEDAEMON "Compile aMule daemon version - EXPERIMENTAL" off \
 		WXUNICODE "Enable Unicode support" on
+
+DOCSDIR=	${PREFIX}/share/doc/aMule-${PORTVERSION}
+PORTDOCS=	ABOUT-NLS Changelog EC_Protocol.txt \
+		ED2K-Links.HOWTO INSTALL README TODO \
+		amule-win32.HOWTO.txt amulesig.txt license.txt socks4.protocol
 
 .include <bsd.port.pre.mk>
 
@@ -119,13 +123,13 @@ WX_UNICODE=yes
 post-install:
 # fr manpages are still incomplete and can't be managed
 # by MANLANG. Will be done when pages are complete.
+	${GZIP_CMD} ${PREFIX}/man/fr/man1/amule.1
 .if defined(WITH_AMULECMD)
 	${GZIP_CMD} ${PREFIX}/man/fr/man1/amulecmd.1
 .endif
 .if defined(WITH_AMULEWEBSRV)
 	${GZIP_CMD} ${PREFIX}/man/fr/man1/amuleweb.1
 .endif
-	${GZIP_CMD} ${PREFIX}/man/fr/man1/amule.1
 .if defined(WITH_AMULEDAEMON)
 	${GZIP_CMD} ${PREFIX}/man/fr/man1/amuled.1
 .endif
