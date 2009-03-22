@@ -87,6 +87,7 @@
     SUBDIR += mpqc-mpich
     SUBDIR += ncs
     SUBDIR += netcdf
+    SUBDIR += netcdf-ftn
     SUBDIR += netcdf4
     SUBDIR += nifticlib
     SUBDIR += oases

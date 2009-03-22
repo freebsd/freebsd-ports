@@ -13,16 +13,18 @@ MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/netcdf/	\
 		http://sunpoet.net/distfiles/
 
 MAINTAINER=	sunpoet@sunpoet.net
-COMMENT=	Library for machine-independent, array-oriented data access
+COMMENT?=	Library for machine-independent, array-oriented data access
 
 CONFLICTS=	hdf-4.* netcdf-4.*
 
 CONFIGURE_ARGS=	--enable-shared
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -fPIC -DPIC -Df2cFortran"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -fPIC -DPIC ${FTNTYPE}"
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 #CONFIGURE_ENV+=	${MAKE_ENV}
+
+SLAVEDIRS=	science/netcdf-ftn
 
 MAN1=		ncdump.1 ncgen.1
 MAN3=		netcdf.3
@@ -49,9 +51,13 @@ CONFIGURE_ARGS+=--disable-examples
 
 .if defined(WITH_FORTRAN)
 USE_FORTRAN=	yes
+PKGNAMESUFFIX+=	-ftn
+CONFLICTS+=	netcdf-3.*
 MAN3+=		netcdf_f77.3 netcdf_f90.3
 PLIST_SUB+=	FORTRAN=""
+FTNTYPE=	-DpgiFortran
 .else
+CONFLICTS+=	netcdf-ftn-3.*
 CONFIGURE_ARGS+=--disable-f77
 PLIST_SUB+=	FORTRAN="@comment "
 .endif
