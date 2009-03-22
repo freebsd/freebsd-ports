@@ -1652,6 +1652,7 @@
     SUBDIR += xpi-infolister
     SUBDIR += xpi-informenter
     SUBDIR += xpi-inline-google-definitions
+    SUBDIR += xpi-jiwaonwooztalk
     SUBDIR += xpi-joga
     SUBDIR += xpi-jsview
     SUBDIR += xpi-leechblock
