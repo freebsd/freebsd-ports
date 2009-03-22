@@ -1,0 +1,17 @@
+TTYtter is a multi-functional, fully 100% text, Perl command line
+Twitter client. It has the following features:
+
+* A fully interactive client with asynchronous background updates and
+  commands. Use it over telnet, ssh or even a dummy terminal.
+  Supports ANSI colour, hashtags and Twitter Search!
+* Works within your favourite environment: modify prompt and input
+  methods for many popular window and session managers, or use a
+  compatible readline library. Or don't: basic editing and screen
+  management features built-in.
+* From the command line, use it to update your Twitter in shell scripts,
+  from cron, and so on.
+* Supports standard timelines and automatically fetches direct messages.
+* Extensible using the -lib option.
+* Run detached in -daemon mode, and make your own Twitter bot! 
+
+WWW: http://www.floodgap.com/software/ttytter/

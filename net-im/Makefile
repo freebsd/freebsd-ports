@@ -152,6 +152,7 @@
     SUBDIR += tkabbur
     SUBDIR += tmsnc
     SUBDIR += trix
+    SUBDIR += ttytter
     SUBDIR += vicq
     SUBDIR += vqcc-gtk
     SUBDIR += wooztalk
