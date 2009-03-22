@@ -1,0 +1,11 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/ReadGRIB/.packlist
+%%SITE_PERL%%/Geo/wgrib.exe
+%%SITE_PERL%%/Geo/ReadGRIB.pm
+%%SITE_PERL%%/Geo/Sample-GRIB/akw.HTSGW.grb
+%%SITE_PERL%%/Geo/ReadGRIB/PlaceIterator.pm
+%%SITE_PERL%%/Geo/ReadGRIB/Place.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/ReadGRIB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
+@dirrm %%SITE_PERL%%/Geo/Sample-GRIB
+@dirrm %%SITE_PERL%%/Geo/ReadGRIB
+@dirrmtry %%SITE_PERL%%/Geo
