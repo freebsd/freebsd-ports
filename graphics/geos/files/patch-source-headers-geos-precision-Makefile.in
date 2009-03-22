@@ -1,0 +1,15 @@
+--- source/headers/geos/precision/Makefile.in.orig	2009-02-06 16:54:40.692917675 +0000
++++ source/headers/geos/precision/Makefile.in	2009-02-06 16:55:07.121105056 +0000
+@@ -219,11 +219,11 @@
+ 	CommonBitsOp.h				\
+ 	CommonBitsRemover.h			\
+ 	EnhancedPrecisionOp.h			\
++	GeometrySnapper.h			\
+ 	SimpleGeometryPrecisionReducer.h
+ 
+ noinst_HEADERS = \
+ 	CommonBits.h				\
+-	GeometrySnapper.h			\
+ 	LineStringSnapper.h
+ 
+ all: all-am
