@@ -1,0 +1,17 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/AttributeHelpers/.packlist
+%%SITE_PERL%%/MouseX/AttributeHelpers.pm
+%%SITE_PERL%%/MouseX/AttributeHelpers/Base.pm
+%%SITE_PERL%%/MouseX/AttributeHelpers/Bool.pm
+%%SITE_PERL%%/MouseX/AttributeHelpers/Collection/Array.pm
+%%SITE_PERL%%/MouseX/AttributeHelpers/Collection/Bag.pm
+%%SITE_PERL%%/MouseX/AttributeHelpers/Collection/Hash.pm
+%%SITE_PERL%%/MouseX/AttributeHelpers/Collection/ImmutableHash.pm
+%%SITE_PERL%%/MouseX/AttributeHelpers/Collection/List.pm
+%%SITE_PERL%%/MouseX/AttributeHelpers/Counter.pm
+%%SITE_PERL%%/MouseX/AttributeHelpers/Number.pm
+%%SITE_PERL%%/MouseX/AttributeHelpers/String.pm
+@dirrm %%SITE_PERL%%/MouseX/AttributeHelpers/Collection
+@dirrm %%SITE_PERL%%/MouseX/AttributeHelpers
+@dirrmtry %%SITE_PERL%%/MouseX
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/AttributeHelpers
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX

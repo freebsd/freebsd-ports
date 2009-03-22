@@ -1599,6 +1599,7 @@
     SUBDIR += p5-MooseX-Types
     SUBDIR += p5-MooseX-Types-Path-Class
     SUBDIR += p5-Mouse
+    SUBDIR += p5-MouseX-AttributeHelpers
     SUBDIR += p5-MouseX-Getopt
     SUBDIR += p5-MouseX-Types
     SUBDIR += p5-NEXT
