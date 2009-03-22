@@ -6,13 +6,13 @@
 # $Id$ 
 #
 
-# sed -e 's/%%PREFIX%%/\/usr\/local/g' < slon.in > slon
+# sed -e 's/%%PREFIX%%/\/usr\/local/g' < slon.sh.in > slon
 
 # PROVIDE: slon
 # REQUIRE: postgresql
 # KEYWORD: shutdown
 
-. "/etc/rc.subr"
+. /etc/rc.subr
 
 name="slon"
 rcvar=`set_rcvar`
@@ -20,89 +20,83 @@ rcvar=`set_rcvar`
 load_rc_config "$name"
 _pidprefix="/var/run/${name}"
 pidfile="${_pidprefix}.pid" # Used as fall-through in event of no profiles
+procname="%%PREFIX%%/bin/slon"
 
 # From global rc.conf(5); if unset, set them here
-[ -z "$slon_enable" ]       && slon_enable="NO"
-[ -z "$slon_profiles" ]     && slon_profiles=""
+[ -z "$slon_enable" ]   && slon_enable="NO"
+[ -z "$slon_profiles" ] && slon_profiles=""
 
-configfile_path="/usr/local/etc/${name}.conf"
-command_args="-f ${configfile_path} -p ${pidfile} &"
+configfile_path="%%PREFIX%%/etc/${name}.conf"
+command_args="-f ${configfile_path}"
 required_files="${configfile_path}"
 
-command="/usr/local/bin/slon"
+isProfile () {
+    local profile
 
-isProfile() {
-        match=0;
-        for curMember in $slon_profiles; do
-                if [ "$curMember" = "$1" ]; then
-                        #echo "DEBUG: Match"
-                        match=1
-                fi
-        done
-        return $match;
+    for profile in $slon_profiles; do
+        if [ "$profile" = "$1" ]; then
+            return 0
+        fi
+    done
+
+    return 1
 }
 
-
-
 if [ -n "$2" ]; then
-	profile="$2" # A profile argument has been given (presumably)
-	if [ "x${slon_profiles}" != "x" ]; then # This checks that profiles are indeed defined
-		echo "-- Profile: $profile --"
-		# Now let's check to make sure that both the profile, the profile's config path variable, config file exists
-		configfile_default_path="/usr/local/etc/${name}-${profile}.conf"
-		configfile_override_varname="\$${name}_${profile}_configfile" # Basic string substitution gets variable name
-		configfile_override_varname_nop="${name}_${profile}_configfile" # Basic string substitution gets variable name
-		#echo "DEBUG default path: $configfile_default_path"
-		#echo "DEBUG override variable name: $configfile_override_varname";
-		#echo "DEBUG override variable name noprefix: $configfile_override_varname_nop";
-		eval configfile_path=\${$configfile_override_varname_nop:-${configfile_default_path}} # e.g., $configfile_varname="$slon_sex_configfile"
-		#echo "DEBUG final: $configfile_path";
-		isProfile $profile
-		searchForProfile=$?
-		# testing for true
-		if [ ! -r "$configfile_path" -o $searchForProfile -lt 1 ]; then
-			echo "$0: no such profile defined, profile config file defined, or cant read profile config file!";
-			exit 1;
-		fi
-		required_files=${configfile_path}
-		
-		pidfile_default="${_pidprefix}-${profile}.pid"
-		eval pidfile=\${${name}_${profile}_pidfile:-${pidfile_default}}
+    if [ "x${slon_profiles}" = "x" ]; then # This checks that profiles are indeed defined
+        echo "$0: extra profile argument ignored, no profiles defined"
+        exit 1
+    fi
 
-		command_args="-f ${configfile_path} -p ${pidfile} &"
-		#echo "DEBUG argspre: $command_args"
-		#echo "DEBUG subst: ${name}_${profile}_flags"
-		#eval echo "DEBUG subst: \$${name}_${profile}_flags"
-		#eval echo "DEBUG subst2: command_args=\${${name}_${profile}_flags:-${command_args}}"
-		eval command_args=\${${name}_${profile}_flags:-${command_args}}
-		#echo "DEBUG args: $command_args"
-	else
-		echo "$0: extra profile argument ignored, no profiles defined"
-	fi
-	
+    profile="$2" # A profile argument has been given (presumably)
 
+    # Now let's check to make sure that both the profile, the profile's
+    # config path variable, config file exists
+
+    if ! isProfile $profile; then
+        echo "$0: no such profile defined in slon_profiles."
+        exit 1
+    fi
+
+    configfile_default_path="%%PREFIX%%/etc/${name}-${profile}.conf"
+
+    # Basic string substitution gets variable name
+    configfile_varname="${name}_${profile}_configfile"
+
+    eval configfile_path=\${$configfile_varname:-${configfile_default_path}}
+
+    if [ ! -r "$configfile_path" ]; then
+        echo "$0: unable to read configuration file."
+        exit 1
+    fi
+
+    required_files="${configfile_path}"
+    
+    pidfile_default="${_pidprefix}-${profile}.pid"
+    eval pidfile=\${${name}_${profile}_pidfile:-${pidfile_default}}
+
+    command_args="-f ${configfile_path}"
+    eval command_args=\${${name}_${profile}_flags:-${command_args}}
 else
-	# We get to here if $2 is not defined at command line, but we do have profiles
-	# so apply $1 command to all profiles!
-	# This block uses recursion to call ourself with each-profile defined as $2
-	if [ "x${slon_profiles}" != "x" -a "x$1" != "x" ]; then
-		if [ "x$1" != "xrestart" ]; then
-			for profile in ${slon_profiles}; do
-				echo "===> ${name} profile: ${profile}"
-				/usr/local/etc/rc.d/${name} $1 ${profile}
-				retcode="$?"
-				if [ "0${retcode}" -ne 0 ]; then
-					failed="${profile} (${retcode}) ${failed:-}"
-				else
-					success="${profile} ${success:-}"
-				fi
-			done
-			exit 0
-		else
-			restart_precmd=""
-		fi
-	fi
+    # We get to here if $2 is not defined at command line, but we do have profiles
+    # so apply $1 command to all profiles!
+    # This block uses recursion to call ourself with each-profile defined as $2.
+
+    if [ "x${slon_profiles}" != "x" -a "x$1" != "x" ]; then
+        for profile in ${slon_profiles}; do
+            echo "Processing ${name} profile: ${profile}"
+            %%PREFIX%%/etc/rc.d/${name} $1 ${profile}
+        done
+        exit 0
+    fi
 # else = no profile argument given
 fi
+
+slon_start () {
+    echo "Starting ${name}."
+    /usr/sbin/daemon -cf -p ${pidfile} %%PREFIX%%/bin/slon ${command_args}
+}
+
+start_cmd=slon_start
 
 run_rc_command "$1"
