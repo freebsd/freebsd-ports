@@ -16,6 +16,7 @@ COMMENT=	C++ embedded database engine, supports Python and Tcl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/builds
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 CONFIGURE_SCRIPT=	../unix/configure
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 alpha amd64
