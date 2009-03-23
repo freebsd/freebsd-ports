@@ -23,7 +23,7 @@ PATCH_DIST_STRIP=	-d .. --ignore-whitespace
 #
 # * patch.4.7.25.2: -----------------------------------------------------------
 # # [#16415] DB_ENV->lock_get may self deadlock if user defined locks
-#	     are used and there is only one lock partition defined. 
+#	     are used and there is only one lock partition defined.
 
 # I allow matthias.andree@gmx.de and all freebsd committer to do changes
 # to this package.
@@ -39,6 +39,7 @@ CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 --enable-cxx \
 		--bindir=${PREFIX}/bin/${PORTNAME}
 CONFIGURE_SCRIPT=	../dist/configure
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 INSTALL_TARGET=	install_include install_lib install_utilities
 LIBTOOLFILES=	${CONFIGURE_SCRIPT}
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
