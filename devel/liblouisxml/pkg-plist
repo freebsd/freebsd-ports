@@ -1,0 +1,40 @@
+bin/mathml2brl
+bin/msword2brl
+bin/xml2brl
+include/liblouisxml/liblouisxml.h
+include/liblouisxml/louisxml.h
+lib/liblouisxml.a
+lib/liblouisxml.la
+lib/liblouisxml.so
+lib/liblouisxml.so.1
+libdata/pkgconfig/liblouisxml.pc
+%%DATADIR%%/lbx_files/marburg.sem
+%%DATADIR%%/lbx_files/article.sem
+%%DATADIR%%/lbx_files/book.sem
+%%DATADIR%%/lbx_files/canonical.cfg
+%%DATADIR%%/lbx_files/chapter.sem
+%%DATADIR%%/lbx_files/default.cfg
+%%DATADIR%%/lbx_files/document.sem
+%%DATADIR%%/lbx_files/dtbook.sem
+%%DATADIR%%/lbx_files/dtbook3.sem
+%%DATADIR%%/lbx_files/gutbook.sem
+%%DATADIR%%/lbx_files/html.sem
+%%DATADIR%%/lbx_files/nemeth.sem
+%%DATADIR%%/lbx_files/package.sem
+%%DATADIR%%/lbx_files/preface.sem
+%%DATADIR%%/lbx_files/set.sem
+%%DATADIR%%/lbx_files/ThML.sem
+%%DATADIR%%/lbx_files/wordDocument.sem
+%%DATADIR%%/lbx_files/Workbook.sem
+%%DATADIR%%/lbx_files/w_wordDocument.sem
+%%PORTDOCS%%%%DOCSDIR%%/liblouisxml-guide.html
+%%PORTDOCS%%%%DOCSDIR%%/liblouisxml-guide.txt
+%%PORTDOCS%%%%DOCSDIR%%/copyright-notice
+%%PORTDOCS%%%%DOCSDIR%%/example_canonical.cfg
+%%PORTDOCS%%%%DOCSDIR%%/example_default.cfg
+%%PORTDOCS%%%%DOCSDIR%%/example_html.sem
+%%PORTDOCS%%%%DOCSDIR%%/example_math.sem
+@dirrm include/liblouisxml
+@dirrm %%DATADIR%%/lbx_files
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
