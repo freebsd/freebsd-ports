@@ -20,9 +20,9 @@ MAN1=			c2html.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/c2html
+	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS NEWS README
-	${INSTALL_MAN} ${WRKSRC}/${file} ${PREFIX}/share/doc/c2html
+	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
