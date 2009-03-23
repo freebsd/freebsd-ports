@@ -35,6 +35,7 @@ WANT_GSTREAMER=	yes
 USE_GNOME=	pkgconfig libxml2
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm
 USE_AUTOTOOLS=	libltdl:15
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
