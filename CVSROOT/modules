@@ -200,6 +200,7 @@ OpenEXR                         ports/graphics/OpenEXR
 PDL                             ports/math/PDL
 PicMonger                       ports/news/PicMonger
 R                               ports/math/R
+R-cran-sm                       ports/math/R-cran-sm
 R-sp                            ports/math/R-sp
 STk                             ports/lang/STk
 Sather                          ports/lang/Sather
@@ -502,6 +503,7 @@ apache-contrib                  ports/www/apache-contrib
 apache-forrest                  ports/www/apache-forrest
 apache-jserv                    ports/www/apache-jserv
 apache-mode.el                  ports/www/apache-mode.el
+apache-solr                     ports/textproc/apache-solr
 apache-xml-security-c           ports/security/apache-xml-security-c
 apache13                        ports/www/apache13
 apache13+ipv6                   ports/www/apache13+ipv6
@@ -7117,6 +7119,7 @@ libcsv                          ports/textproc/libcsv
 libctl                          ports/science/libctl
 libcwd                          ports/devel/libcwd
 libdaemon                       ports/devel/libdaemon
+libdap                          ports/devel/libdap
 libdasm                         ports/devel/libdasm
 libdbi                          ports/databases/libdbi
 libdbi-drivers                  ports/databases/libdbi-drivers
@@ -9097,6 +9100,7 @@ netbeans61                      ports/java/netbeans61
 netboot                         ports/net/netboot
 netcat                          ports/net/netcat
 netcdf                          ports/science/netcdf
+netcdf-ftn                      ports/science/netcdf-ftn
 netcdf4                         ports/science/netcdf4
 netclasses                      ports/net/netclasses
 netcomponents                   ports/java/netcomponents
@@ -11098,6 +11102,7 @@ p5-Geo-Postcodes                ports/misc/p5-Geo-Postcodes
 p5-Geo-Postcodes-DK             ports/misc/p5-Geo-Postcodes-DK
 p5-Geo-Postcodes-NO             ports/misc/p5-Geo-Postcodes-NO
 p5-Geo-Proj4                    ports/graphics/p5-Geo-Proj4
+p5-Geo-ReadGRIB                 ports/science/p5-Geo-ReadGRIB
 p5-Geo-ShapeFile                ports/devel/p5-Geo-ShapeFile
 p5-Geo-Weather                  ports/misc/p5-Geo-Weather
 p5-Geography-Countries          ports/misc/p5-Geography-Countries
@@ -11764,6 +11769,7 @@ p5-MooseX-StrictConstructor     ports/devel/p5-MooseX-StrictConstructor
 p5-MooseX-Types                 ports/devel/p5-MooseX-Types
 p5-MooseX-Types-Path-Class      ports/devel/p5-MooseX-Types-Path-Class
 p5-Mouse                        ports/devel/p5-Mouse
+p5-MouseX-AttributeHelpers      ports/devel/p5-MouseX-AttributeHelpers
 p5-MouseX-Getopt                ports/devel/p5-MouseX-Getopt
 p5-MouseX-Types                 ports/devel/p5-MouseX-Types
 p5-Music-Audioscrobbler-MPD     ports/audio/p5-Music-Audioscrobbler-MPD
@@ -14451,6 +14457,7 @@ p5-geo-postcodes                ports/misc/p5-Geo-Postcodes
 p5-geo-postcodes-dk             ports/misc/p5-Geo-Postcodes-DK
 p5-geo-postcodes-no             ports/misc/p5-Geo-Postcodes-NO
 p5-geo-proj4                    ports/graphics/p5-Geo-Proj4
+p5-geo-readgrib                 ports/science/p5-Geo-ReadGRIB
 p5-geo-shapefile                ports/devel/p5-Geo-ShapeFile
 p5-geo-weather                  ports/misc/p5-Geo-Weather
 p5-geography-countries          ports/misc/p5-Geography-Countries
@@ -15131,6 +15138,7 @@ p5-moosex-strictconstructor     ports/devel/p5-MooseX-StrictConstructor
 p5-moosex-types                 ports/devel/p5-MooseX-Types
 p5-moosex-types-path-class      ports/devel/p5-MooseX-Types-Path-Class
 p5-mouse                        ports/devel/p5-Mouse
+p5-mousex-attributehelpers      ports/devel/p5-MouseX-AttributeHelpers
 p5-mousex-getopt                ports/devel/p5-MouseX-Getopt
 p5-mousex-types                 ports/devel/p5-MouseX-Types
 p5-mp3-find                     ports/audio/p5-MP3-Find
@@ -19308,6 +19316,7 @@ qwt5                            ports/x11-toolkits/qwt5
 qwtplot3d                       ports/math/qwtplot3d
 qwtplot3d-qt4                   ports/math/qwtplot3d-qt4
 r                               ports/math/R
+r-cran-sm                       ports/math/R-cran-sm
 r-sp                            ports/math/R-sp
 r1q2                            ports/games/r1q2
 rabbitmq                        ports/net/rabbitmq
@@ -19483,7 +19492,6 @@ rgbpaint                        ports/graphics/rgbpaint
 rhino                           ports/lang/rhino
 rhtvision                       ports/devel/rhtvision
 rhythmbox                       ports/audio/rhythmbox
-rhythmbox-devel                 ports/audio/rhythmbox-devel
 ri-li                           ports/games/ri-li
 richtext                        ports/editors/richtext
 ricochet                        ports/mail/ricochet
@@ -19994,6 +20002,7 @@ rubygem-gdata                   ports/devel/rubygem-gdata
 rubygem-gem_plugin              ports/devel/rubygem-gem_plugin
 rubygem-git                     ports/devel/rubygem-git
 rubygem-god                     ports/sysutils/rubygem-god
+rubygem-graphviz                ports/graphics/rubygem-graphviz
 rubygem-grit                    ports/devel/rubygem-grit
 rubygem-gruff                   ports/graphics/rubygem-gruff
 rubygem-haml                    ports/www/rubygem-haml
@@ -21795,6 +21804,7 @@ ttmkfdir                        ports/x11-fonts/ttmkfdir
 ttraffic                        ports/games/ttraffic
 ttyload                         ports/sysutils/ttyload
 ttyrec                          ports/misc/ttyrec
+ttytter                         ports/net-im/ttytter
 tua                             ports/sysutils/tua
 tuareg-mode.el                  ports/lang/tuareg-mode.el
 tuc                             ports/converters/tuc
@@ -22236,6 +22246,7 @@ vitetris                        ports/games/vitetris
 viz                             ports/misc/viz
 vizone                          ports/dns/vizone
 vlc                             ports/multimedia/vlc
+vlconwooztalk                   ports/multimedia/vlconwooztalk
 vlock                           ports/security/vlock
 vlog                            ports/security/vlog
 vm                              ports/mail/vm
@@ -23374,7 +23385,9 @@ xpi-cookiesafe                  ports/www/xpi-cookiesafe
 xpi-cssviewer                   ports/www/xpi-cssviewer
 xpi-customizegoogle             ports/www/xpi-customizegoogle
 xpi-cutemenus-crystalsvg        ports/www/xpi-cutemenus-crystalsvg
+xpi-dailymotiononwooztalk       ports/www/xpi-dailymotiononwooztalk
 xpi-deepestsender               ports/www/xpi-deepestsender
+xpi-deezeronwooztalk            ports/www/xpi-deezeronwooztalk
 xpi-delicious                   ports/www/xpi-delicious
 xpi-displayquota                ports/mail/xpi-displayquota
 xpi-downthemall                 ports/www/xpi-downthemall
@@ -23396,17 +23409,21 @@ xpi-gbrain                      ports/www/xpi-gbrain
 xpi-gbutts                      ports/www/xpi-gbutts
 xpi-gmail-manager               ports/www/xpi-gmail-manager
 xpi-google-notebook             ports/www/xpi-google-notebook
+xpi-googlevideoonwooztalk       ports/www/xpi-googlevideoonwooztalk
 xpi-greasemonkey                ports/www/xpi-greasemonkey
 xpi-hit-a-hint                  ports/www/xpi-hit-a-hint
 xpi-httpfox                     ports/www/xpi-httpfox
 xpi-imagezoom                   ports/www/xpi-imagezoom
 xpi-imdbpreview                 ports/www/xpi-imdbpreview
+xpi-imeemonwooztalk             ports/www/xpi-imeemonwooztalk
 xpi-imglikeopera                ports/www/xpi-imglikeopera
 xpi-infolister                  ports/www/xpi-infolister
 xpi-informenter                 ports/www/xpi-informenter
 xpi-inline-google-definitions   ports/www/xpi-inline-google-definitions
+xpi-jiwaonwooztalk              ports/www/xpi-jiwaonwooztalk
 xpi-joga                        ports/www/xpi-joga
 xpi-jsview                      ports/www/xpi-jsview
+xpi-lastfmonwooztalk            ports/www/xpi-lastfmonwooztalk
 xpi-leechblock                  ports/www/xpi-leechblock
 xpi-linkification               ports/www/xpi-linkification
 xpi-live_http_headers           ports/www/xpi-live_http_headers
@@ -23449,12 +23466,14 @@ xpi-twitterfox                  ports/www/xpi-twitterfox
 xpi-unplug                      ports/www/xpi-unplug
 xpi-urllink                     ports/www/xpi-urllink
 xpi-videodownloader             ports/www/xpi-videodownloader
+xpi-vimeoonwooztalk             ports/www/xpi-vimeoonwooztalk
 xpi-vimperator                  ports/www/xpi-vimperator
 xpi-web_developer               ports/www/xpi-web_developer
 xpi-wmlbrowser                  ports/www/xpi-wmlbrowser
 xpi-xhtml-ruby-support          ports/www/xpi-xhtml-ruby-support
 xpi-xmpp4moz                    ports/www/xpi-xmpp4moz
 xpi-xpcom-component-viewer      ports/www/xpi-xpcom-component-viewer
+xpi-youtubeonwooztalk           ports/www/xpi-youtubeonwooztalk
 xpi-yslow                       ports/www/xpi-yslow
 xpilot                          ports/games/xpilot
 xpilot-ng-client                ports/games/xpilot-ng-client
