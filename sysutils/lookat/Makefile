@@ -21,10 +21,6 @@ MAN1=		lookat.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800067
-BROKEN=		does not compile
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 	's|/etc/lookat.conf|${PREFIX}/etc/lookat.conf|g' ${WRKSRC}/${PORTNAME}.1
