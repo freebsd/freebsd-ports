@@ -3680,11 +3680,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
         <name>net-snmp</name>
-	<range><lt>5.4.2.1</lt></range>
-      </package>
-      <package>
-	<name>net-snmp53</name>
-	<range><lt>5.3.2.3</lt></range>
+	<range><gt>5.4</gt><lt>5.4.2.1</lt></range>
+	<range><gt>5.3</gt><lt>5.3.2.3</lt></range>
       </package>
     </affects>
     <description>
@@ -3717,8 +3714,9 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://net-snmp.svn.sourceforge.net/viewvc/net-snmp/tags/Ext-5-2-5-1/net-snmp/agent/snmp_agent.c?r1=17271&amp;r2=17272&amp;pathrev=17272</url>
     </references>
     <dates>
-      <discovery>2008-1</discovery>
+      <discovery>2008-10-12</discovery>
       <entry>2008-11-14</entry>
+      <modified>2009-03-23</modified>
     </dates>
   </vuln>
 
