@@ -68,7 +68,6 @@ USE_DISPLAY=	yes
 PERL_CONFIGURE=	yes
 USE_PERL5=	5.8.5+
 USE_GETTEXT=	yes
-IGNORE=		needs a threaded Perl, install lang/perl5.8 with threads support and try again
 
 PERL_THREADS=	${PERL} -V::usethreads
 
