@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	kBuild
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	que_deseja@hotmail.com
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Makefile framework
+
+BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 USE_AUTOTOOLS=	automake:19 autoconf:262
 USE_GMAKE=	yes
@@ -22,14 +24,19 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 KBUILD_ARCH=	${MACHINE_ARCH:S/i386/x86/}
 KBUILD_ENV=	ACLOCAL=${ACLOCAL} \
 		AUTOMAKE=${AUTOMAKE} \
-		AUTORECONF=${AUTORECONF}
-KBUILD_BINS=	kmk_sed kmk kmk_append kmk_cat kmk_chmod kmk_cp kmk_cmp \
-		kmk_echo kmk_expr kmk_md5sum kmk_mkdir kmk_mv kmk_install \
-		kmk_ln kmk_printf kmk_redirect kmk_rm kmk_rmdir kmk_test \
-		kDepIDB kmk_gmake kmk_ash kDepPre kObjCache
+		AUTORECONF=${AUTORECONF} \
+		AUTOPOINT=true
+
+KBUILD_BINS=	kDepIDB kDepPre kObjCache kmk kmk_append kmk_ash kmk_cat \
+		kmk_chmod kmk_cmp kmk_cp kmk_echo kmk_expr kmk_gmake \
+		kmk_install kmk_ln kmk_md5sum kmk_mkdir kmk_mv kmk_printf \
+		kmk_redirect kmk_rm kmk_rmdir kmk_sed kmk_sleep kmk_test kmk_time
+PORTDOCS=	QuickReference-kmk.html \
+		QuickReference-kmk.txt
 
 post-patch:
-	${REINPLACE_CMD} -e '161d' ${WRKSRC}/bootstrap.gmk
+	${REINPLACE_CMD} -e '11269d;11274d' ${WRKSRC}/src/sed/configure
+	${REINPLACE_CMD} -e '11268,11273s|sed|gsed|' ${WRKSRC}/src/sed/configure
 
 # Override autotools
 run-autotools:
@@ -47,5 +54,11 @@ do-install:
 .endfor
 	${MKDIR) ${DATADIR}
 	(cd ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release${PREFIX}/share/kBuild && ${COPYTREE_SHARE} \* ${DATADIR})
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release${PREFIX}/share/doc/${PKGNAME}/${doc} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
