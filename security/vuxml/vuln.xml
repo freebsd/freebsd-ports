@@ -49,7 +49,7 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>Tobias Klein has reported some vulnerabilities in Amarok, which
 	    potentially can be exploited by malicious people to compromise a
 	    user's system.</p>
-	  <p>wo integer overflow errors exist within the
+	  <p>Two integer overflow errors exist within the
 	    "Audible::Tag::readTag()" function in
 	    src/metadata/audible/audibletag.cpp. These can be exploited to cause
 	    heap-based buffer overflows via specially crafted Audible Audio
