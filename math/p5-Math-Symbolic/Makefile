@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-Symbolic
-PORTVERSION=	0.601
+PORTVERSION=	0.603
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -39,8 +39,7 @@ MAN3=	Math::Symbolic.3 \
 	Math::Symbolic::Parser.3 \
 	Math::Symbolic::Parser::Precompiled.3 \
 	Math::Symbolic::Variable.3 \
-	Math::Symbolic::VectorCalculus.3 \
-	Math::precompile_recdescent_grammar.3
+	Math::Symbolic::VectorCalculus.3
 
 PERL_CONFIGURE=	yes
 
