@@ -18,6 +18,7 @@ USE_BZIP2=	yes
 MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 MAN1=		7z.1 7za.1 7zr.1 p7zip.1
+MAKE_JOBS_UNSAFE=	yes
 
 DLLDIR=		${PREFIX}/libexec/p7zip
 PLIST_SUB=	MODULES=""
