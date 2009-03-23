@@ -7,24 +7,17 @@
 #
 
 PORTNAME=	rijndael
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	security python
-MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/	\
-		http://people.FreeBSD.org/~foxfair/distfiles/
+MASTER_SITES=	http://jclement.ca/software/pyrijndael/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pyRijndael-${PORTVERSION}.py
-EXTRACT_SUFX=	.gz
+DISTNAME=	pyrijndael-v${PORTVERSION:S:.:_:}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pure python implementation of the Rijndael encryption algorithm
 
-EXTRACT_AFTER_ARGS=	> ${DISTNAME}
 USE_PYTHON=	yes
-NO_WRKSUBDIR=	yes
-
-post-extract:
-	@${MV} ${WRKSRC}/${DISTNAME} ${WRKSRC}/pyRijndael.py
+WRKSRC=		${WRKDIR}/pyrijndael
 
 do-build:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -c 'import pyRijndael'
