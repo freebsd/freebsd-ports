@@ -1,4 +1,0 @@
-The Catalyst::Plugin::Authentication::Store::DBIx::Class class provides access
-to authentication information stored in a database via DBIx::Class.
-
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-Authentication-Store-DBIx-Class/
