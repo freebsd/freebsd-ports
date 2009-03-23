@@ -12,7 +12,7 @@ include/fpapi.h
 include/papi.h
 include/papiStdEventDefs.h
 lib/libpapi.a
-lib/libpapi.so
+lib/libpapi.so.3
 %%CTESTS%%share/ctests/all_events
 %%CTESTS%%share/ctests/all_native_events
 %%CTESTS%%share/ctests/branches
@@ -46,7 +46,6 @@ lib/libpapi.so
 %%CTESTS%%share/ctests/multiplex1_pthreads
 %%CTESTS%%share/ctests/multiplex2
 %%CTESTS%%share/ctests/multiplex3_pthreads
-%%CTESTS%%share/ctests/native
 %%CTESTS%%share/ctests/overflow
 %%CTESTS%%share/ctests/overflow2
 %%CTESTS%%share/ctests/overflow3_pthreads
@@ -93,7 +92,6 @@ lib/libpapi.so
 %%FTESTS%%share/ftests/fmultiplex2
 %%FTESTS%%share/ftests/highlevel
 %%FTESTS%%share/ftests/johnmay2
-%%FTESTS%%share/ftests/native
 %%FTESTS%%share/ftests/second
 %%FTESTS%%share/ftests/strtest
 %%FTESTS%%share/ftests/tenth

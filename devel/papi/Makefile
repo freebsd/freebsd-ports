@@ -6,30 +6,29 @@
 #
 
 PORTNAME=	papi
-PORTVERSION=	3.5.0
-PORTREVISION=	4
+PORTVERSION=	3.6.2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTFILES=	papi-3.5.0-freebsd-rev49.tar.bz2
+MASTER_SITES=	http://icl.cs.utk.edu/projects/papi/downloads/
 
 MAINTAINER=	redcrash@gmail.com
 COMMENT=	API to access the performance counter hw in the microprocessor
 
-BROKEN=		does not compile
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	HWPMC kernel module is only available for I386 and \
+			AMD64 machines
+NO_PACKAGE=	Needs to be compiled for specific CPU
 
-PROJECTHOST=	papi-for-freebsd
 STRIP=
 USE_LDCONFIG=	yes
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/PAPI/src
-WRKMAN=		${WRKDIR}/PAPI/man
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+WRKMAN=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/man
 
 # Although the package may not install the fortran binaries, it requires the
 # fortran compiler
 USE_FORTRAN=	yes
-FFLAGS=		-fdefault-integer-8
+FFLAGS=		-fdefault-integer-8 -fno-range-check
 
 OPTIONS=	CTESTS "Install C tests" On
 OPTIONS+=	FTESTS "Install Fortran tests" On
@@ -37,9 +36,12 @@ OPTIONS+=	DEBUG  "Add debug information (increased verbosity)" Off
 
 .include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	HWPMC kernel module is only available for I386 and \
-  AMD64 machines
+HAS_HWMPC!=     ${SYSCTL} kern.hwpmc >/dev/null 2>&1 && echo yes || true
+
+.if ${HAS_HWMPC} != "yes"
+IGNORE=		needs hwmpc module loaded or compiled into the kernel. \
+		Please consult hwpmc(4) on how to do it (or cat pkg-message)
+.endif
 
 .if defined(WITHOUT_CTESTS)
 PLIST_SUB+=	CTESTS="@comment "
@@ -149,7 +151,7 @@ MAN3=	PAPI.3 \
 	PAPI_write.3
 
 PAPI_LIBS=	libpapi.a \
-	libpapi.so
+	libpapi.so.3
 
 PAPI_BINARIES=	papi_avail \
 	papi_clockres \
@@ -177,7 +179,6 @@ PAPI_FORTRAN_TESTS=	strtest \
 	highlevel \
 	cost \
 	johnmay2 \
-	native \
 	avail \
 	case1 \
 	case2 \
@@ -232,7 +233,6 @@ PAPI_C_TESTS=	ipc \
 	sprofile \
 	profile_twoevents \
 	byte_profile \
-	native \
 	overflow_index \
 	overflow_one_and_read \
 	multiplex1_pthreads \
