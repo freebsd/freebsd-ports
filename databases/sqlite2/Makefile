@@ -71,7 +71,7 @@ PLIST_SUB+=	WITH_TCLWRAPPER=""
 PLIST_SUB+=	WITH_TCLWRAPPER="@comment "
 .endif
 
-.if !defined(NOPORTDOCS) && !defined(WITHOUT_DOCS)
+.if !defined(WITHOUT_DOCS)
 PORTDOCS=	*
 MAKE_ARGS+=	TCLSH=${TCLSH}
 MAKE_ENV+=	TCL_VER=${TCL_VER}
@@ -80,10 +80,14 @@ MAKE_ENV+=	TCL_VER=${TCL_VER}
 post-patch:
 	@${REINPLACE_CMD} -e "s/tclsh \$$(TOP)/\$$(TCLSH) \$$(TOP)/g" \
 		 -e "s|\./libtool|${LIBTOOL}|g" ${WRKSRC}/Makefile.in
+.if defined(WITH_TCLWRAPPER) || !defined(WITHOUT_DOCS)
 	@${ECHO} "config_TARGET_TCL_INC=\"-I${TCL_INCLUDEDIR}\"" \
 		> ${WRKSRC}/freebsd.hints
 	@${ECHO} "config_TARGET_TCL_LIBS=\"-L${PREFIX}/lib -ltcl${TCL_VER:S/.//}\"" \
 		>> ${WRKSRC}/freebsd.hints
+.else
+	@${ECHO} "" > ${WRKSRC}/freebsd.hints
+.endif
 .if defined(WITH_THREADS)
 	@${ECHO} "config_TARGET_CFLAGS=\"-DTHREADSAFE=1 ${PTHREAD_LIBS}\"" \
 		>> ${WRKSRC}/freebsd.hints
