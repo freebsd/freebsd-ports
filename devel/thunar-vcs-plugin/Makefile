@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	thunar-svn-plugin
-PORTVERSION=	0.0.2
-PORTREVISION=	1
+PORTVERSION=	0.0.3
 CATEGORIES=	devel xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/thunar-svn-plugin/
 DIST_SUBDIR=	xfce4
@@ -16,8 +15,6 @@ MAINTAINER=	sergey.dyatko@gmail.com
 COMMENT=	Subversion plugin for Thunar
 
 LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion
-
-BROKEN=		does not compile
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
