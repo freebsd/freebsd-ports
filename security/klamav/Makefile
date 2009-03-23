@@ -19,7 +19,6 @@ LIB_DEPENDS=	clamav:${PORTSDIR}/security/clamav
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}-${PORTVERSION}
 
 PREFIX=		${KDE_PREFIX}
-DOCSDIR=	${PREFIX}/share/doc/HTML/en/klamav02
 
 USE_GMAKE=	yes
 USE_SQLITE=	3
