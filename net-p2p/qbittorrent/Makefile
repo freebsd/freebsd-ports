@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qbittorrent
-DISTVERSION=	1.0.0
-PORTREVISION=	2
+PORTVERSION=	1.3.2
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 
@@ -15,37 +14,35 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bittorrent client written in C++ / Qt4 using libtorrent
 
 LIB_DEPENDS=	ccext2-1.6.0:${PORTSDIR}/devel/commoncpp \
+		execinfo.1:${PORTSDIR}/devel/libexecinfo \
+		zzip.13:${PORTSDIR}/devel/zziplib \
 		curl.5:${PORTSDIR}/ftp/curl \
-		torrent.1:${PORTSDIR}/net-p2p/rblibtorrent
+		torrent-rasterbar.2:${PORTSDIR}/net-p2p/rblibtorrent-devel
 
-USE_PYTHON=	2.3+
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build gui network xml
+QT_COMPONENTS=	corelib gui network xml \
+		moc_build qmake_build rcc_build uic_build
 QT_NONSTANDARD=	yes
-INSTALLS_ICONS=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libtorrent-inc="${LOCALBASE}/include" \
-		--with-libtorrent-lib="${LOCALBASE}/lib"
-CONFIGURE_ENV=	QMAKESPEC="${QMAKESPEC}"
-MAKE_ENV=	QMAKESPEC="${QMAKESPEC}"
-
-OPTIONS=	IMAGEMAGICK "Enable libmagick++ support" off
+CONFIGURE_ARGS=	--prefix="${PREFIX}" \
+		--with-libtorrent-inc="${LOCALBASE}/include" \
+		--with-libtorrent-lib="${LOCALBASE}/lib" \
+		--with-libcurl-inc="${LOCALBASE}/include" \
+		--with-libcurl-lib="${LOCALBASE}/lib" \
+		--with-libzzip-inc="${LOCALBASE}/include" \
+		--with-libzzip-lib="${LOCALBASE}/lib"
+INSTALLS_ICONS=	yes
 
 MAN1=		qbittorrent.1
-MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick
-CONFIGURE_ARGS+=--with-libmagick-inc=${LOCALBASE}/include/ImageMagick
-.else
-CONFIGURE_ARGS+=--disable-libmagick
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|bin/qmake|bin/${QMAKE:T}|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$$$PREFIX/share/man|${MANPREFIX}/man|' \
 		${WRKSRC}/src/src.pro
+	@${ECHO_CMD} "LIBS+= -lexecinfo" >> ${WRKSRC}/src/src.pro
+
+post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/qbittorrent
 
 .include <bsd.port.post.mk>

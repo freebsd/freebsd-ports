@@ -1,28 +1,8 @@
-qBittorrent can now be considered as a good alternative to other bittorrent
-clients. It provides a lot of features such as:
+qBittorrent is a bittorrent client programmed in C++ / Qt4 that uses
+libtorrent (sometimes called rblibtorrent) by Arvid Norberg.
 
-* A polished Graphical User Interface written with Qt4 toolkit.
-* UPnP / NAT-PMP port forwarding support.
-* Encryption support (compatible with Azureus).
-* Multiple simultaneous downloads / uploads.
-* Download from RSS streams.
-* An integrated search engine.
-* DHT (trackerless) support.
-* uTorrent Peer eXchange support (PeX).
-* Directory scanning with automated download of torrents inside.
-* Good internationalization (~25 languages supported).
-* Selective download of files in a torrent.
-* Media File previewing while downloading.
-* Torrent trackers edition and prioritizing.
-* Seeders / Leechers displayed in download list.
-* Styles support.
-* Files prioritizing in a torrent.
-* Torrent download in correct order.
-* System tray integration.
-* Tracker authentication support.
-* Unicode support.
-* Torrent downloading directly from their url.
-* Connection though a proxy.
-* IP Filtering similar to the one in eMule.
+It aims to be a good alternative to all other bittorrent clients
+out there. qBittorrent is fast, stable and provides unicode
+support as well as many features.
 
 WWW: http://www.qbittorrent.org/
