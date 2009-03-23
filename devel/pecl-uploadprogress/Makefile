@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uploadprogress
-PORTVERSION=	0.9.2
+PORTVERSION=	1.0.0
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
