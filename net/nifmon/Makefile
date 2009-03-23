@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.freebsd-support.de/misc/
 
-MAINTAINER=	barner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A curses based network interface monitoring tool
 
 MAN8=		nifmon.8

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	multimedia tcl tk
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	barner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Viewer for Nextview Electronic TV Programme Guide (needs bktr driver)
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84

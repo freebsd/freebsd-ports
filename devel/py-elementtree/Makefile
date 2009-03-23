@@ -12,7 +12,7 @@ MASTER_SITES=	http://effbot.org/media/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-20050316
 
-MAINTAINER=	barner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Container for hierarchical data structures written in Python
 
 USE_PYTHON=	yes

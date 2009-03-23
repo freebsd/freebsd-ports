@@ -20,7 +20,7 @@ MASTER_SITE_SUBDIR=	fetchmail/:DEFAULT \
 			./:ma
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT,ma,sunsite
 
-MAINTAINER=	barner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss

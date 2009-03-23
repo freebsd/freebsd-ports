@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.rabson.org/
 PKGNAMESUFFIX=	-snapshot
 DISTNAME=	${PORTNAME}-current-${PORTVERSION}
 
-MAINTAINER=	barner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A (memory) debugging and profiling tool
 
 CONFLICTS=	valgrind-[0-9]*
