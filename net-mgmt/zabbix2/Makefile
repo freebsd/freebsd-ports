@@ -7,6 +7,7 @@
 
 PORTNAME=	zabbix
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
@@ -37,8 +38,6 @@ MAKE_ARGS=	ARCH=freebsd
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
-
-FORBIDDEN=	multiple vulnerabilities http://www.vuxml.org/freebsd/03140526-1250-11de-a964-0030843d3802.html
 
 .ifndef WITHOUT_JABBER
 USE_JABBER=	yes
@@ -82,6 +81,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/test.*rf/s|-rf|-f|;/LDFLAGS/s|-static||;\
 		/LIBS="-lnetsnmp/s|="|="-lcrypto |;s|-lsqlite3|-lsqlite3 ${PTHREAD_LIBS}|'\
 			${WRKSRC}/configure
+	@cd ${WRKSRC} && ${FIND} . -name '*.orig' -exec ${RM} {} \;
 
 .ifdef WITHOUT_FPING
 	@${ECHO} 'DisablePinger=yes' >> ${WRKSRC}/misc/conf/zabbix_server.conf

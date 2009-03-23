@@ -1,0 +1,135 @@
+Index: include/validate.inc.php
+===================================================================
+--- frontends/php/include/validate.inc.php	(revision 6592)
++++ frontends/php/include/validate.inc.php	(revision 6593)
+@@ -198,19 +198,21 @@
+ 		return $ret;
+ 	}
+ 
+-	function	calc_exp($fields,$field,$expression){
++	function calc_exp($fields,$field,$expression){
+ //SDI("$field - expression: ".$expression);
+ 
+-		if(zbx_strstr($expression,"{}") && !isset($_REQUEST[$field]))
++		if(zbx_strstr($expression,'{}') && !isset($_REQUEST[$field]))
+ 			return FALSE;
+ 
+-		if(zbx_strstr($expression,"{}") && !is_array($_REQUEST[$field]))
+-			$expression = str_replace("{}",'$_REQUEST["'.$field.'"]',$expression);
++		if(zbx_strstr($expression,'{}') && !is_array($_REQUEST[$field]))
++			$expression = str_replace('{}','$_REQUEST["'.$field.'"]',$expression);
+ 
+-		if(zbx_strstr($expression,"{}") && is_array($_REQUEST[$field])){
++		if(zbx_strstr($expression,'{}') && is_array($_REQUEST[$field])){
+ 			foreach($_REQUEST[$field] as $key => $val){
+-				$expression2 = str_replace("{}",'$_REQUEST["'.$field.'"]["'.$key.'"]',$expression);
+-				if(calc_exp2($fields,$field,$expression2)==FALSE)
++				if(!ereg('^[a-zA-Z0-9_]+$',$key)) return FALSE;
++
++				$expression2 = str_replace('{}','$_REQUEST["'.$field.'"]["'.$key.'"]',$expression);
++				if(calc_exp2($fields,$field,$expression2)==FALSE) 
+ 					return FALSE;
+ 			}	
+ 			return TRUE;
+@@ -219,7 +221,7 @@
+ 		return calc_exp2($fields,$field,$expression);
+ 	}
+ 
+-	function	unset_not_in_list(&$fields){
++	function unset_not_in_list(&$fields){
+ 		foreach($_REQUEST as $key => $val){
+ 			if(!isset($fields[$key])){
+ 				unset_request($key,'unset_not_in_list');
+@@ -382,7 +384,7 @@
+ 		}
+ 	}
+ 
+-	function	check_field(&$fields, &$field, $checks){
++	function check_field(&$fields, &$field, $checks){
+ 		list($type,$opt,$flags,$validation,$exception)=$checks;
+ 
+ 		if($flags&P_UNSET_EMPTY && isset($_REQUEST[$field]) && $_REQUEST[$field]==''){
+@@ -473,9 +475,7 @@
+ 		include_once "include/page_footer.php";
+ 	}
+ 	
+-	function	check_fields(&$fields, $show_messages=true){
+-
+-		global	$_REQUEST;
++	function check_fields(&$fields, $show_messages=true){
+ 		global	$system_fields;
+ 
+ 		$err = ZBX_VALID_OK;
+Index: locales.php
+===================================================================
+--- frontends/php/locales.php	(revision 6592)
++++ frontends/php/locales.php	(revision 6593)
+@@ -19,11 +19,11 @@
+ **/
+ ?>
+ <?php
+-include_once "include/config.inc.php";
++include_once('include/config.inc.php');
+ 
+ if(isset($_REQUEST['download'])){
+-	$page["type"] = PAGE_TYPE_XML;
+-	$page["file"] = "new_locale.inc.php";
++	$page['type'] = PAGE_TYPE_XML;
++	$page['file'] = 'new_locale.inc.php';
+ }
+ else{
+ 	$page['title'] = "S_LOCALES";
+@@ -181,26 +181,25 @@
+ 	$frmLcls->AddOption('id','locales');
+ 	$frmLcls->SetHelp($help);
+ 	
+-	$fileFrom = 'include/locales/'.$_REQUEST['srclang'].".inc.php";
+-	if(file_exists($fileFrom)){
+-		include($fileFrom);
+ 	
++	$fileFrom = 'include/locales/'.$_REQUEST['srclang'].'.inc.php';
++	if(ereg('^[A-Za-z0-9_]+$', $_REQUEST['srclang']) && file_exists($fileFrom)){
++		include($fileFrom);	
+ 		if(!isset($TRANSLATION) || !is_array($TRANSLATION)){
+-			error("Passed SOURCE is NOT valid PHP file.");
++			error('Passed SOURCE is NOT valid PHP file.');
+ 		}
+ 		$transFrom = $TRANSLATION;
+ 	}
+ 	unset($TRANSLATION);
+ 	
+-	$frmLcls->AddVar('extlang',$_REQUEST['extlang']);
+-	
+-	if($_REQUEST['extlang'] != 'new'){
+-		$fileTo = 'include/locales/'.$_REQUEST['extlang'].".inc.php";
++	$frmLcls->addVar('extlang',$_REQUEST['extlang']);
++	if(ereg('^[A-Za-z0-9_]+$', $_REQUEST['srclang']) && ($_REQUEST['extlang'] != 'new')){
++		$fileTo = 'include/locales/'.$_REQUEST['extlang'].'.inc.php';
+ 		if(file_exists($fileTo)){
+ 			include($fileTo);
+ 			
+ 			if(!isset($TRANSLATION) || !is_array($TRANSLATION)){
+-				error("Passed DEST is NOT valid PHP file.");
++				error('Passed DEST is NOT valid PHP file.');
+ 			}
+ 			$transTo = $TRANSLATION;
+ //			header('Content-Type: text/html; charset='.$TRANSLATION['S_HTML_CHARSET']);
+
+-----
+
+This hunk fixes typo in the bugfix for local file inclusion inside
+locales.php
+
+Index: branches/1.6/frontends/php/locales.php
+===================================================================
+--- frontends/php/locales.php	(revision 6885)
++++ frontends/php/locales.php	(revision 6886)
+@@ -193,7 +193,7 @@
+ 	unset($TRANSLATION);
+ 	
+ 	$frmLcls->addVar('extlang',$_REQUEST['extlang']);
+-	if(ereg('^[A-Za-z0-9_]+$', $_REQUEST['srclang']) && ($_REQUEST['extlang'] != 'new')){
++	if(ereg('^[A-Za-z0-9_]+$', $_REQUEST['extlang']) && ($_REQUEST['extlang'] != 'new')){
+ 		$fileTo = 'include/locales/'.$_REQUEST['extlang'].'.inc.php';
+ 		if(file_exists($fileTo)){
+ 			include($fileTo);

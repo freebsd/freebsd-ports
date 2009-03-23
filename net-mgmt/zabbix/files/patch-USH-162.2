@@ -1,0 +1,2622 @@
+Index: frontends/php/include/perm.inc.php
+===================================================================
+--- frontends/php/include/perm.inc.php	(revision 6620)
++++ frontends/php/include/perm.inc.php	(revision 6621)
+@@ -44,7 +44,7 @@
+ 	$USER_DETAILS = NULL;
+ 	$login = FALSE;
+ 	
+-	$sessionid = get_cookie('zbx_sessionid');
++	$sessionid = get_request('sessionid',get_cookie('zbx_sessionid'));
+ 
+ 	if(!is_null($sessionid)){
+ 		$sql = 'SELECT u.*,s.* '.
+Index: frontends/php/include/validate.inc.php
+===================================================================
+--- frontends/php/include/validate.inc.php	(revision 6620)
++++ frontends/php/include/validate.inc.php	(revision 6621)
+@@ -428,8 +429,12 @@
+ 			}
+ 		}
+ 		else if($opt == O_OPT){
+-			if(!isset($_REQUEST[$field]))
++			if(!isset($_REQUEST[$field])){
+ 				return ZBX_VALID_OK;
++			}
++			else if(($flags&P_ACT) && !isset($_REQUEST['zbx_form'])){
++				return ZBX_VALID_ERROR;
++			}
+ 		}
+ 
+ 		check_trim($_REQUEST[$field]);
+@@ -458,17 +463,21 @@
+ 		return ZBX_VALID_OK;
+ 	}
+ 
+-//		VAR			TYPE	OPTIONAL FLAGS	VALIDATION	EXCEPTION
++//		VAR							TYPE	OPTIONAL FLAGS	VALIDATION	EXCEPTION
+ 	$system_fields=array(
+-		"sessionid"=>		array(T_ZBX_STR, O_OPT,	 P_SYS,	HEX(),NULL),
+-		"switch_node"=>		array(T_ZBX_INT, O_OPT,	 P_SYS,	DB_ID,NULL),
+-		"triggers_hash"=>	array(T_ZBX_STR, O_OPT,	 P_SYS,	NOT_EMPTY,NULL),
+-		'print'=>			array(T_ZBX_INT, O_OPT,	 P_SYS,	IN("1"),NULL),
++		'sessionid'=>		array(T_ZBX_STR, O_OPT,	 P_SYS,	HEX(), 'isset({zbx_form})'),
++		'zbx_form'=>		array(T_ZBX_STR, O_OPT,	 P_SYS,	NOT_EMPTY, NULL),
++// 
++		'switch_node'=>		array(T_ZBX_INT, O_OPT,	 P_SYS,	DB_ID,NULL),
++		'triggers_hash'=>	array(T_ZBX_STR, O_OPT,	 P_SYS,	NOT_EMPTY,NULL),
++		'print'=>			array(T_ZBX_INT, O_OPT,	 P_SYS,	IN('1'),NULL),
++		
++// table sorting
+ 		'sort'=>			array(T_ZBX_STR, O_OPT,	 P_SYS,	NULL,NULL),
+ 		'sortorder'=>		array(T_ZBX_STR, O_OPT,	 P_SYS,	NULL,NULL)
+ 	);
+ 
+-	function	invalid_url(){
++	function invalid_url(){
+ 		include_once "include/page_header.php";
+ 		unset_all();
+ 		show_error_message(S_INVALID_URL);
+Index: frontends/php/include/classes/cform.inc.php
+===================================================================
+--- frontends/php/include/classes/cform.inc.php	(revision 6620)
++++ frontends/php/include/classes/cform.inc.php	(revision 6621)
+@@ -22,46 +22,44 @@
+ 	class CForm extends CTag{
+ /* public */
+ 		function CForm($action=NULL, $method='post', $enctype=NULL){
+-			parent::CTag("form","yes");
+-			$this->SetMethod($method);
+-			$this->SetAction($action);
+-			$this->SetEnctype($enctype);
++			parent::CTag('form','yes');
++			$this->setMethod($method);
++			$this->setAction($action);
++			$this->setEnctype($enctype);
++			
++			$this->addVar('zbx_form', 'action');
++			$this->addVar('sessionid', $_COOKIE['zbx_sessionid']);
+ 		}
+ 		
+-		function SetMethod($value='post'){
++		function setMethod($value='post'){
+ 			return $this->options['method'] = $value;
+ 		}
+ 		
+-		function SetAction($value){
++		function setAction($value){
+ 			global $page;
+ 
+ 			if(is_null($value)){
+-				if(isset($page['file'])){
+-					$value = $page['file'];
+-				}
+-				else{
+-					$value = "#";
+-				}
++				$value = isset($page['file'])?$page['file']:'#';
+ 			}
+ 			
+ 		return $this->options['action'] = $value;
+ 		}
+ 		
+-		function SetEnctype($value=NULL){
++		function setEnctype($value=NULL){
+ 			if(is_null($value)){
+-				return $this->DelOption("enctype");
++				return $this->DelOption('enctype');
+ 			}
+ 			else if(!is_string($value)){
+ 				return $this->error("Incorrect value for SetEnctype [$value]");
+ 			}
+ 			
+-		return $this->AddOption("enctype",$value);
++		return $this->addOption('enctype',$value);
+ 		}
+ 
+-		function AddVar($name, $value){
++		function addVar($name, $value){
+ 			if(empty($value) && $value != 0)	return $value;
+ 
+-		return $this->AddItem(new CVar($name, $value));
++		return $this->addItem(new CVar($name, $value));
+ 		}
+ 	}
+ ?>
+Index: frontends/php/include/classes/cformtable.inc.php
+===================================================================
+--- frontends/php/include/classes/cformtable.inc.php	(revision 6620)
++++ frontends/php/include/classes/cformtable.inc.php	(revision 6621)
+@@ -46,48 +46,48 @@
+ 			}
+ 
+ 			parent::CForm($action,$method,$enctype);
+-			$this->SetTitle($title);
+-			$this->SetAlign('center');
+-			$this->SetHelp();
++			$this->setTitle($title);
++			$this->setAlign('center');
++			$this->setHelp();
+ 
+ //			$frm_link = new CLink();
+-//			$frm_link->SetName("formtable");
+-//			$this->AddItemToTopRow($frm_link);
++//			$frm_link->setName("formtable");
++//			$this->addItemToTopRow($frm_link);
+ 			
+-			$this->AddVar($form_variable, get_request($form_variable, 1));
+-			$this->AddVar('form_refresh',get_request('form_refresh',0)+1);
++			$this->addVar($form_variable, get_request($form_variable, 1));
++			$this->addVar('form_refresh',get_request('form_refresh',0)+1);
+ 
+ 			$this->bottom_items = new CCol(SPACE,'form_row_last');
+-		        $this->bottom_items->SetColSpan(2);
++		        $this->bottom_items->setColSpan(2);
+ 		}
+ 		
+-		function SetAction($value){
++		function setAction($value){
+ 			
+ 			if(is_string($value))
+-				return parent::SetAction($value);
++				return parent::setAction($value);
+ 			elseif(is_null($value))
+-				return parent::SetAction($value);
++				return parent::setAction($value);
+ 			else
+ 				return $this->error("Incorrect value for SetAction [$value]");
+ 		}
+ 		
+-		function SetName($value){
++		function setName($value){
+ 			if(!is_string($value)){
+ 				return $this->error("Incorrect value for SetAlign [$value]");
+ 			}
+-			$this->AddOption('name',$value);
+-			$this->AddOption('id',$value);
++			$this->addOption('name',$value);
++			$this->addOption('id',$value);
+ 		return true;
+ 		}
+ 		
+-		function SetAlign($value){
++		function setAlign($value){
+ 			if(!is_string($value)){
+ 				return $this->error("Incorrect value for SetAlign [$value]");
+ 			}
+ 			return $this->align = $value;
+ 		}
+ 
+-		function SetTitle($value=NULL){
++		function setTitle($value=NULL){
+ 			if(is_null($value)){
+ 				unset($this->title);
+ 				return 0;
+@@ -101,7 +101,7 @@
+ 			$this->title = unpack_object($value);
+ 		}
+ 		
+-		function SetHelp($value=NULL){
++		function setHelp($value=NULL){
+ 			if(is_null($value)) {
+ 				$this->help = new CHelp();
+ 			} 
+@@ -110,8 +110,8 @@
+ 			} 
+ 			else if(is_string($value)) {
+ 				$this->help = new CHelp($value);
+-				if($this->GetName()==NULL)
+-					$this->SetName($value);
++				if($this->getName()==NULL)
++					$this->setName($value);
+ 			} 
+ 			else {
+ 				return $this->error("Incorrect value for SetHelp [$value]");
+@@ -119,21 +119,21 @@
+ 			return 0;
+ 		}
+ 		
+-		function AddVar($name, $value){
+-			$this->AddItemToTopRow(new CVar($name, $value));
++		function addVar($name, $value){
++			$this->addItemToTopRow(new CVar($name, $value));
+ 		}
+ 		
+-		function AddItemToTopRow($value){
++		function addItemToTopRow($value){
+ 			array_push($this->top_items, $value);
+ 		}
+ 		
+-		function AddRow($item1, $item2=NULL, $class=NULL){
++		function addRow($item1, $item2=NULL, $class=NULL){
+ 			if(strtolower(get_class($item1)) == 'crow'){
+ 			
+ 			} 
+ 			else if(strtolower(get_class($item1)) == 'ctable'){
+ 				$td = new CCol($item1,'form_row_c');
+-				$td->SetColSpan(2);
++				$td->setColSpan(2);
+ 				
+ 				$item1 = new CRow($td);
+ 			} 
+@@ -157,7 +157,7 @@
+ 			array_push($this->center_items, $item1);
+ 		}
+ 		
+-		function AddSpanRow($value, $class=NULL){
++		function addSpanRow($value, $class=NULL){
+ 			if(is_string($value))
+ 				$item1=nbsp($value);
+ 
+@@ -165,16 +165,16 @@
+ 			if(is_null($class)) $class = 'form_row_c';
+ 
+ 			$col = new CCol($value,$class);
+-		        $col->SetColSpan(2);
++		        $col->setColSpan(2);
+ 			array_push($this->center_items,new CRow($col));
+ 		}
+ 		
+ 		
+-		function AddItemToBottomRow($value){
+-			$this->bottom_items->AddItem($value);
++		function addItemToBottomRow($value){
++			$this->bottom_items->addItem($value);
+ 		}
+ 
+-		function SetTableClass($class){
++		function setTableClass($class){
+ 			if(is_string($class)){
+ 				$this->tableclass = $class;
+ 			}
+@@ -186,25 +186,25 @@
+ 
+ 			$tbl = new CTable(NULL,$this->tableclass);
+ 
+-			$tbl->SetOddRowClass('form_odd_row');
+-			$tbl->SetEvenRowClass('form_even_row');
+-			$tbl->SetCellSpacing(0);
+-			$tbl->SetCellPadding(1);
+-			$tbl->SetAlign($this->align);
++			$tbl->setOddRowClass('form_odd_row');
++			$tbl->setEvenRowClass('form_even_row');
++			$tbl->setCellSpacing(0);
++			$tbl->setCellPadding(1);
++			$tbl->setAlign($this->align);
+ # add first row
+ 			$col = new CCol(NULL,'form_row_first');
+-			$col->SetColSpan(2);
++			$col->setColSpan(2);
+ 			
+-			if(isset($this->help))			$col->AddItem($this->help);
+-			if(isset($this->title))		 	$col->AddItem($this->title);
+-			foreach($this->top_items as $item)	$col->AddItem($item);
++			if(isset($this->help))			$col->addItem($this->help);
++			if(isset($this->title))		 	$col->addItem($this->title);
++			foreach($this->top_items as $item)	$col->addItem($item);
+ 			
+-			$tbl->SetHeader($col);
++			$tbl->setHeader($col);
+ # add last row
+-			$tbl->SetFooter($this->bottom_items);
++			$tbl->setFooter($this->bottom_items);
+ # add center rows
+ 			foreach($this->center_items as $item){
+-				$tbl->AddRow($item);
++				$tbl->addRow($item);
+ 			}
+ 		return $tbl->ToString();
+ 		}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Obtained from svn://svn.zabbix.com/branches/1.6/frontends/php/
+
+This hunk adds session identifier transmission during Ajax requests.
+It also reshuffles some JavaScript functions and adds many whitespace
+changes.
+
+Index: frontends/php/js/cookies.js
+===================================================================
+--- frontends/php/js/cookies.js	(revision 6622)
++++ frontends/php/js/cookies.js	(revision 6623)
+@@ -1,78 +0,0 @@
+-//Javascript document
+-/*
+-** ZABBIX
+-** Copyright (C) 2000-2005 SIA Zabbix
+-**
+-** This program is free software; you can redistribute it and/or modify
+-** it under the terms of the GNU General Public License as published by
+-** the Free Software Foundation; either version 2 of the License, or
+-** (at your option) any later version.
+-**
+-** This program is distributed in the hope that it will be useful,
+-** but WITHOUT ANY WARRANTY; without even the implied warranty of
+-** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-** GNU General Public License for more details.
+-**
+-** You should have received a copy of the GNU General Public License
+-** along with this program; if not, write to the Free Software
+-** Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+-**/ 
+-// Title: cookies class
+-// Description: to manipulate cookies on client side
+-// Author: Aly
+-
+-var cookie ={
+-cookies: new Array(),
+-
+-init: function () {
+-	var allCookies = document.cookie.split('; ');
+-	for (var i=0;i<allCookies.length;i++) {
+-		var cookiePair = allCookies[i].split('=');
+-		this.cookies[cookiePair[0]] = cookiePair[1];
+-	}
+-},
+-
+-create: function (name,value,days) {
+-	if(days) {
+-		var date = new Date();
+-		date.setTime(date.getTime()+(days*24*60*60*1000));
+-		var expires = "; expires="+date.toGMTString();
+-	}else{ 
+-		var expires = "";
+-	}
+-	
+-	document.cookie = name+"="+value+expires+"; path=/";
+-	this.cookies[name] = value;
+-},
+-
+-read : function(name){
+-	if(typeof(this.cookies[name]) != 'undefined'){
+-		return this.cookies[name];
+-	} else {
+-		var nameEQ = name + "=";
+-		var ca = document.cookie.split(';');
+-		for(var i=0;i < ca.length;i++) {
+-			var c = ca[i];
+-			while (c.charAt(0)==' ') c = c.substring(1,c.length);
+-			if(c.indexOf(nameEQ) == 0)	return this.cookies[name] = c.substring(nameEQ.length,c.length);
+-		}
+-	}
+-	return null;
+-},
+-
+-printall: function() {
+-	var allCookies = document.cookie.split('; ');
+-	for (var i=0;i<allCookies.length;i++) {
+-		var cookiePair = allCookies[i].split('=');
+-		
+-		alert("[" + cookiePair[0] + "] is " + cookiePair[1]); // assumes print is already defined
+-	}
+-},
+-
+-erase: function (name) {
+-	this.create(name,'',-1);
+-	this.cookies[name] = undefined;
+-}
+-}
+-
+-cookie.init();
+\ No newline at end of file
+Index: frontends/php/js/url.js
+===================================================================
+--- frontends/php/js/url.js	(revision 6622)
++++ frontends/php/js/url.js	(revision 6623)
+@@ -1,256 +0,0 @@
+-// JavaScript Document
+-/*
+-** ZABBIX
+-** Copyright (C) 2000-2007 SIA Zabbix
+-**
+-** This program is free software; you can redistribute it and/or modify
+-** it under the terms of the GNU General Public License as published by
+-** the Free Software Foundation; either version 2 of the License, or
+-** (at your option) any later version.
+-**
+-** This program is distributed in the hope that it will be useful,
+-** but WITHOUT ANY WARRANTY; without even the implied warranty of
+-** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-** GNU General Public License for more details.
+-**
+-** You should have received a copy of the GNU General Public License
+-** along with this program; if not, write to the Free Software
+-** Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+-**
+-*/
+-
+-// Title: url manipulation class
+-// Author: Aly
+-
+-
+-var url = Class.create();
+-
+-url.prototype = {
+-url: 		'',		//	actually, it's depricated/private variable 
+-port:		 -1,
+-host: 		'',
+-protocol: 	'',
+-username:	'',
+-password:	'',
+-filr:		'',
+-reference:	'',
+-path:		'',
+-query:		'',
+-arguments: new Array(),
+-
+-initialize: function(url){
+-	this.url=unescape(url);
+-	
+-	this.query=(this.url.indexOf('?')>=0)?this.url.substring(this.url.indexOf('?')+1):'';
+-	if(this.query.indexOf('#')>=0) this.query=this.query.substring(0,this.query.indexOf('#'));
+-	
+-	var protocolSepIndex=this.url.indexOf('://');
+-	if(protocolSepIndex>=0){
+-		this.protocol=this.url.substring(0,protocolSepIndex).toLowerCase();
+-		this.host=this.url.substring(protocolSepIndex+3);
+-		if(this.host.indexOf('/')>=0) this.host=this.host.substring(0,this.host.indexOf('/'));
+-		var atIndex=this.host.indexOf('@');
+-		if(atIndex>=0){
+-			var credentials=this.host.substring(0,atIndex);
+-			var colonIndex=credentials.indexOf(':');
+-			if(colonIndex>=0){
+-				this.username=credentials.substring(0,colonIndex);
+-				this.password=credentials.substring(colonIndex);
+-			}else{
+-				this.username=credentials;
+-			}
+-			this.host=this.host.substring(atIndex+1);
+-		}
+-		
+-		var host_ipv6 = this.host.indexOf(']');
+-		if(host_ipv6>=0){
+-			if(host_ipv6 < (this.host.length-1)){
+-				host_ipv6++;
+-				var host_less = this.host.substring(host_ipv6);
+-
+-				var portColonIndex=host_less.indexOf(':');
+-				if(portColonIndex>=0){
+-					this.port=host_less.substring(portColonIndex+1);
+-					this.host=this.host.substring(0,host_ipv6);
+-				}
+-			}
+-		}
+-		else{
+-			var portColonIndex=this.host.indexOf(':');
+-			if(portColonIndex>=0){
+-				this.port=this.host.substring(portColonIndex+1);
+-				this.host=this.host.substring(0,portColonIndex);
+-			}
+-		}
+-		this.file=this.url.substring(protocolSepIndex+3);
+-		this.file=this.file.substring(this.file.indexOf('/'));
+-	}else{
+-		this.file=this.url;
+-	}
+-	if(this.file.indexOf('?')>=0) this.file=this.file.substring(0, this.file.indexOf('?'));
+-
+-	var refSepIndex=url.indexOf('#');
+-	if(refSepIndex>=0){
+-		this.file=this.file.substring(0,refSepIndex);
+-		this.reference=this.url.substring(this.url.indexOf('#'));
+-	}
+-	this.path=this.file;
+-	if(this.query.length>0) this.file+='?'+this.query;
+-	if(this.reference.length>0) this.file+='#'+this.reference;
+-	if(this.query.length > 0)	this.getArguments();
+-},
+-
+-getArguments: function(){
+-	var args=this.query.split('&');
+-	var keyval='';
+-	
+-	if(args.length<1) return;
+-	
+-	for(i=0;i<args.length;i++){
+-		keyval=args[i].split('=');
+-		this.arguments[i] = new Array(keyval[0],(keyval.length==1)?keyval[0]:keyval[1]);
+-	}
+-},
+-
+-getArgumentValue: function(key){
+-	if(key.length<1) return '';
+-	for(i=0; i < this.arguments.length; i++){
+-		if(this.arguments[i][0] == key) return this.arguments[i][1];
+-	}
+-	
+-return '';
+-},
+-
+-getArgumentValues: function(){
+-	var a=new Array();
+-	var b=this.query.split('&');
+-	var c='';
+-	if(b.length<1) return a;
+-	for(i=0;i<b.length;i++){
+-		c=b[i].split('=');
+-		a[i]=new Array(c[0],((c.length==1)?c[0]:c[1]));
+-	}
+-return a;
+-},
+-
+-getUrl: function(){
+-	var uri = (this.protocol.length > 0)?(this.protocol+'://'):'';
+-	uri +=  encodeURI((this.username.length > 0)?(this.username):'');
+-	uri +=  encodeURI((this.password.length > 0)?(':'+this.password):'');
+-	uri +=  (this.host.length > 0)?(this.host):'';
+-	uri +=  (this.port.length > 0)?(':'+this.port):'';
+-	uri +=  encodeURI((this.path.length > 0)?(this.path):'');
+-	uri +=  encodeURI((this.query.length > 0)?('?'+this.query):'');
+-	uri +=  encodeURI((this.reference.length > 0)?('#'+this.reference):'');
+-//	alert(uri.getProtocol()+' : '+uri.getHost()+' : '+uri.getPort()+' : '+uri.getPath()+' : '+uri.getQuery());
+-return uri;
+-},
+-
+-setArgument: function(key,value){
+-
+-	var valueisset = false;
+-	if(typeof(key) == 'undefined') throw 'Invalid argument past for setArgument';
+-	
+-	value =('undefined' != typeof(value))?value:'';
+-
+-	for(i=0; i < this.arguments.length; i++){
+-		if(this.arguments[i][0] == key){
+-			valueisset = true;
+-			this.arguments[i][1] = value;
+-		}
+-	}	
+-	if(!valueisset)	this.arguments[this.arguments.length] = new Array(key,value);
+-	this.formatQuery();
+-},
+-
+-formatQuery: function(){
+-	if(this.arguments.lenght < 1) return;
+-	
+-	var query = '';
+-	for(i=0; i < this.arguments.length; i++){		
+-		query+=this.arguments[i][0]+'='+this.arguments[i][1]+'&';
+-	}
+-	this.query = query.substring(0,query.length-1);
+-},
+-
+-getPort: function(){ 
+-	return this.port;
+-},
+-
+-setPort: function(port){
+-	this.port = port;
+-},
+-
+-getQuery: function(){ 
+-	return this.query;
+-},
+-
+-setQuery: function(query){ 
+-	this.query = query;
+-	this.getArgumentValues();
+-	this.formatQuery();
+-},
+-
+-/* Returns the protocol of this URL, i.e. 'http' in the url 'http://server/' */
+-getProtocol: function(){
+-	return this.protocol;
+-},
+-
+-setProtocol: function(protocol){
+-	this.protocol = protocol;
+-},
+-/* Returns the host name of this URL, i.e. 'server.com' in the url 'http://server.com/' */
+-getHost: function(){
+-	return this.host;
+-},
+-
+-setHost: function(set){
+-	this.host = host;
+-},
+-
+-/* Returns the user name part of this URL, i.e. 'joe' in the url 'http://joe@server.com/' */
+-getUserName: function(){
+-	return this.username;
+-},
+-
+-setUserName: function(username){
+-	this.username = username;
+-},
+-
+-/* Returns the password part of this url, i.e. 'secret' in the url 'http://joe:secret@server.com/' */
+-getPassword: function(){
+-	return this.password;
+-},
+-
+-setPassword: function(password){
+-	this.password = password;
+-},
+-
+-/* Returns the file part of this url, i.e. everything after the host name. */
+-getFile: function(){
+-	return this.file = file;
+-},
+-
+-setFile: function(file){
+-	this.file = file;
+-},
+-
+-/* Returns the reference of this url, i.e. 'bookmark' in the url 'http://server/file.html#bookmark' */
+-getReference: function(){
+-	return this.reference;
+-},
+-
+-setReference: function(reference){
+-	this.reference = reference;
+-},
+-
+-/* Returns the file path of this url, i.e. '/dir/file.html' in the url 'http://server/dir/file.html' */
+-getPath: function(){
+-	return this.path;
+-},
+-
+-setPath: function(path){
+-	this.path = path;
+-}
+-
+-}
+\ No newline at end of file
+Index: frontends/php/js/updater.js
+===================================================================
+--- frontends/php/js/updater.js	(revision 6622)
++++ frontends/php/js/updater.js	(revision 6623)
+@@ -27,7 +27,7 @@
+ 
+ 	setObj4Update: function(id,frequency,url,params){
+ 		var obj = document.getElementById(id);
+-		if((typeof(obj) == 'undefined')) return false; 
++		if(typeof(obj) == 'undefined') return false; 
+ 	
+ 		var obj4update = {
+ 			'id': 		id,
+@@ -65,7 +65,9 @@
+ 		obj4update.ready = false;
+ 		
+ 		var uri = new url(obj4update.url);
+-		new Ajax.Updater(obj4update.id, obj4update.url,
++		uri.setArgument('sessionid', cookie.read('zbx_sessionid'));
++
++		new Ajax.Updater(obj4update.id, uri.getUrl(),//obj4update.url,
+ 			{
+ 				method: 'post',
+ 				'parameters':	obj4update.params,
+Index: frontends/php/js/gpc.js
+===================================================================
+--- frontends/php/js/gpc.js	(revision 0)
++++ frontends/php/js/gpc.js	(revision 6623)
+@@ -0,0 +1,315 @@
++//Javascript document
++/*
++** ZABBIX
++** Copyright (C) 2000-2009 SIA Zabbix
++**
++** This program is free software; you can redistribute it and/or modify
++** it under the terms of the GNU General Public License as published by
++** the Free Software Foundation; either version 2 of the License, or
++** (at your option) any later version.
++**
++** This program is distributed in the hope that it will be useful,
++** but WITHOUT ANY WARRANTY; without even the implied warranty of
++** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++** GNU General Public License for more details.
++**
++** You should have received a copy of the GNU General Public License
++** along with this program; if not, write to the Free Software
++** Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
++**/
++
++// Title: cookies class
++// Description: to manipulate cookies on client side
++// Author: Aly
++var cookie ={
++cookies: new Array(),
++
++init: function () {
++	var allCookies = document.cookie.split('; ');
++	for (var i=0;i<allCookies.length;i++) {
++		var cookiePair = allCookies[i].split('=');
++		this.cookies[cookiePair[0]] = cookiePair[1];
++	}
++},
++
++create: function (name,value,days) {
++	if(days) {
++		var date = new Date();
++		date.setTime(date.getTime()+(days*24*60*60*1000));
++		var expires = "; expires="+date.toGMTString();
++	}
++	else{ 
++		var expires = "";
++	}
++	
++	document.cookie = name+"="+value+expires+"; path=/";
++	this.cookies[name] = value;
++},
++
++read : function(name){
++	if(typeof(this.cookies[name]) != 'undefined'){
++		return this.cookies[name];
++	} 
++	else {
++		var nameEQ = name + "=";
++		var ca = document.cookie.split(';');
++		for(var i=0;i < ca.length;i++) {
++			var c = ca[i];
++			while (c.charAt(0)==' ') c = c.substring(1,c.length);
++			if(c.indexOf(nameEQ) == 0)	return this.cookies[name] = c.substring(nameEQ.length,c.length);
++		}
++	}
++	return null;
++},
++
++printall: function() {
++	var allCookies = document.cookie.split('; ');
++	for(var i=0;i<allCookies.length;i++){
++		var cookiePair = allCookies[i].split('=');
++		
++		alert("[" + cookiePair[0] + "] is " + cookiePair[1]); // assumes print is already defined
++	}
++},
++
++erase: function (name) {
++	this.create(name,'',-1);
++	this.cookies[name] = undefined;
++}
++}
++
++cookie.init();
++
++
++
++// Title: url manipulation class
++// Author: Aly
++var url = Class.create();
++
++url.prototype = {
++url: 		'',		//	actually, it's depricated/private variable 
++port:		 -1,
++host: 		'',
++protocol: 	'',
++username:	'',
++password:	'',
++filr:		'',
++reference:	'',
++path:		'',
++query:		'',
++arguments: new Array(),
++
++initialize: function(url){
++	this.url=unescape(url);
++	
++	this.query=(this.url.indexOf('?')>=0)?this.url.substring(this.url.indexOf('?')+1):'';
++	if(this.query.indexOf('#')>=0) this.query=this.query.substring(0,this.query.indexOf('#'));
++	
++	var protocolSepIndex=this.url.indexOf('://');
++	if(protocolSepIndex>=0){
++		this.protocol=this.url.substring(0,protocolSepIndex).toLowerCase();
++		this.host=this.url.substring(protocolSepIndex+3);
++		if(this.host.indexOf('/')>=0) this.host=this.host.substring(0,this.host.indexOf('/'));
++		var atIndex=this.host.indexOf('@');
++		if(atIndex>=0){
++			var credentials=this.host.substring(0,atIndex);
++			var colonIndex=credentials.indexOf(':');
++			if(colonIndex>=0){
++				this.username=credentials.substring(0,colonIndex);
++				this.password=credentials.substring(colonIndex);
++			}else{
++				this.username=credentials;
++			}
++			this.host=this.host.substring(atIndex+1);
++		}
++		
++		var host_ipv6 = this.host.indexOf(']');
++		if(host_ipv6>=0){
++			if(host_ipv6 < (this.host.length-1)){
++				host_ipv6++;
++				var host_less = this.host.substring(host_ipv6);
++
++				var portColonIndex=host_less.indexOf(':');
++				if(portColonIndex>=0){
++					this.port=host_less.substring(portColonIndex+1);
++					this.host=this.host.substring(0,host_ipv6);
++				}
++			}
++		}
++		else{
++			var portColonIndex=this.host.indexOf(':');
++			if(portColonIndex>=0){
++				this.port=this.host.substring(portColonIndex+1);
++				this.host=this.host.substring(0,portColonIndex);
++			}
++		}
++		this.file=this.url.substring(protocolSepIndex+3);
++		this.file=this.file.substring(this.file.indexOf('/'));
++	}else{
++		this.file=this.url;
++	}
++	if(this.file.indexOf('?')>=0) this.file=this.file.substring(0, this.file.indexOf('?'));
++
++	var refSepIndex=url.indexOf('#');
++	if(refSepIndex>=0){
++		this.file=this.file.substring(0,refSepIndex);
++		this.reference=this.url.substring(this.url.indexOf('#'));
++	}
++	this.path=this.file;
++	if(this.query.length>0) this.file+='?'+this.query;
++	if(this.reference.length>0) this.file+='#'+this.reference;
++	if(this.query.length > 0)	this.getArguments();
++},
++
++getArguments: function(){
++	var args=this.query.split('&');
++	var keyval='';
++	
++	if(args.length<1) return;
++	
++	for(i=0;i<args.length;i++){
++		keyval=args[i].split('=');
++		this.arguments[i] = new Array(keyval[0],(keyval.length==1)?keyval[0]:keyval[1]);
++	}
++},
++
++getArgumentValue: function(key){
++	if(key.length<1) return '';
++	for(i=0; i < this.arguments.length; i++){
++		if(this.arguments[i][0] == key) return this.arguments[i][1];
++	}
++	
++return '';
++},
++
++getArgumentValues: function(){
++	var a=new Array();
++	var b=this.query.split('&');
++	var c='';
++	if(b.length<1) return a;
++	for(i=0;i<b.length;i++){
++		c=b[i].split('=');
++		a[i]=new Array(c[0],((c.length==1)?c[0]:c[1]));
++	}
++return a;
++},
++
++getUrl: function(){
++	var uri = (this.protocol.length > 0)?(this.protocol+'://'):'';
++	uri +=  encodeURI((this.username.length > 0)?(this.username):'');
++	uri +=  encodeURI((this.password.length > 0)?(':'+this.password):'');
++	uri +=  (this.host.length > 0)?(this.host):'';
++	uri +=  (this.port.length > 0)?(':'+this.port):'';
++	uri +=  encodeURI((this.path.length > 0)?(this.path):'');
++	uri +=  encodeURI((this.query.length > 0)?('?'+this.query):'');
++	uri +=  encodeURI((this.reference.length > 0)?('#'+this.reference):'');
++//	alert(uri.getProtocol()+' : '+uri.getHost()+' : '+uri.getPort()+' : '+uri.getPath()+' : '+uri.getQuery());
++return uri;
++},
++
++setArgument: function(key,value){
++
++	var valueisset = false;
++	if(typeof(key) == 'undefined') throw 'Invalid argument past for setArgument';
++	
++	value =('undefined' != typeof(value))?value:'';
++
++	for(i=0; i < this.arguments.length; i++){
++		if(this.arguments[i][0] == key){
++			valueisset = true;
++			this.arguments[i][1] = value;
++		}
++	}	
++	if(!valueisset)	this.arguments[this.arguments.length] = new Array(key,value);
++	this.formatQuery();
++},
++
++formatQuery: function(){
++	if(this.arguments.lenght < 1) return;
++	
++	var query = '';
++	for(i=0; i < this.arguments.length; i++){		
++		query+=this.arguments[i][0]+'='+this.arguments[i][1]+'&';
++	}
++	this.query = query.substring(0,query.length-1);
++},
++
++getPort: function(){ 
++	return this.port;
++},
++
++setPort: function(port){
++	this.port = port;
++},
++
++getQuery: function(){ 
++	return this.query;
++},
++
++setQuery: function(query){ 
++	this.query = query;
++	this.getArgumentValues();
++	this.formatQuery();
++},
++
++/* Returns the protocol of this URL, i.e. 'http' in the url 'http://server/' */
++getProtocol: function(){
++	return this.protocol;
++},
++
++setProtocol: function(protocol){
++	this.protocol = protocol;
++},
++/* Returns the host name of this URL, i.e. 'server.com' in the url 'http://server.com/' */
++getHost: function(){
++	return this.host;
++},
++
++setHost: function(set){
++	this.host = host;
++},
++
++/* Returns the user name part of this URL, i.e. 'joe' in the url 'http://joe@server.com/' */
++getUserName: function(){
++	return this.username;
++},
++
++setUserName: function(username){
++	this.username = username;
++},
++
++/* Returns the password part of this url, i.e. 'secret' in the url 'http://joe:secret@server.com/' */
++getPassword: function(){
++	return this.password;
++},
++
++setPassword: function(password){
++	this.password = password;
++},
++
++/* Returns the file part of this url, i.e. everything after the host name. */
++getFile: function(){
++	return this.file = file;
++},
++
++setFile: function(file){
++	this.file = file;
++},
++
++/* Returns the reference of this url, i.e. 'bookmark' in the url 'http://server/file.html#bookmark' */
++getReference: function(){
++	return this.reference;
++},
++
++setReference: function(reference){
++	this.reference = reference;
++},
++
++/* Returns the file path of this url, i.e. '/dir/file.html' in the url 'http://server/dir/file.html' */
++getPath: function(){
++	return this.path;
++},
++
++setPath: function(path){
++	this.path = path;
++}
++}
+\ No newline at end of file
+Index: frontends/php/js/ajax_req.js
+===================================================================
+--- frontends/php/js/ajax_req.js	(revision 6622)
++++ frontends/php/js/ajax_req.js	(revision 6623)
+@@ -19,6 +19,8 @@
+ **/
+ 
+ function send_params(params){
++	if(typeof(params) == 'undefined') var params = new Array();
++	params['sessionid'] = cookie.read('zbx_sessionid');
+ 
+ 	var uri = new url(location.href);
+ 	new Ajax.Request(uri.getPath()+"?output=ajax",
+Index: frontends/php/dashboard.php
+===================================================================
+--- frontends/php/dashboard.php	(revision 6622)
++++ frontends/php/dashboard.php	(revision 6623)
+@@ -42,8 +42,8 @@
+ 		'view_style'=>	array(T_ZBX_INT, O_OPT,	P_SYS,	IN('0,1'),		NULL),
+ 		'type'=>		array(T_ZBX_INT, O_OPT,	P_SYS,	IN('0,1'),		NULL),
+ 		
+-		'output'=>		array(T_ZBX_STR, O_OPT, P_ACT,	NULL,			NULL),
+-		'jsscriptid'=>	array(T_ZBX_STR, O_OPT, P_ACT,	NULL,			NULL),
++		'output'=>		array(T_ZBX_STR, O_OPT, P_SYS,	NULL,			NULL),
++		'jsscriptid'=>	array(T_ZBX_STR, O_OPT, P_SYS,	NULL,			NULL),
+ 		'fullscreen'=>	array(T_ZBX_INT, O_OPT,	P_SYS,	IN('0,1'),		NULL),
+ 		
+ //ajax
+@@ -56,7 +56,7 @@
+ 	);
+ 
+ 	check_fields($fields);
+-	
++
+ 	$available_hosts = get_accessible_hosts_by_user($USER_DETAILS,PERM_READ_ONLY, PERM_RES_IDS_ARRAY);
+ // ACTION /////////////////////////////////////////////////////////////////////////////
+ 	if(isset($_REQUEST['favobj'])){
+Index: frontends/php/include/page_header.php
+===================================================================
+--- frontends/php/include/page_header.php	(revision 6622)
++++ frontends/php/include/page_header.php	(revision 6623)
+@@ -428,8 +428,8 @@
+ 
+ <script type="text/javascript" src="js/prototype.js"></script>
+ <script type="text/javascript" src="js/common.js"></script>
++<script type="text/javascript" src="js/gpc.js"></script>
+ <script type="text/javascript" src="js/ajax_req.js"></script>
+-<script type="text/javascript" src="js/url.js"></script>
+ <script type="text/javascript" src="js/chkbxrange.js"></script>
+ <?php
+ 	if(isset($page['scripts']) && is_array($page['scripts'])){
+Index: frontends/php/include/validate.inc.php
+===================================================================
+--- frontends/php/include/validate.inc.php	(revision 6622)
++++ frontends/php/include/validate.inc.php	(revision 6623)
+@@ -432,7 +432,7 @@
+ 			if(!isset($_REQUEST[$field])){
+ 				return ZBX_VALID_OK;
+ 			}
+-			else if(($flags&P_ACT) && !isset($_REQUEST['zbx_form'])){
++			else if(($flags&P_ACT) && !isset($_REQUEST['sessionid'])){
+ 				return ZBX_VALID_ERROR;
+ 			}
+ 		}
+@@ -465,8 +465,7 @@
+ 
+ //		VAR							TYPE	OPTIONAL FLAGS	VALIDATION	EXCEPTION
+ 	$system_fields=array(
+-		'sessionid'=>		array(T_ZBX_STR, O_OPT,	 P_SYS,	HEX(), 'isset({zbx_form})'),
+-		'zbx_form'=>		array(T_ZBX_STR, O_OPT,	 P_SYS,	NOT_EMPTY, NULL),
++		'sessionid'=>		array(T_ZBX_STR, O_OPT,	 P_SYS,	HEX(), NULL),
+ // 
+ 		'switch_node'=>		array(T_ZBX_INT, O_OPT,	 P_SYS,	DB_ID,NULL),
+ 		'triggers_hash'=>	array(T_ZBX_STR, O_OPT,	 P_SYS,	NOT_EMPTY,NULL),
+Index: frontends/php/include/classes/ctree.inc.php
+===================================================================
+--- frontends/php/include/classes/ctree.inc.php	(revision 6622)
++++ frontends/php/include/classes/ctree.inc.php	(revision 6623)
+@@ -214,7 +214,6 @@
+ 	global $page;
+ 		$js = '
+ 		<script src="js/tree.js" type="text/javascript"></script>
+-		<script src="js/cookies.js" type="text/javascript"></script>	
+ 		<script type="text/javascript"> 
+ 				var treenode = new Array(0);
+ 				var tree_name = "tree_'.$this->getUserAlias().'_'.$page["file"].'";
+Index: frontends/php/include/classes/cform.inc.php
+===================================================================
+--- frontends/php/include/classes/cform.inc.php	(revision 6622)
++++ frontends/php/include/classes/cform.inc.php	(revision 6623)
+@@ -27,7 +27,6 @@
+ 			$this->setAction($action);
+ 			$this->setEnctype($enctype);
+ 			
+-			$this->addVar('zbx_form', 'action');
+ 			$this->addVar('sessionid', $_COOKIE['zbx_sessionid']);
+ 		}
+ 		
+Index: frontends/php/index.php
+===================================================================
+--- frontends/php/index.php	(revision 6622)
++++ frontends/php/index.php	(revision 6623)
+@@ -33,8 +33,8 @@
+ 		"password"=>		array(T_ZBX_STR, O_OPT,	NULL,	NULL,		'isset({enter})'),
+ 		"sessionid"=>		array(T_ZBX_STR, O_OPT,	NULL,	NULL,		NULL),
+ 		"message"=>			array(T_ZBX_STR, O_OPT,	NULL,	NULL,		NULL),
+-		"reconnect"=>		array(T_ZBX_INT, O_OPT,	P_ACT, BETWEEN(0,65535),NULL),
+-		"enter"=>			array(T_ZBX_STR, O_OPT, P_SYS|P_ACT,    NULL,   NULL),
++		"reconnect"=>		array(T_ZBX_INT, O_OPT,	NULL, BETWEEN(0,65535),NULL),
++		"enter"=>			array(T_ZBX_STR, O_OPT, P_SYS,    NULL,   NULL),
+ 		"form"=>			array(T_ZBX_STR, O_OPT, P_SYS,  NULL,   	NULL),
+ 		"form_refresh"=>	array(T_ZBX_INT, O_OPT, NULL,   NULL,   	NULL)
+ 	);
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Obtained from svn://svn.zabbix.com/branches/1.6/frontends/php/
+
+Checks if 'zbx_sessionid' cookie is really here before setting
+'sessionid' variable.
+
+Index: frontends/php/include/classes/cform.inc.php
+===================================================================
+--- frontends/php/include/classes/cform.inc.php	(revision 6624)
++++ frontends/php/include/classes/cform.inc.php	(revision 6625)
+@@ -27,7 +27,8 @@
+ 			$this->setAction($action);
+ 			$this->setEnctype($enctype);
+ 			
+-			$this->addVar('sessionid', $_COOKIE['zbx_sessionid']);
++			if(isset($_COOKIE['zbx_sessionid']))
++				$this->addVar('sessionid', $_COOKIE['zbx_sessionid']);
+ 		}
+ 		
+ 		function setMethod($value='post'){
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Obtained from svn://svn.zabbix.com/branches/1.6/frontends/php/
+
+This hunk basically trades the name 'sessionid' for 'sid'.  It also
+reshuffles many functions, adds many whitespace changes and implants
+URL manipulation tools for JavaScript.
+
+Index: frontends/php/users.php
+===================================================================
+--- frontends/php/users.php	(revision 6643)
++++ frontends/php/users.php	(revision 6644)
+@@ -1,7 +1,7 @@
+ <?php
+ /* 
+ ** ZABBIX
+-** Copyright (C) 2000-2005 SIA Zabbix
++** Copyright (C) 2000-2009 SIA Zabbix
+ **
+ ** This program is free software; you can redistribute it and/or modify
+ ** it under the terms of the GNU General Public License as published by
+@@ -24,6 +24,7 @@
+ 	require_once('include/media.inc.php');
+ 	require_once('include/users.inc.php');
+ 	require_once('include/forms.inc.php');
++	require_once('include/classes/curl.inc.php');
+ 	require_once('include/js.inc.php');
+ 
+ 	$page['title'] = 'S_USERS';
+@@ -32,7 +33,6 @@
+ 	$page['scripts'] = array('menu_scripts.js');
+ 
+ include_once('include/page_header.php');
+-
+ ?>
+ <?php
+ 	$_REQUEST['config']=get_request('config',get_profile('web.users.config',0));
+Index: frontends/php/js/menu.js
+===================================================================
+--- frontends/php/js/menu.js	(revision 6643)
++++ frontends/php/js/menu.js	(revision 6644)
+@@ -386,8 +386,13 @@
+ 		this.n_y -= this.getprop('height') * (o_parent.a_config.length - item_offset);
+ 	}
+ 
++	if(!is_null(this.a_config[1]) && (this.a_config[1].indexOf('javascript') == -1)){
++		var uri = new url(this.a_config[1]);
++		this.a_config[1] = uri.getUrl();
++	}
++	
+ 	// generate item's HMTL
+-	var el = document.createElement("a");
++	var el = document.createElement('a');
+ 	el.setAttribute('id', 'e' + o_root.n_id + '_' + this.n_id + 'o');
+ 	el.setAttribute('href', this.a_config[1]);
+ 
+Index: frontends/php/js/updater.js
+===================================================================
+--- frontends/php/js/updater.js	(revision 6643)
++++ frontends/php/js/updater.js	(revision 6644)
+@@ -65,8 +65,6 @@
+ 		obj4update.ready = false;
+ 		
+ 		var uri = new url(obj4update.url);
+-		uri.setArgument('sessionid', cookie.read('zbx_sessionid'));
+-
+ 		new Ajax.Updater(obj4update.id, uri.getUrl(),//obj4update.url,
+ 			{
+ 				method: 'post',
+Index: frontends/php/js/gpc.js
+===================================================================
+--- frontends/php/js/gpc.js	(revision 6643)
++++ frontends/php/js/gpc.js	(revision 6644)
+@@ -96,7 +96,7 @@
+ reference:	'',
+ path:		'',
+ query:		'',
+-arguments: new Array(),
++arguments:  {},
+ 
+ initialize: function(url){
+ 	this.url=unescape(url);
+@@ -116,7 +116,8 @@
+ 			if(colonIndex>=0){
+ 				this.username=credentials.substring(0,colonIndex);
+ 				this.password=credentials.substring(colonIndex);
+-			}else{
++			}
++			else{
+ 				this.username=credentials;
+ 			}
+ 			this.host=this.host.substring(atIndex+1);
+@@ -144,9 +145,11 @@
+ 		}
+ 		this.file=this.url.substring(protocolSepIndex+3);
+ 		this.file=this.file.substring(this.file.indexOf('/'));
+-	}else{
++	}
++	else{
+ 		this.file=this.url;
+ 	}
++	
+ 	if(this.file.indexOf('?')>=0) this.file=this.file.substring(0, this.file.indexOf('?'));
+ 
+ 	var refSepIndex=url.indexOf('#');
+@@ -157,42 +160,51 @@
+ 	this.path=this.file;
+ 	if(this.query.length>0) this.file+='?'+this.query;
+ 	if(this.reference.length>0) this.file+='#'+this.reference;
+-	if(this.query.length > 0)	this.getArguments();
++	if(this.query.length > 0)	this.formatArguments();
++	
++	var sid = cookie.read('zbx_sessionid');
++	this.setArgument('sid', sid.substring(16));
+ },
+ 
+-getArguments: function(){
++
++formatQuery: function(){
++	if(this.arguments.lenght < 1) return;
++	
++	var query = '';
++	for(var key in this.arguments){
++		if(typeof(this.arguments[key]) != 'undefined'){
++			query+=key+'='+this.arguments[key]+'&';
++		}
++	}
++	this.query = query.substring(0,query.length-1);
++},
++
++formatArguments: function(){
+ 	var args=this.query.split('&');
+ 	var keyval='';
+-	
++
+ 	if(args.length<1) return;
+ 	
+-	for(i=0;i<args.length;i++){
+-		keyval=args[i].split('=');
+-		this.arguments[i] = new Array(keyval[0],(keyval.length==1)?keyval[0]:keyval[1]);
++	for(i=0; i<args.length; i++){
++		keyval = args[i].split('=');
++		this.arguments[keyval[0]] = (keyval.length>1)?keyval[1]:'';
+ 	}
+ },
+ 
+-getArgumentValue: function(key){
+-	if(key.length<1) return '';
+-	for(i=0; i < this.arguments.length; i++){
+-		if(this.arguments[i][0] == key) return this.arguments[i][1];
+-	}
+-	
+-return '';
++setArgument: function(key,value){
++	this.arguments[key] = value;
++	this.formatQuery();
+ },
+ 
+-getArgumentValues: function(){
+-	var a=new Array();
+-	var b=this.query.split('&');
+-	var c='';
+-	if(b.length<1) return a;
+-	for(i=0;i<b.length;i++){
+-		c=b[i].split('=');
+-		a[i]=new Array(c[0],((c.length==1)?c[0]:c[1]));
+-	}
+-return a;
++getArgument: function(key){
++	if(typeof(this.arguments[key]) != 'undefined') return this.arguments[key];
++	else return null;
+ },
+ 
++getArguments: function(){
++	return this.arguments;
++},
++
+ getUrl: function(){
+ 	var uri = (this.protocol.length > 0)?(this.protocol+'://'):'';
+ 	uri +=  encodeURI((this.username.length > 0)?(this.username):'');
+@@ -206,51 +218,30 @@
+ return uri;
+ },
+ 
+-setArgument: function(key,value){
+-
+-	var valueisset = false;
+-	if(typeof(key) == 'undefined') throw 'Invalid argument past for setArgument';
+-	
+-	value =('undefined' != typeof(value))?value:'';
+-
+-	for(i=0; i < this.arguments.length; i++){
+-		if(this.arguments[i][0] == key){
+-			valueisset = true;
+-			this.arguments[i][1] = value;
+-		}
+-	}	
+-	if(!valueisset)	this.arguments[this.arguments.length] = new Array(key,value);
+-	this.formatQuery();
++setPort: function(port){
++	this.port = port;
+ },
+ 
+-formatQuery: function(){
+-	if(this.arguments.lenght < 1) return;
+-	
+-	var query = '';
+-	for(i=0; i < this.arguments.length; i++){		
+-		query+=this.arguments[i][0]+'='+this.arguments[i][1]+'&';
+-	}
+-	this.query = query.substring(0,query.length-1);
+-},
+-
+ getPort: function(){ 
+ 	return this.port;
+ },
+ 
+-setPort: function(port){
+-	this.port = port;
++setQuery: function(query){ 
++	this.query = query;
++	if(this.query.indexOf('?')>=0){
++		this.query= this.query.substring(this.query.indexOf('?')+1);
++	}
++	
++	this.formatArguments();
++	
++	var sid = cookie.read('zbx_sessionid');
++	this.setArgument('sid', sid.substring(16));
+ },
+ 
+ getQuery: function(){ 
+ 	return this.query;
+ },
+ 
+-setQuery: function(query){ 
+-	this.query = query;
+-	this.getArgumentValues();
+-	this.formatQuery();
+-},
+-
+ /* Returns the protocol of this URL, i.e. 'http' in the url 'http://server/' */
+ getProtocol: function(){
+ 	return this.protocol;
+@@ -264,7 +255,7 @@
+ 	return this.host;
+ },
+ 
+-setHost: function(set){
++setHost: function(host){
+ 	this.host = host;
+ },
+ 
+@@ -288,7 +279,7 @@
+ 
+ /* Returns the file part of this url, i.e. everything after the host name. */
+ getFile: function(){
+-	return this.file = file;
++	return this.file;
+ },
+ 
+ setFile: function(file){
+Index: frontends/php/js/menu_scripts.js
+===================================================================
+--- frontends/php/js/menu_scripts.js	(revision 6643)
++++ frontends/php/js/menu_scripts.js	(revision 6644)
+@@ -64,7 +64,7 @@
+ 	for(var i=0; i < menu_usrgrp_gui.length; i++){
+ 		if((typeof(menu_usrgrp_gui[i]) != 'undefined') && !empty(menu_usrgrp_gui[i])){
+ 			var row = menu_usrgrp_gui[i];
+-			var menu_row = new Array(row.name,"users.php?config=0&form=update&grpaction=1&userid="+userid+"&usrgrpid="+row.usrgrpid);
++			var menu_row = new Array(row.name,'users.php?config=0&form=update&grpaction=1&userid='+userid+'&usrgrpid='+row.usrgrpid);
+ 			grp_gui_add_to.push(menu_row);
+ 		}
+ 	}
+@@ -73,7 +73,7 @@
+ 	for(var i=0; i < usr_grp_gui_in.length; i++){
+ 		if((typeof(usr_grp_all_in[i]) != 'undefined') && !empty(usr_grp_gui_in[i])){
+ 			var row = usr_grp_gui_in[i];
+-			var menu_row = new Array(row.name,"users.php?config=0&form=update&grpaction=0&userid="+userid+"&usrgrpid="+row.usrgrpid);
++			var menu_row = new Array(row.name,'users.php?config=0&form=update&grpaction=0&userid='+userid+'&usrgrpid='+row.usrgrpid);
+ 			grp_gui_rmv_frm.push(menu_row);
+ 		}
+ 	}
+@@ -89,7 +89,7 @@
+ 	for(var i=0; i < menu_usrgrp_status.length; i++){
+ 		if((typeof(menu_usrgrp_status[i]) != 'undefined') && !empty(menu_usrgrp_status[i])){
+ 			var row = menu_usrgrp_status[i];
+-			var menu_row = new Array(row.name,"users.php?config=0&form=update&grpaction=1&userid="+userid+"&usrgrpid="+row.usrgrpid);
++			var menu_row = new Array(row.name,'users.php?config=0&form=update&grpaction=1&userid='+userid+'&usrgrpid='+row.usrgrpid);
+ 			grp_status_add_to.push(menu_row);
+ 		}
+ 	}
+@@ -98,7 +98,7 @@
+ 	for(var i=0; i < usr_grp_status_in.length; i++){
+ 		if((typeof(usr_grp_status_in[i]) != 'undefined') && !empty(usr_grp_status_in[i])){
+ 			var row = usr_grp_status_in[i];
+-			var menu_row = new Array(row.name,"users.php?config=0&form=update&grpaction=0&userid="+userid+"&usrgrpid="+row.usrgrpid);
++			var menu_row = new Array(row.name,'users.php?config=0&form=update&grpaction=0&userid='+userid+'&usrgrpid='+row.usrgrpid);
+ 			grp_status_rmv_frm.push(menu_row);
+ 		}
+ 	}
+Index: frontends/php/js/common.js
+===================================================================
+--- frontends/php/js/common.js	(revision 6643)
++++ frontends/php/js/common.js	(revision 6644)
+@@ -82,6 +82,16 @@
+ 	div_help.appendChild(document.createElement("br"));
+ }
+ 
++function SDJ(obj){
++	var debug = '';
++	for(var key in obj) {
++		var value = obj[key];
++		debug+=key+': '+value+'\n';
++	}
++	SDI('\n'+debug);
++}
++
++
+ /// Alpha-Betic sorting
+ 
+ function addListener(element, eventname, expression, bubbling){
+Index: frontends/php/js/ajax_req.js
+===================================================================
+--- frontends/php/js/ajax_req.js	(revision 6643)
++++ frontends/php/js/ajax_req.js	(revision 6644)
+@@ -20,14 +20,16 @@
+ 
+ function send_params(params){
+ 	if(typeof(params) == 'undefined') var params = new Array();
+-	params['sessionid'] = cookie.read('zbx_sessionid');
+ 
+ 	var uri = new url(location.href);
+-	new Ajax.Request(uri.getPath()+"?output=ajax",
++	uri.setQuery('?output=ajax');
++
++	new Ajax.Request(uri.getUrl(),
+ 					{
+ 						'method': 'post',
+ 						'parameters':params,
+-						'onSuccess': function(resp){ },//alert(resp.responseText);
++						'onSuccess': function(resp){ },
++//						'onSuccess': function(resp){ alert(resp.responseText); },
+ 						'onFailure': function(){ document.location = uri.getPath()+'?'+Object.toQueryString(params); }
+ 					}
+ 	);
+Index: frontends/php/dashboard.php
+===================================================================
+--- frontends/php/dashboard.php	(revision 6643)
++++ frontends/php/dashboard.php	(revision 6644)
+@@ -54,7 +54,7 @@
+ 		'action'=>		array(T_ZBX_STR, O_OPT, P_ACT, 	IN("'add','remove'"),NULL),
+ 		'state'=>		array(T_ZBX_INT, O_OPT, P_ACT,  NOT_EMPTY,		'isset({favobj}) && ("hat"=={favobj})'),
+ 	);
+-
++	
+ 	check_fields($fields);
+ 
+ 	$available_hosts = get_accessible_hosts_by_user($USER_DETAILS,PERM_READ_ONLY, PERM_RES_IDS_ARRAY);
+@@ -179,11 +179,11 @@
+ 	$p_elements = array();
+ // Header	
+ 
+-	$url = '?fullscreen='.($_REQUEST['fullscreen']?'0':'1');
++	$url = new Curl('?fullscreen='.($_REQUEST['fullscreen']?'0':'1'));
+ 
+ 	$fs_icon = new CDiv(SPACE,'fullscreen');
+ 	$fs_icon->AddOption('title',$_REQUEST['fullscreen']?S_NORMAL.' '.S_VIEW:S_FULLSCREEN);
+-	$fs_icon->AddAction('onclick',new CScript("javascript: document.location = '".$url."';"));
++	$fs_icon->AddAction('onclick',new CScript("javascript: document.location = '".$url->getUrl()."';"));
+ //-------------
+ 
+ 	$left_tab = new CTable();
+Index: frontends/php/include/func.inc.php
+===================================================================
+--- frontends/php/include/func.inc.php	(revision 6643)
++++ frontends/php/include/func.inc.php	(revision 6644)
+@@ -344,6 +344,18 @@
+ return $pos;
+ }
+ 
++function zbx_substring($haystack, $start, $end=null){
++	if($end < $start) return '';
++	
++	$len = zbx_strlen($haystack);
++	if(is_null($end))
++		$result = substr($haystack, $start);
++	else
++		$result = substr($haystack, $start, ($end - $start));
++
++return $result;
++}
++
+ function uint_in_array($needle,$haystack){
+ 	foreach($haystack as $id => $value)
+ 		if(bccomp($needle,$value) == 0) return true;
+Index: frontends/php/include/screens.inc.php
+===================================================================
+--- frontends/php/include/screens.inc.php	(revision 6643)
++++ frontends/php/include/screens.inc.php	(revision 6644)
+@@ -886,7 +886,7 @@
+ 					$action = 'screenedit.php?form=update'.url_param('screenid').'&x='.$c.'&y='.$r.'#form';
+ 				else
+ 					$action = NULL;
+-
++					
+ 				if($editmode == 1 && isset($_REQUEST["form"]) && 
+ 					isset($_REQUEST["x"]) && $_REQUEST["x"]==$c &&
+ 					isset($_REQUEST["y"]) && $_REQUEST["y"]==$r)
+Index: frontends/php/include/perm.inc.php
+===================================================================
+--- frontends/php/include/perm.inc.php	(revision 6643)
++++ frontends/php/include/perm.inc.php	(revision 6644)
+@@ -44,7 +44,7 @@
+ 	$USER_DETAILS = NULL;
+ 	$login = FALSE;
+ 	
+-	$sessionid = get_request('sessionid',get_cookie('zbx_sessionid'));
++	$sessionid = get_cookie('zbx_sessionid');
+ 
+ 	if(!is_null($sessionid)){
+ 		$sql = 'SELECT u.*,s.* '.
+Index: frontends/php/include/config.inc.php
+===================================================================
+--- frontends/php/include/config.inc.php	(revision 6643)
++++ frontends/php/include/config.inc.php	(revision 6644)
+@@ -65,6 +65,7 @@
+ 	require_once('include/classes/cpumenu.inc.php');
+ 	require_once('include/classes/graph.inc.php');
+ 	require_once('include/classes/cscript.inc.php');
++	require_once('include/classes/curl.inc.php');
+ 
+ // Include Tactical Overview modules
+ 
+Index: frontends/php/include/validate.inc.php
+===================================================================
+--- frontends/php/include/validate.inc.php	(revision 6643)
++++ frontends/php/include/validate.inc.php	(revision 6644)
+@@ -432,8 +432,13 @@
+ 			if(!isset($_REQUEST[$field])){
+ 				return ZBX_VALID_OK;
+ 			}
+-			else if(($flags&P_ACT) && !isset($_REQUEST['sessionid'])){
+-				return ZBX_VALID_ERROR;
++			else if($flags&P_ACT){
++				if(!isset($_REQUEST['sid'])){
++					return ZBX_VALID_ERROR;
++				}
++				else if(isset($_COOKIE['zbx_sessionid']) && ($_REQUEST['sid'] != substr($_COOKIE['zbx_sessionid'],16,16))){
++					return ZBX_VALID_ERROR;
++				}
+ 			}
+ 		}
+ 
+@@ -465,7 +470,7 @@
+ 
+ //		VAR							TYPE	OPTIONAL FLAGS	VALIDATION	EXCEPTION
+ 	$system_fields=array(
+-		'sessionid'=>		array(T_ZBX_STR, O_OPT,	 P_SYS,	HEX(), NULL),
++		'sid'=>		array(T_ZBX_STR, O_OPT,	 P_SYS,	HEX(), NULL),
+ // 
+ 		'switch_node'=>		array(T_ZBX_INT, O_OPT,	 P_SYS,	DB_ID,NULL),
+ 		'triggers_hash'=>	array(T_ZBX_STR, O_OPT,	 P_SYS,	NOT_EMPTY,NULL),
+Index: frontends/php/include/classes/clink.inc.php
+===================================================================
+--- frontends/php/include/classes/clink.inc.php	(revision 6643)
++++ frontends/php/include/classes/clink.inc.php	(revision 6644)
+@@ -19,12 +19,14 @@
+ **/
+ ?>
+ <?php
+-	class CLink extends CTag
+-	{
++	class CLink extends CTag{
+ /* public */
+ 		function CLink($item=NULL,$url=NULL,$class=NULL,$action=NULL){
+ 			parent::CTag('a','yes');
+-
++			
++			$uri = new Curl($url);
++			$url = $uri->getUrl();
++			
+ 			$this->tag_start= '';
+ 			$this->tag_end = '';
+ 			$this->tag_body_start = '';
+@@ -36,14 +38,14 @@
+ 			if(!is_null($action))	$this->SetAction($action);
+ 		}
+ 		
+-		function SetAction($value=NULL){
++		function setAction($value=NULL){
+ 			if(is_null($value))
+ 				return $this->options['action'] = $page['file'];
+ 
+ 			return parent::AddAction('onclick', $value);
+ 		}
+ 		
+-		function SetUrl($value){
++		function setUrl($value){
+ 			$this->AddOption('href', $value);
+ 		}
+ 		
+@@ -54,7 +56,7 @@
+ 				return null;
+ 		}
+ 		
+-		function SetTarget($value=NULL){
++		function setTarget($value=NULL){
+ 			if(is_null($value)){
+ 				unset($this->options['target']);
+ 			}
+Index: frontends/php/include/classes/curl.inc.php
+===================================================================
+--- frontends/php/include/classes/curl.inc.php	(revision 0)
++++ frontends/php/include/classes/curl.inc.php	(revision 6644)
+@@ -0,0 +1,273 @@
++<?php
++/* 
++** ZABBIX
++** Copyright (C) 2000-2005 SIA Zabbix
++**
++** $this program is free software; you can redistribute it and/or modify
++** it under the terms of the GNU General Public License as published by
++** the Free Software Foundation; either version 2 of the License, or
++** (at your option) any later version.
++**
++** $this program is distributed in the hope that it will be useful,
++** but WITHOUT ANY WARRANTY; without even the implied warranty of
++** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++** GNU General Public License for more details.
++**
++** You should have received a copy of the GNU General Public License
++** along with $this program; if not, write to the Free Software
++** Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
++**/
++?>
++<?php
++// Title: url manipulation class
++// Author: Aly
++
++class Curl{
++/*
++private $url = 			'';		//	actually, it's depricated/private variable 
++private $port =			false;
++private $host = 		'';
++private $protocol = 	'';
++private $username =		'';
++private $password =		'';
++private $filr =			'';
++private $reference =	'';
++private $path =			'';
++private $query =		'';
++private $arguments = 	array();
++//*/
++
++function curl($url=null){
++	global $USER_DETAILS;
++	
++	$this->url = 		'';		//	actually, it's depricated/private variable 
++	$this->port =		false;
++	$this->host = 		'';
++	$this->protocol = 	'';
++	$this->username =	'';
++	$this->password =	'';
++	$this->filr =		'';
++	$this->reference =	'';
++	$this->path =		'';
++	$this->query =		'';
++	$this->arguments = 	array();
++
++	if(empty($url)){
++		$this->formatArguments();
++		$this->url = $url = 'http://'.$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME'].'?'.$this->getQuery();
++	}
++	else{
++		$this->url=urldecode($url);
++
++		$tmp_pos = strpos($this->url,'?');
++		$this->query=($tmp_pos!==false)?(substr($this->url,$tmp_pos+1)):'';
++
++		$tmp_pos = strpos($this->query,'#');
++		if($tmp_pos!==false) $this->query=zbx_substring($this->query,0,$tmp_pos);
++
++		$this->formatArguments($this->query);
++	}
++
++	$protocolSepIndex=strpos($this->url,'://');	
++	if($protocolSepIndex!==false){
++		$this->protocol= strtolower(zbx_substring($this->url,0,$protocolSepIndex));
++		
++		$this->host=substr($this->url, $protocolSepIndex+3);
++		
++		$tmp_pos = strpos($this->host,'/');
++		if($tmp_pos!==false) $this->host=zbx_substring($this->host,0,$tmp_pos);
++		
++		$atIndex=strpos($this->host,'@');
++		if($atIndex!==false){
++			$credentials=zbx_substring($this->host,0,$atIndex);
++			
++			$colonIndex=strpos(credentials,':');
++			if($colonIndex!==false){
++				$this->username=zbx_substring($credentials,0,$colonIndex);
++				$this->password=substr($credentials,$colonIndex);
++			}
++			else{
++				$this->username=$credentials;
++			}
++			$this->host=substr($this->host,$atIndex+1);
++		}
++		
++		$host_ipv6 = strpos($this->host,']');
++		if($host_ipv6!==false){
++			if($host_ipv6 < (zbx_strlen($this->host)-1)){
++				$host_ipv6++;
++				$host_less = substr($this->host,$host_ipv6);
++
++				$portColonIndex=strpos($host_less,':');
++				if($portColonIndex!==false){
++					$this->host=zbx_substring($this->host,0,$host_ipv6);
++					$this->port=substr($host_less,$portColonIndex+1);
++				}
++			}
++		}
++		else{
++			$portColonIndex=strpos($this->host,':');
++			if($portColonIndex!==false){
++				$this->host=zbx_substring($this->host,0,$portColonIndex);
++				$this->port=substr($this->host,$portColonIndex+1);
++			}
++		}
++		
++		$this->file = substr($this->url,$protocolSepIndex+3);
++		$this->file = substr($this->file, strpos($this->file,'/'));
++	}
++	else{
++		$this->file = $this->url;
++	}
++	
++	$tmp_pos = strpos($this->file,'?');
++	if($tmp_pos!==false) $this->file=zbx_substring($this->file, 0, $tmp_pos);
++
++	$refSepIndex=strpos($url,'#');
++	if($refSepIndex!==false){
++		$this->file = zbx_substring($this->file,0,$refSepIndex);
++		$this->reference = substr($url,strpos($url,'#')+1);
++	}
++	
++	$this->path=$this->file;
++	if(zbx_strlen($this->query)>0) 		$this->file.='?'.$this->query;
++	if(zbx_strlen($this->reference)>0)	$this->file.='#'.$this->reference;
++	
++	if(isset($_COOKIE['zbx_sessionid']))
++		$this->setArgument('sid', substr($_COOKIE['zbx_sessionid'],16,16));
++}
++
++function formatQuery(){
++	$query = '';
++	foreach($this->arguments as $key => $value){
++		$query.= $key.'='.$value.'&';
++	}
++	$this->query = rtrim($query,'&');
++}
++
++function formatArguments($query=null){
++	if(is_null($query)){
++		$this->arguments = $_REQUEST;
++	}
++	else{
++		$query=ltrim($query,'?');
++		$args = explode('&',$query);
++		foreach($args as $id => $arg){
++			if(empty($arg)) continue;
++
++			$tmp = explode('=',$arg);
++			$this->arguments[$tmp[0]] = isset($tmp[1])?$tmp[1]:'';
++		}
++	}
++	$this->formatQuery();
++}
++
++function getUrl(){
++	$url = (zbx_strlen($this->protocol) > 0)?($this->protocol.'://'):'';
++	$url .=  (zbx_strlen($this->username) > 0)?$this->username:'';
++	$url .=  (zbx_strlen($this->password) > 0)?':'.$this->password:'';
++	$url .=  (zbx_strlen($this->host) > 0)?$this->host:'';
++	$url .=  $this->port?(':'.$this->port):'';
++	$url .=  (zbx_strlen($this->path) > 0)?$this->path:'';
++	$url .=  (zbx_strlen($this->query) > 0)?('?'.$this->query):'';
++	$url .=  (zbx_strlen($this->reference) > 0)?('#'.urlencode($this->reference)):'';
++	
++//SDI($this->getProtocol().' : '.$this->getHost().' : '.$this->getPort().' : '.$this->getPath().' : '.$this->getQuery());
++return $url;
++}
++
++function setPort($port){
++	$this->port = $port;
++}
++
++function getPort(){ 
++	return $this->port;
++}
++
++function setArgument($key,$value=''){
++	$this->arguments[$key] = $value;
++	$this->formatQuery();
++}
++
++function getArgument($key){
++	if(isset($this->arguments[$key])) return $this->arguments[$key];
++	else return NULL;
++}
++
++function setQuery($query){ 
++	$this->query = $query;
++	$this->formatArguments();
++	$this->formatQuery();
++}
++
++function getQuery(){ 
++	return $this->query;
++}
++
++function setProtocol($protocol){
++	$this->protocol = $protocol;
++}
++
++/* Returns the protocol of $this URL, i.e. 'http' in the url 'http://server/' */
++function getProtocol(){
++	return $this->protocol;
++}
++
++function setHost($host){
++	$this->host = $host;
++}
++
++/* Returns the host name of $this URL, i.e. 'server.com' in the url 'http://server.com/' */
++function getHost(){
++	return $this->host;
++}
++
++function setUserName($username){
++	$this->username = $username;
++}
++
++/* Returns the user name part of $this URL, i.e. 'joe' in the url 'http://joe@server.com/' */
++function getUserName(){
++	return $this->username;
++}
++
++function setPassword($password){
++	$this->password = $password;
++}
++
++/* Returns the password part of $this url, i.e. 'secret' in the url 'http://joe:secret@server.com/' */
++function getPassword(){
++	return $this->password;
++}
++
++function setFile($file){
++	$this->file = $file;
++}
++
++/* Returns the file part of $this url, i.e. everything after the host name. */
++function getFile(){
++	return $this->file;
++}
++
++function setReference($reference){
++	$this->reference = $reference;
++}
++
++/* Returns the reference of $this url, i.e. 'bookmark' in the url 'http://server/file.html#bookmark' */
++function getReference(){
++	return $this->reference;
++}
++
++function setPath($path){
++	$this->path = $path;
++}
++
++/* Returns the file path of $this url, i.e. '/dir/file.html' in the url 'http://server/dir/file.html' */
++function getPath(){
++	return $this->path;
++}
++
++function toString(){
++	return $this->getUrl();
++}
++}
+\ No newline at end of file
+Index: frontends/php/include/classes/cform.inc.php
+===================================================================
+--- frontends/php/include/classes/cform.inc.php	(revision 6643)
++++ frontends/php/include/classes/cform.inc.php	(revision 6644)
+@@ -28,7 +28,7 @@
+ 			$this->setEnctype($enctype);
+ 			
+ 			if(isset($_COOKIE['zbx_sessionid']))
+-				$this->addVar('sessionid', $_COOKIE['zbx_sessionid']);
++				$this->addVar('sid', substr($_COOKIE['zbx_sessionid'],16,16));
+ 		}
+ 		
+ 		function setMethod($value='post'){
+Index: frontends/php/include/classes/ctag.inc.php
+===================================================================
+--- frontends/php/include/classes/ctag.inc.php	(revision 6643)
++++ frontends/php/include/classes/ctag.inc.php	(revision 6644)
+@@ -1,7 +1,7 @@
+ <?php
+ /* 
+ ** ZABBIX
+-** Copyright (C) 2000-2005 SIA Zabbix
++** Copyright (C) 2000-2009 SIA Zabbix
+ **
+ ** This program is free software; you can redistribute it and/or modify
+ ** it under the terms of the GNU General Public License as published by
+@@ -19,272 +19,258 @@
+ **/
+ ?>
+ <?php
+-	function destroy_objects()
+-	{
+-		global $GLOBALS;
+-
+-		if(isset($GLOBALS)) foreach($GLOBALS as $name => $value)
+-		{
+-			if(!is_object($GLOBALS[$name])) continue;
+-			unset($GLOBALS[$name]);
+-		}
++function destroy_objects(){
++	if(isset($GLOBALS)) foreach($GLOBALS as $name => $value){
++		if(!is_object($GLOBALS[$name])) continue;
++		unset($GLOBALS[$name]);
+ 	}
+-	
+-	function unpack_object(&$item)
+-	{
+-		$res = "";
++}
+ 
+-		if(is_object($item))
+-		{
+-			$res = $item->ToString(false);
+-		}
+-		elseif(is_array($item))
+-		{
+-			foreach($item as $id => $dat)	
+-				$res .= unpack_object($item[$id]); // Attention, recursion !!!
+-		}
+-		elseif(!is_null($item))
+-		{
+-			$res = strval($item);
+-			unset($item);
+-		}
+-		return $res;
++function unpack_object(&$item){
++	$res = '';
++
++	if(is_object($item)){
++		$res = $item->toString(false);
+ 	}
++	else if(is_array($item)){
++		foreach($item as $id => $dat)	
++			$res .= unpack_object($item[$id]); // Attention, recursion !!!
++	}
++	else if(!is_null($item)){
++		$res = strval($item);
++		unset($item);
++	}
++return $res;
++}
+ 
+-	function implode_objects($glue, &$pieces)
+-	{
+-		if( !is_array($pieces) )	return unpack_object($pieces);
++function implode_objects($glue, &$pieces){
++	if( !is_array($pieces) )	return unpack_object($pieces);
+ 
+-		foreach($pieces as $id => $piece)
+-			$pieces[$id] = unpack_object($piece);
++	foreach($pieces as $id => $piece)
++		$pieces[$id] = unpack_object($piece);
+ 
+-		return implode($glue, $pieces);
+-	}
++return implode($glue, $pieces);
++}
+ 
+-	class CObject
+-	{
+-		function CObject($items=null)
+-		{
+-			$this->items = array();
+-			if(isset($items))
+-			{
+-				$this->AddItem($items);
+-			}
++class CObject{
++	function CObject($items=null){
++		$this->items = array();
++		if(isset($items)){
++			$this->addItem($items);
+ 		}
+-		
+-		function ToString($destroy=true)
+-		{
+-			$res = implode('',$this->items);
+-			if($destroy) $this->Destroy();
+-			return $res;
+-		}
++	}
++	
++	function toString($destroy=true){
++		$res = implode('',$this->items);
++		if($destroy) $this->destroy();
++		return $res;
++	}
+ 
+-		function Show($destroy=true){
+-			echo $this->ToString($destroy);			
+-		}
++	function show($destroy=true){
++		echo $this->toString($destroy);			
++	}
+ 
+-		function Destroy()
+-		{
++	function destroy(){
+ // TODO Problem under PHP 5.0  "Fatal error: Cannot re-assign $this in ..."
+ //			$this = null;
+-			$this->CleanItems();
+-		}
++		$this->cleanItems();
++	}
+ 
+-		function CleanItems(){	
+-			$this->items = array();	
++	function cleanItems(){	
++		$this->items = array();	
++	}
++	
++	function itemsCount(){	
++		return count($this->items);	
++	}
++	
++	function addItem($value){
++	
++		if(is_object($value)){
++			array_push($this->items,unpack_object($value));
+ 		}
+-		
+-		function ItemsCount(){	
+-			return count($this->items);	
++		else if(is_string($value)){
++			array_push($this->items,str_replace(array('<','>','"'),array('&lt;','&gt;','&quot;'),$value));
++//				array_push($this->items,htmlspecialchars($value));
+ 		}
+-		
+-		function AddItem($value){
+-		
+-			if(is_object($value)){
+-				array_push($this->items,unpack_object($value));
++		else if(is_array($value)){
++			foreach($value as $item){
++				$this->addItem($item);			 // Attention, recursion !!!
+ 			}
+-			else if(is_string($value)){
+-				array_push($this->items,str_replace(array('<','>','"'),array('&lt;','&gt;','&quot;'),$value));
+-//				array_push($this->items,htmlspecialchars($value));
+-			}
+-			else if(is_array($value)){
+-				foreach($value as $item){
+-					$this->AddItem($item);			 // Attention, recursion !!!
+-				}
+-			}
+-			else if(!is_null($value)){
+-				array_push($this->items,unpack_object($value));
+-			}
+ 		}
++		else if(!is_null($value)){
++			array_push($this->items,unpack_object($value));
++		}
+ 	}
++}
+ 
+-	class CTag extends CObject{
++class CTag extends CObject{
+ /* private *//*
+-		var $tagname;
+-		var $options = array();
+-		var $paired;*/
++	var $tagname;
++	var $options = array();
++	var $paired;*/
+ /* protected *//*
+-		var $items = array();
++	var $items = array();
+ 
+-		var $tag_body_start;
+-		var $tag_body_end;
+-		var $tag_start;
+-		var $tag_end;*/
++	var $tag_body_start;
++	var $tag_body_end;
++	var $tag_start;
++	var $tag_end;*/
+ 
+ /* public */
+-		function CTag($tagname=NULL, $paired='no', $body=NULL, $class=null){
+-			parent::CObject();
++	function CTag($tagname=NULL, $paired='no', $body=NULL, $class=null){
++		parent::CObject();
+ 
+-			$this->options = array();
++		$this->options = array();
+ 
+-			if(!is_string($tagname)){
+-				return $this->error('Incorrect tagname for CTag ['.$tagname.']');
+-			}
+-			
+-			$this->tagname = $tagname;
+-			$this->paired = $paired;
+-
+-			$this->tag_start = $this->tag_end = $this->tag_body_start = $this->tag_body_end = '';
+-
+-			if(is_null($body)){
+-				$this->tag_end = $this->tag_body_start = "\n";
+-			}
+-			else{
+-				CTag::AddItem($body);
+-			}
+-
+-			$this->SetClass($class);
++		if(!is_string($tagname)){
++			return $this->error('Incorrect tagname for CTag ['.$tagname.']');
+ 		}
+ 		
+-		function ShowStart()	{	echo $this->StartToString();	}
+-		function ShowBody()	{	echo $this->BodyToString();	}
+-		function ShowEnd()	{	echo $this->EndToString();	}
++		$this->tagname = $tagname;
++		$this->paired = $paired;
+ 
+-		function StartToString(){
+-			$res = $this->tag_start.'<'.$this->tagname;
+-			foreach($this->options as $key => $value){
+-				$res .= ' '.$key.'="'.$value.'"';
+-			}
+-			$res .= ($this->paired=='yes')?'>':' />';
+-		return $res;
+-		}
++		$this->tag_start = $this->tag_end = $this->tag_body_start = $this->tag_body_end = '';
+ 
+-		function BodyToString(){
+-			$res = $this->tag_body_start;
+-		return $res.parent::ToString(false);
+-			
+-			/*foreach($this->items as $item)
+-				$res .= $item;
+-			return $res;*/
++		if(is_null($body)){
++			$this->tag_end = $this->tag_body_start = "\n";
+ 		}
+-		
+-		function EndToString(){
+-			$res = ($this->paired=='yes') ? $this->tag_body_end.'</'.$this->tagname.'>' : '';
+-			$res .= $this->tag_end;
+-		return $res;
++		else{
++			CTag::addItem($body);
+ 		}
+-		
+-		function ToString($destroy=true){
+-			$res  = $this->StartToString();
+-			$res .= $this->BodyToString();
+-			$res .= $this->EndToString();
+ 
+-			if($destroy) $this->Destroy();
++		$this->setClass($class);
++	}
++	
++	function showStart()	{	echo $this->startToString();	}
++	function showBody()	{	echo $this->bodyToString();	}
++	function showEnd()	{	echo $this->endToString();	}
+ 
+-		return $res;
++	function startToString(){
++		$res = $this->tag_start.'<'.$this->tagname;
++		foreach($this->options as $key => $value){
++			$res .= ' '.$key.'="'.$value.'"';
+ 		}
+-		
+-		function SetName($value){
+-			if(is_null($value)) return $value;
++		$res .= ($this->paired=='yes')?'>':' />';
++	return $res;
++	}
+ 
+-			if(!is_string($value)){
+-				return $this->error("Incorrect value for SetName [$value]");
+-			}
+-		return $this->AddOption("name",$value);
+-		}
++	function bodyToString(){
++		$res = $this->tag_body_start;
++	return $res.parent::ToString(false);
+ 		
+-		function GetName(){
+-			if(isset($this->options['name']))
+-				return $this->options['name'];
+-		return NULL;
+-		}
+-		
+-		function SetClass($value){
+-			if(isset($value))
+-				$this->options['class'] = $value;
+-			else
+-				unset($this->options['class']);
++		/*foreach($this->items as $item)
++			$res .= $item;
++		return $res;*/
++	}
++	
++	function endToString(){
++		$res = ($this->paired=='yes') ? $this->tag_body_end.'</'.$this->tagname.'>' : '';
++		$res .= $this->tag_end;
++	return $res;
++	}
++	
++	function toString($destroy=true){
++		$res  = $this->startToString();
++		$res .= $this->bodyToString();
++		$res .= $this->endToString();
+ 
+-		return $value;
++		if($destroy) $this->Destroy();
++
++	return $res;
++	}
++	
++	function setName($value){
++		if(is_null($value)) return $value;
++
++		if(!is_string($value)){
++			return $this->error("Incorrect value for setName [$value]");
+ 		}
+-		
+-		function DelOption($name){
+-			unset($this->options[$name]);
+-		}
+-		
+-		function GetOption($name){
+-			$ret = NULL;
+-			if(isset($this->options[$name]))
+-				$ret =& $this->options[$name];
+-		return $ret;
+-		}
++	return $this->addOption("name",$value);
++	}
++	
++	function getName(){
++		if(isset($this->options['name']))
++			return $this->options['name'];
++	return NULL;
++	}
++	
++	function setClass($value){
++		if(isset($value))
++			$this->options['class'] = $value;
++		else
++			unset($this->options['class']);
+ 
+-		function SetHint($text, $width='', $class=''){
+-			if(empty($text)) return false;
++	return $value;
++	}
++	
++	function DelOption($name){
++		unset($this->options[$name]);
++	}
++	
++	function getOption($name){
++		$ret = NULL;
++		if(isset($this->options[$name]))
++			$ret =& $this->options[$name];
++	return $ret;
++	}
+ 
+-			insert_showhint_javascript();
++	function setHint($text, $width='', $class=''){
++		if(empty($text)) return false;
+ 
+-			$text = unpack_object($text);
+-			if($width != '' || $class != ''){
+-				$code = "show_hint_ext(this,event,'".$text."','".$width."','".$class."');";
+-			}
+-			else{
+-				$code = "show_hint(this,event,'".$text."');";
+-			}
++		insert_showhint_javascript();
+ 
+-			$this->AddAction('onMouseOver',	$code);
+-			$this->AddAction('onMouseMove',	'update_hint(this,event);');
++		$text = unpack_object($text);
++		if($width != '' || $class != ''){
++			$code = "show_hint_ext(this,event,'".$text."','".$width."','".$class."');";
+ 		}
+-
+-		function OnClick($handle_code){
+-			$this->AddAction('onclick', $handle_code);
++		else{
++			$code = "show_hint(this,event,'".$text."');";
+ 		}
+ 
+-		function AddAction($name, $value){
+-			if(is_object($value)){
+-				$this->options[$name] = unpack_object($value);
+-			}
+-			else if(!empty($value)){
+-				$this->options[$name] = htmlentities(str_replace(array("\r", "\n"), '', strval($value)),ENT_COMPAT,S_HTML_CHARSET);
+-			}
++		$this->addAction('onMouseOver',	$code);
++		$this->addAction('onMouseMove',	'update_hint(this,event);');
++	}
++
++	function onClick($handle_code){
++		$this->addAction('onclick', $handle_code);
++	}
++
++	function addAction($name, $value){
++		if(is_object($value)){
++			$this->options[$name] = unpack_object($value);
+ 		}
++		else if(!empty($value)){
++			$this->options[$name] = htmlentities(str_replace(array("\r", "\n"), '', strval($value)),ENT_COMPAT,S_HTML_CHARSET);
++		}
++	}
+ 
+-		function AddOption($name, $value){
+-			if(is_object($value)){
+-				$this->options[$name] = unpack_object($value);
+-			}
+-			else if(isset($value))
+-				$this->options[$name] = htmlspecialchars(strval($value)); 
+-			else
+-				unset($this->options[$name]);
++	function addOption($name, $value){
++		if(is_object($value)){
++			$this->options[$name] = unpack_object($value);
+ 		}
++		else if(isset($value))
++			$this->options[$name] = htmlspecialchars(strval($value)); 
++		else
++			unset($this->options[$name]);
++	}
+ 
+-		function SetEnabled($value='yes'){
+-			if((is_string($value) && ($value == 'yes' || $value == 'enabled' || $value=='on') || $value=='1')
+-				|| (is_int($value) && $value<>0))
+-			{
+-				unset($this->options['disabled']);
+-			}
+-			else if((is_string($value) && ($value == 'no' || $value == 'disabled' || $value=='off') || $value=='0')
+-				|| (is_int($value) && $value==0))
+-			{
+-				$this->options['disabled'] = 'disabled';
+-			}
++	function setEnabled($value='yes'){
++		if((is_string($value) && ($value == 'yes' || $value == 'enabled' || $value=='on') || $value=='1')
++			|| (is_int($value) && $value<>0))
++		{
++			unset($this->options['disabled']);
+ 		}
+-		
+-		function error($value){
+-			error('class('.get_class($this).') - '.$value);
+-			return 1;
++		else if((is_string($value) && ($value == 'no' || $value == 'disabled' || $value=='off') || $value=='0')
++			|| (is_int($value) && $value==0))
++		{
++			$this->options['disabled'] = 'disabled';
+ 		}
+ 	}
+-?>
++	
++	function error($value){
++		error('class('.get_class($this).') - '.$value);
++		return 1;
++	}
++}
++?>
+\ No newline at end of file
+Index: frontends/php/include/classes/cmap.inc.php
+===================================================================
+--- frontends/php/include/classes/cmap.inc.php	(revision 6643)
++++ frontends/php/include/classes/cmap.inc.php	(revision 6644)
+@@ -19,78 +19,75 @@
+ **/
+ ?>
+ <?php
+-	class CMap extends CTag
+-	{
++class CMap extends CTag{
+ /* public */
+-		function CMap($name="")
+-		{
+-			parent::CTag("map","yes");
+-			$this->SetName($name);
+-		}
+-		function AddRectArea($x1,$y1,$x2,$y2,$href,$alt)
+-		{ 
+-			return $this->AddArea(array($x1,$y1,$x2,$y2),$href,$alt,'rect'); 
+-		}
+-		function AddArea($coords,$href,$alt,$shape)
+-		{
+-			return $this->AddItem(new CArea($coords,$href,$alt,$shape));
+-		}
+-		function AddItem($value)
+-		{
+-			if(strtolower(get_class($value)) != 'carea')
+-				return $this->error("Incorrect value for AddItem [$value]");
++	function CMap($name=''){
++		parent::CTag('map','yes');
++		$this->setName($name);
++	}
++	
++	function addRectArea($x1,$y1,$x2,$y2,$href,$alt){ 
++		return $this->addArea(array($x1,$y1,$x2,$y2),$href,$alt,'rect'); 
++	}
++	
++	function addArea($coords,$href,$alt,$shape){
++		return $this->addItem(new CArea($coords,$href,$alt,$shape));
++	}
++	
++	function addItem($value){
++		if(strtolower(get_class($value)) != 'carea')
++			return $this->error('Incorrect value for addItem ['.$value.']');
+ 
+-			return parent::AddItem($value);
+-		}
++		return parent::addItem($value);
+ 	}
++}
+ 
+-	class CArea extends CTag
+-	{
+-		function CArea($coords,$href,$alt,$shape)
+-		{
+-			parent::CTag("area","no");
+-			$this->SetCoords($coords);
+-			$this->SetShape($shape);
+-			$this->SetHref($href);
+-			$this->SetAlt($alt);
+-		}
+-		function SetCoords($value)
+-		{
+-			if(!is_array($value))
+-				return $this->error("Incorrect value for SetCoords [$value]");
+-			if(count($value)<3)
+-				return $this->error("Incorrect values count for SetCoords [".count($value)."]");
++class CArea extends CTag{
++	function CArea($coords,$href,$alt,$shape){
++		parent::CTag('area','no');
++		$this->setCoords($coords);
++		$this->setShape($shape);
++		$this->setHref($href);
++		$this->setAlt($alt);
++	}
++	
++	function setCoords($value){
++		if(!is_array($value))
++			return $this->error('Incorrect value for setCoords ['.$value.']');
++		if(count($value)<3)
++			return $this->error('Incorrect values count for setCoords ['.count($value).']');
+ 
+-			$str_val = "";
+-			foreach($value as $val)
+-			{
+-				if(!is_numeric($val))
+-					return $this->error("Incorrect value for SetCoords [$val]");
++		$str_val = '';
++		foreach($value as $val){
++			if(!is_numeric($val))
++				return $this->error('Incorrect value for setCoords ['.$val.']');
+ 
+-				$str_val .= $val.",";
+-			}
+-			$this->AddOption("coords",trim($str_val,','));
++			$str_val .= $val.',';
+ 		}
+-		function SetShape($value)
+-		{
+-			if(!is_string($value))
+-				return $this->error("Incorrect value for SetShape [$value]");
++		$this->addOption('coords',trim($str_val,','));
++	}
+ 
+-			$this->AddOption("shape",$value);
+-		}
+-		function SetHref($value)
+-		{
+-			if(!is_string($value))
+-				return $this->error("Incorrect value for SetHref [$value]");
++	function setShape($value){
++		if(!is_string($value))
++			return $this->error('Incorrect value for setShape ['.$value.']');
+ 
+-			$this->AddOption("href",$value);
+-		}
+-		function SetAlt($value)
+-		{
+-			if(!is_string($value))
+-				return $this->error("Incorrect value for SetAlt [$value]");
++		$this->addOption('shape',$value);
++	}
+ 
+-			$this->AddOption("alt",$value);
+-		}
++	function setHref($value){
++		if(!is_string($value))
++			return $this->error('Incorrect value for setHref ['.$value.']');
++		$url = new Curl($value);
++		$value = $url->getUrl();
++		
++		$this->addOption('href',$value);
+ 	}
+-?>
++	
++	function setAlt($value){
++		if(!is_string($value))
++			return $this->error('Incorrect value for setAlt ['.$value.']');
++
++		$this->addOption('alt',$value);
++	}
++}
++?>
+\ No newline at end of file
+Index: frontends/php/include/html.inc.php
+===================================================================
+--- frontends/php/include/html.inc.php	(revision 6643)
++++ frontends/php/include/html.inc.php	(revision 6644)
+@@ -58,7 +58,7 @@
+ 	}
+ 
+ 	function prepare_url(&$var, $varname=null){
+-		$result = "";
++		$result = '';
+ 
+ 		if(is_array($var)){
+ 			foreach($var as $id => $par)
+Index: frontends/php/items.php
+===================================================================
+--- frontends/php/items.php	(revision 6643)
++++ frontends/php/items.php	(revision 6644)
+@@ -944,16 +944,17 @@
+ //				url_param('groupid'),
+ 				'action'));
+ 
+-			$status=new CCol(new CLink(item_status2str($db_item["status"]),
+-					"?group_itemid%5B%5D=".$db_item["itemid"].
+-					"&group_task=".($db_item["status"] ? "Activate+selected" : "Disable+selected"),
+-					item_status2style($db_item["status"])));
++			$status=new CCol(new CLink(item_status2str($db_item['status']),
++//					'?sessionid='.$USER_DETAILS['sessionid'].
++					'?group_itemid%5B%5D='.$db_item['itemid'].
++					'&group_task='.($db_item['status']?'Activate+selected':'Disable+selected'),
++					item_status2style($db_item['status'])));
+ 	
+-			if($db_item["error"] == ''){
+-				$error=new CCol('-',"off");
++			if($db_item['error'] == ''){
++				$error=new CCol('-','off');
+ 			}
+ 			else{
+-				$error=new CCol($db_item["error"],"on");
++				$error=new CCol($db_item['error'],'on');
+ 			}
+ 			
+ 			$applications = $show_applications ? implode(', ', get_applications_by_itemid($db_item["itemid"], 'name')) : null;
