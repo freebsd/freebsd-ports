@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Authentication-Store-DBIC
-PORTVERSION=	0.09000
+PORTVERSION=	0.11000
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,6 +24,8 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Plugin-Authorization-Roles>=0.03:${PORTSDIR}/www/p5-Catalyst-Plugin-Authorization-Roles \
 		p5-Catalyst-Plugin-Session-State-Cookie>=0.02:${PORTSDIR}/www/p5-Catalyst-Plugin-Session-State-Cookie
 BUILD_DEPENDS=	${RUN_DEPENDS}
+
+DEPRECATED=	Use p5-Catalyst-Authentication-Store-DBIx-Class instead.
 
 PERL_CONFIGURE=	5.8.1+
 
