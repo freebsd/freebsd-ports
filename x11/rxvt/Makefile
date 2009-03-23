@@ -95,6 +95,9 @@ CONFIGURE_ARGS+=	--enable-xim
 CONFIGURE_ARGS+=	--enable-xterm-scroll
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|getpt()|posix_openpt(0)|' ${WRKSRC}/configure
+
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/rxvt
 

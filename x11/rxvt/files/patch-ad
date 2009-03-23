@@ -1,14 +1,14 @@
 --- src/command.c.orig	Thu Nov  1 22:18:35 2001
 +++ src/command.c	Mon Oct 10 00:29:07 2005
-@@ -322,7 +322,7 @@
- 	ttydev = tty_name;
+@@ -254,7 +254,7 @@
+ 	extern char    *ptsname();
  
- # define PTYCHAR1	"pqrstuvwxyz"
--# define PTYCHAR2	"0123456789abcdef"
-+# define PTYCHAR2	"0123456789abcdefghijklmnopqrstuv"
- 	for (c1 = PTYCHAR1; *c1; c1++) {
- 	    ptydev[len] = ttydev[len] = *c1;
- 	    for (c2 = PTYCHAR2; *c2; c2++) {
+ #  ifdef PTYS_ARE_GETPT
+-	if ((fd = getpt()) >= 0) {
++	if ((fd = posix_openpt(O_RDWR)) >= 0) {
+ #  else
+ 	if ((fd = open("/dev/ptmx", O_RDWR)) >= 0) {
+ #  endif
 @@ -519,6 +519,9 @@
  # ifdef VEOL2
      FOO(VEOL2, "VEOL2");
