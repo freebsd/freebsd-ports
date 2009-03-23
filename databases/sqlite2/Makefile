@@ -13,7 +13,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 
 MAINTAINER=	mnag@FreeBSD.org
-COMMENT=	An SQL database engine in a C library w/ Tcl wrapper
+COMMENT=	An SQL database engine in a C library
 
 USE_GMAKE=	YES
 USE_GNOME=	pkgconfig
@@ -29,62 +29,60 @@ LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}2
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude CVS
 
-OPTIONS=	TCL84	"Enable TCL wrapper (tcl 8.4)"	off \
-		TCL83	"Enable TCL wrapper (tcl 8.3)"	off \
-		THREADS	"Compile with threads support"	off \
-		DOCS	"Building docs (depends on TCL)"	on
-
-# Defaults, for building the docs:
-TCL_VERSION=	8.4
+OPTIONS=	TCLWRAPPER	"Enable TCL wrapper"			off \
+		THREADS		"Compile with threads support"		off \
+		DOCS		"Building docs (depends on TCL)"	on
 
 .include <bsd.port.pre.mk>
 
 # Deprecated options
-.if defined(SQLITE_WITH_TCL83)
-WITH_TCL83=	yes
+.if defined(SQLITE_WITH_TCL83) || defined(WITH_TCL83)
+WITH_TCL_VER=		83
+WITH_TCLWRAPPER=	yes
 .endif
-.if defined(SQLITE_WITH_TCL84)
-WITH_TCL84=	yes
-.endif
-
-.if defined(WITH_TCL83)
-.if defined(WITH_TCL84)
-BROKEN=		please, select only one TCL wrapper
-.endif
-CATEGORIES+=	tcl
-TCL_VERSION=	8.3
-WITH_TCL=	YES
+.if defined(SQLITE_WITH_TCL84) || defined(WITH_TCL84)
+WITH_TCL_VER=		84
+WITH_TCLWRAPPER=	yes
 .endif
 
-.if defined(WITH_TCL84)
-.if defined(WITH_TCL83)
-BROKEN=		please, select only one TCL wrapper
-.endif
-CATEGORIES+=	tcl
-TCL_VERSION=	8.4
-WITH_TCL=	YES
+.if defined(WITHOUT_DOCS)
+NOPORTDOCS=		yes
+.elif defined(NOPORTDOCS)
+WITHOUT_DOCS=		yes
 .endif
 
-.if defined(WITH_TCL)
-LIB_DEPENDS+=	tcl${TCL_VERSION:S/.//}:${PORTSDIR}/lang/tcl${TCL_VERSION:S/.//}
-PLIST_SUB+=	WITH_TCL=""
+.if defined(WITH_TCLWRAPPER)
+USE_TCL=		83+
+.include		"${PORTSDIR}/Mk/bsd.tcl.mk"
 .else
-PLIST_SUB+=	WITH_TCL="@comment "
+. if !defined(WITHOUT_DOCS)
+USE_TCL_BUILD=		83+
+. include		"${PORTSDIR}/Mk/bsd.tcl.mk"
+. endif
+.endif
+
+.if defined(WITH_TCLWRAPPER)
+CATEGORIES+=	lang tcl
+COMMENT+=	with TCL wrapper
+MAKE_ARGS+=	TCLSH=${TCLSH}
+MAKE_ENV+=	TCL_VER=${TCL_VER}
+PLIST_SUB+=	WITH_TCLWRAPPER=""
+.else
+PLIST_SUB+=	WITH_TCLWRAPPER="@comment "
 .endif
 
 .if !defined(NOPORTDOCS) && !defined(WITHOUT_DOCS)
 PORTDOCS=	*
-BUILD_DEPENDS+=	tclsh${TCL_VERSION}:${PORTSDIR}/lang/tcl${TCL_VERSION:S/.//}
-MAKE_ARGS+=	TCLSH=tclsh${TCL_VERSION}
-MAKE_ENV+=	TCL_VER=${TCL_VERSION}
+MAKE_ARGS+=	TCLSH=${TCLSH}
+MAKE_ENV+=	TCL_VER=${TCL_VER}
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/tclsh \$$(TOP)/\$$(TCLSH) \$$(TOP)/g" \
 		 -e "s|\./libtool|${LIBTOOL}|g" ${WRKSRC}/Makefile.in
-	@${ECHO} "config_TARGET_TCL_INC=\"-I${PREFIX}/include/tcl${TCL_VERSION}\"" \
+	@${ECHO} "config_TARGET_TCL_INC=\"-I${TCL_INCLUDEDIR}\"" \
 		> ${WRKSRC}/freebsd.hints
-	@${ECHO} "config_TARGET_TCL_LIBS=\"-L${PREFIX}/lib -ltcl${TCL_VERSION:S/.//}\"" \
+	@${ECHO} "config_TARGET_TCL_LIBS=\"-L${PREFIX}/lib -ltcl${TCL_VER:S/.//}\"" \
 		>> ${WRKSRC}/freebsd.hints
 .if defined(WITH_THREADS)
 	@${ECHO} "config_TARGET_CFLAGS=\"-DTHREADSAFE=1 ${PTHREAD_LIBS}\"" \
@@ -98,7 +96,7 @@ post-build:
 .endif
 
 post-install:
-.if defined(WITH_TCL)
+.if defined(WITH_TCLWRAPPER)
 	@(cd ${WRKSRC} && ${GMAKE} install-tcl)
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/sqlite/
 .endif
