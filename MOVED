@@ -3820,7 +3820,6 @@ deskutils/zbgset-admin|deskutils/p5-ZConf-BGSet|2009-02-15|Integrated into desku
 net/samba32-devel|net/samba32|2009-02-16|Samba 3.2 became stable enough to be used in production.
 editors/sam||2009-02-19|Has expired: distfile and homepage disappeared
 misc/bibletime|misc/bibletime-kde3|2009-02-26|Use misc/bibletime-kde3
-misc/bibletime-devel|misc/bibletime-kde4|2009-02-26|Use misc/bibletime-kde4
 math/slsc||2009-02-28|Has expired: No longer maintained by author
 finance/eqonomize|finance/eqonomize-kde3|2009-03-02|Use finance/eqonomize-kde3
 x11/libxfce4mcs||2009-03-02|got obsolete by xfce 4.6 update
