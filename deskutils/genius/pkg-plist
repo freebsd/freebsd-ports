@@ -75,7 +75,9 @@ share/gnome/help/genius/C/figures/surface_graph.png
 share/gnome/help/genius/C/gel-function-list.xml
 share/gnome/help/genius/C/genius.xml
 share/gnome/help/genius/C/legal.xml
+share/icons/hicolor/32x32/apps/genius-stock-plot.png
 share/icons/hicolor/32x32/apps/gnome-genius.png
+share/icons/hicolor/48x48/apps/genius-stock-plot.png
 share/icons/hicolor/48x48/apps/gnome-genius.png
 share/locale/ar/LC_MESSAGES/genius.mo
 share/locale/az/LC_MESSAGES/genius.mo
