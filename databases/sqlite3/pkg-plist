@@ -7,10 +7,10 @@ lib/libsqlite3.la
 lib/libsqlite3.so
 lib/libsqlite3.so.8
 libdata/pkgconfig/sqlite3.pc
-%%WITH_TCLWRAPPER%%lib/sqlite/libtclsqlite3.a
-%%WITH_TCLWRAPPER%%lib/sqlite/libtclsqlite3.la
-%%WITH_TCLWRAPPER%%lib/sqlite/libtclsqlite3.so
-%%WITH_TCLWRAPPER%%lib/sqlite/pkgIndex.tcl
-%%WITH_TCLWRAPPER%%@dirrm lib/sqlite
+%%WITH_TCLWRAPPER%%lib/sqlite3/libtclsqlite3.a
+%%WITH_TCLWRAPPER%%lib/sqlite3/libtclsqlite3.la
+%%WITH_TCLWRAPPER%%lib/sqlite3/libtclsqlite3.so
+%%WITH_TCLWRAPPER%%lib/sqlite3/pkgIndex.tcl
+%%WITH_TCLWRAPPER%%@dirrm lib/sqlite3
 %%WITH_TCLWRAPPER%%%%EXAMPLESDIR%%/example.tcl
 %%WITH_TCLWRAPPER%%@dirrm %%EXAMPLESDIR%%

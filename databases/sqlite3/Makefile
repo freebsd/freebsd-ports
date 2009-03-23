@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.6.10
+PORTVERSION=	3.6.11
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 DISTNAME=	sqlite-${PORTVERSION}
 
 MAINTAINER=	mnag@FreeBSD.org
-COMMENT=	An SQL database engine in a C library w/ Tcl wrapper
+COMMENT=	An SQL database engine in a C library
 
 CONFLICTS=	sqlite34-[0-9]*
 
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=		--prefix=${PREFIX}
 OPTIONS=	DEBUG		"Enable debugging & verbose explain"	off \
 		FTS3		"Enable FTS3 (Full Text Search) module"	off \
 		RAMTABLE	"Store temporary tables in RAM"		off \
-		TCLWRAPPER	"TCL wrapper for SQLITE"		off \
+		TCLWRAPPER	"Enable TCL wrapper"			off \
 		METADATA	"Enable column metadata"		on \
 		THREADS		"Enable threads support"		on
 
@@ -46,12 +46,13 @@ CONFIGURE_ARGS+=	--enable-tempstore=yes
 .endif
 
 .if defined(WITH_TCLWRAPPER)
-TCL_V?=			8.4
-MAKE_ARGS+=		TCLSH=tclsh${TCL_V}
-MAKE_ENV+=		TCL_VER=${TCL_V}
+USE_TCL=		84+
+.include		"${PORTSDIR}/Mk/bsd.tcl.mk"
+MAKE_ARGS+=		TCLSH=${TCLSH}
+MAKE_ENV+=		TCL_VER=${TCL_VER}
 CATEGORIES+=		lang tcl
-LIB_DEPENDS+=		tcl${TCL_V:S/.//}:${PORTSDIR}/lang/tcl${TCL_V:S/.//}
-CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_V}
+COMMENT+=		with TCL Wrapper
+CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR}
 PLIST_SUB+=		WITH_TCLWRAPPER=""
 .else
 CONFIGURE_ARGS+=	--disable-tcl
@@ -89,10 +90,10 @@ post-patch:
 
 post-install:
 .if defined(WITH_TCLWRAPPER)
-	@${MKDIR} ${PREFIX}/lib/sqlite
+	@${MKDIR} ${PREFIX}/lib/sqlite3
 	@(cd ${WRKSRC} && ${LIBTOOL} --mode=install ${INSTALL_DATA} \
-		libtclsqlite3.la ${PREFIX}/lib/sqlite/)
-	@${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/sqlite/
+		libtclsqlite3.la ${PREFIX}/lib/sqlite3/)
+	@${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/sqlite3/
 	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/tclsqlite3 ${PREFIX}/bin
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${FILESDIR}/example.tcl ${EXAMPLESDIR}
