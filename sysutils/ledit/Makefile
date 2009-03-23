@@ -13,7 +13,7 @@ MASTER_SITES=	http://cristal.inria.fr/~ddr/ledit/distrib/src/ \
 		http://pauillac.inria.fr/~ddr/ledit/distrib/src/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	barner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Line editor to be used with interactive commands
 
 BUILD_DEPENDS=	camlp5r:${PORTSDIR}/devel/ocaml-camlp5

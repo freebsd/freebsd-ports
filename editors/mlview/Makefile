@@ -12,7 +12,7 @@ CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	barner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tree oriented XML editor for Gnome
 
 USE_BZIP2=	yes

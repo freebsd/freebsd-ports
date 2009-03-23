@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.bdsoft.com/dist/
 DISTNAME=	g${PORTNAME}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	barner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An STL Error Message Decryptor for C++
 
 EXTRACT_CMD=	${TAR}

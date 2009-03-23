@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.circlemud.org/pub/jelson/tcpflow/
 
-MAINTAINER=	barner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for capturing data transmitted as part of TCP connections
 
 HAS_CONFIGURE=	yes
