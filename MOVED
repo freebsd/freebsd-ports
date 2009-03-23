@@ -3860,3 +3860,4 @@ games/PySolFC|games/pysolfc|2009-03-19|port renamed
 net-im/ruby-xmpp4r|net-im/rubygem-xmpp4r|2009-03-21|Renamed
 audio/rhythmbox-devel|audio/rhythmbox|2009-03-21|main port updated to latest stable version
 net/penguintv-devel||2009-03-23|main port updated to latest stable version
+x11/oclock|x11-clocks/oclock|2009-03-23|Moved to a more appropriate category

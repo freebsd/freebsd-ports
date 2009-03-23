@@ -32,6 +32,7 @@
     SUBDIR += lmclock
     SUBDIR += mlclock
     SUBDIR += mouseclock
+    SUBDIR += oclock
     SUBDIR += osdclock
     SUBDIR += pclock
     SUBDIR += rclock
