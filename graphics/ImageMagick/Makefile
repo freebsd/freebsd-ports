@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.4.9-8
-PORTREVISION=	1
+DISTVERSION=	6.5.0-5
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
+		${MASTER_SITE_SOURCEFORGE} \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
 		ftp://ftp.carnet.hr/misc/imagemagick/ \
 		ftp://ftp.fu-berlin.de/unix/X11/graphics/ImageMagick/ \
@@ -18,8 +18,7 @@ MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://zoffy.asahi-net.or.jp/pub/graphics/ImageMagick/ \
 		ftp://ftp.nluug.nl/pub/ImageMagick/ \
 		ftp://ftp.sunet.se/pub/multimedia/graphics/ImageMagick/ \
-		ftp://ftp.fifi.org/pub/ImageMagick/ \
-		${MASTER_SITE_SOURCEFORGE}
+		ftp://ftp.fifi.org/pub/ImageMagick/
 MASTER_SITE_SUBDIR=	imagemagick
 
 MAINTAINER=	mm@FreeBSD.org
@@ -36,6 +35,7 @@ USE_AUTOTOOLS=	libltdl:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared --without-dps
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 Wand-config.1 \
