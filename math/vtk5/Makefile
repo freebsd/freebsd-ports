@@ -10,11 +10,11 @@ PORTNAME=	vtk
 PORTVERSION=	5.0.4
 PORTREVISION=	2
 CATEGORIES=	math graphics
-MASTER_SITES=	http://www.vtk.org/files/release/5.0/ \
+MASTER_SITES=	http://www.vtk.org/files/release/${PORTVERSION:R}/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
 DISTNAME?=	vtk-${PORTVERSION}
 
-MAINTAINER=	giffunip@tutopia.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Visualization Toolkit
 
 LIB_DEPENDS=	expat.[5-6]:${PORTSDIR}/textproc/expat2 \
@@ -60,7 +60,6 @@ MAN3=		vtk.3
 
 CMAKE_USE_PTHREAD=	yes
 CMAKE_SOURCE_PATH=	../VTK
-CXXFLAGS+=	-Wno-deprecated
 CMAKE_ARGS+=	${VTKSRCDIR} \
 		-DBUILD_SHARED_LIBS:BOOL=ON \
 		-DBUILD_DOCUMENTATION:BOOL=ON \
