@@ -26,10 +26,11 @@ PATCHFILES!=		/usr/bin/jot -s " " -w \
 			${PORTNAME}${PORTVERSION:R:S/.//g}-%03d \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 
-MAINTAINER=		obrien@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		The GNU Project's Bourne Again SHell
 
 IGNOREFILES=		FAQ
+LATEST_LINK=		bash3
 CONFLICTS=		bash-[0-24-9].*
 
 .if !defined(WITHOUT_IMPLICITCD)
