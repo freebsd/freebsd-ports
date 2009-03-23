@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090319:
+  AFFECTS: users of shells/bash3
+  AUTHOR: ehaupt@FreeBSD.org
+
+  With the addition of shells/bash version 4.x, people wanting to stick
+  with bash 3.x should perform the following update:
+
+  $ portupgrade -f -o shells/bash3 bash
+
 20090318:
   AFFECTS: users of www/suphp
   AUTHOR: yzlin@cs.nctu.edu.tw
