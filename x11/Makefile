@@ -282,7 +282,6 @@
     SUBDIR += tilda
     SUBDIR += tint
     SUBDIR += tkXwin
-    SUBDIR += tkgoodstuff
     SUBDIR += trapproto
     SUBDIR += trayer
     SUBDIR += tycoon

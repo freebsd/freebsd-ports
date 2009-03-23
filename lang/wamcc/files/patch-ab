@@ -1,8 +1,0 @@
---- Builtin/Makefile.orig	Fri Dec 23 10:10:02 1994
-+++ Builtin/Makefile	Sat Mar 31 03:02:41 2001
-@@ -18 +18 @@
--CFLAGS    = -O2 -I../src
-+CFLAGS    = -O -I../src
-@@ -54 +54 @@
--	build_starter $(BIPS) >starter.c
-+	./build_starter $(BIPS) >starter.c

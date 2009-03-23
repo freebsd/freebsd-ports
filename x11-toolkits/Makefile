@@ -90,7 +90,6 @@
     SUBDIR += hs-glut-ghc
     SUBDIR += hs-gtk2hs
     SUBDIR += hs-opengl-ghc
-    SUBDIR += inti
     SUBDIR += irrlicht
     SUBDIR += itk
     SUBDIR += iwidgets
