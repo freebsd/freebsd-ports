@@ -1,8 +1,5 @@
 bin/CodeLite
 bin/codelite_indexer
-bin/le_dos2unix.sh
-bin/le_exec.sh
-bin/le_killproc.sh
 %%DATADIR%%/config/accelerators.conf.default
 %%DATADIR%%/config/build_settings.xml.default
 %%DATADIR%%/config/build_settings.xml.default.win

@@ -7,7 +7,6 @@
 
 PORTNAME=	codelite
 DISTVERSION=	1.0.${SVN_REVISION}
-PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	SF
 
@@ -28,7 +27,7 @@ HAS_CONFIGURE=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-SVN_REVISION=	2785
+SVN_REVISION=	2797
 
 .if defined(WITH_CSCOPE)
 RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
@@ -59,9 +58,6 @@ do-install:
 	${MKDIR} ${DATADIR}/images
 	${INSTALL_PROGRAM} ${WRKSRC}/Runtime/codelite ${PREFIX}/bin/CodeLite
 	${INSTALL_PROGRAM} ${WRKSRC}/Runtime/codelite_indexer ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/Runtime/le_dos2unix.sh ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/Runtime/le_exec.sh ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/Runtime/le_killproc.sh ${PREFIX}/bin/
 	(cd ${WRKSRC}/Runtime/config/ && ${COPYTREE_SHARE} \* ${DATADIR}/config)
 	(cd ${WRKSRC}/Runtime/rc/ && ${COPYTREE_SHARE} \*.xrc ${DATADIR}/rc)
 	(cd ${WRKSRC}/Runtime/templates && ${COPYTREE_SHARE} \* ${DATADIR}/templates)
