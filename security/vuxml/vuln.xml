@@ -35,15 +35,16 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="f6f19735-9245-4918-8a60-87948ebb4907">
-    <topic>wireshark -- Wireshark 1.0.5 Multiple Denial of Service
-      Vulnerabilities</topic>
+    <topic>wireshark -- multiple vulnerabilities</topic>
     <affects>
       <package>
+	<name>ethereal</name>
+	<name>ethereal-lite</name>
+	<name>tethereal</name>
+	<name>tethereal-lite</name>
 	<name>wireshark</name>
-	<range>
-	  <le>1.0.5</le>
-	  <ge>0.99.6</ge>
-	</range>
+	<name>wireshark-lite</name>
+	<range><lt>1.0.6</lt></range>
       </package>
     </affects>
     <description>
@@ -65,8 +66,10 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-02-06</discovery>
       <entry>2009-03-22</entry>
+      <modified>2009-03-23</modified>
     </dates>
   </vuln>
+
   <vuln vid="72cba7b0-13cd-11de-a964-0030843d3802">
     <topic>netatalk -- arbitrary command execution in papd daemon</topic>
     <affects>
