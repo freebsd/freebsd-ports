@@ -20,6 +20,7 @@ OPTIONS=	SSL "Build with OpenSSL support" on
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	sbin/bhm sbin/postal bin/postal-list sbin/rabid
 

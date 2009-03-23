@@ -32,6 +32,7 @@ OPTIONS=	MYSQL "Support MySQL (storage/auth/reg)" on \
 		REQUIRES "Add backend requires to startup script" off
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_PERL5_RUN=	yes
 USE_OPENSSL=	yes
 USE_ICONV=	yes

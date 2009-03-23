@@ -19,6 +19,7 @@ COMMENT=	A detachable irc proxy server with many features
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
