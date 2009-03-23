@@ -5,10 +5,8 @@
 
     SUBDIR += imm
     SUBDIR += mcl
-    SUBDIR += nte
     SUBDIR += rat
     SUBDIR += rat30
-    SUBDIR += relate
     SUBDIR += rqm
     SUBDIR += rtptools
     SUBDIR += sdr
@@ -17,7 +15,6 @@
     SUBDIR += vat
     SUBDIR += vic
     SUBDIR += wb
-    SUBDIR += wbd
     SUBDIR += xspeakfree
 
 .include <bsd.port.subdir.mk>
