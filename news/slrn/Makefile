@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.plig.org/pub/slrn/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	SLang-based newsreader
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
@@ -43,6 +43,11 @@ CONFIGURE_ARGS+=	--with-ssl
 .if defined(WITH_DEVIEW)
 LIB_DEPENDS+=	uu.3:${PORTSDIR}/converters/uulib
 CONFIGURE_ARGS+=	--with-uulib
+.endif
+
+.if defined(NOPORTDOCS)
+# Use dummy target rather than rewriting makefile
+CONFIGURE_ARGS+=	--with-docdir=${WRKSRC}/dummy
 .endif
 
 ALL_TARGET=	all

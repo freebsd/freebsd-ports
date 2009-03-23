@@ -1,31 +1,31 @@
 bin/slrn
 bin/slrnpull
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/COPYRIGHT
-%%DOCSDIR%%/FAQ
-%%DOCSDIR%%/FIRST_STEPS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/README.GroupLens
-%%DOCSDIR%%/README.SSL
-%%DOCSDIR%%/README.macros
-%%DOCSDIR%%/README.multiuser
-%%DOCSDIR%%/THANKS
-%%DOCSDIR%%/changes.txt
-%%DOCSDIR%%/help.txt
-%%DOCSDIR%%/manual.txt
-%%DOCSDIR%%/score.sl
-%%DOCSDIR%%/score.txt
-%%DOCSDIR%%/slrn-doc.html
-%%DOCSDIR%%/slrn.rc
-%%DOCSDIR%%/slrnfuns.txt
-%%DOCSDIR%%/slrnpull/README
-%%DOCSDIR%%/slrnpull/README.offline
-%%DOCSDIR%%/slrnpull/SETUP
-%%DOCSDIR%%/slrnpull/score
-%%DOCSDIR%%/slrnpull/setgid.txt
-%%DOCSDIR%%/slrnpull/slrn.rc
-%%DOCSDIR%%/slrnpull/slrnpull.conf
-%%DOCSDIR%%/slrnpull/slrnpull.sh
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/FIRST_STEPS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.GroupLens
+%%PORTDOCS%%%%DOCSDIR%%/README.SSL
+%%PORTDOCS%%%%DOCSDIR%%/README.macros
+%%PORTDOCS%%%%DOCSDIR%%/README.multiuser
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/help.txt
+%%PORTDOCS%%%%DOCSDIR%%/manual.txt
+%%PORTDOCS%%%%DOCSDIR%%/score.sl
+%%PORTDOCS%%%%DOCSDIR%%/score.txt
+%%PORTDOCS%%%%DOCSDIR%%/slrn-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/slrn.rc
+%%PORTDOCS%%%%DOCSDIR%%/slrnfuns.txt
+%%PORTDOCS%%%%DOCSDIR%%/slrnpull/README
+%%PORTDOCS%%%%DOCSDIR%%/slrnpull/README.offline
+%%PORTDOCS%%%%DOCSDIR%%/slrnpull/SETUP
+%%PORTDOCS%%%%DOCSDIR%%/slrnpull/score
+%%PORTDOCS%%%%DOCSDIR%%/slrnpull/setgid.txt
+%%PORTDOCS%%%%DOCSDIR%%/slrnpull/slrn.rc
+%%PORTDOCS%%%%DOCSDIR%%/slrnpull/slrnpull.conf
+%%PORTDOCS%%%%DOCSDIR%%/slrnpull/slrnpull.sh
 %%NLS%%share/locale/be/LC_MESSAGES/slrn.mo
 %%NLS%%share/locale/da/LC_MESSAGES/slrn.mo
 %%NLS%%share/locale/de/LC_MESSAGES/slrn.mo
@@ -56,5 +56,5 @@ bin/slrnpull
 %%DATADIR%%/slang/xcomment.sl
 @dirrm %%DATADIR%%/slang
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/slrnpull
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/slrnpull
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
