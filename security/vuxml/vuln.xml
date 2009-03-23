@@ -342,11 +342,11 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>zabbix</name>
-	<range><gt>0</gt></range>
+	<range><lt>1.6.2_1,1</lt></range>
       </package>
       <package>
         <name>zabbix-agent</name>
-	<range><gt>0</gt></range>
+	<range><lt>1.6.2_1,2</lt></range>
       </package>
     </affects>
     <description>
@@ -380,6 +380,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-03-04</discovery>
       <entry>2009-03-16</entry>
+      <modified>2009-03-23</modified>
     </dates>
   </vuln>
 
