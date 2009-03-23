@@ -5212,7 +5212,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>rubygem-rails</name>
-	<range><gt>0</gt></range>
+	<range><lt>2.2.2</lt></range>
       </package>
     </affects>
     <description>
@@ -5231,6 +5231,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-09-08</discovery>
       <entry>2008-09-10</entry>
+      <modified>2009-03-23</modified>
     </dates>
   </vuln>
 
