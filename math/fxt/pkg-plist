@@ -486,7 +486,11 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-nextgray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-nextgray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-paper-fold-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-paper-fold-alt-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-paper-fold-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-paper-fold-alt-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-paper-fold-general-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-paper-fold-general-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit2adic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit2adic-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bitarray-demo.cc
