@@ -7,14 +7,13 @@
 
 PORTNAME=	pptpclient
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 DISTNAME=	pptp-${PORTVERSION}
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	PPTP client for establishing a VPN link with an NT server
-
-USE_PERL5=	yes
 
 MAN8=		pptp.8
 
