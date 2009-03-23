@@ -7,6 +7,7 @@
 
 PORTNAME=	zabbix
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
@@ -23,8 +24,6 @@ MAKE_ARGS=	ARCH=freebsd
 .ifndef WITHOUT_IPV6
 CONFIGURE_ARGS+=--enable-ipv6
 .endif
-
-FORBIDDEN=	multiple vulnerabilities http://www.vuxml.org/freebsd/03140526-1250-11de-a964-0030843d3802.html
 
 ZABBIX_BIN=	agent agentd get sender
 ZABBIX_CFG=	agent agentd

@@ -28,16 +28,15 @@ bin/zabbix_server
 %%DATADIR%%/php/js/sbox.js
 %%DATADIR%%/php/js/services.js
 %%DATADIR%%/php/js/gmenu.js
+%%DATADIR%%/php/js/gpc.js
 %%DATADIR%%/php/js/chkbxrange.js
 %%DATADIR%%/php/js/scrollbar.js
 %%DATADIR%%/php/js/graphs.js
 %%DATADIR%%/php/js/sbinit.js
 %%DATADIR%%/php/js/common.js
 %%DATADIR%%/php/js/ajax_req.js
-%%DATADIR%%/php/js/cookies.js
 %%DATADIR%%/php/js/blink.js
 %%DATADIR%%/php/js/tree.js
-%%DATADIR%%/php/js/url.js
 %%DATADIR%%/php/js/showhint.js
 %%DATADIR%%/php/include/locales/cn_zh.inc.php
 %%DATADIR%%/php/include/locales/lv_lv.inc.php
@@ -80,6 +79,7 @@ bin/zabbix_server
 %%DATADIR%%/php/include/classes/ciframe.inc.php
 %%DATADIR%%/php/include/classes/cscript.inc.php
 %%DATADIR%%/php/include/classes/cpumenu.inc.php
+%%DATADIR%%/php/include/classes/curl.inc.php
 %%DATADIR%%/php/include/classes/pie.inc.php
 %%DATADIR%%/php/include/classes/ctag.inc.php
 %%DATADIR%%/php/include/classes/cbutton.inc.php
