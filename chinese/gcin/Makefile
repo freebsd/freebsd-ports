@@ -7,6 +7,7 @@
 
 PORTNAME=	gcin
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://cle.linux.org.tw/gcin/download/:main \
 		http://ftp.twaren.net/local-distfiles/gcin/:main \
@@ -16,8 +17,6 @@ EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A traditional chinese input utility in X
-
-BUILD_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
 
 CONFLICTS=	zh-gcin-devel-[0-9]*
 LATEST_LINK=	yes
@@ -44,6 +43,7 @@ BROKEN=		does not compile
 .endif
 
 .if defined(WITH_ANTHY)
+BUILD_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
 RUN_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
 .endif
 
