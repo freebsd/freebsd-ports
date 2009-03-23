@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.7015
+PORTVERSION=	5.71000
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
 		p5-File-Modified>=0:${PORTSDIR}/devel/p5-File-Modified \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-HTTP-Body>=0.9:${PORTSDIR}/www/p5-HTTP-Body \
+		p5-HTTP-Body>=1.04:${PORTSDIR}/www/p5-HTTP-Body \
 		p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
 		p5-HTTP-Request-AsCGI>=0.5:${PORTSDIR}/www/p5-HTTP-Request-AsCGI \
 		p5-Module-Pluggable>=3.01:${PORTSDIR}/devel/p5-Module-Pluggable \
@@ -45,7 +45,6 @@ MAN3=	Catalyst.3 \
 	Catalyst::ActionContainer.3 \
 	Catalyst::AttrContainer.3 \
 	Catalyst::Base.3 \
-	Catalyst::Build.3 \
 	Catalyst::Component.3 \
 	Catalyst::Controller.3 \
 	Catalyst::DispatchType.3 \
