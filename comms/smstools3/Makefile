@@ -20,6 +20,7 @@ OPTIONS=	STATS "Build status and statistics support" on
 
 WRKSRC=		${WRKDIR}/smstools3
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_RC_SUBR=	smsd
 SPOOLDIR?=	/var/spool/sms
 LOGDIR?=	/var/log/smsd
