@@ -5,7 +5,6 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/ActionContainer.pm
 %%SITE_PERL%%/Catalyst/AttrContainer.pm
 %%SITE_PERL%%/Catalyst/Base.pm
-%%SITE_PERL%%/Catalyst/Build.pm
 %%SITE_PERL%%/Catalyst/Component.pm
 %%SITE_PERL%%/Catalyst/Controller.pm
 %%SITE_PERL%%/Catalyst/DispatchType.pm
