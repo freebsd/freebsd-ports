@@ -1,0 +1,22 @@
+--- share/defaultsubs.opml.orig	2009-03-23 13:37:19.000000000 +1100
++++ share/defaultsubs.opml	2009-03-23 13:40:39.000000000 +1100
+@@ -27,3 +27,19 @@
+ 	 		  title="Planet GNOME">
+ 	 </outline>
+ </body></opml>
++	 <outline xmlUrl="http://planet.freebsdish.org/rss20.xml" 
++	 		  text="Planet FreeBSD" 
++	 		  description="Planet FreeBSD - http://planet.freebsdish.org/" 
++	 		  title="Planet FreeBSD">
++	 </outline>
++	 <outline xmlUrl="http://planet.freebsdish.org/complete/rss20.xml" 
++	 		  text="Planet FreeBSD - Complete" 
++	 		  description="Planet FreeBSD - http://planet.freebsdish.org/complete/" 
++	 		  title="Planet FreeBSD - Complete">
++	 </outline>
++	 <outline xmlUrl="http://www.mavetju.org/unix/multimedia/freebsd/multimedia.xml" 
++	 		  text="FreeBSD Multimedia Resources List"
++	 		  description="FreeBSD Multimedia Resources List - http://www.freebsd.org/multimedia/multimedia.html" 
++	 		  title="FreeBSD Multimedia Resources List">
++	 </outline>
++</body></opml>
