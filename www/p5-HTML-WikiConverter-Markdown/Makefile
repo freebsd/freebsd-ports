@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-WikiConverter-Markdown
-PORTVERSION=	0.03
+PORTVERSION=	0.05
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Convert HTML to Markdown markup
 
-BUILD_DEPENDS=	p5-HTML-WikiConverter>=0.63:${PORTSDIR}/www/p5-HTML-WikiConverter \
+BUILD_DEPENDS=	p5-HTML-WikiConverter>=0.67:${PORTSDIR}/www/p5-HTML-WikiConverter \
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
