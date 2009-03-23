@@ -1,5 +1,11 @@
 bin/ack
 %%SITE_PERL%%/App/Ack.pm
+%%SITE_PERL%%/App/Ack/Plugin/Basic.pm
+%%SITE_PERL%%/App/Ack/Plugin.pm
+%%SITE_PERL%%/App/Ack/Repository.pm
+%%SITE_PERL%%/App/Ack/Resource.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ack/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ack
+@dirrmtry %%SITE_PERL%%/App/Ack/Plugin
+@dirrmtry %%SITE_PERL%%/App/Ack
 @dirrmtry %%SITE_PERL%%/App
