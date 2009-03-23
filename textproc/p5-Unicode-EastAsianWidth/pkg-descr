@@ -1,0 +1,5 @@
+This module provide user-defined Unicode properties that deal with East
+Asian characters' width status, as specified in
+http://www.unicode.org/unicode/reports/tr11/.
+
+WWW: http://search.cpan.org/dist/Unicode-EastAsianWidth/
