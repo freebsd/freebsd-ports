@@ -18,6 +18,8 @@ COMMENT=	A collection of contributed EMBOSS applications
 
 LIB_DEPENDS=	nucleus.5:${PORTSDIR}/biology/emboss
 
+BROKEN=		does not compile
+
 PREFIX?=	${LOCALBASE}/emboss
 NO_MTREE=	yes
 USE_SUBMAKE=	yes
