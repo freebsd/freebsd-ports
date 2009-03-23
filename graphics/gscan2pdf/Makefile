@@ -7,28 +7,29 @@
 
 PORTNAME=	gscan2pdf
 PORTVERSION=	0.9.27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SFE
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Produce PDF from scanned documents
 
-RUN_DEPENDS=	p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2 \
+RUN_DEPENDS=	p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
+		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
 		p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
+		ImageMagick>=6.3.3.5:${PORTSDIR}/graphics/ImageMagick \
+		cjb2:${PORTSDIR}/graphics/djvulibre-nox11 \
+		gocr:${PORTSDIR}/graphics/gocr \
+		p5-Sane>=0:${PORTSDIR}/graphics/p5-Sane \
 		scanimage:${PORTSDIR}/graphics/sane-backends \
 		scanadf:${PORTSDIR}/graphics/sane-frontends \
-		cjb2:${PORTSDIR}/graphics/djvulibre-nox11 \
+		tesseract:${PORTSDIR}/graphics/tesseract \
 		unpaper:${PORTSDIR}/graphics/unpaper \
+		p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2 \
 		p5-Gtk2>=1.112:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Gtk2-Ex-PodViewer>=0.17:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-PodViewer \
 		p5-Gtk2-Ex-Simple-List>=0.50:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-Simple-List \
-		p5-Gtk2-ImageView>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2-ImageView \
-		gocr:${PORTSDIR}/graphics/gocr \
-		tesseract:${PORTSDIR}/graphics/tesseract \
-		ImageMagick>=6.3.3.5:${PORTSDIR}/graphics/ImageMagick \
-		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
-		p5-Sane>=0:${PORTSDIR}/graphics/p5-Sane
+		p5-Gtk2-ImageView>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2-ImageView
 
 USE_GMAKE=	yes
 USE_GNOME=	librsvg2
