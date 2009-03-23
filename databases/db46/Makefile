@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	db46
-PORTVERSION=	4.6.21.3
+PORTVERSION=	4.6.21.4
 CATEGORIES=	databases
 MASTER_SITES=	http://download-west.oracle.com/berkeley-db/ \
 		http://download-east.oracle.com/berkeley-db/ \
@@ -16,7 +16,7 @@ DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb
 
 PATCH_SITES=	http://www.oracle.com/technology/products/berkeley-db/db/update/${PORTVERSION:R}/
-PATCHFILES=	patch.4.6.21.1 patch.4.6.21.2 patch.4.6.21.3
+PATCHFILES=	patch.4.6.21.1 patch.4.6.21.2 patch.4.6.21.3 patch.4.6.21.4
 PATCH_DIST_STRIP=	-d .. -l
 # * patch.4.6.21.1: -----------------------------------------------------------
 # Fixes a race condition between checkpoint and DB->close which can result in
@@ -27,6 +27,10 @@ PATCH_DIST_STRIP=	-d .. -l
 # behavior in rare cases under load. [#16178]
 # * 4.6.21.3: -----------------------------------------------------------------
 # Replication clients should be able to open a sequence. [#16406]
+# * 4.6.21.4: -----------------------------------------------------------------
+# Fixes a bug which could lead to slow performance of internal init under
+# Replication Manager, as evidenced by "queue limit exceeded" messages in
+# verbose replication diagnostic output. [#15788]
 
 # I allow matthias.andree@gmx.de and all freebsd committer to do changes
 # to this package.
