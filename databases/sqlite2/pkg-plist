@@ -4,8 +4,8 @@ lib/libsqlite.a
 lib/libsqlite.so
 lib/libsqlite.so.2
 libdata/pkgconfig/sqlite.pc
-%%WITH_TCL%%lib/sqlite/libtclsqlite.so
-%%WITH_TCL%%lib/sqlite/pkgIndex.tcl
-%%WITH_TCL%%@dirrm lib/sqlite
+%%WITH_TCLWRAPPER%%lib/sqlite/libtclsqlite.so
+%%WITH_TCLWRAPPER%%lib/sqlite/pkgIndex.tcl
+%%WITH_TCLWRAPPER%%@dirrm lib/sqlite
 %%EXAMPLESDIR%%/example.tcl
 @dirrm %%EXAMPLESDIR%%

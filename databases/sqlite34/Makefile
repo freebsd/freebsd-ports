@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	mnag/${PORTNAME}
 DISTNAME=	sqlite-${PORTVERSION}
 
 MAINTAINER=	mnag@FreeBSD.org
-COMMENT=	An SQL database engine in a C library w/ Tcl wrapper
+COMMENT=	An SQL database engine in a C library
 
 CONFLICTS=	sqlite3-[0-9]*
 
@@ -29,13 +29,8 @@ OPTIONS=	DEBUG		"Enable debugging & verbose explain"	off \
 		DOCS		"Building docs (depends on TCL)"	on \
 		FTS1		"Enable FTS1 (Full Text Search) module"	off \
 		FTS2		"Enable FTS2 (Full Text Search) module"	off \
-		TCLWRAPPER	"TCL wrapper for SQLITE"		off \
+		TCLWRAPPER	"Enable TCL wrapper"			off \
 		THREADS		"Enable threads support"		off
-
-# Defaults, for building the docs:
-TCL_V?=		8.4
-MAKE_ARGS+=	TCLSH=tclsh${TCL_V}
-MAKE_ENV+=	TCL_VER=${TCL_V}
 
 .include <bsd.port.pre.mk>
 
@@ -43,8 +38,25 @@ MAKE_ENV+=	TCL_VER=${TCL_V}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if !defined(NOPORTDOCS) && !defined(WITHOUT_DOCS)
-BUILD_DEPENDS+=		tclsh${TCL_V}:${PORTSDIR}/lang/tcl${TCL_V:S/.//}
+.if defined(WITHOUT_DOCS)
+NOPORTDOCS=		yes
+.elif defined(NOPORTDOCS)
+WITHOUT_DOCS=		yes
+.endif
+
+.if defined(WITH_TCLWRAPPER)
+USE_TCL=		84+
+.include		"${PORTSDIR}/Mk/bsd.tcl.mk"
+.else
+. if !defined(WITHOUT_DOCS)
+USE_TCL_BUILD=		84+
+. include		"${PORTSDIR}/Mk/bsd.tcl.mk"
+. endif
+.endif
+
+.if !defined(WITHOUT_DOCS)
+MAKE_ARGS+=		TCLSH=${TCLSH}
+MAKE_ENV+=		TCL_VER=${TCL_VER}
 ALL_TARGET+=		all doc
 PORTDOCS=		*
 .endif
@@ -62,8 +74,10 @@ EXTRA_PATCHES+=		${FILESDIR}/fts2_patch-Makefile.in
 
 .if defined(WITH_TCLWRAPPER)
 CATEGORIES+=		lang tcl
-LIB_DEPENDS+=		tcl${TCL_V:S/.//}:${PORTSDIR}/lang/tcl${TCL_V:S/.//}
-CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_V}
+COMMENT+=		with TCL wrapper
+MAKE_ARGS+=		TCLSH=${TCLSH}
+MAKE_ENV+=		TCL_VER=${TCL_VER}
+CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR}
 PLIST_SUB+=		WITH_TCLWRAPPER=""
 .else
 CONFIGURE_ARGS+=	--disable-tcl
@@ -82,9 +96,9 @@ post-patch:
 		-e "s|--mode=link|--mode=link --tag=CC|g" \
 		-e "s|\$${HAVE_TCL:1=tcl_install}||" \
 			${WRKSRC}/Makefile.in
-	@${ECHO} "config_TARGET_TCL_INC=\"-I${PREFIX}/include/tcl${TCL_V}\"" \
+	@${ECHO} "config_TARGET_TCL_INC=\"-I${TCL_INCLUDEDIR}\"" \
 		> ${WRKSRC}/freebsd.hints
-	@${ECHO} "config_TARGET_TCL_LIBS=\"-L${PREFIX}/lib -ltcl${TCL_V:S/.//}\"" \
+	@${ECHO} "config_TARGET_TCL_LIBS=\"-L${PREFIX}/lib -ltcl${TCL_VER:S/.//}\"" \
 		>> ${WRKSRC}/freebsd.hints
 
 pre-configure:
@@ -106,7 +120,7 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${FILESDIR}/example.tcl ${EXAMPLESDIR}
 .endif
-.if !defined(NOPORTDOCS) && !defined(WITHOUT_DOCS)
+.if !defined(WITHOUT_DOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
