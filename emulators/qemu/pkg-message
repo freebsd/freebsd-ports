@@ -134,6 +134,12 @@ the new -drive syntax, specifying format=raw explicitly in order to avoid
 malicious guests being able to exploit the format autodetection thats
 otherwise getting used.  (Not that you should run malicious guests anyway,
 but this eleminates at least a known attack vector.)
+- The patch currently applied by the PHYS_CDROM knob improves physical
+cdrom support, but still has at least one known problem: you need to have
+the guest eject the disc if you want to change it/take it out, or otherwise
+the guest may continue using state (like size) of the old disc.  (You can
+also do like `change ide1-cd0 /dev/acd0' in the monitor after taking out
+the disc if a guest cannot eject it itself.)
 - The default configuration location (qemu-ifup script etc.) has been
 changed from /etc to PREFIX/etc (usually /usr/local/etc).  Move your
 files accordingly.
