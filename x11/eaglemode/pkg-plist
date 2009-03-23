@@ -232,6 +232,7 @@ lib/eaglemode/include/emCore/emEngine.h
 lib/eaglemode/include/emCore/emErrorPanel.h
 lib/eaglemode/include/emCore/emFileModel.h
 lib/eaglemode/include/emCore/emFilePanel.h
+lib/eaglemode/include/emCore/emFontCache.h
 lib/eaglemode/include/emCore/emFpPlugin.h
 lib/eaglemode/include/emCore/emGUIFramework.h
 lib/eaglemode/include/emCore/emImage.h
@@ -365,23 +366,34 @@ lib/eaglemode/res/emAv/Play.tga
 lib/eaglemode/res/emAv/PlayFast.tga
 lib/eaglemode/res/emAv/PlaySlow.tga
 lib/eaglemode/res/emAv/Stop.tga
-lib/eaglemode/res/emCore/Button.tga
-lib/eaglemode/res/emCore/ButtonBorder.tga
-lib/eaglemode/res/emCore/ButtonChecked.tga
-lib/eaglemode/res/emCore/ButtonPressed.tga
-lib/eaglemode/res/emCore/CheckBox.tga
-lib/eaglemode/res/emCore/CheckBoxPressed.tga
-lib/eaglemode/res/emCore/CustomRectBorder.tga
-lib/eaglemode/res/emCore/Font.tga
-lib/eaglemode/res/emCore/GroupBorder.tga
-lib/eaglemode/res/emCore/GroupInnerBorder.tga
-lib/eaglemode/res/emCore/IOField.tga
-lib/eaglemode/res/emCore/PopupBorder.tga
-lib/eaglemode/res/emCore/RadioBox.tga
-lib/eaglemode/res/emCore/RadioBoxPressed.tga
-lib/eaglemode/res/emCore/Splitter.tga
-lib/eaglemode/res/emCore/SplitterPressed.tga
-lib/eaglemode/res/emCore/Tunnel.tga
+lib/eaglemode/res/emCore/font/00000-0001F_64x112_C0Controls_original.tga
+lib/eaglemode/res/emCore/font/00020-0007F_64x112_BasicLatin_original.tga
+lib/eaglemode/res/emCore/font/000A0-000FF_64x112_Latin1Supplement_original.tga
+lib/eaglemode/res/emCore/font/00100-0017F_64x112_LatinExtendedA_original.tga
+lib/eaglemode/res/emCore/font/00180-0024F_64x112_LatinExtendedB_original.tga
+lib/eaglemode/res/emCore/font/01E00-01EF9_64x112_LatinExtendedAdditional_original.tga
+lib/eaglemode/res/emCore/font/02010-0205F_64x112_GeneralPunctuation_original.tga
+lib/eaglemode/res/emCore/font/020A0-020B5_64x112_CurrencySymbols_original.tga
+lib/eaglemode/res/emCore/font/CostlyChar.tga
+lib/eaglemode/res/emCore/font/README
+lib/eaglemode/res/emCore/font/UnknownChar.tga
+lib/eaglemode/res/emCore/font/font2em.c
+lib/eaglemode/res/emCore/toolkit/Button.tga
+lib/eaglemode/res/emCore/toolkit/ButtonBorder.tga
+lib/eaglemode/res/emCore/toolkit/ButtonChecked.tga
+lib/eaglemode/res/emCore/toolkit/ButtonPressed.tga
+lib/eaglemode/res/emCore/toolkit/CheckBox.tga
+lib/eaglemode/res/emCore/toolkit/CheckBoxPressed.tga
+lib/eaglemode/res/emCore/toolkit/CustomRectBorder.tga
+lib/eaglemode/res/emCore/toolkit/GroupBorder.tga
+lib/eaglemode/res/emCore/toolkit/GroupInnerBorder.tga
+lib/eaglemode/res/emCore/toolkit/IOField.tga
+lib/eaglemode/res/emCore/toolkit/PopupBorder.tga
+lib/eaglemode/res/emCore/toolkit/RadioBox.tga
+lib/eaglemode/res/emCore/toolkit/RadioBoxPressed.tga
+lib/eaglemode/res/emCore/toolkit/Splitter.tga
+lib/eaglemode/res/emCore/toolkit/SplitterPressed.tga
+lib/eaglemode/res/emCore/toolkit/Tunnel.tga
 lib/eaglemode/res/emFileMan/images/InnerBorder.tga
 lib/eaglemode/res/emFileMan/images/OuterBorder.tga
 lib/eaglemode/res/emFileMan/scripts/cmd-util.pl
@@ -408,6 +420,8 @@ lib/eaglemode/res/icons/em-error-unknown-icon.tga
 @dirrm lib/eaglemode/res/emFileMan/scripts
 @dirrm lib/eaglemode/res/emFileMan/images
 @dirrm lib/eaglemode/res/emFileMan
+@dirrm lib/eaglemode/res/emCore/toolkit
+@dirrm lib/eaglemode/res/emCore/font
 @dirrm lib/eaglemode/res/emCore
 @dirrm lib/eaglemode/res/emAv
 @dirrm lib/eaglemode/res
