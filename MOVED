@@ -3861,3 +3861,20 @@ audio/rhythmbox-devel|audio/rhythmbox|2009-03-21|main port updated to latest sta
 net/penguintv-devel||2009-03-23|main port updated to latest stable version
 x11/oclock|x11-clocks/oclock|2009-03-23|Moved to a more appropriate category
 www/p5-Catalyst-Plugin-Authentication-Store-DBIx-Class||2009-03-23|Removed
+emulators/dlx||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+java/javel||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+java/guavac||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+graphics/xrml||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+graphics/renderpark||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+games/jumpnbump||2009-03-23|Has expired: tcl8.0 support is going to be dropped
+irc/blackened||2009-03-23|Has expired: Broken and abandonware
+devel/libg++||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+devel/freescope||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+misc/menushki||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+misc/vbidecode||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+lang/wamcc||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+multimedia/mpegedit||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+mail/dkimap4||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+net-mgmt/oproute||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+x11/tkgoodstuff||2009-03-23|Has expired: tcl8.0 support is going to be dropped
+x11-toolkits/inti||2009-03-23|Has expired: not maintain by upstream for more than five years and no port depend on this

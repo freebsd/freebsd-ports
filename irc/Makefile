@@ -8,7 +8,6 @@
     SUBDIR += bitchx
     SUBDIR += bitlbee
     SUBDIR += bitlbee-otr
-    SUBDIR += blackened
     SUBDIR += bnc
     SUBDIR += bobot++
     SUBDIR += bopm

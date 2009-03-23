@@ -161,7 +161,6 @@
     SUBDIR += ocsinventory-ng
     SUBDIR += openlldp
     SUBDIR += openvmps
-    SUBDIR += oproute
     SUBDIR += ourmon
     SUBDIR += p0f
     SUBDIR += p5-Altoids

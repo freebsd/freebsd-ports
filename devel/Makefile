@@ -377,7 +377,6 @@
     SUBDIR += freebase
     SUBDIR += freelibiberty
     SUBDIR += freeride
-    SUBDIR += freescope
     SUBDIR += frink
     SUBDIR += fsmgenerator
     SUBDIR += ftjam
@@ -641,7 +640,6 @@
     SUBDIR += libfirm
     SUBDIR += libfs++
     SUBDIR += libftdi
-    SUBDIR += libg++
     SUBDIR += libgalago
     SUBDIR += libgamepad
     SUBDIR += libgconf-java

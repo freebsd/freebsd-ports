@@ -57,7 +57,6 @@
     SUBDIR += eclipseme
     SUBDIR += gj
     SUBDIR += gnu-regexp
-    SUBDIR += guavac
     SUBDIR += icedtea6-stubs
     SUBDIR += infobus
     SUBDIR += j2sdkee13
@@ -89,7 +88,6 @@
     SUBDIR += java3d
     SUBDIR += javamail
     SUBDIR += javavmwrapper
-    SUBDIR += javel
     SUBDIR += jaxen
     SUBDIR += jbootstrap
     SUBDIR += jboss2

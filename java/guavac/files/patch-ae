@@ -1,8 +1,0 @@
---- common/cppstring.h.orig	Wed Jun 24 19:00:48 1998
-+++ common/cppstring.h	Wed Jun 24 19:01:49 1998
-@@ -8,4 +8,5 @@
- #endif
- #endif
- 
-+#include_next <string.h>
- #include <string>

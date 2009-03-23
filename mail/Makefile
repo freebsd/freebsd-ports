@@ -88,7 +88,6 @@
     SUBDIR += dk-milter
     SUBDIR += dkfilter
     SUBDIR += dkim-milter
-    SUBDIR += dkimap4
     SUBDIR += dkimproxy
     SUBDIR += dma
     SUBDIR += dovecot

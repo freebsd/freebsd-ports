@@ -25,7 +25,6 @@
     SUBDIR += dboxfe
     SUBDIR += desmume
     SUBDIR += dgen-sdl
-    SUBDIR += dlx
     SUBDIR += dosbox
     SUBDIR += doscmd
     SUBDIR += dtcyber

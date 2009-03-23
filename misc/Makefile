@@ -397,7 +397,6 @@
     SUBDIR += mbuffer
     SUBDIR += mc
     SUBDIR += mc-light
-    SUBDIR += menushki
     SUBDIR += metalink-checker
     SUBDIR += metalink-editor
     SUBDIR += metalink-tools
@@ -566,7 +565,6 @@
     SUBDIR += us-zipcodes
     SUBDIR += usbrh
     SUBDIR += utftools
-    SUBDIR += vbidecode
     SUBDIR += vera
     SUBDIR += videotext
     SUBDIR += vifm

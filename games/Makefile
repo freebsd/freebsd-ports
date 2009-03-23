@@ -387,7 +387,6 @@
     SUBDIR += joequake
     SUBDIR += jools
     SUBDIR += jtans
-    SUBDIR += jumpnbump
     SUBDIR += jzip
     SUBDIR += kaid
     SUBDIR += kamikaze

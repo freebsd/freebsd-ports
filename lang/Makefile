@@ -351,7 +351,6 @@
     SUBDIR += ucc
     SUBDIR += vala
     SUBDIR += visualworks
-    SUBDIR += wamcc
     SUBDIR += whitespace
     SUBDIR += xds
     SUBDIR += xds-c

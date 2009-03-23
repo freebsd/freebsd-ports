@@ -721,7 +721,6 @@
     SUBDIR += rayshade
     SUBDIR += reallyslick
     SUBDIR += recoverjpeg
-    SUBDIR += renderpark
     SUBDIR += repng2jpeg
     SUBDIR += rgbpaint
     SUBDIR += ristretto
@@ -890,7 +889,6 @@
     SUBDIR += xpaint
     SUBDIR += xpdf
     SUBDIR += xpx
-    SUBDIR += xrml
     SUBDIR += xsane
     SUBDIR += xsvg
     SUBDIR += xtexcad

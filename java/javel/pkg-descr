@@ -1,7 +1,0 @@
-Javel is a java class file disassembler. It is a filter that, given a
-compiled java class file, outputs a disassembled version in a java-like
-form with all the interface, fields, methods, and the java assembler code
-for each method. It can also output dependencies of the class file, suitable
-for inclusion in a standard makefile.
-
-WWW: http://tnerual.eriogerg.free.fr/javel.html
