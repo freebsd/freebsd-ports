@@ -1,0 +1,10 @@
+GeSHi started as an idea to create a generic syntax highlighter
+for the phpBB forum system, but has been generalised to this project.
+GeSHi aims to be a simple but powerful highlighting class,
+with the following goals:
+
+ * Support for a wide range of popular languages
+ * Easy to add a new language for highlighting
+ * Highly customisable output formats
+
+WWW: http://qbnz.com/highlighter/
