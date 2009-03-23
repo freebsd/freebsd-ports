@@ -27,6 +27,9 @@ PORTDOCS=	POW.pdf
 post-patch:
 	${REINPLACE_CMD} -e 's|licence|license|' ${WRKSRC}/setup.py
 
+do-build:
+	cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} build_ext -D NO_IDEA ${PYDISTUTILS_BUILD_TARGET}
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
