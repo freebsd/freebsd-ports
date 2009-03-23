@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6bb6188c-17b2-11de-ae4d-0030843d3802">
+    <topic>amarok -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>amarok</name>
+	<range><lt>1.4.10_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/33505">
+	  <p>Tobias Klein has reported some vulnerabilities in Amarok, which
+	    potentially can be exploited by malicious people to compromise a
+	    user's system.</p>
+	  <p>wo integer overflow errors exist within the
+	    "Audible::Tag::readTag()" function in
+	    src/metadata/audible/audibletag.cpp. These can be exploited to cause
+	    heap-based buffer overflows via specially crafted Audible Audio
+	    files.</p>
+	  <p>Two errors within the "Audible::Tag::readTag()" function in
+	    src/metadata/audible/audibletag.cpp can be exploited to corrupt
+	    arbitrary memory via specially crafted Audible Audio files.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>33210</bid>
+      <cvename>CVE-2009-0135</cvename>
+      <cvename>CVE-2009-0136</cvename>
+      <url>http://www.debian.org/security/2009/dsa-1706</url>
+      <url>http://secunia.com/advisories/33505</url>
+    </references>
+    <dates>
+      <discovery>2009-01-12</discovery>
+      <entry>2009-03-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f6f19735-9245-4918-8a60-87948ebb4907">
     <topic>wireshark -- multiple vulnerabilities</topic>
     <affects>
