@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTVERSION=	0.10.1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://bellard.org/qemu/
@@ -25,6 +24,7 @@ MAKE_ENV+=	BSD_MAKE="${MAKE}" LDFLAGS="${LDFLAGS}"
 MAN1=		qemu.1 qemu-img.1
 ONLY_FOR_ARCHS=	amd64 i386
 CONFLICTS=	qemu-devel-[0-9]*
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	KQEMU "Build with (alpha!) accelerator module" Off \
 		RTL8139_TIMER "allow use of re(4) nic with FreeBSD guests" Off \
@@ -33,6 +33,7 @@ OPTIONS=	KQEMU "Build with (alpha!) accelerator module" Off \
 		GNUTLS "gnutls dependency (vnc encryption)" On \
 		PCAP "pcap dependency (networking with bpf)" On \
 		CDROM_DMA "IDE CDROM DMA" On \
+		PHYS_CDROM "Physical CDROM fixes" On \
 		ADD_AUDIO "Emulate more audio hardware (experimental!)" Off \
 		ALL_TARGETS "Also build non-x86 targets" On
 
@@ -108,6 +109,9 @@ post-patch:
 .endif
 .if defined(WITHOUT_CDROM_DMA)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/cdrom-dma-patch
+.endif
+.if defined(WITH_PHYS_CDROM)
+	@cd ${WRKSRC} && ${PATCH} -p1 --quiet < ${FILESDIR}/phys-cdrom-freebsd-patch
 .endif
 	@${REINPLACE_CMD} -E \
 		-e "s|^(CFLAGS=).*|\1${CFLAGS} -fno-strict-aliasing|" \
