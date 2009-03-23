@@ -1,0 +1,8 @@
+liblouisxml is a library intended to provide complete braille
+transcription services for xml documents. It translates into
+appropriate braille codes and formats according to its style
+sheet and the specifications in the document. A command-line
+program, xml2brl which uses this library is also included.
+The latest version of liblouis is required.
+
+WWW:   http://code.google.com/p/liblouisxml/
