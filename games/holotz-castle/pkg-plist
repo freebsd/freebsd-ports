@@ -58,6 +58,8 @@ bin/holotz-castle-editor
 %%DATADIR%%/game/help/nl/help.txt
 %%DATADIR%%/game/help/pt/help.txt
 %%DATADIR%%/game/help/ru/help.txt
+%%DATADIR%%/game/help/sv/help.txt
+%%DATADIR%%/game/help/sv/help_org.txt
 %%DATADIR%%/game/help/ua/help.txt
 %%DATADIR%%/game/icon/icon.bmp
 %%DATADIR%%/game/intro/cs/intro.txt
@@ -72,6 +74,7 @@ bin/holotz-castle-editor
 %%DATADIR%%/game/intro/nl/intro.txt
 %%DATADIR%%/game/intro/pt/intro.txt
 %%DATADIR%%/game/intro/ru/intro.txt
+%%DATADIR%%/game/intro/sv/intro.txt
 %%DATADIR%%/game/intro/ua/intro.txt
 %%DATADIR%%/game/languages.txt
 %%DATADIR%%/game/main/main.tga
@@ -86,6 +89,7 @@ bin/holotz-castle-editor
 %%DATADIR%%/game/menu/nl/menu.txt
 %%DATADIR%%/game/menu/pt/menu.txt
 %%DATADIR%%/game/menu/ru/menu.txt
+%%DATADIR%%/game/menu/sv/menu.txt
 %%DATADIR%%/game/menu/ua/menu.txt
 %%DATADIR%%/game/messages/cs/messages.txt
 %%DATADIR%%/game/messages/de/messages.txt
@@ -97,6 +101,7 @@ bin/holotz-castle-editor
 %%DATADIR%%/game/messages/nl/messages.txt
 %%DATADIR%%/game/messages/pt/messages.txt
 %%DATADIR%%/game/messages/ru/messages.txt
+%%DATADIR%%/game/messages/sv/messages.txt
 %%DATADIR%%/game/messages/ua/messages.txt
 %%DATADIR%%/game/playlist.txt
 %%DATADIR%%/game/savedata/empty.txt
@@ -264,6 +269,17 @@ bin/holotz-castle-editor
 %%DATADIR%%/game/stories/holotzcastle/script/ru/level030.hcs
 %%DATADIR%%/game/stories/holotzcastle/script/ru/level032.hcs
 %%DATADIR%%/game/stories/holotzcastle/script/ru/level033.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/sv/level001.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/sv/level002.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/sv/level007.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/sv/level014.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/sv/level016.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/sv/level019.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/sv/level020.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/sv/level025.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/sv/level030.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/sv/level032.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/sv/level033.hcs
 %%DATADIR%%/game/stories/holotzcastle/script/ua/level001.hcs
 %%DATADIR%%/game/stories/holotzcastle/script/ua/level002.hcs
 %%DATADIR%%/game/stories/holotzcastle/script/ua/level007.hcs
@@ -1470,6 +1486,7 @@ bin/holotz-castle-editor
 @dirrm %%DATADIR%%/game/theme
 @dirrm %%DATADIR%%/game/stories/milanb
 @dirrm %%DATADIR%%/game/stories/holotzcastle/script/ua
+@dirrm %%DATADIR%%/game/stories/holotzcastle/script/sv
 @dirrm %%DATADIR%%/game/stories/holotzcastle/script/ru
 @dirrm %%DATADIR%%/game/stories/holotzcastle/script/pt
 @dirrm %%DATADIR%%/game/stories/holotzcastle/script/nl
@@ -1486,6 +1503,7 @@ bin/holotz-castle-editor
 @dirrm %%DATADIR%%/game/sound
 @dirrm %%DATADIR%%/game/savedata
 @dirrm %%DATADIR%%/game/messages/ua
+@dirrm %%DATADIR%%/game/messages/sv
 @dirrm %%DATADIR%%/game/messages/ru
 @dirrm %%DATADIR%%/game/messages/pt
 @dirrm %%DATADIR%%/game/messages/nl
@@ -1498,6 +1516,7 @@ bin/holotz-castle-editor
 @dirrm %%DATADIR%%/game/messages/cs
 @dirrm %%DATADIR%%/game/messages
 @dirrm %%DATADIR%%/game/menu/ua
+@dirrm %%DATADIR%%/game/menu/sv
 @dirrm %%DATADIR%%/game/menu/ru
 @dirrm %%DATADIR%%/game/menu/pt
 @dirrm %%DATADIR%%/game/menu/nl
@@ -1511,6 +1530,7 @@ bin/holotz-castle-editor
 @dirrm %%DATADIR%%/game/menu
 @dirrm %%DATADIR%%/game/main
 @dirrm %%DATADIR%%/game/intro/ua
+@dirrm %%DATADIR%%/game/intro/sv
 @dirrm %%DATADIR%%/game/intro/ru
 @dirrm %%DATADIR%%/game/intro/pt
 @dirrm %%DATADIR%%/game/intro/nl
@@ -1524,6 +1544,7 @@ bin/holotz-castle-editor
 @dirrm %%DATADIR%%/game/intro
 @dirrm %%DATADIR%%/game/icon
 @dirrm %%DATADIR%%/game/help/ua
+@dirrm %%DATADIR%%/game/help/sv
 @dirrm %%DATADIR%%/game/help/ru
 @dirrm %%DATADIR%%/game/help/pt
 @dirrm %%DATADIR%%/game/help/nl
