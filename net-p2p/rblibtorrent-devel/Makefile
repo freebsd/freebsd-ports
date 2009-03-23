@@ -6,29 +6,36 @@
 #
 
 PORTNAME=	libtorrent
-DISTVERSION=	0.13svn.r2335
+PORTVERSION=	0.14.2
 CATEGORIES=	net-p2p
-MASTER_SITES=	SF/qbittorrent
+MASTER_SITES=	SF
 PKGNAMEPREFIX=	rb
 PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-rasterbar-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library implementing a BitTorrent client (devel version)
 
 LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost
 
-GNU_CONFIGURE=	yes
+CONFLICTS=	rblibtorrent-[0-9]*
+
+USE_GNOME=	gnomehack
+USE_OPENSSL=	yes
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--disable-debug \
+		--disable-python-binding \
+		--with-boost-filesystem=boost_filesystem \
+		--with-boost-thread=boost_thread \
+		--with-boost-regex=boost_regex \
+		--with-boost-program-options=boost_program_options
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-debug
-CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-CONFLICTS=	libtorrent-[0-9]* \
-		libtorrent-devel-[0-9]* \
-		rblibtorrent-[0-9]*
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-post-install:
-	@cd ${PREFIX}/lib && ${LN} -sf libtorrent-0.13.so libtorrent.so.2 && \
-		${LN} -sf libtorrent.so.2 libtorrent.so
+post-patch:
+	@${REINPLACE_CMD} -e '/if \[/s|==|=|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
