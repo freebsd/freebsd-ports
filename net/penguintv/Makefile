@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	PenguinTV
-PORTVERSION=	3.60
+PORTVERSION=	4.0.0
 CATEGORIES=	net audio multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	penguintv
@@ -46,6 +46,10 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimed
 .else
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/lucene/_lucene.so:${PORTSDIR}/textproc/py-lucene
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," \
+		${WRKSRC}/penguintv/utils.py
 
 do-build:
 	cd ${WRKSRC} && ${PYTHON_CMD} setup.py build

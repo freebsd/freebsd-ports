@@ -5,3 +5,7 @@ by default, and if you install it from a package you don't have
 threads support. Reinstall databases/sqlite3-threads if you don't
 have this.
 ----------------------------- 8< -----------------------------------------
+If PenguinTV complains that it can't find run-mozilla.sh,
+use this to start it up:
+$ WITH_MOZ_DIR=/usr/local/lib/firefox/run-mozilla.sh PenguinTV
+----------------------------- 8< -----------------------------------------

@@ -15,7 +15,7 @@ share/penguintv/pixmaps/throbber.gif
 share/pixmaps/penguintvicon.png
 share/dbus-1/services/penguintv.service
 
-%%PYTHON_SITELIBDIR%%/PenguinTV-3.60-py2.5.egg-info
+%%PYTHON_SITELIBDIR%%/PenguinTV-4.0.0-py2.5.egg-info
 %%PYTHON_SITELIBDIR%%/penguintv/AddFeedDialog.py
 %%PYTHON_SITELIBDIR%%/penguintv/AddFeedDialog.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/AddFeedUtils.py
@@ -26,6 +26,10 @@ share/dbus-1/services/penguintv.service
 %%PYTHON_SITELIBDIR%%/penguintv/ArticleSync.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/BTDownloader.py
 %%PYTHON_SITELIBDIR%%/penguintv/BTDownloader.pyc
+%%PYTHON_SITELIBDIR%%/penguintv/BeautifulSoup/BeautifulSoup.py
+%%PYTHON_SITELIBDIR%%/penguintv/BeautifulSoup/BeautifulSoup.pyc
+%%PYTHON_SITELIBDIR%%/penguintv/BeautifulSoup/__init__.py
+%%PYTHON_SITELIBDIR%%/penguintv/BeautifulSoup/__init__.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/DownloadView.py
 %%PYTHON_SITELIBDIR%%/penguintv/DownloadView.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/Downloader.py
@@ -68,6 +72,8 @@ share/dbus-1/services/penguintv.service
 %%PYTHON_SITELIBDIR%%/penguintv/MediaManager.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/OPML.py
 %%PYTHON_SITELIBDIR%%/penguintv/OPML.pyc
+%%PYTHON_SITELIBDIR%%/penguintv/OfflineImageCache.py
+%%PYTHON_SITELIBDIR%%/penguintv/OfflineImageCache.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/PTVXapian.py
 %%PYTHON_SITELIBDIR%%/penguintv/PTVXapian.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/PlanetView.py
@@ -187,10 +193,38 @@ share/dbus-1/services/penguintv.service
 %%PYTHON_SITELIBDIR%%/penguintv/utils.py
 %%PYTHON_SITELIBDIR%%/penguintv/utils.pyc
 
+share/penguintv/gtkhtml.css
+share/penguintv/glade/widescreen.glade
+share/penguintv/glade/vertical.glade
+share/penguintv/glade/standard.glade
+share/penguintv/glade/planet.glade
+share/penguintv/glade/extra_dialogs.glade
+share/penguintv/glade/dialogs.glade
+share/penguintv/glade/dialog_add_feed.glade
+share/penguintv/glade/desktop.glade
+share/icons/hicolor/scalable/hildon/penguintvicon.png
+share/icons/hicolor/scalable/apps/penguintvicon.png
+share/icons/hicolor/64x64/hildon/penguintvicon.png
+share/icons/hicolor/64x64/apps/penguintvicon.png
+share/icons/hicolor/40x40/hildon/penguintvicon.png
+share/icons/hicolor/40x40/apps/penguintvicon.png
+share/icons/hicolor/26x26/hildon/penguintvicon.png
+share/icons/hicolor/26x26/apps/penguintvicon.png
+
+@dirrm %%PYTHON_SITELIBDIR%%/penguintv/BeautifulSoup/
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv/ajax
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv/ptvbittorrent
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv/amazon
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv/trayicon
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv
 @dirrm share/penguintv/pixmaps
+@dirrm share/penguintv/glade
 @dirrm share/penguintv
+@dirrm share/icons/hicolor/scalable/hildon
+@dirrm share/icons/hicolor/64x64/hildon
+@dirrm share/icons/hicolor/40x40/hildon
+@dirrm share/icons/hicolor/40x40/apps
+@dirrm share/icons/hicolor/40x40
+@dirrm share/icons/hicolor/26x26/hildon
+@dirrm share/icons/hicolor/26x26/apps
+@dirrm share/icons/hicolor/26x26
