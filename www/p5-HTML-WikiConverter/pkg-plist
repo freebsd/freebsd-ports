@@ -2,6 +2,7 @@ bin/html2wiki
 %%SITE_PERL%%/HTML/WikiConverter.pm
 %%SITE_PERL%%/HTML/WikiConverter/Dialects.pod
 %%SITE_PERL%%/HTML/WikiConverter/Normalizer.pm
+%%SITE_PERL%%/HTML/WikiConverter/WebApp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML

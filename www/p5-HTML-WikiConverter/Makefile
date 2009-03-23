@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-WikiConverter
-PORTVERSION=	0.63
+PORTVERSION=	0.68
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,6 +27,7 @@ PERL_CONFIGURE=	5.8.0+
 
 MAN1=		html2wiki.1
 MAN3=		HTML::WikiConverter.3 HTML::WikiConverter::Dialects.3 \
-		HTML::WikiConverter::Normalizer.3
+		HTML::WikiConverter::Normalizer.3 \
+		HTML::WikiConverter::WebApp.3
 
 .include <bsd.port.mk>
