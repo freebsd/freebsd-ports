@@ -27,6 +27,7 @@ OPTIONS=	ARC "Enable arch archives support" On \
 		EXPERIMENTAL "Build experimental code" Off
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
