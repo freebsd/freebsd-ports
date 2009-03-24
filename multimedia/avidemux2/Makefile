@@ -61,6 +61,13 @@ OPTIONS=	GTK "GTK+ GUI" on \
 
 .include <bsd.port.pre.mk>
 
+# Package server cannot distribute these
+.if defined(PACKAGE_BUILDING)
+WITHOUT_LAME=	yes
+WITHOUT_FAAC=	yes
+WITHOUT_AMRNB=	yes
+.endif
+
 # We haven't ALSA(Never) & Aften(Yet) on FreeBSD
 CMAKE_ARGS+=	-DNO_ARTS=1 -DNO_ALSA=1 -DNO_Aften=1
 
