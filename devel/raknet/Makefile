@@ -9,8 +9,7 @@ PORTNAME=	raknet
 PORTVERSION=	3.10
 PORTREVISION=	1
 CATEGORIES=	devel net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	raknetjenkinsso
+MASTER_SITES=	SF/raknetjenkinsso
 DISTNAME=	${PORTNAME}-3.1
 
 MAINTAINER=	ganael.laplanche@martymac.com
@@ -19,17 +18,22 @@ COMMENT=	Networking API that provides reliable UDP primarily for online games
 USE_LDCONFIG=	yes
 USE_FORTRAN=	yes
 USE_AUTOTOOLS=	libltdl:15 libtool:15 autoconf:262
+USE_GCC=	3.4
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-				LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(cpp|h)
 
 OPTIONS=	RAKVOICE "Build Rakvoice" off \
-			AUTOPATCHER "Build autopatcher" off
+		AUTOPATCHER "Build autopatcher" off
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		Does not compile
+.endif
 
 .if defined(WITH_RAKVOICE)
 CONFIGURE_ARGS+=	--enable-rakvoice
