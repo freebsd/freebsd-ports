@@ -1,5 +1,5 @@
---- qt4-im/Makefile.orig	2008-08-04 23:55:57.000000000 +0800
-+++ qt4-im/Makefile	2008-08-11 16:42:23.000000000 +0800
+--- qt4-im/Makefile.orig	2009-03-25 01:38:49.000000000 +0800
++++ qt4-im/Makefile	2009-03-25 01:41:30.000000000 +0800
 @@ -1,29 +1,29 @@
  include ../config.mak
  QT=qt4
@@ -8,9 +8,9 @@
 +QTIM=$(QT)/plugins/inputmethods
 +IMMODULES=/usr/local/lib/$(QTIM)
  ifeq ($(LIB), lib64)
- 	IMMODULES_LOCAL=/usr/lib/qt4/plugins/lib64/inputmethods
+ 	IMMODULES_LOCAL=/usr/$(LIB)/qt4/plugins/lib64/inputmethods
  else
--	IMMODULES_LOCAL=/usr/lib/$(QTIM)
+-	IMMODULES_LOCAL=/usr/$(LIB)/$(QTIM)
 +	IMMODULES_LOCAL=$(IMMODULES)
  endif
 -QTINC=/usr/lib/$(QT)/include
