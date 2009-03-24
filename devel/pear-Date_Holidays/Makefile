@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Date_Holidays
-PORTVERSION=	0.21.1
+PORTVERSION=	0.21.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR driver based class to calculate holidays
 
 BUILD_DEPENDS=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date \
