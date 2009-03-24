@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rtpproxy
-PORTVERSION=	1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.rtpproxy.org/chrome/site/
 
