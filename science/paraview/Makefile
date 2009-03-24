@@ -7,7 +7,7 @@
 
 PORTNAME=	paraview
 PORTVERSION=	2.4.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v2.4/
 

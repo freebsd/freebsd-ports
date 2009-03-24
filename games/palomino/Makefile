@@ -7,6 +7,7 @@
 
 PORTNAME=	palomino
 PORTVERSION=	20081229
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}-sim \
 		ftp://ftp.palomino3d.org/sim/

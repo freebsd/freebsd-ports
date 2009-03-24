@@ -7,6 +7,7 @@
 
 PORTNAME=		kadu
 PORTVERSION=		0.6.5.1
+PORTREVISION=	1
 PORTEPOCH=		1
 CATEGORIES=		polish net-im
 MASTER_SITES=		http://www.kadu.net/download/stable/:kadu \

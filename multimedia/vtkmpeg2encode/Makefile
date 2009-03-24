@@ -7,6 +7,7 @@
 
 PORTNAME=	vtkmpeg2encode
 PORTVERSION=	5.0.3
+PORTREVISION=	1
 CATEGORIES=	multimedia math
 MASTER_SITES=	http://www.vtk.org/files/support/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/

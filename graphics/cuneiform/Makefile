@@ -7,7 +7,7 @@
 
 PORTNAME=	cuneiform
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://launchpad.net/cuneiform-linux/${PORTVERSION:R}/${PORTVERSION:R}/+download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}

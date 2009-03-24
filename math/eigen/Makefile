@@ -6,6 +6,7 @@
 
 PORTNAME=	eigen
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://download.tuxfamily.org/eigen/
 

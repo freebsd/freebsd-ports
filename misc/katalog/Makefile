@@ -7,7 +7,7 @@
 
 PORTNAME=	katalog
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc kde
 MASTER_SITES=	http://salvaste.altervista.org/files/
 

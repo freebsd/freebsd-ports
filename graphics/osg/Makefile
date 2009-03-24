@@ -7,7 +7,7 @@
 
 PORTNAME=	osg
 PORTVERSION=	2.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/

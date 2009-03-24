@@ -7,6 +7,7 @@
 
 PORTNAME=	libopensync-plugin-python
 PORTVERSION=	0.36
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 PKGNAMESUFFIX=	-devel

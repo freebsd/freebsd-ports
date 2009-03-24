@@ -7,6 +7,7 @@
 
 PORTNAME=	vidalia
 PORTVERSION=	0.1.11
+PORTREVISION=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://www.vidalia-project.net:8001/vidalia/
 
