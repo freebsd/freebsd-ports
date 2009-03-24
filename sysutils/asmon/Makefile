@@ -20,7 +20,7 @@ USE_XORG=	xpm x11
 BUILD_WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/asmon
 CFLAGS+=	-I${LOCALBASE}/include
 USE_GMAKE=	yes
-ALL_TARGET=	clean asmon
+ALL_TARGET=	asmon
 MAKE_ARGS+=	LIBDIR="-L${LOCALBASE}/lib" \
 		SOLARIS_LIBS=-lkvm
 
@@ -28,6 +28,7 @@ PLIST_FILES=	bin/asmon
 
 post-patch:
 	${REINPLACE_CMD} -e 's:gcc:${CC} ${CFLAGS}:' ${BUILD_WRKSRC}/Makefile
+	${RM} ${WRKSRC}/wmgeneral/*.o $(BUILD_WRKSRC}/asmon
 
 do-install:
 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g kmem -m 2755 ${WRKSRC}/asmon/asmon ${PREFIX}/bin
