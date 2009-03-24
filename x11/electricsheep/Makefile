@@ -22,6 +22,8 @@ RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 		xsetbg:${PORTSDIR}/x11/xloadimage \
 		curl:${PORTSDIR}/ftp/curl
 
+MAKE_JOBS_SAFE=	yes
+
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xau xdmcp xext xi xrandr xv sm ice

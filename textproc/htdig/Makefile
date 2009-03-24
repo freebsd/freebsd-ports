@@ -20,6 +20,8 @@ DISTNAME=	htdig-3.2.0b6
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	A www indexing and searching system
 
+MAKE_JOBS_SAFE=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-config-dir=${PREFIX}/etc/htdig \
 		--with-default-config-file=${PREFIX}/etc/htdig/htdig.conf \

@@ -18,6 +18,8 @@ COMMENT=	Perl5 interface to the DNS resolver, and dynamic updates
 RUN_DEPENDS=	ipcount:${PORTSDIR}/net-mgmt/p5-Net-IP \
 		${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
 
+MAKE_JOBS_SAFE=	yes
+
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--no-online-tests --no-IPv6-tests
 
