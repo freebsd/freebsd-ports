@@ -69,16 +69,11 @@ with qemu's now by default enabled cdrom dma.  You can build the port with
 CDROM_DMA disabled to disable it.
 - if you build qemu wihout SDL and then get crashes running it try
 passing it -nographic.  This should probably be default in that case...
-- slirp (-net user) seems to be unstable on amd64 hosts, if this affects
-you please use tuntap for now.  Scott Robbins posted a tap howto for
--current here:
-	http://forums.bsdnexus.com/viewtopic.php?id=1563
-and one for 6 and 5(?) is here:
-	http://acidos.bandwidth-junkies.net/index.php?Sect=qemu
 - perhaps it should be noted that if you want to use qemu with -m 512
-or larger on i386 hosts you need to increase the kern.maxdsiz tunable
+or larger on 6.x/i386 hosts you need to increase the kern.maxdsiz tunable
 in loader.conf(5) since the default is 512 MB, and qemu needs memory for
-itself also.
+itself also.  (7.0 and up now use jemalloc which uses mmap(2) and
+isn't affected by kern.maxdsiz anymore.)
 - if you use kqemu make sure your kqemu.ko is always in sync with your
 kernel (like with any kld installed outside of base), i.e.  rebuild its
 port whenever you update the kernel - especially if you are switching
