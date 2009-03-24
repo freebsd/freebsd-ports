@@ -1,5 +1,8 @@
-@comment $FreeBSD$
-include/acx/if_acxioctl.h
-@dirrm include/acx
-@cwd /boot/kernel
+bin/ifdo
+sbin/acxtool
+@cwd %%KMODDIR%%
 if_acx.ko
+if_acx.ko.symbols
+acx100fw.ko
+acx111fw.ko
+@unexec kldxref %D
