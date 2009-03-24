@@ -1,0 +1,617 @@
+diff -Naur syscp.orig/admin_configfiles.php syscp/admin_configfiles.php
+--- syscp.orig/admin_configfiles.php	2008-11-29 05:18:53.000000000 -0700
++++ syscp/admin_configfiles.php	2008-12-12 12:21:46.000000000 -0700
+@@ -86,6 +86,7 @@
+ 			'<SQL_UNPRIVILEGED_PASSWORD>' => 'MYSQL_PASSWORD',
+ 			'<SQL_DB>' => $sql['db'],
+ 			'<SQL_HOST>' => $sql['host'],
++			'<ADMIN_EMAIL>' => $settings['panel']['adminmail'],
+ 			'<SERVERNAME>' => $settings['system']['hostname'],
+ 			'<SERVERIP>' => $settings['system']['ipaddress'],
+ 			'<NAMESERVERS>' => $settings['system']['nameservers'],
+diff -Naur syscp.orig/install/install.php syscp/install/install.php
+--- syscp.orig/install/install.php	2008-11-30 06:12:36.000000000 -0700
++++ syscp/install/install.php	2008-12-12 12:21:46.000000000 -0700
+@@ -374,7 +374,7 @@
+ }
+ else
+ {
+-	$mysql_host = '127.0.0.1';
++	$mysql_host = 'localhost';
+ }
+ 
+ if(!empty($_POST['mysql_database']))
+@@ -716,10 +716,10 @@
+ 
+ 	if($webserver == "apache2")
+ 	{
+-		$db->query("UPDATE `" . TABLE_PANEL_SETTINGS . "` SET `value` = '/etc/apache2/sites-enabled/' WHERE `settinggroup` = 'system' AND `varname` = 'apacheconf_vhost'");
+-		$db->query("UPDATE `" . TABLE_PANEL_SETTINGS . "` SET `value` = '/etc/apache2/sites-enabled/' WHERE `settinggroup` = 'system' AND `varname` = 'apacheconf_diroptions'");
+-		$db->query("UPDATE `" . TABLE_PANEL_SETTINGS . "` SET `value` = '/etc/apache2/syscp-htpasswd/' WHERE `settinggroup` = 'system' AND `varname` = 'apacheconf_htpasswddir'");
+-		$db->query("UPDATE `" . TABLE_PANEL_SETTINGS . "` SET `value` = '/etc/init.d/apache2 reload' WHERE `settinggroup` = 'system' AND `varname` = 'apachereload_command'");
++		$db->query("UPDATE `" . TABLE_PANEL_SETTINGS . "` SET `value` = '/usr/local/etc/apache22/syscp/vhosts.conf' WHERE `settinggroup` = 'system' AND `varname` = 'apacheconf_vhost'");
++		$db->query("UPDATE `" . TABLE_PANEL_SETTINGS . "` SET `value` = '/usr/local/etc/apache22/syscp/diroptions.conf' WHERE `settinggroup` = 'system' AND `varname` = 'apacheconf_diroptions'");
++		$db->query("UPDATE `" . TABLE_PANEL_SETTINGS . "` SET `value` = '/usr/local/etc/apache22/syscp/htpasswd/' WHERE `settinggroup` = 'system' AND `varname` = 'apacheconf_htpasswddir'");
++		$db->query("UPDATE `" . TABLE_PANEL_SETTINGS . "` SET `value` = '/usr/local/etc/rc.d/apache22 reload' WHERE `settinggroup` = 'system' AND `varname` = 'apachereload_command'");
+ 	}
+ 	elseif($webserver == "lighttpd")
+ 	{
+diff -Naur syscp.orig/install/syscp.sql syscp/install/syscp.sql
+--- syscp.orig/install/syscp.sql	2008-12-12 09:41:14.000000000 -0700
++++ syscp/install/syscp.sql	2008-12-12 12:28:09.000000000 -0700
+@@ -534,16 +534,16 @@
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (7, 'customer', 'mysqlprefix', 'sql');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (8, 'system', 'lastaccountnumber', '0');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (9, 'system', 'lastguid', '9999');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (10, 'system', 'documentroot_prefix', '/var/kunden/webs/');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (11, 'system', 'logfiles_directory', '/var/kunden/logs/');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (10, 'system', 'documentroot_prefix', '/usr/local/customers/webs/');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (11, 'system', 'logfiles_directory', '/usr/local/customers/logs/');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (12, 'system', 'ipaddress', 'SERVERIP');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (14, 'system', 'apachereload_command', '/etc/init.d/apache reload');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (14, 'system', 'apachereload_command', '/usr/local/etc/rc.d/apache22 reload');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (15, 'system', 'last_traffic_run', '000000');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (16, 'system', 'vmail_uid', '2000');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (17, 'system', 'vmail_gid', '2000');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (18, 'system', 'vmail_homedir', '/var/kunden/mail/');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (19, 'system', 'bindconf_directory', '/etc/bind/');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (20, 'system', 'bindreload_command', '/etc/init.d/bind9 reload');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (16, 'system', 'vmail_uid', '125');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (17, 'system', 'vmail_gid', '125');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (18, 'system', 'vmail_homedir', '/usr/local/customers/mail/');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (19, 'system', 'bindconf_directory', '/var/named/etc/namedb/');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (20, 'system', 'bindreload_command', '/usr/sbin/rndc reload');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (22, 'panel', 'version', '1.4.2');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (23, 'system', 'hostname', 'SERVERNAME');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (24, 'login', 'maxloginattempts', '3');
+@@ -556,10 +556,10 @@
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (32, 'system', 'lastcronrun', '');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (33, 'panel', 'paging', '20');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (34, 'system', 'defaultip', '1');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (35, 'system', 'phpappendopenbasedir', '/tmp/');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (35, 'system', 'phpappendopenbasedir', '/var/tmp/:/usr/local/www/syscp');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (36, 'panel', 'natsorting', '1');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (37, 'system', 'deactivateddocroot', '');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (38, 'system', 'mailpwcleartext', '1');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (38, 'system', 'mailpwcleartext', '0');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (39, 'system', 'last_tasks_run', '000000');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (40, 'customer', 'ftpatdomain', '0');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (41, 'system', 'nameservers', '');
+@@ -567,9 +567,9 @@
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (43, 'system', 'mod_log_sql', '0');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (44, 'system', 'mod_fcgid', '0');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (45, 'panel', 'sendalternativemail', '0');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (46, 'system', 'apacheconf_vhost', '/etc/apache/vhosts.conf');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (47, 'system', 'apacheconf_diroptions', '/etc/apache/diroptions.conf');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (48, 'system', 'apacheconf_htpasswddir', '/etc/apache/htpasswd/');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (46, 'system', 'apacheconf_vhost', '/usr/local/etc/apache22/syscp/vhosts.conf');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (47, 'system', 'apacheconf_diroptions', '/usr/local/etc/apache22/syscp/diroptions.conf');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (48, 'system', 'apacheconf_htpasswddir', '/usr/local/etc/apache22/syscp/htpasswd/');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (49, 'system', 'webalizer_quiet', '2');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (50, 'ticket', 'noreply_email', 'NO-REPLY@SERVERNAME');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (51, 'ticket', 'worktime_all', '1');
+@@ -582,8 +582,8 @@
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (58, 'ticket', 'enabled', '1');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (59, 'ticket', 'concurrently_open', '5');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (60, 'ticket', 'noreply_name', 'SysCP Support');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (61, 'system', 'mod_fcgid_configdir', '/var/www/php-fcgi-scripts');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (62, 'system', 'mod_fcgid_tmpdir', '/var/kunden/tmp');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (61, 'system', 'mod_fcgid_configdir', '/usr/local/www/php-fcgi-scripts');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (62, 'system', 'mod_fcgid_tmpdir', '/usr/local/customers/tmp');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (63, 'ticket', 'reset_cycle', '2');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (64, 'panel', 'no_robots', '1');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (65, 'logger', 'enabled', '1');
+@@ -591,7 +591,7 @@
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (67, 'logger', 'logfile', '');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (68, 'logger', 'logtypes', 'syslog,mysql');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (69, 'logger', 'severity', '1');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (70, 'system','ssl_cert_file','/etc/apache2/apache2.pem');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (70, 'system','ssl_cert_file','/usr/local/etc/apache22/apache2.pem');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (71, 'system','use_ssl','1');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (72, 'system','openssl_cnf','[ req ]\r\ndefault_bits = 1024\r\ndistinguished_name = req_distinguished_name\r\nattributes = req_attributes\r\nprompt = no\r\noutput_password =\r\ninput_password =\r\n[ req_distinguished_name ]\r\nC = DE\r\nST = syscp\r\nL = syscp    \r\nO = Testcertificate\r\nOU = syscp        \r\nCN = @@domain_name@@\r\nemailAddress = @@email@@    \r\n[ req_attributes ]\r\nchallengePassword =\r\n');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (73, 'system', 'default_vhostconf', '');
+@@ -601,22 +601,22 @@
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (77, 'dkim', 'use_dkim', '0');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (78, 'system', 'webalizer_enabled', '1');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (79, 'system', 'awstats_enabled', '0');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (80, 'system', 'awstats_domain_file', '/etc/awstats/');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (81, 'system', 'awstats_model_file', '/etc/awstats/awstats.model.conf.syscp');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (82, 'dkim', 'dkim_prefix', '/etc/postfix/dkim/');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (80, 'system', 'awstats_domain_file', '/usr/local/www/awstats/');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (81, 'system', 'awstats_model_file', '/usr/local/www/awstats/cgi-bin/awstats.model.conf.syscp');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (82, 'dkim', 'dkim_prefix', '/usr/local/etc/postfix/dkim/');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (83, 'dkim', 'dkim_domains', 'domains');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (84, 'dkim', 'dkim_dkimkeys', 'dkim-keys.conf');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (85, 'dkim', 'dkimrestart_command', '/etc/init.d/dkim-filter restart');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (85, 'dkim', 'dkimrestart_command', '/usr/local/etc/rc.d/dkim-filter restart');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (86, 'panel', 'unix_names', '1');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (87, 'panel', 'allow_preset', '1');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (88, 'system', 'awstats_path', '/usr/share/awstats/VERSION/webroot/cgi-bin/');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (89, 'system', 'awstats_updateall_command', '/usr/bin/awstats_updateall.pl');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (88, 'system', 'awstats_path', '/usr/local/www/awstats/cgi-bin/');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (89, 'system', 'awstats_updateall_command', '/usr/local/www/awstats/tools/awstats_updateall.pl');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (90, 'billing', 'invoicenumber_count', '0');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (91, 'panel', 'allow_preset_admin', '0');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (92, 'billing', 'activate_billing', '0');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (93, 'billing', 'highlight_inactive', '0');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (94, 'system', 'httpuser', 'www-data');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (95, 'system', 'httpgroup', 'www-data');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (94, 'system', 'httpuser', 'www');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (95, 'system', 'httpgroup', 'www');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (96, 'system', 'webserver', 'apache2');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (97, 'autoresponder', 'autoresponder_active', '0');
+ INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (98, 'autoresponder', 'last_autoresponder_run', '0');
+diff -Naur syscp.orig/lib/configfiles/freebsd.inc.php syscp/lib/configfiles/freebsd.inc.php
+--- syscp.orig/lib/configfiles/freebsd.inc.php	1969-12-31 17:00:00.000000000 -0700
++++ syscp/lib/configfiles/freebsd.inc.php	2008-12-12 12:21:46.000000000 -0700
+@@ -0,0 +1,126 @@
++<?php
++return Array(
++	'freebsd_release' => Array(
++		'label' => 'FreeBSD (RELEASE)',
++		'services' => Array(
++			'http' => Array(
++				'label' => $lng['admin']['configfiles']['http'],
++				'daemons' => Array(
++					'apache' => Array(
++						'label' => 'Apache',
++						'commands' => Array(
++							'mkdir -p ' . $settings['system']['apacheconf_htpasswddir'],
++							'touch ' . $settings['system']['apacheconf_vhost'],
++							'touch ' . $settings['system']['apacheconf_diroptions'],
++							'mkdir -p ' . $settings['system']['documentroot_prefix'],
++							'mkdir -p ' . $settings['system']['logfiles_directory'],
++							'echo "Include etc/apache22/syscp/vhosts.conf" >> /usr/local/etc/apache22/httpd.conf',
++						),
++						'restart' => Array(
++							'/usr/local/etc/rc.d/apache22 graceful'
++						)
++					)
++				)
++			),
++			'dns' => Array(
++				'label' => $lng['admin']['configfiles']['dns'],
++				'daemons' => Array(
++					'bind' => Array(
++						'label' => 'Bind9',
++						'commands' => Array(
++							'echo \'include "syscp_bind.conf";\' >> '.$settings['system']['bindconf_directory'].'named.conf',
++							'touch ' . $settings['system']['bindconf_directory'] . 'syscp_bind.conf'
++						),
++						'restart' => Array(
++							'/usr/sbin/rndc reload'
++						)
++					),
++				)
++			),
++			'mail' => Array(
++				'label' => $lng['admin']['configfiles']['mail'],
++				'daemons' => Array(
++					'dovecot' => Array(
++						'label' => 'Dovecot',
++						'commands' => Array(
++							'mkdir -p /etc/ssl/dovecot',
++							'cd /etc/ssl/dovecot',
++							'openssl req -new -x509 -nodes -out cert.pem -keyout key.pem -days 365',
++							'chmod 0600 *.pem'
++						),
++						'files' => Array(
++							'etc_dovecot.conf' => '/usr/local/etc/dovecot.conf',
++							'etc_dovecot-sql.conf' => '/usr/local/etc/dovecot-sql.conf'
++						),
++						'restart' => Array(
++							'/usr/local/etc/rc.d/dovecot restart'
++						)
++					),
++				)
++			),
++			'smtp' => Array(
++				'label' => $lng['admin']['configfiles']['smtp'],
++				'daemons' => Array(
++					'postfix' => Array(
++						'label' => 'Postfix',
++						'files' => Array(
++							'etc_postfix_main.cf' => '/usr/local/etc/postfix/main.cf',
++							'etc_postfix_master.cf' => '/usr/local/etc/postfix/master.cf',
++							'etc_postfix_mysql-virtual_alias_maps.cf' => '/usr/local/etc/postfix/mysql-virtual_alias_maps.cf',
++							'etc_postfix_mysql-virtual_mailbox_domains.cf' => '/usr/local/etc/postfix/mysql-virtual_mailbox_domains.cf',
++							'etc_postfix_mysql-virtual_mailbox_maps.cf' => '/usr/local/etc/postfix/mysql-virtual_mailbox_maps.cf'
++						),
++						'commands' => Array(
++							'mkdir -p ' . $settings['system']['vmail_homedir'],
++							'chown -R postfix:postfix ' . $settings['system']['vmail_homedir'],
++							'mkdir -p /etc/ssl/postfix',
++							'cd /etc/ssl/postfix',
++							'openssl req -new -x509 -nodes -out smtpd.pem -keyout smtpd.pem -days 3650',
++							'chmod 750 /etc/ssl/postfix',
++							'chmod 640 /etc/ssl/postfix/smtpd.pem',
++							'chgrp -R postfix /etc/ssl/postfix',
++							'chmod 640 /usr/local/etc/postfix/mysql-virtual_*',
++							'chgrp postfix /usr/local/etc/postfix/mysql-virtual_*'
++						),
++						'restart' => Array(
++							'/usr/local/etc/rc.d/postfix reload'
++						)
++					),
++				)
++			),
++			'ftp' => Array(
++				'label' => $lng['admin']['configfiles']['ftp'],
++				'daemons' => Array(
++					'proftpd' => Array(
++						'label' => 'ProFTPd',
++						'commands' => Array(
++							'mkdir -p /etc/ssl/proftpd',
++							'cd /etc/ssl/proftpd',
++							'openssl req -new -x509 -days 365 -nodes -out cert.pem -keyout key.pem',
++							'chmod 640 *.pem'
++						),
++						'files' => Array(
++							'etc_proftpd.conf' => '/usr/local/etc/proftpd.conf'
++						),
++						'restart' => Array(
++							'/usr/local/etc/rc.d/proftpd restart'
++						)
++					),
++				)
++			),
++			'etc' => Array(
++				'label' => $lng['admin']['configfiles']['etc'],
++				'daemons' => Array(
++					'cron' => Array(
++						'label' => 'Crond (cronscript)',
++						'files' => Array(
++							'cron_syscp' => 'crontab -e (As root)'
++						)
++					)
++				)
++			)
++		)
++	)
++);
++
++?>
+diff -Naur syscp.orig/lib/configfiles_index.inc.php syscp/lib/configfiles_index.inc.php
+--- syscp.orig/lib/configfiles_index.inc.php	2008-11-30 06:12:36.000000000 -0700
++++ syscp/lib/configfiles_index.inc.php	2008-12-12 12:21:46.000000000 -0700
+@@ -43,6 +43,6 @@
+ 
+ $cfgPath = 'lib/configfiles/';
+ $configfiles = Array();
+-$configfiles = array_merge(include $cfgPath . 'etch.inc.php', include $cfgPath . 'hardy.inc.php', include $cfgPath . 'gentoo.inc.php', include $cfgPath . 'suse10.inc.php');
++$configfiles = array_merge(include $cfgPath . 'freebsd.inc.php', include $cfgPath . 'etch.inc.php', include $cfgPath . 'hardy.inc.php', include $cfgPath . 'gentoo.inc.php', include $cfgPath . 'suse10.inc.php');
+ 
+-?>
+\ No newline at end of file
++?>
+diff -Naur syscp.orig/lib/functions.php syscp/lib/functions.php
+--- syscp.orig/lib/functions.php	2008-12-12 09:29:41.000000000 -0700
++++ syscp/lib/functions.php	2008-12-12 12:21:46.000000000 -0700
+@@ -1229,7 +1229,7 @@
+ 		'cp',
+ 		'du',
+ 		'chmod',
+-		'chattr',
++		'chflags',
+ 		$settings['system']['apachereload_command'],
+ 		$settings['system']['bindreload_command'],
+ 		$settings['dkim']['dkimrestart_command'],
+diff -Naur syscp.orig/scripts/cron_tasks.inc.dns.10.bind.php syscp/scripts/cron_tasks.inc.dns.10.bind.php
+--- syscp.orig/scripts/cron_tasks.inc.dns.10.bind.php	2008-10-24 07:47:49.000000000 -0600
++++ syscp/scripts/cron_tasks.inc.dns.10.bind.php	2008-12-12 12:21:46.000000000 -0700
+@@ -111,7 +111,7 @@
+ 			$bindconf_file.= '# Domain ID: ' . $domain['id'] . ' - CustomerID: ' . $domain['customerid'] . ' - CustomerLogin: ' . $domain['loginname'] . "\n";
+ 			$bindconf_file.= 'zone "' . $domain['domain'] . '" in {' . "\n";
+ 			$bindconf_file.= '	type master;' . "\n";
+-			$bindconf_file.= '	file "' . makeCorrectFile($this->settings['system']['bindconf_directory'] . '/' . $domain['zonefile']) . '";' . "\n";
++			$bindconf_file.= '	file "' . $domain['zonefile'] . '";' . "\n";
+ 			$bindconf_file.= '	allow-query { any; };' . "\n";
+ 
+ 			if(count($this->nameservers) > 0)
+@@ -332,4 +332,4 @@
+ 	}
+ }
+ 
+-?>
+\ No newline at end of file
++?>
+diff -Naur syscp.orig/scripts/cron_tasks.inc.http.15.apache_fcgid.php syscp/scripts/cron_tasks.inc.http.15.apache_fcgid.php
+--- syscp.orig/scripts/cron_tasks.inc.http.15.apache_fcgid.php	2008-11-30 06:12:36.000000000 -0700
++++ syscp/scripts/cron_tasks.inc.http.15.apache_fcgid.php	2008-12-12 12:21:46.000000000 -0700
+@@ -148,7 +148,7 @@
+ 
+ 			if(file_exists($starter_filename))
+ 			{
+-				safe_exec('chattr -i ' . escapeshellarg($starter_filename));
++				safe_exec('chflags noschg ' . escapeshellarg($starter_filename));
+ 			}
+ 
+ 			$starter_file_handler = fopen($starter_filename, 'w');
+@@ -156,7 +156,7 @@
+ 			fclose($starter_file_handler);
+ 			safe_exec('chmod 750 ' . escapeshellarg($starter_filename));
+ 			safe_exec('chown ' . $domain['guid'] . ':' . $domain['guid'] . ' ' . escapeshellarg($starter_filename));
+-			safe_exec('chattr +i ' . escapeshellarg($starter_filename));
++			safe_exec('chflags schg ' . escapeshellarg($starter_filename));
+ 
+ 			// define the php.ini
+ 
+@@ -255,4 +255,4 @@
+ 	}
+ }
+ 
+-?>
+\ No newline at end of file
++?>
+diff -Naur syscp.orig/scripts/cron_tasks.php syscp/scripts/cron_tasks.php
+--- syscp.orig/scripts/cron_tasks.php	2008-11-09 10:53:18.000000000 -0700
++++ syscp/scripts/cron_tasks.php	2008-12-12 12:21:46.000000000 -0700
+@@ -124,8 +124,8 @@
+ 			}
+ 			else
+ 			{
+-				$cronlog->logAction(CRON_ACTION, LOG_NOTICE, 'Running: cp -a ' . $pathtophpfiles . '/templates/misc/standardcustomer/* ' . escapeshellarg($settings['system']['documentroot_prefix'] . $row['data']['loginname'] . '/'));
+-				safe_exec('cp -a ' . $pathtophpfiles . '/templates/misc/standardcustomer/* ' . escapeshellarg($settings['system']['documentroot_prefix'] . $row['data']['loginname'] . '/'));
++				$cronlog->logAction(CRON_ACTION, LOG_NOTICE, 'Running: cp -Rp ' . $pathtophpfiles . '/templates/misc/standardcustomer/* ' . escapeshellarg($settings['system']['documentroot_prefix'] . $row['data']['loginname'] . '/'));
++				safe_exec('cp -Rp ' . $pathtophpfiles . '/templates/misc/standardcustomer/* ' . escapeshellarg($settings['system']['documentroot_prefix'] . $row['data']['loginname'] . '/'));
+ 			}
+ 
+ 			$cronlog->logAction(CRON_ACTION, LOG_NOTICE, 'Running: chown -R ' . (int)$row['data']['uid'] . ':' . (int)$row['data']['gid'] . ' ' . escapeshellarg($settings['system']['documentroot_prefix'] . $row['data']['loginname']));
+diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/cron/cron_syscp syscp/templates/misc/configfiles/freebsd_release/cron/cron_syscp
+--- syscp.orig/templates/misc/configfiles/freebsd_release/cron/cron_syscp	1969-12-31 17:00:00.000000000 -0700
++++ syscp/templates/misc/configfiles/freebsd_release/cron/cron_syscp	2008-12-12 12:21:46.000000000 -0700
+@@ -0,0 +1,14 @@
++#
++# Set PATH, otherwise restart-scripts won't find start-stop-daemon
++#
++PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
++#
++# Regular cron jobs for the syscp package
++#
++*/5 * * * *	/usr/local/bin/php -q /usr/local/www/syscp/scripts/cron_tasks.php
++0 0 * * *	/usr/local/bin/php -q /usr/local/www/syscp/scripts/cron_traffic.php
++30 0 * * *	/usr/local/bin/php -q /usr/local/www/syscp/scripts/cron_ticketarchive.php
++0 1 * * *	/usr/local/bin/php -q /usr/local/www/syscp/scripts/cron_used_tickets_reset.php
++*/5 * * * *	/usr/local/bin/php -q /usr/local/www/syscp/scripts/cron_autoresponder.php
++*/5 * * * *	/usr/local/bin/php -q /usr/local/www/syscp/scripts/cron_apsinstaller.php
++*/30 * * * *	/usr/local/bin/php -q /usr/local/www/syscp/scripts/cron_apsupdater.php
+diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot-sql.conf syscp/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot-sql.conf
+--- syscp.orig/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot-sql.conf	1969-12-31 17:00:00.000000000 -0700
++++ syscp/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot-sql.conf	2008-12-12 12:21:46.000000000 -0700
+@@ -0,0 +1,7 @@
++driver = mysql
++connect = host=<SQL_HOST> dbname=<SQL_DB> user=<SQL_UNPRIVILEGED_USER> password=<SQL_UNPRIVILEGED_PASSWORD>
++default_pass_scheme = CRYPT
++password_query = SELECT username AS user, password_enc AS password \
++ FROM mail_users WHERE username = '%u'
++user_query = SELECT CONCAT(homedir,maildir) AS home, concat('maildir:',homedir,maildir) \
++ AS mail, uid, gid FROM mail_users where username = '%u'
+diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot.conf syscp/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot.conf
+--- syscp.orig/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot.conf	1969-12-31 17:00:00.000000000 -0700
++++ syscp/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot.conf	2008-12-12 12:21:46.000000000 -0700
+@@ -0,0 +1,51 @@
++protocols = imap imaps pop3 pop3s
++disable_plaintext_auth = no
++ssl_disable = no
++ssl_cert_file = /etc/ssl/dovecot/cert.pem
++ssl_key_file = /etc/ssl/dovecot/key.pem
++login_greeting = <SERVERNAME> Server Ready.
++mail_uid = <VIRTUAL_UID_MAPS>
++mail_gid = <VIRTUAL_GID_MAPS>
++mail_privileged_group = mail
++dotlock_use_excl = yes
++verbose_proctitle = yes
++first_valid_uid = <VIRTUAL_UID_MAPS>
++first_valid_gid = <VIRTUAL_GID_MAPS>
++maildir_copy_with_hardlinks = yes
++protocol imap {
++  mail_plugins = quota imap_quota
++  login_greeting_capability = yes
++  imap_client_workarounds = delay-newmail netscape-eoh tb-extra-mailbox-sep
++}
++protocol pop3 {
++  pop3_uidl_format = %08Xu%08Xv
++  mail_plugins = quota
++  pop3_client_workarounds = outlook-no-nuls oe-ns-eoh
++}
++protocol lda {
++  postmaster_address = postmaster@<ADMIN_EMAIL>
++  sendmail_path = /usr/sbin/sendmail
++}
++auth_username_format = %Lu
++auth default {
++  mechanisms = plain login
++  passdb sql {
++    args = /usr/local/etc/dovecot-sql.conf
++  }
++  userdb sql {
++    args = /usr/local/etc/dovecot-sql.conf
++  }
++  user = root
++  socket listen {
++    client {
++      path = /var/spool/postfix/private/auth
++      mode = 0660
++      user = postfix
++      group = postfix
++    }
++  }
++}
++dict {
++}
++plugin {
++}
+diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_main.cf syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_main.cf
+--- syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_main.cf	1969-12-31 17:00:00.000000000 -0700
++++ syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_main.cf	2008-12-12 12:21:46.000000000 -0700
+@@ -0,0 +1,68 @@
++smtpd_sender_restrictions = permit_sasl_authenticated, permit_mynetworks
++smtpd_recipient_restrictions =
++  permit_mynetworks,
++  permit_sasl_authenticated,
++  reject_non_fqdn_hostname,
++  reject_non_fqdn_sender,
++  reject_non_fqdn_recipient,
++  reject_unauth_destination,
++  reject_unauth_pipelining,
++  reject_invalid_hostname
++smtpd_sasl_auth_enable = yes
++smtpd_sasl_authenticated_header = yes
++smtpd_sasl_local_domain = $myhostname
++smtpd_sasl_security_options = noanonymous
++broken_sasl_auth_clients = yes
++smtpd_sasl_type = dovecot
++smtpd_sasl_path = private/auth    
++smtp_use_tls = yes
++smtpd_use_tls = yes
++smtp_tls_note_starttls_offer = yes
++smtpd_tls_key_file = /etc/ssl/postfix/smtpd.pem
++smtpd_tls_cert_file = /etc/ssl/postfix/smtpd.pem
++smtpd_tls_CAfile = /etc/ssl/postfix/smtpd.pem
++smtpd_tls_loglevel = 0
++smtpd_tls_received_header = yes
++smtpd_tls_session_cache_timeout = 3600s
++tls_random_source = dev:/dev/urandom
++virtual_alias_maps = proxy:mysql:/usr/local/etc/postfix/mysql-virtual_alias_maps.cf
++virtual_gid_maps = static:<VIRTUAL_GID_MAPS>
++virtual_mailbox_base = <VIRTUAL_MAILBOX_BASE>
++virtual_mailbox_domains = proxy:mysql:/usr/local/etc/postfix/mysql-virtual_mailbox_domains.cf
++virtual_mailbox_limit = 51200000
++virtual_mailbox_maps = proxy:mysql:/usr/local/etc/postfix/mysql-virtual_mailbox_maps.cf
++virtual_minimum_uid = <VIRTUAL_UID_MAPS>
++virtual_transport = virtual
++virtual_uid_maps = static:<VIRTUAL_UID_MAPS>
++virtual_create_maildirsize = yes
++virtual_mailbox_extended = yes
++proxy_read_maps = $local_recipient_maps $mydestination $virtual_alias_maps
++  $virtual_alias_domains $virtual_mailbox_maps $virtual_mailbox_domains
++  $relay_recipient_maps $relay_domains $canonical_maps $sender_canonical_maps
++  $recipient_canonical_maps $relocated_maps $transport_maps $mynetworks
++virtual_mailbox_limit_override = yes
++virtual_maildir_limit_message = Sorry, this user has overdrawn their diskspace quota. Please try again later.
++virtual_overquota_bounce = yes
++alias_maps = $alias_database
++queue_directory = /var/spool/postfix
++command_directory = /usr/local/sbin
++daemon_directory = /usr/local/libexec/postfix
++data_directory = /var/db/postfix
++mail_owner = postfix
++myhostname = <SERVERNAME>
++mydomain = <SERVERNAME>
++myorigin = $mydomain
++unknown_local_recipient_reject_code = 550
++mynetworks_style = host
++debug_peer_level = 2
++debugger_command =
++	 PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
++	 ddd $daemon_directory/$process_name $process_id & sleep 5
++sendmail_path = /usr/local/sbin/sendmail
++newaliases_path = /usr/local/bin/newaliases
++mailq_path = /usr/local/bin/mailq
++setgid_group = maildrop
++html_directory = no
++manpage_directory = /usr/local/man
++sample_directory = /usr/local/etc/postfix
++readme_directory = no
+diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_master.cf syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_master.cf
+--- syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_master.cf	1969-12-31 17:00:00.000000000 -0700
++++ syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_master.cf	2008-12-12 12:21:46.000000000 -0700
+@@ -0,0 +1,6 @@
++# Uncomment or add the following lines in your master.cf file 
++# to use the SSL 465 port (recommended)
++smtps     inet  n       -       n       -       -       smtpd
++  -o smtpd_tls_wrappermode=yes
++  -o smtpd_sasl_auth_enable=yes
++  -o smtpd_client_restrictions=permit_sasl_authenticated,reject
+diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_alias_maps.cf syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_alias_maps.cf
+--- syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_alias_maps.cf	1969-12-31 17:00:00.000000000 -0700
++++ syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_alias_maps.cf	2008-12-12 12:21:46.000000000 -0700
+@@ -0,0 +1,8 @@
++user = <SQL_UNPRIVILEGED_USER>
++password = <SQL_UNPRIVILEGED_PASSWORD>
++dbname = <SQL_DB>
++table = mail_virtual
++select_field = destination
++where_field = email
++additional_conditions = and destination <> '' and destination <> ' '
++hosts = <SQL_HOST>
+diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
+--- syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf	1969-12-31 17:00:00.000000000 -0700
++++ syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf	2008-12-12 12:21:46.000000000 -0700
+@@ -0,0 +1,8 @@
++user = <SQL_UNPRIVILEGED_USER>
++password = <SQL_UNPRIVILEGED_PASSWORD>
++dbname = <SQL_DB>
++table = panel_domains
++select_field = domain
++where_field = domain
++additional_conditions = and isemaildomain = '1'
++hosts = <SQL_HOST>
+diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
+--- syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf	1969-12-31 17:00:00.000000000 -0700
++++ syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf	2008-12-12 12:21:46.000000000 -0700
+@@ -0,0 +1,7 @@
++user = <SQL_UNPRIVILEGED_USER>
++password = <SQL_UNPRIVILEGED_PASSWORD>
++dbname = <SQL_DB>
++table = mail_users
++select_field = maildir
++where_field = email
++hosts = <SQL_HOST>
+diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/proftpd/etc_proftpd.conf syscp/templates/misc/configfiles/freebsd_release/proftpd/etc_proftpd.conf
+--- syscp.orig/templates/misc/configfiles/freebsd_release/proftpd/etc_proftpd.conf	1969-12-31 17:00:00.000000000 -0700
++++ syscp/templates/misc/configfiles/freebsd_release/proftpd/etc_proftpd.conf	2008-12-12 12:21:46.000000000 -0700
+@@ -0,0 +1,53 @@
++ServerName			"<SERVERNAME> FTP Server"
++ServerType			standalone
++DefaultServer			on
++Port				21
++UseIPv6				off
++Umask				022
++SyslogLevel                     emerg
++SystemLog                       /var/log/xferlog
++LogFormat                       auth    "%v [%P] %h %t \"%r\" %s"
++ExtendedLog                     /var/log/xferlog        AUTH auth
++DeferWelcome                    off
++MultilineRFC2228                on
++ShowSymlinks                    on
++TimeoutNoTransfer               600
++TimeoutStalled                  600
++TimeoutIdle                     1200
++DisplayLogin                    welcome.msg
++DisplayChdir                    .message
++ListOptions                     "-l"
++DenyFilter                      \*.*/
++MaxInstances			30
++CommandBufferSize	512
++User				nobody
++Group				nogroup
++AllowOverwrite		on
++DefaultRoot ~
++RequireValidShell off
++AuthOrder mod_sql.c
++SQLAuthTypes Crypt
++SQLAuthenticate users groups
++SQLConnectInfo <SQL_DB>@<SQL_HOST> <SQL_UNPRIVILEGED_USER> <SQL_UNPRIVILEGED_PASSWORD>
++SQLUserInfo ftp_users username password uid gid homedir shell
++SQLGroupInfo ftp_groups groupname gid members
++SQLUserWhereClause "login_enabled = 'y'"
++SQLLog PASS login
++SQLNamedQuery login UPDATE "last_login=now(), login_count=login_count+1 WHERE username='%u'" ftp_users
++SQLLog RETR download
++SQLNamedQuery download UPDATE "down_count=down_count+1, down_bytes=down_bytes+%b WHERE username='%u'" ftp_users
++SQLLog STOR upload
++SQLNamedQuery upload UPDATE "up_count=up_count+1, up_bytes=up_bytes+%b WHERE username='%u'" ftp_users
++<IfModule mod_delay.c>
++  DelayEngine off
++</IfModule>
++<IfModule mod_tls.c>
++   TLSEngine on
++   TLSLog /var/log/xferlog
++   TLSProtocol SSLv23
++   TLSRequired off
++   TLSRSACertificateFile /etc/ssl/proftpd/cert.pem
++   TLSRSACertificateKeyFile /etc/ssl/proftpd/key.pem
++   TLSVerifyClient off
++   TLSRenegotiate required off
++</IfModule>
