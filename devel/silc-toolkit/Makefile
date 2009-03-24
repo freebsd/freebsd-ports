@@ -6,19 +6,14 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.9
 CATEGORIES=	devel ipv6 net security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
 		http://www.nic.funet.fi/pub/mirrors/ftp.silcnet.org/silc/%SUBDIR%/ \
-		http://www.fi.silcnet.org/download/%SUBDIR%/ \
-		http://munitions.vipul.net/software/mirrors/silc/%SUBDIR%/ \
-		http://www.pl.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.sunet.se/pub/network/silc/%SUBDIR%/ \
 		ftp://ftp.silcnet.org/silc/%SUBDIR%/ \
-		ftp://ftp.au.silcnet.org/pub/silcnet/%SUBDIR%/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.silcnet.org/silc/%SUBDIR%/ \
-		ftp://ftp.pl.silcnet.org/pub/silc/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/network/silc/%SUBDIR%/
 MASTER_SITE_SUBDIR=	toolkit/sources
 PKGNAMESUFFIX=	-toolkit
@@ -26,6 +21,8 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	nevans@talkpoint.com
 COMMENT=	Secure Internet Live Conferencing (SILC) network toolkit
+
+CONFLICTS=	silc-client-1.1.* silc-irssi-client-1.1.*
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
