@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.7.43
+PORTVERSION=	0.7.44
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -47,6 +47,7 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		WWW "Enable html sample files" on
 
 WANT_GNOME=	yes
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -195,6 +196,7 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 		--without-pcre
 .else
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+CONFIGURE_ARGS+=--with-pcre
 .endif
 
 .if defined(WITH_WWW)
@@ -243,6 +245,10 @@ post-patch:
 .if defined(WITH_HTTP_FANCYINDEX_MODULE)
 	@${PATCH} ${PATCH_ARGS} < \
 		${PATCHDIR}/extra-patch-ngx_http_fancyindex_module.c
+.endif
+.if defined(WITH_HTTP_UPLOAD_MODULE)
+	@${PATCH} ${PATCH_ARGS} < \
+		${PATCHDIR}/extra-patch-ngx_http_upload_module.c
 .endif
 
 do-build:
