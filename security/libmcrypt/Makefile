@@ -16,6 +16,7 @@ COMMENT=	Multi-cipher cryptographic library (used in PHP)
 
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--enable-static
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 MAN3=		mcrypt.3
