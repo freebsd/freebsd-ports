@@ -279,7 +279,6 @@ etc/dansguardian/lists/exceptionregexpurllist
 %%SCANNERS%%etc/dansguardian/lists/contentscanners/exceptionvirusurllist
 etc/dansguardian/downloadmanagers/default.conf
 etc/dansguardian/downloadmanagers/fancy.conf
-%%CLAMAVCONF%%etc/dansguardian/contentscanners/clamav.conf
 %%CLAMDCONF%%etc/dansguardian/contentscanners/clamdscan.conf
 %%KAVDCONF%%etc/dansguardian/contentscanners/kavdscan.conf
 %%ICAPCONF%%etc/dansguardian/contentscanners/icapscan.conf
