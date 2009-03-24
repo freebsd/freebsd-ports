@@ -33,7 +33,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--with-randomdev=/dev/random
 
-CONFLICTS=	bind9-9.[456].* bind9-sdb-* host-*
+CONFLICTS=	bind9*-9.[456].* bind9-sdb-* host-*
 
 OPTIONS=	SSL "Building without OpenSSL removes DNSSEC" on \
 		REPLACE_BASE "Replace base BIND with this version" off \
