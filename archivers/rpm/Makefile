@@ -20,6 +20,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 CONFLICTS=	rpm-4.*
 
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:15
 CONFIGURE_ARGS=	--with-glob
 USE_LDCONFIG=	yes
