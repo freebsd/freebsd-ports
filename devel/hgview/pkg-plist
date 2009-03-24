@@ -26,9 +26,9 @@ bin/hgview
 %%PYTHON_SITELIBDIR%%/hgview/hgrepo.py
 %%PYTHON_SITELIBDIR%%/hgview/hgrepo.pyc
 %%PYTHON_SITELIBDIR%%/hgview/hgrepo.pyo
-%%PYTHON_SITELIBDIR%%/hgview/hgrepo_graz.py
-%%PYTHON_SITELIBDIR%%/hgview/hgrepo_graz.pyc
-%%PYTHON_SITELIBDIR%%/hgview/hgrepo_graz.pyo
+%%PYTHON_SITELIBDIR%%/hgview/hgview_ext.py
+%%PYTHON_SITELIBDIR%%/hgview/hgview_ext.pyc
+%%PYTHON_SITELIBDIR%%/hgview/hgview_ext.pyo
 %%PYTHON_SITELIBDIR%%/hgview/hgviewrc.py
 %%PYTHON_SITELIBDIR%%/hgview/hgviewrc.pyc
 %%PYTHON_SITELIBDIR%%/hgview/hgviewrc.pyo

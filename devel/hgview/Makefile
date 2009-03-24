@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hgview
-PORTVERSION=	0.10.2
+PORTVERSION=	0.11.2
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.logilab.org/pub/hgview/
 
@@ -32,6 +32,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/hgview/__pkginfo__.py
+	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/__pkginfo__.py
 
 .include <bsd.port.post.mk>
