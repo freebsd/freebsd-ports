@@ -949,6 +949,7 @@ biabam                          ports/mail/biabam
 bib2html                        ports/textproc/bib2html
 bibcursed                       ports/print/bibcursed
 bibelot                         ports/palm/bibelot
+bibletime-devel                 ports/misc/bibletime-devel
 bibletime-kde3                  ports/misc/bibletime-kde3
 bibletime-kde4                  ports/misc/bibletime-kde4
 biblical-curse                  ports/misc/biblical-curse
@@ -9433,7 +9434,7 @@ ocaml-yaxpo                     ports/textproc/ocaml-yaxpo
 ocaml-zip                       ports/archivers/ocaml-zip
 ocamlduce                       ports/lang/ocamlduce
 ocamlweb                        ports/devel/ocamlweb
-oclock                          ports/x11/oclock
+oclock                          ports/x11-clocks/oclock
 ocp                             ports/audio/ocp
 ocrad                           ports/graphics/ocrad
 ocre                            ports/graphics/ocre
@@ -10211,7 +10212,6 @@ p5-Catalyst-Plugin-Authentication  ports/www/p5-Catalyst-Plugin-Authentication
 p5-Catalyst-Plugin-Authentication-CDBI  ports/www/p5-Catalyst-Plugin-Authentication-CDBI
 p5-Catalyst-Plugin-Authentication-OpenID  ports/www/p5-Catalyst-Plugin-Authentication-OpenID
 p5-Catalyst-Plugin-Authentication-Store-DBIC  ports/www/p5-Catalyst-Plugin-Authentication-Store-DBIC
-p5-Catalyst-Plugin-Authentication-Store-DBIx-Class  ports/www/p5-Catalyst-Plugin-Authentication-Store-DBIx-Class
 p5-Catalyst-Plugin-Authentication-Store-Htpasswd  ports/www/p5-Catalyst-Plugin-Authentication-Store-Htpasswd
 p5-Catalyst-Plugin-Authorization-ACL  ports/www/p5-Catalyst-Plugin-Authorization-ACL
 p5-Catalyst-Plugin-Authorization-Roles  ports/www/p5-Catalyst-Plugin-Authorization-Roles
@@ -13480,7 +13480,6 @@ p5-catalyst-plugin-authentication  ports/www/p5-Catalyst-Plugin-Authentication
 p5-catalyst-plugin-authentication-cdbi  ports/www/p5-Catalyst-Plugin-Authentication-CDBI
 p5-catalyst-plugin-authentication-openid  ports/www/p5-Catalyst-Plugin-Authentication-OpenID
 p5-catalyst-plugin-authentication-store-dbic  ports/www/p5-Catalyst-Plugin-Authentication-Store-DBIC
-p5-catalyst-plugin-authentication-store-dbix-class  ports/www/p5-Catalyst-Plugin-Authentication-Store-DBIx-Class
 p5-catalyst-plugin-authentication-store-htpasswd  ports/www/p5-Catalyst-Plugin-Authentication-Store-Htpasswd
 p5-catalyst-plugin-authorization-acl  ports/www/p5-Catalyst-Plugin-Authorization-ACL
 p5-catalyst-plugin-authorization-roles  ports/www/p5-Catalyst-Plugin-Authorization-Roles
@@ -17339,7 +17338,6 @@ pengpong                        ports/games/pengpong
 penguin-command                 ports/games/penguin-command
 penguinsap                      ports/audio/penguinsap
 penguintv                       ports/net/penguintv
-penguintv-devel                 ports/net/penguintv-devel
 pengupop                        ports/games/pengupop
 pentix                          ports/games/pentix
 penv                            ports/sysutils/penv
