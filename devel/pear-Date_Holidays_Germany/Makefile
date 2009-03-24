@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Date_Holidays_Germany
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
@@ -41,6 +41,8 @@ FILES=		Holidays/Driver/Germany.php \
 		lang/Germany/fr_FR.ser \
 		lang/Germany/fr_FR.xml
 TESTS=		Date_Holidays_Driver_Germany_TestSuite.php
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
