@@ -20,6 +20,7 @@ lib/gtk-2.0/immodules/im-gcin.so
 %%QT_IM_MODULE%%lib/qt4/plugins/inputmethods/im-gcin.so
 lib/gcin1.so
 lib/gcin2.so
+lib/gtk_bug_fix.so
 lib/libgcin-im-client.so
 lib/libgcin-im-client.so.1.1.0
 lib/libgcin-im-client.so.1
@@ -45,7 +46,6 @@ lib/libgcin-im-client.so.1
 %%DATADIR%%/table/hsu.kbm
 %%DATADIR%%/table/ibm.kbm
 %%DATADIR%%/table/jyutping.gtab
-%%DATADIR%%/table/kana-nippon.gtab
 %%DATADIR%%/table/latin-letters.gtab
 %%DATADIR%%/table/mitac.kbm
 %%BOSHIAMY%%%%DATADIR%%/table/noseeing.gtab
