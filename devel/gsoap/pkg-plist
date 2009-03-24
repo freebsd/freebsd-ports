@@ -60,6 +60,7 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/import/ds2.h
 %%DATADIR%%/import/ref.h
 %%DATADIR%%/import/soap12.h
+%%DATADIR%%/import/stdstring.h
 %%DATADIR%%/import/stl.h
 %%DATADIR%%/import/stldeque.h
 %%DATADIR%%/import/stllist.h
@@ -85,6 +86,7 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/import/xmlmime.h
 %%DATADIR%%/import/xmlmime5.h
 %%DATADIR%%/import/xop.h
+%%DATADIR%%/import/xsd.h
 %%DATADIR%%/plugin/README.txt
 %%DATADIR%%/plugin/cacerts.c
 %%DATADIR%%/plugin/cacerts.h
@@ -119,6 +121,7 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/plugin/wsse2api.c
 %%DATADIR%%/plugin/wsse2api.h
 %%DATADIR%%/plugin/wsseapi.c
+%%DATADIR%%/plugin/wsseapi.cpp
 %%DATADIR%%/plugin/wsseapi.h
 @dirrm lib/gsoap
 @dirrm %%DATADIR%%/plugin
