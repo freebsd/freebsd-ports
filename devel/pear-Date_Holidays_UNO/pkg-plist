@@ -1,5 +1,5 @@
 share/pear/Date/Holidays/Driver/UNO.php
-share/pear/packages/pear-Date_Holidays_UNO-0.1.2/package.xml
+share/pear/packages/pear-Date_Holidays_UNO-%%PORTVERSION%%/package.xml
 share/pear/tests/Date_Holidays_UNO/Date_Holidays_Driver_UNO_TestSuite.php
 @dirrm share/pear/tests/Date_Holidays_UNO
-@dirrm share/pear/packages/pear-Date_Holidays_UNO-0.1.2
+@dirrm share/pear/packages/pear-Date_Holidays_UNO-%%PORTVERSION%%
