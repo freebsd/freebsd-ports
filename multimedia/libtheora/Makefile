@@ -18,6 +18,7 @@ LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	ltverhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include " \

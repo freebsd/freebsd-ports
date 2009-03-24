@@ -19,6 +19,7 @@ COMMENT=	Mpeg-4 library and tools from mpeg4ip
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \

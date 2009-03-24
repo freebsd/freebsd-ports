@@ -23,6 +23,7 @@ USE_GNOME=	gnomehack gnometarget ltverhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--with-ogg-dir=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

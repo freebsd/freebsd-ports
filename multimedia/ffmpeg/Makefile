@@ -19,6 +19,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 WANT_SDL=	yes
 
 OPTIONS=	AMR_NB	"AMR narrowband encoder" off \
