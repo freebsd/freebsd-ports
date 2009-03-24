@@ -6,37 +6,30 @@
 #
 
 PORTNAME=	remember.el
-PORTVERSION=	1.9
-PORTREVISION=	3
+PORTVERSION=	2.0
 CATEGORIES=	deskutils elisp
-MASTER_SITES=	http://download.gna.org/remember-el/ \
-		http://dryice.name/computer/FreeBSD/distfiles/
+MASTER_SITES=	http://download.gna.org/remember-el/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	remember-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	dryice@dryice.name
 COMMENT=	A Emacs mode for remembering data
 
-BROKEN=		Conflicting dependencies
-DEPRECATED=	has been broken for more than 6 months
-EXPIRATION_DATE=2009-01-19
-
 USE_EMACS=	yes
 USE_GMAKE=	yes
-EMACS_PORT_NAME?=	emacs21
 
-INFO=		remember-el
+INFO=		remember remember-extra
 
-OPTIONS=	BBDB "BBDB support" on
-OPTIONS+=	PLANNER "Planner.el support" on
+OPTIONS=	BBDB "BBDB support" off
+OPTIONS+=	PLANNER "Planner.el support" off
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_BBDB)
 .if ${EMACS_NAME} == "xemacs"
-BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/xemacs-packages/lisp/bbdb/bbdb-com.el:${PORTSDIR}/editors/xemacs-packages
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/bbdb/bbdb-com.el:${PORTSDIR}/editors/xemacs-packages
 .else
-BUILD_DEPENDS+=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/bbdb/bbdb-com.el:${PORTSDIR}/databases/bbdb
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/bbdb/bbdb-com.el:${PORTSDIR}/databases/bbdb
 .endif
 PLIST_SUB+=	HAS_BBDB=""
 .else
@@ -44,11 +37,11 @@ PLIST_SUB+=	HAS_BBDB="@comment "
 .endif
 
 .if !defined(WITHOUT_PLANNER)
-BUILD_DEPENDS+=	${PREFIX}/${EMACS_SITE_LISPDIR}/planner/planner.el:${PORTSDIR}/deskutils/planner.el
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/planner/planner.el:${PORTSDIR}/deskutils/planner.el
 PLIST_SUB+=	HAS_PLANNER=""
 .else
 PLIST_SUB+=	HAS_PLANNER="@comment "
 .endif
-RUN_DEPENDS+= ${BUILD_DEPENDS}
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 .include <bsd.port.post.mk>
