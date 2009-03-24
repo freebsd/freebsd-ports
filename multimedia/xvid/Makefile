@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An opensource MPEG-4 codec, based on OpenDivx
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/xvid.h \
