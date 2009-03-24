@@ -1,0 +1,11 @@
+--- bt_sh/Makefile.in.orig	2009-03-24 22:07:42.000000000 +0100
++++ bt_sh/Makefile.in	2009-03-24 22:09:38.000000000 +0100
+@@ -26,6 +26,8 @@
+ 
+ build: bt_sh
+ 
++$(OBJS): nodes.h syntax.h builtins.h
++
+ bt_sh: ${GENSRCS} ${ARITHSRCS} ${OBJS}
+ 	${CC} ${OBJS} -o bt_sh ${LDFLAGS}
+ 	${STRIP} bt_sh
