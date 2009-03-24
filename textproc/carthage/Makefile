@@ -23,6 +23,7 @@ ALL_TARGET=	carthago
 
 post-patch:
 	${CHMOD} +w ${WRKSRC}/dpplex.c
+	${REINPLACE_CMD} -e 's,make,$$(MAKE),' ${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/carthage ${PREFIX}/bin
