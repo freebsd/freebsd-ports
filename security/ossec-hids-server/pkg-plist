@@ -23,6 +23,8 @@
 %%PORTNAME%%/bin/agent_control
 %%PORTNAME%%/bin/syscheck_control
 %%PORTNAME%%/bin/rootcheck_control
+%%PORTNAME%%/bin/ossec-reportd
+%%PORTNAME%%/bin/ossec-agentlessd
 %%PORTNAME%%/etc/decoder.xml
 %%PORTNAME%%/etc/internal_options.conf
 @unexec if cmp -s %D/%%PORTNAME%%/etc/ossec.conf %D/%%PORTNAME%%/etc/ossec.conf.sample; then rm -f %D/%%PORTNAME%%/etc/ossec.conf; fi
@@ -85,6 +87,18 @@
 %%PORTNAME%%/rules/solaris_bsm_rules.xml
 %%PORTNAME%%/rules/mcafee_av_rules.xml
 %%PORTNAME%%/rules/asterisk_rules.xml
+%%PORTNAME%%/agentless/main.exp
+%%PORTNAME%%/agentless/sshlogin.exp
+%%PORTNAME%%/agentless/ssh_pixconfig_diff
+%%PORTNAME%%/agentless/ssh_nopass.exp
+%%PORTNAME%%/agentless/ssh_integrity_check_linux
+%%PORTNAME%%/agentless/ssh_integrity_check_bsd
+%%PORTNAME%%/agentless/ssh_generic_diff
+%%PORTNAME%%/agentless/ssh.exp
+%%PORTNAME%%/agentless/register_host.sh
+%%PORTNAME%%/agentless/su.exp
+@dirrmtry %%PORTNAME%%/agentless
+@dirrmtry %%PORTNAME%%/.ssh
 @dirrmtry %%PORTNAME%%/var/run
 @dirrmtry %%PORTNAME%%/var
 @dirrmtry %%PORTNAME%%/tmp
@@ -97,6 +111,8 @@
 @dirrmtry %%PORTNAME%%/queue/fts
 @dirrmtry %%PORTNAME%%/queue/alerts
 @dirrmtry %%PORTNAME%%/queue/agent-info
+@dirrmtry %%PORTNAME%%/queue/diff
+@dirrmtry %%PORTNAME%%/queue/agentless
 @dirrmtry %%PORTNAME%%/queue
 @dirrmtry %%PORTNAME%%/logs/firewall
 @dirrmtry %%PORTNAME%%/logs/archives
