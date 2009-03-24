@@ -22,10 +22,10 @@ share/pear/Date/lang/Germany/en_EN.ser
 share/pear/Date/lang/Germany/en_EN.xml
 share/pear/Date/lang/Germany/fr_FR.ser
 share/pear/Date/lang/Germany/fr_FR.xml
-share/pear/packages/pear-Date_Holidays_Germany-0.1.1/package.xml
+share/pear/packages/pear-Date_Holidays_Germany-%%PORTVERSION%%/package.xml
 share/pear/tests/Date_Holidays_Germany/Date_Holidays_Driver_Germany_TestSuite.php
 @dirrm share/pear/Date/Holidays/Filter/Germany
 @dirrm share/pear/Date/Holidays/Filter
 @dirrm share/pear/Date/lang/Germany
 @dirrm share/pear/tests/Date_Holidays_Germany
-@dirrm share/pear/packages/pear-Date_Holidays_Germany-0.1.1
+@dirrm share/pear/packages/pear-Date_Holidays_Germany-%%PORTVERSION%%
