@@ -23,6 +23,7 @@ USE_XORG=	x11 xmu
 USE_GNOME=	gtk12
 ALL_TARGET=	# empty
 MAKE_ARGS=	CC=${CC} C_FLAGS="${CFLAGS}" DESTDIR=${PREFIX}
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
