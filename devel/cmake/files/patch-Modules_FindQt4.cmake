@@ -1,6 +1,6 @@
---- ./Modules/FindQt4.cmake.orig	2008-05-05 22:25:53.000000000 +0400
-+++ ./Modules/FindQt4.cmake	2008-07-21 02:37:16.000000000 +0400
-@@ -293,7 +293,7 @@
+--- ./Modules/FindQt4.cmake.orig	2009-02-21 23:36:50.000000000 +0300
++++ ./Modules/FindQt4.cmake	2009-03-20 13:20:18.000000000 +0300
+@@ -319,7 +319,7 @@
  
  GET_FILENAME_COMPONENT(qt_install_version "[HKEY_CURRENT_USER\\Software\\trolltech\\Versions;DefaultQtVersion]" NAME)
  # check for qmake
@@ -9,19 +9,7 @@
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Qt3Versions\\4.0.0;InstallDir]/bin"
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\4.0.0;InstallDir]/bin"
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\${qt_install_version};InstallDir]/bin"
-@@ -915,9 +915,9 @@
-     "${QT_UIC_EXECUTABLE_INTERNAL}" QT_UIC_EXECUTABLE_INTERNAL)
- 
-   SET(QT_MOC_EXECUTABLE 
--    ${QT_MOC_EXECUTABLE_INTERNAL} CACHE FILEPATH "The moc executable")
-+    ${QT_MOC_EXECUTABLE_INTERNAL} CACHE FILEPATH "The moc executable" FORCE)
-   SET(QT_UIC_EXECUTABLE 
--    ${QT_UIC_EXECUTABLE_INTERNAL} CACHE FILEPATH "The uic executable")
-+    ${QT_UIC_EXECUTABLE_INTERNAL} CACHE FILEPATH "The uic executable" FORCE)
- 
-   FIND_PROGRAM(QT_UIC3_EXECUTABLE
-     NAMES uic3
-@@ -944,13 +944,13 @@
+@@ -855,13 +855,13 @@
      )
  
    FIND_PROGRAM(QT_LUPDATE_EXECUTABLE

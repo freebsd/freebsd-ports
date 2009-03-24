@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	cmake
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cmake.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=lofi
+MASTER_SITES=	http://www.cmake.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A cross-platform make
@@ -20,6 +18,12 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--datadir=${DATADIR:S|^${PREFIX}||} \
 		--docdir=${DOCSDIR:S|^${PREFIX}||}
 CONFIGURE_ENV=	MAKE=make
+
+MAKE_JOBS_SAFE=	yes
+
+.if !defined(WITH_DEBUG)
+INSTALL_TARGET=install/strip
+.endif
 
 MAN1=		ccmake.1 \
 		cmake.1 \
