@@ -19,6 +19,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
+MAKE_JOBS_SAFE=	yes
 
 USE_RC_SUBR=	bruteblockd.sh
 MAN8=		bruteblock.8
