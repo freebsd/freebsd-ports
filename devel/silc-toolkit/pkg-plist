@@ -95,7 +95,7 @@ lib/libsilc.a
 lib/libsilc.la
 lib/libsilc.so
 lib/libsilcclient-1.1.so
-lib/libsilcclient-1.1.so.2
+lib/libsilcclient-1.1.so.3
 lib/libsilcclient.a
 lib/libsilcclient.la
 lib/libsilcclient.so
@@ -110,9 +110,9 @@ lib/silcsim/twofish.sim.so
 libdata/pkgconfig/silc.pc
 libdata/pkgconfig/silcclient.pc
 %%PORTDOCS%%%%DOCSDIR%%-toolkit/BSD
-%%PORTDOCS%%%%DOCSDIR%%-toolkit/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%-toolkit/COPYING
 %%PORTDOCS%%%%DOCSDIR%%-toolkit/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%-toolkit/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%-toolkit/CodingStyle
 %%PORTDOCS%%%%DOCSDIR%%-toolkit/FAQ
 %%PORTDOCS%%%%DOCSDIR%%-toolkit/GPL
