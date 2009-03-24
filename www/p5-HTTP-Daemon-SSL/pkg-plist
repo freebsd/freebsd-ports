@@ -1,0 +1,7 @@
+%%SITE_PERL%%/HTTP/Daemon/SSL.pm
+@dirrmtry %%SITE_PERL%%/HTTP/Daemon
+@dirrmtry %%SITE_PERL%%/HTTP
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Daemon/SSL/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Daemon/SSL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Daemon
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
