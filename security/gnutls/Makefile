@@ -24,6 +24,7 @@ USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GNOME=	pkgconfig ltverhack
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 CPPFLAGS+=	-I${LOCALBASE}/include
