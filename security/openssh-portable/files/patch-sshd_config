@@ -1,6 +1,6 @@
---- sshd_config.orig	Mon Jul 24 01:06:47 2006
-+++ sshd_config	Sat Sep 30 21:52:31 2006
-@@ -34,7 +34,7 @@
+--- sshd_config.orig	2008-07-02 20:35:43.000000000 +0800
++++ sshd_config	2008-11-07 23:40:56.957018978 +0800
+@@ -38,7 +38,7 @@
  # Authentication:
  
  #LoginGraceTime 2m
@@ -8,8 +8,8 @@
 +#PermitRootLogin no
  #StrictModes yes
  #MaxAuthTries 6
- 
-@@ -52,11 +52,11 @@
+ #MaxSessions 10
+@@ -57,11 +57,11 @@
  # Don't read the user's ~/.rhosts and ~/.shosts files
  #IgnoreRhosts yes
  
@@ -24,7 +24,7 @@
  #ChallengeResponseAuthentication yes
  
  # Kerberos options
-@@ -69,7 +69,7 @@
+@@ -74,7 +74,7 @@
  #GSSAPIAuthentication no
  #GSSAPICleanupCredentials yes
  
@@ -33,13 +33,14 @@
  # and session processing. If this is enabled, PAM authentication will 
  # be allowed through the ChallengeResponseAuthentication and
  # PasswordAuthentication.  Depending on your PAM configuration,
-@@ -78,11 +78,11 @@
+@@ -83,12 +83,12 @@
  # If you just want the PAM account and session checks to run without
  # PAM authentication, then enable this but set PasswordAuthentication
  # and ChallengeResponseAuthentication to 'no'.
 -#UsePAM no
 +#UsePAM yes
  
+ #AllowAgentForwarding yes
  #AllowTcpForwarding yes
  #GatewayPorts no
 -#X11Forwarding no

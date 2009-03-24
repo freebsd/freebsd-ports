@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssh
-DISTVERSION=	5.0p1
+DISTVERSION=	5.1p1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 .if defined(OPENSSH_SNAPSHOT)
@@ -33,7 +33,7 @@ WRKSRC=			${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAN1=	sftp.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh-keyscan.1 scp.1 ssh.1
 MLINKS=	ssh.1 slogin.1
-MAN5=	ssh_config.5 sshd_config.5
+MAN5=	moduli.5 ssh_config.5 sshd_config.5
 MAN8=	sftp-server.8 sshd.8 ssh-keysign.8
 
 CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.*
@@ -142,7 +142,7 @@ BROKEN=			HPN and LPK patches are incompatible
 .if defined(WITH_HPN)
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
-PATCHFILES+=		openssh-5.0p1-hpn13v3.diff.gz
+PATCHFILES+=		openssh-5.1p1-hpn13v5.diff.gz
 .endif
 
 # See http://dev.inversepath.com/trac/openssh-lpk

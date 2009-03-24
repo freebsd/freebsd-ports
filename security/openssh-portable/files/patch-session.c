@@ -1,6 +1,6 @@
---- session.c.orig	2008-03-26 21:03:05.000000000 -0300
-+++ session.c	2008-04-07 21:57:52.000000000 -0300
-@@ -776,6 +776,24 @@
+--- session.c.orig	2008-11-07 09:06:00.463747629 +0800
++++ session.c	2008-11-07 23:35:15.063890103 +0800
+@@ -884,6 +884,24 @@
  {
  	FILE *f;
  	char buf[256];
@@ -25,7 +25,7 @@
  
  	if (options.print_motd) {
  #ifdef HAVE_LOGIN_CAP
-@@ -1005,6 +1023,9 @@
+@@ -1113,6 +1131,9 @@
  	struct passwd *pw = s->pw;
  #ifndef HAVE_LOGIN_CAP
  	char *path = NULL;
@@ -35,7 +35,7 @@
  #endif
  
  	/* Initialize the environment. */
-@@ -1026,6 +1047,9 @@
+@@ -1134,6 +1155,9 @@
  	}
  #endif
  
@@ -45,7 +45,7 @@
  #ifdef GSSAPI
  	/* Allow any GSSAPI methods that we've used to alter
  	 * the childs environment as they see fit
-@@ -1045,11 +1069,22 @@
+@@ -1153,11 +1177,22 @@
  		child_set_env(&env, &envsize, "LOGIN", pw->pw_name);
  #endif
  		child_set_env(&env, &envsize, "HOME", pw->pw_dir);
@@ -72,7 +72,7 @@
  #else /* HAVE_LOGIN_CAP */
  # ifndef HAVE_CYGWIN
  		/*
-@@ -1070,15 +1105,9 @@
+@@ -1178,15 +1213,9 @@
  # endif /* HAVE_CYGWIN */
  #endif /* HAVE_LOGIN_CAP */
  
@@ -88,7 +88,7 @@
  
  	/* Set custom environment options from RSA authentication. */
  	if (!options.use_login) {
-@@ -1344,6 +1373,9 @@
+@@ -1452,6 +1481,9 @@
  void
  do_setusercontext(struct passwd *pw)
  {
@@ -98,7 +98,7 @@
  	char *chroot_path, *tmp;
  
  #ifdef WITH_SELINUX
-@@ -1369,8 +1401,25 @@
+@@ -1477,8 +1509,25 @@
  			do_pam_setcred(use_privsep);
  		}
  # endif /* USE_PAM */
@@ -125,33 +125,24 @@
  			perror("unable to set user context");
  			exit(1);
  		}
-@@ -1540,6 +1589,9 @@
- 	char *argv[ARGV_MAX];
- 	const char *shell, *shell0, *hostname = NULL;
- 	struct passwd *pw = s->pw;
-+#ifdef HAVE_LOGIN_CAP
-+	int lc_requirehome;
-+#endif
- 
- 	/* remove hostkey from the child's memory */
- 	destroy_sensitive_data();
-@@ -1627,6 +1679,10 @@
+@@ -1736,6 +1785,10 @@
  	 */
  	environ = env;
  
 +#ifdef HAVE_LOGIN_CAP
-+	lc_requirehome = login_getcapbool(lc, "requirehome", 0);
++	r = login_getcapbool(lc, "requirehome", 0);
 +	login_close(lc);
 +#endif
  #if defined(KRB5) && defined(USE_AFS)
  	/*
  	 * At this point, we check to see if AFS is active and if we have
-@@ -1658,7 +1714,7 @@
- 		fprintf(stderr, "Could not chdir to home directory %s: %s\n",
- 		    pw->pw_dir, strerror(errno));
- #ifdef HAVE_LOGIN_CAP
--		if (login_getcapbool(lc, "requirehome", 0))
-+		if (lc_requirehome)
- 			exit(1);
- #endif
- 	}
+@@ -1765,9 +1818,6 @@
+ 	/* Change current directory to the user's home directory. */
+ 	if (chdir(pw->pw_dir) < 0) {
+ 		/* Suppress missing homedir warning for chroot case */
+-#ifdef HAVE_LOGIN_CAP
+-		r = login_getcapbool(lc, "requirehome", 0);
+-#endif
+ 		if (r || options.chroot_directory == NULL)
+ 			fprintf(stderr, "Could not chdir to home "
+ 			    "directory %s: %s\n", pw->pw_dir,
