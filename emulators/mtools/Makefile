@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mtools
-PORTVERSION=	4.0.5
+PORTVERSION=	4.0.10
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://mtools.linux.lu/
-MASTER_SITE_SUBDIR=	utils/disk-management
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	mtools
 
 MAINTAINER=	skreuzer@exit2shell.com
 COMMENT=	A collection of tools for manipulating MSDOS files
