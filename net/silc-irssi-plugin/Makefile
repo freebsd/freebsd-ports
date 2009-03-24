@@ -15,6 +15,8 @@ MASTERDIR=	${.CURDIR}/../silc-client
 PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${.CURDIR}/pkg-descr
 
+CONFLICTS=	silc-toolkit-1.1.* silc-client-1.1.*
+
 IRSSI_PLUGIN=	-irssi
 
 .include "${MASTERDIR}/Makefile"

@@ -7,6 +7,7 @@
 
 PORTNAME=	silc
 PORTVERSION=	1.1.7
+PORTREVISION=	1
 CATEGORIES=	net ipv6 security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
@@ -26,6 +27,8 @@ DISTNAME=	${PORTNAME}-client-${PORTVERSION}
 
 MAINTAINER?=	wxs@FreeBSD.org
 COMMENT=	Secure Internet Live Conferencing (SILC) network client
+
+CONFLICTS=	silc-toolkit-1.1.* silc-irssi-plugin-1.1.*
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
