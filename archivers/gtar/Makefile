@@ -25,6 +25,7 @@ USE_AUTOTOOLS=	autoconf:262:env	# autom4te
 USE_BZIP2=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 		LDFLAGS='-L${LOCALBASE}/lib ${LDSTATIC}' \
