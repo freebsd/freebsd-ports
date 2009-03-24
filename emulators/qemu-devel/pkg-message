@@ -34,12 +34,14 @@ in this message: http://docs.freebsd.org/cgi/mid.cgi?200510131428.21211.jkim
 really match the emulated nic exactly, it just `happens' to work with
 6.0-RC1's driver.)
 - if you want to use usb devices connected to the host in the guest
-(usb_add host:... monitor command) you need to make sure the host isn't
-claiming them, e.g. for umass devices (like memory sticks or external
-harddrives) make sure umass isn't in the kernel (you can then still load it
-as a kld when needed), also unless you are running qemu as root you then
-need to fix permissions for /dev/ugen* device nodes: if you are on 5.x or
-later (devfs) put a rule in /etc/devfs.rules, activate it in /etc/rc.conf
+(usb_add host:... monitor command; this doesn't work on -current atm
+because of the new usb stack - help updating the usb-bsd.c code is
+more than welcome here!) you need to make sure the host isn't claiming
+them, e.g. for umass devices (like memory sticks or external harddrives)
+make sure umass isn't in the kernel (you can then still load it as a kld
+when needed), also unless you are running qemu as root you then need to
+fix permissions for /dev/ugen* device nodes: if you are on 5.x or later
+(devfs) put a rule in /etc/devfs.rules, activate it in /etc/rc.conf
 and run /etc/rc.d/devfs restart.  example devfs.rules:
 	[ugen_ruleset=20]
 	add path 'ugen*' mode 660 group operator
@@ -74,9 +76,10 @@ you please use tuntap for now.  Scott Robbins posted a tap howto for
 and one for 6 and 5(?) is here:
 	http://acidos.bandwidth-junkies.net/index.php?Sect=qemu
 - perhaps it should be noted that if you want to use qemu with -m 512
-or larger on i386 hosts you need to increase the kern.maxdsiz tunable
+or larger on 6.x/i386 hosts you need to increase the kern.maxdsiz tunable
 in loader.conf(5) since the default is 512 MB, and qemu needs memory for
-itself also.
+itself also.  (7.0 and up now use jemalloc which uses mmap(2) and
+isn't affected by kern.maxdsiz anymore.)
 - if you use kqemu make sure your kqemu.ko is always in sync with your
 kernel (like with any kld installed outside of base), i.e.  rebuild its
 port whenever you update the kernel - especially if you are switching
@@ -110,9 +113,34 @@ note however that kqemu now can also be used with the 32 bit qemu even
 on amd64 hosts as of the 20080620 update.)
 - the new (optional) pcap code cannot talk to the host on 6.x because
 the necessary bpf feature (BIOCFEEDBACK) hasn't (yet?) been merged there.
+- kqemu passes the host tsc to the guest as-is so depending on your cpu and
+guest you _may_ need to tell the guest to avoid relying on the tsc (notsc
+kernel parameter with linux), or if that doesn't work force qemu onto
+a single cpu by doing e.g. `cpuset -l 0 qemu ..' (see the cpuset(1) manpage
+for details; cpuset isn't avalable before 7.1.  This can only be a problem
+on smp hosts.)
+- the new sparc64-bsd-user target (qemu-sparc64) is entirely untested and
+probably only works on amd64 hosts, if at all.
+- (not FreeBSD-specific:) there have been reports of qcow2 corruption with
+(at least) win2k guests on recent kvm (which uses similar qcow2 code than
+qemu now, see this thread:
+	http://lists.gnu.org/archive/html/qemu-devel/2009-02/msg00713.html -
+the consensus on that thread seems to be that qcow(2) code has always
+been experimental and you should use raw images if you want reliability;
+raw is also usually faster.)  You should be able to migrate existing images
+to raw using qemu-img(1)'s convert function; raw doesn't support advanced
+features like snapshots tho.
+- (also not FreeBSD-specific:)  It is recommended to pass raw images using
+the new -drive syntax, specifying format=raw explicitly in order to avoid
+malicious guests being able to exploit the format autodetection thats
+otherwise getting used.  (Not that you should run malicious guests anyway,
+but this eleminates at least a known attack vector.)
 - qemu now uses aio at least for ide dma, so if you get `Invalid system call'
 crashes that is because aio is not (kld)loaded.
 - The default configuration location (qemu-ifup script etc.) has been
 changed from /etc to PREFIX/etc (usually /usr/local/etc).  Move your
 files accordingly.
+- *** This port (qemu-devel) is currently at an older version
+(0.9.1s.20080620) than the main port (qemu), so probably should only be
+used if there are specific problems with the latter. ***
 ====
