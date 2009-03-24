@@ -24,6 +24,17 @@
 @unexec if cmp -s %D/%%PORTNAME%%/etc/ossec.conf %D/%%PORTNAME%%/etc/ossec.conf.sample; then rm -f %D/%%PORTNAME%%/etc/ossec.conf; fi
 %%PORTNAME%%/etc/ossec.conf.sample
 %%PORTNAME%%/logs/ossec.log
+%%PORTNAME%%/agentless/main.exp
+%%PORTNAME%%/agentless/sshlogin.exp
+%%PORTNAME%%/agentless/ssh_pixconfig_diff
+%%PORTNAME%%/agentless/ssh_nopass.exp
+%%PORTNAME%%/agentless/ssh_integrity_check_linux
+%%PORTNAME%%/agentless/ssh_integrity_check_bsd
+%%PORTNAME%%/agentless/ssh_generic_diff
+%%PORTNAME%%/agentless/ssh.exp
+%%PORTNAME%%/agentless/register_host.sh
+%%PORTNAME%%/agentless/su.exp
+@dirrmtry %%PORTNAME%%/agentless
 @dirrmtry %%PORTNAME%%/active-response/bin/firewalls
 @dirrmtry %%PORTNAME%%/active-response/bin
 @dirrmtry %%PORTNAME%%/active-response
@@ -38,4 +49,5 @@
 @dirrmtry %%PORTNAME%%/queue
 @dirrmtry %%PORTNAME%%/logs
 @dirrmtry %%PORTNAME%%/bin
+@dirrmtry %%PORTNAME%%/.ssh
 @dirrmtry %%PORTNAME%%
