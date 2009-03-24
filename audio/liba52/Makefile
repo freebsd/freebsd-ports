@@ -17,6 +17,7 @@ COMMENT=	A free library for decoding ATSC A/52 streams, aka AC-3
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-oss --enable-shared
 USE_LDCONFIG=	yes
