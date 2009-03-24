@@ -1,0 +1,23 @@
+--- configure.in.orig	2008-12-29 19:13:00.000000000 -0500
++++ configure.in	2008-12-29 19:16:35.000000000 -0500
+@@ -205,16 +205,16 @@
+ if test "$enable_debug" = "no"; then
+ 	if test "x$GCC" = "xyes"; then
+ 		AC_MSG_WARN(Removing debugging option!)
+-		CFLAGS="$ext_CFLAGS -O2 -Wall -s"
++		CFLAGS+="$ext_CFLAGS -O2 -Wall -s"
+ 	else
+ 		AC_MSG_WARN(Removing debugging option!)
+-		CFLAGS="$ext_CFLAGS -O2"
++		CFLAGS+="$ext_CFLAGS -O2"
+ 	fi
+ else
+ 	if test "x$GCC" = "xyes"; then
+-		CFLAGS="$ext_CFLAGS -g -O0 -Wall"
++		CFLAGS+="$ext_CFLAGS -g -O0 -Wall"
+ 	else
+-		CFLAGS="$ext_CFLAGS -g"
++		CFLAGS+="$ext_CFLAGS -g"
+ 	fi
+ fi
+ 

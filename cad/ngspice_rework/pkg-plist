@@ -1,17 +1,14 @@
-bin/makeidx
-bin/nghelp
+bin/ngmakeidx
 bin/ngmultidec
 bin/ngnutmeg
 bin/ngproc2mod
 bin/ngsconvert
 bin/ngspice
-lib/ng-spice-rework/libbsim4.a
 share/ng-spice-rework/helpdir/ngspice.idx
 share/ng-spice-rework/helpdir/ngspice.txt
 share/ng-spice-rework/scripts/setplot
 share/ng-spice-rework/scripts/spectrum
 share/ng-spice-rework/scripts/spinit
-@dirrm lib/ng-spice-rework
 @dirrm share/ng-spice-rework/helpdir
 @dirrm share/ng-spice-rework/scripts
 @dirrm share/ng-spice-rework
