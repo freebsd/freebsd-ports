@@ -3,6 +3,7 @@ bin/innochecksum
 bin/maria_chk
 bin/maria_dump_log
 bin/maria_ftdump
+bin/maria_non_trans_log
 bin/maria_pack
 bin/maria_read_log
 bin/my_print_defaults
