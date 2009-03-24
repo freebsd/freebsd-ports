@@ -7,6 +7,7 @@
 
 PORTNAME=	wmfs
 DISTVERSION=	0.1rc4
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://files.malikania.org/ \
 		http://mirror.mcx2.org/

@@ -7,6 +7,7 @@
 
 PORTNAME=	irssi-otr
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://download.tuxfamily.org/${MASTER_SITE_SUBDIR}/
 MASTER_SITE_SUBDIR=	irssiotr

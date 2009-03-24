@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk-qt4-engine
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://gtk-qt.ecs.soton.ac.uk/files/${PORTVERSION}/
 DISTFILES=	gtk-qt-engine-${PORTVERSION}

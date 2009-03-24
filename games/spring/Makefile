@@ -7,7 +7,7 @@
 
 PORTNAME=	spring
 PORTVERSION=	0.77b5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://spring.clan-sy.com/dl/ \
 		http://mirror.amdmi3.ru/

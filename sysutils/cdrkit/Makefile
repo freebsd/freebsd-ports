@@ -7,6 +7,7 @@
 
 PORTNAME=	cdrkit
 PORTVERSION=	1.1.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cdrkit.org/releases/ \
 		http://debburn.alioth.debian.org/

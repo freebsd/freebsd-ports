@@ -7,6 +7,7 @@
 
 PORTNAME=	cgal
 PORTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://gforge.inria.fr/frs/download.php/15692/
 DISTNAME=	CGAL-${PORTVERSION}

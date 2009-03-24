@@ -7,6 +7,7 @@
 
 PORTNAME=	qdevelop
 PORTVERSION=	0.26.1
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	http://qdevelop.org/public/release/
 
