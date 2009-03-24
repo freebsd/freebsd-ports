@@ -9,7 +9,7 @@ PORTNAME=	Date_Holidays_Sweden
 PORTVERSION=	0.1.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Driver based class to calculate holidays in Sweden
 
 BUILD_DEPENDS=	${PEARDIR}/Date/Holidays.php:${PORTSDIR}/devel/pear-Date_Holidays
