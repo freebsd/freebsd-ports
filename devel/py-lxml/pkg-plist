@@ -254,7 +254,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.html.builder-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/index.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.CheckboxValues-class.html
-%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_xmlschema.ETreeXMLSchemaTestCase.simple_resolver-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.tests.test_xslt-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.soupparser-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.diff-module.html
@@ -430,6 +429,24 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree.FallbackElementClassLookup-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.builder-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree.PyErrorLog-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_threading.ThreadPipelineTestCase.ParseWorker-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_threading.ThreadPipelineTestCase.ParseAndExtendWorker-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_threading.ThreadPipelineTestCase.SerialiseWorker-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_threading.ThreadPipelineTestCase.RotateWorker-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_threading.ThreadPipelineTestCase-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_xmlschema.ETreeXMLSchemaResolversTestCase.simple_resolver-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._XSLTQuotedStringParam-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_threading.ThreadPipelineTestCase.ReverseWorker-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.html.html5parser-module.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_threading.ThreadPipelineTestCase.Worker-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_etree.ETreeWriteTestCase-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.html5parser-pysrc.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_xmlschema.ETreeXMLSchemaResolversTestCase-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.html5parser.HTMLParser-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.html5parser-module.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree.SerialisationError-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.html5parser.XHTMLParser-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/changes-2.2.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/intro.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/style.css
@@ -447,7 +464,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/resolvers.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/validation.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/installation.html
-%%PORTDOCS%%%%DOCSDIR%%/doc/html/changes-2.1.5.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/cssselect.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/sax.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/xpathxslt.html
@@ -459,6 +475,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/tagpython.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/lxml-source-howto.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/pubkey.asc
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/proxies.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/html5parser.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/licenses/BSD.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/licenses/GPL.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/licenses/ZopePublicLicense.txt
@@ -495,6 +513,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/validation.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/valgrind.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/html5parser.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/s5/ep2008
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/s5/ui/default
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/s5/ui
@@ -527,6 +546,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/ElementInclude.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/objectify.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/objectify.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html/_html5builder.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html/_html5builder.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html/_html5builder.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html/clean.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html/_diffcommand.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html/_dictmixin.py
@@ -563,6 +585,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html/formfill.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html/diff.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html/_setmixin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html/html5parser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html/html5parser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html/html5parser.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/doctestcompare.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/cssselect.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/sax.pyo
