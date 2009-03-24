@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	omni-bot
-PORTVERSION=	0.710
+PORTVERSION=	0.660
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
@@ -17,6 +17,8 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Omni-Bot is a bot for Enemy Territory
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
+
+CONFLICTS=	linux-enemyterritory-omni-bot-0.[7-9]*
 
 USE_ZIP=	yes
 USE_LINUX=	yes
@@ -37,12 +39,16 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME} ${PREFIX}/bin
 .endfor
 	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/omni-bot/* ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/omni-bot/omnibot_et.so ${DATADIR}
+	cd ${WRKSRC}/omni-bot && ${CP} -R et global_scripts ${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/omnibot/qagame.mp.i386.so ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/omnibot/omnibot_et.pk3 ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
+.   for f in *.txt omni-bot/*.txt
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.   endfor
+	${CP} -R ${WRKSRC}/omni-bot/docs ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

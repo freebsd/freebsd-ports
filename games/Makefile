@@ -451,6 +451,7 @@
     SUBDIR += linux-enemyterritory-fortress
     SUBDIR += linux-enemyterritory-jaymod
     SUBDIR += linux-enemyterritory-omni-bot
+    SUBDIR += linux-enemyterritory-omni-bot-0660
     SUBDIR += linux-enemyterritory-shrub
     SUBDIR += linux-enemyterritory-tce
     SUBDIR += linux-etqw-demo-server
