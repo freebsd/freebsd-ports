@@ -6,19 +6,12 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.5.0-5
+DISTVERSION=	6.5.0-7
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		${MASTER_SITE_SOURCEFORGE} \
-		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
-		ftp://ftp.carnet.hr/misc/imagemagick/ \
-		ftp://ftp.fu-berlin.de/unix/X11/graphics/ImageMagick/ \
-		ftp://ftp.kddlabs.co.jp/graphics/ImageMagick/ \
-		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/ImageMagick/imagemagick.org/ \
-		ftp://zoffy.asahi-net.or.jp/pub/graphics/ImageMagick/ \
 		ftp://ftp.nluug.nl/pub/ImageMagick/ \
-		ftp://ftp.sunet.se/pub/multimedia/graphics/ImageMagick/ \
-		ftp://ftp.fifi.org/pub/ImageMagick/
+		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/
 MASTER_SITE_SUBDIR=	imagemagick
 
 MAINTAINER=	mm@FreeBSD.org
