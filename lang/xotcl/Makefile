@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xotcl
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.6.3
 CATEGORIES?=	lang tcl
 MASTER_SITES=	SF \
 		http://media.wu-wien.ac.at/download/
