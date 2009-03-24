@@ -1,0 +1,14 @@
+--- src/xspice/icm/Makefile.orig	2008-12-29 15:47:40.000000000 -0500
++++ src/xspice/icm/Makefile	2008-12-29 15:48:36.000000000 -0500
+@@ -12,9 +12,9 @@
+ -include .deps/cm.P
+ -include .deps/dlmain.P
+ 
+-UPMAKE = make -f $(TOPDIR)../Makefile TOPDIR=$(TOPDIR)../
++UPMAKE = gmake -f $(TOPDIR)../Makefile TOPDIR=$(TOPDIR)../
+ 
+-MAKE = make -f $(TOPDIR)Makefile TOPDIR=$(TOPDIR)
++MAKE = gmake -f $(TOPDIR)Makefile TOPDIR=$(TOPDIR)
+ 
+ COMPILE = $(CC) $(INCLUDES) $(CFLAGS)
+ 
