@@ -1,0 +1,11 @@
+This program is to download multimedia streaming files.
+Currently it supports following protocols.
+
+* mmst      (Microsoft Media Server over TCP)
+* mmsh      (MMS over HTTP)
+* http      (Hyper Text Transfer Protocol)
+* real-rtsp (Real Time Streaming Protocol / Real/helix)
+* wms-rtsp  (Real Time Streaming Protocol / WMServer)
+* ftp       (File Transfer Protocol)
+
+WWW:	http://msdl.sourceforge.net/
