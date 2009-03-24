@@ -4,3 +4,6 @@ SIZE (openssh-5.1p1.tar.gz) = 1040041
 MD5 (openssh-5.1p1-hpn13v5.diff.gz) = 614f2cc34817bb9460e3b700be21b94b
 SHA256 (openssh-5.1p1-hpn13v5.diff.gz) = 81bebd71fb0aa8a265c0576aa3c42c0fdf263712db771f12d35c8aff09523aab
 SIZE (openssh-5.1p1-hpn13v5.diff.gz) = 23017
+MD5 (openssh-5.1p1+x509-6.1.1.diff.gz) = 9be4b5f1104e51333199423802e97fe7
+SHA256 (openssh-5.1p1+x509-6.1.1.diff.gz) = 2821d8fe003337569d6551fd26a387f53b4adc9b59f2b0131659936e11966eb3
+SIZE (openssh-5.1p1+x509-6.1.1.diff.gz) = 152642

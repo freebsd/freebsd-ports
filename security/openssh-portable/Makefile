@@ -63,6 +63,7 @@ OPTIONS=	PAM		"Enable pam(3) support"				on \
 		OPENSCPINPATCH	"Enable OpenSC PIN patch"			off \
 		HPN		"Enable HPN-SSH patch"				off \
 		LPK		"Enable LDAP Public Key (LPK) patch"		off \
+		X509		"Enable x509 certificate patch"			off \
 		OVERWRITE_BASE	"OpenSSH overwrite base"			off
 
 .include <bsd.port.pre.mk>
@@ -155,6 +156,13 @@ USE_OPENLDAP=		yes
 CPPFLAGS+=		"-I${LOCALBASE}/include -DWITH_LDAP_PUBKEY"
 CONFIGURE_ARGS+=	--with-libs='-lldap' --with-ldflags='-L${LOCALBASE}/lib' \
 			--with-cppflags='-I${LOCALBASE}/include -DWITH_LDAP_PUBKEY'
+.endif
+
+# See http://www.roumenpetrov.info/openssh/
+.if defined(WITH_X509)
+PATCH_DIST_STRIP=	-p1
+PATCH_SITES+=		http://www.roumenpetrov.info/openssh/x509-6.1.1/
+PATCHFILES+=		openssh-5.1p1+x509-6.1.1.diff.gz
 .endif
 
 .if defined(WITH_OVERWRITE_BASE)
