@@ -1,0 +1,25 @@
+--- dis/lib/Makefile.in.orig	1998-12-23 23:35:29.000000000 +0100
++++ dis/lib/Makefile.in	2009-03-24 14:16:10.000000000 +0100
+@@ -63,8 +63,10 @@
+ 	$(AR) $(ARFLAGS) $@ $(OBJS)
+ 	$(RANLIB) $@
+ 
+-../dis/disp.h dis_xdr.c: dis.x
++dis.h: dis.x
+ 	$(DISGEN) $(srcdir)/dis.x
++
++../dis/disp.h dis_xdr.c: dis.h
+ 	mv dis.h ../dis/disp.h
+ 	mv dis_xdr.c tmp.c
+ 	perl -p -e 's/\#include "dis.h"/#include <disp.h>/' <tmp.c >dis_xdr.c
+@@ -84,9 +86,7 @@
+ 	perl -p -e 's/\#include .*simmgr.*$$/#include "simmgr.h"/' <tmp.c >$@
+ 	rm -f tmp.c
+ 
+-dis_xdr.o: ../dis/dis_xdr.h
+-
+-datum_table.o: datumtbl.h
++$(OBJS): ../dis/dis_xdr.h ../dis/disp.h datumtbl.h
+ 
+ datumtbl.h: datumtbl.pl
+ 	$(PERL) $(srcdir)/datumtbl.pl <$(srcdir)/../dis/datum.h >datumtbl.h
