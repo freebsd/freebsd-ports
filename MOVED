@@ -3881,3 +3881,4 @@ x11-toolkits/inti||2009-03-23|Has expired: not maintain by upstream for more tha
 mbone/nte||2009-03-23|Has expired: tcl8.0 support is going to be dropped
 mbone/relate||2009-03-23|Has expired: tcl8.0 support is going to be dropped
 mbone/wbd||2009-03-23|Has expired: tcl8.0 support is going to be dropped
+comms/plp||2009-03-24|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
