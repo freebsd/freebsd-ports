@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Apr 15 18:05:15 1999
-+++ Makefile	Tue Feb 14 16:19:17 2006
+--- Makefile.orig	1999-04-15 18:05:15.000000000 +0200
++++ Makefile	2009-03-24 13:47:15.000000000 +0100
 @@ -1,9 +1,9 @@
  SHELL=/bin/sh
  CC = gcc
@@ -36,7 +36,15 @@
  
  
  
-@@ -111,7 +111,7 @@
+@@ -99,6 +99,7 @@
+ 
+ version.o : version.h
+ 
++custom.o: custom.c version.h
+ 
+ version.h : FORCE	
+ 	@echo "/* this header is automatically generated */" > version.h
+@@ -111,7 +112,7 @@
  	@echo "#define COMPILE_TIME \"`date +%T`\"" >> version.h
  	@echo "#define COMPILE_BY \"`whoami`\"" >> version.h
  	@echo "#define COMPILE_HOST \"`hostname`\"" >> version.h
