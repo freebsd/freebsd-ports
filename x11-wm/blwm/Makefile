@@ -10,14 +10,13 @@ PORTVERSION=	1.0.4
 PORTREVISION=	3
 CATEGORIES=	x11-wm portuguese
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	trevor
+MASTER_SITE_SUBDIR=	arved
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portuguese derivative of qvwm, simplified to conserve resources
 
 RUN_DEPENDS=	xsetbg:${PORTSDIR}/x11/xloadimage
 
-USE_PERL5_BUILD=yes
 MAN1=		blwm.1x
 PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
@@ -26,9 +25,10 @@ USE_XORG=	x11 ice sm xext xpm
 DOCS=		AUTHORS BUGS COPYING CREDITS FreeBSD INSTALAR LEIAME TODO
 
 post-patch:
-	${PERL} -pi -e "s:wmsetbg:xsetbg:g ; \
+	${REINPLACE_CMD} -e "s:wmsetbg:xsetbg:g ; \
 		s:/usr/local/lib/blwm:${PREFIX}/lib/blwm:g" \
 		${WRKSRC}/rc/*
+	${REINPLACE_CMD} -e "s,^MAKE,#MAKE," ${WRKSRC}/Makefile.std
 
 pre-install:
 	${ECHO_CMD} bin/blwm > ${PLIST}
