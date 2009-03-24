@@ -36,6 +36,10 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800069
+CONFIGURE_ARGS+=--enable-usb
+.endif
+
 .if defined(WITH_PCSC)
 LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 CONFIGURE_ARGS+=--enable-pcsc
