@@ -99,7 +99,6 @@ bin/last.fm
 %%DATADIR%%/data/wizard_mac.png
 %%DATADIR%%/last.fm
 %%DATADIR%%/last.fm.app
-%%DATADIR%%/last.fm.bak
 %%DATADIR%%/libLastFmTools.so
 %%DATADIR%%/libLastFmTools.so.1
 %%DATADIR%%/libLastFmTools.so.1.0
