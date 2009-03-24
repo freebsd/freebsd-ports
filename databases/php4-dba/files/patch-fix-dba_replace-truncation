@@ -1,0 +1,17 @@
+Patch that fixes dba_replace() file truncation issue
+
+Adopted from: http://cvs.php.net/viewvc.cgi/php-src/ext/dba/libinifile/inifile.c?r1=1.14.2.1.2.5&r2=1.14.2.1.2.4&view=patch
+
+--- libinifile/inifile.c	2007/12/31 07:20:05	1.14.2.1.2.4
++++ libinifile/inifile.c	2008/11/13 18:22:23	1.14.2.1.2.5
+@@ -508,7 +508,9 @@
+ 	
+ 	/* 5 */
+ 	if (ret == SUCCESS) {
+-		ret = inifile_truncate(dba, append ? pos_grp_next : pos_grp_start TSRMLS_CC); /* writes error on fail */
++		if (!value || (key->name && strlen(key->name))) {
++			ret = inifile_truncate(dba, append ? pos_grp_next : pos_grp_start TSRMLS_CC); /* writes error on fail */
++		}
+ 	}
+ 
+ 	if (ret == SUCCESS) {
