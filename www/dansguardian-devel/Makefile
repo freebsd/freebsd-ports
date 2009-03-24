@@ -38,7 +38,6 @@ OPTIONS=	DG_APACHE  "Enable Apache support for access denied page" on \
 		DG_TRICKLE "Enable the trickle download manager" on \
 		DG_CLISCAN "Enable support for CLI content scanners" off \
 		DG_CLAMD   "Enable ClamAV daemon support (clamd)" off \
-		DG_CLAMAV  "Enable ClamAV library support (libclamav)" off \
 		DG_ICAP    "Enable ICAP AV content scanner support (testing)" off \
 		DG_KASP    "Enable Kaspersky AV support (testing)" off \
 		DG_NTLM    "Enable NTLM authentication plugin" off \
@@ -73,14 +72,6 @@ PLIST_SUB+=		CLISCANCONF=""
 PLIST_SUB+=		CLISCANCONF="@comment "
 .endif
 
-.if defined(WITH_DG_CLAMAV)
-CONFIGURE_ARGS+=	--enable-clamav
-LIB_DEPENDS+=		clamav.5:${PORTSDIR}/security/clamav
-PLIST_SUB+=		CLAMAVCONF=""
-.else
-PLIST_SUB+=		CLAMAVCONF="@comment "
-.endif
-
 .if defined(WITH_DG_CLAMD)
 CONFIGURE_ARGS+=	--enable-clamd
 RUN_DEPENDS+=		${LOCALBASE}/sbin/clamd:${PORTSDIR}/security/clamav
@@ -103,7 +94,7 @@ PLIST_SUB+=		KAVDCONF=""
 PLIST_SUB+=		KAVDCONF="@comment "
 .endif
 
-.if defined(WITH_DG_CLAMD) || defined(WITH_DG_CLAMAV) || defined(WITH_DG_ICAP) || defined(WITH_DG_KASP) || defined(WITH_CLISCANCONF)
+.if defined(WITH_DG_CLAMD) || defined(WITH_DG_ICAP) || defined(WITH_DG_KASP) || defined(WITH_CLISCANCONF)
 PLIST_SUB+=		SCANNERS=""
 .else
 PLIST_SUB+=		SCANNERS="@comment "
