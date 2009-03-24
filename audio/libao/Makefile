@@ -19,6 +19,7 @@ WANT_GNOME=	yes
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	DOC=""

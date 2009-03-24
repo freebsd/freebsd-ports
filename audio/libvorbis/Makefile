@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	DOC=""
