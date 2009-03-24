@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	confget
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	textproc
 MASTER_SITES=	http://devel.ringlet.net/textproc/confget/
 
@@ -30,7 +30,13 @@ MAKE_ENV+=	CFLAGS_CONF=-DHAVE_FGETLN
 MAN1=		confget.1
 MANCOMPRESSED=	yes
 
-PLIST_FILES=	bin/confget
+.if defined(NOPORTEXAMPLES)
+post-patch:
+		${REINPLACE_CMD} -E -e 's/([^n])install-examples/\1/' \
+			${WRKSRC}/Makefile
+.else
+MAKE_ENV+=	EXAMPLESDIR=${EXAMPLESDIR}
+.endif
 
 test:		build
 		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
