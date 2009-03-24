@@ -180,6 +180,7 @@
     SUBDIR += mplayer-skins
     SUBDIR += mplayerxp
     SUBDIR += mplex
+    SUBDIR += msdl
     SUBDIR += mythtv
     SUBDIR += mythtv-frontend
     SUBDIR += mythtv-themes
