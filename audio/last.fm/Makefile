@@ -7,7 +7,7 @@
 
 PORTNAME=	last.fm
 PORTVERSION=	1.3.2.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio net
 MASTER_SITES=	http://cdn.last.fm/client/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -37,17 +37,16 @@ post-patch:
 			-E -e 's|(.*"CONFIG-=debug")|\1 ${QMAKEFLAGS}|g' \
 			-e 's|function header|header()|g' \
 			-e 's|function middle|middle()|g' \
+			-e 's|-pthread|-pthread -R/usr/local/share/last.fm|g' \
 		${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|linux\*|unix|g' ${WRKSRC}/src/src.pro
 
 post-build:
 	cd ${WRKSRC}/src/output/RtAudio && \
 	${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} && make
-	${REINPLACE_CMD} -e 's|`dirname $$0`|${DATADIR}|g' \
-		${WRKSRC}/bin/last.fm
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/last.fm ${PREFIX}/bin/last.fm
+	${INSTALL_SCRIPT} ${FILESDIR}/last.fm ${PREFIX}/bin/last.fm
 	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/services
 	${INSTALL_DATA} ${FILESDIR}/last.fm.desktop ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FILESDIR}/lastfm.protocol ${PREFIX}/share/services

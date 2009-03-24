@@ -1,0 +1,13 @@
+#!/bin/sh
+# executes all *nix variants of Last.fm executable --mxcl
+
+RUNDIR=/usr/local/share/last.fm
+LD_LIBRARY_PATH=$RUNDIR; export LD_LIBRARY_PATH
+
+if [ -f $RUNDIR/last.fm.app ]; then
+    exec $RUNDIR/last.fm.app $*
+elif [ -f $RUNDIR/last.fm.app_debug ]; then
+    exec $RUNDIR/last.fm.app_debug $*
+elif [ -d $RUNDIR/Last.fm.app ]; then
+    exec $RUNDIR/Last.fm_debug $*
+fi
