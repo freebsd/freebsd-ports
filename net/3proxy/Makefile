@@ -27,7 +27,7 @@ RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%CFLAGS%%|${CFLAGS}|" \
-		${WRKDIR}/Makefile.unix
+		${WRKSRC}/Makefile.unix
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/${PORTNAME}
