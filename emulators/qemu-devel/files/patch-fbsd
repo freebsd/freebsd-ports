@@ -7,7 +7,7 @@ Index: qemu/Makefile
 +all: bsd/libmath.a $(TOOLS) $(DOCS) recurse-all
 +
 +bsd/libmath.a:
-+	( cd bsd ; $(BSD_MAKE) CC=$(CC) )
++	( cd bsd ; unset MAKEFLAGS ; $(BSD_MAKE) CC=$(CC) )
  
  subdir-%: dyngen$(EXESUF)
  	$(MAKE) -C $(subst subdir-,,$@) all

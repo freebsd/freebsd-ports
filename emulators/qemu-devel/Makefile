@@ -7,7 +7,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	0.9.1s.20080620
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://bellard.org/qemu/:release \
 		http://qemu-forum.ipi.fi/qemu-snapshots/:snapshot \
@@ -31,6 +31,7 @@ MAKE_ENV+=	BSD_MAKE="${MAKE}" LDFLAGS="${LDFLAGS}"
 MAN1=		qemu.1 qemu-img.1
 ONLY_FOR_ARCHS=	amd64 i386
 CONFLICTS=	qemu-[0-9]*
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	KQEMU "Build with (alpha!) accelerator module" Off \
 		RTL8139_TIMER "allow use of re(4) nic with FreeBSD guests" Off \
