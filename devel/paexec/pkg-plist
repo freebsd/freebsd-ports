@@ -7,6 +7,7 @@ bin/paexec
 %%EXAMPLESDIR%%/all_substr/all_substr_cmd
 %%EXAMPLESDIR%%/all_substr/all_substr_run
 %%EXAMPLESDIR%%/broken_echo/transport_broken_echo
+%%EXAMPLESDIR%%/broken_echo/transport_broken_echo2
 %%EXAMPLESDIR%%/broken_echo/transport_closed_stdin.c
 %%EXAMPLESDIR%%/cc_wrapper/cc_wrapper_cmd
 %%EXAMPLESDIR%%/cc_wrapper/cc_wrapper_run
