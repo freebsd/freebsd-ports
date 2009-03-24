@@ -21,6 +21,8 @@ COMMENT=	The portable OTR Messaging Library and toolkit
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
+MAKE_JOBS_SAFE=	yes
+
 USE_GNOME=	pkgconfig
 USE_AUTOTOOLS=	autoconf:262 libtool:15
 USE_LDCONFIG=	yes

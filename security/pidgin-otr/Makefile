@@ -25,6 +25,8 @@ LIB_DEPENDS=	otr:${PORTSDIR}/security/libotr \
 		gcrypt:${PORTSDIR}/security/libgcrypt \
 		purple:${PORTSDIR}/net-im/libpurple
 
+MAKE_JOBS_SAFE=	yes
+
 USE_GMAKE=	yes
 USE_GNOME=	intltool
 USE_GETTEXT=	yes

@@ -23,6 +23,8 @@ LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 RUN_DEPENDS=	${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:${PORTSDIR}/graphics/wmicons
 
+MAKE_JOBS_SAFE=	yes
+
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig

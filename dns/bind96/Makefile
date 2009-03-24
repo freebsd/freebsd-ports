@@ -27,6 +27,8 @@ COMMENT=	The BIND DNS suite with updated DNSSEC and threads
 # ISC releases things like 9.4.0b3, which our versioning doesn't like
 ISCVERSION=	9.6.0-P1
 
+MAKE_JOBS_SAFE=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--with-randomdev=/dev/random

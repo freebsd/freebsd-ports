@@ -19,6 +19,8 @@ LIB_DEPENDS=	gle.4:${PORTSDIR}/graphics/gle \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		glade-2.0.0:${PORTSDIR}/devel/libglade2
 
+MAKE_JOBS_SAFE=	yes
+
 USE_XORG=	xpm
 USE_GL=		yes
 USE_GMAKE=	yes

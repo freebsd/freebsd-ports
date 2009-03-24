@@ -33,6 +33,8 @@ OPTIONS+=	PICO "Build and install pico, the default editor" on \
 
 USE_BZIP2=	yes
 
+MAKE_JOBS_UNSAFE=	yes
+
 GNU_CONFIGURE=	yes
 
 .if !defined(PICO_ALPINE_SLAVE)
