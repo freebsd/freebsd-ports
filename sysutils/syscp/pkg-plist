@@ -91,6 +91,7 @@
 %%WWWDIR%%/lib/class_syslogger.php
 %%WWWDIR%%/lib/class_ticket.php
 %%WWWDIR%%/lib/configfiles/etch.inc.php
+%%WWWDIR%%/lib/configfiles/freebsd.inc.php
 %%WWWDIR%%/lib/configfiles/gentoo.inc.php
 %%WWWDIR%%/lib/configfiles/hardy.inc.php
 %%WWWDIR%%/lib/configfiles/suse10.inc.php
@@ -380,6 +381,15 @@
 %%WWWDIR%%/templates/misc/configfiles/debian_etch/pure-ftpd/etc_pure-ftpd_conf_NoAnonymous
 %%WWWDIR%%/templates/misc/configfiles/debian_etch/pure-ftpd/etc_pure-ftpd_conf_PAMAuthentication
 %%WWWDIR%%/templates/misc/configfiles/debian_etch/pure-ftpd/etc_pure-ftpd_db_mysql.conf
+%%WWWDIR%%/templates/misc/configfiles/freebsd_release/cron/cron_syscp
+%%WWWDIR%%/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot-sql.conf
+%%WWWDIR%%/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot.conf
+%%WWWDIR%%/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_main.cf
+%%WWWDIR%%/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_master.cf
+%%WWWDIR%%/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_alias_maps.cf
+%%WWWDIR%%/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
+%%WWWDIR%%/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
+%%WWWDIR%%/templates/misc/configfiles/freebsd_release/proftpd/etc_proftpd.conf
 %%WWWDIR%%/templates/misc/configfiles/gentoo/awstats/etc_apache_vhosts_05_awstats.conf
 %%WWWDIR%%/templates/misc/configfiles/gentoo/awstats/etc_awstats_awstats.model.conf.syscp
 %%WWWDIR%%/templates/misc/configfiles/gentoo/awstats/etc_awstats_awstats.model_log_sql.conf.syscp
@@ -508,6 +518,11 @@
 @dirrm %%WWWDIR%%/templates/misc/configfiles/gentoo/bind
 @dirrm %%WWWDIR%%/templates/misc/configfiles/gentoo/awstats
 @dirrm %%WWWDIR%%/templates/misc/configfiles/gentoo
+@dirrm %%WWWDIR%%/templates/misc/configfiles/freebsd_release/proftpd
+@dirrm %%WWWDIR%%/templates/misc/configfiles/freebsd_release/postfix
+@dirrm %%WWWDIR%%/templates/misc/configfiles/freebsd_release/dovecot
+@dirrm %%WWWDIR%%/templates/misc/configfiles/freebsd_release/cron
+@dirrm %%WWWDIR%%/templates/misc/configfiles/freebsd_release
 @dirrm %%WWWDIR%%/templates/misc/configfiles/debian_etch/pure-ftpd
 @dirrm %%WWWDIR%%/templates/misc/configfiles/debian_etch/proftpd
 @dirrm %%WWWDIR%%/templates/misc/configfiles/debian_etch/powerdns
