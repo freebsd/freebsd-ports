@@ -268,11 +268,7 @@ _ZOPE_VERSION=	${_ZOPE_PORTBRANCH} # just to avoid version sanity checking.
 
 ZOPE_VERSION?=	${_ZOPE_VERSION}
 
-.if ${ZOPE_VERSION} == "2.7"
-PYTHON_VERSION=         python2.3
-.else
 PYTHON_VERSION=         python2.4
-.endif
 .endif	# defined(USE_ZOPE)
 
 
