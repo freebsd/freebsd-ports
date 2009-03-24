@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--enable-sse \
 		--disable-thorough-tests \
 		--disable-xmms-plugin
 CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include"
+MAKE_JOBS_SAFE=	yes
 
 .if !defined(WITHOUT_ICONV)
 USE_ICONV=	yes
