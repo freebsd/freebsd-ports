@@ -5,8 +5,6 @@
 %%HAS_BBDB%%%%EMACS_SITE_LISPDIR%%/remember/remember-bbdb.elc
 %%EMACS_SITE_LISPDIR%%/remember/remember-bibl.el
 %%EMACS_SITE_LISPDIR%%/remember/remember-blosxom.el
-%%EMACS_SITE_LISPDIR%%/remember/remember-diary.el
-%%EMACS_SITE_LISPDIR%%/remember/remember-diary.elc
 %%EMACS_SITE_LISPDIR%%/remember/remember-emacs-wiki-journal.el
 %%EMACS_SITE_LISPDIR%%/remember/remember-experimental.el
 %%HAS_PLANNER%%%%EMACS_SITE_LISPDIR%%/remember/remember-experimental.elc
