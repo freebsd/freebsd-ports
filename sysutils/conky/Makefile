@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER?=	novel@FreeBSD.org
+MAINTAINER?=	ntarmos@cs.uoi.gr
 COMMENT?=	An advanced, highly configurable system monitor for X
 
 CONFLICTS?=	conky-awesome-[0-9]*
