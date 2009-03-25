@@ -57,6 +57,7 @@ lib/vile/vile-rpm-filt.so
 lib/vile/vile-rtf-filt.so
 lib/vile/vile-ruby-filt.so
 lib/vile/vile-sccs-filt.so
+lib/vile/vile-scheme-filt.so
 lib/vile/vile-sed-filt.so
 lib/vile/vile-sh-filt.so
 lib/vile/vile-sml-filt.so

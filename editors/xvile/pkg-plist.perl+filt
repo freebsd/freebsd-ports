@@ -61,6 +61,7 @@ lib/xvile/vile-rexx-filt.so
 lib/xvile/vile-rpm-filt.so
 lib/xvile/vile-rtf-filt.so
 lib/xvile/vile-sccs-filt.so
+lib/xvile/vile-scheme-filt.so
 lib/xvile/vile-sh-filt.so
 lib/xvile/vile-sml-filt.so
 lib/xvile/vile-spell-filt.so
