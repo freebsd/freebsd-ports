@@ -3,55 +3,55 @@ bin/vmware-hgfsclient
 bin/vmware-xferlogs
 bin/vmtoolsd
 bin/vmware-toolbox-cmd
+bin/vmware-vmblock-fuse
 etc/vmware-tools/tools.conf
-etc/vmware-tools/plugins/vmsvc/libguestInfo.so
-etc/vmware-tools/plugins/vmsvc/libhgfsServer.so
-etc/vmware-tools/plugins/vmsvc/libpowerOps.so
-etc/vmware-tools/plugins/vmsvc/libtimeSync.so
-etc/vmware-tools/plugins/vmsvc/libvix.so
-etc/vmware-tools/plugins/vmsvc/libvmbackup.so
-%%LIB32DIR%%/libvmtools.a
-%%LIB32DIR%%/libvmtools.la
-%%LIB32DIR%%/libvmtools.so
-%%LIB32DIR%%/libvmtools.so.0
-%%LIB32DIR%%/libguestlib.a
-%%LIB32DIR%%/libguestlib.la
-%%LIB32DIR%%/libguestlib.so
-%%LIB32DIR%%/libguestlib.so.0
-%%LIB32DIR%%/vmware-tools/modules/drivers/linker.hints
-%%LIB32DIR%%/vmware-tools/modules/drivers/vmblock.ko
-%%LIB32DIR%%/vmware-tools/modules/drivers/vmhgfs.ko
-%%LIB32DIR%%/vmware-tools/modules/drivers/vmmemctl.ko
-%%LIB32DIR%%/vmware-tools/modules/drivers/vmxnet.ko
+lib/open-vm-tools/plugins/vmsvc/libguestInfo.so
+lib/open-vm-tools/plugins/vmsvc/libhgfsServer.so
+lib/open-vm-tools/plugins/vmsvc/libpowerOps.so
+lib/open-vm-tools/plugins/vmsvc/libtimeSync.so
+lib/open-vm-tools/plugins/vmsvc/libvix.so
+lib/open-vm-tools/plugins/vmsvc/libvmbackup.so
+%%X11%%lib/open-vm-tools/plugins/vmusr/libhgfsServer.so
+%%X11%%lib/open-vm-tools/plugins/vmusr/libresolutionSet.so
+%%X11%%lib/open-vm-tools/plugins/vmusr/libvix.so
+%%X11%%lib/open-vm-tools/plugins/vmusr/libvixUser.so
+lib/libvmtools.a
+lib/libvmtools.la
+lib/libvmtools.so
+lib/libvmtools.so.0
+lib/libguestlib.a
+lib/libguestlib.la
+lib/libguestlib.so
+lib/libguestlib.so.0
+lib/vmware-tools/modules/drivers/linker.hints
+lib/vmware-tools/modules/drivers/vmblock.ko
+lib/vmware-tools/modules/drivers/vmhgfs.ko
+lib/vmware-tools/modules/drivers/vmmemctl.ko
+lib/vmware-tools/modules/drivers/vmxnet.ko
+@exec mkdir -p %D/lib/vmware-tools/modules/input
 sbin/mount_vmhgfs
 sbin/vmware-guestd
 %%X11%%bin/vmware-toolbox
 %%X11%%bin/vmware-user
-%%X11%%share/applications/vmware-toolbox.desktop
+%%X11%%bin/vmware-user-suid-wrapper
 %%X11%%share/applications/vmware-user.desktop
-%%X11%%share/pixmaps/vmware/vmware-toolbox.xpm
 share/vmware-tools/poweroff-vm-default
 share/vmware-tools/poweron-vm-default
 share/vmware-tools/resume-vm-default
 share/vmware-tools/suspend-vm-default
 share/vmware-tools/vm-support
-@exec kldxref %%LIB32DIR%%/vmware-tools/modules/drivers 2>/dev/null || true
+@exec kldxref %D/lib/vmware-tools/modules/drivers 2>/dev/null || true
 @unexec if test -f %D/lib/vmware-tools/modules/drivers/linker.hints; then rm -f %D/lib/vmware-tools/modules/drivers/linker.hints; fi
 @unexec if test -f %D/share/vmware-tools/tools.conf; then rm -f %D/share/vmware-tools/tools.conf; fi
 @unexec if test -h %D/etc/vmware-tools/plugins; then rm -f %D/etc/vmware-tools/plugins; fi
-@dirrmtry %%LIB32DIR%%/vmware-tools/modules/input
-@dirrmtry %%LIB32DIR%%/vmware-tools/modules/drivers
-@dirrmtry %%LIB32DIR%%/vmware-tools/modules
-@dirrmtry %%LIB32DIR%%/vmware-tools/plugins
-@dirrmtry %%LIB32DIR%%/vmware-tools
-%%X11%%@dirrm share/pixmaps/vmware
-@dirrmtry etc/vmware-tools/plugins/vmsvc
-@dirrmtry etc/vmware-tools/plugins
+@dirrmtry lib/vmware-tools/modules/drivers
+@dirrmtry lib/vmware-tools/modules/input
+@dirrmtry lib/vmware-tools/modules
+@dirrmtry lib/vmware-tools
 @dirrmtry etc/vmware-tools
-@dirrmtry etc/open-vm-tools/plugins
-@dirrmtry etc/open-vm-tools
 @dirrmtry share/vmware-tools
 %%X11%%@dirrmtry share/applications
-@dirrm %%LIB32DIR%%/open-vm-tools/plugins/vmsvc
-@dirrm %%LIB32DIR%%/open-vm-tools/plugins
-@dirrm %%LIB32DIR%%/open-vm-tools
+@dirrm lib/open-vm-tools/plugins/vmsvc
+%%X11%%@dirrm lib/open-vm-tools/plugins/vmusr
+@dirrm lib/open-vm-tools/plugins
+@dirrm lib/open-vm-tools
