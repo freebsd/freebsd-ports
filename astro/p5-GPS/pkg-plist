@@ -7,10 +7,6 @@
 %%SITE_PERL%%/GPS/Base.pm
 %%SITE_PERL%%/GPS/NMEA/Handler.pm
 @dirrm %%SITE_PERL%%/GPS/Garmin
-@dirrm %%SITE_PERL%%/auto/GPS/Garmin/Handler
-@dirrm %%SITE_PERL%%/auto/GPS/Garmin
-@dirrm %%SITE_PERL%%/auto/GPS/Serial
-@dirrm %%SITE_PERL%%/auto/GPS/NMEA
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GPS/Garmin
 @dirrm %%SITE_PERL%%/GPS/NMEA
 @dirrm %%SITE_PERL%%/GPS
