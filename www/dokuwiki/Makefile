@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A simple and easy to use wiki, no database required
 
-DIST_VER=	${PORTNAME}-2008-05-05
+DIST_VER=	${PORTNAME}-2009-02-14
 USE_PHP=	gd mbstring pcre session xml zlib
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
