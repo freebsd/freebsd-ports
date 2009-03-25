@@ -24,8 +24,8 @@ OPTIONS=	PGSQL "With pgsql" Off \
 		WEBUI   "Install web interface" On \
 		APACHE "Use Apache for web interface" On \
 		LIGHTTPD "Use LightHTTPD for web interface" Off \
-		CHECK_FOR_ROOT "Check it ./tc is run by uid 0" On \
-		LSOF "Use lsof not fstat for killMountProcesses()" On
+		CHECK_FOR_ROOT "Check if ./tc is run by uid 0" On \
+		LSOF "For killMountProcesses() when using nullfs" On
 
 NO_BUILD=	yes
 WANT_PERL=	yes
