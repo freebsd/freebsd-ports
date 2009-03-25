@@ -24,6 +24,12 @@ CXXFLAGS+=	-fPIC
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800064
+BROKEN=		does not compile with new usb stack
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread||g ; \
 		 s|-ldl||g ; \
@@ -35,4 +41,4 @@ post-build:
 post-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/plib-jscal ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
