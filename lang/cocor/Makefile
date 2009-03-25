@@ -19,7 +19,6 @@ COMMENT=	A compiler generator that combines the functionality of lex and yacc
 WRKSRC=		${WRKDIR}
 ALL_TARGET=	all1
 MAKE_ENV+=	CRFRAMES=${WRKSRC}/frames
-USE_GMAKE=	yes
 CFLAGS+=	-I${WRKSRC}/cplus2
 PLIST_SUB+=	FRAMES=${CRFRAMES}
 CRFRAMES?=	${PREFIX}/lib/cocor
@@ -33,6 +32,10 @@ pre-patch:
 	uudecode -p ${WRKSRC}/dos2unix.uue > ${WRKSRC}/dos2unix.sh
 	${CHMOD} +x ${WRKSRC}/dos2unix.sh
 	cd ${WRKSRC} && ./dos2unix.sh unix.mk && ${MAKE} -f unix.mk dos2unix
+
+post-patch:
+	${REINPLACE_CMD} -e "s,^MAKE,#MAKE," ${WRKSRC}/Makefile
+	${RM} ${WRKSRC}/taste/unix.mk.orig
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cocor ${PREFIX}/bin
