@@ -6,13 +6,29 @@
 %%HORDIR%%/config/mime_drivers.php.dist
 %%HORDIR%%/config/motd.php.dist
 %%HORDIR%%/config/prefs.php.dist
+%%HORDIR%%/edit.php
 %%HORDIR%%/index.php
-%%HORDIR%%/js/stripe.js
+%%HORDIR%%/js/columnselect.js
+%%HORDIR%%/js/login.js
+%%HORDIR%%/js/manager.js
+%%HORDIR%%/js/popup.js
+%%HORDIR%%/js/prototype.js
+%%HORDIR%%/js/selectlist.js
+%%HORDIR%%/js/src/columnselect.js
+%%HORDIR%%/js/src/login.js
+%%HORDIR%%/js/src/manager.js
+%%HORDIR%%/js/src/popup.js
+%%HORDIR%%/js/src/prototype.js
+%%HORDIR%%/js/src/selectlist.js
+%%HORDIR%%/js/src/tables.js
+%%HORDIR%%/js/tables.js
 %%HORDIR%%/lib/Auth/gollem.php
 %%HORDIR%%/lib/Block/tree_menu.php
 %%HORDIR%%/lib/Gollem.php
+%%HORDIR%%/lib/JSON.php
 %%HORDIR%%/lib/MIME/Viewer/images.php
 %%HORDIR%%/lib/Session.php
+%%HORDIR%%/lib/Template.php
 %%HORDIR%%/lib/api.php
 %%HORDIR%%/lib/base.php
 %%HORDIR%%/lib/prefs.php
@@ -47,6 +63,8 @@
 %%HORDIR%%/locale/sk_SK/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/sl_SI/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/sv_SE/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/tr_TR/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/uk_UA/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/zh_TW/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/zh_TW/help.xml
 %%HORDIR%%/login.php
@@ -77,56 +95,55 @@
 %%HORDIR%%/po/sk_SK.po
 %%HORDIR%%/po/sl_SI.po
 %%HORDIR%%/po/sv_SE.po
+%%HORDIR%%/po/tr_TR.po
+%%HORDIR%%/po/uk_UA.po
 %%HORDIR%%/po/zh_TW.po
+%%HORDIR%%/pref_api.php
 %%HORDIR%%/quota.php
 %%HORDIR%%/redirect.php
 %%HORDIR%%/selectlist.php
 %%HORDIR%%/templates/clipboard/clipboard.html
 %%HORDIR%%/templates/common-header.inc
-%%HORDIR%%/templates/javascript/open_quota_win.js
-%%HORDIR%%/templates/javascript/open_selectlist_win.js
-%%HORDIR%%/templates/login/javascript.inc
+%%HORDIR%%/templates/edit/edit.inc
+%%HORDIR%%/templates/javascript_defs.php
 %%HORDIR%%/templates/login/login.html
-%%HORDIR%%/templates/manager/javascript.inc
 %%HORDIR%%/templates/manager/manager.html
 %%HORDIR%%/templates/menu.html
 %%HORDIR%%/templates/prefs/columnselect.html
 %%HORDIR%%/templates/prefs/columnselect.inc
-%%HORDIR%%/templates/prefs/columnselect.js
 %%HORDIR%%/templates/quota/quota.html
-%%HORDIR%%/templates/selectlist/javascript.inc
 %%HORDIR%%/templates/selectlist/selectlist.html
 %%HORDIR%%/test.php
 %%HORDIR%%/themes/brown/screen.css
-%%HORDIR%%/themes/graphics/cd.png
+%%HORDIR%%/themes/graphics/az.png
 %%HORDIR%%/themes/graphics/clipboard.png
 %%HORDIR%%/themes/graphics/copy.png
 %%HORDIR%%/themes/graphics/cut.png
 %%HORDIR%%/themes/graphics/favicon.ico
+%%HORDIR%%/themes/graphics/folder.png
+%%HORDIR%%/themes/graphics/folder_create.png
+%%HORDIR%%/themes/graphics/folder_goto.png
+%%HORDIR%%/themes/graphics/folder_home.png
+%%HORDIR%%/themes/graphics/folder_symlink.png
 %%HORDIR%%/themes/graphics/gollem.png
-%%HORDIR%%/themes/graphics/home.png
-%%HORDIR%%/themes/graphics/manager/folder.png
-%%HORDIR%%/themes/graphics/manager/symlink.png
-%%HORDIR%%/themes/graphics/mkdir.png
+%%HORDIR%%/themes/graphics/za.png
 %%HORDIR%%/themes/purple/screen.css
 %%HORDIR%%/themes/screen.css
-%%HORDIR%%/themes/silver/graphics/cd.png
 %%HORDIR%%/themes/silver/graphics/clipboard.png
 %%HORDIR%%/themes/silver/graphics/copy.png
 %%HORDIR%%/themes/silver/graphics/cut.png
 %%HORDIR%%/themes/silver/graphics/favicon.ico
+%%HORDIR%%/themes/silver/graphics/folder.png
+%%HORDIR%%/themes/silver/graphics/folder_create.png
+%%HORDIR%%/themes/silver/graphics/folder_goto.png
+%%HORDIR%%/themes/silver/graphics/folder_home.png
+%%HORDIR%%/themes/silver/graphics/folder_symlink.png
 %%HORDIR%%/themes/silver/graphics/gollem.png
-%%HORDIR%%/themes/silver/graphics/home.png
-%%HORDIR%%/themes/silver/graphics/manager/folder.png
-%%HORDIR%%/themes/silver/graphics/manager/symlink.png
-%%HORDIR%%/themes/silver/graphics/mkdir.png
 %%HORDIR%%/themes/silver/themed_graphics
 %%HORDIR%%/view.php
-@dirrm %%HORDIR%%/themes/silver/graphics/manager
 @dirrm %%HORDIR%%/themes/silver/graphics
 @dirrm %%HORDIR%%/themes/silver
 @dirrm %%HORDIR%%/themes/purple
-@dirrm %%HORDIR%%/themes/graphics/manager
 @dirrm %%HORDIR%%/themes/graphics
 @dirrm %%HORDIR%%/themes/brown
 @dirrm %%HORDIR%%/themes
@@ -135,12 +152,16 @@
 @dirrm %%HORDIR%%/templates/prefs
 @dirrm %%HORDIR%%/templates/manager
 @dirrm %%HORDIR%%/templates/login
-@dirrm %%HORDIR%%/templates/javascript
+@dirrm %%HORDIR%%/templates/edit
 @dirrm %%HORDIR%%/templates/clipboard
 @dirrm %%HORDIR%%/templates
 @dirrm %%HORDIR%%/po
 @dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/zh_TW
+@dirrm %%HORDIR%%/locale/uk_UA/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/uk_UA
+@dirrm %%HORDIR%%/locale/tr_TR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/tr_TR
 @dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/sv_SE
 @dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
@@ -194,6 +215,7 @@
 @dirrm %%HORDIR%%/lib/Block
 @dirrm %%HORDIR%%/lib/Auth
 @dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/js/src
 @dirrm %%HORDIR%%/js
 @dirrmtry %%HORDIR%%/config
 @dirrmtry %%HORDIR%%
