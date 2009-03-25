@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gollem
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	ftp www
 
 MAINTAINER=	beech@FreeBSD.org
@@ -15,7 +14,7 @@ COMMENT=	Web-based File Manager
 
 USE_HORDE=	base
 USE_GETTEXT=	yes
-PORTDOCS=	README CHANGES CREDITS INSTALL RELEASE_NOTES TODO
+PORTDOCS=	README CHANGES CREDITS INSTALL RELEASE_NOTES
 
 .include "${.CURDIR}/../../www/horde-base/bsd.horde.mk"
 .include <bsd.port.mk>
