@@ -16,5 +16,6 @@ COMMENT=	Thin wrapper library of LZMA
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>
