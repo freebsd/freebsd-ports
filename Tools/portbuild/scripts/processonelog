@@ -16,7 +16,7 @@ indexdir=$(realpath $indexdir)
 errordir=$(realpath $errordir)
 indexfilename=$indexdir/INDEX
 
-HEADER_LINES=7
+HEADER_LINES=9
 
 portname=$(basename $filename .log.bz2)
 if [ "${portname}" = "${filename}" ]; then
@@ -67,11 +67,13 @@ elif bzgrep -qE "\.(c|cc|cxx|cpp|h|y)[1-9:]+ .+\.h: No such file" $1; then
   else
 	reason="missing_header"; tag="header"
   fi
+elif bzgrep -qE '(nested function.*declared but never defined|warning: nested extern declaration)' $1; then
+  reason="nested_declaration"; tag="nested_declaration"
 elif bzgrep -qE '(parse error|too (many|few) arguments to|argument.*doesn.*prototype|incompatible type for argument|conflicting types for|undeclared \(first use (in |)this function\)|incorrect number of parameters|has incomplete type and cannot be initialized|error: storage size.* isn.t known)' $1; then
   reason="compiler_error"; tag="cc"
 elif bzgrep -qE '(ANSI C.. forbids|is a contravariance violation|changed for new ANSI .for. scoping|[0-9]: passing .* changes signedness|lacks a cast|redeclared as different kind of symbol|invalid type .* for default argument to|wrong type argument to unary exclamation mark|duplicate explicit instantiation of|incompatible types in assignment|assuming . on overloaded member function|call of overloaded .* is ambiguous|declaration of C function .* conflicts with|initialization of non-const reference type|using typedef-name .* after|[0-9]: size of array .* is too large|fixed or forbidden register .* for class|assignment of read-only variable|error: label at end of compound statement|error:.*(has no|is not a) member|error:.*is (private|protected)|error: uninitialized member|error: unrecognized command line option)' $1; then
   reason="new_compiler_error"; tag="newgcc"
-elif bzgrep -qE '(syntax error before|friend declaration|no matching function for call to|.main. must return .int.|invalid conversion from|cannot be used as a macro name as it is an operator in C\+\+|is not a member of type|after previous specification in|no class template named|because worst conversion for the former|better than worst conversion|no match for.*operator|no match for call to|undeclared in namespace|is used as a type, but is not|error: array bound forbidden|error: class definition|error: expected constructor|error: there are no arguments|error:.*cast.*loses precision|ISO C\+\+ does not support)' $1; then
+elif bzgrep -qE '(syntax error before|friend declaration|no matching function for call to|.main. must return .int.|invalid conversion from|cannot be used as a macro name as it is an operator in C\+\+|is not a member of type|after previous specification in|no class template named|because worst conversion for the former|better than worst conversion|no match for.*operator|no match for call to|undeclared in namespace|is used as a type, but is not|error: array bound forbidden|error: class definition|error: expected constructor|error: there are no arguments|error:.*cast.*loses precision|ISO C\+\+ does not support|error: invalid pure specifier)' $1; then
   reason="bad_C++_code"; tag="badc++"
 elif bzgrep -qE 'error: (array type has incomplete element type|conflicts with new declaration|expected.*before .class|expected primary expression|extra qualification .* on member|.*has incomplete type|invalid cast from type .* to type|invalid lvalue in (assignment|decrement|increment|unary)|invalid storage class for function|lvalue required as (increment operator|left operand)|.*should have been declared inside|static declaration of.*follows non-static declaration|two or more data types in declaration specifiers|.* was not declared in this scope)' $1; then
   reason="gcc4_error"; tag="gcc4"
