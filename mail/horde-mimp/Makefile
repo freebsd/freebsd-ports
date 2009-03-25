@@ -29,7 +29,7 @@ COMMENT=	Mobile webmail system
 #-----------------------------------------------------------------------
 
 RUN_DEPENDS+=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL \
-		${LOCALBASE}/www/horde/imp/index.php:${PORTSDIR}/mail/horde-imp
+		${HORBAS}/imp/index.php:${PORTSDIR}/mail/horde-imp
 
 USE_PHP=	imap
 . if !defined(WITHOUT_LDAP)
