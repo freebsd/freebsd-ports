@@ -19,6 +19,7 @@ COMMENT=	OpenBSD's Network Time Protocol daemon
 
 USE_RC_SUBR=	openntpd
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN5=		ntpd.conf.5
 MAN8=		ntpd.8

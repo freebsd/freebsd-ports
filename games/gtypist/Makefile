@@ -16,6 +16,7 @@ COMMENT=	Interactive typing tutor
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	EMACS=no
+MAKE_JOBS_SAFE=	yes
 
 INFO=		gtypist
 MAN1=		gtypist.1 typefortune.1
