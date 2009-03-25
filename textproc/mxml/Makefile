@@ -19,6 +19,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--with-docdir=no
+MAKE_JOBS_SAFE=	yes
 
 MAN1=	mxmldoc.1
 MAN3=	mxml.3

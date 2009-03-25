@@ -18,6 +18,7 @@ MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \
 		MANPREFIX="${MANPREFIX}/man"
 PLIST_FILES=	bin/slock
 
+MAKE_JOBS_SAFE=	yes
 USE_XORG=	x11 xt xproto xext
 
 post-patch:
