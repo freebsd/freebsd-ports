@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cclive
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.6
 CATEGORIES=	multimedia net
 MASTER_SITES=	GOOGLE_CODE
 
@@ -19,15 +19,17 @@ OPTIONS=	TITLE 	 "Enable video title parsing (req. Perl)" off \
 		SIGWINCH "Enable SIGWINCH handling; resize progressbar" on
 
 MAKE_ENV=	V=1
-MAKE_ENV+=	WITH_MAN=yes
 MAN1=		cclive.1
 
 PLIST_FILES=	bin/cclive
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
+
+MAKE_ENV+=	WITH_MAN=yes
 
 .if defined(WITH_TITLE)
 MAKE_ENV+=	WITH_PERL=yes
