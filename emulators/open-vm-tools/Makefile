@@ -26,22 +26,23 @@ LIB_DEPENDS+=		glib-2.0:${PORTSDIR}/devel/glib20
 CONFIGURE_ARGS+=	--without-x --without-gtk2 --without-gtkmm
 PLIST_SUB+=		X11="@comment "
 CONFLICTS=		open-vm-tools-[0-9]*
-BROKEN=			bad plist
 .else
 .if !defined(WITHOUT_LIBNOTIFY)
 LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
 .endif
-.if !defined(WITH_UNITY)
+.if defined(WITH_UNITY)
+CONFIGURE_ENV+=		CUSTOM_URIPARSER_CPPFLAGS="-I${LOCALBASE}/include/uriparser"
+LIB_DEPENDS+=		uriparser.1:${PORTSDIR}/net/uriparser
+.else
 CONFIGURE_ARGS+=	--disable-unity
 .endif
 CONFIGURE_ARGS+=	--with-x --without-gtkmm
-CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 USE_XORG=		x11 ice xineramaproto xinerama xrandr xtst
 USE_GNOME=		gtk20 glib20
 PLIST_SUB+=		X11=""
 CONFLICTS=		open-vm-tools-nox11-[0-9]*
-BROKEN=			does not configure
 .endif
 
 CONFLICTS+=		vmware-guestd[0-9]* vmware-tools[0-9]*
@@ -67,21 +68,17 @@ USE_RC_SUBR=		vmware-guestd.sh vmware-kmod.sh
 IGNORE=		not yet ported to sparc64
 .endif
 
-PLIST_SUB+=	LIB32DIR=${LIB32DIR}
-
-SUB_LIST+=	LIB32DIR=${LIB32DIR}
-
 post-build:
 	(cd ${WRKSRC}/modules && ${MAKE})
 
 post-install:
-	${MKDIR} ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers
-	${MKDIR} ${PREFIX}/${LIB32DIR}/vmware-tools/modules/input
-	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmmemctl.ko ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers/vmmemctl.ko
-	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmxnet.ko ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers/vmxnet.ko
-	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmhgfs.ko ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers/vmhgfs.ko
-	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmblock.ko ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers/vmblock.ko
-	@-kldxref ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers 2>/dev/null
+	${MKDIR} ${PREFIX}/lib/vmware-tools/modules/drivers
+	${MKDIR} ${PREFIX}/lib/vmware-tools/modules/input
+	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmmemctl.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmmemctl.ko
+	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmxnet.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmxnet.ko
+	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmhgfs.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmhgfs.ko
+	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmblock.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmblock.ko
+	@-kldxref ${PREFIX}/lib/vmware-tools/modules/drivers 2>/dev/null
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -16,22 +16,22 @@ checkvm_cmd="%%PREFIX%%/bin/vmware-checkvm > /dev/null"
 vmware_guest_vmmemctl_start()
 {
 	echo 'Loading vmmemctl kernel module.'
-	kldload %%PREFIX%%/%%LIB32DIR%%/vmware-tools/modules/drivers/vmmemctl.ko >/dev/null 2>&1
+	kldload %%PREFIX%%/lib/vmware-tools/modules/drivers/vmmemctl.ko >/dev/null 2>&1
 }
 vmware_guest_vmxnet_start()
 {
 	echo 'Loading vmxnet kernel module.'
-	kldload %%PREFIX%%/%%LIB32DIR%%/vmware-tools/modules/drivers/vmxnet.ko >/dev/null 2>&1
+	kldload %%PREFIX%%/lib/vmware-tools/modules/drivers/vmxnet.ko >/dev/null 2>&1
 }
 vmware_guest_vmblock_start()
 {
 	echo 'Loading vmblock kernel module.'
-	kldload %%PREFIX%%/%%LIB32DIR%%/vmware-tools/modules/drivers/vmblock.ko >/dev/null 2>&1
+	kldload %%PREFIX%%/lib/vmware-tools/modules/drivers/vmblock.ko >/dev/null 2>&1
 }
 vmware_guest_vmhgfs_start()
 {
 	echo 'Loading vmhgfs kernel module.'
-	kldload %%PREFIX%%/%%LIB32DIR%%/vmware-tools/modules/drivers/vmhgfs.ko >/dev/null 2>&1
+	kldload %%PREFIX%%/lib/vmware-tools/modules/drivers/vmhgfs.ko >/dev/null 2>&1
 }
 
 # VMware kernel module: vmmemctl
