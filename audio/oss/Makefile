@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	oss
-DISTVERSION=	4.1-build1051
-PORTREVISION=	1
+DISTVERSION=	4.1-build1052
+PORTREVISION=	0
 CATEGORIES=	audio kld
 MASTER_SITES=	http://www.opensound.com/developer/sources/stable/bsd/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-bsd
@@ -29,20 +29,21 @@ MANCOMPRESSED=	yes
 
 MAN1=		ossinfo.1 ossmix.1 osspartysh.1 ossplay.1 ossrecord.1 \
 		osstest.1 ossxmix.1 soundoff.1 soundon.1
-MAN7=		oss_ali5455.7 oss_atiaudio.7 oss_audigyls.7 oss_audioloop.7 \
-		oss_audiopci.7 oss_cmi878x.7 oss_cmpci.7 oss_cs4281.7 \
-		oss_cs461x.7 oss_digi96.7 oss_emu10k1x.7 oss_envy24.7 \
-		oss_envy24ht.7 oss_fmedia.7 oss_geode.7 oss_hdaudio.7 \
-		oss_ich.7 oss_imux.7 oss_midiloop.7 oss_midimix.7 \
-		oss_sblive.7 oss_sbpci.7 oss_sbxfi.7 oss_solo.7 \
-		oss_trident.7 oss_via823x.7 oss_via97.7 oss_ymf7xx.7 \
-		osscore.7
+MAN7=		oss_ali5455.7 oss_allegro.7 oss_atiaudio.7 oss_audigyls.7 \
+		oss_audioloop.7 oss_audiopci.7 oss_cmi878x.7 oss_cmpci.7 \
+		oss_cs4281.7 oss_cs461x.7 oss_digi96.7 oss_emu10k1x.7 \
+		oss_envy24.7 oss_envy24ht.7 oss_fmedia.7 oss_geode.7 \
+		oss_hdaudio.7 oss_ich.7 oss_imux.7 oss_midiloop.7 \
+		oss_midimix.7 oss_sblive.7 oss_sbpci.7 oss_sbxfi.7 \
+		oss_solo.7 oss_trident.7 oss_via823x.7 oss_via97.7 \
+		oss_ymf7xx.7 osscore.7
 MAN8=		ossdetect.8 ossdevlinks.8 savemixer.8 vmixctl.8
 
-CONF_FILES=	oss_audigyls oss_audioloop oss_cs461x oss_emu10k1x \
-		oss_envy24 oss_envy24ht oss_fmedia oss_hdaudio oss_ich \
-		oss_imux oss_midiloop oss_sblive oss_sbpci oss_sbxfi \
-		oss_trident oss_usb oss_userdev	oss_ymf7xx osscore
+CONF_FILES=	oss_allegro oss_audigyls oss_audioloop oss_cs461x \
+		oss_emu10k1x oss_envy24 oss_envy24ht oss_fmedia \
+		oss_hdaudio oss_ich oss_imux oss_midiloop oss_sblive \
+		oss_sbpci oss_sbxfi oss_trident oss_usb oss_userdev \
+		oss_ymf7xx osscore
 
 PROTO_DIR=	${WRKSRC}/prototype
 PROTO_ETCDIR=	${PROTO_DIR}/etc
