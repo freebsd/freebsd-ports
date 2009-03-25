@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/ResultSet/RecursiveUpdate/.packlist
+%%SITE_PERL%%/DBIx/Class/ResultSet/RecursiveUpdate.pm
+@dirrmtry %%SITE_PERL%%/DBIx/Class/ResultSet
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/ResultSet/RecursiveUpdate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/ResultSet
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
