@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	radmind
-PORTVERSION=	1.10.0
+PORTVERSION=	1.13.0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -17,12 +17,12 @@ USE_OPENSSL=	yes
 USE_RC_SUBR=	radmind.sh
 SUB_LIST=	RADMIND_BASE_DIR=${RADMIND_BASE_DIR}
 PLIST_SUB=	RADMIND_BASE_DIR=${RADMIND_BASE_DIR}
+MAKE_JOBS_SAFE=	yes
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-radminddir=${RADMIND_BASE_DIR}
 
 RADMIND_BASE_DIR?=	/var/radmind
-
-CONFIGURE_ARGS=	--prefix=${PREFIX} --with-radminddir=${RADMIND_BASE_DIR}
 
 MAN1=		fsdiff.1 ktcheck.1 lapply.1 lcksum.1 lcreate.1 lfdiff.1 \
 		lmerge.1 lsort.1 twhich.1 rash.1 repo.1
