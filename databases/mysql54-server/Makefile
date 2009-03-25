@@ -19,6 +19,7 @@ COMMENT?=	Multithreaded SQL database (server)
 SLAVEDIRS=	databases/mysql51-client databases/mysql51-scripts
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--infodir=${PREFIX}/info \
