@@ -23,11 +23,6 @@ USE_SUBMAKE=	yes
 WDIR=	langpack3-*@firefox.mozilla.org
 
 XPI_DISTNAMES=	${FIREFOX_I18N_}
-.for dist in ${XPI_DISTNAMES}
-XPI_ID_${dist}=		langpack3-${dist}@firefox.mozilla.org
-XPI_FILES_${dist}=	chrome.manifest install.rdf chrome/${dist}.jar
-XPI_DIRS_${dist}=	chrome
-.endfor
 
 .include "${.CURDIR}/Makefile.option"
 .include <bsd.port.pre.mk>
@@ -39,6 +34,12 @@ RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-swit
 .include "${.CURDIR}/Makefile.lang"
 
 FIREFOX_I18N_?=	${FIREFOX_I18N}
+
+.for dist in ${XPI_DISTNAMES}
+XPI_ID_${dist}=		langpack3-${dist}@firefox.mozilla.org
+XPI_FILES_${dist}=	chrome.manifest install.rdf chrome/${dist}.jar
+XPI_DIRS_${dist}=	chrome
+.endfor
 
 pre-everything::
 	@${ECHO_CMD}
