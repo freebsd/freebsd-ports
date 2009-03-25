@@ -59,6 +59,7 @@ lib/xvile/vile-rpm-filt
 lib/xvile/vile-rtf-filt
 lib/xvile/vile-ruby-filt
 lib/xvile/vile-sccs-filt
+lib/xvile/vile-scheme-filt
 lib/xvile/vile-sed-filt
 lib/xvile/vile-sh-filt
 lib/xvile/vile-sml-filt
