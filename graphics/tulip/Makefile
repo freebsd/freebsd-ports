@@ -33,7 +33,7 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	userManual.pdf
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+PLIST_SUB+=	TULIP_VERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
