@@ -1,0 +1,174 @@
+diff -ubwr ../../work.base/busybox-1.8.2/include/libbb.h ./include/libbb.h
+--- ../../work.base/busybox-1.8.2/include/libbb.h	2007-11-10 02:40:53.000000000 +0100
++++ ./include/libbb.h	2008-08-18 22:30:39.000000000 +0200
+@@ -31,7 +33,11 @@
+ #include <sys/ioctl.h>
+ #include <sys/mman.h>
+ #include <sys/socket.h>
++#if defined __FreeBSD__
++#include <netinet/in.h>
++#include <arpa/inet.h>
++#endif
+ #include <sys/stat.h>
+ #include <sys/time.h>
+ #include <sys/types.h>
+ #include <sys/wait.h>
+@@ -90,1 +90,3 @@
++#if !defined __FreeBSD__
+ int setgroups(size_t n, const gid_t *groups);
++#endif
+@@ -182,1 +182,3 @@
++#if !defined __FreeBSD__
+ char *dirname(char *path);
++#endif
+diff -ubwr ../../work.base/busybox-1.8.2/include/platform.h ./include/platform.h
+--- ../../work.base/busybox-1.8.2/include/platform.h	2007-11-10 02:40:53.000000000 +0100
++++ ./include/platform.h	2008-08-18 22:30:39.000000000 +0200
+@@ -102,6 +102,14 @@
+ # include <sex.h>
+ # define __BIG_ENDIAN__ (BYTE_ORDER == BIG_ENDIAN)
+ # define __BYTE_ORDER BYTE_ORDER
++#elif defined __FreeBSD__
++char *strchrnul(const char *s, int c);
++# include <sys/resource.h>	// rlimit
++# include <machine/endian.h>
++# define bswap_64 __bswap64
++# define bswap_32 __bswap32
++# define bswap_16 __bswap16
++# define __BIG_ENDIAN__ (_BYTE_ORDER == _BIG_ENDIAN)
+ #elif !defined __APPLE__
+ # include <byteswap.h>
+ # include <endian.h>
+@@ -142,1 +145,1 @@
+-# ifndef __socklen_t_defined
++# if !defined(__socklen_t_defined) && !defined(_SOCKLEN_T_DECLARED)
+@@ -168,2 +168,2 @@
+-#if (defined __digital__ && defined __unix__) || defined __APPLE__
++#if (defined __digital__ && defined __unix__) || defined __APPLE__ || defined __FreeBSD__
+ # undef HAVE_MNTENT_H
+diff -ubwr ../../work.base/busybox-1.8.2/libbb/bb_askpass.c ./libbb/bb_askpass.c
+--- ../../work.base/busybox-1.8.2/libbb/bb_askpass.c	2007-11-10 02:40:52.000000000 +0100
++++ ./libbb/bb_askpass.c	2008-08-18 22:30:39.000000000 +0200
+@@ -35,6 +35,9 @@
+ 	tcgetattr(STDIN_FILENO, &oldtio);
+ 	tcflush(STDIN_FILENO, TCIFLUSH);
+ 	tio = oldtio;
++#if !defined IUCLC
++#define IUCLC 0
++#endif
+ 	tio.c_iflag &= ~(IUCLC|IXON|IXOFF|IXANY);
+ 	tio.c_lflag &= ~(ECHO|ECHOE|ECHOK|ECHONL|TOSTOP);
+ 	tcsetattr(STDIN_FILENO, TCSANOW, &tio);
+diff -ubwr ../../work.base/busybox-1.8.2/libbb/lineedit.c ./libbb/lineedit.c
+--- ../../work.base/busybox-1.8.2/libbb/lineedit.c	2007-11-10 02:40:52.000000000 +0100
++++ ./libbb/lineedit.c	2008-08-18 22:30:39.000000000 +0200
+@@ -1213,3 +1213,4 @@
+ #if ENABLE_FEATURE_GETUSERNAME_AND_HOMEDIR
+ static const char null_str[] ALIGN1 = "";
+ #endif
++typedef void (*sighandler_t)(int signum);
+diff -ubwr ../../work.base/busybox-1.8.2/libbb/makedev.c ./libbb/makedev.c
+--- ../../work.base/busybox-1.8.2/libbb/makedev.c	2007-11-10 02:40:52.000000000 +0100
++++ ./libbb/makedev.c	2008-08-18 22:30:39.000000000 +0200
+@@ -5,7 +5,7 @@
+  *
+  * Licensed under GPL version 2, see file LICENSE in this tarball for details.
+  */
+-
++#if !defined __FreeBSD__
+ /* We do not include libbb.h - #define makedev() is there! */
+ #include <features.h>
+ #include <sys/sysmacros.h>
+@@ -21,3 +21,4 @@
+ 	return makedev(major, minor);
+ }
+ #endif
++#endif /* !__FreeBSD__ */
+diff -ubwr ../../work.base/busybox-1.8.2/libbb/match_fstype.c ./libbb/match_fstype.c
+--- ../../work.base/busybox-1.8.2/libbb/match_fstype.c	2007-11-10 02:40:52.000000000 +0100
++++ ./libbb/match_fstype.c	2008-08-18 22:30:39.000000000 +0200
+@@ -10,6 +10,7 @@
+  * Licensed under GPLv2 or later, see file LICENSE in this tarball for details.
+  */
+ 
++#if !defined __FreeBSD__
+ #include "libbb.h"
+ 
+ int match_fstype(const struct mntent *mt, const char *fstype)
+@@ -42,3 +43,4 @@
+ 
+ 	return -(no + 1);
+ }
++#endif /* !__FreeBSD__ */
+diff -ubwr ../../work.base/busybox-1.8.2/libbb/xfuncs.c ./libbb/xfuncs.c
+--- libbb/xfuncs.c.orig	2007-11-10 02:40:52.000000000 +0100
++++ libbb/xfuncs.c	2008-08-19 14:08:54.000000000 +0200
+@@ -428,8 +428,9 @@
+ 	long size;
+ 
+ 	// If the ioctl works for this, return it.
+-
++#if !defined __FreeBSD__
+ 	if (ioctl(fd, BLKGETSIZE, &size) >= 0) return size*512;
++#endif
+ 
+ 	// FIXME: explain why lseek(SEEK_END) is not used here!
+ 
+diff -ubwr ../../work.base/busybox-1.8.2/libbb/xfuncs_printf.c ./libbb/xfuncs_printf.c
+--- libbb/xfuncs_printf.c	2007-11-10 02:40:52.000000000 +0100
++++ libbb/xfuncs_printf.c	2008-08-19 14:08:54.000000000 +0200
+@@ -498,7 +499,7 @@
+ 	return string_ptr;
+ }
+ 
+-#if 0 /* If we will ever meet a libc which hasn't [f]dprintf... */
++#if defined(__FreeBSD__) /* If we will ever meet a libc which hasn't [f]dprintf... */
+ int fdprintf(int fd, const char *format, ...)
+ {
+ 	va_list p;
+@@ -529,6 +530,32 @@
+ 	}
+ 	return r;
+ }
++
++char *strchrnul(const char *s, int c)
++{
++	char *r = strchr(s, c);
++	if (r == NULL)
++		r = (char *)s + strlen(s);
++	return r;
++}
++
++void *memrchr(const void *s, int c, size_t n)
++{
++	const char *p = s;
++	for (p += n - 1; p != s; p--)
++		if (*p == c) break;
++	return (*p == c ? p : NULL);
++}
++
++size_t strnlen(const char *s, size_t maxlen)
++{
++	size_t i;
++	for (i = 0; i < maxlen; i++) {
++		if (s[i] == '\0')
++			break;
++	}
++	return i;
++}
+ #endif
+ 
+ // Die with an error message if we can't copy an entire FILE * to stdout, then
+diff -ubwr ../../work.base/busybox-1.8.2/libpwdgrp/pwd_grp.c ./libpwdgrp/pwd_grp.c
+--- ../../work.base/busybox-1.8.2/libpwdgrp/pwd_grp.c	2007-11-10 02:40:53.000000000 +0100
++++ ./libpwdgrp/pwd_grp.c	2008-08-18 22:30:39.000000000 +0200
+@@ -19,7 +19,9 @@
+  */
+ 
+ #include "libbb.h"
++#if !defined __FreeBSD__
+ #include <features.h>
++#endif
+ #include <assert.h>
+ 
+ #ifndef _PATH_SHADOW
