@@ -1,0 +1,15 @@
+--- Makefile.unix.orig	2009-03-25 03:04:17.000000000 -0400
++++ Makefile.unix	2009-03-25 03:15:45.000000000 -0400
+@@ -27,7 +27,11 @@
+ SRC_PREFIX = $(shell pwd)/dist-src
+ 
+ TARGET	 = $(PRODUCT)
+-OBJECTS	 = main.o gnu-strndup.o gnu-getline.o util.o exif.o iptc.o jfif.o adobe.o tiff.o
++OBJECTS	 = main.o util.o exif.o iptc.o jfif.o adobe.o tiff.o
++NEEDEXT  = $(shell expr $(OSVERSION) \< 800067)
++ifeq ($(NEEDEXT),1)
++OBJECTS += gnu-strndup.o gnu-getline.o
++endif
+ DOC_DEFS = doc/Makefile.defs
+ 
+ 

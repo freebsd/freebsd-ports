@@ -15,7 +15,8 @@
 -GLIB_SUBST=1 # remove this line, if you want to use libglib-2.0
  DESTDIR =
  
- CXXFLAGS += -Wall -D_GNU_SOURCE -I../raop_play -I../rendezvous
+-CXXFLAGS += -Wall -D_GNU_SOURCE -I../raop_play -I../rendezvous
++CXXFLAGS += -Wall -I../raop_play -I../rendezvous
  GLIB = glib-2.0
 -CXXFLAGS += -I/usr/include/$(GLIB) -I/usr/lib/$(GLIB)/include
 -CFLAGS += -Wall -I/usr/include/$(GLIB) -I/usr/lib/$(GLIB)/include -I../raop_play
