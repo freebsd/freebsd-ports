@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	dir2ogg
-PORTVERSION=	0.11.5
-PORTREVISION=	2
+PORTVERSION=	0.11.6
 CATEGORIES=	audio
 MASTER_SITES=	http://jak-linux.org/projects/dir2ogg/0.11/ \
-		LOCAL/chinsan
+		LOCAL/chinsan/dir2ogg
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Command-line {wav,mp3,m4a} to ogg converter
@@ -44,5 +43,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
+
+post-install:
+	@${ECHO} "dir2ogg is now installed. Enjoy..."
 
 .include <bsd.port.mk>
