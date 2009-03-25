@@ -257,6 +257,6 @@
 -   return TCL_OK;
 +   Tcl_CreateObjCommand (interp, "wnlicense", wn_license, 
 +      (ClientData) NULL, (Tcl_CmdDeleteProc *) NULL);
-+   return Tcl_PkgProvide(interp, "Wordnet", "2.1");
++   return Tcl_PkgProvide(interp, "Wordnet", "3.0");
  }
 -
