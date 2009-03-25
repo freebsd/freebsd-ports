@@ -1,0 +1,7 @@
+StatSVN retrieves information from a Subversion repository and
+generates various tables and charts describing the project development,
+e.g. timeline for the lines of code, contribution of each developer
+etc. The current version of StatSVN generates a static suite of
+HTML or XDOC documents containing tables and chart images.
+
+WWW:    http://www.statsvn.org/

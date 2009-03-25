@@ -1,0 +1,146 @@
+%%PORTDOCS%%%%DOCSDIR%%/allclasses-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/allclasses-noframe.html
+%%PORTDOCS%%%%DOCSDIR%%/constant-values.html
+%%PORTDOCS%%%%DOCSDIR%%/deprecated-list.html
+%%PORTDOCS%%%%DOCSDIR%%/help-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-1.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-10.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-11.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-12.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-13.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-14.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-15.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-16.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-17.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-18.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-19.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-2.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-20.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-21.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-22.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-3.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-4.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-5.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-6.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-7.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-8.html
+%%PORTDOCS%%%%DOCSDIR%%/index-files/index-9.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/Main.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/RepoDump.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/ant/AntTaskLogger.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/ant/StatSvnTask.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/ant/class-use/AntTaskLogger.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/ant/class-use/StatSvnTask.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/ant/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/ant/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/ant/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/ant/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/class-use/Main.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/class-use/RepoDump.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/Builder.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/CacheBuilder.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/CacheConfiguration.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/FileBuilder.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/RepositoriesBuilder.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/RepositoryFileManager.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/RevisionData.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/SvnLogBuilder.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/SvnLogfileParser.DiffTask.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/SvnLogfileParser.PerRevDiffTask.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/SvnLogfileParser.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/SvnXmlCacheFileHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/SvnXmlLogFileHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/SvnXmlRepositoriesFileHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/class-use/Builder.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/class-use/CacheBuilder.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/class-use/CacheConfiguration.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/class-use/FileBuilder.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/class-use/RepositoriesBuilder.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/class-use/RepositoryFileManager.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/class-use/RevisionData.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/class-use/SvnLogBuilder.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/class-use/SvnLogfileParser.DiffTask.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/class-use/SvnLogfileParser.PerRevDiffTask.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/class-use/SvnLogfileParser.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/class-use/SvnXmlCacheFileHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/class-use/SvnXmlLogFileHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/class-use/SvnXmlRepositoriesFileHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/ChoraIntegration.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/SvnCommandLineParser.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/SvnConfigurationOptions.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/class-use/ChoraIntegration.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/class-use/SvnCommandLineParser.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/class-use/SvnConfigurationOptions.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/BinaryDiffException.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/ConsoleTaskLogger.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/EnvReport.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/FilenameComparator.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/JavaUtilTaskLogger.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/ProcessUtils.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/SilentLogger.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/SvnCommandHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/SvnDiffUtils.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/SvnInfoUtils.SvnInfoHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/SvnInfoUtils.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/SvnPropgetUtils.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/SvnStartupUtils.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/SvnVersionMismatchException.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/TaskLogger.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/XMLUtil.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/BinaryDiffException.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/ConsoleTaskLogger.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/EnvReport.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/FilenameComparator.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/JavaUtilTaskLogger.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/ProcessUtils.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/SilentLogger.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/SvnCommandHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/SvnDiffUtils.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/SvnInfoUtils.SvnInfoHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/SvnInfoUtils.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/SvnPropgetUtils.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/SvnStartupUtils.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/SvnVersionMismatchException.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/TaskLogger.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/XMLUtil.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/overview-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/overview-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/overview-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/package-list
+%%PORTDOCS%%%%DOCSDIR%%/resources/inherit.gif
+%%PORTDOCS%%%%DOCSDIR%%/serialized-form.html
+%%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
+%%DATADIR%%/statsvn.jar
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/util/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/util
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/output/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/output
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/input/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/input
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/ant/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/ant
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/net
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/index-files
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

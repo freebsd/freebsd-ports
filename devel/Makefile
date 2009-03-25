@@ -2656,6 +2656,7 @@
     SUBDIR += srecord
     SUBDIR += st
     SUBDIR += statcvs
+    SUBDIR += statsvn
     SUBDIR += stfl
     SUBDIR += stlfilt
     SUBDIR += stlport
