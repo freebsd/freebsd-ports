@@ -9,7 +9,7 @@ PORTNAME=	wmii
 DISTVERSION=	3.6
 PORTREVISION=	2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.suckless.org/download/
+MASTER_SITES=	 http://code.suckless.org/dl/${PORTNAME}/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A dynamic, minimalist window manager for X11
