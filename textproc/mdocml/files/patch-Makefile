@@ -1,0 +1,32 @@
+--- Makefile.orig	2009-03-21 21:21:46.000000000 +0100
++++ Makefile	2009-03-21 21:28:17.000000000 +0100
+@@ -4,7 +4,7 @@
+ INCLUDEDIR	= $(PREFIX)/include
+ LIBDIR		= $(PREFIX)/lib
+ MANDIR		= $(PREFIX)/man
+-INSTALL_PROGRAM	= install -m 0755
++INSTALL_PROGRAM	= install -m 0755 -s
+ INSTALL_DATA	= install -m 0444
+ INSTALL_LIB	= install -m 0644
+ INSTALL_MAN	= $(INSTALL_DATA)
+@@ -13,7 +13,7 @@
+ VDATE	   = 21 March 2009
+ 
+ VFLAGS     = -DVERSION=\"$(VERSION)\"
+-CFLAGS    += -W -Wall -Wstrict-prototypes -Wno-unused-parameter -g 
++CFLAGS    += -W -Wall -Wstrict-prototypes -Wno-unused-parameter
+ LINTFLAGS += $(VFLAGS)
+ CFLAGS    += $(VFLAGS)
+ 
+@@ -76,9 +76,11 @@
+ install:
+ 	mkdir -p $(BINDIR)
+ 	mkdir -p $(MANDIR)/man1
++	mkdir -p $(MANDIR)/man3
+ 	mkdir -p $(MANDIR)/man7
+ 	$(INSTALL_PROGRAM) mandoc $(BINDIR)
+ 	$(INSTALL_MAN) mandoc.1 $(MANDIR)/man1
++	$(INSTALL_MAN) mdoc.3 $(MANDIR)/man3
+ 	$(INSTALL_MAN) mdoc.7 $(MANDIR)/man7
+ 
+ uninstall:
