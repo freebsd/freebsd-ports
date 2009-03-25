@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--enable-apc
 
 OPTIONS=	MMAP		"Enable mmap memory support (default: IPC shm)"	off \
 		SEMAPHORES	"Enable sysv IPC semaphores (default: fcntl())"	off \
+		SPINLOCKS	"Enable spinlocks (experimental)"		off \
 		FILEHITS	"Enable per request cache info"			off \
 		PHP4_OPT	"Little optimization to PHP4"			off
 
@@ -40,6 +41,10 @@ CONFIGURE_ARGS+=	--enable-apc-mmap
 
 .if defined(WITH_SEMAPHORES)
 CONFIGURE_ARGS+=	--enable-apc-sem
+.endif
+
+.if defined(WITH_SPINLOCKS)
+CONFIGURE_ARGS+=	--enable-apc-spinlocks
 .endif
 
 .if defined(WITH_FILEHITS)
