@@ -1,12 +1,12 @@
---- ./Makefile.PL.orig	Tue Feb 19 09:43:14 2008
-+++ ./Makefile.PL	Tue Feb 19 09:45:48 2008
-@@ -17,30 +17,4 @@
+--- ./Makefile.PL.orig	2009-03-17 10:45:12.000000000 +0100
++++ ./Makefile.PL	2009-03-17 10:46:05.000000000 +0100
+@@ -20,28 +20,6 @@ requires    'Socket'           =>    0;
  requires    'HTTP::Request'    =>    0;
  requires    'HTTP::Response'   =>    0;
  
 -build_requires   'Test::More'                   => 0.47;
--build_requires   'LWP::UserAgent'               =>    0;
--build_requires   'LWP::ConnCache'               =>    0;
+-build_requires	 'POE::Filter::HTTP::Parser'	=> 0.02;
+-build_requires	 'Test::POE::Client::TCP'	=> 0.10;
 -
 -my $value = prompt( 'Do you want to test streaming ( requires POE::Component::Client::HTTP ) [y/N]?', 'N' );
 -build_requires   'POE::Component::Client::HTTP' => 0.82 if $value =~ /^Y$/i;
@@ -26,8 +26,6 @@
 -   build_requires   'POE::Component::Client::HTTP' => 0.82;
 -}
 -
--# Sanity check
--eval { require IPC::Shareable; };
--build_requires 'POE::Component::Client::HTTP' => 0.82 unless $@;
--
- WriteAll();
+ # Sanity check
+ eval { require IPC::Shareable; };
+ build_requires 'POE::Component::Client::HTTP' => 0.82 unless $@;
