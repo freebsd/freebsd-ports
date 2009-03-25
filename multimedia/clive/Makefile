@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clive
-PORTVERSION=	2.1.7
+PORTVERSION=	2.1.8
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
@@ -32,6 +32,7 @@ PLIST_FILES=	bin/clive
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	5.8.2+
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 

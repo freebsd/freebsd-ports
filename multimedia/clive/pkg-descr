@@ -1,8 +1,8 @@
-clive is a portable Perl command line tool for extracting videos 
-from Youtube, Google Video, Break, LiveLeak, LastFm, EvisorTV,
-and Sevenload websites.  clive may be used in a non-interactive
-fashion -- this allows the user to start an extraction and disconnect
-from the system, letting clive finish the work.
+clive is a portable Perl command line tool for extracting videos from
+Youtube, Google Video, Break, LiveLeak, LastFm, EvisorTV, Sevenload,
+Sevenload and Dailymotion websites.  clive may be used in a non-interactive
+fashion -- this allows the user to start an extraction and disconnect from
+the system, letting clive finish the work.
 
 Main features:
 
