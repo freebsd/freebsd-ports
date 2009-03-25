@@ -17,9 +17,9 @@ USE_HORDE=	base pkg-message
 USE_GETTEXT=	yes
 PORTDOCS=	README CHANGES CREDITS INSTALL TODO
 
-BUILD_DEPENDS+=	${LOCALBASE}/www/horde/turba/minisearch.php:${PORTSDIR}/mail/horde-turba \
-		${LOCALBASE}/www/horde/nag/data.php:${PORTSDIR}/deskutils/horde-nag \
-		${LOCALBASE}/www/horde/whups/index.php:${PORTSDIR}/devel/horde-whups
+BUILD_DEPENDS+=	${HORBAS}/turba/minisearch.php:${PORTSDIR}/mail/horde-turba \
+		${HORBAS}/nag/data.php:${PORTSDIR}/deskutils/horde-nag \
+		${HORBAS}/whups/index.php:${PORTSDIR}/devel/horde-whups
 
 .include "${.CURDIR}/../../www/horde-base/bsd.horde.mk"
 .include <bsd.port.mk>
