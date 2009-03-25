@@ -10,7 +10,7 @@ PORTVERSION=	0.8.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.clutter-project.org/sources/${PORTNAME}/0.8/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clutter Cairo integrarion library
 
 LIB_DEPENDS=	clutter-glx-0.8:${PORTSDIR}/graphics/clutter \
