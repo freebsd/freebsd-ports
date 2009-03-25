@@ -1,6 +1,6 @@
---- Makefile.orig	2009-02-19 23:22:22.000000000 +0200
-+++ Makefile	2009-02-19 23:23:47.000000000 +0200
-@@ -1,25 +1,21 @@
+--- Makefile.orig	2009-03-25 12:31:53.000000000 +0200
++++ Makefile	2009-03-25 12:32:25.000000000 +0200
+@@ -1,26 +1,21 @@
  # GNU Makefile
  
 -SHELL = /bin/sh
@@ -27,7 +27,8 @@
  TR          = tr
  
 -WITH_MAN    = yes
+-WITH_CHECK  = yes
 -
- RELEASE_scan := \
-     $(shell sh -c "$(AWK) '/constant VERSION/ {print \$$5}' clivescan | \
-         $(TR) -d '[\";]'")
+ .PHONY: all checks
+ all: checks
+ 
