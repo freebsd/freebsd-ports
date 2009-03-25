@@ -1,16 +1,16 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	2008-10-09 23:46:22.000000000 +0900
-+++ configure	2008-10-12 23:56:41.000000000 +0900
-@@ -733,6 +733,7 @@
- LIB_WRAP
- SNMP_CONFIG
+--- configure.orig	2009-03-13 21:19:01.000000000 +0900
++++ configure	2009-03-15 16:16:50.000000000 +0900
+@@ -642,6 +642,7 @@
+ IMAP_COM_ERR_LIBS
+ LIB_RT
  LIB_UCDSNMP
 +LDFLAGS_UCDSNMP
- LIB_RT
- IMAP_COM_ERR_LIBS
- IMAP_LIBS
-@@ -18347,6 +18348,7 @@
+ SNMP_CONFIG
+ LIB_WRAP
+ CMU_LIB_SUBDIR
+@@ -19030,6 +19031,7 @@
      EXTRA_SUBDIRS="${EXTRA_SUBDIRS} perl"
      PERL_SUBDIRS="imap"
      PERL="${with_perl}"
@@ -18,7 +18,7 @@ diff -u configure.orig configure
      PERL_CCCDLFLAGS="$cccdlflags"
  
  fi
-@@ -19329,7 +19331,9 @@
+@@ -19984,7 +19986,9 @@
  
      if test -n "$SNMP_LIBS" && test -n "$SNMP_PREFIX"; then
        CPPFLAGS="$CPPFLAGS -I${SNMP_PREFIX}/include"
@@ -29,29 +29,12 @@ diff -u configure.orig configure
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_NETSNMP 1
-@@ -19563,7 +19567,7 @@
+@@ -20224,7 +20228,7 @@
  #define HAVE_UCDSNMP 1
  _ACEOF
  
 -      LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp"
 +      LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp -lkvm -ldevstat -lwrap"
-       { echo "$as_me:$LINENO: checking for rpmdbOpen in -lrpm" >&5
- echo $ECHO_N "checking for rpmdbOpen in -lrpm... $ECHO_C" >&6; }
+       { $as_echo "$as_me:$LINENO: checking for rpmdbOpen in -lrpm" >&5
+ $as_echo_n "checking for rpmdbOpen in -lrpm... " >&6; }
  if test "${ac_cv_lib_rpm_rpmdbOpen+set}" = set; then
-@@ -20470,6 +20474,7 @@
- LIB_WRAP!$LIB_WRAP$ac_delim
- SNMP_CONFIG!$SNMP_CONFIG$ac_delim
- LIB_UCDSNMP!$LIB_UCDSNMP$ac_delim
-+LDFLAGS_UCDSNMP!$LDFLAGS_UCDSNMP$ac_delim
- LIB_RT!$LIB_RT$ac_delim
- IMAP_COM_ERR_LIBS!$IMAP_COM_ERR_LIBS$ac_delim
- IMAP_LIBS!$IMAP_LIBS$ac_delim
-@@ -20478,7 +20483,7 @@
- LTLIBOBJS!$LTLIBOBJS$ac_delim
- _ACEOF
- 
--  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 29; then
-+  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 30; then
-     break
-   elif $ac_last_try; then
-     { { echo "$as_me:$LINENO: error: could not make $CONFIG_STATUS" >&5
