@@ -27,6 +27,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	opt
 MAKE_ENV+=	OCAMLRUNPARAM="l=256M"
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS+=\
 		--enable-ocamlver=3 \

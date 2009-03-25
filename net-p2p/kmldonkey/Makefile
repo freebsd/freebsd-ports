@@ -21,6 +21,7 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--program-transform-name=''
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
+MAKE_JOBS_SAFE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}
 
