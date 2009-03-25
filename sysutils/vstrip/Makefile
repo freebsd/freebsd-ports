@@ -20,6 +20,7 @@ LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 USE_ZIP=	yes
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 WRKSRC=		${WRKDIR}/${PORTNAME}
+MAKE_JOBS_SAFE=	yes
 
 post-extract:
 	@${FIND} ${WRKSRC} -type f -print0 | \
