@@ -1,0 +1,9 @@
+%%SITE_PERL%%/POE/Filter/HTTP/Parser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/HTTP/Parser/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/HTTP/Parser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/HTTP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
+@dirrmtry %%SITE_PERL%%/POE/Filter/HTTP
+@dirrmtry %%SITE_PERL%%/POE/Filter
+@dirrmtry %%SITE_PERL%%/POE
