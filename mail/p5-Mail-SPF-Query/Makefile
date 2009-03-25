@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+CONFLICTS=	p5-Mail-SPF-[0-9]*
+
 PERL_CONFIGURE=	yes
 
 MAN1=		spfd.1 spfquery.1

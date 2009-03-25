@@ -23,6 +23,8 @@ RUN_DEPENDS=	p5-Net-DNS-Resolver-Programmable>=0.002.1:${PORTSDIR}/dns/p5-Net-DN
 		p5-URI>=1.13:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+CONFLICTS=	p5-Mail-SPF-Query-[0-9]*
+
 PERL_MODBUILD=	5.6.0+
 CONFIGURE_ARGS=	--install_path sbin=${PREFIX}/sbin
 
