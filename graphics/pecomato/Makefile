@@ -22,6 +22,12 @@ MAKEFILE=	Makefile.unix
 MAN1=		pecomato.1
 PLIST_FILES=	bin/pecomato
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800067
+BROKEN=		does not compile
+.endif
+
 post-build:
 	${PYTHON} ${WRKSRC}/devtools/txt2tags.py --no-rc -t man \
 		-i ${WRKSRC}/doc/manpage.t2t -o ${WRKSRC}/doc/${MAN1}
@@ -33,4 +39,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MANPREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
