@@ -18,6 +18,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Generates X11 mouse button click events
 
 USE_XORG=	x11 xtst xext xfixes xi
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 

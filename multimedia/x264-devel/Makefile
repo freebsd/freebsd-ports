@@ -29,6 +29,7 @@ USE_GMAKE=	yes
 ALL_TARGET=	default
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	DEBUG "Enable Debugging" Off \
 		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off \

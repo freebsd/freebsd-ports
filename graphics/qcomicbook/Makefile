@@ -23,6 +23,7 @@ USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
 # USE_EFL=	imlib2 #disabled in this release
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		qcomicbook.1
 
