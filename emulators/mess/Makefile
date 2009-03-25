@@ -41,6 +41,9 @@ EXTRA_PATCHES+=		${FILESDIR}/sdl.mak.patch
 .if ${ARCH} == "amd64"
 MAKE_ENV+=	PTR64=1
 .endif
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|ui.bdf|${DATADIR}/ui.bdf|g" ${WRKSRC}/src/emu/ui.c
