@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tintin
-PORTVERSION=	1.98.8
+PORTVERSION=	1.99.0
 CATEGORIES+=	net games
 MASTER_SITES=	SFE
 
@@ -27,9 +27,6 @@ DOCS=		CREDITS FAQ README SCRIPTS TODO \
 PORTDOCS=	${DOCS:T}
 
 .include <bsd.port.pre.mk>
-
-pre-configure:
-	@${CHMOD} +x ${WRKSRC}/configure
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile
