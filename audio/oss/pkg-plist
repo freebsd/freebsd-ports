@@ -6,6 +6,7 @@ bin/ossrecord
 bin/osstest
 bin/ossxmix
 etc/oss.conf
+lib/oss/conf/oss_allegro.conf.sample
 lib/oss/conf/oss_audigyls.conf.sample
 lib/oss/conf/oss_audioloop.conf.sample
 lib/oss/conf/oss_cs461x.conf.sample
@@ -34,6 +35,7 @@ lib/oss/include/sys/soundcard.h
 @exec mkdir -p %D/lib/oss/logs
 @dirrmtry lib/oss/logs
 lib/oss/modules/oss_ali5455.ko
+lib/oss/modules/oss_allegro.ko
 lib/oss/modules/oss_atiaudio.ko
 lib/oss/modules/oss_audigyls.ko
 lib/oss/modules/oss_audioloop.ko
