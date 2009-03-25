@@ -21,6 +21,7 @@ USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--enable-cxx
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 INFO=		gmp
