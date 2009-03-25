@@ -6,6 +6,7 @@
 
 PORTNAME=	ikiwiki
 PORTVERSION=	3.08
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://kitenet.net/~joey/debian/unstable/
@@ -88,8 +89,11 @@ post-patch:
 	@${REINPLACE_CMD} -e '/w3m/d' -e '/W3M/d' ${WRKSRC}/Makefile.PL
 .endif
 .if defined(NOPORTEXAMPLES)
-	${MV} ${WRKSRC}/doc/examples ${WRKSRC}/doc/examples.not_installed
-	${MKDIR} ${WRKSRC}/doc/examples
+	@${REINPLACE_CMD} \
+		-e 's|\(install -d ${EXAMPLESDIR}\)|#\1|' \
+		-e 's|\(cp -aL doc/examples\)|#\1|' \
+		-e 's|\(install -m 644 doc/examples\)|#\1|' \
+		${WRKSRC}/Makefile.PL
 .endif
 
 post-install:
