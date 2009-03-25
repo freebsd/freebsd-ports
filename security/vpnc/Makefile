@@ -34,6 +34,10 @@ MAKE_ENV+=	LDFLAGS="${LDFLAGS}" BINS="${EXTRABUILDS}"
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800067 && ${ARCH} == "amd64"
+BROKEN=		does not compile
+.endif
+
 .if defined(WITH_DECRYPT)
 MAN1=		cisco-decrypt.1
 EXTRABUILDS+=	cisco-decrypt
