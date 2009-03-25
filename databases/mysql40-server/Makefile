@@ -18,6 +18,7 @@ COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/mysql40-client
 USE_AUTOTOOLS=	libtool:15
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-debug \
