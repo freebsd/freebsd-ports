@@ -16,6 +16,7 @@ COMMENT=	RPN and algebraic scientific calculator
 
 USE_GNOME=	gtk20 pkgconfig
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		calcoo.1
 

@@ -18,6 +18,7 @@ CONFLICTS=	lzma-[0-9]*
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		lzdiff.1 lzgrep.1 lzma.1 lzmadec.1 lzmainfo.1 lzmore.1
 
