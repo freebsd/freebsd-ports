@@ -17,6 +17,7 @@ COMMENT=	Command line CD ripper/encoder wrapper with cddb support
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_CDRTOOLS=	yes
+MAKE_JOBS_SAFE=	yes
 
 LIB_DEPENDS+=	cdio.8:${PORTSDIR}/sysutils/libcdio
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame\

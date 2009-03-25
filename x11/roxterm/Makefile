@@ -18,6 +18,7 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 INSTALLS_ICONS=	yes
 USE_GNOME=	vte libglade2
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET+=install install-doc-local

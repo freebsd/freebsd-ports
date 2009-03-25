@@ -21,6 +21,7 @@ MAN1=		pbzip2.1
 MLINKS=		pbzip2.1 pbunzip2.1
 
 USE_GMAKE=	YES
+MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} \

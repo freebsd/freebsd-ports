@@ -17,6 +17,7 @@ COMMENT=	Make your windows transparent
 ALL_TARGET=	transset-df
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 USE_XORG=	x11 xfixes xcomposite xrender xdamage
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/transset-df
 
