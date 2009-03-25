@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Chart-Clicker
-PORTVERSION=	2.17
+PORTVERSION=	2.18
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,8 +19,8 @@ BUILD_DEPENDS=	p5-Moose>=0.57:${PORTSDIR}/devel/p5-Moose \
 		p5-Module-Install>=0.64:${PORTSDIR}/devel/p5-Module-Install \
 		p5-DateTime-Set>=0.25:${PORTSDIR}/devel/p5-DateTime-Set \
 		p5-Geometry-Primitive>=0.13:${PORTSDIR}/graphics/p5-Geometry-Primitive \
-		p5-Graphics-Primitive>=0.37:${PORTSDIR}/graphics/p5-Graphics-Primitive \
-		p5-Graphics-Primitive-Driver-Cairo>=0.32:${PORTSDIR}/graphics/p5-Graphics-Primitive-Driver-Cairo \
+		p5-Graphics-Primitive>=0.38:${PORTSDIR}/graphics/p5-Graphics-Primitive \
+		p5-Graphics-Primitive-Driver-Cairo>=0.33:${PORTSDIR}/graphics/p5-Graphics-Primitive-Driver-Cairo \
 		p5-Layout-Manager>=0.20:${PORTSDIR}/graphics/p5-Layout-Manager
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -43,6 +43,7 @@ MAN3=		Chart::Clicker.3 \
 		Chart::Clicker::Decoration::Legend.3 \
 		Chart::Clicker::Decoration::LegendItem.3 \
 		Chart::Clicker::Decoration::MarkerOverlay.3 \
+		Chart::Clicker::Decoration::OverAxis.3 \
 		Chart::Clicker::Decoration::Plot.3 \
 		Chart::Clicker::Drawing::ColorAllocator.3 \
 		Chart::Clicker::Positioned.3 \
@@ -54,7 +55,6 @@ MAN3=		Chart::Clicker.3 \
 		Chart::Clicker::Renderer::Measurement.3 \
 		Chart::Clicker::Renderer::Pie.3 \
 		Chart::Clicker::Renderer::Point.3 \
-		Chart::Clicker::Renderer::StackedBar.3 \
-		Chart::Clicker::Shape.3
+		Chart::Clicker::Renderer::StackedBar.3
 
 .include <bsd.port.mk>
