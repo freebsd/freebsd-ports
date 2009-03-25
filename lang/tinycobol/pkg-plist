@@ -1,4 +1,5 @@
 bin/htcobf2f
+bin/htcobol
 bin/htcobrun
 lib/libhtcobol.a
 lib/libhtcobol.so

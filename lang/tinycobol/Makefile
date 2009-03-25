@@ -13,6 +13,8 @@ MASTER_SITES=	SF/tiny-cobol
 MAINTAINER=	glen.j.barber@gmail.com
 COMMENT=	A tiny COBOL compiler for IA32 platforms
 
+BROKEN=		Missing htcobol compiler binary
+
 ONLY_FOR_ARCHS=	i386
 
 USE_BZIP2=	yes
