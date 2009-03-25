@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	jdk-doc
-PORTVERSION=	${JDK_VERSION:S/_/./g}
-PORTREVISION=	1
+PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VER}
 CATEGORIES=	java
 MASTER_SITES=	#
-DISTNAME=	jdk-6-doc
+DISTNAME=	jdk-6u10-docs
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_MAJOR_VER} Documentation
@@ -24,6 +23,7 @@ WRKSRC=		${WRKDIR}/docs
 JDK_VERSION=	1.6.0
 JDK_MAJOR_VER=	${JDK_VERSION:R}
 JDK_CONCAT_VER=	${JDK_MAJOR_VER:S/.//g}
+JDK_UPDATE_VER=	10
 DOWNLOAD_URL=	http://java.sun.com/javase/downloads/index.jsp
 
 NO_BUILD=	yes
