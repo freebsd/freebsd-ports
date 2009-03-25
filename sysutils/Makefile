@@ -73,6 +73,7 @@
     SUBDIR += bubblemon-dockapp
     SUBDIR += bubblemon2
     SUBDIR += burn
+    SUBDIR += busybox
     SUBDIR += ccd2iso
     SUBDIR += cciss_vol_status
     SUBDIR += ccze
