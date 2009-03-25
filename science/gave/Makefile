@@ -7,12 +7,12 @@
 
 PORTNAME=	gave
 PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science graphics ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/gave/
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	murakami@ahs.scitec.kobe-u.ac.jp
+MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	A gtk+ based grid data analyser and viewer written in Ruby
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
@@ -29,7 +29,7 @@ USE_RUBY_SETUP=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_NLS)
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/locale_system.so:${PORTSDIR}/devel/ruby-gettext
+RUN_DEPENDS+=	${RUBY_SITELIBDIR}/locale.rb:${PORTSDIR}/devel/ruby-gettext
 .if ${RUBY_VER} >= 1.7
 RUN_DEPENDS+=	${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv
 .else
