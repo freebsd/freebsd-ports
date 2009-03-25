@@ -6,6 +6,7 @@
 
 PORTNAME=	tinderbox
 PORTVERSION=	3.2
+PORTREVISION=	1	# 2009-03-25
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
@@ -20,11 +21,11 @@ CONFLICTS=	tinderbox-[0-9]*
 OPTIONS=	PGSQL "With pgsql" Off \
 		MYSQL "With mysql" On \
 		CSUP  "Use csup for updates" On \
-		CVSUP "Use cvsup for updates" Off \
 		WEBUI   "Install web interface" On \
 		APACHE "Use Apache for web interface" On \
 		LIGHTTPD "Use LightHTTPD for web interface" Off \
-		CHECK_FOR_ROOT "Check it ./tc is run by uid 0" On
+		CHECK_FOR_ROOT "Check it ./tc is run by uid 0" On \
+		LSOF "Use lsof not fstat for killMountProcesses()" On
 
 NO_BUILD=	yes
 WANT_PERL=	yes
@@ -73,14 +74,14 @@ RUN_DEPENDS+=	csup:${PORTSDIR}/net/csup
 .endif
 .endif
 
-.if defined(WITH_CVSUP)
-RUN_DEPENDS+=	cvsup:${PORTSDIR}/net/cvsup-without-gui
-.endif
-
 .if !defined(WITHOUT_APACHE) && defined(WITH_WEBUI)
 USE_APACHE=	1.3+
 .elif defined(WITH_LIGHTTPD) && defined(WITH_WEBUI)
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
+.endif
+
+.if defined(WITH_LSOF)
+RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
 .endif
 
 pre-everything::
@@ -98,8 +99,8 @@ post-patch:
 .ifdef WITHOUT_CHECK_FOR_ROOT
 	${REINPLACE_CMD} -e 's/^if \[ `id -u` != 0 \]; then/if false; then/' \
 		${WRKSRC}/tc
-	@cd ${WRKSRC} && ${FIND} . -name '*.orig' -exec ${RM} {} \;
 .endif
+	@cd ${WRKSRC} && ${FIND} . -name '*.orig' -exec ${RM} {} \;
 
 do-install:
 	@${MKDIR} ${PREFIX}/tinderbox/scripts
