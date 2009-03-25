@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Passphrase/.packlist
 %%SITE_PERL%%/Authen/Passphrase.pm
 %%SITE_PERL%%/Authen/Passphrase/AcceptAll.pm
 %%SITE_PERL%%/Authen/Passphrase/BigCrypt.pm
