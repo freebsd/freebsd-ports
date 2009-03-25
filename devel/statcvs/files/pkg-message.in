@@ -1,0 +1,11 @@
+======================================================================
+You have just installed StatCVS, a CVS repository activity report
+generator.
+
+To use the tool, run the following command:
+
+java -jar %%DATADIR%%/statcvs.jar
+
+Full usage instructions and command options are found at:
+http://statcvs.sourceforge.net/manual.html
+======================================================================

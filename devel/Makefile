@@ -2655,6 +2655,7 @@
     SUBDIR += splint
     SUBDIR += srecord
     SUBDIR += st
+    SUBDIR += statcvs
     SUBDIR += stfl
     SUBDIR += stlfilt
     SUBDIR += stlport
