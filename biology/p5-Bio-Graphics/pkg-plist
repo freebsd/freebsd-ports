@@ -16,6 +16,7 @@ bin/search_overview.pl
 %%SITE_PERL%%/Bio/Graphics/Glyph/fixedwidth.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/wiggle_box.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/ternary_plot.pm
+%%SITE_PERL%%/Bio/Graphics/Glyph/wiggle_minmax.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/wiggle_xyplot.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/heat_map_ideogram.pm
 %%SITE_PERL%%/Bio/Graphics/Wiggle/Loader.pm
