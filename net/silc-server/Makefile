@@ -7,6 +7,7 @@
 
 PORTNAME=	silc
 PORTVERSION=	1.1.16
+PORTREVISION=	1
 CATEGORIES=	net ipv6 security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
@@ -26,6 +27,8 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Secure Internet Live Conferencing (SILC) network server
+
+LIB_DEPENDS=	silc-1.1:${PORTSDIR}/devel/silc-toolkit
 
 SUB_FILES=	pkg-message pkg-deinstall
 USE_RC_SUBR=	silcd
