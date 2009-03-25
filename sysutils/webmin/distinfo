@@ -1,3 +1,6 @@
 MD5 (webmin-1.470.tar.gz) = 77885c020715abc9a925f2d674a35654
 SHA256 (webmin-1.470.tar.gz) = bbc8ca430f31696eb4d923ba6fb1d25df625df64635382a3664e0a5aac4441da
 SIZE (webmin-1.470.tar.gz) = 14105863
+MD5 (file-1.470-2.wbm.gz) = 8d7ffdacc333e72316d34834ae7834e0
+SHA256 (file-1.470-2.wbm.gz) = f976a4d29842acbaaf9684535c6a0132fd03b00010af8d87b345d1a70f10b9ee
+SIZE (file-1.470-2.wbm.gz) = 928846
