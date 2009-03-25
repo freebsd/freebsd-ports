@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	evilvte
-PORTVERSION=	0.4.3
-PORTREVISION=	2
+PORTVERSION=	0.4.4
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://www.calno.com/${PORTNAME}/ \
 		LOCAL/chinsan/${PORTNAME}/
@@ -23,7 +22,7 @@ USE_GMAKE=	yes
 MAN1=		evilvte.1 showvte.1
 
 post-patch:
-	@${REINPLACE_CMD} -e '37,38 d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '40,41 d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|\(FONT_SIZE\).*|\1 12|' ${WRKSRC}/src/config.h
 
 post-install:
