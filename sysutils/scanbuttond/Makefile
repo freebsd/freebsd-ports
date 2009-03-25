@@ -15,9 +15,10 @@ MAINTAINER=	dthiele@gmx.net
 COMMENT=	A daemon to monitor and configure modern scanner's buttons
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 SUB_FILES+=	pkg-message
 
