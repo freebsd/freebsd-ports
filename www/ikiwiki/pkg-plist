@@ -128,6 +128,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IkiWiki/.packlist
 %%SITE_PERL%%/IkiWiki.pm
 %%SITE_PERL%%/IkiWiki/CGI.pm
+%%SITE_PERL%%/IkiWiki/Plugin/404.pm
 %%SITE_PERL%%/IkiWiki/Plugin/aggregate.pm
 %%SITE_PERL%%/IkiWiki/Plugin/amazon_s3.pm
 %%SITE_PERL%%/IkiWiki/Plugin/anonok.pm
@@ -156,6 +157,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/git.pm
 %%SITE_PERL%%/IkiWiki/Plugin/goodstuff.pm
 %%SITE_PERL%%/IkiWiki/Plugin/google.pm
+%%SITE_PERL%%/IkiWiki/Plugin/goto.pm
 %%SITE_PERL%%/IkiWiki/Plugin/graphviz.pm
 %%SITE_PERL%%/IkiWiki/Plugin/haiku.pm
 %%SITE_PERL%%/IkiWiki/Plugin/hnb.pm
@@ -224,6 +226,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/version.pm
 %%SITE_PERL%%/IkiWiki/Plugin/websetup.pm
 %%SITE_PERL%%/IkiWiki/Plugin/wikitext.pm
+%%SITE_PERL%%/IkiWiki/Plugin/wmd.pm
 %%SITE_PERL%%/IkiWiki/Receive.pm
 %%SITE_PERL%%/IkiWiki/Render.pm
 %%SITE_PERL%%/IkiWiki/Setup.pm

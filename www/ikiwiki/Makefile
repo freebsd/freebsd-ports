@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	3.03
+PORTVERSION=	3.08
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://kitenet.net/~joey/debian/unstable/
@@ -43,7 +43,7 @@ OPTIONS=	SEARCH "Install search backend" On \
 MAN1=		ikiwiki.1 ikiwiki-makerepo.1 ikiwiki-transition.1 ikiwiki-update-wikilist.1
 MAN8=		ikiwiki-mass-rebuild.8
 PORTDOCS=	CHANGELOG NEWS README
-PORTEXAMPLES=	ikiwiki.setup wikilist
+PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
 
@@ -78,6 +78,7 @@ post-patch:
 		-e 's|\(-install -m 0644 wikilist\)|#\1|' \
 		-e 's|\(-install -m 0644 auto.setup\)|#\1|' \
 		-e 's|\(-install -m 0644 auto-blog.setup\)|#\1|' \
+		-e 's|$$(DESTDIR)$$(PREFIX)/share/ikiwiki/examples|${EXAMPLESDIR}|' \
 		${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} -e \
 		"s|/usr/lib/cgi-bin/omega/omega|${LOCALBASE}/www/xapian-omega/cgi-bin/omega|g" \
@@ -85,6 +86,10 @@ post-patch:
 	@${RM} ${WRKSRC}/IkiWiki/Plugin/search.pm.bak
 .ifndef(WITH_W3M)
 	@${REINPLACE_CMD} -e '/w3m/d' -e '/W3M/d' ${WRKSRC}/Makefile.PL
+.endif
+.if defined(NOPORTEXAMPLES)
+	${MV} ${WRKSRC}/doc/examples ${WRKSRC}/doc/examples.not_installed
+	${MKDIR} ${WRKSRC}/doc/examples
 .endif
 
 post-install:
@@ -97,7 +102,8 @@ post-install:
 .endif
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S@^@${WRKSRC}/@} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/ikiwiki.setup ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/wikilist ${EXAMPLESDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
