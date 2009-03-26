@@ -18,6 +18,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	LIBUSB "Enable OBEX over USB" no
 

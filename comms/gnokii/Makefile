@@ -23,6 +23,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE} --enable-security \
