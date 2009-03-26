@@ -64,3 +64,12 @@
 %%WORDPERFECT:%%lib/abiword-%%ABIVERSION%%/plugins/libAbiWordPerfect.so
 %%XSLFO:%%lib/abiword-%%ABIVERSION%%/plugins/libAbiXSLFO.la
 %%XSLFO:%%lib/abiword-%%ABIVERSION%%/plugins/libAbiXSLFO.so
+%%LATEX:%%share/abiword-2.6/xsltml/README
+%%LATEX:%%share/abiword-2.6/xsltml/cmarkup.xsl
+%%LATEX:%%share/abiword-2.6/xsltml/entities.xsl
+%%LATEX:%%share/abiword-2.6/xsltml/glayout.xsl
+%%LATEX:%%share/abiword-2.6/xsltml/mmltex.xsl
+%%LATEX:%%share/abiword-2.6/xsltml/scripts.xsl
+%%LATEX:%%share/abiword-2.6/xsltml/tables.xsl
+%%LATEX:%%share/abiword-2.6/xsltml/tokens.xsl
+%%LATEX:%%@dirrm share/abiword-%%ABIVERSION%%/xsltml

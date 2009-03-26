@@ -39,7 +39,6 @@ share/abiword-%%ABIVERSION%%/glade/xap_UnixDlg_WindowMore.glade
 share/abiword-%%ABIVERSION%%/glade/xap_UnixDlg_Zoom.glade
 share/abiword-%%ABIVERSION%%/readme.abw
 share/abiword-%%ABIVERSION%%/readme.txt
-share/abiword-%%ABIVERSION%%/scripts/abw2html.pl
 share/abiword-%%ABIVERSION%%/strings/am-ET.strings
 share/abiword-%%ABIVERSION%%/strings/ar.strings
 share/abiword-%%ABIVERSION%%/strings/ast-ES.strings
@@ -248,7 +247,6 @@ share/pixmaps/abiword_48.png
 @dirrmtry share/applications
 @dirrm share/abiword-%%ABIVERSION%%/templates
 @dirrm share/abiword-%%ABIVERSION%%/strings
-@dirrm share/abiword-%%ABIVERSION%%/scripts
 @dirrm share/abiword-%%ABIVERSION%%/glade
 @dirrm share/abiword-%%ABIVERSION%%
 @exec /bin/mkdir -p %D/lib/abiword-%%ABIVERSION%%/plugins

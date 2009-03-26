@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	abiword-extras
-PORTVERSION=	2.6.3
-PORTREVISION=	1
+PORTVERSION=	2.6.8
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -20,9 +19,5 @@ BUILD_DEPENDS=	abiword:${PORTSDIR}/editors/abiword
 RUN_DEPENDS=	abiword:${PORTSDIR}/editors/abiword
 
 GNU_CONFIGURE=	yes
-
-post-install:
-##### Makes abiword CRASH
-	@${RM} -f ${PREFIX}/share/abiword-2.6/templates/Fax-Coversheet.awt
 
 .include <bsd.port.mk>
