@@ -121,6 +121,8 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/test/__init__.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/__init__.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/ChangeLog
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/MyPyPa-0.1.0-py2.5.egg
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/MyPyPa-0.1.0-py2.5.zip
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/__init__.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/__init__.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/__init__.pyo
