@@ -23,6 +23,7 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		HTTP_ADDITION_MODULE "Enable http_addition module" off \
 		HTTP_DAV_MODULE "Enable http_webdav module" off \
 		HTTP_FLV_MODULE "Enable http_flv module" off \
+		HTTP_GZIP_STATIC_MODULE "Enable http_gzip_static module" off \
 		HTTP_PERL_MODULE "Enable http_perl module" off \
 		HTTP_REALIP_MODULE "Enable http_realip module" off \
 		HTTP_REWRITE_MODULE "Enable http_rewrite module" on \
@@ -35,6 +36,8 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		MAIL_SMTP_MODULE "Enable SMTP proxy module" off \
 		MAIL_SSL_MODULE "Enable mail_ssl module" off \
 		WWW "Enable html sample files" on
+
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -80,7 +83,7 @@ CONFIGURE_ARGS+=--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_temp \
 
 .if defined(WITH_HTTP_ACCESSKEY_MODULE)
 NGINX_ACCESSKEY_MODULE_VERSION=	2.0.3
-MASTER_SITES+=	${MASTER_SITE_LOCAL}:accesskey
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:accesskey/}
 MASTER_SITE_SUBDIR=	osa/:accesskey
 DISTFILES+=	nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}.tar.gz:accesskey
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}
@@ -96,6 +99,10 @@ CONFIGURE_ARGS+=--with-http_dav_module
 
 .if defined(WITH_HTTP_FLV_MODULE)
 CONFIGURE_ARGS+=--with-http_flv_module
+.endif
+
+.if defined(WITH_HTTP_GZIP_STATIC_MODULE)
+CONFIGURE_ARGS+=--with-http_gzip_static_module
 .endif
 
 .if defined(WITH_HTTP_PERL_MODULE)
