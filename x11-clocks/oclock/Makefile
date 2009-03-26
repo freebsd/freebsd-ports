@@ -7,7 +7,8 @@
 
 PORTNAME=	oclock
 PORTVERSION=	1.0.1
-CATEGORIES=	x11
+PORTREVISION=	1
+CATEGORIES=	x11-clocks
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Round clock application for X
