@@ -50,6 +50,7 @@
     SUBDIR += hanzim
     SUBDIR += hc
     SUBDIR += hztty
+    SUBDIR += ibus-pinyin
     SUBDIR += iiimf-le-newpy
     SUBDIR += iiimf-le-ude
     SUBDIR += iiimf-le-xcin
