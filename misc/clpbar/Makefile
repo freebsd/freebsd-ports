@@ -18,6 +18,7 @@ COMMENT=	Command Line Progress Bar
 
 WRKSRC=		${WRKDIR}/bar-${PORTVERSION}
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE= yes
 MAKE_ARGS+=	CFLAGS+="${CFLAGS}"
 
 MAN1=		bar.1

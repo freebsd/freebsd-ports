@@ -18,6 +18,7 @@ RUN_DEPENDS=	jpegtran:${PORTSDIR}/graphics/jpeg
 
 MAKEFILE=	makefile
 
+MAKE_JOBS_SAFE=	yes
 PORTDOCS=	usage.html
 PLIST_FILES=	bin/jhead
 MAN1=		jhead.1

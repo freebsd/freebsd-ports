@@ -16,6 +16,7 @@ COMMENT=	Structured Terminal Forms Language/Library
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
+MAKE_JOBS_SAFE=	yes
 ALL_TARGET=	libstfl.so
 PLIST_FILES=	lib/libstfl.so.1 lib/libstfl.so include/stfl.h
 CFLAGS+=	-I${LOCALBASE}/include
