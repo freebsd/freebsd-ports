@@ -1,4 +1,19 @@
 #!/bin/sh
+
+# Process the logs in a certain directory and construct the HTML pages
+# summarizing them
+#
+# We only construct the new html pages if either
+# * No HTML files exist yet
+# * .force exists in this directory (set by pdispatch when a log is
+#   removed by package build success)
+# * A new log file has appeared since the last run.
+#
+# Individual summary data for the logs is saved between runs instead of
+# being recomputed each time.  Removing the old data for logs that
+# no longer exist is the responsibility of the dopackages script when
+# starting a new build.
+
 # echo 'processlogs: at '`date`', begin'
 
 arch=$1
@@ -6,14 +21,18 @@ arch=$1
 # establish which directory the logfiles live in (leave out for
 # backwards compatibility)
 buildlogdir=$(realpath .)
-if [ "$2" != "" ]; then buildlogdir="$2"; fi
+if [ "$2" != "" ]; then
+    buildlogdir="$2"
+fi
 
 baselogdir=$(basename ${buildlogdir})
 
 # establish which directory INDEX lives in (leave out for
 # backwards compatibility)
 indexlogdir=$(realpath .)
-if [ "$3" != "" ]; then indexlogdir="$3"; fi
+if [ "$3" != "" ]; then
+    indexlogdir="$3";
+fi
 
 # allow this script to be run from anywhere in the tree
 scriptdir=$(dirname $0)
@@ -24,18 +43,29 @@ pb=/var/portbuild
 
 . ${pb}/${arch}/portbuild.conf
 
+# get the list of buildlogs.
+
+cd ${buildlogdir}
+
+if [ -e .force -o \! -e index.html ]; then
+    rm -f .force
+    force=1
+else
+    force=0
+fi
+
+alllogs=$(find . -maxdepth 1 -type f \( -name '*.log' -o -name '*.log.bz2' \) | sed -e 's,^./,,' 2>/dev/null)
+
+if [ -e .stamp -a ${#alllogs} -eq 0 ]; then
+    exit
+fi
+
 # create a name for the tempfile
 of=.index.html
 
-# if there are no new logfiles, there is nothing to do here.
-if [ \! -e .force -a -e .stamp -a $(echo $(find -f $buildlogdir -maxdepth 1 -newer .stamp -type f \( -name '*.log' -o -name '*.log.bz2' \) 2>/dev/null | wc -l)) = "0" ]; then exit; fi
-
-rm -f .force
-touch .stamp
-
-# get the list of buildlogs.
-set $buildlogdir/*.log $buildlogdir/*.log.bz2
-> .logs
+# XXX temporary
+test -f .logs && rm -f .logs
+mkdir -p .logs
 
 #
 # Read the log-files and write summaries to .logs in the format
@@ -43,24 +73,45 @@ set $buildlogdir/*.log $buildlogdir/*.log.bz2
 #    $reason|$tag|$broken|$datetime
 #
 
-# echo 'processlogs: at '`date`', begin processing log files'
+echo "processlogs: at $(date), begin processing log files for ${arch} in ${baselogdir}"
 
-if [ $# != 1 -o "x$1" != "x`dirname $1`/*.log" -o "x$1" != "x`dirname $1`/*.log.bz2" ]; then
-  while [ ! -z "$1" ]; do
-    filename=$(basename $1)
-    #echo 'processlogs: at '`date`', examining '$filename'
+rm -f .logs/.all
+set -- ${alllogs}
 
-    $errorscript $filename $indexlogdir >> .logs
+gotnew=0
+
+while [ $# -ge 1 ]; do
+    log=$1
     shift
-  done
+
+    if [ ${log%.log.bz2} != ${log} -a -e ${log%.bz2} ]; then
+	# We have both a .log.bz2 and a .log, assume the former is stale
+	rm -f ${log}
+	continue
+    fi
+
+    # basename with .log and .log.bz2 stripped
+    base=${log%.bz2}
+    base=${log%.log}
+
+    if [ ${log} -nt .stamp -o ! -e .logs/${base} ]; then
+	# Save to the base name so the data persists after the log is
+	# compressed
+	${errorscript} ${log} ${indexlogdir} > .logs/${base}
+	gotnew=1
+    fi
+
+    cat .logs/${base} >> .logs/.all
+done
+
+touch .stamp
+
+echo "processlogs: at "`date`", end   processing log files for ${arch} in ${baselogdir}"
+
+if [ ${force} -eq 0 -a ${gotnew} -eq 0 ]; then
+    # Nothing new to do
+    exit
 fi
-# echo 'processlogs: at '`date`', end processing log files'
-
-# XXX Sometimes log entries get doubled up for some reason
-uniq .logs > .logs2
-mv .logs2 .logs
-
-num=$(wc -l < .logs)
 
 header() {
   echo "<html><head><title>Package building errors</title>" >$of
@@ -73,17 +124,17 @@ header() {
   echo "| <a href=\"index-builddate.html\">builddate</a> " >>$of
   echo "]</p>" >>$of
 
-  if [ $num = "0" ]; then
+  if [ ${#alllogs} = "0" ]; then
     echo "No errors (yet)" >>$of
   else
     if [ -s cvsdone ]; then
       echo "CVS update finished at: $(cat cvsdone)<br>" >> $of
     fi
-    latest=$(cd $buildlogdir; ls -rtTl *.log *.log.bz2 | tail -1 | awk '{printf("%s %s %s %s\n",$6,$7,$8,$9)}';)
+    latest=$(ls -rtTl *.log *.log.bz2 2> /dev/null | tail -1 | awk '{printf("%s %s %s %s\n",$6,$7,$8,$9)}')
     echo "Timestamp of newest log: $latest<br><br>" >> $of
     echo "\"Aff.\" is number of ports that depend on this one<br>" >> $of
     echo "\"<font color=\"red\">[B]</font>\" indicates port is marked BROKEN (Note: BROKEN ports are not frequently rebuilt so they may not be listed here)<br><br>" >> $of
-    echo "<p>$num errors</p>" >> $of
+    echo "<p>${#alllogs} errors</p>" >> $of
     echo "<table border=1>" >>$of
     echo "<tr>$1</tr>" >>$of
   fi
@@ -95,10 +146,7 @@ footer() {
   echo "</html>" >>$of
 }
 
-# Now reread the .logs file and create the reports.  If the .logs file
-# has blanks in any field, this code won't work.  Therefore, the
-# code above has to guarantee that that won't happen, and the code
-# below has to catch the metatoken.
+# Now reread the .logs/.all file and create the reports.
 
 # echo 'processlogs: at '`date`', create default output'
 #
@@ -106,10 +154,13 @@ footer() {
 #
 header "<th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Maintainer</th><th>Reason</th><th>Build date</th>"
 
-for i in `cat .logs | sort`; do
-    set $(echo "$i" | tr \| " " | sed -e "s@NONE@\\&nbsp;@g")
+if [ ${#alllogs} -gt 0 ]; then
+sort .logs/.all | while read line; do
+    IFS="|"
+    set -- ${line}
+    unset IFS
     mailto="$6"
-    if [ "$6" != "&nbsp;" ] ; then
+    if [ "$6" != "" ] ; then
        mailto="<a href=\"mailto:$6\">$6</a>"
     fi
 
@@ -117,23 +168,24 @@ for i in `cat .logs | sort`; do
 
     echo "<td><a href=\"http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
 
-    affby=$3
-    test $affby = "0" -o $affby = "-1" && affby="&nbsp;"
-    echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
+    affby="$3"
+    test "${affby}" = "0" -o "${affby}" = "-1" && affby="&nbsp;"
+    echo "<td align=\"right\">${affby}</td><td align=\"right\">$4 Kb</td>" >> $of
     echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
     echo "<td>$mailto</td>" >> $of
     echo "<td>" >> $of
 
-    test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
-    reason=$(echo $7 | tr '_' ' ')
+    test "$9" = "yes" && echo "<font color=\"red\">[B]</font>" >> $of
+    reason="$7"
     echo "<a href=\"http://pointyhat.freebsd.org/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
-    date=$(echo ${10} | tr '_' ' ')
+    date="${10}"
     echo "<td>$date</td>" >> $of
 
     echo "</tr>" >> $of
 done
+fi
 footer ""
 mv -f $of index.html
 
@@ -143,10 +195,13 @@ mv -f $of index.html
 #
 header "<th>CVS</th><th>Aff.</th><th>Size</th><th>Port</th><th>Maintainer</th><th>Reason</th><th>Build date</th>"
 
-for i in `cat .logs | sort -t \\| +4`; do
-    set $(echo "$i" | tr \| " " | sed -e "s@NONE@\\&nbsp;@g")
+if [ ${#alllogs} -gt 0 ]; then
+sort -t \| +4 .logs/.all | while read line; do
+    IFS="|"
+    set -- $line
+    unset IFS
     mailto="$6"
-    if [ "$6" != "&nbsp;" ] ; then
+    if [ "$6" != "" ] ; then
        mailto="<a href=\"mailto:$6\">$6</a>"
     fi
 
@@ -154,23 +209,24 @@ for i in `cat .logs | sort -t \\| +4`; do
 
     echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
 
-    affby=$3
-    test $affby = "0" -o $affby = "-1" && affby="&nbsp;"
-    echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
+    affby="$3"
+    test "${affby}" = "0" -o "${affby}" = "-1" && affby="&nbsp;"
+    echo "<td align=\"right\">${affby}</td><td align=\"right\">$4 Kb</td>" >> $of
     echo "<td><a href=\"http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
     echo "<td>$mailto</td>" >> $of
 
     echo "<td>" >> $of
     test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
-    reason=$(echo $7 | tr '_' ' ')
+    reason="$7"
     echo "<a href=\"http://pointyhat.freebsd.org/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
-    date=$(echo ${10} | tr '_' ' ')
+    date="${10}"
     echo "<td>$date</td>" >> $of
 
     echo "</tr>" >> $of
 done
+fi
 footer ""
 mv -f $of index-category.html
 
@@ -180,10 +236,13 @@ mv -f $of index-category.html
 #
 header "<th>Maintainer</th><th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Reason</th><th>Build date</th>"
 
-for i in `cat .logs | sort -t \\| +5`; do
-    set $(echo "$i" | tr \| " " | sed -e "s@NONE@\\&nbsp;@g")
+if [ ${#alllogs} -gt 0 ]; then
+sort -t \| +5 .logs/.all | while read line; do
+    IFS="|"
+    set -- $line
+    unset IFS
     mailto="$6"
-    if [ "$6" != "&nbsp;" ] ; then
+    if [ "$6" != "" ] ; then
        mailto="<a href=\"mailto:$6\">$6</a>"
     fi
 
@@ -192,22 +251,23 @@ for i in `cat .logs | sort -t \\| +5`; do
     echo "<td>$mailto</td>" >> $of
     echo "<td><a href=\"http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
 
-    affby=$3
-    test $affby = "0" -o $affby = "-1" && affby="&nbsp;"
-    echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
+    affby="$3"
+    test "${affby}" = "0" -o "${affby}" = "-1" && affby="&nbsp;"
+    echo "<td align=\"right\">${affby}</td><td align=\"right\">$4 Kb</td>" >> $of
     echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
 
     echo "<td>" >> $of
     test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
-    reason=$(echo $7 | tr '_' ' ')
+    reason="$7"
     echo "<a href=\"http://pointyhat.freebsd.org/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
-    date=$(echo ${10} | tr '_' ' ')
+    date="${10}"
     echo "<td>$date</td>" >> $of
 
     echo "</tr>" >> $of
 done
+fi
 footer ""
 mv -f $of index-maintainer.html
 
@@ -217,10 +277,13 @@ mv -f $of index-maintainer.html
 #
 header "<th>Reason</th><th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Maintainer</th><th>Build date</th>"
 
-for i in `cat .logs | sort -t \\| +7`; do
-    set $(echo "$i" | tr \| " " | sed -e "s@NONE@\\&nbsp;@g")
+if [ ${#alllogs} -gt 0 ]; then
+sort -t \| +7 .logs/.all | while read line; do
+    IFS="|"
+    set -- ${line}
+    unset IFS
     mailto="$6"
-    if [ "$6" != "&nbsp;" ] ; then
+    if [ "$6" != "" ] ; then
        mailto="<a href=\"mailto:$6\">$6</a>"
     fi
 
@@ -228,23 +291,24 @@ for i in `cat .logs | sort -t \\| +7`; do
 
     echo "<td>" >> $of
     test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
-    reason=$(echo $7 | tr '_' ' ')
+    reason="$7"
     echo "<a href=\"http://pointyhat.freebsd.org/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
     echo "<td><a href=\"http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
 
-    affby=$3
-    test $affby = "0" -o $affby = "-1" && affby="&nbsp;"
-    echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
+    affby="$3"
+    test "${affby}" = "0" -o "${affby}" = "-1" && affby="&nbsp;"
+    echo "<td align=\"right\">${affby}</td><td align=\"right\">$4 Kb</td>" >> $of
     echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
     echo "<td>$mailto</td>" >> $of
 
-    date=$(echo ${10} | tr '_' ' ')
+    date="${10}"
     echo "<td>$date</td>" >> $of
 
     echo "</tr>" >> $of
 done
+fi
 footer ""
 mv -f $of index-reason.html
 
@@ -254,50 +318,49 @@ mv -f $of index-reason.html
 #
 header "<th>Build date</th><th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Maintainer</th><th>Reason</th>"
 
-for i in `cat .logs | sort -t \\| +9`; do
-    set $(echo "$i" | tr \| " " | sed -e "s@NONE@\\&nbsp;@g")
+if [ ${#alllogs} -gt 0 ]; then
+sort -t \| +9 .logs/.all | while read line; do
+    IFS="|"
+    set -- ${line}
+    unset IFS
+
     mailto="$6"
-    if [ "$6" != "&nbsp;" ] ; then
+    if [ "$6" != "" ] ; then
        mailto="<a href=\"mailto:$6\">$6</a>"
     fi
 
     echo "<tr>" >> $of
 
-    date=$(echo ${10} | tr '_' ' ')
+    date="${10}"
     echo "<td>$date</td>" >> $of
 
     echo "<td><a href=\"http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
 
-    affby=$3
-    test $affby = "0" -o $affby = "-1" && affby="&nbsp;"
-    echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
+    affby="$3"
+    test "${affby}" = "0" -o "${affby}" = "-1" && affby="&nbsp;"
+    echo "<td align=\"right\">${affby}</td><td align=\"right\">$4 Kb</td>" >> $of
     echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
     echo "<td>$mailto</td>" >> $of
 
     echo "<td>" >> $of
     test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
-    reason=$(echo $7 | tr '_' ' ')
+    reason="$7"
     echo "<a href=\"http://pointyhat.freebsd.org/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
     echo "</tr>" >> $of
 done
+fi
 footer ""
 mv -f $of index-builddate.html
 
 # echo 'processlogs: at '`date`', create maintainer list'
 #
 # Get list of maintainers.
-#
-for i in `cat .logs | sort -t \\| +9`; do
-    set $(echo "$i" | tr \| " " | sed -e "s@NONE@\\&nbsp;@g")
-    mailto="$6"
-    if [ "$6" != "&nbsp;" ] ; then
-       mailto="<a href=\"mailto:$6\">$6</a>"
-    fi
+if [ ${#alllogs} -gt 0 ]; then
+  cut -f 6 -d \| .logs/.all | sort -fu > maintainers
+else
+  cat /dev/null > maintainers
+fi
 
-    maints="$maints $6"
-done
-
-echo $maints | sed -e 's/ /\
-/g' | sort -fu > maintainers
+# echo 'processlogs: at '`date`', done'
