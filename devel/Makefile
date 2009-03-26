@@ -2597,6 +2597,7 @@
     SUBDIR += rubygem-validatable
     SUBDIR += rubygem-warbler
     SUBDIR += rubygem-zentest
+    SUBDIR += rubygem-zoom
     SUBDIR += rudeconfig
     SUBDIR += rudiments
     SUBDIR += rvi

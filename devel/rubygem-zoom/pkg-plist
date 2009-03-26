@@ -1,15 +1,62 @@
-%%RUBY_SITEARCHLIBDIR%%/zoom.so
-%%RUBY_SITELIBDIR%%/marc.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api.txt
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/api.xml
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ch01.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ch02.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ch03.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ch04.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docbook.css
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello.rb
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%GEM_CACHE%%
+%%GEM_LIB_DIR%%/src/rbzoomquery.c
+%%GEM_LIB_DIR%%/src/rbzoomresultset.c
+%%GEM_LIB_DIR%%/src/rbzoomoptions.c
+%%GEM_LIB_DIR%%/src/rbzoompackage.c
+%%GEM_LIB_DIR%%/src/rbzoomrecord.c
+%%GEM_LIB_DIR%%/src/rbzoom.c
+%%GEM_LIB_DIR%%/src/rbzoomconnection.c
+%%GEM_LIB_DIR%%/src/rbzoom.h
+%%GEM_LIB_DIR%%/src/extconf.rb
+%%GEM_LIB_DIR%%/src/mkmf.log
+%%GEM_LIB_DIR%%/src/Makefile
+%%GEM_LIB_DIR%%/src/rbzoomquery.o
+%%GEM_LIB_DIR%%/src/rbzoomresultset.o
+%%GEM_LIB_DIR%%/src/rbzoomoptions.o
+%%GEM_LIB_DIR%%/src/rbzoompackage.o
+%%GEM_LIB_DIR%%/src/rbzoomrecord.o
+%%GEM_LIB_DIR%%/src/rbzoom.o
+%%GEM_LIB_DIR%%/src/rbzoomconnection.o
+%%GEM_LIB_DIR%%/src/zoom.so
+%%GEM_LIB_DIR%%/test/record.dat
+%%GEM_LIB_DIR%%/test/search_test.rb
+%%GEM_LIB_DIR%%/test/search_batch_test.rb
+%%GEM_LIB_DIR%%/test/thread_test.rb
+%%GEM_LIB_DIR%%/test/package_live.rb
+%%GEM_LIB_DIR%%/test/package_test.rb
+%%GEM_LIB_DIR%%/test/record.txt
+%%GEM_LIB_DIR%%/test/record-update.xml
+%%GEM_LIB_DIR%%/test/record.xml
+%%GEM_LIB_DIR%%/test/zebra/zebra.cfg
+%%GEM_LIB_DIR%%/test/zebra/records/programming_ruby.xml
+%%GEM_LIB_DIR%%/test/zebra/records/programming_ruby_update.xml
+%%GEM_LIB_DIR%%/test/zebra/register/empty_file
+%%GEM_LIB_DIR%%/test/zebra/shadow/empty_file
+%%GEM_LIB_DIR%%/test/zebra/tab/string.chr
+%%GEM_LIB_DIR%%/test/zebra/tab/record.abs
+%%GEM_LIB_DIR%%/test/zebra/tab/bib1.att
+%%GEM_LIB_DIR%%/test/zebra/tab/default.idx
+%%GEM_LIB_DIR%%/test/zebra/tab/usmarc.mar
+%%GEM_LIB_DIR%%/test/zebra/tab/numeric.chr
+%%GEM_LIB_DIR%%/test/zebra/key/empty_file
+%%GEM_LIB_DIR%%/test/zebra/lock/empty_file
+%%GEM_LIB_DIR%%/sample/hello.rb
+%%GEM_LIB_DIR%%/sample/needle.rb
+%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/ChangeLog
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/lib/zoom.so
+%%GEM_SPEC%%
+@dirrm %%GEM_LIB_DIR%%/src
+@dirrm %%GEM_LIB_DIR%%/test/zebra/records
+@dirrm %%GEM_LIB_DIR%%/test/zebra/register
+@dirrm %%GEM_LIB_DIR%%/test/zebra/shadow
+@dirrm %%GEM_LIB_DIR%%/test/zebra/tab
+@dirrm %%GEM_LIB_DIR%%/test/zebra/key
+@dirrm %%GEM_LIB_DIR%%/test/zebra/lock
+@dirrm %%GEM_LIB_DIR%%/test/zebra
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/sample
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%
