@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--with-ogle-dir=${LOCALBASE}/bin \
 		--with-ogle-includes=${LOCALBASE}/include \
 		--program-transform-name="s|,|,|" \
 		--with-ogle-libs=${LOCALBASE}/lib/ogle
+MAKE_JOBS_UNSAFE=	yes
 
 # location of okle ogle_gui
 DVDP_UI=${PREFIX}/lib/okle/ogle_gui
