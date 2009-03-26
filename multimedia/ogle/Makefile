@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE} \
 		--with-libmad=${LOCALBASE} \
 		--with-liba52=${LOCALBASE}
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 DEFAULT_DVD_DEVICE?=	/dev/acd0
 

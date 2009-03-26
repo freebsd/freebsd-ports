@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	\
 		--with-libexpat-prefix="${LOCALBASE}" \
 		--with-libxml2="no"
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 # Examples to install
 EXAMPLES_FILES=	\

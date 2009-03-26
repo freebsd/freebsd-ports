@@ -38,6 +38,7 @@ CONFIGURE_ARGS=	--with-dvd-includes=${LOCALBASE}/include \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-xml-prefix=${LOCALBASE}
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
