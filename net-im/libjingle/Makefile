@@ -45,6 +45,7 @@ CONFIGURE_ENV=	\
 		ILBC_LIBS="-L${LOCALBASE}/lib -lilbc" \
 		SPEEX_CFLAGS="$$(${PKG_CONFIG} --cflags speex)" \
 		SPEEX_LIBS="$$(${PKG_CONFIG} --libs speex)"
+MAKE_JOBS_SAFE=	yes
 
 DOC_FILES=	\
 		AUTHORS \
