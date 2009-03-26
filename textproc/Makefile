@@ -231,6 +231,7 @@
     SUBDIR += hy-aspell
     SUBDIR += hyperestraier
     SUBDIR += ia-aspell
+    SUBDIR += ibus
     SUBDIR += id-aspell
     SUBDIR += idnits
     SUBDIR += iiimf-client-lib
