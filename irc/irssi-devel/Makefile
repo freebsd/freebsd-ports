@@ -20,6 +20,7 @@ USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WANT_PERL=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		irssi.1
 

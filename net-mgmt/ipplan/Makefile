@@ -15,6 +15,7 @@ COMMENT=	IP address management and tracking
 
 RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 
+MAKE_JOBS_SAFE=	yes
 USE_PERL5_RUN=	yes
 USE_PHP=	gettext pcre xml zlib
 

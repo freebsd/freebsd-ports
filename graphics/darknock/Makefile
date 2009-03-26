@@ -18,6 +18,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build linguist_build gui
 WRKSRC=		${WRKDIR}/${PORTNAME}
 LRELEASE=	${QT_PREFIX}/bin/lrelease-qt4
+MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	changelog copyright
 
