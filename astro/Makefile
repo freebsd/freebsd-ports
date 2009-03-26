@@ -58,6 +58,7 @@
     SUBDIR += pp3
     SUBDIR += ptiger
     SUBDIR += py-aipy
+    SUBDIR += py-astLib
     SUBDIR += py-metar
     SUBDIR += py-pyfits
     SUBDIR += pyephem
