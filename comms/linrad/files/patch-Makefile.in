@@ -1,11 +1,11 @@
---- Makefile.in.orig	2008-07-29 12:39:53.000000000 -0400
-+++ Makefile.in	2008-08-04 11:45:19.000000000 -0400
+--- Makefile.in.orig	2009-03-09 17:29:26.000000000 -0400
++++ Makefile.in	2009-03-22 15:53:31.000000000 -0400
 @@ -4,7 +4,7 @@
  # Name the output files *.ol instead of *.o 
  # so we definitely know it is for Linux. 
  # (*.o files can be present by mistake) 
--LCC	= gcc
-+LCC	= ${CC}
+-LCC     = gcc -D_FILE_OFFSET_BITS=64
++LCC     = ${CC} -D_FILE_OFFSET_BITS=64
  WCC	= /usr/bin/i586-mingw32msvc-gcc
  WINWCC  = C:\mingw\bin\mingw32-gcc
  NASM	= nasm
@@ -13,20 +13,29 @@
  # so we definitely know it is for Windows.
  # (*.o files can be present by mistake) 
  # Always use the same flags.
--CFL	= -g -O -DOSNUM=1 -W -Wimplicit -Wreturn-type -Wformat \
+-CFL	= -g -O -DOSNUM=1 -W -Wall -Wimplicit -Wreturn-type -Wformat \
 -@MEM@ -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
---Wparentheses -Wstrict-prototypes -Werror -ffast-math \
+--Wparentheses -Wstrict-prototypes -Werror -ffast-math -Wundef \
 --fomit-frame-pointer -c -o
-+CFL	= ${CFLAGS} -DOSNUM=1 -I%%LOCALBASE%%/include -c -o
- CFW	= -g -O -DOSNUM=2 -W -Wimplicit -Wreturn-type -Wformat \
++CFL	= ${CFLAGS} -DOSNUM=1 -I/usr/local/include -c -o
+ 
+ CFW	= -g -O -DOSNUM=2 -W -Wall -Wimplicit -Wreturn-type -Wformat \
  -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
- -Wparentheses -Wstrict-prototypes -Werror -ffast-math \
-@@ -683,7 +680,7 @@
+@@ -645,7 +642,7 @@
+ meter_graph.ol fonts.ol screensub.ol tx_graph.ol txssb.ol lxsys.ol 
+ 
+ 
+-	gcc @MEM@ -olinrad -lvgagl -lvga -lpthread -lm @ALSALIB@ \
++	gcc @MEM@ -olinrad -lvgagl -lvga -pthread -lm @ALSALIB@ \
+ -Wl,-Map,linrad.lmap,-warn-common \
+ 	lmain.ol lvar.ol ui.ol lsetad.ol fft1.ol buf.ol radar.ol \
+ mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \
+@@ -692,7 +689,7 @@
  
  
  
 -	gcc @MEM@ -oxlinrad -L/usr/X11R6/lib -lX11 -lpthread -lm @ALSALIB@ \
-+	gcc @MEM@ -oxlinrad -L%%LOCALBASE%%/lib -lX11 -lpthread -lm @ALSALIB@ \
++	${CC} @MEM@ -oxlinrad -L/usr/local/lib -lX11 -lpthread -lm \
  -Wl,-Map,linrad.xmap,-warn-common \
- xmain.ol xvar.ol ui.ol lsetad.ol fft1.ol buf.ol lvar.ol \
+ xmain.ol xvar.ol ui.ol lsetad.ol fft1.ol buf.ol lvar.ol radar.ol \
  mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \

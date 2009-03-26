@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	linrad
-PORTVERSION=	2.49
+PORTVERSION=	3.03
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.nitehawk.com/sm5bsz/linuxdsp/archive/\
 		http://g7rau.demon.co.uk/sm5bsz/linuxdsp/archive/\
 		http://www.sm5bsz.com/linuxdsp/archive/
-DISTNAME=	lir02-49
+DISTNAME=	lir03-03
 EXTRACT_SUFX=	.tbz
 DIST_SUBDIR=	${PORTNAME}
 

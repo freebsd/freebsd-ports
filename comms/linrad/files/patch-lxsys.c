@@ -1,5 +1,5 @@
---- lxsys.c.orig	2008-07-29 12:39:53.000000000 -0400
-+++ lxsys.c	2008-08-04 11:46:11.000000000 -0400
+--- lxsys.c.orig	2009-03-09 17:29:26.000000000 -0400
++++ lxsys.c	2009-03-22 15:37:47.000000000 -0400
 @@ -1,12 +1,14 @@
 -
 -#include <sys/io.h>
@@ -17,7 +17,7 @@
 -#include <sys/time.h>
  #include <fcntl.h>
  #include <termios.h>
- #include "thrdef.h"
+ #include "globdef.h"
 @@ -18,7 +20,8 @@
  #include "hwaredef.h"
  
@@ -28,7 +28,7 @@
  
  void perseus_input(void){};
  
-@@ -220,15 +223,13 @@
+@@ -231,15 +234,13 @@
  
  int lir_parport_permission(void)
  {
@@ -48,7 +48,7 @@
    }
  if(i != 0)
    {
-@@ -385,11 +386,9 @@
+@@ -397,11 +398,9 @@
  int i;
  if(ui.parport < 0x400-4)
    {
@@ -63,7 +63,7 @@
    }
  if(i!=0)lirerr(764921);
  i=1000;
-@@ -402,11 +401,9 @@
+@@ -414,11 +413,9 @@
  int i;
  if(ui.parport < 0x400-4)
    {
