@@ -105,6 +105,7 @@ while [ $# -ge 1 ]; do
 done
 
 touch .stamp
+n_logs=$(cat .logs/.all | wc -l)
 
 echo "processlogs: at "`date`", end   processing log files for ${arch} in ${baselogdir}"
 
@@ -124,7 +125,7 @@ header() {
   echo "| <a href=\"index-builddate.html\">builddate</a> " >>$of
   echo "]</p>" >>$of
 
-  if [ ${#alllogs} = "0" ]; then
+  if [ ${n_logs} = "0" ]; then
     echo "No errors (yet)" >>$of
   else
     if [ -s cvsdone ]; then
@@ -134,7 +135,7 @@ header() {
     echo "Timestamp of newest log: $latest<br><br>" >> $of
     echo "\"Aff.\" is number of ports that depend on this one<br>" >> $of
     echo "\"<font color=\"red\">[B]</font>\" indicates port is marked BROKEN (Note: BROKEN ports are not frequently rebuilt so they may not be listed here)<br><br>" >> $of
-    echo "<p>${#alllogs} errors</p>" >> $of
+    echo "<p>${n_logs} errors</p>" >> $of
     echo "<table border=1>" >>$of
     echo "<tr>$1</tr>" >>$of
   fi
@@ -154,7 +155,7 @@ footer() {
 #
 header "<th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Maintainer</th><th>Reason</th><th>Build date</th>"
 
-if [ ${#alllogs} -gt 0 ]; then
+if [ ${n_logs} -gt 0 ]; then
 sort .logs/.all | while read line; do
     IFS="|"
     set -- ${line}
@@ -195,7 +196,7 @@ mv -f $of index.html
 #
 header "<th>CVS</th><th>Aff.</th><th>Size</th><th>Port</th><th>Maintainer</th><th>Reason</th><th>Build date</th>"
 
-if [ ${#alllogs} -gt 0 ]; then
+if [ ${n_logs} -gt 0 ]; then
 sort -t \| +4 .logs/.all | while read line; do
     IFS="|"
     set -- $line
@@ -236,7 +237,7 @@ mv -f $of index-category.html
 #
 header "<th>Maintainer</th><th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Reason</th><th>Build date</th>"
 
-if [ ${#alllogs} -gt 0 ]; then
+if [ ${n_logs} -gt 0 ]; then
 sort -t \| +5 .logs/.all | while read line; do
     IFS="|"
     set -- $line
@@ -277,7 +278,7 @@ mv -f $of index-maintainer.html
 #
 header "<th>Reason</th><th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Maintainer</th><th>Build date</th>"
 
-if [ ${#alllogs} -gt 0 ]; then
+if [ ${n_logs} -gt 0 ]; then
 sort -t \| +7 .logs/.all | while read line; do
     IFS="|"
     set -- ${line}
@@ -318,7 +319,7 @@ mv -f $of index-reason.html
 #
 header "<th>Build date</th><th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Maintainer</th><th>Reason</th>"
 
-if [ ${#alllogs} -gt 0 ]; then
+if [ ${n_logs} -gt 0 ]; then
 sort -t \| +9 .logs/.all | while read line; do
     IFS="|"
     set -- ${line}
@@ -357,7 +358,7 @@ mv -f $of index-builddate.html
 # echo 'processlogs: at '`date`', create maintainer list'
 #
 # Get list of maintainers.
-if [ ${#alllogs} -gt 0 ]; then
+if [ ${n_logs} -gt 0 ]; then
   cut -f 6 -d \| .logs/.all | sort -fu > maintainers
 else
   cat /dev/null > maintainers
