@@ -17,6 +17,7 @@ COMMENT=	Produce a .ZIP file from 2 other ones with the best compressed files
 USE_DOS2UNIX=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
