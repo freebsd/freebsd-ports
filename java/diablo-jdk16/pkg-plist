@@ -2038,7 +2038,8 @@ diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Kabul
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Kamchatka
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Karachi
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Kashgar
-diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Katmandu
+%%TZORIGINAL%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Katmandu
+%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Kathmandu
 %%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Kolkata
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Krasnoyarsk
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Kuala_Lumpur
