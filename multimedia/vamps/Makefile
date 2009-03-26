@@ -19,6 +19,7 @@ LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
 USE_GMAKE=	yes
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
+MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-DHAVE_BUILTIN_EXPECT \
 		-I${LOCALBASE}/include \

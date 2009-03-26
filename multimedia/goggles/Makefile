@@ -21,6 +21,7 @@ RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11 xv xproto xext
+MAKE_JOBS_SAFE=	yes
 
 pre-everything::
 .ifndef(WITH_DVD_DEVICE)
