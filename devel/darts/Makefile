@@ -14,6 +14,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A C++ template library that implements Double-Array
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 EXAMPLES=	darts.cpp mkdarts.cpp
 DOCS=		AUTHORS ChangeLog README doc

@@ -17,6 +17,7 @@ COMMENT=	Tools for manipulating fonts
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX-base
 
+MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-kpathsea=${LOCALBASE}
 
