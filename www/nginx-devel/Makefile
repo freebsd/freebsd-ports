@@ -26,6 +26,7 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		HTTP_DAV_MODULE "Enable http_webdav module" off \
 		HTTP_FANCYINDEX_MODULE "Enable http_fancyindex module" off \
 		HTTP_FLV_MODULE "Enable http_flv module" off \
+		HTTP_GZIP_STATIC_MODULE "Enable http_gzip_static module" off \
 		HTTP_PERL_MODULE "Enable http_perl module" off \
 		HTTP_RANDOM_INDEX_MODULE "Enable http_random_index module" off \
 		HTTP_REALIP_MODULE "Enable http_realip module" off \
@@ -123,6 +124,10 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-fancyindex-${NGINX_FANCYINDEX_MODUL
 
 .if defined(WITH_HTTP_FLV_MODULE)
 CONFIGURE_ARGS+=--with-http_flv_module
+.endif
+
+.if defined(WITH_HTTP_GZIP_STATIC_MODULE)
+CONFIGURE_ARGS+=--with-http_gzip_static_module
 .endif
 
 .if defined(WITH_HTTP_PERL_MODULE)
