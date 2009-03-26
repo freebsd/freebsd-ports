@@ -23,6 +23,7 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
 USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui corelib qmake_build moc_build rcc_build uic_build
 USE_SDL=	mixer
