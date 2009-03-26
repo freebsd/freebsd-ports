@@ -32,6 +32,8 @@ OPTIONS=	GUI "Build the GUI" On \
 
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+.else
+CONFIGURE_ENV+=	LIBUSB_LIBS="-lusb" LIBUSB_CFLAGS="-I/usr/include"
 .endif
 
 .if defined(WITH_GUI)
