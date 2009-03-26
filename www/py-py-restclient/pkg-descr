@@ -1,0 +1,5 @@
+A simple REST client for Python, inspired by the microframework
+(Camping, Sinatra) style of specifying actions: get, put, post,
+delete.
+
+WWW:	http://py-restclient.e-engura.org/
