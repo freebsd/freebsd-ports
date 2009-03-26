@@ -1,15 +1,15 @@
---- xmain.c.orig	Tue Sep  4 18:14:34 2007
-+++ xmain.c	Thu Sep 27 21:09:15 2007
-@@ -39,6 +39,7 @@
- float total;
- }PIXINFO;
+--- xmain.c.orig	2009-03-09 17:29:28.000000000 -0400
++++ xmain.c	2009-03-22 15:38:09.000000000 -0400
+@@ -29,6 +29,7 @@
+ extern Window xwin;
+ extern Colormap lir_colormap;
  
 +int saved_euid=-1;
  
-  
- int main(int argc, char **argv)
-@@ -58,6 +59,8 @@
- XTextProperty window_title_property;
+ typedef struct {
+ unsigned short int red;
+@@ -54,6 +55,8 @@
+ Cursor cross_cursor;
  unsigned short int *ipalette;
  XColor xco;
 +saved_euid=geteuid();
