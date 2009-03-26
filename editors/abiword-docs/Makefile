@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	abiword-docs
-PORTVERSION=	2.6.3
-PORTREVISION=	1
+PORTVERSION=	2.6.8
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -18,8 +17,6 @@ COMMENT=	AbiWord help files
 
 BUILD_DEPENDS=	abiword:${PORTSDIR}/editors/abiword
 RUN_DEPENDS=	abiword:${PORTSDIR}/editors/abiword
-
-BROKEN=		segfaults during build
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
