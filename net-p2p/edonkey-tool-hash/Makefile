@@ -18,6 +18,7 @@ COMMENT=	Both calculates 'eDonkey/Overnet hashes' producing ed2k:// file links
 
 PLIST_FILES=	bin/edonkey-tool-hash
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 WRKSRC=	${WRKDIR}/ed2k_hash-${PORTVERSION}
 
