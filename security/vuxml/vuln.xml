@@ -288,7 +288,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>roundcube</name>
-	<range><lt>0.2.1</lt></range>
+	<range><lt>0.2.1,1</lt></range>
       </package>
     </affects>
     <description>
@@ -321,6 +321,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-01-21</discovery>
       <entry>2009-03-16</entry>
+      <modified>2009-03-26</modified>
     </dates>
   </vuln>
 
