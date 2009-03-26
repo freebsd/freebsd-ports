@@ -93,5 +93,4 @@ pre-everything::
 	@${ECHO_MSG} '===> only with 486 processors and above.'
 .endif
 
-
 .include <bsd.port.post.mk>
