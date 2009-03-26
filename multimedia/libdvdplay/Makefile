@@ -22,5 +22,6 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-dvdread-tree=${LOCALBASE}/include
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

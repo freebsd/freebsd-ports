@@ -18,6 +18,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_PERL5_RUN=	yes
+MAKE_JOBS_SAFE=	yes
 
 post-patch:
 # PREFIX safeness

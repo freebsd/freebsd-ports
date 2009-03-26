@@ -17,6 +17,7 @@ COMMENT=	A variety of cryptographic primitives for Objective Caml
 
 USE_OCAML=	yes
 USE_OCAML_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=	all allopt
 
