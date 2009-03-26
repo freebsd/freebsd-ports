@@ -15,6 +15,7 @@ COMMENT=	A SPF validator
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/spfval
 
