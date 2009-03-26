@@ -25,6 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	AWK="${AWK}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+MAKE_JOBS_SAFE=	yes
 
 # Documents to install
 DOC_FILES=	\
