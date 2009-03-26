@@ -12,12 +12,16 @@ etc/c-icap.magic.default
 include/c_icap/access.h
 include/c_icap/body.h
 include/c_icap/c-icap.h
+include/c_icap/c-icap-conf.h
 include/c_icap/cfg_param.h
 include/c_icap/ci_threads.h
+include/c_icap/commands.h
 include/c_icap/debug.h
+include/c_icap/dlib.h
 include/c_icap/filetype.h
 include/c_icap/header.h
 include/c_icap/log.h
+include/c_icap/mem.h
 include/c_icap/module.h
 include/c_icap/net_io.h
 include/c_icap/proc_mutex.h
@@ -48,4 +52,5 @@ lib/libicapapi.a
 lib/libicapapi.la
 lib/libicapapi.so.0
 lib/libicapapi.so
+@unexec rmdir %%RUN_DIR%%/c-icap 2>/dev/null || true
 @unexec rmdir %%LOG_DIR%% 2>/dev/null || true
