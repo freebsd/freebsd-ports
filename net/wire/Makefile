@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.zankasoftware.com/dist/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	miwi
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Wire is a screen-oriented command line Wired client
 
 GNU_CONFIGURE=	yes

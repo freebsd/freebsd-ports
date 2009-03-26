@@ -10,7 +10,7 @@ PORTVERSION=	1.3.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.zankasoftware.com/dist/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Wired server
 
 GNU_CONFIGURE=	yes

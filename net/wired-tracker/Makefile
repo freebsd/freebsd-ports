@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.zankasoftware.com/dist/
 DISTNAME=	wiredtracker-${PORTVERSION}
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Wired tracker
 
 # This is an artificial dependancy - net/wired and net/wired-tracker
