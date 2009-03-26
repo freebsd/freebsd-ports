@@ -1,0 +1,101 @@
+--- pacpl.orig	2008-08-16 21:31:57.000000000 -0600
++++ pacpl	2009-02-15 09:21:16.000000000 -0700
+@@ -25,18 +25,6 @@
+ use File::Find;
+ use File::Spec::Functions qw(rel2abs);
+ 
+-# Tagging modules
+-use Ogg::Vorbis::Header;
+-use MP3::Tag;
+-use Audio::FLAC::Header;
+-use MP4::Info;
+-use Audio::WMA;
+-use Audio::Musepack;
+-use Audio::APETags;
+-
+-# CDDB module
+-use CDDB_get qw(get_cddb);
+-
+ # non-encoder/decoder related options
+ my 
+ (
+@@ -202,8 +190,8 @@
+ 
+ # load po file and store in %lang hash
+ sub load_lang {
+-
+-    my $po = "$po_dir/$ENV{LANG}.po";
++    my $lang = $ENV{LANG} || 'en_US';
++    my $po = "$po_dir/$lang.po";
+        $po =~ s/\.UTF-8//i      if $po =~ /UTF-8/i; 
+        $po =~ s/\.utf8//i       if $po =~ /utf8/i;  
+        $po =~ s/_\w+//          if not -e $po;      
+@@ -1541,6 +1529,17 @@
+ # load codecs.conf file
+ load_codecs() if -e $codecs_conf;
+ 
++# Now that %run is populated, verify tagging modules
++for my $format (keys %run){
++	if(defined $run{$format}{TAGS}{MODULE}){
++		eval "require $run{$format}{TAGS}{MODULE}";
++		@{$run{$format}{TAGS}}{qw(READ WRITE)} = (0,0) if $@;
++	}
++}
++
++eval "require CDDB_get";
++$nocddb = 1 if $@;
++
+ my $out_name = $outfile; 
+ my $out_dir  = $outdir;
+ 
+@@ -2177,7 +2176,7 @@
+                        }
+ 
+         case 'wma'     {
+-                            my $wma_tag = Audio::WMA->new($in_file)->tags();
++                            my $wma_tag = $tag_module->new($in_file)->tags();
+ 
+                                $tag_name{title}   = $wma_tag->{TITLE}       if $wma_tag->{TITLE};
+                                $tag_name{track}   = $wma_tag->{TRACKNUMBER} if $wma_tag->{TRACKNUMBER};
+@@ -2198,12 +2197,13 @@
+ sub write_tags {
+ 
+     my ($out_file, $out_format) = @_;
++    my $tag_module = $run{$out_format}{TAGS}{MODULE};
+     my  $tag_m;
+ 
+     switch ($out_format) {
+ 
+            case 'mp3'  {
+-                            $tag_m = MP3::Tag->new("$out_file");
++                            $tag_m = $tag_module->new("$out_file");
+                             
+                             # ID3v2 Tags
+                             unless(exists($tag_m->{ID3v2})) { $tag_m->new_tag("ID3v2"); }
+@@ -2236,7 +2236,7 @@
+                         }
+ 
+            case 'ogg'   {
+-                            $tag_m = Ogg::Vorbis::Header->new("$out_file");
++                            $tag_m = $tag_module->new("$out_file");
+                             
+                             # this prevents duplicate tags =)
+                             $tag_m->clear_comments();
+@@ -2257,7 +2257,7 @@
+                         }
+ 
+        case /fla|flac/ {
+-                            $tag_m = Audio::FLAC::Header->new("$out_file");
++                            $tag_m = $tag_module->new("$out_file");
+                          my $tag_i = $tag_m->tags();
+ 
+                             $tag_i->{TITLE}       = "$tag_name{title}"   if $tag_name{title};
+@@ -2446,7 +2446,7 @@
+       $ripconfig{DEVICE}     = $device;
+       $ripconfig{CDDB_INPUT} = $config{CDDB_INPUT};
+ 
+-      %cd = get_cddb(\%ripconfig);
++      %cd = CDDB_get::get_cddb(\%ripconfig);
+ 
+       if (not $cd{title}) {
+           pnotice("no_cddb","",2);
