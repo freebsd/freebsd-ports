@@ -7,7 +7,7 @@
 
 PORTNAME=	alexandria
 PORTVERSION=	0.6.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	deskutils ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/amazon.rb:${PORTSDIR}/www/ruby-amazon \
 		${RUBY_SITEARCHLIBDIR}/gnome2.so:${PORTSDIR}/x11/ruby-gnome2 \
 		${RUBY_SITEARCHLIBDIR}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gdk_pixbuf2 \
 		${RUBY_SITEARCHLIBDIR}/gconf2.so:${PORTSDIR}/devel/ruby-gconf2 \
-		${RUBY_SITEARCHLIBDIR}/zoom.so:${PORTSDIR}/devel/ruby-zoom 
+		rubygem-zoom>=0:${PORTSDIR}/devel/rubygem-zoom
 
 USE_GNOME=	gnomehier
 INSTALLS_OMF=	yes
