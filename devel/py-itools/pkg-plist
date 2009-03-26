@@ -20,6 +20,7 @@ bin/isetup-update-locale.py
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.50.2
 %%PYTHON_SITELIBDIR%%/itools/UPGRADE-0.50.0
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.50.3
+%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.50.4
 %%PYTHON_SITELIBDIR%%/itools/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/itools/__init__.pyo
