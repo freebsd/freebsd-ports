@@ -1269,6 +1269,7 @@
     SUBDIR += py-postmarkup
     SUBDIR += py-prewikka
     SUBDIR += py-pullparser
+    SUBDIR += py-py-restclient
     SUBDIR += py-pylons
     SUBDIR += py-pyquery
     SUBDIR += py-pysearch
