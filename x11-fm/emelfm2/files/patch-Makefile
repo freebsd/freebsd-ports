@@ -1,32 +1,15 @@
---- Makefile.orig	2008-05-12 02:04:41.000000000 +0200
-+++ Makefile	2008-05-26 08:45:53.000000000 +0200
-@@ -51,7 +51,7 @@
+--- Makefile.orig	2009-02-12 04:47:20.000000000 +0100
++++ Makefile	2009-02-20 09:13:43.000000000 +0100
+@@ -211,7 +211,7 @@
  
- #these are only used here for installation purposes
- BIN_DIR = $(PREFIX)/bin
--MAN_DIR = $(PREFIX)/share/man/man1
-+MAN_DIR = $(PREFIX)/man/man1
- #as well as usage here, all in-code uses of these is assumed localised
- ifeq ($(DOCS_VERSION), 1)
- DOC_DIR = $(PREFIX)/share/doc/$(TARGET)-$(VERSION)
-@@ -215,7 +215,7 @@
- 
- lLDFLAGS = $(LDFLAGS)
+ #setup linking
  # -lrt needed for clock_gettime()
 -lLIBS = $(shell pkg-config --libs gtk+-2.0 gthread-2.0 gmodule-2.0) -lrt
 +lLIBS = $(shell pkg-config --libs gtk+-2.0 gthread-2.0 gmodule-2.0)
  ifeq ($(USE_FAM),1)
  lLIBS += -lfam
  endif
-@@ -232,6 +232,7 @@
- lLIBS += -lacl
- endif
- ifeq ($(WITH_HAL),1)
-+lCFLAGS += $(shell pkg-config --cflags dbus-1 dbus-glib-1 hal hal-storage)
- lLIBS += $(shell pkg-config --libs dbus-1 dbus-glib-1 hal hal-storage)
- endif
- # for vfs & gvfs development
-@@ -244,10 +245,10 @@
+@@ -223,10 +223,10 @@
  endif
  # should not need translation
  OPSYS := $(shell uname)
@@ -40,15 +23,15 @@
 +#endif
  
  .PHONY: all plugins install install_plugins uninstall uninstall_plugins doc \
-         clean deps i18n install_i18n uninstall_i18n \
-@@ -266,10 +267,6 @@
- 	@for file in `ls icons/ |grep -v svn`; do \
- 		install -m 644 icons/$$file $(ICON_DIR); \
+         clean clean_plugins deps i18n install_i18n uninstall_i18n \
+@@ -245,10 +245,6 @@
+ 	@for file in `ls $(ICONS)/ |grep -v svn`; do \
+ 		install -m 644 $(ICONS)/$$file $(ICON_DIR); \
  	done
 -	@install -d $(DOC_DIR)
--	@for file in `ls docs/ |grep -v svn |grep -v desktop_environment |grep -v api |grep -v $(TARGET).1`; do \
--		install -m 644 docs/$$file $(DOC_DIR); \
+-	@for file in `ls $(DOCS)/ |grep -v svn |grep -v desktop_environment |grep -v api |grep -v $(TARGET).1`; do \
+-		install -m 644 $(DOCS)/$$file $(DOC_DIR); \
 -	done
  	@install -d $(MAN_DIR)
- 	@install -m 644 docs/$(TARGET).1 $(MAN_DIR);
+ 	@install -m 644 $(DOCS)/$(TARGET).1 $(MAN_DIR);
  #	@bzip2 -f $(MAN_DIR)/$(TARGET).1;
