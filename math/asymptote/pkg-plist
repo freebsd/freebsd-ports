@@ -131,6 +131,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/embeddedu3d.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/externalmovie.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/inlinemovie.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/inlinemovie3.tex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/pdfmovie.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/slidemovies.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/sphere.asy
