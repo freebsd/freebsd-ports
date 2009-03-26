@@ -14,6 +14,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Multi-purpose .wav processing utility
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 SHN_ALIASES=	tool len fix hash pad join split cat cmp cue conv info strip gen trim
 PLIST_FILES=	${SHN_ALIASES:S|^|bin/shn|}
 MAN1=		shntool.1

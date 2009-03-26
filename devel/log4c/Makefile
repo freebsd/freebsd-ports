@@ -15,7 +15,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Logging for C Library
 
 USE_AUTOTOOLS=	libtool:15
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>
