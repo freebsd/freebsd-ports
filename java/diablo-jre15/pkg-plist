@@ -388,7 +388,8 @@ diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Kabul
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Kamchatka
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Karachi
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Kashgar
-diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Katmandu
+%%TZORIGINAL%%diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Katmandu
+%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Kathmandu
 %%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Kolkata
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Krasnoyarsk
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Kuala_Lumpur
