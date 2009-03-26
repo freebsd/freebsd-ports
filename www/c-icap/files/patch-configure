@@ -1,41 +1,32 @@
---- configure.bak	Mon Jun 12 22:20:15 2006
-+++ configure	Thu Jun 15 15:34:49 2006
-@@ -19441,7 +19441,7 @@
+--- configure.orig	Mon Jul  7 00:22:15 2008
++++ configure	Tue Nov 18 21:51:12 2008
+@@ -20258,7 +20258,7 @@
  	  THREADS_LDADD="-lpthread"
  	  THREADS_LDFLAGS=""
        ;;
--      freebsd5.*)
-+      freebsd4.*)
+-      freebsd5*)
++      freebsd[45]*)
  ## If I understand how all those threading models works correctly
  ## in FreeBSD I will make an option in configure script
  ## --with-freebsd-threads={c_r,pthreads,linuxthreads,thr}
-@@ -19454,9 +19454,9 @@
- #	THREADS_LDADD="-llthread -lgcc_r"
- #	THREADS_LDFLAGS="-L/usr/local/lib"
+@@ -20273,7 +20273,7 @@
  
--##    FreeBSD Standard threads
-+##    FreeBSD 4.x Standard threads
+ ##    FreeBSD Standard threads
        	CFLAGS="-pthread -D_THREAD_SAFE  $CFLAGS"
 -	THREADS_LDADD="-XCClinker -lc_r"
 +	THREADS_LDADD="-lc_r"
  	THREADS_LDFLAGS=""
+ ## FreeBSD has pthreads rwlocks from version 3 (I think)
+ #	AC_DEFINE(HAVE_PTHREADS_RWLOCK,1,[Define HAVE_PTHREADS_RWLOCK if pthreads library supports rwlocks])
+@@ -20284,9 +20284,9 @@
  
- ##   1:1 threads
-@@ -21574,7 +21574,7 @@
- fi
+       ;;
  
+-      freebsd6*)
++      freebsd*)
+         CFLAGS="-D_THREAD_SAFE  $CFLAGS"
+-        THREADS_LDADD="-XCClinker -lthr"
++        THREADS_LDADD="-lthr"
+         THREADS_LDFLAGS=""
+       ;;
  
--                                                                      ac_config_files="$ac_config_files Makefile c-icap.conf services/Makefile services/echo/Makefile services/url_check/Makefile services/clamav/Makefile modules/Makefile"
-+                                                                      ac_config_files="$ac_config_files Makefile c-icap.conf.default services/Makefile services/echo/Makefile services/url_check/Makefile services/clamav/Makefile modules/Makefile"
- cat >confcache <<\_ACEOF
- # This file is a shell script that caches the results of configure
- # tests run on this system so they can be shared between configure
-@@ -22160,7 +22160,7 @@
-   case "$ac_config_target" in
-   # Handling of arguments.
-   "Makefile" ) CONFIG_FILES="$CONFIG_FILES Makefile" ;;
--  "c-icap.conf" ) CONFIG_FILES="$CONFIG_FILES c-icap.conf" ;;
-+  "c-icap.conf.default" ) CONFIG_FILES="$CONFIG_FILES c-icap.conf.default" ;;
-   "services/Makefile" ) CONFIG_FILES="$CONFIG_FILES services/Makefile" ;;
-   "services/echo/Makefile" ) CONFIG_FILES="$CONFIG_FILES services/echo/Makefile" ;;
-   "services/url_check/Makefile" ) CONFIG_FILES="$CONFIG_FILES services/url_check/Makefile" ;;

@@ -34,7 +34,6 @@ if [ "$2" = "PRE-INSTALL" ]; then
 elif [ "$2" = "POST-INSTALL" ]; then
 	if [ ! -d "$LOG_DIR" ]; then 
 		mkdir -p "$LOG_DIR" || exit 1
-		touch "$LOG_DIR/access.log" "$LOG_DIR/server.log" || exit 1
 		chown -R "$CICAP_USER:$CICAP_GROUP" "$LOG_DIR" || exit 1
 	fi
 
@@ -46,6 +45,11 @@ elif [ "$2" = "POST-INSTALL" ]; then
 	if [ ! -d "$RUN_DIR" ]; then
 		mkdir -p "$RUN_DIR" || exit 1
 		chown "$CICAP_USER:$CICAP_GROUP" "$RUN_DIR" || exit 1
+	fi
+
+	if [ ! -d "$RUN_DIR/c-icap" ]; then
+		mkdir -p "$RUN_DIR/c-icap" || exit 1
+		chown "$CICAP_USER:$CICAP_GROUP" "$RUN_DIR/c-icap" || exit 1
 	fi
 fi
 
