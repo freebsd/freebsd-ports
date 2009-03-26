@@ -16,8 +16,7 @@ DISTNAME=	yaxpo
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Non-validating XML 1.0 + XMLNS processing suite for Objective Caml
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-
+USE_OCAML=	yes
 ALL_TARGET=	yaxpo
 MAKE_JOBS_SAFE=	yes
 

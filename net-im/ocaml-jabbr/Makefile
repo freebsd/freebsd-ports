@@ -16,12 +16,13 @@ DISTNAME=	jabbr
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Messaging and Presence Protocol a.k.a. Jabber for Objective Caml
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/cryptokit/cryptokit.cma:${PORTSDIR}/security/ocaml-cryptokit \
 		${LOCALBASE}/lib/ocaml/yaxpo.cma:${PORTSDIR}/textproc/ocaml-yaxpo
 
 # depend when building as well
 BUILD_DEPENDS+=	${RUN_DEPENDS}
+
+USE_OCAML=	yes
 
 DATE_VERSION=	20021124
 
