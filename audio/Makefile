@@ -362,6 +362,7 @@
     SUBDIR += libmad
     SUBDIR += libmikmod
     SUBDIR += libmodplug
+    SUBDIR += libmp3splt
     SUBDIR += libmpcdec
     SUBDIR += libmpd
     SUBDIR += libmtp
