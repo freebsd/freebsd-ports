@@ -17,6 +17,7 @@ COMMENT=	Simple logout button
 
 WRKSRC=		${WRKDIR}/xlogout
 USE_IMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 MAN1=		xlogout.1
 
 PLIST_FILES=	bin/xlogout \
