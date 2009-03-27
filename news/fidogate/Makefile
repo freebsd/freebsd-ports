@@ -16,14 +16,16 @@ MASTER_SITE_SUBDIR=	system/fido
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Fido-Internet Gateway and Tosser
 
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-perl
-
 .if !defined(WITHOUT_IFCICO)
 RUN_DEPENDS=	${LOCALBASE}/libexec/ifmail/ifcico:${PORTSDIR}/news/ifmail
 .endif
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_GMAKE=	yes
 USE_PERL5=	yes
+
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-perl
 
 DOCLIST=	fidogate.texi fidogate.txt gatebau94.txt kludge-rfc.doc \
 		msgid.doc qmail.txt texinfo.tex dirs.html index.html \

@@ -35,16 +35,18 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 .endif
 
+MAKE_JOBS_UNSAFE=	yes
+CONFLICTS=	mgetty-1.*
+.if !defined(WITH_NETPBM_DEVEL)
+PORTSCOUT=	limit:^10\.26\.
+.endif
+
 USE_PERL5=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	LN="${LN}" RANLIB="${RANLIB}"
 MAKEFILE=	GNUmakefile
 INSTALL_TARGET=	install.bin install.lib install.data install-dev
 USE_LDCONFIG=	yes
-CONFLICTS=	mgetty-1.*
-.if !defined(WITH_NETPBM_DEVEL)
-PORTSCOUT=	limit:^10\.26\.
-.endif
 
 MAN1=		netpbm.1
 
