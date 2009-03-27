@@ -27,7 +27,7 @@ MAN1=		spybye.1
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CLAMAV)
-LIB_DEPENDS+=	clamav.5:${PORTSDIR}/security/clamav
+LIB_DEPENDS+=	clamav.6:${PORTSDIR}/security/clamav
 CONFIGURE_ARGS+=	--with-libclamav=${PREFIX}/bin
 .endif
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	4.60.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 PKGNAMESUFFIX=	-devel
