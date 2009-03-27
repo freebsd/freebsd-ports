@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+#
+# PROVIDE: ttserver
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. %%RC_SUBR%%
+
+name="ttserver"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/${name}"
+pidfile="/var/run/ttserver.pid"
+
+load_rc_config $name
+: ${ttserver_flags="-dmn -pid ${pidfile}"}
+
+run_rc_command "$1"

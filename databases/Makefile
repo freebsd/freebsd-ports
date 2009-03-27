@@ -623,6 +623,7 @@
     SUBDIR += tdb
     SUBDIR += tinycdb
     SUBDIR += tokyocabinet
+    SUBDIR += tokyotyrant
     SUBDIR += tora
     SUBDIR += typhoon
     SUBDIR += unixODBC
