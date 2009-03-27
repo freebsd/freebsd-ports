@@ -311,6 +311,7 @@
     SUBDIR += grok
     SUBDIR += growspd
     SUBDIR += grub
+    SUBDIR += gsmartcontrol
     SUBDIR += gstopd
     SUBDIR += gstreamer-plugins-cdio
     SUBDIR += gstreamer-plugins-hal
