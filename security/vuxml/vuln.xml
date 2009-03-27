@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0fe73a4a-1b18-11de-8226-0030843d3802">
+    <topic>pivot-weblog -- file deletion vulnerability</topic>
+    <affects>
+      <package>
+	<name>pivot-weblog</name>
+	<range><lt>1.40.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/34302">
+	  <p>A vulnerability has been discovered in Pivot, which can be
+	    exploited by malicious people to delete certain files.</p>
+	  <p>Input passed to the "refkey" parameter in
+	    extensions/bbclone_tools/count.php is not properly sanitised
+	    before being used to delete files. This can be exploited to
+	    delete files with the permissions of the web server via directory
+	    traversal sequences passed within the "refkey" parameter.</p>
+	  <p>NOTE: Users with the "Advanced" user level are able to include and
+	    execute uploaded PHP code via the "pivot_path" parameter in
+	    extensions/bbclone_tools/getkey.php when
+	    extensions/bbclone_tools/hr_conf.php can be deleted. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>34160</bid>
+      <url>http://secunia.com/advisories/34302/</url>
+    </references>
+    <dates>
+      <discovery>2009-03-18</discovery>
+      <entry>2009-03-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="06f9174f-190f-11de-b2f0-001c2514716c">
     <topic>phpmyadmin -- insufficient output sanitizing when generating configuration file</topic>
     <affects>
