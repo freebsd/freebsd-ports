@@ -1,0 +1,7 @@
+This plugin allows you to schedule events to run at recurring
+intervals. Events will run during the first request which meets or
+exceeds the specified time.  Depending on the level of traffic to the
+application, events may or may not run at exactly the correct time,
+but it should be enough to satisfy many basic scheduling needs.
+
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-Scheduler/
