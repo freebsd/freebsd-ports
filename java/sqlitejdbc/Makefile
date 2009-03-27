@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlitejdbc
-PORTVERSION=	052
+PORTVERSION=	053
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	java databases
@@ -25,13 +25,13 @@ MAKE_ENV=	JAVA_HOME="${JAVA_HOME}"
 ALL_TARGET=	native
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	%%JAVAJARDIR%%/sqlitejdbc-v${PORTVERSION}-native.jar lib/libsqlitejdbc.so
+PLIST_FILES=	%%JAVAJARDIR%%/sqlitejdbc-native.jar lib/libsqlitejdbc.so
 
 post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/build/sqlitejdbc-v${PORTVERSION}-native.jar ${JAVAJARDIR}/
+	${INSTALL_DATA} ${WRKSRC}/build/sqlitejdbc-v${PORTVERSION}-native.jar ${JAVAJARDIR}/sqlitejdbc-native.jar
 	${INSTALL_DATA} ${WRKSRC}/build/FreeBSD/libsqlitejdbc.so ${PREFIX}/lib/
 
 .include <bsd.port.mk>
