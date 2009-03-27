@@ -1227,6 +1227,7 @@ burgerspace                     ports/games/burgerspace
 burn                            ports/sysutils/burn
 burrtools                       ports/games/burrtools
 bush                            ports/shells/bush
+busybox                         ports/sysutils/busybox
 buttonbox                       ports/x11/buttonbox
 buzhug                          ports/databases/buzhug
 bvi                             ports/editors/bvi
@@ -5270,6 +5271,7 @@ iaxmodem                        ports/net/iaxmodem
 ib-kmod                         ports/comms/ib-kmod
 ibp                             ports/comms/ibp
 ibsh                            ports/shells/ibsh
+ibus                            ports/textproc/ibus
 ical                            ports/deskutils/ical
 ical2html                       ports/converters/ical2html
 icb                             ports/net-im/icb
@@ -18350,6 +18352,8 @@ py-apolicy                      ports/mail/py-apolicy
 py-argparse                     ports/devel/py-argparse
 py-asn1                         ports/devel/py-asn1
 py-aspects                      ports/devel/py-aspects
+py-astLib                       ports/astro/py-astLib
+py-astlib                       ports/astro/py-astLib
 py-astng                        ports/devel/py-astng
 py-asv                          ports/textproc/py-asv
 py-avahi                        ports/net/py-avahi
@@ -18699,6 +18703,7 @@ py-ptrace                       ports/devel/py-ptrace
 py-pullparser                   ports/www/py-pullparser
 py-punjab                       ports/net-im/py-punjab
 py-px                           ports/devel/py-px
+py-py-restclient                ports/www/py-py-restclient
 py-py2play                      ports/net-p2p/py-py2play
 py-pyPgSQL                      ports/databases/py-pyPgSQL
 py-pybmp                        ports/multimedia/py-pybmp
@@ -19966,7 +19971,6 @@ ruby-xmms2                      ports/audio/ruby-xmms2
 ruby-xslt                       ports/textproc/ruby-xslt
 ruby-xtemplate                  ports/textproc/ruby-xtemplate
 ruby-zip                        ports/archivers/ruby-zip
-ruby-zoom                       ports/devel/ruby-zoom
 ruby18                          ports/lang/ruby18
 ruby19                          ports/lang/ruby19
 rubygem-abstract                ports/devel/rubygem-abstract
@@ -20122,6 +20126,7 @@ rubygem-xmpp4r                  ports/net-im/rubygem-xmpp4r
 rubygem-yadis                   ports/net/rubygem-yadis
 rubygem-yapra                   ports/www/rubygem-yapra
 rubygem-zentest                 ports/devel/rubygem-zentest
+rubygem-zoom                    ports/devel/rubygem-zoom
 rubyphoto                       ports/graphics/rubyphoto
 rude                            ports/net/rude
 rudeconfig                      ports/devel/rudeconfig
@@ -20998,7 +21003,9 @@ starplot                        ports/astro/starplot
 stars                           ports/astro/stars
 starttls                        ports/security/starttls
 startup-notification            ports/x11/startup-notification
+statcvs                         ports/devel/statcvs
 staticcharge                    ports/dns/staticcharge
+statsvn                         ports/devel/statsvn
 sted                            ports/editors/sted
 stegdetect                      ports/security/stegdetect
 steghide                        ports/security/steghide
@@ -23821,6 +23828,7 @@ zh-gugod-clean                  ports/chinese/gugod-clean
 zh-hanzim                       ports/chinese/hanzim
 zh-hc                           ports/chinese/hc
 zh-hztty                        ports/chinese/hztty
+zh-ibus-pinyin                  ports/chinese/ibus-pinyin
 zh-iiimf-le-newpy               ports/chinese/iiimf-le-newpy
 zh-iiimf-le-ude                 ports/chinese/iiimf-le-ude
 zh-iiimf-le-xcin                ports/chinese/iiimf-le-xcin
