@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	Games-Tournament-RoundRobin
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	games perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Round-Robin Tournament Schedule Pairings
 
 MAN3=	Games::Tournament::RoundRobin.3 \
 	Games::League::Member.3
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	5.6.2+
 
 .include <bsd.port.mk>
