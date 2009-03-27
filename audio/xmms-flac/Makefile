@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}" \
 MAKE_ARGS=	LIBTOOL="${LIBTOOL} --tag=disable-static"
 MAKE_ENV=	MAKEOBJDIR=/nonexistent		# ignore ${WRKSRC}/obj
 MAKEFILE=	${FILESDIR}/Makefile
+MAKE_JOBS_SAFE=	yes
 
 # XXX
 post-install:
