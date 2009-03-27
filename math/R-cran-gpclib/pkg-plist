@@ -1,0 +1,46 @@
+%%R_MOD_DIR%%/CONTENTS
+%%R_MOD_DIR%%/DESCRIPTION
+%%R_MOD_DIR%%/INDEX
+%%R_MOD_DIR%%/LICENSE
+%%R_MOD_DIR%%/Meta/Rd.rds
+%%R_MOD_DIR%%/Meta/hsearch.rds
+%%R_MOD_DIR%%/Meta/nsInfo.rds
+%%R_MOD_DIR%%/Meta/package.rds
+%%R_MOD_DIR%%/NAMESPACE
+%%R_MOD_DIR%%/R/gpclib
+%%R_MOD_DIR%%/R/gpclib.rdb
+%%R_MOD_DIR%%/R/gpclib.rdx
+%%R_MOD_DIR%%/R-ex/gpc.poly-class.R
+%%R_MOD_DIR%%/R-ex/gpc.poly.nohole-class.R
+%%R_MOD_DIR%%/R-ex/new-generics.R
+%%R_MOD_DIR%%/R-ex/polyfile.R
+%%R_MOD_DIR%%/README
+%%R_MOD_DIR%%/help/AnIndex
+%%R_MOD_DIR%%/help/gpc.poly-class
+%%R_MOD_DIR%%/help/gpc.poly.nohole-class
+%%R_MOD_DIR%%/help/new-generics
+%%R_MOD_DIR%%/help/polyfile
+%%R_MOD_DIR%%/html/00Index.html
+%%R_MOD_DIR%%/html/gpc.poly-class.html
+%%R_MOD_DIR%%/html/gpc.poly.nohole-class.html
+%%R_MOD_DIR%%/html/new-generics.html
+%%R_MOD_DIR%%/html/polyfile.html
+%%R_MOD_DIR%%/latex/gpc.poly-class.tex
+%%R_MOD_DIR%%/latex/gpc.poly.nohole-class.tex
+%%R_MOD_DIR%%/latex/new-generics.tex
+%%R_MOD_DIR%%/latex/polyfile.tex
+%%R_MOD_DIR%%/libs/gpclib.so
+%%R_MOD_DIR%%/man/gpclib.Rd.gz
+%%R_MOD_DIR%%/poly-ex/ex-poly1.txt
+%%R_MOD_DIR%%/poly-ex/ex-poly2.txt
+%%R_MOD_DIR%%/poly-ex/hole-poly.txt
+@dirrm %%R_MOD_DIR%%/Meta
+@dirrm %%R_MOD_DIR%%/R
+@dirrm %%R_MOD_DIR%%/R-ex
+@dirrm %%R_MOD_DIR%%/help
+@dirrm %%R_MOD_DIR%%/html
+@dirrm %%R_MOD_DIR%%/latex
+@dirrm %%R_MOD_DIR%%/libs
+@dirrm %%R_MOD_DIR%%/man
+@dirrm %%R_MOD_DIR%%/poly-ex
+@dirrm %%R_MOD_DIR%%
