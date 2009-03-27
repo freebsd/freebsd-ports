@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	prips
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+MASTER_SITES=	http://devel.ringlet.net/sysutils/prips/
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Prints IP subnet ranges by list or CIDR
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
-
 PORTDOCS=	README
 PLIST_FILES=	bin/prips
+MAN1=		prips.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/prips ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/prips.1.gz ${PREFIX}/man/man1/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
