@@ -1,0 +1,40 @@
+bin/gsmartcontrol
+bin/gsmartcontrol-root
+share/applications/gsmartcontrol.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_boost_1_0.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_bsd-ucb.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_gpl2.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_gpl3.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_gsmartcontrol.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_hz.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_pcrecpp.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_whatever.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_zlib.txt
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/contrib/cron-based_noadmin/README
+%%PORTDOCS%%%%DOCSDIR%%/contrib/cron-based_noadmin/cron_gather_smart.sh
+%%PORTDOCS%%%%DOCSDIR%%/contrib/cron-based_noadmin/crontab.example
+%%PORTDOCS%%%%DOCSDIR%%/contrib/cron-based_noadmin/smartctl_subst.sh
+%%DATADIR%%/icon_cddvd.png
+%%DATADIR%%/icon_hdd.png
+share/icons/hicolor/128x128/apps/gsmartcontrol.png
+share/icons/hicolor/16x16/apps/gsmartcontrol.png
+share/icons/hicolor/22x22/apps/gsmartcontrol.png
+share/icons/hicolor/24x24/apps/gsmartcontrol.png
+share/icons/hicolor/256x256/apps/gsmartcontrol.png
+share/icons/hicolor/32x32/apps/gsmartcontrol.png
+share/icons/hicolor/48x48/apps/gsmartcontrol.png
+share/icons/hicolor/64x64/apps/gsmartcontrol.png
+share/pixmaps/gsmartcontrol.png
+share/pixmaps/gsmartcontrol.xpm
+@dirrm share/icons/hicolor/256x256/apps
+@dirrm share/icons/hicolor/256x256
+@dirrm share/icons
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib/cron-based_noadmin
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications

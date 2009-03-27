@@ -1,0 +1,8 @@
+--- ./data/gsmartcontrol-root.in.orig	2009-03-26 18:58:31.000000000 +0100
++++ data/gsmartcontrol-root.in	2009-03-26 18:58:44.000000000 +0100
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ ############################################################################
+ # Copyright:
+ #      (C) 2008  Alexander Shaduri <ashaduri 'at' gmail.com>
