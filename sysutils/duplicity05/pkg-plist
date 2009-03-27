@@ -1,5 +1,8 @@
 bin/duplicity
 bin/rdiffdir
+%%PYTHON_SITELIBDIR%%/duplicity/GnuPGInterface.py
+%%PYTHON_SITELIBDIR%%/duplicity/GnuPGInterface.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/GnuPGInterface.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/__init__.py
 %%PYTHON_SITELIBDIR%%/duplicity/__init__.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/__init__.pyo
@@ -85,12 +88,12 @@ bin/rdiffdir
 %%PYTHON_SITELIBDIR%%/duplicity/patchdir.py
 %%PYTHON_SITELIBDIR%%/duplicity/patchdir.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/patchdir.pyo
-%%PYTHON_SITELIBDIR%%/duplicity/pexpect.py
-%%PYTHON_SITELIBDIR%%/duplicity/pexpect.pyc
-%%PYTHON_SITELIBDIR%%/duplicity/pexpect.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/path.py
 %%PYTHON_SITELIBDIR%%/duplicity/path.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/path.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/pexpect.py
+%%PYTHON_SITELIBDIR%%/duplicity/pexpect.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/pexpect.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/robust.py
 %%PYTHON_SITELIBDIR%%/duplicity/robust.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/robust.pyo
