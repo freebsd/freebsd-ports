@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Algorithm-Evolutionary
-PORTVERSION=	0.65
+PORTVERSION=	0.66
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -40,6 +40,7 @@ MAN3=	Algorithm::Evolutionary.3 \
 	Algorithm::Evolutionary::Fitness::Royal_Road.3 \
 	Algorithm::Evolutionary::Fitness::String.3 \
 	Algorithm::Evolutionary::Fitness::wP_Peaks.3 \
+	Algorithm::Evolutionary::Individual::Any.3 \
 	Algorithm::Evolutionary::Individual::Base.3 \
 	Algorithm::Evolutionary::Individual::BitString.3 \
 	Algorithm::Evolutionary::Individual::Bit_Vector.3 \
