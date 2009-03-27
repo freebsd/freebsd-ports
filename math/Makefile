@@ -387,6 +387,7 @@
     SUBDIR += ploticus-nox11
     SUBDIR += plplot
     SUBDIR += polymake
+    SUBDIR += primegen
     SUBDIR += proofgeneral
     SUBDIR += pspp
     SUBDIR += py-basemap
