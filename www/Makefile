@@ -764,6 +764,7 @@
     SUBDIR += p5-Catalyst-Plugin-Params-Nested
     SUBDIR += p5-Catalyst-Plugin-Pluggable
     SUBDIR += p5-Catalyst-Plugin-Prototype
+    SUBDIR += p5-Catalyst-Plugin-Scheduler
     SUBDIR += p5-Catalyst-Plugin-Server
     SUBDIR += p5-Catalyst-Plugin-Session
     SUBDIR += p5-Catalyst-Plugin-Session-FastMmap
