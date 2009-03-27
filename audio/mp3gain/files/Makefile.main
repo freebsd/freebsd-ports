@@ -1,16 +1,17 @@
 SRCS=	gain_analysis.c mp3gain.c rg_error.c apetag.c
 PROG=	mp3gain
 
-LDADD=	-LmpglibDBL -lm -lmpglibDBL
+LDFLAGS+=	-LmpglibDBL
+LDADD=	-lm -lmpglibDBL
 DPADD=	mpglibDBL/libmpglibDBL.a
-OBJS=	libmpglibDBL.a
 
 BINDIR=	${PREFIX}/bin
 
 NOMAN=	yes
 
-libmpglibDBL.a:
-	cd mpglibDBL && ${MAKE} ${.TARGET}
-	ln -s mpglibDBL/${.TARGET} ${.TARGET}
+mpglibDBL/libmpglibDBL.a:
+	cd mpglibDBL && ${MAKE}
 
 .include <bsd.prog.mk>
+
+${PROG}: ${DPADD}
