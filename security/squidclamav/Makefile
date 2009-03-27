@@ -7,7 +7,7 @@
 
 PORTNAME=	squidclamav
 PORTVERSION=	3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.samse.fr/GPL/squidclamav/
 

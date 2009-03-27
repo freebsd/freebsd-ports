@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	havp
-PORTVERSION=	0.88
-PORTREVISION=	1
+PORTVERSION=	0.90
 CATEGORIES=	www
 MASTER_SITES=	http://www.server-side.de/download/ \
-				http://bio3k.softboard.ru/uploads/arch/
+		http://bio3k.softboard.ru/uploads/arch/ \
+		http://havp.hege.li/download/
 
 MAINTAINER=	b3k@mail.ru
 COMMENT=	HTTP Antivirus Proxy
 
-LIB_DEPENDS=	clamav.5:${PORTSDIR}/security/clamav
+LIB_DEPENDS=	clamav.6:${PORTSDIR}/security/clamav
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

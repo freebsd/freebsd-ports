@@ -7,7 +7,7 @@
 
 PORTNAME=	qscan
 PORTVERSION=	1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail security
 MASTER_SITES=	http://download.pureftpd.org/pub/qscan/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/qscan/
