@@ -1,0 +1,12 @@
+Mp3Splt-project is a utility to split mp3 and ogg files selecting a begin and an
+end time position, without decoding. It's very useful to split large mp3/ogg to
+make smaller files or to split entire albums to obtain original tracks.  If you
+want to split an album, you can select split points and filenames manually or
+you can get them automatically from CDDB (internet or a local file) or from .cue
+files. Supports also automatic silence split, that can be used also to adjust
+cddb/cue splitpoints. You can extract tracks from Mp3Wrap or AlbumWrap files in
+few seconds. For mp3 files, both ID3v1 & ID3v2 tags are supported.
+
+Mp3splt-project is split in 3 parts : libmp3splt, mp3splt and mp3splt-gtk.
+
+WWW:	http://mp3splt.sourceforge.net/
