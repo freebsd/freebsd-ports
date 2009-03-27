@@ -1,5 +1,14 @@
 --- Makefile.orig	2008-10-20 09:29:22.000000000 +0800
-+++ Makefile	2008-10-21 08:00:27.000000000 +0800
++++ Makefile	2009-03-27 08:53:23.000000000 +0800
+@@ -16,7 +16,7 @@
+ 
+ VERSION=2.4.0-1
+ LUCENE_SVN_VER=HEAD
+-LUCENE_VER=2.4.0
++LUCENE_VER=2.4.1
+ LUCENE_SVN=http://svn.apache.org/repos/asf/lucene/java/tags/lucene_2_4_0
+ PYLUCENE:=$(shell pwd)
+ LUCENE=lucene-java-$(LUCENE_VER)
 @@ -82,11 +82,13 @@
  #NUM_FILES=2
  
