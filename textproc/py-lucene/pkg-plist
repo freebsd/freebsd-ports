@@ -2,11 +2,11 @@
 %%PYTHON_SITELIBDIR%%/lucene/_lucene.so
 %%PYTHON_SITELIBDIR%%/lucene/__init__.py
 %%PYTHON_SITELIBDIR%%/lucene/__init__.pyc
-%%PYTHON_SITELIBDIR%%/lucene/lucene-analyzers-2.4.0.jar
-%%PYTHON_SITELIBDIR%%/lucene/lucene-core-2.4.0.jar
-%%PYTHON_SITELIBDIR%%/lucene/lucene-instantiated-2.4.0.jar
-%%PYTHON_SITELIBDIR%%/lucene/lucene-highlighter-2.4.0.jar
-%%PYTHON_SITELIBDIR%%/lucene/lucene-queries-2.4.0.jar
-%%PYTHON_SITELIBDIR%%/lucene/lucene-regex-2.4.0.jar
-%%PYTHON_SITELIBDIR%%/lucene/lucene-snowball-2.4.0.jar
+%%PYTHON_SITELIBDIR%%/lucene/lucene-analyzers-2.4.1.jar
+%%PYTHON_SITELIBDIR%%/lucene/lucene-core-2.4.1.jar
+%%PYTHON_SITELIBDIR%%/lucene/lucene-instantiated-2.4.1.jar
+%%PYTHON_SITELIBDIR%%/lucene/lucene-highlighter-2.4.1.jar
+%%PYTHON_SITELIBDIR%%/lucene/lucene-queries-2.4.1.jar
+%%PYTHON_SITELIBDIR%%/lucene/lucene-regex-2.4.1.jar
+%%PYTHON_SITELIBDIR%%/lucene/lucene-snowball-2.4.1.jar
 @dirrm %%PYTHON_SITELIBDIR%%/lucene
