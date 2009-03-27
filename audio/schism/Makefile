@@ -31,13 +31,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800000
-BROKEN=		currently does not support 8-CURRENT
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/schismtracker ${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
