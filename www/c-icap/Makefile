@@ -7,6 +7,7 @@
 
 PORTNAME=	c-icap
 PORTVERSION=	060708
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -49,7 +50,7 @@ CONFIGURE_ARGS+=	--without-perl
 .endif
 
 .if !defined(WITHOUT_CLAMAV)
-LIB_DEPENDS+=	clamav.5:${PORTSDIR}/security/clamav
+LIB_DEPENDS+=	clamav.6:${PORTSDIR}/security/clamav
 PLIST_SUB+=	CLAMAV=""
 CONFIGURE_ARGS+=	--with-clamav
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
