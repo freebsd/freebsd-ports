@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oauth
-PORTVERSION=	0.99.2
+PORTVERSION=	0.99.4
 CATEGORIES=	net pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
