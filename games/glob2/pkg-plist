@@ -1689,6 +1689,7 @@ share/applications/glob2.desktop
 %%DATADIR%%/data/texts.dk.txt.orig
 %%DATADIR%%/data/texts.en.txt
 %%DATADIR%%/data/texts.en.txt.orig
+%%DATADIR%%/data/texts.en.txt~
 %%DATADIR%%/data/texts.es.txt
 %%DATADIR%%/data/texts.es.txt.orig
 %%DATADIR%%/data/texts.eu.txt
@@ -1704,6 +1705,7 @@ share/applications/glob2.desktop
 %%DATADIR%%/data/texts.it.txt.orig
 %%DATADIR%%/data/texts.keys.txt
 %%DATADIR%%/data/texts.keys.txt.orig
+%%DATADIR%%/data/texts.keys.txt~
 %%DATADIR%%/data/texts.list.txt
 %%DATADIR%%/data/texts.nl.txt
 %%DATADIR%%/data/texts.nl.txt.orig
@@ -1759,9 +1761,13 @@ share/applications/glob2.desktop
 %%DATADIR%%/maps/the_sand_square.map
 %%DATADIR%%/maps/weakness.map
 %%DATADIR%%/scripts/tutorial_part1.sgsl
+%%DATADIR%%/scripts/tutorial_part1.sgsl~
 %%DATADIR%%/scripts/tutorial_part2.sgsl
+%%DATADIR%%/scripts/tutorial_part2.sgsl~
 %%DATADIR%%/scripts/tutorial_part3.sgsl
+%%DATADIR%%/scripts/tutorial_part3.sgsl~
 %%DATADIR%%/scripts/tutorial_part4.sgsl
+%%DATADIR%%/scripts/tutorial_part4.sgsl~
 share/icons/hicolor/128x128/apps/glob2-icon-128x128.png
 share/icons/hicolor/16x16/apps/glob2-icon-16x16.png
 share/icons/hicolor/24x24/apps/glob2-icon-24x24.png
