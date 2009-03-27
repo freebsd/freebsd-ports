@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	0.4.7
+PORTVERSION=	0.4.8
 CATEGORIES=	news
 MASTER_SITES=	SF/sabnzbdplus
 DISTNAME=	SABnzbd-${PORTVERSION}-src
