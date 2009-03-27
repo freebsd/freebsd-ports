@@ -16,6 +16,7 @@ COMMENT=	Receive/Send files via ZMODEM protocol.  (unrestrictive)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
+MAKE_JOBS_SAFE=	yes
 MAN1=		zmrx.1 zmtx.1
 PLIST_FILES=	bin/zmrx bin/zmtx
 
