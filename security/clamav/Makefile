@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	clamav
-DISTVERSION=	0.94.2
+PORTVERSION=	0.95
 CATEGORIES=	security
 MASTER_SITES=	SF
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Command line virus scanner written entirely in C
-
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 OPTIONS=	ARC "Enable arch archives support" On \
 		ARJ "Enable arj archives support" On \
@@ -30,6 +28,7 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
+CONF_FILES=	clamd freshclam
 
 PORTDOCS=	*
 
@@ -62,7 +61,8 @@ MAN1=		clamconf.1 \
 		clamscan.1 \
 		freshclam.1 \
 		sigtool.1 \
-		clamdscan.1
+		clamdscan.1 \
+		clamdtop.1
 MAN5=		clamd.conf.5 \
 		freshclam.conf.5
 MAN8=		clamd.8 \
@@ -89,7 +89,7 @@ SUB_LIST+=	DBDIR=${DBDIR} \
 
 SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?((Update)?LogFile) .*/([a-z]+\.log)$$|\1 ${LOGDIR}/\3|' \
-		-e 's|^\#?(PidFile) .*/([a-z]+\.pid)$$|\1 ${RUNDIR}/\2|' \
+		-e 's|^\#?(PidFile) .*/([a-z\-]+\.pid)$$|\1 ${RUNDIR}/\2|' \
 		-e 's|^\#?(LocalSocket) .*$$|\1 ${CLAMAV_CLAMD_SOCKET}|' \
 		-e 's|^\#?(User) .*$$|\1 ${CLAMAVUSER}|' \
 		-e 's|^\#?(AllowSupplementaryGroups).*$$|\1 yes|' \
@@ -97,7 +97,9 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(DatabaseDirectory) .*$$|\1 ${DBDIR}|' \
 		-e 's|^\#?(DatabaseOwner) .*$$|\1 ${CLAMAVUSER}|' \
 		-e 's|^\#?(FixStaleSocket).*$$|\1 yes|' \
-		-e 's|^\#?(NotifyClamd) .*$$|\1 ${PREFIX}/etc/clamd.conf|'
+		-e 's|^\#?(NotifyClamd) .*$$|\1 ${PREFIX}/etc/clamd.conf|' \
+		-e 's|^\#?(MilterSocket) */tmp.*$$|\1 ${CLAMAV_MILTER_SOCKET}|' \
+		-e 's|^\#?(ClamdSocket).*$$|\1 unix:${CLAMAV_CLAMD_SOCKET}|'
 
 PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 		CLAMAVGROUP=${CLAMAVGROUP}
@@ -131,6 +133,7 @@ CONFIGURE_ARGS+=--without-iconv
 
 .if defined(WITH_MILTER)
 USE_RC_SUBR+=	clamav-milter
+CONF_FILES+=	clamav-milter
 . if defined(WITH_LDAP) && exists(${LOCALBASE}/lib/libldap.so)
 USE_OPENLDAP=	yes
 LDFLAGS+=	-lldap
@@ -160,11 +163,12 @@ CONFIGURE_ARGS+=	--enable-experimental
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -E 's,^(pkgconfigdir = ).*$$,\1$$(prefix)/libdata/pkgconfig,g' \
+	@${REINPLACE_CMD} -e 's,^\(pkgconfigdir = \).*$$,\1$$\(prefix\)/libdata/pkgconfig,g' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} ${SED_CONF} \
 		${WRKSRC}/etc/clamd.conf \
-		${WRKSRC}/etc/freshclam.conf
+		${WRKSRC}/etc/freshclam.conf \
+		${WRKSRC}/etc/clamav-milter.conf
 	@${REINPLACE_CMD} -e 's|0x100000000|0x100000000ULL|g' \
 		${WRKSRC}/libclamunrar/unrar.c
 
@@ -173,7 +177,7 @@ pre-su-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/clamav-config.h ${PREFIX}/include
-.for c in clamd freshclam
+.for c in ${CONF_FILES}
 	@[ -f ${PREFIX}/etc/${c}.conf ] || \
 		${CP} -v ${PREFIX}/etc/${c}.conf.default ${PREFIX}/etc/${c}.conf
 .endfor
@@ -181,9 +185,6 @@ post-install:
 	@${MKDIR} ${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${WRKSRC}/ChangeLog ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/html/* ${DOCSDIR}/html
-. if defined(WITH_MILTER)
-	${INSTALL_DATA} ${WRKSRC}/clamav-milter/INSTALL ${DOCSDIR}/INSTALL.clamav-milter
-. endif
 .endif
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
