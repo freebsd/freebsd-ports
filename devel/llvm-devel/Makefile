@@ -25,7 +25,7 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .if defined(BOOTSTRAP)
 SVN_REV!=	svn info http://llvm.org/svn/llvm-project/ | grep Revision | cut -d' ' -f2
 .else
-SVN_REV=	67766
+SVN_REV=	67853
 .endif
 
 GNU_CONFIGURE=	yes
@@ -33,6 +33,7 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_PYTHON_RUN=	yes
+MAKE_JOBS_SAFE=	yes
 
 .if defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
