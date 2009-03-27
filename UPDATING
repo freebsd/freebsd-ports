@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090327:
+  AFFECTS: users of security/clamav
+  AUTHOR: garga@FreeBSD.org
+
+  After version 0.95 clamav-milter doesn't accept parameters by command
+  line. If you are using $clamav_milter_flags on rc.conf to set its
+  parameters you will need to move to new ${PREFIX}/etc/clamav-milter.conf.
+
 20090319:
   AFFECTS: users of shells/bash3
   AUTHOR: ehaupt@FreeBSD.org
