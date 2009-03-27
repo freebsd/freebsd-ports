@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	dazuko
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.7
 CATEGORIES=	security
-MASTER_SITES=	http://dazuko.org/files/
+MASTER_SITES=	http://dazuko.dnsalias.org/files/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A common interface for 3rd party file access control
@@ -18,10 +18,6 @@ SUB_FILES=	pkg-message
 OPTIONS=	EXAMPLEC	"Install C example programs"	on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=		Currently does not support FreeBSD > 7.0
-.endif
 
 .if defined(WITH_EXAMPLEC)
 PLIST_FILES=	%%EXAMPLESDIR%%/example %%EXAMPLESDIR%%/example_mt
