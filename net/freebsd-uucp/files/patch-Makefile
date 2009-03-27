@@ -1,0 +1,33 @@
+--- Makefile.orig	2003-06-17 08:08:21.000000000 +0200
++++ Makefile	2009-03-27 20:32:40.000000000 +0100
+@@ -1,21 +1,21 @@
+ PREFIX?=	/usr/local
+ 
+ all:	uucp uucpd etc
+-	cd uucp && make all
+-	cd uucpd && make all
+-	cd etc && make all
++	(cd uucp && ${MAKE} all)
++	(cd uucpd && ${MAKE} all)
++	(cd etc && ${MAKE} all)
+ 
+ install: uucp uucpd etc
+ 	mtree -deU -f uucp.mtree -p /var
+ 	mtree -deU -f local.mtree -p ${PREFIX}
+-	cd uucp && make install
+-	cd uucpd && make install
+-	cd etc && make install
++	(cd uucp && ${MAKE} install
++	(cd uucpd && ${MAKE} install
++	(cd etc && ${MAKE} install
+ 
+ clean:	uucp uucpd etc
+-	cd uucp && make clean
+-	cd uucpd && make clean
+-	cd etc && make clean
++	(cd uucp && ${MAKE} clean)
++	(cd uucpd && ${MAKE} clean)
++	(cd etc && ${MAKE} clean)
+ 	rm -f uucp/common_sources/config.cache \
+ 		uucp/common_sources/config.log \
+ 		uucp/common_sources/config.status \
