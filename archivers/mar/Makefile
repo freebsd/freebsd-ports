@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A simple binary file format for storing arbitrary meta and user data
 
+MAKE_JOBS_SAFE=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAN1=		mar.1

@@ -15,6 +15,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A very fast launcher program for X
 
 USE_XORG=	x11
+MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include -lX11
 LDFLAGS=	-L${LOCALBASE}/lib

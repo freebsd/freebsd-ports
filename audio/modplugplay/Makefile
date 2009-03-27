@@ -18,6 +18,8 @@ COMMENT=	A commandline music mod player using libmodplug
 
 LIB_DEPENDS=	modplug.0:${PORTSDIR}/audio/libmodplug
 
+MAKE_JOBS_SAFE=	yes
+
 MAN1=		modplugplay.1
 PLIST_FILES=	bin/modplugplay
 

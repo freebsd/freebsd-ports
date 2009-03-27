@@ -15,6 +15,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A BIOS password recovery tool
 
 USE_BZIP2=	yes
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/cmospwd
 PORTDOCS=	cmospwd.txt

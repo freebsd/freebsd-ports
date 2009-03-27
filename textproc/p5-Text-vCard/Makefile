@@ -19,6 +19,7 @@ BUILD_DEPENDS=		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
 PERL_CONFIGURE=		yes
+MAKE_JOBS_SAFE=		yes
 
 MAN3=			Text::vCard::Node.3 Text::vCard.3 \
 			Text::vCard::Addressbook.3

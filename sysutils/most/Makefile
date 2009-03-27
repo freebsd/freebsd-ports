@@ -21,6 +21,7 @@ LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-mmap
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/most
 PORTDOCS=	README changes.txt lesskeys.rc most-fun.txt most.doc most.rc

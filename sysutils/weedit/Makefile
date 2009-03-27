@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	File duplicate scanner with database support
 
+MAKE_JOBS_SAFE=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SRCF=		crc32 dlink weedit md5
 

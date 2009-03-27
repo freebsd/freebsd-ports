@@ -15,6 +15,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A utility for breaking pkzip encryption
 
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PLIST_FILES=	bin/pkextract bin/pkfindkey bin/pkmakekey bin/pkcrack bin/zipdecrypt

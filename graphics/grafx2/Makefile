@@ -18,6 +18,7 @@ COMMENT=	Bitmap paint program that supports more than 60 video resolutions
 USE_GMAKE=	yes
 USE_DOS2UNIX=	yes
 USE_SDL=	image ttf
+MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}
 MAKE_ENV+=	DATADIR="${DATADIR}"

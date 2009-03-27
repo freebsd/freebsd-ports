@@ -17,6 +17,7 @@ COMMENT=	A tool to replay saved packet capture files
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--with-libpcap=${LOCALBASE} \
 		--without-pcapnav-config \

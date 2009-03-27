@@ -37,6 +37,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Directory/Scratch.pm:${PORTSDIR}/devel/p5-Directory-
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN3=		App::Asciio::setup::import_export::perl.3 \
 		App::Asciio.3 \

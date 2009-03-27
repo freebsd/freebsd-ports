@@ -15,6 +15,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility for guessing which encoder was used to encode an mp3 file
 
 USE_ZIP=	yes
+MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}
 

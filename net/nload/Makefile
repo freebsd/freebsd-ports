@@ -15,6 +15,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Console application which monitors network traffic in real time
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		nload.1
 PLIST_FILES=	bin/nload

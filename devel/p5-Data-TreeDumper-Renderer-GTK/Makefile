@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Data/TreeDumper.pm:${PORTSDIR}/devel/p5-Data-TreeDum
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN3=		Data::TreeDumper::Renderer::GTK.3
 

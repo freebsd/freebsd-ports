@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Recvnet (inverse telnet) is a utility for debugging tcp connections
 
+MAKE_JOBS_SAFE=	yes
+
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\"
 LDFLAGS+=	-lcurses
 

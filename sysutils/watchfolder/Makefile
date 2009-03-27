@@ -14,6 +14,8 @@ MASTER_SITES=	http://dstunrea.sdf-eu.org/files/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Watch folders for new files and process them
 
+MAKE_JOBS_SAFE=	yes
+
 WRKSRC=		${WRKDIR}/watchd-${PORTVERSION}
 
 post-patch:

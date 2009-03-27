@@ -16,6 +16,7 @@ COMMENT=	Create BitTorrent files from the command line
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/createtorrent
 

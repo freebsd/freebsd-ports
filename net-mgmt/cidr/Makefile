@@ -13,6 +13,8 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	RFC 1878 subnet calculator / helper
 
+MAKE_JOBS_SAFE=	yes
+
 MAN1=		cidr.1
 PLIST_FILES=	bin/cidr
 

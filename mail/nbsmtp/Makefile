@@ -16,6 +16,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Simple program for outgoing SMTP delivery
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	IPV6	"Support for IPv6 connections"			off \
 		DEBUG	"Enable debug information (for developers)"	off \

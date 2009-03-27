@@ -16,6 +16,7 @@ COMMENT=	A command-line picture metadata processor
 
 USE_GMAKE=		yes
 USE_PYTHON_BUILD=	yes
+MAKE_JOBS_SAFE=		yes
 
 MAKEFILE=	Makefile.unix
 

@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A flexible SFV checksum utility
 
+MAKE_JOBS_SAFE=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/bsdsfv
 PORTDOCS=	MANUAL

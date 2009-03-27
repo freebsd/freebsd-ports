@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Pod/Spell.pm:${PORTSDIR}/textproc/p5-Pod-Spell
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN3=		Test::Spelling.3
 

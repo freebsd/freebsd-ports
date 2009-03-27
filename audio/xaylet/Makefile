@@ -14,6 +14,7 @@ ALL_TARGET=	xaylet
 MASTERDIR=	${.CURDIR}/../aylet
 
 USE_GNOME=	gtk12
+MAKE_JOBS_SAFE=	yes
 
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist

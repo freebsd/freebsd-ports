@@ -20,6 +20,7 @@ COMMENT=	A boat racing game in the spirit of Elasto Mania or X-Moto
 USE_GMAKE=	yes
 USE_SDL=	mixer image net sdl
 USE_GL=		yes
+MAKE_JOBS_SAFE=	yes
 
 MAKE_ENV+=	DATADIR="${DATADIR}"
 

@@ -14,6 +14,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command-line utility for generating and checking TTH message digests
 
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 

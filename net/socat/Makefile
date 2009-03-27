@@ -17,6 +17,7 @@ COMMENT=	Multipurpose relay and more
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_RC_SUBR=	socat
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		socat.1
 

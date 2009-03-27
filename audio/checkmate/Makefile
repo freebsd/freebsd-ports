@@ -15,6 +15,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command-line utility for checking mp3 files for errors
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		mpck.1
 MLINKS=		mpck.1 checkmate.1

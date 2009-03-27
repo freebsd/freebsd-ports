@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	de-
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A utility for translating german into the schwaebisch dialect
 
+MAKE_JOBS_SAFE=	yes
+
 PLIST_FILES=	bin/schwobifyer
 
 do-install:

@@ -15,6 +15,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Recover deleted files from FAT filesystems
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		fatback.1
 INFO=		fatback-manual

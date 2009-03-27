@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A shell script "encoder"
 
+MAKE_JOBS_SAFE=	yes
+
 MAN1=		shc.1
 PLIST_FILES=	bin/shc
 

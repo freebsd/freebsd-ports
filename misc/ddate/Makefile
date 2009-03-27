@@ -17,9 +17,11 @@ COMMENT=	Command to print the date in Discordian date format
 
 PLIST_FILES=	bin/ddate
 
-USE_BZIP2=	yes
-MAN1=		ddate.1
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+MAKE_JOBS_SAFE=	yes
+
+MAN1=		ddate.1
 
 pre-everything::
 	@${ECHO} ""

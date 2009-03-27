@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}_30oct2002
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A really small HTTP/HTTPS proxy
 
+MAKE_JOBS_SAFE=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	libexec/micro_proxy
 MAN8=		micro_proxy.8

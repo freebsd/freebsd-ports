@@ -14,6 +14,8 @@ MASTER_SITES=	http://netdial.caribe.net/~adrian2/programs/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Fdupes is a program for identifying or deleting duplicate files
 
+MAKE_JOBS_SAFE=	yes
+
 MAN1=		fdupes.1
 PLIST_FILES=	bin/fdupes
 

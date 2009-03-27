@@ -18,6 +18,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython
 
 NO_BUILD=	yes
 USE_PYTHON=	2.3+
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		sshfp.1
 PLIST_FILES=	bin/sshfp

@@ -15,6 +15,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A powerful array sorting Perl interface
 
 PERL_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN3=		Sort::Array.3
 
