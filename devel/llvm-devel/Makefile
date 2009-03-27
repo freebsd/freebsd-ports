@@ -25,7 +25,7 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .if defined(BOOTSTRAP)
 SVN_REV!=	svn info http://llvm.org/svn/llvm-project/ | grep Revision | cut -d' ' -f2
 .else
-SVN_REV=	66031
+SVN_REV=	67766
 .endif
 
 GNU_CONFIGURE=	yes
@@ -117,7 +117,8 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			lib/libLTO.so \
 			lib/libLLVM* \
 			lib/libclang* \
-			lib/plugin_llvm*
+			lib/plugin_llvm* \
+			libexec/clang-cc
 PLIST_DIR_LIST=		bin/ccclib \
 			include/llvm-c \
 			include/llvm \

@@ -22,7 +22,6 @@ bin/ccclib/Util.pyc
 bin/ccclib/__init__.py
 bin/ccclib/__init__.pyc
 bin/clang
-bin/clang-driver
 bin/gccas
 bin/gccld
 bin/llc
@@ -50,6 +49,7 @@ include/llvm-c/Core.h
 include/llvm-c/ExecutionEngine.h
 include/llvm-c/LinkTimeOptimizer.h
 include/llvm-c/Target.h
+include/llvm-c/Transforms/IPO.h
 include/llvm-c/Transforms/Scalar.h
 include/llvm-c/lto.h
 include/llvm/ADT/APFloat.h
@@ -90,10 +90,6 @@ include/llvm/ADT/Tree.h
 include/llvm/ADT/Trie.h
 include/llvm/ADT/UniqueVector.h
 include/llvm/ADT/VectorExtras.h
-include/llvm/ADT/hash_map.cmake
-include/llvm/ADT/hash_map.h
-include/llvm/ADT/hash_set.cmake
-include/llvm/ADT/hash_set.h
 include/llvm/ADT/ilist.h
 include/llvm/ADT/ilist_node.h
 include/llvm/ADT/iterator.cmake
@@ -115,6 +111,7 @@ include/llvm/Analysis/IntervalIterator.h
 include/llvm/Analysis/IntervalPartition.h
 include/llvm/Analysis/LibCallAliasAnalysis.h
 include/llvm/Analysis/LibCallSemantics.h
+include/llvm/Analysis/LiveValues.h
 include/llvm/Analysis/LoopInfo.h
 include/llvm/Analysis/LoopPass.h
 include/llvm/Analysis/LoopVR.h
@@ -298,6 +295,7 @@ include/llvm/Support/PassNameParser.h
 include/llvm/Support/PatternMatch.h
 include/llvm/Support/PluginLoader.h
 include/llvm/Support/PredIteratorCache.h
+include/llvm/Support/PrettyStackTrace.h
 include/llvm/Support/Recycler.h
 include/llvm/Support/RecyclingAllocator.h
 include/llvm/Support/Registry.h
@@ -433,6 +431,7 @@ lib/libclangRewrite.a
 lib/libclangSema.a
 lib/plugin_llvmc_Base.o
 lib/plugin_llvmc_Clang.o
+libexec/clang-cc
 %%DATADIR%%/scanview.css
 %%DATADIR%%/sorttable.js
 %%DOCSDIR%%/html.tar.gz
