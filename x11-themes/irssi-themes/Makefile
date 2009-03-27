@@ -20,6 +20,8 @@ COMMENT=	A collection of additional irssi themes
 RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 
 NO_BUILD=	yes
+MAKE_JOBS_SAFE=	yes
+
 PLIST=		${WRKDIR}/pkg-plist
 
 THEMESDIR_REL=	share/irssi/themes

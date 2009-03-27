@@ -15,10 +15,12 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Execute a command repeatedly and scroll the output
 
 GNU_CONFIGURE=	yes
-MAKE_ARGS+=	CFLAGS="${CFLAGS}"
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/vii
 MAN1=		vii.1
+
+MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin

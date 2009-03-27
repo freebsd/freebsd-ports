@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A ping-like tool for HTTP requests
 
+MAKE_JOBS_SAFE=	yes
+
 MAN1=		httping.1
 PLIST_FILES=	bin/httping
 

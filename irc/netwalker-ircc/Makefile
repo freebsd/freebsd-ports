@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A lightweight curses-based IRC client
 
+MAKE_JOBS_SAFE=	yes
+
 MAN1=		netwalker.1
 
 LDFLAGS=	-lncurses ${PTHREAD_LIBS}

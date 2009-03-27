@@ -16,6 +16,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A Xerox Lisp machine clock clone
 
 USE_IMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/lmclock
 

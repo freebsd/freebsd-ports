@@ -19,7 +19,10 @@ PORTDOCS=	book sfman
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 USE_BISON=	build
+MAKE_JOBS_SAFE=	yes
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+
 ALL_TARGET=	${PORTNAME}
 
 do-install:

@@ -14,6 +14,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A digital camera EXIF meta-information reader
 
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include

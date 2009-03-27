@@ -16,6 +16,7 @@ COMMENT=	Recoverjpeg tries to recover JFIF (JPEG) pictures from a peripheral
 
 GNU_CONFIGURE=	yes
 MANCOMPRESSED=	no
+MAKE_JOBS_SAFE=	yes
 
 # recoverjpeg scripts require many dependencies
 OPTIONS=	SCRIPTS	"Install sort-pictures script" off

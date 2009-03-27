@@ -17,6 +17,7 @@ COMMENT=	Connects stdin and stdout to an origin server through an HTTPS proxy
 
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
+MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=	${PORTNAME}
 

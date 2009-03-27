@@ -16,6 +16,7 @@ COMMENT=	A daemon that filters out private IP addresses in DNS responses
 PROJECTHOST=	google-dnswall
 USE_AUTOTOOLS=	automake:110
 USE_DOS2UNIX=	yes
+MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -13,6 +13,8 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line Atari(TM) .sap player
 
+MAKE_JOBS_SAFE=	yes
+
 SOURCES=	sapPokey pokey1 sapCpu sapEngine main pokey0
 CXXFLAGS+=	--no-exceptions
 

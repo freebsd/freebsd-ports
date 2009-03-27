@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 NO_WRKSUBDIR=	yes
 USE_PERL5=	yes
+MAKE_JOBS_SAFE=	yes
 
 DICTFILE=	${PREFIX}/share/ding/de-en.txt
 SWISSDICT=	de_ch-en.txt

@@ -19,9 +19,12 @@ COMMENT=	Generates mazes on a text terminal and lets you traverse them
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses
 
 USE_PERL5=	yes
-WRKSRC=		${WRKDIR}/TextMaze
 NO_BUILD=	yes
+MAKE_JOBS_SAFE=	yes
+
 PLIST_FILES=	bin/textmaze
+
+WRKSRC=		${WRKDIR}/TextMaze
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/bin/perl|${PERL}|' \

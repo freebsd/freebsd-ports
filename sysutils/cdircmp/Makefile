@@ -13,6 +13,8 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Compare directories and select files to copy
 
+MAKE_JOBS_SAFE=	yes
+
 LDFLAGS+=	-lncurses -lform
 
 PLIST_FILES=	bin/cdircmp

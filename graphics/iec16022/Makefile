@@ -17,6 +17,7 @@ COMMENT=	Create 2D barcodes, also known as DataMatrix
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 

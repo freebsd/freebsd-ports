@@ -15,6 +15,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A qmail RBL filter
 
 USE_QMAIL_RUN=	yes
+MAKE_JOBS_SAFE=	yes
 
 LDFLAGS?=	-s
 CFLAGS?=	-O2 -Wimplicit -Wunused -Wcomment -Wchar-subscripts -Wuninitialized \

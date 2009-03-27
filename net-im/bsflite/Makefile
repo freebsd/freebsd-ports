@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=bsflite
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A lightweight command line AIM client
 
+MAKE_JOBS_SAFE=	yes
+
 PLIST_FILES=	bin/bsflite %%EXAMPLESDIR%%/config-example
 PLIST_DIRS=	%%EXAMPLESDIR%%
 PORTDOCS=	COPYING ChangeLog README

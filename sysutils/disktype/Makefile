@@ -15,6 +15,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Disk formatting type autodetector
 
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/disktype
 PORTDOCS=	README

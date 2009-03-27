@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Closed loop, high-performance, general purpose protocol-blind fuzzer
 
+MAKE_JOBS_SAFE=	yes
+
 PROJECTHOST=	bunny-the-fuzzer
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

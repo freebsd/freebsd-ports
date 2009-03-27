@@ -20,6 +20,7 @@ LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_RC_SUBR=	vpnc
+MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=	all
 

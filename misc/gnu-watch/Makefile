@@ -16,6 +16,8 @@ DISTNAME=	procps-${DISTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	GNU watch command
 
+MAKE_JOBS_SAFE=	yes
+
 LDFLAGS+=	-lncurses
 
 MAN1=		gnu-watch.1

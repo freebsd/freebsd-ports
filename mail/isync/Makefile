@@ -17,6 +17,7 @@ COMMENT=	Maintain local copies of remote IMAP folders w/synchronized flags
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_BDB=	42+
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 

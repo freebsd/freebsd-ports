@@ -13,6 +13,8 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line pc speaker bell
 
+MAKE_JOBS_SAFE=	yes
+
 PLIST_FILES=	bin/yell
 
 ONLY_FOR_ARCHS=	i386 amd64

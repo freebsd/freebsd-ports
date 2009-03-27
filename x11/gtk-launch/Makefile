@@ -16,6 +16,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A fast GTK+ program launcher
 
 USE_GNOME=	gtk12
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/gtk-launch
 PORTDOCS=	INSTALL

@@ -18,6 +18,7 @@ CONFLICTS=	jive* chef* filters-*
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=	talkfilters.1 wrap.1
 MLINKS=	talkfilters.1 austro.1 \

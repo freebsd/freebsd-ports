@@ -15,6 +15,7 @@ COMMENT=	Updates the serialnumber in one or more zonefiles
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
+MAKE_JOBS_SAFE=	yes
 
 PORTEXAMPLES=	example.tld
 PLIST_FILES=	bin/vizone bin/updserial

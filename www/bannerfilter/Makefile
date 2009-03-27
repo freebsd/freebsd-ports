@@ -18,6 +18,7 @@ RUN_DEPENDS=	squid:${PORTSDIR}/www/squid
 
 USE_PERL5=	5.8.6+
 NO_BUILD=	yes
+MAKE_JOBS_SAFE=	yes
 
 WWW_ROOT?=	www
 PLIST_SUB+=	WWW_ROOT="${WWW_ROOT}"

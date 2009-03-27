@@ -21,5 +21,6 @@ BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious \
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

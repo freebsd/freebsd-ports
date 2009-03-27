@@ -13,6 +13,8 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Compresses CD images by stripping unnecessary EDC/ECC data
 
+MAKE_JOBS_SAFE=	yes
+
 PLIST_FILES=	bin/ecm bin/unecm
 PORTDOCS=	format.txt
 

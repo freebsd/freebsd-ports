@@ -15,6 +15,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Highly portable, general purpose CAS (Computer Algebra System)
 
 USE_BZIP2=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAKEFILE=	makefile
 MAKE_ARGS=	-DREADLINE

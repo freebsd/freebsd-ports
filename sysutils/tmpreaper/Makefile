@@ -16,6 +16,7 @@ COMMENT=	Cleans up files in directories based on their age
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	sbin/tmpreaper
 PORTDOCS=	README

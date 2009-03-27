@@ -21,11 +21,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A network file distribution/synchronization utility
 
+GNU_CONFIGURE=	yes
 USE_RC_SUBR=	rsyncd.sh
 SUB_LIST=	NAME=rsyncd
 USE_PERL5_BUILD=yes
+MAKE_JOBS_SAFE=	yes
 
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug --enable-ipv6 \
 		--with-rsyncd-conf=${PREFIX}/etc/rsyncd.conf
 

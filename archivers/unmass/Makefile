@@ -17,6 +17,7 @@ COMMENT=	Extract game archives such as wad, dar, mea exe's and many more
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_DOS2UNIX=	yes
+MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/kdev
 

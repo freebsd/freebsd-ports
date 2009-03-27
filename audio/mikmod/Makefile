@@ -19,6 +19,7 @@ LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 .ifdef (WITH_COLOR)
 CONFIGURE_ARGS+=	--enable-color-interface

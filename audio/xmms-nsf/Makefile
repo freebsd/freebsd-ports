@@ -20,6 +20,7 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 

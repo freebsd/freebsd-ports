@@ -16,6 +16,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	MPEG Audio stream validator
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	README
 PLIST_FILES=	bin/malint

@@ -18,6 +18,8 @@ COMMENT=	XMMS plugin for playing AHX tunes
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
+MAKE_JOBS_SAFE=	yes
+
 PLIST_FILES=	lib/xmms/Input/libahx.la \
 		lib/xmms/Input/libahx.so
 
