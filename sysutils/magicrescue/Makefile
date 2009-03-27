@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	magicrescue
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	sysutils
-MASTER_SITES=	http://jbj.rapanden.dk/magicrescue/release/ \
+MASTER_SITES=	http://www.student.dtu.dk/~s042078/magicrescue/release/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org

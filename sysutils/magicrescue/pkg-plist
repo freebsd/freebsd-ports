@@ -11,6 +11,7 @@ bin/magicsort
 %%DATADIR%%/recipes/mp3-id3v1
 %%DATADIR%%/recipes/mp3-id3v2
 %%DATADIR%%/recipes/msoffice
+%%DATADIR%%/recipes/nikon-raw
 %%DATADIR%%/recipes/perl
 %%DATADIR%%/recipes/png
 %%DATADIR%%/recipes/zip
