@@ -352,6 +352,16 @@ man/man1/qgis.man
 %%DATADIR%%/svg/biology/Coniferous.svg
 %%DATADIR%%/svg/biology/Flower.svg
 %%DATADIR%%/svg/biology/Deciduous.svg
+%%DATADIR%%/svg/emergency/amenity=fire_station.svg
+%%DATADIR%%/svg/emergency/amenity=hospital.svg
+%%DATADIR%%/svg/emergency/amenity=police.svg
+%%DATADIR%%/svg/entertainment/amenity=cinema.svg
+%%DATADIR%%/svg/entertainment/amenity=cafe.svg
+%%DATADIR%%/svg/entertainment/amenity=bar.svg
+%%DATADIR%%/svg/entertainment/amenity=pub.svg
+%%DATADIR%%/svg/entertainment/amenity=fast_food.svg
+%%DATADIR%%/svg/entertainment/amenity=restaurant.svg
+%%DATADIR%%/svg/entertainment/amenity=theatre.svg
 %%DATADIR%%/svg/geometric/Square1.svg
 %%DATADIR%%/svg/geometric/Triangle1.svg
 %%DATADIR%%/svg/geometric/Square2.svg
@@ -394,6 +404,16 @@ man/man1/qgis.man
 %%DATADIR%%/svg/gpsicons/couple.svg
 %%DATADIR%%/svg/icon/cameraangle.svg
 %%DATADIR%%/svg/icon/golfcourse.svg
+%%DATADIR%%/svg/landmark/religion=christian.svg
+%%DATADIR%%/svg/landmark/religion=sikh.svg
+%%DATADIR%%/svg/landmark/amenity=place_of_worship.svg
+%%DATADIR%%/svg/landmark/amenity=school.svg
+%%DATADIR%%/svg/landmark/tourism=museum.svg
+%%DATADIR%%/svg/landmark/religion=buddhist.svg
+%%DATADIR%%/svg/landmark/religion=muslim.svg
+%%DATADIR%%/svg/landmark/religion=hindu.svg
+%%DATADIR%%/svg/landmark/religion=jewish.svg
+%%DATADIR%%/svg/landmark/religion=pastafarian.svg
 %%DATADIR%%/svg/north_arrows/NorthArrow4.svg
 %%DATADIR%%/svg/north_arrows/NorthArrow2.svg
 %%DATADIR%%/svg/north_arrows/NorthArrow3.svg
@@ -408,6 +428,15 @@ man/man1/qgis.man
 %%DATADIR%%/svg/north_arrows/NorthArrow14.svg
 %%DATADIR%%/svg/north_arrows/NorthArrow15.svg
 %%DATADIR%%/svg/north_arrows/NorthArrow16.svg
+%%DATADIR%%/svg/services/amenity=recycling.svg
+%%DATADIR%%/svg/services/amenity=post_box.svg
+%%DATADIR%%/svg/services/amenity=telephone.svg
+%%DATADIR%%/svg/services/shop=convenience.svg
+%%DATADIR%%/svg/services/amenity=atm.svg
+%%DATADIR%%/svg/services/amenity=pharmacy,dispensing=yes.svg
+%%DATADIR%%/svg/services/amenity=pharmacy.svg
+%%DATADIR%%/svg/services/shop=supermarket.svg
+%%DATADIR%%/svg/services/tourism=hotel.svg
 %%DATADIR%%/svg/sport/golf_flag_in_hole_on_gr_01.svg
 %%DATADIR%%/svg/sport/backpacker_ganson.svg
 %%DATADIR%%/svg/symbol/Cross2.svg
@@ -418,6 +447,12 @@ man/man1/qgis.man
 %%DATADIR%%/svg/symbol/Star3.svg
 %%DATADIR%%/svg/symbol/Star2.svg
 %%DATADIR%%/svg/symbol/Cross6.svg
+%%DATADIR%%/svg/transport/amenity=airport.svg
+%%DATADIR%%/svg/transport/railway=station.svg
+%%DATADIR%%/svg/transport/amenity=ferry_terminal.svg
+%%DATADIR%%/svg/transport/amenity=taxi.svg
+%%DATADIR%%/svg/transport/highway=bus_stop.svg
+%%DATADIR%%/svg/transport/amenity=parking.svg
 %%DATADIR%%/resources/srs.db
 %%DATADIR%%/resources/qgis.db
 %%DATADIR%%/resources/qgis_help.db
@@ -667,12 +702,17 @@ include/qgis/qgscomposerview.h
 @dirrm %%DATADIR%%/resources/context_help
 @dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%/svg/biology
+@dirrm %%DATADIR%%/svg/emergency
+@dirrm %%DATADIR%%/svg/entertainment
 @dirrm %%DATADIR%%/svg/geometric
 @dirrm %%DATADIR%%/svg/gpsicons
 @dirrm %%DATADIR%%/svg/icon
+@dirrm %%DATADIR%%/svg/landmark
 @dirrm %%DATADIR%%/svg/north_arrows
+@dirrm %%DATADIR%%/svg/services
 @dirrm %%DATADIR%%/svg/sport
 @dirrm %%DATADIR%%/svg/symbol
+@dirrm %%DATADIR%%/svg/transport
 @dirrm %%DATADIR%%/svg
 @dirrm %%DATADIR%%/themes/classic
 @dirrm %%DATADIR%%/themes/default
