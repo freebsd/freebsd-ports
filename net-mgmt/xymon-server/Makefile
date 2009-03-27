@@ -20,6 +20,8 @@ LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		pcre:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 
+MAKE_JOBS_UNSAFE=	yes
+
 # Options
 BBUSER?=	hobbit
 BBHOSTNAME?=	hobbit.example.com
