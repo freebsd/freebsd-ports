@@ -12,6 +12,7 @@ bin/tide_float.pl
 %%SITE_PERL%%/Algorithm/Evolutionary/Fitness/Royal_Road.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Fitness/String.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Fitness/wP_Peaks.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Individual/Any.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Individual/Base.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Individual/BitString.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Individual/Bit_Vector.pm
