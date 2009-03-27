@@ -1,5 +1,5 @@
 share/pear/Date/Holidays/Driver/Sweden.php
-share/pear/packages/pear-Date_Holidays_Sweden-0.1.1/package.xml
+share/pear/packages/pear-Date_Holidays_Sweden-0.1.2/package.xml
 share/pear/tests/Date_Holidays_Sweden/Date_Holidays_Driver_Sweden_TestSuite.php
 @dirrm share/pear/tests/Date_Holidays_Sweden
-@dirrm share/pear/packages/pear-Date_Holidays_Sweden-0.1.1
+@dirrm share/pear/packages/pear-Date_Holidays_Sweden-0.1.2

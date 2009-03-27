@@ -1,5 +1,5 @@
 share/pear/Date/Holidays/Driver/Romania.php
-share/pear/packages/pear-Date_Holidays_Romania-0.1.1/package.xml
+share/pear/packages/pear-Date_Holidays_Romania-0.1.2/package.xml
 share/pear/tests/Date_Holidays_Romania/Date_Holidays_Driver_Romania_TestSuite.php
 @dirrm share/pear/tests/Date_Holidays_Romania
-@dirrm share/pear/packages/pear-Date_Holidays_Romania-0.1.1
+@dirrm share/pear/packages/pear-Date_Holidays_Romania-0.1.2
