@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POSIX-Regex
-PORTVERSION=	0.90.16
+PORTVERSION=	1.0001
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	OO interface for the gnu regex engine
 
 RUN_DEPENDS=	p5-version>=0:${PORTSDIR}/devel/p5-version
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		POSIX::Regex.3
 
