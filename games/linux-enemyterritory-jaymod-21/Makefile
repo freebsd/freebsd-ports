@@ -7,7 +7,7 @@
 
 PORTNAME=	jaymod
 PORTVERSION=	2.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	http://jaymod.clanfu.org/lib/downloads/ \
 		http://budjb.com/lib/downloads/ \
@@ -33,7 +33,7 @@ PLIST_SUB=	CLIENT_PK3="${CLIENT_PK3}"
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OMNIBOT)
-RUN_DEPENDS+=	et-omni-bot:${PORTSDIR}/games/linux-enemyterritory-omni-bot
+RUN_DEPENDS+=	et-omni-bot:${PORTSDIR}/games/linux-enemyterritory-omni-bot-0660
 .endif
 
 do-build:
