@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cclive
-PORTVERSION=	0.2.6
+PORTVERSION=	0.3.0
 CATEGORIES=	multimedia net
 MASTER_SITES=	GOOGLE_CODE
 
@@ -18,27 +18,25 @@ LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 OPTIONS=	TITLE 	 "Enable video title parsing (req. Perl)" off \
 		SIGWINCH "Enable SIGWINCH handling; resize progressbar" on
 
-MAKE_ENV=	V=1
 MAN1=		cclive.1
 
 PLIST_FILES=	bin/cclive
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
+USE_GNOME=	pkgconfig
 
 .include <bsd.port.pre.mk>
 
-MAKE_ENV+=	WITH_MAN=yes
-
 .if defined(WITH_TITLE)
-MAKE_ENV+=	WITH_PERL=yes
+CONFIGURE_ARGS+=--with-perl
 USE_PERL5=	5.8.2+
 RUN_DEPENDS+=	p5-HTML-Parser>=3.59:${PORTSDIR}/www/p5-HTML-Parser
 .endif
 
 .if defined(WITH_SIGWINCH)
-MAKE_ENV+=	WITH_SIGWINCH=yes
+CONFIGURE_ARGS+=	--with-sigwinch
 .endif
 
 .include <bsd.port.post.mk>
