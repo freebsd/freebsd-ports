@@ -19,6 +19,7 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)

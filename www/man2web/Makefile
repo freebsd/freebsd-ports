@@ -20,6 +20,7 @@ CONFIGURE_ARGS=	--bindir="${PREFIX}/${CGIDIR}" \
 		--sysconfdir="${PREFIX}/etc" \
 		--with-manpath=/usr/share/man:${LOCALBASE}/man \
 		--with-distro=freebsd --enable-lynx
+MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	CGIDIR="${CGIDIR}"
 CGIDIR=	www/cgi-bin

@@ -14,9 +14,10 @@ MASTER_SITES=	http://www.interq.or.jp/libra/oohara/xsoldier/
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Space-based shoot-em up game for X11
 
-GNU_CONFIGURE=	Yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 MAKE_ARGS=	CC_OPTIMIZE="${CFLAGS}"
+MAKE_JOBS_SAFE=	yes
 
 USE_XORG=	x11 ice xpm
 MAN6=		xsoldier.6

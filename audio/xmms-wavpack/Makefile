@@ -17,10 +17,11 @@ LIB_DEPENDS=	wavpack.1:${PORTSDIR}/audio/wavpack \
 
 RESTRICTED=	missing license
 
-USE_BZIP2=	Yes
-GNU_CONFIGURE=	Yes
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_JOBS_SAFE=	yes
 
 post-install:
 	${RM} ${PREFIX}/lib/xmms/Input/libwavpack.la
