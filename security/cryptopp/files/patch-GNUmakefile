@@ -1,0 +1,8 @@
+--- ./GNUmakefile.orig	2009-03-15 02:48:02.000000000 -0700
++++ ./GNUmakefile	2009-03-26 16:26:05.337805000 -0700
+@@ -1,4 +1,4 @@
+-CXXFLAGS = -DNDEBUG -g -O2
++#CXXFLAGS = -DNDEBUG -g -O2
+ #CXXFLAGS = -g
+ # -fPIC is supported. Please report any breakage of -fPIC as a bug.
+ # CXXFLAGS += -fPIC

@@ -7,6 +7,7 @@ include/cryptopp/algparam.h
 include/cryptopp/arc4.h
 include/cryptopp/argnames.h
 include/cryptopp/asn.h
+include/cryptopp/authenc.h
 include/cryptopp/base32.h
 include/cryptopp/base64.h
 include/cryptopp/basecode.h
@@ -16,8 +17,11 @@ include/cryptopp/blumshub.h
 include/cryptopp/camellia.h
 include/cryptopp/cast.h
 include/cryptopp/cbcmac.h
+include/cryptopp/ccm.h
 include/cryptopp/channels.h
+include/cryptopp/cmac.h
 include/cryptopp/config.h
+include/cryptopp/cpu.h
 include/cryptopp/crc.h
 include/cryptopp/cryptlib.h
 include/cryptopp/default.h
@@ -26,6 +30,7 @@ include/cryptopp/dh.h
 include/cryptopp/dh2.h
 include/cryptopp/dmac.h
 include/cryptopp/dsa.h
+include/cryptopp/eax.h
 include/cryptopp/ec2n.h
 include/cryptopp/eccrypto.h
 include/cryptopp/ecp.h
@@ -38,13 +43,13 @@ include/cryptopp/files.h
 include/cryptopp/filters.h
 include/cryptopp/fips140.h
 include/cryptopp/fltrimpl.h
+include/cryptopp/gcm.h
 include/cryptopp/gf256.h
 include/cryptopp/gf2_32.h
 include/cryptopp/gf2n.h
 include/cryptopp/gfpcrypt.h
 include/cryptopp/gost.h
 include/cryptopp/gzip.h
-include/cryptopp/haval.h
 include/cryptopp/hex.h
 include/cryptopp/hmac.h
 include/cryptopp/hrtimer.h
@@ -58,7 +63,6 @@ include/cryptopp/mars.h
 include/cryptopp/md2.h
 include/cryptopp/md4.h
 include/cryptopp/md5.h
-include/cryptopp/md5mac.h
 include/cryptopp/mdc.h
 include/cryptopp/misc.h
 include/cryptopp/modarith.h
@@ -95,7 +99,9 @@ include/cryptopp/salsa.h
 include/cryptopp/seal.h
 include/cryptopp/secblock.h
 include/cryptopp/seckey.h
+include/cryptopp/seed.h
 include/cryptopp/serpent.h
+include/cryptopp/serpentp.h
 include/cryptopp/sha.h
 include/cryptopp/shacal2.h
 include/cryptopp/shark.h
@@ -103,6 +109,7 @@ include/cryptopp/simple.h
 include/cryptopp/skipjack.h
 include/cryptopp/smartptr.h
 include/cryptopp/socketft.h
+include/cryptopp/sosemanuk.h
 include/cryptopp/square.h
 include/cryptopp/stdcpp.h
 include/cryptopp/strciphr.h
@@ -113,12 +120,12 @@ include/cryptopp/trunhash.h
 include/cryptopp/ttmac.h
 include/cryptopp/twofish.h
 include/cryptopp/validate.h
+include/cryptopp/vmac.h
 include/cryptopp/wait.h
 include/cryptopp/wake.h
 include/cryptopp/whrlpool.h
 include/cryptopp/winpipes.h
 include/cryptopp/words.h
-include/cryptopp/xormac.h
 include/cryptopp/xtr.h
 include/cryptopp/xtrcrypt.h
 include/cryptopp/zdeflate.h

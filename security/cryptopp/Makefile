@@ -6,12 +6,10 @@
 #
 
 PORTNAME=		cryptopp
-PORTVERSION=		5.4
+PORTVERSION=		5.6.0
 CATEGORIES=		security
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
-			http://www.cryptopp.com/ \
-			http://www.mirrors.wiretapped.net/security/cryptography/libraries/cryptolib/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SF \
+			http://www.cryptopp.com/
 DISTNAME=		cryptopp${PORTVERSION:S/.//g}
 
 MAINTAINER=		delphij@FreeBSD.org
@@ -21,13 +19,15 @@ NO_WRKSUBDIR=		yes
 USE_ZIP=		yes
 EXTRACT_BEFORE_ARGS=	-aq
 USE_GMAKE=		yes
+MAKE_JOBS_SAFE=		yes
 MAKEFILE=		GNUmakefile
 
-pre-install:
-	${STRIP_CMD} ${WRKSRC}/cryptest
+.if !defined(WITH_DEBUG)
+CXXFLAGS+=	-DNDEBUG
+.endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cryptest ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/cryptest.exe ${PREFIX}/bin/cryptest
 	${INSTALL_DATA} ${WRKSRC}/libcryptopp.a ${PREFIX}/lib
 	${MKDIR} ${PREFIX}/include/cryptopp
 	(for i in `${FIND} ${WRKSRC}/ -name '*.h' \
