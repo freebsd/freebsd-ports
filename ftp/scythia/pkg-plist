@@ -88,8 +88,9 @@ bin/scythia
 %%PORTDOCS%%%%DOCSDIR%%/html/tabs.css
 %%PORTDOCS%%%%DOCSDIR%%/html/transfers_8h-source.html
 share/icons/hicolor/128x128/apps/scythia.png
-share/pixmaps/scythia.png
+share/pixmaps/scythia.xpm
 %%DATADIR%%/lang/english.qm
+%%DATADIR%%/lang/polish.qm
 %%DATADIR%%/lang/russian.qm
 @dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%
