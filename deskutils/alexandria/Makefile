@@ -7,7 +7,7 @@
 
 PORTNAME=	alexandria
 PORTVERSION=	0.6.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	deskutils ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ MAINTAINER=	mitsuru@riken.jp
 COMMENT=	A GNOME application to help you manage your book collection
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/amazon.rb:${PORTSDIR}/www/ruby-amazon \
-		${RUBY_SITEARCHLIBDIR}/locale_system.so:${PORTSDIR}/devel/ruby-gettext \
+		${RUBY_SITELIBDIR}/gettext.rb:${PORTSDIR}/devel/ruby-gettext \
 		${RUBY_SITEARCHLIBDIR}/libglade2.so:${PORTSDIR}/devel/ruby-libglade2 \
 		${RUBY_SITEARCHLIBDIR}/gnome2.so:${PORTSDIR}/x11/ruby-gnome2 \
 		${RUBY_SITEARCHLIBDIR}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gdk_pixbuf2 \
