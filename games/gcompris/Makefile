@@ -44,7 +44,8 @@ INFO=		gcompris
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g ; \
+	    	s|-Werror||g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 	    	${WRKSRC}/src/gcompris/gcompris.c
