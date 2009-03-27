@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix
 USE_GETTEXT=	yes
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	GNOMEUI "GNOME support" On
 
