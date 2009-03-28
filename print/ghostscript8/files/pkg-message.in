@@ -4,5 +4,5 @@ This program may be provided by either print/dvips or print/dvipsk-tetex
 tetex things).
 
 Also note that FAPIfontmap and FAPIcidfmap in
-%%DATADIR%%/%%PORTVERSION%%/lib have to be configured first if
+%%DATADIR%%/%%PORTVERSION%%/Resource/Init have to be configured first if
 WITH_FT_BRIDGE is enabled.

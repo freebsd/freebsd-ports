@@ -1,24 +1,24 @@
---- src/unix-gcc.mak.orig	Sat Nov 10 06:18:04 2007
-+++ src/unix-gcc.mak	Sat Nov 24 15:09:41 2007
-@@ -21,15 +21,17 @@
+--- base/unix-gcc.mak.orig	2008-10-03 04:33:22.000000000 +0900
++++ base/unix-gcc.mak	2009-03-29 03:33:35.000000000 +0900
+@@ -21,15 +21,18 @@
  # source, generated intermediate file, and object directories
  # for the graphics library (GL) and the PostScript/PDF interpreter (PS).
  
--BINDIR=./bin
--GLSRCDIR=./src
++.CURDIR?=.
+ BINDIR=./bin
+-GLSRCDIR=./base
 -GLGENDIR=./obj
 -GLOBJDIR=./obj
--PSSRCDIR=./src
+-PSSRCDIR=./psi
 -PSLIBDIR=./lib
 -PSRESDIR=./Resource
 -PSGENDIR=./obj
 -PSOBJDIR=./obj
-+.CURDIR?=.
 +BINDIR=${.CURDIR}/bin
-+GLSRCDIR=${.CURDIR}/src
++GLSRCDIR=${.CURDIR}/base
 +GLGENDIR=${.CURDIR}/obj
 +GLOBJDIR=${.CURDIR}/obj
-+PSSRCDIR=${.CURDIR}/src
++PSSRCDIR=${.CURDIR}/psi
 +PSLIBDIR=${.CURDIR}/lib
 +PSRESDIR=${.CURDIR}/Resource
 +PSGENDIR=${.CURDIR}/obj
@@ -27,7 +27,7 @@
  
  # Do not edit the next group of lines.
  
-@@ -48,11 +50,10 @@
+@@ -48,11 +51,10 @@
  # the directories also define the default search path for the
  # initialization files (gs_*.ps) and the fonts.
  
@@ -42,7 +42,7 @@
  exec_prefix = $(prefix)
  bindir = $(exec_prefix)/bin
  scriptdir = $(bindir)
-@@ -107,7 +108,7 @@
+@@ -107,7 +109,7 @@
  # -DHAVE_HYPOT
  #       use the system hypot() call
  
@@ -51,7 +51,7 @@
  
  # Define the name of the executable file.
  
-@@ -141,7 +142,7 @@
+@@ -131,7 +133,7 @@
  # some older JPEG streams that violate the standard. If the JPEG
  # library built from local sources, the patch will be applied.
  
@@ -60,7 +60,7 @@
  JPEG_NAME=jpeg
  
  # Define the directory where the PNG library sources are stored,
-@@ -155,7 +156,7 @@
+@@ -145,7 +147,7 @@
  # what its name is.
  # See gs.mak and Make.htm for more information.
  
@@ -69,7 +69,7 @@
  LIBPNG_NAME=png
  
  # Define the directory where the zlib sources are stored.
-@@ -167,7 +168,7 @@
+@@ -157,7 +159,7 @@
  # what its name is (usually libz, but sometimes libgz).
  # See gs.mak and Make.htm for more information.
  
@@ -78,7 +78,7 @@
  #ZLIB_NAME=gz
  ZLIB_NAME=z
  
-@@ -176,6 +177,14 @@
+@@ -166,6 +168,14 @@
  JBIG2_LIB=jbig2dec
  JBIG2SRCDIR=jbig2dec
  
@@ -93,7 +93,7 @@
  # Define the directory where the icclib source are stored.
  # See icclib.mak for more information
  
-@@ -204,7 +213,7 @@
+@@ -194,7 +204,7 @@
  
  # Define the name of the C compiler.
  
@@ -102,7 +102,7 @@
  
  # Define the name of the linker for the final link step.
  # Normally this is the same as the C compiler.
-@@ -221,10 +230,10 @@
+@@ -211,10 +221,10 @@
  # Define the added flags for standard, debugging, profiling 
  # and shared object builds.
  
@@ -115,7 +115,7 @@
  
  # Define the other compilation flags.  Add at most one of the following:
  #	-DBSD4_2 for 4.2bsd systems.
-@@ -237,7 +246,8 @@
+@@ -227,7 +237,8 @@
  # We don't include -ansi, because this gets in the way of the platform-
  #   specific stuff that <math.h> typically needs; nevertheless, we expect
  #   gcc to accept ANSI-style function prototypes and function definitions.
@@ -125,7 +125,7 @@
  
  CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)
  
-@@ -248,7 +258,7 @@
+@@ -238,7 +249,7 @@
  #	-R /usr/local/xxx/lib:/usr/local/lib
  # giving the full path names of the shared library directories.
  # XLDFLAGS can be set from the command line.
@@ -134,7 +134,7 @@
  
  LDFLAGS=$(XLDFLAGS)
  
-@@ -259,7 +269,7 @@
+@@ -249,7 +260,7 @@
  # Solaris may need -lnsl -lsocket -lposix4.
  # (Libraries required by individual drivers are handled automatically.)
  
@@ -143,7 +143,7 @@
  
  # Define the standard libraries to search at the end of linking.
  # Most platforms require -lpthread for the POSIX threads library;
-@@ -281,7 +291,7 @@
+@@ -271,7 +282,7 @@
  # Note that x_.h expects to find the header files in $(XINCLUDE)/X11,
  # not in $(XINCLUDE).
  
@@ -152,7 +152,7 @@
  
  # Define the directory/ies and library names for the X11 library files.
  # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
-@@ -293,12 +303,12 @@
+@@ -283,28 +294,28 @@
  # Solaris and other SVR4 systems with dynamic linking probably want
  #XLIBDIRS=-L/usr/openwin/lib -R/usr/openwin/lib
  # X11R6 (on any platform) may need
@@ -166,9 +166,8 @@
 -XLIBS=Xt Xext X11
 +#XLIBS=Xt Xext X11
  
- # Define whether this platform has floating point hardware:
- #	FPU_TYPE=2 means floating point is faster than fixed point.
-@@ -316,16 +326,16 @@
+ # Define the .dev module that implements thread and synchronization
+ # primitives for this platform.
  
  # If POSIX sync primitives are used, also change the STDLIBS to include
  # the pthread library.
@@ -188,8 +187,8 @@
  #FEATURE_DEVS=$(PSD)psl3.dev $(PSD)pdf.dev
  # The following is strictly for testing.
  FEATURE_DEVS_ALL=$(PSD)psl3.dev $(PSD)pdf.dev $(PSD)dpsnext.dev $(PSD)ttfont.dev $(PSD)rasterop.dev $(PSD)double.dev $(PSD)trapping.dev $(PSD)stocht.dev $(GLD)pipe.dev
-@@ -415,7 +425,7 @@
- DEVICE_DEVS21=$(DD)spotcmyk.dev $(DD)devicen.dev $(DD)xcf.dev $(DD)bmpsep1.dev $(DD)bmpsep8.dev $(DD)bmp16m.dev $(DD)bmp32b.dev $(DD)psdcmyk.dev $(DD)psdrgb.dev
+@@ -389,7 +400,7 @@
+ DEVICE_DEVS21=$(DD)spotcmyk.dev $(DD)devicen.dev $(DD)xcf.dev $(DD)bmpsep1.dev $(DD)bmpsep8.dev $(DD)bmp16m.dev $(DD)bmp32b.dev $(DD)psdcmyk.dev $(DD)psdrgb.dev $(DD)pamcmyk32.dev
  
  # Shared library target to build.
 -GS_SHARED_OBJS=$(GLOBJDIR)/X11.so $(GLOBJDIR)/lvga256.so $(GLOBJDIR)/vgalib.so
@@ -197,7 +196,7 @@
  #GS_SHARED_OBJS=$(GLOBJDIR)/X11.so
  
  # ---------------------------- End of options --------------------------- #
-@@ -454,6 +464,9 @@
+@@ -429,6 +440,9 @@
  include $(GLSRCDIR)/zlib.mak
  include $(GLSRCDIR)/libpng.mak
  include $(GLSRCDIR)/jbig2.mak
@@ -207,7 +206,7 @@
  include $(GLSRCDIR)/icclib.mak
  include $(GLSRCDIR)/ijs.mak
  include $(GLSRCDIR)/devs.mak
-@@ -463,6 +476,7 @@
+@@ -438,6 +452,7 @@
  include $(GLSRCDIR)/unix-dll.mak
  include $(GLSRCDIR)/unix-end.mak
  include $(GLSRCDIR)/unixinst.mak

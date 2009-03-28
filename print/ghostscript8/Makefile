@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ghostscript8
-PORTVERSION=	8.63
+PORTVERSION=	8.64
 PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs/} \
@@ -99,7 +99,7 @@ EPAG_NAME=	${EPAG_SRCS:S,.tar.gz$,,}
 post-extract-epag:
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPAG_SRCS}
 	${LN} -s -f ${EPAG_NAME} ${WRKSRC}/${EPAG_BASE}
-	${INSTALL_DATA} ${FILESDIR}/epag.contrib.mak ${WRKSRC}/src/epag.contrib.mak
+	${INSTALL_DATA} ${FILESDIR}/epag.contrib.mak ${WRKSRC}/base/epag.contrib.mak
 
 post-extract: post-extract-epag
 
@@ -218,10 +218,10 @@ post-patch:
 			${WRKSRC}/contrib/japanese/dmp_site.ps
 
 pre-build-drivers.mak:
-	@${ECHO_CMD} 'DEVICE_DEVS= \' > ${WRKSRC}/src/drivers.mak
+	@${ECHO_CMD} 'DEVICE_DEVS= \' > ${WRKSRC}/base/drivers.mak
 .for D in ${OPTIONS:MGS_*:S/^GS_//}
 .if defined(WITH_GS_${D})
-	@${ECHO_CMD} '$$(DD)${D}.dev \' >> ${WRKSRC}/src/drivers.mak
+	@${ECHO_CMD} '$$(DD)${D}.dev \' >> ${WRKSRC}/base/drivers.mak
 .endif
 .endfor
 
@@ -237,6 +237,10 @@ pre-build: pre-build-drivers.mak
 	${MKDIR} ${WRKSRC}/freetype/objs
 	${LN} -s -f ${LOCALBASE}/lib/libfreetype.so \
 		${WRKSRC}/freetype/objs/freetype214MT_D.so
+# bug in 8.64.  Fixed in r9467.
+	${MV} ${WRKSRC}/base/write_t[12].[ch] \
+		${WRKSRC}/base/wrfont.[ch] \
+		${WRKSRC}/psi
 .endif
 
 pre-su-install:
@@ -255,7 +259,7 @@ post-install-docs:
 post-install-fapi:
 	${INSTALL_DATA} ${WRKSRC}/lib/FAPIcidfmap			\
 		${WRKSRC}/lib/FAPIconfig ${WRKSRC}/lib/FAPIfontmap	\
-		${DATADIR}/${PORTVERSION}/lib
+		${DATADIR}/${PORTVERSION}/Resource/Init
 
 post-install: post-install-fapi
 .endif

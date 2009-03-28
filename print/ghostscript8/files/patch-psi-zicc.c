@@ -1,5 +1,5 @@
---- src/zicc.c
-+++ src/zicc.c	2008-02-05 16:11:59.000000000 +0000
+--- psi/zicc.c
++++ psi/zicc.c	2008-02-05 16:11:59.000000000 +0000
 @@ -77,6 +77,9 @@ zseticcspace(i_ctx_t * i_ctx_p)
      dict_find_string(op, "N", &pnval);
      ncomps = pnval->value.intval;

@@ -1,5 +1,5 @@
---- src/fapi_ft.c.orig	Wed Jul 11 09:26:24 2007
-+++ src/fapi_ft.c	Fri Aug 10 02:40:41 2007
+--- psi/fapi_ft.c.orig	Wed Jul 11 09:26:24 2007
++++ psi/fapi_ft.c	Fri Aug 10 02:40:41 2007
 @@ -28,11 +28,14 @@
  #include "gserror.h"
  

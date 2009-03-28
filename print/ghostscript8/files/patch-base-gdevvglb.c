@@ -1,5 +1,5 @@
---- src/gdevvglb.c.orig	Tue Sep 25 22:31:24 2007
-+++ src/gdevvglb.c	Sat Nov 24 23:00:49 2007
+--- base/gdevvglb.c.orig	Tue Sep 25 22:31:24 2007
++++ base/gdevvglb.c	Sat Nov 24 23:00:49 2007
 @@ -149,10 +149,13 @@
  }
  
