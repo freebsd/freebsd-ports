@@ -1,3 +1,4 @@
+bin/sphinx-autogen
 bin/sphinx-build
 bin/sphinx-quickstart
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
@@ -10,9 +11,6 @@ bin/sphinx-quickstart
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/_jinja.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/_jinja.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/_jinja.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/addnodes.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/addnodes.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/addnodes.pyo
@@ -22,6 +20,30 @@ bin/sphinx-quickstart
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builder.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builder.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builder.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/changes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/changes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/changes.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/html.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/html.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/html.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/htmlhelp.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/htmlhelp.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/htmlhelp.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/latex.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/latex.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/latex.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/linkcheck.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/linkcheck.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/linkcheck.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/qthelp.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/qthelp.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/qthelp.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/text.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/text.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders/text.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/cmdline.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/cmdline.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/cmdline.pyo
@@ -43,21 +65,37 @@ bin/sphinx-quickstart
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/environment.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/environment.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/environment.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/errors.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/errors.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/errors.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/autodoc.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/autodoc.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/autodoc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/autosummary/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/autosummary/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/autosummary/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/autosummary/generate.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/autosummary/generate.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/autosummary/generate.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/autosummary/templates/module
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/coverage.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/coverage.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/coverage.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/doctest.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/doctest.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/doctest.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/graphviz.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/graphviz.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/graphviz.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/ifconfig.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/ifconfig.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/ifconfig.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/inheritance_diagram.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/inheritance_diagram.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/inheritance_diagram.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/intersphinx.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/intersphinx.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/intersphinx.pyo
@@ -79,18 +117,9 @@ bin/sphinx-quickstart
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/highlighting.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/highlighting.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/highlighting.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/htmlhelp.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/htmlhelp.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/htmlhelp.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/htmlwriter.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/htmlwriter.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/htmlwriter.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/latexwriter.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/latexwriter.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/latexwriter.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/linkcheck.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/linkcheck.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/linkcheck.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/jinja2glue.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/jinja2glue.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/jinja2glue.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/__init__.pyo
@@ -103,9 +132,15 @@ bin/sphinx-quickstart
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/es/LC_MESSAGES/sphinx.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/es/LC_MESSAGES/sphinx.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/es/LC_MESSAGES/sphinx.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/fi/LC_MESSAGES/sphinx.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/fi/LC_MESSAGES/sphinx.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/fi/LC_MESSAGES/sphinx.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/fr/LC_MESSAGES/sphinx.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/fr/LC_MESSAGES/sphinx.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/fr/LC_MESSAGES/sphinx.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/it/LC_MESSAGES/sphinx.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/it/LC_MESSAGES/sphinx.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/it/LC_MESSAGES/sphinx.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/ja/LC_MESSAGES/sphinx.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/ja/LC_MESSAGES/sphinx.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/ja/LC_MESSAGES/sphinx.po
@@ -118,13 +153,50 @@ bin/sphinx-quickstart
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/pt_BR/LC_MESSAGES/sphinx.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/pt_BR/LC_MESSAGES/sphinx.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/pt_BR/LC_MESSAGES/sphinx.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/ru/LC_MESSAGES/sphinx.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/ru/LC_MESSAGES/sphinx.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/ru/LC_MESSAGES/sphinx.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/sl/LC_MESSAGES/sphinx.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/sl/LC_MESSAGES/sphinx.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/sl/LC_MESSAGES/sphinx.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/sphinx.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/uk_UA/LC_MESSAGES/sphinx.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/uk_UA/LC_MESSAGES/sphinx.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/uk_UA/LC_MESSAGES/sphinx.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/zh_TW/LC_MESSAGES/sphinx.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/zh_TW/LC_MESSAGES/sphinx.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/zh_TW/LC_MESSAGES/sphinx.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/Grammar.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/nodes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/nodes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/nodes.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/driver.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/driver.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/driver.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/grammar.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/grammar.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/grammar.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/literals.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/literals.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/literals.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/parse.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/parse.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/parse.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/pgen.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/pgen.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/pgen.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/token.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/token.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/token.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/tokenize.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/tokenize.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2/tokenize.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/quickstart.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/quickstart.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/quickstart.pyo
@@ -137,31 +209,6 @@ bin/sphinx-quickstart
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/setup_command.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/setup_command.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/setup_command.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/contents.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/default.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/doctools.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/file.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/jquery.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/minus.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/navigation.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/plus.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/rightsidebar.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/searchtools.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/sphinxdoc.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/stickysidebar.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/traditional.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/templates/changes/frameset.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/templates/changes/rstsource.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/templates/changes/versionchanges.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/templates/defindex.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/templates/genindex-single.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/templates/genindex-split.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/templates/genindex.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/templates/layout.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/templates/modindex.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/templates/opensearch.xml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/templates/page.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/templates/search.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/texinputs/Makefile
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/texinputs/fncychap.sty
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/texinputs/howto.cls
@@ -169,9 +216,38 @@ bin/sphinx-quickstart
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/texinputs/python.ist
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/texinputs/sphinx.sty
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/texinputs/tabulary.sty
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/textwriter.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/textwriter.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/textwriter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/changes/frameset.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/changes/rstsource.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/changes/versionchanges.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/defindex.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/genindex-single.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/genindex-split.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/genindex.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/layout.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/modindex.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/opensearch.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/page.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/search.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/static/basic.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/static/doctools.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/static/file.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/static/jquery.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/static/minus.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/static/plus.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/static/searchtools.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/theme.conf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/default/static/default.css_t
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/default/theme.conf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/sphinxdoc/layout.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/sphinxdoc/static/contents.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/sphinxdoc/static/navigation.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/sphinxdoc/static/sphinxdoc.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/sphinxdoc/theme.conf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/traditional/static/traditional.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/traditional/theme.conf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/theming.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/theming.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/theming.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/__init__.pyo
@@ -181,6 +257,9 @@ bin/sphinx-quickstart
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/console.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/console.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/console.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/docstrings.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/docstrings.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/docstrings.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/jsdump.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/jsdump.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/jsdump.pyo
@@ -193,18 +272,47 @@ bin/sphinx-quickstart
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/stemmer.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/stemmer.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/stemmer.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/tags.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/tags.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/tags.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/texescape.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/texescape.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/texescape.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/writers/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/writers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/writers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/writers/html.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/writers/html.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/writers/html.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/writers/latex.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/writers/latex.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/writers/latex.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/writers/text.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/writers/text.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/writers/text.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/writers
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/traditional/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/traditional
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/sphinxdoc/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/sphinxdoc
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/default/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/default
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic/changes
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes/basic
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/themes
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/texinputs
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/templates/changes
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode/pgen2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/pycode
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/zh_TW/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/zh_TW
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/uk_UA/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/uk_UA
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/sl/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/sl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/ru
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/pt_BR/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/pt_BR
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/pl/LC_MESSAGES
@@ -213,8 +321,12 @@ bin/sphinx-quickstart
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/nl
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/ja/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/ja
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/it
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/fr/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/fi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/fi
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/es/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/es
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/de/LC_MESSAGES
@@ -222,8 +334,11 @@ bin/sphinx-quickstart
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/cs/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale/cs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/locale
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/autosummary/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext/autosummary
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/ext
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/directives
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/builders
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
