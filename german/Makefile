@@ -5,6 +5,7 @@
 
     SUBDIR += BBBike
     SUBDIR += acroread8
+    SUBDIR += acroread9
     SUBDIR += alt-aspell
     SUBDIR += aspell
     SUBDIR += bsdforen-firefox-searchplugin
