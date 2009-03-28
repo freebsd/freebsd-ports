@@ -1876,6 +1876,7 @@
     SUBDIR += p5-Test-RandomResults
     SUBDIR += p5-Test-Reporter
     SUBDIR += p5-Test-Script
+    SUBDIR += p5-Test-SharedFork
     SUBDIR += p5-Test-Simple
     SUBDIR += p5-Test-Singleton
     SUBDIR += p5-Test-Spelling
