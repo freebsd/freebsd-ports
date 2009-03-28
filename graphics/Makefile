@@ -581,6 +581,7 @@
     SUBDIR += p5-Sane
     SUBDIR += p5-SpringGraph
     SUBDIR += p5-Tk-JPEG-Lite
+    SUBDIR += p5-URI-GoogleChart
     SUBDIR += p5-VCG
     SUBDIR += p5-Visio
     SUBDIR += p5-chart

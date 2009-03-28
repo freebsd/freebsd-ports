@@ -1,0 +1,5 @@
+%%SITE_PERL%%/URI/GoogleChart.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/GoogleChart/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/GoogleChart
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI
+@dirrmtry %%SITE_PERL%%/URI
