@@ -1,0 +1,7 @@
+Test::SharedFork is utility module for Test::Builder.
+
+This module makes forking test!
+
+This module merges test count with parent process & child process.
+
+WWW: http://search.cpan.org/dist/Test-SharedFork/
