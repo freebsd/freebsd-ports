@@ -1,15 +1,23 @@
 bin/xfmpc
 share/applications/xfmpc.desktop
 share/locale/ar/LC_MESSAGES/xfmpc.mo
+share/locale/ca/LC_MESSAGES/xfmpc.mo
+share/locale/cs/LC_MESSAGES/xfmpc.mo
 share/locale/da/LC_MESSAGES/xfmpc.mo
 share/locale/de/LC_MESSAGES/xfmpc.mo
 share/locale/en_GB/LC_MESSAGES/xfmpc.mo
+share/locale/es/LC_MESSAGES/xfmpc.mo
+share/locale/eu/LC_MESSAGES/xfmpc.mo
 share/locale/fi/LC_MESSAGES/xfmpc.mo
 share/locale/fr/LC_MESSAGES/xfmpc.mo
 share/locale/gl/LC_MESSAGES/xfmpc.mo
 share/locale/id/LC_MESSAGES/xfmpc.mo
+share/locale/it/LC_MESSAGES/xfmpc.mo
 share/locale/ja/LC_MESSAGES/xfmpc.mo
 share/locale/nl/LC_MESSAGES/xfmpc.mo
+share/locale/pt/LC_MESSAGES/xfmpc.mo
 share/locale/pt_BR/LC_MESSAGES/xfmpc.mo
+share/locale/sv/LC_MESSAGES/xfmpc.mo
+share/locale/tr/LC_MESSAGES/xfmpc.mo
 share/locale/uk/LC_MESSAGES/xfmpc.mo
 @dirrmtry share/applications
