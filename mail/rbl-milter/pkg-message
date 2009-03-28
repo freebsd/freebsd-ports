@@ -1,8 +1,10 @@
-The start/stop script has been placed in $PREFIX/etc/rc.d/rbl-milter.sh
-Run the program now with the start command to get rbl-milter running.
+Add to your /etc/rc.conf
+rblmilter_enable="YES"
+Then run the milter with: $PREFIX/etc/rc.d/rbl-milter start
+
 By default, it uses the relays found at relays.ordb.org but you can
-change that by modifying the script.  It accepts multiple -d commands
-for multiple site checks.
+change that by setting rblmilter_flags in /etc/rc.conf:
+rblmilter_flags="-l -r -d relays.ordb.org"
 
 Note that you will need to edit the proper sendmail.mc file in your
 /etc/mail directory so that sendmail will pass mail to rbl-milter.

@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+# Start or stop rblmilter
+
+# PROVIDE: rblmilter
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+#
+
+prefix=%%PREFIX%%
+
+# Define these rblmilter_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/rblmilter
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+rblmilter_enable=${rblmilter_enable:-"NO"}      # Enable rblmilter
+rblmilter_socket=${rblmilter_socket:-"/var/run/rbl-milter"} # Path to socket
+rblmilter_flags=${rblmilter_flags:-"-l -r -d relays.ordb.org"} # Flags to rblmilter
+
+. /etc/rc.subr
+
+name="rblmilter"
+rcvar=`set_rcvar`
+command="${prefix}/sbin/rbl-milter"
+start_precmd="rblmilter_prestart"
+stop_postcmd="rblmilter_poststop"
+extra_commands="reload"
+
+rblmilter_prestart() {
+	/bin/rm -f "${rblmilter_socket}"
+}
+
+rblmilter_poststop() {
+	/bin/rm -f "${rblmilter_socket}"
+}
+
+load_rc_config $name
+command_args="-p local:${rblmilter_socket} ${rblmilter_flags}"
+
+run_rc_command "$1"
+
+# eof
