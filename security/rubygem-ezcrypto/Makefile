@@ -10,7 +10,7 @@ PORTVERSION=	0.7
 CATEGORIES=	security rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	skreuzer@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Wrapper for the poorly documented OpenSSL ruby library
 
 USE_RUBY=	yes

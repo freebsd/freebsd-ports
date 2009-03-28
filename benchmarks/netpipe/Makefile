@@ -9,7 +9,7 @@ PORTVERSION=	3.7.1
 CATEGORIES=	benchmarks net
 MASTER_SITES=	http://www.scl.ameslab.gov/Projects/Netpipe/code/
 
-MAINTAINER=	skreuzer@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	A self-scaling network benchmark
 
 # The default port builds and installs only the TCP version of

@@ -10,7 +10,7 @@ PORTVERSION=	0.34
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	skreuzer@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Useful error pages
 
 XPI_DISTNAME=	errorzilla_mod

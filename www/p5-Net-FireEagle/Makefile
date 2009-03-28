@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skreuzer@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Access Yahoo's FireEagle location service
 
 RUN_DEPENDS=	p5-Net-OAuth>=0.06:${PORTSDIR}/net/p5-Net-OAuth \

@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.brendangregg.com/ \
 		http://mirror.transact.net.au/sourceforge/d/dt/dtracetoolkit/
 
-MAINTAINER=	steven@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Collection of useful scripts for DTrace
 
 NO_BUILD=	YES

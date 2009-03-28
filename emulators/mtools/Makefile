@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	mtools
 
-MAINTAINER=	skreuzer@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	A collection of tools for manipulating MSDOS files
 
 USE_BZIP2=	yes

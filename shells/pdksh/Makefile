@@ -19,7 +19,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${DISTNAME}-patches.1 ${DISTNAME}-patches.2
 PATCH_DIST_STRIP=	-p2
 
-MAINTAINER=	skreuzer@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	The Public Domain Korn Shell
 
 GNU_CONFIGURE=	yes

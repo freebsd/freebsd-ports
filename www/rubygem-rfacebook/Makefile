@@ -10,7 +10,7 @@ PORTVERSION=	0.9.8
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	skreuzer@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Ruby interface to the Facebook API
 
 BUILD_DEPENDS=	rubygem-hpricot>=0.6:${PORTSDIR}/www/rubygem-hpricot \
