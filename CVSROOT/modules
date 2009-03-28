@@ -7357,6 +7357,7 @@ libmonetra                      ports/devel/libmonetra
 libmorph                        ports/graphics/libmorph
 libmovtar                       ports/multimedia/libmovtar
 libmowgli                       ports/devel/libmowgli
+libmp3splt                      ports/audio/libmp3splt
 libmpcbdm                       ports/devel/libmpcbdm
 libmpcdec                       ports/audio/libmpcdec
 libmpd                          ports/audio/libmpd
@@ -18144,6 +18145,7 @@ present                         ports/devel/present
 preview                         ports/graphics/preview
 price                           ports/graphics/price
 primateplunge                   ports/games/primateplunge
+primegen                        ports/math/primegen
 primer3                         ports/biology/primer3
 print-n-times                   ports/textproc/print-n-times
 printproto                      ports/x11/printproto
