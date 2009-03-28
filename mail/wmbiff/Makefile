@@ -18,6 +18,7 @@ OPTIONS=	GNUTLS "Support for SSL" off
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		wmbiff.1
 MAN5=		wmbiffrc.5

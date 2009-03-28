@@ -28,6 +28,7 @@ OPTIONS=	X11 "Build xjed (depends of X11)" on
 USE_BZIP2=	yes
 DIST_SUBDIR=	jed
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 CONFIGURE_ENV+=	JED_ROOT=${PREFIX}/lib/jed
 
 PORTDOCS=	*

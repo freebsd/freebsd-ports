@@ -17,6 +17,7 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A collection of tools to analyze qmail-send's activity
 
 USE_QMAIL_RUN=	yes
+MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup

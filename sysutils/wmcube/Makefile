@@ -22,6 +22,7 @@ USE_XORG=	xpm
 MAKEFILE=	Makefile.FREEBSD
 PORTDOCS=	CHANGES README TODO
 SUB_FILES=	pkg-message
+MAKE_JOBS_UNSAFE=	yes
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/wmcube ${PREFIX}/bin

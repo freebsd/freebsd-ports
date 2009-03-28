@@ -18,6 +18,7 @@ COMMENT=	A UNIX manual page editor and viewer
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 USE_BZIP2=	yes
+MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gtk12
 MAKEFILE=	Makefile.FreeBSD
 

@@ -21,6 +21,7 @@ RUN_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 LIB_DEPENDS=	mowgli.2:${PORTSDIR}/devel/libmowgli
 
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gnomeprefix gtk20
 CFLAGS=		`pkg-config --cflags gtk+-2.0`
 MAKE_ENV=	MANPAGE_DIR=${MAN1PREFIX}/man/man1 \

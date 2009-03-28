@@ -30,6 +30,7 @@ USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 USE_RC_SUBR=	pure-ftpd.sh
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--with-everything \
 		--with-paranoidmsg \
 		--with-virtualchroot \

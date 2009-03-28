@@ -19,6 +19,7 @@ USE_GNOME=	gnometarget
 USE_XORG=	ice sm x11 xext xpm
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--with-drivers="freebsd_sysctl"
 
 MAN1=		wmnd.1

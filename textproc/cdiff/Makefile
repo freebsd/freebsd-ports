@@ -19,6 +19,7 @@ COMMENT=	Diff readability enhancher for color terminals
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_PERL5=	yes
+MAKE_JOBS_SAFE=	yes
 
 SRC=		${.CURDIR}/src
 

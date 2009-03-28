@@ -19,6 +19,7 @@ OPTIONS=	GNOME "Build with Gnome support" on \
 
 USE_XORG=	x11 xmu
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"

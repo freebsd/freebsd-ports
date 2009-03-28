@@ -17,8 +17,9 @@ COMMENT=	An utility to mirror directory hierarchy with FTP
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Socket6.pm:${PORTSDIR}/net/p5-Socket6
 
-USE_PERL5=	YES
-GNU_CONFIGURE=	YES
+USE_PERL5=	yes
+GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ENV+=	PERL="${PERL}" INSTALL_PROGRAM="${INSTALL_SCRIPT}"
 

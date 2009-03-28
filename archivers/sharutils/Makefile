@@ -17,6 +17,7 @@ COMMENT=	Pack, send and unpack shell archives; synchronize via e-mail
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--program-prefix=g --disable-uucode
 INSTALL_TARGET=	install install-man
 MAN1=		gshar.1 gunshar.1 gcompress-dummy.1
