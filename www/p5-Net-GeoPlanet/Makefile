@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skreuzer@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Access Yahoo's GeoPlanet location service
 
 RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \

@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skreuzer@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl extension for automating PayPal transactions
 
 BUILD_DEPENDS=	p5-Net-SSLeay>=1.35:${PORTSDIR}/security/p5-Net-SSLeay \

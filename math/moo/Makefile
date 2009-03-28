@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_OPENBSD}
 MASTER_SITE_SUBDIR=	distfiles
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	skreuzer@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Calculator that accepts C-like syntax as input
 
 PLIST_FILES=	bin/moo

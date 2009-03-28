@@ -12,7 +12,7 @@ CATEGORIES=	graphics cad java
 MASTER_SITES=	http://processing.org/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	skreuzer@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Programming environment for images, animation, and interactions
 
 RUN_DEPENDS=	jikes>=1.22:${PORTSDIR}/java/jikes \

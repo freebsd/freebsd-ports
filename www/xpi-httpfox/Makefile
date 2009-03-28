@@ -10,7 +10,7 @@ PORTVERSION=	0.8.3
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	skreuzer@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	HTTP analyzer addon for Firefox
 
 XPI_NUM=	6647

@@ -11,7 +11,7 @@ CATEGORIES=		security perl5
 MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		skreuzer@exit2shell.com
+MAINTAINER=		skreuzer@FreeBSD.org
 COMMENT=	Perl implementation of the RC4 encryption algorithm
 
 PERL_CONFIGURE=		yes

@@ -11,7 +11,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skreuzer@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Encrypt Data using OFB Mode
 
 BUILD_DEPENDS=	${SITE_PERL}/Crypt/ECB.pm:${PORTSDIR}/security/p5-Crypt-ECB

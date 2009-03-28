@@ -10,7 +10,7 @@ PORTVERSION=	1.6.0
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
-MAINTAINER=	skreuzer@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	A MySQL and InnoDB monitoring program
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \

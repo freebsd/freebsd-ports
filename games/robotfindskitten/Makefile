@@ -13,7 +13,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://robotfindskitten.org/download/POSIX/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	skreuzer@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Yet another zen simulation
 
 GNU_CONFIGURE=	YES

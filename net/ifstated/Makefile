@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.atarininja.org/~wxs/distfiles/ \
 		http://www.pkix.net/mirror/f2o.org/ifstated/
 
-MAINTAINER=	skreuzer@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Interface State daemon
 
 INSTALL_TARGET=	install install-man

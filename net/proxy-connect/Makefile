@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.exit2shell.com/~skreuzer/distfiles/ \
 				http://www.atarininja.org/distfiles/
 DISTNAME=	$(PORTNAME)-$(PORTVERSION)
 
-MAINTAINER=	skreuzer@exit2shell.com
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Command to make network connections via SOCKS and HTTPS proxies
 
 USE_BZIP2=	yes
