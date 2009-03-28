@@ -26,7 +26,6 @@ INSTALL_TARGET=	pure_install
 OPTIONS=	TEST_REPORTER "Send reports to cpan-testers" off \
 		YAML "Check reports from cpan-testers" off
 
-MAN1=	cpanp.1 cpan2dist.1
 MAN3=	CPANPLUS.3 \
 	CPANPLUS::Backend.3 \
 	CPANPLUS::Backend::RV.3 \
@@ -93,6 +92,15 @@ RUN_DEPENDS+=	p5-Archive-Extract>=0.16:${PORTSDIR}/archivers/p5-Archive-Extract 
 RUN_DEPENDS+=	p5-File-Fetch>=0.13_04:${PORTSDIR}/ftp/p5-File-Fetch \
 		p5-Module-Load-Conditional>=0.18:${PORTSDIR}/devel/p5-Module-Load-Conditional \
 		p5-Term-UI>=0.18:${PORTSDIR}/devel/p5-Term-UI
+PLIST_SUB+=	EXE_FILES=""
+MAN1=		cpanp.1 cpan2dist.1
+.else
+PLIST_SUB+=	EXE_FILES="@comment "
+.endif
+
+post-patch:
+.if ${PERL_LEVEL} >= 501000
+	@${REINPLACE_CMD} -e 's/5.009/5.666/; /install_script/d' ${WRKSRC}/Makefile.PL
 .endif
 
 .if defined(WITH_TEST_REPORTER)

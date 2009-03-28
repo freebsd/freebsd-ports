@@ -24,4 +24,11 @@ MAN3=	Scalar::Util::Clone.3
 post-extract:
 	@${PERL} -pi -e '$$_ = undef if /''OPTIMIZE''/' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 501000
+# see http://rt.cpan.org/Public/Bug/Display.html?id=33501
+BROKEN=		Does not build with perl >= 5.10
+.endif
+
+.include <bsd.port.post.mk>

@@ -26,7 +26,7 @@
 # PERL_ARCH		- Directory name of architecture dependent libraries
 #				  (value: mach).
 # PERL_PORT		- Name of the perl port that is installed
-#				  (value: perl5)
+#				  (value: perl5.8)
 # SITE_PERL		- Directory name where site specific perl packages go.
 #				  This value is added to PLIST_SUB.
 # USE_PERL5		- If your port needs a specific version of Perl, you
@@ -99,7 +99,9 @@ PERL_LEVEL=		0
 
 PERL_ARCH?=		mach
 
-.if ${PERL_LEVEL} >= 500800
+.if   ${PERL_LEVEL} >= 501000
+PERL_PORT?=	perl5.10
+.elif ${PERL_LEVEL} >= 500800
 PERL_PORT?=	perl5.8
 .else # ${PERL_LEVEL} < 500800
 PERL_PORT?=	perl5.6
@@ -149,7 +151,7 @@ masked_PERL_LEVEL=	${PERL_LEVEL}
 
 .if ${want_perl_sign} == "+"
 .if ${USE_PERL5_LEVEL} > ${masked_PERL_LEVEL}
-USE_PERL5_REASON?=	requires Perl ${want_perl_ver} or later, install lang/perl5.8 and try again
+USE_PERL5_REASON?=	requires Perl ${want_perl_ver} or later, install lang/perl5.8 or lang/perl5.10 and try again
 IGNORE=	${USE_PERL5_REASON}
 .endif # ${USE_PERL5_LEVEL} > ${masked_PERL_LEVEL}
 .elif ${want_perl_sign} == ""

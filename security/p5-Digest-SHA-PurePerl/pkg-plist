@@ -1,4 +1,4 @@
-bin/shasum
+%%EXE_FILES%%bin/shasum
 %%SITE_PERL%%/Digest/SHA/PurePerl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/SHA/PurePerl/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/SHA/PurePerl/

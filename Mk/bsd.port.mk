@@ -1449,7 +1449,9 @@ PERL_LEVEL=0
 
 PERL_ARCH?=		mach
 
-.if ${PERL_LEVEL} >= 500800
+.if   ${PERL_LEVEL} >= 501000
+PERL_PORT?=	perl5.10
+.elif ${PERL_LEVEL} >= 500800
 PERL_PORT?=	perl5.8
 .else
 PERL_PORT?=	perl5.6

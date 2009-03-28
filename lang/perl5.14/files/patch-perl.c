@@ -1,13 +1,5 @@
 --- perl.c
 +++ perl.c
-@@ -3724,7 +3724,7 @@
-  * perl with that fd as it has always done.
-  */
-     }
--    if (*suidscript) {
-+    if (*suidscript != TRUE) {
- 	Perl_croak(aTHX_ "suidperl needs (suid) fd script\n");
-     }
  #else /* IAMSUID */
 @@ -4882,6 +4882,28 @@
      incpush(APPLLIB_EXP, TRUE, TRUE, TRUE, TRUE);

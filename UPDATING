@@ -6,6 +6,27 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080328:
+  AFFECTS: users of lang/perl*
+  AUTHOR: skv@FreeBSD.org
+
+  lang/perl5.10 is out. If you want to switch to it from, for example
+  lang/perl5.8, that is:
+
+  Portupgrade users:
+    0) Fix pkgdb.db (for safety):
+	pkgdb -Ff
+
+    1) Reinstall perl with new 5.10:
+        portupgrade -o lang/perl5.10 -f perl-5.8.\*
+
+    2) Reinstall everything that depends on Perl:
+        portupgrade -fr perl
+
+  Portmaster users:
+        portmaster -o lang/perl5.10 lang/perl5.8
+        portmaster -r perl\*
+
 20090327:
   AFFECTS: users of security/clamav
   AUTHOR: garga@FreeBSD.org

@@ -18,4 +18,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		B::Size.3 B::TerseSize.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 501000
+BROKEN=		Does not build with perl >= 5.10
+.endif
+
+.include <bsd.port.post.mk>

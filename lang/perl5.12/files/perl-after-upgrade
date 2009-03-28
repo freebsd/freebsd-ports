@@ -23,10 +23,10 @@ perl-after-upgrade -- fixup FreeBSD packages that depend on perl
 
 =head1 DESCRIPTION
 
-The standard procedure after a perl port (either lang/perl5.6 or
-lang/perl5.8) upgrade is to basically reinstall all other packages that
-depend on perl.  This is always a painful exercise.  The
-perl-after-upgrade utility makes this process mostly unnecessary.
+The standard procedure after a perl port (lang/perl5.X) upgrade is to
+basically reinstall all other packages that depend on perl.
+This is always a painful exercise.  The perl-after-upgrade utility makes
+this process mostly unnecessary.
 
 The tool goes through the list of installed packages, looks for those
 that depend on perl, moves files around, modifies shebang lines in those
@@ -222,7 +222,7 @@ use File::Copy;
 
 my $dry_run = 1;
 my @tmpl;
-my $VERSION = "1.2";
+my $VERSION = "1.3";
 
 while (@ARGV) {
 	my $opt = shift;
@@ -250,7 +250,7 @@ while (@ARGV) {
 my $target = '%%PERL_VERSION%%';
 my $new_perl_pkgname = '%%PKGNAME%%';
 
-my $fuzzy_source = "5\\.[\\d._]+";
+my $fuzzy_source = qr/5\.10\.\d+/;
 print STDERR "- Fuzzy source re: <$fuzzy_source>\n" if $debug;
 
 my @errors;

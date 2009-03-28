@@ -35,6 +35,10 @@ post-patch:
 	@${PERL} -pi -e 's,APXS=apxs,APXS=${APXS},;' \
 		${WRKSRC}/mod_speedycgi/Makefile.tmpl
 	${CP} ${FILESDIR}/speedy_dump.c ${WRKSRC}/speedy_dump/
+.if ${PERL_LEVEL} >= 501000
+	@${REINPLACE_CMD} -i '' -e 's=New(123,=Newx(=g' \
+		${WRKSRC}/src/speedy_backend_main.h
+.endif
 
 post-configure:
 	@${PERL} -pi -e 's,^PREFIX = /usr$$,PREFIX = ${PREFIX},g;' \

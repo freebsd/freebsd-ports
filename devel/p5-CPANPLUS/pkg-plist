@@ -1,6 +1,6 @@
-bin/cpan2dist
-bin/cpanp
-bin/cpanp-run-perl
+%%EXE_FILES%%bin/cpan2dist
+%%EXE_FILES%%bin/cpanp
+%%EXE_FILES%%bin/cpanp-run-perl
 %%SITE_PERL%%/CPANPLUS.pm
 %%SITE_PERL%%/CPANPLUS/Backend.pm
 %%SITE_PERL%%/CPANPLUS/Backend/RV.pm
