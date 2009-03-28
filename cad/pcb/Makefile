@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pcb
-PORTVERSION=	20080202
-PORTREVISION=	4
+PORTVERSION=	20081128
 CATEGORIES=	cad
 MASTER_SITES=	SF
 
@@ -19,23 +18,15 @@ RUN_DEPENDS=	m4>=1.4.11:${PORTSDIR}/devel/m4
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 GNU_CONFIGURE=	yes
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
 USE_GMAKE=	yes
 USE_TK_RUN=	83
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
 		INSTALL_DATA="/usr/bin/install ${COPY} ${_SHROWNGRP} -m ${SHAREMODE}"
-CONFIGURE_ARGS=	--docdir=${DOCSDIR}
-PORTDOCS= pcb.html pcb.ps refcard.ps pcb.pdf refcard.pdf pad.eps	\
-	puller.eps thermal.eps pad.gif puller.gif thermal.gif pad.pdf	\
-	puller.pdf thermal.pdf pad.png puller.png thermal.png
+CONFIGURE_ARGS=	--docdir=${DOCSDIR} --disable-nls
+PORTDOCS= pcb.html pcb.ps refcard.ps pcb.pdf refcard.pdf pad.gif	\
+	puller.gif thermal.gif pad.png puller.png thermal.png
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-gui

@@ -35,7 +35,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-gerber.svg
 share/icons/hicolor/scalable/mimetypes/application-x-pcb-footprint.svg
 share/icons/hicolor/scalable/mimetypes/application-x-pcb-layout.svg
 share/icons/hicolor/scalable/mimetypes/application-x-pcb-netlist.svg
-%%NLS%%share/locale/fr_FR/LC_MESSAGES/pcb.mo
 share/mime/application/x-excellon.xml
 share/mime/application/x-gerber.xml
 share/mime/application/x-pcb-footprint.xml
@@ -1058,6 +1057,12 @@ share/mimelnk/application/x-pcb-netlist.desktop
 %%DATADIR%%/pcblib-newlib/geda/QFP128_R.png
 %%DATADIR%%/pcblib-newlib/geda/LQFP128_R.fp
 %%DATADIR%%/pcblib-newlib/geda/LQFP128_R.png
+%%DATADIR%%/pcblib-newlib/geda/LQFP128_14_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP128_14_EP.png
+%%DATADIR%%/pcblib-newlib/geda/TQFP128_14.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFP128_14.png
+%%DATADIR%%/pcblib-newlib/geda/TQFP128_14_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFP128_14_EP.png
 %%DATADIR%%/pcblib-newlib/geda/ZIP9.png
 %%DATADIR%%/pcblib-newlib/geda/ZIP12.fp
 %%DATADIR%%/pcblib-newlib/geda/ZIP12.png
