@@ -224,6 +224,7 @@
     SUBDIR += pecl-perl
     SUBDIR += perl5.6
     SUBDIR += perl5.8
+    SUBDIR += perl5.10
     SUBDIR += pexts
     SUBDIR += pfe-devel
     SUBDIR += phc

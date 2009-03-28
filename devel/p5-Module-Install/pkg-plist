@@ -43,7 +43,6 @@
 @dirrm %%SITE_PERL%%/auto/share/dist/Module-Install
 @dirrmtry %%SITE_PERL%%/auto/share/dist
 @dirrmtry %%SITE_PERL%%/auto/share
-@dirrmtry %%SITE_PERL%%/auto
 @dirrmtry %%SITE_PERL%%/Module/Install
 @dirrmtry %%SITE_PERL%%/Module
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module

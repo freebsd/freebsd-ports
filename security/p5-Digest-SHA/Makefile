@@ -16,7 +16,20 @@ COMMENT=	Perl extension for SHA-1/224/256/384/512
 
 PERL_CONFIGURE=	yes
 
-MAN1=	shasum.1
 MAN3=	Digest::SHA.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 501000
+PLIST_SUB+=	EXE_FILES="@comment "
+.else
+PLIST_SUB+=	EXE_FILES=""
+MAN1=		shasum.1
+.endif
+
+post-patch:
+.if ${PERL_LEVEL} >= 501000
+	@${REINPLACE_CMD} -e 's/5.010/5.666/; /EXE_FILES/d' ${WRKSRC}/Makefile.PL
+.endif
+
+.include <bsd.port.post.mk>

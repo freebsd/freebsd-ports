@@ -14,7 +14,6 @@ COMMENT=	Perl extension for SHA-1/224/256/384/512 in pure Perl
 
 PERL_CONFIGURE=	yes
 
-MAN1=		shasum.1
 MAN3=		Digest::SHA::PurePerl.3
 
 .include <bsd.port.pre.mk>
@@ -25,6 +24,18 @@ RUN_DEPENDS+=	${SITE_PERL}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 .if ${PERL_LEVEL} < 500803
 RUN_DEPENDS+=	${SITE_PERL}/Digest/base.pm:${PORTSDIR}/security/p5-Digest
+.endif
+
+.if ${PERL_LEVEL} >= 501000
+PLIST_SUB+=	EXE_FILES="@comment "
+.else
+PLIST_SUB+=	EXE_FILES=""
+MAN1=		shasum.1
+.endif
+
+post-patch:
+.if ${PERL_LEVEL} >= 501000
+	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
 .endif
 
 .if !defined(NOPORTEXAMPLES)

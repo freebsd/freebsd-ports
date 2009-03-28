@@ -1,5 +1,5 @@
 @comment $FreeBSD$
-bin/config_data
+%%EXE_FILES%%bin/config_data
 %%SITE_PERL%%/Module/Build.pm
 %%SITE_PERL%%/Module/Build/API.pod
 %%SITE_PERL%%/Module/Build/Authoring.pod

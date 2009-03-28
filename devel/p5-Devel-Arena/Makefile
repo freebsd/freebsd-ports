@@ -18,4 +18,10 @@ PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Devel::Arena.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 501000
+BROKEN=		Does not build with perl >= 5.10
+.endif
+
+.include <bsd.port.post.mk>

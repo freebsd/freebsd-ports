@@ -1,5 +1,5 @@
-bin/ptar
-bin/ptardiff
+%%EXE_FILES%%bin/ptar
+%%EXE_FILES%%bin/ptardiff
 %%SITE_PERL%%/Archive/Tar.pm
 %%SITE_PERL%%/Archive/Tar/Constant.pm
 %%SITE_PERL%%/Archive/Tar/File.pm

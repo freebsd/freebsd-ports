@@ -7,7 +7,6 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	2
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -18,30 +17,26 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		BSDPAN-${BSDPAN_VERSION}${EXTRACT_SUFX}:local
 DIST_SUBDIR=	perl
 
-PATCH_SITES=	${MASTER_SITE_LOCAL:S!$!skv/!} \
-		http://protey.ru/freebsd/distfiles/
-PATCHFILES=	defined-or-${PERL_VERSION}.bz2
-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
-CONFLICTS=	perl-5.6.* perl-5.10.*
+CONFLICTS=	perl-5.6.* perl-5.9.*
 
 OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 		GDBM		"Build GDBM_File extension"		off \
-		PERL_MALLOC	"Use Perl malloc"			on  \
+		PERL_MALLOC	"Use Perl malloc"			off \
 		PERL_64BITINT	"Use 64 bit integers (on i386)"		on  \
 		THREADS		"Build threaded perl"			off \
 		SUIDPERL	"Build set-user-id suidperl binary"	off \
 		SITECUSTOMIZE	"Run-time customization of @INC"	off \
 		USE_PERL	"Rewrite links in /usr/bin"		on
 
-PERL_VERSION=	5.8.9
+PERL_VERSION=	5.10.0
 PERL_ARCH=	mach
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VERSION}
 SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_SCRIPT=Configure
@@ -128,9 +123,7 @@ CONFIGURE_ARGS+=	-Duse64bitint
 CONFIGURE_ARGS+=	-Dusesitecustomize
 .endif
 
-LATEST_LINK=	perl
-
-PLIST_SUB+=		NEED_USE_PERL="@comment "
+NO_LATEST_LINK=	yes
 
 .if defined(WITH_GDBM)
 MAN3+=	GDBM_File.3
@@ -160,7 +153,7 @@ post-patch:
 		> ${WRKDIR}/perl-after-upgrade
 	${CP} ${WRKDIR}/use.perl ${PKGINSTALL}
 	${CP} ${WRKDIR}/use.perl ${PKGDEINSTALL}
-	${SED} -i '' -e 's|%%PERL_PKGNAME%%|${PKGNAME}|g; s|%%PERL_VER%%|5.8|g;' \
+	${SED} -i '' -e 's|%%PERL_PKGNAME%%|${PKGNAME}|g; s|%%PERL_VER%%|5.10|g;' \
 		${BSDPAN_WRKSRC}/ExtUtils/*.pm
 .if defined(WITH_THREADS)
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g;' \

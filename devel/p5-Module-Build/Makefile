@@ -56,6 +56,19 @@ MAN3=		Module::Build.3 \
 		Module::Build::Platform::darwin.3 \
 		Module::Build::Platform::os2.3 \
 		Module::Build::YAML.3
-MAN1=		config_data.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 501000
+PLIST_SUB+=	EXE_FILES="@comment "
+.else
+PLIST_SUB+=	EXE_FILES=""
+MAN1=		config_data.1
+.endif
+
+post-patch:
+.if ${PERL_LEVEL} >= 501000
+	@${REINPLACE_CMD} -e '/script_files/d' ${WRKSRC}/Build.PL
+.endif
+
+.include <bsd.port.post.mk>

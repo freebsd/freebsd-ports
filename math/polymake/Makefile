@@ -20,7 +20,7 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_PERL5=	yes
+USE_PERL5=	5.8.1+
 USE_GCC=	3.4
 
 HAS_CONFIGURE=	yes
@@ -31,8 +31,8 @@ PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500801
-BROKEN=		requires perl 5.8.1 or newer
+.if ${PERL_LEVEL} >= 501000
+BROKEN=		Does not build with perl >= 5.10
 .endif
 
 do-configure:

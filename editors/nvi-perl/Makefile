@@ -39,6 +39,10 @@ IGNORE=		must be built with a NON-threaded Perl
 .  endif
 .endif
 
+.if ${PERL_LEVEL} >= 501000
+BROKEN=		Does not build with perl >= 5.10
+.endif
+
 post-patch:
 	${LN} -s /usr/include/sys/queue.h ${WRKSRC}/../include/sys/queue_dist.h
 
