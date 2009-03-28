@@ -1,6 +1,0 @@
-sipXregistry is the registry/redirect server component of the sipX
-family. It shares a number of common components with the rest of the
-family, but can be used alone.  It implements several powerful address
-mapping capabilities in addtion to supporting UAC registration.
-
-WWW: http://sipx-wiki.calivia.com/index.php/Main_Page
