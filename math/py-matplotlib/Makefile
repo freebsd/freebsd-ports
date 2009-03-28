@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	matplotlib
-PORTVERSION=	0.98.3
-PORTREVISION=	1
+PORTVERSION=	0.98.5.2
 CATEGORIES=	math python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -47,17 +46,6 @@ CONFIGURE_ENV+=	WX_CONFIG="${WX_CONFIG}"
 .endif
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
-
-post-patch:
-	@${GREP} -lR "share/matplotlib" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
-		-e "s,share/matplotlib,share/py-matplotlib,g"
-	${REINPLACE_CMD} \
-		-e s,%%LOCALBASE%%,${LOCALBASE}, \
-		-e s,%%TCL_INCLUDEDIR%%,${TCL_INCLUDEDIR}, \
-		-e s,%%TK_INCLUDEDIR%%,${TK_INCLUDEDIR}, \
-		-e s,%%USE_TK%%,${USE_TK}, \
-		-e s,%%USE_TCL%%,${USE_TCL}, \
-		${WRKSRC}/setupext.py
 
 .if !defined(NOPORTEXAMPLES)
 post-install:
