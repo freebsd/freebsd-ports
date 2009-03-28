@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.8.0
+PORTVERSION=	2.9.0
 DISTVERSIONPREFIX=	src-
 CATEGORIES=	lang
 MASTER_SITES=	SF
@@ -136,8 +136,12 @@ post-patch:
 	@${REINPLACE_CMD} 's,ARCH,PICARCH,g' \
 		${WRKSRC}/device/lib/pic/Makefile.common.in \
 		${WRKSRC}/device/lib/pic/Makefile.rules \
-		${WRKSRC}/device/lib/pic16/Makefile.common.in \
-		${WRKSRC}/device/lib/pic16/Makefile.rules \
-		${WRKSRC}/device/lib/pic16/libio/Makefile.in
+		${WRKSRC}/device/lib/pic16/configure
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} 's, [a-z-]*doc,,' \
+		${WRKSRC}/Makefile.in \
+		${WRKSRC}/as/Makefile.in \
+		${WRKSRC}/sim/ucsim/packages_in.mk
+.endif
 
 .include <bsd.port.post.mk>

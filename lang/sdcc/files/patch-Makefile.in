@@ -3,7 +3,7 @@
 @@ -27,6 +27,10 @@
  ifeq ($(OPT_DISABLE_MCS51), 0)
  SDCC_ASLINK     += as/mcs51 as/link/mcs51
- SDCC_MISC	+= debugger/mcs51
+ SDCC_MISC       += debugger/mcs51
 +else
 +ifeq ($(OPT_DISABLE_DS390), 0)
 +SDCC_ASLINK     += as/mcs51 as/link/mcs51
