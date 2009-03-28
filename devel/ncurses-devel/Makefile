@@ -23,7 +23,9 @@ COMMENT=	Library for terminal-independent, full-screen output (development versi
 
 CONFLICTS=	ncurses-[0-9]*
 
-PATCHES=	20081115 20081122 20081129 20081206 20081213
+PATCHES=	20081115 20081122 20081129 20081206 20081213 20081220 20081227 \
+		20090103 20090104 20090105 20090110 20090117 20090124 20090207 \
+		20090214 20090221 20090228 20090314 20090321
 
 RELEASE=	5.7
 
@@ -37,6 +39,7 @@ CONFIGURE_SCRIPT=../configure
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 		--enable-termcap --enable-bsdpad --enable-getcap \
 		--enable-colorfgbg --disable-home-terminfo \
+		--with-pkg-config=no \
 		--includedir=${PREFIX}/include/ncurses \
 		--with-shared \
 		--without-curses-h --with-termlib --program-prefix= \
