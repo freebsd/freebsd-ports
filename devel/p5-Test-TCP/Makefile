@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-TCP
-PORTVERSION=	0.02
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	Perl extension for testing TCP program
 
 RUN_DEPENDS=	\
 	p5-Params-Validate>=0.91:${PORTSDIR}/devel/p5-Params-Validate \
-	p5-Sub-Exporter>=0.979:${PORTSDIR}/devel/p5-Sub-Exporter
+	p5-Test-SharedFork>=0.04:${PORTSDIR}/devel/p5-Test-SharedFork
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
