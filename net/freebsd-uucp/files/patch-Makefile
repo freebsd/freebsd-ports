@@ -17,9 +17,9 @@
 -	cd uucp && make install
 -	cd uucpd && make install
 -	cd etc && make install
-+	(cd uucp && ${MAKE} install
-+	(cd uucpd && ${MAKE} install
-+	(cd etc && ${MAKE} install
++	(cd uucp && ${MAKE} install)
++	(cd uucpd && ${MAKE} install)
++	(cd etc && ${MAKE} install)
  
  clean:	uucp uucpd etc
 -	cd uucp && make clean
