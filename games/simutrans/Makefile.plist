@@ -447,14 +447,6 @@ pak/pedestrian.pedestrian_3.pak \
 pak/pedestrian.pedestrian_4.pak \
 pak/pedestrian.pedestrian_child.pak \
 pak/pedestrian.pedestrian_dog.pak \
-pak/program_text.CATEGORY_01.pak \
-pak/program_text.CATEGORY_02.pak \
-pak/program_text.CATEGORY_03.pak \
-pak/program_text.CATEGORY_04.pak \
-pak/program_text.CATEGORY_05.pak \
-pak/program_text.CATEGORY_06.pak \
-pak/program_text.CATEGORY_07.pak \
-pak/program_text.rolls.pak \
 pak/roadsign.ChooseSignals.pak \
 pak/roadsign.ChooseSignalsMonorail.pak \
 pak/roadsign.Endofchoosetrack.pak \
@@ -904,6 +896,7 @@ text/de/curiositylist_filter.txt \
 text/de/depot.txt \
 text/de/display.txt \
 text/de/edittools.txt \
+text/de/enlarge_map.txt \
 text/de/factory_build.txt \
 text/de/factorylist_filter.txt \
 text/de/finances.txt \
@@ -914,6 +907,7 @@ text/de/haltlist.txt \
 text/de/haltlist_filter.txt \
 text/de/industry_info.txt \
 text/de/keys.txt \
+text/de/labellist_filter.txt \
 text/de/language.txt \
 text/de/linemanagement.txt \
 text/de/list.txt \

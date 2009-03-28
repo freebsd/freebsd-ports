@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	simutrans
-PORTVERSION=	101.0
+PORTVERSION=	102.0
 CATEGORIES=	games
 MASTER_SITES=	SF
-DISTFILES=	simutrans-src-101-0.zip \
-		simulinux-101-0.zip \
-		simupak64-101-0.zip
+DISTFILES=	simutrans-src-102-0.zip \
+		simulinux-102-0.zip \
+		pak64-102-0.zip
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	Transport business simulation game
