@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	vlgothic
-PORTVERSION=	20081203
+PORTVERSION=	20090204
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://vinelinux.org/~daisuke/vlgothic/
+MASTER_SITES=	SFJP
+MASTER_SITE_SUBDIR=	vlgothic/37455
 DISTNAME=	VLGothic-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
