@@ -8,7 +8,7 @@ PORTDOC_FILES+= epag/ert.txt epag/gdevepag.txt epag/ChangeLog	\
 	epag/psprint epag/gsepagif.sh
 
 pre-build-epag:
-	${LN} -s -f ${WRKSRC}/${EPAG_NAME}/gdevepag.c ${WRKSRC}/src
+	${LN} -s -f ${WRKSRC}/${EPAG_NAME}/gdevepag.c ${WRKSRC}/base
 
 post-build-epag:
 	cd ${WRKSRC}/${EPAG_NAME} && \

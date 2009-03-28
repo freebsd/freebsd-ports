@@ -1,5 +1,5 @@
---- src/gdevperm.c.orig	Tue Sep 25 22:31:24 2007
-+++ src/gdevperm.c	Sat Nov 24 15:11:12 2007
+--- base/gdevperm.c.orig	Tue Sep 25 22:31:24 2007
++++ base/gdevperm.c	Sat Nov 24 15:11:12 2007
 @@ -286,7 +286,7 @@
  	(strncmp((const char *)name, (const char *)str, name_size) == 0))
  

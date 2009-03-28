@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	2008-06-22 15:43:28.000000000 +0900
-+++ src/Makefile.in	2008-11-03 00:09:12.000000000 +0900
+--- base/Makefile.in.orig	2008-06-22 15:43:28.000000000 +0900
++++ base/Makefile.in	2008-11-03 00:09:12.000000000 +0900
 @@ -46,9 +46,8 @@
  # the directories also define the default search path for the
  # initialization files (gs_*.ps) and the fonts.

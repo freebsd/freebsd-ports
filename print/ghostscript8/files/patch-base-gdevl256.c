@@ -1,5 +1,5 @@
---- src/gdevl256.c.orig	Mon Jun  4 00:54:57 2007
-+++ src/gdevl256.c	Mon Jun  4 01:13:56 2007
+--- base/gdevl256.c.orig	Mon Jun  4 00:54:57 2007
++++ base/gdevl256.c	Mon Jun  4 01:13:56 2007
 @@ -143,9 +143,12 @@
  /* for compatibility with the older display modes: */
  /* these are indexed as 0.0.R0.G0.B0.R1.G1.B1. */
