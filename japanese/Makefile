@@ -14,6 +14,7 @@
     SUBDIR += a2ps
     SUBDIR += ack
     SUBDIR += acroread8
+    SUBDIR += acroread9
     SUBDIR += alias-fonts
     SUBDIR += another-htmllint
     SUBDIR += anthy
