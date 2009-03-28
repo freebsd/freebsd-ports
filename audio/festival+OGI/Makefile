@@ -30,6 +30,9 @@ DIST_SUBDIR=	festival
 
 RESTRICTED=	no-commercial-use
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+EXPIRATION_DATE=2009-04-28
+
 FESTIVAL=	${WRKSRC}/festival
 FESTIVAL_ARCH=	${ARCH:S/i386/ix86/}
 FHOME=		${PREFIX}/share/festival
