@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	1.3.102
+PORTVERSION=	1.3.103
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dcc-servers.net/dcc/source/old/ \
 		http://www.rhyolite.com/anti-spam/dcc/source/old/ \
@@ -29,12 +29,12 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 USE_RC_SUBR=
 
 #
-# ALT_HOME -	DCC keeps its config files in its home direcotry but writes
+# ALT_HOME -	DCC keeps its config files in its home directory but writes
 #		status and database files there as well.  This latter point
 #		means that the FreeBSD default home directory for DCC,
 #		/usr/local/dcc, cannot be mounted read-only.
 #
-#		DCC's default home dir is /var/dcc breaks FreeBSD hierarchy
+#		DCC's default home dir of /var/dcc breaks FreeBSD hierarchy
 #		conventions, but allows for a read-only /usr.
 #
 #		Setting ALT_HOME on will set DCC's home to /var/dcc, but
