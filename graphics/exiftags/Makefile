@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	exiftags
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	graphics
 MASTER_SITES=	http://johnst.org/sw/exiftags/
 
