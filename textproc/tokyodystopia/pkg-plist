@@ -12,8 +12,8 @@ include/tcqdb.h
 include/tcwdb.h
 lib/libtokyodystopia.a
 lib/libtokyodystopia.so
-lib/libtokyodystopia.so.1
-lib/libtokyodystopia.so.1.10.0
+lib/libtokyodystopia.so.%%SHLIB_VER_MAJ%%
+lib/libtokyodystopia.so.%%SHLIB_VER%%
 libdata/pkgconfig/tokyodystopia.pc
 libexec/dystsearch.cgi
 libexec/lapusearch.cgi
