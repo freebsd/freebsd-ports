@@ -1,6 +1,3 @@
-%%PYTHON_SITELIBDIR%%/configobj.py
-%%PYTHON_SITELIBDIR%%/configobj.pyc
-%%PYTHON_SITELIBDIR%%/configobj.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/__init__.py
 %%PYTHON_SITELIBDIR%%/matplotlib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/__init__.pyo
@@ -73,6 +70,9 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_gtkcairo.py
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_gtkcairo.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_gtkcairo.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_macosx.py
+%%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_macosx.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_macosx.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_mixed.py
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_mixed.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/backend_mixed.pyo
@@ -112,6 +112,9 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/tkagg.py
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/tkagg.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/backends/tkagg.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/bezier.py
+%%PYTHON_SITELIBDIR%%/matplotlib/bezier.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/bezier.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/blocking_input.py
 %%PYTHON_SITELIBDIR%%/matplotlib/blocking_input.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/blocking_input.pyo
@@ -130,33 +133,6 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/colors.py
 %%PYTHON_SITELIBDIR%%/matplotlib/colors.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/colors.pyo
-%%PYTHON_SITELIBDIR%%/matplotlib/config/__init__.py
-%%PYTHON_SITELIBDIR%%/matplotlib/config/__init__.pyc
-%%PYTHON_SITELIBDIR%%/matplotlib/config/__init__.pyo
-%%PYTHON_SITELIBDIR%%/matplotlib/config/checkdep.py
-%%PYTHON_SITELIBDIR%%/matplotlib/config/checkdep.pyc
-%%PYTHON_SITELIBDIR%%/matplotlib/config/checkdep.pyo
-%%PYTHON_SITELIBDIR%%/matplotlib/config/cutils.py
-%%PYTHON_SITELIBDIR%%/matplotlib/config/cutils.pyc
-%%PYTHON_SITELIBDIR%%/matplotlib/config/cutils.pyo
-%%PYTHON_SITELIBDIR%%/matplotlib/config/mplconfig.py
-%%PYTHON_SITELIBDIR%%/matplotlib/config/mplconfig.pyc
-%%PYTHON_SITELIBDIR%%/matplotlib/config/mplconfig.pyo
-%%PYTHON_SITELIBDIR%%/matplotlib/config/mpltraits.py
-%%PYTHON_SITELIBDIR%%/matplotlib/config/mpltraits.pyc
-%%PYTHON_SITELIBDIR%%/matplotlib/config/mpltraits.pyo
-%%PYTHON_SITELIBDIR%%/matplotlib/config/rcparams.py
-%%PYTHON_SITELIBDIR%%/matplotlib/config/rcparams.pyc
-%%PYTHON_SITELIBDIR%%/matplotlib/config/rcparams.pyo
-%%PYTHON_SITELIBDIR%%/matplotlib/config/rcsetup.py
-%%PYTHON_SITELIBDIR%%/matplotlib/config/rcsetup.pyc
-%%PYTHON_SITELIBDIR%%/matplotlib/config/rcsetup.pyo
-%%PYTHON_SITELIBDIR%%/matplotlib/config/tconfig.py
-%%PYTHON_SITELIBDIR%%/matplotlib/config/tconfig.pyc
-%%PYTHON_SITELIBDIR%%/matplotlib/config/tconfig.pyo
-%%PYTHON_SITELIBDIR%%/matplotlib/config/verbose.py
-%%PYTHON_SITELIBDIR%%/matplotlib/config/verbose.pyc
-%%PYTHON_SITELIBDIR%%/matplotlib/config/verbose.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/contour.py
 %%PYTHON_SITELIBDIR%%/matplotlib/contour.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/contour.pyo
@@ -206,6 +182,9 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/mlab.py
 %%PYTHON_SITELIBDIR%%/matplotlib/mlab.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/mlab.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/example/aapl.npy
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/example/goog.npy
+%%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/example/msft_nasdaq.npy
 %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/fonts/afm/cmex10.afm
 %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/fonts/afm/cmmi10.afm
 %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/fonts/afm/cmr10.afm
@@ -389,6 +368,9 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/numerix/random_array/__init__.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/numerix/random_array/__init__.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/nxutils.so
+%%PYTHON_SITELIBDIR%%/matplotlib/offsetbox.py
+%%PYTHON_SITELIBDIR%%/matplotlib/offsetbox.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/offsetbox.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/patches.py
 %%PYTHON_SITELIBDIR%%/matplotlib/patches.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/patches.pyo
@@ -450,6 +432,25 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/windowing.py
 %%PYTHON_SITELIBDIR%%/matplotlib/windowing.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/windowing.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/backends/Matplotlib.nib
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/backends
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/delaunay
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/example
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/fonts/afm
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/fonts/pdfcorefonts
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/fonts/ttf
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/fonts
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/images
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix/fft
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix/linear_algebra
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix/ma
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix/mlab
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix/npyma
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix/random_array
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/projections
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib
 %%PYTHON_SITELIBDIR%%/mpl_toolkits/__init__.py
 %%PYTHON_SITELIBDIR%%/mpl_toolkits/__init__.pyc
 %%PYTHON_SITELIBDIR%%/mpl_toolkits/__init__.pyo
@@ -459,29 +460,32 @@
 %%PYTHON_SITELIBDIR%%/mpl_toolkits/gtktools.py
 %%PYTHON_SITELIBDIR%%/mpl_toolkits/gtktools.pyc
 %%PYTHON_SITELIBDIR%%/mpl_toolkits/gtktools.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/mpl_toolkits
 %%PYTHON_SITELIBDIR%%/pylab.py
 %%PYTHON_SITELIBDIR%%/pylab.pyc
 %%PYTHON_SITELIBDIR%%/pylab.pyo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animation_blit.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animation_blit_fltk.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animation_blit_gtk.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animation_blit_qt.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animation_blit_qt4.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animation_blit_tk.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animation_blit_wx.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/dynamic_collection.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/dynamic_image_gtkagg.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/dynamic_image_wxagg.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/dynamic_image_wxagg2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/gtk_timeout.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/movie_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/simple_anim_gtk.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/simple_anim_tkagg.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/simple_anim_wx.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/simple_idle_wx.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/simple_timer_wx.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/strip_chart_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/agg_oo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/barchart_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/bbox_intersect.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/collections_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/color_cycle.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/colorbar_only.py
@@ -489,6 +493,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/custom_scale_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/date_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/date_index_formatter.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/donut_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/font_family_rc.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/font_file.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/histogram_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/image_zcoord.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/legend_demo.py
@@ -497,7 +504,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/mathtext_asarray.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/patch_collection.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/path_patch_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/quad_bezier.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/scatter_piecharts.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/span_regions.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/two_scales.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/unicode_minus.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/watermark_image.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/watermark_text.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/AAPL.dat
@@ -507,15 +518,18 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/demodata.csv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/eeg.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/embedding_in_wx3.xrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/goog.csv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/intc.csv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/lena.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/lena.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/logo2.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/membrane.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/msft.csv
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/msft_nasdaq_d.csv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/s1045.ima
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/data_browser.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/figure_axes_enter_leave.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/idle_and_timeout.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/keypress_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/lasso_demo.py
@@ -526,7 +540,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/zoom_window.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/font_indexing.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/ftface_props.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/ftface_props.py.bak
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/image_thumbnail.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/longshort.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/rc_traits.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/rec_groupby_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/rec_join_demo.py
@@ -536,10 +551,10 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/agg_buffer_to_array.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/alignment_test.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/annotation_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/annotation_demo2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/anscombe.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/arctest.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/arrow_demo.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/auto_layout.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/axes_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/axes_props.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/axhspan_demo.py
@@ -556,6 +571,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/cohere_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/color_by_yvalue.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/color_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/colorbar_tick_labelling_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/colours.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/contour_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/contour_image.py
@@ -566,13 +582,13 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/coords_report.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/csd_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/cursor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/custom_cmap.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/custom_figure_class.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/custom_ticker1.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/customize_rc.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/dannys_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/dash_control.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/dashpointlabel.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/dashtick.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/data_helper.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/date_demo1.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/date_demo2.py
@@ -580,20 +596,25 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/date_demo_rrule.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/date_index_formatter.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/dolphin.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/ellipse_collection.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/ellipse_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/ellipse_rotated.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/equal_aspect_ratio.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/errorbar_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/errorbar_limits.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fancyarrow_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fancybox_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fancybox_demo2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fancytextbox_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/figimage_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/figlegend_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/figure_title.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fill_between.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fill_between_posneg.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fill_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fill_demo2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fill_spiral.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/finance_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/finance_work2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/findobj_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/font_table_ttf.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/fonts_demo.py
@@ -611,11 +632,14 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/histogram_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/histogram_demo_extended.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/hline_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/hyperlinks.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/image_clip_path.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/image_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/image_demo2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/image_demo3.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/image_interp.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/image_masked.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/image_nonuniform.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/image_origin.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/image_slices_viewer.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/integral_demo.py
@@ -625,6 +649,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/legend_auto.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/legend_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/legend_demo2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/legend_demo3.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/legend_scatter.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/line_collection.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/line_collection2.py
@@ -654,7 +679,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/pcolor_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/pcolor_demo2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/pcolor_log.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/pcolor_nonuniform.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/pcolor_small.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/pie_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/plotfile_demo.py
@@ -665,6 +689,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/poormans_contour.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/print_stdout.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/psd_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/psd_demo2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/psd_demo3.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/pstest.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/pythonic_matplotlib.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/quadmesh_demo.py
@@ -680,6 +706,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/shared_axis_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/simple_plot.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/simple_plot_fps.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/simplification_clipping_test.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/specgram_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/spy_demos.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/stem_plot.py
@@ -696,18 +723,36 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/tex_unicode_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/text_handles.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/text_rotation.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/text_rotation_relative_to_line.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/text_themes.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/to_numeric.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/toggle_images.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/transoffset.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/two_scales.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/unicode_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/usetex_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/vertical_ticklabels.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/vline_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/webapp_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/xcorr_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/zorder_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/backend_driver.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pngsuite/basn0g01.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pngsuite/basn0g02.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pngsuite/basn0g04.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pngsuite/basn0g08.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pngsuite/basn0g16.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pngsuite/basn2c08.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pngsuite/basn2c16.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pngsuite/basn3p01.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pngsuite/basn3p02.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pngsuite/basn3p04.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pngsuite/basn3p08.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pngsuite/basn4a08.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pngsuite/basn4a16.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pngsuite/basn6a08.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pngsuite/basn6a16.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pngsuite/pngsuite.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pngsuite/truth.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/units/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/units/annotate_with_units.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/units/artist_tests.py
@@ -756,36 +801,17 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/multicursor.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/radio_buttons.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/rectangle_selector.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/sliders.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/slider_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/span_selector.py
-@dirrm %%PYTHON_SITELIBDIR%%/mpl_toolkits
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/projections
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix/random_array
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix/npyma
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix/mlab
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix/ma
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix/linear_algebra
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix/fft
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/numerix
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/images
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/fonts/ttf
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/fonts/pdfcorefonts
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/fonts/afm
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data/fonts
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/mpl-data
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/delaunay
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/config
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/backends/Matplotlib.nib
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/backends
-@dirrm %%PYTHON_SITELIBDIR%%/matplotlib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/user_interfaces
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/units
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pylab_examples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/event_handling
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/data
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/api
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/animation
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/api
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/data
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/event_handling
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pylab_examples
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/pngsuite
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/units
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/user_interfaces
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
