@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	tokyocabinet
-PORTVERSION=	1.4.9
+PORTVERSION=	1.4.11
 CATEGORIES=	databases
-MASTER_SITES=	SOURCEFORGE \
-		http://tokyocabinet.sourceforge.net/
+MASTER_SITES=	SF
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A modern implementation of DBM
@@ -78,8 +77,8 @@ CONFIGURE_ARGS+=	--disable-pthread
 CONFIGURE_ARGS+=	--disable-shared
 .endif
 
-SHLIB_VER=	7.14.0
-SHLIB_VER_MAJ=	7
+SHLIB_VER=	8.2.0
+SHLIB_VER_MAJ=	8
 
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
 
