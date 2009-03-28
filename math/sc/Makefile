@@ -7,6 +7,7 @@
 
 PORTNAME=	sc
 PORTVERSION=	7.16
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/financial/spreadsheet
@@ -21,7 +22,7 @@ MAN1=		sc.1 psc.1
 post-patch:
 	@${REINPLACE_CMD} -e '/^prefix=/s,=.*,=$${PREFIX},' \
 		-e '/^CC=/s,=.*,=${CC},' \
-		-e '/^CFLAGS=/s,=.*,=-DSYSV3 ${CFLAGS},' \
+		-e '/^CFLAGS=/s,=.*,=-DSYSV3 ${CFLAGS} -O0,' \
 		-e '/^LIBDIR=/s,=.*,=${DATADIR},' \
 		-e '/^YACC=/s,=.*,=${YACC},' \
 		-e '/usr.bin.crypt/s,^# *,,' \
