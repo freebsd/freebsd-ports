@@ -21,6 +21,9 @@ PORTDOCS=	README BUGS NEWS AUTHORS ChangeLog
 
 MAN1=		bbsmount.1
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+EXPIRATION_DATE=2009-04-28
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O[012]||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|SUBDIRS = data|SUBDIRS =|' ${WRKSRC}/Makefile.in

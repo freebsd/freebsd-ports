@@ -19,6 +19,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Animated musical demo for X11
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+EXPIRATION_DATE=2009-04-28
+
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
 USE_GCC=	2.95

@@ -28,6 +28,9 @@ PORTDOCS=	Makefile archform.htm build.htm catalog catalog.htm \
 		new.htm nsgmls.htm sgmldecl.htm sgmlnorm.htm sgmlsout.htm \
 		spam.htm spent.htm sx.htm sysdecl.htm sysid.htm xml.htm
 
+DEPRECATED=	unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+EXPIRATION_DATE=2009-04-28
+
 post-patch:
 	${REINPLACE_CMD} -e 's,=/usr/local,=${PREFIX},g' ${WRKSRC}/Makefile*
 
