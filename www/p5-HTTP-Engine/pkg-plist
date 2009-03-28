@@ -31,9 +31,11 @@
 %%SITE_PERL%%/HTTP/Engine/Role/ResponseWriter/OutputHeader.pm
 %%SITE_PERL%%/HTTP/Engine/Role/ResponseWriter/ResponseLine.pm
 %%SITE_PERL%%/HTTP/Engine/Role/ResponseWriter/WriteSTDOUT.pm
+%%SITE_PERL%%/HTTP/Engine/Test/Request.pm
 %%SITE_PERL%%/HTTP/Engine/Types/Core.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Engine
 @dirrm %%SITE_PERL%%/HTTP/Engine/Types
+@dirrm %%SITE_PERL%%/HTTP/Engine/Test
 @dirrm %%SITE_PERL%%/HTTP/Engine/Role/ResponseWriter
 @dirrm %%SITE_PERL%%/HTTP/Engine/Role/RequestBuilder
 @dirrm %%SITE_PERL%%/HTTP/Engine/Role
