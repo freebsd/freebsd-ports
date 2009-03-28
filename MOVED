@@ -3883,3 +3883,15 @@ mbone/relate||2009-03-23|Has expired: tcl8.0 support is going to be dropped
 mbone/wbd||2009-03-23|Has expired: tcl8.0 support is going to be dropped
 comms/plp||2009-03-24|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
 devel/ruby-zoom|devel/rubygem-zoom|2009-03-26|Renamed
+net/sipxcalllib||2009-03-28|Has expired: old version, needs updating
+net/sipxcommserverlib||2009-03-28|Has expired: old version, needs updating, and does not compile
+net/sipxconfig||2009-03-28|Has expired: depends on broken port net/sipxcommserverlib
+net/sipxmediaadapterlib||2009-03-28|Has expired: old version, needs updating
+net/sipxmedialib||2009-03-28|Has expired: old version, needs updating
+net/sipxpbx||2009-03-28|Has expired: depends on broken port net/sipxcommserverlib
+net/sipxproxy||2009-03-28|Has expired: depends on broken port net/sipxcommserverlib
+net/sipxportlib||2009-03-28|Has expired: old version, needs updating
+net/sipxpublisher||2009-03-28|Has expired: depends on broken port net/sipxcommserverlib
+net/sipxregistry||2009-03-28|Has expired: depends on broken port net/sipxcommserverlib
+net/sipxtacklib||2009-03-28|Has expired: old version, needs updating
+net/sipxvxml||2009-03-28|Has expired: old version, needs updating
