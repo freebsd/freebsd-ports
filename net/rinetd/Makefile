@@ -19,6 +19,8 @@ COMMENT=	A simple TCP port redirector
 
 WRKSRC=		${WRKDIR}/rinetd/
 
+MAKE_JOBS_SAFE=	yes
+
 MAN8=		rinetd.8
 PORTDOCS=	index.html
 PLIST_FILES=	sbin/rinetd

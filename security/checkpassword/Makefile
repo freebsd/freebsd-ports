@@ -18,6 +18,8 @@ COMMENT=	A simple password-checking interface
 ALL_TARGET=	it
 INSTALL_TARGET=	setup
 
+MAKE_JOBS_SAFE=	yes
+
 PLIST_FILES=	bin/checkpassword
 PORTDOCS=	CHANGES FILES README SYSDEPS TARGETS TODO VERSION
 

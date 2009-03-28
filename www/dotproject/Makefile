@@ -19,6 +19,7 @@ NO_BUILD=	yes
 USE_PHP=	gd mysql session zlib
 WANT_PHP_WEB=	yes
 USE_APACHE=	yes
+MAKE_JOBS_SAFE=	yes
 
 SUB_LIST+=	DOTPROJECTDIR=${DOTPROJECTDIR}
 SUB_FILES=	pkg-message

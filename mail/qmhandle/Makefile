@@ -15,6 +15,7 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Tool to view and manage a qmail queue
 
 USE_QMAIL_RUN=	yes
+MAKE_JOBS_SAFE=	yes
 
 NO_BUILD=	yes
 USE_PERL5=	yes

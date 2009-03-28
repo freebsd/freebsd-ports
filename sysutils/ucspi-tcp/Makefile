@@ -24,6 +24,8 @@ OPTIONS=	MAN "Install man(1) pages" on \
 		RBL2SMTPD "Don't drop connection, pass envvar to smtpd" off \
 		LIMITS "Implement per-connection and other limits" off
 
+MAKE_JOBS_SAFE=	yes
+
 ALL_TARGET=	prog install instcheck
 
 SCRIPTS_ENV=	BINOWN="${BINOWN}" \

@@ -17,6 +17,7 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A fast compression utility
 
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}
 

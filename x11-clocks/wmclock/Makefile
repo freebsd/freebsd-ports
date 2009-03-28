@@ -20,6 +20,7 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A dockable clock applet for Window Maker
 
 USE_IMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_XORG=	xpm
 MAN1=		wmclock.1
 PLIST_FILES=	bin/wmclock

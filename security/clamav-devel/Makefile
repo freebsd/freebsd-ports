@@ -29,6 +29,7 @@ OPTIONS=	ARC "Enable arch archives support" On \
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 CONF_FILES=	clamd freshclam
 

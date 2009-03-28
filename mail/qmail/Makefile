@@ -22,6 +22,8 @@ DIST_SUBDIR=	qmail
 CONFLICTS?=	qmail-ldap-[0-9]* qmail-mysql-[0-9]* qmail-spamcontrol-[0-9]* qmail-tls-[0-9]*
 CONFLICTS+=	qmail-vida-[0-9]*
 
+MAKE_JOBS_UNSAFE=	yes
+
 .if defined(SLAVE_LDAP) || \
     defined(SLAVE_MYSQL)
 BARRIER_MAILDIRQUOTA_PATCH=	yes
