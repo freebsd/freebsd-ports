@@ -7,7 +7,7 @@
 
 PORTNAME=	kqemu
 PORTVERSION=	1.3.0.p11
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://bellard.org/qemu/ \
 		http://qemu.org/ \
@@ -66,6 +66,13 @@ post-extract:
 	@${ECHO_MSG} "Compiling with -DKSE."
 	@${ECHO_MSG} "If this is wrong (i.e. you have \`nooption KSE' in your kernel config),"
 	@${ECHO_MSG} "then please define NOKSE."
+.endif
+
+# 7.1 and head have seperate gdts also on amd64 now so the tss fixup code
+# is no longer needed there
+post-patch:
+.if ${OSVERSION} >= 701100 && (${OSVERSION} < 800000 || ${OSVERSION} >= 800046)
+	@cd ${WRKSRC} && ${PATCH} -R --quiet < ${FILESDIR}/patch-tssworkaround
 .endif
 
 do-build:
