@@ -1,0 +1,27 @@
+diff --git libs/wine/mmap.c libs/wine/mmap.c
+index d107fc7..a694e4f 100644
+--- libs/wine/mmap.c
++++ libs/wine/mmap.c
+@@ -344,9 +344,13 @@ void mmap_init(void)
+     struct reserved_area *area;
+     struct list *ptr;
+ #ifdef __i386__
++    char *user_space_limit = (char *)0x7ffe0000;
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++    reserve_malloc_space( 8 * 1024 * 1024 );
++    reserve_area( user_space_limit, (char *)0x82000000 );
++#else
+     char stack;
+     char * const stack_ptr = &stack;
+-    char *user_space_limit = (char *)0x7ffe0000;
+ 
+     reserve_malloc_space( 8 * 1024 * 1024 );
+ 
+@@ -377,6 +381,7 @@ void mmap_init(void)
+         reserve_area( base, end );
+     }
+     else reserve_area( user_space_limit, 0 );
++#endif
+ #endif /* __i386__ */
+ 
+     /* reserve the DOS area if not already done */

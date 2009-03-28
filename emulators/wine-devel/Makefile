@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-DISTVERSION=	1.1.17
+DISTVERSION=	1.1.18
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SFE \
@@ -47,8 +47,6 @@ OPTIONS=	CUPS	"Use CUPS (Common UNIX Printing System)"	On \
 		HAL	"Use HAL (Hardware Abstraction Layer)"		Off \
 		LDAP	"Use LDAP"					Off \
 		LIBXSLT	"Use libxslt (only used by msxml3.dll)"		Off
-
-IGNORE=		builds, but fails upon startup
 
 .include <bsd.port.pre.mk>
 

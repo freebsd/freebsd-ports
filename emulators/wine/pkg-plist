@@ -580,7 +580,7 @@ lib/wine/atl.dll.so
 lib/wine/authz.dll.so
 lib/wine/avicap32.dll.so
 lib/wine/avifil32.dll.so
-lib/wine/avifile.dll16
+lib/wine/avifile.dll16.so
 lib/wine/browseui.dll.so
 lib/wine/cabinet.dll.so
 lib/wine/cacls.exe.so
@@ -606,9 +606,9 @@ lib/wine/cryptdll.dll.so
 lib/wine/cryptnet.dll.so
 lib/wine/cryptui.dll.so
 lib/wine/ctapi32.dll.so
-lib/wine/ctl3d.dll16
+lib/wine/ctl3d.dll16.so
 lib/wine/ctl3d32.dll.so
-lib/wine/ctl3dv2.dll16
+lib/wine/ctl3dv2.dll16.so
 lib/wine/d3d10.dll.so
 lib/wine/d3d10core.dll.so
 lib/wine/d3d8.dll.so
@@ -692,7 +692,7 @@ lib/wine/iexplore.exe.so
 lib/wine/ifsmgr.vxd.so
 lib/wine/imaadp32.acm.so
 lib/wine/imagehlp.dll.so
-lib/wine/imm.dll16
+lib/wine/imm.dll16.so
 lib/wine/imm32.dll.so
 lib/wine/inetcomm.dll.so
 lib/wine/inetmib1.dll.so
@@ -954,7 +954,7 @@ lib/wine/qmgr.dll.so
 lib/wine/qmgrprxy.dll.so
 lib/wine/quartz.dll.so
 lib/wine/query.dll.so
-lib/wine/rasapi16.dll16
+lib/wine/rasapi16.dll16.so
 lib/wine/rasapi32.dll.so
 lib/wine/rasdlg.dll.so
 lib/wine/reg.exe.so
@@ -991,7 +991,7 @@ lib/wine/slbcsp.dll.so
 lib/wine/slc.dll.so
 lib/wine/snmpapi.dll.so
 lib/wine/softpub.dll.so
-lib/wine/sound.drv16
+lib/wine/sound.drv16.so
 lib/wine/spoolss.dll.so
 lib/wine/spoolsv.exe.so
 lib/wine/start.exe.so
@@ -1008,7 +1008,7 @@ lib/wine/tapi32.dll.so
 lib/wine/taskmgr.exe.so
 lib/wine/toolhelp.dll16
 lib/wine/traffic.dll.so
-lib/wine/twain.dll16
+lib/wine/twain.dll16.so
 lib/wine/twain_32.dll.so
 lib/wine/typelib.dll16.so
 lib/wine/unicows.dll.so
@@ -1032,10 +1032,10 @@ lib/wine/vnetbios.vxd.so
 lib/wine/vtdapi.vxd.so
 lib/wine/vwin32.vxd.so
 lib/wine/w32skrnl.dll.so
-lib/wine/w32sys.dll16
-lib/wine/win32s16.dll16
+lib/wine/w32sys.dll16.so
+lib/wine/win32s16.dll16.so
 lib/wine/win87em.dll16.so
-lib/wine/winaspi.dll16
+lib/wine/winaspi.dll16.so
 lib/wine/windebug.dll16.so
 lib/wine/winealsa.drv.so
 lib/wine/wineaudioio.drv.so
@@ -1069,13 +1069,13 @@ lib/wine/winhlp32.exe.so
 lib/wine/winhttp.dll.so
 lib/wine/wininet.dll.so
 lib/wine/winmm.dll.so
-lib/wine/winnls.dll16
+lib/wine/winnls.dll16.so
 lib/wine/winnls32.dll.so
 lib/wine/winoldap.mod16.so
 lib/wine/winscard.dll.so
 lib/wine/winsock.dll16
 lib/wine/winspool.drv.so
-lib/wine/wintab.dll16
+lib/wine/wintab.dll16.so
 lib/wine/wintab32.dll.so
 lib/wine/wintrust.dll.so
 lib/wine/winver.exe.so
