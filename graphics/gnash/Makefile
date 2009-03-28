@@ -102,7 +102,7 @@ PLIST_SUB+=	KPARTS=""
 USE_LDCONFIG+=	${PREFIX}/lib/kde3
 .else
 PLIST_SUB+=	KPARTS="@comment "
-CONFIGURE_ARGS+=	--disable-kparts
+CONFIGURE_ARGS+=	--disable-kparts3
 .endif
 
 .if defined(WITH_KDE4) && !defined(WITHOUT_PLUGIN)
