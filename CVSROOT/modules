@@ -200,6 +200,8 @@ OpenEXR                         ports/graphics/OpenEXR
 PDL                             ports/math/PDL
 PicMonger                       ports/news/PicMonger
 R                               ports/math/R
+R-cran-Zelig                    ports/math/R-cran-Zelig
+R-cran-gpclib                   ports/math/R-cran-gpclib
 R-cran-sm                       ports/math/R-cran-sm
 R-sp                            ports/math/R-sp
 STk                             ports/lang/STk
@@ -2065,6 +2067,7 @@ ddos_scan                       ports/security/ddos_scan
 ddrescue                        ports/sysutils/ddrescue
 de-BBBike                       ports/german/BBBike
 de-acroread8                    ports/german/acroread8
+de-acroread9                    ports/german/acroread9
 de-alt-aspell                   ports/german/alt-aspell
 de-aspell                       ports/german/aspell
 de-bbbike                       ports/german/BBBike
@@ -3541,6 +3544,7 @@ fpp                             ports/devel/fpp
 fprint_demo                     ports/security/fprint_demo
 fprobe                          ports/net-mgmt/fprobe
 fr-acroread8                    ports/french/acroread8
+fr-acroread9                    ports/french/acroread9
 fr-alphabet_sounds_fr           ports/french/alphabet_sounds_fr
 fr-aspell                       ports/french/aspell
 fr-aster                        ports/french/aster
@@ -4670,6 +4674,7 @@ gsk                             ports/net/gsk
 gskrab                          ports/x11/gskrab
 gsl                             ports/math/gsl
 gsm                             ports/audio/gsm
+gsmartcontrol                   ports/sysutils/gsmartcontrol
 gsmc                            ports/science/gsmc
 gsmlib                          ports/comms/gsmlib
 gsnapshot                       ports/graphics/gsnapshot
@@ -5617,6 +5622,7 @@ ja-Wnn7-lib                     ports/japanese/Wnn7-lib
 ja-a2ps                         ports/japanese/a2ps
 ja-ack                          ports/japanese/ack
 ja-acroread8                    ports/japanese/acroread8
+ja-acroread9                    ports/japanese/acroread9
 ja-alias-fonts                  ports/japanese/alias-fonts
 ja-another-htmllint             ports/japanese/another-htmllint
 ja-anthy                        ports/japanese/anthy
@@ -10238,6 +10244,7 @@ p5-Catalyst-Plugin-PageCache    ports/www/p5-Catalyst-Plugin-PageCache
 p5-Catalyst-Plugin-Params-Nested  ports/www/p5-Catalyst-Plugin-Params-Nested
 p5-Catalyst-Plugin-Pluggable    ports/www/p5-Catalyst-Plugin-Pluggable
 p5-Catalyst-Plugin-Prototype    ports/www/p5-Catalyst-Plugin-Prototype
+p5-Catalyst-Plugin-Scheduler    ports/www/p5-Catalyst-Plugin-Scheduler
 p5-Catalyst-Plugin-Server       ports/www/p5-Catalyst-Plugin-Server
 p5-Catalyst-Plugin-Session      ports/www/p5-Catalyst-Plugin-Session
 p5-Catalyst-Plugin-Session-FastMmap  ports/www/p5-Catalyst-Plugin-Session-FastMmap
@@ -12635,6 +12642,7 @@ p5-Test-Portability-Files       ports/devel/p5-Test-Portability-Files
 p5-Test-RandomResults           ports/devel/p5-Test-RandomResults
 p5-Test-Reporter                ports/devel/p5-Test-Reporter
 p5-Test-Script                  ports/devel/p5-Test-Script
+p5-Test-SharedFork              ports/devel/p5-Test-SharedFork
 p5-Test-Simple                  ports/devel/p5-Test-Simple
 p5-Test-Singleton               ports/devel/p5-Test-Singleton
 p5-Test-Spelling                ports/devel/p5-Test-Spelling
@@ -13515,6 +13523,7 @@ p5-catalyst-plugin-pagecache    ports/www/p5-Catalyst-Plugin-PageCache
 p5-catalyst-plugin-params-nested  ports/www/p5-Catalyst-Plugin-Params-Nested
 p5-catalyst-plugin-pluggable    ports/www/p5-Catalyst-Plugin-Pluggable
 p5-catalyst-plugin-prototype    ports/www/p5-Catalyst-Plugin-Prototype
+p5-catalyst-plugin-scheduler    ports/www/p5-Catalyst-Plugin-Scheduler
 p5-catalyst-plugin-server       ports/www/p5-Catalyst-Plugin-Server
 p5-catalyst-plugin-session      ports/www/p5-Catalyst-Plugin-Session
 p5-catalyst-plugin-session-fastmmap  ports/www/p5-Catalyst-Plugin-Session-FastMmap
@@ -16045,6 +16054,7 @@ p5-test-portability-files       ports/devel/p5-Test-Portability-Files
 p5-test-randomresults           ports/devel/p5-Test-RandomResults
 p5-test-reporter                ports/devel/p5-Test-Reporter
 p5-test-script                  ports/devel/p5-Test-Script
+p5-test-sharedfork              ports/devel/p5-Test-SharedFork
 p5-test-simple                  ports/devel/p5-Test-Simple
 p5-test-singleton               ports/devel/p5-Test-Singleton
 p5-test-spelling                ports/devel/p5-Test-Spelling
@@ -19332,7 +19342,9 @@ qwt5                            ports/x11-toolkits/qwt5
 qwtplot3d                       ports/math/qwtplot3d
 qwtplot3d-qt4                   ports/math/qwtplot3d-qt4
 r                               ports/math/R
+r-cran-gpclib                   ports/math/R-cran-gpclib
 r-cran-sm                       ports/math/R-cran-sm
+r-cran-zelig                    ports/math/R-cran-Zelig
 r-sp                            ports/math/R-sp
 r1q2                            ports/games/r1q2
 rabbitmq                        ports/net/rabbitmq
@@ -21617,6 +21629,7 @@ toilet                          ports/misc/toilet
 tokamak                         ports/devel/tokamak
 tokyocabinet                    ports/databases/tokyocabinet
 tokyodystopia                   ports/textproc/tokyodystopia
+tokyotyrant                     ports/databases/tokyotyrant
 tolkien-ttf                     ports/x11-fonts/tolkien-ttf
 tolua                           ports/lang/tolua
 tolua++                         ports/lang/tolua++
