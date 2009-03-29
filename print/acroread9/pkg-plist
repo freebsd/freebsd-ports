@@ -502,5 +502,7 @@
 @dirrm %%ACRODIR%%/Adobe/Reader9
 @dirrm %%ACRODIR%%/Adobe
 @dirrm %%ACRODIR%%
+@exec /bin/mkdir -p %D/share/desktop-directories
+@dirrmtry share/desktop-directories
 @dirrmtry %%ACROBASE%%
 @dirrmtry %%ADOBEBASE%%
