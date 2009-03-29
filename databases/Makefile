@@ -297,6 +297,7 @@
     SUBDIR += p5-DBIx-Class-EncodeColumns
     SUBDIR += p5-DBIx-Class-EncodedColumn
     SUBDIR += p5-DBIx-Class-FrozenColumns
+    SUBDIR += p5-DBIx-Class-HTML-FormFu
     SUBDIR += p5-DBIx-Class-InflateColumn-IP
     SUBDIR += p5-DBIx-Class-IntrospectableM2M
     SUBDIR += p5-DBIx-Class-Loader
