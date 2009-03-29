@@ -1,0 +1,17 @@
+HTML::GenToc generates anchors and a table of contents for
+HTML documents.  Depending on the arguments, it will insert
+the information it generates, or output to a string, a separate file
+or STDOUT.
+
+While it defaults to taking H1 and H2 elements as the significant
+elements to put into the table of contents, any tag can be defined
+as a significant element.  Also, it doesn't matter if the input
+HTML code is complete, pure HTML, one can input pseudo-html
+or page-fragments, which makes it suitable for using on templates
+and HTML meta-languages such as WML.
+
+Also included in the distrubution is hypertoc, a script which uses the
+module so that one can process files on the command-line in a
+user-friendly manner.
+
+WWW: http://search.cpan.org/dist/HTML-GenToc/

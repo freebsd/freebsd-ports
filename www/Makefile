@@ -843,6 +843,7 @@
     SUBDIR += p5-HTML-FormFu-Model-DBIC
     SUBDIR += p5-HTML-FromANSI
     SUBDIR += p5-HTML-FromText
+    SUBDIR += p5-HTML-GenToc
     SUBDIR += p5-HTML-GoogleMaps
     SUBDIR += p5-HTML-Highlight
     SUBDIR += p5-HTML-LinkExtractor
