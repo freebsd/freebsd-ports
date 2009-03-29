@@ -1,0 +1,8 @@
+This module contains a number of functions for taking sets of URLs and
+labels and creating suitably formatted HTML.  These links are "smart"
+because, if given the url of the current page, if any of the links in
+the list equal it, that item in the list will be formatted as a special
+label, not as a link; this is a Good Thing, since the user would be
+confused by clicking on a link back to the current page.
+
+WWW: http://search.cpan.org/dist/HTML-LinkList/
