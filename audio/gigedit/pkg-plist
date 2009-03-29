@@ -20,6 +20,6 @@ share/locale/de/LC_MESSAGES/gigedit.mo
 share/locale/sv/LC_MESSAGES/gigedit.mo
 %%DATADIR%%/status_detached.xpm
 %%DATADIR%%/status_attached.xpm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%
 @dirrm share/gigedit
 @dirrm lib/gigedit
