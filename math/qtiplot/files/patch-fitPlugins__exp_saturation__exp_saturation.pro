@@ -1,5 +1,5 @@
---- ./fitPlugins/fitRational1/fitRational1.pro.orig	2009-03-05 15:56:56.000000000 +0300
-+++ ./fitPlugins/fitRational1/fitRational1.pro	2009-03-26 23:09:59.000000000 +0300
+--- ./fitPlugins/exp_saturation/exp_saturation.pro.orig	2009-03-05 15:56:56.000000000 +0300
++++ ./fitPlugins/exp_saturation/exp_saturation.pro	2009-03-26 23:10:24.000000000 +0300
 @@ -12,14 +12,13 @@
  DESTDIR           = ../
   
@@ -17,4 +17,4 @@
 +target.path=$$PREFIX/share/qtiplot/fitPlugins
  INSTALLS += target
  
- SOURCES += fitRational1.cpp
+ SOURCES += exp_saturation.c

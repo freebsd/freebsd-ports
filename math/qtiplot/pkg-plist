@@ -1,11 +1,23 @@
 bin/qtiplot
+%%DATADIR%%/fitPlugins/libexp_saturation.so
+%%DATADIR%%/fitPlugins/libexp_saturation.so.1
+%%DATADIR%%/fitPlugins/libexp_saturation.so.1.0
+%%DATADIR%%/fitPlugins/libexp_saturation.so.1.0.0
+%%DATADIR%%/fitPlugins/libexplin.so
+%%DATADIR%%/fitPlugins/libexplin.so.1
+%%DATADIR%%/fitPlugins/libexplin.so.1.0
+%%DATADIR%%/fitPlugins/libexplin.so.1.0.0
 %%DATADIR%%/fitPlugins/libfitRational0.so
+%%DATADIR%%/fitPlugins/libfitRational0.so.1
+%%DATADIR%%/fitPlugins/libfitRational0.so.1.0
+%%DATADIR%%/fitPlugins/libfitRational0.so.1.0.0
 %%DATADIR%%/fitPlugins/libfitRational1.so
-%%DATADIR%%/qti_wordlist.txt
-%%DATADIR%%/qtiplot
-%%DATADIR%%/qtiplot.png
+%%DATADIR%%/fitPlugins/libfitRational1.so.1
+%%DATADIR%%/fitPlugins/libfitRational1.so.1.0
+%%DATADIR%%/fitPlugins/libfitRational1.so.1.0.0
 %%PYTHON%%%%DATADIR%%/qtiUtil.py
 %%PYTHON%%%%DATADIR%%/qtiUtil.pyc
+%%PYTHON%%%%DATADIR%%/qti_wordlist.txt
 %%PYTHON%%%%DATADIR%%/qtiplotrc.py
 %%PYTHON%%%%DATADIR%%/qtiplotrc.pyc
 %%NLS%%%%DATADIR%%/translations/qtiplot_de.qm
@@ -16,4 +28,4 @@ bin/qtiplot
 %%NLS%%%%DATADIR%%/translations/qtiplot_sv.qm
 %%NLS%%@dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/fitPlugins
-@dirrmtry %%DATADIR%%
+@dirrm %%DATADIR%%

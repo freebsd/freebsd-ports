@@ -1,9 +1,9 @@
---- ./qtiplot.pro.orig	2008-04-20 19:16:15.000000000 +0400
-+++ ./qtiplot.pro	2008-04-20 19:18:10.000000000 +0400
-@@ -2,6 +2,4 @@
+--- ./qtiplot.pro.orig	2009-03-05 15:57:29.000000000 +0300
++++ ./qtiplot.pro	2009-03-26 22:57:57.000000000 +0300
+@@ -1,6 +1,4 @@
+ TEMPLATE = subdirs
  
- SUBDIRS = fitPlugins/fitRational0\
-           fitPlugins/fitRational1\
--          3rdparty/qwt\
--	      manual\
+ SUBDIRS = fitPlugins \
+-	    manual \
+-	    3rdparty/qwt \
            qtiplot

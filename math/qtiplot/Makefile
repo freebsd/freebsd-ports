@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	qtiplot
-DISTVERSION=	0.9.7.2
-PORTREVISION=	1
+DISTVERSION=	0.9.7.5
 CATEGORIES=	math science
 MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	An Origin clone for data analysis and scientific plotting
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser \
-		${LOCALBASE}/lib/libboost_date_time.a:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser
 LIB_DEPENDS=	gsl.13:${PORTSDIR}/math/gsl \
-		qwtplot3d-qt4:${PORTSDIR}/math/qwtplot3d-qt4 \
-		qwt.5:${PORTSDIR}/x11-toolkits/qwt5
+		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
+		boost_date_time:${PORTSDIR}/devel/boost
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui moc_build qmake_build opengl svg qt3support network assistantclient
 HAS_CONFIGURE=	yes
-QMAKE_ARGS+=	-unix -recursive LOCALBASE=${LOCALBASE} PYTHON_CMD=${PYTHON_CMD}
+QMAKE_ARGS+=	-unix -recursive PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
+		PYTHON_CMD=${PYTHON_CMD}
 USE_DOS2UNIX=	*.pro
+MAKE_JOBS_SAFE=	yes
 MAN1=		qtiplot.1
 
 DESKTOP_ENTRIES="QtiPlot" "Data analysis and plotting" \
@@ -34,15 +34,14 @@ DESKTOP_ENTRIES="QtiPlot" "Data analysis and plotting" \
 		"qtiplot" "" false
 
 OPTIONS=	DOCS "Install the QtiPlot Handbook" on \
-		PYTHON "Python scripting support" off
+		PYTHON "Python scripting support" on
 
-.include <bsd.port.pre.mk>
+STRIP_FILES=	bin/qtiplot share/qtiplot/fitPlugins/*.so.1.0.0
+
+.include <bsd.port.options.mk>
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=	yes
-# manually include this, because USE_PYTHON is defined
-# after including bsd.port.pre.mk
-.include "${PORTSDIR}/Mk/bsd.python.mk"
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
 PLIST_SUB+=	PYTHON=""
@@ -63,6 +62,8 @@ PLIST_SUB+=	NLS=""
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 .if defined(WITH_PYTHON)
 	@${REINPLACE_CMD} -e \
@@ -78,7 +79,7 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e \
 		's|/usr/lib/qtiplot/plugins|${DATADIR}/fitPlugins|' \
-		${WRKSRC}/qtiplot/src/ApplicationWindow.cpp
+		${WRKSRC}/qtiplot/src/core/ApplicationWindow.cpp
 	@${REINPLACE_CMD} -e '/^system(lupdate/d; /^system(lrelease/d' \
 		${WRKSRC}/${PORTNAME}/qtiplot.pro
 .if defined(WITH_DEBUG)
@@ -86,39 +87,30 @@ post-patch:
 		"/^CONFIG.*release/s|release|debug|" \
 		${WRKSRC}/${PORTNAME}/qtiplot.pro
 .endif
+.if defined(WITHOUT_NLS)
+	@${REINPLACE_CMD} -e \
+		"/INSTALLS.*translations/d" \
+		${WRKSRC}/${PORTNAME}/qtiplot.pro
+.endif
 
 do-configure:
 .if !defined(WITHOUT_NLS)
-	@(cd ${WRKSRC}/qtiplot && ${LOCALBASE}/bin/lrelease-qt4 qtiplot.pro)
+	@(cd ${WRKSRC}/qtiplot && ${LOCALBASE}/bin/lrelease-qt4 -compress qtiplot.pro)
 .endif
 	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS})
 
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^CC .*|CC=${CC}|; s|^CXX .*|CXX=${CXX}|; s|^LINK .*|LINK=${CXX}|'
-	@${REINPLACE_CMD} -e 's|^\(INCPATH.*=\)|\1-I../3rdparty/liborigin|' ${WRKSRC}/qtiplot/Makefile
+	@${REINPLACE_CMD} -e 's|^\(INCPATH.*=\)|\1-I../3rdparty/liborigin -I../3rdparty/qwtplot3d/include|' ${WRKSRC}/qtiplot/Makefile
 
-do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/qtiplot/qtiplot ${DATADIR}/qtiplot
-	${LN} -fs ${DATADIR}/qtiplot ${PREFIX}/bin/qtiplot
-	${INSTALL_MAN} ${WRKSRC}/qtiplot.1 ${PREFIX}/man/man1
-	${MKDIR} ${DATADIR}/fitPlugins
-	${INSTALL_PROGRAM} ${WRKSRC}/fitPlugins/libfitRational0.so.1.0.0 \
-				${DATADIR}/fitPlugins/libfitRational0.so
-	${INSTALL_PROGRAM} ${WRKSRC}/fitPlugins/libfitRational1.so.1.0.0 \
-				${DATADIR}/fitPlugins/libfitRational1.so
-	${INSTALL_DATA} ${WRKSRC}/qtiplot_logo.png ${DATADIR}/qtiplot.png
-	${INSTALL_DATA} ${WRKSRC}/qtiplot/qti_wordlist.txt ${DATADIR}
+post-install:
+	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
 .if defined(WITH_PYTHON)
 .for s in qtiplotrc.py qtiUtil.py
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${s} ${DATADIR}/${s}
 	@(cd ${WRKSRC}/qtiplot && ${PYTHON_CMD} -c "import py_compile; py_compile.compile('${s}')")
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${s}c ${DATADIR}/${s}c
 .endfor
-.endif
-.if !defined(WITHOUT_NLS)
-	@(cd ${WRKSRC}/qtiplot/translations/ && ${COPYTREE_SHARE} '*.qm' ${DATADIR}/translations)
 .endif
 
 .include <bsd.port.post.mk>
