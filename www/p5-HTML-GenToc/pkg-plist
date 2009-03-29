@@ -1,0 +1,3 @@
+%%SITE_PERL%%/HTML/GenToc.pm
+bin/hypertoc
+@dirrmtry %%SITE_PERL%%/HTML
