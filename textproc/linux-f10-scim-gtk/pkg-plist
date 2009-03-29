@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/textproc/linux-f10-scim-gtk/pkg-plist,v 1.1 2008-11-21 15:45:58 hrs Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/textproc/linux-f10-scim-gtk/pkg-plist,v 1.2 2009-03-29 15:56:08 bsam Exp $
 usr/lib/gtk-2.0/immodules/im-scim.so
 @dirrmtry usr/lib/gtk-2.0/immodules
 @exec chroot %D /usr/bin/gtk-query-immodules-2.0-32 > %D/etc/gtk-2.0/%%LINUX_RPM_ARCH%%-redhat-linux-gnu/gtk.immodules
