@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Hash/Flatten.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Flatten/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Flatten
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash
+@dirrmtry %%SITE_PERL%%/Hash/Flatten
+@dirrmtry %%SITE_PERL%%/Hash
