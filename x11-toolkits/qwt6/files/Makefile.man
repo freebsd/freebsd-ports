@@ -59,13 +59,13 @@ MAN3=	QwtAbstractScale.3 \
 	QwtPlotPicker.3 \
 	QwtPlotPrintFilter.3 \
 	QwtPlotRasterItem.3 \
+	QwtPlotRescaler.3 \
 	QwtPlotScaleItem.3 \
 	QwtPlotSpectrogram.3 \
 	QwtPlotSvgItem.3 \
 	QwtPlotZoomer.3 \
 	QwtPolygonFData.3 \
 	QwtRasterData.3 \
-	QwtRect.3 \
 	QwtRichTextEngine.3 \
 	QwtRoundScaleDraw.3 \
 	QwtScaleArithmetic.3 \

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qwt
-PORTVERSION=	5.1.1
-PORTREVISION=	1
+PORTVERSION=	5.2.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 
@@ -21,18 +20,20 @@ USE_GMAKE=	yes
 QMAKE_ARGS+=	-unix -recursive PREFIX=${PREFIX}
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	DESIGNER_PLUGIN "Install plugin for Qt Designer" on
+
+STRIP_FILES=	lib/libqwt.so.${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.man>
 
 .if !defined(WITHOUT_DESIGNER_PLUGIN)
-#QT_COMPONENTS+=	designer rcc_build
-BUILD_DEPENDS+=	${LOCALBASE}/bin/rcc:${PORTSDIR}/devel/qt4-rcc
-LIB_DEPENDS+=	QtDesigner:${PORTSDIR}/devel/qt4-designer
-QMAKE_ARGS+=	CONFIG+=QwtDesigner PLUGINDIR=${PREFIX}/lib/qt4/plugins
+QT_COMPONENTS+=	designer rcc_build
+QMAKE_ARGS+=	CONFIG+=QwtDesigner PLUGINDIR=${PREFIX}/${QT_PLUGINDIR_REL}
 PLIST_SUB+=	DESIGNER_PLUGIN=""
+STRIP_FILES+=	${QT_PLUGINDIR_REL}/designer/libqwt_designer_plugin.so
 .else
 PLIST_SUB+=	DESIGNER_PLUGIN="@comment "
 .endif
@@ -46,6 +47,7 @@ post-configure:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/Qwt* ${PREFIX}/man/man3
+	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
 .if !defined(NOPORTDOCS)
 	(cd ${WRKSRC}/doc/html/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif

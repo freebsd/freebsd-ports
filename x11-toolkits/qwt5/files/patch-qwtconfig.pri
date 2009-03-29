@@ -1,10 +1,10 @@
---- ./qwtconfig.pri.orig	2008-05-01 17:43:56.000000000 +0400
-+++ ./qwtconfig.pri	2008-05-03 02:21:17.000000000 +0400
+--- ./qwtconfig.pri.orig	2009-03-22 18:41:05.000000000 +0300
++++ ./qwtconfig.pri	2009-03-25 23:02:54.000000000 +0300
 @@ -8,7 +8,7 @@
- VERSION      = $$VER_MAJ.$$VER_MIN.$$VER_PAT
+ VERSION      = $${VER_MAJ}.$${VER_MIN}.$${VER_PAT}
  
  unix {
--    INSTALLBASE    = /usr/local/qwt-5.1.1
+-    INSTALLBASE    = /usr/local/qwt-5.2.0
 +    INSTALLBASE    = $$PREFIX
  }
  
