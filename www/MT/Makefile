@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	MT
-PORTVERSION=	4.23
+PORTVERSION=	4.25
 CATEGORIES=	www
-MASTER_SITES=	http://www.movabletype.org/downloads/
+MASTER_SITES=	http://www.movabletype.org/downloads/stable/
 DISTNAME=	MTOS-${PORTVERSION}-en
 
 MAINTAINER=	arved@FreeBSD.org
