@@ -1,0 +1,11 @@
+Hash::Merge::Simple will recursively merge two or more hashes and
+return the result as a new hash reference. The merge function will
+descend and merge hashes that exist under the same node in both the
+left and right hash, but doesn't attempt to combine arrays, objects,
+scalars, or anything else. The rightmost hash also takes precedence,
+replacing whatever was in the left hash if a conflict occurs.
+
+This code was pretty much taken straight from Catalyst::Utils, and
+modified to handle more than 2 hashes at the same time.
+
+WWW: http://search.cpan.org/dist/Hash-Merge-Simple/
