@@ -846,6 +846,7 @@
     SUBDIR += p5-HTML-GoogleMaps
     SUBDIR += p5-HTML-Highlight
     SUBDIR += p5-HTML-LinkExtractor
+    SUBDIR += p5-HTML-LinkList
     SUBDIR += p5-HTML-Lint
     SUBDIR += p5-HTML-Location
     SUBDIR += p5-HTML-Macro
