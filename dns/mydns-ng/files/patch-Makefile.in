@@ -1,10 +1,10 @@
---- Makefile.in.orig	Wed Dec 18 15:16:33 2002
-+++ Makefile.in	Wed Dec 18 15:16:43 2002
-@@ -529,7 +529,6 @@
+--- Makefile.in.orig	2009-03-22 05:02:50.000000000 +0800
++++ Makefile.in	2009-03-22 05:02:56.000000000 +0800
+@@ -637,7 +637,6 @@
  
  install-data-am:
  	@$(NORMAL_INSTALL)
 -	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
  
- install-exec-am:
+ install-dvi: install-dvi-recursive
  
