@@ -66,6 +66,7 @@
     SUBDIR += maradns
     SUBDIR += mdnsd
     SUBDIR += mydns
+    SUBDIR += mydns-ng
     SUBDIR += noip
     SUBDIR += nsd
     SUBDIR += nsd2
