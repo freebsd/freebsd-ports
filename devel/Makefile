@@ -1494,6 +1494,7 @@
     SUBDIR += p5-Iterator-Misc
     SUBDIR += p5-Iterator-Util
     SUBDIR += p5-JQuery
+    SUBDIR += p5-JSON-RPC
     SUBDIR += p5-Java
     SUBDIR += p5-Lexical-Alias
     SUBDIR += p5-Lexical-Persistence
