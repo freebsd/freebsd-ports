@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Merge/.packlist
+%%SITE_PERL%%/Algorithm/Merge.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Merge
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
+@dirrmtry %%SITE_PERL%%/Algorithm
