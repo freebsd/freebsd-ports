@@ -7,6 +7,7 @@
 
 PORTNAME=	acroread8
 PORTVERSION=	8.1.4
+PORTREVISION=	1
 CATEGORIES?=	print linux
 MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/8.x/${PORTVERSION}/${ADOBE_LANG:L}/ \
 		ftp://ftp.adobe.com/pub/adobe/reader/unix/8.x/${PORTVERSION}/${ADOBE_LANG:L}/
@@ -73,6 +74,7 @@ pre-install:
 		${WRKDIR}/bin
 do-install:
 	@${ECHO_CMD} Installing...
+	@${MKDIR} ${PREFIX}/share/desktop-directories
 	@${MKDIR} ${INSTALLDIR}
 	@cd ${WRKSRC} && ${SETENV} PATH=${WRKDIR}/bin:${PATH} ${INSTALLEXEC} > /dev/null
 
