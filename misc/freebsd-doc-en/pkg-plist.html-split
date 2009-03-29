@@ -601,6 +601,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/policies-encumbered.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/policies-shlib.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/policies.html
+%%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/posix-nls.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/secure-bufferov.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/secure-chroot.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/secure-philosophy.html

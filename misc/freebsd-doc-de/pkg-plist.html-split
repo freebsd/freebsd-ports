@@ -21,6 +21,13 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/modems.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/pcmcia.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/power-management.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/TRADEMARKS.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/freebsd-advantages.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/freebsd-conclusion.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/freebsd-features.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/freebsd-security.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/freebsd-support.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/adding-a-user.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/comments-welcome.html
@@ -44,7 +51,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/architectures.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/basics.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/debugging.html
-%%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/dma.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/emacs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/index.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/introduction-archguide.html
@@ -525,6 +531,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing-tinderbox.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-autotools.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-databases.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-emacs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-gettext.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-gnome.html
@@ -537,6 +544,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-ruby.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-sdl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-sub-files.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-tcl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-wx.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-xfce.html
