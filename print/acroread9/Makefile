@@ -7,6 +7,7 @@
 
 PORTNAME=	acroread9
 PORTVERSION=	9.1.0
+PORTREVISION=	1
 CATEGORIES?=	print linux
 MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/9.x/${PORTVERSION:S,.0$,,}/${ADOBE_LANG:L}/ \
 		ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/${PORTVERSION:S,.0$,,}/${ADOBE_LANG:L}/
@@ -71,9 +72,11 @@ pre-install:
 	@${INSTALL_SCRIPT} \
 		${WRKDIR}/ln ${WRKDIR}/rm ${WRKDIR}/mv \
 		${WRKDIR}/bin
+
 do-install:
 	@${ECHO_CMD} Installing...
 	@${MKDIR} ${INSTALLDIR}
+	@${MKDIR} ${PREFIX}/share/desktop-directories
 	@cd ${WRKSRC} && ${SETENV} PATH=${WRKDIR}/bin:${PATH} ${INSTALLEXEC} > /dev/null
 
 .if ${ADOBE_LANG:U} != ENU

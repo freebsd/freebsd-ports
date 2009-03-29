@@ -7,6 +7,8 @@ if [ "$2" != "POST-DEINSTALL" \
 fi
 
 cat <<EOT | while read F; do rm -f %%PREFIX%%/$F; done
+share/applications/AdobeReader.desktop
+share/applications/defaults.list.new
 share/icons/hicolor/.xdg-icon-resource-dummy
 share/icons/hicolor/128x128/apps/AdobeReader9.png
 share/icons/hicolor/128x128/apps/adobe.pdf.png
