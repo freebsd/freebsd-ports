@@ -1,0 +1,346 @@
+%%SITE_PERL%%/MojoMojo.pm
+%%SITE_PERL%%/MojoMojo/Controller/Admin.pm
+%%SITE_PERL%%/MojoMojo/Controller/Attachment.pm
+%%SITE_PERL%%/MojoMojo/Controller/Comment.pm
+%%SITE_PERL%%/MojoMojo/Controller/Export.pm
+%%SITE_PERL%%/MojoMojo/Controller/Gallery.pm
+%%SITE_PERL%%/MojoMojo/Controller/JSON.pm
+%%SITE_PERL%%/MojoMojo/Controller/Journal.pm
+%%SITE_PERL%%/MojoMojo/Controller/Jsrpc.pm
+%%SITE_PERL%%/MojoMojo/Controller/Page.pm
+%%SITE_PERL%%/MojoMojo/Controller/PageAdmin.pm
+%%SITE_PERL%%/MojoMojo/Controller/Root.pm
+%%SITE_PERL%%/MojoMojo/Controller/Tag.pm
+%%SITE_PERL%%/MojoMojo/Controller/User.pm
+%%SITE_PERL%%/MojoMojo/Formatter.pm
+%%SITE_PERL%%/MojoMojo/Formatter/Comment.pm
+%%SITE_PERL%%/MojoMojo/Formatter/IRCLog.pm
+%%SITE_PERL%%/MojoMojo/Formatter/Include.pm
+%%SITE_PERL%%/MojoMojo/Formatter/Markdown.pm
+%%SITE_PERL%%/MojoMojo/Formatter/Pod.pm
+%%SITE_PERL%%/MojoMojo/Formatter/Redirect.pm
+%%SITE_PERL%%/MojoMojo/Formatter/Scrub.pm
+%%SITE_PERL%%/MojoMojo/Formatter/SyntaxHighlight.pm
+%%SITE_PERL%%/MojoMojo/Formatter/TOC.pm
+%%SITE_PERL%%/MojoMojo/Formatter/Textile.pm
+%%SITE_PERL%%/MojoMojo/Formatter/Wiki.pm
+%%SITE_PERL%%/MojoMojo/I18N/de.po
+%%SITE_PERL%%/MojoMojo/I18N/en.po
+%%SITE_PERL%%/MojoMojo/I18N/fr.po
+%%SITE_PERL%%/MojoMojo/I18N/ja.po
+%%SITE_PERL%%/MojoMojo/I18N/no.po
+%%SITE_PERL%%/MojoMojo/INSTALL
+%%SITE_PERL%%/MojoMojo/Installation.pod
+%%SITE_PERL%%/MojoMojo/Model/DBIC.pm
+%%SITE_PERL%%/MojoMojo/Model/Search.pm
+%%SITE_PERL%%/MojoMojo/Prefs.pod
+%%SITE_PERL%%/MojoMojo/Schema.pm
+%%SITE_PERL%%/MojoMojo/Schema/Base/Result.pm
+%%SITE_PERL%%/MojoMojo/Schema/Base/ResultSet.pm
+%%SITE_PERL%%/MojoMojo/Schema/Result/Attachment.pm
+%%SITE_PERL%%/MojoMojo/Schema/Result/Comment.pm
+%%SITE_PERL%%/MojoMojo/Schema/Result/Content.pm
+%%SITE_PERL%%/MojoMojo/Schema/Result/Entry.pm
+%%SITE_PERL%%/MojoMojo/Schema/Result/Journal.pm
+%%SITE_PERL%%/MojoMojo/Schema/Result/Link.pm
+%%SITE_PERL%%/MojoMojo/Schema/Result/Page.pm
+%%SITE_PERL%%/MojoMojo/Schema/Result/PageVersion.pm
+%%SITE_PERL%%/MojoMojo/Schema/Result/PathPermissions.pm
+%%SITE_PERL%%/MojoMojo/Schema/Result/Person.pm
+%%SITE_PERL%%/MojoMojo/Schema/Result/Photo.pm
+%%SITE_PERL%%/MojoMojo/Schema/Result/Preference.pm
+%%SITE_PERL%%/MojoMojo/Schema/Result/Role.pm
+%%SITE_PERL%%/MojoMojo/Schema/Result/RoleMember.pm
+%%SITE_PERL%%/MojoMojo/Schema/Result/RolePrivilege.pm
+%%SITE_PERL%%/MojoMojo/Schema/Result/Tag.pm
+%%SITE_PERL%%/MojoMojo/Schema/Result/WantedPage.pm
+%%SITE_PERL%%/MojoMojo/Schema/ResultSet/Attachment.pm
+%%SITE_PERL%%/MojoMojo/Schema/ResultSet/Content.pm
+%%SITE_PERL%%/MojoMojo/Schema/ResultSet/Page.pm
+%%SITE_PERL%%/MojoMojo/Schema/ResultSet/Person.pm
+%%SITE_PERL%%/MojoMojo/Schema/ResultSet/Role.pm
+%%SITE_PERL%%/MojoMojo/Schema/ResultSet/Tag.pm
+%%SITE_PERL%%/MojoMojo/View/JSON.pm
+%%SITE_PERL%%/MojoMojo/View/TT.pm
+%%SITE_PERL%%/MojoMojo/mojomojo.conf
+%%SITE_PERL%%/MojoMojo/resources/logo/mmlogovector.psd
+%%SITE_PERL%%/MojoMojo/root/base/admin/create_role.tt
+%%SITE_PERL%%/MojoMojo/root/base/admin/edit_role.tt
+%%SITE_PERL%%/MojoMojo/root/base/admin/role.tt
+%%SITE_PERL%%/MojoMojo/root/base/admin/role_form.tt
+%%SITE_PERL%%/MojoMojo/root/base/admin/settings.tt
+%%SITE_PERL%%/MojoMojo/root/base/admin/toplinks.tt
+%%SITE_PERL%%/MojoMojo/root/base/admin/update_user.tt
+%%SITE_PERL%%/MojoMojo/root/base/admin/user.tt
+%%SITE_PERL%%/MojoMojo/root/base/attachments/list.tt
+%%SITE_PERL%%/MojoMojo/root/base/breadcrumbs.tt
+%%SITE_PERL%%/MojoMojo/root/base/child_menu.tt
+%%SITE_PERL%%/MojoMojo/root/base/comment.tt
+%%SITE_PERL%%/MojoMojo/root/base/comment/login.tt
+%%SITE_PERL%%/MojoMojo/root/base/comment/post.tt
+%%SITE_PERL%%/MojoMojo/root/base/edithelp.tt
+%%SITE_PERL%%/MojoMojo/root/base/export.tt
+%%SITE_PERL%%/MojoMojo/root/base/feeds.tt
+%%SITE_PERL%%/MojoMojo/root/base/footer.tt
+%%SITE_PERL%%/MojoMojo/root/base/gallery.tt
+%%SITE_PERL%%/MojoMojo/root/base/gallery/cloud.tt
+%%SITE_PERL%%/MojoMojo/root/base/gallery/footer.tt
+%%SITE_PERL%%/MojoMojo/root/base/gallery/imginfo.tt
+%%SITE_PERL%%/MojoMojo/root/base/gallery/pager.tt
+%%SITE_PERL%%/MojoMojo/root/base/gallery/photo.tt
+%%SITE_PERL%%/MojoMojo/root/base/gallery/photo_info.tt
+%%SITE_PERL%%/MojoMojo/root/base/gallery/tags.tt
+%%SITE_PERL%%/MojoMojo/root/base/global.tt
+%%SITE_PERL%%/MojoMojo/root/base/header.tt
+%%SITE_PERL%%/MojoMojo/root/base/mail/reset_password.tt
+%%SITE_PERL%%/MojoMojo/root/base/mail/validate.tt
+%%SITE_PERL%%/MojoMojo/root/base/message.tt
+%%SITE_PERL%%/MojoMojo/root/base/mimetypes/default.tt
+%%SITE_PERL%%/MojoMojo/root/base/mimetypes/image.tt
+%%SITE_PERL%%/MojoMojo/root/base/navbar.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/addtags.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/atom.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/attachments.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/bottomnav.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/edit.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/editbar.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/info.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/insert.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/list.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/permissions.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/print.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/recent.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/rollback.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/rss.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/rss_full.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/search.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/search_inline.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/suggest.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/tags.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/view.tt
+%%SITE_PERL%%/MojoMojo/root/base/page/wrapper.tt
+%%SITE_PERL%%/MojoMojo/root/base/pager.tt
+%%SITE_PERL%%/MojoMojo/root/base/rest/page/recent.tt
+%%SITE_PERL%%/MojoMojo/root/base/rest/page/view.tt
+%%SITE_PERL%%/MojoMojo/root/base/sidebar.tt
+%%SITE_PERL%%/MojoMojo/root/base/tag/cloud.tt
+%%SITE_PERL%%/MojoMojo/root/base/tag/list.tt
+%%SITE_PERL%%/MojoMojo/root/base/tag/recent.tt
+%%SITE_PERL%%/MojoMojo/root/base/toolbar.tt
+%%SITE_PERL%%/MojoMojo/root/base/user/editprofile.tt
+%%SITE_PERL%%/MojoMojo/root/base/user/list.tt
+%%SITE_PERL%%/MojoMojo/root/base/user/login.tt
+%%SITE_PERL%%/MojoMojo/root/base/user/prefs.tt
+%%SITE_PERL%%/MojoMojo/root/base/user/profile.tt
+%%SITE_PERL%%/MojoMojo/root/base/user/recover_pass.tt
+%%SITE_PERL%%/MojoMojo/root/base/user/register.tt
+%%SITE_PERL%%/MojoMojo/root/base/user/user_search.tt
+%%SITE_PERL%%/MojoMojo/root/base/user/validate.tt
+%%SITE_PERL%%/MojoMojo/root/favicon.ico
+%%SITE_PERL%%/MojoMojo/root/formfu/blank
+%%SITE_PERL%%/MojoMojo/root/formfu/block
+%%SITE_PERL%%/MojoMojo/root/formfu/content_button
+%%SITE_PERL%%/MojoMojo/root/formfu/end_block
+%%SITE_PERL%%/MojoMojo/root/formfu/end_form
+%%SITE_PERL%%/MojoMojo/root/formfu/field
+%%SITE_PERL%%/MojoMojo/root/formfu/form
+%%SITE_PERL%%/MojoMojo/root/formfu/form_error_message
+%%SITE_PERL%%/MojoMojo/root/formfu/hidden
+%%SITE_PERL%%/MojoMojo/root/formfu/input
+%%SITE_PERL%%/MojoMojo/root/formfu/input_tag
+%%SITE_PERL%%/MojoMojo/root/formfu/label
+%%SITE_PERL%%/MojoMojo/root/formfu/legend
+%%SITE_PERL%%/MojoMojo/root/formfu/multi
+%%SITE_PERL%%/MojoMojo/root/formfu/multi_ltr
+%%SITE_PERL%%/MojoMojo/root/formfu/multi_rtl
+%%SITE_PERL%%/MojoMojo/root/formfu/non_block
+%%SITE_PERL%%/MojoMojo/root/formfu/radiogroup
+%%SITE_PERL%%/MojoMojo/root/formfu/radiogroup_tag
+%%SITE_PERL%%/MojoMojo/root/formfu/select
+%%SITE_PERL%%/MojoMojo/root/formfu/select_tag
+%%SITE_PERL%%/MojoMojo/root/formfu/start_block
+%%SITE_PERL%%/MojoMojo/root/formfu/start_form
+%%SITE_PERL%%/MojoMojo/root/formfu/textarea_tag
+%%SITE_PERL%%/MojoMojo/root/forms/admin/role_form.yml
+%%SITE_PERL%%/MojoMojo/root/forms/admin/settings.yml
+%%SITE_PERL%%/MojoMojo/root/forms/comment/comment.yml
+%%SITE_PERL%%/MojoMojo/root/forms/pageadmin/edit.yml
+%%SITE_PERL%%/MojoMojo/root/forms/user/editprofile.yml
+%%SITE_PERL%%/MojoMojo/root/forms/user/password.yml
+%%SITE_PERL%%/MojoMojo/root/forms/user/prefs.yml
+%%SITE_PERL%%/MojoMojo/root/forms/user/register.yml
+%%SITE_PERL%%/MojoMojo/root/static/catalyst.png
+%%SITE_PERL%%/MojoMojo/root/static/css/jquery.autocomplete.css
+%%SITE_PERL%%/MojoMojo/root/static/css/progress.css
+%%SITE_PERL%%/MojoMojo/root/static/emote/47_47.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/48_48.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/49_49.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/50_50.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/51_51.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/52_52.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/53_53.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/55_55.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/56_56.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/57_57.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/58_58.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/59_59.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/60_60.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/61_61.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/62_62.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/63_63.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/64_64.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/66_66.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/69_69.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/70_70.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/71_71.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/72_72.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/73_73.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/74_74.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/75_75.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/77_77.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/angel_smile.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/angry_smile.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/bat.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/beer_mug.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/broken_heart.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/cake.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/camera.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/cat.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/clock.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/coffee.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/confused_smile.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/cry_smile.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/devil_smile.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/dog.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/envelope.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/film.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/get.pl
+%%SITE_PERL%%/MojoMojo/root/static/emote/girl.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/girl_hug.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/guy.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/guy_hug.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/heart.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/kiss.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/lightbulb.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/martini.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/messenger.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/moon.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/note.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/omg_smile.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/phone.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/present.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/red_smile.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/regular_smile.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/rose.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/sad_smile.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/shades_smile.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/star.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/teeth_smile.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/thumbs_down.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/thumbs_up.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/tongue_smile.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/what_smile.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/wilted_rose.gif
+%%SITE_PERL%%/MojoMojo/root/static/emote/wink_smile.gif
+%%SITE_PERL%%/MojoMojo/root/static/favicon.ico
+%%SITE_PERL%%/MojoMojo/root/static/flash/swfupload.swf
+%%SITE_PERL%%/MojoMojo/root/static/flash/swfupload_f8.swf
+%%SITE_PERL%%/MojoMojo/root/static/flash/swfupload_f9.swf
+%%SITE_PERL%%/MojoMojo/root/static/gfx/background.jpg
+%%SITE_PERL%%/MojoMojo/root/static/gfx/dropshadow.png
+%%SITE_PERL%%/MojoMojo/root/static/gfx/header-long.png
+%%SITE_PERL%%/MojoMojo/root/static/gfx/header.png
+%%SITE_PERL%%/MojoMojo/root/static/gfx/uploadbutton.png
+%%SITE_PERL%%/MojoMojo/root/static/js/edit.js
+%%SITE_PERL%%/MojoMojo/root/static/js/fat.js
+%%SITE_PERL%%/MojoMojo/root/static/js/jquery.autocomplete.js
+%%SITE_PERL%%/MojoMojo/root/static/js/jquery.form.js
+%%SITE_PERL%%/MojoMojo/root/static/js/jquery.inplace.js
+%%SITE_PERL%%/MojoMojo/root/static/js/jquery.js
+%%SITE_PERL%%/MojoMojo/root/static/js/jquery.livequery.js
+%%SITE_PERL%%/MojoMojo/root/static/js/swfupload.js
+%%SITE_PERL%%/MojoMojo/root/static/js/swfupload.queue.js
+%%SITE_PERL%%/MojoMojo/root/static/js/wiki.js
+%%SITE_PERL%%/MojoMojo/root/static/mojomojo.css
+%%SITE_PERL%%/MojoMojo/root/static/overrides.css
+%%SITE_PERL%%/MojoMojo/root/static/pod.css
+%%SITE_PERL%%/MojoMojo/root/static/reset.css
+%%SITE_PERL%%/MojoMojo/root/static/shrinkedhead.jpg
+%%SITE_PERL%%/MojoMojo/root/static/spinner.gif
+%%SITE_PERL%%/MojoMojo/root/static/themes/default/images/background.jpg
+%%SITE_PERL%%/MojoMojo/root/static/themes/default/images/header.png
+%%SITE_PERL%%/MojoMojo/root/static/themes/default/images/mmlogo.png
+%%SITE_PERL%%/MojoMojo/root/static/themes/default/theme.css
+%%SITE_PERL%%/MojoMojo/root/static/themes/nordaaker/images/background.png
+%%SITE_PERL%%/MojoMojo/root/static/themes/nordaaker/images/nordaaker.png
+%%SITE_PERL%%/MojoMojo/root/static/themes/nordaaker/images/nordadiffus.png
+%%SITE_PERL%%/MojoMojo/root/static/themes/nordaaker/theme.css
+%%SITE_PERL%%/MojoMojo/root/static/toolbar/bold.png
+%%SITE_PERL%%/MojoMojo/root/static/toolbar/center.png
+%%SITE_PERL%%/MojoMojo/root/static/toolbar/drawing.png
+%%SITE_PERL%%/MojoMojo/root/static/toolbar/heading.png
+%%SITE_PERL%%/MojoMojo/root/static/toolbar/hyperlink.png
+%%SITE_PERL%%/MojoMojo/root/static/toolbar/italic.png
+%%SITE_PERL%%/MojoMojo/root/static/toolbar/justify.png
+%%SITE_PERL%%/MojoMojo/root/static/toolbar/left.png
+%%SITE_PERL%%/MojoMojo/root/static/toolbar/list_bullet.png
+%%SITE_PERL%%/MojoMojo/root/static/toolbar/list_enum.png
+%%SITE_PERL%%/MojoMojo/root/static/toolbar/preformatted.png
+%%SITE_PERL%%/MojoMojo/root/static/toolbar/right.png
+%%SITE_PERL%%/MojoMojo/root/static/toolbar/strikethrough.png
+%%SITE_PERL%%/MojoMojo/root/static/toolbar/wikilink.png
+%%SITE_PERL%%/Text/SmartyPants.pm
+%%SITE_PERL%%/Text/Textile2.pm
+bin/hash_passwords.pl
+bin/mojomojo_cgi.pl
+bin/mojomojo_create.pl
+bin/mojomojo_fastcgi.pl
+bin/mojomojo_server.pl
+bin/mojomojo_spawn_db.pl
+bin/mojomojo_test.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MojoMojo/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MojoMojo
+@dirrmtry %%SITE_PERL%%/Text
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/toolbar
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/nordaaker/images
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/nordaaker
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/default/images
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/default
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/js
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/gfx
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/flash
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/emote
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/css
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/static
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/forms/user
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/forms/pageadmin
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/forms/comment
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/forms/admin
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/forms
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/formfu
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/user
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/tag
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/rest/page
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/rest
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/page
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/mimetypes
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/mail
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/gallery
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/comment
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/attachments
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/admin
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/base
+@dirrmtry %%SITE_PERL%%/MojoMojo/root
+@dirrmtry %%SITE_PERL%%/MojoMojo/resources/logo
+@dirrmtry %%SITE_PERL%%/MojoMojo/resources
+@dirrmtry %%SITE_PERL%%/MojoMojo/View
+@dirrmtry %%SITE_PERL%%/MojoMojo/Schema/ResultSet
+@dirrmtry %%SITE_PERL%%/MojoMojo/Schema/Result
+@dirrmtry %%SITE_PERL%%/MojoMojo/Schema/Base
+@dirrmtry %%SITE_PERL%%/MojoMojo/Schema
+@dirrmtry %%SITE_PERL%%/MojoMojo/Model
+@dirrmtry %%SITE_PERL%%/MojoMojo/I18N
+@dirrmtry %%SITE_PERL%%/MojoMojo/Formatter
+@dirrmtry %%SITE_PERL%%/MojoMojo/Controller
+@dirrmtry %%SITE_PERL%%/MojoMojo
