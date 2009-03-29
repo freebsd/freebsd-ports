@@ -20,6 +20,7 @@
 %%SITE_PERL%%/Moose/Cookbook/Meta/Recipe3.pod
 %%SITE_PERL%%/Moose/Cookbook/Meta/Recipe4.pod
 %%SITE_PERL%%/Moose/Cookbook/Meta/Recipe5.pod
+%%SITE_PERL%%/Moose/Cookbook/Meta/Recipe7.pod
 %%SITE_PERL%%/Moose/Cookbook/Roles/Recipe1.pod
 %%SITE_PERL%%/Moose/Cookbook/Roles/Recipe2.pod
 %%SITE_PERL%%/Moose/Cookbook/Roles/Recipe3.pod
@@ -38,7 +39,9 @@
 %%SITE_PERL%%/Moose/Manual/Classes.pod
 %%SITE_PERL%%/Moose/Manual/Concepts.pod
 %%SITE_PERL%%/Moose/Manual/Construction.pod
+%%SITE_PERL%%/Moose/Manual/Contributing.pod
 %%SITE_PERL%%/Moose/Manual/Delegation.pod
+%%SITE_PERL%%/Moose/Manual/Delta.pod
 %%SITE_PERL%%/Moose/Manual/MethodModifiers.pod
 %%SITE_PERL%%/Moose/Manual/MooseX.pod
 %%SITE_PERL%%/Moose/Manual/MOP.pod
