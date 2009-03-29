@@ -1,6 +1,6 @@
---- fitPlugins/fitRational0/fitRational0.pro.orig	2007-10-27 00:15:32.000000000 +0200
-+++ fitPlugins/fitRational0/fitRational0.pro	2007-12-15 12:14:56.000000000 +0100
-@@ -12,9 +12,8 @@
+--- ./fitPlugins/fitRational0/fitRational0.pro.orig	2009-03-05 15:56:56.000000000 +0300
++++ ./fitPlugins/fitRational0/fitRational0.pro	2009-03-26 23:11:59.000000000 +0300
+@@ -12,14 +12,13 @@
  DESTDIR           = ../
   
  # statically link against GSL in 3rdparty
@@ -12,3 +12,9 @@
  
  #dynamically link against GSL installed system-wide
  #unix:LIBS += -L /usr/lib$${libsuff} -lgsl -lgslcblas
+ 
+-target.path=/usr/lib$${libsuff}/qtiplot/plugins
++target.path=$$PREFIX/share/qtiplot/fitPlugins
+ INSTALLS += target
+ 
+ SOURCES += fitRational0.cpp
