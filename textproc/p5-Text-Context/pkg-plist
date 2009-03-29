@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Text/Context.pm
+%%SITE_PERL%%/Text/Context/Para.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Context/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Context
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrmtry %%SITE_PERL%%/Text/Context
+@dirrmtry %%SITE_PERL%%/Text
