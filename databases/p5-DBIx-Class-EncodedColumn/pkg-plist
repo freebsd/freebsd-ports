@@ -1,0 +1,13 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/EncodedColumn/.packlist
+%%SITE_PERL%%/DBIx/Class/EncodedColumn.pm
+%%SITE_PERL%%/DBIx/Class/EncodedColumn/Crypt/Eksblowfish/Bcrypt.pm
+%%SITE_PERL%%/DBIx/Class/EncodedColumn/Crypt/OpenPGP.pm
+%%SITE_PERL%%/DBIx/Class/EncodedColumn/Digest.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/EncodedColumn
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx/Class/EncodedColumn/Crypt/Eksblowfish
+@dirrmtry %%SITE_PERL%%/DBIx/Class/EncodedColumn/Crypt
+@dirrmtry %%SITE_PERL%%/DBIx/Class/EncodedColumn
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/DBIx
