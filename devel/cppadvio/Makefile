@@ -13,13 +13,16 @@ MASTER_SITES=	http://okmij.org/ftp/packages/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ijliao
 
-MAINTAINER=	oleg@pobox.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced i/o, networking, and arithmetic compression C++ classlib
 
 WRKSRC=		${WRKDIR}/cppadvio
 ALL_TARGET=	lib
 USE_GMAKE=	yes
 USE_GCC=	2.95
+
+DEPRECATED=	abandoned upstream, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+EXPIRATION_DATE=2009-04-29
 
 post-patch:
 	@( cd ${WRKSRC}; ${MV} c++ c++.orig; \
