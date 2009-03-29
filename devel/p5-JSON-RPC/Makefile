@@ -16,7 +16,7 @@ COMMENT=	Perl implementation of JSON-RPC 1.1 protocol
 
 RUN_DEPENDS=	p5-CGI.pm>=2.92:${PORTSDIR}/www/p5-CGI.pm \
 		p5-JSON>=2.0:${PORTSDIR}/converters/p5-JSON \
-		p5-libwww:${PORTSDIR}/www/p5-libwww
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	YES
 
