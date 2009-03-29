@@ -1,0 +1,14 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/RPC/.packlist
+%%SITE_PERL%%/JSON/RPC.pm
+%%SITE_PERL%%/JSON/RPC/Client.pm
+%%SITE_PERL%%/JSON/RPC/Server.pm
+%%SITE_PERL%%/JSON/RPC/Procedure.pm
+%%SITE_PERL%%/JSON/RPC/Server/CGI.pm
+%%SITE_PERL%%/JSON/RPC/Server/Daemon.pm
+%%SITE_PERL%%/JSON/RPC/Server/Apache2.pm
+%%SITE_PERL%%/JSONRPC.pm
+@dirrm %%SITE_PERL%%/JSON/RPC/Server
+@dirrm %%SITE_PERL%%/JSON/RPC
+@dirrmtry %%SITE_PERL%%/JSON
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/RPC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON
