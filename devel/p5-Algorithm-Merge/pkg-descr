@@ -1,0 +1,4 @@
+This module complements Algorithm::Diff by providing three-way merge
+and diff functions.
+
+WWW: http://search.cpan.org/dist/Algorithm-Merge/

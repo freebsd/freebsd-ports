@@ -950,6 +950,7 @@
     SUBDIR += p5-Algorithm-LUHN
     SUBDIR += p5-Algorithm-MDiff
     SUBDIR += p5-Algorithm-MarkovChain
+    SUBDIR += p5-Algorithm-Merge
     SUBDIR += p5-Algorithm-MinMax
     SUBDIR += p5-Algorithm-NaiveBayes
     SUBDIR += p5-Algorithm-Networksort
