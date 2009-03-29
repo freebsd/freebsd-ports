@@ -39,7 +39,4 @@ do-install:
 	cd ${PREFIX}/bin && ${LN} -s -f acroread acroread8
 	cd ${PREFIX}/bin && ${LN} -s -f acroread acroread9
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>
