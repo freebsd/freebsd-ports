@@ -1778,6 +1778,7 @@
     SUBDIR += p5-String-Approx
     SUBDIR += p5-String-CRC32
     SUBDIR += p5-String-Checker
+    SUBDIR += p5-String-Diff
     SUBDIR += p5-String-Ediff
     SUBDIR += p5-String-LRC
     SUBDIR += p5-String-Parity
