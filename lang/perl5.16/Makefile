@@ -20,7 +20,7 @@ DIST_SUBDIR=	perl
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
-CONFLICTS=	perl-5.6.* perl-5.9.*
+CONFLICTS=	perl-5.6.* perl-5.8.*
 
 OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 		GDBM		"Build GDBM_File extension"		off \
