@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scummvm
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13.0
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
 
@@ -17,6 +17,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_SDL=	sdl
+
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=--with-sdl-prefix=${LOCALBASE} \
 		--disable-alsa \
