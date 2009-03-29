@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Catalyst/Plugin/Email.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Email/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Email
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst

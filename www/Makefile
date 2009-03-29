@@ -751,6 +751,7 @@
     SUBDIR += p5-Catalyst-Plugin-ConfigLoader-Environment
     SUBDIR += p5-Catalyst-Plugin-CookiedSession
     SUBDIR += p5-Catalyst-Plugin-DefaultEnd
+    SUBDIR += p5-Catalyst-Plugin-Email
     SUBDIR += p5-Catalyst-Plugin-FillInForm
     SUBDIR += p5-Catalyst-Plugin-FormBuilder
     SUBDIR += p5-Catalyst-Plugin-FormCanary
