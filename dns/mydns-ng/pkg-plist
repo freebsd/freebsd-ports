@@ -5,9 +5,6 @@ bin/mydnsimport
 bin/mydnsptrconvert
 etc/mydns.conf.sample
 sbin/mydns
-%%NLS%%share/locale/es/LC_MESSAGES/mydns.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/mydns.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/mydns.mo
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -20,6 +17,11 @@ sbin/mydns
 %%PORTDOCS%%%%DOCSDIR%%/contrib/README
 %%PORTDOCS%%%%DOCSDIR%%/contrib/admin.php
 %%PORTDOCS%%%%DOCSDIR%%/contrib/create_domain.pl
+%%PORTDOCS%%%%DOCSDIR%%/contrib/fix_rr_serial.pl
 %%PORTDOCS%%%%DOCSDIR%%/contrib/stats.php
+%%NLS%%share/locale/es/LC_MESSAGES/mydns.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/mydns.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/mydns.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+

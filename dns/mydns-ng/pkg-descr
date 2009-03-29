@@ -1,15 +1,13 @@
-MyDNS is a free DNS server for UNIX implemented from scratch and
-designed to utilize the MySQL database for data storage.
+MyDNS - SQL-based DNS server
 
-Its primary objectives are stability, security, interoperability,
-and speed, though not necessarily in that order.
+This is the MyDNS package.  MyDNS is a simple, non-recursive Internet
+name daemon which serves records directly from an SQL database.  It
+currently works with either MySQL or PostgreSQL.
 
-MyDNS does not include recursive name service, nor a resolver library.
-It is primarily designed for organizations with many zones and/or
-resource records who desire the ability to perform real-time dynamic
-updates on their DNS data via MySQL.
+This version of the MyDNS package is a development of the original one
+produced by Don Moore.
 
-WWW: http://mydns.bboy.net/
+- 12-May-2004  		Don Moore  		<bboy@bboy.net>
+- 23-January-2009	Howard Wilkinsin	<howard@cohtech.com>
 
-- Alex Dupre
-ale@FreeBSD.org
+WWW:	http://sourceforge.net/projects/mydns-ng/
