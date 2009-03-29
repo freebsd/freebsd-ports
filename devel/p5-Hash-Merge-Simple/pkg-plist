@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Merge/Simple/.packlist
+%%SITE_PERL%%/Hash/Merge/Simple.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Merge/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Merge
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash
+@dirrmtry %%SITE_PERL%%/Hash/Merge
+@dirrmtry %%SITE_PERL%%/Hash
