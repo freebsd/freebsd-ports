@@ -1752,5 +1752,7 @@
 @dirrm %%ACRODIR%%/Adobe/Help
 @dirrm %%ACRODIR%%/Adobe
 @dirrm %%ACRODIR%%
+@exec /bin/mkdir -p %D/share/desktop-directories
+@dirrmtry share/desktop-directories
 @dirrmtry %%ACROBASE%%
 @dirrmtry %%ADOBEBASE%%
