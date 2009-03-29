@@ -1,5 +1,6 @@
-Wine requires FreeBSD 6.2 or above; for FreeBSD 6.x the kernel patch
-provided at http://wiki.freebsd.org/Wine is recommended.
+Wine requires FreeBSD 6.2 or above; FreeBSD 7.0 or later is strongly
+recommended.  For FreeBSD 6.x you may want to consider the patch(es)
+provided at <http://wiki.freebsd.org/Wine>.
 
 The port also installs some of Wine's documentation which describes
 additional programs that are not in the manual pages under
