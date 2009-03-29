@@ -1,0 +1,9 @@
+Config::JFDI is an implementation of Catalyst::Plugin::ConfigLoader
+that exists outside of Catalyst.
+
+Essentially, Config::JFDI will scan a directory for files matching a
+certain name. If such a file is found which also matches an extension
+that Config::Any can read, then the configuration from that file will
+be loaded.
+
+WWW: http://search.cpan.org/dist/Config-JFDI/

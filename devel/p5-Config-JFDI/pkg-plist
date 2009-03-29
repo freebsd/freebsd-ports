@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/JFDI/.packlist
+%%SITE_PERL%%/Config/JFDI.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/JFDI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
+@dirrmtry %%SITE_PERL%%/Config
