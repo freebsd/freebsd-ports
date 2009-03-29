@@ -1419,6 +1419,7 @@ bin/swig%%VER%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/enum_thorough_typesafe_runme.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/imports_runme.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/intermediary_classname_runme.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/li_attribute_runme.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/li_boost_shared_ptr_runme.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/li_std_except_runme.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/li_std_string_runme.cs
@@ -1639,6 +1640,7 @@ bin/swig%%VER%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/inout.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/inplaceadd.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/input.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/insert_directive.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/integers.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/intermediary_classname.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/Makefile
