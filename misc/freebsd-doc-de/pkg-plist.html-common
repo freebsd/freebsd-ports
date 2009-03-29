@@ -3,6 +3,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/docbook.css

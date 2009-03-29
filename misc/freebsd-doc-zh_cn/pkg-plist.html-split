@@ -384,6 +384,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tcpwrappers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/term.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tvcard.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-documentation.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-freebsdupdate.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-portsnap.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading.html
@@ -513,6 +514,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-ruby.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-sdl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-sub-files.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-tcl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-wx.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-xfce.html
