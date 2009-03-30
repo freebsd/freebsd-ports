@@ -15,6 +15,8 @@ COMMENT=	KDE Gartoon Blue SVG iconset
 
 USE_BZIP2=	yes
 
+BROKEN=		does not fetch
+
 WRKSRC=		${WRKDIR}/Gartoon.Blue
 PORT_SHAREDIR?=	"${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}"
 
