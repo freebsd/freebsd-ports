@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ipmitool
-PORTVERSION=	1.8.10
+PORTVERSION=	1.8.11
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	frolov@riss-telecom.ru
+MAINTAINER=	spolyack@collaborativefusion.com
 COMMENT=	CLI to manage IPMI systems
 
 USE_BZIP2=	yes
