@@ -10,10 +10,9 @@ PORTNAME=	pyzor
 PORTVERSION=	0.4.0
 PORTREVISION=	5
 CATEGORIES=	mail python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	A collaborative, networked system to detect and block spam
 
 USE_BZIP2=	yes
