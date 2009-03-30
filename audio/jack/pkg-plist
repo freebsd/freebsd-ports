@@ -1,5 +1,4 @@
 bin/jack_alias
-bin/jack_bufsize
 bin/jack_connect
 bin/jack_disconnect
 bin/jack_evmon
@@ -15,6 +14,8 @@ bin/jack_showtime
 bin/jack_simple_client
 bin/jack_transport
 bin/jack_unload
+bin/jack_transport_client
+bin/jack_netsource
 bin/jackd
 bin/jackrec
 include/jack/intclient.h
@@ -36,9 +37,14 @@ lib/jack/jack_oss.la
 lib/jack/jack_oss.so
 lib/jack/jack_portaudio.la
 lib/jack/jack_portaudio.so
+lib/jack/jack_net.la
+lib/jack/jack_net.so
 lib/libjack.la
 lib/libjack.so
 lib/libjack.so.0
+lib/libjackserver.la
+lib/libjackserver.so
+lib/libjackserver.so.0
 libdata/pkgconfig/jack.pc
 %%DOCS%%share/jack-audio-connection-kit/reference/html/annotated.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/classes.html
@@ -80,7 +86,6 @@ libdata/pkgconfig/jack.pc
 %%DOCS%%share/jack-audio-connection-kit/reference/html/statistics_8h-source.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/statistics_8h.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/struct__jack__midi__event.html
-%%DOCS%%share/jack-audio-connection-kit/reference/html/structjack__midi__event__t.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/structjack__position__t.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/structjack__ringbuffer__data__t.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/structjack__ringbuffer__t.html
@@ -97,6 +102,23 @@ libdata/pkgconfig/jack.pc
 %%DOCS%%share/jack-audio-connection-kit/reference/html/doxygen.png
 %%DOCS%%share/jack-audio-connection-kit/reference/html/fsm.png
 %%DOCS%%share/jack-audio-connection-kit/reference/html/doxygen.css
+%%DOCS%%share/jack-audio-connection-kit/reference/html/group__ClientCallbacks.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/group__ClientFunctions.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/group__ClientThreads.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/group__ErrorOutput.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/group__Functions.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/group__MIDIAPI.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/group__NonCallbackAPI.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/group__PortFunctions.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/group__PortSearching.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/group__ServerControl.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/group__Setting.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/group__The.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/group__TimeFunctions.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/group__TransportControl.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/modules.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/structPOST__PACKED__STRUCTURE.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/struct____attribute____.html
 %%DOCS%%@dirrm share/jack-audio-connection-kit/reference/html
 %%DOCS%%@dirrm share/jack-audio-connection-kit/reference
 %%DOCS%%@dirrm share/jack-audio-connection-kit
