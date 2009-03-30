@@ -7,6 +7,7 @@
 
 PORTNAME=	libkate
 PORTVERSION=	0.1.12
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -19,7 +20,7 @@ LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomelibs pkgconfig
+USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include"
