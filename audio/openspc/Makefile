@@ -19,6 +19,7 @@ COMMENT=	A command line player for .spc and .zst files
 ONLY_FOR_ARCHS=	i386	# contains x86 asm code
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
+MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	README
 PLIST_FILES=	bin/OpenSPClite include/OpenSPC.h lib/libOpenSPC.so \

@@ -18,6 +18,7 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 # disable optimization flags to avoid a possible bug in gcc
 # (gcc tries to allocate memory in an endless loop)

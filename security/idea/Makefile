@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line idea encryption and decryption utility
 
+MAKE_JOBS_SAFE=	yes
+
 RESTRICTED=	"Crypto; IDEA is a patented algorithm that requires proper licensing"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
