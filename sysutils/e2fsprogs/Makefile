@@ -48,10 +48,6 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		uuid library does not compile on sparc64
-.endif
-
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB=	NLS="@comment "
