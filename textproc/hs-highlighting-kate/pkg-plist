@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%SUBDIR%%/Text/Highlighting/Kate.hi
 %%SUBDIR%%/Text/Highlighting/Kate/Common.hi
 %%SUBDIR%%/Text/Highlighting/Kate/Definitions.hi
@@ -65,6 +66,8 @@
 @dirrmtry %%SUBDIR%%/Text/Highlighting/Kate
 @dirrmtry %%SUBDIR%%/Text/Highlighting
 @dirrmtry %%SUBDIR%%/Text
+%%RMLIC%%%%DOCSDIR%%/LICENSE
+%%RMLIC%%@dirrm %%DOCSDIR%%
 @exec sh %D/%%SUBDIR%%/%%PORTNAME%%-register.sh
 @exec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec ghc-pkg unregister %%PORTNAME%%

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	highlighting-kate
-PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTVERSION=	0.2.4
 CATEGORIES=	textproc haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -37,9 +36,9 @@ CONFIGURE_ARGS=	--ghc --prefix=${PREFIX} --libdir=${PREFIX}/${CABALDIR} --libsub
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
+PLIST_SUB+=	RMLIC="@comment "
 .else
-PLIST_DIRS+=	%%DOCSDIR%%
-PLIST_FILES+=	%%DOCSDIR%%/LICENSE
+PLIST_SUB+=	RMLIC=""
 .endif
 
 do-configure:
