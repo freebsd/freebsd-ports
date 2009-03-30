@@ -1,0 +1,64 @@
+diff -ru lib/enc.orig/encode.c lib/enc/encode.c
+--- lib/enc.orig/encode.c	2009-02-25 00:37:51.868139315 +0100
++++ lib/enc/encode.c	2009-02-25 00:23:45.582743808 +0100
+@@ -934,7 +934,7 @@
+                         ogg_uint32_t SBRows,
+                         ogg_uint32_t SBCols){
+ 
+-  ogg_int32_t   FragIndex;  /* Fragment number */
++  ogg_int32_t   FragIndex, FirstFragIndex;  /* Fragment number */
+   ogg_uint32_t  MB, B;      /* Macro-Block, Block indices */
+   ogg_uint32_t  SBrow;      /* Super-Block row number */
+   ogg_uint32_t  SBcol;      /* Super-Block row number */
+@@ -953,19 +953,20 @@
+         /* There may be MB's lying out of frame which must be
+            ignored. For these MB's Top left block will have a negative
+            Fragment Index. */
+-        if ( QuadMapToMBTopLeft(cpi->pb.BlockMap,SB,MB) >= 0 ) {
++        if ( (FirstFragIndex = QuadMapToMBTopLeft(cpi->pb.BlockMap,SB,MB)) >= 0 ) {
+ 
+           cpi->MBCodingMode = CODE_INTRA;
+ 
+           /* Now actually code the blocks. */
+           for ( B=0; B<4; B++ ) {
+             FragIndex = QuadMapToIndex1( cpi->pb.BlockMap, SB, MB, B );
+-            cpi->pb.FragCodingMethod[FragIndex] = cpi->MBCodingMode;
++            if (FragIndex >= 0)
++	      cpi->pb.FragCodingMethod[FragIndex] = cpi->MBCodingMode;
+           }
+ 
+           /* Matching fragments in the U and V planes */
+-          UVRow = (FragIndex / (cpi->pb.HFragments * 2));
+-          UVColumn = (FragIndex % cpi->pb.HFragments) / 2;
++          UVRow = (FirstFragIndex / (cpi->pb.HFragments * 2));
++          UVColumn = (FirstFragIndex % cpi->pb.HFragments) / 2;
+           UVFragOffset = (UVRow * (cpi->pb.HFragments / 2)) + UVColumn;
+ 
+           cpi->pb.FragCodingMethod[cpi->pb.YPlaneFragments + UVFragOffset] =
+Only in lib/enc: encode.c.orig
+diff -ru lib/enc.orig/misc_common.c lib/enc/misc_common.c
+--- lib/enc.orig/misc_common.c	2009-02-25 00:37:51.865139234 +0100
++++ lib/enc/misc_common.c	2009-02-25 00:51:20.362286530 +0100
+@@ -87,14 +87,14 @@
+   if ( QuadMapToMBTopLeft(cpi->pb.BlockMap, SB, MB ) >= 0 ) {
+     /* Up regulate the component blocks Y then UV. */
+     for ( B=0; B<4; B++ ){
+-      FragIndex = QuadMapToIndex1( cpi->pb.BlockMap, SB, MB, B );
+-
+-      if ( ( !cpi->pb.display_fragments[FragIndex] ) &&
+-           ( (NoCheck) || (cpi->FragmentLastQ[FragIndex] > RegulationQ) ) ){
+-        cpi->pb.display_fragments[FragIndex] = 1;
+-        cpi->extra_fragments[FragIndex] = 1;
+-        cpi->FragmentLastQ[FragIndex] = RegulationQ;
+-        cpi->MotionScore++;
++      if ((FragIndex = QuadMapToIndex1( cpi->pb.BlockMap, SB, MB, B )) >= 0) {
++        if ( ( !cpi->pb.display_fragments[FragIndex] ) &&
++             ( (NoCheck) || (cpi->FragmentLastQ[FragIndex] > RegulationQ) ) ){
++          cpi->pb.display_fragments[FragIndex] = 1;
++          cpi->extra_fragments[FragIndex] = 1;
++          cpi->FragmentLastQ[FragIndex] = RegulationQ;
++          cpi->MotionScore++;
++        }
+       }
+     }
+ 

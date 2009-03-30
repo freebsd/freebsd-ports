@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtheora
-DISTVERSION=	1.0beta2
+PORTVERSION=	1.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xiph.org/releases/theora/ \
 		http://distfiles.master.finkmirrors.net/
@@ -30,5 +30,6 @@ CONFIGURE_ARGS+=--disable-sdltest \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|doc||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's,  x86_64),  x86_64|amd64),' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
