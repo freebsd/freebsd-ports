@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=	--with-libGeoIP=${LOCALBASE}
 .endif
 .if defined(WITH_CURL)
 BUILD_DEPENDS+=	curl>=7.18:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-libcurl=${LOCALBASE}
 .endif
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
