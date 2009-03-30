@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	digest
-PORTVERSION=	0.0.0.4
+PORTVERSION=	0.0.0.5
 CATEGORIES=	security haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
