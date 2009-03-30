@@ -1771,6 +1771,7 @@
     SUBDIR += zope-zsyncer
     SUBDIR += zope-zwiki
     SUBDIR += zope210
+    SUBDIR += zope211
     SUBDIR += zope28
     SUBDIR += zope29
     SUBDIR += zope3
