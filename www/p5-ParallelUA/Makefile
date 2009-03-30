@@ -34,4 +34,7 @@ MAN3=		Bundle::ParallelUA.3 \
 		LWP::ParallelUA.3 \
 		LWP::RobotPUA.3
 
+post-patch:
+	${RM} -f ${WRKSRC}/lib/LWP/Parallel/UserAgent.pm.orig
+
 .include <bsd.port.mk>
