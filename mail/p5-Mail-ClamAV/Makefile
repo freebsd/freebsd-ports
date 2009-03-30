@@ -26,6 +26,8 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Mail::ClamAV.3
 
+BROKEN=		Doesn't build with clamav 0.95 or later
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
