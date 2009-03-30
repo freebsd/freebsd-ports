@@ -14,6 +14,8 @@ MASTER_SITES=	http://welz.org.za/projects/since/ \
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	View the end of a file like tail(1), but save state between sessions
 
+MAKE_JOBS_SAFE=	yes
+
 MAN1=		since.1
 PLIST_FILES=	bin/since
 

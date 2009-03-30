@@ -18,6 +18,8 @@ COMMENT=	Sendmail Milter (mail filter) plugin for SpamAssassin
 BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+MAKE_JOBS_SAFE=	yes
+
 ##
 # Use the following quirks to choose which sendmail to use (ports or system):
 #
