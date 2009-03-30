@@ -1,4 +1,4 @@
-# New ports collection makefile for:	bicom
+# New ports collection makefile for:	BIjective COMpressor
 # Date created:				09 May 2003
 # Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
 #
@@ -10,15 +10,16 @@ PORTVERSION=	1.01
 CATEGORIES=	archivers
 MASTER_SITES=	http://www3.sympatico.ca/mt0000/bicom/ \
 		http://freebsd.nsu.ru/distfiles/
-DISTNAME=	${PORTNAME}101
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data compressor in the PPM family
 
 RESTRICTED=	Contact author personally regarding commercial use
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	${FILESDIR}/Makefile
+MAKE_JOBS_SAFE=	YES
 
 PLIST_FILES=	bin/bicom
 USE_ZIP=	yes
