@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	jackit
-PORTVERSION=	0.109.2
-PORTREVISION=	1
+PORTVERSION=	0.116.2
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	http://jackaudio.org/downloads/
 DISTNAME=	jack-audio-connection-kit-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A low-latency audio server
 
 LIB_DEPENDS=	portaudio.0:${PORTSDIR}/audio/portaudio \
-		sndfile.1:${PORTSDIR}/audio/libsndfile
+		sndfile.1:${PORTSDIR}/audio/libsndfile \
+		samplerate.1:${PORTSDIR}/audio/libsamplerate \
+		celt.0:${PORTSDIR}/audio/celt
 
 OPTIONS=	DOCS "Build HTML documentation. Requires doxygen/TeX." off
 
@@ -27,6 +28,7 @@ CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}" LDFLAGS="-L${LOCALBASE}/lib" \
 CONFIGURE_ARGS+=--enable-portaudio \
 		--with-default-tmpdir=/tmp
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig gnometarget gnomehack
 
