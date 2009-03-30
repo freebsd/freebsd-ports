@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ledit
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cristal.inria.fr/~ddr/ledit/distrib/src/ \
 		http://pauillac.inria.fr/~ddr/ledit/distrib/src/
