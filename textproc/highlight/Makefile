@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	highlight
-PORTVERSION=	2.6.12
+PORTVERSION=	2.6.14
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
@@ -34,8 +34,11 @@ PORTDOCS=	ChangeLog INSTALL README README_DE README_INDENT \
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|^PREFIX =|PREFIX ?=|' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} \
+		-e 's|^PREFIX =|PREFIX ?=|' \
+		-e 's|^conf_dir =.*|conf_dir = $${PREFIX}/etc/highlight/|' \
+		${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|^CXX=|CXX?=|' ${WRKSRC}/src/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
@@ -43,11 +46,13 @@ do-install:
 	@${MKDIR} ${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/filetypes.conf ${ETCDIR}
 	@${MKDIR} ${DATADIR}/helpmsg
-	${INSTALL_DATA} ${WRKSRC}/helpmsg/* ${DATADIR}/helpmsg
+	${INSTALL_DATA} ${WRKSRC}/helpmsg/*.help ${DATADIR}/helpmsg
+	@${MKDIR} ${DATADIR}/indentSchemes
+	${INSTALL_DATA} ${WRKSRC}/indentSchemes/*.indent ${DATADIR}/indentSchemes
 	@${MKDIR} ${DATADIR}/langDefs
 	${INSTALL_DATA} ${WRKSRC}/langDefs/*.lang ${DATADIR}/langDefs
 	@${MKDIR} ${DATADIR}/themes
-	${INSTALL_DATA} ${WRKSRC}/themes/* ${DATADIR}/themes
+	${INSTALL_DATA} ${WRKSRC}/themes/*.style ${DATADIR}/themes
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
