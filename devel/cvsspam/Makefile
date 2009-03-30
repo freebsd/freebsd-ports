@@ -16,7 +16,6 @@ COMMENT=	Sends diffs when a change is committed to your CVS repository
 
 USE_RUBY=	yes
 NO_BUILD=	yes
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	COPYING CREDITS TODO cvsspam-doc.html cvsspam-doc.pdf
 

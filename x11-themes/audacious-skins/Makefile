@@ -16,7 +16,6 @@ COMMENT=	A collection of audacious skins
 BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 
 NO_BUILD=	yes
-MAKE_JOBS_SAFE=	yes
 
 DATADIR=	${PREFIX}/share/audacious
 

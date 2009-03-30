@@ -16,7 +16,6 @@ COMMENT=	Perl script that checks links on web sites
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/linklint
 

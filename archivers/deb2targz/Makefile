@@ -15,7 +15,6 @@ COMMENT=	A command-line utility for converting a Debian .deb file to a .tar.gz
 
 USE_PERL5=	yes
 NO_BUILD=	yes
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/deb2targz
 

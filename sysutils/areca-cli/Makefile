@@ -22,7 +22,6 @@ PERIODICSCRIPT=	407.status-areca-raid
 
 USE_ZIP=	yes
 NO_BUILD=	yes
-MAKE_JOBS_SAFE=	yes
 
 CLI_VER=	1.82
 CLI_REV=	81103

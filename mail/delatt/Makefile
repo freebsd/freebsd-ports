@@ -18,7 +18,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-
 
 USE_PERL5_RUN=	5.8.6+
 NO_BUILD=	yes
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/delatt
 
