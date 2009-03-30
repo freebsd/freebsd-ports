@@ -16,10 +16,10 @@ OBJS =	bialib/mtstream.o \
 	bicom/bicom.o
 
 .cpp.o:
-	${CXX} ${CXXFLAGS} ${IDIR} -c $< -o $*.o
+	${CXX} ${CXXFLAGS} ${IDIR} -o $@ -c $<
 
 all:	${OBJS}
-	${CXX} ${CXXFLAGS} -o bicom/bicom ${OBJS}
+	${CXX} ${CXXFLAGS} -o bicom/bicom $>
 
 clean:
 	rm -f bicom/bicom bicom/*.o bialib/*.o core
