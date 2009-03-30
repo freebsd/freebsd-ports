@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libbobcat
-PORTVERSION=	2.01.1
+PORTVERSION=	2.02.01
 CATEGORIES=	devel
 MASTER_SITES=	SF/bobcat
 DISTNAME=	bobcat_${PORTVERSION}
@@ -57,13 +57,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|"/usr"|"${PREFIX}"| ; \
 		s|"/share/doc/libbobcat2"|"/share/doc/${PORTNAME}-${PORTVERSION}"| ; \
 		s|"/share/doc/libbobcat2-dev"|"/share/doc/${PORTNAME}-${PORTVERSION}/dev"| ; \
-		s|"/share/man"|"/man"|' \
+		s|"/share/man"|"/man"| ; \
+		s|"-d"|"-Pp"| ; \
+		s|#define MANHTML||' \
 		${WRKSRC}/INSTALL.im
 	@${REINPLACE_CMD} -e 's|#!/usr/bin/icmake|#!${LOCALBASE}/bin/icmake| ; \
 		s|"-Itmp -Wall -O3"|"-Itmp -I${LOCALBASE}/include -Wall ${CXXFLAGS}"|' \
 		${WRKSRC}/build
-	@${REINPLACE_CMD} -e 's|"cp -d |"cp -Pp | ; \
-		s|"cp -r |"cp -R |' \
+	@${REINPLACE_CMD} -e 's|"cp -r |"cp -R |' \
 		${WRKSRC}/icmake/install
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|#define DOCOTHER||' \
