@@ -15,7 +15,7 @@ try:
 except:
     raise SystemExit, "Distutils problem"
 
-tkversion = "8.4"
+tkversion = "%%TK_VER%%"
 prefix = sysconfig.PREFIX
 # Python 1.5 doesn't have os.getenv()?
 x11base = os.environ['LOCALBASE'] or '/usr/X11R6'
