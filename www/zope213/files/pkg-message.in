@@ -23,15 +23,3 @@ port is deinstalled. You'll have to delete them yourself.
 
 To create a ZEO instance please run 
 make zeo [INSTANCENAME=<somename>]
-
-
-**********************************************************************
-****** ATTENTION ***** ATTENTION ***** ATTENTION ***** ATTENTION *****
-
-The default installation directory for Zope Products has changed from 
-%%ZOPEBASEDIR%%/lib/python/Products 
-to %%ZOPEBASEDIR%%/Products. 
-
-You might have to add the following lines to your zope.conf 
-products %%ZOPEBASEDIR%%/Products
-products $INSTANCE/Products

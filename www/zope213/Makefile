@@ -1,27 +1,27 @@
 # New ports collection makefile for:	Zope-2.10.x
-# Date created:				Mon Nov 28 22:09:00 JST 2006
-# Whom:					Yasushi Hayashi <yasi@yasi.to>
+# Date created:				Mon Mar 22 15:32:00 CET 2006
+# Whom:					Gerhard Schmidt <estartu@augusta.de>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	zope210
-PORTVERSION=	2.10.6
+PORTNAME=	zope211
+PORTVERSION=	2.11.2
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-final
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	zope
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An object-based web application platform
+MAINTAINER=	estartu@augusta.de
+COMMENT=	An object-based web application platform Version 2.11
 
 USE_PYTHON=	2.4
-USE_RC_SUBR=	${PORTNAME} zeo210
+USE_RC_SUBR=	${PORTNAME} zeo211
 
 ZOPE_USER?=		www
 WEBBASEDIR?=		www
-SZOPEBASEDIR?=		${WEBBASEDIR}/Zope210
+SZOPEBASEDIR?=		${WEBBASEDIR}/Zope211
 
 .if defined(INSTANCENAME)
 ZOPEINSTANCENAME=	${INSTANCENAME}
