@@ -6,36 +6,24 @@
 #
 
 PORTNAME=	mp3splt
-PORTVERSION=	2.1c
-PORTREVISION=	3
+PORTVERSION=	2.2.3
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+MASTER_SITES=	SF
 
-MAINTAINER=	fk@fabiankeil.de
+MAINTAINER=	citrin@citrin.ru
 COMMENT=	Utility to split mp3 and ogg files (via CUE sheets)
 
-OPTIONS=	VORBIS	"Ogg Vorbis support" On
+LIB_DEPENDS=	mp3splt:${PORTSDIR}/audio/libmp3splt
 
-.include <bsd.port.pre.mk>
-
-LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
-
-.if !defined(WITHOUT_VORBIS)
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		ogg.5:${PORTSDIR}/audio/libogg
-.else
-CONFIGURE_ARGS+=--disable-ogg
-.endif
-
+USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
 
 MAN1=		mp3splt.1
 PLIST_FILES=	bin/mp3splt bin/oggsplt
 
-.include <bsd.port.post.mk>
+post-install:
+	@${LN} -fsv ${PREFIX}/bin/mp3splt ${PREFIX}/bin/oggsplt
+
+.include <bsd.port.mk>
