@@ -15,12 +15,12 @@ DECOBJS= decompiler/cmdlib.o \
 	decompiler/main.o
 
 .c.o:
-	${CC} ${CFLAGS} -c $< -o $*.o
+	${CC} ${CFLAGS} -o $@ -c $<
 
 all:	c dec
 
 c:	${COBJS}
-	${CC} ${LDFLAGS} -o frikqcc ${COBJS}
+	${CC} ${LDFLAGS} -o frikqcc $>
 
 dec:	${DECOBJS}
-	${CC} ${LDFLAGS} -o frikqcdec ${DECOBJS}
+	${CC} ${LDFLAGS} -o frikqcdec $>

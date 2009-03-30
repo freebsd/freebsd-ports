@@ -17,13 +17,13 @@ COMMENT=	A dockapp for monitoring of various Internet game servers
 RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 
 USE_XORG=	xpm x11 xext
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
