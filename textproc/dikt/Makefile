@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dikt
-PORTVERSION=	1a
-PORTREVISION=	1
+PORTVERSION=	1d
 CATEGORIES=	textproc net kde
 MASTER_SITES=	http://diktv1.googlepages.com/	\
 		LOCAL/beech
@@ -15,9 +14,10 @@ EXTRACT_SUFX=	.tbz
 MAINTAINER=	goran.tal@gmail.com
 COMMENT=	Dictionary for KDE4
 
-USE_KDE4=	kdelibs kdeprefix kdehier automoc4 workspace
+USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui qmake_build moc_build uic_build network svg xml rcc_build
+QT_COMPONENTS=	corelib gui network svg xml \
+		qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 
 PLIST_FILES=	bin/dikt \
