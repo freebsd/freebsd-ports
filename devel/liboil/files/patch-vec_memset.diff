@@ -1,0 +1,37 @@
+--- liboil/motovec/vec_memset.S	2007-11-15 18:53:47.000000000 -0800
++++ liboil/motovec/vec_memset.S	2009-03-20 20:10:56.000000000 -0700
+@@ -142,6 +142,7 @@
+ memset:
+ #else
+ 	.globl	_vec_memset     
++	.type	_vec_memset, @function
+ _vec_memset:
+ #endif
+ 
+@@ -161,6 +162,7 @@
+ 	bdnz	Byte_set
+ 
+ 	blr
++	.size	_vec_memset, . - _vec_memset
+ 
+ v_memset:
+ // Byte count < MIN_VEC bytes will have been set by scalar code above,
+@@ -347,6 +349,7 @@
+ bzero:
+ #else
+ 	.globl	vec_bzero     
++	.type	vec_bzero, @function
+ vec_bzero:
+ #endif
+ 
+@@ -355,8 +358,9 @@
+ #ifdef LIBMOTOVEC
+ 	b	memset     
+ #else
+-	b	_vec_memset     
++	b	_vec_memset@plt
+ #endif
++	.size	vec_bzero, . - vec_bzero
+ 
+ // cacheable_memzero will employ dcbz to clear 32 bytes at a time
+ // of cacheable memory. Like bzero, second entering argument will be BC.

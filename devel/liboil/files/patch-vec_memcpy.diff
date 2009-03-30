@@ -1,0 +1,42 @@
+--- liboil/motovec/vec_memcpy.S	2007-11-15 18:53:47.000000000 -0800
++++ liboil/motovec/vec_memcpy.S	2009-03-20 20:07:55.000000000 -0700
+@@ -249,9 +249,11 @@
+ memcpy:
+ #else
+ 	.globl	vec_memmove     
++	.type	vec_memmove, @function
+ vec_memmove:
+ 	nop			// IU1 Only way I know to preserve both labels
+ 	.globl	_vec_memcpy     
++	.type	_vec_memcpy, @function
+ _vec_memcpy:
+ #endif
+ 	subf.	DMS,SRC,DST	// IU1 Compute dst-src difference
+@@ -291,7 +293,9 @@
+ 	stbu	Rt,-1(DBC)	// LSU Store it
+ 	bdnz	Byte_cpy_bwd
+ 	blr
+-	
++	.size	vec_memmove, . - vec_memmove
++	.size	_vec_memcpy, . - _vec_memcpy
++
+ #ifdef __MWERKS__
+ 	.align	16
+ #else
+@@ -863,6 +867,7 @@
+ bcopy:
+ #else
+ 	.globl	vec_bcopy     
++	.type	vec_bcopy, @function
+ vec_bcopy:
+ #endif
+ 	mr	Rt,DST		// temp storage for what is really source address (r3)
+@@ -871,6 +876,7 @@
+ #ifdef LIBMOTOVEC
+ 	b	memcpy		// b to memcpy with correct args in r3 and r4	
+ #else
+-	b	_vec_memcpy	// b to vec_memcpy with correct args in r3 and r4	
++	b	_vec_memcpy@plt	// b to vec_memcpy with correct args in r3 and r4	
+ #endif
++	.size	vec_bcopy, . - vec_bcopy
+ // End of bcopy in AltiVec
