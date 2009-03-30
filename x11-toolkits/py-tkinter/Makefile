@@ -7,7 +7,7 @@
 
 PORTNAME=	tkinter
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -17,18 +17,17 @@ DISTFILES=	${PYTHON_DISTFILE}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python bindings to the Tk widget set
 
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
-
 DIST_SUBDIR=	python
 PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/_tkinter.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	Tkinter
 PYDISTUTILS_PKGVERSION=	0.0.0
+USE_TK=	82+
 WRKSRC=		${PYTHON_WRKSRC}/Modules
 MD5_FILE=	${PORTSDIR}/lang/python/distinfo
 
 post-extract:
-	@${CP} ${FILESDIR}/setup.py ${WRKSRC}
+	@${SED} -e "s|%%TK_VER%%|${TK_VER}|" ${FILESDIR}/setup.py > ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
