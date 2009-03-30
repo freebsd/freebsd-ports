@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	racoon2
-PORTVERSION=	20071227e
-PORTREVISION=	3
+PORTVERSION=	20090327c
 CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.racoon2.wide.ad.jp/pub/racoon2/
 EXTRACT_SUFX=	.tgz
