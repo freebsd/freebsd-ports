@@ -39,6 +39,9 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/Deflator/CompoundDateTime.pm
 %%SITE_PERL%%/HTML/FormFu/Inflator/CompoundDateTime.pm
 %%SITE_PERL%%/HTML/FormFu/Deflator/CompoundSplit.pm
+%%SITE_PERL%%/HTML/FormFu/Deflator/FormatNumber.pm
+%%SITE_PERL%%/HTML/FormFu/Deflator/Callback.pm
+%%SITE_PERL%%/HTML/FormFu/Deflator/PathClassFile.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Radio.pm
 %%SITE_PERL%%/HTML/FormFu/Element/SimpleTable.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Block.pm
@@ -58,6 +61,7 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/Element/Radiogroup.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Select.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Password.pm
+%%SITE_PERL%%/HTML/FormFu/Element/Number.pm
 %%SITE_PERL%%/HTML/FormFu/Element/_NonBlock.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Blank.pm
 %%SITE_PERL%%/HTML/FormFu/Element/_Field.pm
@@ -91,6 +95,7 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/Filter/NonNumeric.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/Regex.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/HTMLScrubber.pm
+%%SITE_PERL%%/HTML/FormFu/Filter/FormatNumber.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/Split.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/CompoundJoin.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/pt_pt.pm
@@ -105,6 +110,9 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/I18N/ru.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/ua.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/ro.pm
+%%SITE_PERL%%/HTML/FormFu/I18N/no.pm
+%%SITE_PERL%%/HTML/FormFu/Model/HashRef.pm
+%%SITE_PERL%%/HTML/FormFu/Inflator/Callback.pm
 %%SITE_PERL%%/HTML/FormFu/Inflator/DateTime.pm
 %%SITE_PERL%%/HTML/FormFu/Manual/Cookbook.pod
 %%SITE_PERL%%/HTML/FormFu/Manual/Unicode.pod
@@ -144,6 +152,7 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/Constants.pm
 %%SITE_PERL%%/HTML/FormFu.pm
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/recaptcha
+%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/label_tag
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/end_form
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/textarea_tag
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/non_block

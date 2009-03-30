@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-FormFu
-PORTVERSION=	0.03007
+PORTVERSION=	0.04000
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,13 +28,16 @@ BUILD_DEPENDS=	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-
 		p5-DateTime-Locale>=0:${PORTSDIR}/devel/p5-DateTime-Locale \
 		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
 		p5-File-ShareDir>=0.04:${PORTSDIR}/devel/p5-File-ShareDir \
+		p5-Hash-Flatten>=0:${PORTSDIR}/devel/p5-Hash-Flatten \
 		p5-DateTime-Format-Natural>0:${PORTSDIR}/devel/p5-DateTime-Format-Natural \
 		p5-HTML-Scrubber>=0:${PORTSDIR}/www/p5-HTML-Scrubber \
 		p5-HTML-TokeParser-Simple>=3.14:${PORTSDIR}/www/p5-HTML-TokeParser-Simple \
 		p5-List-MoreUtils>=0.16:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Locale-Maketext-Simple>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
+		p5-Locale-Maketext>=0:${PORTSDIR}/devel/p5-Locale-Maketext \
 		p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable \
+		p5-Number-Format>=0:${PORTSDIR}/textproc/p5-Number-Format \
 		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
+		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Regexp-Copy>=0:${PORTSDIR}/textproc/p5-Regexp-Copy \
 		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
@@ -156,6 +159,13 @@ MAN3=	HTML::FormFu::Inflator.3 \
 	HTML::FormFu::Element::DateTime.3 \
 	HTML::FormFu::Constraint::MaxRange.3 \
 	HTML::FormFu::Constraint::File::MinSize.3 \
-	HTML::FormFu::Constraint::File::MaxSize.3
+	HTML::FormFu::Constraint::File::MaxSize.3 \
+	HTML::FormFu::Element::Number.3 \
+	HTML::FormFu::Model::HashRef.3 \
+	HTML::FormFu::Deflator::Callback.3 \
+	HTML::FormFu::Deflator::FormatNumber.3 \
+	HTML::FormFu::Inflator::Callback.3 \
+	HTML::FormFu::Deflator::PathClassFile.3 \
+	HTML::FormFu::Filter::FormatNumber.3
 
 .include <bsd.port.mk>
