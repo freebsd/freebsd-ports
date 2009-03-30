@@ -25,7 +25,8 @@ CONFLICTS=	nagios-[12].* nagios-devel-*
 
 OPTIONS=	EMBEDDED_PERL "Enable embedded Perl [requires Perl 5.8.0+]" off \
 		NANOSLEEP "Use nanosleep in event timing" off \
-		EVENT_BROKER "Enable event broker functionality" off
+		EVENT_BROKER "Enable event broker functionality" off \
+		UNHANDLED_HACK "Display passive checks in unhandled queries" off
 
 GNU_CONFIGURE=	yes
 
@@ -102,6 +103,12 @@ CONFIGURE_ARGS+=	--enable-nanosleep
 CONFIGURE_ARGS+=	--enable-event-broker
 .else
 CONFIGURE_ARGS+=	--disable-event-broker
+.endif
+
+post-patch:
+.if defined(WITH_UNHANDLED_HACK)
+	@${REINPLACE_CMD} -e 's#\&serviceprops=42\&#\&serviceprops=10\&#g' \
+		-e 's#\&hostprops=42\"#\&hostprops=10\"#g' ${WRKSRC}/html/side.html.in
 .endif
 
 pre-install:
