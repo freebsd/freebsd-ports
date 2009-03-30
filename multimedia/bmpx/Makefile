@@ -29,8 +29,6 @@ LIB_DEPENDS=	tag.6:${PORTSDIR}/audio/taglib \
 
 CONFLICTS=	bmpx-devel-[0-9]*
 
-BROKEN=		does not compile
-
 USE_BISON=	build
 USE_XORG=	ice sm
 USE_BZIP2=	yes
