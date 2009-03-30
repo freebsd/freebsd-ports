@@ -17,12 +17,12 @@ COMMENT=	Data compressor in the PPM family
 
 RESTRICTED=	Contact author personally regarding commercial use
 
+USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 MAKEFILE=	${FILESDIR}/Makefile
-MAKE_JOBS_SAFE=	YES
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/bicom
-USE_ZIP=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bicom/bicom ${PREFIX}/bin
