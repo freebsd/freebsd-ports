@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	olsrd
-DISTVERSION=	0.5.6-r2
+DISTVERSION=	0.5.6-r4
 CATEGORIES=	net
 MASTER_SITES=	http://www.olsr.org/releases/0.5/ \
 		http://ftp2.za.freebsd.org/pub/mesh/pc/protocols/olsr/
@@ -40,10 +40,6 @@ MAKE_ARGS+=	PREFIX=${PREFIX}
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800059
-BROKEN=		does not build
-.endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
