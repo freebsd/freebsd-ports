@@ -2,12 +2,14 @@ www/validator/htdocs/about.html
 www/validator/htdocs/accesskeys.html
 www/validator/htdocs/base.css
 www/validator/htdocs/charset-select.html
+www/validator/htdocs/config/attref.cfg
 www/validator/htdocs/config/charset.cfg
 www/validator/htdocs/config/eref.cfg
 www/validator/htdocs/config/tidy.conf
 www/validator/htdocs/config/tips.cfg
 www/validator/htdocs/config/types.conf
 www/validator/htdocs/config/validator.conf.sample
+www/validator/htdocs/contribute.html
 www/validator/htdocs/detailed-form.html
 www/validator/htdocs/detailed-form_directinput.html
 www/validator/htdocs/detailed.html
@@ -29,6 +31,7 @@ www/validator/htdocs/dev/tests/3663-svg-noversion-doctype2.svg
 www/validator/htdocs/dev/tests/3663-svg-noversion-doctypeless.svg
 www/validator/htdocs/dev/tests/3663-svg-tiny-11-doctype.svg
 www/validator/htdocs/dev/tests/3663-svg-tiny-11-doctypeless.svg
+www/validator/htdocs/dev/tests/4412-fuzzymatch.xhtml
 www/validator/htdocs/dev/tests/4476-svg_nodoctype.svg
 www/validator/htdocs/dev/tests/4520-iso88591-meta.html
 www/validator/htdocs/dev/tests/4520-iso88591-no_meta.html
@@ -187,10 +190,16 @@ www/validator/htdocs/images/info_icons/warning.png
 www/validator/htdocs/images/lg_gradient.gif
 www/validator/htdocs/images/markup_validation_service.png
 www/validator/htdocs/images/markup_validation_service.psd
+www/validator/htdocs/images/no_w3c.png
 www/validator/htdocs/images/ppm_1.png
 www/validator/htdocs/images/ppm_2.png
 www/validator/htdocs/images/ppm_3.png
 www/validator/htdocs/images/qa.png
+www/validator/htdocs/images/roadmap/validators-chart-small.png
+www/validator/htdocs/images/roadmap/validators-chart.graffle
+www/validator/htdocs/images/roadmap/validators-chart.pdf
+www/validator/htdocs/images/roadmap/validators-chart.png
+www/validator/htdocs/images/roadmap/validators-chart.svg
 www/validator/htdocs/images/round-br.png
 www/validator/htdocs/images/round-tl.png
 www/validator/htdocs/images/round-tr.png
@@ -602,7 +611,7 @@ www/validator/share/templates/en_US/header.tmpl
 www/validator/share/templates/en_US/http_401_authrequired.tmpl
 www/validator/share/templates/en_US/iana_charset_blurb.tmpl
 www/validator/share/templates/en_US/invalid.tmpl
-www/validator/share/templates/en_US/json_ouput.tmpl
+www/validator/share/templates/en_US/json_output.tmpl
 www/validator/share/templates/en_US/jumpbar.tmpl
 www/validator/share/templates/en_US/opt_show_esis.tmpl
 www/validator/share/templates/en_US/opt_show_outline.tmpl
@@ -660,6 +669,7 @@ www/validator/share/templates/en_US/xml_output.tmpl
 @dirrm www/validator/htdocs/scripts
 @dirrm www/validator/htdocs/misc
 @dirrm www/validator/htdocs/images/valid_icons
+@dirrm www/validator/htdocs/images/roadmap
 @dirrm www/validator/htdocs/images/info_icons
 @dirrm www/validator/htdocs/images
 @dirrm www/validator/htdocs/docs

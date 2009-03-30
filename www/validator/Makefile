@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	validator
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	www
 MASTER_SITES=	http://validator.w3.org/dist/ \
 		http://www.cyberbotx.com/w3c-validator/
@@ -60,6 +60,7 @@ do-install:
 	${MKDIR} ${PREFIX}/www/validator/htdocs/docs
 	${MKDIR} ${PREFIX}/www/validator/htdocs/images
 	${MKDIR} ${PREFIX}/www/validator/htdocs/images/info_icons
+	${MKDIR} ${PREFIX}/www/validator/htdocs/images/roadmap
 	${MKDIR} ${PREFIX}/www/validator/htdocs/images/valid_icons
 	${MKDIR} ${PREFIX}/www/validator/htdocs/misc
 	${MKDIR} ${PREFIX}/www/validator/htdocs/scripts
@@ -101,6 +102,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/htdocs/docs/* ${PREFIX}/www/validator/htdocs/docs
 	${INSTALL_DATA} `${FIND} ${WRKSRC}/htdocs/images -type f -depth 1` ${PREFIX}/www/validator/htdocs/images
 	${INSTALL_DATA} ${WRKSRC}/htdocs/images/info_icons/* ${PREFIX}/www/validator/htdocs/images/info_icons
+	${INSTALL_DATA} ${WRKSRC}/htdocs/images/roadmap/* ${PREFIX}/www/validator/htdocs/images/roadmap
 	${INSTALL_DATA} ${WRKSRC}/htdocs/images/valid_icons/* ${PREFIX}/www/validator/htdocs/images/valid_icons
 	${INSTALL_DATA} ${WRKSRC}/htdocs/misc/* ${PREFIX}/www/validator/htdocs/misc
 	${INSTALL_DATA} `${FIND} ${WRKSRC}/htdocs/scripts -type f -depth 1` ${PREFIX}/www/validator/htdocs/scripts
