@@ -16,7 +16,6 @@ COMMENT=	A tool to colorize diff output
 
 USE_PERL5=	yes
 NO_BUILD=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		colordiff.1
 
