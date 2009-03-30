@@ -8907,6 +8907,7 @@ mybashburn                      ports/sysutils/mybashburn
 mybb                            ports/www/mybb
 mybudget                        ports/finance/mybudget
 mydns                           ports/dns/mydns
+mydns-ng                        ports/dns/mydns-ng
 mydumper                        ports/databases/mydumper
 myfaces                         ports/www/myfaces
 myghty                          ports/www/myghty
@@ -10231,6 +10232,7 @@ p5-Catalyst-Plugin-ConfigLoader  ports/www/p5-Catalyst-Plugin-ConfigLoader
 p5-Catalyst-Plugin-ConfigLoader-Environment  ports/www/p5-Catalyst-Plugin-ConfigLoader-Environment
 p5-Catalyst-Plugin-CookiedSession  ports/www/p5-Catalyst-Plugin-CookiedSession
 p5-Catalyst-Plugin-DefaultEnd   ports/www/p5-Catalyst-Plugin-DefaultEnd
+p5-Catalyst-Plugin-Email        ports/www/p5-Catalyst-Plugin-Email
 p5-Catalyst-Plugin-FillInForm   ports/www/p5-Catalyst-Plugin-FillInForm
 p5-Catalyst-Plugin-FormBuilder  ports/www/p5-Catalyst-Plugin-FormBuilder
 p5-Catalyst-Plugin-FormCanary   ports/www/p5-Catalyst-Plugin-FormCanary
@@ -11193,9 +11195,11 @@ p5-HTML-FormatText-WithLinks    ports/textproc/p5-HTML-FormatText-WithLinks
 p5-HTML-Fraction                ports/textproc/p5-HTML-Fraction
 p5-HTML-FromANSI                ports/www/p5-HTML-FromANSI
 p5-HTML-FromText                ports/www/p5-HTML-FromText
+p5-HTML-GenToc                  ports/www/p5-HTML-GenToc
 p5-HTML-GoogleMaps              ports/www/p5-HTML-GoogleMaps
 p5-HTML-Highlight               ports/www/p5-HTML-Highlight
 p5-HTML-LinkExtractor           ports/www/p5-HTML-LinkExtractor
+p5-HTML-LinkList                ports/www/p5-HTML-LinkList
 p5-HTML-Lint                    ports/www/p5-HTML-Lint
 p5-HTML-Location                ports/www/p5-HTML-Location
 p5-HTML-Macro                   ports/www/p5-HTML-Macro
@@ -12683,6 +12687,7 @@ p5-Text-CSV_XS                  ports/textproc/p5-Text-CSV_XS
 p5-Text-Capitalize              ports/textproc/p5-Text-Capitalize
 p5-Text-CharWidth               ports/textproc/p5-Text-CharWidth
 p5-Text-Chomp                   ports/textproc/p5-Text-Chomp
+p5-Text-Context                 ports/textproc/p5-Text-Context
 p5-Text-Context-EitherSide      ports/textproc/p5-Text-Context-EitherSide
 p5-Text-Decorator               ports/textproc/p5-Text-Decorator
 p5-Text-Delimited               ports/textproc/p5-Text-Delimited
@@ -12862,6 +12867,7 @@ p5-URI-Escape-XS                ports/www/p5-URI-Escape-XS
 p5-URI-Fetch                    ports/www/p5-URI-Fetch
 p5-URI-Find                     ports/textproc/p5-URI-Find
 p5-URI-FromHash                 ports/net/p5-URI-FromHash
+p5-URI-GoogleChart              ports/graphics/p5-URI-GoogleChart
 p5-URI-OpenURL                  ports/net/p5-URI-OpenURL
 p5-URI-ParseSearchString        ports/www/p5-URI-ParseSearchString
 p5-URI-Sequin                   ports/www/p5-URI-Sequin
@@ -13510,6 +13516,7 @@ p5-catalyst-plugin-configloader  ports/www/p5-Catalyst-Plugin-ConfigLoader
 p5-catalyst-plugin-configloader-environment  ports/www/p5-Catalyst-Plugin-ConfigLoader-Environment
 p5-catalyst-plugin-cookiedsession  ports/www/p5-Catalyst-Plugin-CookiedSession
 p5-catalyst-plugin-defaultend   ports/www/p5-Catalyst-Plugin-DefaultEnd
+p5-catalyst-plugin-email        ports/www/p5-Catalyst-Plugin-Email
 p5-catalyst-plugin-fillinform   ports/www/p5-Catalyst-Plugin-FillInForm
 p5-catalyst-plugin-formbuilder  ports/www/p5-Catalyst-Plugin-FormBuilder
 p5-catalyst-plugin-formcanary   ports/www/p5-Catalyst-Plugin-FormCanary
@@ -14580,9 +14587,11 @@ p5-html-formfu-model-dbic       ports/www/p5-HTML-FormFu-Model-DBIC
 p5-html-fraction                ports/textproc/p5-HTML-Fraction
 p5-html-fromansi                ports/www/p5-HTML-FromANSI
 p5-html-fromtext                ports/www/p5-HTML-FromText
+p5-html-gentoc                  ports/www/p5-HTML-GenToc
 p5-html-googlemaps              ports/www/p5-HTML-GoogleMaps
 p5-html-highlight               ports/www/p5-HTML-Highlight
 p5-html-linkextractor           ports/www/p5-HTML-LinkExtractor
+p5-html-linklist                ports/www/p5-HTML-LinkList
 p5-html-lint                    ports/www/p5-HTML-Lint
 p5-html-location                ports/www/p5-HTML-Location
 p5-html-macro                   ports/www/p5-HTML-Macro
@@ -16094,6 +16103,7 @@ p5-text-bind                    ports/textproc/p5-Text-Bind
 p5-text-capitalize              ports/textproc/p5-Text-Capitalize
 p5-text-charwidth               ports/textproc/p5-Text-CharWidth
 p5-text-chomp                   ports/textproc/p5-Text-Chomp
+p5-text-context                 ports/textproc/p5-Text-Context
 p5-text-context-eitherside      ports/textproc/p5-Text-Context-EitherSide
 p5-text-csv                     ports/textproc/p5-Text-CSV
 p5-text-csv-simple              ports/textproc/p5-Text-CSV-Simple
@@ -16298,6 +16308,7 @@ p5-uri-escape-xs                ports/www/p5-URI-Escape-XS
 p5-uri-fetch                    ports/www/p5-URI-Fetch
 p5-uri-find                     ports/textproc/p5-URI-Find
 p5-uri-fromhash                 ports/net/p5-URI-FromHash
+p5-uri-googlechart              ports/graphics/p5-URI-GoogleChart
 p5-uri-imap                     ports/mail/p5-URI-imap
 p5-uri-imaps                    ports/mail/p5-URI-imaps
 p5-uri-openurl                  ports/net/p5-URI-OpenURL
@@ -17371,6 +17382,7 @@ perf                            ports/sysutils/perf
 perforce                        ports/devel/perforce
 performance                     ports/devel/performance
 perl2html                       ports/textproc/perl2html
+perl5.10                        ports/lang/perl5.10
 perl5.6                         ports/lang/perl5.6
 perl5.8                         ports/lang/perl5.8
 perlbal                         ports/www/perlbal
@@ -20551,18 +20563,6 @@ sipcalc                         ports/net-mgmt/sipcalc
 sipp                            ports/benchmarks/sipp
 siproxd                         ports/net/siproxd
 sipsak                          ports/net/sipsak
-sipxcalllib                     ports/net/sipxcalllib
-sipxcommserverlib               ports/net/sipxcommserverlib
-sipxconfig                      ports/net/sipxconfig
-sipxmediaadapterlib             ports/net/sipxmediaadapterlib
-sipxmedialib                    ports/net/sipxmedialib
-sipxpbx                         ports/net/sipxpbx
-sipxportlib                     ports/net/sipxportlib
-sipxproxy                       ports/net/sipxproxy
-sipxpublisher                   ports/net/sipxpublisher
-sipxregistry                    ports/net/sipxregistry
-sipxtacklib                     ports/net/sipxtacklib
-sipxvxml                        ports/net/sipxvxml
 sirc                            ports/irc/sirc
 sisc                            ports/lang/sisc
 sisctrl                         ports/x11/sisctrl
