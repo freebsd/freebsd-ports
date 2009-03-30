@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]*)$/\1/}
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Monitor arp & rarp requests
 
+MAKE_JOBS_SAFE=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet
 MAKE_ENV+=	BINOWN="${BINOWN}" BINGRP="${BINGRP}"

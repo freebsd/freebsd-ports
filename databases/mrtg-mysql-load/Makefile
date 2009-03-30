@@ -22,6 +22,8 @@ NO_WRKSUBDIR=	yes
 USE_PERL5_RUN=	yes
 USE_MYSQL=	yes
 
+MAKE_JOBS_SAFE=	yes
+
 MAN1=		${PORTNAME}.1
 
 post-patch:

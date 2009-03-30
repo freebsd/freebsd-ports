@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	NetBIOS name network scanner
 
+MAKE_JOBS_SAFE=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

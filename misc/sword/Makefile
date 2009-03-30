@@ -17,6 +17,8 @@ MASTER_SITE_SUBDIR=	tabthorpe
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A project framework for manipulating Bible texts
 
+MAKE_JOBS_SAFE=	yes
+
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
