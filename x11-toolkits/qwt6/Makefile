@@ -20,7 +20,6 @@ USE_GMAKE=	yes
 QMAKE_ARGS+=	-unix -recursive PREFIX=${PREFIX}
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	DESIGNER_PLUGIN "Install plugin for Qt Designer" on
 
