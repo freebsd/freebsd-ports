@@ -21,10 +21,15 @@ ALL_TARGET=	trafshow
 
 MAN1=		trafshow.1
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' \
 		${WRKSRC}/colormask.c ${WRKSRC}/trafshow.1 ${WRKSRC}/trafshow.c
+.if ${OSVERSION} >= 800074
+	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-800074+
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/trafshow ${PREFIX}/bin
@@ -34,4 +39,4 @@ do-install:
 		${CP} -p ${PREFIX}/etc/trafshow.dist ${PREFIX}/etc/trafshow; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
