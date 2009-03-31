@@ -554,6 +554,7 @@
     SUBDIR += pantera
     SUBDIR += paperkey
     SUBDIR += parano
+    SUBDIR += pbc
     SUBDIR += pbnj
     SUBDIR += pdfcrack
     SUBDIR += pear-Auth
