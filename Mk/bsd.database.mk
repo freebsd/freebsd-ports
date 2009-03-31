@@ -10,24 +10,26 @@ Database_Post_Include=			bsd.database.mk
 Database_Include_MAINTAINER=	ports@FreeBSD.org
 
 # This file contains some routines to interact with different databases, such
-# as mysql, postgresql and berkley DB. For including this file define macro
-# USE_[DATABASE], for example USE_MYSQL. Defining macro like USE_[DATABASE]_VER
-# or WANT_[DATABSE]_VER will include this file too.
+# as MySQL, PostgreSQL, and Berkley DB.  To include this file, define macro
+# USE_[DATABASE], for example USE_MYSQL.  Defining macro like
+# USE_[DATABASE]_VER or WANT_[DATABASE]_VER will include this file as well.
 #
 ##
-# USE_MYSQL		- Add MySQL (client/server/embedded) dependency. (default: client)
+# USE_MYSQL		- Add MySQL (client/server/embedded) dependency (default:
+#				  client).
 #				  If no version is given (by the maintainer via the port or
 #				  by the user via defined variable), try to find the
 #				  currently installed version.  Fall back to default if
-#				  necessary (MySQL5.0 = 50).
+#				  necessary (MySQL-5.0 = 50).
 # DEFAULT_MYSQL_VER
-#				- MySQL default version. Can be overriden within a port.
+#				- MySQL default version.  Can be overridden within a port.
 #				  Default: 50.
 # WANT_MYSQL_VER
-#				- Maintainer can set an arbitrary version of MySQL by using it.
+#				- Maintainer can set an arbitrary version of MySQL to always
+#				  build this port with (overrides WITH_MYSQL_VER).
 # IGNORE_WITH_MYSQL
-#				- This variable can be defined if the ports doesn't support
-#				  one or more version of MySQL.
+#				- This variable can be defined if the ports does not support
+#				  one or more versions of MySQL.
 # WITH_MYSQL_VER
 #				- User defined variable to set MySQL version.
 # MYSQL_VER
@@ -39,13 +41,13 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 #				  currently installed version.  Fall back to default if
 #				  necessary (PostgreSQL-8.2 = 82).
 # DEFAULT_PGSQL_VER
-#				- PostgreSQL default version. Can be overridden within a port.
-#				  Default: 82.
+#				- PostgreSQL default version.  Can be overridden within a
+#				  port.  Default: 82.
 # WANT_PGSQL_VER
-#				- Maintainer can set an arbitrary version of PostgreSQL by
-#				  using it.
+#				- Maintainer can set an arbitrary version of PostgreSQL to
+#				  always build this port with (overrides WITH_PGSQL_VER).
 # IGNORE_WITH_PGSQL
-#				- This variable can be defined if the ports doesn't support
+#				- This variable can be defined if the ports does not support
 #				  one or more versions of PostgreSQL.
 # WITH_PGSQL_VER
 #				- User defined variable to set PostgreSQL version.
@@ -58,41 +60,48 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 #				  currently installed version.  Fall back to default if
 #				  necessary (db41+).
 # INVALID_BDB_VER
-#				- This variable can be defined when the port doesn't
+#				- This variable can be defined when the port does not
 #				  support one or more versions of Berkeley DB.
-# WANT_BDB_VER	- Maintainer can set a version of Berkeley DB to always
+# WANT_BDB_VER
+#				- Maintainer can set a version of Berkeley DB to always
 #				  build this port with (overrides WITH_BDB_VER).
-# WITH_BDB_VER	- User defined global variable to set Berkeley DB version
+# WITH_BDB_VER
+#				- User defined global variable to set Berkeley DB version.
 # <UNIQUENAME>_WITH_BDB_VER
-#				- User defined port specific variable to set
-#				  Berkeley DB version
+#				- User defined port specific variable to set Berkeley DB
+#				  version.
 # WITH_BDB_HIGHEST
-#				- Use the highest installed version of Berkeley DB
-# BDB_LIB_NAME	- This variable is automatically set to the name of the
-#				  Berkeley DB library (default: db41)
+#				- Use the highest installed version of Berkeley DB.
+# BDB_LIB_NAME
+#				- This variable is automatically set to the name of the
+#				  Berkeley DB library (default: db41).
 # BDB_LIB_CXX_NAME
 #				- This variable is automatically set to the name of the
-#				  Berkeley DB c++ library (default: db41_cxx)
+#				  Berkeley DB C++ library (default: db41_cxx).
 # BDB_INCLUDE_DIR
 #				- This variable is automatically set to the location of
-#				  the Berkeley DB include directory.
-#				  (default: ${LOCALBASE}/include/db41)
-# BDB_LIB_DIR	- This variable is automatically set to the location of
+#				  the Berkeley DB include directory (default:
+#				  ${LOCALBASE}/include/db41).
+# BDB_LIB_DIR
+#				- This variable is automatically set to the location of
 #				  the Berkeley DB library directory.
-# BDB_VER		- Detected Berkeley DB version.
+# BDB_VER
+#				- Detected Berkeley DB version.
 ##
-# USE_SQLITE	- Add dependency on sqlite library. Valid values are:
-#				  3 and 2. If version is not specified directly then
-#				  sqlite3 is used (if USE_SQLITE= yes).
-# SQLITE_VER	- Detected sqlite version.
+# USE_SQLITE	- Add dependency on SQLite library.  Valid values are:
+#				  3 and 2.  If version is not specified directly then
+#				  SQLite-3 is used (if USE_SQLITE= yes).
+# SQLITE_VER
+#				- Detected SQLite version.
 ##
-# USE_FIREBIRD	- Add dependency on Firebird library. Valid values are:
-#				  2 and 1. If no version is given by the maintainer (if
+# USE_FIREBIRD	- Add dependency on Firebird library.  Valid values are:
+#				  2 and 1.  If no version is given by the maintainer (if
 #				  USE_FIREBIRD= yes) and the user did not define
 #				  WITH_FIREBIRD_VER variable, fall back to default "2".
 # WITH_FIREBIRD_VER
 #				- User defined variable to set Firebird version.
-# FIREBIRD_VER	- Detected Firebird version.
+# FIREBIRD_VER
+#				- Detected Firebird version.
 
 .if defined(USE_MYSQL)
 DEFAULT_MYSQL_VER?=	50
@@ -111,7 +120,7 @@ _MYSQL_VER!=	${LOCALBASE}/bin/mysql --version | ${SED} -e 's/.*Distrib \([0-9]\)
 
 .if defined(WANT_MYSQL_VER)
 .if defined(WITH_MYSQL_VER) && ${WITH_MYSQL_VER} != ${WANT_MYSQL_VER}
-IGNORE=		cannot install: the port wants mysql${WANT_MYSQL_VER}-client and you try to install mysql${WITH_MYSQL_VER}-client.
+IGNORE=		cannot install: the port wants mysql${WANT_MYSQL_VER}-client and you try to install mysql${WITH_MYSQL_VER}-client
 .endif
 MYSQL_VER=	${WANT_MYSQL_VER}
 .elif defined(WITH_MYSQL_VER)
@@ -126,7 +135,7 @@ MYSQL_VER=	${DEFAULT_MYSQL_VER}
 
 .if defined(_MYSQL_VER)
 .if ${_MYSQL_VER} != ${MYSQL_VER}
-IGNORE=	cannot install: MySQL versions mismatch: mysql${_MYSQL_VER}-client is installed and wanted version is mysql${MYSQL_VER}-client
+IGNORE=		cannot install: MySQL versions mismatch: mysql${_MYSQL_VER}-client is installed and wanted version is mysql${MYSQL_VER}-client
 .endif
 .endif
 
@@ -139,7 +148,7 @@ IGNORE_WITH_MYSQL=	323 40 41
 .if defined(IGNORE_WITH_MYSQL)
 .	for VER in ${IGNORE_WITH_MYSQL}
 .		if (${MYSQL_VER} == "${VER}")
-IGNORE=		cannot install: doesn't work with MySQL version : ${MYSQL_VER} (Doesn't support MySQL ${IGNORE_WITH_MYSQL})
+IGNORE=		cannot install: does not work with MySQL version ${MYSQL_VER} (MySQL ${IGNORE_WITH_MYSQL} not supported)
 .		endif
 .	endfor
 .endif # IGNORE_WITH_MYSQL
@@ -172,7 +181,7 @@ _PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9
 
 .if defined(WANT_PGSQL_VER)
 .if defined(WITH_PGSQL_VER) && ${WITH_PGSQL_VER} != ${WANT_PGSQL_VER}
-IGNORE=		cannot install: the port wants postgresql${WANT_PGSQL_VER}-client and you try to install postgresql${WITH_PGSQL_VER}-client.
+IGNORE=		cannot install: the port wants postgresql${WANT_PGSQL_VER}-client and you try to install postgresql${WITH_PGSQL_VER}-client
 .endif
 PGSQL_VER=	${WANT_PGSQL_VER}
 .elif defined(WITH_PGSQL_VER)
@@ -191,14 +200,14 @@ IGNORE=		cannot install: the port wants postgresql${PGSQL_VER}-client but you ha
 
 # And now we are checking if we can use it
 .if defined(PGSQL${PGSQL_VER}_LIBVER)
-# compatability shim
+# compatibility shim
 .if defined(BROKEN_WITH_PGSQL)
 IGNORE_WITH_PGSQL=${BROKEN_WITH_PGSQL}
 .endif
 .if defined(IGNORE_WITH_PGSQL)
 .	for VER in ${IGNORE_WITH_PGSQL}
 .		if (${PGSQL_VER} == "${VER}")
-IGNORE=		cannot install: does not work with postgresql${PGSQL_VER}-client PostgresSQL (${IGNORE_WITH_PGSQL} not supported)
+IGNORE=		cannot install: does not work with postgresql${PGSQL_VER}-client (PostgresSQL ${IGNORE_WITH_PGSQL} not supported)
 .		endif
 .	endfor
 .endif # IGNORE_WITH_PGSQL
@@ -323,7 +332,7 @@ _BDB_VER=	${_MATCHED_DB_VER}
 
 # USE_BDB is specified incorrectly, so mark this as IGNORE
 .if ${_BDB_VER} == "no"
-IGNORE=	cannot install: unknown bdb version: ${USE_BDB}
+IGNORE=		cannot install: unknown Berkeley DB version: ${USE_BDB}
 .else
 # Now check if we can use it
 . if defined(INVALID_BDB_VER)
@@ -346,9 +355,9 @@ _BDB_IGNORE=	yes
 .  endfor
 . endif
 . if ${_BDB_IGNORE} == "yes"
-IGNORE= cannot install: does not work with bdb version: ${_BDB_VER} (${INVALID_BDB_VER} not supported)
+IGNORE=		cannot install: does not work with Berkeley DB version ${_BDB_VER} (${INVALID_BDB_VER} not supported)
 . else
-# Now add the dependancy on Berkeley DB ${_BDB_VER) version
+# Now add the dependency on Berkeley DB ${_BDB_VER) version
 .if defined(BDB_BUILD_DEPENDS)
 BUILD_DEPENDS+=	${db${_BDB_VER}_FIND}:${db${_BDB_VER}_DEPENDS:C/^db.*://}
 .else
@@ -410,7 +419,7 @@ IGNORE=	${_IGNORE_MSG}
 
 .endif # USE_BDB
 
-# Handling sqlite dependency
+# Handling SQLite dependency
 .if defined(USE_SQLITE)
 
 .if ${USE_SQLITE:L} == "yes"
@@ -430,7 +439,7 @@ SQLITE_VER=	${_SQLITE_VER}
 LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
 SQLITE_VER=	${_SQLITE_VER}
 .else
-IGNORE=	cannot install: unknown sqlite version: ${_SQLITE_VER}
+IGNORE=		cannot install: unknown SQLite version: ${_SQLITE_VER}
 .endif
 
 .endif # defined(USE_SQLITE)
@@ -454,7 +463,7 @@ LIB_DEPENDS+=	fbclient.2:${PORTSDIR}/databases/firebird20-client
 .elif ${FIREBIRD_VER} == "1"
 LIB_DEPENDS+=	fbclient.1:${PORTSDIR}/databases/firebird-client
 .else
-IGNORE=	cannot install: unknown Firebird version: ${FIREBIRD_VER}
+IGNORE=		cannot install: unknown Firebird version: ${FIREBIRD_VER}
 .endif
 
 .endif # defined(USE_FIREBIRD)
