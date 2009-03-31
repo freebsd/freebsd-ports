@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.9.8a
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -335,7 +335,7 @@ CONFIGURE_ARGS+=--disable-schroedinger
 
 .if !defined(WITHOUT_X264)
 CONFIGURE_ARGS+=--enable-x264
-LIB_DEPENDS+=	x264.50:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.65:${PORTSDIR}/multimedia/x264
 .else
 CONFIGURE_ARGS+=--disable-x264
 .endif

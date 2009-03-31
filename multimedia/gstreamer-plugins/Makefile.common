@@ -444,7 +444,7 @@ gst_vorbis_PLIST_FILES=	${GST_LIB_DIR}/libgstvorbis.la \
 gst_vorbis_DIST=	base
 
 # x264
-gst_x264_LIB_DEPENDS+=	x264.50:${PORTSDIR}/multimedia/x264			
+gst_x264_LIB_DEPENDS+=	x264.65:${PORTSDIR}/multimedia/x264
 gst_x264_PLIST_FILES=	${GST_LIB_DIR}/libgstx264.la \
 		${GST_LIB_DIR}/libgstx264.so
 gst_x264_DIST=	bad
