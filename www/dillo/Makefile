@@ -34,6 +34,8 @@ CONFIGURE_ARGS=	--enable-cookies --enable-threaded-dns \
 		--libdir=${PREFIX}/libexec
 .if !defined(WITHOUT_DILLO_IPV6) && !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
+.else
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 .if defined(WITH_DILLO_SSL)
