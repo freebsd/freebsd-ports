@@ -24,17 +24,7 @@
 
 --- afbinit.c.orig	Fri Nov 30 03:04:21 2001
 +++ afbinit.c	Mon Sep 15 17:33:19 2003
-@@ -12,7 +12,9 @@
- #include <sys/mman.h>
- #include <unistd.h>
- #include <fcntl.h>
-+#include <stdlib.h>
- #include <stdio.h>
-+#include <string.h>
- 
- /* Define this to debug the microcode loading procedure. */
- #undef DEBUG_UCODE_LOAD
-@@ -184,7 +186,7 @@
+@@ -186,7 +186,7 @@
  
  static void usage(char *me)
  {
@@ -43,7 +33,7 @@
  	exit(1);
  }
  
-@@ -193,13 +195,14 @@
+@@ -195,13 +195,14 @@
  	struct afb_ucode_header {
  		char ident[8];
  		unsigned int ucode_words;
@@ -59,7 +49,7 @@
  
  	if(argc != 2 && argc != 3)
  		usage(argp[0]);
-@@ -222,7 +225,7 @@
+@@ -224,7 +225,7 @@
  		perror("Read UCODE header");
  		exit(1);
  	}
@@ -68,25 +58,7 @@
  	if(ucode == NULL) {
  		fprintf(stderr, "Cannot malloc %d bytes for UCODE.\n",
  			ucheader.ucode_words << 2);
-@@ -236,7 +239,7 @@
- 	/* MMAP the registers. */
- 	uregs = mmap(0, 0x2000,
- 		     PROT_READ | PROT_WRITE,
--		     MAP_PRIVATE,
-+		     MAP_SHARED,
- 		     afb_fd,
- 		     0x04000000);
- 	if (uregs == (void *)-1L) {
-@@ -246,7 +249,7 @@
- 
- 	kregs = mmap(0, 0x2000,
- 		     PROT_READ | PROT_WRITE,
--		     MAP_PRIVATE,
-+		     MAP_SHARED,
- 		     afb_fd,
- 		     0x0bc04000);
- 	if (kregs == (void *)-1L) {
-@@ -254,14 +257,26 @@
+@@ -256,15 +257,27 @@
  		exit(1);
  	}
  
@@ -112,8 +84,9 @@
  	       (ucode_version >> 16) & 0xff,
  	       (ucode_version >>  8) & 0xff,
  	       (ucode_version >>  0) & 0xff);
--
--	afb_ucode_upload((char *)ucode, ucheader.ucode_words / 16, uregs, kregs);
  
+-	afb_ucode_upload((char *)ucode, ucheader.ucode_words / 16, uregs, kregs);
+-
  	munmap(kregs, 0x2000);
  	munmap(uregs, 0x2000);
+ 
