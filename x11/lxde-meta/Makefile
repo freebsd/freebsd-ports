@@ -23,7 +23,6 @@ RUN_DEPENDS=	openbox:${PORTSDIR}/x11-wm/openbox \
 		lxde-common>=0::${PORTSDIR}/misc/lxde-common
 
 DESCR=		${.CURDIR}/pkg-descr
-PKGMESSAGE=	${.CURDIR}/pkg-message
 
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
