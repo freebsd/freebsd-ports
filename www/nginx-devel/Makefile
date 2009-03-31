@@ -102,7 +102,7 @@ CONFIGURE_ARGS+=--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_temp \
 .if defined(WITH_HTTP_ACCESSKEY_MODULE)
 NGINX_ACCESSKEY_MODULE_VERSION=	2.0.3
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:accesskey/}
-MASTER_SITE_SUBDIR=	osa/:accesskey
+MASTER_SITE_SUBDIR+=	osa/:accesskey
 DISTFILES+=  	nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}.tar.gz:accesskey
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}
 .endif
@@ -190,7 +190,7 @@ CONFIGURE_ARGS+=--with-http_xslt_module
 .if defined(WITH_HTTP_ZIP_MODULE)
 NGINX_ZIP_MODULE_VERSION=	1.1.4
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:zip/}
-MASTER_SITE_SUBDIR=	osa/:zip
+MASTER_SITE_SUBDIR+=	osa/:zip
 DISTFILES+=	nginx_mod_zip-${NGINX_ZIP_MODULE_VERSION}.tar.gz:zip
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_MODULE_VERSION}
 .endif
