@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	puppet
-PORTVERSION=	0.24.4
+PORTVERSION=	0.24.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.reductivelabs.com/downloads/puppet/
 EXTRACT_SUFX=	.tgz
@@ -23,41 +23,35 @@ CONFLICTS=	puppet-devel-[0-9]*
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RC_SUBR=	puppetmasterd puppetd
-DOCS=	CHANGELOG README LICENSE COPYING
+PORTDOCS=	CHANGELOG README LICENSE COPYING
+PORTEXAMPLES=	*
 PUPPET_USER:=	puppet
 PUPPET_GROUP:=	${PUPPET_USER}
 PUPPET_RUNDIR:=	/var/run/${PORTNAME}
-SUB_FILES+=	pkg-install pkg-message
+PUPPET_WORKDIR:=	/var/${PORTNAME}
+SUB_FILES+=	pkg-install pkg-message pkg-deinstall
 SUB_LIST+=	PUPPET_RUNDIR="${PUPPET_RUNDIR}" \
-			PUPPET_USER="${PUPPET_USER}" \
-			PUPPET_GROUP="${PUPPET_GROUP}"
+		PUPPET_USER="${PUPPET_USER}" \
+		PUPPET_GROUP="${PUPPET_GROUP}" \
+		PUPPET_WORKDIR="${PUPPET_WORKDIR}"
+
+MANCOMPRESSED=	yes
+MAN8=	filebucket.8 pi.8 puppet.8 puppet.conf.8 puppetca.8 puppetd.8 \
+	puppetdoc.8 puppetmasterd.8 puppetrun.8 ralsh.8
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e "s|/etc/puppet|${PREFIX}/etc/puppet|" \
+	@${REINPLACE_CMD} -e "s|/etc/puppet|${PREFIX}/etc/puppet|" \
 		${WRKSRC}/lib/puppet/reference/configuration.rb
-	${REINPLACE_CMD} -e "s|/etc/puppet|${PREFIX}/etc/puppet|" \
-	${WRKSRC}/lib/puppet/defaults.rb
+	@${REINPLACE_CMD} -e "s|/etc/puppet|${PREFIX}/etc/puppet|" \
+		${WRKSRC}/lib/puppet/defaults.rb
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	cd ${WRKSRC} && \
-		${SETENV} DSTDIR=${DSTDIR}/${PREFIX} \
-		${RUBY} ${WRKSRC}/install.rb --full
-	${INSTALL} -d ${DOCSDIR}
-.if !defined(NOPORTDOCS)
-.for FILE in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
-.endif
-.if !defined(NOPORTEXAMPLES)
-	${INSTALL} -d ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
-.endif
+	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ${RUBY} ${WRKSRC}/install.rb
 
 post-install:
 	${INSTALL} -d ${PREFIX}/etc/${PORTNAME}
@@ -74,21 +68,16 @@ post-install:
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type f | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-.if !defined(NOPORTEXAMPLES)
-	@${FIND} ${EXAMPLESDIR} -type f | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${EXAMPLESDIR} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.endif
-.if !defined(NOPORTDOCS)
-	@${FIND} ${DOCSDIR} -type f | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${DOCSDIR} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.endif
 	@${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.if !defined(NOPORTDOCS)
+	${INSTALL} -d ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
