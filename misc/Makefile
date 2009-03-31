@@ -392,6 +392,7 @@
     SUBDIR += loop
     SUBDIR += lr
     SUBDIR += lv
+    SUBDIR += lxde-common
     SUBDIR += magicpoint
     SUBDIR += man.el
     SUBDIR += mbuffer
