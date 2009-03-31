@@ -1,6 +1,6 @@
 --- src/freebsd_pci.c.orig	2009-02-25 19:30:48.000000000 -0600
 +++ src/freebsd_pci.c	2009-02-25 19:30:58.000000000 -0600
-@@ -53,6 +53,25 @@
+@@ -53,6 +53,29 @@
  #define	PCIS_DISPLAY_3D		0x02
  #define	PCIS_DISPLAY_OTHER	0x80
  
@@ -23,10 +23,65 @@
 +#define PCIM_BAR_MEM_SPACE      0
 +#define PCIM_BAR_IO_SPACE       1
 +
++#if defined(__sparc64__)
++static int screenfd;
++#endif
++
  /**
   * FreeBSD private pci_system structure that extends the base pci_system
   * structure.
-@@ -214,6 +233,10 @@
+@@ -84,12 +107,18 @@
+ {
+     const int prot = ((map->flags & PCI_DEV_MAP_FLAG_WRITABLE) != 0) 
+         ? (PROT_READ | PROT_WRITE) : PROT_READ;
++#if !defined(__sparc64__)
+     struct mem_range_desc mrd;
+     struct mem_range_op mro;
++#endif
+ 
+     int fd, err = 0;
+ 
++#if defined(__sparc64__)
++    fd = screenfd;
++#else
+     fd = open("/dev/mem", O_RDWR);
++#endif
+     if (fd == -1)
+ 	return errno;
+ 
+@@ -99,6 +128,7 @@
+ 	err = errno;
+     }
+ 
++#if !defined(__sparc64__)
+     mrd.mr_base = map->base;
+     mrd.mr_len = map->size;
+     strncpy(mrd.mr_owner, "pciaccess", sizeof(mrd.mr_owner));
+@@ -119,6 +149,7 @@
+     }
+ 
+     close(fd);
++#endif
+ 
+     return err;
+ }
+@@ -127,6 +158,7 @@
+ pci_device_freebsd_unmap_range( struct pci_device *dev,
+ 				struct pci_device_mapping *map )
+ {
++#if defined(__sparc64__)
+     struct mem_range_desc mrd;
+     struct mem_range_op mro;
+     int fd;
+@@ -152,6 +184,7 @@
+ 	    fprintf(stderr, "Failed to open /dev/mem\n");
+ 	}
+     }
++#endif
+ 
+     return pci_device_generic_unmap_range(dev, map);
+ }
+@@ -214,6 +247,10 @@
      while ( size > 0 ) {
  	int towrite = (size < 4 ? size : 4);
  
@@ -37,7 +92,7 @@
  	io.pi_reg = offset;
  	io.pi_width = towrite;
  	memcpy( &io.pi_data, data, towrite );
-@@ -239,8 +262,12 @@
+@@ -239,8 +276,12 @@
  static int
  pci_device_freebsd_read_rom( struct pci_device * dev, void * buffer )
  {
@@ -51,7 +106,7 @@
  
      if ( ( dev->device_class & 0x00ffff00 ) !=
  	 ( ( PCIC_DISPLAY << 16 ) | ( PCIS_DISPLAY_VGA << 8 ) ) )
-@@ -248,11 +275,29 @@
+@@ -248,20 +289,51 @@
  	return ENOSYS;
      }
  
@@ -73,28 +128,38 @@
 +    }
 +
 +    printf("Using rom_base = 0x%lx\n", (long)rom_base);
++#if defined(__sparc64__)
++    memfd = screenfd;
++#else
      memfd = open( "/dev/mem", O_RDONLY );
++#endif
      if ( memfd == -1 )
  	return errno;
  
 -    bios = mmap( NULL, dev->rom_size, PROT_READ, 0, memfd, 0xc0000 );
 +    bios = mmap( NULL, dev->rom_size, PROT_READ, 0, memfd, rom_base );
      if ( bios == MAP_FAILED ) {
++#if !defined(__sparc64__)
  	close( memfd );
++#endif
  	return errno;
-@@ -263,6 +308,11 @@
-     munmap( bios, dev->rom_size );
-     close( memfd );
+     }
  
+     memcpy( buffer, bios, dev->rom_size );
+ 
+     munmap( bios, dev->rom_size );
++#if !defined(__sparc64__)
+     close( memfd );
++#endif
++
 +    if (pci_rom) {
 +	pci_device_cfg_write_u32( dev, PCIR_BIOS, rom );
 +	pci_device_cfg_write_u16( dev, PCIR_COMMAND, reg );
 +    }
-+
+ 
      return 0;
  }
- 
-@@ -273,7 +323,7 @@
+@@ -273,7 +345,7 @@
  {
      struct pci_device_private *priv = (struct pci_device_private *) dev;
  
@@ -103,7 +168,7 @@
      case 0:
  	return 6;
      case 1:
-@@ -286,6 +336,64 @@
+@@ -286,6 +358,63 @@
      }
  }
  
@@ -112,7 +177,6 @@
 +static int
 +pci_device_freebsd_probe( struct pci_device * dev )
 +{
-+    struct pci_device_private *priv = (struct pci_device_private *) dev;
 +    struct pci_bar_io bar;
 +    uint8_t irq;
 +    int err, i;
@@ -168,7 +232,7 @@
  /** Masks out the flag bigs of the base address register value */
  static uint32_t
  get_map_base( uint32_t val )
-@@ -300,20 +408,13 @@
+@@ -300,20 +429,13 @@
  static int
  get_test_val_size( uint32_t testval )
  {
@@ -190,7 +254,7 @@
  }
  
  /**
-@@ -329,6 +430,7 @@
+@@ -329,6 +451,7 @@
  				    int bar )
  {
      uint32_t addr, testval;
@@ -198,7 +262,7 @@
      int err;
  
      /* Get the base address */
-@@ -336,12 +438,35 @@
+@@ -336,12 +459,35 @@
      if (err != 0)
  	return err;
  
@@ -235,7 +299,7 @@
  
      if (addr & 0x01)
  	dev->regions[region].is_IO = 1;
-@@ -352,6 +477,7 @@
+@@ -352,6 +498,7 @@
  
      /* Set the size */
      dev->regions[region].size = get_test_val_size( testval );
@@ -243,7 +307,7 @@
  
      /* Set the base address value */
      if (dev->regions[region].is_64) {
-@@ -374,6 +500,7 @@
+@@ -374,6 +521,7 @@
  pci_device_freebsd_probe( struct pci_device * dev )
  {
      struct pci_device_private *priv = (struct pci_device_private *) dev;
@@ -251,7 +315,7 @@
      uint8_t irq;
      int err, i, bar;
  
-@@ -386,10 +513,6 @@
+@@ -386,10 +534,6 @@
  	return errno;
      dev->irq = irq;
  
@@ -262,7 +326,7 @@
      bar = 0x10;
      for (i = 0; i < pci_device_freebsd_get_num_regions( dev ); i++) {
  	pci_device_freebsd_get_region_info( dev, i, bar );
-@@ -400,18 +523,36 @@
+@@ -400,18 +544,36 @@
  	    bar += 0x04;
      }
  
@@ -303,7 +367,7 @@
  static void
  pci_system_freebsd_destroy(void)
  {
-@@ -495,8 +636,10 @@
+@@ -495,9 +657,19 @@
  	pci_sys->devices[ i ].base.device_id = p->pc_device;
  	pci_sys->devices[ i ].base.subvendor_id = p->pc_subvendor;
  	pci_sys->devices[ i ].base.subdevice_id = p->pc_subdevice;
@@ -314,3 +378,12 @@
      }
  
      return 0;
+ }
++
++void
++pci_system_freebsd_init_dev_mem(int fd)
++{
++#if defined(__sparc64__)
++    screenfd = fd;
++#endif
++}
