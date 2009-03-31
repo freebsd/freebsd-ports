@@ -26,6 +26,7 @@
 %%LOGCONDIR%%/BitstreamVeraFonts/VeraSeBd.ttf
 %%LOGCONDIR%%/BitstreamVeraFonts/local.conf
 %%LOGCONDIR%%/admin/charts.php
+%%LOGCONDIR%%/admin/dbmappings.php
 %%LOGCONDIR%%/admin/fields.php
 %%LOGCONDIR%%/admin/groups.php
 %%LOGCONDIR%%/admin/index.php
@@ -221,6 +222,7 @@
 %%LOGCONDIR%%/include/db_update_v5.txt
 %%LOGCONDIR%%/include/db_update_v6.txt
 %%LOGCONDIR%%/include/db_update_v7.txt
+%%LOGCONDIR%%/include/db_update_v8.txt
 %%LOGCONDIR%%/include/functions_common.php
 %%LOGCONDIR%%/include/functions_config.php
 %%LOGCONDIR%%/include/functions_db.php
@@ -250,6 +252,7 @@
 %%LOGCONDIR%%/search.php
 %%LOGCONDIR%%/statistics.php
 %%LOGCONDIR%%/templates/admin/admin_charts.html
+%%LOGCONDIR%%/templates/admin/admin_dbmappings.html
 %%LOGCONDIR%%/templates/admin/admin_fields.html
 %%LOGCONDIR%%/templates/admin/admin_groups.html
 %%LOGCONDIR%%/templates/admin/admin_index.html

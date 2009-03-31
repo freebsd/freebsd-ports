@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phplogcon
-PORTVERSION=	2.5.24
+PORTVERSION=	2.7.0
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://download.adiscon.com/phplogcon/
 
