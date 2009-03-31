@@ -12,7 +12,7 @@ MASTER_SITES=	http://3ware.com/download/Escalade9690SA-Series/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-freebsd-${DIST_ARCH}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	frolov@riss-telecom.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3ware storage controllers management CLI
 
 RESTRICTED=	Redistribution is not allowed
