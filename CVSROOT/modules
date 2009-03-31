@@ -9827,6 +9827,7 @@ p5-Algorithm-LCS                ports/devel/p5-Algorithm-LCS
 p5-Algorithm-LUHN               ports/devel/p5-Algorithm-LUHN
 p5-Algorithm-MDiff              ports/devel/p5-Algorithm-MDiff
 p5-Algorithm-MarkovChain        ports/devel/p5-Algorithm-MarkovChain
+p5-Algorithm-Merge              ports/devel/p5-Algorithm-Merge
 p5-Algorithm-MinMax             ports/devel/p5-Algorithm-MinMax
 p5-Algorithm-Munkres            ports/math/p5-Algorithm-Munkres
 p5-Algorithm-NaiveBayes         ports/devel/p5-Algorithm-NaiveBayes
@@ -10438,6 +10439,7 @@ p5-Config-INI-Simple            ports/devel/p5-Config-INI-Simple
 p5-Config-IniFiles              ports/devel/p5-Config-IniFiles
 p5-Config-IniHash               ports/devel/p5-Config-IniHash
 p5-Config-IniRegEx              ports/devel/p5-Config-IniRegEx
+p5-Config-JFDI                  ports/devel/p5-Config-JFDI
 p5-Config-JSON                  ports/devel/p5-Config-JSON
 p5-Config-Model                 ports/devel/p5-Config-Model
 p5-Config-Objective             ports/devel/p5-Config-Objective
@@ -10590,10 +10592,13 @@ p5-DBIx-AnyDBD                  ports/databases/p5-DBIx-AnyDBD
 p5-DBIx-Browse                  ports/databases/p5-DBIx-Browse
 p5-DBIx-Class                   ports/databases/p5-DBIx-Class
 p5-DBIx-Class-AsFdat            ports/databases/p5-DBIx-Class-AsFdat
+p5-DBIx-Class-DateTime-Epoch    ports/databases/p5-DBIx-Class-DateTime-Epoch
 p5-DBIx-Class-DigestColumns     ports/databases/p5-DBIx-Class-DigestColumns
 p5-DBIx-Class-DynamicSubclass   ports/databases/p5-DBIx-Class-DynamicSubclass
 p5-DBIx-Class-EncodeColumns     ports/databases/p5-DBIx-Class-EncodeColumns
+p5-DBIx-Class-EncodedColumn     ports/databases/p5-DBIx-Class-EncodedColumn
 p5-DBIx-Class-FrozenColumns     ports/databases/p5-DBIx-Class-FrozenColumns
+p5-DBIx-Class-HTML-FormFu       ports/databases/p5-DBIx-Class-HTML-FormFu
 p5-DBIx-Class-HTMLWidget        ports/www/p5-DBIx-Class-HTMLWidget
 p5-DBIx-Class-InflateColumn-IP  ports/databases/p5-DBIx-Class-InflateColumn-IP
 p5-DBIx-Class-IntrospectableM2M  ports/databases/p5-DBIx-Class-IntrospectableM2M
@@ -11310,7 +11315,9 @@ p5-HTTPD-User-Manage            ports/www/p5-HTTPD-User-Manage
 p5-Handel                       ports/www/p5-Handel
 p5-Hash-AsObject                ports/devel/p5-Hash-AsObject
 p5-Hash-Case                    ports/devel/p5-Hash-Case
+p5-Hash-Flatten                 ports/devel/p5-Hash-Flatten
 p5-Hash-Merge                   ports/textproc/p5-Hash-Merge
+p5-Hash-Merge-Simple            ports/devel/p5-Hash-Merge-Simple
 p5-Hash-MoreUtils               ports/devel/p5-Hash-MoreUtils
 p5-Hash-MultiKey                ports/devel/p5-Hash-MultiKey
 p5-Hash-Union                   ports/devel/p5-Hash-Union
@@ -11431,6 +11438,7 @@ p5-JSAN                         ports/lang/p5-JSAN
 p5-JSON                         ports/converters/p5-JSON
 p5-JSON-Any                     ports/converters/p5-JSON-Any
 p5-JSON-DWIW                    ports/converters/p5-JSON-DWIW
+p5-JSON-RPC                     ports/devel/p5-JSON-RPC
 p5-JSON-XS                      ports/converters/p5-JSON-XS
 p5-JSON-XS-VersionOneAndTwo     ports/converters/p5-JSON-XS-VersionOneAndTwo
 p5-JSON1                        ports/converters/p5-JSON1
@@ -11758,6 +11766,7 @@ p5-Module-Versions-Report       ports/devel/p5-Module-Versions-Report
 p5-MogileFS-Client              ports/sysutils/p5-MogileFS-Client
 p5-MogileFS-Utils               ports/sysutils/p5-MogileFS-Utils
 p5-Mojo                         ports/www/p5-Mojo
+p5-MojoMojo                     ports/www/p5-MojoMojo
 p5-Mon                          ports/net-mgmt/p5-Mon
 p5-Moose                        ports/devel/p5-Moose
 p5-Moose-Policy                 ports/devel/p5-Moose-Policy
@@ -12476,6 +12485,7 @@ p5-String-BufferStack           ports/textproc/p5-String-BufferStack
 p5-String-CRC32                 ports/devel/p5-String-CRC32
 p5-String-CamelCase             ports/textproc/p5-String-CamelCase
 p5-String-Checker               ports/devel/p5-String-Checker
+p5-String-Diff                  ports/devel/p5-String-Diff
 p5-String-Divert                ports/textproc/p5-String-Divert
 p5-String-Ediff                 ports/devel/p5-String-Ediff
 p5-String-Format                ports/textproc/p5-String-Format
@@ -12880,6 +12890,7 @@ p5-URI-imap                     ports/mail/p5-URI-imap
 p5-URI-imaps                    ports/mail/p5-URI-imaps
 p5-Unicode-CheckUTF8            ports/textproc/p5-Unicode-CheckUTF8
 p5-Unicode-EastAsianWidth       ports/textproc/p5-Unicode-EastAsianWidth
+p5-Unicode-Escape               ports/textproc/p5-Unicode-Escape
 p5-Unicode-IMAPUtf7             ports/converters/p5-Unicode-IMAPUtf7
 p5-Unicode-Lite                 ports/converters/p5-Unicode-Lite
 p5-Unicode-Map                  ports/converters/p5-Unicode-Map
@@ -13179,6 +13190,7 @@ p5-algorithm-lcs                ports/devel/p5-Algorithm-LCS
 p5-algorithm-luhn               ports/devel/p5-Algorithm-LUHN
 p5-algorithm-markovchain        ports/devel/p5-Algorithm-MarkovChain
 p5-algorithm-mdiff              ports/devel/p5-Algorithm-MDiff
+p5-algorithm-merge              ports/devel/p5-Algorithm-Merge
 p5-algorithm-minmax             ports/devel/p5-Algorithm-MinMax
 p5-algorithm-munkres            ports/math/p5-Algorithm-Munkres
 p5-algorithm-naivebayes         ports/devel/p5-Algorithm-NaiveBayes
@@ -13790,6 +13802,7 @@ p5-config-ini-simple            ports/devel/p5-Config-INI-Simple
 p5-config-inifiles              ports/devel/p5-Config-IniFiles
 p5-config-inihash               ports/devel/p5-Config-IniHash
 p5-config-iniregex              ports/devel/p5-Config-IniRegEx
+p5-config-jfdi                  ports/devel/p5-Config-JFDI
 p5-config-json                  ports/devel/p5-Config-JSON
 p5-config-model                 ports/devel/p5-Config-Model
 p5-config-objective             ports/devel/p5-Config-Objective
@@ -14095,10 +14108,13 @@ p5-dbix-anydbd                  ports/databases/p5-DBIx-AnyDBD
 p5-dbix-browse                  ports/databases/p5-DBIx-Browse
 p5-dbix-class                   ports/databases/p5-DBIx-Class
 p5-dbix-class-asfdat            ports/databases/p5-DBIx-Class-AsFdat
+p5-dbix-class-datetime-epoch    ports/databases/p5-DBIx-Class-DateTime-Epoch
 p5-dbix-class-digestcolumns     ports/databases/p5-DBIx-Class-DigestColumns
 p5-dbix-class-dynamicsubclass   ports/databases/p5-DBIx-Class-DynamicSubclass
 p5-dbix-class-encodecolumns     ports/databases/p5-DBIx-Class-EncodeColumns
+p5-dbix-class-encodedcolumn     ports/databases/p5-DBIx-Class-EncodedColumn
 p5-dbix-class-frozencolumns     ports/databases/p5-DBIx-Class-FrozenColumns
+p5-dbix-class-html-formfu       ports/databases/p5-DBIx-Class-HTML-FormFu
 p5-dbix-class-htmlwidget        ports/www/p5-DBIx-Class-HTMLWidget
 p5-dbix-class-inflatecolumn-ip  ports/databases/p5-DBIx-Class-InflateColumn-IP
 p5-dbix-class-introspectablem2m  ports/databases/p5-DBIx-Class-IntrospectableM2M
@@ -14546,7 +14562,9 @@ p5-gungho                       ports/www/p5-Gungho
 p5-handel                       ports/www/p5-Handel
 p5-hash-asobject                ports/devel/p5-Hash-AsObject
 p5-hash-case                    ports/devel/p5-Hash-Case
+p5-hash-flatten                 ports/devel/p5-Hash-Flatten
 p5-hash-merge                   ports/textproc/p5-Hash-Merge
+p5-hash-merge-simple            ports/devel/p5-Hash-Merge-Simple
 p5-hash-moreutils               ports/devel/p5-Hash-MoreUtils
 p5-hash-multikey                ports/devel/p5-Hash-MultiKey
 p5-hash-union                   ports/devel/p5-Hash-Union
@@ -14822,6 +14840,7 @@ p5-jsan                         ports/lang/p5-JSAN
 p5-json                         ports/converters/p5-JSON
 p5-json-any                     ports/converters/p5-JSON-Any
 p5-json-dwiw                    ports/converters/p5-JSON-DWIW
+p5-json-rpc                     ports/devel/p5-JSON-RPC
 p5-json-xs                      ports/converters/p5-JSON-XS
 p5-json-xs-versiononeandtwo     ports/converters/p5-JSON-XS-VersionOneAndTwo
 p5-json1                        ports/converters/p5-JSON1
@@ -15142,6 +15161,7 @@ p5-mogilefs-client              ports/sysutils/p5-MogileFS-Client
 p5-mogilefs-server              ports/sysutils/p5-mogilefs-server
 p5-mogilefs-utils               ports/sysutils/p5-MogileFS-Utils
 p5-mojo                         ports/www/p5-Mojo
+p5-mojomojo                     ports/www/p5-MojoMojo
 p5-mon                          ports/net-mgmt/p5-Mon
 p5-moose                        ports/devel/p5-Moose
 p5-moose-policy                 ports/devel/p5-Moose-Policy
@@ -15864,6 +15884,7 @@ p5-string-bufferstack           ports/textproc/p5-String-BufferStack
 p5-string-camelcase             ports/textproc/p5-String-CamelCase
 p5-string-checker               ports/devel/p5-String-Checker
 p5-string-crc32                 ports/devel/p5-String-CRC32
+p5-string-diff                  ports/devel/p5-String-Diff
 p5-string-divert                ports/textproc/p5-String-Divert
 p5-string-ediff                 ports/devel/p5-String-Ediff
 p5-string-format                ports/textproc/p5-String-Format
@@ -16280,6 +16301,7 @@ p5-uml-sequence                 ports/textproc/p5-UML-Sequence
 p5-uml-state                    ports/textproc/p5-UML-State
 p5-unicode-checkutf8            ports/textproc/p5-Unicode-CheckUTF8
 p5-unicode-eastasianwidth       ports/textproc/p5-Unicode-EastAsianWidth
+p5-unicode-escape               ports/textproc/p5-Unicode-Escape
 p5-unicode-imaputf7             ports/converters/p5-Unicode-IMAPUtf7
 p5-unicode-lite                 ports/converters/p5-Unicode-Lite
 p5-unicode-map                  ports/converters/p5-Unicode-Map
