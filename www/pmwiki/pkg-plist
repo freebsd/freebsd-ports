@@ -82,7 +82,11 @@
 %%PMWIKIDIR%%/scripts/version.php
 %%PMWIKIDIR%%/scripts/wikistyles.php
 %%PMWIKIDIR%%/scripts/wikiwords.php
+%%PMWIKIDIR%%/scripts/xlpage-iso-8859-13.php
+%%PMWIKIDIR%%/scripts/xlpage-iso-8859-2.php
+%%PMWIKIDIR%%/scripts/xlpage-iso-8859-9.php
 %%PMWIKIDIR%%/scripts/xlpage-utf-8.php
+%%PMWIKIDIR%%/wikilib.d/Category.GroupFooter
 %%PMWIKIDIR%%/wikilib.d/Main.HomePage
 %%PMWIKIDIR%%/wikilib.d/Main.WikiSandbox
 %%PMWIKIDIR%%/wikilib.d/PmWiki.AccessKeys
@@ -105,12 +109,15 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.DeletingPages
 %%PMWIKIDIR%%/wikilib.d/PmWiki.DesignNotes
 %%PMWIKIDIR%%/wikilib.d/PmWiki.DocumentationIndex
+%%PMWIKIDIR%%/wikilib.d/PmWiki.Drafts
 %%PMWIKIDIR%%/wikilib.d/PmWiki.EditVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.FAQ
 %%PMWIKIDIR%%/wikilib.d/PmWiki.FilePermissions
 %%PMWIKIDIR%%/wikilib.d/PmWiki.FmtPageName
+%%PMWIKIDIR%%/wikilib.d/PmWiki.Forms
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Functions
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Glossary
+%%PMWIKIDIR%%/wikilib.d/PmWiki.GroupFooter
 %%PMWIKIDIR%%/wikilib.d/PmWiki.GroupHeader
 %%PMWIKIDIR%%/wikilib.d/PmWiki.GroupHeaders
 %%PMWIKIDIR%%/wikilib.d/PmWiki.I18nVariables
@@ -120,11 +127,11 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Installation
 %%PMWIKIDIR%%/wikilib.d/PmWiki.InterMap
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Internationalizations
+%%PMWIKIDIR%%/wikilib.d/PmWiki.Introduction
 %%PMWIKIDIR%%/wikilib.d/PmWiki.LayoutVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.LinkVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Links
 %%PMWIKIDIR%%/wikilib.d/PmWiki.LocalCustomizations
-%%PMWIKIDIR%%/wikilib.d/PmWiki.MailPosts
 %%PMWIKIDIR%%/wikilib.d/PmWiki.MailingLists
 %%PMWIKIDIR%%/wikilib.d/PmWiki.MarkupExpressions
 %%PMWIKIDIR%%/wikilib.d/PmWiki.MarkupMasterIndex
@@ -133,7 +140,10 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PageDirectives
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PageFileFormat
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PageHistory
+%%PMWIKIDIR%%/wikilib.d/PmWiki.PageListDefaultTemplates
+%%PMWIKIDIR%%/wikilib.d/PmWiki.PageListTemplates
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PageLists
+%%PMWIKIDIR%%/wikilib.d/PmWiki.PageTextVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PageVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PagelistVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Passwords
@@ -146,6 +156,7 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.RefCount
 %%PMWIKIDIR%%/wikilib.d/PmWiki.ReleaseNotes
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Requirements
+%%PMWIKIDIR%%/wikilib.d/PmWiki.Search
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Security
 %%PMWIKIDIR%%/wikilib.d/PmWiki.SecurityVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.SimultaneousEdits
@@ -157,6 +168,7 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Tables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.TextFormattingRules
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Troubleshooting
+%%PMWIKIDIR%%/wikilib.d/PmWiki.UTF-8
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Upgrades
 %%PMWIKIDIR%%/wikilib.d/PmWiki.UpgradingFromPmWiki1
 %%PMWIKIDIR%%/wikilib.d/PmWiki.UploadVariables
@@ -164,6 +176,7 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.UploadsAdmin
 %%PMWIKIDIR%%/wikilib.d/PmWiki.UrlApprovals
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Variables
+%%PMWIKIDIR%%/wikilib.d/PmWiki.Version
 %%PMWIKIDIR%%/wikilib.d/PmWiki.WebFeeds
 %%PMWIKIDIR%%/wikilib.d/PmWiki.WikiAdministrator
 %%PMWIKIDIR%%/wikilib.d/PmWiki.WikiFarmTerminology
@@ -195,6 +208,7 @@
 %%PMWIKIDIR%%/wikilib.d/SiteAdmin.AuthList
 %%PMWIKIDIR%%/wikilib.d/SiteAdmin.AuthUser
 %%PMWIKIDIR%%/wikilib.d/SiteAdmin.GroupAttributes
+%%PMWIKIDIR%%/wikilib.d/SiteAdmin.SiteAdmin
 %%PMWIKIDIR%%/wikilib.d/SiteAdmin.Status
 @dirrm %%PMWIKIDIR%%/wikilib.d
 @dirrm %%PMWIKIDIR%%/wiki.d
