@@ -7,6 +7,7 @@ include/znc/Client.h
 include/znc/Csocket.h
 include/znc/DCCBounce.h
 include/znc/DCCSock.h
+include/znc/defines.h
 include/znc/FileUtils.h
 include/znc/HTTPSock.h
 include/znc/IRCSock.h
