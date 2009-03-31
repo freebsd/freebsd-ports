@@ -8,11 +8,12 @@
 PORTNAME=	quaqut
 PORTVERSION=	0.2.0
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Queries information from Unreal Tournament 2004 game servers
+
+MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}

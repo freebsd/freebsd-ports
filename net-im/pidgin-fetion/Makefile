@@ -16,6 +16,8 @@ COMMENT=	Fetion protocol plugin for libpurple
 
 LIB_DEPENDS=	purple.5:${PORTSDIR}/net-im/libpurple
 
+MAKE_JOBS_SAFE=	yes
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

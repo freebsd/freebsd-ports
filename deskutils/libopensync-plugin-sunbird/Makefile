@@ -16,6 +16,8 @@ COMMENT=	Sunbird plugin for the OpenSync framework
 LIB_DEPENDS=	opensync.0:${PORTSDIR}/devel/libopensync022 \
 		neon.28:${PORTSDIR}/www/neon28
 
+MAKE_JOBS_SAFE=	yes
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 libxml2

@@ -15,6 +15,8 @@ COMMENT=	A delimited word diff program
 
 OPTIONS=	UNICODE	"Build with Unicode support"	on
 
+MAKE_JOBS_SAFE=	yes
+
 HAS_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

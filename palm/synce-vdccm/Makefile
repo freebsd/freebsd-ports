@@ -18,9 +18,10 @@ LIB_DEPENDS=	synce.0:${PORTSDIR}/palm/synce-libsynce
 
 OPTIONS=	DESKTOP	"Enable desktop integration"	on
 
+MAKE_JOBS_SAFE=	yes
+
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
-USE_GNOME=	gnometarget
 CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE} \
 		--with-libsynce=${LOCALBASE}
 

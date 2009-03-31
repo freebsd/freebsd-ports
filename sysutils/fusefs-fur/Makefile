@@ -21,6 +21,8 @@ RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 OPTIONS=	VCHMOD	"Enable a fake hook for chmod that just returns 0"	on
 
+MAKE_JOBS_SAFE=	yes
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
