@@ -25,7 +25,6 @@ ARCH!=  /usr/bin/uname -p
 .endif
 
 VIDEO_ON=	ati \
-		intel \
 		mach64 \
 		nv \
 		r128 \
@@ -36,6 +35,10 @@ VIDEO_ON=	ati \
 VIDEO_ON+=	sunffb
 .else
 VIDEO_ON+=	openchrome
+.endif
+
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+VIDEO_ON+=	intel
 .endif
 
 VIDEO_OFF=	apm ark \
