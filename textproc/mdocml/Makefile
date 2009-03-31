@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	mdocml
-PORTVERSION=	1.6.8
+PORTVERSION=	1.7.7
 CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
   		https://www.spoerlein.net/pub/mdocml/
 
 MAINTAINER=	uspoerlein@gmail.com
-COMMENT=	Suite of mdoc compilers for BSD man pages
+COMMENT=	mdoc macro compiler
 
 MAN1=	mandoc.1
-MAN3=	mdoc.3
 MAN7=	mdoc.7
 
 PLIST_FILES=	bin/mandoc
