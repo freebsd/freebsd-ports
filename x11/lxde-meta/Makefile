@@ -20,7 +20,7 @@ RUN_DEPENDS=	openbox:${PORTSDIR}/x11-wm/openbox \
 		lxtask:${PORTSDIR}/sysutils/lxtask \
 		pcmanfm:${PORTSDIR}/x11-fm/pcmanfm \
 		gpicview:${PORTSDIR}/graphics/gpicview \
-		lxde-common>=0::${PORTSDIR}/misc/lxde-common
+		lxde-common>=0:${PORTSDIR}/misc/lxde-common
 
 DESCR=		${.CURDIR}/pkg-descr
 
