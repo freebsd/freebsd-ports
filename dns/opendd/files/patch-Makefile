@@ -9,3 +9,25 @@
  
  BIN_PROGRAM = opendd
  
+@@ -49,15 +49,13 @@
+ 	fi
+ 	@echo ""
+ .c.o:
+-	@echo "===>  Compiling `basename $*.o` ..."
+-	@if [ "$*" = "./include/socket" ]\
+-	|| [ "$*" = "./main" ]\
+- 	&& [ "${USE_SOCKET_SSL}" ]; then\
+-		echo '${CC} ${FLAGS} ${MACROS} -c -o $*.o $*.c';\
+-		${CC} ${FLAGS} ${MACROS} -c -o $*.o $*.c;\
++	@echo "===>  Compiling `basename $@` ..."
++	@if [ "${USE_SOCKET_SSL}" ]; then\
++		echo '${CC} ${FLAGS} ${MACROS} -c -o $@ $<';\
++		${CC} ${FLAGS} ${MACROS} -c -o $@ $<;\
+ 	else\
+-		echo '${CC} ${FLAGS} -c -o $*.o $*.c';\
+-		${CC} ${FLAGS} -c -o $*.o $*.c;\
++		echo '${CC} ${FLAGS} -c -o $@ $<';\
++		${CC} ${FLAGS} -c -o $@ $<;\
+ 	fi
+ clean:
+ 	if [ -f opendd ];then rm -f opendd; fi
