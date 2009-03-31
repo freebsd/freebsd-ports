@@ -14,9 +14,10 @@ MASTER_SITE_SUBDIR=	synce
 MAINTAINER=	ports@logvinov.com
 COMMENT?=	LZRTF compression library
 
+MAKE_JOBS_SAFE=	yes
+
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

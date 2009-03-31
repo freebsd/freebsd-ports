@@ -24,6 +24,8 @@ OPTIONS=	LIBSYNCE	"Build with libsynce support"			on \
 		VISE		"Build with expermential VISE support"		off \
 		MSI		"Build with expermential MSI support"		off
 
+MAKE_JOBS_SAFE=	yes
+
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack

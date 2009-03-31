@@ -16,6 +16,8 @@ COMMENT=	GTK frontend for XNeur keyboard layout switcher
 BUILD_DEPENDS=	xneur:${PORTSDIR}/russian/xneur
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+MAKE_JOBS_SAFE=	yes
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 libglade2

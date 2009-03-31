@@ -21,14 +21,16 @@ LIB_DEPENDS=	rra.0:${PORTSDIR}/palm/synce-librra \
 RUN_DEPENDS=	${LOCALBASE}/libexec/gvfsd-synce:${PORTSDIR}/palm/synce-gvfs \
 		${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
 
+MAKE_JOBS_SAFE=	yes
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
 INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	${PORTNAME}.schemas
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_CFLAGS}
-CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 SUB_FILES=	pkg-message

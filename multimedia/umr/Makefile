@@ -13,6 +13,8 @@ MASTER_SITES=	http://pages.cthome.net/chrismp/umr/
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Unreal Media Ripper
 
+MAKE_JOBS_SAFE=	yes
+
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:

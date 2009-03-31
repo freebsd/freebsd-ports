@@ -17,6 +17,8 @@ COMMENT=	SynCE legacy plugin for the OpenSync framework
 LIB_DEPENDS=	opensync.0:${PORTSDIR}/devel/libopensync022 \
 		rra.0:${PORTSDIR}/palm/synce-librra
 
+MAKE_JOBS_SAFE=	yes
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 libxml2

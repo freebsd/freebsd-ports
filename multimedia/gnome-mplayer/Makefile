@@ -23,6 +23,8 @@ OPTIONS=	GIO	"Use GIO for file I/O"			off \
 		BRAINZ3	"Add support for libmusicbrainz3"	off \
 		NAUPLUG	"Enable Nautilus plugin"		off
 
+MAKE_JOBS_SAFE=	yes
+
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	glib20 gtk20
