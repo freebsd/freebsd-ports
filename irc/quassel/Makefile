@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	quassel
-DISTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.4.1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.quassel-irc.org/pub/
 
@@ -21,6 +20,7 @@ USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
 CMAKE_USE_PTHREAD=	yes
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	MONO "Quassel standalone client" on \
 		CORE "Quassel core" on \
