@@ -15,7 +15,7 @@ DISTNAME=		${PORTNAME}_${PORTVERSION}.orig
 
 PATCH_SITES=		${MASTER_SITES}
 PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
-PATCHFILES=		${PORTNAME}_${PORTVERSION}-1.diff.gz
+PATCHFILES=		${PORTNAME}_${PORTVERSION}-4.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=		marius@FreeBSD.org
@@ -32,7 +32,7 @@ post-patch:
 .for i in afbinit.c debian/afbinit.8
 	@${REINPLACE_CMD} -E -e 's|\/usr\/lib|${DATADIR}|g; \
 		s|(\/dev\/fb\[)[0-3]+(\])|\10-7\2|g; \
-		s|\/etc\/init.d\/afb|${PREFIX}/etc/rc.d/afbinit\{,.sh\}|g' \
+		s|\/etc\/init.d\/afbinit|${PREFIX}/etc/rc.d/afbinit\{,.sh\}|g' \
 		${WRKSRC}/${i}
 .endfor
 	@${SED} 's|%%DATADIR%%|${DATADIR}|g' ${PKGDIR}/pkg-message > \
