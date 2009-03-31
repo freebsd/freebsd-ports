@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kroc
-PORTVERSION=	1.5.r5519
+PORTVERSION=	1.5.r5576
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.i-scream.org/pub/kroc/ \
 		ftp://ftp.i-scream.org/pub/kroc/
@@ -17,14 +17,12 @@ COMMENT=	The Kent Retargettable occam-pi Compiler
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-
-# Note to maintainer: remember to test with NOPORTDOCS and NOPORTEXAMPLES
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 ONLY_FOR_ARCHS=	i386
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 USE_GL=		yes
 USE_MYSQL=	yes
 USE_PYTHON=	yes
@@ -32,13 +30,12 @@ USE_SDL=	sdl sound
 USE_GNOME=	libxslt
 USE_AUTOTOOLS=	autoconf:262:env automake:110:env
 USE_XORG=	xmu xi
+GNU_CONFIGURE=	yes
 
 MAN1=		kmakef.1 kroc.1 mkoccdeps.1 occ21.1 occamdoc.1
 MAN3=		libconvert-inmos.3 libcourse-cycles.3 libcourse-nets.3 \
 		libcourse-utils.3 libfile.3 libhostio-inmos.3 libmath-inmos.3 \
 		libproc.3 libsock.3 libstreamio-inmos.3 libstring-inmos.3
-
-FAKEDIR=	${WRKDIR}/fake
 
 # Fix pkgconfig location
 post-patch:
@@ -46,62 +43,11 @@ post-patch:
 		${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
-# Path options to build are inconsistent
-do-build:
-	@cd ${WRKSRC} && \
-		CPPFLAGS=-I${PREFIX}/include \
-		LDFLAGS=-L${PREFIX}/lib \
-		./build \
-			--prefix=${FAKEDIR} \
-			--configdir=${FAKEDIR}/etc \
-			--krocdir=/${DATADIR_REL} \
-			--mandir=/man
-.ifndef(NOPORTEXAMPLES)
-	@cd ${WRKSRC} && \
-		CPPFLAGS=-I${PREFIX}/include \
-		LDFLAGS=-L${PREFIX}/lib \
-		./build \
-			--prefix=${FAKEDIR} \
-			--configdir=${FAKEDIR}/etc \
-			--krocdir=/${DATADIR_REL} \
-			--mandir=/man \
-			examples
-.endif
-.ifndef(NOPORTDOCS)
-	@cd ${WRKSRC} && \
-		CPPFLAGS=-I${PREFIX}/include \
-		LDFLAGS=-L${PREFIX}/lib \
-		./build \
-			--prefix=${FAKEDIR} \
-			--configdir=${FAKEDIR}/etc \
-			--krocdir=/${DATADIR_REL} \
-			--mandir=/man \
-			doc
-.endif
-
-FAKEDIR_FILES=	bin/kroc bin/occamdoc bin/occbuild \
-		libdata/pkgconfig/ccsp-1.6.pc
+pre-configure:
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} \
+		${AUTORECONF} -f -i)
 
 regression-test:
-	@cd ${WRKSRC} && \
-		CPPFLAGS=-I${PREFIX}/include \
-		LDFLAGS=-L${PREFIX}/lib \
-		./build \
-			--prefix=${FAKEDIR} \
-			--configdir=${FAKEDIR}/etc \
-			--krocdir=/${DATADIR_REL} \
-			--mandir=/man \
-			tests
-
-pre-install:
-	@${RM} ${FAKEDIR}/bin/kroc-setup.sh ${FAKEDIR}/bin/kroc-setup.csh
-.for i in ${FAKEDIR_FILES}
-	@${REINPLACE_CMD} \
-		-i '' -e 's|${FAKEDIR}|${PREFIX}|' \
-		${FAKEDIR}/$i
-.endfor
-
-do-install:
-	@cd ${FAKEDIR} && ${TAR} -cf - . | ${TAR} -xf - -C ${PREFIX}
+	@cd ${WRKSRC} && ${MAKE} check
 
 .include <bsd.port.mk>
