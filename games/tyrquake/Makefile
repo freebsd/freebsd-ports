@@ -17,6 +17,7 @@ COMMENT=	Very conservative branch of the Quake source code
 USE_XORG=	x11 xxf86vm xdamage xfixes xau xext xdmcp
 USE_GL=		yes
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	QBASEDIR="${Q1DIR}"
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on \

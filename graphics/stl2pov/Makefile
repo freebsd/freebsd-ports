@@ -14,6 +14,8 @@ COMMENT=	Converts STL models to POV-Ray meshes
 
 PLIST_FILES=	bin/stl2pov
 
+MAKE_JOBS_SAFE=	yes
+
 MAN1=		stl2pov.1
 MANCOMPRESSED=	yes
 
