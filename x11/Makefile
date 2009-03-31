@@ -204,6 +204,7 @@
     SUBDIR += listres
     SUBDIR += luit
     SUBDIR += lupe
+    SUBDIR += lxde-meta
     SUBDIR += lxpanel
     SUBDIR += metisse
     SUBDIR += mgapdesk
