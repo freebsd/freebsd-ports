@@ -35,6 +35,8 @@ POST-INSTALL)
 	/usr/bin/install -d -o ${USER} -g ${GROUP} /var/run/hald
 	/usr/bin/install -d -o ${USER} -g ${GROUP} /var/cache/hald
 	/usr/bin/install -d -o ${USER} -g ${GROUP} /var/lib/hal
+	%%LOCALBASE%%/bin/polkit-auth --user ${USER} --grant \
+		org.freedesktop.policykit.read
 
 	for pair in %%RC_FILES%%; do
 		file=`echo $pair | cut -f 1 -d :`

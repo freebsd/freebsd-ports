@@ -2,6 +2,11 @@
 
 [ "$2" != DEINSTALL ] && exit 0
 
+USER=haldaemon
+
+%%LOCALBASE%%/bin/polkit-auth --user ${USER} --revoke \
+	org.freedesktop.policykit.read
+
 for pair in %%RC_FILES%%; do
 	file=`echo $pair | cut -f 1 -d :`
 	destdir=`echo $pair | cut -f 2 -d :`
