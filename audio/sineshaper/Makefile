@@ -7,7 +7,7 @@
 
 PORTNAME=	sineshaper
 PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://ll-plugins.sourceforge.net/release/
 
@@ -15,7 +15,7 @@ MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Monophonic synth plugin with two oscillators and waveshapers
 
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
-		lo.6:${PORTSDIR}/audio/liblo \
+		lo.7:${PORTSDIR}/audio/liblo \
 		jack.0:${PORTSDIR}/audio/jack \
 		glademm-2.4:${PORTSDIR}/devel/libglademm24
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi

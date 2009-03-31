@@ -7,7 +7,7 @@
 
 PORTNAME=	whysynth
 PORTVERSION=	20070418
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://home.jps.net/~musound/
 
@@ -15,7 +15,7 @@ MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Versatile softsynth implemented as a DSSI plugin
 
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
-		lo.6:${PORTSDIR}/audio/liblo \
+		lo.7:${PORTSDIR}/audio/liblo \
 		jack.0:${PORTSDIR}/audio/jack \
 		fftw3f.4:${PORTSDIR}/math/fftw3-float
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi

@@ -7,6 +7,7 @@
 
 PORTNAME=	fluidsynth-dssi
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dssi
@@ -15,7 +16,7 @@ MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Wrapper for FluidSynth allowing it to function as a DSSI plugin
 
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
-		lo.6:${PORTSDIR}/audio/liblo \
+		lo.7:${PORTSDIR}/audio/liblo \
 		fluidsynth.2:${PORTSDIR}/audio/fluidsynth \
 		jack.0:${PORTSDIR}/audio/jack
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
