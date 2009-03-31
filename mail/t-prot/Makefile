@@ -7,7 +7,7 @@
 
 PORTNAME=	t-prot
 PORTVERSION=	2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.escape.de/~tolot/mutt/t-prot/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	sergei
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	TOFU Protection - Display Filter for RFC822 messages
 
-RUN_DEPENDS=	${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long
+RUN_DEPENDS=	${SITE_PERL}/Getopt/Mixed.pm:${PORTSDIR}/devel/p5-Getopt-Mixed
 
 USE_PERL5=	yes
 NO_BUILD=	yes
