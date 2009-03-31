@@ -1,0 +1,28 @@
+9/bin/awk
+9/bin/basename
+9/bin/bc
+9/bin/cat
+9/bin/cleanname
+9/bin/date
+9/bin/dc
+9/bin/echo
+9/bin/grep
+9/bin/mk
+9/bin/rc
+9/bin/sed
+9/bin/seq
+9/bin/sleep
+9/bin/sort
+9/bin/tee
+9/bin/test
+9/bin/touch
+9/bin/tr
+9/bin/uniq
+9/bin/yacc
+9/etc/rcmain
+@dirrm 9/man/man7
+@dirrm 9/man/man1
+@dirrm 9/man
+@dirrm 9/etc
+@dirrm 9/bin
+@dirrm 9
