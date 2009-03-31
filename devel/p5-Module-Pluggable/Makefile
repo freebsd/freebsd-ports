@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Module-Pluggable
-PORTVERSION=	3.8
-PORTREVISION=	1
+PORTVERSION=	3.9
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,5 +25,8 @@ MAN3=		Devel::InnerPackage.3 \
 .if ${PERL_LEVEL} < 500806
 RUN_DEPENDS+=	p5-PathTools>=3.0:${PORTSDIR}/devel/p5-PathTools
 .endif
+
+post-patch:
+	@${PERL} -pi -e '$$_="" if /INST_LIB/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.post.mk>
