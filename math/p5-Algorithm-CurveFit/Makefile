@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Algorithm-CurveFit
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Algorithm
@@ -18,7 +18,7 @@ COMMENT=	Nonlinear Least Squares Fitting
 RUN_DEPENDS=	${SITE_PERL}/Math/MatrixReal.pm:${PORTSDIR}/math/p5-MatrixReal \
 		${SITE_PERL}/Math/Symbolic.pm:${PORTSDIR}/math/p5-Math-Symbolic
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Algorithm::CurveFit.3
 
