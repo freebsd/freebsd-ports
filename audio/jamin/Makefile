@@ -7,7 +7,7 @@
 
 PORTNAME=	jamin
 PORTVERSION=	0.95.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jamin
@@ -17,7 +17,7 @@ COMMENT=	JACK Audio Mastering interface
 
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float \
 		jack.0:${PORTSDIR}/audio/jack \
-		lo.6:${PORTSDIR}/audio/liblo
+		lo.7:${PORTSDIR}/audio/liblo
 RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
 		${LOCALBASE}/lib/ladspa/fast_lookahead_limiter_1913.so:${PORTSDIR}/audio/swhplugins
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3

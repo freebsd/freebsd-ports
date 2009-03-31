@@ -8,7 +8,7 @@ include/lo/lo_types.h
 include/lo/lo_osc_types.h
 include/lo/lo_endian.h
 include/lo/lo_macros.h
-lib/liblo.so.6
+lib/liblo.so.7
 lib/liblo.so
 lib/liblo.la
 libdata/pkgconfig/liblo.pc

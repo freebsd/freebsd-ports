@@ -7,7 +7,7 @@
 
 PORTNAME=	xsynth-dssi
 PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dssi
@@ -16,7 +16,7 @@ MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Classic analog style software synthesizer
 
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
-		lo.6:${PORTSDIR}/audio/liblo \
+		lo.7:${PORTSDIR}/audio/liblo \
 		jack.0:${PORTSDIR}/audio/jack
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
 

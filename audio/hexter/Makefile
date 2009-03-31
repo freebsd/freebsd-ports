@@ -7,6 +7,7 @@
 
 PORTNAME=	hexter
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dssi
@@ -15,7 +16,7 @@ MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	DSSI softsynth that models the sound generation of a Yamaha DX7
 
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
-		lo.6:${PORTSDIR}/audio/liblo \
+		lo.7:${PORTSDIR}/audio/liblo \
 		jack.0:${PORTSDIR}/audio/jack
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
 

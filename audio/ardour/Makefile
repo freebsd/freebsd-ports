@@ -7,6 +7,7 @@
 
 PORTNAME=	ardour
 PORTVERSION=	2.7.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://releases.ardour.org/
 DISTFILES=	ardour-${DISTVERSION}.tar.bz2
@@ -23,7 +24,7 @@ LIB_DEPENDS=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
 		boost_date_time.4:${PORTSDIR}/devel/boost \
 		gnomecanvasmm-2.6:${PORTSDIR}/graphics/libgnomecanvasmm26 \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
-		lo.6:${PORTSDIR}/audio/liblo \
+		lo.7:${PORTSDIR}/audio/liblo \
 		SoundTouch.0:${PORTSDIR}/audio/soundtouch \
 		fftw3f:${PORTSDIR}/math/fftw3-float \
 		fftw3:${PORTSDIR}/math/fftw3 \
