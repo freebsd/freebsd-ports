@@ -100,7 +100,7 @@ CONFIGURE_ARGS+=	--disable-libdv
 .endif
 
 .if defined(WITH_X264)
-LIB_DEPENDS+=	x264.50:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.65:${PORTSDIR}/multimedia/x264
 .else
 CONFIGURE_ARGS+=	--disable-x264
 .endif

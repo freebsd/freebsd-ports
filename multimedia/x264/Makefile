@@ -6,8 +6,7 @@
 #      $Id: Makefile 30 2006-10-30 22:15:26Z buhnux $
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20080409
-PORTREVISION?=	2
+PORTVERSION=	0.0.20081218
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
@@ -21,38 +20,25 @@ COMMENT?=	Multimedia library and tool for encoding H.264/AVC video streams
 
 BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm
 
-WANT_GNOME=	yes
 USE_BZIP2=	yes
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude .svn
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GMAKE=	yes
-ALL_TARGET=	default
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	DEBUG "Enable Debugging" Off \
 		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off \
-		PGO "Enable Profile-Guided Optimization" Off
+		PGO "Enable Profile-Guided Optimization" Off \
+		GPAC "Enable MPEG-4 Output" On \
+		X11_OUTPUT "Enable X11 Output" Off
 
 CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/include -I${LOCALBASE}/include" \
 			--extra-ldflags="${LDFLAGS} -L${LOCALBASE}/lib -L${LOCALBASE}/lib" \
 			--enable-shared
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_GTK2) && ${SLAVE_PORT:L}=="yes"
-LIB_DEPENDS+=	x264.50:${PORTSDIR}/multimedia/x264
-BUILD_WRKSRC=	${WRKSRC}/gtk
-INSTALL_WRKSRC=	${WRKSRC}/gtk
-ALL_TARGET=	all
-USE_GETTEXT=	yes
-USE_GNOME=	gtk20
-CONFIGURE_ARGS+=	--enable-gtk
-.else
-OPTIONS+=	GPAC "Enable MPEG-4 Output" On \
-		X11_OUTPUT "Enable X11 Output" Off
-.endif
 
 .if ${ARCH}=="i386"
 MAKE_ENV+=	ARCH_X86="1"
@@ -99,12 +85,14 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; \
-		s|-lpthread|${PTHREAD_LIBS}|g' \
+		s|-lpthread|${PTHREAD_LIBS}|g; \
+		s|bash|sh|; \
+		s|gpac_static|gpac|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|bash|sh|' ${WRKSRC}/version.sh
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|; \
 		s|$${libdir}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile \
-		${WRKSRC}/*/Makefile
+		${WRKSRC}/Makefile
 
 .if ${SLAVE_PORT:L}=="no"
 .if 0 # BROKEN

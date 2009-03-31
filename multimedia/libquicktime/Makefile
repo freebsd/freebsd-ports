@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libquicktime
-PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTVERSION=	1.1.1
 CATEGORIES=	multimedia
 MASTER_SITES=	SFE
 
@@ -130,7 +129,7 @@ CONFIGURE_ARGS+=	--without-faad2
 .endif
 
 .if !defined(WITHOUT_X264)
-LIB_DEPENDS+=	x264.50:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.65:${PORTSDIR}/multimedia/x264
 PLIST_SUB+=	X264=""
 CONFIGURE_ARGS+=	--with-x264
 .else
