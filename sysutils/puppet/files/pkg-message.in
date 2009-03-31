@@ -5,7 +5,7 @@ puppetmasterd_enable="YES"
 
 to /etc/rc.conf
 
-Indivisual config files such as %%PREFIX%%/etc/puppetmasterd.conf are
-deprecated. Use a single file, %%PREFIX%%/puppet/puppet.conf.
+Individual config files such as %%PREFIX%%/etc/puppetmasterd.conf are
+deprecated. Use a single file, %%PREFIX%%/etc/puppet/puppet.conf.
 
 Now the default PID directory is %%PUPPET_RUNDIR%%.
