@@ -7,12 +7,15 @@
 
 PORTNAME=	Net-NIS-Listgroup
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lists hosts/users in a netgroup group
+
+RUN_DEPENDS=	p5-Net-NIS>0:${PORTSDIR}/net/p5-Net-NIS
 
 PERL_CONFIGURE=	yes
 
