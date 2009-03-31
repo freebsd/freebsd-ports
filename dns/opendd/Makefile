@@ -6,6 +6,7 @@
 
 PORTNAME=	opendd
 PORTVERSION=	0.7.9
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.bsdmon.com/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -13,10 +14,10 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	ports@logvinov.com
 COMMENT=	A small DynDNS client
 
-OPTIONS=	OPENDD_SSL	"Build with SSL support"	off \
-		RC_NG		"Install RC_NG script"		on
+OPTIONS=	OPENSSL	"Build with SSL support"	on \
+		RC_NG	"Install RC_NG script"		on
 
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes
 PORTDOCS=	COPYING COPYRIGHT README
 PLIST_FILES=	sbin/${PORTNAME} \
 		"@unexec if cmp -s %D/%%ETCDIR%%/${PORTNAME}.conf %D/%%ETCDIR%%/${PORTNAME}.conf.default; then ${RM} -f %D/%%ETCDIR%%/${PORTNAME}.conf; fi " \
@@ -28,10 +29,10 @@ PLIST_FILES=	sbin/${PORTNAME} \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_RC_NG)
-USE_RC_SUBR=	opendd
+USE_RC_SUBR=	${PORTNAME}
 .endif
 
-.if defined(WITH_OPENDD_SSL) && !defined(WITHOUT_SSL)
+.if !defined(WITHOUT_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
@@ -42,7 +43,7 @@ pre-patch:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
 post-patch:
-.if defined(WITH_OPENDD_SSL) && !defined(WITHOUT_SSL)
+.if !defined(WITHOUT_OPENSSL)
 	@${REINPLACE_CMD} 's|use_ssl = 0|use_ssl = 1|' ${WRKSRC}/${PORTNAME}.conf
 	@${REINPLACE_CMD} -e "s|^FLAGS =|FLAGS = ${CFLAGS}|" -e "s|^SSL =|SSL = ${LDFLAGS}|" \
 	    ${WRKSRC}/Makefile
