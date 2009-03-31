@@ -21,6 +21,7 @@ USE_PYTHON_BUILD=	yes
 BAM_VERSION=	0.2.0
 BAM_WRKSRC=	${WRKDIR}/bam-${BAM_VERSION}
 BAM_TARGET=	release
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	TEEWORLDS_SERVER_ONLY	"Build dedicated server only"	off
 
@@ -57,7 +58,7 @@ pre-build:
 
 # build teeworlds
 do-build:
-	cd ${WRKSRC} && ${BAM_WRKSRC}/src/bam -v ${BAM_TARGET}
+	cd ${WRKSRC} && ${BAM_WRKSRC}/src/bam ${_MAKE_JOBS:C/-j/-j /} -v ${BAM_TARGET}
 
 do-install:
 .if !defined(WITH_TEEWORLDS_SERVER_ONLY)
