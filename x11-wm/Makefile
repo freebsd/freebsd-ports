@@ -79,6 +79,7 @@
     SUBDIR += lxsession-lite
     SUBDIR += matchbox
     SUBDIR += metacity
+    SUBDIR += musca
     SUBDIR += nickleby
     SUBDIR += obconf
     SUBDIR += obmenu
