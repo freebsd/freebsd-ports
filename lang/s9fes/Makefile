@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	s9fes
-PORTVERSION=	20090311
+PORTVERSION=	20090329
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.t3x.org/s9fes/
 
@@ -19,7 +19,7 @@ MAN1=		s9.1
 MANCOMPRESSED=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e "s,PREFIX=.*,PREFIX=${PREFIX},"  ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e "s,LIBDIR=.*,LIBDIR=${DATADIR},"  ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s,PREFIX=.*,PREFIX=${PREFIX}," ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s,LIBDIR=.*,LIBDIR=${DATADIR}," ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
