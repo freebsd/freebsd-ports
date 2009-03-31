@@ -1,0 +1,5 @@
+fuse-utils is an utility package for handling ZX Spectrum files.  It can be
+used to list and convert tape, hard disk, snapshot, and audio files.
+
+Author:	Philip Kendall <philip-fuse@shadowmagic.org.uk>
+WWW:	http://fuse-emulator.sourceforge.net/
