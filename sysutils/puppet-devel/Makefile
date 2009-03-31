@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${RUBY_SITELIBDIR}/facter.rb:${PORTSDIR}/sysutils/facter \
 	portupgrade>0:${PORTSDIR}/ports-mgmt/portupgrade
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+DEPRECATED=	Use sysutils/puppet instead
+EXPIRATION_DATE=	2009-04-30
 CONFLICTS=	puppet-[0-9]*
 
 NO_BUILD=	yes
