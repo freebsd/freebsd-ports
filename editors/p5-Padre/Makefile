@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Padre
-PORTVERSION=	0.29
+PORTVERSION=	0.32
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/S/SZ/SZABGAB
@@ -41,7 +41,6 @@ BUILD_DEPENDS=	${SITE_PERL}/App/Ack.pm:${PORTSDIR}/textproc/p5-ack \
 		${SITE_PERL}/Pod/Simple.pm:${PORTSDIR}/textproc/p5-Pod-Simple \
 		${SITE_PERL}/Pod/Simple/XHTML.pm:${PORTSDIR}/textproc/p5-Pod-Simple \
 		${SITE_PERL}/Probe/Perl.pm:${PORTSDIR}/sysutils/p5-Probe-Perl \
-		${SITE_PERL}/Test/Compile.pm:${PORTSDIR}/devel/p5-Test-Compile \
 		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
 		${SITE_PERL}/Test/Most.pm:${PORTSDIR}/devel/p5-Test-Most \
 		${SITE_PERL}/Test/NoWarnings.pm:${PORTSDIR}/devel/p5-Test-NoWarnings \
@@ -69,7 +68,14 @@ PERL_CONFIGURE=	yes
 USE_PERL5=	5.8.5+
 USE_GETTEXT=	yes
 
-PERL_THREADS=	${PERL} -V::usethreads
+.include <bsd.port.pre.mk>
+
+.if exists(${PERL})
+PERL_THREADS!=	${PERL} -V::usethreads
+.if ${PERL_THREADS}!="'define';"
+IGNORE=		needs a threaded Perl, build with WITH_THREADS=yes flag and try again
+.endif
+.endif
 
 MAN3=		Padre.3 \
 		Padre::Autosave.3 \
@@ -81,6 +87,7 @@ MAN3=		Padre.3 \
 		Padre::DB::Bookmark.3 \
 		Padre::DB::History.3 \
 		Padre::DB::HostConfig.3 \
+		Padre::DB::LastPositionInFile.3 \
 		Padre::DB::Plugin.3 \
 		Padre::DB::Session.3 \
 		Padre::DB::Snippets.3 \
@@ -92,11 +99,13 @@ MAN3=		Padre.3 \
 		Padre::Manual::Hacking.3 \
 		Padre::Plugin.3 \
 		Padre::Plugin::Devel.3 \
+		Padre::Plugin::Perl5.3 \
 		Padre::Plugin::PopularityContest.3 \
 		Padre::PluginBuilder.3 \
 		Padre::PluginManager.3 \
 		Padre::Pod2HTML.3 \
 		Padre::Task.3 \
+		Padre::Task::HTTPClient.3 \
 		Padre::Task::Outline.3 \
 		Padre::Task::Outline::Perl.3 \
 		Padre::Task::PPI.3 \
@@ -108,7 +117,9 @@ MAN3=		Padre.3 \
 		Padre::TaskManager.3 \
 		Padre::Util.3 \
 		Padre::Wx::App.3 \
+		Padre::Wx::CPAN.3 \
 		Padre::Wx::Dialog.3 \
+		Padre::Wx::Dialog::PluginManager3.3 \
 		Padre::Wx::DocBrowser.3 \
 		Padre::Wx::HtmlWindow.3 \
 		Padre::Wx::Main.3 \
@@ -117,16 +128,7 @@ MAN3=		Padre.3 \
 		Wx::Perl::Dialog::Simple.3 \
 		Wx::Perl::Dialog::SingleChoice.3
 
-pre-configure:
-	@if [ "$$(${PERL_THREADS})" = "'undef';" ]; then \
-		${ECHO_MSG}; \
-		${ECHO_MSG} "===>  ${PKGNAME} requires Perl with thread support built-in!"; \
-		${ECHO_MSG} "      Please, recompile Perl with WITH_THREADS=yes flag and try again."; \
-		${ECHO_MSG}; \
-		exit 2; \
-	fi
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|use File::Spec.*$$||' ${WRKSRC}/lib/Padre/Config/Human.pm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

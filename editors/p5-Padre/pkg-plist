@@ -2,10 +2,12 @@ bin/padre
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Padre/.packlist
 %%SITE_PERL%%/Padre.pm
 %%SITE_PERL%%/Padre/Autosave.pm
+%%SITE_PERL%%/Padre/CPAN.pm
 %%SITE_PERL%%/Padre/Config.pm
 %%SITE_PERL%%/Padre/Config/Constants.pm
 %%SITE_PERL%%/Padre/Config/Host.pm
 %%SITE_PERL%%/Padre/Config/Human.pm
+%%SITE_PERL%%/Padre/Config/Human.pm.bak
 %%SITE_PERL%%/Padre/Config/Patch.pm
 %%SITE_PERL%%/Padre/Config/Project.pm
 %%SITE_PERL%%/Padre/Config/Setting.pm
@@ -14,6 +16,7 @@ bin/padre
 %%SITE_PERL%%/Padre/DB/Bookmark.pm
 %%SITE_PERL%%/Padre/DB/History.pm
 %%SITE_PERL%%/Padre/DB/HostConfig.pm
+%%SITE_PERL%%/Padre/DB/LastPositionInFile.pm
 %%SITE_PERL%%/Padre/DB/Patch.pm
 %%SITE_PERL%%/Padre/DB/Plugin.pm
 %%SITE_PERL%%/Padre/DB/Session.pod
@@ -32,6 +35,7 @@ bin/padre
 %%SITE_PERL%%/Padre/Plugin.pm
 %%SITE_PERL%%/Padre/Plugin/Devel.pm
 %%SITE_PERL%%/Padre/Plugin/My.pm
+%%SITE_PERL%%/Padre/Plugin/Perl5.pm
 %%SITE_PERL%%/Padre/Plugin/PopularityContest.pm
 %%SITE_PERL%%/Padre/PluginBuilder.pm
 %%SITE_PERL%%/Padre/PluginHandle.pm
@@ -42,9 +46,11 @@ bin/padre
 %%SITE_PERL%%/Padre/Project/Perl.pm
 %%SITE_PERL%%/Padre/SingleInstance.pm
 %%SITE_PERL%%/Padre/Task.pm
+%%SITE_PERL%%/Padre/Task/Debug/Crashing.pm
 %%SITE_PERL%%/Padre/Task/DocBrowser.pm
 %%SITE_PERL%%/Padre/Task/ErrorParser.pm
 %%SITE_PERL%%/Padre/Task/Examples/WxEvent.pm
+%%SITE_PERL%%/Padre/Task/HTTPClient.pm
 %%SITE_PERL%%/Padre/Task/Outline.pm
 %%SITE_PERL%%/Padre/Task/Outline/Perl.pm
 %%SITE_PERL%%/Padre/Task/PPI.pm
@@ -60,6 +66,8 @@ bin/padre
 %%SITE_PERL%%/Padre/Wx/App.pm
 %%SITE_PERL%%/Padre/Wx/AuiManager.pm
 %%SITE_PERL%%/Padre/Wx/Bottom.pm
+%%SITE_PERL%%/Padre/Wx/CPAN.pm
+%%SITE_PERL%%/Padre/Wx/CPAN/Listview.pm
 %%SITE_PERL%%/Padre/Wx/Dialog.pm
 %%SITE_PERL%%/Padre/Wx/Dialog/Bookmarks.pm
 %%SITE_PERL%%/Padre/Wx/Dialog/Find.pm
@@ -67,6 +75,7 @@ bin/padre
 %%SITE_PERL%%/Padre/Wx/Dialog/ModuleStart.pm
 %%SITE_PERL%%/Padre/Wx/Dialog/PluginManager.pm
 %%SITE_PERL%%/Padre/Wx/Dialog/PluginManager2.pm
+%%SITE_PERL%%/Padre/Wx/Dialog/PluginManager3.pm
 %%SITE_PERL%%/Padre/Wx/Dialog/Preferences.pm
 %%SITE_PERL%%/Padre/Wx/Dialog/Search.pm
 %%SITE_PERL%%/Padre/Wx/Dialog/Snippets.pm
@@ -124,6 +133,12 @@ bin/padre
 %%SITE_PERL%%/auto/share/dist/Padre/icons/gnome218/README.txt
 %%SITE_PERL%%/auto/share/dist/Padre/icons/padre/16x16/actions/x-document-close.png
 %%SITE_PERL%%/auto/share/dist/Padre/icons/padre/16x16/status/padre-fallback-icon.png
+%%SITE_PERL%%/auto/share/dist/Padre/icons/padre/16x16/status/padre-plugin-crashed.png
+%%SITE_PERL%%/auto/share/dist/Padre/icons/padre/16x16/status/padre-plugin-disabled.png
+%%SITE_PERL%%/auto/share/dist/Padre/icons/padre/16x16/status/padre-plugin-enabled.png
+%%SITE_PERL%%/auto/share/dist/Padre/icons/padre/16x16/status/padre-plugin-error.png
+%%SITE_PERL%%/auto/share/dist/Padre/icons/padre/16x16/status/padre-plugin-incompatible.png
+%%SITE_PERL%%/auto/share/dist/Padre/icons/padre/16x16/status/padre-plugin.png
 %%SITE_PERL%%/auto/share/dist/Padre/icons/padre/16x16/status/padre-syntax-error.png
 %%SITE_PERL%%/auto/share/dist/Padre/icons/padre/16x16/status/padre-syntax-warning.png
 %%SITE_PERL%%/auto/share/dist/Padre/icons/padre/16x16/status/padre-tasks-idle.png
@@ -161,6 +176,7 @@ bin/padre
 %%SITE_PERL%%/auto/share/dist/Padre/styles/night.yml
 %%SITE_PERL%%/auto/share/dist/Padre/styles/notepad.yml
 %%SITE_PERL%%/auto/share/dist/Padre/styles/ultraedit.yml
+%%SITE_PERL%%/auto/share/dist/Padre/templates/template.p6
 %%SITE_PERL%%/auto/share/dist/Padre/templates/template.pl
 %%SITE_PERL%%/auto/share/dist/Padre/templates/template.pm
 %%SITE_PERL%%/auto/share/dist/Padre/templates/template.t
@@ -170,6 +186,7 @@ bin/padre
 %%SITE_PERL%%/auto/share/dist/Padre/timeline/migrate-4.pl
 %%SITE_PERL%%/auto/share/dist/Padre/timeline/migrate-5.pl
 %%SITE_PERL%%/auto/share/dist/Padre/timeline/migrate-6.pl
+%%SITE_PERL%%/auto/share/dist/Padre/timeline/migrate-7.pl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Padre
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Padre/timeline
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Padre/templates
@@ -190,11 +207,13 @@ bin/padre
 @dirrmtry %%SITE_PERL%%/Padre/Wx/Menu
 @dirrmtry %%SITE_PERL%%/Padre/Wx/History
 @dirrmtry %%SITE_PERL%%/Padre/Wx/Dialog
+@dirrmtry %%SITE_PERL%%/Padre/Wx/CPAN
 @dirrmtry %%SITE_PERL%%/Padre/Wx
 @dirrmtry %%SITE_PERL%%/Padre/Task/SyntaxChecker
 @dirrmtry %%SITE_PERL%%/Padre/Task/PPI
 @dirrmtry %%SITE_PERL%%/Padre/Task/Outline
 @dirrmtry %%SITE_PERL%%/Padre/Task/Examples
+@dirrmtry %%SITE_PERL%%/Padre/Task/Debug
 @dirrmtry %%SITE_PERL%%/Padre/Task
 @dirrmtry %%SITE_PERL%%/Padre/Project
 @dirrmtry %%SITE_PERL%%/Padre/Plugin
