@@ -20,6 +20,7 @@ OPTIONS=	IPV6	"Enable IPv6 Support"	On
 
 CONFLICTS=	mailx-[0-9]*
 
+MAKE_JOBS_UNSAFE=	yes
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_OPENSSL=	yes
