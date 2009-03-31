@@ -1,0 +1,29 @@
+--- Makefile	2008-11-16 02:30:50.000000000 +0200
++++ Makefile	2009-02-18 09:03:07.000000000 +0200
+@@ -23,15 +23,15 @@ all: memtest.bin memtest
+ # symbols and then link it dynamically so I have full
+ # relocation information
+ memtest_shared: $(OBJS) memtest_shared.lds Makefile
+-	$(LD) --warn-constructors --warn-common -static -T memtest_shared.lds \
++	$(LD) --warn-constructors --warn-common -static --oformat elf32-i386-freebsd -T memtest_shared.lds \
+ 	-o $@ $(OBJS) && \
+-	$(LD) -shared -Bsymbolic -T memtest_shared.lds -o $@ $(OBJS)
++	$(LD) -shared -Bsymbolic --oformat elf32-i386-freebsd -T memtest_shared.lds -o $@ $(OBJS)
+ 
+ memtest_shared.bin: memtest_shared
+ 	objcopy -O binary $< memtest_shared.bin
+ 
+ memtest: memtest_shared.bin memtest.lds
+-	$(LD) -s -T memtest.lds -b binary memtest_shared.bin -o $@
++	$(LD) -s --oformat elf32-i386-freebsd -T memtest.lds -b binary memtest_shared.bin -o $@
+ 
+ head.s: head.S config.h defs.h test.h
+ 	$(CC) -E -traditional $< -o $@
+@@ -58,7 +58,6 @@ clean:
+ iso:
+ 	make all
+ 	./makeiso.sh
+-	rm -f *.o *.s memtest.bin memtest memtest_shared memtest_shared.bin
+ 
+ install: all
+ 	dd <memtest.bin >$(FDISK) bs=8192
