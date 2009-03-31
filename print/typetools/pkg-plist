@@ -1,5 +1,4 @@
 bin/cfftot1
-bin/ttftotype42
 bin/mmafm
 bin/mmpfb
 bin/otfinfo
@@ -9,6 +8,7 @@ bin/t1lint
 bin/t1rawafm
 bin/t1reencode
 bin/t1testpage
+bin/ttftotype42
 %%DATADIR%%/7t.enc
 %%DATADIR%%/glyphlist.txt
 %%DATADIR%%/texglyphlist.txt
