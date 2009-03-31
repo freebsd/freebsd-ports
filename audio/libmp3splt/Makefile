@@ -7,6 +7,7 @@
 
 PORTNAME=	libmp3splt
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mp3splt
@@ -60,6 +61,6 @@ PLIST_FILES+=	lib/libmp3splt/libsplt_ogg.a \
 .endif
 
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
 
 .include <bsd.port.post.mk>
