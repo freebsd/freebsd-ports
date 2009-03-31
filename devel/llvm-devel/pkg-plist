@@ -70,6 +70,7 @@ include/llvm/ADT/IndexedMap.h
 include/llvm/ADT/IntrusiveRefCntPtr.h
 include/llvm/ADT/OwningPtr.h
 include/llvm/ADT/PointerIntPair.h
+include/llvm/ADT/PointerUnion.h
 include/llvm/ADT/PostOrderIterator.h
 include/llvm/ADT/PriorityQueue.h
 include/llvm/ADT/SCCIterator.h
@@ -294,6 +295,7 @@ include/llvm/Support/OutputBuffer.h
 include/llvm/Support/PassNameParser.h
 include/llvm/Support/PatternMatch.h
 include/llvm/Support/PluginLoader.h
+include/llvm/Support/PointerLikeTypeTraits.h
 include/llvm/Support/PredIteratorCache.h
 include/llvm/Support/PrettyStackTrace.h
 include/llvm/Support/Recycler.h
@@ -469,6 +471,7 @@ libexec/clang-cc
 %%DOCSDIR%%/html/CompilerDriverTutorial.html
 %%DOCSDIR%%/html/CompilerWriterInfo.html
 %%DOCSDIR%%/html/DeveloperPolicy.html
+%%DOCSDIR%%/html/DriverInternals.html
 %%DOCSDIR%%/html/ExceptionHandling.html
 %%DOCSDIR%%/html/ExtendingLLVM.html
 %%DOCSDIR%%/html/FAQ.html

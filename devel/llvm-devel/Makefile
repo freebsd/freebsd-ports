@@ -22,15 +22,10 @@ BUILD_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
-.if defined(BOOTSTRAP)
-SVN_REV!=	svn info http://llvm.org/svn/llvm-project/ | grep Revision | cut -d' ' -f2
-.else
-SVN_REV=	67853
-.endif
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
+USE_LDCONFIG=	yes
 USE_PERL5=	yes
 USE_PYTHON_RUN=	yes
 MAKE_JOBS_SAFE=	yes
@@ -49,6 +44,12 @@ MAN1=		bugpoint.1 llc.1 lli.1 llvmc.1 llvm-ar.1 \
 
 .include <bsd.port.pre.mk>
 
+.if defined(BOOTSTRAP)
+SVN_REV!=	svn info http://llvm.org/svn/llvm-project/ | ${GREP} Revision | cut -d' ' -f2
+.else
+.include "Makefile.svn_rev"
+.endif
+
 .if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
 BROKEN=		does not compile
 .elif ${ARCH} == "sparc64"
@@ -65,6 +66,7 @@ do-fetch:
 	svn export -r ${SVN_REV} \
 	    http://llvm.org/svn/llvm-project/cfe/trunk ${WRKSRC}/tools/clang
 	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
+	echo "SVN_REV=	${SVN_REV}" > ${MASTERDIR}/Makefile.svn_rev
 .if ${USER} == brooks
 	scp ${DISTDIR}/${DISTNAME}.tar.bz2 \
 	    freefall.freebsd.org:public_distfiles/
