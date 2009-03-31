@@ -1,18 +1,35 @@
---- Makefile	Wed Jun 22 22:12:18 2005
-+++ Makefile.port	Tue Sep  6 13:29:09 2005
-@@ -3,9 +3,9 @@
+--- Makefile.orig
++++ Makefile
+@@ -1,17 +1,22 @@
+-CXX		= g++
+-LD		= g++
++CXX		?= g++
++LD		= $(CXX)
  CXXFILES	= parser.cc lexer.cc expr.cc canvas.cc aamath.cc
  OBJS		= $(CXXFILES:.cc=.o) 
  TARGET		= aamath
 -CFLAGS		= -Wall -O2 -g -DUSE_READLINE
-+CFLAGS		+= -Wall -g -DUSE_READLINE
- LFLAGS		= -g
--LIBS		= -lreadline -ltermcap
-+LIBS		= $(LDFLAGS) -ltermcap
+-LFLAGS		= -g
++CFLAGS		+= -Wall -DUSE_READLINE
+ LIBS		= -lreadline -ltermcap
  
  $(TARGET): $(OBJS)
  	$(LD) $(LFLAGS) $(OBJS) -o $@ $(LIBS)
-@@ -21,3 +21,5 @@
+ 
+-parser.cc parser.h: parser.y
+-	yacc -d parser.y && mv y.tab.c parser.cc && mv y.tab.h parser.h
++yacc: parser.y
++	yacc -d parser.y
++
++parser.cc: yacc
++	mv y.tab.c parser.cc
++
++parser.h: yacc
++	mv y.tab.h parser.h
+ 
+ lexer.cc: lexer.l parser.h
+ 	lex lexer.l && mv lex.yy.c lexer.cc
+@@ -21,3 +26,5 @@
  
  clean:
  	rm -f *.o lexer.cc parser.h parser.cc $(TARGET)
