@@ -8,8 +8,7 @@
 PORTNAME=	chromium
 PORTVERSION=	0.9.13.3
 CATEGORIES=	games
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	chromium-bsu
+MASTER_SITES=	SF/chromium-bsu
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An arcade-style, top-scrolling space shooter
@@ -22,6 +21,7 @@ GNU_CONFIGURE=	yes
 USE_GL=		gl glu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 

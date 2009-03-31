@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_SDL=	sdl image mixer
 USE_GL=		gl glu
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"

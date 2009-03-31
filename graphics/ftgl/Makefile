@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--with-gl-inc="${LOCALBASE}/include" \
 		--without-glut-inc
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/-/~/}
 

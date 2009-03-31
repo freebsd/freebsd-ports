@@ -9,8 +9,7 @@ PORTNAME=	ois
 PORTVERSION=	1.2.0
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	wgois
+MASTER_SITES=	SF/whois
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -22,6 +21,7 @@ USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	libtool:15:env aclocal:19:env autoheader:262:env automake:19:env autoconf:262:env
 USE_XORG=	x11 xaw
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 

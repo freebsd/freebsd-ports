@@ -31,6 +31,7 @@ USE_GNOME=	gtk20
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+MAKE_JOBS_SAFE=	yes
 
 # cegui and ffmpeg are not used yet
 CONFIGURE_ARGS=	--disable-cegui --disable-ffmpeg \

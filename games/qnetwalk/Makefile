@@ -16,6 +16,7 @@ COMMENT=	Qt-version of the NetWalk game
 
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui qmake_build moc_build rcc_build
+MAKE_JOBS_SAFE=	yes
 
 MAN6=		qnetwalk.6
 
