@@ -1,0 +1,14 @@
+--- Makefile.in	2008-04-20 13:20:49.000000000 +0200
++++ Makefile.in	2009-03-25 16:14:35.000000000 +0100
+@@ -193,9 +193,9 @@
+ bin_SCRIPTS = startlxde lxde-logout openbox-lxde
+ 
+ # Currently these paths are hardcoded.
+-xsessiondir = $(xsesspath)
++xsessiondir = $(xsesspath)
+ xsession_DATA = LXDE.desktop
+-defaultsdir = /etc/xdg/lxsession/LXDE
++defaultsdir = ${prefix}/etc/xdg/lxsession/LXDE
+ defaults_DATA = default autostart config
+ wallpapersdir = $(datadir)/lxde/wallpapers
+ wallpapers_DATA = \

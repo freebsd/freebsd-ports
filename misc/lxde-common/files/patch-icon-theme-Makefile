@@ -1,0 +1,11 @@
+--- icon-theme/Makefile.in	2008-04-20 13:20:48.000000000 +0200
++++ icon-theme/Makefile.in	2009-02-10 18:59:30.000000000 +0100
+@@ -310,7 +310,7 @@
+ 
+ install-data-hook:
+ 	$(mkdir_p) $(DESTDIR)$(datadir)/icons
+-	cp -raf --no-preserve=ownership nuoveXT2 $(DESTDIR)$(datadir)/icons
++	cp -RpPf nuoveXT2 $(DESTDIR)$(datadir)/icons
+ 	$(LN_S) preferences-desktop.png $(DESTDIR)$(datadir)/icons/nuoveXT2/128x128/categories/xfce4-settings.png
+ 	$(LN_S) preferences-desktop.png $(DESTDIR)$(datadir)/icons/nuoveXT2/128x128/categories/gnome-settings.png
+ 	$(LN_S) preferences-desktop.png $(DESTDIR)$(datadir)/icons/nuoveXT2/128x128/categories/kcontrol.png
