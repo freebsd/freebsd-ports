@@ -684,6 +684,7 @@
     SUBDIR += taglib-sharp
     SUBDIR += taglookup
     SUBDIR += tagtool
+    SUBDIR += tagutil
     SUBDIR += tap-plugins
     SUBDIR += tcd
     SUBDIR += tclmidi
