@@ -40,6 +40,7 @@
     SUBDIR += fmsx
     SUBDIR += frodo
     SUBDIR += fuse
+    SUBDIR += fuse-utils
     SUBDIR += gbe
     SUBDIR += gcube
     SUBDIR += generator

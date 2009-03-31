@@ -1,0 +1,18 @@
+%%AUDIOFILE%%bin/audio2tape
+bin/createhdf
+bin/listbasic
+bin/profile2map
+bin/raw2hdf
+bin/rzxcheck
+bin/rzxdump
+bin/rzxtool
+bin/scl2trd
+bin/snap2tzx
+bin/snapconv
+%%AUDIOFILE%%bin/tape2wav
+bin/tapeconv
+bin/tzxlist
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
