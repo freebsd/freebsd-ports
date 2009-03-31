@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-Server-SOAP
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Publish POE event handlers via SOAP over HTTP
 
-BUILD_DEPENDS=	${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
-		${SITE_PERL}/POE/Component/Server/SimpleHTTP.pm:${PORTSDIR}/www/p5-POE-Component-Server-SimpleHTTP \
-		${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	p5-SOAP-Lite>=0.55:${PORTSDIR}/net/p5-SOAP-Lite \
+		p5-POE-Component-Server-SimpleHTTP>=1.54:${PORTSDIR}/www/p5-POE-Component-Server-SimpleHTTP \
+		p5-POE>=0:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
