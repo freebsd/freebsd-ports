@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rak
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,5 +18,8 @@ RUN_DEPENDS=	rubygem-hoe>=1.3.0:${PORTSDIR}/devel/rubygem-hoe
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+
+PLIST_FILES=	bin/rak
 
 .include <bsd.port.mk>
