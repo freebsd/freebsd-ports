@@ -6,25 +6,24 @@
 #
 
 PORTNAME=	9base
-DISTVERSION=	b20060209
+DISTVERSION=	b20090309
 CATEGORIES=	devel
-MASTER_SITES=	CENKES
-#http://www.suckless.org/cgi-bin/hgwebdir.cgi/9base/
+MASTER_SITES=	http://code.suckless.org/dl/misc/
+DISTNAME=	${PORTNAME}-2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sbrabez@gmail.com
 COMMENT=	Port of various original plan9 tools
 
-USE_BZIP2=	yes
 CFLAGS+=	-I. -c
 LDFLAGS+=	-L.
 MANPREFIX=	${PREFIX}/9
 MAKE_ARGS=	PREFIX="${PREFIX}/9" CC="${CC}" MANPREFIX="${MANPREFIX}/man" \
 		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-APPS=	awk basename bc cat cleanname date dc echo grep ls mk rc read sed seq\
-	sleep sort tee test touch tr uniq yacc
-#MAN1=	${APPS:S|$|.1|}
-PLIST_FILES=	${APPS:S|^|9/bin/|} ${APPS:S|^|9/man/man1/|:S|$|.1|} 9/man/man7/regexp.7 9/etc/rcmain
-PLIST_DIRS=	9/bin 9/etc 9/man/man1 9/man/man7 9/man 9
+MAKE_JOB_SAFE=	yes
+APPS=		awk basename bc cat cleanname date dc echo grep mk rc sed \
+		seq sleep sort tee test touch tr uniq yacc
+MAN1=		${APPS:S|$|.1|}
+MAN7=		regexp.7
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 ONLY_FOR_ARCHS_REASON=	has low-level code unavailable for ${ARCH}
@@ -34,6 +33,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/OBJTYPE!=/s|!=.*|=${ARCH:S,i386,386,:S,amd64,x86_64,:S,sparc64,sun4u,}|' ${WRKSRC}/lib9/Makefile
 
 post-install:
+.if !defined(BATCH)
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>
