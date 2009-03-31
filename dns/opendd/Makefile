@@ -16,6 +16,7 @@ COMMENT=	A small DynDNS client
 OPTIONS=	OPENDD_SSL	"Build with SSL support"	off \
 		RC_NG		"Install RC_NG script"		on
 
+MAKE_JOBS_UNSAFE=	yes
 PORTDOCS=	COPYING COPYRIGHT README
 PLIST_FILES=	sbin/${PORTNAME} \
 		"@unexec if cmp -s %D/%%ETCDIR%%/${PORTNAME}.conf %D/%%ETCDIR%%/${PORTNAME}.conf.default; then ${RM} -f %D/%%ETCDIR%%/${PORTNAME}.conf; fi " \
