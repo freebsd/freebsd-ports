@@ -18,6 +18,7 @@ PLIST_FILES=	bin/lamprop
 MAN1=		lamprop.1
 MAN5=		lamprop.5
 MANCOMPRESSED=	yes
+MAKE_JOBS_SAFE=	yes
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	NOPORTDOCS=yes
