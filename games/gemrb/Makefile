@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gemrb
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,7 +28,7 @@ USE_SDL=	sdl
 USE_LDCONFIG=	yes
 USE_PYTHON=	2.4+
 
-MAN1=	gemrb.1
+MAN6=	gemrb.6
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/gemrb.cfg ]; then \
