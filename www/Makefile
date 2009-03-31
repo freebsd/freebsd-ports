@@ -1360,6 +1360,7 @@
     SUBDIR += rubygem-merb
     SUBDIR += rubygem-mongrel
     SUBDIR += rubygem-mongrel_cluster
+    SUBDIR += rubygem-nicovideo
     SUBDIR += rubygem-passenger
     SUBDIR += rubygem-rack
     SUBDIR += rubygem-rails
