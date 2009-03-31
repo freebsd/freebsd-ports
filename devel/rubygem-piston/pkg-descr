@@ -1,0 +1,11 @@
+Piston is a utility that eases vendor branch management. This is
+similar to svn:externals, except you have a local copy of the files,
+which you can modify at will. As long as the changes are mergeable,
+you should have no problems.
+
+Piston has a similar purpose than svnmerge.py which you can find in
+the contrib/client-side folder of the main Subversion. The main
+difference is that Piston is designed to work with remote
+repositories.
+
+WWW: http://piston.rubyforge.org/
