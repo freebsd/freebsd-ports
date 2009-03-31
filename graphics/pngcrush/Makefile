@@ -8,8 +8,7 @@
 PORTNAME=	pngcrush
 PORTVERSION=	1.6.15
 CATEGORIES=	graphics
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	pmt
+MASTER_SITES=	SF/pmt
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An optimizer for PNG files
@@ -17,6 +16,7 @@ COMMENT=	An optimizer for PNG files
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}"
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/pngcrush
 

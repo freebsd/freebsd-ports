@@ -9,7 +9,8 @@ PORTNAME=	neverball
 PORTVERSION=	1.5.0
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org:9090/neverball/ \
-		http://offload2.icculus.org:9090/neverball/
+		http://offload2.icculus.org:9090/neverball/ \
+		http://mirror.amdmi3.ru/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tilt the floor to guide a ball through an obstacle course
@@ -22,6 +23,7 @@ USE_GL=		gl
 USE_SDL=	ttf
 USE_GMAKE=	yes
 MAKE_ENV+=	ENABLE_WII=0
+MAKE_JOBS_SAFE=	yes
 
 DOCS=		CHANGES COPYING README
 MAN6=		neverball.6 neverputt.6

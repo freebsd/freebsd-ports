@@ -29,6 +29,7 @@ USE_SQLITE=	3
 USE_SDL=	sdl mixer ttf net
 USE_GL=		gl glu
 USE_DOS2UNIX=	src/*.cpp src/*.h
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CPPFLAGS=	-I${LOCALBASE}/include -I${LUA_INCDIR}

@@ -17,6 +17,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Land a spacecraft on the moon
 
 USE_SDL=	mixer image sdl
+MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/moon-lander
 
