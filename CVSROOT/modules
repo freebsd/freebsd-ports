@@ -3740,6 +3740,7 @@ funktrackergold                 ports/audio/funktrackergold
 funnelweb                       ports/devel/funnelweb
 funnyboat                       ports/games/funnyboat
 fuse                            ports/emulators/fuse
+fuse-utils                      ports/emulators/fuse-utils
 fusefs-afuse                    ports/sysutils/fusefs-afuse
 fusefs-chironfs                 ports/sysutils/fusefs-chironfs
 fusefs-cryptofs                 ports/sysutils/fusefs-cryptofs
@@ -8064,6 +8065,8 @@ lwm                             ports/x11-wm/lwm
 lwp                             ports/devel/lwp
 lws                             ports/www/lws
 lxappearance                    ports/x11-themes/lxappearance
+lxde-common                     ports/misc/lxde-common
+lxde-meta                       ports/x11/lxde-meta
 lxdvdrip                        ports/multimedia/lxdvdrip
 lxnb                            ports/security/lxnb
 lxpanel                         ports/x11/lxpanel
@@ -16700,6 +16703,7 @@ pavumeter                       ports/audio/pavumeter
 pawm                            ports/x11-wm/pawm
 pax-utils                       ports/sysutils/pax-utils
 pbasic                          ports/lang/pbasic
+pbc                             ports/security/pbc
 pbi-thumbnailer                 ports/x11-fm/pbi-thumbnailer
 pbnc                            ports/net/pbnc
 pbnj                            ports/security/pbnj
@@ -20100,6 +20104,7 @@ rubygem-net-scp                 ports/security/rubygem-net-scp
 rubygem-net-sftp                ports/security/rubygem-net-sftp
 rubygem-net-ssh                 ports/security/rubygem-net-ssh
 rubygem-net-ssh-gateway         ports/security/rubygem-net-ssh-gateway
+rubygem-nicovideo               ports/www/rubygem-nicovideo
 rubygem-nmap-parser             ports/security/rubygem-nmap-parser
 rubygem-oauth                   ports/net/rubygem-oauth
 rubygem-objectdetect            ports/graphics/rubygem-objectdetect
@@ -20109,6 +20114,7 @@ rubygem-parsetree               ports/devel/rubygem-parsetree
 rubygem-passenger               ports/www/rubygem-passenger
 rubygem-pdfwriter               ports/print/rubygem-pdfwriter
 rubygem-pg                      ports/databases/rubygem-pg
+rubygem-piston                  ports/devel/rubygem-piston
 rubygem-platform                ports/devel/rubygem-platform
 rubygem-postgres                ports/databases/rubygem-postgres
 rubygem-prawn                   ports/print/rubygem-prawn
@@ -21266,6 +21272,7 @@ taglib                          ports/audio/taglib
 taglib-sharp                    ports/audio/taglib-sharp
 taglookup                       ports/audio/taglookup
 tagtool                         ports/audio/tagtool
+tagutil                         ports/audio/tagutil
 tagutils                        ports/deskutils/tagutils
 tailor                          ports/devel/tailor
 taipan                          ports/games/taipan
@@ -22752,7 +22759,6 @@ x11iraf                         ports/science/x11iraf
 x11perf                         ports/x11/x11perf
 x11vnc                          ports/net/x11vnc
 x264                            ports/multimedia/x264
-x264-gtk                        ports/multimedia/x264-gtk
 x2vnc                           ports/x11-servers/x2vnc
 x2x                             ports/x11-servers/x2x
 x3270                           ports/x11/x3270
@@ -24053,6 +24059,7 @@ zope-zmysqlda                   ports/www/zope-zmysqlda
 zope-zsyncer                    ports/www/zope-zsyncer
 zope-zwiki                      ports/www/zope-zwiki
 zope210                         ports/www/zope210
+zope211                         ports/www/zope211
 zope28                          ports/www/zope28
 zope29                          ports/www/zope29
 zope3                           ports/www/zope3
