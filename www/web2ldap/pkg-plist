@@ -22,6 +22,7 @@
 %%DATADIR%%/etc/web2ldap/templates/add_orgunit.ldif
 %%DATADIR%%/etc/web2ldap/templates/add_person.ldif
 %%DATADIR%%/etc/web2ldap/templates/add_user.ldif
+%%DATADIR%%/etc/web2ldap/templates/inputform_account.html
 %%DATADIR%%/etc/web2ldap/templates/inputform_eduPerson.html
 %%DATADIR%%/etc/web2ldap/templates/inputform_inetOrgPerson.html
 %%DATADIR%%/etc/web2ldap/templates/inputform_msOrganization.html
@@ -34,6 +35,7 @@
 %%DATADIR%%/etc/web2ldap/templates/print_organization.html
 %%DATADIR%%/etc/web2ldap/templates/print_organizationalUnit.html
 %%DATADIR%%/etc/web2ldap/templates/print_person.html
+%%DATADIR%%/etc/web2ldap/templates/read_account.html
 %%DATADIR%%/etc/web2ldap/templates/read_bankArrangement.html
 %%DATADIR%%/etc/web2ldap/templates/read_eduPerson.html
 %%DATADIR%%/etc/web2ldap/templates/read_inetOrgPerson.html
