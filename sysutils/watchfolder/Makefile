@@ -7,6 +7,7 @@
 
 PORTNAME=	watchfolder
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dstunrea.sdf-eu.org/files/ \
 		CRITICAL
@@ -17,6 +18,7 @@ COMMENT=	Watch folders for new files and process them
 MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/watchd-${PORTVERSION}
+USE_RC_SUBR=	watchd
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc $$(OPT)|${CC} ${CFLAGS}|' \
