@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	osg
-PORTVERSION=	2.7.9
-PORTREVISION=	1
+PORTVERSION=	2.9.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/
-DISTNAME=	OpenSceneGraph-${PORTVERSION}
 PKGNAMESUFFIX=	-devel
+DISTNAME=	OpenSceneGraph-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
@@ -21,16 +20,19 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+CONFLICTS=	osg-[0-9]*
+
 USE_ZIP=	yes
 USE_CMAKE=	yes
 USE_GL=		gl glu
 USE_GNOME=	pkgconfig
 USE_XORG=	x11
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
-		OSG_SHLIBVER=54 \
-		OPENTHREADS_VERSION=2.3.1 \
+		OSG_SHLIBVER=57 \
+		OPENTHREADS_VERSION=2.4.0 \
 		OPENTHREADS_SHLIBVER=11
 
 PORTSCOUT=	limitw:1,odd
@@ -45,20 +47,21 @@ OPTIONS=	CURL     "Support for cURL"                 off \
 		ITK      "Support for InsightToolkit"       off \
 		VNC      "Support for LibVNCServer"         off \
 		OPENEXR  "Support for OpenEXR"              off \
+		FFMPEG   "Support for FFmpeg"               off \
 		SVG      "Support for SVG through librsvg2" off \
 		PDF      "Support for PDF through poppler"  off \
 		XRANDR   "Use Xrandr"                       on
 
-# broken
+# broken (openvrml from ports is too old)
 #		OPENVRML "Support for OpenVRML"             off
 
 .include <bsd.port.pre.mk>
 
 # GUI toolkits are only needed for building examples, which are not even installed
-FORCE_IGNORE=	FLTK GLUT SDL FOX Qt3 Qt4 wxWidgets   # only needed for examples
-FORCE_IGNORE+=	COLLADA	Performer OurDCMTK XUL        # not in ports (yet?)
-FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB # common and lightweight
-FORCE_PC_IGNORE=	GTK GTKGL                     # only needed for examples
+FORCE_IGNORE=	FLTK GLUT SDL FOX Qt3 Qt4 wxWidgets OpenAL # only for examples
+FORCE_IGNORE+=	COLLADA Performer OurDCMTK XUL        # not in ports
+FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB # common & lightweight
+FORCE_PC_IGNORE=	GTK GTKGL                     # only for examples
 FORCE_PC_REQUIRE=
 
 # options that affect FIND_PACKAGE
@@ -140,6 +143,7 @@ FORCE_REQUIRE+=	ITK
 BUILD_DEPENDS+=	${LOCALBASE}/lib/InsightToolkit/UseITK.cmake:${PORTSDIR}/science/InsightToolkit
 RUN_DEPENDS+=	${LOCALBASE}/lib/InsightToolkit/UseITK.cmake:${PORTSDIR}/science/InsightToolkit
 PLIST_SUB+=	ITK=""
+CXXFLAGS+=	-DVCL_CAN_STATIC_CONST_INIT_FLOAT=0
 .else
 FORCE_IGNORE+=	ITK
 PLIST_SUB+=	ITK="@comment "
@@ -161,6 +165,15 @@ PLIST_SUB+=	OPENEXR=""
 .else
 FORCE_IGNORE+=	OpenEXR
 PLIST_SUB+=	OPENEXR="@comment "
+.endif
+
+.if defined(WITH_FFMPEG)
+FORCE_REQUIRE+=	FFmpeg
+LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+PLIST_SUB+=	FFMPEG=""
+.else
+FORCE_IGNORE+=	FFmpeg
+PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
 # options that affect PKG_CHECK_MODULES

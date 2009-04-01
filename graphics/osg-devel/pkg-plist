@@ -20,6 +20,7 @@ include/osg/AnimationPath
 include/osg/ApplicationUsage
 include/osg/ArgumentParser
 include/osg/Array
+include/osg/AudioStream
 include/osg/AutoTransform
 include/osg/Billboard
 include/osg/BlendColor
@@ -190,6 +191,8 @@ include/osgAnimation/Export
 include/osgAnimation/Interpolator
 include/osgAnimation/Keyframe
 include/osgAnimation/LinkVisitor
+include/osgAnimation/MorphGeometry
+include/osgAnimation/RigGeometry
 include/osgAnimation/Sampler
 include/osgAnimation/Skeleton
 include/osgAnimation/Skinning
@@ -391,6 +394,7 @@ include/osgUtil/Export
 include/osgUtil/GLObjectsVisitor
 include/osgUtil/HalfWayMapGenerator
 include/osgUtil/HighlightMapGenerator
+include/osgUtil/IncrementalCompileOperation
 include/osgUtil/IntersectVisitor
 include/osgUtil/IntersectionVisitor
 include/osgUtil/LineSegmentIntersector
@@ -399,6 +403,7 @@ include/osgUtil/Optimizer
 include/osgUtil/PlaneIntersector
 include/osgUtil/PolytopeIntersector
 include/osgUtil/PositionalStateContainer
+include/osgUtil/PrintVisitor
 include/osgUtil/ReflectionMapGenerator
 include/osgUtil/RenderBin
 include/osgUtil/RenderLeaf
@@ -406,6 +411,7 @@ include/osgUtil/RenderStage
 include/osgUtil/ReversePrimitiveFunctor
 include/osgUtil/SceneGraphBuilder
 include/osgUtil/SceneView
+include/osgUtil/ShaderGen
 include/osgUtil/Simplifier
 include/osgUtil/SmoothingVisitor
 include/osgUtil/StateGraph
@@ -527,6 +533,7 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_dot.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_dw.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_dxf.so
 %%OPENEXR%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_exr.so
+%%FFMPEG%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_ffmpeg.so
 %%FREETYPE%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_freetype.so
 %%GDAL%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_gdal.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_geo.so
