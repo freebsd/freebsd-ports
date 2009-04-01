@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	alltray
-PORTVERSION=	0.69
-PORTREVISION=	4
+PORTVERSION=	0.70
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
@@ -32,6 +31,7 @@ USE_GNOME+=	gconf2
 .endif
 
 post-patch:
+	@${CHMOD} +x ${WRKSRC}/install-sh
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/lib/Makefile.in
 	@${REINPLACE_CMD} -e 's|-L/usr/X11R6/lib||' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|/etc/gconf|${LOCALBASE}/etc/gconf|; \
