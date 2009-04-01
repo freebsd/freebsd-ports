@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	osg
-PORTVERSION=	2.6.1
-PORTREVISION=	3
+PORTVERSION=	2.8.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.openscenegraph.org/downloads/developer_releases/ \
+MASTER_SITES=	http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-${PORTVERSION:C/\.[0-9]$//}/source/ \
 		http://mirror.amdmi3.ru/
 DISTNAME=	OpenSceneGraph-${PORTVERSION}
 
@@ -20,16 +19,19 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+CONFLICTS=	osg-devel-[0-9]*
+
 USE_ZIP=	yes
 USE_CMAKE=	yes
 USE_GL=		gl glu
 USE_GNOME=	pkgconfig
 USE_XORG=	x11
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
-		OSG_SHLIBVER=48 \
-		OPENTHREADS_VERSION=2.3.0 \
+		OSG_SHLIBVER=55 \
+		OPENTHREADS_VERSION=2.4.0 \
 		OPENTHREADS_SHLIBVER=11
 
 PORTSCOUT=	limitw:1,even
@@ -41,19 +43,23 @@ OPTIONS=	CURL     "Support for cURL"                 off \
 		INVENTOR "Support for SGI OpenInventor"     off \
 		JASPER   "Support for JPEG2000"             off \
 		XINE     "Support for Xine"                 off \
+		ITK      "Support for InsightToolkit"       off \
+		VNC      "Support for LibVNCServer"         off \
+		OPENEXR  "Support for OpenEXR"              off \
 		SVG      "Support for SVG through librsvg2" off \
+		PDF      "Support for PDF through poppler"  off \
 		XRANDR   "Use Xrandr"                       on
 
-# broken
-#		OPENVRML "Support for OpenVRML"             off \
+# broken (openvrml from ports is too old)
+#		OPENVRML "Support for OpenVRML"             off
 
 .include <bsd.port.pre.mk>
 
 # GUI toolkits are only needed for building examples, which are not even installed
-FORCE_IGNORE=	FLTK GLUT SDL FOX Qt3 Qt4 wxWidgets   # only needed for examples
-FORCE_IGNORE+=	COLLADA	Performer                     # not in ports (yet?)
+FORCE_IGNORE=	FLTK GLUT SDL FOX Qt3 Qt4 wxWidgets   # only for examples
+FORCE_IGNORE+=	COLLADA Performer OurDCMTK XUL        # not in ports
 FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB # common & lightweight
-FORCE_PC_IGNORE=	GTK GTKGL                     # only needed for examples
+FORCE_PC_IGNORE=	GTK GTKGL                     # only for examples
 FORCE_PC_REQUIRE=
 
 # options that affect FIND_PACKAGE
@@ -130,15 +136,59 @@ FORCE_IGNORE+=	Xine
 PLIST_SUB+=	XINE="@comment "
 .endif
 
+.if defined(WITH_ITK)
+FORCE_REQUIRE+=	ITK
+BUILD_DEPENDS+=	${LOCALBASE}/lib/InsightToolkit/UseITK.cmake:${PORTSDIR}/science/InsightToolkit
+RUN_DEPENDS+=	${LOCALBASE}/lib/InsightToolkit/UseITK.cmake:${PORTSDIR}/science/InsightToolkit
+PLIST_SUB+=	ITK=""
+CXXFLAGS+=	-DVCL_CAN_STATIC_CONST_INIT_FLOAT=0
+.else
+FORCE_IGNORE+=	ITK
+PLIST_SUB+=	ITK="@comment "
+.endif
+
+.if defined(WITH_VNC)
+FORCE_REQUIRE+=	LibVNCServer
+LIB_DEPENDS+=	vncserver.0:${PORTSDIR}/net/libvncserver
+PLIST_SUB+=	VNC=""
+.else
+FORCE_IGNORE+=	LibVNCServer
+PLIST_SUB+=	VNC="@comment "
+.endif
+
+.if defined(WITH_OPENEXR)
+FORCE_REQUIRE+=	OpenEXR
+LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
+PLIST_SUB+=	OPENEXR=""
+.else
+FORCE_IGNORE+=	OpenEXR
+PLIST_SUB+=	OPENEXR="@comment "
+.endif
+
 # options that affect PKG_CHECK_MODULES
 .if defined(WITH_SVG)
-FORCE_PC_REQUIRE+=RSVG CAIRO
-LIB_DEPENDS+=	rsvg-2:${PORTSDIR}/graphics/librsvg2 \
-		cairo.2:${PORTSDIR}/graphics/cairo
+FORCE_PC_REQUIRE+=RSVG
+LIB_DEPENDS+=	rsvg-2:${PORTSDIR}/graphics/librsvg2
 PLIST_SUB+=	SVG=""
 .else
-FORCE_PC_IGNORE+=RSVG CAIRO
+FORCE_PC_IGNORE+=RSVG
 PLIST_SUB+=	SVG="@comment "
+.endif
+
+.if defined(WITH_PDF)
+FORCE_PC_REQUIRE+=POPPLER
+LIB_DEPENDS+=	poppler-glib.3:${PORTSDIR}/graphics/poppler-gtk
+PLIST_SUB+=	PDF=""
+.else
+FORCE_PC_IGNORE+=POPPLER
+PLIST_SUB+=	PDF="@comment "
+.endif
+
+.if defined(WITH_SVG) || defined(WITH_PDF)
+FORCE_PC_REQUIRE+=CAIRO
+LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+.else
+FORCE_PC_IGNORE+=CAIRO
 .endif
 
 # other options
@@ -150,10 +200,6 @@ USE_XORG+=	xrandr
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|"64"|""|' ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|cpu_set_t|cpuset_t|g' \
-		${WRKSRC}/src/OpenThreads/pthreads/CMakeLists.txt \
-		${WRKSRC}/src/OpenThreads/pthreads/PThread.c++
 .for p in ${FORCE_REQUIRE}
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*${p}/ s|)$$| REQUIRED&|' \
 		${WRKSRC}/CMakeLists.txt
