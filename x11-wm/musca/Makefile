@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	musca
-PORTVERSION=	0.9.13
+PORTVERSION=	0.9.14
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://aerosuidae.net/
 EXTRACT_SUFX=	.tgz
