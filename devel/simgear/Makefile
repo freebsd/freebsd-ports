@@ -7,6 +7,7 @@
 
 PORTNAME=	SimGear
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	ftp://ftp.de.simgear.org/pub/simgear/Source/ \
 		ftp://ftp.simgear.org/pub/simgear/Source/
@@ -22,9 +23,9 @@ LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		boost_thread.4:${PORTSDIR}/devel/boost
 
 .if defined(WITH_OSG_DEVEL)
-LIB_DEPENDS+=	osg.54:${PORTSDIR}/graphics/osg-devel
+LIB_DEPENDS+=	osg.57:${PORTSDIR}/graphics/osg-devel
 .else
-LIB_DEPENDS+=	osg.48:${PORTSDIR}/graphics/osg
+LIB_DEPENDS+=	osg.55:${PORTSDIR}/graphics/osg
 .endif
 
 USE_XORG=	ice sm x11 xext xi xt xmu
