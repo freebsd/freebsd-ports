@@ -6,32 +6,27 @@
 #
 
 PORTNAME=	sleuthkit
-PORTVERSION=	2.52
+PORTVERSION=	3.0.1
 CATEGORIES=	sysutils security
 MASTER_SITES=	SF
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	The @stake Sleuth Kit for forensic analysis
 
-RUN_DEPENDS=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip
-
 CONFLICTS=	ja-ls-[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
-DATADIR=	${PREFIX}/share/tsk
+USE_LDCONFIG=	yes
+DATADIR=	${PREFIX}/share/tsk3
 
 DOCS=		CHANGES.txt README.txt docs/*.txt
-MAN1=		disk_sreset.1 disk_stat.1 dls.1 dstat.1 fls.1 fsstat.1 \
-		hfind.1 icat.1 ifind.1 img_cat.1 img_stat.1 istat.1 jcat.1 \
-		mactime.1 mmls.1 sigfind.1 mmstat.1 sorter.1 dcalc.1 dcat.1 \
-		ffind.1 ils.1 jls.1
+MAN1=		blkcalc.1 blkcat.1 disk_sreset.1 disk_stat.1 blkls.1 \
+		blkstat.1 ffind.1 fls.1 fsstat.1 hfind.1 icat.1 ifind.1 \
+		ils.1 img_cat.1 img_stat.1 istat.1 jcat.1 jls.1 mactime.1 \
+		mmls.1 mmstat.1 mmcat.1 sigfind.1 sorter.1
 
 post-patch:
-# Do not install own Date::Manip, use system-wide one
-	@${REINPLACE_CMD} -e 's,[[:graph:]]*Date[[:graph:]]*,,g' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} '/use lib/d' ${WRKSRC}/tools/timeline/Makefile.in
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
 post-install:
