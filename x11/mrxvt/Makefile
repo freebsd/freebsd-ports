@@ -36,6 +36,17 @@ CONFIGURE_ARGS+=	--enable-xft
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="${LIBS} -L${LOCALBASE}/lib"
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	TIPS \
+			README.greek \
+			README.menu \
+			README.xvt \
+			xdefaults-sample.txt \
+			xterm.seq \
+			mrxvt.vbs \
+			mrxvtset.pl
+.endif
+
 MAN1=		mrxvt.1
 
 pre-everything::
@@ -43,5 +54,11 @@ pre-everything::
 	@${ECHO_MSG} "For Japanese support use make -DWITH_JAPANESE install"
 	@${ECHO_MSG} "For XFT support use make -DWITH_XFT install"
 	@${ECHO_MSG} "=========================================>"
+
+.if defined(NOPORTDOCS)
+post-patch:
+	@${REINPLACE_CMD} -e '/^\(install-data-am:\).*/ \
+		s/install-docDATA //' ${WRKSRC}/doc/Makefile.in
+.endif
 
 .include <bsd.port.mk>
