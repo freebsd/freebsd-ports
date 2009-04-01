@@ -7,6 +7,7 @@
 
 PORTNAME=	fgrun
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -35,9 +36,9 @@ PLIST_SUB+=	NLS=""
 .endif
 
 .if defined(WITH_OSG_DEVEL)
-LIB_DEPENDS+=	osg.54:${PORTSDIR}/graphics/osg-devel
+LIB_DEPENDS+=	osg.57:${PORTSDIR}/graphics/osg-devel
 .else
-LIB_DEPENDS+=	osg.48:${PORTSDIR}/graphics/osg
+LIB_DEPENDS+=	osg.55:${PORTSDIR}/graphics/osg
 .endif
 
 post-patch:
