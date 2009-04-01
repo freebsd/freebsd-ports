@@ -59,7 +59,7 @@ DISTFILES+=	${Y4M_VIDEO_DISTFILE}:pgo
 ALL_TARGET=	fprofiled
 MAKE_ENV+=	VIDS="${WRKDIR}/${Y4M_VIDEO}"
 
-RESTRICTED=	${Y4M_VIDEO}.bz2 file may not be mirrored
+RESTRICTED=	${Y4M_VIDEO_DISTFILE} file may not be mirrored
 RESTRICTED_FILES=	${Y4M_VIDEO_DISTFILE}
 .endif
 
