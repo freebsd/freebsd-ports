@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	crafty
-PORTVERSION=	22.10
-PORTREVISION=	1
+PORTVERSION=	23.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/pgn/:data \
 		ftp://ftp.cis.uab.edu/pub/hyatt/documentation/:doc \
