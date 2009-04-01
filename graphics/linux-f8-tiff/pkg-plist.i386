@@ -1,3 +1,4 @@
+@comment file listing
 usr/bin/bmp2tiff
 usr/bin/fax2ps
 usr/bin/fax2tiff
@@ -17,12 +18,13 @@ usr/bin/tiffcp
 usr/bin/tiffdither
 usr/bin/tiffdump
 usr/bin/tiffinfo
-usr/bin/tiffgt
 usr/bin/tiffmedian
 usr/bin/tiffset
 usr/bin/tiffsplit
 usr/lib/libtiff.so.3
 usr/lib/libtiff.so.%%PORTVERSION%%
+usr/lib/libtiffxx.so.3
+usr/lib/libtiffxx.so.%%PORTVERSION%%
 usr/share/doc/libtiff-%%PORTVERSION%%/COPYRIGHT
 usr/share/doc/libtiff-%%PORTVERSION%%/README
 usr/share/doc/libtiff-%%PORTVERSION%%/RELEASE-DATE
@@ -36,7 +38,6 @@ usr/share/man/man1/ppm2tiff.1.gz
 usr/share/man/man1/ras2tiff.1.gz
 usr/share/man/man1/raw2tiff.1.gz
 usr/share/man/man1/rgb2ycbcr.1.gz
-usr/share/man/man1/sgi2tiff.1.gz
 usr/share/man/man1/thumbnail.1.gz
 usr/share/man/man1/tiff2bw.1.gz
 usr/share/man/man1/tiff2pdf.1.gz
@@ -47,9 +48,8 @@ usr/share/man/man1/tiffcp.1.gz
 usr/share/man/man1/tiffdither.1.gz
 usr/share/man/man1/tiffdump.1.gz
 usr/share/man/man1/tiffinfo.1.gz
-usr/share/man/man1/tiffgt.1.gz
 usr/share/man/man1/tiffmedian.1.gz
 usr/share/man/man1/tiffset.1.gz
 usr/share/man/man1/tiffsplit.1.gz
-usr/share/man/man1/tiffsv.1.gz
+@comment non-empty directory listing in revers order
 @dirrm usr/share/doc/libtiff-%%PORTVERSION%%

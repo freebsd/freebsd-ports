@@ -388,6 +388,16 @@
     SUBDIR += linux-alsa-lib
     SUBDIR += linux-arts
     SUBDIR += linux-esound
+    SUBDIR += linux-f8-alsa-lib
+    SUBDIR += linux-f8-arts
+    SUBDIR += linux-f8-esound
+    SUBDIR += linux-f8-freealut
+    SUBDIR += linux-f8-libaudiofile
+    SUBDIR += linux-f8-libogg
+    SUBDIR += linux-f8-libvorbis
+    SUBDIR += linux-f8-mikmod
+    SUBDIR += linux-f8-openal
+    SUBDIR += linux-f8-sdl_mixer
     SUBDIR += linux-freealut
     SUBDIR += linux-libaudiofile
     SUBDIR += linux-libmad

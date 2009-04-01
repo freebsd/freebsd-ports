@@ -1,8 +1,10 @@
+@comment file listing
 usr/bin/cjpeg
 usr/bin/djpeg
 usr/bin/jpegtran
 usr/bin/rdjpgcom
 usr/bin/wrjpgcom
+usr/lib/libjpeg.so.62
 usr/lib/libjpeg.so.62.0.0
 usr/share/doc/libjpeg-6b/README
 usr/share/doc/libjpeg-6b/usage.doc
@@ -11,6 +13,5 @@ usr/share/man/man1/djpeg.1.gz
 usr/share/man/man1/jpegtran.1.gz
 usr/share/man/man1/rdjpgcom.1.gz
 usr/share/man/man1/wrjpgcom.1.gz
-@exec ln -sf %D/usr/lib/libjpeg.so.62.0.0 %D/usr/lib/libjpeg.so.62
-@unexec rm -f %D/usr/lib/libjpeg.so.62
+@comment non-empty directory listing in revers order
 @dirrm usr/share/doc/libjpeg-6b

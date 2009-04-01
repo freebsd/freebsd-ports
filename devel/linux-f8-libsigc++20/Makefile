@@ -1,33 +1,28 @@
-# New ports collection makefile for:	devel/linux-libsigc++20
-# Date created:				28 Jun 2007
-# Whom:					Boris Samorodov <bsam@FreeBSD.org>
+# New ports collection makefile for:	devel/linux-f8-libsigc++20
+# Date created:				2008-04-02
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
-PORTNAME=		libsigc
-PORTVERSION=		2.0.17
+PORTNAME=		libsigc++20
+PORTVERSION=		2.0.18
 CATEGORIES=		devel linux
-MASTER_SITE_SUBDIR=	../extras/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/
-DISTNAME=		${PORTNAME}++20-${PORTVERSION}-${RPMVERSION}
+PKGNAMEPREFIX=		linux-f8-
+DISTNAME=		${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=		freebsd-emulation@FreeBSD.org
-COMMENT=		Callback Framework for C++ (linux version)
+COMMENT=		Callback Framework for C++ (Linux Fedora 8)
 
 ONLY_FOR_ARCHS=		i386 amd64
 USE_LINUX_RPM=		yes
+LINUX_DIST_VER=		8
 RPMVERSION=		1
-LINUX_DIST_VER=		4
 USE_LDCONFIG=		yes
-MASTER_SITE_SRC_SUBDIR=	../extras/${LINUX_DIST_VER}/SRPMS
 
-.if defined(NOPORTDOCS)
-REMOVE_DIRS=	usr/share
-.endif
-
-pre-install:
-	@for D in ${REMOVE_DIRS}; do \
-		${RM} -rf ${WRKSRC}/$$D; \
-	done
+PLIST_FILES=		usr/lib/libsigc-2.0.so.0 usr/lib/libsigc-2.0.so.0.0.0
+DOCSDIR=		usr/share/doc/${PORTNAME}-${PORTVERSION}
+PORTDOCS=		AUTHORS COPYING ChangeLog NEWS README TODO
+DESCR=			${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

@@ -1,26 +1,29 @@
-# New ports collection makefile for:	linux-openal
-# Date created:				25 Nov 2005
-# Whom:					jylefort@FreeBSD.org
+# New ports collection makefile for:	audio/linux-f8-openal
+# Date created:				2008-04-03
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
 PORTNAME=	openal
-PORTREVISION=	1
-DISTVERSION=	0.0.9-0.6.20060204cvs.fc4
+PORTVERSION=	0.0.9
 CATEGORIES=	audio linux
-MASTER_SITE_SUBDIR=	../extras/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A 3D positional spatialized sound library (Linux version)
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	A 3D positional spatialized sound library (Linux Fedora 8)
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	alsalib arts esound libaudiofile libvorbis sdl12
-LINUX_DIST_VER=	4
-MASTER_SITE_SRC_SUBDIR=	../extras/${LINUX_DIST_VER}/SRPMS
+LINUX_DIST_VER=	8
+RPMVERSION=	0.13.20060204cvs.fc8
 USE_LDCONFIG=	yes
-AUTOMATIC_PLIST=yes
+
+PLIST_FILES=	etc/openalrc usr/lib/libopenal.so.0 usr/lib/libopenal.so.0.0.0
+DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
+PORTDOCS=	AUTHORS COPYING ChangeLog NOTES README TODO
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

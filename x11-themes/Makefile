@@ -166,6 +166,7 @@
     SUBDIR += kdeartwork4
     SUBDIR += kdmtheme
     SUBDIR += lila-xfwm4
+    SUBDIR += linux-f8-hicolor-icon-theme
     SUBDIR += linux-gtk-bluecurve-theme
     SUBDIR += linux-hicolor-icon-theme
     SUBDIR += lxappearance

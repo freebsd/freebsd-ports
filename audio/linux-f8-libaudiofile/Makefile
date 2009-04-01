@@ -1,24 +1,27 @@
-# New ports collection makefile for: linux-libaudiofile
-# Date created:		01/09/18
-# Whom:                 taoka@FreeBSD.org
+# New ports collection makefile for:	audio/linux-f8-libaudiofile
+# Date created:				2008-04-03
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
-PORTNAME=	libaudiofile
+PORTNAME=	lib${LINUX_NAME}
 PORTVERSION=	0.2.6
-PORTREVISION=	2
 CATEGORIES=	audio linux
-DISTNAME=	audiofile-${PORTVERSION}-2
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
-COMMENT=	RPM of audiofile
+COMMENT=	An implementation of the Audio File Library from SGI (Linux Fedora 8)
 
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	4
-USE_LDCONFIG=	yes
+LINUX_NAME=	audiofile
+LINUX_DIST_VER=	8
+RPMVERSION=	7.fc8
 BRANDELF_DIRS=	usr/bin
+USE_LDCONFIG=	yes
 PLIST=		pkg-plist.${LINUX_RPM_ARCH}
-PLIST_SUB+=	LIBAUDIOFILE_VERSION="${PORTVERSION}"
+
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

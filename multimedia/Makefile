@@ -142,6 +142,7 @@
     SUBDIR += libxspf
     SUBDIR += linux-divx4linux
     SUBDIR += linux-divx4linux4
+    SUBDIR += linux-f8-libtheora
     SUBDIR += linux-gspca-kmod
     SUBDIR += linux-libtheora
     SUBDIR += linux-ov511-kmod

@@ -1,25 +1,28 @@
-# New ports collection makefile for:	linux-libtheora
-# Date created:		17 September 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
+# New ports collection makefile for:	multimedia/linux-f8-libtheora
+# Date created:				2008-10-15
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libtheora
-DISTVERSION=	1.0alpha4-2
+PORTVERSION=	1.0beta2
 CATEGORIES=	multimedia linux
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Video codec
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	Theora Video Compression Codec (Linux Fedora 8)
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	4
+LINUX_DIST_VER=	8
+RPMVERSION=	3.fc8
 USE_LDCONFIG=	yes
-AUTOMATIC_PLIST=yes
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
-post-extract:
-	@${RM} -rf ${WRKDIR}/usr/share
+PLIST_FILES=	usr/lib/libtheora.so.0 usr/lib/libtheora.so.0.3.2
+DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
+PORTDOCS=	COPYING README
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

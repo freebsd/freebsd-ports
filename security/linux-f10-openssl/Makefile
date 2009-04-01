@@ -1,21 +1,25 @@
-# New ports collection makefile for:	linux-openssl
-# Date created:		2006-08-04
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
+# New ports collection makefile for:	security/linux-f8-openssl
+# Date created:				2008-04-09
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.9.7f
+PORTVERSION=	0.9.8b
 CATEGORIES=	security linux
-DISTNAME=	${PORTNAME}-${PORTVERSION}-7.10
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	acm@FreeBSD.org
-COMMENT=	SSL and crypto library (Linux Version)
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	The OpenSSL toolkit (Linux Fedora 8)
 
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	4
+LINUX_DIST_VER=	8
+RPMVERSION=	17.fc8
+BRANDELF_FILES=	usr/bin/openssl
 USE_LDCONFIG=	yes
-DESCR=	${.CURDIR}/../${PORTNAME}/pkg-descr
+
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

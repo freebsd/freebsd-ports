@@ -1,22 +1,26 @@
-# New ports collection makefile for:		linux-libg2c
-# Date created:					2006.07.05
-# Whom:						bsam
+# New ports collection makefile for:	lang/linux-f8-libg2c
+# Date created:				2008-04-02
+# Whom:					bsam
 #
 # $FreeBSD$
+#
 
 PORTNAME=	libg2c
-PORTVERSION=	3.2.3
+PORTVERSION=	3.4.6
 CATEGORIES=	lang linux
-DISTNAME=	compat-libf2c-32-${PORTVERSION}-47.fc4
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
-COMMENT=	Fortran 77 compatibility runtime
+COMMENT=	Fortran 77 shared library (Linux Fedora 8)
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	4
+LINUX_NAME=	compat-libf2c-34
+LINUX_DIST_VER=	8
+RPMVERSION=	8
 USE_LDCONFIG=	yes
-SRC_DISTFILES=	compat-gcc-32-${PORTVERSION}-47.fc4.src.rpm
+SRC_DISTFILES=	compat-gcc-34-${PORTVERSION}-${RPMVERSION}.src.rpm
 
 PLIST_FILES=	usr/lib/libg2c.so.0 usr/lib/libg2c.so.0.0.0
 

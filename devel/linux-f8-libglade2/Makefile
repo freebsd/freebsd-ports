@@ -1,22 +1,29 @@
-# New ports collection makefile for: linux-libglade2
-# Date created:		2007.09.02
-# Whom:			Artem Naluzhnyy <tut@nhamon.com.ua>
+# New ports collection makefile for:	devel/linux-f8-libglade2
+# Date created:				2008-04-02
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libglade2
-PORTVERSION=	2.5.1
+PORTVERSION=	2.6.2
 CATEGORIES=	devel linux
-DISTNAME=	${PORTNAME}-${PORTVERSION}-2
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	tut@nhamon.com.ua
-COMMENT=	RPM of libglade2
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	RPM of libglade2 (Linux Fedora 8)
 
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	4
+LINUX_DIST_VER=	8
+RPMVERSION=	3.fc8
 USE_LDCONFIG=	yes
-PLIST=		pkg-plist.${LINUX_RPM_ARCH}
-PLIST_SUB=	LIBVERSION="0.0.7" PORTVERSION="${PORTVERSION}"
+
+PLIST_FILES=	usr/lib/libglade-2.0.so.0 usr/lib/libglade-2.0.so.0.0.7 \
+		usr/share/xml/libglade/glade-2.0.dtd
+PLIST_DIRS=	usr/share/xml/libglade usr/share/xml
+DOCSDIR=	usr/share/doc/${PORTNAME}-${PORTVERSION}
+PORTDOCS=	AUTHORS COPYING NEWS README
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

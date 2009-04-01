@@ -1,23 +1,30 @@
-# New ports collection makefile for:	linux-curl
-# Date created:		2006-08-04
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
+# New ports collection makefile for:	ftp/linux-f8-curl
+# Date created:				2009-03-30
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.13.1
+PORTVERSION=	7.18.2
 CATEGORIES=	ftp linux
-PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-5.fc4
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	acm@FreeBSD.org
-COMMENT=	Curl linux version
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	The command line tool for transferring files with URL syntax (Linux Fedora 8)
 
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	4
+LINUX_DIST_VER=	8
+RPMVERSION=	7.fc8
 USE_LDCONFIG=	yes
-AUTOMATIC_PLIST=	yes
+BRANDELF_FILES=	usr/bin/curl
 DESCR=	${.CURDIR}/../${PORTNAME}/pkg-descr
+
+PLIST_FILES=	usr/bin/curl usr/lib/libcurl.so.4 usr/lib/libcurl.so.4.1.0
+DOCSDIR=	usr/share/doc/${PORTNAME}-${PORTVERSION}
+PORTDOCS=	BUGS COPYING FEATURES README TODO CHANGES FAQ MANUAL RESOURCES TheArtOfHttpScripting
+MANPREFIX=	${PREFIX}/usr/share
+MAN1=		curl.1
 
 .include <bsd.port.mk>

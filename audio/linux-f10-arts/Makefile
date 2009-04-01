@@ -1,24 +1,25 @@
-# New ports collection makefile for:	linux-arts
-# Date created:				6 October 2003
-# Whom:					bms@FreeBSD.org
+# New ports collection makefile for:	audio/linux-f8-arts
+# Date created:				2008-04-03
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
 PORTNAME=		arts
-DISTVERSION=		1.5.3-0.1.fc4
+PORTVERSION=		1.5.10
 CATEGORIES=		audio kde linux
+PKGNAMEPREFIX=		linux-f8-
+DISTNAME=		${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Audio system for the KDE integrated X11 desktop (Linux version)
+MAINTAINER=		emulation@FreeBSD.org
+COMMENT=		Audio system for the KDE integrated X11 desktop (Linux Fedora 8)
 
 ONLY_FOR_ARCHS=		i386 amd64
 USE_LINUX_RPM=		yes
-LINUX_DIST_VER=		4
+LINUX_DIST_VER=		8
+RPMVERSION=		1.fc8.1
+BRANDELF_DIRS=		usr/bin
 USE_LDCONFIG=		yes
-AUTOMATIC_PLIST=	yes
 DESCR=			${.CURDIR}/../${PORTNAME}/pkg-descr
-
-BRANDELF_DIRS=	usr
 
 .include <bsd.port.mk>

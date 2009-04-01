@@ -1,24 +1,31 @@
-# New ports collection makefile for: linux-ungif
-# Date created:         22 November 2002
-# Whom:                 Nakata Maho <maho@FreeBSD.org>
+# New ports collection makefile for:	graphics/linux-f8-ungif
+# Date created:				2008-03-29
+# Whom:					bsam
+#
 # $FreeBSD$
 #
 
 PORTNAME=	ungif
 PORTVERSION=	4.1.3
-PORTREVISION=	1
 CATEGORIES=	graphics linux
-DISTNAME=	libungif-${PORTVERSION}-3.fc4.2
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	maho@FreeBSD.org
-COMMENT=	RPM of the ungif lib
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	RPM of gif and ungif libs (Linux Fedora 8)
 
 ONLY_FOR_ARCHS=	i386 amd64
-
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	4
+LINUX_NAME=	giflib
+LINUX_DIST_VER=	8
+RPMVERSION=	8
 USE_LDCONFIG=	yes
-PLIST=		pkg-plist.${LINUX_RPM_ARCH}
-PLIST_SUB=	PORTVERSION="${PORTVERSION}"
+
+PLIST_FILES=	usr/lib/libgif.so.4 \
+		usr/lib/libgif.so.${PORTVERSION} \
+		usr/lib/libungif.so.4 \
+		usr/lib/libungif.so.${PORTVERSION}
+DOCSDIR=	${PREFIX}/usr/share/doc/giflib-${PORTVERSION}
+PORTDOCS=	AUTHORS BUGS COPYING ChangeLog NEWS ONEWS README TODO
 
 .include <bsd.port.mk>

@@ -1,28 +1,30 @@
-# New ports collection makefile for: linux-png
-# Date created:		28 September 2000
-# Whom:                 sanpei@FreeBSD.org
+# New ports collection makefile for:	graphics/linux-f8-png10
+# Date created:				2008-03-28
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
-PORTNAME=	png
-PORTVERSION=	1.0.18
+PORTNAME=	png10
+PORTVERSION=	1.0.30
 CATEGORIES=	graphics linux
-DISTNAME=	libpng10-${PORTVERSION}-2
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
-COMMENT=	RPM of the PNG lib (old 1.0 version)
-
-LATEST_LINK=	linux-png10
+COMMENT=	RPM of the PNG lib (old 1.0 version, Linux Fedora 8)
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	4
+LINUX_NAME=	lib${PORTNAME}
+LINUX_DIST_VER=	8
+RPMVERSION=	1.fc8
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	usr/lib/libpng.so.2.${PORTVERSION} \
-		usr/lib/libpng.so.2
+PLIST_FILES=	usr/lib/libpng.so.2 \
+		usr/lib/libpng.so.2.${PORTVERSION}
 DOCSDIR=	${PREFIX}/usr/share/doc/libpng10-${PORTVERSION}
-PORTDOCS=	CHANGES LICENSE README TODO example.c libpng.txt
+PORTDOCS=	ANNOUNCE CHANGES LICENSE README TODO Y2KINFO
+DESCR=		${.CURDIR}/../png/pkg-descr
 
 .include <bsd.port.mk>

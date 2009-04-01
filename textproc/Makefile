@@ -313,6 +313,12 @@
     SUBDIR += link-grammar
     SUBDIR += linux-aspell
     SUBDIR += linux-expat
+    SUBDIR += linux-f8-aspell
+    SUBDIR += linux-f8-expat
+    SUBDIR += linux-f8-libxml
+    SUBDIR += linux-f8-libxml2
+    SUBDIR += linux-f8-scim-gtk
+    SUBDIR += linux-f8-scim-libs
     SUBDIR += linux-libxml
     SUBDIR += linux-libxml2
     SUBDIR += linux-scim-gtk

@@ -1,32 +1,33 @@
-# New ports collection makefile for: linux-png
-# Date created:		28 September 2000
-# Whom:                 sanpei@FreeBSD.org
+# New ports collection makefile for:	graphics/linux-f8-png
+# Date created:				2008-03-28
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
 PORTNAME=	png
-PORTVERSION=	1.2.8
-PORTREVISION=	2
+PORTVERSION=	1.2.22
 CATEGORIES=	graphics linux
-DISTNAME=	libpng-${PORTVERSION}-2
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
-COMMENT=	RPM of the PNG lib
+COMMENT=	RPM of the PNG lib (Linux Fedora 8)
 
-# no alpha rpm is available
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	4
+LINUX_NAME=	libpng
+LINUX_DIST_VER=	8
+RPMVERSION=	1.fc8
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	\
-		usr/lib/libpng.so.3 \
-		usr/lib/libpng.so.3.${PORTVERSION} \
+PLIST_FILES=	usr/lib/libpng.so.3 \
+		usr/lib/libpng.so.3.22.0 \
 		usr/lib/libpng12.so.0 \
-		usr/lib/libpng12.so.0.${PORTVERSION} \
+		usr/lib/libpng12.so.0.22.0 \
 		usr/share/man/man5/png.5.gz
 DOCSDIR=	${PREFIX}/usr/share/doc/libpng-${PORTVERSION}
-PORTDOCS=	CHANGES LICENSE README TODO example.c libpng.txt
+PORTDOCS=	CHANGES LICENSE README TODO example.c libpng-1.2.22.txt
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

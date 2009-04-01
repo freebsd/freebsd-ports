@@ -1,6 +1,6 @@
-# New ports collection makefile for: linux-libmng
-# Date created:		01/09/18
-# Whom:                 mranner@inode.at
+# New ports collection makefile for:	graphics/linux-f8-libmng
+# Date created:				2008-03-28
+# Whom:					bsam
 #
 # $FreeBSD$
 #
@@ -8,17 +8,19 @@
 PORTNAME=		libmng
 PORTVERSION=		1.0.9
 CATEGORIES=		graphics linux
-DISTNAME=		${PORTNAME}-${PORTVERSION}-1
+PKGNAMEPREFIX=		linux-f8-
+DISTNAME=		${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=		michael@ranner.eu
-COMMENT=		RPM of libmng
+MAINTAINER=		emulation@FreeBSD.org
+COMMENT=		RPM of libmng (Linux Fedora 8)
 
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	jpeg
-LINUX_DIST_VER=	4
+LINUX_DIST_VER=	8
+RPMVERSION=	5.1
 USE_LDCONFIG=	yes
-ONLY_FOR_ARCHS=	i386 amd64
 
-PLIST?=		${PKGDIR}/pkg-plist.${LINUX_RPM_ARCH}
+PLIST_FILES=	usr/lib/libmng.so.1 usr/lib/libmng.so.1.0.0
 
 .include <bsd.port.mk>

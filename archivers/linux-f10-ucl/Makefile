@@ -1,6 +1,6 @@
-# New ports collection makefile for:	archivers/linux-ucl
-# Date created:				03 Jun 2007
-# Whom:					Boris Samorodov <bsam@FreeBSD.org>
+# New ports collection makefile for:	archivers/linux-f8-ucl
+# Date created:				2008-04-03
+# Whom:					bsam
 #
 # $FreeBSD$
 #
@@ -8,17 +8,20 @@
 PORTNAME=		ucl
 PORTVERSION=		1.03
 CATEGORIES=		archivers linux
-MASTER_SITE_SUBDIR=	../extras/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}
+PKGNAMEPREFIX=		linux-f8-
 DISTNAME=		${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=		emulation@FreeBSD.org
-COMMENT=		RPM of UCL, a lossless data compression library
+COMMENT=		UCL, a lossless data compression library (Linux Fedora 8)
 
 USE_LINUX_RPM=		yes
-RPMVERSION=		3
-LINUX_DIST_VER=		4
+LINUX_DIST_VER=		8
+RPMVERSION=		7.fc8
 USE_LDCONFIG=		yes
-MASTER_SITE_SRC_SUBDIR=	../extras/${LINUX_DIST_VER}/SRPMS
+
+PLIST_FILES=		usr/lib/libucl.so.1 usr/lib/libucl.so.1.0.0
+DOCSDIR=		${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
+PORTDOCS=		COPYING NEWS README THANKS TODO
 DESCR=			${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

@@ -1,31 +1,26 @@
-# New ports collection makefile for:	linux-allegro
-# Date created:				18 Nov 2003
-# Whom:					Pav Lucistnik <pav@FreeBSD.org>
+# New ports collection makefile for:	devel/linux-f8-allegro
+# Date created:				2008-04-03
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
 PORTNAME=	allegro
-PORTVERSION=	4.0.3
-PORTREVISION=	2
+PORTVERSION=	4.2.2
 CATEGORIES=	devel linux
-MASTER_SITES=	http://membres.lycos.fr/ebotcazou/allegro/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
-COMMENT=	Cross-platform game programming library (linux version)
+COMMENT=	Cross-platform game programming library (Linux Fedora 8)
 
 USE_LINUX_RPM=		yes
 USE_LINUX_APPS=		xorglibs
 ONLY_FOR_ARCHS=		i386 amd64
-DIST_SUBDIR=		rpm
+LINUX_DIST_VER=		8
+RPMVERSION=		10.fc8
 USE_LDCONFIG=		yes
-SRC_DISTFILES=
 
-MD5_FILE=	${MASTERDIR}/distinfo
-
-post-extract:
-	@cd ${WRKSRC}/usr/lib; \
-	${LN} -s liballeg-4.0.3.so liballeg.so.4.0
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>
