@@ -598,6 +598,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/bell-number-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/big-fact2perm-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/big-fact2perm-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/binary-debruijn-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/binary-debruijn-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/binary-necklace-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/binary-necklace-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/binomial-demo.cc
