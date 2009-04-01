@@ -6,7 +6,25 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
-20080328:
+20090401:
+  AFFECTS: users of linux Fedora 8 infrastructure ports
+  AUTHOR: bsam@FreeBSD.org
+
+  ATTENTION! Those ports are not default for any version of FreeBSD for now
+  and may be used with FreeBSD versions 7.2 and above (8-CURRENT is better)
+  using compat.linux.osrelease=2.6.16 and linux_base-f8. Please, note that
+  2.6.16 is not fully supported on 7.x (ex., some syscalls are missing
+  and cannot be MFCed due to a native FreeBSD ABI breakage).
+
+  For more information about transition please read item "20070327: AFFECTS:
+  users of emulators/linux_base-fc6". That note may be used for upgrading
+  to linux_base-f8 and linux Fedora 8 infrastructure ports as well.
+
+  If you want to switch to linux-f8 ports, please define at /etc/make.conf:
+  USE_LINUX_BASE_PORT=f8
+  USE_LINUX_NONBASE_PORTS=f8
+
+20090328:
   AFFECTS: users of lang/perl*
   AUTHOR: skv@FreeBSD.org
 
