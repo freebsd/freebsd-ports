@@ -21,6 +21,7 @@ OPTIONS=	DESKTOP	"Enable desktop integration"	on
 MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
+WANT_GNOME=	yes
 USE_ICONV=	yes
 CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE} \
 		--with-libsynce=${LOCALBASE}
