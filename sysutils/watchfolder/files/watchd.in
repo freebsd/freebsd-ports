@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: watchd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable watchd
+#
+# watchd_enable (bool):		Set to "NO" by default.
+#                               Set it to "YES" to enable watchd.
+
+. %%RC_SUBR%%
+
+name="watchd"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${watchd_enable="NO"}
+: ${watchd_config="%%PREFIX%%/etc/watchd.conf"}
+: ${watchd_log="/var/log/watchd.log"}
+
+command="%%PREFIX%%/bin/watchd"
+command_args="${watchd_config} >> ${watchd_log}"
+required_files="${watchd_config}"
+
+run_rc_command "$1"
