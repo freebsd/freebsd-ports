@@ -119,6 +119,11 @@
     SUBDIR += libwnck-reference
     SUBDIR += libxfce4gui
     SUBDIR += libzvt
+    SUBDIR += linux-f8-gtk
+    SUBDIR += linux-f8-gtk2
+    SUBDIR += linux-f8-openmotif
+    SUBDIR += linux-f8-pango
+    SUBDIR += linux-f8-qt33
     SUBDIR += linux-gtk
     SUBDIR += linux-gtk2
     SUBDIR += linux-openmotif

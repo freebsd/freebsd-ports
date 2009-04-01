@@ -1,27 +1,32 @@
-# New ports collection makefile for:	linux-sdl_mixer
-# Date created:				25 May 2007
-# Whom:					Marcus von Appen <mva@sysfault.org>
+# New ports collection makefile for:	audio/linux-f8-sdl_mixer
+# Date created:				2008-04-03
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
 PORTNAME=	sdl_mixer
-DISTVERSION=	1.2.6
+PORTVERSION=	1.2.8
 CATEGORIES=	audio linux
-MASTER_SITE_SUBDIR=	../extras/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/
-DISTNAME=	SDL_mixer-${PORTVERSION}-3.fc${LINUX_DIST_VER}
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	mva@FreeBSD.org
-COMMENT=	A sample multi-channel audio mixer library (Linux version)
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	A sample multi-channel audio mixer library (Linux Fedora 8)
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	sdl12
-LINUX_DIST_VER=	4
+LINUX_NAME=	SDL_mixer
+LINUX_DIST_VER=	8
+RPMVERSION=	6.fc8
+BRANDELF_FILES=	usr/bin/playmus usr/bin/playwave
 USE_LDCONFIG=	yes
-AUTOMATIC_PLIST=yes
+
+PLIST_FILES=	usr/bin/playmus usr/lib/libSDL_mixer-1.2.so.0 \
+		usr/bin/playwave usr/lib/libSDL_mixer-1.2.so.0.2.6
+DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
+PORTDOCS=	CHANGES COPYING README
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-MASTER_SITE_SRC_SUBDIR=	../extras/${LINUX_DIST_VER}/SRPMS
-BRANDELF_DIRS=	usr/bin
 
 .include <bsd.port.mk>

@@ -1,26 +1,30 @@
-# New ports collection makefile for:	linux-cairo
-# Date created:		4 November 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
+# New ports collection makefile for:	graphics/linux-f8-cairo
+# Date created:				2008-03-29
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
 PORTNAME=	cairo
-PORTVERSION=	1.0.2
-DISTVERSIONSUFFIX=	-2.gst.1.4
+PORTVERSION=	1.4.14
 CATEGORIES=	graphics linux
-MASTER_SITES=	http://gstreamer.freedesktop.org/pkg/%SUBDIR%/ CENKES/myports
-MASTER_SITE_SUBDIR=	${LINUX_DIST}/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/RPMS.deps
-MASTER_SITE_SRC_SUBDIR=	${LINUX_DIST}/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/SRPMS.deps
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Linux cairo binary
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	Vector graphics library Cairo (Linux Fedora 8)
 
 ONLY_FOR_ARCHS=	i386 amd64
-LINUX_DIST_VER=	4
-USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	fontconfig png xorglibs
-PLIST_SUB=	PORTVERSION="${PORTVERSION}"
+LINUX_DIST_VER=	8
+RPMVERSION=	1.fc8
+USE_LDCONFIG=	yes
+
+PLIST_FILES=	usr/lib/libcairo.so.2 \
+		usr/lib/libcairo.so.2.11.7
+DOCSDIR=	${PREFIX}/usr/share/doc/cairo-${PORTVERSION}
+PORTDOCS=	AUTHORS BIBLIOGRAPHY BUGS COPYING COPYING-LGPL-2.1 \
+		COPYING-MPL-1.1 ChangeLog NEWS PORTING_GUIDE README ROADMAP TODO
 
 .include <bsd.port.mk>

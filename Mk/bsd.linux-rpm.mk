@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.14 2009-03-19 17:28:30 bsam Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.15 2009-04-01 15:25:27 bsam Exp $
 #
 
 # Variables:
@@ -70,6 +70,10 @@ DIST_SUBDIR?=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
 .      ifndef MASTER_SITES
 MASTER_SITES=			${MASTER_SITE_FEDORA_LINUX}
 .        if ${LINUX_DIST_VER} == 8
+# linux Fedora 8 infrastructure ports should be used only with linux_base-f8 port
+.          if ${USE_LINUX} != "f8"
+IGNORE=		the port should be used with linux_base-f8, please read /usr/ports/UPDATING
+.          endif
 .          if (${LINUX_OSRELEASE} != "2.6.16") && defined(PACKAGE_BUILDING)
 IGNORE=		packages should be built with compat.linux.osrelease=2.6.16
 .          endif

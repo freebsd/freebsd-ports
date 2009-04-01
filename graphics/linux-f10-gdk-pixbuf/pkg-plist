@@ -1,50 +1,50 @@
+@comment file listing
 usr/lib/gdk-pixbuf/loaders/libpixbufloader-bmp.so
 usr/lib/gdk-pixbuf/loaders/libpixbufloader-gif.so
 usr/lib/gdk-pixbuf/loaders/libpixbufloader-ico.so
-usr/lib/gdk-pixbuf/loaders/libpixbufloader-jpeg.so
 usr/lib/gdk-pixbuf/loaders/libpixbufloader-png.so
 usr/lib/gdk-pixbuf/loaders/libpixbufloader-pnm.so
 usr/lib/gdk-pixbuf/loaders/libpixbufloader-ras.so
-usr/lib/gdk-pixbuf/loaders/libpixbufloader-tiff.so
 usr/lib/gdk-pixbuf/loaders/libpixbufloader-xbm.so
 usr/lib/gdk-pixbuf/loaders/libpixbufloader-xpm.so
 usr/lib/libgdk_pixbuf.so.2
 usr/lib/libgdk_pixbuf.so.2.0.0
 usr/lib/libgdk_pixbuf_xlib.so.2
 usr/lib/libgdk_pixbuf_xlib.so.2.0.0
-usr/share/doc/gdk-pixbuf-%%VERSION%%/AUTHORS
-usr/share/doc/gdk-pixbuf-%%VERSION%%/COPYING
-usr/share/doc/gdk-pixbuf-%%VERSION%%/COPYING.LIB
-usr/share/doc/gdk-pixbuf-%%VERSION%%/ChangeLog
-usr/share/doc/gdk-pixbuf-%%VERSION%%/NEWS
-usr/share/doc/gdk-pixbuf-%%VERSION%%/README
-usr/share/doc/gdk-pixbuf-%%VERSION%%/TODO
-usr/share/doc/gdk-pixbuf-%%VERSION%%/gdk-pixbuf-sections.txt
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/a3696.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/compiling.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/extra-configuration-options.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/gdk-pixbuf-animation.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/gdk-pixbuf-creating.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/gdk-pixbuf-file-loading.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/gdk-pixbuf-from-drawables.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/gdk-pixbuf-gdk-pixbuf.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/gdk-pixbuf-gdk-pixbuf-xlib-from-drawables.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/gdk-pixbuf-gdk-pixbuf-xlib-init.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/gdk-pixbuf-gdk-pixbuf-xlib-rendering.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/gdk-pixbuf-gdk-pixbuf-xlib-rgb.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/gdk-pixbuf-refcounting.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/gdk-pixbuf-rendering.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/gdk-pixbuf-scaling.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/gdk-pixbuf-util.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/gdkpixbufloader.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/gnomecanvaspixbuf.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/index.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/index.sgml
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/license.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/r27.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/x3715.html
-usr/share/doc/gdk-pixbuf-%%VERSION%%/html/x3767.html
+usr/share/doc/gdk-pixbuf-0.22.0/AUTHORS
+usr/share/doc/gdk-pixbuf-0.22.0/COPYING
+usr/share/doc/gdk-pixbuf-0.22.0/COPYING.LIB
+usr/share/doc/gdk-pixbuf-0.22.0/ChangeLog
+usr/share/doc/gdk-pixbuf-0.22.0/NEWS
+usr/share/doc/gdk-pixbuf-0.22.0/README
+usr/share/doc/gdk-pixbuf-0.22.0/TODO
+usr/share/doc/gdk-pixbuf-0.22.0/gdk-pixbuf-sections.txt
+usr/share/doc/gdk-pixbuf-0.22.0/html/a3696.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/compiling.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/extra-configuration-options.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/gdk-pixbuf-animation.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/gdk-pixbuf-creating.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/gdk-pixbuf-file-loading.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/gdk-pixbuf-from-drawables.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/gdk-pixbuf-gdk-pixbuf-xlib-from-drawables.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/gdk-pixbuf-gdk-pixbuf-xlib-init.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/gdk-pixbuf-gdk-pixbuf-xlib-rendering.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/gdk-pixbuf-gdk-pixbuf-xlib-rgb.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/gdk-pixbuf-gdk-pixbuf.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/gdk-pixbuf-refcounting.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/gdk-pixbuf-rendering.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/gdk-pixbuf-scaling.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/gdk-pixbuf-util.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/gdkpixbufloader.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/gnomecanvaspixbuf.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/index.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/index.sgml
+usr/share/doc/gdk-pixbuf-0.22.0/html/license.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/r27.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/x3715.html
+usr/share/doc/gdk-pixbuf-0.22.0/html/x3767.html
+@comment non-empty directory listing in revers order
+@dirrm usr/share/doc/gdk-pixbuf-0.22.0/html
+@dirrm usr/share/doc/gdk-pixbuf-0.22.0
 @dirrm usr/lib/gdk-pixbuf/loaders
 @dirrm usr/lib/gdk-pixbuf
-@dirrm usr/share/doc/gdk-pixbuf-%%VERSION%%/html
-@dirrm usr/share/doc/gdk-pixbuf-%%VERSION%%

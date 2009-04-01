@@ -1,3 +1,5 @@
+@comment file listing
+etc/pki/tls/cert.pem
 etc/pki/tls/certs/Makefile
 etc/pki/tls/certs/ca-bundle.crt
 etc/pki/tls/certs/make-dummy-cert
@@ -6,24 +8,32 @@ etc/pki/tls/misc/c_hash
 etc/pki/tls/misc/c_info
 etc/pki/tls/misc/c_issuer
 etc/pki/tls/misc/c_name
-etc/pki/tls/cert.pem
 etc/pki/tls/openssl.cnf
-lib/libcrypto.so.0.9.7f
-lib/libcrypto.so.5
-lib/libssl.so.0.9.7f
-lib/libssl.so.5
+lib/libcrypto.so.0.9.8b
+lib/libcrypto.so.6
+lib/libssl.so.0.9.8b
+lib/libssl.so.6
 usr/bin/openssl
-usr/share/doc/openssl-0.9.7f/CHANGES
-usr/share/doc/openssl-0.9.7f/FAQ
-usr/share/doc/openssl-0.9.7f/INSTALL
-usr/share/doc/openssl-0.9.7f/LICENSE
-usr/share/doc/openssl-0.9.7f/NEWS
-usr/share/doc/openssl-0.9.7f/README
-usr/share/doc/openssl-0.9.7f/c-indentation.el
-usr/share/doc/openssl-0.9.7f/openssl.txt
-usr/share/doc/openssl-0.9.7f/openssl_button.gif
-usr/share/doc/openssl-0.9.7f/openssl_button.html
-usr/share/doc/openssl-0.9.7f/ssleay.txt
+usr/lib/openssl/engines/lib4758cca.so
+usr/lib/openssl/engines/libaep.so
+usr/lib/openssl/engines/libatalla.so
+usr/lib/openssl/engines/libchil.so
+usr/lib/openssl/engines/libcswift.so
+usr/lib/openssl/engines/libgmp.so
+usr/lib/openssl/engines/libnuron.so
+usr/lib/openssl/engines/libsureware.so
+usr/lib/openssl/engines/libubsec.so
+usr/share/doc/openssl-0.9.8b/CHANGES
+usr/share/doc/openssl-0.9.8b/FAQ
+usr/share/doc/openssl-0.9.8b/INSTALL
+usr/share/doc/openssl-0.9.8b/LICENSE
+usr/share/doc/openssl-0.9.8b/NEWS
+usr/share/doc/openssl-0.9.8b/README
+usr/share/doc/openssl-0.9.8b/c-indentation.el
+usr/share/doc/openssl-0.9.8b/openssl.txt
+usr/share/doc/openssl-0.9.8b/openssl_button.gif
+usr/share/doc/openssl-0.9.8b/openssl_button.html
+usr/share/doc/openssl-0.9.8b/ssleay.txt
 usr/share/man/man1/asn1parse.1ssl.gz
 usr/share/man/man1/ca.1ssl.gz
 usr/share/man/man1/ciphers.1ssl.gz
@@ -33,6 +43,8 @@ usr/share/man/man1/dgst.1ssl.gz
 usr/share/man/man1/dhparam.1ssl.gz
 usr/share/man/man1/dsa.1ssl.gz
 usr/share/man/man1/dsaparam.1ssl.gz
+usr/share/man/man1/ec.1ssl.gz
+usr/share/man/man1/ecparam.1ssl.gz
 usr/share/man/man1/enc.1ssl.gz
 usr/share/man/man1/errstr.1ssl.gz
 usr/share/man/man1/gendsa.1ssl.gz
@@ -66,13 +78,19 @@ usr/share/man/man1/verify.1ssl.gz
 usr/share/man/man1/version.1ssl.gz
 usr/share/man/man1/x509.1ssl.gz
 usr/share/man/man5/config.5ssl.gz
+usr/share/man/man5/x509v3_config.5ssl.gz
 usr/share/man/man7/Modes_of_DES.7ssl.gz
 usr/share/man/man7/des_modes.7ssl.gz
-@dirrm usr/share/doc/openssl-0.9.7f
-@dirrmtry etc/pki/tls/private
-@dirrmtry etc/pki/tls/misc
-@dirrmtry etc/pki/tls/certs
-@dirrmtry etc/pki/tls
+@comment deal with empty directories installed by the port
+@exec /bin/mkdir -p %D/etc/pki/CA/private
 @dirrmtry etc/pki/CA/private
-@dirrmtry etc/pki/CA
-@dirrmtry etc/pki
+@exec /bin/mkdir -p %D/etc/pki/tls/private
+@dirrmtry etc/pki/tls/private
+@comment non-empty directory listing in revers order
+@dirrm usr/share/doc/openssl-0.9.8b
+@dirrm usr/lib/openssl/engines
+@dirrm usr/lib/openssl
+@dirrm etc/pki/tls/misc
+@dirrm etc/pki/tls/certs
+@dirrm etc/pki/tls
+@dirrm etc/pki/CA

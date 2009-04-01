@@ -1,24 +1,31 @@
-# New ports collection makefile for: linux-esound
-# Date created:		01/09/18
-# Whom:                 taoka@FreeBSD.org
+# New ports collection makefile for:	audio/linux-f8-esound
+# Date created:				2008-04-03
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
 PORTNAME=	esound
+PORTVERSION=	0.2.38
 CATEGORIES=	audio linux
-PORTVERSION=	0.2.36
-DISTNAME=	${PORTNAME}-${PORTVERSION}-0.fc4.1
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
-COMMENT=	RPM of esound
+COMMENT=	RPM of esound (Linux Fedora 8)
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	libaudiofile
-LINUX_DIST_VER=	4
+LINUX_NAME=	${PORTNAME}-libs
+LINUX_DIST_VER=	8
+RPMVERSION=	6.fc8
 USE_LDCONFIG=	yes
-BRANDELF_DIRS=	usr/bin
-PLIST=		pkg-plist.${LINUX_RPM_ARCH}
-PLIST_SUB+=	ESOUND_VERSION="${PORTVERSION}"
+SRC_DISTFILES=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
+
+PLIST_FILES=	etc/esd.conf usr/lib/libesd.so.0 usr/lib/libesd.so.0.2.38 \
+		usr/lib/libesddsp.so.0 usr/lib/libesddsp.so.0.2.38
+DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
+PORTDOCS=	AUTHORS COPYING.LIB ChangeLog NEWS README TIPS TODO esound.sgml
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

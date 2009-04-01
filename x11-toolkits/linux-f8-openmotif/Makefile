@@ -6,12 +6,11 @@
 
 PORTNAME=	openmotif
 PORTVERSION=	2.2.4
-PORTREVISION=	2
 CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	ftp://ftp.motifzone.com/%SUBDIR%/ \
 		ftp://ftp.ics.com/pub/Products/Motif/%SUBDIR%/
 MASTER_SITE_SUBDIR=	om2.2.4/redhat-7.3
-PKGNAMEPREFIX=	linux-
+PKGNAMEPREFIX=	linux-f8-
 EXTRACT_SUFX=	-0.1.i386.rpm
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=

@@ -93,6 +93,7 @@
     SUBDIR += libXft
     SUBDIR += liberation-fonts-ttf
     SUBDIR += libfontenc
+    SUBDIR += linux-f8-fontconfig
     SUBDIR += linux-fontconfig
     SUBDIR += linuxlibertine
     SUBDIR += manu-gothica

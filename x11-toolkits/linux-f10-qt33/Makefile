@@ -1,23 +1,27 @@
-# New ports collection makefile for:	linux-qt33
-# Date created:				24 May 2007
-# Whom:					Boris Samorodov <bsam@FreeBSD.org>
+# New ports collection makefile for:	x11-toolkits/linux-f8-qt33
+# Date created:				2008-04-04
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
-PORTNAME=	qt33
-PORTVERSION=	3.3.4
+PORTNAME=	${LINUX_NAME}33
+PORTVERSION=	3.3.8b
 CATEGORIES=	x11-toolkits linux
-DISTNAME=	qt-${PORTVERSION}-${RPMVERSION}
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	bsam@FreeBSD.org
-COMMENT=	RPM of QT3
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	RPM of QT3 (Linux Fedora 8)
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	fontconfig libmng png
-RPMVERSION=	15.5
-LINUX_DIST_VER=	4
+LINUX_NAME=	qt
+LINUX_DIST_VER=	8
+RPMVERSION=	2.fc8
 USE_LDCONFIG=	yes
 PLIST=		pkg-plist.${LINUX_RPM_ARCH}
+
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

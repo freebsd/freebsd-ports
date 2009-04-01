@@ -1,3 +1,4 @@
+@comment file listing
 etc/gtk/gtkrc
 etc/gtk/gtkrc.az
 etc/gtk/gtkrc.be
@@ -104,18 +105,18 @@ usr/share/locale/wa/LC_MESSAGES/gtk+.mo
 usr/share/locale/zh_CN.GB2312/LC_MESSAGES/gtk+.mo
 usr/share/locale/zh_TW.Big5/LC_MESSAGES/gtk+.mo
 usr/share/themes/Default/gtk/gtkrc
+@comment non-empty directory listing in revers order
 @dirrmtry usr/share/themes/Default/gtk
 @dirrmtry usr/share/themes/Default
-@dirrmtry usr/share/themes
 @comment
 @comment those usr/share/locale dirs are candidates to go to linux_base port
 @comment -- bsam
 @dirrmtry usr/share/locale/zh_TW.Big5/LC_MESSAGES
 @dirrmtry usr/share/locale/zh_TW.Big5
+@dirrmtry usr/share/locale/zh_CN.GB2312/LC_MESSAGES
+@dirrmtry usr/share/locale/zh_CN.GB2312
 @dirrmtry usr/share/locale/sp/LC_MESSAGES
 @dirrmtry usr/share/locale/sp
-@dirrmtry usr/share/locale/ga/LC_MESSAGES
-@dirrmtry usr/share/locale/ga
 @comment
 @dirrm usr/share/doc/gtk+-1.2.10
 @dirrm etc/gtk

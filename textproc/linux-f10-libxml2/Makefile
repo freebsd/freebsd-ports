@@ -1,23 +1,32 @@
-# New ports collection makefile for: linux-libxml2
-# Date created:		2007.09.02
-# Whom:			Artem Naluzhnyy <tut@nhamon.com.ua>
+# New ports collection makefile for:	textproc/linux-f8-libxml2
+# Date created:				2008-04-10
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libxml2
-PORTVERSION=	2.6.19
+PORTVERSION=	2.7.2
 CATEGORIES=	textproc linux
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	tut@nhamon.com.ua
-COMMENT=	RPM of libxml2
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	Library providing XML and HTML support (Linux Fedora 8)
 
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	4
-USE_LDCONFIG=	yes
+LINUX_DIST_VER=	8
+RPMVERSION=	2.fc8
 BRANDELF_DIRS=	usr/bin
-PLIST=		pkg-plist.${LINUX_RPM_ARCH}
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
+USE_LDCONFIG=	yes
+
+PLIST_FILES=	usr/bin/xmlcatalog usr/bin/xmllint \
+		usr/lib/libxml2.so.2 usr/lib/libxml2.so.${PORTVERSION}
+DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
+PORTDOCS=	AUTHORS ChangeLog.gz Copyright NEWS README TODO
+MANPREFIX=	${PREFIX}/usr/share
+MAN1=		xmlcatalog.1 xmllint.1
+MAN3=		libxml.3
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

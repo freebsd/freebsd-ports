@@ -1,24 +1,24 @@
-# New ports collection makefile for: linux-imlib
-# Date created:		01/09/18
-# Whom:                 taoka@FreeBSD.org
+# New ports collection makefile for:	graphics/linux-f8-imlib
+# Date created:				2008-03-28
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
 PORTNAME=	imlib
-PORTVERSION=	1.9.13
-PORTREVISION=	2
+PORTVERSION=	1.9.15
 CATEGORIES=	graphics linux
-DISTNAME=	${PORTNAME}-${PORTVERSION}-24
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
-COMMENT=	RPM of imlib
+COMMENT=	RPM of imlib (Linux Fedora 8)
 
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	4
+LINUX_DIST_VER=	8
+RPMVERSION=	6.fc8
+BRANDELF_FILES=	usr/bin/imlib_config
 USE_LDCONFIG=	yes
-BRANDELF_DIRS=	usr/bin
 PLIST=		pkg-plist.${LINUX_RPM_ARCH}
-PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 .include <bsd.port.mk>

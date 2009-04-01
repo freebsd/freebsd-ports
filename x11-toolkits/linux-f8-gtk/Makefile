@@ -1,26 +1,25 @@
-# New ports collection makefile for: linux-gtk
-# Date created:         8 April 2000
-# Whom:                 sada@FreeBSD.org
-# Based on:		emulators/linux_base by marcel@FreeBSD.org
-#			& multimedia/xmovie by sanpei@sanpei.org
+# New ports collection makefile for:	x11-toolkits/linux-f8-gtk
+# Date created:				2008-04-04
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gtk
 PORTVERSION=	1.2.10
-PORTREVISION=	4
 CATEGORIES=	x11-toolkits linux
-DISTNAME=	gtk+-${PORTVERSION}-39
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
-COMMENT=	RPM of the Gtk lib
+COMMENT=	Gtk library (Linux Fedora 8)
 
 ONLY_FOR_ARCHS=	i386 amd64
-
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs
-LINUX_DIST_VER=	4
+LINUX_NAME=	${PORTNAME}+
+LINUX_DIST_VER=	8
+RPMVERSION=	59.fc8
 USE_LDCONFIG=	yes
 PLIST=		pkg-plist.${LINUX_RPM_ARCH}
 

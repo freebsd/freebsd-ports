@@ -1,23 +1,28 @@
-# New ports collection makefile for:	linux-libogg
-# Date created:				25 Nov 2005
-# Whom:					jylefort@FreeBSD.org
+# New ports collection makefile for:	audio/linux-f8-libogg
+# Date created:				2008-04-03
+# Whom:					bsam
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libogg
-DISTVERSION=	1.1.2-2
-PORTREVISION=	3
+PORTVERSION=	1.1.3
 CATEGORIES=	audio linux
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Ogg bitstream library (Linux version)
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	Ogg bitstream library (Linux Fedora 8)
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	4
+LINUX_DIST_VER=	8
+RPMVERSION=	5.fc8
 USE_LDCONFIG=	yes
-AUTOMATIC_PLIST=yes
+
+PLIST_FILES=	usr/lib/libogg.so.0 usr/lib/libogg.so.0.5.3
+DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
+PORTDOCS=	AUTHORS CHANGES COPYING README
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

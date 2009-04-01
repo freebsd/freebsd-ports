@@ -259,6 +259,7 @@
     SUBDIR += libtomcrypt
     SUBDIR += libwhisker
     SUBDIR += liedentd
+    SUBDIR += linux-f8-openssl
     SUBDIR += linux-openssl
     SUBDIR += linux-pam-docs
     SUBDIR += lockdown

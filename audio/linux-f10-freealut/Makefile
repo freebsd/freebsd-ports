@@ -1,6 +1,6 @@
-# New ports collection makefile for:	linux-freealut
-# Date created:        03 September 2006
-# Whom:                Jona Joachim <walkingshadow@grummel.net>
+# New ports collection makefile for:	audio/linux-f8-freealut
+# Date created:				2008-04-03
+# Whom:					bsam
 #
 # $FreeBSD$
 #
@@ -8,19 +8,22 @@
 PORTNAME=	freealut
 PORTVERSION=	1.1.0
 CATEGORIES=	audio linux
-MASTER_SITE_SUBDIR=	../extras/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1.fc${LINUX_DIST_VER}
+PKGNAMEPREFIX=	linux-f8-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A free implementation of OpenAL's ALUT standard (Linux version)
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	A free implementation of OpenAL's ALUT standard (Linux Fedora 8)
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	openal
-LINUX_DIST_VER=	4
+LINUX_DIST_VER=	8
+RPMVERSION=	5.fc8
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 amd64
-DIST_SUBDIR=	rpm
-AUTOMATIC_PLIST=yes
-MASTER_SITE_SRC_SUBDIR=	../extras/${LINUX_DIST_VER}/SRPMS
+
+PLIST_FILES=	usr/lib/libalut.so.0 usr/lib/libalut.so.0.1.0
+DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
+PORTDOCS=	AUTHORS COPYING ChangeLog README
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

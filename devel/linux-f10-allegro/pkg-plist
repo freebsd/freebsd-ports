@@ -1,21 +1,23 @@
+@comment file listing
 etc/allegrorc
-usr/lib/allegro/4.0/alleg-artsdigi.so
-usr/lib/allegro/4.0/alleg-dga2.so
-usr/lib/allegro/4.0/alleg-fbcon.so
-usr/lib/allegro/4.0/alleg-svgalib.so
-usr/lib/allegro/4.0/alleg-vga.so
-usr/lib/allegro/4.0/modules.lst
-usr/lib/liballeg.so.4.0
-usr/lib/liballeg-4.0.3.so
+usr/lib/allegro/4.2.2/alleg-alsadigi.so
+usr/lib/allegro/4.2.2/alleg-alsamidi.so
+usr/lib/allegro/4.2.2/alleg-dga2.so
+usr/lib/allegro/4.2.2/alleg-fbcon.so
+usr/lib/allegro/4.2.2/alleg-vga.so
+usr/lib/allegro/4.2.2/modules.lst
+usr/lib/liballeg-4.2.2.so
+usr/lib/liballeg.so.4.2
 usr/share/allegro/keyboard.dat
 usr/share/allegro/language.dat
-usr/share/doc/allegro-4.0.3/AUTHORS
-usr/share/doc/allegro-4.0.3/CHANGES
-usr/share/doc/allegro-4.0.3/linux.txt
-usr/share/doc/allegro-4.0.3/readme.txt
-usr/share/doc/allegro-4.0.3/THANKS
-usr/share/doc/allegro-4.0.3/unix.txt
-@dirrm usr/share/doc/allegro-4.0.3
+usr/share/doc/allegro-4.2.2/AUTHORS
+usr/share/doc/allegro-4.2.2/CHANGES
+usr/share/doc/allegro-4.2.2/THANKS
+usr/share/doc/allegro-4.2.2/linux.txt
+usr/share/doc/allegro-4.2.2/readme.txt
+usr/share/doc/allegro-4.2.2/unix.txt
+@comment non-empty directory listing in revers order
+@dirrm usr/share/doc/allegro-4.2.2
 @dirrm usr/share/allegro
-@dirrm usr/lib/allegro/4.0
+@dirrm usr/lib/allegro/4.2.2
 @dirrm usr/lib/allegro

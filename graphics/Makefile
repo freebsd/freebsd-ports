@@ -445,6 +445,17 @@
     SUBDIR += linux-ac3d
     SUBDIR += linux-adobesvg
     SUBDIR += linux-cairo
+    SUBDIR += linux-f8-cairo
+    SUBDIR += linux-f8-gdk-pixbuf
+    SUBDIR += linux-f8-imlib
+    SUBDIR += linux-f8-jpeg
+    SUBDIR += linux-f8-libGLU
+    SUBDIR += linux-f8-libmng
+    SUBDIR += linux-f8-png
+    SUBDIR += linux-f8-png10
+    SUBDIR += linux-f8-sdl_image
+    SUBDIR += linux-f8-tiff
+    SUBDIR += linux-f8-ungif
     SUBDIR += linux-gdk-pixbuf
     SUBDIR += linux-imlib
     SUBDIR += linux-jpeg
