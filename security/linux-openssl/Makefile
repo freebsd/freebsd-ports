@@ -7,11 +7,14 @@
 
 PORTNAME=	openssl
 PORTVERSION=	0.9.7f
+PORTREVISION=	1
 CATEGORIES=	security linux
 DISTNAME=	${PORTNAME}-${PORTVERSION}-7.10
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	SSL and crypto library (Linux Version)
+
+CONFLICTS=	linux-f8-openssl-[0-9]*
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4

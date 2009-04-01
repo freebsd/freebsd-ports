@@ -7,12 +7,14 @@
 
 PORTNAME=	libxml
 PORTVERSION=	1.8.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc linux
 DISTNAME=	${PORTNAME}-${PORTVERSION}-13
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of libxml
+
+CONFLICTS=	linux-f8-libxml-[0-9]*
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
