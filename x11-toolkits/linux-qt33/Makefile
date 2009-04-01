@@ -7,11 +7,14 @@
 
 PORTNAME=	qt33
 PORTVERSION=	3.3.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits linux
 DISTNAME=	qt-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	RPM of QT3
+
+CONFLICTS=	linux-f8-qt33-[0-9]*
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	fontconfig libmng png

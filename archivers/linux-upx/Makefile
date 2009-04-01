@@ -7,12 +7,15 @@
 
 PORTNAME=		upx
 PORTVERSION=		1.25
+PORTREVISION=		1
 CATEGORIES=		archivers linux
 MASTER_SITE_SUBDIR=	../extras/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}
 DISTNAME=		${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=		emulation@FreeBSD.org
 COMMENT=		RPM of UPX, a high-performance executable packer
+
+CONFLICTS=		linux-f8-upx-[0-9]*
 
 USE_LINUX_RPM=		yes
 USE_LINUX_APPS=		ucl

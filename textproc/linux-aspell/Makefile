@@ -7,7 +7,7 @@
 
 PORTNAME=	aspell
 PORTVERSION=	0.50.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc linux
 MASTER_SITES=	ftp://ftp.pbone.net/mirror/ftp.ximian.com/pub/ximian-evolution/redhat-80-i386/ \
 		ftp://ftp.pbone.net/mirror/ftp.ximian.com/pub/ximian-evolution/redhat-80-i386/source/ \
@@ -20,6 +20,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spelling checker with better logic than ispell (linux version)
+
+CONFLICTS=	linux-f8-aspell-[0-9]*
 
 USE_LINUX_RPM=	yes
 ONLY_FOR_ARCHS=	i386 amd64

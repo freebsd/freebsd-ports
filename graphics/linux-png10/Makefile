@@ -7,12 +7,14 @@
 
 PORTNAME=	png
 PORTVERSION=	1.0.18
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 DISTNAME=	libpng10-${PORTVERSION}-2
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of the PNG lib (old 1.0 version)
 
+CONFLICTS=	linux-f8-png10-[0-9]*
 LATEST_LINK=	linux-png10
 
 ONLY_FOR_ARCHS=	i386 amd64

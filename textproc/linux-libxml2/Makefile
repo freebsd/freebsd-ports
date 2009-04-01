@@ -7,11 +7,14 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.6.19
+PORTREVISION=	1
 CATEGORIES=	textproc linux
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	tut@nhamon.com.ua
 COMMENT=	RPM of libxml2
+
+CONFLICTS=	linux-f8-libxml2-[0-9]*
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4

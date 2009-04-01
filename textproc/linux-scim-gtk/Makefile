@@ -7,6 +7,7 @@
 
 PORTNAME=	scim-gtk
 PORTVERSION=	# defined below
+PORTREVISION=	1
 CATEGORIES=	textproc linux
 MASTER_SITE_SUBDIR=	# defined below
 PKGNAMESUFFIX=	-fc${LINUX_DIST_VER}
@@ -14,6 +15,8 @@ DISTNAME=	# defined below
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Smart Common Input Method platform, gtk module, Linux binary
+
+CONFLICTS=	linux-f8-scim-gtk-[0-9]*
 
 MASTER_SITE_SRC_SUBDIR=	# defined below
 SRC_DISTFILES=	scim-${PORTVERSION}-${PORTSUBVERSION}.fc${LINUX_DIST_VER}${SRC_SUFX}
