@@ -22,7 +22,6 @@ BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xcb-util>=0.3.3:${PORTSDIR}/x11/xcb-util \
 		xproto>=7.0.11:${PORTSDIR}/x11/xproto
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
-		dbus-1.3:${PORTSDIR}/devel/dbus \
 		ev.3:${PORTSDIR}/devel/libev \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		xcb.2:${PORTSDIR}/x11/libxcb \
@@ -44,6 +43,8 @@ MAN5=	awesomerc.5
 MANCOMPRESSED=	yes
 PORTDOCS=	AUTHORS BUGS LICENSE README
 
+OPTIONS+=	DBUS "Enable D-BUS support" On
+
 .include <bsd.port.pre.mk>
 
 .if	(exists(${LOCALBASE}/libdata/pkgconfig/cairo.pc) && \
@@ -51,12 +52,19 @@ PORTDOCS=	AUTHORS BUGS LICENSE README
 IGNORE=	cannot find dependency: The cairo exists but not with XCB support. Please reinstall graphics/cairo with XCB support
 .endif
 
+.ifdef(WITH_DBUS)
+LIB_DEPENDS += dbus-1.3:${PORTSDIR}/devel/dbus
+CMAKE_ARGS += -DWITH_DBUS=YES
+.else
+CMAKE_ARGS += -DWITH_DBUS=NO
+.endif
+
 pre-configure:
 	@${REINPLACE_CMD} \
 	-e 's/"generate luadoc" ON/\"generate luadoc" OFF/g' \
 		${WRKSRC}/awesomeConfig.cmake
 	@${REINPLACE_CMD} \
-	-e 's,tr ,env LC_ALL="C" tr ,g' \
+	-e 's,tr ,env LC_ALL="C" ${TR} ,g' \
 	-e 's,gperf,${LOCALBASE}/bin/gperf,g' \
 		${WRKSRC}/build-utils/gperf.sh
 .if defined(NOPORTDOCS)
