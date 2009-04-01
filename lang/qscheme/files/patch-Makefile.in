@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Jun 22 19:10:21 2000
-+++ Makefile.in	Fri Oct 29 10:07:48 2004
+--- Makefile.in.orig	2000-06-23 02:10:21.000000000 +0300
++++ Makefile.in	2009-03-03 18:30:51.000000000 +0200
 @@ -111,7 +111,7 @@
  EXTRA_DIST = mkoptable mkwhatis $(modsrc) $(scmsrc) CHANGES LICENCE_EXCEPTION
  
@@ -9,9 +9,12 @@
  
  noinst_LIBRARIES = libqs.a
  
-@@ -580,10 +580,10 @@
+@@ -578,12 +578,12 @@
+ 	$(COMPILE) -o $@ -shared -fPIC -I$(incpcre) $(srcdir)/regex.c $(PCRE_LIB)
+ 
  %.x:%.i
- 	mkoptable $< > $@
+-	mkoptable $< > $@
++	./mkoptable $< > $@
  
 -sproto.h: $(libqs_src)
 -	@cfunctions $(libqs_src) \

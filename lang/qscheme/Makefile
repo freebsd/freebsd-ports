@@ -7,7 +7,7 @@
 
 PORTNAME=	qscheme
 PORTVERSION=	0.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.sof.ch/dan/qscheme/files/
 
@@ -40,11 +40,8 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 .if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+# because it uses static pcre lib, which is compiled without -fPIC. pcre problem likely.
 BROKEN=		Does not build on amd64 or ia64
 .endif
 
