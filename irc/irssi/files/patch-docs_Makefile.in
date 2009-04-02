@@ -1,9 +1,9 @@
---- docs/Makefile.in.orig	Thu Apr 26 02:15:07 2007
-+++ docs/Makefile.in	Thu Apr 26 17:58:07 2007
-@@ -54,7 +54,7 @@
- 	install-recursive installcheck-recursive installdirs-recursive \
- 	pdf-recursive ps-recursive uninstall-info-recursive \
- 	uninstall-recursive
+--- docs/Makefile.in.orig	2009-04-01 05:02:52.000000000 +0800
++++ docs/Makefile.in	2009-04-02 09:29:16.000000000 +0800
+@@ -51,7 +51,7 @@
+ 	install-pdf-recursive install-ps-recursive install-recursive \
+ 	installcheck-recursive installdirs-recursive pdf-recursive \
+ 	ps-recursive uninstall-recursive
 -man1dir = $(mandir)/man1
 +man1dir = $(prefix)/man/man1
  am__installdirs = "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(docdir)"
