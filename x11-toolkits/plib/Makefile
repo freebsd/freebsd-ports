@@ -7,6 +7,7 @@
 
 PORTNAME=	plib
 PORTVERSION=	1.8.5
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://plib.sourceforge.net/dist/
 
@@ -27,13 +28,19 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800064
-BROKEN=		does not compile with new usb stack
+CONFIGURE_ARGS+=--disable-js
+PLIST_SUB+=	JS="@comment "
+.else
+PLIST_SUB+=     JS=""
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread||g ; \
 		 s|-ldl||g ; \
 		 s|-lc_r||g' ${WRKSRC}/configure
+.if ${OSVERSION} >= 800064
+	@${ECHO} "JS component is not compiled with new usb stack"
+.endif
 
 post-build:
 	${CC} ${CFLAGS} -o ${WRKDIR}/plib-jscal ${FILESDIR}/jsBSDCal.c
