@@ -12,4 +12,4 @@ unhide-tcp identifies TCP/UDP ports that are listening but not listed in
 /bin/netstat by doing brute forcing of all TCP/UDP ports availables.
 
 
-WWW: http://http://www.security-projects.com/?Unhide/
+WWW: http://www.security-projects.com/?Unhide
