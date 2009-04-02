@@ -7,6 +7,7 @@
 
 PORTNAME=	ecru
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://novel.evilcoder.org/ecru/files/
 
@@ -14,7 +15,7 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Flexible command line LiveJournal client
 
 LIB_DEPENDS=	xmlrpc.9:${PORTSDIR}/net/xmlrpc-c \
-		config++.7:${PORTSDIR}/devel/libconfig \
+		config++.8:${PORTSDIR}/devel/libconfig \
 		glibmm-2.4.1:${PORTSDIR}/devel/glibmm
 
 USE_PYTHON_BUILD=	yes
