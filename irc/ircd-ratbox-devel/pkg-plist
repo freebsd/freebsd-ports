@@ -187,6 +187,7 @@ lib/ircd-ratbox/modules/autoload/m_testmask.so
 lib/ircd-ratbox/modules/autoload/m_time.so
 lib/ircd-ratbox/modules/autoload/m_topic.so
 lib/ircd-ratbox/modules/autoload/m_trace.so
+lib/ircd-ratbox/modules/autoload/m_gungline.so
 lib/ircd-ratbox/modules/autoload/m_unreject.so
 lib/ircd-ratbox/modules/autoload/m_user.so
 lib/ircd-ratbox/modules/autoload/m_userhost.so

@@ -13,11 +13,12 @@ Changes Include:
   o Optional SSL support to enable encrypted connections between clients
     and servers, as well as server to server links.
   o Add support for SSL only channels, channel mode +S.
-  o Bundled sqlite3 for handling and storing k/x/d lines.
+  o sqlite3 for handling and storing k/x/d lines.
   o Support for global CIDR limits.
   o Added adminwall allowing admins to broadcast messages to each other.
   o Creation of new library archive 'libratbox'.
-  o Support for force nick changes.
-  o New ssld and bandb processes for SSL connections and ban checking.
+  o Support for forced nick changes (instead of collision kills).
+  o New ssld and bandb processes for SSL connections and ban checking;
+    these allow ratbox-3 to make better use of multi-processor systems.
 
 WWW: http://www.ircd-ratbox.org/
