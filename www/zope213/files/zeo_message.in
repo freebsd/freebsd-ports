@@ -5,10 +5,10 @@ ZEO instance successfully installed
 If Zope should get started automatically when the system starts, 
 please add the following lines to /etc/rc.conf
 
-zeo210_enable="YES"
-zeo210_instances="%%ZOPEINSTANCEDIR%%" 
+zeo211_enable="YES"
+zeo211_instances="%%ZOPEINSTANCEDIR%%" 
 
-If there is already a zeo210_instances entry please add 
+If there is already a zeo211_instances entry please add 
 %%ZOPEINSTANCEDIR%% separated by a space. 
 
 Don`t forget to edit %%ZOPEINSTANCEDIR%%/etc/zeo.conf before starting 
