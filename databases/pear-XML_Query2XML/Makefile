@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_Query2XML
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	databases pear
 
 MAINTAINER=	wenheping@gmail.com
@@ -16,25 +16,30 @@ BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 LATEST_LINK=	pear-XML_Query2xml
-OPTIONS=	PEAR_MDB2 "Add support for pear-MDB2" Off
+OPTIONS=	PEAR_MDB2 "Add support for pear-MDB2" Off \
+		PEAR_Net_LDAP2 "Add support for pear-Net_LDAP2" Off
 
-CATEGORY=	XML
-FILES=		XML/Query2XML.php XML/Query2XML/ISO9075Mapper.php \
-		XML/Query2XML/Callback.php \
-		XML/Query2XML/Command/Base64.php \
-		XML/Query2XML/Command/CDATA.php \
-		XML/Query2XML/Command/Chain.php \
-		XML/Query2XML/Command/ColumnValue.php \
-		XML/Query2XML/Command/NonEmpty.php \
-		XML/Query2XML/Command/PHPCallback.php \
-		XML/Query2XML/Command/Static.php \
-		XML/Query2XML/Command/Unserialize.php \
-		XML/Query2XML/Driver/ADOdb.php \
-		XML/Query2XML/Driver/DB.php \
-		XML/Query2XML/Driver/LDAP.php \
-		XML/Query2XML/Driver/MDB2.php \
-		XML/Query2XML/Driver/PDO.php \
-		XML/Query2XML/Driver/LDAP2.php
+FILES=	XML/Query2XML.php XML/Query2XML/ISO9075Mapper.php \
+	XML/Query2XML/Callback.php \
+	XML/Query2XML/Data.php \
+	XML/Query2XML/Data/Condition/NonEmpty.php \
+	XML/Query2XML/Data/Condition.php \
+	XML/Query2XML/Data/Processor/Base64.php \
+	XML/Query2XML/Data/Processor/CDATA.php \
+	XML/Query2XML/Data/Processor/Unserialize.php \
+	XML/Query2XML/Data/Processor.php \
+	XML/Query2XML/Data/Source/ColumnValue.php \
+	XML/Query2XML/Data/Source/PHPCallback.php \
+	XML/Query2XML/Data/Source/Static.php \
+	XML/Query2XML/Data/Source.php \
+	XML/Query2XML/Driver/ADOdb.php \
+	XML/Query2XML/Driver/DB.php \
+	XML/Query2XML/Driver/Caching.php \
+	XML/Query2XML/Driver/LDAP.php \
+	XML/Query2XML/Driver/MDB2.php \
+	XML/Query2XML/Driver/PDO.php \
+	XML/Query2XML/Driver/LDAP2.php
+
 DOCS=	case01/case01.php case01/case01.xml case02/case02.log \
 	case02/case02.php case02/case02.profile \
 	case02/case02.xml case02/case02_debug.php \
@@ -50,6 +55,7 @@ DOCS=	case01/case01.php case01/case01.xml case02/case02.log \
 	case08/case08.php case08/case08.profile case08/case08.xml \
 	case08/case08_debug.php
 _DOCSDIR=	cases
+
 TESTS=	Query2XML_Tests.psql \
 	Query2XML_Tests.sq2 \
 	Query2XML_Tests.sql \
@@ -314,6 +320,10 @@ _TESTSDIR=	tests
 
 .if defined(WITH_PEAR_MDB2)
 BUILD_DEPENDS+=	${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
+.endif
+
+.if defined(WITH_PEAR_Net_LDAP2)
+BUILD_DEPENDS+=	${PEARDIR}/Net/LDAP2.php:${PORTSDIR}/net/pear-Net_LDAP2
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
