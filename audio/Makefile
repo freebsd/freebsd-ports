@@ -146,6 +146,7 @@
     SUBDIR += etoile-melodie
     SUBDIR += etoile-volumecontrolmenulet
     SUBDIR += exaile
+    SUBDIR += exaile-devel
     SUBDIR += extace
     SUBDIR += ezstream
     SUBDIR += faac
