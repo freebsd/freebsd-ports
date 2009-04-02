@@ -8,6 +8,7 @@ bin/teqser
 etc/aqsis/aqsisrc
 include/aqsis/aqsis.h
 include/aqsis/aqsis_compiler.h
+include/aqsis/aqsis_config.h
 include/aqsis/aqsis_types.h
 include/aqsis/aqsismath.h
 include/aqsis/bitvector.h
@@ -37,6 +38,7 @@ include/aqsis/ri.inl
 include/aqsis/ri_types.h
 include/aqsis/riparamlist.h
 include/aqsis/shadeop.h
+include/aqsis/slo.h
 include/aqsis/slx.h
 include/aqsis/smartptr.h
 include/aqsis/socket.h

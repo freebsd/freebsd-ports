@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	aqsis
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -20,36 +19,48 @@ BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		fltk-threads>=0:${PORTSDIR}/x11-toolkits/fltk-threads
 LIB_DEPENDS=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		aprutil-1.3:${PORTSDIR}/devel/apr \
+		db-4.2.2:${PORTSDIR}/databases/db42
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS=	-DAQSIS_BOOST_FILESYSTEM_LIBRARY:FILEPATH=${LOCALBASE}/lib/libboost_filesystem.so \
 		-DAQSIS_BOOST_REGEX_LIBRARY:FILEPATH=${LOCALBASE}/lib/libboost_regex.so \
 		-DAQSIS_BOOST_THREAD_LIBRARY:FILEPATH=${LOCALBASE}/lib/libboost_thread.so \
 		-DAQSIS_BOOST_WAVE_LIBRARY:FILEPATH=${LOCALBASE}/lib/libboost_wave.so \
-		-DAQSIS_BOOST_FILESYSTEM_LIBRARY_NAME:STRING=boost_filesystem \
-		-DAQSIS_BOOST_REGEX_LIBRARY_NAME:STRING=boost_regex \
-		-DAQSIS_BOOST_THREAD_LIBRARY_NAME:STRING=boost_thread \
-		-DAQSIS_BOOST_WAVE_LIBRARY_NAME:STRING=boost_wave \
-		-DAQSIS_FLTK_INCLUDE_DIR:PATH=${LOCALBASE}/include \
-		-DAQSIS_FLTK_LIBRARIES:FILEPATH=${LOCALBASE}/lib/libfltk.so \
-		-DAQSIS_FLTK_LIBRARIES_DIR:PATH=${LOCALBSAE}/lib
+		-DAQSIS_FLTK_LIBRARIES:FILEPATH=${LOCALBASE}/lib/libfltk.so
+#		-DAQSIS_BOOST_FILESYSTEM_LIBRARY_NAME:STRING=boost_filesystem \
+#		-DAQSIS_BOOST_REGEX_LIBRARY_NAME:STRING=boost_regex \
+#		-DAQSIS_BOOST_THREAD_LIBRARY_NAME:STRING=boost_thread \
+#		-DAQSIS_BOOST_WAVE_LIBRARY_NAME:STRING=boost_wave \
+#		-DAQSIS_FLTK_INCLUDE_DIR:PATH=${LOCALBASE}/include \
+#		-DAQSIS_FLTK_LIBRARIES_DIR:PATH=${LOCALBSAE}/lib
+CMAKE_USE_PTHREAD=	yes
 
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
 
+# Required for off-source building
+CMAKE_BUILD_PATH=	${WRKSRC}/build
+CMAKE_SOURCE_PATH=	${WRKSRC}/
+CONFIGURE_WRKSRC=	${CMAKE_BUILD_PATH}
+
+post-extract:
+	${MKDIR} ${CMAKE_BUILD_PATH}
+
 post-patch:
-	${REINPLACE_CMD} -e '54s/$$/ || defined(__sparc64__)/' \
+	${REINPLACE_CMD} -e '47s/$$/ || defined(__sparc64__)/' \
 	    ${WRKSRC}/renderer/ddmanager/ndspy.h
 
 post-configure:
-	${FIND} ${WRKSRC} -name "build.make" -o -name "link.txt" -o -name "relink.txt" \
-	    | ${XARGS} ${REINPLACE_CMD} -i "" -e 's|-ldl||g'
-	${REINPLACE_CMD} -e 's|-lz|-lz ${PTHREAD_LIBS}|' \
-	    ${WRKSRC}/renderer/aqsis/CMakeFiles/aqsis.dir/link.txt \
-	    ${WRKSRC}/texturing/teqser/CMakeFiles/teqser.dir/link.txt
-	${REINPLACE_CMD} -e 's|-O2|-O2 ${PTHREAD_LIBS}|' \
-	    ${WRKSRC}/shadercompiler/aqsltell/CMakeFiles/aqsltell.dir/link.txt
+	${FIND} ${WRKSRC} -name "relink.txt" -o -name "link.txt" \
+	    | ${XARGS} ${REINPLACE_CMD} -i "" -e 's|\-ldl||g'
+
+do-build:
+	cd ${CMAKE_BUILD_PATH} && ${MAKE}
+
+do-install:
+	cd ${CMAKE_BUILD_PATH} && ${MAKE} install
 
 .include <bsd.port.pre.mk>
 

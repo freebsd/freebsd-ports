@@ -1,12 +1,33 @@
---- CMakeLists.txt.orig	2008-08-21 01:09:19.000000000 +0200
-+++ CMakeLists.txt	2008-08-21 01:09:27.000000000 +0200
-@@ -17,9 +17,6 @@
+--- CMakeLists.txt.orig	2009-01-21 22:12:32.000000000 +0100
++++ CMakeLists.txt	2009-04-01 23:23:39.000000000 +0200
+@@ -2,6 +2,12 @@
+ 
+ CMAKE_MINIMUM_REQUIRED(VERSION 2.4.6)
+ 
++if(COMMAND cmake_policy)
++    cmake_policy(SET CMP0003 NEW)
++    cmake_policy(SET CMP0005 OLD)
++endif(COMMAND cmake_policy)
++SET(CMAKE_DL_LIBS "")
++
+ # Set some variables used within various resources, including installer scripts.
+ SET(AQSIS_PROJECT_NAME "Aqsis Renderer")
+ SET(AQSIS_PROJECT_NAME_SHORT "Aqsis")
+@@ -17,7 +23,6 @@
  
  INCLUDE(macros)
  
 -INCLUDE(FirstCMakeRun)
--INCLUDE(OutOfSourceBuild)
--
+ INCLUDE(OutOfSourceBuild)
+ 
  # Find path to precompiled libs on windows.
- INCLUDE(FindWin32Libs)
+@@ -270,9 +275,6 @@
+ SET(PROCEDURALPATH "${PROCEDURALPATH}" CACHE STRING "Aqsis procedural searchpath")
+ SET(RESOURCEPATH "${RESOURCEPATH}" CACHE STRING "Aqsis resource searchpath")
+ CONFIGURE_FILE(aqsisrc.in.cmake ${PROJECT_BINARY_DIR}/aqsisrc)
+-ADD_CUSTOM_TARGET(aqsisrc ALL echo
+-	DEPENDS  ${PROJECT_BINARY_DIR}/aqsisrc
+-	)
+ INSTALL(FILES ${PROJECT_BINARY_DIR}/aqsisrc DESTINATION ${SYSCONFDIR})
+ 
  
