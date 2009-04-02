@@ -10,7 +10,8 @@ PORTVERSION=	2.1.5
 PORTEPOCH=	1
 CATEGORIES=	audio python
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
-    		http://uk.musicbrainz.org/pub/musicbrainz/
+    		http://uk.musicbrainz.org/pub/musicbrainz/ \
+		http://ftp.osuosl.org/pub/musicbrainz/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	libmusicbrainz-${PORTVERSION}
 
@@ -43,6 +44,8 @@ PLIST_DIRS=	%%EXAMPLESDIR%%
 .endif
 
 WRKSRC=		${WRKDIR}/libmusicbrainz-${PORTVERSION}/python
+
+PORTSCOUT=	limit:^2\.
 
 post-install:
 .ifndef(NOPORTDOCS)
