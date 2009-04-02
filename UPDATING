@@ -21,8 +21,8 @@ upgrades.
   to linux_base-f8 and linux Fedora 8 infrastructure ports as well.
 
   If you want to switch to linux-f8 ports, please define at /etc/make.conf:
-  USE_LINUX_BASE_PORT=f8
-  USE_LINUX_NONBASE_PORTS=f8
+  OVERRIDE_LINUX_BASE_PORT=f8
+  OVERRIDE_LINUX_NONBASE_PORTS=f8
 
 20090328:
   AFFECTS: users of lang/perl*
