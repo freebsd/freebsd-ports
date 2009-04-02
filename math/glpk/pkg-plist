@@ -21,7 +21,7 @@ include/glplux.h
 include/glpmat.h
 include/glpmpl.h
 include/glpmps.h
-include/glppds.h
+include/glpnet.h
 include/glpqmd.h
 include/glprgr.h
 include/glprng.h
@@ -37,4 +37,4 @@ include/glptsp.h
 lib/libglpk.a
 lib/libglpk.la
 lib/libglpk.so
-lib/libglpk.so.19
+lib/libglpk.so.22
