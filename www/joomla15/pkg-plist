@@ -838,7 +838,6 @@
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_search.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_search.menu.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_sections.ini
-%%WWWDIR%%/administrator/language/en-GB/en-GB.com_statistics.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_templates.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_trash.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_user.ini
@@ -1300,6 +1299,7 @@
 %%WWWDIR%%/components/com_media/controller.php
 %%WWWDIR%%/components/com_media/helpers/index.html
 %%WWWDIR%%/components/com_media/helpers/media.php
+%%WWWDIR%%/components/com_media/images/dots.gif
 %%WWWDIR%%/components/com_media/images/folder.gif
 %%WWWDIR%%/components/com_media/index.html
 %%WWWDIR%%/components/com_media/media.php
@@ -1769,28 +1769,19 @@
 %%WWWDIR%%/installation/language/be-BY/index.html
 %%WWWDIR%%/installation/language/bg-BG/bg-BG.ini
 %%WWWDIR%%/installation/language/bg-BG/bg-BG.xml
-%%WWWDIR%%/installation/language/bg-BG/index.htm
-%%WWWDIR%%/installation/language/bn-IN/bn-IN.ini
-%%WWWDIR%%/installation/language/bn-IN/bn-IN.xml
-%%WWWDIR%%/installation/language/bn-IN/index.html
-%%WWWDIR%%/installation/language/bs-BA/bs-BA.ini
-%%WWWDIR%%/installation/language/bs-BA/bs-BA.xml
-%%WWWDIR%%/installation/language/bs-BA/index.html
+%%WWWDIR%%/installation/language/bg-BG/index.html
+%%WWWDIR%%/installation/language/bn-BD/bn-BD.ini
+%%WWWDIR%%/installation/language/bn-BD/bn-BD.xml
+%%WWWDIR%%/installation/language/bn-BD/index.html
 %%WWWDIR%%/installation/language/ca-ES/ca-ES.ini
 %%WWWDIR%%/installation/language/ca-ES/ca-ES.xml
-%%WWWDIR%%/installation/language/ca-ES/index.htm
+%%WWWDIR%%/installation/language/ca-ES/index.html
 %%WWWDIR%%/installation/language/cs-CZ/cs-CZ.ini
 %%WWWDIR%%/installation/language/cs-CZ/cs-CZ.xml
 %%WWWDIR%%/installation/language/cs-CZ/index.html
 %%WWWDIR%%/installation/language/da-DK/da-DK.ini
 %%WWWDIR%%/installation/language/da-DK/da-DK.xml
-%%WWWDIR%%/installation/language/da-DK/index.htm
-%%WWWDIR%%/installation/language/de-AT/de-AT.ini
-%%WWWDIR%%/installation/language/de-AT/de-AT.xml
-%%WWWDIR%%/installation/language/de-AT/index.html
-%%WWWDIR%%/installation/language/de-CH/de-CH.ini
-%%WWWDIR%%/installation/language/de-CH/de-CH.xml
-%%WWWDIR%%/installation/language/de-CH/index.htm
+%%WWWDIR%%/installation/language/da-DK/index.html
 %%WWWDIR%%/installation/language/de-DE/de-DE.ini
 %%WWWDIR%%/installation/language/de-DE/de-DE.xml
 %%WWWDIR%%/installation/language/de-DE/index.htm
@@ -1809,6 +1800,9 @@
 %%WWWDIR%%/installation/language/es-ES/es-ES.ini
 %%WWWDIR%%/installation/language/es-ES/es-ES.xml
 %%WWWDIR%%/installation/language/es-ES/index.htm
+%%WWWDIR%%/installation/language/et-EE/et-EE.ini
+%%WWWDIR%%/installation/language/et-EE/et-EE.xml
+%%WWWDIR%%/installation/language/et-EE/index.html
 %%WWWDIR%%/installation/language/eu-ES/eu-ES.ini
 %%WWWDIR%%/installation/language/eu-ES/eu-ES.xml
 %%WWWDIR%%/installation/language/eu-ES/index.html
@@ -1821,9 +1815,9 @@
 %%WWWDIR%%/installation/language/fr-FR/fr-FR.ini
 %%WWWDIR%%/installation/language/fr-FR/fr-FR.xml
 %%WWWDIR%%/installation/language/fr-FR/index.html
-%%WWWDIR%%/installation/language/he-IL/he-IL.ini
-%%WWWDIR%%/installation/language/he-IL/he-IL.xml
-%%WWWDIR%%/installation/language/he-IL/index.html
+%%WWWDIR%%/installation/language/gu-IN/gu-IN.ini
+%%WWWDIR%%/installation/language/gu-IN/gu-IN.xml
+%%WWWDIR%%/installation/language/gu-IN/index.html
 %%WWWDIR%%/installation/language/hr-HR/hr-HR.ini
 %%WWWDIR%%/installation/language/hr-HR/hr-HR.xml
 %%WWWDIR%%/installation/language/hr-HR/index.html
@@ -1831,30 +1825,30 @@
 %%WWWDIR%%/installation/language/hu-HU/hu-HU.xml
 %%WWWDIR%%/installation/language/hu-HU/index.htm
 %%WWWDIR%%/installation/language/index.html
-%%WWWDIR%%/installation/language/it-IT/index.htm
+%%WWWDIR%%/installation/language/is-IS/index.html
+%%WWWDIR%%/installation/language/is-IS/is-IS.ini
+%%WWWDIR%%/installation/language/is-IS/is-IS.xml
+%%WWWDIR%%/installation/language/it-IT/index.html
 %%WWWDIR%%/installation/language/it-IT/it-IT.ini
 %%WWWDIR%%/installation/language/it-IT/it-IT.xml
 %%WWWDIR%%/installation/language/ja-JP/index.html
 %%WWWDIR%%/installation/language/ja-JP/ja-JP.ini
 %%WWWDIR%%/installation/language/ja-JP/ja-JP.xml
-%%WWWDIR%%/installation/language/ko-KR/index.html
-%%WWWDIR%%/installation/language/ko-KR/ko-KR.ini
-%%WWWDIR%%/installation/language/ko-KR/ko-KR.xml
 %%WWWDIR%%/installation/language/lo-LA/index.html
 %%WWWDIR%%/installation/language/lo-LA/lo-LA.ini
 %%WWWDIR%%/installation/language/lo-LA/lo-LA.xml
-%%WWWDIR%%/installation/language/lt-LT/index.htm
+%%WWWDIR%%/installation/language/lt-LT/index.html
 %%WWWDIR%%/installation/language/lt-LT/lt-LT.ini
 %%WWWDIR%%/installation/language/lt-LT/lt-LT.xml
 %%WWWDIR%%/installation/language/lv-LV/index.html
 %%WWWDIR%%/installation/language/lv-LV/lv-LV.ini
 %%WWWDIR%%/installation/language/lv-LV/lv-LV.xml
-%%WWWDIR%%/installation/language/mk-MK/index.html
-%%WWWDIR%%/installation/language/mk-MK/mk-MK.ini
-%%WWWDIR%%/installation/language/mk-MK/mk-MK.xml
-%%WWWDIR%%/installation/language/nb-NO/index.htm
-%%WWWDIR%%/installation/language/nb-NO/nb-NO.ini
-%%WWWDIR%%/installation/language/nb-NO/nb-NO.xml
+%%WWWDIR%%/installation/language/mn-MN/index.html
+%%WWWDIR%%/installation/language/mn-MN/mn-MN.ini
+%%WWWDIR%%/installation/language/mn-MN/mn-MN.xml
+%%WWWDIR%%/installation/language/nb-BO/index.html
+%%WWWDIR%%/installation/language/nb-BO/nb-NO.ini
+%%WWWDIR%%/installation/language/nb-BO/nb-NO.xml
 %%WWWDIR%%/installation/language/nl-NL/index.htm
 %%WWWDIR%%/installation/language/nl-NL/nl-NL.ini
 %%WWWDIR%%/installation/language/nl-NL/nl-NL.xml
@@ -1882,9 +1876,6 @@
 %%WWWDIR%%/installation/language/sk-SK/index.html
 %%WWWDIR%%/installation/language/sk-SK/sk-SK.ini
 %%WWWDIR%%/installation/language/sk-SK/sk-SK.xml
-%%WWWDIR%%/installation/language/sq-AL/index.html
-%%WWWDIR%%/installation/language/sq-AL/sq-AL.ini
-%%WWWDIR%%/installation/language/sq-AL/sq-AL.xml
 %%WWWDIR%%/installation/language/sr-ME/index.html
 %%WWWDIR%%/installation/language/sr-ME/sr-ME.ini
 %%WWWDIR%%/installation/language/sr-ME/sr-ME.xml
@@ -1909,9 +1900,15 @@
 %%WWWDIR%%/installation/language/uk-UA/index.html
 %%WWWDIR%%/installation/language/uk-UA/uk-UA.ini
 %%WWWDIR%%/installation/language/uk-UA/uk-UA.xml
+%%WWWDIR%%/installation/language/ur-PK/index.html
+%%WWWDIR%%/installation/language/ur-PK/ur-PK.ini
+%%WWWDIR%%/installation/language/ur-PK/ur-PK.xml
 %%WWWDIR%%/installation/language/vi-VN/index.html
 %%WWWDIR%%/installation/language/vi-VN/vi-VN.ini
 %%WWWDIR%%/installation/language/vi-VN/vi-VN.xml
+%%WWWDIR%%/installation/language/zh-CN/index.html
+%%WWWDIR%%/installation/language/zh-CN/zh-CN.ini
+%%WWWDIR%%/installation/language/zh-CN/zh-CN.xml
 %%WWWDIR%%/installation/language/zh-TW/index.html
 %%WWWDIR%%/installation/language/zh-TW/zh-TW.ini
 %%WWWDIR%%/installation/language/zh-TW/zh-TW.xml
@@ -2018,6 +2015,7 @@
 %%WWWDIR%%/language/en-GB/en-GB.mod_syndicate.ini
 %%WWWDIR%%/language/en-GB/en-GB.mod_whosonline.ini
 %%WWWDIR%%/language/en-GB/en-GB.mod_wrapper.ini
+%%WWWDIR%%/language/en-GB/en-GB.plg_content_pagebreak.ini
 %%WWWDIR%%/language/en-GB/en-GB.plg_content_vote.ini
 %%WWWDIR%%/language/en-GB/en-GB.plg_search_categories.ini
 %%WWWDIR%%/language/en-GB/en-GB.plg_search_contacts.ini
@@ -2330,6 +2328,7 @@
 %%WWWDIR%%/libraries/joomla/version.php
 %%WWWDIR%%/libraries/loader.php
 %%WWWDIR%%/libraries/openid/Auth/OpenID.php
+%%WWWDIR%%/libraries/openid/Auth/OpenID/AX.php
 %%WWWDIR%%/libraries/openid/Auth/OpenID/Association.php
 %%WWWDIR%%/libraries/openid/Auth/OpenID/BigMath.php
 %%WWWDIR%%/libraries/openid/Auth/OpenID/Consumer.php
@@ -2338,36 +2337,44 @@
 %%WWWDIR%%/libraries/openid/Auth/OpenID/DiffieHellman.php
 %%WWWDIR%%/libraries/openid/Auth/OpenID/Discover.php
 %%WWWDIR%%/libraries/openid/Auth/OpenID/DumbStore.php
+%%WWWDIR%%/libraries/openid/Auth/OpenID/Extension.php
 %%WWWDIR%%/libraries/openid/Auth/OpenID/FileStore.php
-%%WWWDIR%%/libraries/openid/Auth/OpenID/HMACSHA1.php
+%%WWWDIR%%/libraries/openid/Auth/OpenID/HMAC.php
 %%WWWDIR%%/libraries/openid/Auth/OpenID/Interface.php
 %%WWWDIR%%/libraries/openid/Auth/OpenID/KVForm.php
+%%WWWDIR%%/libraries/openid/Auth/OpenID/MemcachedStore.php
+%%WWWDIR%%/libraries/openid/Auth/OpenID/Message.php
 %%WWWDIR%%/libraries/openid/Auth/OpenID/MySQLStore.php
+%%WWWDIR%%/libraries/openid/Auth/OpenID/Nonce.php
+%%WWWDIR%%/libraries/openid/Auth/OpenID/PAPE.php
 %%WWWDIR%%/libraries/openid/Auth/OpenID/Parse.php
+%%WWWDIR%%/libraries/openid/Auth/OpenID/PostgreSQLStore.php
 %%WWWDIR%%/libraries/openid/Auth/OpenID/SQLStore.php
 %%WWWDIR%%/libraries/openid/Auth/OpenID/SQLiteStore.php
+%%WWWDIR%%/libraries/openid/Auth/OpenID/SReg.php
 %%WWWDIR%%/libraries/openid/Auth/OpenID/Server.php
 %%WWWDIR%%/libraries/openid/Auth/OpenID/ServerRequest.php
 %%WWWDIR%%/libraries/openid/Auth/OpenID/TrustRoot.php
 %%WWWDIR%%/libraries/openid/Auth/OpenID/URINorm.php
 %%WWWDIR%%/libraries/openid/Auth/OpenID/index.html
+%%WWWDIR%%/libraries/openid/Auth/Yadis/HTTPFetcher.php
+%%WWWDIR%%/libraries/openid/Auth/Yadis/Manager.php
+%%WWWDIR%%/libraries/openid/Auth/Yadis/Misc.php
+%%WWWDIR%%/libraries/openid/Auth/Yadis/ParanoidHTTPFetcher.php
+%%WWWDIR%%/libraries/openid/Auth/Yadis/ParseHTML.php
+%%WWWDIR%%/libraries/openid/Auth/Yadis/PlainHTTPFetcher.php
+%%WWWDIR%%/libraries/openid/Auth/Yadis/XML.php
+%%WWWDIR%%/libraries/openid/Auth/Yadis/XRDS.php
+%%WWWDIR%%/libraries/openid/Auth/Yadis/XRI.php
+%%WWWDIR%%/libraries/openid/Auth/Yadis/XRIRes.php
+%%WWWDIR%%/libraries/openid/Auth/Yadis/Yadis.php
+%%WWWDIR%%/libraries/openid/Auth/Yadis/index.html
 %%WWWDIR%%/libraries/openid/Auth/index.html
 %%WWWDIR%%/libraries/openid/CHANGELOG
+%%WWWDIR%%/libraries/openid/CHANGES-2.1.0
 %%WWWDIR%%/libraries/openid/COPYING
+%%WWWDIR%%/libraries/openid/NEWS
 %%WWWDIR%%/libraries/openid/README
-%%WWWDIR%%/libraries/openid/Services/Yadis/HTTPFetcher.php
-%%WWWDIR%%/libraries/openid/Services/Yadis/Manager.php
-%%WWWDIR%%/libraries/openid/Services/Yadis/Misc.php
-%%WWWDIR%%/libraries/openid/Services/Yadis/ParanoidHTTPFetcher.php
-%%WWWDIR%%/libraries/openid/Services/Yadis/ParseHTML.php
-%%WWWDIR%%/libraries/openid/Services/Yadis/PlainHTTPFetcher.php
-%%WWWDIR%%/libraries/openid/Services/Yadis/XML.php
-%%WWWDIR%%/libraries/openid/Services/Yadis/XRDS.php
-%%WWWDIR%%/libraries/openid/Services/Yadis/XRI.php
-%%WWWDIR%%/libraries/openid/Services/Yadis/XRIRes.php
-%%WWWDIR%%/libraries/openid/Services/Yadis/Yadis.php
-%%WWWDIR%%/libraries/openid/Services/Yadis/index.html
-%%WWWDIR%%/libraries/openid/Services/index.html
 %%WWWDIR%%/libraries/openid/consumer.php
 %%WWWDIR%%/libraries/openid/index.html
 %%WWWDIR%%/libraries/pattemplate/index.html
@@ -3981,9 +3988,9 @@
 @dirrm %%WWWDIR%%/templates/beez/html/mod_newsflash
 @dirrm %%WWWDIR%%/templates/beez/html/mod_login
 @dirrm %%WWWDIR%%/templates/beez/html/mod_latestnews
+@dirrm %%WWWDIR%%/templates/beez/html/com_weblinks/weblink
 @dirrm %%WWWDIR%%/templates/beez/html/com_weblinks/category
 @dirrm %%WWWDIR%%/templates/beez/html/com_weblinks/categories
-@dirrm %%WWWDIR%%/templates/beez/html/com_weblinks/weblink
 @dirrm %%WWWDIR%%/templates/beez/html/com_weblinks
 @dirrm %%WWWDIR%%/templates/beez/html/com_user/user
 @dirrm %%WWWDIR%%/templates/beez/html/com_user/reset
@@ -4233,8 +4240,7 @@
 @dirrm %%WWWDIR%%/libraries/pattemplate/patTemplate/Dump
 @dirrm %%WWWDIR%%/libraries/pattemplate/patTemplate
 @dirrm %%WWWDIR%%/libraries/pattemplate
-@dirrm %%WWWDIR%%/libraries/openid/Services/Yadis
-@dirrm %%WWWDIR%%/libraries/openid/Services
+@dirrm %%WWWDIR%%/libraries/openid/Auth/Yadis
 @dirrm %%WWWDIR%%/libraries/openid/Auth/OpenID
 @dirrm %%WWWDIR%%/libraries/openid/Auth
 @dirrm %%WWWDIR%%/libraries/openid
@@ -4304,7 +4310,9 @@
 @dirrm %%WWWDIR%%/installation/sql/migration
 @dirrm %%WWWDIR%%/installation/sql
 @dirrm %%WWWDIR%%/installation/language/zh-TW
+@dirrm %%WWWDIR%%/installation/language/zh-CN
 @dirrm %%WWWDIR%%/installation/language/vi-VN
+@dirrm %%WWWDIR%%/installation/language/ur-PK
 @dirrm %%WWWDIR%%/installation/language/uk-UA
 @dirrm %%WWWDIR%%/installation/language/tr-TR
 @dirrm %%WWWDIR%%/installation/language/th-TH
@@ -4313,7 +4321,6 @@
 @dirrm %%WWWDIR%%/installation/language/sv-SE
 @dirrm %%WWWDIR%%/installation/language/sr-RS
 @dirrm %%WWWDIR%%/installation/language/sr-ME
-@dirrm %%WWWDIR%%/installation/language/sq-AL
 @dirrm %%WWWDIR%%/installation/language/sk-SK
 @dirrm %%WWWDIR%%/installation/language/si-LK
 @dirrm %%WWWDIR%%/installation/language/sd-PK
@@ -4323,34 +4330,32 @@
 @dirrm %%WWWDIR%%/installation/language/pt-BR
 @dirrm %%WWWDIR%%/installation/language/pl-PL
 @dirrm %%WWWDIR%%/installation/language/nl-NL
-@dirrm %%WWWDIR%%/installation/language/nb-NO
-@dirrm %%WWWDIR%%/installation/language/mk-MK
+@dirrm %%WWWDIR%%/installation/language/nb-BO
+@dirrm %%WWWDIR%%/installation/language/mn-MN
 @dirrm %%WWWDIR%%/installation/language/lv-LV
 @dirrm %%WWWDIR%%/installation/language/lt-LT
 @dirrm %%WWWDIR%%/installation/language/lo-LA
-@dirrm %%WWWDIR%%/installation/language/ko-KR
 @dirrm %%WWWDIR%%/installation/language/ja-JP
 @dirrm %%WWWDIR%%/installation/language/it-IT
+@dirrm %%WWWDIR%%/installation/language/is-IS
 @dirrm %%WWWDIR%%/installation/language/hu-HU
 @dirrm %%WWWDIR%%/installation/language/hr-HR
-@dirrm %%WWWDIR%%/installation/language/he-IL
+@dirrm %%WWWDIR%%/installation/language/gu-IN
 @dirrm %%WWWDIR%%/installation/language/fr-FR
 @dirrm %%WWWDIR%%/installation/language/fi-FI
 @dirrm %%WWWDIR%%/installation/language/fa-IR
 @dirrm %%WWWDIR%%/installation/language/eu-ES
+@dirrm %%WWWDIR%%/installation/language/et-EE
 @dirrm %%WWWDIR%%/installation/language/es-ES
 @dirrm %%WWWDIR%%/installation/language/eo-XX
 @dirrm %%WWWDIR%%/installation/language/en-US
 @dirrm %%WWWDIR%%/installation/language/en-GB
 @dirrm %%WWWDIR%%/installation/language/el-GR
 @dirrm %%WWWDIR%%/installation/language/de-DE
-@dirrm %%WWWDIR%%/installation/language/de-CH
-@dirrm %%WWWDIR%%/installation/language/de-AT
 @dirrm %%WWWDIR%%/installation/language/da-DK
 @dirrm %%WWWDIR%%/installation/language/cs-CZ
 @dirrm %%WWWDIR%%/installation/language/ca-ES
-@dirrm %%WWWDIR%%/installation/language/bs-BA
-@dirrm %%WWWDIR%%/installation/language/bn-IN
+@dirrm %%WWWDIR%%/installation/language/bn-BD
 @dirrm %%WWWDIR%%/installation/language/bg-BG
 @dirrm %%WWWDIR%%/installation/language/be-BY
 @dirrm %%WWWDIR%%/installation/language/ar-DZ
