@@ -8,7 +8,7 @@
 PORTNAME=	devil
 PORTVERSION=	1.7.8
 PORTEPOCH=	1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/openil
 DISTNAME=	DevIL-${PORTVERSION}
@@ -23,7 +23,8 @@ OPTIONS=	JPEG	"Enable JPEG support"		on \
 		PNG	"Enable PNG support"		on \
 		TIFF	"Enable TIFF support"		on \
 		X11	"Enable X11 support"		on \
-		SDL	"Enable SDL support"		off
+		SDL	"Enable SDL support"		off \
+		NVTT	"Enable NVidia texture tools support" off
 
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
@@ -34,9 +35,9 @@ AUTOMAKE_ARGS=	--add-missing --copy --force-missing
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-ILU \
 		--disable-allegro --disable-directx8 --disable-directx9 \
-		--disable-altivec --disable-sse --disable-sse2 --disable-sse3 \
-		--without-nvtt
+		--disable-altivec --disable-sse --disable-sse2 --disable-sse3
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
@@ -98,6 +99,14 @@ PLIST_SUB+=	X11=""
 USE_SDL=	sdl
 .else
 CONFIGURE_ARGS+=--disable-sdl
+.endif
+
+.if defined(WITH_NVTT)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libnvtt.so:${PORTSDIR}/graphics/nvidia-texture-tools
+RUN_DEPENDS+=	${LOCALBASE}/lib/libnvtt.so:${PORTSDIR}/graphics/nvidia-texture-tools
+LDFLAGS+=	${PTHREAD_LIBS}
+.else
+CONFIGURE_ARGS+=--without-nvtt
 .endif
 
 post-patch:
