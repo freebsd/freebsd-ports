@@ -2,7 +2,7 @@
 bin/irssi
 etc/irssi.conf
 etc/irssi.conf.sample
-include/irssi/config.h
+include/irssi/irssi-config.h
 include/irssi/irssi-version.h
 include/irssi/src/common.h
 include/irssi/src/core/args.h
@@ -50,7 +50,6 @@ include/irssi/src/core/special-vars.h
 include/irssi/src/core/window-item-def.h
 include/irssi/src/core/window-item-rec.h
 include/irssi/src/core/write-buffer.h
-include/irssi/src/fe-common/core/autorun.h
 include/irssi/src/fe-common/core/chat-completion.h
 include/irssi/src/fe-common/core/command-history.h
 include/irssi/src/fe-common/core/completion.h
@@ -69,7 +68,6 @@ include/irssi/src/fe-common/core/module-formats.h
 include/irssi/src/fe-common/core/module.h
 include/irssi/src/fe-common/core/printtext.h
 include/irssi/src/fe-common/core/themes.h
-include/irssi/src/fe-common/core/translation.h
 include/irssi/src/fe-common/core/window-activity.h
 include/irssi/src/fe-common/core/window-items.h
 include/irssi/src/fe-common/core/windows-layout.h
@@ -81,6 +79,7 @@ include/irssi/src/fe-common/irc/module-formats.h
 include/irssi/src/fe-common/irc/module.h
 include/irssi/src/fe-common/irc/notifylist/module-formats.h
 include/irssi/src/fe-common/irc/notifylist/module.h
+include/irssi/src/fe-text/statusbar-item.h
 include/irssi/src/irc/core/bans.h
 include/irssi/src/irc/core/channel-rejoin.h
 include/irssi/src/irc/core/ctcp.h
@@ -115,14 +114,10 @@ include/irssi/src/irc/notifylist/notify-setup.h
 include/irssi/src/irc/notifylist/notifylist.h
 include/irssi/src/lib-config/iconfig.h
 include/irssi/src/lib-config/module.h
-include/irssi/src/lib-popt/findme.h
-include/irssi/src/lib-popt/popt.h
-include/irssi/src/lib-popt/poptint.h
 @exec mkdir -p %D/lib/irssi/modules
 %%WITH_PROXY%%lib/irssi/modules/libirc_proxy.a
 %%WITH_PROXY%%lib/irssi/modules/libirc_proxy.la
 %%WITH_PROXY%%lib/irssi/modules/libirc_proxy.so
-%%WITH_PROXY%%lib/irssi/modules/libirc_proxy.so.0
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/Irc.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/TextUI.pm
@@ -139,7 +134,6 @@ include/irssi/src/lib-popt/poptint.h
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.so
-%%DOCSDIR%%/botnet.txt
 %%DOCSDIR%%/design.txt
 %%DOCSDIR%%/faq.html
 %%DOCSDIR%%/faq.txt
@@ -165,7 +159,6 @@ include/irssi/src/lib-popt/poptint.h
 %%DATADIR%%/help/connect
 %%DATADIR%%/help/ctcp
 %%DATADIR%%/help/cycle
-%%DATADIR%%/help/date
 %%DATADIR%%/help/dcc
 %%DATADIR%%/help/dehilight
 %%DATADIR%%/help/deop
@@ -176,7 +169,6 @@ include/irssi/src/lib-popt/poptint.h
 %%DATADIR%%/help/eval
 %%DATADIR%%/help/exec
 %%DATADIR%%/help/flushbuffer
-%%DATADIR%%/help/flushbuffers
 %%DATADIR%%/help/format
 %%DATADIR%%/help/hash
 %%DATADIR%%/help/help
@@ -264,7 +256,6 @@ include/irssi/src/lib-popt/poptint.h
 %%DATADIR%%/help/voice
 %%DATADIR%%/help/wait
 %%DATADIR%%/help/wall
-%%DATADIR%%/help/wallchops
 %%DATADIR%%/help/wallops
 %%DATADIR%%/help/watch
 %%DATADIR%%/help/who
@@ -284,6 +275,7 @@ include/irssi/src/lib-popt/poptint.h
 %%DATADIR%%/scripts/msg-event.pl
 %%DATADIR%%/scripts/quitmsg.pl
 %%DATADIR%%/scripts/redirect.pl
+%%DATADIR%%/scripts/sb_search.pl
 %%DATADIR%%/scripts/scriptassist.pl
 %%DATADIR%%/scripts/splitlong.pl
 %%DATADIR%%/scripts/usercount.pl
@@ -301,13 +293,13 @@ include/irssi/src/lib-popt/poptint.h
 @dirrm %%DOCSDIR%%
 @dirrm lib/irssi/modules
 @dirrm lib/irssi
-@dirrm include/irssi/src/lib-popt
 @dirrm include/irssi/src/lib-config
 @dirrm include/irssi/src/irc/notifylist
 @dirrm include/irssi/src/irc/flood
 @dirrm include/irssi/src/irc/dcc
 @dirrm include/irssi/src/irc/core
 @dirrm include/irssi/src/irc
+@dirrm include/irssi/src/fe-text
 @dirrm include/irssi/src/fe-common/irc/notifylist
 @dirrm include/irssi/src/fe-common/irc/dcc
 @dirrm include/irssi/src/fe-common/irc
