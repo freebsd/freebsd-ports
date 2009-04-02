@@ -137,6 +137,7 @@ share/applications/kde4/kapptemplate.desktop
 share/applications/kde4/kate.desktop
 share/applications/kde4/kbugbuster.desktop
 share/applications/kde4/kcachegrind.desktop
+share/applications/kde4/kdesvn-build.desktop
 share/applications/kde4/kompare.desktop
 share/applications/kde4/kuiviewer.desktop
 share/applications/kde4/lokalize.desktop
@@ -490,6 +491,7 @@ share/doc/HTML/en/lokalize/index.cache.bz2
 share/doc/HTML/en/lokalize/index.docbook
 share/doc/HTML/en/lokalize/original-diff.png
 share/doc/HTML/en/lokalize/sync.png
+share/doc/HTML/en/lokalize/tmview.png
 share/doc/HTML/en/umbrello/activity-diagram.png
 share/doc/HTML/en/umbrello/add-remove-languages.png
 share/doc/HTML/en/umbrello/aggregation.png

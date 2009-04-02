@@ -478,6 +478,9 @@ share/doc/HTML/sv/kdesu/common
 share/doc/HTML/sv/kdesu/index.cache.bz2
 share/doc/HTML/sv/kdesu/index.docbook
 share/doc/HTML/sv/kdesu/man-kdesu.1.docbook
+share/doc/HTML/sv/kdesvn-build/common
+share/doc/HTML/sv/kdesvn-build/index.cache.bz2
+share/doc/HTML/sv/kdesvn-build/index.docbook
 share/doc/HTML/sv/kdf/common
 share/doc/HTML/sv/kdf/index.cache.bz2
 share/doc/HTML/sv/kdf/index.docbook
@@ -911,9 +914,6 @@ share/doc/HTML/sv/kmix/index.cache.bz2
 share/doc/HTML/sv/kmix/index.docbook
 share/doc/HTML/sv/kmix/kmix-channel-switches.png
 share/doc/HTML/sv/kmix/kmix-window.png
-share/doc/HTML/sv/kmobiletools/common
-share/doc/HTML/sv/kmobiletools/index.cache.bz2
-share/doc/HTML/sv/kmobiletools/index.docbook
 share/doc/HTML/sv/kmousetool/common
 share/doc/HTML/sv/kmousetool/index.cache.bz2
 share/doc/HTML/sv/kmousetool/index.docbook
@@ -1144,9 +1144,6 @@ share/doc/HTML/sv/korganizer/outlook-to-vcalendar.docbook
 share/doc/HTML/sv/korganizer/plugins-chapter.docbook
 share/doc/HTML/sv/korganizer/remotefile-resource.png
 share/doc/HTML/sv/korganizer/todo-general.png
-share/doc/HTML/sv/korn/common
-share/doc/HTML/sv/korn/index.cache.bz2
-share/doc/HTML/sv/korn/index.docbook
 share/doc/HTML/sv/kpackage/bsdloc.png
 share/doc/HTML/sv/kpackage/common
 share/doc/HTML/sv/kpackage/debaptloc.png
@@ -1854,7 +1851,6 @@ share/locale/sv/LC_MESSAGES/kio_zeroconf.mo
 share/locale/sv/LC_MESSAGES/kioclient.mo
 share/locale/sv/LC_MESSAGES/kioexec.mo
 share/locale/sv/LC_MESSAGES/kiriki.mo
-share/locale/sv/LC_MESSAGES/kitchensync.mo
 share/locale/sv/LC_MESSAGES/kiten.mo
 share/locale/sv/LC_MESSAGES/kjots.mo
 share/locale/sv/LC_MESSAGES/kjumpingcube.mo
@@ -1875,8 +1871,6 @@ share/locale/sv/LC_MESSAGES/kmenuedit.mo
 share/locale/sv/LC_MESSAGES/kmimetypefinder.mo
 share/locale/sv/LC_MESSAGES/kmines.mo
 share/locale/sv/LC_MESSAGES/kmix.mo
-share/locale/sv/LC_MESSAGES/kmobiletools.mo
-share/locale/sv/LC_MESSAGES/kmobiletools_at_engine.mo
 share/locale/sv/LC_MESSAGES/kmousetool.mo
 share/locale/sv/LC_MESSAGES/kmouth.mo
 share/locale/sv/LC_MESSAGES/kmplot.mo
@@ -1900,7 +1894,6 @@ share/locale/sv/LC_MESSAGES/kontact.mo
 share/locale/sv/LC_MESSAGES/kontactinterfaces.mo
 share/locale/sv/LC_MESSAGES/kopete.mo
 share/locale/sv/LC_MESSAGES/korganizer.mo
-share/locale/sv/LC_MESSAGES/korn.mo
 share/locale/sv/LC_MESSAGES/kpackage.mo
 share/locale/sv/LC_MESSAGES/kpartloader.mo
 share/locale/sv/LC_MESSAGES/kpartsaver.mo
@@ -2195,7 +2188,6 @@ share/locale/sv/entry.desktop
 @dirrm share/doc/HTML/sv/kpilot
 @dirrm share/doc/HTML/sv/kpat
 @dirrm share/doc/HTML/sv/kpackage
-@dirrm share/doc/HTML/sv/korn
 @dirrm share/doc/HTML/sv/korganizer
 @dirrm share/doc/HTML/sv/kopete
 @dirrm share/doc/HTML/sv/kontact
@@ -2215,7 +2207,6 @@ share/locale/sv/entry.desktop
 @dirrm share/doc/HTML/sv/kmplot
 @dirrm share/doc/HTML/sv/kmouth
 @dirrm share/doc/HTML/sv/kmousetool
-@dirrm share/doc/HTML/sv/kmobiletools
 @dirrm share/doc/HTML/sv/kmix
 @dirrm share/doc/HTML/sv/kmines
 @dirrm share/doc/HTML/sv/kmenuedit
@@ -2286,6 +2277,7 @@ share/locale/sv/entry.desktop
 @dirrm share/doc/HTML/sv/kdm
 @dirrm share/doc/HTML/sv/kdiamond
 @dirrm share/doc/HTML/sv/kdf
+@dirrm share/doc/HTML/sv/kdesvn-build
 @dirrm share/doc/HTML/sv/kdesu
 @dirrm share/doc/HTML/sv/kdepasswd
 @dirrm share/doc/HTML/sv/kdebugdialog

@@ -220,7 +220,6 @@ share/locale/hi/LC_MESSAGES/kio_zeroconf.mo
 share/locale/hi/LC_MESSAGES/kioclient.mo
 share/locale/hi/LC_MESSAGES/kioexec.mo
 share/locale/hi/LC_MESSAGES/kiriki.mo
-share/locale/hi/LC_MESSAGES/kitchensync.mo
 share/locale/hi/LC_MESSAGES/kiten.mo
 share/locale/hi/LC_MESSAGES/kjots.mo
 share/locale/hi/LC_MESSAGES/kjumpingcube.mo
@@ -260,7 +259,6 @@ share/locale/hi/LC_MESSAGES/konsolekalendar.mo
 share/locale/hi/LC_MESSAGES/kontact.mo
 share/locale/hi/LC_MESSAGES/kopete.mo
 share/locale/hi/LC_MESSAGES/korganizer.mo
-share/locale/hi/LC_MESSAGES/korn.mo
 share/locale/hi/LC_MESSAGES/kpackage.mo
 share/locale/hi/LC_MESSAGES/kpartsaver.mo
 share/locale/hi/LC_MESSAGES/kpasswdserver.mo

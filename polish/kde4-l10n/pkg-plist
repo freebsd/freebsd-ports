@@ -53,6 +53,14 @@ share/doc/HTML/pl/ktuberling/common
 share/doc/HTML/pl/ktuberling/index.cache.bz2
 share/doc/HTML/pl/ktuberling/index.docbook
 share/doc/HTML/pl/ktuberling/technical-reference.docbook
+share/doc/HTML/pl/kturtle/common
+share/doc/HTML/pl/kturtle/getting-started.docbook
+share/doc/HTML/pl/kturtle/glossary.docbook
+share/doc/HTML/pl/kturtle/index.cache.bz2
+share/doc/HTML/pl/kturtle/index.docbook
+share/doc/HTML/pl/kturtle/programming-reference.docbook
+share/doc/HTML/pl/kturtle/translator-guide.docbook
+share/doc/HTML/pl/kturtle/using-kturtle.docbook
 share/doc/HTML/pl/kwallet/common
 share/doc/HTML/pl/kwallet/edit1.png
 share/doc/HTML/pl/kwallet/index.cache.bz2
@@ -303,7 +311,6 @@ share/locale/pl/LC_MESSAGES/kio_zeroconf.mo
 share/locale/pl/LC_MESSAGES/kioclient.mo
 share/locale/pl/LC_MESSAGES/kioexec.mo
 share/locale/pl/LC_MESSAGES/kiriki.mo
-share/locale/pl/LC_MESSAGES/kitchensync.mo
 share/locale/pl/LC_MESSAGES/kiten.mo
 share/locale/pl/LC_MESSAGES/kjots.mo
 share/locale/pl/LC_MESSAGES/kjumpingcube.mo
@@ -324,8 +331,6 @@ share/locale/pl/LC_MESSAGES/kmenuedit.mo
 share/locale/pl/LC_MESSAGES/kmimetypefinder.mo
 share/locale/pl/LC_MESSAGES/kmines.mo
 share/locale/pl/LC_MESSAGES/kmix.mo
-share/locale/pl/LC_MESSAGES/kmobiletools.mo
-share/locale/pl/LC_MESSAGES/kmobiletools_at_engine.mo
 share/locale/pl/LC_MESSAGES/kmousetool.mo
 share/locale/pl/LC_MESSAGES/kmouth.mo
 share/locale/pl/LC_MESSAGES/kmplot.mo
@@ -349,7 +354,6 @@ share/locale/pl/LC_MESSAGES/kontact.mo
 share/locale/pl/LC_MESSAGES/kontactinterfaces.mo
 share/locale/pl/LC_MESSAGES/kopete.mo
 share/locale/pl/LC_MESSAGES/korganizer.mo
-share/locale/pl/LC_MESSAGES/korn.mo
 share/locale/pl/LC_MESSAGES/kpackage.mo
 share/locale/pl/LC_MESSAGES/kpartsaver.mo
 share/locale/pl/LC_MESSAGES/kpasswdserver.mo
@@ -516,6 +520,7 @@ share/locale/pl/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/pl/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_kalzium.mo
@@ -599,6 +604,7 @@ share/locale/pl/entry.desktop
 @dirrm share/locale/pl/LC_SCRIPTS
 @dirrm share/doc/HTML/pl/kwordquiz
 @dirrm share/doc/HTML/pl/kwallet
+@dirrm share/doc/HTML/pl/kturtle
 @dirrm share/doc/HTML/pl/ktuberling
 @dirrm share/doc/HTML/pl/ktouch
 @dirrm share/doc/HTML/pl/ksnapshot

@@ -8,7 +8,6 @@
 
 PORTNAME=	kdebase-workspace
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -17,7 +16,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
-LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz\
+LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb \
+		qimageblitz.4:${PORTSDIR}/x11/qimageblitz\
 		dbus-1.3:${PORTSDIR}/devel/dbus \
 		hal.1:${PORTSDIR}/sysutils/hal \
 		xklavier.12:${PORTSDIR}/x11/libxklavier
@@ -41,6 +41,7 @@ QT_COMPONENTS=	assistant corelib dbus designer gui network opengl  \
 		porting_build uic3_build
 USE_GETTEXT=	yes
 USE_ICONV=	yes
+MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DWITH_BlueZ:BOOL=OFF \
@@ -51,12 +52,6 @@ CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DWITH_QEdje:BOOL=OFF
 #Xmms and Googlegadgets could be enabled,
 #QEdje has not been ported yet.
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-.endif
 
 post-extract:
 	${MKDIR} ${WRKSRC}
@@ -80,4 +75,4 @@ post-install:
 	@${MV} ${PREFIX}/lib/kde4/libexec/kdm_greet ${PREFIX}/lib/kde4/libexec/kdm-bin_greet
 	@${INSTALL_SCRIPT} ${WRKDIR}/kdm ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

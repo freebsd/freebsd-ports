@@ -100,6 +100,9 @@ share/doc/HTML/fr/blinken/blinken_nickprompt.png
 share/doc/HTML/fr/blinken/common
 share/doc/HTML/fr/blinken/index.cache.bz2
 share/doc/HTML/fr/blinken/index.docbook
+share/doc/HTML/fr/bomber/common
+share/doc/HTML/fr/bomber/index.cache.bz2
+share/doc/HTML/fr/bomber/index.docbook
 share/doc/HTML/fr/bovo/common
 share/doc/HTML/fr/bovo/index.cache.bz2
 share/doc/HTML/fr/bovo/index.docbook
@@ -632,6 +635,9 @@ share/doc/HTML/fr/kig/index.cache.bz2
 share/doc/HTML/fr/kig/index.docbook
 share/doc/HTML/fr/kig/man-kig.1.docbook
 share/doc/HTML/fr/kig/selecting_objects.png
+share/doc/HTML/fr/killbots/common
+share/doc/HTML/fr/killbots/index.cache.bz2
+share/doc/HTML/fr/killbots/index.docbook
 share/doc/HTML/fr/kinfocenter/blockdevices/common
 share/doc/HTML/fr/kinfocenter/blockdevices/index.cache.bz2
 share/doc/HTML/fr/kinfocenter/blockdevices/index.docbook
@@ -1039,9 +1045,6 @@ share/doc/HTML/fr/korganizer/index.cache.bz2
 share/doc/HTML/fr/korganizer/index.docbook
 share/doc/HTML/fr/korganizer/outlook-to-vcalendar.docbook
 share/doc/HTML/fr/korganizer/plugins-chapter.docbook
-share/doc/HTML/fr/korn/common
-share/doc/HTML/fr/korn/index.cache.bz2
-share/doc/HTML/fr/korn/index.docbook
 share/doc/HTML/fr/kpackage/bsdloc1.png
 share/doc/HTML/fr/kpackage/common
 share/doc/HTML/fr/kpackage/debapt.png
@@ -1294,6 +1297,12 @@ share/doc/HTML/fr/ksudoku/index.docbook
 share/doc/HTML/fr/ksysguard/common
 share/doc/HTML/fr/ksysguard/index.cache.bz2
 share/doc/HTML/fr/ksysguard/index.docbook
+share/doc/HTML/fr/ksystemlog/common
+share/doc/HTML/fr/ksystemlog/filter-process.png
+share/doc/HTML/fr/ksystemlog/first-opening.png
+share/doc/HTML/fr/ksystemlog/index.cache.bz2
+share/doc/HTML/fr/ksystemlog/index.docbook
+share/doc/HTML/fr/ksystemlog/main-screen.png
 share/doc/HTML/fr/ksysv/common
 share/doc/HTML/fr/ksysv/index.cache.bz2
 share/doc/HTML/fr/ksysv/index.docbook
@@ -1315,6 +1324,7 @@ share/doc/HTML/fr/ktouch/index.docbook
 share/doc/HTML/fr/ktouch/keyboard_options.png
 share/doc/HTML/fr/ktouch/main_screen_default_color.png
 share/doc/HTML/fr/ktouch/main_window_german.png
+share/doc/HTML/fr/ktouch/man-ktouch.1.docbook
 share/doc/HTML/fr/ktouch/statistics_dialog.png
 share/doc/HTML/fr/ktouch/statistics_dialog_chart.png
 share/doc/HTML/fr/ktouch/training_options.png
@@ -1343,6 +1353,7 @@ share/doc/HTML/fr/ktuberling/menu.speech.png
 share/doc/HTML/fr/ktuberling/technical-reference.docbook
 share/doc/HTML/fr/ktuberling/toolbar.png
 share/doc/HTML/fr/kturtle/common
+share/doc/HTML/fr/kturtle/forward.png
 share/doc/HTML/fr/kturtle/getting-started.docbook
 share/doc/HTML/fr/kturtle/glossary.docbook
 share/doc/HTML/fr/kturtle/index.cache.bz2
@@ -1352,7 +1363,6 @@ share/doc/HTML/fr/kturtle/mainwindow_flower_nrs.png
 share/doc/HTML/fr/kturtle/programming-reference.docbook
 share/doc/HTML/fr/kturtle/translator-guide.docbook
 share/doc/HTML/fr/kturtle/using-kturtle.docbook
-share/doc/HTML/fr/kturtle/wrapping.png
 share/doc/HTML/fr/kubrick/common
 share/doc/HTML/fr/kubrick/index.cache.bz2
 share/doc/HTML/fr/kubrick/index.docbook
@@ -1415,6 +1425,9 @@ share/doc/HTML/fr/marble/search-2.png
 share/doc/HTML/fr/okular/common
 share/doc/HTML/fr/okular/index.cache.bz2
 share/doc/HTML/fr/okular/index.docbook
+share/doc/HTML/fr/parley/common
+share/doc/HTML/fr/parley/index.cache.bz2
+share/doc/HTML/fr/parley/index.docbook
 share/doc/HTML/fr/sonnet/common
 share/doc/HTML/fr/sonnet/index.cache.bz2
 share/doc/HTML/fr/sonnet/index.docbook
@@ -1675,7 +1688,6 @@ share/locale/fr/LC_MESSAGES/kio_zeroconf.mo
 share/locale/fr/LC_MESSAGES/kioclient.mo
 share/locale/fr/LC_MESSAGES/kioexec.mo
 share/locale/fr/LC_MESSAGES/kiriki.mo
-share/locale/fr/LC_MESSAGES/kitchensync.mo
 share/locale/fr/LC_MESSAGES/kiten.mo
 share/locale/fr/LC_MESSAGES/kjots.mo
 share/locale/fr/LC_MESSAGES/kjumpingcube.mo
@@ -1696,8 +1708,6 @@ share/locale/fr/LC_MESSAGES/kmenuedit.mo
 share/locale/fr/LC_MESSAGES/kmimetypefinder.mo
 share/locale/fr/LC_MESSAGES/kmines.mo
 share/locale/fr/LC_MESSAGES/kmix.mo
-share/locale/fr/LC_MESSAGES/kmobiletools.mo
-share/locale/fr/LC_MESSAGES/kmobiletools_at_engine.mo
 share/locale/fr/LC_MESSAGES/kmousetool.mo
 share/locale/fr/LC_MESSAGES/kmouth.mo
 share/locale/fr/LC_MESSAGES/kmplot.mo
@@ -1721,7 +1731,6 @@ share/locale/fr/LC_MESSAGES/kontact.mo
 share/locale/fr/LC_MESSAGES/kontactinterfaces.mo
 share/locale/fr/LC_MESSAGES/kopete.mo
 share/locale/fr/LC_MESSAGES/korganizer.mo
-share/locale/fr/LC_MESSAGES/korn.mo
 share/locale/fr/LC_MESSAGES/kpackage.mo
 share/locale/fr/LC_MESSAGES/kpartloader.mo
 share/locale/fr/LC_MESSAGES/kpartsaver.mo
@@ -1890,6 +1899,7 @@ share/locale/fr/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/fr/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_kalzium.mo
@@ -1971,6 +1981,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/superkaramba
 @dirrm share/doc/HTML/fr/step
 @dirrm share/doc/HTML/fr/sonnet
+@dirrm share/doc/HTML/fr/parley
 @dirrm share/doc/HTML/fr/okular
 @dirrm share/doc/HTML/fr/marble
 @dirrm share/doc/HTML/fr/lskat
@@ -1992,6 +2003,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/ktimer
 @dirrm share/doc/HTML/fr/kteatime
 @dirrm share/doc/HTML/fr/ksysv
+@dirrm share/doc/HTML/fr/ksystemlog
 @dirrm share/doc/HTML/fr/ksysguard
 @dirrm share/doc/HTML/fr/ksudoku
 @dirrm share/doc/HTML/fr/kstars
@@ -2016,7 +2028,6 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kpercentage
 @dirrm share/doc/HTML/fr/kpat
 @dirrm share/doc/HTML/fr/kpackage
-@dirrm share/doc/HTML/fr/korn
 @dirrm share/doc/HTML/fr/korganizer
 @dirrm share/doc/HTML/fr/kopete
 @dirrm share/doc/HTML/fr/kontact
@@ -2102,6 +2113,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kinfocenter/devices
 @dirrm share/doc/HTML/fr/kinfocenter/blockdevices
 @dirrm share/doc/HTML/fr/kinfocenter
+@dirrm share/doc/HTML/fr/killbots
 @dirrm share/doc/HTML/fr/kig
 @dirrm share/doc/HTML/fr/khelpcenter/visualdict
 @dirrm share/doc/HTML/fr/khelpcenter/userguide
@@ -2218,6 +2230,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/dolphin
 @dirrm share/doc/HTML/fr/cervisia
 @dirrm share/doc/HTML/fr/bovo
+@dirrm share/doc/HTML/fr/bomber
 @dirrm share/doc/HTML/fr/blinken
 @dirrm share/doc/HTML/fr/ark
 @dirrm share/doc/HTML/fr/amor

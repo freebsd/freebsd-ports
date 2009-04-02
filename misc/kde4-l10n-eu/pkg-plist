@@ -119,6 +119,7 @@ share/locale/eu/LC_MESSAGES/kcmstyle.mo
 share/locale/eu/LC_MESSAGES/kcmusb.mo
 share/locale/eu/LC_MESSAGES/kcmview1394.mo
 share/locale/eu/LC_MESSAGES/kcmxinerama.mo
+share/locale/eu/LC_MESSAGES/kcolorchooser.mo
 share/locale/eu/LC_MESSAGES/kcron.mo
 share/locale/eu/LC_MESSAGES/kdat.mo
 share/locale/eu/LC_MESSAGES/kde-menu.mo
@@ -151,6 +152,7 @@ share/locale/eu/LC_MESSAGES/kfile_mp3.mo
 share/locale/eu/LC_MESSAGES/kfile_mpc.mo
 share/locale/eu/LC_MESSAGES/kfile_ogg.mo
 share/locale/eu/LC_MESSAGES/kfile_pnm.mo
+share/locale/eu/LC_MESSAGES/kfile_raw.mo
 share/locale/eu/LC_MESSAGES/kfile_rgb.mo
 share/locale/eu/LC_MESSAGES/kfile_rpm.mo
 share/locale/eu/LC_MESSAGES/kfile_sid.mo
@@ -158,6 +160,7 @@ share/locale/eu/LC_MESSAGES/kfile_theora.mo
 share/locale/eu/LC_MESSAGES/kfile_tiff.mo
 share/locale/eu/LC_MESSAGES/kfile_torrent.mo
 share/locale/eu/LC_MESSAGES/kfile_wav.mo
+share/locale/eu/LC_MESSAGES/kfile_xps.mo
 share/locale/eu/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/eu/LC_MESSAGES/kfilereplace.mo
 share/locale/eu/LC_MESSAGES/kfileshare.mo
@@ -251,7 +254,6 @@ share/locale/eu/LC_MESSAGES/konsolekalendar.mo
 share/locale/eu/LC_MESSAGES/kontact.mo
 share/locale/eu/LC_MESSAGES/kopete.mo
 share/locale/eu/LC_MESSAGES/korganizer.mo
-share/locale/eu/LC_MESSAGES/korn.mo
 share/locale/eu/LC_MESSAGES/kpackage.mo
 share/locale/eu/LC_MESSAGES/kpartsaver.mo
 share/locale/eu/LC_MESSAGES/kpasswdserver.mo
@@ -278,6 +280,7 @@ share/locale/eu/LC_MESSAGES/krfb.mo
 share/locale/eu/LC_MESSAGES/kruler.mo
 share/locale/eu/LC_MESSAGES/krunner.mo
 share/locale/eu/LC_MESSAGES/ksame.mo
+share/locale/eu/LC_MESSAGES/ksaneplugin.mo
 share/locale/eu/LC_MESSAGES/ksayit.mo
 share/locale/eu/LC_MESSAGES/kscd.mo
 share/locale/eu/LC_MESSAGES/kscreensaver.mo
@@ -361,6 +364,7 @@ share/locale/eu/LC_MESSAGES/okular_djvu.mo
 share/locale/eu/LC_MESSAGES/okular_epub.mo
 share/locale/eu/LC_MESSAGES/okular_fax.mo
 share/locale/eu/LC_MESSAGES/okular_fictionbook.mo
+share/locale/eu/LC_MESSAGES/okular_ghostview.mo
 share/locale/eu/LC_MESSAGES/okular_kimgio.mo
 share/locale/eu/LC_MESSAGES/okular_ooo.mo
 share/locale/eu/LC_MESSAGES/okular_plucker.mo
@@ -385,6 +389,7 @@ share/locale/eu/LC_MESSAGES/plasma_applet_dict.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_fifteenPuzzle.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_folderview.mo
+share/locale/eu/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_launcher.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_luna.mo
@@ -430,6 +435,7 @@ share/locale/eu/LC_MESSAGES/soliduiserver.mo
 share/locale/eu/LC_MESSAGES/spy.mo
 share/locale/eu/LC_MESSAGES/strigila_diff.mo
 share/locale/eu/LC_MESSAGES/superkaramba.mo
+share/locale/eu/LC_MESSAGES/svgpart.mo
 share/locale/eu/LC_MESSAGES/sweeper.mo
 share/locale/eu/LC_MESSAGES/systemsettings.mo
 share/locale/eu/LC_MESSAGES/timezones4.mo

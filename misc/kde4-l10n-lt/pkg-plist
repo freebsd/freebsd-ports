@@ -247,7 +247,6 @@ share/locale/lt/LC_MESSAGES/kio_zeroconf.mo
 share/locale/lt/LC_MESSAGES/kioclient.mo
 share/locale/lt/LC_MESSAGES/kioexec.mo
 share/locale/lt/LC_MESSAGES/kiriki.mo
-share/locale/lt/LC_MESSAGES/kitchensync.mo
 share/locale/lt/LC_MESSAGES/kiten.mo
 share/locale/lt/LC_MESSAGES/kjots.mo
 share/locale/lt/LC_MESSAGES/kjumpingcube.mo
@@ -268,8 +267,6 @@ share/locale/lt/LC_MESSAGES/kmenuedit.mo
 share/locale/lt/LC_MESSAGES/kmimetypefinder.mo
 share/locale/lt/LC_MESSAGES/kmines.mo
 share/locale/lt/LC_MESSAGES/kmix.mo
-share/locale/lt/LC_MESSAGES/kmobiletools.mo
-share/locale/lt/LC_MESSAGES/kmobiletools_at_engine.mo
 share/locale/lt/LC_MESSAGES/kmousetool.mo
 share/locale/lt/LC_MESSAGES/kmouth.mo
 share/locale/lt/LC_MESSAGES/kmplot.mo
@@ -293,7 +290,6 @@ share/locale/lt/LC_MESSAGES/kontact.mo
 share/locale/lt/LC_MESSAGES/kontactinterfaces.mo
 share/locale/lt/LC_MESSAGES/kopete.mo
 share/locale/lt/LC_MESSAGES/korganizer.mo
-share/locale/lt/LC_MESSAGES/korn.mo
 share/locale/lt/LC_MESSAGES/kpackage.mo
 share/locale/lt/LC_MESSAGES/kpartloader.mo
 share/locale/lt/LC_MESSAGES/kpartsaver.mo
@@ -445,6 +441,7 @@ share/locale/lt/LC_MESSAGES/phonon_kde.mo
 share/locale/lt/LC_MESSAGES/plasma-overlay.mo
 share/locale/lt/LC_MESSAGES/plasma-shells-common.mo
 share/locale/lt/LC_MESSAGES/plasma.mo
+share/locale/lt/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_bball.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_binaryclock.mo

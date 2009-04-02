@@ -832,7 +832,6 @@ share/locale/ca/LC_MESSAGES/kio_zeroconf.mo
 share/locale/ca/LC_MESSAGES/kioclient.mo
 share/locale/ca/LC_MESSAGES/kioexec.mo
 share/locale/ca/LC_MESSAGES/kiriki.mo
-share/locale/ca/LC_MESSAGES/kitchensync.mo
 share/locale/ca/LC_MESSAGES/kiten.mo
 share/locale/ca/LC_MESSAGES/kjots.mo
 share/locale/ca/LC_MESSAGES/kjumpingcube.mo
@@ -853,8 +852,6 @@ share/locale/ca/LC_MESSAGES/kmenuedit.mo
 share/locale/ca/LC_MESSAGES/kmimetypefinder.mo
 share/locale/ca/LC_MESSAGES/kmines.mo
 share/locale/ca/LC_MESSAGES/kmix.mo
-share/locale/ca/LC_MESSAGES/kmobiletools.mo
-share/locale/ca/LC_MESSAGES/kmobiletools_at_engine.mo
 share/locale/ca/LC_MESSAGES/kmousetool.mo
 share/locale/ca/LC_MESSAGES/kmouth.mo
 share/locale/ca/LC_MESSAGES/kmplot.mo
@@ -878,7 +875,6 @@ share/locale/ca/LC_MESSAGES/kontact.mo
 share/locale/ca/LC_MESSAGES/kontactinterfaces.mo
 share/locale/ca/LC_MESSAGES/kopete.mo
 share/locale/ca/LC_MESSAGES/korganizer.mo
-share/locale/ca/LC_MESSAGES/korn.mo
 share/locale/ca/LC_MESSAGES/kpackage.mo
 share/locale/ca/LC_MESSAGES/kpartsaver.mo
 share/locale/ca/LC_MESSAGES/kpasswdserver.mo

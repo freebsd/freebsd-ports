@@ -6,7 +6,6 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -32,6 +31,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib opengl dbus qt3support designer network svg qtestlib \
 		qmake_build moc_build rcc_build uic_build
 USE_OPENLDAP=	yes
+MAKE_JOBS_SAFE=	yes
 
 #fix build when kdepim3 is here
 CMAKE_ARGS+=	-DGPGME_LIBRARY_DIR:PATH="${KDE4_PREFIX}/lib"

@@ -249,8 +249,6 @@ share/locale/pa/LC_MESSAGES/kmenuedit.mo
 share/locale/pa/LC_MESSAGES/kmimetypefinder.mo
 share/locale/pa/LC_MESSAGES/kmines.mo
 share/locale/pa/LC_MESSAGES/kmix.mo
-share/locale/pa/LC_MESSAGES/kmobiletools.mo
-share/locale/pa/LC_MESSAGES/kmobiletools_at_engine.mo
 share/locale/pa/LC_MESSAGES/kmousetool.mo
 share/locale/pa/LC_MESSAGES/kmouth.mo
 share/locale/pa/LC_MESSAGES/kmplot.mo
@@ -270,7 +268,6 @@ share/locale/pa/LC_MESSAGES/konsolekalendar.mo
 share/locale/pa/LC_MESSAGES/kontact.mo
 share/locale/pa/LC_MESSAGES/kopete.mo
 share/locale/pa/LC_MESSAGES/korganizer.mo
-share/locale/pa/LC_MESSAGES/korn.mo
 share/locale/pa/LC_MESSAGES/kpackage.mo
 share/locale/pa/LC_MESSAGES/kpartloader.mo
 share/locale/pa/LC_MESSAGES/kpartsaver.mo

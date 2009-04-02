@@ -395,6 +395,9 @@ share/doc/HTML/da/kdesu/common
 share/doc/HTML/da/kdesu/index.cache.bz2
 share/doc/HTML/da/kdesu/index.docbook
 share/doc/HTML/da/kdesu/man-kdesu.1.docbook
+share/doc/HTML/da/kdesvn-build/common
+share/doc/HTML/da/kdesvn-build/index.cache.bz2
+share/doc/HTML/da/kdesvn-build/index.docbook
 share/doc/HTML/da/kdf/common
 share/doc/HTML/da/kdf/index.cache.bz2
 share/doc/HTML/da/kdf/index.docbook
@@ -808,9 +811,6 @@ share/doc/HTML/da/korganizer/index.cache.bz2
 share/doc/HTML/da/korganizer/index.docbook
 share/doc/HTML/da/korganizer/outlook-to-vcalendar.docbook
 share/doc/HTML/da/korganizer/plugins-chapter.docbook
-share/doc/HTML/da/korn/common
-share/doc/HTML/da/korn/index.cache.bz2
-share/doc/HTML/da/korn/index.docbook
 share/doc/HTML/da/kpackage/common
 share/doc/HTML/da/kpackage/index.cache.bz2
 share/doc/HTML/da/kpackage/index.docbook
@@ -1330,7 +1330,6 @@ share/locale/da/LC_MESSAGES/kio_zeroconf.mo
 share/locale/da/LC_MESSAGES/kioclient.mo
 share/locale/da/LC_MESSAGES/kioexec.mo
 share/locale/da/LC_MESSAGES/kiriki.mo
-share/locale/da/LC_MESSAGES/kitchensync.mo
 share/locale/da/LC_MESSAGES/kiten.mo
 share/locale/da/LC_MESSAGES/kjots.mo
 share/locale/da/LC_MESSAGES/kjumpingcube.mo
@@ -1351,8 +1350,6 @@ share/locale/da/LC_MESSAGES/kmenuedit.mo
 share/locale/da/LC_MESSAGES/kmimetypefinder.mo
 share/locale/da/LC_MESSAGES/kmines.mo
 share/locale/da/LC_MESSAGES/kmix.mo
-share/locale/da/LC_MESSAGES/kmobiletools.mo
-share/locale/da/LC_MESSAGES/kmobiletools_at_engine.mo
 share/locale/da/LC_MESSAGES/kmousetool.mo
 share/locale/da/LC_MESSAGES/kmouth.mo
 share/locale/da/LC_MESSAGES/kmplot.mo
@@ -1376,7 +1373,6 @@ share/locale/da/LC_MESSAGES/kontact.mo
 share/locale/da/LC_MESSAGES/kontactinterfaces.mo
 share/locale/da/LC_MESSAGES/kopete.mo
 share/locale/da/LC_MESSAGES/korganizer.mo
-share/locale/da/LC_MESSAGES/korn.mo
 share/locale/da/LC_MESSAGES/kpackage.mo
 share/locale/da/LC_MESSAGES/kpartloader.mo
 share/locale/da/LC_MESSAGES/kpartsaver.mo
@@ -1623,6 +1619,7 @@ share/locale/da/LC_MESSAGES/timezones4.mo
 share/locale/da/LC_MESSAGES/umbrello.mo
 share/locale/da/LC_MESSAGES/useraccount.mo
 share/locale/da/entry.desktop
+@dirrmtry share/pixmaps
 @dirrm share/doc/HTML/da/xsldbg
 @dirrm share/doc/HTML/da/umbrello
 @dirrm share/doc/HTML/da/superkaramba
@@ -1661,7 +1658,6 @@ share/locale/da/entry.desktop
 @dirrm share/doc/HTML/da/kpercentage
 @dirrm share/doc/HTML/da/kpat
 @dirrm share/doc/HTML/da/kpackage
-@dirrm share/doc/HTML/da/korn
 @dirrm share/doc/HTML/da/korganizer
 @dirrm share/doc/HTML/da/kopete
 @dirrm share/doc/HTML/da/kontact
@@ -1733,6 +1729,7 @@ share/locale/da/entry.desktop
 @dirrm share/doc/HTML/da/kfilereplace
 @dirrm share/doc/HTML/da/kdm
 @dirrm share/doc/HTML/da/kdf
+@dirrm share/doc/HTML/da/kdesvn-build
 @dirrm share/doc/HTML/da/kdesu
 @dirrm share/doc/HTML/da/kdebugdialog
 @dirrm share/doc/HTML/da/kdat

@@ -445,6 +445,9 @@ share/doc/HTML/it/kdesu/common
 share/doc/HTML/it/kdesu/index.cache.bz2
 share/doc/HTML/it/kdesu/index.docbook
 share/doc/HTML/it/kdesu/man-kdesu.1.docbook
+share/doc/HTML/it/kdesvn-build/common
+share/doc/HTML/it/kdesvn-build/index.cache.bz2
+share/doc/HTML/it/kdesvn-build/index.docbook
 share/doc/HTML/it/kdf/common
 share/doc/HTML/it/kdf/index.cache.bz2
 share/doc/HTML/it/kdf/index.docbook
@@ -895,9 +898,6 @@ share/doc/HTML/it/korganizer/index.cache.bz2
 share/doc/HTML/it/korganizer/index.docbook
 share/doc/HTML/it/korganizer/outlook-to-vcalendar.docbook
 share/doc/HTML/it/korganizer/plugins-chapter.docbook
-share/doc/HTML/it/korn/common
-share/doc/HTML/it/korn/index.cache.bz2
-share/doc/HTML/it/korn/index.docbook
 share/doc/HTML/it/kpackage/common
 share/doc/HTML/it/kpackage/index.cache.bz2
 share/doc/HTML/it/kpackage/index.docbook
@@ -1451,7 +1451,6 @@ share/locale/it/LC_MESSAGES/kio_zeroconf.mo
 share/locale/it/LC_MESSAGES/kioclient.mo
 share/locale/it/LC_MESSAGES/kioexec.mo
 share/locale/it/LC_MESSAGES/kiriki.mo
-share/locale/it/LC_MESSAGES/kitchensync.mo
 share/locale/it/LC_MESSAGES/kiten.mo
 share/locale/it/LC_MESSAGES/kjots.mo
 share/locale/it/LC_MESSAGES/kjumpingcube.mo
@@ -1472,8 +1471,6 @@ share/locale/it/LC_MESSAGES/kmenuedit.mo
 share/locale/it/LC_MESSAGES/kmimetypefinder.mo
 share/locale/it/LC_MESSAGES/kmines.mo
 share/locale/it/LC_MESSAGES/kmix.mo
-share/locale/it/LC_MESSAGES/kmobiletools.mo
-share/locale/it/LC_MESSAGES/kmobiletools_at_engine.mo
 share/locale/it/LC_MESSAGES/kmousetool.mo
 share/locale/it/LC_MESSAGES/kmouth.mo
 share/locale/it/LC_MESSAGES/kmplot.mo
@@ -1497,7 +1494,6 @@ share/locale/it/LC_MESSAGES/kontact.mo
 share/locale/it/LC_MESSAGES/kontactinterfaces.mo
 share/locale/it/LC_MESSAGES/kopete.mo
 share/locale/it/LC_MESSAGES/korganizer.mo
-share/locale/it/LC_MESSAGES/korn.mo
 share/locale/it/LC_MESSAGES/kpackage.mo
 share/locale/it/LC_MESSAGES/kpartloader.mo
 share/locale/it/LC_MESSAGES/kpartsaver.mo
@@ -1650,7 +1646,6 @@ share/locale/it/LC_MESSAGES/plasma-overlay.mo
 share/locale/it/LC_MESSAGES/plasma-shells-common.mo
 share/locale/it/LC_MESSAGES/plasma.mo
 share/locale/it/LC_MESSAGES/plasma_applet_battery.mo
-share/locale/it/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/it/LC_MESSAGES/plasma_applet_bball.mo
 share/locale/it/LC_MESSAGES/plasma_applet_binaryclock.mo
 share/locale/it/LC_MESSAGES/plasma_applet_bluemarble.mo
@@ -1667,6 +1662,7 @@ share/locale/it/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/it/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/it/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/it/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/it/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/it/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/it/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/it/LC_MESSAGES/plasma_applet_kalzium.mo
@@ -1787,7 +1783,6 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/kpilot
 @dirrm share/doc/HTML/it/kpat
 @dirrm share/doc/HTML/it/kpackage
-@dirrm share/doc/HTML/it/korn
 @dirrm share/doc/HTML/it/korganizer
 @dirrm share/doc/HTML/it/kopete
 @dirrm share/doc/HTML/it/kontact
@@ -1891,6 +1886,7 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/kfilereplace
 @dirrm share/doc/HTML/it/kdiamond
 @dirrm share/doc/HTML/it/kdf
+@dirrm share/doc/HTML/it/kdesvn-build
 @dirrm share/doc/HTML/it/kdesu
 @dirrm share/doc/HTML/it/kdepasswd
 @dirrm share/doc/HTML/it/kdebugdialog

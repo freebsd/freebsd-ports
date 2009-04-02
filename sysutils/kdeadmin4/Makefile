@@ -6,7 +6,6 @@
 
 PORTNAME=	kdeadmin
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	sysutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -28,6 +27,8 @@ QT_COMPONENTS=	corelib opengl dbus qt3support designer network svg qtestlib \
 		network porting_build qmake_build moc_build rcc_build \
 		uic_build uic3_build
 #USE_OPENLDAP=	yes
+MAKE_JOBS_SAFE=	yes
+
 PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 CMAKE_ARGS+=	-DBUILD_kpackage:BOOL=Off \

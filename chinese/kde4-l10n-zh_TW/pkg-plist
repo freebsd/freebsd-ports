@@ -267,7 +267,6 @@ share/locale/zh_TW/LC_MESSAGES/kio_zeroconf.mo
 share/locale/zh_TW/LC_MESSAGES/kioclient.mo
 share/locale/zh_TW/LC_MESSAGES/kioexec.mo
 share/locale/zh_TW/LC_MESSAGES/kiriki.mo
-share/locale/zh_TW/LC_MESSAGES/kitchensync.mo
 share/locale/zh_TW/LC_MESSAGES/kiten.mo
 share/locale/zh_TW/LC_MESSAGES/kjots.mo
 share/locale/zh_TW/LC_MESSAGES/kjumpingcube.mo
@@ -288,8 +287,6 @@ share/locale/zh_TW/LC_MESSAGES/kmenuedit.mo
 share/locale/zh_TW/LC_MESSAGES/kmimetypefinder.mo
 share/locale/zh_TW/LC_MESSAGES/kmines.mo
 share/locale/zh_TW/LC_MESSAGES/kmix.mo
-share/locale/zh_TW/LC_MESSAGES/kmobiletools.mo
-share/locale/zh_TW/LC_MESSAGES/kmobiletools_at_engine.mo
 share/locale/zh_TW/LC_MESSAGES/kmousetool.mo
 share/locale/zh_TW/LC_MESSAGES/kmouth.mo
 share/locale/zh_TW/LC_MESSAGES/kmplot.mo
@@ -313,7 +310,6 @@ share/locale/zh_TW/LC_MESSAGES/kontact.mo
 share/locale/zh_TW/LC_MESSAGES/kontactinterfaces.mo
 share/locale/zh_TW/LC_MESSAGES/kopete.mo
 share/locale/zh_TW/LC_MESSAGES/korganizer.mo
-share/locale/zh_TW/LC_MESSAGES/korn.mo
 share/locale/zh_TW/LC_MESSAGES/kpackage.mo
 share/locale/zh_TW/LC_MESSAGES/kpartloader.mo
 share/locale/zh_TW/LC_MESSAGES/kpartsaver.mo

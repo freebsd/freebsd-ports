@@ -764,9 +764,6 @@ share/doc/HTML/et/korganizer/index.cache.bz2
 share/doc/HTML/et/korganizer/index.docbook
 share/doc/HTML/et/korganizer/outlook-to-vcalendar.docbook
 share/doc/HTML/et/korganizer/plugins-chapter.docbook
-share/doc/HTML/et/korn/common
-share/doc/HTML/et/korn/index.cache.bz2
-share/doc/HTML/et/korn/index.docbook
 share/doc/HTML/et/kpackage/common
 share/doc/HTML/et/kpackage/index.cache.bz2
 share/doc/HTML/et/kpackage/index.docbook
@@ -1243,7 +1240,6 @@ share/locale/et/LC_MESSAGES/kio_zeroconf.mo
 share/locale/et/LC_MESSAGES/kioclient.mo
 share/locale/et/LC_MESSAGES/kioexec.mo
 share/locale/et/LC_MESSAGES/kiriki.mo
-share/locale/et/LC_MESSAGES/kitchensync.mo
 share/locale/et/LC_MESSAGES/kiten.mo
 share/locale/et/LC_MESSAGES/kjots.mo
 share/locale/et/LC_MESSAGES/kjumpingcube.mo
@@ -1264,8 +1260,6 @@ share/locale/et/LC_MESSAGES/kmenuedit.mo
 share/locale/et/LC_MESSAGES/kmimetypefinder.mo
 share/locale/et/LC_MESSAGES/kmines.mo
 share/locale/et/LC_MESSAGES/kmix.mo
-share/locale/et/LC_MESSAGES/kmobiletools.mo
-share/locale/et/LC_MESSAGES/kmobiletools_at_engine.mo
 share/locale/et/LC_MESSAGES/kmousetool.mo
 share/locale/et/LC_MESSAGES/kmouth.mo
 share/locale/et/LC_MESSAGES/kmplot.mo
@@ -1289,7 +1283,6 @@ share/locale/et/LC_MESSAGES/kontact.mo
 share/locale/et/LC_MESSAGES/kontactinterfaces.mo
 share/locale/et/LC_MESSAGES/kopete.mo
 share/locale/et/LC_MESSAGES/korganizer.mo
-share/locale/et/LC_MESSAGES/korn.mo
 share/locale/et/LC_MESSAGES/kpackage.mo
 share/locale/et/LC_MESSAGES/kpartloader.mo
 share/locale/et/LC_MESSAGES/kpartsaver.mo
@@ -1577,7 +1570,6 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kpilot
 @dirrm share/doc/HTML/et/kpat
 @dirrm share/doc/HTML/et/kpackage
-@dirrm share/doc/HTML/et/korn
 @dirrm share/doc/HTML/et/korganizer
 @dirrm share/doc/HTML/et/kopete
 @dirrm share/doc/HTML/et/kontact

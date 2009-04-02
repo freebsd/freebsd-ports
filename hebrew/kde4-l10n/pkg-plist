@@ -64,6 +64,7 @@ share/locale/he/LC_MESSAGES/dolphin.mo
 share/locale/he/LC_MESSAGES/dragonplayer.mo
 share/locale/he/LC_MESSAGES/drkonqi.mo
 share/locale/he/LC_MESSAGES/filetypes.mo
+share/locale/he/LC_MESSAGES/gwenview.mo
 share/locale/he/LC_MESSAGES/htmlsearch.mo
 share/locale/he/LC_MESSAGES/imagerename_plugin.mo
 share/locale/he/LC_MESSAGES/joystick.mo
@@ -278,7 +279,6 @@ share/locale/he/LC_MESSAGES/konsolekalendar.mo
 share/locale/he/LC_MESSAGES/kontact.mo
 share/locale/he/LC_MESSAGES/kopete.mo
 share/locale/he/LC_MESSAGES/korganizer.mo
-share/locale/he/LC_MESSAGES/korn.mo
 share/locale/he/LC_MESSAGES/kpackage.mo
 share/locale/he/LC_MESSAGES/kpartsaver.mo
 share/locale/he/LC_MESSAGES/kpasswdserver.mo

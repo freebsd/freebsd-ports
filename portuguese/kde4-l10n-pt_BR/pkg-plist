@@ -1,3 +1,4 @@
+share/apps/katepart/syntax/logohighlightstyle.pt_BR.xml
 share/apps/khangman/pt_BR.txt
 share/apps/klettres/pt_BR/alpha/a.ogg
 share/apps/klettres/pt_BR/alpha/b.ogg
@@ -102,6 +103,18 @@ share/apps/klettres/pt_BR/syllab/ze.ogg
 share/apps/klettres/pt_BR/syllab/zi.ogg
 share/apps/klettres/pt_BR/syllab/zo.ogg
 share/apps/klettres/pt_BR/syllab/zu.ogg
+share/apps/kturtle/data/logokeywords.pt_BR.xml
+share/apps/kturtle/examples/pt_BR/comercial.logo
+share/apps/kturtle/examples/pt_BR/coresdefundo.logo
+share/apps/kturtle/examples/pt_BR/enrolado.logo
+share/apps/kturtle/examples/pt_BR/flores.logo
+share/apps/kturtle/examples/pt_BR/multiplicacao.logo
+share/apps/kturtle/examples/pt_BR/nomealeatorio.logo
+share/apps/kturtle/examples/pt_BR/quadrado.logo
+share/apps/kturtle/examples/pt_BR/quadradosss.logo
+share/apps/kturtle/examples/pt_BR/seta.logo
+share/apps/kturtle/examples/pt_BR/triangulo.logo
+share/apps/kturtle/examples/pt_BR/triangulosss.logo
 share/apps/kvtml/pt_BR/animals.kvtml
 share/apps/kvtml/pt_BR/easy.kvtml
 share/apps/kvtml/pt_BR/hard.kvtml
@@ -380,6 +393,9 @@ share/doc/HTML/pt_BR/kdesu/common
 share/doc/HTML/pt_BR/kdesu/index.cache.bz2
 share/doc/HTML/pt_BR/kdesu/index.docbook
 share/doc/HTML/pt_BR/kdesu/man-kdesu.1.docbook
+share/doc/HTML/pt_BR/kdesvn-build/common
+share/doc/HTML/pt_BR/kdesvn-build/index.cache.bz2
+share/doc/HTML/pt_BR/kdesvn-build/index.docbook
 share/doc/HTML/pt_BR/kdf/common
 share/doc/HTML/pt_BR/kdf/index.cache.bz2
 share/doc/HTML/pt_BR/kdf/index.docbook
@@ -802,9 +818,6 @@ share/doc/HTML/pt_BR/korganizer/index.cache.bz2
 share/doc/HTML/pt_BR/korganizer/index.docbook
 share/doc/HTML/pt_BR/korganizer/outlook-to-vcalendar.docbook
 share/doc/HTML/pt_BR/korganizer/plugins-chapter.docbook
-share/doc/HTML/pt_BR/korn/common
-share/doc/HTML/pt_BR/korn/index.cache.bz2
-share/doc/HTML/pt_BR/korn/index.docbook
 share/doc/HTML/pt_BR/kpackage/common
 share/doc/HTML/pt_BR/kpackage/index.cache.bz2
 share/doc/HTML/pt_BR/kpackage/index.docbook
@@ -1350,7 +1363,6 @@ share/locale/pt_BR/LC_MESSAGES/kio_zeroconf.mo
 share/locale/pt_BR/LC_MESSAGES/kioclient.mo
 share/locale/pt_BR/LC_MESSAGES/kioexec.mo
 share/locale/pt_BR/LC_MESSAGES/kiriki.mo
-share/locale/pt_BR/LC_MESSAGES/kitchensync.mo
 share/locale/pt_BR/LC_MESSAGES/kiten.mo
 share/locale/pt_BR/LC_MESSAGES/kjots.mo
 share/locale/pt_BR/LC_MESSAGES/kjumpingcube.mo
@@ -1371,8 +1383,6 @@ share/locale/pt_BR/LC_MESSAGES/kmenuedit.mo
 share/locale/pt_BR/LC_MESSAGES/kmimetypefinder.mo
 share/locale/pt_BR/LC_MESSAGES/kmines.mo
 share/locale/pt_BR/LC_MESSAGES/kmix.mo
-share/locale/pt_BR/LC_MESSAGES/kmobiletools.mo
-share/locale/pt_BR/LC_MESSAGES/kmobiletools_at_engine.mo
 share/locale/pt_BR/LC_MESSAGES/kmousetool.mo
 share/locale/pt_BR/LC_MESSAGES/kmouth.mo
 share/locale/pt_BR/LC_MESSAGES/kmplot.mo
@@ -1396,7 +1406,6 @@ share/locale/pt_BR/LC_MESSAGES/kontact.mo
 share/locale/pt_BR/LC_MESSAGES/kontactinterfaces.mo
 share/locale/pt_BR/LC_MESSAGES/kopete.mo
 share/locale/pt_BR/LC_MESSAGES/korganizer.mo
-share/locale/pt_BR/LC_MESSAGES/korn.mo
 share/locale/pt_BR/LC_MESSAGES/kpackage.mo
 share/locale/pt_BR/LC_MESSAGES/kpartloader.mo
 share/locale/pt_BR/LC_MESSAGES/kpartsaver.mo
@@ -1684,7 +1693,6 @@ share/locale/pt_BR/entry.desktop
 @dirrm share/doc/HTML/pt_BR/kpercentage
 @dirrm share/doc/HTML/pt_BR/kpat
 @dirrm share/doc/HTML/pt_BR/kpackage
-@dirrm share/doc/HTML/pt_BR/korn
 @dirrm share/doc/HTML/pt_BR/korganizer
 @dirrm share/doc/HTML/pt_BR/kopete
 @dirrm share/doc/HTML/pt_BR/kontact
@@ -1775,6 +1783,7 @@ share/locale/pt_BR/entry.desktop
 @dirrm share/doc/HTML/pt_BR/kedit
 @dirrm share/doc/HTML/pt_BR/kdm
 @dirrm share/doc/HTML/pt_BR/kdf
+@dirrm share/doc/HTML/pt_BR/kdesvn-build
 @dirrm share/doc/HTML/pt_BR/kdesu
 @dirrm share/doc/HTML/pt_BR/kdepasswd
 @dirrm share/doc/HTML/pt_BR/kdebugdialog
@@ -1862,11 +1871,17 @@ share/locale/pt_BR/entry.desktop
 @dirrm share/doc/HTML/pt_BR/amor
 @dirrm share/apps/kvtml/pt_BR
 @dirrm share/apps/kvtml
+@dirrm share/apps/kturtle/examples/pt_BR
+@dirrm share/apps/kturtle/examples
+@dirrm share/apps/kturtle/data
+@dirrm share/apps/kturtle
 @dirrm share/apps/klettres/pt_BR/syllab
 @dirrm share/apps/klettres/pt_BR/alpha
 @dirrm share/apps/klettres/pt_BR
 @dirrm share/apps/klettres
 @dirrm share/apps/khangman
+@dirrm share/apps/katepart/syntax
+@dirrm share/apps/katepart
 @dirrmtry man/pt_BR/man8
 @dirrmtry man/pt_BR/man7
 @dirrmtry man/pt_BR/man6

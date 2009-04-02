@@ -1,3 +1,4 @@
+share/apps/katepart/syntax/logohighlightstyle.sl.xml
 share/apps/khangman/sl.txt
 share/apps/ktuberling/sounds/sl.soundtheme
 share/apps/ktuberling/sounds/sl/cigara.wav
@@ -19,6 +20,11 @@ share/apps/ktuberling/sounds/sl/uho.wav
 share/apps/ktuberling/sounds/sl/ura.wav
 share/apps/ktuberling/sounds/sl/usta.wav
 share/apps/ktuberling/sounds/sl/znacka.wav
+share/apps/kturtle/data/logokeywords.sl.xml
+share/apps/kturtle/examples/sl/curly.logo
+share/apps/kturtle/examples/sl/example1.logo
+share/apps/kturtle/examples/sl/square.logo
+share/apps/kturtle/examples/sl/triangle.logo
 share/apps/kvtml/sl/animals.kvtml
 share/apps/kvtml/sl/clothing.kvtml
 share/apps/kvtml/sl/computers.kvtml
@@ -362,7 +368,6 @@ share/locale/sl/LC_MESSAGES/kio_zeroconf.mo
 share/locale/sl/LC_MESSAGES/kioclient.mo
 share/locale/sl/LC_MESSAGES/kioexec.mo
 share/locale/sl/LC_MESSAGES/kiriki.mo
-share/locale/sl/LC_MESSAGES/kitchensync.mo
 share/locale/sl/LC_MESSAGES/kiten.mo
 share/locale/sl/LC_MESSAGES/kjots.mo
 share/locale/sl/LC_MESSAGES/kjumpingcube.mo
@@ -383,8 +388,6 @@ share/locale/sl/LC_MESSAGES/kmenuedit.mo
 share/locale/sl/LC_MESSAGES/kmimetypefinder.mo
 share/locale/sl/LC_MESSAGES/kmines.mo
 share/locale/sl/LC_MESSAGES/kmix.mo
-share/locale/sl/LC_MESSAGES/kmobiletools.mo
-share/locale/sl/LC_MESSAGES/kmobiletools_at_engine.mo
 share/locale/sl/LC_MESSAGES/kmousetool.mo
 share/locale/sl/LC_MESSAGES/kmouth.mo
 share/locale/sl/LC_MESSAGES/kmplot.mo
@@ -407,7 +410,6 @@ share/locale/sl/LC_MESSAGES/kontact.mo
 share/locale/sl/LC_MESSAGES/kontactinterfaces.mo
 share/locale/sl/LC_MESSAGES/kopete.mo
 share/locale/sl/LC_MESSAGES/korganizer.mo
-share/locale/sl/LC_MESSAGES/korn.mo
 share/locale/sl/LC_MESSAGES/kpackage.mo
 share/locale/sl/LC_MESSAGES/kpartsaver.mo
 share/locale/sl/LC_MESSAGES/kpasswdserver.mo
@@ -565,6 +567,7 @@ share/locale/sl/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/sl/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_kolourpicker.mo
@@ -663,7 +666,13 @@ share/locale/sl/entry.desktop
 @dirrm share/doc/HTML/sl/kaddressbook
 @dirrm share/apps/kvtml/sl
 @dirrm share/apps/kvtml
+@dirrm share/apps/kturtle/examples/sl
+@dirrm share/apps/kturtle/examples
+@dirrm share/apps/kturtle/data
+@dirrm share/apps/kturtle
 @dirrm share/apps/ktuberling/sounds/sl
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
 @dirrm share/apps/khangman
+@dirrm share/apps/katepart/syntax
+@dirrm share/apps/katepart

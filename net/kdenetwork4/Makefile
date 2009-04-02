@@ -6,7 +6,6 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	net kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -38,6 +37,7 @@ USE_SQLITE=	yes
 QT_COMPONENTS=	corelib opengl dbus qt3support gui network xml porting_build \
 		qmake_build moc_build rcc_build uic_build uic3_build
 USE_OPENSSL=	yes
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	XMMS "Enable XMMS Kopete nowlistening plugin" off
 

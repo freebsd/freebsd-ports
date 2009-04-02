@@ -6,7 +6,6 @@
 
 PORTNAME=	kdetoys
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-clocks kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -22,6 +21,7 @@ USE_KDE4=	kdelibs workspace kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	opengl gui qmake_build moc_build rcc_build uic_build
+MAKE_JOBS_SAFE=	yes
 
 MAN6=	amor.6
 

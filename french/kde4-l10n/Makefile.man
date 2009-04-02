@@ -24,6 +24,7 @@ MAN1=	adddebug.1 \
 	kmousetool.1 \
 	kmouth.1 \
 	kmplot.1 \
+	ktouch.1 \
 	kworldclock.1 \
 	po2xml.1 \
 	preparetips.1 \
