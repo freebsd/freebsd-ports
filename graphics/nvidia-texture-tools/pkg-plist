@@ -6,8 +6,8 @@ bin/nvdecompress
 bin/nvimgdiff
 bin/nvzoom
 include/nvtt/nvtt.h
-lib/libnvcore.a
-lib/libnvimage.a
-lib/libnvmath.a
-lib/libnvtt.a
+lib/libnvcore.so
+lib/libnvimage.so
+lib/libnvmath.so
+lib/libnvtt.so
 @dirrm include/nvtt
