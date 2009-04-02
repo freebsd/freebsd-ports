@@ -192,6 +192,7 @@
 %%HORDIR%%/pref_api.php
 %%HORDIR%%/scripts/.htaccess
 %%HORDIR%%/scripts/import_icals.php
+%%HORDIR%%/scripts/import_squirrelmail_calendar.php
 %%HORDIR%%/scripts/migrate_to_sql_driver.php
 %%HORDIR%%/scripts/reminders.php
 %%HORDIR%%/scripts/sql/kronolith.mssql.sql
@@ -206,6 +207,7 @@
 %%HORDIR%%/scripts/upgrades/2.1_to_2.2.pgsql.sql
 %%HORDIR%%/scripts/upgrades/2.1_to_2.2.sql
 %%HORDIR%%/scripts/upgrades/2.2_to_2.3.oci8.sql
+%%HORDIR%%/scripts/upgrades/2.2_to_2.3.pgsql.sql
 %%HORDIR%%/scripts/upgrades/2.2_to_2.3.sql
 %%HORDIR%%/scripts/upgrades/2006-08-20_fix_recur_int_fields.mysql.sql
 %%HORDIR%%/scripts/upgrades/2008-09-23_fix_group_uid.sql
@@ -326,6 +328,8 @@
 %%HORDIR%%/themes/silver/graphics/new_big.png
 %%HORDIR%%/themes/silver/graphics/new_small.png
 %%HORDIR%%/themes/silver/graphics/plus.png
+%%HORDIR%%/themes/silver/graphics/private-000.png
+%%HORDIR%%/themes/silver/graphics/private-fff.png
 %%HORDIR%%/themes/silver/graphics/recur-000.png
 %%HORDIR%%/themes/silver/graphics/recur-fff.png
 %%HORDIR%%/themes/silver/graphics/search.png
@@ -359,6 +363,8 @@
 %%HORDIR%%/themes/tango-blue/graphics/new_big.png
 %%HORDIR%%/themes/tango-blue/graphics/new_small.png
 %%HORDIR%%/themes/tango-blue/graphics/plus.png
+%%HORDIR%%/themes/tango-blue/graphics/private-000.png
+%%HORDIR%%/themes/tango-blue/graphics/private-fff.png
 %%HORDIR%%/themes/tango-blue/graphics/recur-000.png
 %%HORDIR%%/themes/tango-blue/graphics/recur-fff.png
 %%HORDIR%%/themes/tango-blue/graphics/search.png
