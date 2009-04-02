@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-FireEagle
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Access Yahoo's FireEagle location service
 
-RUN_DEPENDS=	p5-Net-OAuth>=0.06:${PORTSDIR}/net/p5-Net-OAuth \
+RUN_DEPENDS=	p5-Net-OAuth-Simple>=1.0:${PORTSDIR}/net/p5-Net-OAuth-Simple \
 		p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
 		p5-Test-Simple>=0.74:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-JSON-Any>=1.15:${PORTSDIR}/converters/p5-JSON-Any \
