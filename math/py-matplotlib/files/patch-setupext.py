@@ -25,9 +25,9 @@
 -        module.include_dirs.extend([tcl_inc, tk_inc])
 -        module.library_dirs.extend([tcl_lib, tk_lib])
 -        module.libraries.extend(['tk' + tk_ver, 'tcl' + tk_ver])
-+        module.include_dirs.extend(["/usr/local/include/tcl8.4", "/usr/local/include/tk8.4"])
++        module.include_dirs.extend(["/usr/local/include/tcl8.5", "/usr/local/include/tk8.5"])
 +        module.library_dirs.extend(["%%TCL_LIBDIR%%", "%%TK_LIBDIR%%"])
-+        module.libraries.extend(['tk84', 'tcl84'])
++        module.libraries.extend(['tk85', 'tcl85'])
  
      return message
  
