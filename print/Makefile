@@ -12,6 +12,7 @@
     SUBDIR += abntex
     SUBDIR += acrobatviewer
     SUBDIR += acroread8
+    SUBDIR += acroread9
     SUBDIR += acroreadwrapper
     SUBDIR += adobe-cmaps
     SUBDIR += advi
