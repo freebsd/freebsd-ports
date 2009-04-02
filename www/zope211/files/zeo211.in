@@ -26,8 +26,8 @@
 name="zeo211"
 rcvar=`set_rcvar`
 
-zeo210ctl () {
-    for instance in $zeo210_instances; do
+zeo211ctl () {
+    for instance in $zeo211_instances; do
 	if [ -d ${instance} ]; then
 	    echo -n "  Zeo instance ${instance} -> "
 	    ${instance}/bin/zeoctl "$1"
@@ -37,17 +37,17 @@ zeo210ctl () {
 
 zeo211_start () {
     echo "Starting Zeo 2.11:"
-    zeo210ctl "start"
+    zeo211ctl "start"
 }
 
 zeo211_stop () {
     echo "Stopping Zeo 2.11:"
-    zeo210ctl "stop"
+    zeo211ctl "stop"
 }
 
 zeo211_restart () {
     echo "Restarting Zeo 2.11:"
-    zeo210ctl "restart"
+    zeo211ctl "restart"
 }
 
   start_cmd="zeo211_start"

@@ -17,34 +17,23 @@ when the package is deinstalled. You`ll have to delete them yourself.
 If Zope should get started automatically when the system starts, 
 please add the following lines to /etc/rc.conf
 
-zope210_enable="YES"
-zope210_instances="<INSTANCEDIR>" 
+zope211_enable="YES"
+zope211_instances="<INSTANCEDIR>" 
 
-Additional zope Instances have to be added to zope210_instances 
+Additional zope Instances have to be added to zope211_instances 
 seperated by a space. 
 
 ** ZEO Instances ** (Optional) 
 ** Please refere to http://zope.org/Products/ZEO/ZEOFactSheet  
 
 If you want to run a ZEO server please create a ZEO instancen by 
-calling %%ZOPEBASEDIR%%/bin/mkzopeinstance.py <ZEODIR>
+calling %%ZOPEBASEDIR%%/bin/mkzeoinstance.py <ZEODIR>
 
 To start the ZEO Server at System startup add the following lines to 
 /etc/rc.conf
 
-zeo210_enable="YES"
-zeo210_instances="<ZEODIR>"
+zeo211_enable="YES"
+zeo211_instances="<ZEODIR>"
 
-Additional zeo Instances have to be added to zeo210_instances seperated 
+Additional zeo Instances have to be added to zeo211_instances seperated 
 by a space. 
-
-**********************************************************************
-****** ATTENTION ***** ATTENTION ***** ATTENTION ***** ATTENTION *****
-
-The default installation directory for Zope Products has changed from 
-%%ZOPEBASEDIR%%/lib/python/Products 
-to %%ZOPEBASEDIR%%/Products. 
-
-You might have to add the following lines to your zope.conf 
-products %%ZOPEBASEDIR%%/Products
-products $INSTANCE/Products

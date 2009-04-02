@@ -5,10 +5,10 @@ Zope instance successfully installed
 If Zope should get started automatically when the system starts, 
 please add the following lines to /etc/rc.conf
 
-zope210_enable="YES"
-zope210_instances="%%ZOPEINSTANCEDIR%%" 
+zope211_enable="YES"
+zope211_instances="%%ZOPEINSTANCEDIR%%" 
 
-If there is already a zope210_instances entry please add 
+If there is already a zope211_instances entry please add 
 %%ZOPEINSTANCEDIR%% separated by a space. 
 
 Don`t forget to create %%ZOPEINSTANCEDIR%%/etc/zope.conf before 
