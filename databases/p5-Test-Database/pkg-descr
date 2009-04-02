@@ -1,0 +1,9 @@
+There's plenty of modules which need a database, and they all have
+to be configured differently and they're always a PITA when you first
+install and each and every time they upgrade.
+
+Test::Database provides a simple way for test authors to request
+a test database, without worrying about environment variables or the
+test host configuration.
+
+WWW: http://search.cpan.org/dist/Test-Database/
