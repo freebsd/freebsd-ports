@@ -9,7 +9,8 @@ PORTNAME=	libmusicbrainz
 PORTVERSION=	2.1.5
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
-    		http://uk.musicbrainz.org/pub/musicbrainz/
+    		http://uk.musicbrainz.org/pub/musicbrainz/ \
+		http://ftp.osuosl.org/pub/musicbrainz/
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	2nd generation incarnation of the CD Index - audio metadata
@@ -23,7 +24,10 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
+
+PORTSCOUT=	limit:^2\.
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
