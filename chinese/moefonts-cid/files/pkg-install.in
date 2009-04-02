@@ -3,7 +3,7 @@
 
 GSVER=`gs --version`
 GSDIR=%%PREFIX%%/share/ghostscript
-FONTMAP=${GSDIR}/${GSVER}/lib/Fontmap.GS
+FONTMAP=${GSDIR}/${GSVER}/Resource/Init/Fontmap.GS
 
 # Run just once.
 if [ "x$2" != "xPOST-INSTALL" ]; then
