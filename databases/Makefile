@@ -374,6 +374,7 @@
     SUBDIR += p5-T2
     SUBDIR += p5-Tangram
     SUBDIR += p5-Template-DBI
+    SUBDIR += p5-Test-Database
     SUBDIR += p5-Test-DatabaseRow
     SUBDIR += p5-Text-Query-SQL
     SUBDIR += p5-Tie-DBI
