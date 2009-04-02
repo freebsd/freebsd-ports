@@ -57,6 +57,10 @@ BROKEN=		needs posix_memalign()
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 .endif
 
+.if ${ARCH} == "amd64"
+BROKEN=		does not compile
+.endif
+
 .if defined(WITH_VST)
 # Yes, 'PlugIns' is not a typo.
 VST_DIST+=	vst_sdk2_3.zip
