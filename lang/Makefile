@@ -342,6 +342,7 @@
     SUBDIR += tclX
     SUBDIR += tcltutor
     SUBDIR += tinycobol
+    SUBDIR += tinypy
     SUBDIR += tolua
     SUBDIR += tolua++
     SUBDIR += tolua++50
