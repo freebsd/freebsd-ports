@@ -7,7 +7,7 @@
 
 PORTNAME=	nvidia-texture-tools
 PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -21,6 +21,11 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 USE_CMAKE=	yes
 CMAKE_USE_PTHREAD=yes
+CMAKE_ARGS=	-DNVTT_SHARED=TRUE
+MAKE_JOBS_SAFE=	yes
+
+CFLAGS+=	-fPIC
+CXXFLAGS+=	-fPIC
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -53,8 +58,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*Qt4/ d' \
 		${WRKSRC}/src/CMakeLists.txt
 .endif
-	@${FIND} ${WRKSRC} -name CMakeLists.txt -print0 | ${XARGS} -0 \
-		${REINPLACE_CMD} -e '/ARCHIVE/ s|/static||'
 
 .if !defined(NOPORTDOCS)
 post-install:
