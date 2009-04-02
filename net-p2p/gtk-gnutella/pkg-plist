@@ -16,6 +16,7 @@ share/applications/gtk-gnutella.desktop
 %%DATADIR%%/pixmaps/booksha.xpm
 %%DATADIR%%/pixmaps/bookshav.xpm
 %%DATADIR%%/pixmaps/booktth.xpm
+%%DATADIR%%/pixmaps/booktthv.xpm
 %%DATADIR%%/pixmaps/chip.xpm
 %%DATADIR%%/pixmaps/clanbomber_red.xpm
 %%DATADIR%%/pixmaps/clanbomber_yellow.xpm

@@ -43,10 +43,9 @@
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	0.96.5
+PORTVERSION=	0.96.6
 CATEGORIES=	net-p2p ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	jonas@schiebtsich.net
 COMMENT=	GTK based Gnutella client
@@ -54,6 +53,7 @@ COMMENT=	GTK based Gnutella client
 USE_PERL5=	yes
 USE_BZIP2=	yes
 USE_BISON=	build
+MAKE_JOBS_SAFE=	yes
 USE_GNOME=	libxml2 glib20
 INSTALL_TARGET=	install install.man
 HAS_CONFIGURE=	yes
