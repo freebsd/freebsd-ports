@@ -11,7 +11,7 @@ CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://dockapps.org/files/15/22/
 DISTNAME=	wmSpaceWeather-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A DockApp that shows the weather at geosynchronous orbit
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmSpaceWeather
