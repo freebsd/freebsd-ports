@@ -9,7 +9,7 @@ PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
-MASTER_SITE_SUBDIR=     emacs/pretest
+MASTER_SITE_SUBDIR=	emacs/pretest
 
 MAINTAINER=	keramida@ceid.upatras.gr
 COMMENT=	GNU editing macros
@@ -33,7 +33,7 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* \
 
 INSTALLS_ICONS=	yes
 
-EMACS_VER=	23.0.91
+EMACS_VER=	23.0.92
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	bootstrap
@@ -68,7 +68,7 @@ PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET}
 
 MAKE_ENV=	LC_ALL=C
 
-INFO=		ada-mode autotype calc ccmode cl dbus dired-x \
+INFO=		ada-mode auth autotype calc ccmode cl dbus dired-x \
 		ebrowse ediff efaq eintr elisp emacs-mime emacs epa \
 		erc eshell eudc flymake forms gnus idlwave info \
 		mairix-el message mh-e newsticker nxml-mode \
