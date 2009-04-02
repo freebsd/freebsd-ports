@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skk-jisyo
-PORTVERSION=	200707
+PORTVERSION=	200904
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= matusita/${PORTNAME}
@@ -19,7 +19,7 @@ MAINTAINER?=	matusita@FreeBSD.org
 COMMENT?=	Jisyo (dictionary) files for the SKK Japanese-input software
 
 .if defined(WITH_SKKJISYO_CDB)
-BUILD_DEPENDS=	${LOCALBASE}/bin/cdbmake:${PORTSDIR}/databases/cdb
+BUILD_DEPENDS=	${LOCALBASE}/bin/cdb:${PORTSDIR}/databases/tinycdb
 .endif
 
 SKKDIR?=	share/skk
@@ -65,18 +65,16 @@ do-patch:
 # See also: <URL:http://cr.yp.to/cdb/cdbmake.html>.
 do-build:
 .for type in ${SKK_JISYO_TYPE}
-	${AWK} '/^[^;]/ { \
-			k = $$1; didx = index($$0, $$2); \
-			d = substr($$0, didx); \
-			print "+" length(k) "," length(d) ":" k "->" d; \
+	LC_ALL=C ${AWK} '/^[^;]/ { \
+			s = substr($$0, index($$0, " ") + 1); \
+			print "+" length($$1) "," length(s) ":" $$1 "->" s; \
 		} \
 		END { \
 			print ""; \
 		}' \
 		< ${WRKDIR}/SKK-JISYO.${type}.${PORTVERSION} | \
-	${LOCALBASE}/bin/cdbmake \
-		${WRKDIR}/SKK-JISYO.${type}.${PORTVERSION}${CDBSUFFIX} \
-		${WRKDIR}/SKK-JISYO.${type}.${PORTVERSION}.tmp
+	${LOCALBASE}/bin/cdb -c -t - \
+		${WRKDIR}/SKK-JISYO.${type}.${PORTVERSION}${CDBSUFFIX}
 .endfor
 .endif
 
