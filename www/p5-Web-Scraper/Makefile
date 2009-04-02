@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Web-Scraper
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,7 +27,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar
 		${SITE_PERL}/XML/XPathEngine.pm:${PORTSDIR}/textproc/p5-XML-XPathEngine \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=		Web::Scraper.3 Web::Scraper::Filter.3
 
