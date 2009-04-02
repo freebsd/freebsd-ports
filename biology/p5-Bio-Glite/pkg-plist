@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Glite/.packlist
+%%SITE_PERL%%/Bio/Glite.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Glite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio
+@dirrmtry %%SITE_PERL%%/Bio

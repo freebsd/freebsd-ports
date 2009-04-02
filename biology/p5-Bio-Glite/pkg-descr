@@ -1,0 +1,18 @@
+Bio::Glite is an interface to G-language Genome Analysis Environment
+through its REST web service (http://www.g-language.org). This module
+allows almost everything G-language GAE can do, without installing
+all necessary tookits and modules.
+
+Advantage of this module over the standard installation of
+G-language GAE package is:
+   1. Easy installation from CPAN
+   2. Extremely light-weight (less than 1000 lines of code)
+   3. Does not require much CPU/RAM (all calculation is done on
+the cloud)
+
+Disadvantages includes:
+   1. Slower analysis speed
+   2. Internet connection is required
+   3. No other software interfaces such as the G-language Shell
+
+WWW: http://search.cpan.org/dist/Bio-Glite/
