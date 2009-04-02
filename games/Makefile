@@ -984,6 +984,7 @@
     SUBDIR += xoids
     SUBDIR += xoj
     SUBDIR += xonix
+    SUBDIR += xorgramana
     SUBDIR += xosmulti
     SUBDIR += xpacman
     SUBDIR += xpanex
