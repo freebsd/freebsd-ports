@@ -3,10 +3,10 @@ include/libconfig.h++
 lib/libconfig.a
 lib/libconfig.la
 lib/libconfig.so
-lib/libconfig.so.7
+lib/libconfig.so.8
 lib/libconfig++.a
 lib/libconfig++.la
 lib/libconfig++.so
-lib/libconfig++.so.7
+lib/libconfig++.so.8
 libdata/pkgconfig/libconfig.pc
 libdata/pkgconfig/libconfig++.pc
