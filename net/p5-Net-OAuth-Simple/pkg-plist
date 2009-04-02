@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Net/OAuth/Simple.pm
+@dirrmtry %%SITE_PERL%%/Net/OAuth
+@dirrmtry %%SITE_PERL%%/Net
