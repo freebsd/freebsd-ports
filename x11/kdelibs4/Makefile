@@ -8,7 +8,6 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -61,6 +60,7 @@ QT_COMPONENTS=	corelib dbus gui network opengl qt3support \
 		assistant svg qdbusviewer makeqpf imageformats \
 		qmake_build moc_build rcc_build uic_build
 USE_GNOME=	libxml2 libxslt
+MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS+=	-DWITH_FAM:BOOL=Off \
 		-DKDE4_PREFIX:String=${KDE4_PREFIX}

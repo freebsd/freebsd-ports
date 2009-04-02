@@ -1,3 +1,4 @@
+share/apps/katepart/syntax/logohighlightstyle.nb.xml
 share/apps/khangman/nb.txt
 share/apps/klettres/nb/alpha/U0061.ogg
 share/apps/klettres/nb/alpha/U0062.ogg
@@ -29,6 +30,19 @@ share/apps/klettres/nb/alpha/U00E5.ogg
 share/apps/klettres/nb/alpha/U00E6.ogg
 share/apps/klettres/nb/alpha/U00F8.ogg
 share/apps/klettres/nb/sounds.xml
+share/apps/kturtle/data/logokeywords.nb.xml
+share/apps/kturtle/examples/nb/arkfarge.logo
+share/apps/kturtle/examples/nb/blomst.logo
+share/apps/kturtle/examples/nb/gangetabell.logo
+share/apps/kturtle/examples/nb/kde.logo
+share/apps/kturtle/examples/nb/krusedull.logo
+share/apps/kturtle/examples/nb/kvadrat.logo
+share/apps/kturtle/examples/nb/kvadrathjul.logo
+share/apps/kturtle/examples/nb/pil.logo
+share/apps/kturtle/examples/nb/reklame.logo
+share/apps/kturtle/examples/nb/tilfeldige-navn.logo
+share/apps/kturtle/examples/nb/trekant.logo
+share/apps/kturtle/examples/nb/trekanthjul.logo
 share/apps/kvtml/nb/animals.kvtml
 share/apps/kvtml/nb/easy.kvtml
 share/apps/kvtml/nb/hard.kvtml
@@ -365,7 +379,6 @@ share/locale/nb/LC_MESSAGES/kio_zeroconf.mo
 share/locale/nb/LC_MESSAGES/kioclient.mo
 share/locale/nb/LC_MESSAGES/kioexec.mo
 share/locale/nb/LC_MESSAGES/kiriki.mo
-share/locale/nb/LC_MESSAGES/kitchensync.mo
 share/locale/nb/LC_MESSAGES/kiten.mo
 share/locale/nb/LC_MESSAGES/kjots.mo
 share/locale/nb/LC_MESSAGES/kjumpingcube.mo
@@ -386,8 +399,6 @@ share/locale/nb/LC_MESSAGES/kmenuedit.mo
 share/locale/nb/LC_MESSAGES/kmimetypefinder.mo
 share/locale/nb/LC_MESSAGES/kmines.mo
 share/locale/nb/LC_MESSAGES/kmix.mo
-share/locale/nb/LC_MESSAGES/kmobiletools.mo
-share/locale/nb/LC_MESSAGES/kmobiletools_at_engine.mo
 share/locale/nb/LC_MESSAGES/kmousetool.mo
 share/locale/nb/LC_MESSAGES/kmouth.mo
 share/locale/nb/LC_MESSAGES/kmplot.mo
@@ -411,7 +422,6 @@ share/locale/nb/LC_MESSAGES/kontact.mo
 share/locale/nb/LC_MESSAGES/kontactinterfaces.mo
 share/locale/nb/LC_MESSAGES/kopete.mo
 share/locale/nb/LC_MESSAGES/korganizer.mo
-share/locale/nb/LC_MESSAGES/korn.mo
 share/locale/nb/LC_MESSAGES/kpackage.mo
 share/locale/nb/LC_MESSAGES/kpartloader.mo
 share/locale/nb/LC_MESSAGES/kpartsaver.mo
@@ -692,9 +702,15 @@ share/locale/nb/entry.desktop
 @dirrm share/doc/HTML/nb/kcontrol
 @dirrm share/apps/kvtml/nb
 @dirrm share/apps/kvtml
+@dirrm share/apps/kturtle/examples/nb
+@dirrm share/apps/kturtle/examples
+@dirrm share/apps/kturtle/data
+@dirrm share/apps/kturtle
 @dirrm share/apps/klettres/nb/alpha
 @dirrm share/apps/klettres/nb
 @dirrm share/apps/klettres
 @dirrm share/apps/khangman
+@dirrm share/apps/katepart/syntax
+@dirrm share/apps/katepart
 @dirrmtry man/nb/man1
 @dirrmtry man/nb

@@ -267,6 +267,16 @@ share/doc/HTML/es/cervisia/index.docbook
 share/doc/HTML/es/dolphin/common
 share/doc/HTML/es/dolphin/index.cache.bz2
 share/doc/HTML/es/dolphin/index.docbook
+share/doc/HTML/es/gwenview/browse_mode.png
+share/doc/HTML/es/gwenview/common
+share/doc/HTML/es/gwenview/full_screen_mode.png
+share/doc/HTML/es/gwenview/index.cache.bz2
+share/doc/HTML/es/gwenview/index.docbook
+share/doc/HTML/es/gwenview/interface.docbook
+share/doc/HTML/es/gwenview/introduction.docbook
+share/doc/HTML/es/gwenview/keybindings.docbook
+share/doc/HTML/es/gwenview/mouse.docbook
+share/doc/HTML/es/gwenview/view_mode.png
 share/doc/HTML/es/juk/common
 share/doc/HTML/es/juk/index.cache.bz2
 share/doc/HTML/es/juk/index.docbook
@@ -536,6 +546,9 @@ share/doc/HTML/es/kdesu/common
 share/doc/HTML/es/kdesu/index.cache.bz2
 share/doc/HTML/es/kdesu/index.docbook
 share/doc/HTML/es/kdesu/man-kdesu.1.docbook
+share/doc/HTML/es/kdesvn-build/common
+share/doc/HTML/es/kdesvn-build/index.cache.bz2
+share/doc/HTML/es/kdesvn-build/index.docbook
 share/doc/HTML/es/kdf/common
 share/doc/HTML/es/kdf/index.cache.bz2
 share/doc/HTML/es/kdf/index.docbook
@@ -912,9 +925,58 @@ share/doc/HTML/es/kolf/index.docbook
 share/doc/HTML/es/kollision/common
 share/doc/HTML/es/kollision/index.cache.bz2
 share/doc/HTML/es/kollision/index.docbook
+share/doc/HTML/es/kolourpaint/brush_shapes.png
+share/doc/HTML/es/kolourpaint/color_box.png
 share/doc/HTML/es/kolourpaint/common
+share/doc/HTML/es/kolourpaint/eraser_shapes.png
+share/doc/HTML/es/kolourpaint/fcc_std_text.png
+share/doc/HTML/es/kolourpaint/fcc_trans_text.png
+share/doc/HTML/es/kolourpaint/fill_color_similarity.png
+share/doc/HTML/es/kolourpaint/fill_style.png
+share/doc/HTML/es/kolourpaint/image_balance.png
+share/doc/HTML/es/kolourpaint/image_emboss.png
+share/doc/HTML/es/kolourpaint/image_flatten.png
+share/doc/HTML/es/kolourpaint/image_flip.png
+share/doc/HTML/es/kolourpaint/image_invert.png
+share/doc/HTML/es/kolourpaint/image_reduce_colors.png
+share/doc/HTML/es/kolourpaint/image_resize_scale.png
+share/doc/HTML/es/kolourpaint/image_rotate.png
+share/doc/HTML/es/kolourpaint/image_skew.png
+share/doc/HTML/es/kolourpaint/image_soften_sharpen.png
 share/doc/HTML/es/kolourpaint/index.cache.bz2
 share/doc/HTML/es/kolourpaint/index.docbook
+share/doc/HTML/es/kolourpaint/kolourpaint-main.png
+share/doc/HTML/es/kolourpaint/line_width.png
+share/doc/HTML/es/kolourpaint/lines_30_45_deg.png
+share/doc/HTML/es/kolourpaint/lines_30_deg.png
+share/doc/HTML/es/kolourpaint/lines_45_deg.png
+share/doc/HTML/es/kolourpaint/rotate_image_30.png
+share/doc/HTML/es/kolourpaint/rotate_selection_30.png
+share/doc/HTML/es/kolourpaint/selections_opaque_transparent.png
+share/doc/HTML/es/kolourpaint/spraycan_patterns.png
+share/doc/HTML/es/kolourpaint/text_zoom_grid.png
+share/doc/HTML/es/kolourpaint/tool_brush.png
+share/doc/HTML/es/kolourpaint/tool_color_picker.png
+share/doc/HTML/es/kolourpaint/tool_color_washer.png
+share/doc/HTML/es/kolourpaint/tool_curve.png
+share/doc/HTML/es/kolourpaint/tool_ellipse.png
+share/doc/HTML/es/kolourpaint/tool_elliptical_selection.png
+share/doc/HTML/es/kolourpaint/tool_eraser.png
+share/doc/HTML/es/kolourpaint/tool_flood_fill.png
+share/doc/HTML/es/kolourpaint/tool_free_form_selection.png
+share/doc/HTML/es/kolourpaint/tool_line.png
+share/doc/HTML/es/kolourpaint/tool_pen.png
+share/doc/HTML/es/kolourpaint/tool_polygon.png
+share/doc/HTML/es/kolourpaint/tool_polyline.png
+share/doc/HTML/es/kolourpaint/tool_polystar.png
+share/doc/HTML/es/kolourpaint/tool_rect_selection.png
+share/doc/HTML/es/kolourpaint/tool_rectangle.png
+share/doc/HTML/es/kolourpaint/tool_rectangles.png
+share/doc/HTML/es/kolourpaint/tool_rounded_rectangle.png
+share/doc/HTML/es/kolourpaint/tool_selections.png
+share/doc/HTML/es/kolourpaint/tool_spraycan.png
+share/doc/HTML/es/kolourpaint/tool_text.png
+share/doc/HTML/es/kolourpaint/view_thumbnails.png
 share/doc/HTML/es/kommander/basics.docbook
 share/doc/HTML/es/kommander/commands.docbook
 share/doc/HTML/es/kommander/common
@@ -986,9 +1048,6 @@ share/doc/HTML/es/korganizer/index.cache.bz2
 share/doc/HTML/es/korganizer/index.docbook
 share/doc/HTML/es/korganizer/outlook-to-vcalendar.docbook
 share/doc/HTML/es/korganizer/plugins-chapter.docbook
-share/doc/HTML/es/korn/common
-share/doc/HTML/es/korn/index.cache.bz2
-share/doc/HTML/es/korn/index.docbook
 share/doc/HTML/es/kpackage/bsdloc.png
 share/doc/HTML/es/kpackage/common
 share/doc/HTML/es/kpackage/debaptloc.png
@@ -1172,6 +1231,11 @@ share/doc/HTML/es/okteta/index.docbook
 share/doc/HTML/es/okteta/introduction.docbook
 share/doc/HTML/es/okteta/menu.docbook
 share/doc/HTML/es/okteta/tools.docbook
+share/doc/HTML/es/okular/common
+share/doc/HTML/es/okular/configure.png
+share/doc/HTML/es/okular/embedded-files-bar.png
+share/doc/HTML/es/okular/index.cache.bz2
+share/doc/HTML/es/okular/index.docbook
 share/doc/HTML/es/plasma/common
 share/doc/HTML/es/plasma/index.cache.bz2
 share/doc/HTML/es/plasma/index.docbook
@@ -1447,7 +1511,6 @@ share/locale/es/LC_MESSAGES/kio_zeroconf.mo
 share/locale/es/LC_MESSAGES/kioclient.mo
 share/locale/es/LC_MESSAGES/kioexec.mo
 share/locale/es/LC_MESSAGES/kiriki.mo
-share/locale/es/LC_MESSAGES/kitchensync.mo
 share/locale/es/LC_MESSAGES/kiten.mo
 share/locale/es/LC_MESSAGES/kjots.mo
 share/locale/es/LC_MESSAGES/kjumpingcube.mo
@@ -1468,8 +1531,6 @@ share/locale/es/LC_MESSAGES/kmenuedit.mo
 share/locale/es/LC_MESSAGES/kmimetypefinder.mo
 share/locale/es/LC_MESSAGES/kmines.mo
 share/locale/es/LC_MESSAGES/kmix.mo
-share/locale/es/LC_MESSAGES/kmobiletools.mo
-share/locale/es/LC_MESSAGES/kmobiletools_at_engine.mo
 share/locale/es/LC_MESSAGES/kmousetool.mo
 share/locale/es/LC_MESSAGES/kmouth.mo
 share/locale/es/LC_MESSAGES/kmplot.mo
@@ -1493,7 +1554,6 @@ share/locale/es/LC_MESSAGES/kontact.mo
 share/locale/es/LC_MESSAGES/kontactinterfaces.mo
 share/locale/es/LC_MESSAGES/kopete.mo
 share/locale/es/LC_MESSAGES/korganizer.mo
-share/locale/es/LC_MESSAGES/korn.mo
 share/locale/es/LC_MESSAGES/kpackage.mo
 share/locale/es/LC_MESSAGES/kpartloader.mo
 share/locale/es/LC_MESSAGES/kpartsaver.mo
@@ -1646,7 +1706,6 @@ share/locale/es/LC_MESSAGES/plasma-overlay.mo
 share/locale/es/LC_MESSAGES/plasma-shells-common.mo
 share/locale/es/LC_MESSAGES/plasma.mo
 share/locale/es/LC_MESSAGES/plasma_applet_battery.mo
-share/locale/es/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/es/LC_MESSAGES/plasma_applet_bball.mo
 share/locale/es/LC_MESSAGES/plasma_applet_binaryclock.mo
 share/locale/es/LC_MESSAGES/plasma_applet_bluemarble.mo
@@ -1663,6 +1722,7 @@ share/locale/es/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/es/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/es/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/es/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/es/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/es/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/es/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/es/LC_MESSAGES/plasma_applet_kalzium.mo
@@ -1746,6 +1806,7 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/superkaramba
 @dirrm share/doc/HTML/es/sonnet
 @dirrm share/doc/HTML/es/plasma
+@dirrm share/doc/HTML/es/okular
 @dirrm share/doc/HTML/es/okteta
 @dirrm share/doc/HTML/es/lskat
 @dirrm share/doc/HTML/es/lokalize
@@ -1782,7 +1843,6 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kppp
 @dirrm share/doc/HTML/es/kpat
 @dirrm share/doc/HTML/es/kpackage
-@dirrm share/doc/HTML/es/korn
 @dirrm share/doc/HTML/es/korganizer
 @dirrm share/doc/HTML/es/kopete
 @dirrm share/doc/HTML/es/kontact
@@ -1863,6 +1923,7 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kdm
 @dirrm share/doc/HTML/es/kdiamond
 @dirrm share/doc/HTML/es/kdf
+@dirrm share/doc/HTML/es/kdesvn-build
 @dirrm share/doc/HTML/es/kdesu
 @dirrm share/doc/HTML/es/kdepasswd
 @dirrm share/doc/HTML/es/kdebugdialog
@@ -1939,6 +2000,7 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kalarm
 @dirrm share/doc/HTML/es/kaddressbook
 @dirrm share/doc/HTML/es/juk
+@dirrm share/doc/HTML/es/gwenview
 @dirrm share/doc/HTML/es/dolphin
 @dirrm share/doc/HTML/es/cervisia
 @dirrm share/doc/HTML/es/bovo

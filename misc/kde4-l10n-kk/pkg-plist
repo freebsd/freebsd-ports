@@ -186,7 +186,6 @@ share/locale/kk/LC_MESSAGES/kio_trash.mo
 share/locale/kk/LC_MESSAGES/kio_zeroconf.mo
 share/locale/kk/LC_MESSAGES/kioclient.mo
 share/locale/kk/LC_MESSAGES/kioexec.mo
-share/locale/kk/LC_MESSAGES/kitchensync.mo
 share/locale/kk/LC_MESSAGES/kjots.mo
 share/locale/kk/LC_MESSAGES/kleopatra.mo
 share/locale/kk/LC_MESSAGES/klipper.mo
@@ -210,7 +209,6 @@ share/locale/kk/LC_MESSAGES/konsolekalendar.mo
 share/locale/kk/LC_MESSAGES/kontact.mo
 share/locale/kk/LC_MESSAGES/kopete.mo
 share/locale/kk/LC_MESSAGES/korganizer.mo
-share/locale/kk/LC_MESSAGES/korn.mo
 share/locale/kk/LC_MESSAGES/kpackage.mo
 share/locale/kk/LC_MESSAGES/kpasswdserver.mo
 share/locale/kk/LC_MESSAGES/kpilot.mo

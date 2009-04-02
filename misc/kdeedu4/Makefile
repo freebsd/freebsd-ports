@@ -6,7 +6,6 @@
 
 PORTNAME=	kdeedu
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -34,6 +33,7 @@ QT_COMPONENTS=	gui svg qmake_build moc_build rcc_build uic_build
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
 USE_PYTHON=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		kalzium.1 \
 		kbruch.1 \

@@ -6,7 +6,6 @@
 
 PORTNAME=	kdeartwork
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -25,6 +24,7 @@ KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	opengl gui svg qt3support \
 		qmake_build moc_build rcc_build uic_build
+MAKE_JOBS_SAFE=	yes
 
 PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

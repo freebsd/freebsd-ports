@@ -8,7 +8,6 @@
 
 PORTNAME=	kdebase-runtime
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -24,6 +23,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib opengl dbus \
 		qmake_build moc_build rcc_build uic_build
 USE_GETTEXT=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=  kdesu.1
 

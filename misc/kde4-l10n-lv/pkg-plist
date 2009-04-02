@@ -233,7 +233,6 @@ share/locale/lv/LC_MESSAGES/kio_zeroconf.mo
 share/locale/lv/LC_MESSAGES/kioclient.mo
 share/locale/lv/LC_MESSAGES/kioexec.mo
 share/locale/lv/LC_MESSAGES/kiriki.mo
-share/locale/lv/LC_MESSAGES/kitchensync.mo
 share/locale/lv/LC_MESSAGES/kiten.mo
 share/locale/lv/LC_MESSAGES/kjots.mo
 share/locale/lv/LC_MESSAGES/kjumpingcube.mo
@@ -253,7 +252,6 @@ share/locale/lv/LC_MESSAGES/kmenuedit.mo
 share/locale/lv/LC_MESSAGES/kmimetypefinder.mo
 share/locale/lv/LC_MESSAGES/kmines.mo
 share/locale/lv/LC_MESSAGES/kmix.mo
-share/locale/lv/LC_MESSAGES/kmobiletools_at_engine.mo
 share/locale/lv/LC_MESSAGES/kmousetool.mo
 share/locale/lv/LC_MESSAGES/kmouth.mo
 share/locale/lv/LC_MESSAGES/kmplot.mo
@@ -274,7 +272,6 @@ share/locale/lv/LC_MESSAGES/konsole.mo
 share/locale/lv/LC_MESSAGES/kontact.mo
 share/locale/lv/LC_MESSAGES/kontactinterfaces.mo
 share/locale/lv/LC_MESSAGES/korganizer.mo
-share/locale/lv/LC_MESSAGES/korn.mo
 share/locale/lv/LC_MESSAGES/kpackage.mo
 share/locale/lv/LC_MESSAGES/kpartloader.mo
 share/locale/lv/LC_MESSAGES/kpartsaver.mo

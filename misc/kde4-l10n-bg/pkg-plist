@@ -183,7 +183,6 @@ share/locale/bg/LC_MESSAGES/kio_thumbnail.mo
 share/locale/bg/LC_MESSAGES/kio_trash.mo
 share/locale/bg/LC_MESSAGES/kio_zeroconf.mo
 share/locale/bg/LC_MESSAGES/kioexec.mo
-share/locale/bg/LC_MESSAGES/kitchensync.mo
 share/locale/bg/LC_MESSAGES/kiten.mo
 share/locale/bg/LC_MESSAGES/kjots.mo
 share/locale/bg/LC_MESSAGES/kjumpingcube.mo
@@ -204,7 +203,6 @@ share/locale/bg/LC_MESSAGES/kmenuedit.mo
 share/locale/bg/LC_MESSAGES/kmimetypefinder.mo
 share/locale/bg/LC_MESSAGES/kmines.mo
 share/locale/bg/LC_MESSAGES/kmix.mo
-share/locale/bg/LC_MESSAGES/kmobiletools.mo
 share/locale/bg/LC_MESSAGES/kmousetool.mo
 share/locale/bg/LC_MESSAGES/kmouth.mo
 share/locale/bg/LC_MESSAGES/kmplot.mo
@@ -224,7 +222,6 @@ share/locale/bg/LC_MESSAGES/konsolekalendar.mo
 share/locale/bg/LC_MESSAGES/kontact.mo
 share/locale/bg/LC_MESSAGES/kopete.mo
 share/locale/bg/LC_MESSAGES/korganizer.mo
-share/locale/bg/LC_MESSAGES/korn.mo
 share/locale/bg/LC_MESSAGES/kpackage.mo
 share/locale/bg/LC_MESSAGES/kpartsaver.mo
 share/locale/bg/LC_MESSAGES/kpat.mo

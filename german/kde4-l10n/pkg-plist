@@ -599,6 +599,9 @@ share/doc/HTML/de/kdesu/common
 share/doc/HTML/de/kdesu/index.cache.bz2
 share/doc/HTML/de/kdesu/index.docbook
 share/doc/HTML/de/kdesu/man-kdesu.1.docbook
+share/doc/HTML/de/kdesvn-build/common
+share/doc/HTML/de/kdesvn-build/index.cache.bz2
+share/doc/HTML/de/kdesvn-build/index.docbook
 share/doc/HTML/de/kdf/common
 share/doc/HTML/de/kdf/index.cache.bz2
 share/doc/HTML/de/kdf/index.docbook
@@ -1187,18 +1190,17 @@ share/doc/HTML/de/konsolekalendar/index.docbook
 share/doc/HTML/de/kontact/common
 share/doc/HTML/de/kontact/index.cache.bz2
 share/doc/HTML/de/kontact/index.docbook
+share/doc/HTML/de/kopete/chatstyle.docbook
 share/doc/HTML/de/kopete/common
 share/doc/HTML/de/kopete/index.cache.bz2
 share/doc/HTML/de/kopete/index.docbook
 share/doc/HTML/de/kopete/menus.docbook
+share/doc/HTML/de/kopete/pipes.docbook
 share/doc/HTML/de/korganizer/common
 share/doc/HTML/de/korganizer/index.cache.bz2
 share/doc/HTML/de/korganizer/index.docbook
 share/doc/HTML/de/korganizer/outlook-to-vcalendar.docbook
 share/doc/HTML/de/korganizer/plugins-chapter.docbook
-share/doc/HTML/de/korn/common
-share/doc/HTML/de/korn/index.cache.bz2
-share/doc/HTML/de/korn/index.docbook
 share/doc/HTML/de/kpackage/common
 share/doc/HTML/de/kpackage/index.cache.bz2
 share/doc/HTML/de/kpackage/index.docbook
@@ -1207,9 +1209,13 @@ share/doc/HTML/de/kpat/index.cache.bz2
 share/doc/HTML/de/kpat/index.docbook
 share/doc/HTML/de/kpat/man-kpat.6.docbook
 share/doc/HTML/de/kpilot/common
+share/doc/HTML/de/kpilot/configuration.docbook
+share/doc/HTML/de/kpilot/daemon-menu-configure.png
 share/doc/HTML/de/kpilot/faq.docbook
 share/doc/HTML/de/kpilot/index.cache.bz2
 share/doc/HTML/de/kpilot/index.docbook
+share/doc/HTML/de/kpilot/sync.docbook
+share/doc/HTML/de/kpilot/usage.docbook
 share/doc/HTML/de/kppp/accounting.docbook
 share/doc/HTML/de/kppp/callback.docbook
 share/doc/HTML/de/kppp/chap.docbook
@@ -1574,6 +1580,14 @@ share/doc/HTML/de/umbrello/umbrello-ui.png
 share/doc/HTML/de/umbrello/uml_basics.docbook
 share/doc/HTML/de/umbrello/use-case-diagram.png
 share/doc/HTML/de/umbrello/working_with_umbrello.docbook
+share/doc/HTML/de/xsldbg/commands.docbook
+share/doc/HTML/de/xsldbg/common
+share/doc/HTML/de/xsldbg/credits.docbook
+share/doc/HTML/de/xsldbg/index.cache.bz2
+share/doc/HTML/de/xsldbg/index.docbook
+share/doc/HTML/de/xsldbg/introduction.docbook
+share/doc/HTML/de/xsldbg/man-xsldbg.1.docbook
+share/doc/HTML/de/xsldbg/usage.docbook
 share/locale/de/LC_MESSAGES/akonaditray.mo
 share/locale/de/LC_MESSAGES/akregator.mo
 share/locale/de/LC_MESSAGES/amor.mo
@@ -1820,7 +1834,6 @@ share/locale/de/LC_MESSAGES/kio_zeroconf.mo
 share/locale/de/LC_MESSAGES/kioclient.mo
 share/locale/de/LC_MESSAGES/kioexec.mo
 share/locale/de/LC_MESSAGES/kiriki.mo
-share/locale/de/LC_MESSAGES/kitchensync.mo
 share/locale/de/LC_MESSAGES/kiten.mo
 share/locale/de/LC_MESSAGES/kjots.mo
 share/locale/de/LC_MESSAGES/kjumpingcube.mo
@@ -1841,8 +1854,6 @@ share/locale/de/LC_MESSAGES/kmenuedit.mo
 share/locale/de/LC_MESSAGES/kmimetypefinder.mo
 share/locale/de/LC_MESSAGES/kmines.mo
 share/locale/de/LC_MESSAGES/kmix.mo
-share/locale/de/LC_MESSAGES/kmobiletools.mo
-share/locale/de/LC_MESSAGES/kmobiletools_at_engine.mo
 share/locale/de/LC_MESSAGES/kmousetool.mo
 share/locale/de/LC_MESSAGES/kmouth.mo
 share/locale/de/LC_MESSAGES/kmplot.mo
@@ -1866,7 +1877,6 @@ share/locale/de/LC_MESSAGES/kontact.mo
 share/locale/de/LC_MESSAGES/kontactinterfaces.mo
 share/locale/de/LC_MESSAGES/kopete.mo
 share/locale/de/LC_MESSAGES/korganizer.mo
-share/locale/de/LC_MESSAGES/korn.mo
 share/locale/de/LC_MESSAGES/kpackage.mo
 share/locale/de/LC_MESSAGES/kpartloader.mo
 share/locale/de/LC_MESSAGES/kpartsaver.mo
@@ -2035,6 +2045,7 @@ share/locale/de/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/de/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/de/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/de/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/de/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/de/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/de/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/de/LC_MESSAGES/plasma_applet_kalzium.mo
@@ -2115,6 +2126,7 @@ share/locale/de/LC_SCRIPTS/kdelibs4/kdelibs4.js
 share/locale/de/entry.desktop
 @dirrm share/locale/de/LC_SCRIPTS/kdelibs4
 @dirrm share/locale/de/LC_SCRIPTS
+@dirrm share/doc/HTML/de/xsldbg
 @dirrm share/doc/HTML/de/umbrello
 @dirrm share/doc/HTML/de/systemsettings
 @dirrm share/doc/HTML/de/superkaramba
@@ -2163,7 +2175,6 @@ share/locale/de/entry.desktop
 @dirrm share/doc/HTML/de/kpilot
 @dirrm share/doc/HTML/de/kpat
 @dirrm share/doc/HTML/de/kpackage
-@dirrm share/doc/HTML/de/korn
 @dirrm share/doc/HTML/de/korganizer
 @dirrm share/doc/HTML/de/kopete
 @dirrm share/doc/HTML/de/kontact
@@ -2269,6 +2280,7 @@ share/locale/de/entry.desktop
 @dirrm share/doc/HTML/de/kdm
 @dirrm share/doc/HTML/de/kdiamond
 @dirrm share/doc/HTML/de/kdf
+@dirrm share/doc/HTML/de/kdesvn-build
 @dirrm share/doc/HTML/de/kdesu
 @dirrm share/doc/HTML/de/kdepasswd
 @dirrm share/doc/HTML/de/kdebugdialog
