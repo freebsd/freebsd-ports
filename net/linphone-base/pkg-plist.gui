@@ -2,10 +2,10 @@ bin/linphone
 bin/linphone-3
 share/applications/linphone.desktop
 %%DATADIR%%/about.glade
+%%DATADIR%%/buddylookup.glade
 %%DATADIR%%/call_logs.glade
 %%DATADIR%%/chatroom.glade
 %%DATADIR%%/contact.glade
-%%DATADIR%%/gtk-linphone.glade
 %%DATADIR%%/incoming_call.glade
 %%DATADIR%%/linphone.png
 %%DATADIR%%/linphone2.png

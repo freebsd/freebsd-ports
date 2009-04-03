@@ -1,6 +1,6 @@
---- gtk-glade/Makefile.in.orig	2008-10-10 21:54:08.000000000 +0900
-+++ gtk-glade/Makefile.in	2008-10-20 05:14:41.000000000 +0900
-@@ -67,9 +67,6 @@
+--- gtk-glade/Makefile.in.orig	2009-03-17 21:12:10.000000000 +0900
++++ gtk-glade/Makefile.in	2009-03-17 21:17:21.000000000 +0900
+@@ -69,9 +69,6 @@
  linphone_3_OBJECTS = $(am_linphone_3_OBJECTS)
  am__DEPENDENCIES_1 =
  @BUILD_GLADE_UI_TRUE@linphone_3_DEPENDENCIES =  \
@@ -10,8 +10,8 @@
  @BUILD_GLADE_UI_TRUE@	$(am__DEPENDENCIES_1) \
  @BUILD_GLADE_UI_TRUE@	$(am__DEPENDENCIES_1) \
  @BUILD_GLADE_UI_TRUE@	$(am__DEPENDENCIES_1)
-@@ -310,9 +307,9 @@
- @BUILD_GLADE_UI_TRUE@			logging.c \
+@@ -315,9 +312,9 @@
+ @BUILD_GLADE_UI_TRUE@			buddylookup.c \
  @BUILD_GLADE_UI_TRUE@			linphone.h
  
 -@BUILD_GLADE_UI_TRUE@linphone_3_LDADD = $(top_builddir)/oRTP/src/libortp.la \
@@ -23,13 +23,13 @@
  @BUILD_GLADE_UI_TRUE@			$(LIBGTK_LIBS) $(INTLLIBS) \
  @BUILD_GLADE_UI_TRUE@			$(LIBGLADE_LIBS)
  
-@@ -324,10 +321,12 @@
+@@ -329,10 +326,12 @@
  
  #gtk-linphone.ui:	gtk-linphone.glade
  #	gtk-builder-convert gtk-linphone.glade $@
--AM_CFLAGS = -I$(top_srcdir)/coreapi/ \
+-AM_CFLAGS = -DIN_LINPHONE -I$(top_srcdir)/coreapi/ \
 -		-I$(top_srcdir)/mediastreamer2/include/ \
-+AM_CFLAGS = \
++AM_CFLAGS = -DIN_LINPHONE \
 +		`$(PKG_CONFIG) --cflags ortp` \
 +		`$(PKG_CONFIG) --cflags mediastreamer` \
 +		`$(PKG_CONFIG) --cflags linphone` \
