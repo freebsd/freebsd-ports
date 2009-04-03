@@ -20,27 +20,12 @@ LIB_DEPENDS=	gsl.13:${PORTSDIR}/math/gsl \
 		fftw.2:${PORTSDIR}/math/fftw \
 		ginac-1.4.0:${PORTSDIR}/math/GiNaC
 
-BROKEN=		does not compile
-
-USE_AUTOTOOLS=	libtool:15
 USE_QT_VER=	3
 USE_GL=		gl
-USE_GNOME=	gnometarget
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 libtool:15
+ACLOCAL_ARGS=	-I macros -I ${LOCALBASE}/share/aclocal
+CONFIGURE_ENV=	ac_cv_c_inline=no
 USE_LDCONFIG=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,Body::,,' \
-		${WRKSRC}/src/liborsa/orsa_body.h
-	@${REINPLACE_CMD} -E 's,[[:alnum:]]+::(compare\(),\1,' \
-		${WRKSRC}/src/libxorsa/xorsa_analysis.h \
-		${WRKSRC}/src/libxorsa/xorsa_import_astorb_objects.h \
-		${WRKSRC}/src/libxorsa/xorsa_object_selector.cc \
-		${WRKSRC}/src/orsa/xorsa.h
-	@${REINPLACE_CMD} -e 's,^extern,& "C",' \
-		${WRKSRC}/src/libxorsa/xorsa_plot_area.h
-	@${REINPLACE_CMD} -e '/nprintf/s,std::,,' \
-		${WRKSRC}/src/libxorsa/xorsa_wrapper.cc
 
 .include <bsd.port.mk>
