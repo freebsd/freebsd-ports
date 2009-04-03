@@ -7,20 +7,21 @@
 
 PORTNAME=	DateTime-Format-Builder
 PORTVERSION=	0.79.01
-DISTVERSION=	${PORTVERSION:C/\.(..)$/\1/}
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Create DateTime parser classes and objects
 
+RUN_DEPENDS=	p5-Class-Factory-Util>=1.6:${PORTSDIR}/devel/p5-Class-Factory-Util \
+		p5-DateTime>=0.12:${PORTSDIR}/devel/p5-DateTime \
+		p5-DateTime-Format-Strptime>=1.04:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+		p5-Params-Validate>=0.72:${PORTSDIR}/devel/p5-Params-Validate \
+		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
-		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/Class/Factory/Util.pm:${PORTSDIR}/devel/p5-Class-Factory-Util \
-		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
-		${SITE_PERL}/DateTime/Format/Strptime.pm:${PORTSDIR}/devel/p5-DateTime-Format-Strptime
 
 PERL_MODBUILD=	yes
 
