@@ -20,12 +20,6 @@
 	medium_font =
 	large_font =
 
-    To enable Generic Tram Set update your ~/.openttd/openttd.cfg
-    configuration file in the following way:
-
-	[newgrf]
-	generictrams_v0.4.grf
-
     Enjoy!!
 
 ==========================================================================

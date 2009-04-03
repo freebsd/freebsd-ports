@@ -1,10 +1,13 @@
 bin/openttd
-%%DATADIR%%/data/generictrams_v0.4.grf
 %%DATADIR%%/data/openttdd.grf
 %%DATADIR%%/data/openttdw.grf
 %%DATADIR%%/data/opntitle.dat
+%%DATADIR%%/data/orig_dos.obg
+%%DATADIR%%/data/orig_dos_de.obg
+%%DATADIR%%/data/orig_win.obg
 @dirrm %%DATADIR%%/data
 %%DATADIR%%/lang/afrikaans.lng
+%%DATADIR%%/lang/arabic_egypt.lng
 %%DATADIR%%/lang/brazilian_portuguese.lng
 %%DATADIR%%/lang/bulgarian.lng
 %%DATADIR%%/lang/catalan.lng
@@ -20,15 +23,18 @@ bin/openttd
 %%DATADIR%%/lang/french.lng
 %%DATADIR%%/lang/galician.lng
 %%DATADIR%%/lang/german.lng
+%%DATADIR%%/lang/hebrew.lng
 %%DATADIR%%/lang/hungarian.lng
 %%DATADIR%%/lang/icelandic.lng
+%%DATADIR%%/lang/indonesian.lng
 %%DATADIR%%/lang/italian.lng
 %%DATADIR%%/lang/japanese.lng
 %%DATADIR%%/lang/korean.lng
+%%DATADIR%%/lang/latvian.lng
 %%DATADIR%%/lang/lithuanian.lng
+%%DATADIR%%/lang/luxembourgish.lng
 %%DATADIR%%/lang/norwegian_bokmal.lng
 %%DATADIR%%/lang/norwegian_nynorsk.lng
-%%DATADIR%%/lang/origveh.lng
 %%DATADIR%%/lang/piglatin.lng
 %%DATADIR%%/lang/polish.lng
 %%DATADIR%%/lang/portuguese.lng
@@ -42,11 +48,14 @@ bin/openttd
 %%DATADIR%%/lang/traditional_chinese.lng
 %%DATADIR%%/lang/turkish.lng
 %%DATADIR%%/lang/ukrainian.lng
+%%DATADIR%%/lang/welsh.lng
 @dirrm %%DATADIR%%/lang
 %%DATADIR%%/scripts/autoexec.scr.example
+%%DATADIR%%/scripts/game_start.scr.example
 %%DATADIR%%/scripts/on_client.scr.example
 %%DATADIR%%/scripts/on_dedicated.scr.example
 %%DATADIR%%/scripts/on_server.scr.example
+%%DATADIR%%/scripts/on_server_connect.scr.example
 %%DATADIR%%/scripts/pre_dedicated.scr.example
 %%DATADIR%%/scripts/pre_server.scr.example
 %%DATADIR%%/scripts/readme.txt
