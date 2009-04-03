@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libbfd
-PORTVERSION=	2.17
+PORTVERSION=	2.19.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -28,7 +28,8 @@ CONFIGURE_ARGS=	--enable-install-libbfd \
 		--enable-commonbfdlib \
 		--disable-nls \
 		--without-pic \
-		--enable-targets=all
+		--enable-targets=all \
+		--disable-werror
 INFO=		bfd
 
 .include <bsd.port.pre.mk>
