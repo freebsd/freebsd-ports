@@ -30,6 +30,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		libtool:${PORTSDIR}/devel/libtool15 \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autotools:run
 USE_GMAKE=	yes
