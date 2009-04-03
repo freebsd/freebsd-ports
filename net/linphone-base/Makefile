@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linphone
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.0
 PORTEPOCH=	1
 CATEGORIES?=	net
 MASTER_SITES=	SAVANNAH/${PORTNAME}/stable/sources
@@ -45,8 +45,8 @@ PLIST_SUB+=	NLS=""
 .endif
 
 .if defined(LINPHONE_GUI)
-BUILD_DEPENDS+=	linphone-base>=3.0.0:${PORTSDIR}/net/linphone-base
-RUN_DEPENDS+=	linphone-base>=3.0.0:${PORTSDIR}/net/linphone-base
+BUILD_DEPENDS+=	linphone-base>=3.1.0:${PORTSDIR}/net/linphone-base
+RUN_DEPENDS+=	linphone-base>=3.1.0:${PORTSDIR}/net/linphone-base
 DESCR=		${PKGDIR}/pkg-descr.gui
 PLIST=		${PKGDIR}/pkg-plist.gui
 USE_GNOME+=	libglade2
@@ -65,10 +65,10 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s| =| ?=|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/^imgdir =/s|(datadir)|(pkgdatadir)|g' \
 		${WRKSRC}/mediastreamer2/src/Makefile.in
-.for file in configure src/gsm.c
+	@${REINPLACE_CMD} -e 's|gsm/gsm\.h|gsm.h|g ; \
+		 s| -O2 -g ||g' ${WRKSRC}/mediastreamer2/configure
 	@${REINPLACE_CMD} -e 's|gsm/gsm\.h|gsm.h|g' \
-		${WRKSRC}/mediastreamer2/${file}
-.endfor
+		${WRKSRC}/mediastreamer2/src/gsm.c
 
 post-install:
 .if defined(LINPHONE_GUI)

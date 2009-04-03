@@ -1,8 +1,10 @@
 bin/linphonec
+bin/linphonecsh
 bin/sipomatic
 include/linphone/config.h
 include/linphone/linphonecore.h
 include/linphone/lpconfig.h
+include/linphone/sipsetup.h
 include/mediastreamer2/allfilters.h
 include/mediastreamer2/dtmfgen.h
 include/mediastreamer2/ice.h
@@ -41,7 +43,7 @@ include/ortp/telephonyevents.h
 lib/liblinphone.a
 lib/liblinphone.la
 lib/liblinphone.so
-lib/liblinphone.so.3
+lib/liblinphone.so.4
 lib/libmediastreamer.a
 lib/libmediastreamer.la
 lib/libmediastreamer.so
@@ -75,6 +77,7 @@ libexec/mediastream
 %%NLS%%share/locale/nl/LC_MESSAGES/linphone.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/linphone.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/linphone.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/linphone.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/linphone.mo
 share/mediastreamer/images/nowebcamCIF.jpg
 @dirrm share/mediastreamer/images
