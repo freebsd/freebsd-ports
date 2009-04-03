@@ -158,7 +158,8 @@ pre-configure:
 
 .if defined(WITH_MOD_DAV_SVN)
 pre-install:
-	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dav ${PREFIX}/${APACHEMODDIR}/mod_dav.so
+	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dav       ${PREFIX}/${APACHEMODDIR}/mod_dav.so
+	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n authz_svn ${PREFIX}/${APACHEMODDIR}/mod_authz_svn.so
 .endif
 
 post-install:	${MKREPOS_TARGET}
