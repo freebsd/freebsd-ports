@@ -132,6 +132,7 @@ CONFIGURE_ARGS+=--without-iconv
 .endif
 
 .if defined(WITH_MILTER)
+BROKEN=		clamav-milter doesn't work fine on 0.95, clamav-devel already have the fix
 USE_RC_SUBR+=	clamav-milter
 CONF_FILES+=	clamav-milter
 . if defined(WITH_LDAP) && exists(${LOCALBASE}/lib/libldap.so)
