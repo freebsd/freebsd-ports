@@ -8,8 +8,7 @@ PORTNAME=	tse3
 PORTVERSION=	0.3.1
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A MIDI library
@@ -25,37 +24,11 @@ MAN3=		tse3.3
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 .if defined(WITH_ARTS)
 LIB_DEPENDS+=	artsmidi:${PORTSDIR}/multimedia/kdemultimedia3
 .else
 CONFIGURE_ARGS+=	--without-aRts
 .endif
-
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} -n "checking for SNDCTL_SEQ_GETTIME in sys/soundcard.h... "
-	@if ${GREP} -q SNDCTL_SEQ_GETTIME /usr/include/sys/soundcard.h; then\
-	${ECHO_MSG} "yes";\
-	${ECHO_MSG};\
-	else\
-	${ECHO_MSG} "no";\
-	${ECHO_MSG};\
-	${ECHO_MSG} "********************************************************************************";\
-	${ECHO_MSG} "* This port requires:                                                          *";\
-	${ECHO_MSG} "*                                                                              *";\
-	${ECHO_MSG} "* FreeBSD-CURRENT newer than Nov 22 03:27:09 2003 UTC (or FreeBSD 5.3-Release) *";\
-	${ECHO_MSG} "*                                                                              *";\
-	${ECHO_MSG} "*                                      OR                                      *";\
-	${ECHO_MSG} "*                                                                              *";\
-	${ECHO_MSG} "* FreeBSD-STABLE newer than Jul 20 13:49:30 2004 UTC (or FreeBSD 4.11-Release) *";\
-	${ECHO_MSG} "********************************************************************************";\
-	${ECHO_MSG};\
-	${ECHO_MSG} "Aborting."; exit 1;\
-	fi
 
 post-install:
 .if !defined(NOPORTDOCS)

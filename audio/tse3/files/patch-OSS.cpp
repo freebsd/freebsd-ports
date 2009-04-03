@@ -1,6 +1,15 @@
-diff -r -c tse3-0.2.7.old/src/tse3/plt/OSS.cpp tse3-0.2.7/src/tse3/plt/OSS.cpp
-*** src/tse3/plt/OSS.cpp.orig	Tue Oct 22 09:29:29 2002
---- src/tse3/plt/OSS.cpp	Wed Nov 12 16:13:39 2003
+*** src/tse3/plt/OSS.cpp.orig	2005-07-25 20:22:56.000000000 +0900
+--- src/tse3/plt/OSS.cpp	2009-04-02 21:20:35.000000000 +0900
+***************
+*** 25,30 ****
+--- 25,31 ----
+  #include <fcntl.h>
+  #include <stdarg.h>
+  #include <sys/types.h>
++ #include <cstring>
+  
+  // These #includes are linux specific and I need to do some autoconf
+  // magic to work out how to conditionally include them
 ***************
 *** 1484,1494 ****
   #ifdef TSE3_WITH_OSS
@@ -14,7 +23,7 @@ diff -r -c tse3-0.2.7.old/src/tse3/plt/OSS.cpp tse3-0.2.7/src/tse3/plt/OSS.cpp
       seqbuf_dump();
   #endif
   }
---- 1484,1495 ----
+--- 1485,1496 ----
   #ifdef TSE3_WITH_OSS
       // Happily, if you switch -pedantic on in gcc these macros will always
       // throw up warnings. Marvel at the beauty of awe_voice.h for reasons why.
@@ -36,7 +45,7 @@ diff -r -c tse3-0.2.7.old/src/tse3/plt/OSS.cpp tse3-0.2.7/src/tse3/plt/OSS.cpp
       rate = 0;
       ioctl(seqfd, SNDCTL_SEQ_CTRLRATE, &rate);
       if (rate == -1 || rate <= 0) rate = 100;
---- 1997,2004 ----
+--- 1998,2005 ----
           // there is no soundcard
           throw TSE3::MidiSchedulerError(TSE3::MidiSchedulerCreateErr);
       }
@@ -47,7 +56,7 @@ diff -r -c tse3-0.2.7.old/src/tse3/plt/OSS.cpp tse3-0.2.7/src/tse3/plt/OSS.cpp
       if (rate == -1 || rate <= 0) rate = 100;
 ***************
 *** 2044,2049 ****
---- 2046,2059 ----
+--- 2047,2060 ----
                   }
                   std::cout << ")\n";
               }
@@ -64,7 +73,7 @@ diff -r -c tse3-0.2.7.old/src/tse3/plt/OSS.cpp tse3-0.2.7/src/tse3/plt/OSS.cpp
               {
 ***************
 *** 2100,2105 ****
---- 2110,2116 ----
+--- 2111,2117 ----
          }
       }
   
@@ -72,4 +81,3 @@ diff -r -c tse3-0.2.7.old/src/tse3/plt/OSS.cpp tse3-0.2.7/src/tse3/plt/OSS.cpp
       // Now let the public API know about these devices
       for (unsigned int n = 0; n < nodevices; ++n)
       {
-Only in tse3-0.2.7/src/tse3/plt: OSS.cpp.orig
