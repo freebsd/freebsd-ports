@@ -7,6 +7,7 @@
 
 PORTNAME=		xorg-libs
 PORTVERSION=		7.3
+PORTREVISION=		1
 CATEGORIES=		x11 linux
 PKGNAMEPREFIX=		linux-f8-
 DISTFILES=	libICE-1.0.4-2.fc8.${LINUX_RPM_ARCH}.rpm \
@@ -33,6 +34,7 @@ DISTFILES=	libICE-1.0.4-2.fc8.${LINUX_RPM_ARCH}.rpm \
 		libXrandr-1.2.2-1.fc8.${LINUX_RPM_ARCH}.rpm \
 		libXrender-0.9.4-1.fc8.${LINUX_RPM_ARCH}.rpm \
 		libXt-1.0.4-3.fc8.${LINUX_RPM_ARCH}.rpm \
+		libXtst-1.0.3-1.fc8.${LINUX_RPM_ARCH}.rpm \
 		libXres-1.0.3-3.fc8.${LINUX_RPM_ARCH}.rpm \
 		libXv-1.0.3-3.fc8.${LINUX_RPM_ARCH}.rpm \
 		libXvMC-1.0.4-3.fc8.${LINUX_RPM_ARCH}.rpm \
@@ -69,6 +71,7 @@ SRC_DISTFILES=	libICE-1.0.4-2.fc8.src.rpm \
 		libXrandr-1.2.2-1.fc8.src.rpm \
 		libXrender-0.9.4-1.fc8.src.rpm \
 		libXt-1.0.4-3.fc8.src.rpm \
+		libXtst-1.0.3-1.fc8.src.rpm \
 		libXres-1.0.3-3.fc8.src.rpm \
 		libXv-1.0.3-3.fc8.src.rpm \
 		libXvMC-1.0.4-3.fc8.src.rpm \

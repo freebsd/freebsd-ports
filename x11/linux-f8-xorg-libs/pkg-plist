@@ -57,6 +57,8 @@ usr/lib/libXss.so.1
 usr/lib/libXss.so.1.0.0
 usr/lib/libXt.so.6
 usr/lib/libXt.so.6.0.0
+usr/lib/libXtst.so.6
+usr/lib/libXtst.so.6.1.0
 usr/lib/libXv.so.1
 usr/lib/libXv.so.1.0.0
 usr/lib/libXvMC.so.1
@@ -395,6 +397,10 @@ usr/share/doc/libXt-1.0.4/COPYING
 usr/share/doc/libXt-1.0.4/ChangeLog
 usr/share/doc/libXt-1.0.4/NEWS
 usr/share/doc/libXt-1.0.4/README
+usr/share/doc/libXtst-1.0.3/AUTHORS
+usr/share/doc/libXtst-1.0.3/COPYING
+usr/share/doc/libXtst-1.0.3/ChangeLog
+usr/share/doc/libXtst-1.0.3/README
 usr/share/doc/libXv-1.0.3/AUTHORS
 usr/share/doc/libXv-1.0.3/COPYING
 usr/share/doc/libXv-1.0.3/ChangeLog
@@ -433,6 +439,7 @@ usr/share/icons/default/index.theme
 @dirrm usr/share/doc/libXvMC-1.0.4
 @dirrm usr/share/doc/libXv-1.0.3
 @dirrm usr/share/doc/libXt-1.0.4
+@dirrm usr/share/doc/libXtst-1.0.3
 @dirrm usr/share/doc/libXres-1.0.3
 @dirrm usr/share/doc/libXrender-0.9.4
 @dirrm usr/share/doc/libXrandr-1.2.2
