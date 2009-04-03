@@ -18,6 +18,7 @@
 %%BINUTILS_TARG%%/bin/windmc
 %%BINUTILS_TARG%%/bin/windres
 %%BINUTILS_TARG%%/lib/ldscripts/i386pe.x
+%%BINUTILS_TARG%%/lib/ldscripts/i386pe.xa
 %%BINUTILS_TARG%%/lib/ldscripts/i386pe.xbn
 %%BINUTILS_TARG%%/lib/ldscripts/i386pe.xn
 %%BINUTILS_TARG%%/lib/ldscripts/i386pe.xr
