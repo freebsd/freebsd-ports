@@ -9,8 +9,7 @@ PORTNAME=	penguin-command
 PORTVERSION=	1.6.11
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A clone of the classic game Missile Command
@@ -20,7 +19,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 USE_SDL=	mixer image sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=""
+MAKE_JOBS_SAFE=	yes
 
 MAN6=		penguin-command.6 penguin-command.ja.6
 

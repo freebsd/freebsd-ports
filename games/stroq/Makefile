@@ -8,8 +8,7 @@ PORTNAME=	stroq
 PORTVERSION=	0.2
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	stroq
+MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Flip tiles to make rows of the same color
@@ -19,9 +18,13 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 USE_BZIP2=	yes
 USE_QT_VER=	3
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
+MAKE_JOBS_SAFE=	yes
 
 QMAKE=		qmake
 QMAKESPEC=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+
+PLIST_FILES=	bin/stroq
+PORTDOCS=	*
 
 post-patch:
 	${REINPLACE_CMD} -e 's|PlaySquare::||' ${WRKSRC}/playsquare.h

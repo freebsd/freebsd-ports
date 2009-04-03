@@ -9,8 +9,7 @@ PORTNAME=	interlogic
 PORTVERSION=	0.30
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	interlogic
+MASTER_SITES=	SF
 DISTNAME=	interLOGIC-src-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -19,10 +18,9 @@ COMMENT=	Move colored balls through the maze connecting it with each other
 USE_SDL=	image sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \
-		LDFLAGS="`${SDL_CONFIG} --libs`"
+MAKE_JOBS_SAFE=	yes
 
-WRKSRC=	${WRKDIR}/interlogic
+WRKSRC=		${WRKDIR}/interlogic
 
 PLIST_FILES=	bin/interlogic
 
