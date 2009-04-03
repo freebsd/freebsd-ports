@@ -84,7 +84,7 @@ pre-configure:
 	${DIRNAME} `${LOCALBASE}/bin/${FC} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 	${REINPLACE_CMD} -e 's|make|${GMAKE}|' ${BUILD_WRKSRC}/Makefile
 .else
-	${REINPLACE_CMD} -e 's|^OPTFLAGS|#OPTFLAGS|'${BUILD_WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|^OPTFLAGS|#OPTFLAGS|' ${BUILD_WRKSRC}/Makefile
 .endif
 . if !defined(WITHOUT_FFMPEG)
 	${REINPLACE_CMD} -e 's|#CIMG_FFMPEG_CFLAGS|CIMG_FFMPEG_CFLAGS|'	\
