@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamtk
-PORTVERSION=	4.10
-PORTREVISION=	1
+PORTVERSION=	4.11
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -46,7 +45,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.xpm ${PREFIX}/share/pixmaps
-.for lang in cs_CZ da de es fr gl it ja ko nl pl pt_BR ro ru sl sv zh_CN
+.for lang in cs_CZ da de es fr gl it ja ko nl pl pt_BR ro ru sk sl sv zh_CN
 	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
 		${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
