@@ -7,22 +7,19 @@
 #
 
 PORTNAME=	freecell-solver
-PORTVERSION=	2.14.0
-PORTREVISION=	2
+PORTVERSION=	2.22.0
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
-MASTER_SITE_SUBDIR=	fc-solve
+MASTER_SITES=	BERLIOS/fc-solve
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program that automatically solves games of Freecell
 
+OPTIONS=	JUDY "Use libJudy for states and stacks storage" off \
+		REDBLACK "Use libredblack for states and stacks storage" off
+
 USE_PERL5_BUILD=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	AUTHORS README TODO USAGE README.win32.txt INSTALL
-.endif
 
 MAN6=	fc-solve-board_gen.6 \
 	fc-solve.6 \
@@ -32,11 +29,29 @@ MAN6=	fc-solve-board_gen.6 \
 	make_pysol_freecell_board.py.6 \
 	pi-make-microsoft-freecell-board.6
 
-.if !defined(NOPORTDOCS)
+CFLAGS+=	-I${LOCALBASE}/include 
+
+.if defined(WITH_JUDY) && defined(WITH_REDBLACK)
+IGNORE=		you cannot enable both JUDY and REDBLACK
+.endif
+
+.if defined(WITH_JUDY)
+LIB_DEPENDS+=	Judy.1:${PORTSDIR}/devel/judy
+CMAKE_ARGS+=	-DFCS_STACK_STORAGE="FCS_STACK_STORAGE_JUDY" \
+		-DFCS_STATE_STORAGE="FCS_STATE_STORAGE_JUDY"
+.endif
+
+.if defined(WITH_REDBLACK)
+LIB_DEPENDS+=	redblack.2:${PORTSDIR}/devel/libredblack
+CMAKE_ARGS+=	-DFCS_STACK_STORAGE="FCS_STACK_STORAGE_LIBREDBLACK_TREE" \
+		-DFCS_STATE_STORAGE="FCS_STATE_STORAGE_LIBREDBLACK_TREE"
+.endif
+
 post-install:
-	${MKDIR} ${DOCSDIR}
-.for DOCFILE in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${DOCFILE} ${DOCSDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS INSTALL README README.win32.txt TODO USAGE 
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
