@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	preferential
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.2
 PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZDEV}
@@ -17,6 +17,8 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	GUI interface to view & edit all ${GECKO} prefs
 
 PLIST_FILES=	%%MOZDIR%%/chrome/preferential.jar
+
+PORTSCOUT=	skipv:0.8.2
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozex/Makefile.xpi"
