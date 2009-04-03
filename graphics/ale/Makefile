@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	ale
-PORTVERSION=	0.8.4
-PORTREVISION=	4
+PORTVERSION=	0.8.11.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://auricle.dyndns.org/ALE/download/ \
-		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
+MASTER_SITES=	http://auricle.dyndns.org/ALE/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti-Lamenessing Engine
@@ -20,10 +18,19 @@ OPTIONS=	DOUBLE "64bit Data Precision Support" off \
 		FFTW3 "FFTW3 Support" on \
 		IMAGEMAGICK "ImageMagick Support" on
 
-USE_GMAKE=	yes
-MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" IOCTL=1
+USE_GNOME=	gnomehack
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--disable-assertions
 
-PLIST_FILES=	bin/ale
+MAN1=		ale.1
+PLIST_FILES=	bin/ale bin/ale-bin
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
+# Restrict to stable (even) versions, indicated by the second component.
+PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.pre.mk>
 
@@ -32,23 +39,19 @@ BROKEN=		Does not build on alpha
 .endif
 
 .if defined(WITH_DOUBLE)
-MAKE_ARGS+=	COLORS=DOUBLE COORDINATES=DOUBLE
+CONFIGURE_ARGS+=	--with-colors=double --with-coords=double
 .endif
 
-.if !defined(WITHOUT_FFTW3)
+.if defined(WITHOUT_FFTW3)
+CONFIGURE_ARGS+=	--without-fftw3
+.else
 LIB_DEPENDS+=	fftw3.4:${PORTSDIR}/math/fftw3
-MAKE_ARGS+=	FFTW=1
 .endif
 
-.if !defined(WITHOUT_IMAGEMAGICK)
+.if defined(WITHOUT_IMAGEMAGICK)
+CONFIGURE_ARGS+=	--without-imagemagick
+.else
 LIB_DEPENDS+=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick
-MAKE_ARGS+=	IMAGEMAGICK=1
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' ${WRKSRC}/d2.h
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ale ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
