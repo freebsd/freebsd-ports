@@ -13,6 +13,7 @@ include/subversion-1/mod_dav_svn.h
 include/subversion-1/svn-revision.txt
 include/subversion-1/svn_auth.h
 include/subversion-1/svn_base64.h
+include/subversion-1/svn_checksum.h
 include/subversion-1/svn_client.h
 include/subversion-1/svn_cmdline.h
 include/subversion-1/svn_compat.h
@@ -21,6 +22,7 @@ include/subversion-1/svn_ctype.h
 include/subversion-1/svn_dav.h
 include/subversion-1/svn_delta.h
 include/subversion-1/svn_diff.h
+include/subversion-1/svn_dirent_uri.h
 include/subversion-1/svn_dso.h
 include/subversion-1/svn_error.h
 include/subversion-1/svn_error_codes.h
@@ -167,12 +169,19 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/buildbot/slaves/osx10.4-gcc4.0.1-ia32/svncheck.sh
 %%DATADIR%%/buildbot/slaves/osx10.4-gcc4.0.1-ia32/svnclean.sh
 %%DATADIR%%/buildbot/slaves/osx10.4-gcc4.0.1-ia32/svnlog.sh
-%%DATADIR%%/buildbot/slaves/win32-xp VS2005/config.bat
-%%DATADIR%%/buildbot/slaves/win32-xp VS2005/do_all.bat
-%%DATADIR%%/buildbot/slaves/win32-xp VS2005/svnbuild.bat
-%%DATADIR%%/buildbot/slaves/win32-xp VS2005/svncheck.bat
-%%DATADIR%%/buildbot/slaves/win32-xp VS2005/svnclean.bat
-%%DATADIR%%/buildbot/slaves/win32-xp VS2005/svnlog.bat
+%%DATADIR%%/buildbot/slaves/ubuntu-x64/mount-ramdrive.c
+%%DATADIR%%/buildbot/slaves/ubuntu-x64/svnbuild.sh
+%%DATADIR%%/buildbot/slaves/ubuntu-x64/svncheck-bindings.sh
+%%DATADIR%%/buildbot/slaves/ubuntu-x64/svncheck.sh
+%%DATADIR%%/buildbot/slaves/ubuntu-x64/svnclean.sh
+%%DATADIR%%/buildbot/slaves/ubuntu-x64/svnlog.sh
+%%DATADIR%%/buildbot/slaves/ubuntu-x64/unmount-ramdrive.c
+%%DATADIR%%/buildbot/slaves/win32-xp-VS2005/config.bat
+%%DATADIR%%/buildbot/slaves/win32-xp-VS2005/do_all.bat
+%%DATADIR%%/buildbot/slaves/win32-xp-VS2005/svnbuild.bat
+%%DATADIR%%/buildbot/slaves/win32-xp-VS2005/svncheck.bat
+%%DATADIR%%/buildbot/slaves/win32-xp-VS2005/svnclean.bat
+%%DATADIR%%/buildbot/slaves/win32-xp-VS2005/svnlog.bat
 %%DATADIR%%/buildbot/slaves/xp-vc60-ia32/config.bat.tmpl
 %%DATADIR%%/buildbot/slaves/xp-vc60-ia32/svnbuild.bat
 %%DATADIR%%/buildbot/slaves/xp-vc60-ia32/svncheck.bat
@@ -184,10 +193,13 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/client-side/server-version.py
 %%DATADIR%%/client-side/showchange.pl
 %%DATADIR%%/client-side/svn-graph.pl
+%%DATADIR%%/client-side/svnmucc/svnmucc-test.py
+%%DATADIR%%/client-side/svnmucc/svnmucc.c
 %%DATADIR%%/client-side/wcfind
 %%DATADIR%%/dev/check-license.py
-%%DATADIR%%/dev/datecheck.py
 %%DATADIR%%/dev/contribulyze.py
+%%DATADIR%%/dev/datecheck.py
+%%DATADIR%%/dev/find-bad-style.py
 %%DATADIR%%/dev/gcov.patch
 %%DATADIR%%/dev/gen-javahl-errors.py
 %%DATADIR%%/dev/gnuify-changelog.pl
@@ -198,11 +210,12 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/dev/iz/find-fix.py
 %%DATADIR%%/dev/iz/run-queries.sh
 %%DATADIR%%/dev/lock-check.py
+%%DATADIR%%/dev/min-includes.sh
 %%DATADIR%%/dev/mlpatch.py
 %%DATADIR%%/dev/normalize-dump.py
+%%DATADIR%%/dev/po-merge.py
 %%DATADIR%%/dev/prebuild-cleanup.sh
 %%DATADIR%%/dev/random-commits.py
-%%DATADIR%%/dev/po-merge.py
 %%DATADIR%%/dev/scramble-tree.py
 %%DATADIR%%/dev/stress.pl
 %%DATADIR%%/dev/svn-dev.el
@@ -220,11 +233,15 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/dist/dist.sh
 %%DATADIR%%/dist/download-release.sh
 %%DATADIR%%/dist/extract-for-examination.sh
-%%DATADIR%%/dist/getsigs.pl
+%%DATADIR%%/dist/gen_nightly_ann.py
+%%DATADIR%%/dist/getsigs.py
+%%DATADIR%%/dist/nightly.sh
+%%DATADIR%%/dist/post-to-tigris.py
 %%DATADIR%%/dist/roll.sh
 %%DATADIR%%/dist/sample-rc-warning-index.html
 %%DATADIR%%/dist/test.sh
 %%DATADIR%%/dist/write-announcement.py
+%%DATADIR%%/examples/SvnCLBrowse
 %%DATADIR%%/examples/blame.py
 %%DATADIR%%/examples/check-modified.py
 %%DATADIR%%/examples/dumpprops.py
@@ -244,19 +261,18 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/examples/svnshell.py
 %%DATADIR%%/examples/svnshell.rb
 %%DATADIR%%/examples/testwrite.c
+%%DATADIR%%/hook-scripts/README
 %%DATADIR%%/hook-scripts/commit-access-control.cfg.example
 %%DATADIR%%/hook-scripts/commit-access-control.pl
-%%DATADIR%%/hook-scripts/commit-email.pl
 %%DATADIR%%/hook-scripts/commit-email.rb
 %%DATADIR%%/hook-scripts/log-police.py
 %%DATADIR%%/hook-scripts/mailer/mailer.conf.example
 %%DATADIR%%/hook-scripts/mailer/mailer.py
-%%DATADIR%%/hook-scripts/mailer/tests/mailer.conf
 %%DATADIR%%/hook-scripts/mailer/tests/mailer-init.sh
 %%DATADIR%%/hook-scripts/mailer/tests/mailer-t1.output
 %%DATADIR%%/hook-scripts/mailer/tests/mailer-t1.sh
 %%DATADIR%%/hook-scripts/mailer/tests/mailer-tweak.py
-%%DATADIR%%/hook-scripts/README
+%%DATADIR%%/hook-scripts/mailer/tests/mailer.conf
 %%DATADIR%%/hook-scripts/svn2feed.py
 %%DATADIR%%/hook-scripts/svnperms.conf.example
 %%DATADIR%%/hook-scripts/svnperms.py
@@ -266,9 +282,9 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/server-side/fsfs-reshard.py
 %%DATADIR%%/server-side/svn-backup-dumps.py
 %%DATADIR%%/server-side/svn-populate-node-origins-index.c
+%%DATADIR%%/server-side/svn_server_log_parse.py
 %%DATADIR%%/server-side/svnauthz-validate.c
-%%DATADIR%%/server-side/svn_dav_log_parse.py
-%%DATADIR%%/server-side/test_svn_dav_log_parse.py
+%%DATADIR%%/server-side/test_svn_server_log_parse.py
 %%DATADIR%%/xslt/svnindex.css
 %%DATADIR%%/xslt/svnindex.xsl
 %%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_dav_svn.so
@@ -282,10 +298,12 @@ lib/libsvn_wc-1.so.0
 @dirrm %%DATADIR%%/bdb
 @dirrm %%DATADIR%%/buildbot/slaves/i686-debian-sarge1
 @dirrm %%DATADIR%%/buildbot/slaves/osx10.4-gcc4.0.1-ia32
-@dirrm %%DATADIR%%/buildbot/slaves/win32-xp VS2005
+@dirrm %%DATADIR%%/buildbot/slaves/ubuntu-x64
+@dirrm %%DATADIR%%/buildbot/slaves/win32-xp-VS2005
 @dirrm %%DATADIR%%/buildbot/slaves/xp-vc60-ia32
 @dirrm %%DATADIR%%/buildbot/slaves
 @dirrm %%DATADIR%%/buildbot
+@dirrm %%DATADIR%%/client-side/svnmucc
 @dirrm %%DATADIR%%/client-side
 @dirrm %%DATADIR%%/dev/iz
 @dirrm %%DATADIR%%/dev
