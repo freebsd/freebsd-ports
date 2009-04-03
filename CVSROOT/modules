@@ -283,6 +283,7 @@ acpicatools                     ports/devel/acpicatools
 acrobatviewer                   ports/print/acrobatviewer
 acron                           ports/misc/acron
 acroread8                       ports/print/acroread8
+acroread9                       ports/print/acroread9
 acroreadwrapper                 ports/print/acroreadwrapper
 activitymail                    ports/devel/activitymail
 actx                            ports/games/actx
@@ -3030,6 +3031,7 @@ ewl                             ports/x11-toolkits/ewl
 exact                           ports/mail/exact
 exact-image                     ports/graphics/exact-image
 exaile                          ports/audio/exaile
+exaile-devel                    ports/audio/exaile-devel
 examine                         ports/x11/examine
 excalibur-configuration         ports/devel/excalibur-configuration
 excido                          ports/games/excido
@@ -6488,6 +6490,7 @@ kde4-l10n-nl                    ports/misc/kde4-l10n-nl
 kde4-l10n-nn                    ports/misc/kde4-l10n-nn
 kde4-l10n-pa                    ports/misc/kde4-l10n-pa
 kde4-l10n-ro                    ports/misc/kde4-l10n-ro
+kde4-l10n-sk                    ports/misc/kde4-l10n-sk
 kde4-l10n-sl                    ports/misc/kde4-l10n-sl
 kde4-l10n-sr                    ports/misc/kde4-l10n-sr
 kde4-l10n-sv                    ports/misc/kde4-l10n-sv
@@ -10084,6 +10087,7 @@ p5-Best                         ports/devel/p5-Best
 p5-Bigtop                       ports/www/p5-Bigtop
 p5-Bio-ASN1-EntrezGene          ports/biology/p5-Bio-ASN1-EntrezGene
 p5-Bio-Das                      ports/biology/p5-Bio-Das
+p5-Bio-Glite                    ports/biology/p5-Bio-Glite
 p5-Bio-Graphics                 ports/biology/p5-Bio-Graphics
 p5-Bio-Phylo                    ports/biology/p5-Bio-Phylo
 p5-Bit-ShiftReg                 ports/math/p5-Bit-ShiftReg
@@ -11974,6 +11978,7 @@ p5-Net-NetSend                  ports/net-im/p5-Net-NetSend
 p5-Net-Netmask                  ports/net-mgmt/p5-Net-Netmask
 p5-Net-Nslookup                 ports/dns/p5-Net-Nslookup
 p5-Net-OAuth                    ports/net/p5-Net-OAuth
+p5-Net-OAuth-Simple             ports/net/p5-Net-OAuth-Simple
 p5-Net-OSCAR                    ports/net-im/p5-Net-OSCAR
 p5-Net-OpenDHT                  ports/net/p5-Net-OpenDHT
 p5-Net-OpenID-Consumer          ports/net/p5-Net-OpenID-Consumer
@@ -12663,6 +12668,7 @@ p5-Test-ClassAPI                ports/devel/p5-Test-ClassAPI
 p5-Test-Cmd                     ports/devel/p5-Test-Cmd
 p5-Test-Compile                 ports/devel/p5-Test-Compile
 p5-Test-Data                    ports/devel/p5-Test-Data
+p5-Test-Database                ports/databases/p5-Test-Database
 p5-Test-DatabaseRow             ports/databases/p5-Test-DatabaseRow
 p5-Test-Debugger                ports/devel/p5-Test-Debugger
 p5-Test-Declare                 ports/devel/p5-Test-Declare
@@ -13448,6 +13454,7 @@ p5-bigtop                       ports/www/p5-Bigtop
 p5-bind-conf_parser             ports/dns/p5-BIND-Conf_Parser
 p5-bio-asn1-entrezgene          ports/biology/p5-Bio-ASN1-EntrezGene
 p5-bio-das                      ports/biology/p5-Bio-Das
+p5-bio-glite                    ports/biology/p5-Bio-Glite
 p5-bio-graphics                 ports/biology/p5-Bio-Graphics
 p5-bio-phylo                    ports/biology/p5-Bio-Phylo
 p5-bioperl                      ports/biology/p5-bioperl
@@ -15378,6 +15385,7 @@ p5-net-nis                      ports/net/p5-Net-NIS
 p5-net-nis-listgroup            ports/net/p5-Net-NIS-Listgroup
 p5-net-nslookup                 ports/dns/p5-Net-Nslookup
 p5-net-oauth                    ports/net/p5-Net-OAuth
+p5-net-oauth-simple             ports/net/p5-Net-OAuth-Simple
 p5-net-opendht                  ports/net/p5-Net-OpenDHT
 p5-net-openid-consumer          ports/net/p5-Net-OpenID-Consumer
 p5-net-openid-janrain           ports/security/p5-Net-OpenID-JanRain
@@ -16092,6 +16100,7 @@ p5-test-classapi                ports/devel/p5-Test-ClassAPI
 p5-test-cmd                     ports/devel/p5-Test-Cmd
 p5-test-compile                 ports/devel/p5-Test-Compile
 p5-test-data                    ports/devel/p5-Test-Data
+p5-test-database                ports/databases/p5-Test-Database
 p5-test-databaserow             ports/databases/p5-Test-DatabaseRow
 p5-test-debugger                ports/devel/p5-Test-Debugger
 p5-test-declare                 ports/devel/p5-Test-Declare
@@ -21616,6 +21625,7 @@ tinymce                         ports/www/tinymce
 tinymce3                        ports/www/tinymce3
 tinymux                         ports/games/tinymux
 tinyproxy                       ports/www/tinyproxy
+tinypy                          ports/lang/tinypy
 tinyq                           ports/devel/tinyq
 tinystats                       ports/dns/tinystats
 tinysu                          ports/security/tinysu
