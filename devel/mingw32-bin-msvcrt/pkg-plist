@@ -430,8 +430,6 @@ mingw32/lib/libfaultrep.a
 mingw32/lib/libgdi32.a
 mingw32/lib/libglaux.a
 mingw32/lib/libglu32.a
-mingw32/lib/libglut.a
-mingw32/lib/libglut32.a
 mingw32/lib/libgmon.a
 mingw32/lib/libhal.a
 mingw32/lib/libhid.a
