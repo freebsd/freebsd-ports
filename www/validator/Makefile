@@ -7,6 +7,7 @@
 
 PORTNAME=	validator
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://validator.w3.org/dist/ \
 		http://www.cyberbotx.com/w3c-validator/
@@ -25,6 +26,7 @@ RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/opensp \
 		${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Net/IP.pm:${PORTSDIR}/net-mgmt/p5-Net-IP \
 		${SITE_PERL}/${PERL_ARCH}/SGML/Parser/OpenSP.pm:${PORTSDIR}/textproc/p5-SGML-Parser-OpenSP \
+		${SITE_PERL}/${PERL_ARCH}/String/Approx.pm:${PORTSDIR}/devel/p5-String-Approx \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
 
