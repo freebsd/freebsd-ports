@@ -7,10 +7,9 @@
 
 PORTNAME=	rbbr
 PORTVERSION=	0.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel ruby
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ruby-gnome2
+MASTER_SITES=	SF/ruby-gnome2
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/rev/}
 DIST_SUBDIR=	ruby
@@ -18,9 +17,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+2-based Ruby module browser
 
-BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/locale_system.so:${PORTSDIR}/devel/ruby-gettext
+BUILD_DEPENDS=	${RUBY_SITELIBDIR}/gettext.rb:${PORTSDIR}/devel/ruby-gettext
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
-		${RUBY_SITEARCHLIBDIR}/locale_system.so:${PORTSDIR}/devel/ruby-gettext
+		${RUBY_SITELIBDIR}/gettext.rb:${PORTSDIR}/devel/ruby-gettext
 
 USE_GETTEXT=	yes
 USE_RUBY=	yes
