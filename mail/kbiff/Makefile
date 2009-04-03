@@ -6,36 +6,26 @@
 #
 
 PORTNAME=	kbiff
-PORTVERSION=	3.8
-PORTREVISION=	3
+PORTVERSION=	3.9
 CATEGORIES=	mail kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail notification utility for KDE with nice features
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_KDELIBS_VER=3
+USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--disable-fast-perl
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+
 MAN1=		kbiff.1
 
-OPTIONS=	SSL	"SSL support" on
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_SSL)
-CONFIGURE_ARGS+=--enable-ssl
-.else
-CONFIGURE_ARGS+=--disable-ssl
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|-pthread|${PTHREAD_LIBS}|g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g ; \
+		 s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g ; \
+		 /if test/s|==|=|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

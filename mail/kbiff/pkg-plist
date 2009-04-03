@@ -1,7 +1,10 @@
 bin/kbiff
-lib/kbiff.a
-lib/kbiff.la
-lib/kbiff.so
+lib/kde3/kbiff.a
+lib/kde3/kbiff.la
+lib/kde3/kbiff.so
+lib/libkdeinit_kbiff.a
+lib/libkdeinit_kbiff.la
+lib/libkdeinit_kbiff.so
 share/applnk/Internet/kbiff.desktop
 share/apps/kbiff/pics/delete.png
 share/apps/kbiff/pics/mailbox.png
@@ -9,11 +12,13 @@ share/apps/kbiff/pics/mini-newmail.png
 share/apps/kbiff/pics/mini-noconn.png
 share/apps/kbiff/pics/mini-nomail.png
 share/apps/kbiff/pics/mini-oldmail.png
+share/apps/kbiff/pics/mini-stopped.png
 share/apps/kbiff/pics/newmail.png
 share/apps/kbiff/pics/noconn.png
 share/apps/kbiff/pics/nomail.png
 share/apps/kbiff/pics/oldmail.png
 share/apps/kbiff/pics/playsound.png
+share/apps/kbiff/pics/stopped.png
 share/doc/HTML/de/kbiff/common
 share/doc/HTML/de/kbiff/index.cache.bz2
 share/doc/HTML/de/kbiff/index.docbook
@@ -47,9 +52,9 @@ share/locale/hu/LC_MESSAGES/kbiff.mo
 share/locale/is/LC_MESSAGES/kbiff.mo
 share/locale/it/LC_MESSAGES/kbiff.mo
 share/locale/ja/LC_MESSAGES/kbiff.mo
+share/locale/nb/LC_MESSAGES/kbiff.mo
 share/locale/nl/LC_MESSAGES/kbiff.mo
-share/locale/no/LC_MESSAGES/kbiff.mo
-share/locale/no_NY/LC_MESSAGES/kbiff.mo
+share/locale/nn/LC_MESSAGES/kbiff.mo
 share/locale/pl/LC_MESSAGES/kbiff.mo
 share/locale/pt/LC_MESSAGES/kbiff.mo
 share/locale/pt_BR/LC_MESSAGES/kbiff.mo
@@ -67,5 +72,3 @@ share/locale/zh_TW.Big5/LC_MESSAGES/kbiff.mo
 @dirrm share/doc/HTML/de/kbiff
 @dirrm share/apps/kbiff/pics
 @dirrm share/apps/kbiff
-@dirrmtry share/locale/no_NY/LC_MESSAGES
-@dirrmtry share/locale/no_NY
