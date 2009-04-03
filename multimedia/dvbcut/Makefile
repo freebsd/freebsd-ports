@@ -6,38 +6,34 @@
 #
 
 PORTNAME=	dvbcut
-PORTVERSION=	0.5.4
-PORTREVISION=	2
+PORTVERSION=	0.6.0
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=dvbcut
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	http://www.mr511.de/dvbcut/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt application for cutting of MPEG PS and MPEG TS streams (DVB)
 
-BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
-		mplayer:${PORTSDIR}/multimedia/mplayer
-RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
-LIB_DEPENDS=	avutil.1:${PORTSDIR}/multimedia/ffmpeg \
-		ao.3:${PORTSDIR}/audio/libao
+BUILD_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
+LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
+		ao.3:${PORTSDIR}/audio/libao \
+		mad.2:${PORTSDIR}/audio/libmad \
+		avutil.1:${PORTSDIR}/multimedia/ffmpeg
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-BROKEN=		does not compile
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_QT_VER=	3
-ALL_TARGET=	build
-MAKE_ENV=	QTDIR=${QT_PREFIX} FFMPEG=${PREFIX} LDFLAGS="${LDFLAGS}"
-CFLAGS+=	"'-pthread -D__STDC_CONSTANT_MACROS'"
-LDFLAGS+=	-pthread
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-ffmpeg=${LOCALBASE}
+MAKEFILE=	makefile
 
 MAN1=		dvbcut.1
 PLIST_FILES=	bin/dvbcut
 
+QTCPPFLAGS+=	${PTHREAD_CFLAGS}
+QTCFGLIBS+=	${PTHREAD_LIBS}
+
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/bin/dvbcut ${PREFIX}/bin/
-		${INSTALL_MAN} ${WRKSRC}/dvbcut.1 ${PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/dvbcut ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/dvbcut.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
