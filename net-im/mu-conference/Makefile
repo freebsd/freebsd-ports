@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mu-conference
-PORTVERSION=	0.7
-PORTREVISION=	3
+PORTVERSION=	0.8
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.gna.org/mu-conference/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -34,6 +33,8 @@ DOCFILES=	AUTHORS COPYING ChangeLog FAQ LICENSE README TODO \
 		XEP0045_SUPPORT muc-default.xml style.css
 
 PORTDOCS=	*
+
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
