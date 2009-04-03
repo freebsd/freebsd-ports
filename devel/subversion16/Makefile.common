@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.6.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.5/:book
@@ -16,7 +16,8 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS=		--with-ssl
+CONFIGURE_ARGS=	--with-ssl
+MAKE_JOBS_SAFE=	yes
 WANT_PERL=	yes
 
 .if defined(SVN_BUILD_BINDINGS)
