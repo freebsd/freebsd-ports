@@ -299,8 +299,8 @@ scimgtk_DETECT=		${scimgtk${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 scimgtk_PORT=		${PORTSDIR}/textproc/linux${LINUX_DIST_SUFFIX}-scim-gtk
 scimgtk_DEPENDS=	gtk2 scimlibs
 
-scimlibs_FILE=		${LINUXBASE}/usr/lib/libscim-1.0.so.8.1.0
-scimlibs_f8_FILE=	${LINUXBASE}/usr/lib/libscim-1.0.so.8.2.3
+scimlibs_FILE=		${LINUXBASE}/usr/lib/libscim-1.0.so.8
+scimlibs_f8_FILE=	${LINUXBASE}/usr/lib/libscim-1.0.so.8
 scimlibs_DETECT=	${scimlibs${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 scimlibs_PORT=		${PORTSDIR}/textproc/linux${LINUX_DIST_SUFFIX}-scim-libs
 scimlibs_DEPENDS=	gtk2
