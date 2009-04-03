@@ -1,12 +1,11 @@
 %%SITE_PERL%%/MooseX/POE.pm
 %%SITE_PERL%%/MooseX/POE/Aliased.pm
-%%SITE_PERL%%/MooseX/POE/Exporter.pm
-%%SITE_PERL%%/MooseX/POE/Meta/Class.pm
-%%SITE_PERL%%/MooseX/POE/Meta/Class/Trait.pm
-%%SITE_PERL%%/MooseX/POE/Meta/Instance.pm
 %%SITE_PERL%%/MooseX/POE/Meta/Role.pm
-%%SITE_PERL%%/MooseX/POE/Meta/Trait.pm
-%%SITE_PERL%%/MooseX/POE/Object.pm
+%%SITE_PERL%%/MooseX/POE/Meta/Trait/Class.pm
+%%SITE_PERL%%/MooseX/POE/Meta/Trait/Constructor.pm
+%%SITE_PERL%%/MooseX/POE/Meta/Trait/Instance.pm
+%%SITE_PERL%%/MooseX/POE/Meta/Trait/Object.pm
+%%SITE_PERL%%/MooseX/POE/Meta/Trait/SweetArgs.pm
 %%SITE_PERL%%/MooseX/POE/Object/Deferred.pm
 %%SITE_PERL%%/MooseX/POE/Role.pm
 %%SITE_PERL%%/MooseX/POE/SweetArgs.pm
@@ -15,7 +14,7 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/POE
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
 @dirrmtry %%SITE_PERL%%/MooseX/POE/Object
-@dirrmtry %%SITE_PERL%%/MooseX/POE/Meta/Class
+@dirrmtry %%SITE_PERL%%/MooseX/POE/Meta/Trait
 @dirrmtry %%SITE_PERL%%/MooseX/POE/Meta
 @dirrmtry %%SITE_PERL%%/MooseX/POE
 @dirrmtry %%SITE_PERL%%/MooseX
