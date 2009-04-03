@@ -7,38 +7,45 @@
 #
 
 PORTNAME=	pyrenamer
-DISTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	sysutils python gnome
-MASTER_SITES=	http://www.infinicode.org/code/${PORTNAME}/
+MASTER_SITES=	http://www.infinicode.org/code/pyrenamer/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mass file renamer written in PyGTK
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/eyeD3/__init__.py:${PORTSDIR}/audio/py-eyed3
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/eyeD3/__init__.py:${PORTSDIR}/audio/py-eyed3
-
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix gconf2 pygtk2
+USE_GNOME=	gconf2 gnomehack pygtk2
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-DOCS=		AUTHORS COPYING ChangeLog NEWS README
 MAN1=		pyrenamer.1
 GCONF_SCHEMAS=	pyrenamer.schemas
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|[$$][(]datadir[)]/doc/pyrenamer|${EXAMPLESDIR}|g' \
-		${WRKSRC}/doc/Makefile.in
+.if defined(WITHOUT_HACHOIR)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/eyeD3/__init__.py:${PORTSDIR}/audio/py-eyed3
+.else
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/hachoir_metadata/__init__.py:${PORTSDIR}/sysutils/hachoir-metadata
+.endif
 
-.ifndef (NOPORTDOCS)
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g' ${WRKSRC}/Makefile.in
+
 post-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/pyrenamer.1 ${MANPREFIX}/man/man1
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.for file in AUTHORS ChangeLog NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+.for file in treefilebrowser_example.py
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${EXAMPLESDIR}
 .endfor
 .endif
 
