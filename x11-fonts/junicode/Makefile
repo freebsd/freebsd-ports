@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	junicode
-DISTVERSION=	0-6-12
-PORTREVISION=	2
+PORTVERSION=	0.6.15
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF
 
@@ -15,26 +14,22 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unicode font for medievalists (Latin, IPA and Runic)
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_ZIP=	yes
+NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+USE_ZIP=	yes
 
-PORTDOCS=	Junicode.pdf
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 
-FONTNAME=	${PORTNAME}
-FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
-WRKSRC=		${WRKDIR}
+FONTSDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 
 do-install:
-	${MKDIR} ${FONTSDIR}
+	@${MKDIR} ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSDIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.pdf ${DOCSDIR}
 .endif
 
 post-install:
