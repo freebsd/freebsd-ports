@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	umodplayer
-PORTVERSION=	0.b5.1
+PORTVERSION=	0.${DISTVERSION:L}
 DISTVERSION=	B5.1
 CATEGORIES=	audio
 MASTER_SITES=	SF
@@ -19,14 +19,21 @@ LIB_DEPENDS=	modplug.0:${PORTSDIR}/audio/libmodplug \
 		ao.3:${PORTSDIR}/audio/libao
 BUILD_DEPENDS=	${LOCALBASE}/lib/libaiff.a:${PORTSDIR}/audio/libaiff
 
-BROKEN=		Does not compile with audio/libaiff
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
 
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
 post-patch:
-	@${REINPLACE_CMD} -e 's/CFLAGS =/CFLAGS +=/' ${WRKSRC}/${MAKEFILE}.in
+	@${REINPLACE_CMD} -e \
+		'/CFLAGS/s| =| +=| ; \
+		 /CFLAGS/s| -O2| $$(CPPFLAGS)|g ; \
+		 /^@/d' ${WRKSRC}/${MAKEFILE}.in
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
