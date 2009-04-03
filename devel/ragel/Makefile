@@ -7,34 +7,29 @@
 #
 
 PORTNAME=	ragel
-PORTVERSION=	6.3
+PORTVERSION=	6.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.complang.org/ragel/
+.if !defined(NOPORTDOCS)
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTFILES_DOC}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+.endif
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compile regular languages into executable C/C++ code
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
-
-USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_ENV=	GPERF="${LOCALBASE}/bin/gperf"
 
-MAN1=		ragel.1 rlgen-cd.1 rlgen-dot.1 rlgen-java.1 rlgen-ruby.1
-PLIST_FILES=	bin/ragel bin/rlgen-cd
+MAN1=		${PORTNAME}.1
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/${PORTNAME}
 
-PORTDOCS=	${PORTNAME}-guide-${PORTVERSION}.pdf
-
-.if !defined(NOPORTDOCS)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTDOCS}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-.endif
+DISTFILES_DOC=	${PORTNAME}-guide-${PORTVERSION}.pdf
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|$$(CFLAGS)|$$(CXXFLAGS)|g ; \
-		 s|gperf -L|$$(GPERF) -L|g'
+	@${REINPLACE_CMD} -e 's|= -g|=|g' ${WRKSRC}/ragel/Makefile.in
 
 post-build:
 	@cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} \
@@ -42,16 +37,17 @@ post-build:
 		${MAN1}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ragel/ragel ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/rlgen-cd/rlgen-cd ${PREFIX}/bin
-.for m in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/doc/${m} ${MAN1PREFIX}/man/man1
-.endfor
-
-post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/ragel/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${PORTDOCS} ${DOCSDIR}
+.for file in ${DISTFILES_DOC}
+	${INSTALL_DATA} ${DISTDIR}/${file} ${DOCSDIR}
+.endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples; ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
