@@ -7,7 +7,7 @@
 
 PORTNAME=	Text-vFile-asData
 PORTVERSION=	0.05
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,10 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Parse vFile formatted files into data structures
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor/Chained.pm:${PORTSDIR}/devel/p5-Class-Accessor-Chained
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Class-Accessor-Chained>0:${PORTSDIR}/devel/p5-Class-Accessor-Chained
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
+
 MAN1=		holidays_ical.1 rota_ical.cgi.1
 MAN3=		Text::vFile::asData.3
 
