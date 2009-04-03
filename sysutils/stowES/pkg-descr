@@ -7,4 +7,4 @@ software by creating library dependencies and checksums, and providing
 various search functions. It is also possible to create tar-archives out
 of your installed packages.
 
-WWW: http://www.inf.tu-dresden.de/~al10/stowES/
+WWW: http://os.inf.tu-dresden.de/~adam/stowES/
