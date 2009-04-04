@@ -29,7 +29,6 @@ CONFIGURE_ARGS+=	${OPSYS}
 CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ARGS+=	--enable-samples=no
-ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
 USE_GMAKE=		yes
 
