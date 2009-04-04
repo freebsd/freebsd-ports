@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prips
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/sysutils/prips/
 
