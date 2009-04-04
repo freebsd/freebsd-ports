@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fetion
-PORTVERSION=	0.98.4
+PORTVERSION=	0.98.5
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.logvinov.ru/files/dist/fetion/
 PKGNAMEPREFIX=	pidgin-
