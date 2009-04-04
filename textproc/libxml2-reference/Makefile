@@ -13,9 +13,11 @@ PARENT_WRKSRC!=	cd ${.CURDIR}/../libxml2 && ${MAKE} -V WRKSRC
 EXTRACT_ONLY=
 USE_GMAKE=	yes
 
+.if !defined(NOPORTEXAMPLES)
 EXAMPLES=	testHTML.c testSAX.c testXPath.c xmllint.c
 PLIST_FILES=	${EXAMPLES:S|^|%%EXAMPLESDIR%%/|}
 PLIST_DIRS=	%%EXAMPLESDIR%%
+.endif
 
 do-install:
 .if !defined(NOPORTDOCS)
