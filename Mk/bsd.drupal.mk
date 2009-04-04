@@ -1,13 +1,13 @@
 # $FreeBSD$
 #
 
-# Make sure we cannot define any combination of DRUPAL{4,5,6}
-.if (defined(DRUPAL4_MODULE) && defined(DRUPAL5_MODULE)) || (defined(DRUPAL4_MODULE) && defined(DRUPAL6_MODULE)) || (defined(DRUPAL5_MODULE) && defined(DRUPAL6_MODULE))
-BROKEN=		cannot define a combination of DRUPAL4_MODULE, DRUPAL5_MODULE and DRUPAL6_MODULE
+# Make sure we cannot define any combination of DRUPAL{5,6}
+.if (defined(DRUPAL5_MODULE) && defined(DRUPAL6_MODULE))
+BROKEN=		cannot define a combination of DRUPAL5_MODULE and DRUPAL6_MODULE
 .endif
 
 # Make sure DRUPAL_MODULE is defined.  If no DRUPAL*_module defined, then define DRUPAL4_MODULE
-.if defined(DRUPAL4_MODULE) || defined(DRUPAL5_MODULE) || defined(DRUPAL6_MODULE)
+.if defined(DRUPAL5_MODULE) || defined(DRUPAL6_MODULE)
 DRUPAL_MODULE?=	yes
 .endif
 
@@ -16,7 +16,7 @@ DRUPAL_MODTYPE=	modules
 .endif
 
 # Make sure DRUPAL_PORT is defined.  If no DRUPAL*_module defined, then define DRUPAL4_PORT
-.if defined(DRUPAL4_PORT) || defined(DRUPAL5_PORT) || defined(DRUPAL6_PORT)
+.if defined(DRUPAL5_PORT) || defined(DRUPAL6_PORT)
 DRUPAL_PORT?=	yes
 .endif
 
@@ -31,8 +31,6 @@ DRUPAL_BASE?=   www/drupal6
 .else
 .if defined(DRUPAL5_MODULE) || defined(DRUPAL5_PORT) || defined(DRUPAL5_THEME)
 DRUPAL_BASE?=	www/drupal5
-.else
-DRUPAL_BASE?=	www/drupal4
 .endif
 .endif
 
@@ -47,15 +45,6 @@ DOCSDIR?=	${DRUPAL_DOCSDIR}
 
 .if defined(DRUPAL_MODULE) || defined (DRUPAL_THEME)
 
-.if defined(DRUPAL4_MODULE)
-PKGNAMEPREFIX=	drupal4-
-DRUPAL_VERSION?=	4.7.0
-.if defined(DRUPAL_MODSUBDIR)
-DRUPAL_MODDIR?= ${DRUPAL_BASE}/${DRUPAL_MODTYPE}/${DRUPAL_MODSUBDIR}
-.else 
-DRUPAL_MODDIR?= ${DRUPAL_BASE}/${DRUPAL_MODTYPE}
-.endif
-.endif
 
 .if defined(DRUPAL5_MODULE) || defined (DRUPAL5_THEME)
 PKGNAMEPREFIX=	drupal5-
