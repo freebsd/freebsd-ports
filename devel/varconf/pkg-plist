@@ -1,4 +1,3 @@
-include/varconf-1.0/varconf/Config.h
 include/varconf-1.0/varconf/config.h
 include/varconf-1.0/varconf/dynbase.h
 include/varconf-1.0/varconf/dyncmp.h
