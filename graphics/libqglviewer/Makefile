@@ -35,4 +35,9 @@ do-configure:
 	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
 		-spec ${QMAKESPEC} QGLViewer.pro PREFIX="${PREFIX}"
 
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKDIR}/${DISTNAME}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
+.endif
 .include <bsd.port.mk>
