@@ -461,6 +461,11 @@ MOZ_SED_ARGS+=	-e's|@CPPFLAGS@|${CPPFLAGS}|g'		\
 		-e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g'
 MOZCONFIG_SED?= ${SED} ${MOZ_SED_ARGS}
 
+.if ${ARCH}=="sparc64"
+# Work around miscompilation/mislinkage of the sCanonicalVTable hacks.
+MOZ_OPTIONS+=	--disable-v1-string-abi
+.endif
+
 .else # bsd.port.post.mk
 
 post-patch: gecko-post-patch gecko-moz-pis-patch
