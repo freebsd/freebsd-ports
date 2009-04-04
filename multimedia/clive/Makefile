@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clive
-PORTVERSION=	2.1.9
+PORTVERSION=	2.1.10
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
@@ -29,9 +29,10 @@ OPTIONS=	PASTE   "Enable pasting from X clipboard" off \
 
 PLIST_FILES=	bin/clive
 
+NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_PERL5=	5.8.2+
+USE_PERL5_RUN=	5.8.2+
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
@@ -41,14 +42,14 @@ RUN_DEPENDS+=	p5-Clipboard>=0.09:${PORTSDIR}/x11/p5-Clipboard
 .endif
 
 .if defined(WITH_PAGER)
-RUN_DEPENDS+=	p5-IO-Pager-0.06:${PORTSDIR}/devel/p5-IO-Pager
+RUN_DEPENDS+=	p5-IO-Pager>=0.06:${PORTSDIR}/devel/p5-IO-Pager
 .endif
 
 .if defined(WITH_EXPECT)
 RUN_DEPENDS+=	p5-Expect>=1.21:${PORTSDIR}/lang/p5-Expect
 .endif
 
-.if defined(WITH_MANPAGE)
+.if defined(WITH_MANPAGE) && !defined(NO_INSTALL_MANPAGES)
 MAKE_ENV=	WITH_MAN=yes
 MAN1=		clive.1
 .endif
