@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clive-utils
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 CATEGORIES=	multimedia net perl5
 MASTER_SITES=	GOOGLE_CODE
 DIST_SUBDIR=	clive
@@ -14,6 +14,7 @@ DIST_SUBDIR=	clive
 MAINTAINER=	legatvs@gmail.com
 COMMENT=	Passwords, RSS parsing, and link extraction for clive
 
+NO_BUILD=	yes
 USE_PERL5_RUN=	5.8.2+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -30,7 +31,7 @@ PLIST_FILES=	bin/clivefeed bin/clivepass bin/clivescan
 
 OPTIONS=	PASTE "Enable pasting of URLs from X clipboard" Off \
 		FONTDIALOG "Enable Font Dialog support" Off \
-		MANPAGES "Install manual pages" on
+		MANPAGES "Install manual pages" On
 
 .include <bsd.port.pre.mk>
 
@@ -42,7 +43,7 @@ RUN_DEPENDS+=	p5-Clipboard>=0.09:${PORTSDIR}/x11/p5-Clipboard
 RUN_DEPENDS+=	p5-Tk-FontDialog>=0.15:${PORTSDIR}/x11-toolkits/p5-Tk-FontDialog
 .endif
 
-.ifdef WITH_MANPAGES
+.ifdef WITH_MANPAGES && !defined(NO_INSTALL_MANPAGES)
 MAKE_ENV=	WITH_MAN=yes
 MAN1=		clivefeed.1 clivepass.1 clivescan.1
 .endif
