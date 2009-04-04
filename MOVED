@@ -3894,3 +3894,13 @@ net/sipxpublisher||2009-03-28|Has expired: depends on broken port net/sipxcommse
 net/sipxregistry||2009-03-28|Has expired: depends on broken port net/sipxcommserverlib
 net/sipxtacklib||2009-03-28|Has expired: old version, needs updating
 net/sipxvxml||2009-03-28|Has expired: old version, needs updating
+www/drupal4-attachment||2009-04-04|Has expired: Drupal 4.7.x is end-of-life since 200802.  Please migrate to Drupal 6.x
+www/drupal4-filemanager||2009-04-04|Has expired: Drupal 4.7.x is end-of-life since 200802.  Please migrate to Drupal 6.x
+www/drupal4-gsitemap||2009-04-04|Has expired: Drupal 4.7.x is end-of-life since 200802.  Please migrate to Drupal 6.x
+www/drupal4-i18n||2009-04-04|Has expired: Drupal 4.7.x is end-of-life since 200802.  Please migrate to Drupal 6.x
+www/drupal4-nice_menus||2009-04-04|Has expired: Drupal 4.7.x is end-of-life since 200802.  Please migrate to Drupal 6.x
+www/drupal4-taxonomy_access||2009-04-04|Has expired: Drupal 4.7.x is end-of-life since 200802.  Please migrate to Drupal 6.x
+www/drupal4-textile||2009-04-04|Has expired: Drupal 4.7.x is end-of-life since 200802.  Please migrate to Drupal 6.x
+www/drupal4||2009-04-04|Has expired: Drupal 4.7.x is end-of-life since 200802.  Please migrate to Drupal 6.x
+www/squid26||2009-04-04|Has expired: The 2.6 series is no longer actively maintained by the Squid developers
+x11-themes/camaelon-nesedah||2009-04-04|Has expired: now included in camaelon

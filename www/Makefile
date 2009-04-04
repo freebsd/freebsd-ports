@@ -137,14 +137,6 @@
     SUBDIR += dpsearch
     SUBDIR += drood
     SUBDIR += drraw
-    SUBDIR += drupal4
-    SUBDIR += drupal4-attachment
-    SUBDIR += drupal4-filemanager
-    SUBDIR += drupal4-gsitemap
-    SUBDIR += drupal4-i18n
-    SUBDIR += drupal4-nice_menus
-    SUBDIR += drupal4-taxonomy_access
-    SUBDIR += drupal4-textile
     SUBDIR += drupal5
     SUBDIR += drupal5-adsense
     SUBDIR += drupal5-bluebreeze
@@ -1409,7 +1401,6 @@
     SUBDIR += spreadlogd
     SUBDIR += sqstat
     SUBDIR += squid
-    SUBDIR += squid26
     SUBDIR += squid30
     SUBDIR += squid_radius_auth
     SUBDIR += squidclients
