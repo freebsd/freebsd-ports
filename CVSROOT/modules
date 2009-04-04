@@ -23468,6 +23468,7 @@ xorg-minimal                    ports/x11/xorg-minimal
 xorg-nestserver                 ports/x11-servers/xorg-nestserver
 xorg-server                     ports/x11-servers/xorg-server
 xorg-vfbserver                  ports/x11-servers/xorg-vfbserver
+xorgramana                      ports/games/xorgramana
 xoris                           ports/graphics/xoris
 xorp                            ports/net/xorp
 xorriso                         ports/sysutils/xorriso
