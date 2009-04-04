@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	20090331
+PORTVERSION=	20090403
 CATEGORIES=	irc
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMESUFFIX=	-devel
@@ -31,6 +31,7 @@ OPTIONS=	PERL "Enable Perl support" on \
 		BOT "Enable bot" off
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.13
+MAKE_JOBS_SAFE=	yes
 
 # USE_OPENSSL must be defined before bsd.port.pre.mk so use old schema
 # for WITH_SSL option
