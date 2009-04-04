@@ -7,6 +7,7 @@
 
 PORTNAME=	xf86-video-tdfx
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
