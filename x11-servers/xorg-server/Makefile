@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xorg-server
-PORTVERSION=	1.5.3
-PORTREVISION=	8
+PORTVERSION=	1.6.0
+#PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://xorg.freedesktop.org/releases/individual/xserver/
@@ -31,19 +31,18 @@ USE_XORG=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
 		xf86vidmodeproto xf86bigfontproto scrnsaverproto bigreqsproto \
 		resourceproto fontsproto inputproto xf86dgaproto \
 		videoproto compositeproto trapproto recordproto xineramaproto \
-		evieproto xfont fontenc xkbui pixman pciaccess
+		xinerama evieproto xfont fontenc xkbui pixman pciaccess
 
 USE_OPENSSL=	yes
 USE_PERL5_BUILD=yes
-CONFIGURE_ARGS=	--disable-dmx --disable-xvfb --disable-xnest --disable-xprint \
+CONFIGURE_ARGS=	--disable-dmx --disable-xvfb --disable-xnest \
 		--localstatedir=/var --without-dtrace --disable-xephyr \
-		--enable-record=yes --enable-xtrap=yes
+		--enable-record=yes
 
 MAN1=		Xorg.1 \
 		Xserver.1 \
 		cvt.1 \
-		gtf.1 \
-		xorgconfig.1
+		gtf.1
 MAN4=		exa.4 \
 		fbdevhw.4
 MAN5=		xorg.conf.5

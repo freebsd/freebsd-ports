@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-input-fpit
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org

@@ -15,4 +15,6 @@ COMMENT=	X.Org dynapro input driver
 XORG_CAT=	driver
 MAN4=		dynapro.4x
 
+IGNORE=	Unmaintained upstream. Notify ${MAINTAINER} if you have this device.
+
 .include <bsd.port.mk>

@@ -16,4 +16,6 @@ COMMENT=	X.Org citron input driver
 XORG_CAT=	driver
 MAN4=		citron.4x
 
+IGNORE=	Unmaintained upstream. Notify ${MAINTAINER} if you have this device.
+
 .include <bsd.port.mk>

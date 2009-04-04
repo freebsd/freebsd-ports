@@ -15,4 +15,6 @@ COMMENT=	X.Org microtouch input driver
 XORG_CAT=	driver
 MAN4=		microtouch.4x
 
+IGNORE=	Unmaintained upstream. Notify ${MAINTAINER} if you have this device.
+
 .include <bsd.port.mk>

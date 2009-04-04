@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xorg-vfbserver
-PORTVERSION=	1.5.3
+PORTVERSION=	1.6.0
 PORTEPOCH=	1
-PORTREVISION=	1
+#PORTREVISION=	1
 CATEGORIES=	x11-servers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -26,10 +26,11 @@ USE_XORG=	x11 xf86driproto glproto randrproto renderproto fixesproto \
 		xf86vidmodeproto xf86bigfontproto scrnsaverproto bigreqsproto \
 		dri2proto resourceproto fontsproto xf86dgaproto videoproto \
 		compositeproto trapproto recordproto resourceproto \
-		xineramaproto evieproto xkbfile xfont fontenc xkbui xxf86misc \
-		xxf86vm xaw7 xmu xpm xext pixman xtrans
+		xineramaproto xinerama evieproto xkbfile xfont fontenc \
+		xkbui xxf86misc xxf86vm xaw7 xmu xpm xext pixman xtrans
 
-CONFIGURE_ARGS=	--disable-dmx --disable-xnest --disable-xorg --disable-xprint \
+USE_OPENSSL=	yes
+CONFIGURE_ARGS=	--disable-dmx --disable-xnest --disable-xorg \
 		--localstatedir=/var --without-dtrace
 
 PLIST_FILES=	bin/Xvfb
@@ -38,4 +39,13 @@ MAN1=		Xvfb.1
 do-install:
 	cd ${WRKSRC}/hw/vfb; ${MAKE} install
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_OPENSSL_BASE)
+# The reason why I use this is cause openssl from base doesn't install a .pc file
+# and configure will fail trying to find it. Setting both of those variables to
+# a *non-empty* value by-passes the pkg-config check.
+CONFIGURE_ENV=	SHA1_LIB="-L/usr/lib -lcrypto" SHA1_CFLAGS="-I/usr/include"
+.endif
+
+.include <bsd.port.post.mk>

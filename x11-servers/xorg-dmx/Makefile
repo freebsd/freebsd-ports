@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xorg-dmx
-PORTVERSION=	1.5.3
+PORTVERSION=	1.6.0
 PORTEPOCH=	1
-PORTREVISION=	1
+#PORTREVISION=	1
 CATEGORIES=	x11-servers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -26,11 +26,12 @@ USE_XORG=	x11 xf86driproto glproto randrproto renderproto fixesproto \
 		xf86vidmodeproto xf86bigfontproto scrnsaverproto bigreqsproto \
 		resourceproto fontsproto xf86dgaproto videoproto \
 		compositeproto trapproto recordproto resourceproto \
-		xineramaproto evieproto xkbfile xfont fontenc xkbui \
+		xineramaproto xinerama evieproto xkbfile xfont fontenc xkbui \
 		xxf86misc xxf86vm xaw7 xmu xpm xext xrender xfixes xi dmxproto \
 		xau dmx xtst xres pixman xtrans
 		
-CONFIGURE_ARGS=	--disable-xprint --disable-xvfb --disable-xorg --disable-xnest \
+USE_OPENSSL=	yes
+CONFIGURE_ARGS=	--disable-xvfb --disable-xorg --disable-xnest \
 		--enable-dmx --localstatedir=/var --without-dtrace
 
 MAN1=		Xdmx.1 dmxtodmx.1 vdltodmx.1 xdmxconfig.1
@@ -41,6 +42,13 @@ do-install:
 OPTIONS=        HAL     "Compile with HAL config support" on
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_OPENSSL_BASE)
+# The reason why I use this is cause openssl from base doesn't install a .pc file
+# and configure will fail trying to find it. Setting both of those variables to
+# a *non-empty* value by-passes the pkg-config check.
+CONFIGURE_ENV=	SHA1_LIB="-L/usr/lib -lcrypto" SHA1_CFLAGS="-I/usr/include"
+.endif
 
 .if !defined(WITHOUT_HAL)
 LIB_DEPENDS+=   hal.1:${PORTSDIR}/sysutils/hal
