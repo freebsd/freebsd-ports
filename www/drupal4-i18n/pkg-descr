@@ -1,8 +1,0 @@
-This is a collection of modules to add multi-lingual capabilities to Drupal
-sites. It provides content translation facilities for nodes and taxonomy,
-interface translation for anonymous users when used with the locale module,
-and browser language detection. It also includes a block for language
-selection and manages translation relationships for nodes and taxonomy
-terms.
-
-WWW: http://drupal.org/project/i18n

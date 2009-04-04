@@ -8,7 +8,6 @@
     SUBDIR += beastie
     SUBDIR += bluecurve-themes
     SUBDIR += buffy
-    SUBDIR += camaelon-nesedah
     SUBDIR += claws-mail-themes
     SUBDIR += clean-theme-gtk
     SUBDIR += clearlooks

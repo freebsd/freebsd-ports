@@ -1,6 +1,0 @@
-This module is an alternative to Drupal's included upload module. It uses
-the filemanager module to allow a unique namespace per node and support
-large number of files. In addition this module allows you to give each
-attachment a title and description.
-
-WWW: http://drupal.org/project/attachment
