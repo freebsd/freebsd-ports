@@ -19,8 +19,10 @@ post-patch:
 		| ${XARGS} ${REINPLACE_CMD} -e '/^install-am:/ s| all-am||'
 
 do-install:
+.if !defined(NOPORTDOCS)
 .for d in docs examples
 	@cd ${WRKSRC}/${d} && ${GMAKE} install
 .endfor
+.endif
 
 .include "${.CURDIR}/../../devel/glib20-reference/bsd.gnome-reference.mk"
