@@ -15,7 +15,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Manipulate the file headers in tar archive files in various ways
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		tardy.1
 PLIST_FILES=	bin/tardy
