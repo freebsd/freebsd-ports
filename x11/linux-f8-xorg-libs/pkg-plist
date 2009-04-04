@@ -47,6 +47,8 @@ usr/lib/libXmu.so.6
 usr/lib/libXmu.so.6.2.0
 usr/lib/libXmuu.so.1
 usr/lib/libXmuu.so.1.0.0
+usr/lib/libXp.so.6
+usr/lib/libXp.so.6.2.0
 usr/lib/libXpm.so.4
 usr/lib/libXpm.so.4.11.0
 usr/lib/libXrandr.so.2
@@ -376,6 +378,11 @@ usr/share/doc/libXmu-1.0.3/AUTHORS
 usr/share/doc/libXmu-1.0.3/COPYING
 usr/share/doc/libXmu-1.0.3/ChangeLog
 usr/share/doc/libXmu-1.0.3/README
+usr/share/doc/libXp-1.0.0/AUTHORS
+usr/share/doc/libXp-1.0.0/COPYING
+usr/share/doc/libXp-1.0.0/ChangeLog
+usr/share/doc/libXp-1.0.0/INSTALL
+usr/share/doc/libXp-1.0.0/README
 usr/share/doc/libXpm-3.5.7/AUTHORS
 usr/share/doc/libXpm-3.5.7/COPYING
 usr/share/doc/libXpm-3.5.7/ChangeLog
@@ -444,6 +451,7 @@ usr/share/icons/default/index.theme
 @dirrm usr/share/doc/libXrender-0.9.4
 @dirrm usr/share/doc/libXrandr-1.2.2
 @dirrm usr/share/doc/libXpm-3.5.7
+@dirrm usr/share/doc/libXp-1.0.0
 @dirrm usr/share/doc/libXmu-1.0.3
 @dirrm usr/share/doc/libXinerama-1.0.2
 @dirrm usr/share/doc/libXi-1.1.3
