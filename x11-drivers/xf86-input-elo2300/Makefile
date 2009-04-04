@@ -14,4 +14,6 @@ COMMENT=	X.Org elo2300 input driver
 
 XORG_CAT=	driver
 
+IGNORE=	Unmaintained upstream. Notify ${MAINTAINER} if you have this device.
+
 .include <bsd.port.mk>
