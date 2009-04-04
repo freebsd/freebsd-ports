@@ -7,7 +7,7 @@
 
 PORTNAME=	trigger
 PORTVERSION=	0.5.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME}-rally
@@ -19,7 +19,7 @@ COMMENT=	A rally car racing game
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	openal:${PORTSDIR}/audio/openal \
-		physfs:${PORTSDIR}/devel/physfs \
+		physfs.1:${PORTSDIR}/devel/physfs \
 		alut.1:${PORTSDIR}/audio/freealut
 
 USE_SDL=	sdl image

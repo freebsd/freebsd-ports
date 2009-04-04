@@ -8,7 +8,7 @@
 
 PORTNAME=	paragui
 PORTVERSION=	1.0.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform high-level application framework and GUI library
 
-LIB_DEPENDS=	physfs-1.0.1:${PORTSDIR}/devel/physfs \
+LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	paragui-devel-[0-9]*

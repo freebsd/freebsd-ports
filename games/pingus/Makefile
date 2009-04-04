@@ -7,7 +7,7 @@
 
 PORTNAME=	pingus
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://pingus.seul.org/files/
 
@@ -16,7 +16,7 @@ COMMENT=	Free Lemmings-like game
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		boost_regex.4:${PORTSDIR}/devel/boost \
-		physfs-1.0.1:${PORTSDIR}/devel/physfs
+		physfs.1:${PORTSDIR}/devel/physfs
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
