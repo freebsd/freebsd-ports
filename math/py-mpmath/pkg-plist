@@ -188,20 +188,16 @@
 %%PORTDOCS%%%%DOCSDIR%%/objects.inv
 %%PORTDOCS%%%%DOCSDIR%%/search.html
 %%PORTDOCS%%%%DOCSDIR%%/searchindex.js
-%%PORTDOCS%%%%DOCSDIR%%/_static/contents.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/default.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/file.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/navigation.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/plus.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/rightsidebar.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/searchtools.js
-%%PORTDOCS%%%%DOCSDIR%%/_static/sphinxdoc.css
-%%PORTDOCS%%%%DOCSDIR%%/_static/stickysidebar.css
-%%PORTDOCS%%%%DOCSDIR%%/_static/traditional.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/pygments.css
+%%PORTDOCS%%%%DOCSDIR%%/.buildinfo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/.doctrees
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
