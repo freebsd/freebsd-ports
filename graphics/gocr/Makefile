@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gocr
-PORTVERSION=	0.46
-PORTREVISION=	1
+PORTVERSION=	0.47
 CATEGORIES=	graphics
 MASTER_SITES=	SF/jocr
 
@@ -32,6 +31,7 @@ PLIST_FILES+=	bin/gocr.tcl
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|@LIBS@|-L${LOCALBASE}/lib @LIBS@|g' ${WRKSRC}/src/Makefile.in
 .if defined(WITHOUT_X11)
 	@${REINPLACE_CMD} -e '/gocr.tcl/d' ${WRKSRC}/src/Makefile.in
 .endif
