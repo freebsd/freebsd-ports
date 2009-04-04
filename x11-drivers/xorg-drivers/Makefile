@@ -7,6 +7,7 @@
 
 PORTNAME=	xorg-drivers
 PORTVERSION=	7.4
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 MASTER_SITES=	# none
 DISTFILES=	# none

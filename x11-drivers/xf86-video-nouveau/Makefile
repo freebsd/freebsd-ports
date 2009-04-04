@@ -7,6 +7,7 @@
 
 PORTNAME=	xf86-video-nouveau
 PORTVERSION=	0.0.10.20090129
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 MASTER_SITES=	ftp://ftp.lissyara.su/users/Guest/
 
