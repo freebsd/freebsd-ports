@@ -73,10 +73,6 @@ MOZ_OPTIONS+=	--disable-dbus
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
 post-extract::
 	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \
 		-e 's|@MOZILLA_NAME@|${MOZILLA_NAME}|' \
@@ -97,7 +93,7 @@ post-patch:
 	@(cd ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix && \
 	    ${LN} -s xptcstubs_asm_sparc64_openbsd.s xptcstubs_asm_sparc64_freebsd.s && \
 	    ${LN} -s xptcstubs_sparc64_openbsd.cpp xptcstubs_sparc64_freebsd.cpp && \
-	    ${LN} -s xptcinvoke_sparc64_openbsd.cpp xptcinvoke_sparc64_freebsd.cpp) && \
+	    ${LN} -s xptcinvoke_sparc64_openbsd.cpp xptcinvoke_sparc64_freebsd.cpp && \
 	    ${LN} -s xptcinvoke_asm_sparc64_openbsd.s xptcinvoke_asm_sparc64_freebsd.s)
 .endif
 
