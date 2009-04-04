@@ -1,4 +1,4 @@
-share/devhelp/books/gtkmm-2.0/gtkmm-2.0.devhelp
-@dirrm share/devhelp/books/gtkmm-2.0
-@dirrmtry share/devhelp/books
-@dirrmtry share/devhelp
+%%PORTDOCS%%share/devhelp/books/gtkmm-2.0/gtkmm-2.0.devhelp
+%%PORTDOCS%%@dirrm share/devhelp/books/gtkmm-2.0
+%%PORTDOCS%%@dirrmtry share/devhelp/books
+%%PORTDOCS%%@dirrmtry share/devhelp
