@@ -7,7 +7,7 @@
 
 PORTNAME=	excido
 PORTVERSION=	0.1.5c
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/excido/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -16,7 +16,7 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A portable fast-paced 3d shooter
 
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
-		physfs-1.0.1:${PORTSDIR}/devel/physfs \
+		physfs.1:${PORTSDIR}/devel/physfs \
 		alut.1:${PORTSDIR}/audio/freealut
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

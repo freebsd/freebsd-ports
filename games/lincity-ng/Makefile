@@ -7,7 +7,7 @@
 
 PORTNAME=	lincity-ng
 PORTVERSION=	1.1.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MAINTAINER=	az@FreeBSD.org
 COMMENT=	Improved rich city simulation game for X
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
-LIB_DEPENDS=	physfs-1.0.1:${PORTSDIR}/devel/physfs
+LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs
 
 USE_BZIP2=	yes
 USE_SDL=	sdl mixer image ttf gfx

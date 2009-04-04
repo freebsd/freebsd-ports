@@ -7,6 +7,7 @@
 
 PORTNAME=	blobby
 PORTVERSION=	0.6a
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	blobby2-linux-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	blobby2-linux-${PORTVERSION}
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Official continuation of the famous Blobby Volley 1.x game
 
-LIB_DEPENDS=	physfs:${PORTSDIR}/devel/physfs \
+LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \
 		drm:${PORTSDIR}/graphics/libdrm
 
 USE_XORG=	x11 xext xxf86vm xdamage xfixes xau xdmcp xrandr xrender
