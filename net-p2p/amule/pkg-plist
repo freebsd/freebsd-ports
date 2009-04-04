@@ -1,10 +1,5 @@
-%%PL_ALC%%man/fr/man1/alcc.1.gz
-%%PL_AMULEWEBSRV%%man/fr/man1/amuleweb.1.gz
-%%PL_AMULECMD%%man/fr/man1/amulecmd.1.gz
-%%PL_ED2K%%man/fr/man1/ed2k.1.gz
-%%PL_AMULEDAEMON%%man/fr/man1/amuled.1.gz
-man/fr/man1/amule.1.gz
 share/locale/ar/LC_MESSAGES/amule.mo
+share/locale/ast/LC_MESSAGES/amule.mo
 share/locale/bg/LC_MESSAGES/amule.mo
 share/locale/ca/LC_MESSAGES/amule.mo
 share/locale/cs/LC_MESSAGES/amule.mo
@@ -41,6 +36,8 @@ share/locale/zh_CN/LC_MESSAGES/amule.mo
 share/locale/zh_TW/LC_MESSAGES/amule.mo
 @dirrmtry share/locale/ar/LC_MESSAGES
 @dirrmtry share/locale/ar
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/bg/LC_MESSAGES
 @dirrmtry share/locale/bg
 @dirrmtry share/locale/ca/LC_MESSAGES
@@ -110,9 +107,11 @@ share/locale/zh_TW/LC_MESSAGES/amule.mo
 %%PL_CAS%%@dirrmtry share/cas
 %%PL_CAS%%share/pixmaps/wxcas.xpm
 %%PL_ALC%%share/pixmaps/alc.xpm
+%%PL_AMULEDAEMON%%share/pixmaps/amulegui.xpm
 share/pixmaps/amule.xpm
 %%PL_CAS%%share/applications/wxcas.desktop
 %%PL_ALC%%share/applications/alc.desktop
+%%PL_AMULEDAEMON%%share/applications/amulegui.desktop
 share/applications/amule.desktop
 %%PL_AMULEWEBSRV%%share/amule/webserver/default/aMule.tmpl
 %%PL_AMULEWEBSRV%%share/amule/webserver/default/add_server.gif

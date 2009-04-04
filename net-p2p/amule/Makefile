@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aMule
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/amule
 
@@ -30,7 +30,9 @@ CONFIGURE_ARGS=	--disable-debug \
 		--without-included-gettext \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-libiconv-prefix=${LOCALBASE} \
-		--enable-embedded_crypto
+		--with-crypto-prefix=${LOCALBASE} \
+		--disable-upnp \
+		--with-denoise-level=0
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -42,7 +44,8 @@ OPTIONS=	OPTIMIZE "Build with optimization" on \
 		CAS "Compile C aMule Statistics (+GUI)" on \
 		ALC "Compile aMule Link Creator (+GUI)" on \
 		AMULEDAEMON "Compile aMule daemon version - EXPERIMENTAL" off \
-		WXUNICODE "Enable Unicode support" on
+		WXUNICODE "Enable Unicode support" on \
+		GEOIP "Enable GeoIP IP2Country support" off
 
 DOCSDIR=	${PREFIX}/share/doc/aMule-${PORTVERSION}
 PORTDOCS=	ABOUT-NLS Changelog EC_Protocol.txt \
@@ -113,31 +116,18 @@ CONFIGURE_ARGS+=	--disable-amule-daemon --disable-amule-gui
 PLIST_SUB+=		PL_AMULEDAEMON="@comment "
 .endif
 
+.if defined(WITH_GEOIP)
+CONFIGURE_ARGS+=	--enable-geoip
+LIB_DEPENDS+=		GeoIP.5:${PORTSDIR}/net/GeoIP
+.else
+CONFIGURE_ARGS+=	--disable-geoip
+.endif
+
 .if !defined(WITHOUT_WXUNICODE)
 WX_UNICODE=yes
 .endif
 
 # Man pages management
 .include "Makefile.man"
-
-post-install:
-# fr manpages are still incomplete and can't be managed
-# by MANLANG. Will be done when pages are complete.
-	${GZIP_CMD} ${PREFIX}/man/fr/man1/amule.1
-.if defined(WITH_AMULECMD)
-	${GZIP_CMD} ${PREFIX}/man/fr/man1/amulecmd.1
-.endif
-.if defined(WITH_AMULEWEBSRV)
-	${GZIP_CMD} ${PREFIX}/man/fr/man1/amuleweb.1
-.endif
-.if defined(WITH_AMULEDAEMON)
-	${GZIP_CMD} ${PREFIX}/man/fr/man1/amuled.1
-.endif
-.if defined(WITH_ED2K)
-	${GZIP_CMD} ${PREFIX}/man/fr/man1/ed2k.1
-.endif
-.if defined(WITH_ALC)
-	${GZIP_CMD} ${PREFIX}/man/fr/man1/alcc.1
-.endif
 
 .include <bsd.port.post.mk>
