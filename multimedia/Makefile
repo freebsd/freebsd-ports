@@ -8,6 +8,7 @@
     SUBDIR += atomicparsley
     SUBDIR += audacious
     SUBDIR += audacious-plugins
+    SUBDIR += avbin
     SUBDIR += avidemux2
     SUBDIR += avifile
     SUBDIR += avinfo
