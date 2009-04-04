@@ -2554,6 +2554,7 @@
     SUBDIR += rubygem-arrayfields
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-columnize
+    SUBDIR += rubygem-crack
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-ditz
     SUBDIR += rubygem-eventmachine
