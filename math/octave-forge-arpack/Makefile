@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-arpack
 PORTVERSION=	1.0.6
 CATEGORIES=     math
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
 
 NO_CDROM=	arpack is licensed for non-commercial use only

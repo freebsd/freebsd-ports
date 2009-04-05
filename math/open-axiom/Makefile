@@ -10,7 +10,7 @@ PORTVERSION=	1.2.1
 CATEGORIES=	math
 MASTER_SITES=	SF
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=	A computer algebra system
 
 BUILD_DEPENDS=	clisp:${PORTSDIR}/lang/clisp \

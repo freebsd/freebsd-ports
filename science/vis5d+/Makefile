@@ -13,7 +13,7 @@ CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vis5d
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=	OpenGL-based volumetric visualization program for scientific datasets
 
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick

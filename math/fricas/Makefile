@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-full
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=	A computer algebra system, forked from axiom
 
 BUILD_DEPENDS=	clisp:${PORTSDIR}/lang/clisp \

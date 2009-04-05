@@ -10,7 +10,7 @@ PORTVERSION=	0.1.3
 PORTREVISION=	1
 CATEGORIES=	math
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 RUN_DEPENDS+=	dx:${PORTSDIR}/graphics/opendx

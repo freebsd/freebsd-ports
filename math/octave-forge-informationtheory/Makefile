@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-informationtheory
 PORTVERSION=	0.1.6
 CATEGORIES=     math
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
 
 .include <bsd.port.pre.mk>

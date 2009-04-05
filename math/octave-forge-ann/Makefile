@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-ann
 PORTVERSION=	1.0.1
 CATEGORIES=     math
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
 
 RUN_DEPENDS+=	swig:${PORTSDIR}/devel/swig13

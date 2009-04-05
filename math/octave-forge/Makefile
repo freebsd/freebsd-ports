@@ -13,7 +13,7 @@ MASTER_SITES=	#none
 DISTFILES=	#none
 EXTRACT_ONLY=	#none
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=	Octave-forge metaport for math/octave
 
 # Status of packages:

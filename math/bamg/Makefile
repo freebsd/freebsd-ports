@@ -18,7 +18,7 @@ DISTFILES+=	${PORTNAME}.ps.gz
 EXTRACT_ONLY=	${PORTNAME}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=	Bidimensional Anisotrope Mesh Generator
 
 RESTRICTED=	No resale, contact author for commercial usage
