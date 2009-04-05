@@ -75,6 +75,8 @@ PERL_THREADS!=	${PERL} -V::usethreads
 .if ${PERL_THREADS}!="'define';"
 IGNORE=		needs a threaded Perl, build with WITH_THREADS=yes flag and try again
 .endif
+.else
+IGNORE=		needs an existing installation of Perl built with WITH_THREADS=yes
 .endif
 
 MAN3=		Padre.3 \
