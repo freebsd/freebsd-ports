@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mp3blaster
-PORTVERSION=	3.2.4
+PORTVERSION=	3.2.5
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-cxxflags="${CXXFLAGS}"
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		mp3blaster.1 nmixer.1 splay.1
 
@@ -68,7 +69,7 @@ CONFIGURE_ARGS+=	--without-nas
 .endif
 
 .if ${HAVE_GNOME:Mesound} != ""
-USE_GNOME+=     esound
+USE_GNOME+=     	esound
 CONFIGURE_ARGS+=	--with-esd
 .else
 CONFIGURE_ARGS+=	--without-esd
