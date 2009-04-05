@@ -17,8 +17,11 @@ COMMENT=	Compressed loop FS utils
 WRKSRC=		${WRKDIR}/cloop-${CLOOP_VERSION}
 USE_GMAKE=	yes
 MAKE_ENV=	APPSONLY=yes
-PORTDOCS=	README
 PLIST_FILES=	bin/create_compressed_fs bin/extract_compressed_fs
+
+.ifndef NOPORTDOCS
+PORTDOCS=	README
+.endif
 
 CLOOP_VERSION=	2.01
 CLOOP_REVISION=	2
@@ -29,7 +32,9 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/create_compressed_fs ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/extract_compressed_fs ${PREFIX}/bin
+.ifndef NOPORTDOCS
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
