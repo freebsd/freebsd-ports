@@ -18,6 +18,8 @@ PLIST_FILES=	bin/prips
 MAN1=		prips.1
 MANCOMPRESSED=	yes
 
+MAKE_ENV+=	CFLAGS_WARN="-Wall -W"
+
 .include <bsd.port.pre.mk>
 
 do-install:
