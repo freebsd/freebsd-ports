@@ -42,6 +42,7 @@ lib/seed7/scanfile.s7i
 lib/seed7/scanstri.s7i
 lib/seed7/screen.s7i
 lib/seed7/seed7_05.s7i
+lib/seed7/shell.s7i
 lib/seed7/socket.s7i
 lib/seed7/stars.s7i
 lib/seed7/strifile.s7i
