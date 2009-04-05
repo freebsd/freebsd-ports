@@ -30,7 +30,7 @@ pre-configure:
 	${REINPLACE_CMD} -e '135s|__x86_64__|&) \&\& defined(__SSE__|' \
 		${WRKSRC}/include/STTypes.h
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's| install-pkgdocDATA$$||' \
+	${REINPLACE_CMD} -e 's|[[:blank:]]install-pkgdocDATA$$||' \
 		${WRKSRC}/Makefile.in
 .endif
 
