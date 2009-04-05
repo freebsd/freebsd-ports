@@ -3,9 +3,11 @@ bin/cyclient
 bin/cycmd
 bin/cyconfig
 bin/cyconvertrules
+bin/cydb
 bin/cydumprules
 bin/cyloadrules
 bin/cypasswd
+bin/cypython
 bin/cyphesis
 etc/cyphesis/cyphesis.vconf
 etc/cyphesis/mason.d/animals.xml
@@ -54,8 +56,10 @@ etc/cyphesis/mason.d/weapons.xml
 %%DATADIR%%/rulesets/basic/mind/panlingua/ontology.py
 %%DATADIR%%/rulesets/basic/mind/panlingua/panlingua.py
 %%DATADIR%%/rulesets/basic/mind/panlingua/syntax.py
+%%DATADIR%%/rulesets/mason/benchmarks.py
 %%DATADIR%%/rulesets/mason/define_world.py
 %%DATADIR%%/rulesets/mason/define_world_aglanor.py
+%%DATADIR%%/rulesets/mason/tests.py
 %%DATADIR%%/rulesets/mason/world/__init__.py
 %%DATADIR%%/rulesets/mason/world/objects/Pile.py
 %%DATADIR%%/rulesets/mason/world/objects/Weather.py

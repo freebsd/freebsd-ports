@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cyphesis
-PORTVERSION=	0.5.18
-PORTREVISION=	1
+PORTVERSION=	0.5.19
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=worldforge
@@ -18,7 +17,7 @@ COMMENT=	A server for WorldForge games
 LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
 		varconf-1.0.6:${PORTSDIR}/devel/varconf \
 		wfmath-0.3.4:${PORTSDIR}/math/wfmath \
-		mercator-0.2.5:${PORTSDIR}/devel/mercator \
+		mercator-0.2.6:${PORTSDIR}/devel/mercator \
 		skstream-0.3.4:${PORTSDIR}/net/skstream \
 		gcrypt.16:${PORTSDIR}/security/libgcrypt
 
