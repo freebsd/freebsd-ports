@@ -83,6 +83,12 @@
        my($subj) = $msginfo->get_header_field_body('subject');
        my($from) = $msginfo->get_header_field_body('from');  # raw full field
        my($rfc2822_from)   = $msginfo->rfc2822_from;  # undef, scalar or listref
+@@ -19993,4 +19993,5 @@
+       1;
+     } or do { $eval_stat = $@ ne '' ? $@ : "errno=$!" };
++    prolong_timer('ask_daemon_internal', $deadline-time);
+     last  if $eval_stat eq '';  # mission accomplished
+     # error handling (most interesting error codes are EPIPE and ENOTCONN)
 @@ -21931,7 +21936,8 @@
                                       $part->base_name, $err_nm[$sts], $sts);
          my($newpart) = $newpart_obj->full_name;
