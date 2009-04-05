@@ -36,6 +36,11 @@ DOC_FILES=	API LICENSE README TODO USAGE
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
+post-patch:
+# Fix parallel builds
+	@${REINPLACE_CMD} -e 's,test -d \.libs || mkdir,mkdir -p,' \
+		${WRKSRC}/libmp3lame/i386/Makefile.in
+
 .if defined(NOPORTDOCS)
 do-install:
 	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
