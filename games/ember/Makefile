@@ -21,7 +21,7 @@ COMMENT=	Ember is a WorldForge 3d client using the OGRE 3d library
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain-1.4.9.so:${PORTSDIR}/graphics/ogre3d
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
-		eris-1.3.15:${PORTSDIR}/devel/eris \
+		eris-1.3:${PORTSDIR}/devel/eris \
 		varconf-1.0.6:${PORTSDIR}/devel/varconf \
 		mercator-0.2.6:${PORTSDIR}/devel/mercator \
 		openal.0:${PORTSDIR}/audio/openal \
