@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	pstreams
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.0
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	pstreams
+MASTER_SITES=	SF
 
 MAINTAINER=	mail@andr.ru
 COMMENT=	C++ utility for simple IOStream-based IPC
