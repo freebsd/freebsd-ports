@@ -267,11 +267,11 @@ bin/llines
 %%NLS%%share/locale/pl/LC_MESSAGES/lifelines.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/lifelines.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/lifelines.mo
-@dirrm %%NLS%%share/locale/rw/LC_MESSAGES
-@dirrm %%NLS%%share/locale/rw
-@dirrm %%NLS%%share/locale/pl/LC_MESSAGES
-@dirrm %%NLS%%share/locale/pl
-@dirrm %%NLS%%share/locale/el/LC_MESSAGES
-@dirrm %%NLS%%share/locale/el
+%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/el
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rw
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
