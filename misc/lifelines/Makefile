@@ -7,10 +7,9 @@
 
 PORTNAME=	lifelines
 PORTVERSION=	3.0.50
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	matt@gsicomp.on.ca
 COMMENT=	An advanced genealogical system
@@ -33,12 +32,16 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's,ncursesw/curses.h,curses.h,' \
 		${WRKSRC}/src/hdrs/mycurses.h
+.ifdef NOPORTDOCS
+	@${REINPLACE_CMD} -e 's,install-data-am: install-docDATA,install-data-am:,' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's,install-data-am: install-dist_pkgdataDATA install-docDATA install-man,install-data-am: install-dist_pkgdataDATA,' \
+		${WRKSRC}/docs/Makefile.in
+.endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-.for file in btedit.1 dbverify.1 llines.1
+.for file in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/docs/${file} ${MANPREFIX}/man/man1
 .endfor
-.endif
 
 .include <bsd.port.mk>
