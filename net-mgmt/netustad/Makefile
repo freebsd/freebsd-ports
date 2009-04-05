@@ -7,7 +7,7 @@
 
 PORTNAME=	netustad
 PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://www.enderunix.org/netustad/
 
@@ -17,7 +17,7 @@ COMMENT=	A Web based admin tool that manages network services
 #MAN8=		netustad.8 netustadpasswd.8
 #MAN5=		netustad.conf.5
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	${PORTNAME}
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 OPTIONS=	SSL "Use netUstad with SSL support" on
@@ -41,16 +41,11 @@ CONFIGURE_ARGS+=	--without-nls
 .endif
 
 .if defined(NOPORTDOCS)
-#make portlint happy :)
+post-patch:
+	${REINPLACE_CMD} "s/^install-data-am:.*/install-data-am:/" ${WRKSRC}/Makefile.in
 .endif
 
-SED_SCRIPT+=	-e '{ s,%%PREFIX%%,${PREFIX},g; }'
-
-post-build:
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/netustad.sh >${WRKDIR}/netustad.sh
-
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} ${SED_SCRIPT}
-	${INSTALL_SCRIPT} ${WRKDIR}/netustad.sh ${PREFIX}/etc/rc.d/
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

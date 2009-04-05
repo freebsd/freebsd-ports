@@ -1,7 +1,6 @@
 bin/netustadctl
 bin/netustadpasswd
 sbin/netustad
-etc/rc.d/netustad.sh
 @unexec if cmp -s %D/etc/netustad/netustad.conf %D/etc/netustad/netustad.conf-dist; then rm -f %D/etc/netustad/netustad.conf; fi
 etc/netustad/netustad.conf-dist
 @exec [ -f %B/netustad/netustad.conf ] || cp %B/%f %B/netustad/netustad.conf
