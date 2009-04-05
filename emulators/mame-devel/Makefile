@@ -5,13 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sdlmame
-PORTVERSION=	0.130
-PORTREVISION=	1
+PORTNAME=	sdlmame-devel
+PORTVERSION=	0.130u1
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.arcadebsd.org/pub/FreeBSD/ports/distfiles/ \
 		http://rbelmont.mameworld.info/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
+DISTNAME=	sdlmame${PORTVERSION:S/.//}
 
 MAINTAINER=	elbarto@ArcadeBSD.org
 COMMENT=	SDL port of the popular MAME (Multi Arcade Machine Emulator)
@@ -32,14 +31,12 @@ OPTIONS=	DEBUG "Build sdlmame debugger" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DEBUG)
-EXTRA_PATCHES+=		${FILESDIR}/sdl.mak.patch-debug
-.else
+.if !defined(WITH_DEBUG)
 USE_GNOME=		#
 EXTRA_PATCHES+=		${FILESDIR}/sdl.mak.patch
 .endif
 
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_SAFE=		yes
 
 .if ${ARCH} == "amd64"
 MAKE_ENV+=	PTR64=1
@@ -53,11 +50,10 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	${MKDIR} ${PREFIX}/libexec/sdlmame
-	${INSTALL_PROGRAM} ${WRKSRC}/chdman ${PREFIX}/libexec/sdlmame
-	${INSTALL_PROGRAM} ${WRKSRC}/ldresample ${PREFIX}/libexec/sdlmame
-	${INSTALL_PROGRAM} ${WRKSRC}/ldverify ${PREFIX}/libexec/sdlmame
-	${INSTALL_PROGRAM} ${WRKSRC}/testkeys ${PREFIX}/libexec/sdlmame
+	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
+.for f in chdman ldresample ldverify testkeys
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/libexec/${PORTNAME}
+.endfor
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
