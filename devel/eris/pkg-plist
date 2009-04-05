@@ -1,6 +1,6 @@
 lib/liberis-1.3.la
 lib/liberis-1.3.so
-lib/liberis-1.3.so.14
+lib/liberis-1.3.so.15
 include/Eris-1.3/Eris/Account.h
 include/Eris-1.3/Eris/Alarm.h
 include/Eris-1.3/Eris/Avatar.h
@@ -32,6 +32,8 @@ include/Eris-1.3/Eris/Room.h
 include/Eris-1.3/Eris/Router.h
 include/Eris-1.3/Eris/ServerInfo.h
 include/Eris-1.3/Eris/Task.h
+include/Eris-1.3/Eris/TerrainMod.h
+include/Eris-1.3/Eris/TerrainMod_impl.h
 include/Eris-1.3/Eris/TimedEventService.h
 include/Eris-1.3/Eris/Timeout.h
 include/Eris-1.3/Eris/TypeBoundRedispatch.h
