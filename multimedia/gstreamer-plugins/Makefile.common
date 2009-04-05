@@ -147,6 +147,8 @@ PLIST=		${NONEXISTENT}
 
 # a52dec
 gst_a52dec_LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
+gst_a52dec_PLIST_FILES=	${GST_LIB_DIR}/libgsta52dec.la \
+		${GST_LIB_DIR}/libgsta52dec.so
 gst_a52dec_DIST=	ugly
 
 # aalib
@@ -184,6 +186,8 @@ gst_cdparanoia_DIST=	base
 
 # cdio
 gst_cdio_LIB_DEPENDS+=	cdio.8:${PORTSDIR}/sysutils/libcdio
+gst_cdio_PLIST_FILES=	${GST_LIB_DIR}/libgstcdio.la \
+		${GST_LIB_DIR}/libgstcdio.so
 gst_cdio_DIST=		ugly
 
 # dts
@@ -203,10 +207,8 @@ gst_dvd_EXTRA_LIBS+=	-ldvdnav
 gst_dvd_LIB_DEPENDS+=	dvdnav.4:${PORTSDIR}/multimedia/libdvdnav
 gst_dvd_GST_PLUGIN_DIR=	ext/dvdnav \
 		ext/dvdread
-gst_dvd_PLIST_FILES=	${GST_LIB_DIR}/libgstdvdnav.a \
-		${GST_LIB_DIR}/libgstdvdnav.la \
+gst_dvd_PLIST_FILES=	${GST_LIB_DIR}/libgstdvdnav.la \
 		${GST_LIB_DIR}/libgstdvdnav.so \
-		${GST_LIB_DIR}/libgstdvdread.a \
 		${GST_LIB_DIR}/libgstdvdread.la \
 		${GST_LIB_DIR}/libgstdvdread.so
 gst_dvd_DIST=	ugly
@@ -301,6 +303,8 @@ gst_ladspa_PLIST_FILES=		${GST_LIB_DIR}/libgstladspa.la \
 
 # lame
 gst_lame_LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
+gst_lame_PLIST_FILES=	${GST_LIB_DIR}/libgstlame.la \
+		${GST_LIB_DIR}/libgstlame.so
 gst_lame_DIST=	ugly
 
 # libcaca
@@ -329,6 +333,8 @@ gst_libvisual_DIST=	base
 # mad
 gst_mad_LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
 		id3tag.0:${PORTSDIR}/audio/libid3tag
+gst_mad_PLIST_FILES=	${GST_LIB_DIR}/libgstmad.la \
+		${GST_LIB_DIR}/libgstmad.so
 gst_mad_DIST=	ugly
 
 # mpeg2enc
@@ -339,6 +345,8 @@ gst_mpeg2enc_DIST=	bad
 
 # mpeg2dec
 gst_mpeg2dec_LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
+gst_mpeg2dec_PLIST_FILES=	${GST_LIB_DIR}/libgstmpeg2dec.la \
+		${GST_LIB_DIR}/libgstmpeg2dec.so
 gst_mpeg2dec_DIST=	ugly
 
 # musepack
@@ -397,7 +405,6 @@ gst_shout2_PLIST_FILES=		${GST_LIB_DIR}/libgstshout2.la \
 # sidplay
 gst_sidplay_LIB_DEPENDS+=	sidplay.1:${PORTSDIR}/audio/libsidplay
 gst_sidplay_PLIST_FILES=	${GST_LIB_DIR}/libgstsid.so \
-		${GST_LIB_DIR}/libgstsid.a \
 		${GST_LIB_DIR}/libgstsid.la
 gst_sidplay_DIST=	ugly
 
