@@ -34,7 +34,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src-cht/cht ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/chemtool.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/cht.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
