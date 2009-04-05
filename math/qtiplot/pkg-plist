@@ -15,6 +15,7 @@ bin/qtiplot
 %%DATADIR%%/fitPlugins/libfitRational1.so.1
 %%DATADIR%%/fitPlugins/libfitRational1.so.1.0
 %%DATADIR%%/fitPlugins/libfitRational1.so.1.0.0
+%%DATADIR%%/qtiplot.png
 %%PYTHON%%%%DATADIR%%/qtiUtil.py
 %%PYTHON%%%%DATADIR%%/qtiUtil.pyc
 %%PYTHON%%%%DATADIR%%/qti_wordlist.txt
