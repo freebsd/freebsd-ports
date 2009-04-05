@@ -238,6 +238,7 @@
     SUBDIR += cvsweb3
     SUBDIR += cvswrap
     SUBDIR += cweb
+    SUBDIR += cx_Freeze
     SUBDIR += cxmon
     SUBDIR += cxref
     SUBDIR += cxxtest
