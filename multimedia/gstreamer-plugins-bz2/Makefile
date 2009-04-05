@@ -6,7 +6,7 @@
 #    $MCom: ports/multimedia/gstreamer-plugins-bz2/Makefile,v 1.6 2008/03/19 14:05:35 ahze Exp $
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	multimedia
 
 COMMENT=	Gstreamer bz2 plugin
