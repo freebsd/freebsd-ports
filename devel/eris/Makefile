@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	eris
-PORTVERSION=	1.3.13
-PORTREVISION=	0
+PORTVERSION=	1.3.14
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	worldforge
@@ -18,7 +17,8 @@ COMMENT=	WorldForge client entity library
 LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
 		skstream-0.3.4:${PORTSDIR}/net/skstream \
 		wfmath-0.3.4:${PORTSDIR}/math/wfmath \
-		sigc-2.0:${PORTSDIR}/devel/libsigc++20
+		sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
+		mercator-0.2.6:${PORTSDIR}/devel/mercator
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
