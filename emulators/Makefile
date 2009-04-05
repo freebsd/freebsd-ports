@@ -143,6 +143,7 @@
     SUBDIR += raine
     SUBDIR += rtc
     SUBDIR += sdlmame
+    SUBDIR += sdlmame-devel
     SUBDIR += sdlmess
     SUBDIR += sim6811
     SUBDIR += simh

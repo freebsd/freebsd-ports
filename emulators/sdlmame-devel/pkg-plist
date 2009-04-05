@@ -1,8 +1,8 @@
-bin/sdlmame
-libexec/sdlmame/chdman
-libexec/sdlmame/ldverify
-libexec/sdlmame/ldresample
-libexec/sdlmame/testkeys
+bin/sdlmame-devel
+libexec/sdlmame-devel/chdman
+libexec/sdlmame-devel/ldverify
+libexec/sdlmame-devel/ldresample
+libexec/sdlmame-devel/testkeys
 %%PORTDOCS%%%%DOCSDIR%%/SDLMAME.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/license.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/mame.txt
@@ -10,6 +10,7 @@ libexec/sdlmame/testkeys
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/config.txt
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew_0130u1.txt
 %%DATADIR%%/ui.bdf
 %%DATADIR%%/keymaps/km-be.txt
 %%DATADIR%%/keymaps/km-ch.txt
@@ -20,7 +21,7 @@ libexec/sdlmame/testkeys
 %%EXAMPLESDIR%%/mame.ini
 @dirrm %%DATADIR%%/keymaps/
 @dirrm %%DATADIR%%/
-@dirrm libexec/sdlmame
+@dirrm libexec/sdlmame-devel
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
