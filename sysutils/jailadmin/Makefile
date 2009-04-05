@@ -17,7 +17,9 @@ COMMENT=	A system for managing a set of named jails
 
 USE_PERL5=	yes
 
+.ifndef NOPORTDOCS
 PORTDOCS=	INSTALL README
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -39,7 +41,11 @@ pre-everything::
 	@${ECHO} "WITH_SNMP     install the additional SNMP management components"
 	@${ECHO}
 
-pre-install:
+#pre-install:
+post-patch:
 	@${REINPLACE_CMD} -e "s#^SITEPERLDIR=.*#SITEPERLDIR= ${SITE_PERL}#" ${WRKSRC}/Makefile
+.ifdef NOPORTDOCS
+	@${REINPLACE_CMD} -e '/share\/doc/s/^[[:blank:]]/#&/' ${WRKSRC}/Makefile
+.endif
 
 .include <bsd.port.post.mk>
