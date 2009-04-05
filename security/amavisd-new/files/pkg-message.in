@@ -13,7 +13,11 @@
 
     amavisd_enable="YES"
 
- Optionally enable amavisd tmp ram disk with: (example 512m)
+ You can set the pidfile, if you do not use the default path:
+
+    amavisd_pidfile="/var/amavis/amavisd.pid"
+
+ Optionally enable amavisd tmp ram disk with: (DISCOURAGED!)
 
     amavisd_ram="512m"
 
