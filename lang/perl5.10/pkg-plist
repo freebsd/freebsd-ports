@@ -1615,7 +1615,6 @@ lib/perl5/%%PERL_VER%%/vmsish.pm
 lib/perl5/%%PERL_VER%%/warnings.pm
 lib/perl5/%%PERL_VER%%/warnings/register.pm
 %%GDBM%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.so
-%%GDBM%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.bs
 %%GDBM%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/GDBM_File.pm
 @dirrm lib/perl5/%%PERL_VER%%/BSDPAN/BSDPAN
 @dirrm lib/perl5/%%PERL_VER%%/BSDPAN/ExtUtils
