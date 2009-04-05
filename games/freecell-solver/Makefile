@@ -9,7 +9,8 @@
 PORTNAME=	freecell-solver
 PORTVERSION=	2.22.0
 CATEGORIES=	games
-MASTER_SITES=	BERLIOS/fc-solve
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		BERLIOS/fc-solve
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program that automatically solves games of Freecell
@@ -29,7 +30,7 @@ MAN6=	fc-solve-board_gen.6 \
 	make_pysol_freecell_board.py.6 \
 	pi-make-microsoft-freecell-board.6
 
-CFLAGS+=	-I${LOCALBASE}/include 
+CFLAGS+=	-I${LOCALBASE}/include
 
 .if defined(WITH_JUDY) && defined(WITH_REDBLACK)
 IGNORE=		you cannot enable both JUDY and REDBLACK
@@ -50,7 +51,7 @@ CMAKE_ARGS+=	-DFCS_STACK_STORAGE="FCS_STACK_STORAGE_LIBREDBLACK_TREE" \
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS INSTALL README README.win32.txt TODO USAGE 
+.for file in AUTHORS INSTALL README README.win32.txt TODO USAGE
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
