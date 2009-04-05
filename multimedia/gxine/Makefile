@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gxine
-PORTVERSION=	0.5.903
-PORTREVISION=	3
+PORTVERSION=	0.5.904
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	xine
@@ -27,6 +26,8 @@ MAKE_ARGS+=	LDFLAGS=-shared-libgcc
 CNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--without-hal --with-libintl-prefix=${LOCALBASE}
 INSTALLS_ICONS=	yes
+
+MAKE_JOBS_SAFE=	yes
 
 MANLANG=	"" de es
 MAN1=		gxine.1 gxine_client.1
