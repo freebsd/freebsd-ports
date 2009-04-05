@@ -6,7 +6,7 @@
 #   $MCom: ports/audio/gstreamer-plugins-ivorbis/Makefile,v 1.5 2008/03/19 14:05:29 ahze Exp $
 #
 
-PORTREVISION=	4
+PORTREVISION=	0
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer integer only Ogg Vorbis decoder plugin
