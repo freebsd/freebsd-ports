@@ -31,6 +31,11 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 .if !defined(NOPORTDOCS)
 DOCSDIR=	${PREFIX}/share/doc/Botan-${PORTVERSION}
 PORTDOCS=	*
+.else
+post-configure:
+	${REINPLACE_CMD} -e '/$$(MKDIR_INSTALL) $$(DOCDIR)/d' \
+			-e '/$$(INSTALL_CMD_DATA) $$$$i $$(DOCDIR); /d' \
+			${WRKSRC}/Makefile
 .endif
 
 .include <bsd.port.mk>
