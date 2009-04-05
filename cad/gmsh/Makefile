@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.sfr-fresh.com/unix/privat/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=	An automatic 3D finite element mesh generator
 
 RUN_DEPENDS=	getdp:${PORTSDIR}/science/getdp

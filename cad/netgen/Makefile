@@ -12,7 +12,7 @@ CATEGORIES=	cad
 MASTER_SITES=	http://www.hpfem.jku.at/cgi/download.cgi?ID=
 DISTNAME=	ngs${PORTVERSION:S/.//g}
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=	An automatic 3D tetrahedral mesh generator
 
 LIB_DEPENDS=	tix8184:${PORTSDIR}/x11-toolkits/tix

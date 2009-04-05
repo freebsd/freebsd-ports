@@ -10,7 +10,7 @@ PORTVERSION=	2.5.1
 CATEGORIES=	graphics
 MASTER_SITES=	GNU
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=	A plotting library and toolkit
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

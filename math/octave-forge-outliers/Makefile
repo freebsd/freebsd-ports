@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-outliers
 PORTVERSION=	0.13.8
 CATEGORIES=     math
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
 
 .include <bsd.port.pre.mk>

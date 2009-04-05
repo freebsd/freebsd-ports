@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-ftp
 PORTVERSION=	1.0.1
 CATEGORIES=     math
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
 
 LIB_DEPENDS+=	ftp:${PORTSDIR}/ftp/ftplib

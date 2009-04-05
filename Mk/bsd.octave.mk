@@ -12,7 +12,7 @@
 MASTER_SITES=	SF/octave
 DISTNAME=	${OCTAVE_PKGNAME}-${PORTVERSION}
 
-bsd_octave_mk_MAINTAINER=	stephen@math.missouri.edu
+bsd_octave_mk_MAINTAINER=	stephen@missouri.edu
 
 BUILD_DEPENDS+=	octave:${PORTSDIR}/math/octave
 RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave

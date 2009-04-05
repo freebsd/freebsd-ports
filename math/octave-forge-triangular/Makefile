@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-triangular
 PORTVERSION=	1.0.4
 CATEGORIES=     math
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
 
 .include <bsd.port.pre.mk>

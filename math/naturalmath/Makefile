@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.math.missouri.edu/~stephen/naturalmath/
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=	Script to turn intuitively written math into latex
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX

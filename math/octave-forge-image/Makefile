@@ -10,7 +10,7 @@ PORTVERSION=	1.0.8
 PORTREVISION=	1
 CATEGORIES=	math
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 LIB_DEPENDS+=	MagickCore:${PORTSDIR}/graphics/ImageMagick

@@ -12,7 +12,7 @@ CATEGORIES=	x11 accessibility
 MASTER_SITES=	http://cmos-eng.rehab.uiuc.edu/accessx/software/
 DISTNAME=	accessx${PORTVERSION:S/.//g}
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=	Customise accessibility features for X
 
 USE_TK=		yes

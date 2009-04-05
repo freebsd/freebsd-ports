@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-zenity
 PORTVERSION=	0.5.6
 CATEGORIES=     math
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
 
 RUN_DEPENDS+=	zenity:${PORTSDIR}/x11/zenity

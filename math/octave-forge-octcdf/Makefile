@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-octcdf
 PORTVERSION=	1.0.11
 CATEGORIES=     math
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
 
 LIB_DEPENDS+=	netcdf:${PORTSDIR}/science/netcdf

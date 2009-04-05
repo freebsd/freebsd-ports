@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-odebvp
 PORTVERSION=	1.0.5
 CATEGORIES=     math
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
 
 .include <bsd.port.pre.mk>

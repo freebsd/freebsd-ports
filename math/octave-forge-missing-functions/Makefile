@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-missing-functions
 PORTVERSION=	1.0.0
 CATEGORIES=     math
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
 
 .include <bsd.port.pre.mk>

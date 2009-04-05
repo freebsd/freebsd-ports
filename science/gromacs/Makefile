@@ -10,7 +10,7 @@ PORTVERSION=	4.0.3
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=	Compute molecular dynamics
 
 USE_GNOME=	libxml2

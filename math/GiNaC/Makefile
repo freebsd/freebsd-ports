@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 
-MAINTAINER=	stephen@math.missouri.edu
+MAINTAINER=	stephen@missouri.edu
 COMMENT=	A C++ library for symbolic mathematical calculations
 
 LIB_DEPENDS=	cln.5:${PORTSDIR}/math/cln
