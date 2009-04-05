@@ -784,6 +784,7 @@ avalon-framework                ports/devel/avalon-framework
 avalon-logkit                   ports/java/avalon-logkit
 avanor                          ports/games/avanor
 avarice                         ports/devel/avarice
+avbin                           ports/multimedia/avbin
 avce00                          ports/devel/avce00
 avcheck                         ports/security/avcheck
 avenger                         ports/mail/avenger
@@ -1297,7 +1298,6 @@ callgen323                      ports/net/callgen323
 callgrind                       ports/devel/callgrind
 callid                          ports/misc/callid
 cam                             ports/audio/cam
-camaelon-nesedah                ports/x11-themes/camaelon-nesedah
 camediaplay                     ports/graphics/camediaplay
 camera                          ports/graphics/camera
 camerakit                       ports/graphics/camerakit
@@ -2416,14 +2416,6 @@ drpython                        ports/devel/drpython
 drraw                           ports/www/drraw
 drscheme                        ports/lang/drscheme
 drumpiler                       ports/audio/drumpiler
-drupal4                         ports/www/drupal4
-drupal4-attachment              ports/www/drupal4-attachment
-drupal4-filemanager             ports/www/drupal4-filemanager
-drupal4-gsitemap                ports/www/drupal4-gsitemap
-drupal4-i18n                    ports/www/drupal4-i18n
-drupal4-nice_menus              ports/www/drupal4-nice_menus
-drupal4-taxonomy_access         ports/www/drupal4-taxonomy_access
-drupal4-textile                 ports/www/drupal4-textile
 drupal5                         ports/www/drupal5
 drupal5-adsense                 ports/www/drupal5-adsense
 drupal5-bluebreeze              ports/www/drupal5-bluebreeze
@@ -20107,6 +20099,7 @@ rubygem-captcha                 ports/graphics/rubygem-captcha
 rubygem-color                   ports/print/rubygem-color
 rubygem-colortools              ports/print/rubygem-colortools
 rubygem-columnize               ports/devel/rubygem-columnize
+rubygem-crack                   ports/devel/rubygem-crack
 rubygem-daemons                 ports/devel/rubygem-daemons
 rubygem-datamapper              ports/databases/rubygem-datamapper
 rubygem-diff-lcs                ports/textproc/rubygem-diff-lcs
@@ -20986,7 +20979,6 @@ squeezecenter-sqlplaylist       ports/audio/squeezecenter-sqlplaylist
 squeezecenter-superdatetime     ports/audio/squeezecenter-superdatetime
 squeezecenter-trackstat         ports/audio/squeezecenter-trackstat
 squid                           ports/www/squid
-squid26                         ports/www/squid26
 squid30                         ports/www/squid30
 squid_radius_auth               ports/www/squid_radius_auth
 squidclamav                     ports/security/squidclamav
