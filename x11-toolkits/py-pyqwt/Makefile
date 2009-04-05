@@ -28,4 +28,6 @@ USE_PYTHON=	2.5+
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 
+BROKEN=		does not compile
+
 .include <bsd.port.mk>
