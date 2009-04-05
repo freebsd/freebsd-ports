@@ -7,6 +7,7 @@
 
 PORTNAME=	sdl_sound
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://offload1.icculus.org:9090/SDL_sound/downloads/ \
 		http://offload2.icculus.org:9090/SDL_sound/downloads/
@@ -43,7 +44,7 @@ CONFIGURE_ARGS+=--disable-mikmod
 .endif
 
 .if !defined(WITHOUT_PHYSFS)
-LIB_DEPENDS+=	physfs-1.0.1:${PORTSDIR}/devel/physfs
+LIB_DEPENDS+=	physfs.1:${PORTSDIR}/devel/physfs
 .else
 CONFIGURE_ARGS+=--disable-physfs
 .endif
