@@ -7,7 +7,7 @@
 
 PORTNAME=	acroread9
 PORTVERSION=	9.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	print linux
 MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/9.x/${PORTVERSION:S,.0$,,}/${ADOBE_LANG:L}/ \
 		ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/${PORTVERSION:S,.0$,,}/${ADOBE_LANG:L}/
@@ -21,9 +21,9 @@ RUN_DEPENDS=	acroreadwrapper>=0.0.20090328:${PORTSDIR}/print/acroreadwrapper
 
 RESTRICTED=	Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
 ONLY_FOR_ARCHS=	amd64 i386
-USE_LINUX=	yes
-USE_LINUX_APPS=	gtk2 pango scimgtk webauth
 USE_BZIP2=	yes
+USE_LINUX=	yes
+USE_LINUX_APPS=	gdkpixbuf gtk2 libxml2 pango scimgtk webauth
 USE_LDCONFIG=	yes
 #USE_GNOME=	desktopfileutils
 NO_BUILD=	yes
