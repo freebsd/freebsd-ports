@@ -40,7 +40,7 @@ do-install:
 .for file in ${MAN8}
 	@${INSTALL_MAN} ${WRKSRC}/${file} ${PREFIX}/man/man8
 .endfor
-.if !defined{NOPORTDOCS}
+.if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>  Copying documents to ${DOCSDIR}"
 	@${MKDIR} ${DOCSDIR}
 .for file in Changes FAQ INSTALL README config.example
