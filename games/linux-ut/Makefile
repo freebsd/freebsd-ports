@@ -7,6 +7,7 @@
 
 PORTNAME=	linux-ut
 PORTVERSION=	${UTVERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://liflg.0wnitsch.de/files/final/:p436 \
@@ -20,7 +21,7 @@ COMMENT=	Unreal Tournament for Linux
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_LINUX_APPS=	sdl12 xorglibs
+USE_LINUX_APPS=	xorglibs
 NO_BUILD=	yes
 NO_PACKAGE=	Distribution is 340MB; set FORCE_PACKAGE if you really want\
 		to build this package
