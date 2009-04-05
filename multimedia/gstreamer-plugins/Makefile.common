@@ -152,11 +152,12 @@ gst_a52dec_DIST=	ugly
 # aalib
 gst_aalib_LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 gst_aalib_PLIST_FILES=	${GST_LIB_DIR}/libgstaasink.so \
-		${GST_LIB_DIR}/libgstaasink.a \
 		${GST_LIB_DIR}/libgstaasink.la
 
 # annodex
 gst_annodex_LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
+gst_annodex_PLIST_FILES=	${GST_LIB_DIR}/libgstannodex.la \
+				${GST_LIB_DIR}/libgstannodex.so
 
 # bz2
 gst_bz2_PLIST_FILES=	${GST_LIB_DIR}/libgstbz2.la \
@@ -165,6 +166,8 @@ gst_bz2_DIST=		bad
 
 # cairo
 gst_cairo_LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+gst_cairo_PLIST_FILES=		${GST_LIB_DIR}/libgstcairo.la \
+				${GST_LIB_DIR}/libgstcairo.so
 
 # cdaudio
 gst_cdaudio_LIB_DEPENDS+=cdaudio.1:${PORTSDIR}/audio/libcdaudio
@@ -192,6 +195,8 @@ gst_dts_DIST=	bad
 
 # dv
 gst_dv_LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
+gst_dv_PLIST_FILES=	${GST_LIB_DIR}/libgstdv.la \
+			${GST_LIB_DIR}/libgstdv.so
 
 # dvd
 gst_dvd_EXTRA_LIBS+=	-ldvdnav
@@ -213,7 +218,6 @@ gst_esound_GST_PLUGIN_DIR=	ext/esd
 gst_esound_CONFIGURE_ENV+=	ESD_CFLAGS="`pkg-config --cflags esound`" \
 		ESD_LIBS="`pkg-config --libs esound`"
 gst_esound_PLIST_FILES=	${GST_LIB_DIR}/libgstesd.so \
-		${GST_LIB_DIR}/libgstesd.a \
 		${GST_LIB_DIR}/libgstesd.la
 
 # faac
@@ -231,6 +235,8 @@ gst_faad_DIST=	bad
 
 # flac
 gst_flac_LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
+gst_flac_PLIST_FILES=	${GST_LIB_DIR}/libgstflac.la \
+			${GST_LIB_DIR}/libgstflac.so
 
 # gconf
 gst_gconf_USE_GNOME+=	gnomeprefix gconf2
@@ -239,14 +245,12 @@ gst_gconf_GST_PLUGIN_DIR=	ext/gconf \
 gst_gconf_CONFIGURE_ARGS+=	--enable-schemas-install
 gst_gconf_GCONF_SCHEMAS=	gstreamer-${GST_VERSION}.schemas
 gst_gconf_PLIST_FILES=	${GST_LIB_DIR}/libgstgconfelements.so \
-		${GST_LIB_DIR}/libgstgconfelements.a \
 		${GST_LIB_DIR}/libgstgconfelements.la
 
 # gdk_pixbuf
 gst_gdk_pixbuf_USE_GNOME+=	gtk20
 gst_gdk_pixbuf_GST_PLUGIN_DIR=	ext/gdk_pixbuf
-gst_gdk_pixbuf_PLIST_FILES=	${GST_LIB_DIR}/libgstgdkpixbuf.a \
-				${GST_LIB_DIR}/libgstgdkpixbuf.la \
+gst_gdk_pixbuf_PLIST_FILES=	${GST_LIB_DIR}/libgstgdkpixbuf.la \
 				${GST_LIB_DIR}/libgstgdkpixbuf.so
 # gio
 gst_gio_USE_GNOME+=	glib20
@@ -276,8 +280,7 @@ gst_ivorbis_DIST=	bad
 
 # hal
 gst_hal_LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
-gst_hal_PLIST_FILES=	${GST_LIB_DIR}/libgsthalelements.a \
-		${GST_LIB_DIR}/libgsthalelements.la \
+gst_hal_PLIST_FILES=	${GST_LIB_DIR}/libgsthalelements.la \
 		${GST_LIB_DIR}/libgsthalelements.so
 
 # jack
@@ -288,9 +291,13 @@ gst_jack_DIST=	bad
 
 # jpeg
 gst_jpeg_LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+gst_jpeg_PLIST_FILES=	${GST_LIB_DIR}/libgstjpeg.la \
+			${GST_LIB_DIR}/libgstjpeg.so
 
 # ladspa
 gst_ladspa_BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+gst_ladspa_PLIST_FILES=		${GST_LIB_DIR}/libgstladspa.la \
+				${GST_LIB_DIR}/libgstladspa.so
 
 # lame
 gst_lame_LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
@@ -299,7 +306,6 @@ gst_lame_DIST=	ugly
 # libcaca
 gst_libcaca_LIB_DEPENDS+=	caca.0:${PORTSDIR}/graphics/libcaca
 gst_libcaca_PLIST_FILES=	${GST_LIB_DIR}/libgstcacasink.so \
-		${GST_LIB_DIR}/libgstcacasink.a \
 		${GST_LIB_DIR}/libgstcacasink.la
 
 # libmms
@@ -312,7 +318,6 @@ gst_libmms_DIST=	bad
 gst_libpng_LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 gst_libpng_GST_PLUGIN_DIR=	ext/libpng
 gst_libpng_PLIST_FILES=	${GST_LIB_DIR}/libgstpng.so \
-		${GST_LIB_DIR}/libgstpng.a \
 		${GST_LIB_DIR}/libgstpng.la
 
 # libvisual
@@ -386,6 +391,8 @@ gst_sdl_DIST=	bad
 
 # shout2
 gst_shout2_LIB_DEPENDS+=	shout.5:${PORTSDIR}/audio/libshout2
+gst_shout2_PLIST_FILES=		${GST_LIB_DIR}/libgstshout2.la \
+				${GST_LIB_DIR}/libgstshout2.so
 
 # sidplay
 gst_sidplay_LIB_DEPENDS+=	sidplay.1:${PORTSDIR}/audio/libsidplay
@@ -409,8 +416,7 @@ gst_soundtouch_DIST=	bad
 # souphttpsrc
 gst_soup_LIB_DEPENDS+=	soup-2.4.1:${PORTSDIR}/devel/libsoup
 gst_soup_GST_PLUGIN_DIR=ext/soup
-gst_soup_PLIST_FILES=	${GST_LIB_DIR}/libgstsouphttpsrc.a \
-			${GST_LIB_DIR}/libgstsouphttpsrc.la \
+gst_soup_PLIST_FILES=	${GST_LIB_DIR}/libgstsouphttpsrc.la \
 			${GST_LIB_DIR}/libgstsouphttpsrc.so
 
 # spc
@@ -421,6 +427,8 @@ gst_spc_DIST=		bad
 
 # speex
 gst_speex_LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
+gst_speex_PLIST_FILES=	${GST_LIB_DIR}/libgstspeex.la \
+			${GST_LIB_DIR}/libgstspeex.so
 
 # swfdec
 gst_swfdec_LIB_DEPENDS+=swfdec-0.4.1:${PORTSDIR}/graphics/swfdec
@@ -428,6 +436,8 @@ gst_swfdec_DIST=	bad
 
 # taglib
 gst_taglib_LIB_DEPENDS+=	tag.6:${PORTSDIR}/audio/taglib
+gst_taglib_PLIST_FILES=		${GST_LIB_DIR}/libgsttaglib.la \
+				${GST_LIB_DIR}/libgsttaglib.so
 
 # theora
 gst_theora_LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
@@ -457,6 +467,8 @@ gst_xvid_DIST=	bad
 
 # wavpack
 gst_wavpack_LIB_DEPENDS+=	wavpack.1:${PORTSDIR}/audio/wavpack
+gst_wavpack_PLIST_FILES=	${GST_LIB_DIR}/libgstwavpack.la \
+				${GST_LIB_DIR}/libgstwavpack.so
 
 .endif # NO_GSTREAMER_COMMON
 
