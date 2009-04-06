@@ -85,6 +85,7 @@
     SUBDIR += linux-xjoypad
     SUBDIR += linux_base-f7
     SUBDIR += linux_base-f8
+    SUBDIR += linux_base-f9
     SUBDIR += linux_base-gentoo-stage1
     SUBDIR += linux_base-gentoo-stage3
     SUBDIR += linux_dist-gentoo-stage1
