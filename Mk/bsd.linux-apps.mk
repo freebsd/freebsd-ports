@@ -56,15 +56,26 @@ WEB_AUTH=			nvu
 # Non-version specific components
 _LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo curl esound expat fontconfig \
 					freealut gdkpixbuf gtk gtk2 hicontheme imlib jpeg libaudiofile \
-					libg2c libglade libglade2 libglu libidn libmng libogg libsigcpp20 libssh2 libtheora \
-					libvorbis libxml libxml2 mikmod nspr nss openal openmotif openssl pango png png10 qt33 \
-					scimgtk scimlibs sdl12 sdlimage sdlmixer sqlite3 tcl84 tiff tk84 xorglibs ucl ungif upx webauth
+					libg2c libglade libglade2 libglu libmng libogg libsigcpp20 libssh2 libtheora \
+					libvorbis libxml libxml2 mikmod openal openmotif pango png png10 qt33 \
+					scimgtk scimlibs sdl12 sdlimage sdlmixer tiff xorglibs ucl ungif upx webauth
 
 # 2.4.2 components
 _LINUX_APPS_ALL+=
 
 # 2.6.16 components
-_LINUX_APPS_ALL+=
+_LINUX_26_APPS=		libidn nspr nss openssl sqlite3 tcl84 tk84
+
+_LINUX_APPS_ALL+=	_LINUX_26_APPS
+
+# Let's check if components from USE_LINUX_APPS exist at _LINUX_26_APPS for LINUX_DIST_SUFFIX:=""
+.  if ${LINUX_DIST_SUFFIX}==""
+.    for component in ${_LINUX_26_APPS}
+.      if ${_LINUX_26_APPS:M${component}}!=""
+IGNORE=	bsd.linux-apps.mk test failed: The component ${component} can be used with at least linux_base-f8
+.      endif
+.    endfor
+.  endif
 
 # Component definition section
 #
