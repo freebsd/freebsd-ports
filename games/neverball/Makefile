@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	neverball
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org:9090/neverball/ \
 		http://offload2.icculus.org:9090/neverball/ \
+		http://caffeinatedcontent.com/neverball/files/${PORTVERSION}/ \
 		http://mirror.amdmi3.ru/
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -25,7 +26,7 @@ USE_GMAKE=	yes
 MAKE_ENV+=	ENABLE_WII=0
 MAKE_JOBS_SAFE=	yes
 
-DOCS=		CHANGES COPYING README
+PORTDOCS=	CHANGES COPYING README
 MAN6=		neverball.6 neverputt.6
 
 .if !defined(WITHOUT_NLS)
@@ -70,7 +71,7 @@ do-install:
 .ifndef (NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-.  for i in ${DOCS}
+.  for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .  endfor
 .endif
