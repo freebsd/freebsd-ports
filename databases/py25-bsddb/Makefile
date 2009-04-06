@@ -28,12 +28,20 @@ MD5_FILE=	${PORTSDIR}/lang/python/distinfo
 MAKE_ENV=	BSDDB_VERSION=${BDB_LIB_NAME}
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_bsddb.so
 
+.include <bsd.port.pre.mk>
+
 post-extract:
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}
+
+.if ${PYTHON_REL} < 260
+BSDDB_PATCH=_bsddb.c
+.else
+BSDDB_PATCH=bsddb.h
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e \
 		's,^\(#include.*\)\(db\.h.*\)$$,\1${BDB_INCLUDE_DIR}/\2,' \
-		${WRKSRC}/_bsddb.c
+		${WRKSRC}/${BSDDB_PATCH}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
