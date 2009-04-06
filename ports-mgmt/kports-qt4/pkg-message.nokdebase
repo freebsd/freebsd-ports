@@ -1,0 +1,16 @@
+*********************************************************
+* 			WARNING				*
+* 							*
+* You decided not to pull in kdebase-runtime during	*
+* install. If you do not have it installed and don't	*
+* want to now, you should note the following:		*
+*							*
+* 1) KPorts needs to be started as root to be useful,	*
+*    but you won't have kdesu. Instead you can use	*
+*    gksu, sudo or 'ssh -X root@localhost'.		*
+*							*
+* 2) KPorts will expect the oxygen icon theme and not	*
+*    find it. You should go the settings and select a	*
+*    different theme. KPorts might look crap.		*
+* 							*
+*********************************************************
