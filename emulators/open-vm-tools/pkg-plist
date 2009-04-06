@@ -1,10 +1,10 @@
 bin/vmware-checkvm
 bin/vmware-hgfsclient
+bin/vmware-rpctool
 bin/vmware-xferlogs
 bin/vmtoolsd
 bin/vmware-toolbox-cmd
-bin/vmware-vmblock-fuse
-etc/vmware-tools/tools.conf
+%%FUSE%%bin/vmware-vmblock-fuse
 lib/open-vm-tools/plugins/vmsvc/libguestInfo.so
 lib/open-vm-tools/plugins/vmsvc/libhgfsServer.so
 lib/open-vm-tools/plugins/vmsvc/libpowerOps.so
