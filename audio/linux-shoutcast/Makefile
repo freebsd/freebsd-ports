@@ -7,7 +7,7 @@
 PORTNAME=	shoutcast
 PORTVERSION=	1.9.8
 CATEGORIES=	audio net
-MASTER_SITES=	http://www.shoutcast.com/downloads/sc${PORTVERSION:S|.|-|g}/
+MASTER_SITES=	http://yp.shoutcast.com/downloads/sc${PORTVERSION:S|.|-|g}/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	sc_serv_${PORTVERSION}_Linux
 
