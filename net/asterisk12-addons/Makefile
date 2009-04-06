@@ -21,6 +21,7 @@ COMMENT=	Additional modules for the Asterisk Open Source PBX
 BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 
+BROKEN=		does not build
 ONLY_FOR_ARCHS=	i386
 USE_MYSQL=	yes
 USE_GMAKE=	yes
