@@ -146,6 +146,80 @@ etc/asterisk/func_odbc.conf-dist
 etc/asterisk/followme.conf-dist
 @unexec if cmp -s %D/etc/asterisk/amd.conf %D/etc/asterisk/amd.conf-dist; then rm -f %D/etc/asterisk/amd.conf; fi
 etc/asterisk/amd.conf-dist
+@exec if test ! -e %D/etc/asterisk/cdr_adaptive_odbc.conf; then cp -p %D/etc/asterisk/cdr_adaptive_odbc.conf-dist %D/etc/asterisk/cdr_adaptive_odbc.conf; fi
+@exec if test ! -e %D/etc/asterisk/cdr_sqlite3_custom.conf; then cp -p %D/etc/asterisk/cdr_sqlite3_custom.conf-dist %D/etc/asterisk/cdr_sqlite3_custom.conf; fi
+@exec if test ! -e %D/etc/asterisk/cli.conf; then cp -p %D/etc/asterisk/cli.conf-dist %D/etc/asterisk/cli.conf; fi
+@exec if test ! -e %D/etc/asterisk/console.conf; then cp -p %D/etc/asterisk/console.conf-dist %D/etc/asterisk/console.conf; fi
+@exec if test ! -e %D/etc/asterisk/extensions.lua; then cp -p %D/etc/asterisk/extensions.lua-dist %D/etc/asterisk/extensions.lua; fi
+@exec if test ! -e %D/etc/asterisk/extensions_minivm.conf; then cp -p %D/etc/asterisk/extensions_minivm.conf-dist %D/etc/asterisk/extensions_minivm.conf; fi
+@exec if test ! -e %D/etc/asterisk/jingle.conf; then cp -p %D/etc/asterisk/jingle.conf-dist %D/etc/asterisk/jingle.conf; fi
+@exec if test ! -e %D/etc/asterisk/minivm.conf; then cp -p %D/etc/asterisk/minivm.conf-dist %D/etc/asterisk/minivm.conf; fi
+@exec if test ! -e %D/etc/asterisk/phoneprov.conf; then cp -p %D/etc/asterisk/phoneprov.conf-dist %D/etc/asterisk/phoneprov.conf; fi
+@exec if test ! -e %D/etc/asterisk/queuerules.conf; then cp -p %D/etc/asterisk/queuerules.conf-dist %D/etc/asterisk/queuerules.conf; fi
+@exec if test ! -e %D/etc/asterisk/res_ldap.conf; then cp -p %D/etc/asterisk/res_ldap.conf-dist %D/etc/asterisk/res_ldap.conf; fi
+@exec if test ! -e %D/etc/asterisk/unistim.conf; then cp -p %D/etc/asterisk/unistim.conf-dist %D/etc/asterisk/unistim.conf; fi
+@exec if test ! -e %D/etc/asterisk/usbradio.conf; then cp -p %D/etc/asterisk/usbradio.conf-dist %D/etc/asterisk/usbradio.conf; fi
+@exec if test ! -e %D/etc/asterisk/adsi.conf; then cp -p %D/etc/asterisk/adsi.conf-dist %D/etc/asterisk/adsi.conf; fi
+@exec if test ! -e %D/etc/asterisk/adtranvofr.conf; then cp -p %D/etc/asterisk/adtranvofr.conf-dist %D/etc/asterisk/adtranvofr.conf; fi
+@exec if test ! -e %D/etc/asterisk/agents.conf; then cp -p %D/etc/asterisk/agents.conf-dist %D/etc/asterisk/agents.conf; fi
+@exec if test ! -e %D/etc/asterisk/alarmreceiver.conf; then cp -p %D/etc/asterisk/alarmreceiver.conf-dist %D/etc/asterisk/alarmreceiver.conf; fi
+@exec if test ! -e %D/etc/asterisk/alsa.conf; then cp -p %D/etc/asterisk/alsa.conf-dist %D/etc/asterisk/alsa.conf; fi
+@exec if test ! -e %D/etc/asterisk/asterisk.adsi; then cp -p %D/etc/asterisk/asterisk.adsi-dist %D/etc/asterisk/asterisk.adsi; fi
+@exec if test ! -e %D/etc/asterisk/asterisk.conf; then cp -p %D/etc/asterisk/asterisk.conf-dist %D/etc/asterisk/asterisk.conf; fi
+@exec if test ! -e %D/etc/asterisk/cdr.conf; then cp -p %D/etc/asterisk/cdr.conf-dist %D/etc/asterisk/cdr.conf; fi
+@exec if test ! -e %D/etc/asterisk/cdr_custom.conf; then cp -p %D/etc/asterisk/cdr_custom.conf-dist %D/etc/asterisk/cdr_custom.conf; fi
+@exec if test ! -e %D/etc/asterisk/cdr_manager.conf; then cp -p %D/etc/asterisk/cdr_manager.conf-dist %D/etc/asterisk/cdr_manager.conf; fi
+@exec if test ! -e %D/etc/asterisk/cdr_odbc.conf; then cp -p %D/etc/asterisk/cdr_odbc.conf-dist %D/etc/asterisk/cdr_odbc.conf; fi
+@exec if test ! -e %D/etc/asterisk/cdr_pgsql.conf; then cp -p %D/etc/asterisk/cdr_pgsql.conf-dist %D/etc/asterisk/cdr_pgsql.conf; fi
+@exec if test ! -e %D/etc/asterisk/cdr_tds.conf; then cp -p %D/etc/asterisk/cdr_tds.conf-dist %D/etc/asterisk/cdr_tds.conf; fi
+@exec if test ! -e %D/etc/asterisk/codecs.conf; then cp -p %D/etc/asterisk/codecs.conf-dist %D/etc/asterisk/codecs.conf; fi
+@exec if test ! -e %D/etc/asterisk/dnsmgr.conf; then cp -p %D/etc/asterisk/dnsmgr.conf-dist %D/etc/asterisk/dnsmgr.conf; fi
+@exec if test ! -e %D/etc/asterisk/dundi.conf; then cp -p %D/etc/asterisk/dundi.conf-dist %D/etc/asterisk/dundi.conf; fi
+@exec if test ! -e %D/etc/asterisk/enum.conf; then cp -p %D/etc/asterisk/enum.conf-dist %D/etc/asterisk/enum.conf; fi
+@exec if test ! -e %D/etc/asterisk/extconfig.conf; then cp -p %D/etc/asterisk/extconfig.conf-dist %D/etc/asterisk/extconfig.conf; fi
+@exec if test ! -e %D/etc/asterisk/extensions.ael; then cp -p %D/etc/asterisk/extensions.ael-dist %D/etc/asterisk/extensions.ael; fi
+@exec if test ! -e %D/etc/asterisk/extensions.conf; then cp -p %D/etc/asterisk/extensions.conf-dist %D/etc/asterisk/extensions.conf; fi
+@exec if test ! -e %D/etc/asterisk/features.conf; then cp -p %D/etc/asterisk/features.conf-dist %D/etc/asterisk/features.conf; fi
+@exec if test ! -e %D/etc/asterisk/festival.conf; then cp -p %D/etc/asterisk/festival.conf-dist %D/etc/asterisk/festival.conf; fi
+@exec if test ! -e %D/etc/asterisk/iax.conf; then cp -p %D/etc/asterisk/iax.conf-dist %D/etc/asterisk/iax.conf; fi
+@exec if test ! -e %D/etc/asterisk/iaxprov.conf; then cp -p %D/etc/asterisk/iaxprov.conf-dist %D/etc/asterisk/iaxprov.conf; fi
+@exec if test ! -e %D/etc/asterisk/indications.conf; then cp -p %D/etc/asterisk/indications.conf-dist %D/etc/asterisk/indications.conf; fi
+@exec if test ! -e %D/etc/asterisk/logger.conf; then cp -p %D/etc/asterisk/logger.conf-dist %D/etc/asterisk/logger.conf; fi
+@exec if test ! -e %D/etc/asterisk/manager.conf; then cp -p %D/etc/asterisk/manager.conf-dist %D/etc/asterisk/manager.conf; fi
+@exec if test ! -e %D/etc/asterisk/meetme.conf; then cp -p %D/etc/asterisk/meetme.conf-dist %D/etc/asterisk/meetme.conf; fi
+@exec if test ! -e %D/etc/asterisk/mgcp.conf; then cp -p %D/etc/asterisk/mgcp.conf-dist %D/etc/asterisk/mgcp.conf; fi
+@exec if test ! -e %D/etc/asterisk/misdn.conf; then cp -p %D/etc/asterisk/misdn.conf-dist %D/etc/asterisk/misdn.conf; fi
+@exec if test ! -e %D/etc/asterisk/modules.conf; then cp -p %D/etc/asterisk/modules.conf-dist %D/etc/asterisk/modules.conf; fi
+@exec if test ! -e %D/etc/asterisk/musiconhold.conf; then cp -p %D/etc/asterisk/musiconhold.conf-dist %D/etc/asterisk/musiconhold.conf; fi
+@exec if test ! -e %D/etc/asterisk/osp.conf; then cp -p %D/etc/asterisk/osp.conf-dist %D/etc/asterisk/osp.conf; fi
+@exec if test ! -e %D/etc/asterisk/oss.conf; then cp -p %D/etc/asterisk/oss.conf-dist %D/etc/asterisk/oss.conf; fi
+@exec if test ! -e %D/etc/asterisk/phone.conf; then cp -p %D/etc/asterisk/phone.conf-dist %D/etc/asterisk/phone.conf; fi
+@exec if test ! -e %D/etc/asterisk/queues.conf; then cp -p %D/etc/asterisk/queues.conf-dist %D/etc/asterisk/queues.conf; fi
+@exec if test ! -e %D/etc/asterisk/res_pgsql.conf; then cp -p %D/etc/asterisk/res_pgsql.conf-dist %D/etc/asterisk/res_pgsql.conf; fi
+@exec if test ! -e %D/etc/asterisk/res_odbc.conf; then cp -p %D/etc/asterisk/res_odbc.conf-dist %D/etc/asterisk/res_odbc.conf; fi
+@exec if test ! -e %D/etc/asterisk/rpt.conf; then cp -p %D/etc/asterisk/rpt.conf-dist %D/etc/asterisk/rpt.conf; fi
+@exec if test ! -e %D/etc/asterisk/rtp.conf; then cp -p %D/etc/asterisk/rtp.conf-dist %D/etc/asterisk/rtp.conf; fi
+@exec if test ! -e %D/etc/asterisk/sip.conf; then cp -p %D/etc/asterisk/sip.conf-dist %D/etc/asterisk/sip.conf; fi
+@exec if test ! -e %D/etc/asterisk/sip_notify.conf; then cp -p %D/etc/asterisk/sip_notify.conf-dist %D/etc/asterisk/sip_notify.conf; fi
+@exec if test ! -e %D/etc/asterisk/skinny.conf; then cp -p %D/etc/asterisk/skinny.conf-dist %D/etc/asterisk/skinny.conf; fi
+@exec if test ! -e %D/etc/asterisk/telcordia-1.adsi; then cp -p %D/etc/asterisk/telcordia-1.adsi-dist %D/etc/asterisk/telcordia-1.adsi; fi
+@exec if test ! -e %D/etc/asterisk/voicemail.conf; then cp -p %D/etc/asterisk/voicemail.conf-dist %D/etc/asterisk/voicemail.conf; fi
+@exec if test ! -e %D/etc/asterisk/vpb.conf; then cp -p %D/etc/asterisk/vpb.conf-dist %D/etc/asterisk/vpb.conf; fi
+@exec if test ! -e %D/etc/asterisk/chan_dahdi.conf; then cp -p %D/etc/asterisk/chan_dahdi.conf-dist %D/etc/asterisk/chan_dahdi.conf; fi
+@exec if test ! -e %D/etc/asterisk/udptl.conf; then cp -p %D/etc/asterisk/udptl.conf-dist %D/etc/asterisk/udptl.conf; fi
+@exec if test ! -e %D/etc/asterisk/users.conf; then cp -p %D/etc/asterisk/users.conf-dist %D/etc/asterisk/users.conf; fi
+@exec if test ! -e %D/etc/asterisk/smdi.conf; then cp -p %D/etc/asterisk/smdi.conf-dist %D/etc/asterisk/smdi.conf; fi
+@exec if test ! -e %D/etc/asterisk/sla.conf; then cp -p %D/etc/asterisk/sla.conf-dist %D/etc/asterisk/sla.conf; fi
+@exec if test ! -e %D/etc/asterisk/say.conf; then cp -p %D/etc/asterisk/say.conf-dist %D/etc/asterisk/say.conf; fi
+@exec if test ! -e %D/etc/asterisk/res_snmp.conf; then cp -p %D/etc/asterisk/res_snmp.conf-dist %D/etc/asterisk/res_snmp.conf; fi
+@exec if test ! -e %D/etc/asterisk/muted.conf; then cp -p %D/etc/asterisk/muted.conf-dist %D/etc/asterisk/muted.conf; fi
+@exec if test ! -e %D/etc/asterisk/jabber.conf; then cp -p %D/etc/asterisk/jabber.conf-dist %D/etc/asterisk/jabber.conf; fi
+@exec if test ! -e %D/etc/asterisk/http.conf; then cp -p %D/etc/asterisk/http.conf-dist %D/etc/asterisk/http.conf; fi
+@exec if test ! -e %D/etc/asterisk/h323.conf; then cp -p %D/etc/asterisk/h323.conf-dist %D/etc/asterisk/h323.conf; fi
+@exec if test ! -e %D/etc/asterisk/gtalk.conf; then cp -p %D/etc/asterisk/gtalk.conf-dist %D/etc/asterisk/gtalk.conf; fi
+@exec if test ! -e %D/etc/asterisk/func_odbc.conf; then cp -p %D/etc/asterisk/func_odbc.conf-dist %D/etc/asterisk/func_odbc.conf; fi
+@exec if test ! -e %D/etc/asterisk/followme.conf; then cp -p %D/etc/asterisk/followme.conf-dist %D/etc/asterisk/followme.conf; fi
+@exec if test ! -e %D/etc/asterisk/amd.conf; then cp -p %D/etc/asterisk/amd.conf-dist %D/etc/asterisk/amd.conf; fi
 include/asterisk/_private.h
 include/asterisk/aes_internal.h
 include/asterisk/ast_version.h
@@ -416,7 +490,6 @@ lib/asterisk/modules/res_speech.so
 sbin/aelparse
 sbin/conf2ael
 sbin/astcanary
-sbin/check_expr
 sbin/hashtest
 sbin/hashtest2
 sbin/asterisk
@@ -439,6 +512,7 @@ share/asterisk/images/kpad2.jpg
 share/asterisk/keys/freeworlddialup.pub
 share/asterisk/keys/iaxtel.pub
 share/asterisk/moh/.asterisk-moh-freeplay-wav
+share/asterisk/moh/CHANGES-asterisk-moh-freeplay-wav
 share/asterisk/moh/LICENSE-asterisk-moh-freeplay-wav
 share/asterisk/moh/fpm-calm-river.wav
 share/asterisk/moh/fpm-sunshine.wav
