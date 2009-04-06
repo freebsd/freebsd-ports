@@ -5,29 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gstreamer-plugins
-PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	audio
-MASTER_SITES=	http://0pointer.de/lennart/projects/gst-pulse/
-PKGNAMESUFFIX=	-pulse
-DISTNAME=	gst${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer plugin for pulseaudio
 
-LIB_DEPENDS=	pulse.0:${PORTSDIR}/audio/pulseaudio
+GST_PLUGIN=	pulse
 
-CFLAGS:=	${CFLAGS} -O2
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-USE_GNOME=	lthack gnomehack
-USE_GSTREAMER=	yes
-CONFIGURE_ARGS=	--disable-lynx
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
-PLIST_FILES=	lib/gstreamer-0.10/libgstpulse.la \
-		lib/gstreamer-0.10/libgstpulse.so
-
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"

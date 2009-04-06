@@ -133,7 +133,6 @@ ogg_DEPENDS=	audio/gstreamer-plugins-ogg
 polyp_DEPENDS=	audio/gstreamer-plugins-polyp
 
 pulse_DEPENDS=	audio/gstreamer-plugins-pulse
-pulse_GST_VERSION=	0.9.3
 
 shout_DEPENDS=	audio/gstreamer-plugins-shout
 
