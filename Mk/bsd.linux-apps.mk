@@ -56,9 +56,9 @@ WEB_AUTH=			nvu
 # Non-version specific components
 _LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo curl esound expat fontconfig \
 					freealut gdkpixbuf gtk gtk2 hicontheme imlib jpeg libaudiofile \
-					libg2c libglade libglade2 libglu libmng libogg libsigcpp20 libtheora \
-					libvorbis libxml libxml2 mikmod openal openmotif openssl pango png png10 qt33 \
-					scimgtk scimlibs sdl12 sdlimage sdlmixer tcl84 tiff tk84 xorglibs ucl ungif upx webauth
+					libg2c libglade libglade2 libglu libidn libmng libogg libsigcpp20 libssh2 libtheora \
+					libvorbis libxml libxml2 mikmod nspr nss openal openmotif openssl pango png png10 qt33 \
+					scimgtk scimlibs sdl12 sdlimage sdlmixer sqlite3 tcl84 tiff tk84 xorglibs ucl ungif upx webauth
 
 # 2.4.2 components
 _LINUX_APPS_ALL+=
@@ -193,6 +193,11 @@ libglu_f8_FILE=		${LINUXBASE}/usr/lib/libGLU.so.1.3.070002
 libglu_DETECT=		${libglu${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libglu_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-libGLU
 
+# no libidn_FILE
+libidn_f8_FILE=		${LINUXBASE}/usr/lib/libidn.so.11
+libidn_DETECT=		${libidn${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+libidn_PORT=		${PORTSDIR}/dns/linux${LINUX_DIST_SUFFIX}-libid
+
 libmng_FILE=		${LINUXBASE}/usr/lib/libmng.so.1.0.0
 libmng_f8_FILE=		${libmng_FILE}
 libmng_DETECT=		${libmng${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
@@ -208,6 +213,12 @@ libsigcpp20_FILE=	${LINUXBASE}/usr/lib/libsigc-2.0.so.0
 libsigcpp20_f8_FILE=	${libsigcpp20_FILE}
 libsigcpp20_DETECT=	${libsigcpp20${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libsigcpp20_PORT=	${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-libsigc++20
+
+# no libssh2_FILE
+libssh2_f8_FILE=	${LINUXBASE}/usr/lib/libssh2.so.1
+libssh2_DETECT=		${libssh2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+libssh2_PORT=		${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-libssh2
+libssh2_DEPENDS=	openssl
 
 libtheora_FILE=		${LINUXBASE}/usr/lib/libtheora.so.0.1.0
 libtheora_f8_FILE=	${LINUXBASE}/usr/lib/libtheora.so.0.3.2
@@ -241,6 +252,17 @@ openmotif_f8_FILE=	${openmotif_FILE}
 openmotif_DETECT=	${openmotif${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 openmotif_PORT=		${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-openmotif
 openmotif_DEPENDS=	xorglibs
+
+# no nspr_FILE
+nspr_f8_FILE=		${LINUXBASE}/usr/lib/libnspr4.so
+nspr_DETECT=		${nspr${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+nspr_PORT=		${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-nspr
+
+# no nss_FILE
+nss_f8_FILE=		${LINUXBASE}/usr/lib/libnss3.so
+nss_DETECT=		${nss${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+nss_PORT=		${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-nss
+nss_DEPENDS=		nspr sqlite3
 
 openal_FILE=		${LINUXBASE}/usr/lib/libopenal.so.0.0.0
 openal_f8_FILE=		${openal_FILE}
@@ -304,6 +326,11 @@ scimlibs_f8_FILE=	${LINUXBASE}/usr/lib/libscim-1.0.so.8
 scimlibs_DETECT=	${scimlibs${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 scimlibs_PORT=		${PORTSDIR}/textproc/linux${LINUX_DIST_SUFFIX}-scim-libs
 scimlibs_DEPENDS=	gtk2
+
+# no sqlite3_FILE
+sqlite3_f8_FILE=	usr/lib/libsqlite3.so.0
+sqlite3_DETECT=		${sqlite3{LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+sqlite3_PORT=		${PORTSDIR}/databases/linux${LINUX_DIST_SUFFIX}-sqlite3
 
 # no tcl84_FILE
 tcl84_f8_FILE=		${LINUXBASE}/usr/lib/tcl8.4
