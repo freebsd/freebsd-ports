@@ -26,21 +26,22 @@
     HgfsAccessMode accessMode = 0;
     Bool isDir = vp->v_type == VDIR;
     if (mode & VREAD) {
---- modules/freebsd/vmblock/vnops.c.orig	2009-02-28 23:21:43.000000000 +0100
-+++ modules/freebsd/vmblock/vnops.c	2009-02-28 23:26:23.000000000 +0100
-@@ -723,7 +723,11 @@
+--- modules/freebsd/vmblock/vnops.c.orig	2009-03-18 03:03:21.000000000 -0400
++++ modules/freebsd/vmblock/vnops.c	2009-04-04 20:33:28.000000000 -0400
+@@ -726,7 +726,11 @@
         * NB:  Allowing only the superuser to open this directory breaks
         *      readdir() of the filesystem root for non-privileged users.
         */
-+#if __FreeBSD_version >= 800001
-+      if ((retval = priv_check(ap->a_td, PRIV_VFS_GETFH)) == 0) {
-+#else
-       if ((retval = suser(ap->a_td)) == 0) {
-+#endif
- #if __FreeBSD_version >= 700000
+-      if ((retval = suser(ap->a_td)) == 0) {
++ #if __FreeBSD_version >= 800001
++       if ((retval = priv_check(ap->a_td, PRIV_VFS_GETFH)) == 0) {
++ #else
++        if ((retval = suser(ap->a_td)) == 0) {
++ #endif
+ #if __FreeBSD_version >= 700055
           fp = ap->a_fp;
  #else
-@@ -1007,7 +1011,11 @@
+@@ -1010,7 +1014,11 @@
  */
  {
     struct vnode *vp = ap->a_vp;
