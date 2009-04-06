@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.7.47
+PORTVERSION=	0.7.50
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -37,6 +37,7 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		HTTP_STATUS_MODULE "Enable http_stub_status module" on \
 		HTTP_SUB_MODULE "Enable http_sub module" off \
 		HTTP_UPLOAD_MODULE "Enable upload module" off \
+		HTTP_UPSTREAM_FAIR "Enable upstream fair module" off \
 		HTTP_UPSTREAM_KEEPALIVE "Enable upstream keepalive module" off \
 		HTTP_XSLT_MODULE "Enable http_xslt module" off \
 		HTTP_ZIP_MODULE "Enable http_zip module" off \
@@ -175,6 +176,13 @@ DISTFILES+=	nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}.tar.gz:upload
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}
 .endif
 
+.if defined(WITH_HTTP_UPSTREAM_FAIR)
+NGINX_UPSTREAM_FAIR_VERSION=	20081012
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:upstreamfair/}
+DISTFILES+=	nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}.tar.gz:upstreamfair
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}
+.endif
+
 .if defined(WITH_HTTP_UPSTREAM_KEEPALIVE)
 NGINX_UPSTREAM_KEEPALIVE_VERSION=	0.1
 MASTER_SITES+=	http://mdounin.ru/files/:upstream
@@ -237,6 +245,13 @@ CONFIGURE_ARGS+=--with-mail_ssl_module
 .endif
 
 PLIST_SUB+=	NGINX_TMPDIR=${NGINX_TMPDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+
+pre-everything::
+.if defined(WITH_HTTP_UPSTREAM_FAIR)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Enable http_ssl module to build upstream_fair with SSL support"
+	@${ECHO_MSG}
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
