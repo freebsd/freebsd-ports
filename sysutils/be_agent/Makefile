@@ -26,6 +26,9 @@ USE_RC_SUBR=	be-agent.sh
 PLIST_FILES=	bin/agent.be \
 		etc/be-agent.cfg.sample
 
+.include <bsd.port.pre.mk>
+
+pre-fetch:
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\
@@ -47,4 +50,5 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
+
