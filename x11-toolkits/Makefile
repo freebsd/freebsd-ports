@@ -124,6 +124,7 @@
     SUBDIR += linux-f8-openmotif
     SUBDIR += linux-f8-pango
     SUBDIR += linux-f8-qt33
+    SUBDIR += linux-f8-tk84
     SUBDIR += linux-gtk
     SUBDIR += linux-gtk2
     SUBDIR += linux-openmotif
