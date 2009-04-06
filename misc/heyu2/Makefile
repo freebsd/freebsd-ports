@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	heyu2
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.heyu.org/download/
 DISTNAME=	heyu-${PORTVERSION}
@@ -24,10 +24,15 @@ CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	freebsd
 
 MAN1=		heyu.1
-MAN5=		x10config.5 \
+MAN5=		x10aux.5 \
+		x10config.5 \
+		x10cm17a.5 \
+		x10digimax.5 \
+		x10oregon.5 \
 		x10sched.5 \
 		x10scripts.5 \
-		x10rfxmeters.5
+		x10rfxmeters.5 \
+		x10rfxsensors.5
 
 OPTIONS=	CM17A		"X10 CM17A \"Firecracker\" Support"		on \
 		EXTENDED	"Extended Type 0 (Shutter/Shade) Support"	on \
@@ -74,10 +79,15 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/heyu ${PREFIX}/bin
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_MAN} ${WRKSRC}/heyu.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/x10aux.5 ${MAN5PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/x10config.5 ${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/x10cm17a.5 ${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/x10digimax.5 ${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/x10oregon.5 ${MAN5PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/x10sched.5 ${MAN5PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/x10scripts.5 ${MAN5PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/x10rfxmeters.5 ${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/x10rfxsensors.5 ${MAN5PREFIX}/man/man5
 	${INSTALL_DATA} ${WRKSRC}/x10config.sample ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/x10.sched.sample ${EXAMPLESDIR}
 
