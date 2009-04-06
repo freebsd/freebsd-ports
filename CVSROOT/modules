@@ -20435,6 +20435,7 @@ sdl_sound                       ports/audio/sdl_sound
 sdl_ttf                         ports/graphics/sdl_ttf
 sdlcc                           ports/games/sdlCC
 sdlmame                         ports/emulators/sdlmame
+sdlmame-devel                   ports/emulators/sdlmame-devel
 sdlmess                         ports/emulators/sdlmess
 sdlmm                           ports/devel/sdlmm
 sdlquake2                       ports/games/sdlquake2
