@@ -19,6 +19,7 @@ TXT_DOCS=	BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README
 
 OPTIONS=	MOD_DAV_SVN	"mod_dav_svn module for Apache 2.X" off \
 		APACHE2_APR	"Use APR from Apache 2.X" off \
+		MOD_DONTDOTHAT	"mod_dontdothat for Apache 2.X" off \
 		NEON		"WebDAV/Delta-V repo access module (neon)" on \
 		SERF		"WebDAV/Delta-V repo access module (serf)" off \
 		SASL		"SASL2 authorization support" off \
@@ -103,6 +104,13 @@ pre-everything::
 	@${ECHO_MSG} "the ${APACHE_PORT} port, rather than the devel/apr port."
 .endif
 	@${ECHO_MSG} ""
+.if defined(WITH_MOD_DONTDOTHAT)
+	@${ECHO_MSG} "mod_dontdothat module for Apache 2.X enabled."
+	@${ECHO_MSG} "This option implies the WITH_MOD_DAV_SVN option."
+.else
+	@${ECHO_MSG} "You can enable the mod_dontdothat module for Apache 2.X"
+.endif
+	@${ECHO_MSG} ""
 .if defined(WITH_SVNSERVE_WRAPPER)
 	@${ECHO_MSG} "svnserve wrapper enabled."
 	@${ECHO_MSG} ""
@@ -156,13 +164,27 @@ pre-configure:
 	fi
 .endif
 
+
+.if defined(WITH_MOD_DAV_SVN) && defined(WITH_MOD_DONTDOTHAT)
+post-build:
+	cd ${WRKSRC}/contrib/server-side/mod_dontdothat && \
+		${APXS} -c -I${WRKSRC}/subversion/include -L${WRKSRC}/subversion/libsvn_subr/.libs -lsvn_subr-1 mod_dontdothat.c
+.endif
+
 .if defined(WITH_MOD_DAV_SVN)
 pre-install:
-	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dav       ${PREFIX}/${APACHEMODDIR}/mod_dav.so
-	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n authz_svn ${PREFIX}/${APACHEMODDIR}/mod_authz_svn.so
+	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dav ${PREFIX}/${APACHEMODDIR}/mod_dav.so
 .endif
 
 post-install:	${MKREPOS_TARGET}
+.if defined(WITH_MOD_DAV_SVN)
+	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n authz_svn ${PREFIX}/${APACHEMODDIR}/mod_authz_svn.so
+.if defined(WITH_MOD_DONTDOTHAT)
+	cd ${WRKSRC}/contrib/server-side/mod_dontdothat && \
+		${APXS} -i -n dontdothat mod_dontdothat.la
+	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dontdothat ${PREFIX}/${APACHEMODDIR}/mod_dontdothat.so
+.endif
+.endif
 	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/tools ; \
 	  ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${DATADIR} -xf -

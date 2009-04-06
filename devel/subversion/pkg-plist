@@ -291,6 +291,8 @@ lib/libsvn_wc-1.so.0
 %%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_authz_svn.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/%%APACHEMODDIR%% -a -n dav libexec/%%APACHEDIR%%/mod_dav.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/%%APACHEMODDIR%% -a -n dav_svn libexec/%%APACHEDIR%%/mod_dav_svn.so
+%%MOD_DONTDOTHAT%%%%APACHEMODDIR%%/mod_dontdothat.so
+%%MOD_DONTDOTHAT%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/%%APACHEMODDIR%% -a -n dontdothat libexec/%%APACHEDIR%%/mod_dontdothat.so
 %%PORTDOCS%%%%BOOK%%@dirrm %%DOCSDIR%%/svn-book-html/images
 %%PORTDOCS%%%%BOOK%%@dirrm %%DOCSDIR%%/svn-book-html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

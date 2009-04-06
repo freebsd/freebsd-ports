@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.6.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES+=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.5/:book
@@ -66,8 +66,14 @@ CONFIGURE_ARGS+=	--with-apxs=${APXS}
 PLIST_SUB+=	MOD_DAV_SVN=""
 SVNGROUP?=	www
 SVNUSER?=	www
+.if defined(WITH_MOD_DONTDOTHAT)
+PLIST_SUB+=	MOD_DONTDOTHAT=""
+.else
+PLIST_SUB+=	MOD_DONTDOTHAT="@comment "
+.endif
 .else
 PLIST_SUB+=	MOD_DAV_SVN="@comment "
+PLIST_SUB+=	MOD_DONTDOTHAT="@comment "
 PKGDEINSTALL=	NONEXISTENT
 SVNGROUP?=	svn
 SVNUSER?=	svn
