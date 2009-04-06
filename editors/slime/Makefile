@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slime
-PORTVERSION=	20080803
+PORTVERSION=	20090407
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	editors elisp
@@ -58,7 +58,7 @@ post-install:
 	@${ECHO_MSG} "(add-to-list 'load-path \"${SLIME_LISPDIR}\""
 	@${ECHO_MSG} '	"${SLIME_LISPDIR}/contrib")'
 	@${ECHO_MSG} "(require 'slime)"
-	@${ECHO_MSG} "(slime-setup)"
+	@${ECHO_MSG} "(slime-setup '(slime-repl))"
 	@${ECHO_MSG} "========================================================"
 	@${ECHO_MSG}
 
