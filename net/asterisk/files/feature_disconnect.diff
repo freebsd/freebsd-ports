@@ -1,5 +1,5 @@
---- apps/app_dial.c.orig	2008-12-20 00:30:32.000000000 +0200
-+++ apps/app_dial.c	2009-01-27 13:44:30.000000000 +0200
+--- apps/app_dial.c.orig	2009-01-30 19:47:41.000000000 +0200
++++ apps/app_dial.c	2009-03-25 18:13:22.000000000 +0200
 @@ -311,6 +311,8 @@
  	OPT_CALLEE_MONITOR | OPT_CALLER_MONITOR | OPT_CALLEE_PARK | OPT_CALLER_PARK) && \
  	!chan->audiohooks && !peer->audiohooks)
@@ -9,7 +9,7 @@
  /* We define a custom "local user" structure because we
     use it not only for keeping track of what is in use but
     also for keeping track of who we're dialing. */
-@@ -740,9 +742,9 @@
+@@ -743,9 +745,9 @@
  				}
  
  				if (ast_test_flag(peerflags, OPT_CALLER_HANGUP) && 
@@ -21,7 +21,7 @@
  					*to=0;
  					ast_cdr_noanswer(in->cdr);
  					strcpy(status, "CANCEL");
-@@ -783,6 +785,56 @@
+@@ -786,6 +788,56 @@
  	return peer;
  }
  
@@ -79,19 +79,18 @@
  {
  	for (; *s; s++)
 --- include/asterisk/features.h.orig	2008-11-02 21:51:17.000000000 +0200
-+++ include/asterisk/features.h	2009-01-27 13:44:30.000000000 +0200
-@@ -35,6 +35,20 @@
++++ include/asterisk/features.h	2009-03-25 18:14:38.000000000 +0200
+@@ -35,6 +35,19 @@
  
  #define PARK_APP_NAME "Park"
  
 +#define FEATURE_RETURN_HANGUP		-1
 +#define FEATURE_RETURN_SUCCESSBREAK	 0
-+#define FEATURE_RETURN_PBX_KEEPALIVE	AST_PBX_KEEPALIVE
-+#define FEATURE_RETURN_NO_HANGUP_PEER	AST_PBX_NO_HANGUP_PEER
 +#define FEATURE_RETURN_PASSDIGITS	 21
 +#define FEATURE_RETURN_STOREDIGITS	 22
 +#define FEATURE_RETURN_SUCCESS	 	 23
 +#define FEATURE_RETURN_KEEPTRYING    24
++#define FEATURE_RETURN_PARKFAILED               25
 +
 +#define FEATURE_SENSE_CHAN	(1 << 0)
 +#define FEATURE_SENSE_PEER	(1 << 1)
@@ -101,7 +100,7 @@
  /*! \brief main call feature structure */
  struct ast_call_feature {
  	int feature_mask;
-@@ -42,7 +56,7 @@
+@@ -42,7 +55,7 @@
  	char sname[FEATURE_SNAME_LEN];
  	char exten[FEATURE_MAX_LEN];
  	char default_exten[FEATURE_MAX_LEN];
@@ -110,7 +109,7 @@
  	unsigned int flags;
  	char app[FEATURE_APP_LEN];		
  	char app_args[FEATURE_APP_ARGS_LEN];
-@@ -51,6 +65,12 @@
+@@ -51,6 +64,12 @@
  };
  
  
@@ -123,7 +122,7 @@
  
  /*! \brief Park a call and read back parked location 
   *  \param chan the channel to actually be parked
-@@ -98,4 +118,10 @@
+@@ -98,4 +117,10 @@
      \param feature the ast_call_feature object which was registered before*/
  void ast_unregister_feature(struct ast_call_feature *feature);
  
@@ -134,38 +133,47 @@
 +
 +
  #endif /* _AST_FEATURES_H */
---- res/res_features.c.orig	2009-01-27 13:45:07.000000000 +0200
-+++ res/res_features.c	2009-01-27 13:51:36.000000000 +0200
-@@ -536,15 +536,6 @@
- {
- 	return masq_park_call(rchan, peer, timeout, extout, 1, orig_chan_name);
- }
+--- res/res_features.c.orig	2009-03-25 18:13:42.000000000 +0200
++++ res/res_features.c	2009-03-25 19:22:17.000000000 +0200
+@@ -72,14 +72,6 @@
+ #define AST_MAX_WATCHERS 256
+ #define MAX_DIAL_FEATURE_OPTIONS 30
+ 
 -#define FEATURE_RETURN_HANGUP                  -1
 -#define FEATURE_RETURN_SUCCESSBREAK             0
 -#define FEATURE_RETURN_PASSDIGITS               21
 -#define FEATURE_RETURN_STOREDIGITS              22
 -#define FEATURE_RETURN_SUCCESS                  23
 -#define FEATURE_RETURN_KEEPTRYING               24
+-#define FEATURE_RETURN_PARKFAILED               25
 -
+ enum {
+ 	AST_FEATURE_FLAG_NEEDSDTMF = (1 << 0),
+ 	AST_FEATURE_FLAG_ONPEER =    (1 << 1),
+@@ -614,9 +606,6 @@
+ 	return masq_park_call(rchan, peer, timeout, extout, 1, orig_chan_name);
+ }
+ 
 -#define FEATURE_SENSE_CHAN	(1 << 0)
 -#define FEATURE_SENSE_PEER	(1 << 1)
- 
+-
  /*! \brief
   * set caller and callee according to the direction
-@@ -1143,33 +1134,36 @@
+  */
+@@ -1223,36 +1212,39 @@
  	return res;
  }
  
 -static int ast_feature_interpret(struct ast_channel *chan, struct ast_channel *peer, struct ast_bridge_config *config, char *code, int sense)
 +void ast_features_lock(void)
 +{
-+        ast_rwlock_rdlock(&features_lock);
-+        AST_LIST_LOCK(&feature_list);
++        ast_rwlock_wrlock(&features_lock);
++        AST_RWLIST_WRLOCK(&feature_list);
 +}
 +
 +void ast_features_unlock(void)
 +{
-+        AST_LIST_UNLOCK(&feature_list);
++        AST_RWLIST_UNLOCK(&feature_list);
 +        ast_rwlock_unlock(&features_lock);
 +}
 +
@@ -199,12 +207,23 @@
  		    !ast_strlen_zero(builtin_features[x].exten)) {
  			/* Feature is up for consideration */
  			if (!strcmp(builtin_features[x].exten, code)) {
+ 				if (option_debug > 2) {
+ 					ast_log(LOG_DEBUG, "Feature detected: fname=%s sname=%s exten=%s\n", builtin_features[x].fname, builtin_features[x].sname, builtin_features[x].exten);
+ 				}
 -				res = builtin_features[x].operation(chan, peer, config, code, sense, NULL);
 +                                result->builtin_feature = &builtin_features[x];
  				feature_detected = 1;
  				break;
  			} else if (!strncmp(builtin_features[x].exten, code, strlen(code))) {
-@@ -1186,9 +1180,7 @@
+@@ -1261,7 +1253,6 @@
+ 			}
+ 		}
+ 	}
+-	ast_rwlock_unlock(&features_lock);
+ 
+ 	if (ast_strlen_zero(dynamic_features) || feature_detected)
+ 		return res;
+@@ -1269,9 +1260,7 @@
  	tmp = ast_strdupa(dynamic_features);
  
  	while ((tok = strsep(&tmp, "#"))) {
@@ -214,7 +233,7 @@
  			continue;
  		}
  			
-@@ -1196,21 +1188,52 @@
+@@ -1279,9 +1268,8 @@
  		if (!strcmp(feature->exten, code)) {
  			if (option_verbose > 2)
  				ast_verbose(VERBOSE_PREFIX_3 " Feature Found: %s exten: %s\n",feature->sname, tok);
@@ -226,12 +245,7 @@
  				break;
  			}
  			res = FEATURE_RETURN_PASSDIGITS;
- 		} else if (!strncmp(feature->exten, code, strlen(code)))
- 			res = FEATURE_RETURN_STOREDIGITS;
- 
--		AST_RWLIST_UNLOCK(&feature_list);
- 	}
- 	
+@@ -1294,6 +1282,39 @@
  	return res;
  }
  

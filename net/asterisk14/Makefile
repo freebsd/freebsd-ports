@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.4.23.1
+PORTVERSION=	1.4.24.1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.digium.com/pub/asterisk/ \
 		http://downloads.digium.com/pub/asterisk/old-releases/ \
@@ -42,6 +42,7 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		NOISY_BUILD=YES \
 		ASTCFLAGS="${CFLAGS}"
 MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
+CONFLICTS=	asterisk*-1.2* asterisk*-1.6*
 
 OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		ODBC		"Enable ODBC support" on \
@@ -171,7 +172,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/ilbc_enable.diff
 .endif
 
 .if defined(WITH_CODEC_PATCH)
-PATCHFILES=	asterisk-1.4.23.1-codec-negotiation-20090126.diff.gz
+PATCHFILES=	asterisk-1.4.24-codec-negotiation-20090326.diff.gz
 PATCH_SITES=	http://b2bua.org/chrome/site/
 EXTRA_PATCHES+=	${PATCHDIR}/codecnego-patch-Makefile
 .else
