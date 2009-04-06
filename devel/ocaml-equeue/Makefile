@@ -7,7 +7,7 @@
 
 PORTNAME=	equeue
 PORTVERSION=	2.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
 PKGNAMEPREFIX=	ocaml-
@@ -32,8 +32,8 @@ ALL_TARGET=	all opt
 PKGDEINSTALL=	${PKGINSTALL}
 
 .if defined(WITH_EQUEUE_TCL)
-BUILD_DEPENDS+=		${LOCALBASE}/include/tcl8.4:${PORTSDIR}/lang/tcl84
-CONFIGURE_ARGS+=	-with-equeue-tcl -equeue-tcl-defs "-I${LOCALBASE}/include/tcl8.4" -equeue-tcl-libs "-L${LOCALBASE}/lib -ltcl84"
+USE_TCL=	84+
+CONFIGURE_ARGS+=	-with-equeue-tcl -equeue-tcl-defs "-I${TCL_INCLUDEDIR}" -equeue-tcl-libs "-L${LOCALBASE}/lib -ltcl${TCL_VER:S/.//}"
 PLIST_SUB+=		TCL=""
 .else
 PLIST_SUB+=		TCL="@comment "
