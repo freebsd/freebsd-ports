@@ -58,7 +58,7 @@ _LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo curl esound expat fontcon
 					freealut gdkpixbuf gtk gtk2 hicontheme imlib jpeg libaudiofile \
 					libg2c libglade libglade2 libglu libmng libogg libsigcpp20 libtheora \
 					libvorbis libxml libxml2 mikmod openal openmotif openssl pango png png10 qt33 \
-					scimgtk scimlibs sdl12 sdlimage sdlmixer tiff xorglibs ucl ungif upx webauth
+					scimgtk scimlibs sdl12 sdlimage sdlmixer tcl84 tiff tk84 xorglibs ucl ungif upx webauth
 
 # 2.4.2 components
 _LINUX_APPS_ALL+=
@@ -305,11 +305,22 @@ scimlibs_DETECT=	${scimlibs${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 scimlibs_PORT=		${PORTSDIR}/textproc/linux${LINUX_DIST_SUFFIX}-scim-libs
 scimlibs_DEPENDS=	gtk2
 
+# no tcl84_FILE
+tcl84_f8_FILE=		${LINUXBASE}/usr/lib/tcl8.4
+tcl84_DETECT=		${tcl84${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+tcl84_PORT=		${PORTSDIR}/lang/linux${LINUX_DIST_SUFFIX}-tcl84
+
 tiff_FILE=			${LINUXBASE}/usr/lib/libtiff.so.3.7.1
 tiff_f8_FILE=		${LINUXBASE}/usr/lib/libtiff.so.3.8.2
 tiff_DETECT=		${tiff${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 tiff_PORT=			${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-tiff
 tiff_DEPENDS=		jpeg
+
+# no tk84_FILE
+tk84_f8_FILE=		${LINUXBASE}/usr/lib/libtk8.4.so
+tk84_DETECT=		${tk84${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+tk84_PORT=		${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-tk84
+tk84_DEPENDS=		xorglibs
 
 xorglibs_FILE=		${LINUXBASE}/usr/X11R6/lib/libXrandr.so.2.0
 xorglibs_f8_FILE=	${LINUXBASE}/usr/lib/libXrandr.so.2.1.0
