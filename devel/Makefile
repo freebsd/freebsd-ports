@@ -760,6 +760,7 @@
     SUBDIR += linux-f8-libglade
     SUBDIR += linux-f8-libglade2
     SUBDIR += linux-f8-libsigc++20
+    SUBDIR += linux-f8-nspr
     SUBDIR += linux-f8-sdl12
     SUBDIR += linux-js
     SUBDIR += linux-kmod-compat
