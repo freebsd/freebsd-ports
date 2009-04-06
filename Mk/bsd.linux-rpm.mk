@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.15 2009-04-01 15:25:27 bsam Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.16 2009-04-06 12:48:13 bsam Exp $
 #
 
 # Variables:
@@ -27,6 +27,10 @@
 #					  contain libraries.
 # BRANDELF_FILES	- A list of files to brand as a linux executable in
 #					  case BRANDELF_DIRS can't be used.
+# _F8_COMPATIBLE_LINUX_BASE_PORTS
+			- A list of linux base ports compatible (may be used) with -f8-
+					  linux infrastructure ports. This variable is ment
+					  to be used at *.mk files
 
 .if !defined(_POSTMKINCLUDED) && !defined(Linux_RPM_Pre_Include)
 
@@ -60,6 +64,7 @@ Linux_RPM_Post_Include=	bsd.linux-rpm.mk
 
 LINUX_DIST?=		fedora
 LINUX_DIST_VER?=	3
+_F8_COMPATIBLE_LINUX_BASE_PORTS=	f8 f9
 
 .  if defined(LINUX_DIST)
 DIST_SUBDIR?=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
@@ -70,9 +75,9 @@ DIST_SUBDIR?=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
 .      ifndef MASTER_SITES
 MASTER_SITES=			${MASTER_SITE_FEDORA_LINUX}
 .        if ${LINUX_DIST_VER} == 8
-# linux Fedora 8 infrastructure ports should be used only with linux_base-f8 port
-.          if ${USE_LINUX} != "f8"
-IGNORE=		the port should be used with linux_base-f8, please read /usr/ports/UPDATING
+# linux Fedora 8 infrastructure ports should be used with linux_base-f8 (or greater) port
+.          if ${USE_LINUX:M${_F8_COMPATIBLE_LINUX_BASE_PORTS}} == ""
+IGNORE=		the port should be used with at least linux_base-f8, please read /usr/ports/UPDATING
 .          endif
 .          if (${LINUX_OSRELEASE} != "2.6.16") && defined(PACKAGE_BUILDING)
 IGNORE=		packages should be built with compat.linux.osrelease=2.6.16
@@ -145,9 +150,11 @@ _LINUX_BASE_SUFFIX=		fc6
 _LINUX_BASE_SUFFIX=		f7
 .    elif ${USE_LINUX} == "f8"
 _LINUX_BASE_SUFFIX=		f8
+.    elif ${USE_LINUX} == "f9"
+_LINUX_BASE_SUFFIX=		f9
 .    else
 # other linux_base ports do not provide a pkg-plist file
-IGNORE=					uses AUTOMATIC_PLIST with an unsupported USE_LINUX, \"${USE_LINUX}\". Supported values are \"yes\", \"fc4\", \"fc6\", \"f7\" and \"f8\"
+IGNORE=					uses AUTOMATIC_PLIST with an unsupported USE_LINUX, \"${USE_LINUX}\". Supported values are \"yes\", \"fc4\", \"fc6\", \"f7\", \"f8\" and \"f9\"
 .    endif
 
 PLIST?=					${WRKDIR}/.PLIST.linux-rpm
