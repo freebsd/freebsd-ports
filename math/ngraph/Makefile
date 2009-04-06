@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ngraph
-PORTVERSION=	6.3.47
-PORTREVISION=	3
+PORTVERSION=	6.3.48
 CATEGORIES=	math
 MASTER_SITES=	http://www2e.biglobe.ne.jp/~isizaka/bin/ \
 		${MASTER_SITE_PORTS_JP}
