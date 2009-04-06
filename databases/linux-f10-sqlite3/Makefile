@@ -26,6 +26,6 @@ DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	README
 MANPREFIX=	${PREFIX}/usr/share
 MAN1=		sqlite3.1
-DESCR=		${.CURDIR}/../${PORTNAME}3/pkg-descr
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>
