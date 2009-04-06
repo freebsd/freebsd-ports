@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcompris
-DISTVERSION=	8.4.11
+DISTVERSION=	8.4.12
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/gcompris
 

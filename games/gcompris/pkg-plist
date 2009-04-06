@@ -294,6 +294,7 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/cardimage/backcard.png
 %%DATADIR%%/boards/cardimage/emptycard.png
 %%DATADIR%%/boards/chat.xml
+%%DATADIR%%/boards/check.sh
 %%DATADIR%%/boards/chess.xml
 %%DATADIR%%/boards/chess/Bb.png
 %%DATADIR%%/boards/chess/Bk.png
