@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcraw
-PORTVERSION=	8.88
+PORTVERSION=	8.93
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 
