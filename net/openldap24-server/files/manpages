@@ -4,6 +4,7 @@
 
 MAN1+=	ldapcompare.1 \
 	ldapdelete.1 \
+	ldapexop.1 \
 	ldapmodify.1 \
 	ldapmodrdn.1 \
 	ldappasswd.1 \
