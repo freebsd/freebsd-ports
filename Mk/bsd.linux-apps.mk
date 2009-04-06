@@ -328,7 +328,7 @@ scimlibs_PORT=		${PORTSDIR}/textproc/linux${LINUX_DIST_SUFFIX}-scim-libs
 scimlibs_DEPENDS=	gtk2
 
 # no sqlite3_FILE
-sqlite3_f8_FILE=	usr/lib/libsqlite3.so.0
+sqlite3_f8_FILE=	${LINUXBASE}/usr/lib/libsqlite3.so.0
 sqlite3_DETECT=		${sqlite3{LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 sqlite3_PORT=		${PORTSDIR}/databases/linux${LINUX_DIST_SUFFIX}-sqlite3
 
