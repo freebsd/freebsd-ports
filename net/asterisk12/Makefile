@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.2.30.2
-PORTREVISION=	1
+PORTVERSION=	1.2.32
 PKGNAMESUFFIX=	12
-PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
+MASTER_SITES=	http://downloads.digium.com/pub/asterisk/ \
+		http://downloads.digium.com/pub/asterisk/old-releases/ \
+		http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
 
 PATCHFILES=	asterisk-1.2.26.1-codec-negotiation-20080118.diff.gz
