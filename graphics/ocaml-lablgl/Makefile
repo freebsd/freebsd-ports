@@ -21,6 +21,7 @@ USE_OCAML=	yes
 USE_OCAML_WASH=	yes
 ALL_TARGET=	all opt
 DEPENDS_ARGS+=	WITH_TK=yes
+USE_TK=		yes
 
 MASTERPORT=	${PORTSDIR}/devel/ocaml-camlidl
 PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
@@ -39,6 +40,8 @@ post-extract:
 		-e "s,^\(RANLIB[ \t]*=\).*,\1ranlib,g" \
 		-e "s,^#\(LIBDIR[ \t]*=\).*,\1${PREFIX}/lib/ocaml,g" \
 		-e "s,^#\(DLLDIR[ \t]*=\).*,\1${PREFIX}/lib/ocaml/stublibs,g" \
+		-e "s,^\(TKINCLUDES[ \t]*=\).*,\1-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR},g" \
+		-e "s,^\(TKLIBS[ \t]*=\).*,\1-L${LOCALBASE}/lib -ltk${USE_TK} -ltcl${USE_TCL},g" \
 		${WRKSRC}/Makefile.config
 
 	@${REINPLACE_CMD} \
