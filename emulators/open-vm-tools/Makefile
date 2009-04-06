@@ -39,10 +39,19 @@ CONFIGURE_ARGS+=	--disable-unity
 CONFIGURE_ARGS+=	--with-x --without-gtkmm
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
-USE_XORG=		x11 xextproto ice xext xineramaproto xinerama xrandr xrender xtst
+USE_XORG=		x11 ice sm xext xineramaproto xinerama xrandr xrender \
+			xtst
 USE_GNOME=		gtk20 glib20
 PLIST_SUB+=		X11=""
 CONFLICTS=		open-vm-tools-nox11-[0-9]*
+.endif
+
+.if !defined(WITHOUT_FUSE)
+LIB_DEPENDS+=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
+RUN_DEPENDS+=	mount_fusefs:${PORTSDIR}/sysutils/fusefs-kmod
+PLIST_SUB+=	FUSE=""
+.else
+PLIST_SUB+=	FUSE="@comment "
 .endif
 
 CONFLICTS+=		vmware-guestd[0-9]* vmware-tools[0-9]*
