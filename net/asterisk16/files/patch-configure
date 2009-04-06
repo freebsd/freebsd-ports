@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure
+--- configure.orig
 +++ configure
-@@ -4041,8 +4041,6 @@
+@@ -4042,8 +4042,6 @@
  case "${host_os}" in
       freebsd*)
       ac_default_prefix=/usr/local
@@ -11,40 +11,8 @@ $FreeBSD$
 -     LDFLAGS=-L/usr/local/lib
       ;;
  
-      *)
-@@ -41733,6 +41731,7 @@
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- $ac_includes_default
-+#include <ptlib.h>
- #include <${HOME}/openh323/include/h323.h>
- _ACEOF
- rm -f conftest.$ac_objext
-@@ -41773,6 +41772,7 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#include <ptlib.h>
- #include <${HOME}/openh323/include/h323.h>
- _ACEOF
- if { (ac_try="$ac_cpp conftest.$ac_ext"
-@@ -41875,6 +41875,7 @@
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- $ac_includes_default
-+#include <ptlib.h>
- #include </usr/local/include/openh323/h323.h>
- _ACEOF
- rm -f conftest.$ac_objext
-@@ -41915,6 +41916,7 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#include <ptlib.h>
- #include </usr/local/include/openh323/h323.h>
- _ACEOF
- if { (ac_try="$ac_cpp conftest.$ac_ext"
-@@ -42167,7 +42169,7 @@
+      darwin*)
+@@ -42186,7 +42184,7 @@
  
  	fi
  
@@ -53,7 +21,7 @@ $FreeBSD$
  
  	if test "${HAS_OPENH323:-unset}" != "unset"; then
  	   { echo "$as_me:$LINENO: checking OpenH323 installation validity" >&5
-@@ -47131,6 +47133,7 @@
+@@ -47218,6 +47216,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -61,7 +29,7 @@ $FreeBSD$
  #include <h323.h>
  _ACEOF
  rm -f conftest.$ac_objext
-@@ -47171,6 +47174,7 @@
+@@ -47258,6 +47257,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
