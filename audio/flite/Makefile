@@ -23,4 +23,10 @@ USE_LDCONFIG=	yes
 
 CFLAGS:=	${CFLAGS:N-O:N-O[0123456789]} -O0
 
+.ifndef NOPORTDOCS
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+.endif
+
 .include <bsd.port.post.mk>
