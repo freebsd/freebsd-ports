@@ -2,7 +2,7 @@
 +++ Makefile	2009-02-06 21:39:03.000000000 +0900
 @@ -2,26 +2,26 @@
  MAINVERSION = '"6.03"'
- GUIVERSION = '".47"'
+ GUIVERSION = '".48"'
  ALIGNSIZE = 8
 -LIBDIR = '"/usr/local/lib/Ngraph"'
 -INSTALLDIR = /usr/local/lib/Ngraph
