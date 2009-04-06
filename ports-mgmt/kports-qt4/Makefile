@@ -6,55 +6,53 @@
 #
 
 PORTNAME=	kports
-PORTVERSION=	0.6.1
-PORTREVISION=	3
+PORTVERSION=	0.8.1
 CATEGORIES=	ports-mgmt kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	kports@soulrebel.in-berlin.de
-COMMENT=	KDE3-Version of your favorite frontend to the Ports
+COMMENT=	 Qt4-Version of your favorite frontend to the Ports
+
+RUN_DEPENDS=	portaudit:${PORTSDIR}/ports-mgmt/portaudit
+
+CONFLICTS=	kports-0.[0-7]*
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
 
-RUN_DEPENDS+=	portupgrade:${PORTSDIR}/ports-mgmt/portupgrade
-RUN_DEPENDS+=	kdehier>=0:${PORTSDIR}/misc/kdehier
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui network qmake_build moc_build uic_build rcc_build
+QMAKE_ARGS+=	PREFIX=${PREFIX}
+MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	PORTAUDIT "Require Portaudit" on \
-		KDESU "With KDE3 kdesu" on \
-		KDESU4 "With KDE4 kdesu" off \
-		GKSU "With gksu" off
+HAS_CONFIGURE=	yes
+
+LATEST_LINK=	kports-qt4
+
+OPTIONS=	DEBUG "Add Debugging Symbols" off \
+		KDE "Pull in kdebase-runtime" on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_KDESU) && defined(WITHOUT_KDESU4) && defined(WITHOUT_GKSU)
-PKGMESSAGE=	${FILESDIR}/pkg-message.nosu
-.endif
-
-.if !defined(WITHOUT_PORTAUDIT)
-RUN_DEPENDS+=	portaudit:${PORTSDIR}/ports-mgmt/portaudit
-.endif
-
-.if defined(WITH_KDESU)
-RUN_DEPENDS+=	${LOCALBASE}/bin/kdesu:${PORTSDIR}/x11/kdebase3
-.endif
-
-.if defined(WITH_KDESU4)
-RUN_DEPENDS+=	${LOCALBASE}/kde4/lib/kde4/libexec/kdesu:${PORTSDIR}/x11/kdebase4-runtime
-.endif
-
-.if defined(WITH_GKSU)
-RUN_DEPENDS+=	${LOCALBASE}/bin/gksu:${PORTSDIR}/sysutils/gksu
+.if !defined(WITHOUT_KDE)
+RUN_DEPENDS+=	${LOCALBASE}/kde4/share/icons/oxygen/index.theme:${PORTSDIR}/x11/kdebase4-runtime
+.else
+PKGMESSAGE=	pkg-message.nokdebase
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/src/kports.desktop
+	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/data/kports.desktop
+
+.if defined(WITH_DEBUG)
+pre-configure:
+	@(${ECHO_CMD} "CONFIG += debug" >> ${WRKSRC}/src/src.pro)
+.endif
+
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+		${QMAKE} -unix ${QMAKE_ARGS} kports.pro
 
 post-install:
-.if defined(WITHOUT_KDESU) && defined(WITHOUT_KDESU4) && defined(WITHOUT_GKSU)
+.if defined(WITHOUT_KDE)
 	@${CAT} ${PKGMESSAGE}
 .endif
 
