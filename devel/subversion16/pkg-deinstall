@@ -23,15 +23,15 @@ fi
 
 confdir=`${apxscmd} -q SYSCONFDIR`
 
-if [ ! -d ${confdir} ]; then
+if [ ! -d "${confdir}" ]; then
 	echo Can\'t find Apache conf dir: ${confdir}
 	exit 1
 fi
 
-if [ -f ${confdir}/httpd.conf ]; then
+if [ -f "${confdir}/httpd.conf" ]; then
 	conffile=httpd.conf
 fi
-if [ -f ${confdir}/httpd.conf.default ]; then
+if [ -f "${confdir}/httpd.conf.default" ]; then
 	conffile="${conffile} httpd.conf.default"
 fi
 if [ -z "${conffile}" ]; then
@@ -46,15 +46,26 @@ if ! mkdir ${tmpdir}; then
 fi
 
 for i in ${conffile}; do
-	awk '{if (!/^LoadModule dav_svn_module/ && 
-		  !/^AddModule mod_dav_svn.c/ &&\
-		  !/^LoadModule authz_svn_module/ &&\
-		  !/^AddModule mod_authz_svn.c/ ) \
-	    print $0}' < ${confdir}/$i > ${tmpdir}/$i
-	echo Removing dav_svn_module and authz_svn_module from $i in config dir: ${confdir}
-	cat ${tmpdir}/$i > ${confdir}/$i
+	echo -n Removing dav_svn_module, authz_svn_module and dontdothat_module from $i in config dir: ${confdir}...
+	awk '{if (!/^LoadModule dav_svn_module/    && 
+		  !/^AddModule mod_dav_svn.c/      && \
+		  !/^LoadModule authz_svn_module/  && \
+		  !/^AddModule mod_authz_svn.c/    && \
+		  !/^LoadModule dontdothat_module/ && \
+		  !/^AddModule mod_dontdothat.c/    ) \
+	    print $0}' < "${confdir}/$i" > "${tmpdir}/$i"
+	AWKRC=$?
+	diff "${confdir}/$i" "${tmpdir}/$i" | grep "^[<>]" | grep -Evq "^< (Load|Add)Module "
+	GREPRC=$?
+	# last grep should not find anything
+	if [ "x${AWKRC}" = "x0" -a "x${GREPRC}" = "x1"  ] ; then
+		echo " Ok"
+		cat "${tmpdir}/$i" > "${confdir}/$i"
+	else
+		echo " Error! Please, remove these modules manually"
+	fi
 done
 
-rm -rf ${tmpdir}
+rm -rf "${tmpdir}"
 
 exit 0
