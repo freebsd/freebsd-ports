@@ -26,6 +26,7 @@ libdata/pkgconfig/flickcurl.pc
 %%DOCSDIR%%/flickcurl-section-group.html
 %%DOCSDIR%%/flickcurl-section-machinetags.html
 %%DOCSDIR%%/flickcurl-section-misc.html
+%%DOCSDIR%%/flickcurl-section-panda.html
 %%DOCSDIR%%/flickcurl-section-people.html
 %%DOCSDIR%%/flickcurl-section-person.html
 %%DOCSDIR%%/flickcurl-section-photo.html
