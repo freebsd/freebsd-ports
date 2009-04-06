@@ -359,6 +359,7 @@ lib/fricas/target/%%GNU_HOST%%/algebra/GB.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/GBEUCLID.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/GBF.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/GBINTERN.fas
+lib/fricas/target/%%GNU_HOST%%/algebra/GCDBAS.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/GCDDOM-.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/GCDDOM.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/GCNAALG.fas
@@ -620,7 +621,9 @@ lib/fricas/target/%%GNU_HOST%%/algebra/MSET.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/MSETAGG.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/MSYSCMD.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/MTHING.fas
+lib/fricas/target/%%GNU_HOST%%/algebra/MTSCAT-.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/MTSCAT.fas
+lib/fricas/target/%%GNU_HOST%%/algebra/MULDEP.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/MULTFACT.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/MULTSQFR.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/NAALG-.fas
@@ -975,6 +978,7 @@ lib/fricas/target/%%GNU_HOST%%/algebra/STAGG.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/STBL.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/STEP.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/STINPROD.fas
+lib/fricas/target/%%GNU_HOST%%/algebra/STNSR.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/STREAM.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/STREAM1.fas
 lib/fricas/target/%%GNU_HOST%%/algebra/STREAM2.fas
@@ -1177,8 +1181,6 @@ lib/fricas/target/%%GNU_HOST%%/autoload/iterator.fas
 lib/fricas/target/%%GNU_HOST%%/autoload/iterator.lib
 lib/fricas/target/%%GNU_HOST%%/autoload/mark.fas
 lib/fricas/target/%%GNU_HOST%%/autoload/mark.lib
-lib/fricas/target/%%GNU_HOST%%/autoload/metalex.fas
-lib/fricas/target/%%GNU_HOST%%/autoload/metameta.fas
 lib/fricas/target/%%GNU_HOST%%/autoload/modemap.fas
 lib/fricas/target/%%GNU_HOST%%/autoload/modemap.lib
 lib/fricas/target/%%GNU_HOST%%/autoload/nruncomp.fas
@@ -2701,6 +2703,7 @@ lib/fricas/target/%%GNU_HOST%%/src/algebra/moebius.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/mring.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/mset.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/mts.spad.pamphlet
+lib/fricas/target/%%GNU_HOST%%/src/algebra/muldep.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/multfact.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/multpoly.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/multsqfr.spad.pamphlet
