@@ -14,8 +14,8 @@ DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
 MAINTAINER=		mbr@freebsd.org
 COMMENT?=		Open VMware tools for FreeBSD VMware guests
 
-RELEASE_DATE=		2009.02.18
-BUILD_VER=		148847
+RELEASE_DATE=		2009.03.18
+BUILD_VER=		154848
 
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
