@@ -9,7 +9,7 @@ PORTNAME=	stuffit
 PORTVERSION=	5.2.0.611
 PORTREVISION=	1
 CATEGORIES=	archivers linux
-MASTER_SITES=	http://www.allume.com/downloads/files/
+MASTER_SITES=	http://my.smithmicro.com/downloads/files/
 DISTNAME=	stuffit520.611linux-i386
 
 MAINTAINER=	ports@FreeBSD.org
