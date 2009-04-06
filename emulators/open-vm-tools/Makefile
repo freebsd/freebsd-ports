@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=	--disable-unity
 CONFIGURE_ARGS+=	--with-x --without-gtkmm
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
-USE_XORG=		x11 ice xineramaproto xinerama xrandr xtst
+USE_XORG=		x11 ice xext xineramaproto xinerama xrandr xrender xtst
 USE_GNOME=		gtk20 glib20
 PLIST_SUB+=		X11=""
 CONFLICTS=		open-vm-tools-nox11-[0-9]*
