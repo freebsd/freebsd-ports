@@ -1,115 +1,121 @@
 # New ports collection makefile for:	linux_base-f8
-# Date created:				18 Mar 2008
-# Whom:					Boris Samorodov <bsam@FreeBSD.org>
+# Date created:				16 Nov 2008
+# Whom:					Steven Hartland <steven.harltand@multiplay.co.uk>
 #
 # $FreeBSD$
 #
 
-PORTNAME=		f8
-PORTVERSION=		8
-PORTREVISION=		11
+PORTNAME=		f9
+PORTVERSION=		9
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
-MASTER_SITE_SUBDIR=	../releases/${PORTVERSION}/Everything/${LINUX_RPM_ARCH}/os/Packages \
-			../updates/${PORTVERSION}/${LINUX_RPM_ARCH}.newkey
+MASTER_SITE_SUBDIR=	../updates/${PORTVERSION}/${LINUX_RPM_ARCH}.newkey \
+			../releases/${PORTVERSION}/Everything/${LINUX_RPM_ARCH}/os/Packages
 PKGNAMEPREFIX=		linux_base-
 DISTFILES=		${BIN_DISTFILES} ${SRC_DISTFILES}
 DIST_SUBDIR=		rpm/${LINUX_RPM_ARCH}/fedora/${PORTVERSION}.newkey
 EXTRACT_ONLY=		${BIN_DISTFILES}
-MAINTAINER=	bsam@FreeBSD.org
+
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Base set of packages needed in Linux mode (for i386/amd64)
 
 BIN_DISTFILES=	basesystem-8.1-1.noarch.rpm \
-		bash-3.2-20.fc8.${LINUX_RPM_ARCH}.rpm \
-		bzip2-1.0.4-12.fc8.${LINUX_RPM_ARCH}.rpm \
-		bzip2-libs-1.0.4-12.fc8.${LINUX_RPM_ARCH}.rpm \
-		compat-db-4.5.20-3.fc8.${LINUX_RPM_ARCH}.rpm \
-		compat-libstdc++-296-2.96-139.${LINUX_RPM_ARCH}.rpm \
-		compat-libstdc++-33-3.2.3-62.${LINUX_RPM_ARCH}.rpm \
-		coreutils-6.9-19.fc8.${LINUX_RPM_ARCH}.rpm \
-		db4-4.6.21-3.fc8.${LINUX_RPM_ARCH}.rpm \
-		e2fsprogs-1.40.4-3.fc8.${LINUX_RPM_ARCH}.rpm \
-		e2fsprogs-libs-1.40.4-3.fc8.${LINUX_RPM_ARCH}.rpm \
-		elfutils-0.137-3.fc8.${LINUX_RPM_ARCH}.rpm \
-		fedora-release-8-6.transition.noarch.rpm \
-		filesystem-2.4.11-1.fc8.${LINUX_RPM_ARCH}.rpm \
-		freetype-2.3.5-5.fc8.${LINUX_RPM_ARCH}.rpm \
-		gdbm-1.8.0-27.fc7.${LINUX_RPM_ARCH}.rpm \
-		glib-1.2.10-28.fc8.${LINUX_RPM_ARCH}.rpm \
-		glib2-2.14.6-2.fc8.${LINUX_RPM_ARCH}.rpm \
-		glibc-2.7-2.${LINUX_RPM_ARCH}.rpm \
-		glibc-common-2.7-2.${LINUX_RPM_ARCH}.rpm \
-		grep-2.5.1-57.fc7.${LINUX_RPM_ARCH}.rpm \
-		info-4.11-5.fc8.${LINUX_RPM_ARCH}.rpm \
-		keyutils-libs-1.2-2.fc6.${LINUX_RPM_ARCH}.rpm \
-		krb5-libs-1.6.2-14.fc8.${LINUX_RPM_ARCH}.rpm \
-		libacl-2.2.39-14.fc8.${LINUX_RPM_ARCH}.rpm \
-		libattr-2.4.38-2.fc8.${LINUX_RPM_ARCH}.rpm \
-		libgcc-4.1.2-33.${LINUX_RPM_ARCH}.rpm \
-		libselinux-2.0.43-1.fc8.${LINUX_RPM_ARCH}.rpm \
-		libsepol-2.0.15-1.fc8.${LINUX_RPM_ARCH}.rpm \
-		libstdc++-4.1.2-33.${LINUX_RPM_ARCH}.rpm \
-		libtermcap-2.0.8-47.${LINUX_RPM_ARCH}.rpm \
-		ncurses-5.6-12.20070812.fc8.${LINUX_RPM_ARCH}.rpm \
-		pcre-7.3-4.fc8.${LINUX_RPM_ARCH}.rpm \
-		popt-1.13-4.fc8.${LINUX_RPM_ARCH}.rpm \
-		readline-5.2-10.fc8.${LINUX_RPM_ARCH}.rpm \
-		setserial-2.17-21.fc8.${LINUX_RPM_ARCH}.rpm \
-		setup-2.6.10-1.fc8.noarch.rpm \
-		slang-2.1.2-2.fc8.${LINUX_RPM_ARCH}.rpm \
-		termcap-5.5-1.20060701.1.noarch.rpm \
-		zlib-1.2.3-14.fc8.${LINUX_RPM_ARCH}.rpm
+		bash-3.2-23.fc9.${LINUX_RPM_ARCH}.rpm \
+		bzip2-1.0.5-2.fc9.${LINUX_RPM_ARCH}.rpm \
+		bzip2-libs-1.0.5-2.fc9.${LINUX_RPM_ARCH}.rpm \
+		compat-db-4.5.20-5.fc9.${LINUX_RPM_ARCH}.rpm \
+		compat-libstdc++-296-2.96-140.${LINUX_RPM_ARCH}.rpm \
+		compat-libstdc++-33-3.2.3-63.${LINUX_RPM_ARCH}.rpm \
+		coreutils-6.10-35.fc9.${LINUX_RPM_ARCH}.rpm \
+		db4-4.6.21-7.fc9.${LINUX_RPM_ARCH}.rpm \
+		e2fsprogs-1.41.3-2.fc9.${LINUX_RPM_ARCH}.rpm \
+		e2fsprogs-libs-1.41.3-2.fc9.${LINUX_RPM_ARCH}.rpm \
+		elfutils-0.140-1.fc9.${LINUX_RPM_ARCH}.rpm \
+		fedora-release-9-5.transition.noarch.rpm \
+		filesystem-2.4.13-1.fc9.${LINUX_RPM_ARCH}.rpm \
+		freetype-2.3.5-7.fc9.${LINUX_RPM_ARCH}.rpm \
+		gdbm-1.8.0-28.fc9.${LINUX_RPM_ARCH}.rpm \
+		glib-1.2.10-29.fc9.${LINUX_RPM_ARCH}.rpm \
+		glib2-2.16.6-3.fc9.${LINUX_RPM_ARCH}.rpm \
+		glibc-2.8-8.${LINUX_RPM_ARCH}.rpm \
+		glibc-common-2.8-8.${LINUX_RPM_ARCH}.rpm \
+		grep-2.5.1-59.fc9.${LINUX_RPM_ARCH}.rpm \
+		info-4.11-8.fc9.${LINUX_RPM_ARCH}.rpm \
+		keyutils-libs-1.2-3.fc9.${LINUX_RPM_ARCH}.rpm \
+		krb5-libs-1.6.3-10.fc9.${LINUX_RPM_ARCH}.rpm \
+		libacl-2.2.47-2.fc9.${LINUX_RPM_ARCH}.rpm \
+		libattr-2.4.41-1.fc9.${LINUX_RPM_ARCH}.rpm \
+		libgcc-4.3.0-8.${LINUX_RPM_ARCH}.rpm \
+		libselinux-2.0.67-4.fc9.${LINUX_RPM_ARCH}.rpm \
+		libsepol-2.0.32-1.fc9.${LINUX_RPM_ARCH}.rpm \
+		libstdc++-4.3.0-8.${LINUX_RPM_ARCH}.rpm \
+		ncurses-5.6-18.20080628.fc9.${LINUX_RPM_ARCH}.rpm \
+		ncurses-base-5.6-18.20080628.fc9.${LINUX_RPM_ARCH}.rpm \
+		ncurses-devel-5.6-18.20080628.fc9.${LINUX_RPM_ARCH}.rpm \
+		ncurses-libs-5.6-18.20080628.fc9.${LINUX_RPM_ARCH}.rpm \
+		ncurses-term-5.6-18.20080628.fc9.${LINUX_RPM_ARCH}.rpm \
+		pcre-7.3-4.fc9.${LINUX_RPM_ARCH}.rpm \
+		popt-1.13-4.fc9.${LINUX_RPM_ARCH}.rpm \
+		readline-5.2-13.fc9.${LINUX_RPM_ARCH}.rpm \
+		setserial-2.17-22.fc9.${LINUX_RPM_ARCH}.rpm \
+		setup-2.6.18-3.fc9.noarch.rpm \
+		slang-2.1.3-3.fc9.${LINUX_RPM_ARCH}.rpm \
+		zlib-1.2.3-18.fc9.${LINUX_RPM_ARCH}.rpm
+
+#		termcap-5.5-1.20060701.1.noarch.rpm \
+#		libtermcap-2.0.8-47.${LINUX_RPM_ARCH}.rpm \
 
 .if defined(PACKAGE_BUILDING)
 
-MASTER_SITE_SUBDIR+=	../releases/${PORTVERSION}/Everything/source/SRPMS/ \
-			../updates/${PORTVERSION}/SRPMS.newkey
+MASTER_SITE_SUBDIR+= ../updates/${PORTVERSION}/SRPMS.newkey \
+		../releases/${PORTVERSION}/Everything/source/SRPMS/
 
-SRC_DISTFILES+=	acl-2.2.39-14.fc8.src.rpm \
-		attr-2.4.38-2.fc8.src.rpm \
+SRC_DISTFILES+=	acl-2.2.47-2.fc9.src.rpm \
+		attr-2.4.41-1.fc9.src.rpm \
 		basesystem-8.1-1.src.rpm \
-		bash-3.2-20.fc8.src.rpm \
-		bzip2-1.0.4-12.fc8.src.rpm \
-		compat-db-4.5.20-3.fc8.src.rpm \
-		coreutils-6.9-19.fc8.src.rpm \
-		db4-4.6.21-3.fc8.src.rpm \
-		e2fsprogs-1.40.4-3.fc8.src.rpm \
-		elfutils-0.137-3.fc8.src.rpm \
-		fedora-release-8-6.transition.src.rpm \
-		filesystem-2.4.11-1.fc8.src.rpm \
-		freetype-2.3.5-5.fc8.src.rpm \
-		gcc-4.1.2-33.src.rpm \
-		gdbm-1.8.0-27.fc7.src.rpm \
-		glib-1.2.10-28.fc8.src.rpm \
-		glib2-2.14.6-2.fc8.src.rpm \
-		glibc-2.7-2.src.rpm \
-		grep-2.5.1-57.fc7.src.rpm \
-		keyutils-1.2-2.fc6.src.rpm \
-		krb5-1.6.2-14.fc8.src.rpm \
-		libselinux-2.0.43-1.fc8.src.rpm \
-		libsepol-2.0.15-1.fc8.src.rpm \
-		libtermcap-2.0.8-47.src.rpm \
-		ncurses-5.6-12.20070812.fc8.src.rpm \
-		pcre-7.3-4.fc8.src.rpm \
-		readline-5.2-10.fc8.src.rpm \
-		setserial-2.17-21.fc8.src.rpm \
-		setup-2.6.10-1.fc8.src.rpm \
-		slang-2.1.2-2.fc8.src.rpm \
-		termcap-5.5-1.20060701.1.src.rpm \
-		texinfo-4.11-5.fc8.src.rpm \
-		zlib-1.2.3-14.fc8.src.rpm
+		bash-3.2-23.fc9.src.rpm \
+		bzip2-1.0.5-2.fc9.src.rpm \
+		compat-db-4.5.20-5.fc9.src.rpm \
+		coreutils-6.10-35.fc9.src.rpm \
+		db4-4.6.21-7.fc9.src.rpm \
+		e2fsprogs-1.41.3-2.fc9.src.rpm \
+		elfutils-0.140-1.fc9.src.rpm \
+		fedora-release-9-5.transition.src.rpm \
+		filesystem-2.4.13-1.fc9.src.rpm \
+		freetype-2.3.5-7.fc9.src.rpm \
+		gcc-4.3.0-8.src.rpm \
+		gdbm-1.8.0-28.fc9.src.rpm \
+		glib-1.2.10-29.fc9.src.rpm \
+		glib2-2.16.6-3.fc9.src.rpm \
+		glibc-2.8-8.src.rpm \
+		grep-2.5.1-59.fc9.src.rpm \
+		keyutils-1.2-3.fc9.src.rpm \
+		krb5-1.6.3-10.fc9.src.rpm \
+		libselinux-2.0.67-4.fc9.src.rpm \
+		libsepol-2.0.32-1.fc9.src.rpm \
+		ncurses-5.6-18.20080628.fc9.src.rpm \
+		pcre-7.3-4.fc9.src.rpm \
+		readline-5.2-13.fc9.src.rpm \
+		setserial-2.17-22.fc9.src.rpm \
+		setup-2.6.18-3.fc9.src.rpm \
+		slang-2.1.3-3.fc9.src.rpm \
+		texinfo-4.11-8.fc9.src.rpm \
+		zlib-1.2.3-18.fc9.src.rpm
+
+#		libtermcap-2.0.8-47.src.rpm \
+#		termcap-5.5-1.20060701.1.src.rpm \
 
 ALWAYS_KEEP_DISTFILES=	yes
 .endif
 
-CONFLICTS=		linux_base-gentoo* linux_base-fc4 linux_base-fc6 \
-			linux_base-f7 linux-glib2
+CONFLICTS=		linux_base-gentoo* linux_base-fc4-[0-9]* linux_base-fc6-[0-9]* \
+			linux_base-f7-[0-9]* linux_base-f8-[0-9]* linux-glib2-*
 ONLY_FOR_ARCHS=		i386 amd64
 LINUX_RPM_ARCH=		i386
 USE_LINUX_PREFIX=	yes
 NO_WRKSUBDIR=		yes
 MD5_FILE?=		${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
-PLIST_SUB=		GLIBCVER="2.7"
+PLIST_SUB=		GLIBCVER="2.8"
 
 RPM2CPIO?=		${LOCALBASE}/bin/rpm2cpio
 
@@ -127,7 +133,7 @@ LINUX_OSRELEASE!=	${ECHO_CMD} `${SYSCTL} -n compat.linux.osrelease 2>/dev/null`
 .if ${LINUX_OSRELEASE}x == "x"
 IGNORE=			linuxulator is not (kld)loaded
 .elif ${LINUX_OSRELEASE} == "2.4.2"
-IGNORE=			compat.linux.osrelease: 2.4.2 is not supported
+IGNORE=			compat.linux.osrelease: 2.4.2 is not supported, please use 2.6.16
 .endif
 
 REMOVE_DIRS=		boot dev etc/fonts home initrd root tmp var/log var/run var/tmp \
@@ -191,7 +197,7 @@ do-build:
 		${WRKSRC}/usr/sbin -type f -print0 | ${XARGS} -0 ${FILE} \
 		| ${GREP} ELF | ${CUT} -d : -f 1 \
 		| ${XARGS} ${BRANDELF} -t Linux
-	@${BRANDELF} -t Linux ${WRKSRC}/lib/ld-2.7.so
+	@${BRANDELF} -t Linux ${WRKSRC}/lib/ld-2.8.so
 
 # Restore the status quo for usr/bin/*db4* files
 	@${CHMOD} u-w ${WRKSRC}/usr/bin/*db4*
