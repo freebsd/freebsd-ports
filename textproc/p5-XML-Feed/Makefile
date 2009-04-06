@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Feed
-PORTVERSION=	0.41
+PORTVERSION=	0.42
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -32,6 +32,7 @@ PERL_CONFIGURE=	5.8.5+
 
 MAN3=		XML::Feed.3 \
 		XML::Feed::Content.3 \
+		XML::Feed::Enclosure.3 \
 		XML::Feed::Entry.3
 
 .include <bsd.port.pre.mk>
