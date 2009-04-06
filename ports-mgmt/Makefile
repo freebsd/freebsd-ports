@@ -10,6 +10,7 @@
    SUBDIR += genplist
    SUBDIR += jailaudit
    SUBDIR += kports
+   SUBDIR += kports-qt4
    SUBDIR += lsknobs
    SUBDIR += managepkg
    SUBDIR += p5-FreeBSD-Pkgs
