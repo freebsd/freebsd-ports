@@ -32,8 +32,7 @@ MAN1=		gthumb.1
 
 OPTIONS=	GPHOTO2 "Support loading photos from digital cameras" On \
 		IPTCDATA "Support for IPTC metadata" Off \
-		OPENRAW "Support for camera RAW files" Off \
-		GTKUNIQUE "Use GtkUnique library" Off
+		OPENRAW "Support for camera RAW files" Off
 
 .include <bsd.port.pre.mk>
 
@@ -56,14 +55,6 @@ LIB_DEPENDS+=	openrawgnome.5:${PORTSDIR}/graphics/libopenraw
 CONFIGURE_ARGS+=--enable-libopenraw
 .else
 CONFIGURE_ARGS+=--disable-libopenraw
-.endif
-
-.if defined(WITH_GTKUNIQUE)
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/gtkunique-1.0.pc:${PORTSDIR}/x11-toolkits/gtkunique
-RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/gtkunique-1.0.pc:${PORTSDIR}/x11-toolkits/gtkunique
-CONFIGURE_ARGS+=--enable-gtkunique
-.else
-CONFIGURE_ARGS+=--disable-gtkunique
 .endif
 
 .include <bsd.port.post.mk>
