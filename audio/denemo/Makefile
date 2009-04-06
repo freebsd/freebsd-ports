@@ -40,6 +40,10 @@ post-patch:
 		 s|-Wall -O2|-Wall $$CXXFLAGS|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|/icons|/pixmaps|g' ${WRKSRC}/pixmaps/Makefile.in
+.ifdef NOPORTDOCS
+	@${REINPLACE_CMD} -e \
+		's|install-data-am:.*|install-data-am:|' ${WRKSRC}/doc/Makefile.in
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
