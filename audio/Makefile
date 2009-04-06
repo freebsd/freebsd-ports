@@ -205,6 +205,7 @@
     SUBDIR += gbsplay
     SUBDIR += gdam
     SUBDIR += gdrdao
+    SUBDIR += gervill
     SUBDIR += ghostess
     SUBDIR += gigedit
     SUBDIR += gimmix
