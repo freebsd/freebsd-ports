@@ -63,6 +63,7 @@
     SUBDIR += ldnsm
     SUBDIR += libdjbdns
     SUBDIR += libidn
+    SUBDIR += linux-f8-libidn
     SUBDIR += maradns
     SUBDIR += mdnsd
     SUBDIR += mydns
