@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lablgl
-PORTVERSION=	1.03
-PORTREVISION=	1
+PORTVERSION=	1.04
 CATEGORIES=	graphics
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/
 PKGNAMEPREFIX=	ocaml-
@@ -15,13 +14,13 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	OpenGL interface for Objective Caml
 
+WRKSRC=		${WRKDIR}/lablGL-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 USE_GL=		glut
 USE_GMAKE=	yes
 USE_OCAML=	yes
 USE_OCAML_WASH=	yes
 ALL_TARGET=	all opt
-DEPENDS_ARGS+=	WITH_TK=yes
-USE_TK=		yes
+USE_TK=		84+
 
 MASTERPORT=	${PORTSDIR}/devel/ocaml-camlidl
 PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
@@ -40,8 +39,8 @@ post-extract:
 		-e "s,^\(RANLIB[ \t]*=\).*,\1ranlib,g" \
 		-e "s,^#\(LIBDIR[ \t]*=\).*,\1${PREFIX}/lib/ocaml,g" \
 		-e "s,^#\(DLLDIR[ \t]*=\).*,\1${PREFIX}/lib/ocaml/stublibs,g" \
-		-e "s,^\(TKINCLUDES[ \t]*=\).*,\1-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR},g" \
-		-e "s,^\(TKLIBS[ \t]*=\).*,\1-L${LOCALBASE}/lib -ltk${USE_TK} -ltcl${USE_TCL},g" \
+		-e "/^TKINCLUDES/s,=.*$$,= -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}," \
+		-e "/^TKLIBS/s,=.*$$,= -L${LOCALBASE} -ltcl${TCL_VER:S/.//} -ltk${TK_VER:S/.//}," \
 		${WRKSRC}/Makefile.config
 
 	@${REINPLACE_CMD} \
