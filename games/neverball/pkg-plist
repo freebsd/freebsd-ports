@@ -2,9 +2,6 @@ bin/neverball
 bin/neverputt
 share/applications/neverball.desktop
 share/applications/neverputt.desktop
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%NLS%%share/locale/ca/LC_MESSAGES/neverball.mo
 %%NLS%%share/locale/de/LC_MESSAGES/neverball.mo
 %%NLS%%share/locale/es/LC_MESSAGES/neverball.mo
@@ -431,6 +428,36 @@ share/applications/neverputt.desktop
 %%DATADIR%%/data/map-medium/woodmaze.sol
 %%DATADIR%%/data/map-medium/zigzag.map
 %%DATADIR%%/data/map-medium/zigzag.sol
+%%DATADIR%%/data/map-misc/bigball-old.map
+%%DATADIR%%/data/map-misc/bigball-old.sol
+%%DATADIR%%/data/map-misc/billiard.map
+%%DATADIR%%/data/map-misc/billiard.sol
+%%DATADIR%%/data/map-misc/blockers.map
+%%DATADIR%%/data/map-misc/blockers.sol
+%%DATADIR%%/data/map-misc/bounce.map
+%%DATADIR%%/data/map-misc/bounce.sol
+%%DATADIR%%/data/map-misc/bounce2.map
+%%DATADIR%%/data/map-misc/bounce2.sol
+%%DATADIR%%/data/map-misc/checkers.map
+%%DATADIR%%/data/map-misc/checkers.sol
+%%DATADIR%%/data/map-misc/elevator.map
+%%DATADIR%%/data/map-misc/elevator.sol
+%%DATADIR%%/data/map-misc/freefall-old.map
+%%DATADIR%%/data/map-misc/freefall-old.sol
+%%DATADIR%%/data/map-misc/grow_demo.map
+%%DATADIR%%/data/map-misc/grow_demo.sol
+%%DATADIR%%/data/map-misc/groweasy.map
+%%DATADIR%%/data/map-misc/groweasy.sol
+%%DATADIR%%/data/map-misc/ocean.map
+%%DATADIR%%/data/map-misc/ocean.sol
+%%DATADIR%%/data/map-misc/stairs.map
+%%DATADIR%%/data/map-misc/stairs.sol
+%%DATADIR%%/data/map-misc/texture-debug.map
+%%DATADIR%%/data/map-misc/texture-debug.sol
+%%DATADIR%%/data/map-misc/thwomp1.map
+%%DATADIR%%/data/map-misc/thwomp1.sol
+%%DATADIR%%/data/map-misc/timer-test.map
+%%DATADIR%%/data/map-misc/timer-test.sol
 %%DATADIR%%/data/map-mym/assault.map
 %%DATADIR%%/data/map-mym/assault.sol
 %%DATADIR%%/data/map-mym/circuit1.map
@@ -1156,6 +1183,7 @@ share/applications/neverputt.desktop
 %%DATADIR%%/data/set-fwp.txt
 %%DATADIR%%/data/set-hard.txt
 %%DATADIR%%/data/set-medium.txt
+%%DATADIR%%/data/set-misc.txt
 %%DATADIR%%/data/set-mym.txt
 %%DATADIR%%/data/set-mym2.txt
 %%DATADIR%%/data/sets.txt
@@ -1250,6 +1278,19 @@ share/applications/neverputt.desktop
 %%DATADIR%%/data/shot-medium/title.jpg
 %%DATADIR%%/data/shot-medium/woodmaze.jpg
 %%DATADIR%%/data/shot-medium/zigzag.jpg
+%%DATADIR%%/data/shot-misc/bigball-old.jpg
+%%DATADIR%%/data/shot-misc/billiard.png
+%%DATADIR%%/data/shot-misc/blockers.jpg
+%%DATADIR%%/data/shot-misc/bounce.jpg
+%%DATADIR%%/data/shot-misc/bounce2.jpg
+%%DATADIR%%/data/shot-misc/checkers.jpg
+%%DATADIR%%/data/shot-misc/elevator.jpg
+%%DATADIR%%/data/shot-misc/freefall-old.jpg
+%%DATADIR%%/data/shot-misc/grow_demo.jpg
+%%DATADIR%%/data/shot-misc/groweasy.png
+%%DATADIR%%/data/shot-misc/ocean.jpg
+%%DATADIR%%/data/shot-misc/stairs.jpg
+%%DATADIR%%/data/shot-misc/thwomp1.jpg
 %%DATADIR%%/data/shot-mym/assault.jpg
 %%DATADIR%%/data/shot-mym/circuit1.jpg
 %%DATADIR%%/data/shot-mym/circuit2.jpg
@@ -1350,6 +1391,7 @@ share/pixmaps/neverputt.png
 @dirrm %%DATADIR%%/data/shot-putt
 @dirrm %%DATADIR%%/data/shot-mym2
 @dirrm %%DATADIR%%/data/shot-mym
+@dirrm %%DATADIR%%/data/shot-misc
 @dirrm %%DATADIR%%/data/shot-medium
 @dirrm %%DATADIR%%/data/shot-hard
 @dirrm %%DATADIR%%/data/shot-fwp
@@ -1364,6 +1406,7 @@ share/pixmaps/neverputt.png
 @dirrm %%DATADIR%%/data/map-paxed
 @dirrm %%DATADIR%%/data/map-mym2
 @dirrm %%DATADIR%%/data/map-mym
+@dirrm %%DATADIR%%/data/map-misc
 @dirrm %%DATADIR%%/data/map-medium
 @dirrm %%DATADIR%%/data/map-hard
 @dirrm %%DATADIR%%/data/map-fwp
@@ -1397,5 +1440,4 @@ share/pixmaps/neverputt.png
 @dirrm %%DATADIR%%/data/back
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
