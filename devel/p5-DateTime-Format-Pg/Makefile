@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	DateTime-Format-Pg
-PORTVERSION=	0.16.002
-DISTVERSION=	${PORTVERSION:C/.(...)$/\1/}
+PORTVERSION=	0.16.003
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/.(...)$/\1/}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Parse and format PostgreSQL dates and times
