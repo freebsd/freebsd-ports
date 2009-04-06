@@ -7,6 +7,7 @@
 
 PORTNAME=	aMule
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/amule
 
@@ -15,7 +16,6 @@ COMMENT=	The all-platform eMule p2p client
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
 LATEST_LINK=	aMule2
 CONFLICTS=	aMule-1.* aMule-devel-[0-9]* ed2k-hash-1.*
