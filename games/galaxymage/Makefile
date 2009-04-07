@@ -37,7 +37,7 @@ post-configure:
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/GalaxyMage.py ${PREFIX}/bin/GalaxyMage
-	@${MKDIR} ${DATADIR} ${DOCSDIR}
+	@${MKDIR} ${DATADIR}
 .for DIRE in src data
 	@cd ${WRKSRC}/${DIRE} && \
 		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
@@ -51,6 +51,7 @@ do-install:
 			${PREFIX}/share/locale/${FILE}/LC_MESSAGES
 .endfor
 .if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/doc && \
 		${FIND} * -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
 		${FIND} -E * -type f -iregex ".*\.(html|css|txt|png)" -exec ${INSTALL_DATA} "{}" \
