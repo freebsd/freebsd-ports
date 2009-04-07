@@ -1,5 +1,5 @@
---- ./configure.in.orig	2009-03-12 09:47:20.000000000 +0000
-+++ ./configure.in	2009-03-14 14:06:27.000000000 +0000
+--- ./configure.in.orig	2009-04-01 11:48:54.000000000 +0000
++++ ./configure.in	2009-04-07 01:39:14.000000000 +0000
 @@ -189,16 +189,6 @@
         fi
  fi
@@ -178,7 +178,7 @@
  
  AC_SUBST(WINBIND_KRB5_LOCATOR)
  
-@@ -6240,13 +6264,21 @@
+@@ -6276,13 +6300,21 @@
  # Start
  AC_CHECK_FUNC(getmntent)
  
@@ -201,7 +201,7 @@
  		int main(void)
  		{
  			struct statfs fsd;
-@@ -6502,6 +6534,16 @@
+@@ -6539,6 +6571,16 @@
  
  fi
  
@@ -218,7 +218,7 @@
  dnl Remove -L/usr/lib/? from LDFLAGS and LIBS
  LIB_REMOVE_USR_LIB(LDFLAGS)
  LIB_REMOVE_USR_LIB(LIBS)
-@@ -6558,6 +6600,8 @@
+@@ -6595,6 +6637,8 @@
  	  pkgconfig/wbclient.pc
  	  pkgconfig/netapi.pc
  	  pkgconfig/smbsharemodes.pc
