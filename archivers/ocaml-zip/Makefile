@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	zip
-PORTVERSION=	1.03
-PORTREVISION=	2
+PORTVERSION=	1.04
 CATEGORIES=	archivers
 MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-
