@@ -1,11 +1,11 @@
---- tools/jam/src/build.jam.orig	2007-07-07 21:34:09.000000000 +0000
-+++ tools/jam/src/build.jam	2007-07-07 21:36:19.000000000 +0000
-@@ -153,7 +153,7 @@
+--- tools/jam/src/build.jam.orig	Tue Jul 29 15:43:31 2008
++++ tools/jam/src/build.jam	Tue Nov 11 23:52:09 2008
+@@ -176,7 +176,7 @@
  ## GCC 2.x, 3.x, 4.x
  toolset gcc gcc : "-o " : -D
-     : -pedantic
+     : -pedantic -fno-strict-aliasing
 -    [ opt --release : [ opt --symbols : -g : -s ] -O3 ]
 +    [ opt --release : [ opt --symbols : -g : -s ] -O3 -fno-strict-aliasing ]
      [ opt --debug : -g -O0 -fno-inline ]
-     -I$(--python-include) -Wno-long-long
+     -I$(--python-include) -I$(--extra-include) -Wno-long-long
      : -L$(--python-lib[1]) -l$(--python-lib[2]) ;
