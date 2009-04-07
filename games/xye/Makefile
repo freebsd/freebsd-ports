@@ -21,4 +21,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${PREFIX}/share/doc
 USE_GMAKE=	yes
 
+.ifdef NOPORTDOCS
+post-patch:
+	@${REINPLACE_CMD} '/install-data-am:/s/install-doceDATA//' \
+		${WRKSRC}/Makefile.in
+.endif
+
 .include <bsd.port.mk>
