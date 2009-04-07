@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--taglib-inc-dir="${LOCALBASE}/include/taglib" \
 		--boost-lib-dir="${PYTHON_LIBDIR},${LOCALBASE}/lib" \
 		--boost-python-libname="boost_python"
 
+USE_GCC=	4.3+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
