@@ -20,54 +20,7 @@
 %%RUBY_SITELIBDIR%%/locale/taglist.rb
 %%RUBY_SITELIBDIR%%/locale/util/memoizable.rb
 %%RUBY_SITELIBDIR%%/locale/version.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Driver.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Driver/CGI.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Driver/Env.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Driver/JRuby.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Driver/Posix.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Driver/Win32.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Driver/Win32Table.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Info.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Info/Language.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Info/Region.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Tag/Cldr.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Tag/Common.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Tag/Illegular.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Tag/Posix.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Tag/Rfc.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Tag/Simple.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/TagList.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Util.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Locale/Util/Memoizable.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/created.rid
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/ChangeLog.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/README.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/driver/cgi_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/driver/env_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/driver/jruby_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/driver/posix_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/driver/win32_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/driver/win32_table_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/info/language_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/info/region_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/info_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/tag/cldr_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/tag/common_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/tag/illegular_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/tag/posix_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/tag/rfc_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/tag/simple_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/tag_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/taglist_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/util/memoizable_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale/version_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/lib/locale_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_class_index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_file_index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_method_index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc-style.css
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.rdoc
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/cgi/README
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/cgi/cookie.cgi
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/cgi/http.rb
@@ -78,19 +31,6 @@
 %%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi
 %%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTEXAMPLES%%@dirrmtry %%RUBY_EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/locale/util
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/locale/tag
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/locale/info
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/locale/driver
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib/locale
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/lib
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/Locale/Util
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/Locale/Tag
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/Locale/Info
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/Locale/Driver
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/Locale
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
 %%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
 @dirrm %%RUBY_SITELIBDIR%%/locale/util
