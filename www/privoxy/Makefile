@@ -75,7 +75,7 @@ post-patch:
 pre-configure:
 	@cd ${WRKSRC}; ${AUTOHEADER}
 
-pre-install:
+pre-su-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
 		${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
