@@ -9,7 +9,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.0.25
+PORTVERSION=	1.0.27
 PORTREVISION=	0
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -38,7 +38,7 @@ INFODIR=	${PREFIX}/${INFO_PATH}
 OSVER_MAJOR=	${OSVERSION:C/([0-9]).*/\1/}
 
 # Empty dirs in distribution to keep
-EMPTY_DIRS=	sb-bsd-sockets/alien sb-posix/alien sb-posix/test-lab
+EMPTY_DIRS=	sb-posix/test-lab
 
 DYNAMIC_SPACE_SIZE?=	512
 
