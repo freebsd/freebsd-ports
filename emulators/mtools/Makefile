@@ -7,6 +7,7 @@
 
 PORTNAME=	mtools
 PORTVERSION=	4.0.10
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	mtools
@@ -49,6 +50,9 @@ MAN1+=		floppyd.1 floppyd_installtest.1
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^#define MT_SIZE_T size_t|#define MT_SIZE_T off_t|g' \
+		${WRKSRC}/llong.h
 .for file in mformat.c
 	@${REINPLACE_CMD} -e 's|/etc/mtools.conf|${PREFIX}/etc/mtools.conf|g' \
 		${WRKSRC}/${file}
