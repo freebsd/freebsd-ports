@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	2.0.a2
+PORTVERSION=	2.0.a3
 CATEGORIES=	misc kde
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
@@ -26,6 +26,8 @@ USE_KDE4=	kdeprefix runtime workspace automoc4
 USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui xml webkit qmake_build moc_build uic_build rcc_build
+
+CONFLICTS=	bibletime*-1.7*
 
 post-extract:
 	${MV} ${WRKDIR}/${DISTNAME} ${WRKDIR}/${PORTNAME}-${PORTVERSION}
