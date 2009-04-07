@@ -121,7 +121,7 @@ ORACLE_HOME?=	${LOCALBASE}/oracle8-client
 .endif
 
 .if defined(WITH_PARI)
-LIB_DEPENDS+=	pari.2:${PORTSDIR}/math/pari
+LIB_DEPENDS+=	pari-gmp.2:${PORTSDIR}/math/pari
 CONFIGURE_ARGS+=--with-module=pari
 .endif
 
