@@ -1,15 +1,6 @@
---- configure.orig	2009-02-27 23:25:55.000000000 -0500
-+++ configure	2009-02-27 23:26:13.000000000 -0500
-@@ -21086,7 +21086,7 @@ else
- $as_echo "$as_me: nice transmitter disabled by user request" >&6;}
- fi
- 
-- if test "x$USE_NICE" == "xyes"; then
-+ if test "x$USE_NICE" = "xyes"; then
-   USE_NICE_TRUE=
-   USE_NICE_FALSE='#'
- else
-@@ -24438,7 +24438,7 @@ rm -f core conftest.err conftest.$ac_obj
+--- configure.orig	2009-04-07 01:34:29.000000000 -0400
++++ configure	2009-04-07 01:34:29.000000000 -0400
+@@ -24635,7 +24635,7 @@ rm -f core conftest.err conftest.$ac_obj
  $as_echo "$flag_ok" >&6; }
  
  
