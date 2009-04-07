@@ -12,6 +12,6 @@ bin/fmsx.bin
 %%DATADIR%%/MSXDOS2.ROM
 %%DATADIR%%/PAINTER.ROM
 %%DATADIR%%/KANJI.ROM
-%%PORTDATA%%@dirrm %%DATADIR%%
+@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/fMSX.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
