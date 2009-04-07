@@ -7,7 +7,7 @@
 
 PORTNAME=	bsdftpd-ssl
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	http://bsdftpd.org/files/bsdftpd-ssl/archive/1.1/src/
 DISTNAME=	bsdftpd-ssl-${PORTVERSION}
@@ -33,9 +33,10 @@ COMMENT=	Secure FTP server with the TLS/SSL support
 MAN5=	ftpchroot.5 xferlog.5
 MAN8=	ftpd.8
 MLINKS=	ftpd.8 ftpd-ssl.8 ftpchroot.5 ftpchroot-ssl.5
-PKGMESSAGE=	${WRKDIR}/pkg-message
-SED_ARG=	's|%%PREFIX%%|${PREFIX}|g; s|%%DOCSDIR%%|${DOCSDIR}|g; s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g; s|%%RC_SUBR%%|${RC_SUBR}|g'
-USE_RC_SUBR=	yes
+.ifndef NOPORTEXAMPLES
+SUB_FILES=	pkg-message
+.endif
+USE_RC_SUBR=	${PORTNAME}
 .endif
 
 MANCOMPRESSED=	yes
@@ -62,10 +63,6 @@ do-build:
 # Server part
 .if !defined(CLIENT_ONLY)
 	(cd ${WRKSRC}/ftpd && make) || exit
-	@${SED} ${SED_ARG} ${FILESDIR}/pkg-message.server > \
-	${WRKDIR}/pkg-message
-	@${SED} ${SED_ARG} ${FILESDIR}/bsdftpd_ssl.sh > \
-	${WRKDIR}/bsdftpd_ssl.sh
 .endif
 
 do-install:
@@ -105,16 +102,16 @@ post-install:
 	${INSTALL_SCRIPT} -p ${WRKSRC}/cert/xCA.sh ${DOCDIR}/cert/xCA.sh
 .endif
 .if !defined(CLIENT_ONLY)
-	${MKDIR} ${EXAMPLESDIR}
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}/rc.conf.d
 	${INSTALL_DATA} -p ${FILESDIR}/README.examples ${EXAMPLESDIR}/README
 	${INSTALL_DATA} -p ${FILESDIR}/ftpchroot ${EXAMPLESDIR}/ftpchroot
 	${INSTALL_DATA} -p ${FILESDIR}/ftpusers ${EXAMPLESDIR}/ftpusers
 	${INSTALL_DATA} -p ${FILESDIR}/rc_conf_d.bsdftpd_ssl ${EXAMPLESDIR}/rc.conf.d/bsdftpd_ssl
-	${INSTALL_SCRIPT} ${WRKDIR}/bsdftpd_ssl.sh ${PREFIX}/etc/rc.d/bsdftpd_ssl.sh
 	@${ECHO_CMD} "*******************************************************************************"
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD} "*******************************************************************************"
+.endif
 .endif
 
 .include <bsd.port.post.mk>

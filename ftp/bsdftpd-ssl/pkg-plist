@@ -1,5 +1,4 @@
 bin/ftps
-etc/rc.d/bsdftpd_ssl.sh
 libexec/ftpd
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/README
