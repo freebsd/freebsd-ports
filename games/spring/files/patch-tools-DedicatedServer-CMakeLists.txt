@@ -1,6 +1,6 @@
---- tools/DedicatedServer/CMakeLists.txt.orig	2008-10-12 02:53:10.000000000 +0400
-+++ tools/DedicatedServer/CMakeLists.txt	2008-10-15 18:43:49.000000000 +0400
-@@ -54,7 +54,7 @@
+--- tools/DedicatedServer/CMakeLists.txt.orig	2009-01-12 21:56:58.000000000 +0300
++++ tools/DedicatedServer/CMakeLists.txt	2009-01-13 17:24:41.000000000 +0300
+@@ -41,7 +41,7 @@
  if (MINGW)
  	TARGET_LINK_LIBRARIES (springserver ws2_32)
  else (MINGW)

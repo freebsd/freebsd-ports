@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	spring
-PORTVERSION=	0.77b5
-PORTREVISION=	2
+PORTVERSION=	0.78.2.1
 CATEGORIES=	games
 MASTER_SITES=	http://spring.clan-sy.com/dl/ \
 		http://mirror.amdmi3.ru/
@@ -25,7 +24,9 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USE_BZIP2=	yes
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	relies on x86 floating-point math
+
 USE_SDL=	sdl
 USE_GL=		gl glu
 USE_XORG=	x11 xcursor
@@ -33,6 +34,7 @@ USE_LDCONFIG=	yes
 # built with < 4.0 will not sync in multiplayer...
 # ...but it won't build with gcc42 from ports
 #USE_GCC=	4.2+
+MAKE_JOBS_SAFE=	yes
 
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DDATADIR:STRING="share/${PORTNAME}" \
@@ -42,17 +44,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -E -e '/FIND_PACKAGE.*(Python|JNI)/ d' \
 		${WRKSRC}/tools/unitsync/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|x1F3F|x0F3F|g' \
 		${WRKSRC}/rts/System/FPUCheck.h
+	@${RM} -f ${WRKSRC}/rts/.gitignore ${WRKSRC}/game/.gitignore
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -61,4 +58,4 @@ post-install:
 .endif
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

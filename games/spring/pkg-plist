@@ -2,6 +2,18 @@ bin/spring
 bin/spring-dedicated
 lib/libspringserver.so
 lib/libunitsync.so
+lib/spring/AI/Bot-libs/libAAI.so
+lib/spring/AI/Bot-libs/libKAI-0.2.so
+lib/spring/AI/Bot-libs/libKAIK-0.13.so
+lib/spring/AI/Bot-libs/libRAI.so
+lib/spring/AI/Bot-libs/libTestGlobalAI.so
+lib/spring/AI/Helper-libs/libCentralBuildAI.so
+lib/spring/AI/Helper-libs/libEconomyAI.so
+lib/spring/AI/Helper-libs/libMetalMakerAI.so
+lib/spring/AI/Helper-libs/libMexUpgraderAI.so
+lib/spring/AI/Helper-libs/libRadarAI.so
+lib/spring/AI/Helper-libs/libReportIdleAI.so
+lib/spring/AI/Helper-libs/libSimpleFormationAI.so
 share/applications/spring.desktop
 share/mime/packages/spring.xml
 share/pixmaps/application-x-spring-demo.png
@@ -122,17 +134,6 @@ share/pixmaps/spring.png
 %%DATADIR%%/AI/AAI/cfg/mod/XTA_Installer_Version.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/gundam_1.1_epic.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/gundam_1.1_tiny.cfg
-%%DATADIR%%/AI/Bot-libs/libAAI.so
-%%DATADIR%%/AI/Bot-libs/libKAI-0.2.so
-%%DATADIR%%/AI/Bot-libs/libKAIK-0.13.so
-%%DATADIR%%/AI/Bot-libs/libTestGlobalAI.so
-%%DATADIR%%/AI/Helper-libs/libCentralBuildAI.so
-%%DATADIR%%/AI/Helper-libs/libEconomyAI.so
-%%DATADIR%%/AI/Helper-libs/libMetalMakerAI.so
-%%DATADIR%%/AI/Helper-libs/libMexUpgraderAI.so
-%%DATADIR%%/AI/Helper-libs/libRadarAI.so
-%%DATADIR%%/AI/Helper-libs/libReportIdleAI.so
-%%DATADIR%%/AI/Helper-libs/libSimpleFormationAI.so
 %%DATADIR%%/LuaUI/CHANGELOG.txt
 %%DATADIR%%/LuaUI/Config/README.txt
 %%DATADIR%%/LuaUI/Fonts/FreeMonoBold_12.lua
@@ -220,22 +221,8 @@ share/pixmaps/spring.png
 %%DATADIR%%/fonts/Vera.ttf
 %%DATADIR%%/luaui.lua
 %%DATADIR%%/selectkeys.txt
-%%DATADIR%%/startscripts/aistartscripttest.lua
-%%DATADIR%%/startscripts/cmdrscript.lua
-%%DATADIR%%/startscripts/missionhelper.lua
-%%DATADIR%%/startscripts/missiontest.lua
-%%DATADIR%%/startscripts/ordertroops.lua
 %%DATADIR%%/teamcolors.lua
 %%DATADIR%%/uikeys.txt
-@exec mkdir -p %D/%%DATADIR%%/AI/AAI/cache
-@exec mkdir -p %D/%%DATADIR%%/AI/AAI/learn/map
-@exec mkdir -p %D/%%DATADIR%%/AI/AAI/learn/mod
-@exec mkdir -p %D/%%DATADIR%%/AI/AAI/log
-@exec mkdir -p %D/%%DATADIR%%/maps
-@exec mkdir -p %D/%%DATADIR%%/mods
-@dirrm %%DATADIR%%/startscripts
-@dirrm %%DATADIR%%/mods
-@dirrm %%DATADIR%%/maps
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/base/spring
 @dirrm %%DATADIR%%/base
@@ -248,20 +235,17 @@ share/pixmaps/spring.png
 @dirrm %%DATADIR%%/LuaUI/Fonts
 @dirrm %%DATADIR%%/LuaUI/Config
 @dirrm %%DATADIR%%/LuaUI
-@dirrm %%DATADIR%%/AI/Helper-libs
-@dirrm %%DATADIR%%/AI/Bot-libs
-@dirrm %%DATADIR%%/AI/AAI/log
-@dirrm %%DATADIR%%/AI/AAI/learn/mod
-@dirrm %%DATADIR%%/AI/AAI/learn/map
-@dirrm %%DATADIR%%/AI/AAI/learn
 @dirrm %%DATADIR%%/AI/AAI/cfg/mod
 @dirrm %%DATADIR%%/AI/AAI/cfg/map
 @dirrm %%DATADIR%%/AI/AAI/cfg/help
 @dirrm %%DATADIR%%/AI/AAI/cfg
-@dirrm %%DATADIR%%/AI/AAI/cache
 @dirrm %%DATADIR%%/AI/AAI
 @dirrm %%DATADIR%%/AI
 @dirrm %%DATADIR%%
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
+@dirrm share/mime/packages
+@dirrm share/mime
 @dirrmtry share/applications
+@dirrm lib/spring/AI/Helper-libs
+@dirrm lib/spring/AI/Bot-libs
+@dirrm lib/spring/AI
+@dirrm lib/spring
