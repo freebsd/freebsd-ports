@@ -8,7 +8,7 @@ PORTNAME=	gx2osd
 PORTVERSION=	0.2
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	 http://eclipser.no-ip.org/
+MASTER_SITES=	http://eclipser.no-ip.org/
 
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	An OSD client for XMMS2
@@ -22,15 +22,15 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.3:${PORTSDIR}/audio/cpp-xmms2
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
-MAKE_ENV+=	WAF_HOME=.
+WRKSRC=		${WRKDIR}/${PORTNAME}
+MAKE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" WAF_HOME=.
 
-MAN1=	gx2osd.1
+MAN1=		gx2osd.1
 
 .include <bsd.port.pre.mk>
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf --conf-prefix=${LOCALBASE} --with-mandir=${LOCALBASE}/man --prefix=${PREFIX} configure
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf --conf-prefix=${LOCALBASE} --with-mandir=${PREFIX}/man --prefix=${PREFIX} configure
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf build

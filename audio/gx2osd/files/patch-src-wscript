@@ -1,0 +1,12 @@
+--- src/wscript.orig	2007-05-27 19:44:02.000000000 +0400
++++ src/wscript	2009-03-21 04:05:07.000000000 +0300
+@@ -34,9 +34,6 @@
+         libconf.name = 'boost_program_options-st'
+         libconf.run()
+ 
+-    e.name = 'boost/filesystem/path.hpp'
+-    e.run()
+-
+     libconf.mandatory = 0
+     libconf.uselib = 'filesystem'
+     libconf.name = 'boost_filesystem'
