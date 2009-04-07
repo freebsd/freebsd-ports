@@ -26,6 +26,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb	\
 BUILD_WRKSRC=	${WRKSRC}/platform/gtk-x11
 INSTALL_WRKSRC=	${WRKSRC}/platform/gtk-x11
 
+USE_GCC=	4.3+
 USE_GNOME=	gtk20 pygnomeextras
 USE_GECKO=	firefox seamonkey xulrunner mozilla
 USE_OPENSSL=	yes
