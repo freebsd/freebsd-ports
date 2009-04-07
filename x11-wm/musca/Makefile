@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	musca
-PORTVERSION=	0.9.14
+PORTVERSION=	0.9.15
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://aerosuidae.net/
+MASTER_SITES=	http://aerosuidae.net/ \
+		http://mirror.mcx2.org/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dhn@FreeBSD.org
