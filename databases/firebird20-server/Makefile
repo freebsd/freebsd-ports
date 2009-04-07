@@ -26,6 +26,7 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:262 aclocal:19 libtool:15
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal \
 		-I ${WRKSRC}/m4
+MAKE_JOBS_UNSAFE=	yes
 
 LOCALSTATEDIR=	/var/db/firebird
 CONFDIR=	${PREFIX}/etc/firebird

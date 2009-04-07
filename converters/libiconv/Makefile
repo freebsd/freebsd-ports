@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--enable-static \
 		--docdir=${DOCSDIR}
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	gl_cv_cc_visibility="no"
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		iconv.1
 MAN3=		iconv.3 iconv_open.3 iconv_close.3 iconvctl.3
