@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Gantry
-PORTVERSION=	3.53
+PORTVERSION=	3.54
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -75,6 +75,7 @@ MAN3=		Gantry.3 \
 		Gantry::Docs::FAQ.3 Gantry::Docs::QuickStart.3 \
 		Gantry::Docs::Why.3 Gantry::Engine::CGI.3 \
 		Gantry::Engine::MP13.3 Gantry::Engine::MP20.3 \
+		Gantry::Exception.3 \
 		Gantry::Init.3 Gantry::Plugins::AutoCRUD.3 \
 		Gantry::Plugins::AjaxCRUD.3 \
 		Gantry::Plugins::AjaxFORM.3 \
@@ -95,10 +96,12 @@ MAN3=		Gantry.3 \
 		Gantry::Stash::Controller.3 Gantry::Stash::View.3 \
 		Gantry::Stash::View::Form.3 Gantry::State::Simple.3 \
 		Gantry::State::Default.3 Gantry::Template::Default.3 \
+		Gantry::State::Exceptions.3 \
 		Gantry::Template::Framing.3 Gantry::Template::TT.3 \
 		Gantry::Utils::AuthCDBI.3 Gantry::Utils::CDBI.3 \
 		Gantry::Utils::CRON.3 \
 		Gantry::Utils::CRUDHelp.3 Gantry::Utils::Crypt.3 \
+		Gantry::Utils::Captcha.3\
 		Gantry::Utils::DB.3 \
 		Gantry::Utils::DBConnHelper.3 \
 		Gantry::Utils::DBConnHelper::MP13.3 \

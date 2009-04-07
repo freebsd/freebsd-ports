@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+%%WWWDIR%%/bookerrata.html
 %%WWWDIR%%/control_wrapper.tt
 %%WWWDIR%%/data.tt
 %%WWWDIR%%/default.tt
@@ -20,15 +21,25 @@
 %%WWWDIR%%/threeway.tt
 %%WWWDIR%%/wrapper.tt
 %%WWWDIR%%/wsdl.tt
+%%WWWDIR%%/wsdldoc.tt
+%%WWWDIR%%/yapcna2007.pdf
 %%WWWDIR%%/css/default.css
 %%WWWDIR%%/css/gantry_datepicker.css
 %%WWWDIR%%/css/gantry_forms.css
 %%WWWDIR%%/css/gantry_layout.css
 %%WWWDIR%%/css/gantry_site.css
+%%WWWDIR%%/css/my.css
 %%WWWDIR%%/css/pod_style.css
+%%WWWDIR%%/images/bar.a-center-gray.png
+%%WWWDIR%%/images/bar.a-left-gray.png
+%%WWWDIR%%/images/bar.a-right-gray.png
+%%WWWDIR%%/images/bar2-center-gray.png
+%%WWWDIR%%/images/bar2-left-gray.png
+%%WWWDIR%%/images/bar2-right-gray.png
 %%WWWDIR%%/images/blc-gray-block.gif
 %%WWWDIR%%/images/bookcover.gif
 %%WWWDIR%%/images/brc-gray-block.gif
+%%WWWDIR%%/images/building240.jpg
 %%WWWDIR%%/images/form.png
 %%WWWDIR%%/images/gantry_gears.jpg
 %%WWWDIR%%/images/gantry_logo.png
@@ -59,6 +70,7 @@
 %%WWWDIR%%/js/jquery.js
 %%WWWDIR%%/moxie/delete.tt
 %%WWWDIR%%/moxie/form.tt
+%%WWWDIR%%/moxie/form_onetomany.tt
 %%WWWDIR%%/moxie/gantry_wrapper.tt
 %%WWWDIR%%/moxie/results.tt
 %%WWWDIR%%/moxie/threeway.tt
@@ -112,6 +124,7 @@
 %%SITE_PERL%%/Gantry/Engine/CGI.pm
 %%SITE_PERL%%/Gantry/Engine/MP13.pm
 %%SITE_PERL%%/Gantry/Engine/MP20.pm
+%%SITE_PERL%%/Gantry/Exception.pm
 %%SITE_PERL%%/Gantry/Init.pm
 %%SITE_PERL%%/Gantry/Plugins/AjaxCRUD.pm
 %%SITE_PERL%%/Gantry/Plugins/AjaxFORM.pm
@@ -139,6 +152,7 @@
 %%SITE_PERL%%/Gantry/Stash/View/Form.pm
 %%SITE_PERL%%/Gantry/State/Constants.pm
 %%SITE_PERL%%/Gantry/State/Default.pm
+%%SITE_PERL%%/Gantry/State/Exceptions.pm
 %%SITE_PERL%%/Gantry/State/Simple.pm
 %%SITE_PERL%%/Gantry/Template/Default.pm
 %%SITE_PERL%%/Gantry/Template/Framing.pm
@@ -147,6 +161,7 @@
 %%SITE_PERL%%/Gantry/Utils/CDBI.pm
 %%SITE_PERL%%/Gantry/Utils/CRON.pm
 %%SITE_PERL%%/Gantry/Utils/CRUDHelp.pm
+%%SITE_PERL%%/Gantry/Utils/Captcha.pm
 %%SITE_PERL%%/Gantry/Utils/Crypt.pm
 %%SITE_PERL%%/Gantry/Utils/DB.pm
 %%SITE_PERL%%/Gantry/Utils/DBConnHelper.pm
