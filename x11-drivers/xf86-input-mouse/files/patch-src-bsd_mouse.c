@@ -1,11 +1,18 @@
 --- src/bsd_mouse.c.orig	2008-11-26 23:11:36.000000000 -0500
-+++ src/bsd_mouse.c	2009-02-04 12:56:32.000000000 -0500
++++ src/bsd_mouse.c	2009-04-07 17:10:17.000000000 -0400
 @@ -1,4 +1,3 @@
 -
  /*
   * Copyright (c) 1999-2003 by The XFree86 Project, Inc.
   *
-@@ -75,11 +74,13 @@
+@@ -71,15 +70,20 @@
+ static const char *FindDevice(InputInfoPtr, const char *, int);
+ 
+ #if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
++#if !defined(XPS2_SUPPORT) && (__FreeBSD_kernel_version >= 700106)
++#define XPS2_SUPPORT
++#endif
+ /* These are for FreeBSD and DragonFly */
  #define DEFAULT_MOUSE_DEV		"/dev/mouse"
  #define DEFAULT_SYSMOUSE_DEV		"/dev/sysmouse"
  #define DEFAULT_PS2_DEV			"/dev/psm0"
@@ -19,7 +26,7 @@
  	NULL
  };
  #elif (defined(__OpenBSD__) || defined(__NetBSD__)) && defined(WSCONS_SUPPORT)
-@@ -100,7 +101,11 @@
+@@ -100,7 +104,11 @@
  #if defined(__NetBSD__)
      return MSE_SERIAL | MSE_BUS | MSE_PS2 | MSE_AUTO;
  #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
@@ -32,7 +39,7 @@
  #else
      return MSE_SERIAL | MSE_BUS | MSE_PS2 | MSE_XPS2 | MSE_AUTO;
  #endif
-@@ -179,10 +184,31 @@
+@@ -179,10 +187,31 @@
  	{ MOUSE_PROTO_THINK,		"ThinkingMouse" },
  	{ MOUSE_PROTO_SYSMOUSE,		"SysMouse" }
  };
@@ -65,7 +72,7 @@
      int i;
      mousehw_t hw;
      mousemode_t mode;
-@@ -190,10 +216,16 @@
+@@ -190,10 +219,16 @@
      if (pInfo->fd == -1)
  	return NULL;
  
@@ -83,7 +90,7 @@
      /* interrogate the driver and get some intelligence on the device. */
      hw.iftype = MOUSE_IF_UNKNOWN;
      hw.model = MOUSE_MODEL_GENERIC;
-@@ -209,9 +241,18 @@
+@@ -209,9 +244,18 @@
  		    protoPara[0] = mode.syncmask[0];
  		    protoPara[1] = mode.syncmask[1];
  		}
@@ -104,7 +111,7 @@
  	    }
  	}
      }
-@@ -234,41 +275,41 @@
+@@ -234,41 +278,41 @@
  	(protocol && xf86NameCmp(protocol, "SysMouse") == 0)) {
  	/*
  	 * As the FreeBSD sysmouse driver defaults to protocol level 0
@@ -163,7 +170,7 @@
      }
      return FALSE;
  }
-@@ -276,17 +317,17 @@
+@@ -276,17 +320,17 @@
  static const char *
  FindDevice(InputInfoPtr pInfo, const char *protocol, int flags)
  {
@@ -185,7 +192,7 @@
  #endif
  	} else {
  	    /*
-@@ -295,28 +336,32 @@
+@@ -295,28 +339,32 @@
  	     * the test for whether /dev/sysmouse is usable can be made.
  	     */
  	    if (!strcmp(*pdev, DEFAULT_MOUSE_DEV)) {
@@ -231,7 +238,7 @@
  		break;
  	    }
  	}
-@@ -782,7 +827,9 @@
+@@ -782,7 +830,9 @@
      p->CheckProtocol = CheckProtocol;
  #if (defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)) && defined(MOUSE_PROTO_SYSMOUSE)
      p->SetupAuto = SetupAuto;
