@@ -30,6 +30,7 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		HTTP_SSL_MODULE "Enable http_ssl module" off \
 		HTTP_STATUS_MODULE "Enable http_stub_status module" on \
 		HTTP_SUB_MODULE "Enable http_sub module" off \
+		HTTP_UPSTREAM_FAIR "Enable upstream fair module" off \
 		MAIL_MODULE "Enable IMAP4/POP3/SMTP proxy module" off \
 		MAIL_IMAP_MODULE "Enable IMAP4 proxy module" off \
 		MAIL_POP3_MODULE "Enable POP3 proxy module" off \
@@ -126,6 +127,14 @@ CONFIGURE_ARGS+=--with-http_stub_status_module
 
 .if defined(WITH_HTTP_SUB_MODULE)
 CONFIGURE_ARGS+=--with-http_sub_module
+.endif
+
+.if defined(WITH_HTTP_UPSTREAM_FAIR)
+NGINX_UPSTREAM_FAIR_VERSION=	20081012
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:upstreamfair/}
+MASTER_SITE_SUBDIR+=	osa/:upstreamfair
+DISTFILES+=	nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}.tar.gz:upstreamfair
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}
 .endif
 
 .if defined(WITHOUT_HTTP_REWRITE_MODULE) || defined(WITHOUT_PCRE)
