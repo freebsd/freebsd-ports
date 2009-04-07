@@ -5,6 +5,64 @@ share/applications/bibletime.desktop
 %%DATADIR%%/display-templates/Green.tmpl
 %%DATADIR%%/display-templates/HighContrast.tmpl
 %%DATADIR%%/display-templates/Simple.tmpl
+%%DATADIR%%/docs/handbook/cs/hdbk-config.html
+%%DATADIR%%/docs/handbook/cs/hdbk-intro.html
+%%DATADIR%%/docs/handbook/cs/hdbk-op-bookshelfmanager.html
+%%DATADIR%%/docs/handbook/cs/hdbk-op-output.html
+%%DATADIR%%/docs/handbook/cs/hdbk-op-parts.html
+%%DATADIR%%/docs/handbook/cs/hdbk-op-search.html
+%%DATADIR%%/docs/handbook/cs/hdbk-op.html
+%%DATADIR%%/docs/handbook/cs/hdbk-reference-hotkeys.html
+%%DATADIR%%/docs/handbook/cs/hdbk-reference-toolbar.html
+%%DATADIR%%/docs/handbook/cs/hdbk-reference.html
+%%DATADIR%%/docs/handbook/cs/hdbk-startsequence.html
+%%DATADIR%%/docs/handbook/cs/hdbk-term.html
+%%DATADIR%%/docs/handbook/cs/i_bibletime.png
+%%DATADIR%%/docs/handbook/cs/i_cascade.png
+%%DATADIR%%/docs/handbook/cs/i_cascade_auto.png
+%%DATADIR%%/docs/handbook/cs/i_configure.png
+%%DATADIR%%/docs/handbook/cs/i_configuresword.png
+%%DATADIR%%/docs/handbook/cs/i_configuretoolbars.png
+%%DATADIR%%/docs/handbook/cs/i_exit.png
+%%DATADIR%%/docs/handbook/cs/i_fileclose.png
+%%DATADIR%%/docs/handbook/cs/i_find.png
+%%DATADIR%%/docs/handbook/cs/i_fullscreen.png
+%%DATADIR%%/docs/handbook/cs/i_sidetree.png
+%%DATADIR%%/docs/handbook/cs/i_tile.png
+%%DATADIR%%/docs/handbook/cs/index.html
+%%DATADIR%%/docs/handbook/cs/ss_configfonts.png
+%%DATADIR%%/docs/handbook/cs/ss_mainterms.png
+%%DATADIR%%/docs/handbook/cs/ss_searchanal.png
+%%DATADIR%%/docs/handbook/cs/ss_searchopts.png
+%%DATADIR%%/docs/handbook/de/hdbk-config.html
+%%DATADIR%%/docs/handbook/de/hdbk-intro.html
+%%DATADIR%%/docs/handbook/de/hdbk-op-bookshelfmanager.html
+%%DATADIR%%/docs/handbook/de/hdbk-op-output.html
+%%DATADIR%%/docs/handbook/de/hdbk-op-parts.html
+%%DATADIR%%/docs/handbook/de/hdbk-op-search.html
+%%DATADIR%%/docs/handbook/de/hdbk-op.html
+%%DATADIR%%/docs/handbook/de/hdbk-reference-hotkeys.html
+%%DATADIR%%/docs/handbook/de/hdbk-reference-toolbar.html
+%%DATADIR%%/docs/handbook/de/hdbk-reference.html
+%%DATADIR%%/docs/handbook/de/hdbk-startsequence.html
+%%DATADIR%%/docs/handbook/de/hdbk-term.html
+%%DATADIR%%/docs/handbook/de/i_bibletime.png
+%%DATADIR%%/docs/handbook/de/i_cascade.png
+%%DATADIR%%/docs/handbook/de/i_cascade_auto.png
+%%DATADIR%%/docs/handbook/de/i_configure.png
+%%DATADIR%%/docs/handbook/de/i_configuresword.png
+%%DATADIR%%/docs/handbook/de/i_configuretoolbars.png
+%%DATADIR%%/docs/handbook/de/i_exit.png
+%%DATADIR%%/docs/handbook/de/i_fileclose.png
+%%DATADIR%%/docs/handbook/de/i_find.png
+%%DATADIR%%/docs/handbook/de/i_fullscreen.png
+%%DATADIR%%/docs/handbook/de/i_sidetree.png
+%%DATADIR%%/docs/handbook/de/i_tile.png
+%%DATADIR%%/docs/handbook/de/index.html
+%%DATADIR%%/docs/handbook/de/ss_configfonts.png
+%%DATADIR%%/docs/handbook/de/ss_mainterms.png
+%%DATADIR%%/docs/handbook/de/ss_searchanal.png
+%%DATADIR%%/docs/handbook/de/ss_searchopts.png
 %%DATADIR%%/docs/handbook/de/hdbk-config.html
 %%DATADIR%%/docs/handbook/de/hdbk-intro.html
 %%DATADIR%%/docs/handbook/de/hdbk-op-bookshelfmanager.html
@@ -502,6 +560,7 @@ share/icons/bibletime.svg
 @dirrm %%DATADIR%%/docs/handbook/fi
 @dirrm %%DATADIR%%/docs/handbook/en
 @dirrm %%DATADIR%%/docs/handbook/de
+@dirrm %%DATADIR%%/docs/handbook/cs
 @dirrm %%DATADIR%%/docs/handbook
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%/display-templates
