@@ -19,8 +19,8 @@
 %%PYTHON_SITELIBDIR%%/py2play/idler.pyo
 %%PYTHON_SITELIBDIR%%/py2play/level.pyo
 %%PYTHON_SITELIBDIR%%/py2play/player.pyo
-%%PORTDOCS%%%%EXAMPLESDIR%%/startdemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/startdemo
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/py2play
