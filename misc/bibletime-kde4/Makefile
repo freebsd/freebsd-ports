@@ -26,9 +26,9 @@ KDE4_BUILDENV=	yes
 USE_KDE4=	kdeprefix kdelibs runtime workspace automoc4
 USE_CMAKE=	yes
 USE_QT_VER=	4
-Q4T_COMPONENTS=	corelib dbus gui xml webkit qmake_build moc_build uic_build rcc_build
+QT_COMPONENTS=	corelib dbus gui xml webkit qmake_build moc_build uic_build rcc_build
 
-CONFLICTS=      bibletime*-2.*
+CONFLICTS=	bibletime*-2.*
 
 post-extract:
 	${MKDIR} ${WRKSRC}/build
