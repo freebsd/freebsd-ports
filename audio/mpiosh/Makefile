@@ -14,12 +14,14 @@ DISTNAME=	mpio-${PORTVERSION:S|.p|_pre|}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digit@lway MPIO MP3 player tool
 
-USE_AUTOTOOLS=	libtool:15
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:262 libtool:15
+ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
 .include <bsd.port.pre.mk>
 
@@ -27,8 +29,17 @@ CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
 .else
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure.in
-USE_AUTOTOOLS=	autoconf:262
 .endif
+
+patch-autotools:
+	${DO_NADA}
+
+#
+# Get rid of .la and static library files
+#
+post-configure:
+	@${REINPLACE_CMD} -E -e \
+	    '/Install the pseudo-library/,/staticlibs=/s,^,#,' ${WRKSRC}/libtool
 
 post-patch:
 .if ${OSVERSION} >= 800069
