@@ -34,6 +34,12 @@ MANLANG=	"" ru
 
 .include <bsd.port.pre.mk>
 
+.ifdef NOPORTDOCS
+post-patch:
+	${REINPLACE_CMD} 's,install-data-am: install-data_charmapsDATA install-data_docDATA,install-data-am: install-data_charmapsDATA,' \
+		${WRKSRC}/Makefile.in
+.endif
+
 post-install:
 .for file in jmacsrc jpicorc jstarrc rjoerc joerc
 .if !exists(${PREFIX}/etc/${PORTNAME}/${file})
