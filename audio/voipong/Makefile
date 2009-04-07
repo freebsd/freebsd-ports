@@ -25,6 +25,10 @@ post-patch:
 		's|$${prefix}/share/voipong|${DOCSDIR}|; \
 		 s|COPYING||; s|LICENSE||' \
 		${WRKSRC}/Makefile.in
+.ifdef NOPORTDOCS
+	${REINPLACE_CMD} '/install-data-am:/s/install-${PORTNAME}dataDATA//' \
+		${WRKSRC}/Makefile.in
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
