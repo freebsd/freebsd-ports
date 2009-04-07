@@ -190,7 +190,7 @@ EOF
 
 	    echo "Adding cvsup and cvsupd log entry to \"/etc/newsyslog.conf\"."
 	    cat <<EOF >>/etc/newsyslog.conf
-/var/log/cvsup.log			664  7    *    24    Z
+/var/log/cvsup.log			664  7    *    24    -
 /var/log/cvsupd.log			664  7    *    24    Z
 EOF
 	    echo "Done."
