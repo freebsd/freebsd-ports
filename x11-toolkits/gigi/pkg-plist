@@ -61,6 +61,7 @@ lib/libGiGi.so.0
 lib/libGiGiSDL.so
 lib/libGiGiSDL.so.0
 libdata/pkgconfig/GiGi.pc
+%%OGRE%%libdata/pkgconfig/GiGiOgre.pc
 libdata/pkgconfig/GiGiSDL.pc
 @dirrm include/GG/dialogs
 @dirrm include/GG/SDL
