@@ -1938,6 +1938,8 @@ cwirc                           ports/irc/cwirc
 cwish                           ports/misc/cwish
 cwtext                          ports/textproc/cwtext
 cx88                            ports/multimedia/cx88
+cx_Freeze                       ports/devel/cx_Freeze
+cx_freeze                       ports/devel/cx_Freeze
 cxmon                           ports/devel/cxmon
 cxref                           ports/devel/cxref
 cxxtest                         ports/devel/cxxtest
@@ -7807,7 +7809,9 @@ linux-f8-scim-libs              ports/textproc/linux-f8-scim-libs
 linux-f8-sdl12                  ports/devel/linux-f8-sdl12
 linux-f8-sdl_image              ports/graphics/linux-f8-sdl_image
 linux-f8-sdl_mixer              ports/audio/linux-f8-sdl_mixer
+linux-f8-tcl84                  ports/lang/linux-f8-tcl84
 linux-f8-tiff                   ports/graphics/linux-f8-tiff
+linux-f8-tk84                   ports/x11-toolkits/linux-f8-tk84
 linux-f8-ucl                    ports/archivers/linux-f8-ucl
 linux-f8-ungif                  ports/graphics/linux-f8-ungif
 linux-f8-upx                    ports/archivers/linux-f8-upx
@@ -7945,6 +7949,7 @@ linux-xorg-libs                 ports/x11/linux-xorg-libs
 linux-ymessenger                ports/net-im/linux-ymessenger
 linux_base-f7                   ports/emulators/linux_base-f7
 linux_base-f8                   ports/emulators/linux_base-f8
+linux_base-f9                   ports/emulators/linux_base-f9
 linux_base-fc4                  ports/emulators/linux_base-fc4
 linux_base-fc6                  ports/emulators/linux_base-fc6
 linux_base-gentoo-stage1        ports/emulators/linux_base-gentoo-stage1
