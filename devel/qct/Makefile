@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	qct
-PORTVERSION=	1.5
-PORTREVISION=	2
+PORTVERSION=	1.7
 CATEGORIES=	devel python
 MASTER_SITES=	http://qct.sourceforge.net/ \
 		ftp://ftp.ipt.ru/pub/download/${PORTNAME}/
+WRKSRC=		${WRKDIR}/qct
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	QCT GUI commit tool
