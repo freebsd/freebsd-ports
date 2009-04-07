@@ -84,11 +84,16 @@ LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 .endif
 
 do-install:
-	@${MKDIR} ${PHPLOT_DIR} ${EXAMPLESDIR}/images ${DOCSDIR}
+	@${MKDIR} ${PHPLOT_DIR}
 	@${INSTALL_DATA} ${LIBS:S,^,${WRKSRC}/,} ${PHPLOT_DIR}/
 .if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DOCS:S,^,${WRKDIR}/phplotdocs/,} ${DOCSDIR}/
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}/images
 	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKDIR}/phplotdocs/examples/,} ${EXAMPLESDIR}/
 	@${INSTALL_DATA} ${IMAGES:S,^,${WRKDIR}/phplotdocs/images/,} ${EXAMPLESDIR}/images/
 .endif
+
 .include <bsd.port.mk>
