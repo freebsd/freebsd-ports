@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		libsrs_alt
-DISTVERSION=		1.0rc1a
+DISTVERSION=		1.0
 CATEGORIES=		mail
 MASTER_SITES=		http://srs.mirtol.com/
 
