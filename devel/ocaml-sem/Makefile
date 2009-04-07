@@ -11,8 +11,8 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ocaml-sem.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}
-PKGNAMEPREFIX=	ocaml-
 MASTER_SITE_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
+PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	argentoff@gmail.com
 COMMENT=	POSIX semaphores for OCaml
@@ -41,8 +41,10 @@ post-install:
 		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/sem" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ocamlfind remove sem 2>/dev/null || true" >> ${TMPPLIST}
+.ifndef NOPORTDOCS
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
 	${CP} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
