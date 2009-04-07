@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Algorithm-Evolutionary
-PORTVERSION=	0.66
+PORTVERSION=	0.67
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -53,6 +53,7 @@ MAN3=	Algorithm::Evolutionary.3 \
 	Algorithm::Evolutionary::Op::CX.3 \
 	Algorithm::Evolutionary::Op::CanonicalGA.3 \
 	Algorithm::Evolutionary::Op::ChangeLengthMutation.3 \
+	Algorithm::Evolutionary::Op::Convergence_Terminator.3 \
 	Algorithm::Evolutionary::Op::Creator.3 \
 	Algorithm::Evolutionary::Op::Crossover.3 \
 	Algorithm::Evolutionary::Op::DeltaTerm.3 \

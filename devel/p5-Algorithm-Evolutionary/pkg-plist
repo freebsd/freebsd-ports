@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/canonical-genetic-algorithm.pl
 bin/tide_bitstring.pl
 bin/tide_float.pl
@@ -25,6 +26,7 @@ bin/tide_float.pl
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/CX.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/CanonicalGA.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/ChangeLengthMutation.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/Convergence_Terminator.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/Creator.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/Crossover.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/DeltaTerm.pm
