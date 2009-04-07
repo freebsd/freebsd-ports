@@ -45,4 +45,12 @@ CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	INSTALL progref
 
+.ifdef NOPORTDOCS
+post-patch:
+	${REINPLACE_CMD} '/install-data-am:/s/install-data-local//' \
+		${WRKSRC}/doc/Makefile.in
+	${REINPLACE_CMD} '/install-data-am:/s/install-data-local//' \
+		${WRKSRC}/doc/progref/Makefile.in
+.endif
+
 .include <bsd.port.mk>
