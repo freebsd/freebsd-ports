@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.3.2
+PORTVERSION?=		3.3.3
 PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -499,9 +499,7 @@ post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.if defined(WITH_MAX_DEBUG)
 test:
-	cd ${WRKSRC} && ${MAKE} test
-.endif
+	cd ${WRKSRC} && ${MAKE} test_nss_modules test_pam_modules && ${MAKE} test
 
 .include <bsd.port.post.mk>
