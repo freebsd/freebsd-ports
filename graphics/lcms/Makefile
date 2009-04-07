@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lcms
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	graphics
@@ -52,6 +52,13 @@ post-patch:
 		's|^SUBDIRS =.*$$|SUBDIRS = src include|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|-O3||g' ${WRKSRC}/src/Makefile.in
+
+#
+# Get rid of .la and static library files
+#
+post-configure:
+	@${REINPLACE_CMD} -E -e \
+	    '/Install the pseudo-library/,/staticlibs=/s,^,#,' ${WRKSRC}/libtool
 
 post-install:
 .if !defined(NOPORTDOCS)
