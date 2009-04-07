@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	squidview
-PORTVERSION=	0.72
+PORTVERSION=	0.73
 CATEGORIES=	www
 MASTER_SITES=	http://www.rillion.net/squidview/
 
