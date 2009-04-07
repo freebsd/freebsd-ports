@@ -14,19 +14,17 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kiltdown is an UI independant Email Client for UNIX
 
-LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
+LIB_DEPENDS=	db3:${PORTSDIR}/databases/db3
 
 PLIST_FILES=	bin/kiltdown
 
 USE_QT_VER=	3
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 MY_CONFIGURE_ARGS=	-release
 MY_CONFIGURE_ARGS+=	-qtinc ${LOCALBASE}/include -qtlib ${LOCALBASE}/lib
 MY_CONFIGURE_ARGS+=	-dbinc ${LOCALBASE}/include/db3 -dblib ${LOCALBASE}/lib
 BUILD_ENV+=		PATH=${PATH}:${LOCALBASE}/bin
-
-NOT_FOR_ARCHS=	amd64 sparc64
-NOT_FOR_ARCHS_REASON=	assumes 32-bit sized pointers
 
 post-patch:
 	@${MV} ${WRKSRC}/configs/bsd-generic ${WRKSRC}/configs/bsd-generic.sed

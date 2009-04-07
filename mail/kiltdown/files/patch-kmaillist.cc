@@ -1,23 +1,18 @@
---- kiltdown/kmaillist.cc.orig	Mon May 14 05:25:23 2001
-+++ kiltdown/kmaillist.cc	Mon Sep  9 11:53:44 2002
-@@ -12,6 +12,7 @@
- 
+--- kiltdown/kmaillist.cc	2001-05-13 23:25:23.000000000 -0400
++++ kiltdown/kmaillist.cc	2008-05-21 23:23:49.000000000 -0400
+@@ -13,4 +13,5 @@
  #include <qdrawutil.h>
  #include <qpainter.h>
 +#include <qstyle.h>
  #include <stdio.h>
  #include <string.h>
- 
-@@ -616,6 +617,7 @@
-     int w = this->drawableWidth() - PAD;
+@@ -617,4 +618,5 @@
      int colwidth, colleft = PAD;
      int x;
 +    QRect *rect;
  
      /**
-      * First thing we need to do is figure out how much space the fixed width
-@@ -646,8 +648,12 @@
-         if (!_backgroundBrush) _backgroundBrush = new QBrush(cg.color(QColorGroup::Button));
+@@ -647,6 +649,10 @@
          if (!_backgroundBrush) return;
  
 -        style().drawBevelButton(&painter, colleft, 0, colwidth, getRowHeight(), 
@@ -30,9 +25,14 @@
 +	delete rect;
  
          /**
-          * Next, draw the text or the image.
-@@ -1717,15 +1723,15 @@
-                         && (x < (w + PAD + 1))
+@@ -1252,5 +1258,5 @@
+ ERRCODE KMailList::getSelectedRows
+ (
+-    LinkList<unsigned int> &list
++    LinkList<void *> &list
+ )
+ {
+@@ -1718,13 +1724,13 @@
                          && (headers[z - 1].type != CW_FIXED)) {
  
 -                        this->setCursor(SplitVCursor);
@@ -49,13 +49,45 @@
 +                this->setCursor(arrowCursor);
              }
              }
-             break;
-@@ -2471,7 +2477,7 @@
-     /**
+@@ -1984,5 +1990,5 @@
+ KMailListItem *KMailList::nextItem
+ (
+-    unsigned int itemData
++    void * itemData
+ )
+ {
+@@ -2301,5 +2307,5 @@
+ KMailListItem *KMailList::previousItem
+ (
+-    unsigned int itemData
++    void * itemData
+ )
+ {
+@@ -2335,5 +2341,5 @@
+ (
+     int count,
+-    unsigned int *itemDataArray
++    void **itemDataArray
+ )
+ {
+@@ -2472,5 +2478,5 @@
       * Finally, reset the cursor, mode, and repaint ourself.
       */
 -    this->setCursor(ArrowCursor);
 +    this->setCursor(arrowCursor);
      this->mouseMode = MMNormal;
      emitColumnsChanged();
-     this->forceUpdate();
+@@ -2571,5 +2577,5 @@
+ ERRCODE KMailList::selectRowFromItemData
+ (
+-    unsigned int itemData
++    void * itemData
+ )
+ {
+@@ -2779,5 +2785,5 @@
+ ERRCODE KMailList::updateRowFromItemData
+ (
+-    unsigned int itemData,
++    void * itemData,
+     KMailListItem *newRow
+ )

@@ -1,0 +1,257 @@
+--- kiltdown/accountdlg.cc	2001-05-13 23:25:23.000000000 -0400
++++ kiltdown/accountdlg.cc	2008-05-21 23:02:15.000000000 -0400
+@@ -141,9 +141,9 @@
+ void AccountsDialog::addNewAccount()
+ {
+-    LinkList<unsigned int> list;
++    LinkList<void *> list;
+     const char *pstr, *pstr2;
+     ISubsystem *s = NULL;
+     SelectMeDialog smd;
+-    unsigned int ui;
++    ISubsystem *ui;
+     ERRCODE er;
+     int ret;
+@@ -172,5 +172,5 @@
+         s->getDisplayName(&pstr);
+         if (pstr) {
+-            smd.addItem(pstr, (unsigned int)s);
++            smd.addItem(pstr, (void *)s);
+             localFree(pstr);
+         }
+@@ -188,8 +188,8 @@
+     if (ret == QDialog::Accepted) {
+         
+-        ui = 0;
++        ui = NULL;
+         smd.getSelectedItems(list);
+-        list.firstElement(&ui);
+-        if ((ISubsystem *)ui) ((ISubsystem *)ui)->createNewAccount();
++        list.firstElement((void **)&ui);
++        if (ui) ui->createNewAccount();
+ 
+         LinkList<IAccount *> accts;
+--- kiltdown/attachment.cc	2001-05-13 23:25:23.000000000 -0400
++++ kiltdown/attachment.cc	2008-05-21 23:45:53.000000000 -0400
+@@ -363,5 +363,6 @@
+  *                              sequent calls to this will clobber old vals.
+  */
+-char * Attachment::getPrintableSize()
++const char *
++Attachment::getPrintableSize()
+ {
+     struct stat info;
+--- kiltdown/attachment.h	2001-05-13 23:25:23.000000000 -0400
++++ kiltdown/attachment.h	2008-05-21 23:46:11.000000000 -0400
+@@ -47,5 +47,5 @@
+     ERRCODE getFullPath(const char **);
+ 
+-    char *getPrintableSize();
++    const char *getPrintableSize();
+ 
+     QPixmap *chooseIcon();
+--- kiltdown/base64.cc	2001-05-13 23:25:23.000000000 -0400
++++ kiltdown/base64.cc	2008-05-21 23:48:03.000000000 -0400
+@@ -146,5 +146,5 @@
+                  */
+                 if (inputBuf[cloop] != '=') {
+-                    holdVals[cheld] = byteFromChar[inputBuf[cloop]];
++                    holdVals[cheld] = byteFromChar[(unsigned int)inputBuf[cloop]];
+                     cheld++;
+                 } else {
+@@ -445,5 +445,5 @@
+              */
+             if (decodeMe[cloop] != '=') {
+-                holdVals[cheld] = byteFromChar[decodeMe[cloop]];
++                holdVals[cheld] = byteFromChar[(unsigned int)decodeMe[cloop]];
+                 cheld++;
+             } else {
+--- kiltdown/foldersort.cc	2001-05-13 23:25:23.000000000 -0400
++++ kiltdown/foldersort.cc	2008-05-21 23:41:49.000000000 -0400
+@@ -12,5 +12,5 @@
+ 
+ #include <ctype.h>
+-
++#include <stdint.h>
+ 
+ #include "address.h"
+@@ -69,5 +69,5 @@
+ (
+     int col,
+-    unsigned int itemData,
++    void * itemData,
+     KMailListItem *item1,
+     KMailListItem *item2
+@@ -76,5 +76,5 @@
+     time_t t1, t2;
+ 
+-    switch ((MailColumn)itemData) {
++    switch ((MailColumn)(uintptr_t)itemData) {
+         case MC_SENT:
+             ((MailMessage *)item1->itemData)->getSent(&t1);
+@@ -116,5 +116,5 @@
+ (
+     int col,
+-    unsigned int itemData,
++    void * itemData,
+     KMailListItem *item1,
+     KMailListItem *item2
+@@ -146,5 +146,5 @@
+ (
+     int col,
+-    unsigned int itemData,
++    void * itemData,
+     KMailListItem *item1,
+     KMailListItem *item2
+@@ -167,5 +167,5 @@
+             return 1;
+         case 3: 
+-            switch ((MailColumn)itemData) {
++            switch ((MailColumn)(uintptr_t)itemData) {
+ 
+                 case MC_SUBJECT:
+--- kiltdown/foldersort.h	2001-05-13 23:25:23.000000000 -0400
++++ kiltdown/foldersort.h	2008-05-21 23:08:01.000000000 -0400
+@@ -23,7 +23,7 @@
+  * Defines routines used for sorting items in folders.
+  */
+-int messageSortString(int, unsigned int, KMailListItem *, KMailListItem *);
+-int messageSortPixmap(int, unsigned int, KMailListItem *, KMailListItem *);
+-int messageSortDate(int, unsigned int, KMailListItem *, KMailListItem *);
++int messageSortString(int, void *, KMailListItem *, KMailListItem *);
++int messageSortPixmap(int, void *, KMailListItem *, KMailListItem *);
++int messageSortDate(int, void *, KMailListItem *, KMailListItem *);
+  
+ 
+--- kiltdown/maildownload.cc	2001-05-13 23:25:23.000000000 -0400
++++ kiltdown/maildownload.cc	2008-05-21 23:48:46.000000000 -0400
+@@ -173,5 +173,5 @@
+ /**
+  * This is used globally.
+- * UNDONE: marcw, 2001.2.2 -- should this be TLS ??/
++ * UNDONE: marcw, 2001.2.2 -- should this be TLS ??
+  */
+ CrossThreadManager *far = NULL;
+--- kiltdown/mimeheader.cc	2001-05-13 23:25:23.000000000 -0400
++++ kiltdown/mimeheader.cc	2008-05-21 23:53:29.000000000 -0400
+@@ -1002,5 +1002,6 @@
+     while (sep[index] != '\n' && sep[index] != '\r'
+            && sep[index] != '\0' && (index + 2 < (int)sizeof(buf))) {
+-        buf[index + 2] = sep[index++];
++        buf[index + 2] = sep[index];
++        index++;
+     }
+ 
+--- kiltdown/selectme.cc	2001-05-13 23:25:23.000000000 -0400
++++ kiltdown/selectme.cc	2008-05-21 22:55:50.000000000 -0400
+@@ -29,11 +29,11 @@
+ 
+   public:
+-    ListBoxTextEx(QListBox *a, const QString &b, unsigned int c)
++    ListBoxTextEx(QListBox *a, const QString &b, void *c)
+         : QListBoxText(a, b, 0), itemData(c) { }
+     
+-    unsigned int getItemData() { return this->itemData; }
++    void * getItemData() { return this->itemData; }
+ 
+   private:
+-    const unsigned int itemData;
++    void *itemData;
+ };
+ 
+@@ -79,5 +79,5 @@
+  * Parameters:
+  *      const char *            - [in]  item.
+- *      unsigned int            - [in]  item data.
++ *      void *            - [in]  item data.
+  *
+  * Output:
+@@ -87,5 +87,5 @@
+ (
+     const char *item,
+-    unsigned int itemData
++    void *itemData
+ )
+ {
+@@ -169,5 +169,5 @@
+ ERRCODE SelectMeDialog::getSelectedItems
+ (
+-    LinkList<unsigned int> & results
++    LinkList<void *> & results
+ )
+ {
+--- kiltdown/selectme.h	2001-05-13 23:25:23.000000000 -0400
++++ kiltdown/selectme.h	2008-05-21 22:56:51.000000000 -0400
+@@ -41,6 +41,6 @@
+      */
+     ERRCODE initializeUI(const char *title, const char *caption, bool multi = true);
+-    ERRCODE addItem(const char *item, unsigned int itemData);
+-    ERRCODE getSelectedItems(LinkList<unsigned int> &);
++    ERRCODE addItem(const char *item, void * itemData);
++    ERRCODE getSelectedItems(LinkList<void *> &);
+     void    selectAll();
+ 
+--- kiltdown/template.cc	2001-05-13 23:25:23.000000000 -0400
++++ kiltdown/template.cc	2008-05-21 23:41:20.000000000 -0400
+@@ -30,5 +30,5 @@
+ template class LinkList<QPopupMenu *>;
+ template class LinkList<MailFolder *>;
+-template class LinkList<unsigned int>;
++template class LinkList<void *>;
+ template class LinkList<const char **>;
+ template class LinkList<ISubsystem *>;
+--- include/kmaillist.h	2001-05-13 23:25:23.000000000 -0400
++++ include/kmaillist.h	2008-05-22 00:10:06.000000000 -0400
+@@ -75,6 +75,6 @@
+     ColumnWidth type;
+     ColumnSorting sort;
+-    unsigned int itemData;
+-    int (*sortfn)(int, unsigned int, KMailListItem *, KMailListItem *);
++    void * itemData;
++    int (*sortfn)(int, void *, KMailListItem *, KMailListItem *);
+ };
+ 
+@@ -99,5 +99,5 @@
+     int ccolumns;
+     bool boldEntry;                         // should all the text be bolded?
+-    unsigned int itemData;                  // whatever you want.
++    void * itemData;                  // whatever you want.
+ };
+ 
+@@ -178,5 +178,5 @@
+      * just yet.
+      */
+-    ERRCODE getSelectedRows(LinkList<unsigned int> &);
++    ERRCODE getSelectedRows(LinkList<void *> &);
+ 
+     /**
+@@ -191,5 +191,5 @@
+      * other identifiers.
+      */
+-    ERRCODE removeRows(int count, unsigned int *itemDataArray);
++    ERRCODE removeRows(int count, void * *itemDataArray);
+ 
+     /**
+@@ -203,5 +203,5 @@
+      * Given an identifier for a row, select it.
+      */
+-    ERRCODE selectRowFromItemData(unsigned int);
++    ERRCODE selectRowFromItemData(void *);
+ 
+     /**
+@@ -216,5 +216,5 @@
+      * the columns.
+      */
+-    ERRCODE updateRowFromItemData(unsigned int, KMailListItem *rowData);
++    ERRCODE updateRowFromItemData(void *, KMailListItem *rowData);
+ 
+     /**
+@@ -223,6 +223,6 @@
+      * NULL if the item is no longer in the list, or at the end/beginning.
+      */
+-    KMailListItem *nextItem(unsigned int);
+-    KMailListItem *previousItem(unsigned int);
++    KMailListItem *nextItem(void *);
++    KMailListItem *previousItem(void *);
+ 
+     /**
