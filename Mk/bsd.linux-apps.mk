@@ -70,7 +70,7 @@ _LINUX_APPS_ALL+=	_LINUX_26_APPS
 
 # Let's check if components from USE_LINUX_APPS exist at _LINUX_26_APPS for LINUX_DIST_SUFFIX:=""
 .  if ${LINUX_DIST_SUFFIX}==""
-.    for component in ${_LINUX_26_APPS}
+.    for component in ${USE_LINUX_APPS}
 .      if ${_LINUX_26_APPS:M${component}}!=""
 IGNORE=	bsd.linux-apps.mk test failed: The component ${component} can be used with at least linux_base-f8
 .      endif
