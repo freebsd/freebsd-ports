@@ -1,5 +1,6 @@
 bin/a2x
 bin/asciidoc
+bin/asciidoc.py
 etc/asciidoc/asciidoc.conf
 etc/asciidoc/dblatex/asciidoc-dblatex.sty
 etc/asciidoc/dblatex/asciidoc-dblatex.xsl

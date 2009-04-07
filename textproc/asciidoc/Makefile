@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asciidoc
-PORTVERSION=	8.3.5
+PORTVERSION=	8.4.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.methods.co.nz/asciidoc/ \
 		SF

@@ -1,16 +1,17 @@
---- Makefile.in.orig	2008-12-31 07:33:56.000000000 +0300
-+++ Makefile.in	2009-01-15 20:48:23.000000000 +0300
-@@ -4,9 +4,6 @@
+--- Makefile.in.orig	2009-03-21 16:33:53.974304216 +0100
++++ Makefile.in	2009-03-21 16:35:21.188379366 +0100
+@@ -4,10 +4,6 @@
  
  .NOTPARALLEL:
  
 -INSTALL = @INSTALL@
 -INSTALL_PROG = @INSTALL_PROGRAM@
 -INSTALL_DATA = @INSTALL_DATA@
- 
+-
  SED = @SED@
  
-@@ -90,7 +87,7 @@
+ prefix = @prefix@
+@@ -90,7 +86,7 @@
  	$(INSTALL) -d $(DESTDIR)/$($@)
  
  $(PROGTARGETS): % : %dir
@@ -19,12 +20,12 @@
  
  $(DATATARGETS): % : %dir
  	$(INSTALL_DATA) $($@) $(DESTDIR)/$($<)/
-@@ -147,7 +144,7 @@
+@@ -147,7 +143,7 @@
  
  build: fixconfpath
  
--install: $(PROGTARGETS) $(DATATARGETS) renameprog install-vim
-+install: $(PROGTARGETS) $(DATATARGETS) renameprog
+-install: $(PROGTARGETS) $(DATATARGETS) progsymlink install-vim
++install: $(PROGTARGETS) $(DATATARGETS) progsymlink
  
  uninstall: uninstall-vim
  	rm -f $(DESTDIR)/$(progdir)/asciidoc
