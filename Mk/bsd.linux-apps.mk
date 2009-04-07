@@ -207,7 +207,7 @@ libglu_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-libGLU
 # no libidn_FILE
 libidn_f8_FILE=		${LINUXBASE}/usr/lib/libidn.so.11
 libidn_DETECT=		${libidn${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
-libidn_PORT=		${PORTSDIR}/dns/linux${LINUX_DIST_SUFFIX}-libid
+libidn_PORT=		${PORTSDIR}/dns/linux${LINUX_DIST_SUFFIX}-libidn
 
 libmng_FILE=		${LINUXBASE}/usr/lib/libmng.so.1.0.0
 libmng_f8_FILE=		${libmng_FILE}
