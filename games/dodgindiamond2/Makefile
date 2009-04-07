@@ -7,7 +7,7 @@
 
 PORTNAME=		dodgindiamond2
 PORTVERSION=		0.2.2
-PORTREVISION=	2
+PORTREVISION=		2
 CATEGORIES=		games
 MASTER_SITES=		http://www.usebox.net/jjm/dd2/releases/
 DISTNAME=		dd2-${PORTVERSION}
@@ -24,7 +24,8 @@ CONFIGURE_ARGS=		--localstatedir=/var/games
 post-patch:
 	@${REINPLACE_CMD} -e 's|COPYING||g' ${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|^docs_DATA = .*|docs_DATA =|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} '/install-data-am:/s/install-docsDATA//' \
+		${WRKSRC}/Makefile.in
 .endif
 
 post-install:
