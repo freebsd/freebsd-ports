@@ -21,12 +21,14 @@ COMMENT=	A flexible Ruby profiler
 
 USE_RUBY=	yes
 
-NO_BUILD=       yes
+NO_BUILD=	yes
 
 do-install:
-	${MKDIR} ${PORTDOCS}${RUBY_DOCDIR}/rbprof
+.ifndef NOPORTDOCS
+	@${MKDIR} ${PORTDOCS}${RUBY_DOCDIR}/rbprof
 	${INSTALL_DATA} ${WRKSRC}/README ${PORTDOCS}${RUBY_DOCDIR}/rbprof/
 	${INSTALL_DATA} ${WRKSRC}/TODO ${PORTDOCS}${RUBY_DOCDIR}/rbprof/
+.endif
 	${RUBY} -p -i -e 'gsub(/\r\n/, "\n")' ${WRKSRC}/aspects/profiler/lib/rbprof.rb
 	${RUBY} -p -i -e 'gsub(/\r\n/, "\n")' ${WRKSRC}/aspects/profiler/lib/trap_method_definitions.rb
 	${INSTALL_DATA} ${WRKSRC}/aspects/profiler/lib/rbprof.rb ${RUBY_SITELIBDIR}/
