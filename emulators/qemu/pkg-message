@@ -124,6 +124,8 @@ been experimental and you should use raw images if you want reliability;
 raw is also usually faster.)  You should be able to migrate existing images
 to raw using qemu-img(1)'s convert function; raw doesn't support advanced
 features like snapshots tho.
+[an important qcow2 bugfix has been committed in the meantime so this
+_might_ be less of an issue now.]
 - (also not FreeBSD-specific:)  It is recommended to pass raw images using
 the new -drive syntax, specifying format=raw explicitly in order to avoid
 malicious guests being able to exploit the format autodetection thats
