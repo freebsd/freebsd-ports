@@ -142,5 +142,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/EXAMPLEDIR/d' ${WRKSRC}/etc/Makefile
 	${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -E \
 		-e 's#-release \$$\(SQLR_VERSION\)##g;'
+.ifdef NOPORTDOCS
+	 @${REINPLACE_CMD} '/$$(MAKE) -C doc/d' ${WRKSRC}/Makefile
+.endif
 
 .include <bsd.port.post.mk>
