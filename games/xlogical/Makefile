@@ -23,10 +23,12 @@ GNU_CONFIGURE=	yes
 
 post-extract:
 	${CHMOD} 755 ${WRKSRC}/missing
+	${RM} ${WRKSRC}/LICENSE
 
 post-install:
+.ifndef NOPORTDOCS
 	${MKDIR} ${DOCSDIR}
-	${RM} ${WRKSRC}/LICENSE
 	${CP} ${WRKSRC}/[A-Z][A-Z]* ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

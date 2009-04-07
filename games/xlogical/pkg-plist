@@ -161,7 +161,7 @@ bin/xlogical
 var/xlogical/xlogical.scores
 @dirrm var/xlogical
 @dirrmtry var
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/music
 @dirrm %%DATADIR%%/sound
