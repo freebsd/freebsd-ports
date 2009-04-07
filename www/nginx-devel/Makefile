@@ -179,6 +179,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_MODULE
 .if defined(WITH_HTTP_UPSTREAM_FAIR)
 NGINX_UPSTREAM_FAIR_VERSION=	20081012
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:upstreamfair/}
+MASTER_SITE_SUBDIR+=	osa/:upstreamfair
 DISTFILES+=	nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}.tar.gz:upstreamfair
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}
 .endif
