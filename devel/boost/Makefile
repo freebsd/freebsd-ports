@@ -6,10 +6,9 @@
 # $FreeBSD$
 
 PORTNAME=	boost
-PORTVERSION=	1.34.1
+PORTVERSION=	1.37.0
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=${PORTNAME}
+MASTER_SITES=	SOURCEFORGE
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	churanov.port.maintainer@gmail.com
@@ -37,9 +36,12 @@ OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
 		OPTIMIZED_CFLAGS "Enable -O3 optimization"	off
 
 UNIQ=		/usr/bin/uniq
-BOOST_LIBS=	date_time filesystem graph iostreams prg_exec_monitor\
-		program_options regex serialization signals\
-		unit_test_framework wave wserialization
+BOOST_LIBS=	date_time filesystem graph iostreams \
+		math_c99 math_c99f math_tr1 math_tr1f \
+		prg_exec_monitor program_options regex \
+		serialization signals system unit_test_framework \
+		wave wserialization
+
 BOOST_SHARED_LIB_VER=	4
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -63,21 +65,22 @@ WITH_PYTHON=	IMPLIED_BY_PYSTE
 #
 .if defined(WITH_PYTHON)
 PKGNAMESUFFIX=	-python
-PLIST_SUB+=	BOOST_PYTHON=""
-MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
-		PYTHON_VERSION="${PYTHON_VERSION}"\
-		PYTHON_INCLUDES="${PYTHON_INCLUDEDIR}"\
+PLIST_SUB+=	BOOST_PYTHON="" \
+		PYTHON_VER=${PYTHON_VER}
+MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}" \
+		PYTHON_VERSION="${PYTHON_VERSION}" \
+		PYTHON_INCLUDES="${PYTHON_INCLUDEDIR}" \
 		PYTHON_LIB_PATH="${PYTHON_LIBDIR}"
 BOOST_LIBS+=	python
 
-.if defined(WITH_PYSTE)
+. if defined(WITH_PYSTE)
 RUN_DEPENDS+=	gccxml:${PORTSDIR}/devel/gccxml \
 		${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
 PLIST_SUB+=	BOOST_PYSTE=""
-.else
+. else
 PLIST_SUB+=	BOOST_PYSTE="@comment "
-.endif
+. endif
 .else
 PLIST_SUB+=	BOOST_PYTHON="@comment "
 PLIST_SUB+=	BOOST_PYSTE="@comment "
@@ -128,6 +131,10 @@ BJAM=		${WRKSRC}/tools/jam/src/bin.freebsdsparc/bjam
 BJAM=		${WRKSRC}/tools/jam/src/bin.freebsdia64/bjam
 .elif ${ARCH} == powerpc
 BJAM=		${WRKSRC}/tools/jam/src/bin.freebsdppc/bjam
+.elif ${ARCH} == i386
+BJAM=		${WRKSRC}/tools/jam/src/bin.freebsdx86/bjam
+.elif ${ARCH} == amd64
+BJAM=		${WRKSRC}/tools/jam/src/bin.freebsdx86_64/bjam
 .else
 BJAM=		${WRKSRC}/tools/jam/src/bin.freebsd/bjam
 .endif
@@ -170,14 +177,14 @@ post-patch:
 
 # Do the right thing(tm) for pthread support and respect CXX
 	@${REINPLACE_CMD}\
-		-e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|'\
-		-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|'\
-		-e 's|%%CXX%%|${CXX}|'\
-		-e 's|%%CXXFLAGS%%|${CXXFLAGS}|'\
+		-e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|' \
+		-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
+		-e 's|%%CXX%%|${CXX}|' \
+		-e 's|%%CXXFLAGS%%|${CXXFLAGS}|' \
 	${WRKSRC}/tools/build/v2/tools/gcc.jam
 
 	@${REINPLACE_CMD}\
-		-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:S/-//}|'\
+		-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:S/-//}|' \
 	${WRKSRC}/tools/build/v2/tools/python.jam
 
 post-configure:
@@ -194,12 +201,12 @@ do-build:
 
 # build the library
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_OPTIONS} --prefix=${PREFIX}\
+		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_OPTIONS} --prefix=${PREFIX} \
 		--toolset=${BOOST_TOOLS}
 
 # build bgl-viz library
 	cd ${WRKSRC}/libs/graph/build && \
-		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_OPTIONS} --prefix=${PREFIX}\
+		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_OPTIONS} --prefix=${PREFIX} \
 		--toolset=${BOOST_TOOLS}
 
 # build random device code
@@ -220,7 +227,7 @@ do-install:
 
 # Install libraries
 	${MKDIR} ${PREFIX}/lib
-	${FIND} ${WRKSRC}/bin.v2/libs -type f -name "*.a"\
+	${FIND} ${WRKSRC}/bin.v2/libs -type f -name "*.a" \
 		-exec ${INSTALL_DATA} \{\} ${PREFIX}/lib \;
 
 	${FIND} ${WRKSRC}/bin.v2/libs -type f \
@@ -237,11 +244,11 @@ do-install:
 # Install headers
 	${MKDIR} ${PREFIX}/include
 	cd ${WRKSRC} && \
-	${FIND} boost -type d -a \! -name "*.orig"\
+	${FIND} boost -type d -a \! -name "*.orig" \
 		-exec ${MKDIR} ${PREFIX}/include/\{\} \;
 
 	cd ${WRKSRC} && \
-	${FIND} boost -type f -a \! -name "*.orig"\
+	${FIND} boost -type f -a \! -name "*.orig" \
 		-exec ${INSTALL_DATA} \{\} ${PREFIX}/include/\{\} \;
 
 # Install pyste, the Boost.Python code generator
@@ -262,16 +269,16 @@ do-install:
 	${FIND} ${WRKSRC} -type f -exec ${CHMOD} 0444 {} \;
 	${FIND} ${WRKSRC} -type d -exec ${CHMOD} 0755 {} \;
 	${FIND} ${WRKSRC} -name ".cvsignore" -delete
-	cd ${WRKSRC} &&\
-	${FIND} . -name "*.htm" -o -name "*.html"  -o -name "*.css"\
-		-o -name "*.jp*g" -o -name "*.png" -o -name "*.gif"\
+	cd ${WRKSRC} && \
+	${FIND} . -name "*.htm" -o -name "*.html"  -o -name "*.css" \
+		-o -name "*.jp*g" -o -name "*.png" -o -name "*.gif" \
 		| ${TAR} cTf - - | ${TAR} xUCf ${DOCSDIR} -
 
-	cd ${WRKSRC}/libs &&\
-	${FIND} . -name "example" -o -name "examples" -o -name "*example*.cpp"\
-		-o -name "*example*.c" -o -name "*example*.hpp" | ${UNIQ} |\
+	cd ${WRKSRC}/libs && \
+	${FIND} . -name "example" -o -name "examples" -o -name "*example*.cpp" \
+		-o -name "*example*.c" -o -name "*example*.hpp" | ${UNIQ} | \
 		${GREP} -v "assign/test" | ${GREP} -v "iterator/test" | \
-		${GREP} -v "range/test" |\
+		${GREP} -v "range/test" | \
 	${TAR} cTf - - | ${TAR} xUCf ${DOCSDIR}/libs -
 .endif
 
