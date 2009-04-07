@@ -1,16 +1,16 @@
 # ex:ts=8
-# Ports collection makefile for:	egcs
-# Date created:				9 Jan 1998
-# Whom:					John Polstra <jdp@polstra.com>
+# Ports collection makefile for:	gcc45
+# Date created:				2009-04-05
+# Whom:					Gerald Pfeifer <gerald@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.4.0
-PORTREVISION=	20090331
+PORTVERSION=	4.5.0
+PORTREVISION=	20090402
 CATEGORIES=	lang java
-VERSIONSTRING=	4.4-${PORTREVISION}
+VERSIONSTRING=	4.5-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
@@ -19,7 +19,7 @@ DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX}
 
 MAINTAINER=	gerald@FreeBSD.org
-COMMENT=	GNU Compiler Collection 4.4
+COMMENT=	GNU Compiler Collection 4.5
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		mpfr.3:${PORTSDIR}/math/mpfr
@@ -29,7 +29,7 @@ DISTFILES+=	gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
 
-SUFFIX=		44
+SUFFIX=		45
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
 NOT_FOR_ARCHS=	alpha ia64 powerpc
 USE_BISON=	build
@@ -42,7 +42,6 @@ WANT_GNOME=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
-NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 

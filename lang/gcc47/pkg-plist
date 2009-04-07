@@ -34,7 +34,7 @@ info/gcc%%SUFFIX%%/dir
 %%JAVA%%bin/jcf-dump%%SUFFIX%%
 %%JAVA%%bin/rebuild-gcj-db%%SUFFIX%%
 %%JAVA%%bin/%%GNU_HOST%%-gcj%%SUFFIX%%
-%%JAVA%%libdata/pkgconfig/libgcj-4.4.pc
+%%JAVA%%libdata/pkgconfig/libgcj-4.5.pc
 %%JAVA%%share/java/libgcj-%%GCC_VER%%.jar
 %%JAVA%%share/java/libgcj-tools-%%GCC_VER%%.jar
 %%JAVA%%share/python/aotcompile.py
