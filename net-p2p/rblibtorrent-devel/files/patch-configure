@@ -1,0 +1,14 @@
+--- configure.orig	2009-02-18 11:42:51.000000000 +0300
++++ configure	2009-03-24 17:47:12.000000000 +0300
+@@ -21727,11 +21727,6 @@
+     	LDFLAGS="$LDFLAGS_SAVED"
+ 	fi
+ 
+-      if test -z "$BOOST_SYSTEM_LIB"; then
+-      { { echo "$as_me:$LINENO: error: unable to find Boost.System library, currently this is required." >&5
+-echo "$as_me: error: unable to find Boost.System library, currently this is required." >&2;}
+-   { (exit 1); exit 1; }; }
+-   fi
+ 
+ 
+ 
