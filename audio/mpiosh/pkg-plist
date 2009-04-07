@@ -1,8 +1,6 @@
 bin/mpiologo
 bin/mpiosh
 etc/mpio/mpioshrc
-lib/libmpio.a
-lib/libmpio.la
 lib/libmpio.so
 lib/libmpio.so.1
 include/mpio/defs.h

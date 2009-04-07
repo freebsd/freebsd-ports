@@ -1,0 +1,10 @@
+--- libmpio/Makefile.am.orig	2009-04-08 01:38:43.000000000 +0400
++++ libmpio/Makefile.am	2009-04-08 01:38:48.000000000 +0400
+@@ -1,6 +1,6 @@
+ INCLUDES=@MPLIB_INCLUDE@ 
+ AM_CFLAGS=@MPLIB_CFLAGS@ @USB_CFLAGS@
+-AM_LDFLAGS=-version-info 1:0:0 @USB_LIBS@
++AM_LDFLAGS=-version-info 1 @USB_LIBS@
+ 
+ lib_LTLIBRARIES=libmpio.la 
+ 

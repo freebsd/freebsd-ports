@@ -1,0 +1,18 @@
+--- mpiosh/Makefile.am.orig	2009-04-08 01:39:27.000000000 +0400
++++ mpiosh/Makefile.am	2009-04-08 01:39:41.000000000 +0400
+@@ -12,7 +12,7 @@
+ 
+ AM_CFLAGS=-DSYSCONFDIR=\"@sysconfdir@\"
+ 
+-mpiosh_LDADD=../libmpio/libmpio.la -lreadline -lncurses
++mpiosh_LDADD=../libmpio/libmpio.la -lreadline -lncurses -liconv
+ 
+ noinst_HEADERS = mpiosh.h \
+ 		callback.h \
+@@ -20,4 +20,4 @@
+ 		command.h \
+ 		global.h \
+ 		cfgio.h \
+-		config.h
+\ No newline at end of file
++		config.h
