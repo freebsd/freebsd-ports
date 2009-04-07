@@ -23,7 +23,6 @@ MAN3=		ExtUtils::ParseXS.3
 
 .if ${PERL_LEVEL} < 500903
 BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
-RUN_DEPENDS+=	${BUILD_DEPENDS}
 .endif
 
 .include <bsd.port.post.mk>
