@@ -9,7 +9,7 @@ PORTNAME=	fmsx
 PORTVERSION=	3.5.1
 PORTREVISION=	2
 CATEGORIES=	emulators
-MASTER_SITES=	ahttp://www.mavetju.org/download/adopted/:code \
+MASTER_SITES=	http://www.mavetju.org/download/adopted/:code \
 		http://fms.komkon.org/fMSX/:code \
 		http://fms.komkon.org/fMSX/src/:rom
 DISTFILES=	fMSX351.zip:code \
@@ -40,8 +40,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' \
 		${WRKSRC}/fMSX/Unix/Makefile \
 		${WRKSRC}/EMULib/Rules.Unix
-
-#post-patch:
 .ifdef(WITH_BPP32) || defined(PACKAGE_BUILDING) || defined(BATCH)
 	${REINPLACE_CMD} -e 's/BPP16/BPP32/' ${WRKSRC}/fMSX/Unix/Makefile
 .endif
