@@ -7,7 +7,7 @@
 
 PORTNAME=	awesome2
 PORTVERSION=	2.3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 DISTNAME=	awesome-${PORTVERSION}
