@@ -6,6 +6,7 @@
 %%RUBY_SITELIBDIR%%/liquid/drop.rb
 %%RUBY_SITELIBDIR%%/liquid/errors.rb
 %%RUBY_SITELIBDIR%%/liquid/extensions.rb
+%%RUBY_SITELIBDIR%%/liquid/extras/liquid_view.rb
 %%RUBY_SITELIBDIR%%/liquid/file_system.rb
 %%RUBY_SITELIBDIR%%/liquid/htmltags.rb
 %%RUBY_SITELIBDIR%%/liquid/module_ex.rb
@@ -24,15 +25,11 @@
 %%RUBY_SITELIBDIR%%/liquid/tags/unless.rb
 %%RUBY_SITELIBDIR%%/liquid/template.rb
 %%RUBY_SITELIBDIR%%/liquid/variable.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/server/example_servlet.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/server/liquid_servlet.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/server/server.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/server/templates/index.liquid
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/server/templates/products.liquid
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/server/templates
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/server
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%RUBY_EXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/CHANGELOG
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/History.txt
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.txt
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
 @dirrm %%RUBY_SITELIBDIR%%/liquid/tags
 @dirrm %%RUBY_SITELIBDIR%%/liquid/extras
 @dirrm %%RUBY_SITELIBDIR%%/liquid
