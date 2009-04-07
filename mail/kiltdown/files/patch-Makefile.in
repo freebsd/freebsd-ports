@@ -1,5 +1,12 @@
---- kiltdown/Makefile.in.orig	Mon May 14 05:25:23 2001
+--- kiltdown/Makefile.in	Mon May 14 05:25:23 2001
 +++ kiltdown/Makefile.in	Thu Dec 27 06:20:25 2001
+@@ -13,5 +61,5 @@
+ ###################################################################
+ #
+-.SUFFIXES: .cc .c .o .ui .hmoc .ccmoc
++.SUFFIXES: .cc .c .o .dlg.ui .hmoc .ccmoc .dlg.h dlg.cc
+ 
+ 
 @@ -21,7 +21,7 @@
  ###################################################################
  #
@@ -9,12 +16,27 @@
  UIC=$(QTBIN)uic
  RESCOMP=../tools/rescomp
  DLGSTRIP=../tools/dlgstrip
-@@ -29,7 +29,7 @@
- CFLAGSBASE=-DQT_THREAD_SUPPORT $(OPT_DEFINES) $(SYS_CFLAGS) $(ALLINCLUDES) -Wall
+@@ -27,8 +75,8 @@
+ DLGSTRIP=../tools/dlgstrip
+ ALLINCLUDES=$(SYS_INCLUDE) $(USER_INC) -I$(DBINC) -I$(QTINC) -I$(X11INCLUDE) -I../include
+-CFLAGSBASE=-DQT_THREAD_SUPPORT $(OPT_DEFINES) $(SYS_CFLAGS) $(ALLINCLUDES) -Wall
++CFLAGSBASE=-DQT_THREAD_SUPPORT $(OPT_DEFINES) $(SYS_CFLAGS) $(ALLINCLUDES) -Wall -Wno-uninitialized -Werror
  CFLAGS=$(CFLAGSBASE) -fno-implicit-templates
  LDFLAGS= $(SYS_LDFLAGS) -L$(QTLIB) -L$(DBLIB) -L$(X11LIB) $(USER_LPATH)
 -LIBS=-lSM -lX11 -lXext -lICE -lqt-mt -ldb $(JPEGLIB) $(SYS_LIBS) $(USER_LIBS)
 +LIBS=-lSM -lX11 -lXext -lICE -lqt-mt -ldb3 $(JPEGLIB) $(SYS_LIBS) $(USER_LIBS)
  
  #
- ###################################################################
+@@ -188,7 +236,9 @@
+ 	$(CXX) -c $(CFLAGS) $<
+ 
+-.ui.cc:
+-	$(UIC) -o $*.h $<
+-	$(UIC) -tr "" -i $*.h -o $*.cc $<
++%.dlg.h: %.dlg.ui
++	$(UIC) -o $*.dlg.h $<
++
++%.dlg.cc: %.dlg.h %.dlg.ui
++	$(UIC) -tr "" -i $*.dlg.h -o $*.dlg.cc $*.dlg.ui
+ 
+ .hmoc.h:
