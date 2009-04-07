@@ -517,6 +517,7 @@
     SUBDIR += p5-Net-GrowlClient
     SUBDIR += p5-Net-HL7
     SUBDIR += p5-Net-Hiveminder
+    SUBDIR += p5-Net-INET6Glue
     SUBDIR += p5-Net-IPTrie
     SUBDIR += p5-Net-Ident
     SUBDIR += p5-Net-Interface

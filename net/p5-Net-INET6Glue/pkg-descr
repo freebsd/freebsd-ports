@@ -1,0 +1,12 @@
+Net::INET6Glue is a collection of modules to make common modules IPv6
+ready by hotpatching them.
+
+Unfortunatly the current state of IPv6 support in perl is that no IPv6
+support is in the core and that a lot of important modules (like
+Net::FTP, Net::SMTP, LWP,...) do not support IPv6 even if the modules
+for IPv6 sockets Socket6, IO::Socket::INET6 are available.
+
+This module tries to mitigate this by hotpatching.
+
+Author: Hajimu UMEMOTO <ume@FreeBSD.org>
+WWW: http://search.cpan.org/dist/Net-INET6Glue/
