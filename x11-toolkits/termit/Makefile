@@ -33,18 +33,13 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-PLIST=		${WRKDIR}/PLIST.DYN
-
 do-build:
 	@(cd ${BUILD_WRKSRC}; \
 	cmake ${CMAKE_ARGS} .; \
 	${MAKE})
 
-pre-install:
-	@${CP} ${PKGDIR}/pkg-plist ${WRKDIR}/PLIST.DYN
-.if !defined(NOPORSDOCS)
-	@${CAT} ${PKGDIR}/pkg-plist.DOC >> ${WRKDIR}/PLIST.DYN
-.else
+post-patch:
+.ifdef NOPORTDOCS
 	@${REINPLACE_CMD} -e '1,3 d' ${WRKSRC}/doc/CMakeLists.txt
 .endif
 

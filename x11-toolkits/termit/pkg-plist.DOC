@@ -1,4 +1,0 @@
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/termit.example
-%%PORTDOCS%%%%DOCSDIR%%/session.example
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
