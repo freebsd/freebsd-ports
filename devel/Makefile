@@ -2555,6 +2555,7 @@
     SUBDIR += rubygem-analogger
     SUBDIR += rubygem-arrayfields
     SUBDIR += rubygem-builder
+    SUBDIR += rubygem-chronic
     SUBDIR += rubygem-columnize
     SUBDIR += rubygem-crack
     SUBDIR += rubygem-daemons
