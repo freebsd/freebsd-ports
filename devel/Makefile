@@ -2569,6 +2569,7 @@
     SUBDIR += rubygem-fattr
     SUBDIR += rubygem-gdata
     SUBDIR += rubygem-gem_plugin
+    SUBDIR += rubygem-georuby
     SUBDIR += rubygem-git
     SUBDIR += rubygem-grit
     SUBDIR += rubygem-highline
