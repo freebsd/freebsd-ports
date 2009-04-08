@@ -7,6 +7,7 @@
 
 PORTNAME=	xkeyboard-config
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xlibs.freedesktop.org/xkbdesc/
 DISTNAME=	xkeyboard-config-${PORTVERSION}
@@ -39,7 +40,7 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' \
+	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' -e 's|==|=|g' \
 		${WRKSRC}/rules/merge.sh
 
 post-install:
