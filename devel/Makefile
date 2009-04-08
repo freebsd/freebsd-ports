@@ -2610,6 +2610,7 @@
     SUBDIR += rubygem-ruport
     SUBDIR += rubygem-sequel
     SUBDIR += rubygem-sexp_processor
+    SUBDIR += rubygem-soap4r
     SUBDIR += rubygem-stream
     SUBDIR += rubygem-streetaddress
     SUBDIR += rubygem-templater
