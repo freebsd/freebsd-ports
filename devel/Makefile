@@ -2609,6 +2609,7 @@
     SUBDIR += rubygem-sequel
     SUBDIR += rubygem-sexp_processor
     SUBDIR += rubygem-stream
+    SUBDIR += rubygem-streetaddress
     SUBDIR += rubygem-templater
     SUBDIR += rubygem-transactionsimple
     SUBDIR += rubygem-trollop
