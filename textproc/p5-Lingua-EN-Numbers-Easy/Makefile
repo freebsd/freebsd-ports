@@ -6,20 +6,16 @@
 #
 
 PORTNAME=	Lingua-EN-Numbers-Easy
-PORTVERSION=	1.2
+PORTVERSION=	2009040201
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Lingua_EN_Numbers_Easy-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl module providing hash access to Lingua::EN::Numbers objects
 
-BUILD_DEPENDS=	${SITE_PERL}/Lingua/EN/Numbers.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Numbers
-RUN_DEPENDS=	${SITE_PERL}/Lingua/EN/Numbers.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Numbers
-
-WRKSRC=		${WRKDIR}/Easy-${PORTVERSION}
+RUN_DEPENDS=	p5-Lingua-EN-Numbers>=1.01:${PORTSDIR}/textproc/p5-Lingua-EN-Numbers
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
