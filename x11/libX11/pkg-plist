@@ -38,6 +38,9 @@ lib/X11/locale/el_GR.UTF-8/Compose
 lib/X11/locale/en_US.UTF-8/XI18N_OBJS
 lib/X11/locale/en_US.UTF-8/XLC_LOCALE
 lib/X11/locale/en_US.UTF-8/Compose
+lib/X11/locale/fi_FI.UTF-8/XI18N_OBJS
+lib/X11/locale/fi_FI.UTF-8/XLC_LOCALE
+lib/X11/locale/fi_FI.UTF-8/Compose
 lib/X11/locale/georgian-academy/XI18N_OBJS
 lib/X11/locale/georgian-academy/XLC_LOCALE
 lib/X11/locale/georgian-academy/Compose
@@ -149,6 +152,9 @@ lib/X11/locale/nokhchi-1/Compose
 lib/X11/locale/pt_BR.UTF-8/XI18N_OBJS
 lib/X11/locale/pt_BR.UTF-8/XLC_LOCALE
 lib/X11/locale/pt_BR.UTF-8/Compose
+lib/X11/locale/ru_RU.UTF-8/XI18N_OBJS
+lib/X11/locale/ru_RU.UTF-8/XLC_LOCALE
+lib/X11/locale/ru_RU.UTF-8/Compose
 lib/X11/locale/tatar-cyr/XI18N_OBJS
 lib/X11/locale/tatar-cyr/XLC_LOCALE
 lib/X11/locale/tatar-cyr/Compose
@@ -216,6 +222,7 @@ lib/X11/locale/compose.dir
 @dirrm lib/X11/locale/th_TH.UTF-8
 @dirrm lib/X11/locale/th_TH
 @dirrm lib/X11/locale/tatar-cyr
+@dirrm lib/X11/locale/ru_RU.UTF-8
 @dirrm lib/X11/locale/pt_BR.UTF-8
 @dirrm lib/X11/locale/nokhchi-1
 @dirrm lib/X11/locale/mulelao-1
@@ -253,6 +260,7 @@ lib/X11/locale/compose.dir
 @dirrm lib/X11/locale/ibm-cp1133
 @dirrm lib/X11/locale/georgian-ps
 @dirrm lib/X11/locale/georgian-academy
+@dirrm lib/X11/locale/fi_FI.UTF-8
 @dirrm lib/X11/locale/en_US.UTF-8
 @dirrm lib/X11/locale/el_GR.UTF-8
 @dirrm lib/X11/locale/C
