@@ -31,7 +31,7 @@ do-build:
 
 do-install:
 	@(cd ${WRKSRC} && ${APXS} -i -A -n ${MODULE_NAME:S/mod_//} ${MODULE_NAME}.la)
-.if !defined(NORPORTDOCS)
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
