@@ -7,6 +7,7 @@
 
 PORTNAME=	net-ssh-gateway
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	net-ssh
@@ -14,9 +15,10 @@ MASTER_SITE_SUBDIR=	net-ssh
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Establish Net::SSH connections through firewalls
 
-RUN_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/net-ssh-2.0.2.gemspec:${PORTSDIR}/security/rubygem-net-ssh
+RUN_DEPENDS=	rubygem-net-ssh>=2.0.0:${PORTSDIR}/security/rubygem-net-ssh
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
