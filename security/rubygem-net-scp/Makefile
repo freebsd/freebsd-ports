@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	net-scp
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	net-ssh
@@ -18,5 +18,6 @@ RUN_DEPENDS=	rubygem-net-ssh>=1.99.1:${PORTSDIR}/security/rubygem-net-ssh
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
