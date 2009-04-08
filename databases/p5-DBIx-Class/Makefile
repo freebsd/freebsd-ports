@@ -105,6 +105,6 @@ MAN3=	DBIx::Class.3 \
 	SQL::Translator::Producer::DBIx::Class::File.3
 
 post-extract:
-	@${PERL} -i.bak -ne 'print unless /^test_requires/' ${WRKSRC}/Makefile.PL
+	@${PERL} -i.bak -ne 'print unless /^(test_requires|auto_install)/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
