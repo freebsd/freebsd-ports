@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	Mon Dec 11 18:23:09 2006
-+++ doc/Makefile.in	Mon Dec 11 18:24:35 2006
+--- ./doc/Makefile.in.orig	2006-12-17 16:07:28.000000000 +0200
++++ ./doc/Makefile.in	2009-04-08 14:05:21.323301473 +0300
 @@ -159,12 +159,10 @@
  target_os = @target_os@
  target_vendor = @target_vendor@
@@ -15,7 +15,7 @@
  
  all: all-recursive
  
-@@ -475,8 +473,8 @@
+@@ -475,13 +473,9 @@
  
  install-data-hook:
  	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
@@ -24,5 +24,10 @@
 +	if [ ! -f $(DESTDIR)$(sysconfdir)/ngircd.conf.sample ]; then \
 +	  $(INSTALL) -m 600 -c $(srcdir)/sample-ngircd.conf $(DESTDIR)$(sysconfdir)/ngircd.conf.sample; \
  	 fi
- 	$(mkinstalldirs) $(DESTDIR)$(docdir)
- 	for f in $(documents); do \
+-	$(mkinstalldirs) $(DESTDIR)$(docdir)
+-	for f in $(documents); do \
+-	  $(INSTALL) -m 644 -c $(srcdir)/$$f $(DESTDIR)$(docdir)/; \
+-	 done
+ 
+ uninstall-hook:
+ 	rm -rf $(DESTDIR)$(docdir)
