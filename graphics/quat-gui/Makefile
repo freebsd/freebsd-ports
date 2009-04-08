@@ -46,6 +46,10 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's|^(install-data-am:).*$$|\1|' \
 		${WRKSRC}/Makefile.in
+.ifdef NOPORTDOCS
+	@${REINPLACE_CMD} '/install-data-am:/s/install-pkgdataDATA//' \
+		${WRKSRC}/doc/Makefile.in
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} -E -e \
