@@ -2559,6 +2559,7 @@
     SUBDIR += rubygem-columnize
     SUBDIR += rubygem-crack
     SUBDIR += rubygem-daemons
+    SUBDIR += rubygem-deeptest
     SUBDIR += rubygem-ditz
     SUBDIR += rubygem-eventmachine
     SUBDIR += rubygem-extlib
