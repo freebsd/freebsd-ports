@@ -746,3 +746,6 @@ clustalw-*		biology/clustalw	No commercial use
 nttcp-*			benchmark/nttcp		No commercial use
 TW-*.ttf		chinese/CNS11643-font	No redistribution or
 						commercial use is allowed
+festlex-ogi		audio/festlex-ogi	No commercial use
+festvox-abc		audio/festvox-abc	No commercial use
+festvox-hvs		audio/festvox-hvs	No commercial use

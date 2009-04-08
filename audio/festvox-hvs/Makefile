@@ -9,26 +9,32 @@
 
 PORTNAME=	festvox-hvs
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	audio accessibility spanish
 MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
 DISTNAME=	voice_hvs_di-2.1
-DIST_SUBDIR=	festival
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Mexican Spanish female voice for Festival
 
-RESTRICTED=	no-commercial-use
-
-RUN_DEPENDS=	${PORTSDIR}/audio/festival+OGI \
-		${PORTSDIR}/audio/festlex-poslex \
-		${PORTSDIR}/audio/festlex-ogi \
-		${PORTSDIR}/audio/festogi-spanish
+RUN_DEPENDS=	festival+OGI:${PORTSDIR}/audio/festival+OGI \
+		festlex-poslex:${PORTSDIR}/audio/festlex-poslex \
+		festlex-ogi:${PORTSDIR}/audio/festlex-ogi \
+		festogi-spanish:${PORTSDIR}/audio/festogi-spanish
 
 WRKSRC=		${WRKDIR}/festival
+
+RESTRICTED=	no-commercial-use
 
 NO_BUILD=	yes
 
 FHOME=		${PREFIX}/share/festival
+
+.include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+IGNORE= distfile can only be fetched if you accept the license. Go to https://www.cslu.ogi.edu/tts/download/data/voice_hvs_di-2.1.tar.gz and put ${DISTFILE} into ${DISTDIR}
+.endif
 
 post-extract:
 	@ ${CHMOD} -R a+r ${WRKSRC}
@@ -39,4 +45,4 @@ do-install:
 	${MKDIR} ${FHOME}
 	cd ${WRKSRC} && ${CP} -pPR * ${FHOME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
