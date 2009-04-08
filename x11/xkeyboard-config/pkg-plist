@@ -280,6 +280,7 @@ share/X11/xkb/symbols/keypad
 share/X11/xkb/symbols/level3
 share/X11/xkb/symbols/level5
 share/X11/xkb/symbols/srvr_ctrl
+share/X11/xkb/symbols/typo
 share/X11/xkb/symbols/eurosign
 share/X11/xkb/symbols.dir
 share/X11/xkb/types.dir
