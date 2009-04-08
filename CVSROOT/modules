@@ -3998,6 +3998,7 @@ geramik                         ports/x11-themes/geramik
 gerbv                           ports/cad/gerbv
 geronimo                        ports/www/geronimo
 gerris                          ports/science/gerris
+gervill                         ports/audio/gervill
 geta                            ports/dns/geta
 getbdf                          ports/x11-fonts/getbdf
 getdelta                        ports/sysutils/getdelta
@@ -6796,6 +6797,7 @@ kplayer                         ports/multimedia/kplayer
 kpogre                          ports/databases/kpogre
 kpopup                          ports/net-im/kpopup
 kports                          ports/ports-mgmt/kports
+kports-qt4                      ports/ports-mgmt/kports-qt4
 kpovmodeler                     ports/graphics/kpovmodeler
 kprof                           ports/devel/kprof
 kpsk                            ports/comms/kpsk
@@ -7789,14 +7791,18 @@ linux-f8-libg2c                 ports/lang/linux-f8-libg2c
 linux-f8-libglade               ports/devel/linux-f8-libglade
 linux-f8-libglade2              ports/devel/linux-f8-libglade2
 linux-f8-libglu                 ports/graphics/linux-f8-libGLU
+linux-f8-libidn                 ports/dns/linux-f8-libidn
 linux-f8-libmng                 ports/graphics/linux-f8-libmng
 linux-f8-libogg                 ports/audio/linux-f8-libogg
 linux-f8-libsigc++20            ports/devel/linux-f8-libsigc++20
+linux-f8-libssh2                ports/security/linux-f8-libssh2
 linux-f8-libtheora              ports/multimedia/linux-f8-libtheora
 linux-f8-libvorbis              ports/audio/linux-f8-libvorbis
 linux-f8-libxml                 ports/textproc/linux-f8-libxml
 linux-f8-libxml2                ports/textproc/linux-f8-libxml2
 linux-f8-mikmod                 ports/audio/linux-f8-mikmod
+linux-f8-nspr                   ports/devel/linux-f8-nspr
+linux-f8-nss                    ports/security/linux-f8-nss
 linux-f8-openal                 ports/audio/linux-f8-openal
 linux-f8-openmotif              ports/x11-toolkits/linux-f8-openmotif
 linux-f8-openssl                ports/security/linux-f8-openssl
@@ -7809,6 +7815,7 @@ linux-f8-scim-libs              ports/textproc/linux-f8-scim-libs
 linux-f8-sdl12                  ports/devel/linux-f8-sdl12
 linux-f8-sdl_image              ports/graphics/linux-f8-sdl_image
 linux-f8-sdl_mixer              ports/audio/linux-f8-sdl_mixer
+linux-f8-sqlite3                ports/databases/linux-f8-sqlite3
 linux-f8-tcl84                  ports/lang/linux-f8-tcl84
 linux-f8-tiff                   ports/graphics/linux-f8-tiff
 linux-f8-tk84                   ports/x11-toolkits/linux-f8-tk84
@@ -11943,6 +11950,7 @@ p5-Net-Hiveminder               ports/net/p5-Net-Hiveminder
 p5-Net-ICQ2000                  ports/net-im/p5-Net-ICQ2000
 p5-Net-IMAP-Simple              ports/mail/p5-Net-IMAP-Simple
 p5-Net-IMAP-Simple-SSL          ports/mail/p5-Net-IMAP-Simple-SSL
+p5-Net-INET6Glue                ports/net/p5-Net-INET6Glue
 p5-Net-IP                       ports/net-mgmt/p5-Net-IP
 p5-Net-IP-Match-Regexp          ports/net-mgmt/p5-Net-IP-Match-Regexp
 p5-Net-IP-Match-XS              ports/net-mgmt/p5-Net-IP-Match-XS
@@ -15351,6 +15359,7 @@ p5-net-icq2000                  ports/net-im/p5-Net-ICQ2000
 p5-net-ident                    ports/net/p5-Net-Ident
 p5-net-imap-simple              ports/mail/p5-Net-IMAP-Simple
 p5-net-imap-simple-ssl          ports/mail/p5-Net-IMAP-Simple-SSL
+p5-net-inet6glue                ports/net/p5-Net-INET6Glue
 p5-net-interface                ports/net/p5-Net-Interface
 p5-net-ip                       ports/net-mgmt/p5-Net-IP
 p5-net-ip-match-regexp          ports/net-mgmt/p5-Net-IP-Match-Regexp
