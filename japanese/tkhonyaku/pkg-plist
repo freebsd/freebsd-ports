@@ -1,7 +1,7 @@
-share/doc/tkhonyaku/tkhonyaku-readme
+%%PORTDOCS%%%%DOCSDIR%%/tkhonyaku-readme
 share/tkhonyaku/tkhonyaku.gif
 share/tkhonyaku/tkhonyaku.xpm
 share/tkhonyaku/colors.gif
 bin/tkhonyaku
-@dirrm share/doc/tkhonyaku
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/tkhonyaku
