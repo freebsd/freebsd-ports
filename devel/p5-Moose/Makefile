@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.73
+PORTVERSION=	0.74
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DR/DROLSKY
@@ -17,7 +17,7 @@ COMMENT=	A complete modern object system for Perl 5
 
 RUN_DEPENDS=	\
 	p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-	p5-Class-MOP>=0.79:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-Class-MOP>=0.81:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-List-MoreUtils>=0.12:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-Sub-Exporter>=0.972:${PORTSDIR}/devel/p5-Sub-Exporter \
 	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
@@ -31,6 +31,7 @@ MAN3=	Moose.3 \
 	Moose::Cookbook::Basics::Recipe1.3 \
 	Moose::Cookbook::Basics::Recipe10.3 \
 	Moose::Cookbook::Basics::Recipe11.3 \
+	Moose::Cookbook::Basics::Recipe12.3 \
 	Moose::Cookbook::Basics::Recipe2.3 \
 	Moose::Cookbook::Basics::Recipe3.3 \
 	Moose::Cookbook::Basics::Recipe4.3 \
@@ -48,6 +49,7 @@ MAN3=	Moose.3 \
 	Moose::Cookbook::Meta::Recipe3.3 \
 	Moose::Cookbook::Meta::Recipe4.3 \
 	Moose::Cookbook::Meta::Recipe5.3 \
+	Moose::Cookbook::Meta::Recipe6.3 \
 	Moose::Cookbook::Meta::Recipe7.3 \
 	Moose::Cookbook::Roles::Recipe1.3 \
 	Moose::Cookbook::Roles::Recipe2.3 \
