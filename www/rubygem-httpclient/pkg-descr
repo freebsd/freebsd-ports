@@ -1,0 +1,23 @@
+httpclient gives something like the functionality of libwww-perl (LWP) in Ruby. httpclient formerly known as http-access2.
+
+Features:
+
+    * methods like GET/HEAD/POST/* via HTTP/1.1.
+    * HTTPS(SSL), Cookies, proxy, authentication(Digest, NTLM, Basic), etc.
+    * asynchronous HTTP request, streaming HTTP request.
+    * by contrast with net/http in standard distribution;
+          o Cookies support
+          o MT-safe
+          o streaming POST (POST with File/IO)
+          o Digest auth
+          o Negotiate/NTLM auth for WWW-Authenticate (requires net/htlm module)
+          o NTLM auth for Proxy-Authenticate (requires win32/sspi module)
+          o extensible with filter interface
+          o you dont have to care HTTP/1.1 persistent connection (httpclient cares instead of you)
+    * Not supported now
+          o Cache
+          o Rather advanced HTTP/1.1 usage such as Range, deflate, etc. (of course you can set it in header by yourself)
+
+For more detail, see API document at dev.ctor.org/doc/httpclient/ 
+
+WWW:    http://raa.ruby-lang.org/project/httpclient/
