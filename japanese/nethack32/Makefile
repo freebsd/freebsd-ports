@@ -25,6 +25,12 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 
 NO_LATEST_LINK=	yes
 
+DOCSDIR=	${PREFIX}/share/doc/ja/nethack
+EXAMPLESDIR=	${PREFIX}/share/examples/ja/nethack
+.if !defined(NOPORTDOCS)
+SUB_FILES=	pkg-message
+.endif
+
 .include <bsd.port.pre.mk>
 
 USE_XORG=	xaw xpm
@@ -40,24 +46,26 @@ pre-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/win/X11/nh_icon.xpm ${PREFIX}/lib/jnethackdir
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ja/nethack
-	${INSTALL_MAN} ${WRKSRC}/doc/jGuidebook.txt ${PREFIX}/share/doc/ja/nethack
-	${INSTALL_MAN} ${FILESDIR}/README ${PREFIX}/share/doc/ja/nethack
-.for i in README.j ChangeLog.j INSTALL.j
-	${INSTALL_MAN} ${WRKSRC}/$i ${PREFIX}/share/doc/ja/nethack
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/win/X11/nethack.rc ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/win/X11/JNetHack.ad  ${EXAMPLESDIR}
+.for i in ibm nh10
+	@${INSTALL_DATA} ${WRKSRC}/win/X11/$i.bdf  ${EXAMPLESDIR}
+	@${LOCALBASE}/bin/bdftopcf  ${EXAMPLESDIR}/$i.bdf \
+		>  ${EXAMPLESDIR}/$i.pcf
+	@${RM}  ${EXAMPLESDIR}/$i.bdf
+	${GZIP_CMD}  ${EXAMPLESDIR}/$i.pcf
 .endfor
 .endif
-	${MKDIR} ${PREFIX}/share/examples/ja/nethack
-	${INSTALL_DATA} ${WRKSRC}/win/X11/nethack.rc ${PREFIX}/share/examples/ja/nethack
-	${INSTALL_DATA} ${WRKSRC}/win/X11/JNetHack.ad ${PREFIX}/share/examples/ja/nethack
-.for i in ibm nh10
-	${INSTALL_DATA} ${WRKSRC}/win/X11/$i.bdf ${PREFIX}/share/examples/ja/nethack
-	${LOCALBASE}/bin/bdftopcf ${PREFIX}/share/examples/ja/nethack/$i.bdf \
-		> ${PREFIX}/share/examples/ja/nethack/$i.pcf
-	${RM} ${PREFIX}/share/examples/ja/nethack/$i.bdf
-	${GZIP_CMD} ${PREFIX}/share/examples/ja/nethack/$i.pcf
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/jGuidebook.txt ${DOCSDIR}
+	${INSTALL_MAN} ${FILESDIR}/README ${DOCSDIR}
+.for i in README.j ChangeLog.j INSTALL.j
+	${INSTALL_MAN} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.post.mk>

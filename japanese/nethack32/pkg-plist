@@ -127,15 +127,15 @@ lib/jnethackdir/logfile
 lib/jnethackdir/perm
 lib/jnethackdir/record
 @dirrm lib/jnethackdir
-share/doc/ja/nethack/ChangeLog.j
-share/doc/ja/nethack/INSTALL.j
-share/doc/ja/nethack/README
-share/doc/ja/nethack/README.j
-share/doc/ja/nethack/jGuidebook.txt
-share/examples/ja/nethack/JNetHack.ad
-share/examples/ja/nethack/ibm.pcf.gz
-share/examples/ja/nethack/nethack.rc
-share/examples/ja/nethack/nh10.pcf.gz
-@dirrm share/examples/ja/nethack
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.j
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.j
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.j
+%%PORTDOCS%%%%DOCSDIR%%/jGuidebook.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/JNetHack.ad
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ibm.pcf.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nethack.rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nh10.pcf.gz
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry share/examples/ja
-@dirrm share/doc/ja/nethack
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
