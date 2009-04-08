@@ -1,0 +1,7 @@
+Rabbyt is a sprite library for Python with game development in mind.
+It has two goals:
+
+ 1. Be fast, without sacrificing ease of use.
+ 2. Be easy to use, without sacrificing speed
+
+WWW:	http://matthewmarshall.org/projects/rabbyt/
