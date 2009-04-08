@@ -32,8 +32,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/colors.gif ${PREFIX}/share/tkhonyaku/
 	${INSTALL_SCRIPT} ${WRKSRC}/tkhonyaku ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/tkhonyaku
-	${INSTALL_DATA} ${WRKSRC}/tkhonyaku-readme ${PREFIX}/share/doc/tkhonyaku/
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/tkhonyaku-readme ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
