@@ -24,8 +24,10 @@ SRC_FILE=	mod_bw.c
 PORTDOCS=	LICENSE mod_bw.txt
 
 post-install:
+.ifndef NOPORTDOCS
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && \
 		${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
