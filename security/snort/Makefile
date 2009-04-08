@@ -132,6 +132,9 @@ post-patch:
 .if defined(WITH_SNORTSAM)
 BUILD_DEPENDS+=		automake>=1.10.1:${PORTSDIR}/devel/automake110
 .endif
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} '/SUBDIRS = /s/doc//' ${WRKSRC}/Makefile.in
+.endif
 
 pre-configure:
 .if defined(WITH_SNORTSAM)
