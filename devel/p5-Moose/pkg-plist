@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Moose/Cookbook/Basics/Recipe1.pod
 %%SITE_PERL%%/Moose/Cookbook/Basics/Recipe10.pod
 %%SITE_PERL%%/Moose/Cookbook/Basics/Recipe11.pod
+%%SITE_PERL%%/Moose/Cookbook/Basics/Recipe12.pod
 %%SITE_PERL%%/Moose/Cookbook/Basics/Recipe2.pod
 %%SITE_PERL%%/Moose/Cookbook/Basics/Recipe3.pod
 %%SITE_PERL%%/Moose/Cookbook/Basics/Recipe4.pod
@@ -20,6 +21,7 @@
 %%SITE_PERL%%/Moose/Cookbook/Meta/Recipe3.pod
 %%SITE_PERL%%/Moose/Cookbook/Meta/Recipe4.pod
 %%SITE_PERL%%/Moose/Cookbook/Meta/Recipe5.pod
+%%SITE_PERL%%/Moose/Cookbook/Meta/Recipe6.pod
 %%SITE_PERL%%/Moose/Cookbook/Meta/Recipe7.pod
 %%SITE_PERL%%/Moose/Cookbook/Roles/Recipe1.pod
 %%SITE_PERL%%/Moose/Cookbook/Roles/Recipe2.pod
