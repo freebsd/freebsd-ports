@@ -32,14 +32,12 @@ DATADIR=	${PREFIX}/share/dict/kdrill
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/makedic/makedic ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/makedic/makeedict ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/makedic/makedic.1 \
 	    ${PREFIX}/man/man1
 	${GZIP_CMD} ${PREFIX}/man/man1/makedic.1
 	${INSTALL_MAN} ${WRKSRC}/makedic/makeedict.1 \
 	    ${PREFIX}/man/man1
 	${GZIP_CMD} ${PREFIX}/man/man1/makeedict.1
-.endif
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/makedic/fullkatahira.edic ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/makedic/hira.edic ${DATADIR}
