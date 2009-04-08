@@ -254,8 +254,10 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/ext/__init__.py
 %%DATADIR%%/google/appengine/ext/admin/__init__.py
 %%DATADIR%%/google/appengine/ext/admin/templates/base.html
+%%DATADIR%%/google/appengine/ext/admin/templates/cron.html
 %%DATADIR%%/google/appengine/ext/admin/templates/css/ae.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/base.css
+%%DATADIR%%/google/appengine/ext/admin/templates/css/cron.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/datastore.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/form.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/memcache.css
