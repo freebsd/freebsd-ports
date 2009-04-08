@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xkeyboard-config
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	x11
 MASTER_SITES=	http://xlibs.freedesktop.org/xkbdesc/
 DISTNAME=	xkeyboard-config-${PORTVERSION}
@@ -37,6 +37,10 @@ USE_ICONV=	yes
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' \
+		${WRKSRC}/rules/merge.sh
 
 post-install:
 	${MKDIR} /var/lib/xkb
