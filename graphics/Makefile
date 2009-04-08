@@ -707,6 +707,7 @@
     SUBDIR += py-pygooglechart
     SUBDIR += py-pyproj
     SUBDIR += py-qt4-svg
+    SUBDIR += py-rabbyt
     SUBDIR += py-soya3d
     SUBDIR += py-visual
     SUBDIR += pyro
