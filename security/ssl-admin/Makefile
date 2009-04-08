@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ssl-admin
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/ssl-admin/
 
