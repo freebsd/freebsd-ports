@@ -37,7 +37,7 @@ MAN8=	fsck.xfs.8 mkfs.xfs.8 xfs_admin.8 xfs_bmap.8 xfs_check.8 \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000
-BROKEN=		"Does not compile on less than FreeBSD 7.x"
+BROKEN=		Does not compile on less than FreeBSD 7.x
 .endif
 
 post-extract:
@@ -55,5 +55,8 @@ post-configure:
 post-patch:
 	${FIND} ${WRKDIR} -name "*.m4" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/usr/local|'${LOCALBASE}'|g'
+.ifdef NOPORTDOCS
+	@${REINPLACE_CMD} -e 's/doc//' -e '/PKG_DOC_DIR/d' ${WRKSRC}/Makefile
+.endif
 
 .include <bsd.port.post.mk>
