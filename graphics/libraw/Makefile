@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libraw
-PORTVERSION=	0.6.14
+PORTVERSION=	0.7.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.su/data/
 DISTNAME=	LibRaw-${PORTVERSION}
@@ -42,8 +42,8 @@ PORTDOCS=	API-C-eng.html API-C-rus.html API-CXX-eng.html API-CXX-rus.html \
 		API-notes-rus.html API-overview-eng.html API-overview-rus.html \
 		Install-LibRaw-eng.html Install-LibRaw-rus.html \
 		Samples-LibRaw-eng.html Samples-LibRaw-rus.html \
-		Why-LibRaw-eng.html Why-LibRaw-rus.html index-eng.html \
-		index-rus.html index.html
+		Why-LibRaw-eng.html Why-LibRaw-rus.html corner-scheme.png \
+		index-eng.html index-rus.html index.html
 
 PORTEXAMPLES=	dcraw_emu.cpp dcraw_half.c half_mt.c identify.cpp mem_image.cpp \
 		simple_dcraw.cpp
@@ -57,7 +57,8 @@ post-patch:
 do-install:
 	@${MKDIR} ${PREFIX}/include/libraw
 
-.for f in libraw.h libraw_alloc.h libraw_const.h libraw_internal.h libraw_types.h libraw_version.h
+.for f in libraw.h libraw_alloc.h libraw_const.h libraw_datastream.h \
+	libraw_internal.h libraw_types.h libraw_version.h
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${f} ${PREFIX}/include/libraw
 .endfor
 .for f in libraw.a libraw_r.a
