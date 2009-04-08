@@ -20,7 +20,6 @@ PLIST_FILES=	bin/kiltdown
 
 USE_QT_VER=	3
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 MY_CONFIGURE_ARGS=	-release
 MY_CONFIGURE_ARGS+=	-qtinc ${LOCALBASE}/include -qtlib ${LOCALBASE}/lib
 MY_CONFIGURE_ARGS+=	-dbinc ${LOCALBASE}/include/db3 -dblib ${LOCALBASE}/lib
