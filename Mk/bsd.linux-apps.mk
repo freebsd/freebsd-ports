@@ -66,7 +66,7 @@ _LINUX_APPS_ALL+=
 # 2.6.16 components
 _LINUX_26_APPS=		libidn nspr nss openssl sqlite3 tcl84 tk84
 
-_LINUX_APPS_ALL+=	_LINUX_26_APPS
+_LINUX_APPS_ALL+=	${_LINUX_26_APPS}
 
 # Let's check if components from USE_LINUX_APPS exist at _LINUX_26_APPS for LINUX_DIST_SUFFIX:=""
 .  if ${LINUX_DIST_SUFFIX}==""
