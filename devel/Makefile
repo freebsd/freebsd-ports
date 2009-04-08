@@ -2602,6 +2602,7 @@
     SUBDIR += rubygem-ruby2ruby
     SUBDIR += rubygem-rubyforge
     SUBDIR += rubygem-rubyinlineaccel
+    SUBDIR += rubygem-runt
     SUBDIR += rubygem-sequel
     SUBDIR += rubygem-sexp_processor
     SUBDIR += rubygem-stream
