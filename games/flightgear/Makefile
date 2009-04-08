@@ -55,4 +55,10 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/utils/js_server/js_server ${PREFIX}/bin
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 800063
+BROKEN=	plib joystick support broken with USB2
+.endif
+
+.include <bsd.port.post.mk>
