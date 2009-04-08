@@ -97,6 +97,9 @@ post-patch:
 		${WRKSRC}/qt-im/Makefile ${WRKSRC}/scripts/modify-XIM \
 		${WRKSRC}/scripts/utf8-edit
 	@${REINPLACE_CMD} -e '/make/ d' ${WRKSRC}/IMdkit/lib/Makefile
+.ifdef NOPORTDOCS
+	@${REINPLACE_CMD} '/install.*DOC_DIR/d' ${WRKSRC}/Makefile
+.endif
 
 .if defined(WITH_BOSHIAMY)
 PLIST_SUB+=	BOSHIAMY=""
