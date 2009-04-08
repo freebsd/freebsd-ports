@@ -22,7 +22,9 @@ AP_GENPLIST=	YES
 PORTDOCS=	README
 
 post-install:
+.ifndef NOPORTDOCS
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
