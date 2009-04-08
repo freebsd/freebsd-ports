@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/compiz
+bin/compiz-manager
 %%GTK%%bin/gtk-window-decorator
 %%KDE%%bin/kde-window-decorator
 include/compiz/compiz.h
@@ -18,6 +19,9 @@ lib/compiz/libblur.so
 lib/compiz/libclone.a
 lib/compiz/libclone.la
 lib/compiz/libclone.so
+lib/compiz/libcommands.a
+lib/compiz/libcommands.la
+lib/compiz/libcommands.so
 lib/compiz/libcube.a
 lib/compiz/libcube.la
 lib/compiz/libcube.so
@@ -39,6 +43,9 @@ lib/compiz/libgconf.so
 lib/compiz/libglib.a
 lib/compiz/libglib.la
 lib/compiz/libglib.so
+lib/compiz/libgnomecompat.a
+lib/compiz/libgnomecompat.la
+lib/compiz/libgnomecompat.so
 lib/compiz/libini.a
 lib/compiz/libini.la
 lib/compiz/libini.so
@@ -102,6 +109,7 @@ libdata/pkgconfig/libdecoration.pc
 %%DATADIR%%/annotate.xml
 %%DATADIR%%/blur.xml
 %%DATADIR%%/clone.xml
+%%DATADIR%%/commands.xml
 %%DATADIR%%/core.xml
 %%DATADIR%%/cube.xml
 %%DATADIR%%/dbus.xml
@@ -111,6 +119,7 @@ libdata/pkgconfig/libdecoration.pc
 %%DATADIR%%/fs.xml
 %%DATADIR%%/gconf.xml
 %%DATADIR%%/glib.xml
+%%DATADIR%%/gnomecompat.xml
 %%DATADIR%%/icon.png
 %%DATADIR%%/ini.xml
 %%DATADIR%%/inotify.xml
@@ -133,7 +142,7 @@ libdata/pkgconfig/libdecoration.pc
 %%DATADIR%%/wobbly.xml
 %%DATADIR%%/zoom.xml
 %%GNOME%%@cwd %%WINDOWSETTINGSDATADIR%%
-%%GNOME%%share/gnome/wm-properties/compiz.desktop
+%%GNOME%%share/gnome/wm-properties/compiz-wm.desktop
 %%GNOME%%share/gnome-control-center/keybindings/50-compiz-desktop-key.xml
 %%GNOME%%share/gnome-control-center/keybindings/50-compiz-key.xml
 %%GNOME%%@cwd %%WINDOWSETTINGSLIBDIR%%
@@ -141,6 +150,7 @@ libdata/pkgconfig/libdecoration.pc
 %%GNOME%%window-manager-settings/libcompiz.la
 %%GNOME%%window-manager-settings/libcompiz.so
 %%GNOME%%@cwd
+share/applications/compiz.desktop
 share/locale/af/LC_MESSAGES/compiz.mo
 share/locale/ar/LC_MESSAGES/compiz.mo
 share/locale/bg/LC_MESSAGES/compiz.mo
@@ -197,6 +207,7 @@ share/locale/xh/LC_MESSAGES/compiz.mo
 share/locale/zh_CN/LC_MESSAGES/compiz.mo
 share/locale/zh_TW/LC_MESSAGES/compiz.mo
 share/locale/zu/LC_MESSAGES/compiz.mo
+@dirrmtry share/applications
 @dirrmtry share/locale/en_US/LC_MESSAGES
 @dirrmtry share/locale/en_US
 @dirrmtry share/locale/lo/LC_MESSAGES

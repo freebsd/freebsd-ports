@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ccsm
-PORTVERSION=	0.7.8
+PORTVERSION=	0.8.2
 #PORTREVISION=	0
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
+MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
 MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	A Python/GTK based settings manager for CompizConfig

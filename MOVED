@@ -3904,3 +3904,6 @@ www/drupal4-textile||2009-04-04|Has expired: Drupal 4.7.x is end-of-life since 2
 www/drupal4||2009-04-04|Has expired: Drupal 4.7.x is end-of-life since 200802.  Please migrate to Drupal 6.x
 www/squid26||2009-04-04|Has expired: The 2.6 series is no longer actively maintained by the Squid developers
 x11-themes/camaelon-nesedah||2009-04-04|Has expired: now included in camaelon
+x11-wm/compiz-fusion-plugins-main|x11-wm/compiz-plugins-main|2009-04-08|Dropping the fusion name
+x11-wm/compiz-fusion-plugins-extra|x11-wm/compiz-plugins-extra|2009-04-08|Dropping the fusion name
+x11-wm/compiz-fusion-plugins-unsupported|x11-wm/compiz-plugins-unsupported|2009-04-08|Dropping the fusion name

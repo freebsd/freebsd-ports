@@ -1,0 +1,10 @@
+This port has installed compiz-manager which is a wrapper to start
+compiz.
+
+If you are using gnome, you can use the configuration editor to set the
+value of:
+
+desktop->gnome->session->required_components->windowmanager = compiz-manager
+
+This will enable compiz as your default window manager.
+

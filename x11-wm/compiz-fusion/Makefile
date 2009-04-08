@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	compiz-fusion
-PORTVERSION=	0.7.8
+PORTVERSION=	0.8.2
 #PORTREVISION=	0
 CATEGORIES=	x11-wm
 MASTER_SITES=	# none
@@ -18,7 +18,7 @@ COMMENT=	Metaport of compiz-fusion
 
 LIB_DEPENDS=	compizconfig:${PORTSDIR}/x11-wm/libcompizconfig
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz \
-		${LOCALBASE}/lib/compiz/libanimation.so:${PORTSDIR}/x11-wm/compiz-fusion-plugins-main \
+		${LOCALBASE}/lib/compiz/libanimation.so:${PORTSDIR}/x11-wm/compiz-plugins-main \
 		${LOCALBASE}/bin/ccsm:${PORTSDIR}/x11-wm/ccsm
 
 NO_BUILD=	yes
@@ -35,11 +35,11 @@ do-install:	# empty
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_EXTRA)
-RUN_DEPENDS+=	${LOCALBASE}/lib/compiz/libaddhelper.so:${PORTSDIR}/x11-wm/compiz-fusion-plugins-extra
+RUN_DEPENDS+=	${LOCALBASE}/lib/compiz/libaddhelper.so:${PORTSDIR}/x11-wm/compiz-plugins-extra
 .endif
 
 .if defined(WITH_UNSUP)
-RUN_DEPENDS+=	${LOCALBASE}/lib/compiz/libfakeargb.so:${PORTSDIR}/x11-wm/compiz-fusion-plugins-unsupported
+RUN_DEPENDS+=	${LOCALBASE}/lib/compiz/libfakeargb.so:${PORTSDIR}/x11-wm/compiz-plugins-unsupported
 .endif
 
 .if !defined(WITHOUT_EMERALD)

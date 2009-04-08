@@ -24,9 +24,9 @@
     SUBDIR += clementine
     SUBDIR += compiz
     SUBDIR += compiz-fusion
-    SUBDIR += compiz-fusion-plugins-extra
-    SUBDIR += compiz-fusion-plugins-main
-    SUBDIR += compiz-fusion-plugins-unsupported
+    SUBDIR += compiz-plugins-extra
+    SUBDIR += compiz-plugins-main
+    SUBDIR += compiz-plugins-unsupported
     SUBDIR += compizconfig-backend-gconf
     SUBDIR += compizconfig-python
     SUBDIR += ctwm

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	compiz
-PORTVERSION=	0.7.8
-PORTREVISION=	1
+PORTVERSION=	0.8.2
 CATEGORIES=	x11-wm
+MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
 MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	Compiz Composite/Window Manager
@@ -18,8 +18,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 XORG_CAT=	app
 GNU_CONFIGURE=	yes
-#USE_BZIP2=	yes
-USE_TGZ=	yes
+USE_BZIP2=	yes
+#USE_TGZ=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_GL=		glu
@@ -32,6 +32,7 @@ GCONF_SCHEMAS=	gwd.schemas \
 		compiz-annotate.schemas \
 		compiz-blur.schemas \
 		compiz-clone.schemas \
+		compiz-commands.schemas \
 		compiz-core.schemas \
 		compiz-cube.schemas \
 		compiz-dbus.schemas \
@@ -40,6 +41,7 @@ GCONF_SCHEMAS=	gwd.schemas \
 		compiz-fs.schemas \
 		compiz-gconf.schemas \
 		compiz-glib.schemas \
+		compiz-gnomecompat.schemas \
 		compiz-ini.schemas \
 		compiz-inotify.schemas \
 		compiz-kconfig.schemas \
@@ -71,9 +73,19 @@ OPTIONS=	RSVG "Enable librsvg2 support" on \
 		FUSEFS "Enable fusefs support" off \
 		KDE "Enable KDE support" off
 
+SUB_FILES=		compiz-manager
+DESKTOP_ENTRIES=	"Compiz Manager" \
+			"A wrapper script for starting compiz" \
+			"" \
+			"compiz-manager" \
+			"Application;Core;" \
+			false
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|libpng|libpng12|' ${WRKSRC}/configure
 
+post-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/compiz-manager ${PREFIX}/bin/compiz-manager
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_RSVG)
