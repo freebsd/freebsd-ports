@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tcping
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.linuxco.de/tcping/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
