@@ -24,7 +24,6 @@ XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 do-install:
 	@${MKDIR} ${ELISPDIR} ${XELISPDIR}
-	@${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && \
 		for f in xslide.el \
 			 xslide-abbrev.el \
@@ -35,9 +34,12 @@ do-install:
 		do \
 		    ${INSTALL_DATA} $$f ${ELISPDIR}; \
 		    ${LN} -sf ${ELISPDIR}/$$f ${XELISPDIR}; \
-		done; \
-		${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR} \
-		)
+		done;)
+.ifndef NOPORTDOCS
+	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} && \
+		${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
