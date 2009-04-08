@@ -22,5 +22,8 @@ PLIST_FILES=	bin/t2w
 post-patch:
 	@${REINPLACE_CMD} -e 's,^prefix.*=.*$$,prefix = ${PREFIX},' \
 		${WRKSRC}/Makefile
+.ifdef NOPORTDOCS
+	@${REINPLACE_CMD} -e '/$$(docdir)\/wtmp-tool/d' ${WRKSRC}/Makefile
+.endif
 
 .include <bsd.port.mk>
