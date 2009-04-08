@@ -4,7 +4,7 @@ bin/argouml
 %%DATADIR%%/argouml-model.jar
 %%DATADIR%%/argouml.jar
 %%DATADIR%%/commons-logging-1.0.2.jar
-%%DATADIR%%/gef-0.12.4.jar
+%%DATADIR%%/gef-0.13.jar
 %%DATADIR%%/java-interfaces.jar
 %%DATADIR%%/jmi.jar
 %%DATADIR%%/jmiutils.jar
@@ -17,11 +17,14 @@ bin/argouml
 %%DATADIR%%/swidgets-0.1.4.jar
 %%DATADIR%%/toolbar-1.4.1-20071227.jar
 %%DATADIR%%/ext/anarres-cpp-no-dependencies-1.2.3.jar
-%%DATADIR%%/ext/argo_classfile.jar
+%%DATADIR%%/ext/antlr-2.7.7.jar
+%%DATADIR%%/ext/antlr-runtime-3.1.1.jar
 %%DATADIR%%/ext/argo_cpp.jar
 %%DATADIR%%/ext/argo_idl.jar
 %%DATADIR%%/ext/argo_php.jar
+%%DATADIR%%/ext/argo_java.jar
 %%DATADIR%%/ext/argouml-csharp.jar
+%%DATADIR%%/ext/argouml-diagrams-sequence.jar
 %%DATADIR%%/ext/argouml-i18n-de.jar
 %%DATADIR%%/ext/argouml-i18n-en_GB.jar
 %%DATADIR%%/ext/argouml-i18n-es.jar

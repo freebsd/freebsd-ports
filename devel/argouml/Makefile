@@ -7,15 +7,15 @@
 #
 
 PORTNAME=	argouml
-PORTVERSION=	0.26.2
+PORTVERSION=	0.28
 CATEGORIES=	devel java
 MASTER_SITES=	http://argouml-downloads.tigris.org/nonav/argouml-${PORTVERSION}/
 DISTNAME=	ArgoUML-${PORTVERSION}
-.if !defined(NOPORTDOCS)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		argomanual-${PORTVERSION}.pdf
+		manual-${PORTVERSION}.pdf \
+		quickguide-${PORTVERSION}.pdf
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	A UML design tool with cognitive support
@@ -30,9 +30,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 
 SUB_FILES=	argouml.sh
-.if !defined(NOPORTDOCS)
-PORTDOCS=	argomanual-${PORTVERSION}.pdf
-.endif
+PORTDOCS=	manual-${PORTVERSION}.pdf quickguide-${PORTVERSION}.pdf
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/argouml.sh ${PREFIX}/bin/argouml
@@ -43,7 +41,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/*.xml ${DATADIR}/ext/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/argomanual-${PORTVERSION}.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/manual-${PORTVERSION}.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/quickguide-${PORTVERSION}.pdf ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
