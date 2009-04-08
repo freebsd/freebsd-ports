@@ -9,11 +9,10 @@
 
 PORTNAME=	festlex-ogi
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio accessibility
-MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
+MASTER_SITES=	# ${MASTER_SITE_FESTIVAL_OGI}
 DISTNAME=	OGIlexicon-2.2
-DIST_SUBDIR=	festival
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Composite pronunciation dictionary from ogi.edu for Festival
@@ -29,6 +28,12 @@ NO_BUILD=	yes
 
 FHOME=		${PREFIX}/share/festival
 
+.include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+IGNORE=	distfile can only be fetched if you accept the license. Go to https://www.cslu.ogi.edu/tts/download/data/OGIlexicon-2.2.tar.gz and put ${DISTFILE} into ${DISTDIR}
+.endif
+
 post-extract:
 	@ ${CHMOD} -R a+r ${WRKSRC}
 	@ ${FIND} ${WRKSRC} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
@@ -37,4 +42,4 @@ do-install:
 	${MKDIR} ${FHOME}
 	cd ${WRKSRC} && ${CP} -pPR * ${FHOME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
