@@ -27,7 +27,8 @@ OPTIONS=	QSTAT "Game server query support (check_game)" OFF \
 		MYSQL "MySQL support (check_mysql)" OFF \
 		PGSQL "PostgreSQL support (check_pgsql)" OFF \
 		LDAP "OpenLDAP support (check_ldap)" OFF \
-		IPV6 "IPv6 support" ON
+		IPV6 "IPv6 support" ON \
+		JAIL "Compilation within jail(8) (see Makefile)" OFF
 
 GNU_CONFIGURE=	yes
 
@@ -38,6 +39,8 @@ NAGIOSDIR?=	/var/spool/nagios
 NAGIOSWWWDIR?=	www/nagios
 NAGIOSHTMURL?=	/nagios
 NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
+
+NAGIOSPOLLIP?=	127.0.0.1
 
 .include <bsd.port.pre.mk>
 
@@ -139,5 +142,8 @@ post-patch:
 	check_time.c check_users.c utils.c
 	@${REINPLACE_CMD} -e 's|setlocale (LC_ALL, "");|setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");|g' ${WRKSRC}/plugins/${file}
 .endfor
+.if defined(WITH_JAIL)
+	@${REINPLACE_CMD} -e 's# 127.0.0.1 # ${NAGIOSPOLLIP} #g' ${WRKSRC}/configure.in
+.endif
 
 .include <bsd.port.post.mk>
