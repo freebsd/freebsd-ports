@@ -24,6 +24,7 @@ MY_CONFIGURE_ARGS=	-release
 MY_CONFIGURE_ARGS+=	-qtinc ${LOCALBASE}/include -qtlib ${LOCALBASE}/lib
 MY_CONFIGURE_ARGS+=	-dbinc ${LOCALBASE}/include/db3 -dblib ${LOCALBASE}/lib
 BUILD_ENV+=		PATH=${PATH}:${LOCALBASE}/bin
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${MV} ${WRKSRC}/configs/bsd-generic ${WRKSRC}/configs/bsd-generic.sed
