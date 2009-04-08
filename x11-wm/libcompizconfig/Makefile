@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libcompizconfig
-PORTVERSION=	0.7.8
+PORTVERSION=	0.8.2
 #PORTREVISION=	0
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
+MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
 MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	An alternative configuration system for Compiz
@@ -31,7 +31,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|'	\
 		${WRKSRC}/src/main.c			\
 		${WRKSRC}/src/lists.c			\
-		${WRKSRC}/src/compiz.c			\
 		${WRKSRC}/src/filewatch.c		\
 		${WRKSRC}/src/ini.c			\
 		${WRKSRC}/backend/ini.c

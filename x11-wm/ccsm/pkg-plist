@@ -62,11 +62,9 @@ share/ccsm/icons/hicolor/scalable/apps/plugin-schemep.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-crashhandler.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-mblur.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-maximumize.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-screencasting.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-ezoom.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-scale.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-glib.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-state.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-notification.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-expo.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-tile.svg
@@ -89,7 +87,6 @@ share/ccsm/icons/hicolor/scalable/apps/plugin-wallpaper.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-png.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-video.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-extrawm.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-plane.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-place.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-move.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-trailfocus.svg
@@ -103,7 +100,6 @@ share/ccsm/icons/hicolor/scalable/apps/plugin-3d.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-atlantis.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-screenshot.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-scaleaddon.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-capture.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-shelf.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-loginout.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-switcher.svg
@@ -124,6 +120,7 @@ share/ccsm/icons/hicolor/scalable/apps/plugin-addhelper.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-imgjpeg.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-session.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-colorfilter.svg
+share/ccsm/icons/hicolor/scalable/apps/plugin-commands.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-cube.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-core.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-fade.svg
@@ -133,6 +130,7 @@ share/ccsm/icons/hicolor/scalable/apps/plugin-neg.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-ring.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-regex.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-group.svg
+share/ccsm/icons/hicolor/scalable/apps/plugin-gnomecompat.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-animationaddon.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-cubeaddon.svg
 share/ccsm/icons/hicolor/scalable/apps/plugin-stackswitch.svg
@@ -177,6 +175,7 @@ share/locale/pa/LC_MESSAGES/ccsm.mo
 share/locale/ru/LC_MESSAGES/ccsm.mo
 share/locale/md/LC_MESSAGES/ccsm.mo
 share/locale/bn_IN/LC_MESSAGES/ccsm.mo
+share/locale/zh_CN/LC_MESSAGES/ccsm.mo
 @dirrm share/ccsm/icons/hicolor/scalable/categories
 @dirrm share/ccsm/icons/hicolor/scalable/apps
 @dirrm share/ccsm/icons/hicolor/scalable

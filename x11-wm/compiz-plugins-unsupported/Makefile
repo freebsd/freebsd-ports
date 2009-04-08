@@ -1,15 +1,15 @@
-# New ports collection makefile for:	compiz-fusion-plugins-unsupported
+# New ports collection makefile for:	compiz-plugins-unsupported
 # Date created:				2007-08-17
 # Whom:					Robert Noland <rnoland@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	compiz-fusion-plugins-unsupported
-PORTVERSION=	0.7.8
+PORTNAME=	compiz-plugins-unsupported
+PORTVERSION=	0.8.2
 #PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
+MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
 MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	Plugins for Compiz Composite Window Manager
@@ -30,6 +30,8 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 
 GCONF_SCHEMAS=	compiz-atlantis.schemas \
+		compiz-cubemodel.schemas \
+		compiz-elements.schemas \
 		compiz-fakeargb.schemas \
 		compiz-mswitch.schemas \
 		compiz-snow.schemas \

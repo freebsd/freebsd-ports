@@ -13,7 +13,6 @@ lib/compiz/libccp.la
 lib/compiz/libccp.a
 libdata/pkgconfig/libcompizconfig.pc
 share/compiz/ccp.xml
-share/compizconfig/global.xml
 etc/compizconfig/config
 @dirrmtry etc/compizconfig
 @dirrmtry share/compizconfig

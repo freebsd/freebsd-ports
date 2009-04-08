@@ -1,15 +1,15 @@
-# New ports collection makefile for:	compiz-fusion-plugins-main
+# New ports collection makefile for:	compiz-plugins-main
 # Date created:				2007-08-15
 # Whom:					Robert Noland <rnoland@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	compiz-fusion-plugins-main
-PORTVERSION=	0.7.8
+PORTNAME=	compiz-plugins-main
+PORTVERSION=	0.8.2
 #PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
+MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
 MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	Plugins for Compiz Composite Window Manager
