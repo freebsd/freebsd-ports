@@ -18,7 +18,7 @@ COMMENT=	Multi pricision arithmetic version of math/sdpa
 
 .include <bsd.port.pre.mk>
 
-SRCDATE=	20090204
+SRCDATE=	20090321
 MANDATE=	20080618
 MANUALVER=	7.1.1
 SRCFILE=	${PORTNAME}.${PORTVERSION}.src.${SRCDATE}.tar.gz
