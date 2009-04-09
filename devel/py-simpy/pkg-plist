@@ -28,6 +28,12 @@
 %%PYTHON_SITELIBDIR%%/SimPy/__init__.py
 %%PYTHON_SITELIBDIR%%/SimPy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/SimPy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/SimPy/testRT_Behavior.py
+%%PYTHON_SITELIBDIR%%/SimPy/testRT_Behavior.pyc
+%%PYTHON_SITELIBDIR%%/SimPy/testRT_Behavior.pyo
+%%PYTHON_SITELIBDIR%%/SimPy/testRT_Behavior_OO.py
+%%PYTHON_SITELIBDIR%%/SimPy/testRT_Behavior_OO.pyc
+%%PYTHON_SITELIBDIR%%/SimPy/testRT_Behavior_OO.pyo
 %%PYTHON_SITELIBDIR%%/SimPy/testSimPy.py
 %%PYTHON_SITELIBDIR%%/SimPy/testSimPy.pyc
 %%PYTHON_SITELIBDIR%%/SimPy/testSimPy.pyo
@@ -167,10 +173,17 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shortestPath_SimPy.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/BankTutorialModels
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/.doctrees/Acknowledgments.doctree
 %%PORTDOCS%%%%DOCSDIR%%/.doctrees/Cheatsheets.doctree
 %%PORTDOCS%%%%DOCSDIR%%/.doctrees/Getting_Started.doctree
 %%PORTDOCS%%%%DOCSDIR%%/.doctrees/Interfacing.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/OnLineSimPyCourse.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/SimPy_Tools.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/SimulationGUIDebug.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/Sourcecode_Documentation.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/Tutorials/TheBank.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/Tutorials/TheBank2.doctree
 %%PORTDOCS%%%%DOCSDIR%%/.doctrees/Manuals/CHANGES_FROM_PREVIOUS_VERSION.doctree
 %%PORTDOCS%%%%DOCSDIR%%/.doctrees/Manuals/COMPATIBILITY.doctree
 %%PORTDOCS%%%%DOCSDIR%%/.doctrees/Manuals/DISTRIBUTION_CONTENTS.doctree
@@ -290,6 +303,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/SimPy_Sourcecode_Documentation/SimPy.SimulationTrace-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/SimPy_Sourcecode_Documentation/SimPy.SimulationTrace.SimulationTrace-class.html
 %%PORTDOCS%%%%DOCSDIR%%/SimPy_Sourcecode_Documentation/SimPy.SimulationTrace.Trace-class.html
+%%PORTDOCS%%%%DOCSDIR%%/SimPy_Sourcecode_Documentation/SimPy.testRT_Behavior-module.html
+%%PORTDOCS%%%%DOCSDIR%%/SimPy_Sourcecode_Documentation/SimPy.testRT_Behavior-pysrc.html
+%%PORTDOCS%%%%DOCSDIR%%/SimPy_Sourcecode_Documentation/SimPy.testRT_Behavior.Ticker-class.html
+%%PORTDOCS%%%%DOCSDIR%%/SimPy_Sourcecode_Documentation/SimPy.testRT_Behavior_OO-module.html
+%%PORTDOCS%%%%DOCSDIR%%/SimPy_Sourcecode_Documentation/SimPy.testRT_Behavior_OO-pysrc.html
+%%PORTDOCS%%%%DOCSDIR%%/SimPy_Sourcecode_Documentation/SimPy.testRT_Behavior_OO.Ticker-class.html
+%%PORTDOCS%%%%DOCSDIR%%/SimPy_Sourcecode_Documentation/toc-SimPy.testRT_Behavior-module.html
+%%PORTDOCS%%%%DOCSDIR%%/SimPy_Sourcecode_Documentation/toc-SimPy.testRT_Behavior_OO-module.html
 %%PORTDOCS%%%%DOCSDIR%%/SimPy_Sourcecode_Documentation/SimPy.testSimPy-module.html
 %%PORTDOCS%%%%DOCSDIR%%/SimPy_Sourcecode_Documentation/SimPy.testSimPy-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/SimPy_Sourcecode_Documentation/SimPy.testSimPy.Consumer-class.html
@@ -909,6 +930,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/_sources/OnLineSimPyCourse.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/SimPy_Libraries.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/SimPy_Overview.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/SimPy_Tools.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/Sourcecode_Documentation.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/SimPy_Tutorials.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/SimulationGUIDebug.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/Tutorials/TheBank.txt
@@ -945,19 +968,24 @@
 %%PORTDOCS%%%%DOCSDIR%%/_static/sphinxdoc.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/stickysidebar.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/traditional.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/CheatsheetOO_A4.pdf
+%%PORTDOCS%%%%DOCSDIR%%/_static/CheatsheetOO_Letter.pdf
+%%PORTDOCS%%%%DOCSDIR%%/_static/Tkcolors.htm
+%%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/cheatsheetOO_A4.xls
+%%PORTDOCS%%%%DOCSDIR%%/_static/cheatsheetOO_Letter.xls
 %%PORTDOCS%%%%DOCSDIR%%/genindex.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/modindex.html
 %%PORTDOCS%%%%DOCSDIR%%/objects.inv
 %%PORTDOCS%%%%DOCSDIR%%/search.html
 %%PORTDOCS%%%%DOCSDIR%%/searchindex.js
-%%PORTDOCS%%%%DOCSDIR%%/searchindex.json
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/.doctrees/Manuals/GUIManual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/.doctrees/Manuals/Interfacing/ParallelSimPy
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/.doctrees/Manuals/Interfacing/ProductionQualityPlotting
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/.doctrees/Manuals/Interfacing
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/.doctrees/Manuals/PlotManual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/.doctrees/Manuals
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/.doctrees/Tutorials
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/.doctrees
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Manuals/GUIManual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Manuals/Interfacing/ParallelSimPy
