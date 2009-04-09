@@ -6,7 +6,7 @@
  
 -CC=gcc
 -CFLAGS=$$($(SHELL) lfs.sh CFLAGS) -D _XOPEN_SOURCE=500 -pipe -ansi -pedantic \
--    -O3
+-    -O2
 +LDFLAGS+=	-s
 +LIBS+=		-l pthread -l bz2
  
