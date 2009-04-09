@@ -5,6 +5,7 @@ include/drm/i915_drm.h
 include/drm/mach64_drm.h
 include/drm/mga_drm.h
 include/drm/nouveau_drm.h
+include/drm/nouveau_drmif.h
 include/drm/r128_drm.h
 include/drm/r300_reg.h
 include/drm/radeon_drm.h
@@ -14,6 +15,14 @@ include/drm/via_3d_reg.h
 include/drm/via_drm.h
 include/drm/xgi_drm.h
 include/intel_bufmgr.h
+include/nouveau/nouveau_bo.h
+include/nouveau/nouveau_channel.h
+include/nouveau/nouveau_class.h
+include/nouveau/nouveau_device.h
+include/nouveau/nouveau_grobj.h
+include/nouveau/nouveau_notifier.h
+include/nouveau/nouveau_pushbuf.h
+include/nouveau/nouveau_resource.h
 include/xf86drm.h
 include/xf86drmMode.h
 lib/libdrm.la
@@ -22,6 +31,11 @@ lib/libdrm.so.2
 lib/libdrm_intel.la
 lib/libdrm_intel.so
 lib/libdrm_intel.so.1
+lib/libdrm_nouveau.la
+lib/libdrm_nouveau.so
+lib/libdrm_nouveau.so.1
 libdata/pkgconfig/libdrm.pc
 libdata/pkgconfig/libdrm_intel.pc
+libdata/pkgconfig/libdrm_nouveau.pc
 @dirrm include/drm
+@dirrm include/nouveau
