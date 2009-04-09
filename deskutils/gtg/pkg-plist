@@ -14,6 +14,9 @@ bin/gtg
 %%PYTHON_SITELIBDIR%%/GTG/core/datastore.py
 %%PYTHON_SITELIBDIR%%/GTG/core/datastore.pyc
 %%PYTHON_SITELIBDIR%%/GTG/core/datastore.pyo
+%%PYTHON_SITELIBDIR%%/GTG/core/firstrun_tasks.py
+%%PYTHON_SITELIBDIR%%/GTG/core/firstrun_tasks.pyc
+%%PYTHON_SITELIBDIR%%/GTG/core/firstrun_tasks.pyo
 %%PYTHON_SITELIBDIR%%/GTG/core/requester.py
 %%PYTHON_SITELIBDIR%%/GTG/core/requester.pyc
 %%PYTHON_SITELIBDIR%%/GTG/core/requester.pyo
@@ -67,15 +70,21 @@ bin/gtg
 %%PYTHON_SITELIBDIR%%/GTG/tools/listes.py
 %%PYTHON_SITELIBDIR%%/GTG/tools/listes.pyc
 %%PYTHON_SITELIBDIR%%/GTG/tools/listes.pyo
+%%PYTHON_SITELIBDIR%%/GTG/tools/openurl.py
+%%PYTHON_SITELIBDIR%%/GTG/tools/openurl.pyc
+%%PYTHON_SITELIBDIR%%/GTG/tools/openurl.pyo
 %%PYTHON_SITELIBDIR%%/GTG/tools/taskxml.py
 %%PYTHON_SITELIBDIR%%/GTG/tools/taskxml.pyc
 %%PYTHON_SITELIBDIR%%/GTG/tools/taskxml.pyo
 share/applications/gtg.desktop
-%%DATADIR%%/firstrun_tasks.xml
 %%DATADIR%%/icons/hicolor/16x16/actions/gtg-note-new.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gtg-tag-new.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gtg-tag.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gtg-task-dismiss.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gtg-task-done.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gtg-task-new.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gtg-task-undismiss.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gtg-task-undone.png
 %%DATADIR%%/icons/hicolor/16x16/apps/gtg.png
 %%DATADIR%%/icons/hicolor/16x16/categories/gtg-tags-all.png
 %%DATADIR%%/icons/hicolor/16x16/categories/gtg-tags-none.png
@@ -83,6 +92,8 @@ share/applications/gtg.desktop
 %%DATADIR%%/icons/hicolor/16x16/emblems/gtg-people.png
 %%DATADIR%%/icons/hicolor/16x16/emblems/gtg-work.png
 %%DATADIR%%/icons/hicolor/22x22/actions/gtg-note-new.png
+%%DATADIR%%/icons/hicolor/22x22/actions/gtg-tag-new.png
+%%DATADIR%%/icons/hicolor/22x22/actions/gtg-tag.png
 %%DATADIR%%/icons/hicolor/22x22/actions/gtg-task-dismiss.png
 %%DATADIR%%/icons/hicolor/22x22/actions/gtg-task-done.png
 %%DATADIR%%/icons/hicolor/22x22/actions/gtg-task-new.png
@@ -90,15 +101,31 @@ share/applications/gtg.desktop
 %%DATADIR%%/icons/hicolor/22x22/actions/gtg-task-undone.png
 %%DATADIR%%/icons/hicolor/22x22/apps/gtg.png
 %%DATADIR%%/icons/hicolor/22x22/categories/items-tags.png
+%%DATADIR%%/icons/hicolor/24x24/actions/gtg-tag-new.png
 %%DATADIR%%/icons/hicolor/24x24/apps/gtg.png
+%%DATADIR%%/icons/hicolor/32x32/apps/gtg.png
 %%DATADIR%%/icons/hicolor/scalable/apps/gtg.svg
+%%DATADIR%%/icons/hicolor/svg/gtg.svg
+share/locale/de/LC_MESSAGES/gtg.mo
+share/locale/es/LC_MESSAGES/gtg.mo
+share/locale/fr/LC_MESSAGES/gtg.mo
+share/locale/it/LC_MESSAGES/gtg.mo
+share/locale/ms/LC_MESSAGES/gtg.mo
+share/locale/nl/LC_MESSAGES/gtg.mo
+share/locale/ru/LC_MESSAGES/gtg.mo
+share/locale/sv/LC_MESSAGES/gtg.mo
+share/locale/be/LC_MESSAGES/gtg.mo
 share/icons/hicolor/16x16/apps/gtg.png
 share/icons/hicolor/22x22/apps/gtg.png
 share/icons/hicolor/24x24/apps/gtg.png
 share/icons/hicolor/scalable/apps/gtg.svg
+@dirrm %%DATADIR%%/icons/hicolor/svg
 @dirrm %%DATADIR%%/icons/hicolor/scalable/apps
 @dirrm %%DATADIR%%/icons/hicolor/scalable
+@dirrm %%DATADIR%%/icons/hicolor/32x32/apps
+@dirrm %%DATADIR%%/icons/hicolor/32x32
 @dirrm %%DATADIR%%/icons/hicolor/24x24/apps
+@dirrm %%DATADIR%%/icons/hicolor/24x24/actions
 @dirrm %%DATADIR%%/icons/hicolor/24x24
 @dirrm %%DATADIR%%/icons/hicolor/22x22/categories
 @dirrm %%DATADIR%%/icons/hicolor/22x22/apps
@@ -111,8 +138,8 @@ share/icons/hicolor/scalable/apps/gtg.svg
 @dirrm %%DATADIR%%/icons/hicolor/16x16
 @dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
-@dirrmtry share/applications
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/tools
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/taskeditor
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/taskbrowser
