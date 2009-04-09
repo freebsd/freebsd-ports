@@ -155,7 +155,7 @@
 -        newname[j++] = ntohs(in6pcb.in6p_lport);
 -        if (IN6_IS_ADDR_LINKLOCAL(&in6pcb.in6p_laddr))
 +            newname[j++] = tstpcb.in6p_laddr.s6_addr[i];
-+        newname[j++] = ntohs(tstpcb.in6p_lport);
++        newname[j++] = ntohs(tstpcb.inp_lport);
 +        if (IN6_IS_ADDR_LINKLOCAL(&tstpcb.in6p_laddr))
              newname[j++] =
 -                ntohs(*(uint16_t *) & in6pcb.in6p_laddr.s6_addr[2]);
@@ -219,7 +219,7 @@
 +        return savpcb.in6p_laddr.s6_addr;
      case IPV6UDPLOCALPORT:
 -        long_return = ntohs(in6pcb.in6p_lport);
-+        long_return = ntohs(savpcb.in6p_lport);
++        long_return = ntohs(savpcb.inp_lport);
          return (u_char *) & long_return;
      case IPV6UDPIFINDEX:
 -        if (IN6_IS_ADDR_LINKLOCAL(&in6pcb.in6p_laddr))
@@ -318,10 +318,10 @@
              goto skip;
  #endif
 -        if (!NETSNMP_KLOOKUP(in6pcb.in6p_ppcb, (char *) &tcp6cb, sizeof(tcp6cb))) {
-+        if (!NETSNMP_KLOOKUP(tstpcb.in6p_ppcb, (char *) &tcp6cb, sizeof(tcp6cb))) {
++        if (!NETSNMP_KLOOKUP(tstpcb.inp_ppcb, (char *) &tcp6cb, sizeof(tcp6cb))) {
              DEBUGMSGTL(("mibII/ipv6", "klookup fail for tcb6.tcp6cb at %x\n",
 -                        in6pcb.in6p_ppcb));
-+                        tstpcb.in6p_ppcb));
++                        tstpcb.inp_ppcb));
              found = 0;
              break;
          }
@@ -330,13 +330,13 @@
 -            newname[j++] = in6pcb.in6p_laddr.s6_addr[i];
 -        newname[j++] = ntohs(in6pcb.in6p_lport);
 +            newname[j++] = tstpcb.in6p_laddr.s6_addr[i];
-+        newname[j++] = ntohs(tstpcb.in6p_lport);
++        newname[j++] = ntohs(tstpcb.inp_lport);
          for (i = 0; i < sizeof(struct in6_addr); i++)
 -            newname[j++] = in6pcb.in6p_faddr.s6_addr[i];
 -        newname[j++] = ntohs(in6pcb.in6p_fport);
 -        if (IN6_IS_ADDR_LINKLOCAL(&in6pcb.in6p_laddr))
 +            newname[j++] = tstpcb.in6p_faddr.s6_addr[i];
-+        newname[j++] = ntohs(tstpcb.in6p_fport);
++        newname[j++] = ntohs(tstpcb.inp_fport);
 +        if (IN6_IS_ADDR_LINKLOCAL(&tstpcb.in6p_laddr))
              newname[j++] =
 -                ntohs(*(uint16_t *) & in6pcb.in6p_laddr.s6_addr[2]);
@@ -349,7 +349,7 @@
  
  #if 1                           /* this is very odd but sometimes happen, and cause infinite loop */
 -        if (ntohs(in6pcb.in6p_lport) == 0)
-+        if (ntohs(tstpcb.in6p_lport) == 0)
++        if (ntohs(tstpcb.inp_lport) == 0)
              goto skip;
  #endif
  
@@ -398,7 +398,7 @@
 +        return (u_char *) & savpcb.in6p_laddr.s6_addr[0];
      case IPV6TCPLOCALPORT:
 -        long_return = ntohs(in6pcb.in6p_lport);
-+        long_return = ntohs(savpcb.in6p_lport);
++        long_return = ntohs(savpcb.inp_lport);
          return (u_char *) & long_return;
      case IPV6TCPREMOTEADDR:
          *var_len = sizeof(struct in6_addr);
@@ -406,7 +406,7 @@
 +        return (u_char *) & savpcb.in6p_faddr.s6_addr[0];
      case IPV6TCPREMOTEPORT:
 -        long_return = ntohs(in6pcb.in6p_fport);
-+        long_return = ntohs(savpcb.in6p_fport);
++        long_return = ntohs(savpcb.inp_fport);
          return (u_char *) & long_return;
      case IPV6TCPIFINDEX:
 -        if (IN6_IS_ADDR_LINKLOCAL(&in6pcb.in6p_laddr))
@@ -489,10 +489,10 @@
              goto skip;
  #endif
 -        if (!NETSNMP_KLOOKUP(in6pcb.in6p_ppcb, (char *) &tcpcb, sizeof(tcpcb))) {
-+        if (!NETSNMP_KLOOKUP(tstpcb.in6p_ppcb, (char *) &tcpcb, sizeof(tcpcb))) {
++        if (!NETSNMP_KLOOKUP(tstpcb.inp_ppcb, (char *) &tcpcb, sizeof(tcpcb))) {
              DEBUGMSGTL(("mibII/ipv6", "klookup fail for tcb6.tcpcb at %x\n",
 -                        in6pcb.in6p_ppcb));
-+                        tstpcb.in6p_ppcb));
++                        tstpcb.inp_ppcb));
              found = 0;
              break;
          }
@@ -501,13 +501,13 @@
 -            newname[j++] = in6pcb.in6p_laddr.s6_addr[i];
 -        newname[j++] = ntohs(in6pcb.in6p_lport);
 +            newname[j++] = tstpcb.in6p_laddr.s6_addr[i];
-+        newname[j++] = ntohs(tstpcb.in6p_lport);
++        newname[j++] = ntohs(tstpcb.inp_lport);
          for (i = 0; i < sizeof(struct in6_addr); i++)
 -            newname[j++] = in6pcb.in6p_faddr.s6_addr[i];
 -        newname[j++] = ntohs(in6pcb.in6p_fport);
 -        if (IN6_IS_ADDR_LINKLOCAL(&in6pcb.in6p_laddr))
 +            newname[j++] = tstpcb.in6p_faddr.s6_addr[i];
-+        newname[j++] = ntohs(tstpcb.in6p_fport);
++        newname[j++] = ntohs(tstpcb.inp_fport);
 +        if (IN6_IS_ADDR_LINKLOCAL(&tstpcb.in6p_laddr))
              newname[j++] =
 -                ntohs(*(uint16_t *) & in6pcb.in6p_laddr.s6_addr[2]);
@@ -520,7 +520,7 @@
  
  #if 1                           /* this is very odd but sometimes happen, and cause infinite loop */
 -        if (ntohs(in6pcb.in6p_lport) == 0)
-+        if (ntohs(tstpcb.in6p_lport) == 0)
++        if (ntohs(tstpcb.inp_lport) == 0)
              goto skip;
  #endif
          result = snmp_oid_compare(name, *length, newname, j);
@@ -577,7 +577,7 @@
 +        return (u_char *) & savpcb.in6p_laddr.s6_addr[0];
      case IPV6TCPLOCALPORT:
 -        long_return = ntohs(in6pcb.in6p_lport);
-+        long_return = ntohs(savpcb.in6p_lport);
++        long_return = ntohs(savpcb.inp_lport);
          return (u_char *) & long_return;
      case IPV6TCPREMOTEADDR:
          *var_len = sizeof(struct in6_addr);
@@ -585,7 +585,7 @@
 +        return (u_char *) & savpcb.in6p_faddr.s6_addr[0];
      case IPV6TCPREMOTEPORT:
 -        long_return = ntohs(in6pcb.in6p_fport);
-+        long_return = ntohs(savpcb.in6p_fport);
++        long_return = ntohs(savpcb.inp_fport);
          return (u_char *) & long_return;
      case IPV6TCPIFINDEX:
 -        if (IN6_IS_ADDR_LINKLOCAL(&in6pcb.in6p_laddr))
