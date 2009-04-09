@@ -1065,6 +1065,7 @@
     SUBDIR += p5-WWW-Google-Notebook
     SUBDIR += p5-WWW-Google-PageRank
     SUBDIR += p5-WWW-Google-Video
+    SUBDIR += p5-WWW-HatenaLogin
     SUBDIR += p5-WWW-IMDb
     SUBDIR += p5-WWW-Link
     SUBDIR += p5-WWW-Mechanize
