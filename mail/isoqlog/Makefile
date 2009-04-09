@@ -18,7 +18,16 @@ COMMENT=	A qmail, postfix, sendmail, exim MTA log analysis program
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+SUB_FILES=	pkg-message
+
+.ifdef NOPORTDOCS
+post-patch:
+	@${REINPLACE_CMD} -e '/install-data-am:/s/install-${PORTNAME}_docDATA//' \
+			-e '/SUBDIRS = /s/tr//' \
+		${WRKSRC}/Makefile.in
+.endif
+
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g'
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
