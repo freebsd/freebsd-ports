@@ -8,8 +8,9 @@
 PORTNAME=	rabbyt
 PORTVERSION=	0.8.2
 CATEGORIES=	graphics python
-MASTER_SITES=	http://pypi.python.org/packages/source/R/Rabbyt/ \
+MASTER_SITES=	${MASTER_SITE_CHEESESHOP} \
 		http://mirror.amdmi3.ru/
+MASTER_SITE_SUBDIR=source/R/Rabbyt
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Rabbyt-${PORTVERSION}
 
