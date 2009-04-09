@@ -18,4 +18,4 @@ etc/AquaGatekeeper.cfg.sample
 %%EXAMPLESDIR%%/Example.cfg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Rus
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%EXAMPLESDIR%%
