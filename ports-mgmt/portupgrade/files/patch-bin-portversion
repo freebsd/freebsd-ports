@@ -1,0 +1,10 @@
+--- bin/portversion.orig	2009-04-09 15:40:42.000000000 +0400
++++ bin/portversion	2009-04-09 15:41:15.000000000 +0400
+@@ -151,6 +151,7 @@
+     opts.def_option("-v", "--verbose", "Be verbose") {
+       |$verbose|
+       $verbose_output = :verbose
++      $display = :fullname
+     }
+ 
+     opts.def_option("-x", "--exclude=GLOB", "Exclude packages matching the specified glob#{NEXTLINE}pattern") {
