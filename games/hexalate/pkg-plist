@@ -1,0 +1,8 @@
+bin/hexalate
+share/applications/hexalate.desktop
+share/icons/hicolor/48x48/apps/hexalate.png
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor
+@dirrm share/icons
+@dirrmtry share/applications

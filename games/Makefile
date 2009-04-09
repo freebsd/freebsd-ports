@@ -359,6 +359,7 @@
     SUBDIR += heroes
     SUBDIR += hex
     SUBDIR += hex-a-hop
+    SUBDIR += hexalate
     SUBDIR += hexxagon
     SUBDIR += highmoon
     SUBDIR += hinversi
