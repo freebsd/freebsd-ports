@@ -329,6 +329,7 @@
     SUBDIR += gnustep-sudoku
     SUBDIR += golddig
     SUBDIR += gomoku.app
+    SUBDIR += gondola
     SUBDIR += goonies
     SUBDIR += gracer
     SUBDIR += grande
