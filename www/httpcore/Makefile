@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httpcore
-DISTVERSION=	4.0-beta3
+DISTVERSION=	4.0
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	httpcomponents/${PORTNAME}/binary
@@ -36,7 +36,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation..."
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${FIND} javadoc \
+	@cd ${WRKSRC} && ${FIND} javadoc tutorial \
 	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
 	@${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES.txt ${DOCSDIR}/
 	@${ECHO_MSG} " [DONE]"
