@@ -18,6 +18,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/configobj.py:${PORTSDIR}/devel/py-configobj \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gobject/__init__.py:${PORTSDIR}/devel/py-gobject \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
 
+FETCH_ARGS=	-pRr
 USE_GNOME=	pygtk2
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
