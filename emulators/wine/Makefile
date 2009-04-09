@@ -78,8 +78,8 @@ LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 CONFIGURE_ARGS+=	--without-xslt
 .endif
 
-.if ${OSVERSION} < 602000
-IGNORE=		fails to properly work on versions of FreeBSD before 6.2 (due to problems with threading support)
+.if ${OSVERSION} < 603000
+IGNORE=		fails to properly work on versions of FreeBSD before 6.3
 .endif
 
 post-patch:
