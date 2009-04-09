@@ -1,0 +1,14 @@
+--- dependencies/mygui/CMakeLists.txt.orig	2009-02-22 20:59:55.000000000 +0300
++++ dependencies/mygui/CMakeLists.txt	2009-03-05 05:39:37.000000000 +0300
+@@ -4,8 +4,9 @@
+ include_directories (include)
+ 
+ include_directories (${RoR_Dependencies_SOURCE_DIR}/ogrenew/OgreMain/include)
+-include_directories (${RoR_Dependencies_SOURCE_DIR}/ogrenew/Dependencies/include) # for freetype
+-include_directories (${RoR_Dependencies_SOURCE_DIR}/OIS-HEAD/ois/includes)
++include_directories (${LOCALBASE}/include/freetype2)
++include_directories (${LOCALBASE}/include/OIS)
++include_directories (${LOCALBASE}/include)
+ 
+ # -DHYDRAX_LIB will  give us the correct dllspec export setting
+ add_definitions("-D_USRDLL -DMYGUI_BUILD")

@@ -1,0 +1,229 @@
+bin/RoR
+bin/rorconfig
+lib/rigsofrods/Plugin_OctreeSceneManager.so
+lib/rigsofrods/Plugin_ParticleFX.so
+lib/rigsofrods/RenderSystem_GL.so
+lib/rigsofrods/libOgreMain.so.1
+lib/rigsofrods/libcaelum.so
+lib/rigsofrods/libmygui.so
+lib/rigsofrods/libmysocketw.so
+libexec/rigsofrods/RoR
+libexec/rigsofrods/rorconfig
+%%DATADIR%%/languages/ar/codes.txt
+%%DATADIR%%/languages/ar/ror.mo
+%%DATADIR%%/languages/ar/ror.po
+%%DATADIR%%/languages/bg/codes.txt
+%%DATADIR%%/languages/bg/ror.mo
+%%DATADIR%%/languages/bg/ror.po
+%%DATADIR%%/languages/bn/codes.txt
+%%DATADIR%%/languages/bn/ror.mo
+%%DATADIR%%/languages/bn/ror.po
+%%DATADIR%%/languages/cs/codes.txt
+%%DATADIR%%/languages/cs/ror.mo
+%%DATADIR%%/languages/cs/ror.po
+%%DATADIR%%/languages/da/codes.txt
+%%DATADIR%%/languages/da/ror.mo
+%%DATADIR%%/languages/da/ror.po
+%%DATADIR%%/languages/de/codes.txt
+%%DATADIR%%/languages/de/ror.mo
+%%DATADIR%%/languages/de/ror.po
+%%DATADIR%%/languages/el/codes.txt
+%%DATADIR%%/languages/el/ror.mo
+%%DATADIR%%/languages/el/ror.po
+%%DATADIR%%/languages/en/codes.txt
+%%DATADIR%%/languages/en/ror.mo
+%%DATADIR%%/languages/en/ror.po
+%%DATADIR%%/languages/es/codes.txt
+%%DATADIR%%/languages/es/ror.mo
+%%DATADIR%%/languages/es/ror.po
+%%DATADIR%%/languages/et/codes.txt
+%%DATADIR%%/languages/et/ror.mo
+%%DATADIR%%/languages/et/ror.po
+%%DATADIR%%/languages/fi/codes.txt
+%%DATADIR%%/languages/fi/ror.mo
+%%DATADIR%%/languages/fi/ror.po
+%%DATADIR%%/languages/fr/codes.txt
+%%DATADIR%%/languages/fr/ror.mo
+%%DATADIR%%/languages/fr/ror.po
+%%DATADIR%%/languages/hi/codes.txt
+%%DATADIR%%/languages/hi/ror.mo
+%%DATADIR%%/languages/hi/ror.po
+%%DATADIR%%/languages/hu/codes.txt
+%%DATADIR%%/languages/hu/ror.mo
+%%DATADIR%%/languages/hu/ror.po
+%%DATADIR%%/languages/id/codes.txt
+%%DATADIR%%/languages/id/ror.mo
+%%DATADIR%%/languages/id/ror.po
+%%DATADIR%%/languages/is/codes.txt
+%%DATADIR%%/languages/is/ror.mo
+%%DATADIR%%/languages/is/ror.po
+%%DATADIR%%/languages/it/codes.txt
+%%DATADIR%%/languages/it/ror.mo
+%%DATADIR%%/languages/it/ror.po
+%%DATADIR%%/languages/ja/codes.txt
+%%DATADIR%%/languages/ja/ror.po
+%%DATADIR%%/languages/la/codes.txt
+%%DATADIR%%/languages/la/ror.mo
+%%DATADIR%%/languages/la/ror.po
+%%DATADIR%%/languages/lt/codes.txt
+%%DATADIR%%/languages/lt/ror.mo
+%%DATADIR%%/languages/lt/ror.po
+%%DATADIR%%/languages/nl/codes.txt
+%%DATADIR%%/languages/nl/ror.mo
+%%DATADIR%%/languages/nl/ror.po
+%%DATADIR%%/languages/nn/codes.txt
+%%DATADIR%%/languages/nn/ror.mo
+%%DATADIR%%/languages/nn/ror.po
+%%DATADIR%%/languages/pl/codes.txt
+%%DATADIR%%/languages/pl/ror.mo
+%%DATADIR%%/languages/pl/ror.po
+%%DATADIR%%/languages/pt/codes.txt
+%%DATADIR%%/languages/pt/ror.mo
+%%DATADIR%%/languages/pt/ror.po
+%%DATADIR%%/languages/ro/codes.txt
+%%DATADIR%%/languages/ro/ror.mo
+%%DATADIR%%/languages/ro/ror.po
+%%DATADIR%%/languages/ru/codes.txt
+%%DATADIR%%/languages/ru/ror.mo
+%%DATADIR%%/languages/ru/ror.po
+%%DATADIR%%/languages/sk/codes.txt
+%%DATADIR%%/languages/sk/ror.mo
+%%DATADIR%%/languages/sk/ror.po
+%%DATADIR%%/languages/sl/codes.txt
+%%DATADIR%%/languages/sl/ror.mo
+%%DATADIR%%/languages/sl/ror.po
+%%DATADIR%%/languages/sv/codes.txt
+%%DATADIR%%/languages/sv/ror.mo
+%%DATADIR%%/languages/sv/ror.po
+%%DATADIR%%/languages/tr/codes.txt
+%%DATADIR%%/languages/tr/ror.mo
+%%DATADIR%%/languages/tr/ror.po
+%%DATADIR%%/languages/ur/codes.txt
+%%DATADIR%%/languages/ur/ror.mo
+%%DATADIR%%/languages/ur/ror.po
+%%DATADIR%%/languages/zh/codes.txt
+%%DATADIR%%/languages/zh/ror.mo
+%%DATADIR%%/languages/zh/ror.po
+%%DATADIR%%/plugins.cfg
+%%DATADIR%%/resources/OgreCore.zip
+%%DATADIR%%/resources/airfoils.zip
+%%DATADIR%%/resources/hydrax.zip
+%%DATADIR%%/resources/materials.zip
+%%DATADIR%%/resources/meshes.zip
+%%DATADIR%%/resources/mygui.zip
+%%DATADIR%%/resources/overlays.zip
+%%DATADIR%%/resources/paged.zip
+%%DATADIR%%/resources/particles.zip
+%%DATADIR%%/resources/scripts.zip
+%%DATADIR%%/resources/sounds.zip
+%%DATADIR%%/resources/textures.zip
+%%DATADIR%%/skeleton/config/RoR.cfg
+%%DATADIR%%/skeleton/config/categories.cfg
+%%DATADIR%%/skeleton/config/editor.cfg
+%%DATADIR%%/skeleton/config/ground_models.cfg
+%%DATADIR%%/skeleton/config/input.map
+%%DATADIR%%/skeleton/config/inputevents.cfg
+%%DATADIR%%/skeleton/config/ogre.cfg
+%%DATADIR%%/skeleton/config/wavefield.cfg
+%%DATADIR%%/streams/final/terrains/BajaTrack.zip
+%%DATADIR%%/streams/final/terrains/BakersRanch.zip
+%%DATADIR%%/streams/final/terrains/Flatmap.zip
+%%DATADIR%%/streams/final/terrains/aspen.zip
+%%DATADIR%%/streams/final/terrains/bajarama.zip
+%%DATADIR%%/streams/final/terrains/f1track.zip
+%%DATADIR%%/streams/final/terrains/grenoble.zip
+%%DATADIR%%/streams/final/terrains/island.zip
+%%DATADIR%%/streams/final/terrains/nhelens.zip
+%%DATADIR%%/streams/final/terrains/smallisland.zip
+%%DATADIR%%/streams/final/vehicles/1stGenDodges.zip
+%%DATADIR%%/streams/final/vehicles/767.zip
+%%DATADIR%%/streams/final/vehicles/AST1Xplanetowtruck.zip
+%%DATADIR%%/streams/final/vehicles/An-12.zip
+%%DATADIR%%/streams/final/vehicles/An225.zip
+%%DATADIR%%/streams/final/vehicles/BobcatS130.zip
+%%DATADIR%%/streams/final/vehicles/C1boat.zip
+%%DATADIR%%/streams/final/vehicles/Chemicaltrailer.zip
+%%DATADIR%%/streams/final/vehicles/ChevyS10.zip
+%%DATADIR%%/streams/final/vehicles/Dodge1500.zip
+%%DATADIR%%/streams/final/vehicles/DryVanTrailer.zip
+%%DATADIR%%/streams/final/vehicles/HouseBoat.zip
+%%DATADIR%%/streams/final/vehicles/Lexus.zip
+%%DATADIR%%/streams/final/vehicles/MANTGX.zip
+%%DATADIR%%/streams/final/vehicles/MTVR.zip
+%%DATADIR%%/streams/final/vehicles/Mig-25.zip
+%%DATADIR%%/streams/final/vehicles/P51.zip
+%%DATADIR%%/streams/final/vehicles/Panther.zip
+%%DATADIR%%/streams/final/vehicles/SprinterVans.zip
+%%DATADIR%%/streams/final/vehicles/agora.zip
+%%DATADIR%%/streams/final/vehicles/ampliroll.zip
+%%DATADIR%%/streams/final/vehicles/concorde.zip
+%%DATADIR%%/streams/final/vehicles/cranedaf.zip
+%%DATADIR%%/streams/final/vehicles/dafsemi.zip
+%%DATADIR%%/streams/final/vehicles/dakardaf.zip
+%%DATADIR%%/streams/final/vehicles/dodgecharger.zip
+%%DATADIR%%/streams/final/vehicles/dodgepolice.zip
+%%DATADIR%%/streams/final/vehicles/dodgeviper.zip
+%%DATADIR%%/streams/final/vehicles/hilux.zip
+%%DATADIR%%/streams/final/vehicles/jerseybarrier.zip
+%%DATADIR%%/streams/final/vehicles/k100.zip
+%%DATADIR%%/streams/final/vehicles/kerax.zip
+%%DATADIR%%/streams/final/vehicles/liebherr.zip
+%%DATADIR%%/streams/final/vehicles/meanmachines.zip
+%%DATADIR%%/streams/final/vehicles/renaultcrane.zip
+%%DATADIR%%/streams/final/vehicles/scaniawreckers.zip
+%%DATADIR%%/streams/final/vehicles/skiploader.zip
+%%DATADIR%%/streams/final/vehicles/smit.zip
+%%DATADIR%%/streams/final/vehicles/tatra813.zip
+%%DATADIR%%/streams/final/vehicles/travelgo.zip
+%%DATADIR%%/streams/final/vehicles/turbotwin.zip
+%%DATADIR%%/streams/final/vehicles/twinotter.zip
+%%DATADIR%%/streams/final/vehicles/wahoo.zip
+@dirrm %%DATADIR%%/streams/final/vehicles
+@dirrm %%DATADIR%%/streams/final/terrains
+@dirrm %%DATADIR%%/streams/final
+@dirrm %%DATADIR%%/streams
+@dirrm %%DATADIR%%/skeleton/vehicles
+@dirrm %%DATADIR%%/skeleton/terrains
+@dirrm %%DATADIR%%/skeleton/packs
+@dirrm %%DATADIR%%/skeleton/logs
+@dirrm %%DATADIR%%/skeleton/config
+@dirrm %%DATADIR%%/skeleton/cache
+@dirrm %%DATADIR%%/skeleton
+@dirrm %%DATADIR%%/resources
+@dirrm %%DATADIR%%/languages/zh
+@dirrm %%DATADIR%%/languages/ur
+@dirrm %%DATADIR%%/languages/tr
+@dirrm %%DATADIR%%/languages/sv
+@dirrm %%DATADIR%%/languages/sl
+@dirrm %%DATADIR%%/languages/sk
+@dirrm %%DATADIR%%/languages/ru
+@dirrm %%DATADIR%%/languages/ro
+@dirrm %%DATADIR%%/languages/pt
+@dirrm %%DATADIR%%/languages/pl
+@dirrm %%DATADIR%%/languages/nn
+@dirrm %%DATADIR%%/languages/nl
+@dirrm %%DATADIR%%/languages/lt
+@dirrm %%DATADIR%%/languages/la
+@dirrm %%DATADIR%%/languages/ja
+@dirrm %%DATADIR%%/languages/it
+@dirrm %%DATADIR%%/languages/is
+@dirrm %%DATADIR%%/languages/id
+@dirrm %%DATADIR%%/languages/hu
+@dirrm %%DATADIR%%/languages/hi
+@dirrm %%DATADIR%%/languages/fr
+@dirrm %%DATADIR%%/languages/fi
+@dirrm %%DATADIR%%/languages/et
+@dirrm %%DATADIR%%/languages/es
+@dirrm %%DATADIR%%/languages/en
+@dirrm %%DATADIR%%/languages/el
+@dirrm %%DATADIR%%/languages/de
+@dirrm %%DATADIR%%/languages/da
+@dirrm %%DATADIR%%/languages/cs
+@dirrm %%DATADIR%%/languages/bn
+@dirrm %%DATADIR%%/languages/bg
+@dirrm %%DATADIR%%/languages/ar
+@dirrm %%DATADIR%%/languages
+@dirrm %%DATADIR%%
+@dirrm libexec/rigsofrods
+@dirrm libexec
+@dirrm lib/rigsofrods

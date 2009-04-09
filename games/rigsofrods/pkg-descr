@@ -1,0 +1,17 @@
+Rigs of Rods (also known as RoR), is a truck, car, airplane and
+boat simulator. You can drive, fly or sail in total freedom in an
+open environment. What makes RoR different to most simulators is
+its unique soft-body physics: vehicles chassis and wheels are
+simulated in real-time as flexible objects, giving the simulation
+an extremely accurate behavior, while allowing the vehicles to be
+simply specified by their structural composition, as a network of
+interconnected nodes (forming the chassis and the wheels). Crashing
+into walls or terrain can permanently deform a vehicle in a realistic
+manner. In addition to its unique soft-body physics, RoR also
+features an advanced flight model based on blade element theory,
+allowing the accurate simulation of any airplane, base on their
+physical dimensions and wing airfoils. It also features an accurate
+buoyancy model based on elemental pressure gradients, enabling boats
+with complex hulls to move realistically in the swell.
+
+WWW: http://www.rigsofrods.com/

@@ -1,0 +1,13 @@
+==========================================================================
+
+Note that RoR was built without CgProgramManager ogre3d plugin
+(which is not avialable for FreeBSD because it depends on proprietary
+NVidia CG Toolkit), which means that some visual effects will either
+not work or will prevent game from running. You can always run
+rorconfig and disable them.
+
+Also note that there's some sound problems still unresolved.
+
+Don't forget to run rorconfig before running the game.
+
+==========================================================================

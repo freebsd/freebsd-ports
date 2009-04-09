@@ -1,0 +1,31 @@
+--- dependencies/ogrenew/RenderSystems/GL/CMakeLists.txt.orig	2009-02-22 20:59:55.000000000 +0300
++++ dependencies/ogrenew/RenderSystems/GL/CMakeLists.txt	2009-03-05 04:57:40.000000000 +0300
+@@ -157,16 +157,19 @@
+     src/GLX/OgreGLXWindow.cpp
+     src/GLX/OgreGLXUtils.cpp
+   )
+-  include_directories(src/GLX include/GLX)
++  include_directories(BEFORE src/GLX include/GLX)
+ elseif (APPLE)
+ endif ()
+ 
+ 
+-include_directories(
++include_directories(BEFORE
+   ${CMAKE_CURRENT_SOURCE_DIR}/include
+   ${CMAKE_CURRENT_SOURCE_DIR}/src/GLSL/include
+   ${CMAKE_CURRENT_SOURCE_DIR}/src/atifs/include
+   ${CMAKE_CURRENT_SOURCE_DIR}/src/nvparse
++)
++
++include_directories(
+   ${OPENGL_INCLUDE_DIR}
+ )
+ 
+@@ -188,4 +191,4 @@
+       RUNTIME DESTINATION ${BIN_DIR}
+       LIBRARY DESTINATION ${BIN_DIR}
+       ARCHIVE DESTINATION ${LIB_DIR})
+-      
+\ No newline at end of file
++      
