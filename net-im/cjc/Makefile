@@ -34,7 +34,7 @@ post-extract:
 
 post-patch:
 .ifdef NOPORTDOCS
-	@${REINPLACE_CMD} -e '/^DOCS=/s|=.*|=|' -e '/INSTALL_DATA.*DOCS/d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/^DOCS=/s|=.*|=|' -e '/$$(DESTDIR)$$(pkg_docdir)/d' ${WRKSRC}/Makefile
 .endif
 	@${GREP} -lr '/usr/bin/python' ${WRKSRC} | \
 		${XARGS} ${REINPLACE_CMD} -e "s!/usr/bin/python!${PYTHON_CMD}!"
