@@ -60,6 +60,7 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/modules/mac2ip
 %%EXAMPLESDIR%%/raddb/modules/mac2vlan
 %%EXAMPLESDIR%%/raddb/modules/mschap
+%%EXAMPLESDIR%%/raddb/modules/otp
 %%EXAMPLESDIR%%/raddb/modules/pam
 %%EXAMPLESDIR%%/raddb/modules/pap
 %%EXAMPLESDIR%%/raddb/modules/passwd
@@ -69,12 +70,12 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/modules/radutmp
 %%EXAMPLESDIR%%/raddb/modules/realm
 %%EXAMPLESDIR%%/raddb/modules/smbpasswd
+%%EXAMPLESDIR%%/raddb/modules/smsotp
 %%EXAMPLESDIR%%/raddb/modules/sql_log
 %%EXAMPLESDIR%%/raddb/modules/sqlcounter_expire_on_login
 %%EXAMPLESDIR%%/raddb/modules/sradutmp
 %%EXAMPLESDIR%%/raddb/modules/unix
 %%EXAMPLESDIR%%/raddb/modules/wimax
-%%EXAMPLESDIR%%/raddb/otp.conf
 %%EXAMPLESDIR%%/raddb/policy.conf
 %%EXAMPLESDIR%%/raddb/policy.txt
 %%EXAMPLESDIR%%/raddb/preproxy_users
@@ -90,11 +91,13 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/sites-available/dynamic-clients
 %%EXAMPLESDIR%%/raddb/sites-available/example
 %%EXAMPLESDIR%%/raddb/sites-available/inner-tunnel
+%%EXAMPLESDIR%%/raddb/sites-available/originate-coa
 %%EXAMPLESDIR%%/raddb/sites-available/proxy-inner-tunnel
 %%EXAMPLESDIR%%/raddb/sites-available/robust-proxy-accounting
 %%EXAMPLESDIR%%/raddb/sites-available/status
 %%EXAMPLESDIR%%/raddb/sites-available/virtual.example.com
 %%EXAMPLESDIR%%/raddb/sites-available/vmps
+%%EXAMPLESDIR%%/raddb/sites-enabled/control-socket
 %%EXAMPLESDIR%%/raddb/sites-enabled/default
 %%EXAMPLESDIR%%/raddb/sites-enabled/inner-tunnel
 %%EXAMPLESDIR%%/raddb/sql.conf
@@ -396,6 +399,11 @@ bin/smbencrypt
 %%EXPM%%%%SMB%%%%LIBDIR%%/rlm_smb.a
 %%EXPM%%%%SMB%%%%LIBDIR%%/rlm_smb.la
 %%EXPM%%%%SMB%%%%LIBDIR%%/rlm_smb.so
+%%EXPM%%%%LIBDIR%%/rlm_smsotp-%%PORTVERSION%%.la
+%%EXPM%%%%LIBDIR%%/rlm_smsotp-%%PORTVERSION%%.so
+%%EXPM%%%%LIBDIR%%/rlm_smsotp.a
+%%EXPM%%%%LIBDIR%%/rlm_smsotp.la
+%%EXPM%%%%LIBDIR%%/rlm_smsotp.so
 %%LIBDIR%%/rlm_sql-%%PORTVERSION%%.la
 %%LIBDIR%%/rlm_sql-%%PORTVERSION%%.so
 %%LIBDIR%%/rlm_sql.a
@@ -448,6 +456,7 @@ bin/smbencrypt
 %%EXPM%%%%LIBDIR%%/rlm_wimax.so
 @dirrm %%LIBDIR%%
 sbin/checkrad
+sbin/raddebug
 sbin/radiusd
 sbin/radmin
 sbin/radwatch
@@ -614,6 +623,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.foundry
 %%DATADIR%%/dictionary.freeradius
 %%DATADIR%%/dictionary.freeradius.internal
+%%DATADIR%%/dictionary.freeswitch
 %%DATADIR%%/dictionary.gandalf
 %%DATADIR%%/dictionary.garderos
 %%DATADIR%%/dictionary.gemtek

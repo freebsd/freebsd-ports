@@ -15,6 +15,7 @@ radius_gid="%%GID%%"
 radius_raddb_work="%%RADDB_WORK%%"
 radius_raddb="%%RADDB%%"
 radius_logdir="%%LOGDIR%%"
+radius_libdir="%%LIBDIR%%"
 
 radius_run_as_user="%%RUN_AS_USER%%"
 
@@ -145,6 +146,19 @@ case $2 in
 	    fi
 	done
 
+	# Update the libdir line in radiusd.conf
+	echo "===> Updating libdir in ${radius_raddb}/radiusd.conf"
+	if ! sed -i.update-libdir-original -Ee $( \
+	        echo -n 's:^(libdir[[:space:]=]+)(.*[[:space:]:]+)?' ; \
+	        echo -n $( echo ${radius_libdir} | \
+	            sed -Ee 's:^(.*)-[[:digit:].]+$:\1:' ) ; \
+	        echo -n '(-[[:digit:].]+)?([[:space:]:]+.*)?$' ; \ 
+		echo -n ':\1\2'${radius_libdir}'\4:' \
+	    ) ${radius_raddb}/radiusd.conf; then
+	    echo "Failed to update libdir in ${radius_raddb}/radius.conf"
+	    exit 1
+	fi
+	rm ${radius_raddb}/radiusd.conf.update-libdir-original
         ;;
 esac
 
