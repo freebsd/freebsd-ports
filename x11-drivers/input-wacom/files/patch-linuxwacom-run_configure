@@ -9,3 +9,9 @@
  
  rm -rf linuxwacom-${LINUXWACOM}
  tar xf linuxwacom-${LINUXWACOM}.tar.bz2
+@@ -14,5 +14,5 @@
+ cp files/types.h linuxwacom-${LINUXWACOM}/src/xdrv/asm
+ cp files/input.h linuxwacom-${LINUXWACOM}/src/xdrv/linux
+ cd linuxwacom-${LINUXWACOM}
+-./configure --with-linux=yes --with-tcl=/usr/local/include/tcl8.4 --with-tk=/usr/local/include/tk8.4 --prefix=${PREFIX} --enable-dlloader CFLAGS="-I/usr/local/include"
++./configure --with-linux=yes --with-tcl=/usr/local/include/tcl8.4 --with-tk=/usr/local/include/tk8.4 --prefix=${PREFIX} --enable-dlloader CFLAGS="-I/usr/local/include -DWCM_XORG_XSERVER_1_6=true"
