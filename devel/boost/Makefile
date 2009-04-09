@@ -16,6 +16,7 @@ COMMENT=	Free peer-reviewed portable C++ source libraries
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/g}
 
 .if defined(WITH_PYTHON) || defined (WITH_PYSTE)
@@ -90,6 +91,7 @@ PLIST_SUB+=	BOOST_PYSTE="@comment "
 BOOST_TOOLS=	gcc
 
 BJAM_OPTIONS=	--layout=system
+BJAM_OPTIONS+=	${_MAKE_JOBS}
 .if defined (WITH_VERBOSE_BUILD)
 BJAM_OPTIONS+=	-d2
 .endif
