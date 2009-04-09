@@ -54,7 +54,7 @@ LINUX_DIST_SUFFIX=
 WEB_AUTH=			nvu
 
 # Non-version specific components
-_LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo curl esound expat fontconfig \
+_LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo curl dri esound expat fontconfig \
 					freealut gdkpixbuf gtk gtk2 hicontheme imlib jpeg libaudiofile \
 					libg2c libglade libglade2 libglu libmng libogg libsigcpp20 libssh2 libtheora \
 					libvorbis libxml libxml2 mikmod openal openmotif pango png png10 qt33 \
@@ -123,6 +123,15 @@ curl_FILE=		${LINUXBASE}/usr/lib/libcurl.so.3.0.0
 curl_f8_FILE=		${LINUXBASE}/usr/lib/libcurl.so.4.1.0
 curl_DETECT=		${curl${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 curl_PORT=		${PORTSDIR}/ftp/linux${LINUX_DIST_SUFFIX}-curl
+
+dri_FILE=		${LINUXBASE}/usr/X11R6/lib/libGL.so.1
+dri_f8_FILE=		${LINUXBASE}/usr/lib/libGL.so.1
+dri_DETECT=		${dri${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+. if ${LINUX_DIST_SUFFIX} == "-f8"
+dri_PORT=		${PORTSDIR}/graphics/linux-f8-dri
+.else
+dri_PORT=		${PORTSDIR}/graphics/linux_dri
+.endif
 
 esound_FILE=		${LINUXBASE}/usr/lib/libesd.so.0.2.36
 esound_f8_FILE=		${LINUXBASE}/usr/lib/libesd.so.0.2.38
