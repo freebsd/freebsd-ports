@@ -2383,14 +2383,6 @@ PKG_INFO?=		/usr/sbin/pkg_info
 PKG_VERSION?=		/usr/sbin/pkg_version
 .endif
 
-# Does the pkg_create tool support conflict checking?
-# XXX Slow?
-.if !defined(PKGINSTALLVER)
-PKGINSTALLVER!= ${PKG_INFO} -P 2>/dev/null | ${SED} -e 's/.*: //'
-.endif
-.if ${PKGINSTALLVER} < 20030417
-DISABLE_CONFLICTS=	YES
-.endif
 .if !defined(PKG_ARGS)
 PKG_ARGS=		-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd ${.CURDIR} && ${MAKE} actual-package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | ${SORT} -u -t : -k 2`" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS}
 .if !defined(NO_MTREE)
