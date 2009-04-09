@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.17 2009-04-06 12:57:35 bsam Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.18 2009-04-09 10:35:10 bsam Exp $
 #
 
 # Variables:
@@ -64,7 +64,23 @@ Linux_RPM_Post_Include=	bsd.linux-rpm.mk
 
 LINUX_DIST?=		fedora
 LINUX_DIST_VER?=	3
-_F8_COMPATIBLE_LINUX_BASE_PORTS=	f8 f9
+
+# linux Fedora 8 infrastructure ports should be used with compat.linux.osrelease=2.6.16,
+# linux_base-f8 (or greater) port
+.  if ${LINUX_DIST_VER} == 8
+# let's check for apropriate compat.linux.osrelease
+.    if (${LINUX_OSRELEASE} != "2.6.16")
+IGNORE=		bsd.linux-rpm.mk test failed: the port should be used with compat.linux.osrelease=2.6.16, which is supported at 8-CURRENT and has a limitted support at 7-STABLE
+.    endif
+# let's check if an apropriate linux base port is used
+.    if ${USE_LINUX} != f8 && ${USE_LINUX} != f9
+IGNORE=		bsd.linux-rpm.mk test failed: the port should be used with at least linux_base-f8, please read /usr/ports/UPDATING
+.    endif
+# let's check if OVERRIDE_LINUX_NONBASE_PORTS is defined
+.    ifndef(OVERRIDE_LINUX_NONBASE_PORTS)
+IGNORE=		bsd.linux-rpm.mk test failed: the port should be used with defined OVERRIDE_LINUX_NONBASE_PORTS, please read /usr/ports/UPDATING
+.    endif
+.  endif
 
 .  if defined(LINUX_DIST)
 DIST_SUBDIR?=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
@@ -75,13 +91,6 @@ DIST_SUBDIR?=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
 .      ifndef MASTER_SITES
 MASTER_SITES=			${MASTER_SITE_FEDORA_LINUX}
 .        if ${LINUX_DIST_VER} == 8
-# linux Fedora 8 infrastructure ports should be used with linux_base-f8 (or greater) port
-.          if ${USE_LINUX:M${_F8_COMPATIBLE_LINUX_BASE_PORTS}} == ""
-IGNORE=		the port should be used with at least linux_base-f8, please read /usr/ports/UPDATING
-.          endif
-.          if (${LINUX_OSRELEASE} != "2.6.16") && defined(PACKAGE_BUILDING)
-IGNORE=		packages should be built with compat.linux.osrelease=2.6.16
-.          endif
 MASTER_SITE_SUBDIR?=	../releases/${LINUX_DIST_VER}/Everything/${LINUX_RPM_ARCH}/os/Packages \
 			../updates/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}.newkey
 MASTER_SITE_SRC_SUBDIR?=	../releases/${LINUX_DIST_VER}/Everything/source/SRPMS \
