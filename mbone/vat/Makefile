@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Visual Audio Tool - multicast audioconferencing
 
 GSM_DIR=	${.CURDIR}/../../audio/gsm
-GSM_WORK=	${WRKDIRPREFIX}${GSM_DIR}/work/gsm-1.0-pl12
+GSM_WORK=	${WRKDIRPREFIX}${GSM_DIR}/work/gsm-1.0-pl13
 
 # If configure is changed to look for libgsm.a in ${PREFIX}/lib, then
 # we can use this first BUILD_DEPENDS and save some work.
