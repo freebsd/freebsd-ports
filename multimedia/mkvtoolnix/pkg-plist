@@ -2,6 +2,8 @@ bin/mkvextract
 bin/mkvinfo
 bin/mkvmerge
 %%GUI%%bin/mmg
+share/locale/de/LC_MESSAGES/mkvtoolnix.mo
+share/locale/ja/LC_MESSAGES/mkvtoolnix.mo
 %%DATADIR%%/images/addingremovingattachments.gif
 %%DATADIR%%/images/addremovefiles.gif
 %%DATADIR%%/images/attachmentoptions.gif

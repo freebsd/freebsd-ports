@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	2.4.2
+PORTVERSION=	2.6.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/
 
@@ -24,6 +24,7 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		boost_regex:${PORTSDIR}/devel/boost
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
