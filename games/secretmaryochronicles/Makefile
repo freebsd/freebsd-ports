@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	secretmaryochronicles
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	1.8
 CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	smclone
@@ -26,6 +25,7 @@ USE_GMAKE=	yes
 USE_SDL=	sdl image mixer ttf
 USE_GL=		gl glu
 USE_GETTEXT=	yes
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
