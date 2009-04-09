@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	msdl
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.4.1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-1.2.4-r1
 
 MAINTAINER=	wahjava@gmail.com
 COMMENT=	Streaming multimedia files downloader
