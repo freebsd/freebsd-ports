@@ -31,6 +31,7 @@
 %%SGE_BASE%%/catman/cat/cat1/gethostname.1
 %%SGE_BASE%%/catman/cat/cat1/getservbyname.1
 %%SGE_BASE%%/catman/cat/cat1/hostnameutils.1
+%%SGE_BASE%%/catman/cat/cat1/jsv.1
 %%SGE_BASE%%/catman/cat/cat1/qacct.1
 %%SGE_BASE%%/catman/cat/cat1/qalter.1
 %%SGE_BASE%%/catman/cat/cat1/qconf.1
@@ -101,6 +102,7 @@
 %%SGE_BASE%%/catman/cat/cat3/drmaa_wifexited.3
 %%SGE_BASE%%/catman/cat/cat3/drmaa_wifsignaled.3
 %%SGE_BASE%%/catman/cat/cat3/drmaa_wtermsig.3
+%%SGE_BASE%%/catman/cat/cat3/jsv_script_interface.3
 %%SGE_BASE%%/catman/cat/cat5/access_list.5
 %%SGE_BASE%%/catman/cat/cat5/accounting.5
 %%SGE_BASE%%/catman/cat/cat5/bootstrap.5
@@ -428,6 +430,12 @@
 %%SGE_BASE%%/util/resources/centry/virtual_free
 %%SGE_BASE%%/util/resources/centry/virtual_total
 %%SGE_BASE%%/util/resources/centry/virtual_used
+%%SGE_BASE%%/util/resources/jsv/JSV.pm
+%%SGE_BASE%%/util/resources/jsv/jsv.pl
+%%SGE_BASE%%/util/resources/jsv/jsv.sh
+%%SGE_BASE%%/util/resources/jsv/jsv.tcl
+%%SGE_BASE%%/util/resources/jsv/jsv_include.sh
+%%SGE_BASE%%/util/resources/jsv/jsv_include.tcl
 %%SGE_BASE%%/util/resources/loadsensors/calendar.sh
 %%SGE_BASE%%/util/resources/loadsensors/ibm-loadsensor
 %%SGE_BASE%%/util/resources/loadsensors/interix-loadsensor.sh
@@ -484,6 +492,7 @@
 %%BDB_SPOOL%%%%SGE_BASE%%/utilbin/%%SGE_ARCH%%/db_stat
 %%BDB_SPOOL%%%%SGE_BASE%%/utilbin/%%SGE_ARCH%%/db_upgrade
 %%BDB_SPOOL%%%%SGE_BASE%%/utilbin/%%SGE_ARCH%%/db_verify
+%%SGE_BASE%%/utilbin/%%SGE_ARCH%%/echo_raw
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/filestat
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/fstype
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/gethostbyaddr
@@ -495,6 +504,7 @@
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/now
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/openssl
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/qrsh_starter
+%%SGE_BASE%%/utilbin/%%SGE_ARCH%%/read_raw
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/rlogin
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/rsh
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/rshd
@@ -533,7 +543,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/event_mirror.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/job_category.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/job_class.txt
+%%PORTDOCS%%%%DOCSDIR%%/devel/rfe/job_submission_verifier.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/maui.txt
+%%PORTDOCS%%%%DOCSDIR%%/devel/rfe/non-multiplied-pe-requests.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/policy_module.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/priority_class.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/profiling.txt
@@ -549,6 +561,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/gethostname.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/getservbyname.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/hostnameutils.html
+%%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/jsv.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qacct.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qalter.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qconf.html
@@ -561,9 +574,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qmon.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qping.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qquota.html
+%%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qrdel.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qresub.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qrls.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qrsh.html
+%%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qrstat.html
+%%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qrsub.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qselect.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qsh.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qstat.html
@@ -618,6 +634,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_wifexited.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_wifsignaled.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_wtermsig.html
+%%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/jsv_script_interface.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/lAddElemStr.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/lAddList.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/lAddSubStr.html
@@ -754,12 +771,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman5/user.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman5/usermapping.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman8/SGE_Helper_Service.exe.html
+%%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman8/sge_ca.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman8/sge_commd.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman8/sge_execd.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman8/sge_qmaster.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman8/sge_schedd.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman8/sge_shadowd.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman8/sge_shepherd.html
+%%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman8/sge_st.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman8/sgecommdcntl.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/index.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/manuals.html
@@ -843,6 +862,7 @@
 @dirrm %%SGE_BASE%%/util/resources/schemas
 @dirrm %%SGE_BASE%%/util/resources/pe
 @dirrm %%SGE_BASE%%/util/resources/loadsensors
+@dirrm %%SGE_BASE%%/util/resources/jsv
 @dirrm %%SGE_BASE%%/util/resources/centry
 @dirrm %%SGE_BASE%%/util/resources/calendars
 @dirrm %%SGE_BASE%%/util/resources

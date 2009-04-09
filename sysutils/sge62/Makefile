@@ -9,7 +9,7 @@ PORTNAME=	sge
 PORTVERSION=	${SGE_VERSION}
 PORTREVISION=	1
 CATEGORIES=	sysutils parallel
-MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/190/:src \
+MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/197/:src \
 		${MASTER_SITE_LOCAL}:src
 MASTER_SITE_SUBDIR=	brooks
 DISTNAME=	ge-V${SGE_RELEASE:S/.//}_TAG-src
@@ -37,8 +37,8 @@ SGE_BASE?=	sge
 SGE_ROOT=	${PREFIX}/${SGE_BASE}
 SGE_ARCH=	fbsd-${ARCH}
 SGE_BUILD_ARCH=	FREEBSD_${ARCH:U}
-SGE_RELEASE=	6.2u1
-SGE_VERSION=	${SGE_RELEASE:S/u/./:S/beta/.b/}
+SGE_RELEASE=	6.2u2_1
+SGE_VERSION=	${SGE_RELEASE:S/u/./:S/_/./:S/beta/.b/}
 
 PLIST_SUB+=	SGE_ARCH=${SGE_ARCH}
 PLIST_SUB+=	SGE_BASE=${SGE_BASE}
@@ -98,7 +98,7 @@ AIMK_ARGS+=	-spool-classic
 PLIST_SUB+=	BDB_SPOOL="@comment "
 .endif
 
-AIMK_ARGS+=	-no-java -no-jni
+AIMK_ARGS+=	-no-java -no-jni -no-gui-inst
 
 .if defined(WITH_X11)
 USE_MOTIF=	yes
@@ -202,7 +202,7 @@ release-tar: build
 #########################################################################
 
 # Build a pkg-plist and Makefile.man
-build-plist: build
+build-plist:
 .if defined(WITHOUT_BDB) || defined(WITHOUT_X11)
 	@echo "ERROR: All OPTIONS must be enabled to build plist!" && ${FALSE}
 .endif
