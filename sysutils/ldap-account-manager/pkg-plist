@@ -13,6 +13,7 @@
 %%WWWDIR%%/config/pdf/default.group.xml
 %%WWWDIR%%/config/pdf/default.host.xml
 %%WWWDIR%%/config/pdf/default.mailAlias.xml
+%%WWWDIR%%/config/pdf/default.netgroup.xml
 %%WWWDIR%%/config/pdf/default.smbDomain.xml
 %%WWWDIR%%/config/pdf/default.user.xml
 %%WWWDIR%%/config/pdf/logos/.htaccess
@@ -22,6 +23,7 @@
 %%WWWDIR%%/config/profiles/default.group
 %%WWWDIR%%/config/profiles/default.host
 %%WWWDIR%%/config/profiles/default.mailAlias
+%%WWWDIR%%/config/profiles/default.netgroup
 %%WWWDIR%%/config/profiles/default.smbDomain
 %%WWWDIR%%/config/profiles/default.user
 %%WWWDIR%%/config/selfService/.htaccess
@@ -36,6 +38,7 @@
 %%WWWDIR%%/graphics/bigTools.png
 %%WWWDIR%%/graphics/catalog.png
 %%WWWDIR%%/graphics/dc.png
+%%WWWDIR%%/graphics/del.png
 %%WWWDIR%%/graphics/delete.gif
 %%WWWDIR%%/graphics/delete.png
 %%WWWDIR%%/graphics/device.png
@@ -44,6 +47,7 @@
 %%WWWDIR%%/graphics/door.png
 %%WWWDIR%%/graphics/down.gif
 %%WWWDIR%%/graphics/edit.png
+%%WWWDIR%%/graphics/eduPerson.png
 %%WWWDIR%%/graphics/error.png
 %%WWWDIR%%/graphics/exit.png
 %%WWWDIR%%/graphics/fail.png
@@ -74,6 +78,7 @@
 %%WWWDIR%%/graphics/mailBig.png
 %%WWWDIR%%/graphics/minus.png
 %%WWWDIR%%/graphics/n.png
+%%WWWDIR%%/graphics/netgroup.png
 %%WWWDIR%%/graphics/network-wired.png
 %%WWWDIR%%/graphics/network.png
 %%WWWDIR%%/graphics/nt_machine.png
@@ -118,10 +123,6 @@
 %%WWWDIR%%/lib/config.inc
 %%WWWDIR%%/lib/createntlm.inc
 %%WWWDIR%%/lib/export.inc
-%%WWWDIR%%/lib/font/Vera.ttf
-%%WWWDIR%%/lib/font/VeraBI.ttf
-%%WWWDIR%%/lib/font/VeraBd.ttf
-%%WWWDIR%%/lib/font/VeraIt.ttf
 %%WWWDIR%%/lib/font/vera.ctg.z
 %%WWWDIR%%/lib/font/vera.php
 %%WWWDIR%%/lib/font/vera.z
@@ -147,12 +148,15 @@
 %%WWWDIR%%/lib/modules/fixed_ip.inc
 %%WWWDIR%%/lib/modules/range.inc
 %%WWWDIR%%/lib/modules/account.inc
+%%WWWDIR%%/lib/modules/eduPerson.inc
 %%WWWDIR%%/lib/modules/ieee802device.inc
 %%WWWDIR%%/lib/modules/inetLocalMailRecipient.inc
 %%WWWDIR%%/lib/modules/inetOrgPerson.inc
 %%WWWDIR%%/lib/modules/kolabUser.inc
 %%WWWDIR%%/lib/modules/ldapPublicKey.inc
+%%WWWDIR%%/lib/types/netgroup.inc
 %%WWWDIR%%/lib/modules/nisMailAlias.inc
+%%WWWDIR%%/lib/modules/nisnetgroup.inc
 %%WWWDIR%%/lib/modules/phpGroupwareGroup.inc
 %%WWWDIR%%/lib/modules/phpGroupwareUser.inc
 %%WWWDIR%%/lib/modules/posixAccount.inc
@@ -217,6 +221,7 @@
 %%WWWDIR%%/style/type_group.css
 %%WWWDIR%%/style/type_host.css
 %%WWWDIR%%/style/type_mailAlias.css
+%%WWWDIR%%/style/type_netgroup.css
 %%WWWDIR%%/style/type_smbDomain.css
 %%WWWDIR%%/style/type_user.css
 %%WWWDIR%%/templates/.htaccess
@@ -282,6 +287,8 @@
 %%WWWDIR%%/templates/tree/tree_view.php
 %%WWWDIR%%/templates/tree/update.php
 %%WWWDIR%%/templates/tree/update_confirm.php
+%%WWWDIR%%/templates/wz_tooltip.js
+%%WWWDIR%%/templates/config/config.js
 %%WWWDIR%%/tmp/.htaccess
 @dirrm %%WWWDIR%%/tmp
 @dirrm %%WWWDIR%%/templates/tree/templates/creation
