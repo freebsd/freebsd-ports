@@ -7,8 +7,9 @@
 
 PORTNAME=	youtube_dl
 PORTVERSION=	2009.04.06
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://www.arrakis.es/~rggi3/youtube-dl/
+MASTER_SITES=	http://bitbucket.org/rg3/youtube-dl/raw/468b207ea6ee/
 DISTNAME=	youtube-dl
 EXTRACT_SUFX=
 EXTRACT_ONLY=
