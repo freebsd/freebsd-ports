@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Getopt
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,6 +22,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	5.8.0+
 
 MAN3=	MooseX::Getopt.3 \
+	MooseX::Getopt::Dashes.3 \
 	MooseX::Getopt::Meta::Attribute.3 \
 	MooseX::Getopt::Meta::Attribute::NoGetopt.3 \
 	MooseX::Getopt::Meta::Attribute::Trait.3 \
