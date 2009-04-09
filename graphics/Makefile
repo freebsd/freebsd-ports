@@ -446,6 +446,7 @@
     SUBDIR += linux-adobesvg
     SUBDIR += linux-cairo
     SUBDIR += linux-f8-cairo
+    SUBDIR += linux-f8-dri
     SUBDIR += linux-f8-gdk-pixbuf
     SUBDIR += linux-f8-imlib
     SUBDIR += linux-f8-jpeg
