@@ -7,8 +7,7 @@
 PORTNAME=	turing
 PORTVERSION=	0.0.11
 CATEGORIES=	graphics rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Easy to use and customize/extend implementation of captcha
@@ -18,5 +17,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=  yes
 
 .include <bsd.port.mk>

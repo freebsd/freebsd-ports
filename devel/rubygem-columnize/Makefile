@@ -7,7 +7,7 @@
 PORTNAME=	columnize
 PORTVERSION=	0.3.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	rocky-hacks
 
 MAINTAINER=	wenheping@gmail.com

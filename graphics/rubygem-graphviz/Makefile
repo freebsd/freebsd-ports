@@ -21,8 +21,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
-
-post-install:
-	@${ECHO} 'bin/ruby2gv' >> ${TMPPLIST}
+PLIST_FILES=	bin/ruby2gv
 
 .include <bsd.port.mk>

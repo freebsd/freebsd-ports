@@ -1,9 +1,0 @@
-%%GEM_CACHE%%
-%%GEM_LIB_DIR%%/GPL.txt
-%%GEM_LIB_DIR%%/lib/parse_tree_reloaded.rb
-%%GEM_LIB_DIR%%/lib/sexp.rb
-%%GEM_LIB_DIR%%/lib/sexp_processor.rb
-%%GEM_SPEC%%
-@dirrm %%GEM_LIB_DIR%%/lib
-@dirrm %%GEM_LIB_DIR%%
-@dirrm %%GEM_DOC_DIR%%

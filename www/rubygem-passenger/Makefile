@@ -23,22 +23,17 @@ USE_APACHE=	2.2+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 USE_RAKE=	yes
+RUBYGEM_AUTOPLIST=  yes
+PLIST_FILES=	bin/passenger-config \
+	bin/passenger-install-apache2-module \
+	bin/passenger-make-enterprisey \
+	bin/passenger-memory-stats \
+	bin/passenger-spawn-server \
+	bin/passenger-status \
+	bin/passenger-stress-test
 
 post-install:
 	(${PREFIX}/bin/passenger-install-apache2-module --auto )
 	@${CAT}	${PKGMESSAGE}
-	@${ECHO} bin/passenger-config >	${TMPPLIST}
-	@${ECHO} bin/passenger-install-apache2-module >> ${TMPPLIST}
-	@${ECHO} bin/passenger-make-enterprisey >> ${TMPPLIST}
-	@${ECHO} bin/passenger-memory-stats >> ${TMPPLIST}
-	@${ECHO} bin/passenger-spawn-server >> ${TMPPLIST}
-	@${ECHO} bin/passenger-status >> ${TMPPLIST}
-	@${ECHO} bin/passenger-stress-test >> ${TMPPLIST}
-	@${ECHO} ${GEM_CACHE} >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},${GEM_DOC_DIR},' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},${GEM_LIB_DIR},' >> ${TMPPLIST}
-	@${ECHO} ${GEM_SPEC} >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},@dirrm ${GEM_LIB_DIR},' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},@dirrm ${GEM_DOC_DIR},' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

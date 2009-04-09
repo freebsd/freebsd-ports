@@ -18,6 +18,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/railsbench
 
 OPTIONS=	GRUFF	"Plotting of perf data support using gruff"	off
 OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options

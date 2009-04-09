@@ -8,8 +8,7 @@
 PORTNAME=	ptreloaded
 PORTVERSION=	0.0.1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 DISTNAME=	ParseTreeReloaded-${PORTVERSION}
 
 MAINTAINER=	tota@rtfm.jp
@@ -22,13 +21,6 @@ GEM_NAME=	${DISTNAME}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-
-x-generate-plist:
-	${ECHO} %%GEM_CACHE%% > pkg-plist.new
-	${FIND} ${PREFIX}/${GEM_DOC_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},%%GEM_DOC_DIR%%,' >> pkg-plist.new
-	${FIND} ${PREFIX}/${GEM_LIB_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},%%GEM_LIB_DIR%%,' >> pkg-plist.new
-	${ECHO} %%GEM_SPEC%% >> pkg-plist.new
-	${FIND} ${PREFIX}/${GEM_LIB_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},@dirrm %%GEM_LIB_DIR%%,' >> pkg-plist.new
-	${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},@dirrm %%GEM_DOC_DIR%%,' >> pkg-plist.new
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

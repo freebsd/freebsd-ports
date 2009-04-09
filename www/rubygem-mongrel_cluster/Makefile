@@ -19,21 +19,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_RC_SUBR=	mongrel_cluster
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=  yes
 REINPLACE_ARGS=	-i ""
-
-# This target is only meant to be used by the port maintainer.
-x-generate-plist:
-	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
-	| ${SED} -E \
-		's,.*share/nls/.+$$,,g \
-		;s,.*etc/rc.d/.+$$,,g \
-		;s,^${GEM_CACHE}$$,%%GEM_CACHE%%,g \
-		;s,${GEM_DOC_DIR}(/.+)?$$,%%GEM_DOC_DIR%%\1,g \
-		;s,${GEM_LIB_DIR}(/.+)?$$,%%GEM_LIB_DIR%%\1,g \
-		;s,^${GEM_SPEC}$$,%%GEM_SPEC%%,g \
-		;s,^${GEMS_BASE_DIR}/(.+)$$,\1,g \
-		;s,^@dirrm (${SPEC_DIR}|${GEMS_DIR}|lib/ruby).*$$,,g \
-		' | ${TR} -s '\n') > temp-pkg-plist
+PLIST_FILES=	bin/mongrel_cluster_ctl
 
 post-install:
 	${RMDIR} ${PREFIX}/${GEM_DOC_DIR}

@@ -7,11 +7,10 @@
 PORTNAME=	gd2
 PORTVERSION=	1.1.1
 CATEGORIES=	graphics rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 
 MAINTAINER=	ports@logvinov.com
-COMMENT=	Ruby binding for Thomas Boutell's gd 2.x graphics library
+COMMENT=	Ruby binding for Thomas Boutell's gd 2.x graphics library #'
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 

@@ -7,7 +7,7 @@
 PORTNAME=	htmltools
 PORTVERSION=	1.10
 CATEGORIES=	textproc www rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	ruby-htmltools
 DISTNAME=	htmltools-${PORTVERSION}
 
@@ -16,5 +16,6 @@ COMMENT=	Tools for parsing and manipulating HTML text in Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=  yes
 
 .include <bsd.port.mk>

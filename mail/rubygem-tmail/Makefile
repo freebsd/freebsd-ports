@@ -7,8 +7,7 @@
 PORTNAME=	tmail
 PORTVERSION=	1.2.3.1
 CATEGORIES=	mail rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A RFC2822/MIME compliant mail manipulating library for Ruby
@@ -16,5 +15,6 @@ COMMENT=	A RFC2822/MIME compliant mail manipulating library for Ruby
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 USE_RUBY_FEATURES=	racc-runtime
+RUBYGEM_AUTOPLIST=  yes
 
 .include <bsd.port.mk>

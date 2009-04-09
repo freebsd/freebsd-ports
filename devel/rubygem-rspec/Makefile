@@ -7,16 +7,16 @@
 PORTNAME=	rspec
 PORTVERSION=	0.7.5.1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	rspec
 
 MAINTAINER=	romanbsd@yahoo.com
 COMMENT=	Behaviour Driven Development in Ruby
 
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/drbspec bin/spec
 
 .include <bsd.port.mk>

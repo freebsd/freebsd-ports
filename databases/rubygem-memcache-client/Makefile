@@ -7,7 +7,7 @@
 PORTNAME=	memcache-client
 PORTVERSION=	1.5.0
 CATEGORIES=	databases rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	seattlerb
 
 MAINTAINER=	jw@innerewut.de

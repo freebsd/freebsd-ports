@@ -7,8 +7,9 @@
 
 PORTNAME=	mp3info
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	audio rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
@@ -18,7 +19,6 @@ COMMENT=	A Ruby library to access information on mp3 files
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
-BROKEN=		fails to package
+GEM_NAME=	${DISTNAME}
 
 .include <bsd.port.mk>
