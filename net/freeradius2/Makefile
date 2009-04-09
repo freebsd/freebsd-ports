@@ -4,9 +4,11 @@
 #
 # $FreeBSD$
 #
+# $Id$
+#
 
 PORTNAME=	freeradius
-DISTVERSION=	2.1.3
+DISTVERSION=	2.1.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -37,6 +39,7 @@ USE_OPENSSL=	yes
 USE_PYTHON=	yes
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	PORTVERSION=${DISTVERSION}
 
@@ -133,6 +136,7 @@ SUB_LIST+=	USER="${RADIUS_USER}" \
 		RADDB_WORK="${WRKSRC}/raddb" \
 		RADDB="${PREFIX}/etc/raddb" \
 		LOGDIR="${LOGDIR}" \
+		LIBDIR="${PREFIX}/${FREERADIUS_LIBDIR}" \
 		RC_SUBR_SUFFIX="${RC_SUBR_SUFFIX}"
 SUB_FILES+=	pkg-install pkg-deinstall pkg-message
 .ifdef(WITH_USER)
@@ -260,8 +264,8 @@ MAN5=		acct_users.5 clients.conf.5 dictionary.5 radiusd.conf.5 \
 		rlm_detail.5 rlm_digest.5 rlm_expr.5 rlm_files.5 rlm_mschap.5 \
 		rlm_pap.5 rlm_passwd.5 rlm_policy.5 rlm_realm.5 rlm_sql.5 \
 		rlm_sql_log.5 rlm_unix.5 unlang.5 users.5
-MAN8=		radiusd.8 radmin.8 radrelay.8 radsqlrelay.8 radwatch.8 \
-		rlm_ippool_tool.8
+MAN8=		radiusd.8 radmin.8 raddebug.8 radrelay.8 radsqlrelay.8 \
+		radwatch.8 rlm_ippool_tool.8
 
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
@@ -275,13 +279,24 @@ post-patch:
 # Patch raddb/certs/bootstrap to use gmake instead of make
 	@${REINPLACE_CMD} -Ee "s:^make:${GMAKE}:" \
 		${WRKSRC}/raddb/certs/bootstrap
-# Clean up after the last operation (so as not to get unwanted files in raddb)
-	@${FIND} -E ${WRKSRC}/raddb/certs -regex '.*/bootstrap\.(orig|bak)$$' \
+# Patch raddb/certs/Makefile for the full path to the openssl binary (using
+# ports OpenSSL if installed)
+	@${REINPLACE_CMD} -E \
+		-e "s:^([[:space:]])+openssl:\1${OPENSSLBASE}/bin/openssl:g" \
+		${WRKSRC}/raddb/certs/Makefile
+# Clean up after the last two operations (so as not to get unwanted files in
+# raddb)
+	@${FIND} -E ${WRKSRC}/raddb/certs \
+		-regex '.*/(bootstrap|Makefile)\.(orig|bak)$$' \
 		-delete
 # If EXPERIMENTAL (and therefore DHCP) is enabled, enable the DHCP dictionary
 .ifdef(WITH_EXPERIMENTAL)
 	@${REINPLACE_CMD} -Ee 's:^#(.+ dictionary\.dhcp)$$:\1:g' \
 		${WRKSRC}/share/dictionary
+# Clean up (so as not to get an unwanted file in share)
+	@${FIND} -E ${WRKSRC}/share \
+		-regex '.*/dictionary\.(orig|bak)$$' \
+		-delete
 .endif
 # Patch scripts/Makefile not to install (unnecessary) rc.radiusd
 	@${REINPLACE_CMD} -Ee 's:^(.+rc\.radiusd.+)$$:#\1:g' \
