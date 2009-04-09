@@ -7,6 +7,7 @@
 
 PORTNAME=	monit
 PORTVERSION=	4.10.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tildeslash.com/monit/dist/
 
@@ -25,7 +26,8 @@ CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}" \
 		LOCALBASE="${LOCALBASE}"
 
-OPTIONS=	SSL "Enable SSL support" on
+OPTIONS=	SSL "Enable SSL support" on \
+		RESOURCE "Enable resource support (not for jail)" on
 
 PLIST_FILES=	bin/monit \
 		etc/monitrc.sample
@@ -42,6 +44,12 @@ PORTDOCS=	*
 CONFIGURE_ARGS+=	--enable-ssl --with-openssl="${OPENSSLBASE}"
 .else
 CONFIGURE_ARGS+=	--without-ssl
+.endif
+
+.if defined(WITH_RESOURCE)
+CONFIGURE_ARGS+=	--with-resource
+.else
+CONFIGURE_ARGS+=	--without-resource
 .endif
 
 post-install:
