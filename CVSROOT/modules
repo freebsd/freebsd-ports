@@ -1677,9 +1677,9 @@ compat6x                        ports/misc/compat6x
 compiz                          ports/x11-wm/compiz
 compiz-bcop                     ports/devel/compiz-bcop
 compiz-fusion                   ports/x11-wm/compiz-fusion
-compiz-fusion-plugins-extra     ports/x11-wm/compiz-fusion-plugins-extra
-compiz-fusion-plugins-main      ports/x11-wm/compiz-fusion-plugins-main
-compiz-fusion-plugins-unsupported  ports/x11-wm/compiz-fusion-plugins-unsupported
+compiz-plugins-extra            ports/x11-wm/compiz-plugins-extra
+compiz-plugins-main             ports/x11-wm/compiz-plugins-main
+compiz-plugins-unsupported      ports/x11-wm/compiz-plugins-unsupported
 compizconfig-backend-gconf      ports/x11-wm/compizconfig-backend-gconf
 compizconfig-python             ports/x11-wm/compizconfig-python
 compositeproto                  ports/x11/compositeproto
@@ -3877,6 +3877,7 @@ gcc42                           ports/lang/gcc42
 gcc42-withgcjawt                ports/lang/gcc42-withgcjawt
 gcc43                           ports/lang/gcc43
 gcc44                           ports/lang/gcc44
+gcc45                           ports/lang/gcc45
 gccmakedep                      ports/devel/gccmakedep
 gccxml                          ports/devel/gccxml
 gcdmaster                       ports/sysutils/gcdmaster
