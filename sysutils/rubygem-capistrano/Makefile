@@ -21,6 +21,8 @@ RUN_DEPENDS=	rubygem-net-ssh-gateway>=1.0.0:${PORTSDIR}/security/rubygem-net-ssh
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=  yes
+PLIST_FILES=	bin/cap bin/capify
 
 post-install:
 	@${ECHO_MSG} "======================================================================"

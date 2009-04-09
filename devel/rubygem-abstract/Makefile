@@ -15,5 +15,6 @@ COMMENT=	Define abstract method in Ruby
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

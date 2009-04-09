@@ -8,8 +8,7 @@
 PORTNAME=	net-netrc
 PORTVERSION=	0.2.1
 CATEGORIES=	net rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 
 MAINTAINER=	don@na.rim.or.jp
 COMMENT=	Net::Netrc provides ftp(1)-style .netrc parsing

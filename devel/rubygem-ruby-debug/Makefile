@@ -7,8 +7,7 @@
 PORTNAME=	ruby-debug
 PORTVERSION=	0.10.3
 CATEGORIES=	devel rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	A generic command line interface for ruby-debug

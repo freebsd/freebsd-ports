@@ -18,5 +18,6 @@ RUN_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/net-ssh-2.0.2.gemspec:${PORTSDIR}/security
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=  yes
 
 .include <bsd.port.mk>

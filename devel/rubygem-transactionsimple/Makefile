@@ -7,7 +7,7 @@
 PORTNAME=	transactionsimple
 PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	trans-simple
 DISTNAME=	transaction-simple-${PORTVERSION}
 

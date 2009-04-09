@@ -8,7 +8,7 @@
 PORTNAME=	rascut
 PORTVERSION=	0.2.1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	hotchpotch
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -22,5 +22,7 @@ BUILD_DEPENDS=	mongrel_rails:${PORTSDIR}/www/rubygem-mongrel \
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/rascut
 
 .include <bsd.port.mk>

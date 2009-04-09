@@ -7,26 +7,18 @@
 PORTNAME=	rake
 PORTVERSION=	0.8.3
 CATEGORIES=	devel rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 
 MAINTAINER=	jw@innerewut.de
 COMMENT=	Ruby Make
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/rake
 
 MANCOMPRESSED=	yes
 MAN1=		rake.1
-
-x-generate-plist:
-	${ECHO} bin/rake > pkg-plist.new
-	${ECHO} %%GEM_CACHE%% >> pkg-plist.new
-	${FIND} ${PREFIX}/${GEM_DOC_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},%%GEM_DOC_DIR%%,' >> pkg-plist.new
-	${FIND} ${PREFIX}/${GEM_LIB_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},%%GEM_LIB_DIR%%,' >> pkg-plist.new
-	${ECHO} %%GEM_SPEC%% >> pkg-plist.new
-	${FIND} ${PREFIX}/${GEM_LIB_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},@dirrm %%GEM_LIB_DIR%%,' >> pkg-plist.new
-	${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},@dirrm %%GEM_DOC_DIR%%,' >> pkg-plist.new
 
 .include <bsd.port.pre.mk>
 

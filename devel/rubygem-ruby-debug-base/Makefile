@@ -7,7 +7,7 @@
 PORTNAME=	ruby-debug-base
 PORTVERSION=	0.10.3
 CATEGORIES=	devel rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	ruby-debug
 
 MAINTAINER=	gogo@cs.uni-sb.de

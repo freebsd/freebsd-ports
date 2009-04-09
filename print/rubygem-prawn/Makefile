@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-prawn-layout>=0.1.0:${PORTSDIR}/print/rubygem-prawn-layout
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

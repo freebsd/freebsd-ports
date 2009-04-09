@@ -9,7 +9,6 @@ PORTNAME=	rgl
 PORTVERSION=	0.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Framework for graph datastructures and algorithms implemented in Ruby

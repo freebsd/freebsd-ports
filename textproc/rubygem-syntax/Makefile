@@ -8,8 +8,7 @@ PORTNAME=	syntax
 PORTVERSION=	1.0.0
 PKGVERSION=	1
 CATEGORIES=	textproc rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A module for using Systax highlighting in Ruby

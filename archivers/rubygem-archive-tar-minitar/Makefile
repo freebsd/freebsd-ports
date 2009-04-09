@@ -7,7 +7,7 @@
 PORTNAME=	archive-tar-minitar
 PORTVERSION=	0.5.2
 CATEGORIES=	archivers rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	ruwiki
 DISTNAME=	archive-tar-minitar-${PORTVERSION}
 

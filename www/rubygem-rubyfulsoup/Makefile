@@ -7,9 +7,8 @@
 PORTNAME=	rubyfulsoup
 PORTVERSION=	1.0.4
 CATEGORIES=	www textproc rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	rubyfulsoup
-DISTNAME=	${GEM_NAME}
+MASTER_SITES=	RF
+DISTNAME=	rubyful_soup-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Ruby port of the HTML/XML parser Beautiful Soup
@@ -19,7 +18,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-GEM_NAME=	rubyful_soup-${PORTVERSION}
+GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

@@ -14,9 +14,6 @@ COMMENT=	Recursive descent parser combinator framework for Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-
-post-install:
-	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},${GEM_DOC_DIR},' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},@dirrm ${GEM_DOC_DIR},' >> ${TMPPLIST}
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

@@ -17,8 +17,6 @@ COMMENT=	A collection of libraries for Taiwanese languages processing
 
 RUN_DEPENDS=	rubygem-activesupport>=1.4.2:${PORTSDIR}/devel/rubygem-activesupport
 
-GEM_NAME=	${DISTNAME}
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

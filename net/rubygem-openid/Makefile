@@ -22,7 +22,4 @@ USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
 
-post-install:
-	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -name "*~" -delete
-
 .include <bsd.port.mk>

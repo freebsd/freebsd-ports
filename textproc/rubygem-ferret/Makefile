@@ -16,15 +16,7 @@ COMMENT=	Ferret is a ruby port of Lucene
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes
-
-post-install:
-	@${FIND} ${PREFIX}/${GEM_LIB_DIR} ! -type d | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type d | ${SORT} -r | \
-		${SED} "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_DOC_DIR} ! -type d | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d | ${SORT} -r | \
-		${SED} "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST}
+RUBYGEM_AUTOPLIST=  yes
+PLIST_FILES=	bin/ferret-browser
 
 .include <bsd.port.mk>

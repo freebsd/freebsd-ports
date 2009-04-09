@@ -6,7 +6,6 @@
 
 PORTNAME=	exifr
 PORTVERSION=	0.10.8
-PORTREVISION=	0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RF
 
@@ -15,11 +14,7 @@ COMMENT=	A pure-ruby EXIF reader
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-
-post-install:
-	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type f | \
-		${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},${GEM_DOC_DIR},' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | \
-		${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},@dirrm ${GEM_DOC_DIR},' >> ${TMPPLIST}
+RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/exifr
 
 .include <bsd.port.mk>

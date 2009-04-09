@@ -9,8 +9,7 @@
 PORTNAME=	layout-yullio
 PORTVERSION=	0.9.0
 CATEGORIES=	www rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 DISTNAME=	layout_yullio_generator-${PORTVERSION}
 
 MAINTAINER=	ijliao@FreeBSD.org
@@ -22,5 +21,6 @@ GEM_NAME=	${DISTNAME}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=  yes
 
 .include <bsd.port.mk>

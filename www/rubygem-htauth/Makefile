@@ -7,7 +7,7 @@
 PORTNAME=	htauth
 PORTVERSION=	1.0.3
 CATEGORIES=	www rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	copiousfreetime
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -19,5 +19,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 USE_RAKE=	yes
+RUBYGEM_AUTOPLIST=  yes
+PLIST_FILES=	bin/htdigest-ruby bin/htpasswd-ruby
 
 .include <bsd.port.mk>

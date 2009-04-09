@@ -1,7 +1,0 @@
-%%GEM_CACHE%%
-%%GEM_LIB_DIR%%/GPL.txt
-%%GEM_LIB_DIR%%/lib/inline_acceleration.rb
-%%GEM_SPEC%%
-@dirrm %%GEM_LIB_DIR%%/lib
-@dirrm %%GEM_LIB_DIR%%
-@dirrm %%GEM_DOC_DIR%%

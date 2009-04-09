@@ -8,13 +8,14 @@
 PORTNAME=	rtags
 PORTVERSION=	0.96
 CATEGORIES=	devel rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Ruby replacement for ctags
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/rtags
 
 .include <bsd.port.mk>

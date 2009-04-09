@@ -18,6 +18,7 @@ LIB_DEPENDS=	yaz.3:${PORTSDIR}/net/yaz
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 CONFIGURE_ARGS+=	--with-opt-dir="${LOCALBASE}"
 
