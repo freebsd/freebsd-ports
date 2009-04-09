@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ezcrypto
-PORTVERSION=	0.7
+PORTVERSION=	0.7.2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RF
 
