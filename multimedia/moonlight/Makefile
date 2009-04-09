@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	moonlight
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	multimedia www
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/moon/
 DISTNAME=	moon-${PORTVERSION}
@@ -28,8 +27,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-cairo=system \
 		--with-debug=yes
 
-BROKEN=		bad plist
-
 WEBPLUGINS_DIR=		${PREFIX}/lib/moon/plugin
 WEBPLUGINS_FILES=	libmoonloader.so \
 			libmoonplugin.so
@@ -39,8 +36,6 @@ WEBPLUGINS_FILES=	libmoonloader.so \
 .if ${ARCH} == "sparc64"
 IGNORE=		does not build: not yet ported to sparc64
 .endif
-
-.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
 .if !defined(WITHOUT_FF2) || exists(${LOCALBASE}/bin/firefox)
 BUILD_DEPENDS+=		${LOCALBASE}/bin/firefox:${PORTSDIR}/www/firefox
@@ -71,6 +66,8 @@ CONFIGURE_ARGS+=	--with-ff2=no
 PLIST_SUB+=		FF3="@comment "
 CONFIGURE_ARGS+=	--with-ff3=no
 #.endif
+
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
 # Building the .xpi doesn't actually require embedded cairo, but it's a safer option
 # as there's no way for firefox to detect if cairo is already installed apparently.
