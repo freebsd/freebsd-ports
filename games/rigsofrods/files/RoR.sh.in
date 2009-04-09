@@ -1,0 +1,19 @@
+#!/bin/sh
+
+RORDIR=%%PREFIX%%/lib/rigsofrods
+DOTDIR=$HOME/.RigsOfRods
+
+if [ ! -e "$DOTDIR" ]; then
+	echo "Populating $DOTDIR..."
+	cd %%DATADIR%%/skeleton && find . -type d -exec mkdir -p "$DOTDIR/{}" \;
+	cd %%DATADIR%%/skeleton && find . -type f -exec cp -n {} "$DOTDIR/{}" \;
+fi
+
+LD_LIBRARY_PATH=$RORDIR:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH
+
+cd $RORDIR
+%%PREFIX%%/libexec/rigsofrods/RoR "$@"
+
+# re-enable key repeat (which is disabled by RoR for some reason)
+xset r
