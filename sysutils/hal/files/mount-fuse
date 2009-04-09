@@ -18,6 +18,8 @@ MNTSTRING=""
 OPTIONS=""
 FOUNDOPT="0"
 FOUNDU="0"
+FOUNDG="0"
+FOUNDBADARG="0"
 HWDEV=""
 FOUNDDEV="0"
 
@@ -29,6 +31,13 @@ do
     elif [ "${FOUNDU}" = "1" ]
     then
         OPTIONS="${OPTIONS} -o uid=${i}"
+    elif [ "${FOUNDG}" = "1" ]
+    then
+        OPTIONS="${OPTIONS} -o gid=${i}"
+    elif [ "${FOUNDBADARG}" = "1" ]
+    then
+        # We have an invalid argument flag, so ignore it and following argument
+        FOUNDBADARG="0"
     else
 
        if [ "${FOUNDDEV}" = "1" ]
@@ -63,20 +72,28 @@ do
             fi
         fi
 
-        # Add the value to our mount string
-        if [ "${i}" != "-o" -a "${i}" != "-u" ]
+        # Add the value to our mount string if it isn't any invalid flag
+        if [ "${i}" != "-o" -a "${i}" != "-u" -a "${i}" != "-C" -a "${i}" != "-g" -a "${i}" != "-m" -a "${i}" != "-a" -a "${i}" != "-i" -a "${i}" -a "-W" ]
         then
           MNTSTRING="${MNTSTRING} ${i}"
         fi
 
     fi
 
-    # Check if we are on a -u flag now
+    # Check if we are on a -u user id flag now
     if [ "${i}" = "-u" ]
     then
        FOUNDU="1"
     else
        FOUNDU="0"
+    fi
+
+    # Check if we are on a -g group id flag now
+    if [ "${i}" = "-g" ]
+    then
+       FOUNDG="1"
+    else
+       FOUNDG="0"
     fi
 
     # Check if we are on a -o option
@@ -86,11 +103,18 @@ do
     else
        FOUNDOPT="0"
     fi
+
+    # Check if we are on some other invalid flag
+    if [ "${i}" = "-C" -o "${i}" = "-m" -o "${i}" = "-W" ]
+    then
+       FOUNDBADARG="1"
+    else
+       FOUNDBADARG="0"
+    fi
 done
 
 # Save our final string which our FUSE helper will use
 FINALSTRING="${MNTSTRING} ${OPTIONS}"
-
 
 # Check that fuse.ko is loaded
 kldstat | grep -q fuse 2>/dev/null
