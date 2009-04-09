@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freedroidrpg
-PORTVERSION=	0.11.1
+PORTVERSION=	0.12.1
 CATEGORIES=	games
 MASTER_SITES=	SF/freedroid
 
@@ -14,16 +14,17 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Modification of the classical Freedroid engine into an RPG
 
 USE_BZIP2=	yes
-USE_SDL=	mixer image net sdl
+USE_SDL=	sdl image mixer
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=
+MAKE_JOBS_SAFE=	yes
 
 MAN6=		freedroidRPG.6
 
 OPTIONS=	BACKTRACE "Use backtrace() to generate nice bug reports" on \
-		EDITORS "Build the GTK editors" on \
-		OPENGL "Enable the OpenGL support (highly recommended!)" on
+		OPENGL "Enable the OpenGL support (highly recommended!)" on \
+		VORBIS "Enable vorbis support (music)" on
 
 .include <bsd.port.pre.mk>
 
@@ -35,20 +36,19 @@ STRIP=		#
 CONFIGURE_ARGS+=--disable-backtrace
 .endif
 
-.if !defined(WITHOUT_EDITORS)
-USE_GNOME+=	gtk12
-CONFIGURE_ARGS+=--enable-editors
-PLIST_SUB+=	EDITORS=""
-.else
-CONFIGURE_ARGS+=--disable-editors
-PLIST_SUB+=	EDITORS="@comment "
-.endif
-
 .if !defined(WITHOUT_OPENGL)
 USE_GL=		yes
 CONFIGURE_ARGS+=--enable-opengl
 .else
 CONFIGURE_ARGS+=--disable-opengl
+.endif
+
+.if !defined(WITHOUT_VORBIS)
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis \
+		ogg.5:${PORTSDIR}/audio/libogg
+CONFIGURE_ARGS+=--enable-vorbis
+.else
+CONFIGURE_ARGS+=--disable-vorbis
 .endif
 
 .include <bsd.port.post.mk>
