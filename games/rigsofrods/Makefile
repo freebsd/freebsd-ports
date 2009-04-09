@@ -10,7 +10,7 @@ PORTVERSION=	0.36.1
 CATEGORIES=	games
 # I've trimmed source tarball by around 10x and bundled rorserver
 MASTER_SITES=	SF:contents \
-		http://mirror.amdmi3.ru:game
+		http://mirror.amdmi3.ru/:game
 DISTFILES=	${PORTNAME}-source-${PORTVERSION}-trimmed${EXTRACT_SUFX}:game \
 		${PORTNAME}-contents-${PORTVERSION}.zip:contents
 EXTRACT_ONLY=	${PORTNAME}-source-${PORTVERSION}-trimmed${EXTRACT_SUFX}
