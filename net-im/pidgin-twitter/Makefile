@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pidgin-twitter
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.honeyplanet.jp/
 
