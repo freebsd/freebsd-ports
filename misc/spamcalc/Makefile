@@ -17,26 +17,26 @@ COMMENT=	Calculates "DNS-spam"-values for hostnames
 USE_PERL5=	YES
 
 do-build:
-	${MV} ${WRKSRC}/sc.pl ${WRKSRC}/sc.pl.orig
-	${SED} -e "s,sc.conf,${PREFIX}/etc/spamcalc.conf," < ${WRKSRC}/sc.pl.orig > ${WRKSRC}/sc.pl
-	${MV} ${WRKSRC}/sc.conf ${WRKSRC}/sc.conf.orig
-	${SED} -e "s,datafilesdir.*,datafilesdir = ${PREFIX}/share/spamcalc," < ${WRKSRC}/sc.conf.orig > ${WRKSRC}/sc.conf
+	${REINPLACE_CMD} -e "s,sc.conf,${PREFIX}/etc/spamcalc.conf," \
+		${WRKSRC}/sc.pl
+	${REINPLACE_CMD} -e "s,datafilesdir.*,datafilesdir = ${DATADIR}," \
+		${WRKSRC}/sc.conf
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sc.pl ${PREFIX}/bin/spamcalc
 	${INSTALL_DATA} ${WRKSRC}/sc.conf ${PREFIX}/etc/spamcalc.conf
-	${MKDIR} ${PREFIX}/share/spamcalc
+	${MKDIR} ${DATADIR}
 .for i in words regexps domains
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/spamcalc
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DATADIR}
 .endfor
-	${MKDIR} ${PREFIX}/share/spamcalc/data
+	${MKDIR} ${DATADIR}/data
 .for i in domains.blacklist domains.whitelist regexps.general regexps.nonspam spam.txt words.de words.it words.negative words.nl words.pl words.swear words.template words.uk
-	${INSTALL_DATA} ${WRKSRC}/data/${i} ${PREFIX}/share/spamcalc/data
+	${INSTALL_DATA} ${WRKSRC}/data/${i} ${DATADIR}/data
 .endfor
-	${MKDIR} ${PREFIX}/share/doc/spamcalc
 .if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
 .for i in LICENSE algorithms arguments feedback files introduction todo
-	${INSTALL_MAN} ${WRKSRC}/docs/${i} ${PREFIX}/share/doc/spamcalc
+	${INSTALL_MAN} ${WRKSRC}/docs/${i} ${DOCSDIR}
 .endfor
 .endif
 
