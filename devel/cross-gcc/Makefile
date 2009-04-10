@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	gcc
-PORTVERSION=	4.2.3
-PORTREVISION=	1
+PORTVERSION=	4.3.2
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC:S,$,:gcc,} \
 		${MASTER_SITE_SOURCEWARE:S,$,:newlib,}
@@ -22,6 +22,9 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	GNU gcc for cross-target development
+
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
+		mpfr.3:${PORTSDIR}/math/mpfr
 
 #
 # Temporary hack to deal with dependencies during package builds for
@@ -43,6 +46,11 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	all info
 
 DEPENDS_ARGS=	TGTARCH="${TGTARCH}" TGTABI="${TGTABI}"
+
+CONFIGURE_WRKSRC=	${WRKDIR}/build
+BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
+INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
+CONFIGURE_SCRIPT=	../${WRKSRC:C,^${WRKDIR}/?,,}/configure
 
 #
 # Newlib version to use
@@ -67,7 +75,9 @@ CONFIGURE_ARGS=	--target=${OURTARGET} \
 		--with-newlib \
 		--with-dwarf2 \
 		--with-gxx-include-dir=${TGT_LIBDIR}/include/cxx/ \
-		--disable-shared
+		--disable-shared \
+		--with-gmp="${LOCALBASE}" \
+		--with-mpfr="${LOCALBASE}" \
 
 MAN1=		${MANPAGES:S,^,${OURTARGET}-,}
 
@@ -111,8 +121,8 @@ CONFIGURE_ARGS+=--with-float=${WITH_FLOAT_TYPE}
 .endif
 
 .if defined(WITH_RTEMS_PATCHES)
-PATCHFILES+=	gcc-core-4.2.3-rtems4.9-20080205.diff \
-		newlib-${NEWLIB_VERSION}-rtems4.9-20080302.diff
+PATCHFILES+=	gcc-core-4.3.2-rtems4.9-20081214.diff \
+		newlib-${NEWLIB_VERSION}-rtems4.9-20081203.diff
 .endif
 
 #
@@ -157,9 +167,6 @@ TGTLANGS:=	"${TGTLANGS},objc"
 
 .if defined(WITH_FORTRAN)
 TGTLANGS:=	"${TGTLANGS},fortran"
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4 \
-		mpfr.3:${PORTSDIR}/math/mpfr
-CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
 PLIST_FILES+=	bin/${OURTARGET}-gfortran \
 		${OURTARGET}/bin/gfortran
 .endif
@@ -184,6 +191,7 @@ post-extract:
 	@${LN} -sf ${WRKSRC}/newlib-${NEWLIB_VERSION}/newlib ${WRKSRC}/newlib
 	@${LN} -sf ${WRKSRC}/newlib-${NEWLIB_VERSION}/libgloss \
 		${WRKSRC}/libgloss
+	${MKDIR} ${CONFIGURE_WRKSRC}/
 
 post-patch:
 #
