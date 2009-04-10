@@ -8,11 +8,12 @@
 #
 
 PORTNAME=	GDBM
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN/../../src
 PKGNAMEPREFIX=	p5-
-DISTNAME=	perl-5.8.8
+DISTNAME=	perl-5.8.9
+DIST_SUBDIR=	perl
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	GNU Data Base Manager (gdbm) interface
