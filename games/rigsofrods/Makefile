@@ -7,6 +7,7 @@
 
 PORTNAME=	rigsofrods
 PORTVERSION=	0.36.1
+PORTREVISION=	1
 CATEGORIES=	games
 # I've trimmed source tarball by around 10x and bundled rorserver
 MASTER_SITES=	SF:contents \
@@ -55,6 +56,7 @@ LIB_FILES=	dependencies/ogrenew/OgreMain/libOgreMain.so.1 \
 		dependencies/ogrenew/RenderSystems/GL/RenderSystem_GL.so \
 		dependencies/Caelum-2006-11-09/libcaelum.so \
 		dependencies/mygui/libmygui.so \
+		dependencies/hydrax/libhydrax.so \
 		dependencies/mysocketw/libmysocketw.so
 
 post-extract:
