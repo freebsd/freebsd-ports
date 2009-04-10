@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	net-ssh
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.11
 CATEGORIES=	security rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	r.s.a.vandomburg@nedforce.nl
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Non-interactive SSH processing
 
 OPTIONS=	PROMPT_PASSPHRASES "Prompt for passphrases on keys" On
