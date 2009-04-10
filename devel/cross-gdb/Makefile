@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	gdb
-PORTVERSION=	6.7.1
+PORTVERSION=	6.8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	gdb/releases
 PKGNAMEPREFIX=	${TGTARCH}-${TGTABI}-
 
-PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/
+PATCH_SITES=	ftp://ftp.Springdaemons.com/soft/
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	stas@FreeBSD.org
@@ -52,7 +52,7 @@ INFO=		${OURTARGET}-annotate \
 EPRFX=		${PREFIX}/libexec/${OURTARGET}-gdb
 
 .if defined(WITH_RTEMS_PATCHES)
-PATCHFILES+=	${PORTNAME}-${PORTVERSION}-rtems4.8-20071216.diff
+PATCHFILES+=	${PORTNAME}-${PORTVERSION}-rtems4.9-20080917.diff
 .endif
 
 .if !defined(TGTARCH) || !defined(TGTABI)
