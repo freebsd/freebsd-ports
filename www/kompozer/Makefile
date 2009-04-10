@@ -36,10 +36,8 @@ DESKTOP_ENTRIES="Kompozer" "${COMMENT}" \
 BROKEN=		does not build
 .endif
 
-.if ${ARCH}=="sparc64"
-.if ${OSVERSION} < 601101 || ${OSVERSION} >= 700042
-IGNORE=		does not build
-.endif
+.if ${ARCH}=="sparc64" && ${OSVERSION} < 601101
+IGNORE=		core dumps on ${ARCH}, need kern.osreldate>=601101
 .endif
 
 post-patch:
