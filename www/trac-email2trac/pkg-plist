@@ -1,4 +1,6 @@
-bin/delete_spam.py
-bin/email2trac.py
+bin/delete_spam
+bin/email2trac
 bin/run_email2trac
-etc/email2trac.conf
+@unexec if cmp -s %D/etc/email2trac.conf %D/etc/email2trac.conf.sample; then rm -f %D/etc/email2trac.conf; fi
+etc/email2trac.conf.sample
+@exec if [ ! -e %D/etc/email2trac.conf ]; then cp %D/etc/email2trac.conf.sample %D/etc/email2trac.conf; fi
