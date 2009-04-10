@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Declare
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,11 @@ RUN_DEPENDS=	\
 	p5-PPI>0:${PORTSDIR}/textproc/p5-PPI \
 	p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep \
 	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	\
+	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
+	p5-PPI>0:${PORTSDIR}/textproc/p5-PPI \
+	p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep \
+	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
