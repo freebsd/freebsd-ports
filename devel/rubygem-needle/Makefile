@@ -10,13 +10,11 @@ PORTVERSION=	1.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	r.s.a.vandomburg@nedforce.nl
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Dependency-injection/inversion-of-control container
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
-FETCH_CMD=	/usr/bin/fetch -Rr
 
 .include <bsd.port.mk>
