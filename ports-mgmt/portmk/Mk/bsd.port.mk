@@ -1469,7 +1469,9 @@ PERL_LEVEL=0
 
 PERL_ARCH?=		mach
 
-.if ${PERL_LEVEL} >= 500800
+.if   ${PERL_LEVEL} >= 501000
+PERL_PORT?=	perl5.10
+.elif ${PERL_LEVEL} >= 500800
 PERL_PORT?=	perl5.8
 .else
 PERL_PORT?=	perl5.6
@@ -2605,14 +2607,6 @@ PKG_INFO?=		/usr/sbin/pkg_info
 PKG_VERSION?=		/usr/sbin/pkg_version
 .endif
 
-# Does the pkg_create tool support conflict checking?
-# XXX Slow?
-.if !defined(PKGINSTALLVER)
-PKGINSTALLVER!= ${PKG_INFO} -P 2>/dev/null | ${SED} -e 's/.*: //'
-.endif
-.if ${PKGINSTALLVER} < 20030417
-DISABLE_CONFLICTS=	YES
-.endif
 .if !defined(PKG_ARGS)
 PKG_ARGS=		-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd ${.CURDIR} && ${MAKE} actual-package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | ${SORT} -u -t : -k 2`" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS}
 .if !defined(NO_MTREE)
@@ -3923,6 +3917,7 @@ do-build:
 			${ECHO_MSG} "===> Compilation failed unexpectedly."; \
 			(${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
 			fi; \
+		${FALSE}; \
 		fi)
 .else
 	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}; then \
@@ -3930,6 +3925,7 @@ do-build:
 			${ECHO_MSG} "===> Compilation failed unexpectedly."; \
 			(${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
 			fi; \
+		${FALSE}; \
 		fi)
 .endif
 .endif
