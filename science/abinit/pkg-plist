@@ -2,7 +2,6 @@ bin/abinetcdf
 bin/abinis
 bin/aim
 bin/anaddb
-bin/anascr
 bin/band2eps
 bin/conducti
 bin/cut3d
@@ -13,6 +12,13 @@ bin/mrggkk
 bin/mrgscr
 bin/newsp
 bin/optic
+include/ab_dtset_c.h
+include/ab_dtset_f90_get.f90
+include/dtset_c.h
+include/dtset_c.static.h
+include/dtset_f90.inc
+include/dtset_py.h
+lib/libabibase.a
 lib/libabinip.a
 lib/libabinis.a
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -30,9 +36,9 @@ lib/libabinis.a
 %%PORTDOCS%%%%DOCSDIR%%/build/preprocessing-macros.tex
 %%PORTDOCS%%%%DOCSDIR%%/config/build-config.ac
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/README
-%%PORTDOCS%%%%DOCSDIR%%/config/build-examples/alphaev56-compaq_tux.ac
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/alphaev67-compaq_deccint.ac
-%%PORTDOCS%%%%DOCSDIR%%/config/build-examples/amd-g95_chum.ac
+%%PORTDOCS%%%%DOCSDIR%%/config/build-examples/amd-g95-mpich_chum.ac
+%%PORTDOCS%%%%DOCSDIR%%/config/build-examples/amd-g95-openmpi_chum.ac
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/amd-gfortran4.1_chum.ac
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/amd-gfortran4.2_chum.ac
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/amd-gfortran4.3_chum.ac
@@ -43,20 +49,16 @@ lib/libabinis.a
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/amd-pgi7.2-3_chum.ac
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/amd-sunstudio12_chum.ac
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/fujitsu-fujitsu_eliza.ac
-%%PORTDOCS%%%%DOCSDIR%%/config/build-examples/i686-g95_sleepy.ac
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/i686-gfortran_mac.ac
-%%PORTDOCS%%%%DOCSDIR%%/config/build-examples/i686-gfortran_sleepy.ac
-%%PORTDOCS%%%%DOCSDIR%%/config/build-examples/i686-intel9.0_dummy.ac
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/i686-intel9.0_hemera.ac
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/i686-intel9.1_antarion.ac
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/i686-intel9.1_sirius.ac
-%%PORTDOCS%%%%DOCSDIR%%/config/build-examples/i686-intel9.1_sleepy.ac
-%%PORTDOCS%%%%DOCSDIR%%/config/build-examples/i686-pathscale_sleepy.ac
-%%PORTDOCS%%%%DOCSDIR%%/config/build-examples/i686-pgi4.0_dummy.ac
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/ia64-intel8.1_chpit.ac
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/ia64-intel9.1_arina.ac
+%%PORTDOCS%%%%DOCSDIR%%/config/build-examples/intel-gfortran4.3_bigmac.ac
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/itanium2-intel9.1_urano.ac
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/macosx-gfortran_gandalf.ac
+%%PORTDOCS%%%%DOCSDIR%%/config/build-examples/macosx-gfortran_rafael.ac
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/mips-mipspro_spinoza.ac
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/opteron-intel9.1_lemaitre.ac
 %%PORTDOCS%%%%DOCSDIR%%/config/build-examples/powerpc-ibm_datastar.ac
@@ -124,6 +126,7 @@ lib/libabinis.a
 %%PORTDOCS%%%%DOCSDIR%%/features/features_v5.4.html
 %%PORTDOCS%%%%DOCSDIR%%/features/features_v5.5.html
 %%PORTDOCS%%%%DOCSDIR%%/features/features_v5.6.html
+%%PORTDOCS%%%%DOCSDIR%%/features/features_v5.7.html
 %%PORTDOCS%%%%DOCSDIR%%/gallery/Plot1.jpg
 %%PORTDOCS%%%%DOCSDIR%%/gallery/mode.png
 %%PORTDOCS%%%%DOCSDIR%%/gallery/pcpm.gif
@@ -179,6 +182,7 @@ lib/libabinis.a
 %%PORTDOCS%%%%DOCSDIR%%/install_notes/install_v5.4.html
 %%PORTDOCS%%%%DOCSDIR%%/install_notes/install_v5.5.html
 %%PORTDOCS%%%%DOCSDIR%%/install_notes/install_v5.6.html
+%%PORTDOCS%%%%DOCSDIR%%/install_notes/install_v5.7.html
 %%PORTDOCS%%%%DOCSDIR%%/known_problems/known_problems.4.6.x
 %%PORTDOCS%%%%DOCSDIR%%/macroave/README
 %%PORTDOCS%%%%DOCSDIR%%/macroave/macroave-docs.mk
@@ -252,6 +256,7 @@ lib/libabinis.a
 %%PORTDOCS%%%%DOCSDIR%%/release_notes/release_notes_v5.4.html
 %%PORTDOCS%%%%DOCSDIR%%/release_notes/release_notes_v5.5.html
 %%PORTDOCS%%%%DOCSDIR%%/release_notes/release_notes_v5.6.html
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/release_notes_v5.7.html
 %%PORTDOCS%%%%DOCSDIR%%/theory/1WF.pdf
 %%PORTDOCS%%%%DOCSDIR%%/theory/1WF.tex
 %%PORTDOCS%%%%DOCSDIR%%/theory/ABINIT-documentation-elasticity.odt
@@ -312,7 +317,6 @@ lib/libabinis.a
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/lesson_paw1/DOS-2proj.jpg
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/lesson_paw1/DOS-4proj.jpg
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/lesson_paw1/DOS-6proj.jpg
-%%PORTDOCS%%%%DOCSDIR%%/tutorial/lesson_paw1/Thumbs.db
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/lesson_paw1/etotal-acell.jpg
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/lesson_paw2.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/lesson_paw2/AtompawAbinit.tar.gz
@@ -419,6 +423,9 @@ lib/libabinis.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Psps_for_tests/05b.soft_tm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Psps_for_tests/06c.pspgth
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Psps_for_tests/08o-gga.paw
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Psps_for_tests/08o.6.blyp.hgh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Psps_for_tests/08o.6.bp.hgh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Psps_for_tests/08o.6.olyp.hgh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Psps_for_tests/08o.pspgth
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Psps_for_tests/08o_001023.pspfhi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Psps_for_tests/09-F.psp
@@ -477,6 +484,7 @@ lib/libabinis.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Psps_for_tests/42mo.pspnc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Psps_for_tests/4be.psphgh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Psps_for_tests/4be.pspnc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Psps_for_tests/50sn.paw
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Psps_for_tests/50sn.psphgh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Psps_for_tests/50sn.pspnc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Psps_for_tests/51Sb_pbe-q5
@@ -741,6 +749,7 @@ lib/libabinis.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/etsf_io/Refs/t09.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/etsf_io/Refs/t10.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/etsf_io/tests.cnf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/etsf_xc/Input/report.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/etsf_xc/Input/t01.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/etsf_xc/Input/t02.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/etsf_xc/Input/t03.in
@@ -809,6 +818,7 @@ lib/libabinis.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/fast/Refs/t30.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/fast/tests.cnf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/netcdf/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Input/report.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Input/si_kpt_band_fft.files
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Input/si_kpt_band_fft.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Input/t9.in
@@ -835,6 +845,8 @@ lib/libabinis.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Input/tU.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Input/tV.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Input/tW.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Input/tX.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Input/tY.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Input/t_bandfft.files
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Input/t_bandfft.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Input/t_kpt+spin.files
@@ -936,6 +948,10 @@ lib/libabinis.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Refs/tV4.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Refs/tW0.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Refs/tW4.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Refs/tX0.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Refs/tX4.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Refs/tY0.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/paral/Refs/tY4.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/physics/Input/ab.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/physics/Input/t11.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/physics/Input/t13.in
@@ -1934,8 +1950,6 @@ lib/libabinis.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v4/Input/t08.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v4/Input/t09.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v4/Input/t10.in
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v4/Input/t100.in
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v4/Input/t101.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v4/Input/t11.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v4/Input/t12.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v4/Input/t13.in
@@ -2037,8 +2051,6 @@ lib/libabinis.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v4/Refs/t08.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v4/Refs/t09.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v4/Refs/t10.out
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v4/Refs/t100.out
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v4/Refs/t101.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v4/Refs/t11.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v4/Refs/t12.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v4/Refs/t13.out
@@ -2177,6 +2189,8 @@ lib/libabinis.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Input/t33.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Input/t34.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Input/t35.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Input/t36.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Input/t37.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Input/t41.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Input/t42.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Input/t44.in
@@ -2201,6 +2215,7 @@ lib/libabinis.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Input/t67.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Input/t68.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Input/t69.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Input/t70.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Input/t81.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Input/t85.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Input/t86.in
@@ -2242,6 +2257,8 @@ lib/libabinis.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Refs/t33.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Refs/t34.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Refs/t35.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Refs/t36.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Refs/t37.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Refs/t41.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Refs/t42.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Refs/t44.out
@@ -2266,6 +2283,7 @@ lib/libabinis.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Refs/t67.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Refs/t68.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Refs/t69.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Refs/t70.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Refs/t81.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Refs/t85.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/Refs/t86.ddb.out
@@ -2280,14 +2298,18 @@ lib/libabinis.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/v5/tests.cnf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/Input/report.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/Input/t01.in
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/Input/t01.wannier90.win
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/Input/t01o_w90.win
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/Input/t02.in
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/Input/t02.wannier90.win
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/Input/t02o_w90.win
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/Input/t03.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/Input/t03o_DS7_w90.win
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/Refs/t01.out
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/Refs/t01.wannier90.wout
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/Refs/t01o_w90.wout
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/Refs/t02.out
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/Refs/t02.wannier90.wout
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/Refs/t02o_w90.wout
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/Refs/t03.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/Refs/t03o_DS7_w90.wout
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/wannier90/tests.cnf
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/wannier90/Refs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/wannier90/Input
@@ -2327,7 +2349,6 @@ lib/libabinis.a
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/paral/Refs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/paral/Input
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/paral
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/netcdf/Input
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/netcdf
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/fast/Refs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/fast/Input
