@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libelf
-PORTVERSION=	0.8.9
-PORTREVISION=	1
+PORTVERSION=	0.8.10
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mr511.de/software/ \
 		${MASTER_SITE_SUNSITE}
@@ -17,7 +16,8 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A public ELF file access library similar to libelf(3) in Solaris
 
 OPTIONS=	EXTENDED	"ELF format extensions" on \
-		NLS		"Native Language Support" on
+		NLS		"Native Language Support" on \
+		SANITY		"Avoid loading invalid ELF files" on
 
 .include <bsd.port.pre.mk>
 
@@ -42,6 +42,12 @@ PLIST_SUB+=	GETTEXT="@comment "
 CONFIGURE_ARGS+=	--enable-extended-format
 .else
 CONFIGURE_ARGS+=	--disable-extended-format
+.endif
+
+.if !defined(WITHOUT_SANITY)
+CONFIGURE_ARGS+=	--enable-sanity-checks
+.else
+CONFIGURE_ARGS+=	--disable-sanity-checks
 .endif
 
 .if ${OSVERSION} < 600102
