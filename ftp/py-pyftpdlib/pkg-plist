@@ -6,8 +6,10 @@
 %%PYTHON_SITELIBDIR%%/pyftpdlib/ftpserver.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/pyftpdlib
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic_ftpd.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keycert.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/md5_ftpd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/throttled_ftpd.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tls_ftpd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix_ftpd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/winnt_ftpd.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
