@@ -1,0 +1,5 @@
+bin/tap2junit
+%%SITE_PERL%%/TAP/Formatter/JUnit.pm
+%%SITE_PERL%%/TAP/Formatter/JUnit/Session.pm
+@dirrm %%SITE_PERL%%/TAP/Formatter/JUnit
+@dirrmtry %%SITE_PERL%%/TAP/Formatter
