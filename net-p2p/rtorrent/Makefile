@@ -7,7 +7,7 @@
 
 PORTNAME?=	rtorrent
 PORTVERSION?=	0.8.2
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/ \
 		${MASTER_SITE_LOCAL}
