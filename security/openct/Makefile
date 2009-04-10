@@ -37,6 +37,9 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800069
+CONFIGURE_ENV+=	LIBUSB_CFLAGS="-I/usr/include" \
+		LIBUSB_LIBS="-lusb"
+
 CONFIGURE_ARGS+=--enable-usb
 .endif
 
