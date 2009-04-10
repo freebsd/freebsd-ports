@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mouse
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/S/SA/SARTAK
@@ -20,6 +20,7 @@ PERL_CONFIGURE=	5.8.5+
 MAN3=	Mouse.3 \
 	Mouse::Meta::Attribute.3 \
 	Mouse::Meta::Class.3 \
+	Mouse::Meta::TypeConstraint.3 \
 	Mouse::Object.3 \
 	Mouse::Role.3 \
 	Mouse::Util.3 \
