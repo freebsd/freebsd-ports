@@ -11,6 +11,9 @@ bin/benchmark
 %%PYTHON_SITELIBDIR%%/epsilon/expose.py
 %%PYTHON_SITELIBDIR%%/epsilon/expose.pyc
 %%PYTHON_SITELIBDIR%%/epsilon/expose.pyo
+%%PYTHON_SITELIBDIR%%/epsilon/iepsilon.py
+%%PYTHON_SITELIBDIR%%/epsilon/iepsilon.pyc
+%%PYTHON_SITELIBDIR%%/epsilon/iepsilon.pyo
 %%PYTHON_SITELIBDIR%%/epsilon/react.py
 %%PYTHON_SITELIBDIR%%/epsilon/react.pyc
 %%PYTHON_SITELIBDIR%%/epsilon/react.pyo
