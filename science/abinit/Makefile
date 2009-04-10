@@ -6,30 +6,34 @@
 #
 
 PORTNAME=	abinit
-PORTVERSION=	5.6.5
+PORTVERSION=	5.7.3
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.abinit.org/pub/abinitio/ABINIT_v${PORTVERSION}/
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Abinit calculates electronic structure of systems
 
-LIB_DEPENDS=	netcdff.4:${PORTSDIR}/science/netcdf-ftn
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray
+LIB_DEPENDS=	netcdff.4:${PORTSDIR}/science/netcdf-ftn	\
+		gsl.13:${PORTSDIR}/math/gsl
 
 USE_FORTRAN=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_PERL5_BUILD=yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:262 automake:110
 CONFIGURE_ENV=	WGET=${TRUE}
 CONFIGURE_ARGS=	--disable-wannier90 --disable-bigdft --disable-etsf-io	\
 		--with-plugins-tardir=/dev/null				\
 		--with-netcdf-includes="-I${LOCALBASE}/include"		\
+		--enable-bindings --enable-gsl				\
 		--with-netcdf-libs="-L${LOCALBASE}/lib -lnetcdff -lnetcdf"
 ALL_TARGET=	all libabinit
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base	\
 		dvips:${PORTSDIR}/print/dvipsk-tetex	\
+		gm4:${PORTSDIR}/devel/m4		\
 		markdown:${PORTSDIR}/textproc/markdown
 USE_GHOSTSCRIPT_BUILD=	yes
 .endif
@@ -57,11 +61,17 @@ pre-configure:
 .if defined(NOPORTEXAMPLES)
 	${REINPLACE_CMD} -e '/^SUBDIRS =/s| tests||' ${WRKSRC}/Makefile.in
 .endif
+	(cd ${WRKSRC} && ./config/scripts/makemake)
+	${CHMOD} a+x ${WRKSRC}/bindings/parser/*.py
 
 post-install:
-	${MKDIR} ${PREFIX}/lib
+	${MKDIR} ${PREFIX}/include ${PREFIX}/lib
 .for lf in libabinip.a libabinis.a
 	${INSTALL_DATA} ${WRKSRC}/${lf} ${PREFIX}/lib
+.endfor
+.for lf in ab_dtset_c.h dtset_c.h dtset_c.static.h dtset_f90.inc dtset_py.h	\
+	ab_dtset_f90_get.f90
+	${INSTALL_DATA} ${WRKSRC}/bindings/parser/${lf} ${PREFIX}/include
 .endfor
 
 regression-test:
