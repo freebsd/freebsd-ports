@@ -19,6 +19,8 @@ DOCS=		CHANGES	INSTALL	LICENSE	README
 
 CONFLICTS=	apache-contrib-1.*
 
+PORSCOUT=	limit:^1
+
 do-build:
 	@cd ${WRKSRC} && \
 	${APXS} -c mod_roaming.c
