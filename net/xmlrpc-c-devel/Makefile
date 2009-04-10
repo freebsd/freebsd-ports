@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	xmlrpc-c
-PORTVERSION=	1.11.00
-PORTREVISION=	3
+PORTVERSION=	1.18.00
 CATEGORIES=	net
-MASTER_SITES=	SF
+MASTER_SITES=	LOCAL/chinsan/xmlrpc-c
 EXTRACT_SUFX=	.tgz
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
@@ -68,8 +67,5 @@ post-extract:
 post-patch:
 	@${GREP} -lR '\-lpthread' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-lpthread|${PTHREAD_LIBS}|g'
-	@${REINPLACE_CMD} -e 's|netbsd|freebsd|g' \
-	  	${WRKSRC}/Makefile.config.in
-	${CAT} ${WRKSRC}/Makefile.config.in
 
 .include <bsd.port.post.mk>
