@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	URI-Template-Restrict
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,11 +15,10 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for restricted URI Templates handler
 
 RUN_DEPENDS=	\
-	p5-Mouse>=0.14:${PORTSDIR}/devel/p5-Mouse \
-	p5-namespace-clean>0:${PORTSDIR}/devel/p5-namespace-clean \
 	p5-List-MoreUtils>0:${PORTSDIR}/lang/p5-List-MoreUtils \
-	p5-Regexp-Assemble>0:${PORTSDIR}/devel/p5-Regexp-Assemble \
 	p5-Unicode-Normalize>0:${PORTSDIR}/textproc/p5-Unicode-Normalize \
+	p5-URI>0:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	\
 	p5-URI>0:${PORTSDIR}/net/p5-URI
 
 PERL_CONFIGURE=	yes
