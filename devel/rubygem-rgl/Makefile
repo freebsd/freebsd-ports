@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	rgl
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	uspoerlein@gmail.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Framework for graph datastructures and algorithms implemented in Ruby
 
-RUN_DEPENDS=	${LOCALBASE}/lib/ruby/gems/1.8/specifications/stream-0.5.gemspec:${PORTSDIR}/devel/rubygem-stream
+RUN_DEPENDS=	rubygem-stream>=0.5:${PORTSDIR}/devel/rubygem-stream
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
