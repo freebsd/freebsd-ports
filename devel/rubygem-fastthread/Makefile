@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	fastthread
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	mongrel
