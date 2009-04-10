@@ -17,6 +17,8 @@ lib/deskbar-applet/handlers/pinot-live.pyc
 lib/deskbar-applet/handlers/pinot-live.pyo
 lib/pinot/backends/libxapianbackend.so
 lib/pinot/backends/libxapianbackend.so.0
+lib/pinot/filters/libarchivefilter.so
+lib/pinot/filters/libarchivefilter.so.0
 lib/pinot/filters/libexifimagefilter.so
 lib/pinot/filters/libexifimagefilter.so.0
 lib/pinot/filters/libexternalfilter.so
@@ -56,7 +58,6 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 %%DATADIR%%/engines/IOIDescription.xml
 %%DATADIR%%/engines/KodersDescription.xml
 %%DATADIR%%/engines/MSN.src
-%%DATADIR%%/engines/MozDexDescription.xml
 %%DATADIR%%/engines/OmegaDescription.xml
 %%DATADIR%%/engines/RollYOTopNews.src
 %%DATADIR%%/engines/Topix.src

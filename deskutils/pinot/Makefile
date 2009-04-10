@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pinot
-PORTVERSION=	0.91
+PORTVERSION=	0.92
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
@@ -38,7 +38,7 @@ RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info	\
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE}
+CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE} --enable-libarchive
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" MKDIR_P="${MKDIR}"
 
 USE_XORG=	pixman
