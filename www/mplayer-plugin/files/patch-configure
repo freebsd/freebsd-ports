@@ -1,0 +1,11 @@
+--- configure.orig	2008-06-24 09:15:05.000000000 -0400
++++ configure	2009-04-10 17:04:02.000000000 -0400
+@@ -3789,7 +3789,7 @@
+   if test $succeeded = yes; then
+       MOZPLUG_CFLAGS="${MOZPLUG_CFLAGS} -I`$PKG_CONFIG --variable=includedir libxul`"
+ MOZILLA_HOME=`$PKG_CONFIG --variable=libdir libxul`
+-GECKO_IDLDIR=`$PKG_CONFIG --variable=idldir libxul`
++GECKO_IDLDIR=`$PKG_CONFIG --variable=idldir libxul`/`$PKG_CONFIG --variable=includetype libxul`
+ 
+   else
+      { echo "$as_me:$LINENO: WARNING: libxul not found" >&5
