@@ -24,6 +24,7 @@ SUB_FILES=	pkg-message
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
+INSTALLS_ICONS=	yes
 
 KPOPUP_DIR=	/var/tmp/kpopup
 
@@ -32,6 +33,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' ${WRKSRC}/admin/ltmain.sh
 	@${REINPLACE_CMD} "s^/usr/bin^${LOCALBASE}/bin^; s^/var/lib/kpopup^${KPOPUP_DIR}^" \
 		${WRKSRC}/src/misc.h
+.ifdef NOPORTDOCS
+	@${REINPLACE_CMD} '/SUBDIRS = /s/doc//' ${WRKSRC}/Makefile.in
+.endif
 
 post-install:
 	@${MKDIR} ${KPOPUP_DIR} && ${CHMOD} 777 ${KPOPUP_DIR}
