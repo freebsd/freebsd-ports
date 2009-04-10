@@ -44,6 +44,9 @@ PLIST_SUB+=	NLS=""
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/bison.info*
 	@${REINPLACE_CMD} 's/MANS = yacc.1/MANS =/' ${WRKSRC}/doc/Makefile.in
+.if defined(WITHOUT_NLS)
+	@${REINPLACE_CMD} 's/ install-exec-local//' ${WRKSRC}/lib/Makefile.in
+.endif
 
 #
 # Requires texinfo 4.8 or above
