@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.2.8
+PORTVERSION?=		3.2.10
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
@@ -97,7 +97,7 @@ CONFIGURE_ARGS+=	--with-pam --with-readline --with-included-iniparser \
 			--without-libaddns
 # Sanity checks
 .if exists(${LOCALBASE}/include/tdb.h)
-IGNORE=			doesn't compile when tdb is installed. Uninstall databases/tdb port
+#IGNORE=			doesn't compile when tdb is installed. Uninstall databases/tdb port
 .endif
 # Let process generate meaningful backtrace on a core dump
 LIB_DEPENDS+=		execinfo.1:${PORTSDIR}/devel/libexecinfo
@@ -456,7 +456,7 @@ post-install:
 
 .if defined(WITH_MAX_DEBUG)
 test:
-	cd ${WRKSRC} && ${MAKE} test
+	(cd ${WRKSRC} && ${MAKE} test_nss_modules test_pam_modules && ${MAKE} test)
 .endif
 
 .include <bsd.port.post.mk>
