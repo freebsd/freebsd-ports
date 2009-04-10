@@ -8,7 +8,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	2.26.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -22,7 +22,8 @@ BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		gladeui-1.9:${PORTSDIR}/devel/glade3 \
 		neon.28:${PORTSDIR}/www/neon28 \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
+		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
+		gdl-1.0:${PORTSDIR}/x11-toolkits/gdl
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		autogen:${PORTSDIR}/devel/autogen \
 		neato:${PORTSDIR}/graphics/graphviz \
