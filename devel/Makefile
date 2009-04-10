@@ -1053,6 +1053,7 @@
     SUBDIR += p5-Class-Data-ConfigHash
     SUBDIR += p5-Class-Data-Inheritable
     SUBDIR += p5-Class-Date
+    SUBDIR += p5-Class-Declare
     SUBDIR += p5-Class-Default
     SUBDIR += p5-Class-Delegation
     SUBDIR += p5-Class-ErrorHandler
