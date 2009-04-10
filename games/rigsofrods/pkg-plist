@@ -5,6 +5,7 @@ lib/rigsofrods/Plugin_ParticleFX.so
 lib/rigsofrods/RenderSystem_GL.so
 lib/rigsofrods/libOgreMain.so.1
 lib/rigsofrods/libcaelum.so
+lib/rigsofrods/libhydrax.so
 lib/rigsofrods/libmygui.so
 lib/rigsofrods/libmysocketw.so
 libexec/rigsofrods/RoR
