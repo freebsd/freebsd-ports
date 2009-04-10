@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayerplug-in
 PORTVERSION=	3.55
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www multimedia
 MASTER_SITES=	SF/mplayerplug-in
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GECKO=	firefox mozilla seamonkey xulrunner
+USE_GECKO=	firefox mozilla seamonkey libxul
 USE_WEBPLUGINS=	gecko*
 WEBPLUGINS_FILES=mplayerplug-in.so mplayerplug-in.xpt mplayerplug-in-wmp.so \
 		mplayerplug-in-qt.so mplayerplug-in-rm.so \
@@ -30,7 +30,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gmp
 USE_GNOME=	gnometarget
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DBSD" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		GECKO_XPIDL="${XPIDL}"
 USE_XORG=	x11 xpm xt
 
 .include <bsd.port.pre.mk>
@@ -40,7 +41,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|make|${GMAKE}|g' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|mozilla-|${GECKO}-|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' \
 		${WRKSRC}/Source/plugin-setup.cpp
 
