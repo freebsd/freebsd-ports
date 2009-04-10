@@ -1,12 +1,6 @@
-%%SITE_PERL%%/URI/Template/Restrict/Expansion/__subst__.pm
-%%SITE_PERL%%/URI/Template/Restrict/Expansion/list.pm
-%%SITE_PERL%%/URI/Template/Restrict/Expansion/join.pm
-%%SITE_PERL%%/URI/Template/Restrict/Expansion/suffix.pm
-%%SITE_PERL%%/URI/Template/Restrict/Expansion/prefix.pm
 %%SITE_PERL%%/URI/Template/Restrict/Expansion.pm
 %%SITE_PERL%%/URI/Template/Restrict.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Template/Restrict/.packlist
-@dirrm %%SITE_PERL%%/URI/Template/Restrict/Expansion
 @dirrm %%SITE_PERL%%/URI/Template/Restrict
 @dirrmtry %%SITE_PERL%%/URI/Template
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Template/Restrict
