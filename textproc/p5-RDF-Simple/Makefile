@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	RDF-Simple
-PORTVERSION=	0.40.7
+PORTVERSION=	0.40.9
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read and write RDF without complication
 
 RUN_DEPENDS=	p5-Class-MakeMethods>=0:${PORTSDIR}/devel/p5-Class-MakeMethods \
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
