@@ -6,3 +6,7 @@
 ===>  BE CAREFULL HOW TO BOOT on 1.3.29_4 or after:
 	To run apache www server from startup, add apache_enable="YES"
 	in your /etc/rc.conf.
+
+Your hostname must be resolvable using at least 1 mechanism in
+/etc/nsswitch typically DNS or /etc/hosts or apache might 
+have issues starting depending on the modules you are using.
