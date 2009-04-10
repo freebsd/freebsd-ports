@@ -7,7 +7,7 @@
 
 PORTNAME=	tin
 PORTVERSION=	1.8.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	news ipv6
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
 		ftp://ftp.sunet.se/pub/news/readers/tin/stable/ \
@@ -34,14 +34,21 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-WITH_TIN_EDITOR?=	/usr/bin/ee
+TIN_EDITOR?=	/usr/bin/ee
+
+OPTIONS=	GNUPG	"Enable message signing via GnuPG (no PGP6)" On \
+		PGP6	"Enable message signing via PGP6 (no GnuPG)" Off \
+		ISPELL	"Enable spell checking via ispell" On \
+		METAMAIL  "Enable MIME support via metamail" On \
+		CANLOCK	  "Enable Cancel-Lock key support via libcanlock" Off \
+		NNTP_ONLY "Only read news via NNTP (no spool dir support)" Off
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 602107 || (${OSVERSION} >= 700000 && ${OSVERSION} < 700033)
-WITH_TIN_SCREEN?=	ncurses
+TIN_SCREEN?=	ncurses
 .else
-WITH_TIN_SCREEN?=	ncursesw
+TIN_SCREEN?=	ncursesw
 .endif
 
 # --with-mime-default-charset=US-ASCII needed to build tin in the non-ascii
@@ -50,10 +57,10 @@ CONFIGURE_ARGS+=--with-nntp-default-server=news \
 		--with-spooldir=/var/news \
 		--with-libdir=${PREFIX}/news/lib \
 		--with-defaults-dir=${PREFIX}/etc \
-		--with-editor=${WITH_TIN_EDITOR} \
+		--with-editor=${TIN_EDITOR} \
 		--enable-nls \
 		--with-pcre=yes \
-		--with-screen=${WITH_TIN_SCREEN} \
+		--with-screen=${TIN_SCREEN} \
 		--enable-break-long-lines \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-mime-default-charset=US-ASCII \
@@ -63,51 +70,38 @@ CONFIGURE_ENV=	CFLAGS='${CFLAGS} -DNNTP_SERVER_FILE="\"${PREFIX}/etc/nntpserver\
 		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
 ALL_TARGET=	build
 MAN1=		tin.1 w2r.pl.1 opt-case.pl.1 tinews.pl.1
-MAN5=		tin.5
-.if !defined(WITHOUT_TIN_MAILBOX_MANPAGES)
-MAN5+=		mbox.5 mmdf.5
-.endif
+MAN5=		tin.5 tin_mbox.5 tin_mmdf.5
 MLINKS=		tin.1 rtin.1
 
-.if defined(WITH_TIN_NNTP_ONLY)
+.ifdef	WITH_NNTP_ONLY
 CONFIGURE_ARGS+=	--enable-nntp-only
 .endif
 
-.if defined(WITHOUT_TIN_PGP_GPG)
-CONFIGURE_ARGS+=	--disable-pgp-gpg
-.elif defined(WITH_TIN_GPG) || \
-    (exists(${LOCALBASE}/bin/gpg) && !defined(WITH_TIN_PGP))
-RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
+.ifdef	WITH_GNUPG
+RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=	--with-gpg=${PREFIX}/bin/gpg \
-		 --without-pgp --without-pgpk
-.elif defined(WITH_TIN_PGP) || exists(${LOCALBASE}/bin/pgp)
-RUN_DEPENDS+=	pgp:${PORTSDIR}/security/pgp6
+		 	--without-pgp --without-pgpk
+.elifdef WITH_PGP6
+RUN_DEPENDS+=		pgp:${PORTSDIR}/security/pgp6
 CONFIGURE_ARGS+=	--with-pgp=${PREFIX}/bin/pgp \
-		 --without-pgpk --without-gpg
-.elif defined(WITH_TIN_PGP5) || exists(${LOCALBASE}/bin/pgpk)
-RUN_DEPENDS+=	pgpk:${PORTSDIR}/security/pgp5
-CONFIGURE_ARGS+=	--with-pgpk=${PREFIX}/bin/pgpk \
-		 --without-pgp --without-gpg
+		 	--without-pgpk --without-gpg
 .else
 CONFIGURE_ARGS+=	--disable-pgp-gpg
 .endif
 
-.if defined(WITH_TIN_ISPELL) || \
-    (exists(${LOCALBASE}/bin/ispell) && !defined(WITHOUT_TIN_ISPELL))
-RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
+.ifdef	WITH_ISPELL
+RUN_DEPENDS+=		ispell:${PORTSDIR}/textproc/ispell
 CONFIGURE_ARGS+=	--with-ispell=${PREFIX}/bin/ispell
 .endif
 
-.if defined(WITH_TIN_METAMAIL) || \
-    (exists(${LOCALBASE}/bin/metamail) && !defined(WITHOUT_TIN_METAMAIL))
-RUN_DEPENDS+=	metamail:${PORTSDIR}/mail/metamail
+.ifdef	WITH_METAMAIL
+RUN_DEPENDS+=		metamail:${PORTSDIR}/mail/metamail
 CONFIGURE_ARGS+=	--with-metamail=${PREFIX}/bin/metamail
 .endif
 
 post-patch:
-.if defined(WITHOUT_TIN_MAILBOX_MANPAGES)
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-no-mbox-manpage
-.endif
+	${REINPLACE_CMD} -Ee 's:5/(mmdf|mbox):5/tin_\1:g' \
+		${WRKSRC}/src/Makefile.in
 	${REINPLACE_CMD} -e 's:/var/spool/news:/var/news:g' \
 		-e 's:/etc/nntpserver:${PREFIX}/etc/nntpserver:g' \
 		-e 's:/usr/lib/news:${PREFIX}/news/lib:g' \
@@ -123,13 +117,13 @@ post-patch:
 	${MV}   ${WRKSRC}/tools/url_handler.sh \
 		${WRKSRC}/tools/tinurl_handler.sh
 
-.if defined(WITH_TIN_CANLOCK)
+.ifdef	WITH_CANLOCK
 MAKE_ARGS+=	CANLIB='-L../libcanlock -lcanlock' \
 		CANLOCK=-DUSE_CANLOCK
 .endif
 
 pre-build:
-.if defined(WITH_TIN_CANLOCK)
+.ifdef	WITH_CANLOCK
 	cd ${WRKSRC}/src; ${GMAKE} canlock
 .endif
 
