@@ -4505,6 +4505,7 @@ golded+                         ports/news/golded+
 goldstr                         ports/misc/goldstr
 golem                           ports/x11-wm/golem
 gomoku.app                      ports/games/gomoku.app
+gondola                         ports/games/gondola
 gone                            ports/misc/gone
 gonvert                         ports/misc/gonvert
 gonzui                          ports/devel/gonzui
@@ -7776,6 +7777,7 @@ linux-f8-aspell                 ports/textproc/linux-f8-aspell
 linux-f8-atk                    ports/accessibility/linux-f8-atk
 linux-f8-cairo                  ports/graphics/linux-f8-cairo
 linux-f8-curl                   ports/ftp/linux-f8-curl
+linux-f8-dri                    ports/graphics/linux-f8-dri
 linux-f8-esound                 ports/audio/linux-f8-esound
 linux-f8-expat                  ports/textproc/linux-f8-expat
 linux-f8-fontconfig             ports/x11-fonts/linux-f8-fontconfig
@@ -13012,6 +13014,8 @@ p5-WWW-Google-Notebook          ports/www/p5-WWW-Google-Notebook
 p5-WWW-Google-PageRank          ports/www/p5-WWW-Google-PageRank
 p5-WWW-Google-SiteMap           ports/textproc/p5-WWW-Google-SiteMap
 p5-WWW-Google-Video             ports/www/p5-WWW-Google-Video
+p5-WWW-HatenaDiary              ports/www/p5-WWW-HatenaDiary
+p5-WWW-HatenaLogin              ports/www/p5-WWW-HatenaLogin
 p5-WWW-Hotmail                  ports/mail/p5-WWW-Hotmail
 p5-WWW-IMDb                     ports/www/p5-WWW-IMDb
 p5-WWW-Link                     ports/www/p5-WWW-Link
@@ -16477,6 +16481,8 @@ p5-www-google-notebook          ports/www/p5-WWW-Google-Notebook
 p5-www-google-pagerank          ports/www/p5-WWW-Google-PageRank
 p5-www-google-sitemap           ports/textproc/p5-WWW-Google-SiteMap
 p5-www-google-video             ports/www/p5-WWW-Google-Video
+p5-www-hatenadiary              ports/www/p5-WWW-HatenaDiary
+p5-www-hatenalogin              ports/www/p5-WWW-HatenaLogin
 p5-www-hotmail                  ports/mail/p5-WWW-Hotmail
 p5-www-imdb                     ports/www/p5-WWW-IMDb
 p5-www-link                     ports/www/p5-WWW-Link
@@ -18895,6 +18901,7 @@ py-qt4-test                     ports/devel/py-qt4-test
 py-qt4-webkit                   ports/www/py-qt4-webkit
 py-qt4-xml                      ports/textproc/py-qt4-xml
 py-qt4-xmlpatterns              ports/textproc/py-qt4-xmlpatterns
+py-rabbyt                       ports/graphics/py-rabbyt
 py-radix                        ports/net/py-radix
 py-rbtree                       ports/devel/py-rbtree
 py-rdflib                       ports/textproc/py-rdflib
@@ -20111,12 +20118,14 @@ rubygem-bluecloth               ports/www/rubygem-bluecloth
 rubygem-builder                 ports/devel/rubygem-builder
 rubygem-capistrano              ports/sysutils/rubygem-capistrano
 rubygem-captcha                 ports/graphics/rubygem-captcha
+rubygem-chronic                 ports/devel/rubygem-chronic
 rubygem-color                   ports/print/rubygem-color
 rubygem-colortools              ports/print/rubygem-colortools
 rubygem-columnize               ports/devel/rubygem-columnize
 rubygem-crack                   ports/devel/rubygem-crack
 rubygem-daemons                 ports/devel/rubygem-daemons
 rubygem-datamapper              ports/databases/rubygem-datamapper
+rubygem-deeptest                ports/devel/rubygem-deeptest
 rubygem-diff-lcs                ports/textproc/rubygem-diff-lcs
 rubygem-ditz                    ports/devel/rubygem-ditz
 rubygem-erubis                  ports/www/rubygem-erubis
@@ -20133,6 +20142,7 @@ rubygem-formosa                 ports/textproc/rubygem-formosa
 rubygem-gd2                     ports/graphics/rubygem-gd2
 rubygem-gdata                   ports/devel/rubygem-gdata
 rubygem-gem_plugin              ports/devel/rubygem-gem_plugin
+rubygem-georuby                 ports/devel/rubygem-georuby
 rubygem-git                     ports/devel/rubygem-git
 rubygem-god                     ports/sysutils/rubygem-god
 rubygem-graphviz                ports/graphics/rubygem-graphviz
@@ -20145,6 +20155,8 @@ rubygem-hpricot                 ports/www/rubygem-hpricot
 rubygem-htauth                  ports/www/rubygem-htauth
 rubygem-htmltools               ports/textproc/rubygem-htmltools
 rubygem-httparty                ports/www/rubygem-httparty
+rubygem-httpclient              ports/www/rubygem-httpclient
+rubygem-icalendar               ports/devel/rubygem-icalendar
 rubygem-ini                     ports/textproc/rubygem-ini
 rubygem-inline                  ports/devel/rubygem-inline
 rubygem-jdbc-mysql              ports/databases/rubygem-jdbc-mysql
@@ -20220,6 +20232,8 @@ rubygem-ruby2ruby               ports/devel/rubygem-ruby2ruby
 rubygem-rubyforge               ports/devel/rubygem-rubyforge
 rubygem-rubyfulsoup             ports/www/rubygem-rubyfulsoup
 rubygem-rubyinlineaccel         ports/devel/rubygem-rubyinlineaccel
+rubygem-runt                    ports/devel/rubygem-runt
+rubygem-ruport                  ports/devel/rubygem-ruport
 rubygem-scrapi                  ports/www/rubygem-scrapi
 rubygem-scrubyt                 ports/www/rubygem-scrubyt
 rubygem-scruffy                 ports/graphics/rubygem-scruffy
@@ -20227,10 +20241,12 @@ rubygem-sequel                  ports/devel/rubygem-sequel
 rubygem-sexp_processor          ports/devel/rubygem-sexp_processor
 rubygem-sinatra                 ports/www/rubygem-sinatra
 rubygem-snmp                    ports/net-mgmt/rubygem-snmp
+rubygem-soap4r                  ports/devel/rubygem-soap4r
 rubygem-spreadsheet             ports/textproc/rubygem-spreadsheet
 rubygem-sqlite3                 ports/databases/rubygem-sqlite3
 rubygem-staticmatic             ports/www/rubygem-staticmatic
 rubygem-stream                  ports/devel/rubygem-stream
+rubygem-streetaddress           ports/devel/rubygem-streetaddress
 rubygem-syntax                  ports/textproc/rubygem-syntax
 rubygem-taggable                ports/www/rubygem-taggable
 rubygem-templater               ports/devel/rubygem-templater
