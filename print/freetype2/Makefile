@@ -3,11 +3,11 @@
 # Whom:			jseger@FreeBSD.org
 #
 # $FreeBSD$
-#   $MCom: ports/print/freetype2/Makefile,v 1.11 2007/07/06 16:59:40 marcus Exp $
+#   $MCom: ports/print/freetype2/Makefile,v 1.16 2009/04/09 03:24:09 mezz Exp $
 #
 
 PORTNAME=	freetype2
-PORTVERSION=	2.3.7
+PORTVERSION=	2.3.9
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
@@ -24,6 +24,7 @@ COMMENT=	A free and portable TrueType font rendering engine
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	TOP=""
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

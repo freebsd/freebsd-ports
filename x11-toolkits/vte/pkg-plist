@@ -11,19 +11,15 @@ lib/libvte.so
 lib/libvte.so.9
 lib/vte/decset
 lib/vte/interpret
-lib/vte/iso8859mode
-lib/vte/nativeecho
 lib/vte/osc
 lib/vte/slowcat
-lib/vte/utf8echo
-lib/vte/utf8mode
-lib/vte/vterdb
 lib/vte/window
 libdata/pkgconfig/vte.pc
 libexec/gnome-pty-helper
 share/locale/am/LC_MESSAGES/vte.mo
 share/locale/ang/LC_MESSAGES/vte.mo
 share/locale/ar/LC_MESSAGES/vte.mo
+share/locale/as/LC_MESSAGES/vte.mo
 share/locale/az/LC_MESSAGES/vte.mo
 share/locale/be/LC_MESSAGES/vte.mo
 share/locale/be@latin/LC_MESSAGES/vte.mo
@@ -138,5 +134,7 @@ share/locale/zh_TW/LC_MESSAGES/vte.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
 @dirrmtry share/locale/ang/LC_MESSAGES
 @dirrmtry share/locale/ang

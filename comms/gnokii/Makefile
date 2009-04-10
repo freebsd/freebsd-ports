@@ -7,7 +7,7 @@
 
 PORTNAME=	gnokii
 PORTVERSION=	0.6.27
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
@@ -53,7 +53,7 @@ OPTIONS=	ICAL	"Build with IETF iCal support"		off \
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libical.so) || defined(WITH_ICAL)
-LIB_DEPENDS+=	ical.42:${PORTSDIR}/devel/libical
+LIB_DEPENDS+=	ical.43:${PORTSDIR}/devel/libical
 .endif
 
 .if ${OSVERSION} < 800069

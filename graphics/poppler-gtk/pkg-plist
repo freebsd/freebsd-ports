@@ -10,7 +10,7 @@ include/poppler/glib/poppler.h
 lib/libpoppler-glib.a
 lib/libpoppler-glib.la
 lib/libpoppler-glib.so
-lib/libpoppler-glib.so.3
+lib/libpoppler-glib.so.4
 libdata/pkgconfig/poppler-glib.pc
 %%DOCSDIR%%/poppler/ch01.html
 %%DOCSDIR%%/poppler/home.png

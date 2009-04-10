@@ -3,12 +3,11 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/editors/gedit-plugins/Makefile,v 1.33 2008/10/26 20:28:27 marcus Exp $
+#   $MCom: ports/editors/gedit-plugins/Makefile,v 1.36 2009/03/17 13:37:37 kwm Exp $
 #
 
 PORTNAME=	gedit-plugins
-PORTVERSION=	2.22.5
-PORTREVISION=	1
+PORTVERSION=	2.26.0
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -33,6 +32,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 GCONF_SCHEMAS=	gedit-show-tabbar-plugin.schemas
 
+OPTIONS=	PYTHON "Build plugins that depend on python" off
+
 .if defined(PACKAGE_BUILDING)
 .undef WITHOUT_GNOME
 WITH_GNOME=	yes
@@ -40,7 +41,7 @@ WITH_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mpygtksourceview}!="" && ${ARCH}!="sparc64"
+.if ${HAVE_GNOME:Mpygtksourceview}!="" && ${ARCH}!="sparc64" || defined(WITH_PYTHON)
 USE_PYTHON=	yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 USE_GNOME+=	pygtksourceview

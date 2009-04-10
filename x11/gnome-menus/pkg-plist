@@ -30,6 +30,7 @@ share/desktop-directories/Utility.directory
 share/desktop-directories/X-GNOME-Menu-Applications.directory
 share/desktop-directories/X-GNOME-Menu-System.directory
 share/desktop-directories/X-GNOME-Other.directory
+share/gnome-menus/examples/gnome-menus-ls.py
 share/locale/af/LC_MESSAGES/gnome-menus.mo
 share/locale/ar/LC_MESSAGES/gnome-menus.mo
 share/locale/as/LC_MESSAGES/gnome-menus.mo
@@ -41,6 +42,7 @@ share/locale/bn/LC_MESSAGES/gnome-menus.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-menus.mo
 share/locale/br/LC_MESSAGES/gnome-menus.mo
 share/locale/ca/LC_MESSAGES/gnome-menus.mo
+share/locale/crh/LC_MESSAGES/gnome-menus.mo
 share/locale/cs/LC_MESSAGES/gnome-menus.mo
 share/locale/cy/LC_MESSAGES/gnome-menus.mo
 share/locale/da/LC_MESSAGES/gnome-menus.mo
@@ -61,12 +63,14 @@ share/locale/ga/LC_MESSAGES/gnome-menus.mo
 share/locale/gl/LC_MESSAGES/gnome-menus.mo
 share/locale/gn/LC_MESSAGES/gnome-menus.mo
 share/locale/gu/LC_MESSAGES/gnome-menus.mo
+share/locale/ha/LC_MESSAGES/gnome-menus.mo
 share/locale/he/LC_MESSAGES/gnome-menus.mo
 share/locale/hi/LC_MESSAGES/gnome-menus.mo
 share/locale/hr/LC_MESSAGES/gnome-menus.mo
 share/locale/hu/LC_MESSAGES/gnome-menus.mo
 share/locale/hy/LC_MESSAGES/gnome-menus.mo
 share/locale/id/LC_MESSAGES/gnome-menus.mo
+share/locale/ig/LC_MESSAGES/gnome-menus.mo
 share/locale/io/LC_MESSAGES/gnome-menus.mo
 share/locale/is/LC_MESSAGES/gnome-menus.mo
 share/locale/it/LC_MESSAGES/gnome-menus.mo
@@ -116,15 +120,18 @@ share/locale/uk/LC_MESSAGES/gnome-menus.mo
 share/locale/uz@cyrillic/LC_MESSAGES/gnome-menus.mo
 share/locale/vi/LC_MESSAGES/gnome-menus.mo
 share/locale/xh/LC_MESSAGES/gnome-menus.mo
+share/locale/yo/LC_MESSAGES/gnome-menus.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-menus.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-menus.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
+@dirrm share/gnome-menus/examples
+@dirrm share/gnome-menus
 @dirrmtry share/desktop-directories
 @dirrm include/gnome-menus
-@dirrmtry etc/xdg/menus
-@dirrmtry etc/xdg
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/yo/LC_MESSAGES
+@dirrmtry share/locale/yo
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
@@ -157,14 +164,20 @@ share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
 @dirrmtry share/locale/kk
 @dirrmtry share/locale/io/LC_MESSAGES
 @dirrmtry share/locale/io
+@dirrmtry share/locale/ig/LC_MESSAGES
+@dirrmtry share/locale/ig
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/ha/LC_MESSAGES
+@dirrmtry share/locale/ha
 @dirrmtry share/locale/gn/LC_MESSAGES
 @dirrmtry share/locale/gn
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
@@ -173,3 +186,4 @@ share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry etc/xdg/menus

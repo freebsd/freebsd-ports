@@ -3,7 +3,7 @@
 # Whom:					Mezz <mezz@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/ruby-panelapplet/Makefile,v 1.2 2005/10/17 07:05:43 mezz Exp $
+#   $MCom: ports/x11-toolkits/ruby-panelapplet/Makefile,v 1.4 2009/04/07 04:06:54 marcus Exp $
 #
 
 PORTNAME=	panelapplet
@@ -23,6 +23,8 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gnome2.so:${PORTSD
 USE_RUBY=	yes
 USE_GNOME=	gnomepanel
 USE_RUBY_EXTCONF=	yes
+
+BROKEN=		does not build with GNOME 2.26.
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 

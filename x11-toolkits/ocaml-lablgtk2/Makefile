@@ -22,6 +22,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_OCAML=	yes
 
+BROKEN=		does not build with GNOME 2.26
+
 OPTIONS=	GLADE "With glade support" ON \
 		GNOMECANVAS "With gnomecanvas support" ON \
 		GNOMEPANEL "With gnomepanel support" ON \

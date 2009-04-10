@@ -26,6 +26,8 @@ USE_GNOME=	gnomehack lthack gnomepanel
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static
+CONFIGURE_ENV=	CPPFLAGS="`pkg-config --cflags libgnomeui-2.0`" \
+		LIBS="`pkg-config --libs libgnomeui-2.0`"
 
 PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"
 

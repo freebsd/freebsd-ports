@@ -15,6 +15,8 @@ RUN_DEPENDS=	uim-pref-gtk:${PORTSDIR}/textproc/uim-gtk
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
+CONFIGURE_ENV=	CPPFLAGS="`pkg-config --cflags libgnomeui-2.0`" \
+		LIBS="`pkg-config --libs libgnomeui-2.0`"
 CONFIGURE_ARGS=	--with-gtk2 --enable-gnome-applet
 
 UIM_SLAVE=	yes

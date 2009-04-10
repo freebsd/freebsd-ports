@@ -3,11 +3,12 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/audio/pulseaudio/Makefile,v 1.10 2008/03/20 16:07:21 mezz Exp $
+#   $MCom: ports/audio/pulseaudio/Makefile,v 1.16 2009/04/09 04:36:26 marcus Exp $
 #
 
 PORTNAME=	pulseaudio
 PORTVERSION=	0.9.14
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -23,6 +24,7 @@ LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 USE_GNOME=	gnometarget gnomehack glib20 intltool ltverhack
 USE_XORG=	x11 sm
 USE_LDCONFIG=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_GMAKE=	yes
@@ -49,9 +51,9 @@ MAN5=		default.pa.5 pulse-client.conf.5 pulse-daemon.conf.5
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
+#.if ${ARCH} == "sparc64"
+#BROKEN=		Does not compile on sparc64
+#.endif
 
 .if defined(WITH_JACK)
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack

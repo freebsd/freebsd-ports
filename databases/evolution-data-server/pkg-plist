@@ -238,6 +238,7 @@ include/evolution-data-server-%%VERSION%%/libedataserver/e-xml-utils.h
 include/evolution-data-server-%%VERSION%%/libedataserver/eds-version.h
 include/evolution-data-server-%%VERSION%%/libedataserver/md5-utils.h
 include/evolution-data-server-%%VERSION%%/libedataserverui/e-book-auth-util.h
+include/evolution-data-server-%%VERSION%%/libedataserverui/e-category-completion.h
 include/evolution-data-server-%%VERSION%%/libedataserverui/e-categories-dialog.h
 include/evolution-data-server-%%VERSION%%/libedataserverui/e-cell-renderer-color.h
 include/evolution-data-server-%%VERSION%%/libedataserverui/e-contact-store.h
@@ -253,51 +254,6 @@ include/evolution-data-server-%%VERSION%%/libedataserverui/e-source-option-menu.
 include/evolution-data-server-%%VERSION%%/libedataserverui/e-source-selector-dialog.h
 include/evolution-data-server-%%VERSION%%/libedataserverui/e-source-selector.h
 include/evolution-data-server-%%VERSION%%/libedataserverui/e-tree-model-generator.h
-include/evolution-data-server-%%VERSION%%/libical/ical.h
-include/evolution-data-server-%%VERSION%%/libical/icalarray.h
-include/evolution-data-server-%%VERSION%%/libical/icalattach.h
-include/evolution-data-server-%%VERSION%%/libical/icalcalendar.h
-include/evolution-data-server-%%VERSION%%/libical/icalclassify.h
-include/evolution-data-server-%%VERSION%%/libical/icalcluster.h
-include/evolution-data-server-%%VERSION%%/libical/icalcomponent.h
-include/evolution-data-server-%%VERSION%%/libical/icalderivedparameter.h
-include/evolution-data-server-%%VERSION%%/libical/icalderivedproperty.h
-include/evolution-data-server-%%VERSION%%/libical/icalderivedvalue.h
-include/evolution-data-server-%%VERSION%%/libical/icaldirset.h
-include/evolution-data-server-%%VERSION%%/libical/icaldirsetimpl.h
-include/evolution-data-server-%%VERSION%%/libical/icalduration.h
-include/evolution-data-server-%%VERSION%%/libical/icalenums.h
-include/evolution-data-server-%%VERSION%%/libical/icalerror.h
-include/evolution-data-server-%%VERSION%%/libical/icalfileset.h
-include/evolution-data-server-%%VERSION%%/libical/icalfilesetimpl.h
-include/evolution-data-server-%%VERSION%%/libical/icalgauge.h
-include/evolution-data-server-%%VERSION%%/libical/icalgaugeimpl.h
-include/evolution-data-server-%%VERSION%%/libical/icallangbind.h
-include/evolution-data-server-%%VERSION%%/libical/icalmemory.h
-include/evolution-data-server-%%VERSION%%/libical/icalmessage.h
-include/evolution-data-server-%%VERSION%%/libical/icalmime.h
-include/evolution-data-server-%%VERSION%%/libical/icalparameter.h
-include/evolution-data-server-%%VERSION%%/libical/icalparser.h
-include/evolution-data-server-%%VERSION%%/libical/icalperiod.h
-include/evolution-data-server-%%VERSION%%/libical/icalproperty.h
-include/evolution-data-server-%%VERSION%%/libical/icalrecur.h
-include/evolution-data-server-%%VERSION%%/libical/icalrestriction.h
-include/evolution-data-server-%%VERSION%%/libical/icalset.h
-include/evolution-data-server-%%VERSION%%/libical/icalspanlist.h
-include/evolution-data-server-%%VERSION%%/libical/icalss.h
-include/evolution-data-server-%%VERSION%%/libical/icalssyacc.h
-include/evolution-data-server-%%VERSION%%/libical/icaltime.h
-include/evolution-data-server-%%VERSION%%/libical/icaltimezone.h
-include/evolution-data-server-%%VERSION%%/libical/icaltypes.h
-include/evolution-data-server-%%VERSION%%/libical/icaltz-util.h
-include/evolution-data-server-%%VERSION%%/libical/icalvalue.h
-include/evolution-data-server-%%VERSION%%/libical/icalvcal.h
-include/evolution-data-server-%%VERSION%%/libical/port.h
-include/evolution-data-server-%%VERSION%%/libical/pvl.h
-include/evolution-data-server-%%VERSION%%/libical/sspm.h
-include/evolution-data-server-%%VERSION%%/libical/vcaltmp.h
-include/evolution-data-server-%%VERSION%%/libical/vcc.h
-include/evolution-data-server-%%VERSION%%/libical/vobject.h
 lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelgroupwise.a
 lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelgroupwise.la
 lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelgroupwise.so
@@ -366,9 +322,9 @@ lib/evolution-data-server-%%EVO_VERSION%%/extensions/libecalbackendgroupwise.so
 lib/evolution-data-server-%%EVO_VERSION%%/extensions/libecalbackendhttp.a
 lib/evolution-data-server-%%EVO_VERSION%%/extensions/libecalbackendhttp.la
 lib/evolution-data-server-%%EVO_VERSION%%/extensions/libecalbackendhttp.so
-lib/evolution-data-server-%%EVO_VERSION%%/extensions/libecalbackendweather.a
-lib/evolution-data-server-%%EVO_VERSION%%/extensions/libecalbackendweather.la
-lib/evolution-data-server-%%EVO_VERSION%%/extensions/libecalbackendweather.so
+%%WEATHER%%lib/evolution-data-server-%%EVO_VERSION%%/extensions/libecalbackendweather.a
+%%WEATHER%%lib/evolution-data-server-%%EVO_VERSION%%/extensions/libecalbackendweather.la
+%%WEATHER%%lib/evolution-data-server-%%EVO_VERSION%%/extensions/libecalbackendweather.so
 lib/libcamel-%%EVO_VERSION%%.a
 lib/libcamel-%%EVO_VERSION%%.la
 lib/libcamel-%%EVO_VERSION%%.so
@@ -554,8 +510,8 @@ share/doc/camel/camel-camel-net-utils.html
 share/doc/camel/camel-camel-operation.html
 share/doc/camel/camel-camel-process.html
 share/doc/camel/camel-camel-provider.html
-share/doc/camel/camel-camel-search-sql-sexp.html
 share/doc/camel/camel-camel-search-sql.html
+share/doc/camel/camel-camel-search-sql-sexp.html
 share/doc/camel/camel-camel-string-utils.html
 share/doc/camel/camel-camel-trie.html
 share/doc/camel/camel-camel-uid-cache.html
@@ -727,6 +683,7 @@ share/doc/libedataserverui/index.html
 share/doc/libedataserverui/index.sgml
 share/doc/libedataserverui/ix01.html
 share/doc/libedataserverui/left.png
+share/doc/libedataserverui/libedataserverui-ECategoryCompletion.html
 share/doc/libedataserverui/libedataserverui-ECellRendererColor.html
 share/doc/libedataserverui/libedataserverui-e-book-auth-util.html
 share/doc/libedataserverui/libedataserverui-e-data-server-ui-marshal.html
@@ -739,7 +696,7 @@ share/doc/libedataserverui/up.png
 share/evolution-data-server-%%VERSION%%/evolutionperson.schema
 share/evolution-data-server-%%VERSION%%/glade/e-categories-dialog.glade
 share/evolution-data-server-%%VERSION%%/glade/e-name-selector-dialog.glade
-share/evolution-data-server-%%VERSION%%/weather/Locations.xml
+%%WEATHER%%share/evolution-data-server-%%VERSION%%/weather/Locations.xml
 share/idl/evolution-data-server-%%EVO_VERSION%%/Evolution-DataServer-Addressbook.idl
 share/idl/evolution-data-server-%%EVO_VERSION%%/Evolution-DataServer-Calendar.idl
 share/idl/evolution-data-server-%%EVO_VERSION%%/Evolution-DataServer.idl
@@ -783,7 +740,6 @@ share/locale/ka/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/kn/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/ko/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/ku/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
-share/locale/la/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/lt/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/lv/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/mk/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
@@ -842,7 +798,7 @@ share/pixmaps/evolution-data-server/category_suppliers_16.png
 share/pixmaps/evolution-data-server/category_time-and-expenses_16.png
 @dirrm share/pixmaps/evolution-data-server
 @dirrm share/idl/evolution-data-server-%%EVO_VERSION%%
-@dirrm share/evolution-data-server-%%VERSION%%/weather
+%%WEATHER%%@dirrm share/evolution-data-server-%%VERSION%%/weather
 @dirrm share/evolution-data-server-%%VERSION%%/glade
 @dirrm share/evolution-data-server-%%VERSION%%
 @dirrm share/doc/libedataserverui
@@ -856,7 +812,6 @@ share/pixmaps/evolution-data-server/category_time-and-expenses_16.png
 @dirrm lib/evolution-data-server-%%EVO_VERSION%%/extensions
 @dirrm lib/evolution-data-server-%%EVO_VERSION%%/camel-providers
 @dirrm lib/evolution-data-server-%%EVO_VERSION%%
-@dirrm include/evolution-data-server-%%VERSION%%/libical
 @dirrm include/evolution-data-server-%%VERSION%%/libedataserverui
 @dirrm include/evolution-data-server-%%VERSION%%/libedataserver
 @dirrm include/evolution-data-server-%%VERSION%%/libedata-cal
@@ -887,8 +842,6 @@ share/pixmaps/evolution-data-server/category_time-and-expenses_16.png
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
-@dirrmtry share/locale/la/LC_MESSAGES
-@dirrmtry share/locale/la
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES

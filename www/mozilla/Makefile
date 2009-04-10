@@ -3,11 +3,11 @@
 # Whom:			eivind/dima/jseger
 #
 # $FreeBSD$
-#    $MCom: ports-stable/www/mozilla/Makefile,v 1.22 2008/08/07 04:42:36 mezz Exp $
+#    $MCom: ports/www/mozilla/Makefile,v 1.55 2009/04/09 03:12:52 mezz Exp $
 
 PORTNAME=	mozilla
 PORTVERSION=	1.7.13
-PORTREVISION?=	10
+PORTREVISION?=	11
 PORTEPOCH=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -24,6 +24,7 @@ DEPRECATED=	The mozilla team has shifted the development branch of mozilla to \
 		seamonkey, this port is outdated and has many vulnerabilities. \
 		Please consider using www/seamonkey or www/firefox instead.
 
+CONFLICTS=	libxul-[0-9]*
 MAKE_ENV+=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin
 USE_GMAKE=	yes
 USE_BZIP2=	yes

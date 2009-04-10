@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/epiphany/Makefile,v 1.188 2008/11/27 01:59:20 marcus Exp $
+#   $MCom: ports/www/epiphany/Makefile,v 1.195 2009/03/30 03:15:21 marcus Exp $
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	2.24.3
-PORTREVISION?=	1
+PORTVERSION=	2.26.0
+PORTREVISION?=	0
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		notify.1:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
-    		${LOCALBASE}/share/themes/LowContrast/index.theme:${PORTSDIR}/x11-themes/gnome-themes
+    		${LOCALBASE}/share/icons/HighContrastLargePrint/index.theme:${PORTSDIR}/x11-themes/gnome-themes
 
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
@@ -60,9 +60,10 @@ EXTRA_LIBS+=	`pkg-config --libs WebKitGtk`
 CONFLICTS=	epiphany-[1-9]*
 PLIST_SUB+=	GECKO="@comment "
 .else
-USE_GECKO+=	firefox xulrunner
+USE_GECKO+=	firefox libxul
 CONFIGURE_ARGS+=	--with-gecko=${GECKO} \
-			--with-engine=mozilla
+			--with-engine=mozilla \
+			--with-gecko-home=${LOCALBASE}/lib/${GECKO}
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 CONFLICTS=	epiphany-webkit-[1-9]*
 PLIST_SUB+=	GECKO=""
@@ -94,7 +95,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|WebKitGdk|WebKitGtk|' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		 's|-lpthread|${PTHREAD_LIBS}|g'
-	@${REINPLACE_CMD} -e 's|execinfo.h|#|g' \
+	@${REINPLACE_CMD} -e 's|execinfo.h|#|g ; \
+	    	s|-ldl"$$|"|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/lib/mozilla/plugins"|/lib/browser_plugins/symlinks/gecko18"|' \
 		${WRKSRC}/embed/mozilla/mozilla-embed-single.cpp

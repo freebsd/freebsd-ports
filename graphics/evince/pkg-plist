@@ -1,110 +1,102 @@
 bin/evince
 bin/evince-thumbnailer
-include/evince-2.20/evince/ev-async-renderer.h
-include/evince-2.20/evince/ev-attachment.h
-include/evince-2.20/evince/ev-document-find.h
-include/evince-2.20/evince/ev-document-fonts.h
-include/evince-2.20/evince/ev-document-forms.h
-include/evince-2.20/evince/ev-document-images.h
-include/evince-2.20/evince/ev-document-info.h
-include/evince-2.20/evince/ev-document-links.h
-include/evince-2.20/evince/ev-document-misc.h
-include/evince-2.20/evince/ev-document-security.h
-include/evince-2.20/evince/ev-document-thumbnails.h
-include/evince-2.20/evince/ev-document-transition.h
-include/evince-2.20/evince/ev-document.h
-include/evince-2.20/evince/ev-file-exporter.h
-include/evince-2.20/evince/ev-file-helpers.h
-include/evince-2.20/evince/ev-form-field.h
-include/evince-2.20/evince/ev-image.h
-include/evince-2.20/evince/ev-link-action.h
-include/evince-2.20/evince/ev-link-dest.h
-include/evince-2.20/evince/ev-link.h
-include/evince-2.20/evince/ev-page.h
-include/evince-2.20/evince/ev-render-context.h
-include/evince-2.20/evince/ev-selection.h
-include/evince-2.20/evince/ev-transition-effect.h
-%%COMICS%%lib/evince/backends/comicsdocument.evince-backend
-%%DJVU%%lib/evince/backends/djvudocument.evince-backend
-%%DVI%%lib/evince/backends/dvidocument.evince-backend
-%%IMPRESS%%lib/evince/backends/impressdocument.evince-backend
-%%COMICS%%lib/evince/backends/libcomicsdocument.a
-%%COMICS%%lib/evince/backends/libcomicsdocument.la
-%%COMICS%%lib/evince/backends/libcomicsdocument.so
-%%DJVU%%lib/evince/backends/libdjvudocument.a
-%%DJVU%%lib/evince/backends/libdjvudocument.la
-%%DJVU%%lib/evince/backends/libdjvudocument.so
-%%DVI%%lib/evince/backends/libdvidocument.a
-%%DVI%%lib/evince/backends/libdvidocument.la
-%%DVI%%lib/evince/backends/libdvidocument.so
-%%IMPRESS%%lib/evince/backends/libimpressdocument.a
-%%IMPRESS%%lib/evince/backends/libimpressdocument.la
-%%IMPRESS%%lib/evince/backends/libimpressdocument.so
-lib/evince/backends/libpdfdocument.a
-lib/evince/backends/libpdfdocument.la
-lib/evince/backends/libpdfdocument.so
-lib/evince/backends/libpsdocument.a
-lib/evince/backends/libpsdocument.la
-lib/evince/backends/libpsdocument.so
-lib/evince/backends/libtiffdocument.a
-lib/evince/backends/libtiffdocument.la
-lib/evince/backends/libtiffdocument.so
-lib/evince/backends/pdfdocument.evince-backend
-lib/evince/backends/psdocument.evince-backend
-lib/evince/backends/tiffdocument.evince-backend
+include/evince/2.25/evince-document.h
+include/evince/2.25/evince-view.h
+include/evince/2.25/libdocument/ev-async-renderer.h
+include/evince/2.25/libdocument/ev-attachment.h
+include/evince/2.25/libdocument/ev-backends-manager.h
+include/evince/2.25/libdocument/ev-document-factory.h
+include/evince/2.25/libdocument/ev-document-find.h
+include/evince/2.25/libdocument/ev-document-fonts.h
+include/evince/2.25/libdocument/ev-document-forms.h
+include/evince/2.25/libdocument/ev-document-images.h
+include/evince/2.25/libdocument/ev-document-info.h
+include/evince/2.25/libdocument/ev-document-layers.h
+include/evince/2.25/libdocument/ev-document-links.h
+include/evince/2.25/libdocument/ev-document-misc.h
+include/evince/2.25/libdocument/ev-document-security.h
+include/evince/2.25/libdocument/ev-document-thumbnails.h
+include/evince/2.25/libdocument/ev-document-transition.h
+include/evince/2.25/libdocument/ev-document-type-builtins.h
+include/evince/2.25/libdocument/ev-document.h
+include/evince/2.25/libdocument/ev-file-exporter.h
+include/evince/2.25/libdocument/ev-file-helpers.h
+include/evince/2.25/libdocument/ev-form-field.h
+include/evince/2.25/libdocument/ev-image.h
+include/evince/2.25/libdocument/ev-init.h
+include/evince/2.25/libdocument/ev-layer.h
+include/evince/2.25/libdocument/ev-link-action.h
+include/evince/2.25/libdocument/ev-link-dest.h
+include/evince/2.25/libdocument/ev-link.h
+include/evince/2.25/libdocument/ev-page.h
+include/evince/2.25/libdocument/ev-render-context.h
+include/evince/2.25/libdocument/ev-selection.h
+include/evince/2.25/libdocument/ev-transition-effect.h
+include/evince/2.25/libdocument/ev-version.h
+include/evince/2.25/libview/ev-job-scheduler.h
+include/evince/2.25/libview/ev-jobs.h
+include/evince/2.25/libview/ev-page-cache.h
+include/evince/2.25/libview/ev-view-type-builtins.h
+include/evince/2.25/libview/ev-view.h
+%%COMICS%%lib/evince/1/backends/comicsdocument.evince-backend
+%%DJVU%%lib/evince/1/backends/djvudocument.evince-backend
+%%DVI%%lib/evince/1/backends/dvidocument.evince-backend
+%%IMPRESS%%lib/evince/1/backends/impressdocument.evince-backend
+%%COMICS%%lib/evince/1/backends/libcomicsdocument.a
+%%COMICS%%lib/evince/1/backends/libcomicsdocument.la
+%%COMICS%%lib/evince/1/backends/libcomicsdocument.so
+%%DJVU%%lib/evince/1/backends/libdjvudocument.a
+%%DJVU%%lib/evince/1/backends/libdjvudocument.la
+%%DJVU%%lib/evince/1/backends/libdjvudocument.so
+%%DVI%%lib/evince/1/backends/libdvidocument.a
+%%DVI%%lib/evince/1/backends/libdvidocument.la
+%%DVI%%lib/evince/1/backends/libdvidocument.so
+%%IMPRESS%%lib/evince/1/backends/libimpressdocument.a
+%%IMPRESS%%lib/evince/1/backends/libimpressdocument.la
+%%IMPRESS%%lib/evince/1/backends/libimpressdocument.so
+lib/evince/1/backends/libpdfdocument.a
+lib/evince/1/backends/libpdfdocument.la
+lib/evince/1/backends/libpdfdocument.so
+lib/evince/1/backends/libpsdocument.a
+lib/evince/1/backends/libpsdocument.la
+lib/evince/1/backends/libpsdocument.so
+lib/evince/1/backends/libtiffdocument.a
+lib/evince/1/backends/libtiffdocument.la
+lib/evince/1/backends/libtiffdocument.so
+lib/evince/1/backends/pdfdocument.evince-backend
+lib/evince/1/backends/psdocument.evince-backend
+lib/evince/1/backends/tiffdocument.evince-backend
 %%NAUTILUS%%lib/nautilus/extensions-2.0/libevince-properties-page.a
 %%NAUTILUS%%lib/nautilus/extensions-2.0/libevince-properties-page.la
 %%NAUTILUS%%lib/nautilus/extensions-2.0/libevince-properties-page.so
-lib/libevbackend.a
-lib/libevbackend.la
-lib/libevbackend.so
-lib/libevbackend.so.0
+lib/libevdocument.a
+lib/libevdocument.la
+lib/libevdocument.so
+lib/libevdocument.so.1
+lib/libevview.a
+lib/libevview.la
+lib/libevview.so
+lib/libevview.so.1
+libdata/pkgconfig/evince-document-2.25.pc
+libdata/pkgconfig/evince-view-2.25.pc
 share/applications/evince.desktop
-%%DOCSDIR%%/EvAttachment.html
 %%DOCSDIR%%/EvNavigationAction.html
 %%DOCSDIR%%/EvNavigationActionWidget.html
 %%DOCSDIR%%/EvPageAction.html
 %%DOCSDIR%%/EvPageActionWidget.html
 %%DOCSDIR%%/EvWindow.html
 %%DOCSDIR%%/evince-EvHistory.html
-%%DOCSDIR%%/evince-EvImage.html
-%%DOCSDIR%%/evince-EvJobFind.html
-%%DOCSDIR%%/evince-EvPasswordDialog.html
 %%DOCSDIR%%/evince-EvPasswordView.html
-%%DOCSDIR%%/evince-EvRenderContext.html
 %%DOCSDIR%%/evince-EvSidebar.html
 %%DOCSDIR%%/evince-EvSidebarAttachments.html
 %%DOCSDIR%%/evince-EvSidebarLinks.html
 %%DOCSDIR%%/evince-EvSidebarThumbnails.html
-%%DOCSDIR%%/evince-EvTooltip.html
-%%DOCSDIR%%/evince-ev-async-renderer.html
-%%DOCSDIR%%/evince-ev-document-factory.html
-%%DOCSDIR%%/evince-ev-document-find.html
-%%DOCSDIR%%/evince-ev-document-fonts.html
-%%DOCSDIR%%/evince-ev-document-images.html
-%%DOCSDIR%%/evince-ev-document-info.html
-%%DOCSDIR%%/evince-ev-document-links.html
-%%DOCSDIR%%/evince-ev-document-misc.html
-%%DOCSDIR%%/evince-ev-document-security.html
-%%DOCSDIR%%/evince-ev-document-thumbnails.html
-%%DOCSDIR%%/evince-ev-document-transition.html
-%%DOCSDIR%%/evince-ev-document.html
-%%DOCSDIR%%/evince-ev-file-exporter.html
-%%DOCSDIR%%/evince-ev-file-helpers.html
-%%DOCSDIR%%/evince-ev-link-action.html
-%%DOCSDIR%%/evince-ev-link-dest.html
-%%DOCSDIR%%/evince-ev-link.html
 %%DOCSDIR%%/evince-ev-metadata-manager.html
-%%DOCSDIR%%/evince-ev-page-cache.html
-%%DOCSDIR%%/evince-ev-pixbuf-cache.html
 %%DOCSDIR%%/evince-ev-properties-dialog.html
 %%DOCSDIR%%/evince-ev-properties-fonts.html
-%%DOCSDIR%%/evince-ev-selection.html
 %%DOCSDIR%%/evince-ev-sidebar-page.html
 %%DOCSDIR%%/evince-ev-stock-icons.html
 %%DOCSDIR%%/evince-ev-utils.html
-%%DOCSDIR%%/evince-ev-view-accessible.html
-%%DOCSDIR%%/evince-ev-view.html
 %%DOCSDIR%%/evince-ev-window-title.html
 %%DOCSDIR%%/evince.devhelp
 %%DOCSDIR%%/evince.devhelp2
@@ -114,14 +106,64 @@ share/applications/evince.desktop
 %%DOCSDIR%%/ix01.html
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/pt01.html
-%%DOCSDIR%%/pt02.html
-%%DOCSDIR%%/pt03.html
-%%DOCSDIR%%/pt04.html
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
-%%DATADIR%%/evince-password.glade
-%%DATADIR%%/evince-properties.glade
+share/doc/libevdocument/EvAttachment.html
+share/doc/libevdocument/EvFormFieldSignature.html
+share/doc/libevdocument/EvImage.html
+share/doc/libevdocument/EvLayer.html
+share/doc/libevdocument/EvPage.html
+share/doc/libevdocument/EvRenderContext.html
+share/doc/libevdocument/data.html
+share/doc/libevdocument/helper.html
+share/doc/libevdocument/home.png
+share/doc/libevdocument/index.html
+share/doc/libevdocument/index.sgml
+share/doc/libevdocument/interfaces.html
+share/doc/libevdocument/left.png
+share/doc/libevdocument/libevdocument-ev-async-renderer.html
+share/doc/libevdocument/libevdocument-ev-backends-manager.html
+share/doc/libevdocument/libevdocument-ev-document-factory.html
+share/doc/libevdocument/libevdocument-ev-document-find.html
+share/doc/libevdocument/libevdocument-ev-document-fonts.html
+share/doc/libevdocument/libevdocument-ev-document-forms.html
+share/doc/libevdocument/libevdocument-ev-document-images.html
+share/doc/libevdocument/libevdocument-ev-document-info.html
+share/doc/libevdocument/libevdocument-ev-document-layers.html
+share/doc/libevdocument/libevdocument-ev-document-links.html
+share/doc/libevdocument/libevdocument-ev-document-misc.html
+share/doc/libevdocument/libevdocument-ev-document-security.html
+share/doc/libevdocument/libevdocument-ev-document-thumbnails.html
+share/doc/libevdocument/libevdocument-ev-document-transition.html
+share/doc/libevdocument/libevdocument-ev-document.html
+share/doc/libevdocument/libevdocument-ev-file-exporter.html
+share/doc/libevdocument/libevdocument-ev-file-helpers.html
+share/doc/libevdocument/libevdocument-ev-init.html
+share/doc/libevdocument/libevdocument-ev-link-action.html
+share/doc/libevdocument/libevdocument-ev-link-dest.html
+share/doc/libevdocument/libevdocument-ev-link.html
+share/doc/libevdocument/libevdocument-ev-selection.html
+share/doc/libevdocument/libevdocument-ev-transition-effect.html
+share/doc/libevdocument/libevdocument.devhelp
+share/doc/libevdocument/libevdocument.devhelp2
+share/doc/libevdocument/right.png
+share/doc/libevdocument/style.css
+share/doc/libevdocument/up.png
+share/doc/libevview/EvJobExport.html
+share/doc/libevview/ch01.html
+share/doc/libevview/home.png
+share/doc/libevview/index.html
+share/doc/libevview/index.sgml
+share/doc/libevview/left.png
+share/doc/libevview/libevview-ev-job-scheduler.html
+share/doc/libevview/libevview-ev-page-cache.html
+share/doc/libevview/libevview-ev-view.html
+share/doc/libevview/libevview.devhelp
+share/doc/libevview/libevview.devhelp2
+share/doc/libevview/right.png
+share/doc/libevview/style.css
+share/doc/libevview/up.png
 %%DATADIR%%/evince-toolbar.xml
 %%DATADIR%%/evince-ui.xml
 %%DATADIR%%/hand-open.png
@@ -130,6 +172,7 @@ share/applications/evince.desktop
 %%DATADIR%%/icons/hicolor/16x16/actions/zoom-fit-page.png
 %%DATADIR%%/icons/hicolor/16x16/actions/zoom-fit-width.png
 %%DATADIR%%/icons/hicolor/16x16/actions/zoom.png
+%%DATADIR%%/icons/hicolor/22x22/actions/eye.png
 %%DATADIR%%/icons/hicolor/22x22/actions/view-page-continuous.png
 %%DATADIR%%/icons/hicolor/22x22/actions/view-page-facing.png
 %%DATADIR%%/icons/hicolor/22x22/actions/zoom-fit-page.png
@@ -151,6 +194,8 @@ share/gnome/help/evince/bg/evince.xml
 share/gnome/help/evince/bg/figures/evince_start_window.png
 share/gnome/help/evince/ca/evince.xml
 share/gnome/help/evince/ca/figures/evince_start_window.png
+share/gnome/help/evince/cs/evince.xml
+share/gnome/help/evince/cs/figures/evince_start_window.png
 share/gnome/help/evince/de/evince.xml
 share/gnome/help/evince/de/figures/evince_start_window.png
 share/gnome/help/evince/el/evince.xml
@@ -159,6 +204,8 @@ share/gnome/help/evince/en_GB/evince.xml
 share/gnome/help/evince/en_GB/figures/evince_start_window.png
 share/gnome/help/evince/es/evince.xml
 share/gnome/help/evince/es/figures/evince_start_window.png
+share/gnome/help/evince/eu/evince.xml
+share/gnome/help/evince/eu/figures/evince_start_window.png
 share/gnome/help/evince/fi/evince.xml
 share/gnome/help/evince/fi/figures/evince_start_window.png
 share/gnome/help/evince/fr/evince.xml
@@ -181,8 +228,6 @@ share/gnome/help/evince/sv/evince.xml
 share/gnome/help/evince/sv/figures/evince_start_window.png
 share/gnome/help/evince/uk/evince.xml
 share/gnome/help/evince/uk/figures/evince_start_window.png
-share/gnome/help/evince/vi/evince.xml
-share/gnome/help/evince/vi/figures/evince_start_window.png
 share/gnome/help/evince/zh_CN/evince.xml
 share/gnome/help/evince/zh_CN/figures/evince_start_window.png
 share/icons/hicolor/16x16/apps/evince.png
@@ -190,10 +235,11 @@ share/icons/hicolor/22x22/apps/evince.png
 share/icons/hicolor/24x24/apps/evince.png
 share/icons/hicolor/48x48/apps/evince.png
 share/icons/hicolor/scalable/apps/evince.svg
+share/locale/af/LC_MESSAGES/evince.mo
 share/locale/ar/LC_MESSAGES/evince.mo
 share/locale/as/LC_MESSAGES/evince.mo
+share/locale/ast/LC_MESSAGES/evince.mo
 share/locale/be/LC_MESSAGES/evince.mo
-share/locale/be@latin/LC_MESSAGES/evince.mo
 share/locale/bg/LC_MESSAGES/evince.mo
 share/locale/bn/LC_MESSAGES/evince.mo
 share/locale/bn_IN/LC_MESSAGES/evince.mo
@@ -229,6 +275,7 @@ share/locale/ks/LC_MESSAGES/evince.mo
 share/locale/ku/LC_MESSAGES/evince.mo
 share/locale/lt/LC_MESSAGES/evince.mo
 share/locale/lv/LC_MESSAGES/evince.mo
+share/locale/mai/LC_MESSAGES/evince.mo
 share/locale/mg/LC_MESSAGES/evince.mo
 share/locale/mk/LC_MESSAGES/evince.mo
 share/locale/ml/LC_MESSAGES/evince.mo
@@ -252,7 +299,6 @@ share/locale/sk/LC_MESSAGES/evince.mo
 share/locale/sl/LC_MESSAGES/evince.mo
 share/locale/sq/LC_MESSAGES/evince.mo
 share/locale/sr/LC_MESSAGES/evince.mo
-share/locale/sr@latin/LC_MESSAGES/evince.mo
 share/locale/sv/LC_MESSAGES/evince.mo
 share/locale/ta/LC_MESSAGES/evince.mo
 share/locale/te/LC_MESSAGES/evince.mo
@@ -267,10 +313,12 @@ share/locale/zh_TW/LC_MESSAGES/evince.mo
 share/omf/evince/evince-C.omf
 share/omf/evince/evince-bg.omf
 share/omf/evince/evince-ca.omf
+share/omf/evince/evince-cs.omf
 share/omf/evince/evince-de.omf
 share/omf/evince/evince-el.omf
 share/omf/evince/evince-en_GB.omf
 share/omf/evince/evince-es.omf
+share/omf/evince/evince-eu.omf
 share/omf/evince/evince-fi.omf
 share/omf/evince/evince-fr.omf
 share/omf/evince/evince-it.omf
@@ -282,13 +330,12 @@ share/omf/evince/evince-ru.omf
 share/omf/evince/evince-sr.omf
 share/omf/evince/evince-sv.omf
 share/omf/evince/evince-uk.omf
-share/omf/evince/evince-vi.omf
 share/omf/evince/evince-zh_CN.omf
+share/locale/be@latin/LC_MESSAGES/evince.mo
+share/locale/sr@latin/LC_MESSAGES/evince.mo
 @dirrm share/omf/evince
 @dirrm share/gnome/help/evince/zh_CN/figures
 @dirrm share/gnome/help/evince/zh_CN
-@dirrm share/gnome/help/evince/vi/figures
-@dirrm share/gnome/help/evince/vi
 @dirrm share/gnome/help/evince/uk/figures
 @dirrm share/gnome/help/evince/uk
 @dirrm share/gnome/help/evince/sv/figures
@@ -311,6 +358,8 @@ share/omf/evince/evince-zh_CN.omf
 @dirrm share/gnome/help/evince/fr
 @dirrm share/gnome/help/evince/fi/figures
 @dirrm share/gnome/help/evince/fi
+@dirrm share/gnome/help/evince/eu/figures
+@dirrm share/gnome/help/evince/eu
 @dirrm share/gnome/help/evince/es/figures
 @dirrm share/gnome/help/evince/es
 @dirrm share/gnome/help/evince/en_GB/figures
@@ -319,6 +368,8 @@ share/omf/evince/evince-zh_CN.omf
 @dirrm share/gnome/help/evince/el
 @dirrm share/gnome/help/evince/de/figures
 @dirrm share/gnome/help/evince/de
+@dirrm share/gnome/help/evince/cs/figures
+@dirrm share/gnome/help/evince/cs
 @dirrm share/gnome/help/evince/ca/figures
 @dirrm share/gnome/help/evince/ca
 @dirrm share/gnome/help/evince/bg/figures
@@ -339,12 +390,17 @@ share/omf/evince/evince-zh_CN.omf
 @dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrm share/doc/libevview
+@dirrm share/doc/libevdocument
 @dirrm %%DOCSDIR%%
 @dirrmtry share/applications
-@dirrm lib/evince/backends
+@dirrm lib/evince/1/backends
+@dirrm lib/evince/1
 @dirrm lib/evince
-@dirrm include/evince-2.20/evince
-@dirrm include/evince-2.20
+@dirrm include/evince/2.25/libview
+@dirrm include/evince/2.25/libdocument
+@dirrm include/evince/2.25
+@dirrm include/evince
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -365,6 +421,8 @@ share/omf/evince/evince-zh_CN.omf
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/ks/LC_MESSAGES
@@ -375,5 +433,7 @@ share/omf/evince/evince-zh_CN.omf
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

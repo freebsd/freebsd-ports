@@ -3,10 +3,10 @@
 # Whom:					Alexander Nedotsukov <bland@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/py-vte/Makefile,v 1.1 2007/02/18 19:12:57 mezz Exp $
+#   $MCom: ports/x11-toolkits/py-vte/Makefile,v 1.3 2009/02/24 19:42:18 kwm Exp $
 #
 
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

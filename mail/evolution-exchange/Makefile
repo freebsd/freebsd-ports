@@ -3,11 +3,11 @@
 # Whom:					Adam Weinberger, based off kiesel's ximian-exchange port
 #
 # $FreeBSD$
-#   $MCom: ports/mail/evolution-exchange/Makefile,v 1.129 2008/11/25 05:34:10 mezz Exp $
+#   $MCom: ports/mail/evolution-exchange/Makefile,v 1.133 2009/03/17 16:01:03 kwm Exp $
 #
 
 PORTNAME=	evolution-exchange
-PORTVERSION=	2.24.5
+PORTVERSION=	2.26.0
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -32,8 +32,8 @@ CONFIGURE_ARGS=	--with-openldap=${LOCALBASE} \
 		--disable-compile-warnings \
 		--with-libdb=${LOCALBASE}
 
-EVO_VERSION=	2.24
-VERSION=	2.24
+EVO_VERSION=	2.26
+VERSION=	2.26
 PLIST_SUB=	VERSION=${VERSION} EVO_VERSION=${EVO_VERSION} \
 		EDS_VERSION="1.2"
 

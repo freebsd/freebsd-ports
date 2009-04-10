@@ -16,12 +16,14 @@ lib/libgtksourceview-2.0.so.0
 libdata/pkgconfig/gtksourceview-2.0.pc
 share/gtksourceview-2.0/language-specs/R.lang
 share/gtksourceview-2.0/language-specs/ada.lang
+share/gtksourceview-2.0/language-specs/asp.lang
 share/gtksourceview-2.0/language-specs/awk.lang
 share/gtksourceview-2.0/language-specs/boo.lang
 share/gtksourceview-2.0/language-specs/c.lang
 share/gtksourceview-2.0/language-specs/changelog.lang
 share/gtksourceview-2.0/language-specs/chdr.lang
 share/gtksourceview-2.0/language-specs/check.sh
+share/gtksourceview-2.0/language-specs/cmake.lang
 share/gtksourceview-2.0/language-specs/convert.py
 share/gtksourceview-2.0/language-specs/cpp.lang
 share/gtksourceview-2.0/language-specs/csharp.lang
@@ -31,6 +33,7 @@ share/gtksourceview-2.0/language-specs/def.lang
 share/gtksourceview-2.0/language-specs/desktop.lang
 share/gtksourceview-2.0/language-specs/diff.lang
 share/gtksourceview-2.0/language-specs/docbook.lang
+share/gtksourceview-2.0/language-specs/dosbatch.lang
 share/gtksourceview-2.0/language-specs/dot.lang
 share/gtksourceview-2.0/language-specs/dpatch.lang
 share/gtksourceview-2.0/language-specs/dtd.lang
@@ -59,6 +62,7 @@ share/gtksourceview-2.0/language-specs/m4.lang
 share/gtksourceview-2.0/language-specs/makefile.lang
 share/gtksourceview-2.0/language-specs/msil.lang
 share/gtksourceview-2.0/language-specs/nemerle.lang
+share/gtksourceview-2.0/language-specs/nsis.lang
 share/gtksourceview-2.0/language-specs/objc.lang
 share/gtksourceview-2.0/language-specs/ocaml.lang
 share/gtksourceview-2.0/language-specs/ocl.lang
@@ -68,6 +72,7 @@ share/gtksourceview-2.0/language-specs/perl.lang
 share/gtksourceview-2.0/language-specs/php.lang
 share/gtksourceview-2.0/language-specs/pkgconfig.lang
 share/gtksourceview-2.0/language-specs/po.lang
+share/gtksourceview-2.0/language-specs/prolog.lang
 share/gtksourceview-2.0/language-specs/python.lang
 share/gtksourceview-2.0/language-specs/rpmspec.lang
 share/gtksourceview-2.0/language-specs/ruby.lang
@@ -75,6 +80,7 @@ share/gtksourceview-2.0/language-specs/scheme.lang
 share/gtksourceview-2.0/language-specs/sh.lang
 share/gtksourceview-2.0/language-specs/sql.lang
 share/gtksourceview-2.0/language-specs/styles.rng
+share/gtksourceview-2.0/language-specs/t2t.lang
 share/gtksourceview-2.0/language-specs/tcl.lang
 share/gtksourceview-2.0/language-specs/texinfo.lang
 share/gtksourceview-2.0/language-specs/vala.lang
@@ -85,6 +91,7 @@ share/gtksourceview-2.0/language-specs/xml.lang
 share/gtksourceview-2.0/language-specs/xslt.lang
 share/gtksourceview-2.0/language-specs/yacc.lang
 share/gtksourceview-2.0/styles/classic.xml
+share/gtksourceview-2.0/styles/cobalt.xml
 share/gtksourceview-2.0/styles/kate.xml
 share/gtksourceview-2.0/styles/oblivion.xml
 share/gtksourceview-2.0/styles/styles.rng

@@ -163,12 +163,6 @@ share/locale/zh_CN/LC_MESSAGES/tracker.mo
 @dirrm %%DATADIR%%/services
 @dirrm %%DATADIR%%/languages
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
 @dirrm lib/tracker/thumbnailers/image
 @dirrm lib/tracker/thumbnailers/application
 @dirrm lib/tracker/thumbnailers
@@ -177,5 +171,9 @@ share/locale/zh_CN/LC_MESSAGES/tracker.mo
 @dirrm lib/tracker/filters
 @dirrm lib/tracker/extract-modules
 @dirrm lib/tracker
-@dirrmtry etc/xdg/autostart
-@dirrmtry etc/xdg
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin

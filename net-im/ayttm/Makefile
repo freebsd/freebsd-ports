@@ -7,6 +7,7 @@
 
 PORTNAME=	ayttm
 PORTVERSION=	0.5.0.45
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
@@ -54,10 +55,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-L/usr/local/lib||g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g ; \
 		 /CFLAGS=/s|-pthread|${PTHREAD_CFLAGS}|g ; \
+		 s|-DGTK_DISABLE_DEPRECATED||g ; \
 		 /LIBS=/s|-L/usr/X11R6/lib||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|/gnome/apps/Internet|/applications|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
-		's|-L/usr/local/lib/pth/||g' ${WRKSRC}/src/Makefile.in
+		's|-L/usr/local/lib/pth/||g ; \
+		 s|-lproxy|../libproxy/libproxy.a|g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.post.mk>

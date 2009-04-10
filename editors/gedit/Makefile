@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/editors/gedit/Makefile,v 1.91 2008/11/25 00:59:25 marcus Exp $
+#   $MCom: ports/editors/gedit/Makefile,v 1.97 2009/03/16 08:01:49 kwm Exp $
 #
 
 PORTNAME=	gedit
-PORTVERSION=	2.24.3
+PORTVERSION=	2.26.0
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -54,15 +54,11 @@ CONFIGURE_ARGS+=--disable-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|make|${GMAKE}|g' \
-	    	${WRKSRC}/bindings/python/Makefile.in
-
-pre-build:
-	${MKDIR} ${WRKSRC}/bindings/python/.deps
-.for ff in gedit_la-gedit.Plo gedit_la-geditcommands.Plo gedit_la-geditutils.Plo
-	${TOUCH} ${WRKSRC}/bindings/python/.deps/${ff}
-.endfor
+#pre-build:
+#	${MKDIR} ${WRKSRC}/bindings/python/.deps
+#.for ff in gedit_la-gedit.Plo gedit_la-geditcommands.Plo gedit_la-geditutils.Plo
+#	${TOUCH} ${WRKSRC}/bindings/python/.deps/${ff}
+#.endfor
 
 post-install:
 	@-update-desktop-database

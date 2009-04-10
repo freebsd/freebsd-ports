@@ -1,11 +1,53 @@
 bin/glom
-lib/libglom.a
-lib/libglom.la
-lib/libglom.so
-lib/libglom.so.0
+include/glom-1.0/libglom/appstate.h
+include/glom-1.0/libglom/data_structure/field.h
+include/glom-1.0/libglom/data_structure/fieldtypes.h
+include/glom-1.0/libglom/data_structure/foundset.h
+include/glom-1.0/libglom/data_structure/glomconversions.h
+include/glom-1.0/libglom/data_structure/groupinfo.h
+include/glom-1.0/libglom/data_structure/iso_codes.h
+include/glom-1.0/libglom/data_structure/layout/custom_title.h
+include/glom-1.0/libglom/data_structure/layout/fieldformatting.h
+include/glom-1.0/libglom/data_structure/layout/layoutgroup.h
+include/glom-1.0/libglom/data_structure/layout/layoutitem.h
+include/glom-1.0/libglom/data_structure/layout/layoutitem_button.h
+include/glom-1.0/libglom/data_structure/layout/layoutitem_calendarportal.h
+include/glom-1.0/libglom/data_structure/layout/layoutitem_field.h
+include/glom-1.0/libglom/data_structure/layout/layoutitem_image.h
+include/glom-1.0/libglom/data_structure/layout/layoutitem_line.h
+include/glom-1.0/libglom/data_structure/layout/layoutitem_notebook.h
+include/glom-1.0/libglom/data_structure/layout/layoutitem_placeholder.h
+include/glom-1.0/libglom/data_structure/layout/layoutitem_portal.h
+include/glom-1.0/libglom/data_structure/layout/layoutitem_text.h
+include/glom-1.0/libglom/data_structure/layout/report_parts/layoutitem_fieldsummary.h
+include/glom-1.0/libglom/data_structure/layout/report_parts/layoutitem_footer.h
+include/glom-1.0/libglom/data_structure/layout/report_parts/layoutitem_groupby.h
+include/glom-1.0/libglom/data_structure/layout/report_parts/layoutitem_header.h
+include/glom-1.0/libglom/data_structure/layout/report_parts/layoutitem_summary.h
+include/glom-1.0/libglom/data_structure/layout/report_parts/layoutitem_verticalgroup.h
+include/glom-1.0/libglom/data_structure/layout/usesrelationship.h
+include/glom-1.0/libglom/data_structure/numeric_format.h
+include/glom-1.0/libglom/data_structure/parameternamegenerator.h
+include/glom-1.0/libglom/data_structure/print_layout.h
+include/glom-1.0/libglom/data_structure/privileges.h
+include/glom-1.0/libglom/data_structure/relationship.h
+include/glom-1.0/libglom/data_structure/report.h
+include/glom-1.0/libglom/data_structure/system_prefs.h
+include/glom-1.0/libglom/data_structure/tableinfo.h
+include/glom-1.0/libglom/data_structure/translatable_item.h
+include/glom-1.0/libglom/document/document_glom.h
+include/glom-1.0/libglom/document/view.h
+include/glom-1.0/libglom/libglom_config.h
+include/glom-1.0/libglom/sharedptr.h
+include/glom-1.0/libglom/standard_table_prefs_fields.h
+lib/libglom-1.0.a
+lib/libglom-1.0.la
+lib/libglom-1.0.so
+lib/libglom-1.0.so.0
 %%PYTHON_SITELIBDIR%%/glom.a
 %%PYTHON_SITELIBDIR%%/glom.la
 %%PYTHON_SITELIBDIR%%/glom.so
+libdata/pkgconfig/glom-1.0.pc
 share/applications/glom.desktop
 %%DATADIR%%/doc/examples/example_film_manager.glom
 %%DATADIR%%/doc/examples/example_lesson_planner.glom
@@ -203,3 +245,9 @@ share/omf/glom/glom-sv.omf
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrm include/glom-1.0/libglom/document
+@dirrm include/glom-1.0/libglom/data_structure/layout/report_parts
+@dirrm include/glom-1.0/libglom/data_structure/layout
+@dirrm include/glom-1.0/libglom/data_structure
+@dirrm include/glom-1.0/libglom
+@dirrm include/glom-1.0

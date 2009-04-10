@@ -1,10 +1,4 @@
-In order to take full advantage of gnome-user-share, you must have
-devel/gnome-vfs built with mDNS support.  If you do not, simply rebuild
-devel/gnome-vfs after gnome-user-share is installed:
-
-# portupgrade -f devel/gnome-vfs
-
-Finally, run gnome-file-share-properties as the user with which you want
+Run gnome-file-share-properties as the user with which you want
 to use gnome-user-share, then logout and log back into GNOME.  Now everything
 under ~/Public should be shared.  You can view this by opening Nautilus, and
 clicking on the Network icon under Computer.

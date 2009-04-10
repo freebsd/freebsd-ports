@@ -3,10 +3,10 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/net-im/empathy/Makefile,v 1.16 2008/10/20 23:38:20 kwm Exp $
+#    $MCom: ports/net-im/empathy/Makefile,v 1.22 2009/03/30 19:03:24 marcus Exp $
 
 PORTNAME=	empathy
-PORTVERSION=	2.24.1
+PORTVERSION=	2.26.0.1
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 
@@ -16,7 +16,10 @@ COMMENT=	GNOME IM client based around telepathy
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	missioncontrol-server.1:${PORTSDIR}/net-im/telepathy-mission-control \
     		aspell.16:${PORTSDIR}/textproc/aspell \
-		telepathy.2:${PORTSDIR}/net-im/libtelepathy
+		telepathy.2:${PORTSDIR}/net-im/libtelepathy \
+		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
+		telepathy-farsight.0:${PORTSDIR}/net-im/telepathy-farsight \
+		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
 USE_GMAKE=	yes
@@ -25,6 +28,7 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	evolutiondataserver gnomehack gnomeprefix pygtk2 ltverhack \
 		gnomepanel
+USE_GSTREAMER=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
@@ -65,7 +69,7 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-haze:${PORTSDIR}/net-im/telepathy-h
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${datadir}/gtk-doc/html|${DOCSDIR}|' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$${datadir}/gtk-doc/html|${DOCSDIR}|g ; \
+		s|-Werror||g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

@@ -14,5 +14,3 @@ share/applications/tracker-search-tool.desktop
 @dirrmtry %%DATADIR%%/icons
 @dirrmtry %%DATADIR%%
 @dirrmtry share/applications
-@dirrmtry etc/xdg/autostart
-@dirrmtry etc/xdg

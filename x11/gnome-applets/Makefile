@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-applets/Makefile,v 1.193 2008/12/20 20:05:50 marcus Exp $
+#   $MCom: ports/x11/gnome-applets/Makefile,v 1.197 2009/03/17 13:00:26 kwm Exp $
 #
 
 PORTNAME=	gnome-applets
-PORTVERSION=	2.24.3.1
+PORTVERSION=	2.26.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -36,7 +36,8 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel gnomedocutils \
 WANT_GNOME=	yes
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gstreamer=0.10
+CONFIGURE_ARGS=	--with-gstreamer=0.10 \
+		--enable-mixer-applet
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		OS_SYS="/usr/include"

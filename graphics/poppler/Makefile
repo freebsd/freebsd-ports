@@ -3,12 +3,12 @@
 # Whom:                 marcus@FreeBSD.org
 #
 # $FreeBSD$
-#   $MCom: ports-stable/graphics/poppler/Makefile,v 1.8 2008/06/20 17:47:36 mezz Exp $
+#   $MCom: ports/graphics/poppler/Makefile,v 1.44 2009/03/14 05:12:31 marcus Exp $
 #
 
 PORTNAME=	poppler
-PORTVERSION=	0.8.7
-PORTREVISION?=	1
+PORTVERSION=	0.10.5
+PORTREVISION?=	0
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -36,7 +36,7 @@ OPTIONS=	CAIRO "Enable cairo output backend" on
 .include <bsd.port.pre.mk>
 
 .if defined(SLAVEPORT)
-LIB_DEPENDS+=	poppler.3:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS+=	poppler.4:${PORTSDIR}/graphics/poppler
 
 .if ${SLAVEPORT}=="gtk"
 CONFIGURE_ARGS+=--enable-poppler-glib

@@ -9,6 +9,8 @@ include/giomm-%%API_VERSION%%/giomm/datainputstream.h
 include/giomm-%%API_VERSION%%/giomm/dataoutputstream.h
 include/giomm-%%API_VERSION%%/giomm/desktopappinfo.h
 include/giomm-%%API_VERSION%%/giomm/drive.h
+include/giomm-%%API_VERSION%%/giomm/emblem.h
+include/giomm-%%API_VERSION%%/giomm/emblemedicon.h
 include/giomm-%%API_VERSION%%/giomm/enums.h
 include/giomm-%%API_VERSION%%/giomm/error.h
 include/giomm-%%API_VERSION%%/giomm/file.h
@@ -28,6 +30,7 @@ include/giomm-%%API_VERSION%%/giomm/init.h
 include/giomm-%%API_VERSION%%/giomm/inputstream.h
 include/giomm-%%API_VERSION%%/giomm/loadableicon.h
 include/giomm-%%API_VERSION%%/giomm/memoryinputstream.h
+include/giomm-%%API_VERSION%%/giomm/memoryoutputstream.h
 include/giomm-%%API_VERSION%%/giomm/mount.h
 include/giomm-%%API_VERSION%%/giomm/mountoperation.h
 include/giomm-%%API_VERSION%%/giomm/outputstream.h
@@ -40,6 +43,8 @@ include/giomm-%%API_VERSION%%/giomm/private/datainputstream_p.h
 include/giomm-%%API_VERSION%%/giomm/private/dataoutputstream_p.h
 include/giomm-%%API_VERSION%%/giomm/private/desktopappinfo_p.h
 include/giomm-%%API_VERSION%%/giomm/private/drive_p.h
+include/giomm-%%API_VERSION%%/giomm/private/emblem_p.h
+include/giomm-%%API_VERSION%%/giomm/private/emblemedicon_p.h
 include/giomm-%%API_VERSION%%/giomm/private/enums_p.h
 include/giomm-%%API_VERSION%%/giomm/private/error_p.h
 include/giomm-%%API_VERSION%%/giomm/private/file_p.h
@@ -58,6 +63,7 @@ include/giomm-%%API_VERSION%%/giomm/private/icon_p.h
 include/giomm-%%API_VERSION%%/giomm/private/inputstream_p.h
 include/giomm-%%API_VERSION%%/giomm/private/loadableicon_p.h
 include/giomm-%%API_VERSION%%/giomm/private/memoryinputstream_p.h
+include/giomm-%%API_VERSION%%/giomm/private/memoryoutputstream_p.h
 include/giomm-%%API_VERSION%%/giomm/private/mount_p.h
 include/giomm-%%API_VERSION%%/giomm/private/mountoperation_p.h
 include/giomm-%%API_VERSION%%/giomm/private/outputstream_p.h

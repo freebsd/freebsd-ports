@@ -1,8 +1,8 @@
 bin/rhythmbox
 bin/rhythmbox-client
-%%GECKO_PLUGIN%%%%WEBPLUGINS_DIR%%/librhythmbox-itms-detection-plugin.a
-%%GECKO_PLUGIN%%%%WEBPLUGINS_DIR%%/librhythmbox-itms-detection-plugin.la
-%%GECKO_PLUGIN%%%%WEBPLUGINS_DIR%%/librhythmbox-itms-detection-plugin.so
+%%ITMS_PLUGIN%%%%WEBPLUGINS_DIR%%/librhythmbox-itms-detection-plugin.a
+%%ITMS_PLUGIN%%%%WEBPLUGINS_DIR%%/librhythmbox-itms-detection-plugin.la
+%%ITMS_PLUGIN%%%%WEBPLUGINS_DIR%%/librhythmbox-itms-detection-plugin.so
 lib/librhythmbox-core.a
 lib/librhythmbox-core.la
 lib/librhythmbox-core.so
@@ -44,7 +44,6 @@ lib/rhythmbox/plugins/cd-recorder/cd-recorder.rb-plugin
 lib/rhythmbox/plugins/cd-recorder/libcd-recorder.a
 lib/rhythmbox/plugins/cd-recorder/libcd-recorder.la
 lib/rhythmbox/plugins/cd-recorder/libcd-recorder.so
-lib/rhythmbox/plugins/cd-recorder/recorder.glade
 %%DAAP%%lib/rhythmbox/plugins/daap/daap-prefs.glade
 %%DAAP%%lib/rhythmbox/plugins/daap/daap-ui.xml
 %%DAAP%%lib/rhythmbox/plugins/daap/daap.rb-plugin

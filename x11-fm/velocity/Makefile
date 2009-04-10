@@ -7,7 +7,7 @@
 
 PORTNAME=	velocity
 PORTVERSION=	0.1.0b
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.jarrodkoehler.com/velocity/
 DISTNAME=	velocity-0.1.0beta
@@ -19,6 +19,8 @@ WRKSRC=		${WRKDIR}/velocity-0.1.0
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GNOME=	libgnomeui gnomedesktop librsvg2
+CONFIGURE_ENV=	CPPFLAGS="`pkg-config --cflags libgnomeui-2.0`" \
+		LIBS="`pkg-config --libs libgnomeui-2.0`"
 
 .include <bsd.port.pre.mk>
 

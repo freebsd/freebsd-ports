@@ -1,5 +1,5 @@
---- src/netstatus-sysdeps.c.orig	2007-02-13 04:39:19.000000000 -0500
-+++ src/netstatus-sysdeps.c	2008-04-23 13:07:24.000000000 -0400
+--- src/netstatus-sysdeps.c.orig	2009-03-08 00:25:52.000000000 -0500
++++ src/netstatus-sysdeps.c	2009-03-08 15:24:33.000000000 -0400
 @@ -37,13 +37,26 @@
  
  #ifdef __FreeBSD__
@@ -162,24 +162,24 @@
      *signal_strength = 0;
  
 +#if __FreeBSD_version < 800036
-   if (g_strncasecmp (iface, "an",   2) &&
-       g_strncasecmp (iface, "wi",   2) &&
-       g_strncasecmp (iface, "ath",  3) &&
-       g_strncasecmp (iface, "ndis", 4) &&
-+      g_strncasecmp (iface, "ural", 4) &&
-+      g_strncasecmp (iface, "ral",  3) &&
-       g_strncasecmp (iface, "ipw",  3) &&
-       g_strncasecmp (iface, "iwi",  3) &&
-+      g_strncasecmp (iface, "rum",  3) &&
-+      g_strncasecmp (iface, "ray",  3) &&
-       g_strncasecmp (iface, "acx",  3))
+   if (g_ascii_strncasecmp (iface, "an",   2) &&
+       g_ascii_strncasecmp (iface, "wi",   2) &&
+       g_ascii_strncasecmp (iface, "ath",  3) &&
+       g_ascii_strncasecmp (iface, "ndis", 4) &&
++      g_ascii_strncasecmp (iface, "ural", 4) &&
++      g_ascii_strncasecmp (iface, "ral",  3) &&
+       g_ascii_strncasecmp (iface, "ipw",  3) &&
+       g_ascii_strncasecmp (iface, "iwi",  3) &&
++      g_ascii_strncasecmp (iface, "rum",  3) &&
++      g_ascii_strncasecmp (iface, "ray",  3) &&
+       g_ascii_strncasecmp (iface, "acx",  3))
 +#else
 +  if (g_strncasecmp (iface, "wlan", 4))
 +#endif
      return error_message;
  
 +#if __FreeBSD_version < 700046
-   if (g_strncasecmp (iface, "an", 2) == 0)
+   if (g_ascii_strncasecmp (iface, "an", 2) == 0)
      {
        error_message = get_an_data (iface, signal_strength);
        *is_wireless = TRUE;

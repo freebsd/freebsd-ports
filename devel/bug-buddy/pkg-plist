@@ -4,14 +4,6 @@ lib/gtk-2.0/modules/libgnomebreakpad.so
 share/applications/bug-buddy.desktop
 %%DATADIR%%/bug-buddy.gtkbuilder
 %%DATADIR%%/bug-buddy.menu
-%%DATADIR%%/bugzilla/gnome.bugzilla
-%%DATADIR%%/bugzilla/gnome/config
-%%DATADIR%%/bugzilla/gnome/mostfreq
-%%DATADIR%%/bugzilla/gnome/products
-%%DATADIR%%/bugzilla/ximian.bugzilla
-%%DATADIR%%/bugzilla/ximian/config
-%%DATADIR%%/bugzilla/ximian/mostfreq
-%%DATADIR%%/bugzilla/ximian/products
 %%DATADIR%%/gdb-cmd
 share/icons/HighContrastLargePrint/48x48/apps/bug-buddy.png
 share/icons/hicolor/16x16/apps/bug-buddy.png
@@ -107,9 +99,6 @@ share/locale/zh_TW/LC_MESSAGES/bug-buddy.mo
 @dirrmtry share/icons/HighContrastLargePrint/48x48/apps
 @dirrmtry share/icons/HighContrastLargePrint/48x48
 @dirrmtry share/icons/HighContrastLargePrint
-@dirrm %%DATADIR%%/bugzilla/ximian
-@dirrm %%DATADIR%%/bugzilla/gnome
-@dirrm %%DATADIR%%/bugzilla
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES

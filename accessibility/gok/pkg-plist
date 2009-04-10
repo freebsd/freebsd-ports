@@ -496,6 +496,16 @@ share/gnome/help/gok/C/legal.xml
 %%DATADIR%%/lv/quit.kbd
 %%DATADIR%%/lv/text-operations.kbd
 %%DATADIR%%/lv/valuator.kbd
+%%DATADIR%%/mai/gok-controls.kbd
+%%DATADIR%%/mai/hide.kbd
+%%DATADIR%%/mai/launcher.kbd
+%%DATADIR%%/mai/main.kbd
+%%DATADIR%%/mai/mouse.kbd
+%%DATADIR%%/mai/move-resize.kbd
+%%DATADIR%%/mai/numberpad.kbd
+%%DATADIR%%/mai/quit.kbd
+%%DATADIR%%/mai/text-operations.kbd
+%%DATADIR%%/mai/valuator.kbd
 %%DATADIR%%/manage.kbd
 %%DATADIR%%/mk/gok-controls.kbd
 %%DATADIR%%/mk/hide.kbd
@@ -888,6 +898,7 @@ share/locale/ko/LC_MESSAGES/gok.mo
 share/locale/ku/LC_MESSAGES/gok.mo
 share/locale/lt/LC_MESSAGES/gok.mo
 share/locale/lv/LC_MESSAGES/gok.mo
+share/locale/mai/LC_MESSAGES/gok.mo
 share/locale/mk/LC_MESSAGES/gok.mo
 share/locale/ml/LC_MESSAGES/gok.mo
 share/locale/mn/LC_MESSAGES/gok.mo
@@ -959,6 +970,7 @@ share/pixmaps/gok.png
 @dirrm %%DATADIR%%/mn
 @dirrm %%DATADIR%%/ml
 @dirrm %%DATADIR%%/mk
+@dirrm %%DATADIR%%/mai
 @dirrm %%DATADIR%%/lv
 @dirrm %%DATADIR%%/lt
 @dirrm %%DATADIR%%/ku
@@ -1020,6 +1032,8 @@ share/pixmaps/gok.png
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES

@@ -86,6 +86,7 @@ include/glib-2.0/glib/gmessages.h
 include/glib-2.0/glib/gnode.h
 include/glib-2.0/glib/goption.h
 include/glib-2.0/glib/gpattern.h
+include/glib-2.0/glib/gpoll.h
 include/glib-2.0/glib/gprimes.h
 include/glib-2.0/glib/gprintf.h
 include/glib-2.0/glib/gqsort.h

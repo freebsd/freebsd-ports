@@ -102,6 +102,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/accellabel.h
 include/gtkmm-%%API_VERSION%%/gtkmm/accelmap.h
 include/gtkmm-%%API_VERSION%%/gtkmm/action.h
 include/gtkmm-%%API_VERSION%%/gtkmm/actiongroup.h
+include/gtkmm-%%API_VERSION%%/gtkmm/activatable.h
 include/gtkmm-%%API_VERSION%%/gtkmm/adjustment.h
 include/gtkmm-%%API_VERSION%%/gtkmm/alignment.h
 include/gtkmm-%%API_VERSION%%/gtkmm/arrow.h
@@ -185,6 +186,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/misc.h
 include/gtkmm-%%API_VERSION%%/gtkmm/notebook.h
 include/gtkmm-%%API_VERSION%%/gtkmm/object.h
 include/gtkmm-%%API_VERSION%%/gtkmm/optionmenu.h
+include/gtkmm-%%API_VERSION%%/gtkmm/orientable.h
 include/gtkmm-%%API_VERSION%%/gtkmm/pagesetup.h
 include/gtkmm-%%API_VERSION%%/gtkmm/pagesetupunixdialog.h
 include/gtkmm-%%API_VERSION%%/gtkmm/paned.h
@@ -202,6 +204,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/accelgroup_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/accellabel_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/action_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/actiongroup_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/activatable_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/adjustment_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/alignment_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/arrow_p.h
@@ -279,6 +282,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/misc_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/notebook_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/object_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/optionmenu_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/orientable_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/pagesetup_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/pagesetupunixdialog_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/paned_p.h

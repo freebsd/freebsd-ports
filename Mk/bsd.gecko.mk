@@ -5,7 +5,7 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/Mk/bsd.gecko.mk,v 1.12 2008/08/07 04:42:34 mezz Exp $
+#   $MCom: ports/Mk/bsd.gecko.mk,v 1.10 2009/04/04 19:54:48 marcus Exp $
 #
 # 4 column tabs prevent hair loss and tooth decay!
 
@@ -79,9 +79,11 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #		${WRKSRC}/configure
 #  .endif
 
-_GECKO_ALL=	firefox nvu seamonkey thunderbird xulrunner flock mozilla
+_GECKO_ALL=	firefox nvu seamonkey thunderbird xulrunner flock mozilla \
+		libxul
 
 thunderbird_PORTSDIR=	mail
+libxul_PLIST=		${LOCALBASE}/lib/libxul/libxul.so
 
 .for gecko in ${_GECKO_ALL}
 ${gecko}_PORTSDIR?=	www
@@ -247,6 +249,7 @@ MAINTAINER?=	gnome@FreeBSD.org
 MOZILLA?=	${PORTNAME}
 MOZILLA_VER?=	${PORTVERSION}
 MOZILLA_BIN?=	${PORTNAME}-bin
+MOZILLA_EXEC_NAME?=${MOZILLA}
 MOZ_RPATH?=	${MOZILLA}
 USE_GNOME+=	gtk20 libidl desktopfileutils
 USE_ICONV=	yes
@@ -272,7 +275,7 @@ GENERIC_MOZCONFIG?=	${.CURDIR}/../../www/mozilla/files/mozconfig-generic.in
 PORT_MOZCONFIG?=	${FILESDIR}/mozconfig.in
 MOZCONFIG?=		${WRKSRC}/.mozconfig
 MOZILLA_PLIST_DIRS?=	bin include lib share/idl
-GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 pthread: | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
+GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 pthread | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 PKGINSTALL?=	${WRKDIR}/pkg-install
 PKGDEINSTALL?=	${WRKDIR}/pkg-deinstall
 MASTER_MOZDIR?=	${PORTSDIR}/www/mozilla
@@ -575,10 +578,10 @@ gecko-pre-install:
 .endfor
 	@${REINPLACE_CMD} -e 's|${MOZILLA}-bin|${MOZILLA:S/${MOZILLA_SUFX}//}|; \
 		s|$${progbase}-bin|${MOZILLA:S/${MOZILLA_SUFX}//}-bin|' \
-		${FAKEDIR}/bin/${MOZILLA}*
+		${FAKEDIR}/bin/${MOZILLA_EXEC_NAME}*
 .endif
 	@${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
-		${FAKEDIR}/bin/${MOZILLA}*
+		${FAKEDIR}/bin/${MOZILLA_EXEC_NAME}*
 	${RM} -f ${FAKEDIR}/bin/*.bak
 .endif
 

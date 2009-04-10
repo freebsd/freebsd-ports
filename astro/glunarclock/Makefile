@@ -3,7 +3,7 @@
 # Whom:			Vincent Tantardini <vinc@freebsd-fr.org>
 #
 # $FreeBSD$
-#   $MCom: ports/astro/glunarclock/Makefile,v 1.10 2008/08/23 18:22:58 mezz Exp $
+#   $MCom: ports/astro/glunarclock/Makefile,v 1.12 2009/04/07 03:25:51 marcus Exp $
 #
 
 PORTNAME=	glunarclock
@@ -22,8 +22,9 @@ USE_GNOME=	gnomehack gnomepanel gnomeprefix intlhack
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBS="`pkg-config --libs libgnomeui-2.0`"
 INSTALLS_OMF=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION:R}"

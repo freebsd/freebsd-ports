@@ -1,3 +1,0 @@
-gnome-volume-manager is a desktop-level daemon that enforces volume-related
-policy in response to events received from HAL. Its goal is to implement all
-functionality as a state-machine in response to asynchronous events from HAL.

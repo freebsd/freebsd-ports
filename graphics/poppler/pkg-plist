@@ -1,6 +1,5 @@
 include/poppler/Annot.h
 include/poppler/Array.h
-include/poppler/BaseFile.h
 include/poppler/BuiltinFont.h
 include/poppler/BuiltinFontTables.h
 include/poppler/CMap.h
@@ -8,14 +7,15 @@ include/poppler/Catalog.h
 include/poppler/CharCodeToUnicode.h
 include/poppler/CharTypes.h
 include/poppler/CompactFontTables.h
+include/poppler/DateInfo.h
 include/poppler/Decrypt.h
 include/poppler/Dict.h
 include/poppler/Error.h
 include/poppler/ErrorCodes.h
+include/poppler/FileSpec.h
 include/poppler/FontEncodingTables.h
 include/poppler/FontInfo.h
 include/poppler/Form.h
-include/poppler/Function.cc
 include/poppler/Function.h
 include/poppler/Gfx.h
 include/poppler/GfxFont.h
@@ -23,7 +23,6 @@ include/poppler/GfxState.h
 include/poppler/GlobalParams.h
 include/poppler/JArithmeticDecoder.h
 include/poppler/JBIG2Stream.h
-include/poppler/JPXStream.h
 include/poppler/Lexer.h
 include/poppler/Link.h
 include/poppler/Movie.h
@@ -94,7 +93,7 @@ include/poppler/splash/SplashXPathScanner.h
 lib/libpoppler.a
 lib/libpoppler.la
 lib/libpoppler.so
-lib/libpoppler.so.3
+lib/libpoppler.so.4
 %%CAIRO%%libdata/pkgconfig/poppler-cairo.pc
 libdata/pkgconfig/poppler-splash.pc
 libdata/pkgconfig/poppler.pc

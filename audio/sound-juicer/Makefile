@@ -3,12 +3,11 @@
 # Whom:			Alexander Nedotsukov <bland@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/audio/sound-juicer/Makefile,v 1.87 2008/09/21 06:37:08 kwm Exp $
+#   $MCom: ports/audio/sound-juicer/Makefile,v 1.91 2009/03/18 04:24:29 marcus Exp $
 #
 
 PORTNAME=	sound-juicer
-PORTVERSION=	2.24.0
-PORTREVISION=	1
+PORTVERSION=	2.26.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,16 +16,19 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clean, mean and lean CD ripper for GNOME2
 
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
+    		musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
 		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media \
 		cdio.8:${PORTSDIR}/sysutils/libcdio \
-    		tag.6:${PORTSDIR}/audio/taglib
+    		tag.6:${PORTSDIR}/audio/taglib \
+		canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		brasero-media.1:${PORTSDIR}/sysutils/brasero
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui nautiluscdburner \
-		gnomedocutils
+USE_GNOME=	gnomehack intlhack gnomeprefix gconf2 libglade2 gnomedocutils
 USE_GSTREAMER=	cdparanoia vorbis flac gconf good gio
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ignore-missing-cd

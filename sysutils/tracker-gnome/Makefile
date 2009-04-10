@@ -3,7 +3,7 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports-stable/sysutils/tracker-gnome/Makefile,v 1.1 2008/03/30 20:39:09 ahze Exp $
+#    $MCom: ports/sysutils/tracker-gnome/Makefile,v 1.2 2009/04/09 03:24:09 mezz Exp $
 
 PORTREVISION=	2
 

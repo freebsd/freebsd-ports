@@ -17,6 +17,8 @@ etc/sound
 etc/sound/events
 etc/vfs
 etc/vfs/modules
+etc/xdg
+etc/xdg/autostart
 include/gconf
 include/gdkcardimage
 include/gnome-1.0

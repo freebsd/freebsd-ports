@@ -66,6 +66,7 @@ include/gtk-2.0/gtk/gtkaccelmap.h
 include/gtk-2.0/gtk/gtkaccessible.h
 include/gtk-2.0/gtk/gtkaction.h
 include/gtk-2.0/gtk/gtkactiongroup.h
+include/gtk-2.0/gtk/gtkactivatable.h
 include/gtk-2.0/gtk/gtkadjustment.h
 include/gtk-2.0/gtk/gtkalignment.h
 include/gtk-2.0/gtk/gtkarrow.h
@@ -168,6 +169,7 @@ include/gtk-2.0/gtk/gtknotebook.h
 include/gtk-2.0/gtk/gtkobject.h
 include/gtk-2.0/gtk/gtkoldeditable.h
 include/gtk-2.0/gtk/gtkoptionmenu.h
+include/gtk-2.0/gtk/gtkorientable.h
 include/gtk-2.0/gtk/gtkpagesetup.h
 include/gtk-2.0/gtk/gtkpaned.h
 include/gtk-2.0/gtk/gtkpapersize.h
@@ -435,6 +437,7 @@ share/gtk-2.0/demo/pickers.c
 share/gtk-2.0/demo/pixbufs.c
 share/gtk-2.0/demo/printing.c
 share/gtk-2.0/demo/rotated_text.c
+share/gtk-2.0/demo/search_entry.c
 share/gtk-2.0/demo/sizegroup.c
 share/gtk-2.0/demo/stock_browser.c
 share/gtk-2.0/demo/textscroll.c
@@ -475,6 +478,8 @@ share/locale/ca/LC_MESSAGES/gtk20-properties.mo
 share/locale/ca/LC_MESSAGES/gtk20.mo
 share/locale/ca@valencia/LC_MESSAGES/gtk20-properties.mo
 share/locale/ca@valencia/LC_MESSAGES/gtk20.mo
+share/locale/crh/LC_MESSAGES/gtk20-properties.mo
+share/locale/crh/LC_MESSAGES/gtk20.mo
 share/locale/cs/LC_MESSAGES/gtk20-properties.mo
 share/locale/cs/LC_MESSAGES/gtk20.mo
 share/locale/cy/LC_MESSAGES/gtk20-properties.mo
@@ -722,6 +727,8 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

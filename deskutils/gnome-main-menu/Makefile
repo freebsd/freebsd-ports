@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-main-menu
 PORTVERSION=	0.9.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -22,8 +22,9 @@ USE_GNOME=	gnomehack gnomeprefix gnomepanel intlhack eel2 gnomedesktop
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBS="`pkg-config --libs libgnomeui-2.0`"
 
 GCONF_SCHEMAS=	application-browser.schemas slab.schemas
 

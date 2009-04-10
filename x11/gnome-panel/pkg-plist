@@ -18,7 +18,6 @@ lib/libpanel-applet-2.so.0
 libdata/bonobo/servers/GNOME_ClockApplet_Factory.server
 libdata/bonobo/servers/GNOME_FishApplet_Factory.server
 libdata/bonobo/servers/GNOME_NotificationAreaApplet.server
-libdata/bonobo/servers/GNOME_Panel.server
 libdata/bonobo/servers/GNOME_Wncklet_Factory.server
 libdata/pkgconfig/libpanelapplet-2.0.pc
 libexec/clock-applet
@@ -73,15 +72,24 @@ share/gnome/help/clock/ar/legal.xml
 share/gnome/help/clock/ca/clock.xml
 share/gnome/help/clock/ca/figures/clock_applet.png
 share/gnome/help/clock/ca/legal.xml
+share/gnome/help/clock/cs/clock.xml
+share/gnome/help/clock/cs/figures/clock_applet.png
+share/gnome/help/clock/cs/legal.xml
 share/gnome/help/clock/de/clock.xml
 share/gnome/help/clock/de/figures/clock_applet.png
 share/gnome/help/clock/de/legal.xml
 share/gnome/help/clock/el/clock.xml
 share/gnome/help/clock/el/figures/clock_applet.png
 share/gnome/help/clock/el/legal.xml
+share/gnome/help/clock/en_GB/clock.xml
+share/gnome/help/clock/en_GB/figures/clock_applet.png
+share/gnome/help/clock/en_GB/legal.xml
 share/gnome/help/clock/es/clock.xml
 share/gnome/help/clock/es/figures/clock_applet.png
 share/gnome/help/clock/es/legal.xml
+share/gnome/help/clock/eu/clock.xml
+share/gnome/help/clock/eu/figures/clock_applet.png
+share/gnome/help/clock/eu/legal.xml
 share/gnome/help/clock/fi/clock.xml
 share/gnome/help/clock/fi/figures/clock_applet.png
 share/gnome/help/clock/fi/legal.xml
@@ -130,10 +138,6 @@ share/gnome/help/clock/zh_CN/legal.xml
 share/gnome/help/clock/zh_TW/clock.xml
 share/gnome/help/clock/zh_TW/figures/clock_applet.png
 share/gnome/help/clock/zh_TW/legal.xml
-share/gnome/help/fish-applet-2/de/figures/fish_applet.png
-share/gnome/help/fish-applet-2/de/figures/fish_settings.png
-share/gnome/help/fish-applet-2/de/fish-applet-2.xml
-share/gnome/help/fish-applet-2/de/legal.xml
 share/gnome/help/fish-applet-2/ja/figures/fish_applet.png
 share/gnome/help/fish-applet-2/ja/fish-applet-2.xml
 share/gnome/help/fish-applet-2/ja/legal.xml
@@ -157,9 +161,15 @@ share/gnome/help/fish/de/legal.xml
 share/gnome/help/fish/el/figures/fish_applet.png
 share/gnome/help/fish/el/fish.xml
 share/gnome/help/fish/el/legal.xml
+share/gnome/help/fish/en_GB/figures/fish_applet.png
+share/gnome/help/fish/en_GB/fish.xml
+share/gnome/help/fish/en_GB/legal.xml
 share/gnome/help/fish/es/figures/fish_applet.png
 share/gnome/help/fish/es/fish.xml
 share/gnome/help/fish/es/legal.xml
+share/gnome/help/fish/eu/figures/fish_applet.png
+share/gnome/help/fish/eu/fish.xml
+share/gnome/help/fish/eu/legal.xml
 share/gnome/help/fish/fi/figures/fish_applet.png
 share/gnome/help/fish/fi/fish.xml
 share/gnome/help/fish/fi/legal.xml
@@ -190,14 +200,13 @@ share/gnome/help/fish/uk/legal.xml
 share/gnome/help/window-list/C/window-list.xml
 share/gnome/help/window-list/ar/window-list.xml
 share/gnome/help/window-list/ca/window-list.xml
+share/gnome/help/window-list/cs/window-list.xml
 share/gnome/help/window-list/da/window-list.xml
-share/gnome/help/window-list/de/figures/window_list_applet.png
-share/gnome/help/window-list/de/figures/window_list_group.png
-share/gnome/help/window-list/de/figures/window_list_group_applet.png
-share/gnome/help/window-list/de/legal.xml
 share/gnome/help/window-list/de/window-list.xml
 share/gnome/help/window-list/el/window-list.xml
+share/gnome/help/window-list/en_GB/window-list.xml
 share/gnome/help/window-list/es/window-list.xml
+share/gnome/help/window-list/eu/window-list.xml
 share/gnome/help/window-list/fi/window-list.xml
 share/gnome/help/window-list/fr/window-list.xml
 share/gnome/help/window-list/it/window-list.xml
@@ -221,13 +230,13 @@ share/gnome/help/window-list/zh_TW/window-list.xml
 share/gnome/help/workspace-switcher/C/workspace-switcher.xml
 share/gnome/help/workspace-switcher/ar/workspace-switcher.xml
 share/gnome/help/workspace-switcher/ca/workspace-switcher.xml
+share/gnome/help/workspace-switcher/cs/workspace-switcher.xml
 share/gnome/help/workspace-switcher/da/workspace-switcher.xml
-share/gnome/help/workspace-switcher/de/figures/workspace_switcher_applet.png
-share/gnome/help/workspace-switcher/de/figures/workspacelist_applet.png
-share/gnome/help/workspace-switcher/de/legal.xml
 share/gnome/help/workspace-switcher/de/workspace-switcher.xml
 share/gnome/help/workspace-switcher/el/workspace-switcher.xml
+share/gnome/help/workspace-switcher/en_GB/workspace-switcher.xml
 share/gnome/help/workspace-switcher/es/workspace-switcher.xml
+share/gnome/help/workspace-switcher/eu/workspace-switcher.xml
 share/gnome/help/workspace-switcher/fi/workspace-switcher.xml
 share/gnome/help/workspace-switcher/fr/workspace-switcher.xml
 share/gnome/help/workspace-switcher/it/workspace-switcher.xml
@@ -323,6 +332,7 @@ share/locale/br/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/bs/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/crh/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/cy/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/da/LC_MESSAGES/gnome-panel-2.0.mo
@@ -342,12 +352,14 @@ share/locale/fur/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/gu/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ha/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/he/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/hi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/hr/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/hu/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/hy/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/id/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ig/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/is/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-panel-2.0.mo
@@ -402,6 +414,7 @@ share/locale/vi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/xh/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/yi/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/yo/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
@@ -409,9 +422,12 @@ share/locale/zu/LC_MESSAGES/gnome-panel-2.0.mo
 share/omf/clock/clock-C.omf
 share/omf/clock/clock-ar.omf
 share/omf/clock/clock-ca.omf
+share/omf/clock/clock-cs.omf
 share/omf/clock/clock-de.omf
 share/omf/clock/clock-el.omf
+share/omf/clock/clock-en_GB.omf
 share/omf/clock/clock-es.omf
+share/omf/clock/clock-eu.omf
 share/omf/clock/clock-fi.omf
 share/omf/clock/clock-fr.omf
 share/omf/clock/clock-it.omf
@@ -432,7 +448,9 @@ share/omf/fish/fish-C.omf
 share/omf/fish/fish-ca.omf
 share/omf/fish/fish-de.omf
 share/omf/fish/fish-el.omf
+share/omf/fish/fish-en_GB.omf
 share/omf/fish/fish-es.omf
+share/omf/fish/fish-eu.omf
 share/omf/fish/fish-fi.omf
 share/omf/fish/fish-fr.omf
 share/omf/fish/fish-it.omf
@@ -442,24 +460,24 @@ share/omf/fish/fish-ru.omf
 share/omf/fish/fish-sv.omf
 share/omf/fish/fish-th.omf
 share/omf/fish/fish-uk.omf
-share/omf/gnome-panel/fish-applet-2-de.omf
 share/omf/gnome-panel/fish-applet-2-ja.omf
 share/omf/gnome-panel/fish-applet-2-zh_CN.omf
 share/omf/gnome-panel/fish-applet-2-zh_TW.omf
-share/omf/gnome-panel/window-list-de.omf
 share/omf/gnome-panel/window-list-ja.omf
 share/omf/gnome-panel/window-list-zh_TW.omf
-share/omf/gnome-panel/workspace-switcher-de.omf
 share/omf/gnome-panel/workspace-switcher-ja.omf
 share/omf/gnome-panel/workspace-switcher-zh_CN.omf
 share/omf/gnome-panel/workspace-switcher-zh_TW.omf
 share/omf/window-list/window-list-C.omf
 share/omf/window-list/window-list-ar.omf
 share/omf/window-list/window-list-ca.omf
+share/omf/window-list/window-list-cs.omf
 share/omf/window-list/window-list-da.omf
 share/omf/window-list/window-list-de.omf
 share/omf/window-list/window-list-el.omf
+share/omf/window-list/window-list-en_GB.omf
 share/omf/window-list/window-list-es.omf
+share/omf/window-list/window-list-eu.omf
 share/omf/window-list/window-list-fi.omf
 share/omf/window-list/window-list-fr.omf
 share/omf/window-list/window-list-it.omf
@@ -474,10 +492,13 @@ share/omf/window-list/window-list-zh_CN.omf
 share/omf/workspace-switcher/workspace-switcher-C.omf
 share/omf/workspace-switcher/workspace-switcher-ar.omf
 share/omf/workspace-switcher/workspace-switcher-ca.omf
+share/omf/workspace-switcher/workspace-switcher-cs.omf
 share/omf/workspace-switcher/workspace-switcher-da.omf
 share/omf/workspace-switcher/workspace-switcher-de.omf
 share/omf/workspace-switcher/workspace-switcher-el.omf
+share/omf/workspace-switcher/workspace-switcher-en_GB.omf
 share/omf/workspace-switcher/workspace-switcher-es.omf
+share/omf/workspace-switcher/workspace-switcher-eu.omf
 share/omf/workspace-switcher/workspace-switcher-fi.omf
 share/omf/workspace-switcher/workspace-switcher-fr.omf
 share/omf/workspace-switcher/workspace-switcher-it.omf
@@ -514,11 +535,13 @@ share/omf/workspace-switcher/workspace-switcher-vi.omf
 @dirrm share/gnome/help/workspace-switcher/it
 @dirrm share/gnome/help/workspace-switcher/fr
 @dirrm share/gnome/help/workspace-switcher/fi
+@dirrm share/gnome/help/workspace-switcher/eu
 @dirrm share/gnome/help/workspace-switcher/es
+@dirrm share/gnome/help/workspace-switcher/en_GB
 @dirrm share/gnome/help/workspace-switcher/el
-@dirrm share/gnome/help/workspace-switcher/de/figures
 @dirrm share/gnome/help/workspace-switcher/de
 @dirrm share/gnome/help/workspace-switcher/da
+@dirrm share/gnome/help/workspace-switcher/cs
 @dirrm share/gnome/help/workspace-switcher/ca
 @dirrm share/gnome/help/workspace-switcher/ar
 @dirrm share/gnome/help/workspace-switcher/C
@@ -538,11 +561,13 @@ share/omf/workspace-switcher/workspace-switcher-vi.omf
 @dirrm share/gnome/help/window-list/it
 @dirrm share/gnome/help/window-list/fr
 @dirrm share/gnome/help/window-list/fi
+@dirrm share/gnome/help/window-list/eu
 @dirrm share/gnome/help/window-list/es
+@dirrm share/gnome/help/window-list/en_GB
 @dirrm share/gnome/help/window-list/el
-@dirrm share/gnome/help/window-list/de/figures
 @dirrm share/gnome/help/window-list/de
 @dirrm share/gnome/help/window-list/da
+@dirrm share/gnome/help/window-list/cs
 @dirrm share/gnome/help/window-list/ca
 @dirrm share/gnome/help/window-list/ar
 @dirrm share/gnome/help/window-list/C
@@ -565,8 +590,12 @@ share/omf/workspace-switcher/workspace-switcher-vi.omf
 @dirrm share/gnome/help/fish/fr
 @dirrm share/gnome/help/fish/fi/figures
 @dirrm share/gnome/help/fish/fi
+@dirrm share/gnome/help/fish/eu/figures
+@dirrm share/gnome/help/fish/eu
 @dirrm share/gnome/help/fish/es/figures
 @dirrm share/gnome/help/fish/es
+@dirrm share/gnome/help/fish/en_GB/figures
+@dirrm share/gnome/help/fish/en_GB
 @dirrm share/gnome/help/fish/el/figures
 @dirrm share/gnome/help/fish/el
 @dirrm share/gnome/help/fish/de/figures
@@ -581,8 +610,6 @@ share/omf/workspace-switcher/workspace-switcher-vi.omf
 @dirrm share/gnome/help/fish-applet-2/zh_CN
 @dirrm share/gnome/help/fish-applet-2/ja/figures
 @dirrm share/gnome/help/fish-applet-2/ja
-@dirrm share/gnome/help/fish-applet-2/de/figures
-@dirrm share/gnome/help/fish-applet-2/de
 @dirrm share/gnome/help/fish-applet-2
 @dirrm share/gnome/help/fish
 @dirrm share/gnome/help/clock/zh_TW/figures
@@ -617,12 +644,18 @@ share/omf/workspace-switcher/workspace-switcher-vi.omf
 @dirrm share/gnome/help/clock/fr
 @dirrm share/gnome/help/clock/fi/figures
 @dirrm share/gnome/help/clock/fi
+@dirrm share/gnome/help/clock/eu/figures
+@dirrm share/gnome/help/clock/eu
 @dirrm share/gnome/help/clock/es/figures
 @dirrm share/gnome/help/clock/es
+@dirrm share/gnome/help/clock/en_GB/figures
+@dirrm share/gnome/help/clock/en_GB
 @dirrm share/gnome/help/clock/el/figures
 @dirrm share/gnome/help/clock/el
 @dirrm share/gnome/help/clock/de/figures
 @dirrm share/gnome/help/clock/de
+@dirrm share/gnome/help/clock/cs/figures
+@dirrm share/gnome/help/clock/cs
 @dirrm share/gnome/help/clock/ca/figures
 @dirrm share/gnome/help/clock/ca
 @dirrm share/gnome/help/clock/ar/figures
@@ -639,6 +672,8 @@ share/omf/workspace-switcher/workspace-switcher-vi.omf
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/yo/LC_MESSAGES
+@dirrmtry share/locale/yo
 @dirrmtry share/locale/yi/LC_MESSAGES
 @dirrmtry share/locale/yi
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -675,12 +710,18 @@ share/omf/workspace-switcher/workspace-switcher-vi.omf
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/ig/LC_MESSAGES
+@dirrmtry share/locale/ig
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/ha/LC_MESSAGES
+@dirrmtry share/locale/ha
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

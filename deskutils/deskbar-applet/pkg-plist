@@ -38,6 +38,9 @@ lib/deskbar-applet/modules-2.20-compatible/iswitch-window.pyo
 lib/deskbar-applet/modules-2.20-compatible/mozilla.py
 lib/deskbar-applet/modules-2.20-compatible/mozilla.pyc
 lib/deskbar-applet/modules-2.20-compatible/mozilla.pyo
+lib/deskbar-applet/modules-2.20-compatible/opensearch.py
+lib/deskbar-applet/modules-2.20-compatible/opensearch.pyc
+lib/deskbar-applet/modules-2.20-compatible/opensearch.pyo
 lib/deskbar-applet/modules-2.20-compatible/programs.py
 lib/deskbar-applet/modules-2.20-compatible/programs.pyc
 lib/deskbar-applet/modules-2.20-compatible/programs.pyo
@@ -311,15 +314,18 @@ libdata/pkgconfig/deskbar-applet.pc
 %%DATADIR%%/art/web-search.png
 %%DATADIR%%/art/wikipedia.png
 %%DATADIR%%/art/yahoo.png
-%%DATADIR%%/mozilla-search.glade
-%%DATADIR%%/prefs-dialog.glade
-%%DATADIR%%/smart-bookmarks.glade
+%%DATADIR%%/mozilla-search.ui
+%%DATADIR%%/prefs-dialog.ui
+%%DATADIR%%/smart-bookmarks.ui
 share/gnome/help/deskbar/C/deskbar.xml
 share/gnome/help/deskbar/C/figures/deskbar-applet.png
 share/gnome/help/deskbar/C/legal.xml
 share/gnome/help/deskbar/ca/deskbar.xml
 share/gnome/help/deskbar/ca/figures/deskbar-applet.png
 share/gnome/help/deskbar/ca/legal.xml
+share/gnome/help/deskbar/de/deskbar.xml
+share/gnome/help/deskbar/de/figures/deskbar-applet.png
+share/gnome/help/deskbar/de/legal.xml
 share/gnome/help/deskbar/el/deskbar.xml
 share/gnome/help/deskbar/el/figures/deskbar-applet.png
 share/gnome/help/deskbar/el/legal.xml
@@ -433,6 +439,7 @@ share/locale/zh_HK/LC_MESSAGES/deskbar-applet.mo
 share/locale/zh_TW/LC_MESSAGES/deskbar-applet.mo
 share/omf/deskbar/deskbar-C.omf
 share/omf/deskbar/deskbar-ca.omf
+share/omf/deskbar/deskbar-de.omf
 share/omf/deskbar/deskbar-el.omf
 share/omf/deskbar/deskbar-en_GB.omf
 share/omf/deskbar/deskbar-es.omf
@@ -467,6 +474,8 @@ share/omf/deskbar/deskbar-zh_CN.omf
 @dirrm share/gnome/help/deskbar/en_GB
 @dirrm share/gnome/help/deskbar/el/figures
 @dirrm share/gnome/help/deskbar/el
+@dirrm share/gnome/help/deskbar/de/figures
+@dirrm share/gnome/help/deskbar/de
 @dirrm share/gnome/help/deskbar/ca/figures
 @dirrm share/gnome/help/deskbar/ca
 @dirrm share/gnome/help/deskbar/C/figures

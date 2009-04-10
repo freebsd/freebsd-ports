@@ -32,6 +32,9 @@ lib/hamster-applet/hamster-applet
 %%PYTHON_SITELIBDIR%%/hamster/eds.py
 %%PYTHON_SITELIBDIR%%/hamster/eds.pyc
 %%PYTHON_SITELIBDIR%%/hamster/eds.pyo
+%%PYTHON_SITELIBDIR%%/hamster/hamsterdbus.py
+%%PYTHON_SITELIBDIR%%/hamster/hamsterdbus.pyc
+%%PYTHON_SITELIBDIR%%/hamster/hamsterdbus.pyo
 %%PYTHON_SITELIBDIR%%/hamster/idle.py
 %%PYTHON_SITELIBDIR%%/hamster/idle.pyc
 %%PYTHON_SITELIBDIR%%/hamster/idle.pyo
@@ -73,6 +76,7 @@ share/icons/hicolor/32x32/apps/hamster-applet.png
 share/icons/hicolor/48x48/apps/hamster-applet.png
 share/icons/hicolor/scalable/apps/hamster-applet.svg
 share/locale/ar/LC_MESSAGES/hamster-applet.mo
+share/locale/as/LC_MESSAGES/hamster-applet.mo
 share/locale/bg/LC_MESSAGES/hamster-applet.mo
 share/locale/bn_IN/LC_MESSAGES/hamster-applet.mo
 share/locale/ca/LC_MESSAGES/hamster-applet.mo
@@ -95,6 +99,7 @@ share/locale/it/LC_MESSAGES/hamster-applet.mo
 share/locale/ja/LC_MESSAGES/hamster-applet.mo
 share/locale/kn/LC_MESSAGES/hamster-applet.mo
 share/locale/ko/LC_MESSAGES/hamster-applet.mo
+share/locale/ku/LC_MESSAGES/hamster-applet.mo
 share/locale/lt/LC_MESSAGES/hamster-applet.mo
 share/locale/lv/LC_MESSAGES/hamster-applet.mo
 share/locale/mk/LC_MESSAGES/hamster-applet.mo
@@ -102,10 +107,12 @@ share/locale/ml/LC_MESSAGES/hamster-applet.mo
 share/locale/mr/LC_MESSAGES/hamster-applet.mo
 share/locale/nb/LC_MESSAGES/hamster-applet.mo
 share/locale/nl/LC_MESSAGES/hamster-applet.mo
+share/locale/or/LC_MESSAGES/hamster-applet.mo
 share/locale/pa/LC_MESSAGES/hamster-applet.mo
 share/locale/pl/LC_MESSAGES/hamster-applet.mo
 share/locale/pt/LC_MESSAGES/hamster-applet.mo
 share/locale/pt_BR/LC_MESSAGES/hamster-applet.mo
+share/locale/ro/LC_MESSAGES/hamster-applet.mo
 share/locale/ru/LC_MESSAGES/hamster-applet.mo
 share/locale/sl/LC_MESSAGES/hamster-applet.mo
 share/locale/sq/LC_MESSAGES/hamster-applet.mo
@@ -113,8 +120,10 @@ share/locale/sr/LC_MESSAGES/hamster-applet.mo
 share/locale/sr@latin/LC_MESSAGES/hamster-applet.mo
 share/locale/sv/LC_MESSAGES/hamster-applet.mo
 share/locale/ta/LC_MESSAGES/hamster-applet.mo
+share/locale/te/LC_MESSAGES/hamster-applet.mo
 share/locale/th/LC_MESSAGES/hamster-applet.mo
 share/locale/tr/LC_MESSAGES/hamster-applet.mo
+share/locale/vi/LC_MESSAGES/hamster-applet.mo
 share/locale/zh_CN/LC_MESSAGES/hamster-applet.mo
 share/locale/zh_HK/LC_MESSAGES/hamster-applet.mo
 share/locale/zh_TW/LC_MESSAGES/hamster-applet.mo
@@ -125,9 +134,17 @@ share/locale/zh_TW/LC_MESSAGES/hamster-applet.mo
 @dirrm lib/hamster-applet
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

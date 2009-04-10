@@ -263,5 +263,3 @@ share/pixmaps/ibus.svg
 @dirrm %%PYTHON_SITELIBDIR%%/ibus/interface
 @dirrm %%PYTHON_SITELIBDIR%%/ibus
 @dirrm include/ibus-1.0
-@dirrmtry etc/xdg/autostart
-@dirrmtry etc/xdg

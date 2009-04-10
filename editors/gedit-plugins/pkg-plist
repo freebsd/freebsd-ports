@@ -1,3 +1,4 @@
+lib/gedit-2/plugins/bookmarks.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/bracketcompletion.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/bracketcompletion.py
 %%PYTHON%%lib/gedit-2/plugins/bracketcompletion.pyc
@@ -11,11 +12,7 @@ lib/gedit-2/plugins/charmap.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/colorpicker.py
 %%PYTHON%%lib/gedit-2/plugins/colorpicker.pyc
 %%PYTHON%%lib/gedit-2/plugins/colorpicker.pyo
-%%PYTHON%%lib/gedit-2/plugins/drawspaces.gedit-plugin
-%%PYTHON%%lib/gedit-2/plugins/drawspaces.glade
-%%PYTHON%%lib/gedit-2/plugins/drawspaces.py
-%%PYTHON%%lib/gedit-2/plugins/drawspaces.pyc
-%%PYTHON%%lib/gedit-2/plugins/drawspaces.pyo
+lib/gedit-2/plugins/drawspaces.gedit-plugin
 lib/gedit-2/plugins/gpdefs.py
 lib/gedit-2/plugins/gpdefs.pyc
 lib/gedit-2/plugins/gpdefs.pyo
@@ -23,9 +20,15 @@ lib/gedit-2/plugins/gpdefs.pyo
 %%PYTHON%%lib/gedit-2/plugins/joinlines.py
 %%PYTHON%%lib/gedit-2/plugins/joinlines.pyc
 %%PYTHON%%lib/gedit-2/plugins/joinlines.pyo
+lib/gedit-2/plugins/libbookmarks.a
+lib/gedit-2/plugins/libbookmarks.la
+lib/gedit-2/plugins/libbookmarks.so
 lib/gedit-2/plugins/libcharmap.a
 lib/gedit-2/plugins/libcharmap.la
 lib/gedit-2/plugins/libcharmap.so
+lib/gedit-2/plugins/libdrawspaces.a
+lib/gedit-2/plugins/libdrawspaces.la
+lib/gedit-2/plugins/libdrawspaces.so
 lib/gedit-2/plugins/libshowtabbar.a
 lib/gedit-2/plugins/libshowtabbar.la
 lib/gedit-2/plugins/libshowtabbar.so
@@ -36,7 +39,6 @@ lib/gedit-2/plugins/libshowtabbar.so
 %%PYTHON%%lib/gedit-2/plugins/sessionsaver/dialogs.py
 %%PYTHON%%lib/gedit-2/plugins/sessionsaver/dialogs.pyc
 %%PYTHON%%lib/gedit-2/plugins/sessionsaver/dialogs.pyo
-%%PYTHON%%lib/gedit-2/plugins/sessionsaver/sessionsaver.glade
 %%PYTHON%%lib/gedit-2/plugins/sessionsaver/store.py
 %%PYTHON%%lib/gedit-2/plugins/sessionsaver/store.pyc
 %%PYTHON%%lib/gedit-2/plugins/sessionsaver/store.pyo
@@ -49,6 +51,9 @@ lib/gedit-2/plugins/showtabbar.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/terminal.py
 %%PYTHON%%lib/gedit-2/plugins/terminal.pyc
 %%PYTHON%%lib/gedit-2/plugins/terminal.pyo
+share/gedit-2/plugins/bookmarks/bookmark.png
+share/gedit-2/plugins/drawspaces/drawspaces.ui
+%%PYTHON%%share/gedit-2/plugins/sessionsaver/sessionsaver.ui
 share/locale/ar/LC_MESSAGES/gedit-plugins.mo
 share/locale/az/LC_MESSAGES/gedit-plugins.mo
 share/locale/be/LC_MESSAGES/gedit-plugins.mo
@@ -113,6 +118,11 @@ share/locale/zh_CN/LC_MESSAGES/gedit-plugins.mo
 share/locale/zh_HK/LC_MESSAGES/gedit-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/gedit-plugins.mo
 %%PYTHON%%@dirrm lib/gedit-2/plugins/sessionsaver
+@dirrm share/gedit-2/plugins/sessionsaver
+@dirrm share/gedit-2/plugins/drawspaces
+@dirrm share/gedit-2/plugins/bookmarks
+@dirrm share/gedit-2/plugins
+@dirrm share/gedit-2
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/rw/LC_MESSAGES

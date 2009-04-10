@@ -1,0 +1,11 @@
+--- plugins/symbol-db/Makefile.in.orig	2009-02-28 20:29:49.000000000 -0500
++++ plugins/symbol-db/Makefile.in	2009-02-28 20:29:57.000000000 -0500
+@@ -369,7 +369,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = images test 
++SUBDIRS = images
+ symbol_db_datadir = $(anjuta_data_dir)
+ symbol_db_data_DATA = tables.sql
+ 

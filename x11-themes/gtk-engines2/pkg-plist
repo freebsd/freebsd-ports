@@ -32,6 +32,7 @@ share/gtk-engines/mist.xml
 share/gtk-engines/redmond95.xml
 share/gtk-engines/thinice.xml
 share/locale/ar/LC_MESSAGES/gtk-engines.mo
+share/locale/as/LC_MESSAGES/gtk-engines.mo
 share/locale/be@latin/LC_MESSAGES/gtk-engines.mo
 share/locale/bg/LC_MESSAGES/gtk-engines.mo
 share/locale/bn_IN/LC_MESSAGES/gtk-engines.mo
@@ -69,6 +70,7 @@ share/locale/pa/LC_MESSAGES/gtk-engines.mo
 share/locale/pl/LC_MESSAGES/gtk-engines.mo
 share/locale/pt/LC_MESSAGES/gtk-engines.mo
 share/locale/pt_BR/LC_MESSAGES/gtk-engines.mo
+share/locale/ro/LC_MESSAGES/gtk-engines.mo
 share/locale/ru/LC_MESSAGES/gtk-engines.mo
 share/locale/si/LC_MESSAGES/gtk-engines.mo
 share/locale/sl/LC_MESSAGES/gtk-engines.mo
@@ -125,3 +127,5 @@ share/themes/ThinIce/gtk-2.0/gtkrc
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

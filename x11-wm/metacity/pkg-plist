@@ -18,10 +18,12 @@ libexec/metacity-dialog
 share/applications/metacity.desktop
 share/gnome-control-center/keybindings/50-metacity-desktop-key.xml
 share/gnome-control-center/keybindings/50-metacity-key.xml
+share/gnome/help/creating-metacity-themes/C/creating-metacity-themes.xml
 share/gnome/wm-properties/metacity-wm.desktop
 share/locale/am/LC_MESSAGES/metacity.mo
 share/locale/ar/LC_MESSAGES/metacity.mo
 share/locale/as/LC_MESSAGES/metacity.mo
+share/locale/ast/LC_MESSAGES/metacity.mo
 share/locale/az/LC_MESSAGES/metacity.mo
 share/locale/be/LC_MESSAGES/metacity.mo
 share/locale/be@latin/LC_MESSAGES/metacity.mo
@@ -30,6 +32,7 @@ share/locale/bn/LC_MESSAGES/metacity.mo
 share/locale/bn_IN/LC_MESSAGES/metacity.mo
 share/locale/bs/LC_MESSAGES/metacity.mo
 share/locale/ca/LC_MESSAGES/metacity.mo
+share/locale/ca@valencia/LC_MESSAGES/metacity.mo
 share/locale/cs/LC_MESSAGES/metacity.mo
 share/locale/cy/LC_MESSAGES/metacity.mo
 share/locale/da/LC_MESSAGES/metacity.mo
@@ -47,12 +50,14 @@ share/locale/fr/LC_MESSAGES/metacity.mo
 share/locale/ga/LC_MESSAGES/metacity.mo
 share/locale/gl/LC_MESSAGES/metacity.mo
 share/locale/gu/LC_MESSAGES/metacity.mo
+share/locale/ha/LC_MESSAGES/metacity.mo
 share/locale/he/LC_MESSAGES/metacity.mo
 share/locale/hi/LC_MESSAGES/metacity.mo
 share/locale/hr/LC_MESSAGES/metacity.mo
 share/locale/hu/LC_MESSAGES/metacity.mo
 share/locale/hy/LC_MESSAGES/metacity.mo
 share/locale/id/LC_MESSAGES/metacity.mo
+share/locale/ig/LC_MESSAGES/metacity.mo
 share/locale/is/LC_MESSAGES/metacity.mo
 share/locale/it/LC_MESSAGES/metacity.mo
 share/locale/ja/LC_MESSAGES/metacity.mo
@@ -60,8 +65,10 @@ share/locale/ka/LC_MESSAGES/metacity.mo
 share/locale/kn/LC_MESSAGES/metacity.mo
 share/locale/ko/LC_MESSAGES/metacity.mo
 share/locale/ku/LC_MESSAGES/metacity.mo
+share/locale/la/LC_MESSAGES/metacity.mo
 share/locale/lt/LC_MESSAGES/metacity.mo
 share/locale/lv/LC_MESSAGES/metacity.mo
+share/locale/mai/LC_MESSAGES/metacity.mo
 share/locale/mg/LC_MESSAGES/metacity.mo
 share/locale/mk/LC_MESSAGES/metacity.mo
 share/locale/ml/LC_MESSAGES/metacity.mo
@@ -89,6 +96,7 @@ share/locale/sr/LC_MESSAGES/metacity.mo
 share/locale/sr@latin/LC_MESSAGES/metacity.mo
 share/locale/sv/LC_MESSAGES/metacity.mo
 share/locale/ta/LC_MESSAGES/metacity.mo
+share/locale/te/LC_MESSAGES/metacity.mo
 share/locale/th/LC_MESSAGES/metacity.mo
 share/locale/tk/LC_MESSAGES/metacity.mo
 share/locale/tr/LC_MESSAGES/metacity.mo
@@ -96,6 +104,7 @@ share/locale/uk/LC_MESSAGES/metacity.mo
 share/locale/vi/LC_MESSAGES/metacity.mo
 share/locale/wa/LC_MESSAGES/metacity.mo
 share/locale/xh/LC_MESSAGES/metacity.mo
+share/locale/yo/LC_MESSAGES/metacity.mo
 share/locale/zh_CN/LC_MESSAGES/metacity.mo
 share/locale/zh_HK/LC_MESSAGES/metacity.mo
 share/locale/zh_TW/LC_MESSAGES/metacity.mo
@@ -218,13 +227,19 @@ share/themes/Simple/metacity-1/minimize.png
 @dirrmtry share/themes/AgingGorilla
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrm share/gnome/help/creating-metacity-themes/C
+@dirrm share/gnome/help/creating-metacity-themes
 @dirrm include/metacity-1/metacity-private
 @dirrm include/metacity-1
 @dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/yo/LC_MESSAGES
+@dirrmtry share/locale/yo
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
@@ -237,15 +252,27 @@ share/themes/Simple/metacity-1/minimize.png
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/la/LC_MESSAGES
+@dirrmtry share/locale/la
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/ig/LC_MESSAGES
+@dirrmtry share/locale/ig
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/ha/LC_MESSAGES
+@dirrmtry share/locale/ha
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

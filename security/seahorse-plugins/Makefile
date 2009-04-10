@@ -3,12 +3,11 @@
 # Whom:			Dave McKay <dave@mu.org>
 #
 # $FreeBSD$
-#   $MCom: ports/security/seahorse-plugins/Makefile,v 1.4 2008/10/20 03:02:56 mezz Exp $
+#   $MCom: ports/security/seahorse-plugins/Makefile,v 1.10 2009/03/30 05:54:57 marcus Exp $
 #
 
 PORTNAME=	seahorse-plugins
-PORTVERSION=	2.24.1
-PORTREVISION=	2
+PORTVERSION=	2.26.0
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,7 +20,7 @@ LIB_DEPENDS=	cryptui.0:${PORTSDIR}/security/seahorse
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GECKO=	firefox xulrunner
+USE_GECKO=	firefox libxul
 USE_GNOME=	gnomehack intlhack gnomeprefix libglade2 gconf2 gnomedocutils
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -38,6 +37,12 @@ GCONF_SCHEMAS=	seahorse-plugins.schemas
 MAN1=		seahorse-agent.1 seahorse-tool.1
 
 .include <bsd.port.pre.mk>
+
+.if ${GECKO}=="libxul"
+CONFIGURE_ARGS+=--with-gecko=libxul-unstable
+.else
+CONFIGURE_ARGS+=--with-gecko=${GECKO}
+.endif
 
 .if !defined(WITHOUT_GEDIT)
 BUILD_DEPENDS+=	gedit:${PORTSDIR}/editors/gedit
@@ -60,7 +65,7 @@ CONFIGURE_ARGS+=--disable-nautilus
 .if !defined(WITHOUT_EPIPHANY)
 BUILD_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
-PLIST_SUB+=	EPIPHANY="" EPHY_VERSION="2.24"
+PLIST_SUB+=	EPIPHANY="" EPHY_VERSION="2.26"
 .else
 CONFIGURE_ARGS+=--disable-epiphany
 PLIST_SUB+=	EPHY="@comment "
@@ -76,6 +81,8 @@ PLIST_SUB+=	APPLET="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|" == "|" = "|g' \
+		-e 's|epiphany-2.24|epiphany-2.26|g' \
+		-e 's|2.24|2.26|g' \
 			${WRKSRC}/configure
 
 post-install:

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	evolution-sharp
-PORTVERSION=	0.18.1
+PORTVERSION=	0.20.0
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 

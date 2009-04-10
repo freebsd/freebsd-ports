@@ -1,22 +1,30 @@
-Index: server/libvncserver/sockets.c
-diff -u -p server/libvncserver/sockets.c.orig server/libvncserver/sockets.c
---- server/libvncserver/sockets.c.orig	Tue Jan  2 22:34:50 2007
-+++ server/libvncserver/sockets.c	Sun Mar 25 22:52:02 2007
-@@ -560,6 +560,7 @@ ListenOnTCPPort(port, localOnly)
- 
- #ifdef ENABLE_IPV6
-     struct sockaddr_in6 addr_in6;
-+    int off = 0;
- 
-     memset(&addr_in6, 0, sizeof(addr_in6));
-     addr_in6.sin6_family = AF_INET6;
-@@ -570,6 +571,9 @@ ListenOnTCPPort(port, localOnly)
-     addrlen = sizeof(addr_in6);
- 
-     sock = socket(AF_INET6, SOCK_STREAM, 0);
+--- server/libvncserver/sockets.c.orig	2009-02-13 08:11:38.000000000 -0500
++++ server/libvncserver/sockets.c	2009-03-07 20:19:28.000000000 -0500
+@@ -668,6 +669,11 @@ NewSocketListenTCP(struct sockaddr *addr
+ {
+     int sock = -1;
+     int one  = 1;
++#ifdef ENABLE_IPV6
 +#ifdef IPV6_V6ONLY
-+    setsockopt(sock, IPPROTO_IPV6, IPV6_V6ONLY, (void *)&off, sizeof(off));
++    int off = 0;
 +#endif
- #endif
++#endif
  
-     if (sock < 0) {
+     if ((sock = socket(addr->sa_family, SOCK_STREAM, 0)) < 0)
+       return -1;
+@@ -677,6 +683,15 @@ NewSocketListenTCP(struct sockaddr *addr
+       return -1;
+     }
+ 
++#ifdef  ENABLE_IPV6
++#ifdef IPV6_V6ONLY
++    if (setsockopt(sock, IPPROTO_IPV6, IPV6_V6ONLY, (void *)&off, sizeof(off)) < 0) {
++      close(sock);
++      return -1;
++    }
++#endif
++#endif
++
+     if (bind(sock, addr, len) < 0) {
+       close(sock);
+       return -1;

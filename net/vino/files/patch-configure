@@ -1,0 +1,28 @@
+--- configure.orig	2009-02-27 20:32:40.000000000 -0500
++++ configure	2009-02-27 20:34:44.000000000 -0500
+@@ -17882,6 +17882,8 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
++      #include <sys/types.h>
++      #include <sys/socket.h>
+       #include <ifaddrs.h>
+ 
+ int
+@@ -17896,6 +17898,7 @@ main ()
+ }
+ _ACEOF
+ rm -f conftest.$ac_objext
++have_getifaddrs=yes
+ if { (ac_try="$ac_compile"
+ case "(($ac_try" in
+   *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
+@@ -17921,7 +17924,7 @@ sed 's/^/| /' conftest.$ac_ext >&5
+ fi
+ 
+ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+- if test $"$have_getifaddrs" = "yes"; then
++ if test x"$have_getifaddrs" = x"yes"; then
+   HAVE_GETIFADDRS_TRUE=
+   HAVE_GETIFADDRS_FALSE='#'
+ else

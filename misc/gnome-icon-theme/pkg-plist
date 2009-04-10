@@ -337,9 +337,7 @@ share/icons/gnome/16x16/actions/zoom-fit-best.png
 share/icons/gnome/16x16/actions/zoom-in.png
 share/icons/gnome/16x16/actions/zoom-original.png
 share/icons/gnome/16x16/actions/zoom-out.png
-share/icons/gnome/16x16/animations/gnome-spinner-rest.png
 share/icons/gnome/16x16/animations/gnome-spinner.png
-share/icons/gnome/16x16/animations/process-idle.png
 share/icons/gnome/16x16/animations/process-working.png
 share/icons/gnome/16x16/apps/access.png
 share/icons/gnome/16x16/apps/accessibility-directory.png
@@ -2078,9 +2076,7 @@ share/icons/gnome/22x22/actions/zoom-fit-best.png
 share/icons/gnome/22x22/actions/zoom-in.png
 share/icons/gnome/22x22/actions/zoom-original.png
 share/icons/gnome/22x22/actions/zoom-out.png
-share/icons/gnome/22x22/animations/gnome-spinner-rest.png
 share/icons/gnome/22x22/animations/gnome-spinner.png
-share/icons/gnome/22x22/animations/process-idle.png
 share/icons/gnome/22x22/animations/process-working.png
 share/icons/gnome/22x22/apps/access.png
 share/icons/gnome/22x22/apps/accessibility-directory.png
@@ -3051,10 +3047,6 @@ share/icons/gnome/24x24/actions/zoom-fit-best.png
 share/icons/gnome/24x24/actions/zoom-in.png
 share/icons/gnome/24x24/actions/zoom-original.png
 share/icons/gnome/24x24/actions/zoom-out.png
-share/icons/gnome/24x24/animations/gnome-spinner-rest.png
-share/icons/gnome/24x24/animations/gnome-spinner.png
-share/icons/gnome/24x24/animations/process-idle.png
-share/icons/gnome/24x24/animations/process-working.png
 share/icons/gnome/24x24/apps/access.png
 share/icons/gnome/24x24/apps/accessibility-directory.png
 share/icons/gnome/24x24/apps/accessories-calculator.png
@@ -4636,9 +4628,7 @@ share/icons/gnome/32x32/actions/zoom-fit-best.png
 share/icons/gnome/32x32/actions/zoom-in.png
 share/icons/gnome/32x32/actions/zoom-original.png
 share/icons/gnome/32x32/actions/zoom-out.png
-share/icons/gnome/32x32/animations/gnome-spinner-rest.png
 share/icons/gnome/32x32/animations/gnome-spinner.png
-share/icons/gnome/32x32/animations/process-idle.png
 share/icons/gnome/32x32/animations/process-working.png
 share/icons/gnome/32x32/apps/access.png
 share/icons/gnome/32x32/apps/accessibility-directory.png
@@ -5260,25 +5250,12 @@ share/icons/gnome/32x32/status/weather-snow.png
 share/icons/gnome/32x32/status/weather-storm.png
 share/icons/gnome/32x32/status/xfce-trash_full.png
 share/icons/gnome/32x32/stock/generic/stock_person.png
-share/icons/gnome/48x48/actions/appointment-new.png
-share/icons/gnome/48x48/actions/appointment.png
-share/icons/gnome/48x48/actions/gnome-stock-mail-new.png
 share/icons/gnome/48x48/actions/mail-mark-junk.png
 share/icons/gnome/48x48/actions/mail-mark-not-junk.png
-share/icons/gnome/48x48/actions/mail-message-new.png
-share/icons/gnome/48x48/actions/mail-send-receive.png
-share/icons/gnome/48x48/actions/mail_new.png
 share/icons/gnome/48x48/actions/mail_spam.png
-share/icons/gnome/48x48/actions/stock_mail-compose.png
-share/icons/gnome/48x48/actions/stock_mail-send-receive.png
-share/icons/gnome/48x48/actions/stock_new-appointment.png
 share/icons/gnome/48x48/actions/stock_not-spam.png
 share/icons/gnome/48x48/actions/stock_spam.png
-share/icons/gnome/48x48/animations/gnome-searchtool-animation-rest.png
-share/icons/gnome/48x48/animations/gnome-searchtool-animation.png
-share/icons/gnome/48x48/animations/gnome-spinner-rest.png
 share/icons/gnome/48x48/animations/gnome-spinner.png
-share/icons/gnome/48x48/animations/process-idle.png
 share/icons/gnome/48x48/animations/process-working.png
 share/icons/gnome/48x48/apps/applets-screenshooter.png
 share/icons/gnome/48x48/apps/palm-pilot-sync.png
@@ -6365,6 +6342,8 @@ share/icons/gnome/scalable/status/weather-snow.svg
 share/icons/gnome/scalable/status/weather-storm.svg
 share/icons/gnome/scalable/status/xfce-trash_full.svg
 share/icons/gnome/scalable/stock/generic/stock_person.svg
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
 @dirrmtry share/icons/gnome/scalable/stock/generic
@@ -6474,3 +6453,4 @@ share/icons/gnome/scalable/stock/generic/stock_person.svg
 @dirrmtry share/icons/gnome/16x16/actions
 @dirrmtry share/icons/gnome/16x16
 @dirrmtry share/icons/gnome
+@dirrmtry share/icons

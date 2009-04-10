@@ -4,11 +4,11 @@
 # Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/textproc/libxml++26/Makefile,v 1.33 2009/01/09 21:44:43 kwm Exp $
+#   $MCom: ports/textproc/libxml++26/Makefile,v 1.35 2009/03/17 14:57:40 kwm Exp $
 #
 
 PORTNAME=	libxml++
-PORTVERSION=	2.24.3
+PORTVERSION=	2.26.0
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME
 
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LATEST_LINK=	libxml++26
 
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 USE_GNOME=	gnomehack libxml2 pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

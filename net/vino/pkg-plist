@@ -1,10 +1,11 @@
 bin/vino-passwd
 bin/vino-preferences
+etc/xdg/autostart/vino-server.desktop
 libexec/vino-server
 share/applications/vino-preferences.desktop
-share/gnome/autostart/vino-server.desktop
 share/locale/ar/LC_MESSAGES/vino.mo
 share/locale/as/LC_MESSAGES/vino.mo
+share/locale/ast/LC_MESSAGES/vino.mo
 share/locale/az/LC_MESSAGES/vino.mo
 share/locale/be@latin/LC_MESSAGES/vino.mo
 share/locale/bg/LC_MESSAGES/vino.mo
@@ -80,6 +81,7 @@ share/locale/zh_HK/LC_MESSAGES/vino.mo
 share/locale/zh_TW/LC_MESSAGES/vino.mo
 %%DATADIR%%/vino-preferences.glade
 %%DATADIR%%/vino-prompt.glade
+%%DATADIR%%/webservices
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -108,5 +110,7 @@ share/locale/zh_TW/LC_MESSAGES/vino.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

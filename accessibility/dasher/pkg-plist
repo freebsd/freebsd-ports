@@ -202,6 +202,38 @@ share/gnome/help/dasher/C/figures/prefs2.png
 share/gnome/help/dasher/C/figures/prefs3.png
 share/gnome/help/dasher/C/figures/prefs4.png
 share/gnome/help/dasher/C/figures/prefs5.png
+share/gnome/help/dasher/de/dasher.xml
+share/gnome/help/dasher/de/figures/a-z.gif
+share/gnome/help/dasher/de/figures/aa-az.gif
+share/gnome/help/dasher/de/figures/ala-alz.gif
+share/gnome/help/dasher/de/figures/exampleHad2.png
+share/gnome/help/dasher/de/figures/exampleHad2a.png
+share/gnome/help/dasher/de/figures/exampleHad3a.png
+share/gnome/help/dasher/de/figures/exampleHad4.png
+share/gnome/help/dasher/de/figures/figure2.png
+share/gnome/help/dasher/de/figures/main.png
+share/gnome/help/dasher/de/figures/object.gif
+share/gnome/help/dasher/de/figures/prefs1.png
+share/gnome/help/dasher/de/figures/prefs2.png
+share/gnome/help/dasher/de/figures/prefs3.png
+share/gnome/help/dasher/de/figures/prefs4.png
+share/gnome/help/dasher/de/figures/prefs5.png
+share/gnome/help/dasher/en_GB/dasher.xml
+share/gnome/help/dasher/en_GB/figures/a-z.gif
+share/gnome/help/dasher/en_GB/figures/aa-az.gif
+share/gnome/help/dasher/en_GB/figures/ala-alz.gif
+share/gnome/help/dasher/en_GB/figures/exampleHad2.png
+share/gnome/help/dasher/en_GB/figures/exampleHad2a.png
+share/gnome/help/dasher/en_GB/figures/exampleHad3a.png
+share/gnome/help/dasher/en_GB/figures/exampleHad4.png
+share/gnome/help/dasher/en_GB/figures/figure2.png
+share/gnome/help/dasher/en_GB/figures/main.png
+share/gnome/help/dasher/en_GB/figures/object.gif
+share/gnome/help/dasher/en_GB/figures/prefs1.png
+share/gnome/help/dasher/en_GB/figures/prefs2.png
+share/gnome/help/dasher/en_GB/figures/prefs3.png
+share/gnome/help/dasher/en_GB/figures/prefs4.png
+share/gnome/help/dasher/en_GB/figures/prefs5.png
 share/gnome/help/dasher/es/dasher.xml
 share/gnome/help/dasher/es/figures/a-z.gif
 share/gnome/help/dasher/es/figures/aa-az.gif
@@ -218,6 +250,22 @@ share/gnome/help/dasher/es/figures/prefs2.png
 share/gnome/help/dasher/es/figures/prefs3.png
 share/gnome/help/dasher/es/figures/prefs4.png
 share/gnome/help/dasher/es/figures/prefs5.png
+share/gnome/help/dasher/eu/dasher.xml
+share/gnome/help/dasher/eu/figures/a-z.gif
+share/gnome/help/dasher/eu/figures/aa-az.gif
+share/gnome/help/dasher/eu/figures/ala-alz.gif
+share/gnome/help/dasher/eu/figures/exampleHad2.png
+share/gnome/help/dasher/eu/figures/exampleHad2a.png
+share/gnome/help/dasher/eu/figures/exampleHad3a.png
+share/gnome/help/dasher/eu/figures/exampleHad4.png
+share/gnome/help/dasher/eu/figures/figure2.png
+share/gnome/help/dasher/eu/figures/main.png
+share/gnome/help/dasher/eu/figures/object.gif
+share/gnome/help/dasher/eu/figures/prefs1.png
+share/gnome/help/dasher/eu/figures/prefs2.png
+share/gnome/help/dasher/eu/figures/prefs3.png
+share/gnome/help/dasher/eu/figures/prefs4.png
+share/gnome/help/dasher/eu/figures/prefs5.png
 share/gnome/help/dasher/fr/dasher.xml
 share/gnome/help/dasher/fr/figures/a-z.gif
 share/gnome/help/dasher/fr/figures/aa-az.gif
@@ -284,6 +332,7 @@ share/gnome/help/dasher/sv/figures/prefs4.png
 share/gnome/help/dasher/sv/figures/prefs5.png
 share/icons/hicolor/48x48/apps/dasher.png
 share/icons/hicolor/scalable/apps/dasher.svg
+share/locale/af/LC_MESSAGES/dasher.mo
 share/locale/ar/LC_MESSAGES/dasher.mo
 share/locale/as/LC_MESSAGES/dasher.mo
 share/locale/az/LC_MESSAGES/dasher.mo
@@ -339,6 +388,7 @@ share/locale/oc/LC_MESSAGES/dasher.mo
 share/locale/or/LC_MESSAGES/dasher.mo
 share/locale/pa/LC_MESSAGES/dasher.mo
 share/locale/pl/LC_MESSAGES/dasher.mo
+share/locale/ps/LC_MESSAGES/dasher.mo
 share/locale/pt/LC_MESSAGES/dasher.mo
 share/locale/pt_BR/LC_MESSAGES/dasher.mo
 share/locale/ro/LC_MESSAGES/dasher.mo
@@ -349,9 +399,10 @@ share/locale/sk/LC_MESSAGES/dasher.mo
 share/locale/sl/LC_MESSAGES/dasher.mo
 share/locale/sq/LC_MESSAGES/dasher.mo
 share/locale/sr/LC_MESSAGES/dasher.mo
-share/locale/sr@Latn/LC_MESSAGES/dasher.mo
+share/locale/sr@latin/LC_MESSAGES/dasher.mo
 share/locale/sv/LC_MESSAGES/dasher.mo
 share/locale/ta/LC_MESSAGES/dasher.mo
+share/locale/te/LC_MESSAGES/dasher.mo
 share/locale/th/LC_MESSAGES/dasher.mo
 share/locale/tk/LC_MESSAGES/dasher.mo
 share/locale/tr/LC_MESSAGES/dasher.mo
@@ -363,7 +414,10 @@ share/locale/zh_CN/LC_MESSAGES/dasher.mo
 share/locale/zh_HK/LC_MESSAGES/dasher.mo
 share/locale/zh_TW/LC_MESSAGES/dasher.mo
 share/omf/dasher/dasher-C.omf
+share/omf/dasher/dasher-de.omf
+share/omf/dasher/dasher-en_GB.omf
 share/omf/dasher/dasher-es.omf
+share/omf/dasher/dasher-eu.omf
 share/omf/dasher/dasher-fr.omf
 share/omf/dasher/dasher-oc.omf
 share/omf/dasher/dasher-ru.omf
@@ -377,8 +431,14 @@ share/omf/dasher/dasher-sv.omf
 @dirrm share/gnome/help/dasher/oc
 @dirrm share/gnome/help/dasher/fr/figures
 @dirrm share/gnome/help/dasher/fr
+@dirrm share/gnome/help/dasher/eu/figures
+@dirrm share/gnome/help/dasher/eu
 @dirrm share/gnome/help/dasher/es/figures
 @dirrm share/gnome/help/dasher/es
+@dirrm share/gnome/help/dasher/en_GB/figures
+@dirrm share/gnome/help/dasher/en_GB
+@dirrm share/gnome/help/dasher/de/figures
+@dirrm share/gnome/help/dasher/de
 @dirrm share/gnome/help/dasher/C/figures
 @dirrm share/gnome/help/dasher/C
 @dirrm share/gnome/help/dasher
@@ -390,10 +450,16 @@ share/omf/dasher/dasher-sv.omf
 @dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES

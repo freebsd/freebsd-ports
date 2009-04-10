@@ -1,0 +1,11 @@
+--- src/daemon/start-pulseaudio-x11.in.orig	2009-03-07 19:48:47.000000000 -0500
++++ src/daemon/start-pulseaudio-x11.in	2009-03-07 19:48:56.000000000 -0500
+@@ -19,7 +19,7 @@
+ 
+ set -e
+ 
+-@PA_BINARY@ --start "$@"
++@PA_BINARY@ -D "$@"
+ 
+ if [ x"$DISPLAY" != x ] ; then
+ 

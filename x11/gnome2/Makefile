@@ -3,12 +3,12 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome2/Makefile,v 1.260 2008/11/27 02:18:33 marcus Exp $
+#   $MCom: ports/x11/gnome2/Makefile,v 1.264 2009/03/18 20:45:35 marcus Exp $
 #
 
 PORTNAME=	gnome2
-PORTVERSION=	2.24.3
-PORTREVISION?=	1
+PORTVERSION=	2.26.0
+PORTREVISION?=	0
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -36,7 +36,6 @@ RUN_DEPENDS?=	${LOCALBASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-apple
 		file-roller:${PORTSDIR}/archivers/file-roller \
 		${LOCALBASE}/share/themes/HighContrast/gtk-2.0/gtkrc:${PORTSDIR}/x11-themes/gnome-themes \
 		gok:${PORTSDIR}/accessibility/gok \
-		nautilus-cd-burner:${PORTSDIR}/sysutils/nautilus-cd-burner \
 		gcalctool:${PORTSDIR}/math/gcalctool \
 		${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
 		${LOCALBASE}/libexec/gnome-netstatus-applet:${PORTSDIR}/net/gnome-netstatus \
@@ -45,7 +44,7 @@ RUN_DEPENDS?=	${LOCALBASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-apple
 		${LOCALBASE}/libexec/evolution-webcal:${PORTSDIR}/www/evolution-webcal \
 		network-admin:${PORTSDIR}/sysutils/gnome-system-tools \
 		vino-passwd:${PORTSDIR}/net/vino \
-		exchange-connector-setup-2.24:${PORTSDIR}/mail/evolution-exchange \
+		exchange-connector-setup-2.26:${PORTSDIR}/mail/evolution-exchange \
 		${LOCALBASE}/lib/gstreamer-0.10/.gstreamer-plugins-core.keep:${PORTSDIR}/multimedia/gstreamer-plugins-core \
 		${LOCALBASE}/lib/gstreamer-0.10/libgstgconfelements.so:${PORTSDIR}/devel/gstreamer-plugins-gconf \
 		totem:${PORTSDIR}/multimedia/totem \
@@ -54,7 +53,6 @@ RUN_DEPENDS?=	${LOCALBASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-apple
 		evince:${PORTSDIR}/graphics/evince \
 		alacarte:${PORTSDIR}/deskutils/alacarte \
 		gnome-power-manager:${PORTSDIR}/sysutils/gnome-power-manager \
-		${LOCALBASE}/libexec/gnome-volume-manager:${PORTSDIR}/sysutils/gnome-volume-manager \
 		orca:${PORTSDIR}/accessibility/orca \
 		gnome-mount:${PORTSDIR}/sysutils/gnome-mount \
 		${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon \
@@ -91,6 +89,8 @@ RUN_DEPENDS+=	empathy:${PORTSDIR}/net-im/empathy \
 		gnome-nettool:${PORTSDIR}/net/gnome-nettool \
 		swfdec-player:${PORTSDIR}/multimedia/swfdec-gnome \
 		vinagre:${PORTSDIR}/net/vinagre \
+		brasero:${PORTSDIR}/sysutils/brasero \
+		gnome-file-share-properties:${PORTSDIR}/www/gnome-user-share \
 		${LOCALBASE}/lib/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet \
 		${LOCALBASE}/lib/hamster-applet/hamster-applet:${PORTSDIR}/deskutils/hamster-applet
 .if ${ARCH} == "i386"

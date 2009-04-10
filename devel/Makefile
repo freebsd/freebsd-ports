@@ -436,7 +436,6 @@
     SUBDIR += glrparser
     SUBDIR += glui
     SUBDIR += gmake
-    SUBDIR += gnome-build
     SUBDIR += gnome-common
     SUBDIR += gnome-crash
     SUBDIR += gnome-vfs

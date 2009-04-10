@@ -3,11 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/deskutils/gnome-utils/Makefile,v 1.130 2008/10/20 22:42:42 kwm Exp $
+#   $MCom: ports/deskutils/gnome-utils/Makefile,v 1.135 2009/03/21 21:35:37 marcus Exp $
 #
 
 PORTNAME=	gnome-utils
-PORTVERSION=	2.24.1
+PORTVERSION=	2.26.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
@@ -34,6 +35,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		gnome-dictionary.1 gnome-search-tool.1 gnome-system-log.1 \
 		baobab.1
 GCONF_SCHEMAS=	gnome-dictionary.schemas gnome-screenshot.schemas \
-		gnome-search-tool.schemas logview.schemas baobab.schemas
+		gnome-search-tool.schemas baobab.schemas \
+		gnome-system-log.schemas
 
 .include <bsd.port.mk>

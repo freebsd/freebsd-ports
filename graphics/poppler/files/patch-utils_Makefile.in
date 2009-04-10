@@ -1,6 +1,6 @@
---- utils/Makefile.in.orig	2008-03-27 08:18:44.000000000 -0400
-+++ utils/Makefile.in	2008-03-27 08:19:51.000000000 -0400
-@@ -58,48 +58,48 @@
+--- utils/Makefile.in.orig	2009-02-26 18:44:48.000000000 -0500
++++ utils/Makefile.in	2009-02-26 18:45:57.000000000 -0500
+@@ -61,50 +61,50 @@ am_pdffonts_OBJECTS = pdffonts.$(OBJEXT)
  pdffonts_OBJECTS = $(am_pdffonts_OBJECTS)
  pdffonts_LDADD = $(LDADD)
  am__DEPENDENCIES_1 =
@@ -14,7 +14,8 @@
 -pdfimages_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la \
 +pdfimages_DEPENDENCIES = \
  	$(am__DEPENDENCIES_1)
- am_pdfinfo_OBJECTS = pdfinfo.$(OBJEXT) $(am__objects_1)
+ am_pdfinfo_OBJECTS = pdfinfo.$(OBJEXT) printencodings.$(OBJEXT) \
+ 	$(am__objects_1)
  pdfinfo_OBJECTS = $(am_pdfinfo_OBJECTS)
  pdfinfo_LDADD = $(LDADD)
 -pdfinfo_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la \
@@ -49,7 +50,8 @@
 -pdftops_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la \
 +pdftops_DEPENDENCIES = \
  	$(am__DEPENDENCIES_1)
- am_pdftotext_OBJECTS = pdftotext.$(OBJEXT) $(am__objects_1)
+ am_pdftotext_OBJECTS = pdftotext.$(OBJEXT) printencodings.$(OBJEXT) \
+ 	$(am__objects_1)
  pdftotext_OBJECTS = $(am_pdftotext_OBJECTS)
  pdftotext_LDADD = $(LDADD)
 -pdftotext_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la \
@@ -57,7 +59,7 @@
  	$(am__DEPENDENCIES_1)
  DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir) -I$(top_builddir)/poppler
  depcomp = $(SHELL) $(top_srcdir)/depcomp
-@@ -302,7 +302,7 @@
+@@ -320,7 +320,7 @@ INCLUDES = \
  	$(ABIWORD_CFLAGS)
  
  LDADD = \
