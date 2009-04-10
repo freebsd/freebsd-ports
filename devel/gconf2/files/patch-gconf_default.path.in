@@ -1,0 +1,11 @@
+--- gconf/default.path.in.orig	2009-03-06 17:10:54.000000000 -0500
++++ gconf/default.path.in	2009-03-06 17:11:25.000000000 -0500
+@@ -21,7 +21,7 @@ include "$(HOME)/.gconf.path"
+ xml:readwrite:$(HOME)/.gconf
+ 
+ # Location for system-wide settings that are set by the defaults mechanism
+-xml:readonly:/etc/gconf/gconf.xml.system
++xml:readonly:@sysgconfdir@/gconf.xml.system
+ 
+ # To read in any defaults settings that the Sys Admin may have created
+ # prior to a desktop system upgrade. The SysAdmin can stick default values

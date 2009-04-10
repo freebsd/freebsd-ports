@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#    $MCom: ports-stable/www/mozilla/pkg-install.in,v 1.15 2008/08/04 05:01:00 mezz Exp $
+#    $MCom: ports/www/mozilla/pkg-install.in,v 1.26 2008/08/04 16:58:03 mezz Exp $
 #
 # Date created:			Mon Nov 29, 2003
 # Whom:				Thierry Thomas (<thierry@pompo.net>)

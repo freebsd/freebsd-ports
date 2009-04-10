@@ -1,6 +1,6 @@
---- glom/main.cc.orig	2008-08-22 16:36:46.000000000 +0200
-+++ glom/main.cc	2008-09-13 21:23:46.000000000 +0200
-@@ -89,18 +89,19 @@
+--- glom/main.cc.orig	2009-03-16 14:53:55.000000000 +0100
++++ glom/main.cc	2009-03-17 16:22:01.000000000 +0100
+@@ -100,18 +100,19 @@ OptionGroup::OptionGroup()
  
  } //namespace Glom
  
@@ -22,10 +22,10 @@
    WSADATA data;
    int errcode = WSAStartup(MAKEWORD(2, 0), &data);
    if(errcode != 0)
-@@ -108,6 +109,7 @@
-     std::cerr << "Failed to initialize WinSock: " << errcode << std::endl;
-     return -1;
-   }
+@@ -123,6 +124,7 @@ main(int argc, char* argv[])
+   gchar* installation_dir_c = g_win32_get_package_installation_directory_of_module(NULL);
+   const std::string installation_dir(installation_dir_c);
+   g_free(installation_dir_c);
 +#  endif
  #endif
  

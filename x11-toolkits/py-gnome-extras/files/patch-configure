@@ -1,6 +1,6 @@
---- configure.orig	Sun Feb 25 16:31:03 2007
-+++ configure	Sat Jul 21 20:04:43 2007
-@@ -1550,7 +1550,7 @@
+--- configure.orig	2009-02-28 16:14:05.000000000 -0500
++++ configure	2009-02-28 16:21:48.000000000 -0500
+@@ -1721,7 +1721,7 @@ Optional Packages:
    --with-pic              try to use only PIC/non-PIC objects [default=use
                            both]
    --with-tags[=TAGS]      include additional configurations [automatic]
@@ -9,14 +9,667 @@
                            package that provides libgtkmozembed
  
  Some influential environment variables:
-@@ -22072,8 +22072,9 @@
-      xulrunner) mozpackage_required_version=1.8 ;;
-      firefox) mozpackage_required_version=1.0 ;;
-      mozilla) mozpackage_required_version=1.2b ;;
-+     seamonkey) mozpackage_required_version=1.1.3 ;;
-      *) { { echo "$as_me:$LINENO: error: --with-gtkmozembed argument must be either 'mozilla', 'firefox', or 'xulrunner'" >&5
--echo "$as_me: error: --with-gtkmozembed argument must be either 'mozilla', 'firefox', or 'xulrunner'" >&2;}
-+echo "$as_me: error: --with-gtkmozembed argument must be either 'mozilla', 'firefox', 'seamonkey' or 'xulrunner'" >&2;}
-    { (exit 1); exit 1; }; }
- esac
+@@ -22428,6 +22428,150 @@ fi
+ 
+ 	{ $as_echo "$as_me:$LINENO: result: no" >&5
+ $as_echo "no" >&6; }
++
++
++pkg_failed=no
++{ $as_echo "$as_me:$LINENO: checking for GTKMOZEMBED" >&5
++$as_echo_n "checking for GTKMOZEMBED... " >&6; }
++
++if test -n "$GTKMOZEMBED_CFLAGS"; then
++    pkg_cv_GTKMOZEMBED_CFLAGS="$GTKMOZEMBED_CFLAGS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0\"") >&5
++  ($PKG_CONFIG --exists --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; then
++  pkg_cv_GTKMOZEMBED_CFLAGS=`$PKG_CONFIG --cflags "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++if test -n "$GTKMOZEMBED_LIBS"; then
++    pkg_cv_GTKMOZEMBED_LIBS="$GTKMOZEMBED_LIBS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0\"") >&5
++  ($PKG_CONFIG --exists --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; then
++  pkg_cv_GTKMOZEMBED_LIBS=`$PKG_CONFIG --libs "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++
++
++
++if test $pkg_failed = yes; then
++
++if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
++        _pkg_short_errors_supported=yes
++else
++        _pkg_short_errors_supported=no
++fi
++        if test $_pkg_short_errors_supported = yes; then
++	        GTKMOZEMBED_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>&1`
++        else
++	        GTKMOZEMBED_PKG_ERRORS=`$PKG_CONFIG --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>&1`
++        fi
++	# Put the nasty error message in config.log where it belongs
++	echo "$GTKMOZEMBED_PKG_ERRORS" >&5
++
++	{ $as_echo "$as_me:$LINENO: result: no" >&5
++$as_echo "no" >&6; }
++                build_gtkmozembed=false
++elif test $pkg_failed = untried; then
++	build_gtkmozembed=false
++else
++	GTKMOZEMBED_CFLAGS=$pkg_cv_GTKMOZEMBED_CFLAGS
++	GTKMOZEMBED_LIBS=$pkg_cv_GTKMOZEMBED_LIBS
++        { $as_echo "$as_me:$LINENO: result: yes" >&5
++$as_echo "yes" >&6; }
++	build_gtkmozembed=true; mozpackage=seamonkey
++fi
++
++elif test $pkg_failed = untried; then
++
++
++pkg_failed=no
++{ $as_echo "$as_me:$LINENO: checking for GTKMOZEMBED" >&5
++$as_echo_n "checking for GTKMOZEMBED... " >&6; }
++
++if test -n "$GTKMOZEMBED_CFLAGS"; then
++    pkg_cv_GTKMOZEMBED_CFLAGS="$GTKMOZEMBED_CFLAGS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0\"") >&5
++  ($PKG_CONFIG --exists --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; then
++  pkg_cv_GTKMOZEMBED_CFLAGS=`$PKG_CONFIG --cflags "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++if test -n "$GTKMOZEMBED_LIBS"; then
++    pkg_cv_GTKMOZEMBED_LIBS="$GTKMOZEMBED_LIBS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0\"") >&5
++  ($PKG_CONFIG --exists --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; then
++  pkg_cv_GTKMOZEMBED_LIBS=`$PKG_CONFIG --libs "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++
++
++
++if test $pkg_failed = yes; then
++
++if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
++        _pkg_short_errors_supported=yes
++else
++        _pkg_short_errors_supported=no
++fi
++        if test $_pkg_short_errors_supported = yes; then
++	        GTKMOZEMBED_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>&1`
++        else
++	        GTKMOZEMBED_PKG_ERRORS=`$PKG_CONFIG --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>&1`
++        fi
++	# Put the nasty error message in config.log where it belongs
++	echo "$GTKMOZEMBED_PKG_ERRORS" >&5
++
++	{ $as_echo "$as_me:$LINENO: result: no" >&5
++$as_echo "no" >&6; }
+                 build_gtkmozembed=false
+ elif test $pkg_failed = untried; then
+ 	build_gtkmozembed=false
+@@ -22436,6 +22580,14 @@ else
+ 	GTKMOZEMBED_LIBS=$pkg_cv_GTKMOZEMBED_LIBS
+         { $as_echo "$as_me:$LINENO: result: yes" >&5
+ $as_echo "yes" >&6; }
++	build_gtkmozembed=true; mozpackage=seamonkey
++fi
++
++else
++	GTKMOZEMBED_CFLAGS=$pkg_cv_GTKMOZEMBED_CFLAGS
++	GTKMOZEMBED_LIBS=$pkg_cv_GTKMOZEMBED_LIBS
++        { $as_echo "$as_me:$LINENO: result: yes" >&5
++$as_echo "yes" >&6; }
+ 	build_gtkmozembed=true; mozpackage=mozilla
+ fi
+ 
+@@ -22506,6 +22658,150 @@ fi
+ 
+ 	{ $as_echo "$as_me:$LINENO: result: no" >&5
+ $as_echo "no" >&6; }
++
++
++pkg_failed=no
++{ $as_echo "$as_me:$LINENO: checking for GTKMOZEMBED" >&5
++$as_echo_n "checking for GTKMOZEMBED... " >&6; }
++
++if test -n "$GTKMOZEMBED_CFLAGS"; then
++    pkg_cv_GTKMOZEMBED_CFLAGS="$GTKMOZEMBED_CFLAGS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0\"") >&5
++  ($PKG_CONFIG --exists --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; then
++  pkg_cv_GTKMOZEMBED_CFLAGS=`$PKG_CONFIG --cflags "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++if test -n "$GTKMOZEMBED_LIBS"; then
++    pkg_cv_GTKMOZEMBED_LIBS="$GTKMOZEMBED_LIBS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0\"") >&5
++  ($PKG_CONFIG --exists --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; then
++  pkg_cv_GTKMOZEMBED_LIBS=`$PKG_CONFIG --libs "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++
++
++
++if test $pkg_failed = yes; then
++
++if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
++        _pkg_short_errors_supported=yes
++else
++        _pkg_short_errors_supported=no
++fi
++        if test $_pkg_short_errors_supported = yes; then
++	        GTKMOZEMBED_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>&1`
++        else
++	        GTKMOZEMBED_PKG_ERRORS=`$PKG_CONFIG --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>&1`
++        fi
++	# Put the nasty error message in config.log where it belongs
++	echo "$GTKMOZEMBED_PKG_ERRORS" >&5
++
++	{ $as_echo "$as_me:$LINENO: result: no" >&5
++$as_echo "no" >&6; }
++                build_gtkmozembed=false
++elif test $pkg_failed = untried; then
++	build_gtkmozembed=false
++else
++	GTKMOZEMBED_CFLAGS=$pkg_cv_GTKMOZEMBED_CFLAGS
++	GTKMOZEMBED_LIBS=$pkg_cv_GTKMOZEMBED_LIBS
++        { $as_echo "$as_me:$LINENO: result: yes" >&5
++$as_echo "yes" >&6; }
++	build_gtkmozembed=true; mozpackage=seamonkey
++fi
++
++elif test $pkg_failed = untried; then
++
++
++pkg_failed=no
++{ $as_echo "$as_me:$LINENO: checking for GTKMOZEMBED" >&5
++$as_echo_n "checking for GTKMOZEMBED... " >&6; }
++
++if test -n "$GTKMOZEMBED_CFLAGS"; then
++    pkg_cv_GTKMOZEMBED_CFLAGS="$GTKMOZEMBED_CFLAGS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0\"") >&5
++  ($PKG_CONFIG --exists --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; then
++  pkg_cv_GTKMOZEMBED_CFLAGS=`$PKG_CONFIG --cflags "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++if test -n "$GTKMOZEMBED_LIBS"; then
++    pkg_cv_GTKMOZEMBED_LIBS="$GTKMOZEMBED_LIBS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0\"") >&5
++  ($PKG_CONFIG --exists --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; then
++  pkg_cv_GTKMOZEMBED_LIBS=`$PKG_CONFIG --libs "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++
++
++
++if test $pkg_failed = yes; then
++
++if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
++        _pkg_short_errors_supported=yes
++else
++        _pkg_short_errors_supported=no
++fi
++        if test $_pkg_short_errors_supported = yes; then
++	        GTKMOZEMBED_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>&1`
++        else
++	        GTKMOZEMBED_PKG_ERRORS=`$PKG_CONFIG --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>&1`
++        fi
++	# Put the nasty error message in config.log where it belongs
++	echo "$GTKMOZEMBED_PKG_ERRORS" >&5
++
++	{ $as_echo "$as_me:$LINENO: result: no" >&5
++$as_echo "no" >&6; }
+                 build_gtkmozembed=false
+ elif test $pkg_failed = untried; then
+ 	build_gtkmozembed=false
+@@ -22514,6 +22810,14 @@ else
+ 	GTKMOZEMBED_LIBS=$pkg_cv_GTKMOZEMBED_LIBS
+         { $as_echo "$as_me:$LINENO: result: yes" >&5
+ $as_echo "yes" >&6; }
++	build_gtkmozembed=true; mozpackage=seamonkey
++fi
++
++else
++	GTKMOZEMBED_CFLAGS=$pkg_cv_GTKMOZEMBED_CFLAGS
++	GTKMOZEMBED_LIBS=$pkg_cv_GTKMOZEMBED_LIBS
++        { $as_echo "$as_me:$LINENO: result: yes" >&5
++$as_echo "yes" >&6; }
+ 	build_gtkmozembed=true; mozpackage=mozilla
+ fi
+ 
+@@ -22658,6 +22962,150 @@ fi
+ 
+ 	{ $as_echo "$as_me:$LINENO: result: no" >&5
+ $as_echo "no" >&6; }
++
++
++pkg_failed=no
++{ $as_echo "$as_me:$LINENO: checking for GTKMOZEMBED" >&5
++$as_echo_n "checking for GTKMOZEMBED... " >&6; }
++
++if test -n "$GTKMOZEMBED_CFLAGS"; then
++    pkg_cv_GTKMOZEMBED_CFLAGS="$GTKMOZEMBED_CFLAGS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0\"") >&5
++  ($PKG_CONFIG --exists --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; then
++  pkg_cv_GTKMOZEMBED_CFLAGS=`$PKG_CONFIG --cflags "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++if test -n "$GTKMOZEMBED_LIBS"; then
++    pkg_cv_GTKMOZEMBED_LIBS="$GTKMOZEMBED_LIBS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0\"") >&5
++  ($PKG_CONFIG --exists --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; then
++  pkg_cv_GTKMOZEMBED_LIBS=`$PKG_CONFIG --libs "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++
++
++
++if test $pkg_failed = yes; then
++
++if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
++        _pkg_short_errors_supported=yes
++else
++        _pkg_short_errors_supported=no
++fi
++        if test $_pkg_short_errors_supported = yes; then
++	        GTKMOZEMBED_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>&1`
++        else
++	        GTKMOZEMBED_PKG_ERRORS=`$PKG_CONFIG --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>&1`
++        fi
++	# Put the nasty error message in config.log where it belongs
++	echo "$GTKMOZEMBED_PKG_ERRORS" >&5
++
++	{ $as_echo "$as_me:$LINENO: result: no" >&5
++$as_echo "no" >&6; }
++                build_gtkmozembed=false
++elif test $pkg_failed = untried; then
++	build_gtkmozembed=false
++else
++	GTKMOZEMBED_CFLAGS=$pkg_cv_GTKMOZEMBED_CFLAGS
++	GTKMOZEMBED_LIBS=$pkg_cv_GTKMOZEMBED_LIBS
++        { $as_echo "$as_me:$LINENO: result: yes" >&5
++$as_echo "yes" >&6; }
++	build_gtkmozembed=true; mozpackage=seamonkey
++fi
++
++elif test $pkg_failed = untried; then
++
++
++pkg_failed=no
++{ $as_echo "$as_me:$LINENO: checking for GTKMOZEMBED" >&5
++$as_echo_n "checking for GTKMOZEMBED... " >&6; }
++
++if test -n "$GTKMOZEMBED_CFLAGS"; then
++    pkg_cv_GTKMOZEMBED_CFLAGS="$GTKMOZEMBED_CFLAGS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0\"") >&5
++  ($PKG_CONFIG --exists --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; then
++  pkg_cv_GTKMOZEMBED_CFLAGS=`$PKG_CONFIG --cflags "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++if test -n "$GTKMOZEMBED_LIBS"; then
++    pkg_cv_GTKMOZEMBED_LIBS="$GTKMOZEMBED_LIBS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0\"") >&5
++  ($PKG_CONFIG --exists --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; then
++  pkg_cv_GTKMOZEMBED_LIBS=`$PKG_CONFIG --libs "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++
++
++
++if test $pkg_failed = yes; then
++
++if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
++        _pkg_short_errors_supported=yes
++else
++        _pkg_short_errors_supported=no
++fi
++        if test $_pkg_short_errors_supported = yes; then
++	        GTKMOZEMBED_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>&1`
++        else
++	        GTKMOZEMBED_PKG_ERRORS=`$PKG_CONFIG --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>&1`
++        fi
++	# Put the nasty error message in config.log where it belongs
++	echo "$GTKMOZEMBED_PKG_ERRORS" >&5
++
++	{ $as_echo "$as_me:$LINENO: result: no" >&5
++$as_echo "no" >&6; }
+                 build_gtkmozembed=false
+ elif test $pkg_failed = untried; then
+ 	build_gtkmozembed=false
+@@ -22666,6 +23114,14 @@ else
+ 	GTKMOZEMBED_LIBS=$pkg_cv_GTKMOZEMBED_LIBS
+         { $as_echo "$as_me:$LINENO: result: yes" >&5
+ $as_echo "yes" >&6; }
++	build_gtkmozembed=true; mozpackage=seamonkey
++fi
++
++else
++	GTKMOZEMBED_CFLAGS=$pkg_cv_GTKMOZEMBED_CFLAGS
++	GTKMOZEMBED_LIBS=$pkg_cv_GTKMOZEMBED_LIBS
++        { $as_echo "$as_me:$LINENO: result: yes" >&5
++$as_echo "yes" >&6; }
+ 	build_gtkmozembed=true; mozpackage=mozilla
+ fi
+ 
+@@ -22736,6 +23192,150 @@ fi
+ 
+ 	{ $as_echo "$as_me:$LINENO: result: no" >&5
+ $as_echo "no" >&6; }
++
++
++pkg_failed=no
++{ $as_echo "$as_me:$LINENO: checking for GTKMOZEMBED" >&5
++$as_echo_n "checking for GTKMOZEMBED... " >&6; }
++
++if test -n "$GTKMOZEMBED_CFLAGS"; then
++    pkg_cv_GTKMOZEMBED_CFLAGS="$GTKMOZEMBED_CFLAGS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0\"") >&5
++  ($PKG_CONFIG --exists --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; then
++  pkg_cv_GTKMOZEMBED_CFLAGS=`$PKG_CONFIG --cflags "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++if test -n "$GTKMOZEMBED_LIBS"; then
++    pkg_cv_GTKMOZEMBED_LIBS="$GTKMOZEMBED_LIBS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0\"") >&5
++  ($PKG_CONFIG --exists --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; then
++  pkg_cv_GTKMOZEMBED_LIBS=`$PKG_CONFIG --libs "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++
++
++
++if test $pkg_failed = yes; then
++
++if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
++        _pkg_short_errors_supported=yes
++else
++        _pkg_short_errors_supported=no
++fi
++        if test $_pkg_short_errors_supported = yes; then
++	        GTKMOZEMBED_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>&1`
++        else
++	        GTKMOZEMBED_PKG_ERRORS=`$PKG_CONFIG --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>&1`
++        fi
++	# Put the nasty error message in config.log where it belongs
++	echo "$GTKMOZEMBED_PKG_ERRORS" >&5
++
++	{ $as_echo "$as_me:$LINENO: result: no" >&5
++$as_echo "no" >&6; }
++                build_gtkmozembed=false
++elif test $pkg_failed = untried; then
++	build_gtkmozembed=false
++else
++	GTKMOZEMBED_CFLAGS=$pkg_cv_GTKMOZEMBED_CFLAGS
++	GTKMOZEMBED_LIBS=$pkg_cv_GTKMOZEMBED_LIBS
++        { $as_echo "$as_me:$LINENO: result: yes" >&5
++$as_echo "yes" >&6; }
++	build_gtkmozembed=true; mozpackage=seamonkey
++fi
++
++elif test $pkg_failed = untried; then
++
++
++pkg_failed=no
++{ $as_echo "$as_me:$LINENO: checking for GTKMOZEMBED" >&5
++$as_echo_n "checking for GTKMOZEMBED... " >&6; }
++
++if test -n "$GTKMOZEMBED_CFLAGS"; then
++    pkg_cv_GTKMOZEMBED_CFLAGS="$GTKMOZEMBED_CFLAGS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0\"") >&5
++  ($PKG_CONFIG --exists --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; then
++  pkg_cv_GTKMOZEMBED_CFLAGS=`$PKG_CONFIG --cflags "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++if test -n "$GTKMOZEMBED_LIBS"; then
++    pkg_cv_GTKMOZEMBED_LIBS="$GTKMOZEMBED_LIBS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0\"") >&5
++  ($PKG_CONFIG --exists --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; then
++  pkg_cv_GTKMOZEMBED_LIBS=`$PKG_CONFIG --libs "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++
++
++
++if test $pkg_failed = yes; then
++
++if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
++        _pkg_short_errors_supported=yes
++else
++        _pkg_short_errors_supported=no
++fi
++        if test $_pkg_short_errors_supported = yes; then
++	        GTKMOZEMBED_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>&1`
++        else
++	        GTKMOZEMBED_PKG_ERRORS=`$PKG_CONFIG --print-errors "seamonkey-gtkmozembed >= 1.1.3
++				gtk+-2.0	>= 2.4.0" 2>&1`
++        fi
++	# Put the nasty error message in config.log where it belongs
++	echo "$GTKMOZEMBED_PKG_ERRORS" >&5
++
++	{ $as_echo "$as_me:$LINENO: result: no" >&5
++$as_echo "no" >&6; }
+                 build_gtkmozembed=false
+ elif test $pkg_failed = untried; then
+ 	build_gtkmozembed=false
+@@ -22744,6 +23344,14 @@ else
+ 	GTKMOZEMBED_LIBS=$pkg_cv_GTKMOZEMBED_LIBS
+         { $as_echo "$as_me:$LINENO: result: yes" >&5
+ $as_echo "yes" >&6; }
++	build_gtkmozembed=true; mozpackage=seamonkey
++fi
++
++else
++	GTKMOZEMBED_CFLAGS=$pkg_cv_GTKMOZEMBED_CFLAGS
++	GTKMOZEMBED_LIBS=$pkg_cv_GTKMOZEMBED_LIBS
++        { $as_echo "$as_me:$LINENO: result: yes" >&5
++$as_echo "yes" >&6; }
+ 	build_gtkmozembed=true; mozpackage=mozilla
+ fi
  

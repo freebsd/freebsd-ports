@@ -238,6 +238,9 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/notification-daemon.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/notification-daemon.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/notification-daemon.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/notify-osd.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/notify-osd.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/notify-osd.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/pidgin/__init__.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/pidgin/__init__.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/pidgin/__init__.pyo
@@ -403,6 +406,7 @@ share/locale/fi/LC_MESSAGES/orca.mo
 share/locale/fr/LC_MESSAGES/orca.mo
 share/locale/gl/LC_MESSAGES/orca.mo
 share/locale/gu/LC_MESSAGES/orca.mo
+share/locale/he/LC_MESSAGES/orca.mo
 share/locale/hi/LC_MESSAGES/orca.mo
 share/locale/hu/LC_MESSAGES/orca.mo
 share/locale/it/LC_MESSAGES/orca.mo
@@ -425,6 +429,7 @@ share/locale/pa/LC_MESSAGES/orca.mo
 share/locale/pl/LC_MESSAGES/orca.mo
 share/locale/pt/LC_MESSAGES/orca.mo
 share/locale/pt_BR/LC_MESSAGES/orca.mo
+share/locale/ro/LC_MESSAGES/orca.mo
 share/locale/ru/LC_MESSAGES/orca.mo
 share/locale/rw/LC_MESSAGES/orca.mo
 share/locale/si/LC_MESSAGES/orca.mo

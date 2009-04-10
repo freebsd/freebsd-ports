@@ -41,6 +41,4 @@ share/locale/sv/LC_MESSAGES/mail-notification.mo
 @dirrm share/gnome/help/mail-notification/C/figures
 @dirrm share/gnome/help/mail-notification/C
 @dirrm share/gnome/help/mail-notification
-@dirrmtry etc/xdg/autostart
-@dirrmtry etc/xdg
 @dirrmtry share/applications

@@ -3,11 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/libgnomekbd/Makefile,v 1.26 2008/09/23 05:27:25 mezz Exp $
+#   $MCom: ports/x11/libgnomekbd/Makefile,v 1.29 2009/03/14 05:54:11 marcus Exp $
 #
 
 PORTNAME=	libgnomekbd
-PORTVERSION=	2.24.0
+PORTVERSION=	2.26.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

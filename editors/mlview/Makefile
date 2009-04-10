@@ -20,7 +20,7 @@ USE_AUTOTOOLS=	autoconf:262 libtool:15
 USE_GNOME=	eel2 gnomehack gnomeprefix gtksourceview
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags gnome-vfs-2.0 libgnomeui-2.0`" LIBS="-L${LOCALBASE}/lib `pkg-config --libs gnome-vfs-2.0 libgnomeui-2.0`"
 
 GCONF_SCHEMAS=	mlview.schemas
 

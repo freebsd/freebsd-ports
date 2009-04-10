@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-control-center/Makefile,v 1.185 2008/09/24 21:51:29 mezz Exp $
+#   $MCom: ports/sysutils/gnome-control-center/Makefile,v 1.189 2009/03/18 00:23:38 kwm Exp $
 #
 
 PORTNAME=	gnome-control-center
-PORTVERSION=	2.24.0.1
+PORTVERSION=	2.26.0
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	--enable-gstreamer=0.10
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-GCONF_SCHEMAS=	control-center.schemas
+GCONF_SCHEMAS=	control-center.schemas fontilus.schemas
 
 .if defined(PACKAGE_BUILDING)
 .undef WITHOUT_GNOME

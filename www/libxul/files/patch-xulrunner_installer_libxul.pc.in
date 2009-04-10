@@ -1,0 +1,11 @@
+--- xulrunner/installer/libxul.pc.in.orig	2007-08-03 10:46:28.000000000 -0400
++++ xulrunner/installer/libxul.pc.in	2009-03-29 15:17:17.000000000 -0400
+@@ -12,5 +12,5 @@ Name: libxul
+ Description: The Mozilla Runtime and Embedding Engine
+ Version: %MOZILLA_VERSION%
+ Requires: %NSPR_NAME% >= %NSPR_VERSION%
+-Libs: -L${sdkdir}/lib -lxpcomglue_s -lxul -lxpcom
+-Cflags: -I${includedir}/${includetype} -fshort-wchar
+\ No newline at end of file
++Libs: -L${sdkdir}/lib -L%%MOZ_LIBDIR%% -lxpcomglue_s -lxul -lxpcom
++Cflags: -I${includedir}/${includetype} -fshort-wchar

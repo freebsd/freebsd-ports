@@ -3,10 +3,10 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/devhelp/Makefile,v 1.10 2009/01/09 22:20:28 kwm Exp $
+#   $MCom: ports/devel/devhelp/Makefile,v 1.12 2009/01/11 18:03:38 marcus Exp $
 
 PORTNAME=	devhelp
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 PORTEPOCH=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
@@ -15,10 +15,11 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Developer help browser for GNOME 2
 
+LIB_DEPENDS=	webkit-1.0.1:${PORTSDIR}/www/webkit-gtk2
+
 USE_BZIP2=	yes
 USE_XORG=	x11
 USE_GETTEXT=	yes
-USE_GECKO=	firefox xulrunner
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui libwnck
 USE_AUTOTOOLS=	libtool:15
@@ -28,12 +29,10 @@ USE_LDCONFIG=	yes
 GCONF_SCHEMAS=	devhelp.schemas
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gecko=${GECKO}
 
 OPTIONS=		GEDIT "Enable GEdit plug-in support" off
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
 .if defined(WITH_GEDIT)
 BUILD_DEPENDS+=	gedit:${PORTSDIR}/editors/gedit

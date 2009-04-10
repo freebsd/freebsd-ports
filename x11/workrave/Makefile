@@ -7,7 +7,7 @@
 
 PORTNAME=	workrave
 PORTVERSION=	1.8.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	SF
 
@@ -22,7 +22,9 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 intltool
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBS="`pkg-config --libs libgnomeui-2.0`"
 CONFIGURE_ARGS=	--enable-gconf
 
 .include <bsd.port.pre.mk>

@@ -46,6 +46,7 @@ share/gnome/help/gdm/de/gdm.xml
 share/gnome/help/gdm/en_GB/gdm.xml
 share/gnome/help/gdm/es/gdm.xml
 share/gnome/help/gdm/fr/gdm.xml
+share/gnome/help/gdm/it/gdm.xml
 share/gnome/help/gdm/ko/gdm.xml
 share/gnome/help/gdm/oc/gdm.xml
 share/gnome/help/gdm/ru/gdm.xml
@@ -58,13 +59,16 @@ share/locale/af/LC_MESSAGES/gdm.mo
 share/locale/am/LC_MESSAGES/gdm.mo
 share/locale/ar/LC_MESSAGES/gdm.mo
 share/locale/as/LC_MESSAGES/gdm.mo
+share/locale/ast/LC_MESSAGES/gdm.mo
 share/locale/az/LC_MESSAGES/gdm.mo
 share/locale/be/LC_MESSAGES/gdm.mo
+share/locale/be@latin/LC_MESSAGES/gdm.mo
 share/locale/bg/LC_MESSAGES/gdm.mo
 share/locale/bn/LC_MESSAGES/gdm.mo
 share/locale/bn_IN/LC_MESSAGES/gdm.mo
 share/locale/bs/LC_MESSAGES/gdm.mo
 share/locale/ca/LC_MESSAGES/gdm.mo
+share/locale/crh/LC_MESSAGES/gdm.mo
 share/locale/cs/LC_MESSAGES/gdm.mo
 share/locale/cy/LC_MESSAGES/gdm.mo
 share/locale/da/LC_MESSAGES/gdm.mo
@@ -96,7 +100,6 @@ share/locale/ka/LC_MESSAGES/gdm.mo
 share/locale/kn/LC_MESSAGES/gdm.mo
 share/locale/ko/LC_MESSAGES/gdm.mo
 share/locale/ku/LC_MESSAGES/gdm.mo
-share/locale/la/LC_MESSAGES/gdm.mo
 share/locale/lt/LC_MESSAGES/gdm.mo
 share/locale/lv/LC_MESSAGES/gdm.mo
 share/locale/mai/LC_MESSAGES/gdm.mo
@@ -134,6 +137,8 @@ share/locale/te/LC_MESSAGES/gdm.mo
 share/locale/th/LC_MESSAGES/gdm.mo
 share/locale/tr/LC_MESSAGES/gdm.mo
 share/locale/uk/LC_MESSAGES/gdm.mo
+share/locale/uz/LC_MESSAGES/gdm.mo
+share/locale/uz@cyrillic/LC_MESSAGES/gdm.mo
 share/locale/vi/LC_MESSAGES/gdm.mo
 share/locale/wa/LC_MESSAGES/gdm.mo
 share/locale/xh/LC_MESSAGES/gdm.mo
@@ -141,6 +146,17 @@ share/locale/zh_CN/LC_MESSAGES/gdm.mo
 share/locale/zh_HK/LC_MESSAGES/gdm.mo
 share/locale/zh_TW/LC_MESSAGES/gdm.mo
 share/locale/zu/LC_MESSAGES/gdm.mo
+share/omf/gdm/gdm-C.omf
+share/omf/gdm/gdm-de.omf
+share/omf/gdm/gdm-en_GB.omf
+share/omf/gdm/gdm-es.omf
+share/omf/gdm/gdm-fr.omf
+share/omf/gdm/gdm-it.omf
+share/omf/gdm/gdm-ko.omf
+share/omf/gdm/gdm-oc.omf
+share/omf/gdm/gdm-ru.omf
+share/omf/gdm/gdm-sv.omf
+share/omf/gdm/gdm-uk.omf
 share/pixmaps/faces/astronaut.jpg
 share/pixmaps/faces/baseball.png
 share/pixmaps/faces/butterfly.png
@@ -174,11 +190,13 @@ share/pixmaps/nohost.png
 @exec mkdir -p %D/share/xsessions
 @dirrmtry share/xsessions
 @dirrm share/pixmaps/faces
+@dirrm share/omf/gdm
 @dirrm share/gnome/help/gdm/uk
 @dirrm share/gnome/help/gdm/sv
 @dirrm share/gnome/help/gdm/ru
 @dirrm share/gnome/help/gdm/oc
 @dirrm share/gnome/help/gdm/ko
+@dirrm share/gnome/help/gdm/it
 @dirrm share/gnome/help/gdm/fr
 @dirrm share/gnome/help/gdm/es
 @dirrm share/gnome/help/gdm/en_GB
@@ -210,6 +228,10 @@ share/pixmaps/nohost.png
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
+@dirrmtry share/locale/uz@cyrillic
+@dirrmtry share/locale/uz/LC_MESSAGES
+@dirrmtry share/locale/uz
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -232,8 +254,6 @@ share/pixmaps/nohost.png
 @dirrmtry share/locale/mg
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
-@dirrmtry share/locale/la/LC_MESSAGES
-@dirrmtry share/locale/la
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/hy/LC_MESSAGES
@@ -242,7 +262,13 @@ share/pixmaps/nohost.png
 @dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

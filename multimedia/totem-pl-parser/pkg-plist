@@ -13,7 +13,10 @@ lib/libtotem-plparser.so
 lib/libtotem-plparser.so.12
 libdata/pkgconfig/totem-plparser-mini.pc
 libdata/pkgconfig/totem-plparser.pc
-%%DOCSDIR%%/ch01.html
+%%DOCSDIR%%/TotemPlParser.html
+%%DOCSDIR%%/api-index-deprecated.html
+%%DOCSDIR%%/api-index-full.html
+%%DOCSDIR%%/api-reference.html
 %%DOCSDIR%%/home.png
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/index.sgml
@@ -21,12 +24,12 @@ libdata/pkgconfig/totem-plparser.pc
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/totem-pl-parser-totem-disc.html
-%%DOCSDIR%%/totem-pl-parser-totem-pl-parser.html
 %%DOCSDIR%%/totem-pl-parser.devhelp
 %%DOCSDIR%%/totem-pl-parser.devhelp2
 %%DOCSDIR%%/up.png
 share/locale/am/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ar/LC_MESSAGES/totem-pl-parser.mo
+share/locale/as/LC_MESSAGES/totem-pl-parser.mo
 share/locale/az/LC_MESSAGES/totem-pl-parser.mo
 share/locale/be/LC_MESSAGES/totem-pl-parser.mo
 share/locale/be@latin/LC_MESSAGES/totem-pl-parser.mo
@@ -61,6 +64,7 @@ share/locale/is/LC_MESSAGES/totem-pl-parser.mo
 share/locale/it/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ja/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ka/LC_MESSAGES/totem-pl-parser.mo
+share/locale/kn/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ko/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ku/LC_MESSAGES/totem-pl-parser.mo
 share/locale/lt/LC_MESSAGES/totem-pl-parser.mo
@@ -78,6 +82,7 @@ share/locale/oc/LC_MESSAGES/totem-pl-parser.mo
 share/locale/or/LC_MESSAGES/totem-pl-parser.mo
 share/locale/pa/LC_MESSAGES/totem-pl-parser.mo
 share/locale/pl/LC_MESSAGES/totem-pl-parser.mo
+share/locale/ps/LC_MESSAGES/totem-pl-parser.mo
 share/locale/pt/LC_MESSAGES/totem-pl-parser.mo
 share/locale/pt_BR/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ro/LC_MESSAGES/totem-pl-parser.mo
@@ -120,6 +125,8 @@ share/locale/zh_TW/LC_MESSAGES/totem-pl-parser.mo
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
@@ -134,3 +141,5 @@ share/locale/zh_TW/LC_MESSAGES/totem-pl-parser.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

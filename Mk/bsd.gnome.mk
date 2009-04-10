@@ -3,20 +3,15 @@
 #
 # $FreeBSD$
 #	$NetBSD: $
-#     $MCom: ports/Mk/bsd.gnome.mk,v 1.471 2008/09/01 16:45:46 ahze Exp $
+#     $MCom: ports/Mk/bsd.gnome.mk,v 1.479 2009/03/14 05:55:36 marcus Exp $
 #
 # Please view me with 4 column tabs!
-#######################################################
-#
-# *** WARNING: Disable MARCUSCOM before merge in FreeBSD!
-#
-#MARCUSCOM_CVS=yes
 
 # ======================= USERS =================================
-# 
+#
 # There are no significant user-definable settings in here.
 # This file is a framework to make it easier to create GNOME ports.
-# 
+#
 # ======================= /USERS ================================
 
 .if !defined(_POSTMKINCLUDED) && !defined(Gnome_Pre_Include)
@@ -356,7 +351,7 @@ libgtkhtml_LIB_DEPENDS=	gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml
 libgtkhtml_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgtkhtml-2.0.pc
 libgtkhtml_USE_GNOME_IMPL=libxslt gnomevfs2
 
-gnomedesktop_LIB_DEPENDS=	gnome-desktop-2.7:${PORTSDIR}/x11/gnome-desktop
+gnomedesktop_LIB_DEPENDS=	gnome-desktop-2.11:${PORTSDIR}/x11/gnome-desktop
 gnomedesktop_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-desktop-2.0.pc
 gnomedesktop_USE_GNOME_IMPL=	libgnomeui gnomedocutils
 gnomedesktop_GNOME_DESKTOP_VERSION=2
@@ -393,7 +388,7 @@ gnomepanel_GNOME_DESKTOP_VERSION=2
 
 nautilus2_LIB_DEPENDS=	nautilus-extension.1:${PORTSDIR}/x11-fm/nautilus
 nautilus2_DETECT=	${LOCALBASE}/libdata/pkgconfig/libnautilus-extension.pc
-nautilus2_USE_GNOME_IMPL=librsvg2 eel2 gnomedesktop desktopfileutils gvfs
+nautilus2_USE_GNOME_IMPL=librsvg2 gnomedesktop desktopfileutils gvfs
 nautilus2_GNOME_DESKTOP_VERSION=2
 
 metacity_LIB_DEPENDS=	metacity-private.0:${PORTSDIR}/x11-wm/metacity
@@ -502,7 +497,7 @@ gnomedocutils_USE_GNOME_IMPL=libxslt
 pygnomedesktop_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-python-desktop-2.0.pc
 pygnomedesktop_BUILD_DEPENDS=	${pygnomedesktop_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-desktop
 pygnomedesktop_RUN_DEPENDS=	${pygnomedesktop_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-desktop
-pygnomedesktop_USE_GNOME_IMPL=pygnome2 libgnomeprintui gtksourceview gnomepanel libwnck nautiluscdburner metacity
+pygnomedesktop_USE_GNOME_IMPL=pygnome2 libgnomeprintui gtksourceview gnomepanel libwnck nautilus2 metacity
 
 gtksharp10_DETECT=			${LOCALBASE}/libdata/pkgconfig/gtk-sharp.pc
 gtksharp10_BUILD_DEPENDS=	${gtksharp10_DETECT}:${PORTSDIR}/x11-toolkits/gtk-sharp10

@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/misc/quick-lounge-applet/Makefile,v 1.11 2007/05/19 21:36:14 marcus Exp $
+#   $MCom: ports/misc/quick-lounge-applet/Makefile,v 1.13 2009/02/21 13:44:22 kwm Exp $
 #
 
 PORTNAME=	quick-lounge-applet
-PORTVERSION=	2.12.5
-PORTREVISION=	1
+PORTVERSION=	2.13.2
 CATEGORIES=	misc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

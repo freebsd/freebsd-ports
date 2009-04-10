@@ -323,6 +323,7 @@
     SUBDIR += libgtkhtml
     SUBDIR += libmicrohttpd
     SUBDIR += libwww
+    SUBDIR += libxul
     SUBDIR += lifetype
     SUBDIR += lightsquid
     SUBDIR += lighttpd

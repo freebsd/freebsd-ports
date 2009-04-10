@@ -156,6 +156,4 @@ share/locale/sv/LC_MESSAGES/pulseaudio.mo
 @dirrm lib/pulse-%%PULSE_VERSION%%/modules
 @dirrm lib/pulse-%%PULSE_VERSION%%
 @dirrm include/pulse
-@dirrmtry etc/xdg/autostart
-@dirrmtry etc/xdg
 @dirrm etc/pulse

@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-panel/Makefile,v 1.195 2009/01/10 01:59:22 mezz Exp $
+#   $MCom: ports/x11/gnome-panel/Makefile,v 1.199 2009/03/17 23:22:06 kwm Exp $
 #
 
 PORTNAME=	gnome-panel
-PORTVERSION=	2.24.3
+PORTVERSION=	2.26.0
 PORTREVISION?=	0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
@@ -67,6 +67,11 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} -n 10 ${REINPLACE_CMD} -e \
 		's|"applications.menu"|"gnome-applications.menu"|'
+	@${REINPLACE_CMD} -e 's|xsltproc -o| xsltproc --nonet -o|g' \
+		${WRKSRC}/help/clock/Makefile.in \
+		${WRKSRC}/help/fish/Makefile.in \
+		${WRKSRC}/help/window-list/Makefile.in \
+		${WRKSRC}/help/workspace-switcher/Makefile.in
 
 .include <bsd.port.post.mk>
 

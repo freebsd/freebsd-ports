@@ -3,7 +3,7 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/gnome2-hacker-tools/Makefile,v 1.45 2007/09/19 23:27:28 marcus Exp $
+#   $MCom: ports/devel/gnome2-hacker-tools/Makefile,v 1.47 2009/03/01 08:15:25 marcus Exp $
 #
 
 PORTREVISION=	0
@@ -22,7 +22,8 @@ RUN_DEPENDS=	mlview:${PORTSDIR}/editors/mlview \
 		gtranslator:${PORTSDIR}/devel/gtranslator \
 		regexxer:${PORTSDIR}/devel/regexxer \
 		anjuta:${PORTSDIR}/devel/anjuta \
-		accerciser:${PORTSDIR}/accessibility/accerciser
+		accerciser:${PORTSDIR}/accessibility/accerciser \
+		valac:${PORTSDIR}/lang/vala
 
 MASTERDIR=	${.CURDIR}/../../x11/gnome2
 GNOME_SLAVE=	yes

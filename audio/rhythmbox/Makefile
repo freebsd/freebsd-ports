@@ -3,11 +3,12 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom$
+#   $MCom: ports/audio/rhythmbox/Makefile,v 1.97 2009/04/09 03:24:06 mezz Exp $
 #
 
 PORTNAME=	rhythmbox
 PORTVERSION=	0.12.0
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -22,17 +23,19 @@ LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		sexy.2:${PORTSDIR}/x11-toolkits/libsexy \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup \
-		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media
+		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media \
+		brasero-media.1:${PORTSDIR}/sysutils/brasero
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui nautiluscdburner
+USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui nautilus2
 WANT_GNOME=	yes
 USE_GSTREAMER=	flac mp3 gnomevfs gconf jpeg
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS=	--disable-vala
+CONFIGURE_ARGS=	--disable-vala --with-libbrasero-media \
+		--without-libnautilus-burn
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LIBS="-lm" \
@@ -48,7 +51,7 @@ OPTIONS=	DAAP "Enable iTunes music sharing" off \
 		VORBIS "Enable Ogg/Vorbis support" on \
 		LIRC "Enable Infrared syncing support" off \
 		MTP "Enable MS Media Transfer Protocol support" off \
-		GECKO_PLUGIN "Enable iTunes browser plugin" on
+		ITMS_PLUGIN "Enable iTunes browser plugin" on
 
 .include <bsd.port.pre.mk>
 
@@ -120,20 +123,17 @@ CONFIGURE_ARGS+=--without-ipod
 PLIST_SUB+=	IPOD="@comment "
 .endif
 
-.if !defined(WITHOUT_GECKO_PLUGIN)
-USE_GECKO=	firefox mozilla seamonkey xulrunner<->firefox firefox-devel<->firefox
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
-
+.if !defined(WITHOUT_ITMS_PLUGIN)
 USE_WEBPLUGINS=	gecko18
 WEBPLUGINS_FILES=librhythmbox-itms-detection-plugin.so
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
 CONFIGURE_ARGS+=--enable-browser-plugin
 CONFIGURE_ENV+=	MOZILLA_PLUGINDIR=${WEBPLUGINS_DIR}
-PLIST_SUB+=	GECKO_PLUGIN=""
+PLIST_SUB+=	ITMS_PLUGIN=""
 .else
 CONFIGURE_ARGS+=--disable-browser-plugin
-PLIST_SUB+=	GECKO_PLUGIN="@comment "
+PLIST_SUB+=	ITMS_PLUGIN="@comment "
 .endif
 
 .include <bsd.port.post.mk>

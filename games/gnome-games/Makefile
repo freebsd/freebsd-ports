@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/games/gnome-games/Makefile,v 1.187 2008/11/25 17:39:15 mezz Exp $
+#   $MCom: ports/games/gnome-games/Makefile,v 1.192 2009/03/18 00:15:21 kwm Exp $
 #
 
 PORTNAME=	gnome-games
-PORTVERSION=	2.24.3
-PORTREVISION=	1
+PORTVERSION=	2.26.0
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -44,10 +43,22 @@ CONFLICTS=	sol-1.0.* glchess-[0-9]* gnomesudoku-[0-9]*
 DSC_FILES=	iagno/iagno-client.dsc gnect/data/gnect-client.dsc \
 		gnibbles/gnibbles-client.dsc
 
+OPTIONS=	CLUTTER "Enable clutter compositing support" on
+
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libavahi-client.a) || defined(WITH_MDNS)
 LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
+.endif
+
+.if !defined(WITHOUT_CLUTTER)
+LIB_DEPENDS+=	clutter-gtk-0.8.0:${PORTSDIR}/graphics/clutter-gtk \
+    		clutter-cairo-0.8.0:${PORTSDIR}/graphics/clutter-cairo
+CONFIGURE_ARGS+=--enable-clutter
+PLIST_SUB+=	CLUTTER=""
+.else
+CONFIGURE_ARGS+=--disable-clutter
+PLIST_SUB+=	CLUTTER="@comment "
 .endif
 
 post-patch:

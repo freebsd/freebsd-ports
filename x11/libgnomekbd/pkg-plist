@@ -44,6 +44,7 @@ share/locale/ja/LC_MESSAGES/libgnomekbd.mo
 share/locale/ka/LC_MESSAGES/libgnomekbd.mo
 share/locale/ko/LC_MESSAGES/libgnomekbd.mo
 share/locale/lt/LC_MESSAGES/libgnomekbd.mo
+share/locale/lv/LC_MESSAGES/libgnomekbd.mo
 share/locale/mk/LC_MESSAGES/libgnomekbd.mo
 share/locale/ml/LC_MESSAGES/libgnomekbd.mo
 share/locale/mr/LC_MESSAGES/libgnomekbd.mo
@@ -56,6 +57,7 @@ share/locale/pa/LC_MESSAGES/libgnomekbd.mo
 share/locale/pl/LC_MESSAGES/libgnomekbd.mo
 share/locale/pt/LC_MESSAGES/libgnomekbd.mo
 share/locale/pt_BR/LC_MESSAGES/libgnomekbd.mo
+share/locale/ro/LC_MESSAGES/libgnomekbd.mo
 share/locale/ru/LC_MESSAGES/libgnomekbd.mo
 share/locale/si/LC_MESSAGES/libgnomekbd.mo
 share/locale/sl/LC_MESSAGES/libgnomekbd.mo

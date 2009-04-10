@@ -29,6 +29,7 @@ share/gnome-background-properties/gnome-default.xml
 share/locale/am/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ar/LC_MESSAGES/libgnome-2.0.mo
 share/locale/as/LC_MESSAGES/libgnome-2.0.mo
+share/locale/ast/LC_MESSAGES/libgnome-2.0.mo
 share/locale/az/LC_MESSAGES/libgnome-2.0.mo
 share/locale/be/LC_MESSAGES/libgnome-2.0.mo
 share/locale/bg/LC_MESSAGES/libgnome-2.0.mo
@@ -36,6 +37,7 @@ share/locale/bn/LC_MESSAGES/libgnome-2.0.mo
 share/locale/bn_IN/LC_MESSAGES/libgnome-2.0.mo
 share/locale/bs/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ca/LC_MESSAGES/libgnome-2.0.mo
+share/locale/crh/LC_MESSAGES/libgnome-2.0.mo
 share/locale/cs/LC_MESSAGES/libgnome-2.0.mo
 share/locale/cy/LC_MESSAGES/libgnome-2.0.mo
 share/locale/da/LC_MESSAGES/libgnome-2.0.mo
@@ -147,7 +149,11 @@ share/pixmaps/backgrounds/gnome/background-default.jpg
 @dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

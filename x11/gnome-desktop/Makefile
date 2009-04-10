@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-desktop/Makefile,v 1.154 2008/11/25 17:20:55 mezz Exp $
+#   $MCom: ports/x11/gnome-desktop/Makefile,v 1.158 2009/03/17 23:02:03 kwm Exp $
 #
 
 PORTNAME=	gnome-desktop
-PORTVERSION=	2.24.3
+PORTVERSION=	2.26.0
 PORTREVISION?=	0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
@@ -39,6 +39,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=	gnome-about.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|xsltproc -o| xsltproc --nonet -o|g' \
+		${WRKSRC}/desktop-docs/fdl/Makefile.in \
+		${WRKSRC}/desktop-docs/gpl/Makefile.in \
+		${WRKSRC}/desktop-docs/lgpl/Makefile.in
 
 .include <bsd.port.mk>
 

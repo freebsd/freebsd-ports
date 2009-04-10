@@ -1,4 +1,5 @@
 libexec/evolution-webcal
+share/locale/af/LC_MESSAGES/evolution-webcal.mo
 share/locale/ar/LC_MESSAGES/evolution-webcal.mo
 share/locale/as/LC_MESSAGES/evolution-webcal.mo
 share/locale/az/LC_MESSAGES/evolution-webcal.mo

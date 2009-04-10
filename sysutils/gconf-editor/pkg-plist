@@ -8,35 +8,124 @@ share/applications/gconf-editor.desktop
 %%DATADIR%%/icons/hicolor/16x16/status/type-schema.png
 %%DATADIR%%/icons/hicolor/16x16/status/type-string.png
 %%DATADIR%%/icons/hicolor/16x16/status/type-undefined.png
+share/gnome/help/gconf-editor/C/figures/entry-blank.png
+share/gnome/help/gconf-editor/C/figures/entry-bool.png
+share/gnome/help/gconf-editor/C/figures/entry-list.png
+share/gnome/help/gconf-editor/C/figures/entry-number.png
+share/gnome/help/gconf-editor/C/figures/entry-schema.png
+share/gnome/help/gconf-editor/C/figures/entry-string.png
 share/gnome/help/gconf-editor/C/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/C/gconf-editor.xml
 share/gnome/help/gconf-editor/C/legal.xml
+share/gnome/help/gconf-editor/ca/figures/entry-blank.png
+share/gnome/help/gconf-editor/ca/figures/entry-bool.png
+share/gnome/help/gconf-editor/ca/figures/entry-list.png
+share/gnome/help/gconf-editor/ca/figures/entry-number.png
+share/gnome/help/gconf-editor/ca/figures/entry-schema.png
+share/gnome/help/gconf-editor/ca/figures/entry-string.png
 share/gnome/help/gconf-editor/ca/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/ca/gconf-editor.xml
+share/gnome/help/gconf-editor/de/figures/entry-blank.png
+share/gnome/help/gconf-editor/de/figures/entry-bool.png
+share/gnome/help/gconf-editor/de/figures/entry-list.png
+share/gnome/help/gconf-editor/de/figures/entry-number.png
+share/gnome/help/gconf-editor/de/figures/entry-schema.png
+share/gnome/help/gconf-editor/de/figures/entry-string.png
 share/gnome/help/gconf-editor/de/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/de/gconf-editor.xml
+share/gnome/help/gconf-editor/el/figures/entry-blank.png
+share/gnome/help/gconf-editor/el/figures/entry-bool.png
+share/gnome/help/gconf-editor/el/figures/entry-list.png
+share/gnome/help/gconf-editor/el/figures/entry-number.png
+share/gnome/help/gconf-editor/el/figures/entry-schema.png
+share/gnome/help/gconf-editor/el/figures/entry-string.png
+share/gnome/help/gconf-editor/el/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/el/gconf-editor.xml
+share/gnome/help/gconf-editor/en_GB/figures/entry-blank.png
+share/gnome/help/gconf-editor/en_GB/figures/entry-bool.png
+share/gnome/help/gconf-editor/en_GB/figures/entry-list.png
+share/gnome/help/gconf-editor/en_GB/figures/entry-number.png
+share/gnome/help/gconf-editor/en_GB/figures/entry-schema.png
+share/gnome/help/gconf-editor/en_GB/figures/entry-string.png
+share/gnome/help/gconf-editor/en_GB/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/en_GB/gconf-editor.xml
+share/gnome/help/gconf-editor/es/figures/entry-blank.png
+share/gnome/help/gconf-editor/es/figures/entry-bool.png
+share/gnome/help/gconf-editor/es/figures/entry-list.png
+share/gnome/help/gconf-editor/es/figures/entry-number.png
+share/gnome/help/gconf-editor/es/figures/entry-schema.png
+share/gnome/help/gconf-editor/es/figures/entry-string.png
 share/gnome/help/gconf-editor/es/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/es/gconf-editor.xml
+share/gnome/help/gconf-editor/fr/figures/entry-blank.png
+share/gnome/help/gconf-editor/fr/figures/entry-bool.png
+share/gnome/help/gconf-editor/fr/figures/entry-list.png
+share/gnome/help/gconf-editor/fr/figures/entry-number.png
+share/gnome/help/gconf-editor/fr/figures/entry-schema.png
+share/gnome/help/gconf-editor/fr/figures/entry-string.png
 share/gnome/help/gconf-editor/fr/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/fr/gconf-editor.xml
+share/gnome/help/gconf-editor/it/figures/entry-blank.png
+share/gnome/help/gconf-editor/it/figures/entry-bool.png
+share/gnome/help/gconf-editor/it/figures/entry-list.png
+share/gnome/help/gconf-editor/it/figures/entry-number.png
+share/gnome/help/gconf-editor/it/figures/entry-schema.png
+share/gnome/help/gconf-editor/it/figures/entry-string.png
 share/gnome/help/gconf-editor/it/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/it/gconf-editor.xml
+share/gnome/help/gconf-editor/oc/figures/entry-blank.png
+share/gnome/help/gconf-editor/oc/figures/entry-bool.png
+share/gnome/help/gconf-editor/oc/figures/entry-list.png
+share/gnome/help/gconf-editor/oc/figures/entry-number.png
+share/gnome/help/gconf-editor/oc/figures/entry-schema.png
+share/gnome/help/gconf-editor/oc/figures/entry-string.png
 share/gnome/help/gconf-editor/oc/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/oc/gconf-editor.xml
+share/gnome/help/gconf-editor/pt_BR/figures/entry-blank.png
+share/gnome/help/gconf-editor/pt_BR/figures/entry-bool.png
+share/gnome/help/gconf-editor/pt_BR/figures/entry-list.png
+share/gnome/help/gconf-editor/pt_BR/figures/entry-number.png
+share/gnome/help/gconf-editor/pt_BR/figures/entry-schema.png
+share/gnome/help/gconf-editor/pt_BR/figures/entry-string.png
 share/gnome/help/gconf-editor/pt_BR/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/pt_BR/gconf-editor.xml
+share/gnome/help/gconf-editor/ru/figures/entry-blank.png
+share/gnome/help/gconf-editor/ru/figures/entry-bool.png
+share/gnome/help/gconf-editor/ru/figures/entry-list.png
+share/gnome/help/gconf-editor/ru/figures/entry-number.png
+share/gnome/help/gconf-editor/ru/figures/entry-schema.png
+share/gnome/help/gconf-editor/ru/figures/entry-string.png
 share/gnome/help/gconf-editor/ru/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/ru/gconf-editor.xml
+share/gnome/help/gconf-editor/sv/figures/entry-blank.png
+share/gnome/help/gconf-editor/sv/figures/entry-bool.png
+share/gnome/help/gconf-editor/sv/figures/entry-list.png
+share/gnome/help/gconf-editor/sv/figures/entry-number.png
+share/gnome/help/gconf-editor/sv/figures/entry-schema.png
+share/gnome/help/gconf-editor/sv/figures/entry-string.png
 share/gnome/help/gconf-editor/sv/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/sv/gconf-editor.xml
+share/gnome/help/gconf-editor/th/figures/entry-blank.png
+share/gnome/help/gconf-editor/th/figures/entry-bool.png
+share/gnome/help/gconf-editor/th/figures/entry-list.png
+share/gnome/help/gconf-editor/th/figures/entry-number.png
+share/gnome/help/gconf-editor/th/figures/entry-schema.png
+share/gnome/help/gconf-editor/th/figures/entry-string.png
 share/gnome/help/gconf-editor/th/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/th/gconf-editor.xml
+share/gnome/help/gconf-editor/uk/figures/entry-blank.png
+share/gnome/help/gconf-editor/uk/figures/entry-bool.png
+share/gnome/help/gconf-editor/uk/figures/entry-list.png
+share/gnome/help/gconf-editor/uk/figures/entry-number.png
+share/gnome/help/gconf-editor/uk/figures/entry-schema.png
+share/gnome/help/gconf-editor/uk/figures/entry-string.png
 share/gnome/help/gconf-editor/uk/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/uk/gconf-editor.xml
 share/icons/hicolor/48x48/apps/gconf-editor.png
 share/locale/am/LC_MESSAGES/gconf-editor.mo
 share/locale/ar/LC_MESSAGES/gconf-editor.mo
 share/locale/as/LC_MESSAGES/gconf-editor.mo
+share/locale/ast/LC_MESSAGES/gconf-editor.mo
 share/locale/az/LC_MESSAGES/gconf-editor.mo
 share/locale/be/LC_MESSAGES/gconf-editor.mo
 share/locale/be@latin/LC_MESSAGES/gconf-editor.mo
@@ -91,6 +180,7 @@ share/locale/oc/LC_MESSAGES/gconf-editor.mo
 share/locale/or/LC_MESSAGES/gconf-editor.mo
 share/locale/pa/LC_MESSAGES/gconf-editor.mo
 share/locale/pl/LC_MESSAGES/gconf-editor.mo
+share/locale/ps/LC_MESSAGES/gconf-editor.mo
 share/locale/pt/LC_MESSAGES/gconf-editor.mo
 share/locale/pt_BR/LC_MESSAGES/gconf-editor.mo
 share/locale/ro/LC_MESSAGES/gconf-editor.mo
@@ -117,6 +207,8 @@ share/locale/zh_TW/LC_MESSAGES/gconf-editor.mo
 share/omf/gconf-editor/gconf-editor-C.omf
 share/omf/gconf-editor/gconf-editor-ca.omf
 share/omf/gconf-editor/gconf-editor-de.omf
+share/omf/gconf-editor/gconf-editor-el.omf
+share/omf/gconf-editor/gconf-editor-en_GB.omf
 share/omf/gconf-editor/gconf-editor-es.omf
 share/omf/gconf-editor/gconf-editor-fr.omf
 share/omf/gconf-editor/gconf-editor-it.omf
@@ -145,6 +237,10 @@ share/omf/gconf-editor/gconf-editor-uk.omf
 @dirrm share/gnome/help/gconf-editor/fr
 @dirrm share/gnome/help/gconf-editor/es/figures
 @dirrm share/gnome/help/gconf-editor/es
+@dirrm share/gnome/help/gconf-editor/en_GB/figures
+@dirrm share/gnome/help/gconf-editor/en_GB
+@dirrm share/gnome/help/gconf-editor/el/figures
+@dirrm share/gnome/help/gconf-editor/el
 @dirrm share/gnome/help/gconf-editor/de/figures
 @dirrm share/gnome/help/gconf-editor/de
 @dirrm share/gnome/help/gconf-editor/ca/figures
@@ -172,6 +268,8 @@ share/omf/gconf-editor/gconf-editor-uk.omf
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
@@ -186,5 +284,7 @@ share/omf/gconf-editor/gconf-editor-uk.omf
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

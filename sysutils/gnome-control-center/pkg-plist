@@ -6,11 +6,12 @@ bin/gnome-at-visual
 bin/gnome-control-center
 bin/gnome-default-applications-properties
 bin/gnome-display-properties
+bin/gnome-font-viewer
 bin/gnome-keybinding-properties
 bin/gnome-keyboard-properties
 bin/gnome-mouse-properties
-bin/gnome-network-preferences
-bin/gnome-sound-properties
+bin/gnome-network-properties
+bin/gnome-thumbnail-font
 bin/gnome-typing-monitor
 bin/gnome-window-properties
 etc/xdg/autostart/gnome-at-session.desktop
@@ -32,9 +33,9 @@ share/applications/default-applications.desktop
 share/applications/display-properties.desktop
 %%ABOUTME%%share/applications/gnome-about-me.desktop
 share/applications/gnome-appearance-properties.desktop
-share/applications/gnome-network-preferences.desktop
+share/applications/gnome-font-viewer.desktop
+share/applications/gnome-network-properties.desktop
 share/applications/gnome-settings-mouse.desktop
-share/applications/gnome-settings-sound.desktop
 share/applications/gnome-theme-installer.desktop
 share/applications/gnomecc.desktop
 share/applications/keybinding.desktop
@@ -46,13 +47,13 @@ share/desktop-directories/gnomecc.directory
 %%DATADIR%%/glade/at-enable-dialog.glade
 %%DATADIR%%/glade/display-capplet.glade
 %%ABOUTME%%%%DATADIR%%/glade/gnome-about-me.glade
+%%ABOUTME%%%%DATADIR%%/glade/gnome-about-me-fingerprint.glade
 %%DATADIR%%/glade/gnome-default-applications-properties.glade
 %%DATADIR%%/glade/gnome-keybinding-properties.glade
 %%DATADIR%%/glade/gnome-keyboard-properties.glade
 %%DATADIR%%/glade/gnome-mouse-properties.glade
-%%DATADIR%%/glade/gnome-network-preferences.glade
+%%DATADIR%%/glade/gnome-network-properties.glade
 %%DATADIR%%/glade/gnome-window-properties.glade
-%%DATADIR%%/glade/sound-properties.glade
 %%DATADIR%%/keybindings/00-multimedia-key.xml
 %%DATADIR%%/keybindings/01-desktop-key.xml
 %%DATADIR%%/pixmaps/at-startup.png
@@ -94,10 +95,12 @@ share/gnome/help/control-center/C/config-kbd.xml
 share/gnome/help/control-center/C/config-keybindings.xml
 share/gnome/help/control-center/C/config-mouse.xml
 share/gnome/help/control-center/C/config-screensaver.xml
-share/gnome/help/control-center/C/config-sound.xml
 share/gnome/help/control-center/C/config-themes.xml
 share/gnome/help/control-center/C/control-center.xml
 share/gnome/help/control-center/ca/control-center.xml
+share/gnome/help/control-center/ca@valencia/control-center.xml
+share/gnome/help/control-center/cs/control-center.xml
+share/gnome/help/control-center/de/control-center.xml
 share/gnome/help/control-center/en_GB/control-center.xml
 share/gnome/help/control-center/es/control-center.xml
 share/gnome/help/control-center/fr/control-center.xml
@@ -114,33 +117,28 @@ share/gnome/help/control-center/uk/control-center.xml
 share/gnome/help/control-center/vi/control-center.xml
 share/gnome/help/control-center/zh_CN/control-center.xml
 share/icons/hicolor/16x16/apps/gnome-display-properties.png
-share/icons/hicolor/16x16/apps/gnome-network-preferences.png
+share/icons/hicolor/16x16/apps/gnome-network-properties.png
 share/icons/hicolor/16x16/apps/gnome-settings-default-applications.png
-share/icons/hicolor/16x16/apps/gnome-sound-properties.png
 share/icons/hicolor/22x22/apps/gnome-display-properties.png
-share/icons/hicolor/22x22/apps/gnome-network-preferences.png
+share/icons/hicolor/22x22/apps/gnome-network-properties.png
 share/icons/hicolor/22x22/apps/gnome-settings-default-applications.png
-share/icons/hicolor/22x22/apps/gnome-sound-properties.png
 share/icons/hicolor/24x24/apps/gnome-display-properties.png
-share/icons/hicolor/24x24/apps/gnome-network-preferences.png
+share/icons/hicolor/24x24/apps/gnome-network-properties.png
 share/icons/hicolor/24x24/apps/gnome-settings-default-applications.png
-share/icons/hicolor/24x24/apps/gnome-sound-properties.png
 share/icons/hicolor/32x32/apps/gnome-display-properties.png
-share/icons/hicolor/32x32/apps/gnome-network-preferences.png
+share/icons/hicolor/32x32/apps/gnome-network-properties.png
 share/icons/hicolor/32x32/apps/gnome-settings-default-applications.png
-share/icons/hicolor/32x32/apps/gnome-sound-properties.png
-share/icons/hicolor/48x48/apps/gnome-network-preferences.png
+share/icons/hicolor/48x48/apps/gnome-network-properties.png
 share/icons/hicolor/48x48/apps/gnome-settings-default-applications.png
-share/icons/hicolor/48x48/apps/gnome-sound-properties.png
 share/icons/hicolor/48x48/apps/typing-monitor.png
 share/icons/hicolor/scalable/apps/gnome-display-properties.svg
-share/icons/hicolor/scalable/apps/gnome-network-preferences.svg
-share/icons/hicolor/scalable/apps/gnome-sound-properties.svg
+share/icons/hicolor/scalable/apps/gnome-network-properties.svg
 share/icons/hicolor/scalable/apps/typing-monitor.svg
 share/locale/af/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/as/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/ast/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/be@latin/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -150,6 +148,7 @@ share/locale/bn_IN/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/br/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/bs/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/ca@valencia/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/cy/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/da/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -181,6 +180,7 @@ share/locale/ko/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ku/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/mai/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/mg/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ml/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -213,6 +213,8 @@ share/locale/te/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/th/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/uz/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/uz@cyrillic/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/vi/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/xh/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -224,6 +226,9 @@ share/mime/application/x-gnome-theme-package.xml
 share/mime/packages/gnome-theme-package.xml
 share/omf/control-center/control-center-C.omf
 share/omf/control-center/control-center-ca.omf
+share/omf/control-center/control-center-ca@valencia.omf
+share/omf/control-center/control-center-cs.omf
+share/omf/control-center/control-center-de.omf
 share/omf/control-center/control-center-en_GB.omf
 share/omf/control-center/control-center-es.omf
 share/omf/control-center/control-center-fr.omf
@@ -255,6 +260,9 @@ share/omf/control-center/control-center-zh_CN.omf
 @dirrm share/gnome/help/control-center/fr
 @dirrm share/gnome/help/control-center/es
 @dirrm share/gnome/help/control-center/en_GB
+@dirrm share/gnome/help/control-center/de
+@dirrm share/gnome/help/control-center/cs
+@dirrm share/gnome/help/control-center/ca@valencia
 @dirrm share/gnome/help/control-center/ca
 @dirrm share/gnome/help/control-center/C
 @dirrm share/gnome/help/control-center
@@ -266,7 +274,6 @@ share/omf/control-center/control-center-zh_CN.omf
 @dirrmtry share/applications
 @dirrm lib/window-manager-settings
 @dirrm include/gnome-window-settings-2.0
-@dirrmtry etc/xdg/autostart
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
@@ -277,6 +284,8 @@ share/omf/control-center/control-center-zh_CN.omf
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
+@dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -293,13 +302,19 @@ share/omf/control-center/control-center-zh_CN.omf
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

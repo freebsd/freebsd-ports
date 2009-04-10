@@ -3,12 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/lang/vala/Makefile,v 1.20 2008/11/03 22:50:31 mezz Exp $
+#   $MCom: ports/lang/vala/Makefile,v 1.23 2009/03/31 14:27:07 kwm Exp $
 #
 
 PORTNAME=	vala
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 
@@ -22,8 +21,9 @@ GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}" LDFLAGS="-L${LOCALBASE}/lib"
 USE_BISON=	build
-MAN1=		valac.1
 USE_LDCONFIG=	yes
+
+MAN1=		valac.1
 
 .include <bsd.port.pre.mk>
 
@@ -31,7 +31,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=--enable-vapigen
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
-MAN1=		vala-gen-introspect.1 vapigen.1
+MAN1+=		vala-gen-introspect.1 vapigen.1
 PLIST_SUB+=	VAPIGEN=""
 .else
 CONFIGURE_ARGS+=--disable-vapigen

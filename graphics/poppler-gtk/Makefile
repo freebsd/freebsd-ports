@@ -3,7 +3,7 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/graphics/poppler-gtk/Makefile,v 1.1 2008/06/16 21:36:00 mezz Exp $
+#   $MCom: ports/graphics/poppler-gtk/Makefile,v 1.9 2009/04/09 03:24:07 mezz Exp $
 #
 
 PORTREVISION=	0

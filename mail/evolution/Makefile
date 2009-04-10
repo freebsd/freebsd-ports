@@ -3,12 +3,12 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/mail/evolution/Makefile,v 1.186 2008/11/25 05:29:01 mezz Exp $
+#   $MCom: ports/mail/evolution/Makefile,v 1.192 2009/03/17 14:37:43 kwm Exp $
 #
 
 PORTNAME=	evolution
-PORTVERSION=	2.24.5
-PORTREVISION=	1
+PORTVERSION=	2.26.0
+PORTREVISION=	0
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -28,7 +28,8 @@ USE_GNOME=	gnomeprefix gnomehack intlhack evolutiondataserver gtkhtml3 \
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_LDCONFIG=	${PREFIX}/lib/evolution/${EVO_VERSION}
+USE_LDCONFIG=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib/evolution/%%VERSION%%
 CONFIGURE_ARGS=	--enable-nss=yes \
 		--enable-mono=no \
 		--with-sub-version=" FreeBSD GNOME Team Port"
@@ -46,7 +47,7 @@ GCONF_SCHEMAS=	apps_evolution_addressbook.schemas \
 		bogo-junk-plugin.schemas \
 		evolution-mail.schemas
 
-EVO_VERSION=	2.24
+EVO_VERSION=	2.26
 PLIST_SUB=	VERSION=${EVO_VERSION} \
 		PORTVERSION=2.12
 
@@ -55,6 +56,9 @@ OPTIONS=	PILOT "Enable Palm Pilot sync support" off \
 		SPAMASSASSIN "Enable SpamAssassin spam filtering" off
 
 .include <bsd.port.pre.mk>
+
+USE_LDCONFIG=	${PREFIX}/lib/evolution/${EVO_VERSION}
+.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
 .if defined(WITH_PILOT)
 LIB_DEPENDS+=	gpilotdconduit.2:${PORTSDIR}/palm/gnome-pilot
@@ -97,7 +101,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/sbin|${LOCALBASE}/bin|g' \
 		${WRKSRC}/plugins/sa-junk-plugin/em-junk-filter.c
 
-post-install:
+post-install: install-ldconfig-file
 	${MKDIR} ${PREFIX}/include/evolution-${EVO_VERSION}/composer
 	${INSTALL_DATA} ${WRKSRC}/composer/e-msg*.h ${PREFIX}/include/evolution-${EVO_VERSION}/composer
 

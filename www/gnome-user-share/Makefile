@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/gnome-user-share/Makefile,v 1.8 2008/02/24 20:36:08 marcus Exp $
+#   $MCom: ports/www/gnome-user-share/Makefile,v 1.14 2009/03/17 13:35:33 kwm Exp $
 #
 
 PORTNAME=	gnome-user-share
-PORTVERSION=	0.31
-PORTREVISION=	2
+PORTVERSION=	2.26.0
+PORTREVISION=	0
 CATEGORIES=	www deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,16 +16,18 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Personal file-sharing service for the GNOME Desktop
 
-LIB_DEPENDS=	avahi-client:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS=	avahi-client:${PORTSDIR}/net/avahi-app \
+		notify.1:${PORTSDIR}/devel/libnotify
+RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_dnssd.so:${PORTSDIR}/www/mod_dnssd
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_APACHE=	2.0+
-USE_GNOME=	gnomeprefix gnomehack intlhack libglade2 gconf2
+USE_APACHE=	2.2+
+USE_GNOME=	gnomeprefix gnomehack intlhack libglade2 gconf2 gnomedocutils
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ARGS=	--disable-howl --with-modules-path=${LOCALBASE}/${APACHEMODDIR}
+CONFIGURE_ARGS=	--with-modules-path=${LOCALBASE}/${APACHEMODDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

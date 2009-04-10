@@ -1,5 +1,4 @@
 bin/file-roller
-lib/nautilus/extensions-2.0/libnautilus-fileroller.a
 lib/nautilus/extensions-2.0/libnautilus-fileroller.la
 lib/nautilus/extensions-2.0/libnautilus-fileroller.so
 libexec/file-roller/isoinfo.sh
@@ -8,21 +7,21 @@ share/applications/file-roller.desktop
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%DATADIR%%/glade/add-options.glade
-%%DATADIR%%/glade/batch-add-files.glade
-%%DATADIR%%/glade/batch-password.glade
-%%DATADIR%%/glade/delete.glade
-%%DATADIR%%/glade/open-with.glade
-%%DATADIR%%/glade/password.glade
-%%DATADIR%%/glade/properties.glade
-%%DATADIR%%/glade/new.glade
-%%DATADIR%%/glade/update.glade
 %%DATADIR%%/icons/hicolor/16x16/actions/add-files-to-archive.png
 %%DATADIR%%/icons/hicolor/16x16/actions/add-folder-to-archive.png
 %%DATADIR%%/icons/hicolor/16x16/actions/extract-archive.png
 %%DATADIR%%/icons/hicolor/24x24/actions/add-files-to-archive.png
 %%DATADIR%%/icons/hicolor/24x24/actions/add-folder-to-archive.png
 %%DATADIR%%/icons/hicolor/24x24/actions/extract-archive.png
+%%DATADIR%%/ui/add-options.ui
+%%DATADIR%%/ui/batch-add-files.ui
+%%DATADIR%%/ui/batch-password.ui
+%%DATADIR%%/ui/delete.ui
+%%DATADIR%%/ui/new.ui
+%%DATADIR%%/ui/open-with.ui
+%%DATADIR%%/ui/password.ui
+%%DATADIR%%/ui/properties.ui
+%%DATADIR%%/ui/update.ui
 share/gnome/help/file-roller/C/figures/file-roller_home.png
 share/gnome/help/file-roller/C/figures/file-roller_leftarrow.png
 share/gnome/help/file-roller/C/figures/file-roller_main_window.png
@@ -48,6 +47,12 @@ share/gnome/help/file-roller/de/figures/file-roller_main_window.png
 share/gnome/help/file-roller/de/figures/file-roller_rightarrow.png
 share/gnome/help/file-roller/de/figures/file-roller_uparrow.png
 share/gnome/help/file-roller/de/file-roller.xml
+share/gnome/help/file-roller/en_GB/figures/file-roller_home.png
+share/gnome/help/file-roller/en_GB/figures/file-roller_leftarrow.png
+share/gnome/help/file-roller/en_GB/figures/file-roller_main_window.png
+share/gnome/help/file-roller/en_GB/figures/file-roller_rightarrow.png
+share/gnome/help/file-roller/en_GB/figures/file-roller_uparrow.png
+share/gnome/help/file-roller/en_GB/file-roller.xml
 share/gnome/help/file-roller/es/figures/file-roller_home.png
 share/gnome/help/file-roller/es/figures/file-roller_leftarrow.png
 share/gnome/help/file-roller/es/figures/file-roller_main_window.png
@@ -117,6 +122,7 @@ share/locale/af/LC_MESSAGES/file-roller.mo
 share/locale/am/LC_MESSAGES/file-roller.mo
 share/locale/ar/LC_MESSAGES/file-roller.mo
 share/locale/as/LC_MESSAGES/file-roller.mo
+share/locale/ast/LC_MESSAGES/file-roller.mo
 share/locale/az/LC_MESSAGES/file-roller.mo
 share/locale/be/LC_MESSAGES/file-roller.mo
 share/locale/be@latin/LC_MESSAGES/file-roller.mo
@@ -159,6 +165,7 @@ share/locale/ko/LC_MESSAGES/file-roller.mo
 share/locale/ku/LC_MESSAGES/file-roller.mo
 share/locale/lt/LC_MESSAGES/file-roller.mo
 share/locale/lv/LC_MESSAGES/file-roller.mo
+share/locale/mai/LC_MESSAGES/file-roller.mo
 share/locale/mg/LC_MESSAGES/file-roller.mo
 share/locale/mk/LC_MESSAGES/file-roller.mo
 share/locale/ml/LC_MESSAGES/file-roller.mo
@@ -204,6 +211,7 @@ share/omf/file-roller/file-roller-C.omf
 share/omf/file-roller/file-roller-ca.omf
 share/omf/file-roller/file-roller-bg.omf
 share/omf/file-roller/file-roller-de.omf
+share/omf/file-roller/file-roller-en_GB.omf
 share/omf/file-roller/file-roller-es.omf
 share/omf/file-roller/file-roller-fi.omf
 share/omf/file-roller/file-roller-fr.omf
@@ -235,6 +243,8 @@ share/omf/file-roller/file-roller-vi.omf
 @dirrm share/gnome/help/file-roller/fi
 @dirrm share/gnome/help/file-roller/es/figures
 @dirrm share/gnome/help/file-roller/es
+@dirrm share/gnome/help/file-roller/en_GB/figures
+@dirrm share/gnome/help/file-roller/en_GB
 @dirrm share/gnome/help/file-roller/de/figures
 @dirrm share/gnome/help/file-roller/de
 @dirrm share/gnome/help/file-roller/ca/figures
@@ -244,13 +254,13 @@ share/omf/file-roller/file-roller-vi.omf
 @dirrm share/gnome/help/file-roller/C/figures
 @dirrm share/gnome/help/file-roller/C
 @dirrm share/gnome/help/file-roller
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/icons/hicolor/24x24/actions
 @dirrm %%DATADIR%%/icons/hicolor/24x24
 @dirrm %%DATADIR%%/icons/hicolor/16x16/actions
 @dirrm %%DATADIR%%/icons/hicolor/16x16
 @dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
@@ -283,6 +293,8 @@ share/omf/file-roller/file-roller-vi.omf
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/hy/LC_MESSAGES
@@ -295,5 +307,7 @@ share/omf/file-roller/file-roller-vi.omf
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

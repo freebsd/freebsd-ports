@@ -70,6 +70,7 @@ share/gnome/help/gnome-doc-xslt/C/legal.xml
 share/gnome/help/gnome-doc-xslt/C/theme.xml
 share/gnome/help/gnome-doc-xslt/C/translating.xml
 share/locale/ar/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/as/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/be@latin/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/bg/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/bn/LC_MESSAGES/gnome-doc-utils.mo
@@ -234,3 +235,5 @@ share/xml2po/xhtml.pyc
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

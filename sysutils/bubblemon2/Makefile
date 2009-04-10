@@ -7,7 +7,7 @@
 
 PORTNAME=	bubblemon2
 PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	SAVANNAH/bubblemon
 DISTNAME=	bubblemon-${PORTVERSION}
@@ -20,8 +20,8 @@ LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop
 USE_GNOME=	gnomehack gnomepanel gnomeprefix gnometarget intlhack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`" \
+		LDFLAGS="-L${LOCALBASE}/lib `pkg-config --libs libgnomeui-2.0`"
 
 MAN1=		bubblemon-gnome2.1
 MANLANG=	"" hu sv

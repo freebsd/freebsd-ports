@@ -3,11 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/libsoup/Makefile,v 1.52 2008/11/25 16:22:57 marcus Exp $
+#   $MCom: ports/devel/libsoup/Makefile,v 1.58 2009/03/21 02:38:40 marcus Exp $
 #
 
 PORTNAME=	libsoup
-PORTVERSION=	2.24.3
+PORTVERSION=	2.26.0
+PORTREVISION=	1
 PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
@@ -20,9 +21,11 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
+    		proxy.0:${PORTSDIR}/net/libproxy \
+		sqlite3.8:${PORTSDIR}/databases/sqlite3
 
-USE_GNOME=	gnomehack glib20 libxml2 ltverhack referencehack
+USE_GNOME=	gnomehack glib20 libxml2 ltverhack referencehack gconf2
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
@@ -46,6 +49,10 @@ pre-everything::
 	@${ECHO_MSG} "libsoup has the following configurable option(s):"
 	@${ECHO_MSG} "	WITHOUT_SSL	Disable GnuTLS SSL support"
 	@${ECHO_MSG} ""
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
 

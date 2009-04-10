@@ -3,11 +3,11 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/games/gnome-games-extra-data/Makefile,v 1.24 2008/09/27 01:52:59 mezz Exp $
+#   $MCom: ports/games/gnome-games-extra-data/Makefile,v 1.26 2009/03/16 07:43:04 kwm Exp $
 #
 
 PORTNAME=	gnome-games-extra-data
-PORTVERSION=	2.24.0
+PORTVERSION=	2.26.0
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

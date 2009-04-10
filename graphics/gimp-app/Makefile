@@ -3,12 +3,12 @@
 # Whom:                 erich@FreeBSD.org
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/gimp-app/Makefile,v 1.30 2009/01/04 22:16:26 marcus Exp $
+#   $MCom: ports/graphics/gimp-app/Makefile,v 1.35 2009/04/09 03:24:07 mezz Exp $
 #
 
 PORTNAME=	gimp-app
 DISTVERSION=	2.6.6
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -27,7 +27,7 @@ COMMENT=	A GNU Image Manipulation Program
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 		wmf.2:${PORTSDIR}/graphics/libwmf \
-		poppler-glib.3:${PORTSDIR}/graphics/poppler-gtk \
+		poppler-glib.4:${PORTSDIR}/graphics/poppler-gtk \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \

@@ -8,6 +8,7 @@ share/icons/hicolor/32x32/apps/swfdec-gnome.png
 share/icons/hicolor/48x48/apps/swfdec-gnome.png
 share/icons/hicolor/scalable/apps/swfdec-gnome.svg
 share/locale/ar/LC_MESSAGES/swfdec-gnome.mo
+share/locale/as/LC_MESSAGES/swfdec-gnome.mo
 share/locale/be@latin/LC_MESSAGES/swfdec-gnome.mo
 share/locale/bg/LC_MESSAGES/swfdec-gnome.mo
 share/locale/bn_IN/LC_MESSAGES/swfdec-gnome.mo
@@ -29,7 +30,10 @@ share/locale/hi/LC_MESSAGES/swfdec-gnome.mo
 share/locale/hu/LC_MESSAGES/swfdec-gnome.mo
 share/locale/it/LC_MESSAGES/swfdec-gnome.mo
 share/locale/ja/LC_MESSAGES/swfdec-gnome.mo
+share/locale/kk/LC_MESSAGES/swfdec-gnome.mo
+share/locale/kn/LC_MESSAGES/swfdec-gnome.mo
 share/locale/ko/LC_MESSAGES/swfdec-gnome.mo
+share/locale/ku/LC_MESSAGES/swfdec-gnome.mo
 share/locale/lt/LC_MESSAGES/swfdec-gnome.mo
 share/locale/mk/LC_MESSAGES/swfdec-gnome.mo
 share/locale/ml/LC_MESSAGES/swfdec-gnome.mo
@@ -37,10 +41,13 @@ share/locale/mr/LC_MESSAGES/swfdec-gnome.mo
 share/locale/nb/LC_MESSAGES/swfdec-gnome.mo
 share/locale/nl/LC_MESSAGES/swfdec-gnome.mo
 share/locale/nn/LC_MESSAGES/swfdec-gnome.mo
+share/locale/or/LC_MESSAGES/swfdec-gnome.mo
 share/locale/pa/LC_MESSAGES/swfdec-gnome.mo
 share/locale/pl/LC_MESSAGES/swfdec-gnome.mo
+share/locale/ps/LC_MESSAGES/swfdec-gnome.mo
 share/locale/pt/LC_MESSAGES/swfdec-gnome.mo
 share/locale/pt_BR/LC_MESSAGES/swfdec-gnome.mo
+share/locale/ro/LC_MESSAGES/swfdec-gnome.mo
 share/locale/ru/LC_MESSAGES/swfdec-gnome.mo
 share/locale/sl/LC_MESSAGES/swfdec-gnome.mo
 share/locale/sq/LC_MESSAGES/swfdec-gnome.mo
@@ -48,6 +55,7 @@ share/locale/sr/LC_MESSAGES/swfdec-gnome.mo
 share/locale/sr@latin/LC_MESSAGES/swfdec-gnome.mo
 share/locale/sv/LC_MESSAGES/swfdec-gnome.mo
 share/locale/ta/LC_MESSAGES/swfdec-gnome.mo
+share/locale/te/LC_MESSAGES/swfdec-gnome.mo
 share/locale/th/LC_MESSAGES/swfdec-gnome.mo
 share/locale/tr/LC_MESSAGES/swfdec-gnome.mo
 share/locale/uk/LC_MESSAGES/swfdec-gnome.mo
@@ -62,13 +70,25 @@ share/locale/zh_TW/LC_MESSAGES/swfdec-gnome.mo
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/sr/LC_MESSAGES
 @dirrmtry share/locale/sr
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

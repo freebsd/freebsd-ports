@@ -1,10 +1,10 @@
---- gnome-session/Makefile.in.orig	2008-08-20 14:29:34.000000000 -0400
-+++ gnome-session/Makefile.in	2008-08-20 14:29:56.000000000 -0400
-@@ -332,6 +332,7 @@ test_client_dbus_LDADD = \
+--- gnome-session/Makefile.in.orig	2009-02-21 19:46:07.000000000 +0100
++++ gnome-session/Makefile.in	2009-02-21 19:46:57.000000000 +0100
+@@ -317,6 +317,7 @@
  
  gnome_session_LDADD = \
- 	-lSM -lICE				\
-+	-lexecinfo				\
  	libgsmutil.la 				\
++	-lexecinfo				\
  	$(top_builddir)/egg/libeggdesktopfile.la \
- 	$(GNOME_SESSION_LIBS)			\
+ 	$(SM_LIBS)				\
+ 	$(ICE_LIBS)				\

@@ -14,6 +14,8 @@ MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	A Gnome applet gui for OpenVPN
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="`pkg-config --cflags libgnomeui-2.0`" \
+		LIBS="`pkg-config --libs libgnomeui-2.0`"
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libdata/servers
 USE_GMAKE=	yes
 

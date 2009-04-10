@@ -7,7 +7,7 @@
 
 PORTNAME=	tsclient
 PORTVERSION=	0.150
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net gnome
 MASTER_SITES=	SF
 
@@ -25,8 +25,9 @@ USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBS="`pkg-config --libs libgnomeui-2.0`"
 
 MAN1=		tsclient.1
 PORTDOCS=	COPYING NEWS README

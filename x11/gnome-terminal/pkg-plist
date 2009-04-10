@@ -1,5 +1,4 @@
 bin/gnome-terminal
-libdata/bonobo/servers/gnome-terminal.server
 share/applications/gnome-terminal.desktop
 %%DATADIR%%/encodings-dialog.ui
 %%DATADIR%%/keybinding-editor.ui
@@ -7,6 +6,7 @@ share/applications/gnome-terminal.desktop
 %%DATADIR%%/profile-new-dialog.ui
 %%DATADIR%%/profile-preferences.ui
 %%DATADIR%%/skey-challenge.ui
+%%DATADIR%%/terminal.about
 %%DATADIR%%/terminal.xml
 share/gnome/help/gnome-terminal/C/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/C/figures/gnome-terminal-tabbed.png
@@ -22,6 +22,9 @@ share/gnome/help/gnome-terminal/ca/gnome-terminal.xml
 share/gnome/help/gnome-terminal/cs/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/cs/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/cs/gnome-terminal.xml
+share/gnome/help/gnome-terminal/da/figures/gnome-terminal-default.png
+share/gnome/help/gnome-terminal/da/figures/gnome-terminal-tabbed.png
+share/gnome/help/gnome-terminal/da/gnome-terminal.xml
 share/gnome/help/gnome-terminal/de/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/de/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/de/gnome-terminal.xml
@@ -71,16 +74,15 @@ share/gnome/help/gnome-terminal/zh_TW/legal.xml
 share/locale/am/LC_MESSAGES/gnome-terminal.mo
 share/locale/ar/LC_MESSAGES/gnome-terminal.mo
 share/locale/as/LC_MESSAGES/gnome-terminal.mo
+share/locale/ast/LC_MESSAGES/gnome-terminal.mo
 share/locale/az/LC_MESSAGES/gnome-terminal.mo
 share/locale/be/LC_MESSAGES/gnome-terminal.mo
 share/locale/be@latin/LC_MESSAGES/gnome-terminal.mo
 share/locale/bg/LC_MESSAGES/gnome-terminal.mo
-share/locale/bn/LC_MESSAGES/gnome-terminal.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-terminal.mo
 share/locale/bs/LC_MESSAGES/gnome-terminal.mo
 share/locale/ca/LC_MESSAGES/gnome-terminal.mo
 share/locale/cs/LC_MESSAGES/gnome-terminal.mo
-share/locale/cy/LC_MESSAGES/gnome-terminal.mo
 share/locale/da/LC_MESSAGES/gnome-terminal.mo
 share/locale/de/LC_MESSAGES/gnome-terminal.mo
 share/locale/dz/LC_MESSAGES/gnome-terminal.mo
@@ -102,7 +104,6 @@ share/locale/hi/LC_MESSAGES/gnome-terminal.mo
 share/locale/hr/LC_MESSAGES/gnome-terminal.mo
 share/locale/hu/LC_MESSAGES/gnome-terminal.mo
 share/locale/hy/LC_MESSAGES/gnome-terminal.mo
-share/locale/id/LC_MESSAGES/gnome-terminal.mo
 share/locale/it/LC_MESSAGES/gnome-terminal.mo
 share/locale/ja/LC_MESSAGES/gnome-terminal.mo
 share/locale/ka/LC_MESSAGES/gnome-terminal.mo
@@ -154,6 +155,7 @@ share/omf/gnome-terminal/gnome-terminal-C.omf
 share/omf/gnome-terminal/gnome-terminal-bg.omf
 share/omf/gnome-terminal/gnome-terminal-ca.omf
 share/omf/gnome-terminal/gnome-terminal-cs.omf
+share/omf/gnome-terminal/gnome-terminal-da.omf
 share/omf/gnome-terminal/gnome-terminal-de.omf
 share/omf/gnome-terminal/gnome-terminal-es.omf
 share/omf/gnome-terminal/gnome-terminal-fr.omf
@@ -197,6 +199,8 @@ share/omf/gnome-terminal/gnome-terminal-zh_TW.omf
 @dirrm share/gnome/help/gnome-terminal/es
 @dirrm share/gnome/help/gnome-terminal/de/figures
 @dirrm share/gnome/help/gnome-terminal/de
+@dirrm share/gnome/help/gnome-terminal/da/figures
+@dirrm share/gnome/help/gnome-terminal/da
 @dirrm share/gnome/help/gnome-terminal/cs/figures
 @dirrm share/gnome/help/gnome-terminal/cs
 @dirrm share/gnome/help/gnome-terminal/ca/figures
@@ -242,5 +246,7 @@ share/omf/gnome-terminal/gnome-terminal-zh_TW.omf
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

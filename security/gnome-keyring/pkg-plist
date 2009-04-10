@@ -1,5 +1,13 @@
 bin/gnome-keyring
 bin/gnome-keyring-daemon
+etc/xdg/autostart/gnome-keyring-daemon.desktop
+include/gcr/gcr-certificate-basics-widget.h
+include/gcr/gcr-certificate-details-widget.h
+include/gcr/gcr-certificate.h
+include/gcr/gcr-importer.h
+include/gcr/gcr-parser.h
+include/gcr/gcr-types.h
+include/gcr/gcr.h
 include/gnome-keyring-1/gnome-keyring-memory.h
 include/gnome-keyring-1/gnome-keyring-result.h
 include/gnome-keyring-1/gnome-keyring.h
@@ -7,9 +15,22 @@ include/gp11/gp11.h
 include/gp11/pkcs11.h
 include/gp11/pkcs11g.h
 include/gp11/pkcs11n.h
+lib/gnome-keyring/devel/gck-ssh-store-standalone.a
+lib/gnome-keyring/devel/gck-ssh-store-standalone.la
+lib/gnome-keyring/devel/gck-ssh-store-standalone.so
+lib/gnome-keyring/devel/gck-user-store-standalone.a
+lib/gnome-keyring/devel/gck-user-store-standalone.la
+lib/gnome-keyring/devel/gck-user-store-standalone.so
 lib/gnome-keyring/gnome-keyring-pkcs11.a
 lib/gnome-keyring/gnome-keyring-pkcs11.la
 lib/gnome-keyring/gnome-keyring-pkcs11.so
+lib/gnome-keyring/standalone/gck-roots-store-standalone.a
+lib/gnome-keyring/standalone/gck-roots-store-standalone.la
+lib/gnome-keyring/standalone/gck-roots-store-standalone.so
+lib/libgcr.a
+lib/libgcr.la
+lib/libgcr.so
+lib/libgcr.so.0
 lib/libgnome-keyring.a
 lib/libgnome-keyring.la
 lib/libgnome-keyring.so
@@ -21,6 +42,7 @@ lib/libgp11.so.0
 lib/pam_gnome_keyring.a
 lib/pam_gnome_keyring.la
 lib/pam_gnome_keyring.so
+libdata/pkgconfig/gcr-0.pc
 libdata/pkgconfig/gnome-keyring-1.pc
 libdata/pkgconfig/gp11-0.pc
 libexec/gnome-keyring-ask
@@ -63,7 +85,10 @@ share/doc/gp11/left.png
 share/doc/gp11/right.png
 share/doc/gp11/style.css
 share/doc/gp11/up.png
+share/gcr/ui/gcr-certificate-basics-widget.ui
+share/gcr/ui/gcr-import-dialog.ui
 share/locale/ar/LC_MESSAGES/gnome-keyring.mo
+share/locale/ast/LC_MESSAGES/gnome-keyring.mo
 share/locale/az/LC_MESSAGES/gnome-keyring.mo
 share/locale/be/LC_MESSAGES/gnome-keyring.mo
 share/locale/be@latin/LC_MESSAGES/gnome-keyring.mo
@@ -139,9 +164,14 @@ share/locale/zh_HK/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-keyring.mo
 @dirrm share/doc/gp11
 @dirrm %%DOCSDIR%%
+@dirrm lib/gnome-keyring/standalone
+@dirrm lib/gnome-keyring/devel
 @dirrm lib/gnome-keyring
 @dirrm include/gp11
 @dirrm include/gnome-keyring-1
+@dirrm include/gcr
+@dirrm share/gcr/ui
+@dirrm share/gcr
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -166,3 +196,5 @@ share/locale/zh_TW/LC_MESSAGES/gnome-keyring.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#    $MCom: ports-stable/www/mozilla/pkg-deinstall.in,v 1.13 2008/07/30 15:56:57 mezz Exp $
+#    $MCom: ports/www/mozilla/pkg-deinstall.in,v 1.25 2008/07/26 19:07:07 ahze Exp $
 #
 # Date created:			Mon Nov 29, 2003
 # Whom:				Thierry Thomas (<thierry@pompo.net>)

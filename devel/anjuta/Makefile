@@ -3,12 +3,11 @@
 # Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/anjuta/Makefile,v 1.32 2008/11/27 02:17:34 marcus Exp $
+#   $MCom: ports/devel/anjuta/Makefile,v 1.37 2009/03/31 13:33:41 kwm Exp $
 #
 
 PORTNAME=	anjuta
-PORTVERSION=	2.24.2
-PORTREVISION=	0
+PORTVERSION=	2.26.0.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,17 +19,13 @@ BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
 		bash:${PORTSDIR}/shells/bash \
 		neato:${PORTSDIR}/graphics/graphviz
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
-		gbf-1.2:${PORTSDIR}/devel/gnome-build \
-		gladeui-1.7:${PORTSDIR}/devel/glade3 \
-		neon.28:${PORTSDIR}/www/neon28 \
-		devhelp-1.0:${PORTSDIR}/devel/devhelp
+		gladeui-1.9:${PORTSDIR}/devel/glade3 \
+		neon.28:${PORTSDIR}/www/neon28
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		autogen:${PORTSDIR}/devel/autogen \
 		neato:${PORTSDIR}/graphics/graphviz \
 		libtool:${PORTSDIR}/devel/libtool15 \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
-
-BROKEN=		does not compile
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autotools:run
@@ -38,24 +33,26 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui vte gtksourceview2
+USE_GNOME=	gnomeprefix gnomehack libgnomeui vte gtksourceview2 libgda4
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 GCONF_SCHEMAS=	anjuta-build-basic-autotools-plugin.schemas \
-		anjuta-cvs-plugin.schemas anjuta-document-manager.schemas \
+		anjuta-cvs-plugin.schemas \
+		anjuta-document-manager.schemas \
+		anjuta-editor-scintilla.schemas \
+		anjuta-editor-sourceview.schemas \
 		anjuta-language-cpp-java.schemas \
 		anjuta-message-manager-plugin.schemas \
-		anjuta-editor-sourceview.schemas \
-		anjuta-symbol-browser-plugin.schemas \
-		anjuta-terminal-plugin.schemas anjuta.schemas
+		anjuta-symbol-db.schemas \
+		anjuta-terminal-plugin.schemas \
+		anjuta.schemas
 
 MAN1=		anjuta.1 anjuta_launcher.1
 
 OPTIONS=	SVN "Build subversion plugin" off \
-		SYMBOL "Build experimental symbol-db plugin" off \
-		SCINTILLA "Build scintilla plugin" off
+		DEVHELP "Build devhelp plugin" on
 
 .include <bsd.port.pre.mk>
 
@@ -75,30 +72,15 @@ CONFIGURE_ARGS+=--disable-plugin-subversion
 PLIST_SUB+=	SVN="@comment "
 .endif
 
-.if defined(WITH_SCINTILLA)
-USE_GNOME+=	libgnomeprintui
-CONFIGURE_ARGS+=--enable-plugin-scintilla
-GCONF_SCHEMAS+=	anjuta-editor-scintilla.schemas
-PLIST_SUB+=	SCINTILLA=""
+.if defined(WITH_DEVHELP)
+LIB_DEPENDS+=	devhelp-1.0:${PORTSDIR}/devel/devhelp
+PLIST_SUB+=	DEVHELP=""
 .else
-#CONFIGURE_ARGS+=--disable-plugin-scintilla
-PLIST_SUB+=	SCINTILLA="@comment "
-.endif
-
-.if defined(WITH_SYMBOL)
-USE_GNOME+=	libgda4
-CONFIGURE_ARGS+=--enable-plugin-symbol-db
-GCONF_SCHEMAS+=	anjuta-symbol-db.schemas
-PLIST_SUB+=	SYMBOL=""
-.else
-CONFIGURE_ARGS+=--disable-plugin-symbol-db
-PLIST_SUB+=	SYMBOL="@comment "
+CONFIGURE_ARGS+=--disable-plugin-devhelp
+PLIST_SUB+=	DEVHELP="@comment "
 .endif
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash| ; \
-	    	s|/usr/local|${PREFIX}|' \
-	    	${WRKSRC}/global-tags/create_global_tags.sh.in
 	@${REINPLACE_CMD} -e 's|PKG_PATH|PKG_CONFIG_PATH|g' \
 	    	${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|"make|"gmake|g' \

@@ -23,6 +23,9 @@ lib/gio/modules/libgioremote-volume-monitor.la
 lib/gio/modules/libgioremote-volume-monitor.so
 lib/gio/modules/libgvfsdbus.la
 lib/gio/modules/libgvfsdbus.so
+lib/libgvfscommon-dnssd.la
+lib/libgvfscommon-dnssd.so
+lib/libgvfscommon-dnssd.so.0
 lib/libgvfscommon.la
 lib/libgvfscommon.so
 lib/libgvfscommon.so.0
@@ -53,6 +56,7 @@ share/gvfs/mounts/burn.mount
 %%CDDA%%share/gvfs/mounts/cdda.mount
 share/gvfs/mounts/computer.mount
 share/gvfs/mounts/dav.mount
+share/gvfs/mounts/dav+sd.mount
 share/gvfs/mounts/dns-sd.mount
 share/gvfs/mounts/ftp.mount
 %%GPHOTO2%%share/gvfs/mounts/gphoto2.mount
@@ -66,6 +70,7 @@ share/gvfs/mounts/trash.mount
 %%GPHOTO2%%share/gvfs/remote-volume-monitors/gphoto2.monitor
 share/gvfs/remote-volume-monitors/hal.monitor
 share/locale/ar/LC_MESSAGES/gvfs.mo
+share/locale/as/LC_MESSAGES/gvfs.mo
 share/locale/be@latin/LC_MESSAGES/gvfs.mo
 share/locale/bg/LC_MESSAGES/gvfs.mo
 share/locale/bn_IN/LC_MESSAGES/gvfs.mo
@@ -92,16 +97,19 @@ share/locale/kn/LC_MESSAGES/gvfs.mo
 share/locale/ko/LC_MESSAGES/gvfs.mo
 share/locale/ku/LC_MESSAGES/gvfs.mo
 share/locale/lt/LC_MESSAGES/gvfs.mo
+share/locale/lv/LC_MESSAGES/gvfs.mo
 share/locale/mk/LC_MESSAGES/gvfs.mo
 share/locale/ml/LC_MESSAGES/gvfs.mo
 share/locale/mr/LC_MESSAGES/gvfs.mo
 share/locale/nb/LC_MESSAGES/gvfs.mo
 share/locale/nl/LC_MESSAGES/gvfs.mo
 share/locale/nn/LC_MESSAGES/gvfs.mo
+share/locale/or/LC_MESSAGES/gvfs.mo
 share/locale/pa/LC_MESSAGES/gvfs.mo
 share/locale/pl/LC_MESSAGES/gvfs.mo
 share/locale/pt/LC_MESSAGES/gvfs.mo
 share/locale/pt_BR/LC_MESSAGES/gvfs.mo
+share/locale/ro/LC_MESSAGES/gvfs.mo
 share/locale/ru/LC_MESSAGES/gvfs.mo
 share/locale/sk/LC_MESSAGES/gvfs.mo
 share/locale/sl/LC_MESSAGES/gvfs.mo
@@ -138,3 +146,5 @@ share/locale/zh_TW/LC_MESSAGES/gvfs.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
