@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Class/Declare.pm
+%%SITE_PERL%%/Class/Declare/Dump.pm
+%%SITE_PERL%%/Class/Declare/Hash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Declare/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Declare
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrm %%SITE_PERL%%/Class/Declare
+@dirrmtry %%SITE_PERL%%/Class
