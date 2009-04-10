@@ -56,15 +56,15 @@ WEB_AUTH=			nvu
 # Non-version specific components
 _LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo curl dri esound expat fontconfig \
 					freealut gdkpixbuf gtk gtk2 hicontheme imlib jpeg libaudiofile \
-					libg2c libglade libglade2 libglu libmng libogg libsigcpp20 libssh2 libtheora \
-					libvorbis libxml libxml2 mikmod openal openmotif pango png png10 qt33 \
+					libg2c libglade libglade2 libglu libmng libogg libsigcpp20 libtheora \
+					libvorbis libxml libxml2 mikmod openal openmotif openssl pango png png10 qt33 \
 					scimgtk scimlibs sdl12 sdlimage sdlmixer tiff xorglibs ucl ungif upx webauth
 
 # 2.4.2 components
 _LINUX_APPS_ALL+=
 
 # 2.6.16 components
-_LINUX_26_APPS=		libidn nspr nss openssl sqlite3 tcl84 tk84
+_LINUX_26_APPS=		libidn libssh2 nspr nss sqlite3 tcl84 tk84
 
 _LINUX_APPS_ALL+=	${_LINUX_26_APPS}
 
