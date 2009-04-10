@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.zenphoto.org/files/
 
@@ -27,7 +27,7 @@ SUB_LIST=	PORTNAME=${PORTNAME} \
 do-install:
 	${MKDIR} ${WWWDIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR} \
-		"! -name README.html ! -name License.txt")
+		"! -name README.html ! -name License.txt ! -name Zenphoto.package")
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	${CHMOD} 644 ${WWWDIR}/zp-core/images/*
 post-install:
