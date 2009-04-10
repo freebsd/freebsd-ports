@@ -1,5 +1,14 @@
 --- SConstruct.orig	2007-12-21 19:45:15.000000000 +0600
 +++ SConstruct	2008-03-27 04:41:37.000000000 +0600
+@@ -1,7 +1,7 @@
+ import os, sys
+ 
+ #builder for static libraries
+-env = Environment()
++env = Environment(ENV = os.environ)
+ 
+ picLibBuilder = Builder(
+ 		action = Action('$ARCOM'),
 @@ -53,6 +53,8 @@
  	env['CXXFLAGS'] += SCons.Util.CLVar(os.environ['CXXFLAGS'])
  if os.environ.has_key('LDFLAGS'):
