@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.18
+PORTVERSION=	2.19.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -69,9 +69,9 @@ PLIST_FILES=	bin/${OURTARGET}-addr2line \
 		bin/${OURTARGET}-strings \
 		bin/${OURTARGET}-strip
 
-.if defined(WITH_RTEMS_PATCHES)
-PATCHFILES+=	${PORTNAME}-${PORTVERSION}-rtems4.8-20071104.diff
-.endif
+#.if defined(WITH_RTEMS_PATCHES)
+#PATCHFILES+=	${PORTNAME}-${PORTVERSION}-rtems4.8-20071104.diff
+#.endif
 
 .if !defined(TGTARCH) || !defined(TGTABI)
 PKGNAMEPREFIX=	cross-
