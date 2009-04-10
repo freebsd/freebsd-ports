@@ -127,14 +127,17 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alignbox.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alignedaxis.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/cube.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/earthmoon.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/embeddedmovie.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/embeddedu3d.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/externalmovie.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/heatequation.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/inlinemovie.tex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/inlinemovie3.tex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/pdfmovie.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/slidemovies.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/sphere.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/torusanimation.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/wavepacket.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animations/wheel.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/annotation.asy
@@ -272,6 +275,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/penimage.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/phase.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/piicon.eps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pipeintersection.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pixel.pdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/planeproject.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/planes.asy
