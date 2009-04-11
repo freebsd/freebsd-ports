@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	cduce
-PORTVERSION=	0.5.2.1
-PORTREVISION=	1
+PORTVERSION=	0.5.3
+PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cduce.org/download/ \
 		ftp://ftp.stack.nl/pub/users/johans/cduce/
@@ -33,7 +33,6 @@ INSTALL_TARGET=	install_bin install_lib
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-ocamlopt --with-cgi --without-netclient --without-pxp_wlex --docdir=${DOCSDIR}
 SITELIBDIR=	${LOCALBASE}/${OCAML_SITELIBDIR}
-WRKSRC=		${WRKDIR}/${DISTNAME:R}
 
 MAN1=		cduce.1 cduce_mktop.1 dtd2cduce.1
 

@@ -1,6 +1,6 @@
---- configure.orig	2008-01-04 16:26:38.000000000 +0300
-+++ configure	2009-04-06 23:35:00.000000000 +0400
-@@ -79,6 +79,8 @@
+--- ./configure.orig	2008-11-07 19:34:16.000000000 +0900
++++ ./configure	2009-01-21 01:41:11.000000000 +0900
+@@ -85,6 +85,8 @@
          withcurses=no;;
      -no-shared-libs)
          withsharedlibs=no;;
@@ -9,15 +9,15 @@
      -x11include*|--x11include*)
          x11_include_dir=$2; shift;;
      -x11lib*|--x11lib*)
-@@ -686,6 +688,7 @@
-   i386,*,gnu) profiling='prof';;
+@@ -739,6 +741,7 @@
    i386,*,bsd_elf) profiling='prof';;
+   amd64,*,macosx) profiling='prof';;
    i386,*,macosx) profiling='prof';;
 +  *,*,freebsd) profiling='prof';;
    sparc,*,solaris)
      profiling='prof'
      case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
-@@ -1132,124 +1135,24 @@
+@@ -1183,127 +1186,24 @@
  x11_include="not found"
  x11_link="not found"
  
@@ -129,8 +129,11 @@
 -    if test $dir = /usr/lib; then
 -      x11_link="-lX11"
 -    else
--      x11_link="-L$dir -lX11"
 -      x11_libs="-L$dir"
+-      case "$host" in
+-        *-*-*bsd*) x11_link="-R$dir -L$dir -lX11";;
+-        *) x11_link="-L$dir -lX11";;
+-      esac
 -    fi
 -    break
 -  fi

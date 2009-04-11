@@ -1,10 +1,12 @@
---- mtasc/main.ml.orig	2008-09-06 03:09:02.176005686 +0200
-+++ mtasc/main.ml	2008-09-06 03:11:37.642045225 +0200
-@@ -113,7 +113,7 @@
+--- mtasc/main.ml.orig	2008-08-31 15:14:17.000000000 +0400
++++ mtasc/main.ml	2009-04-11 12:38:50.000000000 +0400
+@@ -112,8 +112,8 @@
+ 	if do_exit then exit 1
  ;;
  try	
- 	let usage = "Motion-Twin ActionScript2 Compiler 1.14 - (c)2004-2008 Motion-Twin\n Usage : mtasc.exe [options] <files...>\n Options :" in
+-	let usage = "Motion-Twin ActionScript2 Compiler 1.14 - (c)2004-2008 Motion-Twin\n Usage : mtasc.exe [options] <files...>\n Options :" in
 -	let base_path = normalize_path (try Extc.executable_path() with _ -> ".") in
++	let usage = "Motion-Twin ActionScript2 Compiler 1.14 - (c)2004-2008 Motion-Twin\n Usage : mtasc [options] <files...>\n Options :" in
 +	let base_path = normalize_path (try Extc.executable_path() ^ "/.." with _ -> "..") in
  	let files = ref [] in
  	let time = Sys.time() in

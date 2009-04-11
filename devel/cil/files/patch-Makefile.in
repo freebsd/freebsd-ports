@@ -1,6 +1,6 @@
---- cil/Makefile.in.orig	2007-02-02 15:22:17.000000000 +0300
-+++ cil/Makefile.in	2009-04-11 00:18:21.000000000 +0400
-@@ -210,7 +210,7 @@
+--- Makefile.in.orig	2009-04-10 02:07:19.000000000 +0400
++++ Makefile.in	2009-04-10 02:07:54.000000000 +0400
+@@ -213,7 +213,7 @@
  # build two libraries
  .PHONY: cillib libcil
  ifeq ($(NATIVECAML),1)
@@ -9,16 +9,7 @@
  else
  cillib: $(OBJDIR)/cil.$(CMXA) 
  endif
-@@ -236,7 +236,7 @@
- endif
- # Now the extra features, with the first letter capitalized
- 	echo -n " (* EXTRAFEATURES: *)" >> $@  
--	/bin/echo -e \
-+	/bin/echo \
-           $(foreach f,@EXTRAFEATURES@, \
-              "\n   "`echo $f | cut -c 1 | tr "[a-z]" "[A-Z]"``echo $f | cut -c 2-`".feature;") >> $@
- 	echo "]"   >>$@ 
-@@ -267,11 +267,11 @@
+@@ -271,11 +271,11 @@
  # be called from C code; this is like the target above, except
  # it is callable from C instead of from Ocaml
  ifeq ($(NATIVECAML),1)

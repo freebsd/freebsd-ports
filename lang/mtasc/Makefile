@@ -7,6 +7,7 @@
 
 PORTNAME=	mtasc
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	lang www
 MASTER_SITES=	http://saper.info/distfiles/ LOCAL/chinsan
 

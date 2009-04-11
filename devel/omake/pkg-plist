@@ -14,6 +14,7 @@ lib/omake/build/svn_realclean.om
 lib/omake/configure/Configure.om
 lib/omake/configure/X.om
 lib/omake/configure/fam.om
+lib/omake/configure/fs_case_sensitive.om
 lib/omake/configure/ncurses.om
 lib/omake/configure/readline.om
 lib/omake/configure/snprintf.om
@@ -46,6 +47,7 @@ lib/omake/parse/C/Parse.om
 %%PORTDOCS%%%%DOCSDIR%%/omake-fun-index.html
 %%PORTDOCS%%%%DOCSDIR%%/omake-grammar.html
 %%PORTDOCS%%%%DOCSDIR%%/omake-language-examples.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-language-naming.html
 %%PORTDOCS%%%%DOCSDIR%%/omake-language.html
 %%PORTDOCS%%%%DOCSDIR%%/omake-obj-index.html
 %%PORTDOCS%%%%DOCSDIR%%/omake-option-index.html
