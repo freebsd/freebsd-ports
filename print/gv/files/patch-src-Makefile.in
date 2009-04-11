@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	2008-07-07 23:01:11.532113493 -0400
-+++ src/Makefile.in	2008-07-07 23:02:16.119805505 -0400
-@@ -256,7 +256,7 @@
- top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
- dist_pkglib_DATA = gv_system.ad gv_user.ad gv_class.ad gv_spartan.dat gv_user_res.dat gv_copyright.dat gv_widgetless.dat
--appdefaultsdir = $(pkglibdir)
+--- src/Makefile.in.orig	2009-03-21 20:18:50.000000000 +0900
++++ src/Makefile.in	2009-03-29 17:59:16.000000000 +0900
+@@ -263,7 +263,7 @@
+ bin_SCRIPTS = gv-update-userconfig
+ dist_pkgdata_DATA = gv_spartan.dat gv_user_res.dat gv_copyright.dat gv_widgetless.dat
+ pkgdata_DATA = gv_system.ad gv_user.ad gv_class.ad
+-appdefaultsdir = $(pkgdatadir)
 +appdefaultsdir = $(libdir)/app-defaults
- appdefaults_DATA = GV
+ appdefaults_DATA = ../GV
  EXTRA_DIST = ad2c gv_font_res.dat gv_layout_res.dat gv_misc_res.dat Aaa_bison.yacc \
             gv_current.xbm gv_doc.xbm gv_empty.xbm gv_even.xbm gv_icon.xbm gv_odd.xbm \

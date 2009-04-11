@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gv
-PORTVERSION=	3.6.5
+PORTVERSION=	3.6.7
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,24 +24,18 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/X11 \
 			--enable-setenv-code
 
-MAN1=		gv.1
+MAN1=		gv.1 gv-update-userconfig.1
 INFO=		gv
 PLIST_FILES=	bin/gv \
-		lib/X11/gv/gv_class.ad \
-		lib/X11/gv/gv_copyright.dat \
-		lib/X11/gv/gv_spartan.dat \
-		lib/X11/gv/gv_system.ad \
-		lib/X11/gv/gv_user.ad \
-		lib/X11/gv/gv_user_res.dat \
-		lib/X11/gv/gv_widgetless.dat \
+		bin/gv-update-userconfig \
+		${DATADIR_REL}/gv_class.ad \
+		${DATADIR_REL}/gv_copyright.dat \
+		${DATADIR_REL}/gv_spartan.dat \
+		${DATADIR_REL}/gv_system.ad \
+		${DATADIR_REL}/gv_user.ad \
+		${DATADIR_REL}/gv_user_res.dat \
+		${DATADIR_REL}/gv_widgetless.dat \
 		lib/X11/app-defaults/GV
-PLIST_DIRS=	lib/X11/gv
-
-post-install:
-		@${ECHO_MSG} ""
-		@${ECHO_MSG} " Don't forget to remove ${HOME}/.gv if it was created "
-		@${ECHO_MSG} " when a different version of gv was installed: otherwise "
-		@${ECHO_MSG} " gv may fail to run. "
-		@${ECHO_MSG} ""
+PLIST_DIRS=	${DATADIR_REL}
 
 .include <bsd.port.mk>
