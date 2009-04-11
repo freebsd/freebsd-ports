@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/HatenaStar/.packlist
+%%SITE_PERL%%/WWW/HatenaStar.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/HatenaStar
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW
