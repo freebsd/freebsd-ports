@@ -1,5 +1,7 @@
 %%DATADIR%%/aniemoticons/aniemoticons.tcl
 %%DATADIR%%/aniemoticons/anigif.tcl
+%%DATADIR%%/aniemoticons/msgs/de.msg
+%%DATADIR%%/aniemoticons/msgs/ru.msg
 %%DATADIR%%/attline/AUTHORS
 %%DATADIR%%/attline/INSTALL
 %%DATADIR%%/attline/README
@@ -123,6 +125,7 @@
 %%DATADIR%%/ejabberd/msgs/uk.msg
 %%DATADIR%%/floatingcontact/README
 %%DATADIR%%/floatingcontact/floatingcontact.tcl
+%%DATADIR%%/floatingcontact/msgs/de.msg
 %%DATADIR%%/floatingcontact/msgs/ru.msg
 %%DATADIR%%/floatinglog/AUTHORS
 %%DATADIR%%/floatinglog/ChangeLog
@@ -457,6 +460,124 @@
 %%DATADIR%%/openurl/openurl.tcl
 %%DATADIR%%/osd/ChangeLog
 %%DATADIR%%/osd/osd.tcl
+%%DATADIR%%/poker/pixmaps/classic/00.gif
+%%DATADIR%%/poker/pixmaps/classic/01.gif
+%%DATADIR%%/poker/pixmaps/classic/02.gif
+%%DATADIR%%/poker/pixmaps/classic/03.gif
+%%DATADIR%%/poker/pixmaps/classic/04.gif
+%%DATADIR%%/poker/pixmaps/classic/05.gif
+%%DATADIR%%/poker/pixmaps/classic/06.gif
+%%DATADIR%%/poker/pixmaps/classic/07.gif
+%%DATADIR%%/poker/pixmaps/classic/08.gif
+%%DATADIR%%/poker/pixmaps/classic/09.gif
+%%DATADIR%%/poker/pixmaps/classic/10.gif
+%%DATADIR%%/poker/pixmaps/classic/11.gif
+%%DATADIR%%/poker/pixmaps/classic/12.gif
+%%DATADIR%%/poker/pixmaps/classic/13.gif
+%%DATADIR%%/poker/pixmaps/classic/14.gif
+%%DATADIR%%/poker/pixmaps/classic/15.gif
+%%DATADIR%%/poker/pixmaps/classic/16.gif
+%%DATADIR%%/poker/pixmaps/classic/17.gif
+%%DATADIR%%/poker/pixmaps/classic/18.gif
+%%DATADIR%%/poker/pixmaps/classic/19.gif
+%%DATADIR%%/poker/pixmaps/classic/20.gif
+%%DATADIR%%/poker/pixmaps/classic/21.gif
+%%DATADIR%%/poker/pixmaps/classic/22.gif
+%%DATADIR%%/poker/pixmaps/classic/23.gif
+%%DATADIR%%/poker/pixmaps/classic/24.gif
+%%DATADIR%%/poker/pixmaps/classic/25.gif
+%%DATADIR%%/poker/pixmaps/classic/26.gif
+%%DATADIR%%/poker/pixmaps/classic/27.gif
+%%DATADIR%%/poker/pixmaps/classic/28.gif
+%%DATADIR%%/poker/pixmaps/classic/29.gif
+%%DATADIR%%/poker/pixmaps/classic/30.gif
+%%DATADIR%%/poker/pixmaps/classic/31.gif
+%%DATADIR%%/poker/pixmaps/classic/32.gif
+%%DATADIR%%/poker/pixmaps/classic/33.gif
+%%DATADIR%%/poker/pixmaps/classic/34.gif
+%%DATADIR%%/poker/pixmaps/classic/35.gif
+%%DATADIR%%/poker/pixmaps/classic/36.gif
+%%DATADIR%%/poker/pixmaps/classic/37.gif
+%%DATADIR%%/poker/pixmaps/classic/38.gif
+%%DATADIR%%/poker/pixmaps/classic/39.gif
+%%DATADIR%%/poker/pixmaps/classic/40.gif
+%%DATADIR%%/poker/pixmaps/classic/41.gif
+%%DATADIR%%/poker/pixmaps/classic/42.gif
+%%DATADIR%%/poker/pixmaps/classic/43.gif
+%%DATADIR%%/poker/pixmaps/classic/44.gif
+%%DATADIR%%/poker/pixmaps/classic/45.gif
+%%DATADIR%%/poker/pixmaps/classic/46.gif
+%%DATADIR%%/poker/pixmaps/classic/47.gif
+%%DATADIR%%/poker/pixmaps/classic/48.gif
+%%DATADIR%%/poker/pixmaps/classic/49.gif
+%%DATADIR%%/poker/pixmaps/classic/50.gif
+%%DATADIR%%/poker/pixmaps/classic/51.gif
+%%DATADIR%%/poker/pixmaps/classic/52.gif
+%%DATADIR%%/poker/pixmaps/classic/big.gif
+%%DATADIR%%/poker/pixmaps/classic/button.gif
+%%DATADIR%%/poker/pixmaps/classic/icondef.xml
+%%DATADIR%%/poker/pixmaps/classic/small.gif
+%%DATADIR%%/poker/pixmaps/doods/101.gif
+%%DATADIR%%/poker/pixmaps/doods/102.gif
+%%DATADIR%%/poker/pixmaps/doods/103.gif
+%%DATADIR%%/poker/pixmaps/doods/104.gif
+%%DATADIR%%/poker/pixmaps/doods/105.gif
+%%DATADIR%%/poker/pixmaps/doods/106.gif
+%%DATADIR%%/poker/pixmaps/doods/107.gif
+%%DATADIR%%/poker/pixmaps/doods/108.gif
+%%DATADIR%%/poker/pixmaps/doods/109.gif
+%%DATADIR%%/poker/pixmaps/doods/110.gif
+%%DATADIR%%/poker/pixmaps/doods/111.gif
+%%DATADIR%%/poker/pixmaps/doods/112.gif
+%%DATADIR%%/poker/pixmaps/doods/113.gif
+%%DATADIR%%/poker/pixmaps/doods/114.gif
+%%DATADIR%%/poker/pixmaps/doods/115.gif
+%%DATADIR%%/poker/pixmaps/doods/116.gif
+%%DATADIR%%/poker/pixmaps/doods/117.gif
+%%DATADIR%%/poker/pixmaps/doods/118.gif
+%%DATADIR%%/poker/pixmaps/doods/119.gif
+%%DATADIR%%/poker/pixmaps/doods/120.gif
+%%DATADIR%%/poker/pixmaps/doods/121.gif
+%%DATADIR%%/poker/pixmaps/doods/122.gif
+%%DATADIR%%/poker/pixmaps/doods/123.gif
+%%DATADIR%%/poker/pixmaps/doods/124.gif
+%%DATADIR%%/poker/pixmaps/doods/125.gif
+%%DATADIR%%/poker/pixmaps/doods/126.gif
+%%DATADIR%%/poker/pixmaps/doods/127.gif
+%%DATADIR%%/poker/pixmaps/doods/128.gif
+%%DATADIR%%/poker/pixmaps/doods/129.gif
+%%DATADIR%%/poker/pixmaps/doods/130.gif
+%%DATADIR%%/poker/pixmaps/doods/131.gif
+%%DATADIR%%/poker/pixmaps/doods/132.gif
+%%DATADIR%%/poker/pixmaps/doods/133.gif
+%%DATADIR%%/poker/pixmaps/doods/134.gif
+%%DATADIR%%/poker/pixmaps/doods/135.gif
+%%DATADIR%%/poker/pixmaps/doods/136.gif
+%%DATADIR%%/poker/pixmaps/doods/137.gif
+%%DATADIR%%/poker/pixmaps/doods/138.gif
+%%DATADIR%%/poker/pixmaps/doods/139.gif
+%%DATADIR%%/poker/pixmaps/doods/140.gif
+%%DATADIR%%/poker/pixmaps/doods/141.gif
+%%DATADIR%%/poker/pixmaps/doods/142.gif
+%%DATADIR%%/poker/pixmaps/doods/143.gif
+%%DATADIR%%/poker/pixmaps/doods/144.gif
+%%DATADIR%%/poker/pixmaps/doods/145.gif
+%%DATADIR%%/poker/pixmaps/doods/146.gif
+%%DATADIR%%/poker/pixmaps/doods/147.gif
+%%DATADIR%%/poker/pixmaps/doods/148.gif
+%%DATADIR%%/poker/pixmaps/doods/149.gif
+%%DATADIR%%/poker/pixmaps/doods/150.gif
+%%DATADIR%%/poker/pixmaps/doods/151.gif
+%%DATADIR%%/poker/pixmaps/doods/152.gif
+%%DATADIR%%/poker/pixmaps/doods/153.gif
+%%DATADIR%%/poker/pixmaps/doods/154.gif
+%%DATADIR%%/poker/pixmaps/doods/155.gif
+%%DATADIR%%/poker/pixmaps/doods/big.gif
+%%DATADIR%%/poker/pixmaps/doods/button.gif
+%%DATADIR%%/poker/pixmaps/doods/icondef.xml
+%%DATADIR%%/poker/pixmaps/doods/small.gif
+%%DATADIR%%/poker/poker.tcl
+%%DATADIR%%/poker/proto
 %%DATADIR%%/presencecmd/AUTHORS
 %%DATADIR%%/presencecmd/INSTALL
 %%DATADIR%%/presencecmd/README
@@ -541,6 +662,8 @@
 %%DATADIR%%/singularity/singularity.tcl
 %%DATADIR%%/socials/ChangeLog
 %%DATADIR%%/socials/README
+%%DATADIR%%/socials/msgs/de.msg
+%%DATADIR%%/socials/msgs/ru.msg
 %%DATADIR%%/socials/socials.en
 %%DATADIR%%/socials/socials.ru
 %%DATADIR%%/socials/socials.tcl
@@ -607,6 +730,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/aniemoticons/msgs
 @dirrm %%DATADIR%%/aniemoticons
 @dirrm %%DATADIR%%/attline/msgs
 @dirrm %%DATADIR%%/attline
@@ -683,6 +807,11 @@
 @dirrm %%DATADIR%%/openurl/msgs
 @dirrm %%DATADIR%%/openurl
 @dirrm %%DATADIR%%/osd
+@dirrm %%DATADIR%%/poker/pixmaps/classic
+@dirrm %%DATADIR%%/poker/pixmaps/doods
+@dirrm %%DATADIR%%/poker/pixmaps
+@dirrm %%DATADIR%%/poker/msgs
+@dirrm %%DATADIR%%/poker
 @dirrm %%DATADIR%%/presencecmd/msgs
 @dirrm %%DATADIR%%/presencecmd
 @dirrm %%DATADIR%%/quiz
@@ -703,6 +832,7 @@
 @dirrm %%DATADIR%%/reversi
 @dirrm %%DATADIR%%/singularity/msgs
 @dirrm %%DATADIR%%/singularity
+@dirrm %%DATADIR%%/socials/msgs
 @dirrm %%DATADIR%%/socials
 @dirrm %%DATADIR%%/spy/msgs
 @dirrm %%DATADIR%%/spy

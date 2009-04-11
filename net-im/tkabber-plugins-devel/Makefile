@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkabber-plugins
-PORTVERSION=	20081023
+PORTVERSION=	20090401
 CATEGORIES=	net-im
 MASTER_SITES=	http://wizard.volgograd.ru/distfiles/
 
@@ -25,9 +25,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 SUBDIRS=	aniemoticons attline bc browser checkers chess ctcomp \
 		custom-urls cyrillize debug ejabberd floatingcontact \
 		floatinglog georoster gmail iconsets jidlink latex mute \
-		openurl osd presencecmd quiz quotelastmsg receipts renju \
-		reversi singularity socials spy stripes tclchat tkabber-khim \
-		traffic unixkeys whiteboard
+		openurl osd poker presencecmd quiz quotelastmsg receipts \
+		renju reversi singularity socials spy stripes tclchat \
+		tkabber-khim traffic unixkeys whiteboard
 
 do-install:
 	${MKDIR} ${DATADIR}
