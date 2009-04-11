@@ -16,7 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	RTx::Statistics - Produces statistical information based on RT3 data
 
 BUILD_DEPENDS=	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
-		${RT_PATH}/lib/RT.pm:${PORTSDIR}/www/rt34
+		${RT_PATH}/lib/RT.pm:${PORTSDIR}/www/rt38
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.3+
