@@ -6,98 +6,46 @@
 #
 
 PORTNAME=	q
-PORTVERSION=	6.2
-PORTREVISION=	10
+PORTVERSION=	7.11
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	q-lang
+MASTER_SITES=	SF/q-lang
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Q -- equational programming language
 
-BUILD_DEPENDS=	${LOCALBASE}/dx/lib_freebsd/libDXL.a:${PORTSDIR}/graphics/opendx
 LIB_DEPENDS=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
-		gii.1:${PORTSDIR}/devel/libgii \
-		ggi.2:${PORTSDIR}/graphics/libggi \
 		gmp.7:${PORTSDIR}/math/libgmp4 \
-		curl:${PORTSDIR}/ftp/curl
+		iodbc.3:${PORTSDIR}/databases/libiodbc \
+    		xml2.5:${PORTSDIR}/textproc/libxml2 \
+		xslt.2:${PORTSDIR}/textproc/libxslt \
+		ggi.2:${PORTSDIR}/graphics/libggi
 
-BROKEN=		bad plist
-DEPRECATED=		old version, broken plist
-EXPIRATION_DATE=	2008-12-24
-
-USE_BISON=	build
-USE_GNOME=	gnometarget libxml2 libxslt
-CFLAGS+=	-I${LOCALBASE}/include
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/dx/lib_freebsd ${PTHREAD_LIBS}" \
-		CPPFLAGS="${PTHREAD_CFLAGS}" \
-		MAKEINFO="makeinfo --no-split"
-# we need to add -lDX, because there is undefined reference to _dxfImportBin_FP
-# in libDXL.so (_dxfImportBin_FP is defined in libDX.so)
-CONFIGURE_ARGS=	--with-dxl-includes=-I${LOCALBASE}/dx/include \
-		"--with-dxl=-lDXL -lDX"
+USE_ICONV=	yes
+USE_TK=		84
 USE_LDCONFIG=	yes
 
-# The tk module is built by default, but you can disable this by defining
-# the following variable.
-.if defined(WITHOUT_TK)
-CONFIGURE_ARGS+=	--without-tk
-.else
-LIB_DEPENDS+=	tcl84:${PORTSDIR}/lang/tcl84 \
-		tk84:${PORTSDIR}/x11-toolkits/tk84
-CFLAGS+=	-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4
-CONFIGURE_ARGS+=	--with-tk="-ltcl84 -ltk84"
-.endif
-
-# POSIX threads support is enabled by default, but you can disable this by
-# defining the following variable.
-.if defined(WITHOUT_PTHREAD)
-CONFIGURE_ARGS+=	--without-pthread
-.else
-CONFIGURE_ARGS+=	--with-pthread="${PTHREAD_LIBS}"
-.endif
-
-# The odbc module needs an ODBC driver manager to be installed, and it
-# supports both iODBC and unixODBC.
-
-.if defined(WITH_IODBC) && defined(WITH_UNIXODBC)
-IGNORE=		selected mutually exclusive options: WITH_IODBC and WITH_UNIXODBC
-.endif
-
-.if !defined(WITH_IODBC) && !defined(WITH_UNIXODBC)
-WITH_IODBC?=	yes
-.endif
-
-.if defined(WITH_UNIXODBC)
-LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
-CONFIGURE_ARGS+=	--with-odbc=-lodbc
-.elif defined(WITH_IODBC)
-LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
-CONFIGURE_ARGS+=	--with-odbc=-liodbc
-.endif
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-magick="`pkg-config ImageMagick --libs`" \
+		--with-magick-includes="`pkg-config ImageMagick --cflags`" \
+		--with-tk="-L${TK_LIBDIR} -L${TCL_LIBDIR} -ltk${TK_VER:S/.//} -ltcl${TCL_VER:S/.//}" \
+		--with-tk-includes="-I${TK_INCLUDEDIR} -I${TCL_INCLUDEDIR}" \
+		--with-gdbm="-L${LOCALBASE}/lib -lgdbm" \
+		--with-gdbm-includes="-I${LOCALBASE}/include" \
+		--with-curl="`pkg-config libcurl --libs`" \
+		--with-curl-includes="`pkg-config libcurl --cflags`" \
+		--with-gmp="-L${LOCALBASE}/lib -lgmp" \
+		--with-gmp-includes="-I${LOCALBASE}/include" \
+		--with-ggi="-L${LOCALBASE}/lib -lggi" \
+		--with-ggi-includes="-I${LOCALBASE}/include" \
+		--with-pthread="${PTHREAD_LIBS}" \
+		--with-odbc="`iodbc-config --libs`" \
+		--with-odbc-includes="`iodbc-config --cflags`"
 
 MAN1=	q.1
 INFO=	qdoc
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		Does not build on amd64 (shared libraries must be compiled with -fPIC)
-.endif
-
-post-extract:
-	@${RM} -f ${WRKSRC}/doc/*info*
-
-post-patch:
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
-		${GREP} -l "^examplesdir" | ${XARGS} ${REINPLACE_CMD} -e \
-		"s;[(]pkgdatadir[)]/examples;(datadir)/examples/@PACKAGE@;"
-	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} -e 's|echo aout|echo elf|'
-	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} \
-		${GREP} -l "<malloc\.h>" | ${XARGS} ${REINPLACE_CMD} \
-		-e "s,<malloc\.h>,<stdlib.h>,"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
