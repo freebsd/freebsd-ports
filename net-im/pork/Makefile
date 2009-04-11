@@ -19,4 +19,7 @@ USE_OPENSSL=		yes
 
 GNU_CONFIGURE=		yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/^inline //' ${WRKSRC}/src/*.h
+
 .include <bsd.port.mk>
