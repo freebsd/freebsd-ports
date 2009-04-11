@@ -1,12 +1,15 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar/Japanese/Era/.packlist
-%%SITE_PERL%%/auto/DateTime/Calendar/Japanese/Era/eras.yaml
-%%SITE_PERL%%/auto/DateTime/Calendar/Japanese/Era/south-eras.yaml
+%%SITE_PERL%%/auto/share/module/DateTime-Calendar-Japanese-Era/eras.yaml
+%%SITE_PERL%%/auto/share/module/DateTime-Calendar-Japanese-Era/south-eras.yaml
 %%SITE_PERL%%/DateTime/Calendar/Japanese/Era.pm
 @dirrmtry %%SITE_PERL%%/auto/DateTime/Calendar/Japanese/Era
 @dirrmtry %%SITE_PERL%%/auto/DateTime/Calendar/Japanese
 @dirrmtry %%SITE_PERL%%/auto/DateTime/Calendar
 @dirrmtry %%SITE_PERL%%/auto/DateTime
+@dirrmtry %%SITE_PERL%%/auto/share/module/DateTime-Calendar-Japanese-Era
+@dirrmtry %%SITE_PERL%%/auto/share/module
+@dirrmtry %%SITE_PERL%%/auto/share
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar/Japanese/Era
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar/Japanese
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar
