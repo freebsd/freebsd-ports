@@ -1,6 +1,6 @@
---- Makefile.orig	2008-12-25 00:33:25.000000000 -0500
-+++ Makefile	2009-01-14 09:37:39.152324285 -0500
-@@ -170,8 +170,8 @@
+--- Makefile.orig	2009-04-10 23:26:19.911276986 -0400
++++ Makefile	2009-04-10 23:26:23.213278777 -0400
+@@ -173,8 +173,8 @@
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -11,25 +11,25 @@
  ALL_CFLAGS = $(CFLAGS)
  ALL_LDFLAGS = $(LDFLAGS)
  STRIP ?= strip
-@@ -188,12 +188,12 @@
- 
+@@ -194,12 +194,12 @@
  prefix = $(HOME)
- bindir = $(prefix)/bin
--mandir = $(prefix)/share/man
--infodir = $(prefix)/share/info
+ bindir_relative = bin
+ bindir = $(prefix)/$(bindir_relative)
+-mandir = share/man
+-infodir = share/info
 +mandir = $(prefix)/man
 +infodir = $(prefix)/info
- gitexecdir = $(prefix)/libexec/git-core
+ gitexecdir = libexec/git-core
  sharedir = $(prefix)/share
- template_dir = $(sharedir)/git-core/templates
--htmldir=$(sharedir)/doc/git-doc
-+htmldir=$(sharedir)/doc/git
+ template_dir = share/git-core/templates
+-htmldir = share/doc/git-doc
++htmldir = share/doc/git
  ifeq ($(prefix),/usr)
  sysconfdir = /etc
- else
-@@ -223,16 +223,16 @@
+ ETC_GITCONFIG = $(sysconfdir)/gitconfig
+@@ -230,16 +230,16 @@
  
- export prefix bindir sharedir htmldir sysconfdir
+ export prefix bindir sharedir sysconfdir
  
 -CC = gcc
 -AR = ar
@@ -54,14 +54,14 @@
  
  export TCL_PATH TCLTK_PATH
  
-@@ -865,9 +865,9 @@
+@@ -880,9 +880,9 @@
  endif
  ifndef NO_OPENSSL
  	OPENSSL_LIBSSL = -lssl
 -	ifdef OPENSSLDIR
 -		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
 -		OPENSSL_LINK = -L$(OPENSSLDIR)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLDIR)/$(lib)
-+	ifdef OPENSSLBASE 
++	ifdef OPENSSLBASE
 +		BASIC_CFLAGS += -I$(OPENSSLBASE)/include
 +		OPENSSL_LINK = -L$(OPENSSLBASE)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLBASE)/$(lib)
  	else

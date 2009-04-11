@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.6.1.3
+PORTVERSION=	1.6.2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -295,12 +295,12 @@ post-install:
 	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp/git
 	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/git.el \
 		${PREFIX}/share/emacs/site-lisp/git/
-	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/vc-git.el \
+	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/git-blame.el \
 		${PREFIX}/share/emacs/site-lisp/git/
 	${LN} -sf ${PREFIX}/share/emacs/site-lisp/git/git.el    \
 		${PREFIX}/lib/xemacs/site-lisp/git/git.el
-	${LN} -sf ${PREFIX}/share/emacs/site-lisp/git/vc-git.el \
-		${PREFIX}/lib/xemacs/site-lisp/git/vc-git.el
+	${LN} -sf ${PREFIX}/share/emacs/site-lisp/git/git-blame.el \
+		${PREFIX}/lib/xemacs/site-lisp/git/git-blame.el
 
 .ifdef (WITH_P4)
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/p4import/git-p4import \
