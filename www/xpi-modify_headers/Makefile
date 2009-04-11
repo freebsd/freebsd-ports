@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	modify_headers
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 DISTVERSIONSUFFIX=	-fx+mz+sm
 CATEGORIES=	www
 
@@ -22,8 +22,7 @@ XPI_FILES=	chrome.manifest \
 		components/modifyheaders-service.js \
 		components/nsIModifyheaders.xpt \
 		install.js \
-		install.rdf \
-		install.rdf.orig
+		install.rdf
 
 XPI_DIRS=	chrome \
 		components
