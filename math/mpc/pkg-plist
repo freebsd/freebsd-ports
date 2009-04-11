@@ -1,0 +1,5 @@
+include/mpc.h
+lib/libmpc.a
+lib/libmpc.la
+lib/libmpc.so
+lib/libmpc.so.1
