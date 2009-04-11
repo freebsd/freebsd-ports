@@ -92,7 +92,6 @@
     SUBDIR += nifticlib
     SUBDIR += oases
     SUBDIR += omnetpp
-    SUBDIR += oof
     SUBDIR += openbabel
     SUBDIR += openfoam
     SUBDIR += ovt

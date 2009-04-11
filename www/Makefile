@@ -1309,7 +1309,6 @@
     SUBDIR += qt4-webkit
     SUBDIR += quickie
     SUBDIR += quixote
-    SUBDIR += raqdevil
     SUBDIR += red5
     SUBDIR += rejik
     SUBDIR += reportmagic
