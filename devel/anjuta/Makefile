@@ -38,6 +38,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
+USE_PERL5=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui vte gtksourceview2 libgda4
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
