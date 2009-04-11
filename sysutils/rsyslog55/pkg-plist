@@ -61,6 +61,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/ns_ptcp.html
 %%PORTDOCS%%%%DOCSDIR%%/omlibdbi.html
 %%PORTDOCS%%%%DOCSDIR%%/ommail.html
+%%PORTDOCS%%%%DOCSDIR%%/ommysql.html
 %%PORTDOCS%%%%DOCSDIR%%/omrelp.html
 %%PORTDOCS%%%%DOCSDIR%%/omsnmp.html
 %%PORTDOCS%%%%DOCSDIR%%/professional_support.html
@@ -118,7 +119,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_secure_tls.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_stunnel.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_tls.html
-%%PORTDOCS%%%%DOCSDIR%%/status.html
+%%PORTDOCS%%%%DOCSDIR%%/syslog_parsing.html
 %%PORTDOCS%%%%DOCSDIR%%/syslog_protocol.html
 %%PORTDOCS%%%%DOCSDIR%%/tls_cert.jpg
 %%PORTDOCS%%%%DOCSDIR%%/tls_cert_100.jpg
