@@ -39,6 +39,10 @@ post-patch:
 .endif
 	${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|g' \
 	    ${WRKSRC}/configure
+#	Configure script does not respect --prefix
+	${REINPLACE_CMD} -e '/^prefix/s|/usr|${PREFIX}|; \
+	    /^plugins_dir/s|/usr/lib/codelite|${DATADIR}/plugins|' \
+	    ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|$${cur_rev}|${SVN_REVISION}|' \
 	    ${WRKSRC}/le_makerevision.sh
 # 	CTags already installed
@@ -46,31 +50,5 @@ post-patch:
 	    ${RM} ${WRKSRC}/CodeLite/readtags.h; \
 	 fi; \
 	)
-
-do-install:
-	${MKDIR} ${DATADIR}
-	${MKDIR} ${DATADIR}/config
-	${MKDIR} ${DATADIR}/rc
-	${MKDIR} ${DATADIR}/templates
-	${MKDIR} ${DATADIR}/lexers
-	${MKDIR} ${DATADIR}/debuggers
-	${MKDIR} ${DATADIR}/plugins
-	${MKDIR} ${DATADIR}/images
-	${INSTALL_PROGRAM} ${WRKSRC}/Runtime/codelite ${PREFIX}/bin/CodeLite
-	${INSTALL_PROGRAM} ${WRKSRC}/Runtime/codelite_indexer ${PREFIX}/bin/
-	(cd ${WRKSRC}/Runtime/config/ && ${COPYTREE_SHARE} \* ${DATADIR}/config)
-	(cd ${WRKSRC}/Runtime/rc/ && ${COPYTREE_SHARE} \*.xrc ${DATADIR}/rc)
-	(cd ${WRKSRC}/Runtime/templates && ${COPYTREE_SHARE} \* ${DATADIR}/templates)
-	(cd ${WRKSRC}/Runtime/lexers && ${COPYTREE_SHARE} \* ${DATADIR}/lexers)
-	${INSTALL_DATA} ${WRKSRC}/lib/Debugger.so ${DATADIR}/debuggers
-.for lib in CodeFormatter Subversion cscope Gizmos
-	${INSTALL_DATA} ${WRKSRC}/lib/${lib}.so ${DATADIR}/plugins
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/Runtime/index.html ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/Runtime/astyle.sample ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/Runtime/svnreport.html ${DATADIR}
-	(cd ${WRKSRC}/Runtime/images && ${COPYTREE_SHARE} \*.png ${DATADIR}/images)
-	${INSTALL} -d ${PREFIX}/share/applications
-	${INSTALL} ${WRKSRC}/Runtime/codelite.desktop ${PREFIX}/share/applications/
 
 .include <bsd.port.post.mk>
