@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	views
-DISTVERSION=	6.x-2.3
+DISTVERSION=	6.x-2.4
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
@@ -15,16 +15,24 @@ COMMENT=	Controls how content lists are generated
 
 DRUPAL6_MODULE=	yes
 MODULE_DIRS=	css docs handlers help/images help images includes js \
-		modules/aggregator modules/comment modules/node \
+		modules/aggregator modules/comment \
+		modules/locale modules/node \
 		modules/profile modules/search modules/statistics \
 		modules/system modules/taxonomy modules/translation \
 		modules/upload modules/user modules plugins theme \
 		translations views_export
-MODULE_FILES=	css/views-admin.css css/views-list.css \
-		css/views-tabs.css css/views.css \
+MODULE_FILES=	css/views-admin.css \
+		css/views-list-rtl.css \
+		css/views-list.css \
+		css/views-tabs.css \
+		css/views.css \
 		docs/docs.php \
-		views.info views.install views.module views2.doxy \
-		views_ui.info views_ui.module \
+		views.info \
+		views.install \
+		views.module \
+		views2.doxy \
+		views_ui.info \
+		views_ui.module \
 		handlers/views_handler_argument.inc \
 		handlers/views_handler_argument_date.inc \
 		handlers/views_handler_argument_formula.inc \
@@ -45,6 +53,7 @@ MODULE_FILES=	css/views-admin.css css/views-list.css \
 		handlers/views_handler_filter_boolean_operator_string.inc \
 		handlers/views_handler_filter_date.inc \
 		handlers/views_handler_filter_equality.inc \
+		handlers/views_handler_filter_float.inc \
 		handlers/views_handler_filter_in_operator.inc \
 		handlers/views_handler_filter_many_to_one.inc \
 		handlers/views_handler_filter_numeric.inc \
@@ -85,7 +94,8 @@ MODULE_FILES=	css/views-admin.css css/views-list.css \
 		help/images/views2-rearrangefields.png \
 		help/images/views2-tablestyle-large.png \
 		help/images/views2-tablestyle.png \
-		help/about.html help/analyze-theme.html \
+		help/about.html \
+		help/analyze-theme.html \
 		help/api-default-views.html \
 		help/api-handlers.html \
 		help/api-plugins.html \
@@ -155,19 +165,31 @@ MODULE_FILES=	css/views-admin.css css/views-list.css \
 		modules/aggregator/views_plugin_row_aggregator_rss.inc \
 		modules/aggregator.views.inc \
 		modules/book.views.inc \
+		modules/book.views_convert.inc \
 		modules/comment.views.inc \
+		modules/comment.views_convert.inc \
 		modules/comment.views_default.inc \
+		modules/locale.views.inc \
 		modules/node.views.inc \
 		modules/node.views_convert.inc \
 		modules/node.views_default.inc \
 		modules/poll.views.inc \
 		modules/profile.views.inc \
 		modules/search.views.inc \
+		modules/search.views_convert.inc \
 		modules/search.views_default.inc \
 		modules/statistics.views.inc \
 		modules/statistics.views_default.inc \
 		modules/system.views.inc \
 		modules/taxonomy.views.inc \
+		modules/taxonomy.views_convert.inc \
+		modules/taxonomy.views_default.inc \
+		modules/translation.views.inc \
+		modules/upload.views.inc \
+		modules/upload.views_convert.inc \
+		modules/user.views.inc \
+		modules/user.views_convert.inc \
+		modules/views.views.inc \
 		modules/comment/views_handler_argument_comment_user_uid.inc \
 		modules/comment/views_handler_field_comment.inc \
 		modules/comment/views_handler_field_comment_depth.inc \
@@ -188,11 +210,14 @@ MODULE_FILES=	css/views-admin.css css/views-list.css \
 		modules/comment/views_handler_sort_ncs_last_updated.inc \
 		modules/comment/views_plugin_row_comment_rss.inc \
 		modules/comment/views_plugin_row_comment_view.inc \
-		modules/taxonomy.views_default.inc \
-		modules/translation.views.inc \
-		modules/upload.views.inc \
-		modules/user.views.inc \
-		modules/views.views.inc \
+		modules/locale/views_handler_argument_locale_group.inc \
+		modules/locale/views_handler_argument_locale_language.inc \
+		modules/locale/views_handler_field_locale_group.inc \
+		modules/locale/views_handler_field_locale_language.inc \
+		modules/locale/views_handler_field_locale_link_edit.inc \
+		modules/locale/views_handler_filter_locale_group.inc \
+		modules/locale/views_handler_filter_locale_language.inc \
+		modules/locale/views_handler_filter_locale_version.inc \
 		modules/node/views_handler_argument_dates_various.inc \
 		modules/node/views_handler_argument_node_language.inc \
 		modules/node/views_handler_argument_node_nid.inc \
@@ -216,7 +241,9 @@ MODULE_FILES=	css/views-admin.css css/views-list.css \
 		modules/profile/views_handler_field_profile_date.inc \
 		modules/profile/views_handler_field_profile_list.inc \
 		modules/profile/views_handler_filter_profile_selection.inc \
+		modules/search/views_handler_field_search_score.inc \
 		modules/search/views_handler_filter_search.inc \
+		modules/search/views_handler_sort_search_score.inc \
 		modules/search/views_plugin_row_search_view.inc \
 		modules/statistics/views_handler_field_accesslog_path.inc \
 		modules/system/views_handler_argument_file_fid.inc \
@@ -310,6 +337,7 @@ MODULE_FILES=	css/views-admin.css css/views-list.css \
 		translations/eo.po \
 		translations/fr.po \
 		translations/it.po \
+		translations/sv.po \
 		views_export/views_export.css \
 		views_export/views_export.info \
 		views_export/views_export.module
