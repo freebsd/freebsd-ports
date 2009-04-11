@@ -18,7 +18,7 @@ COMMENT=	Serious Sam: The Second Encounter for Linux
 OPTIONS=	VORBIS	"Ogg playing support"	on
 
 USE_LINUX=	yes
-USE_LINUX_APPS=	sdl12 xorglibs
+USE_LINUX_APPS=	xorglibs
 NO_BUILD=	yes
 NO_PACKAGE=	Distribution is 352MB; set FORCE_PACKAGE if you really want to build this package
 RESTRICTED=	Redistribution is limited, see license
