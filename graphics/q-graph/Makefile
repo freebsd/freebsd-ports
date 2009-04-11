@@ -6,30 +6,19 @@
 #
 
 PORTNAME=	graph
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.8
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	q-lang
+MASTER_SITES=	SF/q-lang
 PKGNAMEPREFIX=	q-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Q-Graph -- graph library and editor for the Q language
 
-RUN_DEPENDS=	${LOCALBASE}/bin/q:${PORTSDIR}/lang/q
-
-DEPRECATED=		depends on deprecated port lang/q
-EXPIRATION_DATE=	2008-12-24
-
-USE_GNOME=	gnometarget
-GNU_CONFIGURE=	yes
+LIB_DEPENDS=	q.8:${PORTSDIR}/lang/q
+RUN_DEPENDS=	${LOCALBASE}/lib/bwidget/init.tcl:${PORTSDIR}/x11-toolkits/bwidget
 
 DATADIR=	${PREFIX}/share/q
-EXAMPLESDIR=	${PREFIX}/share/examples/q/graph
 
-post-patch:
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
-		${GREP} -l "^examplesdir" | ${XARGS} ${REINPLACE_CMD} -e \
-		"s;[(]pkgdatadir[)]/examples;(datadir)/examples/q;"
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

@@ -2,9 +2,10 @@ bin/graphed
 bin/graphed2
 %%DATADIR%%/etc/README-Graph
 %%DATADIR%%/lib/graph.q
-%%DATADIR%%/lib/graphed.q
-%%DATADIR%%/lib/graphed.tcl
-%%EXAMPLESDIR%%/G
-%%EXAMPLESDIR%%/README
-%%EXAMPLESDIR%%/dijkstra.q
-@dirrm %%EXAMPLESDIR%%
+%%DATADIR%%/apps/graphed/graphed.q
+%%DATADIR%%/apps/graphed/graphed.tcl
+%%DATADIR%%/examples/graph/G
+%%DATADIR%%/examples/graph/README
+%%DATADIR%%/examples/graph/dijkstra.q
+@dirrm %%DATADIR%%/examples/graph
+@dirrm %%DATADIR%%/apps/graphed
