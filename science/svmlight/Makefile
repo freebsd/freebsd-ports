@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	svmlight
-PORTVERSION=	6.01
-PORTREVISION=	3
+PORTVERSION=	6.02
 CATEGORIES=	science
-MASTER_SITES=	http://kodiak.cs.cornell.edu/svm_light/current/
+MASTER_SITES=	http://kodiak.cs.cornell.edu/svm_light/v${PORTVERSION}/
 DISTNAME=	svm_light
 
-PATCH_SITES=	http://search.cpan.org/src/KWILLIAMS/Algorithm-SVMLight-0.08/
+PATCH_SITES=	http://cpansearch.perl.org/src/KWILLIAMS/Algorithm-SVMLight-0.09/
 PATCHFILES=	SVMLight.patch
+PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	An implementation of Support Vector Machines (SVMs) in C
@@ -26,18 +26,6 @@ NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-pre-patch:
-	${CP} ${DISTDIR}/${PATCHFILES} ${WRKDIR}
-	${REINPLACE_CMD} -e 's|svm_light/||g' ${WRKDIR}/${PATCHFILES}
-
-do-patch:
-	cd ${WRKDIR} && ${PATCH} < ${PATCHFILES}
-
-post-build:
-	${CC} ${CFLAGS} -shared -o ${WRKSRC}/libsvmlight.so.1 \
-		${WRKSRC}/svm_common.o ${WRKSRC}/svm_hideo.o \
-		${WRKSRC}/svm_learn.o
-
 do-install:
 	${MKDIR} ${PREFIX}/include/svmlight
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/svmlight
@@ -45,6 +33,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/libsvmlight.* ${PREFIX}/lib
+	${MV} ${PREFIX}/lib/libsvmlight.so ${PREFIX}/lib/libsvmlight.so.1
 	${LN} -s ${PREFIX}/lib/libsvmlight.so.1 ${PREFIX}/lib/libsvmlight.so
 # It's license request, do not remove
 	${MKDIR} ${DOCSDIR}
