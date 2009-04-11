@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rpyc
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,6 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	Remote Python Call
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 
 .include <bsd.port.mk>
