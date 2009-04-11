@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PerlCryptLib
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/A/AL/ALVAROL
@@ -20,8 +20,5 @@ LIB_DEPENDS=	cl:${PORTSDIR}/security/cryptlib
 PERL_CONFIGURE=	5.8.0+
 
 MAN3=		PerlCryptLib.3
-
-post-patch:
-	${REINPLACE_CMD} -e "s,/home,${PREFIX}/include," ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
