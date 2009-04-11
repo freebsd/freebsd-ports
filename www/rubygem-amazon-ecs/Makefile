@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amazon-ecs
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 
