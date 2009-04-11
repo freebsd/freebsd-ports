@@ -247,6 +247,7 @@
 %%DATADIR%%/sbin/web2ldap.pyc
 %%DATADIR%%/scgi/web2ldap.py
 %%DATADIR%%/scgi/web2ldap.pyc
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/.htaccess
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.10.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.11.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.12.html
@@ -267,6 +268,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/print.css
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/demo.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/docs.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/download/.htaccess
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/download/redirect-to-download.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/download.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/features.html
@@ -300,6 +303,7 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/ssi
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/sidebars
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/img
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/download
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/css/web2ldap
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/css
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs
