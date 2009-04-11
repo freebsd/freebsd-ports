@@ -722,7 +722,7 @@
     SUBDIR += race
     SUBDIR += reminiscence
     SUBDIR += rfksay
-    SUBDIR += rgsofrods
+    SUBDIR += rigsofrods
     SUBDIR += ri-li
     SUBDIR += robocode
     SUBDIR += robotfindskitten
