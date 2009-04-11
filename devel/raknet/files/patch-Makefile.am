@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2009-03-26 08:47:40.963923627 +0000
++++ Makefile.am	2009-03-26 08:48:10.713222979 +0000
+@@ -3,7 +3,7 @@
+ 
+ SUBDIRS = Source DependentExtensions
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = autotools/RakNet.pc $(pkgconfig_add_data)
+ 
+ EXTRA_DIST = 2.x_to_3.x_upgrade.txt CMakeLists.txt DMCMakefile.win Doxyfile Help Lib nbproject RakNet.cbp RakNet.dev  RakNet.sln RakNet_vc8.sln readme.txt Samples
