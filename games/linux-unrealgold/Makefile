@@ -7,6 +7,7 @@
 
 PORTNAME=	unrealgold
 PORTVERSION=	436
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://offload1.icculus.org/~ravage/unreal/${PORTNAME}/
 PKGNAMEPREFIX=	linux-
@@ -21,7 +22,7 @@ BUILD_DEPENDS=	ut:${PORTSDIR}/games/linux-ut
 RUN_DEPENDS=	ut:${PORTSDIR}/games/linux-ut
 
 USE_LINUX=	yes
-USE_LINUX_APPS=	sdl12 xorglibs
+USE_LINUX_APPS=	xorglibs
 NO_BUILD=	yes
 NO_PACKAGE=	Distribution is 131MB; set FORCE_PACKAGE if you really want\
 		to build this package
