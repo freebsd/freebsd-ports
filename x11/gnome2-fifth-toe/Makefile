@@ -26,7 +26,7 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan \
 		gossip:${PORTSDIR}/net-im/gossip \
 		liferea:${PORTSDIR}/net/liferea \
 		rhythmbox:${PORTSDIR}/audio/rhythmbox \
-		${LOCALBASE}/share/pixmaps/glines/classic.png:${PORTSDIR}/games/gnome-games-extra-data \
+		${LOCALBASE}/share/gnome-games/glines/pixmaps/classic.png:${PORTSDIR}/games/gnome-games-extra-data \
 		nautilus-sendto:${PORTSDIR}/deskutils/nautilus-sendto \
 		inkscape:${PORTSDIR}/graphics/inkscape \
 		atomix:${PORTSDIR}/games/atomix \
