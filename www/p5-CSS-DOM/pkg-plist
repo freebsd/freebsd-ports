@@ -2,11 +2,13 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/DOM/.packlist
 %%SITE_PERL%%/CSS/DOM.pm
 %%SITE_PERL%%/CSS/DOM/Array.pm
+%%SITE_PERL%%/CSS/DOM/Constants.pm
 %%SITE_PERL%%/CSS/DOM/Exception.pm
 %%SITE_PERL%%/CSS/DOM/Interface.pm
 %%SITE_PERL%%/CSS/DOM/MediaList.pm
 %%SITE_PERL%%/CSS/DOM/Parser.pm
 %%SITE_PERL%%/CSS/DOM/Rule.pm
+%%SITE_PERL%%/CSS/DOM/Rule/Charset.pm
 %%SITE_PERL%%/CSS/DOM/Rule/FontFace.pm
 %%SITE_PERL%%/CSS/DOM/Rule/Import.pm
 %%SITE_PERL%%/CSS/DOM/Rule/Media.pm
@@ -15,6 +17,7 @@
 %%SITE_PERL%%/CSS/DOM/RuleList.pm
 %%SITE_PERL%%/CSS/DOM/Style.pm
 %%SITE_PERL%%/CSS/DOM/StyleSheetList.pm
+%%SITE_PERL%%/CSS/DOM/Util.pm
 %%SITE_PERL%%/CSS/DOM/Value.pm
 %%SITE_PERL%%/CSS/DOM/Value/Primitive.pm
 @dirrmtry %%SITE_PERL%%/CSS/DOM/Value
