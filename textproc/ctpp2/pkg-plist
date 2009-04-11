@@ -25,6 +25,8 @@ include/ctpp2/CTPPParserException.hpp
 include/ctpp2/FileOutputCollector.hpp
 include/ctpp2/HashTable.hpp
 include/ctpp2/OutputCollector.hpp
+include/ctpp2/SimpleCompiler.hpp
+include/ctpp2/SimpleVM.hpp
 include/ctpp2/StaticData.hpp
 include/ctpp2/StaticText.hpp
 include/ctpp2/StringIconvOutputCollector.hpp
@@ -50,7 +52,7 @@ include/ctpp2/VMSyscall.hpp
 lib/libctpp2-st.a
 lib/libctpp2.so
 lib/libctpp2.so.2
-lib/libctpp2.so.2.4.8
+lib/libctpp2.so.2.4.10
 share/locale/ru_RU.CP1251/LC_MESSAGES/ctpp2.mo
 share/locale/ru_RU.KOI8-R/LC_MESSAGES/ctpp2.mo
 @dirrmtry share/locale/ru_RU.KOI8-R/LC_MESSAGES
