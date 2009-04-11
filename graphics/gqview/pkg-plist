@@ -79,7 +79,7 @@ bin/gqview
 %%NLS%%share/locale/vi/LC_MESSAGES/gqview.mo
 %%NLS%%share/locale/zh_CN.GB2312/LC_MESSAGES/gqview.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gqview.mo
-share/gnome/apps/Graphics/gqview.desktop
 share/pixmaps/gqview.png
+share/applications/gqview.desktop
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
