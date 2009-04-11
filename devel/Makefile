@@ -258,6 +258,7 @@
     SUBDIR += dfuife-curses
     SUBDIR += dia2code
     SUBDIR += diffconvert
+    SUBDIR += diffuse
     SUBDIR += directfb
     SUBDIR += distcc
     SUBDIR += distel
