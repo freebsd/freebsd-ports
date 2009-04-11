@@ -21,7 +21,7 @@ RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 IGNORE=		Not supported anymore; functionality included in trac since 0.11
 DEPRECATED=	${IGNORE}
-EXPIRE_DATE=	2009-07-01
+EXPIRATION_DATE=	2009-07-01
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin
 NO_BUILD=	yes
