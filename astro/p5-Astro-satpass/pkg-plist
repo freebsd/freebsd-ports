@@ -1,0 +1,19 @@
+bin/satpass
+%%SITE_PERL%%/Astro/Coord/ECI.pm
+%%SITE_PERL%%/Astro/Coord/ECI/Utils.pm
+%%SITE_PERL%%/Astro/Coord/ECI/TLE.pm
+%%SITE_PERL%%/Astro/Coord/ECI/Overview.pod
+%%SITE_PERL%%/Astro/Coord/ECI/Star.pm
+%%SITE_PERL%%/Astro/Coord/ECI/Moon.pm
+%%SITE_PERL%%/Astro/Coord/ECI/Sun.pm
+%%SITE_PERL%%/Astro/Coord/ECI/TLE/Iridium.pm
+%%SITE_PERL%%/Astro/Coord/ECI/TLE/Set.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Coord/ECI/.packlist
+@dirrm %%SITE_PERL%%/Astro/Coord/ECI/TLE
+@dirrm %%SITE_PERL%%/Astro/Coord/ECI
+@dirrm %%SITE_PERL%%/Astro/Coord
+@dirrmtry %%SITE_PERL%%/Astro
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Coord/ECI
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Coord
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro
+@dirrmtry %%SITE_PERL%%/Astro
