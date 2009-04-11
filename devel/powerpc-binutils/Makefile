@@ -22,6 +22,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
 
+DEPRECIATED=	deprecated; use cross-binutils instead
+EXPIRE_DATE=	2009-04-19
+
 .if defined(WITH_ABI)
 OUR_ABI=		${WITH_ABI}
 .else

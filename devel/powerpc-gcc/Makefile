@@ -24,6 +24,9 @@ GNU_CONFIGURE=	yes
 STRIP=
 NO_MTREE=yes
 
+DEPRECIATED=	deprecated; use cross-gcc instead
+EXPIRE_DATE=	2009-04-19
+
 .if defined(WITH_ABI)
 OUR_ABI=	${WITH_ABI}
 .else
