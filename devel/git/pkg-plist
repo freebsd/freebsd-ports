@@ -152,9 +152,9 @@ libexec/git-core/git-write-tree
 %%SITE_PERL%%/Git.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/.packlist
 lib/xemacs/site-lisp/git/git.el
-lib/xemacs/site-lisp/git/vc-git.el
+lib/xemacs/site-lisp/git/git-blame.el
 share/emacs/site-lisp/git/git.el
-share/emacs/site-lisp/git/vc-git.el
+share/emacs/site-lisp/git/git-blame.el
 share/git-core/templates/description
 share/git-core/templates/hooks/applypatch-msg.sample
 share/git-core/templates/hooks/commit-msg.sample
@@ -220,6 +220,7 @@ share/git-core/templates/info/exclude
 %%GUI%%share/gitk/lib/msgs/de.msg
 %%GUI%%share/gitk/lib/msgs/it.msg
 %%GUI%%share/gitk/lib/msgs/sv.msg
+%%HTMLDOCS%%%%DOCSDIR%%/mailmap.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-citool.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-hash-object.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-lost-found.txt
@@ -523,6 +524,10 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.1.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.1.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.1.3.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.1.4.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.2.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.2.1.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.2.2.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/INSTALL
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/README
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/git-favicon.png
