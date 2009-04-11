@@ -3911,3 +3911,22 @@ devel/gnome-build||2009-04-10|This port has been merged into anjuta and is now o
 sysutils/gnome-volume-manager||2009-04-10|This port has been obsoleted by Nautilus
 science/oof||2009-04-11|Has expired: Broken with GCC 4.2 and beyond
 www/raqdevil||2009-04-11|Has expired: Master site gone, distfiles not fetchable
+devel/arm-rtems-g77|devel/arm-rtems-gcc|Has expired: use arm-rtems-gcc instead
+devel/arm-rtems-objc|devel/arm-rtems-gcc|Has expired: use arm-rtems-gcc instead
+devel/i386-rtems-g77|devel/i386-rtems-gcc|Has expired: use i386-rtems-gcc instead
+devel/i386-rtems-objc|devel/i386-rtems-gcc|Has expired: use i386-rtems-gcc instead
+devel/i960-rtems-binutils||Has expired: abandoned by mainstream
+devel/i960-rtems-gcc||Has expired: abandoned by mainstream
+devel/i960-rtems-gdb||Has expired: abandoned by mainstream
+devel/m68k-rtems-g77|devel/m68k-rtems-gcc|Has expired: use m68k-rtems-gcc instead
+devel/m68k-rtems-objc|devel/m68k-rtems-gcc|Has expired: use m68k-rtems-gcc instead
+devel/mips-rtems-g77|devel/mips-rtems-gcc|Has expired: use mips-rtems-gcc instead
+devel/mips-rtems-objc|devel/mips-rtems-gcc|Has expired: use mips-rtems-gcc instead
+devel/powerpc-rtems-g77|devel/powerpc-rtems-gcc|Has expired: use powerpc-rtems-gcc instead
+devel/powerpc-rtems-objc|devel/powerpc-rtems-gcc|Has expired: use powerpc-rtems-gcc instead
+devel/sh-rtems-g77|devel/sh-rtems-gcc|Has expired: use sh-rtems-gcc instead
+devel/sh-rtems-objc|devel/sh-rtems-gcc|Has expired: use sh-rtems-gcc instead
+devel/sparc-rtems-g77|devel/sparc-rtems-gcc|Has expired: use sparc-rtems-gcc instead
+devel/sparc-rtems-objc|devel/sparc-rtems-gcc|Has expired: use sparc-rtems-gcc instead
+polish/gnugadu|polish/gnugadu2|Has expired: Not developed anymore, unmaintained
+security/cutlass||Has expired: does not work with current version of security/botan
