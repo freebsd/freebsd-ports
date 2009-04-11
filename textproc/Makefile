@@ -708,6 +708,7 @@
     SUBDIR += p5-XML-DTDParser
     SUBDIR += p5-XML-DifferenceMarkup
     SUBDIR += p5-XML-Directory
+    SUBDIR += p5-XML-DoubleEncodedEntities
     SUBDIR += p5-XML-Driver-HTML
     SUBDIR += p5-XML-Dumper
     SUBDIR += p5-XML-Elemental
