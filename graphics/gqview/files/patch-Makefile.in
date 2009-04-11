@@ -6,7 +6,7 @@
  
 -install-data-am: install-desktopDATA install-iconDATA install-man \
 -	install-readmeDATA
-+install-data-am: install-man
++install-data-am: install-man install-desktopDATA
  
  install-exec-am:
  
