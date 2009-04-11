@@ -101,6 +101,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/BexpandLCGsquish.png
 %%PORTDOCS%%%%DOCSDIR%%/Big5.txt
 %%PORTDOCS%%%%DOCSDIR%%/BitmapView.png
+%%PORTDOCS%%%%DOCSDIR%%/BitmapReference.png
 %%PORTDOCS%%%%DOCSDIR%%/BoldHiraDA.png
 %%PORTDOCS%%%%DOCSDIR%%/BottomSerif.png
 %%PORTDOCS%%%%DOCSDIR%%/Bperspective.png
@@ -196,6 +197,10 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/ItalicCompCaslon.png
 %%PORTDOCS%%%%DOCSDIR%%/ItalicCompGalliard.png
 %%PORTDOCS%%%%DOCSDIR%%/ItalicDlg.png
+%%PORTDOCS%%%%DOCSDIR%%/JustifyDlg.png
+%%PORTDOCS%%%%DOCSDIR%%/JustifyExtenderDlg.png
+%%PORTDOCS%%%%DOCSDIR%%/JustifyLangDlg.png
+%%PORTDOCS%%%%DOCSDIR%%/JustifyLookupDlg.png
 %%PORTDOCS%%%%DOCSDIR%%/KernPairs.png
 %%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/LinearGradient.png
@@ -554,6 +559,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/importexample.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/intersect-post.png
+%%PORTDOCS%%%%DOCSDIR%%/justify.html
 %%PORTDOCS%%%%DOCSDIR%%/k1.png
 %%PORTDOCS%%%%DOCSDIR%%/k2.png
 %%PORTDOCS%%%%DOCSDIR%%/k3.png
