@@ -1,5 +1,5 @@
---- Robot/main.c.orig	Tue May  3 17:14:51 2005
-+++ Robot/main.c	Wed Dec 28 17:02:15 2005
+--- Robot/main.c.orig	2005-05-03 17:14:51.000000000 +0200
++++ Robot/main.c	2009-04-11 21:57:57.000000000 +0200
 @@ -561,19 +561,19 @@
  			 || streq(argv[i], "--help") ){ 
  			printf("Robot version %-1.2f patch  %d\n\n",
@@ -33,3 +33,30 @@
  			fstop_();
  		}
  
+@@ -2130,7 +2130,7 @@
+ /* remove trailing blanks */
+ 	for (i = 0; i < strlen(instruction); i++){
+ 		if(instruction[i] == ' ') 
+-			instruction[i] = (char) NULL;}
++			instruction[i] = 0;}
+ 	activate(instruction);
+ }
+ 
+@@ -3063,7 +3063,7 @@
+ 
+ 
+ 	strncpy(direc, dir, *n);
+-	direc[*n] = (char) NULL;
++	direc[*n] = 0;
+ 
+ /* null directory path is assumed to be cd to home */
+ 
+@@ -3915,7 +3915,7 @@
+ 		&& strlen(sys_buffer) > 4)
+ 			sys_buffer[strlen(sys_buffer) - strlen(".rob")]
+ 
+-				= (char) NULL;
++				= 0;
+ 
+ /* Only add a .ps if there isn't one there to start with */
+ 	if(!taileq(sys_buffer, ".ps")) strcat(sys_buffer, ".ps");

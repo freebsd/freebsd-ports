@@ -42,6 +42,8 @@ do-install:
 	@${GZIP_CMD} ${DOCSDIR}/RobotManual.ps
 	@${REINPLACE_CMD} -e 's+/usr/bin+${PREFIX}/bin+ ' \
 	  ${WRKSRC}/Demos/*.rob
+.endif
+.ifndef NOPORTDOCS
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/Demos/*.rob ${EXAMPLESDIR}
 .endif
