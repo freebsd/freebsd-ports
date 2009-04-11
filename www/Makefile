@@ -1069,6 +1069,7 @@
     SUBDIR += p5-WWW-Google-Video
     SUBDIR += p5-WWW-HatenaDiary
     SUBDIR += p5-WWW-HatenaLogin
+    SUBDIR += p5-WWW-HatenaStar
     SUBDIR += p5-WWW-IMDb
     SUBDIR += p5-WWW-Link
     SUBDIR += p5-WWW-Mechanize
