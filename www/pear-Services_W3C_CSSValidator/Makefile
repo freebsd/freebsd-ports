@@ -9,7 +9,7 @@ PORTNAME=	Services_W3C_CSSValidator
 PORTVERSION=	0.1.0
 CATEGORIES=	www pear
 
-MAINTAINER=	ditesh@gathani.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP interface to W3C CSS Validator API
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request

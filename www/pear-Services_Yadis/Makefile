@@ -9,7 +9,7 @@ PORTNAME=	Services_Yadis
 PORTVERSION=	0.2.1
 CATEGORIES=	www pear
 
-MAINTAINER=	ditesh@gathani.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Implementation of the Yadis Specification 1.0 protocol for PHP5
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
