@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	torrus
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	corsmith@gmail.com
 COMMENT=	The Data Series Processing Framework - think mrtg with xml configs
@@ -65,7 +64,8 @@ MAN1=		torrus.1 torrus_acledit.1 torrus_buildsearchdb.1 \
 		torrus_compilexml.1 torrus_configinfo.1 \
 		torrus_configsnapshot.1 torrus_devdiscover.1 torrus_genddx.1 \
 		torrus_genlist.1 torrus_genreport.1 torrus_monitor.1 \
-		torrus_rrddir2xml.1 torrus_schedulerinfo.1 torrus_ttproclist.1
+		torrus_rrddir2xml.1 torrus_schedulerinfo.1 torrus_srvderive.1 \
+		torrus_ttproclist.1
 
 MAN7=		torrus_action_printemail.7 torrus_action_snmptrap.7 \
 		torrus_action_notify.7 torrus_install_plugin.7
@@ -101,5 +101,6 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/init.d/torrus ${PREFIX}/etc/rc.d/torrus.sh
 	@${MKDIR} -m 2775 -p ${PREFIX}/${TORRUS_RRDDIR}
 	@${CHOWN} ${TORRUS_USER}:${TORRUS_USER} ${PREFIX}/${TORRUS_RRDDIR}
+	@${CAT} pkg-message
 
 .include <bsd.port.post.mk>
