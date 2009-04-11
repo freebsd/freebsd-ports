@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	tuxguitar
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	audio java
 MASTER_SITES=	SF:src \
 		http://www.alsa-project.org/~james/sound-fonts/:fluid
@@ -21,16 +20,19 @@ COMMENT=	A Multitrack tablature editor and player
 
 BUILD_DEPENDS=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt \
 		${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext \
+		${JAVALIBDIR}/gervill.jar:${PORTSDIR}/audio/gervill \
 		ant:${PORTSDIR}/devel/apache-ant \
 		gcj42:${PORTSDIR}/lang/gcc42-withgcjawt
 RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt \
-		${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext
+		${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext \
+		${JAVALIBDIR}/gervill.jar:${PORTSDIR}/audio/gervill
 LIB_DEPENDS=	fluidsynth.2:${PORTSDIR}/audio/fluidsynth
 
 MAKE_ENV+=	PREFIX=${PREFIX} INSTALL_DOC_DIR=${DOCSDIR} \
 		INSTALL_SHARE_DIR=${DATADIR}
 
 USE_JAVA=	yes
+USE_GECKO=	xulrunner firefox mozilla
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 JAVA_VERSION=	1.4+
@@ -43,13 +45,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 MAN1=		tuxguitar.1
 .endif
 
-USE_GECKO=	mozilla firefox seamonkey
-
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.gecko.mk"
-
-PLUGINS=	ascii compat converter gtp jsa lilypond midi musicxml \
-		oss pdf ptb tef tray fluidsynth
+PLUGINS=	ascii browser-ftp compat converter fluidsynth gervill gtp \
+		jsa lilypond midi musicxml oss pdf ptb tef tray tuner
 
 SUB_FILES=	tuxguitar
 SUB_LIST=	DATADIR=${DATADIR} \
@@ -62,7 +60,7 @@ post-extract:
 
 post-patch:
 	${REINPLACE_CMD} -e 's|linux|freebsd|;s|JAVA_VERS|JAVA_PORT_VERSION|g; \
-		/TuxGuitar-alsa/d; s|/usr/lib/jvm/java-6-sun/|${JAVA_HOME}|' \
+		/TuxGuitar-alsa/d; s|/usr/lib/jvm/java-6-sun/|${JAVA_HOME}|;' \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e \
 		's|%%LOCALBASE%%|${LOCALBASE}|g; \
@@ -72,19 +70,17 @@ post-patch:
 		 s|%%DISTVERSION%%|${DISTVERSION}|g; \
 		 s|%%DOCSDIR%%|${DOCSDIR}|g' \
 		${WRKSRC}/TuxGuitar/build.properties
-	${REINPLACE_CMD} -e 's|$${path.swt}|${JAVALIBDIR}/swt.jar|g' \
-		${WRKSRC}/TuxGuitar-fluidsynth/build.xml \
-		${WRKSRC}/TuxGuitar-lilypond/build.xml \
-		${WRKSRC}/TuxGuitar-midi/build.xml \
-		${WRKSRC}/TuxGuitar-pdf/build.xml \
-		${WRKSRC}/TuxGuitar-tray/build.xml \
-		${WRKSRC}/TuxGuitar-converter/build.xml \
-		${WRKSRC}/TuxGuitar-jsa/build.xml \
-		${WRKSRC}/TuxGuitar-oss/build.xml
+.for p in ${PLUGINS}
+	${REINPLACE_CMD} -e \
+	    's|$${path.swt}|${JAVALIBDIR}/swt.jar|; \
+	     s|$${path.itext}|${JAVALIBDIR}/itext.jar|' \
+		${WRKSRC}/TuxGuitar-${p}/build.xml
+.endfor
 	${REINPLACE_CMD} -e 's|$${lib.swt.jar}|${JAVALIBDIR}/swt.jar|g' \
 		${WRKSRC}/TuxGuitar/build.xml
-	${REINPLACE_CMD} -e 's|$${path.itext}|${JAVALIBDIR}/itext.jar|g' \
-		${WRKSRC}/TuxGuitar-pdf/build.xml
+	${REINPLACE_CMD} -e 's|$${path.gervill}|${JAVALIBDIR}/gervill.jar|g' \
+		${WRKSRC}/TuxGuitar-gervill/build.xml
+
 	${REINPLACE_CMD} -e 's|CFLAGS?|CFLAGS+|g;\
 	    s|gcj|${LOCALBASE}/bin/gcj42|;\
 	    s|-I|-I${JAVA_HOME}/include -I${LOCALBASE}/include -I|;\
@@ -136,4 +132,5 @@ post-install:
 	@${ECHO} "enable them."
 	@${ECHO}
 
+.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 .include <bsd.port.post.mk>
