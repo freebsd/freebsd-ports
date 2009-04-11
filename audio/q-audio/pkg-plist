@@ -1,15 +1,20 @@
 bin/audio_player
-lib/q/audio.a
 lib/q/audio.so
-lib/q/sndfile.a
+lib/q/audio.la
+lib/q/audio.a
 lib/q/sndfile.so
-lib/q/draw_wave.a
-lib/q/draw_wave.so
-%%DATADIR%%/etc/README-Audio
+lib/q/sndfile.la
+lib/q/sndfile.a
+lib/q/wave.so
+lib/q/wave.la
+lib/q/wave.a
+%%DATADIR%%/examples/audio/audio_examp.q
+%%DATADIR%%/apps/audio_player/audio_player.q
+%%DATADIR%%/apps/audio_player/audio_player.tcl
 %%DATADIR%%/lib/audio.q
 %%DATADIR%%/lib/sndfile.q
-%%DATADIR%%/lib/draw_wave.q
-%%DATADIR%%/lib/audio_player.q
-%%DATADIR%%/lib/audio_player.tcl
-%%EXAMPLESDIR%%/audio_examp.q
-@dirrm %%EXAMPLESDIR%%
+%%DATADIR%%/lib/wave.q
+%%DATADIR%%/etc/README-Audio
+@dirrm %%DATADIR%%/apps/audio_player
+@dirrmtry %%DATADIR%%/apps
+@dirrm %%DATADIR%%/examples/audio

@@ -6,36 +6,27 @@
 #
 
 PORTNAME=	audio
-PORTVERSION=	1.2
-PORTREVISION=	5
+PORTVERSION=	2.7
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	q-lang
+MASTER_SITES=	SF/q-lang
 PKGNAMEPREFIX=	q-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Q-Audio -- digital audio interface for the Q language
 
-LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
-		q.6:${PORTSDIR}/lang/q
-
-DEPRECATED=		depends on deprecated port lang/q
-EXPIRATION_DATE=	2008-12-24
-
-USE_GNOME=	gnometarget
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-pthread="${PTHREAD_LIBS}"
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+LIB_DEPENDS=	q.8:${PORTSDIR}/lang/q \
+    		jack.0:${PORTSDIR}/audio/jack \
+		samplerate.1:${PORTSDIR}/audio/libsamplerate \
+		fftw3.4:${PORTSDIR}/math/fftw3
+BUILD_DEPENDS=	${LOCALBASE}/lib/portaudio2/libportaudio.so.2:${PORTSDIR}/audio/portaudio2
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 DATADIR=	${PREFIX}/share/q
-EXAMPLESDIR=	${PREFIX}/share/examples/q/audio
 
-post-patch:
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
-		${GREP} -l "^examplesdir" | ${XARGS} ${REINPLACE_CMD} -e \
-		"s;[(]pkgdatadir[)]/examples;(datadir)/examples/q;"
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+CFLAGS+=	-I${LOCALBASE}/include/portaudio2 -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib/portaudio2 -L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.mk>
