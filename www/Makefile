@@ -1320,9 +1320,6 @@
     SUBDIR += rssowl
     SUBDIR += rsstail
     SUBDIR += rsstool
-    SUBDIR += rt2
-    SUBDIR += rt32
-    SUBDIR += rt34
     SUBDIR += rt36
     SUBDIR += rt38
     SUBDIR += ruboard
