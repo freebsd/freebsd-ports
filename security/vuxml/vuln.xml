@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="03d22656-2690-11de-8226-0030843d3802">
+    <topic>drupal6-cck -- cross-site scripting</topic>
+    <affects>
+      <package>
+	<name>drupal6-cck</name>
+	<range><lt>2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal CCK plugin developer reports:</p>
+	<blockquote cite="http://drupal.org/node/406520">
+	  <p>The Node reference and User reference sub-modules, which
+	    are part of the Content Construction Kit (CCK) project, lets
+	    administrators define node fields that are references to other
+	    nodes or to users. When displaying a node edit form, the
+	    titles of candidate referenced nodes or names of candidate
+	    referenced users are not properly filtered, allowing malicious
+	    users to inject arbitrary code on those pages. Such a cross
+	    site scripting (XSS) attack may lead to a malicious user
+	    gaining full administrative access.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>34172</bid>
+      <url>http://drupal.org/node/406520</url>
+    </references>
+    <dates>
+      <discovery>2009-03-23</discovery>
+      <entry>2009-04-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0fe73a4a-1b18-11de-8226-0030843d3802">
     <topic>pivot-weblog -- file deletion vulnerability</topic>
     <affects>
