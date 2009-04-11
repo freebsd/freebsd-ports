@@ -22,6 +22,7 @@ USE_OCAML_LDCONFIG=	yes
 USE_OCAML_PLIST=	yes
 
 ALL_TARGET=	all opt
+BROKEN=		does not build with current version of lang/ocaml
 
 .include <bsd.port.pre.mk>
 

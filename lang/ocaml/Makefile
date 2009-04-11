@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ocaml
-PORTVERSION=	3.10.2
-PORTREVISION=	1
+PORTVERSION=	3.11.0
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:R}/ \
 		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME:R}/ \
@@ -22,6 +21,7 @@ COMMENT?=	The Objective Caml compiler and programming environment
 USE_BZIP2=	yes
 REINPLACE_ARGS=	-i ""
 HAS_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 ALL_TARGET=	world.opt
 STRIP=
 
@@ -70,14 +70,13 @@ SFX=		-notk
 CONFLICTS+=	ocaml-[0-9]* ocaml-nox11-[0-9]*
 CONFIGURE_ARGS+=-no-tk
 .else
+USE_TK=		84+
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
 PLIST_SUB+=	TK=""
 CONFLICTS+=	ocaml-nox11-[0-9]* ocaml-notk-[0-9]*
-CONFIGURE_ARGS+=-tkdefs \
-	"-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4 ${THR_CPP}"\
-	-tklibs "-L${LOCALBASE}/lib ${THR_LD}"
-BUILD_DEPENDS+=	${LOCALBASE}/include/tcl8.4:${PORTSDIR}/lang/tcl84 \
-		${LOCALBASE}/include/tk8.4:${PORTSDIR}/x11-toolkits/tk84
-LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
+CONFIGURE_ARGS+=	-tkdefs \
+			"-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} ${THR_CPP}" \
+			-tklibs "-L${LOCALBASE}/lib ${THR_LD}"
 .endif
 
 .if ${ARCH} == sparc64 || ${ARCH} == ia64

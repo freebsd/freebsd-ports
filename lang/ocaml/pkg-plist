@@ -66,6 +66,7 @@ lib/ocaml/bigarray.cma
 lib/ocaml/bigarray.cmi
 lib/ocaml/bigarray.cmx
 lib/ocaml/bigarray.cmxa
+lib/ocaml/bigarray.cmxs
 lib/ocaml/bigarray.mli
 lib/ocaml/buffer.cmi
 lib/ocaml/buffer.cmx
@@ -93,6 +94,11 @@ lib/ocaml/caml/signals.h
 lib/ocaml/caml/unixsupport.h
 lib/ocaml/camlheader
 lib/ocaml/camlheader_ur
+lib/ocaml/camlinternalLazy.cmi
+lib/ocaml/camlinternalLazy.cmx
+lib/ocaml/camlinternalLazy.ml
+lib/ocaml/camlinternalLazy.mli
+lib/ocaml/camlinternalLazy.p.cmx
 lib/ocaml/camlinternalMod.cmi
 lib/ocaml/camlinternalMod.cmx
 lib/ocaml/camlinternalMod.ml
@@ -136,10 +142,6 @@ lib/ocaml/camlp4/Camlp4Filters/Camlp4Profiler.cmi
 lib/ocaml/camlp4/Camlp4Filters/Camlp4Profiler.cmo
 lib/ocaml/camlp4/Camlp4Filters/Camlp4Profiler.cmx
 lib/ocaml/camlp4/Camlp4Filters/Camlp4Profiler.o
-lib/ocaml/camlp4/Camlp4Filters/Camlp4Tracer.cmi
-lib/ocaml/camlp4/Camlp4Filters/Camlp4Tracer.cmo
-lib/ocaml/camlp4/Camlp4Filters/Camlp4Tracer.cmx
-lib/ocaml/camlp4/Camlp4Filters/Camlp4Tracer.o
 lib/ocaml/camlp4/Camlp4Filters/Camlp4TrashRemover.cmi
 lib/ocaml/camlp4/Camlp4Filters/Camlp4TrashRemover.cmo
 lib/ocaml/camlp4/Camlp4Filters/Camlp4TrashRemover.cmx
@@ -268,14 +270,18 @@ lib/ocaml/dbm.cma
 lib/ocaml/dbm.cmi
 lib/ocaml/dbm.cmx
 lib/ocaml/dbm.cmxa
+lib/ocaml/dbm.cmxs
 lib/ocaml/dbm.mli
 lib/ocaml/digest.cmi
 lib/ocaml/digest.cmx
 lib/ocaml/digest.ml
 lib/ocaml/digest.mli
 lib/ocaml/digest.p.cmx
+lib/ocaml/dynlink.a
 lib/ocaml/dynlink.cma
 lib/ocaml/dynlink.cmi
+lib/ocaml/dynlink.cmx
+lib/ocaml/dynlink.cmxa
 lib/ocaml/dynlink.mli
 lib/ocaml/event.mli
 lib/ocaml/expunge
@@ -305,8 +311,10 @@ lib/ocaml/genlex.p.cmx
 %%X11%%lib/ocaml/graphics.cmi
 %%X11%%lib/ocaml/graphics.cmx
 %%X11%%lib/ocaml/graphics.cmxa
+%%X11%%lib/ocaml/graphics.cmxs
 %%X11%%lib/ocaml/graphics.mli
 %%X11%%lib/ocaml/graphicsX11.cmi
+%%X11%%lib/ocaml/graphicsX11.cmx
 %%X11%%lib/ocaml/graphicsX11.mli
 lib/ocaml/hashtbl.cmi
 lib/ocaml/hashtbl.cmx
@@ -664,6 +672,7 @@ lib/ocaml/libasmrun.a
 lib/ocaml/libasmrunp.a
 lib/ocaml/libbigarray.a
 lib/ocaml/libcamlrun.a
+lib/ocaml/libcamlrun_shared.so
 %%X11%%lib/ocaml/libgraphics.a
 lib/ocaml/libmldbm.a
 lib/ocaml/libnums.a
@@ -711,6 +720,7 @@ lib/ocaml/num.mli
 lib/ocaml/nums.a
 lib/ocaml/nums.cma
 lib/ocaml/nums.cmxa
+lib/ocaml/nums.cmxs
 lib/ocaml/obj.cmi
 lib/ocaml/obj.cmx
 lib/ocaml/obj.ml
@@ -870,6 +880,7 @@ lib/ocaml/str.cma
 lib/ocaml/str.cmi
 lib/ocaml/str.cmx
 lib/ocaml/str.cmxa
+lib/ocaml/str.cmxs
 lib/ocaml/str.mli
 lib/ocaml/stream.cmi
 lib/ocaml/stream.cmx
@@ -926,6 +937,7 @@ lib/ocaml/unix.cma
 lib/ocaml/unix.cmi
 lib/ocaml/unix.cmx
 lib/ocaml/unix.cmxa
+lib/ocaml/unix.cmxs
 lib/ocaml/unix.mli
 lib/ocaml/unixLabels.cmi
 lib/ocaml/unixLabels.cmx

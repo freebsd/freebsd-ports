@@ -44,6 +44,7 @@ post-extract:
 		-e 's,^(X11_INCLUDES[[:space:]]*=).*,\1-I${LOCALBASE}/include,' \
 		-e 's,install -m 644,\$${BSD_INSTALL_DATA},' \
 		-e 's,install -m 755,\$${BSD_INSTALL_PROGRAM},' \
+		-e 's,^LIBRARIES = graphics,LIBRARIES =,' \
 		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
