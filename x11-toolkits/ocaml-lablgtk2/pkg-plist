@@ -1,4 +1,4 @@
-bin/gdk-pixbuf-mlsource
+bin/gdk_pixbuf_mlsource
 %%GLADE%%bin/lablgladecc2
 bin/lablgtk2
 lib/ocaml/lablgtk2/META
@@ -120,11 +120,11 @@ lib/ocaml/lablgtk2/gdkprivate-win32.h
 %%GL%%lib/ocaml/lablgtk2/glGtk.cmi
 %%GL%%lib/ocaml/lablgtk2/glGtk.cmx
 %%GL%%lib/ocaml/lablgtk2/glGtk.ml
-%%GL%%lib/ocaml/lablgtk2/glGtk.mli
+lib/ocaml/lablgtk2/glGtk.mli
 %%GLADE%%lib/ocaml/lablgtk2/glade.cmi
 %%GLADE%%lib/ocaml/lablgtk2/glade.cmx
 %%GLADE%%lib/ocaml/lablgtk2/glade.ml
-%%GLADE%%lib/ocaml/lablgtk2/glade.mli
+lib/ocaml/lablgtk2/glade.mli
 lib/ocaml/lablgtk2/glib.cmi
 lib/ocaml/lablgtk2/glib.cmx
 lib/ocaml/lablgtk2/glib.ml
@@ -133,18 +133,18 @@ lib/ocaml/lablgtk2/glib_tags.h
 %%GNOMECANVAS%%lib/ocaml/lablgtk2/gnoCanvas.cmi
 %%GNOMECANVAS%%lib/ocaml/lablgtk2/gnoCanvas.cmx
 %%GNOMECANVAS%%lib/ocaml/lablgtk2/gnoCanvas.ml
-%%GNOMECANVAS%%lib/ocaml/lablgtk2/gnoCanvas.mli
-lib/ocaml/lablgtk2/gnoDruid.cmi
-lib/ocaml/lablgtk2/gnoDruid.cmx
-lib/ocaml/lablgtk2/gnoDruid.ml
-lib/ocaml/lablgtk2/gnoDruid.mli
+lib/ocaml/lablgtk2/gnoCanvas.mli
 %%GNOMECANVAS%%lib/ocaml/lablgtk2/gnomeCanvas.cmi
 %%GNOMECANVAS%%lib/ocaml/lablgtk2/gnomeCanvas.cmx
 %%GNOMECANVAS%%lib/ocaml/lablgtk2/gnomeCanvas.ml
-lib/ocaml/lablgtk2/gnomeDruid.cmi
-lib/ocaml/lablgtk2/gnomeDruid.cmx
-lib/ocaml/lablgtk2/gnomeDruid.ml
+%%GNOMEUI%%lib/ocaml/lablgtk2/gnomeDruid.cmi
+%%GNOMEUI%%lib/ocaml/lablgtk2/gnomeDruid.cmx
+%%GNOMEUI%%lib/ocaml/lablgtk2/gnomeDruid.ml
 %%GNOMEUI%%lib/ocaml/lablgtk2/gnomeui_tags.h
+%%GNOMEUI%%lib/ocaml/lablgtk2/gnoDruid.cmi
+%%GNOMEUI%%lib/ocaml/lablgtk2/gnoDruid.cmx
+%%GNOMEUI%%lib/ocaml/lablgtk2/gnoDruid.ml
+lib/ocaml/lablgtk2/gnoDruid.mli
 lib/ocaml/lablgtk2/gobject.cmi
 lib/ocaml/lablgtk2/gobject.cmx
 lib/ocaml/lablgtk2/gobject.ml
@@ -218,7 +218,7 @@ lib/ocaml/lablgtk2/gtkSourceView_types.mli
 %%GTKSPELL%%lib/ocaml/lablgtk2/gtkSpell.cmi
 %%GTKSPELL%%lib/ocaml/lablgtk2/gtkSpell.cmx
 %%GTKSPELL%%lib/ocaml/lablgtk2/gtkSpell.ml
-%%GTKSPELL%%lib/ocaml/lablgtk2/gtkSpell.mli
+lib/ocaml/lablgtk2/gtkSpell.mli
 lib/ocaml/lablgtk2/gtkStock.cmi
 lib/ocaml/lablgtk2/gtkStock.cmx
 lib/ocaml/lablgtk2/gtkStock.ml
@@ -240,7 +240,7 @@ lib/ocaml/lablgtk2/gtkWindow.cmi
 lib/ocaml/lablgtk2/gtkWindow.cmx
 lib/ocaml/lablgtk2/gtkWindow.ml
 lib/ocaml/lablgtk2/gtk_tags.h
-lib/ocaml/lablgtk2/gtkgl_tags.h
+%%GL%%lib/ocaml/lablgtk2/gtkgl_tags.h
 %%GLADE%%lib/ocaml/lablgtk2/lablglade.a
 %%GLADE%%lib/ocaml/lablgtk2/lablglade.cma
 %%GLADE%%lib/ocaml/lablgtk2/lablglade.cmxa
@@ -253,9 +253,9 @@ lib/ocaml/lablgtk2/gtkgl_tags.h
 lib/ocaml/lablgtk2/lablgtk.a
 lib/ocaml/lablgtk2/lablgtk.cma
 lib/ocaml/lablgtk2/lablgtk.cmxa
-lib/ocaml/lablgtk2/lablgtkgl.a
-lib/ocaml/lablgtk2/lablgtkgl.cma
-lib/ocaml/lablgtk2/lablgtkgl.cmxa
+%%GL%%lib/ocaml/lablgtk2/lablgtkgl.a
+%%GL%%lib/ocaml/lablgtk2/lablgtkgl.cma
+%%GL%%lib/ocaml/lablgtk2/lablgtkgl.cmxa
 %%GTKSPELL%%lib/ocaml/lablgtk2/lablgtkspell.a
 %%GTKSPELL%%lib/ocaml/lablgtk2/lablgtkspell.cma
 %%GTKSPELL%%lib/ocaml/lablgtk2/lablgtkspell.cmxa
@@ -269,7 +269,7 @@ lib/ocaml/lablgtk2/lablgtkgl.cmxa
 %%GNOMECANVAS%%lib/ocaml/lablgtk2/liblablgnomecanvas.a
 %%GNOMEUI%%lib/ocaml/lablgtk2/liblablgnomeui.a
 lib/ocaml/lablgtk2/liblablgtk2.a
-lib/ocaml/lablgtk2/liblablgtkgl2.a
+%%GL%%lib/ocaml/lablgtk2/liblablgtkgl2.a
 %%GTKSPELL%%lib/ocaml/lablgtk2/liblablgtkspell.a
 %%PANEL%%lib/ocaml/lablgtk2/liblablpanel.a
 %%RSVG%%lib/ocaml/lablgtk2/liblablrsvg.a
@@ -287,7 +287,7 @@ lib/ocaml/lablgtk2/ml_pango.h
 %%PANEL%%lib/ocaml/lablgtk2/panel.cmi
 %%PANEL%%lib/ocaml/lablgtk2/panel.cmx
 %%PANEL%%lib/ocaml/lablgtk2/panel.ml
-%%PANEL%%lib/ocaml/lablgtk2/panel.mli
+lib/ocaml/lablgtk2/panel.mli
 %%PANEL%%lib/ocaml/lablgtk2/panel_tags.h
 lib/ocaml/lablgtk2/pango.cmi
 lib/ocaml/lablgtk2/pango.cmx
@@ -300,7 +300,7 @@ lib/ocaml/lablgtk2/propcc
 %%RSVG%%lib/ocaml/lablgtk2/rsvg.cmi
 %%RSVG%%lib/ocaml/lablgtk2/rsvg.cmx
 %%RSVG%%lib/ocaml/lablgtk2/rsvg.ml
-%%RSVG%%lib/ocaml/lablgtk2/rsvg.mli
+lib/ocaml/lablgtk2/rsvg.mli
 lib/ocaml/lablgtk2/varcc
 lib/ocaml/lablgtk2/win32.h
 lib/ocaml/lablgtk2/wrappers.h
@@ -309,22 +309,24 @@ lib/ocaml/lablgtk2/xml_lexer.mli
 %%GNOMECANVAS%%lib/ocaml/stublibs/dlllablgnomecanvas.so
 %%GNOMEUI%%lib/ocaml/stublibs/dlllablgnomeui.so
 lib/ocaml/stublibs/dlllablgtk2.so
-lib/ocaml/stublibs/dlllablgtkgl2.so
+%%GL%%lib/ocaml/stublibs/dlllablgtkgl2.so
 %%GTKSPELL%%lib/ocaml/stublibs/dlllablgtkspell.so
 %%PANEL%%lib/ocaml/stublibs/dlllablpanel.so
 %%RSVG%%lib/ocaml/stublibs/dlllablrsvg.so
-%%PORTDOCS%%%%EXAMPLESDIR%%/GL/aargb.ml
-%%PORTDOCS%%%%EXAMPLESDIR%%/GL/gears.ml
-%%PORTDOCS%%%%EXAMPLESDIR%%/GL/morph3d.ml
-%%PORTDOCS%%%%EXAMPLESDIR%%/GL/planet.ml
-%%PORTDOCS%%%%EXAMPLESDIR%%/GL/scene.ml
-%%PORTDOCS%%%%EXAMPLESDIR%%/GL/simple.ml
-%%PORTDOCS%%%%EXAMPLESDIR%%/GL/texturesurf.ml
-%%PORTDOCS%%%%EXAMPLESDIR%%/GL/tutorial-2.ml
-%%PORTDOCS%%%%EXAMPLESDIR%%/GL/tutorial-3.ml
-%%PORTDOCS%%%%EXAMPLESDIR%%/GL/tutorial-4.ml
-%%PORTDOCS%%%%EXAMPLESDIR%%/GL/tutorial-5.ml
+%%GL%%%%PORTDOCS%%%%EXAMPLESDIR%%/GL/aargb.ml
+%%GL%%%%PORTDOCS%%%%EXAMPLESDIR%%/GL/gears.ml
+%%GL%%%%PORTDOCS%%%%EXAMPLESDIR%%/GL/morph3d.ml
+%%GL%%%%PORTDOCS%%%%EXAMPLESDIR%%/GL/planet.ml
+%%GL%%%%PORTDOCS%%%%EXAMPLESDIR%%/GL/scene.ml
+%%GL%%%%PORTDOCS%%%%EXAMPLESDIR%%/GL/simple.ml
+%%GL%%%%PORTDOCS%%%%EXAMPLESDIR%%/GL/simple_th.ml
+%%GL%%%%PORTDOCS%%%%EXAMPLESDIR%%/GL/texturesurf.ml
+%%GL%%%%PORTDOCS%%%%EXAMPLESDIR%%/GL/tutorial-2.ml
+%%GL%%%%PORTDOCS%%%%EXAMPLESDIR%%/GL/tutorial-3.ml
+%%GL%%%%PORTDOCS%%%%EXAMPLESDIR%%/GL/tutorial-4.ml
+%%GL%%%%PORTDOCS%%%%EXAMPLESDIR%%/GL/tutorial-5.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/about.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/accel_tree.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/action.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/assistant.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/assistant_tutorial.ml
@@ -346,6 +348,8 @@ lib/ocaml/stublibs/dlllablgtkgl2.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/combobox.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/counter.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/csview.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/custom_tree.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/custom_tree_generic.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/dcalendar.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/drawing.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/druid.ml
@@ -353,6 +357,7 @@ lib/ocaml/stublibs/dlllablgtkgl2.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/editor2.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/entry.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/entrycompletion.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/eventbox.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/events.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/events2.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/expander.ml
@@ -360,6 +365,7 @@ lib/ocaml/stublibs/dlllablgtkgl2.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/filechooser.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/fixed_editor.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/fixpoint.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/gioredirect.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/giotest.ml
 %%PORTDOCS%%%%GLADE%%%%EXAMPLESDIR%%/glade/glade_demo.ml
 %%PORTDOCS%%%%GLADE%%%%EXAMPLESDIR%%/glade/gladecalc.ml
@@ -392,6 +398,7 @@ lib/ocaml/stublibs/dlllablgtkgl2.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/slide_show.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/socket.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/spell.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/spin.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/test.xpm
 %%PORTDOCS%%%%EXAMPLESDIR%%/testdnd.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/testgtk.ml
@@ -405,6 +412,7 @@ lib/ocaml/stublibs/dlllablgtkgl2.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/text/unicode_viewer.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/timer.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/toolbar.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/tooltip.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/tree.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/tree_model.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/tree_store.ml
@@ -414,7 +422,7 @@ lib/ocaml/stublibs/dlllablgtkgl2.so
 %%PORTDOCS%%%%PANEL%%@dirrm %%EXAMPLESDIR%%/panel
 %%PORTDOCS%%%%GLADE%%@dirrm %%EXAMPLESDIR%%/glade
 %%PORTDOCS%%%%GNOMECANVAS%%@dirrm %%EXAMPLESDIR%%/canvas
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/GL
+%%GL%%%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/GL
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrmtry share/examples/ocaml
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
