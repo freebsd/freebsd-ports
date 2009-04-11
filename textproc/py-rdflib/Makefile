@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rdflib
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	textproc python
 MASTER_SITES=	http://rdflib.net/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,8 @@ COMMENT=	A Python library for RDF manipulation
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
+
+FETCH_ARGS=	-prR
 
 pre-build:
 	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py setopt -c build -o build-platlib -s lib.${PYEASYINSTALL_OSARCH:S/^-//}
