@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	HTML-CTPP2
-PORTVERSION=	2.4.7
+PORTVERSION=	2.4.10
 CATEGORIES=	textproc perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN \
+		http://ctpp.havoc.ru/download/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	reki@reki.ru
