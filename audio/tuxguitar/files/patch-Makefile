@@ -1,0 +1,12 @@
+--- Makefile.orig	2009-03-31 18:30:44.000000000 +0200
++++ Makefile		2009-04-06 21:59:45.000000000 +0200
+@@ -84,6 +84,9 @@
+  ./TuxGuitar-alsa/tuxguitar-alsa.jar \
+  ./TuxGuitar-alsa/jni/libtuxguitar-alsa-jni.so \
+  ./TuxGuitar-oss/tuxguitar-oss.jar \
++ ./TuxGuitar-tuner/tuxguitar-tuner.jar \
++ ./TuxGuitar-browser-ftp/tuxguitar-browser-ftp.jar \
++ ./TuxGuitar-gervill/tuxguitar-gervill.jar \
+  ./TuxGuitar-oss/jni/libtuxguitar-oss-jni.so \
+  ./TuxGuitar-fluidsynth/tuxguitar-fluidsynth.jar \
+  ./TuxGuitar-fluidsynth/jni/libtuxguitar-fluidsynth-jni.so \
