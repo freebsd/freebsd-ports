@@ -34,6 +34,8 @@ share/gnome/help/lordsawar/C/figures/main_screen_move_stack_dir_buttons.png
 share/gnome/help/lordsawar/C/figures/main_screen_park_stack_button.png
 share/gnome/help/lordsawar/C/figures/main_screen_select_next_stack_button.png
 share/gnome/help/lordsawar/C/figures/main_screen_stack_search_button.png
+share/locale/da/LC_MESSAGES/lordsawar.mo
+share/locale/nl/LC_MESSAGES/lordsawar.mo
 %%DATADIR%%/citynames
 %%DATADIR%%/gtkrc
 %%DATADIR%%/heronames
