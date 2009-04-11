@@ -1,0 +1,48 @@
+bin/diffuse
+etc/diffuserc
+%%DATADIR%%/syntax/bash.syntax
+%%DATADIR%%/syntax/c++.syntax
+%%DATADIR%%/syntax/csh.syntax
+%%DATADIR%%/syntax/csharp.syntax
+%%DATADIR%%/syntax/css.syntax
+%%DATADIR%%/syntax/gettext.syntax
+%%DATADIR%%/syntax/html.syntax
+%%DATADIR%%/syntax/ini.syntax
+%%DATADIR%%/syntax/java.syntax
+%%DATADIR%%/syntax/javascript.syntax
+%%DATADIR%%/syntax/jsp.syntax
+%%DATADIR%%/syntax/makefile.syntax
+%%DATADIR%%/syntax/objective-c++.syntax
+%%DATADIR%%/syntax/octave.syntax
+%%DATADIR%%/syntax/pascal.syntax
+%%DATADIR%%/syntax/patch.syntax
+%%DATADIR%%/syntax/perl.syntax
+%%DATADIR%%/syntax/php.syntax
+%%DATADIR%%/syntax/python.syntax
+%%DATADIR%%/syntax/ruby.syntax
+%%DATADIR%%/syntax/sql.syntax
+%%DATADIR%%/syntax/tcl.syntax
+%%DATADIR%%/syntax/vb.syntax
+%%DATADIR%%/syntax/verilog.syntax
+%%DATADIR%%/syntax/vhdl.syntax
+%%DATADIR%%/syntax/xml.syntax
+@dirrm %%DATADIR%%/syntax
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%OMF%%share/gnome/help/diffuse/C/diffuse.xml
+%%OMF%%@dirrm share/gnome/help/diffuse/C
+%%OMF%%@dirrm share/gnome/help/diffuse
+%%OMF%%@dirrmtry share/gnome/help
+%%OMF%%@dirrmtry share/gnome
+%%OMF%%share/omf/diffuse/diffuse-C.omf
+%%OMF%%@dirrm share/omf/diffuse
+%%OMF%%@dirrmtry share/omf
+%%MENU%%share/applications/diffuse.desktop
+%%MENU%%@dirrmtry share/applications
+%%MENU%%share/pixmaps/diffuse.png
+%%MENU%%@dirrmtry share/pixmaps
