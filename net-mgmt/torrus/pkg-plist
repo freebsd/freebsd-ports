@@ -30,6 +30,7 @@ libexec/torrus/rrddir2xml
 libexec/torrus/schedulerinfo
 libexec/torrus/scripts/rrdup_notify.sh
 libexec/torrus/scripts/xml/extract-skeleton.xsl
+libexec/torrus/srvderive
 libexec/torrus/ttproclist
 %%DOCSDIR%%/devdoc/architecture.pod
 %%DOCSDIR%%/devdoc/devdiscover.pod
@@ -108,6 +109,8 @@ share/torrus/xmlconfig/examples/servers.data
 share/torrus/xmlconfig/examples/servers.tmpl
 share/torrus/xmlconfig/generic/collector-periods.xml
 share/torrus/xmlconfig/generic/monitors.xml
+share/torrus/xmlconfig/generic/rfc1628.ups.xml
+share/torrus/xmlconfig/generic/rfc1697.rdbms.xml
 share/torrus/xmlconfig/generic/rfc2662.adsl-line.xml
 share/torrus/xmlconfig/generic/rfc2670.docsis-if.xml
 share/torrus/xmlconfig/generic/rfc2790.host-resources.xml
@@ -125,6 +128,7 @@ share/torrus/xmlconfig/snmp-defs.xml
 share/torrus/xmlconfig/vendor/alteon.xml
 share/torrus/xmlconfig/vendor/apc.ups.xml
 share/torrus/xmlconfig/vendor/apple.ae.xml
+share/torrus/xmlconfig/vendor/arbor_e.xml
 share/torrus/xmlconfig/vendor/ascend.max.xml
 share/torrus/xmlconfig/vendor/atmel.xml
 share/torrus/xmlconfig/vendor/betternetworks.xml
@@ -141,6 +145,7 @@ share/torrus/xmlconfig/vendor/empire.systemedge.xml
 share/torrus/xmlconfig/vendor/f5.bigip.xml
 share/torrus/xmlconfig/vendor/junos.xml
 share/torrus/xmlconfig/vendor/hp.hpux.xml
+share/torrus/xmlconfig/vendor/liebert.xml
 share/torrus/xmlconfig/vendor/microsoft.windows.xml
 share/torrus/xmlconfig/vendor/motorola.bsr.xml
 share/torrus/xmlconfig/vendor/netapp.filer.xml
@@ -175,6 +180,7 @@ share/torrus/xmlconfig/vendor/ucd.ucd-snmp.xml
 %%SITE_PERL%%/Torrus/DevDiscover/AlliedTelesyn_PBC18.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Alteon.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Apple_AE.pm
+%%SITE_PERL%%/Torrus/DevDiscover/Arbor_E.pm
 %%SITE_PERL%%/Torrus/DevDiscover/AscendMax.pm
 %%SITE_PERL%%/Torrus/DevDiscover/AxxessIT.pm
 %%SITE_PERL%%/Torrus/DevDiscover/BetterNetworks.pm
@@ -191,12 +197,14 @@ share/torrus/xmlconfig/vendor/ucd.ucd-snmp.xml
 %%SITE_PERL%%/Torrus/DevDiscover/EmpireSystemedge.pm
 %%SITE_PERL%%/Torrus/DevDiscover/F5BigIp.pm
 %%SITE_PERL%%/Torrus/DevDiscover/JunOS.pm
+%%SITE_PERL%%/Torrus/DevDiscover/Liebert.pm
 %%SITE_PERL%%/Torrus/DevDiscover/MicrosoftWindows.pm
 %%SITE_PERL%%/Torrus/DevDiscover/MotorolaBSR.pm
 %%SITE_PERL%%/Torrus/DevDiscover/NetApp.pm
 %%SITE_PERL%%/Torrus/DevDiscover/NetScreen.pm
 %%SITE_PERL%%/Torrus/DevDiscover/OracleDatabase.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Paradyne.pm
+%%SITE_PERL%%/Torrus/DevDiscover/RFC1628_UPS_MIB.pm
 %%SITE_PERL%%/Torrus/DevDiscover/RFC1657_BGP4_MIB.pm
 %%SITE_PERL%%/Torrus/DevDiscover/RFC1697_RDBMS.pm
 %%SITE_PERL%%/Torrus/DevDiscover/RFC2011_IP_MIB.pm
