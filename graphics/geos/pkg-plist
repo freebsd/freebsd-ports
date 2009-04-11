@@ -1,4 +1,3 @@
-bin/XMLTester
 bin/geos-config
 include/geos.h
 include/geos/algorithm/LineIntersector.h
@@ -41,6 +40,21 @@ include/geos/geom/Point.h
 include/geos/geom/Polygon.h
 include/geos/geom/PrecisionModel.h
 include/geos/geom/PrecisionModel.inl
+include/geos/geom/prep/AbstractPreparedPolygonContains.h
+include/geos/geom/prep/BasicPreparedGeometry.h
+include/geos/geom/prep/PreparedGeometryFactory.h
+include/geos/geom/prep/PreparedGeometry.h
+include/geos/geom/prep/PreparedLineString.h
+include/geos/geom/prep/PreparedLineStringIntersects.h
+include/geos/geom/prep/PreparedPoint.h
+include/geos/geom/prep/PreparedPolygonContains.h
+include/geos/geom/prep/PreparedPolygonContainsProperly.h
+include/geos/geom/prep/PreparedPolygonCovers.h
+include/geos/geom/prep/PreparedPolygon.h
+include/geos/geom/prep/PreparedPolygonIntersects.h
+include/geos/geom/prep/PreparedPolygonPredicate.h
+include/geos/geom/util/ComponentCoordinateExtracter.h
+include/geos/geom/util/GeometryCombiner.h
 include/geos/geom/util/CoordinateOperation.h
 include/geos/geom/util/GeometryEditor.h
 include/geos/geom/util/GeometryEditorOperation.h
@@ -90,6 +104,7 @@ include/geos/index/strtree/Interval.h
 include/geos/index/strtree/SIRtree.h
 include/geos/index/strtree/STRtree.h
 include/geos/index/sweepline/SweepLineOverlapAction.h
+include/geos/operation/union/CascadedPolygonUnion.h
 include/geos/indexBintree.h
 include/geos/indexChain.h
 include/geos/indexQuadtree.h
@@ -162,12 +177,13 @@ lib/libgeos.so.0
 lib/libgeos_c.a
 lib/libgeos_c.la
 lib/libgeos_c.so
-lib/libgeos_c.so.5
+lib/libgeos_c.so.6
 @dirrm include/geos/util
 @dirrm include/geos/simplify
 @dirrm include/geos/precision
 @dirrm include/geos/planargraph
 @dirrm include/geos/operation/valid
+@dirrm include/geos/operation/union
 @dirrm include/geos/operation/relate
 @dirrm include/geos/operation/polygonize
 @dirrm include/geos/operation/overlay
@@ -176,15 +192,18 @@ lib/libgeos_c.so.5
 @dirrm include/geos/operation/buffer
 @dirrm include/geos/operation
 @dirrm include/geos/io
+@dirrm include/geos/algorithm/locate
+@dirrm include/geos/algorithm
 @dirrm include/geos/index/sweepline
 @dirrm include/geos/index/strtree
 @dirrm include/geos/index/quadtree
+@dirrm include/geos/index/intervalrtree
 @dirrm include/geos/index/chain
 @dirrm include/geos/index/bintree
 @dirrm include/geos/index
 @dirrm include/geos/geomgraph/index
 @dirrm include/geos/geomgraph
 @dirrm include/geos/geom/util
+@dirrm include/geos/geom/prep
 @dirrm include/geos/geom
-@dirrm include/geos/algorithm
 @dirrm include/geos
