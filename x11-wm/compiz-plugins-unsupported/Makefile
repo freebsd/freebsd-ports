@@ -17,8 +17,7 @@ COMMENT=	Plugins for Compiz Composite Window Manager
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz \
 		${LOCALBASE}/libdata/pkgconfig/bcop.pc:${PORTSDIR}/devel/compiz-bcop \
-		${LOCALBASE}/libdata/pkgconfig/compiz-text.pc:${PORTSDIR}/x11-wm
-/compiz-plugins-main
+		${LOCALBASE}/libdata/pkgconfig/compiz-text.pc:${PORTSDIR}/x11-wm/compiz-plugins-main
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
