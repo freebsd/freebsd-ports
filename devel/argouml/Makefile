@@ -41,8 +41,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/*.xml ${DATADIR}/ext/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/manual-${PORTVERSION}.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/quickguide-${PORTVERSION}.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manual-${PORTVERSION}.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/quickguide-${PORTVERSION}.pdf ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
