@@ -4298,7 +4298,6 @@ gnome-audio                     ports/audio/gnome-audio
 gnome-backgrounds               ports/x11-themes/gnome-backgrounds
 gnome-blog                      ports/deskutils/gnome-blog
 gnome-bluecurve-theme           ports/x11-themes/gnome-bluecurve-theme
-gnome-build                     ports/devel/gnome-build
 gnome-clipboard-daemon          ports/x11/gnome-clipboard-daemon
 gnome-commander                 ports/x11-fm/gnome-commander
 gnome-commander2                ports/x11-fm/gnome-commander2
@@ -4390,7 +4389,6 @@ gnome-vfs-reference             ports/devel/gnome-vfs-reference
 gnome-vfs1                      ports/devel/gnome-vfs1
 gnome-vfsmm                     ports/devel/gnome-vfsmm
 gnome-vnc                       ports/net/gnome-vnc
-gnome-volume-manager            ports/sysutils/gnome-volume-manager
 gnome-web-photo                 ports/www/gnome-web-photo
 gnome2                          ports/x11/gnome2
 gnome2-fifth-toe                ports/x11/gnome2-fifth-toe
@@ -5031,6 +5029,7 @@ hesiod                          ports/dns/hesiod
 hevea                           ports/textproc/hevea
 hex                             ports/games/hex
 hex-a-hop                       ports/games/hex-a-hop
+hexalate                        ports/games/hexalate
 hexcalc                         ports/math/hexcalc
 hexcurse                        ports/editors/hexcurse
 hexedit                         ports/editors/hexedit
@@ -7668,6 +7667,7 @@ libxt                           ports/x11-toolkits/libXt
 libxtrans                       ports/x11/libXtrans
 libxtrap                        ports/x11/libXTrap
 libxtst                         ports/x11/libXtst
+libxul                          ports/www/libxul
 libxv                           ports/x11/libXv
 libxvmc                         ports/x11/libXvMC
 libxxf86dga                     ports/x11/libXxf86dga
@@ -7780,6 +7780,7 @@ linux-f8-curl                   ports/ftp/linux-f8-curl
 linux-f8-dri                    ports/graphics/linux-f8-dri
 linux-f8-esound                 ports/audio/linux-f8-esound
 linux-f8-expat                  ports/textproc/linux-f8-expat
+linux-f8-flashplugin10          ports/www/linux-f8-flashplugin10
 linux-f8-fontconfig             ports/x11-fonts/linux-f8-fontconfig
 linux-f8-freealut               ports/audio/linux-f8-freealut
 linux-f8-gdk-pixbuf             ports/graphics/linux-f8-gdk-pixbuf
@@ -10421,6 +10422,7 @@ p5-Class-Data-Accessor          ports/devel/p5-Class-Data-Accessor
 p5-Class-Data-ConfigHash        ports/devel/p5-Class-Data-ConfigHash
 p5-Class-Data-Inheritable       ports/devel/p5-Class-Data-Inheritable
 p5-Class-Date                   ports/devel/p5-Class-Date
+p5-Class-Declare                ports/devel/p5-Class-Declare
 p5-Class-Default                ports/devel/p5-Class-Default
 p5-Class-Delegation             ports/devel/p5-Class-Delegation
 p5-Class-ErrorHandler           ports/devel/p5-Class-ErrorHandler
@@ -12609,6 +12611,8 @@ p5-Sysadm-Install               ports/sysutils/p5-Sysadm-Install
 p5-SyslogScan                   ports/sysutils/p5-SyslogScan
 p5-System2                      ports/devel/p5-System2
 p5-T2                           ports/databases/p5-T2
+p5-TAP-Formatter-JUnit          ports/devel/p5-TAP-Formatter-JUnit
+p5-TAP-Harness-JUnit            ports/devel/p5-TAP-Harness-JUnit
 p5-Taint-Runtime                ports/devel/p5-Taint-Runtime
 p5-Tangram                      ports/databases/p5-Tangram
 p5-Task-Catalyst                ports/www/p5-Task-Catalyst
@@ -13790,6 +13794,7 @@ p5-class-dbi-sqlite             ports/databases/p5-Class-DBI-SQLite
 p5-class-dbi-sweet              ports/databases/p5-Class-DBI-Sweet
 p5-class-dbi-tosax              ports/databases/p5-Class-DBI-ToSax
 p5-class-dbi-untaint            ports/databases/p5-Class-DBI-Untaint
+p5-class-declare                ports/devel/p5-Class-Declare
 p5-class-default                ports/devel/p5-Class-Default
 p5-class-delegation             ports/devel/p5-Class-Delegation
 p5-class-errorhandler           ports/devel/p5-Class-ErrorHandler
@@ -16048,6 +16053,8 @@ p5-t2                           ports/databases/p5-T2
 p5-tagged                       ports/audio/p5-tagged
 p5-taint-runtime                ports/devel/p5-Taint-Runtime
 p5-tangram                      ports/databases/p5-Tangram
+p5-tap-formatter-junit          ports/devel/p5-TAP-Formatter-JUnit
+p5-tap-harness-junit            ports/devel/p5-TAP-Harness-JUnit
 p5-task-catalyst                ports/www/p5-Task-Catalyst
 p5-task-math-symbolic           ports/math/p5-Task-Math-Symbolic
 p5-task-weaken                  ports/devel/p5-Task-Weaken
