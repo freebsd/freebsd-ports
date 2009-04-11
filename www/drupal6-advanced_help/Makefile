@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	advanced_help
-DISTVERSION=	6.x-1.1
+DISTVERSION=	6.x-1.2
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
@@ -16,9 +16,10 @@ COMMENT=	Allows to store module help pages outside the module system
 DRUPAL6_MODULE=	yes
 MODULE_DIRS=	help \
 		help_example/help help_example/translations help_example \
-		translations
+		translations/help/de translations/help translations
 MODULE_FILES=	help/advanced_help.help.ini help/ini-file.html \
 		help/translation.html help/using-advanced-help.html \
+		help/why-advanced-help.html \
 		advanced-help-popup.tpl.php advanced_help.info \
 		advanced_help.install advanced_help.module \
 		help-icon.css help-popup.css help.css help.png \
@@ -35,8 +36,15 @@ MODULE_FILES=	help/advanced_help.help.ini help/ini-file.html \
 		help_example/help_example.module \
 		help_example/translations/help_example.de.po \
 		help_example/translations/help_example.pot \
+		translations/help/de/advanced_help.help.ini \
+		translations/help/de/ini-file.html \
+		translations/help/de/translation.html \
+		translations/help/de/using-advanced-help.html \
+		translations/help/de/why-advanced-help.html \
 		translations/advanced_help.de.po \
-		translations/advanced_help.pot
+		translations/advanced_help.hu.po \
+		translations/advanced_help.pot \
+		translations/fr.po
 DOC_FILES=	LICENSE.txt
 
 .include <bsd.port.pre.mk>
