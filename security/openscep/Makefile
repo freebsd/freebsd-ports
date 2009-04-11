@@ -7,17 +7,17 @@
 
 PORTNAME=	openscep
 PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://openscep.othello.ch/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Open source scep server
 
 USE_AUTOTOOLS=	libtool:15
 USE_OPENSSL=	yes
 USE_OPENLDAP=	yes
-USE_APACHE=	yes
+USE_APACHE=	1.3+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
