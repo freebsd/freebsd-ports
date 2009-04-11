@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fabric
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ DISTNAME=	Fabric-${PORTVERSION}
 MAINTAINER=	yzlin@cs.nctu.edu.tw
 COMMENT=	A simple pythonic remote deployment tool
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.6:${PORTSDIR}/security/py-paramiko
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.7:${PORTSDIR}/security/py-paramiko
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
