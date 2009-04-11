@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ditesh@gathani.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHK is a PHP-oriented package/archive system
 
 USE_PHP=	yes

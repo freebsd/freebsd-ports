@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ditesh@gathani.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PECL extension for the mdbtools library
 
 USE_PHP=	yes

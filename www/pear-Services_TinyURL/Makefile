@@ -9,7 +9,7 @@ PORTNAME=	Services_TinyURL
 PORTVERSION=	0.1.2
 CATEGORIES=	www pear
 
-MAINTAINER=	ditesh@gathani.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP interface to TinyURL's API
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

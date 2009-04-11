@@ -9,7 +9,7 @@ PORTNAME=	Services_urlTea
 PORTVERSION=	0.1.0
 CATEGORIES=	www pear
 
-MAINTAINER=	ditesh@gathani.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP interface to urlTea's API
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

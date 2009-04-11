@@ -10,7 +10,7 @@ PORTVERSION=	1.0.6
 CATEGORIES=	devel pear
 DISTNAME=	CodeGen-${PORTVERSION}
 
-MAINTAINER=	ditesh@gathani.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Tool to create Code generaters that operate on XML descriptions
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

@@ -9,7 +9,7 @@ PORTNAME=	Validate_AU
 PORTVERSION=	0.1.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ditesh@gathani.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR data validation class for Australia
 
 BUILD_DEPENDS=	pear-Validate>=0.5.0:${PORTSDIR}/devel/pear-Validate

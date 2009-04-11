@@ -9,7 +9,7 @@ PORTNAME=	Text_Spell_Audio
 PORTVERSION=	0.1.0
 CATEGORIES=	audio pear
 
-MAINTAINER=	ditesh@gathani.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Generates a sound clip saying the contents of a string of characters
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

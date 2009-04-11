@@ -9,7 +9,7 @@ PORTNAME=	Crypt_DiffieHellman
 PORTVERSION=	0.2.1
 CATEGORIES=	security www pear
 
-MAINTAINER=	ditesh@gathani.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class implementing Diffie-Hellman Key Exchange protocol for PHP5
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

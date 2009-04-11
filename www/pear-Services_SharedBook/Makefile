@@ -9,7 +9,7 @@ PORTNAME=	Services_SharedBook
 PORTVERSION=	0.2.2
 CATEGORIES=	www pear
 
-MAINTAINER=	ditesh@gathani.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP wrapper for SharedBook Open API
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP/Client.php:${PORTSDIR}/www/pear-HTTP_Client
