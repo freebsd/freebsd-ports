@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cck
-DISTVERSION=	6.x-2.1
+DISTVERSION=	6.x-2.2
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
@@ -14,7 +14,7 @@ MAINTAINER=	rea-fbsd@codelabs.ru
 COMMENT=	Drupal 6 Content Construction Kit module
 
 DRUPAL6_MODULE=	yes
-MODULE_DIRS=	help examples \
+MODULE_DIRS=	help \
 		includes/views/handlers includes/views includes \
 		modules/content_copy/translations modules/content_copy \
 		modules/content_multigroup/translations \
@@ -107,12 +107,13 @@ MODULE_FILES=	help/add-existing-field.html \
 		modules/fieldgroup/translations/modules-fieldgroup.fr.po \
 		modules/fieldgroup/translations/modules-fieldgroup.hu.po \
 		modules/fieldgroup/translations/modules-fieldgroup.pot \
+		modules/fieldgroup/fieldgroup-rtl.css \
+		modules/fieldgroup/fieldgroup-simple.tpl.php \
 		modules/fieldgroup/fieldgroup.css \
 		modules/fieldgroup/fieldgroup.info \
 		modules/fieldgroup/fieldgroup.install \
 		modules/fieldgroup/fieldgroup.module \
 		modules/fieldgroup/fieldgroup.panels.inc \
-		modules/fieldgroup/fieldgroup.tpl.php \
 		modules/nodereference/help/nodereference.help.ini \
 		modules/nodereference/help/nodereference.html \
 		modules/nodereference/nodereference.info \
@@ -164,6 +165,7 @@ MODULE_FILES=	help/add-existing-field.html \
 		theme/content-admin-display-overview-form.tpl.php \
 		theme/content-admin-field-overview-form.tpl.php \
 		theme/content-field.tpl.php \
+		theme/content-module-rtl.css \
 		theme/content-module.css \
 		theme/theme.inc \
 		translations/help/de/add-existing-field.html \
@@ -191,7 +193,6 @@ MODULE_FILES=	help/add-existing-field.html \
 		translations/examples.fr.po \
 		translations/general.de.po \
 		translations/general.fr.po \
-		translations/general.hu.po \
 		translations/general.pot \
 		translations/hu.po \
 		translations/includes-views-handlers.de.po \
