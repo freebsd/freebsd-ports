@@ -1,0 +1,11 @@
+--- doc/guide/Makefile.orig	2009-02-08 13:47:36.000000000 -0500
++++ doc/guide/Makefile	2009-02-08 13:23:38.000000000 -0500
+@@ -39,7 +39,7 @@
+ twelf_toc.html : twelf.texi;
+ 	@echo "---------- Creating HTML: twelf_*.html"
+ 	$(texi2html) -menu -number -split_chapter twelf.texi;
+-	$(texi2html) -check *.html;
++#	$(texi2html) -check *.html;
+ 
+ twelf.pdf : twelf.texi;
+ 	@echo "---------- Creating unindexed PDF: twelf.pdf"

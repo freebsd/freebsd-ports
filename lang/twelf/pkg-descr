@@ -1,4 +1,3 @@
-
 The Twelf implementation comprises
 
  * the LF logical framework, including type reconstruction;
@@ -17,3 +16,4 @@ and Hilbert's deduction theorem.
 -- the Twelf home page
 
 WWW: http://www.cs.cmu.edu/~twelf
+Maintainer: Andrew Bernard (andrewb@cs.cmu.edu)
