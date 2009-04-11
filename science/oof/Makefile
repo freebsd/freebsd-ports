@@ -53,6 +53,7 @@ PLIST_FILES+=	bin/oof2abaqus
 .include <bsd.port.pre.mk>
 
 BROKEN=		Broken with GCC 4.2 and beyond
+DEPRECATED=	${BROKEN}
 EXPIRATION_DATE=2009-03-22
 
 .if ${ARCH}==sparc64

@@ -47,7 +47,8 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/sendmail:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
 		analog:${PORTSDIR}/www/analog
 BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c
 
-BROKEN=	Master site gone, distfiles not fetchable
+BROKEN=		Master site gone, distfiles not fetchable
+DEPRECATED=	${BROKEN}
 EXPIRATION_DATE=	2009-04-06
 
 USE_GNOME=	glib20
