@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.popvox.com/
 DISTFILES=	astmanproxy-latest.tgz
 
-MAINTAINER=	ditesh@gathani.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multi-threaded proxy server for Asterisk
 
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
