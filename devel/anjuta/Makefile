@@ -8,7 +8,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	2.26.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,6 +18,7 @@ COMMENT=	Integrated Development Environment for C and C++
 
 BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
 		bash:${PORTSDIR}/shells/bash \
+		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
 		neato:${PORTSDIR}/graphics/graphviz
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		gladeui-1.9:${PORTSDIR}/devel/glade3 \
@@ -27,6 +28,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		autogen:${PORTSDIR}/devel/autogen \
 		neato:${PORTSDIR}/graphics/graphviz \
+		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
 		libtool:${PORTSDIR}/devel/libtool15 \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
