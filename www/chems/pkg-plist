@@ -9,9 +9,13 @@
 %%WWWDIR%%/modules/blogroll/blogroll.php
 %%WWWDIR%%/modules/categories/README
 %%WWWDIR%%/modules/categories/categories.php
+%%WWWDIR%%/modules/chtheme/README
+%%WWWDIR%%/modules/chtheme/chtheme.php
 %%WWWDIR%%/modules/comments/README
 %%WWWDIR%%/modules/comments/comments.php
 %%WWWDIR%%/modules/commons.php
+%%WWWDIR%%/modules/contacts/README
+%%WWWDIR%%/modules/contacts/contacts.php
 %%WWWDIR%%/modules/freehands/README
 %%WWWDIR%%/modules/freehands/freehands.php
 %%WWWDIR%%/modules/navbar/README
@@ -33,6 +37,9 @@
 %%WWWDIR%%/themes/colorlite/colorlite.css
 %%WWWDIR%%/themes/colorlite/colorlite.theme
 %%WWWDIR%%/themes/colorlite/favicon.ico
+%%WWWDIR%%/themes/core/core.css
+%%WWWDIR%%/themes/core/core.theme
+%%WWWDIR%%/themes/core/favicon.ico
 %%WWWDIR%%/themes/monochrome/favicon.ico
 %%WWWDIR%%/themes/monochrome/monochrome.css
 %%WWWDIR%%/themes/monochrome/monochrome.theme
@@ -42,7 +49,7 @@
 %%WWWDIR%%/usr/images/logo.png
 %%WWWDIR%%/usr/images/meta/anybrowser.png
 %%WWWDIR%%/usr/images/meta/cc-by-sa30.png
-%%WWWDIR%%/usr/images/meta/chems0x03.png
+%%WWWDIR%%/usr/images/meta/chems.png
 %%WWWDIR%%/usr/images/meta/css2.png
 %%WWWDIR%%/usr/images/meta/hacker.png
 %%WWWDIR%%/usr/images/meta/rss2.png
@@ -55,7 +62,9 @@
 @dirrm %%WWWDIR%%/docs
 @dirrm %%WWWDIR%%/modules/blogroll
 @dirrm %%WWWDIR%%/modules/categories
+@dirrm %%WWWDIR%%/modules/chtheme
 @dirrm %%WWWDIR%%/modules/comments
+@dirrm %%WWWDIR%%/modules/contacts
 @dirrm %%WWWDIR%%/modules/freehands
 @dirrm %%WWWDIR%%/modules/navbar
 @dirrm %%WWWDIR%%/modules/pages_mgr
@@ -65,6 +74,7 @@
 @dirrm %%WWWDIR%%/modules
 @dirrm %%WWWDIR%%/src
 @dirrm %%WWWDIR%%/themes/colorlite
+@dirrm %%WWWDIR%%/themes/core
 @dirrm %%WWWDIR%%/themes/monochrome
 @dirrm %%WWWDIR%%/themes
 @dirrm %%WWWDIR%%/usr/images/meta
