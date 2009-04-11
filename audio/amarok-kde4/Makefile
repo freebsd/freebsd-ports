@@ -29,6 +29,9 @@ USE_MYSQL=	embedded
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 
+NOT_FOR_ARCHS=	sparc64
+NOT_FOR_ARCHS_REASON_sparc64=	"GCC-related build error"
+
 OPTIONS=	GPOD "iPod support" on \
 		MTP "MTP device support" on \
 		LOUDMOUTH "Loudmouth support" on
