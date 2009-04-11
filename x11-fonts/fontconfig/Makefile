@@ -33,6 +33,7 @@ CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 		--without-add-fonts \
 		--disable-docs
 MAKE_ENV=	LC_ALL=C
+MAKE_JOBS_SAFE=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 MAN1=		fc-cache.1 fc-cat.1 fc-list.1 fc-match.1

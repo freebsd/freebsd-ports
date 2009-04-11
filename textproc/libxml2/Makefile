@@ -26,6 +26,7 @@ COMMENT?=	XML parser library for GNOME
 .if !defined(REFERENCE_PORT)
 
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME?=	gnomehack gnometarget pkgconfig
