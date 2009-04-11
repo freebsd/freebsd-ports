@@ -22,7 +22,7 @@ RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 
 IGNORE=		Not supported anymore for trac > 0.10; use FullBlogPlugin instead
 DEPRECATED=	${IGNORE}
-EXPIRE_DATE=	2009-07-01
+EXPIRATION_DATE=	2009-07-01
 
 WRKSRC=		${WRKDIR}/trac${PORTNAME}plugin
 USE_PYTHON=	2.3+
