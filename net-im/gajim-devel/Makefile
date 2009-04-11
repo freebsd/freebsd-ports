@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	20081128
+PORTVERSION=	20090331
 CATEGORIES=	net-im
 MASTER_SITES=	http://wizard.volgograd.ru/distfiles/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-2008-11-28
+DISTNAME=	${PORTNAME}-2009-03-31
 
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Gajim is a Jabber client based on a plugin system
@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.12.0.1-svn
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.12.1.2-svn
 
 MAN1=		gajim.1
 
