@@ -7,7 +7,7 @@
 
 PORTNAME=	compiz-plugins-unsupported
 PORTVERSION=	0.8.2
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -16,7 +16,10 @@ COMMENT=	Plugins for Compiz Composite Window Manager
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz \
-		${LOCALBASE}/libdata/pkgconfig/bcop.pc:${PORTSDIR}/devel/compiz-bcop
+		${LOCALBASE}/libdata/pkgconfig/bcop.pc:${PORTSDIR}/devel/compiz-bcop \
+		${LOCALBASE}/libdata/pkgconfig/compiz-text.pc:${PORTSDIR}/x11-wm
+/compiz-plugins-main
+
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
