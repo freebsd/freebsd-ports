@@ -164,6 +164,7 @@
     SUBDIR += mingw32-libgmp4
     SUBDIR += miracl
     SUBDIR += moo
+    SUBDIR += mpc
     SUBDIR += mpexpr
     SUBDIR += mpfr
     SUBDIR += mprime
