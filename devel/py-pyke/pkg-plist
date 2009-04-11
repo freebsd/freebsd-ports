@@ -68,6 +68,19 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_compiler/scanner_tables.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_compiler/scanner_tables.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_compiler/scanner_tables.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_compiler/ply/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_compiler/ply/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_compiler/ply/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_compiler/ply/COPYING
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_compiler/ply/README.pyke
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_compiler/ply/lex.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_compiler/ply/lex.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_compiler/ply/lex.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_compiler/ply/yacc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_compiler/ply/yacc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_compiler/ply/yacc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/README
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/copyright_license
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_traceback.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_traceback.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_traceback.pyo
@@ -86,6 +99,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/special.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/special.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/special.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/target_pkg.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/target_pkg.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/target_pkg.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/test.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/test.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/test.pyo
@@ -96,6 +112,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/user_question.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/user_question.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_compiler/ply
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke/krb_compiler
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyke
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
