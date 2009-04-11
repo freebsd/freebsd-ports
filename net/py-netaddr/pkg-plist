@@ -5,7 +5,31 @@
 %%PYTHON_SITELIBDIR%%/netaddr/address.py
 %%PYTHON_SITELIBDIR%%/netaddr/address.pyc
 %%PYTHON_SITELIBDIR%%/netaddr/address.pyo
+%%PYTHON_SITELIBDIR%%/netaddr/core.py
+%%PYTHON_SITELIBDIR%%/netaddr/core.pyc
+%%PYTHON_SITELIBDIR%%/netaddr/core.pyo
+%%PYTHON_SITELIBDIR%%/netaddr/eui/__init__.py
+%%PYTHON_SITELIBDIR%%/netaddr/eui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/netaddr/eui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/netaddr/eui/iab.idx
+%%PYTHON_SITELIBDIR%%/netaddr/eui/iab.txt
+%%PYTHON_SITELIBDIR%%/netaddr/eui/oui.idx
+%%PYTHON_SITELIBDIR%%/netaddr/eui/oui.txt
+%%PYTHON_SITELIBDIR%%/netaddr/fallback.py
+%%PYTHON_SITELIBDIR%%/netaddr/fallback.pyc
+%%PYTHON_SITELIBDIR%%/netaddr/fallback.pyo
+%%PYTHON_SITELIBDIR%%/netaddr/ip/__init__.py
+%%PYTHON_SITELIBDIR%%/netaddr/ip/__init__.pyc
+%%PYTHON_SITELIBDIR%%/netaddr/ip/__init__.pyo
+%%PYTHON_SITELIBDIR%%/netaddr/ip/ipv4-address-space
+%%PYTHON_SITELIBDIR%%/netaddr/ip/ipv6-address-space
+%%PYTHON_SITELIBDIR%%/netaddr/ip/multicast-addresses
 %%PYTHON_SITELIBDIR%%/netaddr/strategy.py
 %%PYTHON_SITELIBDIR%%/netaddr/strategy.pyc
 %%PYTHON_SITELIBDIR%%/netaddr/strategy.pyo
+%%PYTHON_SITELIBDIR%%/netaddr/util.py
+%%PYTHON_SITELIBDIR%%/netaddr/util.pyc
+%%PYTHON_SITELIBDIR%%/netaddr/util.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/netaddr/ip
+@dirrm %%PYTHON_SITELIBDIR%%/netaddr/eui
 @dirrm %%PYTHON_SITELIBDIR%%/netaddr
