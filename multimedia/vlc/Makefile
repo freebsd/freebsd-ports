@@ -9,8 +9,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.9.8a
-PORTREVISION=	4
+DISTVERSION=	0.9.9a
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -26,44 +25,46 @@ LIB_DEPENDS=	tar.0:${PORTSDIR}/devel/libtar \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 
-OPTIONS+=	A52 "a52 audio support, many DVDs use this" On
-OPTIONS+=	AALIB "Aalib Console Graphics Support" Off
-OPTIONS+=	AVAHI "Avahi (Rendezvous/Bonjour (R) ) networking" On
-OPTIONS+=	CACA "Libcaca Console Graphics Support" Off
-OPTIONS+=	ARTS "Enable arts sound support" Off
-OPTIONS+=	DEBUG "Enable debuging support" Off
-OPTIONS+=	DTS "DTS decoder support, many DVDs use this" On
-OPTIONS+=	ESOUND "Esound Support" Off
-OPTIONS+=	FAAC "Faac audio encoder (mp4/aac) support" Off
-OPTIONS+=	FAAD "Faad audio decoder (mp4/aac) support" On
-OPTIONS+=	FLAC "Flac audio codec support" On
-OPTIONS+=	HTTPD "Streaming media control via http" On
-OPTIONS+=	LIVEMEDIA "Support for rstp/rtp/sdp protocols" On
-OPTIONS+=	LUA "Enable lua scripting" Off
-OPTIONS+=	MAD "Mad mp3 audio decoder support" On
-OPTIONS+=	MATROSKA "Matroska Container Format support" On
-OPTIONS+=	MPEG2 "Mpeg-2 audio/video decoder Support" On
-OPTIONS+=	NCURSES "Enable ncurses (console) interface" Off
-OPTIONS+=	OGG "Ogg audio decoder support" On
-OPTIONS+=	QT4 "QT4 Interface" On
-OPTIONS+=	REALAUDIO "Real audio(R) support" On
-OPTIONS+=	SAMBA "SAMBA Access module" On
-OPTIONS+=	SDL "SDL video output" On
-OPTIONS+=	SVG "SVG graphics support" Off
-OPTIONS+=	SVGALIB "SVGALIB video output" Off
-OPTIONS+=	SHOUT "Shout2 support" Off
-OPTIONS+=	SKINS "Enable winamp skins interface (requires QT4)" Off
-OPTIONS+=	SPEEX "Speex voice codec support" On
-OPTIONS+=	THEORA "OGG/Vorbis video codec support" On
-OPTIONS+=	TWOLAME "Twolame mpeg2 audio encoder support" On
-OPTIONS+=	VORBIS "Vorbis support" On
-OPTIONS+=	WIN32_CODECS "win32 multimedia DLL's" Off
-OPTIONS+=	X264 "Enable H.264/AVC codec support" On
+OPTIONS=	A52 "a52 audio support, many DVDs use this" On \
+		AALIB "Aalib Console Graphics Support" Off \
+		ARTS "Enable arts sound support" Off \
+		AVAHI "Avahi (Rendezvous/Bonjour (R) ) networking" On \
+		CACA "Libcaca Console Graphics Support" Off \
+		DBUS "Enable D-Bus control support" On \
+		DEBUG "Enable debuging support" Off \
+		DTS "DTS decoder support, many DVDs use this" On \
+		ESOUND "Esound Support" Off \
+		FAAC "Faac audio encoder (mp4/aac) support" Off \
+		FAAD "Faad audio decoder (mp4/aac) support" On \
+		FLAC "Flac audio codec support" On \
+		GNOMEVFS "Gnome VFS support" On \
+		HTTPD "Streaming media control via http" On \
+		LIVEMEDIA "Support for rstp/rtp/sdp protocols" On \
+		LUA "Enable lua scripting" Off \
+		MAD "Mad mp3 audio decoder support" On \
+		MATROSKA "Matroska Container Format support" On \
+		MPEG2 "Mpeg-2 audio/video decoder Support" On \
+		NCURSES "Enable ncurses (console) interface" Off \
+		OGG "Ogg audio decoder support" On \
+		QT4 "QT4 Interface (requires X11)" On \
+		REALAUDIO "Real audio(R) support" On \
+		SAMBA "SAMBA Access module" On \
+		SDL "SDL video output" On \
+		SVG "SVG graphics support" Off \
+		SVGALIB "SVGALIB video output" Off \
+		SHOUT "Shout2 support" Off \
+		SKINS "Enable winamp skins interface (requires QT4)" Off \
+		SPEEX "Speex voice codec support" On \
+		THEORA "OGG/Vorbis video codec support" On \
+		TWOLAME "Twolame mpeg2 audio encoder support" On \
+		V4L "Enable Video for Linux" On\
+		VORBIS "Vorbis support" On \
+		WIN32_CODECS "win32 multimedia DLL's" Off \
+		X264 "Enable H.264/AVC codec support" On \
+		X11 "Enable X11 (disable for stream only server)" On
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_XORG=	xpm
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnometarget libxml2
 WANT_SDL=	yes
@@ -95,6 +96,21 @@ WITH_VLC_DEFAULT_FONT?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 
 .if ${PERL_LEVEL} < 500800
 BROKEN=	Does not compile with perl ${PERL_VERSION}
+.endif
+
+.if !defined(WITHOUT_QT4)
+USE_QT_VER+=	4
+QT_COMPONENTS+=	gui corelib moc rcc uic
+CONFIGURE_ARGS+=--enable-qt4
+.else
+CONFIGURE_ARGS+=--disable-qt4
+.endif
+
+.if defined(WITHOUT_DBUS)
+CONFIGURE_ARGS+=--disable-dbus
+.else
+LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
+CONFIGURE_ARGS+=--enable-dbus
 .endif
 
 # compatible knobs.
@@ -129,6 +145,8 @@ WITH_TREMOR=yes
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
+.else
+USE_GETTEXT=	yes
 .endif
 
 .if defined(WITH_DVD_DEVICE)
@@ -148,14 +166,6 @@ CONFIGURE_ARGS+=	--disable-gnomevfs
 DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
 .else
 DEFAULT_CDROM_DEVICE=/dev/acd0
-.endif
-
-.if !defined(WITHOUT_QT4)
-USE_QT_VER+=	4
-QT_COMPONENTS+=	gui corelib moc rcc uic
-CONFIGURE_ARGS+=--enable-qt4
-.else
-CONFIGURE_ARGS+=--disable-qt4
 .endif
 
 .if !defined(WITHOUT_LIBNOTIFY)
@@ -319,6 +329,7 @@ CONFIGURE_ARGS+=--disable-aa
 .endif
 
 .if (defined(WITH_DIRAC) || exists(${LOCALBASE}/lib/libdirac_decoder.a)) && !defined(WITHOUT_DIRAC)
+BROKEN=		doesn't build with dirac
 LIB_DEPENDS+=	dirac_encoder.0:${PORTSDIR}/multimedia/dirac
 CONFIGURE_ARGS+=--enable-dirac
 CPPFLAGS+=	-I${LOCALBASE}/include/dirac
@@ -573,6 +584,19 @@ CONFIGURE_ARGS+=--enable-release \
 		--enable-optimizations
 .else
 CONFIGURE_ARGS+=--enable-release
+.endif
+
+.if defined(WITHOUT_V4L)
+CONFIGURE_ARGS+=--disable-v4l
+.else
+CONFIGURE_ARGS+=--enable-v4l
+.endif
+
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=--disable-x11
+.else
+USE_XORG=	xpm
+CONFIGURE_ARGS+=--enable-x11
 .endif
 
 .include "${.CURDIR}/Makefile.inc"
