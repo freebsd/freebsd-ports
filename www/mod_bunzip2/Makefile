@@ -13,16 +13,16 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for server-side decompression of bzip2 files
 
-PLIST_FILES=	libexec/apache/mod_bunzip2.so
-USE_APACHE=	yes
+USE_APACHE=	1.3
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 USE_BZIP2=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-2
 
-do-build:
-	cd ${WRKSRC}; ${APXS} -c -lbz2 mod_bunzip2.c
+AP_LIB=	-lbz2
 
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/mod_bunzip2.so ${PREFIX}/libexec/apache/
+post-install:
 	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
