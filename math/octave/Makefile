@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave
-PORTVERSION=	3.0.3
-PORTREVISION=	4
+PORTVERSION=	3.0.5
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/bleeding-edge/
@@ -70,13 +69,11 @@ PLIST_SUB=	OCTAVE_VERSION=${OCTAVE_VERSION} GNU_HOST=${GNU_HOST}
 INCLUDES=	-I${LOCALBASE}/include -I${LOCALBASE}/include/metis
 MAKE_ENV+=	CPPFLAGS="${CPPFLAGS} ${INCLUDES}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CFLAGS+=	${INCLUDES}
+CXXFLAGS+=	${INCLUDES}
+CPPFLAGS+=	${INCLUDES}
 CONFIGURE_ENV+=	GPERF="${LOCALBASE}/bin/gperf" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		CFLAGS="${CFLAGS} ${INCLUDES}" \
-		CXXFLAGS="${CXXFLAGS} ${INCLUDES}" \
-		CPPFLAGS="${CPPFLAGS} ${INCLUDES}" \
-		F77="${FC}" \
-		FFLAGS="${FFLAGS}" \
 		CC="${CC}" \
 		CXX="${CXX}" \
 		TERMIOS_H="termios.h"
@@ -106,5 +103,13 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .endif
+	 ${RM} -f ${WRKDIR}/PLIST
+.for d in ${PREFIX}/include/octave-${OCTAVE_VERSION} ${PREFIX}/share/octave ${PREFIX}/libexec/octave ${PREFIX}/lib/octave-${OCTAVE_VERSION}
+	@${FIND} -s $d -not -type d | \
+	${SED} -e 's#^${PREFIX}/##' >> ${WRKDIR}/PLIST
+	@${FIND} $d -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${WRKDIR}/PLIST
+.endfor
+	cd ${WRKDIR} ; ${SED} -i -e "/PLIST/ r PLIST" ${TMPPLIST}
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,17 @@
+--- examples/Makefile.in~	2008-07-22 00:59:03.000000000 +0900
++++ examples/Makefile.in	2008-08-23 05:46:34.000000000 +0900
+@@ -95,10 +95,10 @@
+ 	  rm -f $(DESTDIR)$(imagedir)/$$f; \
+ 	  $(INSTALL_DATA) $(srcdir)/$$f $(DESTDIR)$(imagedir)/$$f; \
+ 	done
+-	-if test -n "$(DESKTOP_FILE_INSTALL)"; then \
+-	  $(DESKTOP_FILE_INSTALL) --dir=$(DESTDIR)$(datadir)/applications \
+-	    --vendor www.octave.org octave.desktop; \
+-	fi
++#	-if test -n "$(DESKTOP_FILE_INSTALL)"; then \
++#	  $(DESKTOP_FILE_INSTALL) --dir=$(DESTDIR)$(datadir)/applications \
++#	    --vendor www.octave.org octave.desktop; \
++#	fi
+ .PHONY: install install-strip
+ 
+ uninstall:
