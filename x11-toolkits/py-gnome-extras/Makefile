@@ -25,7 +25,7 @@ LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell \
 		gksuui1.0.1:${PORTSDIR}/sysutils/libgksuui \
 		gdl-1.0:${PORTSDIR}/x11-toolkits/gdl
 
-USE_GECKO=	firefox seamonkey xulrunner mozilla
+USE_GECKO=	firefox xulrunner mozilla
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
