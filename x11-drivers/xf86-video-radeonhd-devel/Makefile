@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xf86-video-radeonhd
-PORTVERSION=	1.2.4.20090301
-PORTREVISION=	1
+PORTVERSION=	1.2.5.20090412
+PORTREVISION=	0
 CATEGORIES=	x11-drivers
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nork
@@ -18,14 +18,7 @@ COMMENT=	X.Org ati RadeonHD display driver development version
 
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/xorg-macros.m4:${PORTSDIR}/devel/xorg-macros \
 		${LOCALBASE}/libdata/pkgconfig/gl.pc:${PORTSDIR}/graphics/libGL
-
-BROKEN=		does not compile
-
-.if !exists(${LOCALBASE}/lib/libpci.so.2)
-OPTIONS=	UTILS "Install rhd_conntest and rhd_dump utilities" off
-.else
-WITH_UTILS=	yes
-.endif
+LIB_DEPENDS=	pci.2:${PORTSDIR}/devel/libpci
 
 XORG_CAT=	driver
 USE_XORG=	damageproto videoproto xextproto xf86driproto
@@ -37,24 +30,14 @@ MAN4=		radeonhd.4x
 
 ACLOCAL_ARGS=	--acdir=${LOCALBASE}/share/aclocal
 
+CONFIGURE_ENV+=	PCIUTILS_CFLAGS="-I${LOCALBASE}/include" \
+		PCIUTILS_LIBS="-L${LOCALBASE}/lib -lpci -lz"
+
 pre-configure:
 	cd ${WRKSRC} && ${AUTORECONF} -i
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_UTILS)
-LIB_DEPENDS+=	pci.2:${PORTSDIR}/devel/libpci
-PLIST_SUB=	UTILS=""
-CONFIGURE_ENV+=	PCIUTILS_CFLAGS="-I${LOCALBASE}/include" \
-		PCIUTILS_LIBS="-L${LOCALBASE}/lib -lpci -lz"
-.else
-PLIST_SUB=	UTILS="@comment "
-.endif
-
-.if defined(WITH_UTILS)
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/utils/conntest/rhd_conntest ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/utils/conntest/rhd_dump ${PREFIX}/sbin
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
