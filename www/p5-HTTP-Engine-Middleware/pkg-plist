@@ -16,6 +16,10 @@
 %%SITE_PERL%%/HTTP/Engine/Middleware/Role.pm
 %%SITE_PERL%%/HTTP/Engine/Middleware/Role/Logger.pm
 %%SITE_PERL%%/HTTP/Engine/Middleware/Static.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/Status.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/Status/Base.pm
+%%SITE_PERL%%/HTTP/Engine/Middleware/Status/Memory.pm
+@dirrm %%SITE_PERL%%/HTTP/Engine/Middleware/Status
 @dirrm %%SITE_PERL%%/HTTP/Engine/Middleware/Role
 @dirrm %%SITE_PERL%%/HTTP/Engine/Middleware/Profile
 @dirrm %%SITE_PERL%%/HTTP/Engine/Middleware
