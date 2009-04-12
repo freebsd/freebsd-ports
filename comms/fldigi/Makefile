@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fldigi
-PORTVERSION=	3.10
+PORTVERSION=	3.11
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/fldigi-distro/ \
 		${MASTER_SITE_LOCAL}
