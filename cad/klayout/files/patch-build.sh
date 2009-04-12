@@ -1,5 +1,5 @@
---- build.sh.orig	2008-08-17 06:40:32.000000000 +0900
-+++ build.sh	2008-08-23 09:47:35.000000000 +0900
+--- build.sh.orig	2008-12-28 07:36:50.000000000 +0900
++++ build.sh	2009-04-11 23:23:57.000000000 +0900
 @@ -136,11 +136,11 @@
    exit 1
  fi
@@ -14,15 +14,6 @@
    echo "*** ERROR: unable to locate Qt UIC in $QTBIN"
    exit 1
  fi
-@@ -238,7 +238,7 @@
-   mkdir -p $BIN
-   cp $BUILD/main/$EXEC_NAME $BIN
-   for bin in $OTHER_BIN; do
--    cp $BUILD/$bin $BIN
-+    cp $BUILD/main/$bin $BIN
-   done
-   for plugin in $PLUGINS; do
-     cp $BUILD/$plugin/*.so $BIN
 @@ -249,12 +249,12 @@
    echo "Build done."
    echo ""
