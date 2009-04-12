@@ -7,19 +7,22 @@
 
 PORTNAME=	phpua-engine
 PORTVERSION=	1.1.0b
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	phpua
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	${PORTNAME:S/-.*//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game server monitor & admin tool
 
 NO_BUILD=	yes
-USE_APACHE=	yes
+USE_APACHE=	1.3
 USE_PHP=	yes
 
-PLIST_SUB+=	PHPUADIR=${PHPUADIR} PHPUA_USER=${PHPUA_USER} PHPUA_GROUP=${PHPUA_GROUP}
+_subs=PHPUADIR=${PHPUADIR} PHPUA_USER=${PHPUA_USER} PHPUA_GROUP=${PHPUA_GROUP} APNAME=${APNAME}
+
+PLIST_SUB+=	${_subs}
+SUB_LIST+=	${_subs}
 
 # Dynamic custom variables
 PHPUA_USER?=	${WWWOWN}
@@ -43,11 +46,6 @@ pre-everything::
 	${ECHO_MSG} 'Perform a "make options" to see a list of available installation options.'; \
 	${ECHO_MSG} '-------------------------------------------------------------------------')
 .endif
-
-post-patch:
-	@${CAT} ${FILESDIR}/pkg-message.in | ${SED} -e \
-		's|%%PREFIX%%|${PREFIX}| ; s|%%PHPUADIR%%|${PHPUADIR}| ; s|%%APPNAME%%|${APPNAME}|' \
-		> ${PKGMESSAGE}
 
 do-extract:
 	@ ${MKDIR} ${WRKSRC}
