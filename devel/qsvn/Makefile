@@ -21,6 +21,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui sql moc_build uic_build rcc_build qmake_build
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
