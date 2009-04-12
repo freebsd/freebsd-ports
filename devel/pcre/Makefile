@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	7.8
+PORTVERSION=	7.9
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/misc/%SUBDIR%/ \
@@ -21,8 +21,14 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-utf8 --enable-unicode-properties
 
+.include <bsd.port.pre.mk>
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
+.endif
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fPIC
 .endif
 
 .if defined(WITH_LINK_SIZE)
@@ -55,4 +61,4 @@ post-patch:
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/pcregrep ${PREFIX}/bin/pcretest
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
