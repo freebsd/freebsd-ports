@@ -1,0 +1,13 @@
+Index: portstools/tinderbox/sql/schema.mysql.pre
+diff -u portstools/tinderbox/sql/schema.mysql.pre:1.68.2.2 portstools/tinderbox/sql/schema.mysql.pre:1.68.2.3
+--- portstools/tinderbox/sql/schema.mysql.pre:1.68.2.2	Sun Dec 21 12:27:29 2008
++++ portstools/tinderbox/sql/schema.mysql.pre	Fri Mar 27 00:06:27 2009
+@@ -37,7 +37,7 @@
+ DROP TABLE IF EXISTS builds;
+ CREATE TABLE builds (
+ 	build_id SERIAL PRIMARY KEY,
+-	build_name VARCHAR(32) UNIQUE NOT NULL,
++	build_name VARCHAR(255) UNIQUE NOT NULL,
+ 	jail_id INTEGER REFERENCES jails(jail_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+ 	ports_tree_id INTEGER REFERENCES ports_trees(ports_tree_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+ 	build_description TEXT,

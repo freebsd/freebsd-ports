@@ -1,5 +1,7 @@
---- ./lib/tinderlib.sh.orig	2009-02-24 21:36:38.000000000 +0200
-+++ ./lib/tinderlib.sh	2009-03-25 06:14:12.238205132 +0200
+Index: portstools/tinderbox/lib/tinderlib.sh
+diff -u portstools/tinderbox/lib/tinderlib.sh:1.55.2.4 portstools/tinderbox/lib/tinderlib.sh:1.55.2.5
+--- portstools/tinderbox/lib/tinderlib.sh:1.55.2.4	Mon Nov 10 02:03:02 2008
++++ portstools/tinderbox/lib/tinderlib.sh	Sat Mar 14 19:57:13 2009
 @@ -23,7 +23,7 @@
  # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  # SUCH DAMAGE.
