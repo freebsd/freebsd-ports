@@ -32,7 +32,7 @@
 -	cp nkf $(prefix)/bin/
 -	cp nkf.1 $(prefix)/man/man1/
 -	cp nkf.1j $(prefix)/man/ja/man1/nkf.1
-+	${BSD_INSTALL_PRGRAM} nkf ${PREFIX}/bin/
++	${BSD_INSTALL_PROGRAM} nkf ${PREFIX}/bin/
 +	${BSD_INSTALL_MAN} nkf.1 ${PREFIX}/man/man1/
 +	${BSD_INSTALL_MAN} nkf.1j.euc ${PREFIX}/man/ja/man1/nkf.1
  
