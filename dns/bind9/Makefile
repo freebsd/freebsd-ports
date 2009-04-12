@@ -27,7 +27,7 @@ COMMENT=	Completely new version of the BIND DNS suite with updated DNSSEC
 # ISC releases things like 9.3.0rc1, which our versioning doesn't like
 ISCVERSION=	9.3.6-P1
 
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
