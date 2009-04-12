@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	wireshark
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
@@ -27,6 +27,7 @@ USE_PYTHON_BUILD=yes
 USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 USE_OPENSSL=	yes
