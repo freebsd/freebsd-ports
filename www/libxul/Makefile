@@ -8,7 +8,7 @@
 
 PORTNAME=	libxul
 PORTVERSION=	1.9.0.7
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	www devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	xulrunner/releases/${PORTVERSION}/source/
@@ -30,6 +30,7 @@ ALL_TARGET=	default
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+MAKE_ENV=	SKIP_GRE_REGISTRATION=1
 LDFLAGS+=	-Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
 
 PORT_MOZCONFIG=	${WRKSRC}/xulrunner/config/mozconfig
@@ -46,6 +47,11 @@ USE_MOZILLA=	-png -nss -dbm -jpeg
 MOZ_PKGCONFIG_FILES=	libxul-embedding-unstable libxul-embedding \
 		libxul-unstable	libxul mozilla-gtkmozembed-embedding \
 		mozilla-gtkmozembed mozilla-js mozilla-nss mozilla-plugin
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
+	    	${WRKSRC}/storage/build/Makefile.in \
+		${WRKSRC}/db/sqlite3/src/Makefile.in
 
 post-build:
 	@${REINPLACE_CMD} -e "s|\(Libs:.*\)\($$\)|\1 -Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}\2| ; \
