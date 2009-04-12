@@ -13,12 +13,8 @@ MASTER_SITES=	http://download.tangent.org/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to make debugging server-side scripts easier
 
-USE_APACHE=	yes
-
-do-build:
-	@cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c
-
-do-install:
-	${APXS} -i -A -n ${PORTNAME:S/_//g} ${WRKSRC}/${PORTNAME}.so
+USE_APACHE=	1.3
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
 .include <bsd.port.mk>
