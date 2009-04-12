@@ -12,7 +12,7 @@ MASTER_SITES=		http://www.squirrelmail.org/plugins/
 DISTNAME=		${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}
 DIST_SUBDIR=		squirrelmail
 
-MAINTAINER=		gerrit.beine@gmx.de
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Plugin for the weather in Germany
 
 RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \

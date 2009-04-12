@@ -12,7 +12,7 @@ MASTER_SITES=		http://www.squirrelmail.org/plugins/
 DISTNAME=		${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}-1.4.2
 DIST_SUBDIR=		squirrelmail
 
-MAINTAINER=		gerrit.beine@gmx.de
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Automatically appends footer to SquirrelMail-generated emails
 
 RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \

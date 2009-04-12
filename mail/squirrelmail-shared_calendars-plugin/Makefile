@@ -14,7 +14,7 @@ PKGNAMESUFFIX=		-plugin
 DISTNAME=		${PORTNAME}-${PORTVERSION}-1.4.0
 DIST_SUBDIR=		squirrelmail
 
-MAINTAINER=		gerrit.beine@gmx.de
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		iCal-compliant calendaring for SquirrelMail
 
 RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \

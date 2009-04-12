@@ -12,7 +12,7 @@ MASTER_SITES=		http://www.squirrelmail.org/plugins/
 DISTNAME=		${SQUIRREL_PLUGIN_NAME}_${PORTVERSION:S/./_/g}
 DIST_SUBDIR=		squirrelmail
 
-MAINTAINER=		gerrit.beine@gmx.de
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Notify when new mail arrives
 
 RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \
