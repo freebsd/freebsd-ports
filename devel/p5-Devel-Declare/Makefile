@@ -15,7 +15,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Adding keywords to perl, in perl
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Sub/Name.pm:${PORTSDIR}/devel/p5-Sub-Name \
-		p5-B-Hooks-EndOfScope=>0.05:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
+		p5-B-Hooks-EndOfScope>=0.05:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
 		p5-B-Hooks-OP-Check>=0.10:${PORTSDIR}/devel/p5-B-Hooks-OP-Check
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends \
 		${RUN_DEPENDS}
