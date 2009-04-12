@@ -1,3 +1,0 @@
-libexec/apache/mod_cgi_debug.so
-@exec %D/sbin/apxs -e -A -n cgi_debug %D/%F
-@unexec %D/sbin/apxs -e -A -n cgi_debug %D/%F
