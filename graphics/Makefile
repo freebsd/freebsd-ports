@@ -533,6 +533,7 @@
     SUBDIR += p5-Chart-Clicker
     SUBDIR += p5-Chart-Graph
     SUBDIR += p5-Chart-PNGgraph
+    SUBDIR += p5-Color-Library
     SUBDIR += p5-Color-Rgb
     SUBDIR += p5-GD
     SUBDIR += p5-GD-Arrow
