@@ -6,7 +6,7 @@
 
 PORTNAME=	tinderbox
 PORTVERSION=	3.2
-PORTREVISION=	2	# 2009-03-27
+PORTREVISION=	3	# 2009-04-11
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
@@ -34,7 +34,7 @@ SUB_FILES=	pkg-message
 MAN1=		tc-configCcache.1 tc-configDistfile.1 tc-configGet.1 \
 		tc-configJail.1 tc-configTinderd.1 tc-init.1
 
-#PATCH_STRIP=	-p2
+PATCH_STRIP=	-p2
 
 .include <bsd.port.pre.mk>
 
