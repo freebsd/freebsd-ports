@@ -7,14 +7,14 @@
 
 PORTNAME=	mod_cvs
 PORTVERSION=	0.5.91
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://resare.com/noa/mod_cvs/dist/
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A module that makes Apache 2 CVS aware
 
-USE_APACHE=	yes
-WITH_APACHE2=	yes
+USE_APACHE=	2.0+
 
 LATEST_LINK=	mod_cvs2
 
