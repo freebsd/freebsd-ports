@@ -7,68 +7,53 @@
 
 PORTNAME=	mod_dav
 PORTVERSION=	1.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
-MASTER_SITES=	http://www.webdav.org/mod_dav/
-DISTNAME=	mod_dav-${PORTVERSION}-${APACHE_VERSION}
+MASTER_SITES=	http://www.webdav.org/${PORTNAME}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1.3.6
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that provides DAV capabilities
 
-# This port will work with the following version of Apache and anything newer.
-APACHE_VERSION=	1.3.6
+OPTIONS=	SYMLINK_PATCH	"Follow Symlinks" off \
+			APACHE_EXPAT	"Use Bundled expat library" on
 
-PKGINSTALL=	${WRKSRC}/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
-PKGMESSAGE=	${WRKSRC}/pkg-message
-PLIST_FILES=	etc/apache/apache.conf.mod_dav libexec/apache/libdav.so
 
-USE_APACHE=	yes
+SUB_FILES+=	pkg-install pkg-message
+SUB_LIST+=	APXS=${APXS} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+
+PLIST_FILES=	${APACHEETCDIR}/apache.conf.mod_dav ${APACHEMODDIR}/libdav.so
+
+USE_APACHE=	1.3
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--bindir=${PREFIX}/bin \
-		--sbindir=${PREFIX}/sbin \
-		--libexecdir=${PREFIX}/libexec/apache \
-		--sysconfdir=${PREFIX}/etc/apache \
-		--datadir=${PREFIX}/share/apache \
-		--includedir=${PREFIX}/include/apache \
+CONFIGURE_ARGS=	--prefix=${LOCALBASE} \
+		--bindir=${LOCALBASE}/bin \
+		--sbindir=${LOCALBASE}/sbin \
+		--libexecdir=${LOCALBASE}/${APACHEMODDIR} \
+		--sysconfdir=${LOCALBASE}/${APACHEETCDIR} \
+		--datadir=${LOCALBASE}/share/apache \
+		--includedir=${LOCALBASE}/${APACHEINCLUDEDIR} \
 		--with-apxs=${APXS}
 
+.include <bsd.port.pre.mk>
 .if defined(WITHOUT_APACHE_EXPAT)
 CONFIGURE_ARGS+=	--with-expat=${LOCALBASE}
 LIB_DEPENDS+=		expat.6:${PORTSDIR}/textproc/expat2
 .endif
 
-CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
-		PATH="${PREFIX}/bin:${PREFIX}/sbin:${PATH}"
-
 .if defined(WITH_SYMLINK_PATCH)
-EXTRA_PATCHES=	${FILESDIR}/SYMLINK-mod_dav.h ${FILESDIR}/SYMLINK-dav_fs_repos.c
-.endif
-
-.if !defined(WITH_SYMLINK_PATCH)
-pre-everything::
-	@${ECHO_MSG} "Use WITH_SYMLINK_PATCH=yes to let mod_dav follow symlinks."
-	@/bin/sleep 5
-.endif
-
-.include <bsd.port.pre.mk>
-.if exists(${LOCALBASE}/include/apache2/httpd.h)
-IGNORE=	is designed for apache 1.3. mod_dav for apache2 is built by default
+EXTRA_PATCHES=	${FILESDIR}/SYMLINK-${PORTNAME}.h ${FILESDIR}/SYMLINK-dav_fs_repos.c
 .endif
 
 do-install:
-	BINMODE=755 ${INSTALL_PROGRAM} ${WRKSRC}/libdav.so ${PREFIX}/libexec/apache
-	${INSTALL_DATA} ${FILESDIR}/apache.conf.mod_dav ${PREFIX}/etc/apache
+	BINMODE=755 ${INSTALL_PROGRAM} ${WRKSRC}/libdav.so ${LOCALBASE}/${APACHEMODDIR}/
+	${INSTALL_DATA} ${FILESDIR}/apache.conf.${PORTNAME} ${LOCALBASE}/${APACHEETCDIR}/
 
 post-install:
-	@${SED} -e 's+%%APXS%%+${APXS}+ ; s+%%WWWOWN%%+${WWWOWN}+ ; s+%%WWWGRP%%+${WWWGRP}+' \
-	 ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
-	@${SED} -e 's+%%PREFIX%%+${PREFIX}+' ${FILESDIR}/pkg-message.in \
-	 > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
