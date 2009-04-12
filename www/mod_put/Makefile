@@ -7,29 +7,29 @@
 
 PORTNAME=	mod_put
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://perso.ec-lyon.fr/lyonel.vincent/apache/
-DISTFILES=	mod_put.tar.gz
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that provides PUT and DELETE methods
 
-USE_APACHE=	yes
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
-
 CONFLICTS=	apache-contrib-1.*
 
-do-build:
-	cd ${WRKSRC} && ${LOCALBASE}/sbin/apxs -c ${PORTNAME}.c
+USE_APACHE=	1.3
 
-do-install:
-	cd ${WRKSRC} && ${LOCALBASE}/sbin/apxs -A -i ${PORTNAME}.so
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+
+PORTDOCS=	${PORTNAME}.html
 
 .if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.html \
-		${PREFIX}/share/doc/${PORTNAME}
+	@${MKDIR} ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.html ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
