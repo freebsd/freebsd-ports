@@ -24,11 +24,11 @@ USE_OCAML=	yes
 
 OPTIONS=	GLADE "With glade support" ON \
 		GNOMECANVAS "With gnomecanvas support" ON \
-		GNOMEPANEL "With gnomepanel support" ON \
 		GNOMEUI "With gnomeui support" ON \
 		GTKSPELL "With gtkspell support" ON \
 		GTKTL "With gtkglarea support" ON \
 		RSVG "With rsvg support" ON
+#		GNOMEPANEL "With gnomepanel support" OFF \
 
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
@@ -94,15 +94,15 @@ CONFIGURE_ARGS+=	--without-rsvg
 PLIST_SUB+=	RSVG="@comment "
 .endif
 
-.if (exists(${LOCALBASE}/libdata/pkgconfig/libpanelapplet-2.0.pc)) || !defined(WITHOUT_GNOMEPANEL)
-CONFIGURE_ARGS+=	--with-panel
-USE_GNOME+=	gnomepanel
-WITH_PANEL=	yes
-PLIST_SUB+=	PANEL=""
-.else
+#.if (exists(${LOCALBASE}/libdata/pkgconfig/libpanelapplet-2.0.pc)) || !defined(WITHOUT_GNOMEPANEL)
+#CONFIGURE_ARGS+=	--with-panel
+#USE_GNOME+=	gnomepanel
+#WITH_PANEL=	yes
+#PLIST_SUB+=	PANEL=""
+#.else
 CONFIGURE_ARGS+=	--without-panel
 PLIST_SUB+=	PANEL="@comment "
-.endif
+#.endif
 
 .if (exists(${LOCALBASE}/libdata/pkgconfig/gtkspell-2.0.pc)) || !defined(WITHOUT_GTKSPELL)
 LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
