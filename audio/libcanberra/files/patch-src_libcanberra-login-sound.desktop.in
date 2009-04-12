@@ -1,0 +1,30 @@
+From 5081594cb8cbb69fc282260388b2bb0164ce31dd Mon Sep 17 00:00:00 2001
+From: Lennart Poettering <lennart@poettering.net>
+Date: Sun, 14 Dec 2008 22:04:01 +0100
+Subject: [PATCH] Run lc-l-s in "Application" phase of gnome-session
+
+There is no need to make g-s wait for this lc-l-s when it plays the
+welcome tune. Hence move it to "Application" phase instead of "Desktop"
+phase.
+
+This is a result of a discussion with Behdad Esfahbod to optimize the
+login time.
+---
+ src/libcanberra-login-sound.desktop.in |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/src/libcanberra-login-sound.desktop.in b/src/libcanberra-login-sound.desktop.in
+index 5b4cf7f..9fcf357 100644
+--- src/libcanberra-login-sound.desktop.in
++++ src/libcanberra-login-sound.desktop.in
+@@ -4,6 +4,6 @@ Name=GNOME Login Sound
+ Exec=@bindir@/canberra-gtk-play --id="desktop-login" --description="GNOME Login"
+ OnlyShowIn=GNOME;
+ AutostartCondition=GNOME /desktop/gnome/sound/event_sounds
+-X-GNOME-Autostart-Phase=Desktop
++X-GNOME-Autostart-Phase=Application
+ X-GNOME-Provides=login-sound
+ X-GNOME-Autostart-Notify=true
+-- 
+1.6.0.5
+
