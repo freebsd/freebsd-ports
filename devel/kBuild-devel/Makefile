@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	kBuild
-PORTVERSION=	0.1.5
+DISTVERSION=	0.1.5-p1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Makefile framework
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 USE_AUTOTOOLS=	automake:19 autoconf:262
 USE_GMAKE=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 KBUILD_ARCH=	${MACHINE_ARCH:S/i386/x86/}
 KBUILD_ENV=	ACLOCAL=${ACLOCAL} \
@@ -52,12 +52,12 @@ do-install:
 .for bin in ${KBUILD_BINS}
 	${INSTALL_PROGRAM} ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release${PREFIX}/bin/${bin} ${PREFIX}/bin
 .endfor
-	${MKDIR) ${DATADIR}
+	${MKDIR} ${DATADIR}
 	(cd ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release${PREFIX}/share/kBuild && ${COPYTREE_SHARE} \* ${DATADIR})
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release${PREFIX}/share/doc/${PKGNAME}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release${PREFIX}/share/doc/${PKGNAME:S/.p1//}/${doc} ${DOCSDIR}
 .endfor
 .endif
 
