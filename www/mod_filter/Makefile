@@ -7,31 +7,25 @@
 
 PORTNAME=		mod_filter
 PORTVERSION=		1.4.1
+PORTREVISION=	1
 CATEGORIES=		www
 MASTER_SITES=		http://download.tangent.org/
 
 MAINTAINER=		apache@FreeBSD.org
 COMMENT=	Filter output from other modules inside of Apache
 
-USE_APACHE=		yes
-DOCS=			README
-CONTRIB_DOCS=		contrib/README contrib/echo.cgi contrib/eecummings.cgi contrib/head.cgi
+USE_APACHE=		1.3
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
-do-build:
-	@cd ${WRKSRC} && \
-	${APXS} -c mod_filter.c
+PORTDOCS=			README contrib
 
-do-install:
-	${APXS} -i -A -n filter ${WRKSRC}/mod_filter.so
+post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/mod_filter
-	${MKDIR} ${PREFIX}/share/doc/mod_filter/contrib
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/mod_filter/
-.endfor
-.for f in ${CONTRIB_DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/mod_filter/contrib
-.endfor
+	${MKDIR} ${DOCSDIR}/
+	${MKDIR} ${DOCSDIR}/contrib/
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+	${COPYTREE_SHARE ${WRKSRC}/contrib/ ${DOCSDIR}/contrib/
 .endif
 	${CAT} ${PKGMESSAGE}
 
