@@ -7,33 +7,33 @@
 
 PORTNAME=	mod_log_spread
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	www net
-MASTER_SITES=	http://www.lethargy.org/mod_log_spread/
+MASTER_SITES=	http://www.lethargy.org/${PORTNAME}/
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module interfacing with spread
 
 LIB_DEPENDS=	spread.1:${PORTSDIR}/net/spread
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
+BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_APACHE=	yes
+USE_APACHE=	1.3
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
-.if !defined(NOPORTDOCS)
+AP_INC=	${LOCALBASE}/include
+AP_LIB=	${LOCALBASE}/lib -lspread
+
 PORTDOCS=	CHANGELOG INSTALL LICENSE README README.spread \
 		error_log_spread.pl sample_configurations.txt \
 		spreadlogd.README spread.html
-.endif
 
-do-build:
-	cd ${WRKSRC} && ${APXS} -c -I ${PREFIX}/include -L ${PREFIX}/lib -l spread mod_log_spread.c
-
-do-install:
-	${APXS} -i -a -n log_spread ${WRKSRC}/mod_log_spread.so
+post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/
 .for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif
 
