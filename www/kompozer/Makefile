@@ -13,7 +13,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}dfsg-src
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Complete Web Authoring Suite
 
 WANT_GNOME=	yes

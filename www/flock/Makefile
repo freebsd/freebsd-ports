@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/${PORTNAME}/releases/${PORTVERSION}/ \
 		http://flock.vo.llnwd.net/o23/archive/${PORTNAME}/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nss>=3.11.2:${PORTSDIR}/security/nss
