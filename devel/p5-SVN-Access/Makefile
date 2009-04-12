@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SVN-Access
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,9 +15,9 @@ MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Perl extension to manipulate SVN Access files
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Base.pm:${PORTSDIR}/devel/p5-subversion \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+		p5-Tie-IxHash>=1.21:${PORTSDIR}/devel/p5-Tie-IxHash
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Base.pm:${PORTSDIR}/devel/p5-subversion \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+		p5-Tie-IxHash>=1.21:${PORTSDIR}/devel/p5-Tie-IxHash
 
 PERL_CONFIGURE=	yes
 
