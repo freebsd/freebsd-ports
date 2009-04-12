@@ -14,12 +14,8 @@ MASTER_SITES=	http://download.tangent.org/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to provides RSS output for directories
 
-USE_APACHE=	yes
-
-do-build:
-	@cd ${WRKSRC} && ${APXS} -c mod_index_rss.c
-
-do-install:
-	${APXS} -i -A -n index_rss ${WRKSRC}/mod_index_rss.so
+USE_APACHE=	1.3
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
 .include <bsd.port.mk>

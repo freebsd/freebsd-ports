@@ -1,3 +1,0 @@
-libexec/apache/mod_index_rss.so
-@exec %D/sbin/apxs -e -A -n index_rss %D/%F
-@unexec %D/sbin/apxs -e -A -n index_rss %D/%F
