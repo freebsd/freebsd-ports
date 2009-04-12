@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_blowchunks
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 		http://atreides.freenix.no/~anders/
@@ -15,32 +16,24 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for rejecting and logging chunked requests
 
-USE_APACHE=	yes
+OPTIONS=	BLOWCHUNK_LOG	"Log chunked requests"	off
+
+USE_APACHE=	1.3
 NO_WRKSUBDIR=	YES
 
-APXSFLAGS=	-DTRUE=1 -DFALSE=0
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+
+AP_EXTRAS=	-DTRUE=1 -DFALSE=0
+
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_BLOWCHUNK_LOG)
-APXSFLAGS+=	-DLOG_BLOWCHUNK
+AP_EXTRAS+=	-DLOG_BLOWCHUNK
 .endif
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	@${CP} -p ${DISTDIR}/${DISTFILES} ${WRKDIR}
+	@${CP} -p ${DISTDIR}/${DISTFILES} ${WRKDIR}/${PORTNAME}${EXTRACT_SUFX}
 
-do-build:
-.if !defined(WITHOUT_BLOWCHUNK_LOG)
-	@${ECHO_MSG} "================================================================================"
-	@${ECHO_MSG} "If you do not want to log chunked requests, rebuild with WITHOUT_BLOWCHUNK_LOG"
-	@${ECHO_MSG} "defined."
-	@${ECHO_MSG} "================================================================================"
-.endif
-	cd ${WRKSRC} && ${MV} ${PKGNAME}.c ${PORTNAME}.c && \
-	${APXS} ${APXSFLAGS} -c ${PORTNAME}.c
-
-do-install:
-	cd ${WRKSRC} && ${APXS} -A -i ${PORTNAME}.so
-	@${ECHO_MSG} "================================================================================"
-	@${ECHO_MSG} "Enable mod_blowchunks in Apache's config manually."
-	@${ECHO_MSG} "================================================================================"
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
