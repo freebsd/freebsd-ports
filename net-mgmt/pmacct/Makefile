@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmacct
-DISTVERSION=	0.11.5
+DISTVERSION=	0.11.6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.pmacct.net/ \
 		http://voodoo.bawue.com/download/
