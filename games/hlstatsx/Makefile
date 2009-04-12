@@ -7,7 +7,7 @@
 
 PORTNAME=	hlstatsx
 PORTVERSION=	1.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games www
 MASTER_SITES=	http://www.hlstatsx.com/downloads/
 DISTNAME=	HLstatsX_V${PORTVERSION}
@@ -15,8 +15,10 @@ DISTNAME=	HLstatsX_V${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time player and clan rankings and statistics for HL2 and mods
 
+BROKEN=	Does not fetch
+
 NO_BUILD=	yes
-USE_APACHE=	yes
+USE_APACHE=	1.3
 USE_PHP=	gd mysql
 USE_PERL5_RUN=	yes
 USE_ZIP=	yes
