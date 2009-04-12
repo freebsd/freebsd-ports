@@ -13,20 +13,21 @@ MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module to make Apache log to MySQL
 
-USE_APACHE=	yes
+USE_APACHE=	1.3
 USE_MYSQL=	YES
 
-DOCS=	mod_mylo.sql README
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
-do-build:
-	(cd ${WRKSRC} && ${APXS} -c -I${LOCALBASE}/include \
-	-L${LOCALBASE}/lib/mysql -lmysqlclient mod_mylo.c)
+AP_INC=	${LOCALBASE}/include
+AP_LIB=	${LOCALBASE}/lib/mysql -lmysqlclient
 
-do-install:
-	(cd ${WRKSRC} && ${APXS} -i -A -n 'mylo' mod_mylo.so)
+PORTDOCS=	mod_mylo.sql README
+
+post-install:
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
-.for f in ${DOCS}
+	${MKDIR} ${DOCSDIR}/
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif
