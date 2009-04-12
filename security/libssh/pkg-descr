@@ -1,0 +1,23 @@
+The ssh library was designed to be used by programmers needing a working SSH
+implementation by the mean of a library. The complete control of the client is
+made by the programmer. With libssh, you can remotely execute programs, transfer
+files, use a secure and transparent tunnel for your remote programs.
+With its Secure FTP implementation, you can play with remote files easily,
+without third-party programs others than libcrypto (from openssl).
+
+libssh features:
+
+ * Full C library functions for manipulating a client-side SSH connection
+ * SSH2 and SSH1 protocol compliant
+ * Fully configurable sessions
+ * Server support
+ * Support for AES-128,AES-192,AES-256,blowfish,3des in cbc mode
+ * Use multiple SSH connections in a same process, at same time
+ * Use multiple channels in the same connection
+ * Thread safety when using different sessions at same time
+ * Basic but correct SFTP implementation (secure file transfer)
+ * RSA and DSS server public key supported
+ * Compression support (with zlib)
+ * Public key (RSA and DSS), password and keyboard-interactive authentication
+
+WWW: http://0xbadc0de.be/wiki/libssh:libssh
