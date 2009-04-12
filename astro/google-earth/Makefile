@@ -7,6 +7,7 @@
 
 PORTNAME=	google-earth
 PORTVERSION=	5.0.11337.1968
+PORTREVISION=	1
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/current/
 DISTNAME=	GoogleEarthLinux
@@ -35,7 +36,7 @@ UNMAKESELF=	${LOCALBASE}/bin/unmakeself
 .if defined(WITH_NVIDIA_GL)
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 .else
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+USE_LINUX_APPS+=	dri
 .endif
 
 do-extract:
