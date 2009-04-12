@@ -12,12 +12,10 @@ CATEGORIES=	www
 MASTER_SITES=	http://dominia.org/djao/limit/
 
 MAINTAINER=	ychsiao@ychsiao.org
-COMMENT=	Limit the number of simultaneous connections from a single client IP address
+COMMENT=	Limit the number of simultaneous connections from a single IP address
 
-PLIST_FILES=	libexec/apache/mod_limitipconn.so
-USE_APACHE=	yes
-APACHEMODDIR=	libexec/apache
-PLIST_SUB+=	APACHEMODDIR="${APACHEMODDIR}"
+USE_APACHE=	1.3
+PLIST_FILES=	${APACHEMODDIR}/mod_limitipconn.so
 
 OPTIONS=	FIXCOUNT "Patch dangling browser connections counting" Off
 
