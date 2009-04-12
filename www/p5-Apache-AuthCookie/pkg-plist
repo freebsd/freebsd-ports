@@ -1,8 +1,9 @@
 %%SITE_PERL%%/Apache/AuthCookie.pm
 %%SITE_PERL%%/Apache/AuthCookie/Util.pm
 %%SITE_PERL%%/Apache2/AuthCookie.pm
-@dirrm %%SITE_PERL%%/Apache/AuthCookie
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthCookie/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthCookie
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
+@dirrm %%SITE_PERL%%/Apache/AuthCookie
 @dirrmtry %%SITE_PERL%%/Apache
 @dirrmtry %%SITE_PERL%%/Apache2
