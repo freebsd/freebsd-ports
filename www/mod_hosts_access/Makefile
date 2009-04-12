@@ -14,13 +14,10 @@ MASTER_SITES=	http://www.klomp.org/mod_hosts_access/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module that makes Apache respect hosts.allow and hosts.deny
 
-USE_APACHE=	yes
-APXS_FLAGS?=	-S LDFLAGS_SHLIB="-shared -lwrap"
+USE_APACHE=	1.3
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
-do-build:
-	@cd ${WRKSRC} && ${APXS} ${APXS_FLAGS} -c ${PORTNAME}.c
-
-do-install:
-	${APXS} -i -A -n ${PORTNAME:S/mod_//g} ${WRKSRC}/${PORTNAME}.so
+AP_LIB=	-shared -lwrap
 
 .include <bsd.port.mk>
