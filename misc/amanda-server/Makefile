@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	amanda
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.6.1p1
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -59,14 +58,6 @@ CONFIGURE_ARGS+=	--with-tape-server=${AMANDA_SERVER}
 CONFIGURE_ARGS+=	--with-config=${AMANDA_CONFIG}
 .endif
 
-.if defined (AMANDA_UDPPORTRANGE)
-CONFIGURE_ARGS+=	--with-udpportrange=${AMANDA_UDPPORTRANGE}
-.endif
-
-.if defined (AMANDA_TCPPORTRANGE)
-CONFIGURE_ARGS+=	--with-tcpportrange=${AMANDA_TCPPORTRANGE}
-.endif
-
 .if !defined(WITHOUT_GNUTAR)
 CONFIGURE_ARGS+=--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR} \
 		--with-gnutar=${LOCALBASE}/bin/gtar
@@ -91,14 +82,6 @@ pre-fetch:
 	@${ECHO} "        The default is operator"
 	@${ECHO} "    AMANDA_GROUP=group to specify the default group"
 	@${ECHO} "        The default is operator"
-	@${ECHO} "    AMANDA_TCPPORTRANGE=low,high to restrict Amanda to TCP ports"
-	@${ECHO} "        between low and high when connecting from the server"
-	@${ECHO} "        to the client for data, messages, and indexing."
-	@${ECHO} "        The default is no restriction on TCP ports."
-	@${ECHO} "    AMANDA_UDPPORTRANGE=low,high to restrict Amanda to UDP ports"
-	@${ECHO} "        between low and high when connecting from the client"
-	@${ECHO} "        to the server. Use ports below 1024."
-	@${ECHO} "        The default is no restriction on UDP ports."
 	@${ECHO} "    AMANDA_DATES=path to client amandates file"
 	@${ECHO} ""
 
@@ -189,14 +172,6 @@ pre-fetch:
 	@${ECHO} "        The default is operator"
 	@${ECHO} "    AMANDA_GROUP=group to specify the default group"
 	@${ECHO} "        The default is operator"
-	@${ECHO} "    AMANDA_TCPPORTRANGE=low,high to restrict Amanda to TCP ports"
-	@${ECHO} "        between low and high when connecting from the server"
-	@${ECHO} "        to the client for data, messages, and indexing."
-	@${ECHO} "        The default is no restriction on TCP ports."
-	@${ECHO} "    AMANDA_UDPPORTRANGE=low,high to restrict Amanda to UDP ports"
-	@${ECHO} "        between low and high when connecting from the client"
-	@${ECHO} "        to the server. Use ports below 1024."
-	@${ECHO} "        The default is no restriction on UDP ports."
 	@${ECHO} "    AMANDA_DATES=path to client amandates file"
 	@${ECHO} ""
 
