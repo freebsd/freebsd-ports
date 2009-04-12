@@ -730,6 +730,7 @@ audacity                        ports/audio/audacity
 audacity-devel                  ports/audio/audacity-devel
 audiere                         ports/audio/audiere
 audio_dcd                       ports/audio/dcd
+audio_mpc                       ports/audio/mpc
 audio_muse                      ports/audio/muse
 audio_tracker                   ports/audio/tracker
 audiotag                        ports/audio/audiotag
@@ -8261,6 +8262,7 @@ math_atlas                      ports/math/atlas
 math_atlas-devel                ports/math/atlas-devel
 math_fbm                        ports/math/fbm
 math_jags                       ports/math/jags
+math_mpc                        ports/math/mpc
 math_ump                        ports/math/ump
 matharray                       ports/math/matharray
 mathml-xsd                      ports/textproc/mathml-xsd
@@ -8792,7 +8794,6 @@ mpack                           ports/converters/mpack
 mpage                           ports/print/mpage
 mpatrol                         ports/devel/mpatrol
 mpb                             ports/science/mpb
-mpc                             ports/audio/mpc
 mpd-l2tp-ipv6pd-client          ports/net/mpd-l2tp-ipv6pd-client
 mpd4                            ports/net/mpd4
 mpd5                            ports/net/mpd5
@@ -9640,7 +9641,6 @@ online-desktop                  ports/net/online-desktop
 ontv                            ports/deskutils/ontv
 onyx                            ports/lang/onyx
 oo2c                            ports/lang/oo2c
-oof                             ports/science/oof
 oolite                          ports/games/oolite
 oonsoo                          ports/games/oonsoo
 oooqs                           ports/x11/oooqs
@@ -11739,6 +11739,7 @@ p5-Math-Interpolate             ports/math/p5-Math-Interpolate
 p5-Math-Intersection-StraightLine  ports/math/p5-Math-Intersection-StraightLine
 p5-Math-LinearCombination       ports/math/p5-Math-LinearCombination
 p5-Math-Logic                   ports/math/p5-Math-Logic
+p5-Math-MPC                     ports/math/p5-Math-MPC
 p5-Math-MPFR                    ports/math/p5-Math-MPFR
 p5-Math-Matrix                  ports/math/p5-Math-Matrix
 p5-Math-NumberCruncher          ports/math/p5-Math-NumberCruncher
@@ -13020,6 +13021,7 @@ p5-WWW-Google-SiteMap           ports/textproc/p5-WWW-Google-SiteMap
 p5-WWW-Google-Video             ports/www/p5-WWW-Google-Video
 p5-WWW-HatenaDiary              ports/www/p5-WWW-HatenaDiary
 p5-WWW-HatenaLogin              ports/www/p5-WWW-HatenaLogin
+p5-WWW-HatenaStar               ports/www/p5-WWW-HatenaStar
 p5-WWW-Hotmail                  ports/mail/p5-WWW-Hotmail
 p5-WWW-IMDb                     ports/www/p5-WWW-IMDb
 p5-WWW-Link                     ports/www/p5-WWW-Link
@@ -15124,6 +15126,7 @@ p5-math-intersection-straightline  ports/math/p5-Math-Intersection-StraightLine
 p5-math-linearcombination       ports/math/p5-Math-LinearCombination
 p5-math-logic                   ports/math/p5-Math-Logic
 p5-math-matrix                  ports/math/p5-Math-Matrix
+p5-math-mpc                     ports/math/p5-Math-MPC
 p5-math-mpfr                    ports/math/p5-Math-MPFR
 p5-math-numbercruncher          ports/math/p5-Math-NumberCruncher
 p5-math-pari                    ports/math/p5-Math-Pari
@@ -16490,6 +16493,7 @@ p5-www-google-sitemap           ports/textproc/p5-WWW-Google-SiteMap
 p5-www-google-video             ports/www/p5-WWW-Google-Video
 p5-www-hatenadiary              ports/www/p5-WWW-HatenaDiary
 p5-www-hatenalogin              ports/www/p5-WWW-HatenaLogin
+p5-www-hatenastar               ports/www/p5-WWW-HatenaStar
 p5-www-hotmail                  ports/mail/p5-WWW-Hotmail
 p5-www-imdb                     ports/www/p5-WWW-IMDb
 p5-www-link                     ports/www/p5-WWW-Link
@@ -19500,7 +19504,6 @@ rapid                           ports/math/rapid
 rapidsvn                        ports/devel/rapidsvn
 raproxy                         ports/audio/raproxy
 raptor                          ports/textproc/raptor
-raqdevil                        ports/www/raqdevil
 rar                             ports/archivers/rar
 rarcrack                        ports/security/rarcrack
 rarian                          ports/textproc/rarian
@@ -19645,6 +19648,7 @@ ricochet                        ports/mail/ricochet
 rid                             ports/security/rid
 riece                           ports/irc/riece
 riece-emacs21                   ports/irc/riece-emacs21
+rigsofrods                      ports/games/rigsofrods
 rinetd                          ports/net/rinetd
 rinfo                           ports/devel/rinfo
 ringtonetools                   ports/misc/ringtonetools
