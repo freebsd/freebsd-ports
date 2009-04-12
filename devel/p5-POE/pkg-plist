@@ -63,20 +63,20 @@
 @dirrm %%SITE_PERL%%/POE/Wheel
 @dirrmtry %%SITE_PERL%%/POE
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-%%PORTDOCS%%%%EXAMPLESDIR%%/README.samples
-%%PORTDOCS%%%%EXAMPLESDIR%%/create.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/fakelogin.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/forkbomb.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/names.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/objmaps.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/objsessions.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/packagesessions.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/queue.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/selects.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/sessions.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/signals.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/tcp_watermarks.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/thrash.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/watermarks.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/wheels2.perl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.samples
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/create.perl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fakelogin.perl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/forkbomb.perl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/names.perl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/objmaps.perl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/objsessions.perl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/packagesessions.perl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/queue.perl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/selects.perl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sessions.perl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/signals.perl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp_watermarks.perl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/thrash.perl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/watermarks.perl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wheels2.perl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

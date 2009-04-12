@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE
-PORTVERSION=	1.0030
+PORTVERSION=	1.0040
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -51,10 +51,13 @@ MAN3=		POE.3 POE::Component.3 POE::Component::Client::TCP.3 \
 		POE::Wheel::SocketFactory.3
 
 post-install:
-.ifndef(NOPORTDOCS)
+.ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
+
+test: build
+	@(cd ${WRKSRC}; make test)
 
 .include <bsd.port.mk>
