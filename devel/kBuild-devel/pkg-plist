@@ -85,6 +85,7 @@ bin/kmk_ash
 %%DATADIR%%/tools/OPENWATCOM-WL.kmk
 %%DATADIR%%/tools/OPENWATCOM.kmk
 %%DATADIR%%/tools/TAR.kmk
+%%DATADIR%%/tools/TARBZ2.kmk
 %%DATADIR%%/tools/TARGZ.kmk
 %%DATADIR%%/tools/VAC308.kmk
 %%DATADIR%%/tools/VCC70.kmk
