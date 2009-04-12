@@ -8,13 +8,13 @@
 PORTNAME=	mod_ntlm
 PORTVERSION=	0.4
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	modntlm
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	NTLM authentication module for the Apache webserver
 
-USE_APACHE=	YES
+USE_APACHE=	1.3
 MAKE_ENV=	APXS=${APXS}
 
 .include <bsd.port.pre.mk>
@@ -32,8 +32,8 @@ post-patch:
 post-install:
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/mod_ntlm.html ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/Documentation/mod_ntlm.html ${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>
