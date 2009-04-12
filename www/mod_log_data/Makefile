@@ -13,18 +13,11 @@ MASTER_SITES=	http://loghttp.sourceforge.net/files/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Module for Apache 2.0 which logs incoming and outgoing data
 
+USE_APACHE=	2.0
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_APACHE=	YES
-WITH_APACHE2=	YES
 
-.include <bsd.port.pre.mk>
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
-ONLY_FOR_ARCHS=	i386
-
-do-build:
-	@(cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c)
-
-do-install:
-	@(cd ${WRKSRC} && ${APXS} -A -i ${PORTNAME}.la)
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
