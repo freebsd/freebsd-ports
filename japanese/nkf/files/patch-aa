@@ -1,11 +1,10 @@
---- Makefile.orig	Mon Jun 19 23:04:35 2006
-+++ Makefile	Sun Jul  2 21:44:28 2006
-@@ -1,17 +1,27 @@
+--- Makefile.orig	2009-01-20 18:49:31.000000000 +0900
++++ Makefile	2009-04-12 22:30:54.667420352 +0900
+@@ -1,15 +1,19 @@
 -CC = cc
--CFLAGS = -O
-+PREFIX?= /usr/local
+-CFLAGS = -O -Wall -pedantic
 +CC?= cc
-+CFLAGS?= -O -Wall
++CFLAGS?= -O -Wall -pedantic
  # CFLAGS = -O3
  SHAR = shar 
  # SHAR = shar -T
@@ -13,22 +12,29 @@
 -RM = rm -rf
 +PERL?= perl
 +RM?= rm -rf
+ VERSION = 2.0.9
+-prefix = /usr/local
++PREFIX?= /usr/local
 +INSTALL?= /usr/bin/install
 +BSD_INSTALL_PROGRAM?= ${INSTALL} -s -o root -g wheel -m 555
 +BSD_INSTALL_MAN?= ${INSTALL}    -o root -g wheel -m 444
- VERSION = 207
  
- nkf : nkf.c config.h utf8tbl.o
- 	$(CC) $(CFLAGS) -o nkf nkf.c utf8tbl.o
+ nkf : nkf.o utf8tbl.o
+ 	$(CC) $(CFLAGS) -o nkf nkf.o utf8tbl.o
 +	./nkf -e nkf.1j > nkf.1j.euc
  
- utf8tbl.o : utf8tbl.c config.h
- 	$(CC) $(CFLAGS) -c utf8tbl.c
-+
-+install:
-+	${BSD_INSTALL_PROGRAM} nkf ${PREFIX}/bin
-+	${BSD_INSTALL_MAN} nkf.1 ${PREFIX}/man/man1/nkf.1
+ nkf.o : nkf.c nkf.h utf8tbl.h config.h
+ 	$(CC) $(CFLAGS) -c nkf.c
+@@ -31,9 +35,9 @@
+ 	make test )
+ 
+ install:
+-	cp nkf $(prefix)/bin/
+-	cp nkf.1 $(prefix)/man/man1/
+-	cp nkf.1j $(prefix)/man/ja/man1/nkf.1
++	${BSD_INSTALL_PRGRAM} nkf ${PREFIX}/bin/
++	${BSD_INSTALL_MAN} nkf.1 ${PREFIX}/man/man1/
 +	${BSD_INSTALL_MAN} nkf.1j.euc ${PREFIX}/man/ja/man1/nkf.1
  
- clean:
- 	-$(RM) nkf.o nkf nkf.in nkf.out nkf$(VERSION) *~ *.bad utf8tbl.o
+ shar:
+ 	-mkdir nkf-$(VERSION)
