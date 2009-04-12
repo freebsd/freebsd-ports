@@ -12,6 +12,7 @@ include/mlt/framework/mlt_field.h
 include/mlt/framework/mlt_filter.h
 include/mlt/framework/mlt_frame.h
 include/mlt/framework/mlt_geometry.h
+include/mlt/framework/mlt_log.h
 include/mlt/framework/mlt_multitrack.h
 include/mlt/framework/mlt_parser.h
 include/mlt/framework/mlt_playlist.h
@@ -39,13 +40,13 @@ include/mlt/valerie/valerie_status.h
 include/mlt/valerie/valerie_tokeniser.h
 include/mlt/valerie/valerie_util.h
 lib/libmiracle.so
-lib/libmiracle.so.0.3.2
+lib/libmiracle.so.0.3.6
 lib/libmiracle.so.1
 lib/libmlt.so
-lib/libmlt.so.0.3.2
+lib/libmlt.so.0.3.6
 lib/libmlt.so.1
 lib/libvalerie.so
-lib/libvalerie.so.0.3.2
+lib/libvalerie.so.0.3.6
 lib/libvalerie.so.1
 %%AVFORMAT%%lib/mlt/libmltavformat.so
 lib/mlt/libmltcore.so
@@ -149,6 +150,7 @@ libdata/pkgconfig/mlt-valerie.pc
 %%DATADIR%%/oldfilm/tcolor.svg
 %%DATADIR%%/oldfilm/vignette.svg
 %%DATADIR%%/packages.dat
+%%DATADIR%%/profiles/atsc_1080i_50
 %%DATADIR%%/profiles/atsc_1080i_60
 %%DATADIR%%/profiles/atsc_1080p_2398
 %%DATADIR%%/profiles/atsc_1080p_24

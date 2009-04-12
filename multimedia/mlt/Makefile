@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mlt
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.6
 CATEGORIES=	multimedia
 MASTER_SITES=	SFE
 
@@ -35,10 +35,11 @@ OPTIONS=	AVFORMAT	"Avformat module" on \
 		GTK2	"GTK2 module" on \
 		JACKRACK	"JACK Rack module" on \
 		KINO	"Kino module" on \
-		MMX	"MMX support (could have problems on 64 bits CPUs)" on \
+		MMX	"MMX support (ignored on x86-64)" on \
 		QIMAGE	"Qimage module" on \
 		RESAMPLE	"Secret Rabbit Code module" on \
 		SOX	"Sound eXchange module" on \
+		SSE	"SSE support (requires MMX)" on \
 		VORBIS	"Vorbis module" on
 
 .include <bsd.port.pre.mk>
@@ -137,6 +138,15 @@ CONFIGURE_ARGS+=	--disable-sox
 PLIST_SUB+=	SOX="@comment "
 .endif
 
+# sse can be enabled only with mmx
+.if defined(WITH_MMX) && ${MACHINE_CPU:Mmmx} != ""
+.if defined(WITH_SSE) && ${MACHINE_CPU:Msse} != ""
+CONFIGURE_ARGS+=	--enable-sse
+.else
+CONFIGURE_ARGS+=	--disable-sse
+.endif
+.endif
+
 .ifdef(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--enable-vorbis
@@ -147,15 +157,14 @@ PLIST_SUB+=	VORBIS="@comment "
 .endif
 
 .if ${ARCH} == "sparc64"
-IGNORE=		Does not compile on sparc64 (invokes i386 asm)
+IGNORE=		does not compile on sparc64 (invokes i386 asm)
 .endif
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/src/framework/Makefile \
-		${WRKSRC}/src/valerie/Makefile
+		${WRKSRC}/src/*/Makefile
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
 
