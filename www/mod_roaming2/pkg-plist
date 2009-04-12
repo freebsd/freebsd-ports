@@ -1,0 +1,7 @@
+etc/apache2/httpd.conf.mod_roaming
+libexec/apache2/mod_roaming.so
+%%PORTDOCS%%share/doc/mod_roaming/CHANGES
+%%PORTDOCS%%share/doc/mod_roaming/INSTALL
+%%PORTDOCS%%share/doc/mod_roaming/LICENSE
+%%PORTDOCS%%share/doc/mod_roaming/README
+%%PORTDOCS%%@dirrm share/doc/mod_roaming
