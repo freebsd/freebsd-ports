@@ -6,6 +6,7 @@
 
 PORTNAME=	kdegraphics
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -15,18 +16,18 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Graphics utilities for the KDE4 integrated X11 desktop
 
 BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX-base
-LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype:${PORTSDIR}/print/freetype2 \
-		fribidi:${PORTSDIR}/converters/fribidi \
-		lcms:${PORTSDIR}/graphics/lcms \
-		paper:${PORTSDIR}/print/libpaper \
-		poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
+LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		fribidi.0:${PORTSDIR}/converters/fribidi \
+		lcms.1:${PORTSDIR}/graphics/lcms \
+		paper.2:${PORTSDIR}/print/libpaper \
+		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
 		exiv2.7:${PORTSDIR}/graphics/exiv2 \
 		chm.0:${PORTSDIR}/misc/chmlib \
 		sane.1:${PORTSDIR}/graphics/sane-backends \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
-		djvulibre:${PORTSDIR}/graphics/djvulibre-nox11 \
+		djvulibre.21:${PORTSDIR}/graphics/djvulibre-nox11 \
 		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
 		spectre.1:${PORTSDIR}/print/libspectre \
 		qca.2:${PORTSDIR}/devel/qca \
