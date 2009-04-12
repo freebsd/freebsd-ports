@@ -22,8 +22,9 @@ GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack pygnome2 eel2 nautilus2
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags gnome-vfs-2.0`" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
+		LIBS="`pkg-config --libs gnome-vfs-2.0`"
 
 DOCSDIR=	${PREFIX}/share/doc/nautilus-python
 
