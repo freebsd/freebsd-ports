@@ -35,8 +35,8 @@ CONFIGURE_ARGS+=--with-magick="`pkg-config ImageMagick --libs`" \
 		--with-tk-includes="-I${TK_INCLUDEDIR} -I${TCL_INCLUDEDIR}" \
 		--with-gdbm="-L${LOCALBASE}/lib -lgdbm" \
 		--with-gdbm-includes="-I${LOCALBASE}/include" \
-		--with-curl="`pkg-config libcurl --libs`" \
-		--with-curl-includes="`pkg-config libcurl --cflags`" \
+		--with-curl="`curl-config --libs`" \
+		--with-curl-includes="`curl-config --cflags`" \
 		--with-gmp="-L${LOCALBASE}/lib -lgmp" \
 		--with-gmp-includes="-I${LOCALBASE}/include" \
 		--with-ggi="-L${LOCALBASE}/lib -lggi" \
