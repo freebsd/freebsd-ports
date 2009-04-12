@@ -13,23 +13,23 @@ MASTER_SITES=	ftp://ftp.lexa.ru/pub/apache-rus/contrib/
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A module issuing the "correct" cookies for counting the site visitors
 
-USE_APACHE=	yes
-DOCS=		README.html
+USE_APACHE=	1.3+
 
-.if defined(WITH_APACHE2)
-MOD=		mod_uid2
+PORTDOCS=	README.html
+
+.if !defined(APACHE_PORT) || ${APACHE_PORT} == "www/apache13"
+MODULENAME=	mod_uid
 .else
-MOD=		mod_uid
+MODULENAME=	mod_uid2
 .endif
 
-do-build:
-	@cd ${WRKSRC} && ${APXS} -c ${MOD}.c
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
-do-install:
-	${APXS} -i -A -n uid ${WRKSRC}/${MOD}.so
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
