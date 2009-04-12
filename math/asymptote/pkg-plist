@@ -43,6 +43,7 @@ bin/xasy
 %%DATADIR%%/grid3.asy
 %%DATADIR%%/interpolate.asy
 %%DATADIR%%/labelpath.asy
+%%DATADIR%%/labelpath3.asy
 %%DATADIR%%/latin1.asy
 %%DATADIR%%/markers.asy
 %%DATADIR%%/math.asy
@@ -165,6 +166,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cpkcolors.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cube.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/curvedlabel.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/curvedlabel3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cyclohexane.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cylinder.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cylinderskeleton.asy
