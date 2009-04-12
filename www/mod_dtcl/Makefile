@@ -20,7 +20,7 @@ USE_TCL_BUILD=	84
 
 WRKSRC=		${WRKDIR}/mod_dtcl
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-APACHE_COMPAT=	yes
+USE_APACHE=	1.3
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libmod_dtcl.so.1* \

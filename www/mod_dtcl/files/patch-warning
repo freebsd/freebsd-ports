@@ -1,0 +1,53 @@
+--- mod_dtcl.h	2002-06-26 09:12:43.000000000 -0400
++++ mod_dtcl.h	2009-04-11 22:49:00.000000000 -0400
+@@ -100,5 +100,5 @@
+ int set_header_type(request_rec *, char *);
+ int print_headers(request_rec *);
+-int print_error(request_rec *, int, char *);
++int print_error(request_rec *, int, const char *);
+ int flush_output_buffer(request_rec *);
+ char *StringToUtf(char *input, ap_pool *pool);
+--- mod_dtcl.c	2002-04-18 09:02:19.000000000 -0400
++++ mod_dtcl.c	2009-04-11 22:48:20.000000000 -0400
+@@ -131,5 +131,6 @@
+ /* Print nice HTML formatted errors */
+ 
+-int print_error(request_rec *r, int htmlflag, char *errstr)
++int
++print_error(request_rec *r, int htmlflag, const char *errstr)
+ {
+     set_header_type(r, DEFAULT_HEADER_TYPE);
+@@ -314,5 +315,4 @@
+ static int execute_and_check(Tcl_Interp *interp, Tcl_Obj *outbuf, request_rec *r)
+ {
+-    char *errorinfo;
+     dtcl_server_conf *conf = NULL;
+ 
+@@ -331,6 +331,5 @@
+         } else {
+             /* default action  */
+-            errorinfo = Tcl_GetVar(interp, "errorInfo", 0);
+-            print_error(r, 0, errorinfo);
++            print_error(r, 0, Tcl_GetVar(interp, "errorInfo", 0));
+             print_error(r, 1, "<p><b>OUTPUT BUFFER:</b></p>");
+             print_error(r, 0, Tcl_GetStringFromObj(outbuf, (int *)NULL));
+--- channel.c	2001-09-05 08:01:22.000000000 -0400
++++ channel.c	2009-04-11 23:03:43.000000000 -0400
+@@ -19,5 +19,6 @@
+    Channel that we create to divert stdout to */
+ 
+-static int outputproc(ClientData instancedata, char *buf, int toWrite, int *errorCodePtr)
++static int
++outputproc(ClientData instancedata, const char *buf, int toWrite, int *errorCodePtr)
+ {
+     dtcl_server_conf *dsc = (dtcl_server_conf *)instancedata;
+@@ -34,6 +35,7 @@
+ }
+ 
+-static int setoptionproc(ClientData instancedata, Tcl_Interp *interp,
+-			 char *optionname, char *value)
++static int
++setoptionproc(ClientData instancedata, Tcl_Interp *interp,
++			 const char *optionname, const char *value)
+ {
+     return TCL_OK;
