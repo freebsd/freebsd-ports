@@ -9,25 +9,24 @@ PORTNAME=	mod_color
 PORTVERSION=	0.3
 CATEGORIES=	www
 # mastersite disappeared in 2001
-MASTER_SITES=	# http://www.dimensional.com/~bgiles/mod_color/
+MASTER_SITES=	# http://www.dimensional.com/~bgiles/${PORTNAME}
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.l
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module that provides syntax coloring for various languages
 
-USE_APACHE=	yes
+USE_APACHE=	1.3
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+
 NO_WRKSUBDIR=	yes
 
 do-extract:
-	${MKDIR} ${WRKSRC}
-	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
+	${MKDIR} ${WRKSRC}/
+	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}/
 
-do-build:
-	lex -t -Psyncc ${WRKSRC}/mod_color.l > ${WRKSRC}/mod_color.c
-	@cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c
-
-do-install:
-	${APXS} -i -A -n ${PORTNAME:S/_//g} ${WRKSRC}/${PORTNAME}.so
+pre-build:
+	lex -t -Psyncc ${WRKSRC}/${PORTNAME}.l > ${WRKSRC}/${PORTNAME}.c
 
 .include <bsd.port.mk>

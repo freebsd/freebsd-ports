@@ -1,3 +1,0 @@
-libexec/apache/mod_color.so
-@exec %D/sbin/apxs -e -A -n color %D/%F
-@unexec %D/sbin/apxs -e -A -n color %D/%F

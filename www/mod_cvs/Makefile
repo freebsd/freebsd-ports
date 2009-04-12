@@ -18,14 +18,11 @@ COMMENT=	A module that makes Apache CVS aware
 
 CONFLICTS=	apache-contrib-1.*
 
-USE_APACHE=	yes
-MAKE_ARGS+=	APXS="${APXS}"
+USE_APACHE=	1.3
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,apxs,${APXS},g' ${WRKSRC}/Makefile
-
-do-install:
-	${APXS} -i -A -n cvs ${WRKSRC}/mod_cvs.so
+post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
