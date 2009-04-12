@@ -11,7 +11,7 @@ CATEGORIES=		mail www
 MASTER_SITES=		# none
 DISTFILES=		# none
 
-MAINTAINER=		gerrit.beine@gmx.de
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A "meta-port" to install SquirrelMail plugins
 
 NO_BUILD=	yes
