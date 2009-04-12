@@ -1,3 +1,0 @@
-libexec/apache/libmod_snake.so
-@exec %D/sbin/apxs -e -A -n snake %D/%F
-@unexec %D/sbin/apxs -e -A -n snake %D/%F

@@ -3933,3 +3933,4 @@ security/cutlass||2009-04-11|Has expired: does not work with current version of 
 www/rt2|www/rt38|2009-04-11|obsolete version, use www/rt38 instead
 www/rt32|www/rt38|2009-04-11|obsolete version, use www/rt38 instead
 www/rt34|www/rt38|2009-04-11|obsolete version, use www/rt38 instead
+www/mod_snake||2009-04-12|Doesn't compile; abandoned upstream since 2002
