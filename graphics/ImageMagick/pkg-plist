@@ -576,6 +576,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/STL.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/TypeMetric.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/index.html
+%%PORTDOCS%%%%DOCSDIR%%/www/Magick++/magick.css
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/montage-sample-framed.jpg
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/right_triangle.png
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/thumbnail-anatomy-framed.fig
