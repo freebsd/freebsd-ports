@@ -14,24 +14,22 @@ MASTER_SITES=	http://www.klomp.org/mod_roaming/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that works as a Netscape Roaming Access server
 
-USE_APACHE=	yes
-DOCS=		CHANGES	INSTALL	LICENSE	README
-
 CONFLICTS=	apache-contrib-1.*
+PORTSCOUT=	limit:^1
 
-PORSCOUT=	limit:^1
+USE_APACHE=	1.3
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+PLIST_FILES=	${APACHEETCDIR}/httpd.conf.${PORTNAME}
 
-do-build:
-	@cd ${WRKSRC} && \
-	${APXS} -c mod_roaming.c
+PORTDOCS=		CHANGES	INSTALL	LICENSE	README
 
-do-install:
-	${APXS} -i -n roaming ${WRKSRC}/mod_roaming.so
-	${INSTALL_DATA} ${FILESDIR}/httpd.conf.${PORTNAME} ${PREFIX}/etc/apache/
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/httpd.conf.${PORTNAME} ${LOCALBASE}/${APACHEETCDIR}/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/${PORTNAME}/
+	${MKDIR} ${DOCSDIR}/
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
