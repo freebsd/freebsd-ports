@@ -13,12 +13,9 @@ MASTER_SITES=	http://download.tangent.org/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to launch triggers if certain actions occur
 
-USE_APACHE=	yes
+USE_APACHE=	1.3
 
-do-build:
-	@cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c
-
-do-install:
-	${APXS} -i -A -n ${PORTNAME:S/_//g} ${WRKSRC}/${PORTNAME}.so
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
 .include <bsd.port.mk>
