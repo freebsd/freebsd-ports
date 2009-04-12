@@ -6,7 +6,6 @@
 #
 
 PKGNAMESUFFIX=	-client
-PORTREVISION=	1
 
 COMMENT=	The Advanced Maryland Automatic Network Disk Archiver (client)
 

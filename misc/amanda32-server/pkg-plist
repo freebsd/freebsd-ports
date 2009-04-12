@@ -6,10 +6,10 @@ lib/amanda/libamserver-%%SHLIBVER%%.so
 lib/amanda/libamserver.a
 lib/amanda/libamserver.la
 lib/amanda/libamserver.so
+lib/amanda/libamxfer-%%SHLIBVER%%.so
 lib/amanda/libamxfer.a
 lib/amanda/libamxfer.la
 lib/amanda/libamxfer.so
-lib/amanda/libamxfer.so.0
 lib/amanda/librestore-%%SHLIBVER%%.so
 lib/amanda/librestore.a
 lib/amanda/librestore.la
