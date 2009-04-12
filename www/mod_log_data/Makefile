@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_log_data
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://loghttp.sourceforge.net/files/
 
