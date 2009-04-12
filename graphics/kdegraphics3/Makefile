@@ -8,7 +8,7 @@
 
 PORTNAME=	kdegraphics
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -18,13 +18,13 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Graphics utilities for the KDE3 integrated X11 desktop
 
 BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX-base
-LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype:${PORTSDIR}/print/freetype2 \
-		fribidi:${PORTSDIR}/converters/fribidi \
-		lcms:${PORTSDIR}/graphics/lcms \
-		paper:${PORTSDIR}/print/libpaper \
-		poppler-qt:${PORTSDIR}/graphics/poppler-qt
+LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		fribidi.0:${PORTSDIR}/converters/fribidi \
+		lcms.1:${PORTSDIR}/graphics/lcms \
+		paper.2:${PORTSDIR}/print/libpaper \
+		poppler-qt.2:${PORTSDIR}/graphics/poppler-qt
 
 CONFLICTS=	kolourpaint-[0-9]*
 
@@ -33,13 +33,13 @@ PREFIX=		${KDE_PREFIX}
 
 USE_GL=		glut
 USE_BZIP2=	yes
-USE_AUTOTOOLS=  libtool:15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_GHOSTSCRIPT=yes
+MAKE_JOBS_SAFE=	yes
 
 USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 DO_NOT_COMPILE+=kooka kuickshow libkscan
 
 OPTIONS=	IMLIB "Build Kuickshow, a fast and versatile image viewer" off \
