@@ -494,7 +494,6 @@
     SUBDIR += mod_sed
     SUBDIR += mod_sequester
     SUBDIR += mod_shapvh
-    SUBDIR += mod_snake
     SUBDIR += mod_sqlinclude
     SUBDIR += mod_ticket
     SUBDIR += mod_tidy
