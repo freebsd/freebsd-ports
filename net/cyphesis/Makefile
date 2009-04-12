@@ -7,6 +7,7 @@
 
 PORTNAME=	cyphesis
 PORTVERSION=	0.5.19
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=worldforge
@@ -26,6 +27,7 @@ CONFIGURE_ARGS=	--with-python=${LOCALBASE}
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PGSQL=	yes
 USE_PYTHON=	yes
@@ -41,6 +43,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpython|${PTHREAD_LIBS} &|' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -e 's|$$(datadir)/cyphesis|${DATADIR}|g'
+	@${REINPLACE_CMD} -e 's|/bash|/sh|' ${WRKSRC}/scripts/extract_revision.sh
 
 post-install:
 .if !defined(NOPORTDOCS)

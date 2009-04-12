@@ -7,6 +7,7 @@ bin/cydb
 bin/cydumprules
 bin/cyloadrules
 bin/cypasswd
+bin/cyphesis
 bin/cypython
 etc/cyphesis/cyphesis.vconf
 etc/cyphesis/mason.d/animals.xml
