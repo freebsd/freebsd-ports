@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	bugzilla
-PORTVERSION?=	2.22.6
+PORTVERSION?=	2.22.7
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
