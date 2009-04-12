@@ -17,3 +17,4 @@ bin/sortshp
 %%WITH_PHP%%%%PHP_EXTENSION_DIR%%/php_mapscript.so
 %%WITH_PHP%%@dirrmtry %%PHP_EXTENSION_DIR%%
 %%WITH_PHP%%@dirrmtry etc/php
+%%WITH_MAPSERV%%@dirrmtry www/cgi-bin
