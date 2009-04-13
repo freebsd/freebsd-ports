@@ -468,7 +468,6 @@
     SUBDIR += mod_mp3
     SUBDIR += mod_musicindex
     SUBDIR += mod_mylo
-    SUBDIR += mod_mysqluserdir
     SUBDIR += mod_ntlm
     SUBDIR += mod_ntlm2
     SUBDIR += mod_perl
