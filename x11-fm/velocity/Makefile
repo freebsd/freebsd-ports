@@ -28,6 +28,8 @@ CONFIGURE_ENV=	CPPFLAGS="`pkg-config --cflags libgnomeui-2.0`" \
 BROKEN=		Does not compile
 .endif
 
+BROKEN=	does not build with GNOME 2.26
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
 			${WRKSRC}/configure
