@@ -7,11 +7,12 @@
 
 PORTNAME=	MasonX-WebApp
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hcoyote@ghostar.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Works with HTML::Mason to do processing before Mason is invoked
 
 RUN_DEPENDS=	${SITE_PERL}/HTML/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
@@ -22,8 +23,7 @@ RUN_DEPENDS=	${SITE_PERL}/HTML/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .if defined(WITH_MODPERL2)
-BROKEN=		Broken due the new mod_perl2 API
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/mod_perl.pm:${PORTSDIR}/www/mod_perl2
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 .endif
