@@ -1,8 +1,8 @@
 lib/liblapack.a
 lib/liblapack.so
-lib/liblapack.so.5
+lib/liblapack.so.4
 lib/liblapack_p.a
 lib/libtmglib.a
 lib/libtmglib.so
-lib/libtmglib.so.5
+lib/libtmglib.so.4
 lib/libtmglib_p.a
