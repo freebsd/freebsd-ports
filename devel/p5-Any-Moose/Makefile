@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Any-Moose
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/F/FL/FLORA
@@ -29,7 +29,7 @@ RUN_DEPENDS+=	p5-Moose>0:${PORTSDIR}/devel/p5-Moose
 .endif
 
 .if defined(WITH_MOUSE)
-RUN_DEPENDS+=	p5-Mouse>=0.15:${PORTSDIR}/devel/p5-Mouse
+RUN_DEPENDS+=	p5-Mouse>=0.20:${PORTSDIR}/devel/p5-Mouse
 .endif
 
 .include <bsd.port.post.mk>
