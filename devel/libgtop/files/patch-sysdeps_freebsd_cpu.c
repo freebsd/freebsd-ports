@@ -4,7 +4,7 @@
  glibtop_get_cpu_s (glibtop *server, glibtop_cpu *buf)
  {
  	long cpts [CPUSTATES];
-+	long *cp_times;
++	long *cp_times = NULL;
  	struct clockinfo ci;
  	size_t length;
  	int ncpu, i;
@@ -16,7 +16,7 @@
 +	if (sysctlbyname ("kern.cp_times", NULL, &length, NULL, 0) == 0) {
 +		cp_times = g_malloc (length);
 +		length = sizeof(long) * CPUSTATES * (length / (sizeof(long) * CPUSTATES));
-+		if (sysctlbyname ("kern.cp_times", &cp_times, &length, NULL, 0)) {
++		if (sysctlbyname ("kern.cp_times", cp_times, &length, NULL, 0)) {
 +			g_free (cp_times);
 +			cp_times = NULL;
 +		}
