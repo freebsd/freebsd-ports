@@ -7,7 +7,7 @@
 
 PORTNAME=	RTx-Statistics
 PORTVERSION=	0.1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	http://opensvn.csie.org/RTx_Statistics/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	RTx::Statistics - Produces statistical information based on RT3 data
 
+# This module is not compatible with rt-3.8.0 or later.
 BUILD_DEPENDS=	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
-		${RT_PATH}/lib/RT.pm:${PORTSDIR}/www/rt38
+		${RT_PATH}/lib/RT.pm:${PORTSDIR}/www/rt36
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.3+
