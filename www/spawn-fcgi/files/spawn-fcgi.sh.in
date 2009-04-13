@@ -1,0 +1,71 @@
+#!/bin/sh
+#
+
+# PROVIDE: spawn_fcgi
+# REQUIRE: %%REQUIRE%%
+# BEFORE:  LOGIN
+# KEYWORD: shutdown
+
+. %%RC_SUBR%%
+
+name="spawn_fcgi"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${spawn_fcgi_enable="NO"}
+: ${spawn_fcgi_app=""}
+: ${spawn_fcgi_pidfile="/var/run/spawn-fcgi.pid"}
+: ${spawn_fcgi_user="www"}
+: ${spawn_fcgi_group="www"}
+: ${spawn_fcgi_bindaddr="127.0.0.1"}
+: ${spawn_fcgi_bindport="9000"}
+: ${spawn_fcgi_children="5"}
+: ${spawn_fcgi_max_requests="1000"}
+: ${spawn_fcgi_allowed_env=""}
+
+
+command="/usr/local/bin/spawn-fcgi"
+command_args="-u ${spawn_fcgi_user} -g ${spawn_fcgi_group} -a ${spawn_fcgi_bindaddr} -p ${spawn_fcgi_bindport} -P ${spawn_fcgi_pidfile} -- ${spawn_fcgi_app}"
+pidfile=${spawn_fcgi_pidfile}
+
+_allowed_env="PATH USER PHP_FCGI_CHILDREN PHP_FCGI_MAX_REQUESTS FCGI_WEB_SERVER_ADDRS"
+_allowed_env="${_allowed_env} ${spawn_fcgi_allowed_env}"
+
+start_precmd="${name}_start_precmd"
+stop_cmd="${name}_stop_cmd"
+stop_postcmd="${name}_stop_postcmd"
+
+spawn_fcgi_start_precmd()
+{
+    touch ${pidfile}
+    chown ${spawn_fcgi_user}:${spawn_fcgi_group} ${pidfile}
+    export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin
+    export PHP_FCGI_CHILDREN=${spawn_fcgi_children}
+    export PHP_FCGI_MAX_REQUESTS=${spawn_fastcgi_max_requests}
+    export USER=${spawn_fcgi_user}
+    E=
+    for i in ${_allowed_env}; do
+        eval _val="\$$i"
+        if [ "${_val}_x" != "_x" ]; then
+            eval _add="$i=$_val"
+            E="${E} ${_add}"
+        fi
+    done
+    command="env - ${E} ${command}"
+}
+
+spawn_fcgi_stop_cmd()
+{
+    read rc_pid < ${pidfile}
+    kill ${sig_stop} ${rc_pid}
+}
+
+spawn_fcgi_stop_postcmd()
+{
+    rm -f ${pidfile}
+}
+
+load_rc_config $name
+
+run_rc_command "$1"
