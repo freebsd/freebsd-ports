@@ -1,0 +1,345 @@
+The bulk of porting to modern C++ is in here. Contents of the
+other patch-file, as well as whole-sale s/char/const char/
+substitution in pixmap files is also required for warning-free
+compilations.
+
+Oh, and the `using namespace std', which is provided by a micro-
+-header std-namespace.h...
+
+	-mi
+
+--- src/lib/Card.hpp	2002-09-10 21:48:04.000000000 -0400
++++ src/lib/Card.hpp	2009-04-12 23:15:36.000000000 -0400
+@@ -25,5 +25,5 @@
+ #define CARD_HPP
+ 
+-class ostream;
++#include <ostream>
+ 
+ class Card {
+@@ -63,5 +63,5 @@
+ 
+   static char  getSuitChar(Suit suit);
+-  static char* getSuitStr(Suit suit);
++  static const char* getSuitStr(Suit suit);
+   static char  getNumberChar(Number number);
+ 
+@@ -69,5 +69,5 @@
+ 
+   char   getSuitChar() const;
+-  char*  getSuitStr() const;
++  const char*  getSuitStr() const;
+   Suit   getSuit() const;
+   Suit   getAdjSuit() const;
+--- src/lib/Round.hpp	2002-09-10 21:48:04.000000000 -0400
++++ src/lib/Round.hpp	2009-04-12 23:15:36.000000000 -0400
+@@ -25,6 +25,5 @@
+ #define ROUND_HPP
+ 
+-class iostream;
+-
++#include <ostream>
+ #include "Common.hpp"
+ #include "Card.hpp"
+@@ -50,3 +49,2 @@
+ 
+ #endif /* ROUND_HPP */
+-
+--- src/lib/Card.cpp	2002-09-10 21:48:04.000000000 -0400
++++ src/lib/Card.cpp	2009-04-12 23:15:36.000000000 -0400
+@@ -22,5 +22,5 @@
+ */
+ 
+-#include <iostream.h>
++#include <iostream>
+ 
+ #include "Card.hpp"
+@@ -77,9 +77,9 @@
+ }
+ 
+-char* Card::getSuitStr() const {
++const char* Card::getSuitStr() const {
+   return getSuitStr(itsSuit);
+ }
+ 
+-static char* suitStrings[] = {
++static const char* suitStrings[] = {
+   "Diamonds",
+   "Clubs",
+@@ -89,5 +89,5 @@
+ };
+ 
+-char* Card::getSuitStr(Card::Suit suit) {
++const char* Card::getSuitStr(Card::Suit suit) {
+   if (suit < Diamonds || suit > Spades) {
+     suit = (Suit) (Spades + 1);
+--- src/lib/Common.cpp	2002-03-23 21:43:37.000000000 -0500
++++ src/lib/Common.cpp	2009-04-12 23:15:36.000000000 -0400
+@@ -52,9 +52,9 @@
+ }
+ 
+-static char* PlayerPositionStrings[] = {
++static const char* PlayerPositionStrings[] = {
+   "North", "East", "South", "West", "None"
+ };
+ 
+-char* Common::getPlayerPositionStr(PlayerPosition pp) {
++const char* Common::getPlayerPositionStr(PlayerPosition pp) {
+   if (pp < NORTH || pp > WEST) {
+     pp = (PlayerPosition) (WEST + 1);
+@@ -65,9 +65,9 @@
+ }
+ 
+-static char* BidStrings[] = {
++static const char* BidStrings[] = {
+   "No Bid", "Pass", "Called It", "Loner"
+ };
+ 
+-char* Common::getBidStr(Bid bid) {
++const char* Common::getBidStr(Bid bid) {
+   if (bid < NOBID || bid > LONER) {
+     return 0;
+@@ -85,3 +85,2 @@
+   return trump;
+ }
+-
+--- src/lib/ComputerPlayerEasy.cpp	2003-02-04 22:34:51.000000000 -0500
++++ src/lib/ComputerPlayerEasy.cpp	2009-04-12 23:15:36.000000000 -0400
+@@ -22,6 +22,4 @@
+ */
+ 
+-#include <iostream.h>
+-
+ #include "Options.hpp"
+ #include "ComputerPlayerEasy.hpp"
+--- src/lib/Common.hpp	2002-09-10 21:48:04.000000000 -0400
++++ src/lib/Common.hpp	2009-04-12 23:15:36.000000000 -0400
+@@ -54,7 +54,7 @@
+   static PlayerPosition getPartner(PlayerPosition pp);
+   static char  getPlayerPositionChar(PlayerPosition pp);
+-  static char* getPlayerPositionStr(PlayerPosition pp);
++  static const char* getPlayerPositionStr(PlayerPosition pp);
+ 
+-  static char* getBidStr(Bid bid);
++  static const char* getBidStr(Bid bid);
+ 
+   static void setTrump(const Card::Suit aTrump);
+--- src/lib/Debug.hpp	2002-04-10 20:22:17.000000000 -0400
++++ src/lib/Debug.hpp	2009-04-12 23:15:36.000000000 -0400
+@@ -25,5 +25,5 @@
+ #define EUCHRE_DEBUG_HPP
+ 
+-#include <iostream.h>
++#include <iostream>
+ #include <Options.hpp>
+ 
+--- src/lib/ComputerPlayerHard.cpp	2003-03-24 06:37:59.000000000 -0500
++++ src/lib/ComputerPlayerHard.cpp	2009-04-12 23:15:36.000000000 -0400
+@@ -23,5 +23,5 @@
+ 
+ #include <string.h>
+-#include <iomanip.h>
++#include <iomanip>
+ 
+ #include "Debug.hpp"
+--- src/lib/Hand.hpp	2002-09-10 21:48:04.000000000 -0400
++++ src/lib/Hand.hpp	2009-04-12 23:15:36.000000000 -0400
+@@ -25,5 +25,4 @@
+ #define HAND_HPP
+ 
+-class ostream;
+ #include "Common.hpp"
+ #include "Card.hpp"
+--- src/lib/Deck.hpp	2002-03-23 21:43:37.000000000 -0500
++++ src/lib/Deck.hpp	2009-04-12 23:15:36.000000000 -0400
+@@ -25,6 +25,4 @@
+ #define DECK_HPP
+ 
+-class ostream;
+-
+ #include "Card.hpp"
+ 
+--- src/lib/Game.cpp	2003-03-24 07:04:46.000000000 -0500
++++ src/lib/Game.cpp	2009-04-12 23:15:36.000000000 -0400
+@@ -24,6 +24,7 @@
+ #include <stdio.h>
+ #include <unistd.h>
+-#include <iomanip.h>
++#include <iomanip>
+ 
++using namespace std;
+ #include "Debug.hpp"
+ #include "Game.hpp"
+@@ -61,5 +62,5 @@
+     /* gcc doesn't like conversion from void* to Event so hack around
+        it */
+-    Event ev = (Event) (unsigned int) g_slist_nth_data(itsEventList, 0);
++    Event ev = (Event) (uintptr_t) g_slist_nth_data(itsEventList, 0);
+     itsEventList = g_slist_remove(itsEventList, (gpointer) ev);
+ 
+--- src/lib/Player.hpp	2003-02-04 22:34:51.000000000 -0500
++++ src/lib/Player.hpp	2009-04-12 23:15:36.000000000 -0400
+@@ -25,5 +25,5 @@
+ #define PLAYER_HPP
+ 
+-class ostream;
++#include <ostream>
+ #include "Common.hpp"
+ #include "Hand.hpp"
+--- src/lib/Options.hpp	2003-02-04 22:34:51.000000000 -0500
++++ src/lib/Options.hpp	2009-04-13 01:58:02.000000000 -0400
+@@ -25,5 +25,5 @@
+ #define OPTIONS_HPP
+ 
+-#include <fstream.h>
++#include <fstream>
+ 
+ #include "Common.hpp"
+--- src/gui/GuiGame.cpp	2003-03-24 07:20:41.000000000 -0500
++++ src/gui/GuiGame.cpp	2009-04-13 01:41:01.000000000 -0400
+@@ -446,5 +446,5 @@
+ }
+ 
+-void GuiGame::updateStatus(char* statusStr) {
++void GuiGame::updateStatus(const char* statusStr) {
+   strcpy(itsStatusText, statusStr);
+   updateStatus();
+@@ -595,5 +595,5 @@
+ }
+ 
+-char* GuiGame::getPauseText() {
++const char* GuiGame::getPauseText() {
+   if (GuiOptions::get()->getDelayMode() == Options::PAUSE) {
+     return "Click to continue.";
+@@ -688,5 +688,5 @@
+   const int num_in_mainwin = 10;
+   
+-  char* names[num_names] = {
++  const char* names[num_names] = {
+     "nplayedcard", "eplayedcard", "splayedcard", "wplayedcard",
+     "pcard0_pix",  "pcard1_pix",  "pcard2_pix",  "pcard3_pix",
+@@ -708,5 +708,7 @@
+ 	gdk_pixmap_colormap_create_from_xpm_d(NULL, gdk_c,
+ 					      &(cardbackBitmaps[i][which]),
+-					      NULL, card_back_pixmap[which]);
++					      NULL,
++					      /* XXX Drop const-ness */
++					      (gchar **)card_back_pixmap[which]);
+     }
+     
+--- src/gui/GuiGame.hpp	2003-03-24 06:58:28.000000000 -0500
++++ src/gui/GuiGame.hpp	2009-04-12 23:25:55.000000000 -0400
+@@ -34,5 +34,5 @@
+   virtual void getPlayers();
+   virtual void setOptions();
+-  virtual void updateStatus(char* statusStr);
++  virtual void updateStatus(const char* statusStr);
+ 
+   void setCardBack(int which);
+@@ -72,5 +72,5 @@
+   void    updateStatus();
+   void    hideTopCard();
+-  char*   getPauseText();
++  const char*   getPauseText();
+   void    setMainLabelColors();
+   void    setAuctionLabelColors();
+--- src/gui/callbacks.cpp	2003-03-24 07:08:59.000000000 -0500
++++ src/gui/callbacks.cpp	2009-04-13 01:42:21.000000000 -0400
+@@ -105,5 +105,5 @@
+                                         gpointer         user_data)
+ {
+-  LOG("enter on_pcard_clicked with " << (int) user_data << endl);
++  LOG("enter on_pcard_clicked with " << (intptr_t) user_data << endl);
+   HumanGuiPlayer* p = (HumanGuiPlayer*) theGame->getPlayer(Common::SOUTH);
+   if (p == NULL) {
+@@ -111,5 +111,5 @@
+   }
+ 
+-  p->setSelectedCard((int) user_data);
++  p->setSelectedCard((intptr_t) user_data);
+   theGame->addEvent(Game::PAUSE_END);
+   theGame->run();
+@@ -143,5 +143,5 @@
+ {
+   Player* p = theGame->getPlayer(Common::SOUTH);
+-  p->assignBid((Common::Bid) ((int) user_data));
++  p->assignBid((Common::Bid) ((intptr_t) user_data));
+ 
+   theGame->addEvent(Game::AUCTION_CONT);
+@@ -203,7 +203,7 @@
+ 
+   if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(t))) {
+-    p->assignBid(Common::LONER, (Card::Suit) (int) user_data);
++    p->assignBid(Common::LONER, (Card::Suit) (intptr_t) user_data);
+   } else {
+-    p->assignBid(Common::PICKITUP, (Card::Suit) (int) user_data);
++    p->assignBid(Common::PICKITUP, (Card::Suit) (intptr_t) user_data);
+   }
+   
+--- src/gui/main.cpp	2003-03-24 07:19:16.000000000 -0500
++++ src/gui/main.cpp	2009-04-13 01:57:22.000000000 -0400
+@@ -92,5 +92,7 @@
+       gdk_pixmap_colormap_create_from_xpm_d(NULL, gdk_c,
+ 					    &(cardbackSelectBitmaps[i]),
+-					    NULL, card_back_pixmap[i]);
++					    NULL,
++					    /* Drop const-ness */
++					    (gchar **)card_back_pixmap[i]);
+     gtk_pixmap_set(GTK_PIXMAP(gtk_w), cardbackSelectPixmaps[i],
+ 		   cardbackSelectBitmaps[i]);
+@@ -168,5 +170,7 @@
+     gdk_c = gtk_widget_get_colormap(gtk_w);
+     gdk_p = gdk_pixmap_colormap_create_from_xpm_d(NULL, gdk_c, &gdk_m,
+-						  NULL, suit_pixmap[s]);
++						  NULL,
++						  /* Drop const-ness */
++						  (gchar **)suit_pixmap[s]);
+     
+     gtk_pixmap_set(GTK_PIXMAP(gtk_w), gdk_p, gdk_m);
+--- src/gui/support.cpp	2002-06-27 00:11:51.000000000 -0400
++++ src/gui/support.cpp	2009-04-13 01:55:08.000000000 -0400
+@@ -63,5 +63,5 @@
+ 
+ /* This is a dummy pixmap we use when a pixmap can't be found. */
+-static char *dummy_pixmap_xpm[] = {
++static const char *dummy_pixmap_xpm[] = {
+ /* columns rows colors chars-per-pixel */
+ "1 1 1 1",
+@@ -113,5 +113,5 @@
+ GtkWidget*
+ create_pixmap_d                        (GtkWidget       *widget,
+-					gchar          **xpm_d)
++					const gchar    **xpm_d)
+ {
+   GdkColormap *colormap;
+@@ -122,5 +122,7 @@
+   colormap = gtk_widget_get_colormap (widget);
+   gdkpixmap = gdk_pixmap_colormap_create_from_xpm_d (NULL, colormap, &mask,
+-                                                     NULL, xpm_d);
++                                                     NULL,
++						    /* Drop const-ness */
++						    (gchar **)xpm_d);
+   if (gdkpixmap == NULL)
+     g_error ("Couldn't create replacement pixmap.");
+--- src/gui/support.hpp	2002-06-27 00:11:51.000000000 -0400
++++ src/gui/support.hpp	2009-04-13 01:54:35.000000000 -0400
+@@ -53,5 +53,5 @@
+                                         const gchar     *filename);
+ GtkWidget*  create_pixmap_d            (GtkWidget       *widget,
+-                                        gchar          **xpm_d);
++                                        const gchar    **xpm_d);
+ 
+ #ifdef __cplusplus
+--- src/gui/HumanGuiPlayer.cpp	2003-03-24 04:28:58.000000000 -0500
++++ src/gui/HumanGuiPlayer.cpp	2009-04-13 02:02:09.000000000 -0400
+@@ -36,9 +36,8 @@
+   Player(myPos), GuiPlayer(myPos), itsState(INIT), itsPartnerLoner(0) {
+ 
+-  char* formatStr = "pcard%d";
+   char  pcardStr[100];
+ 
+   for (int i = 0; i < (Common::CARDS_PER_HAND+1); i++) {
+-    sprintf(pcardStr, formatStr, i);
++    sprintf(pcardStr, "pcard%d", i);
+     itsCards[i] = lookup_widget(mainwin, pcardStr);
+     
