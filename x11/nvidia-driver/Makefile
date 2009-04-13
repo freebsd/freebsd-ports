@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	180.29
+DISTVERSION?=	180.44
 PORTREVISION?=	0			# As a reminder it can be overridden
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
@@ -74,11 +74,6 @@ LIB_DEPENDS+=	m.3:${PORTSDIR}/misc/compat5x
 post-patch: .SILENT
 # We should support -CURRENT: kill the check
 	${REINPLACE_CMD} '24,26d' ${WRKSRC}/src/nv-freebsd.h
-# Fix `agpvar.h' location on recent -CURRENT
-.if ${OSVERSION} >= 800004
-	${REINPLACE_CMD} -e 's,pci/agpvar\.h,dev/agp/agpvar.h,' \
-		${WRKSRC}/src/nv-freebsd.h
-.endif
 # Switch from suser() to priv_check() API on recent -CURRENT
 .if ${OSVERSION} >= 800049
 	${REINPLACE_CMD} -e \
@@ -130,6 +125,10 @@ post-install:
 .if ${NVVERSION} < 974600
 	@${REINPLACE_CMD} '/wfb/d' ${TMPPLIST}
 .endif
+.if ${NVVERSION} < 1802900
+	@${REINPLACE_CMD} '/libvdpau/d' ${TMPPLIST}
+.endif
+# Some applications need this symlink (see PR ports/72877)
 	@${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
