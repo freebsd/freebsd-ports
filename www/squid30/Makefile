@@ -61,7 +61,6 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.0.${SQUID_STABLE_VER}
-PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -100,7 +99,7 @@ COMMENT=	HTTP Caching Proxy
 
 LATEST_LINK=	squid30
 
-SQUID_STABLE_VER=	13
+SQUID_STABLE_VER=	14
 
 CONFLICTS=	squid-2.[0-9].* cacheboy-[0-9]*
 GNU_CONFIGURE=	yes
