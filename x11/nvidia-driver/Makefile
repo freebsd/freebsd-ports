@@ -33,7 +33,7 @@ OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 # Starting with version 1.0-7667, NVidia has dropped support for numerous
 # "legacy" GPUs.  Consult NVidia README (the Appendix) to find out whether
 # you need to use legacy driver version and install one of corresponding
-# `x11/nvidia-driver-71xx', `x11/nvidia-driver-96xx', or `x11/nvidia-driver-173'
+# `x11/nvidia-driver-71', `x11/nvidia-driver-96', or `x11/nvidia-driver-173'
 # slave ports.
 #
 # XXX Until NVidia starts to name their releases consistently, employ this
@@ -47,7 +47,7 @@ NVVERSION=	${DISTVERSION:S/.//g}00
 
 .include <bsd.port.pre.mk>
 
-# XXX Should use ${PKG_INFO} XXX
+# XXX Should use ${PKG_INFO} but it does not expand for some reason XXX
 #
 XSERVVERSION!=	/usr/sbin/pkg_info -qO x11-servers/xorg-server 2>/dev/null || true
 LIBGLVERSION!=	/usr/sbin/pkg_info -qO graphics/libGL 2>/dev/null || true
@@ -61,9 +61,6 @@ PLIST_SUB+=	XSERVVERSION=${XSERVVERSION} LIBGLVERSION=${LIBGLVERSION} \
 		MODULESDIR=${MODULESDIR}
 
 .if !defined(WITHOUT_LINUX)
-# Add explicit X11 libraries dependency since USE_LINUX causes the port to
-# RUN_DEPEND on the Linux libraries rather than LIB_DEPEND on native ones
-LIB_DEPENDS+=	X11.6:${X_LIBRARIES_PORT}
 USE_LINUX=	yes
 PLIST_SUB+=	LINUX=""
 .else
@@ -75,12 +72,6 @@ MAKE_ENV+=	WITHOUT_LINUX=yes
 LIB_DEPENDS+=	m.3:${PORTSDIR}/misc/compat5x
 
 post-patch: .SILENT
-
-.if ${OSVERSION} >= 800049
-	${REINPLACE_CMD} -e 's,minor(,dev2unit(,' \
-	    ${WRKSRC}/src/nvidia_dev.c ${WRKSRC}/src/nvidia_subr.c
-.endif
-
 # We should support -CURRENT: kill the check
 	${REINPLACE_CMD} '24,26d' ${WRKSRC}/src/nv-freebsd.h
 # Fix `agpvar.h' location on recent -CURRENT
@@ -93,6 +84,11 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e \
 		's/suser(CURTHREAD)/priv_check(CURTHREAD, PRIV_DRIVER)/' \
 			${WRKSRC}/src/nvidia_os.c
+.endif
+# minor() is removed in recent -CURRENT
+.if ${OSVERSION} >= 800062
+	${REINPLACE_CMD} -e 's,minor(,dev2unit(,' \
+		${WRKSRC}/src/nvidia_dev.c ${WRKSRC}/src/nvidia_subr.c
 .endif
 .if defined(WITH_FREEBSD_AGP)
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
@@ -123,12 +119,6 @@ post-patch: .SILENT
 pre-su-install:
 # XXX This port silently assumes PREFIX == LOCALBASE XXX
 	@${MKDIR} ${PREFIX}/${MODULESDIR}/drivers
-# xorg-server-1.4 installs its own ${LOCALBASE}/lib/xorg/modules/libwfb.so,
-# so back it up so it can be later restored similarly to what NVidia does:
-#.if ${NVVERSION} >= 974600
-#	@${MV} -f ${PREFIX}/${MODULESDIR}/libwfb.so \
-#		${PREFIX}/${MODULESDIR}/XXX-libwfb.so.%%.${XSERVVERSION}
-#.endif
 
 post-install:
 # pkg-plist is already overbloated, so use this hack instead of PLIST_SUB's
