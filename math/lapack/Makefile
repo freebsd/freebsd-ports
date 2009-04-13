@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lapack
-PORTVERSION=	3.1.1
-PORTREVISION=	2
+PORTVERSION=	3.2.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/lapack/ \
 		http://netlib.org/lapack/ \
@@ -21,9 +20,7 @@ COMMENT=	A library of Fortran 77 subroutines for linear algebra
 LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas
 
 USE_FORTRAN=	yes
-
 DIST_SUBDIR=	lapack
-
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
@@ -38,12 +35,14 @@ FPIC=	-fpic
 BROKEN=		Fails to link
 .endif
 
+WRKSRC=${WRKDIR}/lapack-3.2
+MANSRC=${WRKDIR}/lapack-3.2.0
 WRKSRC_SHARED=${WRKSRC}_shared
 FFLAGS_SHARED=${FPIC}
 WRKSRC_PROFILE=${WRKSRC}_profile
 FFLAGS_PROFILE=-pg
 
-SVERSION=4
+SVERSION=5
 BLAS=	-L${LOCALBASE}/lib -lblas
 
 pre-fetch:
@@ -98,10 +97,10 @@ do-install:
 	${LN} -sf libtmglib.so.${SVERSION} ${PREFIX}/lib/libtmglib.so
 	${INSTALL_DATA} ${WRKSRC_PROFILE}/liblapack_p.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC_PROFILE}/libtmglib_p.a ${PREFIX}/lib
-	${INSTALL_MAN} ${WRKSRC}/manpages/man/manl/[a-c]*.l ${PREFIX}/man/manl
-	${INSTALL_MAN} ${WRKSRC}/manpages/man/manl/[d-l]*.l ${PREFIX}/man/manl
-	${INSTALL_MAN} ${WRKSRC}/manpages/man/manl/[m-s]*.l ${PREFIX}/man/manl
-	${INSTALL_MAN} ${WRKSRC}/manpages/man/manl/[t-z]*.l ${PREFIX}/man/manl
+	${INSTALL_MAN} ${MANSRC}/manpages/man/manl/[a-c]*.l ${PREFIX}/man/manl
+	${INSTALL_MAN} ${MANSRC}/manpages/man/manl/[d-l]*.l ${PREFIX}/man/manl
+	${INSTALL_MAN} ${MANSRC}/manpages/man/manl/[m-s]*.l ${PREFIX}/man/manl
+	${INSTALL_MAN} ${MANSRC}/manpages/man/manl/[t-z]*.l ${PREFIX}/man/manl
 
 regression-test: build
 	@${ECHO_CMD} "Testing static lapack library"
