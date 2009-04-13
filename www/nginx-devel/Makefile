@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.7.50
+PORTVERSION=	0.7.51
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -37,6 +37,7 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		HTTP_STATUS_MODULE "Enable http_stub_status module" on \
 		HTTP_SUB_MODULE "Enable http_sub module" off \
 		HTTP_UPLOAD_MODULE "Enable upload module" off \
+		HTTP_UPLOAD_PROGRESS "Enable upload_progress module" off \
 		HTTP_UPSTREAM_FAIR "Enable upstream fair module" off \
 		HTTP_UPSTREAM_KEEPALIVE "Enable upstream keepalive module" off \
 		HTTP_XSLT_MODULE "Enable http_xslt module" off \
@@ -174,6 +175,14 @@ NGINX_UPLOAD_MODULE_VERSION=	2.0.8
 MASTER_SITES+=	http://grid.net.ru/nginx/download/:upload
 DISTFILES+=	nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}.tar.gz:upload
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}
+.endif
+
+.if defined(WITH_HTTP_UPLOAD_PROGRESS)
+NGINX_UPLOAD_PROGRESS_MODULE_VERSION=	0.5
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:uploadprogress/}
+MASTER_SITE_SUBDIR+=	osa/:uploadprogress
+DISTFILES+=	nginx_uploadprogress_module-${NGINX_UPLOAD_PROGRESS_MODULE_VERSION}.tar.gz:uploadprogress
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_uploadprogress_module
 .endif
 
 .if defined(WITH_HTTP_UPSTREAM_FAIR)
