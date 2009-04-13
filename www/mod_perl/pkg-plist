@@ -1,8 +1,8 @@
-include/apache/modules/perl/apache_inc.h
-include/apache/modules/perl/mod_perl.h
-include/apache/modules/perl/mod_perl_version.h
-include/apache/modules/perl/mod_perl_xs.h
-include/apache/modules/perl/perl_PL.h
+%%APACHEINCLUDEDIR%%/modules/perl/apache_inc.h
+%%APACHEINCLUDEDIR%%/modules/perl/mod_perl.h
+%%APACHEINCLUDEDIR%%/modules/perl/mod_perl_version.h
+%%APACHEINCLUDEDIR%%/modules/perl/mod_perl_xs.h
+%%APACHEINCLUDEDIR%%/modules/perl/perl_PL.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/Connection.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/Constants.pm
@@ -64,9 +64,9 @@ include/apache/modules/perl/perl_PL.h
 %%SITE_PERL%%/%%PERL_ARCH%%/mod_perl_method_handlers.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/mod_perl_traps.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/mod_perl_tuning.pod
-libexec/apache/libperl.so
-@dirrm include/apache/modules/perl
-@dirrm include/apache/modules
+%%APACHEMODDIR%%/libperl.so
+@dirrm %%APACHEINCLUDEDIR%%/modules/perl
+@dirrm %%APACHEINCLUDEDIR%%/modules
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/include/modules/perl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/include/modules
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/include
