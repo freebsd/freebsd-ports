@@ -1,14 +1,14 @@
---- output.cc.orig	Fri Dec  8 04:01:19 2006
-+++ output.cc	Wed Jan  3 17:10:43 2007
-@@ -109,6 +109,7 @@
- #include "NmapOutputTable.h"
- #include "MACLookup.h"
+--- output.cc.orig	2009-04-01 00:29:03.000000000 +0200
++++ output.cc	2009-04-01 22:52:01.000000000 +0200
+@@ -108,6 +108,7 @@
+ #include <math.h>
  
+ #include <set>
 +#include <sys/param.h>
  #include <string>
- 
- /* Workaround for lack of namespace std on HP-UX 11.00 */
-@@ -742,8 +743,8 @@
+ #include <vector>
+ #include <list>
+@@ -1030,8 +1031,8 @@
    case LOG_MACHINE:
    case LOG_SKID:
    case LOG_XML:

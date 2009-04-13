@@ -1,10 +1,16 @@
-Nmap is a utility for network exploration or security auditing. It
-supports ping scanning (determine which hosts are up), many port
-scanning techniques, version detection (determine service protocols
-and application versions listening behind ports), and TCP/IP
-fingerprinting (remote host OS or device identification). Nmap also
-offers flexible target and port specification, decoy/stealth scanning,
+Nmap is a utility for network exploration and security auditing.
+It supports various types of host discovery (determine which hosts
+are up), many port scanning techniques for different protocols,
+version detection (determine service protocols and application
+versions listening behind ports), and TCP/IP stack fingerprinting
+(remote host OS or device identification).  Nmap also offers
+flexible target and port specification, decoy/stealth scanning,
 sunRPC scanning, and much more.
+
+Also included is Ncat, the nc(1) work-a-like of the Nmap project.
+Refer to the separate port security/zenmap for those parts of the
+Nmap toolset which depend on python.  The translated manual pages
+for Nmap are contained in security/nmap-i18n-man.
 
 WWW: http://nmap.org/
 
