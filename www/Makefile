@@ -1396,6 +1396,7 @@
     SUBDIR += smb_auth
     SUBDIR += snarf
     SUBDIR += snownews
+    SUBDIR += spawn-fcgi
     SUBDIR += spip
     SUBDIR += spreadlogd
     SUBDIR += sqstat
