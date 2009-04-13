@@ -6,6 +6,7 @@
 
 PORTNAME=	nmap-parser
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RF/gems
 

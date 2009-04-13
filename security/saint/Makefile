@@ -7,7 +7,7 @@
 
 PORTNAME=	saint
 PORTVERSION=	3.5.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	ftp://147.102.222.211/pub/security/scanners/saint/
 
