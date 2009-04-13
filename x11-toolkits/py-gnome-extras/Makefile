@@ -25,13 +25,12 @@ LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell \
 		gksuui1.0.1:${PORTSDIR}/sysutils/libgksuui \
 		gdl-1.0:${PORTSDIR}/x11-toolkits/gdl
 
-USE_GECKO=	firefox xulrunner mozilla
+USE_GECKO=	firefox libxul xulrunner mozilla
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack libgtkhtml pygnome2 libgda4
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gtkmozembed=${GECKO}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -45,6 +44,12 @@ DOCSDIR=	${WRKSRC}/share/doc/py-gnome-extras
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
+
+.if defined(GECKO) && ${GECKO:Mlibxul}!=""
+CONFIGURE_ARGS+=	--with-gtkmozembed=xulrunner
+.else
+CONFIGURE_ARGS+=	--with-gtkmozembed=${GECKO}
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC}/docs -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
