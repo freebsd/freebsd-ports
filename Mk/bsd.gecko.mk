@@ -244,7 +244,7 @@ Gecko_Pre_Include=	bsd.gecko.mk
 # 						CONFIGURE_ARGS instead
 #
 
-MAINTAINER?=	gnome@FreeBSD.org
+MAINTAINER?=	miwi@FreeBSD.org
 
 MOZILLA?=	${PORTNAME}
 MOZILLA_VER?=	${PORTVERSION}
