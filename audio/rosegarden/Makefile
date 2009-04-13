@@ -18,9 +18,6 @@ COMMENT=	The Rosegarden Editor and Sequencer suite
 BUILD_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:${PORTSDIR}/audio/tclmidi
 RUN_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:${PORTSDIR}/audio/tclmidi
 
-DEPRECATED=		tcl82 support is going to be dropped
-EXPIRATION_DATE=	2009-04-22
-
 USE_XORG=	xaw
 USE_AUTOTOOLS=	autoconf:213
 CONFIGURE_ARGS=	--with-tclincl=${LOCALBASE}/include/tcl8.2
