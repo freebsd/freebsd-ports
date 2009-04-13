@@ -17,6 +17,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Markup.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object/Subclass.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/OptionGroup.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/OptionContext.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Boolean.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Double.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Enum.pod
