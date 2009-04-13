@@ -7,7 +7,7 @@
 
 PORTNAME=	libmtp
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,9 +28,13 @@ LDFLAGS=	-L${LOCALBASE}/lib -liconv
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
+LIBUSB=		libusb
+.else
+LIBUSB=
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/libusb/s//${LIBUSB}/' ${WRKSRC}/libmtp.pc.in
 
 .include <bsd.port.post.mk>
