@@ -97,6 +97,7 @@ share/gtksourceview-2.0/styles/oblivion.xml
 share/gtksourceview-2.0/styles/styles.rng
 share/gtksourceview-2.0/styles/tango.xml
 share/locale/ar/LC_MESSAGES/gtksourceview-2.0.mo
+share/locale/as/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/az/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/be/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/bg/LC_MESSAGES/gtksourceview-2.0.mo
@@ -132,6 +133,7 @@ share/locale/kn/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/ko/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/lt/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/lv/LC_MESSAGES/gtksourceview-2.0.mo
+share/locale/mai/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/mg/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/mk/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/ml/LC_MESSAGES/gtksourceview-2.0.mo
@@ -191,7 +193,11 @@ share/locale/zh_TW/LC_MESSAGES/gtksourceview-2.0.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
