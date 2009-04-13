@@ -271,6 +271,7 @@ share/locale/ku/LC_MESSAGES/epiphany.mo
 share/locale/li/LC_MESSAGES/epiphany.mo
 share/locale/lt/LC_MESSAGES/epiphany.mo
 share/locale/lv/LC_MESSAGES/epiphany.mo
+share/locale/mai/LC_MESSAGES/epiphany.mo
 share/locale/mg/LC_MESSAGES/epiphany.mo
 share/locale/mi/LC_MESSAGES/epiphany.mo
 share/locale/mk/LC_MESSAGES/epiphany.mo
@@ -427,6 +428,8 @@ share/pygtk/2.0/defs/epiphany.defs
 @dirrmtry share/locale/mi
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
