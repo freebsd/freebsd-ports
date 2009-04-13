@@ -16,18 +16,14 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for a digitally signed ticket in URL
 
-USE_APACHE=	yes
-
 CONFLICTS=	apache-contrib-1.*
 
+USE_APACHE=	1.3
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+
 do-extract:
-	${MKDIR} ${WRKSRC}
-	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
-
-do-build:
-	@cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c
-
-do-install:
-	${APXS} -i -A -n ${PORTNAME:S/_//g} ${WRKSRC}/${PORTNAME}.so
+	${MKDIR} ${WRKSRC}/
+	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}/
 
 .include <bsd.port.mk>
