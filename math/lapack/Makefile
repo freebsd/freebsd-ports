@@ -7,6 +7,7 @@
 
 PORTNAME=	lapack
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/lapack/ \
 		http://netlib.org/lapack/ \
@@ -42,7 +43,7 @@ FFLAGS_SHARED=${FPIC}
 WRKSRC_PROFILE=${WRKSRC}_profile
 FFLAGS_PROFILE=-pg
 
-SVERSION=5
+SVERSION=4
 BLAS=	-L${LOCALBASE}/lib -lblas
 
 pre-fetch:
