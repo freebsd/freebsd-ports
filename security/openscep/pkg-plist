@@ -70,6 +70,5 @@ www/openscep/title.html
 www/openscep/updatecrl.8.html
 www/openscep/welcome.html
 @dirrm www/cgi-bin/openscep
-@dirrm www/cgi-bin
 @dirrm www/openscep
 @dirrmtry etc/openscep
