@@ -1,3 +1,0 @@
-libexec/apache/mod_ticket.so
-@exec %D/sbin/apxs -e -A -n ticket %D/%F
-@unexec %D/sbin/apxs -e -A -n ticket %D/%F

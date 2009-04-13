@@ -8,19 +8,16 @@
 PORTNAME=	mod_sequester
 PORTVERSION=	1.8
 CATEGORIES=	www
-MASTER_SITES=	http://MeepZor.Com/packages/mod_sequester/
+MASTER_SITES=	http://MeepZor.Com/packages/${PORTNAME}/
 DISTNAME=	${PORTNAME}-1.7.0
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module that controls access to the website using secure info
 
-USE_APACHE=	yes
+USE_APACHE=	1.3
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+
 WRKSRC=		${WRKDIR}/mod_sequester
-
-do-build:
-	@cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c
-
-do-install:
-	${APXS} -i -A -n ${PORTNAME:S/_//g} ${WRKSRC}/${PORTNAME}.so
 
 .include <bsd.port.mk>
