@@ -17,11 +17,13 @@ COMMENT=	A winhelp converter cgi program
 
 LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf
 
+EXPIRATION_DATE=	2009-06-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.0rc3
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:14
 USE_GETTEXT=		yes
-USE_APACHE=		yes
+USE_APACHE=		1.3
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-build:
