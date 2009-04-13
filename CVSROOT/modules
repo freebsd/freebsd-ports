@@ -589,10 +589,8 @@ arkpandora                      ports/x11-fonts/arkpandora
 arm-elf-binutils                ports/devel/arm-elf-binutils
 arm-elf-gcc295                  ports/devel/arm-elf-gcc295
 arm-rtems-binutils              ports/devel/arm-rtems-binutils
-arm-rtems-g77                   ports/devel/arm-rtems-g77
 arm-rtems-gcc                   ports/devel/arm-rtems-gcc
 arm-rtems-gdb                   ports/devel/arm-rtems-gdb
-arm-rtems-objc                  ports/devel/arm-rtems-objc
 armagetron                      ports/games/armagetron
 arora                           ports/www/arora
 aros-sdk                        ports/devel/aros-sdk
@@ -1889,7 +1887,6 @@ cursor-neutral-theme            ports/x11-themes/cursor-neutral-theme
 cursor-polar-theme              ports/x11-themes/cursor-polar-theme
 cutecom                         ports/comms/cutecom
 cutils                          ports/devel/cutils
-cutlass                         ports/security/cutlass
 cutmp3                          ports/audio/cutmp3
 cuttlefish                      ports/graphics/cuttlefish
 cvc3                            ports/math/cvc3
@@ -2214,6 +2211,7 @@ diffconvert                     ports/devel/diffconvert
 diffmark                        ports/textproc/diffmark
 diffsplit                       ports/textproc/diffsplit
 diffstat                        ports/textproc/diffstat
+diffuse                         ports/devel/diffuse
 diffutils                       ports/textproc/diffutils
 digest                          ports/security/digest
 digger-vgl                      ports/games/digger-vgl
@@ -3754,6 +3752,7 @@ fusefs-kmod                     ports/sysutils/fusefs-kmod
 fusefs-libs                     ports/sysutils/fusefs-libs
 fusefs-ntfs                     ports/sysutils/fusefs-ntfs
 fusefs-pod                      ports/sysutils/fusefs-pod
+fusefs-s3fs                     ports/sysutils/fusefs-s3fs
 fusefs-smbnetfs                 ports/sysutils/fusefs-smbnetfs
 fusefs-sqlfs                    ports/sysutils/fusefs-sqlfs
 fusefs-sshfs                    ports/sysutils/fusefs-sshfs
@@ -5259,14 +5258,9 @@ hypersrc                        ports/devel/hypersrc
 i18ntools                       ports/converters/i18ntools
 i2p                             ports/net-p2p/i2p
 i386-rtems-binutils             ports/devel/i386-rtems-binutils
-i386-rtems-g77                  ports/devel/i386-rtems-g77
 i386-rtems-gcc                  ports/devel/i386-rtems-gcc
 i386-rtems-gdb                  ports/devel/i386-rtems-gdb
-i386-rtems-objc                 ports/devel/i386-rtems-objc
 i855vidctl10                    ports/sysutils/i855vidctl10
-i960-rtems-binutils             ports/devel/i960-rtems-binutils
-i960-rtems-gcc                  ports/devel/i960-rtems-gcc
-i960-rtems-gdb                  ports/devel/i960-rtems-gdb
 iSiloXC                         ports/palm/iSiloXC
 ia-aspell                       ports/textproc/ia-aspell
 ia64sim                         ports/emulators/ia64sim
@@ -7533,6 +7527,7 @@ libspiro                        ports/graphics/libspiro
 libsrs                          ports/mail/libsrs
 libsrs2                         ports/mail/libsrs2
 libsrs_alt                      ports/mail/libsrs_alt
+libssh                          ports/security/libssh
 libssh2                         ports/security/libssh2
 libstatgrab                     ports/devel/libstatgrab
 libstdc++_stldoc_3.4.0          ports/lang/libstdc++_stldoc_3.4.0
@@ -8156,10 +8151,8 @@ m17n-lib                        ports/devel/m17n-lib
 m2000                           ports/emulators/m2000
 m6811-binutils                  ports/devel/m6811-binutils
 m68k-rtems-binutils             ports/devel/m68k-rtems-binutils
-m68k-rtems-g77                  ports/devel/m68k-rtems-g77
 m68k-rtems-gcc                  ports/devel/m68k-rtems-gcc
 m68k-rtems-gdb                  ports/devel/m68k-rtems-gdb
-m68k-rtems-objc                 ports/devel/m68k-rtems-objc
 mDNSResponder                   ports/net/mDNSResponder
 maaate                          ports/audio/Maaate
 maatkit                         ports/databases/maatkit
@@ -8481,10 +8474,8 @@ miniupnpc                       ports/net/miniupnpc
 miniupnpd                       ports/net/miniupnpd
 minivmac                        ports/emulators/minivmac
 mips-rtems-binutils             ports/devel/mips-rtems-binutils
-mips-rtems-g77                  ports/devel/mips-rtems-g77
 mips-rtems-gcc                  ports/devel/mips-rtems-gcc
 mips-rtems-gdb                  ports/devel/mips-rtems-gdb
-mips-rtems-objc                 ports/devel/mips-rtems-objc
 miracl                          ports/math/miracl
 mirage                          ports/graphics/mirage
 mird                            ports/databases/mird
@@ -8685,7 +8676,6 @@ mod_security21                  ports/www/mod_security21
 mod_sed                         ports/www/mod_sed
 mod_sequester                   ports/www/mod_sequester
 mod_shapvh                      ports/www/mod_shapvh
-mod_snake                       ports/www/mod_snake
 mod_sqlinclude                  ports/www/mod_sqlinclude
 mod_ticket                      ports/www/mod_ticket
 mod_tidy                        ports/www/mod_tidy
@@ -10000,9 +9990,11 @@ p5-Astro-DSS                    ports/astro/p5-Astro-DSS
 p5-Astro-FITS-Header            ports/astro/p5-Astro-FITS-Header
 p5-Astro-MoonPhase              ports/astro/p5-Astro-MoonPhase
 p5-Astro-SIMBAD                 ports/astro/p5-Astro-SIMBAD
+p5-Astro-SIMBAD-Client          ports/astro/p5-Astro-SIMBAD-Client
 p5-Astro-SpaceTrack             ports/astro/p5-Astro-SpaceTrack
 p5-Astro-SunTime                ports/astro/p5-Astro-SunTime
 p5-Astro-Sunrise                ports/astro/p5-Astro-Sunrise
+p5-Astro-satpass                ports/astro/p5-Astro-satpass
 p5-AtExit                       ports/devel/p5-AtExit
 p5-Attribute-Handlers           ports/devel/p5-Attribute-Handlers
 p5-Attribute-Handlers-Prospective  ports/devel/p5-Attribute-Handlers-Prospective
@@ -10485,6 +10477,7 @@ p5-Clone-Fast                   ports/devel/p5-Clone-Fast
 p5-Clone-More                   ports/devel/p5-Clone-More
 p5-Clone-PP                     ports/devel/p5-Clone-PP
 p5-Code-Perl                    ports/devel/p5-Code-Perl
+p5-Color-Library                ports/graphics/p5-Color-Library
 p5-Color-Rgb                    ports/graphics/p5-Color-Rgb
 p5-Commands-Guarded             ports/devel/p5-Commands-Guarded
 p5-CommitBit                    ports/devel/p5-CommitBit
@@ -13120,6 +13113,7 @@ p5-XML-DT                       ports/textproc/p5-XML-DT
 p5-XML-DTDParser                ports/textproc/p5-XML-DTDParser
 p5-XML-DifferenceMarkup         ports/textproc/p5-XML-DifferenceMarkup
 p5-XML-Directory                ports/textproc/p5-XML-Directory
+p5-XML-DoubleEncodedEntities    ports/textproc/p5-XML-DoubleEncodedEntities
 p5-XML-Driver-HTML              ports/textproc/p5-XML-Driver-HTML
 p5-XML-Dumper                   ports/textproc/p5-XML-Dumper
 p5-XML-Elemental                ports/textproc/p5-XML-Elemental
@@ -13377,7 +13371,9 @@ p5-astro-catalog                ports/astro/p5-Astro-Catalog
 p5-astro-dss                    ports/astro/p5-Astro-DSS
 p5-astro-fits-header            ports/astro/p5-Astro-FITS-Header
 p5-astro-moonphase              ports/astro/p5-Astro-MoonPhase
+p5-astro-satpass                ports/astro/p5-Astro-satpass
 p5-astro-simbad                 ports/astro/p5-Astro-SIMBAD
+p5-astro-simbad-client          ports/astro/p5-Astro-SIMBAD-Client
 p5-astro-spacetrack             ports/astro/p5-Astro-SpaceTrack
 p5-astro-sunrise                ports/astro/p5-Astro-Sunrise
 p5-astro-suntime                ports/astro/p5-Astro-SunTime
@@ -13860,6 +13856,7 @@ p5-clone-more                   ports/devel/p5-Clone-More
 p5-clone-pp                     ports/devel/p5-Clone-PP
 p5-clutter                      ports/graphics/p5-clutter
 p5-code-perl                    ports/devel/p5-Code-Perl
+p5-color-library                ports/graphics/p5-Color-Library
 p5-color-rgb                    ports/graphics/p5-Color-Rgb
 p5-commands-guarded             ports/devel/p5-Commands-Guarded
 p5-commitbit                    ports/devel/p5-CommitBit
@@ -16570,6 +16567,7 @@ p5-xml-dom                      ports/textproc/p5-XML-DOM
 p5-xml-dom-lite                 ports/textproc/p5-XML-DOM-Lite
 p5-xml-dom-xpath                ports/textproc/p5-XML-DOM-XPath
 p5-xml-dom2                     ports/textproc/p5-XML-DOM2
+p5-xml-doubleencodedentities    ports/textproc/p5-XML-DoubleEncodedEntities
 p5-xml-driver-html              ports/textproc/p5-XML-Driver-HTML
 p5-xml-dt                       ports/textproc/p5-XML-DT
 p5-xml-dtdparser                ports/textproc/p5-XML-DTDParser
@@ -17930,7 +17928,6 @@ pl-aspell                       ports/polish/aspell
 pl-ekg                          ports/polish/ekg
 pl-ekg2                         ports/polish/ekg2
 pl-fortunepl                    ports/polish/fortunepl
-pl-gnugadu                      ports/polish/gnugadu
 pl-gnugadu2                     ports/polish/gnugadu2
 pl-ispell                       ports/polish/ispell
 pl-kadu                         ports/polish/kadu
@@ -18232,10 +18229,8 @@ powermanga                      ports/games/powermanga
 powerpc-binutils                ports/devel/powerpc-binutils
 powerpc-gcc                     ports/devel/powerpc-gcc
 powerpc-rtems-binutils          ports/devel/powerpc-rtems-binutils
-powerpc-rtems-g77               ports/devel/powerpc-rtems-g77
 powerpc-rtems-gcc               ports/devel/powerpc-rtems-gcc
 powerpc-rtems-gdb               ports/devel/powerpc-rtems-gdb
-powerpc-rtems-objc              ports/devel/powerpc-rtems-objc
 powershell                      ports/x11/powershell
 powwow                          ports/games/powwow
 pp3                             ports/astro/pp3
@@ -19776,10 +19771,7 @@ rsyslog4-mysql                  ports/sysutils/rsyslog4-mysql
 rsyslog4-pgsql                  ports/sysutils/rsyslog4-pgsql
 rsyslog4-relp                   ports/sysutils/rsyslog4-relp
 rsyslog4-snmp                   ports/sysutils/rsyslog4-snmp
-rt2                             ports/www/rt2
 rt2-demo                        ports/games/rt2-demo
-rt32                            ports/www/rt32
-rt34                            ports/www/rt34
 rt36                            ports/www/rt36
 rt38                            ports/www/rt38
 rtb                             ports/games/rtb
@@ -20591,10 +20583,8 @@ sguil-sensor                    ports/security/sguil-sensor
 sguil-server                    ports/security/sguil-server
 sgwi                            ports/mail/sgwi
 sh-rtems-binutils               ports/devel/sh-rtems-binutils
-sh-rtems-g77                    ports/devel/sh-rtems-g77
 sh-rtems-gcc                    ports/devel/sh-rtems-gcc
 sh-rtems-gdb                    ports/devel/sh-rtems-gdb
-sh-rtems-objc                   ports/devel/sh-rtems-objc
 sha                             ports/security/sha
 shaaft                          ports/games/shaaft
 shapelib                        ports/devel/shapelib
@@ -20927,10 +20917,8 @@ spandsp-devel                   ports/comms/spandsp-devel
 spandsp-devel5                  ports/comms/spandsp-devel5
 spar                            ports/math/spar
 sparc-rtems-binutils            ports/devel/sparc-rtems-binutils
-sparc-rtems-g77                 ports/devel/sparc-rtems-g77
 sparc-rtems-gcc                 ports/devel/sparc-rtems-gcc
 sparc-rtems-gdb                 ports/devel/sparc-rtems-gdb
-sparc-rtems-objc                ports/devel/sparc-rtems-objc
 spassgen                        ports/sysutils/spassgen
 spatialindex                    ports/devel/spatialindex
 spatialite                      ports/databases/spatialite
