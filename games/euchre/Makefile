@@ -9,8 +9,7 @@ PORTNAME=	euchre
 PORTVERSION=	0.7
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very popular card game with variable skill levels
@@ -18,11 +17,12 @@ COMMENT=	Very popular card game with variable skill levels
 PLIST_FILES=	bin/euchre
 USE_AUTOTOOLS=	automake:14 autoconf:213
 USE_GNOME=	gtk12
+CFLAGS+=	-include "${FILESDIR}/std-namespace.h" -Werror
+MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.pre.mk>
+post-patch:
+	${REINPLACE_CMD} 's,char,const char,'	\
+		${WRKSRC}/src/pixmaps/*.xpm	\
+		${WRKSRC}/src/pixmaps/pixmaps.?pp
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
