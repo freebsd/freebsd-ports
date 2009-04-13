@@ -1,4 +1,5 @@
-zenmap is the official GUI front end for the nmap port scanning tool.
-Originally based on umit, it has replaced nmapfe as per nmap 4.50.
+Zenmap is the official GUI front end for the Nmap port scanning tool.
+Originally based on Umit, it has replaced NmapFE as per Nmap 4.50.
+Also included are python based Nmap auxilary tools (currently Ndiff).
 
 WWW: http://nmap.org/
