@@ -1,4 +1,0 @@
-libexec/apache2/mod_authenticache.so
-@exec %D/sbin/apxs -e -A -n authenticache %D/%f
-@unexec %D/sbin/apxs -e -A -n authenticache %D/%f
-@unexec echo "===>  If you do not plan on reinstalling mod_authenticache, you must manually remove"; echo "===>  references to it in httpd.conf."
