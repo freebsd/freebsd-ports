@@ -1,0 +1,30 @@
+--- SRC/Makefile.org	2009-04-13 15:49:29.000000000 +0900
++++ SRC/Makefile	2009-04-13 15:49:36.000000000 +0900
+@@ -359,9 +359,9 @@
+ 
+ all: ../$(LAPACKLIB)
+ 
+-ifdef USEXBLAS
++.ifdef USEXBLAS
+ ALLXOBJ=$(SXLASRC) $(DXLASRC) $(CXLASRC) $(ZXLASRC) $(ALLXAUX)
+-endif
++.endif
+ 
+ ALLOBJ=$(SLASRC) $(DLASRC) $(CLASRC) $(ZLASRC) $(SCLAUX) $(DZLAUX)	\
+ 	$(ALLAUX)
+@@ -397,13 +397,13 @@
+ $(CLASRC): $(FRC)
+ $(DLASRC): $(FRC)
+ $(ZLASRC): $(FRC)
+-ifdef USEXBLAS
++.ifdef USEXBLAS
+ $(ALLXAUX): $(FRC)
+ $(SXLASRC): $(FRC)
+ $(CXLASRC): $(FRC)
+ $(DXLASRC): $(FRC)
+ $(ZXLASRC): $(FRC)
+-endif
++.endif
+ 
+ FRC:
+ 	@FRC=$(FRC)
