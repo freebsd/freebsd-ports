@@ -1,9 +1,3 @@
-libexec/apache/mod_mp3.so
+%%APACHEMODDIR%%/mod_mp3.so
 @exec %D/sbin/apxs -e -A -n mp3 %D/%F
 @unexec %D/sbin/apxs -e -A -n mp3 %D/%F
-%%PORTDOCS%%share/doc/mod_mp3/ChangeLog
-%%PORTDOCS%%share/doc/mod_mp3/CONTRIBUTORS
-%%PORTDOCS%%share/doc/mod_mp3/README
-%%PORTDOCS%%share/doc/mod_mp3/TODO
-%%PORTDOCS%%share/doc/mod_mp3/faq.html
-%%PORTDOCS%%@dirrm share/doc/mod_mp3
