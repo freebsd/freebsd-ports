@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090412:
+  AFFECTS: users of sysutils/bacula-server
+  AUTHOR: wxs@FreeBSD.org
+
+  sysutils/bacula-server now uses a new catalog format.  If upgrading
+  from the old version please use the update_bacula_tables script
+  provided with the port before restarting bacula.
+
 20090410:
   AFFECTS: users of www/trac-email2trac
   AUTHOR: brooks@FreeBSD.org
