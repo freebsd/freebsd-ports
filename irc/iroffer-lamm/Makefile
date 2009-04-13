@@ -19,7 +19,7 @@ COMMENT=	An IRC "bot" that makes sharing files via DCC extremely easy
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
-CONFLICTS=	iroffer-1.*
+CONFLICTS=	iroffer-1.* iroffer-dinoex-3.*
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/convertxdccfile ${PREFIX}/bin/
