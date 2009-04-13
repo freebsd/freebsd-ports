@@ -1,0 +1,10 @@
+iroffer is a fileserver for irc (commonly referred to as a DCC bot). It
+uses the DCC feature of irc to send files to other users. iroffer will
+connect to an irc server and let people request files from it.
+
+This is a major rewrite of Iroffer with extended features.
+It does support mutiple IRC networks, SSL and IPv6.
+
+LICENSE: GPL2
+
+WWW: http://iroffer.dinoex.net/

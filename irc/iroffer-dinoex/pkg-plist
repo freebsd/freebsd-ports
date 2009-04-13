@@ -1,0 +1,21 @@
+bin/iroffer
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/LIESMICH.modDinoex
+%%PORTDOCS%%%%DOCSDIR%%/README-iroffer.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.modDinoex
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/help-admin-de.txt
+%%PORTDOCS%%%%DOCSDIR%%/help-admin-en.txt
+%%PORTDOCS%%%%DOCSDIR%%/help-admin-it.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/beispiel.config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/footer.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/header.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/iroffer.cron
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby-sample.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/iroffer-state.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/robots.txt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/htdocs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

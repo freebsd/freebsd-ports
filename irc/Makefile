@@ -52,6 +52,7 @@
     SUBDIR += ircproxy
     SUBDIR += ircservices
     SUBDIR += iroffer
+    SUBDIR += iroffer-dinoex
     SUBDIR += iroffer-lamm
     SUBDIR += irssi
     SUBDIR += irssi-dcc_send_limiter
