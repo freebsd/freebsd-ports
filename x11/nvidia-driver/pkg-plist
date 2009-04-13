@@ -1,58 +1,51 @@
 @comment I can't add the below files to the package because pkg_delete
 @comment will complain when removing this package:
+@comment     %%MODULESDIR%%/extensions/XXX-libglx.la.%%%%.%%XSERVVERSION%%
 @comment     %%MODULESDIR%%/extensions/XXX-libglx.so.%%%%.%%XSERVVERSION%%
-@comment     %%MODULESDIR%%/extensions/XXX-libGLcore.so.%%%%.%%XSERVVERSION%%
-@comment     %%MODULESDIR%%/XXX-libwfb.so.%%%%.%%XSERVVERSION%%
-@comment     lib/XXX-libGL.a.%%%%.%%LIBGLVERSION%%
 @comment     lib/XXX-libGL.so.1.%%%%.%%LIBGLVERSION%%
 @comment They are however restored when this package is removed:
 @exec mv -f %D/%%MODULESDIR%%/extensions/libglx.la %D/%%MODULESDIR%%/extensions/XXX-libglx.la.%%%%.%%XSERVVERSION%%
 @unexec mv -f %D/%%MODULESDIR%%/extensions/XXX-libglx.la.%%%%.%%XSERVVERSION%% %D/%%MODULESDIR%%/extensions/libglx.la
 @exec mv -f %D/%%MODULESDIR%%/extensions/libglx.so %D/%%MODULESDIR%%/extensions/XXX-libglx.so.%%%%.%%XSERVVERSION%%
 @unexec mv -f %D/%%MODULESDIR%%/extensions/XXX-libglx.so.%%%%.%%XSERVVERSION%% %D/%%MODULESDIR%%/extensions/libglx.so
-@exec mv -f %D/%%MODULESDIR%%/extensions/libGLcore.la %D/%%MODULESDIR%%/extensions/XXX-libGLcore.la.%%%%.%%XSERVVERSION%%
-@unexec mv -f %D/%%MODULESDIR%%/extensions/XXX-libGLcore.la.%%%%.%%XSERVVERSION%% %D/%%MODULESDIR%%/extensions/libGLcore.la
-@exec mv -f %D/%%MODULESDIR%%/extensions/libGLcore.so %D/%%MODULESDIR%%/extensions/XXX-libGLcore.so.%%%%.%%XSERVVERSION%%
-@unexec mv -f %D/%%MODULESDIR%%/extensions/XXX-libGLcore.so.%%%%.%%XSERVVERSION%% %D/%%MODULESDIR%%/extensions/libGLcore.so
 @exec mv -f %D/lib/libGL.so.1 %D/lib/XXX-libGL.so.1.%%%%.%%LIBGLVERSION%%
-lib/libGL.so.1
 @unexec mv -f %D/lib/XXX-libGL.so.1.%%%%.%%LIBGLVERSION%% %D/lib/libGL.so.1
-@exec ln -sf libGL.so.1 %D/lib/libGL.so
-@comment No rm -f %D/lib/libGL.so because X needs this also
-lib/libGLcore.so.1
-@exec ln -sf libGLcore.so.1 %D/lib/libGLcore.so
-@unexec rm -f %D/lib/libGLcore.so
-lib/libXvMCNVIDIA.so.1
-@exec ln -sf libXvMCNVIDIA.so.1 %D/lib/libXvMCNVIDIA.so
-@unexec rm -f %D/lib/libXvMCNVIDIA.so
-@exec ln -sf libXvMCNVIDIA.so.1 %D/lib/libXvMCNVIDIA_dynamic.so.1
-@unexec rm -f %D/lib/libXvMCNVIDIA_dynamic.so.1
-lib/libnvidia-cfg.so.1
-@exec ln -sf libnvidia-cfg.so.1 %D/lib/libnvidia-cfg.so
-@unexec rm -f %D/lib/libnvidia-cfg.so
 lib/libnvidia-tls.so.1
-@exec ln -sf libnvidia-tls.so.1 %D/lib/libnvidia-tls.so
-@unexec rm -f %D/lib/libnvidia-tls.so
+lib/libnvidia-tls.so
+lib/libnvidia-cfg.so.1
+lib/libnvidia-cfg.so
+lib/libGLcore.so.1
+lib/libGLcore.so
+lib/libvdpau.so.1
+lib/libvdpau.so
+lib/libvdpau_nvidia.so.1
+lib/libvdpau_nvidia.so
+lib/libvdpau_trace.so.1
+lib/libvdpau_trace.so
+lib/libXvMCNVIDIA.so.1
+lib/libXvMCNVIDIA.so
 lib/libXvMCNVIDIA.a
+lib/libXvMCNVIDIA_dynamic.so.1
 %%MODULESDIR%%/libnvidia-wfb.so.1
-@exec mv -f %D/%%MODULESDIR%%/libwfb.so %D/%%MODULESDIR%%/XXX-libwfb.so.%%%%.%%XSERVVERSION%% && ln -sf libnvidia-wfb.so.1 %D/%%MODULESDIR%%/libwfb.so
-@unexec mv -f %D/%%MODULESDIR%%/XXX-libwfb.so.%%%%.%%XSERVVERSION%% %D/%%MODULESDIR%%/libwfb.so
 %%MODULESDIR%%/drivers/nvidia_drv.o
 %%MODULESDIR%%/drivers/nvidia_drv.so
 %%MODULESDIR%%/extensions/libglx.so.1
-@exec ln -sf libglx.so.1 %D/%%MODULESDIR%%/extensions/libglx.so
+@dirrmtry %%MODULESDIR%%/drivers
 @cwd /boot/modules
 nvidia.ko
 @unexec kldxref %D
 %%LINUX%%@cwd %%LINUXBASE%%
 %%LINUX%%usr/lib/libGL.so.%%SHLIB_VERSION%%
+%%LINUX%%usr/lib/libGL.so.1
 %%LINUX%%usr/lib/libGLcore.so.%%SHLIB_VERSION%%
+%%LINUX%%usr/lib/libGLcore.so.1
 %%LINUX%%usr/lib/libnvidia-tls.so.%%SHLIB_VERSION%%
-%%LINUX%%@exec ln -sf libGL.so.%%SHLIB_VERSION%% %D/usr/lib/libGL.so.1
-%%LINUX%%@exec ln -sf libGLcore.so.%%SHLIB_VERSION%% %D/usr/lib/libGLcore.so.1
-%%LINUX%%@exec ln -sf libnvidia-tls.so.%%SHLIB_VERSION%% %D/usr/lib/libnvidia-tls.so.1
-%%LINUX%%@unexec rm -f %D/usr/lib/libGL.so.1
-%%LINUX%%@unexec rm -f %D/usr/lib/libGLcore.so.1
-%%LINUX%%@unexec rm -f %D/usr/lib/libnvidia-tls.so.1
+%%LINUX%%usr/lib/libnvidia-tls.so.1
+%%LINUX%%usr/lib/libvdpau.so.%%SHLIB_VERSION%%
+%%LINUX%%usr/lib/libvdpau.so.1
+%%LINUX%%usr/lib/libvdpau_nvidia.so.%%SHLIB_VERSION%%
+%%LINUX%%usr/lib/libvdpau_nvidia.so
+%%LINUX%%usr/lib/libvdpau_trace.so.%%SHLIB_VERSION%%
+%%LINUX%%usr/lib/libvdpau_trace.so
 %%LINUX%%@exec %D/sbin/ldconfig -r %D
 %%LINUX%%@unexec %D/sbin/ldconfig -r %D
