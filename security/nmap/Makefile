@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nmap
-PORTVERSION=	4.76
+DISTVERSION=	4.85BETA7
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/nmap/ \
@@ -26,12 +26,13 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-localdirs \
 		--without-zenmap \
+		--without-ndiff \
 		--with-libpcre=${LOCALBASE} \
 		--with-libdnet=${LOCALBASE} \
 		--with-liblua=${LOCALBASE}
 CONFIGURE_ENV=	LUA_INCDIR="${LUA_INCDIR}" LUA_LIBDIR="${LUA_LIBDIR}"
 
-MAN1=		nmap.1
+MAN1=		nmap.1 ncat.1
 
 .ifndef WITHOUT_SSL
 USE_OPENSSL=	yes
