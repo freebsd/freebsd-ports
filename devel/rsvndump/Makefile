@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsvndump
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 CATEGORIES=	devel
 MASTER_SITES=	http://saubue.boolsoft.org/projects/rsvndump/ \
 		LOCAL/glarkin
