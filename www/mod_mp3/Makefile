@@ -7,18 +7,19 @@
 
 PORTNAME=	mod_mp3
 PORTVERSION=	0.40
+PORTREVISION=	1
 CATEGORIES=	www audio
 MASTER_SITES=	http://download.tangent.org/
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to allow MP3 streaming
 
-USE_APACHE=	yes
+USE_APACHE=	1.3
 HAS_CONFIGURE=	yes
 MAKE_ARGS+=	APXS="${APXS}"
 USE_PERL5=	yes
 
-DOCS=		ChangeLog README TODO faq.html CONTRIBUTORS
+PORTDOCS=		ChangeLog README TODO faq.html CONTRIBUTORS
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=		YES
@@ -28,9 +29,9 @@ CONFIGURE_ARGS+=	--with-mysql
 do-install:
 	${APXS} -i -A -n mp3 ${WRKSRC}/src/mod_mp3.so
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d -m 0755 ${PREFIX}/share/doc/mod_mp3
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/mod_mp3/
+	${MKDIR} ${DOCSDIR}/
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif
 	${CAT} ${PKGMESSAGE}
