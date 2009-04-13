@@ -8,11 +8,13 @@ etc/lynis/default.prf
 %%DATADIR%%/dev/build-lynis.sh
 %%DATADIR%%/dev/files.dat
 %%DATADIR%%/dev/openbsd/+CONTENTS
+%%DATADIR%%/include/binaries
 %%DATADIR%%/include/consts
 %%DATADIR%%/include/functions
 %%DATADIR%%/include/osdetection
 %%DATADIR%%/include/parameters
 %%DATADIR%%/include/profiles
+%%DATADIR%%/include/report
 %%DATADIR%%/include/tests_accounting
 %%DATADIR%%/include/tests_authentication
 %%DATADIR%%/include/tests_banners
@@ -23,8 +25,10 @@ etc/lynis/default.prf
 %%DATADIR%%/include/tests_file_permissions
 %%DATADIR%%/include/tests_filesystems
 %%DATADIR%%/include/tests_firewalls
+%%DATADIR%%/include/tests_hardening_tools
 %%DATADIR%%/include/tests_hardening
 %%DATADIR%%/include/tests_homedirs
+%%DATADIR%%/include/tests_insecure_services
 %%DATADIR%%/include/tests_kernel
 %%DATADIR%%/include/tests_ldap
 %%DATADIR%%/include/tests_logging
@@ -32,20 +36,26 @@ etc/lynis/default.prf
 %%DATADIR%%/include/tests_mail_messaging
 %%DATADIR%%/include/tests_malware
 %%DATADIR%%/include/tests_memory_processes
-%%DATADIR%%/include/tests_nameserver
+%%DATADIR%%/include/tests_nameservices
 %%DATADIR%%/include/tests_networking
 %%DATADIR%%/include/tests_php
 %%DATADIR%%/include/tests_ports_packages
 %%DATADIR%%/include/tests_printers_spools
 %%DATADIR%%/include/tests_scheduling
 %%DATADIR%%/include/tests_shells
+%%DATADIR%%/include/tests_snmp
+%%DATADIR%%/include/tests_solaris
+%%DATADIR%%/include/tests_ssh
 %%DATADIR%%/include/tests_storage
+%%DATADIR%%/include/tests_storage_nfs
 %%DATADIR%%/include/tests_time
 %%DATADIR%%/include/tests_virtualization
 %%DATADIR%%/include/tests_webservers
 %%DATADIR%%/plugins/README
-%%DATADIR%%/plugins/security_rootkit
-%%DATADIR%%/plugins/security_webvuln
+%%DATADIR%%/plugins/compliance_pci
+%%DATADIR%%/plugins/malware_rootkit
+%%DATADIR%%/plugins/malware_webvuln
+%%DATADIR%%/plugins/webserver_data
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%/dev/openbsd
