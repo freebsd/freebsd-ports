@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-keyring
-PORTVERSION=	2.26.0
+PORTVERSION=	2.26.1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
