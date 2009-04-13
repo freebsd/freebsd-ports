@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bacula
-DISTVERSION=	2.4.4
-PORTREVISION=	1
+DISTVERSION=	3.0.0
 CATEGORIES?=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -22,6 +21,14 @@ CONFLICTS=	bacula-server-devel-[0-9]* bacula-client-devel-[0-9]* bacula-docs-dev
 UNIQUENAME?=${PORTNAME}${PKGNAMESUFFIX}
 
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
+
+PORTDOCS=	VERIFYING \
+		technotes \
+		ChangeLog \
+		README \
+		ReleaseNotes \
+		LICENSE \
+		INSTALL
 
 .if !defined(WITH_BAT)
 .if !defined(WITH_CLIENT_ONLY)
@@ -46,9 +53,18 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers=/usr/lib \
 		--enable-smartalloc \
 		--with-working-dir=${BACULA_DIR} \
 		--with-scriptdir=${PREFIX}/share/${PORTNAME} \
+		--docdir=${DOCSDIR} \
+		--htmldir=${DOCSDIR} \
 		--with-readline=yes \
 		--disable-conio \
-		--enable-batch-insert
+		--enable-batch-insert \
+		--with-plugindir=${LOCALBASE}/lib \
+		--with-libdir=${PREFIX}lib/bacula \
+		--with-dump-email=root@localhost \
+		--with-job-email=root@localhost \
+		--with-db-name=bacula \
+		--with-db-user=bacula \
+		--with-baseport=9101
 
 .if defined(WITH_CLIENT_ONLY)
 CONFIGURE_ARGS+=		--with-fd-user=root \
@@ -152,7 +168,7 @@ USE_MYSQL=		yes
 DBTYPE=			mysql
 SUB_LIST+=		REQ_MYSQL=mysql REQ_PGSQL=""
 .elif defined(WITH_POSTGRESQL)
-DEFAULT_PGSQL_VER?=	82
+DEFAULT_PGSQL_VER?=	83
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql=yes
 DBTYPE=			postgresql
@@ -214,6 +230,10 @@ pre-everything::
 .endif
 
 post-patch:
+#	Respect NOPORTDOCS
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e '/docdir/d' ${WRKSRC}/Makefile.in
+.endif
 #	Default bconsole.conf is ${PREFIX}/etc
 	@${REINPLACE_CMD} -e 's|./bconsole.conf|${PREFIX}/etc/bconsole.conf|g' ${WRKSRC}/src/console/console.c
 .if defined(WITH_CLIENT_ONLY)
