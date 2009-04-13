@@ -15,7 +15,6 @@ MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Debugging and profiling tools for mod_perl
 
 PERL_CONFIGURE=	yes
-USE_APACHE=	yes
 
 MAN3=		Apache::DB.3 Apache::DProf.3 Apache::perl5db.3 \
 		Apache::SmallProf.3
