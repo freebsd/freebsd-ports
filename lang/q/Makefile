@@ -14,6 +14,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Q -- equational programming language
 
 LIB_DEPENDS=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick \
+    		curl.5:${PORTSDIR}/ftp/curl \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		gmp.7:${PORTSDIR}/math/libgmp4 \
