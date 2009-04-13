@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.169 2009/03/22 17:52:12 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.174 2009/04/13 01:54:37 marcus Exp $
 #
 
 use strict;
@@ -45,12 +45,12 @@ $extrafile = $parenwarn = $committer = $verbose = $usetabs = $newport = 0;
 $contblank = 1;
 $portdir = '.';
 
-@ALLOWED_FULL_PATHS = qw(/boot/loader.conf /compat/);
+@ALLOWED_FULL_PATHS = qw(/boot/loader.conf /compat/ /dev/null /etc/inetd.conf);
 
 # version variables
 my $major = 2;
 my $minor = 11;
-my $micro = 0;
+my $micro = 1;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1426,7 +1426,7 @@ sub checkmakefile {
 	}
 	foreach my $i (@oopt) {
 		if (!grep(/^$i$/, @mopt)) {
-			&perror("WARN", $file, "$i is listed in OPTIONS, ".
+			&perror("WARN", $file, -1, "$i is listed in OPTIONS, ".
 				"but neither WITH_$i nor WITHOUT_$i appears.");
 		}
 	}
@@ -1538,6 +1538,20 @@ sub checkmakefile {
 			my $lineno = &linenumber($`);
 			&perror("WARN", $file, $lineno, "USE_REINPLACE is now obsolete. ".
 				"You can safely use REINPLACE_CMD without it.");
+	}
+
+	#
+	# whole file: MAKE_JOBS_[UN]SAFE
+	#
+	print "OK: checking for MAKE_JOBS_SAFE in combination with NO_BUILD.\n" if ($verbose);
+	if ($whole =~ /\n(MAKE_JOBS_(UN)?SAFE).?=/) {
+		my $matched = $1;
+		if ($whole =~ /\nNO_BUILD.?=/) {
+			my $lineno = &linenumber($`);
+		    	&perror("WARN", $file, $lineno, "$matched should not ".
+				"be used in combination with NO_BUILD.  You ".
+				"should remove $matched from your Makefile.");
+	    	}
 	}
 
 	#
@@ -2239,7 +2253,7 @@ DIST_SUBDIR EXTRACT_ONLY
 	 && $1 !~ /^[ \t]*$/) || ($makevar{MASTER_SITES} ne '')) {
 		print "OK: seen MASTER_SITES, sanity checking URLs.\n"
 			if ($verbose);
-		my @sites = split(/\s+/, $1);
+		my @sites = split(/\s+/, $1 // '');
 		my $skipnext = 0;
 		foreach my $i (@sites) {
 			if ($skipnext) {
