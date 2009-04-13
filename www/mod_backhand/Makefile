@@ -15,7 +15,7 @@ MASTER_SITES=	http://mirrors.omniti.com/mod_backhand/ \
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module that allows seamless redirection and load balancing of HTTP requests
 
-USE_APACHE=	yes
+USE_APACHE=	1.3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apxs="${APXS}"
 
