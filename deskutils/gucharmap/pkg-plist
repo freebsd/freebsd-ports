@@ -31,6 +31,9 @@ share/gnome/help/gucharmap/ca/gucharmap.xml
 share/gnome/help/gucharmap/de/figures/gucharmap_start_window.png
 share/gnome/help/gucharmap/de/figures/gucharmap_window.png
 share/gnome/help/gucharmap/de/gucharmap.xml
+share/gnome/help/gucharmap/el/figures/gucharmap_start_window.png
+share/gnome/help/gucharmap/el/figures/gucharmap_window.png
+share/gnome/help/gucharmap/el/gucharmap.xml
 share/gnome/help/gucharmap/en_GB/figures/gucharmap_start_window.png
 share/gnome/help/gucharmap/en_GB/figures/gucharmap_window.png
 share/gnome/help/gucharmap/en_GB/gucharmap.xml
@@ -76,6 +79,7 @@ share/gnome/help/gucharmap/zh_TW/legal.xml
 share/locale/af/LC_MESSAGES/gucharmap.mo
 share/locale/am/LC_MESSAGES/gucharmap.mo
 share/locale/ar/LC_MESSAGES/gucharmap.mo
+share/locale/as/LC_MESSAGES/gucharmap.mo
 share/locale/az/LC_MESSAGES/gucharmap.mo
 share/locale/be/LC_MESSAGES/gucharmap.mo
 share/locale/be@latin/LC_MESSAGES/gucharmap.mo
@@ -111,9 +115,11 @@ share/locale/is/LC_MESSAGES/gucharmap.mo
 share/locale/it/LC_MESSAGES/gucharmap.mo
 share/locale/ja/LC_MESSAGES/gucharmap.mo
 share/locale/ka/LC_MESSAGES/gucharmap.mo
+share/locale/kn/LC_MESSAGES/gucharmap.mo
 share/locale/ko/LC_MESSAGES/gucharmap.mo
 share/locale/lt/LC_MESSAGES/gucharmap.mo
 share/locale/lv/LC_MESSAGES/gucharmap.mo
+share/locale/mai/LC_MESSAGES/gucharmap.mo
 share/locale/mi/LC_MESSAGES/gucharmap.mo
 share/locale/mk/LC_MESSAGES/gucharmap.mo
 share/locale/ml/LC_MESSAGES/gucharmap.mo
@@ -155,6 +161,7 @@ share/omf/gucharmap/gucharmap-C.omf
 share/omf/gucharmap/gucharmap-bg.omf
 share/omf/gucharmap/gucharmap-ca.omf
 share/omf/gucharmap/gucharmap-de.omf
+share/omf/gucharmap/gucharmap-el.omf
 share/omf/gucharmap/gucharmap-en_GB.omf
 share/omf/gucharmap/gucharmap-es.omf
 share/omf/gucharmap/gucharmap-fi.omf
@@ -198,6 +205,8 @@ share/omf/gucharmap/gucharmap-zh_TW.omf
 @dirrm share/gnome/help/gucharmap/es
 @dirrm share/gnome/help/gucharmap/en_GB/figures
 @dirrm share/gnome/help/gucharmap/en_GB
+@dirrm share/gnome/help/gucharmap/el/figures
+@dirrm share/gnome/help/gucharmap/el
 @dirrm share/gnome/help/gucharmap/de/figures
 @dirrm share/gnome/help/gucharmap/de
 @dirrm share/gnome/help/gucharmap/ca/figures
@@ -228,9 +237,13 @@ share/omf/gucharmap/gucharmap-zh_TW.omf
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mi/LC_MESSAGES
 @dirrmtry share/locale/mi
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
