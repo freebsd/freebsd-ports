@@ -7,7 +7,7 @@
 
 PORTNAME=	TekNap
 PORTVERSION=	1.3.g
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://got.net/~brian/teknap/ \
 		ftp://ftp.arnes.si/packages2/OpenBSD/distfiles/
@@ -25,11 +25,14 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 WRKSRC=		${WRKDIR}/TekNap
 
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
+PLIST_FILES=	bin/TekNap \
+		bin/TekNap-1.3g
 
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
+DOCSDIR=	${PREFIX}/share/doc/TekNap
+PORTDOCS=	*
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
@@ -60,14 +63,18 @@ pre-extract:
 pre-configure:
 	@${REINPLACE_CMD} -e "s:-lc_r:${PTHREAD_LIBS}:g" ${WRKSRC}/configure
 
+post-patch:
+	@${REINPLACE_CMD} -e '/mkinstalldirs/ s,$$(HELPDIR) $$(NAPLIB),,g' \
+		${WRKSRC}/Makefile.in
+
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/TekNap
+	${MKDIR} ${DOCSDIR}/help
 	${TAR} --directory ${WRKSRC}/teknap-help -cf - . | \
-	${TAR} --directory ${PREFIX}/share/TekNap/help -xf -
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/TekNap
+	${TAR} --directory ${DOCSDIR}/help -xf -
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	@${ECHO}
-	@${CAT} ${PKGMESSAGE} | ${SED} -e "s:%%PREFIX%%:${PREFIX}:g"
+	@${CAT} ${PKGMESSAGE} | ${SED} -e "s:%%DOCSDIR%%:${DOCSDIR}:g"
 	@${ECHO}
 .endif
 
