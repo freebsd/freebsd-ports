@@ -8,7 +8,8 @@
 PORTNAME=	marbles
 PKGNAMESUFFIX=	-translucent
 PORTVERSION=	0.1.3
-MASTER_SITES=	http://www.flauta.de/markus/marbles/
+MASTER_SITES=	http://www.flauta.de/markus/marbles/ \
+		http://ftp.ksu.edu.tw/FTP/FreeBSD/distfiles/KDE/
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 COMMENT=	KDE Marbles Translucent iconset
