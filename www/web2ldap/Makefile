@@ -9,7 +9,8 @@ PORTNAME=	web2ldap
 PORTVERSION=	1.0.18
 CATEGORIES=	www
 MASTER_SITES=	http://www.web2ldap.de/download/ \
-		ftp://ftp.ipt.ru/pub/download/
+		ftp://ftp.ipt.ru/pub/download/ \
+		http://www.sfr-fresh.com/unix/www/
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Python-based WWW gateway to LDAP servers
