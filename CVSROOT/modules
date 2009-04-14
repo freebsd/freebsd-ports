@@ -5523,6 +5523,7 @@ ireport                         ports/devel/ireport
 irit                            ports/graphics/irit
 iriverter                       ports/multimedia/iriverter
 iroffer                         ports/irc/iroffer
+iroffer-dinoex                  ports/irc/iroffer-dinoex
 iroffer-lamm                    ports/irc/iroffer-lamm
 ironpython                      ports/lang/ironpython
 irrd                            ports/net/irrd
@@ -8649,9 +8650,7 @@ mod_macro22                     ports/www/mod_macro22
 mod_memcache                    ports/www/mod_memcache
 mod_mp3                         ports/www/mod_mp3
 mod_musicindex                  ports/www/mod_musicindex
-mod_mya                         ports/www/mod_mya
 mod_mylo                        ports/www/mod_mylo
-mod_mysqluserdir                ports/www/mod_mysqluserdir
 mod_ntlm                        ports/www/mod_ntlm
 mod_ntlm2                       ports/www/mod_ntlm2
 mod_perl                        ports/www/mod_perl
@@ -9405,8 +9404,8 @@ nvi-m17n                        ports/editors/nvi-m17n
 nvi-perl                        ports/editors/nvi-perl
 nvidia-driver                   ports/x11/nvidia-driver
 nvidia-driver-173               ports/x11/nvidia-driver-173
-nvidia-driver-71xx              ports/x11/nvidia-driver-71xx
-nvidia-driver-96xx              ports/x11/nvidia-driver-96xx
+nvidia-driver-71                ports/x11/nvidia-driver-71
+nvidia-driver-96                ports/x11/nvidia-driver-96
 nvidia-settings                 ports/x11/nvidia-settings
 nvidia-texture-tools            ports/graphics/nvidia-texture-tools
 nvidia-xconfig                  ports/x11/nvidia-xconfig
@@ -20922,6 +20921,7 @@ sparc-rtems-gdb                 ports/devel/sparc-rtems-gdb
 spassgen                        ports/sysutils/spassgen
 spatialindex                    ports/devel/spatialindex
 spatialite                      ports/databases/spatialite
+spawn-fcgi                      ports/www/spawn-fcgi
 spcaview                        ports/graphics/spcaview
 spdict                          ports/devel/spdict
 spe                             ports/editors/spe
