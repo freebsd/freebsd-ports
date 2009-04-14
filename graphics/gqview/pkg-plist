@@ -81,5 +81,6 @@ bin/gqview
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gqview.mo
 share/pixmaps/gqview.png
 share/applications/gqview.desktop
+@dirrmtry share/applicatons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
