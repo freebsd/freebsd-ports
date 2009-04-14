@@ -26,6 +26,7 @@ USE_LDCONFIG=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui xml network dbus svg qt3support sql \
 		qmake_build moc_build rcc_build uic_build
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		kdesvn.1 kdesvnaskpass.1
 
