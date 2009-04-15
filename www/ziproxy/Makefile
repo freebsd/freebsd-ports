@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		ziproxy
-PORTVERSION=		2.6.0
+PORTVERSION=		2.7.0
 CATEGORIES=		www
 MASTER_SITES=		SF
 
@@ -20,7 +20,7 @@ USE_BZIP2=		yes
 
 CFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
-ERRORFILES=		400.html 404.html 407.html 408.html 409.html 500.html 503.html
+ERRORFILES=		400.html 403.html 404.html 407.html 408.html 409.html 500.html 503.html
 
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
@@ -47,9 +47,11 @@ post-patch:
 post-install:
 	@${MKDIR} ${PREFIX}/etc/ziproxy
 	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/bo_exception.list ${PREFIX}/etc/ziproxy/bo_exception.list
+	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/deny.list ${PREFIX}/etc/ziproxy/deny.list
 	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/http.passwd ${PREFIX}/etc/ziproxy/http.passwd
 	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/noprocess.list ${PREFIX}/etc/ziproxy/noprocess.list
 	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/replace.list ${PREFIX}/etc/ziproxy/replace.list
+	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/replace_ct.list ${PREFIX}/etc/ziproxy/replace_ct.list
 	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/ziproxy.conf ${PREFIX}/etc/ziproxy/ziproxy.conf.sample
 	@if [ ! -f ${PREFIX}/etc/ziproxy/ziproxy.conf ]; then \
 		${CP} -p ${WRKSRC}/etc/ziproxy/ziproxy.conf ${PREFIX}/etc/ziproxy/ziproxy.conf ; \
