@@ -7,6 +7,7 @@
 
 
 PORTNAME=	bacula
+PORTREVISION=	1
 PKGNAMESUFFIX=	-client-devel
 
 MASTERDIR=	${.CURDIR}/../bacula-server-devel

@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bacula
+PORTREVISION=	1
 PKGNAMESUFFIX=  -client
 
 MASTERDIR=	${.CURDIR}/../bacula-server
