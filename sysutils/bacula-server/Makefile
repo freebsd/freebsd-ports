@@ -126,6 +126,10 @@ CONFIGURE_ARGS+=	--enable-nls
 CONFIGURE_ARGS+=	--disable-nls
 .endif
 
+.if defined(WITH_CLIENT_ONLY) && (${OSVERSION} >= 800000)
+BROKEN=	Does not build due to missing llistxattr
+.endif
+
 # overridden if client install
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.server
 PKGINSTALL=	${PKGDIR}/pkg-install.server
