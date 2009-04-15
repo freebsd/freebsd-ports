@@ -1,0 +1,11 @@
+--- ./conf/Makefile.orig	2004-05-04 18:12:28.000000000 +0200
++++ ./conf/Makefile	2009-04-15 11:09:12.907245101 +0200
+@@ -7,7 +7,7 @@
+ MPD_SAMPLES+=	mpd.links.sample
+ MPD_SAMPLES+=	mpd.secret.sample
+ MPD_SAMPLES+=	mpd.script.sample
+-NOOBJ=
++NO_OBJ=
+ 
+ all clean cleandir depend:
+ 

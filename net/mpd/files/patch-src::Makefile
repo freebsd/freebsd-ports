@@ -1,0 +1,11 @@
+--- ./src/Makefile.orig	2009-04-15 11:08:28.375892000 +0200
++++ ./src/Makefile	2009-04-15 11:08:51.340371001 +0200
+@@ -11,7 +11,7 @@
+ PREFIX?=		/usr/local
+ BINDIR?=		${PREFIX}/sbin
+ VERSION=		3.18
+-NOMAN=
++NO_MAN=
+ 
+ # Default configuration directory
+ 
