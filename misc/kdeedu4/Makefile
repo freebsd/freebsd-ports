@@ -33,7 +33,7 @@ QT_COMPONENTS=	gui svg qmake_build moc_build rcc_build uic_build
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
 USE_PYTHON=	yes
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		kalzium.1 \
 		kbruch.1 \
