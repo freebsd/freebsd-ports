@@ -5,10 +5,8 @@ lib/libmoon.so.0
 lib/moon/plugin/README
 lib/moon/plugin/libmoonloader.la
 lib/moon/plugin/libmoonloader.so
-%%FF2%%lib/moon/plugin/libmoonplugin-ff2bridge.la
-%%FF2%%lib/moon/plugin/libmoonplugin-ff2bridge.so
-%%FF3%%lib/moon/plugin/libmoonplugin-ff3bridge.la
-%%FF3%%lib/moon/plugin/libmoonplugin-ff3bridge.so
+lib/moon/plugin/libmoonplugin-ff3bridge.la
+lib/moon/plugin/libmoonplugin-ff3bridge.so
 lib/moon/plugin/libmoonplugin.la
 lib/moon/plugin/libmoonplugin.so
 @dirrm lib/moon/plugin
