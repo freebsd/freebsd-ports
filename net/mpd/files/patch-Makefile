@@ -1,0 +1,11 @@
+--- ./Makefile.orig	2004-05-04 18:12:28.000000000 +0200
++++ ./Makefile	2009-04-15 10:00:46.339896422 +0200
+@@ -2,8 +2,6 @@
+ 
+ SUBDIR+=	src
+ SUBDIR+=	conf
+-.if !defined(NOPORTDOCS)
+ SUBDIR+=	doc
+-.endif
+ 
+ .include <bsd.subdir.mk>
