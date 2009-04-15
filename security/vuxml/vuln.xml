@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="872ae5be-29c0-11de-bdeb-0030843d3802">
+    <topic>ziproxy -- multiple vulnerability</topic>
+    <affects>
+      <package>
+	<name>ziproxy</name>
+	<range><lt>2.7.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ziproxy Developers reports:</p>
+	<blockquote cite="http://www.kb.cert.org/vuls/id/MAPG-7N9GN8">
+	  <p>Multiple HTTP proxy implementations are prone to an
+	    information-disclosure vulnerability related to the interpretation of
+	    the 'Host' HTTP header. Specifically, this issue occurs when the proxy
+	    makes a forwarding decision based on the 'Host' HTTP header instead of
+	    the destination IP address.</p>
+	  <p>Attackers may exploit this issue to obtain sensitive information
+	    such as internal intranet webpages. Additional attacks may also be
+	    possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>33858</bid>
+      <cvename>CVE-2009-0804</cvename>
+      <url>http://www.kb.cert.org/vuls/id/MAPG-7N9GN8</url>
+    </references>
+    <dates>
+      <discovery>2009-02-23</discovery>
+      <entry>2009-04-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1a0e4cc6-29bf-11de-bdeb-0030843d3802">
     <topic>phpmyadmin -- insufficient output sanitizing when generating configuration file</topic>
     <affects>
@@ -45,7 +79,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>phpMyAdmin Team reports:</p>
-	<blockquote cite="INSERT URL HERE">
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2009-4.php">
 	  <p>Setup script used to generate configuration can be fooled using a
 	    crafted POST request to include arbitrary PHP code in generated
 	    configuration file. Combined with ability to save files on server,
