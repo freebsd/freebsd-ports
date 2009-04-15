@@ -480,7 +480,7 @@ DISTFILES+=	${SMTPEXTFORK_PATCH:S/$/:extfork/} \
 		README.smtpextfork:extfork
 .endif
 
-.if defined(SLAVE_LDAP)
+.if defined(SLAVE_LDAP) && defined(WITH_SENDERCHECK4)
 PATCH_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail/:sendercheck4 \
 		${MASTER_SITE_LOCAL:S/$/:sendercheck4/}
 PATCH_SITE_SUBDIR+=	garga/qmail/:sendercheck4
