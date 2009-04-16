@@ -13,4 +13,14 @@ reboot the system:
 
     kern.maxfiles="25000"
 
+The behavior of gamin can be controlled via the various gaminrc files.
+See http://www.gnome.org/~veillard/gamin/config.html on how to create
+these files.  In particular, if you find gam_server is taking up too much
+CPU time polling for changes, something like the following may help
+in one of the gaminrc files:
+
+# reduce polling frequency to once per 10 seconds
+# for UFS file systems in order to lower CPU load
+fsset ufs poll 10
+
 ===============================================================================
