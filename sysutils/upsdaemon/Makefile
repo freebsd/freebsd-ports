@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ederbs.org/pub/ \
 		ftp://ederbs.org/pub/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsduser@paradisegreen.co.uk
 COMMENT=	Simple APC UPS Daemon
 
 MAN8=		upsdaemon.8
@@ -22,10 +22,4 @@ USE_RC_SUBR=	upsdaemon
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
