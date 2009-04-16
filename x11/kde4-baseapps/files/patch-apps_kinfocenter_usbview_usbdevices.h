@@ -5,7 +5,7 @@
  #include <QStringList>
  #elif defined(Q_OS_FREEBSD) || defined(Q_OS_NETBSD)
 +#include <sys/param.h>
-+#if __FreeBSD_version+0 >= 800061
++#if __FreeBSD_version >= 800061
 +#include <legacy/dev/usb/usb.h>
 +#else
  #include <dev/usb/usb.h>
