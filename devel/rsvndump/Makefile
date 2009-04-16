@@ -7,6 +7,7 @@
 
 PORTNAME=	rsvndump
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://saubue.boolsoft.org/projects/rsvndump/ \
 		LOCAL/glarkin
@@ -15,6 +16,13 @@ MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Remote Subversion repository dumpfile generator
 
 GNU_CONFIGURE=	yes
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=		yes
+PLIST_FILES+=		share/locale/de/LC_MESSAGES/rsvndump.mo
+.else
+CONFIGURE_ARGS+=	--disable-nls
+.endif
 
 MAN1=		rsvndump.1
 PLIST_FILES+=	bin/rsvndump
