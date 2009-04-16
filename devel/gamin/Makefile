@@ -8,6 +8,7 @@
 
 PORTNAME=	gamin
 PORTVERSION=	0.1.10
+PORTREVISION?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	http://www.gnome.org/~veillard/gamin/sources/
 
@@ -20,7 +21,7 @@ USE_GNOME?=	gnomehack _glib20
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
 		--without-python
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -DHAVE_LINUX" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
