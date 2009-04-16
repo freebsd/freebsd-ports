@@ -28,4 +28,6 @@ BUILD_DEPENDS=	jackit>=0.109.2:${PORTSDIR}/audio/jack
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+BROKEN=		does not compile
+
 .include <bsd.port.mk>
