@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	opengl webkit xml network \
 		qmake_build moc_build rcc_build uic_build
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 post-extract:
 	${MKDIR} ${WRKSRC}
