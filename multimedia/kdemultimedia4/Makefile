@@ -34,7 +34,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib opengl dbus qt3support designer network svg qtestlib \
 		qmake_build moc_build rcc_build uic_build
 USE_OPENLDAP=	yes
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 post-extract:
 	${MKDIR} ${WRKSRC}

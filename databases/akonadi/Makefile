@@ -27,6 +27,7 @@ USE_MYSQL=	server
 USE_KDE4=	kdeprefix kdehier automoc4 sharedmime
 KDE4_BUILDENV=	yes
 PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+MAKE_JOBS_UNSAFE=	yes
 
 post-extract:
 	${MKDIR} ${WRKSRC}

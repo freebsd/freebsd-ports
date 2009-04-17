@@ -28,7 +28,7 @@ QT_COMPONENTS=	corelib opengl dbus qt3support \
 		designer network svg qtestlib help \
 		qmake_build moc_build rcc_build uic_build
 USE_OPENLDAP=	yes
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 .if exists(${LOCALBASE}/lib/libgpgme-pth.so)
 PLIST_SUB+=	WITH_PTH=''

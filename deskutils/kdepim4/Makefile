@@ -31,7 +31,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib opengl dbus qt3support designer network svg qtestlib \
 		qmake_build moc_build rcc_build uic_build
 USE_OPENLDAP=	yes
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 #fix build when kdepim3 is here
 CMAKE_ARGS+=	-DGPGME_LIBRARY_DIR:PATH="${KDE4_PREFIX}/lib"

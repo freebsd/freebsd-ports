@@ -27,7 +27,7 @@ KDE4_BUILDENV= yes
 USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
 QT_COMPONENTS=	network gui porting xml \
 		qmake_build moc_build rcc_build uic_build
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		ark.1
 
