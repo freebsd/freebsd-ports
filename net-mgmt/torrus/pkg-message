@@ -1,0 +1,6 @@
+A complete re-compile of the XML is required after upgrading.
+
+* Shutdown the collector
+* Remove all of the dbs under db/
+* run 'torrus compilexml --all'
+* Restart the collector
