@@ -1,6 +1,6 @@
---- ./ConfigureChecks.cmake.orig	2008-07-05 20:24:01.000000000 +0200
-+++ ./ConfigureChecks.cmake	2008-07-10 17:16:26.000000000 +0200
-@@ -220,6 +220,43 @@
+--- ConfigureChecks.cmake.orig	2009-02-06 20:07:37.000000000 +0100
++++ ConfigureChecks.cmake	2009-04-09 15:16:26.000000000 +0200
+@@ -223,6 +223,43 @@
  ENDIF (NO_NLS)
  
  ########################################
@@ -43,8 +43,8 @@
 +########################################
  # Locale
  ########################################
- SET(ADM_LOCALE "${CMAKE_INSTALL_PREFIX}/share/locale")
-@@ -362,7 +399,9 @@
+ IF (NOT ADM_LOCALE) 
+@@ -367,7 +404,9 @@
  # JACK
  ########################################
  IF (NOT ADM_OS_WINDOWS)
@@ -54,20 +54,20 @@
  ENDIF (NOT ADM_OS_WINDOWS)
  
  ########################################
-@@ -475,7 +514,11 @@
+@@ -480,7 +519,11 @@
  IF (USE_LATE_BINDING)
  	CHECK_INCLUDE_FILES(dts.h USE_LIBDCA)
  ELSE (USE_LATE_BINDING)
--	ADM_CHECK_HL(libdca dts.h dts dts_init USE_LIBDCA)
+-	ADM_CHECK_HL(libdca dts.h dts dts_init USE_LIBDCA_A)
 +       IF (ADM_BSD_FAMILY)
-+               ADM_CHECK_HL(libdca dts.h dts dca_init USE_LIBDCA)
++               ADM_CHECK_HL(libdca dts.h dts dca_init USE_LIBDCA_A)
 +       ELSE (ADM_BSD_FAMILY)
-+               ADM_CHECK_HL(libdca dts.h dts dts_init USE_LIBDCA)
++               ADM_CHECK_HL(libdca dts.h dts dts_init USE_LIBDCA_A)
 +       ENDIF (ADM_BSD_FAMILY)
- ENDIF (USE_LATE_BINDING)
- 
- SET(CMAKE_REQUIRED_LIBRARIES)
-@@ -489,7 +532,8 @@
+         if(NOT USE_LIBDCA_A)
+                 MESSAGE(STATUS "Trying libdca instead of libdts")
+ 	        ADM_CHECK_HL(libdca dts.h dca dca_init USE_LIBDCA_B)
+@@ -505,7 +548,8 @@
  IF (ADM_OS_WINDOWS)
  	SET(CMAKE_REQUIRED_LIBRARIES "-lm -lpthreadGC2")
  ELSE (ADM_OS_WINDOWS)
