@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cf91c1e4-2b6d-11de-931b-00e0815b8da8">
+    <topic>ejabberd -- cross-site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>ejabberd</name>
+	<range><lt>2.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SecurityFocus reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/34133">
+	  <p>The ejabberd application is prone to a cross-site scripting
+	    vulnerability.</p>
+	  <p>An attacker may leverage this issue to execute arbitrary script code
+	    in the browser of an unsuspecting user in the context of the affected
+	    site and to steal cookie-based authentication credentials.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>34133</bid>
+      <cvename>CVE-2009-0934</cvename>
+    </references>
+    <dates>
+      <discovery>2009-03-16</discovery>
+      <entry>2009-04-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="872ae5be-29c0-11de-bdeb-0030843d3802">
     <topic>ziproxy -- multiple vulnerability</topic>
     <affects>
