@@ -7,7 +7,7 @@
 
 PORTNAME=	mpd
 PORTVERSION=	3.18
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	archie
@@ -19,7 +19,6 @@ COMMENT=	Multi-link PPP daemon based on netgraph(4) [legacy version]
 # lang/mpd
 CONFLICTS=	mpd-[^3]*
 
-MTREE_FILE=	${FILESDIR}/mpd.mtree
 MAN8=		mpd.8
 MANCOMPRESSED=	maybe
 
@@ -32,5 +31,11 @@ pre-build:
 	@${ECHO}
 	@${ECHO} "Use WITH_OPENSSL_PORT=yes if you use OPENSSL from ports"
 	@${ECHO}
+
+pre-install:
+	@${MKDIR} ${PREFIX}/etc/mpd
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
