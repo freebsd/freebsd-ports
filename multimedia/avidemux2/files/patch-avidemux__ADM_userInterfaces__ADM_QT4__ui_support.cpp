@@ -1,6 +1,6 @@
---- ./avidemux/ADM_userInterfaces/ADM_QT4/ui_support.cpp.orig	2008-03-28 20:02:18.000000000 +0100
-+++ ./avidemux/ADM_userInterfaces/ADM_QT4/ui_support.cpp	2008-07-10 17:16:26.000000000 +0200
-@@ -38,10 +38,8 @@
+--- ./avidemux/ADM_userInterfaces/ADM_QT4/ui_support.cpp.orig	2008-09-24 05:09:49.000000000 +0400
++++ ./avidemux/ADM_userInterfaces/ADM_QT4/ui_support.cpp	2009-04-16 17:45:10.000000000 +0400
+@@ -60,10 +60,8 @@
  {
  	printf("\n[Locale] Locale: %s\n", QLocale::system().name().toUtf8().constData());
  
@@ -10,6 +10,6 @@
 -	loadTranslation(&avidemuxTranslator, appdir + "avidemux_" + QLocale::system().name());
 +	loadTranslation(&qtTranslator, "%%DATADIR%%/qt_" + QLocale::system().name());
 +	loadTranslation(&avidemuxTranslator, "%%DATADIR%%/avidemux_" + QLocale::system().name());
+ 	translatorLoaded = true;
  
- 	printf("[Locale] Test: &Edit -> %s\n\n", HIDE_STRING_FROM_QT("MainWindow", "&Edit").toUtf8().data());
- }
+ 	// Re-translate existing map (to take care of global strings already allocated)

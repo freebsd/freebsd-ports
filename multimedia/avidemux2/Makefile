@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	avidemux2
-PORTVERSION=	2.4.2
-PORTREVISION=	3
+PORTVERSION=	2.4.4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		${MASTER_SITE_SOURCEFORGE}
@@ -17,11 +16,11 @@ DISTNAME=	avidemux_${PORTVERSION}
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Simple GUI based video editor
 
-LIB_DEPENDS=	mp3lame:${PORTSDIR}/audio/lame \
-		mad:${PORTSDIR}/audio/libmad \
-		a52:${PORTSDIR}/audio/liba52 \
-		png:${PORTSDIR}/graphics/png \
-		execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
+		mad.2:${PORTSDIR}/audio/libmad \
+		a52.0:${PORTSDIR}/audio/liba52 \
+		png.5:${PORTSDIR}/graphics/png \
+		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 CONFLICTS=	avidemux2-2.[0-35-9].*
 # Necessary for CMake to find libs
@@ -108,61 +107,61 @@ USE_GNOME+=	esound
 .if defined(WITHOUT_JACK)
 CMAKE_ARGS+=	-DNO_Jack=1
 .else
-LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 .endif
 
 .if defined(WITHOUT_PULSE)
 CMAKE_ARGS+=	-DNO_PULSE_SIMPLE=1
 .else
-LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 .endif
 
 .if defined(WITHOUT_FREETYPE)
 CMAKE_ARGS+=	-DNO_FREETYPE=1
 .else
-LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 .endif
 
 .if defined(WITHOUT_FONTCONFIG)
 CMAKE_ARGS+=	-DNO_FontConfig=1
 .else
-LIB_DEPENDS+=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 .endif
 
 .if defined(WITHOUT_SAMPLERATE)
 CMAKE_ARGS+=	-DNO_libsamplerate=1
 .else
-LIB_DEPENDS+=	samplerate:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 .endif
 
 .if defined(WITHOUT_XVIDEO)
 CMAKE_ARGS+=	-DNO_XV=1
 .else
-LIB_DEPENDS+=	Xv:${PORTSDIR}/x11/libXv
+LIB_DEPENDS+=	Xv.1:${PORTSDIR}/x11/libXv
 .endif
 
 .if defined(WITHOUT_FAAC)
 CMAKE_ARGS+=	-DNO_FAAC=1
 .else
-LIB_DEPENDS+=	faac:${PORTSDIR}/audio/faac
+LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 .endif
 
 .if defined(WITHOUT_FAAD)
 CMAKE_ARGS+=	-DNO_FAAD=1 -DNO_NeAAC=1
 .else
-LIB_DEPENDS+=	faad:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
 .endif
 
 .if defined(WITHOUT_X264)
 CMAKE_ARGS+=	-DNO_x264=1
 .else
-LIB_DEPENDS+=	x264:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.65:${PORTSDIR}/multimedia/x264
 .endif
 
 .if defined(WITHOUT_XVID)
 CMAKE_ARGS+=	-DNO_Xvid=1
 .else
-LIB_DEPENDS+=	xvidcore:${PORTSDIR}/multimedia/xvid
+LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
 .endif
 
 .if defined(WITHOUT_SDL)
@@ -174,19 +173,19 @@ USE_SDL=	sdl
 .if defined(WITHOUT_VORBIS)
 CMAKE_ARGS+=	-DNO_Vorbis=1
 .else
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
 .if defined(WITHOUT_DCA)
 CMAKE_ARGS+=	-DNO_libdca=1
 .else
-LIB_DEPENDS+=	dca:${PORTSDIR}/multimedia/libdca
+LIB_DEPENDS+=	dca.0:${PORTSDIR}/multimedia/libdca
 .endif
 
 .if defined(WITHOUT_AMRNB)
 CMAKE_ARGS+=	-DNO_AMRNB=1
 .else
-LIB_DEPENDS+=	amrnb:${PORTSDIR}/audio/libamrnb
+LIB_DEPENDS+=	amrnb.3:${PORTSDIR}/audio/libamrnb
 .endif
 
 .if defined(WITHOUT_NLS)
