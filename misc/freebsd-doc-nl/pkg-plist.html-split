@@ -24,6 +24,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-problems.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-when.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-writing.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/TRADEMARKS.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/kernel.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/ro-fs.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/strategies.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/x114.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/LEGALNOTICE.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/acpi-debug.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/acpi-overview.html
