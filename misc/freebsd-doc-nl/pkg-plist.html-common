@@ -3,6 +3,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking/isdn-bus.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking/isdn-twisted-pair.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking/natd.png
