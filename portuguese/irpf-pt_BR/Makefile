@@ -7,7 +7,7 @@
 
 PORTNAME=	irpf
 PORTVERSION=	2009.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	portuguese finance java
 MASTER_SITES=	http://www.receita.fazenda.gov.br/Publico/programas/irpf/2009/PGDIrpf2009/Java/ZIP/
 PKGNAMEPREFIX?=	pt_BR-
@@ -60,14 +60,12 @@ JAR_FILES=	\
 		lib/jdt-compiler-3.1.1.jar \
 		lib/jhall.jar \
 		lib/looks-1.3.1.jar \
-		lib/ppgd-formatosext-2.9.jar \
 		lib/ppgd-gui-2.9.jar \
 		lib/ppgd-gui-beans-2.9.jar \
 		lib/ppgd-infra-2.9.jar \
 		lib/ppgd-negocio-2.9.jar \
 		lib/ppgd-persistencia-2.9.jar \
 		lib/ppgd-swixml.jar \
-		lib/serpro.jar \
 		lib/swing-layout-0.7.jar \
 		lib/xalan.jar
 
