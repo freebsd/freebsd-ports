@@ -35,7 +35,7 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="a21037d5-2c38-11de-ab3b-0017a4cccfc6">
-    <topic> xpdf -- multiple vulnerabilities</topic>
+    <topic>xpdf -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>xpdf</name>
@@ -44,15 +44,24 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Vupen reports:</p>
+	<p>secunia reports:</p>
 	<blockquote cite="http://www.vupen.com/english/advisories/2009/1065">
-	  <p>Multiple vulnerabilities have been identified in Xpdf, which could
-             be exploited by attackers to cause a denial of service or compromise
-             a vulnerable system. These issues are caused by buffer and integer
-             overflows, and memory corruption errors in the "xpdf/JIG2Stream.cc"
-             file when processing specially crafted data, which could be exploited
-             by attackers to crash an affected application or execute arbitrary
-             code by tricking a user into opening a malicious PDF file.</p>
+	  <p>Some vulnerabilities have been reported in Xpdf, which can be
+	    exploited by malicious people to potentially compromise a user's
+	    system.</p>
+	  <p>A boundary error exists when decoding JBIG2 symbol dictionary
+	    segments. This can be exploited to cause a heap-based buffer
+	    overflow and potentially execute arbitrary code.</p>
+	  <p>Multiple integer overflows in the JBIG2 decoder can be
+	    exploited to potentially execute arbitrary code.</p>
+	  <p>Multiple boundary errors in the JBIG2 decoder can be
+	    exploited to cause buffer overflows and potentially execute
+	    arbitrary code.</p>
+	  <p>Multiple errors in the JBIG2 decoder can be exploited can be
+	    exploited to free arbitrary memory and potentially execute arbitrary
+	    code.</p>
+	  <p>Multiple unspecified input validation errors in the JBIG2 decoder can
+	    be exploited to potentially execute arbitrary code.</p>
 	</blockquote>
       </body>
     </description>
@@ -67,10 +76,13 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2009-1181</cvename>
       <cvename>CVE-2009-1182</cvename>
       <cvename>CVE-2009-1183</cvename>
+      <url>http://secunia.com/advisories/34291</url>
+      <url>http://www.vupen.com/english/advisories/2009/1065</url>
     </references>
     <dates>
       <discovery>2009-04-16</discovery>
       <entry>2009-04-18</entry>
+      <modified>2009-04-18</modified>
     </dates>
   </vuln>
 
