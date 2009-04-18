@@ -34,6 +34,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="20b4f284-2bfc-11de-bdeb-0030843d3802">
+    <topic>freetype2 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>freetype2</name>
+	<range><lt>2.3.9_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/34723/">
+	  <p>Some vulnerabilities have been reported in FreeType, which can be
+	    exploited by malicious people to potentially compromise an application
+	    using the library.</p>
+	  <p>An integer overflow error within the "cff_charset_compute_cids()"
+	    function in cff/cffload.c can be exploited to potentially cause a
+	    heap-based buffer overflow via a specially crafted font.</p>
+	  <p>Multiple integer overflow errors within validation functions in
+	    sfnt/ttcmap.c can be exploited to bypass length validations and
+	    potentially cause buffer overflows via specially crafted fonts.</p>
+	  <p>An integer overflow error within the "ft_smooth_render_generic()"
+	    function in smooth/ftsmooth.c can be exploited to potentially cause a
+	    heap-based buffer overflow via a specially crafted font.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-0946</cvename>
+      <url>http://secunia.com/advisories/34723/</url>
+    </references>
+    <dates>
+      <discovery>2009-04-16</discovery>
+      <entry>2009-04-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cf91c1e4-2b6d-11de-931b-00e0815b8da8">
     <topic>ejabberd -- cross-site scripting vulnerability</topic>
     <affects>
