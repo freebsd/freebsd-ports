@@ -26,4 +26,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GMAKE=	yes
 PLIST_FILES=	bin/hashish
 
+BROKEN=		does not compile
+
 .include <bsd.port.mk>
