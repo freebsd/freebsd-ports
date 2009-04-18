@@ -34,6 +34,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="50d233d9-374b-46ce-922d-4e6b3f777bef">
+    <topic>poppler -- Poppler Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>poppler</name>
+	<range><lt>0.10.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite=" http://secunia.com/advisories/34746/">
+	  <p>Some vulnerabilities have been reported in Poppler which can be
+	    exploited by malicious people to potentially compromise an
+	    application using the library.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/34746/</url>
+    </references>
+    <dates>
+      <discovery>2009-04-17</discovery>
+      <entry>2009-04-18</entry>
+    </dates>
+  </vuln>
   <vuln vid="a21037d5-2c38-11de-ab3b-0017a4cccfc6">
     <topic>xpdf -- multiple vulnerabilities</topic>
     <affects>
