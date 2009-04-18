@@ -21,6 +21,8 @@ USE_GMAKE=	yes
 
 PLIST_FILES=	bin/busybox
 
+BROKEN=		does not configure
+
 do-configure:
 	${CP} ${FILESDIR}/data-.config ${WRKSRC}/.config
 	cd ${WRKSRC} && ${GMAKE} oldconfig
