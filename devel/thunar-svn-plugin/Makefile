@@ -23,4 +23,6 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 USE_XFCE=	configenv libexo thunar
 
+BROKEN=		does not compile
+
 .include <bsd.port.mk>

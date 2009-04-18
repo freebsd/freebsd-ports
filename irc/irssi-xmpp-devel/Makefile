@@ -18,6 +18,8 @@ BUILD_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 LIB_DEPENDS=	loudmouth:${PORTSDIR}/net-im/loudmouth
 
+BROKEN=		does not compile
+
 WRKSRC=	${WRKDIR}/${DISTNAME}
 
 USE_GMAKE=	yes
