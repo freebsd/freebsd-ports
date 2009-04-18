@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a21037d5-2c38-11de-ab3b-0017a4cccfc6">
+    <topic> xpdf -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>xpdf</name>
+	<range><lt>3.02_11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Vupen reports:</p>
+	<blockquote cite="http://www.vupen.com/english/advisories/2009/1065">
+	  <p>Multiple vulnerabilities have been identified in Xpdf, which could
+             be exploited by attackers to cause a denial of service or compromise
+             a vulnerable system. These issues are caused by buffer and integer
+             overflows, and memory corruption errors in the "xpdf/JIG2Stream.cc"
+             file when processing specially crafted data, which could be exploited
+             by attackers to crash an affected application or execute arbitrary
+             code by tricking a user into opening a malicious PDF file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-0146</cvename>
+      <cvename>CVE-2009-0147</cvename>
+      <cvename>CVE-2009-0166</cvename>
+      <cvename>CVE-2009-0799</cvename>
+      <cvename>CVE-2009-0800</cvename>
+      <cvename>CVE-2009-1179</cvename>
+      <cvename>CVE-2009-1180</cvename>
+      <cvename>CVE-2009-1181</cvename>
+      <cvename>CVE-2009-1182</cvename>
+      <cvename>CVE-2009-1183</cvename>
+    </references>
+    <dates>
+      <discovery>2009-04-16</discovery>
+      <entry>2009-04-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="20b4f284-2bfc-11de-bdeb-0030843d3802">
     <topic>freetype2 -- multiple vulnerabilities</topic>
     <affects>
