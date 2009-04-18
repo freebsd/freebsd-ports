@@ -7,14 +7,14 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.02
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/xpdf
 
 PATCH_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
-PATCHFILES=	xpdf-3.02pl1.patch xpdf-3.02pl2.patch
+PATCHFILES=	xpdf-3.02pl1.patch xpdf-3.02pl2.patch xpdf-3.02pl3.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	araujo@FreeBSD.org
@@ -35,9 +35,9 @@ CONFIGURE_ARGS=	--enable-opi \
 		--with-freetype2-library="${LOCALBASE}/lib" \
 		--with-freetype2-includes="${LOCALBASE}/include/freetype2"
 
-OPTIONS=       LIBPAPER "Enable libpaper"      off     \
-               DRAW    "Enable drawing annotations" on \
-               X11     "Enable X11 support"    on      \
+OPTIONS=	LIBPAPER "Enable libpaper"      off     \
+		DRAW    "Enable drawing annotations" on \
+		X11     "Enable X11 support"    on      \
 
 .include <bsd.port.pre.mk>
 
