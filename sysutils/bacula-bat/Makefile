@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	bacula
+PORTREVISION=	1
 PKGNAMESUFFIX=	-bat
 
 COMMENT=	The network backup solution (GUI)
@@ -39,7 +40,7 @@ post-install:
 
 do-install:
 	# Install config files and preserve existing ones
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/bat      ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/.libs/bat ${PREFIX}/sbin
 	${INSTALL_SCRIPT}  ${WRKSRC}/src/qt-console/bat.conf ${PREFIX}/etc/bat.conf.sample
 	${GZIP_CMD} ${WRKSRC}/manpages/bat.1
 	${INSTALL_MAN}     ${WRKSRC}/manpages/bat.1.gz          ${PREFIX}/man/man1/
