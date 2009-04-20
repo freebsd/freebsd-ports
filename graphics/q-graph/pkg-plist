@@ -9,3 +9,4 @@ bin/graphed2
 %%DATADIR%%/examples/graph/dijkstra.q
 @dirrm %%DATADIR%%/examples/graph
 @dirrm %%DATADIR%%/apps/graphed
+@dirrmtry %%DATADIR%%/apps
