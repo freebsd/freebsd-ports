@@ -4,10 +4,9 @@
 # $FreeBSD$
 
 PORTNAME=	php-libawl
-PORTVERSION=	0.34
+PORTVERSION=	0.36
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	rscds
+MASTER_SITES=	SF/rscds
 DISTNAME=	awl_${PORTVERSION}
 
 MAINTAINER=	cristianorolim@hotmail.com
@@ -26,11 +25,9 @@ pre-everything::
 	@${ECHO_CMD} "# you can customize the installation directory"
 	@${ECHO_CMD} "# by setting LIBAWLDIR in /etc/make.conf"
 
-.include <bsd.port.pre.mk>
-
 do-install:
 	${MKDIR} ${PREFIX}/${LIBAWLDIR}
 	${CP} -Rp ${WRKSRC}/dba ${PREFIX}/${LIBAWLDIR}/
 	${CP} -Rp ${WRKSRC}/inc ${PREFIX}/${LIBAWLDIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
