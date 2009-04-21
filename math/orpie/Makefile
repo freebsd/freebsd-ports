@@ -7,7 +7,7 @@
 
 PORTNAME=	orpie
 PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	math
 MASTER_SITES=	http://pessimization.com/software/orpie/
 

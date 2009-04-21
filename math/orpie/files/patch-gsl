@@ -1,0 +1,172 @@
+diff -aru gsl.orig/gsl_blas.ml gsl/gsl_blas.ml
+--- gsl.orig/gsl_blas.ml	2007-09-13 23:31:23.000000000 -0400
++++ gsl/gsl_blas.ml	2009-04-20 15:08:34.000000000 -0400
+@@ -115,7 +115,7 @@
+     beta:float -> c:matrix -> unit
+ 	= "ml_gsl_blas_dsyr2k_bc" "ml_gsl_blas_dsyr2k"
+ 
+-
++(*
+ (** {3 Single precision} *)
+ 
+ open Gsl_vector.Single
+@@ -187,7 +187,7 @@
+     alpha:float -> a:matrix -> b:matrix -> unit
+ 	= "ml_gsl_blas_strsm_bc" "ml_gsl_blas_strsm"
+   end
+-
++*)
+ 
+ (** {3 Complex} *)
+ open Gsl_vector_complex
+@@ -272,6 +272,7 @@
+   end
+ 
+ 
++(*
+ (** {3 Complex single precision} *)
+ 
+ open Gsl_vector_complex.Single
+@@ -354,3 +355,4 @@
+     a:matrix -> b:matrix -> beta:float -> c:matrix -> unit
+ 	= "ml_gsl_blas_cher2k_bc" "ml_gsl_blas_cher2k"
+   end
++*)
+diff -aru gsl.orig/gsl_blas.mli gsl/gsl_blas.mli
+--- gsl.orig/gsl_blas.mli	2007-09-13 23:31:23.000000000 -0400
++++ gsl/gsl_blas.mli	2009-04-20 15:08:50.000000000 -0400
+@@ -115,7 +115,7 @@
+     beta:float -> c:matrix -> unit
+ 	= "ml_gsl_blas_dsyr2k_bc" "ml_gsl_blas_dsyr2k"
+ 
+-
++(*
+ (** {3 Single precision} *)
+ 
+ open Gsl_vector.Single
+@@ -187,7 +187,7 @@
+     alpha:float -> a:matrix -> b:matrix -> unit
+ 	= "ml_gsl_blas_strsm_bc" "ml_gsl_blas_strsm"
+   end
+-
++*)
+ 
+ (** {3 Complex} *)
+ open Gsl_vector_complex
+@@ -271,7 +271,7 @@
+ 	= "ml_gsl_blas_zher2k_bc" "ml_gsl_blas_zher2k"
+   end
+ 
+-
++(*
+ (** {3 Complex single precision} *)
+ 
+ open Gsl_vector_complex.Single
+@@ -354,3 +354,4 @@
+     a:matrix -> b:matrix -> beta:float -> c:matrix -> unit
+ 	= "ml_gsl_blas_cher2k_bc" "ml_gsl_blas_cher2k"
+   end
++*)
+diff -aru gsl.orig/gsl_matrix.ml gsl/gsl_matrix.ml
+--- gsl.orig/gsl_matrix.ml	2007-09-13 23:31:23.000000000 -0400
++++ gsl/gsl_matrix.ml	2009-04-20 15:09:28.000000000 -0400
+@@ -84,7 +84,7 @@
+ let row =
+   Array2.slice_left
+ 
+-
++(*
+ 
+ module Single = 
+   struct
+@@ -164,3 +164,4 @@
+   external transpose : matrix -> matrix -> unit = "ml_gsl_matrix_float_transpose_memcpy"
+   external transpose_in_place : matrix -> unit = "ml_gsl_matrix_float_transpose"
+   end
++*)
+diff -aru gsl.orig/gsl_matrix.mli gsl/gsl_matrix.mli
+--- gsl.orig/gsl_matrix.mli	2007-09-13 23:31:23.000000000 -0400
++++ gsl/gsl_matrix.mli	2009-04-20 15:09:27.000000000 -0400
+@@ -44,7 +44,7 @@
+ external transpose : matrix -> matrix -> unit = "ml_gsl_matrix_transpose_memcpy"
+ external transpose_in_place : matrix -> unit = "ml_gsl_matrix_transpose"
+ 
+-
++(*
+ module Single : sig
+ 
+   type float_mat_bigarr = 
+@@ -87,3 +87,4 @@
+   external transpose : matrix -> matrix -> unit = "ml_gsl_matrix_float_transpose_memcpy"
+   external transpose_in_place : matrix -> unit = "ml_gsl_matrix_float_transpose"
+ end
++*)
+diff -aru gsl.orig/gsl_matrix_complex.ml gsl/gsl_matrix_complex.ml
+--- gsl.orig/gsl_matrix_complex.ml	2007-09-13 23:31:23.000000000 -0400
++++ gsl/gsl_matrix_complex.ml	2009-04-20 15:09:49.000000000 -0400
+@@ -106,7 +106,7 @@
+ external transpose : matrix -> matrix -> unit = "ml_gsl_matrix_complex_transpose_memcpy"
+ external transpose_in_place : matrix -> unit = "ml_gsl_matrix_complex_transpose"
+ 
+-
++(*
+ 
+ module Single = 
+   struct
+@@ -208,3 +208,4 @@
+   external transpose : matrix -> matrix -> unit = "ml_gsl_matrix_complex_float_transpose_memcpy"
+   external transpose_in_place : matrix -> unit = "ml_gsl_matrix_complex_float_transpose"
+   end
++*)
+diff -aru gsl.orig/gsl_matrix_complex.mli gsl/gsl_matrix_complex.mli
+--- gsl.orig/gsl_matrix_complex.mli	2007-09-13 23:31:23.000000000 -0400
++++ gsl/gsl_matrix_complex.mli	2009-04-20 15:09:49.000000000 -0400
+@@ -50,7 +50,7 @@
+ external transpose : matrix -> matrix -> unit = "ml_gsl_matrix_complex_transpose_memcpy"
+ external transpose_in_place : matrix -> unit = "ml_gsl_matrix_complex_transpose"
+ 
+-
++(*
+ module Single : sig
+ 
+   type complex_float_mat_bigarr = 
+@@ -96,3 +96,4 @@
+   external transpose : matrix -> matrix -> unit = "ml_gsl_matrix_complex_float_transpose_memcpy"
+   external transpose_in_place : matrix -> unit = "ml_gsl_matrix_complex_float_transpose"
+ end
++*)
+diff -aru gsl.orig/gsl_vector.ml gsl/gsl_vector.ml
+--- gsl.orig/gsl_vector.ml	2007-09-13 23:31:23.000000000 -0400
++++ gsl/gsl_vector.ml	2009-04-20 15:11:08.000000000 -0400
+@@ -93,7 +93,7 @@
+     = "ml_gsl_vector_minmaxindex"
+ 
+ 
+-
++(*
+ 
+ module Single = 
+ struct
+@@ -178,3 +178,4 @@
+   external minmax_index : vector -> int * int
+       = "ml_gsl_vector_float_minmaxindex"
+ end
++*)
+diff -aru gsl.orig/gsl_vector.mli gsl/gsl_vector.mli
+--- gsl.orig/gsl_vector.mli	2007-09-13 23:31:23.000000000 -0400
++++ gsl/gsl_vector.mli	2009-04-20 15:11:08.000000000 -0400
+@@ -63,6 +63,7 @@
+ 
+ val subvector : vector -> off:int -> len:int -> vector
+ 
++(*
+ (** {3 Single precision} *)
+ 
+ module Single : sig
+@@ -121,3 +122,4 @@
+       
+   val subvector : vector -> off:int -> len:int -> vector
+ end
++*)
+
+
