@@ -23,17 +23,12 @@ RUN_DEPENDS=	${LOCALBASE}/bin/htmldoc:${PORTSDIR}/textproc/htmldoc			\
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
-USE_APACHE=	yes
+USE_APACHE=	1.3+
 USE_PERL5_RUN=	yes
 USE_MYSQL=	yes
 
-.if defined(WITH_APACHE2)
-APACHE_CNFDIR=	${LOCALBASE}/etc/apache2
-.else
-APACHE_CNFDIR=	${LOCALBASE}/etc/apache
-.endif
+APACHE_CONF=	${LOCALBASE}/${APACHEETCDIR}/httpd.conf
 
-APACHE_CONF=	${APACHE_CNFDIR}/httpd.conf
 PBASE=		${SITE_PERL}
 
 DBOWN?=		PROP_BD
@@ -108,8 +103,8 @@ do-install:
 		${ECHO_CMD} "Include ${FACT_INC}" >> ${APACHE_CONF} ; \
 	fi)
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
