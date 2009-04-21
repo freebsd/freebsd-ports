@@ -33,9 +33,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.ps ${PREFIX}/share/vn-fonts
 	${INSTALL_DATA} ${WRKSRC}/*.gsf ${PREFIX}/share/vn-fonts
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/vnlpr
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/vnlpr
-	${INSTALL_MAN} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/vnlpr
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/INSTALL ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
