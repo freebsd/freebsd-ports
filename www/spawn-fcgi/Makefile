@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spawn-fcgi
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 		http://mirrors.cat.pdx.edu/lighttpd/
