@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	couchdb
-PORTVERSION=	0.9.0a
+PORTVERSION=	0.9.0
+PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://people.apache.org/~nslater/build/latest/
-DISTNAME=	apache-couchdb-0.9.0a-incubating
+MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITE_SUBDIR=	couchdb/${PORTVERSION}
+DISTNAME=	apache-couchdb-${PORTVERSION}
 
-MAINTAINER=	jan@apache.org
+MAINTAINER=	till@php.net
 COMMENT=	A document database server, accessible via a RESTful JSON API
 
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
-		js:${PORTSDIR}/lang/spidermonkey
+		js:${PORTSDIR}/lang/spidermonkey \
+		curl.5:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${LOCALBASE}/lib/erlang/usr/include/erl_driver.h:${PORTSDIR}/lang/erlang-lite
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -24,14 +27,13 @@ USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-erlang=${LOCALBASE}/lib/erlang/usr/include \
 		--localstatedir=/var \
+		--disable-init
 
 MAN1=	couchdb.1 couchjs.1
 
-PLIST_SUB=	COUCHVERSION=couch-${PORTVERSION}-incubating
-
 post-patch:
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's/install-data-am$$//' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's/install-data-am$$//' ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>
