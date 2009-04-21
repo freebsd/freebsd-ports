@@ -7,7 +7,7 @@
 
 PORTNAME=	tclX
 PORTVERSION=	8.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang tcl devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=tclx
@@ -15,8 +15,6 @@ DISTNAME=	tclx${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Extended TCL
-
-BROKEN=		does not compile
 
 USE_BZIP2=	yes
 USE_TCL_BUILD=	84
@@ -30,12 +28,9 @@ CONFIGURE_ARGS=	--enable-shared \
 		--with-help=Help \
 		--with-tcl="${TCL_LIBDIR}"
 PLIST_SUB=	TCLX_VER=${PORTVERSION}
+MAKE_JOBS_SAFE=	yes
 ALL_TARGET=	binaries libraries	# test
 INSTALL_TARGET=	install-binaries install-libraries
-.ifndef(NOPORTDOCS)
-ALL_TARGET+=	doc
-INSTALL_TARGET+=install-help
-.endif
 
 MAN3=	CmdWrite.3 Handles.3 Keylist.3 ObjCmdWrite.3 TclXInit.3
 MANN=	TclX.n
@@ -74,3 +69,10 @@ pre-su-install:
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MANN} ${PREFIX}/man/mann
 
 .include <bsd.port.post.mk>
+
+.ifndef(NOPORTDOCS) && exists(${MANPREFIX}/man/mann/Tcl.n.gz)
+ALL_TARGET+=	doc
+INSTALL_TARGET+=install-help
+.else
+PLIST_SUB:=	${PLIST_SUB:NPORTDOCS=*} PORTDOCS='@comment '
+.endif

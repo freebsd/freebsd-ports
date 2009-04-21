@@ -1,0 +1,124 @@
+Submitted to TclX developers as:
+
+https://sourceforge.net/tracker/index.php?func=detail&aid=2687373&group_id=13247&atid=313247
+
+	-mi
+
+--- unix/tclXunixDup.c	2001-10-24 19:31:50.000000000 -0400
++++ unix/tclXunixDup.c	2009-03-14 18:01:57.000000000 -0400
+@@ -98,5 +98,5 @@
+         Tcl_GetChannelHandle (srcChannel, TCL_WRITABLE, &handle);
+     }
+-    srcFileNum = (int) handle;
++    srcFileNum = (int)(intptr_t)handle;
+     channelType = Tcl_GetChannelType (srcChannel);
+ 
+@@ -134,7 +134,7 @@
+     
+     if (STREQU (channelType->typeName, "tcp")) {
+-        newChannel = Tcl_MakeTcpClientChannel ((ClientData) newFileNum);
++        newChannel = Tcl_MakeTcpClientChannel ((ClientData)(intptr_t)newFileNum);
+     } else {
+-        newChannel = Tcl_MakeFileChannel ((ClientData) newFileNum,
++        newChannel = Tcl_MakeFileChannel ((ClientData)(intptr_t)newFileNum,
+                                           mode);
+     }
+@@ -231,7 +231,7 @@
+ 
+     if (isSocket) {
+-        channel = Tcl_MakeTcpClientChannel ((ClientData) fileNum);
++        channel = Tcl_MakeTcpClientChannel ((ClientData)(intptr_t)fileNum);
+     } else {
+-        channel = Tcl_MakeFileChannel ((ClientData) fileNum,
++        channel = Tcl_MakeFileChannel ((ClientData)(intptr_t)fileNum,
+                                        mode);
+     }
+--- generic/tclExtdInt.h	2005-07-12 15:03:15.000000000 -0400
++++ generic/tclExtdInt.h	2009-03-14 20:54:32.000000000 -0400
+@@ -517,5 +517,5 @@
+                                Tcl_Channel channel,
+                                void       *sockaddr,
+-                               int         sockaddrSize));
++                               socklen_t   sockaddrSize));
+ 
+ extern int
+@@ -523,5 +523,5 @@
+                                Tcl_Channel channel,
+                                void       *sockaddr,
+-                               int         sockaddrSize));
++                               socklen_t   sockaddrSize));
+ 
+ extern int
+--- unix/tclXunixOS.c	2005-07-12 15:03:15.000000000 -0400
++++ unix/tclXunixOS.c	2009-03-14 20:53:03.000000000 -0400
+@@ -118,5 +118,5 @@
+ 	}
+     }
+-    return (int) handle;
++    return (intptr_t)handle;
+ }
+ 
+@@ -248,9 +248,9 @@
+         return TCL_ERROR;
+     }
+-    channels [0] = Tcl_MakeFileChannel ((ClientData) fileNums [0],
++    channels [0] = Tcl_MakeFileChannel ((ClientData)(intptr_t)fileNums [0],
+                                         TCL_READABLE);
+     Tcl_RegisterChannel (interp, channels [0]);
+ 
+-    channels [1] = Tcl_MakeFileChannel ((ClientData) fileNums [1],
++    channels [1] = Tcl_MakeFileChannel ((ClientData)(intptr_t)fileNums [1],
+                                         TCL_WRITABLE);
+     Tcl_RegisterChannel (interp, channels [1]);
+@@ -958,5 +958,5 @@
+     Tcl_Channel channel;
+     void       *sockaddr;
+-    int         sockaddrSize;
++    socklen_t   sockaddrSize;
+ {
+ 
+@@ -988,5 +988,5 @@
+     Tcl_Channel channel;
+     void       *sockaddr;
+-    int         sockaddrSize;
++    socklen_t   sockaddrSize;
+ {
+     if (getsockname (ChannelToFnum (channel, 0),
+@@ -1019,5 +1019,5 @@
+     int         *valuePtr;
+ {
+-    int valueLen = sizeof (*valuePtr);
++    socklen_t valueLen = sizeof (*valuePtr);
+ 
+     if (getsockopt (ChannelToFnum (channel, 0), SOL_SOCKET, option, 
+@@ -1486,5 +1486,5 @@
+         return TCL_ERROR;
+     }
+-    *fnumPtr = (int) handle;
++    *fnumPtr = (intptr_t)handle;
+     return TCL_OK;
+ }
+--- unix/tclXunixSock.c	2004-11-22 19:13:14.000000000 -0500
++++ unix/tclXunixSock.c	2009-03-14 20:59:08.000000000 -0400
+@@ -95,5 +95,5 @@
+     Tcl_Channel channel;
+ 
+-    channel = Tcl_MakeTcpClientChannel ((ClientData) socketFD);
++    channel = Tcl_MakeTcpClientChannel ((ClientData)(intptr_t)socketFD);
+     Tcl_RegisterChannel (interp, channel);
+ 
+@@ -225,5 +225,5 @@
+         goto unixError;
+ 
+-    channel = Tcl_MakeTcpClientChannel ((ClientData) socketFD);
++    channel = Tcl_MakeTcpClientChannel ((ClientData)(intptr_t)socketFD);
+     Tcl_RegisterChannel (interp, channel);
+ 
+@@ -267,5 +267,6 @@
+     Tcl_Channel          channel;
+     unsigned             options;
+-    int                  acceptSocketFD, addrLen;
++    int                  acceptSocketFD;
++    socklen_t            addrLen;
+     int                  socketFD = -1;
+     int                  nextArg;
