@@ -24,10 +24,10 @@ USE_RC_SUBR=	xsi
 
 MAN8=		xsi.8
 
-post-configure:
+post-patch:
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's|-exec-am install-data-am|-exec-am|' \
-		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e '/^install-data-am/s|install-docDATA||' \
+		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in
 .endif
 
 post-install:
