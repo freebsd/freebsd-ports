@@ -17,14 +17,12 @@ share/ots/examples_and_templates/MA_1/README_MA_1.txt
 share/ots/examples_and_templates/MA_1/ma_1_2008_example.dat
 share/ots/examples_and_templates/MA_1/ma_1_2008_template.dat
 share/ots/examples_and_templates/NC_400/NC_400_2008_example.dat
-share/ots/examples_and_templates/NC_400/NC_400_2008_example.out
 share/ots/examples_and_templates/NC_400/NC_400_2008_template.dat
 share/ots/examples_and_templates/NC_400/README_NC_400.txt
 share/ots/examples_and_templates/NJ_1040/NJ_1040_2008_example.dat
 share/ots/examples_and_templates/NJ_1040/NJ_1040_2008_template.dat
 share/ots/examples_and_templates/NJ_1040/README_NJ_1040.txt
 share/ots/examples_and_templates/NY_IT201/NY_IT201_2008_example.dat
-share/ots/examples_and_templates/NY_IT201/NY_IT201_2008_example.out
 share/ots/examples_and_templates/NY_IT201/NY_IT201_2008_template.dat
 share/ots/examples_and_templates/NY_IT201/README_NY_IT201.txt
 share/ots/examples_and_templates/OH_1040/OH_IT1040_2008_example.dat
@@ -35,7 +33,6 @@ share/ots/examples_and_templates/PA_40/PA_40_2008_template.dat
 share/ots/examples_and_templates/PA_40/README_PA_40.txt
 share/ots/examples_and_templates/US_1040/README_US_1040.txt
 share/ots/examples_and_templates/US_1040/US_1040_example.dat
-share/ots/examples_and_templates/US_1040/US_1040_example.out
 share/ots/examples_and_templates/US_1040/US_1040_template.dat
 share/ots/examples_and_templates/US_1040_Sched_C/README_US_1040_Sched_C.txt
 share/ots/examples_and_templates/US_1040_Sched_C/US_1040Sched_C_2008_example.dat
