@@ -1,0 +1,17 @@
+SVN::Dumpfile represents a Subversion dumpfile. It provides methods
+to read existing and write modified or new dumpfiles. It supports
+dumpfiles with the version number 1 - 3 but was written in a tolerant
+way to also support newer versions as long no major changes are
+made.
+
+This module is a OO redesign and generalisation of SVN::Dumpfilter
+v0.21. Newer versions of SVN::Dumpfilter are using it to access the
+input and output dumpfiles.
+
+The ability to create new dumpfiles sets it apart from the similar
+module SVN::Dump. The submodule SVN::Dumpfile::Node::Properties
+also allows the processing of Subversion revision property files
+(i.e. the files lying in the $REPOSITORY/db/revprops/ directory
+holding the author, date and log entry of every revision).
+
+WWW:    http://search.cpan.org/dist/SVN-Dumpfile/
