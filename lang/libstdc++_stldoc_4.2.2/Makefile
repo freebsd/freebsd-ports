@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR= \
 		libstdc++/doxygen
 DISTNAME=	libstdc++-html-USERS-4.2.2
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU libstdc++ API documentation
 
 USE_BZIP2=	yes
