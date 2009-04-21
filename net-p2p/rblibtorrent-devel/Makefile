@@ -7,7 +7,7 @@
 
 PORTNAME=	libtorrent
 PORTVERSION=	0.14.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	rb
@@ -23,7 +23,8 @@ CONFLICTS=	rblibtorrent-[0-9]*
 
 USE_GNOME=	gnomehack
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:262 libtool:15
+ACLOCAL_ARGS=	-I m4
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug \
 		--disable-python-binding \
@@ -31,14 +32,16 @@ CONFIGURE_ARGS=	--disable-debug \
 		--with-boost-thread=boost_thread \
 		--with-boost-regex=boost_regex \
 		--with-boost-program-options=boost_program_options \
-		--with-asio=system
+		--with-asio=shipped
 USE_LDCONFIG=	yes
-USE_GCC=	4.2+
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-patch:
-	@${REINPLACE_CMD} -e '/if \[/s|==|=|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|g' \
+		${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's|^AM_CFLAGS|AM_CPPFLAGS|g ; \
+		 s|@BOOST_SYSTEM_LIB@||g' ${WRKSRC}/src/Makefile.am
 
 .include <bsd.port.mk>
