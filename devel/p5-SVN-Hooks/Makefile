@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SVN-Hooks
-PORTVERSION=	0.15.41
+PORTVERSION=	0.16.52
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,6 +26,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		SVN::Hooks.3 \
 		SVN::Hooks::AllowLogChange.3 \
+		SVN::Hooks::AllowPropChange.3 \
 		SVN::Hooks::CheckLog.3 \
 		SVN::Hooks::CheckMimeTypes.3 \
 		SVN::Hooks::CheckProperty.3 \
