@@ -7,7 +7,7 @@
 
 PORTNAME=	policyd-weight
 PORTVERSION=	0.1.14.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.policyd-weight.org/releases/
 PKGNAMEPREFIX=	postfix-
@@ -44,5 +44,8 @@ pre-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
+
+post-patch:
+	@${REINPLACE_CMD} -e '/DSBL_ORG/d' ${WRKSRC}/policyd-weight*
 
 .include <bsd.port.post.mk>
