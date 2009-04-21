@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	1.4.27
+PORTVERSION=	1.4.28
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
@@ -21,6 +21,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		liferea.1
 MANLANG=	"" pl
@@ -32,7 +33,6 @@ OPTIONS=	LIBNOTIFY "Enable libnotify support" on \
 		GNUTLS "Enable SSL/HTTPS support" on \
 		GTKHTML "Use GtkHtml for rendering" on \
 		WEBKIT "Use Webkit for rendering" off
-#		MOZILLA "Use Firefox for rendering" off \
 #		XULRUNNER "Use Xulrunner for rendering" off
 
 .include <bsd.port.pre.mk>
@@ -69,42 +69,20 @@ CONFIGURE_ARGS+=--disable-webkit
 PLIST_SUB+=	WEBKIT="@comment "
 .endif
 
-.ifdef WITH_MOZILLA
-USE_GNOME+=	gconf2 libxslt
-USE_GECKO=	firefox mozilla
-CONFIGURE_ARGS+=--with-gecko=${GECKO}
-PLIST_SUB+=	MOZ=""
-BROKEN=		does not compile
-.else
-PLIST_SUB+=	MOZ="@comment "
-.endif
-
 .ifdef WITH_XULRUNNER
-CONFIGURE_ARGS+=--with-gecko=xulrunner
-BUILD_DEPENDS+=	xulrunner:${PORTSDIR}/www/xulrunner
-RUN_DEPENDS+=	xulrunner:${PORTSDIR}/www/xulrunner
+CONFIGURE_ARGS+=--with-gecko=libxul
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libxul/libxul.so:${PORTSDIR}/www/libxul
+RUN_DEPENDS+=	${LOCALBASE}/lib/libxul/libxul.so:${PORTSDIR}/www/libxul
 PLIST_SUB+=	XUL=""
-BROKEN=		does not configure
 .else
-PLIST_SUB+=	XUL="@comment "
-.endif
-
-.if !defined(WITH_MOZILLA) && !defined(WITH_XULRUNNER)
 CONFIGURE_ARGS+=--disable-gecko
+PLIST_SUB+=	XUL="@comment "
 .endif
 
 .ifdef WITHOUT_DBUS
 CONFIGURE_ARGS+=--disable-dbus
 .else
 LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
-.endif
-
-post-patch:
-.ifdef WITH_MOZILLA
-	@${REINPLACE_CMD} -e 's,firefox-,$$gecko_provider-,g' \
-		-e 's,\(gecko_provider=\).*$$,\1${GECKO},' \
-		-e '/INCLUDE/s,{print $$1},{print $$2},g' \
-		${WRKSRC}/configure
 .endif
 
 .include <bsd.port.post.mk>

@@ -3,12 +3,10 @@ bin/liferea-add-feed
 bin/liferea-bin
 %%GTKHTML%%lib/liferea/liblihtmlg.la
 %%GTKHTML%%lib/liferea/liblihtmlg.so
-%%MOZ%%lib/liferea/liblihtmlm.la
-%%MOZ%%lib/liferea/liblihtmlm.so
 %%WEBKIT%%lib/liferea/liblihtmlw.la
 %%WEBKIT%%lib/liferea/liblihtmlw.so
-%%XUL%%lib/liferea/liblihtmlx.la
-%%XUL%%lib/liferea/liblihtmlx.so
+@comment %%XUL%%lib/liferea/liblihtmlx.la
+@comment %%XUL%%lib/liferea/liblihtmlx.so
 %%NOTIFY%%lib/liferea/liblinotiflibnotify.la
 %%NOTIFY%%lib/liferea/liblinotiflibnotify.so
 share/applications/liferea.desktop
