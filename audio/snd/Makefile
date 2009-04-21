@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	snd
-PORTVERSION=	10.4
-PORTREVISION=	1
+PORTVERSION=	10.5
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://mirror.mcx2.org/
@@ -155,7 +154,7 @@ do-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in HISTORY.Snd README.Snd TODO.Snd
+.for i in HISTORY.Snd README.Snd
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}

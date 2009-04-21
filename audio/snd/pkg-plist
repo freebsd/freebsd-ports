@@ -6,7 +6,6 @@ bin/sndrecord
 %%X11%%lib/X11/app-defaults/Snd.ad
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY.Snd
 %%PORTDOCS%%%%DOCSDIR%%/README.Snd
-%%PORTDOCS%%%%DOCSDIR%%/TODO.Snd
 %%PORTDOCS%%%%DOCSDIR%%/extsnd.html
 %%PORTDOCS%%%%DOCSDIR%%/fm.html
 %%PORTDOCS%%%%DOCSDIR%%/grfsnd.html
@@ -289,6 +288,7 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/pix/soundbox.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/split-noise.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sqrt.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/sqrt1.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sqsq.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/srates.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/ssbam.png
