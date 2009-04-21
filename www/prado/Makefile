@@ -6,18 +6,29 @@
 #
 
 PORTNAME=	prado
-PORTVERSION=	3.1.2.r2448
+PORTVERSION=	3.1.4.r2603
 CATEGORIES=	www
-MASTER_SITES=	SF
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+PROJECTHOST=	prado3
+.if defined(NOPORTDOCS)
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+.else
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-docs-${PORTVERSION}${EXTRACT_SUFX}
+.endif
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRCDOCS=	${WRKDIR}/${PORTNAME}-docs-${PORTVERSION}
 
 USE_ZIP=	yes
 
 USE_APACHE=	2.0+
 
 NO_BUILD=	yes
+IGNORE_WITH_PHP=4
 USE_PHP=	session
 WANT_PHP_WEB=	yes
 
@@ -59,6 +70,12 @@ SUB_LIST+=	HASHMARK=\#
 SUB_LIST+=	HASHMARK=
 .endif
 
+.if defined(NOPORTEXAMPLES)
+DEMOS=		
+.else
+DEMOS=		demos
+.endif
+
 CONF=		prado-${PROD}${CGI_EXT}.conf
 SUB_FILES+=	${CONF}
 
@@ -86,11 +103,8 @@ confighelp:
 	@${ECHO_MSG} "http://www.pradosoft.com/wiki/index.php/Installation"
 	@${ECHO_MSG} ""
 
-post-configure:
-	@cd ${WRKSRC} && ${MV} "HISTORY" "UPGRADE" docs/
-
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "index.html demos editors \
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "index.html ${DEMOS} editors \
 		framework requirements tests" ${WWWDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
@@ -114,7 +128,8 @@ post-install:
 	  ${FALSE} ; \
 	fi
 .if !defined(NOPORTDOCS)
-	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
+	@cd ${WRKSRCDOCS} && ${COPYTREE_SHARE} . ${DOCSDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "HISTORY UPGRADE" ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 .if ${CGI_EXT} == "-cgi"
