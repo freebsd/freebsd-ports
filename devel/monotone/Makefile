@@ -6,26 +6,30 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.42
+PORTVERSION=	0.43
 CATEGORIES=	devel
 MASTER_SITES=	http://monotone.ca/downloads/${PORTVERSION}/
 
 MAINTAINER=	lapo@lapo.it
 COMMENT=	A distributed version control system with digital signatures
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost \
+		${LOCALBASE}/lib/libbotan-1.6.5.so:${PORTSDIR}/security/botan
+RUN_DEPENDS=	${LOCALBASE}/lib/libbotan-1.6.5.so:${PORTSDIR}/security/botan
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+		idn.16:${PORTSDIR}/dns/libidn \
+		sqlite3.8:${PORTSDIR}/databases/sqlite3
 
 SUB_FILES=	pkg-message
 USE_PERL5_BUILD=yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
+USE_LUA=	5.1+
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		MAKEINFO="makeinfo --no-split"
-CONFIGURE_ARGS+=	--with-system-pcre
 
 PLIST_FILES=	bin/mtn bin/mtnopt share/zsh/site-functions/_mtn \
 		"@unexec [ -f %D/bin/zsh ] || rmdir %D/share/zsh/site-functions 2>/dev/null || true" \
