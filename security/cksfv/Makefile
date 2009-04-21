@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cksfv
-PORTVERSION=	1.3.12
+PORTVERSION=	1.3.14
 CATEGORIES=	security
-MASTER_SITES=	http://zakalwe.virtuaalipalvelin.net/~shd/foss/cksfv/files/ \
+MASTER_SITES=	http://zakalwe.fi/~shd/foss/cksfv/files/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
