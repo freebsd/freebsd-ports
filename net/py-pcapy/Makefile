@@ -16,7 +16,15 @@ COMMENT=	Python extension module to capture packets on the network
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pcapy.so
 PORTDOCS=	README LICENSE pcapy.html
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
