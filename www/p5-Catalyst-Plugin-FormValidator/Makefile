@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-FormValidator
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
