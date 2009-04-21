@@ -7,6 +7,7 @@
 
 PORTNAME=	svk
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
@@ -42,12 +43,16 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-L
 		p5-Path-Class>=0.16:${PORTSDIR}/devel/p5-Path-Class \
 		p5-PathTools>=3.19:${PORTSDIR}/devel/p5-PathTools \
 		p5-PerlIO-eol>=0.13:${PORTSDIR}/devel/p5-PerlIO-eol \
+		p5-PerlIO-gzip>=0.18:${PORTSDIR}/archivers/p5-PerlIO-gzip \
+		p5-PerlIO-via-Bzip2>=0.02:${PORTSDIR}/archivers/p5-PerlIO-via-Bzip2 \
 		p5-PerlIO-via-dynamic>=0.11:${PORTSDIR}/devel/p5-PerlIO-via-dynamic \
 		p5-PerlIO-via-symlink>=0.02:${PORTSDIR}/devel/p5-PerlIO-via-symlink \
+		p5-SVN-Dump>=0.04:${PORTSDIR}/devel/p5-SVN-Dump \
 		p5-SVN-Simple>=0.27:${PORTSDIR}/devel/p5-SVN-Simple \
 		p5-SVN-Mirror>=0.71:${PORTSDIR}/devel/p5-SVN-Mirror \
 		p5-Time-Progress>=0:${PORTSDIR}/devel/p5-Time-Progress \
 		p5-YAML-Syck>=0.60:${PORTSDIR}/textproc/p5-YAML-Syck \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-version>=0.68:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
