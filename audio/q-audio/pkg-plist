@@ -1,12 +1,9 @@
 bin/audio_player
 lib/q/audio.so
-lib/q/audio.la
 lib/q/audio.a
 lib/q/sndfile.so
-lib/q/sndfile.la
 lib/q/sndfile.a
 lib/q/wave.so
-lib/q/wave.la
 lib/q/wave.a
 %%DATADIR%%/examples/audio/audio_examp.q
 %%DATADIR%%/apps/audio_player/audio_player.q
