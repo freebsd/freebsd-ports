@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	eventxx
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	devel
-MASTER_SITES=	http://proj.llucax.com.ar/home/eventxx/releases/
+MASTER_SITES=	http://proj.llucax.com.ar/home/eventxx/releases/ \
+		LOCAL/glarkin
 MASTER_SITE_SUBDIR=	gahr
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A C++ wrapper for libevent
@@ -24,7 +23,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 
 post-extract:
-	${REINPLACE_CMD} -e 's|-I..|-I.. -I${LOCALBASE}/include -L${LOCALBASE}/lib|g' \
+	@${REINPLACE_CMD} -e 's|-I..|-I.. -I${LOCALBASE}/include -L${LOCALBASE}/lib|g' \
 	    ${WRKSRC}/test/Makefile
 
 do-install:
@@ -32,9 +31,9 @@ do-install:
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
-	${INSTALL} -d ${EXAMPLESDIR}
-	(cd ${WRKSRC}/test && ${COPYTREE_SHARE} \*.cpp ${EXAMPLESDIR})
-	${INSTALL_DATA} ${WRKSRC}/test/Makefile ${EXAMPLESDIR}
+	@${INSTALL} -d ${EXAMPLESDIR}
+	@cd ${WRKSRC}/test && ${COPYTREE_SHARE} \*.cpp ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/test/Makefile ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
