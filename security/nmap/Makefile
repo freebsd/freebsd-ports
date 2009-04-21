@@ -7,6 +7,7 @@
 
 PORTNAME=	nmap
 DISTVERSION=	4.85BETA7
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/nmap/ \
