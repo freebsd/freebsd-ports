@@ -532,6 +532,8 @@ include/wine/windows/winver.h
 include/wine/windows/wmistr.h
 include/wine/windows/wnaspi32.h
 include/wine/windows/wownt32.h
+include/wine/windows/ws2def.h
+include/wine/windows/ws2ipdef.h
 include/wine/windows/ws2spi.h
 include/wine/windows/ws2tcpip.h
 include/wine/windows/wshisotp.h
@@ -581,6 +583,7 @@ lib/wine/authz.dll.so
 lib/wine/avicap32.dll.so
 lib/wine/avifil32.dll.so
 lib/wine/avifile.dll16.so
+lib/wine/bcrypt.dll.so
 lib/wine/browseui.dll.so
 lib/wine/cabinet.dll.so
 lib/wine/cacls.exe.so
@@ -633,6 +636,7 @@ lib/wine/d3dx9_37.dll.so
 lib/wine/d3dx9_38.dll.so
 lib/wine/d3dx9_39.dll.so
 lib/wine/d3dx9_40.dll.so
+lib/wine/d3dx9_41.dll.so
 lib/wine/d3dxof.dll.so
 lib/wine/dbghelp.dll.so
 lib/wine/dciman32.dll.so
@@ -983,7 +987,7 @@ lib/wine/sfc.dll.so
 lib/wine/sfc_os.dll.so
 lib/wine/shdoclc.dll.so
 lib/wine/shdocvw.dll.so
-lib/wine/shell.dll16
+lib/wine/shell.dll16.so
 lib/wine/shell32.dll.so
 lib/wine/shfolder.dll.so
 lib/wine/shlwapi.dll.so
