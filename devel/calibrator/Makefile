@@ -12,7 +12,7 @@ MASTER_SITES=		http://homepages.cwi.nl/~manegold/Calibrator/src/
 DISTNAME=		${PORTNAME}.c
 EXTRACT_SUFX=
 
-MAINTAINER=		bms@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Cache Profiling Tool
 
 NO_WRKSUBDIR=		yes

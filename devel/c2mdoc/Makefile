@@ -11,7 +11,7 @@ CATEGORIES=	devel textproc
 MASTER_SITES=	#
 DISTFILES=
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script to generate mdoc(7) markup from C functions
 
 RUN_DEPENDS=	cproto:${PORTSDIR}/devel/cproto
