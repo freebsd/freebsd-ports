@@ -40,4 +40,12 @@ clamav_clamd_precmd() {
 	fi
 }
 
+extra_commands="reload"
+reload_cmd=clamd_reload
+
+clamd_reload()
+{
+  %%PREFIX%%/bin/clamdscan --reload
+}
+
 run_rc_command "$1"
