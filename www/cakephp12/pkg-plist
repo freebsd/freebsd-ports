@@ -59,7 +59,6 @@
 %%WWWDIR%%/cake/config/unicode/casefolding/2c80_2cff.php
 %%WWWDIR%%/cake/config/unicode/casefolding/ff00_ffef.php
 %%WWWDIR%%/cake/console/cake
-%%WWWDIR%%/cake/console/cake.bak
 %%WWWDIR%%/cake/console/cake.bat
 %%WWWDIR%%/cake/console/cake.php
 %%WWWDIR%%/cake/console/error.php
