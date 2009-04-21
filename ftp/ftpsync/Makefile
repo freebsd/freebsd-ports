@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ftpsync
-PORTVERSION=	1.2.34
+PORTVERSION=	1.3.01
 PORTEPOCH=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://ftpsync.sourceforge.net/ \
