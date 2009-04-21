@@ -1,9 +1,16 @@
---- CONFIG/src/atlcomp.txt.orig	Fri Feb 22 09:38:51 2008
-+++ CONFIG/src/atlcomp.txt	Sat Jun  7 11:09:05 2008
-@@ -40,41 +40,41 @@
+--- CONFIG/src/atlcomp.txt.orig	2009-02-19 03:47:37.000000000 +0900
++++ CONFIG/src/atlcomp.txt	2009-04-13 16:46:44.000000000 +0900
+@@ -40,34 +40,34 @@
  #
  # Core2Solo and Core2Duo
- MACH=Core2Solo,Core2Duo OS=ALL LVL=1000 COMPS=smc,dmc,skc,dkc,icc
+ MACH=Core2Solo OS=ALL LVL=1000 COMPS=smc,dmc,skc,dkc,icc
+-   'gcc' '-fomit-frame-pointer -mfpmath=sse -msse3 -O2'
++   '%%CC%%' '-fomit-frame-pointer -mfpmath=sse -msse3 -O2'
+ # Core2 & Corei7
+ MACH=Corei7 OS=ALL LVL=1000 COMPS=smc,dmc,skc,dkc,icc
+-   'gcc' '-fomit-frame-pointer -mfpmath=sse -msse3 -O2 -fno-schedule-insns2'
++   '%%CC%%' '-fomit-frame-pointer -mfpmath=sse -msse3 -O2 -fno-schedule-insns2'
+ MACH=Core2 OS=ALL LVL=1000 COMPS=smc,dmc,skc,dkc,icc
 -   'gcc' '-fomit-frame-pointer -mfpmath=sse -msse3 -O2'
 +   '%%CC%%' '-fomit-frame-pointer -mfpmath=sse -msse3 -O2'
  # PPRO,PII,PIII,P4,P4E,K7,HAMMER
@@ -32,16 +39,14 @@
 -   'gcc' '-mcpu=ultrasparc3 -mtune=ultrasparc3 -O'
 +   '%%CC%%' '-mcpu=ultrasparc3 -mtune=ultrasparc3 -O'
  MACH=USIII,USIV OS=ALL LVL=1000 COMPS=f77
--   'f77' '-dalign -native -xO5'
-+   '%%FC%%' '-dalign -native -xO5'
+    'f77' '-dalign -native -xO5'
  MACH=USIII,USIV OS=ALL LVL=100 COMPS=f77
 -   'gfortran' '-O -mcpu=ultrasparc3 -mtune=ultrasparc3'
 +   '%%FC%%' '-O -mcpu=ultrasparc3 -mtune=ultrasparc3'
  MACH=USIII,USIV OS=ALL LVL=10 COMPS=f77
--   'g77' '-O -mcpu=ultrasparc3 -mtune=ultrasparc3'
-+   '%%FC%%' '-O -mcpu=ultrasparc3 -mtune=ultrasparc3'
+    'g77' '-O -mcpu=ultrasparc3 -mtune=ultrasparc3'
  #
- # Itanium & Itanium 2
+@@ -75,11 +75,11 @@
  #
  # These gcc 4 default flags will die on gcc3, allowing gcc3's flags to be used
  MACH=IA64Itan,IA64Itan2 OS=ALL LVL=1010 COMPS=smc,dmc,skc,dkc
@@ -56,18 +61,14 @@
  #
  # IRIX/MIPS
  #
-@@ -83,19 +83,19 @@
- MACH=MIPSR1xK OS=IRIX LVL=1000 COMPS=icc,xcc
-    '%%CC%%' '-O2 -OPT:Olimit=15000 -LNO:blocking=OFF'
- MACH=MIPSR1xK OS=IRIX LVL=1000 COMPS=f77
--   'f77' '-O2'
-+   '%%FC%%' '-O2'
- #
+@@ -93,16 +93,16 @@
  # Linux/MIPSICE9
  #
  MACH=MIPSICE9 OS=ALL LVL=1000 COMPS=icc,smc,dmc,skc,dkc,xcc
 -   'gcc' '-O2 -mips64 -march=5kf -mtune=5kf -fno-schedule-insns -fschedule-insns2 -fno-peephole -fno-peephole2'
 +   '%%CC%%' '-O2 -mips64 -march=5kf -mtune=5kf -fno-schedule-insns -fschedule-insns2 -fno-peephole -fno-peephole2'
+ MACH=MIPSICE9 OS=ALL LVL=100 COMPS=f77
+    'pathf95' '-march=auto -O2'
  #
  # G4 flags
  #
@@ -80,7 +81,7 @@
  
  #
  # OS X / PowerPC970; the
-@@ -104,19 +104,19 @@
+@@ -111,19 +111,19 @@
  # performance by removing them (for all PowerPC platforms)
  #
  MACH=PPCG5 OS=OSX LVL=1001 COMPS=icc,smc,dmc,skc,dkc,xcc
@@ -106,7 +107,7 @@
  MACH=POWER4 OS=ALL LVL=1010 COMPS=f77
     'xlf' '-qtune=pwr4 -qarch=pwr4 -O3 -qmaxmem=-1 -qfloat=hsflt'
  #
-@@ -136,10 +136,10 @@
+@@ -143,10 +143,10 @@
  # Generic defaults
  #
  MACH=ALL OS=ALL LVL=5 COMPS=icc,smc,dmc,skc,dkc,xcc
