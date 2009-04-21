@@ -1,4 +1,5 @@
 etc/facturier/httpd.conf.facturier
+%%APACHEETCDIR%%/httpd.conf.beforeFacturier
 %%FACT_REP%%/cgi-bin/articlemodif.cgi
 %%FACT_REP%%/cgi-bin/articles.cgi
 %%FACT_REP%%/cgi-bin/cherchcontact.cgi
