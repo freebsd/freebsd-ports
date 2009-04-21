@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	musca
-PORTVERSION=	0.9.15
+PORTVERSION=	0.9.18
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://aerosuidae.net/ \
 		http://mirror.mcx2.org/
@@ -20,7 +20,7 @@ RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
 USE_XORG=	x11
 
 PLIST_FILES=	bin/musca
-PORTDOCS=	readme.txt
+MAN1=	musca.1
 
 pre-everything::
 	@${ECHO_MSG} "You can build musca with your own config.h using the MUSCA_CONF knob:"
@@ -34,10 +34,6 @@ post-extract:
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-.endif
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
