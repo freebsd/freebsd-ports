@@ -1,0 +1,12 @@
+%%SITE_PERL%%/SVN/Dumpfile/Node/Properties.pm
+%%SITE_PERL%%/SVN/Dumpfile/Node/Headers.pm
+%%SITE_PERL%%/SVN/Dumpfile/Node/Content.pm
+@dirrm %%SITE_PERL%%/SVN/Dumpfile/Node
+%%SITE_PERL%%/SVN/Dumpfile/Tutorial.pm
+%%SITE_PERL%%/SVN/Dumpfile/Node.pm
+@dirrm %%SITE_PERL%%/SVN/Dumpfile
+%%SITE_PERL%%/SVN/Dumpfile.pm
+@dirrmtry %%SITE_PERL%%/SVN
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Dumpfile/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Dumpfile
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
