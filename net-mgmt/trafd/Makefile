@@ -10,7 +10,7 @@ PORTVERSION=	3.0.2.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.riss-telecom.ru/pub/dev/trafd/
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The BPF Traffic Collector
 
 CONFLICTS=	bpft-4.*
