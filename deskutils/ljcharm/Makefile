@@ -21,6 +21,15 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	1.9.1
 
+post-patch:
+.if !defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e 's,share/doc/charm,${DOCSDIR},'  ${WRKSRC}/setup.py
+.else
+	${REINPLACE_CMD} -e '/data_files = /d' \
+			-e '/man\/man1/s,^[ ]*,      data_files = [ ,' \
+			${WRKSRC}/setup.py
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/CHANGES.charm ${DOCSDIR}/CHANGES
