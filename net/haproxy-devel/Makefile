@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.3.15.5
+PORTVERSION=	1.3.17
 CATEGORIES=	net
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.3/src/
 PKGNAMESUFFIX=	-devel
