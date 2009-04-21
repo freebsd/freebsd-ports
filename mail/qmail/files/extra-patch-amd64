@@ -18,3 +18,11 @@
  #include "sig.h"
  #include "wait.h"
  #include "substdio.h"
+--- cdbmake_add.c.orig	2009-04-20 08:28:36.000000000 -0300
++++ cdbmake_add.c	2009-04-20 08:28:52.000000000 -0300
+@@ -1,4 +1,5 @@
+ #include "cdbmake.h"
++#include "alloc.h"
+ 
+ void cdbmake_init(cdbm)
+ struct cdbmake *cdbm;
