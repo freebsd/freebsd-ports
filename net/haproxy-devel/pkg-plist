@@ -1,11 +1,7 @@
+etc/haproxy.conf-dist
 sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/architecture.txt
 %%PORTDOCS%%%%DOCSDIR%%/configuration.txt
-%%PORTDOCS%%%%DOCSDIR%%/gpl.txt
-%%PORTDOCS%%%%DOCSDIR%%/lgpl.txt
-%%PORTDOCS%%%%DOCSDIR%%/haproxy-en.txt
-%%PORTDOCS%%%%DOCSDIR%%/haproxy-fr.txt
-%%PORTDOCS%%%%DOCSDIR%%/tcp-splicing.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/backends-v0.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/backends.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/be-fe-changes.txt
@@ -15,8 +11,11 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/how-it-works.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/http_load_time.url
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/sess_par_sec.txt
-%%PORTDOCS%%%%DOCSDIR%%/internals/connection-scale.txt
+%%PORTDOCS%%%%DOCSDIR%%/gpl.txt
+%%PORTDOCS%%%%DOCSDIR%%/haproxy-en.txt
+%%PORTDOCS%%%%DOCSDIR%%/haproxy-fr.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/connect-status.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/connection-scale.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/ebtree
 %%PORTDOCS%%%%DOCSDIR%%/internals/header-parser-speed.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/header-tree.txt
@@ -25,8 +24,10 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/naming.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/repartition-be-fe-fi.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/stats-v2.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/stream-sock-states.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/todo.cttproxy
-etc/haproxy.conf-dist
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/design-thoughts
+%%PORTDOCS%%%%DOCSDIR%%/lgpl.txt
+%%PORTDOCS%%%%DOCSDIR%%/tcp-splicing.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/internals
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/design-thoughts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
