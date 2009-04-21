@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	printing
 PKGNAMESUFFIX?=	# empty
 DISTNAME=	poster
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE version of the poster utility
 
 USE_BZIP2=	yes

@@ -14,7 +14,7 @@ DISTNAME=	traceroute_640.c
 EXTRACT_SUFX=
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ubiquitous network routing analysis tool
 
 WRKSRC=		${WRKDIR}
