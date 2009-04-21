@@ -10,6 +10,7 @@
 
 PORTNAME=	libstdc++_stldoc_4.2.2
 PORTVERSION=	20071101
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR= \
@@ -31,8 +32,14 @@ NO_WRKSUBDIR=	yes
 PORTDOCS=	stldoc
 
 do-install:
-	@${MKDIR} ${DOCSDIR}/stldoc
-	@cd ${WRKSRC}/html_user-4.2.20071101 && ${FIND} . -type f | \
-	 ${XARGS} -J % ${INSTALL_DATA} % ${DOCSDIR}/stldoc
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/stldoc
+	    cd ${WRKSRC}/html_user-4.2.20071101 && \
+	    ${FIND} . -type f | \
+	    ${XARGS} -J % ${INSTALL_DATA} % ${DOCSDIR}/stldoc &&
+	    ${CHMOD} 755 ${DOCSDIR} ${DOCSDIR}/stldoc
+.else
+	@${ECHO} "NOPORTDOCS is set -- installing nothing."
+.endif
 
 .include <bsd.port.mk>
