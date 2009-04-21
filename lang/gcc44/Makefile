@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.4.0
-PORTREVISION=	20090407
+PORTREVISION=	20090414
 CATEGORIES=	lang java
 VERSIONSTRING=	4.4-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -42,7 +42,6 @@ WANT_GNOME=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
-NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
