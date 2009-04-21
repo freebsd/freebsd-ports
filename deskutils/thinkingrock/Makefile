@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	thinkingrock
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.2.1
 CATEGORIES=	deskutils java
 MASTER_SITES=	SF
 DISTNAME=	tr-${PORTVERSION}
@@ -25,8 +24,6 @@ SUB_FILES=	pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/bin/tr
-	@${RM} ${WRKSRC}/install.html~
-	@${RM} ${WRKSRC}/etc/tr.conf~
 	@${RM} ${WRKSRC}/bin/tr.bak
 	@${RM} ${WRKSRC}/bin/tr.orig
 	@${RM} ${WRKSRC}/bin/tr.exe
