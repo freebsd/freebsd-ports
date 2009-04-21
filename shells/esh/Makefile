@@ -28,8 +28,6 @@ do-install:
 	@(${GREP} -v ${PREFIX}/bin/esh /etc/shells.bak; \
 	  ${ECHO_CMD} ${PREFIX}/bin/esh) > /etc/shells
 	@${RM} /etc/shells.bak
-.if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/doc/esh.info ${PREFIX}/info/esh.info
-.endif
 
 .include <bsd.port.mk>
