@@ -9,8 +9,7 @@ PORTNAME=	xsu
 PORTVERSION=	0.2.4
 PORTREVISION=	2
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	xsu
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xsu runs commands as root after prompting for the root password
@@ -24,6 +23,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN8=	xsu.8
 
 DOCS=	CHANGELOG COPYING INSTALL
+
+post-patch:
+.ifdef NOPORTDOCS
+	${REINPLACE_CMD} -e '/doc_path\/$$name/s,^[[:blank:]],#&,' \
+		-e '/@echo "Now read the README file"/s,^[[:blank:]],#&,' \
+		${WRKSRC}/configure
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/xsu.desktop \
