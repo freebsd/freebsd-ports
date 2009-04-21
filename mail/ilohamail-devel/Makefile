@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ilohamail
 DISTNAME=	IlohaMail-0.9-20050415
 
-MAINTAINER=     craig001@lerwick.hopto.org
+MAINTAINER=	craig001@lerwick.hopto.org
 COMMENT=	IlohaMail is a lightweight webmail program (devel version)
 
 NO_BUILD=	yes
@@ -33,7 +33,8 @@ ILOHADIR=	${PREFIX}/ilohamail-devel
 .endif
 
 PLIST_SUB+=	ILOHADIR="${ILOHADIR:S,^${PREFIX}/,,}"
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES+=	pkg-message
+SUB_LIST+=	ILOHADIR=${ILOHADIR}
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -56,15 +57,12 @@ do-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}; ${CP} -Rp INSTALL README RELEASE_NOTES \
+	cd ${WRKSRC} && \
+		${CP} -Rp INSTALL README RELEASE_NOTES \
 		THEMES TODO UPGRADING Manual ${DOCSDIR}
 .endif
 
 post-install:
-	@${SED} -e 's|%%ILOHADIR%%|${ILOHADIR}|g' \
-		-e 's|%%DATADIR%%|${DATADIR}|g' \
-		-e 's|%%DOCSDIR%%|${DOCSDIR}|g' \
-		< ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${ILOHADIR}/data
 	@${CAT} ${PKGMESSAGE}
 

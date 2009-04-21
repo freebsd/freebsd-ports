@@ -1,30 +1,30 @@
-share/doc/ilohamail-devel/INSTALL
-share/doc/ilohamail-devel/Manual/CVS/Entries
-share/doc/ilohamail-devel/Manual/CVS/Repository
-share/doc/ilohamail-devel/Manual/CVS/Root
-share/doc/ilohamail-devel/Manual/configure.MySQL.html
-share/doc/ilohamail-devel/Manual/configure.html
-share/doc/ilohamail-devel/Manual/configure.php.html
-share/doc/ilohamail-devel/Manual/custom.smtp.html
-share/doc/ilohamail-devel/Manual/install.html
-share/doc/ilohamail-devel/Manual/key_controls.txt
-share/doc/ilohamail-devel/README
-share/doc/ilohamail-devel/RELEASE_NOTES
-share/doc/ilohamail-devel/THEMES
-share/doc/ilohamail-devel/TODO
-share/doc/ilohamail-devel/UPGRADING
-share/ilohamail-devel/MySQL/0.7.3.sql
-share/ilohamail-devel/MySQL/0.7.5.sql
-share/ilohamail-devel/MySQL/0.7.6.sql
-share/ilohamail-devel/MySQL/0.7.9.sql
-share/ilohamail-devel/MySQL/0.8.0.sql
-share/ilohamail-devel/MySQL/0.8.10.sql
-share/ilohamail-devel/MySQL/0.8.5.sql
-share/ilohamail-devel/MySQL/0.9.0.sql
-share/ilohamail-devel/MySQL/CVS/Entries
-share/ilohamail-devel/MySQL/CVS/Repository
-share/ilohamail-devel/MySQL/CVS/Root
-share/ilohamail-devel/MySQL/sql
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/Manual/CVS/Entries
+%%PORTDOCS%%%%DOCSDIR%%/Manual/CVS/Repository
+%%PORTDOCS%%%%DOCSDIR%%/Manual/CVS/Root
+%%PORTDOCS%%%%DOCSDIR%%/Manual/configure.MySQL.html
+%%PORTDOCS%%%%DOCSDIR%%/Manual/configure.html
+%%PORTDOCS%%%%DOCSDIR%%/Manual/configure.php.html
+%%PORTDOCS%%%%DOCSDIR%%/Manual/custom.smtp.html
+%%PORTDOCS%%%%DOCSDIR%%/Manual/install.html
+%%PORTDOCS%%%%DOCSDIR%%/Manual/key_controls.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
+%%PORTDOCS%%%%DOCSDIR%%/THEMES
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
+%%MYSQL%%%%DATADIR%%/MySQL/0.7.3.sql
+%%MYSQL%%%%DATADIR%%/MySQL/0.7.5.sql
+%%MYSQL%%%%DATADIR%%/MySQL/0.7.6.sql
+%%MYSQL%%%%DATADIR%%/MySQL/0.7.9.sql
+%%MYSQL%%%%DATADIR%%/MySQL/0.8.0.sql
+%%MYSQL%%%%DATADIR%%/MySQL/0.8.10.sql
+%%MYSQL%%%%DATADIR%%/MySQL/0.8.5.sql
+%%MYSQL%%%%DATADIR%%/MySQL/0.9.0.sql
+%%MYSQL%%%%DATADIR%%/MySQL/CVS/Entries
+%%MYSQL%%%%DATADIR%%/MySQL/CVS/Repository
+%%MYSQL%%%%DATADIR%%/MySQL/CVS/Root
+%%MYSQL%%%%DATADIR%%/MySQL/sql
 www/ilohamail-devel/CVS/Entries
 www/ilohamail-devel/CVS/Repository
 www/ilohamail-devel/CVS/Root
@@ -1244,9 +1244,9 @@ www/ilohamail-devel/source/view.php
 @dirrm www/ilohamail-devel/conf
 @dirrm www/ilohamail-devel/CVS
 @dirrm www/ilohamail-devel
-@dirrm share/ilohamail-devel/MySQL/CVS
-@dirrm share/ilohamail-devel/MySQL
-@dirrm share/ilohamail-devel
-@dirrm share/doc/ilohamail-devel/Manual/CVS
-@dirrm share/doc/ilohamail-devel/Manual
-@dirrm share/doc/ilohamail-devel
+%%MYSQL%%@dirrm %%DATADIR%%/MySQL/CVS
+%%MYSQL%%@dirrm %%DATADIR%%/MySQL
+%%MYSQL%%@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Manual/CVS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Manual
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
