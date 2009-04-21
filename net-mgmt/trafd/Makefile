@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	trafd
-PORTVERSION=	3.0.1
-PORTREVISION=	2
+PORTVERSION=	3.0.2.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.riss-telecom.ru/pub/dev/trafd/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	The BPF Traffic Collector
