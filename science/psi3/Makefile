@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	psi3
-PORTVERSION=	3.3.0
-PORTREVISION=	1
+PORTVERSION=	3.4.0
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.psicode.org/doc/:doc
@@ -32,12 +31,12 @@ USE_BLAS=     atlas
 
 . if ${USE_BLAS} == reference
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .elif ${USE_BLAS} == gotoblas
 LIB_DEPENDS+=	goto:${PORTSDIR}/math/gotoblas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
 BLAS=		-lgotop
 LAPACK=		-lgotop -llapack
 .elif ${USE_BLAS} == atlas
@@ -49,7 +48,6 @@ LAPACK=		-lalapack_r
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262
 USE_FORTRAN=	yes
 CONFIGURE_ARGS=	--with-cc=${CC} \
 		--with-cxx=${CXX} \
@@ -57,6 +55,7 @@ CONFIGURE_ARGS=	--with-cc=${CC} \
 		--with-lapack="${LAPACK}" \
 		--with-blas="${BLAS}" \
 		--datadir=${PREFIX}/share/psi3 \
+		--docdir=${WRKSRC}/tmpdoc/ \
 		--with-libdirs="-L${LOCALBASE}/lib" \
 		--with-libs="-lcompat"
 
@@ -76,10 +75,11 @@ CXXFLAGS+=	-mfancy-math-387
 WRKSRC=	${WRKDIR}/${PORTNAME}
 MAN1=	ccenergy.1 cceom.1 cints.1 clag.1 cscf.1 dboc.1 detcas.1 \
 	detcasman.1 detci.1 geom.1 input.1 intder.1 mocube.1 mp2.1 mp2r12.1 \
-	oeprop.1 optking.1 psi3.1 psiclean.1 stable.1 tocprint.1 transqt.1
+	nonbonded.1 oeprop.1 optking.1 psi3.1 psiclean.1 stable.1 tocprint.1 \
+	transqt.1
+
 pre-configure:
 	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
-	@${REINPLACE_CMD} -e 's|%%TMPDOC%%|${WRKSRC}/tmpdoc|g ' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTREAD_CFLAGS}|g ; \
 			      s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g'  ${WRKSRC}/src/bin/cints/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTREAD_CFLAGS}|g ; \
@@ -101,7 +101,9 @@ do-install:
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/userman.pdf ${DOCSDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/progman.pdf ${DOCSDIR}
 .endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${PREFIX}/share/examples/psi3
 	@${TAR} cf - -C ${WRKSRC}/tests .       | ${TAR} xf - -C ${PREFIX}/share/examples/psi3
+.endif
 
 .include <bsd.port.post.mk>
