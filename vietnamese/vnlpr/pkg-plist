@@ -1,7 +1,7 @@
 @comment $FreeBSD$
 bin/vnlpr
-share/doc/vnlpr/INSTALL
-share/doc/vnlpr/README
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
 share/vn-fonts/pr-am.ps
 share/vn-fonts/pr-hm.ps
 share/vn-fonts/pr-hy.ps
@@ -16,4 +16,4 @@ share/vn-fonts/mq_11.gsf
 share/vn-fonts/pt_11.gsf
 share/vn-fonts/th_11.gsf
 share/vn-fonts/uh_11.gsf
-@dirrm share/doc/vnlpr
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
