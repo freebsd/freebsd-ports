@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cakephp
-PORTVERSION=	1.2.1.8004
+PORTVERSION=	1.2.2.8120
 CATEGORIES=	www
-MASTER_SITES=	http://cakeforge.org/frs/download.php/697/ \
+MASTER_SITES=	http://cakeforge.org/frs/download.php/712/ \
 		LOCAL/glarkin
 PKGNAMESUFFIX=	-devel
 DISTNAME=	cake_${PORTVERSION}
@@ -116,9 +116,6 @@ USE_PHP+=	apc
 USE_PHP+=	memcache
 .endif
 
-# Include bash for Cake console script
-RUN_DEPENDS+=	bash>=0:${PORTSDIR}/shells/bash
-
 do-fetch:
 	@${INSTALL} -d ${DISTDIR}
 .if !exists(${DISTDIR}/${TARGET_DISTFILE})
@@ -179,9 +176,7 @@ do-install:
 	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
 		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 
-# Fix the bash shell path and the permissions of the Cake console script
-	@${REINPLACE_CMD} -e "s|^#!/bin/bash|#!${LOCALBASE}/bin/bash|" ${WWWDIR}/${CAKE_CONSOLE}
-	@${ECHO_CMD} '@exec ${REINPLACE_CMD} -e "s|^#!/bin/bash|#!${LOCALBASE}/bin/bash|" ${WWWDIR}/${CAKE_CONSOLE}' >> ${TMPPLIST}
+# Fix the permissions of the Cake console script
 	@${CHMOD} 755 ${WWWDIR}/${CAKE_CONSOLE}
 	@${ECHO_CMD} '@exec ${CHMOD} 755 ${WWWDIR}/${CAKE_CONSOLE}' >> ${TMPPLIST}
 
