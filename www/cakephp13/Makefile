@@ -143,6 +143,9 @@ confighelp:
 	@${ECHO_MSG} "http://manual.cakephp.org/chapter/installing"
 	@${ECHO_MSG} ""
 
+post-patch:
+	@${RM} ${WRKSRC}/cake/console/cake.orig	
+
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		".htaccess app cake index.php vendors" ${WWWDIR}
