@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.7.51
+PORTVERSION=	0.7.52
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -27,6 +27,7 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		HTTP_FANCYINDEX_MODULE "Enable http_fancyindex module" off \
 		HTTP_FLV_MODULE "Enable http_flv module" off \
 		HTTP_GZIP_STATIC_MODULE "Enable http_gzip_static module" off \
+		HTTP_MOGILEFS_MODULE "Enable mogilefs module" off \
 		HTTP_PERL_MODULE "Enable http_perl module" off \
 		HTTP_RANDOM_INDEX_MODULE "Enable http_random_index module" off \
 		HTTP_REALIP_MODULE "Enable http_realip module" off \
@@ -47,6 +48,7 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		MAIL_POP3_MODULE "Enable POP3 proxy module" off \
 		MAIL_SMTP_MODULE "Enable SMTP proxy module" off \
 		MAIL_SSL_MODULE "Enable mail_ssl module" off \
+		PASSENGER_MODULE "Enable passenger module" off \
 		WWW "Enable html sample files" on
 
 WANT_GNOME=	yes
@@ -132,6 +134,13 @@ CONFIGURE_ARGS+=--with-http_flv_module
 CONFIGURE_ARGS+=--with-http_gzip_static_module
 .endif
 
+.if defined(WITH_HTTP_MOGILEFS_MODULE)
+NGINX_MOGILEFS_MODULE_VERSION=	1.0.1
+MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:mogilefs
+DISTFILES+=	nginx_mogilefs_module-${NGINX_MOGILEFS_MODULE_VERSION}.tar.gz:mogilefs
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mogilefs_module-${NGINX_MOGILEFS_MODULE_VERSION}
+.endif
+
 .if defined(WITH_HTTP_PERL_MODULE)
 CATEGORIES+=	perl5
 CONFIGURE_ARGS+=--with-http_perl_module
@@ -171,8 +180,8 @@ CONFIGURE_ARGS+=--with-http_sub_module
 .endif
 
 .if defined(WITH_HTTP_UPLOAD_MODULE)
-NGINX_UPLOAD_MODULE_VERSION=	2.0.8
-MASTER_SITES+=	http://grid.net.ru/nginx/download/:upload
+NGINX_UPLOAD_MODULE_VERSION=	2.0.9
+MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:upload
 DISTFILES+=	nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}.tar.gz:upload
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}
 .endif
@@ -222,6 +231,14 @@ LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-pcre
 .endif
 
+.if defined(WITH_PASSENGER_MODULE)
+USE_RAKE=	yes
+PASSENGER_VERSION=	2.2.1
+MASTER_SITES+=	RF/passenger/:passenger
+DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
+.endif
+
 .if defined(WITH_WWW)
 PLIST_SUB+=	WWWDATA=""
 .else
@@ -257,11 +274,14 @@ CONFIGURE_ARGS+=--with-mail_ssl_module
 PLIST_SUB+=	NGINX_TMPDIR=${NGINX_TMPDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 pre-everything::
+	@${ECHO_MSG}
 .if defined(WITH_HTTP_UPSTREAM_FAIR)
-	@${ECHO_MSG}
 	@${ECHO_MSG} "Enable http_ssl module to build upstream_fair with SSL support"
-	@${ECHO_MSG}
 .endif
+.if defined(WITH_PASSENGER_MODULE)
+	@${ECHO_MSG} "This port install Passenger module only"
+.endif
+	@${ECHO_MSG}
 
 post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
@@ -276,9 +296,9 @@ post-patch:
 	@${PATCH} ${PATCH_ARGS} < \
 		${PATCHDIR}/extra-patch-ngx_http_fancyindex_module.c
 .endif
-.if defined(WITH_HTTP_UPLOAD_MODULE)
-	@${PATCH} ${PATCH_ARGS} < \
-		${PATCHDIR}/extra-patch-ngx_http_upload_module.c
+.if defined(WITH_PASSENGER_MODULE)
+	@${REINPLACE_CMD} 's!g++!${CXX}!' \
+		${WRKDIR}/passenger-${PASSENGER_VERSION}/Rakefile
 .endif
 
 do-build:
