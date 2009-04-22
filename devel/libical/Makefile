@@ -7,11 +7,12 @@
 
 PORTNAME=	libical
 PORTVERSION=	0.43
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freeassociation
 
-MAINTAINER=	joe@zircon.seattle.wa.us
+MAINTAINER=	gnome@freebsd.org
 COMMENT=	An implementation of the IETF's Calendaring and Scheduling protocols
 
 USE_GNOME=	gnomehack
@@ -33,4 +34,5 @@ CONFIGURE_ARGS=	--enable-python=no
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC"
 .endif
+
 .include <bsd.port.post.mk>
