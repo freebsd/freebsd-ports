@@ -29,7 +29,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/jbigi.jar
 
 JBIGI_BUILD_ENV=	\
 			CC="${CC}" \
-			CFLAGS="${CFLAGS}" \
+			CFLAGS="${CFLAGS} -fPIC -DPIC" \
 			LDFLAGS="${LDFLAGS} -static" \
 			JAVA_HOME="${JAVA_HOME}" \
 			LOCALBASE="${LOCALBASE}"

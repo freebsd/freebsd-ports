@@ -15,7 +15,7 @@
 -	COMPILEFLAGS="-fPIC -Wall"
 -	INCLUDES="-I. -I../../jbigi/include -I$JAVA_HOME/include -I$JAVA_HOME/include/linux"
 -	LINKFLAGS="-shared -Wl,-soname,libjbigi.so"
-+	COMPILEFLAGS="-fPIC -Wall ${CFLAGS}"
++	COMPILEFLAGS="-Wall ${CFLAGS}"
 +	INCLUDES="-I. -I${LOCALBASE}/include -Ijbigi/include -I$JAVA_HOME/include -I$JAVA_HOME/include/freebsd"
 +	LINKFLAGS="-shared -Wl,-soname,libjbigi.so ${LDFLAGS}"
  	LIBFILE="libjbigi.so";;
