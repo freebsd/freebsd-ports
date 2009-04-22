@@ -177,11 +177,14 @@ SUB_FILES+=		openssh
 PLIST_SUB+=		NOTBASE="@comment "
 PLIST_SUB+=		BASE=""
 PLIST_SUB+=		BASEPREFIX="${PREFIX}"
+PLIST_SUB+=		ERASEEMPTY="@comment "
 .else
 .if exists(/var/empty)
 EMPTYDIR=		/var/empty
+PLIST_SUB+=		ERASEEMPTY="@comment "
 .else
 EMPTYDIR=		${PREFIX}/empty
+PLIST_SUB+=		ERASEEMPTY=""
 .endif
 ETCSSH=			${PREFIX}/etc/ssh
 USE_RC_SUBR=		openssh
@@ -204,13 +207,8 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldes|-lcrypto|g' ${WRKSRC}/configure
-.if defined(WITH_OVERWRITE_BASE)
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${LOCALBASE}|' \
 		-e 's|%%RC_SCRIPT_NAME%%|${RC_SCRIPT_NAME}|' ${WRKSRC}/sshd.8
-.else
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
-		-e 's|%%RC_SCRIPT_NAME%%|${RC_SCRIPT_NAME}|' ${WRKSRC}/sshd.8
-.endif
 	@${REINPLACE_CMD} -E -e 's|SSH_VERSION|TMP_SSH_VERSION|' \
 		-e 's|.*SSH_RELEASE.*||' ${WRKSRC}/version.h
 	@${ECHO_CMD} '#define FREEBSD_PORT_VERSION	" FreeBSD-${PKGNAME}"' >> \
@@ -225,11 +223,7 @@ post-patch:
 .endif
 
 pre-su-install:
-.if defined(WITH_OVERWRITE_BASE)
 	@${MKDIR} ${EMPTYDIR}
-.else
-	@${MKDIR} ${PREFIX}/empty
-.endif
 	if ! pw groupshow sshd; then pw groupadd sshd -g 22; fi
 	if ! pw usershow sshd; then pw useradd sshd -g sshd -u 22 \
 		-h - -d ${EMPTYDIR} -s /nonexistent -c "sshd privilege separation"; fi
@@ -249,6 +243,7 @@ post-install:
 .if defined(WITH_OVERWRITE_BASE)
 	@${ECHO_CMD} "===> Installing rc.d startup script(s)"
 	@${ECHO_CMD} "@cwd ${LOCALBASE}" >> ${TMPPLIST}
+	@${MKDIR} ${LOCALBASE}/etc/rc.d
 	@${INSTALL_SCRIPT} ${WRKDIR}/openssh ${LOCALBASE}/etc/rc.d/${RC_SCRIPT_NAME}
 	@${ECHO_CMD} "etc/rc.d/${RC_SCRIPT_NAME}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
