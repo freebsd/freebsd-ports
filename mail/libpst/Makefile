@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libpst
-PORTVERSION=	0.6.35
+PORTVERSION=	0.6.37
 CATEGORIES=	mail converters
 MASTER_SITES=	http://www.five-ten-sg.com/libpst/packages/
 
@@ -33,7 +33,7 @@ MAN1=	lspst.1 pst2dii.1 pst2ldif.1 readpst.1 readpstlog.1
 MAN5=	outlook.pst.5
 
 post-patch:
-	${FIND} -X ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e 's/malloc.h/stdlib.h/g'
+	${FIND} -X ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -i "" -e 's/malloc.h/stdlib.h/g'
 	${REINPLACE_CMD} -e 's;doc\/@PACKAGE@-@VERSION@;doc\/@PACKAGE@;g' ${WRKSRC}/Makefile.in \
 	${WRKSRC}/html/Makefile.in
 
