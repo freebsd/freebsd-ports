@@ -18,6 +18,14 @@ COMMENT=	Easy-to-use greylist milter for sendmail
 CONFLICTS=	milter-greylist-devel-[1-9]*.*
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+OPTIONS=	MANPAGES "Install manpages" YES \
+		LIBSPF2 "Include SPF support" NO \
+		GEOIP "Include GeoIP support" NO \
+		CURL "Include curl support" NO \
+		POSTFIX "Use Postfix instead of Sendmail" NO
+
+.include <bsd.port.pre.mk>
+
 ##
 # Use the following quirks to choose which sendmail to use (ports or system):
 #
@@ -29,7 +37,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 # installed port preference over it.
 ##
 
-.if !defined (NO_INSTALL_MANPAGES)
+.if defined (WITH_MANPAGES)
 MAN5=		greylist.conf.5
 MAN8=		milter-greylist.8
 .endif
@@ -49,6 +57,9 @@ CONFIGURE_ARGS+=	--with-libGeoIP=${LOCALBASE}
 BUILD_DEPENDS+=	curl>=7.18:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-libcurl=${LOCALBASE}
 .endif
+.if defined(WITH_POSTFIX)
+CONFIGURE_ARGS+=	--enable-postfix
+.endif
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 CFLAGS+=	${PTHREAD_CFLAGS}
@@ -66,8 +77,10 @@ USE_RC_SUBR=	milter-greylist
 
 do-install:
 	@${MKDIR} ${PREFIX}/etc/mail
+.if defined (WITH_MANPAGES)
 	@${INSTALL_MAN} ${WRKSRC}/greylist.conf.5 ${PREFIX}/man/man5
 	@${INSTALL_MAN} ${WRKSRC}/milter-greylist.8 ${PREFIX}/man/man8
+.endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/milter-greylist ${PREFIX}/libexec
 	@${INSTALL_DATA} ${WRKSRC}/greylist.conf \
 			${PREFIX}/etc/mail/greylist.conf.sample
@@ -98,8 +111,6 @@ post-install:
 		${ECHO} "************************************************************"; \
 	) || ${TRUE}
 	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
