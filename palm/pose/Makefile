@@ -7,7 +7,7 @@
 
 PORTNAME=	pose
 PORTVERSION=	3.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	palm emulators
 MASTER_SITES=	http://www.palmos.com/dev/tools/emulator/sources/ \
 		http://www.palmos.com/dev/tools/emulator/:skins
@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--with-x --with-fltk=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		CFLAGS=-DBROKEN_VIRTUAL_DEFAULT_ARGUMENTS=1 \
 		LIBS="${PTHREAD_LIBS}"
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
