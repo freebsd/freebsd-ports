@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	libjbigi
-PORTVERSION=	0.6.1.28
+PORTVERSION=	0.7.2
 CATEGORIES=	math java
-MASTER_SITES=	http://dev.i2p.net/i2p/
-DISTNAME=	i2p-${PORTVERSION}
+MASTER_SITES=	http://mirror.i2p2.de/ \
+		${MASTER_SITE_GOOGLE_CODE}
+DISTNAME=	i2psource_${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	i2p JNI to GNU MP Bignum library (libgmp)
@@ -19,10 +20,10 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/libgmp4
 USE_BZIP2=	yes
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
-JAVA_VERSION=	1.4
+JAVA_VERSION=	1.5+
 JAVA_OS=	native
 
-WRKSRC=		${WRKDIR}/i2p_${PORTVERSION:S/./_/g}/core/c
+WRKSRC=		${WRKDIR}/i2p-${PORTVERSION}/core/c
 
 PLIST_FILES=	%%JAVAJARDIR%%/jbigi.jar
 
