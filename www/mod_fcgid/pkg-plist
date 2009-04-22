@@ -1,4 +1,4 @@
-libexec/apache%%APACHE_VERSION%%/mod_fcgid.so
+%%APACHEMODDIR%%/mod_fcgid.so
 @exec /bin/mkdir -p -m 700 /var/run/fcgidsock
 @exec /usr/sbin/chown www:www /var/run/fcgidsock
 @unexec /bin/rmdir /var/run/fcgidsock 2>/dev/null || true
