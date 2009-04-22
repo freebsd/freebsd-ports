@@ -51,8 +51,6 @@ RC_SCRIPT=	${PREFIX}/etc/rc.d/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
 CONFDIR=	${PREFIX}/etc/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/freevo|${PREFIX}/etc/freevo|' ${WRKSRC}/freevo_config.py
 	@${REINPLACE_CMD} -e 's|/etc/freevo|${PREFIX}/etc/freevo|' ${WRKSRC}/local_conf.py.example
@@ -64,4 +62,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/local_conf.py.example ${CONFDIR}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
