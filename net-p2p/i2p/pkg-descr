@@ -1,14 +1,21 @@
 [ excerpt from developer's web site ]
 
-I2P is an anonymous network, exposing a simple layer that applications
-can use to anonymously and securely send messages to each other.
-The network itself is strictly message based (ala IP), but there
-is a library available to allow reliable streaming communication
-on top of it (ala TCP). All communication is end to end encrypted
-(in total there are four layers of encryption used when sending a
-message), and even the end points ("destinations") are cryptographic
-identifiers (essentially a pair of public keys).
+I2P is an anonymizing network, offering a simple layer that
+identity-sensitive applications can use to securely communicate.
+All data is wrapped with several layers of encryption, and the
+network is both distributed and dynamic, with no trusted parties.
 
-WWW: http://www.i2p.net/
+Many applications are available that interface with I2P, including
+mail, peer-peer, IRC chat, and others.
+
+Anonymity is not a boolean - we are not trying to make something
+"perfectly anonymous", but instead are working at making attacks
+more and more expensive to mount. I2P alone is what could be called
+a "low latency mix network", and there are limits to the anonymity
+offered by such a system, but the applications on top of I2P, such
+as Syndie, I2P mail, and I2PSnark extend it to offer both additional
+functionality and protection.
+
+WWW: http://www.i2p2.de/
 
 -- lioux@FreeBSD.org

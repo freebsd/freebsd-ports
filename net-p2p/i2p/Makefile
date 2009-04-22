@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	i2p
-PORTVERSION=	0.6.1.30
+PORTVERSION=	0.7.2
 CATEGORIES=	net-p2p java security
-MASTER_SITES=	http://dev.i2p.net/i2p/:i2p \
-		${MASTER_SITE_SOURCEFORGE:S/$/:jetty/}
-MASTER_SITE_SUBDIR=	jetty/:jetty
+MASTER_SITES=	http://mirror.i2p2.de/:i2p \
+		${MASTER_SITE_GOOGLE_CODE}:i2p \
+		SF/jetty:jetty
 DISTFILES=	\
-		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:i2p \
+		i2psource_${PORTVERSION}${EXTRACT_SUFX}:i2p \
 		${JETTY_DISTFILE}:jetty
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	i2psource_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	lioux@FreeBSD.org
-COMMENT=	An anonymous network
+COMMENT=	An anonymizing network
 
-EXTRACT_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
@@ -28,7 +27,7 @@ USE_RC_SUBR=	i2p.sh
 
 JAVA_BUILD=	jdk
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 JAVA_OS=	native
 USE_ANT=	yes
 
@@ -41,32 +40,9 @@ ALL_TARGET+=	javadoc
 .endif
 
 JAVADOC_WRKSRC=	${WRKSRC}/build/javadoc
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/g}
-
-DOC_FILES=	\
-		readme.html \
-		allclasses-frame.html \
-		allclasses-noframe.html \
-		constant-values.html \
-		deprecated-list.html \
-		help-doc.html \
-		index.html \
-		overview-frame.html \
-		overview-summary.html \
-		overview-tree.html \
-		package-list \
-		serialized-form.html \
-		stylesheet.css
-DOC_DIRS=	\
-		freenet/ \
-		index-files/ \
-		net/ \
-		org/ \
-		resources/
 
 .ifndef(NOPORTDOCS)
-PORTDOCS=	${DOC_FILES} \
-		${DOC_DIRS}
+PORTDOCS=	*
 .endif
 
 PLIST_DIRS=	\
@@ -81,7 +57,6 @@ JETTY_DISTFILE=	jetty-5.1.12.zip
 post-extract:
 	@${MKDIR} ${WRKSRC}/apps/jetty/
 	@${CP} -f ${DISTDIR}/${JETTY_DISTFILE} ${WRKSRC}/apps/jetty/
-	@cd ${WRKSRC}/apps/jetty && ${ANT} doExtract
 
 post-patch:
 	@${SED} \
@@ -106,16 +81,11 @@ do-install:
 # doc
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/readme.html ${DOCSDIR}
-.for doc in ${DOC_FILES}
-	@if [ -f ${JAVADOC_WRKSRC}/${doc} ]; then \
-		${INSTALL_DATA} ${JAVADOC_WRKSRC}/${doc} ${DOCSDIR} ; \
-	fi
-.endfor
+	@${INSTALL_DATA} ${WRKSRC}/readme*.html ${DOCSDIR}
 # line taken from textproc/xerces-j maintained by hq@FreeBSD.org
 	@cd ${JAVADOC_WRKSRC} && \
-		${FIND} ${DOC_DIRS} -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
-		${FIND} ${DOC_DIRS} -not -type d -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
+		${FIND} * -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
+		${FIND} * -not -type d -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
 .endif
 
 .include <bsd.port.mk>
