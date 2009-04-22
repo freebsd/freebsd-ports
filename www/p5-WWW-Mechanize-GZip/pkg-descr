@@ -1,0 +1,15 @@
+The WWW::Mechanize::GZip module tries to fetch a URL by requesting
+gzip-compression from the webserver.
+
+If the response contains a header with 'Content-Encoding: gzip',
+it decompresses the response in order to get the original
+(uncompressed) content.
+
+This module will help to reduce bandwith fetching webpages, if
+supported by the webeserver. If the webserver does not support
+gzip-compression, no decompression will be made.
+
+This modules is a direct subclass of WWW::Mechanize and will
+therefore support any methods provided by WWW::Mechanize.
+
+WWW: http://search.cpan.org/dist/WWW-Mechanize-Gzip/
