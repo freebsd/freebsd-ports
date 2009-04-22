@@ -8,7 +8,7 @@ PORTNAME=	akonadi
 PORTVERSION=	1.1.1
 PORTREVISION=	2
 CATEGORIES=	databases kde ipv6
-MASTER_SITES=	http://akonadi.omat.nl/
+MASTER_SITES=	http://download.akonadi-project.org/
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
