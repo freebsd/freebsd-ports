@@ -1000,6 +1000,7 @@
     SUBDIR += rubygem-spreadsheet
     SUBDIR += rubygem-syntax
     SUBDIR += rubygem-tidy
+    SUBDIR += rubygem-xml-simple
     SUBDIR += rw-aspell
     SUBDIR += rxp
     SUBDIR += s5
