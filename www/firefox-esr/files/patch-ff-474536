@@ -1,0 +1,28 @@
+diff -U 8 -p -r3.181.2.104 jsinterp.c
+--- js/src/jsinterp.c	20 Oct 2008 15:43:57 -0000	3.181.2.104
++++ js/src/jsinterp.c	2 Apr 2009 14:44:48 -0000
+@@ -4722,21 +4722,21 @@ interrupt:
+ 
+             /*
+              * Try to optimize a property we either just created, or found
+              * directly in the global object, that is permanent, has a slot,
+              * and has stub getter and setter, into a "fast global" accessed
+              * by the JSOP_*GVAR opcodes.
+              */
+             if (atomIndex < script->numGlobalVars &&
+-                (attrs & JSPROP_PERMANENT) &&
+                 obj2 == obj &&
+                 OBJ_IS_NATIVE(obj)) {
+                 sprop = (JSScopeProperty *) prop;
+-                if (SPROP_HAS_VALID_SLOT(sprop, OBJ_SCOPE(obj)) &&
++                if ((sprop->attrs & JSPROP_PERMANENT) &&
++                    SPROP_HAS_VALID_SLOT(sprop, OBJ_SCOPE(obj)) &&
+                     SPROP_HAS_STUB_GETTER(sprop) &&
+                     SPROP_HAS_STUB_SETTER(sprop)) {
+                     /*
+                      * Fast globals use fp->vars to map the global name's
+                      * atomIndex to the permanent fp->varobj slot number,
+                      * tagged as a jsval.  The atomIndex for the global's
+                      * name literal is identical to its fp->vars index.
+                      */
+
