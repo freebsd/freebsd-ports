@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	upnp
-PORTVERSION=	1.6.5
+PORTVERSION=	1.6.6
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/pupnp
@@ -23,17 +23,15 @@ USE_GNOME=	gnomehack
 USE_DOS2UNIX=	yes
 USE_LDCONFIG=	yes
 
-MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
-CONFIGURE_ENV+=	LIBS="-llwres -lcompat"
+CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS=	--without-documentation
 .else
 CONFIGURE_ARGS=	--with-documentation=${DOCSDIR}
-.endif
 
-post-patch:
-	${FIND} ${WRKSRC} -type f | \
-	    ${XARGS} ${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,'
+PORTDOCS=	*
+.endif
 
 .include <bsd.port.mk>
