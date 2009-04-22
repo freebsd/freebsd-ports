@@ -35,7 +35,6 @@ _allowed_env="PATH USER PHP_FCGI_CHILDREN PHP_FCGI_MAX_REQUESTS FCGI_WEB_SERVER_
 _allowed_env="${_allowed_env} ${spawn_fcgi_allowed_env}"
 
 start_precmd="${name}_start_precmd"
-stop_cmd="${name}_stop_cmd"
 stop_postcmd="${name}_stop_postcmd"
 
 spawn_fcgi_start_precmd()
@@ -43,9 +42,9 @@ spawn_fcgi_start_precmd()
     touch ${pidfile}
     chown ${spawn_fcgi_user}:${spawn_fcgi_group} ${pidfile}
     export PATH=${spawn_fcgi_path_env}
-    export PHP_FCGI_CHILDREN=${spawn_fcgi_children}
-    export PHP_FCGI_MAX_REQUESTS=${spawn_fastcgi_max_requests}
     export USER=${spawn_fcgi_user}
+    export PHP_FCGI_CHILDREN=${spawn_fcgi_children}
+    export PHP_FCGI_MAX_REQUESTS=${spawn_fcgi_max_requests}
     export FCGI_WEB_SERVER_ADDRS=${spawn_fcgi_web_server_addrs}
     E=
     for i in ${_allowed_env}; do

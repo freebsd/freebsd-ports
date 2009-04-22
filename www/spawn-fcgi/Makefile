@@ -7,9 +7,9 @@
 
 PORTNAME=	spawn-fcgi
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://www.lighttpd.net/download/ \
-		http://mirrors.cat.pdx.edu/lighttpd/
+MASTER_SITES=	http://www.lighttpd.net/download/
 
 MAINTAINER=	genserg@hotmail.com
 COMMENT=	spawn-fcgi is used to spawn fastcgi applications
