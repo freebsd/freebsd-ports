@@ -24,10 +24,12 @@ rcvar=`set_rcvar`
 load_rc_config $name
 
 : ${pyspamd_enable="NO"}
+: ${pyspamd_config="/usr/local/etc/bayescustomize.ini"}
 
 command="/usr/sbin/daemon"
 command_args=" -p /var/run/pyspamd.pid /usr/local/bin/python -OO /usr/local/bin/sb_server.py 2>&1 >/dev/null"
 pidfile="/var/run/pyspamd.pid"
 procname="/usr/local/bin/python"
+export BAYESCUSTOMIZE=${pyspamd_config}
 
 run_rc_command "$1"
