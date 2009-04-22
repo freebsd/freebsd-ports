@@ -9,7 +9,7 @@ home=%%FREEVO_HOME%%
 
 export PATH=/bin:/usr/bin:/sbin:/usr/sbin
 
-if [ "$1" = "PRE-INSTALL" ]; then
+if [ "$2" = "POST-INSTALL" ]; then
 	if pw groupshow "$group" 2>/dev/null; then
 		echo "You already have a group \"$group\", so I will use it."
 	else
