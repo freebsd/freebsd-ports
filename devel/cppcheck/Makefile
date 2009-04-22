@@ -6,30 +6,42 @@
 #
 
 PORTNAME=	cppcheck
-PORTVERSION=	1.30
+PORTVERSION=	1.31
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	pgj@FreeBSD.org
 COMMENT=	Static analysis of C/C++ code
 
+USE_GMAKE=	yes
+USE_BZIP2=	yes
+
+PLIST_FILES=	bin/cppcheck
+
+ALL_TARGET=	cppcheck
+
+.if !defined(NO_INSTALL_MANPAGES)
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
 MANCOMPRESSED=	no
 MAN1=		cppcheck.1
+ALL_TARGET+=	cppcheck.1
 
-USE_GMAKE=	yes
-ALL_TARGET=	cppcheck cppcheck.1
-
-PLIST_FILES=	bin/cppcheck
+post-install:
+	@${INSTALL_MAN} ${WRKSRC}/cppcheck.1 ${PREFIX}/man/man1
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|CXXFLAGS=|CXXFLAGS= ${CXXFLAGS} |' \
+	@${REINPLACE_CMD} -e 's|CXXFLAGS=|CXXFLAGS= ${CXXFLAGS} | ; \
+		s|CXX=(.*)|CXX= ${CXX}|' \
 		${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cppcheck ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/cppcheck.1 ${PREFIX}/man/man1
+
+regression-test: build
+	@(cd ${BUILD_WRKSRC}; \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} test)
 
 .include <bsd.port.mk>
