@@ -7,7 +7,7 @@
 
 PORTNAME=	Plagger
 PORTVERSION=	0.7.17
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -49,6 +49,7 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
 		LIBERALXML "Liberal XML parsing Support" on \
 		XPATH "XPath Support" on \
 		BETTERHTML "Better html to text formatter" on \
+		PRSJPNDATE "Parse Japanese datetime format" off \
 		PUBLISHEXCEL "Publish::Excel Support" off \
 		FILTERPIPE "Filter::Pipe Support" off \
 		PUBLISHPLANET "Publish::Planet Support" on \
@@ -103,9 +104,7 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
 		PLANETINI "Subscription::PlanetINI Support" off \
 		SUMMARYENG "Summary-English Support" off \
 		SUMJPN "Summary::Japanes" off \
-		SUMTEXTORG "Summary-TextOriginal Support" off \
-# The below are not supported yet due to lack of depending ports
-#		PRSJPNDATE "Parse Japanese datetime format" off \
+		SUMTEXTORG "Summary-TextOriginal Support" off
 
 .include <bsd.port.pre.mk>
 
@@ -136,9 +135,9 @@ BUILD_DEPENDS+=	${SITE_PERL}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree \
 BUILD_DEPENDS+=	${SITE_PERL}/HTML/TreeBuilder/XPath.pm:${PORTSDIR}/www/p5-HTML-TreeBuilder-XPath
 .endif
 
-#.if !defined(WITH_PRSJPNDATE)
-#BUILD_DEPENDS+=	${SITE_PERL}/DateTime/Format/Japanese.pm:${PORTSDIR}/devel/p5-DateTime-Format-Japanese
-#.endif
+.if defined(WITH_PRSJPNDATE)
+BUILD_DEPENDS+=	${SITE_PERL}/DateTime/Format/Japanese.pm:${PORTSDIR}/japanese/p5-DateTime-Format-Japanese
+.endif
 
 .if defined(WITH_PUBLISHEXCEL)
 BUILD_DEPENDS+=	${SITE_PERL}/Spreadsheet/WriteExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel
