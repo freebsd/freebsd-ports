@@ -152,13 +152,21 @@ case $2 in
 	        echo -n 's:^(libdir[[:space:]=]+)(.*[[:space:]:]+)?' ; \
 	        echo -n $( echo ${radius_libdir} | \
 	            sed -Ee 's:^(.*)-[[:digit:].]+$:\1:' ) ; \
-	        echo -n '(-[[:digit:].]+)?([[:space:]:]+.*)?$' ; \ 
+	        echo -n '(-[[:digit:].]+)?([[:space:]:]+.*)?$' ; \
 		echo -n ':\1\2'${radius_libdir}'\4:' \
 	    ) ${radius_raddb}/radiusd.conf; then
 	    echo "Failed to update libdir in ${radius_raddb}/radius.conf"
 	    exit 1
 	fi
-	rm ${radius_raddb}/radiusd.conf.update-libdir-original
+
+	if [ -f ${radius_raddb}/radiusd.conf.update-libdir-original ]; then
+		if ! rm ${radius_raddb}/radiusd.conf.update-libdir-original; then
+			echo -n 'Failed to delete backup file '
+			echo "${radius_raddb}/radiusd.conf.update-libdir-original."
+			exit 1
+		fi
+	fi
+
         ;;
 esac
 
