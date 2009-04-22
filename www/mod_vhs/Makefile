@@ -9,7 +9,7 @@ PORTNAME=	mod_vhs
 PORTVERSION=	1.0.32
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://www.oav.net/projects/mod_vhs/
+MASTER_SITES=	http://www.oav.net/projects/${PORTNAME}/
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	kiwi@oav.net
@@ -17,35 +17,35 @@ COMMENT=	Allows mass virtual hosting using libhome system with Apache 2.0.x
 
 LIB_DEPENDS+=	home:${PORTSDIR}/misc/libhome
 
-WITH_APACHE2=	yes
+USE_APACHE=	2.0
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 WANT_PHP_MOD=	yes
-WANT_APACHE=	2
-AP_FAST_BUILD=	YES
-AP_GENPLIST=	YES
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-AP_INC+=	${LOCALBASE}/include/home
+AP_INC+=	${LOCALBASE}/include/home \
+		   	-I ${LOCALBASE}/include/php \
+			-I ${LOCALBASE}/include/php/Zend \
+			-I ${LOCALBASE}/include/php/TSRM \
+			-I ${LOCALBASE}/include/php/main
 AP_LIB+=	${LOCALBASE}/lib -lhome
-AP_EXTRAS+=	-I ${LOCALBASE}/include/php -I ${LOCALBASE}/include/php/Zend -I ${LOCALBASE}/include/php/TSRM -I ${LOCALBASE}/include/php/main -DHAVE_MOD_PHP_SUPPORT
+AP_EXTRAS+=	-DHAVE_MOD_PHP_SUPPORT
 
 PORTDOCS=	ChangeLog AUTHORS README.logs README.wildcards WARNING \
 		README.phpopt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
-
 post-install:
 .if !defined (NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.   for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.   endfor
+	@${MKDIR} ${DOCSDIR}/
+.for f in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
 .endif
 
 # TODO :
 #   Add suphp support
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
