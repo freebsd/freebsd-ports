@@ -22,10 +22,4 @@ CONFIGURE_ENV+=	YACC=${YACC}
 MAN5=		wackamole.conf.5
 MAN8=		wackamole.8 wackatrl.8
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800059
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
