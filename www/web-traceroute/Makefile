@@ -17,7 +17,7 @@ MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	WWW Traceroute CGI script written in C
 
 PLIST_FILES=	www/cgi-bin/trace
-USE_APACHE=	yes
+USE_APACHE=	1.3
 
 #pre-configure:
 #	${SH} ${SCRIPTDIR}/locate-template.sh
