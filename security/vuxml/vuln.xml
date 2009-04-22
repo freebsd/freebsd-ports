@@ -34,6 +34,84 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3b18e237-2f15-11de-9672-0030843d3802">
+    <topic>mozilla  -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>2.0.0.20_7,1</lt></range>
+	<range><gt>3.*,1</gt><lt>3.0.9,1</lt></range>
+      </package>
+      <package>
+        <name>linux-firefox</name>
+	<name>linux-firefox-devel</name>
+	<name>linux-seamonkey-devel</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+        <name>seamonkey</name>
+	<name>linux-seamonkey</name>
+	<range><lt>1.1.17</lt></range>
+      </package>
+      <package>
+        <name>thunderbird</name>
+	<name>linux-thunderbird</name>
+	<range><lt>2.0.0.22</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mozilla Foundation reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2009-22: Firefox allows Refresh header to redirect to
+	    javascript: URIs</p>
+	  <p>MFSA 2009-21: POST data sent to wrong site when saving web page
+	    with embedded frame</p>
+	  <p>MFSA 2009-20: Malicious search plugins can inject code into
+	    arbitrary sites</p>
+	  <p>MFSA 2009-19: Same-origin violations in XMLHttpRequest and
+	    XPCNativeWrapper.toString</p>
+	  <p>MFSA 2009-18: XSS hazard using third-party stylesheets and XBL
+	    bindings</p>
+	  <p>MFSA 2009-17: Same-origin violations when Adobe Flash loaded via
+	    view-source: scheme</p>
+	  <p>MFSA 2009-16: jar: scheme ignores the content-disposition: header
+	    on the inner URI</p>
+	  <p>MFSA 2009-15: URL spoofing with box drawing character</p>
+	  <p>MFSA 2009-14  Crashes with evidence of memory corruption
+	    (rv:1.9.0.9)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>34656</bid>
+      <cvename>CVE-2009-1303</cvename>
+      <cvename>CVE-2009-1306</cvename>
+      <cvename>CVE-2009-1307</cvename>
+      <cvename>CVE-2009-1308</cvename>
+      <cvename>CVE-2009-1309</cvename>
+      <cvename>CVE-2009-1312</cvename>
+      <cvename>CVE-2009-1311</cvename>
+      <cvename>CVE-2009-1302</cvename>
+      <cvename>CVE-2009-1304</cvename>
+      <cvename>CVE-2009-1305</cvename>
+      <cvename>CVE-2009-1310</cvename>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-22.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-21.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-20.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-19.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-18.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-17.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-16.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-15.html</url>
+      <url>http://www.mozilla.org/security/announce/2009/mfsa2009-14.html</url>
+    </references>
+    <dates>
+      <discovery>2009-04-21</discovery>
+      <entry>2009-04-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="50d233d9-374b-46ce-922d-4e6b3f777bef">
     <topic>poppler -- Poppler Multiple Vulnerabilities</topic>
     <affects>
