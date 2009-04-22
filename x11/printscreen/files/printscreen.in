@@ -1,13 +1,88 @@
 #!/bin/sh 
 
-PATH=/bin:/usr/local/bin
+PATH=/bin:/usr/bin:/usr/local/bin
 
+xwdcommon='-nobdrs'
+xwdroot='-root'
+
+INFMT=pnm
+OUTFMT=png
 STOREDIR="${HOME}/.screenshots"
 SHOTDATE="$(date +%Y.%m.%d-%H.%M.%S)"
-SHOTNAME="${STOREDIR}/screenshot-${SHOTDATE}.png"
 
-if [ ! -d "${STOREDIR}" ]; then
-	mkdir "${STOREDIR}"
-fi 
+parse_options()
+{
+	local OPT OPTARG OPTIND fmt fmtlist i
 
-xwd -root | xwdtopnm 2>/dev/null | pnmtopng 2>/dev/null > "${SHOTNAME}"
+	while getopts d:f:bhlqs OPT; do
+		# escape meta
+		OPTARG=${OPTARG%%[;\\\$]*}
+
+		case ${OPT} in
+		b)	xwdcommon="${xwdcommon} -frame" ;;
+		d)	delay="${OPTARG}" ;;
+		f)
+			OUTFMT="${OPTARG}"
+			unset INFMT
+
+			for fmt in pnm pbm pgm ppm; do
+				if [ -x /usr/local/bin/${fmt}to${OUTFMT} ]; then
+					INFMT=${fmt}
+					break
+				fi
+			done
+
+			[ -z "${INFMT}" ] && usage
+			;;
+		l)
+			for i in /usr/local/bin/p[nbgp]mto*; do
+				fmtlist="${fmtlist} $(echo ${i} | \
+				sed -Ee's:/usr/local/bin/(pnm|pbm|pgm|ppm)to::')"
+			done
+			echo Supported output formats:
+			echo ${fmtlist}
+			exit 0
+			;;
+		q)	xwdcommon="${xwdcommon} -silent";;
+		s)	unset xwdroot ;;
+		h|*)	usage ;;
+		esac
+	done
+
+	OPTC=$((${OPTIND} - 1))
+}
+
+usage()
+{
+	echo "usage: ${0##*/} [-bhlqs] [-d sec] [-f outfmt] [shotname]"
+	echo '	-b when selecting a window, grab wm border too'
+	echo '	-d wait sec seconds before taking a shot'
+	echo '	-f set output format'
+	echo '	-h display this help and exit'
+	echo '	-l list output formats'
+	echo '	-q be silent'
+	echo '	-s interactively choose a window'
+	echo
+	echo "Screenshots stored in ${HOME}/.screenshots"
+	echo
+	exit 1
+}
+
+parse_options ${1+"$@"}
+shift ${OPTC}
+
+if [ -z ${@+1} ]; then
+	SHOTNAME="${STOREDIR}/screenshot-${SHOTDATE}.${OUTFMT}"
+else
+	SHOTNAME=$1
+	shift
+
+	[ -z ${@+1} ] || usage
+fi
+
+[ -d "${STOREDIR}" ] || mkdir "${STOREDIR}"
+
+[ -n "${delay}" ] && sleep "${delay}"
+
+xwd ${xwdcommon} ${xwdroot} | xwdtopnm 2>/dev/null | \
+	"${INFMT}to${OUTFMT}" 2>/dev/null > "${SHOTNAME}"
