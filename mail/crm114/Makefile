@@ -18,7 +18,7 @@ MASTER_SITES=	http://crm114.sourceforge.net/tarballs/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${CRM114RELEASENAME}.src
 
 MAINTAINER=	hideo@lastamericanempire.com
-COMMENT=	An Markov based SpamFilter
+COMMENT=	A Markov based SpamFilter
 
 LIB_DEPENDS=	tre.6:${PORTSDIR}/textproc/libtre
 
