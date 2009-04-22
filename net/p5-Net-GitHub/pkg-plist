@@ -1,0 +1,27 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/GitHub/.packlist
+%%SITE_PERL%%/Net/GitHub.pm
+%%SITE_PERL%%/Net/GitHub/V1.pm
+%%SITE_PERL%%/Net/GitHub/V1/Project.pm
+%%SITE_PERL%%/Net/GitHub/V1/Project/Downloads.pm
+%%SITE_PERL%%/Net/GitHub/V1/Project/Info.pm
+%%SITE_PERL%%/Net/GitHub/V1/Project/Role.pm
+%%SITE_PERL%%/Net/GitHub/V1/Project/Source.pm
+%%SITE_PERL%%/Net/GitHub/V1/Project/Wiki.pm
+%%SITE_PERL%%/Net/GitHub/V1/Role.pm
+%%SITE_PERL%%/Net/GitHub/V1/Search.pm
+%%SITE_PERL%%/Net/GitHub/V1/User.pm
+%%SITE_PERL%%/Net/GitHub/V2.pm
+%%SITE_PERL%%/Net/GitHub/V2/Commits.pm
+%%SITE_PERL%%/Net/GitHub/V2/Issues.pm
+%%SITE_PERL%%/Net/GitHub/V2/Network.pm
+%%SITE_PERL%%/Net/GitHub/V2/Object.pm
+%%SITE_PERL%%/Net/GitHub/V2/Repositories.pm
+%%SITE_PERL%%/Net/GitHub/V2/Role.pm
+%%SITE_PERL%%/Net/GitHub/V2/Users.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/GitHub
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrm %%SITE_PERL%%/Net/GitHub/V2
+@dirrm %%SITE_PERL%%/Net/GitHub/V1/Project
+@dirrm %%SITE_PERL%%/Net/GitHub/V1
+@dirrm %%SITE_PERL%%/Net/GitHub
+@dirrmtry %%SITE_PERL%%/Net
