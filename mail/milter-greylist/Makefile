@@ -18,11 +18,11 @@ COMMENT=	Easy-to-use greylist milter for sendmail
 CONFLICTS=	milter-greylist-devel-[1-9]*.*
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS=	MANPAGES "Install manpages" YES \
-		LIBSPF2 "Include SPF support" NO \
-		GEOIP "Include GeoIP support" NO \
-		CURL "Include curl support" NO \
-		POSTFIX "Use Postfix instead of Sendmail" NO
+OPTIONS=	MANPAGES "Install manpages" on\
+		LIBSPF2 "Include SPF support" off\
+		GEOIP "Include GeoIP support" off\
+		CURL "Include curl support" off\
+		POSTFIX "Use Postfix instead of Sendmail" off
 
 .include <bsd.port.pre.mk>
 
