@@ -27,8 +27,8 @@ CRM114RELEASENAME=BlameSentansoken
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" prefix="${PREFIX}" \
-		LDFLAGS="${LDFLAGS}" LIBS="${LIBS}" \
+MAKE_ARGS=	CC="${CC}" prefix="${PREFIX}" \
+		LIBS="${LIBS}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
 CFLAGS+=	-I${LOCALBASE}/include
@@ -43,10 +43,29 @@ CRM_FILES=	mailfilter.crm mailfilter.cf mailreaver.crm mailtrainer.crm \
 		blacklist.mfp.example whitelist.mfp.example crm114-mode.el \
 		procmailrc.recipe
 
+OPTIONS=	PGO "Enable Profile-Guided Optimization" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PGO)
+MAKE_ARGS+=	CFLAGS="${CFLAGS} -fprofile-use" \
+		LDFLAGS="${LDFLAGS} -fprofile-use"
+.else
+MAKE_ARGS+=	CFLAGS="${CFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -Ee \
 	  's,^((LD|C)FLAGS),#\1,;;s,^(prefix=),#\1,;;s,^(.*-install),#\1,' \
 	  ${WRKSRC}/Makefile
+
+.if defined(WITH_PGO)
+.if target(pre-build)
+.error Makefile error since pre-build target has already been defined
+.endif
+pre-build: pgo
+.endif
 
 # Peter Jeremy recommended the use of b64decode and md5 20040302
 post-install:
@@ -78,4 +97,19 @@ post-install:
 	done
 .endif
 
-.include <bsd.port.mk>
+.if defined(WITH_PGO)
+pgo: pgo-build pgo-run pgo-clean
+
+pgo-build:
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} CFLAGS="${CFLAGS} -fprofile-generate" LDFLAGS="${LDFLAGS} -fprofile-generate" ${ALL_TARGET})
+
+pgo-run:
+# Check everything to generate profiling information.
+# We will ignore any errors.
+	@-(cd ${BUILD_WRKSRC}; ${MAKE} megatest)
+
+pgo-clean:
+	@(cd ${BUILD_WRKSRC}; ${MAKE} clean)
+.endif # if defined(WITH_PGO)
+
+.include <bsd.port.post.mk>
