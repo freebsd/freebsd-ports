@@ -285,8 +285,6 @@ share/libgphoto2/%%VERSION%%/konica/spanish
 %%NLS%%share/locale/it/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/libgphoto2-2.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/libgphoto2_port-0.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/libgphoto2-2.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libgphoto2-2.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libgphoto2-2.mo
@@ -295,8 +293,6 @@ share/libgphoto2/%%VERSION%%/konica/spanish
 %%NLS%%share/locale/ru/LC_MESSAGES/libgphoto2-2.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/libgphoto2_port-0.mo
-%%NLS%%share/locale/sl/LC_MESSAGES/libgphoto2-2.mo
-%%NLS%%share/locale/sl/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libgphoto2-2.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/libgphoto2-2.mo
