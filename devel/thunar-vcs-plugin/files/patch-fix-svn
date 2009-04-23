@@ -1,0 +1,22 @@
+--- tsp-svn-helper/tsh-common.c.orig   2009-03-14 22:54:06.000000000 +0200
++++ tsp-svn-helper/tsh-common.c        2009-04-21 09:12:45.000000000 +0300
+@@ -34,6 +34,7 @@
+ #include <subversion-1/svn_pools.h>
+ #include <subversion-1/svn_fs.h>
+ #include <subversion-1/svn_time.h>
++#include <subversion-1/svn_props.h>
+ 
+ #include "tsh-dialog-common.h"
+ #include "tsh-login-dialog.h"
+--- tsp-svn-helper/tsh-properties-dialog.c.orig        2009-03-14 22:54:06.000000000 +0200
++++ tsp-svn-helper/tsh-properties-dialog.c     2009-04-21 09:13:12.000000000 +0300
+@@ -25,6 +25,7 @@
+ #include <gtk/gtk.h>
+ 
+ #include <subversion-1/svn_client.h>
++#include <subversion-1/svn_props.h>
+ 
+ #include "tsh-common.h"
+ #include "tsh-properties-dialog.h"
+
+
