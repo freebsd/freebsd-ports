@@ -1,0 +1,20 @@
+lib/pidgin/birthday_reminder.so
+lib/pidgin/birthday_reminder.la
+lib/pidgin/birthday_reminder.a
+share/locale/de/LC_MESSAGES/birthday_reminder.mo
+share/pixmaps/pidgin/birthday_reminder/birthday0.png
+share/pixmaps/pidgin/birthday_reminder/birthday1.png
+share/pixmaps/pidgin/birthday_reminder/birthday2.png
+share/pixmaps/pidgin/birthday_reminder/birthday3.png
+share/pixmaps/pidgin/birthday_reminder/birthday4.png
+share/pixmaps/pidgin/birthday_reminder/birthday5.png
+share/pixmaps/pidgin/birthday_reminder/birthday6.png
+share/pixmaps/pidgin/birthday_reminder/birthday7.png
+share/pixmaps/pidgin/birthday_reminder/birthday8.png
+share/pixmaps/pidgin/birthday_reminder/birthday9.png
+share/sounds/pidgin/birthday_reminder/birthday.wav
+@dirrmtry share/sounds/pidgin/birthday_reminder
+@dirrmtry share/sounds/pidgin
+@dirrmtry share/pixmaps/pidgin/birthday_reminder
+@dirrmtry share/pixmaps/pidgin
+@dirrmtry lib/pidgin
