@@ -1,0 +1,15 @@
+--- Makefile.orig	2009-01-29 19:21:05.000000000 +0100
++++ Makefile	2009-04-19 14:27:04.264746884 +0200
+@@ -25,10 +25,12 @@
+ 
+ # better way to find if we are using ipf or pf
+ .if $(OSNAME) == "FreeBSD"
++.if defined(/etc/rc.subr) && defined(/etc/rc.conf)
+ FWNAME != . /etc/rc.subr; . /etc/rc.conf; \
+           if checkyesno ipfilter_enable; then \
+           echo "ipf"; else echo "pf"; fi
+ .endif
++.endif
+ 
+ # Solaris specific CFLAGS
+ .if $(OSNAME) == "SunOS"
