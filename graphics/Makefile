@@ -94,6 +94,7 @@
     SUBDIR += deegree-igeoportal
     SUBDIR += deegree-wcs
     SUBDIR += deegree-wfs
+    SUBDIR += deegree-wms
     SUBDIR += demeter
     SUBDIR += devil
     SUBDIR += dia
