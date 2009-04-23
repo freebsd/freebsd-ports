@@ -738,6 +738,7 @@
     SUBDIR += p5-Catalyst-Plugin-Cache-Memcached-Fast
     SUBDIR += p5-Catalyst-Plugin-Cache-Store-FastMmap
     SUBDIR += p5-Catalyst-Plugin-Captcha
+    SUBDIR += p5-Catalyst-Plugin-CommandLine
     SUBDIR += p5-Catalyst-Plugin-ConfigLoader
     SUBDIR += p5-Catalyst-Plugin-ConfigLoader-Environment
     SUBDIR += p5-Catalyst-Plugin-CookiedSession

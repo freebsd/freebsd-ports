@@ -1,0 +1,4 @@
+Use this module if you need to have access to the Catalyst controllers or
+models from command line script.
+
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-CommandLine/
