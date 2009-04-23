@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tokyodystopia
-PORTVERSION=	0.9.10
-PORTREVISION=	2
+PORTVERSION=	0.9.11
 CATEGORIES=	textproc
 MASTER_SITES=	SOURCEFORGE \
 		http://tokyocabinet.sourceforge.net/dystopiapkg/
@@ -37,7 +36,7 @@ MAN3=	dystopia.3 \
 	tcqdb.3 \
 	tcwdb.3
 
-SHLIB_VER=	1.11.0
+SHLIB_VER=	1.12.0
 SHLIB_VER_MAJ=	1
 
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
