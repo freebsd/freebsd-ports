@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	rightaws
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RF
+MASTER_SITE_SUBDIR=	rightscale
 DISTNAME=	right_aws-${PORTVERSION}
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Provides access to Amazon EC2, S3, SQS, and SDB web services
 
-RUN_DEPENDS=	rubygem-righthttpconnection>=1.2.1:${PORTSDIR}/net/rubygem-righthttpconnection
+RUN_DEPENDS=	rubygem-righthttpconnection>=1.2.4:${PORTSDIR}/net/rubygem-righthttpconnection
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
