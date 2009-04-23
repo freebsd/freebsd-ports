@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/Simple/.packlist
+%%SITE_PERL%%/XML/LibXML/Simple.pm
+%%SITE_PERL%%/XML/LibXML/Simple.pod
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/LibXML
+@dirrmtry %%SITE_PERL%%/XML
