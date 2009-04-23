@@ -1,5 +1,6 @@
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README
+%%WWWDIR%%/config/.htaccess
 %%WWWDIR%%/config/config.ini.sample.php
 %%WWWDIR%%/config/global.ini.php
 %%WWWDIR%%/core/API/DataTableGenericFilter.php
@@ -17,9 +18,8 @@
 %%WWWDIR%%/core/ArchiveProcessing/Day.php
 %%WWWDIR%%/core/ArchiveProcessing/Period.php
 %%WWWDIR%%/core/ArchiveProcessing/Record.php
+%%WWWDIR%%/core/ArchiveProcessing/RecordArray.php
 %%WWWDIR%%/core/ArchiveProcessing/Record/Blob.php
-%%WWWDIR%%/core/ArchiveProcessing/Record/BlobArray.php
-%%WWWDIR%%/core/ArchiveProcessing/Record/Manager.php
 %%WWWDIR%%/core/ArchiveProcessing/Record/Numeric.php
 %%WWWDIR%%/core/Auth.php
 %%WWWDIR%%/core/CacheFile.php
@@ -123,6 +123,8 @@
 %%WWWDIR%%/core/Updates/0.2.24.php
 %%WWWDIR%%/core/Updates/0.2.27.php
 %%WWWDIR%%/core/Updates/0.2.32.php
+%%WWWDIR%%/core/Updates/0.2.33.php
+%%WWWDIR%%/core/Updates/0.2.34.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
@@ -141,15 +143,20 @@
 %%WWWDIR%%/core/ViewDataTable/HtmlTable/Goals.php
 %%WWWDIR%%/core/ViewDataTable/Sparkline.php
 %%WWWDIR%%/core/Visualization/Chart.php
-%%WWWDIR%%/core/Visualization/ChartEvolution.php
-%%WWWDIR%%/core/Visualization/ChartPie.php
-%%WWWDIR%%/core/Visualization/ChartVerticalBar.php
 %%WWWDIR%%/core/Visualization/Cloud.php
 %%WWWDIR%%/core/Visualization/OpenFlashChart.php
 %%WWWDIR%%/core/Visualization/Sparkline.php
+%%WWWDIR%%/core/Visualization/Chart/Evolution.php
+%%WWWDIR%%/core/Visualization/Chart/Pie.php
+%%WWWDIR%%/core/Visualization/Chart/VerticalBar.php
 %%WWWDIR%%/core/iView.php
 %%WWWDIR%%/core/testMinimumPhpVersion.php
 %%WWWDIR%%/index.php
+%%WWWDIR%%/lang/da.php
+%%WWWDIR%%/lang/el.php
+%%WWWDIR%%/lang/et.php
+%%WWWDIR%%/lang/gl.php
+%%WWWDIR%%/lang/ro.php
 %%WWWDIR%%/lang/ca.php
 %%WWWDIR%%/lang/de.php
 %%WWWDIR%%/lang/en.php
@@ -642,6 +649,7 @@
 %%WWWDIR%%/plugins/ExampleAPI/ExampleAPI.php
 %%WWWDIR%%/plugins/ExampleFeedburner/ExampleFeedburner.php
 %%WWWDIR%%/plugins/ExampleFeedburner/feedburner.tpl
+%%WWWDIR%%/plugins/ExamplePlugin/lang/en.php
 %%WWWDIR%%/plugins/ExamplePlugin/ExamplePlugin.php
 %%WWWDIR%%/plugins/ExampleRssWidget/ExampleRssWidget.php
 %%WWWDIR%%/plugins/ExampleRssWidget/styles.css
@@ -697,6 +705,7 @@
 %%WWWDIR%%/plugins/Live/templates/index.tpl
 %%WWWDIR%%/plugins/Live/templates/lastVisits.tpl
 %%WWWDIR%%/plugins/Live/templates/scripts/spy.js
+%%WWWDIR%%/plugins/Live/templates/structure.tpl
 %%WWWDIR%%/plugins/Login/Auth.php
 %%WWWDIR%%/plugins/Login/Controller.php
 %%WWWDIR%%/plugins/Login/Form.php
@@ -1289,6 +1298,7 @@
 @dirrm %%WWWDIR%%/plugins/Goals
 @dirrm %%WWWDIR%%/plugins/Feedback
 @dirrm %%WWWDIR%%/plugins/ExampleRssWidget
+@dirrm %%WWWDIR%%/plugins/ExamplePlugin/lang
 @dirrm %%WWWDIR%%/plugins/ExamplePlugin
 @dirrm %%WWWDIR%%/plugins/ExampleFeedburner
 @dirrm %%WWWDIR%%/plugins/ExampleAPI
@@ -1312,6 +1322,7 @@
 @dirrm %%WWWDIR%%/misc/testJavascriptTracker
 @dirrm %%WWWDIR%%/misc/generateVisitsData
 @dirrm %%WWWDIR%%/misc/cron
+@dirrm %%WWWDIR%%/misc/UI
 @dirrm %%WWWDIR%%/misc
 @dirrm %%WWWDIR%%/libs/upgradephp
 @dirrm %%WWWDIR%%/libs/swfobject
@@ -1384,6 +1395,7 @@
 @dirrm %%WWWDIR%%/libs/Event
 @dirrm %%WWWDIR%%/libs
 @dirrm %%WWWDIR%%/lang
+@dirrm %%WWWDIR%%/core/Visualization/Chart
 @dirrm %%WWWDIR%%/core/Visualization
 @dirrm %%WWWDIR%%/core/ViewDataTable/HtmlTable
 @dirrm %%WWWDIR%%/core/ViewDataTable/GenerateGraphHTML
