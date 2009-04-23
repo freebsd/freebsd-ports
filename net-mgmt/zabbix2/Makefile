@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	zabbix
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.6.4
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
-MAINTAINER=	d.lohansky@zsupport.ru
+MAINTAINER=	ports@christianserving.org
 COMMENT=	Application and network monitoring solution
 
 LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp \
