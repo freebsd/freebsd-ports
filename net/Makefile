@@ -842,6 +842,7 @@
     SUBDIR += rubygem-oauth
     SUBDIR += rubygem-openid
     SUBDIR += rubygem-rightaws
+    SUBDIR += rubygem-rightflexiscale
     SUBDIR += rubygem-rightgogrid
     SUBDIR += rubygem-righthttpconnection
     SUBDIR += rubygem-rightslicehost
