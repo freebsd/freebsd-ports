@@ -195,6 +195,7 @@
     SUBDIR += libsx
     SUBDIR += libsynaptics
     SUBDIR += libxcb
+    SUBDIR += libxdg-basedir
     SUBDIR += libxfce4menu
     SUBDIR += libxfce4util
     SUBDIR += libxkbfile
