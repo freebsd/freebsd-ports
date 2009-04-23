@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	punbb
-PORTVERSION=	1.2.16
+PORTVERSION=	1.2.21
 CATEGORIES=	www
-MASTER_SITES=	http://punbb.org/download/ \
-		http://punbb.org/download/plugins/:plugins \
-		http://mirror.ordo.dk/punbb.org/ \
-		http://punbb.mirrors.typhon.net/ \
-		http://punbb.4any.org/ \
+MASTER_SITES=	http://punbb.informer.com/download/ \
+		http://punbb.informer.com/download/plugins/:plugins \
+		http://punbb.informer.com/download/lang_packs-1.2/:lang \
 		http://freebsd.csie.nctu.edu.tw/~gslin/files/punbb-${PORTVERSION}/:lang
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${LANGFILES:S/$/:lang/} \
@@ -24,9 +22,7 @@ COMMENT=	A fast and lightweight PHP-powered discussion board
 
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 
-PORTDOCS=	about.html dev.html faq.html \
-		index.html install.html
-PORTEXAMPLES=	12_to_1216_update.php example_config.php \
+PORTEXAMPLES=	12_to_1221_update.php example_config.php \
 		turn_off_maintenance_mode.php
 SUB_FILES=	pkg-message
 
@@ -125,10 +121,6 @@ do-install:
 .for i in ${PLUGINS}
 	${UNZIP_CMD} -o ${DISTDIR}/${i} -d ${WWWDIR}/plugins
 .endfor
-
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
 
 .if !defined(NOPORTEXAMPLES)
 	@${INSTALL} -d ${EXAMPLESDIR}
