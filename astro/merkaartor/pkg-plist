@@ -1,0 +1,11 @@
+bin/merkaartor
+%%DATADIR%%/translations/merkaartor_ar.qm
+%%DATADIR%%/translations/merkaartor_cs.qm
+%%DATADIR%%/translations/merkaartor_de.qm
+%%DATADIR%%/translations/merkaartor_es.qm
+%%DATADIR%%/translations/merkaartor_fr.qm
+%%DATADIR%%/translations/merkaartor_it.qm
+%%DATADIR%%/translations/merkaartor_pl.qm
+%%DATADIR%%/translations/merkaartor_ru.qm
+@dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%
