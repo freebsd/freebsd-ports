@@ -1,0 +1,12 @@
+
+
+          **************************************************
+          *                                                *
+          *  To configure this script prior to running it  *
+          *  the first time, please use the [-c] command   *
+          *         line option; i.e.: scamp.sh -c         *
+          *                                                *
+          *  This will create a new config file and exit.  *
+          *                                                *
+          **************************************************
+

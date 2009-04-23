@@ -1,0 +1,11 @@
+This Bash script will download and install definition files for Clamav from the
+following sites:
+
+sanesecurity.com
+malware.com.br
+msrbl.com
+clamav.securiteinfo.com
+
+Site Address:
+
+WWW: https://sourceforge.net/projects/scamp/
