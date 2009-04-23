@@ -1,0 +1,9 @@
+A WPVS is a web service which is able to generate perspective terrain
+views, e.g. images of a certain terrain/area (possibly containing three
+dimensional objects, e.g. building or trees) rendered from a requested
+viewpoint. For this purposes the WPVS needs to process and render
+different kinds of geospatial data which is retrieved from different
+pre-configured datasets. These datasets can be remote OGC web services
+or locally installed deegree 2 web services.
+
+WWW: http://www.deegree.org/
