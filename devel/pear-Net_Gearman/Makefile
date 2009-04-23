@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Gearman
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	devel pear
 
 MAINTAINER=	gslin@gslin.org
