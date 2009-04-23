@@ -106,6 +106,7 @@
     SUBDIR += psychopy
     SUBDIR += py-hcluster
     SUBDIR += py-mdp
+    SUBDIR += py-mlpy
     SUBDIR += py-netCDF4
     SUBDIR += py-openbabel
     SUBDIR += py-paida
