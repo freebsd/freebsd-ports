@@ -110,6 +110,7 @@ lib/nemiver/plugins/dbgperspective/libdbgperspectiveplugin.so
 lib/nemiver/plugins/dbgperspective/menus/breakpointspopup.xml
 lib/nemiver/plugins/dbgperspective/menus/callstackpopup.xml
 lib/nemiver/plugins/dbgperspective/menus/contextualmenu.xml
+lib/nemiver/plugins/dbgperspective/menus/memoryview-menu.xml
 lib/nemiver/plugins/dbgperspective/menus/menus.xml
 lib/nemiver/plugins/dbgperspective/menus/toolbar.xml
 lib/nemiver/plugins/dbgperspective/menus/varinspectorpopup.xml
