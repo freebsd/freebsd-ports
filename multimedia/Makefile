@@ -122,6 +122,7 @@
     SUBDIR += kplayer
     SUBDIR += ksubeditor
     SUBDIR += ldvd
+    SUBDIR += libdc1394
     SUBDIR += libdca
     SUBDIR += libdv
     SUBDIR += libdvbpsi
