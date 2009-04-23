@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	awesome2
-PORTVERSION=	2.3.5
-PORTREVISION=	2
+PORTVERSION=	2.3.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 DISTNAME=	awesome-${PORTVERSION}
 
-MAINTAINER=	ntarmos@ceid.upatras.gr
+MAINTAINER=	ntarmos@cs.uoi.gr
 COMMENT=	A tiling window manager initially based on a dwm code rewriting
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
