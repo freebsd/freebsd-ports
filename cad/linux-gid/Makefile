@@ -56,20 +56,19 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/install ${DATADIR}
 	@(cd ${WRKDIR}; ./install ${DATADIR})
 	@${LN} -sf ${DATADIR}/gid ${PREFIX}/bin/gid
-
-.if !defined(NOPORTDOCS)
 	for f in ${WRKDIR}/info/gid*.info*; do \
 	  ${INSTALL_DATA} $$f ${PREFIX}/info; \
 	done
 	for f in faq.info ptype.info; do \
 	  ${INSTALL_DATA} ${WRKDIR}/info/$$f ${PREFIX}/info/gid-$$f; \
 	done
-.endif
+.ifndef NOPORTEXAMPLES
 	@${MKDIR} ${EXAMPLESDIR}
 	@${TAR} -C ${WRKDIR}/Examples -cf - . |	\
 	  ${TAR} -C ${EXAMPLESDIR} -xf -
 	@${CHOWN} -R root:wheel ${EXAMPLESDIR}
 	@${FIND} ${EXAMPLESDIR} -type d -exec ${CHMOD} 0555 {} \;
 	@${FIND} ${EXAMPLESDIR} -type f -exec ${CHMOD} 0444 {} \;
+.endif
 
 .include <bsd.port.mk>

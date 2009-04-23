@@ -1542,62 +1542,62 @@ bin/gid
 %%DATADIR%%/templates/VRML.bas
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%
-%%PORTDOCS%%%%EXAMPLESDIR%%/Import/Cathedral.dxf
-%%PORTDOCS%%%%EXAMPLESDIR%%/Import/Church.igs
-%%PORTDOCS%%%%EXAMPLESDIR%%/Import/Eco.nas
-%%PORTDOCS%%%%EXAMPLESDIR%%/Import/Hammer.x_b
-%%PORTDOCS%%%%EXAMPLESDIR%%/Import/Head.sat
-%%PORTDOCS%%%%EXAMPLESDIR%%/Import/Lug.x_t
-%%PORTDOCS%%%%EXAMPLESDIR%%/Import/Mblade.igs
-%%PORTDOCS%%%%EXAMPLESDIR%%/Import/Spoon.vda
-%%PORTDOCS%%%%EXAMPLESDIR%%/Import/hinge.sat
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Import
-%%PORTDOCS%%%%EXAMPLESDIR%%/Particle.gid/Particle.flavia.msh
-%%PORTDOCS%%%%EXAMPLESDIR%%/Particle.gid/Particle.flavia.res
-%%PORTDOCS%%%%EXAMPLESDIR%%/Particle.gid/Particle.geo
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Particle.gid
-%%PORTDOCS%%%%EXAMPLESDIR%%/arc3D.gid/arc3D.cnd
-%%PORTDOCS%%%%EXAMPLESDIR%%/arc3D.gid/arc3D.flavia.msh
-%%PORTDOCS%%%%EXAMPLESDIR%%/arc3D.gid/arc3D.flavia.res
-%%PORTDOCS%%%%EXAMPLESDIR%%/arc3D.gid/arc3D.geo
-%%PORTDOCS%%%%EXAMPLESDIR%%/arc3D.gid/arc3D.lin
-%%PORTDOCS%%%%EXAMPLESDIR%%/arc3D.gid/arc3D.mat
-%%PORTDOCS%%%%EXAMPLESDIR%%/arc3D.gid/arc3D.msh
-%%PORTDOCS%%%%EXAMPLESDIR%%/arc3D.gid/arc3D.prb
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/arc3D.gid
-%%PORTDOCS%%%%EXAMPLESDIR%%/c1404.gid/c1404.geo
-%%PORTDOCS%%%%EXAMPLESDIR%%/c1404.gid/c1404.msh
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/c1404.gid
-%%PORTDOCS%%%%EXAMPLESDIR%%/cajon2D.gid/cajon2D.cnd
-%%PORTDOCS%%%%EXAMPLESDIR%%/cajon2D.gid/cajon2D.flavia.res
-%%PORTDOCS%%%%EXAMPLESDIR%%/cajon2D.gid/cajon2D.geo
-%%PORTDOCS%%%%EXAMPLESDIR%%/cajon2D.gid/cajon2D.lin
-%%PORTDOCS%%%%EXAMPLESDIR%%/cajon2D.gid/cajon2D.mat
-%%PORTDOCS%%%%EXAMPLESDIR%%/cajon2D.gid/cajon2D.msh
-%%PORTDOCS%%%%EXAMPLESDIR%%/cajon2D.gid/cajon2D.prb
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/cajon2D.gid
-%%PORTDOCS%%%%EXAMPLESDIR%%/cajon3D.gid/cajon3D.cnd
-%%PORTDOCS%%%%EXAMPLESDIR%%/cajon3D.gid/cajon3D.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/cajon3D.gid/cajon3D.flavia.res
-%%PORTDOCS%%%%EXAMPLESDIR%%/cajon3D.gid/cajon3D.geo
-%%PORTDOCS%%%%EXAMPLESDIR%%/cajon3D.gid/cajon3D.lin
-%%PORTDOCS%%%%EXAMPLESDIR%%/cajon3D.gid/cajon3D.mat
-%%PORTDOCS%%%%EXAMPLESDIR%%/cajon3D.gid/cajon3D.msh
-%%PORTDOCS%%%%EXAMPLESDIR%%/cajon3D.gid/cajon3D.prb
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/cajon3D.gid
-%%PORTDOCS%%%%EXAMPLESDIR%%/frame.gid/frame.cnd
-%%PORTDOCS%%%%EXAMPLESDIR%%/frame.gid/frame.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/frame.gid/frame.flavia.res
-%%PORTDOCS%%%%EXAMPLESDIR%%/frame.gid/frame.geo
-%%PORTDOCS%%%%EXAMPLESDIR%%/frame.gid/frame.lin
-%%PORTDOCS%%%%EXAMPLESDIR%%/frame.gid/frame.msh
-%%PORTDOCS%%%%EXAMPLESDIR%%/frame.gid/frame.prb
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/frame.gid
-%%PORTDOCS%%%%EXAMPLESDIR%%/mesa.msh
-%%PORTDOCS%%%%EXAMPLESDIR%%/mesa.res
-%%PORTDOCS%%%%EXAMPLESDIR%%/motor.gid/motor.geo
-%%PORTDOCS%%%%EXAMPLESDIR%%/motor.gid/motor.msh
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/motor.gid
-%%PORTDOCS%%%%EXAMPLESDIR%%/temppnts.msh
-%%PORTDOCS%%%%EXAMPLESDIR%%/temppnts.res
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Import/Cathedral.dxf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Import/Church.igs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Import/Eco.nas
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Import/Hammer.x_b
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Import/Head.sat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Import/Lug.x_t
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Import/Mblade.igs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Import/Spoon.vda
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Import/hinge.sat
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Import
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Particle.gid/Particle.flavia.msh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Particle.gid/Particle.flavia.res
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Particle.gid/Particle.geo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Particle.gid
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arc3D.gid/arc3D.cnd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arc3D.gid/arc3D.flavia.msh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arc3D.gid/arc3D.flavia.res
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arc3D.gid/arc3D.geo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arc3D.gid/arc3D.lin
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arc3D.gid/arc3D.mat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arc3D.gid/arc3D.msh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arc3D.gid/arc3D.prb
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/arc3D.gid
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c1404.gid/c1404.geo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c1404.gid/c1404.msh
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c1404.gid
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cajon2D.gid/cajon2D.cnd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cajon2D.gid/cajon2D.flavia.res
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cajon2D.gid/cajon2D.geo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cajon2D.gid/cajon2D.lin
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cajon2D.gid/cajon2D.mat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cajon2D.gid/cajon2D.msh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cajon2D.gid/cajon2D.prb
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cajon2D.gid
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cajon3D.gid/cajon3D.cnd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cajon3D.gid/cajon3D.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cajon3D.gid/cajon3D.flavia.res
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cajon3D.gid/cajon3D.geo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cajon3D.gid/cajon3D.lin
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cajon3D.gid/cajon3D.mat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cajon3D.gid/cajon3D.msh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cajon3D.gid/cajon3D.prb
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cajon3D.gid
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/frame.gid/frame.cnd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/frame.gid/frame.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/frame.gid/frame.flavia.res
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/frame.gid/frame.geo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/frame.gid/frame.lin
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/frame.gid/frame.msh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/frame.gid/frame.prb
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/frame.gid
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mesa.msh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mesa.res
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/motor.gid/motor.geo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/motor.gid/motor.msh
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/motor.gid
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/temppnts.msh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/temppnts.res
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
