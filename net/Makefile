@@ -842,6 +842,7 @@
     SUBDIR += rubygem-oauth
     SUBDIR += rubygem-openid
     SUBDIR += rubygem-rightaws
+    SUBDIR += rubygem-rightgogrid
     SUBDIR += rubygem-righthttpconnection
     SUBDIR += rubygem-twitter
     SUBDIR += rubygem-twitter4r
