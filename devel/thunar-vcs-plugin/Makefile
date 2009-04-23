@@ -7,6 +7,7 @@
 
 PORTNAME=	thunar-svn-plugin
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	devel xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/thunar-svn-plugin/
 DIST_SUBDIR=	xfce4
@@ -22,7 +23,5 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 USE_XFCE=	configenv libexo thunar
-
-BROKEN=		does not compile
 
 .include <bsd.port.mk>
