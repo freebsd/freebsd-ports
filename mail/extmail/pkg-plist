@@ -18,6 +18,7 @@ www/extmail/cgi/index.cgi
 www/extmail/cgi/netdisk.cgi
 www/extmail/cgi/pref.cgi
 www/extmail/cgi/readmsg.cgi
+www/extmail/cgi/search.cgi
 www/extmail/dispatch-init
 www/extmail/dispatch.fcgi
 www/extmail/dispatch_lig.sh
@@ -165,6 +166,7 @@ www/extmail/html/default/images/prevpg.d.gif
 www/extmail/html/default/images/prevpg.gif
 www/extmail/html/default/images/purge.gif
 www/extmail/html/default/images/rb.gif
+www/extmail/html/default/images/search.gif
 www/extmail/html/default/images/sl.gif
 www/extmail/html/default/images/sort_asc.gif
 www/extmail/html/default/images/sort_desc.gif
@@ -187,6 +189,7 @@ www/extmail/html/default/print.html
 www/extmail/html/default/readmsg.html
 www/extmail/html/default/rich_abook.inc
 www/extmail/html/default/saveok.html
+www/extmail/html/default/search.html
 www/extmail/html/default/sendok.html
 www/extmail/html/default/welcome.html
 www/extmail/html/default/whitelist.html
@@ -294,6 +297,7 @@ www/extmail/libs/Ext/App/Login.pm
 www/extmail/libs/Ext/App/Message.pm
 www/extmail/libs/Ext/App/NetDisk.pm
 www/extmail/libs/Ext/App/Pref.pm
+www/extmail/libs/Ext/App/Search.pm
 www/extmail/libs/Ext/Auth/Authlib.pm
 www/extmail/libs/Ext/Auth/LDAP.pm
 www/extmail/libs/Ext/Auth/MySQL.pm
@@ -320,6 +324,7 @@ www/extmail/libs/Ext/RFC822.pm
 www/extmail/libs/Ext/Session.pm
 www/extmail/libs/Ext/Storage/Fileman.pm
 www/extmail/libs/Ext/Storage/Maildir.pm
+www/extmail/libs/Ext/Storage/Search.pm
 www/extmail/libs/Ext/Template.pm
 www/extmail/libs/Ext/Unicode.pm
 www/extmail/libs/Ext/Unicode/IMAPUTF7.pm
@@ -327,19 +332,17 @@ www/extmail/libs/Ext/Unicode/Iconv.pm
 www/extmail/libs/Ext/Unicode/UTF8.pm
 www/extmail/libs/Ext/Utils.pm
 www/extmail/libs/HTML/KTemplate.pm
-www/extmail/libs/MIME/Base64.pm
-www/extmail/libs/MIME/QuotedPrint.pm
 www/extmail/libs/Mail/POP3Client.pm
 www/extmail/tools/abook_tpl.pl
 www/extmail/tools/abook_update.pl
 www/extmail/tools/cleansid.pl
 www/extmail/tools/decode
 www/extmail/tools/pkg_stats.sh
+www/extmail/tools/spam_report.pl
 www/extmail/tools/suid-with
 www/extmail/webmail.cf.default
 @dirrm www/extmail/tools
 @dirrm www/extmail/libs/Mail
-@dirrm www/extmail/libs/MIME
 @dirrm www/extmail/libs/HTML
 @dirrm www/extmail/libs/Ext/Unicode
 @dirrm www/extmail/libs/Ext/Storage
@@ -366,4 +369,4 @@ www/extmail/webmail.cf.default
 @dirrm www/extmail/html/default
 @dirrm www/extmail/html
 @dirrm www/extmail/cgi
-@dirrmtry www/extmail
+@dirrmtry www/extmail/
