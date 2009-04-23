@@ -715,6 +715,7 @@
     SUBDIR += samhain-server
     SUBDIR += sancp
     SUBDIR += sasp
+    SUBDIR += scamp
     SUBDIR += scanhill
     SUBDIR += scanlogd
     SUBDIR += scanssh
