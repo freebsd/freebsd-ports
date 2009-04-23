@@ -1,3 +1,4 @@
+bin/mod2html
 bin/perl2html
 bin/pods2html
 bin/podtree2html
