@@ -54,6 +54,13 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 WANT_GNOME=	yes
 MAKE_JOBS_SAFE=	yes
 
+.include <bsd.port.options.mk>
+
+.if defined(WITH_PASSENGER_MODULE)
+USE_RUBY=	yes
+USE_RAKE=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 NGINX_VARDIR?=	/var
@@ -122,6 +129,8 @@ CONFIGURE_ARGS+=--with-http_dav_module
 .if defined(WITH_HTTP_FANCYINDEX_MODULE)
 NGINX_FANCYINDEX_MODULE_VERSION=	0.1b5
 MASTER_SITES+=	http://furi-ku.org/nginx/fancyindex/:fancyindex
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:fancyindex/}
+MASTER_SITE_SUBDIR+=	osa/:fancyindex
 DISTFILES+=  	nginx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION:S/b/_beta/}.tar.bz2:fancyindex
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION:S/b/_beta/}
 .endif
@@ -232,7 +241,6 @@ CONFIGURE_ARGS+=--with-pcre
 .endif
 
 .if defined(WITH_PASSENGER_MODULE)
-USE_RAKE=	yes
 PASSENGER_VERSION=	2.2.1
 MASTER_SITES+=	RF/passenger/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
