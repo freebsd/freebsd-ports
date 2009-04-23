@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	RDF-Simple
-PORTVERSION=	0.40.9
+PORTVERSION=	0.41.1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -33,5 +33,8 @@ MAN3=	RDF::Simple.3 \
 	RDF::Simple::Parser::Handler.3 \
 	RDF::Simple::Serialiser.3 \
 	RDF::Simple::Serializer.3
+
+post-patch:
+	${REINPLACE_CMD} -i '' -e '/Sink/d' ${WRKSRC}/lib/RDF/Simple/Parser.pm
 
 .include <bsd.port.mk>
