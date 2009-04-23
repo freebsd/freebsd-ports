@@ -90,6 +90,7 @@
     SUBDIR += dc20pack
     SUBDIR += dc3play
     SUBDIR += dcraw
+    SUBDIR += deegree-csw
     SUBDIR += demeter
     SUBDIR += devil
     SUBDIR += dia

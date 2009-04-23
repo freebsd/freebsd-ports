@@ -1,0 +1,19 @@
+Deegree is a Java Framework offering the main building blocks for
+Spatial Data Infrastructures (SDIs). Its entire architecture is
+developed using standards of the Open Geospatial Consortium (OGC) and
+ISO Technical Committee 211-Geographic information/Geoinformatics
+(ISO/TC 211). deegree encompasses OGC Web Services as well as clients.
+deegree is Free Software protected by the GNU Lesser General Public
+License (GNU LGPL) and is accessible at http://www.deegree.org.
+
+Deegree's Web Catalogue Service implementation (Catalogue Service - Web
+profile, therefore CS-W) is able to serve different metadata formats in
+parallel based on the same physical datastore. This is possible because
+deegree CS-W uses XSLT processing to transform requests as well as
+responses into the desired format. deegree CS-W does not contain its a
+data access modul of its own. It uses an OGC WFS (at the moment limited
+to deegree WFS) as datasource. So in future it will be possible to use
+deegree CS-W on top of any other OGC compliant WFS to offer catalogue
+functionalities.
+
+WWW: http://www.deegree.org/
