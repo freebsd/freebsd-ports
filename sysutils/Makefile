@@ -723,6 +723,7 @@
     SUBDIR += synergy
     SUBDIR += syscp
     SUBDIR += sysgather
+    SUBDIR += sysinfo
     SUBDIR += syslinux
     SUBDIR += syslog-ng
     SUBDIR += syslog-ng2
