@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	jgraph
-PORTVERSION=	5.12.1.0
+PORTVERSION=	5.12.3.2
 CATEGORIES=	java graphics
-MASTER_SITES=	SF \
-		http://www.jgraph.com/pub/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-lgpl-src
+MASTER_SITES=	http://www.jgraph.com/pub/
+DISTNAME=	${PORTNAME}-latest-lgpl-src
 EXTRACT_SUFX=	.jar
 
 MAINTAINER=	ports@FreeBSD.org
