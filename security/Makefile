@@ -662,6 +662,7 @@
     SUBDIR += py-pyclamd
     SUBDIR += py-pycrypto
     SUBDIR += py-pycryptopp
+    SUBDIR += py-pylibacl
     SUBDIR += py-pyme
     SUBDIR += py-rijndael
     SUBDIR += py-tlslite
