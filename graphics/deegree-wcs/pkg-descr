@@ -1,0 +1,7 @@
+deegree's Web Coverage Service (WCS) is able to read coverages from
+different storage formats and deliver it to any client that is able to
+perform an according HTTP GET or POST request. At the moment supported
+formats are limited to several raster data formats; but in general a
+coverage has not to be a raster dataset at all.
+
+WWW: http://www.deegree.org/
