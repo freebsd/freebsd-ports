@@ -844,6 +844,7 @@
     SUBDIR += rubygem-rightaws
     SUBDIR += rubygem-rightgogrid
     SUBDIR += rubygem-righthttpconnection
+    SUBDIR += rubygem-rightslicehost
     SUBDIR += rubygem-twitter
     SUBDIR += rubygem-twitter4r
     SUBDIR += rubygem-yadis
