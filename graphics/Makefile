@@ -91,6 +91,7 @@
     SUBDIR += dc3play
     SUBDIR += dcraw
     SUBDIR += deegree-csw
+    SUBDIR += deegree-igeoportal
     SUBDIR += demeter
     SUBDIR += devil
     SUBDIR += dia
