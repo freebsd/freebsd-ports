@@ -1,0 +1,26 @@
+%%R_MOD_DIR%%/CONTENTS
+%%R_MOD_DIR%%/DESCRIPTION
+%%R_MOD_DIR%%/INDEX
+%%R_MOD_DIR%%/Meta/Rd.rds
+%%R_MOD_DIR%%/Meta/hsearch.rds
+%%R_MOD_DIR%%/Meta/package.rds
+%%R_MOD_DIR%%/R-ex/RSvgDevice.R
+%%R_MOD_DIR%%/R/RSvgDevice
+%%R_MOD_DIR%%/R/RSvgDevice.rdb
+%%R_MOD_DIR%%/R/RSvgDevice.rdx
+%%R_MOD_DIR%%/help/AnIndex
+%%R_MOD_DIR%%/help/RSvgDevice
+%%R_MOD_DIR%%/html/00Index.html
+%%R_MOD_DIR%%/html/RSvgDevice.html
+%%R_MOD_DIR%%/latex/RSvgDevice.tex
+%%R_MOD_DIR%%/libs/RSvgDevice.so
+%%R_MOD_DIR%%/man/RSvgDevice.Rd.gz
+@dirrm %%R_MOD_DIR%%/man
+@dirrm %%R_MOD_DIR%%/libs
+@dirrm %%R_MOD_DIR%%/latex
+@dirrm %%R_MOD_DIR%%/html
+@dirrm %%R_MOD_DIR%%/help
+@dirrm %%R_MOD_DIR%%/R-ex
+@dirrm %%R_MOD_DIR%%/R
+@dirrm %%R_MOD_DIR%%/Meta
+@dirrm %%R_MOD_DIR%%
