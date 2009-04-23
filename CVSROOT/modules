@@ -11936,6 +11936,7 @@ p5-Net-Frame-Layer-ICMPv6       ports/net/p5-Net-Frame-Layer-ICMPv6
 p5-Net-Frame-Layer-IPv6         ports/net/p5-Net-Frame-Layer-IPv6
 p5-Net-FreeDB                   ports/audio/p5-Net-FreeDB
 p5-Net-GeoPlanet                ports/www/p5-Net-GeoPlanet
+p5-Net-GitHub                   ports/net/p5-Net-GitHub
 p5-Net-Gnats                    ports/net/p5-Net-Gnats
 p5-Net-Google                   ports/net/p5-Net-Google
 p5-Net-Google-AuthSub           ports/net/p5-Net-Google-AuthSub
@@ -13022,6 +13023,7 @@ p5-WWW-Mechanize                ports/www/p5-WWW-Mechanize
 p5-WWW-Mechanize-CGI            ports/www/p5-WWW-Mechanize-CGI
 p5-WWW-Mechanize-DecodedContent  ports/www/p5-WWW-Mechanize-DecodedContent
 p5-WWW-Mechanize-FormFiller     ports/www/p5-WWW-Mechanize-FormFiller
+p5-WWW-Mechanize-GZip           ports/www/p5-WWW-Mechanize-GZip
 p5-WWW-Mechanize-Pluggable      ports/www/p5-WWW-Mechanize-Pluggable
 p5-WWW-Mechanize-Plugin-phpBB   ports/www/p5-WWW-Mechanize-Plugin-phpBB
 p5-WWW-Mechanize-Shell          ports/www/p5-WWW-Mechanize-Shell
@@ -15356,6 +15358,7 @@ p5-net-ftp-file                 ports/net/p5-Net-FTP-File
 p5-net-ftp-recursive            ports/ftp/p5-Net-FTP-Recursive
 p5-net-ftpserver                ports/ftp/p5-Net-FTPServer
 p5-net-geoplanet                ports/www/p5-Net-GeoPlanet
+p5-net-github                   ports/net/p5-Net-GitHub
 p5-net-gnats                    ports/net/p5-Net-Gnats
 p5-net-google                   ports/net/p5-Net-Google
 p5-net-google-authsub           ports/net/p5-Net-Google-AuthSub
@@ -16499,6 +16502,7 @@ p5-www-mechanize                ports/www/p5-WWW-Mechanize
 p5-www-mechanize-cgi            ports/www/p5-WWW-Mechanize-CGI
 p5-www-mechanize-decodedcontent  ports/www/p5-WWW-Mechanize-DecodedContent
 p5-www-mechanize-formfiller     ports/www/p5-WWW-Mechanize-FormFiller
+p5-www-mechanize-gzip           ports/www/p5-WWW-Mechanize-GZip
 p5-www-mechanize-pluggable      ports/www/p5-WWW-Mechanize-Pluggable
 p5-www-mechanize-plugin-phpbb   ports/www/p5-WWW-Mechanize-Plugin-phpBB
 p5-www-mechanize-shell          ports/www/p5-WWW-Mechanize-Shell
@@ -20266,6 +20270,7 @@ rubygem-tzinfo                  ports/devel/rubygem-tzinfo
 rubygem-uuid                    ports/devel/rubygem-uuid
 rubygem-validatable             ports/devel/rubygem-validatable
 rubygem-warbler                 ports/devel/rubygem-warbler
+rubygem-xml-simple              ports/textproc/rubygem-xml-simple
 rubygem-xmpp4r                  ports/net-im/rubygem-xmpp4r
 rubygem-yadis                   ports/net/rubygem-yadis
 rubygem-yapra                   ports/www/rubygem-yapra
