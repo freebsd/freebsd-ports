@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netaddr
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	net python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		CHEESESHOP
@@ -21,12 +21,12 @@ USE_PYDISTUTILS=	yes
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 PORTDOCS=	AUTHORS CHANGELOG GLOSSARY README
-TESTFILES=	ut_address.py ut_run_all.py ut_strategy.py
+TESTFILES=	ut_netaddr.py
 
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 regression-test:
