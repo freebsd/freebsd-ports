@@ -1,5 +1,5 @@
-To finalize the leafnode install, proceed as follows:
+To complete the leafnode install, proceed as follows:
 
-1. read %%DOCSDIR%%/INSTALL, starting at item #6.
+1. follow %%DOCSDIR%%/INSTALL, starting at item #6.
 2. read %%DOCSDIR%%/NEWS, mind the incompatible changes!
 3. read %%DOCSDIR%%/README, mind the incompatible changes!

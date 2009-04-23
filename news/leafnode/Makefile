@@ -6,22 +6,24 @@
 #
 
 PORTNAME=	leafnode
-DISTVERSION=	1.11.7.rc1
+DISTVERSION=	1.11.7
 CATEGORIES=	news ipv6
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED:S/$/:sourceforge/} \
-#		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
-#		${MASTER_SITE_SUNSITE:S/$/:sunsite/}
-#MASTER_SITE_SUBDIR=	${PORTNAME}/:sourceforge \
-#			./:DEFAULT \
-#			system/news/transport/:sunsite
-#DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sourceforge,sunsite,DEFAULT
-MASTER_SITES=	http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED:S/$/:sourceforge/} \
+		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
+		${MASTER_SITE_SUNSITE:S/$/:sunsite/}
+MASTER_SITE_SUBDIR=	${PORTNAME}/:sourceforge \
+			./:DEFAULT \
+			system/news/transport/:sunsite
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sourceforge,sunsite,DEFAULT
+#MASTER_SITES=	http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
+#		http://homepages.uni-paderborn.de/mandree/
 
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	NNTP package for offline news caching and reading
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+
+MAKE_JOBS_SAFE=	yes
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
