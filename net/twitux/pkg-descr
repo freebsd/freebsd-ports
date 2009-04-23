@@ -1,3 +1,5 @@
 Twitux is a very simple GNOME client for Twitter. It handles private
-messages, friends and public timelines, and just sits in your tray bar
-until until new messages arrive.
+messages, friends, public timeline, and stays in your tray bar most
+of the time, until new messages arrive.
+
+WWW: http://live.gnome.org/DanielMorales/Twitux
