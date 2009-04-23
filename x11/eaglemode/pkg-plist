@@ -169,6 +169,7 @@ lib/eaglemode/etc/emMain/VcItemFiles/SystemRequirements.emFileLink
 lib/eaglemode/etc/emMain/VcItemFiles/TestPanel.emTestPanel
 lib/eaglemode/etc/emMain/VcItemFiles/emFileManCustomization.emFileLink
 lib/eaglemode/etc/emMain/VcItemFiles/emFileManUserGuide.emFileLink
+lib/eaglemode/etc/emMain/VcItemFiles/emLKC.emFileLink
 lib/eaglemode/etc/emMain/VcItemFiles/version
 lib/eaglemode/etc/emMain/VcItems/AboutEagleMode.emVcItem
 lib/eaglemode/etc/emMain/VcItems/ChangeLog.emVcItem
@@ -197,6 +198,7 @@ lib/eaglemode/etc/emMain/VcItems/SystemRequirements.emVcItem
 lib/eaglemode/etc/emMain/VcItems/TestPanel.emVcItem
 lib/eaglemode/etc/emMain/VcItems/emFileManCustomization.emVcItem
 lib/eaglemode/etc/emMain/VcItems/emFileManUserGuide.emVcItem
+lib/eaglemode/etc/emMain/VcItems/emLKC.emVcItem
 lib/eaglemode/etc/emMain/VcItems/version
 lib/eaglemode/include/SilChess/SilChessControlPanel.h
 lib/eaglemode/include/SilChess/SilChessMachine.h
@@ -398,6 +400,11 @@ lib/eaglemode/res/emFileMan/images/InnerBorder.tga
 lib/eaglemode/res/emFileMan/images/OuterBorder.tga
 lib/eaglemode/res/emFileMan/scripts/cmd-util.pl
 lib/eaglemode/res/emFileMan/scripts/emArch.sh
+lib/eaglemode/res/emLKC/README
+lib/eaglemode/res/emLKC/emLKC.patch.bz2
+lib/eaglemode/res/emLKC/screenshot-1.jpg
+lib/eaglemode/res/emLKC/screenshot-2.jpg
+lib/eaglemode/res/emLKC/screenshot-3.jpg
 lib/eaglemode/res/emMain/ControlEdges.tga
 lib/eaglemode/res/emMain/Sky.tga
 lib/eaglemode/res/emMain/Slider.tga
@@ -417,6 +424,7 @@ lib/eaglemode/res/icons/em-error-unknown-icon.tga
 @dirrm lib/eaglemode/res/icons
 @dirrm lib/eaglemode/res/emPs
 @dirrm lib/eaglemode/res/emMain
+@dirrm lib/eaglemode/res/emLKC
 @dirrm lib/eaglemode/res/emFileMan/scripts
 @dirrm lib/eaglemode/res/emFileMan/images
 @dirrm lib/eaglemode/res/emFileMan
