@@ -92,6 +92,7 @@
     SUBDIR += dcraw
     SUBDIR += deegree-csw
     SUBDIR += deegree-igeoportal
+    SUBDIR += deegree-wcs
     SUBDIR += demeter
     SUBDIR += devil
     SUBDIR += dia
