@@ -25,11 +25,16 @@ RUN_DEPENDS=	${SITE_PERL}/Exporter/Tidy.pm:${PORTSDIR}/devel/p5-Exporter-Tidy \
 		${SITE_PERL}/Env/PS1.pm:${PORTSDIR}/devel/p5-Env-PS1
 
 PERL_MODBUILD=	yes
-CONFIGURE_ARGS=	install_path=doc="${DOCSDIR}" \
-		install_path=share="${DATADIR}" \
+CONFIGURE_ARGS=	install_path=share="${DATADIR}" \
 		install_path=share="${ETCDIR}"
 
-PORTDOCS=	*
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes	README
+.endif
+
+.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	Menu.pl	cpan.pl	word_expansion.pl
+.endif
 
 MAN1=	zoid.1 zoiddevel.1 zoidfaq.1 zoiduser.1 zoidbuiltins.1
 MAN3=	Bundle::Zoidberg.3 \
@@ -50,18 +55,21 @@ MAN3=	Bundle::Zoidberg.3 \
 	Zoidberg::Utils::GetOpt.3 \
 	Zoidberg::Utils::Output.3
 
-.include <bsd.port.pre.mk>
-
-post-extract:
-.if defined(NOPORTDOCS)
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-MANIFEST
-.endif
-
 post-install:
 	@${ECHO_CMD} ${PREFIX}/bin/zoid >> /etc/shells
-.if defined(NOPORTDOCS)
-	${ECHO_CMD} "share/doc/zoidberg/README" >> ${TMPPLIST}
-	${ECHO_CMD} "share/doc/zoidberg/Changes" >> ${TMPPLIST}
+
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
-.include <bsd.port.post.mk>
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+.for file in ${PORTEXAMPLES}
+	${INSTALL_SCRIPT} ${WRKSRC}/doc/examples/${file} ${EXAMPLESDIR}
+.endfor
+.endif
+
+.include <bsd.port.mk>
