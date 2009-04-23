@@ -51,6 +51,11 @@ MAKE_ENV=	NO_CPU_CFLAGS=true
 CFLAGS=		-O
 CXXFLAGS=	-O
 
+post-patch:
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e '/SUBDIRS/s,examples,,' ${WRKSRC}/doc/Makefile.in
+.endif
+
 do-install:
 		${RM} -f ${TMPPLIST}
 .if !defined(NOPORTDOCS)
