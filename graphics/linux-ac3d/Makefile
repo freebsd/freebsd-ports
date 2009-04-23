@@ -9,7 +9,8 @@ PORTNAME=	ac3d
 PORTVERSION=	6.205
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://www.inivis.com/ac3d/download/release6/ \
-		http://freebsd.unixfreunde.de/sources/
+		http://freebsd.unixfreunde.de/sources/ \
+		http://kwiki.dragon2.net/distfiles/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}lx${PORTVERSION:R}${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
