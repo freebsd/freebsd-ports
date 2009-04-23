@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	extmail
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.chifeng.name/dist/extmail/ \
 		http://mirror3.extmail.net/dist/
@@ -35,7 +35,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/LDAP.pm:${PORTSDIR}/databases/p5-DBD
 .endif
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_BIN} . ${WWWDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
