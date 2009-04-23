@@ -19,8 +19,8 @@ MANUAL_PACKAGE_BUILD=yes
 NO_PACKAGE=	yes
 USE_RC_SUBR=	yes
 
-OPTIONS=	MPD4		"Use mpd4"			on \
-		MPD5		"Use mpd5"			off
+OPTIONS=	MPD4		"Use mpd4"			off \
+		MPD5		"Use mpd5"			on
 
 .include <bsd.port.pre.mk>
 
