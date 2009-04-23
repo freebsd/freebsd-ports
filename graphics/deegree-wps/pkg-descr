@@ -1,0 +1,11 @@
+Deegree's WPS is able to process Feature Collections based on arbitrary
+processes. OGC's WPS (Schut & Whiteside 2005) specification describes
+WPS as follows: "WPS defines a standardized interface that facilitates
+the publishing of geospatial processes, and the discovery of and binding
+to those processes by clients. "Processes" include any algorithm,
+calculation or model that operates on spatially referenced data.
+"Publishing" means making available machine-readable binding
+information as well as human-readable metadata that allows service
+discovery and use."
+
+WWW: http://www.deegree.org/

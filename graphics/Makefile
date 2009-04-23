@@ -95,6 +95,7 @@
     SUBDIR += deegree-wcs
     SUBDIR += deegree-wfs
     SUBDIR += deegree-wms
+    SUBDIR += deegree-wps
     SUBDIR += demeter
     SUBDIR += devil
     SUBDIR += dia
