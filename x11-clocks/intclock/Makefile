@@ -7,22 +7,21 @@
 
 PORTNAME=	intclock
 PORTVERSION=	2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks perl5
 MASTER_SITES=	http://www.peterverthez.net/projects/${PORTNAME}/ CENKES
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-timezone clock
 
-BUILD_DEPENDS=	p5-Gtk2>=1.144:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		iso-codes>=1.3:${PORTSDIR}/misc/iso-codes
+BUILD_DEPENDS=	p5-Gtk2>=1.144:${PORTSDIR}/x11-toolkits/p5-Gtk2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|$$zonedir/$$countryfile|${LOCALBASE}/share/iso-codes/iso_3166.tab|' \
+		's|$$zonedir/$$countryfile|/usr/share/misc/iso3166|' \
 			${WRKSRC}/lib/Intclock/TZ.pm
 	@${REINPLACE_CMD} -e 's|$$prefix/share/intclock|${DATADIR}|;\
 		s|/usr/share|${PREFIX}/share|' ${WRKSRC}/Makefile.PL
