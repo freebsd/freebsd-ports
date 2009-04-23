@@ -1,0 +1,5 @@
+Deegree's WMS is able to render vector data as well as raster data
+from different storage formats and deliver it to any client that is
+able to perform a HTTP GET or POST request.
+
+WWW: http://www.deegree.org/
