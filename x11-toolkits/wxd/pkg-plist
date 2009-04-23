@@ -131,6 +131,7 @@ include/d/wx/StatusBar.d
 include/d/wx/StyledTextCtrl.d
 include/d/wx/SysColourChangedEvent.d
 include/d/wx/SystemSettings.d
+include/d/wx/TaskBarIcon.d
 include/d/wx/TabCtrl.d
 include/d/wx/TextCtrl.d
 include/d/wx/TextDialog.d

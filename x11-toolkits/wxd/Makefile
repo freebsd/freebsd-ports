@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	wxd
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	0.14
 CATEGORIES=	x11-toolkits devel
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-EXTRACT_SUFX=		.tgz
+MASTER_SITES=	SF
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jochen@daten-chaos.de
 COMMENT=	wxWidgets bindings for the D programming language
 
 BUILD_DEPENDS=	gdc:${PORTSDIR}/lang/gdc
