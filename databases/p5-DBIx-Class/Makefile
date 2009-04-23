@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08013
+PORTVERSION=	0.08100
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Extensible and flexible object <-> relational mapper
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
 		p5-SQL-Abstract>=1.51:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-SQL-Abstract-Limit>=0.141:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
-		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
-		p5-Class-C3>=0.20:${PORTSDIR}/devel/p5-Class-C3 \
 		p5-Class-C3-Componentised>=1.0004:${PORTSDIR}/devel/p5-Class-C3-Componentised \
 		p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-DBI>=1.40:${PORTSDIR}/databases/p5-DBI \
@@ -27,7 +24,14 @@ RUN_DEPENDS=	p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Class-Accessor-Grouped>=0.08003:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 		p5-JSON-Any>=1.17:${PORTSDIR}/converters/p5-JSON-Any \
-		p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils
+		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
+		p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
+		p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
+		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat
+BUILD_DEPENDS=	${RUN_DEPENDS}
+
+OPTIONS=        SQLT "SQL::Translator (generate DDL from schema)" Off
 
 PERL_CONFIGURE=	5.8.1+
 CONFIGURE_ENV=	DBICTEST_NO_SQLITE_CHECK=1
@@ -36,6 +40,14 @@ MAN1=	dbicadmin.1
 MAN3=	DBIx::Class.3 \
 	DBIx::Class::AccessorGroup.3 \
 	DBIx::Class::CDBICompat.3 \
+	DBIx::Class::CDBICompat::AbstractSearch.3 \
+	DBIx::Class::CDBICompat::ColumnsAsHash.3 \
+	DBIx::Class::CDBICompat::Copy.3 \
+	DBIx::Class::CDBICompat::Iterator.3 \
+	DBIx::Class::CDBICompat::NoObjectIndex.3 \
+	DBIx::Class::CDBICompat::Relationship.3 \
+	DBIx::Class::CDBICompat::Relationships.3 \
+	DBIx::Class::CDBICompat::SQLTransformer.3 \
 	DBIx::Class::Core.3 \
 	DBIx::Class::Cursor.3 \
 	DBIx::Class::DB.3 \
@@ -52,6 +64,7 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Manual::Glossary.3 \
 	DBIx::Class::Manual::Intro.3 \
 	DBIx::Class::Manual::Joining.3 \
+	DBIx::Class::Manual::Reading.3 \
 	DBIx::Class::Manual::Troubleshooting.3 \
 	DBIx::Class::Ordered.3 \
 	DBIx::Class::PK.3 \
@@ -71,6 +84,7 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::ResultSetManager.3 \
 	DBIx::Class::ResultSource.3 \
 	DBIx::Class::ResultSource::Table.3 \
+	DBIx::Class::ResultSource::View.3 \
 	DBIx::Class::ResultSourceHandle.3 \
 	DBIx::Class::ResultSourceProxy::Table.3 \
 	DBIx::Class::Row.3 \
@@ -86,13 +100,20 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Storage::DBI::MultiDistinctEmulation.3 \
 	DBIx::Class::Storage::DBI::NoBindVars.3 \
 	DBIx::Class::Storage::DBI::ODBC.3 \
+	DBIx::Class::Storage::DBI::ODBC::ACCESS.3 \
 	DBIx::Class::Storage::DBI::ODBC::DB2_400_SQL.3 \
 	DBIx::Class::Storage::DBI::ODBC::Microsoft_SQL_Server.3 \
 	DBIx::Class::Storage::DBI::Oracle.3 \
 	DBIx::Class::Storage::DBI::Oracle::Generic.3 \
 	DBIx::Class::Storage::DBI::Oracle::WhereJoins.3 \
 	DBIx::Class::Storage::DBI::Pg.3 \
-	DBIx::Class::Storage::DBI::Replication.3 \
+	DBIx::Class::Storage::DBI::Replicated.3 \
+	DBIx::Class::Storage::DBI::Replicated::Balancer.3 \
+	DBIx::Class::Storage::DBI::Replicated::Balancer::First.3 \
+	DBIx::Class::Storage::DBI::Replicated::Balancer::Random.3 \
+	DBIx::Class::Storage::DBI::Replicated::Pool.3 \
+	DBIx::Class::Storage::DBI::Replicated::Replicant.3 \
+	DBIx::Class::Storage::DBI::Role::QueryCounter.3 \
 	DBIx::Class::Storage::DBI::SQLite.3 \
 	DBIx::Class::Storage::DBI::Sybase.3 \
 	DBIx::Class::Storage::DBI::Sybase::MSSQL.3 \
@@ -105,6 +126,12 @@ MAN3=	DBIx::Class.3 \
 	SQL::Translator::Producer::DBIx::Class::File.3
 
 post-extract:
-	@${PERL} -i.bak -ne 'print unless /^(test_requires|auto_install)/' ${WRKSRC}/Makefile.PL
+	@${PERL} -i.bak -ne 'print unless /^(test_requires|auto_install|recommends|configure_requires)/' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.ifdef(WITH_SQLT)
+RUN_DEPENDS+=	p5-SQL-Translator>=0.09004:${PORTSDIR}/databases/p5-SQL-Translator
+.endif
+
+.include <bsd.port.post.mk>
