@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	zabbix
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.6.4
 PORTEPOCH=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-agent
 
-MAINTAINER=	d.lohansky@zsupport.ru
+MAINTAINER=	ports@christianserving.org
 COMMENT=	Application and network monitoring solution
 
 USE_GMAKE=	yes
