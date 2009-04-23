@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Net-SSH2
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Support for the SSH 2 protocol via libSSH2
 
 LIB_DEPENDS=	ssh2.1:${PORTSDIR}/security/libssh2
