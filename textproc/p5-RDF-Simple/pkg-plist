@@ -4,7 +4,6 @@
 %%SITE_PERL%%/RDF/Simple/Parser/Attribs.pm
 %%SITE_PERL%%/RDF/Simple/Parser/Element.pm
 %%SITE_PERL%%/RDF/Simple/Parser/Handler.pm
-%%SITE_PERL%%/RDF/Simple/Parser/Sink.pm
 %%SITE_PERL%%/RDF/Simple/Serialiser.pm
 %%SITE_PERL%%/RDF/Simple/Serializer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Simple/.packlist
