@@ -1,0 +1,6 @@
+Socket::Class provides a simple, fast and efficient way to
+communicate with sockets. It operates outside of the Perl
+IO layer and can be used as a replacement to IO::Socket.
+Little parts of Bluetooth technology has been integrated.
+
+WWW:	http://search.cpan.org/dist/Socket-Class/
