@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	opencity
-PORTVERSION=	0.0.6
-PORTREVISION=	1
+PORTVERSION=	0.0.6.1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}stable
@@ -20,6 +19,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer image net
 USE_GL=		gl glu
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.0.6stable
 
 PORTDOCS=	*
 
