@@ -1,0 +1,5 @@
+Deegree's WFS is able to serve vector and attribute data from different
+data sources (backends) and deliver it to any client that is able to
+perform WFS compliant HTTP-GET or POST requests.
+
+WWW: http://www.deegree.org/
