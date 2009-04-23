@@ -1,0 +1,6 @@
+libdc1394 is a library that provides a complete high level
+application programming interface (API) for developers who wish to
+control IEEE 1394 based cameras that conform to the 1394-based Digital
+Camera Specifications (also known as the IIDC or DCAM Specifications).
+
+WWW:	http://damien.douxchamps.net/ieee1394/libdc1394/
