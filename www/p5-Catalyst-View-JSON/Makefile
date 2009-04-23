@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-View-JSON
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,8 @@ COMMENT=	Catalyst View handler that returns stash data in JSON format
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel \
-		p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any
+		p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any \
+		p5-MRO-Compat>0:${PORTSDIR}/devel/p5-MRO-Compat
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
