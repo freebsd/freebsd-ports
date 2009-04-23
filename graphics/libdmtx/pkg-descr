@@ -1,0 +1,17 @@
+libdmtx - software for reading and writing Data Matrix barcodes
+
+libdmtx is open source software for reading and writing Data Matrix
+barcodes on Linux, Unix, OS X, Windows, and certain mobile devices. At
+its core libdmtx is a shared library, allowing C/C++ programs to use its
+capabilities without restrictions or overhead. The included utility
+programs, dmtxread and dmtxwrite, serve as the official interface to
+libdmtx from the command line, and also provide a good reference for
+programmers who wish to write their own programs that interact with
+libdmtx.
+
+Data Matrix barcodes are two-dimensional symbols that hold a dense
+pattern of data with built-in error correction. The Data Matrix
+symbology (sometimes casually referred to as "DataMatrix") was invented
+and released into the public domain by RVSI Acuity CiMatrix.
+
+WWW:	http://www.libdmtx.org/

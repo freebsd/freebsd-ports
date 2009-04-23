@@ -396,6 +396,7 @@
     SUBDIR += libboard
     SUBDIR += libcaca
     SUBDIR += libdrm
+    SUBDIR += libdmtx
     SUBDIR += libemf
     SUBDIR += libexif
     SUBDIR += libexif-gtk
