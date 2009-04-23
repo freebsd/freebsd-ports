@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	dvd-slideshow
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.8.2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
-DISTFILES=	${PORTNAME}-${PORTVERSION}-1${EXTRACT_SUFX}
+DISTFILES=	${PORTNAME}-${PORTVERSION}-2${EXTRACT_SUFX}
+THEMEVERSION=	0.8.0
 
 MAINTAINER=	oz@nixil.net
 COMMENT=	Script that creates a slideshow-style DVD with some simple menus
@@ -25,7 +25,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		flvtool2:${PORTSDIR}/multimedia/ruby-flvtool2 \
 		${LOCALBASE}/lib/X11/fonts/urwfonts-ttf/README:${PORTSDIR}/x11-fonts/urwfonts-ttf
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-1
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-2
 
 NO_BUILD=	yes
 USE_CDRTOOLS=	yes
@@ -64,8 +64,8 @@ RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
 RUN_DEPENDS+=	toolame:${PORTSDIR}/audio/toolame
 .endif
 .if defined(WITH_THEMES)
-DISTFILES+=	${PORTNAME}-themes-${PORTVERSION}-1${EXTRACT_SUFX}
-WRKSRC2=	${WRKDIR}/${PORTNAME}-themes-${PORTVERSION}-1
+DISTFILES+=	${PORTNAME}-themes-${THEMEVERSION}-1${EXTRACT_SUFX}
+WRKSRC2=	${WRKDIR}/${PORTNAME}-themes-${THEMEVERSION}-1
 PLIST_SUB+=	NOTHEMES=""
 .else
 PLIST_SUB+=	NOTHEMES="@comment "
@@ -102,7 +102,7 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/dvd-slideshowrc ${DOCSDIR}
 .for FILE in changelog.html gallery1-to-slideshow.html dir2slideshow.html jigl2slideshow.html dvd-menu.html dvd-slideshow.html
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${DOCSDIR}
 .endfor
 .endif
 .ifdef(WITH_THEMES)
