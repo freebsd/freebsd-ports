@@ -6,26 +6,23 @@
 #
 
 PORTNAME=	pysvn
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.0
 CATEGORIES=	devel
 MASTER_SITES=	http://pysvn.barrys-emacs.org/source_kits/
 
 MAINTAINER=	bra@fsn.hu
 COMMENT=	Python binding for Subversion
 
-BUILD_DEPENDS=	py${PYTHON_SUFFIX}-cxx>=5.4.2:${PORTSDIR}/devel/py-cxx
 LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion \
 		neon.28:${PORTSDIR}/www/neon28
-
-BROKEN=		does not compile
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_NOEGGINFO=yes
 PYDISTUTILS_CONFIGURE_TARGET=configure
-PYDISTUTILS_CONFIGUREARGS=--pycxx-dir=${PYTHON_INCLUDEDIR} \
-		--pycxx-src-dir=${LOCALBASE}/share/${PYTHON_VERSION}/CXX \
-		--apr-inc-dir=${LOCALBASE}/include/apr-1
+PYDISTUTILS_CONFIGUREARGS=--apr-inc-dir=${LOCALBASE}/include/apr-1
+
+PYVERSION=	${PYTHON_VERSION:S/^python//}
 
 PLIST_SUB=	PYTHONVER=${PYTHON_VERSION:S/./_/:S/python//}
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PORTNAME}/__init__.py \
@@ -34,8 +31,14 @@ PLIST_DIRS=	%%PYTHON_SITELIBDIR%%/${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Source
 
+.include <bsd.port.pre.mk>
+.if defined(PYTHON_VERSION) && ${PYVERSION:S/.//} < 26
+pre-configure:
+	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py backport
+.endif
+
 do-build:
-	cd ${WRKSRC} && ${MAKE}
+	@cd ${WRKSRC} && ${MAKE}
 
 pre-install:
 	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
@@ -47,4 +50,4 @@ do-install:
 		${WRKSRC}/${PORTNAME}/*.so \
 		${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
