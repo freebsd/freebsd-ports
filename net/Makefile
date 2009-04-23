@@ -186,6 +186,7 @@
     SUBDIR += gopher
     SUBDIR += gotthard
     SUBDIR += gq
+    SUBDIR += grdc
     SUBDIR += grdesktop
     SUBDIR += grsync
     SUBDIR += gsambad
