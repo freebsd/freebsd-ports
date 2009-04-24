@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tw_cli
-PORTVERSION=	9.5.1
+PORTVERSION=	9.5.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://3ware.com/download/Escalade9690SA-Series/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-freebsd-${DIST_ARCH}-${PORTVERSION}
