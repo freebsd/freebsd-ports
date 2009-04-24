@@ -6,52 +6,27 @@
 #
 
 PORTNAME=	tcpdump
-PORTVERSION=	3.9.7
+PORTVERSION=	4.0.0
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://www.tcpdump.org/release/ \
-		http://www.icrew.org/mirror/tcp_dump/tcpdump_3_9/
+MASTER_SITES=	http://www.tcpdump.org/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Ubiquitous network traffic analysis tool
 
-# TODO: Add strict sanity check that we're compiling against a
-# version of libpcap with which this tcpdump release is compatible.
-#
-.if defined(TCPDUMP_OVERWRITE_BASE) || !defined(WITH_LIBPCAP_BASE)
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
-.endif
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-MAN1=		tcpdump.1
+LIB_DEPENDS=	pcap.3:${PORTSDIR}/net/libpcap \
+		smi.2:${PORTSDIR}/net-mgmt/libsmi
 
 GNU_CONFIGURE=		yes
-
-.if defined(TCPDUMP_OVERWRITE_BASE)
-PREFIX=		/usr
-PKGNAMESUFFIX=	-overwrite-base
-MANPREFIX=	${PREFIX}/share
-PLIST_SUB+=	NOTBASE="@comment "
-PLIST_SUB+=	BASE=""
-PKGMESSAGE=	${FILESDIR}/pkg-message-base
-.else
-PLIST_SUB+=	BASE="@comment "
-PLIST_SUB+=	NOTBASE=""
-.endif
+USE_GMAKE=		yes
 
 # Compilation Options
-#
-# Special options:
-# TCPDUMP_OVERWRITE_BASE	Overwrite the base system's tcpdump binary.
-#				Implies the use of the libpcap port.
 #
 # User-definable switches:
 # WITHOUT_CRYPTO	Build without IPSEC or TCPMD5 decryption.
 # WITHOUT_IPV6		Build without IPV6 support.
-# WITH_LIBPCAP_BASE	Use libpcap from the base system instead of ports.
 #
-# Defaults:	WITHOUT_LIBPCAP_BASE WITH_CRYPTO WITH_IPV6
+# Defaults:	WITH_CRYPTO WITH_IPV6
 
 # The --without-crypto flag needs to be explicitly specified. The
 # configure script gets confused if you specify --with-crypto and
@@ -67,38 +42,44 @@ USE_OPENSSL=		defined
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-# When compiling against the port, it's necessary to force the
-# port to look for libpcap in ${LOCALPCAPBASE} first, for both
-# the configure and build steps.
+CONFIGURE_ARGS+=	--disable-smb
+
+MAN1=		tcpdump.1
+PLIST_FILES=	sbin/tcpdump
+
 #
-.if defined(TCPDUMP_OVERWRITE_BASE) || !defined(WITH_LIBPCAP_BASE)
-LOCALPCAPBASE=	${LOCALBASE}
-CONFIGURE_ENV+=	CFLAGS="-L${LOCALPCAPBASE}/lib"
-.else
-LOCALPCAPBASE=	/usr
-.endif
-
-LOCALPCAPFILES=	include/pcap.h include/pcap-namedb.h include/pcap-bpf.h \
-		lib/libpcap.a
-WRKPCAPDIR=	${WRKDIR}/libpcap-0.9.7
-
-.include <bsd.port.pre.mk>
-
+# Force the use of the shared library from the libpcap port.
+# Don't rely on pcap-config, it is still not ready for prime time.
+#
 # When building tcpdump against a particular pcap version, it expects to
 # find a built, untarred source tree in the parent of the work tree.
 # Build a symlink farm which points to the installed versions of the
 # required files, in order to produce the files it wants without
 # requiring that the libpcap distfile be untarred.
+# Furthermore, tcpdump's aclocal.m4 only looks for the static version
+# of this library, so we need to perform another substitution.
 #
+CFLAGS+=		"-I${LOCALBASE}/include"
+LDFLAGS+=		"-L${LOCALBASE}/lib"
+
+.include <bsd.port.pre.mk>
+
+LIBPCAP_FORCE_VER=	libpcap-1.0.0
+LOCALPCAPFILES=	include/pcap.h include/pcap-namedb.h include/pcap-bpf.h \
+		include/pcap lib/libpcap.a
+WRKPCAPDIR=	${WRKDIR}/${LIBPCAP_FORCE_VER}
+
 pre-configure:
-	${MKDIR} ${WRKPCAPDIR}
+	@${MKDIR} ${WRKPCAPDIR}
 .for i in ${LOCALPCAPFILES}
-	${LN} -s ${LOCALPCAPBASE}/$i ${WRKPCAPDIR}
+	@${LN} -s ${LOCALBASE}/$i ${WRKPCAPDIR}
 .endfor
 
-.if defined(TCPDUMP_OVERWRITE_BASE)
-post-install:
-	${CAT} ${PKGMESSAGE}
-.endif
+post-configure:
+	@${REINPLACE_CMD} -e "s,\./\.\./${LIBPCAP_FORCE_VER}/libpcap\.a,${LOCALBASE}/lib/libpcap.so.3," ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/tcpdump ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/tcpdump.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
