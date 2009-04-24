@@ -12,7 +12,7 @@ PORTVERSION=	1.5.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.read.cs.ucla.edu/click/
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Click Modular Router
 
 USE_PERL5_BUILD=yes
