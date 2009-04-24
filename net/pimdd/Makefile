@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.antc.uoregon.edu/PIMDM/
 DISTNAME=	pimd-dense
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	\
 	UO Dense Protocol-Independent Multicast (PIM-DM) daemon for IPv4
 
