@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	redcloth
-PORTVERSION=	3.0.4
+PORTVERSION=	4.1.9
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 DISTNAME=	RedCloth-${PORTVERSION}
@@ -16,7 +16,7 @@ COMMENT=	A module for using Textile in Ruby
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
-RUBYGEM_AUTOPLIST=  yes
+RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/redcloth
 
 .include <bsd.port.mk>
