@@ -2,7 +2,7 @@
 as a ledger, yet provides powerful facilities for working with commodities, 
 accounts, transactions, etc. It will read Gnucash data files directly. 
 
-WWW: http://www.newartisans.com/ledger.html
+WWW: http://wiki.github.com/jwiegley/ledger
 
  - Woody Carey
 woodycarey@hotmail.com
