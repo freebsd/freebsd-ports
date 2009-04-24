@@ -1,6 +1,6 @@
---- include/zthread/Guard.h.orig	Wed Jul 30 00:40:13 2003
-+++ include/zthread/Guard.h	Fri Dec 24 21:15:17 2004
-@@ -490,7 +490,7 @@
+--- ./include/zthread/Guard.h.orig	2005-03-12 21:10:09.000000000 -0500
++++ ./include/zthread/Guard.h	2009-04-23 15:03:09.000000000 -0400
+@@ -491,7 +491,7 @@
      
    try {
      
