@@ -200,6 +200,7 @@ OpenEXR                         ports/graphics/OpenEXR
 PDL                             ports/math/PDL
 PicMonger                       ports/news/PicMonger
 R                               ports/math/R
+R-cran-RSvgDevice               ports/math/R-cran-RSvgDevice
 R-cran-Zelig                    ports/math/R-cran-Zelig
 R-cran-gpclib                   ports/math/R-cran-gpclib
 R-cran-sm                       ports/math/R-cran-sm
@@ -2115,6 +2116,13 @@ decomment                       ports/sysutils/decomment
 decss                           ports/www/decss
 decurs                          ports/x11/decurs
 dedit                           ports/editors/dedit
+deegree-csw                     ports/graphics/deegree-csw
+deegree-igeoportal              ports/graphics/deegree-igeoportal
+deegree-wcs                     ports/graphics/deegree-wcs
+deegree-wfs                     ports/graphics/deegree-wfs
+deegree-wms                     ports/graphics/deegree-wms
+deegree-wps                     ports/graphics/deegree-wps
+deegree-wpvs                    ports/graphics/deegree-wpvs
 defendguin                      ports/games/defendguin
 dejagnu                         ports/misc/dejagnu
 dejavu                          ports/x11-fonts/dejavu
@@ -7123,6 +7131,7 @@ libdap                          ports/devel/libdap
 libdasm                         ports/devel/libdasm
 libdbi                          ports/databases/libdbi
 libdbi-drivers                  ports/databases/libdbi-drivers
+libdc1394                       ports/multimedia/libdc1394
 libdca                          ports/multimedia/libdca
 libdfui                         ports/devel/libdfui
 libdict                         ports/devel/libdict
@@ -7132,6 +7141,7 @@ libdjbdns                       ports/dns/libdjbdns
 libdkim                         ports/mail/libdkim
 libdlmalloc                     ports/devel/libdlmalloc
 libdlna                         ports/devel/libdlna
+libdmtx                         ports/graphics/libdmtx
 libdmx                          ports/x11/libdmx
 libdnd                          ports/x11/libdnd
 libdnet                         ports/net/libdnet
@@ -7624,6 +7634,7 @@ libxcb                          ports/x11/libxcb
 libxcomposite                   ports/x11/libXcomposite
 libxcursor                      ports/x11/libXcursor
 libxdamage                      ports/x11/libXdamage
+libxdg-basedir                  ports/x11/libxdg-basedir
 libxdiff                        ports/textproc/libxdiff
 libxdmcp                        ports/x11/libXdmcp
 libxevie                        ports/x11/libXevie
@@ -10286,6 +10297,7 @@ p5-Catalyst-Plugin-Cache-Memcached  ports/www/p5-Catalyst-Plugin-Cache-Memcached
 p5-Catalyst-Plugin-Cache-Memcached-Fast  ports/www/p5-Catalyst-Plugin-Cache-Memcached-Fast
 p5-Catalyst-Plugin-Cache-Store-FastMmap  ports/www/p5-Catalyst-Plugin-Cache-Store-FastMmap
 p5-Catalyst-Plugin-Captcha      ports/www/p5-Catalyst-Plugin-Captcha
+p5-Catalyst-Plugin-CommandLine  ports/www/p5-Catalyst-Plugin-CommandLine
 p5-Catalyst-Plugin-ConfigLoader  ports/www/p5-Catalyst-Plugin-ConfigLoader
 p5-Catalyst-Plugin-ConfigLoader-Environment  ports/www/p5-Catalyst-Plugin-ConfigLoader-Environment
 p5-Catalyst-Plugin-CookiedSession  ports/www/p5-Catalyst-Plugin-CookiedSession
@@ -11400,6 +11412,7 @@ p5-IMDB-Movie                   ports/www/p5-IMDB-Movie
 p5-IO                           ports/devel/p5-IO
 p5-IO-AIO                       ports/devel/p5-IO-AIO
 p5-IO-All                       ports/devel/p5-IO-All
+p5-IO-All-LWP                   ports/devel/p5-IO-All-LWP
 p5-IO-Async                     ports/devel/p5-IO-Async
 p5-IO-BufferedSelect            ports/devel/p5-IO-BufferedSelect
 p5-IO-CSVHeaderFile             ports/textproc/p5-IO-CSVHeaderFile
@@ -11850,8 +11863,10 @@ p5-MooseX-Types                 ports/devel/p5-MooseX-Types
 p5-MooseX-Types-Path-Class      ports/devel/p5-MooseX-Types-Path-Class
 p5-Mouse                        ports/devel/p5-Mouse
 p5-MouseX-AttributeHelpers      ports/devel/p5-MouseX-AttributeHelpers
+p5-MouseX-ConfigFromFile        ports/devel/p5-MouseX-ConfigFromFile
 p5-MouseX-Getopt                ports/devel/p5-MouseX-Getopt
 p5-MouseX-Types                 ports/devel/p5-MouseX-Types
+p5-MouseX-Types-Path-Class      ports/devel/p5-MouseX-Types-Path-Class
 p5-Music-Audioscrobbler-MPD     ports/audio/p5-Music-Audioscrobbler-MPD
 p5-Music-Audioscrobbler-Submit  ports/audio/p5-Music-Audioscrobbler-Submit
 p5-MusicBrainz-Client           ports/audio/p5-MusicBrainz-Client
@@ -12501,6 +12516,7 @@ p5-Sledge-SessionManager-CookieStore  ports/www/p5-Sledge-SessionManager-CookieS
 p5-Sledge-Template-Expr         ports/www/p5-Sledge-Template-Expr
 p5-Smart-Comments               ports/devel/p5-Smart-Comments
 p5-Snort-Rule                   ports/security/p5-Snort-Rule
+p5-Socket-Class                 ports/net/p5-Socket-Class
 p5-Socket-Multicast6            ports/net/p5-Socket-Multicast6
 p5-Socket6                      ports/net/p5-Socket6
 p5-Socks                        ports/net/p5-Socks
@@ -13147,6 +13163,7 @@ p5-XML-LibRSVG                  ports/textproc/p5-XML-LibRSVG
 p5-XML-LibXML                   ports/textproc/p5-XML-LibXML
 p5-XML-LibXML-Common            ports/textproc/p5-XML-LibXML-Common
 p5-XML-LibXML-Iterator          ports/textproc/p5-XML-LibXML-Iterator
+p5-XML-LibXML-Simple            ports/textproc/p5-XML-LibXML-Simple
 p5-XML-LibXSLT                  ports/textproc/p5-XML-LibXSLT
 p5-XML-Liberal                  ports/textproc/p5-XML-Liberal
 p5-XML-Literal                  ports/textproc/p5-XML-Literal
@@ -13600,6 +13617,7 @@ p5-catalyst-plugin-cache-memcached  ports/www/p5-Catalyst-Plugin-Cache-Memcached
 p5-catalyst-plugin-cache-memcached-fast  ports/www/p5-Catalyst-Plugin-Cache-Memcached-Fast
 p5-catalyst-plugin-cache-store-fastmmap  ports/www/p5-Catalyst-Plugin-Cache-Store-FastMmap
 p5-catalyst-plugin-captcha      ports/www/p5-Catalyst-Plugin-Captcha
+p5-catalyst-plugin-commandline  ports/www/p5-Catalyst-Plugin-CommandLine
 p5-catalyst-plugin-configloader  ports/www/p5-Catalyst-Plugin-ConfigLoader
 p5-catalyst-plugin-configloader-environment  ports/www/p5-Catalyst-Plugin-ConfigLoader-Environment
 p5-catalyst-plugin-cookiedsession  ports/www/p5-Catalyst-Plugin-CookiedSession
@@ -14842,6 +14860,7 @@ p5-interpolation                ports/lang/p5-Interpolation
 p5-io                           ports/devel/p5-IO
 p5-io-aio                       ports/devel/p5-IO-AIO
 p5-io-all                       ports/devel/p5-IO-All
+p5-io-all-lwp                   ports/devel/p5-IO-All-LWP
 p5-io-async                     ports/devel/p5-IO-Async
 p5-io-bufferedselect            ports/devel/p5-IO-BufferedSelect
 p5-io-capture                   ports/devel/p5-IO-Capture
@@ -15264,8 +15283,10 @@ p5-moosex-types                 ports/devel/p5-MooseX-Types
 p5-moosex-types-path-class      ports/devel/p5-MooseX-Types-Path-Class
 p5-mouse                        ports/devel/p5-Mouse
 p5-mousex-attributehelpers      ports/devel/p5-MouseX-AttributeHelpers
+p5-mousex-configfromfile        ports/devel/p5-MouseX-ConfigFromFile
 p5-mousex-getopt                ports/devel/p5-MouseX-Getopt
 p5-mousex-types                 ports/devel/p5-MouseX-Types
+p5-mousex-types-path-class      ports/devel/p5-MouseX-Types-Path-Class
 p5-mp3-find                     ports/audio/p5-MP3-Find
 p5-mp3-id3v1tag                 ports/audio/p5-MP3-ID3v1Tag
 p5-mp3-info                     ports/audio/p5-MP3-Info
@@ -15907,6 +15928,7 @@ p5-soap-lite                    ports/net/p5-SOAP-Lite
 p5-soap-lite-060                ports/net/p5-SOAP-Lite-060
 p5-soap-mysoap                  ports/net/p5-SOAP-MySOAP
 p5-soap-wsdl                    ports/devel/p5-SOAP-WSDL
+p5-socket-class                 ports/net/p5-Socket-Class
 p5-socket-multicast6            ports/net/p5-Socket-Multicast6
 p5-socket6                      ports/net/p5-Socket6
 p5-socks                        ports/net/p5-Socks
@@ -16607,6 +16629,7 @@ p5-xml-librsvg                  ports/textproc/p5-XML-LibRSVG
 p5-xml-libxml                   ports/textproc/p5-XML-LibXML
 p5-xml-libxml-common            ports/textproc/p5-XML-LibXML-Common
 p5-xml-libxml-iterator          ports/textproc/p5-XML-LibXML-Iterator
+p5-xml-libxml-simple            ports/textproc/p5-XML-LibXML-Simple
 p5-xml-libxslt                  ports/textproc/p5-XML-LibXSLT
 p5-xml-literal                  ports/textproc/p5-XML-Literal
 p5-xml-mini                     ports/textproc/p5-XML-Mini
@@ -17805,6 +17828,7 @@ picviz                          ports/graphics/picviz
 piddle                          ports/graphics/piddle
 pidentd                         ports/security/pidentd
 pidgin                          ports/net-im/pidgin
+pidgin-birthday_reminder        ports/net-im/pidgin-birthday_reminder
 pidgin-encryption               ports/security/pidgin-encryption
 pidgin-facebookchat             ports/net-im/pidgin-facebookchat
 pidgin-fetion                   ports/net-im/pidgin-fetion
@@ -18120,6 +18144,7 @@ ports_fish                      ports/shells/fish
 ports_getopt                    ports/misc/getopt
 ports_gperf                     ports/devel/gperf
 ports_gpt                       ports/misc/gpt
+ports_grdc                      ports/net/grdc
 ports_gzip                      ports/archivers/gzip
 ports_host                      ports/dns/host
 ports_ja-man                    ports/japanese/man
@@ -18742,6 +18767,7 @@ py-mhash                        ports/security/py-mhash
 py-migrate                      ports/databases/py-migrate
 py-milter                       ports/mail/py-milter
 py-ming                         ports/graphics/py-ming
+py-mlpy                         ports/science/py-mlpy
 py-mnemosyne                    ports/games/py-mnemosyne
 py-mp-random                    ports/net/py-mp-random
 py-mpd                          ports/audio/py-mpd
@@ -18860,6 +18886,7 @@ py-pygpx                        ports/devel/py-pygpx
 py-pygresql                     ports/databases/py-PyGreSQL
 py-pyke                         ports/devel/py-pyke
 py-pylib                        ports/devel/py-pylib
+py-pylibacl                     ports/security/py-pylibacl
 py-pyliblo                      ports/audio/py-pyliblo
 py-pylons                       ports/www/py-pylons
 py-pymarc                       ports/devel/py-pymarc
@@ -19468,6 +19495,7 @@ qwtplot3d                       ports/math/qwtplot3d
 qwtplot3d-qt4                   ports/math/qwtplot3d-qt4
 r                               ports/math/R
 r-cran-gpclib                   ports/math/R-cran-gpclib
+r-cran-rsvgdevice               ports/math/R-cran-RSvgDevice
 r-cran-sm                       ports/math/R-cran-sm
 r-cran-zelig                    ports/math/R-cran-Zelig
 r-sp                            ports/math/R-sp
@@ -20370,6 +20398,7 @@ sc                              ports/math/sc
 sc-aspell                       ports/textproc/sc-aspell
 scalapack                       ports/math/scalapack
 scale2x                         ports/graphics/scale2x
+scamp                           ports/security/scamp
 scamper                         ports/net/scamper
 scan_ffs                        ports/sysutils/scan_ffs
 scanbuttond                     ports/sysutils/scanbuttond
@@ -21324,6 +21353,7 @@ sysconftool                     ports/devel/sysconftool
 syscp                           ports/sysutils/syscp
 sysfsutils                      ports/devel/sysfsutils
 sysgather                       ports/sysutils/sysgather
+sysinfo                         ports/sysutils/sysinfo
 syslinux                        ports/sysutils/syslinux
 syslog-ng                       ports/sysutils/syslog-ng
 syslog-ng2                      ports/sysutils/syslog-ng2
