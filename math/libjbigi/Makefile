@@ -42,8 +42,11 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if ${ARCH} == "i386"
 JBIGI_BUILD_JCPUID=	yes
+.endif
+
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
 JBIGI_LIBS+=	libjbigi-freebsd-x86.so
 .endif
 
