@@ -280,6 +280,7 @@
     SUBDIR += latex2html
     SUBDIR += lemmatizer
     SUBDIR += lemmatizer2
+    SUBDIR += lexxia
     SUBDIR += libcroco
     SUBDIR += libcsv
     SUBDIR += libebml
