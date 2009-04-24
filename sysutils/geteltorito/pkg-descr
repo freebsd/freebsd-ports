@@ -1,0 +1,6 @@
+geteltorito is a small Perl script which will extract
+(and display information about) an El Torito boot image
+from a real CD or a CD image. This helps you modify the boot
+image when you want to burn a modified version of the CD in question.
+
+WWW: http://www.uni-koblenz.de/~krienke/ftp/noarch/geteltorito/
