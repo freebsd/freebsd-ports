@@ -242,6 +242,7 @@
     SUBDIR += formido
     SUBDIR += fortunate
     SUBDIR += fotaq
+    SUBDIR += freebsd-carddeck-kde4
     SUBDIR += freebsd-games
     SUBDIR += freecell-solver
     SUBDIR += freeciv
