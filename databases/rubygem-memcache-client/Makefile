@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	memcache-client
-PORTVERSION=	1.5.0
+PORTVERSION=	1.7.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	seattlerb
