@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ck4up
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://jue.li/crux/ck4up/
 
