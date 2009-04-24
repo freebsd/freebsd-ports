@@ -1,6 +1,0 @@
-lib/libpcap.a
-%%BASE%%lib/libpcap.so.2
-%%BASE%%lib/libpcap.so
-include/pcap.h
-include/pcap-namedb.h
-include/pcap-bpf.h

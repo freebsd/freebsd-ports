@@ -1,0 +1,73 @@
+--- Makefile.in.orig	2008-10-28 01:26:13.000000000 +0000
++++ Makefile.in	2009-04-24 13:38:12.000000000 +0100
+@@ -311,22 +311,20 @@
+ 	Win32/Src/inet_net.c \
+ 	Win32/Src/inet_pton.c
+ 
+-all: libpcap.a pcap-config
++all: libpcap.a libpcap.so.3 pcap-config
+ 
+ libpcap.a: $(OBJ)
+ 	@rm -f $@
+ 	$(AR) rc $@ $(OBJ) $(LIBS)
+ 	$(RANLIB) $@
+ 
+-shared: libpcap.$(DYEXT)
+-
+ #
+ # XXX - this works with GNU ld, but won't necessarily work with native
+ # ld on, for example, various SVR4-flavored platforms, or Digital UNIX.
+ #
+-libpcap.so: $(OBJ)
++libpcap.so.3: $(OBJ)
+ 	@rm -f $@
+-	$(CC) -shared -Wl,-soname,$@.1 -o $@.`cat $(srcdir)/VERSION` $(OBJ) $(DAGLIBS)
++	$(CC) -shared -Wl,-x -o libpcap.so.3 -Wl,-soname,libpcap.so.3 `lorder $(OBJ) | tsort -q` $(DAGLIBS)
+ 
+ #
+ # The following rule succeeds, but the result is untested.
+@@ -416,6 +414,8 @@
+ install: libpcap.a pcap-config
+ 	[ -d $(DESTDIR)$(libdir) ] || \
+ 	    (mkdir -p $(DESTDIR)$(libdir); chmod 755 $(DESTDIR)$(libdir))
++	$(INSTALL_DATA) libpcap.so.3 $(DESTDIR)$(libdir)/libpcap.so.3
++	ln -fs $(DESTDIR)$(libdir)/libpcap.so.3 $(DESTDIR)$(libdir)/libpcap.so
+ 	$(INSTALL_DATA) libpcap.a $(DESTDIR)$(libdir)/libpcap.a
+ 	$(RANLIB) $(DESTDIR)$(libdir)/libpcap.a
+ 	[ -d $(DESTDIR)$(includedir) ] || \
+@@ -445,31 +445,15 @@
+ 	    $(DESTDIR)$(includedir)/pcap-bpf.h
+ 	$(INSTALL_DATA) $(srcdir)/pcap-namedb.h \
+ 	    $(DESTDIR)$(includedir)/pcap-namedb.h
+-	$(INSTALL_PROGRAM) pcap-config $(DESTDIR)$(bindir)/pcap-config
++	$(INSTALL_DATA) pcap-config $(DESTDIR)$(bindir)/pcap-config
++	chmod 755 $(DESTDIR)$(bindir)/pcap-config
+ 	for i in $(MAN1); do \
+ 		$(INSTALL_DATA) $(srcdir)/$$i \
+ 		    $(DESTDIR)$(mandir)/man1/$$i; done
+ 	for i in $(MAN3PCAP); do \
++		j=$$(echo $$i | sed -e 's/3pcap/3/') ; \
+ 		$(INSTALL_DATA) $(srcdir)/$$i \
+-		    $(DESTDIR)$(mandir)/man3/$$i; done
+-	ln $(DESTDIR)$(mandir)/man3/pcap_datalink_val_to_name.3pcap \
+-		 $(DESTDIR)$(mandir)/man3/pcap_datalink_val_to_description.3pcap
+-	ln $(DESTDIR)$(mandir)/man3/pcap_dump_open.3pcap \
+-		 $(DESTDIR)$(mandir)/man3/pcap_dump_fopen.3pcap
+-	ln $(DESTDIR)$(mandir)/man3/pcap_geterr.3pcap \
+-		 $(DESTDIR)$(mandir)/man3/pcap_perror.3pcap
+-	ln $(DESTDIR)$(mandir)/man3/pcap_inject.3pcap \
+-		 $(DESTDIR)$(mandir)/man3/pcap_sendpacket.3pcap
+-	ln $(DESTDIR)$(mandir)/man3/pcap_loop.3pcap \
+-		 $(DESTDIR)$(mandir)/man3/pcap_dispatch.3pcap
+-	ln $(DESTDIR)$(mandir)/man3/pcap_major_version.3pcap \
+-		 $(DESTDIR)$(mandir)/man3/pcap_minor_version.3pcap
+-	ln $(DESTDIR)$(mandir)/man3/pcap_next_ex.3pcap \
+-		 $(DESTDIR)$(mandir)/man3/pcap_next.3pcap
+-	ln $(DESTDIR)$(mandir)/man3/pcap_open_offline.3pcap \
+-		 $(DESTDIR)$(mandir)/man3/pcap_fopen_offline.3pcap
+-	ln $(DESTDIR)$(mandir)/man3/pcap_setnonblock.3pcap \
+-		 $(DESTDIR)$(mandir)/man3/pcap_getnonblock.3pcap
++		    $(DESTDIR)$(mandir)/man3/$$j; done
+ 	for i in $(MANFILE); do \
+ 		$(INSTALL_DATA) $(srcdir)/`echo $$i | sed 's/.manfile.in/.manfile/'` \
+ 		    $(DESTDIR)$(mandir)/man@MAN_FILE_FORMATS@/`echo $$i | sed 's/.manfile.in/.@MAN_FILE_FORMATS@/'`; done
