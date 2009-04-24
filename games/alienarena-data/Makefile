@@ -8,7 +8,11 @@
 PORTNAME=	alienarena
 PORTVERSION=	2008.710
 CATEGORIES=	games
-MASTER_SITES=	http://offload1.icculus.org/alienarena/Files/
+MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
+		http://ftp.jeuxlinux.fr/files/ \
+		http://mirror.ipgn.com.au/games/alienarena/ \
+		http://gd.tuwien.ac.at/opsys/linux/gentoo/distfiles/ \
+		http://offload1.icculus.org/alienarena/Files/
 PKGNAMESUFFIX=	-data
 DISTNAME=	${PORTNAME}2008-linux20080603
 
