@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tw_cli
-PORTVERSION=	9.5.0.1
+PORTVERSION=	9.5.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://3ware.com/download/Escalade9690SA-Series/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-freebsd-${DIST_ARCH}-${PORTVERSION}
@@ -23,8 +23,6 @@ WRKSRC=	${WRKDIR}
 NO_BUILD=	yes
 STRIP=		# empty
 SUB_FILES+=	407.status-3ware-raid
-PLIST_FILES=	sbin/tw_cli etc/periodic/daily/407.status-3ware-raid
-PLIST_DIRS=	etc/periodic/daily etc/periodic
 PORTDOCS=	tw_cli.8.html
 MAN8+=		tw_cli.8
 
