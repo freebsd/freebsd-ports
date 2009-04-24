@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	hoe
-PORTVERSION=	1.8.2
+PORTVERSION=	1.12.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	seattlerb
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	seattlerb
 MAINTAINER=	jw@innerewut.de
 COMMENT=	A simple rake/rubygems helper for project Rakefiles
 
-BUILD_DEPENDS=	rubyforge:${PORTSDIR}/devel/rubygem-rubyforge
+BUILD_DEPENDS=	rubygem-rubyforge>=1.0.3:${PORTSDIR}/devel/rubygem-rubyforge
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
