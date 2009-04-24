@@ -56,10 +56,10 @@ LAPACK=		-llapack
 
 pre-configure:
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e '/^SUBDIRS =/s| doc||' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e '/^abinit_top_subdirs =/s| doc||' ${WRKSRC}/config/specs/other.cf
 .endif
 .if defined(NOPORTEXAMPLES)
-	${REINPLACE_CMD} -e '/^SUBDIRS =/s| tests||' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e '/^abinit_top_subdirs =/s| tests||' ${WRKSRC}/config/specs/other.cf
 .endif
 	(cd ${WRKSRC} && ./config/scripts/makemake)
 	${CHMOD} a+x ${WRKSRC}/bindings/parser/*.py
