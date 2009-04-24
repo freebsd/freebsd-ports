@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	erubis
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=  yes
+RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/erubis
 
 .include <bsd.port.mk>
