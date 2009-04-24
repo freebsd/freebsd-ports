@@ -1,5 +1,5 @@
---- bgpd/kroute.c	2007-05-11 13:27:59.000000000 +0200
-+++ bgpd/kroute.c	2008-05-28 11:04:19.000000000 +0200
+--- bgpd/kroute.c.orig	2007-05-11 13:27:59.000000000 +0200
++++ bgpd/kroute.c	2009-04-23 05:14:47.000000000 +0200
 @@ -1738,7 +1738,9 @@
  	struct sockaddr_in	prefix;
  	struct sockaddr_in	nexthop;
@@ -10,7 +10,7 @@
  	int			iovcnt = 0;
  
  	if (kr_state.fib_sync == 0)
-@@ -1748,14 +1750,16 @@
+@@ -1748,7 +1750,9 @@
  	bzero(&hdr, sizeof(hdr));
  	hdr.rtm_version = RTM_VERSION;
  	hdr.rtm_type = action;
@@ -20,14 +20,6 @@
  	hdr.rtm_flags = RTF_PROTO1;
  	if (kroute->flags & F_BLACKHOLE)
  		hdr.rtm_flags |= RTF_BLACKHOLE;
- 	if (kroute->flags & F_REJECT)
- 		hdr.rtm_flags |= RTF_REJECT;
- 	if (action == RTM_CHANGE)	/* reset these flags on change */
--		hdr.rtm_fmask = RTF_REJECT|RTF_BLACKHOLE;
-+		hdr.rtm_use = RTF_REJECT|RTF_BLACKHOLE;
- 	hdr.rtm_seq = kr_state.rtseq++;	/* overflow doesn't matter */
- 	hdr.rtm_msglen = sizeof(hdr);
- 	/* adjust iovec */
 @@ -1799,6 +1803,7 @@
  	iov[iovcnt++].iov_len = sizeof(mask);
  
@@ -54,7 +46,7 @@
  	int			iovcnt = 0;
  
  	if (kr_state.fib_sync == 0)
-@@ -1860,14 +1868,16 @@
+@@ -1860,7 +1868,9 @@
  	bzero(&hdr, sizeof(hdr));
  	hdr.rtm_version = RTM_VERSION;
  	hdr.rtm_type = action;
@@ -64,14 +56,6 @@
  	hdr.rtm_flags = RTF_PROTO1;
  	if (kroute->flags & F_BLACKHOLE)
  		hdr.rtm_flags |= RTF_BLACKHOLE;
- 	if (kroute->flags & F_REJECT)
- 		hdr.rtm_flags |= RTF_REJECT;
- 	if (action == RTM_CHANGE)	/* reset these flags on change */
--		hdr.rtm_fmask = RTF_REJECT|RTF_BLACKHOLE;
-+		hdr.rtm_use = RTF_REJECT|RTF_BLACKHOLE;
- 	hdr.rtm_seq = kr_state.rtseq++;	/* overflow doesn't matter */
- 	hdr.rtm_msglen = sizeof(hdr);
- 	/* adjust iovec */
 @@ -1914,6 +1924,7 @@
  	iov[iovcnt++].iov_len = sizeof(mask);
  

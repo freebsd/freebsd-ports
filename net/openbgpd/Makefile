@@ -68,7 +68,6 @@ post-patch:
 		${WRKSRC}/bgpd/rde_attr.c		\
 		${WRKSRC}/bgpd/rde_rib.c		\
 		${WRKSRC}/bgpd/rde_update.c
-	@${REINPLACE_CMD} -e "s|rtm_fmask|rtm_use|" ${WRKSRC}/bgpd/kroute.c
 	@${REINPLACE_CMD} -e "s|RTLABEL_LEN|PFTABLE_LEN|" ${WRKSRC}/bgpd/bgpd.h
 	@${REINPLACE_CMD} -e "s|ulong|unsigned\ long|" ${WRKSRC}/bgpctl/irr_parser.c
 
@@ -86,10 +85,4 @@ post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800059
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
