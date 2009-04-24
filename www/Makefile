@@ -1633,6 +1633,7 @@
     SUBDIR += xpi-firefox-showcase
     SUBDIR += xpi-firefoxonwooztalk
     SUBDIR += xpi-firegpg
+    SUBDIR += xpi-firemobilesimulator
     SUBDIR += xpi-fission
     SUBDIR += xpi-flashblock
     SUBDIR += xpi-flashgot
