@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rubyforge
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	codeforpeople
