@@ -1,4 +1,7 @@
 bin/nautilus-sendto
+lib/evolution/2.26/plugins/liborg-gnome-evolution-send-attachments-to.la
+lib/evolution/2.26/plugins/liborg-gnome-evolution-send-attachments-to.so
+lib/evolution/2.26/plugins/org-gnome-evolution-send-attachments-to.eplug
 lib/nautilus-sendto/plugins/libnstbluetooth.la
 lib/nautilus-sendto/plugins/libnstbluetooth.so
 lib/nautilus-sendto/plugins/libnstburn.la
