@@ -66,7 +66,7 @@ lib/libgladeui-1.so.9
 libdata/pkgconfig/gladeui-1.0.pc
 share/applications/glade-3.desktop
 %%DOCSDIR%%/GladeApp.html
-share/doc/gladeui/GladeBaseEditor.html
+%%DOCSDIR%%/GladeBaseEditor.html
 %%DOCSDIR%%/GladeClipboard.html
 %%DOCSDIR%%/GladeClipboardView.html
 %%DOCSDIR%%/GladeCommand.html
@@ -91,18 +91,9 @@ share/doc/gladeui/GladeWidgetAction.html
 %%DOCSDIR%%/gladeui-glade-signal-editor.html
 %%DOCSDIR%%/gladeui-glade-utils.html
 share/doc/gladeui/gladeui-glade-xml-utils.html
-%%DOCSDIR%%/gladeui.devhelp
-%%DOCSDIR%%/gladeui.devhelp2
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/ix01.html
-%%DOCSDIR%%/left.png
 %%DOCSDIR%%/misc.html
 %%DOCSDIR%%/properties.html
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/up.png
+%%DOCSDIR%%/pythonsupport.html
 %%DOCSDIR%%/widgetclasses.html
 %%GNOME:%%%%DATADIR%%/catalogs/bonobo.xml
 %%GNOME:%%%%DATADIR%%/catalogs/bonobo.xml.in
@@ -479,6 +470,8 @@ share/locale/si/LC_MESSAGES/glade3.mo
 share/locale/sk/LC_MESSAGES/glade3.mo
 share/locale/sl/LC_MESSAGES/glade3.mo
 share/locale/sq/LC_MESSAGES/glade3.mo
+share/locale/sr/LC_MESSAGES/glade3.mo
+share/locale/sr@latin/LC_MESSAGES/glade3.mo
 share/locale/sv/LC_MESSAGES/glade3.mo
 share/locale/ta/LC_MESSAGES/glade3.mo
 share/locale/te/LC_MESSAGES/glade3.mo
@@ -554,6 +547,10 @@ share/omf/glade/glade-sv.omf
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/oc/LC_MESSAGES

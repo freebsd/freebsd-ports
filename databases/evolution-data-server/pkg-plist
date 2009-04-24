@@ -742,6 +742,7 @@ share/locale/ko/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/ku/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/lt/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/lv/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
+share/locale/mai/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/mk/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/ml/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/mn/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
@@ -842,6 +843,8 @@ share/pixmaps/evolution-data-server/category_time-and-expenses_16.png
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES

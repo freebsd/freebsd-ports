@@ -14,6 +14,23 @@ share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.TimeConfig.serv
 share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.UserConfig.service
 share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.UsersConfig.service
 share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.service
+share/locale/bg/LC_MESSAGES/system-tools-backends.mo
+share/locale/ca/LC_MESSAGES/system-tools-backends.mo
+share/locale/da/LC_MESSAGES/system-tools-backends.mo
+share/locale/de/LC_MESSAGES/system-tools-backends.mo
+share/locale/el/LC_MESSAGES/system-tools-backends.mo
+share/locale/es/LC_MESSAGES/system-tools-backends.mo
+share/locale/fi/LC_MESSAGES/system-tools-backends.mo
+share/locale/fr/LC_MESSAGES/system-tools-backends.mo
+share/locale/he/LC_MESSAGES/system-tools-backends.mo
+share/locale/hu/LC_MESSAGES/system-tools-backends.mo
+share/locale/it/LC_MESSAGES/system-tools-backends.mo
+share/locale/pl/LC_MESSAGES/system-tools-backends.mo
+share/locale/pt_BR/LC_MESSAGES/system-tools-backends.mo
+share/locale/ro/LC_MESSAGES/system-tools-backends.mo
+share/locale/sl/LC_MESSAGES/system-tools-backends.mo
+share/locale/sv/LC_MESSAGES/system-tools-backends.mo
+share/locale/zh_CN/LC_MESSAGES/system-tools-backends.mo
 share/system-tools-backends-2.0/files/general_gprs_chatscript
 share/system-tools-backends-2.0/files/general_isdn_ppp_options
 share/system-tools-backends-2.0/files/general_pppoe_ppp_options
@@ -60,3 +77,17 @@ share/system-tools-backends-2.0/scripts/Utils/XML.pm
 @dirrm share/system-tools-backends-2.0/scripts
 @dirrm share/system-tools-backends-2.0/files
 @dirrm share/system-tools-backends-2.0
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca

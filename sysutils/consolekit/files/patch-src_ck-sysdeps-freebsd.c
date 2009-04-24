@@ -1,5 +1,5 @@
 --- src/ck-sysdeps-freebsd.c.orig	2008-04-03 20:36:21.000000000 -0400
-+++ src/ck-sysdeps-freebsd.c	2009-02-14 15:26:37.000000000 -0500
++++ src/ck-sysdeps-freebsd.c	2009-04-18 18:04:39.000000000 -0400
 @@ -27,6 +27,7 @@
  #include <unistd.h>
  #include <string.h>
@@ -24,9 +24,12 @@
                  *stat = NULL;
          }
  
-@@ -235,21 +234,25 @@ ck_unix_pid_get_env_hash (pid_t pid)
+@@ -233,24 +232,28 @@ ck_process_stat_free (CkProcessStat *sta
+ GHashTable *
+ ck_unix_pid_get_env_hash (pid_t pid)
  {
-         GHashTable       *hash;
+-        GHashTable       *hash;
++        GHashTable       *hash = NULL;
          char            **penv;
 +        char              errbuf[_POSIX2_LINE_MAX];
          kvm_t            *kd;
@@ -41,17 +44,28 @@
          }
  
          if (! get_kinfo_proc (pid, &p)) {
-+                g_warning ("get_kinfo_proc failed: %s", g_strerror(errno));
-                 return NULL;
+-                return NULL;
++                g_warning ("get_kinfo_proc failed: %s", g_strerror (errno));
++                goto fail;
          }
  
          penv = kvm_getenvv (kd, &p, 0);
          if (penv == NULL) {
-+                g_warning ("kvm_getenvv failed");
-                 return NULL;
+-                return NULL;
++                g_warning ("kvm_getenvv failed: %s", kvm_geterr (kd));
++                goto fail;
          }
  
-@@ -280,7 +283,7 @@ ck_unix_pid_get_env (pid_t       pid,
+         hash = g_hash_table_new_full (g_str_hash,
+@@ -270,6 +273,7 @@ ck_unix_pid_get_env_hash (pid_t pid)
+                 }
+         }
+ 
++fail:
+         kvm_close (kd);
+ 
+         return hash;
+@@ -280,7 +284,7 @@ ck_unix_pid_get_env (pid_t       pid,
                       const char *var)
  {
          GHashTable *hash;
@@ -60,7 +74,7 @@
  
          /*
           * Would probably be more efficient to just loop through the
-@@ -288,6 +291,8 @@ ck_unix_pid_get_env (pid_t       pid,
+@@ -288,6 +292,8 @@ ck_unix_pid_get_env (pid_t       pid,
           * table, but this works for now.
           */
          hash = ck_unix_pid_get_env_hash (pid);
@@ -69,7 +83,7 @@
          val  = g_strdup (g_hash_table_lookup (hash, var));
          g_hash_table_destroy (hash);
  
-@@ -327,38 +332,38 @@ gboolean
+@@ -327,38 +333,38 @@ gboolean
  ck_get_max_num_consoles (guint *num)
  {
          int      max_consoles;
@@ -125,7 +139,7 @@
  }
  
  char *
-@@ -369,7 +374,12 @@ ck_get_console_device_for_num (guint num
+@@ -369,7 +375,12 @@ ck_get_console_device_for_num (guint num
          /* The device number is always one less than the VT number. */
          num--;
  
@@ -139,7 +153,7 @@
  
          return device;
  }
-@@ -379,6 +389,7 @@ ck_get_console_num_from_device (const ch
+@@ -379,6 +390,7 @@ ck_get_console_num_from_device (const ch
                                  guint      *num)
  {
          guint    n;
@@ -147,7 +161,7 @@
          gboolean ret;
  
          n = 0;
-@@ -388,7 +399,11 @@ ck_get_console_num_from_device (const ch
+@@ -388,7 +400,11 @@ ck_get_console_num_from_device (const ch
                  return FALSE;
          }
  
@@ -160,7 +174,7 @@
                  /* The VT number is always one more than the device number. */
                  n++;
                  ret = TRUE;
-@@ -408,6 +423,7 @@ ck_get_active_console_num (int    consol
+@@ -408,6 +424,7 @@ ck_get_active_console_num (int    consol
          gboolean ret;
          int      res;
          int      active;
@@ -168,7 +182,7 @@
  
          g_assert (console_fd != -1);
  
-@@ -420,7 +436,12 @@ ck_get_active_console_num (int    consol
+@@ -420,7 +437,12 @@ ck_get_active_console_num (int    consol
                  goto out;
          }
  

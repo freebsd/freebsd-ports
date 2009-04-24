@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/libgda4/Makefile,v 1.3 2008/10/09 22:27:17 kwm Exp $
+#   $MCom: ports-stable/databases/libgda4/Makefile,v 1.2 2009/04/18 20:16:29 marcus Exp $
 #
 
 PORTNAME=	libgda4
-PORTVERSION?=	4.0.1
+PORTVERSION?=	4.0.2
 PORTREVISION?=	0
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
@@ -115,7 +115,8 @@ CONFIGURE_ARGS+=	--without-java
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-ldl||g' \
+	    	${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|include/db.h|include/db${BDB_VER}/db.h|g' \
 		-e 's|ldb47|ldb${BDB_VER}|g' \
 		-e 's|ldb|ldb${BDB_VER}|g' \
@@ -126,7 +127,7 @@ post-patch:
 		${WRKSRC}/providers/bdb/gda-bdb-test.c
 .if ${LIBGDA4_SLAVE}!="no"
 #. for d in msql firebird odbc freetds mdb ldap mysql sqlite postgres
-. for d in bdb jdbc mdb mysql sqlite postgres
+. for d in bdb jdbc mdb mysql postgres
 	@${REINPLACE_CMD} -e 's|$$(top_builddir)/libgda/libgda-4.0.la|${LOCALBASE}/lib/libgda-4.0.la|g' \
 		${WRKSRC}/providers/${d}/Makefile.in
 . endfor

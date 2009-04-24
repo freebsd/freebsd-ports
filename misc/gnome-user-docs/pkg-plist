@@ -474,6 +474,45 @@ share/gnome/help/gnome-access-guide/pt/figures/tabbed_section.png
 share/gnome/help/gnome-access-guide/pt/figures/text_box.png
 share/gnome/help/gnome-access-guide/pt/figures/tree.png
 share/gnome/help/gnome-access-guide/pt/gnome-access-guide.xml
+share/gnome/help/gnome-access-guide/ru/figures/Braille_Tab.png
+share/gnome/help/gnome-access-guide/ru/figures/General_Tab.png
+share/gnome/help/gnome-access-guide/ru/figures/KeyBindings_Tab.png
+share/gnome/help/gnome-access-guide/ru/figures/KeyBindings_Tab_Unbound.png
+share/gnome/help/gnome-access-guide/ru/figures/KeyEcho_Tab.png
+share/gnome/help/gnome-access-guide/ru/figures/Magnifier_Advanced.png
+share/gnome/help/gnome-access-guide/ru/figures/Magnifier_Tab.png
+share/gnome/help/gnome-access-guide/ru/figures/MainWindow.png
+share/gnome/help/gnome-access-guide/ru/figures/Pronunciation_Tab.png
+share/gnome/help/gnome-access-guide/ru/figures/RPM_search_gnome_common.png
+share/gnome/help/gnome-access-guide/ru/figures/Speech_Tab.png
+share/gnome/help/gnome-access-guide/ru/figures/TextAttributes_Tab.png
+share/gnome/help/gnome-access-guide/ru/figures/accessx.png
+share/gnome/help/gnome-access-guide/ru/figures/bouncekeys.png
+share/gnome/help/gnome-access-guide/ru/figures/button.png
+share/gnome/help/gnome-access-guide/ru/figures/check_box.png
+share/gnome/help/gnome-access-guide/ru/figures/dropdown_combination_box.png
+share/gnome/help/gnome-access-guide/ru/figures/dropdown_list_box.png
+share/gnome/help/gnome-access-guide/ru/figures/mousekeys.png
+share/gnome/help/gnome-access-guide/ru/figures/move_object_arrows.png
+share/gnome/help/gnome-access-guide/ru/figures/move_object_before.png
+share/gnome/help/gnome-access-guide/ru/figures/move_object_jump.png
+share/gnome/help/gnome-access-guide/ru/figures/move_object_push.png
+share/gnome/help/gnome-access-guide/ru/figures/radio_button.png
+share/gnome/help/gnome-access-guide/ru/figures/slider.png
+share/gnome/help/gnome-access-guide/ru/figures/slowkeys.png
+share/gnome/help/gnome-access-guide/ru/figures/spin_box.png
+share/gnome/help/gnome-access-guide/ru/figures/stickyaltlatch.png
+share/gnome/help/gnome-access-guide/ru/figures/stickyaltlock.png
+share/gnome/help/gnome-access-guide/ru/figures/stickyctrllatch.png
+share/gnome/help/gnome-access-guide/ru/figures/stickyctrllock.png
+share/gnome/help/gnome-access-guide/ru/figures/stickyshiftlatch.png
+share/gnome/help/gnome-access-guide/ru/figures/stickyshiftlock.png
+share/gnome/help/gnome-access-guide/ru/figures/stickywindowlatch.png
+share/gnome/help/gnome-access-guide/ru/figures/stickywindowlock.png
+share/gnome/help/gnome-access-guide/ru/figures/tabbed_section.png
+share/gnome/help/gnome-access-guide/ru/figures/text_box.png
+share/gnome/help/gnome-access-guide/ru/figures/tree.png
+share/gnome/help/gnome-access-guide/ru/gnome-access-guide.xml
 share/gnome/help/gnome-access-guide/sv/figures/Braille_Tab.png
 share/gnome/help/gnome-access-guide/sv/figures/General_Tab.png
 share/gnome/help/gnome-access-guide/sv/figures/KeyBindings_Tab.png
@@ -2212,6 +2251,7 @@ share/omf/gnome-access-guide/gnome-access-guide-hu.omf
 share/omf/gnome-access-guide/gnome-access-guide-it.omf
 share/omf/gnome-access-guide/gnome-access-guide-oc.omf
 share/omf/gnome-access-guide/gnome-access-guide-pt.omf
+share/omf/gnome-access-guide/gnome-access-guide-ru.omf
 share/omf/gnome-access-guide/gnome-access-guide-sv.omf
 share/omf/gnome-access-guide/gnome-access-guide-zh_CN.omf
 share/omf/system-admin-guide/system-admin-guide-C.omf
@@ -2318,6 +2358,8 @@ share/omf/user-guide/user-guide-zh_CN.omf
 @dirrm share/gnome/help/gnome-access-guide/zh_CN
 @dirrm share/gnome/help/gnome-access-guide/sv/figures
 @dirrm share/gnome/help/gnome-access-guide/sv
+@dirrm share/gnome/help/gnome-access-guide/ru/figures
+@dirrm share/gnome/help/gnome-access-guide/ru
 @dirrm share/gnome/help/gnome-access-guide/pt/figures
 @dirrm share/gnome/help/gnome-access-guide/pt
 @dirrm share/gnome/help/gnome-access-guide/oc/figures

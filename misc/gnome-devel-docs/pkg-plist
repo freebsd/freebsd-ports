@@ -302,8 +302,11 @@ share/gnome/help/hig-book/C/images/windows-toolbox-large.png
 share/gnome/help/hig-book/C/images/windows-toolbox-small.png
 share/gnome/help/integration-guide/C/integration-guide.xml
 share/gnome/help/integration-guide/cs/integration-guide.xml
+share/gnome/help/integration-guide/de/integration-guide.xml
+share/gnome/help/integration-guide/el/integration-guide.xml
 share/gnome/help/integration-guide/en_GB/integration-guide.xml
 share/gnome/help/integration-guide/es/integration-guide.xml
+share/gnome/help/integration-guide/fr/integration-guide.xml
 share/gnome/help/integration-guide/pt_BR/integration-guide.xml
 share/gnome/help/integration-guide/sv/integration-guide.xml
 share/gnome/help/integration-guide/zh_CN/integration-guide.xml
@@ -325,6 +328,30 @@ share/gnome/help/platform-overview/C/ipc-network.xml
 share/gnome/help/platform-overview/C/legal-fdl.xml
 share/gnome/help/platform-overview/C/platform-overview.xml
 share/gnome/help/platform-overview/C/platform.xml
+share/gnome/help/platform-overview/de/apx-modules.xml
+share/gnome/help/platform-overview/de/bindings.xml
+share/gnome/help/platform-overview/de/core-tech.xml
+share/gnome/help/platform-overview/de/desktop-tech.xml
+share/gnome/help/platform-overview/de/figures/graphics.png
+share/gnome/help/platform-overview/de/figures/i18n.png
+share/gnome/help/platform-overview/de/figures/pango.png
+share/gnome/help/platform-overview/de/intro.xml
+share/gnome/help/platform-overview/de/ipc-network.xml
+share/gnome/help/platform-overview/de/legal-fdl.xml
+share/gnome/help/platform-overview/de/platform-overview.xml
+share/gnome/help/platform-overview/de/platform.xml
+share/gnome/help/platform-overview/el/apx-modules.xml
+share/gnome/help/platform-overview/el/bindings.xml
+share/gnome/help/platform-overview/el/core-tech.xml
+share/gnome/help/platform-overview/el/desktop-tech.xml
+share/gnome/help/platform-overview/el/figures/graphics.png
+share/gnome/help/platform-overview/el/figures/i18n.png
+share/gnome/help/platform-overview/el/figures/pango.png
+share/gnome/help/platform-overview/el/intro.xml
+share/gnome/help/platform-overview/el/ipc-network.xml
+share/gnome/help/platform-overview/el/legal-fdl.xml
+share/gnome/help/platform-overview/el/platform-overview.xml
+share/gnome/help/platform-overview/el/platform.xml
 share/gnome/help/platform-overview/es/apx-modules.xml
 share/gnome/help/platform-overview/es/bindings.xml
 share/gnome/help/platform-overview/es/core-tech.xml
@@ -391,13 +418,18 @@ share/omf/gdp-style-guide/gdp-style-guide-C.omf
 share/omf/hig-book/hig-book-C.omf
 share/omf/integration-guide/integration-guide-C.omf
 share/omf/integration-guide/integration-guide-cs.omf
+share/omf/integration-guide/integration-guide-de.omf
+share/omf/integration-guide/integration-guide-el.omf
 share/omf/integration-guide/integration-guide-en_GB.omf
 share/omf/integration-guide/integration-guide-es.omf
+share/omf/integration-guide/integration-guide-fr.omf
 share/omf/integration-guide/integration-guide-pt_BR.omf
 share/omf/integration-guide/integration-guide-sv.omf
 share/omf/integration-guide/integration-guide-zh_CN.omf
 share/omf/optimization-guide/optimization-guide-C.omf
 share/omf/platform-overview/platform-overview-C.omf
+share/omf/platform-overview/platform-overview-de.omf
+share/omf/platform-overview/platform-overview-el.omf
 share/omf/platform-overview/platform-overview-es.omf
 share/omf/platform-overview/platform-overview-fr.omf
 share/omf/platform-overview/platform-overview-it.omf
@@ -420,6 +452,10 @@ share/omf/platform-overview/platform-overview-ru.omf
 @dirrm share/gnome/help/platform-overview/fr
 @dirrm share/gnome/help/platform-overview/es/figures
 @dirrm share/gnome/help/platform-overview/es
+@dirrm share/gnome/help/platform-overview/el/figures
+@dirrm share/gnome/help/platform-overview/el
+@dirrm share/gnome/help/platform-overview/de/figures
+@dirrm share/gnome/help/platform-overview/de
 @dirrm share/gnome/help/platform-overview/C/figures
 @dirrm share/gnome/help/platform-overview/C
 @dirrm share/gnome/help/platform-overview
@@ -429,8 +465,11 @@ share/omf/platform-overview/platform-overview-ru.omf
 @dirrm share/gnome/help/integration-guide/zh_CN
 @dirrm share/gnome/help/integration-guide/sv
 @dirrm share/gnome/help/integration-guide/pt_BR
+@dirrm share/gnome/help/integration-guide/fr
 @dirrm share/gnome/help/integration-guide/es
 @dirrm share/gnome/help/integration-guide/en_GB
+@dirrm share/gnome/help/integration-guide/el
+@dirrm share/gnome/help/integration-guide/de
 @dirrm share/gnome/help/integration-guide/cs
 @dirrm share/gnome/help/integration-guide/C
 @dirrm share/gnome/help/integration-guide

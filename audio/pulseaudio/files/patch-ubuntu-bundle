@@ -1,0 +1,1666 @@
+From 121bfc9f1916395e5216927ec3a9e0bbd742395a Mon Sep 17 00:00:00 2001
+From: Sjoerd Simons <sjoerd@debian.org>
+Date: Sun, 19 Oct 2008 13:39:50 +0100
+Subject: [PATCH] load module gconf earlier
+
+---
+ src/daemon/default.pa.in |   19 ++++++++++---------
+ 1 files changed, 10 insertions(+), 9 deletions(-)
+
+diff --git a/src/daemon/default.pa.in b/src/daemon/default.pa.in
+index 7032038..41322c6 100755
+--- src/daemon/default.pa.in
++++ src/daemon/default.pa.in
+@@ -72,6 +72,16 @@ load-module module-native-protocol-unix
+ #load-module module-null-sink sink_name=rtp format=s16be channels=2 rate=44100 description="RTP Multicast Sink"
+ #load-module module-rtp-send source=rtp.monitor
+ 
++### Load additional modules from GConf settings. This can be configured with the paprefs tool.
++### Please keep in mind that the modules configured by paprefs might conflict with manually
++### loaded modules.
++.ifexists module-gconf@PA_SOEXT@
++.nofail
++load-module module-gconf
++.fail
++.endif
++
++
+ ### Automatically restore the volume of streams and devices
+ load-module module-stream-restore
+ load-module module-device-restore
+@@ -96,15 +106,6 @@ load-module module-console-kit
+ ### Enable positioned event sounds
+ load-module module-position-event-sounds
+ 
+-### Load additional modules from GConf settings. This can be configured with the paprefs tool.
+-### Please keep in mind that the modules configured by paprefs might conflict with manually
+-### loaded modules.
+-.ifexists module-gconf@PA_SOEXT@
+-.nofail
+-load-module module-gconf
+-.fail
+-.endif
+-
+ # X11 modules should not be started from default.pa so that one daemon
+ # can be shared by multiple sessions.
+ 
+Index: pulseaudio-0.9.14/src/daemon/daemon.conf.in
+===================================================================
+--- src/daemon/daemon.conf.in	2009-03-07 05:01:11.000000000 -0500
++++ src/daemon/daemon.conf.in	2009-03-07 05:01:54.000000000 -0500
+@@ -46,7 +46,7 @@
+ ; log-target = auto
+ ; log-level = notice
+ 
+-; resample-method = speex-float-3
++resample-method = src-linear
+ ; disable-remixing = no
+ ; disable-lfe-remixing = yes
+ 
+@@ -72,5 +72,5 @@
+ ; default-sample-rate = 44100
+ ; default-sample-channels = 2
+ 
+-; default-fragments = 4
+-; default-fragment-size-msec = 25
++default-fragments = 8
++default-fragment-size-msec = 10
+Index: pulseaudio-0.9.13/src/daemon/default.pa.in
+===================================================================
+--- src/daemon/default.pa.in	2009-01-06 22:58:47.000000000 -0500
++++ src/daemon/default.pa.in	2009-01-06 22:59:15.000000000 -0500
+@@ -29,6 +29,9 @@
+ 
+ .fail
+ 
++### Automatically suspend sinks/sources that become idle for too long
++load-module module-suspend-on-idle
++
+ ### Automatically restore the volume of streams and devices
+ load-module module-stream-restore
+ load-module module-device-restore
+@@ -95,9 +98,6 @@
+ ### Make sure we always have a sink around, even if it is a null sink.
+ load-module module-always-sink
+ 
+-### Automatically suspend sinks/sources that become idle for too long
+-load-module module-suspend-on-idle
+-
+ ### If autoexit on idle is enabled we want to make sure we only quit
+ ### when no local session needs us anymore.
+ load-module module-console-kit
+Index: pulseaudio-0.9.13/src/pulsecore/sink-input.c
+===================================================================
+--- src/pulsecore/sink-input.c	2008-12-28 23:33:28.000000000 -0500
++++ src/pulsecore/sink-input.c	2008-12-28 23:35:20.000000000 -0500
+@@ -292,8 +292,6 @@
+         pa_assert_se(i->sink->n_corked -- >= 1);
+     else if (i->state != PA_SINK_INPUT_CORKED && state == PA_SINK_INPUT_CORKED)
+         i->sink->n_corked++;
+-
+-    pa_sink_update_status(i->sink);
+ }
+ 
+ /* Called from main context */
+@@ -331,6 +329,8 @@
+             pa_hook_fire(&i->sink->core->hooks[PA_CORE_HOOK_SINK_INPUT_STATE_CHANGED], ssync);
+     }
+ 
++    pa_sink_update_status(i->sink);
++
+     return 0;
+ }
+ 
+@@ -381,6 +381,8 @@
+         pa_hook_fire(&i->sink->core->hooks[PA_CORE_HOOK_SINK_INPUT_UNLINK_POST], i);
+     }
+ 
++    pa_sink_update_status(i->sink);
++
+     i->sink = NULL;
+     pa_sink_input_unref(i);
+ }
+@@ -442,6 +444,8 @@
+ 
+     pa_subscription_post(i->sink->core, PA_SUBSCRIPTION_EVENT_SINK_INPUT|PA_SUBSCRIPTION_EVENT_NEW, i->index);
+     pa_hook_fire(&i->sink->core->hooks[PA_CORE_HOOK_SINK_INPUT_PUT], i);
++
++    pa_sink_update_status(i->sink);
+ }
+ 
+ /* Called from main context */
+Index: pulseaudio-0.9.13/src/pulsecore/sink.c
+===================================================================
+--- src/pulsecore/sink.c	2008-12-28 23:35:05.000000000 -0500
++++ src/pulsecore/sink.c	2008-12-28 23:35:20.000000000 -0500
+@@ -990,7 +990,9 @@
+     unsigned ret;
+ 
+     pa_sink_assert_ref(s);
+-    pa_assert(PA_SINK_IS_LINKED(s->state));
++
++    if (!PA_SINK_IS_LINKED(s->state))
++        return 0;
+ 
+     ret = pa_idxset_size(s->inputs);
+     pa_assert(ret >= s->n_corked);
+Index: pulseaudio-0.9.13/src/pulsecore/source-output.c
+===================================================================
+--- src/pulsecore/source-output.c	2008-12-28 23:35:05.000000000 -0500
++++ src/pulsecore/source-output.c	2008-12-28 23:35:20.000000000 -0500
+@@ -246,7 +246,6 @@
+     else if (o->state != PA_SOURCE_OUTPUT_CORKED && state == PA_SOURCE_OUTPUT_CORKED)
+         o->source->n_corked++;
+ 
+-    pa_source_update_status(o->source);
+ }
+ 
+ /* Called from main context */
+@@ -264,6 +263,8 @@
+     if (state != PA_SOURCE_OUTPUT_UNLINKED)
+         pa_hook_fire(&o->source->core->hooks[PA_CORE_HOOK_SOURCE_OUTPUT_STATE_CHANGED], o);
+ 
++    pa_source_update_status(o->source);
++
+     return 0;
+ }
+ 
+@@ -302,6 +303,8 @@
+         pa_hook_fire(&o->source->core->hooks[PA_CORE_HOOK_SOURCE_OUTPUT_UNLINK_POST], o);
+     }
+ 
++    pa_source_update_status(o->source);
++
+     o->source = NULL;
+     pa_source_output_unref(o);
+ }
+@@ -353,6 +356,8 @@
+ 
+     pa_subscription_post(o->source->core, PA_SUBSCRIPTION_EVENT_SOURCE_OUTPUT|PA_SUBSCRIPTION_EVENT_NEW, o->index);
+     pa_hook_fire(&o->source->core->hooks[PA_CORE_HOOK_SOURCE_OUTPUT_PUT], o);
++
++    pa_source_update_status(o->source);
+ }
+ 
+ /* Called from main context */
+Index: pulseaudio-0.9.13/src/pulsecore/source.c
+===================================================================
+--- src/pulsecore/source.c	2008-12-28 23:35:05.000000000 -0500
++++ src/pulsecore/source.c	2008-12-28 23:35:20.000000000 -0500
+@@ -637,7 +637,9 @@
+     unsigned ret;
+ 
+     pa_source_assert_ref(s);
+-    pa_assert(PA_SOURCE_IS_LINKED(s->state));
++
++    if (!PA_SOURCE_IS_LINKED(s->state))
++        return 0;
+ 
+     ret = pa_idxset_size(s->outputs);
+     pa_assert(ret >= s->n_corked);
+Index: pulseaudio-0.9.13/src/pulsecore/sample-util.c
+===================================================================
+--- src/pulsecore/sample-util.c	2009-01-03 18:30:13.000000000 -0500
++++ src/pulsecore/sample-util.c	2009-01-03 18:30:30.000000000 -0500
+@@ -777,7 +777,7 @@
+     return (l/fs) * fs;
+ }
+ 
+-int pa_frame_aligned(size_t l, const pa_sample_spec *ss) {
++pa_bool_t pa_frame_aligned(size_t l, const pa_sample_spec *ss) {
+     size_t fs;
+ 
+     pa_assert(ss);
+Index: pulseaudio-0.9.13/src/pulsecore/sample-util.h
+===================================================================
+--- src/pulsecore/sample-util.h	2009-01-03 18:30:13.000000000 -0500
++++ src/pulsecore/sample-util.h	2009-01-03 18:30:30.000000000 -0500
+@@ -71,7 +71,7 @@
+ 
+ size_t pa_frame_align(size_t l, const pa_sample_spec *ss) PA_GCC_PURE;
+ 
+-int pa_frame_aligned(size_t l, const pa_sample_spec *ss) PA_GCC_PURE;
++pa_bool_t pa_frame_aligned(size_t l, const pa_sample_spec *ss) PA_GCC_PURE;
+ 
+ void pa_interleave(const void *src[], unsigned channels, void *dst, size_t ss, unsigned n);
+ void pa_deinterleave(const void *src, void *dst[], unsigned channels, size_t ss, unsigned n);
+Index: pulseaudio-0.9.13/src/pulsecore/once.c
+===================================================================
+--- src/pulsecore/once.c	2009-01-03 18:47:32.000000000 -0500
++++ src/pulsecore/once.c	2009-01-03 18:48:07.000000000 -0500
+@@ -28,13 +28,13 @@
+ 
+ #include "once.h"
+ 
+-int pa_once_begin(pa_once *control) {
++pa_bool_t pa_once_begin(pa_once *control) {
+     pa_mutex *m;
+ 
+     pa_assert(control);
+ 
+     if (pa_atomic_load(&control->done))
+-        return 0;
++        return FALSE;
+ 
+     pa_atomic_inc(&control->ref);
+ 
+@@ -50,15 +50,17 @@
+              * wait until it is unlocked */
+             pa_mutex_lock(m);
+ 
++            pa_assert(pa_atomic_load(&control->done));
++
+             pa_once_end(control);
+-            return 0;
++            return FALSE;
+         }
+ 
+         pa_assert_se(m = pa_mutex_new(FALSE, FALSE));
+         pa_mutex_lock(m);
+ 
+         if (pa_atomic_ptr_cmpxchg(&control->mutex, NULL, m))
+-            return 1;
++            return TRUE;
+ 
+         pa_mutex_unlock(m);
+         pa_mutex_free(m);
+@@ -91,4 +93,3 @@
+         pa_once_end(control);
+     }
+ }
+-
+Index: pulseaudio-0.9.13/src/pulsecore/once.h
+===================================================================
+--- src/pulsecore/once.h	2009-01-03 18:47:43.000000000 -0500
++++ src/pulsecore/once.h	2009-01-03 18:48:07.000000000 -0500
+@@ -38,7 +38,7 @@
+     }
+ 
+ /* Not to be called directly, use the macros defined below instead */
+-int pa_once_begin(pa_once *o);
++pa_bool_t pa_once_begin(pa_once *o);
+ void pa_once_end(pa_once *o);
+ 
+ #define PA_ONCE_BEGIN                                                   \
+Index: pulseaudio-0.9.13/src/pulsecore/protocol-native.c
+===================================================================
+--- src/pulsecore/protocol-native.c	2009-01-15 17:25:43.000000000 -0500
++++ src/pulsecore/protocol-native.c	2009-01-15 17:25:56.000000000 -0500
+@@ -3933,7 +3933,7 @@
+     }
+ 
+     CHECK_VALIDITY(c->pstream, c->authorized, tag, PA_ERR_ACCESS);
+-    CHECK_VALIDITY(c->pstream, !name || pa_namereg_is_valid_name(name), tag, PA_ERR_INVALID);
++    CHECK_VALIDITY(c->pstream, !name || pa_namereg_is_valid_name(name) || *name == 0, tag, PA_ERR_INVALID);
+     CHECK_VALIDITY(c->pstream, idx != PA_INVALID_INDEX || name, tag, PA_ERR_INVALID);
+     CHECK_VALIDITY(c->pstream, idx == PA_INVALID_INDEX || !name, tag, PA_ERR_INVALID);
+     CHECK_VALIDITY(c->pstream, !name || idx == PA_INVALID_INDEX, tag, PA_ERR_INVALID);
+@@ -3942,6 +3942,8 @@
+ 
+         if (idx == PA_INVALID_INDEX && name && !*name) {
+ 
++            pa_log_debug("%s all sinks", b ? "Suspending" : "Resuming");
++
+             if (pa_sink_suspend_all(c->protocol->core, b) < 0) {
+                 pa_pstream_send_error(c->pstream, tag, PA_ERR_INVALID);
+                 return;
+@@ -3967,6 +3969,8 @@
+ 
+         if (idx == PA_INVALID_INDEX && name && !*name) {
+ 
++            pa_log_debug("%s all sources", b ? "Suspending" : "Resuming");
++
+             if (pa_source_suspend_all(c->protocol->core, b) < 0) {
+                 pa_pstream_send_error(c->pstream, tag, PA_ERR_INVALID);
+                 return;
+Index: pulseaudio-0.9.14/src/pulsecore/asyncq.c
+===================================================================
+--- src/pulsecore/asyncq.c	2009-01-31 15:19:57.000000000 -0500
++++ src/pulsecore/asyncq.c	2009-01-31 15:20:05.000000000 -0500
+@@ -163,14 +163,14 @@
+     return 0;
+ }
+ 
+-static pa_bool_t flush_postq(pa_asyncq *l) {
++static pa_bool_t flush_postq(pa_asyncq *l, pa_bool_t wait) {
+     struct localq *q;
+ 
+     pa_assert(l);
+ 
+     while ((q = l->last_localq)) {
+ 
+-        if (push(l, q->data, FALSE) < 0)
++        if (push(l, q->data, wait) < 0)
+             return FALSE;
+ 
+         l->last_localq = q->prev;
+@@ -187,7 +187,7 @@
+ int pa_asyncq_push(pa_asyncq*l, void *p, pa_bool_t wait) {
+     pa_assert(l);
+ 
+-    if (!flush_postq(l))
++    if (!flush_postq(l, wait))
+         return -1;
+ 
+     return push(l, p, wait);
+@@ -199,8 +199,9 @@
+     pa_assert(l);
+     pa_assert(p);
+ 
+-    if (pa_asyncq_push(l, p, FALSE) >= 0)
+-        return;
++    if (flush_postq(l, FALSE))
++        if (pa_asyncq_push(l, p, FALSE) >= 0)
++            return;
+ 
+     /* OK, we couldn't push anything in the queue. So let's queue it
+      * locally and push it later */
+@@ -299,7 +300,7 @@
+ 
+     for (;;) {
+ 
+-        if (flush_postq(l))
++        if (flush_postq(l, FALSE))
+             break;
+ 
+         if (pa_fdsem_before_poll(l->read_fdsem) >= 0) {
+Index: pulseaudio-0.9.14/src/pulsecore/sink.c
+===================================================================
+--- src/pulsecore/sink.c	2009-01-31 15:24:30.000000000 -0500
++++ src/pulsecore/sink.c	2009-01-31 15:24:55.000000000 -0500
+@@ -641,7 +641,7 @@
+ 
+     pa_assert(length > 0);
+ 
+-    n = s->thread_info.state == PA_SINK_RUNNING ? fill_mix_info(s, &length, info, MAX_MIX_CHANNELS) : 0;
++    n = fill_mix_info(s, &length, info, MAX_MIX_CHANNELS);
+ 
+     if (n == 0) {
+ 
+@@ -684,8 +684,7 @@
+         result->index = 0;
+     }
+ 
+-    if (s->thread_info.state == PA_SINK_RUNNING)
+-        inputs_drop(s, info, n, result);
++    inputs_drop(s, info, n, result);
+ 
+     pa_sink_unref(s);
+ }
+@@ -715,7 +714,7 @@
+ 
+     pa_assert(length > 0);
+ 
+-    n = s->thread_info.state == PA_SINK_RUNNING ? fill_mix_info(s, &length, info, MAX_MIX_CHANNELS) : 0;
++    n = fill_mix_info(s, &length, info, MAX_MIX_CHANNELS);
+ 
+     if (n == 0) {
+         if (target->length > length)
+@@ -764,8 +763,7 @@
+         pa_memblock_release(target->memblock);
+     }
+ 
+-    if (s->thread_info.state == PA_SINK_RUNNING)
+-        inputs_drop(s, info, n, target);
++    inputs_drop(s, info, n, target);
+ 
+     pa_sink_unref(s);
+ }
+Index: pulseaudio-0.9.14/src/pulsecore/source.c
+===================================================================
+--- src/pulsecore/source.c	2009-01-31 15:24:30.000000000 -0500
++++ src/pulsecore/source.c	2009-01-31 15:24:55.000000000 -0500
+@@ -428,9 +428,6 @@
+     pa_assert(PA_SOURCE_IS_OPENED(s->thread_info.state));
+     pa_assert(chunk);
+ 
+-    if (s->thread_info.state != PA_SOURCE_RUNNING)
+-        return;
+-
+     if (s->thread_info.soft_muted || !pa_cvolume_is_norm(&s->thread_info.soft_volume)) {
+         pa_memchunk vchunk = *chunk;
+ 
+@@ -469,9 +466,6 @@
+     pa_assert(o->thread_info.direct_on_input);
+     pa_assert(chunk);
+ 
+-    if (s->thread_info.state != PA_SOURCE_RUNNING)
+-        return;
+-
+     if (s->thread_info.soft_muted || !pa_cvolume_is_norm(&s->thread_info.soft_volume)) {
+         pa_memchunk vchunk = *chunk;
+ 
+Index: pulseaudio-0.9.14/src/modules/module-device-restore.c
+===================================================================
+--- src/modules/module-device-restore.c	2009-01-31 15:47:31.000000000 -0500
++++ src/modules/module-device-restore.c	2009-01-31 15:47:55.000000000 -0500
+@@ -98,14 +98,14 @@
+     pa_log_info("Synced.");
+ }
+ 
+-static struct entry* read_entry(struct userdata *u, char *name) {
++static struct entry* read_entry(struct userdata *u, const char *name) {
+     datum key, data;
+     struct entry *e;
+ 
+     pa_assert(u);
+     pa_assert(name);
+ 
+-    key.dptr = name;
++    key.dptr = (char*) name;
+     key.dsize = (int) strlen(name);
+ 
+     data = gdbm_fetch(u->gdbm_file, key);
+@@ -235,13 +235,22 @@
+     if ((e = read_entry(u, name))) {
+ 
+         if (u->restore_volume) {
+-            pa_log_info("Restoring volume for sink %s.", new_data->name);
+-            pa_sink_new_data_set_volume(new_data, pa_cvolume_remap(&e->volume, &e->channel_map, &new_data->channel_map));
++
++            if (!new_data->volume_is_set) {
++                pa_log_info("Restoring volume for sink %s.", new_data->name);
++                pa_sink_new_data_set_volume(new_data, pa_cvolume_remap(&e->volume, &e->channel_map, &new_data->channel_map));
++            } else
++                pa_log_debug("Not restoring volume for sink %s, because already set.", new_data->name);
++
+         }
+ 
+         if (u->restore_muted) {
+-            pa_log_info("Restoring mute state for sink %s.", new_data->name);
+-            pa_sink_new_data_set_muted(new_data, e->muted);
++
++            if (!new_data->muted_is_set) {
++                pa_log_info("Restoring mute state for sink %s.", new_data->name);
++                pa_sink_new_data_set_muted(new_data, e->muted);
++            } else
++                pa_log_debug("Not restoring mute state for sink %s, because already set.", new_data->name);
+         }
+ 
+         pa_xfree(e);
+@@ -263,13 +272,21 @@
+     if ((e = read_entry(u, name))) {
+ 
+         if (u->restore_volume) {
+-            pa_log_info("Restoring volume for source %s.", new_data->name);
+-            pa_source_new_data_set_volume(new_data, pa_cvolume_remap(&e->volume, &e->channel_map, &new_data->channel_map));
++
++            if (!new_data->volume_is_set) {
++                pa_log_info("Restoring volume for source %s.", new_data->name);
++                pa_source_new_data_set_volume(new_data, pa_cvolume_remap(&e->volume, &e->channel_map, &new_data->channel_map));
++            } else
++                pa_log_debug("Not restoring volume for source %s, because already set.", new_data->name);
+         }
+ 
+         if (u->restore_muted) {
+-            pa_log_info("Restoring mute state for source %s.", new_data->name);
+-            pa_source_new_data_set_muted(new_data, e->muted);
++
++            if (!new_data->muted_is_set) {
++                pa_log_info("Restoring mute state for source %s.", new_data->name);
++                pa_source_new_data_set_muted(new_data, e->muted);
++            } else
++                pa_log_debug("Not restoring mute state for source %s, because already set.", new_data->name);
+         }
+ 
+         pa_xfree(e);
+Index: pulseaudio-0.9.14/src/modules/module-oss.c
+===================================================================
+--- src/modules/module-oss.c	2009-01-31 16:09:19.000000000 -0500
++++ src/modules/module-oss.c	2009-01-31 16:13:16.000000000 -0500
+@@ -121,7 +121,7 @@
+     int mixer_fd;
+     int mixer_devmask;
+ 
+-    int nfrags, frag_size;
++    int nfrags, frag_size, orig_frag_size;
+ 
+     pa_bool_t use_mmap;
+     unsigned out_mmap_current, in_mmap_current;
+@@ -536,7 +536,7 @@
+     }
+ 
+     if (u->nfrags >= 2 && u->frag_size >= 1)
+-        if (pa_oss_set_fragments(u->fd, u->nfrags, u->frag_size) < 0) {
++        if (pa_oss_set_fragments(u->fd, u->nfrags, u->orig_frag_size) < 0) {
+             pa_log_warn("Resume failed, couldn't set original fragment settings.");
+             goto fail;
+         }
+@@ -601,10 +601,10 @@
+ 
+     build_pollfd(u);
+ 
+-    if (u->sink)
+-        sink_get_volume(u->sink);
+-    if (u->source)
+-        source_get_volume(u->source);
++    if (u->sink && u->sink->get_volume)
++        u->sink->get_volume(u->sink);
++    if (u->source && u->source->get_volume)
++        u->source->get_volume(u->source);
+ 
+     pa_log_info("Resumed successfully...");
+ 
+@@ -877,7 +877,7 @@
+ 
+ /*        pa_log("loop");    */
+ 
+-        if (PA_SINK_IS_OPENED(u->sink->thread_info.state))
++        if (u->sink && PA_SINK_IS_OPENED(u->sink->thread_info.state))
+             if (u->sink->thread_info.rewind_requested)
+                 pa_sink_process_rewind(u->sink, 0);
+ 
+@@ -1144,7 +1144,7 @@
+     struct userdata *u = NULL;
+     const char *dev;
+     int fd = -1;
+-    int nfrags, frag_size;
++    int nfrags, orig_frag_size, frag_size;
+     int mode, caps;
+     pa_bool_t record = TRUE, playback = TRUE, use_mmap = TRUE;
+     pa_sample_spec ss;
+@@ -1201,12 +1201,12 @@
+ 
+     if (use_mmap && (!(caps & DSP_CAP_MMAP) || !(caps & DSP_CAP_TRIGGER))) {
+         pa_log_info("OSS device not mmap capable, falling back to UNIX read/write mode.");
+-        use_mmap = 0;
++        use_mmap = FALSE;
+     }
+ 
+     if (use_mmap && mode == O_WRONLY) {
+         pa_log_info("Device opened for playback only, cannot do memory mapping, falling back to UNIX write() mode.");
+-        use_mmap = 0;
++        use_mmap = FALSE;
+     }
+ 
+     if (pa_oss_get_hw_description(dev, hwdesc, sizeof(hwdesc)) >= 0)
+@@ -1216,6 +1216,7 @@
+ 
+     pa_log_info("Device opened in %s mode.", mode == O_WRONLY ? "O_WRONLY" : (mode == O_RDONLY ? "O_RDONLY" : "O_RDWR"));
+ 
++    orig_frag_size = frag_size;
+     if (nfrags >= 2 && frag_size >= 1)
+         if (pa_oss_set_fragments(fd, nfrags, frag_size) < 0)
+             goto fail;
+@@ -1235,6 +1236,7 @@
+     m->userdata = u;
+     u->fd = fd;
+     u->mixer_fd = -1;
++    u->mixer_devmask = 0;
+     u->use_getospace = u->use_getispace = TRUE;
+     u->use_getodelay = TRUE;
+     u->mode = mode;
+@@ -1242,6 +1244,7 @@
+     u->device_name = pa_xstrdup(dev);
+     u->in_nfrags = u->out_nfrags = (uint32_t) (u->nfrags = nfrags);
+     u->out_fragment_size = u->in_fragment_size = (uint32_t) (u->frag_size = frag_size);
++    u->orig_frag_size = orig_frag_size;
+     u->use_mmap = use_mmap;
+     u->rtpoll = pa_rtpoll_new();
+     pa_thread_mq_init(&u->thread_mq, m->core->mainloop, u->rtpoll);
+@@ -1383,7 +1386,6 @@
+ 
+     if ((u->mixer_fd = pa_oss_open_mixer_for_device(u->device_name)) >= 0) {
+         pa_bool_t do_close = TRUE;
+-        u->mixer_devmask = 0;
+ 
+         if (ioctl(fd, SOUND_MIXER_READ_DEVMASK, &u->mixer_devmask) < 0)
+             pa_log_warn("SOUND_MIXER_READ_DEVMASK failed: %s", pa_cstrerror(errno));
+@@ -1409,6 +1411,7 @@
+         if (do_close) {
+             pa_close(u->mixer_fd);
+             u->mixer_fd = -1;
++            u->mixer_devmask = 0;
+         }
+     }
+ 
+Index: pulseaudio-0.9.14/src/modules/oss-util.c
+===================================================================
+--- src/modules/oss-util.c	2009-01-31 16:09:19.000000000 -0500
++++ src/modules/oss-util.c	2009-01-31 16:12:37.000000000 -0500
+@@ -241,6 +241,8 @@
+     int arg;
+     arg = ((int) nfrags << 16) | simple_log2(frag_size);
+ 
++    pa_log_debug("Asking for %i fragments of size %i (requested %i)", nfrags, 1 << simple_log2(frag_size), frag_size);
++
+     if (ioctl(fd, SNDCTL_DSP_SETFRAGMENT, &arg) < 0) {
+         pa_log("SNDCTL_DSP_SETFRAGMENT: %s", pa_cstrerror(errno));
+         return -1;
+Index: pulseaudio-0.9.14/src/pulse/volume.c
+===================================================================
+--- src/pulse/volume.c	2009-01-31 16:22:02.000000000 -0500
++++ src/pulse/volume.c	2009-01-31 16:22:50.000000000 -0500
+@@ -304,7 +304,7 @@
+         p == PA_CHANNEL_POSITION_LFE;
+ }
+ 
+-pa_cvolume *pa_cvolume_remap(pa_cvolume *v, pa_channel_map *from, pa_channel_map *to) {
++pa_cvolume *pa_cvolume_remap(pa_cvolume *v, const pa_channel_map *from, const pa_channel_map *to) {
+     int a, b;
+     pa_cvolume result;
+ 
+Index: pulseaudio-0.9.14/src/pulse/volume.h
+===================================================================
+--- src/pulse/volume.h	2009-01-31 16:22:02.000000000 -0500
++++ src/pulse/volume.h	2009-01-31 16:23:21.000000000 -0500
+@@ -207,7 +207,7 @@
+ #endif
+ 
+ /** Remap a volume from one channel mapping to a different channel mapping. \since 0.9.12 */
+-pa_cvolume *pa_cvolume_remap(pa_cvolume *v, pa_channel_map *from, pa_channel_map *to);
++pa_cvolume *pa_cvolume_remap(pa_cvolume *v, const pa_channel_map *from, const pa_channel_map *to);
+ 
+ /** Return non-zero if the specified volume is compatible with
+  * the specified sample spec. \since 0.9.13 */
+Index: pulseaudio-0.9.14/src/modules/module-esound-sink.c
+===================================================================
+--- src/modules/module-esound-sink.c	2009-01-31 16:25:18.000000000 -0500
++++ src/modules/module-esound-sink.c	2009-01-31 16:25:40.000000000 -0500
+@@ -168,7 +168,7 @@
+             w = pa_bytes_to_usec((uint64_t) u->offset + u->memchunk.length, &u->sink->sample_spec);
+ 
+             *((pa_usec_t*) data) = w > r ? w - r : 0;
+-            break;
++            return 0;
+         }
+ 
+         case SINK_MESSAGE_PASS_SOCKET: {
+Index: pulseaudio-0.9.14/src/pulsecore/ltdl-helper.c
+===================================================================
+--- src/pulsecore/ltdl-helper.c	2009-02-04 18:50:11.000000000 -0500
++++ src/pulsecore/ltdl-helper.c	2009-02-04 18:50:21.000000000 -0500
+@@ -42,7 +42,9 @@
+     pa_assert(handle);
+     pa_assert(symbol);
+ 
+-    if ((f = ((pa_void_func_t) (size_t) lt_dlsym(handle, symbol))))
++    *(void**) &f = lt_dlsym(handle, symbol);
++
++    if (f)
+         return f;
+ 
+     if (!module)
+@@ -57,7 +59,7 @@
+         if (!isalnum(*c))
+             *c = '_';
+ 
+-    f = (pa_void_func_t) (size_t) lt_dlsym(handle, sn);
++    *(void**) &f = lt_dlsym(handle, sn);
+     pa_xfree(sn);
+ 
+     return f;
+Index: pulseaudio-0.9.14/src/pulsecore/sink.c
+===================================================================
+--- src/pulsecore/sink.c	2009-02-04 19:05:00.000000000 -0500
++++ src/pulsecore/sink.c	2009-02-04 19:05:50.000000000 -0500
+@@ -467,6 +467,9 @@
+     s->thread_info.rewind_nbytes = 0;
+     s->thread_info.rewind_requested = FALSE;
+ 
++    if (s->thread_info.state == PA_SINK_SUSPENDED)
++        return;
++
+     if (nbytes > 0)
+         pa_log_debug("Processing rewind...");
+ 
+@@ -476,7 +479,7 @@
+     }
+ 
+     if (nbytes > 0)
+-        if (s->monitor_source && PA_SOURCE_IS_OPENED(s->monitor_source->thread_info.state))
++        if (s->monitor_source && PA_SOURCE_IS_LINKED(s->monitor_source->thread_info.state))
+             pa_source_process_rewind(s->monitor_source, nbytes);
+ }
+ 
+@@ -556,7 +559,7 @@
+         /* Drop read data */
+         pa_sink_input_drop(i, result->length);
+ 
+-        if (s->monitor_source && PA_SOURCE_IS_OPENED(pa_source_get_state(s->monitor_source))) {
++        if (s->monitor_source && PA_SOURCE_IS_LINKED(s->monitor_source->thread_info.state)) {
+ 
+             if (pa_hashmap_size(i->thread_info.direct_outputs) > 0) {
+                 void *ostate = NULL;
+@@ -612,7 +615,7 @@
+         }
+     }
+ 
+-    if (s->monitor_source && PA_SOURCE_IS_OPENED(pa_source_get_state(s->monitor_source)))
++    if (s->monitor_source && PA_SOURCE_IS_LINKED(s->monitor_source->thread_info.state))
+         pa_source_post(s->monitor_source, result);
+ }
+ 
+@@ -623,7 +626,7 @@
+     size_t block_size_max;
+ 
+     pa_sink_assert_ref(s);
+-    pa_assert(PA_SINK_IS_OPENED(s->thread_info.state));
++    pa_assert(PA_SINK_IS_LINKED(s->thread_info.state));
+     pa_assert(pa_frame_aligned(length, &s->sample_spec));
+     pa_assert(result);
+ 
+@@ -632,6 +635,13 @@
+     pa_assert(!s->thread_info.rewind_requested);
+     pa_assert(s->thread_info.rewind_nbytes == 0);
+ 
++    if (s->thread_info.state == PA_SINK_SUSPENDED) {
++        result->memblock = pa_memblock_ref(s->silence.memblock);
++        result->index = s->silence.index;
++        result->length = PA_MIN(s->silence.length, length);
++        return;
++    }
++
+     if (length <= 0)
+         length = pa_frame_align(MIX_BUFFER_LENGTH, &s->sample_spec);
+ 
+@@ -696,7 +706,7 @@
+     size_t length, block_size_max;
+ 
+     pa_sink_assert_ref(s);
+-    pa_assert(PA_SINK_IS_OPENED(s->thread_info.state));
++    pa_assert(PA_SINK_IS_LINKED(s->thread_info.state));
+     pa_assert(target);
+     pa_assert(target->memblock);
+     pa_assert(target->length > 0);
+@@ -707,6 +717,11 @@
+     pa_assert(!s->thread_info.rewind_requested);
+     pa_assert(s->thread_info.rewind_nbytes == 0);
+ 
++    if (s->thread_info.state == PA_SINK_SUSPENDED) {
++        pa_silence_memchunk(target, &s->sample_spec);
++        return;
++    }
++
+     length = target->length;
+     block_size_max = pa_mempool_block_size_max(s->core->mempool);
+     if (length > block_size_max)
+@@ -774,7 +789,7 @@
+     size_t l, d;
+ 
+     pa_sink_assert_ref(s);
+-    pa_assert(PA_SINK_IS_OPENED(s->thread_info.state));
++    pa_assert(PA_SINK_IS_LINKED(s->thread_info.state));
+     pa_assert(target);
+     pa_assert(target->memblock);
+     pa_assert(target->length > 0);
+@@ -804,7 +819,7 @@
+ /* Called from IO thread context */
+ void pa_sink_render_full(pa_sink *s, size_t length, pa_memchunk *result) {
+     pa_sink_assert_ref(s);
+-    pa_assert(PA_SINK_IS_OPENED(s->thread_info.state));
++    pa_assert(PA_SINK_IS_LINKED(s->thread_info.state));
+     pa_assert(length > 0);
+     pa_assert(pa_frame_aligned(length, &s->sample_spec));
+     pa_assert(result);
+@@ -830,7 +845,7 @@
+ 
+     /* The returned value is supposed to be in the time domain of the sound card! */
+ 
+-    if (!PA_SINK_IS_OPENED(s->state))
++    if (s->state == PA_SINK_SUSPENDED)
+         return 0;
+ 
+     if (!(s->flags & PA_SINK_LATENCY))
+@@ -1342,6 +1357,9 @@
+     pa_sink_assert_ref(s);
+     pa_assert(PA_SINK_IS_LINKED(s->thread_info.state));
+ 
++    if (s->thread_info.state == PA_SINK_SUSPENDED)
++        return;
++
+     if (nbytes == (size_t) -1)
+         nbytes = s->thread_info.max_rewind;
+ 
+@@ -1403,7 +1421,7 @@
+     pa_sink_assert_ref(s);
+     pa_assert(PA_SINK_IS_LINKED(s->state));
+ 
+-    if (!PA_SINK_IS_OPENED(s->state))
++    if (s->state == PA_SINK_SUSPENDED)
+         return 0;
+ 
+     pa_assert_se(pa_asyncmsgq_send(s->asyncmsgq, PA_MSGOBJECT(s), PA_SINK_MESSAGE_GET_REQUESTED_LATENCY, &usec, 0, NULL) == 0);
+Index: pulseaudio-0.9.14/src/pulsecore/source.c
+===================================================================
+--- src/pulsecore/source.c	2009-02-04 19:05:00.000000000 -0500
++++ src/pulsecore/source.c	2009-02-04 19:05:50.000000000 -0500
+@@ -406,7 +406,10 @@
+     void *state = NULL;
+ 
+     pa_source_assert_ref(s);
+-    pa_assert(PA_SOURCE_IS_OPENED(s->thread_info.state));
++    pa_assert(PA_SOURCE_IS_LINKED(s->thread_info.state));
++
++    if (s->thread_info.state == PA_SOURCE_SUSPENDED)
++        return;
+ 
+     if (nbytes <= 0)
+         return;
+@@ -425,9 +428,12 @@
+     void *state = NULL;
+ 
+     pa_source_assert_ref(s);
+-    pa_assert(PA_SOURCE_IS_OPENED(s->thread_info.state));
++    pa_assert(PA_SOURCE_IS_LINKED(s->thread_info.state));
+     pa_assert(chunk);
+ 
++    if (s->thread_info.state == PA_SOURCE_SUSPENDED)
++        return;
++
+     if (s->thread_info.soft_muted || !pa_cvolume_is_norm(&s->thread_info.soft_volume)) {
+         pa_memchunk vchunk = *chunk;
+ 
+@@ -461,11 +467,14 @@
+ /* Called from IO thread context */
+ void pa_source_post_direct(pa_source*s, pa_source_output *o, const pa_memchunk *chunk) {
+     pa_source_assert_ref(s);
+-    pa_assert(PA_SOURCE_IS_OPENED(s->thread_info.state));
++    pa_assert(PA_SOURCE_IS_LINKED(s->thread_info.state));
+     pa_source_output_assert_ref(o);
+     pa_assert(o->thread_info.direct_on_input);
+     pa_assert(chunk);
+ 
++    if (s->thread_info.state == PA_SOURCE_SUSPENDED)
++        return;
++
+     if (s->thread_info.soft_muted || !pa_cvolume_is_norm(&s->thread_info.soft_volume)) {
+         pa_memchunk vchunk = *chunk;
+ 
+@@ -491,7 +500,7 @@
+     pa_source_assert_ref(s);
+     pa_assert(PA_SOURCE_IS_LINKED(s->state));
+ 
+-    if (!PA_SOURCE_IS_OPENED(s->state))
++    if (s->state == PA_SOURCE_SUSPENDED)
+         return 0;
+ 
+     if (!(s->flags & PA_SOURCE_LATENCY))
+@@ -882,7 +891,7 @@
+     pa_source_assert_ref(s);
+     pa_assert(PA_SOURCE_IS_LINKED(s->state));
+ 
+-    if (!PA_SOURCE_IS_OPENED(s->state))
++    if (s->state == PA_SOURCE_SUSPENDED)
+         return 0;
+ 
+     pa_assert_se(pa_asyncmsgq_send(s->asyncmsgq, PA_MSGOBJECT(s), PA_SOURCE_MESSAGE_GET_REQUESTED_LATENCY, &usec, 0, NULL) == 0);
+Index: pulseaudio-0.9.14/src/pulsecore/sink.c
+===================================================================
+--- src/pulsecore/sink.c	2009-02-04 19:19:17.000000000 -0500
++++ src/pulsecore/sink.c	2009-02-04 19:19:24.000000000 -0500
+@@ -464,6 +464,11 @@
+     pa_sink_assert_ref(s);
+     pa_assert(PA_SINK_IS_LINKED(s->thread_info.state));
+ 
++    /* If nobody requested this and this is actually no real rewind
++     * then we can short cut this */
++    if (!s->thread_info.rewind_requested && nbytes <= 0)
++        return;
++
+     s->thread_info.rewind_nbytes = 0;
+     s->thread_info.rewind_requested = FALSE;
+ 
+Index: pulseaudio-0.9.14/src/pulsecore/sink.c
+===================================================================
+--- src/pulsecore/sink.c	2009-02-04 19:21:36.000000000 -0500
++++ src/pulsecore/sink.c	2009-02-04 19:21:54.000000000 -0500
+@@ -1235,6 +1235,10 @@
+         case PA_SINK_MESSAGE_SET_STATE:
+ 
+             s->thread_info.state = PA_PTR_TO_UINT(userdata);
++
++            if (s->thread_info.state == PA_SINK_SUSPENDED)
++                s->thread_info.rewind_requested = FALSE;
++
+             return 0;
+ 
+         case PA_SINK_MESSAGE_DETACH:
+Index: pulseaudio-0.9.14/src/utils/pacmd.c
+===================================================================
+--- src/utils/pacmd.c	2009-02-04 19:35:26.000000000 -0500
++++ src/utils/pacmd.c	2009-02-04 19:35:33.000000000 -0500
+@@ -47,16 +47,16 @@
+     int fd = -1;
+     int ret = 1, i;
+     struct sockaddr_un sa;
+-    char ibuf[256], obuf[256];
++    char ibuf[PIPE_BUF], obuf[PIPE_BUF];
+     size_t ibuf_index, ibuf_length, obuf_index, obuf_length;
+-    fd_set ifds, ofds;
+     char *cli;
++    pa_bool_t ibuf_eof, obuf_eof, ibuf_closed, obuf_closed;
+ 
+     setlocale(LC_ALL, "");
+     bindtextdomain(GETTEXT_PACKAGE, PULSE_LOCALEDIR);
+ 
+     if (pa_pid_file_check_running(&pid, "pulseaudio") < 0) {
+-        pa_log("No PulseAudio daemon running");
++        pa_log("No PulseAudio daemon running, or not running as session daemon.");
+         goto fail;
+     }
+ 
+@@ -99,15 +99,47 @@
+     }
+ 
+     ibuf_index = ibuf_length = obuf_index = obuf_length = 0;
++    ibuf_eof = obuf_eof = ibuf_closed = obuf_closed = FALSE;
+ 
++    if (argc > 1) {
++        for (i = 1; i < argc; i++) {
++            size_t k;
++
++            k = PA_MIN(sizeof(ibuf) - ibuf_length, strlen(argv[i]));
++            memcpy(ibuf + ibuf_length, argv[1], k);
++            ibuf_length += k;
++
++            if (ibuf_length < sizeof(ibuf)) {
++                ibuf[ibuf_length] = i < argc-1 ? ' ' : '\n';
++                ibuf_length++;
++            }
++        }
+ 
+-    FD_ZERO(&ifds);
+-    FD_SET(0, &ifds);
+-    FD_SET(fd, &ifds);
+-
+-    FD_ZERO(&ofds);
++        ibuf_eof = TRUE;
++    }
+ 
+     for (;;) {
++        fd_set ifds, ofds;
++
++        if (ibuf_eof &&
++            obuf_eof &&
++            ibuf_length <= 0 &&
++            obuf_length <= 0)
++            break;
++
++        FD_ZERO(&ifds);
++        FD_ZERO(&ofds);
++
++        if (obuf_length > 0)
++            FD_SET(1, &ofds);
++        else if (!obuf_eof)
++            FD_SET(fd, &ifds);
++
++        if (ibuf_length > 0)
++            FD_SET(fd, &ofds);
++        else if (!ibuf_eof)
++            FD_SET(0, &ifds);
++
+         if (select(FD_SETSIZE, &ifds, &ofds, NULL, NULL) < 0) {
+             pa_log(_("select(): %s"), strerror(errno));
+             goto fail;
+@@ -118,15 +150,16 @@
+             assert(!ibuf_length);
+ 
+             if ((r = read(0, ibuf, sizeof(ibuf))) <= 0) {
+-                if (r == 0)
+-                    break;
+-
+-                pa_log(_("read(): %s"), strerror(errno));
+-                goto fail;
++                if (r < 0) {
++                    pa_log(_("read(): %s"), strerror(errno));
++                    goto fail;
++                }
++
++                ibuf_eof = TRUE;
++            } else {
++                ibuf_length = (size_t) r;
++                ibuf_index = 0;
+             }
+-
+-            ibuf_length = (size_t) r;
+-            ibuf_index = 0;
+         }
+ 
+         if (FD_ISSET(fd, &ifds)) {
+@@ -134,15 +167,16 @@
+             assert(!obuf_length);
+ 
+             if ((r = read(fd, obuf, sizeof(obuf))) <= 0) {
+-                if (r == 0)
+-                    break;
+-
+-                pa_log(_("read(): %s"), strerror(errno));
+-                goto fail;
++                if (r < 0) {
++                    pa_log(_("read(): %s"), strerror(errno));
++                    goto fail;
++                }
++
++                obuf_eof = TRUE;
++            } else {
++                obuf_length = (size_t) r;
++                obuf_index = 0;
+             }
+-
+-            obuf_length = (size_t) r;
+-            obuf_index = 0;
+         }
+ 
+         if (FD_ISSET(1, &ofds)) {
+@@ -170,28 +204,26 @@
+ 
+             ibuf_length -= (size_t) r;
+             ibuf_index += obuf_index;
+-
+         }
+ 
+-        FD_ZERO(&ifds);
+-        FD_ZERO(&ofds);
+-
+-        if (obuf_length <= 0)
+-            FD_SET(fd, &ifds);
+-        else
+-            FD_SET(1, &ofds);
++        if (ibuf_length <= 0 && ibuf_eof && !ibuf_closed) {
++            close(0);
++            shutdown(fd, SHUT_WR);
++            ibuf_closed = TRUE;
++        }
+ 
+-        if (ibuf_length <= 0)
+-            FD_SET(0, &ifds);
+-        else
+-            FD_SET(fd, &ofds);
++        if (obuf_length <= 0 && obuf_eof && !obuf_closed) {
++            shutdown(fd, SHUT_RD);
++            close(1);
++            obuf_closed = TRUE;
++        }
+     }
+ 
+     ret = 0;
+ 
+ fail:
+     if (fd >= 0)
+-        close(fd);
++        pa_close(fd);
+ 
+     return ret;
+ }
+Index: pulseaudio-0.9.14/src/modules/rtp/module-rtp-recv.c
+===================================================================
+--- src/modules/rtp/module-rtp-recv.c	2009-02-06 18:04:53.000000000 -0500
++++ src/modules/rtp/module-rtp-recv.c	2009-02-06 18:07:32.000000000 -0500
+@@ -453,7 +453,7 @@
+     data.module = u->module;
+     pa_sink_input_new_data_set_sample_spec(&data, &sdp_info->sample_spec);
+ 
+-    s->sink_input = pa_sink_input_new(u->module->core, &data, 0);
++    s->sink_input = pa_sink_input_new(u->module->core, &data, PA_SINK_INPUT_VARIABLE_RATE);
+     pa_sink_input_new_data_done(&data);
+ 
+     if (!s->sink_input) {
+Index: pulseaudio-0.9.14/src/modules/module-suspend-on-idle.c
+===================================================================
+--- src/modules/module-suspend-on-idle.c	2009-02-12 18:28:26.000000000 -0500
++++ src/modules/module-suspend-on-idle.c	2009-02-13 01:37:53.000000000 -0500
+@@ -158,6 +158,9 @@
+     pa_sink_input_assert_ref(s);
+     pa_assert(u);
+ 
++    if (!s->sink)
++        return PA_HOOK_OK;
++
+     if (pa_sink_used_by(s->sink) <= 0) {
+         struct device_info *d;
+         if ((d = pa_hashmap_get(u->device_infos, s->sink)))
+@@ -172,6 +175,9 @@
+     pa_source_output_assert_ref(s);
+     pa_assert(u);
+ 
++    if (!s->source)
++        return PA_HOOK_OK;
++
+     if (pa_source_used_by(s->source) <= 0) {
+         struct device_info *d;
+         if ((d = pa_hashmap_get(u->device_infos, s->source)))
+Index: pulseaudio-0.9.14/src/pulse/channelmap.c
+===================================================================
+--- src/pulse/channelmap.c	2009-02-13 22:55:36.000000000 -0500
++++ src/pulse/channelmap.c	2009-02-13 22:55:44.000000000 -0500
+@@ -216,10 +216,10 @@
+ 
+                 case 6:
+                     m->map[0] = PA_CHANNEL_POSITION_FRONT_LEFT;
+-                    m->map[1] = PA_CHANNEL_POSITION_SIDE_LEFT;
++                    m->map[1] = PA_CHANNEL_POSITION_REAR_LEFT;
+                     m->map[2] = PA_CHANNEL_POSITION_FRONT_CENTER;
+                     m->map[3] = PA_CHANNEL_POSITION_FRONT_RIGHT;
+-                    m->map[4] = PA_CHANNEL_POSITION_SIDE_RIGHT;
++                    m->map[4] = PA_CHANNEL_POSITION_REAR_RIGHT;
+                     m->map[5] = PA_CHANNEL_POSITION_LFE;
+                     return m;
+ 
+Index: pulseaudio-0.9.14/src/pulse/scache.c
+===================================================================
+--- src/pulse/scache.c	2009-02-13 22:58:05.000000000 -0500
++++ src/pulse/scache.c	2009-02-13 22:58:26.000000000 -0500
+@@ -66,10 +66,8 @@
+     pa_tagstruct_put_channel_map(t, &s->channel_map);
+     pa_tagstruct_putu32(t, (uint32_t) length);
+ 
+-    if (s->context->version >= 13) {
+-        pa_init_proplist(s->proplist);
++    if (s->context->version >= 13)
+         pa_tagstruct_put_proplist(t, s->proplist);
+-    }
+ 
+     pa_pstream_send_tagstruct(s->context->pstream, t);
+     pa_pdispatch_register_reply(s->context->pdispatch, tag, DEFAULT_TIMEOUT, pa_create_stream_callback, s, NULL);
+Index: pulseaudio-0.9.14/src/pulse/gccmacro.h
+===================================================================
+--- src/pulse/gccmacro.h	2009-02-13 23:07:17.000000000 -0500
++++ src/pulse/gccmacro.h	2009-02-13 23:09:29.000000000 -0500
+@@ -85,7 +85,7 @@
+ #endif
+ 
+ #ifndef PA_GCC_PACKED
+-#ifdef __GNUCC__
++#ifdef __GNUC__
+ #define PA_GCC_PACKED __attribute__ ((packed))
+ #else
+ /** Structure shall be packed in memory **/
+@@ -105,7 +105,7 @@
+ #endif
+ 
+ #ifndef PA_GCC_MALLOC
+-#ifdef __GNUCC__
++#ifdef __GNUC__
+ #define PA_GCC_MALLOC __attribute__ ((malloc))
+ #else
+ /** Macro for usage of GCC's malloc attribute */
+Index: pulseaudio-0.9.14/src/pulsecore/shm.c
+===================================================================
+--- src/pulsecore/shm.c	2009-02-13 23:07:17.000000000 -0500
++++ src/pulsecore/shm.c	2009-02-13 23:09:29.000000000 -0500
+@@ -70,14 +70,14 @@
+ 
+ /* We now put this SHM marker at the end of each segment. It's
+  * optional, to not require a reboot when upgrading, though */
+-struct shm_marker PA_GCC_PACKED {
++struct shm_marker {
+     pa_atomic_t marker; /* 0xbeefcafe */
+     pa_atomic_t pid;
+     uint64_t _reserved1;
+     uint64_t _reserved2;
+     uint64_t _reserved3;
+     uint64_t _reserved4;
+-};
++} PA_GCC_PACKED;
+ 
+ static char *segment_name(char *fn, size_t l, unsigned id) {
+     pa_snprintf(fn, l, "/pulse-shm-%u", id);
+Index: pulseaudio-0.9.14/src/pulsecore/memblock.c
+===================================================================
+--- src/pulsecore/memblock.c	2009-02-18 16:40:03.000000000 -0500
++++ src/pulsecore/memblock.c	2009-02-18 16:40:13.000000000 -0500
+@@ -57,7 +57,7 @@
+ 
+ #define PA_MEMEXPORT_SLOTS_MAX 128
+ 
+-#define PA_MEMIMPORT_SLOTS_MAX 128
++#define PA_MEMIMPORT_SLOTS_MAX 160
+ #define PA_MEMIMPORT_SEGMENTS_MAX 16
+ 
+ struct pa_memblock {
+Index: pulseaudio-0.9.14/src/pulse/context.c
+===================================================================
+--- src/pulse/context.c	2009-02-18 16:45:34.000000000 -0500
++++ src/pulse/context.c	2009-02-18 16:46:22.000000000 -0500
+@@ -332,8 +332,7 @@
+ 
+     pa_assert(p);
+     pa_assert(chunk);
+-    pa_assert(chunk->memblock);
+-    pa_assert(chunk->length);
++    pa_assert(chunk->length > 0);
+     pa_assert(c);
+     pa_assert(PA_REFCNT_VALUE(c) >= 1);
+ 
+@@ -341,11 +340,11 @@
+ 
+     if ((s = pa_dynarray_get(c->record_streams, channel))) {
+ 
+-        pa_assert(seek == PA_SEEK_RELATIVE);
+-        pa_assert(offset == 0);
+-
+-        pa_memblockq_seek(s->record_memblockq, offset, seek);
+-        pa_memblockq_push_align(s->record_memblockq, chunk);
++        if (chunk->memblock) {
++            pa_memblockq_seek(s->record_memblockq, offset, seek);
++            pa_memblockq_push_align(s->record_memblockq, chunk);
++        } else
++            pa_memblockq_seek(s->record_memblockq, offset+chunk->length, seek);
+ 
+         if (s->read_callback) {
+             size_t l;
+Index: pulseaudio-0.9.14/src/pulsecore/protocol-native.c
+===================================================================
+--- src/pulsecore/protocol-native.c	2009-02-18 16:45:34.000000000 -0500
++++ src/pulsecore/protocol-native.c	2009-02-18 16:46:22.000000000 -0500
+@@ -4075,17 +4075,20 @@
+     if (playback_stream_isinstance(stream)) {
+         playback_stream *ps = PLAYBACK_STREAM(stream);
+ 
+-        if (seek != PA_SEEK_RELATIVE || offset != 0)
+-            pa_asyncmsgq_post(ps->sink_input->sink->asyncmsgq, PA_MSGOBJECT(ps->sink_input), SINK_INPUT_MESSAGE_SEEK, PA_UINT_TO_PTR(seek), offset, NULL, NULL);
+-
+-        pa_asyncmsgq_post(ps->sink_input->sink->asyncmsgq, PA_MSGOBJECT(ps->sink_input), SINK_INPUT_MESSAGE_POST_DATA, NULL, 0, chunk, NULL);
++        if (chunk->memblock) {
++            if (seek != PA_SEEK_RELATIVE || offset != 0)
++                pa_asyncmsgq_post(ps->sink_input->sink->asyncmsgq, PA_MSGOBJECT(ps->sink_input), SINK_INPUT_MESSAGE_SEEK, PA_UINT_TO_PTR(seek), offset, NULL, NULL);
++
++            pa_asyncmsgq_post(ps->sink_input->sink->asyncmsgq, PA_MSGOBJECT(ps->sink_input), SINK_INPUT_MESSAGE_POST_DATA, NULL, 0, chunk, NULL);
++        } else
++            pa_asyncmsgq_post(ps->sink_input->sink->asyncmsgq, PA_MSGOBJECT(ps->sink_input), SINK_INPUT_MESSAGE_SEEK, PA_UINT_TO_PTR(seek), offset+chunk->length, NULL, NULL);
+ 
+     } else {
+         upload_stream *u = UPLOAD_STREAM(stream);
+         size_t l;
+ 
+         if (!u->memchunk.memblock) {
+-            if (u->length == chunk->length) {
++            if (u->length == chunk->length && chunk->memblock) {
+                 u->memchunk = *chunk;
+                 pa_memblock_ref(u->memchunk.memblock);
+                 u->length = 0;
+@@ -4101,17 +4104,22 @@
+         if (l > chunk->length)
+             l = chunk->length;
+ 
+-
+         if (l > 0) {
+-            void *src, *dst;
++            void *dst;
+             dst = pa_memblock_acquire(u->memchunk.memblock);
+-            src = pa_memblock_acquire(chunk->memblock);
+ 
+-            memcpy((uint8_t*) dst + u->memchunk.index + u->memchunk.length,
+-                   (uint8_t*) src+chunk->index, l);
++            if (chunk->memblock) {
++                void *src;
++                src = pa_memblock_acquire(chunk->memblock);
++
++                memcpy((uint8_t*) dst + u->memchunk.index + u->memchunk.length,
++                       (uint8_t*) src + chunk->index, l);
++
++                pa_memblock_release(chunk->memblock);
++            } else
++                pa_silence_memory((uint8_t*) dst + u->memchunk.index + u->memchunk.length, l, &u->sample_spec);
+ 
+             pa_memblock_release(u->memchunk.memblock);
+-            pa_memblock_release(chunk->memblock);
+ 
+             u->memchunk.length += l;
+             u->length -= l;
+Index: pulseaudio-0.9.14/src/pulsecore/pstream.c
+===================================================================
+--- src/pulsecore/pstream.c	2009-02-18 16:45:34.000000000 -0500
++++ src/pulsecore/pstream.c	2009-02-18 16:48:15.000000000 -0500
+@@ -832,8 +832,7 @@
+                                           ntohl(p->read.shm_info[PA_PSTREAM_SHM_INDEX]),
+                                           ntohl(p->read.shm_info[PA_PSTREAM_SHM_LENGTH])))) {
+ 
+-                    pa_log_warn("Failed to import memory block.");
+-                    return -1;
++                    pa_log_debug("Failed to import memory block.");
+                 }
+ 
+                 if (p->recieve_memblock_callback) {
+@@ -842,7 +841,7 @@
+ 
+                     chunk.memblock = b;
+                     chunk.index = 0;
+-                    chunk.length = pa_memblock_get_length(b);
++                    chunk.length = b ? pa_memblock_get_length(b) : ntohl(p->read.shm_info[PA_PSTREAM_SHM_LENGTH]);
+ 
+                     offset = (int64_t) (
+                             (((uint64_t) ntohl(p->read.descriptor[PA_PSTREAM_DESCRIPTOR_OFFSET_HI])) << 32) |
+@@ -857,7 +856,8 @@
+                             p->recieve_memblock_callback_userdata);
+                 }
+ 
+-                pa_memblock_unref(b);
++                if (b)
++                    pa_memblock_unref(b);
+             }
+ 
+             goto frame_done;
+Index: pulseaudio-0.9.14/src/pulsecore/core-error.c
+===================================================================
+--- src/pulsecore/core-error.c	2009-03-05 17:12:02.000000000 -0500
++++ src/pulsecore/core-error.c	2009-03-05 17:12:16.000000000 -0500
+@@ -47,6 +47,9 @@
+     char *translated, *t;
+     char errbuf[128];
+ 
++    if (errnum < 0)
++        errnum = -errnum;
++
+     if ((t = PA_STATIC_TLS_GET(cstrerror)))
+         pa_xfree(t);
+ 
+Index: pulseaudio-0.9.14/src/pulse/error.c
+===================================================================
+--- src/pulse/error.c	2009-03-05 17:12:34.000000000 -0500
++++ src/pulse/error.c	2009-03-05 17:12:54.000000000 -0500
+@@ -66,7 +66,10 @@
+ 
+     pa_init_i18n();
+ 
+-    if (error < 0 || error >= PA_ERR_MAX)
++    if (error < 0)
++        error = -error;
++
++    if (error >= PA_ERR_MAX)
+         return NULL;
+ 
+     return _(errortab[error]);
+Index: pulseaudio-0.9.14/src/pulsecore/sink.c
+===================================================================
+--- src/pulsecore/sink.c	2009-02-19 18:45:44.000000000 -0500
++++ src/pulsecore/sink.c	2009-02-19 18:46:04.000000000 -0500
+@@ -1557,6 +1557,9 @@
+ 
+     pa_sink_assert_ref(s);
+ 
++    pa_assert(!min_latency || !max_latency ||
++              min_latency <= max_latency);
++
+     s->thread_info.min_latency = min_latency;
+     s->thread_info.max_latency = max_latency;
+ 
+Index: pulseaudio-0.9.14/src/pulsecore/source.c
+===================================================================
+--- src/pulsecore/source.c	2009-02-19 18:46:57.000000000 -0500
++++ src/pulsecore/source.c	2009-02-19 18:47:08.000000000 -0500
+@@ -994,6 +994,9 @@
+ 
+     pa_source_assert_ref(s);
+ 
++    pa_assert(!min_latency || !max_latency ||
++              min_latency <= max_latency);
++
+     s->thread_info.min_latency = min_latency;
+     s->thread_info.max_latency = max_latency;
+ 
+Index: pulseaudio-0.9.14/src/utils/paplay.c
+===================================================================
+--- src/utils/paplay.c	2009-02-19 19:25:01.000000000 -0500
++++ src/utils/paplay.c	2009-02-19 19:25:10.000000000 -0500
+@@ -400,7 +400,10 @@
+     pa_context_set_state_callback(context, context_state_callback, NULL);
+ 
+     /* Connect the context */
+-    pa_context_connect(context, server, 0, NULL);
++    if (pa_context_connect(context, server, 0, NULL) < 0) {
++        fprintf(stderr, _("pa_context_connect() failed: %s"), pa_strerror(pa_context_errno(context)));
++        goto quit;
++    }
+ 
+     /* Run the main loop */
+     if (pa_mainloop_run(m, &ret) < 0) {
+Index: pulseaudio-0.9.14/src/utils/pactl.c
+===================================================================
+--- src/utils/pactl.c	2009-02-19 19:25:01.000000000 -0500
++++ src/utils/pactl.c	2009-02-19 19:25:10.000000000 -0500
+@@ -561,6 +561,7 @@
+         pa_xfree(d);
+         fprintf(stderr, _("Premature end of file\n"));
+         quit(1);
++        return;
+     }
+ 
+     pa_stream_write(s, d, length, pa_xfree, 0, PA_SEEK_RELATIVE);
+@@ -925,7 +926,10 @@
+     }
+ 
+     pa_context_set_state_callback(context, context_state_callback, NULL);
+-    pa_context_connect(context, server, 0, NULL);
++    if (pa_context_connect(context, server, 0, NULL) < 0) {
++        fprintf(stderr, _("pa_context_connect() failed: %s"), pa_strerror(pa_context_errno(context)));
++        goto quit;
++    }
+ 
+     if (pa_mainloop_run(m, &ret) < 0) {
+         fprintf(stderr, _("pa_mainloop_run() failed.\n"));
+Index: pulseaudio-0.9.14/src/pulsecore/protocol-native.c
+===================================================================
+--- src/pulsecore/protocol-native.c	2009-02-19 19:25:10.000000000 -0500
++++ src/pulsecore/protocol-native.c	2009-02-19 19:25:11.000000000 -0500
+@@ -2472,7 +2472,10 @@
+         if (!(name = pa_proplist_gets(p, PA_PROP_EVENT_ID)))
+             name = pa_proplist_gets(p, PA_PROP_MEDIA_NAME);
+ 
+-    CHECK_VALIDITY(c->pstream, name && pa_namereg_is_valid_name(name), tag, PA_ERR_INVALID);
++    if (!name || !pa_namereg_is_valid_name(name)) {
++        pa_proplist_free(p);
++        CHECK_VALIDITY(c->pstream, FALSE, tag, PA_ERR_INVALID);
++    }
+ 
+     s = upload_stream_new(c, &ss, &map, name, length, p);
+     pa_proplist_free(p);
+@@ -3426,24 +3429,29 @@
+         }
+     }
+ 
+-    CHECK_VALIDITY(c->pstream, mode == PA_UPDATE_SET || mode == PA_UPDATE_MERGE || mode == PA_UPDATE_REPLACE, tag, PA_ERR_INVALID);
++    if (!(mode == PA_UPDATE_SET || mode == PA_UPDATE_MERGE || mode == PA_UPDATE_REPLACE)) {
++        pa_proplist_free(p);
++        CHECK_VALIDITY(c->pstream, FALSE, tag, PA_ERR_INVALID);
++    }
+ 
+     if (command == PA_COMMAND_UPDATE_PLAYBACK_STREAM_PROPLIST) {
+         playback_stream *s;
+ 
+         s = pa_idxset_get_by_index(c->output_streams, idx);
+-        CHECK_VALIDITY(c->pstream, s, tag, PA_ERR_NOENTITY);
+-        CHECK_VALIDITY(c->pstream, playback_stream_isinstance(s), tag, PA_ERR_NOENTITY);
+-
++        if (!s || !playback_stream_isinstance(s)) {
++            pa_proplist_free(p);
++            CHECK_VALIDITY(c->pstream, FALSE, tag, PA_ERR_NOENTITY);
++        }
+         pa_proplist_update(s->sink_input->proplist, mode, p);
+         pa_subscription_post(c->protocol->core, PA_SUBSCRIPTION_EVENT_SINK_INPUT|PA_SUBSCRIPTION_EVENT_CHANGE, s->sink_input->index);
+ 
+     } else if (command == PA_COMMAND_UPDATE_RECORD_STREAM_PROPLIST) {
+         record_stream *s;
+ 
+-        s = pa_idxset_get_by_index(c->record_streams, idx);
+-        CHECK_VALIDITY(c->pstream, s, tag, PA_ERR_NOENTITY);
+-
++        if (!(s = pa_idxset_get_by_index(c->record_streams, idx))) {
++            pa_proplist_free(p);
++            CHECK_VALIDITY(c->pstream, FALSE, tag, PA_ERR_NOENTITY);
++        }
+         pa_proplist_update(s->source_output->proplist, mode, p);
+         pa_subscription_post(c->protocol->core, PA_SUBSCRIPTION_EVENT_SOURCE_OUTPUT|PA_SUBSCRIPTION_EVENT_CHANGE, s->source_output->index);
+     } else {
+@@ -3454,6 +3462,7 @@
+     }
+ 
+     pa_pstream_send_simple_ack(c->pstream, tag);
++    pa_proplist_free(p);
+ }
+ 
+ static void command_remove_proplist(pa_pdispatch *pd, uint32_t command, uint32_t tag, pa_tagstruct *t, void *userdata) {
+@@ -4034,7 +4043,7 @@
+     CHECK_VALIDITY(c->pstream, m->load_once || idx != PA_INVALID_INDEX, tag, PA_ERR_INVALID);
+ 
+     cb = (pa_native_protocol_ext_cb_t) pa_hashmap_get(c->protocol->extensions, m);
+-    CHECK_VALIDITY(c->pstream, m, tag, PA_ERR_NOEXTENSION);
++    CHECK_VALIDITY(c->pstream, cb, tag, PA_ERR_NOEXTENSION);
+ 
+     if (cb(c->protocol, m, c, tag, t) < 0)
+         protocol_error(c);
+Index: pulseaudio-0.9.14/src/utils/padsp.c
+===================================================================
+--- src/utils/padsp.c	2009-02-19 19:25:01.000000000 -0500
++++ src/utils/padsp.c	2009-02-19 19:25:11.000000000 -0500
+@@ -1202,7 +1202,7 @@
+ static void sink_info_cb(pa_context *context, const pa_sink_info *si, int eol, void *userdata) {
+     fd_info *i = userdata;
+ 
+-    if (!si && eol < 0) {
++    if (!si || eol < 0) {
+         i->operation_success = 0;
+         pa_threaded_mainloop_signal(i->mainloop, 0);
+         return;
+@@ -1224,7 +1224,7 @@
+ static void source_info_cb(pa_context *context, const pa_source_info *si, int eol, void *userdata) {
+     fd_info *i = userdata;
+ 
+-    if (!si && eol < 0) {
++    if (!si || eol < 0) {
+         i->operation_success = 0;
+         pa_threaded_mainloop_signal(i->mainloop, 0);
+         return;
+Index: pulseaudio-0.9.14/src/pulsecore/core-util.c
+===================================================================
+--- src/pulsecore/core-util.c	2009-02-19 19:25:01.000000000 -0500
++++ src/pulsecore/core-util.c	2009-02-19 19:26:05.000000000 -0500
+@@ -1376,6 +1376,7 @@
+         return -1;
+     }
+ 
++    pa_xfree(p);
+     return 0;
+ }
+ 
+@@ -1408,6 +1409,7 @@
+ 
+     if (pa_make_secure_dir(d, m, (uid_t) -1, (gid_t) -1) < 0)  {
+         pa_log_error("Failed to create secure directory: %s", pa_cstrerror(errno));
++        pa_xfree(d);
+         goto fail;
+     }
+ 
+@@ -2424,7 +2426,7 @@
+ 
+         pa_strip_nl(ln);
+ 
+-        if (ln[0])
++        if (r && ln[0])
+             return pa_xstrdup(ln);
+     }
+ 
+Index: pulseaudio-0.9.14/src/daemon/daemon-conf.c
+===================================================================
+--- src/daemon/daemon-conf.c	2009-02-19 19:25:01.000000000 -0500
++++ src/daemon/daemon-conf.c	2009-02-19 19:25:11.000000000 -0500
+@@ -643,7 +643,7 @@
+     if (c->config_file)
+         pa_strbuf_printf(s, _("### Read from configuration file: %s ###\n"), c->config_file);
+ 
+-    pa_assert(c->log_level <= PA_LOG_LEVEL_MAX);
++    pa_assert(c->log_level < PA_LOG_LEVEL_MAX);
+ 
+     pa_strbuf_printf(s, "daemonize = %s\n", pa_yes_no(c->daemonize));
+     pa_strbuf_printf(s, "fail = %s\n", pa_yes_no(c->fail));
+Index: pulseaudio-0.9.14/src/pulsecore/protocol-esound.c
+===================================================================
+--- src/pulsecore/protocol-esound.c	2009-02-19 19:25:01.000000000 -0500
++++ src/pulsecore/protocol-esound.c	2009-02-19 19:25:11.000000000 -0500
+@@ -926,7 +926,7 @@
+ 
+             c->request = PA_MAYBE_INT32_SWAP(c->swap_byte_order, c->request);
+ 
+-            if (c->request < ESD_PROTO_CONNECT || c->request > ESD_PROTO_MAX) {
++            if (c->request < ESD_PROTO_CONNECT || c->request >= ESD_PROTO_MAX) {
+                 pa_log("recieved invalid request.");
+                 return -1;
+             }
+Index: pulseaudio-0.9.14/src/modules/module-stream-restore.c
+===================================================================
+--- src/modules/module-stream-restore.c	2009-02-19 19:25:01.000000000 -0500
++++ src/modules/module-stream-restore.c	2009-02-19 19:25:11.000000000 -0500
+@@ -429,6 +429,7 @@
+             pa_xfree(n);
+             continue;
+         }
++	pa_xfree(n);
+ 
+         if (u->restore_volume) {
+             pa_cvolume v = e->volume;
+@@ -460,6 +461,7 @@
+             pa_xfree(n);
+             continue;
+         }
++	pa_xfree(n);
+ 
+         if (u->restore_device &&
+             (s = pa_namereg_get(u->core, e->device, PA_NAMEREG_SOURCE, TRUE))) {
+Index: pulseaudio-0.9.14/src/modules/alsa-util.c
+===================================================================
+--- src/modules/alsa-util.c	2009-02-19 19:28:55.000000000 -0500
++++ src/modules/alsa-util.c	2009-02-19 19:29:23.000000000 -0500
+@@ -107,7 +107,7 @@
+ static void defer_cb(pa_mainloop_api*a, pa_defer_event* e, void *userdata) {
+     struct pa_alsa_fdlist *fdl = userdata;
+     unsigned num_fds, i;
+-    int err;
++    int err, n;
+     struct pollfd *temp;
+ 
+     pa_assert(a);
+@@ -116,7 +116,11 @@
+ 
+     a->defer_enable(fdl->defer, 0);
+ 
+-    num_fds = (unsigned) snd_mixer_poll_descriptors_count(fdl->mixer);
++    if ((n = snd_mixer_poll_descriptors_count(fdl->mixer)) < 0) {
++        pa_log("snd_mixer_poll_descriptors_count() failed: %s", snd_strerror(n));
++        return;
++    }
++    num_fds = (unsigned) n;
+ 
+     if (num_fds != fdl->num_fds) {
+         if (fdl->fds)
+Index: pulseaudio-0.9.14/src/daemon/cmdline.c
+===================================================================
+--- src/daemon/cmdline.c	2009-02-22 00:19:36.000000000 -0500
++++ src/daemon/cmdline.c	2009-02-22 00:21:01.000000000 -0500
+@@ -292,7 +292,7 @@
+ 
+             case ARG_DISALLOW_EXIT:
+                 if ((conf->disallow_exit = optarg ? pa_parse_boolean(optarg) : TRUE) < 0) {
+-                    pa_log(_("--disallow-exit boolean argument"));
++                    pa_log(_("--disallow-exit expects boolean argument"));
+                     goto fail;
+                 }
+                 break;
+Index: pulseaudio-0.9.14/src/pulsecore/protocol-esound.c
+===================================================================
+--- src/pulsecore/protocol-esound.c	2009-03-05 17:15:48.000000000 -0500
++++ src/pulsecore/protocol-esound.c	2009-03-05 17:15:49.000000000 -0500
+@@ -1198,6 +1198,9 @@
+     connection *c = CONNECTION(o);
+     connection_assert_ref(c);
+ 
++    if (!c->protocol)
++        return -1;
++
+     switch (code) {
+         case CONNECTION_MESSAGE_REQUEST_DATA:
+             do_work(c);
+Index: pulseaudio-0.9.14/src/pulsecore/protocol-simple.c
+===================================================================
+--- src/pulsecore/protocol-simple.c	2009-03-05 17:12:00.000000000 -0500
++++ src/pulsecore/protocol-simple.c	2009-03-05 17:15:49.000000000 -0500
+@@ -283,6 +283,9 @@
+     connection *c = CONNECTION(o);
+     connection_assert_ref(c);
+ 
++    if (!c->protocol)
++        return -1;
++
+     switch (code) {
+         case CONNECTION_MESSAGE_REQUEST_DATA:
+             do_work(c);
