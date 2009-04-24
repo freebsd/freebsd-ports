@@ -17,7 +17,7 @@
 -	LINKFLAGS="-shared -Wl,-soname,libjbigi.so"
 +	COMPILEFLAGS="-Wall ${CFLAGS}"
 +	INCLUDES="-I. -I${LOCALBASE}/include -Ijbigi/include -I$JAVA_HOME/include -I$JAVA_HOME/include/freebsd"
-+	LINKFLAGS="-shared -Wl,-soname,libjbigi.so ${LDFLAGS}"
++	LINKFLAGS="-shared -Wl,-soname,libjbigi.so ${LDFLAGS} -fPIC"
  	LIBFILE="libjbigi.so";;
  esac
  
