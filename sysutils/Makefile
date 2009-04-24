@@ -271,6 +271,7 @@
     SUBDIR += gconf-editor
     SUBDIR += gdmap
     SUBDIR += geomgui
+	SUBDIR += geteltorito
     SUBDIR += getdelta
     SUBDIR += gfslicer
     SUBDIR += ghasher
