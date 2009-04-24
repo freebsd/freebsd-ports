@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	snownews
-PORTVERSION=	1.5.10
+PORTVERSION=	1.5.11
 CATEGORIES=	www
 MASTER_SITES=	http://kiza.kcore.de/software/snownews/download/
 
@@ -43,6 +43,7 @@ MANLANG=	"" de nl fr it ru_RU.KOI8-R
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#!/usr/local/bin/perl|#!${PERL}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|ncurses|ncursesw|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|make|${GMAKE}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/Makefile
