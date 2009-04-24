@@ -1624,6 +1624,7 @@
     SUBDIR += xpi-dailymotiononwooztalk
     SUBDIR += xpi-deepestsender
     SUBDIR += xpi-deezeronwooztalk
+    SUBDIR += xpi-default_full_zoom_level
     SUBDIR += xpi-delicious
     SUBDIR += xpi-downthemall
     SUBDIR += xpi-errorzilla
