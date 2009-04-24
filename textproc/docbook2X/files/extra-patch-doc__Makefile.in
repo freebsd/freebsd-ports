@@ -1,0 +1,11 @@
+--- ./doc/Makefile.in.orig	2009-04-22 22:42:38.000000000 -0400
++++ ./doc/Makefile.in	2009-04-22 22:42:45.000000000 -0400
+@@ -563,7 +563,7 @@
+ 
+ info-am: $(INFO_DEPS)
+ 
+-install-data-am: install-htmlDATA install-info-am install-man
++install-data-am: install-info-am install-man
+ 
+ install-exec-am:
+ 
