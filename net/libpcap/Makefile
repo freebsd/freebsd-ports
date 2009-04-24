@@ -11,7 +11,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ubiquitous network traffic capture library
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
