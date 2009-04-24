@@ -16,8 +16,7 @@ MAINTAINER=	dom@helenmarks.co.uk
 COMMENT=	Apache module for XML namespaces
 
 USE_GNOME=	libxml2
-USE_APACHE=	yes
-WITH_APACHE2=	yes
+USE_APACHE=	2.0+
 
 XML2_INC=	${LOCALBASE}/include/libxml2
 XML2_LIB=	${LOCALBASE}/lib
