@@ -5,18 +5,18 @@
 # $FreeBSD$
 
 PORTNAME=	rails
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 
 MAINTAINER=	jw@innerewut.de
 COMMENT=	MVC web application framework
 
-BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-2.2.2.gemspec:${PORTSDIR}/devel/rubygem-activesupport \
-		${LOCALBASE}/${SPEC_DIR}/activerecord-2.2.2.gemspec:${PORTSDIR}/databases/rubygem-activerecord \
-		${LOCALBASE}/${SPEC_DIR}/actionpack-2.2.2.gemspec:${PORTSDIR}/www/rubygem-actionpack \
-		${LOCALBASE}/${SPEC_DIR}/actionmailer-2.2.2.gemspec:${PORTSDIR}/mail/rubygem-actionmailer \
-		${LOCALBASE}/${SPEC_DIR}/activeresource-2.2.2.gemspec:${PORTSDIR}/www/rubygem-activeresource
+BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-${PORTVERSION}.gemspec:${PORTSDIR}/devel/rubygem-activesupport \
+		${LOCALBASE}/${SPEC_DIR}/activerecord-${PORTVERSION}.gemspec:${PORTSDIR}/databases/rubygem-activerecord \
+		${LOCALBASE}/${SPEC_DIR}/actionpack-${PORTVERSION}.gemspec:${PORTSDIR}/www/rubygem-actionpack \
+		${LOCALBASE}/${SPEC_DIR}/actionmailer-${PORTVERSION}.gemspec:${PORTSDIR}/mail/rubygem-actionmailer \
+		${LOCALBASE}/${SPEC_DIR}/activeresource-${PORTVERSION}.gemspec:${PORTSDIR}/www/rubygem-activeresource
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	FCGI "FastCGI support" Off\
