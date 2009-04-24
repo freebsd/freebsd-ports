@@ -7,9 +7,9 @@
 
 PORTNAME=	davical
 PORTVERSION=	0.9.6.2
+PORTREVISION=	1
 CATEGORIES?=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=		rscds
+MASTER_SITES=	SF/rscds
 DISTNAME=	davical_${PORTVERSION}
 
 MAINTAINER=	maurice@castro.aus.net
@@ -25,6 +25,8 @@ RUN_DEPENDS=	${LOCALBASE}/include/php/ext/pgsql:${PORTSDIR}/databases/php5-pgsql
 WRKSRC=		${WRKDIR}/davical-${PORTVERSION}
 
 NO_BUILD=	yes
+
+USE_PHP=	gettext pcre xml
 
 SUB_FILES=	pkg-message httpd-davical.conf
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
