@@ -11,7 +11,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Ubiquitous network traffic analysis tool
 
 LIB_DEPENDS=	pcap.3:${PORTSDIR}/net/libpcap \
