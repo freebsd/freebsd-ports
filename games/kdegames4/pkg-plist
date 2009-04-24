@@ -1808,7 +1808,7 @@ share/sounds/kapman/pill.ogg
 @dirrm share/apps/carddecks/svg-jolly-royal
 @dirrm share/apps/carddecks/svg-gm-paris
 @dirrm share/apps/carddecks/svg-dondorf
-@dirrm share/apps/carddecks/decks
+@dirrmtry share/apps/carddecks/decks
 @dirrm share/apps/carddecks/cards-xskat-german
 @dirrm share/apps/carddecks/cards-xskat-french
 @dirrm share/apps/carddecks/cards-penguins
