@@ -43,6 +43,7 @@ share/gnome/help/gpl/ar/gpl.xml
 share/gnome/help/gpl/ca/gpl.xml
 share/gnome/help/gpl/cs/gpl.xml
 share/gnome/help/gpl/de/gpl.xml
+share/gnome/help/gpl/el/gpl.xml
 share/gnome/help/gpl/es/gpl.xml
 share/gnome/help/gpl/eu/gpl.xml
 share/gnome/help/gpl/fi/gpl.xml
@@ -58,6 +59,7 @@ share/gnome/help/gpl/zh_CN/gpl.xml
 share/gnome/help/lgpl/C/lgpl.xml
 share/gnome/help/lgpl/ar/lgpl.xml
 share/gnome/help/lgpl/de/lgpl.xml
+share/gnome/help/lgpl/el/lgpl.xml
 share/gnome/help/lgpl/es/lgpl.xml
 share/gnome/help/lgpl/eu/lgpl.xml
 share/gnome/help/lgpl/fi/lgpl.xml
@@ -189,6 +191,7 @@ share/omf/gpl/gpl-ar.omf
 share/omf/gpl/gpl-ca.omf
 share/omf/gpl/gpl-cs.omf
 share/omf/gpl/gpl-de.omf
+share/omf/gpl/gpl-el.omf
 share/omf/gpl/gpl-es.omf
 share/omf/gpl/gpl-eu.omf
 share/omf/gpl/gpl-fi.omf
@@ -204,6 +207,7 @@ share/omf/gpl/gpl-zh_CN.omf
 share/omf/lgpl/lgpl-C.omf
 share/omf/lgpl/lgpl-ar.omf
 share/omf/lgpl/lgpl-de.omf
+share/omf/lgpl/lgpl-el.omf
 share/omf/lgpl/lgpl-es.omf
 share/omf/lgpl/lgpl-eu.omf
 share/omf/lgpl/lgpl-fi.omf
@@ -303,6 +307,7 @@ share/pixmaps/vnterm.xpm
 @dirrm share/gnome/help/lgpl/fi
 @dirrm share/gnome/help/lgpl/eu
 @dirrm share/gnome/help/lgpl/es
+@dirrm share/gnome/help/lgpl/el
 @dirrm share/gnome/help/lgpl/de
 @dirrm share/gnome/help/lgpl/ar
 @dirrm share/gnome/help/gpl/zh_CN
@@ -317,6 +322,7 @@ share/pixmaps/vnterm.xpm
 @dirrm share/gnome/help/gpl/fi
 @dirrm share/gnome/help/gpl/eu
 @dirrm share/gnome/help/gpl/es
+@dirrm share/gnome/help/gpl/el
 @dirrm share/gnome/help/gpl/de
 @dirrm share/gnome/help/gpl/cs
 @dirrm share/gnome/help/gpl/ca

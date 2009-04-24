@@ -3,7 +3,7 @@
 # Whom:                 		Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/librsvg2/Makefile,v 1.123 2009/03/17 14:48:53 kwm Exp $
+#   $MCom: ports-stable/graphics/librsvg2/Makefile,v 1.5 2009/04/20 05:55:53 marcus Exp $
 #
 
 PORTNAME=	librsvg2
@@ -40,12 +40,12 @@ CROCO_VERSION=	0.6
 
 MAN1=		rsvg.1
 
-OPTIONS=	MOZILLA_PLUGIN "Enable the SVG browser plug-in" no
+OPTIONS=	MOZILLA_PLUGIN "Enable the SVG browser plug-in" on
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MOZILLA_PLUGIN)
-USE_GECKO=	firefox mozilla seamonkey xulrunner
+USE_GECKO=	firefox mozilla seamonkey libxul xulrunner
 USE_WEBPLUGINS=	gecko*
 WEBPLUGINS_FILES=libmozsvgdec.so
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"

@@ -87,6 +87,7 @@ share/locale/ko/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/ku/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/lt/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/lv/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
+share/locale/mai/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/mg/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/mk/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/ml/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
@@ -146,6 +147,8 @@ share/locale/zh_TW/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES

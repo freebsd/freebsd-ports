@@ -3,11 +3,11 @@
 # Whom:					Adam Weinberger, based off kiesel's ximian-exchange port
 #
 # $FreeBSD$
-#   $MCom: ports/mail/evolution-exchange/Makefile,v 1.133 2009/03/17 16:01:03 kwm Exp $
+#   $MCom: ports-stable/mail/evolution-exchange/Makefile,v 1.3 2009/04/16 01:14:40 kwm Exp $
 #
 
 PORTNAME=	evolution-exchange
-PORTVERSION=	2.26.0
+PORTVERSION=	2.26.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -40,17 +40,6 @@ PLIST_SUB=	VERSION=${VERSION} EVO_VERSION=${EVO_VERSION} \
 GCONF_SCHEMAS=	apps_exchange_addressbook-${VERSION}.schemas
 
 .include <bsd.port.pre.mk>
-
-.if !defined(NO_KERBEROS) && exists(/usr/lib/libkrb5.so)
-CONFIGURE_ARGS+=	--with-krb5=/usr
-.else
-LIB_DEPENDS+=		krb5:${PORTSDIR}/security/heimdal
-.if defined(HEIMDAL_HOME)
-CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME} --with-krb5-includes=${HEIMDAL_HOME}/include
-.else
-CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
-.endif
-.endif
 
 .if ${ARCH} == "amd64"
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC"

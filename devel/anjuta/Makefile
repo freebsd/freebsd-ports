@@ -3,12 +3,12 @@
 # Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/anjuta/Makefile,v 1.37 2009/03/31 13:33:41 kwm Exp $
+#   $MCom: ports-stable/devel/anjuta/Makefile,v 1.6 2009/04/20 04:42:30 marcus Exp $
 #
 
 PORTNAME=	anjuta
-PORTVERSION=	2.26.0.1
-PORTREVISION=	3
+PORTVERSION=	2.26.1.0
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -30,7 +30,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		neato:${PORTSDIR}/graphics/graphviz \
 		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
 		libtool:${PORTSDIR}/devel/libtool15 \
-		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
+		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
+		exctags:${PORTSDIR}/devel/ctags
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autotools:run
@@ -67,11 +68,22 @@ BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 USE_APACHE=	2.0+
 
+## Test if we got apache 20 or 22.
+.if exists(${LOCALBASE}/include/apache22/httpd.h)
+APR_CONFIG=${LOCALBASE}/bin/apr-1-config
+APU_CONFIG=${LOCALBASE}/bin/apu-1-config
+.else
+APR_CONFIG=${LOCALBASE}/lib/apache2/apr-config
+APU_CONFIG=${LOCALBASE}/lib/apache2/apu-config
+.endif
+CONFIGURE_ENV+=	APR_CFLAGS="`${APR_CONFIG} --includes`" \
+		APR_LIBS="`${APU_CONFIG} --libs`" \
+		APR_UTILS_CFLAGS="`${APU_CONFIG} --includes`" \
+		APR_UTILS_LIBS="`${APU_CONFIG} --libs`" \
+
 CONFIGURE_ARGS+=--with-subversion-dir=${LOCALBASE}/bin \
 		--with-svn-include=${LOCALBASE}/include \
-		--with-svn-lib=${LOCALBASE}/lib \
-		--with-apr-config=${LOCALBASE}/bin/apr-1-config \
-		--with-apu-config=${LOCALBASE}/bin/apu-1-config
+		--with-svn-lib=${LOCALBASE}/lib
 PLIST_SUB+=	SVN=""
 .else
 CONFIGURE_ARGS+=--disable-plugin-subversion
@@ -83,7 +95,10 @@ LIB_DEPENDS+=	devhelp-1.0:${PORTSDIR}/devel/devhelp
 PLIST_SUB+=	DEVHELP=""
 .else
 CONFIGURE_ARGS+=--disable-plugin-devhelp
-PLIST_SUB+=	DEVHELP="@comment "
+# XXX Even if we disable the devhelp plugin it gets build and installed.
+# See if versions beyond 2.26.1.0 still do this.
+#PLIST_SUB+=	DEVHELP="@comment "
+PLIST_SUB+=	DEVHELP=""
 .endif
 
 post-configure:
@@ -91,6 +106,9 @@ post-configure:
 	    	${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|"make|"gmake|g' \
 		${WRKSRC}/plugins/build-basic-autotools/plugin.c
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	    	${WRKSRC}/plugins/symbol-db/plugin.h \
+		${WRKSRC}/plugins/symbol-db/symbol-db-prefs.h
 
 post-install:
 .if !defined(NOPORTDOCS)

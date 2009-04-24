@@ -8,21 +8,3 @@
  
  #include <liboil/liboil.h>
  
-@@ -689,7 +690,7 @@ int main(int argc, char *argv[]) {
-          * first take the autospawn lock to make things
-          * synchronous. */
- 
--        if ((autospawn_fd = pa_autospawn_lock_init()) < 0) {
-+        /*if ((autospawn_fd = pa_autospawn_lock_init()) < 0) {
-             pa_log("Failed to initialize autospawn lock");
-             goto finish;
-         }
-@@ -699,7 +700,7 @@ int main(int argc, char *argv[]) {
-             goto finish;
-         }
- 
--        autospawn_locked = TRUE;
-+        autospawn_locked = TRUE;*/
-     }
- 
-     if (conf->daemonize) {

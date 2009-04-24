@@ -1,5 +1,6 @@
 #
 # $FreeBSD$
+#    $MCom$
 #
 # PAM configuration for the "gdm" service
 #

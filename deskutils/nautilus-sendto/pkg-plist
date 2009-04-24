@@ -1,20 +1,23 @@
 bin/nautilus-sendto
 lib/nautilus-sendto/plugins/libnstbluetooth.la
 lib/nautilus-sendto/plugins/libnstbluetooth.so
+lib/nautilus-sendto/plugins/libnstburn.la
+lib/nautilus-sendto/plugins/libnstburn.so
+lib/nautilus-sendto/plugins/libnstempathy.la
+lib/nautilus-sendto/plugins/libnstempathy.so
 lib/nautilus-sendto/plugins/libnstevolution.la
 lib/nautilus-sendto/plugins/libnstevolution.so
 %%PIDGIN%%lib/nautilus-sendto/plugins/libnstpidgin.la
 %%PIDGIN%%lib/nautilus-sendto/plugins/libnstpidgin.so
-lib/nautilus-sendto/plugins/libnstsylpheed.la
-lib/nautilus-sendto/plugins/libnstsylpheed.so
-lib/nautilus-sendto/plugins/libnstthunderbird.la
-lib/nautilus-sendto/plugins/libnstthunderbird.so
+lib/nautilus-sendto/plugins/libnstremovable_devices.la
+lib/nautilus-sendto/plugins/libnstremovable_devices.so
 lib/nautilus/extensions-2.0/libnautilus-sendto.la
 lib/nautilus/extensions-2.0/libnautilus-sendto.so
 %%PIDGIN%%lib/pidgin/nautilus.la
 %%PIDGIN%%lib/pidgin/nautilus.so
 share/nautilus-sendto/glade/nautilus-sendto.glade
 share/locale/ar/LC_MESSAGES/nautilus-sendto.mo
+share/locale/ast/LC_MESSAGES/nautilus-sendto.mo
 share/locale/be@latin/LC_MESSAGES/nautilus-sendto.mo
 share/locale/be/LC_MESSAGES/nautilus-sendto.mo
 share/locale/bg/LC_MESSAGES/nautilus-sendto.mo
@@ -40,6 +43,7 @@ share/locale/ka/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ko/LC_MESSAGES/nautilus-sendto.mo
 share/locale/lt/LC_MESSAGES/nautilus-sendto.mo
 share/locale/mk/LC_MESSAGES/nautilus-sendto.mo
+share/locale/mr/LC_MESSAGES/nautilus-sendto.mo
 share/locale/nb/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ne/LC_MESSAGES/nautilus-sendto.mo
 share/locale/nl/LC_MESSAGES/nautilus-sendto.mo
@@ -69,7 +73,11 @@ share/locale/zh_TW/LC_MESSAGES/nautilus-sendto.mo
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast

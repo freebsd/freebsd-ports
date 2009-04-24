@@ -202,6 +202,7 @@ share/gedit-2/plugins/modelines/language-mappings
 %%PYTHON%%share/gedit-2/plugins/snippets/cpp.xml
 %%PYTHON%%share/gedit-2/plugins/snippets/css.xml
 %%PYTHON%%share/gedit-2/plugins/snippets/docbook.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/fortran.xml
 %%PYTHON%%share/gedit-2/plugins/snippets/global.xml
 %%PYTHON%%share/gedit-2/plugins/snippets/haskell.xml
 %%PYTHON%%share/gedit-2/plugins/snippets/html.xml
@@ -269,6 +270,14 @@ share/gnome/help/gedit/de/figures/gedit_recent_files_menu_icon.png
 share/gnome/help/gedit/de/figures/gedit_window.png
 share/gnome/help/gedit/de/gedit.xml
 share/gnome/help/gedit/de/legal.xml
+share/gnome/help/gedit/el/figures/gedit_format_bold.png
+share/gnome/help/gedit/el/figures/gedit_format_italic.png
+share/gnome/help/gedit/el/figures/gedit_format_strikethrough.png
+share/gnome/help/gedit/el/figures/gedit_format_underline.png
+share/gnome/help/gedit/el/figures/gedit_recent_files_menu_icon.png
+share/gnome/help/gedit/el/figures/gedit_window.png
+share/gnome/help/gedit/el/gedit.xml
+share/gnome/help/gedit/el/legal.xml
 share/gnome/help/gedit/es/figures/gedit_format_bold.png
 share/gnome/help/gedit/es/figures/gedit_format_italic.png
 share/gnome/help/gedit/es/figures/gedit_format_strikethrough.png
@@ -411,6 +420,7 @@ share/locale/bn_IN/LC_MESSAGES/gedit.mo
 share/locale/br/LC_MESSAGES/gedit.mo
 share/locale/bs/LC_MESSAGES/gedit.mo
 share/locale/ca/LC_MESSAGES/gedit.mo
+share/locale/crh/LC_MESSAGES/gedit.mo
 share/locale/cs/LC_MESSAGES/gedit.mo
 share/locale/cy/LC_MESSAGES/gedit.mo
 share/locale/da/LC_MESSAGES/gedit.mo
@@ -489,6 +499,7 @@ share/omf/gedit/gedit-C.omf
 share/omf/gedit/gedit-bg.omf
 share/omf/gedit/gedit-da.omf
 share/omf/gedit/gedit-de.omf
+share/omf/gedit/gedit-el.omf
 share/omf/gedit/gedit-es.omf
 share/omf/gedit/gedit-fi.omf
 share/omf/gedit/gedit-fr.omf
@@ -538,6 +549,8 @@ share/omf/gedit/gedit-zh_TW.omf
 @dirrm share/gnome/help/gedit/fi
 @dirrm share/gnome/help/gedit/es/figures
 @dirrm share/gnome/help/gedit/es
+@dirrm share/gnome/help/gedit/el/figures
+@dirrm share/gnome/help/gedit/el
 @dirrm share/gnome/help/gedit/de/figures
 @dirrm share/gnome/help/gedit/de
 @dirrm share/gnome/help/gedit/da/figures
@@ -615,6 +628,8 @@ share/omf/gedit/gedit-zh_TW.omf
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES

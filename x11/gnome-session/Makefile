@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-session/Makefile,v 1.169 2009/03/17 22:56:03 kwm Exp $
+#   $MCom: ports-stable/x11/gnome-session/Makefile,v 1.3 2009/04/16 01:54:40 kwm Exp $
 #
 
 PORTNAME=	gnome-session
-PORTVERSION=	2.26.0
+PORTVERSION=	2.26.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME \
 		http://www.marcuscom.com/downloads/:local
@@ -39,9 +39,8 @@ CONFIGURE_ARGS=	--disable-docbook-docs
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-MAN1=		gnome-session.1 gnome-wm.1 session-properties.1 \
+MAN1=		gnome-session.1 gnome-wm.1 gnome-session-properties.1 \
 		gnome-session-save.1
-MAN5=		default.session.5
 GCONF_SCHEMAS=	gnome-session.schemas
 
 SPLASHES=	freebsd-splashes-gnome-2.18_1.tar

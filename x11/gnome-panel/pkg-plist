@@ -197,6 +197,9 @@ share/gnome/help/fish/th/legal.xml
 share/gnome/help/fish/uk/figures/fish_applet.png
 share/gnome/help/fish/uk/fish.xml
 share/gnome/help/fish/uk/legal.xml
+share/gnome/help/fish/zh_CN/figures/fish_applet.png
+share/gnome/help/fish/zh_CN/fish.xml
+share/gnome/help/fish/zh_CN/legal.xml
 share/gnome/help/window-list/C/window-list.xml
 share/gnome/help/window-list/ar/window-list.xml
 share/gnome/help/window-list/ca/window-list.xml
@@ -460,6 +463,7 @@ share/omf/fish/fish-ru.omf
 share/omf/fish/fish-sv.omf
 share/omf/fish/fish-th.omf
 share/omf/fish/fish-uk.omf
+share/omf/fish/fish-zh_CN.omf
 share/omf/gnome-panel/fish-applet-2-ja.omf
 share/omf/gnome-panel/fish-applet-2-zh_CN.omf
 share/omf/gnome-panel/fish-applet-2-zh_TW.omf
@@ -572,6 +576,8 @@ share/omf/workspace-switcher/workspace-switcher-vi.omf
 @dirrm share/gnome/help/window-list/ar
 @dirrm share/gnome/help/window-list/C
 @dirrm share/gnome/help/window-list
+@dirrm share/gnome/help/fish/zh_CN/figures
+@dirrm share/gnome/help/fish/zh_CN
 @dirrm share/gnome/help/fish/uk/figures
 @dirrm share/gnome/help/fish/uk
 @dirrm share/gnome/help/fish/th/figures

@@ -18,6 +18,8 @@ share/gnome/help/vinagre/cs/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/cs/vinagre.xml
 share/gnome/help/vinagre/de/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/de/vinagre.xml
+share/gnome/help/vinagre/el/figures/vinagre-screenshot.png
+share/gnome/help/vinagre/el/vinagre.xml
 share/gnome/help/vinagre/en_GB/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/en_GB/vinagre.xml
 share/gnome/help/vinagre/es/figures/vinagre-screenshot.png
@@ -125,6 +127,7 @@ share/omf/vinagre/vinagre-C.omf
 share/omf/vinagre/vinagre-ca.omf
 share/omf/vinagre/vinagre-cs.omf
 share/omf/vinagre/vinagre-de.omf
+share/omf/vinagre/vinagre-el.omf
 share/omf/vinagre/vinagre-en_GB.omf
 share/omf/vinagre/vinagre-es.omf
 share/omf/vinagre/vinagre-fr.omf
@@ -160,6 +163,8 @@ share/omf/vinagre/vinagre-th.omf
 @dirrm share/gnome/help/vinagre/es
 @dirrm share/gnome/help/vinagre/en_GB/figures
 @dirrm share/gnome/help/vinagre/en_GB
+@dirrm share/gnome/help/vinagre/el/figures
+@dirrm share/gnome/help/vinagre/el
 @dirrm share/gnome/help/vinagre/de/figures
 @dirrm share/gnome/help/vinagre/de
 @dirrm share/gnome/help/vinagre/cs/figures

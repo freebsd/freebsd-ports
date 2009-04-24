@@ -26,6 +26,9 @@ lib/planner/file-modules/libmrp-xml.so
 lib/planner/file-modules/libmrp-xsl.a
 lib/planner/file-modules/libmrp-xsl.la
 lib/planner/file-modules/libmrp-xsl.so
+%%EVO%%lib/planner/plugins/libeds-plugin.a
+%%EVO%%lib/planner/plugins/libeds-plugin.la
+%%EVO%%lib/planner/plugins/libeds-plugin.so
 lib/planner/plugins/libhtml-plugin.a
 lib/planner/plugins/libhtml-plugin.la
 lib/planner/plugins/libhtml-plugin.so
@@ -165,6 +168,7 @@ share/locale/fi/LC_MESSAGES/planner.mo
 share/locale/fr/LC_MESSAGES/planner.mo
 share/locale/ga/LC_MESSAGES/planner.mo
 share/locale/gl/LC_MESSAGES/planner.mo
+share/locale/gu/LC_MESSAGES/planner.mo
 share/locale/hi/LC_MESSAGES/planner.mo
 share/locale/hr/LC_MESSAGES/planner.mo
 share/locale/hu/LC_MESSAGES/planner.mo
@@ -179,6 +183,7 @@ share/locale/lv/LC_MESSAGES/planner.mo
 share/locale/mk/LC_MESSAGES/planner.mo
 share/locale/ml/LC_MESSAGES/planner.mo
 share/locale/mn/LC_MESSAGES/planner.mo
+share/locale/mr/LC_MESSAGES/planner.mo
 share/locale/ms/LC_MESSAGES/planner.mo
 share/locale/nb/LC_MESSAGES/planner.mo
 share/locale/ne/LC_MESSAGES/planner.mo
@@ -249,6 +254,7 @@ share/planner/sql/upgrade-0.11-0.13.sql
 share/planner/sql/upgrade-0.6.x-0.11.sql
 share/planner/stylesheets/html1_css.xsl
 share/planner/stylesheets/html1_css_ie.xsl
+share/planner/stylesheets/html1_css_ie7.xsl
 share/planner/stylesheets/html1_gantt.xsl
 share/planner/stylesheets/html1_resources.xsl
 share/planner/stylesheets/html1_tasks.xsl
@@ -299,6 +305,8 @@ share/planner/ui/xml-planner-plugin.ui
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/locale/gl/LC_MESSAGES
 @dirrmtry share/locale/gl
 @dirrmtry share/locale/dz/LC_MESSAGES

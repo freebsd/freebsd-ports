@@ -3,11 +3,12 @@
 # Whom:					Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-settings-daemon/Makefile,v 1.37 2009/03/17 14:00:07 kwm Exp $
+#   $MCom: ports-stable/sysutils/gnome-settings-daemon/Makefile,v 1.2 2009/04/18 10:59:37 kwm Exp $
 #
 
 PORTNAME=	gnome-settings-daemon
-PORTVERSION=	2.26.0
+PORTVERSION=	2.26.1
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,6 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 settings daemon
 
 LIB_DEPENDS=	pulse.0:${PORTSDIR}/audio/pulseaudio
+RUN_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
 
 USE_XORG=	xxf86misc
 USE_BZIP2=	yes

@@ -48,10 +48,6 @@ lib/libgtop-2.0.la
 lib/libgtop-2.0.so
 lib/libgtop-2.0.so.7
 libdata/pkgconfig/libgtop-2.0.pc
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/left.png
 %%DOCSDIR%%/libgtop-Close.html
 %%DOCSDIR%%/libgtop-Command.html
 %%DOCSDIR%%/libgtop-GlibTop-Server.html
@@ -61,17 +57,9 @@ libdata/pkgconfig/libgtop-2.0.pc
 %%DOCSDIR%%/libgtop-PPP.html
 %%DOCSDIR%%/libgtop-Shared-Memory-Limits.html
 %%DOCSDIR%%/libgtop-Uptime.html
-%%DOCSDIR%%/libgtop-cpu.html
-%%DOCSDIR%%/libgtop-fsusage.html
-%%DOCSDIR%%/libgtop-lib.html
-%%DOCSDIR%%/libgtop-loadavg.html
-%%DOCSDIR%%/libgtop-mem.html
-%%DOCSDIR%%/libgtop-mountlist.html
-%%DOCSDIR%%/libgtop-msg-limits.html
 %%DOCSDIR%%/libgtop-open.html
 %%DOCSDIR%%/libgtop-parameter.html
 %%DOCSDIR%%/libgtop-procargs.html
-%%DOCSDIR%%/libgtop-prockernel.html
 %%DOCSDIR%%/libgtop-proclist.html
 %%DOCSDIR%%/libgtop-procmap.html
 %%DOCSDIR%%/libgtop-procmem.html
@@ -83,20 +71,15 @@ libdata/pkgconfig/libgtop-2.0.pc
 %%DOCSDIR%%/libgtop-procuid.html
 %%DOCSDIR%%/libgtop-sem-limits.html
 %%DOCSDIR%%/libgtop-signal.html
-%%DOCSDIR%%/libgtop-swap.html
 %%DOCSDIR%%/libgtop-sysdeps.html
 %%DOCSDIR%%/libgtop-sysinfo.html
 %%DOCSDIR%%/libgtop-union.html
 %%DOCSDIR%%/libgtop-version.html
 %%DOCSDIR%%/libgtop-white-paper-overview.html
 %%DOCSDIR%%/libgtop-white-paper.html
-%%DOCSDIR%%/libgtop.devhelp
-%%DOCSDIR%%/libgtop.devhelp2
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/up.png
 share/locale/am/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ar/LC_MESSAGES/libgtop-2.0.mo
+share/locale/as/LC_MESSAGES/libgtop-2.0.mo
 share/locale/az/LC_MESSAGES/libgtop-2.0.mo
 share/locale/be/LC_MESSAGES/libgtop-2.0.mo
 share/locale/bg/LC_MESSAGES/libgtop-2.0.mo
@@ -130,6 +113,7 @@ share/locale/id/LC_MESSAGES/libgtop-2.0.mo
 share/locale/it/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ja/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ka/LC_MESSAGES/libgtop-2.0.mo
+share/locale/kn/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ko/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ku/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ky/LC_MESSAGES/libgtop-2.0.mo
@@ -203,3 +187,5 @@ share/locale/zh_TW/LC_MESSAGES/libgtop-2.0.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
