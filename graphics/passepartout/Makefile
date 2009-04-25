@@ -16,7 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	DTP application for X
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/libxml++26 \
+LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 		gnomecanvasmm-2.6:${PORTSDIR}/graphics/libgnomecanvasmm26
 RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
