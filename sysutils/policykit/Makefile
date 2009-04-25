@@ -16,9 +16,6 @@ DISTNAME=	PolicyKit-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Framework for controlling access to system-wide components
 
-BUILD_DEPENDS=	${LOCALBASE}/share/sgml/docbook/4.1/catalog:${PORTSDIR}/textproc/docbook-410 \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
     		expat.6:${PORTSDIR}/textproc/expat2
 
@@ -36,10 +33,18 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GTKDOC="false"
 
+.if defined(NO_INSTALL_MANPAGES)
+CONFIGURE_ARGS+=--disable-man-pages
+.else
+BUILD_DEPENDS=	${LOCALBASE}/share/sgml/docbook/4.1/catalog:${PORTSDIR}/textproc/docbook-410 \
+    		xsltproc:${PORTSDIR}/textproc/libxslt \
+		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+
 MAN1=		polkit-action.1 polkit-auth.1 polkit-config-file-validate.1 \
 		polkit-policy-file-validate.1
 MAN5=		PolicyKit.conf.5
 MAN8=		PolicyKit.8
+.endif
 
 post-install:
 	${MKDIR} ${PREFIX}/etc/PolicyKit
