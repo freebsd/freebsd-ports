@@ -16,6 +16,9 @@ COMMENT=	Framework and a set of libraries for developing operating systems
 BUILD_DEPENDS=	gcc295:${PORTSDIR}/lang/gcc295
 RUN_DEPENDS=	gcc295:${PORTSDIR}/lang/gcc295
 
+DEPRECATED=	does not work with current versions of GCC, needs gcc295 which has been failing to build for months, no user/maintainer interest
+EXPIRATION_DATE=2009-05-25
+
 USE_PERL5_BUILD=	yes
 
 OSKITDIR=	${PORTNAME}
