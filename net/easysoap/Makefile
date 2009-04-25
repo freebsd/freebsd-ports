@@ -7,13 +7,12 @@
 
 PORTNAME=	easysoap
 PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	EasySoap++-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	C++ SOAP Library based on expat
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
@@ -26,8 +25,8 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
-BROKEN=		does not compile on FreeBSD/amd64 6.X
+.if ${OSVERSION} < 700042 && ${ARCH} == "amd64"
+USE_GCC=	4.2+
 .endif
 
 post-patch:
