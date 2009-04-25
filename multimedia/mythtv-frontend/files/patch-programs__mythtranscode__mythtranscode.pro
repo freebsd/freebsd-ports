@@ -1,5 +1,5 @@
---- programs/mythtranscode/mythtranscode.pro.orig	2008-09-23 11:10:01.000000000 +0200
-+++ programs/mythtranscode/mythtranscode.pro	2008-09-23 11:10:42.000000000 +0200
+--- ./programs/mythtranscode/mythtranscode.pro.orig	2007-02-24 12:44:00.000000000 -0500
++++ ./programs/mythtranscode/mythtranscode.pro	2009-04-22 21:05:21.000000000 -0400
 @@ -20,3 +20,7 @@
  INCLUDEPATH += replex
  INCLUDEPATH += ../../libs/libavcodec ../../libs/libavformat \

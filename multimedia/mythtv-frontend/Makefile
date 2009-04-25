@@ -7,6 +7,7 @@
 
 PORTNAME=	mythtv-frontend
 PORTVERSION=	0.21
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.oregonstate.edu/pub/mythtv/
@@ -54,9 +55,8 @@ OPTIONS=	ARTS "arts sound driver" off \
 
 pre-everything::
 	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want OpenGL video support in MythTV, please"
-	@${ECHO_MSG} "hit Ctrl-C right now and install QT 3.3 with OpenGL"
-	@${ECHO_MSG} "support with the following command, if it isn't"
+	@${ECHO_MSG} "Please hit Ctrl-C right now and install QT 3.3 with"
+	@${ECHO_MSG} "OpenGL support with the following command, if it isn't"
 	@${ECHO_MSG} "already:"
 	@${ECHO_MSG}
 	@${ECHO_MSG} "    cd /usr/ports/x11-toolkits/qt33"
@@ -79,9 +79,9 @@ CONFIGURE_ARGS+=	--disable-audio-jack
 .endif
 
 .if defined(WITH_OPENGL)
-CONFIGURE_ARGS+=	--disable-opengl-video
-.else
 CONFIGURE_ARGS+=	--enable-opengl-video
+.else
+CONFIGURE_ARGS+=	--disable-opengl-video
 .endif
 
 .include <bsd.port.post.mk>
