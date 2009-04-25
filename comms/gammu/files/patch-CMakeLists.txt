@@ -9,32 +9,3 @@
  mark_as_advanced (INSTALL_MAN_DIR)
  
  # Phone and protocol configuration
-@@ -698,11 +698,13 @@
-     COMPONENT "pkgconfig"
-     )
- 
-+if(INSTALL_DOC)
- install (
-     FILES ${DOCS}
-     DESTINATION "${INSTALL_DOC_DIR}"
-     COMPONENT "docs"
-     )
-+endif(INSTALL_DOC)
- 
- # We want some tests. Even when cross compiling for Windows tests can be
- # done in Wine. This is better than nothing, even though Wine is a bit
-@@ -860,10 +860,14 @@
- 
- add_subdirectory(utils)
- 
-+option(INSTALL_DOC "Install documentation" ON)
-+
-+if(INSTALL_DOC)
- add_subdirectory(docs/config)
- add_subdirectory(docs/develop)
- add_subdirectory(docs/sql)
- add_subdirectory(docs/user)
-+endif(WITH_DOC)
- 
- add_subdirectory(contrib)
- 
