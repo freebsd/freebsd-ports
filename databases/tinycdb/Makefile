@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tinycdb
-PORTVERSION=	0.76
+PORTVERSION=	0.77
 CATEGORIES=	databases
 MASTER_SITES=	http://www.corpit.ru/mjt/tinycdb/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
