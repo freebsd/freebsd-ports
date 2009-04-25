@@ -18,27 +18,3 @@
  
  Makefile: $(TOP)/Makefile.in
  	./config.status
-#
-# http://www.sqlite.org/cvstrac/tktview?tn=3732
-#
---- Makefile.in.orig	2009-03-23 00:21:28.000000000 -0300
-+++ Makefile.in	2009-03-23 00:22:03.000000000 -0300
-@@ -163,7 +163,7 @@
- 
- # Object files for the SQLite library (non-amalgamation).
- #
--OBJS0 = alter.lo analyze.lo attach.lo auth.lo bitvec.lo btmutex.lo \
-+OBJS0 = alter.lo analyze.lo attach.lo auth.lo backup.lo bitvec.lo btmutex.lo \
-         btree.lo build.lo callback.lo complete.lo date.lo \
-         delete.lo expr.lo fault.lo func.lo global.lo \
-         hash.lo journal.lo insert.lo legacy.lo loadext.lo \
-@@ -518,6 +518,9 @@
- auth.lo:	$(TOP)/src/auth.c $(HDR)
- 	$(LTCOMPILE) $(TEMP_STORE) -c $(TOP)/src/auth.c
- 
-+backup.lo:	$(TOP)/src/backup.c $(HDR)
-+	$(LTCOMPILE) $(TEMP_STORE) -c $(TOP)/src/backup.c
-+
- bitvec.lo:	$(TOP)/src/bitvec.c $(HDR)
- 	$(LTCOMPILE) $(TEMP_STORE) -c $(TOP)/src/bitvec.c
- 
