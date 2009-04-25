@@ -16,6 +16,8 @@ lib/rsyslog/lmnet.la
 lib/rsyslog/lmnet.so
 lib/rsyslog/lmnetstrms.la
 lib/rsyslog/lmnetstrms.so
+lib/rsyslog/lmnsd_gtls.la
+lib/rsyslog/lmnsd_gtls.so
 lib/rsyslog/lmnsd_ptcp.la
 lib/rsyslog/lmnsd_ptcp.so
 lib/rsyslog/lmregexp.la
@@ -28,8 +30,6 @@ lib/rsyslog/ommail.la
 lib/rsyslog/ommail.so
 lib/rsyslog/omtesting.la
 lib/rsyslog/omtesting.so
-lib/rsyslog/lmnsd_gtls.la
-lib/rsyslog/lmnsd_gtls.so
 sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/bugs.html
 %%PORTDOCS%%%%DOCSDIR%%/build_from_repo.html
@@ -111,7 +111,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_stunnel.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_tls.html
 %%PORTDOCS%%%%DOCSDIR%%/syslog_parsing.html
-%%PORTDOCS%%%%DOCSDIR%%/syslog-protocol.html
+%%PORTDOCS%%%%DOCSDIR%%/syslog_protocol.html
 %%PORTDOCS%%%%DOCSDIR%%/tls_cert_ca.html
 %%PORTDOCS%%%%DOCSDIR%%/tls_cert_client.html
 %%PORTDOCS%%%%DOCSDIR%%/tls_cert_errmsgs.html
