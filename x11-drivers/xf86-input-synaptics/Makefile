@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xf86-input-synaptics
-PORTVERSION=	0.99.3
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -24,6 +23,7 @@ MAN1=		syndaemon.1 \
 MAN4=		synaptics.4x
 
 post-install:
+	${MKDIR} ${PREFIX}/share/hal/fdi/policy/10osvendor
 	${INSTALL_DATA} ${WRKSRC}/fdi/11-x11-synaptics.fdi \
 		${PREFIX}/share/hal/fdi/policy/10osvendor/
 
