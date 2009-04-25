@@ -1,0 +1,11 @@
+--- configure.orig	2009-04-25 14:02:33.000000000 -0500
++++ configure	2009-04-25 14:02:34.000000000 -0500
+@@ -21128,7 +21128,7 @@
+ $as_echo "yes" >&6; }
+ 	:
+ fi
+-sdkdir=$(pkg-config --variable=sdkdir xorg-server)
++sdkdir="${prefix}/include/xorg"
+ 
+ 
+ CFLAGS="$CFLAGS $XORG_CFLAGS "' -I$(top_srcdir)/src'

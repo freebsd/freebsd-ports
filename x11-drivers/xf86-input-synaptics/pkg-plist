@@ -10,3 +10,7 @@ share/hal/fdi/policy/10osvendor/11-x11-synaptics.fdi
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg
 @dirrmtry include/xorg
+@dirrmtry share/hal/fdi/policy/10osvendor
+@dirrmtry share/hal/fdi/policy
+@dirrmtry share/hal/fdi
+@dirrmtry share/hal
