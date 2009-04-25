@@ -20,7 +20,6 @@ LIB_DEPENDS=	goffice-0.8.7:${PORTSDIR}/devel/goffice \
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier \
 		libgsf_gnome pygtk2 desktopfileutils libgnomeui
@@ -29,7 +28,7 @@ INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-guile --with-bonobo --with-gnome
+CONFIGURE_ARGS=	--with-gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}" \
 		python_prog=${PYTHON_VERSION}
@@ -41,9 +40,18 @@ MAN1=		gnumeric.1 ssconvert.1 ssindex.1 ssgrep.1
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-OPTIONS=	GNOMEDB "Enable libgnomedb support" off
+OPTIONS=	GNOMEDB "Enable libgnomedb support" off \
+		PERL "Enable Perl as extension language" on
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_PERL)
+USE_PERL5=		yes
+PLIST_SUB+=		PERL=""
+.else
+CONFIGURE_ARGS+=	--without-perl
+PLIST_SUB+=		PERL="@comment "
+.endif
 
 .if defined(WITH_GNOMEDB)
 USE_GNOME+=		libgnomedb
