@@ -1,5 +1,5 @@
---- js/src/jsnum.c.orig	Sun Nov  5 18:37:07 2006
-+++ js/src/jsnum.c	Sun Nov  5 18:42:31 2006
+--- js/src/jsnum.cpp.orig	Sun Nov  5 18:37:07 2006
++++ js/src/jsnum.cpp	Sun Nov  5 18:42:31 2006
 @@ -45,6 +45,9 @@
  #if defined(XP_WIN) || defined(XP_OS2)
  #include <float.h>
