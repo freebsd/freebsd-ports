@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.6-20090212
+DISTVERSION=	2.6-20090418
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
-MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
-		ftp://postfix.mirrors.pair.com/experimental/ \
-		ftp://ftp.tux.org/pub/net/postfix/experimental/ \
-		http://mirrors.rootservices.net/postfix/experimental/ \
-		ftp://ftp.samurai.com/pub/postfix/experimental/ \
-		http://ftp.unicamp.br/pub/postfix/experimental/
+MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
+		ftp://postfix.mirrors.pair.com/official/ \
+		ftp://ftp.tux.org/pub/net/postfix/official/ \
+		http://mirrors.rootservices.net/postfix/official/ \
+		ftp://ftp.samurai.com/pub/postfix/official/ \
+		http://ftp.unicamp.br/pub/postfix/official/
 PKGNAMESUFFIX=	-current
+DISTNAME=	postfix-2.6.0-RC2
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mnag@FreeBSD.org
@@ -45,8 +46,8 @@ OPTIONS=	PCRE		"Perl Compatible Regular Expressions" 			on \
 		TEST		"SMTP/LMTP test server and generator"			off
 
 MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
-	postlock.1 postlog.1 postmap.1 postqueue.1 postsuper.1 sendmail.1 \
-	qshape.1
+	postlock.1 postlog.1 postmap.1 postmulti.1 postqueue.1 postsuper.1 \
+	sendmail.1 qshape.1
 
 MAN5=	access.5 aliases.5 bounce.5 canonical.5 cidr_table.5 generic.5 \
 	header_checks.5 ldap_table.5 master.5 mysql_table.5 nisplus_table.5 \

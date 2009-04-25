@@ -42,6 +42,7 @@ libexec/postfix/post-install
 libexec/postfix/postfix-files
 libexec/postfix/postfix-script
 libexec/postfix/postfix-wrapper
+libexec/postfix/postmulti-script
 libexec/postfix/proxymap
 libexec/postfix/qmgr
 libexec/postfix/qmqpd
@@ -63,6 +64,7 @@ sbin/postkick
 sbin/postlock
 sbin/postlog
 sbin/postmap
+sbin/postmulti
 sbin/postqueue
 sbin/postsuper
 sbin/sendmail
@@ -121,6 +123,8 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/MAILDROP_README.html
 %%PORTDOCS%%%%DOCSDIR%%/MILTER_README
 %%PORTDOCS%%%%DOCSDIR%%/MILTER_README.html
+%%PORTDOCS%%%%DOCSDIR%%/MULTI_INSTANCE_README
+%%PORTDOCS%%%%DOCSDIR%%/MULTI_INSTANCE_README.html
 %%PORTDOCS%%%%DOCSDIR%%/MYSQL_README
 %%PORTDOCS%%%%DOCSDIR%%/MYSQL_README.html
 %%PORTDOCS%%%%DOCSDIR%%/NFS_README
@@ -211,6 +215,7 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/postlock.1.html
 %%PORTDOCS%%%%DOCSDIR%%/postlog.1.html
 %%PORTDOCS%%%%DOCSDIR%%/postmap.1.html
+%%PORTDOCS%%%%DOCSDIR%%/postmulti.1.html
 %%PORTDOCS%%%%DOCSDIR%%/postqueue.1.html
 %%PORTDOCS%%%%DOCSDIR%%/postsuper.1.html
 %%PORTDOCS%%%%DOCSDIR%%/proxymap.8.html
