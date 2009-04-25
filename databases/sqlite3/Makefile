@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.6.11
+PORTVERSION=	3.6.13
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 DISTNAME=	sqlite-${PORTVERSION}
@@ -22,6 +22,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=		--prefix=${PREFIX}
+CONFIGURE_ENV+=	TCLLIBDIR=${PREFIX}/lib/${PORTNAME}
 
 OPTIONS=	DEBUG		"Enable debugging & verbose explain"	off \
 		FTS3		"Enable FTS3 (Full Text Search) module"	off \
