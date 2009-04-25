@@ -3,4 +3,5 @@ lib/libdvdcss.a
 lib/libdvdcss.la
 lib/libdvdcss.so
 lib/libdvdcss.so.3
+libdata/pkgconfig/libdvdcss.pc
 @dirrm include/dvdcss
