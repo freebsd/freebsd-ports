@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	erik@smluc.org
 COMMENT=	Scheme-to-C, a compiler and interpreter for compiling scheme into C
 
+ONLY_FOR_ARCHS=	i386
+
 USE_XORG=	x11 xi
 USE_LDCONFIG=	yes
 NO_WRKSUBDIR=	yes
