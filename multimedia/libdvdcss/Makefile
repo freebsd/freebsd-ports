@@ -8,6 +8,7 @@
 
 PORTNAME=	libdvdcss
 PORTVERSION=	1.2.10
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -42,6 +43,8 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/src/ioctl.c
+	${REINPLACE_CMD} -e '/^pkgconfigdir/s|$$(libdir)|$$(libdir)data|' \
+		${WRKSRC}/src/Makefile.in
 # should we disable doc building?
 .ifdef(NOPORTDOCS)
 	@${REINPLACE_CMD} -E \
