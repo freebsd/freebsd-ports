@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	Net_IMAP
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.0
 CATEGORIES=	mail net pear
 
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	PEAR class that provides an implementation of the IMAP protocol
 
-BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
+BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
+		${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Net
