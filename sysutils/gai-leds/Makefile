@@ -21,6 +21,8 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix
 
+BROKEN=		does not compile
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|\(GNOMEDIR=\).*|\1"${PREFIX}"|; \

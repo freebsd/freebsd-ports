@@ -29,6 +29,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
 		GL_LIBS="-L${LOCALBASE}/lib"
 
+BROKEN=		does not compile
+
 MAN1=	gldb.1
 MAN3=	bugle.3
 MAN7=	bugle-camera.7 bugle-checks.7 bugle-eps.7 bugle-error.7	\
