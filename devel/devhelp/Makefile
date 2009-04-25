@@ -6,7 +6,7 @@
 #   $MCom: ports/devel/devhelp/Makefile,v 1.12 2009/01/11 18:03:38 marcus Exp $
 
 PORTNAME=	devhelp
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 PORTEPOCH=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
