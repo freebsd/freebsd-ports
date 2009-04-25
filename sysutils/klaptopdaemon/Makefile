@@ -18,24 +18,28 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	APM monitor for KDE
 
-CONFLICTS=	kdeutils-3.1.* kdeutils-3.2.[0-3]
-
-OPTIONS=	ACPI "Contributed ACPI support patch" off
+OPTIONS=	#no options for amd64
 
 USE_KDELIBS_VER=3
-PREFIX=		${KDE_PREFIX}
 
 ONLY_FOR_ARCHS=	i386
 USE_XORG=	xtst
 USE_BZIP2=	yes
-USE_AUTOTOOLS=  libtool:15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/kdeutils-${PORTVERSION}
 
 USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+OPTIONS=	ACPI "Contributed ACPI support patch" off
+.endif
+
+.if ${ARCH} == "amd64"
+WITH_ACPI=	yes
+.endif
 
 .if defined(WITH_ACPI)
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-acpi-support
