@@ -15,18 +15,18 @@ The SSH sever on remote_host must allow pub key authentication.
 ======================================================================
 
 Any bug reports should be addressed to the maintainers at:
-	gnome@FreeBSD.org
+	gecko@FreeBSD.org
 You may also Cc: freebsd-ports@FreeBSD.org. Please do not send
 bug reports to any other addresses.
 
 Please include the following information with any bug report:
 * Output from 'uname -a'.
-* Date/time stamp from www/firefox/Makefile.
+* Date/time stamp from www/firefox-devel/Makefile.
 * Where/when did the problem occur: configuring, building, or
 	running firefox
 * How can you reproduce the problem?
 
 Thank you for your help in testing and reporting bugs, and we hope you
 enjoy using Firefox.
-The Maintainers (gnome@)
+The Maintainers (gecko@)
 ======================================================================
