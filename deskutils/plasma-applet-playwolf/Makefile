@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	playwolf
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	plasma-applet-
@@ -20,6 +20,7 @@ USE_KDE4=	automoc4 kdeprefix kdelibs
 USE_QT_VER=	4
 QT_COMPONENTS=	gui dbus network opengl svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	lib/kde4/plasma_applet_playwolf.so \
 		share/kde4/services/plasma-applet-playwolf.desktop
