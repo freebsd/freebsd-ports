@@ -7,7 +7,7 @@
 
 PORTNAME=	logcheck
 PORTVERSION=	1.2.54
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Auditing tool for system logs on Unix boxes
 
-BUILD_DEPENDS=	docbook-to-man:${PORTSDIR}/textproc/docbook-to-man
+BUILD_DEPENDS=	docbook2man:${PORTSDIR}/textproc/docbook2X
 RUN_DEPENDS=	lockfile:${PORTSDIR}/mail/procmail \
 		bash:${PORTSDIR}/shells/bash
 
@@ -42,12 +42,14 @@ PORTDOCS=	${DOCS:T}
 MAN8=		logcheck.8 logtail.8
 
 do-build:
-	${REINPLACE_CMD} -e 's!/var/log/syslog!/var/log/messages!' \
+	@${REINPLACE_CMD} -e 's!/var/log/syslog!/var/log/messages!' \
 		${WRKSRC}/etc/logcheck.logfiles
-	${REINPLACE_CMD} -e 's!/etc/logcheck!${ETCDIR}!' \
+	@${REINPLACE_CMD} -e 's!/etc/logcheck!${ETCDIR}!' \
 		-e 's!/usr/share/doc/logcheck-database/README.logcheck-database.gz!${DOCSDIR}/README.logcheck-database!' \
 		${WRKSRC}/docs/logcheck.sgml
-	docbook-to-man ${WRKSRC}/docs/logcheck.sgml > ${WRKSRC}/docs/logcheck.8
+	@cd ${WRKSRC}/docs && docbook2man -s \
+		/usr/local/share/docbook2X/xslt/man/docbook.xsl \
+		--sgml logcheck.sgml && ${MV} Logcheck.8 logcheck.8
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logcheck ${PREFIX}/sbin
