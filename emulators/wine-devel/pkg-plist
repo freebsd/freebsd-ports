@@ -261,6 +261,7 @@ include/wine/windows/imnact.h
 include/wine/windows/imnact.idl
 include/wine/windows/imnxport.h
 include/wine/windows/imnxport.idl
+include/wine/windows/in6addr.h
 include/wine/windows/indexsrv.h
 include/wine/windows/indexsrv.idl
 include/wine/windows/initguid.h
@@ -1010,6 +1011,7 @@ lib/wine/sxs.dll.so
 lib/wine/system.drv16
 lib/wine/tapi32.dll.so
 lib/wine/taskmgr.exe.so
+lib/wine/termsv.exe.so
 lib/wine/toolhelp.dll16
 lib/wine/traffic.dll.so
 lib/wine/twain.dll16.so
@@ -1099,6 +1101,7 @@ lib/wine/xinput1_1.dll.so
 lib/wine/xinput1_2.dll.so
 lib/wine/xinput1_3.dll.so
 lib/wine/xinput9_1_0.dll.so
+lib/wine/xmllite.dll.so
 share/applications/wine.desktop
 %%DATADIR%%/aclocal/wine.m4
 %%DATADIR%%/wine/generic.ppd
