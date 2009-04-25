@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	memcached
-PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTVERSION=	1.2.8
 CATEGORIES=	databases
 MASTER_SITES=	http://www.danga.com/memcached/dist/ \
 		${MASTER_SITE_GENTOO}
@@ -36,6 +35,7 @@ PORTDOCS=	memory_management.txt protocol.txt
 
 .if defined(WITH_REPCACHED)
 # WWW: http://repcached.lab.klab.org/
+BROKEN=			Waiting a new repcached version
 PATCH_SITES+=		${MASTER_SITE_SOURCEFORGE}
 PATCH_SITE_SUBDIR=	repcached
 PATCH_DIST_STRIP+=	-p1
