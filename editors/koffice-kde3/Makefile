@@ -18,24 +18,21 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Office Suite for KDE3
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
-LIB_DEPENDS=	GraphicsMagick++:${PORTSDIR}/graphics/GraphicsMagick \
+LIB_DEPENDS=	GraphicsMagick++.1:${PORTSDIR}/graphics/GraphicsMagick \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
-		aspell:${PORTSDIR}/textproc/aspell \
+		aspell.16:${PORTSDIR}/textproc/aspell \
 		exif.12:${PORTSDIR}/graphics/libexif \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype:${PORTSDIR}/print/freetype2 \
-		lcms:${PORTSDIR}/graphics/lcms \
-		paper:${PORTSDIR}/print/libpaper \
-		poppler-qt:${PORTSDIR}/graphics/poppler-qt \
-		wpd-0.8:${PORTSDIR}/textproc/libwpd \
-		wv2:${PORTSDIR}/textproc/wv2 \
-		xml2:${PORTSDIR}/textproc/libxml2 \
-		xslt:${PORTSDIR}/textproc/libxslt
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		lcms.1:${PORTSDIR}/graphics/lcms \
+		paper.2:${PORTSDIR}/print/libpaper \
+		poppler-qt.2:${PORTSDIR}/graphics/poppler-qt \
+		wpd-0.8.8:${PORTSDIR}/textproc/libwpd \
+		wv2.1:${PORTSDIR}/textproc/wv2
 RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
 
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
-PREFIX=		${KDE_PREFIX}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
@@ -43,6 +40,8 @@ USE_MYSQL=	yes
 USE_PYTHON=	yes
 USE_RUBY=	yes
 USE_PGSQL=	yes
+USE_GNOME=	libxml2 libxslt
+MAKE_JOBS_SAFE=	yes
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
