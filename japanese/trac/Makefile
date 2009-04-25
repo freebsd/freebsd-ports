@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	trac
-PORTVERSION=	0.11.3
+PORTVERSION=	0.11.4
 CATEGORIES=	japanese www devel python
 MASTER_SITES=	http://dist.bsdlab.org/ \
 		http://www.i-act.co.jp/project/products/downloads/
