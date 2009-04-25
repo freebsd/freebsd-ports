@@ -1,5 +1,5 @@
---- libs/libmythdvdnav/dvd_input.c	2008-09-14 22:40:08.000000000 +0200
-+++ libs/libmythdvdnav/dvd_input.c	2008-09-14 22:40:22.000000000 +0200
+--- ./libs/libmythdvdnav/dvd_input.c.orig	2008-01-27 14:27:40.000000000 -0500
++++ ./libs/libmythdvdnav/dvd_input.c	2009-04-22 21:05:20.000000000 -0400
 @@ -24,6 +24,9 @@
  #include <fcntl.h>
  #include <unistd.h>

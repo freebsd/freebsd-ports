@@ -1,5 +1,5 @@
---- programs/programs.pro.orig	2008-12-30 14:08:30.000000000 -0500
-+++ programs/programs.pro	2008-12-30 14:08:40.000000000 -0500
+--- ./programs/programs.pro.orig	2008-01-29 15:17:31.000000000 -0500
++++ ./programs/programs.pro	2009-04-22 21:05:21.000000000 -0400
 @@ -10,10 +10,6 @@
      SUBDIRS += mythwelcome mythshutdown mythtranscode/replex
  }

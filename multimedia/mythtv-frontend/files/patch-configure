@@ -1,6 +1,58 @@
---- configure.orig	2008-03-04 22:23:23.000000000 +0100
-+++ configure	2008-11-04 20:12:25.000000000 +0100
-@@ -1466,7 +1466,7 @@
+--- configure.orig	2009-04-22 21:32:14.000000000 -0400
++++ configure	2009-04-22 21:32:19.000000000 -0400
+@@ -163,6 +163,7 @@
+   echo "                           directory with frontend.h [$dvb_path]"
+   echo "  --disable-x11            disable X11 support"
+   echo "  --x11-path=X11LOC        location of X11 include files [$x11_include_path-path]"
++#  echo "  --enable-glx-procaddrarb use glXGetProcAddressARB() instead of glXGetProcAddress()"
+   echo "  --disable-xrandr         disable X11 resolution switching"
+   echo "  --disable-xv             disable XVideo   (X11 video output accel.)"
+   echo "  --disable-xvmc           disable XvMC     (Linux/BSD MPEG accel.)"
+@@ -273,13 +274,13 @@
+     exit 1
+ }
+ 
+-# "tr '[a-z]' '[A-Z]'" is a workaround for Solaris tr not grokking "tr a-z A-Z"
++# Avoid locale weirdness, besides we really just want to translate ASCII.
+ toupper(){
+-    echo "$@" | tr '[a-z]' '[A-Z]'
++    echo "$@" | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ
+ }
+ 
+ tolower(){
+-    echo "$@" | tr '[A-Z]' '[a-z]'
++    echo "$@" | tr ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz
+ }
+ 
+ set_all(){
+@@ -904,6 +905,7 @@
+     xvmc_vld
+     dvdv
+     fribidi
++    glx_proc_addr_arb
+ '
+ 
+ MYTHTV_LIST='
+@@ -1189,6 +1191,7 @@
+ xvmc_opengl="yes"
+ xvmc_vld="yes"
+ xvmcw="yes"
++glx_proc_addr_arb="no"
+ 
+ # libraries
+ enable zlib
+@@ -1353,6 +1356,10 @@
+   ;;
+   --xvmc-lib=*) xvmc_lib="$optval"
+   ;;
++  --enable-glx-procaddrarb) glx_proc_addr_arb="yes"
++  ;;
++  --disable-glx-procaddrarb) glx_proc_addr_arb="no"
++  ;;
+   --enable-mac-accel) dvdv="yes"
+   ;;
+   --disable-mac-accel) dvdv="no"
+@@ -1466,7 +1473,7 @@
    x86_64|amd64)
      arch="x86_32"
      enable fast_unaligned
