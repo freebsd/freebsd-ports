@@ -7,6 +7,7 @@
 
 PORTNAME=	lighttpd
 PORTVERSION=	1.4.22
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 		http://mirrors.cat.pdx.edu/lighttpd/
@@ -26,7 +27,7 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/lighttpd
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		lighttpd.1 spawn-fcgi.1
+MAN1=		lighttpd.1
 
 OPTIONS=	BZIP2		"Enable Bzip2 support" off \
 		CML		"Enable Cache Meta Language support" off \
@@ -38,6 +39,7 @@ OPTIONS=	BZIP2		"Enable Bzip2 support" off \
 		MYSQL		"Enable MYSQL support" off \
 		OPENLDAP	"Enable LDAP support" off \
 		OPENSSL		"Enable SSL support" on \
+		SPAWNFCGI	"Enable spawn-fcgi utility" on \
 		VALGRIND	"Enable valgrind support" off \
 		WEBDAV		"Enable WebDAV support"	off
 
@@ -99,6 +101,10 @@ _REQUIRE+=		mysql
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
 _REQUIRE+=		slapd
+.endif
+
+.if defined(WITH_SPAWNFCGI)
+RUN_DEPENDS+=		spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
 .endif
 
 .if defined(WITH_VALGRIND)
