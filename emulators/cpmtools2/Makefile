@@ -5,16 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=	cpmtools27
-PORTVERSION=	2.7
+PORTNAME=	cpmtools
+PORTVERSION=	2.8
 CATEGORIES=	emulators sysutils
-MASTER_SITES=	http://www.moria.de/~michael/cpmtools/
-DISTNAME=	cpmtools-${PORTVERSION}
+MASTER_SITES=	http://www.moria.de/~michael/cpmtools/ \
+		http://www.copei.de/freebsd-ports/
 
-MAINTAINER=	pixel@hugbox.org
+MAINTAINER=	pixel@copei.de
 COMMENT=	Tools to access CP/M disks and disk images
 
 LIB_DEPENDS+=	dmalloc:${PORTSDIR}/devel/dmalloc
+
+LATEST_LINK=	cpmtools2
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--mandir=${PREFIX}/man --bindir=${PREFIX}/sbin \
