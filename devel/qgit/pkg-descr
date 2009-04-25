@@ -1,0 +1,17 @@
+QGit is a git GUI viewer built on Qt/C++. 
+With qgit you will be able to browse revisions history, view patch content and
+changed files, graphically following different development branches. 
+
+Features :
+- View revisions, diffs, files history, files annotation, archive tree.
+- Commit changes visually cherry picking modified files.
+- Apply or format patch series from selected commits, drag and drop commits
+between two instances of qgit. 
+- Associate commands sequences, scripts and anything else executable to a
+custom action. Actions can be run from menu and corresponding output is grabbed
+by a terminal window. qgit implements a GUI for the most common StGIT commands
+like push/pop and apply/format patches. You can also create new patches or
+refresh current top one using the same semantics of git commit,
+i.e. cherry picking single modified files.
+
+WWW:	https://sourceforge.net/projects/qgit
