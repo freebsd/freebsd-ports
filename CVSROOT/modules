@@ -2344,6 +2344,8 @@ docbook-xml-440                 ports/textproc/docbook-xml-440
 docbook-xml-450                 ports/textproc/docbook-xml-450
 docbook-xsd                     ports/textproc/docbook-xsd
 docbook-xsl                     ports/textproc/docbook-xsl
+docbook2X                       ports/textproc/docbook2X
+docbook2x                       ports/textproc/docbook2X
 docbookide.el                   ports/textproc/docbookide.el
 docdiff                         ports/textproc/docdiff
 docebo                          ports/www/docebo
@@ -4012,6 +4014,7 @@ geta                            ports/dns/geta
 getbdf                          ports/x11-fonts/getbdf
 getdelta                        ports/sysutils/getdelta
 getdp                           ports/science/getdp
+geteltorito                     ports/sysutils/geteltorito
 getleft                         ports/www/getleft
 getlive                         ports/mail/getlive
 getmail                         ports/mail/getmail
@@ -20254,7 +20257,10 @@ rubygem-redcloth                ports/www/rubygem-redcloth
 rubygem-rfacebook               ports/www/rubygem-rfacebook
 rubygem-rgl                     ports/devel/rubygem-rgl
 rubygem-rightaws                ports/net/rubygem-rightaws
+rubygem-rightflexiscale         ports/net/rubygem-rightflexiscale
+rubygem-rightgogrid             ports/net/rubygem-rightgogrid
 rubygem-righthttpconnection     ports/net/rubygem-righthttpconnection
+rubygem-rightslicehost          ports/net/rubygem-rightslicehost
 rubygem-rparsec                 ports/devel/rubygem-rparsec
 rubygem-rscm                    ports/devel/rubygem-rscm
 rubygem-rspec                   ports/devel/rubygem-rspec
@@ -23565,6 +23571,7 @@ xpi-cutemenus-crystalsvg        ports/www/xpi-cutemenus-crystalsvg
 xpi-dailymotiononwooztalk       ports/www/xpi-dailymotiononwooztalk
 xpi-deepestsender               ports/www/xpi-deepestsender
 xpi-deezeronwooztalk            ports/www/xpi-deezeronwooztalk
+xpi-default_full_zoom_level     ports/www/xpi-default_full_zoom_level
 xpi-delicious                   ports/www/xpi-delicious
 xpi-displayquota                ports/mail/xpi-displayquota
 xpi-downthemall                 ports/www/xpi-downthemall
@@ -23574,6 +23581,7 @@ xpi-firebug                     ports/www/xpi-firebug
 xpi-firefox-showcase            ports/www/xpi-firefox-showcase
 xpi-firefoxonwooztalk           ports/www/xpi-firefoxonwooztalk
 xpi-firegpg                     ports/www/xpi-firegpg
+xpi-firemobilesimulator         ports/www/xpi-firemobilesimulator
 xpi-fission                     ports/www/xpi-fission
 xpi-flashblock                  ports/www/xpi-flashblock
 xpi-flashgot                    ports/www/xpi-flashgot
