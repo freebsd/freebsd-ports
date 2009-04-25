@@ -62,6 +62,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/omlibdbi.html
 %%PORTDOCS%%%%DOCSDIR%%/ommail.html
 %%PORTDOCS%%%%DOCSDIR%%/ommysql.html
+%%PORTDOCS%%%%DOCSDIR%%/omoracle.html
 %%PORTDOCS%%%%DOCSDIR%%/omrelp.html
 %%PORTDOCS%%%%DOCSDIR%%/omsnmp.html
 %%PORTDOCS%%%%DOCSDIR%%/professional_support.html
