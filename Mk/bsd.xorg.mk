@@ -48,12 +48,12 @@ USE_GNOME+=	pkgconfig
 
 . if ${XORG_CAT} == "driver"
 USE_GNOME+=	pkgconfig
-USE_XORG+=	xorg-server xproto randrproto
+USE_XORG+=	xorg-server xproto randrproto xi
 CONFIGURE_ENV+=	DRIVER_MAN_SUFFIX=4x DRIVER_MAN_DIR='$$(mandir)/man4'
 .  if ${PORTNAME:M*input*}x != x
 USE_XORG+=	inputproto
 .  elif ${PORTNAME:M*video*}x != x
-USE_XORG+=	fontsproto renderproto xi
+USE_XORG+=	fontsproto renderproto
 .  else
 IGNORE=		doesn't contain either "driver" or "input"
 .  endif
