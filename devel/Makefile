@@ -2431,6 +2431,7 @@
     SUBDIR += qca
     SUBDIR += qct
     SUBDIR += qdevelop
+    SUBDIR += qgit
     SUBDIR += qmake
     SUBDIR += qmake4
     SUBDIR += qprog
