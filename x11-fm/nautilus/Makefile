@@ -8,6 +8,7 @@
 
 PORTNAME=	nautilus
 PORTVERSION=	2.26.2
+PORTREVISION=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -31,9 +32,7 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -liconv" \
 		LIBPNG="-L${LOCALBASE}/lib -lpng -lz"
-CONFIGURE_ARGS=	--with-freetype2-lib-place=${LOCALBASE}/lib \
-		--with-freetype2-include-place=${LOCALBASE}/include/freetype2 \
-		--enable-static
+CONFIGURE_ARGS=	--enable-static
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
 OPTIONS=	TRACKER "Enable Tracker Search (sysutils/tracker)" Off
