@@ -7,6 +7,7 @@
 
 PORTNAME=	docbook2X
 PORTVERSION=	0.8.8
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -29,6 +30,10 @@ USE_ICONV=	yes
 .if defined(NOPORTDOCS)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-doc__Makefile.in
 .endif
+
+post-patch:
+		@${REINPLACE_CMD} "s|\$${prefix}|${PREFIX}|" \
+			${WRKSRC}/configure
 
 MAN1=		db2x_manxml.1 \
 		db2x_texixml.1 \
