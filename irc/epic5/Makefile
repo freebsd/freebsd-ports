@@ -30,7 +30,7 @@ OPTIONS=	IPV6	"IPv6 support"		on \
 		TCL	"TCL support"		on \
 		PERL	"Perl scripting support" on \
 		RUBY	"Ruby scripting support" on \
-		TERMCAP	"Refure to use terminfo/ncurses" off \
+		TERMCAP	"Refuse to use terminfo/ncurses" off \
 		ICONV	"Enable experimental iconv support" off
 
 .include <bsd.port.pre.mk>
