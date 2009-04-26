@@ -7,11 +7,11 @@
 
 PORTNAME=	drweb
 PORTVERSION=	4.44.1
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/60/ \
-  			http://freebsd.spectrum.ru/distfiles/drweb/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-unix-fbsd60
-DIST_SUBDIR=	${PORTNAME}
+MASTER_SITES=	ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/70/ \
+		ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/60/ \
+		http://freebsd.spectrum.ru/distfiles/drweb/
 
 MAINTAINER=	support@spectrum.ru
 COMMENT=	DrWeb antivirus suite
@@ -28,11 +28,13 @@ IGNORE=		sorry, port is not supported of FreeBSD version < 6.1
 .endif
 
 .if ${OSVERSION} >= 700000
-LIB_DEPENDS+=	stdc++.5:${PORTSDIR}/misc/compat6x
+DISTNAME=	${PORTNAME}-${PORTVERSION}-unix-fbsd70
+.else
+DISTNAME=	${PORTNAME}-${PORTVERSION}-unix-fbsd60
 .endif
+DIST_SUBDIR=	${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
-
 DRWEB_PREFIX=	${PREFIX}/${PORTNAME}
 DRWEB_VARPREFIX=/var/drweb
 
