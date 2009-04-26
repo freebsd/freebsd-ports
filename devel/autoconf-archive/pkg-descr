@@ -1,6 +1,6 @@
 The Autoconf Macro Archive aims to provide a collection of reusable
 Autoconf macros as free software. The archive currently features more
-than 300 macros which perform portability tests ranging from compiler
+than 600 macros which perform portability tests ranging from compiler
 support for weird language extensions to automatic generation of
 sophisticated Automake rules.  However, all these macros have been
 contributed by friendly supporters of the cause from all over the
