@@ -1704,6 +1704,7 @@
     SUBDIR += xpi-twitterfox
     SUBDIR += xpi-unplug
     SUBDIR += xpi-urllink
+    SUBDIR += xpi-user_agent_switcher
     SUBDIR += xpi-videodownloader
     SUBDIR += xpi-vimeoonwooztalk
     SUBDIR += xpi-vimperator
