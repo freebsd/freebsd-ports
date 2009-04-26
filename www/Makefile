@@ -1699,6 +1699,7 @@
     SUBDIR += xpi-statusbarclock
     SUBDIR += xpi-stumbleupon
     SUBDIR += xpi-stylish
+    SUBDIR += xpi-table2clipboard
     SUBDIR += xpi-tabletools
     SUBDIR += xpi-tabmixplus
     SUBDIR += xpi-togglewordwrap
