@@ -110,7 +110,6 @@ lib/tcl%%TCL_VER%%/history.tcl
 lib/tcl%%TCL_VER%%/http1.0/http.tcl
 lib/tcl%%TCL_VER%%/http1.0/pkgIndex.tcl
 lib/tcl%%TCL_VER%%/init.tcl
-lib/tcl%%TCL_VER%%/ldAix
 lib/tcl%%TCL_VER%%/tm.tcl
 lib/tcl%%TCL_VER%%/msgs/af.msg
 lib/tcl%%TCL_VER%%/msgs/af_za.msg
