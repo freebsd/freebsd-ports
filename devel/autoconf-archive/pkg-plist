@@ -331,7 +331,9 @@
 %%MACRODIR%%/ax_boost_test_exec_monitor.m4
 %%MACRODIR%%/ax_boost_thread.m4
 %%MACRODIR%%/ax_boost_unit_test_framework.m4
+%%MACRODIR%%/ax_boost_wave.m4
 %%MACRODIR%%/ax_boost_wserialization.m4
+%%MACRODIR%%/ax_c99_inline.m4
 %%MACRODIR%%/ax_c___attribute__.m4
 %%MACRODIR%%/ax_c_arithmetic_rshift.m4
 %%MACRODIR%%/ax_c_check_flag.m4
@@ -485,6 +487,7 @@
 %%MACRODIR%%/ax_path_lib_pcre.m4
 %%MACRODIR%%/ax_path_milter.m4
 %%MACRODIR%%/ax_path_missing.m4
+%%MACRODIR%%/ax_perl_ext_flags.m4
 %%MACRODIR%%/ax_prefix_config_h.m4
 %%MACRODIR%%/ax_print_to_file.m4
 %%MACRODIR%%/ax_prog_bison.m4
@@ -567,6 +570,7 @@
 %%MACRODIR%%/immdx_lib_metis.m4
 %%MACRODIR%%/klm_sys_weak_alias.m4
 %%MACRODIR%%/lib_socket_nsl.m4
+%%MACRODIR%%/lua.m4
 %%MACRODIR%%/mdl_cxx_function_try_blocks.m4
 %%MACRODIR%%/mdl_have_opengl.m4
 %%MACRODIR%%/merk_prog_tcl.m4
@@ -936,7 +940,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_test_exec_monitor.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_thread.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_unit_test_framework.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_wave.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_boost_wserialization.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_c99_inline.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_c___attribute__.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_c_arithmetic_rshift.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_c_check_flag.html
@@ -1090,6 +1096,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_path_lib_pcre.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_path_milter.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_path_missing.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ax_perl_ext_flags.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_prefix_config_h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_print_to_file.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ax_prog_bison.html
@@ -1216,6 +1223,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/klm_sys_weak_alias.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib_socket_nsl.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lua.html
 %%PORTDOCS%%%%DOCSDIR%%/html/macros-by-author.html
 %%PORTDOCS%%%%DOCSDIR%%/html/macros-by-category.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mdl_cxx_function_try_blocks.html
