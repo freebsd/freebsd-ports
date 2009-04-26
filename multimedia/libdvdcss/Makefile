@@ -13,12 +13,10 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Portable abstraction library for DVD decryption
 
 NO_CDROM=	CSS code may violate the DMCA
-DEPRECATED=	Rendered obsolete by multimedia/libdvdread changes
-EXPIRATION_DATE=	2009-06-23
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
