@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lander
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.nickg.me.uk/files/ \
 		http://mirror.amdmi3.ru/
