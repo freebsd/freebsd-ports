@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	3.1.3.2
+DISTVERSION=	3.1.4
 CATEGORIES=	databases www
 MASTER_SITES=	SF/phpmyadmin
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -20,7 +20,7 @@ IGNORE_WITH_MYSQL=	323 40 41
 USE_BZIP2=	yes
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	ctype mysql session spl
+USE_PHP=	ctype mysql session spl filter
 .endif
 
 # Unfortunately can't make WITH_SUPHP part of the OPTIONS selection,
@@ -79,7 +79,8 @@ OPTIONS=	BZ2	 "bzip2 library support" on \
 		PDF	 "PDFlib support (implies GD)" on \
 		ZLIB	 "ZLIB support" on \
 		MCRYPT   "MCrypt library support" on \
-		MBSTRING "Multi-byte character-set string support" on
+		MBSTRING "Multi-byte character-set string support" on \
+		ZIP      "Zip compression support" on
 
 PORT_DBDIR?=	/var/db/ports
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
@@ -91,7 +92,7 @@ OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 
 .if !defined(WITHOUT_PHP_DEPENDS)
 # Options that default to on:
-.for opt in BZ2 GD OPENSSL PDF ZLIB MCRYPT MBSTRING
+.for opt in BZ2 GD OPENSSL PDF ZLIB MCRYPT MBSTRING ZIP
 .    if !defined(WITHOUT_${opt}) || defined(WITH_${opt})
 USE_PHP+=	${opt:L}
 .    endif
