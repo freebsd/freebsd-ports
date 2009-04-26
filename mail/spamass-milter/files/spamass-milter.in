@@ -29,9 +29,9 @@ stop_postcmd=stop_postcmd
 
 start_postcmd()
 {
+  sleep 1
   if test -f /var/run/sendmail.pid
   then
-	sleep 1
 	kill -HUP `head -1 /var/run/sendmail.pid`
   fi
 
