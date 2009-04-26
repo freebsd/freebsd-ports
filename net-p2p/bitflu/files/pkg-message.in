@@ -1,19 +1,16 @@
-To use bitflu with the plugins installed by this package, configure
-your ~/.bitflu.config to search for plugins here (instead of the
-default ./plugins):
-
-  %%PLUGINSDIR%%
-
-If you have previously used a version of bitflu prior to 0.4x, you may
-want to convert your data to the new storage plugin (which was
-introduced along with the upstream bitflu re-write). Such conversions
-can be done using fluconvert. If the package is build with
-documentation, the upstream instructions for using fluconvert is
-installed at:
-
-  %%DOCSDIR%%/fluconvert-README.txt
-
-When installed by this port, the bitflu workdir is located under
-~/.bitflu.workdir by default rather than ./bitflu.workdir (you may
-want to use --config=./bitflu.workdir to produce the behavior used by
-the upstream version).
+*************************************************************************
+* To use bitflu with the plugins installed by this package, configure	*
+* your ~/.bitflu.config to search for plugins here (instead of the	*
+* default ./plugins):							*
+*									*
+*   %%PREFIX%%/lib/perl5		(New location as of 0.80)	*
+*									*
+* If you have previously used a version of bitflu prior to 0.4x, you	*
+* may want to convert your data to the new storage plugin (which was	*
+* introduced along with the upstream bitflu re-write). Such conversions	*
+* can be done using fluconvert. If the package is built with		*
+* documentation, the instructions are installed at:			*
+*									*
+*   %%DOCSDIR%%/fluconvert-README.txt			*
+*									*
+*************************************************************************
