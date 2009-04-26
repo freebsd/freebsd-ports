@@ -245,6 +245,9 @@ lib/openbabel/%%VERSION%%/nwchemformat.so
 lib/openbabel/%%VERSION%%/opendxformat.a
 lib/openbabel/%%VERSION%%/opendxformat.la
 lib/openbabel/%%VERSION%%/opendxformat.so
+lib/openbabel/%%VERSION%%/outformat.a
+lib/openbabel/%%VERSION%%/outformat.la
+lib/openbabel/%%VERSION%%/outformat.so
 lib/openbabel/%%VERSION%%/pcmodelformat.a
 lib/openbabel/%%VERSION%%/pcmodelformat.la
 lib/openbabel/%%VERSION%%/pcmodelformat.so
@@ -318,6 +321,7 @@ lib/openbabel/%%VERSION%%/zindoformat.a
 lib/openbabel/%%VERSION%%/zindoformat.la
 lib/openbabel/%%VERSION%%/zindoformat.so
 libdata/pkgconfig/openbabel-2.0.pc
+%%DATADIR%%/%%VERSION%%/MACCS.txt
 %%DATADIR%%/%%VERSION%%/SMARTS_InteLigand.txt
 %%DATADIR%%/%%VERSION%%/UFF.prm
 %%DATADIR%%/%%VERSION%%/aromatic.txt

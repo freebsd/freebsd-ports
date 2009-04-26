@@ -1,9 +1,9 @@
-lib/python2.5/site-packages/_openbabel.so
-lib/python2.5/site-packages/openbabel.py
-lib/python2.5/site-packages/openbabel.pyc
-lib/python2.5/site-packages/openbabel.pyo
-lib/python2.5/site-packages/pybel.py
-lib/python2.5/site-packages/pybel.pyc
-lib/python2.5/site-packages/pybel.pyo
-@dirrmtry lib/python2.5/site-packages
-@dirrmtry lib/python2.5
+%%PYTHON_SITELIBDIR%%/_openbabel.so
+%%PYTHON_SITELIBDIR%%/openbabel.py
+%%PYTHON_SITELIBDIR%%/openbabel.pyc
+%%PYTHON_SITELIBDIR%%/openbabel.pyo
+%%PYTHON_SITELIBDIR%%/pybel.py
+%%PYTHON_SITELIBDIR%%/pybel.pyc
+%%PYTHON_SITELIBDIR%%/pybel.pyo
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%

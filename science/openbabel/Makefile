@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	openbabel
-PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTVERSION=	2.2.1
 CATEGORIES=	science
 MASTER_SITES=	SF
 
@@ -32,7 +31,7 @@ BROKEN=		does not compile on ia64 (gcc internal error)
 .endif
 
 .if (${OSVERSION} < 700042)
-LIB_DEPENDS+=   boost_thread.4:${PORTSDIR}/devel/boost-python
+LIB_DEPENDS+=	boost_thread.4:${PORTSDIR}/devel/boost-python
 .endif
 
 post-extract:
