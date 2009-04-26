@@ -3583,6 +3583,7 @@ fraqtive                        ports/graphics/fraqtive
 free-sa                         ports/www/free-sa
 freealut                        ports/audio/freealut
 freebase                        ports/devel/freebase
+freebsd-carddeck-kde4           ports/games/freebsd-carddeck-kde4
 freebsd-doc-all                 ports/misc/freebsd-doc-all
 freebsd-doc-bn                  ports/misc/freebsd-doc-bn
 freebsd-doc-da                  ports/misc/freebsd-doc-da
@@ -7001,6 +7002,7 @@ lesspipe                        ports/misc/lesspipe
 lesstif                         ports/x11-toolkits/lesstif
 lexi                            ports/devel/lexi
 lexter                          ports/games/lexter
+lexxia                          ports/textproc/lexxia
 lfhex                           ports/editors/lfhex
 lfm                             ports/sysutils/lfm
 lfpfonts-fix                    ports/x11-fonts/lfpfonts-fix
@@ -20163,10 +20165,12 @@ rubygem-colortools              ports/print/rubygem-colortools
 rubygem-columnize               ports/devel/rubygem-columnize
 rubygem-crack                   ports/devel/rubygem-crack
 rubygem-daemons                 ports/devel/rubygem-daemons
+rubygem-data_objects            ports/databases/rubygem-data_objects
 rubygem-datamapper              ports/databases/rubygem-datamapper
 rubygem-deeptest                ports/devel/rubygem-deeptest
 rubygem-diff-lcs                ports/textproc/rubygem-diff-lcs
 rubygem-ditz                    ports/devel/rubygem-ditz
+rubygem-do_sqlite3              ports/databases/rubygem-do_sqlite3
 rubygem-erubis                  ports/www/rubygem-erubis
 rubygem-eventmachine            ports/devel/rubygem-eventmachine
 rubygem-exifr                   ports/graphics/rubygem-exifr
