@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	maxima
-PORTVERSION=	5.17.1
-PORTREVISION=	3
+PORTVERSION=	5.18.1
 CATEGORIES=	math tk
 MASTER_SITES=	SF
 
@@ -78,8 +77,8 @@ IGNORE=		define only one lisp
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s;tclsh;${TCLSH};g" ${WRKSRC}/interfaces/xmaxima/Makefile.am \
-	${WRKSRC}/interfaces/xmaxima/Makefile.in
+	${FIND} -X ${WRKSRC}/archive ${WRKSRC}/interfaces/xmaxima \
+	 -name "Makefile*" | ${XARGS} ${REINPLACE_CMD} -e "s;tclsh;${TCLSH};g"
 	( cd ${WRKSRC}/doc/info ; ${LOCALBASE}/bin/bash ./fix_crlf ; \
 	${LOCALBASE}/bin/bash ./fix_tab )
 
