@@ -1,5 +1,5 @@
-bin/chromium
-share/applications/chromium.desktop
+bin/chromium-bsu
+share/applications/chromium-bsu.desktop
 %%DATADIR%%/png/check.png
 %%DATADIR%%/png/chrome.jpg
 %%DATADIR%%/png/cursor.png
@@ -49,6 +49,8 @@ share/applications/chromium.desktop
 %%DATADIR%%/png/heroExplo02.png
 %%DATADIR%%/png/heroShields.png
 %%DATADIR%%/png/heroSuper.png
+%%DATADIR%%/png/icon32.png
+%%DATADIR%%/png/icon64.png
 %%DATADIR%%/png/life.png
 %%DATADIR%%/png/menu_back.png
 %%DATADIR%%/png/menu_updown.png
@@ -74,7 +76,10 @@ share/applications/chromium.desktop
 %%DATADIR%%/wav/music_game.wav
 %%DATADIR%%/wav/music_menu.wav
 %%DATADIR%%/wav/power.wav
-share/pixmaps/chromium.png
+%%NLS%%share/locale/bg/LC_MESSAGES/chromium-bsu.mo
+%%NLS%%share/locale/de/LC_MESSAGES/chromium-bsu.mo
+%%NLS%%share/locale/es/LC_MESSAGES/chromium-bsu.mo
+share/pixmaps/chromium-bsu.png
 @dirrm %%DATADIR%%/wav
 @dirrm %%DATADIR%%/png
 @dirrm %%DATADIR%%
