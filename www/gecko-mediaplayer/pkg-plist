@@ -1,0 +1,13 @@
+%%WEBPLUGINS_DIR%%/gecko-mediaplayer-dvx.so
+%%WEBPLUGINS_DIR%%/gecko-mediaplayer-qt.so
+%%WEBPLUGINS_DIR%%/gecko-mediaplayer-rm.so
+%%WEBPLUGINS_DIR%%/gecko-mediaplayer-wmp.so
+%%WEBPLUGINS_DIR%%/gecko-mediaplayer.so
+share/locale/es/LC_MESSAGES/gecko-mediaplayer.mo
+share/locale/fr/LC_MESSAGES/gecko-mediaplayer.mo
+share/locale/it/LC_MESSAGES/gecko-mediaplayer.mo
+share/locale/ja/LC_MESSAGES/gecko-mediaplayer.mo
+share/locale/pl/LC_MESSAGES/gecko-mediaplayer.mo
+share/locale/pt_BR/LC_MESSAGES/gecko-mediaplayer.mo
+share/locale/tr/LC_MESSAGES/gecko-mediaplayer.mo
+@dirrmtry %%WEBPLUGINS_DIR%%
