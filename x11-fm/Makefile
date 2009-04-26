@@ -20,6 +20,7 @@
     SUBDIR += gprename
     SUBDIR += jaffm
     SUBDIR += krusader
+    SUBDIR += krusader2
     SUBDIR += mtoolsfm
     SUBDIR += mucommander
     SUBDIR += nautilus
