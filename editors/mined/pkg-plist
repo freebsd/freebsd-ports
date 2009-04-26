@@ -38,6 +38,8 @@ share/applications/mined.desktop
 %%DATADIR%%/konsole/xterm-modified.keytab
 %%DATADIR%%/kp5
 %%DATADIR%%/logo.gif
+%%DATADIR%%/m.ico
+%%DATADIR%%/minedfav.ico
 %%DATADIR%%/menu.png
 %%DATADIR%%/mined-html.png
 %%DATADIR%%/mined-pw.png
@@ -79,6 +81,7 @@ share/applications/mined.desktop
 %%DATADIR%%/script-hiragana.gif
 %%DATADIR%%/script-thai.gif
 %%DATADIR%%/separated.png
+%%DATADIR%%/terminator/options
 %%DATADIR%%/thankyou.html
 %%DATADIR%%/umined
 %%DATADIR%%/unicode.html
@@ -90,6 +93,7 @@ share/applications/mined.desktop
 %%DATADIR%%/wmined.bat
 %%DATADIR%%/xinitrc.mined
 %%DATADIR%%/xmined
+@dirrm %%DATADIR%%/terminator
 @dirrm %%DATADIR%%/mlterm
 @dirrm %%DATADIR%%/konsole
 @dirrm %%DATADIR%%/bin
