@@ -10,7 +10,7 @@ PORTNAME=	ocs
 PORTVERSION=	2.3k
 PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	http://uebb.cs.tu-berlin.de/opal/
+MASTER_SITES=	http://user.cs.tu-berlin.de/~opal/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	bkoenig@cs.tu-berlin.de
