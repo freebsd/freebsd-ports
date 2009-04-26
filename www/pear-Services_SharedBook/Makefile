@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_SharedBook
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.6
 CATEGORIES=	www pear
 
 MAINTAINER=	miwi@FreeBSD.org
