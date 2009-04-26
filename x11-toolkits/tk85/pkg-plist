@@ -163,7 +163,6 @@ lib/tk%%TK_VER%%/optMenu.tcl
 lib/tk%%TK_VER%%/palette.tcl
 lib/tk%%TK_VER%%/panedwindow.tcl
 lib/tk%%TK_VER%%/pkgIndex.tcl
-lib/tk%%TK_VER%%/prolog.ps
 lib/tk%%TK_VER%%/safetk.tcl
 lib/tk%%TK_VER%%/scale.tcl
 lib/tk%%TK_VER%%/scrlbar.tcl

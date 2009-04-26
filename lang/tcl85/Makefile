@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	tcl
-PORTVERSION=	8.5.6
-PORTREVISION?=	3
+PORTVERSION=	8.5.7
+#PORTREVISION?=	3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -53,7 +53,7 @@ PLIST=		${PKGDIR}/pkg-plist.tm
 .if !defined(BUILDING_TCL_TM)
 
 .if !defined(WITHOUT_TCL_MODULES)
-RUN_DEPENDS+=	${LOCALBASE}/lib/tcl8/8.5/tcltest-2.3.0.tm:${PORTSDIR}/lang/tcl-modules
+RUN_DEPENDS+=	${LOCALBASE}/lib/tcl8/8.5/tcltest-2.3.1.tm:${PORTSDIR}/lang/tcl-modules
 .endif
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}
