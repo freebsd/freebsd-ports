@@ -8,7 +8,7 @@
 PORTNAME=	tripwire
 PORTVERSION=	1.2
 CATEGORIES=	security
-MASTER_SITES=	http://www.mirrors.wiretapped.net/security/host-intrusion-detection/tripwire/old/
+MASTER_SITES=	${MASTER_SITE_NETBSD}
 
 MAINTAINER=	jgreco@ns.sol.net
 COMMENT=	File system security and verification program
