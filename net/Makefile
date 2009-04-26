@@ -187,6 +187,7 @@
     SUBDIR += gotthard
     SUBDIR += gq
     SUBDIR += grdc
+    SUBDIR += grdc-applet
     SUBDIR += grdesktop
     SUBDIR += grsync
     SUBDIR += gsambad

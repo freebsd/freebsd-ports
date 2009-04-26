@@ -1,0 +1,9 @@
+Grdc is a remote desktop client based on GTK+ and GNOME.
+
+The Grdc GNOME applet:
+
+ * A GNOME Desktop applet for easy-access of Grdc main features
+ * List all remote desktop files and make the connection easily
+ * Support remote desktop files grouping feature
+
+WWW: http://grdc.sourceforge.net/
