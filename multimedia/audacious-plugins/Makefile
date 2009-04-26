@@ -61,14 +61,15 @@ OPTIONS=	DBUS		"Enable dbus support"			on  \
 		OSS4		"Enable OSS4 output plugin"		off \
 		TIMIDITY	"Enable timidity plugin"		off \
 		CDAUDIO		"Enable cdaudio-ng input plugin"        on  \
-		NEON		"Enable neon support (experimental)"    on  \
+		NEON		"Enable neon (HTTP) support"            on  \
 		MMS		"Enable mms support"			off \
 		MTP		"Enable MTP upload support"             off \
 		PARANORMAL	"Enable paranormal vis plugin"		on  \
 		XSPF		"Enable XSPF support"			on  \
 		TTA		"Enable TrueAudio plugin"		on  \
 		GNOME		"Build with gnomevfs/gconf support"	off \
-		NLS		"Native Language Support"		on
+		NLS		"Native Language Support"		on \
+		CURL		"curl for lastfm/scrobbler support"	off
 
 .include <bsd.port.pre.mk>
 
@@ -360,6 +361,13 @@ PLIST_SUB+=	TTAPLUGIN="@comment "
 .if defined(WITH_GNOME)
 USE_GNOME+=	gnomevfs2 gconf2
 CONFIGURE_ARGS+=--enable-gnome-vfs --enable-gconf
+.endif
+
+.if !defined(WITHOUT_CURL) || exists(${LOCALBASE}/lib/libcurl.so)
+LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+PLIST_SUB+=     CURLPLUGIN=""
+.else
+PLIST_SUB+=     CURLPLUGIN="@comment "
 .endif
 
 .if !defined(WITHOUT_NLS)
