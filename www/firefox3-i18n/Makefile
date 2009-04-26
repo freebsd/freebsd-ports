@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox3-i18n
-PORTVERSION=	3.0.8
+PORTVERSION=	3.0.9
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -79,7 +79,8 @@ post-patch:
 
 List-Langs:
 	@fetch -o- "http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${PORTVERSION}/linux-i686/xpi"|\
-		${PERL} -ne 'if(/.*href="([a-zA-Z-]+).xpi.*/){print "$$1 "}'
+		${PERL} -ne 'if(/.*href="([a-zA-Z-]+).xpi.*/){print "$$1\n"}' |\
+		${AWK} 'BEGIN{ORS=" "}{print $1}END{printf "\nNumber of languages: %d\n",NR}'
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 
