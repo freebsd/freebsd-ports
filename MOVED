@@ -3939,3 +3939,4 @@ www/mod_mysqluserdir||2009-04-13|Depends on broken databases/mysql323-client
 x11/nvidia-driver-71xx|x11/nvidia-driver-71|2009-04-13|Renamed
 x11/nvidia-driver-96xx|x11/nvidia-driver-96|2009-04-13|Renamed
 emulators/cpmtools27|emulators/cpmtools2|2009-04-25|Renamed
+games/chromium|games/chromium-bsu|2009-04-26|Renamed

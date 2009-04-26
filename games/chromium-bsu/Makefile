@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	chromium
-PORTVERSION=	0.9.13.3
+PORTNAME=	chromium-bsu
+PORTVERSION=	0.9.14
 CATEGORIES=	games
-MASTER_SITES=	SF/chromium-bsu
+MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An arcade-style, top-scrolling space shooter
@@ -21,11 +21,12 @@ GNU_CONFIGURE=	yes
 USE_GL=		gl glu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-glc
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 
-MAN6=		chromium.6
+MAN6=		chromium-bsu.6
 
 OPTIONS=	SDL_MIXER "Use SDL_mixer instead of openal for audio" off \
 		GLUT	"Use GLUT instead of SDL for video" off
@@ -34,9 +35,9 @@ OPTIONS=	SDL_MIXER "Use SDL_mixer instead of openal for audio" off \
 
 .if defined(WITH_GLUT)
 USE_GL+=	glut
-CONFIGURE_ARGS+=--disable-sdl
+CONFIGURE_ARGS+=--disable-sdl --disable-sdlimage
 .else
-USE_SDL+=	sdl
+USE_SDL+=	sdl image
 CONFIGURE_ARGS+=--disable-glut
 .endif
 
@@ -49,11 +50,22 @@ LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal \
 CONFIGURE_ARGS+=--disable-sdlmixer
 .endif
 
-post-patch:
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e '/SUBDIRS/ s|doc||' ${WRKSRC}/data/Makefile.in
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
-	@${REINPLACE_CMD} -e '/^bindir=.*games/ d; /^datadir=.*games/ d' \
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^LIBS =/ s|$$| @INTLLIBS@|' \
+		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|\([A-Z][A-Z_]*[A-Z]\)\+="\(.*\)"$$|\1="$$\1 \2"|; \
+		s|\([A-Z][A-Z_]*[A-Z]\)\+=\(.*\)$$|\1="$$\1 \2"|' \
 		${WRKSRC}/configure
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e '/doc / d' ${WRKSRC}/data/Makefile.in
+.endif
 
 .include <bsd.port.post.mk>
