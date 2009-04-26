@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.6.b.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -46,7 +46,7 @@ LATEST_LINK=	tcl86${THREADS_SUFFIX}
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_TCL_MODULES)
-RUN_DEPENDS+=	${LOCALBASE}/lib/tcl8/8.5/tcltest-2.3.0.tm:${PORTSDIR}/lang/tcl-modules
+RUN_DEPENDS+=	${LOCALBASE}/lib/tcl8/8.5/tcltest-2.3.1.tm:${PORTSDIR}/lang/tcl-modules
 .endif
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}
