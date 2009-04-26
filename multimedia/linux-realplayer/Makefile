@@ -26,6 +26,7 @@ USE_LINUX_APPS=	gtk2 xorglibs
 RESTRICTED=	Redistribution not allowed
 NO_BUILD=	yes
 WANT_GNOME=	yes
+FETCH_ARGS=	-pRr
 
 RADIR=		${PREFIX}/lib/RealPlayer
 PLUGINSDIR=	${PREFIX}/lib/linux-mozilla/plugins
