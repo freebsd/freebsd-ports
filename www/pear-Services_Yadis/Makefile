@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_Yadis
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,6 +15,7 @@ COMMENT=	Implementation of the Yadis Specification 1.0 protocol for PHP5
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
+USE_PHP=	simplexml
 CATEGORY=	Services
 FILES=		Yadis.php Yadis/Xri.php Yadis/Xrds.php Yadis/Service.php \
 		Yadis/Exception.php Yadis/Xrds/Namespace.php \
