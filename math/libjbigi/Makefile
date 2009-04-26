@@ -22,6 +22,7 @@ USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_VERSION=	1.5+
 JAVA_OS=	native
+PROJECTHOST=	i2p
 
 WRKSRC=		${WRKDIR}/i2p-${PORTVERSION}/core/c
 
