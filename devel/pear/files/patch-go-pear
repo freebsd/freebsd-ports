@@ -1,70 +1,100 @@
---- go-pear.orig	Fri Apr 27 23:07:03 2007
-+++ go-pear	Mon Apr 30 10:15:47 2007
-@@ -308,6 +308,7 @@
-     $install_pfc = $_SESSION['go-pear']['install_pfc'];
- }
+--- go-pear.orig	2009-04-08 12:20:28.000000000 +0200
++++ go-pear	2009-04-26 20:51:39.000000000 +0200
+@@ -116,7 +116,7 @@
+ );
  
+ $installer_packages = array(
+-    'PEAR',
++    'PEAR-stable',
+     'Structures_Graph-stable',
+     'Archive_Tar-stable',
+     'Console_Getopt-stable',
+@@ -250,7 +250,7 @@
+     }
+     // Anything past this step has something to do with the installation    
+ }
+-
 +/*
  if (!WEBINSTALLER) {
      $tty = WINDOWS ? @fopen('\con', 'r') : @fopen('/dev/tty', 'r');
  
-@@ -351,6 +352,7 @@
+@@ -294,7 +294,7 @@
          $http_proxy = $tmp;
      }
  }
+-
 +*/
- 
  $origpwd = getcwd();
  
-@@ -423,6 +425,7 @@
+ $config_vars = array_keys($config_desc);
+@@ -345,7 +345,7 @@
+         break;
      }
  }
- 
+-
 +/*
  while (!WEBINSTALLER) {
      print "
  Below is a suggested file layout for your new PEAR installation.  To
-@@ -505,6 +508,7 @@
+@@ -428,7 +428,7 @@
          }
      }
  }
+-
 +*/
- 
- foreach ($config_vars as $n => $var) {
-     for ($m = 1; $m <= count($config_vars); $m++) {
-@@ -573,6 +577,7 @@
+ ####
+ # Installation stuff
+ ####
+@@ -561,7 +561,7 @@
+         ob_start();
      }
  }
- 
+-
 +/*
  if (!WEBINSTALLER) {
      $msg = "The following PEAR packages are bundled with PHP: " .
-         implode(', ', $pfc_packages);
-@@ -581,6 +586,7 @@
-     $install_pfc = !stristr(fgets($tty, 1024), "n");
+         implode(', ', array_keys($pfc_packages));
+@@ -571,7 +571,7 @@
+     $install_optional_packages = array();
      print "\n";
  }
+-
 +*/
- 
  ####
  # Download
-@@ -592,6 +598,7 @@
+ ####
+@@ -581,7 +581,7 @@
+ } else {
     ini_set('include_path', $ptmp);
  }
- 
+-
 +/*
  if (!extension_loaded('zlib') && !WEBINSTALLER) { // In Web context we could be in multithread env which makes dl() end up with a fatal error.
      if (WINDOWS) {
          @dl('php_zlib.dll');
-@@ -616,6 +623,7 @@
+@@ -606,18 +606,19 @@
  if (!$have_gzip) {
      print "Downloading uncompressed packages\n";
  };
+-
 +*/
- 
  if ($install_pfc) {
-     $to_install = array_merge($installer_packages, $pfc_packages);
-@@ -775,7 +783,7 @@
+     $to_install = array_merge($installer_packages, array_keys($pfc_packages));
+ } else {
+     $to_install = $installer_packages;
+-
++/*
+     // webinstaller allows to choose pfc packages individually
+     foreach ($pfc_packages as $pkg => $desc) {
+         if (in_array($pkg, $install_optional_packages)) {
+             array_push($to_install, $pkg);
+         }
+     }
++*/
+ }
+ 
+ // gopear_bundle usage
+@@ -750,7 +751,7 @@
  if (WEBINSTALLER || isset($_SERVER['argv'][1]) && $_SERVER['argv'][1] == 'local') {
      $config = &PEAR_Config::singleton($prefix."/pear.conf", '');
  } else {
@@ -73,45 +103,49 @@
  }
  
  
-@@ -811,6 +819,7 @@
+@@ -821,7 +822,7 @@
+ 
  
  // Base installation finished
- 
+-
 +/*
  ini_restore("include_path");
  
  if (!WEBINSTALLER) {
-@@ -968,6 +977,7 @@
+@@ -980,6 +981,7 @@
  if (WINDOWS && !WEBINSTALLER) {
      win32CreateRegEnv();
  }
 +*/
  // Set of functions following
- 
- // {{{ download_url()
-@@ -1364,17 +1374,17 @@
+ /**
+  * Parse the given dirname
+@@ -1418,19 +1420,17 @@
          }
      } else {
          if ($_prefix === null) {
--            $prefix    = dirname(PHP_BINDIR);
-+            $prefix    = "%%PREFIX%%";
+-            #$prefix    = dirname(PHP_BINDIR);
+-            $prefix    = dirname(__FILE__);
++           $prefix    = '%%PREFIX%%';
          } else {
              $prefix = $_prefix;
          }
          $bin_dir   = '$prefix/bin';
-         $php_dir   = '$prefix/share/pear';
+-        #$php_dir   = '$prefix/share/pear';
+-        $php_dir   = '$prefix/PEAR';
 -        $doc_dir   = '$php_dir/docs';
++        $php_dir   = '$prefix/share/pear';
 +        $doc_dir   = '$prefix/share/doc/pear';
          $data_dir  = '$php_dir/data';
          $test_dir  = '$php_dir/tests';
 -        $temp_dir   = '$prefix/temp';
 -
-+        $temp_dir   = '/tmp';
++  	$temp_dir   = '/tmp/go-pear';
 +/*
          // check if the user has installed PHP with PHP or GNU layout
          if (@is_dir("$prefix/lib/php/.registry")) {
              $php_dir = '$prefix/lib/php';
-@@ -1386,6 +1396,7 @@
+@@ -1442,6 +1442,7 @@
          } elseif (@is_dir("$prefix/share/php/.registry")) {
              $php_dir = '$prefix/share/php';
          }
@@ -119,8 +153,3 @@
      }
  }
  
-@@ -2491,3 +2502,4 @@
-     }
-     return true;
- }
-+?>

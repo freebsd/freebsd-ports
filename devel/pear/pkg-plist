@@ -4,6 +4,7 @@ bin/pecl
 etc/pear.conf
 %%DOCSDIR%%/Archive_Tar/docs/Archive_Tar.txt
 %%DOCSDIR%%/PEAR/INSTALL
+%%DOCSDIR%%/PEAR/LICENSE
 %%DOCSDIR%%/PEAR/README
 %%DOCSDIR%%/Structures_Graph/docs/generate.sh
 %%DOCSDIR%%/Structures_Graph/docs/html/Structures_Graph/Structures_Graph.html
@@ -28,7 +29,9 @@ etc/pear.conf
 %%DOCSDIR%%/Structures_Graph/docs/tutorials/Structures_Graph/Structures_Graph.pkg
 %%DATADIR%%/.channels/.alias/pear.txt
 %%DATADIR%%/.channels/.alias/pecl.txt
+%%DATADIR%%/.channels/.alias/phpdocs.txt
 %%DATADIR%%/.channels/__uri.reg
+%%DATADIR%%/.channels/doc.php.net.reg
 %%DATADIR%%/.channels/pear.php.net.reg
 %%DATADIR%%/.channels/pecl.php.net.reg
 @exec touch %D/share/pear/.depdb
@@ -72,7 +75,6 @@ etc/pear.conf
 %%DATADIR%%/PEAR/Command.php
 %%DATADIR%%/PEAR/Common.php
 %%DATADIR%%/PEAR/Config.php
-%%DATADIR%%/PEAR/Dependency.php
 %%DATADIR%%/PEAR/Dependency2.php
 %%DATADIR%%/PEAR/DependencyDB.php
 %%DATADIR%%/PEAR/Downloader/Package.php
@@ -118,7 +120,6 @@ etc/pear.conf
 %%DATADIR%%/PEAR/FixPHP5PEARWarnings.php
 %%DATADIR%%/PEAR/REST.php
 %%DATADIR%%/PEAR/Registry.php
-%%DATADIR%%/PEAR/Remote.php
 %%DATADIR%%/PEAR/RunTest.php
 %%DATADIR%%/PEAR/Task/Common.php
 %%DATADIR%%/PEAR/Task/Postinstallscript/rw.php
@@ -133,6 +134,7 @@ etc/pear.conf
 %%DATADIR%%/PEAR/Validator/PECL.php
 %%DATADIR%%/PEAR/XMLParser.php
 %%DATADIR%%/PEAR.php
+%%DATADIR%%/PEAR5.php
 %%DATADIR%%/Structures/Graph/Manipulator/AcyclicTest.php
 %%DATADIR%%/Structures/Graph/Manipulator/TopologicalSorter.php
 %%DATADIR%%/Structures/Graph/Node.php
@@ -167,6 +169,7 @@ etc/pear.conf
 @dirrmtry share/pear/.channels/.alias
 @dirrmtry share/pear/.channels
 @dirrmtry share/pear/.registry/.channel.__uri
+@dirrmtry share/pear/.registry/.channel.doc.php.net
 @dirrmtry share/pear/.registry/.channel.pecl.php.net
 @dirrmtry share/pear/.registry
 @dirrm %%DATADIR%%/Archive
