@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_Common
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
