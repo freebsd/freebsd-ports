@@ -1,4 +1,4 @@
-@unexec if [ -e /var/drweb/run/drweb-smf.skt ] ; then %D/etc/rc.d/002.drweb-smf.sh stop ; fi
+@unexec if [ -e /var/drweb/run/drweb-smf.skt ] ; then %D/etc/rc.d/drweb-smf stop ; fi
 drweb/drweb-smf
 etc/rc.d/drweb-smf
 @unexec if [ -f %D/etc/drweb/addresses.conf ] && cmp -s %D/etc/drweb/addresses.conf %D/etc/drweb/addresses.conf-distr; then rm -f %D/etc/drweb/addresses.conf; fi
