@@ -231,6 +231,7 @@
     SUBDIR += gallery
     SUBDIR += gallery2
     SUBDIR += gatling
+    SUBDIR += gecko-mediaplayer
     SUBDIR += gecko-sharp10
     SUBDIR += gecko-sharp20
     SUBDIR += geeklog
