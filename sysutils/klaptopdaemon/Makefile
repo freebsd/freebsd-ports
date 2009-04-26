@@ -23,7 +23,7 @@ OPTIONS=	#no options for amd64
 USE_KDELIBS_VER=3
 
 ONLY_FOR_ARCHS=	i386
-USE_XORG=	xtst
+USE_XORG=	xtst xscrnsaver
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
