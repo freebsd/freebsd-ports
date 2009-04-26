@@ -1661,6 +1661,7 @@
     SUBDIR += xpi-jiwaonwooztalk
     SUBDIR += xpi-joga
     SUBDIR += xpi-jsview
+    SUBDIR += xpi-jv
     SUBDIR += xpi-lastfmonwooztalk
     SUBDIR += xpi-leechblock
     SUBDIR += xpi-linkification
