@@ -14,6 +14,7 @@ lib/audacious/General/alarm.so
 %%DBUS%%lib/audacious/General/gnomeshortcuts.so
 lib/audacious/General/hotkey.so
 %%LIRCPLUGIN%%lib/audacious/General/lirc.so
+%%CURLPLUGIN%%lib/audacious/General/scrobbler.so
 lib/audacious/General/song_change.so
 lib/audacious/General/statusicon.so
 %%AACPLUGIN%%lib/audacious/Input/aac.so
@@ -45,6 +46,7 @@ lib/audacious/Input/vtx.so
 lib/audacious/Output/filewriter.so
 %%JACKPLUGIN%%lib/audacious/Output/jackout.so
 lib/audacious/Output/null.so
+%%CURLPLUGIN%%lib/audacious/Transport/lastfm.so
 %%NEONPLUGIN%%lib/audacious/Transport/neon.so
 lib/audacious/Transport/stdio.so
 lib/audacious/Visualization/blur_scope.so
