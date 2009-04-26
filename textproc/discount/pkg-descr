@@ -1,0 +1,15 @@
+This is an implementation of John Gruber's Markdown text to html language.
+There's not much here that differentiates it from any of the existing Markdown
+implementations except that it's written in C instead of one of the vast flock
+of scripting languages that are fighting it out for the Perl crown.
+
+Markdown provides a library that gives you formatting functions suitable for
+marking down entire documents or lines of text, a command-line program that you
+can use to mark down documents interactively or from a script,
+and a tiny (1 program so far) suite of example programs that show how to fully
+utilize the markdown library.
+
+It also does, by default, various smartypants-style substitutions.
+
+WWW:		http://www.pell.portland.or.us/~orc/Code/markdown/
+LICENSE:	BSDL
