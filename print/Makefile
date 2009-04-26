@@ -288,6 +288,7 @@
     SUBDIR += py-fonttools
     SUBDIR += py-pdf
     SUBDIR += py-pyscript
+    SUBDIR += py-relatorio
     SUBDIR += py-reportlab
     SUBDIR += py-reportlab2
     SUBDIR += py-rtf
