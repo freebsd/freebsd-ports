@@ -7,18 +7,20 @@
 
 PORTNAME=	jaMailHost
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	japanese www zope
 MASTER_SITES=	http://www005.upp.so-net.ne.jp/nakagami/Download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nakaji@jp.freebsd.org
 COMMENT=	A Zope hotfix Product to send mail in Japanese
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec-zope
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec-zope
 
-USE_PYTHON?=	< 2.4
+USE_PYTHON?=	2.4
 USE_ZOPE=	yes
+ZOPE_VERSION=	2.10
 DIST_SUBDIR=	zope
 
 ZOPEPRODUCTNAME=${PORTNAME}

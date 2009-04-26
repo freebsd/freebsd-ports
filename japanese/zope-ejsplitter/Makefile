@@ -7,17 +7,19 @@
 
 PORTNAME=	ejSplitter
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	japanese www zope
 MASTER_SITES=	http://www005.upp.so-net.ne.jp/nakagami/Download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nakaji@jp.freebsd.org
 COMMENT=	A Japanese word splitter for searching text in Zope Products
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec-zope
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec-zope
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.4
 USE_ZOPE=	yes
+ZOPE_VERSION=	2.10
 DIST_SUBDIR=	zope
 
 ZOPEPRODUCTNAME=	${PORTNAME}
@@ -41,7 +43,8 @@ pre-install:
 	done; \
 	for d in `${FIND} -d ${ZOPEPRODUCTNAME} -type d`; do \
 		${ECHO_CMD} @dirrm %%ZOPEPRODUCTDIR%%/$${d} >> ${PLIST}; \
-	done; \
+	done
+	@${ECHO_CMD} @dirrmtry %%ZOPEPRODUCTDIR%% >>${PLIST}
 
 do-install:
 	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/

@@ -3,3 +3,4 @@
 %%ZOPEPRODUCTDIR%%/jaMailHost/__init__.pyc
 %%ZOPEPRODUCTDIR%%/jaMailHost/version.txt
 @dirrm %%ZOPEPRODUCTDIR%%/jaMailHost
+@dirrmtry %%ZOPEPRODUCTDIR%%
