@@ -130,4 +130,9 @@ WX_UNICODE=yes
 # Man pages management
 .include "Makefile.man"
 
+.ifdef NOPORTDOCS
+post-patch:
+	${REINPLACE_CMD} 's/install-data-am:.*/install-data-am:/' ${WRKSRC}/docs/Makefile.in
+.endif
+
 .include <bsd.port.post.mk>
