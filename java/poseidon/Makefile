@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	poseidon
-PORTVERSION=	4.2.1
-PORTREVISION=	2
+PORTVERSION=	6.0.2
 CATEGORIES=	java devel
-MASTER_SITES=	ftp://88.198.45.102/ \
+MASTER_SITES=	http://download.gentleware.biz/ \
+		ftp://88.198.45.102/ \
 		http://88.198.45.102:81/
 DISTNAME=	${PORTNAME}${EDITION}-${PORTVERSION}
 
