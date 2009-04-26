@@ -1,0 +1,30 @@
+bin/sslstrip
+%%PYTHON_SITELIBDIR%%/sslstrip/CookieCleaner.py
+%%PYTHON_SITELIBDIR%%/sslstrip/CookieCleaner.pyc
+%%PYTHON_SITELIBDIR%%/sslstrip/CookieCleaner.pyo
+%%PYTHON_SITELIBDIR%%/sslstrip/DataShuffler.py
+%%PYTHON_SITELIBDIR%%/sslstrip/DataShuffler.pyc
+%%PYTHON_SITELIBDIR%%/sslstrip/DataShuffler.pyo
+%%PYTHON_SITELIBDIR%%/sslstrip/RetrySecureException.py
+%%PYTHON_SITELIBDIR%%/sslstrip/RetrySecureException.pyc
+%%PYTHON_SITELIBDIR%%/sslstrip/RetrySecureException.pyo
+%%PYTHON_SITELIBDIR%%/sslstrip/SSLDataShuffler.py
+%%PYTHON_SITELIBDIR%%/sslstrip/SSLDataShuffler.pyc
+%%PYTHON_SITELIBDIR%%/sslstrip/SSLDataShuffler.pyo
+%%PYTHON_SITELIBDIR%%/sslstrip/SSLShuffleSocket.py
+%%PYTHON_SITELIBDIR%%/sslstrip/SSLShuffleSocket.pyc
+%%PYTHON_SITELIBDIR%%/sslstrip/SSLShuffleSocket.pyo
+%%PYTHON_SITELIBDIR%%/sslstrip/SecureLinkListener.py
+%%PYTHON_SITELIBDIR%%/sslstrip/SecureLinkListener.pyc
+%%PYTHON_SITELIBDIR%%/sslstrip/SecureLinkListener.pyo
+%%PYTHON_SITELIBDIR%%/sslstrip/ShuffleSocket.py
+%%PYTHON_SITELIBDIR%%/sslstrip/ShuffleSocket.pyc
+%%PYTHON_SITELIBDIR%%/sslstrip/ShuffleSocket.pyo
+%%PYTHON_SITELIBDIR%%/sslstrip/__init__.py
+%%PYTHON_SITELIBDIR%%/sslstrip/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sslstrip/__init__.pyo
+%%DATADIR%%/COPYING
+%%DATADIR%%/README
+%%DATADIR%%/lock.ico
+@dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/sslstrip
