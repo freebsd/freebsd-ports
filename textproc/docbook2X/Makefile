@@ -7,7 +7,7 @@
 
 PORTNAME=	docbook2X
 PORTVERSION=	0.8.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -20,7 +20,9 @@ BUILD_DEPENDS=	p5-XML-NamespaceSupport>=0:${PORTSDIR}/textproc/p5-XML-NamespaceS
 		p5-XML-SAX-Expat>=0:${PORTSDIR}/textproc/p5-XML-SAX-Expat \
 		libxslt>=0:${PORTSDIR}/textproc/libxslt \
 		sdocbook-xml>=0:${PORTSDIR}/textproc/sdocbook-xml \
-		dsssl-docbook-modular>=0:${PORTSDIR}/textproc/dsssl-docbook-modular
+		dsssl-docbook-modular>=0:${PORTSDIR}/textproc/dsssl-docbook-modular \
+		OpenSP>=0:${PORTSDIR}/textproc/opensp
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
