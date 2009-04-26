@@ -1648,6 +1648,7 @@
     SUBDIR += xpi-gmail-manager
     SUBDIR += xpi-google-notebook
     SUBDIR += xpi-googlevideoonwooztalk
+    SUBDIR += xpi-grab_and_drag
     SUBDIR += xpi-greasemonkey
     SUBDIR += xpi-hit-a-hint
     SUBDIR += xpi-httpfox
