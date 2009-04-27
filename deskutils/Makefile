@@ -262,6 +262,7 @@
     SUBDIR += xfce4-xkb-plugin
     SUBDIR += xmaddressbook
     SUBDIR += xmdiary
+    SUBDIR += xneur
     SUBDIR += xopps
     SUBDIR += xpad
     SUBDIR += xpostit

@@ -7,7 +7,7 @@
 
 PORTNAME=	xneur
 PORTVERSION=	0.9.4
-CATEGORIES=	russian deskutils
+CATEGORIES=	deskutils
 MASTER_SITES=	http://dists.xneur.ru/release-${DISTVERSION}/tgz/ \
 		http://mirror.amdmi3.ru/
 
