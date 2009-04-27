@@ -13,6 +13,7 @@
 
 PORTNAME=	rt
 PORTVERSION=	3.8.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
@@ -200,6 +201,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's!%%PREFIX%%!${PREFIX}!g' ${WRKSRC}/config.layout
 	@${REINPLACE_CMD} -e 's!%%SITE_PERL%%!${SITE_PERL}!g' ${WRKSRC}/config.layout
 	@${REINPLACE_CMD} -e 's!/path/to/your/etc!${RT_ETC_PATH}!g' ${WRKSRC}/etc/RT_SiteConfig.pm
+	@${REINPLACE_CMD} -e 's!/bin:/usr/bin!/bin:/usr/bin:${LOCALBASE}/bin!' ${WRKSRC}/bin/webmux.pl.in
+	@${REINPLACE_CMD} -e 's!/bin:/usr/bin!/bin:/usr/bin:${LOCALBASE}/bin!' ${WRKSRC}/lib/RT/Interface/CLI.pm && \
+	    ${RM} ${WRKSRC}/lib/RT/Interface/CLI.pm.bak
 
 pre-install:
 	@${RM} -f ${WRKSRC}/lib/RT.pm.in
