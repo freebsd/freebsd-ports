@@ -1,6 +1,6 @@
 diff -Naur syscp.orig/admin_configfiles.php syscp/admin_configfiles.php
---- syscp.orig/admin_configfiles.php	2008-11-29 05:18:53.000000000 -0700
-+++ syscp/admin_configfiles.php	2008-12-12 12:21:46.000000000 -0700
+--- syscp.orig/admin_configfiles.php	2009-03-27 19:04:47.000000000 +0100
++++ syscp/admin_configfiles.php	2009-04-18 13:19:55.308238616 +0200
 @@ -86,6 +86,7 @@
  			'<SQL_UNPRIVILEGED_PASSWORD>' => 'MYSQL_PASSWORD',
  			'<SQL_DB>' => $sql['db'],
@@ -10,8 +10,8 @@ diff -Naur syscp.orig/admin_configfiles.php syscp/admin_configfiles.php
  			'<SERVERIP>' => $settings['system']['ipaddress'],
  			'<NAMESERVERS>' => $settings['system']['nameservers'],
 diff -Naur syscp.orig/install/install.php syscp/install/install.php
---- syscp.orig/install/install.php	2008-11-30 06:12:36.000000000 -0700
-+++ syscp/install/install.php	2008-12-12 12:21:46.000000000 -0700
+--- syscp.orig/install/install.php	2009-03-27 19:04:47.000000000 +0100
++++ syscp/install/install.php	2009-04-18 13:19:55.314238540 +0200
 @@ -374,7 +374,7 @@
  }
  else
@@ -37,14 +37,14 @@ diff -Naur syscp.orig/install/install.php syscp/install/install.php
  	elseif($webserver == "lighttpd")
  	{
 diff -Naur syscp.orig/install/syscp.sql syscp/install/syscp.sql
---- syscp.orig/install/syscp.sql	2008-12-12 09:41:14.000000000 -0700
-+++ syscp/install/syscp.sql	2008-12-12 12:28:09.000000000 -0700
+--- syscp.orig/install/syscp.sql	2009-03-03 17:29:37.000000000 +0100
++++ syscp/install/syscp.sql	2009-04-18 13:23:16.223237030 +0200
 @@ -534,16 +534,16 @@
  INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (7, 'customer', 'mysqlprefix', 'sql');
  INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (8, 'system', 'lastaccountnumber', '0');
  INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (9, 'system', 'lastguid', '9999');
--INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (10, 'system', 'documentroot_prefix', '/var/kunden/webs/');
--INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (11, 'system', 'logfiles_directory', '/var/kunden/logs/');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (10, 'system', 'documentroot_prefix', '/var/customers/webs/');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (11, 'system', 'logfiles_directory', '/var/customers/logs/');
 +INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (10, 'system', 'documentroot_prefix', '/usr/local/customers/webs/');
 +INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (11, 'system', 'logfiles_directory', '/usr/local/customers/logs/');
  INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (12, 'system', 'ipaddress', 'SERVERIP');
@@ -53,7 +53,7 @@ diff -Naur syscp.orig/install/syscp.sql syscp/install/syscp.sql
  INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (15, 'system', 'last_traffic_run', '000000');
 -INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (16, 'system', 'vmail_uid', '2000');
 -INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (17, 'system', 'vmail_gid', '2000');
--INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (18, 'system', 'vmail_homedir', '/var/kunden/mail/');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (18, 'system', 'vmail_homedir', '/var/customers/mail/');
 -INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (19, 'system', 'bindconf_directory', '/etc/bind/');
 -INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (20, 'system', 'bindreload_command', '/etc/init.d/bind9 reload');
 +INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (16, 'system', 'vmail_uid', '125');
@@ -95,7 +95,7 @@ diff -Naur syscp.orig/install/syscp.sql syscp/install/syscp.sql
  INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (59, 'ticket', 'concurrently_open', '5');
  INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (60, 'ticket', 'noreply_name', 'SysCP Support');
 -INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (61, 'system', 'mod_fcgid_configdir', '/var/www/php-fcgi-scripts');
--INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (62, 'system', 'mod_fcgid_tmpdir', '/var/kunden/tmp');
+-INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (62, 'system', 'mod_fcgid_tmpdir', '/var/customers/tmp');
 +INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (61, 'system', 'mod_fcgid_configdir', '/usr/local/www/php-fcgi-scripts');
 +INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (62, 'system', 'mod_fcgid_tmpdir', '/usr/local/customers/tmp');
  INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (63, 'ticket', 'reset_cycle', '2');
@@ -117,8 +117,8 @@ diff -Naur syscp.orig/install/syscp.sql syscp/install/syscp.sql
 -INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (80, 'system', 'awstats_domain_file', '/etc/awstats/');
 -INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (81, 'system', 'awstats_model_file', '/etc/awstats/awstats.model.conf.syscp');
 -INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (82, 'dkim', 'dkim_prefix', '/etc/postfix/dkim/');
-+INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (80, 'system', 'awstats_domain_file', '/usr/local/www/awstats/');
-+INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (81, 'system', 'awstats_model_file', '/usr/local/www/awstats/cgi-bin/awstats.model.conf.syscp');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (80, 'system', 'awstats_domain_file', '/usr/local/etc/awstats/');
++INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (81, 'system', 'awstats_model_file', '/usr/local/etc/awstats/awstats.model.conf.syscp');
 +INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (82, 'dkim', 'dkim_prefix', '/usr/local/etc/postfix/dkim/');
  INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (83, 'dkim', 'dkim_domains', 'domains');
  INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (84, 'dkim', 'dkim_dkimkeys', 'dkim-keys.conf');
@@ -142,8 +142,8 @@ diff -Naur syscp.orig/install/syscp.sql syscp/install/syscp.sql
  INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (97, 'autoresponder', 'autoresponder_active', '0');
  INSERT INTO `panel_settings` (`settingid`, `settinggroup`, `varname`, `value`) VALUES (98, 'autoresponder', 'last_autoresponder_run', '0');
 diff -Naur syscp.orig/lib/configfiles/freebsd.inc.php syscp/lib/configfiles/freebsd.inc.php
---- syscp.orig/lib/configfiles/freebsd.inc.php	1969-12-31 17:00:00.000000000 -0700
-+++ syscp/lib/configfiles/freebsd.inc.php	2008-12-12 12:21:46.000000000 -0700
+--- syscp.orig/lib/configfiles/freebsd.inc.php	1970-01-01 01:00:00.000000000 +0100
++++ syscp/lib/configfiles/freebsd.inc.php	2009-04-18 13:19:55.332238314 +0200
 @@ -0,0 +1,126 @@
 +<?php
 +return Array(
@@ -272,22 +272,22 @@ diff -Naur syscp.orig/lib/configfiles/freebsd.inc.php syscp/lib/configfiles/free
 +
 +?>
 diff -Naur syscp.orig/lib/configfiles_index.inc.php syscp/lib/configfiles_index.inc.php
---- syscp.orig/lib/configfiles_index.inc.php	2008-11-30 06:12:36.000000000 -0700
-+++ syscp/lib/configfiles_index.inc.php	2008-12-12 12:21:46.000000000 -0700
+--- syscp.orig/lib/configfiles_index.inc.php	2009-03-27 19:04:47.000000000 +0100
++++ syscp/lib/configfiles_index.inc.php	2009-04-18 13:24:19.676972910 +0200
 @@ -43,6 +43,6 @@
  
  $cfgPath = 'lib/configfiles/';
  $configfiles = Array();
--$configfiles = array_merge(include $cfgPath . 'etch.inc.php', include $cfgPath . 'hardy.inc.php', include $cfgPath . 'gentoo.inc.php', include $cfgPath . 'suse10.inc.php');
-+$configfiles = array_merge(include $cfgPath . 'freebsd.inc.php', include $cfgPath . 'etch.inc.php', include $cfgPath . 'hardy.inc.php', include $cfgPath . 'gentoo.inc.php', include $cfgPath . 'suse10.inc.php');
+-$configfiles = array_merge(include $cfgPath . 'lenny.inc.php', include $cfgPath . 'etch.inc.php', include $cfgPath . 'hardy.inc.php', include $cfgPath . 'gentoo.inc.php', include $cfgPath . 'suse10.inc.php');
++$configfiles = array_merge(include $cfgPath . 'freebsd.inc.php', include $cfgPath . 'lenny.inc.php', include $cfgPath . 'etch.inc.php', include $cfgPath . 'hardy.inc.php', include $cfgPath . 'gentoo.inc.php', include $cfgPath . 'suse10.inc.php');
  
 -?>
 \ No newline at end of file
 +?>
 diff -Naur syscp.orig/lib/functions.php syscp/lib/functions.php
---- syscp.orig/lib/functions.php	2008-12-12 09:29:41.000000000 -0700
-+++ syscp/lib/functions.php	2008-12-12 12:21:46.000000000 -0700
-@@ -1229,7 +1229,7 @@
+--- syscp.orig/lib/functions.php	2009-03-27 19:04:47.000000000 +0100
++++ syscp/lib/functions.php	2009-04-18 13:19:55.347240500 +0200
+@@ -1197,7 +1197,7 @@
  		'cp',
  		'du',
  		'chmod',
@@ -296,10 +296,17 @@ diff -Naur syscp.orig/lib/functions.php syscp/lib/functions.php
  		$settings['system']['apachereload_command'],
  		$settings['system']['bindreload_command'],
  		$settings['dkim']['dkimrestart_command'],
+@@ -2769,4 +2769,4 @@
+ 	return $returnval;
+ }
+ 
+-?>
+\ No newline at end of file
++?>
 diff -Naur syscp.orig/scripts/cron_tasks.inc.dns.10.bind.php syscp/scripts/cron_tasks.inc.dns.10.bind.php
---- syscp.orig/scripts/cron_tasks.inc.dns.10.bind.php	2008-10-24 07:47:49.000000000 -0600
-+++ syscp/scripts/cron_tasks.inc.dns.10.bind.php	2008-12-12 12:21:46.000000000 -0700
-@@ -111,7 +111,7 @@
+--- syscp.orig/scripts/cron_tasks.inc.dns.10.bind.php	2009-03-27 19:04:47.000000000 +0100
++++ syscp/scripts/cron_tasks.inc.dns.10.bind.php	2009-04-18 13:19:55.351238494 +0200
+@@ -113,7 +113,7 @@
  			$bindconf_file.= '# Domain ID: ' . $domain['id'] . ' - CustomerID: ' . $domain['customerid'] . ' - CustomerLogin: ' . $domain['loginname'] . "\n";
  			$bindconf_file.= 'zone "' . $domain['domain'] . '" in {' . "\n";
  			$bindconf_file.= '	type master;' . "\n";
@@ -308,7 +315,7 @@ diff -Naur syscp.orig/scripts/cron_tasks.inc.dns.10.bind.php syscp/scripts/cron_
  			$bindconf_file.= '	allow-query { any; };' . "\n";
  
  			if(count($this->nameservers) > 0)
-@@ -332,4 +332,4 @@
+@@ -334,4 +334,4 @@
  	}
  }
  
@@ -316,8 +323,8 @@ diff -Naur syscp.orig/scripts/cron_tasks.inc.dns.10.bind.php syscp/scripts/cron_
 \ No newline at end of file
 +?>
 diff -Naur syscp.orig/scripts/cron_tasks.inc.http.15.apache_fcgid.php syscp/scripts/cron_tasks.inc.http.15.apache_fcgid.php
---- syscp.orig/scripts/cron_tasks.inc.http.15.apache_fcgid.php	2008-11-30 06:12:36.000000000 -0700
-+++ syscp/scripts/cron_tasks.inc.http.15.apache_fcgid.php	2008-12-12 12:21:46.000000000 -0700
+--- syscp.orig/scripts/cron_tasks.inc.http.15.apache_fcgid.php	2009-03-27 19:04:47.000000000 +0100
++++ syscp/scripts/cron_tasks.inc.http.15.apache_fcgid.php	2009-04-18 13:19:55.354238037 +0200
 @@ -148,7 +148,7 @@
  
  			if(file_exists($starter_filename))
@@ -344,8 +351,8 @@ diff -Naur syscp.orig/scripts/cron_tasks.inc.http.15.apache_fcgid.php syscp/scri
 \ No newline at end of file
 +?>
 diff -Naur syscp.orig/scripts/cron_tasks.php syscp/scripts/cron_tasks.php
---- syscp.orig/scripts/cron_tasks.php	2008-11-09 10:53:18.000000000 -0700
-+++ syscp/scripts/cron_tasks.php	2008-12-12 12:21:46.000000000 -0700
+--- syscp.orig/scripts/cron_tasks.php	2009-03-27 19:04:47.000000000 +0100
++++ syscp/scripts/cron_tasks.php	2009-04-18 13:19:55.357237860 +0200
 @@ -124,8 +124,8 @@
  			}
  			else
@@ -358,8 +365,8 @@ diff -Naur syscp.orig/scripts/cron_tasks.php syscp/scripts/cron_tasks.php
  
  			$cronlog->logAction(CRON_ACTION, LOG_NOTICE, 'Running: chown -R ' . (int)$row['data']['uid'] . ':' . (int)$row['data']['gid'] . ' ' . escapeshellarg($settings['system']['documentroot_prefix'] . $row['data']['loginname']));
 diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/cron/cron_syscp syscp/templates/misc/configfiles/freebsd_release/cron/cron_syscp
---- syscp.orig/templates/misc/configfiles/freebsd_release/cron/cron_syscp	1969-12-31 17:00:00.000000000 -0700
-+++ syscp/templates/misc/configfiles/freebsd_release/cron/cron_syscp	2008-12-12 12:21:46.000000000 -0700
+--- syscp.orig/templates/misc/configfiles/freebsd_release/cron/cron_syscp	1970-01-01 01:00:00.000000000 +0100
++++ syscp/templates/misc/configfiles/freebsd_release/cron/cron_syscp	2009-04-18 13:19:55.368237582 +0200
 @@ -0,0 +1,14 @@
 +#
 +# Set PATH, otherwise restart-scripts won't find start-stop-daemon
@@ -376,8 +383,8 @@ diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/cron/cron_syscp
 +*/5 * * * *	/usr/local/bin/php -q /usr/local/www/syscp/scripts/cron_apsinstaller.php
 +*/30 * * * *	/usr/local/bin/php -q /usr/local/www/syscp/scripts/cron_apsupdater.php
 diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot-sql.conf syscp/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot-sql.conf
---- syscp.orig/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot-sql.conf	1969-12-31 17:00:00.000000000 -0700
-+++ syscp/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot-sql.conf	2008-12-12 12:21:46.000000000 -0700
+--- syscp.orig/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot-sql.conf	1970-01-01 01:00:00.000000000 +0100
++++ syscp/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot-sql.conf	2009-04-18 13:19:55.378237736 +0200
 @@ -0,0 +1,7 @@
 +driver = mysql
 +connect = host=<SQL_HOST> dbname=<SQL_DB> user=<SQL_UNPRIVILEGED_USER> password=<SQL_UNPRIVILEGED_PASSWORD>
@@ -387,8 +394,8 @@ diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/dovecot/etc_dov
 +user_query = SELECT CONCAT(homedir,maildir) AS home, concat('maildir:',homedir,maildir) \
 + AS mail, uid, gid FROM mail_users where username = '%u'
 diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot.conf syscp/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot.conf
---- syscp.orig/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot.conf	1969-12-31 17:00:00.000000000 -0700
-+++ syscp/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot.conf	2008-12-12 12:21:46.000000000 -0700
+--- syscp.orig/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot.conf	1970-01-01 01:00:00.000000000 +0100
++++ syscp/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot.conf	2009-04-18 13:19:55.381237000 +0200
 @@ -0,0 +1,51 @@
 +protocols = imap imaps pop3 pop3s
 +disable_plaintext_auth = no
@@ -442,8 +449,8 @@ diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/dovecot/etc_dov
 +plugin {
 +}
 diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_main.cf syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_main.cf
---- syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_main.cf	1969-12-31 17:00:00.000000000 -0700
-+++ syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_main.cf	2008-12-12 12:21:46.000000000 -0700
+--- syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_main.cf	1970-01-01 01:00:00.000000000 +0100
++++ syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_main.cf	2009-04-18 13:19:55.391237153 +0200
 @@ -0,0 +1,68 @@
 +smtpd_sender_restrictions = permit_sasl_authenticated, permit_mynetworks
 +smtpd_recipient_restrictions =
@@ -514,8 +521,8 @@ diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_pos
 +sample_directory = /usr/local/etc/postfix
 +readme_directory = no
 diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_master.cf syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_master.cf
---- syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_master.cf	1969-12-31 17:00:00.000000000 -0700
-+++ syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_master.cf	2008-12-12 12:21:46.000000000 -0700
+--- syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_master.cf	1970-01-01 01:00:00.000000000 +0100
++++ syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_master.cf	2009-04-18 13:19:55.394237535 +0200
 @@ -0,0 +1,6 @@
 +# Uncomment or add the following lines in your master.cf file 
 +# to use the SSL 465 port (recommended)
@@ -524,8 +531,8 @@ diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_pos
 +  -o smtpd_sasl_auth_enable=yes
 +  -o smtpd_client_restrictions=permit_sasl_authenticated,reject
 diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_alias_maps.cf syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_alias_maps.cf
---- syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_alias_maps.cf	1969-12-31 17:00:00.000000000 -0700
-+++ syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_alias_maps.cf	2008-12-12 12:21:46.000000000 -0700
+--- syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_alias_maps.cf	1970-01-01 01:00:00.000000000 +0100
++++ syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_alias_maps.cf	2009-04-18 13:19:55.397236799 +0200
 @@ -0,0 +1,8 @@
 +user = <SQL_UNPRIVILEGED_USER>
 +password = <SQL_UNPRIVILEGED_PASSWORD>
@@ -536,8 +543,8 @@ diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_pos
 +additional_conditions = and destination <> '' and destination <> ' '
 +hosts = <SQL_HOST>
 diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
---- syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf	1969-12-31 17:00:00.000000000 -0700
-+++ syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf	2008-12-12 12:21:46.000000000 -0700
+--- syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf	1970-01-01 01:00:00.000000000 +0100
++++ syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf	2009-04-18 13:19:55.400237180 +0200
 @@ -0,0 +1,8 @@
 +user = <SQL_UNPRIVILEGED_USER>
 +password = <SQL_UNPRIVILEGED_PASSWORD>
@@ -548,8 +555,8 @@ diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_pos
 +additional_conditions = and isemaildomain = '1'
 +hosts = <SQL_HOST>
 diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
---- syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf	1969-12-31 17:00:00.000000000 -0700
-+++ syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf	2008-12-12 12:21:46.000000000 -0700
+--- syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf	1970-01-01 01:00:00.000000000 +0100
++++ syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf	2009-04-18 13:19:55.403237002 +0200
 @@ -0,0 +1,7 @@
 +user = <SQL_UNPRIVILEGED_USER>
 +password = <SQL_UNPRIVILEGED_PASSWORD>
@@ -559,8 +566,8 @@ diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/postfix/etc_pos
 +where_field = email
 +hosts = <SQL_HOST>
 diff -Naur syscp.orig/templates/misc/configfiles/freebsd_release/proftpd/etc_proftpd.conf syscp/templates/misc/configfiles/freebsd_release/proftpd/etc_proftpd.conf
---- syscp.orig/templates/misc/configfiles/freebsd_release/proftpd/etc_proftpd.conf	1969-12-31 17:00:00.000000000 -0700
-+++ syscp/templates/misc/configfiles/freebsd_release/proftpd/etc_proftpd.conf	2008-12-12 12:21:46.000000000 -0700
+--- syscp.orig/templates/misc/configfiles/freebsd_release/proftpd/etc_proftpd.conf	1970-01-01 01:00:00.000000000 +0100
++++ syscp/templates/misc/configfiles/freebsd_release/proftpd/etc_proftpd.conf	2009-04-18 13:19:55.413236597 +0200
 @@ -0,0 +1,53 @@
 +ServerName			"<SERVERNAME> FTP Server"
 +ServerType			standalone
