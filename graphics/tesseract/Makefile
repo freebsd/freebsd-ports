@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tesseract
-DISTVERSION=	2.01
+DISTVERSION=	2.03
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} CENKES
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LANGFILES}
@@ -15,23 +15,26 @@ MAINTAINER=	bf2006a@yahoo.com
 COMMENT=	Commercial quality open source OCR engine
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
-RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
 
 PROJECTHOST=	tesseract-ocr
-LANGS=	deu eng fra ita nld spa
-LANGVER=	2.00
-LANGFILES=	${LANGS:S|^|${PORTNAME}-${LANGVER}.|:S|$|${EXTRACT_SUFX}|}
+LANGS2_00?=	deu eng fra ita nld spa
+LANGS2_01?=	deu-f por vie
+
+.for _N in 2_00 2_01
+LANGFILES+=	${LANGS${_N}:S|^|${PORTNAME}-${_N:S|_|.|}.|:S|$|${EXTRACT_SUFX}|}
+.endfor
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBTIFF_CFLAGS="-I${LOCALBASE}/include"\
 		LIBTIFF_LIBS="-L${LOCALBASE}/lib -ltiff"
 PORTDOCS=	AUTHORS ChangeLog NEWS README ReleaseNotes
 PORTEXAMPLES=	eurotext.tif phototest.tif
-PORT_VERBS=	cntraining mftraining tessdata unicharset_extractor \
-		wordlist2dawg ${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/X11/xterm|${LOCALBASE}/bin/xterm|'\
 		${WRKSRC}/ccutil/debugwin.cpp
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|'\
+		${WRKSRC}/configure
 
 post-install:
 	@cd ${WRKDIR}/tessdata/&&${COPYTREE_SHARE} . ${PREFIX}/share/tessdata/

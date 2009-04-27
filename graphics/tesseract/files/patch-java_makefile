@@ -1,0 +1,11 @@
+--- java/makefile.orig	2009-04-14 12:55:04.000000000 +0000
++++ java/makefile	2009-04-14 12:55:14.000000000 +0000
+@@ -40,7 +40,7 @@
+ 	rm -f ScrollView.jar *.class
+ 
+ # all-am does nothing, to make the java part optional.
+-all all-am :
++all all-am install :
+ 
+ # dist runs the autoconf makefile to archive the files correctly.
+ dist distdir :
