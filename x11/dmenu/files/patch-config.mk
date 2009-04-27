@@ -1,5 +1,5 @@
---- config.mk.orig	2008-06-18 19:20:41.000000000 +0200
-+++ config.mk	2008-06-21 14:57:31.000000000 +0200
+--- config.mk.orig	2009-04-18 13:50:04.000000000 +0200
++++ config.mk	2009-04-21 13:15:36.000000000 +0200
 @@ -4,11 +4,11 @@
  # Customize below to fit your system
  
@@ -20,11 +20,11 @@
  LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${XINERAMALIBS}
  
  # flags
--CPPFLAGS = -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
+-CPPFLAGS = -D_BSD_SOURCE -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
 -CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
 -LDFLAGS = -s ${LIBS}
-+CPPFLAGS+= -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
-+CFLAGS+= ${INCS} ${CPPFLAGS}
++CPPFLAGS+= -D_BSD_SOURCE -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
++CFLAGS+= -std=c99 ${INCS} ${CPPFLAGS}
 +LDFLAGS+= ${LIBS}
  
  # Solaris
