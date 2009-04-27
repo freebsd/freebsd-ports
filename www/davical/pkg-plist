@@ -29,6 +29,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.3.sql
 %%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.3a.sql
 %%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.4.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.5.sql
 %%PORTDOCS%%%%DOCSDIR%%/dba/rrule_functions.sql
 %%PORTDOCS%%%%DOCSDIR%%/dba/rrule_tests.sql
 %%PORTDOCS%%%%DOCSDIR%%/dba/sample-data.sql
@@ -44,6 +45,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/_inc---RRule.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/_inc---caldav-client.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/iCalDate.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/PdoQuery/PdoDatabase.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/PdoQuery/PdoQuery.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/PdoQuery/PdoDialect.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/PdoQuery/_inc---PdoQuery.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/blank.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/classtrees_awl.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/classtrees_davical.html
@@ -190,6 +195,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/website/clients/iCal-icon.png
 %%PORTDOCS%%%%DOCSDIR%%/docs/website/clients/iCal-screenshot.png
 %%PORTDOCS%%%%DOCSDIR%%/docs/website/images/logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/website/images/davical_logo.ico
+%%PORTDOCS%%%%DOCSDIR%%/docs/website/images/larger.png
+%%PORTDOCS%%%%DOCSDIR%%/docs/website/images/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/docs/website/images/davical_logo.svg
 %%PORTDOCS%%%%DOCSDIR%%/docs/website/inc/page-footer.php
 %%PORTDOCS%%%%DOCSDIR%%/docs/website/inc/page-header.php
 %%PORTDOCS%%%%DOCSDIR%%/docs/website/inc/page-middle.php
@@ -251,6 +260,7 @@
 %%WWWDIR%%/inc/other_translated_strings.php
 %%WWWDIR%%/inc/page-footer.php
 %%WWWDIR%%/inc/page-header.php
+%%WWWDIR%%/inc/PdoQuery.php
 @dirrm %%WWWDIR%%/inc
 @dirrm %%WWWDIR%%/htdocs/js
 @dirrm %%WWWDIR%%/htdocs/images
@@ -278,6 +288,7 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical/Admin
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/awl/caldav
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/awl/PdoQuery
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/awl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs

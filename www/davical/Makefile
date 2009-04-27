@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	davical
-PORTVERSION=	0.9.6.2
-PORTREVISION=	1
+PORTVERSION=	0.9.6.3
 CATEGORIES?=	www
 MASTER_SITES=	SF/rscds
 DISTNAME=	davical_${PORTVERSION}
@@ -51,6 +50,9 @@ post-install:
 	${CP} -pv ${WRKDIR}/httpd-davical.conf ${DOCSDIR}
 	${CP} -pv ${WRKSRC}/README ${DOCSDIR}
 	${CP} -pv ${WRKSRC}/INSTALL ${DOCSDIR}
+	${CHMOD} a+x ${DOCSDIR}/dba/update-davical-database
+	${CHMOD} a+x ${DOCSDIR}/dba/update-rscds-database
+
 .endif
 
 	@${CAT} ${PKGMESSAGE}
