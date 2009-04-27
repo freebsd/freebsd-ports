@@ -114,7 +114,7 @@ post-patch:
 		${WRKSRC}/po/Makefile
 .endif
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's, installdoc,,g' \
+	@${REINPLACE_CMD} -e 's, installdoc,,g' -e 's, $$(DOCDIR),,g'\
 		${WRKSRC}/Makefile.in
 .endif
 	@${FIND} ${WRKSRC} -name "*.orig" -a -exec ${RM} -f {} \;
