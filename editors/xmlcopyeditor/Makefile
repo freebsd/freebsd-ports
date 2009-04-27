@@ -6,9 +6,7 @@
 #
 
 PORTNAME=	xmlcopyeditor
-PORTVERSION=	1.2.0
-PORTREVISION=	1
-DISTVERSIONSUFFIX=-2
+PORTVERSION=	1.2.0.4
 CATEGORIES=	editors
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=xml-copy-editor
@@ -28,13 +26,16 @@ USE_DOS2UNIX=	src/templates/DTD.dtd \
 		src/rng/tei_all.rnc \
 		src/rng/docbook.rnc \
 		src/rng/tei_minimal.rnc \
-		src/rng/docbookxi.rnc
+		src/rng/docbookxi.rnc \
+		src/po/en_us/messages.po
 
 BUILD_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 LIB_DEPENDS+=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
 		aspell.16:${PORTSDIR}/textproc/aspell \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.0:${PORTSDIR}/devel/pcre \
+		xml2.5:${PORTSDIR}/textproc/libxml2 \
+		expat.6:${PORTSDIR}/textproc/expat2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

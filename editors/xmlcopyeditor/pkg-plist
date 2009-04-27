@@ -65,6 +65,7 @@ share/pixmaps/xmlcopyeditor.png
 %%DATADIR%%/png/stock_undo.png
 %%DATADIR%%/po/de/messages.mo
 %%DATADIR%%/po/en_us/messages.po
+%%DATADIR%%/po/es/messages.mo
 %%DATADIR%%/po/fr/messages.mo
 %%DATADIR%%/po/ru/messages.mo
 %%DATADIR%%/po/sk/messages.mo
@@ -206,6 +207,7 @@ share/pixmaps/xmlcopyeditor.png
 @dirrm %%DATADIR%%/po/ru
 @dirrm %%DATADIR%%/po/fr
 @dirrm %%DATADIR%%/po/en_us
+@dirrm %%DATADIR%%/po/es
 @dirrm %%DATADIR%%/po/de
 @dirrm %%DATADIR%%/po
 @dirrm %%DATADIR%%/png
