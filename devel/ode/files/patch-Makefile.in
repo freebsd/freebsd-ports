@@ -1,0 +1,11 @@
+--- Makefile.in	2009-04-23 17:47:34.000000000 -0500
++++ Makefile.in	2009-04-23 17:48:55.000000000 -0500
+@@ -226,7 +226,7 @@
+ EXTRA_DIST = autogen.sh build tools \
+         CHANGELOG.txt INSTALL.txt README.txt LICENSE.TXT
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(libdir)data/pkgconfig
+ pkgconfig_DATA = ode.pc
+ all: all-recursive
+ 
