@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.21
-PORTREVISION=	4
+PORTVERSION=	1.0.22
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -34,7 +33,6 @@ MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--with-everything \
 		--with-paranoidmsg \
 		--with-virtualchroot \
-		--with-tls \
 		--sysconfdir=${PREFIX}/etc
 
 MAN8=		pure-ftpd.8 pure-ftpwho.8 pure-mrtginfo.8 pure-statsdecode.8 \
@@ -45,7 +43,8 @@ OPTIONS=	LDAP		"Support for users in LDAP directories" off \
 		MYSQL		"Support for users in MySQL database" off \
 		PAM		"Support for PAM authentication" on \
 		PGSQL		"Support for users in PostgreSQL database" off \
-		PRIVSEP		"Enable privilege separation" off \
+		TLS		"Support for TLS (experimental)" off \
+		PRIVSEP		"Enable privilege separation" on \
 		PERUSERLIMITS	"Per-user concurrency limits" off \
 		THROTTLING	"Bandwidth throttling" off \
 		BANNER		"Show ${PORTNAME} welcome upon session start" on \
@@ -94,9 +93,13 @@ CONFIGURE_ARGS+=	--with-peruserlimits
 CONFIGURE_ARGS+=	--with-throttling
 .endif
 
+# TLS
+.if defined(WITH_TLS)
+CONFIGURE_ARGS+=	--with-tls
 # different certificate file location?
-.if defined(WITH_CERTFILE)
+. if defined(WITH_CERTFILE)
 CONFIGURE_ARGS+=	--with-certfile=${WITH_CERTFILE}
+. endif
 .endif
 
 # if mysql or ldap are disabled, enable pam
@@ -127,7 +130,7 @@ CONFIGURE_ARGS+=	--without-sendfile
 .endif
 
 .if defined(WITH_LARGEFILE)
-CONFIGURE_ARGS+=	--with-largefile
+CONFIGURE_ARGS+=	--enable-largefile
 .else
 CONFIGURE_ARGS+=	--disable-largefile
 .endif
@@ -138,7 +141,7 @@ PAM_TARGET?=	pure-ftpd
 
 PORTDOCS=	AUTHORS CONTACT COPYING HISTORY NEWS \
 		README README.Configuration-File README.Contrib README.LDAP \
-		README.Netfilter README.MySQL README.PGSQL README.Virtual-Users \
+		README.MySQL README.PGSQL README.Virtual-Users \
 		README.Authentication-Modules THANKS pure-ftpd.png \
 		pureftpd.schema README.TLS
 PORTEXAMPLES=	*
@@ -150,16 +153,14 @@ pre-fetch:
 	@${ECHO_MSG} "WITH_CERTFILE=/path   - Set different location of certificate file for TLS"
 	@${ECHO_MSG} "WITH_LANG=lang        - Enable compilation of language support, lang is one of"
 	@${ECHO_MSG} "  english, german, romanian, french, french-funny, polish, spanish,"
-	@${ECHO_MSG} "  dutch, italian, brazilian-portuguese, danish, slovak, korean,"
-	@${ECHO_MSG} "  norwegian, swedish, russian, traditional-chinese, simplified-chinese,"
-	@${ECHO_MSG} "  hungarian, catalan and czech."
+	@${ECHO_MSG} "  danish, dutch, italian, brazilian-portuguese, slovak, korean, swedish,"
+	@${ECHO_MSG} "  norwegian, russian, traditional-chinese, simplified-chinese, czech,"
+	@${ECHO_MSG} "  turkish, hungarian, catalan"
 	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${exec_prefix}|${PREFIX}|g' \
 		${WRKSRC}/configuration-file/pure-config.pl.in
-	@${REINPLACE_CMD} -e 's,SYNTAX SYNTAX,SYNTAX,' \
-		${WRKSRC}/pureftpd.schema
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-ldap.conf ${PREFIX}/etc/pureftpd-ldap.conf.sample
