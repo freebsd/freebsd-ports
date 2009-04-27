@@ -1,4 +1,5 @@
 bin/yasm
+bin/ytasm
 include/libyasm.h
 include/libyasm-stdint.h
 include/libyasm/arch.h
