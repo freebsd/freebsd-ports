@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	diffuse
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.3
 CATEGORIES=	devel python
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	diffuse
-DISTNAME=	${PORTNAME}-${PORTVERSION}
-EXTRACT_ONLY=	${DISTFILES}
 
 MAINTAINER=	marco.broeder@gmx.eu
 COMMENT=	A graphical N-way diff and merge tool written in python
@@ -30,7 +27,7 @@ OPTIONS=	MENU	"Add desktop menu (needs desktop-file-utils)"	on \
 .include <bsd.port.pre.mk>
 
 .ifndef (NOPORTDOCS)
-DOCS=		AUTHORS ChangeLog COPYING README TODO
+DOCS=		AUTHORS COPYING ChangeLog README
 .endif
 
 .ifdef (WITH_MENU)
