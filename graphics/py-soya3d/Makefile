@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	soya3d
-PORTVERSION=	0.13.2
-PORTREVISION=	3
+PORTVERSION=	0.14
 CATEGORIES=	graphics python
 MASTER_SITES=	http://download.gna.org/soya/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,8 +18,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Very high level 3D engine for Python
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode \
-		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging \
-		${PYTHON_SITELIBDIR}/pysdl_mixer/sdl_mixer.so:${PORTSDIR}/audio/py-sdl_mixer
+		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 LIB_DEPENDS=	cal3d.12:${PORTSDIR}/graphics/cal3d \
 		GLEW.1:${PORTSDIR}/graphics/glew \
 		openal.0:${PORTSDIR}/audio/openal \
@@ -41,7 +39,7 @@ PYDISTUTILS_PKGNAME=	Soya
 MANDIR=	${WRKDIR}/${DISTNAME}/manpage/man1
 MAN1=	soya_editor.1
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
-SOYATUTVER=	0.13
+SOYATUTVER=	0.14
 
 .if !defined(NOPORTDOCS)
 DISTFILES+=	SoyaTutorial-${SOYATUTVER}${EXTRACT_SUFX}
@@ -54,8 +52,7 @@ CFLAGS	+=	-fPIC
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		-e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
 
 post-install:
 .if !defined(NOPORTDOCS)
