@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08100
+PORTVERSION=	0.08101
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ COMMENT=	Extensible and flexible object <-> relational mapper
 RUN_DEPENDS=	p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
 		p5-SQL-Abstract>=1.51:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-SQL-Abstract-Limit>=0.141:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
-		p5-Class-C3-Componentised>=1.0004:${PORTSDIR}/devel/p5-Class-C3-Componentised \
+		p5-Class-C3-Componentised>=1.0005:${PORTSDIR}/devel/p5-Class-C3-Componentised \
 		p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-DBI>=1.40:${PORTSDIR}/databases/p5-DBI \
 		p5-Module-Find>=0:${PORTSDIR}/devel/p5-Module-Find \
@@ -77,7 +77,6 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::PK::Auto::SQLite.3 \
 	DBIx::Class::Relationship.3 \
 	DBIx::Class::Relationship::Base.3 \
-	DBIx::Class::Relationship::BelongsTo.3 \
 	DBIx::Class::ResultClass::HashRefInflator.3 \
 	DBIx::Class::ResultSet.3 \
 	DBIx::Class::ResultSetColumn.3 \
@@ -120,13 +119,12 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Storage::DBI::mysql.3 \
 	DBIx::Class::Storage::Statistics.3 \
 	DBIx::Class::Storage::TxnScopeGuard.3 \
-	DBIx::Class::Test::SQLite.3 \
 	DBIx::Class::UTF8Columns.3 \
 	SQL::Translator::Parser::DBIx::Class.3 \
 	SQL::Translator::Producer::DBIx::Class::File.3
 
 post-extract:
-	@${PERL} -i.bak -ne 'print unless /^(test_requires|auto_install|recommends|configure_requires)/' ${WRKSRC}/Makefile.PL
+	@${PERL} -i.bak -ne 'print unless /^(requires .DBD|test_requires|auto_install|recommends|configure_requires)/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 

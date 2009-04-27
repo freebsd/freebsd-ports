@@ -111,7 +111,6 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/mysql.pm
 %%SITE_PERL%%/DBIx/Class/Storage/Statistics.pm
 %%SITE_PERL%%/DBIx/Class/Storage/TxnScopeGuard.pm
-%%SITE_PERL%%/DBIx/Class/Test/SQLite.pm
 %%SITE_PERL%%/DBIx/Class/UTF8Columns.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBIx/Class.pm
 %%SITE_PERL%%/SQL/Translator/Producer/DBIx/Class/File.pm
@@ -125,7 +124,6 @@ bin/dbicadmin
 @dirrmtry %%SITE_PERL%%/SQL/Translator/Parser
 @dirrmtry %%SITE_PERL%%/SQL/Translator
 @dirrmtry %%SITE_PERL%%/SQL
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Test
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/Role
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/Replicated/Balancer
