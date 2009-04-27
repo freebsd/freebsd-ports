@@ -13,8 +13,8 @@ MASTER_SITES=	http://dists.xneur.ru/release-${PORTVERSION}/tgz/
 MAINTAINER=	ports@logvinov.com
 COMMENT=	GTK frontend for XNeur keyboard layout switcher
 
-BUILD_DEPENDS=	xneur:${PORTSDIR}/russian/xneur
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	xneur:${PORTSDIR}/deskutils/xneur
+RUN_DEPENDS=	xneur:${PORTSDIR}/deskutils/xneur
 
 MAKE_JOBS_SAFE=	yes
 
