@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twinkle
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.xs4all.nl/~mfnboer/twinkle/download/
 
