@@ -73,6 +73,18 @@ bin/soya_editor
 %%PYTHON_SITELIBDIR%%/soya/facecutter.py
 %%PYTHON_SITELIBDIR%%/soya/facecutter.pyc
 %%PYTHON_SITELIBDIR%%/soya/facecutter.pyo
+%%PYTHON_SITELIBDIR%%/soya/gui/__init__.py
+%%PYTHON_SITELIBDIR%%/soya/gui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/soya/gui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/soya/gui/style.py
+%%PYTHON_SITELIBDIR%%/soya/gui/style.pyc
+%%PYTHON_SITELIBDIR%%/soya/gui/style.pyo
+%%PYTHON_SITELIBDIR%%/soya/gui/tree.py
+%%PYTHON_SITELIBDIR%%/soya/gui/tree.pyc
+%%PYTHON_SITELIBDIR%%/soya/gui/tree.pyo
+%%PYTHON_SITELIBDIR%%/soya/gui/widgets.py
+%%PYTHON_SITELIBDIR%%/soya/gui/widgets.pyc
+%%PYTHON_SITELIBDIR%%/soya/gui/widgets.pyo
 %%PYTHON_SITELIBDIR%%/soya/label3d.py
 %%PYTHON_SITELIBDIR%%/soya/label3d.pyc
 %%PYTHON_SITELIBDIR%%/soya/label3d.pyo
@@ -205,6 +217,7 @@ bin/soya_editor
 %%PORTDOCS%%%%EXAMPLESDIR%%/basic-savingfile-cerealizer-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/basic-savingfile-pickle-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/blender-auto-exporter-1.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/bsp-game_skel.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/character-animation-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/character-animation-2.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/character-animation-shadow-cellshading-1.py
@@ -223,6 +236,7 @@ bin/soya_editor
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/blender/knife.blend
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/blender/sword.blend
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/blender/sword.blend1
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/bsp/bsp_demo.bsp
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/images/balazar.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/images/block2.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/images/cloud.png
@@ -261,6 +275,7 @@ bin/soya_editor
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/materials/grass.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/materials/ground.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/materials/knife.data
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/materials/little-dunk.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/materials/metal1.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/materials/snow.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/materials/soustoit.data
@@ -273,6 +288,8 @@ bin/soya_editor
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/models/cube.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/models/earth.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/models/ferme.data
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/models/knife.data
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/models/knife@with_sword_material.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/models/moon.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/models/sun.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/models/sword.data
@@ -287,6 +304,7 @@ bin/soya_editor
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/worlds/cube.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/worlds/earth.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/worlds/ferme.data
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/worlds/knife@with_sword_material.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/worlds/level_tofudemo_static.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/worlds/moon.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/worlds/pyramid.data
@@ -300,6 +318,9 @@ bin/soya_editor
 %%PORTDOCS%%%%EXAMPLESDIR%%/game_skel-3.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/game_skel-4.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/game_skel-5.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/gui-1.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/gui-2.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/gui-background-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/label3D-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/modeling-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/modeling-2.py
@@ -396,7 +417,6 @@ bin/soya_editor
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/static-shadows-1.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/terrain-1.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/terrain-2.jpeg
-%%PORTDOCS%%%%EXAMPLESDIR%%/run_tofudemo.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/sound-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/soya-with-tk-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/speed-1.py
@@ -524,7 +544,10 @@ bin/soya_editor
 %%PORTDOCS%%%%EXAMPLESDIR%%/tofu/demo.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/tofu/regtest.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/traveling-camera-1.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial-tour.sh
 %%PORTDOCS%%%%EXAMPLESDIR%%/widget-1.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/widget-background-1.py
+@dirrm %%PYTHON_SITELIBDIR%%/soya/gui
 @dirrm %%PYTHON_SITELIBDIR%%/soya/editor
 @dirrm %%PYTHON_SITELIBDIR%%/soya/pudding/ext
 @dirrm %%PYTHON_SITELIBDIR%%/soya/pudding/styles
@@ -533,20 +556,6 @@ bin/soya_editor
 @dirrm %%PYTHON_SITELIBDIR%%/soya/tofu
 @dirrm %%PYTHON_SITELIBDIR%%/soya/data
 @dirrm %%PYTHON_SITELIBDIR%%/soya
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/models
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/blender
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/images
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/levels
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/materials
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/animated_models/balazar
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/animated_models
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/ms3d
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/sounds
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/svg
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/worlds
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/results
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tofu/data/levels
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tofu/data/blender
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tofu/data/images
@@ -557,4 +566,18 @@ bin/soya_editor
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tofu/data/worlds
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tofu/data
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tofu
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/results
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/materials
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/blender
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/bsp
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/images
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/levels
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/animated_models/balazar
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/animated_models
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/models
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/ms3d
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/sounds
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/svg
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/worlds
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
