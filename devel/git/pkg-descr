@@ -8,4 +8,4 @@ to e.g. GNU Arch or Monotone (or, in the commercial world, BitKeeper). Every
 GIT working directory is a full-fledged repository with full revision tracking
 capabilities, not dependent on network access to a central server.
 
-WWW: http://git.or.cz/
+WWW: http://git-scm.org/
