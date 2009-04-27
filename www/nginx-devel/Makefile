@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.7.52
+PORTVERSION=	0.7.53
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -245,6 +245,9 @@ PASSENGER_VERSION=	2.2.1
 MASTER_SITES+=	RF/passenger/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
+.if defined(WITH_DEBUG)
+CFLAGS+=	-DPASSENGER_DEBUG
+.endif
 .endif
 
 .if defined(WITH_WWW)
@@ -305,8 +308,12 @@ post-patch:
 		${PATCHDIR}/extra-patch-ngx_http_fancyindex_module.c
 .endif
 .if defined(WITH_PASSENGER_MODULE)
-	@${REINPLACE_CMD} 's!g++!${CXX}!' \
+	@${REINPLACE_CMD} 's!g++!${CXX}!; \
+		s!-DPASSENGER_DEBUG!${CXXFLAGS}!g' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/Rakefile
+	@${REINPLACE_CMD} '376,377d; \
+		s!-lpthread!${PTHREAD_LIBS}!g' \
+		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info.rb
 .endif
 
 do-build:
