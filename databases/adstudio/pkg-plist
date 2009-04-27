@@ -9,11 +9,39 @@ bin/runscript.sh
 %%DATADIR%%/datastudio-48x48.png
 %%DATADIR%%/datastudio.gif
 %%DATADIR%%/datastudio.ico
-%%DATADIR%%/lib/activation.jar
 %%DATADIR%%/lib/ads.jar
+%%DATADIR%%/lib/antlr/stringtemplate.jar
+%%DATADIR%%/lib/apache/apache-batik.jar
+%%DATADIR%%/lib/apache/apache-fop.jar
+%%DATADIR%%/lib/apache/apache-log4j.jar
+%%DATADIR%%/lib/apache/apache-poi-contrib.jar
+%%DATADIR%%/lib/apache/apache-poi-scratchpad.jar
+%%DATADIR%%/lib/apache/apache-poi.jar
+%%DATADIR%%/lib/apache/apache-serializer.jar
+%%DATADIR%%/lib/apache/apache-xalan.jar
+%%DATADIR%%/lib/apache/commons-beanutils.jar
+%%DATADIR%%/lib/apache/commons-codec.jar
+%%DATADIR%%/lib/apache/commons-collections.jar
+%%DATADIR%%/lib/apache/commons-configuration.jar
+%%DATADIR%%/lib/apache/commons-dbcp.jar
+%%DATADIR%%/lib/apache/commons-dbutils.jar
+%%DATADIR%%/lib/apache/commons-email.jar
+%%DATADIR%%/lib/apache/commons-httpclient.jar
+%%DATADIR%%/lib/apache/commons-io.jar
+%%DATADIR%%/lib/apache/commons-lang.jar
+%%DATADIR%%/lib/apache/commons-logging-adapters.jar
+%%DATADIR%%/lib/apache/commons-logging-api.jar
+%%DATADIR%%/lib/apache/commons-logging.jar
+%%DATADIR%%/lib/apache/commons-math.jar
+%%DATADIR%%/lib/apache/commons-net-ftp.jar
+%%DATADIR%%/lib/apache/commons-net.jar
+%%DATADIR%%/lib/apache/commons-primitives.jar
+%%DATADIR%%/lib/apache/commons-transaction.jar
+%%DATADIR%%/lib/apache/commons-xmlgraphics.jar
+%%DATADIR%%/lib/apple/aqua2.jar
 %%DATADIR%%/lib/aqua-lib.jar
-%%DATADIR%%/lib/aqua2.jar
-%%DATADIR%%/lib/aspc.jar
+%%DATADIR%%/lib/aspose/aspc.jar
+%%DATADIR%%/lib/dnsjava/dnsjava.jar
 %%DATADIR%%/lib/drivers/db2java.jar
 %%DATADIR%%/lib/drivers/db2jcc.jar
 %%DATADIR%%/lib/drivers/db2jcc_license_cu.jar
@@ -33,8 +61,14 @@ bin/runscript.sh
 %%DATADIR%%/lib/drivers/util400.jar
 %%DATADIR%%/lib/drivers/xdb.jar
 %%DATADIR%%/lib/drivers/xmlparserv2.jar
-%%DATADIR%%/lib/gluegen-rt.jar
-%%DATADIR%%/lib/infragistics.jar
+%%DATADIR%%/lib/infragistics/infragistics.jar
+%%DATADIR%%/lib/itext/itext.jar
+%%DATADIR%%/lib/java/activation.jar
+%%DATADIR%%/lib/java/mail.jar
+%%DATADIR%%/lib/java/tools.jar
+%%DATADIR%%/lib/jgoodies/looks.jar
+%%DATADIR%%/lib/jgraph/jgraph.jar
+%%DATADIR%%/lib/jgraph/jgraphlayout.jar
 %%DATADIR%%/lib/jide/jide-action.jar
 %%DATADIR%%/lib/jide/jide-beaninfo.jar
 %%DATADIR%%/lib/jide/jide-common.jar
@@ -48,92 +82,66 @@ bin/runscript.sh
 %%DATADIR%%/lib/jinterop/j-interop.jar
 %%DATADIR%%/lib/jinterop/j-interopdeps.jar
 %%DATADIR%%/lib/jinterop/jcifs.jar
-%%DATADIR%%/lib/jna.jar
-%%DATADIR%%/lib/jogl.jar
-%%DATADIR%%/lib/mail.jar
-%%DATADIR%%/lib/nb/eapi/org-netbeans-modules-editor-fold.jar
-%%DATADIR%%/lib/nb/eapi/org-netbeans-modules-editor-lib.jar
-%%DATADIR%%/lib/nb/eapi/org-netbeans-modules-editor-lib2.jar
-%%DATADIR%%/lib/nb/eapi/org-netbeans-modules-editor-plain-lib.jar
-%%DATADIR%%/lib/nb/eapi/org-netbeans-modules-editor-util.jar
-%%DATADIR%%/lib/nb/eapi/org-netbeans-modules-editor.jar
-%%DATADIR%%/lib/nb/gsf/org-netbeans-modules-gsf-api.jar
-%%DATADIR%%/lib/nb/gsf/org-netbeans-modules-gsf.jar
-%%DATADIR%%/lib/nb/gsf/org-netbeans-modules-gsfpath-api.jar
-%%DATADIR%%/lib/nb/gsf/org-netbeans-modules-javascript-editing.jar
-%%DATADIR%%/lib/nb/mlkup/org-netbeans-modules-editor-mimelookup.jar
-%%DATADIR%%/lib/nb/mlkup/org-netbeans-modules-editor-settings.jar
-%%DATADIR%%/lib/nb/msc/core.jar
-%%DATADIR%%/lib/nb/msc/org-netbeans-modules-diff.jar
-%%DATADIR%%/lib/nb/msc/org-netbeans-modules-editor-structure.jar
-%%DATADIR%%/lib/nb/msc/org-netbeans-modules-html-editor-lib.jar
-%%DATADIR%%/lib/nb/msc/org-netbeans-modules-html-editor.jar
-%%DATADIR%%/lib/nb/msc/org-netbeans-modules-html-lexer.jar
-%%DATADIR%%/lib/nb/msc/org-netbeans-modules-languages.jar
-%%DATADIR%%/lib/nb/msc/org-netbeans-modules-lexer.jar
-%%DATADIR%%/lib/nb/msc/org-netbeans-modules-xml-core.jar
-%%DATADIR%%/lib/nb/msc/org-openide-explorer.jar
-%%DATADIR%%/lib/nb/org-mozilla-rhino-aqua.jar
-%%DATADIR%%/lib/nb/org-netbeans-modules-editor-indent.jar
-%%DATADIR%%/lib/nb/org-netbeans-modules-editor-settings-storage.jar
-%%DATADIR%%/lib/nb/pcore/org-openide-actions.jar
-%%DATADIR%%/lib/nb/pcore/org-openide-awt.jar
-%%DATADIR%%/lib/nb/pcore/org-openide-dialogs.jar
-%%DATADIR%%/lib/nb/pcore/org-openide-filesystems.jar
-%%DATADIR%%/lib/nb/pcore/org-openide-loaders.jar
-%%DATADIR%%/lib/nb/pcore/org-openide-nodes.jar
-%%DATADIR%%/lib/nb/pcore/org-openide-options.jar
-%%DATADIR%%/lib/nb/pcore/org-openide-text.jar
-%%DATADIR%%/lib/nb/pcore/org-openide-util.jar
-%%DATADIR%%/lib/nb/pcore/org-openide-windows.jar
-%%DATADIR%%/lib/nb/ql/org-netbeans-api-xml.jar
-%%DATADIR%%/lib/nb/ql/org-netbeans-modules-db-sql-editor.jar
-%%DATADIR%%/lib/nb/ql/org-netbeans-modules-dbapi.jar
-%%DATADIR%%/lib/nb/tc/org-netbeans-core.jar
-%%DATADIR%%/lib/nb/tc/org-netbeans-modules-editor-bracesmatching.jar
-%%DATADIR%%/lib/nb/tc/org-netbeans-modules-editor-codetemplates.jar
-%%DATADIR%%/lib/nb/tc/org-netbeans-modules-editor-completion.jar
-%%DATADIR%%/lib/nb/tc/org-netbeans-modules-editor-errorstripe.jar
-%%DATADIR%%/lib/nb/tc/org-netbeans-modules-options-editor.jar
-%%DATADIR%%/lib/nb/tc/org-netbeans-spi-editor-hints.jar
-%%DATADIR%%/lib/nb/tc/swing-layout.jar
-%%DATADIR%%/lib/nb/v/org-netbeans-modules-editor-errorstripe-api.jar
-%%DATADIR%%/lib/nb/v/org-netbeans-modules-masterfs.jar
-%%DATADIR%%/lib/nb/v/org-netbeans-modules-queries.jar
-%%DATADIR%%/lib/nb/v/org-netbeans-modules-versioning.jar
-%%DATADIR%%/lib/nb/vapi/org-netbeans-api-visual.jar
-%%DATADIR%%/lib/nb/xed/org-netbeans-modules-xml-lexer.jar
-%%DATADIR%%/lib/nb/xed/org-netbeans-modules-xml-text.jar
+%%DATADIR%%/lib/jna/jna.jar
+%%DATADIR%%/lib/jogl/gluegen-rt.jar
+%%DATADIR%%/lib/jogl/jogl.jar
+%%DATADIR%%/lib/quartz/quartz.jar
+%%DATADIR%%/lib/snmp4j/snmp4j.jar
 %%DATADIR%%/lib/ssh2/ssh2.jar
-%%DATADIR%%/lib/stringtemplate.jar
-%%DATADIR%%/lib/tools.jar
+%%DATADIR%%/lib/stndeditor/lib.core.jar
+%%DATADIR%%/lib/stndeditor/lib.htmlcss.jar
+%%DATADIR%%/lib/stndeditor/lib.java.jar
+%%DATADIR%%/lib/stndeditor/lib.javascript.jar
+%%DATADIR%%/lib/stndeditor/lib.xml.jar
+%%DATADIR%%/lib/stndeditor/org-openide-explorer.jar
+%%DATADIR%%/lib/stndeditor/standalone-core.jar
+%%DATADIR%%/lib/stndeditor/standalone-htmlcss.jar
+%%DATADIR%%/lib/stndeditor/standalone-java.jar
+%%DATADIR%%/lib/stndeditor/standalone-javascript.jar
+%%DATADIR%%/lib/stndeditor/standalone-xml.jar
+%%DATADIR%%/lib/svnkit/svnkit-cli.jar
+%%DATADIR%%/lib/svnkit/svnkit-javahl.jar
+%%DATADIR%%/lib/svnkit/svnkit.jar
 %%DATADIR%%/license/ANTLR-LICENSE.txt
-%%DATADIR%%/license/Apache-2.txt
+%%DATADIR%%/license/Apache-Apache-2.txt
 %%DATADIR%%/license/CDDL-LICENSE.txt
 %%DATADIR%%/license/DB2-JDBC-LICENSE.txt
+%%DATADIR%%/license/DNSJava-LICENSE.txt
 %%DATADIR%%/license/EPL-LICENSE.txt
 %%DATADIR%%/license/JGoodies-LICENSE.txt
+%%DATADIR%%/license/JNA-LGPL-License.txt
+%%DATADIR%%/license/JOGL-License.txt
 %%DATADIR%%/license/MySQL-JDBC-LICENSE.txt
 %%DATADIR%%/license/Oracle-JDBC-LICENSE.txt
 %%DATADIR%%/license/Postgresql-JDBC-LICENSE.txt
+%%DATADIR%%/license/Quartz-Apache-2-License.txt
+%%DATADIR%%/license/SNMP4j-Apache-2-License.txt
 %%DATADIR%%/license/TableLayout-LICENSE.txt
+%%DATADIR%%/license/Trilead-SSH-BSD-License.txt
+%%DATADIR%%/license/iText-Mozilla-LICENSE.txt
 %%DATADIR%%/license/jConnect-LICENSE.txt
+%%DATADIR%%/license/jInterop-LGPL-License.txt
 %%DATADIR%%/license/jTDS-LICENSE.txt
 @dirrm %%DATADIR%%/license
+@dirrm %%DATADIR%%/lib/svnkit
+@dirrm %%DATADIR%%/lib/stndeditor
 @dirrm %%DATADIR%%/lib/ssh2
-@dirrm %%DATADIR%%/lib/nb/xed
-@dirrm %%DATADIR%%/lib/nb/vapi
-@dirrm %%DATADIR%%/lib/nb/v
-@dirrm %%DATADIR%%/lib/nb/tc
-@dirrm %%DATADIR%%/lib/nb/ql
-@dirrm %%DATADIR%%/lib/nb/pcore
-@dirrm %%DATADIR%%/lib/nb/msc
-@dirrm %%DATADIR%%/lib/nb/mlkup
-@dirrm %%DATADIR%%/lib/nb/gsf
-@dirrm %%DATADIR%%/lib/nb/eapi
-@dirrm %%DATADIR%%/lib/nb
+@dirrm %%DATADIR%%/lib/snmp4j
+@dirrm %%DATADIR%%/lib/quartz
+@dirrm %%DATADIR%%/lib/jogl
+@dirrm %%DATADIR%%/lib/jna
 @dirrm %%DATADIR%%/lib/jinterop
 @dirrm %%DATADIR%%/lib/jide
+@dirrm %%DATADIR%%/lib/jgraph
+@dirrm %%DATADIR%%/lib/jgoodies
+@dirrm %%DATADIR%%/lib/java
+@dirrm %%DATADIR%%/lib/itext
+@dirrm %%DATADIR%%/lib/infragistics
 @dirrm %%DATADIR%%/lib/drivers
+@dirrm %%DATADIR%%/lib/dnsjava
+@dirrm %%DATADIR%%/lib/aspose
+@dirrm %%DATADIR%%/lib/apple
+@dirrm %%DATADIR%%/lib/apache
+@dirrm %%DATADIR%%/lib/antlr
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%
