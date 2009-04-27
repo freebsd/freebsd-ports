@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.6.2.2
+PORTVERSION=	1.6.2.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -173,6 +173,7 @@ USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	CURLDIR=${LOCALBASE} \
 		NEEDS_LIBICONV=yes \
+		OLD_ICONV=yes \
 		PERL_PATH=${PERL} \
 		LIBMD_SHA1=yes
 MAKE_ARGS+=	prefix="${PREFIX}"
@@ -198,7 +199,7 @@ PLIST_SUB+=	HTMLDOCS=""
 PLIST_SUB+=	HTMLDOCS="@comment "
 .endif
 
-.ifndef (WITHOUT_GUI)
+.if !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
 USE_TK=		84+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 MAN1+=		git-citool.1 \
