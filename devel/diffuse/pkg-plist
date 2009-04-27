@@ -32,7 +32,6 @@ etc/diffuserc
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%OMF%%share/gnome/help/diffuse/C/diffuse.xml
 %%OMF%%@dirrm share/gnome/help/diffuse/C
