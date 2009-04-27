@@ -8,7 +8,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	0.9.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -55,6 +55,13 @@ MAN5=		default.pa.5 pulse-client.conf.5 pulse-daemon.conf.5
 #.if ${ARCH} == "sparc64"
 #BROKEN=		Does not compile on sparc64
 #.endif
+
+.if ( ${OSVERSION} > 800000 && ${OSVERSION} < 800080 ) || \
+    ${OSVERSION} < 702000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_daemon_main.c \
+		${FILESDIR}/extra-patch-src_daemon_start-pulseaudio-x11.in \
+		${FILESDIR}/extra-patch-src_pulse_context.c
+.endif
 
 .if defined(WITH_JACK)
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
