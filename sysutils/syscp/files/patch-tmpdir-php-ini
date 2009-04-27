@@ -1,0 +1,12 @@
+diff -Naur syscp.orig/scripts/cron_tasks.inc.http.15.apache_fcgid.php syscp/scripts/cron_tasks.inc.http.15.apache_fcgid.php
+--- syscp.orig/scripts/cron_tasks.inc.http.15.apache_fcgid.php	2009-04-25 09:35:49.256924260 +0200
++++ syscp/scripts/cron_tasks.inc.http.15.apache_fcgid.php	2009-04-20 23:26:01.233914000 +0200
+@@ -192,7 +192,7 @@
+ 				'PEAR_DIR' => $this->settings['system']['mod_fcgid_peardir'],
+ 				'OPEN_BASEDIR' => $openbasedir,
+ 				'OPEN_BASEDIR_GLOBAL' => $this->settings['system']['phpappendopenbasedir'],
+-				'TMP_DIR' => $tmpdir,
++				'TMP_DIR' => '"' . $tmpdir . '"',
+ 				'CUSTOMER_EMAIL' => $domain['email'],
+ 				'ADMIN_EMAIL' => $admin['email'],
+ 				'DOMAIN' => $domain['domain'],

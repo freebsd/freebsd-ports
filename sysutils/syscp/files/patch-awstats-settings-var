@@ -1,0 +1,15 @@
+diff -Naur syscp.orig/lib/functions.php syscp/lib/functions.php
+--- syscp.orig/lib/functions.php	2009-04-25 10:17:30.581089000 +0200
++++ syscp/lib/functions.php	2009-04-25 10:23:14.180244123 +0200
+@@ -2085,8 +2085,10 @@
+  * @author Berend Dekens
+  */
+ 
+-function createAWStatsVhost($siteDomain, $settings = null)
++function createAWStatsVhost($siteDomain)
+ {
++        global $settings;
++        
+ 	if($settings['system']['mod_fcgid'] != '1')
+ 	{
+ 		$vhosts_file = '  # AWStats statistics' . "\n";

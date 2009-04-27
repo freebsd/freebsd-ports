@@ -94,6 +94,7 @@
 %%WWWDIR%%/lib/configfiles/freebsd.inc.php
 %%WWWDIR%%/lib/configfiles/gentoo.inc.php
 %%WWWDIR%%/lib/configfiles/hardy.inc.php
+%%WWWDIR%%/lib/configfiles/lenny.inc.php
 %%WWWDIR%%/lib/configfiles/suse10.inc.php
 %%WWWDIR%%/lib/configfiles_index.inc.php
 %%WWWDIR%%/lib/cron_init.php
@@ -336,7 +337,6 @@
 %%WWWDIR%%/templates/customer/traffic/traffic_traffic.tpl
 %%WWWDIR%%/templates/footer.tpl
 %%WWWDIR%%/templates/header.tpl
-%%WWWDIR%%/templates/login/dev.tpl
 %%WWWDIR%%/templates/login/fpwd.tpl
 %%WWWDIR%%/templates/login/login.tpl
 %%WWWDIR%%/templates/main.css
@@ -381,6 +381,50 @@
 %%WWWDIR%%/templates/misc/configfiles/debian_etch/pure-ftpd/etc_pure-ftpd_conf_NoAnonymous
 %%WWWDIR%%/templates/misc/configfiles/debian_etch/pure-ftpd/etc_pure-ftpd_conf_PAMAuthentication
 %%WWWDIR%%/templates/misc/configfiles/debian_etch/pure-ftpd/etc_pure-ftpd_db_mysql.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_etch/xinetd/etc_xinet.d_syscp
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/awstats/etc_apache_vhosts_05_awstats.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/awstats/etc_awstats_awstats.model.conf.syscp
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/awstats/etc_awstats_awstats.model_log_sql.conf.syscp
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/awstats/etc_cron.d_awstats
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/awstats/etc_cron.d_awstats_log_sql
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/awstats/etc_lighttpd_syscp-awstats.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/courier/etc_courier_authdaemonrc
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/courier/etc_courier_authmysqlrc
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/cron/etc_cron.d_syscp
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/dkim/dkim-filter.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/dovecot/etc_dovecot_dovecot-sql.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/dovecot/etc_dovecot_dovecot.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/exim4/etc_exim4_conf.d_acl_30_exim4-config_check_rcpt.rul
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/exim4/etc_exim4_conf.d_auth_30_syscp-config
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/exim4/etc_exim4_conf.d_main_10_syscp-config_options
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/exim4/etc_exim4_conf.d_router_180_syscp-config
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/exim4/etc_exim4_conf.d_transport_30_syscp-config
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/libnss/etc_nss-mysql-root.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/libnss/etc_nss-mysql.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/libnss/etc_nsswitch.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/lighttpd/etc_lighttpd.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/postfix/etc_postfix_main.cf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/postfix/etc_postfix_master.cf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/postfix/etc_postfix_mysql-virtual_alias_maps.cf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/postfix/etc_postfix_sasl_smtpd.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/powerdns/etc_powerdns_pdns-syscp.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/powerdns/etc_powerdns_pdns.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/proftpd/etc_proftpd_modules.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/proftpd/etc_proftpd_proftpd.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/proftpd/etc_proftpd_sql.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_default_pure-ftpd-common
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf_Bind
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf_ChrootEveryone
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf_CustomerProof
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf_MaxIdleTime
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf_MinUID
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf_MySQLConfigFile
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf_NoAnonymous
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf_PAMAuthentication
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_db_mysql.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_lenny/xinetd/etc_xinet.d_syscp
 %%WWWDIR%%/templates/misc/configfiles/freebsd_release/cron/cron_syscp
 %%WWWDIR%%/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot-sql.conf
 %%WWWDIR%%/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot.conf
@@ -421,6 +465,7 @@
 %%WWWDIR%%/templates/misc/configfiles/gentoo/postfix/etc_sasl2_smtpd.conf
 %%WWWDIR%%/templates/misc/configfiles/gentoo/postfix/mysql-virtual_mailbox_limit_maps.cf
 %%WWWDIR%%/templates/misc/configfiles/gentoo/proftpd/etc_proftpd_proftpd.conf
+%%WWWDIR%%/templates/misc/configfiles/gentoo/xinetd/etc_xinet.d_syscp
 %%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/awstats/etc_apache_vhosts_05_awstats.conf
 %%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/awstats/etc_awstats_awstats.model.conf.syscp
 %%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/awstats/etc_awstats_awstats.model_log_sql.conf.syscp
@@ -479,6 +524,7 @@
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_hardy/pure-ftpd/etc_pure-ftpd_conf_NoAnonymous
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_hardy/pure-ftpd/etc_pure-ftpd_conf_PAMAuthentication
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_hardy/pure-ftpd/etc_pure-ftpd_db_mysql.conf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_hardy/xinetd/etc_xinet.d_syscp
 %%WWWDIR%%/templates/misc/configurehint.tpl
 %%WWWDIR%%/templates/misc/error.tpl
 %%WWWDIR%%/templates/misc/question_yesno.tpl
@@ -486,6 +532,7 @@
 %%WWWDIR%%/templates/navigation_element.tpl
 %%WWWDIR%%/templates/navigation_link.tpl
 @dirrm %%WWWDIR%%/templates/misc/standardcustomer
+@dirrm %%WWWDIR%%/templates/misc/configfiles/ubuntu_hardy/xinetd
 @dirrm %%WWWDIR%%/templates/misc/configfiles/ubuntu_hardy/pure-ftpd
 @dirrm %%WWWDIR%%/templates/misc/configfiles/ubuntu_hardy/proftpd
 @dirrm %%WWWDIR%%/templates/misc/configfiles/ubuntu_hardy/powerdns
@@ -507,6 +554,7 @@
 @dirrm %%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/courier
 @dirrm %%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/awstats
 @dirrm %%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0
+@dirrm %%WWWDIR%%/templates/misc/configfiles/gentoo/xinetd
 @dirrm %%WWWDIR%%/templates/misc/configfiles/gentoo/proftpd
 @dirrm %%WWWDIR%%/templates/misc/configfiles/gentoo/postfix
 @dirrm %%WWWDIR%%/templates/misc/configfiles/gentoo/lighttpd
@@ -523,6 +571,22 @@
 @dirrm %%WWWDIR%%/templates/misc/configfiles/freebsd_release/dovecot
 @dirrm %%WWWDIR%%/templates/misc/configfiles/freebsd_release/cron
 @dirrm %%WWWDIR%%/templates/misc/configfiles/freebsd_release
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_lenny/xinetd
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_lenny/pure-ftpd
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_lenny/proftpd
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_lenny/powerdns
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_lenny/postfix
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_lenny/lighttpd
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_lenny/libnss
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_lenny/exim4
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_lenny/dovecot
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_lenny/dkim
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_lenny/cron
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_lenny/courier
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_lenny/awstats
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_lenny/apache2
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_lenny
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_etch/xinetd
 @dirrm %%WWWDIR%%/templates/misc/configfiles/debian_etch/pure-ftpd
 @dirrm %%WWWDIR%%/templates/misc/configfiles/debian_etch/proftpd
 @dirrm %%WWWDIR%%/templates/misc/configfiles/debian_etch/powerdns
