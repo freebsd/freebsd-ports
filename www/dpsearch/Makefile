@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dpsearch
-PORTVERSION=	4.51
+PORTVERSION=	4.52
 CATEGORIES=	www
 MASTER_SITES=	http://dataparksearch.googlecode.com/files/ \
 		http://www.dataparksearch.org/
