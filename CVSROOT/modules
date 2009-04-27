@@ -1765,7 +1765,7 @@ cpige                           ports/audio/cpige
 cplay                           ports/audio/cplay
 cpmemu                          ports/emulators/cpmemu
 cpmtools                        ports/emulators/cpmtools
-cpmtools27                      ports/emulators/cpmtools27
+cpmtools2                       ports/emulators/cpmtools2
 cpp-xmms2                       ports/audio/cpp-xmms2
 cpp2latex                       ports/print/cpp2latex
 cppadvio                        ports/devel/cppadvio
@@ -3283,6 +3283,7 @@ firefox-devel                   ports/www/firefox-devel
 firefox-i18n                    ports/www/firefox-i18n
 firefox-remote                  ports/www/firefox-remote
 firefox3                        ports/www/firefox3
+firefox3-devel                  ports/www/firefox3-devel
 firefox3-i18n                   ports/www/firefox3-i18n
 firemime                        ports/mail/firemime
 firepay                         ports/mail/firepay
@@ -19278,6 +19279,7 @@ qfaxreader                      ports/comms/qfaxreader
 qfsm                            ports/cad/qfsm
 qgfe                            ports/math/qgfe
 qgis                            ports/graphics/qgis
+qgit                            ports/devel/qgit
 qglviewer                       ports/graphics/qglviewer
 qgmailnotifier                  ports/mail/qgmailnotifier
 qgo                             ports/games/qgo
@@ -23599,6 +23601,7 @@ xpi-gbutts                      ports/www/xpi-gbutts
 xpi-gmail-manager               ports/www/xpi-gmail-manager
 xpi-google-notebook             ports/www/xpi-google-notebook
 xpi-googlevideoonwooztalk       ports/www/xpi-googlevideoonwooztalk
+xpi-grab_and_drag               ports/www/xpi-grab_and_drag
 xpi-greasemonkey                ports/www/xpi-greasemonkey
 xpi-hit-a-hint                  ports/www/xpi-hit-a-hint
 xpi-httpfox                     ports/www/xpi-httpfox
@@ -23609,13 +23612,16 @@ xpi-imglikeopera                ports/www/xpi-imglikeopera
 xpi-infolister                  ports/www/xpi-infolister
 xpi-informenter                 ports/www/xpi-informenter
 xpi-inline-google-definitions   ports/www/xpi-inline-google-definitions
+xpi-it_s_all_text               ports/www/xpi-it_s_all_text
 xpi-jiwaonwooztalk              ports/www/xpi-jiwaonwooztalk
 xpi-joga                        ports/www/xpi-joga
 xpi-jsview                      ports/www/xpi-jsview
+xpi-jv                          ports/www/xpi-jv
 xpi-lastfmonwooztalk            ports/www/xpi-lastfmonwooztalk
 xpi-leechblock                  ports/www/xpi-leechblock
 xpi-linkification               ports/www/xpi-linkification
 xpi-live_http_headers           ports/www/xpi-live_http_headers
+xpi-live_pagerank               ports/www/xpi-live_pagerank
 xpi-locale-switcher             ports/www/xpi-locale-switcher
 xpi-menueditor                  ports/www/xpi-menueditor
 xpi-mldonkey                    ports/www/xpi-mldonkey
@@ -23647,6 +23653,7 @@ xpi-splash                      ports/www/xpi-splash
 xpi-statusbarclock              ports/www/xpi-statusbarclock
 xpi-stumbleupon                 ports/www/xpi-stumbleupon
 xpi-stylish                     ports/www/xpi-stylish
+xpi-table2clipboard             ports/www/xpi-table2clipboard
 xpi-tabletools                  ports/www/xpi-tabletools
 xpi-tabmixplus                  ports/www/xpi-tabmixplus
 xpi-togglewordwrap              ports/www/xpi-togglewordwrap
@@ -23654,6 +23661,7 @@ xpi-torbutton                   ports/www/xpi-torbutton
 xpi-twitterfox                  ports/www/xpi-twitterfox
 xpi-unplug                      ports/www/xpi-unplug
 xpi-urllink                     ports/www/xpi-urllink
+xpi-user_agent_switcher         ports/www/xpi-user_agent_switcher
 xpi-videodownloader             ports/www/xpi-videodownloader
 xpi-vimeoonwooztalk             ports/www/xpi-vimeoonwooztalk
 xpi-vimperator                  ports/www/xpi-vimperator
