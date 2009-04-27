@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Base
-PORTVERSION=	0.55
+PORTVERSION=	0.58
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Test::Base - A Data Driven Testing Framework
 
-RUN_DEPENDS=	p5-Spiffy>=0.30:${PORTSDIR}/devel/p5-Spiffy
+RUN_DEPENDS=	p5-Spiffy>=0.30:${PORTSDIR}/devel/p5-Spiffy \
+		p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
