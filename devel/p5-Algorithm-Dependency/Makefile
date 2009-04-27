@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Algorithm-Dependency
-PORTVERSION=	1.108
+PORTVERSION=	1.110
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,9 +16,7 @@ COMMENT=	Base class for implementing various dependency trees
 
 RUN_DEPENDS=	p5-Params-Util>=0.31:${PORTSDIR}/devel/p5-Params-Util
 BUILD_DEPENDS=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	p5-Test-ClassAPI>=0.6:${PORTSDIR}/devel/p5-Test-ClassAPI \
-		p5-PathTools>=3.29:${PORTSDIR}/devel/p5-PathTools \
-		p5-Test-Simple>=0.47:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS+=	p5-Test-ClassAPI>=0.6:${PORTSDIR}/devel/p5-Test-ClassAPI
 
 MAN3=	Algorithm::Dependency.3 \
 	Algorithm::Dependency::Item.3 \
@@ -31,4 +29,10 @@ MAN3=	Algorithm::Dependency.3 \
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500801
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.11:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>
