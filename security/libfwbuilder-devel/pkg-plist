@@ -35,7 +35,6 @@ include/fwb-3/fwbuilder/Inet6AddrMask.h
 include/fwb-3/fwbuilder/InetAddr.h
 include/fwb-3/fwbuilder/InetAddrMask.h
 include/fwb-3/fwbuilder/Interface.h
-include/fwb-3/fwbuilder/InterfacePolicy.h
 include/fwb-3/fwbuilder/Interval.h
 include/fwb-3/fwbuilder/IntervalGroup.h
 include/fwb-3/fwbuilder/InterfaceData.h
@@ -47,6 +46,7 @@ include/fwb-3/fwbuilder/NAT.h
 include/fwb-3/fwbuilder/Network.h
 include/fwb-3/fwbuilder/NetworkIPv6.h
 include/fwb-3/fwbuilder/ObjectGroup.h
+include/fwb-3/fwbuilder/ObjectMatcher.h
 include/fwb-3/fwbuilder/Policy.h
 include/fwb-3/fwbuilder/Pool.h
 include/fwb-3/fwbuilder/Resources.h
@@ -71,10 +71,10 @@ include/fwb-3/fwbuilder/libfwbuilder-config.h
 include/fwb-3/fwbuilder/libfwbuilder-version.h
 include/fwb-3/fwbuilder/physAddress.h
 include/fwb-3/fwbuilder/snmp.h
-lib/libfwcompiler.so.8.1.0
+lib/libfwcompiler.so.8.2.0
 lib/libfwcompiler.so.8
 lib/libfwcompiler.so
-lib/libfwbuilder.so.8.1.0
+lib/libfwbuilder.so.8.2.0
 lib/libfwbuilder.so.8
 lib/libfwbuilder.so
 share/libfwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.9.5.xslt
