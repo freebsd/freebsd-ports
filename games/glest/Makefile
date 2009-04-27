@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glest
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -77,7 +77,7 @@ do-build:
 do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/license.txt ${DOCSDIR}/license-game.txt
+	${INSTALL_DATA} ${WRKSRC}/docs/code_license.txt ${DOCSDIR}/code_license.txt
 .endif
 	@${MKDIR} ${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/glest ${DATADIR}
