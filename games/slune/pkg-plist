@@ -296,6 +296,7 @@ bin/slune
 %%DATADIR%%/worlds/level-bowling-3.data
 %%DATADIR%%/worlds/level-canion-race-1.data
 %%DATADIR%%/worlds/level-canion-race-2.data
+%%DATADIR%%/worlds/level-canion-race-3.data
 %%DATADIR%%/worlds/level-chapakalake-race-1.data
 %%DATADIR%%/worlds/level-crashfunkel-duel.data
 %%DATADIR%%/worlds/level-crashfunkel-race-1.data
@@ -403,6 +404,7 @@ bin/slune
 %%DATADIR%%/locale/it/LC_MESSAGES/slune.po
 %%DATADIR%%/locale/nb/LC_MESSAGES/slune.mo
 %%DATADIR%%/locale/nb/LC_MESSAGES/slune.po
+%%DATADIR%%/locale/pt/LC_MESSAGES/slune.po
 %%DATADIR%%/locale/sl/LC_MESSAGES/slune.mo
 %%DATADIR%%/locale/sl/LC_MESSAGES/slune.po
 %%DATADIR%%/locale/sv/LC_MESSAGES/slune.mo
@@ -426,6 +428,8 @@ bin/slune
 @dirrm %%DATADIR%%/locale/it
 @dirrm %%DATADIR%%/locale/nb/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/nb
+@dirrm %%DATADIR%%/locale/pt/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/pt
 @dirrm %%DATADIR%%/locale/sl/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/sl
 @dirrm %%DATADIR%%/locale/sv/LC_MESSAGES
