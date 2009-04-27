@@ -94,7 +94,6 @@
 %%SITE_PERL%%/Mail/Box/Tie/ARRAY.pod
 %%SITE_PERL%%/Mail/Box/Tie/HASH.pm
 %%SITE_PERL%%/Mail/Box/Tie/HASH.pod
-%%SITE_PERL%%/Mail/Makefile.PL
 %%SITE_PERL%%/Mail/Message.pm
 %%SITE_PERL%%/Mail/Message.pod
 %%SITE_PERL%%/Mail/Message/Body.pm
