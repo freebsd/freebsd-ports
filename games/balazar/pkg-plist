@@ -482,9 +482,9 @@ bin/balazar
 %%DATADIR%%/sounds/strike3.wav
 %%DATADIR%%/sounds/strike4.wav
 %%DATADIR%%/sounds/tambour.wav
-%%DATADIR%%/sounds/voice_"Un monde étrange s'ouvrait.ogg
+%%DATADIR%%/sounds/voice_"Un monde Ã©trange s'ouvrait.ogg
 %%DATADIR%%/sounds/voice_Appuis sur la touche.ogg
-%%DATADIR%%/sounds/voice_Cela, je l'écrirai ce.ogg
+%%DATADIR%%/sounds/voice_Cela, je l'Ã©crirai ce.ogg
 %%DATADIR%%/sounds/voice_Utilise la touche ALT.ogg
 %%DATADIR%%/sounds/voice_Utilise la touche SHIFT.ogg
 %%DATADIR%%/sounds/voice_Utilise les touches HAUT.ogg
