@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Coro
-PORTVERSION=	5.13
+PORTVERSION=	5.131
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -17,6 +17,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Coroutine process abstraction for perl
 
 RUN_DEPENDS=	p5-Event>=0.89:${PORTSDIR}/devel/p5-Event \
+		p5-Guard>=0.5:${PORTSDIR}/devel/p5-Guard \
 		p5-AnyEvent>=2.5.1:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-EV>=3.53:${PORTSDIR}/devel/p5-EV \
 		p5-Storable>=2.15:${PORTSDIR}/devel/p5-Storable \
