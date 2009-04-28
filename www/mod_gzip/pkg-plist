@@ -1,20 +1,18 @@
-libexec/apache/mod_gzip.so
+%%APACHEMODDIR%%/mod_gzip.so
 @exec %D/sbin/apxs -e -A -n gzip %f
 @unexec %D/sbin/apxs -e -A -n gzip %f
-%%PORTDOCS%%share/doc/mod_gzip/browser.htm
-%%PORTDOCS%%share/doc/mod_gzip/cache.htm
-%%PORTDOCS%%share/doc/mod_gzip/config.htm
-%%PORTDOCS%%share/doc/mod_gzip/encoding.htm
-%%PORTDOCS%%share/doc/mod_gzip/enhancements.htm
-%%PORTDOCS%%share/doc/mod_gzip/extern.gif
-%%PORTDOCS%%share/doc/mod_gzip/firewalls.htm
-%%PORTDOCS%%share/doc/mod_gzip/index.htm
-%%PORTDOCS%%share/doc/mod_gzip/links.htm
-%%PORTDOCS%%share/doc/mod_gzip/mod_gzip_logo.gif
-%%PORTDOCS%%share/doc/mod_gzip/status.htm
-%%PORTDOCS%%share/doc/mod_gzip/valid-css.png
-%%PORTDOCS%%share/doc/mod_gzip/valid-xhtml11.png
-%%PORTDOCS%%share/doc/mod_gzip/versions.htm
-share/examples/mod_gzip/mod_gzip.conf.sample
-@dirrm share/examples/mod_gzip
-%%PORTDOCS%%@dirrm share/doc/mod_gzip
+%%PORTDOCS%%%%DOCSDIR%%/browser.htm
+%%PORTDOCS%%%%DOCSDIR%%/cache.htm
+%%PORTDOCS%%%%DOCSDIR%%/config.htm
+%%PORTDOCS%%%%DOCSDIR%%/encoding.htm
+%%PORTDOCS%%%%DOCSDIR%%/enhancements.htm
+%%PORTDOCS%%%%DOCSDIR%%/extern.gif
+%%PORTDOCS%%%%DOCSDIR%%/firewalls.htm
+%%PORTDOCS%%%%DOCSDIR%%/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/links.htm
+%%PORTDOCS%%%%DOCSDIR%%/mod_gzip_logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/status.htm
+%%PORTDOCS%%%%DOCSDIR%%/valid-css.png
+%%PORTDOCS%%%%DOCSDIR%%/valid-xhtml11.png
+%%PORTDOCS%%%%DOCSDIR%%/versions.htm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
