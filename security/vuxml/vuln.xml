@@ -12283,7 +12283,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>pdftohtml</name>
-	<range><gt>0</gt></range>
+	<range><lt>0.39_3</lt></range>
       </package>
       <package>
 	<name>poppler</name>
@@ -12311,7 +12311,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-07-30</discovery>
       <entry>2007-07-31</entry>
-      <modified>2007-09-11</modified>
+      <modified>2009-04-29</modified>
     </dates>
   </vuln>
 
