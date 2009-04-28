@@ -1477,7 +1477,7 @@ chord2html                      ports/misc/chord2html
 chordpack                       ports/audio/chordpack
 chpasswd                        ports/www/chpasswd
 chpp                            ports/textproc/chpp
-chromium                        ports/games/chromium
+chromium-bsu                    ports/games/chromium-bsu
 chroot_safe                     ports/security/chroot_safe
 chrootuid                       ports/security/chrootuid
 chryzodus                       ports/math/chryzodus
@@ -2248,6 +2248,7 @@ dirmngr                         ports/security/dirmngr
 dirvish                         ports/sysutils/dirvish
 discid                          ports/audio/discid
 disco                           ports/net-mgmt/disco
+discount                        ports/textproc/discount
 diskcheckd                      ports/sysutils/diskcheckd
 diskprep                        ports/sysutils/diskprep
 diskscrub                       ports/sysutils/diskscrub
@@ -3951,6 +3952,7 @@ gdtclft                         ports/graphics/gdtclft
 gdvrecv                         ports/multimedia/gdvrecv
 geany                           ports/devel/geany
 gearmand                        ports/devel/gearmand
+gecko-mediaplayer               ports/www/gecko-mediaplayer
 gecko-sharp10                   ports/www/gecko-sharp10
 gecko-sharp20                   ports/www/gecko-sharp20
 geda                            ports/cad/geda
@@ -4626,6 +4628,7 @@ grass                           ports/databases/grass
 graveman                        ports/sysutils/graveman
 grc                             ports/misc/grc
 grc-aspell                      ports/textproc/grc-aspell
+grdc-applet                     ports/net/grdc-applet
 grdesktop                       ports/net/grdesktop
 greed                           ports/games/greed
 gregarius                       ports/www/gregarius
@@ -5848,6 +5851,7 @@ ja-p5-Text-Kakasi               ports/japanese/p5-Text-Kakasi
 ja-p5-Text-MeCab                ports/japanese/p5-Text-MeCab
 ja-p5-Unicode-Japanese          ports/japanese/p5-Unicode-Japanese
 ja-p5-WWW-2ch                   ports/japanese/p5-WWW-2ch
+ja-p5-WWW-MobileCarrierJP       ports/japanese/p5-WWW-MobileCarrierJP
 ja-p5-acme-lou                  ports/japanese/p5-Acme-Lou
 ja-p5-date-japanese-era         ports/japanese/p5-Date-Japanese-Era
 ja-p5-date-japanese-holiday     ports/japanese/p5-Date-Japanese-Holiday
@@ -5872,6 +5876,7 @@ ja-p5-text-kakasi               ports/japanese/p5-Text-Kakasi
 ja-p5-text-mecab                ports/japanese/p5-Text-MeCab
 ja-p5-unicode-japanese          ports/japanese/p5-Unicode-Japanese
 ja-p5-www-2ch                   ports/japanese/p5-WWW-2ch
+ja-p5-www-mobilecarrierjp       ports/japanese/p5-WWW-MobileCarrierJP
 ja-paledit                      ports/japanese/paledit
 ja-pejv-fpw                     ports/japanese/pejv-fpw
 ja-perl5                        ports/japanese/perl5
@@ -6827,6 +6832,7 @@ kroc                            ports/lang/kroc
 krosswordplayer                 ports/games/krosswordplayer
 krss                            ports/deskutils/krss
 krusader                        ports/x11-fm/krusader
+krusader2                       ports/x11-fm/krusader2
 kscope                          ports/devel/kscope
 kseg                            ports/math/kseg
 ksh93                           ports/shells/ksh93
@@ -18950,6 +18956,7 @@ py-radix                        ports/net/py-radix
 py-rbtree                       ports/devel/py-rbtree
 py-rdflib                       ports/textproc/py-rdflib
 py-recaptcha                    ports/www/py-recaptcha
+py-relatorio                    ports/print/py-relatorio
 py-repl                         ports/devel/py-repl
 py-reportlab                    ports/print/py-reportlab
 py-reportlab2                   ports/print/py-reportlab2
@@ -19018,6 +19025,7 @@ py-sqldict                      ports/databases/py-SQLDict
 py-sqlite3                      ports/databases/py-sqlite3
 py-sqlobject                    ports/databases/py-sqlobject
 py-sqlrelay                     ports/databases/py-sqlrelay
+py-sslstrip                     ports/security/py-sslstrip
 py-statgrab                     ports/devel/py-statgrab
 py-stripogram                   ports/textproc/py-stripogram
 py-subversion                   ports/devel/py-subversion
@@ -19874,7 +19882,6 @@ ru-xcode                        ports/russian/xcode
 ru-xcyrBGR                      ports/russian/xcyrBGR
 ru-xcyrbgr                      ports/russian/xcyrBGR
 ru-xmms                         ports/russian/xmms
-ru-xneur                        ports/russian/xneur
 ru-xpi-tabextensions            ports/russian/xpi-tabextensions
 ru-xruskb                       ports/russian/xruskb
 rubber                          ports/textproc/rubber
@@ -23511,6 +23518,7 @@ xnc                             ports/x11-fm/xnc
 xnecview                        ports/comms/xnecview
 xnee                            ports/x11/xnee
 xneko                           ports/games/xneko
+xneur                           ports/deskutils/xneur
 xnodecor                        ports/x11/xnodecor
 xnview                          ports/graphics/xnview
 xoct                            ports/games/xoct
