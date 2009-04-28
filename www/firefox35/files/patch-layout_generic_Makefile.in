@@ -1,5 +1,5 @@
---- layout/generic/Makefile.in.orig	2008-06-19 12:29:06.000000000 -0500
-+++ layout/generic/Makefile.in	2008-06-19 12:30:04.000000000 -0500
+--- layout/generic/Makefile.in.orig	2009-04-28 11:16:16.059107000 +0000
++++ layout/generic/Makefile.in	2009-04-28 11:16:41.171110062 +0000
 @@ -188,9 +188,10 @@
  		-I$(srcdir)/../../content/base/src \
  		-I$(srcdir)/../../content/html/content/src \
