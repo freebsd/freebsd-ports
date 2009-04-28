@@ -274,6 +274,7 @@
     SUBDIR += kdiff3
     SUBDIR += kmflcomp
     SUBDIR += ku-aspell
+    SUBDIR += ky-aspell
     SUBDIR += l2a
     SUBDIR += la-aspell
     SUBDIR += lacheck
