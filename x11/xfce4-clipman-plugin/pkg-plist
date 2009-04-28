@@ -1,4 +1,23 @@
-libexec/xfce4/panel-plugins/xfce4-clipman-plugin
+bin/xfce4-clipman-plugin
+bin/xfce4-popup-clipman
+etc/xdg/xfce4/panel/xfce4-clipman-actions.xml
+etc/xdg/autostart/xfce4-clipman-plugin-autostart.desktop
+share/applications/xfce4-clipman-plugin.desktop
+share/xfce4/doc/C/images/clipman-action-dialog.png
+share/xfce4/doc/C/images/clipman-menu.png
+share/xfce4/doc/C/images/clipman-settings-actions.png
+share/xfce4/doc/C/images/clipman-settings-general.png
+share/xfce4/doc/C/xfce4-clipman-plugin.html
+share/xfce4/doc/gl/images/clipman-action-dialog.png
+share/xfce4/doc/gl/images/clipman-menu.png
+share/xfce4/doc/gl/images/clipman-settings-actions.png
+share/xfce4/doc/gl/images/clipman-settings-general.png
+share/xfce4/doc/gl/xfce4-clipman-plugin.html
+share/icons/hicolor/16x16/apps/xfce4-clipman-plugin.png
+share/icons/hicolor/22x22/apps/xfce4-clipman-plugin.png
+share/icons/hicolor/24x24/apps/xfce4-clipman-plugin.png
+share/icons/hicolor/32x32/apps/xfce4-clipman-plugin.png
+share/icons/hicolor/scalable/apps/xfce4-clipman-plugin.svg
 share/locale/ar/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-clipman-plugin.mo
@@ -9,6 +28,7 @@ share/locale/en_GB/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/es/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/eu/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/fi/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/gl/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-clipman-plugin.mo
@@ -22,13 +42,18 @@ share/locale/pl/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/pt/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/sq/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-clipman-plugin.mo
-share/xfce4/panel-plugins/clipman.desktop
+share/xfce4/panel-plugins/xfce4-clipman-plugin.desktop
+@dirrmtry share/xfce4/doc/gl/images
+@dirrmtry share/xfce4/doc/gl
 @dirrmtry share/xfce4/panel-plugins
 @dirrmtry share/xfce4
-@dirrmtry libexec/xfce4/panel-plugins
-@dirrmtry libexec/xfce4
+@dirrmtry etc/xdg/xfce4/panel
+@dirrmtry etc/xdg/xfce4
+@dirrmtry etc/xdg/autostart
+@dirrmtry etc/xdg
