@@ -7,6 +7,7 @@
 
 PORTNAME=	soya3d
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://download.gna.org/soya/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
