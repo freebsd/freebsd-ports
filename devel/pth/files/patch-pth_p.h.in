@@ -1,13 +1,19 @@
---- pth_p.h.in.orig	2009-04-12 21:27:26.000000000 +0300
-+++ pth_p.h.in	2009-04-12 21:38:56.000000000 +0300
-@@ -32,7 +32,10 @@
+--- pth_p.h.in.orig	2006-06-08 20:54:03.000000000 +0300
++++ pth_p.h.in	2009-04-28 23:06:45.000000000 +0300
+@@ -32,7 +32,15 @@
  #include <stdarg.h>
  #include <string.h>
  #include <setjmp.h>
-+#if !(defined(__FreeBSD__) && __FreeBSD_version >= 800070)
-+/* See http://www.freebsd.org/cgi/query-pr.cgi?pr=132828 */
- #include <signal.h>
-+#endif /* FreeBSD */
+-#include <signal.h>
++#ifdef __FreeBSD__
++# include <osreldate.h>
++# if __FreeBSD_version < 800070
++   /* See http://www.freebsd.org/cgi/query-pr.cgi?pr=132828 */
++#  include <signal.h>
++# endif /* __FreeBSD_version */
++#else /* __FreeBSD__ */
++# include <signal.h>
++#endif /* __FreeBSD__ */
  #include <unistd.h>
  #include <fcntl.h>
  #include <errno.h>
