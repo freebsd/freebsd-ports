@@ -7,6 +7,7 @@
 
 PORTNAME=	Workflow
 PORTVERSION=	1.32
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -66,6 +67,7 @@ MAN3=	Workflow.3 \
 	Workflow::Validator::InEnumeratedType.3 \
 	Workflow::Validator::MatchesDateFormat.3
 
+
 .if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
 .endif
@@ -75,6 +77,9 @@ PORTDATA=	*
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
+
+post-patch:
+	${RM} ${WRKSRC}/lib/${PORTNAME}/Factory.pm.orig
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
