@@ -1,0 +1,5 @@
+This module implements so-called "guards". A guard is something (usually
+an object) that "guards" a resource, ensuring that it is cleaned up when
+expected.
+
+WWW: http://search.cpan.org/dist/Guard/
