@@ -9,7 +9,7 @@ PORTNAME=	${DICT}-aspell
 DISTVERSION=	6-${DICT}-0.02-0
 CATEGORIES=	textproc
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aspell Ancient Greek dictionary
 
 DICT=	 	grc
