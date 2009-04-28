@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Squatting
-PORTVERSION=	0.52
+PORTVERSION=	0.60
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/B/BE/BEPPU
@@ -29,11 +29,16 @@ MAN1=	squatting.1
 MAN3=	Squatting.3 \
 	Squatting::Controller.3 \
 	Squatting::Cookbook.3 \
+	Squatting::H.3 \
 	Squatting::Mapper.3 \
 	Squatting::On::Catalyst.3 \
 	Squatting::On::CGI.3 \
 	Squatting::On::Continuity.3 \
+	Squatting::On::MP13.3 \
+	Squatting::On::MP20.3 \
 	Squatting::View.3 \
-	Squatting::With::AccessTrace.3
+	Squatting::With::AccessTrace.3 \
+	Squatting::With::Coro::Debug.3 \
+	Squatting::With::Log.3
 
 .include <bsd.port.mk>
