@@ -29,16 +29,12 @@ DESKTOP_ENTRIES="Kompozer" "${COMMENT}" \
 		"${PREFIX}/lib/kompozer/icons/mozicon50.xpm" "${PORTNAME}" \
 		"Application;Network;" true
 
+NOT_FOR_ARCHS=	ia64 sparc64
+NOT_FOR_ARCHS_REASON_ia64=	does not build
+NOT_FOR_ARCHS_REASON_sparc64=	crashes in font selection
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozilla/Makefile.common"
-
-.if ${ARCH} == "ia64"
-BROKEN=		does not build
-.endif
-
-.if ${ARCH}=="sparc64" && ${OSVERSION} < 601101
-IGNORE=		core dumps on ${ARCH}, need kern.osreldate>=601101
-.endif
 
 post-patch:
 	@${RM} -f ${WRKSRC}/config.status ${WRKSRC}/config.cache
