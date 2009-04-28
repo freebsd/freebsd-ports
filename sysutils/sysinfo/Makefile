@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sysinfo
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://danger.rulez.sk/projects/sysinfo/
