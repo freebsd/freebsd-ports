@@ -1,14 +1,14 @@
---- metalink_editor.py.orig	2007-07-29 05:58:54.000000000 -0300
-+++ metalink_editor.py	2008-08-10 08:40:49.000000000 -0300
+--- metalink_editor.py.orig	2009-04-28 08:57:40.000000000 -0300
++++ metalink_editor.py	2009-04-28 08:58:27.000000000 -0300
 @@ -18,7 +18,8 @@
  
- ####import wxversion
- ####wxversion.ensureMinimal("2.6")
+ import wxversion
+ wxversion.ensureMinimal("2.6")
 -import wx, metalink, sys, os.path
 +import wx, sys, os.path
 +from Metalink_editor import metalink
  
- current_version = "1.1.0"
+ current_version = "1.2.0"
  
 @@ -28,7 +29,7 @@
  
