@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Continuity
-PORTVERSION=	0.997
+PORTVERSION=	0.998
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AW/AWWAIID
@@ -25,7 +25,9 @@ PERL_CONFIGURE=	5.8.0+
 MAN3=	Continuity.3 \
 	Continuity::Adapt::FCGI.3 \
 	Continuity::Adapt::HttpDaemon.3 \
+	Continuity::Inspector.3 \
 	Continuity::Mapper.3 \
-	Continuity::Request.3
+	Continuity::Request.3 \
+	Continuity::RequestCallbacks.3
 
 .include <bsd.port.mk>
