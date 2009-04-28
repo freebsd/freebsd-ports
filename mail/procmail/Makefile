@@ -25,6 +25,8 @@ MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	A local mail delivery agent
 
+MAKE_JOBS_UNSAFE=	yes
+
 #.if defined(WITH_COURIER_MAILDIR_KLUDGE)
 #PATCH_SITES=	http://www.john.net.au/pub/procmail-courier/
 #PATCHFILES=	procmail-authenticate.c-userMaildir.patch

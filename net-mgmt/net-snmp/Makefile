@@ -25,6 +25,8 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-local:Makefile.in
 RUN_DEPEND=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 .endif
 
+MAKE_JOBS_UNSAFE=	yes
+
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	snmpd.sh snmptrapd.sh
 USE_OPENSSL=	yes
