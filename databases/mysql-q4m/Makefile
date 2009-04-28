@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	q4m
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	databases
 MASTER_SITES=	http://q4m.31tools.com/dist/
 PKGNAMEPREFIX=	mysql${MYSQL_VER}-
@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	mysql${MYSQL_VER}-
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A message queue that works as a pluggable storage engine of MySQL
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/databases/mysql${MYSQL_VER}-server:build \
-		${LOCALBASE}/include/boost/spirit/core.hpp:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/databases/mysql${MYSQL_VER}-server:build
 RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 
 USE_GMAKE=	yes
@@ -58,6 +57,9 @@ post-install:
 	cd ${WRKSRC}/examples; ${COPYTREE_AUTO} ${f} ${EXAMPLESDIR}
 .endfor
 .endif
+
+install-functions:
+	mysql -u root -f mysql < ${EXAMPLESDIR}/install.sql
 
 test:
 	cd ${WRKSRC}; ${PERL} run_tests.pl
