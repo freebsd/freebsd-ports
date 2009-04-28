@@ -117,6 +117,11 @@ USE_GNOME=	libgnome gnomelibs libgnomeui
 PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
 .endif
 
+# sysutils/bacula-bat does not install PORTDOCS.
+.if defined(WITH_BAT)
+PORTDOCS=
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_NLS)
