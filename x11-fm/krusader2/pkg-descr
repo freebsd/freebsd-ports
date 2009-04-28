@@ -2,14 +2,13 @@ Krusader is an advanced twin panel (commander style) file manager for KDE,
 similar to Midnight or Total Commander, with many extras. It provides all
 the file management features you could possibly want.
 
-Plus: extensive archive handling, mounted filesystem support, FTP, advanced 
-search module, viewer/editor, directory synchronisation, file content 
+Plus: extensive archive handling, mounted filesystem support, FTP, advanced
+search module, viewer/editor, directory synchronisation, file content
 comparisons, powerful batch renaming and much much more.
 
-It supports the following archive formats: tar, zip, bzip2, gzip, rar, ace, 
-arj and rpm and can handle other KIOSlaves such as smb or fish. It is 
-(almost) completely customizable, very user friendly, fast and looks great 
-on your desktop! :-) 
+It supports the following archive formats: tar, zip, bzip2, gzip, rar, ace,
+arj and rpm and can handle other KIOSlaves such as smb or fish. It is
+(almost) completely customizable, very user friendly, fast and looks great
+on your desktop! :-)
 
 WWW: http://krusader.sourceforge.net
-Dima Panov (fluffy@Fluffy.Khv.RU)
