@@ -15,6 +15,8 @@ PKGNAMESUFFIX?=	# empty
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	GNU Portable Threads
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_LDCONFIG=	${PREFIX}/lib/pth
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-optimize \

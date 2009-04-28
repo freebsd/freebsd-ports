@@ -30,6 +30,8 @@ PATCHFILES:=	${PATCHFILES:N7.2.${p}}
 MAINTAINER?=	obrien@FreeBSD.org
 COMMENT?=	Vi "workalike", with many additional features
 
+MAKE_JOBS_UNSAFE=	yes
+
 SLAVEDIRS=	editors/vim-lite
 
 .if defined(WITH_OPTIONS) || defined(WITH_VIM_OPTIONS)
