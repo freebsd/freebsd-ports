@@ -6,6 +6,7 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -22,8 +23,10 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		tunepimp.5:${PORTSDIR}/audio/libtunepimp \
 		xine.1:${PORTSDIR}/multimedia/libxine
-RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools \
-		lame:${PORTSDIR}/audio/lame
+RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
+.if !defined(PACKAGE_BUILDING)
+RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
+.endif
 
 LATEST_LINK=	${PORTNAME}4
 

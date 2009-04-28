@@ -1,7 +1,0 @@
-Bazaar is an implementation of GNU arch in C from canonical. Arch is a version
-control system, which allows you to keep old versions of files and directories
-(usually source code), keep a log of who, when, and why changes occurred, etc.,
-like SVN, CVS, or RCS. Arch is distributed, which gives it significant
-advantages and some disadvantages compared to SVN and CVS.
-
-WWW: http://bazaar.canonical.com/

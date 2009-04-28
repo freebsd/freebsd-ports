@@ -1,6 +1,0 @@
-bin/evilvte
-bin/showvte
-share/applications/evilvte.desktop
-share/pixmaps/evilvte.png
-share/pixmaps/evilvte.xpm
-@dirrmtry share/applications

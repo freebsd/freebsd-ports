@@ -1,9 +1,0 @@
-*************************************************************************
-Note on security settings:
-
-The slimserver service is wide open, and by default there is no password.
-You can control access to your music collection by pointing your web
-browser to http://localhost:9000/, and then choosing:
-
-Server Settings -> Security
-*************************************************************************

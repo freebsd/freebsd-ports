@@ -1,5 +1,0 @@
-bin/imm
-bin/immserv
-bin/lscomp
-%%DATADIR%%/sdr2.plugin.S53.image.imm
-@dirrm %%DATADIR%%

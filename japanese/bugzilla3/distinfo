@@ -1,6 +1,0 @@
-MD5 (bugzilla-2.16.8.tar.gz) = 192cf7daa231a9e162a688aeebfc873c
-SHA256 (bugzilla-2.16.8.tar.gz) = 8d26a9deb0748fbd8780c581d38de7b86ec95aec4a6bf86a67f68a4d11f9f5bb
-SIZE (bugzilla-2.16.8.tar.gz) = 1735613
-MD5 (bugzilla-2.16.8-to-2.16.8-ja-20050218.diff.gz) = 5b4610883b8a6bcac11afc0feff98ded
-SHA256 (bugzilla-2.16.8-to-2.16.8-ja-20050218.diff.gz) = d39e250104a35f3f7913cfd183a3c65daba207415f096513fe8e8b82dd0cea0b
-SIZE (bugzilla-2.16.8-to-2.16.8-ja-20050218.diff.gz) = 170881

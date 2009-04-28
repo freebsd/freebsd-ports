@@ -1,5 +1,0 @@
-Porte provides a simple, fast and efficient interface to searching
-FreeBSD ports index fields. It also has a simple statistics mode which
-allows collecting frequency statistics for these fields.
-
-WWW: http://www.kerneled.org/

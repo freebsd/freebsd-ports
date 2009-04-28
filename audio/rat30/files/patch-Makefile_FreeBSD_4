@@ -1,9 +1,0 @@
---- ./Makefile_FreeBSD_4.orig	2007-07-14 20:49:46.000000000 +0400
-+++ ./Makefile_FreeBSD_4	2007-07-14 20:49:46.000000000 +0400
-@@ -0,0 +1,6 @@
-+TCL_INC = ${LOCALBASE}/include/tcl8.2
-+TK_INC  = ${LOCALBASE}/include/tk8.2
-+INCS   = -I${LOCALBASE}/include \
-+         -I$(TCL_INC)/generic -I$(TK_INC)/generic
-+LDLIBS = -L${LOCALBASE}/lib \
-+         -L${LOCALBASE}/lib -ltk82 -ltcl82 -lXext -lX11 -lm 

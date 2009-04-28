@@ -1,7 +1,0 @@
-A versitile background setter supporting random backgrounds
-that uses ZConf as the setting storage backend.
-
-zbgset - Background setter.
-zbgset-admin - Manages the settings.
-
-WWW: http://search.cpan.org/~vvelox/ZConf-BGSet/

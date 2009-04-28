@@ -1,5 +1,0 @@
-Tmux is a terminal multiplexer, it enables a number of terminals to be accessed
-and controlled from a single terminal. tmux is intended to be a simple, modern,
-BSD-licensed alternative to programs such as GNU screen.
-
-WWW:    http://www.sourceforge.net/projects/tmux/

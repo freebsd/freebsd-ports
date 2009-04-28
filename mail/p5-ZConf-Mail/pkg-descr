@@ -1,9 +1,0 @@
-This module implements various functions needed for making a ZConf backed mail
-cleint. It also currently includes two small utilities, listed below.
-
-zcmailcompose - Composes a mail message and sends it using the specified
- account.
-zcgetmail - A getmail replacement using ZConf::Mail.
-
-
-WWW: http://search.cpan.org/dist/ZConf-Mail/
