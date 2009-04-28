@@ -1,0 +1,14 @@
+--- ./CMakeLists.txt.orig	2008-03-13 00:09:49.000000000 +0300
++++ ./CMakeLists.txt	2009-04-25 21:48:15.000000000 +0400
+@@ -19,10 +19,4 @@
+ 
+ install(FILES cutecom.1 DESTINATION man/man1 )
+ 
+-find_program(KDECONFIG_EXECUTABLE NAMES kde-config )
+-
+-if (KDECONFIG_EXECUTABLE)
+-   # then ask kde-config for the kde data dirs
+-   exec_program(${KDECONFIG_EXECUTABLE} ARGS --install apps --expandvars OUTPUT_VARIABLE _apps_DIR )
+-   install(FILES cutecom.desktop DESTINATION ${_apps_DIR}/Utilities)
+-endif (KDECONFIG_EXECUTABLE)
++install(FILES cutecom.desktop DESTINATION share/applications)

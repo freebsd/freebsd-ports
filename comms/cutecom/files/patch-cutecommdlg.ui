@@ -1,14 +1,14 @@
---- cutecommdlg.ui.orig	Thu Jul 15 01:11:45 2004
-+++ cutecommdlg.ui	Thu Jul 15 01:12:07 2004
-@@ -248,11 +248,6 @@
-                     </item>
-                     <item>
-                         <property name="text">
--                            <string>576000</string>
--                        </property>
--                    </item>
--                    <item>
--                        <property name="text">
-                             <string>921600</string>
-                         </property>
-                     </item>
+--- cutecommdlg.ui.orig	2008-03-12 16:09:50.000000000 -0500
++++ cutecommdlg.ui	2009-03-28 12:46:04.000000000 -0500
+@@ -220,11 +220,6 @@
+        </item>
+        <item>
+         <property name="text" >
+-         <string>576000</string>
+-        </property>
+-       </item>
+-       <item>
+-        <property name="text" >
+          <string>921600</string>
+         </property>
+        </item>

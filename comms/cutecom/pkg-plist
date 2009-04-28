@@ -1,4 +1,3 @@
 bin/cutecom
-share/applnk/Utilities/cutecom.desktop
-@dirrmtry share/applnk/Utilities
-@dirrmtry share/applnk
+share/applications/cutecom.desktop
+@dirrmtry share/applications

@@ -5,28 +5,21 @@
 # $FreeBSD$
 
 PORTNAME=	cutecom
-PORTVERSION=	0.14.2
+PORTVERSION=	0.20.0
 CATEGORIES=	comms
-MASTER_SITES=	http://cutecom.sourceforge.net/
+MASTER_SITES=	http://cutecom.sourceforge.net/ \
+		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	Graphical serial terminal
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 RUN_DEPENDS=	lsz:${PORTSDIR}/comms/lrzsz
 
-USE_QT_VER=	3
-USE_GMAKE=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	qt3support qmake_build moc_build rcc_build uic_build
+USE_CMAKE=	yes
+CMAKE_USE_PTHREAD=	yes
 
-MAKE_ENV+=	QTDIR="${QT_PREFIX}"
-
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
-		-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ cutecom.pro
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cutecom ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/applnk/Utilities
-	${INSTALL_DATA} ${WRKSRC}/cutecom.desktop ${PREFIX}/share/applnk/Utilities
+MAN1=		cutecom.1
 
 .include <bsd.port.mk>
