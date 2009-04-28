@@ -1,11 +1,11 @@
---- js/src/config/mkdepend/Makefile.in.orig	2009-03-05 22:31:53.000000000 +0100
-+++ js/src/config/mkdepend/Makefile.in	2009-04-21 14:10:27.000000000 +0200
+--- js/src/config/mkdepend/Makefile.in.orig	2009-04-28 08:17:55.069074748 +0000
++++ js/src/config/mkdepend/Makefile.in	2009-04-28 08:18:44.897081100 +0000
 @@ -72,7 +72,7 @@
  
  include $(topsrcdir)/config/rules.mk
  
 -HOST_CFLAGS	+= -DINCLUDEDIR=\"/usr/include\" -DOBJSUFFIX=\".$(OBJ_SUFFIX)\"
-+HOST_CFLAGS	+= -DINCLUDEDIR=\"%%LOCALBASE%%/include\" -DOBJSUFFIX=\".$(OBJ_SUFFIX)\"
++HOST_CFLAGS	+= -DINCLUDEDIR=\"%%LOCALBASE%%/include\" -DOBJSUFFIX=\".$(OBJ_SUFFIX)\" -I/usr/local/include
  
  ifdef GNU_CC
  _GCCDIR		= $(shell $(CC) -print-file-name=include)

@@ -1,5 +1,5 @@
---- js/src/config/config.mk.orgi	2009-04-21 15:12:51.000000000 +0200
-+++ js/src/config/config.mk	2009-04-21 15:15:37.000000000 +0200
+--- js/src/config/config.mk.orig	2009-04-28 11:14:01.760089946 +0000
++++ js/src/config/config.mk	2009-04-28 11:14:30.311093216 +0000
 @@ -490,7 +490,7 @@
  INCLUDES	= $(LOCAL_INCLUDES) $(REQ_INCLUDES) $(REQ_INCLUDES_SDK) -I$(PUBLIC) $(OS_INCLUDES)
  

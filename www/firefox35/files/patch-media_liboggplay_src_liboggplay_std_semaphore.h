@@ -1,9 +1,9 @@
---- media/liboggplay/src/liboggplay/std_semaphore.h.orig	2009-03-05 22:32:15.000000000 +0100
-+++ media/liboggplay/src/liboggplay/std_semaphore.h	2009-04-10 12:31:04.000000000 +0200
-@@ -34,7 +34,7 @@
+--- media/liboggplay/src/liboggplay/std_semaphore.h.orig	2009-04-24 01:46:48.000000000 +0000
++++ media/liboggplay/src/liboggplay/std_semaphore.h	2009-04-28 08:39:25.739957779 +0000
+@@ -74,7 +74,7 @@
+  * @retval non-zero on error 
+  */
  
- #ifndef _STD_SEMAPHORE_H
- #define _STD_SEMAPHORE_H
 -#if defined(linux) || defined(SOLARIS)
 +#if defined(linux) || defined(SOLARIS) || defined(__FreeBSD__)
  #include <semaphore.h>
