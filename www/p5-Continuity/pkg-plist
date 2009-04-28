@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Continuity/Inspector.pm
 %%SITE_PERL%%/Continuity/Mapper.pm
 %%SITE_PERL%%/Continuity/Request.pm
+%%SITE_PERL%%/Continuity/RequestCallbacks.pm
 %%SITE_PERL%%/Continuity/RequestHolder.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Continuity/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Continuity
