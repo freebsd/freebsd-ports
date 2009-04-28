@@ -294,6 +294,7 @@
     SUBDIR += p5-DBIx-Class-AsFdat
     SUBDIR += p5-DBIx-Class-DateTime-Epoch
     SUBDIR += p5-DBIx-Class-DigestColumns
+    SUBDIR += p5-DBIx-Class-DynamicDefault
     SUBDIR += p5-DBIx-Class-DynamicSubclass
     SUBDIR += p5-DBIx-Class-EncodeColumns
     SUBDIR += p5-DBIx-Class-EncodedColumn

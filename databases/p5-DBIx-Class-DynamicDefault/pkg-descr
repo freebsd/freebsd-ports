@@ -1,0 +1,3 @@
+Automatically set and update fields with values calculated at runtime.
+
+WWW: http://search.cpan.org/dist/DBIx-Class-DynamicDefault/
