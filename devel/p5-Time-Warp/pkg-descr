@@ -1,0 +1,5 @@
+Our external experience unfolds in 3 1/2 dimensions (time has a
+dimensionality of 1/2).  The Time::Warp module offers developers
+control over the measurement of time.
+
+WWW: http://search.cpan.org/dist/Time-Warp/

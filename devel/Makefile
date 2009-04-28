@@ -1952,6 +1952,7 @@
     SUBDIR += p5-Time-Piece-Range
     SUBDIR += p5-Time-Progress
     SUBDIR += p5-Time-Stopwatch
+    SUBDIR += p5-Time-Warp
     SUBDIR += p5-Time-modules
     SUBDIR += p5-TimeDate
     SUBDIR += p5-TraceFuncs

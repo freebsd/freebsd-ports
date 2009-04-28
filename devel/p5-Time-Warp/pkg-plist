@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Time/Warp.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Warp/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Warp/Warp.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Warp/Warp.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Warp
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Time
