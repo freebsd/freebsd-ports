@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	utils/compress
 MAINTAINER=	jonny@jonny.eng.br
 COMMENT=	Extract, view & test ACE archives
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_GMAKE=	yes
 ALL_TARGET=	clean unace
 PLIST_FILES=	bin/unace
