@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mod_domaintree
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	www
 MASTER_SITES=	http://dev.iworks.at/mod_domaintree/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	danger@FreeBSD.org
