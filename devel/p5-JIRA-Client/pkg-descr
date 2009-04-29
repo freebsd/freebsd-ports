@@ -1,0 +1,11 @@
+JIRA is a proprietary bug tracking system from Atlassian
+(http://www.atlassian.com/software/jira/).
+
+This module implements an Object Oriented wrapper around JIRA's
+SOAP API, which is specified in:
+http://preview.tinyurl.com/JiraSoapServiceApi
+
+Moreover, it implements some other methods to make it easier to do
+some common operations.
+
+WWW:    http://search.cpan.org/dist/JIRA-Client/
