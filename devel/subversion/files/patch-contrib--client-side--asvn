@@ -1,5 +1,14 @@
 --- contrib/client-side/asvn.orig	2008-01-28 03:24:25.000000000 +0300
-+++ contrib/client-side/asvn	2008-06-28 12:10:05.554369000 +0400
++++ contrib/client-side/asvn	2009-04-29 15:41:48.000000000 +0400
+@@ -42,7 +42,7 @@
+ # $LastChangedBy: blair $
+ # $LastChangedRevision: 29065 $
+ 
+-SVN=/usr/bin/svn
++SVN=/usr/local/bin/svn
+ ACTION=""
+ DEV_PROP="dir:devices"
+ SYM_PROP="dir:symlinks"
 @@ -52,7 +52,7 @@
  TMPFILE2=/tmp/asvn.tmp2.$$
  PCWD=`/bin/pwd`
