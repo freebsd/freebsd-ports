@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SVN-Hooks
-PORTVERSION=	0.16.52
+PORTVERSION=	0.17.54
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +19,7 @@ RUN_DEPENDS=	p5-Email-Send>=0:${PORTSDIR}/mail/p5-Email-Send \
 		p5-Email-Simple-Creator>=0:${PORTSDIR}/mail/p5-Email-Simple-Creator \
 		p5-SVN-Look>=0:${PORTSDIR}/devel/p5-SVN-Look \
 		p5-SVN-Notify>=0:${PORTSDIR}/devel/p5-SVN-Notify \
+		p5-JIRA-Client>=0:${PORTSDIR}/devel/p5-JIRA-Client \
 		${SITE_PERL}/XMLRPC/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
@@ -27,6 +28,7 @@ PERL_CONFIGURE=	yes
 MAN3=		SVN::Hooks.3 \
 		SVN::Hooks::AllowLogChange.3 \
 		SVN::Hooks::AllowPropChange.3 \
+		SVN::Hooks::CheckJira.3 \
 		SVN::Hooks::CheckLog.3 \
 		SVN::Hooks::CheckMimeTypes.3 \
 		SVN::Hooks::CheckProperty.3 \
