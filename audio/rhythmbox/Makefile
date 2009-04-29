@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	rhythmbox
-PORTVERSION=	0.12.0
-PORTREVISION=	3
+PORTVERSION=	0.12.1
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -30,7 +29,7 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui nautilus2
+USE_GNOME=	gnomehack intlhack gnomeprefix gtk20 nautilus2
 WANT_GNOME=	yes
 USE_GSTREAMER=	flac mp3 gnomevfs gconf jpeg
 USE_AUTOTOOLS=	libtool:15
