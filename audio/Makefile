@@ -629,6 +629,7 @@
     SUBDIR += ruby-xmms
     SUBDIR += ruby-xmms2
     SUBDIR += rubygem-mp3info
+    SUBDIR += rubygem-ruby-mp3info
     SUBDIR += s3mod
     SUBDIR += sbagen
     SUBDIR += schism

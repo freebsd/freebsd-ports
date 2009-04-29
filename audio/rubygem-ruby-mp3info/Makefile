@@ -5,13 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mp3info
+PORTNAME=	ruby-mp3info
 PORTVERSION=	0.5
-PORTREVISION=	1
 CATEGORIES=	audio rubygems
 MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
-DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	tha_walka@hotmail.com
 COMMENT=	A Ruby library to access information on mp3 files
@@ -19,6 +16,5 @@ COMMENT=	A Ruby library to access information on mp3 files
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-GEM_NAME=	${DISTNAME}
 
 .include <bsd.port.mk>
