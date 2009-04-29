@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap \
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 
 WRKSRC=			${WRKDIR}/mrourmon
-USE_APACHE=		yes
+USE_APACHE=		1.3
 USE_PERL5=		yes
 NO_BUILD=		yes
 NO_INSTALL_MANPAGES=	yes
