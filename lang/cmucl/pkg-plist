@@ -4,23 +4,34 @@ lib/cmucl/internals.inc
 lib/cmucl/lib/config
 lib/cmucl/lib/config.lisp
 lib/cmucl/lib/generic-site.lisp
-lib/cmucl/lib/lisp.core
 lib/cmucl/lib/load-foreign.csh
 lib/cmucl/lib/ext-formats/iso8859-1.lisp
 lib/cmucl/lib/ext-formats/utf-8.lisp
 lib/cmucl/lib/ext-formats/void.lisp
-lib/cmucl/lib/subsystems/external-formats-library.x86f
-lib/cmucl/lib/subsystems/gray-compat-library.x86f
+lib/cmucl/lib/subsystems/gray-streams-library.sse2f
+lib/cmucl/lib/subsystems/gray-compat-library.sse2f
+lib/cmucl/lib/subsystems/simple-streams-library.sse2f
+lib/cmucl/lib/subsystems/iodefs-library.sse2f
+lib/cmucl/lib/subsystems/external-formats-library.sse2f
 lib/cmucl/lib/subsystems/gray-streams-library.x86f
-lib/cmucl/lib/subsystems/iodefs-library.x86f
+lib/cmucl/lib/subsystems/gray-compat-library.x86f
 lib/cmucl/lib/subsystems/simple-streams-library.x86f
+lib/cmucl/lib/subsystems/iodefs-library.x86f
+lib/cmucl/lib/subsystems/external-formats-library.x86f
+lib/cmucl/lib/ext-formats/crlf.lisp
+lib/cmucl/lib/ext-formats/utf-16-be.lisp
+lib/cmucl/lib/ext-formats/utf-16-le.lisp
+lib/cmucl/lib/ext-formats/aliases
+lib/cmucl/lib/lisp-sse2.core
+lib/cmucl/lib/lisp-x87.core
 lib/cmucl/lisp.map
 lib/cmucl/lisp.nm
 lib/cmucl/sample-wrapper
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/release-19e.txt
+%%PORTDOCS%%%%DOCSDIR%%/release-19f.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/cmucl/lib/ext-formats
 @dirrm lib/cmucl/lib/subsystems
 @dirrm lib/cmucl/lib
 @dirrm lib/cmucl
+
