@@ -531,6 +531,8 @@
     SUBDIR += mvdsv
     SUBDIR += nInvaders
     SUBDIR += nadar
+    SUBDIR += naev
+    SUBDIR += naev-data
     SUBDIR += nazghul
     SUBDIR += nehquake
     SUBDIR += nethack32
