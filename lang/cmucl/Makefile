@@ -1,4 +1,4 @@
-# New ports collection makefile for:    CMUCL
+# Ports collection makefile for:    CMUCL
 # Date created:         Jul, 15, 1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
@@ -7,15 +7,15 @@
 #
 
 PORTNAME=	cmucl
-PORTVERSION=	19e
+PORTVERSION=	19f
 PORTREVISION=	1
 CATEGORIES=	lang lisp
-MASTER_SITES=	ftp://ftp.common-lisp.net/pub/project/cmucl/release/${PORTVERSION}/ \
+MASTER_SITES=	http://common-lisp.net/pub/project/cmucl/release/${PORTVERSION}/ \
 		http://www.pmsf.de/pub/cmucl/release/${PORTVERSION}/ \
 		ftp://ftp.averillpark.net/cmucl/release/${PORTVERSION}/ \
 		ftp://ftp.linux.org.uk/pub/lisp/cmucl/release/${PORTVERSION}/ \
 		ftp://ftp.tepus.com/pub/project/cmucl/release/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-x86-freebsd6.3
+DISTNAME=	${PORTNAME}-${PORTVERSION}-x86-freebsd_6.3-release
 
 MAINTAINER=	cracauer@cons.org
 COMMENT=	The CMU implementation of Common Lisp
