@@ -17,14 +17,7 @@ COMMENT=	Scans content delivered by the Apache20 proxy module for viruses
 
 USE_AUTOTOOLS=	libtool:15
 USE_APACHE=	2.0
-WITH_APACHE2=	YES
 GNU_CONFIGURE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/include/apache22/http_core.h) || exists(${LOCALBASE}/include/apache/http_core.h)
-IGNORE=	mod_clamav only compile and run with apache-2.0.x
-.endif
 
 .if defined(WITH_CLAMAVDEVEL)
 LIB_DEPENDS+=	clamav.6:${PORTSDIR}/security/clamav-devel
@@ -33,7 +26,7 @@ CLAMAV_PORT=	security/clamav
 LIB_DEPENDS+=	clamav.6:${PORTSDIR}/security/clamav
 .endif
 
-CONFIGURE_ARGS=	--with-apxs=${PREFIX}/sbin/apxs \
+CONFIGURE_ARGS=	--with-apxs=${APXS} \
 		--libdir=${PREFIX}/lib/apache2
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include \
@@ -45,4 +38,5 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-.include <bsd.port.post.mk>
+
+.include <bsd.port.mk>
