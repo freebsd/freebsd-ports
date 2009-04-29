@@ -121,6 +121,8 @@ sub mark {
     open my $mk, '<', $mfile or die "Can't open [$mfile] b/c [$!]";
     my @lines = <$mk>;
     close $mk or die "Can't close [$mfile] b/c [$!]";
+    
+    next if grep { /MAKE_JOBS_(?:UN)?SAFE/ } @lines;
 
     my $i_depends = 0;
     my $i_comment = 0;
@@ -157,7 +159,7 @@ sub ports_get {
   my @ports = ();
 
   if ($Ports) {
-    @ports = @ARGV;
+    @ports = map { "$PORTSDIR/$_" } @ARGV;
   }
   else {
     my $index = "$PORTSDIR/$Index";
