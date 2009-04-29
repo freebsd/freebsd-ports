@@ -50,6 +50,7 @@ lib/rhythmbox/plugins/cd-recorder/libcd-recorder.so
 %%DAAP%%lib/rhythmbox/plugins/daap/libdaap.a
 %%DAAP%%lib/rhythmbox/plugins/daap/libdaap.la
 %%DAAP%%lib/rhythmbox/plugins/daap/libdaap.so
+%%DAAP%%lib/rhythmbox/plugins/daap/rb-daap-glue.h
 %%PYTHON%%lib/rhythmbox/plugins/dontreallyclose/dontreallyclose.py
 %%PYTHON%%lib/rhythmbox/plugins/dontreallyclose/dontreallyclose.pyc
 %%PYTHON%%lib/rhythmbox/plugins/dontreallyclose/dontreallyclose.pyo
@@ -471,12 +472,14 @@ share/locale/id/LC_MESSAGES/rhythmbox.mo
 share/locale/is/LC_MESSAGES/rhythmbox.mo
 share/locale/it/LC_MESSAGES/rhythmbox.mo
 share/locale/ja/LC_MESSAGES/rhythmbox.mo
+share/locale/kn/LC_MESSAGES/rhythmbox.mo
 share/locale/ko/LC_MESSAGES/rhythmbox.mo
 share/locale/lt/LC_MESSAGES/rhythmbox.mo
 share/locale/lv/LC_MESSAGES/rhythmbox.mo
 share/locale/mk/LC_MESSAGES/rhythmbox.mo
 share/locale/ml/LC_MESSAGES/rhythmbox.mo
 share/locale/mn/LC_MESSAGES/rhythmbox.mo
+share/locale/mr/LC_MESSAGES/rhythmbox.mo
 share/locale/ms/LC_MESSAGES/rhythmbox.mo
 share/locale/nb/LC_MESSAGES/rhythmbox.mo
 share/locale/ne/LC_MESSAGES/rhythmbox.mo
@@ -525,7 +528,6 @@ share/rhythmbox/glade/podcast-properties.glade
 share/rhythmbox/glade/song-info-multiple.glade
 share/rhythmbox/glade/song-info.glade
 share/rhythmbox/glade/uri-new.glade
-share/rhythmbox/glade/uri.glade
 share/rhythmbox/icons/hicolor/16x16/actions/audio-cd-duplicate.png
 share/rhythmbox/icons/hicolor/16x16/actions/audio-cd-duplicate.svg
 share/rhythmbox/icons/hicolor/16x16/actions/audio-cd-new.png
@@ -663,6 +665,8 @@ share/rhythmbox/rhythmbox-ui.xml
 @dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/be@latin/LC_MESSAGES
