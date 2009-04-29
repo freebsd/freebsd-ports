@@ -1,5 +1,11 @@
-mod_auth_mysql41_ap2 is an Apache module that allows authentication using user and group data stored in MySQL databases. Originally by Vivek Khera for Apache1, now also includes a version for Apache 2.  This version has been modified from the version by Sam Brauer <sbrauer@users.sourceforge.net> at http://sourceforge.net/projects/modauthmysql to support MySQL 4.1 with Apache 2.  Group Authentication has not been implemented yet.
+mod_auth_mysql41_ap2 is an Apache module that allows authentication using 
+user and group data stored in MySQL databases. Originally by Vivek Khera
+for Apache1, now also includes a version for Apache 2.  This version has
+been modified from the version by Sam Brauer 
+<sbrauer@users.sourceforge.net> at 
+http://sourceforge.net/projects/modauthmysql to support MySQL 4.1 
+with Apache 2.  Group Authentication has not been implemented yet.
 
 Douglas A. Maske
 maske@maske.org
-http://www.maske.org
+WWW:    http://www.maske.org
