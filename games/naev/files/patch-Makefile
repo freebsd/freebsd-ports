@@ -1,0 +1,16 @@
+--- Makefile	2009-04-24 14:27:38.000000000 -0500
++++ Makefile	2009-04-28 17:32:14.000000000 -0500
+@@ -9,11 +9,11 @@
+ #
+ # Possible choices: LINUX|FREEBSD|WIN32|MACOSX
+ #
+-OS ?= LINUX
++OS ?= FREEBSD
+ 
+ 
+ # Data path
+-#NDATA_DEF := \"../ndata\"
++NDATA_DEF := \"%%DATADIR%%/ndata-%%PORTVERSION%%\"
+ 
+ 
+ ifeq ($(OS),LINUX)
