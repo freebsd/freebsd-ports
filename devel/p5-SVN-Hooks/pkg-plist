@@ -1,6 +1,7 @@
 %%SITE_PERL%%/SVN/Hooks.pm
 %%SITE_PERL%%/SVN/Hooks/AllowLogChange.pm
 %%SITE_PERL%%/SVN/Hooks/AllowPropChange.pm
+%%SITE_PERL%%/SVN/Hooks/CheckJira.pm
 %%SITE_PERL%%/SVN/Hooks/CheckLog.pm
 %%SITE_PERL%%/SVN/Hooks/CheckMimeTypes.pm
 %%SITE_PERL%%/SVN/Hooks/CheckProperty.pm
