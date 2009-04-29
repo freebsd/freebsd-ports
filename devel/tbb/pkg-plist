@@ -36,7 +36,11 @@ include/tbb/tbb_stddef.h
 include/tbb/tick_count.h
 include/tbb/_tbb_windef.h
 include/tbb/partitioner.h
+include/tbb/task_scheduler_observer.h
+include/tbb/tbb_allocator.h
+include/tbb/tbb_exception.h
 include/tbb/tbb_machine.h
+include/tbb/tbb_thread.h
 lib/libtbb.so
 lib/libtbbmalloc.so
 @dirrm include/tbb/machine
