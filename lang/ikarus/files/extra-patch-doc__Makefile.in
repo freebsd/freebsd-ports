@@ -1,0 +1,11 @@
+--- ./doc/Makefile.in.orig	2009-04-24 22:41:02.000000000 -0400
++++ ./doc/Makefile.in	2009-04-24 22:42:36.000000000 -0400
+@@ -287,7 +287,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-dist_docDATA
++install-data-am:
+ 
+ install-dvi: install-dvi-am
+ 

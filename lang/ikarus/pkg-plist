@@ -1,0 +1,14 @@
+bin/ikarus
+bin/scheme-script
+lib/ikarus/ikarus.boot
+lib/ikarus/match.ss
+lib/ikarus/pregexp.ss
+lib/ikarus/streams.ss
+lib/ikarus/streams/derived.ss
+lib/ikarus/streams/primitive.ss
+%%PORTDOCS%%%%DOCSDIR%%/ACKNOWLEDGMENTS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/ikarus-scheme-users-guide.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/ikarus/streams
+@dirrm lib/ikarus
