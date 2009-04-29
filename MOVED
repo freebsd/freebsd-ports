@@ -3941,3 +3941,4 @@ x11/nvidia-driver-96xx|x11/nvidia-driver-96|2009-04-13|Renamed
 emulators/cpmtools27|emulators/cpmtools2|2009-04-25|Renamed
 games/chromium|games/chromium-bsu|2009-04-26|Renamed
 russian/xneur|deskutils/xneur|2009-04-27|Better category: supports many languages
+audio/rubygem-mp3info|rubygem-ruby-mp3info|2009-04-28|Updated to match GEM name, use rubygem-ruby-mp3info instead
