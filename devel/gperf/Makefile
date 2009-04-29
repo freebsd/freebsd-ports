@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	gperf
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Generates perfect hash functions for sets of keywords
 
+MAKE_JOBS_UNSAFE=	yes
+
 GNU_CONFIGURE=	yes
 
 MAN1=		gperf.1
