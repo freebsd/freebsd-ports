@@ -1,0 +1,5 @@
+This module is a Perl XS binding to libyaml which offers
+Perl the best YAML support to date.
+
+Author:	Yuval Kogman <nothingmuch@woobling.org>
+WWW:	http://search.cpan.org/~nuffin/YAML-LibYAML/
