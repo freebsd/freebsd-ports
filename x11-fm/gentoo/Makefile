@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	gentoo
-PORTVERSION=	0.15.3
+PORTVERSION=	0.15.4
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Gtk+ based, file manager inspired by DirectoryOpus
 
 OPTIONS=	FAM "File Alteration Monitor Support" off
 
 USE_GNOME=	gnomehack gtk20
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MKDIR_P="${MKDIR}"
