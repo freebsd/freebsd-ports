@@ -49,7 +49,8 @@ do-build:
 		${WRKSRC}/docs/logcheck.sgml
 	@cd ${WRKSRC}/docs && docbook2man -s \
 		/usr/local/share/docbook2X/xslt/man/docbook.xsl \
-		--sgml logcheck.sgml && ${MV} Logcheck.8 logcheck.8
+		--sgml logcheck.sgml 2> /dev/null \
+		&& ${MV} Logcheck.8 logcheck.8
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logcheck ${PREFIX}/sbin
