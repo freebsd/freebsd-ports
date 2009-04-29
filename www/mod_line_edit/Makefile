@@ -8,6 +8,7 @@
 
 PORTNAME=	mod_line_edit
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://apache.webthing.com/mod_line_edit/
 DISTFILES=	mod_line_edit.c
@@ -15,8 +16,7 @@ DISTFILES=	mod_line_edit.c
 MAINTAINER=	dom@helenmarks.co.uk
 COMMENT=	Apache module for simple text rewriting
 
-USE_APACHE=	yes
-WITH_APACHE2=	yes
+USE_APACHE=	2.0+
 
 do-extract:
 	@${DO_NADA}
