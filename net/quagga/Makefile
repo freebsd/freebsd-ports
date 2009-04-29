@@ -7,7 +7,7 @@
 
 PORTNAME=	quagga
 PORTVERSION=	0.99.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/ \
 		http://www.ru.quagga.net/download/ \
@@ -39,11 +39,17 @@ OPTIONS=	ISISD		"Enable experimental ISIS daemon"	off \
 		RTADV		"IPv6 Router Advertisements"	off \
 		SNMP		"SNMP support"			off \
 		TCPSOCKETS	"Use TCP/IP sockets for protocol daemons" off \
-		TCPMD5		"Use experimental MD5 patch for BGP" off \
 		DLMALLOC	"Use dlmalloc (makes bgpd much faster)" off
 
 .include <bsd.port.pre.mk>
 
+<<<<<<< Makefile
+.if ${OSVERSION} >= 800059
+#BROKEN=		does not build
+.endif
+
+=======
+>>>>>>> 1.80
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include --enable-exampledir=${PREFIX}/share/examples/quagga --enable-pidfile-mask=0644
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
@@ -116,11 +122,6 @@ LIB_DEPENDS+=netsnmp:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=--enable-tcp-zebra
 .endif
 
-.if defined(WITH_TCPMD5)
-EXTRA_PATCHES+=${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgp_network.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgp_vty.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgpd.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgpd.h ${PATCHDIR}/extra-tcpmd5-patch-lib-sockopt.c ${PATCHDIR}/extra-tcpmd5-patch-lib-sockopt.h ${PATCHDIR}/extra-tcpmd5-patch-vtysh-extract.pl.in
-CFLAGS+=	-DQUAGGA_TCP_MD5SIG
-.endif
-
 .if defined(WITH_DLMALLOC)
 LIB_DEPENDS+=dlmalloc.2:${PORTSDIR}/devel/libdlmalloc
 LDFLAGS+=-ldlmalloc
@@ -157,7 +158,6 @@ pre-everything::
 	@${ECHO} "   WITH_RTADV            IPv6 Router Advertisements"
 	@${ECHO} "   WITH_SNMP             SNMP support"
 	@${ECHO} "   WITH_TCPSOCKETS       Use TCP/IP sockets for protocol daemons"
-	@${ECHO} "   WITH_TCPMD5           Use experimental MD5 patch for BGP"
 	@${ECHO} "   WITH_DLMALLOC         Use dlmalloc (makes bgpd much faster)"
 
 post-install:
@@ -183,19 +183,6 @@ post-install:
 	@${ECHO} "        if You had never do this before. Or run"
 	@${ECHO} "        make changeuser"
 	@${ECHO} ""
-.if defined(WITH_TCPMD5) && !defined(WITHOUT_TCPMD5)
-	@${ECHO} "Note!!! To use MD5 passwords on BGP sessions, your kernel must"
-	@${ECHO} "be built with the following options:"
-	@${ECHO} "  options TCP_SIGNATURE"
-.if ${OSVERSION} < 700000
-	@${ECHO} "  options FAST_IPSEC"
-.else
-	@${ECHO} "  options IPSEC"
-.endif
-	@${ECHO} "  device crypto"
-	@${ECHO} "  device cryptodev"
-	@${ECHO} ""
-.endif
 
 .if !defined(BATCH)
 post-clean:
