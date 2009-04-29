@@ -7,7 +7,7 @@
 
 PORTNAME=	soya3d
 PORTVERSION=	0.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python
 MASTER_SITES=	http://download.gna.org/soya/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -43,7 +43,7 @@ MAN1=	soya_editor.1
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
 SOYATUTVER=	0.14
 
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 DISTFILES+=	SoyaTutorial-${SOYATUTVER}${EXTRACT_SUFX}
 .endif
 
@@ -57,11 +57,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${INSTALL_DIR} ${EXAMPLESDIR}
 	@${CP} -R ${WRKDIR}/SoyaTutorial-${SOYATUTVER}/tutorial/* ${EXAMPLESDIR}
 	@${FIND} ${EXAMPLESDIR}/* -type f -print0 | \
 		${XARGS} -0 ${CHMOD} ${SHAREMODE}
+.endif
+
+.if !defined(NOPORTDOCS)
 	@${INSTALL_DIR} ${DOCSDIR}
 .for FILE in AUTHORS README
 	@${INSTALL_DATA} ${WRKDIR}/SoyaTutorial-${SOYATUTVER}/${FILE} ${DOCSDIR}
