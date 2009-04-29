@@ -18,7 +18,7 @@ AuthMySQLUserTable YOURUSERTABLENAME
 AuthMySQLNameField USERNAMEFIELD
 AuthMySQLPasswordField PASSWORDFIELD
 
-For .htaccess options, view /usr/local/share/doc/mod_auth_mysql41_ap2/README
+For .htaccess options, view %%DOCSDIR%%/README
 
 For more information visit http://www.maske.org
 

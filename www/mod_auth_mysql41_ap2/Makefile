@@ -7,33 +7,35 @@
 
 PORTNAME=	mod_auth_mysql41_ap2
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.maske.org/pub/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
-DISTFILES=	${DISTNAME}.tar.gz
 
 MAINTAINER=	maske@maske.org
 COMMENT=	MySQL 4.1 and Apache 2 port of mod_auth_mysql
 
-USE_APACHE=	YES
-WITH_APACHE2=	YES
-
 USE_MYSQL=	YES
 WANT_MYSQL_VER=	41
-MYSQL_INC?=	${LOCALBASE}/include/mysql
-MYSQL_LIB?=	${LOCALBASE}/lib/mysql -lmysqlclient
 
-MODULE_NAME=	mod_auth_mysql
+USE_APACHE=	2.0
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+
+AP_INC=	${LOCALBASE}/include/mysql
+AP_LIB=	${LOCALBASE}/lib/mysql -lmysqlclient
+AP_EXTRAS=	-DAPACHE2
+
+MODULENAME=	mod_auth_mysql
+
+SUB_FILES+=	pkg-message
+
 PORTDOCS=	README
 
-do-build:
-	@(cd ${WRKSRC} && ${APXS} -D APACHE2 -I ${MYSQL_INC} -L ${MYSQL_LIB} -c ${MODULE_NAME}.c)
-
-do-install:
-	@(cd ${WRKSRC} && ${APXS} -i -A -n ${MODULE_NAME:S/mod_//} ${MODULE_NAME}.la)
+post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
