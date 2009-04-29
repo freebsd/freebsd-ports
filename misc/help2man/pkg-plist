@@ -10,3 +10,5 @@ bin/help2man
 %%NLS%%@dirrmtry man/fr
 %%NLS%%@dirrmtry man/pl/man1
 %%NLS%%@dirrmtry man/pl
+%%NLS%%@dirrmtry man/sv/man1
+%%NLS%%@dirrmtry man/sv
