@@ -15,18 +15,19 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	steven@krx.nl
 COMMENT=	Apache module that provides virtual hosts from a database
 
-USE_APACHE=	yes
+USE_APACHE=	1.3
 USE_MYSQL=	yes
+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+
+AP_INC=	${LOCALBASE}/include
+AP_LIB=	${LOCALBASE}/lib/mysql -lmysqlclient
+
 NO_WRKSUBDIR=	yes
 
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
-
-do-build:
-	@cd ${WRKSRC} && ${APXS} -c -l mysqlclient -I ${PREFIX}/include -L ${PREFIX}/lib/mysql ${PORTNAME}.c
-
-do-install:
-	${APXS} -i -A -n ${PORTNAME:S/^mod_//g} ${WRKSRC}/${PORTNAME}.so
 
 .include <bsd.port.mk>
