@@ -7,7 +7,7 @@
 
 PORTNAME=	libdnet
 PORTVERSION=	1.11
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	net
 MASTER_SITES=	SF
 
@@ -26,10 +26,6 @@ MAN8=	dnet.8
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800059
-BROKEN=		does not build
-.endif
 
 .if !defined(LIBDNET_SLAVE)
 
