@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.6.0
-PORTREVISION?=	2
+PORTVERSION=	1.6.1
+PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.5/:book
@@ -143,6 +143,13 @@ CFLAGS+=	-fpic -DPIC
 CONFIGURE_ARGS+=--enable-maintainer-mode \
 		--enable-debug
 CFLAGS+=	-g
+.endif
+
+.if defined(WITH_STATIC)
+CONFIGURE_ARGS+=--enable-all-static
+PLIST_SUB+=	DYNAMIC_ENABLED="@comment "
+.else
+PLIST_SUB+=	DYNAMIC_ENABLED=""
 .endif
 
 post-extract:

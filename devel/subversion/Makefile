@@ -27,6 +27,7 @@ OPTIONS=	MOD_DAV_SVN	"mod_dav_svn module for Apache 2.X" off \
 		ASVN		"Build and install Archive SVN (asvn)" off \
 		MAINTAINER_DEBUG	"Build debug version" off \
 		SVNSERVE_WRAPPER	"Enable svnserve wrapper" off \
+		STATIC		"Build static version (no shared libs)" off \
 		BOOK		"Install the Subversion Book" off
 
 .include "${.CURDIR}/../../devel/subversion/Makefile.common"
@@ -90,6 +91,12 @@ pre-everything::
 	@${ECHO_MSG} ""
 .endif
 .if defined(WITH_MOD_DAV_SVN)
+.if defined(WITH_STATIC)
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO_MSG} "!!! mod_dav_svn and static build are not compatible !!!"
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${FALSE}
+.endif
 	@${ECHO_MSG} "mod_dav_svn module for Apache 2.X enabled."
 	@${ECHO_MSG} "This option implies the WITH_APACHE2_APR option."
 .else
@@ -104,9 +111,8 @@ pre-everything::
 	@${ECHO_MSG} "the ${APACHE_PORT} port, rather than the devel/apr port."
 .endif
 	@${ECHO_MSG} ""
-.if defined(WITH_MOD_DONTDOTHAT)
+.if defined(WITH_MOD_DONTDOTHAT) && defined(WITH_MOD_DAV_SVN)
 	@${ECHO_MSG} "mod_dontdothat module for Apache 2.X enabled."
-	@${ECHO_MSG} "This option implies the WITH_MOD_DAV_SVN option."
 .else
 	@${ECHO_MSG} "You can enable the mod_dontdothat module for Apache 2.X"
 .endif
@@ -140,6 +146,9 @@ pre-everything::
 .if defined(WITH_ASVN)
 	@${ECHO_MSG} "asvn will be installed"
 	@${ECHO_MSG} ""
+.endif
+.if defined(WITH_STATIC)
+	@${ECHO_MSG} "Static binaries will be built."
 .endif
 	@${ECHO_MSG} "Many useful scripts will be installed into ${DATADIR}"
 
