@@ -9,9 +9,9 @@ PORTNAME=	mailscanner-mrtg
 PORTVERSION=	0.11.00
 PORTREVISION=	3
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mailscannermrtg
-DISTNAME=	mailscanner-mrtg-${PORTVERSION}
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	${PORTNAME:S/-//}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	j.koopmann@seceidos.de
 COMMENT=	Allows mrtg to monitor many aspects of your MailScanner machine
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mrtg:${PORTSDIR}/net-mgmt/mrtg \
 		${LOCALBASE}/lib/MailScanner/MailScanner.pm:${PORTSDIR}/mail/mailscanner
 
 USE_PERL5=	yes
-USE_APACHE=	yes
+USE_APACHE=	1.3
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -33,6 +33,8 @@ MAN8=		mailscanner-mrtg.8
 WWWFILES=	mailscanner-mrtg.conf \
 		mailscanner-mrtg.cfg
 ETCFILES=	${WWWFILES}
+
+SUB_FILES+=	pkg-message
 
 do-build:
 .for FILE in ${WWWFILES}
@@ -94,13 +96,6 @@ do-install:
 	#
 	# Step 6: Show further instructions
 	#
-	@${PERL} -pi -e \
-	's,%%PREFIX%%,${PREFIX},g; \
-	s,%%LOCALBASE%%,${LOCALBASE},g; \
-	s,%%WWWBASE%%,${WWWBASE},g; \
-	s,%%PORTSDIR%%,${PORTSDIR},g;' \
-	< pkg-message > ${PKGMESSAGE}
-
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
