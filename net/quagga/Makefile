@@ -43,13 +43,6 @@ OPTIONS=	ISISD		"Enable experimental ISIS daemon"	off \
 
 .include <bsd.port.pre.mk>
 
-<<<<<<< Makefile
-.if ${OSVERSION} >= 800059
-#BROKEN=		does not build
-.endif
-
-=======
->>>>>>> 1.80
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include --enable-exampledir=${PREFIX}/share/examples/quagga --enable-pidfile-mask=0644
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
