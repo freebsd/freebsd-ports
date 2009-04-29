@@ -38,6 +38,7 @@ my $NoExec    = 0;
 
 # cmdline options (custom) with defaults
 my $Maintainer = "$ENV{USER}\@FreeBSD.org";
+my $Ports = 0;
 my $Safe = 1;
 my $Index = 'INDEX-8';
 
@@ -75,6 +76,8 @@ sub getopts_wrapper {
       "noexec|n"     => \$NoExec,
 
       "maintainer|m=s" => \$Maintainer,
+      "ports|p"        => \$Ports,
+
       "safe|s=i"       => \$Safe,
       "index|i=s"      => \$Index,
     );
@@ -151,20 +154,26 @@ sub mark {
 
 sub ports_get {
 
-  my $index = "$PORTSDIR/$Index";
-  print "Index: $index\n";
-
   my @ports = ();
-  open my $fh, '<', $index or die "Can't open [$index] b/c [$!]";
-  while (<$fh>) {
-    my @parts = split /\|/;
-    my $port_dir = $parts[$PARTS{dir}];
-    $port_dir =~ s!/usr/ports!$PORTSDIR!;
-    my $maintainer = $parts[$PARTS{maintainer}];
-   
-    push @ports, $port_dir if $maintainer =~ /^$Maintainer$/io;
+
+  if ($Ports) {
+    @ports = @ARGV;
   }
-  close $fh or die "Can't close [$index] b/c [$!]";
+  else {
+    my $index = "$PORTSDIR/$Index";
+    print "Index: $index\n";
+
+    open my $fh, '<', $index or die "Can't open [$index] b/c [$!]";
+    while (<$fh>) {
+      my @parts = split /\|/;
+      my $port_dir = $parts[$PARTS{dir}];
+      $port_dir =~ s!/usr/ports!$PORTSDIR!;
+      my $maintainer = $parts[$PARTS{maintainer}];
+   
+      push @ports, $port_dir if $maintainer =~ /^$Maintainer$/io;
+    }
+    close $fh or die "Can't close [$index] b/c [$!]";
+  }
 
   return \@ports;
 }
@@ -189,3 +198,76 @@ sub main {
 MAIN: {
   exit main();
 }
+
+__END__
+
+=pod
+
+=head1 NAME
+
+mark_safe.pl - Mark a port or ports as MAKE_JOBS_(UN)SAFE=yes
+
+=head1 SYNOPSIS
+
+  mark_safe.pl <options>
+
+=head1 STD OPTIONS
+
+=over 4
+
+=item B<--verbose=1,2,3,4,....>
+
+Display messages while running on STDOUT. Increasing the level
+will increase the amount.
+
+DEFAULT: off/0
+
+=item B<--debug|d>
+
+Copious messages not useful unless you are a developer AND
+debuging this script are output to STDERR
+
+DEFAULT: off/0
+
+=item B<--help|h>
+
+Print this message and exit EXIT_SUCCESS
+
+DEFAULT: off/0
+
+=item B<--version|V>
+
+Output the version and exit with EXIT_SUCCESS
+
+DEFAULT: off/0
+
+=item B<--noexec|n>
+
+Any External commands will simply be echo'd and not run
+Assume all of them suceed.
+
+IMPLIES: --verbose=1
+
+DEFAULT: off/0
+
+=head1 Dependencies
+
+=head1 EXIT CODES
+
+Exits 0 on success
+Exits > 0 <= 255 on error
+
+  EXIT_SUCCESS                    => 0
+    EXIT_FAILED_INVALID_ARGS_OR_ENV => 1
+
+=head1 HISTORY
+
+20009-04-22 by pgollucci:
+   Created
+
+=head1 AUTHOR
+
+Philip M. Gollucci E<lt>pgollucci@FreeBSD.orgE<gt>
+
+=cut
+
