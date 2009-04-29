@@ -1,0 +1,13 @@
+--- ./Makefile.in.orig	2009-04-24 22:40:45.000000000 -0400
++++ ./Makefile.in	2009-04-24 22:40:53.000000000 -0400
+@@ -184,8 +184,8 @@
+ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = foreign
+ SUBDIRS = src scheme doc lib benchmarks
+-EXTRA_DIST = README COPYING GPL-3 ACKNOWLEDGMENTS
+-dist_doc_DATA = README COPYING GPL-3 ACKNOWLEDGMENTS
++EXTRA_DIST = README ACKNOWLEDGMENTS
++dist_doc_DATA = README ACKNOWLEDGMENTS
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+ 

@@ -1,0 +1,17 @@
+Ikarus Scheme is a free optimizing incremental native-code compiler
+for Scheme as specified in the Revised^6 Report on the Algorithmic
+Language Scheme.
+
+Ikarus Scheme is an optimizing compiler, so your Scheme code will
+run fast without the need to port hot spots to C "for performance".
+With an incremental compiler, you don't need a separate compilation
+step to make your program run fast. The best part is that the
+compiler itself is fast, capable of compiling thousands of lines
+of code per second.
+
+Finally, Ikarus Scheme is an R6RS compiler. R6RS libraries, scripts,
+record types, condition system, exception handling, unicode strings,
+bytevectors, hashtable, and enumerations are among the supported
+features.
+
+WWW:	http://www.ikarus-scheme.org/

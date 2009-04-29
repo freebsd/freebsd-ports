@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2009-04-24 23:06:36.000000000 -0400
++++ Makefile.in	2009-04-24 23:07:14.000000000 -0400
+@@ -582,7 +582,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-dist_docDATA
++install-data-am:
+ 
+ install-dvi: install-dvi-recursive
+ 
