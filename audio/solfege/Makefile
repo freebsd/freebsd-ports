@@ -8,12 +8,12 @@
 #
 
 PORTNAME=	solfege
-PORTVERSION=	3.14.0
+PORTVERSION=	3.15.1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-nosound
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Free eartraining software
 
 BUILD_DEPENDS=	${STYLESHEET}:${PORTSDIR}/textproc/docbook-xsl \
