@@ -25,7 +25,7 @@ DOTPROJECTDIR=	${PREFIX}/www/${PORTNAME}
 NO_BUILD=	yes
 USE_PHP=	gd mysql session zlib
 WANT_PHP_WEB=	yes
-USE_APACHE=	yes
+USE_APACHE=	1.3
 USE_MYSQL=	yes
 
 SUB_LIST+=	DOTPROJECTDIR=${DOTPROJECTDIR}
@@ -33,7 +33,7 @@ SUB_FILES=	pkg-message
 
 .if defined(WITH_JPGRAPH)
 RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/webfonts/arial.ttf:${PORTSDIR}/x11-fonts/webfonts \
-		${PREFIX}/share/jpgraph/jpgraph.php:${PORTSDIR}/graphics/jpgraph2
+		${LOCALBASE}/share/jpgraph/jpgraph.php:${PORTSDIR}/graphics/jpgraph2
 .endif
 
 post-patch:
