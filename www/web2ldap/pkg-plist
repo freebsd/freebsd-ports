@@ -203,6 +203,8 @@
 %%DATADIR%%/pylib/w2lapp/schema/plugins/lotusdomino.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/msperson.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/msperson.pyc
+%%DATADIR%%/pylib/w2lapp/schema/plugins/mssfu30.py
+%%DATADIR%%/pylib/w2lapp/schema/plugins/mssfu30.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/nis.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/nis.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/openldap.py
