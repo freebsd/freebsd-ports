@@ -28,6 +28,9 @@ libexec/ibus-engine-anthy
 %%DATADIR%%/engine/tables.pyo
 %%DATADIR%%/icons/ibus-anthy.png
 share/ibus/component/anthy.xml
+%%NLS%%share/locale/fr/LC_MESSAGES/ibus-anthy.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/ibus-anthy.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-anthy.mo
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/engine
 @dirrm %%DATADIR%%
