@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2008.710
-PORTREVISION=	1
+PORTVERSION=	2008.721
 CATEGORIES=	games
-MASTER_SITES=	http://offload1.icculus.org/alienarena/Files/
-DISTNAME=	${PORTNAME}2008-linux20080603
+MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
+		http://ftp.jeuxlinux.fr/files/ \
+		http://mirror.ipgn.com.au/games/alienarena/ \
+		http://gd.tuwien.ac.at/opsys/linux/gentoo/distfiles/ \
+		http://offload2.icculus.org:9090/alienarena/Files/ \
+		http://offload1.icculus.org:9090/alienarena/Files/
+DISTNAME=	${PORTNAME}2008-linux20090109
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Alien Arena 2008 (native version)
+MAINTAINER=	acm@FreeBSD.org
+COMMENT=	Alien Arena (native version)
 
 RUN_DEPENDS=	${DATADIR}/arena/default.cfg:${PORTSDIR}/games/alienarena-data
 
