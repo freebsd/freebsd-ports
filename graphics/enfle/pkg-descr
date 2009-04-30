@@ -1,20 +1,16 @@
-    This program aims to view many variously formated pictures
-easily. So far, it can treat below formats:
+This software aims to view many pictures just clicking.  You can view
+various formatted pictures and movies with several effects.
 
-  - archivers:
-      bz2 dri exe gz (libarc) misc one pak tar
-  - loaders:
-      ald bmp grp jpeg lfg mag (mng) p2 pic pms png pnm (ungif) xbm xpm
-  - savers:
-      jpeg pms png
+ Formats you can view:
+  BMP, GIF, JPEG, PCX, PNG, PNM, XBM, XPM, TGA, JPEG2000
+  spi(highly unstable, any formats which (some of) susie plugins support)
+  animated GIF
+  mng
+  mpeg (mpeg1, mpeg2)
+  avi,ogg,ogm(,asf,wmv) (codec supported by avcodec, vorbis, Windows DMO)
 
-    It has been implemented plug-in mechanism so that each user
-can choose each format support linked in main program or separated
-as plugin. Moreover, you can make your own plugins to extend
-supported formats.
+This software has plugin architecture.  You can write plugins to loader
+new formatted pictures and movies.  Also, you can read regular archive
+files, such as tar, gz, bz2, and so on.
 
 WWW: http://enfle.fennel.org/
-WWW: http://www3.big.or.jp/~sian/linux/products/enfle/
-
--- 
-Yuki Sawada <samy@goldmoon.org>
