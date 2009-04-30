@@ -245,9 +245,6 @@ PASSENGER_VERSION=	2.2.2
 MASTER_SITES+=	RF/passenger/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
-.if defined(WITH_DEBUG)
-CFLAGS+=	-DPASSENGER_DEBUG
-.endif
 .endif
 
 .if defined(WITH_WWW)
@@ -308,10 +305,9 @@ post-patch:
 		${PATCHDIR}/extra-patch-ngx_http_fancyindex_module.c
 .endif
 .if defined(WITH_PASSENGER_MODULE)
-	@${REINPLACE_CMD} 's!g++!${CXX}!; \
-		s!-DPASSENGER_DEBUG!${CXXFLAGS}!g' \
+	@${REINPLACE_CMD} 's!g++!${CXX}!' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/Rakefile
-	@${REINPLACE_CMD} '376,377d; \
+	@${REINPLACE_CMD} '377s!-g!${CXXFLAGS}!; \
 		s!-lpthread!${PTHREAD_LIBS}!g' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info.rb
 .endif
