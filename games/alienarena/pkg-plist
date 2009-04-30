@@ -5,7 +5,6 @@
 %%LIBDIR%%/arena/game.so
 %%LIBDIR%%/arena/maps.lst
 %%LIBDIR%%/arena/motd.txt
-%%LIBDIR%%/arena/pics
 %%LIBDIR%%/arena/server.cfg
 %%LIBDIR%%/botinfo
 %%LIBDIR%%/data1/default.cfg
@@ -22,7 +21,6 @@
 %%LIBDIR%%/data1/players
 %%LIBDIR%%/data1/scripts
 %%LIBDIR%%/data1/sound
-%%LIBDIR%%/data1/sprites
 %%LIBDIR%%/data1/textures
 %%LIBDIR%%/data1/vehicles
 @dirrm %%LIBDIR%%/data1
