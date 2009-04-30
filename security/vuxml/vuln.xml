@@ -34,6 +34,54 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7a1ab8d4-35c1-11de-9672-0030843d3802">
+    <topic>drupal -- cross site scripting</topic>
+    <affects>
+      <package>
+	<name>drupal5</name>
+	<range><lt>5.17</lt></range>
+      </package>
+      <package>
+        <name>drupal6</name>
+	<range><lt>6.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal Security Team reports:</p>
+	<blockquote cite="http://drupal.org/node/449078">
+	  <p>When outputting user-supplied data Drupal strips potentially
+	    dangerous HTML attributes and tags or escapes characters which have a
+	    special meaning in HTML. This output filtering secures the site
+	    against cross site scripting attacks via user input.</p>
+	  <p>Certain byte sequences that are valid in the UTF-8 specification
+	    are potentially dangerous when interpreted as UTF-7. Internet Explorer
+	    6 and 7 may decode these characters as UTF-7 if they appear before the
+	    meta http-equiv="Content-Type" tag that specifies the page content
+	    as UTF-8, despite the fact that Drupal also sends a real HTTP header
+	    specifying the content as UTF-8. This behaviour enables malicious
+	    users to insert and execute Javascript in the context of the website
+	    if site visitors are allowed to post content.</p>
+	  <p>In addition, Drupal core also has a very limited information
+	    disclosure vulnerability under very specific conditions. If a user is
+	    tricked into visiting the site via a specially crafted URL and then
+	    submits a form (such as the search box) from that page, the
+	    information in their form submission may be directed to a third-party
+	    site determined by the URL and thus disclosed to the third party. The
+	    third party site may then execute a CSRF attack against the submitted
+	    form.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/449078</url>
+    </references>
+    <dates>
+      <discovery>2009-04-30</discovery>
+      <entry>2009-04-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3b18e237-2f15-11de-9672-0030843d3802">
     <topic>mozilla  -- multiple vulnerabilities</topic>
     <affects>
