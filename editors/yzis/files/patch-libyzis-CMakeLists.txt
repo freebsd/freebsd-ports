@@ -1,0 +1,11 @@
+--- libyzis/CMakeLists.txt.orig	2009-02-18 18:47:23.601664151 +0100
++++ libyzis/CMakeLists.txt	2009-02-18 18:43:19.527334103 +0100
+@@ -4,7 +4,7 @@
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/translator.h.in ${CMAKE_CURRENT_BINARY_DIR}/translator.h)
+ #macro_additional_clean_files( ${CMAKE_CURRENT_BINARY_DIR}/translator.h )
+ 
+-include_directories(${YZIS_INCLUDES})
++include_directories(${YZIS_INCLUDES} ${LOCALBASE}/include)
+ 
+ ########### next target ###############
+ 

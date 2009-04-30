@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2008-06-26 00:35:28.000000000 +0200
++++ CMakeLists.txt	2009-02-18 18:41:47.384721425 +0100
+@@ -33,8 +33,8 @@
+ include(ConvenienceLibs.cmake)
+ include(MacroAdditionalCleanFiles)
+ 
+-set( CCMAKE_CXX_FLAGS_RELEASE "-O3" )
+-set( CCMAKE_C_FLAGS_RELEASE "-O3" )
++#set( CCMAKE_CXX_FLAGS_RELEASE "-O3" )
++#set( CCMAKE_C_FLAGS_RELEASE "-O3" )
+ 
+ set( CMAKE_CXX_FLAGS_DEBUG "-g3 -Wall -DDEBUG" )
+ set( CMAKE_C_FLAGS_DEBUG "-g3 -Wall -DDEBUG" )

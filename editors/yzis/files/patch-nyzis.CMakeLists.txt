@@ -1,0 +1,11 @@
+--- nyzis/CMakeLists.txt.orig	2009-02-20 07:23:52.703747018 +0100
++++ nyzis/CMakeLists.txt	2009-02-20 07:24:14.643420287 +0100
+@@ -3,7 +3,7 @@
+ 
+ option(ENABLE_X_IN_NYZIS "with this option nyzis links to X and can access the X copy/paste buffer" OFF)
+ 
+-include_directories(${YZIS_INCLUDES} ${NCURSES_INCLUDE_DIR})
++include_directories(${YZIS_INCLUDES} ${NCURSES_INCLUDE_DIR} ${LOCALBASE}/include)
+ 
+ ########### next target ###############
+ set(nyzis_SRCS
