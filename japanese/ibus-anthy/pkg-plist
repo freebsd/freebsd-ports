@@ -1,0 +1,33 @@
+%%PYTHON_SITELIBDIR%%/_anthy.la
+%%PYTHON_SITELIBDIR%%/_anthy.so
+%%PYTHON_SITELIBDIR%%/anthy.py
+libexec/ibus-engine-anthy
+%%DATADIR%%/engine/engine.py
+%%DATADIR%%/engine/engine.pyc
+%%DATADIR%%/engine/engine.pyo
+%%DATADIR%%/engine/factory.py
+%%DATADIR%%/engine/factory.pyc
+%%DATADIR%%/engine/factory.pyo
+%%DATADIR%%/engine/jastring.py
+%%DATADIR%%/engine/jastring.pyc
+%%DATADIR%%/engine/jastring.pyo
+%%DATADIR%%/engine/kana.py
+%%DATADIR%%/engine/kana.pyc
+%%DATADIR%%/engine/kana.pyo
+%%DATADIR%%/engine/main.py
+%%DATADIR%%/engine/main.pyc
+%%DATADIR%%/engine/main.pyo
+%%DATADIR%%/engine/romaji.py
+%%DATADIR%%/engine/romaji.pyc
+%%DATADIR%%/engine/romaji.pyo
+%%DATADIR%%/engine/segment.py
+%%DATADIR%%/engine/segment.pyc
+%%DATADIR%%/engine/segment.pyo
+%%DATADIR%%/engine/tables.py
+%%DATADIR%%/engine/tables.pyc
+%%DATADIR%%/engine/tables.pyo
+%%DATADIR%%/icons/ibus-anthy.png
+share/ibus/component/anthy.xml
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/engine
+@dirrm %%DATADIR%%
