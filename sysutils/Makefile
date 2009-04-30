@@ -415,7 +415,6 @@
     SUBDIR += linux-acu
     SUBDIR += linux-afaapps
     SUBDIR += linux-megacli
-    SUBDIR += linux-megacli2
     SUBDIR += linux-megamgr
     SUBDIR += linux-nero
     SUBDIR += linux-procps
