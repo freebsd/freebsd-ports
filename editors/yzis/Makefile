@@ -21,7 +21,7 @@ USE_XORG=	x11 xext ice
 USE_LUA=	5.1
 LUA_COMPS=	lua
 USE_QT_VER=	4
-QT_COMPONENTS=	qtestlib qmake rcc uic moc
+QT_COMPONENTS=	qtestlib qmake rcc uic moc gui xml
 USE_PERL5=	yes
 
 USE_CMAKE=	yes
