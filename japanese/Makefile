@@ -89,6 +89,7 @@
     SUBDIR += gxditview
     SUBDIR += hex
     SUBDIR += hns
+    SUBDIR += ibus-anthy
     SUBDIR += ical
     SUBDIR += icanna
     SUBDIR += iiimf-le-canna
