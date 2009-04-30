@@ -7,6 +7,7 @@
 
 PORTNAME=	mosh
 PORTVERSION=	0.0.7
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -17,6 +18,7 @@ PROJECTHOST=	mosh-scheme
 
 GNU_CONFIGURE=	yes
 USE_GCC=	4.2+
+ONLY_FOR_ARCHS=	i386
 
 SCMS=		all-tests.scm repl.scm tools/psyntax-r6rs/rev10_to_10/psyntax.scm
 SS1=		lib/srfi/%3A8.ss lib/srfi/%3A98.ss
@@ -41,10 +43,4 @@ do-install:
 
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
