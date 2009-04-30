@@ -5387,6 +5387,7 @@ iiimf-x                         ports/textproc/iiimf-x
 iiimf-x-lib                     ports/textproc/iiimf-x-lib
 iiview                          ports/graphics/iiview
 ija                             ports/news/ija
+ikarus                          ports/lang/ikarus
 ike                             ports/security/ike
 ike-scan                        ports/security/ike-scan
 ikiwiki                         ports/www/ikiwiki
@@ -6871,6 +6872,7 @@ kwirc                           ports/irc/kwirc
 kxgenerator                     ports/x11/kxgenerator
 kxl                             ports/devel/kxl
 kxmleditor                      ports/editors/kxmleditor
+ky-aspell                       ports/textproc/ky-aspell
 kyra                            ports/devel/kyra
 l-breeder                       ports/biology/L-Breeder
 l0pht-watch                     ports/security/l0pht-watch
@@ -9044,6 +9046,8 @@ mywiki                          ports/deskutils/mywiki
 mywwwatcher                     ports/databases/mywwwatcher
 nInvaders                       ports/games/nInvaders
 nadar                           ports/games/nadar
+naev                            ports/games/naev
+naev-data                       ports/games/naev-data
 nagaina                         ports/deskutils/nagaina
 nagcon                          ports/net-mgmt/nagcon
 nagios                          ports/net-mgmt/nagios
@@ -11521,6 +11525,7 @@ p5-Iterator-File                ports/sysutils/p5-Iterator-File
 p5-Iterator-IO                  ports/devel/p5-Iterator-IO
 p5-Iterator-Misc                ports/devel/p5-Iterator-Misc
 p5-Iterator-Util                ports/devel/p5-Iterator-Util
+p5-JIRA-Client                  ports/devel/p5-JIRA-Client
 p5-JQuery                       ports/devel/p5-JQuery
 p5-JSAN                         ports/lang/p5-JSAN
 p5-JSON                         ports/converters/p5-JSON
@@ -13246,6 +13251,7 @@ p5-XSLoader                     ports/devel/p5-XSLoader
 p5-Xango                        ports/www/p5-Xango
 p5-Xmms                         ports/audio/p5-Xmms
 p5-YAML                         ports/textproc/p5-YAML
+p5-YAML-LibYAML                 ports/textproc/p5-YAML-LibYAML
 p5-YAML-Syck                    ports/textproc/p5-YAML-Syck
 p5-YAML-Tiny                    ports/textproc/p5-YAML-Tiny
 p5-YAPE-HTML                    ports/textproc/p5-YAPE-HTML
@@ -14952,6 +14958,7 @@ p5-javascript-squish            ports/lang/p5-JavaScript-Squish
 p5-jemplate                     ports/www/p5-Jemplate
 p5-jifty                        ports/www/p5-Jifty
 p5-jifty-dbi                    ports/databases/p5-Jifty-DBI
+p5-jira-client                  ports/devel/p5-JIRA-Client
 p5-jquery                       ports/devel/p5-JQuery
 p5-jsan                         ports/lang/p5-JSAN
 p5-json                         ports/converters/p5-JSON
@@ -16720,6 +16727,7 @@ p5-yahoo-bbauth                 ports/security/p5-Yahoo-BBAuth
 p5-yahoo-lifestyle              ports/www/p5-Yahoo-Lifestyle
 p5-yahoo-search                 ports/www/p5-Yahoo-Search
 p5-yaml                         ports/textproc/p5-YAML
+p5-yaml-libyaml                 ports/textproc/p5-YAML-LibYAML
 p5-yaml-syck                    ports/textproc/p5-YAML-Syck
 p5-yaml-tiny                    ports/textproc/p5-YAML-Tiny
 p5-yape-html                    ports/textproc/p5-YAPE-HTML
@@ -20239,7 +20247,6 @@ rubygem-mime-types              ports/misc/rubygem-mime-types
 rubygem-mocha                   ports/devel/rubygem-mocha
 rubygem-mongrel                 ports/www/rubygem-mongrel
 rubygem-mongrel_cluster         ports/www/rubygem-mongrel_cluster
-rubygem-mp3info                 ports/audio/rubygem-mp3info
 rubygem-needle                  ports/devel/rubygem-needle
 rubygem-net-netrc               ports/net/rubygem-net-netrc
 rubygem-net-scp                 ports/security/rubygem-net-scp
@@ -20289,6 +20296,7 @@ rubygem-rtags                   ports/devel/rubygem-rtags
 rubygem-rubigen                 ports/devel/rubygem-rubigen
 rubygem-ruby-debug              ports/devel/rubygem-ruby-debug
 rubygem-ruby-debug-base         ports/devel/rubygem-ruby-debug-base
+rubygem-ruby-mp3info            ports/audio/rubygem-ruby-mp3info
 rubygem-ruby-ole                ports/devel/rubygem-ruby-ole
 rubygem-ruby-prof               ports/devel/rubygem-ruby-prof
 rubygem-ruby2ruby               ports/devel/rubygem-ruby2ruby
