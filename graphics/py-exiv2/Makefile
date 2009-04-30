@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	exiv2
-PORTVERSION=	0.1.2
-PORTREVISION=	2
+PORTVERSION=	0.1.3
 CATEGORIES=	graphics python
-MASTER_SITES=	http://tilloy.net/dev/pyexiv2/releases/
+MASTER_SITES=	http://tilloy.net/dev/pyexiv2/releases/ \
+		http://www.dindin.ru/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
@@ -19,9 +19,6 @@ COMMENT=	Python bindings for exiv2
 LIB_DEPENDS=	exiv2.7:${PORTSDIR}/graphics/exiv2\
 		boost_python.4:${PORTSDIR}/devel/boost-python
 
-BROKEN=		does not compile with exiv2-0.18, should change at future version py-exiv2-0.2
-
-WRKSRC=	${WRKDIR}/py${PORTNAME}
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
