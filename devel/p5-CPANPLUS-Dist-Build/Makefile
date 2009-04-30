@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CPANPLUS-Dist-Build
-PORTVERSION=	0.22
+PORTVERSION=	0.24
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,7 +29,6 @@ MAN3=		CPANPLUS::Dist::Build.3 CPANPLUS::Dist::Build::Constants.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.42:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
 RUN_DEPENDS+=	p5-CPANPLUS>=0.84:${PORTSDIR}/devel/p5-CPANPLUS
 .endif
 
