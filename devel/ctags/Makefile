@@ -8,21 +8,19 @@
 PORTNAME=	ctags
 PORTVERSION=	5.7
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A feature-filled tagfile generator for vi and emacs clones
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-macro-patterns --with-readlib
+CONFIGURE_ARGS+=	--enable-macro-patterns --with-readlib
 
 MAN1=		exctags.1
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES+=	pkg-message
 
 post-install:
-	@${SED} 's:%%PREFIX%%:'${PREFIX}':' < ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
