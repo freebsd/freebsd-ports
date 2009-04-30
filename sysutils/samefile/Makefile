@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.schweikhardt.net/
 MAINTAINER=	schweikh@FreeBSD.org
 COMMENT=	Find files with identical contents
 
+CONFLICTS=	samesame-[0-9]*
+
 MAN1=		samefile.1
 PLIST_FILES=	bin/samefile
 GNU_CONFIGURE=	yes
