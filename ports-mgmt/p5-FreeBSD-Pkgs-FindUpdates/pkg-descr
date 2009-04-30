@@ -1,0 +1,6 @@
+Finds updates for FreeBSD pkgs by checking the ports index.
+
+pkg_findupdates - Finds updated packages.
+pkg_bupdate - Perform a binary packages update.
+
+WWW: http://search.cpan.org/dist/FreeBSD-Pkgs-FindUpdates/

@@ -1,0 +1,10 @@
+bin/pkg_bupdate
+bin/pkg_findupdates
+%%SITE_PERL%%/FreeBSD/Pkgs/FindUpdates.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Pkgs/FindUpdates/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Pkgs/FindUpdates
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Pkgs
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/FreeBSD/Pkgs
+@dirrmtry %%SITE_PERL%%/FreeBSD

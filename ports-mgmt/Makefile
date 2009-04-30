@@ -14,6 +14,7 @@
    SUBDIR += lsknobs
    SUBDIR += managepkg
    SUBDIR += p5-FreeBSD-Pkgs
+   SUBDIR += p5-FreeBSD-Pkgs-FindUpdates
    SUBDIR += p5-FreeBSD-Portindex
    SUBDIR += p5-FreeBSD-Ports
    SUBDIR += p5-FreeBSD-Ports-INDEXhash
