@@ -21,6 +21,7 @@ BUILD_DEPENDS=	nspr>=4.7:${PORTSDIR}/devel/nspr
 
 LATEST_LINK=	firefox3
 USE_GECKO=	gecko
+CONFLICTS=	firefox-3.[1-5]*
 MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	-png -nss -dbm -jpeg
 MOZILLA_NAME=	Firefox${MOZILLA_SUFX}
