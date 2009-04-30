@@ -1012,7 +1012,6 @@
     SUBDIR += vnc2swf
     SUBDIR += vncreflector
     SUBDIR += vnstat
-    SUBDIR += vnstati
     SUBDIR += vomit
     SUBDIR += vserver
     SUBDIR += vtun
