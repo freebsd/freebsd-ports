@@ -1,4 +1,4 @@
-# New ports collection makefile for:	ibus
+# New ports collection makefile for:	zh-ibus-pinyin
 # Date created:				21 October 2008
 # Whom:					Henry Hu <henry.hu.sh@gmail.com>
 #
