@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	flo@kaismir.com
+MAINTAINER=	flo@kasimir.com
 COMMENT=	A PECL extension that provides WBXML conversion capabilities
 
 LIB_DEPENDS=	wbxml2.0:${PORTSDIR}/textproc/wbxml2
