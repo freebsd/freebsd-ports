@@ -1,0 +1,8 @@
+bin/mpdscribble
+@unexec if cmp -s %D/etc/mpdscribble.conf.sample %D/etc/mpdscribble.conf; then rm -f %D/etc/mpdscribble.conf; fi
+etc/mpdscribble.conf.sample
+@exec [ -f %B/mpdscribble.conf ] || cp -p %B/%f %B/mpdscribble.conf
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
