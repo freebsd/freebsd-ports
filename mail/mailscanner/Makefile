@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.67.6
-PORTREVISION=	4
+PORTVERSION=	4.75.11
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -39,7 +38,8 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate \
 	${SITE_PERL}/${PERL_ARCH}/Filesys/Df.pm:${PORTSDIR}/sysutils/p5-Filesys-Df \
 	${SITE_PERL}/Sys/Hostname/Long.pm:${PORTSDIR}/sysutils/p5-Sys-Hostname-Long \
-	${SITE_PERL}/${PERL_ARCH}/IO/Handle.pm:${PORTSDIR}/devel/p5-IO
+	${SITE_PERL}/${PERL_ARCH}/IO/Handle.pm:${PORTSDIR}/devel/p5-IO \
+	${SITE_PERL}/OLE/Storage_Lite.pm:${PORTSDIR}/devel/p5-OLE-Storage_Lite
 
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		bash:${PORTSDIR}/shells/bash \
@@ -112,7 +112,7 @@ ETC_FILES=	MailScanner.conf filename.rules.conf \
 		phishing.bad.sites.conf \
 		country.domains.conf
 MCP_FILES=	mcp.spam.assassin.prefs.conf \
-		10_example.cf
+		10_example.cf v320.pre
 USRLOCAL_FILES_LIB=	\
 		bitdefender-autoupdate f-prot-autoupdate \
 		f-secure-wrapper inoculan-autoupdate \
@@ -129,8 +129,12 @@ post-extract:
 do-build:
 	${PERL} -pi -e \
 		's,/opt/MailScanner/lib,${PREFIX}/lib/MailScanner,g; \
-		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
+		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g; \
+		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g;' \
 		${WRKSRC}/bin/MailScanner
+	${PERL} -pi -e \
+		's,/opt/MailScanner/lib,${PREFIX}/libexec/MailScanner,g;' \
+		${WRKSRC}/bin/mailscanner_create_locks
 	${PERL} -pi -e \
 		's,/opt/MailScanner/var/MailScanner.pid,/var/run/MailScanner.pid,g; \
 		s,/usr/lib/sendmail,/usr/sbin/sendmail,g; \
@@ -140,14 +144,17 @@ do-build:
 		s,/opt/MailScanner/lib,${PREFIX}/lib/MailScanner,g; \
 		s,/usr/bin/unrar,${LOCALBASE}/bin/unrar,g; \
 		s,/bin/gunzip,/usr/bin/gunzip,g; \
-		s,/etc/mail/spamassassin,${LOCALBASE}/etc/mail/spamassassin,g;' \
+		s,/etc/mail/spamassassin,${LOCALBASE}/etc/mail/spamassassin,g; \
+		s,/tmp/clamd.socket,/var/run/clamav/clamd.sock,g; \
+		s,/usr/local/share/clamav,/var/db/clamav,g;' \
 		${WRKSRC}/etc/MailScanner.conf
 	${PERL} -pi -e \
 		's,/opt/MailScanner/lib,${PREFIX}/libexec/MailScanner,g; \
 		s,/bin/false,/usr/bin/false,;' ${WRKSRC}/etc/virus.scanners.conf
 	${PERL} -pi -e \
 		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
-		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
+		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g; \
+		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g;' \
 		${WRKSRC}/bin/update_virus_scanners
 	${PERL} -pi -e \
 		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
@@ -179,11 +186,11 @@ do-build:
 		${WRKSRC}/bin/cron/update_spamassassin.cron
 	${PERL} -pi -e \
 		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
-                s,/etc/init.d/MailScanner,${LOCALBASE}/etc/rc.d/mailscanner,g; \
+		s,/etc/init.d/MailScanner,${LOCALBASE}/etc/rc.d/mailscanner,g; \
 		s,/etc/mail/,${LOCALBASE}/etc/mail/,g; \
 		s,/usr/bin/sa-compile,${LOCALBASE}/bin/sa-compile,g; \
 		s,/usr/bin/sa-update,${LOCALBASE}/bin/sa-update,g;' \
-                ${WRKSRC}/bin/update_spamassassin
+		${WRKSRC}/bin/update_spamassassin
 	${PERL} -pi -e \
 		's,/etc/MailScanner/MailScanner.conf,${PREFIX}/etc/MailScanner/MailScanner.conf,g;' \
 		${WRKSRC}/bin/clean.SA.cache
@@ -232,6 +239,8 @@ do-install:
 		${PREFIX}/libexec/MailScanner/clean.SA.cache
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/clean.quarantine \
 		${PREFIX}/libexec/MailScanner/clean.quarantine
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/mailscanner_create_locks \
+		${PREFIX}/libexec/MailScanner/mailscanner_create_locks
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_phishing_sites \
 		${PREFIX}/libexec/MailScanner/update_phishing_sites
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_bad_phishing_sites \
@@ -262,6 +271,10 @@ do-install:
 		${INSTALL_DATA} EXAMPLES README ${PREFIX}/etc/MailScanner/rules
 	${INSTALL_DATA} ${WRKSRC}/etc/rules/spam.whitelist.rules \
 		${PREFIX}/etc/MailScanner/rules/spam.whitelist.rules.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/rules/bounce.rules \
+		${PREFIX}/etc/MailScanner/rules/bounce.rules.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/rules/max.message.size.rules \
+		${PREFIX}/etc/MailScanner/rules/max.message.size.rules.sample
 	${MKDIR} ${PREFIX}/etc/MailScanner/mcp
 	${CHMOD} ${BINMODE} ${PREFIX}/etc/MailScanner/mcp
 .for FILE in ${MCP_FILES}
@@ -377,11 +390,21 @@ initial-config: renew-wrapper renew-autoupdate renew-reports
 		${PREFIX}/etc/MailScanner
 	${INSTALL_DATA} ${WRKSRC}/etc/rules/spam.whitelist.rules \
 		${PREFIX}/etc/MailScanner/rules/spam.whitelist.rules
+	${INSTALL_DATA} ${WRKSRC}/etc/rules/bounce.rules \
+		${PREFIX}/etc/MailScanner/rules/bounce.rules
+	${INSTALL_DATA} ${WRKSRC}/etc/rules/max.message.size.rules \
+		${PREFIX}/etc/MailScanner/rules/max.message.size.rules
+.for FILE in ${MCP_FILES}
+	${INSTALL_DATA} ${WRKSRC}/etc/mcp/${FILE} \
+		${PREFIX}/etc/MailScanner/mcp/${FILE}
+.endfor
 	@${ECHO} "******************************************************************************"
 	@${ECHO} "The provided default configuration requires several directories to be created:"
 	@${ECHO} "/var/spool/MailScanner/incoming"
+	@${ECHO} "/var/spool/MailScanner/incoming/Locks"
 	@${ECHO} "/var/spool/MailScanner/quarantine"
 	@${ECHO} "/var/spool/mqueue"
+	@${ECHO} "/var/spool/mqueue.in"
 	@${ECHO} "Either create those directories or change the configuration."
 	@${ECHO} "******************************************************************************"
 
