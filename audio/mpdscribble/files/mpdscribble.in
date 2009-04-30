@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+
+# PROVIDE: mpdscribble
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable mpdscribble:
+#
+#mpdscribble_enable="YES"
+
+. %%RC_SUBR%%
+
+name=mpdscribble
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/bin/mpdscribble
+
+load_rc_config $name
+
+: ${mpdscribble_enable="NO"}
+: ${mpdscribble_user="nobody"}
+
+command_args="--daemon-user ${mpdscribble_user}"
+
+run_rc_command "$1"

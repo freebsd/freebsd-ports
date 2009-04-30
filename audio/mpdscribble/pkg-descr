@@ -1,4 +1,4 @@
 mpdscribble is a music player daemon client which submits information about
-tracks being played to audioscrobbler.
+tracks being played to Last.fm (formerly audioscrobbler).
 
-WWW: http://www.frob.nl/scribble.html
+WWW: http://mpd.wikia.com/wiki/Client:Mpdscribble
