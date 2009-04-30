@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Net-FTP-File
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perls@FreeBSD.org
 COMMENT=	Perl extension for simplifying FTP file operations
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
