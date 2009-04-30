@@ -1,0 +1,16 @@
+These applications find identical / duplicate files and hard- or symlink
+them to save space. This port was inspired by the application samefile
+written by Jens Schweikhardt. It has a own version of samefile that is
+noticeable faster and is able to process very large file list.
+
+This port contains the applications: samefile, samelink and samearchive.
+The latter does the same as samefile but for file-based archives. The
+port also contains a version that uses just 10% of the resources compared
+to samearchive. The application samelink (hard) links files for you.
+
+Typical usage would be:
+
+   find / | samefile -i | samelink
+
+This would search for identical files and clean up wasted disk space by
+linking them together. Add the option -n after samelink for a dry-run.
