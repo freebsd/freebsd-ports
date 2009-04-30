@@ -1,123 +1,15 @@
---- Makefile.orig	2008-02-03 13:23:03.000000000 -0500
-+++ Makefile	2008-02-21 19:51:31.000000000 -0500
-@@ -1,106 +1,29 @@
--# bin, man and cron dirs
--BIN = $(DESTDIR)/usr/bin
--MAN = $(DESTDIR)/usr/share/man
--CRON = $(DESTDIR)/etc/cron.d
-+# FreeBSD port by Dennis Herrmann
-+PREFIX?= /usr/local
+--- Makefile.orig	2009-04-13 11:03:12.000000000 +0200
++++ Makefile	2009-04-13 11:05:03.000000000 +0200
+@@ -4,9 +4,9 @@
+ MAN = $(DESTDIR)/usr/share/man
  
--vnstat:
-+all:
- 	+make -C src vnstat
+ # bin and man dirs for *BSD
+-BIN_BSD = $(DESTDIR)/usr/local/bin
+-SBIN_BSD = $(DESTDIR)/usr/local/sbin
+-MAN_BSD = $(DESTDIR)/usr/local/man
++BIN_BSD = ${PREFIX}/bin
++SBIN_BSD = ${PREFIX}/sbin
++MAN_BSD = ${PREFIX}/man
  
- clean:
- 	make -C src clean
+ default: vnstat
  
- install:
--	@echo "Installing vnStat..."
--
--# move some really old version database(s) if found
--	@if [ -d $(DESTDIR)/var/spool/vnstat ]; \
--	then echo "Moving old database(s) to new location..."; \
--	mv -f $(DESTDIR)/var/spool/vnstat $(DESTDIR)/var/lib/; \
--	fi
--
--# remove some really old version binary if found
--	@if [ -x $(DESTDIR)/usr/local/bin/vnstat ]; \
--	then echo "Removing old binary..."; \
--	rm -f $(DESTDIR)/usr/local/bin/vnstat; \
--	fi
--
--# install ppp scripts if directory is found
--	@if [ -d $(DESTDIR)/etc/ppp/ip-up.d ]; \
--	then echo "Installing ppp/ip-up script"; \
--	cp -f pppd/vnstat_ip-up $(DESTDIR)/etc/ppp/ip-up.d/vnstat; \
--	chmod 755 $(DESTDIR)/etc/ppp/ip-up.d/vnstat; \
--	fi
--	@if [ -d $(DESTDIR)/etc/ppp/ip-down.d ]; \
--	then echo "Installing ppp/ip-down script"; \
--	cp -f pppd/vnstat_ip-down $(DESTDIR)/etc/ppp/ip-down.d/vnstat; \
--	chmod 755 $(DESTDIR)/etc/ppp/ip-down.d/vnstat; \
--	fi
--
--# install default config if such doesn't exist
--	@if [ ! -f $(DESTDIR)/etc/vnstat.conf ]; \
--	then install -m 644 cfg/vnstat.conf $(DESTDIR)/etc; \
--	fi
--
--	install -d $(BIN) $(MAN)/man1 $(CRON) $(DESTDIR)/var/lib/vnstat
--	install -s -m 755 src/vnstat $(BIN)
--
--# update man page, gzip it if previous version was done so	
--	@if [ -f $(MAN)/man1/vnstat.1.gz ]; \
--	then install -m 644 man/vnstat.1 $(MAN)/man1; \
--	gzip -f9 $(MAN)/man1/vnstat.1; \
--	else install -m 644 man/vnstat.1 $(MAN)/man1; \
--	fi
--
--	install -m 644 cron/vnstat $(CRON)
--
--uninstall:
--	@echo "Uninstalling vnStat..."
--	@echo
--	@echo "Note: this will also remove the database directory"
--	@echo "including any database located there"
--	@echo
--	@echo "Press CTRL-C to abort within 10 sec."
--	@sleep 10
--	rm -fr $(DESTDIR)/var/lib/vnstat
--	rm -f $(BIN)/vnstat
--	rm -f $(MAN)/man1/vnstat.1*
--	rm -f $(CRON)/vnstat
--	rm -f $(DESTDIR)/etc/vnstat.conf
--	rm -f $(DESTDIR)/etc/ppp/ip-up.d/vnstat
--	rm -f $(DESTDIR)/etc/ppp/ip-down.d/vnstat
--
--bsdinstall:
--	@echo "Installing vnStat (BSD)..."
--
-+	@mkdir -p ${DESTDIR}${PREFIX}/bin
- 	install -dm 755 /var/db/vnstat
--	install -m 755 src/vnstat /usr/local/bin
-+	install -m 755 src/vnstat ${PREFIX}/bin
- 
- # install default config if such doesn't exist
--	@if [ ! -f /etc/vnstat.conf ]; \
--	then install -m 644 cfg/vnstat.conf /etc; \
--	sed -i "" -e 's/lib/db/g' /etc/vnstat.conf; \
--	fi
--
--# install cron if it isn' there already
--	@if [ `grep -c vnstat /etc/crontab` -eq 0 ]; \
--	then cat cron/vnstat >>/etc/crontab; \
--	sed -i "" -e 's/lib\/vnstat/db\/vnstat/g' -e 's/\/usr\/bin\/vnstat/\/usr\/local\/bin\/vnstat/g' /etc/crontab; \
-+	@if [ ! -f ${PREFIX}/etc/vnstat.conf.sample ]; \
-+	then install -m 644 cfg/vnstat.conf ${PREFIX}/etc/vnstat.conf.sample; \
-+	sed -i "" -e 's/lib/db/g' ${PREFIX}/etc/vnstat.conf.sample; \
- 	fi
- 
- # update man page	
--	install -m 644 man/vnstat.1 /usr/local/man/man1
--	gzip -f9 /usr/local/man/man1/vnstat.1
-+	install -m 644 man/vnstat.1 ${PREFIX}/man/man1
-+	gzip -f9 ${PREFIX}/man/man1/vnstat.1
- 
--bsduninstall:
--	@echo "Uninstalling vnStat (BSD)..."
--	@echo
--	@echo "Note: this will also remove the database directory"
--	@echo "including any database located there"
--	@echo
--	@echo "Press CTRL-C to abort within 10 sec."
--	@sleep 10
-+deinstall:
- 	rm -fr /var/db/vnstat
--	rm -f /usr/local/bin/vnstat
--	rm -f /usr/local/man/man1/vnstat.1*
--	rm -f /etc/vnstat.conf
--	@echo "The cron entry from /etc/crontab needs to be removed manually."
-+	rm -f ${PREFIX}/bin/vnstat
-+	rm -f ${PREFIX}/man/man1/vnstat.1*
-+	rm -f ${PREFIX}/etc/vnstat.conf.sample
