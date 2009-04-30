@@ -6,28 +6,40 @@
 #
 
 PORTNAME=	vnstat
-PORTVERSION=	1.6
-PORTREVISION=	3
+PORTVERSION=	1.7
 CATEGORIES=	net
 MASTER_SITES=	http://humdi.net/vnstat/ \
-		http://mirror.mcx2.org/ \
-		http://ftp.uwsg.indiana.edu/FreeBSD/distfiles/ \
-		ftp://ftp.jpix.ad.jp/pub/FreeBSD/ports/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}_bsd
+		http://mirror.mcx2.org/
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A console-based network traffic monitor
 
-MAN1=	vnstat.1
+LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+
+MAKE_ARGS=	CFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+INSTALL_TARGET=	bsdinstall
+
+MAN1=	vnstat.1 vnstatd.1 vnstati.1 vnstat.conf.1
 MANCOMPRESSED=	yes
-PORTDOCS=	README INSTALL vnstat-cron
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+PORTDOCS=	README INSTALL_BSD UPGRADE vnstat-cron
 SUB_FILES=	pkg-message
+
+PLIST_FILES=	bin/vnstat \
+		sbin/vnstatd \
+		bin/vnstati \
+		etc/vnstat.conf.sample
 
 post-extract:
 	@cd ${WRKSRC} && ${CP} cron/vnstat vnstat-cron
+	@cd ${WRKSRC} && ${CP} cfg/vnstat.conf cfg/vnstat.conf.sample
 	@${REINPLACE_CMD} -e 's|/usr/bin|/usr/local/bin|g' \
 		-e 's|ls /var/lib|ls -l /var/db|g' ${WRKSRC}/vnstat-cron
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(DESTDIR)|${PREFIX}|g' \
+		-e 's|cfg/vnstat.conf|cfg/vnstat.conf.sample|g' \
+		-e '134,135d' ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
