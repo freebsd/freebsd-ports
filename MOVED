@@ -3943,4 +3943,4 @@ games/chromium|games/chromium-bsu|2009-04-26|Renamed
 russian/xneur|deskutils/xneur|2009-04-27|Better category: supports many languages
 audio/rubygem-mp3info|rubygem-ruby-mp3info|2009-04-28|Updated to match GEM name, use rubygem-ruby-mp3info instead
 sysutils/linux-megacli2|sysutils/linux-megacli|2009-04-30|Folded into unversioned port directory
-net/vnstati||2009-04-30|Removed
+net/vnstati||2009-04-30|Use net/vnstat
