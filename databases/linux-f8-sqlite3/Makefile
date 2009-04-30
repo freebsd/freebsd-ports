@@ -7,6 +7,7 @@
 
 PORTNAME=	sqlite3
 PORTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	databases linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	sqlite-${PORTVERSION}-${RPMVERSION}
@@ -22,7 +23,7 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	usr/bin/sqlite3 usr/lib/libsqlite3.so.0 \
 		usr/lib/libsqlite3.so.0.8.6
-DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
+DOCSDIR=	${PREFIX}/usr/share/doc/sqlite-${PORTVERSION}
 PORTDOCS=	README
 MANPREFIX=	${PREFIX}/usr/share
 MAN1=		sqlite3.1
