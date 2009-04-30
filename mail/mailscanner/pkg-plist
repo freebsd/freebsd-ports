@@ -5,8 +5,11 @@ etc/MailScanner/filename.rules.conf.sample
 etc/MailScanner/filetype.rules.conf.sample
 etc/MailScanner/mcp/10_example.cf.sample
 etc/MailScanner/mcp/mcp.spam.assassin.prefs.conf.sample
+etc/MailScanner/mcp/v320.pre.sample
 etc/MailScanner/rules/EXAMPLES
 etc/MailScanner/rules/README
+etc/MailScanner/rules/bounce.rules.sample
+etc/MailScanner/rules/max.message.size.rules.sample
 etc/MailScanner/rules/spam.whitelist.rules.sample
 etc/MailScanner/phishing.bad.sites.conf.sample
 etc/MailScanner/phishing.safe.sites.conf.sample
@@ -14,6 +17,7 @@ etc/MailScanner/spam.assassin.prefs.conf.sample
 etc/MailScanner/spam.lists.conf.sample
 etc/MailScanner/virus.scanners.conf.sample
 lib/MailScanner/MailScanner.pm
+lib/MailScanner/MailScanner/Antiword.pm
 lib/MailScanner/MailScanner/BinHex.pm
 lib/MailScanner/MailScanner/Config.pm
 lib/MailScanner/MailScanner/ConfigDefs.pl
@@ -57,6 +61,7 @@ lib/MailScanner/MailScanner/ZMailer.pm
 libexec/MailScanner/analyse_SpamAssassin_cache
 libexec/MailScanner/clean.SA.cache
 libexec/MailScanner/clean.quarantine
+libexec/MailScanner/mailscanner_create_locks
 libexec/MailScanner/update_phishing_sites
 libexec/MailScanner/update_bad_phishing_sites
 libexec/MailScanner/update_bad_phishing_sites.cron
@@ -114,6 +119,8 @@ libexec/MailScanner/symscanengine-autoupdate.sample
 libexec/MailScanner/symscanengine-wrapper.sample
 libexec/MailScanner/trend-autoupdate.sample
 libexec/MailScanner/trend-wrapper.sample
+libexec/MailScanner/vba32-autoupdate.sample
+libexec/MailScanner/vba32-wrapper.sample
 libexec/MailScanner/vexira-autoupdate.sample
 libexec/MailScanner/vexira-wrapper.sample
 sbin/mailscanner
