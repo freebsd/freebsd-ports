@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	2.0.a3
+PORTVERSION=	2.0.b2
 CATEGORIES=	misc kde
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/.alpha/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/.beta/}
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	An opensource Bible study application
@@ -29,6 +29,12 @@ QT_COMPONENTS=	corelib dbus gui xml webkit qmake_build moc_build uic_build rcc_b
 
 CONFLICTS=	bibletime*-1.7*
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700042
+BROKEN=	does on build on 6.x, use misc/bibletime-kde3
+.endif
+
 post-extract:
 	${MV} ${WRKDIR}/${DISTNAME} ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 	${MKDIR} ${WRKSRC}/build
@@ -39,4 +45,4 @@ do-configure:
 		-D CMAKE_INSTALL_PREFIX=${PREFIX} \
 		${WRKSRC}/..
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
