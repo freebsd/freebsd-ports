@@ -1,12 +1,13 @@
 bin/nifti1_test
 bin/nifti_stats
 bin/nifti_tool
-include/config.h
 include/dbh.h
 include/fslio.h
 include/nifti1.h
+include/nifticdf.h
 include/nifti1_io.h
 include/znzlib.h
 lib/libfslio.a
+lib/libnifticdf.a
 lib/libniftiio.a
 lib/libznz.a

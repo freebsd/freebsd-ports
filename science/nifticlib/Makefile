@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	nifticlib
-PORTVERSION=	0.4
+PORTVERSION=	1.1.0
 CATEGORIES=	science graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	niftilib
 
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
