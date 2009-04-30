@@ -36,7 +36,7 @@ if test `id -u` -ne 0; then
 	exit 1
 fi
 
-ADPCOUNT=$(${megacli} -adpCount | \
+ADPCOUNT=$(${megacli} -adpCount -NoLog | \
 	awk '/Controller Count:/ { gsub("\\.", ""); print $3 }')
 
 case ${ADPCOUNT} in
@@ -62,7 +62,7 @@ for ctrl in `jot ${ADPCOUNT} ${ADPMINIDX} ${ADPMAXIDX}`; do
 	echo "------------------------------------------------------------------------"
 	echo "Physical Drive Information:"
 	echo "ENC SLO DEV SEQ MEC OEC PFC LPF STATE"
-	${megacli} -PDList -a${ctrl} | \
+	${megacli} -PDList -a${ctrl} -NoLog | \
 	awk '
 		BEGIN {
 			E=-1; S=-1; D=-1; s=-1; mec=-1; oec=-1; pfc=-1; lpfeqn=-1;
@@ -89,7 +89,7 @@ for ctrl in `jot ${ADPCOUNT} ${ADPMINIDX} ${ADPMAXIDX}`; do
 	' | sort -n -k1 -k2 -k3
 	echo
 	echo "Virtual Drive Information:"
-	${megacli} -LDInfo -lall -a${ctrl} | \
+	${megacli} -LDInfo -lall -a${ctrl} -NoLog | \
 	awk '
 		BEGIN {
 			drvs=-1; vd=-1; state=""; name=""; s=-1; strs=-1;
@@ -130,7 +130,7 @@ for ctrl in `jot ${ADPCOUNT} ${ADPMINIDX} ${ADPMAXIDX}`; do
 		}
 	'
 	# Print BBU Information, if we found something
-	${megacli} -AdpBbuCmd -a${ctrl} | \
+	${megacli} -AdpBbuCmd -a${ctrl} -NoLog | \
 	awk '
 		BEGIN {
 			type=""; temp=-1; isok="-"; rsoc=-1; asoc=-1;
@@ -158,12 +158,12 @@ for ctrl in `jot ${ADPCOUNT} ${ADPMINIDX} ${ADPMAXIDX}`; do
 	# Give very long outputs.
 	case "$daily_status_mfi_raid_verbose" in
 	[Yy][Ee][Ss])
-		${megacli} -AdpAllInfo -a${ctrl}
-		${megacli} -EncInfo -a${ctrl}
-		${megacli} -PDList -a${ctrl}
-		${megacli} -LDGetNUm -a${ctrl}
-		${megacli} -LDInfo -Lall -a${ctrl}
-		${megacli} -AdpBbuCmd -GetBbuStatus -a${ctrl}
+		${megacli} -AdpAllInfo -a${ctrl} -NoLog
+		${megacli} -EncInfo -a${ctrl} -NoLog
+		${megacli} -PDList -a${ctrl} -NoLog
+		${megacli} -LDGetNUm -a${ctrl} -NoLog
+		${megacli} -LDInfo -Lall -a${ctrl} -NoLog
+		${megacli} -AdpBbuCmd -GetBbuStatus -a${ctrl} -NoLog
 		;;
 	    *)
 		;;
@@ -182,7 +182,7 @@ for ctrl in `jot ${ADPCOUNT} ${ADPMINIDX} ${ADPMAXIDX}`; do
 	*)
 		;;
 	esac
-	${megacli} -AdpEventLog -GetEvents -f ${ctrl_log}.tmp -a${ctrl}
+	${megacli} -AdpEventLog -GetEvents -f ${ctrl_log}.tmp -a${ctrl} -NoLog
 	awk '
 		BEGIN {
 			inrecord=0;
@@ -213,7 +213,7 @@ for ctrl in `jot ${ADPCOUNT} ${ADPMINIDX} ${ADPMAXIDX}`; do
 		;;
 	*)
 		# XXX we might consider clearing the logs here
-		# ${megacli} -AdpEventLog -Clear -a${ctrl}
+		# ${megacli} -AdpEventLog -Clear -a${ctrl} -NoLog
 		raid_rc=0
 		lines=`wc -l ${ctrl_log}.today | awk '{ print $1 }'`
 		if test $lines -gt 4; then
@@ -235,7 +235,7 @@ for ctrl in `jot ${ADPCOUNT} ${ADPMINIDX} ${ADPMAXIDX}`; do
 			touch ${tty_log}.today
 		fi
 		mv -f ${tty_log}.today ${tty_log}.yesterday
-		${megacli} -FwTermLog Dsply -a${ctrl} > ${tty_log}.today
+		${megacli} -FwTermLog Dsply -a${ctrl} > ${tty_log}.today -NoLog
 		cmp -s ${tty_log}.yesterday ${tty_log}.today
 		tty_rc=$?
 		if test $tty_rc -ne 0; then

@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	megacli
-PORTVERSION=	1.01.40
-PORTREVISION=	2
+PORTVERSION=	2.00.15
 CATEGORIES=	sysutils linux
-MASTER_SITES=	http://www.lsi.com/support/downloads/megaraid/miscellaneous/linux/
+MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTVERSION}_Linux_Cli
+DISTNAME=	${PORTVERSION}_Linux_MegaCLI
 
 MAINTAINER=	ruben@verweg.com
 COMMENT=	LSI MegaRAID SAS controller management utility
@@ -19,21 +18,44 @@ COMMENT=	LSI MegaRAID SAS controller management utility
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 RESTRICTED=	Redistribution prohibited, see: http://lsi.com/cm/License.do
+NO_PACKAGE=	Redistribution prohibited, see: http://lsi.com/cm/License.do
+DOWNLOAD_URL=	http://www.lsi.com/cm/License.do?url=http://www.lsi.com/DistributionSystem/AssetDocument/support/downloads/megaraid/miscellaneous/linux/2.00.15_Linux_MegaCLI.zip&prodName=MegaRAID%%20SAS%%208708EM2&subType=Miscellaneous&locale=EN
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 SUB_FILES=	megacli.sh
 SUB_FILES+=	407.status-mfi-raid
 SUB_FILES+=	mfi_tty_log
 
-BROKEN=		Unfetchable
-
 # From bsd.linux.rpm.mk
 RPM2CPIO?=			${LOCALBASE}/bin/rpm2cpio
 EXTRACT_DEPENDS+=		${RPM2CPIO}:${PORTSDIR}/archivers/rpm
 
+.include <bsd.port.pre.mk>
+
+.if !defined(PACKAGE_BUILDING) && !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) #{
+DISTFILE_INSTRUCTIONS=\n\
+${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}\n\
+Because of licensing restrictions, you must fetch the distribution\n\
+manually.\n\n
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})#{
+DISTFILE_INSTRUCTIONS+=Please access\n\n\
+\ \ \ \ ${DOWNLOAD_URL}\n\n\
+with a web browser and \"Accept\" the End User License Agreement for\n\
+\"MegaCLI - Linux ${PORTVERSION}\".\n\n
+.endif#}
+DISTFILE_INSTRUCTIONS+=Please place the downloaded file(s) in ${DISTDIR}.\n\n
+.endif#}
+
+pre-fetch:
+.if defined(DISTFILE_INSTRUCTIONS)
+	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
+	@exit 1
+.endif
+
 post-extract:
 	cd ${WRKSRC} && \
-		${RPM2CPIO} MegaCli-${PORTVERSION}-0.i386.rpm | ${CPIO} -id --quiet
+		${UNZIP_CMD} MegaCliLin.zip && \
+		${RPM2CPIO} MegaCli-${PORTVERSION}-1.i386.rpm | ${CPIO} -id --quiet
 
 do-build:
 	@${BRANDELF} -t Linux ${WRKSRC}/opt/MegaRAID/MegaCli/MegaCli
@@ -52,8 +74,6 @@ post-install:
 	${INSTALL_MAN} ${FILESDIR}/README-status-mfi-raid.txt ${DOCSDIR}/README-status-mfi-raid.txt
 .endif
 	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 602000
 IGNORE=			needs at least FreeBSD 6.2 and mfi_linux.ko
