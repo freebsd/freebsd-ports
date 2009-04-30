@@ -1,0 +1,11 @@
+--- qyzis/CMakeLists.txt.orig	2009-02-20 07:25:40.773125110 +0100
++++ qyzis/CMakeLists.txt	2009-02-20 07:26:04.659760911 +0100
+@@ -1,7 +1,7 @@
+ 
+ project(qyzis)
+ 
+-include_directories(${YZIS_INCLUDES}) # ${CMAKE_SOURCE_DIR}/libyzis
++include_directories(${YZIS_INCLUDES} ${LOCALBASE}/include) # ${CMAKE_SOURCE_DIR}/libyzis
+ 
+ add_subdirectory( pics )
+ 

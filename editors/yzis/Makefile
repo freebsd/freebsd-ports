@@ -6,65 +6,73 @@
 #
 
 PORTNAME=	yzis
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.a.1
 CATEGORIES=	editors
-MASTER_SITES=	http://yzis.org.free.fr/releases/ \
+MASTER_SITES=	http://labs.freehackers.org/attachments/download/45/ \
 		http://contribs.martymac.com/FreeBSD-ports/distfiles/
-DISTNAME=	${PORTNAME}-M3
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a.1/-alpha1/}
 
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Vi-like editor
 
-LIB_DEPENDS=	audio:${PORTSDIR}/audio/nas \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		lcms:${PORTSDIR}/graphics/lcms \
-		mng:${PORTSDIR}/graphics/libmng \
-		png:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff \
-		ungif:${PORTSDIR}/graphics/libungif \
-		ps:${PORTSDIR}/print/pslib
-BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
-		doxygen:${PORTSDIR}/devel/doxygen
-
 USE_BZIP2=	yes
-USE_FAM=	yes
-USE_FREETYPE=	yes
 USE_GETTEXT=	yes
-USE_ICONV=	yes
-USE_LUA=	5.0
+USE_XORG=	x11 xext ice
+USE_LUA=	5.1
 LUA_COMPS=	lua
-USE_KDELIBS_VER=	3
-USE_XORG=	xrender xext sm ice x11 xau xdmcp xt xi \
-		xrandr xcursor xinerama xft xfixes
+USE_QT_VER=	4
+QT_COMPONENTS=	qtestlib qmake rcc uic moc
+USE_PERL5=	yes
 
-USE_AUTOTOOLS=	libtool:15
-USE_GMAKE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include -I${LUA_INCDIR}
-LDFLAGS=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--with-lua-includes=${LUA_INCDIR} \
-		--with-lua-libraries=${LUA_LIBDIR}
-GNU_CONFIGURE=	yes
+USE_CMAKE=	yes
+CMAKE_USE_PTHREAD=	yes
+CMAKE_BUILD_TYPE=	Release
+CMAKE_ARGS+=	-DLOCALBASE:STRING="${LOCALBASE}" \
+		-DENABLE_QYZIS:BOOL=ON \
+		-DENABLE_LIBYZISRUNNER:BOOL=OFF \
+		-DENABLE_TESTS:BOOL=OFF
 
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-OPTIONS=	NCURSES "Build nyzis (ncurses frontend - buggy)" off
+OPTIONS=	KYZIS "Build Kyzis and Yzis kpart" off \
+		NYZIS "Build nyzis (ncurses frontend)" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_KYZIS)
+USE_KDE4=	kdehier kdeprefix kdelibs automoc4
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_NCURSES)
-CONFIGURE_ARGS+=	--enable-nyzis
-PLIST_SUB+=	PL_NCURSES=""
-# Define_XOPEN_SOURCE_EXTENDED for ncurses/widec support
-CPPFLAGS+=	-D_XOPEN_SOURCE_EXTENDED
+.if defined(WITH_NYZIS)
+CPPFLAGS+=	-D_XOPEN_SOURCE_EXTENDED # ncurses/widec support
+CMAKE_ARGS+=	-DENABLE_NYZIS:BOOL=ON
+PLIST_SUB+=	PL_NYZIS=""
 .else
-CONFIGURE_ARGS+=	--disable-nyzis
-PLIST_SUB+=	PL_NCURSES="@comment "
+CMAKE_ARGS+=	-DENABLE_NYZIS:BOOL=OFF
+PLIST_SUB+=	PL_NYZIS="@comment "
+.endif
+
+.if defined(WITH_KYZIS)
+LIB_DEPENDS+=	phonon.4:${PORTSDIR}/multimedia/phonon
+CMAKE_ARGS+=	-DENABLE_KYZIS:BOOL=ON \
+		-DENABLE_KPART_YZIS:BOOL=ON
+PLIST_SUB+=	PL_KYZIS=""
+PLIST_SUB+=	PL_QYZIS="@comment "
+.else
+CMAKE_ARGS+=	-DENABLE_KYZIS:BOOL=OFF \
+		-DENABLE_KPART_YZIS:BOOL=OFF
+PLIST_SUB+=	PL_KYZIS="@comment "
+PLIST_SUB+=	PL_QYZIS=""
+.endif
+
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz \
+		doxygen:${PORTSDIR}/devel/doxygen
+CMAKE_ARGS+=	-DENABLE_DOCUMENTATION:BOOL=ON
+.else
+CMAKE_ARGS+=	-DENABLE_DOCUMENTATION:BOOL=OFF
 .endif
 
 .include <bsd.port.post.mk>

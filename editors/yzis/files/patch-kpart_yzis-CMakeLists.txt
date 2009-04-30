@@ -1,0 +1,11 @@
+--- kpart_yzis/CMakeLists.txt.orig	2009-02-20 19:13:48.074498674 +0100
++++ kpart_yzis/CMakeLists.txt	2009-02-20 19:14:03.382510725 +0100
+@@ -4,7 +4,7 @@
+ include_directories( ${YZIS_INCLUDES} ${KDE4_INCLUDE_DIR}
+ 	   ${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR}
+ 	   ${QT_INCLUDES} ${YZIS_INCLUDES}
+-	   src/
++	   src/ ${LOCALBASE}/include
+ 	   )
+ add_definitions( ${KDE4_DEFINITIONS} )
+ link_directories( ${KDE4_LIB_DIR} )

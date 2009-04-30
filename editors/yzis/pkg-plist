@@ -1,173 +1,189 @@
-bin/kyzis
-%%PL_NCURSES%%bin/yz
-%%PL_NCURSES%%bin/yzis
-lib/libqtyzis.la
-lib/libqtyzis.so
-lib/libqtyzis.so.0
-lib/libqtyzis.a
-lib/kde3/libkyzispart.so
-lib/kde3/libkyzispart.la
-lib/kde3/libkyzispart.a
-@dirrmtry lib/kde3
-share/services/kyzispart.desktop
-@dirrmtry share/services
-share/apps/kyzis/kyzis_shell.rc
-@dirrm share/apps/kyzis
-share/apps/kyzispart/kyzispart.rc
-@dirrm share/apps/kyzispart
-@dirrmtry share/apps
-share/config.kcfg/kyzis.kcfg
-@dirrmtry share/config.kcfg
-share/icons/crystalsvg/16x16/apps/kyzis.png
-@dirrmtry share/icons/crystalsvg/16x16/apps
-@dirrmtry share/icons/crystalsvg/16x16
-share/icons/crystalsvg/32x32/apps/kyzis.png
-@dirrmtry share/icons/crystalsvg/32x32/apps
-@dirrmtry share/icons/crystalsvg/32x32
-share/icons/crystalsvg/128x128/apps/kyzis.png
-@dirrmtry share/icons/crystalsvg/128x128/apps
-@dirrmtry share/icons/crystalsvg/128x128
-share/icons/crystalsvg/64x64/apps/kyzis.png
-@dirrmtry share/icons/crystalsvg/64x64/apps
-@dirrmtry share/icons/crystalsvg/64x64
-@dirrmtry share/icons/crystalsvg
-@dirrmtry share/icons
-share/applnk/Editors/kyzis.desktop
+bin/qyzis
+%%PL_NYZIS%%bin/nyzis
+%%PL_KYZIS%%bin/kyzis
+%%PL_KYZIS%%lib/kde4/yzispart.so
+%%PL_KYZIS%%@dirrmtry lib/kde4
+lib/libyzis.so.0.0.0
+lib/libyzis.so.0
+lib/libyzis.so
+share/applnk/Editors/qyzis.desktop
 @dirrmtry share/applnk/Editors
 @dirrmtry share/applnk
-share/locale/de/LC_MESSAGES/yzis.mo
-share/locale/es/LC_MESSAGES/yzis.mo
-share/locale/fr/LC_MESSAGES/yzis.mo
-share/locale/nl/LC_MESSAGES/yzis.mo
-share/locale/no/LC_MESSAGES/yzis.mo
-share/locale/pl/LC_MESSAGES/yzis.mo
-share/locale/pt/LC_MESSAGES/yzis.mo
-share/yzis/scripts/indent/python.lua
-share/yzis/scripts/indent/cpp.lua
+%%PL_KYZIS%%share/apps/yzispart/yzispart.rc
+%%PL_KYZIS%%@dirrm share/apps/yzispart
+%%PL_KYZIS%%@dirrmtry share/apps
+%%PL_KYZIS%%share/kde4/services/yzispart.desktop
+%%PL_KYZIS%%@dirrmtry share/kde4/services
+%%PL_KYZIS%%@dirrmtry share/kde4
+%%PL_QYZIS%%share/icons/hicolor/128x128/apps/qyzis.png
+%%PL_QYZIS%%share/icons/hicolor/32x32/apps/qyzis.png
+%%PL_QYZIS%%share/icons/hicolor/64x64/apps/qyzis.png
+%%PL_QYZIS%%share/icons/hicolor/16x16/apps/qyzis.png
+%%PL_QYZIS%%@dirrmtry share/icons/hicolor/128x128/apps
+%%PL_QYZIS%%@dirrmtry share/icons/hicolor/128x128
+%%PL_QYZIS%%@dirrmtry share/icons/hicolor/32x32/apps
+%%PL_QYZIS%%@dirrmtry share/icons/hicolor/32x32
+%%PL_QYZIS%%@dirrmtry share/icons/hicolor/64x64/apps
+%%PL_QYZIS%%@dirrmtry share/icons/hicolor/64x64
+%%PL_QYZIS%%@dirrmtry share/icons/hicolor/16x16/apps
+%%PL_QYZIS%%@dirrmtry share/icons/hicolor/16x16
+%%PL_KYZIS%%share/icons/crystalsvg/128x128/apps/l10n/hicolor/qyzis.png
+%%PL_KYZIS%%share/icons/crystalsvg/32x32/apps/l10n/hicolor/qyzis.png
+%%PL_KYZIS%%share/icons/crystalsvg/64x64/apps/l10n/hicolor/qyzis.png
+%%PL_KYZIS%%share/icons/crystalsvg/16x16/apps/l10n/hicolor/qyzis.png
+%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/128x128/apps/l10n/hicolor
+%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/128x128/apps/l10n
+%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/128x128/apps
+%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/128x128
+%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/32x32/apps/l10n/hicolor
+%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/32x32/apps/l10n
+%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/32x32/apps
+%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/32x32
+%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/64x64/apps/l10n/hicolor
+%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/64x64/apps/l10n
+%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/64x64/apps
+%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/64x64
+%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/16x16/apps/l10n/hicolor
+%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/16x16/apps/l10n
+%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/16x16/apps
+%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/16x16
+%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+share/yzis/syntax/language.dtd
+share/yzis/syntax/syntax.template
+share/yzis/syntax/cpp.xml
+share/yzis/syntax/c.xml
+share/yzis/syntax/html.xml
+share/yzis/syntax/kbasic.xml
+share/yzis/syntax/objectivec.xml
+share/yzis/syntax/changelog.xml
+share/yzis/syntax/ada.xml
+share/yzis/syntax/css.xml
+share/yzis/syntax/perl.xml
+share/yzis/syntax/php.xml
+share/yzis/syntax/xml.xml
+share/yzis/syntax/java.xml
+share/yzis/syntax/rpmspec.xml
+share/yzis/syntax/sql.xml
+share/yzis/syntax/sql-mysql.xml
+share/yzis/syntax/sql-postgresql.xml
+share/yzis/syntax/vhdl.xml
+share/yzis/syntax/diff.xml
+share/yzis/syntax/bash.xml
+share/yzis/syntax/latex.xml
+share/yzis/syntax/postscript.xml
+share/yzis/syntax/ruby.xml
+share/yzis/syntax/desktop.xml
+share/yzis/syntax/eiffel.xml
+share/yzis/syntax/pascal.xml
+share/yzis/syntax/sather.xml
+share/yzis/syntax/python.xml
+share/yzis/syntax/makefile.xml
+share/yzis/syntax/ferite.xml
+share/yzis/syntax/scheme.xml
+share/yzis/syntax/matlab.xml
+share/yzis/syntax/tcl.xml
+share/yzis/syntax/ilerpg.xml
+share/yzis/syntax/verilog.xml
+share/yzis/syntax/javascript.xml
+share/yzis/syntax/sml.xml
+share/yzis/syntax/winehq.xml
+share/yzis/syntax/cs.xml
+share/yzis/syntax/sgml.xml
+share/yzis/syntax/idconsole.xml
+share/yzis/syntax/xmldebug.xml
+share/yzis/syntax/fortran.xml
+share/yzis/syntax/haskell.xml
+share/yzis/syntax/literate-haskell.xml
+share/yzis/syntax/r.xml
+share/yzis/syntax/gnuassembler.xml
+share/yzis/syntax/mab.xml
+share/yzis/syntax/mason.xml
+share/yzis/syntax/idl.xml
+share/yzis/syntax/prolog.xml
+share/yzis/syntax/rsiidl.xml
+share/yzis/syntax/coldfusion.xml
+share/yzis/syntax/picsrc.xml
+share/yzis/syntax/uscript.xml
+share/yzis/syntax/lpc.xml
+share/yzis/syntax/velocity.xml
+share/yzis/syntax/sci.xml
+share/yzis/syntax/ldif.xml
+share/yzis/syntax/inform.xml
+share/yzis/syntax/xharbour.xml
+share/yzis/syntax/yacas.xml
+share/yzis/syntax/component-pascal.xml
+share/yzis/syntax/asm6502.xml
+share/yzis/syntax/gdl.xml
+share/yzis/syntax/bibtex.xml
+share/yzis/syntax/d.xml
+share/yzis/syntax/vrml.xml
+share/yzis/syntax/rexx.xml
+share/yzis/syntax/cue.xml
+share/yzis/syntax/progress.xml
+share/yzis/syntax/e.xml
+share/yzis/syntax/awk.xml
+share/yzis/syntax/sieve.xml
+share/yzis/syntax/modula-2.xml
+share/yzis/syntax/cisco.xml
+share/yzis/syntax/doxygen.xml
+share/yzis/syntax/lua.xml
+share/yzis/syntax/pike.xml
+share/yzis/syntax/debianchangelog.xml
+share/yzis/syntax/debiancontrol.xml
+share/yzis/syntax/fgl-4gl.xml
+share/yzis/syntax/fgl-per.xml
+share/yzis/syntax/alert.xml
+share/yzis/syntax/gettext.xml
+share/yzis/syntax/commonlisp.xml
+share/yzis/syntax/clipper.xml
+share/yzis/syntax/povray.xml
+share/yzis/syntax/euphoria.xml
+share/yzis/syntax/mup.xml
+share/yzis/syntax/jsp.xml
+share/yzis/syntax/ocaml.xml
+share/yzis/syntax/lex.xml
+share/yzis/syntax/yacc.xml
+share/yzis/syntax/cg.xml
+share/yzis/syntax/ahdl.xml
+share/yzis/syntax/ansic89.xml
+share/yzis/syntax/tibasic.xml
+share/yzis/syntax/purebasic.xml
+share/yzis/syntax/mips.xml
+share/yzis/syntax/logtalk.xml
+share/yzis/syntax/txt2tags.xml
+share/yzis/syntax/xslt.xml
+share/yzis/syntax/stata.xml
+share/yzis/syntax/glsl.xml
+share/yzis/syntax/lilypond.xml
+share/yzis/syntax/abc.xml
+share/yzis/syntax/asp.xml
+share/yzis/syntax/asm-avr.xml
+share/yzis/syntax/rib.xml
+share/yzis/syntax/cmake.xml
+share/yzis/syntax/octave.xml
+share/yzis/syntax/javadoc.xml
+share/yzis/syntax/cgis.xml
+share/yzis/syntax/spice.xml
+share/yzis/syntax/nasm.xml
+share/yzis/syntax/mediawiki.xml
+share/yzis/syntax/apache.xml
+share/yzis/syntax/m3u.xml
+share/yzis/syntax/ini.xml
+share/yzis/syntax/pgn.xml
+share/yzis/syntax/freebasic.xml
+share/yzis/syntax/ansys.xml
+share/yzis/syntax/gap.xml
+share/yzis/syntax/javascript-php.xml
+share/yzis/syntax/css-php.xml
+share/yzis/syntax/html-php.xml
+@dirrm share/yzis/syntax
 share/yzis/scripts/2html.lua
 share/yzis/scripts/clevertab.lua
-share/yzis/magic.mime
-share/yzis/syntax/ferite.xml
-share/yzis/syntax/mason.xml
-share/yzis/syntax/e.xml
-share/yzis/syntax/xslt.xml
-share/yzis/syntax/python.xml
-share/yzis/syntax/euphoria.xml
-share/yzis/syntax/inform.xml
-share/yzis/syntax/css-php.xml
-share/yzis/syntax/mup.xml
-share/yzis/syntax/sql-mysql.xml
-share/yzis/syntax/mips.xml
-share/yzis/syntax/javascript-php.xml
-share/yzis/syntax/sather.xml
-share/yzis/syntax/alert.xml
-share/yzis/syntax/lpc.xml
-share/yzis/syntax/scheme.xml
-share/yzis/syntax/rexx.xml
-share/yzis/syntax/bash.xml
-share/yzis/syntax/modula-2.xml
-share/yzis/syntax/pascal.xml
-share/yzis/syntax/coldfusion.xml
-share/yzis/syntax/commonlisp.xml
-share/yzis/syntax/progress.xml
-share/yzis/syntax/yacas.xml
-share/yzis/syntax/lex.xml
-share/yzis/syntax/cisco.xml
-share/yzis/syntax/jsp.xml
-share/yzis/syntax/verilog.xml
-share/yzis/syntax/yacc.xml
-share/yzis/syntax/cpp.xml
-share/yzis/syntax/matlab.xml
-share/yzis/syntax/eiffel.xml
-share/yzis/syntax/idconsole.xml
-share/yzis/syntax/ahdl.xml
-share/yzis/syntax/xmldebug.xml
-share/yzis/syntax/makefile.xml
-share/yzis/syntax/glsl.xml
-share/yzis/syntax/syntax.template
-share/yzis/syntax/ocaml.xml
-share/yzis/syntax/desktop.xml
-share/yzis/syntax/vrml.xml
-share/yzis/syntax/cue.xml
-share/yzis/syntax/lilypond.xml
-share/yzis/syntax/winehq.xml
-share/yzis/syntax/doxygen.xml
-share/yzis/syntax/kbasic.xml
-share/yzis/syntax/mab.xml
-share/yzis/syntax/c.xml
-share/yzis/syntax/xml.xml
-share/yzis/syntax/d.xml
-share/yzis/syntax/vhdl.xml
-share/yzis/syntax/literate-haskell.xml
-share/yzis/syntax/ruby.xml
-share/yzis/syntax/language.dtd
-share/yzis/syntax/spice.xml
-share/yzis/syntax/cmake.xml
-share/yzis/syntax/postscript.xml
-share/yzis/syntax/nasm.xml
-share/yzis/syntax/css.xml
-share/yzis/syntax/asm6502.xml
-share/yzis/syntax/asm-avr.xml
-share/yzis/syntax/changelog.xml
-share/yzis/syntax/pike.xml
-share/yzis/syntax/tibasic.xml
-share/yzis/syntax/rib.xml
-share/yzis/syntax/cg.xml
-share/yzis/syntax/xharbour.xml
-share/yzis/syntax/debiancontrol.xml
-share/yzis/syntax/uscript.xml
-share/yzis/syntax/logtalk.xml
-share/yzis/syntax/picsrc.xml
-share/yzis/syntax/velocity.xml
-share/yzis/syntax/latex.xml
-share/yzis/syntax/gnuassembler.xml
-share/yzis/syntax/txt2tags.xml
-share/yzis/syntax/octave.xml
-share/yzis/syntax/perl.xml
-share/yzis/syntax/sieve.xml
-share/yzis/syntax/fortran.xml
-share/yzis/syntax/idl.xml
-share/yzis/syntax/ilerpg.xml
-share/yzis/syntax/r.xml
-share/yzis/syntax/abc.xml
-share/yzis/syntax/tcl.xml
-share/yzis/syntax/cgis.xml
-share/yzis/syntax/stata.xml
-share/yzis/syntax/php.xml
-share/yzis/syntax/bibtex.xml
-share/yzis/syntax/objectivec.xml
-share/yzis/syntax/sml.xml
-share/yzis/syntax/html-php.xml
-share/yzis/syntax/purebasic.xml
-share/yzis/syntax/gettext.xml
-share/yzis/syntax/ada.xml
-share/yzis/syntax/cs.xml
-share/yzis/syntax/asp.xml
-share/yzis/syntax/javascript.xml
-share/yzis/syntax/sql.xml
-share/yzis/syntax/sql-postgresql.xml
-share/yzis/syntax/html.xml
-share/yzis/syntax/ansic89.xml
-share/yzis/syntax/diff.xml
-share/yzis/syntax/awk.xml
-share/yzis/syntax/lua.xml
-share/yzis/syntax/clipper.xml
-share/yzis/syntax/rsiidl.xml
-share/yzis/syntax/fgl-4gl.xml
-share/yzis/syntax/gdl.xml
-share/yzis/syntax/javadoc.xml
-share/yzis/syntax/component-pascal.xml
-share/yzis/syntax/prolog.xml
-share/yzis/syntax/fgl-per.xml
-share/yzis/syntax/rpmspec.xml
-share/yzis/syntax/sgml.xml
-share/yzis/syntax/povray.xml
-share/yzis/syntax/debianchangelog.xml
-share/yzis/syntax/ldif.xml
-share/yzis/syntax/haskell.xml
-share/yzis/syntax/sci.xml
-share/yzis/syntax/java.xml
-@dirrm share/yzis/syntax
+share/yzis/scripts/switch.lua
+share/yzis/scripts/indent/cpp.lua
+share/yzis/scripts/indent/python.lua
 @dirrm share/yzis/scripts/indent
 @dirrm share/yzis/scripts
 @dirrm share/yzis
