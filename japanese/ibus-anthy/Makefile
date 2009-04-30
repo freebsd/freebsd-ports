@@ -13,10 +13,9 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	daichi@freebsd.org
 COMMENT=	Anthy engine for IBus
 
-BUILD_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy \
-		swig:${PORTSDIR}/devel/swig13
-RUN_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus \
-		anthy.1:${PORTSDIR}/japanese/anthy
+BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
+LIB_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy
+RUN_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus
 
 USE_GNOME=	pygtk2
 USE_GETTEXT=	yes
