@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.1.13-alpha
+DISTVERSION=	0.2.1.14-rc
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.cypherpunks.at/dist/ \
@@ -27,7 +27,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 
 OPTIONS=	BUFFREELISTS "freelists for buffer RAM" on \
-		CELLPOOL "memory pool allocator for cells" on \
 		GEOIP "track country data" off \
 		INSTR_DOWNLOADS "instrument downloads for analysis" off \
 		TCMALLOC "use the tcmalloc memory allocation library" off \
@@ -49,12 +48,6 @@ MAN1=		tor.1 tor-resolve.1 torify.1 tor-gencert.1
 CONFIGURE_ARGS+=	--enable-buf-freelists
 .else
 CONFIGURE_ARGS+=	--disable-buf-freelists
-.endif
-
-.if defined(WITH_CELLPOOL)
-CONFIGURE_ARGS+=	--enable-cell-pool
-.else
-CONFIGURE_ARGS+=	--disable-cell-pool
 .endif
 
 .if defined(WITH_GEOIP)
