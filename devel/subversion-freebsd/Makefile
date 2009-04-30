@@ -4,6 +4,7 @@
 #
 # $FreeBSD$
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-freebsd
 
 COMMENT=	Version control system with FreeBSD Project repo customizations
@@ -16,7 +17,7 @@ DESCR=		${.CURDIR}/pkg-descr
 #PATCH_SITES=		http://lev.serebryakov.spb.ru/download/
 PATCH_SITES=		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	lev
-PATCHFILES+=		svn_hacks_1.2.diff
+PATCHFILES+=		svn_hacks_1.3.diff
 
 CONFLICTS?=	subversion-[0-9]* subversion-devel-[0-9]*
 
