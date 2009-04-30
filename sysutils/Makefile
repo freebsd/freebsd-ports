@@ -670,6 +670,7 @@
     SUBDIR += safe-rm
     SUBDIR += safecat
     SUBDIR += samefile
+    SUBDIR += samesame
     SUBDIR += sarah
     SUBDIR += savelogs
     SUBDIR += sb16config
