@@ -1,0 +1,9 @@
+@unexec if cmp -s %D/%%WWWDIR%%/settings.inc.php.sample %D/%%WWWDIR%%/settings.inc.php ; then rm -f %D/%%WWWDIR%%/settings.inc.php ; fi
+%%WWWDIR%%/settings.inc.php.sample
+@exec [ ! -f %B/settings.inc.php ] && cp -p %B/%f %B/settings.inc.php || true
+@unexec if cmp -s %D/%%WWWDIR%%/settings_authorizations.inc.php.sample %D/%%WWWDIR%%/settings_authorizations.inc.php ; then rm -f %D/%%WWWDIR%%/settings_authorizations.inc.php ; fi
+%%WWWDIR%%/settings_authorizations.inc.php.sample
+@exec [ ! -f %B/settings_authorizations.inc.php ] && cp -p %B/%f %B/settings_authorizations.inc.php || true
+@unexec if cmp -s %D/%%WWWDIR%%/settings_screens.inc.php.sample %D/%%WWWDIR%%/settings_screens.inc.php ; then rm -f %D/%%WWWDIR%%/settings_screens.inc.php ; fi
+%%WWWDIR%%/settings_screens.inc.php.sample
+@exec [ ! -f %B/settings_screens.inc.php ] && cp -p %B/%f %B/settings_screens.inc.php || true
