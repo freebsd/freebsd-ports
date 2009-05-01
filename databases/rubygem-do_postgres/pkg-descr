@@ -1,0 +1,7 @@
+Ruby DataObjects driver for PostgreSQL
+The purpose of DO.rb is to rewrite existing Ruby database drivers to conform to
+a single interface. 
+At present, PostgreSQL, MySQL, and SQLite adapters are available.
+
+Author: Dirkjan Bussink (dbussink) <d.bussink@gmail.com>
+WWW:	http://rubyforge.org/projects/dorb/
