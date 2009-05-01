@@ -55,7 +55,6 @@
     SUBDIR += battfink
     SUBDIR += battmond
     SUBDIR += bbapm
-    SUBDIR += bbsmount
     SUBDIR += bchunk
     SUBDIR += be_agent
     SUBDIR += binup
@@ -600,7 +599,6 @@
     SUBDIR += pstack
     SUBDIR += pstree
     SUBDIR += puppet
-    SUBDIR += puppet-devel
     SUBDIR += pv
     SUBDIR += pwd_unmkdb
     SUBDIR += pwg
@@ -762,7 +760,6 @@
     SUBDIR += ts
     SUBDIR += tss
     SUBDIR += ttyload
-    SUBDIR += tua
     SUBDIR += tw_cli
     SUBDIR += ua
     SUBDIR += ucspi-ipc

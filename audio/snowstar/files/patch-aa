@@ -1,8 +1,0 @@
---- snowstar.tcl.orig	Thu Nov  4 12:23:29 1999
-+++ snowstar.tcl	Thu Nov  4 12:24:19 1999
-@@ -1,4 +1,4 @@
--#!/usr/bin/wish
-+#!%%LOCALBASE%%/bin/wish8.2
- wm title . "Snowstar 0.75.5"
- wm minsize . 320 240 
- wm resizable . 1 1

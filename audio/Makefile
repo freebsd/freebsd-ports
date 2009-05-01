@@ -658,7 +658,6 @@
     SUBDIR += slv2
     SUBDIR += snack
     SUBDIR += snd
-    SUBDIR += snowstar
     SUBDIR += solfege
     SUBDIR += sonata
     SUBDIR += sonice

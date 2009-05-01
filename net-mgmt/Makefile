@@ -117,7 +117,6 @@
     SUBDIR += nagios-silfreed-plugins
     SUBDIR += nagios-snmp-plugins
     SUBDIR += nagios-spamd-plugin
-    SUBDIR += nagios12
     SUBDIR += nagiosgraph
     SUBDIR += nagiostat
     SUBDIR += nagircbot
