@@ -44,6 +44,7 @@ lib/seed7/screen.s7i
 lib/seed7/seed7_05.s7i
 lib/seed7/shell.s7i
 lib/seed7/socket.s7i
+lib/seed7/sokoban1.s7i
 lib/seed7/stars.s7i
 lib/seed7/strifile.s7i
 lib/seed7/stritext.s7i
@@ -141,6 +142,7 @@ lib/seed7/wrinum.s7i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shisen.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sl.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/snake.sd7
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sokoban.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/startrek.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sudoku7.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tak.sd7
