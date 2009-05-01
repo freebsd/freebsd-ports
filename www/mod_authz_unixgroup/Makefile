@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.unixpapa.com/software/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A unix group access control module for Apache 2.1 and later
 
 USE_APACHE=	22+
