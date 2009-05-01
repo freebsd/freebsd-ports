@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	poker-eval
-PORTVERSION=	0.134
+PORTVERSION=	0.135
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/pokersource/sources/
 DISTNAME=	${PORTNAME}-${PORTVERSION:E}.0
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library to evaluate poker hands
 
 USE_GNOME=	gnometarget
