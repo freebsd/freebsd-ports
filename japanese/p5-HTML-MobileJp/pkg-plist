@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/MobileJp/.packlist
+%%SITE_PERL%%/HTML/MobileJp/Plugin/EZweb/Object.pm
+%%SITE_PERL%%/HTML/MobileJp/Plugin/GPS.pm
+%%SITE_PERL%%/HTML/MobileJp.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/MobileJp
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML/MobileJp/Plugin/EZweb
+@dirrmtry %%SITE_PERL%%/HTML/MobileJp/Plugin
+@dirrmtry %%SITE_PERL%%/HTML/MobileJp
+@dirrmtry %%SITE_PERL%%/HTML
