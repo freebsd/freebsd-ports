@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	yawp
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.2.2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	plasma-applet-
@@ -22,5 +21,6 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui dbus network opengl svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 USE_GETTEXT=	yes
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>
