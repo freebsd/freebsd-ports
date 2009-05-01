@@ -1,6 +1,7 @@
 %%PYTHON_SITELIBDIR%%/pyparsing.py
 %%PYTHON_SITELIBDIR%%/pyparsing.pyc
 %%PYTHON_SITELIBDIR%%/pyparsing.pyo
+%%PYTHON_SITELIBDIR%%/pyparsing_py3.py
 %%PORTDOCS%%%%DOCSDIR%%/api-objects.txt
 %%PORTDOCS%%%%DOCSDIR%%/class-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/crarr.png
@@ -11,12 +12,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/identifier-index.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/module-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.And._ErrorStop-class.html
-%%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing._Constants-class.html
-%%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing._ForwardNoRecurse-class.html
-%%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing._NullToken-class.html
-%%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing._ParseResultsWithOffset-class.html
-%%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing._PositionToken-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing-module.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.And-class.html
@@ -66,7 +61,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.WordStart-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.ZeroOrMore-class.html
 %%PORTDOCS%%%%DOCSDIR%%/redirect.html
-%%PORTDOCS%%%%DOCSDIR%%/str-class.html
 %%PORTDOCS%%%%DOCSDIR%%/toc-everything.html
 %%PORTDOCS%%%%DOCSDIR%%/toc-pyparsing.pyparsing-module.html
 %%PORTDOCS%%%%DOCSDIR%%/toc.html
@@ -131,5 +125,5 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/urlExtractorNew.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/withAttribute.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wordsToNum.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
