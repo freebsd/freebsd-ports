@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyephem
-PORTVERSION=	3.7.3.3
+PORTVERSION=	3.7.3.4
 PORTEPOCH=	1
 CATEGORIES=	astro math hamradio
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP:S"%SUBDIR%"source/p/pyephem"} \
