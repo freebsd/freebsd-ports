@@ -18,7 +18,6 @@ COMMENT=	Perl module for Embeddable Fulltext Search Engine
 BUILD_DEPENDS=	senna-cfg:${PORTSDIR}/textproc/senna
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		This version does not support latest libsenna interface.
 PERL_MODBUILD=	YES
 CONFIGURE_ARGS+=</dev/null
 CFLAGS+=	-I${LOCALBASE}/include
