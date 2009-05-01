@@ -7,22 +7,25 @@
 #
 
 PORTNAME=	poker-eval
-PORTVERSION=	0.133
+PORTVERSION=	0.136
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/pokersource/sources/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION:E}.0
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python adaptor for the poker-eval toolkit
 
 LIB_DEPENDS=	poker-eval.1:${PORTSDIR}/games/poker-eval
 
-USE_GNOME=	gnometarget pkgconfig
+USE_GNOME=	pkgconfig
 USE_PYTHON=	2.3+
 GNU_CONFIGURE=	yes
 
 PLIST_SUB=	PYVER=${_PYTHON_VERSION:S/./_/}
+
+do-configure:
+	@cd ${CONFIGURE_WRKSRC} && ./${CONFIGURE_SCRIPT}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
