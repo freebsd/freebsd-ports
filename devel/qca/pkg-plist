@@ -19,8 +19,8 @@ lib/libqca.prl
 lib/libqca.so
 lib/libqca.so.2
 lib/libqca.so.2.0
-lib/libqca.so.2.0.1
-%%DEBUG%%lib/libqca.so.2.0.1.debug
+lib/libqca.so.2.0.2
+%%DEBUG%%lib/libqca.so.2.0.2.debug
 libdata/pkgconfig/qca2.pc
 share/qca/certs/README
 share/qca/certs/rootcerts.pem
