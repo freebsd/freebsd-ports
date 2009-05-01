@@ -6,6 +6,6 @@
  TRANSLATIONS += Russian.ts
 -CONFIG += qtestlib debug_and_release
 +CONFIG += qtestlib release
- QT += xml
+ QT += xml network
  DEFINES += VNC_DISPLAY
  LIBS += -lvncclient
