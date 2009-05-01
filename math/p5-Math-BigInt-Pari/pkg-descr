@@ -1,0 +1,8 @@
+This is Math::BigInt::Pari, a plugin module for Math::BigInt that
+replaces Math::BigInt's core math routines with Math::Pari routines.
+
+This package contains a replacement (drop-in) module for Math::BigInt's core,
+Math::BigInt::Calc.pm. It needs the new versions of Math::BigInt and
+Math::BigFloat as they are from Perl 5.7.x onwards.
+
+WWW:	http://search.cpan.org/dist/Math-BigInt-Pari/
