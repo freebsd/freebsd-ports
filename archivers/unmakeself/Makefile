@@ -13,7 +13,7 @@ DISTFILES=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extract Makeself archives
 
-LDFLAGS=	-larchive -lbz2 -lz
+LDFLAGS=	-larchive -lbz2 -lz -lcrypto -lmd
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/unmakeself
