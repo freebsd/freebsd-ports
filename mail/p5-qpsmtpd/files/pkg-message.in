@@ -1,0 +1,6 @@
+*****************************************************************'
+Please read http://wiki.qpsmtpd.org/ for more info about installation.
+The example config can be found in %%PREFIX%%/share/examples/%%{PORTNAME}%%
+The plugins can be found in %%PREFIX%%/share/%%{PORTNAME%%/plugins/
+This port does also not make any assumptions about what user you
+wish to use or install location.
