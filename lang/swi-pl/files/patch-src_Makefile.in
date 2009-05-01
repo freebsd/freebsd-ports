@@ -1,0 +1,28 @@
+--- src/Makefile.in.orig	2009-05-01 14:19:28.026640396 -0400
++++ src/Makefile.in	2009-05-01 14:22:52.826741805 -0400
+@@ -38,6 +38,7 @@
+ bindir=@bindir@
+ libdir=@libdir@
+ mandir=@mandir@
++pkgconfdir=${prefix}/libdata/pkgconfig/
+ mansec=1
+ lmansec=3
+ smandir=$(mandir)/man$(mansec)
+@@ -393,7 +394,7 @@
+ 
+ idirs::
+ 		if [ ! -d $(DESTDIR)$(libdir)  ]; then $(MKDIR) $(DESTDIR)$(libdir); fi
+-		if [ ! -d $(DESTDIR)$(libdir)/pkgconfig ]; then $(MKDIR) $(DESTDIR)$(libdir)/pkgconfig; fi
++		if [ ! -d $(DESTDIR)$(pkgconfdir) ]; then $(MKDIR) $(DESTDIR)$(pkgconfdir); fi
+ 		if [ ! -d $(DESTDIR)$(PLBASE) ]; then $(MKDIR) $(DESTDIR)$(PLBASE); fi
+ 		for d in $(installdirs); do \
+ 			if [ ! -d $(DESTDIR)$(PLBASE)/$$d ]; then \
+@@ -454,7 +455,7 @@
+ 		done
+ 
+ ipkgconfig:	idirs
+-		$(INSTALL_DATA) pl.pc $(DESTDIR)$(libdir)/pkgconfig/
++		$(INSTALL_DATA) pl.pc $(DESTDIR)$(pkgconfdir)
+ 
+ iman::
+ 		-if [ ! -d $(DESTDIR)$(mandir) ]; then $(MKDIR) $(DESTDIR)$(mandir); fi
