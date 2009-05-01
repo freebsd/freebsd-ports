@@ -1562,6 +1562,7 @@ www/ilias/Services/COPage/htmlarea/release-notes.html
 www/ilias/Services/COPage/js/handletags.js
 www/ilias/Services/COPage/js/ilcopagecallback.js
 www/ilias/Services/COPage/js/page_editing.js
+www/ilias/Services/COPage/js/page_history.js
 www/ilias/Services/COPage/js/paragraph_editing.js
 www/ilias/Services/COPage/js/wz_dragdrop.js
 www/ilias/Services/COPage/mediawikidiff/class.WordLevelDiff.php
