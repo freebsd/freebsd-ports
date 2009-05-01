@@ -13,9 +13,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/cbranch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/cbranch.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/cbranch.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/clean_tree.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/clean_tree.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/clean_tree.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/colordiff.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/colordiff.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/colordiff.pyo
@@ -25,6 +22,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/command_classes.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/command_classes.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/command_classes.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/conflict_diff.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/conflict_diff.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/conflict_diff.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/dotgraph.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/dotgraph.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/dotgraph.pyo
@@ -79,9 +79,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/blackbox.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/blackbox.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/blackbox.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/clean_tree.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/clean_tree.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/clean_tree.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/is_clean.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/is_clean.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/is_clean.pyo
@@ -91,6 +88,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_cbranch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_cbranch.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_cbranch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_conflict_diff.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_conflict_diff.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_conflict_diff.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_dotgraph.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_dotgraph.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_dotgraph.pyo
