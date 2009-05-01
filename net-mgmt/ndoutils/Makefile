@@ -17,6 +17,8 @@ COMMENT=	Keep Nagios perfdata in MySQL or Postgresql database
 
 RUN_DEPENDS=	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios
 
+MAKE_JOBS_UNSAFE=	yes
+
 GNU_CONFIGURE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -fPIC
