@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	free-sa
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.0
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -21,11 +21,14 @@ MAN5=	free-sa.conf.5
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,PREFIX =,PREFIX ?=,' ${WRKSRC}/global.mk
-
 .if defined(NOPORTDOCS)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile
+.endif
+
+.if (${OSVERSION} >= 700000 && ${OSVERSION} <= 800000)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-global-native.mk
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-global-i386.mk
 .endif
 
 .include <bsd.port.post.mk>
