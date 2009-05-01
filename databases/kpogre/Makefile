@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kpogre
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.2
 CATEGORIES=	databases kde
 MASTER_SITES=	SF
 
