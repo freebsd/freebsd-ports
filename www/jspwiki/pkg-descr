@@ -1,0 +1,10 @@
+JSPWiki is a feature-rich and extensible WikiWiki engine built
+around the standard J2EE components (Java,servlets,JSP).
+
+It's features include:WikiMarkup/Structured Text,File attachments,
+Templates support,Data storage,Security,Easy plugin interface for
+writing your own additions,UTF-8 support,JavaServerPages-based,
+Easy-ish installation, Page locking to prevent editing conflicts,
+Support for Multiple Wikis,etc.
+
+WWW: http://www.jspwiki.org/

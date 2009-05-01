@@ -308,6 +308,7 @@
     SUBDIR += jetty
     SUBDIR += joomla
     SUBDIR += joomla15
+    SUBDIR += jspwiki
     SUBDIR += jtoolkit
     SUBDIR += junkbuster
     SUBDIR += kannel
