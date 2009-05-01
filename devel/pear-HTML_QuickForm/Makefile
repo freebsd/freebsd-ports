@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_QuickForm
-PORTVERSION=	3.2.10
+PORTVERSION=	3.2.11
 CATEGORIES=	devel www pear
 
 MAINTAINER=	gerrit.beine@gmx.de
