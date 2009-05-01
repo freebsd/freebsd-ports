@@ -6,6 +6,11 @@ bin/s9
 %%DATADIR%%/contrib/format-test.scm
 %%DATADIR%%/contrib/format.scm
 %%DATADIR%%/contrib/format.txt
+%%DATADIR%%/contrib/pretty-print.scm
+%%DATADIR%%/contrib/print-code.scm
+%%DATADIR%%/contrib/prolog.scm
+%%DATADIR%%/contrib/prolog-sample.scm
+%%DATADIR%%/contrib/scheme.css
 %%DATADIR%%/contrib/string-find.scm
 %%DATADIR%%/count.scm
 %%DATADIR%%/depth.scm
@@ -17,6 +22,7 @@ bin/s9
 %%DATADIR%%/filter.scm
 %%DATADIR%%/flatten.scm
 %%DATADIR%%/fluid-let.scm
+%%DATADIR%%/fluid-let-sr.scm
 %%DATADIR%%/for-all.scm
 %%DATADIR%%/hash-table.scm
 %%DATADIR%%/help.scm
@@ -229,8 +235,6 @@ bin/s9
 %%DATADIR%%/module.scm
 %%DATADIR%%/partition.scm
 %%DATADIR%%/permute.scm
-%%DATADIR%%/pretty-print.scm
-%%DATADIR%%/print-code.scm
 %%DATADIR%%/programp.scm
 %%DATADIR%%/quicksort.scm
 %%DATADIR%%/read-file.scm
@@ -242,7 +246,6 @@ bin/s9
 %%DATADIR%%/replace.scm
 %%DATADIR%%/s9.image
 %%DATADIR%%/s9.scm
-%%DATADIR%%/scheme.css
 %%DATADIR%%/string-contains.scm
 %%DATADIR%%/string-split.scm
 %%DATADIR%%/substitute.scm
