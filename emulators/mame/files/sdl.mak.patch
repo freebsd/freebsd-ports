@@ -1,6 +1,15 @@
---- src/osd/sdl/sdl.mak.orig	2009-03-05 20:03:50.000000000 +0100
-+++ src/osd/sdl/sdl.mak	2009-03-05 20:06:22.000000000 +0100
-@@ -264,10 +264,10 @@
+--- src/osd/sdl/sdl.mak.orig	2009-03-19 14:09:23.000000000 +0100
++++ src/osd/sdl/sdl.mak	2009-03-25 05:32:18.000000000 +0100
+@@ -127,7 +127,7 @@
+ 
+ ifeq ($(TARGETOS),freebsd)
+ TARGETOS = unix
+-DEFS += -DNO_THREAD_COOPERATIVE
++DEFS += -DNO_THREAD_COOPERATIVE -DNO_DEBUGGER
+ endif
+ 
+ ifeq ($(TARGETOS),openbsd)
+@@ -269,10 +269,10 @@
  # the new debugger relies on GTK+ in addition to the base SDLMAME needs
  # Non-X11 builds can not use the debugger
  ifndef NO_X11
