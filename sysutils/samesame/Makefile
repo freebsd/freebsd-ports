@@ -46,7 +46,14 @@ CFLAGS+=	-D'TEMP_STORAGE_DIR=\"/tmp\"'
 CFLAGS+=	-DPATH_INIT=256
 CFLAGS+=	-DSTATIC_CACHE_CAPACITY=8192
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|test-samefile||g' \
+	-e 's|test-samelink||g' \
+	-e 's|test-samearchive||g' \
+	-e 's|test-samearchive-lite||g' ${WRKSRC}/Makefile
+
 post-install:
+	${CHMOD} 770 ${WRKSRC}/test*
 	${STRIP_CMD} ${PREFIX}/bin/samefile
 	${STRIP_CMD} ${PREFIX}/bin/samelink
 	${STRIP_CMD} ${PREFIX}/bin/samearchive
