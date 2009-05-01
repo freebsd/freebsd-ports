@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+lib/perl5/site_perl/5.8.9/Math/BigInt/Pari.pm
+lib/perl5/site_perl/5.8.9/mach/auto/Math/BigInt/Pari/.packlist
+@dirrmtry lib/perl5/site_perl/5.8.9/mach/auto/Math/BigInt/Pari
