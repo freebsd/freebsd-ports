@@ -65,11 +65,11 @@ etc/poker-engine/poker.ante-3-6-limit.xml
 etc/poker-engine/poker.ante-30-60-limit.xml
 etc/poker-engine/poker.ante-5-10-limit.xml
 etc/poker-engine/poker.holdem.xml
+etc/poker-engine/poker.level-001.xml
 etc/poker-engine/poker.level-10-15-pot-limit.xml
 etc/poker-engine/poker.level-10-20-no-limit.xml
 etc/poker-engine/poker.level-15-30-no-limit.xml
 etc/poker-engine/poker.level-2-4-limit.xml
-etc/poker-engine/poker.level-no-limit.xml
 etc/poker-engine/poker.levels-blinds.xml
 etc/poker-engine/poker.omaha.xml
 etc/poker-engine/poker.omaha8.xml
@@ -143,11 +143,11 @@ sbin/pokerconfigupgrade
 %%DATADIR%%/conf/poker.ante-30-60-limit.xml
 %%DATADIR%%/conf/poker.ante-5-10-limit.xml
 %%DATADIR%%/conf/poker.holdem.xml
+%%DATADIR%%/conf/poker.level-001.xml
 %%DATADIR%%/conf/poker.level-10-15-pot-limit.xml
 %%DATADIR%%/conf/poker.level-10-20-no-limit.xml
 %%DATADIR%%/conf/poker.level-15-30-no-limit.xml
 %%DATADIR%%/conf/poker.level-2-4-limit.xml
-%%DATADIR%%/conf/poker.level-no-limit.xml
 %%DATADIR%%/conf/poker.levels-blinds.xml
 %%DATADIR%%/conf/poker.omaha.xml
 %%DATADIR%%/conf/poker.omaha8.xml
@@ -171,6 +171,9 @@ sbin/pokerconfigupgrade
 %%PYTHON_SITELIBDIR%%/pokerengine/pokergame.py
 %%PYTHON_SITELIBDIR%%/pokerengine/pokergame.pyc
 %%PYTHON_SITELIBDIR%%/pokerengine/pokergame.pyo
+%%PYTHON_SITELIBDIR%%/pokerengine/pokerprizes.py
+%%PYTHON_SITELIBDIR%%/pokerengine/pokerprizes.pyc
+%%PYTHON_SITELIBDIR%%/pokerengine/pokerprizes.pyo
 %%PYTHON_SITELIBDIR%%/pokerengine/pokerrake.py
 %%PYTHON_SITELIBDIR%%/pokerengine/pokerrake.pyc
 %%PYTHON_SITELIBDIR%%/pokerengine/pokerrake.pyo

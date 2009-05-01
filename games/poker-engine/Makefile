@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	poker-engine
-PORTVERSION=	1.0.20
+PORTVERSION=	1.3.3
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/pokersource/sources/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A python library that implements poker rules
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
 		${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-USE_GNOME=	gnometarget pkgconfig
+USE_GNOME=	pkgconfig
 USE_PYTHON=	2.3+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
