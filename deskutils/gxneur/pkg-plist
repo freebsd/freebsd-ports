@@ -1,4 +1,14 @@
 bin/gxneur
+%%DATADIR%%/pixmaps/Armenian.png
+%%DATADIR%%/pixmaps/Bulgarian.png
+%%DATADIR%%/pixmaps/Czech.png
+%%DATADIR%%/pixmaps/Greek.png
+%%DATADIR%%/pixmaps/Estonian.png
+%%DATADIR%%/pixmaps/Lithuanian.png
+%%DATADIR%%/pixmaps/Latvian.png
+%%DATADIR%%/pixmaps/Poland.png
+%%DATADIR%%/pixmaps/Spanish.png
+%%DATADIR%%/pixmaps/Uzbek.png
 %%DATADIR%%/pixmaps/Russian.png
 %%DATADIR%%/pixmaps/Ukrainian.png
 %%DATADIR%%/pixmaps/English.png
@@ -10,10 +20,16 @@ bin/gxneur
 %%DATADIR%%/pixmaps/gxneur.png
 %%DATADIR%%/glade/config.glade
 %%DATADIR%%/glade/about.glade
+%%DATADIR%%/glade/action_add.glade
 %%DATADIR%%/glade/list.glade
 %%DATADIR%%/glade/abbr_add.glade
 %%DATADIR%%/glade/choose_file.glade
 %%NLS%%share/locale/ru/LC_MESSAGES/gxneur.mo
+%%NLS%%share/locale/be/LC_MESSAGES/gxneur.mo
+%%NLS%%share/locale/de/LC_MESSAGES/gxneur.mo
+%%NLS%%share/locale/he/LC_MESSAGES/gxneur.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/gxneur.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/gxneur.mo
 @dirrmtry %%DATADIR%%/pixmaps
 @dirrmtry %%DATADIR%%/glade
 @dirrmtry %%DATADIR%%

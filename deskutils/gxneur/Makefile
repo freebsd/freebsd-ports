@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gxneur
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dists.xneur.ru/release-${PORTVERSION}/tgz/
 
