@@ -1,0 +1,14 @@
+--- ./packages/xpce/src/Makefile.in.orig	2009-05-01 12:09:03.681763603 -0400
++++ ./packages/xpce/src/Makefile.in	2009-05-01 12:12:39.669869354 -0400
+@@ -834,10 +834,7 @@
+ 
+ dv-man:		dv-manual
+ 		for f in xpce-client xpce; do \
+-		    $(INSTALL_DATA) ../man/$$f.1 $(DESTDIR)$(DVHOME)/man; \
+-		    if test -w $(smandir); then \
+-		        $(INSTALL_DATA) ../man/$$f.1 $(DESTDIR)$(smandir)/$$f.$(mansec); \
+-		    fi; \
++		    $(INSTALL_DATA) ../man/$$f.1 $(DESTDIR)$(smandir)/$$f.$(mansec); \
+ 	        done
+ 
+ rt-link:
