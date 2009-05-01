@@ -101,7 +101,7 @@ Index: net.c
  #if defined(CONFIG_SLIRP)
  #include "libslirp.h"
  #endif
-@@ -450,6 +457,164 @@
+@@ -481,6 +488,172 @@
      return max_len;
  }
  
@@ -131,6 +131,14 @@ Index: net.c
 +    PCAPState *s = (PCAPState *)opaque;
 +
 +    pcap_dispatch(s->handle, 1, (pcap_handler)&pcap_callback, (u_char *)s->vc);
++}
++
++static void pcap_cleanup(VLANClientState *vc)
++{
++    PCAPState *s = vc->opaque;
++
++    pcap_close(s->handle);
++    qemu_free(s);
 +}
 +
 +static int net_pcap_init(VLANState *vlan, const char *model, const char *name, char *ifname)
@@ -230,7 +238,7 @@ Index: net.c
 +#endif /* HAVE_BPF */
 +#endif /* _WIN32 */
 +
-+    s->vc = qemu_new_vlan_client(vlan, model, name, pcap_receive, NULL, s);
++    s->vc = qemu_new_vlan_client(vlan, model, name, pcap_receive, NULL, pcap_cleanup, s);
 +    snprintf(s->vc->info_str, sizeof(s->vc->info_str), "pcap redirector");
 +
 +#if defined(_WIN32)
@@ -266,7 +274,7 @@ Index: net.c
  #if defined(CONFIG_SLIRP)
  
  /* slirp network adapter */
-@@ -1681,6 +1846,16 @@
+@@ -1755,6 +1928,16 @@
             are wanted */
          ret = 0;
      } else
