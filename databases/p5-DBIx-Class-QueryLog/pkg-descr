@@ -1,0 +1,4 @@
+DBIx::Class::QueryLog logs each transaction and query executed so you can
+analyze what happened in the session.
+
+WWW:	http://search.cpan.org/dist/DBIx-Class-QueryLog/
