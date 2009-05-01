@@ -26,6 +26,7 @@ bin/use-devel-assertos
 %%SITE_PERL%%/Devel/AssertOS/MacOSclassic.pm
 %%SITE_PERL%%/Devel/AssertOS/MachTen.pm
 %%SITE_PERL%%/Devel/AssertOS/MicrosoftWindows.pm
+%%SITE_PERL%%/Devel/AssertOS/MidnightBSD.pm
 %%SITE_PERL%%/Devel/AssertOS/MirOSBSD.pm
 %%SITE_PERL%%/Devel/AssertOS/NeXT.pm
 %%SITE_PERL%%/Devel/AssertOS/NetBSD.pm

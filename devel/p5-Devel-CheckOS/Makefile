@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-CheckOS
-PORTVERSION=	1.50
+PORTVERSION=	1.61
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	cm@therek.net
 COMMENT=	Perl5 module to check currently running OS
 
-BUILD_DEPENDS=	${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule
+BUILD_DEPENDS=	${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule \
+		p5-Data-Compare>=1.21:${PORTSDIR}/devel/p5-Data-Compare
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
@@ -47,6 +48,7 @@ MAN3=		Devel::AssertOS.3 \
 		Devel::AssertOS::MacOSclassic.3 \
 		Devel::AssertOS::MachTen.3 \
 		Devel::AssertOS::MicrosoftWindows.3 \
+		Devel::AssertOS::MidnightBSD.3 \
 		Devel::AssertOS::MirOSBSD.3 \
 		Devel::AssertOS::NeXT.3 \
 		Devel::AssertOS::NetBSD.3 \
