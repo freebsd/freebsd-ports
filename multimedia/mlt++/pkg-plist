@@ -24,6 +24,6 @@ include/mlt++/MltTractor.h
 include/mlt++/MltTransition.h
 include/mlt++/config.h
 lib/libmlt++.so
-lib/libmlt++.so.0.3.6
+lib/libmlt++.so.0.3.8
 lib/libmlt++.so.1
 @dirrm include/mlt++
