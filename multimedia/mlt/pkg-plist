@@ -4,6 +4,7 @@ bin/inigo
 bin/miracle
 bin/mlt-config
 include/mlt/framework/mlt.h
+include/mlt/framework/mlt_cache.h
 include/mlt/framework/mlt_consumer.h
 include/mlt/framework/mlt_deque.h
 include/mlt/framework/mlt_events.h
@@ -40,13 +41,13 @@ include/mlt/valerie/valerie_status.h
 include/mlt/valerie/valerie_tokeniser.h
 include/mlt/valerie/valerie_util.h
 lib/libmiracle.so
-lib/libmiracle.so.0.3.6
+lib/libmiracle.so.0.3.8
 lib/libmiracle.so.1
 lib/libmlt.so
-lib/libmlt.so.0.3.6
+lib/libmlt.so.0.3.8
 lib/libmlt.so.1
 lib/libvalerie.so
-lib/libvalerie.so.0.3.6
+lib/libvalerie.so.0.3.8
 lib/libvalerie.so.1
 %%AVFORMAT%%lib/mlt/libmltavformat.so
 lib/mlt/libmltcore.so
@@ -158,6 +159,7 @@ libdata/pkgconfig/mlt-valerie.pc
 %%DATADIR%%/profiles/atsc_1080p_2997
 %%DATADIR%%/profiles/atsc_1080p_30
 %%DATADIR%%/profiles/atsc_720p_30
+%%DATADIR%%/profiles/cif_15
 %%DATADIR%%/profiles/cif_ntsc
 %%DATADIR%%/profiles/cif_pal
 %%DATADIR%%/profiles/cvd_ntsc
@@ -174,8 +176,10 @@ libdata/pkgconfig/mlt-valerie.pc
 %%DATADIR%%/profiles/hdv_720_30p
 %%DATADIR%%/profiles/hdv_720_50p
 %%DATADIR%%/profiles/hdv_720_60p
+%%DATADIR%%/profiles/qcif_15
 %%DATADIR%%/profiles/qcif_ntsc
 %%DATADIR%%/profiles/qcif_pal
+%%DATADIR%%/profiles/quarter_15
 %%DATADIR%%/profiles/quarter_ntsc
 %%DATADIR%%/profiles/quarter_ntsc_wide
 %%DATADIR%%/profiles/quarter_pal

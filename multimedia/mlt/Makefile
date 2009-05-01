@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mlt
-PORTVERSION=	0.3.6
-PORTREVISION=	1
+PORTVERSION=	0.3.8
 CATEGORIES=	multimedia
 MASTER_SITES=	SFE
 
@@ -16,14 +15,15 @@ COMMENT=	A multimedia framework and video playout server for TV broadcasting
 USE_GNOME=	libxml2 gnomehack
 USE_QT_VER=	4
 USE_SDL=	image
-HAS_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug \
 		--enable-gpl \
 		--enable-sdl \
 		--enable-westley
 USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/mlt
 
 PORTDOCS=	AUTHORS ChangeLog COPYING \
 		GPL NEWS README docs demo
