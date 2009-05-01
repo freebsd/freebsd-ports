@@ -5,28 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	anki
-PORTVERSION=	0.9.9.5
-CATEGORIES=	games python
-MASTER_SITES=	http://ichi2.net/anki/download/files/
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.tgz
-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spaced-repetition memory training library
 
-BUILD_DEPENDS=	py*-numpy>=0:${PORTSDIR}/math/py-numpy \
-		py*-game>=0:${PORTSDIR}/devel/py-game \
-		py*-simplejson>=0:${PORTSDIR}/devel/py-simplejson \
-		py*-sqlalchemy>=0:${PORTSDIR}/databases/py-sqlalchemy \
-		py*-pysqlite>=0:${PORTSDIR}/databases/py-pysqlite23 \
-		py*-matplotlib>=0.90.0:${PORTSDIR}/math/py-matplotlib
-RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		kakasi:${PORTSDIR}/japanese/kakasi
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+MASTERDIR=	${.CURDIR}/../anki
 
-USE_GETTEXT=	yes
-USE_PYDISTUTILS=easy_install
-USE_PYTHON=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/lib${PORTNAME}
-
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile.inc"
