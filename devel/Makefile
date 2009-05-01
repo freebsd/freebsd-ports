@@ -2579,6 +2579,7 @@
     SUBDIR += rubygem-linecache
     SUBDIR += rubygem-lockfile
     SUBDIR += rubygem-main
+    SUBDIR += rubygem-mash
     SUBDIR += rubygem-metaid
     SUBDIR += rubygem-mocha
     SUBDIR += rubygem-needle
