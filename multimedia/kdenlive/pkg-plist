@@ -1,5 +1,6 @@
 bin/kdenlive
 bin/kdenlive_render
+lib/kde4/libkdenlive_sampleplugin.so
 lib/kde4/westleypreview.so
 share/applications/kde/kdenlive.desktop
 share/apps/kdenlive/banner.png
@@ -8,14 +9,21 @@ share/apps/kdenlive/blacklisted_transitions.txt
 share/apps/kdenlive/effects/automask.xml
 share/apps/kdenlive/effects/boxblur.xml
 share/apps/kdenlive/effects/brightness.xml
+share/apps/kdenlive/effects/channelcopy.xml
 share/apps/kdenlive/effects/charcoal.xml
 share/apps/kdenlive/effects/chroma.xml
 share/apps/kdenlive/effects/chroma_hold.xml
+share/apps/kdenlive/effects/crop.xml
+share/apps/kdenlive/effects/fade_from_black.xml
+share/apps/kdenlive/effects/fade_to_black.xml
 share/apps/kdenlive/effects/fadein.xml
 share/apps/kdenlive/effects/fadeout.xml
 share/apps/kdenlive/effects/freeze.xml
+share/apps/kdenlive/effects/frei0r_balanc0r.xml
+share/apps/kdenlive/effects/frei0r_colordistance.xml
 share/apps/kdenlive/effects/frei0r_distort0r.xml
 share/apps/kdenlive/effects/frei0r_squareblur.xml
+share/apps/kdenlive/effects/gain.xml
 share/apps/kdenlive/effects/gamma.xml
 share/apps/kdenlive/effects/greyscale.xml
 share/apps/kdenlive/effects/invert.xml
@@ -33,12 +41,18 @@ share/apps/kdenlive/effects/mirror.xml
 share/apps/kdenlive/effects/mute.xml
 share/apps/kdenlive/effects/normalise.xml
 share/apps/kdenlive/effects/obscure.xml
+share/apps/kdenlive/effects/pan_zoom.xml
 share/apps/kdenlive/effects/rotation.xml
 share/apps/kdenlive/effects/sepia.xml
+share/apps/kdenlive/effects/sox_band.xml
+share/apps/kdenlive/effects/sox_bass.xml
 share/apps/kdenlive/effects/sox_echo.xml
 share/apps/kdenlive/effects/sox_flanger.xml
+share/apps/kdenlive/effects/sox_gain.xml
+share/apps/kdenlive/effects/sox_phaser.xml
 share/apps/kdenlive/effects/sox_pitch.xml
 share/apps/kdenlive/effects/sox_reverb.xml
+share/apps/kdenlive/effects/sox_stretch.xml
 share/apps/kdenlive/effects/sox_vibro.xml
 share/apps/kdenlive/effects/threshold.xml
 share/apps/kdenlive/effects/volume.xml
@@ -53,13 +67,20 @@ share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-align-vert.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-hide-audio.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-hide-video.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-insert-rect.png
+share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-lock.png
+share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-select-tool.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-show-audio.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-show-audiothumb.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-show-markers.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-show-video.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-show-videothumb.png
 share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-snap.png
+share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-spacer-tool.png
+share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-unlock.png
+share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-zone-end.png
+share/apps/kdenlive/icons/hicolor/16x16/actions/kdenlive-zone-start.png
 share/apps/kdenlive/icons/hicolor/scalable/actions/kdenlive-select-tool.svgz
+share/apps/kdenlive/icons/hicolor/scalable/actions/kdenlive-spacer-tool.svgz
 share/apps/kdenlive/icons/hicolor/scalable/actions/kdenlive-zone-end.svgz
 share/apps/kdenlive/icons/hicolor/scalable/actions/kdenlive-zone-start.svgz
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-add-clip.png
@@ -71,17 +92,42 @@ share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-align-vert.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-hide-audio.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-hide-video.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-insert-rect.png
+share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-lock.png
+share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-select-tool.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-show-audio.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-show-audiothumb.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-show-markers.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-show-video.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-show-videothumb.png
 share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-snap.png
+share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-spacer-tool.png
+share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-unlock.png
+share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-zone-end.png
+share/apps/kdenlive/icons/oxygen/16x16/actions/kdenlive-zone-start.png
 share/apps/kdenlive/icons/oxygen/scalable/actions/kdenlive-select-tool.svgz
+share/apps/kdenlive/icons/oxygen/scalable/actions/kdenlive-spacer-tool.svgz
 share/apps/kdenlive/icons/oxygen/scalable/actions/kdenlive-zone-end.svgz
 share/apps/kdenlive/icons/oxygen/scalable/actions/kdenlive-zone-start.svgz
 share/apps/kdenlive/kdenlive.notifyrc
 share/apps/kdenlive/kdenliveui.rc
+share/apps/kdenlive/lumas/bi-linear_x.pgm
+share/apps/kdenlive/lumas/bi-linear_y.pgm
+share/apps/kdenlive/lumas/burst.pgm
+share/apps/kdenlive/lumas/checkerboard_small.pgm
+share/apps/kdenlive/lumas/clock.pgm
+share/apps/kdenlive/lumas/cloud.pgm
+share/apps/kdenlive/lumas/curtain.pgm
+share/apps/kdenlive/lumas/horizontal_blinds.pgm
+share/apps/kdenlive/lumas/linear_x.pgm
+share/apps/kdenlive/lumas/linear_y.pgm
+share/apps/kdenlive/lumas/radial-bars.pgm
+share/apps/kdenlive/lumas/radial.pgm
+share/apps/kdenlive/lumas/spiral.pgm
+share/apps/kdenlive/lumas/spiral2.pgm
+share/apps/kdenlive/lumas/square.pgm
+share/apps/kdenlive/lumas/square2-bars.pgm
+share/apps/kdenlive/lumas/square2.pgm
+share/apps/kdenlive/lumas/symmetric_clock.pgm
 share/apps/kdenlive/metadata.properties
 share/apps/kdenlive/timeline_athumbs.png
 share/apps/kdenlive/timeline_avthumbs.png
@@ -89,6 +135,9 @@ share/apps/kdenlive/timeline_nothumbs.png
 share/apps/kdenlive/timeline_vthumbs.png
 share/apps/kdenlive/transition.png
 share/config.kcfg/kdenlivesettings.kcfg
+share/config/kdenlive.knsrc
+share/config/kdenlive_mltprofiles.knsrc
+share/config/kdenlive_render.knsrc
 share/icons/hicolor/32x32/apps/kdenlive.png
 share/icons/hicolor/48x48/apps/kdenlive.png
 share/icons/hicolor/64x64/apps/kdenlive.png
@@ -103,14 +152,21 @@ share/locale/cs/LC_MESSAGES/kdenlive.mo
 share/locale/da/LC_MESSAGES/kdenlive.mo
 share/locale/de/LC_MESSAGES/kdenlive.mo
 share/locale/es/LC_MESSAGES/kdenlive.mo
+share/locale/fi/LC_MESSAGES/kdenlive.mo
 share/locale/fr/LC_MESSAGES/kdenlive.mo
+share/locale/he/LC_MESSAGES/kdenlive.mo
+share/locale/hr/LC_MESSAGES/kdenlive.mo
+share/locale/hu/LC_MESSAGES/kdenlive.mo
 share/locale/it/LC_MESSAGES/kdenlive.mo
 share/locale/nl/LC_MESSAGES/kdenlive.mo
+share/locale/pt_BR/LC_MESSAGES/kdenlive.mo
+share/locale/ru/LC_MESSAGES/kdenlive.mo
+share/locale/sl/LC_MESSAGES/kdenlive.mo
 share/locale/zh/LC_MESSAGES/kdenlive.mo
-share/mime/application/x-kdenlive.xml
 share/mime/packages/kdenlive.xml
 share/mime/packages/westley.xml
-share/mime/video/mlt-playlist.xml
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
 @dirrmtry share/kde4/services
 @dirrmtry share/kde4
 @dirrmtry share/icons/oxygen/scalable/mimetypes
@@ -131,6 +187,8 @@ share/mime/video/mlt-playlist.xml
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/config.kcfg
+@dirrmtry share/config
+@dirrm share/apps/kdenlive/lumas
 @dirrm share/apps/kdenlive/icons/oxygen/scalable/actions
 @dirrm share/apps/kdenlive/icons/oxygen/scalable
 @dirrm share/apps/kdenlive/icons/oxygen/16x16/actions
