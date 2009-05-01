@@ -1,10 +1,12 @@
 @comment $FreeBSD$
-bin/gearmand
+bin/gearman
 include/libgearman/client.h
 include/libgearman/con.h
 include/libgearman/constants.h
 include/libgearman/gearman.h
 include/libgearman/gearmand.h
+include/libgearman/gearmand_con.h
+include/libgearman/gearmand_thread.h
 include/libgearman/job.h
 include/libgearman/packet.h
 include/libgearman/server.h
@@ -12,6 +14,8 @@ include/libgearman/server_client.h
 include/libgearman/server_con.h
 include/libgearman/server_function.h
 include/libgearman/server_job.h
+include/libgearman/server_packet.h
+include/libgearman/server_thread.h
 include/libgearman/server_worker.h
 include/libgearman/structs.h
 include/libgearman/task.h
@@ -21,5 +25,6 @@ lib/libgearman.la
 lib/libgearman.so
 lib/libgearman.so.0
 libdata/pkgconfig/gearmand.pc
+sbin/gearmand
 @dirrmtry libdata/pkgconfig
 @dirrm include/libgearman
