@@ -7,6 +7,8 @@ detect language of a word user typed, switch keyboard layout and convert the
 word from one keyboard layout into another. In manual mode user has ability
 to convert last typed word or some selected text using hot keys. The idea of
 this utility is similar to Punto Switcher for Windows. For now XNeur support
-English, Russian, Ukrainian, Belarusian, French and Romanian.
+English, Russian, Ukrainian, Belarusian, French, Romanian, Bulgarian, Czech,
+Greek, Estonian, Armenian, Lithuanian, Latvian, Poland, Spanish and Uzbek
+languages.
 
 WWW: http://www.xneur.ru/
