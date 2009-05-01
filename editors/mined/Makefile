@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mined
-PORTVERSION=	2000.15
+PORTVERSION=	2000.15.2
 CATEGORIES=	editors
 MASTER_SITES=	http://towo.net/mined/
 
