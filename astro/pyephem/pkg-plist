@@ -5,9 +5,6 @@
 %%PYTHON_SITELIBDIR%%/ephem/cities.py
 %%PYTHON_SITELIBDIR%%/ephem/cities.pyc
 %%PYTHON_SITELIBDIR%%/ephem/cities.pyo
-%%PYTHON_SITELIBDIR%%/ephem/stars.py
-%%PYTHON_SITELIBDIR%%/ephem/stars.pyc
-%%PYTHON_SITELIBDIR%%/ephem/stars.pyo
 %%PYTHON_SITELIBDIR%%/ephem/doc/CHANGELOG.rst
 %%PYTHON_SITELIBDIR%%/ephem/doc/angle.rst
 %%PYTHON_SITELIBDIR%%/ephem/doc/catalogs.rst
@@ -20,12 +17,24 @@
 %%PYTHON_SITELIBDIR%%/ephem/doc/quick.rst
 %%PYTHON_SITELIBDIR%%/ephem/doc/radec.rst
 %%PYTHON_SITELIBDIR%%/ephem/doc/tutorial.rst
+%%PYTHON_SITELIBDIR%%/ephem/stars.py
+%%PYTHON_SITELIBDIR%%/ephem/stars.pyc
+%%PYTHON_SITELIBDIR%%/ephem/stars.pyo
 %%PYTHON_SITELIBDIR%%/ephem/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/ephem/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ephem/tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/ephem/tests/ephem_test.py
 %%PYTHON_SITELIBDIR%%/ephem/tests/ephem_test.pyc
 %%PYTHON_SITELIBDIR%%/ephem/tests/ephem_test.pyo
+%%PYTHON_SITELIBDIR%%/ephem/tests/jpl/europa.txt
+%%PYTHON_SITELIBDIR%%/ephem/tests/jpl/hyperion.txt
+%%PYTHON_SITELIBDIR%%/ephem/tests/jpl/jupiter.txt
+%%PYTHON_SITELIBDIR%%/ephem/tests/jpl/mars.txt
+%%PYTHON_SITELIBDIR%%/ephem/tests/jpl/neptune.txt
+%%PYTHON_SITELIBDIR%%/ephem/tests/jpl/oberon.txt
+%%PYTHON_SITELIBDIR%%/ephem/tests/jpl/phobos.txt
+%%PYTHON_SITELIBDIR%%/ephem/tests/jpl/saturn.txt
+%%PYTHON_SITELIBDIR%%/ephem/tests/jpl/uranus.txt
 %%PYTHON_SITELIBDIR%%/ephem/tests/launchpad_236872.py
 %%PYTHON_SITELIBDIR%%/ephem/tests/launchpad_236872.pyc
 %%PYTHON_SITELIBDIR%%/ephem/tests/launchpad_236872.pyo
@@ -47,9 +56,15 @@
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_jpl.py
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_jpl.pyc
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_jpl.pyo
+%%PYTHON_SITELIBDIR%%/ephem/tests/test_observers.py
+%%PYTHON_SITELIBDIR%%/ephem/tests/test_observers.pyc
+%%PYTHON_SITELIBDIR%%/ephem/tests/test_observers.pyo
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_rst.py
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_rst.pyc
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_rst.pyo
+%%PYTHON_SITELIBDIR%%/ephem/tests/test_satellite.py
+%%PYTHON_SITELIBDIR%%/ephem/tests/test_satellite.pyc
+%%PYTHON_SITELIBDIR%%/ephem/tests/test_satellite.pyo
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_usno.py
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_usno.pyc
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_usno.pyo
@@ -71,7 +86,9 @@
 %%PYTHON_SITELIBDIR%%/ephem/tests/usno/riset_sun.txt
 %%PYTHON_SITELIBDIR%%/ephem/tests/usno/risettran_moon.txt
 %%PYTHON_SITELIBDIR%%/ephem/tests/usno/risettran_rigel.txt
-@dirrm %%PYTHON_SITELIBDIR%%/ephem/tests/usno/
-@dirrm %%PYTHON_SITELIBDIR%%/ephem/tests/
-@dirrm %%PYTHON_SITELIBDIR%%/ephem/doc/
-@dirrm %%PYTHON_SITELIBDIR%%/ephem/
+@dirrm %%PYTHON_SITELIBDIR%%/ephem/tests/usno
+@dirrm %%PYTHON_SITELIBDIR%%/ephem/tests/jpl
+@dirrm %%PYTHON_SITELIBDIR%%/ephem/tests
+@dirrm %%PYTHON_SITELIBDIR%%/ephem/doc
+@dirrm %%PYTHON_SITELIBDIR%%/ephem
+@dirrm %%PYTHON_SITELIBDIR%%
