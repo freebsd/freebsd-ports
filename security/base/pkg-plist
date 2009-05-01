@@ -25,6 +25,7 @@ www/base/base_graph_form.php
 www/base/base_graph_main.php
 www/base/base_hdr1.php
 www/base/base_hdr2.php
+www/base/base_local_rules.php
 www/base/base_logout.php
 www/base/base_main.php
 www/base/base_maintenance.php
