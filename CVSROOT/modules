@@ -5713,6 +5713,7 @@ ja-guesswork-classic            ports/japanese/guesswork-classic
 ja-gxditview                    ports/japanese/gxditview
 ja-hex                          ports/japanese/hex
 ja-hns                          ports/japanese/hns
+ja-ibus-anthy                   ports/japanese/ibus-anthy
 ja-ical                         ports/japanese/ical
 ja-icanna                       ports/japanese/icanna
 ja-iiimf-le-canna               ports/japanese/iiimf-le-canna
@@ -7892,7 +7893,6 @@ linux-libxml2                   ports/textproc/linux-libxml2
 linux-majesty-demo              ports/games/linux-majesty-demo
 linux-mbrola                    ports/audio/linux-mbrola
 linux-megacli                   ports/sysutils/linux-megacli
-linux-megacli2                  ports/sysutils/linux-megacli2
 linux-megamgr                   ports/sysutils/linux-megamgr
 linux-mikmod                    ports/audio/linux-mikmod
 linux-mozilla                   ports/www/linux-mozilla
@@ -9957,6 +9957,7 @@ p5-Apache-DumpHeaders           ports/www/p5-Apache-DumpHeaders
 p5-Apache-Filter                ports/www/p5-Apache-Filter
 p5-Apache-Gallery               ports/www/p5-Apache-Gallery
 p5-Apache-GopherHandler         ports/www/p5-Apache-GopherHandler
+p5-Apache-Htpasswd              ports/security/p5-Apache-Htpasswd
 p5-Apache-Icon                  ports/www/p5-Apache-Icon
 p5-Apache-Language              ports/www/p5-Apache-Language
 p5-Apache-MP3                   ports/www/p5-Apache-MP3
@@ -13353,6 +13354,7 @@ p5-apache-dumpheaders           ports/www/p5-Apache-DumpHeaders
 p5-apache-filter                ports/www/p5-Apache-Filter
 p5-apache-gallery               ports/www/p5-Apache-Gallery
 p5-apache-gopherhandler         ports/www/p5-Apache-GopherHandler
+p5-apache-htpasswd              ports/security/p5-Apache-Htpasswd
 p5-apache-icon                  ports/www/p5-Apache-Icon
 p5-apache-language              ports/www/p5-Apache-Language
 p5-apache-mp3                   ports/www/p5-Apache-MP3
@@ -20390,6 +20392,7 @@ samba33                         ports/net/samba33
 samba4wins                      ports/net/samba4wins
 sambasentinel                   ports/net/sambasentinel
 samefile                        ports/sysutils/samefile
+samesame                        ports/sysutils/samesame
 samhain                         ports/security/samhain
 samhain-client                  ports/security/samhain-client
 samhain-server                  ports/security/samhain-server
@@ -22485,7 +22488,6 @@ vnc2swf                         ports/net/vnc2swf
 vnccrack                        ports/security/vnccrack
 vncreflector                    ports/net/vncreflector
 vnstat                          ports/net/vnstat
-vnstati                         ports/net/vnstati
 vobcopy                         ports/sysutils/vobcopy
 vodcatcher                      ports/multimedia/vodcatcher
 vodmr                           ports/mail/vodmr
