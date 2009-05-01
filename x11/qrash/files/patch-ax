@@ -1,9 +1,0 @@
---- mikmod/makefile.orig	Wed Jun 21 14:51:04 2000
-+++ mikmod/makefile	Wed Jun 21 14:51:12 2000
-@@ -1,6 +1,5 @@
- include ../options
- 
--CFLAGS += -O6
- OBJS = 	mdriver.o load_s3m.o mplayer.o mmio.o mwav.o virtch.o munitrk.o \
- 	mloader.o load_xm.o drv_nos.o
- 

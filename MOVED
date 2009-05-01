@@ -3944,3 +3944,12 @@ russian/xneur|deskutils/xneur|2009-04-27|Better category: supports many language
 audio/rubygem-mp3info|rubygem-ruby-mp3info|2009-04-28|Updated to match GEM name, use rubygem-ruby-mp3info instead
 sysutils/linux-megacli2|sysutils/linux-megacli|2009-04-30|Folded into unversioned port directory
 net/vnstati|net/vnstat|2009-04-30|Use net/vnstat
+audio/snowstar||2009-05-01|Has expired: tcl8.0 support is going to be dropped
+devel/cppadvio||2009-05-01|Has expired: abandoned upstream, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+irc/olirc||2009-05-01|Has expired: project is discontinued and tcl82 support is going to be dropped
+multimedia/toxine||2009-05-01|Has expired: has been inactive for almost 5 years
+net-mgmt/nagios12||2009-05-01|Has expired: Obsolete version, consider migration to net-mgmt/nagios
+sysutils/bbsmount||2009-05-01|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+sysutils/puppet-devel||2009-05-01|Has expired: Use sysutils/puppet instead
+sysutils/tua||2009-05-01|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+x11/qrash||2009-05-01|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months

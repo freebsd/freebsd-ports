@@ -1,4 +1,0 @@
-bin/qrash
-%%DATADIR%%/README
-%%DATADIR%%/qrash.dat
-@dirrm %%DATADIR%%

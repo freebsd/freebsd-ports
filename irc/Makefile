@@ -78,7 +78,6 @@
     SUBDIR += netwalker-ircc
     SUBDIR += ngircd
     SUBDIR += ninja
-    SUBDIR += olirc
     SUBDIR += onis
     SUBDIR += p5-Bot-BasicBot
     SUBDIR += p5-IRC

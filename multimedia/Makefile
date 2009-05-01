@@ -265,7 +265,6 @@
     SUBDIR += totem-pl-parser
     SUBDIR += totem-xine
     SUBDIR += tovid
-    SUBDIR += toxine
     SUBDIR += transcode
     SUBDIR += transkode
     SUBDIR += tstools
