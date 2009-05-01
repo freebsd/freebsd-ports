@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	base
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	security
 MASTER_SITES=	SF/secureideas
 
@@ -19,7 +18,7 @@ RUN_DEPENDS=	${ADODB_DIR}/adodb.inc.php:${PORTSDIR}/databases/adodb \
 		${LOCALBASE}/share/pear/Mail.php:${PORTSDIR}/mail/pear-Mail \
 		${LOCALBASE}/share/pear/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-php4
+#WRKSRC=		${WRKDIR}/${PORTNAME}-php4
 
 USE_PHP=	gd gettext pcre session zlib ctype
 
