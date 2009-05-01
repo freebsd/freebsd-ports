@@ -1,0 +1,6 @@
+mysqlidxchk (MySQL Index Checker) checks MySQL databases/tables for
+unused indexes. Given one or more slow, general, or "raw" log files,
+mysqlidxchk reports which indexes in the database schema are not used
+by the queries in the log files.
+
+WWW: http://hackmysql.com/mysqlidxchk

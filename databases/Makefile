@@ -200,6 +200,7 @@
     SUBDIR += mysqlard
     SUBDIR += mysqlcc
     SUBDIR += mysqlcppapi
+    SUBDIR += mysqlidxchk
     SUBDIR += mysqlman
     SUBDIR += mysqlreport
     SUBDIR += mysqlsla
