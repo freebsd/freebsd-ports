@@ -7,18 +7,18 @@
 
 PORTNAME=	ftpcube
 PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp python
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A graphical FTP Client
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/paramiko/__init__.py:${PORTSDIR}/security/py-paramiko
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_WX=		2.6
+USE_WX=		2.6+
 WX_COMPS=	python
 WX_UNICODE=	yes
 
