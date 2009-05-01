@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gearmand
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gearmand/trunk/${PORTVERSION}/+download/
 
@@ -18,25 +18,33 @@ LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent \
 
 CFLAGS+=	"-I${LOCALBASE}/include"
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
-CONFLICTS=	p5-Gearman-Server-[0-9]*
 FETCH_ARGS=	-pRr
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	gearmand.sh
 
+MAN1=		gearman.1
 MAN3=		gearman_bugreport.3 \
 		gearman_client_add_server.3 \
 		gearman_client_add_task.3 \
 		gearman_client_add_task_background.3 \
 		gearman_client_add_task_high.3 \
+		gearman_client_add_task_high_background.3 \
+		gearman_client_add_task_low.3 \
+		gearman_client_add_task_low_background.3 \
 		gearman_client_add_task_status.3 \
+		gearman_client_clear_fn.3 \
 		gearman_client_clone.3 \
 		gearman_client_create.3 \
+		gearman_client_data.3 \
 		gearman_client_do.3 \
 		gearman_client_do_background.3 \
 		gearman_client_do_high.3 \
+		gearman_client_do_high_background.3 \
 		gearman_client_do_job_handle.3 \
+		gearman_client_do_low.3 \
+		gearman_client_do_low_background.3 \
 		gearman_client_do_status.3 \
 		gearman_client_echo.3 \
 		gearman_client_errno.3 \
@@ -44,7 +52,17 @@ MAN3=		gearman_bugreport.3 \
 		gearman_client_free.3 \
 		gearman_client_job_status.3 \
 		gearman_client_run_tasks.3 \
+		gearman_client_set_complete_fn.3 \
+		gearman_client_set_created_fn.3 \
+		gearman_client_set_data.3 \
+		gearman_client_set_data_fn.3 \
+		gearman_client_set_exception_fn.3 \
+		gearman_client_set_fail_fn.3 \
 		gearman_client_set_options.3 \
+		gearman_client_set_status_fn.3 \
+		gearman_client_set_task_fn_arg_free.3 \
+		gearman_client_set_warning_fn.3 \
+		gearman_client_set_workload_fn.3 \
 		gearman_clone.3 \
 		gearman_con_add.3 \
 		gearman_con_clone.3 \
@@ -76,11 +94,14 @@ MAN3=		gearman_bugreport.3 \
 		gearman_job_complete.3 \
 		gearman_job_create.3 \
 		gearman_job_data.3 \
+		gearman_job_exception.3 \
 		gearman_job_fail.3 \
 		gearman_job_free.3 \
 		gearman_job_function_name.3 \
 		gearman_job_handle.3 \
 		gearman_job_status.3 \
+		gearman_job_unique.3 \
+		gearman_job_warning.3 \
 		gearman_job_workload.3 \
 		gearman_job_workload_size.3 \
 		gearman_packet_add.3 \
@@ -92,33 +113,35 @@ MAN3=		gearman_bugreport.3 \
 		gearman_packet_set_options.3 \
 		gearman_packet_take_data.3 \
 		gearman_packet_unpack_header.3 \
-		gearman_server_active_add.3 \
-		gearman_server_active_next.3 \
-		gearman_server_active_remove.3 \
-		gearman_server_add_con.3 \
 		gearman_server_client_add.3 \
 		gearman_server_client_create.3 \
 		gearman_server_client_free.3 \
-		gearman_server_clone.3 \
-		gearman_server_con_addr.3 \
+		gearman_server_con_add.3 \
 		gearman_server_con_create.3 \
 		gearman_server_con_data.3 \
 		gearman_server_con_free.3 \
 		gearman_server_con_free_worker.3 \
 		gearman_server_con_free_workers.3 \
+		gearman_server_con_host.3 \
 		gearman_server_con_id.3 \
-		gearman_server_con_packet_add.3 \
-		gearman_server_con_packet_remove.3 \
-		gearman_server_con_set_addr.3 \
+		gearman_server_con_io_add.3 \
+		gearman_server_con_io_next.3 \
+		gearman_server_con_io_remove.3 \
+		gearman_server_con_port.3 \
+		gearman_server_con_proc_add.3 \
+		gearman_server_con_proc_next.3 \
+		gearman_server_con_proc_remove.3 \
 		gearman_server_con_set_data.3 \
+		gearman_server_con_set_host.3 \
 		gearman_server_con_set_id.3 \
+		gearman_server_con_set_port.3 \
 		gearman_server_create.3 \
-		gearman_server_errno.3 \
-		gearman_server_error.3 \
 		gearman_server_free.3 \
 		gearman_server_function_create.3 \
 		gearman_server_function_free.3 \
 		gearman_server_function_get.3 \
+		gearman_server_io_packet_add.3 \
+		gearman_server_io_packet_remove.3 \
 		gearman_server_job_add.3 \
 		gearman_server_job_create.3 \
 		gearman_server_job_free.3 \
@@ -126,14 +149,27 @@ MAN3=		gearman_bugreport.3 \
 		gearman_server_job_peek.3 \
 		gearman_server_job_queue.3 \
 		gearman_server_job_take.3 \
-		gearman_server_run.3 \
-		gearman_server_set_event_watch.3 \
-		gearman_server_set_options.3 \
+		gearman_server_packet_create.3 \
+		gearman_server_packet_free.3 \
+		gearman_server_proc_packet_add.3 \
+		gearman_server_proc_packet_remove.3 \
+		gearman_server_run_command.3 \
+		gearman_server_shutdown_graceful.3 \
+		gearman_server_thread_create.3 \
+		gearman_server_thread_errno.3 \
+		gearman_server_thread_error.3 \
+		gearman_server_thread_free.3 \
+		gearman_server_thread_run.3 \
+		gearman_server_thread_set_event_watch.3 \
+		gearman_server_thread_set_log.3 \
+		gearman_server_thread_set_run.3 \
 		gearman_server_worker_add.3 \
 		gearman_server_worker_create.3 \
 		gearman_server_worker_free.3 \
 		gearman_set_event_watch.3 \
+		gearman_set_log.3 \
 		gearman_set_options.3 \
+		gearman_set_task_fn_arg_free.3 \
 		gearman_set_workload_free.3 \
 		gearman_set_workload_malloc.3 \
 		gearman_task_create.3 \
@@ -148,6 +184,8 @@ MAN3=		gearman_bugreport.3 \
 		gearman_task_job_handle.3 \
 		gearman_task_numerator.3 \
 		gearman_task_recv_data.3 \
+		gearman_task_send_data.3 \
+		gearman_task_set_fn_arg.3 \
 		gearman_task_take_data.3 \
 		gearman_task_uuid.3 \
 		gearman_version.3 \
@@ -166,12 +204,21 @@ MAN3=		gearman_bugreport.3 \
 		gearman_worker_unregister.3 \
 		gearman_worker_unregister_all.3 \
 		gearman_worker_work.3 \
+		gearmand_con_check_queue.3 \
+		gearmand_con_create.3 \
+		gearmand_con_free.3 \
+		gearmand_con_watch.3 \
 		gearmand_create.3 \
-		gearmand_errno.3 \
-		gearmand_error.3 \
 		gearmand_free.3 \
 		gearmand_run.3 \
 		gearmand_set_backlog.3 \
-		gearmand_set_verbose.3
+		gearmand_set_log.3 \
+		gearmand_set_threads.3 \
+		gearmand_set_verbose.3 \
+		gearmand_thread_create.3 \
+		gearmand_thread_free.3 \
+		gearmand_thread_run.3 \
+		gearmand_thread_wakeup.3 \
+		gearmand_wakeup.3
 
 .include <bsd.port.mk>
