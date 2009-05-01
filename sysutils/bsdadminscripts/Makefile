@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdadminscripts
-PORTVERSION=	5.0
+PORTVERSION=	6.0
 CATEGORIES=	sysutils ports-mgmt
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,18 +16,20 @@ COMMENT=	A collection of administration scripts
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 NO_BUILD=	yes
-MANCOMPRESSED=	no
+MANCOMPRESSED=	yes
 
 .if defined(NOPORTDOCS)
 NOPORTDOCS=	-nodoc
 .else
 MAN1=		bsdadminscripts.1 \
-		distviper.1 \
-		rcstart.1 \
-		portconfig.1 \
 		buildflags.mk.1 buildflags.conf.1 buildflags.awk.1 \
+		distviper.1 \
+		pkg_libchk.1 \
+		pkg_upgrade.1 \
 		pkg_validate.1 \
-		pkg_libchk.1
+		portconfig.1 \
+		rcstart.1 \
+		uma.1
 
 RC_SCRIPTS=	stop restart status onestart onestop onerestart onestatus
 PORT_SCRIPTS=	build clean fetch package \
