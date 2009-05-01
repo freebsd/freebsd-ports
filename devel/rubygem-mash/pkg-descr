@@ -1,4 +1,6 @@
-The command line gives you several options for user twitter. Simply type
-twitter to see the options.
+Mash is an extended Hash that gives simple pseudo-object functionality that
+can be built from hashes and easily extended. It is designed to be used in
+RESTful API libraries to provide easy object-like access to JSON and XML
+parsed hashes.
 
-WWW: http://twitter.rubyforge.org/
+WWW: http://mash-hash.rubyforge.org/
