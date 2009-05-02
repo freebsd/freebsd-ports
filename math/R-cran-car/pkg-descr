@@ -1,0 +1,10 @@
+This package accompanies J. Fox, An R and S-PLUS Companion to Applied
+Regression, Sage, 2002. The package contains mostly functions for applied
+regression, linear models, and generalized linear models, with an emphasis on
+regression diagnostics, particularly graphical diagnostic methods. There are
+also some utility functions. With some exceptions, I have tried not to duplicate
+capabilities in the basic distribution of R, nor in widely used packages. Where
+relevant, the functions in car are consistent with na.action = na.omit or
+na.exclude.
+
+WWW:	http://cran.r-project.org/web/packages/car/index.html
