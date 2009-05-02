@@ -27,17 +27,16 @@ USE_GMAKE=	yes
 PLIST=		${WRKDIR}/pkg-plist
 MAKE_ENV=	QTDIR="${QTDIR}" MAKE="${GMAKE}" \
 		QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha"
-CFLAGS+=	-O0
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's:RS_SYSTEM->getAppDir()+"/bin":"${PREFIX}/bin":' \
 		-e 's:RS_SYSTEM->getDocPath() + "/qcaddoc.adp":"${DOCSDIR}/qcaddoc.adp":' \
 		${WRKSRC}/qcad/src/qc_applicationwindow.cpp
+	${REINPLACE_CMD} -e 's,MAKE=gmake,MAKE="gmake ${_MAKE_JOBS}",' \
+		${WRKSRC}/scripts/build_qcad.sh
 
 do-build:
 	cd ${WRKSRC}/scripts && ${SETENV} ${MAKE_ENV} bash ./build_qcad.sh notrans
