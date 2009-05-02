@@ -11,4 +11,4 @@ MIME::ParserBase MIME::ToolUtils MIME::Tools MIME::Words
 Warning: This module is _very_ slow for (at least some) large mails,
 is derived from Mail-Tools, and has at least some mail-specific parts.
 
-WWW: http://www.zeegee.com/code/perl/MIME-tools/
+WWW: http://search.cpan.org/dist/MIME-tools/

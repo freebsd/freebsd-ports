@@ -7,6 +7,7 @@
 
 PORTNAME=	MIME-Tools
 PORTVERSION=	5.427
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
@@ -16,12 +17,10 @@ DISTNAME=	MIME-tools-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A set of perl5 modules for MIME
 
-BUILD_DEPENDS=	${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${SITE_PERL}/IO/Wrap.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${SITE_PERL}/Convert/BinHex.pm:${PORTSDIR}/converters/p5-Convert-BinHex \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Convert-BinHex>=0:${PORTSDIR}/converters/p5-Convert-BinHex \
+		p5-IO-stringy>=2.11:${PORTSDIR}/devel/p5-IO-stringy \
+		p5-Mail-Tools>=1.0203:${PORTSDIR}/mail/p5-Mail-Tools
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
@@ -57,7 +56,18 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-post-patch:
-	@${FIND} ${WRKSRC} -name "*.orig" | ${XARGS} ${RM} -f
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} < 500801
+RUN_DEPENDS+=	p5-MIME-Base64>=2.2:${PORTSDIR}/converters/p5-MIME-Base64
+.endif
+
+.if ${PERL_LEVEL} < 500703
+BUILD_DEPENDS+=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5
+.endif
+
+.if ${PERL_LEVEL} < 500905
+RUN_DEPENDS+=	p5-File-Temp>=0.18:${PORTSDIR}/devel/p5-File-Temp
+.endif
+
+.include <bsd.port.post.mk>
