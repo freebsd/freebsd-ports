@@ -9,6 +9,7 @@ libexec/gfrcode
 %%NLS%%share/locale/be/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/findutils.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/da/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/de/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/el/LC_MESSAGES/findutils.mo
@@ -26,6 +27,7 @@ libexec/gfrcode
 %%NLS%%share/locale/ja/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/lg/LC_MESSAGES/findutils.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/findutils.mo
