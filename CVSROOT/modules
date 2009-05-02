@@ -898,7 +898,6 @@ bbmail                          ports/mail/bbmail
 bbpager                         ports/x11-wm/bbpager
 bbrb                            ports/graphics/bbrb
 bbrun                           ports/x11/bbrun
-bbsmount                        ports/sysutils/bbsmount
 bbsnet                          ports/net/bbsnet
 bcc                             ports/devel/bcc
 bchunk                          ports/sysutils/bchunk
@@ -1768,7 +1767,6 @@ cpmtools                        ports/emulators/cpmtools
 cpmtools2                       ports/emulators/cpmtools2
 cpp-xmms2                       ports/audio/cpp-xmms2
 cpp2latex                       ports/print/cpp2latex
-cppadvio                        ports/devel/cppadvio
 cppcheck                        ports/devel/cppcheck
 cppi                            ports/devel/cppi
 cppunit                         ports/devel/cppunit
@@ -5840,6 +5838,7 @@ ja-p5-DateTime-Format-Japanese  ports/japanese/p5-DateTime-Format-Japanese
 ja-p5-Encode-EUCJPMS            ports/japanese/p5-Encode-EUCJPMS
 ja-p5-Encode-JP-Mobile          ports/japanese/p5-Encode-JP-Mobile
 ja-p5-FormValidator-Simple-Plugin-Number-Phone-JP  ports/japanese/p5-FormValidator-Simple-Plugin-Number-Phone-JP
+ja-p5-HTML-MobileJp             ports/japanese/p5-HTML-MobileJp
 ja-p5-Jcode                     ports/japanese/p5-Jcode
 ja-p5-Lingua-JA-Kana            ports/japanese/p5-Lingua-JA-Kana
 ja-p5-Lingua-JA-Numbers         ports/japanese/p5-Lingua-JA-Numbers
@@ -5862,6 +5861,7 @@ ja-p5-datetime-format-japanese  ports/japanese/p5-DateTime-Format-Japanese
 ja-p5-encode-eucjpms            ports/japanese/p5-Encode-EUCJPMS
 ja-p5-encode-jp-mobile          ports/japanese/p5-Encode-JP-Mobile
 ja-p5-formvalidator-simple-plugin-number-phone-jp  ports/japanese/p5-FormValidator-Simple-Plugin-Number-Phone-JP
+ja-p5-html-mobilejp             ports/japanese/p5-HTML-MobileJp
 ja-p5-jcode                     ports/japanese/p5-Jcode
 ja-p5-jcode.pl                  ports/japanese/p5-jcode.pl
 ja-p5-lingua-ja-kana            ports/japanese/p5-Lingua-JA-Kana
@@ -9065,7 +9065,6 @@ nagios-silfreed-plugins         ports/net-mgmt/nagios-silfreed-plugins
 nagios-snmp-plugins             ports/net-mgmt/nagios-snmp-plugins
 nagios-spamd-plugin             ports/net-mgmt/nagios-spamd-plugin
 nagios-statd                    ports/sysutils/nagios-statd
-nagios12                        ports/net-mgmt/nagios12
 nagios2                         ports/net-mgmt/nagios2
 nagiosgraph                     ports/net-mgmt/nagiosgraph
 nagiostat                       ports/net-mgmt/nagiostat
@@ -9170,6 +9169,7 @@ net-snmp                        ports/net-mgmt/net-snmp
 net-snmp-tkmib                  ports/net-mgmt/net-snmp-tkmib
 net-snmp4                       ports/net-mgmt/net-snmp4
 net-snmp53                      ports/net-mgmt/net-snmp53
+net2ftp                         ports/ftp/net2ftp
 net6                            ports/net/net6
 net_jags                        ports/net/jags
 net_mpd                         ports/net/mpd
@@ -9631,7 +9631,6 @@ ois                             ports/devel/ois
 ojs2                            ports/www/ojs2
 okle                            ports/multimedia/okle
 oleo                            ports/math/oleo
-olirc                           ports/irc/olirc
 olsrd                           ports/net/olsrd
 olvwm                           ports/x11-wm/olvwm
 omake                           ports/devel/omake
@@ -11142,6 +11141,7 @@ p5-Forest                       ports/devel/p5-Forest
 p5-FormValidator-Lite           ports/textproc/p5-FormValidator-Lite
 p5-FormValidator-Simple         ports/textproc/p5-FormValidator-Simple
 p5-FreeBSD-Pkgs                 ports/ports-mgmt/p5-FreeBSD-Pkgs
+p5-FreeBSD-Pkgs-FindUpdates     ports/ports-mgmt/p5-FreeBSD-Pkgs-FindUpdates
 p5-FreeBSD-Portindex            ports/ports-mgmt/p5-FreeBSD-Portindex
 p5-FreeBSD-Ports                ports/ports-mgmt/p5-FreeBSD-Ports
 p5-FreeBSD-Ports-INDEXhash      ports/ports-mgmt/p5-FreeBSD-Ports-INDEXhash
@@ -13160,6 +13160,7 @@ p5-XML-Elemental                ports/textproc/p5-XML-Elemental
 p5-XML-Encoding                 ports/textproc/p5-XML-Encoding
 p5-XML-FOAF                     ports/textproc/p5-XML-FOAF
 p5-XML-Feed                     ports/textproc/p5-XML-Feed
+p5-XML-Feed-Deduper             ports/textproc/p5-XML-Feed-Deduper
 p5-XML-FeedPP                   ports/textproc/p5-XML-FeedPP
 p5-XML-Filter-BufferText        ports/textproc/p5-XML-Filter-BufferText
 p5-XML-Filter-DOMFilter-LibXML  ports/textproc/p5-XML-Filter-DOMFilter-LibXML
@@ -14560,6 +14561,7 @@ p5-formvalidator-lite           ports/textproc/p5-FormValidator-Lite
 p5-formvalidator-simple         ports/textproc/p5-FormValidator-Simple
 p5-freebsd-i386-ptrace          ports/devel/p5-FreeBSD-i386-Ptrace
 p5-freebsd-pkgs                 ports/ports-mgmt/p5-FreeBSD-Pkgs
+p5-freebsd-pkgs-findupdates     ports/ports-mgmt/p5-FreeBSD-Pkgs-FindUpdates
 p5-freebsd-portindex            ports/ports-mgmt/p5-FreeBSD-Portindex
 p5-freebsd-ports                ports/ports-mgmt/p5-FreeBSD-Ports
 p5-freebsd-ports-indexhash      ports/ports-mgmt/p5-FreeBSD-Ports-INDEXhash
@@ -16631,6 +16633,7 @@ p5-xml-dumper                   ports/textproc/p5-XML-Dumper
 p5-xml-elemental                ports/textproc/p5-XML-Elemental
 p5-xml-encoding                 ports/textproc/p5-XML-Encoding
 p5-xml-feed                     ports/textproc/p5-XML-Feed
+p5-xml-feed-deduper             ports/textproc/p5-XML-Feed-Deduper
 p5-xml-feedpp                   ports/textproc/p5-XML-FeedPP
 p5-xml-filter-buffertext        ports/textproc/p5-XML-Filter-BufferText
 p5-xml-filter-detectws          ports/textproc/p5-XML-Filter-DetectWS
@@ -18465,7 +18468,6 @@ pumperweb                       ports/www/pumperweb
 punbb                           ports/www/punbb
 pup                             ports/print/pup
 puppet                          ports/sysutils/puppet
-puppet-devel                    ports/sysutils/puppet-devel
 pure-emacs21                    ports/irc/pure-emacs21
 pure-ftpd                       ports/ftp/pure-ftpd
 pure-sfv                        ports/security/pure-sfv
@@ -19364,7 +19366,6 @@ qpage                           ports/comms/qpage
 qpopper                         ports/mail/qpopper
 qprog                           ports/devel/qprog
 qpxtool                         ports/sysutils/qpxtool
-qrash                           ports/x11/qrash
 qrfcview                        ports/deskutils/qrfcview
 qrq                             ports/comms/qrq
 qsa                             ports/devel/qsa
@@ -20197,6 +20198,8 @@ rubygem-datamapper              ports/databases/rubygem-datamapper
 rubygem-deeptest                ports/devel/rubygem-deeptest
 rubygem-diff-lcs                ports/textproc/rubygem-diff-lcs
 rubygem-ditz                    ports/devel/rubygem-ditz
+rubygem-do_mysql                ports/databases/rubygem-do_mysql
+rubygem-do_postgres             ports/databases/rubygem-do_postgres
 rubygem-do_sqlite3              ports/databases/rubygem-do_sqlite3
 rubygem-erubis                  ports/www/rubygem-erubis
 rubygem-eventmachine            ports/devel/rubygem-eventmachine
@@ -20241,6 +20244,7 @@ rubygem-mailfactory             ports/mail/rubygem-mailfactory
 rubygem-main                    ports/devel/rubygem-main
 rubygem-markaby                 ports/textproc/rubygem-markaby
 rubygem-maruku                  ports/www/rubygem-maruku
+rubygem-mash                    ports/devel/rubygem-mash
 rubygem-mechanize               ports/www/rubygem-mechanize
 rubygem-memcache-client         ports/databases/rubygem-memcache-client
 rubygem-merb                    ports/www/rubygem-merb
@@ -20921,7 +20925,6 @@ snotes                          ports/deskutils/snotes
 snowflake                       ports/misc/snowflake
 snowlog                         ports/sysutils/snowlog
 snownews                        ports/www/snownews
-snowstar                        ports/audio/snowstar
 sntop                           ports/net/sntop
 snx101util                      ports/graphics/snx101util
 soapui                          ports/devel/soapui
@@ -21867,7 +21870,6 @@ totem-pl-parser                 ports/multimedia/totem-pl-parser
 totem-xine                      ports/multimedia/totem-xine
 tovid                           ports/multimedia/tovid
 towitoko                        ports/devel/towitoko
-toxine                          ports/multimedia/toxine
 toycars                         ports/games/toycars
 tpad                            ports/editors/tpad
 tpasm                           ports/devel/tpasm
@@ -22023,7 +22025,6 @@ ttraffic                        ports/games/ttraffic
 ttyload                         ports/sysutils/ttyload
 ttyrec                          ports/misc/ttyrec
 ttytter                         ports/net-im/ttytter
-tua                             ports/sysutils/tua
 tuareg-mode.el                  ports/lang/tuareg-mode.el
 tuc                             ports/converters/tuc
 tulip                           ports/graphics/tulip
