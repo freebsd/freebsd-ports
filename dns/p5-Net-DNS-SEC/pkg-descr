@@ -1,4 +1,19 @@
-This module implements DNSSEC (RFC 2535), SIG(0) (RFC 2931) and
-draft-ietf-dnsext-delegation-signer-07.txt.
+The Net::DSN::SEC suite provides the resource records that are needed for
+DNSSEC (RFC 4033, 4034 and 4035). In addition the DLV RR, a clone of the DS
+RR is supported (RFC 4431)
 
-WWW: http://www.ripe.net/disi/#NetDNS
+It also provides support for SIG0. That later is useful for dynamic updates
+using key-pairs.
+
+RSA and DSA crypto routines are supported.
+
+For details see Net::DNS::RR::RRSIG, Net::DNS::RR::DNSKEY,
+Net::DNS::RR::NSEC, Net::DNS::RR:DS, Net::DNS::RR::DLV, and see
+Net::DNS::RR::SIG and Net::DNS::RR::KEY for the use with SIG0.
+
+Net::DNS contains all needed hooks to load the Net::DNS::SEC extensions when
+they are available.
+
+See Net::DNS for general help.
+
+WWW: http://search.cpan.org/dist/Net-DNS-SEC/
