@@ -8,6 +8,7 @@
     SUBDIR += R
     SUBDIR += R-cran-RSvgDevice
     SUBDIR += R-cran-Zelig
+    SUBDIR += R-cran-car
     SUBDIR += R-cran-gpclib
     SUBDIR += R-cran-sm
     SUBDIR += R-sp
