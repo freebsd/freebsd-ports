@@ -62,8 +62,10 @@ PLIST_SUB+=	PLUGIN="@comment "
 
 post-patch:
 .if defined(WITH_MOZILLA_PLUGIN)
+.if ${GECKO:Mlibxul}==""
 	@${REINPLACE_CMD} -e 's|mozilla-plugin|${GECKO}-plugin|g' \
 		${WRKSRC}/configure
+.endif
 	@${REINPLACE_CMD} -e 's|[$$][(]libdir[)]/mozilla/plugins|${WEBPLUGINS_DIR}|g' \
 		${WRKSRC}/moz-plugin/Makefile.in
 .endif
