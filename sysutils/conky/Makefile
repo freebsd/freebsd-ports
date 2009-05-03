@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	conky
-PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTVERSION=	1.7.0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +23,7 @@ USE_XORG?=	x11 xext xdamage
 USE_GNOME?=	pkgconfig
 USE_ICONV=	yes
 CONFIGURE_ARGS+=	--disable-portmon \
-			--disable-proc-uptime \
+			--disable-config-output  \
 			--disable-hddtemp
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
@@ -102,7 +101,7 @@ do-install:
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/conky.conf ${EXAMPLESDIR}/conkyrc.sample
+	@${INSTALL_DATA} ${WRKSRC}/data/conky.conf ${EXAMPLESDIR}/conkyrc.sample
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
