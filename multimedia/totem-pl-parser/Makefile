@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	totem-pl-parser
-PORTVERSION=	2.26.1
+PORTVERSION=	2.26.2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
