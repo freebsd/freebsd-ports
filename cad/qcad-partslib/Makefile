@@ -38,6 +38,6 @@ do-install:
 					print "@dirrm ${DATADIR}/" d |"sort -r"	\
 			}' >> ${TMPPLIST}
 	@${ECHO_CMD} '@dirrm ${DATADIR}' >> ${TMPPLIST}
-	@${ECHO_CMD} '@dirrmtry ${DATADIR:H}' >> ${TMPPLIST}
+	@${ECHO_CMD} '@unexec rmdir %D/${DATADIR:H}' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
