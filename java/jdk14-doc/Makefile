@@ -16,8 +16,11 @@ COMMENT=	Java Development Kit ${JDK_MAJOR_VER} Documentation
 
 LATEST_LINK=	jdk${JDK_CONCAT_VER}-doc
 DOCSDIR?=	${PREFIX}/share/doc/jdk${JDK_MAJOR_VER}
-NO_CDROM=	"License does not allow distribution with fee."
-RESTRICTED=	"This documentation is under license and export control."
+NO_CDROM=	License does not allow distribution with fee.
+RESTRICTED=	This documentation is under license and export control.
+.if defined(NOPORTDOCS)
+IGNORE=		port only installs documentation
+.endif
 
 WRKSRC=		${WRKDIR}/docs
 JDK_VERSION=	1.4.2
