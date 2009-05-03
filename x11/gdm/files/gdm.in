@@ -15,6 +15,7 @@
 
 gdm_enable=${gdm_enable-${gnome_enable}}
 gdm_preserve_base_pam_conf=${gdm_preserve_base_pam_conf-NO}
+gdm_lang=${gdm_lang-${LANG}}
 
 export PATH=/bin:/sbin:/usr/bin:/usr/sbin:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin
 
@@ -54,7 +55,7 @@ gdm_start()
 	sleep 1
 	iter=$(expr ${iter} + 1)
     done
-    ${command} ${gdm_flags} ) &
+    LANG=${gdm_lang} ${command} ${gdm_flags} ) &
 }
 
 load_rc_config ${name}
