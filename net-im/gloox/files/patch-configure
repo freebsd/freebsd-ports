@@ -1,0 +1,29 @@
+--- configure.orig	2009-05-01 14:07:43.000000000 +0200
++++ configure	2009-05-01 14:09:15.000000000 +0200
+@@ -19849,7 +19849,7 @@
+   schannel=no
+ fi
+ 
+-if test "$schannel" == "yes"; then
++if test "$schannel" = "yes"; then
+   ssl=yes
+   case "$host_os" in
+     *mingw*)
+@@ -19866,7 +19866,7 @@
+ echo "${ECHO_T}$schannel" >&6; }
+ fi
+ 
+-if test "$ssl" == "no"; then
++if test "$ssl" = "no"; then
+ 
+ # Check whether --with-gnutls was given.
+ if test "${with_gnutls+set}" = set; then
+@@ -20101,7 +20101,7 @@
+ echo "${ECHO_T}$gnutls" >&6; }
+ fi
+ 
+-if test "$ssl" == "no"; then
++if test "$ssl" = "no"; then
+ 
+ # Check whether --with-openssl was given.
+ if test "${with_openssl+set}" = set; then
