@@ -408,7 +408,7 @@
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/licenses
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/images
 @dirrm share/doc/openfire
-@dirrm %%ETCDIR%%/openfire
+@comment @dirrm %%ETCDIR%%/openfire
 @unexec rmdir %D/%%DATADIR%%/plugins 2> /dev/null || echo "If permanently deleting this package, %D/%%DATADIR%%/plugins must be removed manually"
 @unexec rmdir %D/%%ETCDIR%% 2> /dev/null || echo "If permanently deleting this package, %D/%%ETCDIR%% must be removed manually"
 @unexec rmdir /var/db/openfire 2> /dev/null || echo "If permanently deleting this package, /var/db/openfire must be removed manually"
