@@ -6,37 +6,41 @@
 #
 
 PORTNAME=	steam
-PORTVERSION=	1.0
-PORTREVISOIN=	2
+PORTVERSION=	1.1
 CATEGORIES=	games linux
-MASTER_SITES=	http://www.coreblack.com/files/
+MASTER_SITES=	http://storefront.steampowered.com/download/
 PKGNAMEPREFIX=	linux-
+DISTNAME=	hldsupdatetool.bin
+EXTRACT_SUFX=
+EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Half Life dedicated server running on steam
+MAINTAINER=	chris@easymac.org
+COMMENT=	Half Life and Source dedicated server using steam
 
 BUILD_DEPENDS=	${LINUX_BASE_PORT}
 
 IS_INTERACTIVE=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 INSTALLDIR?=	steam
 
+SUB_FILES=	pkg-message
+SUB_LIST=	INSTALLDIR=${PREFIX}/${INSTALLDIR}
 PLIST_SUB+=	INSTALLDIR=${INSTALLDIR}
 
 pre-everything::
-	@ ${ECHO_MSG} "You can use the INSTALLDIR option to change the install dir"
+	@${ECHO_MSG} "You can use the INSTALLDIR option to change the install directory."
 
 do-build:
-	@ ${BRANDELF} -t Linux ${WRKDIR}/hldsupdatetool.bin
-	@ ${CHMOD} +x ${WRKDIR}/hldsupdatetool.bin && cd ${WRKDIR} && ./hldsupdatetool.bin
-	@ ${CAT} pkg-message | ${SED} 's|%%PREFIX%%|${PREFIX}|' > ${PKGMESSAGE}
+	@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
+	@${BRANDELF} -t Linux ${WRKDIR}/${DISTFILES}
+	@${CHMOD} +x ${WRKDIR}/${DISTFILES} && cd ${WRKDIR} && ./${DISTFILES}
+	@${CAT} pkg-message | ${SED} 's|%%PREFIX%%|${PREFIX}|' > ${PKGMESSAGE}
 
 do-install:
-	@ ${MKDIR} ${PREFIX}/${INSTALLDIR}
-	@ ${CP} ${WRKDIR}/${PORTNAME} ${PREFIX}/${INSTALLDIR}/
-	@ ${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${PREFIX}/${INSTALLDIR}
+	@${CP} ${WRKDIR}/${PORTNAME} ${PREFIX}/${INSTALLDIR}/
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
