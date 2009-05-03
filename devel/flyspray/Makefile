@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	flyspray
-PORTVERSION=	0.9.9.5.1
+PORTVERSION=	0.9.9.6
 CATEGORIES=	devel www
-MASTER_SITES=	http://twinkie.foobar.org/files/
+MASTER_SITES=	http://flyspray.org/
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	A simple, easy-to-use web based bug tracking system
@@ -16,10 +16,11 @@ COMMENT=	A simple, easy-to-use web based bug tracking system
 RUN_DEPENDS=	${LOCALBASE}/share/adodb/adodb.inc.php:${PORTSDIR}/databases/adodb
 
 USE_PHP=	pcre session zlib xml gd
-USE_BZIP2=	yes
+USE_ZIP=	yes
 WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 OPTIONS=	GRAPHVIZ "Install Graphviz for task dependency graphs" off \
 		MYSQLI "Use MySQLi Database Interface" on \
