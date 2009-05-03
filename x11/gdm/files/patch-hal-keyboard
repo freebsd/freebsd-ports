@@ -1,0 +1,109 @@
+diff -up gdm-2.25.2/daemon/gdm-session-direct.c.system-keyboard gdm-2.25.2/daemon/gdm-session-direct.c
+--- daemon/gdm-session-direct.c.system-keyboard	2008-08-26 15:04:00.000000000 -0400
++++ daemon/gdm-session-direct.c	2009-02-24 22:55:02.656566009 -0500
+@@ -45,6 +45,8 @@
+ #include <dbus/dbus-glib.h>
+ #include <dbus/dbus-glib-lowlevel.h>
+ 
++#include <libhal.h>
++
+ #include "gdm-session-direct.h"
+ #include "gdm-session.h"
+ #include "gdm-session-private.h"
+@@ -595,14 +597,66 @@ get_default_language_name (GdmSessionDir
+     return setlocale (LC_MESSAGES, NULL);
+ }
+ 
++static char *
++get_system_default_layout (GdmSessionDirect *session)
++{
++    DBusConnection *connection;
++    LibHalContext *ctx;
++    char **devices;
++    int n_devices;
++    char *layout;
++    char *result;
++
++    result = NULL;
++
++    connection = dbus_g_connection_get_connection (session->priv->connection);
++    ctx = libhal_ctx_new ();
++    libhal_ctx_set_dbus_connection (ctx, connection);
++
++    if (!libhal_ctx_init (ctx, NULL)) {
++        goto out;
++    }
++
++    devices = libhal_find_device_by_capability (ctx,
++                                                "input.keyboard",
++                                                &n_devices,
++                                                NULL);
++    if (n_devices > 0) {
++        layout = libhal_device_get_property_string (ctx,
++                                                    devices[0],
++                                                    "input.x11_options.XkbLayout",
++                                                    NULL);
++        if (!layout) {
++            layout = libhal_device_get_property_string (ctx,
++                                                        devices[0],
++                                                        "input.xkb.layout",
++                                                        NULL);
++        }
++	result = g_strdup (layout);
++	libhal_free_string (layout);
++    }
++
++    libhal_free_string_array (devices);
++
++    libhal_ctx_shutdown (ctx, NULL);
++    libhal_ctx_free (ctx);
++
++out:
++    if (!result) {
++        result = g_strdup ("us");
++    }
++
++    return result;
++}
++
+ static const char *
+ get_default_layout_name (GdmSessionDirect *session)
+ {
+-    if (session->priv->saved_layout != NULL) {
+-                return session->priv->saved_layout;
++    if (!session->priv->saved_layout) {
++        session->priv->saved_layout = get_system_default_layout (session);
+     }
+ 
+-    return "us";
++    return session->priv->saved_layout;
+ }
+ 
+ static char *
+@@ -1971,9 +2025,10 @@ setup_session_environment (GdmSessionDir
+                                                      "GDM_LANG",
+                                                      get_language_name (session));
+ 
+-        gdm_session_direct_set_environment_variable (session,
+-                                                     "GDM_KEYBOARD_LAYOUT",
+-                                                     get_layout_name (session));
++	if (g_strcmp0 (get_layout_name (session), get_system_default_layout (session)) != 0)
++        	gdm_session_direct_set_environment_variable (session,
++                                                     	     "GDM_KEYBOARD_LAYOUT",
++                                                             get_layout_name (session));
+ 
+         gdm_session_direct_set_environment_variable (session,
+                                                      "DISPLAY",
+diff -up gdm-2.25.2/daemon/gdm-session-settings.c.system-keyboard gdm-2.25.2/daemon/gdm-session-settings.c
+--- daemon/gdm-session-settings.c.system-keyboard	2008-08-26 15:04:00.000000000 -0400
++++ daemon/gdm-session-settings.c	2009-02-24 22:51:00.158815919 -0500
+@@ -149,8 +149,7 @@ gdm_session_settings_set_layout_name (Gd
+ {
+         g_return_if_fail (GDM_IS_SESSION_SETTINGS (settings));
+ 
+-        if (settings->priv->layout_name == NULL ||
+-            strcmp (settings->priv->layout_name, layout_name) != 0) {
++        if (g_strcmp0 (settings->priv->layout_name, layout_name) != 0) {
+                 settings->priv->layout_name = g_strdup (layout_name);
+                 g_object_notify (G_OBJECT (settings), "layout-name");
+         }
