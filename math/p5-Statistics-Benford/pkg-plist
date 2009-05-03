@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Benford/.packlist
+%%SITE_PERL%%/Statistics/Benford.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Benford
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics
+@dirrmtry %%SITE_PERL%%/Statistics
