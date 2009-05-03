@@ -243,9 +243,9 @@ lib/gnumeric/%%VERSION%%/plugins/uihello/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xbase/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xbase/xbase.la
 lib/gnumeric/%%VERSION%%/plugins/xbase/xbase.so
-lib/goffice/0.7.4/plugins/gnumeric/gnumeric.la
-lib/goffice/0.7.4/plugins/gnumeric/gnumeric.so
-lib/goffice/0.7.4/plugins/gnumeric/plugin.xml
+lib/goffice/0.7.5/plugins/gnumeric/gnumeric.la
+lib/goffice/0.7.5/plugins/gnumeric/gnumeric.so
+lib/goffice/0.7.5/plugins/gnumeric/plugin.xml
 lib/libspreadsheet-%%VERSION%%.so
 lib/libspreadsheet.la
 lib/libspreadsheet.so
@@ -340,6 +340,7 @@ share/gnumeric/%%VERSION%%/glade/scenario-manager.glade
 share/gnumeric/%%VERSION%%/glade/search-replace.glade
 share/gnumeric/%%VERSION%%/glade/search.glade
 share/gnumeric/%%VERSION%%/glade/sheet-order.glade
+share/gnumeric/%%VERSION%%/glade/sheet-resize.glade
 share/gnumeric/%%VERSION%%/glade/shuffle.glade
 share/gnumeric/%%VERSION%%/glade/simulation.glade
 share/gnumeric/%%VERSION%%/glade/so-checkbox.glade
@@ -351,6 +352,7 @@ share/gnumeric/%%VERSION%%/glade/tabulate.glade
 share/gnumeric/%%VERSION%%/glade/variance-tests.glade
 share/gnumeric/%%VERSION%%/glade/view.glade
 share/gnumeric/%%VERSION%%/glade/workbook-attr.glade
+share/gnumeric/%%VERSION%%/templates/calendar.gnumeric
 share/gnumeric/%%VERSION%%/templates/invoice.gnumeric
 share/gnumeric/%%VERSION%%/templates/loan.gnumeric
 share/gnumeric/%%VERSION%%/templates/mileage.gnumeric
@@ -933,7 +935,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm share/gnumeric/%%VERSION%%/autoformat-templates
 @dirrm share/gnumeric/%%VERSION%%
 @dirrm share/gnumeric
-@dirrm lib/goffice/0.7.4/plugins/gnumeric
+@dirrm lib/goffice/0.7.5/plugins/gnumeric
 @dirrm lib/gnumeric/%%VERSION%%/plugins/xbase
 @dirrm lib/gnumeric/%%VERSION%%/plugins/uihello
 @dirrm lib/gnumeric/%%VERSION%%/plugins/sylk

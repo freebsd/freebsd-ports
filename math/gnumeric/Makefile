@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.9.5
+PORTVERSION=	1.9.6
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -40,8 +40,8 @@ MAN1=		gnumeric.1 ssconvert.1 ssindex.1 ssgrep.1
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-OPTIONS=	GNOMEDB "Enable libgnomedb support" off \
-		PERL "Enable Perl as extension language" on
+OPTIONS=	PERL "Enable Perl as extension language" on
+#GNOMEDB "Enable libgnomedb support" off
 
 .include <bsd.port.pre.mk>
 
@@ -53,14 +53,14 @@ CONFIGURE_ARGS+=	--without-perl
 PLIST_SUB+=		PERL="@comment "
 .endif
 
-.if defined(WITH_GNOMEDB)
-USE_GNOME+=		libgnomedb
-CONFIGURE_ARGS+=	--with-gda
-PLIST_SUB+=		GNOMEDB=""
-.else
+#.if defined(WITH_GNOMEDB)
+#USE_GNOME+=		libgnomedb
+#CONFIGURE_ARGS+=	--with-gda
+#PLIST_SUB+=		GNOMEDB=""
+#.else
 CONFIGURE_ARGS+=	--without-gda
 PLIST_SUB+=		GNOMEDB="@comment "
-.endif
+#.endif
 
 post-patch:
 	@${RM} -f ${WRKSRC}/GNOME_Gnumeric.server.in
