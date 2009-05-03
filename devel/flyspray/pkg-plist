@@ -88,6 +88,21 @@
 %%DATADIR%%/includes/external/swift-mailer/Swift/Cache/Memory.php
 %%DATADIR%%/includes/external/swift-mailer/Swift.php
 %%DATADIR%%/includes/external/swift-mailer/EasySwift.php
+%%DATADIR%%/includes/external/Zend/Http/Client/Adapter/Interface.php
+%%DATADIR%%/includes/external/Zend/Http/Client/Adapter/Socket.php
+%%DATADIR%%/includes/external/Zend/Http/Client.php
+%%DATADIR%%/includes/external/Zend/Http/Response.php
+%%DATADIR%%/includes/external/Zend/Loader.php
+%%DATADIR%%/includes/external/Zend/Registry.php
+%%DATADIR%%/includes/external/Zend/Rest/Client/Result.php
+%%DATADIR%%/includes/external/Zend/Rest/Client.php
+%%DATADIR%%/includes/external/Zend/Service/Abstract.php
+%%DATADIR%%/includes/external/Zend/Uri/Http.php
+%%DATADIR%%/includes/external/Zend/Uri.php
+%%DATADIR%%/includes/external/Zend/Validate/Abstract.php
+%%DATADIR%%/includes/external/Zend/Validate/Hostname.php
+%%DATADIR%%/includes/external/Zend/Validate/Interface.php
+%%DATADIR%%/includes/external/Zend/Validate/Ip.php
 %%DATADIR%%/includes/fix.inc.php
 %%DATADIR%%/includes/i18n.inc.php
 %%DATADIR%%/includes/modify.inc.php
@@ -199,6 +214,7 @@
 %%DATADIR%%/lang/hu.php
 %%DATADIR%%/lang/it.php
 %%DATADIR%%/lang/ja.php
+%%DATADIR%%/lang/mk.php
 %%DATADIR%%/lang/nl.php
 %%DATADIR%%/lang/pl.php
 %%DATADIR%%/lang/pt_br.php
@@ -421,7 +437,6 @@
 %%DATADIR%%/setup/templates/administration.tpl
 %%DATADIR%%/setup/templates/complete_install.tpl
 %%DATADIR%%/setup/templates/database.tpl
-%%DATADIR%%/setup/templates/license.tpl
 %%DATADIR%%/setup/templates/pre_install.tpl
 %%DATADIR%%/setup/templates/structure.tpl
 %%DATADIR%%/setup/templates/upgrade.tpl
@@ -622,6 +637,15 @@
 @dirrm %%DATADIR%%/includes/external/swift-mailer/Swift/Cache
 @dirrm %%DATADIR%%/includes/external/swift-mailer/Swift
 @dirrm %%DATADIR%%/includes/external/swift-mailer
+@dirrm %%DATADIR%%/includes/external/Zend/Http/Client/Adapter
+@dirrm %%DATADIR%%/includes/external/Zend/Http/Client
+@dirrm %%DATADIR%%/includes/external/Zend/Http
+@dirrm %%DATADIR%%/includes/external/Zend/Rest/Client
+@dirrm %%DATADIR%%/includes/external/Zend/Rest
+@dirrm %%DATADIR%%/includes/external/Zend/Service
+@dirrm %%DATADIR%%/includes/external/Zend/Uri
+@dirrm %%DATADIR%%/includes/external/Zend/Validate
+@dirrm %%DATADIR%%/includes/external/Zend
 @dirrm %%DATADIR%%/includes/external
 @dirrm %%DATADIR%%/includes
 @dirrm %%DATADIR%%/javascript/callbacks
