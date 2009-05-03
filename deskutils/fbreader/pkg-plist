@@ -1,8 +1,8 @@
 bin/FBReader
 lib/libzlcore.so.0.10
-lib/libzlcore.so.0.10.3
+lib/libzlcore.so.%%VERSION%%
 lib/libzltext.so.0.10
-lib/libzltext.so.0.10.3
+lib/libzltext.so.%%VERSION%%
 lib/zlibrary/ui/zlui-%%UI%%.so
 share/FBReader/default/config.xml
 share/FBReader/default/external.xml
