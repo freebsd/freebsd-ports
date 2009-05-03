@@ -7,6 +7,7 @@ bin/yodl2txt
 bin/yodl2whatever
 bin/yodl2xml
 bin/yodlpost
+bin/yodlstriproff
 bin/yodlverbinsert
 man/man1/yodl2html.1.gz
 man/man1/yodl2latex.1.gz
