@@ -7,7 +7,7 @@
 
 PORTNAME=	qcad-partslib
 PORTVERSION=	2.1.2.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	ftp://www.ribbonsoft.com/archives/partlibrary/
 DISTNAME=	partlibrary-${PORTVERSION:S/.1$/-1/}
@@ -38,6 +38,6 @@ do-install:
 					print "@dirrm ${DATADIR}/" d |"sort -r"	\
 			}' >> ${TMPPLIST}
 	@${ECHO_CMD} '@dirrm ${DATADIR}' >> ${TMPPLIST}
-	@${ECHO_CMD} '@unexec rmdir ${DATADIR:H} 2>/dev/null || true' >> ${TMPPLIST}
+	@${ECHO_CMD} '@dirrmtry ${DATADIR:H}' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
