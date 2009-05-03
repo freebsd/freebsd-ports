@@ -18,7 +18,8 @@ COMMENT=	GNOME 2 version of xdm display manager
 
 BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
 LIB_DEPENDS=	ck-connector.0:${PORTSDIR}/sysutils/consolekit \
-    		execinfo:${PORTSDIR}/devel/libexecinfo
+    		execinfo:${PORTSDIR}/devel/libexecinfo \
+		hal.1:${PORTSDIR}/sysutils/hal
 RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
 
