@@ -1,11 +1,11 @@
---- src/ttb.orig	Mon Oct  3 08:04:31 2005
-+++ src/ttb	Mon Oct  3 08:04:38 2005
-@@ -801,7 +801,7 @@
-                 page = [int(argv[1]),int(argv[2])]
+--- src/ttb.orig	2008-11-29 21:57:30.000000000 +1100
++++ src/ttb	2009-05-03 20:52:11.000000000 +1000
+@@ -49,7 +49,7 @@
+ ttb_max_history = 50
  
-         glade = get_data_file ('ttb/ttb.glade')
--        icon  = get_data_file ('pixmaps/ttb.png')
-+        icon  = get_data_file ('ttb/ttb.png')
-          
-         TTB(glade, icon, page)
+ ttb_glade_data = 'ttb/ttb.glade'
+-ttb_icon_data  = 'pixmaps/ttb.png'
++ttb_icon_data  = 'ttb/ttb.png'
+ 
+ ttb_debug = 0
  
