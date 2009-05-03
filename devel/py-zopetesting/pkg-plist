@@ -45,11 +45,13 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/logsupport.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/options.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/profiling.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/process.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/process.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/process.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/refcount.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/runner.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/selftest.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/statistics.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/subprocess.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-colors.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-arguments.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-coverage-win32.txt
@@ -95,7 +97,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/runner.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/selftest.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/statistics.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/subprocess.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/tests.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-ex/README.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-ex/gc0.py
@@ -350,7 +351,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/runner.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/selftest.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/statistics.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/subprocess.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/tests.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/cleanup.pyo
