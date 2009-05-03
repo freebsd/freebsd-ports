@@ -202,6 +202,7 @@ PicMonger                       ports/news/PicMonger
 R                               ports/math/R
 R-cran-RSvgDevice               ports/math/R-cran-RSvgDevice
 R-cran-Zelig                    ports/math/R-cran-Zelig
+R-cran-car                      ports/math/R-cran-car
 R-cran-gpclib                   ports/math/R-cran-gpclib
 R-cran-sm                       ports/math/R-cran-sm
 R-sp                            ports/math/R-sp
@@ -6259,6 +6260,7 @@ jsmin                           ports/devel/jsmin
 json-c                          ports/devel/json-c
 json-glib                       ports/devel/json-glib
 jspice3                         ports/cad/jspice3
+jspwiki                         ports/www/jspwiki
 jtag                            ports/devel/jtag
 jtans                           ports/games/jtans
 jtiger                          ports/java/jtiger
@@ -9032,6 +9034,7 @@ mysql_last_value                ports/databases/mysql_last_value
 mysqlard                        ports/databases/mysqlard
 mysqlcc                         ports/databases/mysqlcc
 mysqlcppapi                     ports/databases/mysqlcppapi
+mysqlidxchk                     ports/databases/mysqlidxchk
 mysqlman                        ports/databases/mysqlman
 mysqlphp2postgres               ports/www/mysqlphp2postgres
 mysqlreport                     ports/databases/mysqlreport
@@ -10691,6 +10694,7 @@ p5-DBIx-Class-HTMLWidget        ports/www/p5-DBIx-Class-HTMLWidget
 p5-DBIx-Class-InflateColumn-IP  ports/databases/p5-DBIx-Class-InflateColumn-IP
 p5-DBIx-Class-IntrospectableM2M  ports/databases/p5-DBIx-Class-IntrospectableM2M
 p5-DBIx-Class-Loader            ports/databases/p5-DBIx-Class-Loader
+p5-DBIx-Class-QueryLog          ports/databases/p5-DBIx-Class-QueryLog
 p5-DBIx-Class-ResultSet-RecursiveUpdate  ports/databases/p5-DBIx-Class-ResultSet-RecursiveUpdate
 p5-DBIx-Class-Schema-Loader     ports/databases/p5-DBIx-Class-Schema-Loader
 p5-DBIx-Class-TimeStamp         ports/databases/p5-DBIx-Class-TimeStamp
@@ -11743,6 +11747,7 @@ p5-Math-Bezier                  ports/math/p5-Math-Bezier
 p5-Math-Bezier-Convert          ports/math/p5-Math-Bezier-Convert
 p5-Math-BigInt                  ports/math/p5-Math-BigInt
 p5-Math-BigInt-GMP              ports/math/p5-Math-BigInt-GMP
+p5-Math-BigInt-Pari             ports/math/p5-Math-BigInt-Pari
 p5-Math-BigRat                  ports/math/p5-Math-BigRat
 p5-Math-Calc-Units              ports/math/p5-Math-Calc-Units
 p5-Math-Cephes                  ports/math/p5-Math-Cephes
@@ -14241,6 +14246,7 @@ p5-dbix-class-htmlwidget        ports/www/p5-DBIx-Class-HTMLWidget
 p5-dbix-class-inflatecolumn-ip  ports/databases/p5-DBIx-Class-InflateColumn-IP
 p5-dbix-class-introspectablem2m  ports/databases/p5-DBIx-Class-IntrospectableM2M
 p5-dbix-class-loader            ports/databases/p5-DBIx-Class-Loader
+p5-dbix-class-querylog          ports/databases/p5-DBIx-Class-QueryLog
 p5-dbix-class-resultset-recursiveupdate  ports/databases/p5-DBIx-Class-ResultSet-RecursiveUpdate
 p5-dbix-class-schema-loader     ports/databases/p5-DBIx-Class-Schema-Loader
 p5-dbix-class-timestamp         ports/databases/p5-DBIx-Class-TimeStamp
@@ -15151,6 +15157,7 @@ p5-math-bezier                  ports/math/p5-Math-Bezier
 p5-math-bezier-convert          ports/math/p5-Math-Bezier-Convert
 p5-math-bigint                  ports/math/p5-Math-BigInt
 p5-math-bigint-gmp              ports/math/p5-Math-BigInt-GMP
+p5-math-bigint-pari             ports/math/p5-Math-BigInt-Pari
 p5-math-bigrat                  ports/math/p5-Math-BigRat
 p5-math-calc-units              ports/math/p5-Math-Calc-Units
 p5-math-cephes                  ports/math/p5-Math-Cephes
@@ -19528,6 +19535,7 @@ qwt5                            ports/x11-toolkits/qwt5
 qwtplot3d                       ports/math/qwtplot3d
 qwtplot3d-qt4                   ports/math/qwtplot3d-qt4
 r                               ports/math/R
+r-cran-car                      ports/math/R-cran-car
 r-cran-gpclib                   ports/math/R-cran-gpclib
 r-cran-rsvgdevice               ports/math/R-cran-RSvgDevice
 r-cran-sm                       ports/math/R-cran-sm
