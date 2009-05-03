@@ -1,0 +1,82 @@
+--- configure.orig	2009-05-03 15:26:45.000000000 -0400
++++ configure	2009-05-03 15:27:01.000000000 -0400
+@@ -15099,6 +15099,79 @@ GLIB_GENMARSHAL="$($PKG_CONFIG --variabl
+ GLIB_MKENUMS="$($PKG_CONFIG --variable=glib_mkenums glib-2.0)"
+ 
+ 
++{ echo "$as_me:$LINENO: checking for kinfo_getfile in -lutil" >&5
++echo $ECHO_N "checking for kinfo_getfile in -lutil... $ECHO_C" >&6; }
++if test "${ac_cv_lib_util_kinfo_getfile+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-lutil  $LIBS"
++cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char kinfo_getfile ();
++int
++main ()
++{
++return kinfo_getfile ();
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (ac_try="$ac_link"
++case "(($ac_try" in
++  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
++  *) ac_try_echo=$ac_try;;
++esac
++eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
++  (eval "$ac_link") 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } && {
++	 test -z "$ac_c_werror_flag" ||
++	 test ! -s conftest.err
++       } && test -s conftest$ac_exeext &&
++       $as_test_x conftest$ac_exeext; then
++  ac_cv_lib_util_kinfo_getfile=yes
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++	ac_cv_lib_util_kinfo_getfile=no
++fi
++
++rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
++      conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ echo "$as_me:$LINENO: result: $ac_cv_lib_util_kinfo_getfile" >&5
++echo "${ECHO_T}$ac_cv_lib_util_kinfo_getfile" >&6; }
++if test $ac_cv_lib_util_kinfo_getfile = yes; then
++  LIBS="${LIBS} -lutil"
++
++cat >>confdefs.h <<\_ACEOF
++#define HAVE_KINFO_GETFILE 1
++_ACEOF
++
++else
++  :
++fi
++
++
+ # Extract the first word of "gtk-builder-convert", so it can be a program name with args.
+ set dummy gtk-builder-convert; ac_word=$2
+ { echo "$as_me:$LINENO: checking for $ac_word" >&5

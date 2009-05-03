@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-terminal
 PORTVERSION=	2.26.1
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -25,5 +26,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	gnome-terminal.schemas
+
+post-patch:
+	@${TOUCH} -f ${WRKSRC}/aclocal.m4
 
 .include <bsd.port.mk>
