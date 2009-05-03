@@ -1,0 +1,21 @@
+------------------------------------------------------------------------
+Linux HLDS Update Tool has been successfully installed!
+
+To get started:
+	cd %%INSTALLDIR%%
+	./steam -command update -game [name] -dir .
+
+Steam will then begin downloading the game content to your system.  Once
+complete you may start your server by:
+
+	./hlds_run -game [name] +map [mapname] -maxplayers [#] \
+		-autoupdate
+
+	OR
+
+	./srcds_run -game [name] +map [mapname] -maxplayers [#] \
+		-autoupdate
+
+
+NOTE: Steam no longer requires login information.
+------------------------------------------------------------------------

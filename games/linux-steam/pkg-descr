@@ -1,19 +1,11 @@
-Steam is Valve's new way of getting games into your hands ASAP. Games like
-Half-Life, Counter-Strike, and Counter-Strike Condition Zero
-are all being made available through Steam.
+HLDS Update Tool (more truthfully named Steam):
 
-Steam games are automatically kept up-to-date with the latest content
-and revisions. Steam also includes an instant-message client which
-even works while you're in-game.
+Steam allows you to download the game content necessary to run a 
+Half-Life Dedicated Server or Source Dedicated Server.  The downloaded
+content can also be updated to the newest revisions and patches
+automatically with the use of Steam.
 
-At its core, Steam is a distributed file system and shared set of technology
-components that can be implemented into any software application.
-
-With Steam, developers are given integrated tools for direct-content
-publishing, flexible billing, ensured-version
-control, anti-cheating, anti-piracy, and more.
+This port installs the Linux version of Steam, as no FreeBSD version
+exists.
 
 WWW: http://www.steampowered.com/
-
-- Hideki
-hido@coreblack.com
