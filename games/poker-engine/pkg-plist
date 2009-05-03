@@ -79,6 +79,30 @@ etc/poker-engine/pot-limit.template
 @dirrm etc/poker-engine
 libdata/pkgconfig/poker-engine.pc
 sbin/pokerconfigupgrade
+share/locale/da/LC_MESSAGES/poker-engine.mo
+share/locale/de/LC_MESSAGES/poker-engine.mo
+share/locale/en/LC_MESSAGES/poker-engine.mo
+share/locale/en_CA/LC_MESSAGES/poker-engine.mo
+share/locale/en_US/LC_MESSAGES/poker-engine.mo
+share/locale/es/LC_MESSAGES/poker-engine.mo
+share/locale/fi/LC_MESSAGES/poker-engine.mo
+share/locale/fr/LC_MESSAGES/poker-engine.mo
+share/locale/fr_BE/LC_MESSAGES/poker-engine.mo
+share/locale/fr_CA/LC_MESSAGES/poker-engine.mo
+share/locale/fr_FX/LC_MESSAGES/poker-engine.mo
+share/locale/it/LC_MESSAGES/poker-engine.mo
+share/locale/nb/LC_MESSAGES/poker-engine.mo
+share/locale/nl/LC_MESSAGES/poker-engine.mo
+share/locale/pt/LC_MESSAGES/poker-engine.mo
+share/locale/sv/LC_MESSAGES/poker-engine.mo
+@dirrmtry share/locale/en_US/LC_MESSAGES
+@dirrmtry share/locale/en_US
+@dirrmtry share/locale/fr_BE/LC_MESSAGES
+@dirrmtry share/locale/fr_BE
+@dirrmtry share/locale/fr_CA/LC_MESSAGES
+@dirrmtry share/locale/fr_CA
+@dirrmtry share/locale/fr_FX/LC_MESSAGES
+@dirrmtry share/locale/fr_FX
 %%DATADIR%%/conf/poker..01-.02-no-limit.xml
 %%DATADIR%%/conf/poker..01-.02-pot-limit.xml
 %%DATADIR%%/conf/poker..02-.04-limit.xml
