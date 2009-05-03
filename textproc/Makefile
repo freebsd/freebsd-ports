@@ -1055,7 +1055,6 @@
     SUBDIR += soprano
     SUBDIR += source-highlight
     SUBDIR += sowing
-    SUBDIR += sp
     SUBDIR += spellutils
     SUBDIR += sphinxsearch
     SUBDIR += sphinxsearch-devel
