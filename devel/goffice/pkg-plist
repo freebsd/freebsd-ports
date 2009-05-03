@@ -79,7 +79,6 @@ include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-series-impl.h
 include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-series-lines.h
 include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-series.h
 include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-smoothed-curve.h
-include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-style.h
 include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-styled-object.h
 include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-theme.h
 include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-trend-line.h
@@ -129,6 +128,7 @@ include/libgoffice-%%SHORT_VER%%/goffice/utils/datetime.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-bezier.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-cairo.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-color.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-editor.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-file.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-font.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-format.h
@@ -144,6 +144,8 @@ include/libgoffice-%%SHORT_VER%%/goffice/utils/go-pango-extras.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-path.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-pattern.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-persist.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-style.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-styled-object.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-undo.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-units.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/goffice-utils.h
@@ -169,6 +171,7 @@ lib/goffice/%%VERSION%%/plugins/plot_pie/pie.la
 lib/goffice/%%VERSION%%/plugins/plot_pie/pie.so
 lib/goffice/%%VERSION%%/plugins/plot_pie/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_pie/plugin.xml
+lib/goffice/%%VERSION%%/plugins/plot_radar/gog-color-polar-prefs.xml
 lib/goffice/%%VERSION%%/plugins/plot_radar/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_radar/plugin.xml
 lib/goffice/%%VERSION%%/plugins/plot_radar/radar.a
@@ -213,21 +216,18 @@ lib/libgoffice-%%SHORT_VER%%.so.7
 libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/GOComboBox.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOComponent.html
-%%DOCSDIR%%-%%SHORT_VER%%/GODataMatrix.html
-%%DOCSDIR%%-%%SHORT_VER%%/GODataScalar.html
-%%DOCSDIR%%-%%SHORT_VER%%/GODataVector.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOOptionMenu.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOPalette.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOPersist.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOPluginLoader.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOSelector.html
+%%DOCSDIR%%-%%SHORT_VER%%/GOStyledObject.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOUndoUnary.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogDataAllocator.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogDataset.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogObject.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogOutlinedView.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogRegCurve.html
-%%DOCSDIR%%-%%SHORT_VER%%/GogRegEqn.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogSmoothedCurve.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogStyledObject.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogView.html
@@ -258,6 +258,7 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-data.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-doc-control.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-doc.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-editor.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-fft.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-file.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-font-sel.html
@@ -279,6 +280,7 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-plugin.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-regression.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-rotation-sel.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-style.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-units.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-axis-line.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-axis.html
@@ -297,20 +299,8 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-renderer.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-series-lines.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-series.html
-%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-style.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-theme.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-trend-line.html
-%%DOCSDIR%%-%%SHORT_VER%%/goffice-GOService.html
-%%DOCSDIR%%-%%SHORT_VER%%/goffice-GoApp.html
-%%DOCSDIR%%-%%SHORT_VER%%/goffice-GoFileOpener.html
-%%DOCSDIR%%-%%SHORT_VER%%/goffice-GoFileSaver.html
-%%DOCSDIR%%-%%SHORT_VER%%/goffice-GoRange.html
-%%DOCSDIR%%-%%SHORT_VER%%/goffice-GoReg.html
-%%DOCSDIR%%-%%SHORT_VER%%/goffice-GoSearchReplace.html
-%%DOCSDIR%%-%%SHORT_VER%%/goffice-GoUrl.html
-%%DOCSDIR%%-%%SHORT_VER%%/goffice-GogAxisMap.html
-%%DOCSDIR%%-%%SHORT_VER%%/goffice-GogEditor.html
-%%DOCSDIR%%-%%SHORT_VER%%/goffice-GogTool.html
 %%DOCSDIR%%-%%SHORT_VER%%/home.png
 %%DOCSDIR%%-%%SHORT_VER%%/index.html
 %%DOCSDIR%%-%%SHORT_VER%%/index.sgml
@@ -327,6 +317,7 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DATADIR%%/%%VERSION%%/glade/go-image-save-dialog-extra.glade
 %%DATADIR%%/%%VERSION%%/glade/go-image-sel.glade
 %%DATADIR%%/%%VERSION%%/glade/go-rotation-sel.glade
+share/goffice/%%VERSION%%/glade/go-style-prefs.glade
 %%DATADIR%%/%%VERSION%%/glade/gog-3d-box-prefs.glade
 %%DATADIR%%/%%VERSION%%/glade/gog-axis-prefs.glade
 %%DATADIR%%/%%VERSION%%/glade/gog-error-bar-prefs.glade
@@ -338,7 +329,6 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DATADIR%%/%%VERSION%%/glade/gog-reg-curve-prefs.glade
 %%DATADIR%%/%%VERSION%%/glade/gog-reg-eqn-prefs.glade
 %%DATADIR%%/%%VERSION%%/glade/gog-series-prefs.glade
-%%DATADIR%%/%%VERSION%%/glade/gog-style-prefs.glade
 %%DATADIR%%/%%VERSION%%/patterns/svg-patterns.xml
 share/locale/am/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/ar/LC_MESSAGES/goffice-%%VERSION%%.mo
@@ -412,6 +402,7 @@ share/pixmaps/goffice/%%VERSION%%/chart_boxplot_2_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_boxplot_2_2.png
 share/pixmaps/goffice/%%VERSION%%/chart_bubble_1_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_colored_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_color_polar_1_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_column_1_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_column_1_2.png
 share/pixmaps/goffice/%%VERSION%%/chart_column_1_3.png
