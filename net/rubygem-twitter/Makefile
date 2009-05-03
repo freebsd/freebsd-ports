@@ -11,7 +11,7 @@ PORTVERSION=	0.6.8
 CATEGORIES=	net rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Command line twits and an API wrapper
 
 RUN_DEPENDS=	rubygem-oauth>=0.3.2:${PORTSDIR}/net/rubygem-oauth \
