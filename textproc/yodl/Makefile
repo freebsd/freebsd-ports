@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yodl
-PORTVERSION=	2.14.0
+PORTVERSION=	2.14.2
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -24,8 +24,8 @@ BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
 USE_PERL5_BUILD=	yes
 
 MANCOMPRESSED=	no
-MAN1=		yodl.1 yodlpost.1 yodlconverters.1 yodlverbinsert.1
-MAN7=		yodlmanpage.7 yodlletter.7 yodlmacros.7 yodlbuiltins.7
+MAN1=		yodl.1 yodlpost.1 yodlconverters.1 yodlverbinsert.1 yodlstriproff.1
+MAN7=		yodlmanpage.7 yodlletter.7 yodlmacros.7
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
@@ -40,29 +40,26 @@ BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|"/usr/share/yodl"|"${PREFIX}/share/${PORTNAME}-${PORTVERSION}"| ; \
-		s|"/usr/bin"|"${PREFIX}/bin"|' \
-		${WRKSRC}/src/config.h
-	@${REINPLACE_CMD} -e 's|"/share/yodl"|"/share/yodl-${PORTVERSION}"| ; \
-		s|"-r"|"-R"| ; \
+	@${REINPLACE_CMD} -e 's|"/usr"|"${PREFIX}"| ; \
+		s|"/share/yodl"|"/share/${PORTNAME}-${PORTVERSION}"| ; \
 		s|"/share/man"|"/man"| ; \
-		s|"/share/doc"|"/share/doc/yodl-${PORTVERSION}"| ; \
-		s|"/share/doc/yodl"|"/share/doc/yodl-${PORTVERSION}"|' \
+		s|"/share/doc/yodl"|"/share/doc/${PORTNAME}-${PORTVERSION}"| ; \
+		s|"/share/doc/yodl-doc"|"/share/doc/${PORTNAME}-${PORTVERSION}/doc"| ; \
+		s|"gcc"|"${CC}"|' \
+		${WRKSRC}/INSTALL.im
+	@${REINPLACE_CMD} -e 's|yodlconverters.1|yodlconverters.1.gz| ; \
+		s|".1"|".1.gz"|' \
+		${WRKSRC}/icmake/install
+	@${REINPLACE_CMD} -e 's|#!/usr/bin/icmake|#!${LOCALBASE}/bin/icmake| ; \
+		s|"-O2 -Wall"|"-Wall ${CFLAGS}"|' \
 		${WRKSRC}/build
-	@${REINPLACE_CMD} -e 's|#!/usr/bin/icmake|#!${LOCALBASE}/bin/icmake|' \
-		${WRKSRC}/build \
-		${WRKSRC}/src/build \
-		${WRKSRC}/src/yodlpost/build \
-		${WRKSRC}/src/yodl/build \
-		${WRKSRC}/manual/build \
-		${WRKSRC}/man/build \
-		${WRKSRC}/macros/build
 	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash| ; \
 		s|sed |${LOCALBASE}/bin/gsed | ; \
 		s|getopt |${LOCALBASE}/bin/getopt |' \
 		${WRKSRC}/src/yodl/replace \
 		${WRKSRC}/scripts/yodl2whatever.in \
 		${WRKSRC}/scripts/configreplacements \
+		${WRKSRC}/scripts/createmacros \
 		${WRKSRC}/macros/rawmacros/separator \
 		${WRKSRC}/macros/rawmacros/keepdiff \
 		${WRKSRC}/macros/rawmacros/repairs \
@@ -73,17 +70,32 @@ post-patch:
 		${WRKSRC}/macros/rawmacros/separator.pl \
 		${WRKSRC}/macros/rawmacros/startdoc.pl \
 		${WRKSRC}/contrib/build.pl
+	@${REINPLACE_CMD} -e 's|@STD_INCLUDE@|tmp/install@STD_INCLUDE@|' \
+		${WRKSRC}/macros/in/html.in \
+		${WRKSRC}/macros/in/latex.in \
+		${WRKSRC}/macros/in/man.in \
+		${WRKSRC}/macros/in/txt.in \
+		${WRKSRC}/macros/in/xml.in
+	@${REINPLACE_CMD} -e 's|../../yodl/|../../../${PORTNAME}-${PORTVERSION}/|' \
+		${WRKSRC}/manual/yo/manual.yo
 
 do-build:
-	@cd ${WRKSRC} && ./build package
+	@cd ${WRKSRC} && ./build programs
+.if !defined(NO_INSTALL_MANPAGES)
+	@cd ${WRKSRC} && ./build man
+.endif
 .if !defined(NOPORTDOCS)
-	@cd ${WRKSRC} && ./build doc
+	@cd ${WRKSRC} && ./build manual
 .endif
 
 do-install:
-	@cd ${WRKSRC} && ./build install ${PREFIX}
+	@cd ${WRKSRC} && ./build install programs ""
+	@cd ${WRKSRC} && ./build install macros ""
+.if !defined(NO_INSTALL_MANPAGES)
+	@cd ${WRKSRC} && ./build install man ""
+.endif
 .if !defined(NOPORTDOCS)
-	@cd ${WRKSRC} && ./build install_doc ${PREFIX}
+	@cd ${WRKSRC} && ./build install manual "" && ./build install docs ""
 .endif
 
 .include <bsd.port.mk>
