@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.ora.com/pub/gmat/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	O'Reilly's SGML formatting package
 
-RUN_DEPENDS=	${LOCALBASE}/bin/nsgmls:${PORTSDIR}/textproc/sp		\
+RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade                        \
 		${LOCALBASE}/bin/procmail:${PORTSDIR}/mail/procmail	\
 		docbook<2:${PORTSDIR}/textproc/docbook \
 		${LOCALBASE}/share/sgml/iso12083/book.dtd:${PORTSDIR}/textproc/iso12083 \
@@ -22,6 +22,10 @@ RUN_DEPENDS=	${LOCALBASE}/bin/nsgmls:${PORTSDIR}/textproc/sp		\
 
 USE_PERL5_BUILD=yes
 REINPLACE_ARGS=	-i ""
+
+BROKEN=		this port needs a larger cleanup
+DEPRECATED=	failed to build for a long time, no maintainer and apparently no users either
+EXPIRATION_DATE=2009-06-03
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.2.4
 MAKE_ARGS=	CC="${CC}" PRODROOT="${DATADIR}" SOELIMPATHNAME="/usr/bin/soelim"
