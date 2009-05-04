@@ -6,4 +6,4 @@ lib/libopenal.so.1.7.411
 lib/libopenal.so.1
 lib/libopenal.so
 libdata/pkgconfig/openal.pc
-@dirrm include/AL
+@dirrmtry include/AL
