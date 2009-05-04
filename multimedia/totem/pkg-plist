@@ -307,6 +307,7 @@ share/locale/bn/LC_MESSAGES/totem.mo
 share/locale/bn_IN/LC_MESSAGES/totem.mo
 share/locale/br/LC_MESSAGES/totem.mo
 share/locale/ca/LC_MESSAGES/totem.mo
+share/locale/crh/LC_MESSAGES/totem.mo
 share/locale/cs/LC_MESSAGES/totem.mo
 share/locale/cy/LC_MESSAGES/totem.mo
 share/locale/da/LC_MESSAGES/totem.mo
@@ -506,6 +507,8 @@ share/vala/vapi/totem.vapi
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
