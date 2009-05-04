@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.6
+PORTVERSION=	1.6.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
@@ -32,30 +32,19 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-localedir=${PREFIX}/share/locale
 
-MANLANG=	"" cs da de en_GB es fi fr gl hu it ja
-MANLANG+=	lt nl pl racv sk sr sr@latin sv tr zh_CN zh_TW
+MANLANG=	"" cs de en_GB es fi hu it lt pl sr sr@latin sv tr zh_CN
 
-MAN6_CS=	wesnoth.6
-MAN6_DE=	wesnoth.6
-MAN6_EN=	wesnoth.6
-MAN6_EN_GB=	wesnoth.6
-MAN6_ES=	wesnoth.6
-MAN6_FI=	wesnoth.6
+MAN6=		wesnoth.6
 MAN6_GL=	wesnoth.6
-MAN6_HU=	wesnoth.6
-MAN6_IT=	wesnoth.6
-MAN6_LT=	wesnoth.6
-MAN6_PL=	wesnoth.6
+MAN6_RU=	wesnoth.6
 MAN6_SK=	wesnoth.6
-MAN6_TR=	wesnoth.6
-MAN6_ZH_CN=	wesnoth.6
 
-OPTIONS=	CAMPAIGN "Enable campaign server" On \
-		EDITOR	"Enable map editor"  On \
-		FRIBIDI	"Enable bidirectional support" On \
-		NLS	"Enable localization" On \
-		SERVER "Enable server" On \
-		TOOLS "Enable extra tools for artists and translators" On
+OPTIONS=	CAMPAIGN "Enable campaign server"	On \
+		EDITOR	 "Enable map editor"		On \
+		FRIBIDI	 "Enable bidirectional support"	On \
+		NLS	 "Enable localization"		On \
+		SERVER	 "Enable server"		On \
+		TOOLS	 "Enable extra tools for artists and translators" On
 
 .include <bsd.port.pre.mk>
 

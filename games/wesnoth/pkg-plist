@@ -2385,6 +2385,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/portraits/dwarves/sentinel.png
 %%DATADIR%%/data/core/images/portraits/dwarves/thunderer.png
 %%DATADIR%%/data/core/images/portraits/dwarves/transparent/dragonguard.png
+%%DATADIR%%/data/core/images/portraits/dwarves/transparent/fighter-2.png
 %%DATADIR%%/data/core/images/portraits/dwarves/transparent/fighter.png
 %%DATADIR%%/data/core/images/portraits/dwarves/transparent/gryphon-rider.png
 %%DATADIR%%/data/core/images/portraits/dwarves/transparent/guard.png
@@ -2430,6 +2431,8 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/portraits/elves/transparent/shyde.png
 %%DATADIR%%/data/core/images/portraits/elves/transparent/sorceress.png
 %%DATADIR%%/data/core/images/portraits/elves/transparent/sylph.png
+%%DATADIR%%/data/core/images/portraits/goblins/spearman.png
+%%DATADIR%%/data/core/images/portraits/goblins/transparent/spearman.png
 %%DATADIR%%/data/core/images/portraits/humans/assassin+female.png
 %%DATADIR%%/data/core/images/portraits/humans/assassin.png
 %%DATADIR%%/data/core/images/portraits/humans/bandit.png
@@ -2469,6 +2472,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/portraits/humans/peasant.png
 %%DATADIR%%/data/core/images/portraits/humans/pikeman.png
 %%DATADIR%%/data/core/images/portraits/humans/poacher.png
+%%DATADIR%%/data/core/images/portraits/humans/ranger.png
 %%DATADIR%%/data/core/images/portraits/humans/royal-guard.png
 %%DATADIR%%/data/core/images/portraits/humans/sergeant.png
 %%DATADIR%%/data/core/images/portraits/humans/spearman.png
@@ -2507,26 +2511,33 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/necromancer.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/peasant.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/pikeman.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/ranger.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/royal-guard.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/sergeant.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/spearman.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/swordsman.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/thief+female.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/thief.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/trapper.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/woodsman.png
+%%DATADIR%%/data/core/images/portraits/humans/trapper.png
 %%DATADIR%%/data/core/images/portraits/humans/woodsman.png
 %%DATADIR%%/data/core/images/portraits/merfolk/fighter.png
 %%DATADIR%%/data/core/images/portraits/merfolk/hunter.png
 %%DATADIR%%/data/core/images/portraits/merfolk/initiate.png
 %%DATADIR%%/data/core/images/portraits/merfolk/transparent/initiate.png
 %%DATADIR%%/data/core/images/portraits/monsters/gryphon.png
+%%DATADIR%%/data/core/images/portraits/monsters/ogre.png
 %%DATADIR%%/data/core/images/portraits/monsters/scorpion.png
 %%DATADIR%%/data/core/images/portraits/monsters/sea-serpent.png
 %%DATADIR%%/data/core/images/portraits/monsters/transparent/gryphon.png
+%%DATADIR%%/data/core/images/portraits/monsters/transparent/ogre.png
 %%DATADIR%%/data/core/images/portraits/monsters/transparent/scorpion.png
 %%DATADIR%%/data/core/images/portraits/nagas/fighter+female.png
 %%DATADIR%%/data/core/images/portraits/nagas/fighter.png
 %%DATADIR%%/data/core/images/portraits/orcs/assassin.png
+%%DATADIR%%/data/core/images/portraits/orcs/grunt.png
+%%DATADIR%%/data/core/images/portraits/orcs/transparent/grunt.png
 %%DATADIR%%/data/core/images/portraits/orcs/warlord.png
 %%DATADIR%%/data/core/images/portraits/orcs/warlord2.png
 %%DATADIR%%/data/core/images/portraits/orcs/warlord3.png
@@ -2791,8 +2802,11 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/scenery/windmill-18.png
 %%DATADIR%%/data/core/images/scenery/wreck.png
 %%DATADIR%%/data/core/images/story/landscape-battlefield.jpg
+%%DATADIR%%/data/core/images/story/landscape-battlefield_nohumans.jpg
 %%DATADIR%%/data/core/images/story/landscape-bridge.jpg
+%%DATADIR%%/data/core/images/story/landscape-bridge_sun.jpg
 %%DATADIR%%/data/core/images/story/landscape-castle.jpg
+%%DATADIR%%/data/core/images/story/landscape-plain.jpg
 %%DATADIR%%/data/core/images/terrain/alpha.png
 %%DATADIR%%/data/core/images/terrain/alphamask.png
 %%DATADIR%%/data/core/images/terrain/bridge-deep-n-s-tile.png
@@ -4090,6 +4104,12 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/terrain/snow-hills2.png
 %%DATADIR%%/data/core/images/terrain/snow-hills3.png
 %%DATADIR%%/data/core/images/terrain/snow-mountain-tile.png
+%%DATADIR%%/data/core/images/terrain/snow-mountain5_1.png
+%%DATADIR%%/data/core/images/terrain/snow-mountain5_2.png
+%%DATADIR%%/data/core/images/terrain/snow-mountain5_3.png
+%%DATADIR%%/data/core/images/terrain/snow-mountain6_1.png
+%%DATADIR%%/data/core/images/terrain/snow-mountain6_2.png
+%%DATADIR%%/data/core/images/terrain/snow-mountain6_3.png
 %%DATADIR%%/data/core/images/terrain/snow-mountains.png
 %%DATADIR%%/data/core/images/terrain/snow-mountains2.png
 %%DATADIR%%/data/core/images/terrain/snow-mountains3.png
@@ -7577,6 +7597,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/languages/hr_HR.cfg
 %%DATADIR%%/data/languages/hu_HU.cfg
 %%DATADIR%%/data/languages/id_ID.cfg
+%%DATADIR%%/data/languages/is_IS.cfg
 %%DATADIR%%/data/languages/it_IT.cfg
 %%DATADIR%%/data/languages/ja_JP.cfg
 %%DATADIR%%/data/languages/ko_KR.cfg
@@ -8299,54 +8320,6 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/images/tools/exploder/mask-castle-w.png
 %%DATADIR%%/images/tools/magenta_team_color_palette.png
 %%DATADIR%%/images/wesnoth-icon-small.png
-%%DATADIR%%/locales/C@wesnoth
-%%DATADIR%%/locales/af_ZA@wesnoth
-%%DATADIR%%/locales/ar_AR@wesnoth
-%%DATADIR%%/locales/bg_BG@wesnoth
-%%DATADIR%%/locales/ca_ES@valencia@wesnoth
-%%DATADIR%%/locales/ca_ES@wesnoth
-%%DATADIR%%/locales/cs_CZ@wesnoth
-%%DATADIR%%/locales/da_DK@wesnoth
-%%DATADIR%%/locales/de_DE@wesnoth
-%%DATADIR%%/locales/el_GR@wesnoth
-%%DATADIR%%/locales/en_GB@wesnoth
-%%DATADIR%%/locales/eo_XX@wesnoth
-%%DATADIR%%/locales/es_ES@wesnoth
-%%DATADIR%%/locales/et_EE@wesnoth
-%%DATADIR%%/locales/eu_ES@wesnoth
-%%DATADIR%%/locales/fi_FI@wesnoth
-%%DATADIR%%/locales/fr_FR@wesnoth
-%%DATADIR%%/locales/fur_IT@wesnoth
-%%DATADIR%%/locales/gl_ES@wesnoth
-%%DATADIR%%/locales/he_IL@wesnoth
-%%DATADIR%%/locales/hr_HR@wesnoth
-%%DATADIR%%/locales/hu_HU@wesnoth
-%%DATADIR%%/locales/id_ID@wesnoth
-%%DATADIR%%/locales/it_IT@wesnoth
-%%DATADIR%%/locales/ja_JP@wesnoth
-%%DATADIR%%/locales/ko_KR@wesnoth
-%%DATADIR%%/locales/la_IT@wesnoth
-%%DATADIR%%/locales/lt_LT@wesnoth
-%%DATADIR%%/locales/lv_LV@wesnoth
-%%DATADIR%%/locales/mk_MK@wesnoth
-%%DATADIR%%/locales/mr_IN@wesnoth
-%%DATADIR%%/locales/nb_NO@wesnoth
-%%DATADIR%%/locales/nl_NL@wesnoth
-%%DATADIR%%/locales/pl_PL@wesnoth
-%%DATADIR%%/locales/pt_BR@wesnoth
-%%DATADIR%%/locales/pt_PT@wesnoth
-%%DATADIR%%/locales/racv@wesnoth
-%%DATADIR%%/locales/ro_RO@wesnoth
-%%DATADIR%%/locales/ru_RU@wesnoth
-%%DATADIR%%/locales/sk_SK@wesnoth
-%%DATADIR%%/locales/sl_SI@wesnoth
-%%DATADIR%%/locales/sr_RS@latin@wesnoth
-%%DATADIR%%/locales/sr_RS@wesnoth
-%%DATADIR%%/locales/sv_SE@wesnoth
-%%DATADIR%%/locales/tl_PH@wesnoth
-%%DATADIR%%/locales/tr_TR@wesnoth
-%%DATADIR%%/locales/zh_CN@wesnoth
-%%DATADIR%%/locales/zh_TW@wesnoth
 %%DATADIR%%/sounds/README
 %%DATADIR%%/sounds/arrive.wav
 %%DATADIR%%/sounds/bell.wav
@@ -8850,6 +8823,28 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-units.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-utbs.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-anl.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-aoi.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-editor.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-ei.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-httt.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-l.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-low.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-multiplayer.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-nr.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-sof.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-sotbe.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-tb.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-test.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-thot.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-trow.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-tsg.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-tutorial.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-units.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-utbs.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-did.mo
@@ -9572,6 +9567,8 @@ share/pixmaps/wesnoth_editor-icon.png
 @dirrm %%DATADIR%%/data/core/images/portraits/dwarves
 @dirrm %%DATADIR%%/data/core/images/portraits/elves/transparent
 @dirrm %%DATADIR%%/data/core/images/portraits/elves
+@dirrm %%DATADIR%%/data/core/images/portraits/goblins/transparent
+@dirrm %%DATADIR%%/data/core/images/portraits/goblins
 @dirrm %%DATADIR%%/data/core/images/portraits/humans/transparent
 @dirrm %%DATADIR%%/data/core/images/portraits/humans
 @dirrm %%DATADIR%%/data/core/images/portraits/merfolk/transparent
@@ -9579,6 +9576,7 @@ share/pixmaps/wesnoth_editor-icon.png
 @dirrm %%DATADIR%%/data/core/images/portraits/monsters/transparent
 @dirrm %%DATADIR%%/data/core/images/portraits/monsters
 @dirrm %%DATADIR%%/data/core/images/portraits/nagas
+@dirrm %%DATADIR%%/data/core/images/portraits/orcs/transparent
 @dirrm %%DATADIR%%/data/core/images/portraits/orcs
 @dirrm %%DATADIR%%/data/core/images/portraits/saurians/transparent
 @dirrm %%DATADIR%%/data/core/images/portraits/saurians
@@ -9687,7 +9685,6 @@ share/pixmaps/wesnoth_editor-icon.png
 @dirrm %%DATADIR%%/images/tools/exploder
 @dirrm %%DATADIR%%/images/tools
 @dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/locales
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%/manual/images/de
@@ -9726,6 +9723,8 @@ share/pixmaps/wesnoth_editor-icon.png
 @dirrmtry man/pl
 @dirrmtry man/racv/man6
 @dirrmtry man/racv
+@dirrmtry man/ru/man6
+@dirrmtry man/ru
 @dirrmtry man/sk/man6
 @dirrmtry man/sk
 @dirrmtry man/sr/man6
