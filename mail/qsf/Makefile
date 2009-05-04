@@ -10,7 +10,7 @@ PORTVERSION=	1.2.7
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	jack@jarasoft.net
 COMMENT=	A small fast spam filter intended to be used with procmail
 
 OPTIONS=	GDBM "GDBM support" off \
