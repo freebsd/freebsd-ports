@@ -1,16 +1,16 @@
---- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Thu Aug 14 21:00:23 2003
-+++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Sun Feb  1 15:06:40 2004
-@@ -49,6 +49,9 @@
- ifeq (86,$(findstring 86,$(OS_TEST)))
- CPPSRCS		:= xptcinvoke_unixish_x86.cpp xptcstubs_unixish_x86.cpp
+--- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	2009-05-03 14:49:25.429208768 +0200
++++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	2009-05-03 14:50:19.450777889 +0200
+@@ -70,6 +70,9 @@
+ ifeq (Darwin,$(OS_ARCH))
+ DEFINES		+= -DKEEP_STACK_16_BYTE_ALIGNED
  endif
-+ifeq (amd64,$(OS_TEST))
++ifeq (x86_64,$(OS_TEST))
 +CPPSRCS		:= xptcinvoke_x86_64_linux.cpp xptcstubs_x86_64_linux.cpp
 +endif
  endif
+ endif
  #
- # New code for Linux, et. al., with gcc
-@@ -60,7 +63,7 @@
+@@ -87,7 +90,7 @@
  endif
  endif
  # IA64 Linux
@@ -19,7 +19,7 @@
  ifneq (,$(findstring ia64,$(OS_TEST)))
  CPPSRCS		:= xptcinvoke_ipf64.cpp xptcstubs_ipf64.cpp
  ASFILES		:= xptcstubs_asm_ipf64.s xptcinvoke_asm_ipf64.s
-@@ -106,9 +109,15 @@
+@@ -150,9 +153,15 @@
  ASFILES		:= xptcinvoke_asm_osf1_alpha.s xptcstubs_asm_osf1_alpha.s
  endif
  #
@@ -36,19 +36,28 @@
  CPPSRCS		:= xptcinvoke_linux_alpha.cpp xptcstubs_linux_alpha.cpp
  endif
  #
-@@ -294,6 +303,15 @@
- ifeq ($(OS_ARCH)$(OS_TEST),NetBSDsparc)
- CPPSRCS		:= xptcinvoke_sparc_netbsd.cpp xptcstubs_sparc_netbsd.cpp
+@@ -311,7 +320,7 @@
+ #
+ # Linux/PPC
+ #
+-ifeq ($(OS_ARCH)$(OS_TEST),Linuxpowerpc)
++ifneq (,$(filter Linuxpowerpc FreeBSDpowerpc,$(OS_ARCH)$(OS_TEST)))
+ CPPSRCS		:= xptcinvoke_ppc_linux.cpp xptcstubs_ppc_linux.cpp
+ ASFILES		:= xptcinvoke_asm_ppc_linux.s xptcstubs_asm_ppc_linux.s
+ AS		:= $(CC) -c -x assembler-with-cpp
+@@ -389,6 +398,15 @@
  ASFILES		:= xptcinvoke_asm_sparc_netbsd.s xptcstubs_asm_sparc_netbsd.s
-+endif
-+#
+ endif
+ #
 +# FreeBSD/SPARC64
 +#
 +ifeq ($(OS_ARCH),FreeBSD)
 +ifneq (,$(findstring sparc,$(OS_TEST)))
-+CPPSRCS		:= xptcinvoke_sparc64_freebsd.cpp xptcstubs_sparc64_freebsd.cpp
-+ASFILES		:= xptcinvoke_asm_sparc64_freebsd.s xptcstubs_asm_sparcv9_solaris.s
++CPPSRCS         := xptcinvoke_sparc64_openbsd.cpp xptcstubs_sparc64_openbsd.cpp
++ASFILES         := xptcinvoke_asm_sparc64_openbsd.s xptcstubs_asm_sparc64_openbsd.s
 +endif
- endif
++endif
++#
+ # OpenBSD/SPARC
  #
- # Solaris/SPARC
+ ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDsparc)

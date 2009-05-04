@@ -3,27 +3,27 @@
 # Whom:				Alan Eldridge <alane@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/www/flock/Makefile,v 1.4 2009/01/09 23:41:22 mezz Exp $
 #
 
 PORTNAME=	flock
-DISTVERSION=	1.1.1
-PORTREVISION=	4
+DISTVERSION=	2.0
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.osuosl.org/pub/${PORTNAME}/releases/${PORTVERSION}/ \
 		http://flock.vo.llnwd.net/o23/archive/${PORTNAME}/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nss>=3.11.2:${PORTSDIR}/security/nss
 LIB_DEPENDS=	clucene.0:${PORTSDIR}/textproc/clucene \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
+USE_GECKO=	gecko
 MOZILLA_NAME=	Flock
+USE_MOZILLA=	-png -nss -dbm -jpeg
+MOZ_TOOLKIT=	cairo-gtk2
 
-WRKSRC?=	${WRKDIR}/${PORTNAME}/mozilla
+WRKSRC?=	${WRKDIR}/source-svn-export-2.0/mozilla
 WANT_GNOME=	yes
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
@@ -33,7 +33,17 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_PERL=	yes
 GECKO_PLIST_PRE_FILES=	lib/${MOZILLA}/chrome/icons/default/default.xpm
-GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/chrome/icons/default lib/${MOZILLA}/chrome/icons
+GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA} lib/${MOZILLA}/chrome \
+			lib/${MOZILLA}/chrome/icons/default lib/${MOZILLA}/chrome/icons \
+			lib/${MOZILLA}-devel-${DISTVERSION}/sdk/include \
+			lib/${MOZILLA}-devel-${DISTVERSION}/sdk/idl \
+			lib/${MOZILLA}-devel-${DISTVERSION}/lib \
+			lib/${MOZILLA}-devel-${DISTVERSION}/bin \
+			lib/${MOZILLA}-devel-${DISTVERSION}/include \
+			lib/${MOZILLA}-devel-${DISTVERSION}/idl
+MOZ_PKGCONFIG_FILES=
+MAKE_JOBS_SAFE=	yes
+NO_MOZPKGINSTALL=yes
 
 FLOCK_ICON=	${MOZILLA}.xpm
 FLOCK_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/icons/default.xpm
@@ -42,7 +52,7 @@ MOZ_OPTIONS=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
 		--enable-system-cairo	\
 		--enable-official-branding \
 		--enable-canvas	\
-		--with-system-nss \
+		--enable-libxul \
 		--with-clucene-prefix=${LOCALBASE} \
 		--with-ffmpeg-prefix=${LOCALBASE}
 
@@ -55,8 +65,17 @@ OPTIONS=	SMB "Enable smb:// URI support using gnomevfs" off
 
 GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 pthread | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 
-.if ${ARCH} != "i386"
-BROKEN=	does not compile
+.if ${HAVE_GNOME:Mlibgnomeui}!=""
+USE_GNOME+=	libgnomeui
+MOZ_OPTIONS+=	--enable-gnomeui
+.else
+MOZ_OPTIONS+=	--disable-gnomeui
+.endif
+
+.if defined(WITHOUT_DBUS)
+MOZ_OPTIONS+=	--disable-dbus
+.else
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 .endif
 
 .if ${ARCH} == "sparc64" && ${OSVERSION} < 601101
@@ -72,7 +91,8 @@ post-extract::
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
-		${WRKSRC}/storage/build/Makefile.in
+		${WRKSRC}/storage/build/Makefile.in \
+		${WRKSRC}/db/sqlite3/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/security/manager/ssl/src/Makefile.in
 	@${FIND} ${WRKSRC} -name all.js | ${XARGS} ${REINPLACE_CMD} -e \
@@ -91,5 +111,4 @@ post-install:
 	${LN} -sf ${FLOCK_ICON_SRC} ${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default.xpm
 	${LN} -sf ${FLOCK_ICON_SRC} ${PREFIX}/share/pixmaps/${FLOCK_ICON}
 
-.include "${PORTSDIR}/www/mozilla/Makefile.common"
 .include <bsd.port.post.mk>
