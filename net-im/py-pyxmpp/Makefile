@@ -12,7 +12,7 @@ MASTER_SITES=	http://pyxmpp.jajcus.net/downloads/ \
 		CENKES http://jabberstudio.2nw.net/pyxmpp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Python XMPP library
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \

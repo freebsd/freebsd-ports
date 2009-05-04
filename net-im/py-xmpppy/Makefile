@@ -11,7 +11,7 @@ CATEGORIES=	net-im python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Python library that provides easy scripting with Jabber
 
 USE_PYTHON=	2.3+
