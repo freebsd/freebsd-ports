@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	nagios
-DISTVERSION=	3.1.0
+PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
@@ -70,6 +71,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib" \
 		PERL=${PERL}
+
+MAKE_JOBS_UNSAFE=	yes
 
 INSTALL_TARGET=	install install-commandmode install-config
 

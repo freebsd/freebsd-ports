@@ -7,7 +7,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	2.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -71,6 +71,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib" \
 		PERL=${PERL}
+
+MAKE_JOBS_UNSAFE=	yes
 
 INSTALL_TARGET=	install install-commandmode install-config
 
