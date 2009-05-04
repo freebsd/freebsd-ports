@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	crystal
-PORTVERSION=	1.0.7
+PORTVERSION=	2.0.3
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde-windeco-
-DISTNAME=	13969-${PORTNAME}-${PORTVERSION}
+DISTNAME=	75140-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	decept0@gmail.com
+MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Transparent KDE window decoration
 
 USE_BZIP2=	yes
-USE_KDEBASE_VER=3
-USE_AUTOTOOLS=	libtool:15
+USE_KDE4=	kdelibs kdehier kdeprefix automoc4 workspace
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build
+USE_CMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
