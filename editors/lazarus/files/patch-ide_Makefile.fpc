@@ -1,0 +1,10 @@
+--- ide/Makefile.fpc	2009-04-29 13:07:55.000000000 -0500
++++ ide/Makefile.fpc	2009-04-29 13:15:23.000000000 -0500
+@@ -22,6 +22,7 @@
+         ../components/synedit/units/$(CPU_TARGET)-$(OS_TARGET) \
+         ../components/custom \
+         ../components/mpaslex \
++        ../ideintf \
+         ../ideintf/units/$(CPU_TARGET)-$(OS_TARGET) \
+         ../designer ../designer/jitform/units/$(CPU_TARGET)-$(OS_TARGET) \
+         ../debugger \

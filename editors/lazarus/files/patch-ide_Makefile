@@ -1,0 +1,11 @@
+--- ide/Makefile	2009-04-29 13:16:15.000000000 -0500
++++ ide/Makefile	2009-04-29 13:23:38.000000000 -0500
+@@ -1021,7 +1021,7 @@
+ override COMPILER_UNITDIR+=../lcl/units/$(CPU_TARGET)-$(OS_TARGET) ../lcl/units/$(CPU_TARGET)-$(OS_TARGET)/$(LCL_PLATFORM) ../components/codetools/units/$(CPU_TARGET)-$(OS_TARGET) ../components/synedit/units/$(CPU_TARGET)-$(OS_TARGET) ../components/custom ../components/mpaslex ../ideintf/units/$(CPU_TARGET)-$(OS_TARGET) ../designer ../designer/jitform/units/$(CPU_TARGET)-$(OS_TARGET) ../debugger ../debugger/frames ../converter ../packager ../packager/units/$(CPU_TARGET)-$(OS_TARGET) ../units/$(CPU_TARGET)-$(OS_TARGET) frames .
+ endif
+ ifeq ($(FULL_TARGET),i386-freebsd)
+-override COMPILER_UNITDIR+=../lcl/units/$(CPU_TARGET)-$(OS_TARGET) ../lcl/units/$(CPU_TARGET)-$(OS_TARGET)/$(LCL_PLATFORM) ../components/codetools/units/$(CPU_TARGET)-$(OS_TARGET) ../components/synedit/units/$(CPU_TARGET)-$(OS_TARGET) ../components/custom ../components/mpaslex ../ideintf/units/$(CPU_TARGET)-$(OS_TARGET) ../designer ../designer/jitform/units/$(CPU_TARGET)-$(OS_TARGET) ../debugger ../debugger/frames ../converter ../packager ../packager/units/$(CPU_TARGET)-$(OS_TARGET) ../units/$(CPU_TARGET)-$(OS_TARGET) frames .
++override COMPILER_UNITDIR+=../lcl/units/$(CPU_TARGET)-$(OS_TARGET) ../lcl/units/$(CPU_TARGET)-$(OS_TARGET)/$(LCL_PLATFORM) ../components/codetools/units/$(CPU_TARGET)-$(OS_TARGET) ../components/synedit/units/$(CPU_TARGET)-$(OS_TARGET) ../components/custom ../components/mpaslex ../ideintf ../ideintf/units/$(CPU_TARGET)-$(OS_TARGET) ../designer ../designer/jitform/units/$(CPU_TARGET)-$(OS_TARGET) ../debugger ../debugger/frames ../converter ../packager ../packager/units/$(CPU_TARGET)-$(OS_TARGET) ../units/$(CPU_TARGET)-$(OS_TARGET) frames .
+ endif
+ ifeq ($(FULL_TARGET),i386-beos)
+ override COMPILER_UNITDIR+=../lcl/units/$(CPU_TARGET)-$(OS_TARGET) ../lcl/units/$(CPU_TARGET)-$(OS_TARGET)/$(LCL_PLATFORM) ../components/codetools/units/$(CPU_TARGET)-$(OS_TARGET) ../components/synedit/units/$(CPU_TARGET)-$(OS_TARGET) ../components/custom ../components/mpaslex ../ideintf/units/$(CPU_TARGET)-$(OS_TARGET) ../designer ../designer/jitform/units/$(CPU_TARGET)-$(OS_TARGET) ../debugger ../debugger/frames ../converter ../packager ../packager/units/$(CPU_TARGET)-$(OS_TARGET) ../units/$(CPU_TARGET)-$(OS_TARGET) frames .

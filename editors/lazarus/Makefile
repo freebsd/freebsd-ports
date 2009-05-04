@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lazarus
-PORTVERSION=	0.9.26
+PORTVERSION=	0.9.26.2
 CATEGORIES=	editors devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/-0/}
@@ -24,15 +24,20 @@ USE_GMAKE=	yes
 USE_GNOME=	#
 WANT_FPC_ALL=	yes
 
-MAKE_ENV=	OPT="-Sgic -Fu${UNITSDIR}/* -Fl${LOCALBASE}/lib" LCL_PLATFORM=${LCL_PLATFORM}
+MAKE_ENV=	OPT="-Sgic -Fu${UNITSDIR}/* -Fl${LOCALBASE}/lib ${OPT_EXTRA}"
 MAN1=		lazarus-ide.1 lazbuild.1 startlazarus.1
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS=	GTK2	"Use gtk20 interface instead of gtk12"	off \
+		QT4	"Use qt4 interface" off \
 		BIGIDE	"Compile additional components"	off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_GTK2) && defined(WITH_QT4)
+IGNORE=		Please select only one option QT4 or GTK2, don't select both options
+.endif
 
 .if defined(WITH_GTK2)
 USE_GNOME=	gtk20
@@ -40,6 +45,12 @@ LCL_PLATFORM=	gtk2
 .else
 USE_GNOME=	gtk12 gdkpixbuf
 LCL_PLATFORM=	gtk
+.endif
+
+.if defined(WITH_QT4)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/qt4/libqt4intf.so:${PORTSDIR}/x11-toolkits/qt4pas
+LCL_PLATFORM=	qt
+OPT_EXTRA=	"-dUSE_QT_44"
 .endif
 
 .if defined(WITH_BIGIDE)
@@ -60,11 +71,12 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${LAZARUS_TARGET}
+		${SETENV} ${MAKE_ENV} ${GMAKE} LCL_PLATFORM=${LCL_PLATFORM} ${LAZARUS_TARGET}
 
 post-build:
 	@cd ${WRKSRC} && \
-		${RM} -Rf COPYING* README* debian localize.bat test *.orig *.bak startlazarus.app
+		${RM} -Rf COPYING* README* debian localize.bat test *.orig *.bak startlazarus.app \
+			ide/Makefile*.orig ide/Makefile*.bak
 
 pre-install:
 	@${ECHO} "#!/bin/sh" > ${WRKDIR}/lazarus-wrapper
@@ -106,6 +118,7 @@ do-install:
 			${FIND} * -type d -exec ${MKDIR} "${DATADIR}/${DIRE}/{}" \; && \
 				${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/${DIRE}/{}" \;
 .endfor
+	@${CHMOD} +x ${DATADIR}/tools/svn2revisioninc
 
 .for FILE in lazarus startlazarus lazbuild
 	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${DATADIR}
