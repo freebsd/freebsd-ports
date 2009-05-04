@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.vortex.prodigynet.co.uk/${PORTNAME}/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Command line CD ripper/encoder wrapper with cddb support
 
 USE_BZIP2=	yes
