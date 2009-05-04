@@ -12,7 +12,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/dns/
 DISTNAME=	dlint${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	kimelto@gmail.com
 COMMENT=	Lint for DNS zones (Domain Name Server zone verification utility)
 
 NO_BUILD=	yes

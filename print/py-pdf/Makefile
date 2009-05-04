@@ -12,7 +12,7 @@ MASTER_SITES=	http://pybrary.net/pyPdf/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyPdf-${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	kimelto@gmail.com
 COMMENT=	Pure-Python PDF toolkit
 
 USE_PYTHON=	yes
