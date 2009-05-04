@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.75
+PORTVERSION=	0.77
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DR/DROLSKY
@@ -17,11 +17,12 @@ COMMENT=	A complete modern object system for Perl 5
 
 RUN_DEPENDS=	\
 	p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-	p5-Class-MOP>=0.81:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-Class-MOP>=0.83:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-List-MoreUtils>=0.12:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-Sub-Exporter>=0.972:${PORTSDIR}/devel/p5-Sub-Exporter \
 	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
-	p5-Data-OptList>=0:${PORTSDIR}/devel/p5-Data-OptList
+	p5-Data-OptList>=0:${PORTSDIR}/devel/p5-Data-OptList \
+	p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
@@ -79,6 +80,7 @@ MAN3=	Moose.3 \
 	Moose::Manual::Types.3 \
 	Moose::Meta::Attribute.3 \
 	Moose::Meta::Class.3 \
+	Moose::Meta::Class::Immutable::Trait.3 \
 	Moose::Meta::Instance.3 \
 	Moose::Meta::Method.3 \
 	Moose::Meta::Method::Accessor.3 \
