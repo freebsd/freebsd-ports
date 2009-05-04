@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SQL-Abstract
-PORTVERSION=	1.51
+PORTVERSION=	1.53
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Perl extension to generate SQL from Perl data structures
 
-RUN_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
+RUN_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 
 PERL_CONFIGURE=	yes
 
@@ -23,6 +22,6 @@ MAN3=		SQL::Abstract.3 \
 		SQL::Abstract::Test.3
 
 post-extract:
-	@${PERL} -i -ne 'print unless m,Test::,' ${WRKSRC}/Makefile.PL
+	@${PERL} -i -ne 'print unless m,^test,' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
