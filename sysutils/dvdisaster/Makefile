@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	A CD/DVD error recovery tool
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
