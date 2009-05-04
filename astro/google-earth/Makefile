@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	google-earth
-PORTVERSION=	5.0.11337.1968
-PORTREVISION=	1
+PORTVERSION=	5.0.11729.1014
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/current/
 DISTNAME=	GoogleEarthLinux

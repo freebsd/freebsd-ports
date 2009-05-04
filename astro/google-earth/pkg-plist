@@ -103,6 +103,7 @@ bin/googleearth
 %%DATADIR%%/libport.so
 %%DATADIR%%/libproj.so.0
 %%DATADIR%%/librender.so
+%%DATADIR%%/libssl.so.0.9.8
 %%DATADIR%%/libstdc++.so.6
 %%DATADIR%%/libwmsbase.so
 %%DATADIR%%/libz.so.1
@@ -113,6 +114,7 @@ bin/googleearth
 %%DATADIR%%/plugins/imageformats/libqjpeg.so
 %%DATADIR%%/qt.conf
 %%DATADIR%%/resources/16x16.png
+%%DATADIR%%/resources/32x32.png
 %%DATADIR%%/resources/Countries_of_the_world.kml
 %%DATADIR%%/resources/aboutlogo.png
 %%DATADIR%%/resources/ad.country/startinglocation.kml
@@ -228,11 +230,8 @@ bin/googleearth
 %%DATADIR%%/resources/button-mo-leftendcap.png
 %%DATADIR%%/resources/button-mo-repeating.png
 %%DATADIR%%/resources/button-mo-rightendcap.png
-%%DATADIR%%/resources/button-normal-leftendcap-flat.png
 %%DATADIR%%/resources/button-normal-leftendcap.png
-%%DATADIR%%/resources/button-normal-repeating-flat.png
 %%DATADIR%%/resources/button-normal-repeating.png
-%%DATADIR%%/resources/button-normal-rightendcap-flat.png
 %%DATADIR%%/resources/button-normal-rightendcap.png
 %%DATADIR%%/resources/bv.country/startinglocation.kml
 %%DATADIR%%/resources/bw.country/startinglocation.kml
@@ -424,6 +423,7 @@ bin/googleearth
 %%DATADIR%%/resources/lc.country/startinglocation.kml
 %%DATADIR%%/resources/li.country/startinglocation.kml
 %%DATADIR%%/resources/lk.country/startinglocation.kml
+%%DATADIR%%/resources/loading-image.png
 %%DATADIR%%/resources/loading.png
 %%DATADIR%%/resources/lr.country/startinglocation.kml
 %%DATADIR%%/resources/ls.country/startinglocation.kml
