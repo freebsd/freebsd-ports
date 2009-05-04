@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Perl 5 module providing an extensible instrumentation framework
 
 RUN_DEPENDS=	p5-Moose>=0.39:${PORTSDIR}/devel/p5-Moose \

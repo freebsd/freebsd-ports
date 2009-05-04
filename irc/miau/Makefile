@@ -10,7 +10,7 @@ PORTVERSION=		0.6.5
 CATEGORIES=		irc ipv6
 MASTER_SITES=		SF
 
-MAINTAINER=		miwi@FreeBSD.org
+MAINTAINER=		dhn@FreeBSD.org
 COMMENT=		A fully featured easy to use IRC-bouncer
 
 USE_BZIP2=		yes
