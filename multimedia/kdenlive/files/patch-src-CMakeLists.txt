@@ -1,20 +1,19 @@
---- src/CMakeLists.txt.orig	2009-05-01 17:21:12.000000000 +0200
-+++ src/CMakeLists.txt	2009-05-01 17:21:48.000000000 +0200
-@@ -2,17 +2,19 @@
- add_subdirectory( widgets )
- add_subdirectory( mimetypes )
- 
-+find_package(Qt4 REQUIRED)
+--- src/CMakeLists.txt.orig	2009-05-03 12:26:01.000000000 +0200
++++ src/CMakeLists.txt	2009-05-03 12:28:57.000000000 +0200
+@@ -5,14 +5,17 @@
  find_package(Nepomuk REQUIRED)
  
  include_directories (
++    ${KDE4_INCLUDE_DIR}
++    ${KDE4_INCLUDE_DIR}/KDE
++    ${KDE4_PHONON_INCLUDES}
 +    ${QT_INCLUDES}
 +    ${LIBMLT_INCLUDE_DIR}
 +    ${LIBMLTPLUS_INCLUDE_DIR}
      ${QDBUS_INCLUDE_DIRS} 
      ${CMAKE_SOURCE_DIR} 
      ${CMAKE_BINARY_DIR} 
-     ${KDE4_INCLUDES}
+-    ${KDE4_INCLUDES}
  
      ${CMAKE_SOURCE_DIR}/src/widgets
 -    ${LIBMLT_INCLUDE_DIR}
