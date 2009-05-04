@@ -13,6 +13,7 @@
 %%WWWDIR%%/wp-admin/admin-post.php
 %%WWWDIR%%/wp-admin/admin.php
 %%WWWDIR%%/wp-admin/async-upload.php
+%%WWWDIR%%/wp-admin/blogs.php
 %%WWWDIR%%/wp-admin/categories.php
 %%WWWDIR%%/wp-admin/comment.php
 %%WWWDIR%%/wp-admin/css/colors-classic-rtl.css
@@ -267,6 +268,7 @@
 %%WWWDIR%%/wp-admin/wpmu-blogs.php
 %%WWWDIR%%/wp-admin/wpmu-edit.php
 %%WWWDIR%%/wp-admin/wpmu-options.php
+%%WWWDIR%%/wp-admin/wpmu-sitewide-plugins.php
 %%WWWDIR%%/wp-admin/wpmu-themes.php
 %%WWWDIR%%/wp-admin/wpmu-upgrade-site.php
 %%WWWDIR%%/wp-admin/wpmu-users.php
@@ -647,40 +649,6 @@
 %%WWWDIR%%/wp-includes/version.php
 %%WWWDIR%%/wp-includes/widgets.php
 %%WWWDIR%%/wp-includes/wlwmanifest.xml
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/readme.txt
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/blue/blue.css
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/blue/images/background-logo.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/blue/images/background.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/blue/images/bullet_arrow_down.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/classic/classic.css
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/classic/images/bullet_arrow_down.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/classic/images/wpabar_bkg.png
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/green/green.css
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/green/images/background-logo.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/green/images/background.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/green/images/bullet_arrow_down.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/grey/grey.css
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/grey/images/background-logo.png
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/grey/images/background.png
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/grey/images/bullet_arrow_down.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/orange/images/background-logo.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/orange/images/background.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/orange/images/bullet_arrow_down.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/orange/orange.css
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/purple/images/background-logo.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/purple/images/background.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/purple/images/bullet_arrow_down.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/purple/purple.css
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/red/images/background-logo.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/red/images/background.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/red/images/bullet_arrow_down.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/red/red.css
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/yellow/images/background-logo.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/yellow/images/background.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/yellow/images/bullet_arrow_down.gif
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/yellow/yellow.css
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/wordpress-admin-bar.js
-%%WWWDIR%%/wp-includes/wordpress-admin-bar/wordpress-admin-bar.php
 %%WWWDIR%%/wp-includes/wp-db.php
 %%WWWDIR%%/wp-includes/wp-diff.php
 %%WWWDIR%%/wp-includes/wpmu-default-filters.php
@@ -698,24 +666,6 @@
 %%WWWDIR%%/wp-trackback.php
 %%WWWDIR%%/wpmu-settings.php
 %%WWWDIR%%/xmlrpc.php
-@dirrm %%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/yellow/images
-@dirrm %%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/yellow
-@dirrm %%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/red/images
-@dirrm %%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/red
-@dirrm %%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/purple/images
-@dirrm %%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/purple
-@dirrm %%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/orange/images
-@dirrm %%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/orange
-@dirrm %%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/grey/images
-@dirrm %%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/grey
-@dirrm %%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/green/images
-@dirrm %%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/green
-@dirrm %%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/classic/images
-@dirrm %%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/classic
-@dirrm %%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/blue/images
-@dirrm %%WWWDIR%%/wp-includes/wordpress-admin-bar/themes/blue
-@dirrm %%WWWDIR%%/wp-includes/wordpress-admin-bar/themes
-@dirrm %%WWWDIR%%/wp-includes/wordpress-admin-bar
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/utils
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/wp_theme/img
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/wp_theme
