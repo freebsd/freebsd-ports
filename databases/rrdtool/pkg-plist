@@ -15,7 +15,6 @@ libdata/pkgconfig/librrd.pc
 %%WITH_PERL%%%%SITE_PERL%%/RRDp.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDp/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RRDs.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/ntmake.pl
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/RRDs.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/RRDs.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/.packlist
