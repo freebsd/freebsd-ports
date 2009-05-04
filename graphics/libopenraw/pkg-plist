@@ -1,5 +1,7 @@
+include/libopenraw-1.0/libopenraw/bitmapdata.h
 include/libopenraw-1.0/libopenraw/consts.h
 include/libopenraw-1.0/libopenraw/debug.h
+include/libopenraw-1.0/libopenraw/demosaic.h
 include/libopenraw-1.0/libopenraw/exif.h
 include/libopenraw-1.0/libopenraw/io.h
 include/libopenraw-1.0/libopenraw/libopenraw.h
@@ -9,14 +11,17 @@ include/libopenraw-1.0/libopenraw/rawfile.h
 include/libopenraw-1.0/libopenraw/thumbnails.h
 include/libopenraw-1.0/libopenraw/types.h
 %%GNOME%%include/libopenraw-1.0/libopenraw-gnome/gdkpixbuf.h
+%%GNOME%%lib/gtk-2.0/%%GTK2_VERSION%%/loaders/libopenraw_pixbuf.a
+%%GNOME%%lib/gtk-2.0/%%GTK2_VERSION%%/loaders/libopenraw_pixbuf.la
+%%GNOME%%lib/gtk-2.0/%%GTK2_VERSION%%/loaders/libopenraw_pixbuf.so
 lib/libopenraw.a
 lib/libopenraw.la
 lib/libopenraw.so
-lib/libopenraw.so.5
+lib/libopenraw.so.6
 %%GNOME%%lib/libopenrawgnome.a
 %%GNOME%%lib/libopenrawgnome.la
 %%GNOME%%lib/libopenrawgnome.so
-%%GNOME%%lib/libopenrawgnome.so.5
+%%GNOME%%lib/libopenrawgnome.so.6
 libdata/pkgconfig/libopenraw-1.0.pc
 %%GNOME%%libdata/pkgconfig/libopenraw-gnome-1.0.pc
 %%GNOME%%@dirrm include/libopenraw-1.0/libopenraw-gnome
