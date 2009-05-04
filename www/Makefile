@@ -331,6 +331,7 @@
     SUBDIR += lightsquid
     SUBDIR += lighttpd
     SUBDIR += lilurl
+    SUBDIR += limesurvey
     SUBDIR += linkcheck
     SUBDIR += linkchecker
     SUBDIR += linklint
@@ -1203,7 +1204,6 @@
     SUBDIR += phpmyfaq
     SUBDIR += phprecipebook
     SUBDIR += phproxy
-    SUBDIR += phpsurveyor
     SUBDIR += phpsysinfo
     SUBDIR += phpsysinfo-dev
     SUBDIR += phpwebapp

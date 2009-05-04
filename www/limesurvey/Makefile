@@ -5,36 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=	phpsurveyor
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTNAME=	limesurvey
+PORTVERSION=	1.80
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	limesurvey
-DISTNAME=	${PORTNAME}-1_00
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}${PORTVERSION:S^.^^}_build6506_20090310
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A PHP-based survey building and runing system
 
-USE_PHP=	mysql session
-WRKSRC=		${WRKDIR}
-USE_ZIP=	yes
+USE_PHP=	mysql session mbstring pcre iconv gd ldap
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-#User-configurable variables
-WWWDOCROOT?=	www/
-PHPSURVEYORURL?=	phpsurveyor
-#
-# End of user-configurable variables.
+PHPSURVEYORURL?=	${PORTNAME}
+PHPSURVEYORDIR=		${WWWDOCROOT}/${PHPSURVEYORURL}
 
-# Set/override/append to variables from bsd.port.mk:
-#
 NO_BUILD=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PLIST_SUB+=	PHPSURVEYORDIR=${PHPSURVEYORDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-
-# Set custom variables:
-#
-PHPSURVEYORDIR=	${WWWDOCROOT}/${PHPSURVEYORURL}
 
 post-configure:
 	@ ${SED} \
@@ -44,16 +30,18 @@ post-configure:
 	pkg-message > ${PKGMESSAGE}
 
 do-install:
-	${MKDIR} -m 0755 ${PREFIX}/${PHPSURVEYORDIR}
-	cd ${WRKSRC} && ${FIND} * \( -name tmp -a -prune \) -o -print \
-	  | ${TAR} cTf - - | ${TAR} xUCf ${PREFIX}/${PHPSURVEYORDIR} -
-	${MKDIR} ${PREFIX}/${PHPSURVEYORDIR}/tmp
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${PHPSURVEYORDIR}
-	${CHMOD} 755 ${PREFIX}/${PHPSURVEYORDIR}/tmp
+	${MKDIR} ${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
+	${MKDIR} ${WWWDIR}/tmp
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	${CHMOD} 755 ${WWWDIR}/tmp
+	${CHMOD} 755 ${WWWDIR}/templates
+	${CHMOD} 755 ${WWWDIR}/upload
 
 post-install:
-.if !defined(BATCH)
-	@ ${CAT} ${PKGMESSAGE}
-.endif
+	@${FIND} -s -d ${WWWDIR} -type f -print | \
+		${SED} -e "s#${PREFIX}/##g" >> ${TMPPLIST}
+	@${FIND} -s -d ${WWWDIR} -type d  -print | \
+		${SED} -E -e "s#${PREFIX}/#@dirrm #g" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
