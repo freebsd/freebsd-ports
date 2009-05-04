@@ -1,18 +1,11 @@
---- config/autoconf.mk.in.orig	Thu Jul 14 00:50:06 2005
-+++ config/autoconf.mk.in	Thu Jul 14 00:50:40 2005
-@@ -50,13 +50,13 @@
+--- config/autoconf.mk.in.orig	2008-08-28 07:34:21.000000000 +0200
++++ config/autoconf.mk.in	2009-04-20 23:23:02.000000000 +0200
+@@ -59,7 +59,7 @@
  prefix		= @prefix@
  exec_prefix	= @exec_prefix@
  bindir		= @bindir@
 -includedir	= @includedir@/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
-+includedir	= @includedir@/%%MOZILLA%%
++includedir	= @includedir@/$(MOZ_APP_NAME)
  libdir		= @libdir@
  datadir		= @datadir@
  mandir		= @mandir@
- idldir		= @datadir@/idl/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
- 
--mozappdir	= $(libdir)/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
-+mozappdir	= $(libdir)/%%MOZILLA%%
- mredir		= $(libdir)/mre/mre-$(MOZ_APP_VERSION)
- mrelibdir	= $(mredir)/lib
- 
