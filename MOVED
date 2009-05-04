@@ -3954,3 +3954,5 @@ sysutils/puppet-devel||2009-05-01|Has expired: Use sysutils/puppet instead
 sysutils/tua||2009-05-01|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
 x11/qrash||2009-05-01|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
 textproc/sp||2009-05-03|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+audio/festival+OGI||2009-05-04|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
+net-mgmt/nrpe||2009-05-04|Has expired: Obsolete version, consider migration to net-mgmt/nrpe2
