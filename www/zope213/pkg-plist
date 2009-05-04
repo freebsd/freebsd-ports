@@ -401,8 +401,6 @@
 %%ZOPEBASEDIR%%/lib/python/BTrees/tests/test_check.pyc
 %%ZOPEBASEDIR%%/lib/python/BTrees/tests/test_compare.py
 %%ZOPEBASEDIR%%/lib/python/BTrees/tests/test_compare.pyc
-%%ZOPEBASEDIR%%/lib/python/ClientForm/ClientForm.py
-%%ZOPEBASEDIR%%/lib/python/ClientForm/ClientForm.pyc
 %%ZOPEBASEDIR%%/lib/python/ClientForm/__init__.py
 %%ZOPEBASEDIR%%/lib/python/ClientForm/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/ComputedAttribute/_ComputedAttribute.so
@@ -2162,6 +2160,8 @@
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/before_and_after.pyc
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/before_and_after24.py
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/before_and_after24.pyc
+%%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/before_and_after25.py
+%%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/before_and_after26.py
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/class.py
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/class.pyc
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/lambda.py
@@ -2170,12 +2170,15 @@
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/restricted_module.pyc
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/security_in_syntax.py
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/security_in_syntax.pyc
+%%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/security_in_syntax26.py
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/testCompile.py
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/testCompile.pyc
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/testREADME.py
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/testREADME.pyc
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/testRestrictions.py
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/testRestrictions.pyc
+%%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/testUtiliities.py
+%%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/testUtiliities.pyc
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/unpack.py
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/unpack.pyc
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/verify.py
@@ -3371,6 +3374,8 @@
 %%ZOPEBASEDIR%%/lib/python/Zope2/App/startup.pyc
 %%ZOPEBASEDIR%%/lib/python/Zope2/App/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Zope2/App/tests/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Zope2/App/tests/testDoomedTransaction.py
+%%ZOPEBASEDIR%%/lib/python/Zope2/App/tests/testDoomedTransaction.pyc
 %%ZOPEBASEDIR%%/lib/python/Zope2/App/tests/testExceptionHook.py
 %%ZOPEBASEDIR%%/lib/python/Zope2/App/tests/testExceptionHook.pyc
 %%ZOPEBASEDIR%%/lib/python/Zope2/ClassFactory.py
@@ -3672,14 +3677,23 @@
 %%ZOPEBASEDIR%%/lib/python/mechanize/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/mechanize/_auth.py
 %%ZOPEBASEDIR%%/lib/python/mechanize/_auth.pyc
+%%ZOPEBASEDIR%%/lib/python/mechanize/_beautifulsoup.py
+%%ZOPEBASEDIR%%/lib/python/mechanize/_beautifulsoup.pyc
 %%ZOPEBASEDIR%%/lib/python/mechanize/_clientcookie.py
 %%ZOPEBASEDIR%%/lib/python/mechanize/_clientcookie.pyc
+%%ZOPEBASEDIR%%/lib/python/mechanize/_debug.py
+%%ZOPEBASEDIR%%/lib/python/mechanize/_debug.pyc
+%%ZOPEBASEDIR%%/lib/python/mechanize/_file.py
+%%ZOPEBASEDIR%%/lib/python/mechanize/_file.pyc
+%%ZOPEBASEDIR%%/lib/python/mechanize/_firefox3cookiejar.py
 %%ZOPEBASEDIR%%/lib/python/mechanize/_gzip.py
 %%ZOPEBASEDIR%%/lib/python/mechanize/_gzip.pyc
 %%ZOPEBASEDIR%%/lib/python/mechanize/_headersutil.py
 %%ZOPEBASEDIR%%/lib/python/mechanize/_headersutil.pyc
 %%ZOPEBASEDIR%%/lib/python/mechanize/_html.py
 %%ZOPEBASEDIR%%/lib/python/mechanize/_html.pyc
+%%ZOPEBASEDIR%%/lib/python/mechanize/_http.py
+%%ZOPEBASEDIR%%/lib/python/mechanize/_http.pyc
 %%ZOPEBASEDIR%%/lib/python/mechanize/_lwpcookiejar.py
 %%ZOPEBASEDIR%%/lib/python/mechanize/_lwpcookiejar.pyc
 %%ZOPEBASEDIR%%/lib/python/mechanize/_mechanize.py
@@ -3694,10 +3708,20 @@
 %%ZOPEBASEDIR%%/lib/python/mechanize/_pullparser.pyc
 %%ZOPEBASEDIR%%/lib/python/mechanize/_request.py
 %%ZOPEBASEDIR%%/lib/python/mechanize/_request.pyc
+%%ZOPEBASEDIR%%/lib/python/mechanize/_response.py
+%%ZOPEBASEDIR%%/lib/python/mechanize/_response.pyc
+%%ZOPEBASEDIR%%/lib/python/mechanize/_rfc3986.py
+%%ZOPEBASEDIR%%/lib/python/mechanize/_rfc3986.pyc
+%%ZOPEBASEDIR%%/lib/python/mechanize/_seek.py
+%%ZOPEBASEDIR%%/lib/python/mechanize/_seek.pyc
+%%ZOPEBASEDIR%%/lib/python/mechanize/_sockettimeout.py
+%%ZOPEBASEDIR%%/lib/python/mechanize/_sockettimeout.pyc
+%%ZOPEBASEDIR%%/lib/python/mechanize/_testcase.py
+%%ZOPEBASEDIR%%/lib/python/mechanize/_testcase.pyc
+%%ZOPEBASEDIR%%/lib/python/mechanize/_upgrade.py
+%%ZOPEBASEDIR%%/lib/python/mechanize/_upgrade.pyc
 %%ZOPEBASEDIR%%/lib/python/mechanize/_urllib2.py
 %%ZOPEBASEDIR%%/lib/python/mechanize/_urllib2.pyc
-%%ZOPEBASEDIR%%/lib/python/mechanize/_urllib2_support.py
-%%ZOPEBASEDIR%%/lib/python/mechanize/_urllib2_support.pyc
 %%ZOPEBASEDIR%%/lib/python/mechanize/_useragent.py
 %%ZOPEBASEDIR%%/lib/python/mechanize/_useragent.pyc
 %%ZOPEBASEDIR%%/lib/python/mechanize/_util.py
@@ -3743,8 +3767,6 @@
 %%ZOPEBASEDIR%%/lib/python/persistent/tests/test_wref.pyc
 %%ZOPEBASEDIR%%/lib/python/persistent/wref.py
 %%ZOPEBASEDIR%%/lib/python/persistent/wref.pyc
-%%ZOPEBASEDIR%%/lib/python/pytz/LICENSE.txt
-%%ZOPEBASEDIR%%/lib/python/pytz/README.txt
 %%ZOPEBASEDIR%%/lib/python/pytz/__init__.py
 %%ZOPEBASEDIR%%/lib/python/pytz/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/pytz/reference.py
@@ -3823,7 +3845,9 @@
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Argentina/La_Rioja
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Argentina/Mendoza
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Argentina/Rio_Gallegos
+%%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Argentina/Salta
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Argentina/San_Juan
+%%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Argentina/San_Luis
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Argentina/Tucuman
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Argentina/Ushuaia
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Aruba
@@ -3881,6 +3905,7 @@
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Indiana/Knox
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Indiana/Marengo
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Indiana/Petersburg
+%%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Indiana/Tell_City
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Indiana/Vevay
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Indiana/Vincennes
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Indiana/Winamac
@@ -3900,6 +3925,7 @@
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Maceio
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Managua
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Manaus
+%%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Marigot
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Martinique
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Mazatlan
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Mendoza
@@ -3935,11 +3961,13 @@
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Resolute
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Rio_Branco
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Rosario
+%%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Santarem
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Santiago
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Santo_Domingo
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Sao_Paulo
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Scoresbysund
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Shiprock
+%%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/St_Barthelemy
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/St_Johns
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/St_Kitts
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/St_Lucia
@@ -3997,6 +4025,7 @@
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Dushanbe
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Gaza
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Harbin
+%%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Ho_Chi_Minh
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Hong_Kong
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Hovd
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Irkutsk
@@ -4009,6 +4038,7 @@
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Karachi
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Kashgar
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Katmandu
+%%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Kolkata
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Krasnoyarsk
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Kuala_Lumpur
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Kuching
@@ -4508,7 +4538,6 @@
 %%ZOPEBASEDIR%%/lib/python/zope/annotation/tests/annotations.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/annotation/tests/test_attributeannotations.py
 %%ZOPEBASEDIR%%/lib/python/zope/annotation/tests/test_attributeannotations.pyc
-%%ZOPEBASEDIR%%/lib/python/zope/app/EXTERNALS.txt
 %%ZOPEBASEDIR%%/lib/python/zope/app/__init__.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/annotation/__init__.py
@@ -4760,6 +4789,8 @@
 %%ZOPEBASEDIR%%/lib/python/zope/app/applicationcontrol/browser/tests/test_runtimeinfoview.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/applicationcontrol/browser/tests/test_servercontrolview.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/applicationcontrol/browser/tests/test_servercontrolview.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/applicationcontrol/browser/tests/test_translationdomaincontrol.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/applicationcontrol/browser/tests/test_translationdomaincontrol.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/applicationcontrol/browser/translationdomaincontrol.pt
 %%ZOPEBASEDIR%%/lib/python/zope/app/applicationcontrol/browser/translationdomaincontrol.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/applicationcontrol/browser/translationdomaincontrol.pyc
@@ -5515,6 +5546,8 @@
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/tests/test_delete.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/tests/test_functional_put.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/tests/test_functional_put.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/http/tests/test_options.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/http/tests/test_options.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/tests/test_put.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/tests/test_put.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/tests/test_traversers.py
@@ -5645,6 +5678,8 @@
 %%ZOPEBASEDIR%%/lib/python/zope/app/locales/it/LC_MESSAGES/zope.po
 %%ZOPEBASEDIR%%/lib/python/zope/app/locales/ja/LC_MESSAGES/zope.mo
 %%ZOPEBASEDIR%%/lib/python/zope/app/locales/ja/LC_MESSAGES/zope.po
+%%ZOPEBASEDIR%%/lib/python/zope/app/locales/nl/LC_MESSAGES/zope.mo
+%%ZOPEBASEDIR%%/lib/python/zope/app/locales/nl/LC_MESSAGES/zope.po
 %%ZOPEBASEDIR%%/lib/python/zope/app/locales/pl/LC_MESSAGES/zope.mo
 %%ZOPEBASEDIR%%/lib/python/zope/app/locales/pl/LC_MESSAGES/zope.po
 %%ZOPEBASEDIR%%/lib/python/zope/app/locales/pt_BR/LC_MESSAGES/zope.mo
@@ -6865,11 +6900,11 @@
 %%ZOPEBASEDIR%%/lib/python/zope/documenttemplate/untrusted/untrusted.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/documenttemplate/ustr.py
 %%ZOPEBASEDIR%%/lib/python/zope/documenttemplate/ustr.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/dottedname/README.txt
 %%ZOPEBASEDIR%%/lib/python/zope/dottedname/__init__.py
 %%ZOPEBASEDIR%%/lib/python/zope/dottedname/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/dottedname/resolve.py
 %%ZOPEBASEDIR%%/lib/python/zope/dottedname/resolve.pyc
-%%ZOPEBASEDIR%%/lib/python/zope/dottedname/resolve.txt
 %%ZOPEBASEDIR%%/lib/python/zope/dottedname/tests.py
 %%ZOPEBASEDIR%%/lib/python/zope/dottedname/tests.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/dublincore/__init__.py
@@ -8484,17 +8519,19 @@
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/browser.py
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/browser.pyc
-%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/dummymodules.py
-%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/dummymodules.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/fixed-bugs.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ftests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ftests/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ftests/controls.html
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ftests/forms.html
+%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ftests/fragment.html
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ftests/ftesting.zcml
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ftests/navigate.html
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ftests/notitle.html
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ftests/oneform.html
+%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ftests/radio.html
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ftests/simple.html
+%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ftests/textarea.html
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ftests/zope3logo.gif
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/interfaces.py
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/interfaces.pyc
@@ -8509,6 +8546,7 @@
 %%ZOPEBASEDIR%%/lib/python/zope/testing/cleanup.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/testing/doctest.py
 %%ZOPEBASEDIR%%/lib/python/zope/testing/doctest.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/testing/doctest.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testing/doctestunit.py
 %%ZOPEBASEDIR%%/lib/python/zope/testing/doctestunit.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/testing/formparser.py
@@ -8553,6 +8591,10 @@
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex-pp-products/more/sampletests.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex-pp-products/sampletests.py
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex-pp-products/sampletests.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex-r/innertests.py
+%%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex-r/innertests.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex-r/outertests.py
+%%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex-r/outertests.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex/README.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex/gc0.py
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex/gc0.pyc
@@ -8705,9 +8747,11 @@
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-layers.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-leaks-err.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-leaks.txt
+%%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-package-normalization.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-profiling-cprofiler.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-profiling.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-progress.txt
+%%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-reentrancy.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-repeat.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-simple.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-test-selection.txt
@@ -8873,6 +8917,7 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex/sample1/sample12
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex/sample1/sample11
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex/sample1
+@dirrm %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex-r
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex-pp-products/more
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex-pp-products
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex-pp-lib/sample4/products
@@ -9073,6 +9118,8 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/locales/pt_BR
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/locales/pl/LC_MESSAGES
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/locales/pl
+@dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/locales/nl/LC_MESSAGES
+@dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/locales/nl
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/locales/ja/LC_MESSAGES
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/locales/ja
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/locales/it/LC_MESSAGES
@@ -9525,9 +9572,9 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/AccessControl/securitySuite
 @dirrm %%ZOPEBASEDIR%%/lib/python/AccessControl/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/AccessControl
-@dirrmtry %%ZOPEBASEDIR%%/lib/python
-@dirrmtry %%ZOPEBASEDIR%%/lib
 @dirrm %%ZOPEBASEDIR%%/doc
 @dirrm %%ZOPEBASEDIR%%/bin
 @dirrmtry %%ZOPEBASEDIR%%/Products
+@dirrmtry %%ZOPEBASEDIR%%/lib/python
+@dirrmtry %%ZOPEBASEDIR%%/lib
 @dirrmtry %%ZOPEBASEDIR%%
