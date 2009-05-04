@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=--disable-iptcdata
 .endif
 
 .if defined(WITH_OPENRAW)
-LIB_DEPENDS+=	openrawgnome.5:${PORTSDIR}/graphics/libopenraw
+LIB_DEPENDS+=	openrawgnome.6:${PORTSDIR}/graphics/libopenraw
 CONFIGURE_ARGS+=--enable-libopenraw
 .else
 CONFIGURE_ARGS+=--disable-libopenraw
