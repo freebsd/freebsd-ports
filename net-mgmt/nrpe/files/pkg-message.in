@@ -1,5 +1,0 @@
-*************************************************************************
-Available variables you add/set to /etc/rc.conf:
-- nrpe_enable (bool):	Set to "NO" by default
-- nrpe_config (string):	Set to %%PREFIX%%/etc/nrpe.cfg by default
-*************************************************************************

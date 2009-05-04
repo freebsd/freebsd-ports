@@ -150,7 +150,6 @@
     SUBDIR += nitpicker
     SUBDIR += nocol
     SUBDIR += nrg
-    SUBDIR += nrpe
     SUBDIR += nrpe2
     SUBDIR += nrpep
     SUBDIR += nsca
