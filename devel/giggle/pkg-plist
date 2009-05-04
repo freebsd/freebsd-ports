@@ -1,21 +1,69 @@
 bin/giggle
-lib/libgiggle-0.4.so
+include/giggle/libgiggle-git/giggle-git-add-ref.h
+include/giggle/libgiggle-git/giggle-git-add.h
+include/giggle/libgiggle-git/giggle-git-authors.h
+include/giggle/libgiggle-git/giggle-git-blame.h
+include/giggle/libgiggle-git/giggle-git-cat-file.h
+include/giggle/libgiggle-git/giggle-git-commit.h
+include/giggle/libgiggle-git/giggle-git-config-read.h
+include/giggle/libgiggle-git/giggle-git-config-write.h
+include/giggle/libgiggle-git/giggle-git-config.h
+include/giggle/libgiggle-git/giggle-git-delete-ref.h
+include/giggle/libgiggle-git/giggle-git-diff-tree.h
+include/giggle/libgiggle-git/giggle-git-diff.h
+include/giggle/libgiggle-git/giggle-git-enums.h
+include/giggle/libgiggle-git/giggle-git-ignore.h
+include/giggle/libgiggle-git/giggle-git-list-files.h
+include/giggle/libgiggle-git/giggle-git-list-tree.h
+include/giggle/libgiggle-git/giggle-git-log.h
+include/giggle/libgiggle-git/giggle-git-refs.h
+include/giggle/libgiggle-git/giggle-git-remote-list.h
+include/giggle/libgiggle-git/giggle-git-revisions.h
+include/giggle/libgiggle-git/giggle-git.h
+include/giggle/libgiggle/giggle-enums.h
+include/giggle/libgiggle/giggle-marshal.h
+lib/giggle/plugins/libpersonal-details.la
+lib/giggle/plugins/libpersonal-details.so
+lib/giggle/plugins/libpersonal-details.so.0
+lib/giggle/plugins/personal-details.xml
+lib/libgiggle-0.4.91.so
+lib/libgiggle-git-0.4.91.so
+lib/libgiggle-git.la
+lib/libgiggle-git.so
 lib/libgiggle.la
 lib/libgiggle.so
 share/applications/giggle.desktop
 %%DATADIR%%/glade/main-window.glade
+share/icons/hicolor/16x16/apps/giggle-branch.png
+share/icons/hicolor/16x16/apps/giggle-history-view.png
+share/icons/hicolor/16x16/apps/giggle-remote.png
+share/icons/hicolor/16x16/apps/giggle-scm-git.png
+share/icons/hicolor/16x16/apps/giggle-scm-svn.png
+share/icons/hicolor/16x16/apps/giggle-tag.png
 share/icons/hicolor/16x16/apps/giggle.png
+share/icons/hicolor/22x22/apps/giggle-history-view.png
 share/icons/hicolor/22x22/apps/giggle.png
+share/icons/hicolor/24x24/apps/giggle-history-view.png
+share/icons/hicolor/24x24/apps/giggle.png
+share/icons/hicolor/32x32/apps/giggle-history-view.png
 share/icons/hicolor/32x32/apps/giggle.png
+share/icons/hicolor/48x48/apps/giggle-scm-svn.png
 share/icons/hicolor/48x48/apps/giggle.png
 share/icons/hicolor/scalable/apps/giggle.svg
 share/locale/ca/LC_MESSAGES/giggle.mo
 share/locale/de/LC_MESSAGES/giggle.mo
+share/locale/en_GB/LC_MESSAGES/giggle.mo
 share/locale/es/LC_MESSAGES/giggle.mo
 share/locale/fr/LC_MESSAGES/giggle.mo
+share/locale/ja/LC_MESSAGES/giggle.mo
 share/locale/pl/LC_MESSAGES/giggle.mo
 share/locale/sv/LC_MESSAGES/giggle.mo
 share/locale/vi/LC_MESSAGES/giggle.mo
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrm lib/giggle/plugins
+@dirrm lib/giggle
+@dirrm include/giggle/libgiggle-git
+@dirrm include/giggle/libgiggle
+@dirrm include/giggle
