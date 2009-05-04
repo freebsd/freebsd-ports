@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	xmpppy
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	irc-transport-${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	An xmpp to irc transport
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xmpp/__init__.py:${PORTSDIR}/net-im/py-xmpppy \
