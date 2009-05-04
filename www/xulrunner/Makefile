@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	xulrunner/releases/${PORTVERSION}/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER?=	miwi@FreeBSD.org
+MAINTAINER?=	gecko@FreeBSD.org
 COMMENT?=	Mozilla runtime package that can be used to bootstrap XUL+XPCOM apps
 
 WANT_GNOME=	yes

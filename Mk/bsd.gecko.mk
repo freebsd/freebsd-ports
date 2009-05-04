@@ -32,7 +32,7 @@
 .if !defined(Gecko_Pre_Include)
 # Please make sure all changes to this file are passed through the maintainer.
 # Do not commit them yourself (unless of course you're the Port's Wraith ;).
-Gecko_Include_MAINTAINER=		miwi@FreeBSD.org
+Gecko_Include_MAINTAINER=		gecko@FreeBSD.org
 Gecko_Pre_Include=			bsd.gecko.mk
 
 # Users should use the following syntax:
@@ -244,7 +244,7 @@ Gecko_Pre_Include=	bsd.gecko.mk
 # 						CONFIGURE_ARGS instead
 #
 
-MAINTAINER?=	miwi@FreeBSD.org
+MAINTAINER?=	gecko@FreeBSD.org
 
 MOZILLA?=	${PORTNAME}
 MOZILLA_VER?=	${PORTVERSION}

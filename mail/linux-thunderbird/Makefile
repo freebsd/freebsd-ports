@@ -10,7 +10,7 @@ PORTVERSION=	2.0.0.21
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR?=	${PORTNAME}/releases/${PORTVERSION}/linux-i686/en-US
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
 .include "${.CURDIR}/../../www/linux-seamonkey/Makefile.common"
