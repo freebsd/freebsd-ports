@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+
+  <vuln vid="e3e30d99-58a8-4a3f-8059-a8b7cd59b881">
+    <topic>openfire -- Openfire No Password Changes Security Bypass</topic>
+    <affects>
+      <package>
+	<name>openfire</name>
+	<range><eq>3.6.3</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/34984/">
+	  <p>A vulnerability has been reported in Openfire which can
+	     be exploited by malicious users to bypass certain security
+	     restrictions. The vulnerability is caused due to Openfire
+	     not properly respecting the no password changes setting which
+	     can be exploited to change passwords by sending jabber:iq:auth
+	     passwd_change requests to the server.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/34984/</url>
+    </references>
+    <dates>
+      <discovery>2009-05-04</discovery>
+      <entry>2009-05-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7a1ab8d4-35c1-11de-9672-0030843d3802">
     <topic>drupal -- cross site scripting</topic>
     <affects>
