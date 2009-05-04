@@ -12,7 +12,7 @@ CATEGORIES=	misc print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	kimelto@gmail.com
 COMMENT=	A collection of makefile and scripts for LaTeX documents
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
