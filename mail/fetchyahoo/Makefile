@@ -10,7 +10,7 @@ PORTVERSION=	2.13.3
 CATEGORIES=	mail
 MASTER_SITES=	http://fetchyahoo.twizzler.org/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Download e-mail from a Yahoo account to a Berkeley mailbox
 
 RUN_DEPENDS=	\

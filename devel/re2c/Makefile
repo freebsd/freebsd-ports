@@ -10,7 +10,7 @@ PORTVERSION=	0.13.5
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Compile regular expression to C (much faster final code than flex)
 
 GNU_CONFIGURE=	yes
