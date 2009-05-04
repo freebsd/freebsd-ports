@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jx
-PORTVERSION=	1.10
+PORTVERSION=	1.23
 CATEGORIES=	sysutils
 MASTER_SITES=	http://legh.ru/wp-content/uploads/jx/
 
