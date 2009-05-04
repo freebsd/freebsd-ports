@@ -7,6 +7,7 @@
 
 PORTNAME=	jv
 PORTVERSION=	0.50
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
@@ -54,6 +55,12 @@ XPI_DIRS=	chrome \
 
 post-extract:
 	@${RM} ${WRKSRC}/jv@eric.uhrhane/.install.rdf.swp
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e "/em:maxVersion/s/3\.5b4pre/3.5/" \
+			${WRKSRC}/install.rdf
+	@${RM} ${WRKSRC}/install.rdf.bak
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
