@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	ocsinventory-ng
-PORTVERSION=	1.01
-PORTREVISION=	4
+PORTVERSION=	1.02
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	ocsinventory
-DISTNAME=	OCSNG_LINUX_SERVER_${PORTVERSION}
+DISTNAME=	OCSNG_UNIX_SERVER-${PORTVERSION}
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Open Computer and Software Inventory Next Generation
@@ -35,7 +34,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 do-install:
 	@${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "Apache dtd ipdiscover-util ocs-errors ocsreports" ${DATADIR}/)
+	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "Apache dtd ocsreports" ${DATADIR}/)
 	@${INSTALL_SCRIPT} ${WRKSRC}/setup.sh ${DATADIR}/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

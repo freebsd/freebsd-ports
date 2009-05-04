@@ -1,29 +1,58 @@
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/Apache/Changes
 %%DATADIR%%/Apache/INSTALL
+%%DATADIR%%/Apache/LICENSE
 %%DATADIR%%/Apache/MANIFEST
 %%DATADIR%%/Apache/Makefile.PL
 %%DATADIR%%/Apache/Ocsinventory.pm
 %%DATADIR%%/Apache/Ocsinventory/Interface.pm
+%%DATADIR%%/Apache/Ocsinventory/Interface/Config.pm
+%%DATADIR%%/Apache/Ocsinventory/Interface/Database.pm
+%%DATADIR%%/Apache/Ocsinventory/Interface/Extensions.pm
+%%DATADIR%%/Apache/Ocsinventory/Interface/History.pm
 %%DATADIR%%/Apache/Ocsinventory/Interface/Internals.pm
+%%DATADIR%%/Apache/Ocsinventory/Interface/Inventory.pm
+%%DATADIR%%/Apache/Ocsinventory/Interface/Ipdiscover.pm
 %%DATADIR%%/Apache/Ocsinventory/Map.pm
 %%DATADIR%%/Apache/Ocsinventory/SOAP.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Download.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Download/Inventory.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Example.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Filter.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Ipdiscover.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Notify.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Registry.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Update.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/Communication.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Communication/Session.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/Constants.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/Duplicate.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Groups.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/Inventory.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Inventory/Cache.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Inventory/Capacities.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Inventory/Data.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Inventory/Export.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Inventory/Filter.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Inventory/Update.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Inventory/Update/AccountInfos.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Inventory/Update/Hardware.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/Modperl1.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/Modperl2.pm
-%%DATADIR%%/Apache/Ocsinventory/Server/Option/Download.pm
-%%DATADIR%%/Apache/Ocsinventory/Server/Option/Example.pm
-%%DATADIR%%/Apache/Ocsinventory/Server/Option/Filter.pm
-%%DATADIR%%/Apache/Ocsinventory/Server/Option/Ipdiscover.pm
-%%DATADIR%%/Apache/Ocsinventory/Server/Option/Registry.pm
-%%DATADIR%%/Apache/Ocsinventory/Server/Option/Update.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/System.pm
-%%DATADIR%%/Apache/binutils/Ocsinventory_local.pl
-%%DATADIR%%/Apache/changelogs
-%%DATADIR%%/Apache/logrotate.ocsinventory-NG
-%%DATADIR%%/Apache/ocsinventory.conf
+%%DATADIR%%/Apache/Ocsinventory/Server/System/Config.pm
+%%DATADIR%%/Apache/binutils/ipdiscover-util.README
+%%DATADIR%%/Apache/binutils/ipdiscover-util.pl
+%%DATADIR%%/Apache/binutils/ocs-errors
+%%DATADIR%%/Apache/binutils/ocsinventory-injector.README
+%%DATADIR%%/Apache/binutils/ocsinventory-injector.pl
+%%DATADIR%%/Apache/binutils/ocsinventory-log.README
+%%DATADIR%%/Apache/binutils/ocsinventory-log.pl
+%%DATADIR%%/Apache/binutils/soap-client.README
+%%DATADIR%%/Apache/binutils/soap-client.pl
+%%DATADIR%%/Apache/etc/logrotate.d/ocsinventory-server
+%%DATADIR%%/Apache/etc/ocsinventory/ocsinventory-reports.conf
+%%DATADIR%%/Apache/etc/ocsinventory/ocsinventory-server.conf
 %%DATADIR%%/dtd/Interface/get_computers_V1-request.dtd
 %%DATADIR%%/dtd/file_request.dtd
 %%DATADIR%%/dtd/inventory_reply.dtd
@@ -32,14 +61,19 @@
 %%DATADIR%%/dtd/prolog_request.dtd
 %%DATADIR%%/dtd/update_reply.dtd
 %%DATADIR%%/dtd/update_request.dtd
-%%DATADIR%%/ipdiscover-util/README
-%%DATADIR%%/ipdiscover-util/ipdiscover-util.pl
-%%DATADIR%%/ocs-errors
+%%DATADIR%%/ocsreports/admin_attrib.php
+%%DATADIR%%/ocsreports/admin_language.php
 %%DATADIR%%/ocsreports/ajout_maj.php
+%%DATADIR%%/ocsreports/all_soft.php
+%%DATADIR%%/ocsreports/blacklist.php
 %%DATADIR%%/ocsreports/confiGale.php
+%%DATADIR%%/ocsreports/console.php
 %%DATADIR%%/ocsreports/css/boxsizing.htc
 %%DATADIR%%/ocsreports/css/ocsreports.css
+%%DATADIR%%/ocsreports/css/onglets.css
 %%DATADIR%%/ocsreports/css/winclassic.css
+%%DATADIR%%/ocsreports/cvs.php
+%%DATADIR%%/ocsreports/dbconfig.inc.php
 %%DATADIR%%/ocsreports/dico.php
 %%DATADIR%%/ocsreports/donAdmini.php
 %%DATADIR%%/ocsreports/donnees.php
@@ -47,13 +81,15 @@
 %%DATADIR%%/ocsreports/download.php
 %%DATADIR%%/ocsreports/favicon.ico
 %%DATADIR%%/ocsreports/fichierConf.class.php
-%%DATADIR%%/ocsreports/files/guide.pdf
 %%DATADIR%%/ocsreports/files/ocsbase.sql
 %%DATADIR%%/ocsreports/files/oui.txt
 %%DATADIR%%/ocsreports/footer.php
+%%DATADIR%%/ocsreports/group_show.php
+%%DATADIR%%/ocsreports/groups.php
 %%DATADIR%%/ocsreports/header.php
 %%DATADIR%%/ocsreports/image/Gest_admin1.png
 %%DATADIR%%/ocsreports/image/Gest_admin2.png
+%%DATADIR%%/ocsreports/image/activer.png
 %%DATADIR%%/ocsreports/image/adm.png
 %%DATADIR%%/ocsreports/image/adm_a.png
 %%DATADIR%%/ocsreports/image/administration.png
@@ -62,6 +98,8 @@
 %%DATADIR%%/ocsreports/image/agent_a.png
 %%DATADIR%%/ocsreports/image/aide.png
 %%DATADIR%%/ocsreports/image/aide_a.png
+%%DATADIR%%/ocsreports/image/archive.png
+%%DATADIR%%/ocsreports/image/archives.png
 %%DATADIR%%/ocsreports/image/banner-ocs.png
 %%DATADIR%%/ocsreports/image/bios.png
 %%DATADIR%%/ocsreports/image/bios_a.png
@@ -70,12 +108,15 @@
 %%DATADIR%%/ocsreports/image/cal.gif
 %%DATADIR%%/ocsreports/image/codes.png
 %%DATADIR%%/ocsreports/image/codes_a.png
+%%DATADIR%%/ocsreports/image/compress.png
 %%DATADIR%%/ocsreports/image/configuration.png
 %%DATADIR%%/ocsreports/image/configuration_a.png
+%%DATADIR%%/ocsreports/image/connexion.png
 %%DATADIR%%/ocsreports/image/controleur.png
 %%DATADIR%%/ocsreports/image/controleur_a.png
 %%DATADIR%%/ocsreports/image/controleur_d.png
 %%DATADIR%%/ocsreports/image/deconnexion.png
+%%DATADIR%%/ocsreports/image/delete_all.png
 %%DATADIR%%/ocsreports/image/dictionnaire.png
 %%DATADIR%%/ocsreports/image/dictionnaire_a.png
 %%DATADIR%%/ocsreports/image/disque.png
@@ -84,10 +125,15 @@
 %%DATADIR%%/ocsreports/image/doublons.png
 %%DATADIR%%/ocsreports/image/doublons_a.png
 %%DATADIR%%/ocsreports/image/down.png
+%%DATADIR%%/ocsreports/image/fond.png
+%%DATADIR%%/ocsreports/image/fond_orig.png
+%%DATADIR%%/ocsreports/image/groups.png
+%%DATADIR%%/ocsreports/image/groups_a.png
 %%DATADIR%%/ocsreports/image/imprimante.png
 %%DATADIR%%/ocsreports/image/imprimante_a.png
 %%DATADIR%%/ocsreports/image/imprimante_d.png
 %%DATADIR%%/ocsreports/image/imprimer.png
+%%DATADIR%%/ocsreports/image/interdit.jpg
 %%DATADIR%%/ocsreports/image/label.png
 %%DATADIR%%/ocsreports/image/label_a.png
 %%DATADIR%%/ocsreports/image/local.png
@@ -96,15 +142,32 @@
 %%DATADIR%%/ocsreports/image/logiciels_a.png
 %%DATADIR%%/ocsreports/image/logiciels_d.png
 %%DATADIR%%/ocsreports/image/logo OCS-ng-48.png
+%%DATADIR%%/ocsreports/image/mail.gif
 %%DATADIR%%/ocsreports/image/memoire.png
 %%DATADIR%%/ocsreports/image/memoire_a.png
 %%DATADIR%%/ocsreports/image/memoire_d.png
+%%DATADIR%%/ocsreports/image/message.gif
 %%DATADIR%%/ocsreports/image/modem.png
 %%DATADIR%%/ocsreports/image/modem_a.png
 %%DATADIR%%/ocsreports/image/modem_d.png
+%%DATADIR%%/ocsreports/image/modif.png
+%%DATADIR%%/ocsreports/image/modif_a.png
+%%DATADIR%%/ocsreports/image/modif_all.png
+%%DATADIR%%/ocsreports/image/modif_anul.png
+%%DATADIR%%/ocsreports/image/modif_anul_v2.png
+%%DATADIR%%/ocsreports/image/modif_tab.png
+%%DATADIR%%/ocsreports/image/modif_valid.png
+%%DATADIR%%/ocsreports/image/modif_valid_v2.png
 %%DATADIR%%/ocsreports/image/moniteur.png
 %%DATADIR%%/ocsreports/image/moniteur_a.png
 %%DATADIR%%/ocsreports/image/moniteur_d.png
+%%DATADIR%%/ocsreports/image/norm_left.gif
+%%DATADIR%%/ocsreports/image/norm_left_on.gif
+%%DATADIR%%/ocsreports/image/norm_right.gif
+%%DATADIR%%/ocsreports/image/norm_right.gif.png
+%%DATADIR%%/ocsreports/image/norm_right_on.gif
+%%DATADIR%%/ocsreports/image/norm_right_on.gif.png
+%%DATADIR%%/ocsreports/image/oeil.png
 %%DATADIR%%/ocsreports/image/pack.png
 %%DATADIR%%/ocsreports/image/pack_a.png
 %%DATADIR%%/ocsreports/image/paquets.png
@@ -140,6 +203,8 @@
 %%DATADIR%%/ocsreports/image/reseau.png
 %%DATADIR%%/ocsreports/image/reseau_a.png
 %%DATADIR%%/ocsreports/image/reseau_d.png
+%%DATADIR%%/ocsreports/image/rien.png
+%%DATADIR%%/ocsreports/image/rien_a.png
 %%DATADIR%%/ocsreports/image/securite.png
 %%DATADIR%%/ocsreports/image/securite_a.png
 %%DATADIR%%/ocsreports/image/slot.png
@@ -150,20 +215,25 @@
 %%DATADIR%%/ocsreports/image/son_d.png
 %%DATADIR%%/ocsreports/image/spec.png
 %%DATADIR%%/ocsreports/image/spec_a.png
+%%DATADIR%%/ocsreports/image/stat.png
 %%DATADIR%%/ocsreports/image/stockage.png
 %%DATADIR%%/ocsreports/image/stockage_a.png
 %%DATADIR%%/ocsreports/image/stockage_d.png
 %%DATADIR%%/ocsreports/image/supp.png
 %%DATADIR%%/ocsreports/image/suppv.png
+%%DATADIR%%/ocsreports/image/test.jpg
 %%DATADIR%%/ocsreports/image/ttaff.png
 %%DATADIR%%/ocsreports/image/ttlogiciels.png
 %%DATADIR%%/ocsreports/image/ttlogiciels_a.png
 %%DATADIR%%/ocsreports/image/ttmachines.png
 %%DATADIR%%/ocsreports/image/ttmachines_a.png
+%%DATADIR%%/ocsreports/image/ttmachinesred.png
+%%DATADIR%%/ocsreports/image/ttmachinesred_a.png
 %%DATADIR%%/ocsreports/image/up.png
 %%DATADIR%%/ocsreports/image/utilisateur OK.png
 %%DATADIR%%/ocsreports/image/utilisateurOK_a.png
 %%DATADIR%%/ocsreports/image/utilisateurs.png
+%%DATADIR%%/ocsreports/image/utilisateurs_.png
 %%DATADIR%%/ocsreports/image/utilisateurs_a.png
 %%DATADIR%%/ocsreports/image/video.png
 %%DATADIR%%/ocsreports/image/video_a.png
@@ -195,43 +265,69 @@
 %%DATADIR%%/ocsreports/languages/portuguese.txt
 %%DATADIR%%/ocsreports/languages/russian.png
 %%DATADIR%%/ocsreports/languages/russian.txt
+%%DATADIR%%/ocsreports/languages/slovenian.png
+%%DATADIR%%/ocsreports/languages/slovenian.txt
 %%DATADIR%%/ocsreports/languages/spanish.png
 %%DATADIR%%/ocsreports/languages/spanish.txt
 %%DATADIR%%/ocsreports/languages/turkish.png
 %%DATADIR%%/ocsreports/languages/turkish.txt
+%%DATADIR%%/ocsreports/libraries/zip.lib.php
 %%DATADIR%%/ocsreports/local.php
 %%DATADIR%%/ocsreports/machine.php
 %%DATADIR%%/ocsreports/multicritere.php
+%%DATADIR%%/ocsreports/opt_download.php
 %%DATADIR%%/ocsreports/opt_frequency.php
 %%DATADIR%%/ocsreports/opt_ipdiscover.php
+%%DATADIR%%/ocsreports/opt_param.php
+%%DATADIR%%/ocsreports/opt_prolog.php
 %%DATADIR%%/ocsreports/opt_suppr.php
 %%DATADIR%%/ocsreports/pass.php
+%%DATADIR%%/ocsreports/popup_rules_redistribution.php
 %%DATADIR%%/ocsreports/preferences.php
 %%DATADIR%%/ocsreports/req.class.php
 %%DATADIR%%/ocsreports/reqRegistre.php
+%%DATADIR%%/ocsreports/require/function_config_generale.php
+%%DATADIR%%/ocsreports/require/function_dico.php
+%%DATADIR%%/ocsreports/require/function_opt_param.php
+%%DATADIR%%/ocsreports/require/function_rules.php
+%%DATADIR%%/ocsreports/require/function_server.php
+%%DATADIR%%/ocsreports/require/function_table_html.php
 %%DATADIR%%/ocsreports/resultats.php
+%%DATADIR%%/ocsreports/rules_redistrib.php
+%%DATADIR%%/ocsreports/server_redistrib.php
 %%DATADIR%%/ocsreports/tele_activate.php
 %%DATADIR%%/ocsreports/tele_actives.php
 %%DATADIR%%/ocsreports/tele_affect.php
+%%DATADIR%%/ocsreports/tele_compress.php
+%%DATADIR%%/ocsreports/tele_massaffect.php
 %%DATADIR%%/ocsreports/tele_package.php
 %%DATADIR%%/ocsreports/tele_stats.php
 %%DATADIR%%/ocsreports/uploadfile.php
 %%DATADIR%%/ocsreports/users.php
 %%DATADIR%%/setup.sh
-@dirrm %%DATADIR%%/ocsreports/languages/
-@dirrm %%DATADIR%%/ocsreports/js/
-@dirrm %%DATADIR%%/ocsreports/image/
-@dirrm %%DATADIR%%/ocsreports/files/
-@dirrm %%DATADIR%%/ocsreports/css/
-@dirrm %%DATADIR%%/ipdiscover-util/
-@dirrm %%DATADIR%%/ocsreports/
-@dirrm %%DATADIR%%/dtd/Interface/
-@dirrm %%DATADIR%%/dtd/
-@dirrm %%DATADIR%%/Apache/binutils/
-@dirrm %%DATADIR%%/Apache/Ocsinventory/Server/Option/
-@dirrm %%DATADIR%%/Apache/Ocsinventory/Server/
-@dirrm %%DATADIR%%/Apache/Ocsinventory/Interface/
-@dirrm %%DATADIR%%/Apache/Ocsinventory/
-@dirrm %%DATADIR%%/Apache/
+@dirrm %%DATADIR%%/ocsreports/require
+@dirrm %%DATADIR%%/ocsreports/libraries
+@dirrm %%DATADIR%%/ocsreports/languages
+@dirrm %%DATADIR%%/ocsreports/js
+@dirrm %%DATADIR%%/ocsreports/image
+@dirrm %%DATADIR%%/ocsreports/files
+@dirrm %%DATADIR%%/ocsreports/css
+@dirrm %%DATADIR%%/ocsreports
+@dirrm %%DATADIR%%/dtd/Interface
+@dirrm %%DATADIR%%/dtd
+@dirrm %%DATADIR%%/Apache/etc/ocsinventory
+@dirrm %%DATADIR%%/Apache/etc/logrotate.d
+@dirrm %%DATADIR%%/Apache/etc
+@dirrm %%DATADIR%%/Apache/binutils
+@dirrm %%DATADIR%%/Apache/Ocsinventory/Server/System
+@dirrm %%DATADIR%%/Apache/Ocsinventory/Server/Inventory/Update
+@dirrm %%DATADIR%%/Apache/Ocsinventory/Server/Inventory
+@dirrm %%DATADIR%%/Apache/Ocsinventory/Server/Communication
+@dirrm %%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Download
+@dirrm %%DATADIR%%/Apache/Ocsinventory/Server/Capacities
+@dirrm %%DATADIR%%/Apache/Ocsinventory/Server
+@dirrm %%DATADIR%%/Apache/Ocsinventory/Interface
+@dirrm %%DATADIR%%/Apache/Ocsinventory
+@dirrm %%DATADIR%%/Apache
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
