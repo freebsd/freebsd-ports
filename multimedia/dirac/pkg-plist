@@ -6,15 +6,25 @@ bin/RGBtoYUV420
 bin/RGBtoYUV422
 bin/RGBtoYUV444
 bin/UYVYtoRGB
+bin/UYVYtoYUV422
 bin/YUV411toRGB
+bin/YUV420Down2x2
+bin/YUV420ItoYUV422I
+bin/YUV420pt75filter
 bin/YUV420toRGB
+bin/YUV420toYUV422
+bin/YUV422ItoYUV420I
 bin/YUV422toRGB
+bin/YUV422toUYVY
+bin/YUV422toYUV420
 bin/YUV444toRGB
 bin/create_dirac_testfile.pl
 bin/dirac_decoder
 bin/dirac_encoder
 bin/dirac_instrumentation
 include/dirac/libdirac_common/common_types.h
+include/dirac/libdirac_common/dirac-stdint.h
+include/dirac/libdirac_common/dirac_inttypes.h
 include/dirac/libdirac_common/dirac_types.h
 include/dirac/libdirac_decoder/decoder_types.h
 include/dirac/libdirac_decoder/dirac_parser.h
@@ -22,11 +32,11 @@ include/dirac/libdirac_encoder/dirac_encoder.h
 lib/libdirac_decoder.a
 lib/libdirac_decoder.la
 lib/libdirac_decoder.so
-lib/libdirac_decoder.so.0
+lib/libdirac_decoder.so.1
 lib/libdirac_encoder.a
 lib/libdirac_encoder.la
 lib/libdirac_encoder.so
-lib/libdirac_encoder.so.0
+lib/libdirac_encoder.so.1
 libdata/pkgconfig/dirac.pc
 @dirrm include/dirac/libdirac_encoder
 @dirrm include/dirac/libdirac_decoder
