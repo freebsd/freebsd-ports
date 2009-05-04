@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.alwins-world.de/programs/download/kmysqladmin/
 
-MAINTAINER=	glen.j.barber@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical frontend for administration of mysql servers
 
 USE_AUTOTOOLS=	libtool:15

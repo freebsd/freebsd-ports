@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ee.fhm.edu/pub/unix/ide/KDevelop/
 DISTNAME=	c_cpp_reference-${PORTVERSION}_for_KDE_3.0
 
-MAINTAINER=	glen.j.barber@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ reference manual for KDevelop
 
 RUN_DEPENDS=	kdevelop:${PORTSDIR}/devel/kdevelop
