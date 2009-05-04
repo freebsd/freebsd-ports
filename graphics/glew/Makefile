@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 EXTRACT_SUFX=	-src.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	The OpenGL Extension Wrangler Library
 
 USE_XORG=	x11 xext xi xmu
