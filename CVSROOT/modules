@@ -6515,6 +6515,7 @@ kde4-l10n-tr                    ports/misc/kde4-l10n-tr
 kde4-l10n-wa                    ports/misc/kde4-l10n-wa
 kde4-shared-mime-info           ports/misc/kde4-shared-mime-info
 kde4-style-polyester            ports/x11-themes/kde4-style-polyester
+kde4-windeco-dekorator          ports/x11-themes/kde4-windeco-dekorator
 kde4-xdg-env                    ports/misc/kde4-xdg-env
 kde_poster                      ports/print/kde_poster
 kdeaccessibility                ports/accessibility/kdeaccessibility
@@ -12572,6 +12573,7 @@ p5-SpringGraph                  ports/graphics/p5-SpringGraph
 p5-Squatting                    ports/www/p5-Squatting
 p5-Stanford-DNSserver           ports/dns/p5-Stanford-DNSserver
 p5-Stat-lsMode                  ports/sysutils/p5-Stat-lsMode
+p5-Statistics-Benford           ports/math/p5-Statistics-Benford
 p5-Statistics-ChiSquare         ports/math/p5-Statistics-ChiSquare
 p5-Statistics-Contingency       ports/math/p5-Statistics-Contingency
 p5-Statistics-Descriptive       ports/math/p5-Statistics-Descriptive
@@ -16006,6 +16008,7 @@ p5-sru                          ports/www/p5-SRU
 p5-ssn-validate                 ports/devel/p5-SSN-Validate
 p5-stanford-dnsserver           ports/dns/p5-Stanford-DNSserver
 p5-stat-lsmode                  ports/sysutils/p5-Stat-lsMode
+p5-statistics-benford           ports/math/p5-Statistics-Benford
 p5-statistics-chisquare         ports/math/p5-Statistics-ChiSquare
 p5-statistics-contingency       ports/math/p5-Statistics-Contingency
 p5-statistics-descriptive       ports/math/p5-Statistics-Descriptive
@@ -21933,6 +21936,7 @@ trac-tocmacro                   ports/www/trac-tocmacro
 trac-tweakui                    ports/www/trac-tweakui
 trac-wantedpages                ports/www/trac-wantedpages
 trac-webadmin                   ports/www/trac-webadmin
+trac-wikigoodies                ports/www/trac-wikigoodies
 trac-wikinegotiator             ports/www/trac-wikinegotiator
 trac-wikinotification           ports/www/trac-wikinotification
 trac-wikirename                 ports/www/trac-wikirename
