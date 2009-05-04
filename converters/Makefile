@@ -18,6 +18,7 @@
     SUBDIR += enca
     SUBDIR += fconv
     SUBDIR += fix-mime-charset
+    SUBDIR += fpc-iconvenc
     SUBDIR += fribidi
     SUBDIR += gbase
     SUBDIR += htx
