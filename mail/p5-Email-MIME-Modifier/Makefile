@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-MIME-Modifier
-PORTVERSION=	1.443
+PORTVERSION=	1.444
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Modify Email::MIME Objects Easily
 
-BUILD_DEPENDS=	p5-Email-MIME-Encodings>=1.3:${PORTSDIR}/mail/p5-Email-MIME-Encodings \
+BUILD_DEPENDS=	p5-Email-MIME-Encodings>=1.313:${PORTSDIR}/mail/p5-Email-MIME-Encodings \
 		p5-Email-MIME>=1.82:${PORTSDIR}/mail/p5-Email-MIME \
 		p5-Email-MessageID>=1.2:${PORTSDIR}/mail/p5-Email-MessageID \
 		p5-Email-MIME-ContentType>=1.0:${PORTSDIR}/mail/p5-Email-MIME-ContentType \
