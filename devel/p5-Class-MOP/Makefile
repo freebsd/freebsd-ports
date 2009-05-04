@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-MOP
-PORTVERSION=	0.82
+PORTVERSION=	0.83
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,12 +27,14 @@ CFLAGS=		-I.
 MAN3=	Class::MOP.3 \
 	Class::MOP::Attribute.3 \
 	Class::MOP::Class.3 \
-	Class::MOP::Immutable.3 \
+	Class::MOP::Class::Immutable::Class::MOP::Class.3 \
+	Class::MOP::Class::Immutable::Trait.3 \
 	Class::MOP::Instance.3 \
 	Class::MOP::Method.3 \
 	Class::MOP::Method::Accessor.3 \
 	Class::MOP::Method::Constructor.3 \
 	Class::MOP::Method::Generated.3 \
+	Class::MOP::Method::Inlined.3 \
 	Class::MOP::Method::Wrapped.3 \
 	Class::MOP::Module.3 \
 	Class::MOP::Object.3 \

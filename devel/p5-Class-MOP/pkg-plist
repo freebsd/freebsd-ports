@@ -3,12 +3,14 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Attribute.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Immutable.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class/Immutable/Class/MOP/Class.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class/Immutable/Trait.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Instance.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Accessor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Constructor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Generated.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Inlined.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Wrapped.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Module.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Object.pm
@@ -26,6 +28,9 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MOP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Immutable/Class/MOP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Immutable/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Immutable
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class
