@@ -30,7 +30,7 @@ _FPCMKINCLUDED=	yes
 FPC_Include_MAINTAINER=	acm@FreeBSD.org
 FPC_Pre_Include=	bsd.fpc.mk
 
-DEFAULT_FPC_VER=	2.2.2
+DEFAULT_FPC_VER=	2.2.4
 FPC_VER=		${DEFAULT_FPC_VER}
 
 .if exists(${LOCALBASE}/bin/fpc)
@@ -58,7 +58,7 @@ check-makevars::
 _FPC_ALL_UNITS=	aspell bfd cairo chm fcl-async fcl-base fcl-db fcl-fpcunit fcl-image \
 		fcl-json fcl-net fcl-passrc fcl-process fcl-registry fcl-web fcl-xml fftw \
 		fpmkunit fpgtk fv gdbint gdbm ggi gnome1 graph gtk1 gtk2 hash httpd13 httpd20 \
-		httpd22 ibase imagemagick imlib libcurl libgd libpng mysql ncurses numlib \
+		httpd22 ibase iconvenc imagemagick imlib libcurl libgd libpng mysql ncurses numlib \
 		odbc opengl openssl oracle pasjpeg paszlib pcap postgres pthreads pxlib \
 		regexpr sdl sqlite svgalib symbolic syslog tcl unzip users utmp x11 xforms \
 		zlib
@@ -131,6 +131,7 @@ ggi_UNIT=	graphics/fpc-ggi
 gnome1_UNIT=	x11-toolkits/fpc-gnome1
 gtk1_UNIT=	x11-toolkits/fpc-gtk1
 gtk2_UNIT=	x11-toolkits/fpc-gtk2
+iconvenc_UNIT=	converters/fpc-iconvenc
 imagemagick_UNIT=	graphics/fpc-imagemagick
 imlib_UNIT=	graphics/fpc-imlib
 libcurl_UNIT=	ftp/fpc-libcurl

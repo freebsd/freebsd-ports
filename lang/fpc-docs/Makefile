@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	docs
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.4
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/docs-${PORTVERSION}/ \
-		ftp://planetmirror.com/pub/fpc/dist/docs-${PORTVERSION}/ \
-		ftp://ftp.jp.freepascal.org/mirror/fpc/dist/docs-${PORTVERSION}/ \
-		ftp://freepascal.stack.nl/pub/fpc/dist/docs-${PORTVERSION}/ \
-		ftp://ftp.no.freepascal.org/pub/fpc/dist/docs-${PORTVERSION}/ \
-		ftp://ftp.us.freepascal.org/pub/fpc/dist/docs-${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/docs/ \
+		ftp://planetmirror.com/pub/fpc/dist/${PORTVERSION}/docs/ \
+		ftp://ftp.jp.freepascal.org/mirror/fpc/dist/${PORTVERSION}/docs/ \
+		ftp://freepascal.stack.nl/pub/fpc/dist/${PORTVERSION}/docs/ \
+		ftp://ftp.no.freepascal.org/pub/fpc/dist/${PORTVERSION}/docs/ \
+		ftp://ftp.us.freepascal.org/pub/fpc/dist/${PORTVERSION}/docs/
 PKGNAMEPREFIX=	fpc-
 DISTNAME=	${PORTNAME:S/s//}-pdf
 DIST_SUBDIR=	freepascal
