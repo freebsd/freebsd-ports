@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	musca
-PORTVERSION=	0.9.19
+PORTVERSION=	0.9.20
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://aerosuidae.net/ \
 		http://mirror.mcx2.org/
@@ -18,6 +18,7 @@ COMMENT=	A simple window manager for X, with features from ratpoison and dwm
 RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
 
 USE_XORG=	x11
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/musca
 MAN1=	musca.1
