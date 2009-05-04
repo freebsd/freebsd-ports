@@ -20,7 +20,7 @@ PATCH_SITE_SUBDIR=	pool/main/g/groff
 PATCHFILES=	${DISTNAME:S,-,_,}-21.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Japanese enhancement of GNU groff
 
 .if !defined(PACKAGE_BUILDING)
