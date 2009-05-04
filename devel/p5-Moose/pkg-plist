@@ -51,6 +51,7 @@
 %%SITE_PERL%%/Moose/Manual/Types.pod
 %%SITE_PERL%%/Moose/Meta/Attribute.pm
 %%SITE_PERL%%/Moose/Meta/Class.pm
+%%SITE_PERL%%/Moose/Meta/Class/Immutable/Trait.pm
 %%SITE_PERL%%/Moose/Meta/Instance.pm
 %%SITE_PERL%%/Moose/Meta/Method.pm
 %%SITE_PERL%%/Moose/Meta/Method/Accessor.pm
@@ -100,6 +101,8 @@
 @dirrmtry %%SITE_PERL%%/Moose/Meta/Role/Application
 @dirrmtry %%SITE_PERL%%/Moose/Meta/Role
 @dirrmtry %%SITE_PERL%%/Moose/Meta/Method
+@dirrmtry %%SITE_PERL%%/Moose/Meta/Class/Immutable
+@dirrmtry %%SITE_PERL%%/Moose/Meta/Class
 @dirrmtry %%SITE_PERL%%/Moose/Meta
 @dirrmtry %%SITE_PERL%%/Moose/Manual
 @dirrmtry %%SITE_PERL%%/Moose/Error

@@ -4,9 +4,9 @@ to a class!
 Note that the release is incompatible with older versions of these modules:
 
         - MooseX::ClassAttribute    <= 0.07
-        - MooseX::Singleton         <= 0.14
+        - MooseX::Singleton         <= 0.15
         - MooseX::StrictConstructor <= 0.07
         - MooseX::Params::Validate  <= 0.05
-        - Fey::ORM                  <= 0.22
+        - Fey::ORM                  <= 0.23
 
 They will need to be updated.
