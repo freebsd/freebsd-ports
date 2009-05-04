@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	giggle
-PORTVERSION=	0.4
+PORTVERSION=	0.4.91
 CATEGORIES=	devel
-MASTER_SITES=	http://ftp.imendio.com/${MASTER_SITE_SUBDIR}/
-MASTER_SITE_SUBDIR=	pub/imendio/giggle/src
+MASTER_SITES=	GNOME
 
 MAINTAINER=	wahjava@gmail.com
 COMMENT=	GTK+ frontend for git version control system
 
-BUILD_DEPENDS=	git:${PORTSDIR}/devel/git
+BUILD_DEPENDS=	git:${PORTSDIR}/devel/git \
+		${SITE_PERL}/mach/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS=	git:${PORTSDIR}/devel/git
+OPTIONS=	EDS	"Evolution Data Server support"	on
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -26,4 +27,12 @@ INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_EDS)
+CONFIGURE_ARGS+=	--disable-evolution-data-server
+.elif defined(WITH_EDS)
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/libebook-1.2.pc:${PORTSDIR}/databases/evolution-data-server
+.endif
+
+.include <bsd.port.post.mk>
