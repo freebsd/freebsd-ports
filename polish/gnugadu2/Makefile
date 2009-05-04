@@ -12,7 +12,7 @@ CATEGORIES=	polish net-im
 MASTER_SITES=	SF/ggadu
 DISTNAME=	gg2-${PORTVERSION}
 
-MAINTAINER=	smyru@heron.pl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gadu-Gadu IM network client
 
 LIB_DEPENDS=	gadu.3:${PORTSDIR}/polish/libgadu \
