@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.3.5
-PORTREVISION=	1
+PORTVERSION=	1.3.7
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -38,7 +37,8 @@ PORTEXAMPLES=	4charts.pl bigtops.pl cgi-demo.cgi minmax.pl piped-demo.pl \
 OPTIONS=	PYTHON_MODULE	"Build PYTHON bindings" off \
 		RUBY_MODULE	"Build RUBY bindings" off \
 		PERL_MODULE	"Build PERL module" on \
-		DEJAVU		"Use DejaVu fonts (requires X11)" off
+		DEJAVU		"Use DejaVu fonts (requires X11)" off \
+		MMAP		"Use mmap in rrd_update" on
 
 .include <bsd.port.pre.mk>
 
@@ -71,6 +71,10 @@ PLIST_SUB+=	WITH_PERL=""
 .else
 CONFIGURE_ARGS+=	--disable-perl
 PLIST_SUB+=	WITH_PERL="@comment "
+.endif
+
+.if defined(WITHOUT_MMAP)
+CONFIGURE_ARGS+=	--disable-mmap
 .endif
 
 .if exists(${LOCALBASE}/lib/X11/fonts/dejavu) || defined(WITH_DEJAVU)
