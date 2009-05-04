@@ -11,7 +11,7 @@ CATEGORIES=	www devel python
 MASTER_SITES=	http://people.freebsd.org/~mm/trac/
 PKGNAMEPREFIX=	trac-
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Table of contents macro
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac

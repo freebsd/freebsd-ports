@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.unixmedia.it/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	trac${PORTNAME}
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trac tickets reminder script
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/rc/}
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allow email notifications on wiki page changes
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
