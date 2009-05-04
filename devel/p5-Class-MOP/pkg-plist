@@ -28,9 +28,10 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MOP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Immutable/Class/MOP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Immutable/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Immutable
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class/Immutable/Class/MOP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class/Immutable/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class/Immutable
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class
