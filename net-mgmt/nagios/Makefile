@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	nagios
-DISTVERSION=	3.0.6
+PORTVERSION=	3.0.6
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -15,8 +16,6 @@ COMMENT=	Extremely powerful network monitoring system
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
-
-MAKE_JOBS_UNSAFE=	yes
 
 USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
@@ -68,6 +67,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib" \
 		PERL=${PERL}
 
+MAKE_JOBS_UNSAFE=	yes
+
 INSTALL_TARGET=	install install-commandmode install-config
 
 PLIST_SUB=	NAGIOSDIR=${NAGIOSDIR} \
@@ -86,7 +87,7 @@ SUB_FILES=	pkg-install \
 
 ### XXX: Subtle bug with removing PREFIX from here
 SUB_LIST=	PREFIX=${PREFIX} \
-			${PLIST_SUB}
+		${PLIST_SUB}
 
 .if defined(WITH_EMBEDDED_PERL)
 USE_PERL5=	5.8.0+
