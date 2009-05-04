@@ -11,7 +11,7 @@ PORTVERSION=	0.96
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Morse Code Generator
 
 USE_PYTHON=	yes
