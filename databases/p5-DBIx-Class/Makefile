@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08101
+PORTVERSION=	0.08102
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,7 +28,7 @@ RUN_DEPENDS=	p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
 		p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
-		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat
+		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 OPTIONS=        SQLT "SQL::Translator (generate DDL from schema)" Off
