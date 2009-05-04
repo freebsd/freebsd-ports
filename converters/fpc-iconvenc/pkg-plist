@@ -1,0 +1,9 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/iconvenc/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/iconvenc/iconvenc.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/iconvenc/iconvenc.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/iconvenc/libpiconvenc.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/iconvenc
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
