@@ -24,6 +24,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/pooledmm.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/libtar.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/streamcoll.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/maskutils.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpexprpars.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/syncobjs.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/daemonapp.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fptimer.ppu
@@ -52,6 +53,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/pooledmm.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/libtar.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/streamcoll.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/maskutils.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpexprpars.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/syncobjs.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/daemonapp.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fptimer.o
@@ -80,6 +82,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/libppooledmm.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/libplibtar.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/libpstreamcoll.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/libpmaskutils.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/libpfpexprpars.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/libpsyncobjs.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/libpdaemonapp.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/libpfptimer.a

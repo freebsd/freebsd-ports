@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fpc
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.4
 PORTREVISION?=	0
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/source-${PORTVERSION}/:source \
@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/source-${PORTVERSION}/:sourc
 		ftp://ftp.no.freepascal.org/pub/fpc/dist/source-${PORTVERSION}/:source \
 		ftp://ftp.us.freepascal.org/pub/fpc/dist/source-${PORTVERSION}/:source \
 		${MASTER_SITE_SOURCEFORGE}:source \
+		${MASTER_SITE_GOOGLE_CODE}:bin \
 		${MASTER_SITE_LOCAL:S|$|acm/freepascal/:bin|}
 MASTER_SITE_SUBDIR=	freepascal
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -25,6 +26,7 @@ DIST_SUBDIR=	freepascal
 MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	Free Pascal compiler with Turbo and Delphi
 
+PROJECTHOST=	bsdistfiles
 USE_GMAKE=	yes
 ONLY_FOR_ARCHS=	i386
 
@@ -48,18 +50,25 @@ MAKE_ENV+=	PP=${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.bin/}/lib/${PORTNAME}/${P
 		BSDHIER=1
 
 MAN1=	bin2obj.1 \
+	chmcmd.1 \
+	chmls.1 \
 	data2inc.1 \
 	delp.1 \
 	fd2pascal.1 \
 	fp.1 \
 	fpc.1 \
 	fpcmake.1 \
+	fpcmkcfg.1 \
 	fpdoc.1 \
 	fprcp.1 \
+	fpcres.1 \
+	fpcsubst.1 \
+	fppkg.1 \
 	grab_vcsa.1 \
 	h2pas.1 \
 	h2paspp.1 \
 	makeskel.1 \
+	mkxmlrpc.1 \
 	plex.1 \
 	postw32.1 \
 	ppc386.1 \
@@ -73,6 +82,7 @@ MAN1=	bin2obj.1 \
 	ppumove.1 \
 	ptop.1 \
 	pyacc.1 \
+	rmcvsdir.1 \
 	rstconv.1 \
 	unitdiff.1
 MAN5=	fpc.cfg.5 fpcmake.5 ptop.cfg.5
@@ -86,6 +96,10 @@ do-extract:
 	@cd ${WRKDIR} && \
 		${GZIP_CMD} -dc ${_DISTDIR}/${DISTNAME:S/$/.source/}${EXTRACT_SUFX} \
 			| ${TAR} xf - ${FPCSRCDIR}/compiler ${FPCSRCDIR}/rtl ${FPCSRCDIR}/utils/fpcm
+
+post-patch:
+# patch fpc rtl
+	@${REINPLACE_CMD} -i "" -e 's|504000|${OSVERSION}|g' ${WRKDIR}/${FPCSRCDIR}/rtl/freebsd/${ARCH}/cprt0.as
 
 do-build:
 # build fpc compiler

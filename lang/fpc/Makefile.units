@@ -231,6 +231,10 @@ USE_XLIB=	yes
 .	endif
 .endif
 
+.if ${PKGNAMESUFFIX} == "-iconvenc"
+USE_ICONV=	yes
+.endif
+
 post-extract:
 	@cd ${WRKDIR}/${WRKUNITDIR} && \
 		${FIND} ${WRKSRC} -type d -name .svn | ${XARGS} ${RM} -rf

@@ -1,14 +1,14 @@
-lib/fpc/2.2.2/units/i386-freebsd/users/Package.fpc
-lib/fpc/2.2.2/units/i386-freebsd/users/grp.ppu
-lib/fpc/2.2.2/units/i386-freebsd/users/pwd.ppu
-lib/fpc/2.2.2/units/i386-freebsd/users/users.ppu
-lib/fpc/2.2.2/units/i386-freebsd/users/grp.o
-lib/fpc/2.2.2/units/i386-freebsd/users/pwd.o
-lib/fpc/2.2.2/units/i386-freebsd/users/users.o
-lib/fpc/2.2.2/units/i386-freebsd/users/libpgrp.a
-lib/fpc/2.2.2/units/i386-freebsd/users/libppwd.a
-lib/fpc/2.2.2/units/i386-freebsd/users/libpusers.a
-@dirrm lib/fpc/2.2.2/units/i386-freebsd/users
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/grp.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/pwd.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/users.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/grp.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/pwd.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/users.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/libpgrp.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/libppwd.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/libpusers.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users
 @dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
 @dirrmtry lib/fpc/%%PORTVERSION%%/units
 @dirrmtry lib/fpc/%%PORTVERSION%%

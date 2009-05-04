@@ -13,6 +13,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/chmsitemap.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/chmwriter.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/chmfilewriter.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/chmreader.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/htmlindexer.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/chmfiftimain.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/fasthtmlparser.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/htmlutil.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/paslzx.o
@@ -25,6 +27,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/chmsitemap.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/chmwriter.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/chmfilewriter.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/chmreader.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/htmlindexer.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/chmfiftimain.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/libpfasthtmlparser.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/libphtmlutil.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/libppaslzx.a
@@ -37,6 +41,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/libpchmsitemap.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/libpchmwriter.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/libpchmfilewriter.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/libpchmreader.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/libphtmlindexer.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/libpchmfiftimain.a
 @dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm
 @dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
 @dirrmtry lib/fpc/%%PORTVERSION%%/units

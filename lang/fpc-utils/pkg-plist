@@ -1,6 +1,7 @@
 bin/bin2obj
 bin/data2inc
 bin/delp
+bin/fpclasschart
 bin/fpcres
 bin/fpdoc
 bin/fppkg
