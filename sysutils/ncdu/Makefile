@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ncdu
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	sysutils
-MASTER_SITES=	http://dev.yorhel.nl/download/ CENKES
+MASTER_SITES=	http://dev.yorhel.nl/download/ 
 
 MAINTAINER=	corky1951@comcast.net
 COMMENT=	Ncurses du(1)
