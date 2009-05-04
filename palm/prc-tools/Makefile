@@ -20,7 +20,7 @@ DISTFILES=	${DISTNAME}.tar.gz:prc \
 EXTRACT_ONLY=	binutils-2.14.tar.bz2 gdb-5.3.tar.bz2 gcc-2.95.3.tar.bz2 \
 		gcc-3.3.1.tar.bz2
 
-MAINTAINER=	glen.j.barber@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of tools supporting C and C++ programming for Palm OS
 
 # it is unknown whether it could actually be made to work elsewhere,

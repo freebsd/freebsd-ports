@@ -13,7 +13,7 @@ MASTER_SITES=	http://ftp.linux.in.th/palm/develope/ \
 		http://ftp.ksu.edu.tw/FTP/FreeBSD/distfiles/ \
 		${MASTER_SITE_OPENBSD}
 
-MAINTAINER=	glen.j.barber@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Disassembler and other tools for PalmOS binaries
 
 GNU_CONFIGURE=	yes
