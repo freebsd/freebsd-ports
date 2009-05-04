@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	HTTP-Request-AsCGI
-PORTVERSION=	0.5
+PORTVERSION=	0.9
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ COMMENT=	Setup a CGI enviroment from a HTTP::Request
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
-		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
