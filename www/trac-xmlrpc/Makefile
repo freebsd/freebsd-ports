@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides an xml rpc interface to Trac
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools

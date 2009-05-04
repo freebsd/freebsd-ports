@@ -11,7 +11,7 @@ CATEGORIES=	www devel python
 MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add links to the ctxtnav bar from other plugins
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
