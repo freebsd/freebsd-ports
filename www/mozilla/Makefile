@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION}/source \
 DISTFILES=	${PORTNAME}-${PORTVERSION}-source${EXTRACT_SUFX} \
 		libart_lgpl-1${EXTRACT_SUFX}:local
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
 DEPRECATED=	The mozilla team has shifted the development branch of mozilla to \

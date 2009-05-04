@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	calendar/${PORTNAME}/releases/${DISTVERSION}/source
 DISTNAME=	${PORTNAME}-sunbird-${DISTVERSION}-source
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Thunderbird mail client with lightning calendar plugin
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip

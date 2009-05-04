@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	calendar/sunbird/releases/${DISTVERSION}/source
 DISTNAME=	lightning-${PORTNAME}-${DISTVERSION}-source
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Redesign of the Mozilla Calendar with XUL interface
 
 USE_AUTOTOOLS=	libtool:15

@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-xpi
 DISTNAME=	${PORTNAME}-${PORTVERSION}-tb-FreeBSD${OS_VER}-${ARCH}
 EXTRACT_SUFX=	.xpi
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	An integrated calendar for Thunderbird
 
 CONFLICTS=	lightning-0.[0-9]*

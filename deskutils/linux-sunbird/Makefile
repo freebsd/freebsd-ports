@@ -13,7 +13,7 @@ PORTEPOCH=	1
 CATEGORIES=	deskutils
 MASTER_SITE_SUBDIR?=	calendar/${PORTNAME}/releases/${DISTVERSION}/linux-i686/en-US
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Calendaring application branched from Mozilla
 
 post-extract:

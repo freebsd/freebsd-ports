@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nss>=3.11.2:${PORTSDIR}/security/nss
