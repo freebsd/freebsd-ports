@@ -9,16 +9,15 @@ PORTNAME=	fpc
 PORTVERSION=	2.2.4
 PORTREVISION?=	0
 CATEGORIES?=	lang
-MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/source-${PORTVERSION}/:source \
-		ftp://planetmirror.com/pub/fpc/dist/source-${PORTVERSION}/:source \
-		ftp://ftp.jp.freepascal.org/mirror/fpc/dist/source-${PORTVERSION}/:source \
-		ftp://freepascal.stack.nl/pub/fpc/dist/source-${PORTVERSION}/:source \
-		ftp://ftp.no.freepascal.org/pub/fpc/dist/source-${PORTVERSION}/:source \
-		ftp://ftp.us.freepascal.org/pub/fpc/dist/source-${PORTVERSION}/:source \
-		${MASTER_SITE_SOURCEFORGE}:source \
+MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
+		ftp://planetmirror.com/pub/fpc/dist/${PORTVERSION}/source/:source \
+		ftp://ftp.jp.freepascal.org/mirror/fpc/dist/${PORTVERSION}/source/:source \
+		ftp://freepascal.stack.nl/pub/fpc/dist/${PORTVERSION}/source/:source \
+		ftp://ftp.no.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
+		ftp://ftp.us.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
+		${MASTER_SITE_SOURCEFORGE:S|$|freepascal/|}:source \
 		${MASTER_SITE_GOOGLE_CODE}:bin \
 		${MASTER_SITE_LOCAL:S|$|acm/freepascal/:bin|}
-MASTER_SITE_SUBDIR=	freepascal
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME:S/$/.source/}${EXTRACT_SUFX}:source
 DIST_SUBDIR=	freepascal
