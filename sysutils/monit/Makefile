@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	monit
-PORTVERSION=	4.10.1
-PORTREVISION=	1
+PORTVERSION=	5.0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.tildeslash.com/monit/dist/
+MASTER_SITES=	http://www.mmonit.com/monit/dist/
 
 MAINTAINER=	martinp@tildeslash.com
 COMMENT=	Unix system management and monitoring
@@ -62,7 +61,6 @@ post-install:
 	${INSTALL_SCRIPT} -m 644 ${WRKDIR}/${DISTNAME}/LICENSE ${PREFIX}/share/doc/monit/LICENSE
 	${INSTALL_SCRIPT} -m 644 ${WRKDIR}/${DISTNAME}/README ${PREFIX}/share/doc/monit/README
 	${INSTALL_SCRIPT} -m 644 ${WRKDIR}/${DISTNAME}/README.SSL ${PREFIX}/share/doc/monit/README.SSL
-	${INSTALL_SCRIPT} -m 644 ${WRKDIR}/${DISTNAME}/STATUS ${PREFIX}/share/doc/monit/STATUS
 	${INSTALL_SCRIPT} -m 644 ${WRKDIR}/${DISTNAME}/doc/examples.html ${PREFIX}/share/doc/monit/examples.html
 	${INSTALL_SCRIPT} -m 644 ${WRKDIR}/${DISTNAME}/doc/monit.html ${PREFIX}/share/doc/monit/monit.html
 .endif
