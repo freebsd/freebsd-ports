@@ -1,0 +1,8 @@
+pyodbc is a Python module that allows you to use ODBC to connect to
+almost any database from Windows, Linux, OS/X, and more.
+
+It implements the Python Database API Specification v2.0, but
+additional features have been added to simplify database
+programming even more.
+
+WWW:	http://code.google.com/p/pyodbc/
