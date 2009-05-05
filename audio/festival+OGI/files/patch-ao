@@ -1,0 +1,13 @@
+passing `int *' as argument 3 of `getpeername(int, sockaddr *, socklen_t *)' changes signedness
+
+--- ./festival/src/arch/festival/server.cc.orig	Thu Nov 18 23:46:47 1999
++++ ./festival/src/arch/festival/server.cc	Sun Jun 11 17:48:45 2000
+@@ -206,7 +206,7 @@
+     const char *client_hostnum;
+     const char *reason = "";
+     
+-    getpeername(fd,(struct sockaddr *)&peer,SOCKLEN_CAST &addrlen);
++    getpeername(fd,(struct sockaddr *)&peer, (socklen_t *) &addrlen);
+     clienthost = gethostbyaddr((char *)&peer.sin_addr,
+ 			       sizeof(peer.sin_addr),AF_INET);
+     client_hostnum = inet_ntoa(peer.sin_addr);

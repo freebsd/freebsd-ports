@@ -1,0 +1,26 @@
+$FreeBSD$
+$NetBSD: patch-ab,v 1.2 1999/10/11 14:13:49 proff Exp $
+
+--- festival/doc/Makefile	Thu Jun 17 20:29:54 1999
++++ festival/doc/Makefile	Mon Oct 11 06:06:35 1999
+@@ -44,7 +44,7 @@
+ 
+ EXAMPLE_TO_DOCUMENT=
+ 
+-FESTIVAL=$(TOP)/bin/festival --libdir $(TOP)/lib
++FESTIVAL=$(TOP)/src/main/festival --libdir $(TOP)/lib
+ 
+ # Include some of EST documentation.
+ DOCXX_EXTRA_FILES = 
+@@ -72,9 +72,9 @@
+ %.1 : %.head %.options %.tail 
+ 	cat $^ >$@
+ %.options : $(TOP)/src/main/%
+-	$(TOP)/bin/$* -man_options >$@
++	$(FESTIVAL)$* -man_options >$@
+ %.options : $(TOP)/src/main/%.exe
+-	$(TOP)/bin/$* -man_options >$@
++	$(FESTIVAL)$* -man_options >$@
+ 
+ festival.info: festival.texi festfunc.texi festvars.texi festfeat.texi
+ 	@ if [ ! -d info ] ; \
