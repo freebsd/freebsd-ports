@@ -5220,6 +5220,9 @@ Note:  Please add new entries to the beginning of this file.
       <package>
         <name>flock</name>
 	<name>linux-flock</name>
+	<range><lt>2.0</lt></range>
+      </package>
+      <package>
 	<name>linux-firefox-devel</name>
 	<name>linux-seamonkey-devel</name>
 	<range><gt>0</gt></range>
@@ -5275,7 +5278,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-09-24</discovery>
       <entry>2008-09-24</entry>
-      <modified>2008-09-29</modified>
+      <modified>2009-05-05</modified>
     </dates>
   </vuln>
 
