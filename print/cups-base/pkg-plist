@@ -135,6 +135,7 @@ sbin/reject
 %%DATADIR%%/charmaps/iso-8859-7.txt
 %%DATADIR%%/charmaps/iso-8859-8.txt
 %%DATADIR%%/charmaps/iso-8859-9.txt
+%%DATADIR%%/charmaps/jis-x0213.txt
 %%DATADIR%%/charmaps/koi8-r.txt
 %%DATADIR%%/charmaps/koi8-u.txt
 %%DATADIR%%/charmaps/mac-roman.txt
