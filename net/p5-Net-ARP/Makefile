@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-ARP
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for creating ARP packets
+
+BUILD_DEPENDS=	p5-Net-Pcap>=0:${PORTSDIR}/net/p5-Net-Pcap
 
 PERL_CONFIGURE=	yes
 
