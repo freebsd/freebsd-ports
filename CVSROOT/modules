@@ -3506,6 +3506,7 @@ fpc-httpd13                     ports/www/fpc-httpd13
 fpc-httpd20                     ports/www/fpc-httpd20
 fpc-httpd22                     ports/www/fpc-httpd22
 fpc-ibase                       ports/databases/fpc-ibase
+fpc-iconvenc                    ports/converters/fpc-iconvenc
 fpc-ide                         ports/editors/fpc-ide
 fpc-imagemagick                 ports/graphics/fpc-imagemagick
 fpc-imlib                       ports/graphics/fpc-imlib
@@ -20981,7 +20982,6 @@ sourcenav                       ports/devel/sourcenav
 sowing                          ports/textproc/sowing
 sox                             ports/audio/sox
 soxt                            ports/x11-toolkits/SoXt
-sp                              ports/textproc/sp
 spacearyarya                    ports/games/spacearyarya
 spacechart                      ports/astro/spacechart
 spacehulk                       ports/games/spacehulk
