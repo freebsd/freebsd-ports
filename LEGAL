@@ -203,9 +203,12 @@ fasta2*			biology/fasta		May not be sold or incorporated
 						into a commercial product
 fasta3*			biology/fasta3		May not be sold or incorporated
 						into a commercial product
+festival/festival-*	audio/festival+OGI	No commercial use
 festival/festlex_OALD*	audio/festlex-oald	No commercial use
 festival/OGIlexicon-*	audio/festlex-ogi	No commercial use
+festival/OGIresLPC*	audio/festival+OGI	No commercial use
 festival/OGIspanish-*	audio/festogi-spanish	No commercial use
+festival/speech_tools-*	audio/festival+OGI	No commercial use
 festival/voice_abc_di-*	audio/festvox-abc	No commercial use
 festival/voice_aec_di-*	audio/festvox-aec	No commercial use
 festival/voice_hvs_di-*	audio/festvox-hvs	No commercial use
