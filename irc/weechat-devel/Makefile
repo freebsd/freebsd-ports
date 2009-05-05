@@ -11,7 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://flashcode.free.fr/flashtux/weechat/ \
 		http://weechat.flashtux.org/download/
 
-MAINTAINER=	az@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A lightweight and user friendly ncurse based IRC client
 
 USE_BZIP2=	yes
