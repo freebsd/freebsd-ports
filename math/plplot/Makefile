@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	SF
 
-MAINTAINER=	giffunip@tutopia.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific plotting package
 
 LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode \
@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=	--disable-gcw
 .endif
 
 .if defined(WITH_PYTHON)
-BROKEN= 	does not build
+BROKEN= 	does not build with PYTHON
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON=""
 CONFIGURE_ENV+=	PYTHON_VERSION="${PYTHON_VERSION}"
