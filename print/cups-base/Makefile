@@ -24,6 +24,7 @@ CONFLICTS=	LPRng-[0-9]*
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GHOSTSCRIPT=	yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	cupsd
 CFLAGS+=	${PTHREAD_CFLAGS}
@@ -34,6 +35,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" DSOFLAGS="${DSOFLAGS}
 CONFIGURE_ARGS+=	--localstatedir=/var			\
 			--disable-slp				\
 			--disable-gssapi			\
+			--enable-pdftops			\
+			--with-pdftops=gs			\
 			--with-cups-user=${CUPSOWN}		\
 			--with-cups-group=${CUPSGRP}		\
 			--with-system-groups=${CUPSSYSGRP}	\

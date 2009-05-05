@@ -1,6 +1,6 @@
---- configure.orig	2008-04-01 23:59:43.000000000 +0200
-+++ configure	2008-04-02 15:36:59.000000000 +0200
-@@ -6281,6 +6281,7 @@
+--- configure.orig	2009-04-16 22:02:06.000000000 +0200
++++ configure	2009-05-05 20:42:19.000000000 +0200
+@@ -6287,6 +6287,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -8,7 +8,7 @@
  #include <sys/ucred.h>
  _ACEOF
  rm -f conftest.$ac_objext
-@@ -7637,7 +7638,7 @@
+@@ -7643,7 +7644,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -17,7 +17,15 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -16361,7 +16362,7 @@
+@@ -11782,6 +11783,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <netinet/in.h>
+ #include <resolv.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -16791,7 +16793,7 @@
  
  
  	if test x$ac_cv_header_pthread_h = xyes; then
