@@ -18,6 +18,14 @@ COMMENT=	Utility used to gather system configuration information
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+OPTIONS=	DMIDECODE "Include information from the dmidecode tool" Off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_DMIDECODE)
+RUN_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|common.subr|${DATADIR}/common.subr|g' ${WRKSRC}/sysinfo
 	@${REINPLACE_CMD} -e 's|sysinfo.conf|${PREFIX}/etc/sysinfo.conf|g' ${WRKSRC}/sysinfo
@@ -37,4 +45,4 @@ post-install:
 		${CP} -p ${PREFIX}/etc/sysinfo.conf.sample ${PREFIX}/etc/sysinfo.conf ; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
