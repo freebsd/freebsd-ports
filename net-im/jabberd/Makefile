@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.2.7.1
+PORTVERSION=	2.2.8
 CATEGORIES=	net-im
-MASTER_SITES=	http://ftp.xiaoka.com/jabberd2/releases/
+MASTER_SITES=	http://codex.xiaoka.com/pub/jabberd2/releases/
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	mm@FreeBSD.org
