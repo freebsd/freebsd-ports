@@ -6,12 +6,18 @@
 #
 
 PORTNAME=	tintin
-PORTVERSION=	1.99.0
+PORTVERSION=	1.99.4
 CATEGORIES+=	net games
 MASTER_SITES=	SFE
 
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	A client program to help playing MUDs (devel version)
+
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+
+CONFIGURE_ARGS+=	--includedir=${LOCALBASE}/include \
+			--libdir=${LOCALBASE}/lib
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 LATEST_LINK=	${PORTNAME}-devel
 
