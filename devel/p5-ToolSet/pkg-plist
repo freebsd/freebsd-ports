@@ -1,0 +1,7 @@
+%%SITE_PERL%%/ToolSet.pm
+%%SITE_PERL%%/ToolSet.pod
+%%SITE_PERL%%/ToolSet/SWC.pm
+%%SITE_PERL%%/ToolSet/SWC.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ToolSet/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ToolSet
+@dirrmtry %%SITE_PERL%%/ToolSet

@@ -1955,6 +1955,7 @@
     SUBDIR += p5-Time-Warp
     SUBDIR += p5-Time-modules
     SUBDIR += p5-TimeDate
+    SUBDIR += p5-ToolSet
     SUBDIR += p5-TraceFuncs
     SUBDIR += p5-Tree-Binary
     SUBDIR += p5-Tree-Binary-Dictionary
