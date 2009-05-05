@@ -1,0 +1,12 @@
+--- setup.py.orig	2008-12-06 10:34:24.000000000 -0600
++++ setup.py	2009-01-15 14:56:00.648997526 -0600
+@@ -40,7 +40,8 @@
+         # Other posix-like: Linux, Solaris, etc.
+ 
+         # Python functions take a lot of 'char *' that really should be const.  gcc complains about this *a lot*
+-        extra_compile_args = ['-Wno-write-strings']
++        extra_compile_args = ['-Wno-write-strings', '-I/usr/local/include', '-L/usr/local/lib']
++        extra_link_args = ['-L/usr/local/lib']
+ 
+         # What is the proper way to detect iODBC, MyODBC, unixODBC, etc.?
+         libraries.append('odbc')

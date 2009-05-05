@@ -1,0 +1,7 @@
+%%PYTHON_SITELIBDIR%%/pyodbc.so
+%%PORTDOCS%%%%DOCSDIR%%/docs.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%/styles.css
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
