@@ -157,6 +157,7 @@
     SUBDIR += festalon
     SUBDIR += festdoc
     SUBDIR += festival
+    SUBDIR += festival+OGI
     SUBDIR += festlex-cmu
     SUBDIR += festlex-czech
     SUBDIR += festlex-ifd
