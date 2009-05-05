@@ -27,7 +27,6 @@ post-configure:
 	-e 's#%%PREFIX%%#${PREFIX}#g' \
 	-e 's#%%PHPSURVEYORURL%%#${PHPSURVEYORURL}#g' \
 	-e 's#%%PHPSURVEYORDIR%%#${PHPSURVEYORDIR}#g' \
-	pkg-message > ${PKGMESSAGE}
 
 do-install:
 	${MKDIR} ${WWWDIR}
