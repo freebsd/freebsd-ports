@@ -1,14 +1,24 @@
 bin/osgg
 %%DATADIR%%/Bandal.ttf
 %%DATADIR%%/base.txt
+%%DATADIR%%/boom.ogg
 %%DATADIR%%/enemy.txt
 %%DATADIR%%/icon.png
+%%DATADIR%%/laser.ogg
 %%DATADIR%%/levels/0.level
 %%DATADIR%%/levels/1.level
+%%DATADIR%%/levels/10.level
+%%DATADIR%%/levels/11.level
+%%DATADIR%%/levels/12.level
 %%DATADIR%%/levels/2.level
 %%DATADIR%%/levels/3.level
 %%DATADIR%%/levels/4.level
 %%DATADIR%%/levels/5.level
+%%DATADIR%%/levels/6.level
+%%DATADIR%%/levels/7.level
+%%DATADIR%%/levels/8.level
+%%DATADIR%%/levels/9.level
+%%DATADIR%%/nozzloop.ogg
 %%DATADIR%%/ship.txt
 @dirrm %%DATADIR%%/levels
 @dirrm %%DATADIR%%
