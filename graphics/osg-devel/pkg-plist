@@ -569,6 +569,7 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgvolume.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgwidget.so
 %%PDF%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_pdf.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_pic.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_ply.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_png.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_pnm.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_rgb.so
