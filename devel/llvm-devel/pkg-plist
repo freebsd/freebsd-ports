@@ -1,26 +1,5 @@
 bin/bugpoint
-bin/ccc
 bin/ccc-analyzer
-bin/ccclib/Arguments.py
-bin/ccclib/Arguments.pyc
-bin/ccclib/Driver.py
-bin/ccclib/Driver.pyc
-bin/ccclib/HostInfo.py
-bin/ccclib/HostInfo.pyc
-bin/ccclib/Jobs.py
-bin/ccclib/Jobs.pyc
-bin/ccclib/Phases.py
-bin/ccclib/Phases.pyc
-bin/ccclib/ToolChain.py
-bin/ccclib/ToolChain.pyc
-bin/ccclib/Tools.py
-bin/ccclib/Tools.pyc
-bin/ccclib/Types.py
-bin/ccclib/Types.pyc
-bin/ccclib/Util.py
-bin/ccclib/Util.pyc
-bin/ccclib/__init__.py
-bin/ccclib/__init__.pyc
 bin/clang
 bin/gccas
 bin/gccld
@@ -89,6 +68,7 @@ include/llvm/ADT/StringMap.h
 include/llvm/ADT/StringSet.h
 include/llvm/ADT/Tree.h
 include/llvm/ADT/Trie.h
+include/llvm/ADT/Triple.h
 include/llvm/ADT/UniqueVector.h
 include/llvm/ADT/VectorExtras.h
 include/llvm/ADT/ilist.h
@@ -309,6 +289,8 @@ include/llvm/Support/StringPool.h
 include/llvm/Support/SystemUtils.h
 include/llvm/Support/TargetFolder.h
 include/llvm/Support/Timer.h
+include/llvm/Support/TypeBuilder.h
+include/llvm/Support/ValueHandle.h
 include/llvm/Support/raw_ostream.h
 include/llvm/Support/type_traits.h
 include/llvm/SymbolTableListTraits.h
@@ -381,11 +363,14 @@ lib/LLVMCellSPUAsmPrinter.o
 lib/LLVMCellSPUCodeGen.o
 lib/LLVMCppBackend.o
 lib/LLVMExecutionEngine.o
-lib/LLVMIA64.o
+lib/LLVMIA64AsmPrinter.o
+lib/LLVMIA64CodeGen.o
 lib/LLVMInterpreter.o
 lib/LLVMJIT.o
 lib/LLVMMSIL.o
-lib/LLVMMips.o
+lib/LLVMMSP430.o
+lib/LLVMMipsAsmPrinter.o
+lib/LLVMMipsCodeGen.o
 lib/LLVMPIC16.o
 lib/LLVMPowerPCAsmPrinter.o
 lib/LLVMPowerPCCodeGen.o
@@ -438,6 +423,7 @@ libexec/clang-cc
 %%DATADIR%%/sorttable.js
 %%DOCSDIR%%/html.tar.gz
 %%DOCSDIR%%/html/AliasAnalysis.html
+%%DOCSDIR%%/html/AnalyzerRegions.html
 %%DOCSDIR%%/html/BitCodeFormat.html
 %%DOCSDIR%%/html/Bugpoint.html
 %%DOCSDIR%%/html/CFEBuildInstrs.html
@@ -489,6 +475,7 @@ libexec/clang-cc
 %%DOCSDIR%%/html/Lexicon.html
 %%DOCSDIR%%/html/LinkTimeOptimization.html
 %%DOCSDIR%%/html/MakefileGuide.html
+%%DOCSDIR%%/html/PTHInternals.html
 %%DOCSDIR%%/html/Passes.html
 %%DOCSDIR%%/html/ProgrammersManual.html
 %%DOCSDIR%%/html/Projects.html
@@ -497,9 +484,12 @@ libexec/clang-cc
 %%DOCSDIR%%/html/SystemLibrary.html
 %%DOCSDIR%%/html/TableGenFundamentals.html
 %%DOCSDIR%%/html/TestingGuide.html
+%%DOCSDIR%%/html/UsersManual.html
 %%DOCSDIR%%/html/UsingLibraries.html
 %%DOCSDIR%%/html/WritingAnLLVMBackend.html
 %%DOCSDIR%%/html/WritingAnLLVMPass.html
+%%DOCSDIR%%/html/clang/clang.html
+%%DOCSDIR%%/html/clang/manpage.css
 %%DOCSDIR%%/html/doxygen.css
 %%DOCSDIR%%/html/img/Debugging.gif
 %%DOCSDIR%%/html/img/libdeps.gif
@@ -527,6 +517,7 @@ libexec/clang-cc
 %%DOCSDIR%%/html/tutorial/OCamlLangImpl7.html
 %%DOCSDIR%%/html/tutorial/index.html
 %%DOCSDIR%%/ps/bugpoint.ps
+%%DOCSDIR%%/ps/clang.ps
 %%DOCSDIR%%/ps/llc.ps
 %%DOCSDIR%%/ps/lli.ps
 %%DOCSDIR%%/ps/llvm-ar.ps
@@ -567,11 +558,11 @@ libexec/clang-cc
 @dirrm include/llvm-c/Transforms
 @dirrm include/llvm-c
 @dirrm include/llvm
-@dirrm bin/ccclib
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%/ps
 @dirrm %%DOCSDIR%%/html/tutorial
 @dirrm %%DOCSDIR%%/html/img
+@dirrm %%DOCSDIR%%/html/clang
 @dirrm %%DOCSDIR%%/html/CommandGuide
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
