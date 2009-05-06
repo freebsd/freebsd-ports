@@ -58,7 +58,7 @@ pre-install:
 	${SED} -e "s:^${WRKSRC}/qcad/${dir}:@dirrm share/qcad/${dir}:g" >> \
 		${PLIST}
 .endfor
-	@${ECHO_CMD} '@dirrm share/qcad' >> ${PLIST}
+	@${ECHO_CMD} '@unexec ${RMDIR} %D/share/qcad 2> /dev/null || true' >> ${PLIST}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qcad/qcad ${PREFIX}/bin/qcad
