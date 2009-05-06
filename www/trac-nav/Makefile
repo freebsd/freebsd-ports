@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	trac${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A fully customizable navigation bar for Trac
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools

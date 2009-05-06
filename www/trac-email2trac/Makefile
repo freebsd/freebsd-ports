@@ -11,7 +11,7 @@ CATEGORIES=	www devel python
 MASTER_SITES=	ftp://ftp.sara.nl/pub/outgoing/
 PKGNAMEPREFIX=	trac-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Convert email to trac tickets
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
