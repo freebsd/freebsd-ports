@@ -10,7 +10,6 @@ libdata/pkgconfig/xcb-icccm.pc
 libdata/pkgconfig/xcb-image.pc
 libdata/pkgconfig/xcb-keysyms.pc
 libdata/pkgconfig/xcb-reply.pc
-libdata/pkgconfig/xcb-wm.pc
 libdata/pkgconfig/xcb-renderutil.pc
 lib/libxcb-aux.so.0
 lib/libxcb-aux.so
@@ -32,7 +31,7 @@ lib/libxcb-image.so.0
 lib/libxcb-image.so
 lib/libxcb-image.la
 lib/libxcb-image.a
-lib/libxcb-keysyms.so.0
+lib/libxcb-keysyms.so.1
 lib/libxcb-keysyms.so
 lib/libxcb-keysyms.la
 lib/libxcb-keysyms.a
@@ -40,10 +39,6 @@ lib/libxcb-reply.so.1
 lib/libxcb-reply.so
 lib/libxcb-reply.la
 lib/libxcb-reply.a
-lib/libxcb-wm.so.0
-lib/libxcb-wm.so
-lib/libxcb-wm.la
-lib/libxcb-wm.a
 lib/libxcb-render-util.so.0
 lib/libxcb-render-util.so
 lib/libxcb-render-util.la
@@ -58,5 +53,4 @@ include/xcb/xcb_image.h
 include/xcb/xcb_keysyms.h
 include/xcb/xcb_pixel.h
 include/xcb/xcb_reply.h
-include/xcb/xcb_wm.h
 include/xcb/xcb_renderutil.h
