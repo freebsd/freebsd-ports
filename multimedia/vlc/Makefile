@@ -338,7 +338,7 @@ CONFIGURE_ARGS+=--disable-dirac
 .endif
 
 .if defined(WITH_SCHROEDINGER) && !defined(WITHOUT_SCHROEDINGER)
-LIB_DEPENDS+=	schroedinger-1.0.1:${PORTSDIR}/multimedia/schroedinger
+LIB_DEPENDS+=	schroedinger-1.0.2:${PORTSDIR}/multimedia/schroedinger
 CONFIGURE_ARGS+=--enable-schroedinger
 .else
 CONFIGURE_ARGS+=--disable-schroedinger
