@@ -71,12 +71,12 @@ share/locale/lv/LC_MESSAGES/xfce4-session.mo
 share/locale/mk/LC_MESSAGES/xfce4-session.mo
 share/locale/mr/LC_MESSAGES/xfce4-session.mo
 share/locale/ms/LC_MESSAGES/xfce4-session.mo
-share/locale/nb_NO/LC_MESSAGES/xfce4-session.mo
+share/locale/nb/LC_MESSAGES/xfce4-session.mo
 share/locale/nl/LC_MESSAGES/xfce4-session.mo
 share/locale/pa/LC_MESSAGES/xfce4-session.mo
 share/locale/pl/LC_MESSAGES/xfce4-session.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-session.mo
-share/locale/pt_PT/LC_MESSAGES/xfce4-session.mo
+share/locale/pt/LC_MESSAGES/xfce4-session.mo
 share/locale/ro/LC_MESSAGES/xfce4-session.mo
 share/locale/ru/LC_MESSAGES/xfce4-session.mo
 share/locale/si/LC_MESSAGES/xfce4-session.mo
@@ -105,9 +105,9 @@ share/xfce4/tips/tips.dat
 share/icons/hicolor/48x48/apps/xfsm-logout.png
 share/icons/hicolor/48x48/apps/xfsm-reboot.png
 @dirrm etc/xdg/autostart
-@dirrm etc/xdg/xfce4/xfconf/xfce-perchannel-xml
-@dirrm etc/xdg/xfce4/xfconf
-@dirrm etc/xdg/xfce4
+@dirrmtry etc/xdg/xfce4/xfconf/xfce-perchannel-xml
+@dirrmtry etc/xdg/xfce4/xfconf
+@dirrmtry etc/xdg/xfce4
 @dirrmtry etc/xdg
 @dirrm include/xfce4/xfce4-session-4.6/libxfsm
 @dirrm include/xfce4/xfce4-session-4.6

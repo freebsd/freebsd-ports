@@ -139,12 +139,12 @@ share/locale/ku/LC_MESSAGES/libexo-0.3.mo
 share/locale/lt/LC_MESSAGES/libexo-0.3.mo
 share/locale/lv/LC_MESSAGES/libexo-0.3.mo
 share/locale/mk/LC_MESSAGES/libexo-0.3.mo
-share/locale/nb_NO/LC_MESSAGES/libexo-0.3.mo
+share/locale/nb/LC_MESSAGES/libexo-0.3.mo
 share/locale/nl/LC_MESSAGES/libexo-0.3.mo
 share/locale/pa/LC_MESSAGES/libexo-0.3.mo
 share/locale/pl/LC_MESSAGES/libexo-0.3.mo
 share/locale/pt_BR/LC_MESSAGES/libexo-0.3.mo
-share/locale/pt_PT/LC_MESSAGES/libexo-0.3.mo
+share/locale/pt/LC_MESSAGES/libexo-0.3.mo
 share/locale/ro/LC_MESSAGES/libexo-0.3.mo
 share/locale/ru/LC_MESSAGES/libexo-0.3.mo
 share/locale/sq/LC_MESSAGES/libexo-0.3.mo
@@ -161,6 +161,7 @@ share/xfce4/doc/C/images/exo-preferred-applications-internet.png
 share/xfce4/doc/C/images/exo-preferred-applications-utilities.png
 share/xfce4/doc/C/images/exo-preferred-applications-webbrowser-custom.png
 share/xfce4/doc/C/images/exo-preferred-applications-webbrowser-menu.png
+share/xfce4/doc/da/exo-preferred-applications.html
 share/xfce4/doc/fr/exo-preferred-applications.html
 share/xfce4/doc/fr/images/exo-preferred-applications-internet.png
 share/xfce4/doc/fr/images/exo-preferred-applications-utilities.png
@@ -171,11 +172,17 @@ share/xfce4/doc/es/images/exo-preferred-applications-utilities.png
 share/xfce4/doc/es/images/exo-preferred-applications-webbrowser-custom.png
 share/xfce4/doc/es/images/exo-preferred-applications-webbrowser-menu.png
 share/xfce4/doc/es/exo-preferred-applications.html
+share/xfce4/doc/gl/exo-preferred-applications.html
 share/xfce4/doc/id/images/exo-preferred-applications-internet.png
 share/xfce4/doc/id/images/exo-preferred-applications-utilities.png
 share/xfce4/doc/id/images/exo-preferred-applications-webbrowser-custom.png
 share/xfce4/doc/id/images/exo-preferred-applications-webbrowser-menu.png
 share/xfce4/doc/id/exo-preferred-applications.html
+share/xfce4/doc/it/images/exo-preferred-applications-internet.png
+share/xfce4/doc/it/images/exo-preferred-applications-utilities.png
+share/xfce4/doc/it/images/exo-preferred-applications-webbrowser-custom.png
+share/xfce4/doc/it/images/exo-preferred-applications-webbrowser-menu.png
+share/xfce4/doc/it/exo-preferred-applications.html
 share/xfce4/doc/ja/exo-preferred-applications.html
 share/xfce4/doc/ja/images/exo-preferred-applications-internet.png
 share/xfce4/doc/ja/images/exo-preferred-applications-utilities.png
@@ -248,12 +255,16 @@ share/xfce4/helpers/xterm.desktop
 @dirrm share/pixmaps/exo-0.3
 @dirrmtry share/xfce4/doc/C/images
 @dirrmtry share/xfce4/doc/C
+@dirrmtry share/xfce4/doc/da
 @dirrmtry share/xfce4/doc/es/images
 @dirrmtry share/xfce4/doc/es
 @dirrmtry share/xfce4/doc/fr/images
 @dirrmtry share/xfce4/doc/fr
+@dirrmtry share/xfce4/doc/gl
 @dirrmtry share/xfce4/doc/id/images
 @dirrmtry share/xfce4/doc/id
+@dirrmtry share/xfce4/doc/it/images
+@dirrmtry share/xfce4/doc/it
 @dirrmtry share/xfce4/doc/ja/images
 @dirrmtry share/xfce4/doc/ja
 @dirrmtry share/xfce4/doc/pt_BR/images
