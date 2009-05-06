@@ -1,5 +1,3 @@
-bin/sb_run.sh
-bin/sb_test_ps.sh
 bin/sysbench
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
