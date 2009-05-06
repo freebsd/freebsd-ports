@@ -212,6 +212,7 @@
     SUBDIR += finfo
     SUBDIR += fio
     SUBDIR += flasher
+    SUBDIR += flashrom
     SUBDIR += flexbackup
     SUBDIR += flock
     SUBDIR += flog
