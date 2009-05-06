@@ -7,7 +7,7 @@
 
 PORTNAME=	FlightGear
 PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	ftp://ftp.de.flightgear.org/pub/fgfs/Source/ \
@@ -31,7 +31,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/flightgear-data
 
 .if defined(WITH_OSG_DEVEL)
-LIB_DEPENDS+=	osg.57:${PORTSDIR}/graphics/osg-devel
+LIB_DEPENDS+=	osg.59:${PORTSDIR}/graphics/osg-devel
 .else
 LIB_DEPENDS+=	osg.55:${PORTSDIR}/graphics/osg
 .endif
