@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2748fdde-3a3c-11de-bbc5-00e0815b8da8">
+    <topic>quagga -- Denial of Service</topic>
+    <affects>
+      <package>
+	<name>quagga</name>
+	<range><lt>0.99.11_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Debian Security Team reports:</p>
+	<blockquote cite="http://www.securityfocus.com/archive/1/503220">
+	  <p>It was discovered that Quagga, an IP routing daemon, could
+	    no longer process the Internet routing table due to broken
+	    handling of multiple 4-byte AS numbers in an AS path. If such
+	    a prefix is received, the BGP daemon crashes with an assert
+	    failure leading to a denial of service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>34656</bid>
+      <mlist msgid="Pine.LNX.4.64.0904301931590.24373@nacho.alt.net">http://lists.quagga.net/pipermail/quagga-dev/2009-April/006541.html</mlist>
+    </references>
+    <dates>
+      <discovery>2009-05-04</discovery>
+      <entry>2009-05-06</entry>
+    </dates>
+  </vuln>
 
   <vuln vid="e3e30d99-58a8-4a3f-8059-a8b7cd59b881">
     <topic>openfire -- Openfire No Password Changes Security Bypass</topic>
