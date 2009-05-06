@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A generic tags frontend for trac
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac

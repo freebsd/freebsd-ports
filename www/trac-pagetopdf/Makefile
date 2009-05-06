@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	pagetopdfplugin-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Export trac wiki pages as PDFs
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \

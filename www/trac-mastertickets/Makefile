@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Support for ticket dependencies
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
