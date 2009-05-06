@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime
-PORTVERSION=	0.47
+PORTVERSION=	0.49
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	A date and time object
 
-RUN_DEPENDS=	${SITE_PERL}/Class/Factory/Util.pm:${PORTSDIR}/devel/p5-Class-Factory-Util \
-		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
-		${SITE_PERL}/DateTime/TimeZone.pm:${PORTSDIR}/devel/p5-DateTime-TimeZone \
-		${SITE_PERL}/DateTime/Locale.pm:${PORTSDIR}/devel/p5-DateTime-Locale \
-		${SITE_PERL}/Time/Local.pm:${PORTSDIR}/devel/p5-Time-Local
+RUN_DEPENDS=	p5-DateTime-Locale>=0.41:${PORTSDIR}/devel/p5-DateTime-Locale \
+		p5-DateTime-TimeZone>=0.59:${PORTSDIR}/devel/p5-DateTime-TimeZone \
+		p5-Params-Validate>=0.76:${PORTSDIR}/devel/p5-Params-Validate
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -37,8 +35,9 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-Time-Local>=1.04:${PORTSDIR}/devel/p5-Time-Local
 .endif
 
 .include <bsd.port.post.mk>
