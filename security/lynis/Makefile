@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lynis
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.rootkit.nl/files/ \
 		http://downloads.rootkit.nl/
@@ -35,7 +35,7 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for f in CHANGELOG INSTALL FAQ LICENSE TODO README
+.for f in CHANGELOG INSTALL FAQ LICENSE README
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif

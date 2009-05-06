@@ -4,10 +4,17 @@ etc/lynis/default.prf
 %%DATADIR%%/db/integrity.db
 %%DATADIR%%/db/malware.db
 %%DATADIR%%/db/sbl.db
+%%DATADIR%%/dev/TODO
 %%DATADIR%%/dev/README
 %%DATADIR%%/dev/build-lynis.sh
 %%DATADIR%%/dev/files.dat
 %%DATADIR%%/dev/openbsd/+CONTENTS
+%%DATADIR%%/plugins/README
+%%DATADIR%%/plugins/compliance_pci
+%%DATADIR%%/plugins/files_permissions
+%%DATADIR%%/plugins/malware_rootkit
+%%DATADIR%%/plugins/malware_webvuln
+%%DATADIR%%/plugins/webserver_data
 %%DATADIR%%/include/binaries
 %%DATADIR%%/include/consts
 %%DATADIR%%/include/functions
@@ -51,15 +58,10 @@ etc/lynis/default.prf
 %%DATADIR%%/include/tests_time
 %%DATADIR%%/include/tests_virtualization
 %%DATADIR%%/include/tests_webservers
-%%DATADIR%%/plugins/README
-%%DATADIR%%/plugins/compliance_pci
-%%DATADIR%%/plugins/malware_rootkit
-%%DATADIR%%/plugins/malware_webvuln
-%%DATADIR%%/plugins/webserver_data
-@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%/dev/openbsd
 @dirrm %%DATADIR%%/dev
 @dirrm %%DATADIR%%/db
+@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%
 @dirrm etc/lynis
