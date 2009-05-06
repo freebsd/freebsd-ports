@@ -59,6 +59,7 @@ EXTRA_CFLAGS+=	`pkg-config --cflags WebKitGtk` -I${LOCALBASE}/include/WebKit/web
 EXTRA_LIBS+=	`pkg-config --libs WebKitGtk`
 CONFLICTS=	epiphany-[1-9]*
 PLIST_SUB+=	GECKO="@comment "
+PLUGIN_SYMLINK=	18
 .else
 USE_GECKO+=	firefox libxul
 CONFIGURE_ARGS+=	--with-gecko=${GECKO} \
@@ -67,18 +68,17 @@ CONFIGURE_ARGS+=	--with-gecko=${GECKO} \
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 CONFLICTS=	epiphany-webkit-[1-9]*
 PLIST_SUB+=	GECKO=""
+.if ${GECKO:Mlibxul}!=""
+PLUGIN_SYMLINK=	19
+.else
+PLUGIN_SYMLINK=	18
+.endif
 .endif
 
 NO_WERROR=	yes
 # allow build with more warnings enabled
 .if defined(NO_WERROR)
 CONFIGURE_ARGS+=	--enable-compile-warnings=no
-.endif
-
-.if ${GECKO:Mlibxul}!=""
-PLUGIN_SYMLINK=	19
-.else
-PLUGIN_SYMLINK=	18
 .endif
 
 .if ${HAVE_GNOME:Mpygnome2}!=""
