@@ -16,6 +16,8 @@ COMMENT=	An open source Clipper-compatible compiler
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 
+BROKEN=		does not build
+
 # Not 64-bit clean
 ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}
