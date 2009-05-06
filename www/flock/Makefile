@@ -7,6 +7,7 @@
 
 PORTNAME=	flock
 DISTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.osuosl.org/pub/${PORTNAME}/releases/${PORTVERSION}/ \
 		http://flock.vo.llnwd.net/o23/archive/${PORTNAME}/releases/${PORTVERSION}/

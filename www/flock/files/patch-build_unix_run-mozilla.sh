@@ -5,7 +5,7 @@
  if [ `uname -s` != "SunOS" -o -h "$MOZ_DIST_BIN/libmozjs.so" ]
  then
 -	LD_LIBRARY_PATH=${MOZ_DIST_BIN}:${MOZ_DIST_BIN}/plugins:${MRE_HOME}${LD_LIBRARY_PATH+":$LD_LIBRARY_PATH"}
-+	LD_LIBRARY_PATH=${MOZ_DIST_BIN}:${MOZ_DIST_BIN}/plugins:%%LOCALBASE%%/lib/browser_plugins/symlinks/gecko18:%%LOCALBASE%%/lib/npapi/symlinks/flock:${MRE_HOME}${LD_LIBRARY_PATH+":$LD_LIBRARY_PATH"}
++	LD_LIBRARY_PATH=${MOZ_DIST_BIN}:${MOZ_DIST_BIN}/plugins:%%LOCALBASE%%/lib/browser_plugins/symlinks/gecko19:%%LOCALBASE%%/lib/npapi/symlinks/flock:${MRE_HOME}${LD_LIBRARY_PATH+":$LD_LIBRARY_PATH"}
  fi 
  
  if [ -n "$LD_LIBRARYN32_PATH" ]
