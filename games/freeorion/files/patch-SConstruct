@@ -1,6 +1,6 @@
---- ./SConstruct.orig	Sat Jul 21 15:53:06 2007
-+++ ./SConstruct	Wed Aug  1 08:00:59 2007
-@@ -188,6 +188,15 @@
+--- SConstruct.orig	2009-03-16 18:14:04.000000000 +0100
++++ SConstruct	2009-03-16 20:03:14.000000000 +0100
+@@ -197,6 +197,15 @@
          else:
              print 'Configuring unknown system (assuming the system is POSIX-like) ...'
  
@@ -16,7 +16,7 @@
          # Python
          import distutils.sysconfig
          if str(Platform()) == 'win32':
-@@ -207,6 +216,8 @@
+@@ -216,6 +225,8 @@
              matches = regex.findall(distutils.sysconfig.get_config_var('LDLIBRARY'))
              if len(matches):
                  python_libname = matches[0]
@@ -25,19 +25,19 @@
              else:
                  print 'Unable to determine the name of the Python runtime library.  Terminating....'
                  Exit(1)
-@@ -253,15 +264,6 @@
-                 env.AppendUnique(LIBS = [
+@@ -265,15 +276,6 @@
                      BoostLibWin32Name('python', env)
                      ])
--
+ 
 -            # pthreads
 -            if str(Platform()) == 'posix':
 -                if env['multithreaded']:
 -                    if conf.CheckCHeader('pthread.h') and conf.CheckLib('pthread', 'pthread_create', autoadd = 0):
--                        env.AppendUnique(CCFLAGS = ' -pthread')
--                        env.AppendUnique(LINKFLAGS = ' -pthread')
+-                        env.AppendUnique(CCFLAGS = '-pthread')
+-                        env.AppendUnique(LINKFLAGS = '-pthread')
 -                    else:
 -                        Exit(1)
- 
+-
              # GL and GLU
              if str(Platform()) == 'win32':
+                 env.AppendUnique(LIBS = [

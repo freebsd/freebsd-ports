@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	freeorion
-PORTVERSION=	0.3.1.20071206
-PORTREVISION=	3
+PORTVERSION=	0.3.12.3007
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.alepulver.com.ar/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	oliver
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Open-source, platform independent galactic conquest game
 
 LIB_DEPENDS=	GiGi.0:${PORTSDIR}/x11-toolkits/gigi \
@@ -19,7 +19,10 @@ LIB_DEPENDS=	GiGi.0:${PORTSDIR}/x11-toolkits/gigi \
 		graph:${PORTSDIR}/graphics/graphviz \
 		log4cpp.4:${PORTSDIR}/devel/log4cpp \
 		vorbisfile.5:${PORTSDIR}/audio/libvorbis
+RUN_DEPENDS=	${LOCALBASE}/lib/libbulletmath.a:${PORTSDIR}/devel/bullet
+BUILD_DEPENDS=	${LOCALBASE}/lib/libbulletmath.a:${PORTSDIR}/devel/bullet
 
+USE_GCC=	4.3
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_SCONS=	yes
@@ -28,13 +31,15 @@ SCONS_BUILDENV=	PYTHON_LIB=${PYTHON_VERSION}
 USE_SDL=	sdl net
 WRKSRC=		${WRKDIR}/${PORTNAME}/FreeOrion
 
-BROKEN=		does not compile with new graphviz
-
 .if defined(WITH_DEBUG)
 SCONS_ARGS+=	debug=1
 .else
 SCONS_ARGS+=	release=yes
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|ND_coord_i|ND_coord|g' \
+		${WRKSRC}/UI/TechTreeWnd.cpp
 
 maint-gen-distfile:
 	@if [ -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
