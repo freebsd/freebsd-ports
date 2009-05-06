@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	schroedinger
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.diracvideo.org/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
