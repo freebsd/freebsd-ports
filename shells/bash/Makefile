@@ -43,6 +43,7 @@ EXTRA_PATCHES+=		${PATCHDIR}/xpatch-colonbreakswords
 MAN1=			bash.1 bashbug.1
 INFO=			bash
 
+MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=		yes
 USE_BISON=		build
 
