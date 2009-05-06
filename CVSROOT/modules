@@ -6516,6 +6516,7 @@ kde4-l10n-tr                    ports/misc/kde4-l10n-tr
 kde4-l10n-wa                    ports/misc/kde4-l10n-wa
 kde4-shared-mime-info           ports/misc/kde4-shared-mime-info
 kde4-style-polyester            ports/x11-themes/kde4-style-polyester
+kde4-windeco-crystal            ports/x11-themes/kde4-windeco-crystal
 kde4-windeco-dekorator          ports/x11-themes/kde4-windeco-dekorator
 kde4-xdg-env                    ports/misc/kde4-xdg-env
 kde_poster                      ports/print/kde_poster
@@ -7723,6 +7724,7 @@ lighttpd                        ports/www/lighttpd
 lila-xfwm4                      ports/x11-themes/lila-xfwm4
 lilurl                          ports/www/lilurl
 lilypond                        ports/print/lilypond
+limesurvey                      ports/www/limesurvey
 limewire                        ports/net-p2p/limewire
 linalg                          ports/math/linalg
 linc                            ports/net/linc
@@ -9382,7 +9384,6 @@ nqc                             ports/lang/nqc
 nqueens                         ports/benchmarks/nqueens
 nrg                             ports/net-mgmt/nrg
 nrg2iso                         ports/sysutils/nrg2iso
-nrpe                            ports/net-mgmt/nrpe
 nrpe2                           ports/net-mgmt/nrpe2
 nrpep                           ports/net-mgmt/nrpep
 ns                              ports/net/ns
@@ -12964,6 +12965,7 @@ p5-Tk-ResizeButton              ports/x11-toolkits/p5-Tk-ResizeButton
 p5-Tk-Splashscreen              ports/x11-toolkits/p5-Tk-Splashscreen
 p5-Tk-TableMatrix               ports/x11-toolkits/p5-Tk-TableMatrix
 p5-Tk-XMLViewer                 ports/textproc/p5-Tk-XMLViewer
+p5-ToolSet                      ports/devel/p5-ToolSet
 p5-TraceFuncs                   ports/devel/p5-TraceFuncs
 p5-Tree-Authz                   ports/security/p5-Tree-Authz
 p5-Tree-Binary                  ports/devel/p5-Tree-Binary
@@ -16433,6 +16435,7 @@ p5-tk-resizebutton              ports/x11-toolkits/p5-Tk-ResizeButton
 p5-tk-splashscreen              ports/x11-toolkits/p5-Tk-Splashscreen
 p5-tk-tablematrix               ports/x11-toolkits/p5-Tk-TableMatrix
 p5-tk-xmlviewer                 ports/textproc/p5-Tk-XMLViewer
+p5-toolset                      ports/devel/p5-ToolSet
 p5-tracefuncs                   ports/devel/p5-TraceFuncs
 p5-tree-authz                   ports/security/p5-Tree-Authz
 p5-tree-binary                  ports/devel/p5-Tree-Binary
@@ -17834,7 +17837,6 @@ phprecipebook                   ports/www/phprecipebook
 phprojekt                       ports/deskutils/phprojekt
 phproxy                         ports/www/phproxy
 phpsecinfo                      ports/security/phpsecinfo
-phpsurveyor                     ports/www/phpsurveyor
 phpsview                        ports/graphics/phpsview
 phpsysinfo                      ports/www/phpsysinfo
 phpsysinfo-dev                  ports/www/phpsysinfo-dev
@@ -18847,6 +18849,7 @@ py-numeric                      ports/math/py-numeric
 py-numpy                        ports/math/py-numpy
 py-oauth                        ports/net/py-oauth
 py-ocempgui                     ports/devel/py-ocempgui
+py-odbc                         ports/databases/py-odbc
 py-ode                          ports/devel/py-ode
 py-odfpy                        ports/devel/py-odfpy
 py-ogg                          ports/audio/py-ogg
