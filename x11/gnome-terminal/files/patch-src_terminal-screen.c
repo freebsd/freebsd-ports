@@ -1,5 +1,5 @@
---- src/terminal-screen.c.orig	2009-05-03 15:29:53.153369000 -0400
-+++ src/terminal-screen.c	2009-05-03 15:30:35.000000000 -0400
+--- src/terminal-screen.c.orig	2009-04-12 15:40:23.000000000 +0200
++++ src/terminal-screen.c	2009-05-06 00:30:39.000000000 +0200
 @@ -18,6 +18,15 @@
  
  #include <config.h>
@@ -16,7 +16,7 @@
  #include <string.h>
  #include <stdlib.h>
  #include <unistd.h>
-@@ -1744,10 +1753,22 @@ terminal_screen_get_dynamic_icon_title (
+@@ -1744,10 +1753,22 @@
  char*
  terminal_screen_get_current_dir (TerminalScreen *screen)
  {
@@ -39,7 +39,7 @@
    TerminalScreenPrivate *priv = screen->priv;
    int fgpid;
    guint i;
-@@ -1767,6 +1788,7 @@ terminal_screen_get_current_dir (Termina
+@@ -1767,6 +1788,7 @@
    if (fgpid == -1)
      return g_strdup (priv->initial_working_directory);
  
@@ -47,7 +47,7 @@
    /* Try to get the working directory using various OS-specific mechanisms */
    for (i = 0; i < G_N_ELEMENTS (patterns); ++i)
      {
-@@ -1804,6 +1826,45 @@ terminal_screen_get_current_dir (Termina
+@@ -1804,6 +1826,48 @@
              return working_dir;
          }
      }
@@ -83,8 +83,11 @@
 +#endif /* HAVE_KINFO_GETFILE */
 +      if (kif->kf_fd == KF_FD_TYPE_CWD)
 +        {
++          char *working_dir;
++
++          working_dir = g_strdup (kif->kf_path);
 +          g_free (freep);
-+          return g_strdup (kif->kf_path);
++          return working_dir;
 +        }
 +    }
 +  g_free (freep);
