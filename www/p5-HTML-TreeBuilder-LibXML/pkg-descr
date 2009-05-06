@@ -1,0 +1,12 @@
+HTML::TreeBuilder is bit slow for some use case.
+and, XML::LibXML is very fast! I want to use it.
+But, some libraries uses HTML::TreeBuilder.
+
+HTML::TreeBuilder::LibXML is drop-in-replacement
+for HTML::TreeBuilder::XPath.
+
+Currently, this module implements good enough methods
+for work with Web::Scraper.
+
+Author:	MATSUNO Tokuhiro <tokuhirom+cpan@gmail.com>
+WWW:	http://search.cpan.org/~tokuhirom/HTML-TreeBuilder-LibXML/
