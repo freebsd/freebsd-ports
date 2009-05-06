@@ -11,7 +11,7 @@ CATEGORIES=	textproc databases
 MASTER_SITES=	SF	\
 		http://etymon.com/software/amberfish/stable/
 
-MAINTAINER=	giffunip@tutopia.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose text retrieval Software
 
 LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2

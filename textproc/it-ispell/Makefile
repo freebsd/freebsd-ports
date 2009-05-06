@@ -8,7 +8,7 @@
 PORTNAME=	it-ispell
 PORTVERSION=	2.3
 
-MAINTAINER=	giffunip@tutopia.com
+MAINTAINER=	ports@FreeBSD.org
 
 ISPELL_IT=	yes
 
