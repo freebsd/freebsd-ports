@@ -8,7 +8,7 @@
 PORTNAME=	es-ispell
 PORTVERSION=	1.10
 
-MAINTAINER=	giffunip@tutopia.com
+MAINTAINER=	ports@FreeBSD.org
 
 ISPELL_ES=	yes
 

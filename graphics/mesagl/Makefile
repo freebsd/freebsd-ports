@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	mesa3d
 PKGNAMESUFFIX=	-mangled
 DISTNAME=	MesaLib-${PORTVERSION}
 
-MAINTAINER=	giffunip@tutopia.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphics library similar to SGI's OpenGL - mangled version
 
 USE_BZIP2=	yes

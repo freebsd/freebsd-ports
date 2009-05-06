@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	https://wci.llnl.gov/codes/${PORTNAME}/silo-${PORTVERSION}/
 
-MAINTAINER=	giffunip@tutopia.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mesh and field I/O library and scientific database
 
 LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
