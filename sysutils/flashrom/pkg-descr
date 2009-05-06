@@ -1,0 +1,8 @@
+flashrom is a utility for reading, writing, verifying and erasing flash ROM
+chips. It's often used to flash BIOS/coreboot/firmware images.
+
+It supports a wide range of DIP32, PLCC32, DIP8, SO8/SOIC8, TSOP32, and
+TSOP40 chips, which use various protocols such as LPC, FWH, parallel flash,
+or SPI.
+
+WWW: http://www.coreboot.org/Flashrom
