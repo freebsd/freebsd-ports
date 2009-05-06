@@ -38,7 +38,7 @@ share/locale/ms/LC_MESSAGES/orage.mo
 share/locale/nl/LC_MESSAGES/orage.mo
 share/locale/pa/LC_MESSAGES/orage.mo
 share/locale/pt_BR/LC_MESSAGES/orage.mo
-share/locale/pt_PT/LC_MESSAGES/orage.mo
+share/locale/pt/LC_MESSAGES/orage.mo
 share/locale/ru/LC_MESSAGES/orage.mo
 share/locale/sq/LC_MESSAGES/orage.mo
 share/locale/sv/LC_MESSAGES/orage.mo
@@ -61,7 +61,7 @@ share/locale/zh_CN/LC_MESSAGES/orage.mo
 share/locale/zh_TW/LC_MESSAGES/orage.mo
 share/locale/mr/LC_MESSAGES/orage.mo
 share/locale/bn_IN/LC_MESSAGES/orage.mo
-share/locale/nb_NO/LC_MESSAGES/orage.mo
+share/locale/nb/LC_MESSAGES/orage.mo
 share/locale/hy/LC_MESSAGES/orage.mo
 share/orage/doc/C/images/default_calendar.png
 share/orage/doc/C/images/orage_eventlist.png

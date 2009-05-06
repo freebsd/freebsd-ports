@@ -7,7 +7,7 @@
 
 PORTNAME=	thunar-volman
 PORTVERSION=	0.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DIST_SUBDIR=	xfce4

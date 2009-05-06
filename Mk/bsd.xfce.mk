@@ -15,7 +15,7 @@ Xfce_Include_MAINTAINER=	oliver@FreeBSD.org
 _USE_XFCE_ALL=			configenv libexo libgui libmenu libutil panel \
 				thunar wm xfconf xfdev
 
-MASTER_SITE_SUBDIR?=		xfce-4.6.0
+MASTER_SITE_SUBDIR?=		xfce-4.6.1
 
 configenv_CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 

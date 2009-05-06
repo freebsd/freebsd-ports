@@ -70,12 +70,12 @@ share/locale/lv/LC_MESSAGES/xfdesktop.mo
 share/locale/mk/LC_MESSAGES/xfdesktop.mo
 share/locale/mr/LC_MESSAGES/xfdesktop.mo
 share/locale/ms/LC_MESSAGES/xfdesktop.mo
-share/locale/nb_NO/LC_MESSAGES/xfdesktop.mo
+share/locale/nb/LC_MESSAGES/xfdesktop.mo
 share/locale/nl/LC_MESSAGES/xfdesktop.mo
 share/locale/pa/LC_MESSAGES/xfdesktop.mo
 share/locale/pl/LC_MESSAGES/xfdesktop.mo
 share/locale/pt_BR/LC_MESSAGES/xfdesktop.mo
-share/locale/pt_PT/LC_MESSAGES/xfdesktop.mo
+share/locale/pt/LC_MESSAGES/xfdesktop.mo
 share/locale/ro/LC_MESSAGES/xfdesktop.mo
 share/locale/ru/LC_MESSAGES/xfdesktop.mo
 share/locale/sk/LC_MESSAGES/xfdesktop.mo
@@ -121,6 +121,14 @@ share/xfce4/doc/fr/images/xfdesktop-behavior-tab.png
 share/xfce4/doc/fr/images/xfdesktop-editor.png
 share/xfce4/doc/fr/images/xfdesktop-list.png
 share/xfce4/doc/fr/xfdesktop.html
+share/xfce4/doc/it/images/root_menu2.png
+share/xfce4/doc/it/images/root_menu.png
+share/xfce4/doc/it/images/select_bg_color.png
+share/xfce4/doc/it/images/xfdesktop-appearance-tab.png
+share/xfce4/doc/it/images/xfdesktop-behavior-tab.png
+share/xfce4/doc/it/images/xfdesktop-editor.png
+share/xfce4/doc/it/images/xfdesktop-list.png
+share/xfce4/doc/it/xfdesktop.html
 share/xfce4/doc/ja/images/root_menu.png
 share/xfce4/doc/ja/images/root_menu2.png
 share/xfce4/doc/ja/images/select_bg_color.png
@@ -148,6 +156,8 @@ share/xfce4/doc/ja/xfdesktop.html
 @dirrmtry share/xfce4/doc/da
 @dirrmtry share/xfce4/doc/fr/images
 @dirrmtry share/xfce4/doc/fr
+@dirrmtry share/xfce4/doc/it/images
+@dirrmtry share/xfce4/doc/it
 @dirrmtry share/xfce4/doc/ja/images
 @dirrmtry share/xfce4/doc/ja
 @dirrmtry share/xfce4/doc
