@@ -24,3 +24,11 @@
       AC_CHECK_HEADERS(irs.h) ;;
  esac
  AC_CHECK_HEADERS(thread.h)
+@@ -227,7 +230,6 @@
+ AC_CHECK_FUNCS(gethostbyname)
+ AC_CHECK_FUNCS(nsdispatch)
+ AC_CHECK_LIB(pthread_nonshared, main)
+-AC_CHECK_FUNCS(pthread_atfork)
+ AC_CHECK_FUNCS(pthread_once)
+ AC_CHECK_FUNCS(ether_aton)
+ AC_CHECK_FUNCS(ether_ntoa)
