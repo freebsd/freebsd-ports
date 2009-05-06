@@ -8,8 +8,5 @@ bin/trafstat
 bin/trafstop
 etc/rc.d/trafd.sh
 etc/traflog.format
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/WhatsNew
 @dirrmtry var/bpft
 @dirrmtry var
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -21,17 +21,21 @@ CONFLICTS=	trafd-3.0.*
 WRKSRC=		${WRKDIR}/bpft
 MAN1=		traflog.1 trafstat.1
 MAN8=		trafstatd.8 trafd.8
+PORTDOCS=	README WhatsNew
 MANCOMPRESSED=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/include/pathnames.h
 	@${REINPLACE_CMD} -e 's|/usr/local/|${PREFIX}/|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|<net/slip.h>|"../linux-include/net/slip.h"|' \
+		${WRKSRC}/lib/interfaces.c
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/WhatsNew ${DOCSDIR}
+. for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+. endfor
 .endif
 
 .include <bsd.port.mk>
