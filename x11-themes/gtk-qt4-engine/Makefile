@@ -9,8 +9,8 @@ PORTNAME=	gtk-qt4-engine
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://gtk-qt.ecs.soton.ac.uk/files/${PORTVERSION}/
-DISTFILES=	gtk-qt-engine-${PORTVERSION}
+MASTER_SITES=	http://gtk-qt-engine.googlecode.com/files/
+DISTFILES=	gtk-qt-engine-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	kris@pcbsd.org
 COMMENT=	GTK-QT Theme Engine allows GTK2 apps to use QT/KDE themes
