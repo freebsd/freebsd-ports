@@ -10,7 +10,7 @@ PORTNAME?=	vim
 PATCHLEVEL=	166
 PORTVERSION=	7.2.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	editors
 MASTER_SITES=	${MASTER_SITE_VIM}
 DISTFILES=	${RELEASE}${EXTRACT_SUFX}
@@ -123,7 +123,7 @@ MAKE_ARGS+=	CONF_OPT_TCL="--enable-tclinterp --with-tclsh="${TCLSH:S/${LOCALBASE
 #	for now default the GUI to the GTK+ one
 #	will be reviewed when the GTK+ 1.{3,4} behemoth is released
 .if !defined(WITH_ATHENA) && !defined(WITH_MOTIF) && !defined(WITH_GNOME) && !defined(WITH_GTK2)
-WITH_GNOME=	gtk12
+USE_GNOME=	gtk12
 .endif
 
 .if defined(WITH_ATHENA)
