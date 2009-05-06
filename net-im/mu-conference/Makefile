@@ -41,6 +41,8 @@ MAKE_JOBS_UNSAFE=	yes
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 CFLAGS+=	-DHAVE_MYSQL
+LIBS+=		`${LOCALBASE}/bin/mysql_config --libs`
+MAKE_ENV+=	LIBS="${LIBS}"
 DOCFILES+=	README.sql mu-conference.sql
 .endif
 
@@ -88,14 +90,6 @@ post-patch:
 		-e 's#<logdir>\./logs#<logdir>${JABBER_SPOOLDIR}/conference.localhost/logs#g' \
 		-e 's#<pidfile>\.#<pidfile>${JABBER_PIDDIR}#g' \
 		${WRKSRC}/muc-default.xml
-.if defined(WITH_MYSQL)
-	@${REINPLACE_CMD} \
-		-e 's#`mysql_config#`${LOCALBASE}/bin/mysql_config#g' \
-		${WRKSRC}/src/Makefile
-.else
-	@${REINPLACE_CMD} -e 's#`mysql_config --libs`##g' \
-		${WRKSRC}/src/Makefile
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mu-conference ${PREFIX}/bin
