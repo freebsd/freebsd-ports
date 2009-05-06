@@ -1,20 +1,20 @@
---- ./SConstruct.orig	Wed Aug 29 19:33:24 2007
-+++ ./SConstruct	Wed Sep  5 17:54:37 2007
-@@ -45,6 +45,11 @@
- options.Add('with_devil', 'Root directory of DevIL installation')
- options.Add('with_devil_include', 'Specify exact include dir for DevIL headers')
- options.Add('with_devil_libdir', 'Specify exact library dir for DevIL library')
+--- SConstruct.orig	2009-04-09 16:43:28.000000000 +0200
++++ SConstruct	2009-04-09 16:56:22.000000000 +0200
+@@ -82,6 +82,11 @@
+ options.Add('with_ois', 'Root directory of OIS installation (only applicable when build_ogre_ois_plugin=1)')
+ options.Add('with_ois_include', 'Specify exact include dir for OIS headers (only applicable when build_ogre_ois_plugin=1)')
+ options.Add('with_ois_libdir', 'Specify exact library dir for OIS library (only applicable when build_ogre_ois_plugin=1)')
 +options.Add('CC', 'C compiler')
 +options.Add('CXX', 'C++ compiler')
 +options.Add('CCFLAGS', 'C compiler flags', Split(''))
 +options.Add('CPPPATH', 'Compiler include path', Split(''))
 +options.Add('LIBPATH', 'Linker library path', Split(''))
  
- ##################################################
- # Drivers                                        #
-@@ -124,6 +129,10 @@
  
- options.Update(env)
+ 
+@@ -155,6 +160,10 @@
+ if os.environ.has_key('PKG_CONFIG_PATH'):
+     env['ENV']['PKG_CONFIG_PATH'] = os.environ['PKG_CONFIG_PATH']
  
 +env['CCFLAGS'] = Split(env['CCFLAGS'])
 +env['CPPPATH'] = Split(env['CPPPATH'])
@@ -23,27 +23,26 @@
  if env.has_key('use_distcc') and env['use_distcc']:
      env['CC'] = 'distcc %s' % env['CC']
      env['CXX'] = 'distcc %s' % env['CXX']
-@@ -274,6 +283,15 @@
+@@ -301,6 +310,15 @@
          else:
              print 'Configuring unknown system (assuming the system is POSIX-like) ...'
  
-+        # pthreads
-+        if str(Platform()) == 'posix':
-+            if env['multithreaded']:
++        # pthreads                                                          
++        if str(Platform()) == 'posix':                                      
++            if env['multithreaded']:                                        
 +                if conf.CheckCHeader('pthread.h') and conf.CheckLib('pthread', 'pthread_create', autoadd = 0):
 +                    env.Append(CCFLAGS = ['-pthread'])
 +                    env.Append(LINKFLAGS = ['-pthread'])
 +                else:
 +                    Exit(1)
 +
+         signals_namespace = 'signals'
          if OptionValue('boost_signals_namespace', env):
              signals_namespace = OptionValue('boost_signals_namespace', env)
-             env.Append(CPPDEFINES = [
-@@ -288,15 +306,6 @@
-             ]
+@@ -318,15 +336,6 @@
          if not conf.CheckBoost(boost_version_string, boost_libs, conf, not ms_linker):
              Exit(1)
--
+ 
 -        # pthreads
 -        if str(Platform()) == 'posix':
 -            if env['multithreaded']:
@@ -52,6 +51,7 @@
 -                    env.Append(LINKFLAGS = ['-pthread'])
 -                else:
 -                    Exit(1)
- 
+-
          # GL and GLU
          if str(Platform()) == 'win32':
+             env.Append(LIBS = [

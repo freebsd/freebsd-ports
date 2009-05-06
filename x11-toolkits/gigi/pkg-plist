@@ -1,8 +1,10 @@
+include/GG/AdamGlue.h
 include/GG/AlignmentFlags.h
 include/GG/Base.h
 include/GG/BrowseInfoWnd.h
 include/GG/Button.h
 include/GG/Clr.h
+include/GG/Config.h
 include/GG/Control.h
 include/GG/Cursor.h
 include/GG/DrawUtil.h
@@ -14,11 +16,13 @@ include/GG/EventPump.h
 include/GG/Exception.h
 include/GG/Flags.h
 include/GG/Font.h
+include/GG/FontFwd.h
 include/GG/GUI.h
 include/GG/Layout.h
 include/GG/ListBox.h
 include/GG/Menu.h
 include/GG/MultiEdit.h
+include/GG/MultiEditFwd.h
 include/GG/Ogre/OgreGUI.h
 include/GG/PluginInterface.h
 include/GG/PtRect.h
@@ -38,11 +42,13 @@ include/GG/SignalsAndSlots.h
 include/GG/Slider.h
 include/GG/Spin.h
 include/GG/StaticGraphic.h
+include/GG/StrongTypedef.h
 include/GG/StyleFactory.h
 include/GG/TabWnd.h
 include/GG/TextControl.h
 include/GG/Texture.h
 include/GG/Timer.h
+include/GG/UnicodeCharsets.h
 include/GG/Wnd.h
 include/GG/WndEditor.h
 include/GG/WndEvent.h
@@ -50,10 +56,12 @@ include/GG/ZList.h
 include/GG/dialogs/ColorDlg.h
 include/GG/dialogs/FileDlg.h
 include/GG/dialogs/ThreeButtonDlg.h
-include/GG/gen_signals.py
 include/GG/glext.h
 include/GG/ltdl.h
 include/GG/ltdl_config.h
+include/GG/utf8/checked.h
+include/GG/utf8/core.h
+include/GG/utf8/unchecked.h
 lib/libGiGi.so
 lib/libGiGi.so.0
 %%OGRE%%lib/libGiGiOgre.so
@@ -66,4 +74,5 @@ libdata/pkgconfig/GiGiSDL.pc
 @dirrm include/GG/dialogs
 @dirrm include/GG/SDL
 @dirrm include/GG/Ogre
+@dirrm include/GG/utf8
 @dirrm include/GG
