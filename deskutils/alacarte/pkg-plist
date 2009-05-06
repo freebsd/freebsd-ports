@@ -14,7 +14,7 @@ bin/alacarte
 %%PYTHON_SITELIBDIR%%/Alacarte/util.py
 %%PYTHON_SITELIBDIR%%/Alacarte/util.pyc
 %%PYTHON_SITELIBDIR%%/Alacarte/util.pyo
-share/alacarte/alacarte.glade
+share/alacarte/alacarte.ui
 share/applications/alacarte.desktop
 share/icons/hicolor/16x16/apps/alacarte.png
 share/icons/hicolor/22x22/apps/alacarte.png
@@ -27,6 +27,7 @@ share/locale/as/LC_MESSAGES/alacarte.mo
 share/locale/ast/LC_MESSAGES/alacarte.mo
 share/locale/be/LC_MESSAGES/alacarte.mo
 share/locale/be@latin/LC_MESSAGES/alacarte.mo
+share/locale/bem/LC_MESSAGES/alacarte.mo
 share/locale/bg/LC_MESSAGES/alacarte.mo
 share/locale/bn/LC_MESSAGES/alacarte.mo
 share/locale/bn_IN/LC_MESSAGES/alacarte.mo
@@ -136,6 +137,8 @@ share/locale/zh_TW/LC_MESSAGES/alacarte.mo
 @dirrmtry share/locale/crh
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/bem/LC_MESSAGES
+@dirrmtry share/locale/bem
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
 @dirrmtry share/locale/ast/LC_MESSAGES
