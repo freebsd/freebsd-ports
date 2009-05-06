@@ -7,9 +7,8 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 PORTEPOCH=	1
-PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
 		http://mirrors.catpipe.net/amavisd-new/ \
