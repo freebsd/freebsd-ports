@@ -8,6 +8,7 @@ include/geany/geany.h
 include/geany/geanyfunctions.h
 include/geany/highlighting.h
 include/geany/keybindings.h
+include/geany/main.h
 include/geany/msgwindow.h
 include/geany/plugindata.h
 include/geany/pluginmacros.h
@@ -45,8 +46,6 @@ lib/geany/saveactions.la
 lib/geany/saveactions.so
 lib/geany/splitwindow.la
 lib/geany/splitwindow.so
-lib/geany/vcdiff.la
-lib/geany/vcdiff.so
 libdata/pkgconfig/geany.pc
 share/applications/geany.desktop
 share/icons/hicolor/16x16/apps/classviewer-class.png
@@ -87,6 +86,7 @@ share/pixmaps/geany.png
 %%PORTDOCS%%%%DOCSDIR%%/manual.txt
 %%DATADIR%%/GPL-2
 %%DATADIR%%/filetype_extensions.conf
+%%DATADIR%%/filetypes.actionscript
 %%DATADIR%%/filetypes.asm
 %%DATADIR%%/filetypes.c
 %%DATADIR%%/filetypes.caml
