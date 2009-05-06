@@ -75,6 +75,12 @@ NO_WERROR=	yes
 CONFIGURE_ARGS+=	--enable-compile-warnings=no
 .endif
 
+.if ${GECKO:Mlibxul}!=""
+PLUGIN_SYMLINK=	19
+.else
+PLUGIN_SYMLINK=	18
+.endif
+
 .if ${HAVE_GNOME:Mpygnome2}!=""
 USE_PYTHON=	yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
@@ -98,7 +104,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|execinfo.h|#|g ; \
 	    	s|-ldl"$$|"|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/lib/mozilla/plugins"|/lib/browser_plugins/symlinks/gecko18"|' \
+	@${REINPLACE_CMD} -e 's|/lib/mozilla/plugins"|/lib/browser_plugins/symlinks/gecko${PLUGIN_SYMLINK}"|' \
 		${WRKSRC}/embed/mozilla/mozilla-embed-single.cpp
 	@${REINPLACE_CMD} -e 's|@with_engine@|mozilla|' \
 		${WRKSRC}/data/epiphany.pc.in
