@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	frei0r
-PORTVERSION=	1.1.19
+PORTVERSION=	1.1.22
 DISTVERSIONPREFIX=	plugins-
 CATEGORIES=	graphics
-MASTER_SITES=	http://frei0r.kexbox.org/download/source/ CENKES
+MASTER_SITES=	http://propirate.net/${PORTNAME}/ \
+		http://distfiles.macports.org/${PORTNAME}-plugins/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Minimalistic plugin API for video effects
 
-NO_BUILD=	yes
-PLIST_FILES=	include/frei0r.h
+LIB_DEPENDS=	cv.1:${PORTSDIR}/graphics/opencv \
+		gavl.0:${PORTSDIR}/multimedia/gavl
 
-post-extract:
-	@${FIND} ${WRKSRC} -name .arch-ids -or -name {arch} | ${XARGS} ${RM} -rf
-
-do-install:
-	@${INSTALL_DATA} ${WRKSRC}/spec/frei0r.h ${PREFIX}/include/
+GNU_CONFIGURE=	yes
+USE_GNOME=	pkgconfig
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>
