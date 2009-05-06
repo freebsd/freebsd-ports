@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sysbench
-PORTVERSION=	0.4.8
+PORTVERSION=	0.4.12
 CATEGORIES=	benchmarks databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--with-pgsql=no
 
 post-configure:
 	@${REINPLACE_CMD} -e 's/^program_transform_name/#/' \
-		${WRKSRC}/scripts/Makefile ${WRKSRC}/sysbench/Makefile
+		${WRKSRC}/Makefile ${WRKSRC}/sysbench/Makefile
 
 .if defined(NOPORTDOCS)
 post-install:
