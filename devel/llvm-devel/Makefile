@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
 CONFIGURE_ARGS+=	--enable-optimized
 .endif
 
-MAN1=		bugpoint.1 llc.1 lli.1 llvmc.1 llvm-ar.1 \
+MAN1=		bugpoint.1 clang.1 llc.1 lli.1 llvmc.1 llvm-ar.1 \
 		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-db.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
 		llvm-prof.1 llvm-ranlib.1 llvmgcc.1 \
@@ -80,8 +80,6 @@ post-patch:
 		${WRKSRC}/Makefile.config.in
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/tools/clang/utils/scan-build
-	${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|' \
-	    ${WRKSRC}/tools/clang/tools/ccc/ccc
 	${REINPLACE_CMD} -e 's|/usr/bin/env perl|${PERL}|' \
 	    ${WRKSRC}/tools/clang/utils/ccc-analyzer \
 	    ${WRKSRC}/tools/clang/utils/scan-build
@@ -105,7 +103,6 @@ regression-test: ${BUILD_COOKIE}
 	fi
 
 PLIST_FILE_LIST=	bin/bugpoint \
-			bin/ccc \
 			bin/ccc-analyzer \
 			bin/clang* \
 			bin/gccas \
@@ -122,8 +119,7 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			lib/libclang* \
 			lib/plugin_llvm* \
 			libexec/clang-cc
-PLIST_DIR_LIST=		bin/ccclib \
-			include/llvm-c \
+PLIST_DIR_LIST=		include/llvm-c \
 			include/llvm \
 			lib/clang
 build-plist:
