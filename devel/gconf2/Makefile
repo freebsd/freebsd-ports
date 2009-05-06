@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gconf2
-PORTVERSION=	2.26.0
+PORTVERSION=	2.26.1
 PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
@@ -39,22 +39,17 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAN1=		gconftool-2.1
 
+OPTIONS=	LDAP "Enable LDAP support" off
+
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_LDAP) || exists(${LOCALBASE}/include/ldap.h)
+.if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
-
+CONFIGURE_ARGS+=--with-openldap
 PLIST_SUB+=	LDAP=""
 .else
+CONFIGURE_ARGS+=--without-openldap
 PLIST_SUB+=	LDAP="@comment "
-.endif
-
-pre-everything::
-.if !defined(WITH_LDAP)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You can enable ldap support by defining"
-	@${ECHO_MSG} "WITH_LDAP"
-	@${ECHO_MSG}
 .endif
 
 .include <bsd.port.post.mk>
