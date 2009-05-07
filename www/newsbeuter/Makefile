@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	newsbeuter
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	www
 MASTER_SITES=	http://newsbeuter.org/downloads/
 
@@ -22,6 +21,7 @@ USE_PERL5_BUILD=yes
 USE_SQLITE=	yes
 USE_RUBY=	yes
 USE_GCC=	4.2+
+USE_GNOME=	libxml2
 
 MAN1=	newsbeuter.1 podbeuter.1
 
@@ -36,6 +36,7 @@ post-patch:
 			/^prefix/s|=.*|=${PREFIX}|; /^CXX=/d; \
 			s|/usr/local|${LOCALBASE}|; s|ruby1.8|ruby18|" \
 				${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e "s,#include <alloca.h>,," ${WRKSRC}/src/logger.cpp
+	${REINPLACE_CMD} -e 's,<ncursesw/ncurses.h>,<ncurses.h>,' \
+		${WRKSRC}/src/controller.cpp ${WRKSRC}/src/view.cpp
 
 .include <bsd.port.post.mk>
