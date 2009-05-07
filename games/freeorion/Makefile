@@ -42,12 +42,15 @@ post-patch:
 		${WRKSRC}/UI/TechTreeWnd.cpp
 	@${REINPLACE_CMD} -e 's|"ogre_plugins.cfg"|"${DATADIR}/ogre_plugins.cfg"|g' \
 		${WRKSRC}/client/human/chmain.cpp
+	@${REINPLACE_CMD} -e 's|"OISInput.cfg"|"${DATADIR}/OISInput.cfg"|g' \
+		${WRKSRC}/client/human/HumanClientApp.cpp
 	@${REINPLACE_CMD} -e 's|Plugin=Plugin_CgProgramManager|#&|g; \
 		s|\(PluginFolder=\)\.|\1${LOCALBASE}/lib/OGRE|g' \
 		${WRKSRC}/ogre_plugins.cfg
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/ogre_plugins.cfg ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/OISInput.cfg ${DATADIR}
 
 maint-gen-distfile:
 	@if [ -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
