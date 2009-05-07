@@ -99,7 +99,7 @@ COMMENT=	HTTP Caching Proxy
 
 LATEST_LINK=	squid30
 
-SQUID_STABLE_VER=	14
+SQUID_STABLE_VER=	15
 
 CONFLICTS=	squid-2.[0-9].* cacheboy-[0-9]*
 GNU_CONFIGURE=	yes
