@@ -13,7 +13,7 @@ MASTER_SITES=	SFE
 MASTER_SITE_SUBDIR=	gfd
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Personal finances administration software
 
 USE_ZIP=	yes
