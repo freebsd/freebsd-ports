@@ -12,7 +12,9 @@ lib/emelfm2/plugins/e2p_mvbar.so
 lib/emelfm2/plugins/e2p_names_clip.so
 lib/emelfm2/plugins/e2p_pack.so
 lib/emelfm2/plugins/e2p_rename.so
+lib/emelfm2/plugins/e2p_selmatch.so
 lib/emelfm2/plugins/e2p_sort_by_ext.so
+lib/emelfm2/plugins/e2p_tag.so
 lib/emelfm2/plugins/e2p_times.so
 %%TRACKER%%lib/emelfm2/plugins/e2p_track.so
 lib/emelfm2/plugins/e2p_unpack.so
@@ -77,8 +79,10 @@ share/pixmaps/emelfm2/plugin_foreach_48.png
 share/pixmaps/emelfm2/plugin_glob_48.png
 share/pixmaps/emelfm2/plugin_move_48.png
 share/pixmaps/emelfm2/plugin_pack_48.png
+share/pixmaps/emelfm2/plugin_selmatch_48.png
 share/pixmaps/emelfm2/plugin_rename_48.png
 share/pixmaps/emelfm2/plugin_timeset_48.png
+share/pixmaps/emelfm2/plugin_tag_48.png
 %%TRACKER%%share/pixmaps/emelfm2/plugin_track_48.png
 share/pixmaps/emelfm2/plugin_unpack_48.png
 share/pixmaps/emelfm2/proceed_32.png
