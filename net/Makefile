@@ -883,6 +883,7 @@
     SUBDIR += silc-client
     SUBDIR += silc-irssi-plugin
     SUBDIR += silc-server
+    SUBDIR += simpleproxy
     SUBDIR += sip_scenario
     SUBDIR += siproxd
     SUBDIR += sipsak
