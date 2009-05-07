@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xorg-server
-PORTVERSION=	1.6.0
-#PORTREVISION=	1
+PORTVERSION=	1.6.1
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://xorg.freedesktop.org/releases/individual/xserver/
