@@ -47,6 +47,13 @@ CONFIGURE_ARGS+=	--with-popauth
 CONFIGURE_ARGS+=	--with-pam
 .endif
 
+.if defined(WITH_LIBSPF)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libspf.a:mail/libspf
+CONFIGURE_ARGS+=	--with-libspf ${LOCALBASE}
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+.endif
+
 .if ${OSVERSION} >= 700015 || (${OSVERSION} < 700000 && ${OSVERSION} >= 601103)
 CONFIGURE_ARGS+=	--have-resn
 .endif
