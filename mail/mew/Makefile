@@ -27,6 +27,8 @@ EMACS_PORT_NAME?=	emacs22
 RUN_DEPENDS=	rubygem-sqlite3>=0:${PORTSDIR}/databases/rubygem-sqlite3
 .endif
 
+MAKE_JOBS_SAFE=	yes
+
 SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
