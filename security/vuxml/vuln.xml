@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fbc8413f-2f7a-11de-9a3f-001b77d09812">
+    <topic>FreeBSD -- remotely exploitable crash in OpenSSL</topic>
+    <affects>
+      <package>
+        <name>FreeBSD</name>
+        <range><ge>6.3</ge><lt>6.3_10</lt></range>
+        <range><ge>6.4</ge><lt>6.4_4</lt></range>
+        <range><ge>7.0</ge><lt>7.0_12</lt></range>
+        <range><ge>7.1</ge><lt>7.1_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <h1>Problem Description</h1>
+        <p>The function ASN1_STRING_print_ex does not properly validate
+        the lengths of BMPString or UniversalString objects before
+        attempting to print them.</p>
+        <h1>Impact</h1>
+        <p>An application which attempts to print a BMPString or
+        UniversalString which has an invalid length will crash as a
+        result of OpenSSL accessing invalid memory locations.  This
+        could be used by an attacker to crash a remote application.</p>
+        <h1>Workaround</h1>
+        <p>No workaround is available, but applications which do not use
+        the ASN1_STRING_print_ex function (either directly or
+        indirectly) are not affected.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-09:08.openssl</freebsdsa>
+    <cvename>CVE-2009-0590</cvename>
+    </references>
+    <dates>
+      <discovery>2009-03-25</discovery>
+      <entry>2009-05-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2748fdde-3a3c-11de-bbc5-00e0815b8da8">
     <topic>quagga -- Denial of Service</topic>
     <affects>
