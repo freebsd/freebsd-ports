@@ -23,10 +23,4 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN3=	Net::ARP.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800059
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
