@@ -41,4 +41,10 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kiltdown/kiltdown ${PREFIX}/bin/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
