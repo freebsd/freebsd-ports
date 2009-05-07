@@ -52,6 +52,10 @@ OPTIONS+=	DBUS "Enable D-BUS support" On
 IGNORE=	cannot find dependency: The cairo exists but not with XCB support. Please reinstall graphics/cairo with XCB support
 .endif
 
+.if exists(${LOCALBASE}/lib/libxcb-keysyms.so.1)
+BROKEN=	doesn't work with latest version of x11/xcb-util (>=0.3.4). You may try to downgrade xcb-util to 0.3.3 as a temporary solution
+.endif
+
 .ifdef(WITH_DBUS)
 LIB_DEPENDS += dbus-1.3:${PORTSDIR}/devel/dbus
 CMAKE_ARGS += -DWITH_DBUS=YES
