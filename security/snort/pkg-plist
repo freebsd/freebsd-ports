@@ -61,6 +61,10 @@ etc/snort/unicode.map-sample
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dcerpc_preproc.la
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dcerpc_preproc.so
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dcerpc_preproc.so.0
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dce2_preproc.a
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dce2_preproc.la
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dce2_preproc.so
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dce2_preproc.so.0
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.a
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.la
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.so
@@ -117,12 +121,11 @@ etc/snort/unicode.map-sample
 %%PORTDOCS%%%%DOCSDIR%%/README.csv
 %%PORTDOCS%%%%DOCSDIR%%/README.database
 %%PORTDOCS%%%%DOCSDIR%%/README.dcerpc
+%%PORTDOCS%%%%DOCSDIR%%/README.dcerpc2
 %%PORTDOCS%%%%DOCSDIR%%/README.decode
 %%PORTDOCS%%%%DOCSDIR%%/README.decoder_preproc_rules
 %%PORTDOCS%%%%DOCSDIR%%/README.dns
 %%PORTDOCS%%%%DOCSDIR%%/README.event_queue
-%%PORTDOCS%%%%DOCSDIR%%/README.flow
-%%PORTDOCS%%%%DOCSDIR%%/README.flow-portscan
 %%PORTDOCS%%%%DOCSDIR%%/README.flowbits
 %%PORTDOCS%%%%DOCSDIR%%/README.frag3
 %%PORTDOCS%%%%DOCSDIR%%/README.ftptelnet
@@ -135,7 +138,6 @@ etc/snort/unicode.map-sample
 %%PORTDOCS%%%%DOCSDIR%%/README.sfportscan
 %%PORTDOCS%%%%DOCSDIR%%/README.ssh
 %%PORTDOCS%%%%DOCSDIR%%/README.ssl
-%%PORTDOCS%%%%DOCSDIR%%/README.stream4
 %%PORTDOCS%%%%DOCSDIR%%/README.stream5
 %%PORTDOCS%%%%DOCSDIR%%/README.tag
 %%PORTDOCS%%%%DOCSDIR%%/README.thresholding
