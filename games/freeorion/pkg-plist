@@ -1518,6 +1518,7 @@ bin/freeoriond
 %%DATADIR%%/default/techs.txt
 %%DATADIR%%/default/universe_tables.txt
 %%DATADIR%%/ogre_plugins.cfg
+%%DATADIR%%/OISInput.cfg
 @dirrm %%DATADIR%%/default/AI
 @dirrm %%DATADIR%%/default/data/art/stars_sidepanel
 @dirrm %%DATADIR%%/default/data/art/hulls_design
