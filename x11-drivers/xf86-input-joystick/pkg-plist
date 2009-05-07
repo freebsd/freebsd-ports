@@ -1,3 +1,4 @@
+include/xorg/joystick-properties.h
 lib/xorg/modules/input/joystick_drv.la
 lib/xorg/modules/input/joystick_drv.so
 libdata/pkgconfig/xorg-joystick.pc
