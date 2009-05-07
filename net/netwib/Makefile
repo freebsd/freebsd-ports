@@ -49,10 +49,4 @@ do-configure:
 		${WRKSRC}/config.dat
 		(cd ${WRKSRC} ; ${SH} ${WRKSRC}/genemake )
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800059
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
