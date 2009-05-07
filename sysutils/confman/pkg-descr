@@ -1,0 +1,6 @@
+confman is a configuration manager written in bash. confman uses Subversion to
+provide a revision-controlled environment for editing and deploying
+configuration files. With confman, you can easily manage configuration files
+for all or any subset of your machines.
+
+WWW: http://www.timesinks.net/projects/confman
