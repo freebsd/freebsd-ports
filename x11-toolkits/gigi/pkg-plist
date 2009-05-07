@@ -66,6 +66,8 @@ lib/libGiGi.so
 lib/libGiGi.so.0
 %%OGRE%%lib/libGiGiOgre.so
 %%OGRE%%lib/libGiGiOgre.so.0
+%%OGRE%%lib/libGiGiOgrePlugin_OIS.so
+%%OGRE%%lib/libGiGiOgrePlugin_OIS.so.0
 lib/libGiGiSDL.so
 lib/libGiGiSDL.so.0
 libdata/pkgconfig/GiGi.pc

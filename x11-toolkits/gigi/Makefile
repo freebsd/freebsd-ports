@@ -42,7 +42,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libOgreMain-1.6.2.so:${PORTSDIR}/graphics/ogre3
 RUN_DEPENDS+=	${LOCALBASE}/lib/libOgreMain-1.6.2.so:${PORTSDIR}/graphics/ogre3d \
 		${LOCALBASE}/lib/libOIS.so:${PORTSDIR}/devel/ois
 PLIST_SUB+=	OGRE=""
-GIGI_LIBS+=	GiGiOgre
+GIGI_LIBS+=	GiGiOgre GiGiOgrePlugin_OIS
 .else
 SCONS_ARGS+=	build_ogre_driver=0 build_ogre_ois_plugin=0
 PLIST_SUB+=	OGRE="@comment "
@@ -63,7 +63,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lib${lib}.so \
 		${PREFIX}/lib/lib${lib}.so.${SHLIB_VER}
 	cd ${PREFIX}/lib && ${LN} -sf lib${lib}.so.${SHLIB_VER} lib${lib}.so
-	${INSTALL_DATA} ${WRKSRC}/${lib}.pc ${PREFIX}/libdata/pkgconfig
+	-[ -f ${WRKSRC}/${lib}.pc ] && ${INSTALL_DATA} ${WRKSRC}/${lib}.pc ${PREFIX}/libdata/pkgconfig
 .endfor
 
 maint-gen-distfile:
