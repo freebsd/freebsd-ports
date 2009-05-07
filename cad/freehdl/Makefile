@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freehdl
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.7
 CATEGORIES=	cad
 MASTER_SITES=	http://freehdl.seul.org/~enaroska/
 
@@ -20,8 +20,6 @@ USE_GNOME=	gnomehack \
 		pkgconfig
 USE_AUTOTOOLS=	libtool:15
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--infodir=${PREFIX}/info \
-		--mandir=${MANPREFIX}/man
 
 MAN1=		freehdl-config.1 \
 		freehdl-gennodes.1 \
@@ -32,6 +30,7 @@ MAN5=		v2cc.libs.5
 INFO=		fire
 
 MANCOMPRESSED=	no
+MAKE_JOBS_SAFE=	yes
 
 PLIST_TMP=	${WRKDIR}/plist_tmp/
 
