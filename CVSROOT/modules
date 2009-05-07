@@ -11352,6 +11352,7 @@ p5-HTML-Tidy                    ports/textproc/p5-HTML-Tidy
 p5-HTML-Tiny                    ports/textproc/p5-HTML-Tiny
 p5-HTML-TokeParser-Simple       ports/www/p5-HTML-TokeParser-Simple
 p5-HTML-Tree                    ports/www/p5-HTML-Tree
+p5-HTML-TreeBuilder-LibXML      ports/www/p5-HTML-TreeBuilder-LibXML
 p5-HTML-TreeBuilder-XPath       ports/www/p5-HTML-TreeBuilder-XPath
 p5-HTML-Truncate                ports/textproc/p5-HTML-Truncate
 p5-HTML-Webmake                 ports/www/p5-HTML-Webmake
@@ -14795,6 +14796,7 @@ p5-html-tidy                    ports/textproc/p5-HTML-Tidy
 p5-html-tiny                    ports/textproc/p5-HTML-Tiny
 p5-html-tokeparser-simple       ports/www/p5-HTML-TokeParser-Simple
 p5-html-tree                    ports/www/p5-HTML-Tree
+p5-html-treebuilder-libxml      ports/www/p5-HTML-TreeBuilder-LibXML
 p5-html-treebuilder-xpath       ports/www/p5-HTML-TreeBuilder-XPath
 p5-html-truncate                ports/textproc/p5-HTML-Truncate
 p5-html-webmake                 ports/www/p5-HTML-Webmake
