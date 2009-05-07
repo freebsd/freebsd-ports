@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		dojo
-PORTVERSION=		1.2.3
+PORTVERSION=		1.3.1
 CATEGORIES=		www
 MASTER_SITES=		http://download.dojotoolkit.org/release-${PORTVERSION}/ \
 			LOCAL/glarkin
