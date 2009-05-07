@@ -17,7 +17,7 @@
 # $FreeBSD$
 #
 
-MESAVERSION=	7.4
+MESAVERSION=	7.4.1
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
 MASTER_SITE_SUBDIR=	mesa3d
