@@ -101,7 +101,7 @@ post-install:
 	@${ECHO} "    <return result=\"yes\"/>"
 	@${ECHO} "</match>"
 	@${ECHO}
-	@${ECHO} "Make also sure, hald_enable, dbus_enable and polkitd_enable"
+	@${ECHO} "Make also sure, hald_enable, dbus_enable"
 	@${ECHO} "is set to YES in your /etc/rc.conf"
 	@${ECHO}
 	@${ECHO} "================================================================"
