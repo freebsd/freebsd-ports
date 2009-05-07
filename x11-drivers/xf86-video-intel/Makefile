@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-video-intel
-PORTVERSION=	2.6.3
+PORTVERSION=	2.7.0
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -19,6 +19,6 @@ USE_GL=		gl
 
 XORG_CAT=	driver
 USE_XORG=	xvmc xineramaproto xextproto x11 xf86driproto glproto
-MAN4=		i810.4x intel.4x
+MAN4=		intel.4x
 
 .include <bsd.port.mk>

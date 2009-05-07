@@ -8,7 +8,6 @@ lib/xorg/modules/drivers/ch7017.la
 lib/xorg/modules/drivers/ch7017.so
 lib/xorg/modules/drivers/ch7xxx.la
 lib/xorg/modules/drivers/ch7xxx.so
-lib/xorg/modules/drivers/i810_drv.so
 lib/xorg/modules/drivers/intel_drv.la
 lib/xorg/modules/drivers/intel_drv.so
 lib/xorg/modules/drivers/ivch.la
