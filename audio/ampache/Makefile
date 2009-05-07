@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	ampache
-PORTVERSION=	3.4.4
+PORTVERSION=	3.5
 CATEGORIES=	audio www
 MASTER_SITES=	http://ampache.org/downloads/
 
@@ -23,9 +23,22 @@ SUB_FILES=	pkg-message pkg-deinstall
 SUB_LIST=	PORTNAME=${PORTNAME} \
 		WWWDIR=${WWWDIR}
 
+MAN1=		ampache.1
+MANCOMPRESSED=	no
+
+PORTDOCS=	CHANGELOG README MIGRATION INSTALL
+
 do-install:
-	${MKDIR} ${WWWDIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR})
+	@${MKDIR} ${WWWDIR}
+	${INSTALL_MAN} ${WRKSRC}/docs/man/man1/ampache.1 ${MAN1PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/docs/${doc} ${DOCSDIR}
+.endfor
+.endif
+	${RM} -rf ${WRKSRC}/docs/man
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR})
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 post-install:

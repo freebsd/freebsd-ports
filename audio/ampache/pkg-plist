@@ -40,13 +40,15 @@
 %%WWWDIR%%/images/ampache.png
 %%WWWDIR%%/images/blank-pixel.gif
 %%WWWDIR%%/images/blankalbum.gif
+%%WWWDIR%%/images/blankalbum.jpg
 %%WWWDIR%%/images/icon_add.png
+%%WWWDIR%%/images/icon_add_key.png
+%%WWWDIR%%/images/icon_add_tag.png
 %%WWWDIR%%/images/icon_add_user.png
 %%WWWDIR%%/images/icon_admin.png
 %%WWWDIR%%/images/icon_all.png
 %%WWWDIR%%/images/icon_ampache.png
 %%WWWDIR%%/images/icon_batch_download.png
-%%WWWDIR%%/images/icon_browse.png
 %%WWWDIR%%/images/icon_cog.png
 %%WWWDIR%%/images/icon_comment.png
 %%WWWDIR%%/images/icon_delete.png
@@ -69,6 +71,7 @@
 %%WWWDIR%%/images/icon_play.png
 %%WWWDIR%%/images/icon_play_hover.png
 %%WWWDIR%%/images/icon_playlist_add.png
+%%WWWDIR%%/images/icon_plugin.png
 %%WWWDIR%%/images/icon_preferences.png
 %%WWWDIR%%/images/icon_prev.png
 %%WWWDIR%%/images/icon_prev_hover.png
@@ -77,12 +80,12 @@
 %%WWWDIR%%/images/icon_statistics.png
 %%WWWDIR%%/images/icon_stop.png
 %%WWWDIR%%/images/icon_stop_hover.png
-%%WWWDIR%%/images/icon_thumb_down.png
-%%WWWDIR%%/images/icon_thumb_up.png
+%%WWWDIR%%/images/icon_tick.png
 %%WWWDIR%%/images/icon_view.png
 %%WWWDIR%%/images/icon_volumedn.png
 %%WWWDIR%%/images/icon_volumemute.png
 %%WWWDIR%%/images/icon_volumeup.png
+%%WWWDIR%%/images/icon_wand.png
 %%WWWDIR%%/images/icon_world_link.png
 %%WWWDIR%%/images/ratings/star_rating.gif
 %%WWWDIR%%/images/ratings/x.gif
@@ -90,45 +93,46 @@
 %%WWWDIR%%/images/top_bg.jpg
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install.php
-%%WWWDIR%%/lib/album.lib.php
-%%WWWDIR%%/lib/artist.lib.php
 %%WWWDIR%%/lib/batch.lib.php
 %%WWWDIR%%/lib/class/access.class.php
 %%WWWDIR%%/lib/class/ajax.class.php
 %%WWWDIR%%/lib/class/album.class.php
 %%WWWDIR%%/lib/class/ampachemail.class.php
+%%WWWDIR%%/lib/class/ampacherss.class.php
 %%WWWDIR%%/lib/class/api.class.php
 %%WWWDIR%%/lib/class/artist.class.php
 %%WWWDIR%%/lib/class/browse.class.php
 %%WWWDIR%%/lib/class/catalog.class.php
 %%WWWDIR%%/lib/class/config.class.php
+%%WWWDIR%%/lib/class/core.class.php
+%%WWWDIR%%/lib/class/database_object.abstract.php
 %%WWWDIR%%/lib/class/dba.class.php
 %%WWWDIR%%/lib/class/democratic.class.php
 %%WWWDIR%%/lib/class/error.class.php
 %%WWWDIR%%/lib/class/flag.class.php
-%%WWWDIR%%/lib/class/genre.class.php
 %%WWWDIR%%/lib/class/localplay.abstract.php
 %%WWWDIR%%/lib/class/localplay.class.php
-%%WWWDIR%%/lib/class/metadata.class.php
+%%WWWDIR%%/lib/class/media.interface.php
 %%WWWDIR%%/lib/class/playlist.class.php
 %%WWWDIR%%/lib/class/plugin.class.php
 %%WWWDIR%%/lib/class/preference.class.php
+%%WWWDIR%%/lib/class/query.class.php
 %%WWWDIR%%/lib/class/radio.class.php
 %%WWWDIR%%/lib/class/random.class.php
 %%WWWDIR%%/lib/class/rating.class.php
 %%WWWDIR%%/lib/class/registration.class.php
-%%WWWDIR%%/lib/class/rss.class.php
 %%WWWDIR%%/lib/class/scrobbler.class.php
 %%WWWDIR%%/lib/class/shoutbox.class.php
 %%WWWDIR%%/lib/class/song.class.php
 %%WWWDIR%%/lib/class/stats.class.php
 %%WWWDIR%%/lib/class/stream.class.php
+%%WWWDIR%%/lib/class/tag.class.php
 %%WWWDIR%%/lib/class/tmpplaylist.class.php
 %%WWWDIR%%/lib/class/update.class.php
 %%WWWDIR%%/lib/class/user.class.php
 %%WWWDIR%%/lib/class/vainfo.class.php
 %%WWWDIR%%/lib/class/vauth.class.php
-%%WWWDIR%%/lib/class/view.class.php
+%%WWWDIR%%/lib/class/video.class.php
 %%WWWDIR%%/lib/class/xmldata.class.php
 %%WWWDIR%%/lib/class/xmlrpcclient.class.php
 %%WWWDIR%%/lib/class/xmlrpcserver.class.php
@@ -141,17 +145,19 @@
 %%WWWDIR%%/lib/log.lib.php
 %%WWWDIR%%/lib/preferences.php
 %%WWWDIR%%/lib/rating.lib.php
-%%WWWDIR%%/lib/rss.php
 %%WWWDIR%%/lib/search.php
-%%WWWDIR%%/lib/stream.lib.php
 %%WWWDIR%%/lib/themes.php
 %%WWWDIR%%/lib/ui.lib.php
 %%WWWDIR%%/lib/xmlrpc.php
+%%WWWDIR%%/locale/base/LANGLIST
 %%WWWDIR%%/locale/base/TRANSLATIONS
-%%WWWDIR%%/locale/base/merge-messages.sh
-%%WWWDIR%%/locale/base/messages.po
-%%WWWDIR%%/locale/ca_CA/LC_MESSAGES/messages.mo
-%%WWWDIR%%/locale/ca_CA/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/base/gather-messages.sh
+%%WWWDIR%%/locale/base/messages.pot
+%%WWWDIR%%/locale/base/translation-words.txt
+%%WWWDIR%%/locale/ca_ES/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ca_ES/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/cs_CZ/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/cs_CZ/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/de_DE/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/de_DE/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/el_GR/LC_MESSAGES/messages.mo
@@ -164,22 +170,23 @@
 %%WWWDIR%%/locale/fr_FR/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/it_IT/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/it_IT/LC_MESSAGES/messages.po
-%%WWWDIR%%/locale/ja_JP/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/ja_JP/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ja_JP/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/nb_NO/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/nb_NO/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/nl_NL/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/nl_NL/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/ru_RU/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/ru_RU/LC_MESSAGES/messages.po
-%%WWWDIR%%/locale/tr_TR/LC_MESSAGES/messages.mo
-%%WWWDIR%%/locale/tr_TR/LC_MESSAGES/messages.po
-%%WWWDIR%%/locale/zh_CN/LC_MESSAGES/messages.mo
-%%WWWDIR%%/locale/zh_CN/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/sv_SE/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/sv_SE/LC_MESSAGES/messages.po
 %%WWWDIR%%/localplay.php
 %%WWWDIR%%/login.php
 %%WWWDIR%%/logout.php
 %%WWWDIR%%/modules/archive/archive.lib.php
 %%WWWDIR%%/modules/captcha/FreeMono-Medium.ttf
 %%WWWDIR%%/modules/captcha/captcha.php
+%%WWWDIR%%/modules/emulator/gettext.php
 %%WWWDIR%%/modules/flash/LICENSE
 %%WWWDIR%%/modules/flash/Original/skin.xml
 %%WWWDIR%%/modules/flash/crossdomain.xml
@@ -219,7 +226,8 @@
 %%WWWDIR%%/modules/getid3/module.audio.midi.php
 %%WWWDIR%%/modules/getid3/module.audio.monkey.php
 %%WWWDIR%%/modules/getid3/module.audio.mp3.php
-%%WWWDIR%%/modules/getid3/module.audio.mpc.php
+%%WWWDIR%%/modules/getid3/module.audio.mpc7.php
+%%WWWDIR%%/modules/getid3/module.audio.mpc8.php
 %%WWWDIR%%/modules/getid3/module.audio.mpc_old.php
 %%WWWDIR%%/modules/getid3/module.audio.optimfrog.php
 %%WWWDIR%%/modules/getid3/module.audio.rkau.php
@@ -255,7 +263,7 @@
 %%WWWDIR%%/modules/infotools/Snoopy.class.php
 %%WWWDIR%%/modules/infotools/jamendoSearch.class.php
 %%WWWDIR%%/modules/infotools/lastfm.class.php
-%%WWWDIR%%/modules/infotools/openstrands.class.php
+%%WWWDIR%%/modules/infotools/mp3tunes.class.php
 %%WWWDIR%%/modules/kajax/README
 %%WWWDIR%%/modules/kajax/ajax.js
 %%WWWDIR%%/modules/localplay/httpq.controller.php
@@ -265,16 +273,27 @@
 %%WWWDIR%%/modules/mpd/README
 %%WWWDIR%%/modules/mpd/USAGE
 %%WWWDIR%%/modules/mpd/mpd.class.php
+%%WWWDIR%%/modules/nusoap/changelog
+%%WWWDIR%%/modules/nusoap/class.nusoap_base.php
+%%WWWDIR%%/modules/nusoap/class.soap_fault.php
+%%WWWDIR%%/modules/nusoap/class.soap_parser.php
+%%WWWDIR%%/modules/nusoap/class.soap_server.php
+%%WWWDIR%%/modules/nusoap/class.soap_transport_http.php
+%%WWWDIR%%/modules/nusoap/class.soap_val.php
+%%WWWDIR%%/modules/nusoap/class.soapclient.php
+%%WWWDIR%%/modules/nusoap/class.wsdl.php
+%%WWWDIR%%/modules/nusoap/class.wsdlcache.php
+%%WWWDIR%%/modules/nusoap/class.xmlschema.php
+%%WWWDIR%%/modules/nusoap/nusoap.php
+%%WWWDIR%%/modules/nusoap/nusoapmime.php
+%%WWWDIR%%/modules/pearxmlrpc/Dump.php
+%%WWWDIR%%/modules/pearxmlrpc/rpc.php
+%%WWWDIR%%/modules/pearxmlrpc/server.php
 %%WWWDIR%%/modules/plugins/Lastfm.plugin.php
-%%WWWDIR%%/modules/plugins/OpenStrands.plugin.php
 %%WWWDIR%%/modules/plugins/RioPlayer.plugin.php
 %%WWWDIR%%/modules/prototype/prototype.js
 %%WWWDIR%%/modules/validatemail/validateEmail.php
 %%WWWDIR%%/modules/validatemail/validateEmailFormat.php
-%%WWWDIR%%/modules/xmlrpc/ChangeLog
-%%WWWDIR%%/modules/xmlrpc/README
-%%WWWDIR%%/modules/xmlrpc/xmlrpc.inc
-%%WWWDIR%%/modules/xmlrpc/xmlrpcs.inc
 %%WWWDIR%%/play/index.php
 %%WWWDIR%%/playlist.php
 %%WWWDIR%%/preferences.php
@@ -294,6 +313,7 @@
 %%WWWDIR%%/server/song.ajax.php
 %%WWWDIR%%/server/stats.ajax.php
 %%WWWDIR%%/server/stream.ajax.php
+%%WWWDIR%%/server/tag.ajax.php
 %%WWWDIR%%/server/xml.server.php
 %%WWWDIR%%/server/xmlrpc.server.php
 %%WWWDIR%%/shout.php
@@ -302,9 +322,9 @@
 %%WWWDIR%%/sql/ampache40.sql
 %%WWWDIR%%/stats.php
 %%WWWDIR%%/stream.php
+%%WWWDIR%%/templates/base.css
 %%WWWDIR%%/templates/csshover2.htc
 %%WWWDIR%%/templates/footer.inc.php
-%%WWWDIR%%/templates/handheld.css
 %%WWWDIR%%/templates/header.inc.php
 %%WWWDIR%%/templates/install.css
 %%WWWDIR%%/templates/javascript_refresh.inc.php
@@ -314,6 +334,9 @@
 %%WWWDIR%%/templates/show_access_list.inc.php
 %%WWWDIR%%/templates/show_account.inc.php
 %%WWWDIR%%/templates/show_add_access.inc.php
+%%WWWDIR%%/templates/show_add_access_current.inc.php
+%%WWWDIR%%/templates/show_add_access_local.inc.php
+%%WWWDIR%%/templates/show_add_access_rpc.inc.php
 %%WWWDIR%%/templates/show_add_catalog.inc.php
 %%WWWDIR%%/templates/show_add_live_stream.inc.php
 %%WWWDIR%%/templates/show_add_playlist.inc.php
@@ -329,7 +352,6 @@
 %%WWWDIR%%/templates/show_all_popular.inc.php
 %%WWWDIR%%/templates/show_alphabet_form.inc.php
 %%WWWDIR%%/templates/show_artist.inc.php
-%%WWWDIR%%/templates/show_artist_box.inc.php
 %%WWWDIR%%/templates/show_artist_row.inc.php
 %%WWWDIR%%/templates/show_artists.inc.php
 %%WWWDIR%%/templates/show_big_art.inc.php
@@ -347,6 +369,7 @@
 %%WWWDIR%%/templates/show_disabled_songs.inc.php
 %%WWWDIR%%/templates/show_duplicate.inc.php
 %%WWWDIR%%/templates/show_duplicates.inc.php
+%%WWWDIR%%/templates/show_dynamic.inc.php
 %%WWWDIR%%/templates/show_edit_access.inc.php
 %%WWWDIR%%/templates/show_edit_album.inc.php
 %%WWWDIR%%/templates/show_edit_album_row.inc.php
@@ -373,12 +396,13 @@
 %%WWWDIR%%/templates/show_index.inc.php
 %%WWWDIR%%/templates/show_install.inc.php
 %%WWWDIR%%/templates/show_install_account.inc.php
+%%WWWDIR%%/templates/show_install_check.inc.php
 %%WWWDIR%%/templates/show_install_config.inc.php
 %%WWWDIR%%/templates/show_install_lang.inc.php
 %%WWWDIR%%/templates/show_ip_history.inc.php
+%%WWWDIR%%/templates/show_live_stream.inc.php
 %%WWWDIR%%/templates/show_live_stream_row.inc.php
 %%WWWDIR%%/templates/show_live_streams.inc.php
-%%WWWDIR%%/templates/show_local_catalog_info.inc.php
 %%WWWDIR%%/templates/show_localplay_add_instance.inc.php
 %%WWWDIR%%/templates/show_localplay_control.inc.php
 %%WWWDIR%%/templates/show_localplay_controllers.inc.php
@@ -387,9 +411,12 @@
 %%WWWDIR%%/templates/show_localplay_playlist.inc.php
 %%WWWDIR%%/templates/show_localplay_status.inc.php
 %%WWWDIR%%/templates/show_login_form.inc.php
+%%WWWDIR%%/templates/show_lyrics.inc.php
 %%WWWDIR%%/templates/show_mail_users.inc.php
+%%WWWDIR%%/templates/show_manage_catalogs.inc.php
 %%WWWDIR%%/templates/show_manage_democratic.inc.php
 %%WWWDIR%%/templates/show_manage_shoutbox.inc.php
+%%WWWDIR%%/templates/show_newest.inc.php
 %%WWWDIR%%/templates/show_now_playing.inc.php
 %%WWWDIR%%/templates/show_now_playing_row.inc.php
 %%WWWDIR%%/templates/show_object_rating.inc.php
@@ -405,11 +432,13 @@
 %%WWWDIR%%/templates/show_playlists.inc.php
 %%WWWDIR%%/templates/show_playtype_switch.inc.php
 %%WWWDIR%%/templates/show_plugins.inc.php
+%%WWWDIR%%/templates/show_popular.inc.php
 %%WWWDIR%%/templates/show_preference_admin.inc.php
 %%WWWDIR%%/templates/show_preference_box.inc.php
 %%WWWDIR%%/templates/show_preferences.inc.php
 %%WWWDIR%%/templates/show_random.inc.php
 %%WWWDIR%%/templates/show_random_albums.inc.php
+%%WWWDIR%%/templates/show_random_rules.inc.php
 %%WWWDIR%%/templates/show_recently_played.inc.php
 %%WWWDIR%%/templates/show_registration_confirmation.inc.php
 %%WWWDIR%%/templates/show_rename_artist.inc.php
@@ -423,24 +452,30 @@
 %%WWWDIR%%/templates/show_song.inc.php
 %%WWWDIR%%/templates/show_song_row.inc.php
 %%WWWDIR%%/templates/show_songs.inc.php
+%%WWWDIR%%/templates/show_stats.inc.php
 %%WWWDIR%%/templates/show_stats_newest.inc.php
 %%WWWDIR%%/templates/show_stats_popular.inc.php
+%%WWWDIR%%/templates/show_tagcloud.inc.php
 %%WWWDIR%%/templates/show_test.inc.php
 %%WWWDIR%%/templates/show_test_config.inc.php
+%%WWWDIR%%/templates/show_update_items.inc.php
 %%WWWDIR%%/templates/show_user.inc.php
 %%WWWDIR%%/templates/show_user_activate.inc.php
 %%WWWDIR%%/templates/show_user_preferences.inc.php
 %%WWWDIR%%/templates/show_user_recommendations.inc.php
 %%WWWDIR%%/templates/show_user_registration.inc.php
+%%WWWDIR%%/templates/show_user_row.inc.php
 %%WWWDIR%%/templates/show_user_stats.inc.php
 %%WWWDIR%%/templates/show_users.inc.php
 %%WWWDIR%%/templates/show_verify_catalog.inc.php
+%%WWWDIR%%/templates/show_video_row.inc.php
+%%WWWDIR%%/templates/show_videos.inc.php
 %%WWWDIR%%/templates/show_xspf_player.inc.php
 %%WWWDIR%%/templates/sidebar.inc.php
 %%WWWDIR%%/templates/sidebar_admin.inc.php
-%%WWWDIR%%/templates/sidebar_browse.inc.php
 %%WWWDIR%%/templates/sidebar_home.inc.php
 %%WWWDIR%%/templates/sidebar_localplay.inc.php
+%%WWWDIR%%/templates/sidebar_modules.inc.php
 %%WWWDIR%%/templates/sidebar_preferences.inc.php
 %%WWWDIR%%/templates/subnavbar.inc.php
 %%WWWDIR%%/test.php
@@ -449,6 +484,7 @@
 %%WWWDIR%%/themes/classic/images/bg_login.jpg
 %%WWWDIR%%/themes/classic/images/blank-pixel.gif
 %%WWWDIR%%/themes/classic/images/blankalbum.gif
+%%WWWDIR%%/themes/classic/images/blankalbum.jpg
 %%WWWDIR%%/themes/classic/images/bottom.gif
 %%WWWDIR%%/themes/classic/images/bottomleft.gif
 %%WWWDIR%%/themes/classic/images/bottomright.gif
@@ -468,6 +504,7 @@
 %%WWWDIR%%/themes/greysme/images/back-box.gif
 %%WWWDIR%%/themes/greysme/images/background.jpg
 %%WWWDIR%%/themes/greysme/images/blankalbum.gif
+%%WWWDIR%%/themes/greysme/images/blankalbum.jpg
 %%WWWDIR%%/themes/greysme/images/box_bottom.png
 %%WWWDIR%%/themes/greysme/images/box_top.png
 %%WWWDIR%%/themes/greysme/images/button_back.png
@@ -515,10 +552,11 @@
 @dirrm %%WWWDIR%%/sql
 @dirrm %%WWWDIR%%/server
 @dirrm %%WWWDIR%%/play
-@dirrm %%WWWDIR%%/modules/xmlrpc
 @dirrm %%WWWDIR%%/modules/validatemail
 @dirrm %%WWWDIR%%/modules/prototype
 @dirrm %%WWWDIR%%/modules/plugins
+@dirrm %%WWWDIR%%/modules/pearxmlrpc
+@dirrm %%WWWDIR%%/modules/nusoap
 @dirrm %%WWWDIR%%/modules/mpd
 @dirrm %%WWWDIR%%/modules/localplay
 @dirrm %%WWWDIR%%/modules/kajax
@@ -529,21 +567,22 @@
 @dirrm %%WWWDIR%%/modules/getid3
 @dirrm %%WWWDIR%%/modules/flash/Original
 @dirrm %%WWWDIR%%/modules/flash
+@dirrm %%WWWDIR%%/modules/emulator
 @dirrm %%WWWDIR%%/modules/captcha
 @dirrm %%WWWDIR%%/modules/archive
 @dirrm %%WWWDIR%%/modules
-@dirrm %%WWWDIR%%/locale/zh_CN/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/zh_CN
-@dirrm %%WWWDIR%%/locale/tr_TR/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/tr_TR
+@dirrm %%WWWDIR%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/sv_SE
 @dirrm %%WWWDIR%%/locale/ru_RU/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/ru_RU
 @dirrm %%WWWDIR%%/locale/nl_NL/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/nl_NL
+@dirrm %%WWWDIR%%/locale/nb_NO/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/nb_NO
+@dirrm %%WWWDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ja_JP
 @dirrm %%WWWDIR%%/locale/it_IT/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/it_IT
-@dirrm %%WWWDIR%%/locale/ja_JP/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/ja_JP/
 @dirrm %%WWWDIR%%/locale/fr_FR/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/fr_FR
 @dirrm %%WWWDIR%%/locale/es_ES/LC_MESSAGES
@@ -554,8 +593,10 @@
 @dirrm %%WWWDIR%%/locale/el_GR
 @dirrm %%WWWDIR%%/locale/de_DE/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/de_DE
-@dirrm %%WWWDIR%%/locale/ca_CA/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/ca_CA
+@dirrm %%WWWDIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/cs_CZ
+@dirrm %%WWWDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ca_ES
 @dirrm %%WWWDIR%%/locale/base
 @dirrm %%WWWDIR%%/locale
 @dirrm %%WWWDIR%%/lib/class
@@ -563,8 +604,8 @@
 @dirrm %%WWWDIR%%/images/ratings
 @dirrm %%WWWDIR%%/images
 @dirrm %%WWWDIR%%/docs
+@dirrmtry %%WWWDIR%%/config
 @dirrm %%WWWDIR%%/bin
 @dirrm %%WWWDIR%%/admin
-@dirrmtry %%WWWDIR%%/config
 @dirrmtry %%WWWDIR%%
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%
