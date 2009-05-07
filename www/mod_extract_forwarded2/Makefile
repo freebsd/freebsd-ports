@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_extract_forwarded2
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.cotds.org/${PORTNAME}/
 DIST_SUBDIR=	apache2
@@ -15,6 +16,7 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that can make proxied requests appear with client IP
 
 USE_APACHE=	20+
+SHORTMODNAME=	extract_forwarded
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 
