@@ -43,10 +43,4 @@ do-install:
 		${CP} ${PREFIX}/etc/trafshow.dist ${PREFIX}/etc/trafshow; \
 	fi
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800059
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
