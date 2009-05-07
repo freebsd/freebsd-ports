@@ -1,6 +1,6 @@
---- Makefile.orig	2009-02-12 04:47:20.000000000 +0100
-+++ Makefile	2009-02-20 09:13:43.000000000 +0100
-@@ -211,7 +211,7 @@
+--- Makefile.orig	2009-05-05 17:59:32.000000000 +0200
++++ Makefile	2009-05-06 21:49:06.000000000 +0200
+@@ -213,7 +213,7 @@
  
  #setup linking
  # -lrt needed for clock_gettime()
@@ -9,22 +9,7 @@
  ifeq ($(USE_FAM),1)
  lLIBS += -lfam
  endif
-@@ -223,10 +223,10 @@
- endif
- # should not need translation
- OPSYS := $(shell uname)
--ifeq ($(OPSYS),FreeBSD)
--OSREL = $(shell sysctl -n kern.osreldate)
--lLIBS += $(shell if test $(OSREL) -lt 500041 ; then echo "-lgnugetopt"; fi)
--endif
-+#ifeq ($(OPSYS),FreeBSD)
-+#OSREL = $(shell sysctl -n kern.osreldate)
-+#lLIBS += $(shell if test $(OSREL) -lt 500041 ; then echo "-lgnugetopt"; fi)
-+#endif
- 
- .PHONY: all plugins install install_plugins uninstall uninstall_plugins doc \
-         clean clean_plugins deps i18n install_i18n uninstall_i18n \
-@@ -245,10 +245,6 @@
+@@ -247,10 +247,6 @@
  	@for file in `ls $(ICONS)/ |grep -v svn`; do \
  		install -m 644 $(ICONS)/$$file $(ICON_DIR); \
  	done
