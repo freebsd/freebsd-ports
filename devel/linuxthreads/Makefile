@@ -16,6 +16,8 @@ DISTNAME=	glibc-linuxthreads-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POSIX pthreads implementation using rfork to generate kernel threads
 
+BROKEN=		leaves file on deinstall
+
 .if defined(LINUXTHREADS_WRAP_API)
 USE_PERL5_BUILD=true
 .endif
