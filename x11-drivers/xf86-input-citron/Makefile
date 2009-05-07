@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xf86-input-citron
-PORTVERSION=	2.2.1
-PORTREVISION=	2
+PORTVERSION=	2.2.2
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -15,7 +14,5 @@ COMMENT=	X.Org citron input driver
 
 XORG_CAT=	driver
 MAN4=		citron.4x
-
-IGNORE=	Unmaintained upstream. Notify ${MAINTAINER} if you have this device.
 
 .include <bsd.port.mk>
