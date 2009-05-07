@@ -1,10 +1,10 @@
---- configure.ac.orig	2008-07-24 22:31:44.000000000 +0000
-+++ configure.ac	2009-03-26 09:33:19.329662010 +0000
+--- configure.ac.orig	2009-04-30 10:50:46.093705484 +0000
++++ configure.ac	2009-04-30 10:51:28.143853198 +0000
 @@ -47,7 +47,7 @@
  AC_SUBST(pkgconfig_add_data)
  
  # Files where we want to substitude variables (as version)
--# AC_CONFIG_FILES(readme.txt autotools/RakNet.pc)
+-+AC_CONFIG_FILES(autotools/RakNet.pc)
 +AC_CONFIG_FILES(autotools/RakNet.pc)
  
  AC_CONFIG_FILES(Makefile Source/Makefile DependentExtensions/Makefile)
