@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	switzerland
-PORTVERSION=	0.0.7
+PORTVERSION=	0.1.0
 CATEGORIES=	security python
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
