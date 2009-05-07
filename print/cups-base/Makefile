@@ -10,7 +10,7 @@ PORTVERSION=	1.3.10
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
-PKGNAMESUFFIX=	-base${PKGNAMESUFFIX2}
+PKGNAMESUFFIX=	${CUPS_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Common UNIX Printing System
@@ -21,12 +21,9 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 CONFLICTS=	LPRng-[0-9]*
 
-USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GHOSTSCRIPT=	yes
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=	cupsd
 CFLAGS+=	${PTHREAD_CFLAGS}
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
@@ -35,8 +32,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" DSOFLAGS="${DSOFLAGS}
 CONFIGURE_ARGS+=	--localstatedir=/var			\
 			--disable-slp				\
 			--disable-gssapi			\
-			--enable-pdftops			\
-			--with-pdftops=gs			\
 			--with-cups-user=${CUPSOWN}		\
 			--with-cups-group=${CUPSGRP}		\
 			--with-system-groups=${CUPSSYSGRP}	\
@@ -45,7 +40,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var			\
 			--with-menudir=${DESKTOPDIR}		\
 			--with-domainsocket=${CUPS_SOCKET}
 
-OPTIONS=	GNUTLS		"Build with GNUTLS library" on \
+OPTIONS?=	GNUTLS		"Build with GNUTLS library" on \
 		PHP		"Build PHP support" off \
 		PYTHON		"Build PYTHON support" off \
 		LIBPAPER	"Build with libpaper support" off \
@@ -66,6 +61,18 @@ CUPSOWN=	cups
 CUPSSYSGRP=	wheel
 
 .include <bsd.port.pre.mk>
+
+.if defined(CUPS_CLIENT)
+USE_LDCONFIG=	yes
+CUPS_SUFFIX=	-client
+PKGNAMESUFFIX=	-client${PKGNAMESUFFIX2}
+PLIST=		plist.client
+.else
+CUPS_SUFFIX=	-base
+USE_RC_SUBR=	cupsd
+USE_GHOSTSCRIPT=	yes
+CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=gs
+.endif
 
 .if defined(CUPS_OVERWRITE_BASE)
 PLIST_SUB+=		OVERWRITE=""
@@ -137,50 +144,47 @@ CONFIGURE_ARGS+=	--disable-dbus
 RUN_DEPENDS+=		xdg-open:${PORTSDIR}/devel/xdg-utils
 .endif
 
-MAN1EXT=	1
-MAN5EXT=	5
-MAN7EXT=	7
-MAN8EXT=	8
+.if !defined(CUPS_CLIENT)
+MAN1=	cancel.1 \
+	cups-config.1 \
+	cupstestdsc.1 \
+	cupstestppd.1 \
+	lp.1 \
+	lpoptions.1 \
+	lppasswd.1 \
+	lpq.1 \
+	lprm.1 \
+	lpr.1 \
+	lpstat.1
+MAN5=	classes.conf.5 \
+	client.conf.5 \
+	cups-snmp.conf.5 \
+	cupsd.conf.5 \
+	mailto.conf.5 \
+	mime.convs.5 \
+	mime.types.5 \
+	printers.conf.5 \
+	subscriptions.conf.5
+MAN7=	backend.7 \
+	filter.7
+MAN8=	accept.8 \
+	cupsaddsmb.8 \
+	cups-deviced.8 \
+	cups-driverd.8 \
+	cups-lpd.8 \
+	cups-polld.8 \
+	cupsctl.8 \
+	cupsd.8 \
+	cupsenable.8 \
+	cupsfilter.8 \
+	lpadmin.8 \
+	lpinfo.8 \
+	lpmove.8 \
+	lpc.8
 
-MAN1=	cancel.${MAN1EXT} \
-	cups-config.${MAN1EXT} \
-	cupstestdsc.${MAN1EXT} \
-	cupstestppd.${MAN1EXT} \
-	lp.${MAN1EXT} \
-	lpoptions.${MAN1EXT} \
-	lppasswd.${MAN1EXT} \
-	lpq.${MAN1EXT} \
-	lprm.${MAN1EXT} \
-	lpr.${MAN1EXT} \
-	lpstat.${MAN1EXT}
-MAN5=	classes.conf.${MAN5EXT} \
-	client.conf.${MAN5EXT} \
-	cups-snmp.conf.${MAN5EXT} \
-	cupsd.conf.${MAN5EXT} \
-	mailto.conf.${MAN5EXT} \
-	mime.convs.${MAN5EXT} \
-	mime.types.${MAN5EXT} \
-	printers.conf.${MAN5EXT} \
-	subscriptions.conf.${MAN5EXT}
-MAN7=	backend.${MAN7EXT} \
-	filter.${MAN7EXT}
-MAN8=	accept.${MAN8EXT} \
-	cupsaddsmb.${MAN8EXT} \
-	cups-deviced.${MAN8EXT} \
-	cups-driverd.${MAN8EXT} \
-	cups-lpd.${MAN8EXT} \
-	cups-polld.${MAN8EXT} \
-	cupsctl.${MAN8EXT} \
-	cupsd.${MAN8EXT} \
-	cupsenable.${MAN8EXT} \
-	cupsfilter.${MAN8EXT} \
-	lpadmin.${MAN8EXT} \
-	lpinfo.${MAN8EXT} \
-	lpmove.${MAN8EXT} \
-	lpc.${MAN8EXT}
-
-MLINKS=	accept.${MAN8EXT} reject.${MAN8EXT} \
-	cupsenable.${MAN8EXT} cupsdisable.${MAN8EXT}
+MLINKS=	accept.8 reject.8 \
+	cupsenable.8 cupsdisable.8
+.endif
 
 pre-configure::
 	@${ECHO_MSG} Configuring CUPS with options:
@@ -201,7 +205,27 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|CXX="$$CC"||g ; s|-lpthreads.*;|${PTHREAD_LIBS};|g' \
 		-e 's|/private/etc/pam.d|${LOCALBASE}/etc/pam.d|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
+.if defined(CUPS_CLIENT)
+	@${REINPLACE_CMD} \
+		-e 's|backend berkeley cgi-bin filter locale man monitor ||' \
+		-e 's|notifier scheduler systemv test ||' \
+		-e 's|$$.PHPDIR. ||' \
+		-e 's|conf data doc $$.FONTS.ppd templates||' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} \
+		-e 's|	testadmin ||' \
+		-e 's|	testarray ||' \
+		-e 's|	testcups ||' \
+		-e 's|	testfile ||' \
+		-e 's|	testhttp ||' \
+		-e 's|	testi18n ||' \
+		-e 's|	testipp ||' \
+		-e 's|	testlang ||' \
+		-e 's|	testppd ||' \
+		${WRKSRC}/cups/Makefile
+.endif
 
+.if !defined(CUPS_CLIENT)
 pre-su-install:
 	@${INSTALL} -d ${DESKTOPDIR}/
 	if ! pw groupshow ${CUPSGRP}; then pw groupadd ${CUPSGRP} -g 193; fi
@@ -229,5 +253,10 @@ post-install:
 	${CHMOD} -R g+w ${CUPS_SPOOLDIR}/
 	${INSTALL} -d /var/cache/cups/
 	${CHOWN} root:${CUPSGRP} /var/cache/cups/
+.endif
+
+.if defined(CUPS_CLIENT)
+do-install:
+.endif
 
 .include <bsd.port.post.mk>
