@@ -2,7 +2,7 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.42 2009-01-09 17:04:48 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.43 2009-05-07 08:19:02 dinoex Exp $
 #
 # Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
 #
@@ -107,9 +107,15 @@ OPENSSL_INSTALLED!=	find "${PKG_DBDIR}/" -type f -name "+CONTENTS" -print0 | \
 				if test "$${sslprefix}" = "@cwd ${LOCALBASE}" ; then \
 					echo "$${contents}"; break; fi; done
 .endif
+.if defined(OPENSSL_INSTALLED) && ${OPENSSL_INSTALLED} != ""
 OPENSSL_PORT!=		grep "^@comment ORIGIN:" "${OPENSSL_INSTALLED}" | ${CUT} -d : -f 2
 OPENSSL_SHLIBFILE!=	grep "^lib/libssl.so." "${OPENSSL_INSTALLED}"
 OPENSSL_SHLIBVER?=	${OPENSSL_SHLIBFILE:E}
+.else
+# PKG_DBDIR was not found, default
+OPENSSL_PORT?=		security/openssl
+OPENSSL_SHLIBVER?=	5
+.endif
 .endif
 OPENSSL_PORT?=		security/openssl
 OPENSSL_SHLIBVER?=	5
