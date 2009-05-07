@@ -1,4 +1,5 @@
 bin/FastCollector
+bin/study-switzerland-pcaps
 bin/switzerland-client
 bin/switzerland-server
 %%PYTHON_SITELIBDIR%%/switzerland/__init__.py
@@ -28,6 +29,9 @@ bin/switzerland-server
 %%PYTHON_SITELIBDIR%%/switzerland/client/PacketBatch.py
 %%PYTHON_SITELIBDIR%%/switzerland/client/PacketBatch.pyc
 %%PYTHON_SITELIBDIR%%/switzerland/client/PacketBatch.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/client/PacketDiff.py
+%%PYTHON_SITELIBDIR%%/switzerland/client/PacketDiff.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/client/PacketDiff.pyo
 %%PYTHON_SITELIBDIR%%/switzerland/client/PacketListener.py
 %%PYTHON_SITELIBDIR%%/switzerland/client/PacketListener.pyc
 %%PYTHON_SITELIBDIR%%/switzerland/client/PacketListener.pyo
@@ -40,9 +44,15 @@ bin/switzerland-server
 %%PYTHON_SITELIBDIR%%/switzerland/client/TimeManager.py
 %%PYTHON_SITELIBDIR%%/switzerland/client/TimeManager.pyc
 %%PYTHON_SITELIBDIR%%/switzerland/client/TimeManager.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/client/Tracerouter.py
+%%PYTHON_SITELIBDIR%%/switzerland/client/Tracerouter.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/client/Tracerouter.pyo
 %%PYTHON_SITELIBDIR%%/switzerland/client/__init__.py
 %%PYTHON_SITELIBDIR%%/switzerland/client/__init__.pyc
 %%PYTHON_SITELIBDIR%%/switzerland/client/__init__.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/common/Dummies.py
+%%PYTHON_SITELIBDIR%%/switzerland/common/Dummies.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/common/Dummies.pyo
 %%PYTHON_SITELIBDIR%%/switzerland/common/Flow.py
 %%PYTHON_SITELIBDIR%%/switzerland/common/Flow.pyc
 %%PYTHON_SITELIBDIR%%/switzerland/common/Flow.pyo
@@ -67,9 +77,61 @@ bin/switzerland-server
 %%PYTHON_SITELIBDIR%%/switzerland/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/switzerland/lib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/switzerland/lib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/__init__.py
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/__init__.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/base_classes.py
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/base_classes.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/base_classes.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/config.py
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/config.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/config.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/dadict.py
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/dadict.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/dadict.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/data.py
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/data.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/data.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/error.py
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/error.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/error.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/fields.py
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/fields.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/fields.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/layers
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/layers
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/layers/__init__.py
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/layers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/layers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/layers/inet.py
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/layers/inet.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/layers/inet.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/layers/l2.py
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/layers/l2.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/layers/l2.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/packet.py
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/packet.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/packet.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/plist.py
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/plist.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/plist.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/themes.py
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/themes.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/themes.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/utils.py
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/utils.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/utils.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/volatile.py
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/volatile.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/volatile.pyo
 %%PYTHON_SITELIBDIR%%/switzerland/lib/tweaked_cerealizer.py
 %%PYTHON_SITELIBDIR%%/switzerland/lib/tweaked_cerealizer.pyc
 %%PYTHON_SITELIBDIR%%/switzerland/lib/tweaked_cerealizer.pyo
+%%PYTHON_SITELIBDIR%%/switzerland/server/Matchmaker.py
+%%PYTHON_SITELIBDIR%%/switzerland/server/Matchmaker.pyc
+%%PYTHON_SITELIBDIR%%/switzerland/server/Matchmaker.pyo
 %%PYTHON_SITELIBDIR%%/switzerland/server/Reconciliator.py
 %%PYTHON_SITELIBDIR%%/switzerland/server/Reconciliator.pyc
 %%PYTHON_SITELIBDIR%%/switzerland/server/Reconciliator.pyo
@@ -86,6 +148,8 @@ bin/switzerland-server
 %%PYTHON_SITELIBDIR%%/switzerland/server/__init__.pyc
 %%PYTHON_SITELIBDIR%%/switzerland/server/__init__.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/switzerland/server
+@dirrm %%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/layers
+@dirrm %%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy
 @dirrm %%PYTHON_SITELIBDIR%%/switzerland/lib
 @dirrm %%PYTHON_SITELIBDIR%%/switzerland/common
 @dirrm %%PYTHON_SITELIBDIR%%/switzerland/client
