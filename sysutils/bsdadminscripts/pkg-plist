@@ -1,6 +1,6 @@
-share/bsdadminscripts/buildflags.awk
+%%DATADIR%%/buildflags.awk
 etc/buildflags.conf.sample
-share/bsdadminscripts/buildflags.mk
+%%DATADIR%%/buildflags.mk
 sbin/distviper
 sbin/pkg_libchk
 sbin/pkg_upgrade
@@ -8,6 +8,7 @@ sbin/pkg_validate
 sbin/portconfig
 sbin/rcstart
 sbin/uma
+etc/uma.conf.sample
 sbin/rcstatus
 sbin/rcstop
 sbin/rcrestart

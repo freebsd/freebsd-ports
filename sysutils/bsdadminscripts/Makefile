@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdadminscripts
-PORTVERSION=	6.0
+PORTVERSION=	6.1
 CATEGORIES=	sysutils ports-mgmt
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,12 +39,12 @@ MLINKS+=	${RC_SCRIPTS:S,^,rc,:S,$,.1,:S,^,rcstart.1 ,} \
 .endif
 
 plist: patch
-	@cd ${WRKSRC}; ./list.sh -nodoc > ${PLIST}
+	@cd ${WRKSRC}; ./plist.sh -nodoc > ${PLIST}
 	@${ECHO} "@dirrm ${DATADIR_REL}" >> ${PLIST}
 
 do-install:
 	@cd ${WRKSRC}; ./install.sh \
-		-prefix=${PREFIX} -ports=${PORTSDIR} -distdir=${DISTDIR} \
-			${NOPORTDOCS}
+		-prefix=${PREFIX} -ports=${PORTSDIR} -distdir=${DISTDIR}  \
+		-datadir=${DATADIR} ${NOPORTDOCS}
 
 .include <bsd.port.mk>
