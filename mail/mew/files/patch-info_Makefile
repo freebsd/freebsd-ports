@@ -1,5 +1,5 @@
---- info/Makefile.orig	Mon Dec 27 13:00:04 2004
-+++ info/Makefile	Tue Jan 31 23:32:37 2006
+--- info/Makefile.orig	2007-12-03 14:57:00.000000000 +0900
++++ info/Makefile	2009-03-25 00:08:51.000000000 +0900
 @@ -15,12 +15,10 @@
  ## EDIT THE FOLLOWINGS
  ##
@@ -15,3 +15,29 @@
  
  INSTALLINFO = `which install-info`
  #INSTALLINFO = /usr/local/bin/install-info
+@@ -53,20 +51,20 @@
+ info:
+ 	sed -e 's/@setfilename mew.jis.info/@setfilename mew.info/' \
+ 	    -e 's/@set jp/@set us/' mew.texi > tmp.texi
+-	mv tmp.texi mew.texi
+ 	$(RM) mew.info*
+ 	$(TOUCH) mew.info
+ 	$(EMACS) -batch -q -no-site-file -l texinfmt \
+-		-f batch-texinfo-format mew.texi
++		-f batch-texinfo-format tmp.texi
++	$(RM) tmp.texi
+ 
+ jinfo:
+ 	sed -e 's/@setfilename mew.info/@setfilename mew.jis.info/' \
+-	    -e 's/@set us/@set jp/' mew.texi > tmp.texi
+-	mv tmp.texi mew.texi
++	    -e 's/@set us/@set jp/' mew.texi > tmp.jis.texi
+ 	$(RM) mew.jis.info*
+ 	$(TOUCH) mew.jis.info
+ 	$(EMACS) -batch -q -no-site-file -l texinfmt \
+-		-f batch-texinfo-format mew.texi
++		-f batch-texinfo-format tmp.jis.texi
++	$(RM) tmp.jis.texi
+ 
+ install: install-info
+ install-info:
