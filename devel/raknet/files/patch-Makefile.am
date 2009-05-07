@@ -1,5 +1,5 @@
---- Makefile.am.orig	2009-03-26 08:47:40.963923627 +0000
-+++ Makefile.am	2009-03-26 08:48:10.713222979 +0000
+--- Makefile.am.orig	2009-04-30 10:50:54.156542241 +0000
++++ Makefile.am	2009-04-30 10:52:47.532245019 +0000
 @@ -3,7 +3,7 @@
  
  SUBDIRS = Source DependentExtensions

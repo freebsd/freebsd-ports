@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	raknet
-PORTVERSION=	3.5.0
+PORTVERSION=	3.5.2
 PORTEPOCH=	1
 CATEGORIES=	devel net
-MASTER_SITES=	http://www.jenkinssoftware.com/raknet/downloads/
-DISTNAME=	RakNet-3.5
+MASTER_SITES=	http://www.jenkinssoftware.com/raknet/downloads/ \
+		SF
+MASTER_SITE_SUBDIR=	raknetjenkinsso
+DISTNAME=	RakNet-3.52
 
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Networking API that provides reliable UDP primarily for online games
