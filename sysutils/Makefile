@@ -105,6 +105,7 @@
     SUBDIR += comconsole
     SUBDIR += comiccron
     SUBDIR += condor
+    SUBDIR += confman
     SUBDIR += conky
     SUBDIR += conky-awesome
     SUBDIR += consolehm

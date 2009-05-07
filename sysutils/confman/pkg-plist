@@ -1,0 +1,18 @@
+etc/bash_completion.d/confman_completion
+etc/confman.conf.sample
+etc/defaults/confman.conf
+libexec/confman/abspath
+libexec/confman/confaudit
+libexec/confman/confexport
+libexec/confman/conflock
+libexec/confman/confsync
+sbin/confadmin
+sbin/confman
+%%DATADIR%%/confadmindoc.sh
+%%DATADIR%%/confmancommon.sh
+%%DATADIR%%/confmandoc.sh
+%%DATADIR%%/confmanlib.sh
+@dirrmtry etc/bash_completion.d
+@dirrmtry etc/defaults
+@dirrm libexec/confman
+@dirrm %%DATADIR%%
