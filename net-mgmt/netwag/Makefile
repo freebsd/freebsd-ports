@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	netwag
-PORTVERSION=	5.35.0
-PORTREVISION=	2
+PORTVERSION=	5.36.0
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www.laurentconstantin.com/common/netw/${PORTNAME}/download/v5/ \
 		http://membres.lycos.fr/lauconstantin/common/netw/${PORTNAME}/download/v5/ \
@@ -21,7 +20,7 @@ BUILD_DEPENDS=	netwox:${PORTSDIR}/net-mgmt/netwox \
 		wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		appres:${PORTSDIR}/x11/appres \
 		xterm:${PORTSDIR}/x11/xterm
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
 SHORTPORTVERSION=${PORTVERSION:C/([0-9]*)\.([0-9]*)\.[0-9]*/\1\2/}
