@@ -4,7 +4,7 @@ can make proxied requests appear with client IPs.
 
 Edit your apache.conf or httpd.conf to enable and setup this
 module. Have a look at the files in
-${PREFIX}/share/doc/mod_extract_forward for information on
+${PREFIX}/share/doc/mod_extract_forward2 for information on
 how to configure it.
 
 Then do this to make it work effective:
