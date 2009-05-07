@@ -7,6 +7,7 @@
 
 PORTNAME=	bdb
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/ \
 		${MASTER_SITE_LOCAL}
