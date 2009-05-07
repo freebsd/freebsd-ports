@@ -217,6 +217,7 @@ post-patch:
 .else
 	@${REINPLACE_CMD} \
 		-e 's|cups backend|backend|' \
+		-e 's|$$.INSTALL_SCRIPT. cups-config|echo skip: cups-config|' \
 		-e '/share/s|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} \

@@ -1768,7 +1768,6 @@ share/locale/zh_TW/cups_zh_TW.po
 @dirrmtry libexec/cups/backend
 @dirrmtry libexec/cups
 %%PHP%%@dirrmtry lib/php/%%PHP_EXT_DIR%%
-@dirrm include/cups
 @dirrmtry etc/cups/interfaces
 @dirrmtry etc/cups/ppd
 @dirrmtry etc/cups/ssl
