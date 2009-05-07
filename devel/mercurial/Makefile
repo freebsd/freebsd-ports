@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercurial
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.selenic.com/mercurial/release/
 
@@ -15,6 +15,7 @@ COMMENT=	A fast, lightweight source control management system
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=yes
+PYDISTUTILS_NOEGGINFO=  yes
 
 CONTRIB_FILES=	bash_completion \
 		convert-repo \
