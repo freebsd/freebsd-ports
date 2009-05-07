@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	ZendFramework
-PORTVERSION=	1.7.8
+PORTVERSION=	1.8.0
 CATEGORIES=	www
-MASTER_SITES=	http://framework.zend.com/releases/${DISTNAME}/ GENTOO/distfiles
+MASTER_SITES=	http://framework.zend.com/releases/${DISTNAME}/ \
+		GENTOO/distfiles
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
@@ -23,7 +24,6 @@ SUB_FILES=	pkg-message
 OPTIONS=	\
 		EDOJO "Install embedded Dojo" On \
 		PDOJO "Install Dojo from ports" Off \
-		INCUBATOR "Install incubator classes" Off \
 		MYSQL "Install MySQL PDO support" Off \
 		MYSQLI "Install MySQLi support" Off \
 		DBLIB "Install DBLIB PDO support" Off \
@@ -34,10 +34,6 @@ OPTIONS=	\
 		REQPHP "Install required PHP dependencies" On \
 		OPTPHP "Install optional PHP dependencies" Off
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	INSTALL.txt README.txt
-.endif
-
 .include <bsd.port.pre.mk>
 
 IGNORE_WITH_PHP=4
@@ -47,7 +43,7 @@ IGNORE_WITH_PHP=4
 IGNORE=		please select only one type of Dojo installation
 .endif
 
-INSTALL_DIRS=	library
+INSTALL_DIRS=	library extras/library
 
 .if defined(WITH_EDOJO)
 DOJO=		""
@@ -58,14 +54,6 @@ DOJO=		"@comment "
 .endif
 PLIST_SUB+=	DOJO=${DOJO}
 
-.if defined(WITH_INCUBATOR)
-INCUBATOR=	""
-INSTALL_DIRS+=	incubator
-.else
-INCUBATOR=	"@comment "
-.endif
-PLIST_SUB+=	INCUBATOR=${INCUBATOR}
-
 .if defined(WITH_PDOJO)
 RUN_DEPENDS+=	dojo>=0:${PORTSDIR}/www/dojo
 .endif
@@ -73,12 +61,13 @@ RUN_DEPENDS+=	dojo>=0:${PORTSDIR}/www/dojo
 # Add all of the required and/or optional PHP extension dependencies,
 # if chosen by the user.
 #
-# See http://framework.zend.com/manual/en/requirements.extensions.html for
+# See http://framework.zend.com/manual/en/requirements.html for
 # a table of what PHP extensions are required for what ZF classes.
 
 .if defined(WITH_REQPHP)
-USE_PHP+=	apc ctype curl dom gd hash iconv mbstring \
-		memcache pdo session simplexml soap xml zlib
+USE_PHP+=	apc ctype curl dom gd hash iconv mbstring ldap mcrypt \
+		memcache pcre pdo session simplexml soap spl \
+		sqlite xml zlib
 .endif
 .if defined(WITH_OPTPHP)
 USE_PHP+=	bcmath bitset json posix
@@ -123,6 +112,8 @@ do-install:
 	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${ECHO_CMD} '@exec ${FIND} ${DATADIR} -type d -print0 | \
 		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
+	@cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} zf.sh ${PREFIX}/bin/zf
+	@cd ${WRKSRC}/bin && ${INSTALL_DATA} zf.php ${PREFIX}/bin/zf.php
 .if !defined(NOPORTEXAMPLES)
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "demos tests" ${EXAMPLESDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${EXAMPLESDIR}
@@ -139,9 +130,8 @@ do-install:
 # Maintainer-mode target to speed up fixup of output from genplist
 fix-new-plist:
 	@if [ -f pkg-plist.new ]; then \
-		${PERL} -ni.bak -e 'next if /PORTDOCS/; \
-				s#^(.*%%DATADIR%%/externals)#%%DOJO%%$$1#g; \
-				s#^(.*%%DATADIR%%/incubator)#%%INCUBATOR%%$$1#g; \
+		${PERL} -ni.bak -e \
+				's#^(.*%%DATADIR%%/externals)#%%DOJO%%$$1#g; \
 				print;' pkg-plist.new; \
 	else \
 		${ECHO_CMD} Please run genplist to create pkg-plist.new; \
@@ -150,7 +140,13 @@ fix-new-plist:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${DOCSDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "INSTALL.txt README.txt" ${DOCSDIR}
+	@${INSTALL} -d ${DOCSDIR}/extras/api
+	@cd ${WRKSRC}/extras/documentation/api/extras && \
+		${COPYTREE_SHARE} . ${DOCSDIR}/extras/api
+	@${INSTALL} -d ${DOCSDIR}/extras/manual
+	@cd ${WRKSRC}/extras/documentation/manual/extras/en && \
+		${COPYTREE_SHARE} . ${DOCSDIR}/extras/manual
 .endif
 	@${CAT} ${PKGMESSAGE}
 
