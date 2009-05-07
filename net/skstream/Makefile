@@ -7,7 +7,7 @@
 
 PORTNAME=	skstream
 PORTVERSION=	0.3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	worldforge
@@ -17,7 +17,6 @@ COMMENT=	An iostream based C++ socket library
 
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
-USE_GCC=	3.4
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
