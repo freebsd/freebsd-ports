@@ -8,6 +8,21 @@ For example, insert:
 
 into `%%LOCALBASE%%/etc/php.ini'.
 
-For more information about the Zend Framework, please visit:
-http://framework.zend.com/
+Zend Framework includes the Zend_Tool class and wrapper script
+for automating many common framework-related tasks. To use the
+zf wrapper script, set the following environment variable:
+
+Bourne shell:
+    export ZEND_TOOL_INCLUDE_PATH_PREPEND=\
+        %%DATADIR%%/library
+
+C-shell:
+    setenv ZEND_TOOL_INCLUDE_PATH_PREPEND \
+        %%DATADIR%%/library
+
+Documentation for the Zend_Tool class is found at:
+http://framework.zend.com/manual/en/zend.tool.framework.html
+
+For more general information about the Zend Framework, please
+visit: http://framework.zend.com/
 ***************************************************************

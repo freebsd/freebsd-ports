@@ -1,3 +1,5 @@
+bin/zf
+bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/demos/README
 %%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/README
 %%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/demo.css
@@ -3199,213 +3201,50 @@
 %%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/MPL-1.1.html
 %%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/custom_rhino.diff
 %%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/custom_rhino.jar
-%%INCUBATOR%%%%DATADIR%%/incubator/bin/zf.bat
-%%INCUBATOR%%%%DATADIR%%/incubator/bin/zf.php
-%%INCUBATOR%%%%DATADIR%%/incubator/bin/zf.sh
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Console/Getopt.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Reflection/Class.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Reflection/Docblock.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Reflection/Docblock/Tag.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Reflection/Docblock/Tag/Param.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Reflection/Docblock/Tag/Return.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Reflection/Exception.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Reflection/Extension.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Reflection/File.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Reflection/Function.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Reflection/Method.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Reflection/Parameter.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Reflection/Property.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Action/Base.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Action/Exception.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Action/Interface.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Action/Repository.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/Abstract.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/ConsoleClient.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/ConsoleClient/ArgumentParser.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/ConsoleClient/HelpSystem.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/ConsoleClient/Manifest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/ConsoleClient/ResponseDecorator/Colorizer.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/Exception.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/Interactive/InputHandler.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/Interactive/InputInterface.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/Interactive/InputRequest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/Interactive/InputResponse.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/Interactive/OutputInterface.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/Request.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/Response.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/Response/ContentDecorator/Interface.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/Response/ContentDecorator/Separator.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Exception.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Loader/Abstract.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Loader/IncludePathLoader.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Loader/IncludePathLoader/RecursiveFilterIterator.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Manifest/ActionMetadata.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Manifest/Exception.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Manifest/Interface.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Manifest/Metadata.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Manifest/ProviderMetadata.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Manifest/Repository.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Provider/Abstract.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Provider/DocblockManifestable.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Provider/Exception.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Provider/Interactable.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Provider/Interface.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Provider/Pretendable.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Provider/Repository.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Provider/Signature.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Registry.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Registry/EnabledInterface.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Registry/Exception.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/Registry/Interface.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/System/Action/Create.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/System/Action/Delete.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/System/Manifest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/System/Provider/Manifest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/System/Provider/Phpinfo.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/System/Provider/Providers.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Framework/System/Provider/Version.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Exception.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Filesystem/Abstract.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Filesystem/Directory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Filesystem/File.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Interface.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Repository.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/System/Interface.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/System/NotOverwritable.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/System/ProjectDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/System/ProjectProfileFile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/System/ProjectProvidersDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/System/TopLevelRestrictable.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ActionMethod.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ApisDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ApplicationConfigFile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ApplicationDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/BootstrapFile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/CacheDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ConfigFile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ConfigsDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ControllerFile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ControllersDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/DataDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/DbTableDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/DbTableFile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/FormFile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/FormsDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/HtaccessFile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/LayoutsDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/LibraryDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/LocalesDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/LogsDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ModelFile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ModelsDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ModulesDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ProjectProviderFile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/PublicDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/PublicImagesDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/PublicIndexFile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/PublicScriptsDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/PublicStylesheetsDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/SearchIndexesDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/SessionsDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/TemporaryDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/TestApplicationBootstrapFile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/TestApplicationControllerDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/TestApplicationControllerFile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/TestApplicationDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/TestLibraryBootstrapFile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/TestLibraryDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/TestLibraryFile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/TestLibraryNamespaceDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/TestPHPUnitConfigFile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/TestsDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/UploadsDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ViewControllerScriptsDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ViewFiltersDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ViewHelpersDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ViewScriptFile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ViewScriptsDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ViewsDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf/ZfStandardLibraryDirectory.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Exception.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Profile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Profile/Exception.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Profile/FileParser/Interface.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Profile/FileParser/Xml.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Profile/Iterator/EnabledResource.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Profile/Resource.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Profile/Resource/Container.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Profile/Resource/SearchConstraints.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/Abstract.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/Action.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/Controller.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/DbAdapter.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/DbTable.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/Exception.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/Form.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/Manifest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/Model.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/Profile.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/Project.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/ProjectProvider.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/Test.php
-%%INCUBATOR%%%%DATADIR%%/incubator/library/Zend/Tool/Project/Provider/View.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/AllTests.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/TestConfiguration.php.dist
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/TestHelper.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Reflection/AllTests.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Reflection/ClassTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Reflection/Docblock/AllTests.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Reflection/Docblock/Tag/ParamTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Reflection/Docblock/Tag/ReturnTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Reflection/Docblock/TagTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Reflection/DocblockTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Reflection/ExtensionTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Reflection/FileTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Reflection/FunctionTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Reflection/MethodTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Reflection/ParameterTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Reflection/PropertyTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Reflection/_files/FileOfFunctions.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Reflection/_files/TestSampleClass.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/AllTests.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Action/BaseTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Action/RepositoryTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Action/_files/Foo.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/AllTests.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Client/Cli/ArgumentParserTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Client/Cli/HelpSystemTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Client/RequestTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Client/ResponseTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Loader/IncludePathLoaderTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Manifest/ActionMetadataTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Manifest/MetadataTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Manifest/ProviderMetadataTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Manifest/RepositoryTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Manifest/_files/ActionOne.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Manifest/_files/ActionTwo.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Manifest/_files/ManifestBadMetadata.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Manifest/_files/ManifestBadProvider.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Manifest/_files/ManifestGoodOne.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Manifest/_files/ManifestGoodTwo.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Manifest/_files/ProviderOne.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Manifest/_files/ProviderTwo.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Provider/AbstractTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Provider/RepositoryTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Provider/SignatureTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Provider/_files/ProviderAltName.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Provider/_files/ProviderFullFeatured.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Provider/_files/ProviderFullFeatured2.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Provider/_files/ProviderFullFeaturedBadSpecialties.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Provider/_files/ProviderFullFeaturedBadSpecialties2.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Provider/_files/ProviderOne.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Provider/_files/ProviderTwo.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/RegistryTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/_files/EmptyClient.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Framework/_files/EmptyLoader.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Project/AllTests.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Project/Context/RegistryTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Project/ProfileTest.php
-%%INCUBATOR%%%%DATADIR%%/incubator/tests/Zend/Tool/Project/_files/.zfproject.xml.orig
+%%DATADIR%%/extras/library/ZendX/Console/Exception.php
+%%DATADIR%%/extras/library/ZendX/Console/Process/Exception.php
+%%DATADIR%%/extras/library/ZendX/Console/Process/Unix.php
+%%DATADIR%%/extras/library/ZendX/Db/Adapter/Firebird.php
+%%DATADIR%%/extras/library/ZendX/Db/Adapter/Firebird/Exception.php
+%%DATADIR%%/extras/library/ZendX/Db/Statement/Firebird.php
+%%DATADIR%%/extras/library/ZendX/Db/Statement/Firebird/Exception.php
+%%DATADIR%%/extras/library/ZendX/Exception.php
+%%DATADIR%%/extras/library/ZendX/JQuery.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Controller/Action/Helper/AutoComplete.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Exception.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Form.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Form/Decorator/AccordionContainer.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Form/Decorator/AccordionPane.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Form/Decorator/DialogContainer.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Form/Decorator/TabContainer.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Form/Decorator/TabPane.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Form/Decorator/UiWidgetContainer.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Form/Decorator/UiWidgetElement.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Form/Decorator/UiWidgetElementMarker.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Form/Decorator/UiWidgetPane.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Form/Element/AutoComplete.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Form/Element/ColorPicker.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Form/Element/DatePicker.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Form/Element/Slider.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Form/Element/Spinner.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Form/Element/UiWidget.php
+%%DATADIR%%/extras/library/ZendX/JQuery/Form/Exception.php
+%%DATADIR%%/extras/library/ZendX/JQuery/View/Exception.php
+%%DATADIR%%/extras/library/ZendX/JQuery/View/Helper/AccordionContainer.php
+%%DATADIR%%/extras/library/ZendX/JQuery/View/Helper/AccordionPane.php
+%%DATADIR%%/extras/library/ZendX/JQuery/View/Helper/AjaxLink.php
+%%DATADIR%%/extras/library/ZendX/JQuery/View/Helper/AutoComplete.php
+%%DATADIR%%/extras/library/ZendX/JQuery/View/Helper/ColorPicker.php
+%%DATADIR%%/extras/library/ZendX/JQuery/View/Helper/DatePicker.php
+%%DATADIR%%/extras/library/ZendX/JQuery/View/Helper/DialogContainer.php
+%%DATADIR%%/extras/library/ZendX/JQuery/View/Helper/JQuery.php
+%%DATADIR%%/extras/library/ZendX/JQuery/View/Helper/JQuery/Container.php
+%%DATADIR%%/extras/library/ZendX/JQuery/View/Helper/Slider.php
+%%DATADIR%%/extras/library/ZendX/JQuery/View/Helper/Spinner.php
+%%DATADIR%%/extras/library/ZendX/JQuery/View/Helper/TabContainer.php
+%%DATADIR%%/extras/library/ZendX/JQuery/View/Helper/TabPane.php
+%%DATADIR%%/extras/library/ZendX/JQuery/View/Helper/UiWidget.php
+%%DATADIR%%/extras/library/ZendX/JQuery/View/Helper/UiWidgetPane.php
 %%DATADIR%%/library/Zend/Acl.php
 %%DATADIR%%/library/Zend/Acl/Assert/Interface.php
 %%DATADIR%%/library/Zend/Acl/Exception.php
@@ -3443,6 +3282,28 @@
 %%DATADIR%%/library/Zend/Amf/Value/Messaging/ErrorMessage.php
 %%DATADIR%%/library/Zend/Amf/Value/Messaging/RemotingMessage.php
 %%DATADIR%%/library/Zend/Amf/Value/TraitsInfo.php
+%%DATADIR%%/library/Zend/Application.php
+%%DATADIR%%/library/Zend/Application/Bootstrap/Bootstrap.php
+%%DATADIR%%/library/Zend/Application/Bootstrap/BootstrapAbstract.php
+%%DATADIR%%/library/Zend/Application/Bootstrap/Bootstrapper.php
+%%DATADIR%%/library/Zend/Application/Bootstrap/Exception.php
+%%DATADIR%%/library/Zend/Application/Bootstrap/ResourceBootstrapper.php
+%%DATADIR%%/library/Zend/Application/Exception.php
+%%DATADIR%%/library/Zend/Application/Module/Autoloader.php
+%%DATADIR%%/library/Zend/Application/Module/Bootstrap.php
+%%DATADIR%%/library/Zend/Application/Resource/Db.php
+%%DATADIR%%/library/Zend/Application/Resource/Exception.php
+%%DATADIR%%/library/Zend/Application/Resource/Frontcontroller.php
+%%DATADIR%%/library/Zend/Application/Resource/Layout.php
+%%DATADIR%%/library/Zend/Application/Resource/Locale.php
+%%DATADIR%%/library/Zend/Application/Resource/Modules.php
+%%DATADIR%%/library/Zend/Application/Resource/Navigation.php
+%%DATADIR%%/library/Zend/Application/Resource/Resource.php
+%%DATADIR%%/library/Zend/Application/Resource/ResourceAbstract.php
+%%DATADIR%%/library/Zend/Application/Resource/Router.php
+%%DATADIR%%/library/Zend/Application/Resource/Session.php
+%%DATADIR%%/library/Zend/Application/Resource/Translate.php
+%%DATADIR%%/library/Zend/Application/Resource/View.php
 %%DATADIR%%/library/Zend/Auth.php
 %%DATADIR%%/library/Zend/Auth/Adapter/DbTable.php
 %%DATADIR%%/library/Zend/Auth/Adapter/Digest.php
@@ -3473,6 +3334,9 @@
 %%DATADIR%%/library/Zend/Cache/Backend/TwoLevels.php
 %%DATADIR%%/library/Zend/Cache/Backend/Xcache.php
 %%DATADIR%%/library/Zend/Cache/Backend/ZendPlatform.php
+%%DATADIR%%/library/Zend/Cache/Backend/ZendServer.php
+%%DATADIR%%/library/Zend/Cache/Backend/ZendServer/Disk.php
+%%DATADIR%%/library/Zend/Cache/Backend/ZendServer/ShMem.php
 %%DATADIR%%/library/Zend/Cache/Core.php
 %%DATADIR%%/library/Zend/Cache/Exception.php
 %%DATADIR%%/library/Zend/Cache/Frontend/Class.php
@@ -3488,6 +3352,23 @@
 %%DATADIR%%/library/Zend/Captcha/Image.php
 %%DATADIR%%/library/Zend/Captcha/ReCaptcha.php
 %%DATADIR%%/library/Zend/Captcha/Word.php
+%%DATADIR%%/library/Zend/CodeGenerator/Abstract.php
+%%DATADIR%%/library/Zend/CodeGenerator/Exception.php
+%%DATADIR%%/library/Zend/CodeGenerator/Php/Abstract.php
+%%DATADIR%%/library/Zend/CodeGenerator/Php/Body.php
+%%DATADIR%%/library/Zend/CodeGenerator/Php/Class.php
+%%DATADIR%%/library/Zend/CodeGenerator/Php/Docblock.php
+%%DATADIR%%/library/Zend/CodeGenerator/Php/Docblock/Tag.php
+%%DATADIR%%/library/Zend/CodeGenerator/Php/Docblock/Tag/License.php
+%%DATADIR%%/library/Zend/CodeGenerator/Php/Docblock/Tag/Param.php
+%%DATADIR%%/library/Zend/CodeGenerator/Php/Docblock/Tag/Return.php
+%%DATADIR%%/library/Zend/CodeGenerator/Php/Exception.php
+%%DATADIR%%/library/Zend/CodeGenerator/Php/File.php
+%%DATADIR%%/library/Zend/CodeGenerator/Php/Member/Abstract.php
+%%DATADIR%%/library/Zend/CodeGenerator/Php/Member/Container.php
+%%DATADIR%%/library/Zend/CodeGenerator/Php/Method.php
+%%DATADIR%%/library/Zend/CodeGenerator/Php/Parameter.php
+%%DATADIR%%/library/Zend/CodeGenerator/Php/Property.php
 %%DATADIR%%/library/Zend/Config.php
 %%DATADIR%%/library/Zend/Config/Exception.php
 %%DATADIR%%/library/Zend/Config/Ini.php
@@ -3514,6 +3395,7 @@
 %%DATADIR%%/library/Zend/Controller/Action/Helper/ViewRenderer.php
 %%DATADIR%%/library/Zend/Controller/Action/HelperBroker.php
 %%DATADIR%%/library/Zend/Controller/Action/HelperBroker/PriorityStack.php
+%%DATADIR%%/library/Zend/Controller/Action/Interface.php
 %%DATADIR%%/library/Zend/Controller/Dispatcher/Abstract.php
 %%DATADIR%%/library/Zend/Controller/Dispatcher/Exception.php
 %%DATADIR%%/library/Zend/Controller/Dispatcher/Interface.php
@@ -3547,6 +3429,23 @@
 %%DATADIR%%/library/Zend/Controller/Router/Route/Module.php
 %%DATADIR%%/library/Zend/Controller/Router/Route/Regex.php
 %%DATADIR%%/library/Zend/Controller/Router/Route/Static.php
+%%DATADIR%%/library/Zend/Crypt.php
+%%DATADIR%%/library/Zend/Crypt/DiffieHellman.php
+%%DATADIR%%/library/Zend/Crypt/DiffieHellman/Exception.php
+%%DATADIR%%/library/Zend/Crypt/Exception.php
+%%DATADIR%%/library/Zend/Crypt/Hmac.php
+%%DATADIR%%/library/Zend/Crypt/Hmac/Exception.php
+%%DATADIR%%/library/Zend/Crypt/Math.php
+%%DATADIR%%/library/Zend/Crypt/Math/BigInteger.php
+%%DATADIR%%/library/Zend/Crypt/Math/BigInteger/Bcmath.php
+%%DATADIR%%/library/Zend/Crypt/Math/BigInteger/Exception.php
+%%DATADIR%%/library/Zend/Crypt/Math/BigInteger/Gmp.php
+%%DATADIR%%/library/Zend/Crypt/Math/BigInteger/Interface.php
+%%DATADIR%%/library/Zend/Crypt/Math/Exception.php
+%%DATADIR%%/library/Zend/Crypt/Rsa.php
+%%DATADIR%%/library/Zend/Crypt/Rsa/Key.php
+%%DATADIR%%/library/Zend/Crypt/Rsa/Key/Private.php
+%%DATADIR%%/library/Zend/Crypt/Rsa/Key/Public.php
 %%DATADIR%%/library/Zend/Currency.php
 %%DATADIR%%/library/Zend/Currency/Exception.php
 %%DATADIR%%/library/Zend/Date.php
@@ -3590,6 +3489,7 @@
 %%DATADIR%%/library/Zend/Db/Statement/Oracle/Exception.php
 %%DATADIR%%/library/Zend/Db/Statement/Pdo.php
 %%DATADIR%%/library/Zend/Db/Statement/Pdo/Ibm.php
+%%DATADIR%%/library/Zend/Db/Statement/Pdo/Oci.php
 %%DATADIR%%/library/Zend/Db/Table.php
 %%DATADIR%%/library/Zend/Db/Table/Abstract.php
 %%DATADIR%%/library/Zend/Db/Table/Exception.php
@@ -3631,6 +3531,7 @@
 %%DATADIR%%/library/Zend/Dojo/Form/Element/NumberTextBox.php
 %%DATADIR%%/library/Zend/Dojo/Form/Element/PasswordTextBox.php
 %%DATADIR%%/library/Zend/Dojo/Form/Element/RadioButton.php
+%%DATADIR%%/library/Zend/Dojo/Form/Element/SimpleTextarea.php
 %%DATADIR%%/library/Zend/Dojo/Form/Element/Slider.php
 %%DATADIR%%/library/Zend/Dojo/Form/Element/SubmitButton.php
 %%DATADIR%%/library/Zend/Dojo/Form/Element/TextBox.php
@@ -3648,6 +3549,7 @@
 %%DATADIR%%/library/Zend/Dojo/View/Helper/ComboBox.php
 %%DATADIR%%/library/Zend/Dojo/View/Helper/ContentPane.php
 %%DATADIR%%/library/Zend/Dojo/View/Helper/CurrencyTextBox.php
+%%DATADIR%%/library/Zend/Dojo/View/Helper/CustomDijit.php
 %%DATADIR%%/library/Zend/Dojo/View/Helper/DateTextBox.php
 %%DATADIR%%/library/Zend/Dojo/View/Helper/Dijit.php
 %%DATADIR%%/library/Zend/Dojo/View/Helper/DijitContainer.php
@@ -3700,9 +3602,17 @@
 %%DATADIR%%/library/Zend/Filter/Alnum.php
 %%DATADIR%%/library/Zend/Filter/Alpha.php
 %%DATADIR%%/library/Zend/Filter/BaseName.php
+%%DATADIR%%/library/Zend/Filter/Callback.php
+%%DATADIR%%/library/Zend/Filter/Decrypt.php
 %%DATADIR%%/library/Zend/Filter/Digits.php
 %%DATADIR%%/library/Zend/Filter/Dir.php
+%%DATADIR%%/library/Zend/Filter/Encrypt.php
+%%DATADIR%%/library/Zend/Filter/Encrypt/Interface.php
+%%DATADIR%%/library/Zend/Filter/Encrypt/Mcrypt.php
+%%DATADIR%%/library/Zend/Filter/Encrypt/Openssl.php
 %%DATADIR%%/library/Zend/Filter/Exception.php
+%%DATADIR%%/library/Zend/Filter/File/Decrypt.php
+%%DATADIR%%/library/Zend/Filter/File/Encrypt.php
 %%DATADIR%%/library/Zend/Filter/File/LowerCase.php
 %%DATADIR%%/library/Zend/Filter/File/Rename.php
 %%DATADIR%%/library/Zend/Filter/File/UpperCase.php
@@ -3711,6 +3621,8 @@
 %%DATADIR%%/library/Zend/Filter/Input.php
 %%DATADIR%%/library/Zend/Filter/Int.php
 %%DATADIR%%/library/Zend/Filter/Interface.php
+%%DATADIR%%/library/Zend/Filter/LocalizedToNormalized.php
+%%DATADIR%%/library/Zend/Filter/NormalizedToLocalized.php
 %%DATADIR%%/library/Zend/Filter/PregReplace.php
 %%DATADIR%%/library/Zend/Filter/RealPath.php
 %%DATADIR%%/library/Zend/Filter/StringToLower.php
@@ -3749,7 +3661,9 @@
 %%DATADIR%%/library/Zend/Form/Decorator/Image.php
 %%DATADIR%%/library/Zend/Form/Decorator/Interface.php
 %%DATADIR%%/library/Zend/Form/Decorator/Label.php
+%%DATADIR%%/library/Zend/Form/Decorator/Marker/File/Interface.php
 %%DATADIR%%/library/Zend/Form/Decorator/PrepareElements.php
+%%DATADIR%%/library/Zend/Form/Decorator/Tooltip.php
 %%DATADIR%%/library/Zend/Form/Decorator/ViewHelper.php
 %%DATADIR%%/library/Zend/Form/Decorator/ViewScript.php
 %%DATADIR%%/library/Zend/Form/DisplayGroup.php
@@ -4090,6 +4004,7 @@
 %%DATADIR%%/library/Zend/Gdata/YouTube/VideoFeed.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/VideoQuery.php
 %%DATADIR%%/library/Zend/Http/Client.php
+%%DATADIR%%/library/Zend/Http/Client/Adapter/Curl.php
 %%DATADIR%%/library/Zend/Http/Client/Adapter/Exception.php
 %%DATADIR%%/library/Zend/Http/Client/Adapter/Interface.php
 %%DATADIR%%/library/Zend/Http/Client/Adapter/Proxy.php
@@ -4145,6 +4060,7 @@
 %%DATADIR%%/library/Zend/Json/Decoder.php
 %%DATADIR%%/library/Zend/Json/Encoder.php
 %%DATADIR%%/library/Zend/Json/Exception.php
+%%DATADIR%%/library/Zend/Json/Expr.php
 %%DATADIR%%/library/Zend/Json/Server.php
 %%DATADIR%%/library/Zend/Json/Server/Cache.php
 %%DATADIR%%/library/Zend/Json/Server/Error.php
@@ -4162,6 +4078,9 @@
 %%DATADIR%%/library/Zend/Ldap.php
 %%DATADIR%%/library/Zend/Ldap/Exception.php
 %%DATADIR%%/library/Zend/Loader.php
+%%DATADIR%%/library/Zend/Loader/Autoloader.php
+%%DATADIR%%/library/Zend/Loader/Autoloader/Interface.php
+%%DATADIR%%/library/Zend/Loader/Autoloader/Resource.php
 %%DATADIR%%/library/Zend/Loader/Exception.php
 %%DATADIR%%/library/Zend/Loader/PluginLoader.php
 %%DATADIR%%/library/Zend/Loader/PluginLoader/Exception.php
@@ -4639,6 +4558,7 @@
 %%DATADIR%%/library/Zend/Log/Writer/Abstract.php
 %%DATADIR%%/library/Zend/Log/Writer/Db.php
 %%DATADIR%%/library/Zend/Log/Writer/Firebug.php
+%%DATADIR%%/library/Zend/Log/Writer/Mail.php
 %%DATADIR%%/library/Zend/Log/Writer/Mock.php
 %%DATADIR%%/library/Zend/Log/Writer/Null.php
 %%DATADIR%%/library/Zend/Log/Writer/Stream.php
@@ -4720,6 +4640,12 @@
 %%DATADIR%%/library/Zend/Mime/Exception.php
 %%DATADIR%%/library/Zend/Mime/Message.php
 %%DATADIR%%/library/Zend/Mime/Part.php
+%%DATADIR%%/library/Zend/Navigation.php
+%%DATADIR%%/library/Zend/Navigation/Container.php
+%%DATADIR%%/library/Zend/Navigation/Exception.php
+%%DATADIR%%/library/Zend/Navigation/Page.php
+%%DATADIR%%/library/Zend/Navigation/Page/Mvc.php
+%%DATADIR%%/library/Zend/Navigation/Page/Uri.php
 %%DATADIR%%/library/Zend/OpenId.php
 %%DATADIR%%/library/Zend/OpenId/Consumer.php
 %%DATADIR%%/library/Zend/OpenId/Consumer/Storage.php
@@ -4839,8 +4765,19 @@
 %%DATADIR%%/library/Zend/ProgressBar/Adapter/JsPull.php
 %%DATADIR%%/library/Zend/ProgressBar/Adapter/JsPush.php
 %%DATADIR%%/library/Zend/ProgressBar/Exception.php
+%%DATADIR%%/library/Zend/Reflection/Class.php
+%%DATADIR%%/library/Zend/Reflection/Docblock.php
+%%DATADIR%%/library/Zend/Reflection/Docblock/Tag.php
+%%DATADIR%%/library/Zend/Reflection/Docblock/Tag/Param.php
+%%DATADIR%%/library/Zend/Reflection/Docblock/Tag/Return.php
+%%DATADIR%%/library/Zend/Reflection/Exception.php
+%%DATADIR%%/library/Zend/Reflection/Extension.php
+%%DATADIR%%/library/Zend/Reflection/File.php
+%%DATADIR%%/library/Zend/Reflection/Function.php
+%%DATADIR%%/library/Zend/Reflection/Method.php
+%%DATADIR%%/library/Zend/Reflection/Parameter.php
+%%DATADIR%%/library/Zend/Reflection/Property.php
 %%DATADIR%%/library/Zend/Registry.php
-%%DATADIR%%/library/Zend/Request/Interface.php
 %%DATADIR%%/library/Zend/Rest/Client.php
 %%DATADIR%%/library/Zend/Rest/Client/Exception.php
 %%DATADIR%%/library/Zend/Rest/Client/Result.php
@@ -4881,19 +4818,23 @@
 %%DATADIR%%/library/Zend/Search/Lucene/Index/DocsFilter.php
 %%DATADIR%%/library/Zend/Search/Lucene/Index/FieldInfo.php
 %%DATADIR%%/library/Zend/Search/Lucene/Index/SegmentInfo.php
-%%DATADIR%%/library/Zend/Search/Lucene/Index/SegmentInfoPriorityQueue.php
 %%DATADIR%%/library/Zend/Search/Lucene/Index/SegmentMerger.php
 %%DATADIR%%/library/Zend/Search/Lucene/Index/SegmentWriter.php
 %%DATADIR%%/library/Zend/Search/Lucene/Index/SegmentWriter/DocumentWriter.php
 %%DATADIR%%/library/Zend/Search/Lucene/Index/SegmentWriter/StreamWriter.php
 %%DATADIR%%/library/Zend/Search/Lucene/Index/Term.php
 %%DATADIR%%/library/Zend/Search/Lucene/Index/TermInfo.php
+%%DATADIR%%/library/Zend/Search/Lucene/Index/TermsPriorityQueue.php
+%%DATADIR%%/library/Zend/Search/Lucene/Index/TermsStream/Interface.php
 %%DATADIR%%/library/Zend/Search/Lucene/Index/Writer.php
 %%DATADIR%%/library/Zend/Search/Lucene/Interface.php
 %%DATADIR%%/library/Zend/Search/Lucene/LockManager.php
+%%DATADIR%%/library/Zend/Search/Lucene/MultiSearcher.php
 %%DATADIR%%/library/Zend/Search/Lucene/PriorityQueue.php
 %%DATADIR%%/library/Zend/Search/Lucene/Proxy.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/BooleanExpressionRecognizer.php
+%%DATADIR%%/library/Zend/Search/Lucene/Search/Highlighter/Default.php
+%%DATADIR%%/library/Zend/Search/Lucene/Search/Highlighter/Interface.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Boolean.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Empty.php
@@ -4901,6 +4842,10 @@
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Insignificant.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/MultiTerm.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Phrase.php
+%%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Preprocessing.php
+%%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Preprocessing/Fuzzy.php
+%%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Preprocessing/Phrase.php
+%%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Preprocessing/Term.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Range.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Term.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Wildcard.php
@@ -4927,6 +4872,7 @@
 %%DATADIR%%/library/Zend/Search/Lucene/Storage/File.php
 %%DATADIR%%/library/Zend/Search/Lucene/Storage/File/Filesystem.php
 %%DATADIR%%/library/Zend/Search/Lucene/Storage/File/Memory.php
+%%DATADIR%%/library/Zend/Search/Lucene/TermStreamsPriorityQueue.php
 %%DATADIR%%/library/Zend/Server/Abstract.php
 %%DATADIR%%/library/Zend/Server/Cache.php
 %%DATADIR%%/library/Zend/Server/Definition.php
@@ -4949,9 +4895,23 @@
 %%DATADIR%%/library/Zend/Service/Abstract.php
 %%DATADIR%%/library/Zend/Service/Akismet.php
 %%DATADIR%%/library/Zend/Service/Amazon.php
+%%DATADIR%%/library/Zend/Service/Amazon/Abstract.php
 %%DATADIR%%/library/Zend/Service/Amazon/Accessories.php
 %%DATADIR%%/library/Zend/Service/Amazon/CustomerReview.php
+%%DATADIR%%/library/Zend/Service/Amazon/Ec2.php
+%%DATADIR%%/library/Zend/Service/Amazon/Ec2/Abstract.php
+%%DATADIR%%/library/Zend/Service/Amazon/Ec2/Availabilityzones.php
+%%DATADIR%%/library/Zend/Service/Amazon/Ec2/Ebs.php
+%%DATADIR%%/library/Zend/Service/Amazon/Ec2/Elasticip.php
+%%DATADIR%%/library/Zend/Service/Amazon/Ec2/Exception.php
+%%DATADIR%%/library/Zend/Service/Amazon/Ec2/Image.php
+%%DATADIR%%/library/Zend/Service/Amazon/Ec2/Instance.php
+%%DATADIR%%/library/Zend/Service/Amazon/Ec2/Keypair.php
+%%DATADIR%%/library/Zend/Service/Amazon/Ec2/Region.php
+%%DATADIR%%/library/Zend/Service/Amazon/Ec2/Response.php
+%%DATADIR%%/library/Zend/Service/Amazon/Ec2/Securitygroups.php
 %%DATADIR%%/library/Zend/Service/Amazon/EditorialReview.php
+%%DATADIR%%/library/Zend/Service/Amazon/Exception.php
 %%DATADIR%%/library/Zend/Service/Amazon/Image.php
 %%DATADIR%%/library/Zend/Service/Amazon/Item.php
 %%DATADIR%%/library/Zend/Service/Amazon/ListmaniaList.php
@@ -4959,6 +4919,9 @@
 %%DATADIR%%/library/Zend/Service/Amazon/OfferSet.php
 %%DATADIR%%/library/Zend/Service/Amazon/Query.php
 %%DATADIR%%/library/Zend/Service/Amazon/ResultSet.php
+%%DATADIR%%/library/Zend/Service/Amazon/S3.php
+%%DATADIR%%/library/Zend/Service/Amazon/S3/Exception.php
+%%DATADIR%%/library/Zend/Service/Amazon/S3/Stream.php
 %%DATADIR%%/library/Zend/Service/Amazon/SimilarProduct.php
 %%DATADIR%%/library/Zend/Service/Audioscrobbler.php
 %%DATADIR%%/library/Zend/Service/Delicious.php
@@ -5064,16 +5027,25 @@
 %%DATADIR%%/library/Zend/Soap/Server.php
 %%DATADIR%%/library/Zend/Soap/Server/Exception.php
 %%DATADIR%%/library/Zend/Soap/Wsdl.php
-%%DATADIR%%/library/Zend/Soap/Wsdl/CodeGenerator.php
 %%DATADIR%%/library/Zend/Soap/Wsdl/Exception.php
-%%DATADIR%%/library/Zend/Soap/Wsdl/Parser.php
-%%DATADIR%%/library/Zend/Soap/Wsdl/Parser/Result.php
 %%DATADIR%%/library/Zend/Soap/Wsdl/Strategy/Abstract.php
 %%DATADIR%%/library/Zend/Soap/Wsdl/Strategy/AnyType.php
 %%DATADIR%%/library/Zend/Soap/Wsdl/Strategy/ArrayOfTypeComplex.php
 %%DATADIR%%/library/Zend/Soap/Wsdl/Strategy/ArrayOfTypeSequence.php
+%%DATADIR%%/library/Zend/Soap/Wsdl/Strategy/Composite.php
 %%DATADIR%%/library/Zend/Soap/Wsdl/Strategy/DefaultComplexType.php
 %%DATADIR%%/library/Zend/Soap/Wsdl/Strategy/Interface.php
+%%DATADIR%%/library/Zend/Tag/Cloud.php
+%%DATADIR%%/library/Zend/Tag/Cloud/Decorator/Cloud.php
+%%DATADIR%%/library/Zend/Tag/Cloud/Decorator/Exception.php
+%%DATADIR%%/library/Zend/Tag/Cloud/Decorator/HtmlCloud.php
+%%DATADIR%%/library/Zend/Tag/Cloud/Decorator/HtmlTag.php
+%%DATADIR%%/library/Zend/Tag/Cloud/Decorator/Tag.php
+%%DATADIR%%/library/Zend/Tag/Cloud/Exception.php
+%%DATADIR%%/library/Zend/Tag/Exception.php
+%%DATADIR%%/library/Zend/Tag/Item.php
+%%DATADIR%%/library/Zend/Tag/ItemList.php
+%%DATADIR%%/library/Zend/Tag/Taggable.php
 %%DATADIR%%/library/Zend/Test/PHPUnit/Constraint/DomQuery.php
 %%DATADIR%%/library/Zend/Test/PHPUnit/Constraint/Exception.php
 %%DATADIR%%/library/Zend/Test/PHPUnit/Constraint/Redirect.php
@@ -5096,6 +5068,142 @@
 %%DATADIR%%/library/Zend/TimeSync/Ntp.php
 %%DATADIR%%/library/Zend/TimeSync/Protocol.php
 %%DATADIR%%/library/Zend/TimeSync/Sntp.php
+%%DATADIR%%/library/Zend/Tool/Framework/Action/Base.php
+%%DATADIR%%/library/Zend/Tool/Framework/Action/Exception.php
+%%DATADIR%%/library/Zend/Tool/Framework/Action/Interface.php
+%%DATADIR%%/library/Zend/Tool/Framework/Action/Repository.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Abstract.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Console.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Console/ArgumentParser.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Console/HelpSystem.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Console/Manifest.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Console/ResponseDecorator/Colorizer.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Exception.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Interactive/InputHandler.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Interactive/InputInterface.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Interactive/InputRequest.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Interactive/InputResponse.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Interactive/OutputInterface.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Request.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Response.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Response/ContentDecorator/Interface.php
+%%DATADIR%%/library/Zend/Tool/Framework/Client/Response/ContentDecorator/Separator.php
+%%DATADIR%%/library/Zend/Tool/Framework/Exception.php
+%%DATADIR%%/library/Zend/Tool/Framework/Loader/Abstract.php
+%%DATADIR%%/library/Zend/Tool/Framework/Loader/IncludePathLoader.php
+%%DATADIR%%/library/Zend/Tool/Framework/Loader/IncludePathLoader/RecursiveFilterIterator.php
+%%DATADIR%%/library/Zend/Tool/Framework/Manifest/ActionManifestable.php
+%%DATADIR%%/library/Zend/Tool/Framework/Manifest/Exception.php
+%%DATADIR%%/library/Zend/Tool/Framework/Manifest/Indexable.php
+%%DATADIR%%/library/Zend/Tool/Framework/Manifest/Interface.php
+%%DATADIR%%/library/Zend/Tool/Framework/Manifest/MetadataManifestable.php
+%%DATADIR%%/library/Zend/Tool/Framework/Manifest/ProviderManifestable.php
+%%DATADIR%%/library/Zend/Tool/Framework/Manifest/Repository.php
+%%DATADIR%%/library/Zend/Tool/Framework/Metadata/Basic.php
+%%DATADIR%%/library/Zend/Tool/Framework/Metadata/Dynamic.php
+%%DATADIR%%/library/Zend/Tool/Framework/Metadata/Interface.php
+%%DATADIR%%/library/Zend/Tool/Framework/Metadata/Tool.php
+%%DATADIR%%/library/Zend/Tool/Framework/Provider/Abstract.php
+%%DATADIR%%/library/Zend/Tool/Framework/Provider/DocblockManifestable.php
+%%DATADIR%%/library/Zend/Tool/Framework/Provider/Exception.php
+%%DATADIR%%/library/Zend/Tool/Framework/Provider/Interactable.php
+%%DATADIR%%/library/Zend/Tool/Framework/Provider/Interface.php
+%%DATADIR%%/library/Zend/Tool/Framework/Provider/Pretendable.php
+%%DATADIR%%/library/Zend/Tool/Framework/Provider/Repository.php
+%%DATADIR%%/library/Zend/Tool/Framework/Provider/Signature.php
+%%DATADIR%%/library/Zend/Tool/Framework/Registry.php
+%%DATADIR%%/library/Zend/Tool/Framework/Registry/EnabledInterface.php
+%%DATADIR%%/library/Zend/Tool/Framework/Registry/Exception.php
+%%DATADIR%%/library/Zend/Tool/Framework/Registry/Interface.php
+%%DATADIR%%/library/Zend/Tool/Framework/System/Action/Create.php
+%%DATADIR%%/library/Zend/Tool/Framework/System/Action/Delete.php
+%%DATADIR%%/library/Zend/Tool/Framework/System/Manifest.php
+%%DATADIR%%/library/Zend/Tool/Framework/System/Provider/Manifest.php
+%%DATADIR%%/library/Zend/Tool/Framework/System/Provider/Phpinfo.php
+%%DATADIR%%/library/Zend/Tool/Framework/System/Provider/Version.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Exception.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Filesystem/Abstract.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Filesystem/Directory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Filesystem/File.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Interface.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Repository.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/System/Interface.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/System/NotOverwritable.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/System/ProjectDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/System/ProjectProfileFile.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/System/ProjectProvidersDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/System/TopLevelRestrictable.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ActionMethod.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ApisDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ApplicationConfigFile.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ApplicationDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/BootstrapFile.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/CacheDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ConfigFile.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ConfigsDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ControllerFile.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ControllersDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/DataDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/DbTableDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/DbTableFile.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/FormFile.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/FormsDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/HtaccessFile.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/LayoutsDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/LibraryDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/LocalesDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/LogsDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ModelFile.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ModelsDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ModulesDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ProjectProviderFile.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/PublicDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/PublicImagesDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/PublicIndexFile.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/PublicScriptsDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/PublicStylesheetsDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/SearchIndexesDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/SessionsDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/TemporaryDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/TestApplicationBootstrapFile.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/TestApplicationControllerDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/TestApplicationControllerFile.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/TestApplicationDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/TestLibraryBootstrapFile.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/TestLibraryDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/TestLibraryFile.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/TestLibraryNamespaceDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/TestPHPUnitConfigFile.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/TestsDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/UploadsDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ViewControllerScriptsDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ViewFiltersDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ViewHelpersDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ViewScriptFile.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ViewScriptsDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ViewsDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ZfStandardLibraryDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Exception.php
+%%DATADIR%%/library/Zend/Tool/Project/Profile.php
+%%DATADIR%%/library/Zend/Tool/Project/Profile/Exception.php
+%%DATADIR%%/library/Zend/Tool/Project/Profile/FileParser/Interface.php
+%%DATADIR%%/library/Zend/Tool/Project/Profile/FileParser/Xml.php
+%%DATADIR%%/library/Zend/Tool/Project/Profile/Iterator/EnabledResource.php
+%%DATADIR%%/library/Zend/Tool/Project/Profile/Resource.php
+%%DATADIR%%/library/Zend/Tool/Project/Profile/Resource/Container.php
+%%DATADIR%%/library/Zend/Tool/Project/Profile/Resource/SearchConstraints.php
+%%DATADIR%%/library/Zend/Tool/Project/Provider/Abstract.php
+%%DATADIR%%/library/Zend/Tool/Project/Provider/Action.php
+%%DATADIR%%/library/Zend/Tool/Project/Provider/Controller.php
+%%DATADIR%%/library/Zend/Tool/Project/Provider/Exception.php
+%%DATADIR%%/library/Zend/Tool/Project/Provider/Form.php
+%%DATADIR%%/library/Zend/Tool/Project/Provider/Manifest.php
+%%DATADIR%%/library/Zend/Tool/Project/Provider/Model.php
+%%DATADIR%%/library/Zend/Tool/Project/Provider/Profile.php
+%%DATADIR%%/library/Zend/Tool/Project/Provider/Project.php
+%%DATADIR%%/library/Zend/Tool/Project/Provider/ProjectProvider.php
+%%DATADIR%%/library/Zend/Tool/Project/Provider/Test.php
+%%DATADIR%%/library/Zend/Tool/Project/Provider/View.php
 %%DATADIR%%/library/Zend/Translate.php
 %%DATADIR%%/library/Zend/Translate/Adapter.php
 %%DATADIR%%/library/Zend/Translate/Adapter/Array.php
@@ -5121,6 +5229,9 @@
 %%DATADIR%%/library/Zend/Validate/Between.php
 %%DATADIR%%/library/Zend/Validate/Ccnum.php
 %%DATADIR%%/library/Zend/Validate/Date.php
+%%DATADIR%%/library/Zend/Validate/Db/Abstract.php
+%%DATADIR%%/library/Zend/Validate/Db/NoRecordExists.php
+%%DATADIR%%/library/Zend/Validate/Db/RecordExists.php
 %%DATADIR%%/library/Zend/Validate/Digits.php
 %%DATADIR%%/library/Zend/Validate/EmailAddress.php
 %%DATADIR%%/library/Zend/Validate/Exception.php
@@ -5141,19 +5252,16 @@
 %%DATADIR%%/library/Zend/Validate/File/Sha1.php
 %%DATADIR%%/library/Zend/Validate/File/Size.php
 %%DATADIR%%/library/Zend/Validate/File/Upload.php
+%%DATADIR%%/library/Zend/Validate/File/WordCount.php
 %%DATADIR%%/library/Zend/Validate/Float.php
 %%DATADIR%%/library/Zend/Validate/GreaterThan.php
 %%DATADIR%%/library/Zend/Validate/Hex.php
 %%DATADIR%%/library/Zend/Validate/Hostname.php
-%%DATADIR%%/library/Zend/Validate/Hostname/At.php
-%%DATADIR%%/library/Zend/Validate/Hostname/Ch.php
-%%DATADIR%%/library/Zend/Validate/Hostname/De.php
-%%DATADIR%%/library/Zend/Validate/Hostname/Fi.php
-%%DATADIR%%/library/Zend/Validate/Hostname/Hu.php
-%%DATADIR%%/library/Zend/Validate/Hostname/Interface.php
-%%DATADIR%%/library/Zend/Validate/Hostname/Li.php
-%%DATADIR%%/library/Zend/Validate/Hostname/No.php
-%%DATADIR%%/library/Zend/Validate/Hostname/Se.php
+%%DATADIR%%/library/Zend/Validate/Hostname/Biz.php
+%%DATADIR%%/library/Zend/Validate/Hostname/Cn.php
+%%DATADIR%%/library/Zend/Validate/Hostname/Com.php
+%%DATADIR%%/library/Zend/Validate/Hostname/Jp.php
+%%DATADIR%%/library/Zend/Validate/Iban.php
 %%DATADIR%%/library/Zend/Validate/Identical.php
 %%DATADIR%%/library/Zend/Validate/InArray.php
 %%DATADIR%%/library/Zend/Validate/Int.php
@@ -5162,6 +5270,10 @@
 %%DATADIR%%/library/Zend/Validate/LessThan.php
 %%DATADIR%%/library/Zend/Validate/NotEmpty.php
 %%DATADIR%%/library/Zend/Validate/Regex.php
+%%DATADIR%%/library/Zend/Validate/Sitemap/Changefreq.php
+%%DATADIR%%/library/Zend/Validate/Sitemap/Lastmod.php
+%%DATADIR%%/library/Zend/Validate/Sitemap/Loc.php
+%%DATADIR%%/library/Zend/Validate/Sitemap/Priority.php
 %%DATADIR%%/library/Zend/Validate/StringLength.php
 %%DATADIR%%/library/Zend/Version.php
 %%DATADIR%%/library/Zend/View.php
@@ -5169,6 +5281,7 @@
 %%DATADIR%%/library/Zend/View/Exception.php
 %%DATADIR%%/library/Zend/View/Helper/Abstract.php
 %%DATADIR%%/library/Zend/View/Helper/Action.php
+%%DATADIR%%/library/Zend/View/Helper/Cycle.php
 %%DATADIR%%/library/Zend/View/Helper/DeclareVars.php
 %%DATADIR%%/library/Zend/View/Helper/Doctype.php
 %%DATADIR%%/library/Zend/View/Helper/Fieldset.php
@@ -5205,6 +5318,13 @@
 %%DATADIR%%/library/Zend/View/Helper/Interface.php
 %%DATADIR%%/library/Zend/View/Helper/Json.php
 %%DATADIR%%/library/Zend/View/Helper/Layout.php
+%%DATADIR%%/library/Zend/View/Helper/Navigation.php
+%%DATADIR%%/library/Zend/View/Helper/Navigation/Breadcrumbs.php
+%%DATADIR%%/library/Zend/View/Helper/Navigation/Helper.php
+%%DATADIR%%/library/Zend/View/Helper/Navigation/HelperAbstract.php
+%%DATADIR%%/library/Zend/View/Helper/Navigation/Links.php
+%%DATADIR%%/library/Zend/View/Helper/Navigation/Menu.php
+%%DATADIR%%/library/Zend/View/Helper/Navigation/Sitemap.php
 %%DATADIR%%/library/Zend/View/Helper/PaginationControl.php
 %%DATADIR%%/library/Zend/View/Helper/Partial.php
 %%DATADIR%%/library/Zend/View/Helper/Partial/Exception.php
@@ -5217,6 +5337,7 @@
 %%DATADIR%%/library/Zend/View/Helper/Placeholder/Registry.php
 %%DATADIR%%/library/Zend/View/Helper/Placeholder/Registry/Exception.php
 %%DATADIR%%/library/Zend/View/Helper/RenderToPlaceholder.php
+%%DATADIR%%/library/Zend/View/Helper/ServerUrl.php
 %%DATADIR%%/library/Zend/View/Helper/Translate.php
 %%DATADIR%%/library/Zend/View/Helper/Url.php
 %%DATADIR%%/library/Zend/View/Interface.php
@@ -5261,6 +5382,182 @@
 %%DATADIR%%/library/Zend/XmlRpc/Value/Scalar.php
 %%DATADIR%%/library/Zend/XmlRpc/Value/String.php
 %%DATADIR%%/library/Zend/XmlRpc/Value/Struct.php
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX/ZendX_Exception.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_Console/ZendX_Console_Exception.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_Console/ZendX_Console_Process_Exception.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_Console/ZendX_Console_Process_Unix.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_Console/_Console---Process---Exception.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_Console/_Console---Process---Unix.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_Db/Adapter/ZendX_Db_Adapter_Firebird.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_Db/Adapter/ZendX_Db_Adapter_Firebird_Exception.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_Db/Adapter/_Db---Adapter---Firebird---Exception.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_Db/Adapter/_Db---Adapter---Firebird.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_Db/Statement/ZendX_Db_Statement_Firebird.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_Db/Statement/ZendX_Db_Statement_Firebird_Exception.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_Db/Statement/_Db---Statement---Firebird---Exception.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_Db/Statement/_Db---Statement---Firebird.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/Form/ZendX_JQuery_Form.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/Form/ZendX_JQuery_Form_Decorator_AccordionContainer.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/Form/ZendX_JQuery_Form_Decorator_AccordionPane.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/Form/ZendX_JQuery_Form_Decorator_DialogContainer.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/Form/ZendX_JQuery_Form_Decorator_TabContainer.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/Form/ZendX_JQuery_Form_Decorator_TabPane.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/Form/ZendX_JQuery_Form_Decorator_UiWidgetContainer.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/Form/ZendX_JQuery_Form_Decorator_UiWidgetElement.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/Form/ZendX_JQuery_Form_Decorator_UiWidgetPane.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/Form/ZendX_JQuery_Form_Element_AutoComplete.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/Form/ZendX_JQuery_Form_Element_ColorPicker.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/Form/ZendX_JQuery_Form_Element_DatePicker.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/Form/ZendX_JQuery_Form_Element_Slider.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/Form/ZendX_JQuery_Form_Element_Spinner.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/Form/ZendX_JQuery_Form_Element_UiWidget.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_Controller_Action_Helper_AutoComplete.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_Exception.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_Form_Decorator_UiWidgetElementMarker.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_View_Exception.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_View_Helper_AccordionContainer.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_View_Helper_AccordionPane.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_View_Helper_AjaxLink.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_View_Helper_AutoComplete.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_View_Helper_ColorPicker.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_View_Helper_DatePicker.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_View_Helper_DialogContainer.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_View_Helper_JQuery.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_View_Helper_JQuery_Container.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_View_Helper_Slider.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_View_Helper_Spinner.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_View_Helper_TabContainer.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_View_Helper_TabPane.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_View_Helper_UiWidget.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/ZendX_JQuery_View_Helper_UiWidgetPane.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---Controller---Action---Helper---AutoComplete.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---Exception.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---Form---Decorator---AccordionContainer.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---Form---Decorator---AccordionPane.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---Form---Decorator---DialogContainer.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---Form---Decorator---TabContainer.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---Form---Decorator---TabPane.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---Form---Decorator---UiWidgetContainer.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---Form---Decorator---UiWidgetElement.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---Form---Decorator---UiWidgetElementMarker.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---Form---Decorator---UiWidgetPane.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---Form---Element---AutoComplete.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---Form---Element---ColorPicker.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---Form---Element---DatePicker.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---Form---Element---Slider.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---Form---Element---Spinner.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---Form---Element---UiWidget.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---Form.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---View---Exception.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---View---Helper---AccordionContainer.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---View---Helper---AccordionPane.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---View---Helper---AjaxLink.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---View---Helper---AutoComplete.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---View---Helper---ColorPicker.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---View---Helper---DatePicker.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---View---Helper---DialogContainer.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---View---Helper---JQuery---Container.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---View---Helper---JQuery.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---View---Helper---Slider.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---View---Helper---Spinner.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---View---Helper---TabContainer.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---View---Helper---TabPane.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---View---Helper---UiWidget.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery---View---Helper---UiWidgetPane.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/View/_JQuery.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_JQuery/ZendX_JQuery_Form_Exception.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_Whois/_Console---Exception.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/ZendX_Whois/_Exception.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/blank.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/classtrees_ZendX.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/classtrees_ZendX_Console.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/classtrees_ZendX_Db.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/classtrees_ZendX_JQuery.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/classtrees_ZendX_Whois.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/classtrees_default.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/default/_JQuery---Form---Exception.php.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/elementindex.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/elementindex_ZendX.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/elementindex_ZendX_Console.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/elementindex_ZendX_Db.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/elementindex_ZendX_JQuery.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/elementindex_ZendX_Whois.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/elementindex_default.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/errors.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/index.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/li_ZendX.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/li_ZendX_Console.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/li_ZendX_Db.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/li_ZendX_JQuery.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/li_ZendX_Whois.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/li_default.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/banner.css
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/AbstractClass.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/AbstractClass_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/AbstractMethod.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/AbstractPrivateClass.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/AbstractPrivateClass_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/AbstractPrivateMethod.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/Class.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/Class_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/Constant.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/Constructor.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/Destructor.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/Function.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/Global.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/I.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/Index.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/Interface.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/Interface_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/L.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/Lminus.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/Lplus.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/Method.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/Page.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/Page_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/PrivateClass.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/PrivateClass_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/PrivateMethod.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/PrivateVariable.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/StaticMethod.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/StaticVariable.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/T.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/Tminus.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/Tplus.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/Variable.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/blank.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/class_folder.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/empty.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/file.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/folder.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/function_folder.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/minus.gif
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/next_button.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/next_button_disabled.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/package.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/package_folder.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/plus.gif
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/previous_button.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/previous_button_disabled.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/private_class_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/tutorial.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/tutorial_folder.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/images/up_button.png
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/lib/classTree.js
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/media/stylesheet.css
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/packages.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/api/todolist.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/manual/htmlhelp.hhp
+%%PORTDOCS%%%%DOCSDIR%%/extras/manual/index.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/manual/the.index.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/manual/toc.hhc
+%%PORTDOCS%%%%DOCSDIR%%/extras/manual/zendx.console.process.unix.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/manual/zendx.jquery.form.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/manual/zendx.jquery.html
+%%PORTDOCS%%%%DOCSDIR%%/extras/manual/zendx.jquery.view.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Feeds/consume-feed.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Gdata/Blogger.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Gdata/BooksBrowser/books_browser.css
@@ -5316,6 +5613,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Pdf/test.pdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/ProgressBar/JsPush.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/ProgressBar/Upload.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/ProgressBar/ZendForm.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/ProgressBar/animation.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Search/Lucene/feed-search/create-index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Search/Lucene/feed-search/search-index.php
@@ -5420,6 +5718,41 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Util/BinaryStreamTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Value/MessageBodyTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Value/MessageHeaderTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/ApplicationTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Bootstrap/BootstrapAbstractTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Bootstrap/BootstrapTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Module/AutoloaderTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Module/BootstrapTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/DbTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/FrontcontrollerTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/LayoutTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/LocaleTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/ModulesTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/NavigationTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/ResourceAbstractTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/RouterTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/TranslateTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/ViewTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/BootstrapBaseCircularDependency.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/ZfAppBootstrap.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/ZfModuleBootstrap.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/appconfig.inc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/appconfig.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/appconfig.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/appconfig.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/bar/Bootstrap.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/bar/controllers/.placeholder
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/baz/controllers/.placeholder
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/default/Bootstrap.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/foo/Bootstrap.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/foo/controllers/.placeholder
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/zfappbootstrap/controllers/ErrorController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/zfappbootstrap/controllers/IndexController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/resources/Baz.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/resources/Foo.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/resources/Foobar.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/DbTable/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/DbTable/BasicSqliteTest.php
@@ -5461,11 +5794,25 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cache/TwoLevelsBackendTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cache/XcacheBackendTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cache/ZendPlatformBackendTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cache/ZendServerDiskTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cache/ZendServerShMemTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Captcha/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Captcha/DumbTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Captcha/FigletTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Captcha/ImageTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Captcha/ReCaptchaTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/ClassTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/Docblock/Tag/ParamTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/Docblock/Tag/ReturnTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/Docblock/TagTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/DocblockTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/FileTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/MethodTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/ParameterTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/PropertyTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files/TestSampleSingleClass.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/IniTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/Writer/AllTests.php
@@ -5492,6 +5839,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/shortparamstwo.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/toplevelstring.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/zf2843.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/zf5800.ini
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/ConfigTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Console/GetoptTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/Action/Helper/ActionStackTest.php
@@ -5559,6 +5907,17 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/views/scripts/site.phtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/views/scripts/view/index.phtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/views/scripts/view/name.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Crypt/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Crypt/DiffieHellmanTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Crypt/HmacTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Crypt/Math/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Crypt/Math/BigInteger/BcmathTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Crypt/Math/BigInteger/GmpTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Crypt/MathTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Crypt/Rsa/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Crypt/Rsa/RsaTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Crypt/Rsa/_files/test.cert
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Crypt/Rsa/_files/test.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CurrencyTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Date/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Date/DateObjectTest.php
@@ -5660,6 +6019,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Row/TestCommon.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Row/TestMockRow.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Row/TestMyRow.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Row/TestStandaloneRow.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Row/TestTableRow.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Rowset/Db2Test.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Db/Table/Rowset/MysqliTest.php
@@ -5740,6 +6100,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/Form/Element/NumberTextBoxTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/Form/Element/PasswordTextBoxTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/Form/Element/RadioButtonTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/Form/Element/SimpleTextareaTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/Form/Element/SubmitButtonTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/Form/Element/TextBoxTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/Form/Element/TextareaTest.php
@@ -5759,6 +6120,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/View/Helper/ComboBoxTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/View/Helper/ContentPaneTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/View/Helper/CurrencyTextBoxTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/View/Helper/CustomDijitTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/View/Helper/DateTextBoxTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/View/Helper/DojoTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Dojo/View/Helper/EditorTest.php
@@ -5821,13 +6183,22 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/File/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/File/Transfer/Adapter/AbstractTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/File/Transfer/Adapter/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/File/Transfer/Adapter/HttpTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/File/Transfer/Adapter/_files/test.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/File/Transfer/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/AlnumTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/AlphaTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/BaseNameTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/CallbackTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/DecryptTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/DigitsTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/DirTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/Encrypt/McryptTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/Encrypt/OpensslTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/EncryptTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/File/DecryptTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/File/EncryptTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/File/LowerCaseTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/File/RenameTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/File/UpperCaseTest.php
@@ -5835,6 +6206,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/InflectorTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/InputTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/IntTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/LocalizedToNormalizedTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/NormalizedToLocalizedTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/PregReplaceTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/RealPathTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/StringToLowerTest.php
@@ -5853,14 +6226,17 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/Word/SeparatorToSeparatorTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/Word/UnderscoreToCamelCaseTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/Word/UnderscoreToDashTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/Word/UnderscoreToPathSeparatorTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/Word/UnderscoreToSeparatorTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/_files/TestNamespace/MyDigits.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/_files/TestNamespace/StringEquals.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/_files/_testDir2/.placeholder
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/_files/encryption.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/_files/file.1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/_files/privatekey.pem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/_files/publickey.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/_files/testfile.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/_files/testfile2.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/_files/testkey.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/FilterTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Form/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Form/Decorator/AbstractTest.php
@@ -6291,12 +6667,20 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/CanonTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/ConnectTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Ldap/OfflineTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/AutoloadDoesNotHideParseError.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/AutoloadableClass.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/ResourceTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/forms/ZendLoaderAutoloaderResourceTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/models/ZendLoaderAutoloaderResourceMethodOverloading.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/models/ZendLoaderAutoloaderResourceTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/services/ZendLoaderAutoloaderResourceTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/AutoloaderTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/MyLoader.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/MyOverloader.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/PluginLoaderTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/_files/ParseError.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/_files/ZendLoaderAutoloader/Foo.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/_files/ZfTest/CacheTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/_files/ZfTest/FormSubmit.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/LoaderTest.php
@@ -6315,12 +6699,14 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/LogTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/DbTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/FirebugTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/MailTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/MockTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/NullTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/StreamTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/ImapTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/InterfaceTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/MailTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/MaildirFolderTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/MaildirMessageOldTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/MaildirTest.php
@@ -6377,6 +6763,17 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mime/MessageTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mime/PartTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/MimeTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Navigation/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Navigation/ContainerTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Navigation/Page/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Navigation/Page/MvcTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Navigation/Page/UriTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Navigation/PageFactoryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Navigation/PageTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Navigation/_files/My/Container.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Navigation/_files/My/InvalidPage.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Navigation/_files/My/Page.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Navigation/_files/My/UrlHelper.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/OpenId/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/OpenId/Consumer/Storage/FileTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/OpenId/ConsumerTest.php
@@ -6422,6 +6819,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/Element/String/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/Element/String/BinaryTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/Element/StringTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/FactoryTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/ProcessingTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/_files/pdfarchiving.pdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/_files/stamp.jpg
@@ -6444,8 +6842,24 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/ProgressBar/Adapter/ConsoleTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/ProgressBar/Adapter/JsPullTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/ProgressBar/Adapter/JsPushTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/ProgressBar/Adapter/MockupStream.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/ProgressBar/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/ProgressBar/ProgressBarTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/ClassTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/Docblock/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/Docblock/Tag/ParamTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/Docblock/Tag/ReturnTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/Docblock/TagTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/DocblockTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/ExtensionTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/FileTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/FunctionTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/MethodTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/ParameterTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/PropertyTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/_files/FileOfFunctions.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Reflection/_files/TestSampleClass.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/RegistryTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/ClientTest.php
@@ -6467,11 +6881,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/FieldTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Index/DictionaryLoaderTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Index/FieldInfoTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Index/SegmentInfoPriorityQueueTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Index/SegmentInfoTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Index/SegmentMergerTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Index/TermInfoTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Index/TermTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Index/TermsPriorityQueueTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Index/_files/mergedSegment.cfs.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Index/_source/_files/_0.cfs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Index/_source/_files/_1.cfs
@@ -6485,6 +6899,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/LuceneTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/PriorityQueueTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Search23Test.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/SearchHighlightTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/SearchTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Storage/DirectoryTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Storage/FileTest.php
@@ -6547,13 +6962,30 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/AkismetTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/AvailabilityzonesTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/EbsTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/Ec2Test.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/ElasticipTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/ImageTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/InstanceTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/KeypairTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/RegionTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/SecuritygroupsTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/OfflineTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/OnlineTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3/OfflineTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3/OnlineTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3/StreamTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3/_files/testdata
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3/_files/testdata.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/_files/mozart_result.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler/AlbumDataTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler/ArtistTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler/AudioscrobblerTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler/AudioscrobblerTestCase.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler/GroupTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler/ProfileTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler/TagDataTest.php
@@ -6693,16 +7125,37 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Session/SessionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Session/SessionTestHelper.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/AutoDiscover/OnlineTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/AutoDiscoverTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/ClientTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/ServerTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/Wsdl/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/Wsdl/ArrayOfTypeComplexStrategyTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/Wsdl/ArrayOfTypeSequenceStrategyTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/Wsdl/CompositeStrategyTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/Wsdl/DefaultComplexTypeTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/Wsdl/ElementTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/Wsdl/ParserTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/WsdlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/_files/cert_file
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/_files/commontypes.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/_files/fulltests/server1.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/_files/fulltests/server2.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/_files/wsdl_documentation.wsdl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/_files/wsdl_example.wsdl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/schemas/wsdl.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tag/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tag/Cloud/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tag/Cloud/CloudTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tag/Cloud/Decorator/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tag/Cloud/Decorator/HtmlCloudTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tag/Cloud/Decorator/HtmlTagTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tag/Cloud/_classes/CloudDummy.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tag/Cloud/_classes/CloudDummy1.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tag/Cloud/_classes/CloudDummy2.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tag/Cloud/_classes/TagDummy.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tag/ItemListTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tag/ItemTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/ControllerTestCaseTest.php
@@ -6739,6 +7192,45 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Text/MultiByteTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Text/TableTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/TimeSyncTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Action/BaseTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Action/RepositoryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Action/_files/Foo.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Client/Console/ArgumentParserTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Client/Console/HelpSystemTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Client/RequestTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Client/ResponseTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Loader/IncludePathLoaderTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Manifest/ProviderMetadataTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Manifest/RepositoryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Manifest/_files/ActionOne.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Manifest/_files/ActionTwo.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Manifest/_files/ManifestBadMetadata.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Manifest/_files/ManifestBadProvider.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Manifest/_files/ManifestGoodOne.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Manifest/_files/ManifestGoodTwo.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Manifest/_files/ProviderOne.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Manifest/_files/ProviderTwo.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Metadata/ActionMetadataTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Metadata/MetadataTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Provider/AbstractTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Provider/RepositoryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Provider/SignatureTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Provider/_files/ProviderAltName.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Provider/_files/ProviderFullFeatured.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Provider/_files/ProviderFullFeatured2.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Provider/_files/ProviderFullFeaturedBadSpecialties.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Provider/_files/ProviderFullFeaturedBadSpecialties2.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Provider/_files/ProviderOne.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Provider/_files/ProviderTwo.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/RegistryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/_files/EmptyClient.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/_files/EmptyLoader.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Project/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Project/Context/RegistryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Project/ProfileTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Tool/Project/_files/.zfproject.xml.orig
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/ArrayTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/CsvTest.php
@@ -6835,6 +7327,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/BetweenTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/CcnumTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/DateTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/Db/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/Db/NoRecordExistsTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/Db/RecordExistsTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/DigitsTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/EmailAddressTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/AllTests.php
@@ -6855,6 +7350,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/Sha1Test.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/SizeTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/UploadTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/WordCountTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/_files/badpicture.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/_files/picture.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/_files/test.zip
@@ -6862,10 +7358,12 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/_files/testsize2.mo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/_files/testsize3.mo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/_files/testsize4.mo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/_files/wordcount.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/FloatTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/GreaterThanTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/HexTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/HostnameTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/IbanTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/IdenticalTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/InArrayTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/IntTest.php
@@ -6874,12 +7372,18 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/MessageTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/NotEmptyTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/RegexTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/Sitemap/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/Sitemap/ChangefreqTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/Sitemap/LastmodTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/Sitemap/LocTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/Sitemap/PriorityTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/StringLengthTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/ValidateTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/VersionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/ActionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/CycleTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/DeclareVarsTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/DoctypeTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/FieldsetTest.php
@@ -6911,6 +7415,53 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/InlineScriptTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/JsonTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/LayoutTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/BreadcrumbsTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/LinksTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/MenuTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/NavigationTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/SitemapTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/TestAbstract.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/bc/acl.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/bc/default.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/bc/linklast.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/bc/maxdepth.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/bc/partial.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/bc/separator.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/bc/translated.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/acl.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/acl_role_interface.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/acl_string.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/bothdepts.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/css.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/default1.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/default2.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/indent4.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/indent8.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/maxdepth.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/mindepth.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/onlyactivebranch.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/onlyactivebranch_bothdepts.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/onlyactivebranch_maxdepth.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/onlyactivebranch_mindepth.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/onlyactivebranch_noparents.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/onlyactivebranch_np_bd.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/partial.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu/translated.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/sitemap/acl.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/sitemap/acl2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/sitemap/default1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/sitemap/default2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/sitemap/depth1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/sitemap/depth2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/sitemap/depth3.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/sitemap/invalid.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/sitemap/nodecl.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/sitemap/serverurl1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/sitemap/serverurl2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/mvc/views/bc.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/mvc/views/menu.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/navigation.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/PaginationControlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/PartialLoopTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/PartialTest.php
@@ -6919,6 +7470,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/Placeholder/StandaloneContainerTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/PlaceholderTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/RenderToPlaceholderTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/ServerUrlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/TranslateTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/UrlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/controllers/BarController.php
@@ -7010,10 +7562,21 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/Placeholder
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/mvc/views
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/mvc/controllers
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/mvc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/sitemap
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/bc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View/Helper
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/View
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Validate/Sitemap
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Validate/File/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Validate/File
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Validate/Db
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Validate
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Uri/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Uri
@@ -7065,6 +7628,26 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Translate
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Project/_files/project1
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Project/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Project/Context
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Project
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/System
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Provider/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Provider
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Metadata
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Manifest/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Manifest
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Loader
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Client/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Client/Console
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Client/Cli
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Client
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Action/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Action
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool/Framework
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tool
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Text/Figlet
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Text
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/_files/application/views/scripts/zend-test-php-unit-foo
@@ -7077,9 +7660,15 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Test
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tag/Cloud/_classes
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tag/Cloud/Decorator
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tag/Cloud
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Tag
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Soap/schemas
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Soap/_files/fulltests
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Soap/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Soap/Wsdl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Soap/AutoDiscover
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Soap
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Session/SaveHandler
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Session
@@ -7098,6 +7687,9 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Server/Reflection
@@ -7126,6 +7718,10 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Search
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Rest/responses
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Rest
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Reflection/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Reflection/Docblock/Tag
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Reflection/Docblock
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Reflection
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/ProgressBar/Adapter
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/ProgressBar
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Pdf/_fonts
@@ -7135,6 +7731,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Pdf/Element
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Pdf
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Paginator/_files/scripts
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Paginator/_files/cachedata
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Paginator/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Paginator/ScrollingStyle
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Paginator/Adapter/DbTableSelect
@@ -7147,10 +7744,13 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/OpenId/Provider/Storage
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/OpenId/Provider
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/OpenId/Extension
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/OpenId/Consumer/Storage/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/OpenId/Consumer/Storage
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/OpenId/Consumer
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/OpenId
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Navigation/_files/My
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Navigation/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Navigation/Page
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Navigation
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Mime
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Memory/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Memory
@@ -7169,7 +7769,13 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Log
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Locale
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Loader/_files/ZfTest
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Loader/_files/ZendLoaderAutoloader
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Loader/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/services
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/models
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/forms
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Loader
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Ldap
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Layout/_files/layouts/test
@@ -7236,7 +7842,9 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Filter/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Filter/Word
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Filter/File
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Filter/Encrypt
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Filter
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/File/Transfer/Adapter/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/File/Transfer/Adapter
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/File/Transfer
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/File
@@ -7280,6 +7888,11 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db/Adapter
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Db
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Date
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Crypt/Rsa/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Crypt/Rsa
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Crypt/Math/BigInteger
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Crypt/Math
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Crypt
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Controller/views/scripts/view
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Controller/views/scripts/foo-bar
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Controller/views/scripts/custom
@@ -7331,6 +7944,11 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Config/Writer/files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Config/Writer
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Config
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/Docblock/Tag
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/Docblock
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/CodeGenerator
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Captcha
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Cache
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/OpenId/_files
@@ -7345,6 +7963,22 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/DbTable
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Auth/Adapter
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Auth
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/resources
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/zfappbootstrap/controllers
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/zfappbootstrap
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/foo/controllers
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/foo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/default
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/baz/controllers
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/baz
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/bar/controllers
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/bar
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/Resource
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/Module
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/Bootstrap
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Value
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Util
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock
@@ -7407,6 +8041,23 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/manual
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/api/media/lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/api/media/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/api/media
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/api/default
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/api/ZendX_Whois
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/api/ZendX_JQuery/View
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/api/ZendX_JQuery/Form
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/api/ZendX_JQuery
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/api/ZendX_Db/Statement
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/api/ZendX_Db/Adapter
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/api/ZendX_Db
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/api/ZendX_Console
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/api/ZendX
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/library/Zend/XmlRpc/Value
 @dirrm %%DATADIR%%/library/Zend/XmlRpc/Server
 @dirrm %%DATADIR%%/library/Zend/XmlRpc/Response
@@ -7422,15 +8073,46 @@
 @dirrm %%DATADIR%%/library/Zend/View/Helper/Placeholder/Container
 @dirrm %%DATADIR%%/library/Zend/View/Helper/Placeholder
 @dirrm %%DATADIR%%/library/Zend/View/Helper/Partial
+@dirrm %%DATADIR%%/library/Zend/View/Helper/Navigation
 @dirrm %%DATADIR%%/library/Zend/View/Helper
 @dirrm %%DATADIR%%/library/Zend/View
+@dirrm %%DATADIR%%/library/Zend/Validate/Sitemap
 @dirrm %%DATADIR%%/library/Zend/Validate/Hostname
 @dirrm %%DATADIR%%/library/Zend/Validate/File
+@dirrm %%DATADIR%%/library/Zend/Validate/Db
 @dirrm %%DATADIR%%/library/Zend/Validate/Barcode
 @dirrm %%DATADIR%%/library/Zend/Validate
 @dirrm %%DATADIR%%/library/Zend/Uri
 @dirrm %%DATADIR%%/library/Zend/Translate/Adapter
 @dirrm %%DATADIR%%/library/Zend/Translate
+@dirrm %%DATADIR%%/library/Zend/Tool/Project/Provider
+@dirrm %%DATADIR%%/library/Zend/Tool/Project/Profile/Resource
+@dirrm %%DATADIR%%/library/Zend/Tool/Project/Profile/Iterator
+@dirrm %%DATADIR%%/library/Zend/Tool/Project/Profile/FileParser
+@dirrm %%DATADIR%%/library/Zend/Tool/Project/Profile
+@dirrm %%DATADIR%%/library/Zend/Tool/Project/Context/Zf
+@dirrm %%DATADIR%%/library/Zend/Tool/Project/Context/System
+@dirrm %%DATADIR%%/library/Zend/Tool/Project/Context/Filesystem
+@dirrm %%DATADIR%%/library/Zend/Tool/Project/Context
+@dirrm %%DATADIR%%/library/Zend/Tool/Project
+@dirrm %%DATADIR%%/library/Zend/Tool/Framework/System/Provider
+@dirrm %%DATADIR%%/library/Zend/Tool/Framework/System/Action
+@dirrm %%DATADIR%%/library/Zend/Tool/Framework/System
+@dirrm %%DATADIR%%/library/Zend/Tool/Framework/Registry
+@dirrm %%DATADIR%%/library/Zend/Tool/Framework/Provider
+@dirrm %%DATADIR%%/library/Zend/Tool/Framework/Metadata
+@dirrm %%DATADIR%%/library/Zend/Tool/Framework/Manifest
+@dirrm %%DATADIR%%/library/Zend/Tool/Framework/Loader/IncludePathLoader
+@dirrm %%DATADIR%%/library/Zend/Tool/Framework/Loader
+@dirrm %%DATADIR%%/library/Zend/Tool/Framework/Client/Response/ContentDecorator
+@dirrm %%DATADIR%%/library/Zend/Tool/Framework/Client/Response
+@dirrm %%DATADIR%%/library/Zend/Tool/Framework/Client/Interactive
+@dirrm %%DATADIR%%/library/Zend/Tool/Framework/Client/Console/ResponseDecorator
+@dirrm %%DATADIR%%/library/Zend/Tool/Framework/Client/Console
+@dirrm %%DATADIR%%/library/Zend/Tool/Framework/Client
+@dirrm %%DATADIR%%/library/Zend/Tool/Framework/Action
+@dirrm %%DATADIR%%/library/Zend/Tool/Framework
+@dirrm %%DATADIR%%/library/Zend/Tool
 @dirrm %%DATADIR%%/library/Zend/TimeSync
 @dirrm %%DATADIR%%/library/Zend/Text/Table/Decorator
 @dirrm %%DATADIR%%/library/Zend/Text/Table
@@ -7439,8 +8121,10 @@
 @dirrm %%DATADIR%%/library/Zend/Test/PHPUnit/Constraint
 @dirrm %%DATADIR%%/library/Zend/Test/PHPUnit
 @dirrm %%DATADIR%%/library/Zend/Test
+@dirrm %%DATADIR%%/library/Zend/Tag/Cloud/Decorator
+@dirrm %%DATADIR%%/library/Zend/Tag/Cloud
+@dirrm %%DATADIR%%/library/Zend/Tag
 @dirrm %%DATADIR%%/library/Zend/Soap/Wsdl/Strategy
-@dirrm %%DATADIR%%/library/Zend/Soap/Wsdl/Parser
 @dirrm %%DATADIR%%/library/Zend/Soap/Wsdl
 @dirrm %%DATADIR%%/library/Zend/Soap/Server
 @dirrm %%DATADIR%%/library/Zend/Soap/Client
@@ -7461,6 +8145,8 @@
 @dirrm %%DATADIR%%/library/Zend/Service/Nirvanix
 @dirrm %%DATADIR%%/library/Zend/Service/Flickr
 @dirrm %%DATADIR%%/library/Zend/Service/Delicious
+@dirrm %%DATADIR%%/library/Zend/Service/Amazon/S3
+@dirrm %%DATADIR%%/library/Zend/Service/Amazon/Ec2
 @dirrm %%DATADIR%%/library/Zend/Service/Amazon
 @dirrm %%DATADIR%%/library/Zend/Service
 @dirrm %%DATADIR%%/library/Zend/Server/Reflection/Function
@@ -7473,8 +8159,11 @@
 @dirrm %%DATADIR%%/library/Zend/Search/Lucene/Search/Weight
 @dirrm %%DATADIR%%/library/Zend/Search/Lucene/Search/Similarity
 @dirrm %%DATADIR%%/library/Zend/Search/Lucene/Search/QueryEntry
+@dirrm %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Preprocessing
 @dirrm %%DATADIR%%/library/Zend/Search/Lucene/Search/Query
+@dirrm %%DATADIR%%/library/Zend/Search/Lucene/Search/Highlighter
 @dirrm %%DATADIR%%/library/Zend/Search/Lucene/Search
+@dirrm %%DATADIR%%/library/Zend/Search/Lucene/Index/TermsStream
 @dirrm %%DATADIR%%/library/Zend/Search/Lucene/Index/SegmentWriter
 @dirrm %%DATADIR%%/library/Zend/Search/Lucene/Index
 @dirrm %%DATADIR%%/library/Zend/Search/Lucene/Document
@@ -7492,7 +8181,9 @@
 @dirrm %%DATADIR%%/library/Zend/Rest/Client/Result
 @dirrm %%DATADIR%%/library/Zend/Rest/Client
 @dirrm %%DATADIR%%/library/Zend/Rest
-@dirrm %%DATADIR%%/library/Zend/Request
+@dirrm %%DATADIR%%/library/Zend/Reflection/Docblock/Tag
+@dirrm %%DATADIR%%/library/Zend/Reflection/Docblock
+@dirrm %%DATADIR%%/library/Zend/Reflection
 @dirrm %%DATADIR%%/library/Zend/ProgressBar/Adapter
 @dirrm %%DATADIR%%/library/Zend/ProgressBar
 @dirrm %%DATADIR%%/library/Zend/Pdf/Trailer
@@ -7530,6 +8221,8 @@
 @dirrm %%DATADIR%%/library/Zend/OpenId/Consumer/Storage
 @dirrm %%DATADIR%%/library/Zend/OpenId/Consumer
 @dirrm %%DATADIR%%/library/Zend/OpenId
+@dirrm %%DATADIR%%/library/Zend/Navigation/Page
+@dirrm %%DATADIR%%/library/Zend/Navigation
 @dirrm %%DATADIR%%/library/Zend/Mime
 @dirrm %%DATADIR%%/library/Zend/Memory/Container
 @dirrm %%DATADIR%%/library/Zend/Memory
@@ -7555,6 +8248,7 @@
 @dirrm %%DATADIR%%/library/Zend/Locale/Data
 @dirrm %%DATADIR%%/library/Zend/Locale
 @dirrm %%DATADIR%%/library/Zend/Loader/PluginLoader
+@dirrm %%DATADIR%%/library/Zend/Loader/Autoloader
 @dirrm %%DATADIR%%/library/Zend/Loader
 @dirrm %%DATADIR%%/library/Zend/Ldap
 @dirrm %%DATADIR%%/library/Zend/Layout/Controller/Plugin
@@ -7618,12 +8312,15 @@
 @dirrm %%DATADIR%%/library/Zend/Gdata/App
 @dirrm %%DATADIR%%/library/Zend/Gdata
 @dirrm %%DATADIR%%/library/Zend/Form/Element
+@dirrm %%DATADIR%%/library/Zend/Form/Decorator/Marker/File
+@dirrm %%DATADIR%%/library/Zend/Form/Decorator/Marker
 @dirrm %%DATADIR%%/library/Zend/Form/Decorator/Captcha
 @dirrm %%DATADIR%%/library/Zend/Form/Decorator
 @dirrm %%DATADIR%%/library/Zend/Form
 @dirrm %%DATADIR%%/library/Zend/Filter/Word/Separator
 @dirrm %%DATADIR%%/library/Zend/Filter/Word
 @dirrm %%DATADIR%%/library/Zend/Filter/File
+@dirrm %%DATADIR%%/library/Zend/Filter/Encrypt
 @dirrm %%DATADIR%%/library/Zend/Filter
 @dirrm %%DATADIR%%/library/Zend/File/Transfer/Adapter
 @dirrm %%DATADIR%%/library/Zend/File/Transfer
@@ -7661,6 +8358,13 @@
 @dirrm %%DATADIR%%/library/Zend/Db
 @dirrm %%DATADIR%%/library/Zend/Date
 @dirrm %%DATADIR%%/library/Zend/Currency
+@dirrm %%DATADIR%%/library/Zend/Crypt/Rsa/Key
+@dirrm %%DATADIR%%/library/Zend/Crypt/Rsa
+@dirrm %%DATADIR%%/library/Zend/Crypt/Math/BigInteger
+@dirrm %%DATADIR%%/library/Zend/Crypt/Math
+@dirrm %%DATADIR%%/library/Zend/Crypt/Hmac
+@dirrm %%DATADIR%%/library/Zend/Crypt/DiffieHellman
+@dirrm %%DATADIR%%/library/Zend/Crypt
 @dirrm %%DATADIR%%/library/Zend/Controller/Router/Route
 @dirrm %%DATADIR%%/library/Zend/Controller/Router
 @dirrm %%DATADIR%%/library/Zend/Controller/Response
@@ -7676,8 +8380,14 @@
 @dirrm %%DATADIR%%/library/Zend/Console
 @dirrm %%DATADIR%%/library/Zend/Config/Writer
 @dirrm %%DATADIR%%/library/Zend/Config
+@dirrm %%DATADIR%%/library/Zend/CodeGenerator/Php/Member
+@dirrm %%DATADIR%%/library/Zend/CodeGenerator/Php/Docblock/Tag
+@dirrm %%DATADIR%%/library/Zend/CodeGenerator/Php/Docblock
+@dirrm %%DATADIR%%/library/Zend/CodeGenerator/Php
+@dirrm %%DATADIR%%/library/Zend/CodeGenerator
 @dirrm %%DATADIR%%/library/Zend/Captcha
 @dirrm %%DATADIR%%/library/Zend/Cache/Frontend
+@dirrm %%DATADIR%%/library/Zend/Cache/Backend/ZendServer
 @dirrm %%DATADIR%%/library/Zend/Cache/Backend
 @dirrm %%DATADIR%%/library/Zend/Cache
 @dirrm %%DATADIR%%/library/Zend/Auth/Storage
@@ -7685,6 +8395,10 @@
 @dirrm %%DATADIR%%/library/Zend/Auth/Adapter/Http
 @dirrm %%DATADIR%%/library/Zend/Auth/Adapter
 @dirrm %%DATADIR%%/library/Zend/Auth
+@dirrm %%DATADIR%%/library/Zend/Application/Resource
+@dirrm %%DATADIR%%/library/Zend/Application/Module
+@dirrm %%DATADIR%%/library/Zend/Application/Bootstrap
+@dirrm %%DATADIR%%/library/Zend/Application
 @dirrm %%DATADIR%%/library/Zend/Amf/Value/Messaging
 @dirrm %%DATADIR%%/library/Zend/Amf/Value
 @dirrm %%DATADIR%%/library/Zend/Amf/Util
@@ -7702,65 +8416,26 @@
 @dirrm %%DATADIR%%/library/Zend/Acl
 @dirrm %%DATADIR%%/library/Zend
 @dirrm %%DATADIR%%/library
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Tool/Project/_files/project1
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Tool/Project/_files
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Tool/Project/Context
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Tool/Project
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Tool/Framework/_files
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Tool/Framework/System
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Tool/Framework/Provider/_files
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Tool/Framework/Provider
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Tool/Framework/Manifest/_files
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Tool/Framework/Manifest
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Tool/Framework/Loader
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Tool/Framework/Client/_files
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Tool/Framework/Client/Cli
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Tool/Framework/Client
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Tool/Framework/Action/_files
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Tool/Framework/Action
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Tool/Framework
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Tool
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Reflection/_files
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Reflection/Docblock/Tag
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Reflection/Docblock
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend/Reflection
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests/Zend
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/tests
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Project/Provider
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Project/Profile/Resource
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Project/Profile/Iterator
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Project/Profile/FileParser
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Project/Profile
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Zf
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Project/Context/System
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Project/Context/Filesystem
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Project/Context
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Project
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework/System/Provider
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework/System/Action
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework/System
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework/Registry
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework/Provider
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework/Manifest
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework/Loader/IncludePathLoader
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework/Loader
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/Response/ContentDecorator
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/Response
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/Interactive
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/ConsoleClient/ResponseDecorator
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework/Client/ConsoleClient
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework/Client
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework/Action
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool/Framework
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Tool
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Reflection/Docblock/Tag
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Reflection/Docblock
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Reflection
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend/Console
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library/Zend
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/library
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator/bin
-%%INCUBATOR%%@dirrm %%DATADIR%%/incubator
+@dirrm %%DATADIR%%/extras/library/ZendX/JQuery/View/Helper/JQuery
+@dirrm %%DATADIR%%/extras/library/ZendX/JQuery/View/Helper
+@dirrm %%DATADIR%%/extras/library/ZendX/JQuery/View
+@dirrm %%DATADIR%%/extras/library/ZendX/JQuery/Form/Element
+@dirrm %%DATADIR%%/extras/library/ZendX/JQuery/Form/Decorator
+@dirrm %%DATADIR%%/extras/library/ZendX/JQuery/Form
+@dirrm %%DATADIR%%/extras/library/ZendX/JQuery/Controller/Action/Helper
+@dirrm %%DATADIR%%/extras/library/ZendX/JQuery/Controller/Action
+@dirrm %%DATADIR%%/extras/library/ZendX/JQuery/Controller
+@dirrm %%DATADIR%%/extras/library/ZendX/JQuery
+@dirrm %%DATADIR%%/extras/library/ZendX/Db/Statement/Firebird
+@dirrm %%DATADIR%%/extras/library/ZendX/Db/Statement
+@dirrm %%DATADIR%%/extras/library/ZendX/Db/Adapter/Firebird
+@dirrm %%DATADIR%%/extras/library/ZendX/Db/Adapter
+@dirrm %%DATADIR%%/extras/library/ZendX/Db
+@dirrm %%DATADIR%%/extras/library/ZendX/Console/Process
+@dirrm %%DATADIR%%/extras/library/ZendX/Console
+@dirrm %%DATADIR%%/extras/library/ZendX
+@dirrm %%DATADIR%%/extras/library
+@dirrm %%DATADIR%%/extras
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/shrinksafe
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/maven/dojo/src/main/assembly
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/maven/dojo/src/main
@@ -8211,13 +8886,18 @@
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo
 %%DOJO%%@dirrm %%DATADIR%%/externals
 @dirrm %%DATADIR%%
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/mvc/controllers
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Tool/Project/_files/project1
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/System
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Client/_files
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Client/Cli
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/_files/application/views/scripts/index
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/_index/_files
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/_files
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Storage/_tempFiles/_files
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Paginator/_files/cachedata
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/OpenId/_files
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/OpenId/Provider/Storage/_files
-%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/OpenId/Consumer/Storage/_files
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Memory/_files
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Layout/_files/layouts-basepath/filters
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Db/Table/_files
@@ -8227,9 +8907,6 @@
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/bar/views/filters
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Config/Writer/temp
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/OpenId/_files
-%%INCUBATOR%%@exec mkdir -p %D/%%DATADIR%%/incubator/tests/Zend/Tool/Project/_files/project1
-%%INCUBATOR%%@exec mkdir -p %D/%%DATADIR%%/incubator/tests/Zend/Tool/Framework/System
-%%INCUBATOR%%@exec mkdir -p %D/%%DATADIR%%/incubator/tests/Zend/Tool/Framework/Client/_files
 %%DOJO%%@exec mkdir -p %D/%%DATADIR%%/externals/dojo/dojox/analytics/logger/logs
 %%DOJO%%@exec mkdir -p %D/%%DATADIR%%/externals/dojo/demos/uploader/UploadedFiles
 %%DOJO%%@exec mkdir -p %D/%%DATADIR%%/externals/dojo/demos/skew/cache
