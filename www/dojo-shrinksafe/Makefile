@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		shrinksafe
-PORTVERSION=		1.2.3
+PORTVERSION=		1.3.1
 CATEGORIES=		www java
 MASTER_SITES=		http://download.dojotoolkit.org/release-${PORTVERSION}/ \
 			LOCAL/glarkin
@@ -20,7 +20,8 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/${PKGNAMEPREFIX}${PORTNAME} %%DATADIR%%/custom_rhino.jar
+PLIST_FILES=	bin/${PKGNAMEPREFIX}${PORTNAME} %%DATADIR%%/shrinksafe.jar \
+		%%DATADIR%%/js.jar
 PLIST_DIRS=	%%DATADIR%%
 SUB_FILES=	${PKGNAMEPREFIX}${PORTNAME}
 
@@ -28,8 +29,9 @@ SUB_FILES=	${PKGNAMEPREFIX}${PORTNAME}
 
 do-install:
 	@${INSTALL} -d ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/custom_rhino.jar ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME} ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/shrinksafe.jar ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/js.jar ${DATADIR}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME} ${PREFIX}/bin
 	@${CAT} pkg-message
 
 .include <bsd.port.post.mk>
