@@ -210,7 +210,6 @@ lib/xorg/protocol.txt
 libdata/pkgconfig/xorg-server.pc
 share/aclocal/xorg-server.m4
 @dirrm include/xorg
-@dirrm lib/xorg/modules/fonts
 @dirrm lib/xorg/modules/extensions
 @dirrm lib/xorg/modules/linux
 @dirrm lib/xorg/modules/multimedia
