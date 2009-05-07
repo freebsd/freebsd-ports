@@ -123,9 +123,9 @@ share/aclocal/radius.m4
 @dirrm %%DATADIR%%/%%PORTVERSION%%
 @dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%MODULES%%@dirrm lib/radius/%%PORTVERSION%%/modules
-%%MODULES%%@dirrm lib/radius/%%PORTVERSION%%
-%%MODULES%%@dirrm lib/radius
+@dirrm lib/radius/%%PORTVERSION%%/modules
+@dirrm lib/radius/%%PORTVERSION%%
+@dirrm lib/radius
 @dirrm lib/security
 @unexec rm -f %B/run/radiusd.pid
 @unexec rm -rf %B/log/radius 2>&1 >/dev/null || true
