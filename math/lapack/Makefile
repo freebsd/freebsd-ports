@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	lapack
-PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTVERSION=	3.2.1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/lapack/ \
 		http://netlib.org/lapack/ \
 		http://scicomp.ewha.ac.kr/netlib/lapack/ \
 		http://service-spi.web.cern.ch/service-spi/external/tarFiles/
-DISTFILES=	lapack-${PORTVERSION}.tgz manpages-${PORTVERSION}.tgz
+DISTFILES=	lapack-${PORTVERSION}.tgz manpages-3.2.0.tgz
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A library of Fortran 77 subroutines for linear algebra
@@ -36,7 +35,6 @@ FPIC=	-fpic
 BROKEN=		Fails to link
 .endif
 
-WRKSRC=${WRKDIR}/lapack-3.2
 MANSRC=${WRKDIR}/lapack-3.2.0
 WRKSRC_SHARED=${WRKSRC}_shared
 FFLAGS_SHARED=${FPIC}
