@@ -35,7 +35,6 @@ etc/cups/snmp.conf.N
 @exec chgrp cups %D/etc/cups
 %%WITH_PAMD%%etc/pam.d/cups
 bin/cancel
-bin/cups-config
 bin/cupstestdsc
 bin/cupstestppd
 bin/lp
@@ -46,22 +45,8 @@ bin/lpr
 bin/lprm
 bin/lpstat
 etc/cups/cupsd.conf.default
-include/cups/adminutil.h
-include/cups/array.h
-include/cups/backend.h
-include/cups/cups.h
-include/cups/dir.h
-include/cups/file.h
-include/cups/http.h
 include/cups/image.h
-include/cups/ipp.h
-include/cups/language.h
-include/cups/ppd.h
 include/cups/raster.h
-include/cups/sidechannel.h
-include/cups/transcode.h
-lib/libcups.so
-lib/libcups.so.2
 lib/libcupsimage.so
 lib/libcupsimage.so.2
 %%PHP%%lib/php/%%PHP_EXT_DIR%%/phpcups.so
@@ -1235,7 +1220,6 @@ sbin/reject
 %%DOCSDIR%%/help/man-cancel.html
 %%DOCSDIR%%/help/man-classes.conf.html
 %%DOCSDIR%%/help/man-client.conf.html
-%%DOCSDIR%%/help/man-cups-config.html
 %%DOCSDIR%%/help/man-cups-lpd.html
 %%DOCSDIR%%/help/man-cups-polld.html
 %%DOCSDIR%%/help/man-cupsaddsmb.html

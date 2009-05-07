@@ -11,7 +11,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 MASTERDIR?=	${.CURDIR}/../cups-base
  
 CUPS_CLIENT=	yes
-WITHOUT_GNUTLS=	yes
 
 OPTIONS=	GNUTLS		"Build with GNUTLS library" on
 

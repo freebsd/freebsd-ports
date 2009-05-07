@@ -8,16 +8,13 @@
 PORTNAME=	cups
 PORTVERSION=	1.3.10
 DISTVERSIONSUFFIX=	-source
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
 PKGNAMESUFFIX=	${CUPS_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Common UNIX Printing System
-
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
 
 CONFLICTS=	LPRng-[0-9]*
 
@@ -65,13 +62,17 @@ CUPSSYSGRP=	wheel
 .if defined(CUPS_CLIENT)
 USE_LDCONFIG=	yes
 CUPS_SUFFIX=	-client
-PKGNAMESUFFIX=	-client${PKGNAMESUFFIX2}
-PLIST=		plist.client
+PLIST=		${MASTERDIR}/pkg-plist.client
+INSTALL_WRKSRC=	${WRKSRC}/cups
 .else
 CUPS_SUFFIX=	-base
 USE_RC_SUBR=	cupsd
 USE_GHOSTSCRIPT=	yes
 CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=gs
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client
 .endif
 
 .if defined(CUPS_OVERWRITE_BASE)
@@ -144,9 +145,10 @@ CONFIGURE_ARGS+=	--disable-dbus
 RUN_DEPENDS+=		xdg-open:${PORTSDIR}/devel/xdg-utils
 .endif
 
-.if !defined(CUPS_CLIENT)
+.if defined(CUPS_CLIENT)
+MAN1=	cups-config.1
+.else
 MAN1=	cancel.1 \
-	cups-config.1 \
 	cupstestdsc.1 \
 	cupstestppd.1 \
 	lp.1 \
@@ -200,7 +202,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|htmlview|xdg-open|' ${WRKSRC}/desktop/cups.desktop
 .endif
 	@${REINPLACE_CMD} -e '/SILENT/d' ${WRKSRC}/Makedefs.in
-	@${REINPLACE_CMD} -e '/share/s|/usr/share|${PREFIX}/share|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/etc/cups|/usr/local/etc/cups|g' ${WRKSRC}/man/*.man*
 	@${REINPLACE_CMD} -e 's|CXX="$$CC"||g ; s|-lpthreads.*;|${PTHREAD_LIBS};|g' \
 		-e 's|/private/etc/pam.d|${LOCALBASE}/etc/pam.d|' \
@@ -211,18 +212,23 @@ post-patch:
 		-e 's|notifier scheduler systemv test ||' \
 		-e 's|$$.PHPDIR. ||' \
 		-e 's|conf data doc $$.FONTS.ppd templates||' \
+		-e '/share/s|/usr/share|${PREFIX}/share|g' \
+		${WRKSRC}/Makefile
+.else
+	@${REINPLACE_CMD} \
+		-e 's|cups backend|backend|' \
+		-e '/share/s|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} \
-		-e 's|	testadmin ||' \
-		-e 's|	testarray ||' \
-		-e 's|	testcups ||' \
-		-e 's|	testfile ||' \
-		-e 's|	testhttp ||' \
-		-e 's|	testi18n ||' \
-		-e 's|	testipp ||' \
-		-e 's|	testlang ||' \
-		-e 's|	testppd ||' \
-		${WRKSRC}/cups/Makefile
+		-e 's|cups-config.$$.MAN1EXT. ||' \
+		${WRKSRC}/man/Makefile
+.endif
+
+.if !defined(CUPS_CLIENT)
+pre-build:
+	${CP} -p ${LOCALBASE}/lib/libcups.a ${WRKSRC}/cups/
+	${CP} -p ${LOCALBASE}/lib/libcups.so ${WRKSRC}/cups/
+	${CP} -p ${LOCALBASE}/lib/libcups.so.2 ${WRKSRC}/cups/
 .endif
 
 .if !defined(CUPS_CLIENT)
@@ -256,7 +262,10 @@ post-install:
 .endif
 
 .if defined(CUPS_CLIENT)
-do-install:
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/cups-config ${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/cups/libcups.a ${PREFIX}/lib/
+	${INSTALL_MAN} ${WRKSRC}/man/cups-config.man ${PREFIX}/man/man1/cups-config.1
 .endif
 
 .include <bsd.port.post.mk>
