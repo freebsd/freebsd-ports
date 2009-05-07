@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	vd@FreeBSD.org
+MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	Untrusted backup using rsync algorithm
 
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync
