@@ -8,6 +8,7 @@
 PORTNAME=	xf86-video-nouveau
 PORTVERSION=	0.0.10.${SNAPDATE}
 DISTVERSIONSUFFIX=.${SNAPREV}
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 MASTER_SITES=	ftp://ftp.lissyara.su/users/Guest/distfiles/
 

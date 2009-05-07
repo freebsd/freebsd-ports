@@ -7,6 +7,7 @@
 
 PORTNAME=	xf86-video-radeonhd
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
