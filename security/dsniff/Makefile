@@ -30,10 +30,6 @@ LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800059
-BROKEN=		does not biuld
-.endif
-
 # If net/libnids has been compiled with the GLIB2 option then this port needs
 # the corresponding library and additional linker flags.
 LIBNIDS_GLIB2?=
