@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-TimeZone
-PORTVERSION=	0.88
+PORTVERSION=	0.90
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -36,10 +36,6 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-BUILD_DEPENDS+=	p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
-.endif
 
 .if ${PERL_LEVEL} < 500806
 RUN_DEPENDS+=	p5-PathTools>=3:${PORTSDIR}/devel/p5-PathTools
