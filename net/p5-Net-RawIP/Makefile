@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-RawIP
-PORTVERSION=	0.23
+PORTVERSION=	0.25
 PORTEPOCH=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
@@ -18,10 +18,4 @@ COMMENT=	A perl module to manipulate raw IP packets
 PERL_CONFIGURE=	yes
 MAN3=		Net::RawIP.3 Net::RawIP::libpcap.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800059
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
