@@ -1,33 +1,3 @@
-@unexec %D/sbin/apxs -e -A -n log_sql %D/libexec/apache/mod_log_sql.so
-libexec/apache/mod_log_sql.so
-@exec %D/sbin/apxs -e -a -n log_sql %D/libexec/apache/mod_log_sql.so
-share/mod_log_sql/LICENSE
-share/mod_log_sql/CHANGELOG
-share/mod_log_sql/create_tables.sql
-share/mod_log_sql/make_combined_log.pl
-%%PORTDOCS%%share/doc/mod_log_sql/FreeBSD-readme.txt
-%%PORTDOCS%%share/doc/mod_log_sql/documentation.ps
-%%PORTDOCS%%share/doc/mod_log_sql/documentation.txt
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/contents.png
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/documentation.css
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/documentation.html
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/img1.png
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/img2.png
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/img3.png
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/img4.png
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/next.png
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/next_g.png
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/node1.html
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/node2.html
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/node3.html
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/node4.html
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/node5.html
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/node6.html
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/prev.png
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/prev_g.png
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/up.png
-%%PORTDOCS%%share/doc/mod_log_sql/HTML/up_g.png
-%%PORTDOCS%%share/doc/mod_log_sql/README
-%%PORTDOCS%%@dirrm share/doc/mod_log_sql/HTML
-%%PORTDOCS%%@dirrm share/doc/mod_log_sql
-@dirrm share/mod_log_sql
+%%APACHEMODDIR%%/mod_log_sql.so
+@unexec %D/sbin/apxs -e -A -n log_sql %D%%APACHEMODDIR%%/mod_log_sql.so
+@exec %D/sbin/apxs -e -a -n log_sql %D%%APACHEMODDIR%%/mod_log_sql.so
