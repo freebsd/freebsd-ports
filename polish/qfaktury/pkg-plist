@@ -1,0 +1,37 @@
+bin/qfaktury
+share/applications/QFaktury.desktop
+share/qfaktury/icons/QT_original_R.png
+share/qfaktury/icons/dane_firmy.png
+share/qfaktury/icons/dodaj_kontrahentow.png
+share/qfaktury/icons/dodaj_towar.png
+share/qfaktury/icons/edytuj_fakture.png
+share/qfaktury/icons/edytuj_kontrahentow.png
+share/qfaktury/icons/edytuj_przelew.png
+share/qfaktury/icons/edytuj_towar.png
+share/qfaktury/icons/koniec.png
+share/qfaktury/icons/kreator.png
+share/qfaktury/icons/nowa_brutto.png
+share/qfaktury/icons/nowa_duplikat.png
+share/qfaktury/icons/nowa_faktura.png
+share/qfaktury/icons/nowa_korekta.png
+share/qfaktury/icons/nowa_proforma.png
+share/qfaktury/icons/nowa_rachunek.png
+share/qfaktury/icons/o_programie.png
+share/qfaktury/icons/pomoc.png
+share/qfaktury/icons/qfaktury_128.png
+share/qfaktury/icons/qfaktury_16.png
+share/qfaktury/icons/qfaktury_22.png
+share/qfaktury/icons/qfaktury_32.png
+share/qfaktury/icons/qfaktury_48.png
+share/qfaktury/icons/qfaktury_64.png
+share/qfaktury/icons/splash.png
+share/qfaktury/icons/ustawienia.png
+share/qfaktury/icons/usun_fakture.png
+share/qfaktury/icons/usun_kontrahentow.png
+share/qfaktury/icons/usun_przelew.png
+share/qfaktury/icons/usun_towar.png
+share/qfaktury/templates/style.css
+@dirrm share/qfaktury/templates
+@dirrm share/qfaktury/icons
+@dirrm share/qfaktury
+@dirrmtry share/applications
