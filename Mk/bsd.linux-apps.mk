@@ -257,7 +257,7 @@ libxml_DETECT=		${libxml${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libxml_PORT=		${PORTSDIR}/textproc/linux${LINUX_DIST_SUFFIX}-libxml
 
 libxml2_FILE=		${LINUXBASE}/usr/lib/libxml2.so.2.6.19
-libxml2_f8_FILE=	${LINUXBASE}/usr/lib/libxml2.so.2.6.31
+libxml2_f8_FILE=	${LINUXBASE}/usr/lib/libxml2.so.2.7.2
 libxml2_DETECT=		${libxml2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libxml2_PORT=		${PORTSDIR}/textproc/linux${LINUX_DIST_SUFFIX}-libxml2
 
