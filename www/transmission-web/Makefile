@@ -9,7 +9,7 @@ PORTREVISION=	0
 CATEGORIES=	www net-p2p
 PKGNAMESUFFIX=	-web
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A fast and lightweight WebUI for Transmission BitTorrent client
 
 DESCR=		${.CURDIR}/pkg-descr
