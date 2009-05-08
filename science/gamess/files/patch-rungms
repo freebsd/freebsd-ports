@@ -1,12 +1,12 @@
---- rungms.orig	Wed Jun  6 17:03:07 2007
-+++ rungms	Wed Sep 26 14:31:55 2007
+--- rungms.orig	2009-01-17 03:17:33.000000000 +0900
++++ rungms	2009-05-08 14:27:35.000000000 +0900
 @@ -1,4 +1,4 @@
 -#!/bin/csh
 +#!/bin/csh -f
  #
- #   9 May 07 - MWS 
+ #  last update = 6 January 2009
  #
-@@ -54,7 +54,13 @@
+@@ -55,7 +55,13 @@
  #       of using LoadLeveler via a "llgms" front end in ~/gamess/misc.
  #
  set TARGET=sockets
@@ -21,7 +21,7 @@
  #
  set JOB=$1      # name of the input file xxx.inp, give only the xxx part
  set VERNO=$2    # revision number of the executable created by 'lked' step
-@@ -66,35 +72,45 @@
+@@ -67,36 +73,29 @@
  #
  #  ---- the top third of the script is input and other file assignments ----
  #
@@ -38,6 +38,7 @@
 +#df -k $SCR
  
  #        this added as experiment, February 2007
+ #        its intent is to detect large arrays allocated off the stack
 -limit stacksize 8192
 +#limit stacksize 8192
 +
@@ -70,27 +71,10 @@
 -      exit 4
 -   endif
 -endif
-+#if ($JOB:r.inp == $JOB) set JOB=$JOB:r      # strip off possible .inp
-+#if (-e $JOB.inp) then
-+#   set echo
-+#   cp  $JOB.inp  $SCR/$JOB.F05
-+#   unset echo
-+#else
-+#   if (-e tests/$JOB.inp) then
-+#      set echo
-+#      cp  tests/$JOB.inp  $SCR/$JOB.F05
-+#      unset echo
-+#   else
-+#      echo "Input file $JOB.inp does not exist."
-+#      echo "This job expected the input file to be in directory `pwd`"
-+#      echo "Please fix your file name problem, and resubmit."
-+#      exit 4
-+#   endif
-+#endif
  
  #  file assignments.
  #
-@@ -117,16 +133,16 @@
+@@ -120,19 +119,20 @@
  #  d. see NEO plug-in code's documentation regarding the NUCBAS file.
  #         Note that you must edit a+b, but will probably skip c+d.
  #
@@ -104,7 +88,14 @@
  setenv  EXTBAS /dev/null
  setenv  NUCBAS /dev/null
  #
--setenv IRCDATA ~$USER/scr/$JOB.irc
+-setenv  MAKEFP ~$USER/scr/$JOB.efp
+-setenv   GAMMA ~$USER/scr/$JOB.gamma
+-setenv TRAJECT ~$USER/scr/$JOB.trj
+-setenv RESTART ~$USER/scr/$JOB.rst
++setenv  MAKEFP $SCR/scr/$JOB.efp
++setenv   GAMMA $SCR/scr/$JOB.gamma
++setenv TRAJECT $SCR/scr/$JOB.trj
++setenv RESTART $SCR/scr/$JOB.rst
 +setenv IRCDATA $SCR/$JOB.irc
  setenv   INPUT $SCR/$JOB.F05
 -setenv   PUNCH ~$USER/scr/$JOB.dat
@@ -112,14 +103,12 @@
  setenv  AOINTS $SCR/$JOB.F08
  setenv  MOINTS $SCR/$JOB.F09
  setenv DICTNRY $SCR/$JOB.F10
-@@ -156,8 +172,8 @@
- setenv  SOINTY $SCR/$JOB.F32
- setenv  SOINTZ $SCR/$JOB.F33
- setenv  SORESC $SCR/$JOB.F34
--setenv   SIMEN ~$USER/scr/$JOB.simen
--setenv  SIMCOR ~$USER/scr/$JOB.simcor
-+setenv   SIMEN $SCR/$JOB.simen
-+setenv  SIMCOR $SCR/$JOB.simcor
- setenv GCILIST $SCR/$JOB.F37
- setenv HESSIAN $SCR/$JOB.F38
- setenv SOCCDAT $SCR/$JOB.F40
+@@ -308,7 +308,7 @@
+     if (null$4 == null) set ELGNAME=ELGFILE
+     set echo
+     setenv AOINTS   $SCR/$ELGNAME.F08
+-    setenv ELGDOS   ~$USER/scr/$JOB.ldos
++    setenv ELGDOS   $SCR/$JOB.ldos
+     setenv ELGDAT   $SCR/$ELGNAME.F71
+     setenv ELGPAR   $SCR/$ELGNAME.F72
+     setenv ELGCUT   $SCR/$ELGNAME.F74
