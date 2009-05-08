@@ -6,6 +6,7 @@
 
 PORTNAME=	Maypole
 PORTVERSION=	2.13
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/T/TE/TEEJAY
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	MVC web application framework
 
-RUN_DEPENDS=	p5-CGI-Simple>0:${PORTSDIR}/www/p5-CGI-Simple \
+BUILD_DEPENDS=	p5-CGI-Simple>0:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-CGI-Untaint-date>0:${PORTSDIR}/www/p5-CGI-Untaint-date \
 		p5-CGI-Untaint-email>0:${PORTSDIR}/www/p5-CGI-Untaint-email \
 		p5-CGI-Untaint>=1.26:${PORTSDIR}/www/p5-CGI-Untaint \
@@ -36,27 +37,28 @@ RUN_DEPENDS=	p5-CGI-Simple>0:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 		p5-URI>0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
-OPTIONS=	MODPERL "mod_perl support" on
+OPTIONS=	MODPERL "mod_perl support" on \
+			MODPERL2 "mod_perl2 support" off
 
 PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MODPERL)
-.if defined(WITH_APACHE2)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
-.else
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
 .endif
+.if defined(WITH_MODPERL2)
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
+.endif
+
+.if defined(WITH_MODPERL) && defined(WITH_MODPERL2)
+IGNORE=	only 1 mod_perl at a time
 .endif
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
-PKGMSG_SUB=	DOCSDIR=${DOCSDIR} \
-		DATADIR=${DATADIR} \
-		EXAMPLESDIR=${EXAMPLESDIR}
+SUB_FILES+=	pkg-message
 
 MAN3=		Apache::MVC.3 \
 		CGI::Maypole.3 \
@@ -103,18 +105,16 @@ DOC_FILES=	../Manual.pod \
 		View.pod \
 		Workflow.pod
 
-pre-patch:
-	@ ${SED} ${PKGMSG_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${PKGDIR}/pkg-message > ${PKGMESSAGE}
-
 post-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
+	@ ${MKDIR} ${DOCSDIR}/
 .for FILE in ${DOC_FILES}
-	@ ${INSTALL_DATA} ${WRKSRC}/lib/Maypole/Manual/${FILE} ${DOCSDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/lib/Maypole/Manual/${FILE} ${DOCSDIR}/
 .endfor
-	@ ${MKDIR} ${EXAMPLESDIR}
-	@ ${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@ ${MKDIR} ${EXAMPLESDIR}/
+	@ ${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}/
 .endif
 	@ ${CAT} ${PKGMESSAGE}
 
