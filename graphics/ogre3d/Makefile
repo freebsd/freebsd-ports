@@ -8,8 +8,7 @@
 PORTNAME=	ogre3d
 PORTVERSION=	1.6.2
 CATEGORIES=	graphics devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=ogre
+MASTER_SITES=	SF/ogre
 DISTNAME=	ogre-v${PORTVERSION:S/./-/g:S/-r1/RC1/g}
 
 MAINTAINER=	oliver@FreeBSD.org
@@ -37,6 +36,7 @@ USE_GNOME=	gnomehack
 USE_GMAKE=	YES
 USE_SDL=	sdl
 USE_XORG=	xaw
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
