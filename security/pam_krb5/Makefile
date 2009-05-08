@@ -15,8 +15,6 @@ DISTNAME=		${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		A Pluggable Authentication Module for Kerberos 5
-DEPRECATED=		Pam_krb5 is in the base FreeBSD system.
-EXPIRATION_DATE=	2009-08-31
 
 MAN5=			pam_krb5.5 pam_krb5afs.5
 MAN8=			pam_krb5.8 pam_krb5afs.8
