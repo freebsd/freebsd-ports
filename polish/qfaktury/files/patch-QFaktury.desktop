@@ -1,0 +1,15 @@
+--- QFaktury.desktop.orig      2009-04-20 10:11:34.000000000 +0200
++++ QFaktury.desktop   2009-04-20 10:12:10.000000000 +0200
+@@ -5,10 +5,10 @@
+ Type=Application
+ InitialPreference=2
+ Categories=Application;Office;X-Red-Hat-Base;X-SuSE-Core-Office;
+-Exec=/usr/local/bin/qfaktury
++Exec=@PREFIX@/bin/qfaktury
+ Name[pl_PL]=QFaktury GPL
+ GenericName[pl_PL]=qfaktury
+-Icon=/usr/local/share/qfaktury/icons/qfaktury_48.png
++Icon=@PREFIX@/share/qfaktury/icons/qfaktury_48.png
+ Comment[pl_PL]=Program do drukowania faktur
+ Name=QFaktury GPL
+ StartupNotify=true
