@@ -13,20 +13,26 @@ DISTFILES=		${PORTNAME}.c readme.${PORTNAME}
 MAINTAINER=		cjh@FreeBSD.org
 COMMENT=		Apache module for manipulating euc-kr encoded URL
 
-USE_APACHE=	yes
+USE_APACHE=	1.3
 USE_ICONV=	yes
 
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+
+AP_INC=	${LOCALBASE}/include
+AP_LIB=	${LOCALBASE}/lib -liconv
+
+PORTDOCS=	readme.${PORTNAME}
+
 do-extract:
-	${MKDIR} ${WRKSRC}
-	${CP} ${_DISTDIR}/${PORTNAME}.c ${_DISTDIR}/readme.mod_url ${WRKSRC}
+	${MKDIR} ${WRKSRC}/
+	${CP} ${_DISTDIR}/${PORTNAME}.c ${_DISTDIR}/readme.${PORTNAME} ${WRKSRC}/
 
-do-build:
-	cd ${WRKSRC}; ${APXS} -c -I${PREFIX}/include -L${PREFIX}/lib -liconv ${PORTNAME}.c
-
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.so ${PREFIX}/libexec/apache/
-	${MKDIR} ${PREFIX}/share/doc/mod_url
-	${INSTALL_DATA} ${WRKSRC}/readme.${PORTNAME} ${PREFIX}/share/doc/mod_url/
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}/
+.endif
 	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
