@@ -8,7 +8,7 @@
 PORTREVISION=	1
 PKGNAMESUFFIX=	-daemon
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A fast and lightweight daemon BitTorrent client
 
 DESCR=		${.CURDIR}/pkg-descr
