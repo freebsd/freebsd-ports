@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	Locale-Geocode
-PORTVERSION=	1.11
+PORTVERSION=	1.20
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Find codes and information on geographical location
 
-BUILD_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-XML-SAX-Expat>=0:${PORTSDIR}/textproc/p5-XML-SAX-Expat \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+MAKE_JOBS_SAFE=	yes
+
+RUN_DEPENDS=	p5-XML-SAX-Expat>=0.39:${PORTSDIR}/textproc/p5-XML-SAX-Expat \
+		p5-XML-Simple>=2.16:${PORTSDIR}/textproc/p5-XML-Simple
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
