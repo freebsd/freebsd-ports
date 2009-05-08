@@ -33,7 +33,7 @@ OPTIONS=	ASPELL "Interface to aspell spelling checker"	on \
 		FCL_JSON	"Free Pascal implementation of JSON"	on \
 		FCL_NET	"Free Pascal Component Library (net)"	on \
 		FCL_PASSRC	"Free Pascal Component Library (passrc)"	on \
-		FCL_PROCESS	"Free Pascal unit to start and manipulate other programs"	on \
+		FCL_PROCESS	"Unit to start and manipulate other programs"	on \
 		FCL_REGISTRY	"Free Pascal Component Library (registry)"	on \
 		FCL_WEB	"Free Pascal Component Library (web)"	on \
 		FCL_XML	"Free Pascal Component Library (xml)"	on \
@@ -43,11 +43,11 @@ OPTIONS=	ASPELL "Interface to aspell spelling checker"	on \
 		FV	"Free Pascal unit for Delphi support" on \
 		GDBM	"Interface to the GNU database system"	on \
 		GGI	"Interface to libggi library"	on \
-		GNOME1	"Free Pascal unit to create programs for GNOME" on \
+		GNOME1	"Interface to create programs for GNOME" on \
 		GTK1	"Interface to gtk libraries"	on \
 		GTK2	"Interface to gtk2 libraries"	on \
-		ICONVENC	"Free Pascal interface to iconv library"	on \
-		IMAGEMAGICK	"Free Pascal interface to ImageMagick"	on \
+		ICONVENC	"Interface to iconv library"	on \
+		IMAGEMAGICK	"Interface to ImageMagick"	on \
 		IMLIB	"Interface to imlib library"	on \
 		LIBCURL	"Interface to curl library"	on \
 		LIBGD	"Interface to gd library"	on \
@@ -57,15 +57,15 @@ OPTIONS=	ASPELL "Interface to aspell spelling checker"	on \
 		OPENGL	"Interface to opengl library"	on \
 		OPENSSL	"Interface to openssl library"	on \
 		PCAP	"Interface to pcap library"	on \
-		PXLIB	"Free Pascal unit to read various Paradox file"	on \
+		PXLIB	"Unit to read various Paradox file"	on \
 		SDL	"Free Pascal interface to SDL library"	on \
 		SVGALIB	"Interface to svgalib library"	on \
-		SYMBOLIC	"FreePascal unit to simple expression parsing and evaluating"	on \
+		SYMBOLIC	"Simple expression parsing and evaluating"	on \
 		SYSLOG	"Interface to system logger"	on \
 		TCL	"Interface to tcl/tk interpreter"	on \
 		UNZIP	"Routines for unzipping zip files"	on \
-		USERS	"Free Pascal interfaces to manipulate users"	on \
-		UTMP	"Interface to gather information from the utmp file"	on \
+		USERS	"Interface to manipulate users"	on \
+		UTMP	"Gather information from the utmp file"	on \
 		X11	"Interface to X windows server"	on \
 		XFORMS	"Interface to X-Forms"	on \
 		ZLIB	"Interface to the zlib compression library"	on \
