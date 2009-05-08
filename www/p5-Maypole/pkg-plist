@@ -59,30 +59,30 @@
 %%PORTDOCS%%%%DOCSDIR%%/View.pod
 %%PORTDOCS%%%%DOCSDIR%%/Workflow.pod
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%%%EXAMPLESDIR%%/BeerDB.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/BeerDB/Base.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/BeerDB/Beer.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/beerdb.sql
-%%PORTDOCS%%%%EXAMPLESDIR%%/fancy_example/BeerDB.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/fancy_example/BeerDB/Base.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/fancy_example/BeerDB/Beer.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/fancy_example/BeerDB/Brewery.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/fancy_example/BeerDB/Drinker.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/fancy_example/beerdb.sql
-%%PORTDOCS%%%%EXAMPLESDIR%%/fancy_example/templates/custom/addnew
-%%PORTDOCS%%%%EXAMPLESDIR%%/fancy_example/templates/custom/display_inputs
-%%PORTDOCS%%%%EXAMPLESDIR%%/fancy_example/templates/custom/display_search_inputs
-%%PORTDOCS%%%%EXAMPLESDIR%%/fancy_example/templates/custom/edit
-%%PORTDOCS%%%%EXAMPLESDIR%%/fancy_example/templates/custom/header
-%%PORTDOCS%%%%EXAMPLESDIR%%/fancy_example/templates/custom/maypole.css
-%%PORTDOCS%%%%EXAMPLESDIR%%/fancy_example/templates/custom/metadata
-%%PORTDOCS%%%%EXAMPLESDIR%%/fancy_example/templates/custom/search_form
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/fancy_example/templates/custom
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/fancy_example/templates
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/fancy_example/BeerDB
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/fancy_example
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/BeerDB
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BeerDB.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BeerDB/Base.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BeerDB/Beer.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/beerdb.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fancy_example/BeerDB.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fancy_example/BeerDB/Base.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fancy_example/BeerDB/Beer.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fancy_example/BeerDB/Brewery.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fancy_example/BeerDB/Drinker.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fancy_example/beerdb.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fancy_example/templates/custom/addnew
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fancy_example/templates/custom/display_inputs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fancy_example/templates/custom/display_search_inputs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fancy_example/templates/custom/edit
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fancy_example/templates/custom/header
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fancy_example/templates/custom/maypole.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fancy_example/templates/custom/metadata
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fancy_example/templates/custom/search_form
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/fancy_example/templates/custom
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/fancy_example/templates
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/fancy_example/BeerDB
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/fancy_example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/BeerDB
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Maypole
 @dirrmtry %%SITE_PERL%%/Maypole/templates/factory
 @dirrmtry %%SITE_PERL%%/Maypole/templates/beer
