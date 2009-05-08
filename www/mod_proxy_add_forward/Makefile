@@ -16,18 +16,17 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Apache module that adds a client IP header to outgoing proxy requests
 
-USE_APACHE=	yes
-NO_WRKSUBDIR=	YES
+USE_APACHE=	1.3
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+
+NO_WRKSUBDIR=	yes
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
+	@${MKDIR} ${WRKDIR}/
 	@${CP} -p ${DISTDIR}/${DISTFILES} ${WRKDIR}/${PORTNAME}.c
 
-do-build:
-	cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c
-
-do-install:
-	cd ${WRKSRC} && ${APXS} -A -i ${PORTNAME}.so
+post-install:
 	@${ECHO} "================================================================================"
 	@${ECHO} "Enable mod_proxy_add_forward in Apache's config manually."
 	@${ECHO} "================================================================================"

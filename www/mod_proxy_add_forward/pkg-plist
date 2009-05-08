@@ -1,3 +1,0 @@
-libexec/apache/mod_proxy_add_forward.so
-@exec %D/sbin/apxs -e -A -n proxy_add_forward %D/%F
-@unexec %D/sbin/apxs -e -A -n proxy_add_forward %D/%F
