@@ -64,6 +64,7 @@ www/icons/gallery/video-wmv.png
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Gallery
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
 @dirrmtry %%SITE_PERL%%/Apache
 @dirrm %%DATADIR%%/templates/default
 @dirrm %%DATADIR%%/templates/new

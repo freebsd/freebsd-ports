@@ -7,6 +7,7 @@
 
 PORTNAME=	Apache-Gallery
 PORTVERSION=	1.0.r3
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	http://apachegallery.dk/download/ \
@@ -17,8 +18,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r3//}RC3
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	Apache::Gallery - mod_perl handler to create an image gallery
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
-		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
+BUILD_DEPENDS=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
 		${SITE_PERL}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info \
 		${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
@@ -27,20 +27,17 @@ BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .if defined(WITH_APACHE2)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
-DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
-DEPENDS_ARGS+=	WITH_MODPERL2=yes
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
 .else
-# XXX - probe for static mod_perl using `httpd -l | grep perl`
-BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
-		${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
 .endif
 
 PERL_CONFIGURE=	yes
-APACHE_COMPAT=	yes
 
 MAN3=		Apache::Gallery.3
 DOC_FILES=	INSTALL LICENSE README TODO UPGRADE
+
+SUB_FILES+=	pkg-message
 
 post-install:
 	@${MKDIR} ${PREFIX}/www/icons/gallery/
@@ -54,14 +51,14 @@ post-install:
 		${DATADIR}/templates/new/
 
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/
 .for file in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/
 .endfor
 .endif
 
 .if !defined(BATCH)
-	@${SED} s!%%DATADIR%%!${DATADIR}!g ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.pre.mk>
