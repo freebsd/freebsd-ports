@@ -1,0 +1,3 @@
+A small sysctl(3) interface for lua
+
+WWW:	http://hg.kaworu.ch/lua-sysctl
