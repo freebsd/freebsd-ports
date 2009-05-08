@@ -73,6 +73,8 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client
+# force build if old cups is installed.
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcups.a:${PORTSDIR}/${PKGCATEGORY}/cups-client
 .endif
 
 .if defined(CUPS_OVERWRITE_BASE)
