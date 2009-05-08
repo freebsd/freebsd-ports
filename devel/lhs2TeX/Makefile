@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://people.cs.uu.nl/andres/${PORTNAME}/
 
-MAINTAINER=	mainland@apeiron.net
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A preprocessor to generate LaTeX code from literate Haskell sources
 
 BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
