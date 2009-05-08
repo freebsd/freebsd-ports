@@ -8,7 +8,7 @@
 PORTNAME=	mgen
 PORTVERSION=	4.2b6
 CATEGORIES=	net
-MASTER_SITES=	http://downloads.pf.itd.nrl.navy.mil/mgen/ \
+MASTER_SITES=	http://downloads.pf.itd.nrl.navy.mil/mgen/mgen4/ \
 	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	miwi
 DISTNAME=	src-${PORTNAME}-${PORTVERSION}
@@ -46,10 +46,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800059
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
