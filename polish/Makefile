@@ -16,6 +16,7 @@
     SUBDIR += libgadu
     SUBDIR += libtlen
     SUBDIR += php_doc
+    SUBDIR += qfaktury
     SUBDIR += qnapi
     SUBDIR += sap
     SUBDIR += sms2
