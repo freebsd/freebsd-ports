@@ -1,8 +1,0 @@
-@comment $FreeBSD$
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/NicoVideo/Download/.packlist
-%%SITE_PERL%%/WWW/NicoVideo/Download.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/NicoVideo/Download
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/NicoVideo
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrmtry %%SITE_PERL%%/WWW/NicoVideo
-@dirrmtry %%SITE_PERL%%/WWW
