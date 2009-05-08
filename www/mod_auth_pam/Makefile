@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_auth_pam
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://pam.sourceforge.net/mod_auth_pam/dist/ \
 		http://atreides.freenix.no/~anders/
@@ -14,23 +15,27 @@ MASTER_SITES=	http://pam.sourceforge.net/mod_auth_pam/dist/ \
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Allows users to use PAM modules for user authentication
 
-USE_APACHE=	yes
+USE_APACHE=	1.3
 
-.include <bsd.port.pre.mk>
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
-do-build:
-	@cd ${WRKSRC} && \
-	${APXS} -c -lpam mod_auth_pam.c
+AP_LIB=	-lpam
 
-do-install:
-	${APXS} -i -A -n auth_pam ${WRKSRC}/mod_auth_pam.so
+PORTDOCS=	configure.txt faq.txt
+PORTEXAMPLES=	dot-htaccess httpd-
+
+post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} -p -m 0755 ${DOCSDIR}/samples
+	${MKDIR} ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/configure.txt ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/faq.txt ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/samples/dot-htaccess ${DOCSDIR}/samples/
-	${INSTALL_DATA} ${WRKSRC}/samples/httpd- ${DOCSDIR}/samples/httpd
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/samples/dot-htaccess ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/samples/httpd- ${EXAMPLESDIR}/
 .endif
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
