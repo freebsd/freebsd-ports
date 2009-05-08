@@ -8,25 +8,25 @@
 PORTNAME=	mod_extract_forwarded
 PORTVERSION=	1.4
 CATEGORIES=	www
-MASTER_SITES=	http://web.warhound.org/mod_extract_forwarded/ \
+MASTER_SITES=	http://web.warhound.org/${PORTNAME}/ \
 		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	An Apache module that can make proxied requests appear with client IP
 
-USE_APACHE=	yes
+USE_APACHE=	1.3
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
-DOCS=		doc.html README
 
-do-build:
-	cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c
+PORTDOCS=		doc.html README
 
-do-install:
-	cd ${WRKSRC} && ${APXS} -A -i ${PORTNAME}.so
+post-install:
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/share/doc/${PORTNAME}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/${PORTNAME}
+	${MKDIR} ${DOCSDIR}/
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif
 	${CAT} ${PKGMESSAGE}
