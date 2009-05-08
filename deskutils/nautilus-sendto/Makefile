@@ -6,8 +6,7 @@
 #    $MCom: ports-stable/deskutils/nautilus-sendto/Makefile,v 1.4 2009/04/20 06:12:55 marcus Exp $
 
 PORTNAME=	nautilus-sendto
-PORTVERSION=	1.1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.1.5
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
