@@ -783,6 +783,7 @@
     SUBDIR += lua-gettext
     SUBDIR += lua-posix
     SUBDIR += lua-pty
+    SUBDIR += lua-sysctl
     SUBDIR += lua50-app
     SUBDIR += lua50-compat51
     SUBDIR += lua50-dfui
