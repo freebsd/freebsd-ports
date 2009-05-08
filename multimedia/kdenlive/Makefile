@@ -6,6 +6,7 @@
 
 PORTNAME=	kdenlive
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SFE
 
@@ -29,10 +30,15 @@ PORTDOCS=	AUTHORS COPYING INSTALL README
 
 MAN1=		kdenlive.1 kdenlive_render.1
 
-OPTIONS=	LADSPA	"Install LADSPA plugins" on \
+OPTIONS=	FREI0R	"Install Frei0r plugins" on \
+		LADSPA	"Install LADSPA plugins" on \
 		SCREENGRAB	"Screen capture with recordMyDesktop" on
 
 .include <bsd.port.pre.mk>
+
+.ifdef(WITH_FREI0R)
+RUN_DEPENDS+=	frei0r>=1.1.22:${PORTSDIR}/graphics/frei0r
+.endif
 
 .ifdef(WITH_LADSPA)
 RUN_DEPENDS+=	swhplugins>=0:${PORTSDIR}/audio/swhplugins
