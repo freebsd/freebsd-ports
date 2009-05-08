@@ -3957,3 +3957,4 @@ textproc/sp||2009-05-03|Has expired: unmaintained, does not work with current ve
 net-mgmt/nrpe||2009-05-04|Has expired: Obsolete version, consider migration to net-mgmt/nrpe2
 www/phpsurveyor|www/limesurvey|2009-05-05|Project was renamed
 devel/oskit||2009-05-07|Has expired: does not work with current versions of GCC, needs gcc295 which has been failing to build for months, no active maintainer
+www/p5-WWW-Nicovideo-Download|www/p5-WWW-NicoVideo-Download|2009-05-07|directory renamed
