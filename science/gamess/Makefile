@@ -7,7 +7,6 @@
 
 PORTNAME=	gamess
 PORTVERSION=    ${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=   #http://www.msg.ameslab.gov/GAMESS/License_Agreement.html
 DISTNAME=	gamess-current
@@ -18,7 +17,7 @@ COMMENT=	A freely obtainable ab-initio molecular orbital calculation program
 
 USE_GMAKE=	yes
 WRKSRC=         ${WRKDIR}/gamess
-SNAPDATE=	20070524.3
+SNAPDATE=	20090112.1
 
 USE_FORTRAN=   yes
 
@@ -33,16 +32,31 @@ MANUAL_PACKAGE_BUILD=You must manually get the source distribution from master s
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
-WITH_ATLAS=	yes
+USE_BLAS?=	reference
+
+.if exists(${LOCALBASE}/lib/libgoto.so)
+USE_BLAS=	gotoblas
+.elif exists(${LOCALBASE}/lib/libatlas_r.so)
+USE_BLAS=	atlas
 .endif
-.if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS=		-lf77blas -latlas
-.else
+
+. if ${USE_BLAS} == reference
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
+LAPACK=		-llapack
+.elif ${USE_BLAS} == gotoblas
+LIB_DEPENDS+=	goto:${PORTSDIR}/math/gotoblas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+BLAS=		-lgotop
+LAPACK=		-lgotop -llapack
+.elif ${USE_BLAS} == atlas
+LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
+BLAS=		-lptf77blas -lptcblas -latlas_r
+LAPACK=		-lalapack_r
 .endif
+
+MAKE_ENV+=	LANG="C"
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 .if ${ARCH} == "amd64"
@@ -62,7 +76,7 @@ CC=    ${LOCALBASE}/intel_cc_80/bin/icc
 FFLAGS= -axP -xW -ipo -O3 -Vaxlib
 CFLAGS= -axP -xW -ipo -O3 -Vaxlib
 LIBSVM=	-lsvml
-LIBG2C=	-lg2c
+LIBG2C= -lg2c
 .else
 LIBG2C=
 LIBSVM=

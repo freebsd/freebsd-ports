@@ -58,6 +58,8 @@ share/examples/gamess/exam39.inp
 share/examples/gamess/exam40.inp
 share/examples/gamess/exam41.inp
 share/examples/gamess/exam42.inp
+share/examples/gamess/exam43.inp
+share/examples/gamess/exam44.inp
 @dirrm bin/gms
 @dirrm share/doc/gamess
 @dirrm share/gamess/mcpdata

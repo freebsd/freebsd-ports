@@ -1,9 +1,9 @@
---- comp.orig	Wed Jul 11 05:00:07 2007
-+++ comp	Thu Aug  2 11:09:35 2007
+--- comp.orig	2009-01-11 00:10:02.000000000 +0900
++++ comp	2009-05-08 12:12:09.000000000 +0900
 @@ -9,11 +9,11 @@
  #        axp64,compaq-sc,cray-pvp,cray-t3e,cray-x1,cray-xd1,cray-xt3,
  #        fuji-pp32,fuji-pp64,hpux32,hpux64,ibm32,ibm64,ibm64-sp,ibm-bg,
- #        linux32,linux64,linux-ia64,mac32,macG5,necsx,
+ #        linux32,linux64,linux-ia64,mac32,mac64,macG5,necsx,
 -#        sgi32,sgi64,sun32,sun64
 +#        sgi32,sgi64,sun32,sun64,freebsd-amd64,freebsd-i386
  #  2. Choose your GAMESS directory tree.
@@ -22,18 +22,18 @@
 +if ($TARGET == freebsd-amd64) set OK=true
 +if ($TARGET == freebsd-i386)  set OK=true
  if ($TARGET == mac32)      set OK=true
+ if ($TARGET == mac64)      set OK=true
  if ($TARGET == macG5)      set OK=true
- if ($TARGET == necsx)      set OK=true
-@@ -108,6 +110,8 @@
- if  ($TARGET == linux-ia64)   set BLAS3=true
+@@ -110,6 +112,8 @@
  if  ($TARGET == mac32)        set BLAS3=true
+ if  ($TARGET == mac64)        set BLAS3=true
  if  ($TARGET == macG5)        set BLAS3=true
 +if  ($TARGET == freebsd-i386) set BLAS3=true
 +if  ($TARGET == freebsd-amd64) set BLAS3=true
  if  ($TARGET == sgi32)        set BLAS3=true
  if  ($TARGET == sgi64)        set BLAS3=true
  if (($TARGET == sun32) && (-e /opt/SUNWspro/lib/libsunperf.so)) set BLAS3=true
-@@ -491,6 +495,19 @@
+@@ -493,6 +497,19 @@
     if ($MODULE == iolib)  setenv MACHIN '*UNX'
     if ($MODULE == unport) setenv MACHIN '*INT'
  endif
@@ -53,7 +53,7 @@
  if (($TARGET == mac32) || ($TARGET == macG5)) then
                            setenv MACHIN '*I32'
     if ($MODULE == ddi)    setenv MACHIN '*SOC'
-@@ -1738,6 +1755,236 @@
+@@ -1832,6 +1849,236 @@
  #--   f77 -c $OPT -stackvar $MODULE.f
  #--   unset echo
  #--endif
