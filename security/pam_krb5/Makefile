@@ -23,7 +23,7 @@ USE_PERL5=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 
-IGNORE=			FreeBSD 5.x already ships with its own version of pam_krb5
+IGNORE=			FreeBSD 5.x and above already ships with its own version of pam_krb5
 
 .if defined(PACKAGE_BUILDING)
 KRB5_IMPL=		mit
