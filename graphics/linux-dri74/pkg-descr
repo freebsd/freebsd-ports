@@ -1,0 +1,4 @@
+Mesa-based runtime libraries, drivers and binaries from Ubuntu-9.0.4
+which are needed to run X-based applications within linuxulator.
+
+WWW: http://www.mesa3d.org/
