@@ -6,32 +6,30 @@
 
 PORTNAME=	mod_sqlinclude
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	An Apache module implementing config inclusion from MySQL databases
 
+USE_APACHE=	1.3
 USE_MYSQL=	yes
-DOCS=		CHANGES.txt README.txt test.sql
 
-.if defined(WITH_APACHE2) || exists(${LOCALBASE}/include/apache2/apr.h)
-IGNORE=		Sorry, mod_sqlinclude only works with Apache 1.x
-.else
-USE_APACHE=	yes
-.endif
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
-do-build:
-	(cd ${WRKSRC} && ${APXS} -c -I${LOCALBASE}/include \
-	-L${LOCALBASE}/lib/mysql -lmysqlclient mod_sqlinclude.c)
+AP_INC=	${LOCALBASE}/include
+AP_LIB=	${LOCALBASE}/lib/mysql -lmysqlclient
 
-do-install:
-	(cd ${WRKSRC} && ${APXS} -i -A -n 'sqlinclude' mod_sqlinclude.so)
+PORTDOCS=		CHANGES.txt README.txt test.sql
+
+post-install:
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d -m 0755 ${DOCSDIR}
-.for f in ${DOCS}
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif
