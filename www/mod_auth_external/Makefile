@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_auth_external
 PORTVERSION=	2.1.19
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.unixpapa.com/software/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -14,22 +15,26 @@ MASTER_SITES=	http://www.unixpapa.com/software/ \
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Enables the use of external mechanisms for user authentication
 
-USE_APACHE=	yes
-DOCS=		AUTHENTICATORS CHANGES INSTALL README TODO
-
 CONFLICTS=	apache-contrib-1.*
 
-do-build:
-	@cd ${WRKSRC} && ${APXS} -c mod_auth_external.c
+USE_APACHE=	1.3
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
-do-install:
-	${APXS} -i -A -n auth_external ${WRKSRC}/mod_auth_external.so
+PORTDOCS=	AUTHENTICATORS CHANGES INSTALL README TODO
+PORTEXAMPLES=	mysql radius sybase test
+
+post-install:
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}/examples
-	cd ${WRKSRC} && ${TAR} -chf - mysql radius sybase test \
-		| ${TAR} -xf - -C ${DOCSDIR}/examples
-.for f in ${DOCS}
+	${MKDIR} ${DOCSDIR}/
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}/
+.for d in ${PORTEXAMPLES}
+	${COPYTREE_SHARE} ${WRKSRC}/${d} ${EXAMPLESDIR}/${d}
 .endfor
 .endif
 	${CAT} ${PKGMESSAGE}
