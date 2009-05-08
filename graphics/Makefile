@@ -453,6 +453,7 @@
     SUBDIR += linux-ac3d
     SUBDIR += linux-adobesvg
     SUBDIR += linux-cairo
+    SUBDIR += linux-dri74
     SUBDIR += linux-f8-cairo
     SUBDIR += linux-f8-dri
     SUBDIR += linux-f8-gdk-pixbuf
