@@ -6,24 +6,25 @@
 #
 
 PORTNAME=	awesome
-PORTVERSION=	3.2.1
-PORTREVISION=	1
+DISTVERSION=	3.3-rc2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/ \
 		http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	ntarmos@cs.uoi.gr
-COMMENT=	A tiling window manager initially based on a dwm code rewriting
+COMMENT=	A highly configurable, next generation framework window manager
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		gperf>=3.0.3:${PORTSDIR}/devel/gperf \
 		pango>=1.19.3:${PORTSDIR}/x11-toolkits/pango \
 		xmlto:${PORTSDIR}/textproc/xmlto \
-		xcb-util>=0.3.3:${PORTSDIR}/x11/xcb-util \
+		xcb-util>=0.3.4:${PORTSDIR}/x11/xcb-util \
 		xproto>=7.0.11:${PORTSDIR}/x11/xproto
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		ev.3:${PORTSDIR}/devel/libev \
 		freetype.9:${PORTSDIR}/print/freetype2 \
+		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
+		xdg-basedir.1:${PORTSDIR}/x11/libxdg-basedir \
 		xcb.2:${PORTSDIR}/x11/libxcb \
 		xcb-event.1:${PORTSDIR}/x11/xcb-util
 
@@ -50,10 +51,6 @@ OPTIONS+=	DBUS "Enable D-BUS support" On
 .if	(exists(${LOCALBASE}/libdata/pkgconfig/cairo.pc) && \
 	!exists(${LOCALBASE}/libdata/pkgconfig/cairo-xcb.pc))
 IGNORE=	cannot find dependency: The cairo exists but not with XCB support. Please reinstall graphics/cairo with XCB support
-.endif
-
-.if exists(${LOCALBASE}/lib/libxcb-keysyms.so.1)
-BROKEN=	doesn't work with latest version of x11/xcb-util (>=0.3.4). You may try to downgrade xcb-util to 0.3.3 as a temporary solution
 .endif
 
 .ifdef(WITH_DBUS)

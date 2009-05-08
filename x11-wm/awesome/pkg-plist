@@ -11,6 +11,8 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/icons/invaders/enemy_2.png
 %%DATADIR%%/icons/invaders/enemy_3.png
 %%DATADIR%%/icons/invaders/player.png
+%%DATADIR%%/lib/awful/button.lua
+%%DATADIR%%/lib/awful/button.lua.in
 %%DATADIR%%/lib/awful/client.lua
 %%DATADIR%%/lib/awful/client.lua.in
 %%DATADIR%%/lib/awful/completion.lua
@@ -19,6 +21,8 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/lib/awful/hooks.lua.in
 %%DATADIR%%/lib/awful/init.lua
 %%DATADIR%%/lib/awful/init.lua.in
+%%DATADIR%%/lib/awful/key.lua
+%%DATADIR%%/lib/awful/key.lua.in
 %%DATADIR%%/lib/awful/layout/init.lua
 %%DATADIR%%/lib/awful/layout/init.lua.in
 %%DATADIR%%/lib/awful/layout/suit/fair.lua
@@ -41,16 +45,32 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/lib/awful/placement.lua.in
 %%DATADIR%%/lib/awful/prompt.lua
 %%DATADIR%%/lib/awful/prompt.lua.in
+%%DATADIR%%/lib/awful/remote.lua
+%%DATADIR%%/lib/awful/remote.lua.in
 %%DATADIR%%/lib/awful/screen.lua
 %%DATADIR%%/lib/awful/screen.lua.in
+%%DATADIR%%/lib/awful/startup_notification.lua
+%%DATADIR%%/lib/awful/startup_notification.lua.in
 %%DATADIR%%/lib/awful/tag.lua
 %%DATADIR%%/lib/awful/tag.lua.in
 %%DATADIR%%/lib/awful/titlebar.lua
 %%DATADIR%%/lib/awful/titlebar.lua.in
 %%DATADIR%%/lib/awful/util.lua
 %%DATADIR%%/lib/awful/util.lua.in
-%%DATADIR%%/lib/awful/widget.lua
-%%DATADIR%%/lib/awful/widget.lua.in
+%%DATADIR%%/lib/awful/widget/button.lua
+%%DATADIR%%/lib/awful/widget/button.lua.in
+%%DATADIR%%/lib/awful/widget/common.lua
+%%DATADIR%%/lib/awful/widget/common.lua.in
+%%DATADIR%%/lib/awful/widget/init.lua
+%%DATADIR%%/lib/awful/widget/init.lua.in
+%%DATADIR%%/lib/awful/widget/launcher.lua
+%%DATADIR%%/lib/awful/widget/launcher.lua.in
+%%DATADIR%%/lib/awful/widget/prompt.lua
+%%DATADIR%%/lib/awful/widget/prompt.lua.in
+%%DATADIR%%/lib/awful/widget/taglist.lua
+%%DATADIR%%/lib/awful/widget/taglist.lua.in
+%%DATADIR%%/lib/awful/widget/tasklist.lua
+%%DATADIR%%/lib/awful/widget/tasklist.lua.in
 %%DATADIR%%/lib/beautiful.lua
 %%DATADIR%%/lib/beautiful.lua.in
 %%DATADIR%%/lib/invaders.lua
@@ -68,6 +88,8 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/themes/default/layouts/fairvw.png
 %%DATADIR%%/themes/default/layouts/floating.png
 %%DATADIR%%/themes/default/layouts/floatingw.png
+%%DATADIR%%/themes/default/layouts/fullscreen.png
+%%DATADIR%%/themes/default/layouts/fullscreenw.png
 %%DATADIR%%/themes/default/layouts/magnifier.png
 %%DATADIR%%/themes/default/layouts/magnifierw.png
 %%DATADIR%%/themes/default/layouts/max.png
@@ -85,10 +107,28 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/themes/default/taglist/squarew.png
 %%DATADIR%%/themes/default/tasklist/floating.png
 %%DATADIR%%/themes/default/tasklist/floatingw.png
-%%DATADIR%%/themes/default/theme
-%%DATADIR%%/themes/default/theme.in
+%%DATADIR%%/themes/default/theme.lua
+%%DATADIR%%/themes/default/theme.lua.in
 %%DATADIR%%/themes/default/titlebar/close.png
+%%DATADIR%%/themes/default/titlebar/close_focus.png
+%%DATADIR%%/themes/default/titlebar/close_normal.png
 %%DATADIR%%/themes/default/titlebar/closer.png
+%%DATADIR%%/themes/default/titlebar/floating_focus_active.png
+%%DATADIR%%/themes/default/titlebar/floating_focus_inactive.png
+%%DATADIR%%/themes/default/titlebar/floating_normal_active.png
+%%DATADIR%%/themes/default/titlebar/floating_normal_inactive.png
+%%DATADIR%%/themes/default/titlebar/maximized_focus_active.png
+%%DATADIR%%/themes/default/titlebar/maximized_focus_inactive.png
+%%DATADIR%%/themes/default/titlebar/maximized_normal_active.png
+%%DATADIR%%/themes/default/titlebar/maximized_normal_inactive.png
+%%DATADIR%%/themes/default/titlebar/ontop_focus_active.png
+%%DATADIR%%/themes/default/titlebar/ontop_focus_inactive.png
+%%DATADIR%%/themes/default/titlebar/ontop_normal_active.png
+%%DATADIR%%/themes/default/titlebar/ontop_normal_inactive.png
+%%DATADIR%%/themes/default/titlebar/sticky_focus_active.png
+%%DATADIR%%/themes/default/titlebar/sticky_focus_inactive.png
+%%DATADIR%%/themes/default/titlebar/sticky_normal_active.png
+%%DATADIR%%/themes/default/titlebar/sticky_normal_inactive.png
 %%DATADIR%%/themes/sky/awesome-icon.png
 %%DATADIR%%/themes/sky/layouts/fairh.png
 %%DATADIR%%/themes/sky/layouts/fairv.png
@@ -101,13 +141,14 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/themes/sky/layouts/tileleft.png
 %%DATADIR%%/themes/sky/layouts/tiletop.png
 %%DATADIR%%/themes/sky/sky-background.png
-%%DATADIR%%/themes/sky/theme
-%%DATADIR%%/themes/sky/theme.in
+%%DATADIR%%/themes/sky/theme.lua
+%%DATADIR%%/themes/sky/theme.lua.in
 share/xsessions/awesome.desktop
 @dirrm %%DATADIR%%/icons/invaders
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/lib/awful/layout/suit
 @dirrm %%DATADIR%%/lib/awful/layout
+@dirrm %%DATADIR%%/lib/awful/widget
 @dirrm %%DATADIR%%/lib/awful
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/themes/default/layouts
