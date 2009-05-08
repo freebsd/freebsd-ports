@@ -1692,6 +1692,7 @@ conduit                         ports/deskutils/conduit
 cone                            ports/mail/cone
 confget                         ports/textproc/confget
 configkit                       ports/devel/configkit
+confman                         ports/sysutils/confman
 confregdecode                   ports/net-mgmt/confregdecode
 conglomerate                    ports/editors/conglomerate
 conkeror                        ports/www/conkeror
@@ -1866,6 +1867,7 @@ cuneiform                       ports/graphics/cuneiform
 cunit                           ports/devel/cunit
 cups                            ports/print/cups
 cups-base                       ports/print/cups-base
+cups-client                     ports/print/cups-client
 cups-magicolor                  ports/print/cups-magicolor
 cups-pdf                        ports/print/cups-pdf
 cups-pstoraster                 ports/print/cups-pstoraster
@@ -3309,6 +3311,7 @@ flash                           ports/shells/flash
 flasher                         ports/sysutils/flasher
 flashplayer                     ports/graphics/flashplayer
 flashplugin-mozilla             ports/www/flashplugin-mozilla
+flashrom                        ports/sysutils/flashrom
 flasm                           ports/graphics/flasm
 flat-frog                       ports/www/flat-frog
 flatzebra                       ports/devel/flatzebra
@@ -20756,6 +20759,7 @@ simple-ccsm                     ports/x11-wm/simple-ccsm
 simpleagenda                    ports/deskutils/simpleagenda
 simpleirc                       ports/irc/simpleirc
 simplemod                       ports/audio/simplemod
+simpleproxy                     ports/net/simpleproxy
 simpletest                      ports/devel/simpletest
 simplevaders                    ports/games/simplevaders
 simplicity                      ports/java/simplicity
