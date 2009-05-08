@@ -2,6 +2,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/mimetex.html
 %%PORTDOCS%%www/data/mimetex/index.html
 www/cgi-bin/mimetex.cgi
-@dirrmtry www/cgi-bin
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm www/data/mimetex
