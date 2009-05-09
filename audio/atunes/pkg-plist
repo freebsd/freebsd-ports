@@ -4,14 +4,15 @@ bin/atunes
 %%DATADIR%%/build.properties
 %%DATADIR%%/changelog.txt
 %%DATADIR%%/extendedLog.properties
+%%DATADIR%%/lib/JXGrabKey.jar
 %%DATADIR%%/lib/antBuildNumber.jar
-%%DATADIR%%/lib/commons-codec-1.3.jar
-%%DATADIR%%/lib/commons-io-1.3.2.jar
+%%DATADIR%%/lib/commons-io-1.5-SNAPSHOT.jar
 %%DATADIR%%/lib/commons-lang-2.4.jar
 %%DATADIR%%/lib/commons-logging-1.1.jar
-%%DATADIR%%/lib/htmlparser.jar
+%%DATADIR%%/lib/commons-net-2.0.jar
 %%DATADIR%%/lib/jaudiotagger.jar
 %%DATADIR%%/lib/jcommon-1.0.12.jar
+%%DATADIR%%/lib/jericho-html-3.0.jar
 %%DATADIR%%/lib/jfreechart-1.0.9.jar
 %%DATADIR%%/lib/jhlabs.jar
 %%DATADIR%%/lib/jintellitype-1.3.1.jar
@@ -24,7 +25,7 @@ bin/atunes
 %%DATADIR%%/lib/substance.jar
 %%DATADIR%%/lib/swingx.jar
 %%DATADIR%%/lib/xpp3_min-1.1.4c.jar
-%%DATADIR%%/lib/xstream-1.3.jar
+%%DATADIR%%/lib/xstream-1.3.1.jar
 %%DATADIR%%/license.txt
 %%DATADIR%%/log4j.properties
 %%DATADIR%%/presets.properties
@@ -32,6 +33,7 @@ bin/atunes
 %%DATADIR%%/settings/log4j.properties
 %%DATADIR%%/settings/preset_radios.xml
 %%DATADIR%%/settings/presets.properties
+%%DATADIR%%/settings/vlc.properties
 %%DATADIR%%/shortcutSpec.xml
 %%DATADIR%%/translations/MainBundle.properties
 %%DATADIR%%/translations/MainBundle_ar.properties
@@ -41,6 +43,7 @@ bin/atunes
 %%DATADIR%%/translations/MainBundle_en.properties
 %%DATADIR%%/translations/MainBundle_es.properties
 %%DATADIR%%/translations/MainBundle_fr.properties
+%%DATADIR%%/translations/MainBundle_gl.properties
 %%DATADIR%%/translations/MainBundle_hu.properties
 %%DATADIR%%/translations/MainBundle_it.properties
 %%DATADIR%%/translations/MainBundle_ja.properties
@@ -67,6 +70,7 @@ bin/atunes
 %%DATADIR%%/translations/flag_en.png
 %%DATADIR%%/translations/flag_es.png
 %%DATADIR%%/translations/flag_fr.png
+%%DATADIR%%/translations/flag_gl.png
 %%DATADIR%%/translations/flag_hu.png
 %%DATADIR%%/translations/flag_it.png
 %%DATADIR%%/translations/flag_ja.png
