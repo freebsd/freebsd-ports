@@ -1,3 +1,4 @@
+bin/as3compile
 bin/font2swf
 bin/gif2swf
 bin/jpeg2swf
@@ -8,36 +9,9 @@ bin/swfc
 bin/swfcombine
 bin/swfdump
 bin/swfextract
+bin/swfrender
 bin/swfstrings
 bin/wav2swf
-%%DATADIR%%/fonts/d050000l.afm
-%%DATADIR%%/fonts/d050000l.pfb
-%%DATADIR%%/fonts/n019003l.afm
-%%DATADIR%%/fonts/n019003l.pfb
-%%DATADIR%%/fonts/n019004l.afm
-%%DATADIR%%/fonts/n019004l.pfb
-%%DATADIR%%/fonts/n019023l.afm
-%%DATADIR%%/fonts/n019023l.pfb
-%%DATADIR%%/fonts/n019024l.afm
-%%DATADIR%%/fonts/n019024l.pfb
-%%DATADIR%%/fonts/n021003l.afm
-%%DATADIR%%/fonts/n021003l.pfb
-%%DATADIR%%/fonts/n021004l.afm
-%%DATADIR%%/fonts/n021004l.pfb
-%%DATADIR%%/fonts/n021023l.afm
-%%DATADIR%%/fonts/n021023l.pfb
-%%DATADIR%%/fonts/n021024l.afm
-%%DATADIR%%/fonts/n021024l.pfb
-%%DATADIR%%/fonts/n022003l.afm
-%%DATADIR%%/fonts/n022003l.pfb
-%%DATADIR%%/fonts/n022004l.afm
-%%DATADIR%%/fonts/n022004l.pfb
-%%DATADIR%%/fonts/n022023l.afm
-%%DATADIR%%/fonts/n022023l.pfb
-%%DATADIR%%/fonts/n022024l.afm
-%%DATADIR%%/fonts/n022024l.pfb
-%%DATADIR%%/fonts/s050000l.afm
-%%DATADIR%%/fonts/s050000l.pfb
 %%DATADIR%%/swfs/PreLoaderTemplate.swf
 %%DATADIR%%/swfs/default_loader.swf
 %%DATADIR%%/swfs/default_viewer.swf
@@ -46,5 +20,4 @@ bin/wav2swf
 %%DATADIR%%/swfs/swft_loader.swf
 %%DATADIR%%/swfs/tessel_loader.swf
 @dirrm %%DATADIR%%/swfs
-@dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%
