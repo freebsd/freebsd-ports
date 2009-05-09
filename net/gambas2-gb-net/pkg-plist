@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+lib/gambas2/gb.net.component
+lib/gambas2/gb.net.so.0
+lib/gambas2/gb.net.so
+lib/gambas2/gb.net.la
+%%DATADIR%%/info/gb.net.info
+%%DATADIR%%/info/gb.net.list
+@dirrmtry lib/gambas2
+@dirrmtry %%DATADIR%%/info
+@dirrmtry %%DATADIR%%
