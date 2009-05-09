@@ -1,0 +1,187 @@
+PLIST=			${.CURDIR}/pkg-plist
+PATCHDIR=		${.CURDIR}/files
+
+GAMBAS_COMPONENT?=	${PKGNAMESUFFIX:S/-/./g:S/^.//g}
+GAMBAS_COMPDIRE=	${LOCALBASE}/lib/gambas2
+
+CONFIGURE_WRKSRC=	${WRKSRC}/${GAMBAS_COMPONENT}
+BUILD_WRKSRC=		${WRKSRC}/${GAMBAS_COMPONENT}
+INSTALL_WRKSRC=		${WRKSRC}/${GAMBAS_COMPONENT}
+
+CONFIGURE_ARGS=		--disable-debug \
+			--disable-optimization
+
+EXTRACT_AFTER_ARGS+=	"${DISTNAME}/${GAMBAS_COMPONENT}"
+
+.if ${PKGNAMESUFFIX} == "-gb-sdl-sound"
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+
+USE_SDL=	sdl mixer
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-db-firebird"
+USE_FIREBIRD=	yes
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-db-mysql"
+USE_MYSQL=	yes
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-db-postgresql"
+USE_PGSQL=	yes
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-db-odbc"
+LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-db-sqlite2"
+USE_SQLITE=	2
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-db-sqlite3"
+USE_SQLITE=	yes
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-pcre"
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-corba"
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+LIB_DEPENDS+=	ACE.5:${PORTSDIR}/devel/ace \
+		omniORB4.1:${PORTSDIR}/devel/omniORB
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-sdl"
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+
+USE_SDL=	sdl image gfx ttf
+USE_XORG=	xft xcursor
+.endif
+
+.if ${PKGNAMESUFFIX} == "-ide"
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base \
+		${GAMBAS_COMPDIRE}/gb.settings.component:${PORTSDIR}/lang/gambas2-components \
+		${GAMBAS_COMPDIRE}/gb.qt.component:${PORTSDIR}/x11-toolkits/gambas2-gb-qt \
+		${GAMBAS_COMPDIRE}/gb.desktop.component:${PORTSDIR}/x11/gambas2-gb-desktop
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-net-curl"
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-opengl"
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+
+USE_GL=		gl glu
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-image"
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-gtk-svg"
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+
+.include <${PORTSDIR}/Mk/bsd.gnome.mk>
+USE_GNOME=	librsvg2
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-pdf"
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+LIB_DEPENDS+=	poppler:${PORTSDIR}/graphics/poppler
+.endif
+
+.if ${PKGNAMESUFFIX} == "-components"
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base \
+		${GAMBAS_COMPDIRE}/gb.qt.component:${PORTSDIR}/x11-toolkits/gambas2-gb-qt
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-net-smtp"
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+
+.include <${PORTSDIR}/Mk/bsd.gnome.mk>
+USE_GNOME=	glib20
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-net"
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-crypt"
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-xml"
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base \
+		${GAMBAS_COMPDIRE}/gb.net.component:${PORTSDIR}/net/gambas2-gb-net \
+		${GAMBAS_COMPDIRE}/gb.net.curl.component:${PORTSDIR}/ftp/gambas2-gb-net-curl
+
+.include <${PORTSDIR}/Mk/bsd.gnome.mk>
+USE_GNOME=	libxml2 libxslt
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-gtk"
+EXTRACT_AFTER_ARGS+=	"${DISTNAME}/gb.qt"
+
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+
+.include <${PORTSDIR}/Mk/bsd.gnome.mk>
+USE_GNOME=	gtk20
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-qt-kde"
+EXTRACT_AFTER_ARGS+=	"${DISTNAME}/gb.qt"
+
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+
+USE_KDELIBS_VER=3
+.include <${PORTSDIR}/Mk/bsd.kde.mk>
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gb-desktop"
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base \
+		${GAMBAS_COMPDIRE}/gb.settings.component:${PORTSDIR}/lang/gambas2-components \
+		${GAMBAS_COMPDIRE}/gb.qt.component:${PORTSDIR}/x11-toolkits/gambas2-gb-qt
+
+USE_XORG=       xtst
+.endif
+
+
+.if ${PKGNAMESUFFIX} == "-gb-qt"
+BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
+
+USE_QT_VER=	3
+.include <${PORTSDIR}/Mk/bsd.kde.mk>
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 37,39d ${WRKSRC}/main/share/gb_common.h
+	@cd ${WRKSRC} && \
+		${FIND} * -type f -name configure -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
+			-e 's|-pipe -Wall -Wno-unused-value -fsigned-char|$$CFLAGS|g' \
+			-e 's|-O0||g'
+	@cd ${WRKSRC} && \
+		${FIND} -E * -type f -iregex ".*\.(c|h)" -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
+			-e 's|#ifdef __GNU_LIBRARY__|#if defined (__GNU_LIBRARY__) \|\| \
+				defined (__FreeBSD__)|g'
+
+pre-install:
+.if exists(${LOCALBASE}/bin/gbi2)
+	@${LOCALBASE}/bin/gbi2 -r ${PREFIX}
+.endif
+
+security-check: gambas2-check-install
+
+gambas2-check-install:
+check-makevars::
+	@${ECHO_CMD} "###################################################################"
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} " The following gambas2 component will be installed in your system: "
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} " * ${PORTNAME}${PKGNAMESUFFIX}"
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "###################################################################"

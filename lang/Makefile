@@ -79,6 +79,7 @@
     SUBDIR += freetxl
     SUBDIR += g95
     SUBDIR += gambas
+    SUBDIR += gambas2-base
     SUBDIR += gambit-c
     SUBDIR += gauche
     SUBDIR += gawk
