@@ -24,6 +24,9 @@ ${PREFIX}/share/festival/lib/ogi_token.scm:${PORTSDIR}/audio/festival+OGI \
 
 RESTRICTED=	no-commercial-use
 
+DEPRECATED=	unfulfilled dependencies for 8+ months, no maintainer, no user interest
+EXPIRATION_DATE=2009-06-09
+
 WRKSRC=		${WRKDIR}/festival
 
 NO_BUILD=	yes
