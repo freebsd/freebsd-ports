@@ -643,6 +643,7 @@
     SUBDIR += libgalago
     SUBDIR += libgamepad
     SUBDIR += libgconf-java
+    SUBDIR += libgdata
     SUBDIR += libgetline
     SUBDIR += libghthash
     SUBDIR += libgii
