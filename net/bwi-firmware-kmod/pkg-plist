@@ -1,0 +1,2 @@
+@cwd %%KMODDIR%%
+%%KMODNAME%%.ko
