@@ -1,0 +1,19 @@
+--- otherlibs/systhreads/posix.c	2008/12/14 18:16:38	1.58.2.1
++++ otherlibs/systhreads/posix.c	2009/03/28 17:35:59	1.58.2.2
+@@ -11,7 +11,7 @@
+ /*                                                                     */
+ /***********************************************************************/
+ 
+-/* $Id: posix.c,v 1.58.2.1 2008/12/14 18:16:38 xleroy Exp $ */
++/* $Id: posix.c,v 1.58.2.2 2009/03/28 17:35:59 xleroy Exp $ */
+ 
+ /* Thread interface for POSIX 1003.1c threads */
+ 
+@@ -393,6 +393,7 @@ value caml_thread_initialize(value unit)
+     curr_thread->descr = descr;
+     curr_thread->next = curr_thread;
+     curr_thread->prev = curr_thread;
++    curr_thread->backtrace_last_exn = Val_unit;
+ #ifdef NATIVE_CODE
+     curr_thread->exit_buf = &caml_termination_jmpbuf;
+ #endif
