@@ -102,6 +102,7 @@ share/locale/he/LC_MESSAGES/kcalc.mo
 share/locale/he/LC_MESSAGES/kcertpart.mo
 share/locale/he/LC_MESSAGES/kcharselect.mo
 share/locale/he/LC_MESSAGES/kcm_autostart.mo
+share/locale/he/LC_MESSAGES/kcm_emoticons.mo
 share/locale/he/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/he/LC_MESSAGES/kcm_krfb.mo
 share/locale/he/LC_MESSAGES/kcm_kwindesktop.mo
@@ -174,6 +175,7 @@ share/locale/he/LC_MESSAGES/kdeqt.mo
 share/locale/he/LC_MESSAGES/kdessh.mo
 share/locale/he/LC_MESSAGES/kdesu.mo
 share/locale/he/LC_MESSAGES/kdesud.mo
+share/locale/he/LC_MESSAGES/kde-menu.mo
 share/locale/he/LC_MESSAGES/kdf.mo
 share/locale/he/LC_MESSAGES/kdgantt1.mo
 share/locale/he/LC_MESSAGES/kdialog.mo
@@ -191,6 +193,7 @@ share/locale/he/LC_MESSAGES/kfile_mp3.mo
 share/locale/he/LC_MESSAGES/kfile_mpc.mo
 share/locale/he/LC_MESSAGES/kfile_ogg.mo
 share/locale/he/LC_MESSAGES/kfile_pnm.mo
+share/locale/he/LC_MESSAGES/kfile_raw.mo
 share/locale/he/LC_MESSAGES/kfile_rgb.mo
 share/locale/he/LC_MESSAGES/kfile_rpm.mo
 share/locale/he/LC_MESSAGES/kfile_sid.mo
@@ -198,6 +201,7 @@ share/locale/he/LC_MESSAGES/kfile_theora.mo
 share/locale/he/LC_MESSAGES/kfile_tiff.mo
 share/locale/he/LC_MESSAGES/kfile_torrent.mo
 share/locale/he/LC_MESSAGES/kfile_wav.mo
+share/locale/he/LC_MESSAGES/kfile_xps.mo
 share/locale/he/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/he/LC_MESSAGES/kfileshare.mo
 share/locale/he/LC_MESSAGES/kfindpart.mo
@@ -325,6 +329,7 @@ share/locale/he/LC_MESSAGES/kttsd.mo
 share/locale/he/LC_MESSAGES/ktuberling.mo
 share/locale/he/LC_MESSAGES/kturtle.mo
 share/locale/he/LC_MESSAGES/ktux.mo
+share/locale/he/LC_MESSAGES/kcolorchooser.mo
 share/locale/he/LC_MESSAGES/kuiserver.mo
 share/locale/he/LC_MESSAGES/kurifilter.mo
 share/locale/he/LC_MESSAGES/kuser.mo

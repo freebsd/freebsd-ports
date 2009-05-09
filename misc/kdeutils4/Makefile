@@ -14,16 +14,16 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Utilities for the KDE4 integrated X11 Desktop
 
-LIB_DEPENDS=    gmp.7:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		zip.1:${PORTSDIR}/archivers/libzip \
 		qimageblitz.4:${PORTSDIR}/x11/qimageblitz
-RUN_DEPENDS=    gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
 
 LATEST_LINK=	${PORTNAME}4
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
-KDE4_BUILDENV= yes
+KDE4_BUILDENV=	yes
 USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
 QT_COMPONENTS=	network gui porting xml \
 		qmake_build moc_build rcc_build uic_build
@@ -33,5 +33,10 @@ MAN1=		ark.1
 
 post-extract:
 	${MKDIR} ${WRKSRC}
+
+post-patch:
+#disable printer-applet, it comes with print/kdeutils4-printer-applet
+	${REINPLACE_CMD} -e '/add_subdirectory.*printer-applet/d' \
+		${WRKSRC}/../CMakeLists.txt
 
 .include <bsd.port.mk>

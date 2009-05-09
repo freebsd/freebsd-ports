@@ -2,7 +2,6 @@ bin/ksystemlog
 bin/kuser
 lib/kde4/kcm_cron.so
 lib/kde4/kcm_knetworkconfmodule.so
-libdata/pkgconfig/system-tools-backends.pc
 share/applications/kde4/ksystemlog.desktop
 share/applications/kde4/kuser.desktop
 share/apps/knetworkconf/backends/debug.pl
@@ -66,21 +65,6 @@ share/doc/HTML/en/kcron/kcronstart.png
 share/doc/HTML/en/kcron/newtask.png
 share/doc/HTML/en/kcron/newvariable.png
 share/doc/HTML/en/kcron/print.png
-share/doc/HTML/en/kpackage/common
-share/doc/HTML/en/kpackage/handle.png
-share/doc/HTML/en/kpackage/index.cache.bz2
-share/doc/HTML/en/kpackage/index.docbook
-share/doc/HTML/en/kpackage/install.png
-share/doc/HTML/en/kpackage/left.png
-share/doc/HTML/en/kpackage/right-change.png
-share/doc/HTML/en/kpackage/right-dep.png
-share/doc/HTML/en/kpackage/right-files.png
-share/doc/HTML/en/kpackage/right-prop.png
-share/doc/HTML/en/kpackage/root-prompt.png
-share/doc/HTML/en/kpackage/search.png
-share/doc/HTML/en/kpackage/searchf.png
-share/doc/HTML/en/kpackage/searchl.png
-share/doc/HTML/en/kpackage/uninstall.png
 share/doc/HTML/en/ksystemlog/common
 share/doc/HTML/en/ksystemlog/filter-process.png
 share/doc/HTML/en/ksystemlog/first-opening.png
@@ -116,7 +100,6 @@ share/kde4/services/kcm_cron.desktop
 share/kde4/services/kcm_knetworkconfmodule.desktop
 @dirrm share/doc/HTML/en/kuser
 @dirrm share/doc/HTML/en/ksystemlog
-@dirrm share/doc/HTML/en/kpackage
 @dirrm share/doc/HTML/en/kcron
 @dirrm share/doc/HTML/en/kcontrol/knetworkconf
 @dirrm share/apps/kuser/pics

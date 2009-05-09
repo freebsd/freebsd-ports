@@ -309,8 +309,13 @@ share/apps/kalzium/data/iconsets/school/6.svg
 share/apps/kalzium/data/iconsets/school/60.svg
 share/apps/kalzium/data/iconsets/school/61.svg
 share/apps/kalzium/data/iconsets/school/62.svg
+share/apps/kalzium/data/iconsets/school/63.svg
+share/apps/kalzium/data/iconsets/school/64.svg
+share/apps/kalzium/data/iconsets/school/65.svg
+share/apps/kalzium/data/iconsets/school/66.svg
 share/apps/kalzium/data/iconsets/school/67.svg
 share/apps/kalzium/data/iconsets/school/68.svg
+share/apps/kalzium/data/iconsets/school/69.svg
 share/apps/kalzium/data/iconsets/school/7.svg
 share/apps/kalzium/data/iconsets/school/70.svg
 share/apps/kalzium/data/iconsets/school/71.svg
@@ -2134,6 +2139,7 @@ share/apps/ktouch/czech.ktouch.xml
 share/apps/ktouch/danish.ktouch.xml
 share/apps/ktouch/danish2.ktouch.xml
 share/apps/ktouch/de.keyboard.xml
+share/apps/ktouch/de_ch.keyboard.xml
 share/apps/ktouch/dk.keyboard.xml
 share/apps/ktouch/down.wav
 share/apps/ktouch/dvorak-fr-1.ktouch.xml
@@ -2193,6 +2199,7 @@ share/apps/ktouch/turkish.ktouch.xml
 share/apps/ktouch/typewriter.wav
 share/apps/ktouch/uk.winkeys.keyboard.xml
 share/apps/ktouch/ukrainian.ktouch.xml
+share/apps/ktouch/qc.keyboard.xml
 share/apps/ktouch/up.wav
 share/apps/kturtle/kturtleui.rc
 share/apps/kvtml/en/animals.kvtml

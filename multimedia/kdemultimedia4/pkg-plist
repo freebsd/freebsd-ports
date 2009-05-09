@@ -85,7 +85,6 @@ share/config.kcfg/kscd.kcfg
 share/config.kcfg/libkcddb.kcfg
 share/config/dragonplayerrc
 share/dbus-1/interfaces/org.kde.KMix.xml
-share/dbus-1/interfaces/org.kde.juk.collection.xml
 share/dbus-1/interfaces/org.kde.juk.player.xml
 share/dbus-1/interfaces/org.kde.juk.search.xml
 share/dbus-1/interfaces/org.kde.kscd.cdplayer.xml
@@ -161,7 +160,6 @@ share/icons/oxygen/48x48/actions/player-volume-muted.png
 share/icons/oxygen/scalable/actions/player-volume-muted.svgz
 share/kde4/services/ServiceMenus/audiocd_play.desktop
 share/kde4/services/ServiceMenus/dragonplayer_play_dvd.desktop
-share/kde4/services/ServiceMenus/jukservicemenu.desktop
 share/kde4/services/audiocd.desktop
 share/kde4/services/audiocd.protocol
 share/kde4/services/dragonplayer_part.desktop

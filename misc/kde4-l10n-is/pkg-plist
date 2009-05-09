@@ -350,6 +350,7 @@ share/locale/is/LC_MESSAGES/libplasma.mo
 share/locale/is/LC_MESSAGES/libplasmaclock.mo
 share/locale/is/LC_MESSAGES/libtaskmanager.mo
 share/locale/is/LC_MESSAGES/lskat.mo
+share/locale/is/LC_MESSAGES/marble.mo
 share/locale/is/LC_MESSAGES/nepomuk.mo
 share/locale/is/LC_MESSAGES/nepomuksearch.mo
 share/locale/is/LC_MESSAGES/nsplugin.mo
@@ -383,6 +384,7 @@ share/locale/is/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/is/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/is/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/is/LC_MESSAGES/plasma_applet_icon.mo
+share/locale/is/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/is/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/is/LC_MESSAGES/plasma_applet_launcher.mo
 share/locale/is/LC_MESSAGES/plasma_applet_pager.mo

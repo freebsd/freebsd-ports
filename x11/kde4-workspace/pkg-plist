@@ -1620,6 +1620,7 @@ share/kde4/services/kaccess.desktop
 share/kde4/services/kcm_solid.desktop
 share/kde4/services/kcmaccess.desktop
 share/kde4/services/kcmlaunch.desktop
+share/kde4/services/kcm_keyboard.desktop
 share/kde4/services/kcmsmserver.desktop
 share/kde4/services/kded/kded_kephal.desktop
 share/kde4/services/kded/khotkeys.desktop

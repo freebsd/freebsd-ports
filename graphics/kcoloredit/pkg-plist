@@ -1,9 +1,42 @@
 bin/kcoloredit
 share/applications/kde4/kcoloredit.desktop
 share/apps/kcoloredit/kcoloreditui.rc
+share/doc/HTML/da/kcoloredit/common
+share/doc/HTML/da/kcoloredit/index.cache.bz2
+share/doc/HTML/da/kcoloredit/index.docbook
+share/doc/HTML/de/kcoloredit/common
+share/doc/HTML/de/kcoloredit/index.cache.bz2
+share/doc/HTML/de/kcoloredit/index.docbook
 share/doc/HTML/en/kcoloredit/common
 share/doc/HTML/en/kcoloredit/index.cache.bz2
 share/doc/HTML/en/kcoloredit/index.docbook
+share/doc/HTML/es/kcoloredit/common
+share/doc/HTML/es/kcoloredit/index.cache.bz2
+share/doc/HTML/es/kcoloredit/index.docbook
+share/doc/HTML/et/kcoloredit/common
+share/doc/HTML/et/kcoloredit/index.cache.bz2
+share/doc/HTML/et/kcoloredit/index.docbook
+share/doc/HTML/fr/kcoloredit/common
+share/doc/HTML/fr/kcoloredit/index.cache.bz2
+share/doc/HTML/fr/kcoloredit/index.docbook
+share/doc/HTML/it/kcoloredit/common
+share/doc/HTML/it/kcoloredit/index.cache.bz2
+share/doc/HTML/it/kcoloredit/index.docbook
+share/doc/HTML/pt/kcoloredit/common
+share/doc/HTML/pt/kcoloredit/index.cache.bz2
+share/doc/HTML/pt/kcoloredit/index.docbook
+share/doc/HTML/pt_BR/kcoloredit/common
+share/doc/HTML/pt_BR/kcoloredit/index.cache.bz2
+share/doc/HTML/pt_BR/kcoloredit/index.docbook
+share/doc/HTML/ru/kcoloredit/common
+share/doc/HTML/ru/kcoloredit/index.cache.bz2
+share/doc/HTML/ru/kcoloredit/index.docbook
+share/doc/HTML/sv/kcoloredit/common
+share/doc/HTML/sv/kcoloredit/index.cache.bz2
+share/doc/HTML/sv/kcoloredit/index.docbook
+share/doc/HTML/uk/kcoloredit/common
+share/doc/HTML/uk/kcoloredit/index.cache.bz2
+share/doc/HTML/uk/kcoloredit/index.docbook
 share/icons/hicolor/16x16/apps/kcoloredit.png
 share/icons/hicolor/32x32/apps/kcoloredit.png
 share/locale/af/LC_MESSAGES/kcoloredit.mo
@@ -29,6 +62,7 @@ share/locale/ga/LC_MESSAGES/kcoloredit.mo
 share/locale/gl/LC_MESSAGES/kcoloredit.mo
 share/locale/he/LC_MESSAGES/kcoloredit.mo
 share/locale/hi/LC_MESSAGES/kcoloredit.mo
+share/locale/hne/LC_MESSAGES/kcoloredit.mo
 share/locale/hr/LC_MESSAGES/kcoloredit.mo
 share/locale/hu/LC_MESSAGES/kcoloredit.mo
 share/locale/is/LC_MESSAGES/kcoloredit.mo
@@ -38,6 +72,7 @@ share/locale/km/LC_MESSAGES/kcoloredit.mo
 share/locale/ku/LC_MESSAGES/kcoloredit.mo
 share/locale/lt/LC_MESSAGES/kcoloredit.mo
 share/locale/lv/LC_MESSAGES/kcoloredit.mo
+share/locale/mai/LC_MESSAGES/kcoloredit.mo
 share/locale/mk/LC_MESSAGES/kcoloredit.mo
 share/locale/ms/LC_MESSAGES/kcoloredit.mo
 share/locale/nb/LC_MESSAGES/kcoloredit.mo
@@ -72,5 +107,20 @@ share/locale/zh_TW/LC_MESSAGES/kcoloredit.mo
 @dirrmtry share/locale/se
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/hne/LC_MESSAGES
+@dirrmtry share/locale/hne
+@dirrm share/doc/HTML/uk/kcoloredit
+@dirrm share/doc/HTML/sv/kcoloredit
+@dirrm share/doc/HTML/ru/kcoloredit
+@dirrm share/doc/HTML/pt_BR/kcoloredit
+@dirrm share/doc/HTML/pt/kcoloredit
+@dirrm share/doc/HTML/it/kcoloredit
+@dirrm share/doc/HTML/fr/kcoloredit
+@dirrm share/doc/HTML/et/kcoloredit
+@dirrm share/doc/HTML/es/kcoloredit
 @dirrm share/doc/HTML/en/kcoloredit
+@dirrm share/doc/HTML/de/kcoloredit
+@dirrm share/doc/HTML/da/kcoloredit
 @dirrm share/apps/kcoloredit

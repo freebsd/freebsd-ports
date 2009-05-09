@@ -650,6 +650,8 @@ share/locale/ca/LC_MESSAGES/katesnippets.mo
 share/locale/ca/LC_MESSAGES/katesymbolviewer.mo
 share/locale/ca/LC_MESSAGES/katetabbarextension.mo
 share/locale/ca/LC_MESSAGES/katetextfilter.mo
+share/locale/ca/LC_MESSAGES/kate-ctags-plugin.mo
+share/locale/ca/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ca/LC_MESSAGES/katexmlcheck.mo
 share/locale/ca/LC_MESSAGES/katexmltools.mo
 share/locale/ca/LC_MESSAGES/katomic.mo
@@ -811,6 +813,7 @@ share/locale/ca/LC_MESSAGES/kio_fish.mo
 share/locale/ca/LC_MESSAGES/kio_floppy.mo
 share/locale/ca/LC_MESSAGES/kio_groupwise.mo
 share/locale/ca/LC_MESSAGES/kio_help4.mo
+share/locale/ca/LC_MESSAGES/kio_info.mo
 share/locale/ca/LC_MESSAGES/kio_imap4.mo
 share/locale/ca/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/ca/LC_MESSAGES/kio_ldap.mo
@@ -820,6 +823,7 @@ share/locale/ca/LC_MESSAGES/kio_nepomuksearch.mo
 share/locale/ca/LC_MESSAGES/kio_nfs.mo
 share/locale/ca/LC_MESSAGES/kio_nntp.mo
 share/locale/ca/LC_MESSAGES/kio_pop3.mo
+share/locale/ca/LC_MESSAGES/kio_perldoc.mo
 share/locale/ca/LC_MESSAGES/kio_remote.mo
 share/locale/ca/LC_MESSAGES/kio_sftp.mo
 share/locale/ca/LC_MESSAGES/kio_sieve.mo
@@ -940,6 +944,7 @@ share/locale/ca/LC_MESSAGES/kttsd.mo
 share/locale/ca/LC_MESSAGES/ktuberling.mo
 share/locale/ca/LC_MESSAGES/kturtle.mo
 share/locale/ca/LC_MESSAGES/ktux.mo
+share/locale/ca/LC_MESSAGES/kpartloader.mo
 share/locale/ca/LC_MESSAGES/kubrick.mo
 share/locale/ca/LC_MESSAGES/kuiserver.mo
 share/locale/ca/LC_MESSAGES/kuiviewer.mo
@@ -995,6 +1000,7 @@ share/locale/ca/LC_MESSAGES/libplasma.mo
 share/locale/ca/LC_MESSAGES/libplasmaclock.mo
 share/locale/ca/LC_MESSAGES/libtaskmanager.mo
 share/locale/ca/LC_MESSAGES/lskat.mo
+share/locale/ca/LC_MESSAGES/lokalize.mo
 share/locale/ca/LC_MESSAGES/marble.mo
 share/locale/ca/LC_MESSAGES/marble_qt.mo
 share/locale/ca/LC_MESSAGES/nepomuk.mo

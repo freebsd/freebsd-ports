@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	strigi
-PORTVERSION=	0.6.3
-PORTREVISION=	2
+PORTVERSION=	0.6.4
 CATEGORIES=	deskutils
 MASTER_SITES=	SF
 
@@ -24,6 +23,7 @@ USE_GNOME=	libxml2 pkgconfig
 # USE_FAM=	yes
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	${MKDIR} ${WRKSRC}

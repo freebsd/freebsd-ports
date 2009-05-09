@@ -12,6 +12,9 @@ share/apps/kgraphviewerpart/pics/kgraphviewer-newnode.png
 share/config.kcfg/kgrapheditorsettings.kcfg
 share/config.kcfg/kgraphviewer_partsettings.kcfg
 share/config.kcfg/kgraphviewersettings.kcfg
+share/doc/HTML/de/kgraphviewer/common
+share/doc/HTML/de/kgraphviewer/index.cache.bz2
+share/doc/HTML/de/kgraphviewer/index.docbook
 share/doc/HTML/en/kgraphviewer/common
 share/doc/HTML/en/kgraphviewer/index.cache.bz2
 share/doc/HTML/en/kgraphviewer/index.docbook
@@ -40,6 +43,21 @@ share/doc/HTML/en/kgraphviewer/kgraphviewer-snap-ppview3.png
 share/doc/HTML/en/kgraphviewer/kgraphviewer-snap-psetup1.png
 share/doc/HTML/en/kgraphviewer/kgraphviewer-snap-zmax.png
 share/doc/HTML/en/kgraphviewer/kgraphviewer-snap-zmin.png
+share/doc/HTML/et/kgraphviewer/common
+share/doc/HTML/et/kgraphviewer/index.cache.bz2
+share/doc/HTML/et/kgraphviewer/index.docbook
+share/doc/HTML/it/kgraphviewer/common
+share/doc/HTML/it/kgraphviewer/index.cache.bz2
+share/doc/HTML/it/kgraphviewer/index.docbook
+share/doc/HTML/pt/kgraphviewer/common
+share/doc/HTML/pt/kgraphviewer/index.cache.bz2
+share/doc/HTML/pt/kgraphviewer/index.docbook
+share/doc/HTML/sv/kgraphviewer/common
+share/doc/HTML/sv/kgraphviewer/index.cache.bz2
+share/doc/HTML/sv/kgraphviewer/index.docbook
+share/doc/HTML/uk/kgraphviewer/common
+share/doc/HTML/uk/kgraphviewer/index.cache.bz2
+share/doc/HTML/uk/kgraphviewer/index.docbook
 share/icons/hicolor/16x16/apps/kgraphviewer.png
 share/icons/hicolor/32x32/apps/kgraphviewer.png
 share/kde4/services/kgraphviewer_part.desktop
@@ -49,17 +67,20 @@ share/locale/cs/LC_MESSAGES/kgraphviewer.mo
 share/locale/da/LC_MESSAGES/kgraphviewer.mo
 share/locale/de/LC_MESSAGES/kgraphviewer.mo
 share/locale/el/LC_MESSAGES/kgraphviewer.mo
+share/locale/en_GB/LC_MESSAGES/kgraphviewer.mo
 share/locale/es/LC_MESSAGES/kgraphviewer.mo
 share/locale/et/LC_MESSAGES/kgraphviewer.mo
 share/locale/fr/LC_MESSAGES/kgraphviewer.mo
 share/locale/ga/LC_MESSAGES/kgraphviewer.mo
 share/locale/gl/LC_MESSAGES/kgraphviewer.mo
 share/locale/hi/LC_MESSAGES/kgraphviewer.mo
+share/locale/hne/LC_MESSAGES/kgraphviewer.mo
 share/locale/it/LC_MESSAGES/kgraphviewer.mo
 share/locale/ja/LC_MESSAGES/kgraphviewer.mo
 share/locale/km/LC_MESSAGES/kgraphviewer.mo
 share/locale/ku/LC_MESSAGES/kgraphviewer.mo
 share/locale/lt/LC_MESSAGES/kgraphviewer.mo
+share/locale/mai/LC_MESSAGES/kgraphviewer.mo
 share/locale/nb/LC_MESSAGES/kgraphviewer.mo
 share/locale/nds/LC_MESSAGES/kgraphviewer.mo
 share/locale/nl/LC_MESSAGES/kgraphviewer.mo
@@ -79,7 +100,17 @@ share/locale/vi/LC_MESSAGES/kgraphviewer.mo
 share/locale/zh_CN/LC_MESSAGES/kgraphviewer.mo
 @dirrmtry share/locale/se/LC_MESSAGES
 @dirrmtry share/locale/se
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/hne/LC_MESSAGES
+@dirrmtry share/locale/hne
+@dirrm share/doc/HTML/uk/kgraphviewer
+@dirrm share/doc/HTML/sv/kgraphviewer
+@dirrm share/doc/HTML/pt/kgraphviewer
+@dirrm share/doc/HTML/it/kgraphviewer
+@dirrm share/doc/HTML/et/kgraphviewer
 @dirrm share/doc/HTML/en/kgraphviewer
+@dirrm share/doc/HTML/de/kgraphviewer
 @dirrm share/apps/kgraphviewerpart/pics
 @dirrm share/apps/kgraphviewerpart
 @dirrm share/apps/kgraphviewer

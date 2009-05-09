@@ -26,10 +26,47 @@ share/apps/kiconedit/pics/show-grid.png
 share/apps/kiconedit/pics/source.png
 share/apps/kiconedit/pics/standard.png
 share/apps/kiconedit/pics/transform-scale.png
+share/doc/HTML/da/kiconedit/common
+share/doc/HTML/da/kiconedit/index.cache.bz2
+share/doc/HTML/da/kiconedit/index.docbook
+share/doc/HTML/de/kiconedit/common
+share/doc/HTML/de/kiconedit/index.cache.bz2
+share/doc/HTML/de/kiconedit/index.docbook
+share/doc/HTML/de/kiconedit/kiconedit-configuration.png
 share/doc/HTML/en/kiconedit/common
 share/doc/HTML/en/kiconedit/index.cache.bz2
 share/doc/HTML/en/kiconedit/index.docbook
 share/doc/HTML/en/kiconedit/kiconedit-configuration.png
+share/doc/HTML/es/kiconedit/common
+share/doc/HTML/es/kiconedit/index.cache.bz2
+share/doc/HTML/es/kiconedit/index.docbook
+share/doc/HTML/et/kiconedit/common
+share/doc/HTML/et/kiconedit/index.cache.bz2
+share/doc/HTML/et/kiconedit/index.docbook
+share/doc/HTML/fr/kiconedit/common
+share/doc/HTML/fr/kiconedit/index.cache.bz2
+share/doc/HTML/fr/kiconedit/index.docbook
+share/doc/HTML/hu/kiconedit/common
+share/doc/HTML/hu/kiconedit/index.cache.bz2
+share/doc/HTML/hu/kiconedit/index.docbook
+share/doc/HTML/it/kiconedit/common
+share/doc/HTML/it/kiconedit/index.cache.bz2
+share/doc/HTML/it/kiconedit/index.docbook
+share/doc/HTML/pt/kiconedit/common
+share/doc/HTML/pt/kiconedit/index.cache.bz2
+share/doc/HTML/pt/kiconedit/index.docbook
+share/doc/HTML/pt_BR/kiconedit/common
+share/doc/HTML/pt_BR/kiconedit/index.cache.bz2
+share/doc/HTML/pt_BR/kiconedit/index.docbook
+share/doc/HTML/ru/kiconedit/common
+share/doc/HTML/ru/kiconedit/index.cache.bz2
+share/doc/HTML/ru/kiconedit/index.docbook
+share/doc/HTML/sv/kiconedit/common
+share/doc/HTML/sv/kiconedit/index.cache.bz2
+share/doc/HTML/sv/kiconedit/index.docbook
+share/doc/HTML/uk/kiconedit/common
+share/doc/HTML/uk/kiconedit/index.cache.bz2
+share/doc/HTML/uk/kiconedit/index.docbook
 share/icons/hicolor/16x16/apps/kiconedit.png
 share/icons/hicolor/22x22/apps/kiconedit.png
 share/icons/hicolor/32x32/apps/kiconedit.png
@@ -57,6 +94,7 @@ share/locale/ga/LC_MESSAGES/kiconedit.mo
 share/locale/gl/LC_MESSAGES/kiconedit.mo
 share/locale/he/LC_MESSAGES/kiconedit.mo
 share/locale/hi/LC_MESSAGES/kiconedit.mo
+share/locale/hne/LC_MESSAGES/kiconedit.mo
 share/locale/hr/LC_MESSAGES/kiconedit.mo
 share/locale/hu/LC_MESSAGES/kiconedit.mo
 share/locale/is/LC_MESSAGES/kiconedit.mo
@@ -66,6 +104,7 @@ share/locale/km/LC_MESSAGES/kiconedit.mo
 share/locale/ko/LC_MESSAGES/kiconedit.mo
 share/locale/lt/LC_MESSAGES/kiconedit.mo
 share/locale/lv/LC_MESSAGES/kiconedit.mo
+share/locale/mai/LC_MESSAGES/kiconedit.mo
 share/locale/mk/LC_MESSAGES/kiconedit.mo
 share/locale/ms/LC_MESSAGES/kiconedit.mo
 share/locale/nb/LC_MESSAGES/kiconedit.mo
@@ -105,8 +144,24 @@ share/locale/zh_TW/LC_MESSAGES/kiconedit.mo
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/nds/LC_MESSAGES
 @dirrmtry share/locale/nds
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
+@dirrmtry share/locale/hne/LC_MESSAGES
+@dirrmtry share/locale/hne
+@dirrm share/doc/HTML/uk/kiconedit
+@dirrm share/doc/HTML/sv/kiconedit
+@dirrm share/doc/HTML/ru/kiconedit
+@dirrm share/doc/HTML/pt_BR/kiconedit
+@dirrm share/doc/HTML/pt/kiconedit
+@dirrm share/doc/HTML/it/kiconedit
+@dirrm share/doc/HTML/hu/kiconedit
+@dirrm share/doc/HTML/fr/kiconedit
+@dirrm share/doc/HTML/et/kiconedit
+@dirrm share/doc/HTML/es/kiconedit
 @dirrm share/doc/HTML/en/kiconedit
+@dirrm share/doc/HTML/de/kiconedit
+@dirrm share/doc/HTML/da/kiconedit
 @dirrm share/apps/kiconedit/pics
 @dirrm share/apps/kiconedit

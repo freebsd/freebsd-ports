@@ -137,12 +137,10 @@ share/doc/HTML/de/konq-plugins/validators/index.docbook
 share/doc/HTML/de/konq-plugins/webarchiver/common
 share/doc/HTML/de/konq-plugins/webarchiver/index.cache.bz2
 share/doc/HTML/de/konq-plugins/webarchiver/index.docbook
-share/doc/HTML/en/doc/common
-share/doc/HTML/en/doc/index.cache.bz2
-share/doc/HTML/en/doc/index.docbook
 share/doc/HTML/en/konq-plugins/babel/common
 share/doc/HTML/en/konq-plugins/babel/index.cache.bz2
 share/doc/HTML/en/konq-plugins/babel/index.docbook
+share/doc/HTML/en/konq-plugins/common
 share/doc/HTML/en/konq-plugins/crashes/common
 share/doc/HTML/en/konq-plugins/crashes/index.cache.bz2
 share/doc/HTML/en/konq-plugins/crashes/index.docbook
@@ -161,6 +159,8 @@ share/doc/HTML/en/konq-plugins/imgallery/index.cache.bz2
 share/doc/HTML/en/konq-plugins/imgallery/index.docbook
 share/doc/HTML/en/konq-plugins/imgallery/look.png
 share/doc/HTML/en/konq-plugins/imgallery/thumbnails.png
+share/doc/HTML/en/konq-plugins/index.cache.bz2
+share/doc/HTML/en/konq-plugins/index.docbook
 share/doc/HTML/en/konq-plugins/khtmlsettings/common
 share/doc/HTML/en/konq-plugins/khtmlsettings/index.cache.bz2
 share/doc/HTML/en/konq-plugins/khtmlsettings/index.docbook
@@ -587,6 +587,7 @@ share/locale/cy/LC_MESSAGES/searchbarplugin.mo
 share/locale/cy/LC_MESSAGES/uachangerplugin.mo
 share/locale/cy/LC_MESSAGES/validatorsplugin.mo
 share/locale/cy/LC_MESSAGES/webarchiver.mo
+share/locale/da/LC_MESSAGES/adblock.mo
 share/locale/da/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/da/LC_MESSAGES/autorefresh.mo
 share/locale/da/LC_MESSAGES/babelfish.mo
@@ -643,6 +644,7 @@ share/locale/el/LC_MESSAGES/searchbarplugin.mo
 share/locale/el/LC_MESSAGES/uachangerplugin.mo
 share/locale/el/LC_MESSAGES/validatorsplugin.mo
 share/locale/el/LC_MESSAGES/webarchiver.mo
+share/locale/en_GB/LC_MESSAGES/adblock.mo
 share/locale/en_GB/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/en_GB/LC_MESSAGES/autorefresh.mo
 share/locale/en_GB/LC_MESSAGES/babelfish.mo
@@ -688,6 +690,7 @@ share/locale/es/LC_MESSAGES/searchbarplugin.mo
 share/locale/es/LC_MESSAGES/uachangerplugin.mo
 share/locale/es/LC_MESSAGES/validatorsplugin.mo
 share/locale/es/LC_MESSAGES/webarchiver.mo
+share/locale/et/LC_MESSAGES/adblock.mo
 share/locale/et/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/et/LC_MESSAGES/autorefresh.mo
 share/locale/et/LC_MESSAGES/babelfish.mo
@@ -870,6 +873,24 @@ share/locale/hi/LC_MESSAGES/searchbarplugin.mo
 share/locale/hi/LC_MESSAGES/uachangerplugin.mo
 share/locale/hi/LC_MESSAGES/validatorsplugin.mo
 share/locale/hi/LC_MESSAGES/webarchiver.mo
+share/locale/hne/LC_MESSAGES/akregator_konqplugin.mo
+share/locale/hne/LC_MESSAGES/autorefresh.mo
+share/locale/hne/LC_MESSAGES/babelfish.mo
+share/locale/hne/LC_MESSAGES/crashesplugin.mo
+share/locale/hne/LC_MESSAGES/dirfilterplugin.mo
+share/locale/hne/LC_MESSAGES/domtreeviewer.mo
+share/locale/hne/LC_MESSAGES/fsview.mo
+share/locale/hne/LC_MESSAGES/imgalleryplugin.mo
+share/locale/hne/LC_MESSAGES/khtmlsettingsplugin.mo
+share/locale/hne/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/hne/LC_MESSAGES/konqsidebar_metabar.mo
+share/locale/hne/LC_MESSAGES/mf_konqplugin.mo
+share/locale/hne/LC_MESSAGES/minitoolsplugin.mo
+share/locale/hne/LC_MESSAGES/rellinks.mo
+share/locale/hne/LC_MESSAGES/searchbarplugin.mo
+share/locale/hne/LC_MESSAGES/uachangerplugin.mo
+share/locale/hne/LC_MESSAGES/validatorsplugin.mo
+share/locale/hne/LC_MESSAGES/webarchiver.mo
 share/locale/hr/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/hr/LC_MESSAGES/autorefresh.mo
 share/locale/hr/LC_MESSAGES/babelfish.mo
@@ -1073,6 +1094,25 @@ share/locale/lv/LC_MESSAGES/searchbarplugin.mo
 share/locale/lv/LC_MESSAGES/uachangerplugin.mo
 share/locale/lv/LC_MESSAGES/validatorsplugin.mo
 share/locale/lv/LC_MESSAGES/webarchiver.mo
+share/locale/mai/LC_MESSAGES/adblock.mo
+share/locale/mai/LC_MESSAGES/akregator_konqplugin.mo
+share/locale/mai/LC_MESSAGES/autorefresh.mo
+share/locale/mai/LC_MESSAGES/babelfish.mo
+share/locale/mai/LC_MESSAGES/crashesplugin.mo
+share/locale/mai/LC_MESSAGES/dirfilterplugin.mo
+share/locale/mai/LC_MESSAGES/domtreeviewer.mo
+share/locale/mai/LC_MESSAGES/fsview.mo
+share/locale/mai/LC_MESSAGES/imgalleryplugin.mo
+share/locale/mai/LC_MESSAGES/khtmlsettingsplugin.mo
+share/locale/mai/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/mai/LC_MESSAGES/konqsidebar_metabar.mo
+share/locale/mai/LC_MESSAGES/mf_konqplugin.mo
+share/locale/mai/LC_MESSAGES/minitoolsplugin.mo
+share/locale/mai/LC_MESSAGES/rellinks.mo
+share/locale/mai/LC_MESSAGES/searchbarplugin.mo
+share/locale/mai/LC_MESSAGES/uachangerplugin.mo
+share/locale/mai/LC_MESSAGES/validatorsplugin.mo
+share/locale/mai/LC_MESSAGES/webarchiver.mo
 share/locale/mk/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/mk/LC_MESSAGES/autorefresh.mo
 share/locale/mk/LC_MESSAGES/babelfish.mo
@@ -1357,6 +1397,7 @@ share/locale/se/LC_MESSAGES/searchbarplugin.mo
 share/locale/se/LC_MESSAGES/uachangerplugin.mo
 share/locale/se/LC_MESSAGES/validatorsplugin.mo
 share/locale/se/LC_MESSAGES/webarchiver.mo
+share/locale/sk/LC_MESSAGES/adblock.mo
 share/locale/sk/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/sk/LC_MESSAGES/autorefresh.mo
 share/locale/sk/LC_MESSAGES/babelfish.mo
@@ -1630,8 +1671,12 @@ share/locale/zh_TW/LC_MESSAGES/webarchiver.mo
 @dirrmtry share/locale/se
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/hsb/LC_MESSAGES
 @dirrmtry share/locale/hsb
+@dirrmtry share/locale/hne/LC_MESSAGES
+@dirrmtry share/locale/hne
 @dirrm share/doc/HTML/uk/konq-plugins/webarchiver
 @dirrm share/doc/HTML/uk/konq-plugins/validators
 @dirrm share/doc/HTML/uk/konq-plugins/uachanger
@@ -1727,7 +1772,6 @@ share/locale/zh_TW/LC_MESSAGES/webarchiver.mo
 @dirrm share/doc/HTML/en/konq-plugins/crashes
 @dirrm share/doc/HTML/en/konq-plugins/babel
 @dirrm share/doc/HTML/en/konq-plugins
-@dirrm share/doc/HTML/en/doc
 @dirrm share/doc/HTML/de/konq-plugins/webarchiver
 @dirrm share/doc/HTML/de/konq-plugins/validators
 @dirrm share/doc/HTML/de/konq-plugins/uachanger

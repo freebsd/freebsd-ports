@@ -364,6 +364,9 @@ share/doc/HTML/fr/kcontrol/knetworkconf/index.docbook
 share/doc/HTML/fr/kcontrol/kthememgr/common
 share/doc/HTML/fr/kcontrol/kthememgr/index.cache.bz2
 share/doc/HTML/fr/kcontrol/kthememgr/index.docbook
+share/doc/HTML/fr/kcontrol/kwincompositing/common
+share/doc/HTML/fr/kcontrol/kwincompositing/index.cache.bz2
+share/doc/HTML/fr/kcontrol/kwincompositing/index.docbook
 share/doc/HTML/fr/kcontrol/kwindecoration/common
 share/doc/HTML/fr/kcontrol/kwindecoration/index.cache.bz2
 share/doc/HTML/fr/kcontrol/kwindecoration/index.docbook
@@ -442,6 +445,9 @@ share/doc/HTML/fr/kdat/index.docbook
 share/doc/HTML/fr/kdebugdialog/common
 share/doc/HTML/fr/kdebugdialog/index.cache.bz2
 share/doc/HTML/fr/kdebugdialog/index.docbook
+share/doc/HTML/fr/kdepasswd/common
+share/doc/HTML/fr/kdepasswd/index.cache.bz2
+share/doc/HTML/fr/kdepasswd/index.docbook
 share/doc/HTML/fr/kdesu/common
 share/doc/HTML/fr/kdesu/index.cache.bz2
 share/doc/HTML/fr/kdesu/index.docbook
@@ -1422,6 +1428,14 @@ share/doc/HTML/fr/marble/measure-1.png
 share/doc/HTML/fr/marble/quick-1.png
 share/doc/HTML/fr/marble/search-1.png
 share/doc/HTML/fr/marble/search-2.png
+share/doc/HTML/fr/okteta/basics.docbook
+share/doc/HTML/fr/okteta/common
+share/doc/HTML/fr/okteta/credits.docbook
+share/doc/HTML/fr/okteta/index.cache.bz2
+share/doc/HTML/fr/okteta/index.docbook
+share/doc/HTML/fr/okteta/introduction.docbook
+share/doc/HTML/fr/okteta/menu.docbook
+share/doc/HTML/fr/okteta/tools.docbook
 share/doc/HTML/fr/okular/common
 share/doc/HTML/fr/okular/index.cache.bz2
 share/doc/HTML/fr/okular/index.docbook
@@ -1667,6 +1681,7 @@ share/locale/fr/LC_MESSAGES/kio_floppy.mo
 share/locale/fr/LC_MESSAGES/kio_groupwise.mo
 share/locale/fr/LC_MESSAGES/kio_help4.mo
 share/locale/fr/LC_MESSAGES/kio_imap4.mo
+share/locale/fr/LC_MESSAGES/kio_info.mo
 share/locale/fr/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/fr/LC_MESSAGES/kio_ldap.mo
 share/locale/fr/LC_MESSAGES/kio_man.mo
@@ -1983,6 +1998,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/sonnet
 @dirrm share/doc/HTML/fr/parley
 @dirrm share/doc/HTML/fr/okular
+@dirrm share/doc/HTML/fr/okteta
 @dirrm share/doc/HTML/fr/marble
 @dirrm share/doc/HTML/fr/lskat
 @dirrm share/doc/HTML/fr/lokalize
@@ -2136,6 +2152,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kdiamond
 @dirrm share/doc/HTML/fr/kdf
 @dirrm share/doc/HTML/fr/kdesu
+@dirrm share/doc/HTML/fr/kdepasswd
 @dirrm share/doc/HTML/fr/kdebugdialog
 @dirrm share/doc/HTML/fr/kdat
 @dirrm share/doc/HTML/fr/kcron
@@ -2160,6 +2177,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kcontrol/laptop
 @dirrm share/doc/HTML/fr/kcontrol/language
 @dirrm share/doc/HTML/fr/kcontrol/kwindecoration
+@dirrm share/doc/HTML/fr/kcontrol/kwincompositing
 @dirrm share/doc/HTML/fr/kcontrol/kthememgr
 @dirrm share/doc/HTML/fr/kcontrol/knetworkconf
 @dirrm share/doc/HTML/fr/kcontrol/khtml

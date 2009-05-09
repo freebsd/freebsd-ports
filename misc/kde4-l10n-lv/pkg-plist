@@ -5,6 +5,7 @@ share/locale/lv/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/lv/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/lv/LC_MESSAGES/audiorename_plugin.mo
 share/locale/lv/LC_MESSAGES/blinken.mo
+share/locale/lv/LC_MESSAGES/bomber.mo
 share/locale/lv/LC_MESSAGES/bovo.mo
 share/locale/lv/LC_MESSAGES/cervisia.mo
 share/locale/lv/LC_MESSAGES/cvsservice.mo
@@ -35,6 +36,7 @@ share/locale/lv/LC_MESSAGES/kalgebra.mo
 share/locale/lv/LC_MESSAGES/kalzium.mo
 share/locale/lv/LC_MESSAGES/kalzium_qt.mo
 share/locale/lv/LC_MESSAGES/kanagram.mo
+share/locale/lv/LC_MESSAGES/kapman.mo
 share/locale/lv/LC_MESSAGES/kappfinder.mo
 share/locale/lv/LC_MESSAGES/kapptemplate.mo
 share/locale/lv/LC_MESSAGES/kate.mo
@@ -189,6 +191,7 @@ share/locale/lv/LC_MESSAGES/kfontinst.mo
 share/locale/lv/LC_MESSAGES/kfourinline.mo
 share/locale/lv/LC_MESSAGES/kget.mo
 share/locale/lv/LC_MESSAGES/kgpg.mo
+share/locale/lv/LC_MESSAGES/kgoldrunner.mo
 share/locale/lv/LC_MESSAGES/kgreet_classic.mo
 share/locale/lv/LC_MESSAGES/kgreet_generic.mo
 share/locale/lv/LC_MESSAGES/kgreet_winbind.mo
@@ -199,6 +202,7 @@ share/locale/lv/LC_MESSAGES/khotnewstuff.mo
 share/locale/lv/LC_MESSAGES/khtmlkttsd.mo
 share/locale/lv/LC_MESSAGES/kiconfinder.mo
 share/locale/lv/LC_MESSAGES/kig.mo
+share/locale/lv/LC_MESSAGES/killbots.mo
 share/locale/lv/LC_MESSAGES/kimagemapeditor.mo
 share/locale/lv/LC_MESSAGES/kinetd.mo
 share/locale/lv/LC_MESSAGES/kinfocenter.mo
@@ -212,6 +216,7 @@ share/locale/lv/LC_MESSAGES/kio_fish.mo
 share/locale/lv/LC_MESSAGES/kio_floppy.mo
 share/locale/lv/LC_MESSAGES/kio_groupwise.mo
 share/locale/lv/LC_MESSAGES/kio_help4.mo
+share/locale/lv/LC_MESSAGES/kio_info.mo
 share/locale/lv/LC_MESSAGES/kio_imap4.mo
 share/locale/lv/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/lv/LC_MESSAGES/kio_ldap.mo
@@ -319,6 +324,7 @@ share/locale/lv/LC_MESSAGES/kstartperf.mo
 share/locale/lv/LC_MESSAGES/kstyle_config.mo
 share/locale/lv/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/lv/LC_MESSAGES/kstyle_phase_config.mo
+share/locale/lv/LC_MESSAGES/ksudoku.mo
 share/locale/lv/LC_MESSAGES/ksysguard.mo
 share/locale/lv/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/lv/LC_MESSAGES/ksystemlog.mo
@@ -433,6 +439,7 @@ share/locale/lv/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/lv/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_kalzium.mo

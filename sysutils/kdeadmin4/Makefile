@@ -14,8 +14,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Admin applications
 
-RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
-
 LATEST_LINK=	${PORTNAME}4
 
 USE_BZIP2=	yes
@@ -26,7 +24,6 @@ USE_OPENSSL=	yes
 QT_COMPONENTS=	corelib opengl dbus qt3support designer network svg qtestlib \
 		network porting_build qmake_build moc_build rcc_build \
 		uic_build uic3_build
-#USE_OPENLDAP=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -41,5 +38,10 @@ post-patch:
 	${REINPLACE_CMD} -e \
 	's,$${LIB_INSTALL_DIR}/pkgconfig,libdata/pkgconfig,' \
 	${PATCH_WRKSRC}/knetworkconf/backends/CMakeLists.txt
-
+#disable documentation for kpackage
+	${REINPLACE_CMD} -e '/add_subdirectory(kpackage)/d' \
+		${PATCH_WRKSRC}/doc/CMakeLists.txt
+#disable system-config-printer-kde, it comes with print/kdeadmin4-system-config-printer-kde
+	${REINPLACE_CMD} -e '/add_subdirectory.*system-config-printer-kde/d' \
+		${WRKSRC}/../CMakeLists.txt
 .include <bsd.port.mk>

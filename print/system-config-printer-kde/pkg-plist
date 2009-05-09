@@ -1,0 +1,6 @@
+bin/system-config-printer-kde
+share/applications/kde4/system-config-printer-kde.desktop
+share/apps/system-config-printer-kde/new-printer.ui
+share/apps/system-config-printer-kde/system-config-printer-kde.py
+share/apps/system-config-printer-kde/system-config-printer.ui
+@dirrm share/apps/system-config-printer-kde

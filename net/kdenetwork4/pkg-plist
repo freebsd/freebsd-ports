@@ -1,8 +1,8 @@
 bin/kget
 bin/kopete
 bin/kopete_latexconvert.sh
-bin/kppp
-bin/kppplogview
+%%KPPP%%bin/kppp
+%%KPPP%%bin/kppplogview
 bin/krdc
 bin/krfb
 bin/winpopup-install.sh
@@ -190,10 +190,10 @@ lib/liboscar.so
 lib/liboscar.so.1
 lib/liboscar.so.1.0.0
 lib/libqgroupwise.so
-share/applications/kde4/Kppp.desktop
+%%KPPP%%share/applications/kde4/Kppp.desktop
 share/applications/kde4/kget.desktop
 share/applications/kde4/kopete.desktop
-share/applications/kde4/kppplogview.desktop
+%%KPPP%%share/applications/kde4/kppplogview.desktop
 share/applications/kde4/krdc.desktop
 share/applications/kde4/krfb.desktop
 share/apps/desktoptheme/default/widgets/kget.svg
@@ -663,493 +663,493 @@ share/apps/kopete_yahoo/yahoochatui.rc
 share/apps/kopete_yahoo/yahooconferenceui.rc
 share/apps/kopete_yahoo/yahooimui.rc
 share/apps/kopeterichtexteditpart/kopeterichtexteditpartfull.rc
-share/apps/kppp/Provider/Austria/.directory
-share/apps/kppp/Provider/Austria/Simon%032Media
-share/apps/kppp/Provider/Belarus/.directory
-share/apps/kppp/Provider/Belarus/AtlantTelecom
-share/apps/kppp/Provider/Czech_Republic/.directory
-share/apps/kppp/Provider/Czech_Republic/AICOM
-share/apps/kppp/Provider/Czech_Republic/ARsystem
-share/apps/kppp/Provider/Czech_Republic/ASYS
-share/apps/kppp/Provider/Czech_Republic/ApexNet
-share/apps/kppp/Provider/Czech_Republic/BohemiaNet
-share/apps/kppp/Provider/Czech_Republic/Brailcom
-share/apps/kppp/Provider/Czech_Republic/CITYNET
-share/apps/kppp/Provider/Czech_Republic/Contactel
-share/apps/kppp/Provider/Czech_Republic/ES-servis
-share/apps/kppp/Provider/Czech_Republic/Econnect
-share/apps/kppp/Provider/Czech_Republic/Falco_computer
-share/apps/kppp/Provider/Czech_Republic/Fortech
-share/apps/kppp/Provider/Czech_Republic/HP-NET
-share/apps/kppp/Provider/Czech_Republic/INTERNET_OnLine
-share/apps/kppp/Provider/Czech_Republic/INTERNEXT
-share/apps/kppp/Provider/Czech_Republic/IQNET
-share/apps/kppp/Provider/Czech_Republic/KPNQuest
-share/apps/kppp/Provider/Czech_Republic/M-soft
-share/apps/kppp/Provider/Czech_Republic/Nextra
-share/apps/kppp/Provider/Czech_Republic/ProfiNet
-share/apps/kppp/Provider/Czech_Republic/SeverNET
-share/apps/kppp/Provider/Czech_Republic/Video_OnLine
-share/apps/kppp/Provider/Czech_Republic/Volny
-share/apps/kppp/Provider/Denmark/.directory
-share/apps/kppp/Provider/Denmark/Get2Net
-share/apps/kppp/Provider/France/.directory
-share/apps/kppp/Provider/France/ClubInternetFull
-share/apps/kppp/Provider/Germany/.directory
-share/apps/kppp/Provider/Germany/CityWeb
-share/apps/kppp/Provider/Germany/FH%032Rhein%032Sieg%032%040Informatik%041
-share/apps/kppp/Provider/Germany/MUC%046DE
-share/apps/kppp/Provider/Germany/Netsurf
-share/apps/kppp/Provider/Irland/.directory
-share/apps/kppp/Provider/Irland/Eircom
-share/apps/kppp/Provider/Irland/IOL
-share/apps/kppp/Provider/Netherlands/.directory
-share/apps/kppp/Provider/Netherlands/12Move
-share/apps/kppp/Provider/Netherlands/Bart
-share/apps/kppp/Provider/Netherlands/Betuwenet%032BFree
-share/apps/kppp/Provider/Netherlands/Betuwenet%032BQuality
-share/apps/kppp/Provider/Netherlands/Cistron
-share/apps/kppp/Provider/Netherlands/Concepts%032ICT
-share/apps/kppp/Provider/Netherlands/Cubic%032Circle
-share/apps/kppp/Provider/Netherlands/Dataweb
-share/apps/kppp/Provider/Netherlands/Daxis%032Internet
-share/apps/kppp/Provider/Netherlands/Demon%032Internet
-share/apps/kppp/Provider/Netherlands/Energis-Ision
-share/apps/kppp/Provider/Netherlands/Euronet%032anytime
-share/apps/kppp/Provider/Netherlands/Euronet%032professional
-share/apps/kppp/Provider/Netherlands/FlakkeeNet
-share/apps/kppp/Provider/Netherlands/FreeAcces
-share/apps/kppp/Provider/Netherlands/Freeler%032basis
-share/apps/kppp/Provider/Netherlands/Freeler%032compleet
-share/apps/kppp/Provider/Netherlands/Freeler%032voordelig
-share/apps/kppp/Provider/Netherlands/HCC%032NET
-share/apps/kppp/Provider/Netherlands/Hacom
-share/apps/kppp/Provider/Netherlands/HetNet%032Basis%032Surfen
-share/apps/kppp/Provider/Netherlands/HetNet%032Frequent%032Surfen
-share/apps/kppp/Provider/Netherlands/HetNet%032Regelmatig%032Surfen
-share/apps/kppp/Provider/Netherlands/IAE
-share/apps/kppp/Provider/Netherlands/ILimburg
-share/apps/kppp/Provider/Netherlands/InterNLnet
-share/apps/kppp/Provider/Netherlands/Interbox
-share/apps/kppp/Provider/Netherlands/Internet%032Acces%032Facilities
-share/apps/kppp/Provider/Netherlands/Internet%032Online
-share/apps/kppp/Provider/Netherlands/Interstroom
-share/apps/kppp/Provider/Netherlands/IntroWeb%032Hengelo%032EO
-share/apps/kppp/Provider/Netherlands/IntroWeb%032met%0323-cijferig%032kengetal
-share/apps/kppp/Provider/Netherlands/IntroWeb%032met%0324-cijferig%032kengetal
-share/apps/kppp/Provider/Netherlands/Kabelfoon
-share/apps/kppp/Provider/Netherlands/KeyAcces%032met%0323%032cijferig%032kengetal
-share/apps/kppp/Provider/Netherlands/KeyAcces%032met%0324%032cijferig%032kengetal
-share/apps/kppp/Provider/Netherlands/Luna
-share/apps/kppp/Provider/Netherlands/Macom
-share/apps/kppp/Provider/Netherlands/Nederland.net
-share/apps/kppp/Provider/Netherlands/Planet%032Internet%032Premium
-share/apps/kppp/Provider/Netherlands/Planet%032Internet%032Standaard
-share/apps/kppp/Provider/Netherlands/Plant%032Acces
-share/apps/kppp/Provider/Netherlands/Popin
-share/apps/kppp/Provider/Netherlands/PublishNet
-share/apps/kppp/Provider/Netherlands/Raketnet
-share/apps/kppp/Provider/Netherlands/Solcon
-share/apps/kppp/Provider/Netherlands/Support%032Net
-share/apps/kppp/Provider/Netherlands/Telebyte
-share/apps/kppp/Provider/Netherlands/Tiscali%032Compleet
-share/apps/kppp/Provider/Netherlands/Tiscali%032Gratis
-share/apps/kppp/Provider/Netherlands/UwNet
-share/apps/kppp/Provider/Netherlands/Via%032Networks
-share/apps/kppp/Provider/Netherlands/Wannadoo%032budget
-share/apps/kppp/Provider/Netherlands/Wannadoo%032budget%320plus
-share/apps/kppp/Provider/Netherlands/Wannadoo%032smartpack
-share/apps/kppp/Provider/Netherlands/Wirehub
-share/apps/kppp/Provider/Netherlands/XS4All
-share/apps/kppp/Provider/Netherlands/Zeelandnet
-share/apps/kppp/Provider/Netherlands/Zon%0322
-share/apps/kppp/Provider/Netherlands/Zon%032Gratis
-share/apps/kppp/Provider/Netherlands/Zon%032Inclusief
-share/apps/kppp/Provider/NewZealand/.directory
-share/apps/kppp/Provider/NewZealand/OrconInternet
-share/apps/kppp/Provider/NewZealand/Paradise
-share/apps/kppp/Provider/NewZealand/Voyager
-share/apps/kppp/Provider/NewZealand/XTRA
-share/apps/kppp/Provider/NewZealand/ihug
-share/apps/kppp/Provider/Norway/.directory
-share/apps/kppp/Provider/Norway/BGNett
-share/apps/kppp/Provider/Norway/Institutt%032for%032informatikk
-share/apps/kppp/Provider/Portugal/.directory
-share/apps/kppp/Provider/Portugal/Clix
-share/apps/kppp/Provider/Portugal/Netc
-share/apps/kppp/Provider/Portugal/OniNet
-share/apps/kppp/Provider/Slovenia/AmisNet
-share/apps/kppp/Provider/Slovenia/Arnes
-share/apps/kppp/Provider/Slovenia/Kiss
-share/apps/kppp/Provider/Slovenia/MojNet
-share/apps/kppp/Provider/Slovenia/SiOL
-share/apps/kppp/Provider/Slovenia/Volja
-share/apps/kppp/Provider/Sweden/.directory
-share/apps/kppp/Provider/Sweden/Tiscali
-share/apps/kppp/Provider/Sweden/Utfors
-share/apps/kppp/Provider/Switzerland/.directory
-share/apps/kppp/Provider/Switzerland/Bluewin
-share/apps/kppp/Provider/Taiwan/.directory
-share/apps/kppp/Provider/Taiwan/EraNet
-share/apps/kppp/Provider/Taiwan/HiNet
-share/apps/kppp/Provider/Taiwan/SeedNet
-share/apps/kppp/Provider/Ukraine/.directory
-share/apps/kppp/Provider/Ukraine/Adamant
-share/apps/kppp/Provider/Ukraine/IPTelecom
-share/apps/kppp/Provider/Ukraine/LifeEDGE
-share/apps/kppp/Provider/Ukraine/NuVse
-share/apps/kppp/Provider/United_Kingdom/.directory
-share/apps/kppp/Provider/United_Kingdom/Demon%032Green%0322120666
-share/apps/kppp/Provider/United_Kingdom/Demon%032Purple%0322121666
-share/apps/kppp/Provider/United_Kingdom/Demon%032Red%0320798666
-share/apps/kppp/Provider/United_Kingdom/FreeServe
-share/apps/kppp/Provider/United_Kingdom/UK%032Free%032Software%032Network%032ISDN
-share/apps/kppp/Provider/United_Kingdom/UK%032Free%032Software%032Network%032Modem
-share/apps/kppp/Provider/United_Kingdom/UKPOST%032ISDN
-share/apps/kppp/Provider/United_Kingdom/UKPOST%032Modem
-share/apps/kppp/Provider/United_Kingdom/UTV
-share/apps/kppp/Provider/Yugoslavia/041Net
-share/apps/kppp/Provider/Yugoslavia/BeoTelNet
-share/apps/kppp/Provider/Yugoslavia/CG.Bar.yu
-share/apps/kppp/Provider/Yugoslavia/CG.Berane.yu
-share/apps/kppp/Provider/Yugoslavia/CG.BijeloPolje.CG.yu
-share/apps/kppp/Provider/Yugoslavia/CG.Budva.yu
-share/apps/kppp/Provider/Yugoslavia/CG.Cetinje.yu
-share/apps/kppp/Provider/Yugoslavia/CG.HercegNovi.yu
-share/apps/kppp/Provider/Yugoslavia/CG.Kotor.yu
-share/apps/kppp/Provider/Yugoslavia/CG.Niksic.yu
-share/apps/kppp/Provider/Yugoslavia/CG.Pljevlja.yu
-share/apps/kppp/Provider/Yugoslavia/CG.Podgorica.yu
-share/apps/kppp/Provider/Yugoslavia/CG.Tivat.yu
-share/apps/kppp/Provider/Yugoslavia/CG.Ulcinj.yu
-share/apps/kppp/Provider/Yugoslavia/CG.yu
-share/apps/kppp/Provider/Yugoslavia/DrenikNet
-share/apps/kppp/Provider/Yugoslavia/EUnet@Full
-share/apps/kppp/Provider/Yugoslavia/EUnet@Lite
-share/apps/kppp/Provider/Yugoslavia/EUnetBeograd
-share/apps/kppp/Provider/Yugoslavia/EUnetCacak
-share/apps/kppp/Provider/Yugoslavia/EUnetKragujevac
-share/apps/kppp/Provider/Yugoslavia/EUnetNis
-share/apps/kppp/Provider/Yugoslavia/EUnetNoviSad
-share/apps/kppp/Provider/Yugoslavia/EUnetPristina
-share/apps/kppp/Provider/Yugoslavia/EUnetSombor
-share/apps/kppp/Provider/Yugoslavia/EUnetSubotica
-share/apps/kppp/Provider/Yugoslavia/InfoSKY
-share/apps/kppp/Provider/Yugoslavia/PTT
-share/apps/kppp/Provider/Yugoslavia/SCnet
-share/apps/kppp/Provider/Yugoslavia/Sezampro
-share/apps/kppp/Provider/Yugoslavia/SuOnline
-share/apps/kppp/Provider/Yugoslavia/TippNet
-share/apps/kppp/Provider/Yugoslavia/VeratNet
-share/apps/kppp/Provider/Yugoslavia/YUBCnet
-share/apps/kppp/Rules/Argentina/Argentina_0610.rst
-share/apps/kppp/Rules/Argentina/Argentina_Local.rst
-share/apps/kppp/Rules/Australia/Local.rst
-share/apps/kppp/Rules/Australia/Optus_Residential.rst
-share/apps/kppp/Rules/Australia/STD_Zone_1_-_25-50_kms.rst
-share/apps/kppp/Rules/Australia/STD_Zone_2_-_50-85_kms.rst
-share/apps/kppp/Rules/Australia/STD_Zone_3_-_85-165_kms.rst
-share/apps/kppp/Rules/Australia/STD_Zone_4_-_165+_kms.rst
-share/apps/kppp/Rules/Austria/Business_1/Local.rst
-share/apps/kppp/Rules/Austria/Business_1/Long_Distance.rst
-share/apps/kppp/Rules/Austria/Business_1/Online.rst
-share/apps/kppp/Rules/Austria/Business_2/Local.rst
-share/apps/kppp/Rules/Austria/Business_2/Long_Distance.rst
-share/apps/kppp/Rules/Austria/Business_2/Online.rst
-share/apps/kppp/Rules/Austria/Minimum/Local.rst
-share/apps/kppp/Rules/Austria/Minimum/Long_Distance.rst
-share/apps/kppp/Rules/Austria/Minimum/Online.rst
-share/apps/kppp/Rules/Austria/Standard/Local.rst
-share/apps/kppp/Rules/Austria/Standard/Long_Distance.rst
-share/apps/kppp/Rules/Austria/Standard/Online.rst
-share/apps/kppp/Rules/Austria/Standard/UTA_easyinternet.rst
-share/apps/kppp/Rules/Bangladesh/ATT00007.rst
-share/apps/kppp/Rules/Bangladesh/ATT00010.rst
-share/apps/kppp/Rules/Belgium/Belgium_internet_euro.rst
-share/apps/kppp/Rules/Belgium/Belgium_internet_frank.rst
-share/apps/kppp/Rules/Belgium/Belgium_interzonal.rst
-share/apps/kppp/Rules/Belgium/Belgium_zonal.rst
-share/apps/kppp/Rules/Bosnia_and_Herzegovina/BiHnet_-_home_-_bez_impulsa.rst
-share/apps/kppp/Rules/Bosnia_and_Herzegovina/BiHnet_-_student_-_bez_impulsa.rst
-share/apps/kppp/Rules/Bosnia_and_Herzegovina/SmartNet_PERSONAL_bez_impulsa.rst
-share/apps/kppp/Rules/Bosnia_and_Herzegovina/samo_impulsi.rst
-share/apps/kppp/Rules/Brasil/Brasil.rst
-share/apps/kppp/Rules/Brasil/Brasil_Ligbr.rst
-share/apps/kppp/Rules/Brasil/Rio_de_Janeiro.rst
-share/apps/kppp/Rules/Brasil/SaoPaulo.rst
-share/apps/kppp/Rules/Croatia/CARNet.rst
-share/apps/kppp/Rules/Czechia/Czech_Telecom_Internet_2004_Business_Internet.rst
-share/apps/kppp/Rules/Czechia/Czech_Telecom_Internet_2004_Home_Internet.rst
-share/apps/kppp/Rules/Czechia/Czech_Telecom_Internet_2004_telefon_a_Internet_180_+_660.rst
-share/apps/kppp/Rules/Czechia/Czech_Telecom_Internet_2004_telefon_a_Internet_90_+_300.rst
-share/apps/kppp/Rules/Czechia/Czech_Telecom_Internet_2004_telefon_universal.rst
-share/apps/kppp/Rules/Denmark/12Move_Analog.rst
-share/apps/kppp/Rules/Denmark/12Move_ISDN.rst
-share/apps/kppp/Rules/Denmark/Cybercity_Friabonnement.rst
-share/apps/kppp/Rules/Denmark/Get2net_Betaling.rst
-share/apps/kppp/Rules/Denmark/Get2net_Gratis.rst
-share/apps/kppp/Rules/Denmark/Mobilix_Wanadoo.rst
-share/apps/kppp/Rules/Denmark/Teledanmark_Basis.rst
-share/apps/kppp/Rules/Denmark/Teledanmark_Favoritinternet.rst
-share/apps/kppp/Rules/Denmark/Worldonline-Analog.rst
-share/apps/kppp/Rules/Denmark/Worldonline-ISDN.rst
-share/apps/kppp/Rules/Estonia/Eesti_Telefon.rst
-share/apps/kppp/Rules/Finland/VLP.rst
-share/apps/kppp/Rules/France/Cegetel_Local.rst
-share/apps/kppp/Rules/France/Cegetel_National.rst
-share/apps/kppp/Rules/France/France_Telecom_Internet.rst
-share/apps/kppp/Rules/France/France_Telecom_Local.rst
-share/apps/kppp/Rules/France/France_Telecom_National.rst
-share/apps/kppp/Rules/France/Le_9_Local.rst
-share/apps/kppp/Rules/France/Le_9_National.rst
-share/apps/kppp/Rules/France/OneTel.rst
-share/apps/kppp/Rules/France/Tele2_Local.rst
-share/apps/kppp/Rules/France/Tele2_National.rst
-share/apps/kppp/Rules/France/Wanadoo_Free.rst
-share/apps/kppp/Rules/Germany/1und1_InternetZugang.rst
-share/apps/kppp/Rules/Germany/2.5min.rst
-share/apps/kppp/Rules/Germany/2.5s.rst
-share/apps/kppp/Rules/Germany/AddCom_by_Call.rst
-share/apps/kppp/Rules/Germany/Addcom.rst
-share/apps/kppp/Rules/Germany/Arcor_Internet_by_Call_easy.rst
-share/apps/kppp/Rules/Germany/CallOkaynet.rst
-share/apps/kppp/Rules/Germany/Callino_Surf_Basic.rst
-share/apps/kppp/Rules/Germany/Callino_Surf_Plus.rst
-share/apps/kppp/Rules/Germany/Callisa_City.rst
-share/apps/kppp/Rules/Germany/City_Activ_Plus_Option.rst
-share/apps/kppp/Rules/Germany/Cityweb.rst
-share/apps/kppp/Rules/Germany/CompuservePro.rst
-share/apps/kppp/Rules/Germany/E-Plus-Online_Jedermann.rst
-share/apps/kppp/Rules/Germany/Easynet_easy-call.rst
-share/apps/kppp/Rules/Germany/Freenet_Enterprise.rst
-share/apps/kppp/Rules/Germany/Freenet_Sorglos.rst
-share/apps/kppp/Rules/Germany/Freenet_StandardTarif.rst
-share/apps/kppp/Rules/Germany/Freenet_Super_CbC.rst
-share/apps/kppp/Rules/Germany/Freenet_special_call_by_call.rst
-share/apps/kppp/Rules/Germany/MSN.rst
-share/apps/kppp/Rules/Germany/Mobilcom_Freenet.rst
-share/apps/kppp/Rules/Germany/NGI_Call_By_Call.rst
-share/apps/kppp/Rules/Germany/Netcom_Kassel.rst
-share/apps/kppp/Rules/Germany/Nikoma.rst
-share/apps/kppp/Rules/Germany/Nikoma_Internet_by_Call.rst
-share/apps/kppp/Rules/Germany/Nikoma_Study_and_Surf.rst
-share/apps/kppp/Rules/Germany/Planet-Interkom_Internet_by_call.rst
-share/apps/kppp/Rules/Germany/Puretec.rst
-share/apps/kppp/Rules/Germany/Telekom_City_Select_5_30.rst
-share/apps/kppp/Rules/Germany/VR-Web.rst
-share/apps/kppp/Rules/Germany/expressnet.rst
-share/apps/kppp/Rules/Germany/knUUt-by-Call.rst
-share/apps/kppp/Rules/Germany/talkline_by_call.rst
-share/apps/kppp/Rules/Germany/vossnet_fun.rst
-share/apps/kppp/Rules/Germany/vossnet_fun_light.rst
-share/apps/kppp/Rules/Germany/vossnet_kompl.rst
-share/apps/kppp/Rules/Greece/Hellas_EPAK_Zone1_in_euro.rst
-share/apps/kppp/Rules/Greece/Hellas_EPAK_Zone2_in_euro.rst
-share/apps/kppp/Rules/Greece/Hellas_EPAK_local_in_euro.rst
-share/apps/kppp/Rules/Greece/Hellas_analog_local_in_euro.rst
-share/apps/kppp/Rules/Greece/Hellas_digital_local_in_euro.rst
-share/apps/kppp/Rules/Hong_Kong/Hong_Kong_Telecom.rst
-share/apps/kppp/Rules/Hungary/Local.rst
-share/apps/kppp/Rules/Hungary/LocalTop_MATAV.rst
-share/apps/kppp/Rules/Hungary/Local_MATAV.rst
-share/apps/kppp/Rules/Hungary/PapaTel.rst
-share/apps/kppp/Rules/Iceland/Iceland_general.rst
-share/apps/kppp/Rules/India/BSNL_Local.rst
-share/apps/kppp/Rules/India/BSNL_Long_101_To_200.rst
-share/apps/kppp/Rules/India/BSNL_Medium_51_To_100.rst
-share/apps/kppp/Rules/India/Vsnl_local.rst
-share/apps/kppp/Rules/Indonesia/Lokal_1_Metropolitan.rst
-share/apps/kppp/Rules/Indonesia/Lokal_2_Metropolitan.rst
-share/apps/kppp/Rules/Indonesia/Lokal_non_metropolitan.rst
-share/apps/kppp/Rules/Ireland/Eircom_Internet.rst
-share/apps/kppp/Rules/Ireland/Eircom_Local.rst
-share/apps/kppp/Rules/Ireland/Eircom_National.rst
-share/apps/kppp/Rules/Ireland/Eircom_Special.rst
-share/apps/kppp/Rules/Israel/Bezeq_Interurban.rst
-share/apps/kppp/Rules/Israel/Bezeq_Local.rst
-share/apps/kppp/Rules/Italy/Atlanet.rst
-share/apps/kppp/Rules/Italy/Cheapnet.rst
-share/apps/kppp/Rules/Italy/Infostrada_Internet_SpZero.rst
-share/apps/kppp/Rules/Italy/Infostrada_Libero1055_Base.rst
-share/apps/kppp/Rules/Italy/Infostrada_Libero1055_SpZero.rst
-share/apps/kppp/Rules/Italy/Infostrada_Loc_Reg_Naz_SpZero.rst
-share/apps/kppp/Rules/Italy/Infostrada_Locali_Base.rst
-share/apps/kppp/Rules/Italy/Infostrada_Reg_Naz_Base.rst
-share/apps/kppp/Rules/Italy/Tele2_Altri_ISP.rst
-share/apps/kppp/Rules/Italy/Tele2_Internet_Tele2.rst
-share/apps/kppp/Rules/Italy/Telecom_Interurbane_Fino15Km.rst
-share/apps/kppp/Rules/Italy/Telecom_Interurbane_Oltre15Km.rst
-share/apps/kppp/Rules/Italy/Telecom_Locali.rst
-share/apps/kppp/Rules/Italy/Teleconomy24_Internet.rst
-share/apps/kppp/Rules/Italy/Teleconomy24_Nazionali.rst
-share/apps/kppp/Rules/Italy/Teleconomy_NoStop_Internet.rst
-share/apps/kppp/Rules/Italy/Wind_24ore_Internet_AltriISP.rst
-share/apps/kppp/Rules/Italy/Wind_24ore_Internet_InWind.rst
-share/apps/kppp/Rules/Italy/Wind_24ore_Interurbane.rst
-share/apps/kppp/Rules/Italy/Wind_24ore_Urbane.rst
-share/apps/kppp/Rules/Italy/Wind_Family+SuperLight_Internet_InWind.rst
-share/apps/kppp/Rules/Italy/Wind_Family+SuperLight_Urbane_Interurbane.rst
-share/apps/kppp/Rules/Italy/Wind_Family_Internet_AltriISP.rst
-share/apps/kppp/Rules/Italy/Wind_Family_Internet_InWind.rst
-share/apps/kppp/Rules/Italy/Wind_Family_Interurbane.rst
-share/apps/kppp/Rules/Italy/Wind_Family_Urbane.rst
-share/apps/kppp/Rules/Italy/Wind_Flat_Internet_AltriISP.rst
-share/apps/kppp/Rules/Italy/Wind_Flat_Internet_InWind.rst
-share/apps/kppp/Rules/Italy/Wind_Urbana_1088_Light.rst
-share/apps/kppp/Rules/Jamaica/CWJ_InterParish.rst
-share/apps/kppp/Rules/Jamaica/CWJ_Local.rst
-share/apps/kppp/Rules/Japan/NTT_Local.rst
-share/apps/kppp/Rules/Kazakhstan/Akparat_Sprint.rst
-share/apps/kppp/Rules/Luxembourg/Local.rst
-share/apps/kppp/Rules/Macedonia/Macedonia_GenericISP_interurban.rst
-share/apps/kppp/Rules/Macedonia/Macedonia_GenericISP_local.rst
-share/apps/kppp/Rules/Macedonia/Macedonia_MTnet.rst
-share/apps/kppp/Rules/Malaysia/TMNet_Jaring.rst
-share/apps/kppp/Rules/Malaysia/malaysia.rst
-share/apps/kppp/Rules/Netherlands/12Move.rst
-share/apps/kppp/Rules/Netherlands/BelBasis_Buiten_Regio.rst
-share/apps/kppp/Rules/Netherlands/BelBasis_Buiten_Regio_Nummervoordeel.rst
-share/apps/kppp/Rules/Netherlands/BelBasis_Regio.rst
-share/apps/kppp/Rules/Netherlands/BelBasis_Regio_Nummervoordeel.rst
-share/apps/kppp/Rules/Netherlands/BelBudget_Buiten_Regio.rst
-share/apps/kppp/Rules/Netherlands/BelBudget_Regio.rst
-share/apps/kppp/Rules/Netherlands/BelPlus_Buiten_Regio.rst
-share/apps/kppp/Rules/Netherlands/BelPlus_Regio.rst
-share/apps/kppp/Rules/Netherlands/BelPlus_Regio_Nummervoordeel.rst
-share/apps/kppp/Rules/Netherlands/Cistron
-share/apps/kppp/Rules/Netherlands/Freeler_Basis.rst
-share/apps/kppp/Rules/Netherlands/Freeler_Voordelig.rst
-share/apps/kppp/Rules/Netherlands/HetNet_Regelmatig_Surfen.rst
-share/apps/kppp/Rules/Netherlands/InterNLnet.rst
-share/apps/kppp/Rules/Netherlands/OneTel_Spaarstand_Buiten_Regio.rst
-share/apps/kppp/Rules/Netherlands/OneTel_Spaarstand_Regio.rst
-share/apps/kppp/Rules/Netherlands/OneTel_Toets_1658_Buiten_Regio.rst
-share/apps/kppp/Rules/Netherlands/OneTel_Toets_1658_Regio.rst
-share/apps/kppp/Rules/Netherlands/Planet_Internet.rst
-share/apps/kppp/Rules/Netherlands/Priority_Telecom_Nationaal.rst
-share/apps/kppp/Rules/Netherlands/Priority_Telecom_Regionaal.rst
-share/apps/kppp/Rules/Netherlands/Tele2_Extra_Buiten_Regio.rst
-share/apps/kppp/Rules/Netherlands/Tele2_Extra_Regio.rst
-share/apps/kppp/Rules/Netherlands/Tele2_Preselect_Buiten_Regio.rst
-share/apps/kppp/Rules/Netherlands/Tele2_Preselect_Regio.rst
-share/apps/kppp/Rules/Netherlands/Tele2_Toets_1609_Buiten_Regio.rst
-share/apps/kppp/Rules/Netherlands/Tele2_Toets_1609_Regio.rst
-share/apps/kppp/Rules/Netherlands/Wannadoo_Budget_Plus
-share/apps/kppp/Rules/Norway/Local_Area.rst
-share/apps/kppp/Rules/Norway/Long_Distance.rst
-share/apps/kppp/Rules/Norway/Netcom.rst
-share/apps/kppp/Rules/Poland/Internetia.rst
-share/apps/kppp/Rules/Poland/Netia_100km_Niebieska.rst
-share/apps/kppp/Rules/Poland/Netia_100km_Zielona.rst
-share/apps/kppp/Rules/Poland/Netia_Lokalne_Niebieska.rst
-share/apps/kppp/Rules/Poland/Netia_Lokalne_Zielona.rst
-share/apps/kppp/Rules/Poland/TPSA.rst
-share/apps/kppp/Rules/Poland/TP_100km.rst
-share/apps/kppp/Rules/Poland/TP_Lokalne.rst
-share/apps/kppp/Rules/Portugal/PT_Local.rst
-share/apps/kppp/Rules/Portugal/PT_Local_Ilhas.rst
-share/apps/kppp/Rules/Portugal/PT_Regional.rst
-share/apps/kppp/Rules/Portugal/PT_Regional_Ilhas.rst
-share/apps/kppp/Rules/Portugal/PT_YesNET.rst
-share/apps/kppp/Rules/Portugal/PT_YesNET_Ilhas.rst
-share/apps/kppp/Rules/Romania/Easynet.rst
-share/apps/kppp/Rules/Romania/RomTelecom_GSM.rst
-share/apps/kppp/Rules/Romania/Romtelecom_Acces_Special_Internet.rst
-share/apps/kppp/Rules/Romania/Romtelecom_Interjudetean.rst
-share/apps/kppp/Rules/Romania/Romtelecom_Local.rst
-share/apps/kppp/Rules/Romania/Zapp-Mobile.rst
-share/apps/kppp/Rules/Russia/TEMPLATE.ru
-share/apps/kppp/Rules/Russia/mtu-intel_standart.rst
-share/apps/kppp/Rules/Singapore/SingTel_Local.rst
-share/apps/kppp/Rules/Slovakia/Internetovy_tarif_019XY.rst
-share/apps/kppp/Rules/Slovakia/ST_medzimesto.rst
-share/apps/kppp/Rules/Slovakia/ST_mesto.rst
-share/apps/kppp/Rules/Slovenia/omrezje_0880.rst
-share/apps/kppp/Rules/Slovenia/omrezje_0889.rst
-share/apps/kppp/Rules/Slovenia/stacionarno_omrezje.rst
-share/apps/kppp/Rules/South_Africa/South_Africa_local.rst
-share/apps/kppp/Rules/South_Africa/South_Africa_long_distance.rst
-share/apps/kppp/Rules/South_Afrika/South_Afrika.rst
-share/apps/kppp/Rules/South_Afrika/South_Afrika_Justin.rst
-share/apps/kppp/Rules/Spain/Infovia.rst
-share/apps/kppp/Rules/Spain/Infovia_IVA.rst
-share/apps/kppp/Rules/Spain/Telefonica_Interprovincial.rst
-share/apps/kppp/Rules/Spain/Telefonica_Interprovincial_IVA.rst
-share/apps/kppp/Rules/Spain/Telefonica_Local.rst
-share/apps/kppp/Rules/Spain/Telefonica_Metropolitana.rst
-share/apps/kppp/Rules/Spain/Telefonica_Metropolitana_IVA.rst
-share/apps/kppp/Rules/Spain/Telefonica_Nacional.rst
-share/apps/kppp/Rules/Spain/Telefonica_Provincial.rst
-share/apps/kppp/Rules/Spain/Telefonica_Provincial_IVA.rst
-share/apps/kppp/Rules/Sweden/ACN.rst
-share/apps/kppp/Rules/Sweden/Abonnera_com.rst
-share/apps/kppp/Rules/Sweden/CNEAB-Route66.rst
-share/apps/kppp/Rules/Sweden/Crossnet-Affinity.rst
-share/apps/kppp/Rules/Sweden/Glocalnet.rst
-share/apps/kppp/Rules/Sweden/Gts.rst
-share/apps/kppp/Rules/Sweden/Home_se.rst
-share/apps/kppp/Rules/Sweden/Nemtel.rst
-share/apps/kppp/Rules/Sweden/Plusenergi.rst
-share/apps/kppp/Rules/Sweden/RSLCom.rst
-share/apps/kppp/Rules/Sweden/Rix_Telecom.rst
-share/apps/kppp/Rules/Sweden/Supertel.rst
-share/apps/kppp/Rules/Sweden/Svensk_Telekom.rst
-share/apps/kppp/Rules/Sweden/Tele1_Europe.rst
-share/apps/kppp/Rules/Sweden/Tele2.rst
-share/apps/kppp/Rules/Sweden/Tele8.rst
-share/apps/kppp/Rules/Sweden/Teleman.rst
-share/apps/kppp/Rules/Sweden/Telenordia.rst
-share/apps/kppp/Rules/Sweden/Telerian.rst
-share/apps/kppp/Rules/Sweden/Telia.rst
-share/apps/kppp/Rules/Sweden/Telia_Telebonus1.rst
-share/apps/kppp/Rules/Sweden/Telia_Telebonus2.rst
-share/apps/kppp/Rules/Sweden/Telitel.rst
-share/apps/kppp/Rules/Sweden/Tiscali.rst
-share/apps/kppp/Rules/Sweden/Transnet.rst
-share/apps/kppp/Rules/Sweden/Universal_Telecom.rst
-share/apps/kppp/Rules/Sweden/Utfors.rst
-share/apps/kppp/Rules/Sweden/Vattenfall.rst
-share/apps/kppp/Rules/Switzerland/Sunrise_Freetime.rst
-share/apps/kppp/Rules/Switzerland/Sunrise_Local.rst
-share/apps/kppp/Rules/Switzerland/Sunrise_Select_Internet.rst
-share/apps/kppp/Rules/Switzerland/Swisscom_Local.rst
-share/apps/kppp/Rules/Switzerland/Swisscom_Remote.rst
-share/apps/kppp/Rules/Switzerland/Swisscom_Surf.rst
-share/apps/kppp/Rules/TEMPLATE
-share/apps/kppp/Rules/Turkey/Turk_Telekom_Internet.rst
-share/apps/kppp/Rules/Ukraine/IPTelecom_hourly.rst
-share/apps/kppp/Rules/Ukraine/NuVse_hourly.rst
-share/apps/kppp/Rules/Ukraine/TEMPLATE.uk
-share/apps/kppp/Rules/Ukraine/Utel_Unet.rst
-share/apps/kppp/Rules/United_Kingdom/BirminghamCable_Local.rst
-share/apps/kppp/Rules/United_Kingdom/BirminghamCable_National.rst
-share/apps/kppp/Rules/United_Kingdom/BirminghamCable_SameTelco.rst
-share/apps/kppp/Rules/United_Kingdom/BritishTelecom_Local.rst
-share/apps/kppp/Rules/United_Kingdom/BritishTelecom_National.rst
-share/apps/kppp/Rules/United_Kingdom/BritishTelecom_Regional.rst
-share/apps/kppp/Rules/United_Kingdom/British_OneTel.rst
-share/apps/kppp/Rules/United_Kingdom/Connaught_Telecom.rst
-share/apps/kppp/Rules/Uruguay/Adinet_cIVA.rst
-share/apps/kppp/Rules/Yugoslavia/041_1xx_xxx.rst
-share/apps/kppp/Rules/Yugoslavia/041_2xx_xxx.rst
-share/apps/kppp/Rules/Yugoslavia/041_3xx_xxx.rst
-share/apps/kppp/Rules/Yugoslavia/041_4xx_xxx.rst
-share/apps/kppp/Rules/Yugoslavia/041_5xx_xxx.rst
-share/apps/kppp/Rules/Yugoslavia/041_9xx_xxx.rst
-share/apps/kppp/Rules/Yugoslavia/III_zona-preko_200km.rst
-share/apps/kppp/Rules/Yugoslavia/II_zona-do_200km.rst
-share/apps/kppp/Rules/Yugoslavia/I_zona-ista_mreza.rst
-share/apps/kppp/Rules/Yugoslavia/Lokalni_poziv.rst
-share/apps/kppp/pics/dock_both.png
-share/apps/kppp/pics/dock_left.png
-share/apps/kppp/pics/dock_none.png
-share/apps/kppp/pics/dock_right.png
-share/apps/kppp/pics/folder.png
-share/apps/kppp/pics/modemboth.png
-share/apps/kppp/pics/modemleft.png
-share/apps/kppp/pics/modemnone.png
-share/apps/kppp/pics/modemright.png
-share/apps/kppp/pics/phone.png
+%%KPPP%%share/apps/kppp/Provider/Austria/.directory
+%%KPPP%%share/apps/kppp/Provider/Austria/Simon%032Media
+%%KPPP%%share/apps/kppp/Provider/Belarus/.directory
+%%KPPP%%share/apps/kppp/Provider/Belarus/AtlantTelecom
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/.directory
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/AICOM
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/ARsystem
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/ASYS
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/ApexNet
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/BohemiaNet
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/Brailcom
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/CITYNET
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/Contactel
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/ES-servis
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/Econnect
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/Falco_computer
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/Fortech
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/HP-NET
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/INTERNET_OnLine
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/INTERNEXT
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/IQNET
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/KPNQuest
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/M-soft
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/Nextra
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/ProfiNet
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/SeverNET
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/Video_OnLine
+%%KPPP%%share/apps/kppp/Provider/Czech_Republic/Volny
+%%KPPP%%share/apps/kppp/Provider/Denmark/.directory
+%%KPPP%%share/apps/kppp/Provider/Denmark/Get2Net
+%%KPPP%%share/apps/kppp/Provider/France/.directory
+%%KPPP%%share/apps/kppp/Provider/France/ClubInternetFull
+%%KPPP%%share/apps/kppp/Provider/Germany/.directory
+%%KPPP%%share/apps/kppp/Provider/Germany/CityWeb
+%%KPPP%%share/apps/kppp/Provider/Germany/FH%032Rhein%032Sieg%032%040Informatik%041
+%%KPPP%%share/apps/kppp/Provider/Germany/MUC%046DE
+%%KPPP%%share/apps/kppp/Provider/Germany/Netsurf
+%%KPPP%%share/apps/kppp/Provider/Irland/.directory
+%%KPPP%%share/apps/kppp/Provider/Irland/Eircom
+%%KPPP%%share/apps/kppp/Provider/Irland/IOL
+%%KPPP%%share/apps/kppp/Provider/Netherlands/.directory
+%%KPPP%%share/apps/kppp/Provider/Netherlands/12Move
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Bart
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Betuwenet%032BFree
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Betuwenet%032BQuality
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Cistron
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Concepts%032ICT
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Cubic%032Circle
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Dataweb
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Daxis%032Internet
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Demon%032Internet
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Energis-Ision
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Euronet%032anytime
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Euronet%032professional
+%%KPPP%%share/apps/kppp/Provider/Netherlands/FlakkeeNet
+%%KPPP%%share/apps/kppp/Provider/Netherlands/FreeAcces
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Freeler%032basis
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Freeler%032compleet
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Freeler%032voordelig
+%%KPPP%%share/apps/kppp/Provider/Netherlands/HCC%032NET
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Hacom
+%%KPPP%%share/apps/kppp/Provider/Netherlands/HetNet%032Basis%032Surfen
+%%KPPP%%share/apps/kppp/Provider/Netherlands/HetNet%032Frequent%032Surfen
+%%KPPP%%share/apps/kppp/Provider/Netherlands/HetNet%032Regelmatig%032Surfen
+%%KPPP%%share/apps/kppp/Provider/Netherlands/IAE
+%%KPPP%%share/apps/kppp/Provider/Netherlands/ILimburg
+%%KPPP%%share/apps/kppp/Provider/Netherlands/InterNLnet
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Interbox
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Internet%032Acces%032Facilities
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Internet%032Online
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Interstroom
+%%KPPP%%share/apps/kppp/Provider/Netherlands/IntroWeb%032Hengelo%032EO
+%%KPPP%%share/apps/kppp/Provider/Netherlands/IntroWeb%032met%0323-cijferig%032kengetal
+%%KPPP%%share/apps/kppp/Provider/Netherlands/IntroWeb%032met%0324-cijferig%032kengetal
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Kabelfoon
+%%KPPP%%share/apps/kppp/Provider/Netherlands/KeyAcces%032met%0323%032cijferig%032kengetal
+%%KPPP%%share/apps/kppp/Provider/Netherlands/KeyAcces%032met%0324%032cijferig%032kengetal
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Luna
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Macom
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Nederland.net
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Planet%032Internet%032Premium
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Planet%032Internet%032Standaard
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Plant%032Acces
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Popin
+%%KPPP%%share/apps/kppp/Provider/Netherlands/PublishNet
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Raketnet
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Solcon
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Support%032Net
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Telebyte
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Tiscali%032Compleet
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Tiscali%032Gratis
+%%KPPP%%share/apps/kppp/Provider/Netherlands/UwNet
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Via%032Networks
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Wannadoo%032budget
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Wannadoo%032budget%320plus
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Wannadoo%032smartpack
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Wirehub
+%%KPPP%%share/apps/kppp/Provider/Netherlands/XS4All
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Zeelandnet
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Zon%0322
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Zon%032Gratis
+%%KPPP%%share/apps/kppp/Provider/Netherlands/Zon%032Inclusief
+%%KPPP%%share/apps/kppp/Provider/NewZealand/.directory
+%%KPPP%%share/apps/kppp/Provider/NewZealand/OrconInternet
+%%KPPP%%share/apps/kppp/Provider/NewZealand/Paradise
+%%KPPP%%share/apps/kppp/Provider/NewZealand/Voyager
+%%KPPP%%share/apps/kppp/Provider/NewZealand/XTRA
+%%KPPP%%share/apps/kppp/Provider/NewZealand/ihug
+%%KPPP%%share/apps/kppp/Provider/Norway/.directory
+%%KPPP%%share/apps/kppp/Provider/Norway/BGNett
+%%KPPP%%share/apps/kppp/Provider/Norway/Institutt%032for%032informatikk
+%%KPPP%%share/apps/kppp/Provider/Portugal/.directory
+%%KPPP%%share/apps/kppp/Provider/Portugal/Clix
+%%KPPP%%share/apps/kppp/Provider/Portugal/Netc
+%%KPPP%%share/apps/kppp/Provider/Portugal/OniNet
+%%KPPP%%share/apps/kppp/Provider/Slovenia/AmisNet
+%%KPPP%%share/apps/kppp/Provider/Slovenia/Arnes
+%%KPPP%%share/apps/kppp/Provider/Slovenia/Kiss
+%%KPPP%%share/apps/kppp/Provider/Slovenia/MojNet
+%%KPPP%%share/apps/kppp/Provider/Slovenia/SiOL
+%%KPPP%%share/apps/kppp/Provider/Slovenia/Volja
+%%KPPP%%share/apps/kppp/Provider/Sweden/.directory
+%%KPPP%%share/apps/kppp/Provider/Sweden/Tiscali
+%%KPPP%%share/apps/kppp/Provider/Sweden/Utfors
+%%KPPP%%share/apps/kppp/Provider/Switzerland/.directory
+%%KPPP%%share/apps/kppp/Provider/Switzerland/Bluewin
+%%KPPP%%share/apps/kppp/Provider/Taiwan/.directory
+%%KPPP%%share/apps/kppp/Provider/Taiwan/EraNet
+%%KPPP%%share/apps/kppp/Provider/Taiwan/HiNet
+%%KPPP%%share/apps/kppp/Provider/Taiwan/SeedNet
+%%KPPP%%share/apps/kppp/Provider/Ukraine/.directory
+%%KPPP%%share/apps/kppp/Provider/Ukraine/Adamant
+%%KPPP%%share/apps/kppp/Provider/Ukraine/IPTelecom
+%%KPPP%%share/apps/kppp/Provider/Ukraine/LifeEDGE
+%%KPPP%%share/apps/kppp/Provider/Ukraine/NuVse
+%%KPPP%%share/apps/kppp/Provider/United_Kingdom/.directory
+%%KPPP%%share/apps/kppp/Provider/United_Kingdom/Demon%032Green%0322120666
+%%KPPP%%share/apps/kppp/Provider/United_Kingdom/Demon%032Purple%0322121666
+%%KPPP%%share/apps/kppp/Provider/United_Kingdom/Demon%032Red%0320798666
+%%KPPP%%share/apps/kppp/Provider/United_Kingdom/FreeServe
+%%KPPP%%share/apps/kppp/Provider/United_Kingdom/UK%032Free%032Software%032Network%032ISDN
+%%KPPP%%share/apps/kppp/Provider/United_Kingdom/UK%032Free%032Software%032Network%032Modem
+%%KPPP%%share/apps/kppp/Provider/United_Kingdom/UKPOST%032ISDN
+%%KPPP%%share/apps/kppp/Provider/United_Kingdom/UKPOST%032Modem
+%%KPPP%%share/apps/kppp/Provider/United_Kingdom/UTV
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/041Net
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/BeoTelNet
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/CG.Bar.yu
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/CG.Berane.yu
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/CG.BijeloPolje.CG.yu
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/CG.Budva.yu
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/CG.Cetinje.yu
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/CG.HercegNovi.yu
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/CG.Kotor.yu
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/CG.Niksic.yu
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/CG.Pljevlja.yu
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/CG.Podgorica.yu
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/CG.Tivat.yu
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/CG.Ulcinj.yu
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/CG.yu
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/DrenikNet
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/EUnet@Full
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/EUnet@Lite
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/EUnetBeograd
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/EUnetCacak
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/EUnetKragujevac
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/EUnetNis
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/EUnetNoviSad
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/EUnetPristina
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/EUnetSombor
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/EUnetSubotica
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/InfoSKY
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/PTT
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/SCnet
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/Sezampro
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/SuOnline
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/TippNet
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/VeratNet
+%%KPPP%%share/apps/kppp/Provider/Yugoslavia/YUBCnet
+%%KPPP%%share/apps/kppp/Rules/Argentina/Argentina_0610.rst
+%%KPPP%%share/apps/kppp/Rules/Argentina/Argentina_Local.rst
+%%KPPP%%share/apps/kppp/Rules/Australia/Local.rst
+%%KPPP%%share/apps/kppp/Rules/Australia/Optus_Residential.rst
+%%KPPP%%share/apps/kppp/Rules/Australia/STD_Zone_1_-_25-50_kms.rst
+%%KPPP%%share/apps/kppp/Rules/Australia/STD_Zone_2_-_50-85_kms.rst
+%%KPPP%%share/apps/kppp/Rules/Australia/STD_Zone_3_-_85-165_kms.rst
+%%KPPP%%share/apps/kppp/Rules/Australia/STD_Zone_4_-_165+_kms.rst
+%%KPPP%%share/apps/kppp/Rules/Austria/Business_1/Local.rst
+%%KPPP%%share/apps/kppp/Rules/Austria/Business_1/Long_Distance.rst
+%%KPPP%%share/apps/kppp/Rules/Austria/Business_1/Online.rst
+%%KPPP%%share/apps/kppp/Rules/Austria/Business_2/Local.rst
+%%KPPP%%share/apps/kppp/Rules/Austria/Business_2/Long_Distance.rst
+%%KPPP%%share/apps/kppp/Rules/Austria/Business_2/Online.rst
+%%KPPP%%share/apps/kppp/Rules/Austria/Minimum/Local.rst
+%%KPPP%%share/apps/kppp/Rules/Austria/Minimum/Long_Distance.rst
+%%KPPP%%share/apps/kppp/Rules/Austria/Minimum/Online.rst
+%%KPPP%%share/apps/kppp/Rules/Austria/Standard/Local.rst
+%%KPPP%%share/apps/kppp/Rules/Austria/Standard/Long_Distance.rst
+%%KPPP%%share/apps/kppp/Rules/Austria/Standard/Online.rst
+%%KPPP%%share/apps/kppp/Rules/Austria/Standard/UTA_easyinternet.rst
+%%KPPP%%share/apps/kppp/Rules/Bangladesh/ATT00007.rst
+%%KPPP%%share/apps/kppp/Rules/Bangladesh/ATT00010.rst
+%%KPPP%%share/apps/kppp/Rules/Belgium/Belgium_internet_euro.rst
+%%KPPP%%share/apps/kppp/Rules/Belgium/Belgium_internet_frank.rst
+%%KPPP%%share/apps/kppp/Rules/Belgium/Belgium_interzonal.rst
+%%KPPP%%share/apps/kppp/Rules/Belgium/Belgium_zonal.rst
+%%KPPP%%share/apps/kppp/Rules/Bosnia_and_Herzegovina/BiHnet_-_home_-_bez_impulsa.rst
+%%KPPP%%share/apps/kppp/Rules/Bosnia_and_Herzegovina/BiHnet_-_student_-_bez_impulsa.rst
+%%KPPP%%share/apps/kppp/Rules/Bosnia_and_Herzegovina/SmartNet_PERSONAL_bez_impulsa.rst
+%%KPPP%%share/apps/kppp/Rules/Bosnia_and_Herzegovina/samo_impulsi.rst
+%%KPPP%%share/apps/kppp/Rules/Brasil/Brasil.rst
+%%KPPP%%share/apps/kppp/Rules/Brasil/Brasil_Ligbr.rst
+%%KPPP%%share/apps/kppp/Rules/Brasil/Rio_de_Janeiro.rst
+%%KPPP%%share/apps/kppp/Rules/Brasil/SaoPaulo.rst
+%%KPPP%%share/apps/kppp/Rules/Croatia/CARNet.rst
+%%KPPP%%share/apps/kppp/Rules/Czechia/Czech_Telecom_Internet_2004_Business_Internet.rst
+%%KPPP%%share/apps/kppp/Rules/Czechia/Czech_Telecom_Internet_2004_Home_Internet.rst
+%%KPPP%%share/apps/kppp/Rules/Czechia/Czech_Telecom_Internet_2004_telefon_a_Internet_180_+_660.rst
+%%KPPP%%share/apps/kppp/Rules/Czechia/Czech_Telecom_Internet_2004_telefon_a_Internet_90_+_300.rst
+%%KPPP%%share/apps/kppp/Rules/Czechia/Czech_Telecom_Internet_2004_telefon_universal.rst
+%%KPPP%%share/apps/kppp/Rules/Denmark/12Move_Analog.rst
+%%KPPP%%share/apps/kppp/Rules/Denmark/12Move_ISDN.rst
+%%KPPP%%share/apps/kppp/Rules/Denmark/Cybercity_Friabonnement.rst
+%%KPPP%%share/apps/kppp/Rules/Denmark/Get2net_Betaling.rst
+%%KPPP%%share/apps/kppp/Rules/Denmark/Get2net_Gratis.rst
+%%KPPP%%share/apps/kppp/Rules/Denmark/Mobilix_Wanadoo.rst
+%%KPPP%%share/apps/kppp/Rules/Denmark/Teledanmark_Basis.rst
+%%KPPP%%share/apps/kppp/Rules/Denmark/Teledanmark_Favoritinternet.rst
+%%KPPP%%share/apps/kppp/Rules/Denmark/Worldonline-Analog.rst
+%%KPPP%%share/apps/kppp/Rules/Denmark/Worldonline-ISDN.rst
+%%KPPP%%share/apps/kppp/Rules/Estonia/Eesti_Telefon.rst
+%%KPPP%%share/apps/kppp/Rules/Finland/VLP.rst
+%%KPPP%%share/apps/kppp/Rules/France/Cegetel_Local.rst
+%%KPPP%%share/apps/kppp/Rules/France/Cegetel_National.rst
+%%KPPP%%share/apps/kppp/Rules/France/France_Telecom_Internet.rst
+%%KPPP%%share/apps/kppp/Rules/France/France_Telecom_Local.rst
+%%KPPP%%share/apps/kppp/Rules/France/France_Telecom_National.rst
+%%KPPP%%share/apps/kppp/Rules/France/Le_9_Local.rst
+%%KPPP%%share/apps/kppp/Rules/France/Le_9_National.rst
+%%KPPP%%share/apps/kppp/Rules/France/OneTel.rst
+%%KPPP%%share/apps/kppp/Rules/France/Tele2_Local.rst
+%%KPPP%%share/apps/kppp/Rules/France/Tele2_National.rst
+%%KPPP%%share/apps/kppp/Rules/France/Wanadoo_Free.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/1und1_InternetZugang.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/2.5min.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/2.5s.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/AddCom_by_Call.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Addcom.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Arcor_Internet_by_Call_easy.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/CallOkaynet.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Callino_Surf_Basic.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Callino_Surf_Plus.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Callisa_City.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/City_Activ_Plus_Option.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Cityweb.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/CompuservePro.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/E-Plus-Online_Jedermann.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Easynet_easy-call.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Freenet_Enterprise.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Freenet_Sorglos.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Freenet_StandardTarif.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Freenet_Super_CbC.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Freenet_special_call_by_call.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/MSN.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Mobilcom_Freenet.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/NGI_Call_By_Call.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Netcom_Kassel.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Nikoma.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Nikoma_Internet_by_Call.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Nikoma_Study_and_Surf.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Planet-Interkom_Internet_by_call.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Puretec.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/Telekom_City_Select_5_30.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/VR-Web.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/expressnet.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/knUUt-by-Call.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/talkline_by_call.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/vossnet_fun.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/vossnet_fun_light.rst
+%%KPPP%%share/apps/kppp/Rules/Germany/vossnet_kompl.rst
+%%KPPP%%share/apps/kppp/Rules/Greece/Hellas_EPAK_Zone1_in_euro.rst
+%%KPPP%%share/apps/kppp/Rules/Greece/Hellas_EPAK_Zone2_in_euro.rst
+%%KPPP%%share/apps/kppp/Rules/Greece/Hellas_EPAK_local_in_euro.rst
+%%KPPP%%share/apps/kppp/Rules/Greece/Hellas_analog_local_in_euro.rst
+%%KPPP%%share/apps/kppp/Rules/Greece/Hellas_digital_local_in_euro.rst
+%%KPPP%%share/apps/kppp/Rules/Hong_Kong/Hong_Kong_Telecom.rst
+%%KPPP%%share/apps/kppp/Rules/Hungary/Local.rst
+%%KPPP%%share/apps/kppp/Rules/Hungary/LocalTop_MATAV.rst
+%%KPPP%%share/apps/kppp/Rules/Hungary/Local_MATAV.rst
+%%KPPP%%share/apps/kppp/Rules/Hungary/PapaTel.rst
+%%KPPP%%share/apps/kppp/Rules/Iceland/Iceland_general.rst
+%%KPPP%%share/apps/kppp/Rules/India/BSNL_Local.rst
+%%KPPP%%share/apps/kppp/Rules/India/BSNL_Long_101_To_200.rst
+%%KPPP%%share/apps/kppp/Rules/India/BSNL_Medium_51_To_100.rst
+%%KPPP%%share/apps/kppp/Rules/India/Vsnl_local.rst
+%%KPPP%%share/apps/kppp/Rules/Indonesia/Lokal_1_Metropolitan.rst
+%%KPPP%%share/apps/kppp/Rules/Indonesia/Lokal_2_Metropolitan.rst
+%%KPPP%%share/apps/kppp/Rules/Indonesia/Lokal_non_metropolitan.rst
+%%KPPP%%share/apps/kppp/Rules/Ireland/Eircom_Internet.rst
+%%KPPP%%share/apps/kppp/Rules/Ireland/Eircom_Local.rst
+%%KPPP%%share/apps/kppp/Rules/Ireland/Eircom_National.rst
+%%KPPP%%share/apps/kppp/Rules/Ireland/Eircom_Special.rst
+%%KPPP%%share/apps/kppp/Rules/Israel/Bezeq_Interurban.rst
+%%KPPP%%share/apps/kppp/Rules/Israel/Bezeq_Local.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Atlanet.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Cheapnet.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Infostrada_Internet_SpZero.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Infostrada_Libero1055_Base.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Infostrada_Libero1055_SpZero.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Infostrada_Loc_Reg_Naz_SpZero.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Infostrada_Locali_Base.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Infostrada_Reg_Naz_Base.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Tele2_Altri_ISP.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Tele2_Internet_Tele2.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Telecom_Interurbane_Fino15Km.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Telecom_Interurbane_Oltre15Km.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Telecom_Locali.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Teleconomy24_Internet.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Teleconomy24_Nazionali.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Teleconomy_NoStop_Internet.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Wind_24ore_Internet_AltriISP.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Wind_24ore_Internet_InWind.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Wind_24ore_Interurbane.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Wind_24ore_Urbane.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Wind_Family+SuperLight_Internet_InWind.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Wind_Family+SuperLight_Urbane_Interurbane.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Wind_Family_Internet_AltriISP.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Wind_Family_Internet_InWind.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Wind_Family_Interurbane.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Wind_Family_Urbane.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Wind_Flat_Internet_AltriISP.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Wind_Flat_Internet_InWind.rst
+%%KPPP%%share/apps/kppp/Rules/Italy/Wind_Urbana_1088_Light.rst
+%%KPPP%%share/apps/kppp/Rules/Jamaica/CWJ_InterParish.rst
+%%KPPP%%share/apps/kppp/Rules/Jamaica/CWJ_Local.rst
+%%KPPP%%share/apps/kppp/Rules/Japan/NTT_Local.rst
+%%KPPP%%share/apps/kppp/Rules/Kazakhstan/Akparat_Sprint.rst
+%%KPPP%%share/apps/kppp/Rules/Luxembourg/Local.rst
+%%KPPP%%share/apps/kppp/Rules/Macedonia/Macedonia_GenericISP_interurban.rst
+%%KPPP%%share/apps/kppp/Rules/Macedonia/Macedonia_GenericISP_local.rst
+%%KPPP%%share/apps/kppp/Rules/Macedonia/Macedonia_MTnet.rst
+%%KPPP%%share/apps/kppp/Rules/Malaysia/TMNet_Jaring.rst
+%%KPPP%%share/apps/kppp/Rules/Malaysia/malaysia.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/12Move.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/BelBasis_Buiten_Regio.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/BelBasis_Buiten_Regio_Nummervoordeel.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/BelBasis_Regio.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/BelBasis_Regio_Nummervoordeel.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/BelBudget_Buiten_Regio.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/BelBudget_Regio.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/BelPlus_Buiten_Regio.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/BelPlus_Regio.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/BelPlus_Regio_Nummervoordeel.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/Cistron
+%%KPPP%%share/apps/kppp/Rules/Netherlands/Freeler_Basis.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/Freeler_Voordelig.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/HetNet_Regelmatig_Surfen.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/InterNLnet.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/OneTel_Spaarstand_Buiten_Regio.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/OneTel_Spaarstand_Regio.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/OneTel_Toets_1658_Buiten_Regio.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/OneTel_Toets_1658_Regio.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/Planet_Internet.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/Priority_Telecom_Nationaal.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/Priority_Telecom_Regionaal.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/Tele2_Extra_Buiten_Regio.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/Tele2_Extra_Regio.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/Tele2_Preselect_Buiten_Regio.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/Tele2_Preselect_Regio.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/Tele2_Toets_1609_Buiten_Regio.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/Tele2_Toets_1609_Regio.rst
+%%KPPP%%share/apps/kppp/Rules/Netherlands/Wannadoo_Budget_Plus
+%%KPPP%%share/apps/kppp/Rules/Norway/Local_Area.rst
+%%KPPP%%share/apps/kppp/Rules/Norway/Long_Distance.rst
+%%KPPP%%share/apps/kppp/Rules/Norway/Netcom.rst
+%%KPPP%%share/apps/kppp/Rules/Poland/Internetia.rst
+%%KPPP%%share/apps/kppp/Rules/Poland/Netia_100km_Niebieska.rst
+%%KPPP%%share/apps/kppp/Rules/Poland/Netia_100km_Zielona.rst
+%%KPPP%%share/apps/kppp/Rules/Poland/Netia_Lokalne_Niebieska.rst
+%%KPPP%%share/apps/kppp/Rules/Poland/Netia_Lokalne_Zielona.rst
+%%KPPP%%share/apps/kppp/Rules/Poland/TPSA.rst
+%%KPPP%%share/apps/kppp/Rules/Poland/TP_100km.rst
+%%KPPP%%share/apps/kppp/Rules/Poland/TP_Lokalne.rst
+%%KPPP%%share/apps/kppp/Rules/Portugal/PT_Local.rst
+%%KPPP%%share/apps/kppp/Rules/Portugal/PT_Local_Ilhas.rst
+%%KPPP%%share/apps/kppp/Rules/Portugal/PT_Regional.rst
+%%KPPP%%share/apps/kppp/Rules/Portugal/PT_Regional_Ilhas.rst
+%%KPPP%%share/apps/kppp/Rules/Portugal/PT_YesNET.rst
+%%KPPP%%share/apps/kppp/Rules/Portugal/PT_YesNET_Ilhas.rst
+%%KPPP%%share/apps/kppp/Rules/Romania/Easynet.rst
+%%KPPP%%share/apps/kppp/Rules/Romania/RomTelecom_GSM.rst
+%%KPPP%%share/apps/kppp/Rules/Romania/Romtelecom_Acces_Special_Internet.rst
+%%KPPP%%share/apps/kppp/Rules/Romania/Romtelecom_Interjudetean.rst
+%%KPPP%%share/apps/kppp/Rules/Romania/Romtelecom_Local.rst
+%%KPPP%%share/apps/kppp/Rules/Romania/Zapp-Mobile.rst
+%%KPPP%%share/apps/kppp/Rules/Russia/TEMPLATE.ru
+%%KPPP%%share/apps/kppp/Rules/Russia/mtu-intel_standart.rst
+%%KPPP%%share/apps/kppp/Rules/Singapore/SingTel_Local.rst
+%%KPPP%%share/apps/kppp/Rules/Slovakia/Internetovy_tarif_019XY.rst
+%%KPPP%%share/apps/kppp/Rules/Slovakia/ST_medzimesto.rst
+%%KPPP%%share/apps/kppp/Rules/Slovakia/ST_mesto.rst
+%%KPPP%%share/apps/kppp/Rules/Slovenia/omrezje_0880.rst
+%%KPPP%%share/apps/kppp/Rules/Slovenia/omrezje_0889.rst
+%%KPPP%%share/apps/kppp/Rules/Slovenia/stacionarno_omrezje.rst
+%%KPPP%%share/apps/kppp/Rules/South_Africa/South_Africa_local.rst
+%%KPPP%%share/apps/kppp/Rules/South_Africa/South_Africa_long_distance.rst
+%%KPPP%%share/apps/kppp/Rules/South_Afrika/South_Afrika.rst
+%%KPPP%%share/apps/kppp/Rules/South_Afrika/South_Afrika_Justin.rst
+%%KPPP%%share/apps/kppp/Rules/Spain/Infovia.rst
+%%KPPP%%share/apps/kppp/Rules/Spain/Infovia_IVA.rst
+%%KPPP%%share/apps/kppp/Rules/Spain/Telefonica_Interprovincial.rst
+%%KPPP%%share/apps/kppp/Rules/Spain/Telefonica_Interprovincial_IVA.rst
+%%KPPP%%share/apps/kppp/Rules/Spain/Telefonica_Local.rst
+%%KPPP%%share/apps/kppp/Rules/Spain/Telefonica_Metropolitana.rst
+%%KPPP%%share/apps/kppp/Rules/Spain/Telefonica_Metropolitana_IVA.rst
+%%KPPP%%share/apps/kppp/Rules/Spain/Telefonica_Nacional.rst
+%%KPPP%%share/apps/kppp/Rules/Spain/Telefonica_Provincial.rst
+%%KPPP%%share/apps/kppp/Rules/Spain/Telefonica_Provincial_IVA.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/ACN.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Abonnera_com.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/CNEAB-Route66.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Crossnet-Affinity.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Glocalnet.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Gts.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Home_se.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Nemtel.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Plusenergi.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/RSLCom.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Rix_Telecom.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Supertel.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Svensk_Telekom.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Tele1_Europe.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Tele2.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Tele8.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Teleman.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Telenordia.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Telerian.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Telia.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Telia_Telebonus1.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Telia_Telebonus2.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Telitel.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Tiscali.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Transnet.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Universal_Telecom.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Utfors.rst
+%%KPPP%%share/apps/kppp/Rules/Sweden/Vattenfall.rst
+%%KPPP%%share/apps/kppp/Rules/Switzerland/Sunrise_Freetime.rst
+%%KPPP%%share/apps/kppp/Rules/Switzerland/Sunrise_Local.rst
+%%KPPP%%share/apps/kppp/Rules/Switzerland/Sunrise_Select_Internet.rst
+%%KPPP%%share/apps/kppp/Rules/Switzerland/Swisscom_Local.rst
+%%KPPP%%share/apps/kppp/Rules/Switzerland/Swisscom_Remote.rst
+%%KPPP%%share/apps/kppp/Rules/Switzerland/Swisscom_Surf.rst
+%%KPPP%%share/apps/kppp/Rules/TEMPLATE
+%%KPPP%%share/apps/kppp/Rules/Turkey/Turk_Telekom_Internet.rst
+%%KPPP%%share/apps/kppp/Rules/Ukraine/IPTelecom_hourly.rst
+%%KPPP%%share/apps/kppp/Rules/Ukraine/NuVse_hourly.rst
+%%KPPP%%share/apps/kppp/Rules/Ukraine/TEMPLATE.uk
+%%KPPP%%share/apps/kppp/Rules/Ukraine/Utel_Unet.rst
+%%KPPP%%share/apps/kppp/Rules/United_Kingdom/BirminghamCable_Local.rst
+%%KPPP%%share/apps/kppp/Rules/United_Kingdom/BirminghamCable_National.rst
+%%KPPP%%share/apps/kppp/Rules/United_Kingdom/BirminghamCable_SameTelco.rst
+%%KPPP%%share/apps/kppp/Rules/United_Kingdom/BritishTelecom_Local.rst
+%%KPPP%%share/apps/kppp/Rules/United_Kingdom/BritishTelecom_National.rst
+%%KPPP%%share/apps/kppp/Rules/United_Kingdom/BritishTelecom_Regional.rst
+%%KPPP%%share/apps/kppp/Rules/United_Kingdom/British_OneTel.rst
+%%KPPP%%share/apps/kppp/Rules/United_Kingdom/Connaught_Telecom.rst
+%%KPPP%%share/apps/kppp/Rules/Uruguay/Adinet_cIVA.rst
+%%KPPP%%share/apps/kppp/Rules/Yugoslavia/041_1xx_xxx.rst
+%%KPPP%%share/apps/kppp/Rules/Yugoslavia/041_2xx_xxx.rst
+%%KPPP%%share/apps/kppp/Rules/Yugoslavia/041_3xx_xxx.rst
+%%KPPP%%share/apps/kppp/Rules/Yugoslavia/041_4xx_xxx.rst
+%%KPPP%%share/apps/kppp/Rules/Yugoslavia/041_5xx_xxx.rst
+%%KPPP%%share/apps/kppp/Rules/Yugoslavia/041_9xx_xxx.rst
+%%KPPP%%share/apps/kppp/Rules/Yugoslavia/III_zona-preko_200km.rst
+%%KPPP%%share/apps/kppp/Rules/Yugoslavia/II_zona-do_200km.rst
+%%KPPP%%share/apps/kppp/Rules/Yugoslavia/I_zona-ista_mreza.rst
+%%KPPP%%share/apps/kppp/Rules/Yugoslavia/Lokalni_poziv.rst
+%%KPPP%%share/apps/kppp/pics/dock_both.png
+%%KPPP%%share/apps/kppp/pics/dock_left.png
+%%KPPP%%share/apps/kppp/pics/dock_none.png
+%%KPPP%%share/apps/kppp/pics/dock_right.png
+%%KPPP%%share/apps/kppp/pics/folder.png
+%%KPPP%%share/apps/kppp/pics/modemboth.png
+%%KPPP%%share/apps/kppp/pics/modemleft.png
+%%KPPP%%share/apps/kppp/pics/modemnone.png
+%%KPPP%%share/apps/kppp/pics/modemright.png
+%%KPPP%%share/apps/kppp/pics/phone.png
 share/apps/krdc/krdcui.rc
 share/apps/krdc/pics/pointcursor.png
 share/apps/krdc/pics/pointcursormask.png
@@ -1174,7 +1174,7 @@ share/dbus-1/interfaces/org.kde.Kopete.xml
 share/dbus-1/interfaces/org.kde.kdnssd.xml
 share/dbus-1/interfaces/org.kde.kopete.Client.xml
 share/dbus-1/interfaces/org.kde.kopete.Statistics.xml
-share/dbus-1/interfaces/org.kde.kppp.xml
+%%KPPP%%share/dbus-1/interfaces/org.kde.kppp.xml
 share/doc/HTML/en/kget/common
 share/doc/HTML/en/kget/fileopen.png
 share/doc/HTML/en/kget/index.cache.bz2
@@ -1191,35 +1191,35 @@ share/doc/HTML/en/kopete/index.docbook
 share/doc/HTML/en/kopete/menus.docbook
 share/doc/HTML/en/kopete/otr-auth-1.png
 share/doc/HTML/en/kopete/pipes.docbook
-share/doc/HTML/en/kppp/accounting.docbook
-share/doc/HTML/en/kppp/callback.docbook
-share/doc/HTML/en/kppp/chap.docbook
-share/doc/HTML/en/kppp/common
-share/doc/HTML/en/kppp/costsgraphs.png
-share/doc/HTML/en/kppp/dialog-setup.docbook
-share/doc/HTML/en/kppp/getting-online.docbook
-share/doc/HTML/en/kppp/global-settings.docbook
-share/doc/HTML/en/kppp/hayes.docbook
-share/doc/HTML/en/kppp/index.cache.bz2
-share/doc/HTML/en/kppp/index.docbook
-share/doc/HTML/en/kppp/kppp-account-accounting-tab.png
-share/doc/HTML/en/kppp/kppp-account-dial-tab.png
-share/doc/HTML/en/kppp/kppp-account-dns-tab.png
-share/doc/HTML/en/kppp/kppp-account-execute-tab.png
-share/doc/HTML/en/kppp/kppp-account-gateway-tab.png
-share/doc/HTML/en/kppp/kppp-account-ip-tab.png
-share/doc/HTML/en/kppp/kppp-account-login-script-tab.png
-share/doc/HTML/en/kppp/kppp-config.png
-share/doc/HTML/en/kppp/kppp-device-tab.png
-share/doc/HTML/en/kppp/kppp-dialler-tab.png
-share/doc/HTML/en/kppp/kppp-faq.docbook
-share/doc/HTML/en/kppp/kppp-graph-tab.png
-share/doc/HTML/en/kppp/kppp-misc-tab.png
-share/doc/HTML/en/kppp/kppp-modem-tab.png
-share/doc/HTML/en/kppp/kppp-wizard.png
-share/doc/HTML/en/kppp/security.docbook
-share/doc/HTML/en/kppp/tricks.docbook
-share/doc/HTML/en/kppp/wizard.docbook
+%%KPPP%%share/doc/HTML/en/kppp/accounting.docbook
+%%KPPP%%share/doc/HTML/en/kppp/callback.docbook
+%%KPPP%%share/doc/HTML/en/kppp/chap.docbook
+%%KPPP%%share/doc/HTML/en/kppp/common
+%%KPPP%%share/doc/HTML/en/kppp/costsgraphs.png
+%%KPPP%%share/doc/HTML/en/kppp/dialog-setup.docbook
+%%KPPP%%share/doc/HTML/en/kppp/getting-online.docbook
+%%KPPP%%share/doc/HTML/en/kppp/global-settings.docbook
+%%KPPP%%share/doc/HTML/en/kppp/hayes.docbook
+%%KPPP%%share/doc/HTML/en/kppp/index.cache.bz2
+%%KPPP%%share/doc/HTML/en/kppp/index.docbook
+%%KPPP%%share/doc/HTML/en/kppp/kppp-account-accounting-tab.png
+%%KPPP%%share/doc/HTML/en/kppp/kppp-account-dial-tab.png
+%%KPPP%%share/doc/HTML/en/kppp/kppp-account-dns-tab.png
+%%KPPP%%share/doc/HTML/en/kppp/kppp-account-execute-tab.png
+%%KPPP%%share/doc/HTML/en/kppp/kppp-account-gateway-tab.png
+%%KPPP%%share/doc/HTML/en/kppp/kppp-account-ip-tab.png
+%%KPPP%%share/doc/HTML/en/kppp/kppp-account-login-script-tab.png
+%%KPPP%%share/doc/HTML/en/kppp/kppp-config.png
+%%KPPP%%share/doc/HTML/en/kppp/kppp-device-tab.png
+%%KPPP%%share/doc/HTML/en/kppp/kppp-dialler-tab.png
+%%KPPP%%share/doc/HTML/en/kppp/kppp-faq.docbook
+%%KPPP%%share/doc/HTML/en/kppp/kppp-graph-tab.png
+%%KPPP%%share/doc/HTML/en/kppp/kppp-misc-tab.png
+%%KPPP%%share/doc/HTML/en/kppp/kppp-modem-tab.png
+%%KPPP%%share/doc/HTML/en/kppp/kppp-wizard.png
+%%KPPP%%share/doc/HTML/en/kppp/security.docbook
+%%KPPP%%share/doc/HTML/en/kppp/tricks.docbook
+%%KPPP%%share/doc/HTML/en/kppp/wizard.docbook
 share/doc/HTML/en/krdc/address_input.png
 share/doc/HTML/en/krdc/bookmarks_menu.png
 share/doc/HTML/en/krdc/common
@@ -1246,23 +1246,23 @@ share/doc/HTML/en/krfb/personal_invitation.png
 share/doc/HTML/en/krfb/screenshot.png
 share/icons/hicolor/128x128/apps/kget.png
 share/icons/hicolor/128x128/apps/kopete.png
-share/icons/hicolor/128x128/apps/kppp.png
+%%KPPP%%share/icons/hicolor/128x128/apps/kppp.png
 share/icons/hicolor/16x16/apps/kcmsambaconf.png
 share/icons/hicolor/16x16/apps/kget.png
 share/icons/hicolor/16x16/apps/kopete.png
-share/icons/hicolor/16x16/apps/kppp.png
+%%KPPP%%share/icons/hicolor/16x16/apps/kppp.png
 share/icons/hicolor/22x22/apps/kget.png
 share/icons/hicolor/22x22/apps/kopete.png
-share/icons/hicolor/22x22/apps/kppp.png
+%%KPPP%%share/icons/hicolor/22x22/apps/kppp.png
 share/icons/hicolor/32x32/apps/kget.png
 share/icons/hicolor/32x32/apps/kopete.png
-share/icons/hicolor/32x32/apps/kppp.png
+%%KPPP%%share/icons/hicolor/32x32/apps/kppp.png
 share/icons/hicolor/48x48/apps/kget.png
 share/icons/hicolor/48x48/apps/kopete.png
-share/icons/hicolor/48x48/apps/kppp.png
+%%KPPP%%share/icons/hicolor/48x48/apps/kppp.png
 share/icons/hicolor/64x64/apps/kget.png
 share/icons/hicolor/64x64/apps/kopete.png
-share/icons/hicolor/64x64/apps/kppp.png
+%%KPPP%%share/icons/hicolor/64x64/apps/kppp.png
 share/icons/hicolor/scalable/apps/kget.svgz
 share/icons/hicolor/scalable/apps/kopete.svgz
 share/icons/oxygen/128x128/actions/voicecall.png
@@ -1414,86 +1414,86 @@ share/sounds/Kopete_User_is_Online.ogg
 @dirrm share/kde4/services/kconfiguredialog
 @dirrm share/doc/HTML/en/krfb
 @dirrm share/doc/HTML/en/krdc
-@dirrm share/doc/HTML/en/kppp
+%%KPPP%%@dirrm share/doc/HTML/en/kppp
 @dirrm share/doc/HTML/en/kopete
 @dirrm share/doc/HTML/en/kget
 @dirrm share/apps/krfb
 @dirrm share/apps/krdc/pics
 @dirrm share/apps/krdc
-@dirrm share/apps/kppp/pics
-@dirrm share/apps/kppp/Rules/Yugoslavia
-@dirrm share/apps/kppp/Rules/Uruguay
-@dirrm share/apps/kppp/Rules/United_Kingdom
-@dirrm share/apps/kppp/Rules/Ukraine
-@dirrm share/apps/kppp/Rules/Turkey
-@dirrm share/apps/kppp/Rules/Switzerland
-@dirrm share/apps/kppp/Rules/Sweden
-@dirrm share/apps/kppp/Rules/Spain
-@dirrm share/apps/kppp/Rules/South_Afrika
-@dirrm share/apps/kppp/Rules/South_Africa
-@dirrm share/apps/kppp/Rules/Slovenia
-@dirrm share/apps/kppp/Rules/Slovakia
-@dirrm share/apps/kppp/Rules/Singapore
-@dirrm share/apps/kppp/Rules/Russia
-@dirrm share/apps/kppp/Rules/Romania
-@dirrm share/apps/kppp/Rules/Portugal
-@dirrm share/apps/kppp/Rules/Poland
-@dirrm share/apps/kppp/Rules/Norway
-@dirrm share/apps/kppp/Rules/Netherlands
-@dirrm share/apps/kppp/Rules/Malaysia
-@dirrm share/apps/kppp/Rules/Macedonia
-@dirrm share/apps/kppp/Rules/Luxembourg
-@dirrm share/apps/kppp/Rules/Kazakhstan
-@dirrm share/apps/kppp/Rules/Japan
-@dirrm share/apps/kppp/Rules/Jamaica
-@dirrm share/apps/kppp/Rules/Italy
-@dirrm share/apps/kppp/Rules/Israel
-@dirrm share/apps/kppp/Rules/Ireland
-@dirrm share/apps/kppp/Rules/Indonesia
-@dirrm share/apps/kppp/Rules/India
-@dirrm share/apps/kppp/Rules/Iceland
-@dirrm share/apps/kppp/Rules/Hungary
-@dirrm share/apps/kppp/Rules/Hong_Kong
-@dirrm share/apps/kppp/Rules/Greece
-@dirrm share/apps/kppp/Rules/Germany
-@dirrm share/apps/kppp/Rules/France
-@dirrm share/apps/kppp/Rules/Finland
-@dirrm share/apps/kppp/Rules/Estonia
-@dirrm share/apps/kppp/Rules/Denmark
-@dirrm share/apps/kppp/Rules/Czechia
-@dirrm share/apps/kppp/Rules/Croatia
-@dirrm share/apps/kppp/Rules/Brasil
-@dirrm share/apps/kppp/Rules/Bosnia_and_Herzegovina
-@dirrm share/apps/kppp/Rules/Belgium
-@dirrm share/apps/kppp/Rules/Bangladesh
-@dirrm share/apps/kppp/Rules/Austria/Standard
-@dirrm share/apps/kppp/Rules/Austria/Minimum
-@dirrm share/apps/kppp/Rules/Austria/Business_2
-@dirrm share/apps/kppp/Rules/Austria/Business_1
-@dirrm share/apps/kppp/Rules/Austria
-@dirrm share/apps/kppp/Rules/Australia
-@dirrm share/apps/kppp/Rules/Argentina
-@dirrm share/apps/kppp/Rules
-@dirrm share/apps/kppp/Provider/Yugoslavia
-@dirrm share/apps/kppp/Provider/United_Kingdom
-@dirrm share/apps/kppp/Provider/Ukraine
-@dirrm share/apps/kppp/Provider/Taiwan
-@dirrm share/apps/kppp/Provider/Switzerland
-@dirrm share/apps/kppp/Provider/Sweden
-@dirrm share/apps/kppp/Provider/Slovenia
-@dirrm share/apps/kppp/Provider/Portugal
-@dirrm share/apps/kppp/Provider/Norway
-@dirrm share/apps/kppp/Provider/NewZealand
-@dirrm share/apps/kppp/Provider/Netherlands
-@dirrm share/apps/kppp/Provider/Irland
-@dirrm share/apps/kppp/Provider/Germany
-@dirrm share/apps/kppp/Provider/France
-@dirrm share/apps/kppp/Provider/Denmark
-@dirrm share/apps/kppp/Provider/Czech_Republic
-@dirrm share/apps/kppp/Provider/Belarus
-@dirrm share/apps/kppp/Provider/Austria
-@dirrm share/apps/kppp/Provider
-@dirrm share/apps/kppp
+%%KPPP%%@dirrm share/apps/kppp/pics
+%%KPPP%%@dirrm share/apps/kppp/Rules/Yugoslavia
+%%KPPP%%@dirrm share/apps/kppp/Rules/Uruguay
+%%KPPP%%@dirrm share/apps/kppp/Rules/United_Kingdom
+%%KPPP%%@dirrm share/apps/kppp/Rules/Ukraine
+%%KPPP%%@dirrm share/apps/kppp/Rules/Turkey
+%%KPPP%%@dirrm share/apps/kppp/Rules/Switzerland
+%%KPPP%%@dirrm share/apps/kppp/Rules/Sweden
+%%KPPP%%@dirrm share/apps/kppp/Rules/Spain
+%%KPPP%%@dirrm share/apps/kppp/Rules/South_Afrika
+%%KPPP%%@dirrm share/apps/kppp/Rules/South_Africa
+%%KPPP%%@dirrm share/apps/kppp/Rules/Slovenia
+%%KPPP%%@dirrm share/apps/kppp/Rules/Slovakia
+%%KPPP%%@dirrm share/apps/kppp/Rules/Singapore
+%%KPPP%%@dirrm share/apps/kppp/Rules/Russia
+%%KPPP%%@dirrm share/apps/kppp/Rules/Romania
+%%KPPP%%@dirrm share/apps/kppp/Rules/Portugal
+%%KPPP%%@dirrm share/apps/kppp/Rules/Poland
+%%KPPP%%@dirrm share/apps/kppp/Rules/Norway
+%%KPPP%%@dirrm share/apps/kppp/Rules/Netherlands
+%%KPPP%%@dirrm share/apps/kppp/Rules/Malaysia
+%%KPPP%%@dirrm share/apps/kppp/Rules/Macedonia
+%%KPPP%%@dirrm share/apps/kppp/Rules/Luxembourg
+%%KPPP%%@dirrm share/apps/kppp/Rules/Kazakhstan
+%%KPPP%%@dirrm share/apps/kppp/Rules/Japan
+%%KPPP%%@dirrm share/apps/kppp/Rules/Jamaica
+%%KPPP%%@dirrm share/apps/kppp/Rules/Italy
+%%KPPP%%@dirrm share/apps/kppp/Rules/Israel
+%%KPPP%%@dirrm share/apps/kppp/Rules/Ireland
+%%KPPP%%@dirrm share/apps/kppp/Rules/Indonesia
+%%KPPP%%@dirrm share/apps/kppp/Rules/India
+%%KPPP%%@dirrm share/apps/kppp/Rules/Iceland
+%%KPPP%%@dirrm share/apps/kppp/Rules/Hungary
+%%KPPP%%@dirrm share/apps/kppp/Rules/Hong_Kong
+%%KPPP%%@dirrm share/apps/kppp/Rules/Greece
+%%KPPP%%@dirrm share/apps/kppp/Rules/Germany
+%%KPPP%%@dirrm share/apps/kppp/Rules/France
+%%KPPP%%@dirrm share/apps/kppp/Rules/Finland
+%%KPPP%%@dirrm share/apps/kppp/Rules/Estonia
+%%KPPP%%@dirrm share/apps/kppp/Rules/Denmark
+%%KPPP%%@dirrm share/apps/kppp/Rules/Czechia
+%%KPPP%%@dirrm share/apps/kppp/Rules/Croatia
+%%KPPP%%@dirrm share/apps/kppp/Rules/Brasil
+%%KPPP%%@dirrm share/apps/kppp/Rules/Bosnia_and_Herzegovina
+%%KPPP%%@dirrm share/apps/kppp/Rules/Belgium
+%%KPPP%%@dirrm share/apps/kppp/Rules/Bangladesh
+%%KPPP%%@dirrm share/apps/kppp/Rules/Austria/Standard
+%%KPPP%%@dirrm share/apps/kppp/Rules/Austria/Minimum
+%%KPPP%%@dirrm share/apps/kppp/Rules/Austria/Business_2
+%%KPPP%%@dirrm share/apps/kppp/Rules/Austria/Business_1
+%%KPPP%%@dirrm share/apps/kppp/Rules/Austria
+%%KPPP%%@dirrm share/apps/kppp/Rules/Australia
+%%KPPP%%@dirrm share/apps/kppp/Rules/Argentina
+%%KPPP%%@dirrm share/apps/kppp/Rules
+%%KPPP%%@dirrm share/apps/kppp/Provider/Yugoslavia
+%%KPPP%%@dirrm share/apps/kppp/Provider/United_Kingdom
+%%KPPP%%@dirrm share/apps/kppp/Provider/Ukraine
+%%KPPP%%@dirrm share/apps/kppp/Provider/Taiwan
+%%KPPP%%@dirrm share/apps/kppp/Provider/Switzerland
+%%KPPP%%@dirrm share/apps/kppp/Provider/Sweden
+%%KPPP%%@dirrm share/apps/kppp/Provider/Slovenia
+%%KPPP%%@dirrm share/apps/kppp/Provider/Portugal
+%%KPPP%%@dirrm share/apps/kppp/Provider/Norway
+%%KPPP%%@dirrm share/apps/kppp/Provider/NewZealand
+%%KPPP%%@dirrm share/apps/kppp/Provider/Netherlands
+%%KPPP%%@dirrm share/apps/kppp/Provider/Irland
+%%KPPP%%@dirrm share/apps/kppp/Provider/Germany
+%%KPPP%%@dirrm share/apps/kppp/Provider/France
+%%KPPP%%@dirrm share/apps/kppp/Provider/Denmark
+%%KPPP%%@dirrm share/apps/kppp/Provider/Czech_Republic
+%%KPPP%%@dirrm share/apps/kppp/Provider/Belarus
+%%KPPP%%@dirrm share/apps/kppp/Provider/Austria
+%%KPPP%%@dirrm share/apps/kppp/Provider
+%%KPPP%%@dirrm share/apps/kppp
 @dirrm share/apps/kopeterichtexteditpart
 @dirrm share/apps/kopete_yahoo
 @dirrm share/apps/kopete_wlm

@@ -1,5 +1,8 @@
 bin/skanlite
 share/applications/kde4/skanlite.desktop
+share/doc/HTML/de/skanlite/common
+share/doc/HTML/de/skanlite/index.cache.bz2
+share/doc/HTML/de/skanlite/index.docbook
 share/doc/HTML/en/skanlite/buttons-main.png
 share/doc/HTML/en/skanlite/choose-scanner.png
 share/doc/HTML/en/skanlite/common
@@ -28,6 +31,7 @@ share/locale/cs/LC_MESSAGES/skanlite.mo
 share/locale/da/LC_MESSAGES/skanlite.mo
 share/locale/de/LC_MESSAGES/skanlite.mo
 share/locale/el/LC_MESSAGES/skanlite.mo
+share/locale/en_GB/LC_MESSAGES/skanlite.mo
 share/locale/es/LC_MESSAGES/skanlite.mo
 share/locale/et/LC_MESSAGES/skanlite.mo
 share/locale/fr/LC_MESSAGES/skanlite.mo
@@ -47,6 +51,7 @@ share/locale/pl/LC_MESSAGES/skanlite.mo
 share/locale/pt/LC_MESSAGES/skanlite.mo
 share/locale/pt_BR/LC_MESSAGES/skanlite.mo
 share/locale/ro/LC_MESSAGES/skanlite.mo
+share/locale/ru/LC_MESSAGES/skanlite.mo
 share/locale/sk/LC_MESSAGES/skanlite.mo
 share/locale/sv/LC_MESSAGES/skanlite.mo
 share/locale/tr/LC_MESSAGES/skanlite.mo
@@ -58,3 +63,4 @@ share/locale/zh_TW/LC_MESSAGES/skanlite.mo
 @dirrm share/doc/HTML/sv/skanlite
 @dirrm share/doc/HTML/pt/skanlite
 @dirrm share/doc/HTML/en/skanlite
+@dirrm share/doc/HTML/de/skanlite

@@ -363,6 +363,47 @@ share/apps/kpovmodeler/kpovmodelerui.rc
 share/apps/kpovmodeler/povraydocmap.xml
 share/apps/kpovmodeler/questionmark.png
 share/dbus-1/interfaces/org.kde.kpovmodeler.xml
+share/doc/HTML/ca/kpovmodeler/common
+share/doc/HTML/ca/kpovmodeler/index.cache.bz2
+share/doc/HTML/ca/kpovmodeler/index.docbook
+share/doc/HTML/da/kpovmodeler/common
+share/doc/HTML/da/kpovmodeler/index.cache.bz2
+share/doc/HTML/da/kpovmodeler/index.docbook
+share/doc/HTML/de/kpovmodeler/common
+share/doc/HTML/de/kpovmodeler/defaultviewlayout.png
+share/doc/HTML/de/kpovmodeler/dockwidgettab.png
+share/doc/HTML/de/kpovmodeler/index.cache.bz2
+share/doc/HTML/de/kpovmodeler/index.docbook
+share/doc/HTML/de/kpovmodeler/insertaspopup.png
+share/doc/HTML/de/kpovmodeler/objectpropertiesview.png
+share/doc/HTML/de/kpovmodeler/objecttree.png
+share/doc/HTML/de/kpovmodeler/rendermodeoutput.png
+share/doc/HTML/de/kpovmodeler/rendermodequality.png
+share/doc/HTML/de/kpovmodeler/rendermodesize.png
+share/doc/HTML/de/kpovmodeler/rendermodesselection.png
+share/doc/HTML/de/kpovmodeler/rendermodestoolbar.png
+share/doc/HTML/de/kpovmodeler/renderwindow.png
+share/doc/HTML/de/kpovmodeler/texturepreview.png
+share/doc/HTML/de/kpovmodeler/tutorial01-camera-dialog.png
+share/doc/HTML/de/kpovmodeler/tutorial01-camera-graphic.png
+share/doc/HTML/de/kpovmodeler/tutorial01-ground-color-list.png
+share/doc/HTML/de/kpovmodeler/tutorial01-ground-pigment.png
+share/doc/HTML/de/kpovmodeler/tutorial01-ground-render.png
+share/doc/HTML/de/kpovmodeler/tutorial01-ground-solid-color-1.png
+share/doc/HTML/de/kpovmodeler/tutorial01-ground-solid-color-2.png
+share/doc/HTML/de/kpovmodeler/tutorial01-ground-wrong-colors-render.png
+share/doc/HTML/de/kpovmodeler/tutorial01-light-dialog.png
+share/doc/HTML/de/kpovmodeler/tutorial01-light-graphic.png
+share/doc/HTML/de/kpovmodeler/tutorial01-plane-dialog.png
+share/doc/HTML/de/kpovmodeler/tutorial01-plane-graphic.png
+share/doc/HTML/de/kpovmodeler/tutorial01-plane-tree-expanded.png
+share/doc/HTML/de/kpovmodeler/tutorial01-plane-tree-translate.png
+share/doc/HTML/de/kpovmodeler/tutorial01-sphere-dialog.png
+share/doc/HTML/de/kpovmodeler/tutorial01-sphere-finish-dialog.png
+share/doc/HTML/de/kpovmodeler/tutorial01-sphere-render-finish.png
+share/doc/HTML/de/kpovmodeler/tutorial01-sphere-render-nocolor.png
+share/doc/HTML/de/kpovmodeler/tutorial01-sphere-render-solidcolor.png
+share/doc/HTML/de/kpovmodeler/tutorial01-sphere-solid-color.png
 share/doc/HTML/en/kpovmodeler/cameraview.png
 share/doc/HTML/en/kpovmodeler/common
 share/doc/HTML/en/kpovmodeler/controlpoints.png
@@ -415,6 +456,69 @@ share/doc/HTML/en/kpovmodeler/tutorial01-sphere-render-finish.png
 share/doc/HTML/en/kpovmodeler/tutorial01-sphere-render-nocolor.png
 share/doc/HTML/en/kpovmodeler/tutorial01-sphere-render-solidcolor.png
 share/doc/HTML/en/kpovmodeler/tutorial01-sphere-solid-color.png
+share/doc/HTML/es/kpovmodeler/common
+share/doc/HTML/es/kpovmodeler/index.cache.bz2
+share/doc/HTML/es/kpovmodeler/index.docbook
+share/doc/HTML/et/kpovmodeler/common
+share/doc/HTML/et/kpovmodeler/index.cache.bz2
+share/doc/HTML/et/kpovmodeler/index.docbook
+share/doc/HTML/fr/kpovmodeler/common
+share/doc/HTML/fr/kpovmodeler/index.cache.bz2
+share/doc/HTML/fr/kpovmodeler/index.docbook
+share/doc/HTML/hu/kpovmodeler/common
+share/doc/HTML/hu/kpovmodeler/index.cache.bz2
+share/doc/HTML/hu/kpovmodeler/index.docbook
+share/doc/HTML/pt/kpovmodeler/common
+share/doc/HTML/pt/kpovmodeler/index.cache.bz2
+share/doc/HTML/pt/kpovmodeler/index.docbook
+share/doc/HTML/pt_BR/kpovmodeler/common
+share/doc/HTML/pt_BR/kpovmodeler/index.cache.bz2
+share/doc/HTML/pt_BR/kpovmodeler/index.docbook
+share/doc/HTML/ru/kpovmodeler/common
+share/doc/HTML/ru/kpovmodeler/index.cache.bz2
+share/doc/HTML/ru/kpovmodeler/index.docbook
+share/doc/HTML/sv/kpovmodeler/cameraview.png
+share/doc/HTML/sv/kpovmodeler/common
+share/doc/HTML/sv/kpovmodeler/controlpoints.png
+share/doc/HTML/sv/kpovmodeler/defaultviewlayout.png
+share/doc/HTML/sv/kpovmodeler/dockwidget.png
+share/doc/HTML/sv/kpovmodeler/dockwidgettab.png
+share/doc/HTML/sv/kpovmodeler/index.cache.bz2
+share/doc/HTML/sv/kpovmodeler/index.docbook
+share/doc/HTML/sv/kpovmodeler/insertaspopup.png
+share/doc/HTML/sv/kpovmodeler/objectpropertiesview.png
+share/doc/HTML/sv/kpovmodeler/objecttree.png
+share/doc/HTML/sv/kpovmodeler/rendermodeoutput.png
+share/doc/HTML/sv/kpovmodeler/rendermodequality.png
+share/doc/HTML/sv/kpovmodeler/rendermodesize.png
+share/doc/HTML/sv/kpovmodeler/rendermodesselection.png
+share/doc/HTML/sv/kpovmodeler/rendermodestoolbar.png
+share/doc/HTML/sv/kpovmodeler/renderwindow.png
+share/doc/HTML/sv/kpovmodeler/texturepreview.png
+share/doc/HTML/sv/kpovmodeler/topview.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-camera-dialog.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-camera-graphic.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-ground-color-list.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-ground-pigment.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-ground-render.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-ground-solid-color-1.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-ground-solid-color-2.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-ground-wrong-colors-render.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-light-dialog.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-light-graphic.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-plane-dialog.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-plane-graphic.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-plane-tree-expanded.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-plane-tree-translate.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-sphere-dialog.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-sphere-finish-dialog.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-sphere-render-finish.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-sphere-render-nocolor.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-sphere-render-solidcolor.png
+share/doc/HTML/sv/kpovmodeler/tutorial01-sphere-solid-color.png
+share/doc/HTML/uk/kpovmodeler/common
+share/doc/HTML/uk/kpovmodeler/index.cache.bz2
+share/doc/HTML/uk/kpovmodeler/index.docbook
 share/icons/hicolor/16x16/apps/kpovmodeler.png
 share/icons/hicolor/22x22/apps/kpovmodeler.png
 share/icons/hicolor/32x32/apps/kpovmodeler.png
@@ -445,6 +549,7 @@ share/locale/ga/LC_MESSAGES/kpovmodeler.mo
 share/locale/gl/LC_MESSAGES/kpovmodeler.mo
 share/locale/he/LC_MESSAGES/kpovmodeler.mo
 share/locale/hi/LC_MESSAGES/kpovmodeler.mo
+share/locale/hne/LC_MESSAGES/kpovmodeler.mo
 share/locale/hr/LC_MESSAGES/kpovmodeler.mo
 share/locale/hu/LC_MESSAGES/kpovmodeler.mo
 share/locale/is/LC_MESSAGES/kpovmodeler.mo
@@ -452,6 +557,7 @@ share/locale/it/LC_MESSAGES/kpovmodeler.mo
 share/locale/ja/LC_MESSAGES/kpovmodeler.mo
 share/locale/km/LC_MESSAGES/kpovmodeler.mo
 share/locale/lt/LC_MESSAGES/kpovmodeler.mo
+share/locale/mai/LC_MESSAGES/kpovmodeler.mo
 share/locale/mk/LC_MESSAGES/kpovmodeler.mo
 share/locale/ms/LC_MESSAGES/kpovmodeler.mo
 share/locale/nb/LC_MESSAGES/kpovmodeler.mo
@@ -485,9 +591,25 @@ share/locale/zh_TW/LC_MESSAGES/kpovmodeler.mo
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/nds/LC_MESSAGES
 @dirrmtry share/locale/nds
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
+@dirrmtry share/locale/hne/LC_MESSAGES
+@dirrmtry share/locale/hne
+@dirrm share/doc/HTML/uk/kpovmodeler
+@dirrm share/doc/HTML/sv/kpovmodeler
+@dirrm share/doc/HTML/ru/kpovmodeler
+@dirrm share/doc/HTML/pt_BR/kpovmodeler
+@dirrm share/doc/HTML/pt/kpovmodeler
+@dirrm share/doc/HTML/hu/kpovmodeler
+@dirrm share/doc/HTML/fr/kpovmodeler
+@dirrm share/doc/HTML/et/kpovmodeler
+@dirrm share/doc/HTML/es/kpovmodeler
 @dirrm share/doc/HTML/en/kpovmodeler
+@dirrm share/doc/HTML/de/kpovmodeler
+@dirrm share/doc/HTML/da/kpovmodeler
+@dirrm share/doc/HTML/ca/kpovmodeler
 @dirrm share/apps/kpovmodeler/icons/locolor/16x16/actions
 @dirrm share/apps/kpovmodeler/icons/locolor/16x16
 @dirrm share/apps/kpovmodeler/icons/locolor

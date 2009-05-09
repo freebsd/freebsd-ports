@@ -1,0 +1,7 @@
+bin/printer-applet
+share/apps/printer-applet/printer-applet-printers.ui
+share/apps/printer-applet/printer-applet.py
+share/apps/printer-applet/printer-applet.ui
+share/apps/printer-applet/printer-appletui.rc
+share/autostart/printer-applet.desktop
+@dirrm share/apps/printer-applet

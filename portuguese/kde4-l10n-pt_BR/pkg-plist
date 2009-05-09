@@ -1079,6 +1079,9 @@ share/doc/HTML/pt_BR/multisynk/common
 share/doc/HTML/pt_BR/multisynk/index.cache.bz2
 share/doc/HTML/pt_BR/multisynk/index.docbook
 share/doc/HTML/pt_BR/multisynk/konnectors-chapter.docbook
+share/doc/HTML/pt_BR/okular/common
+share/doc/HTML/pt_BR/okular/index.cache.bz2
+share/doc/HTML/pt_BR/okular/index.docbook
 share/doc/HTML/pt_BR/sonnet/common
 share/doc/HTML/pt_BR/sonnet/index.cache.bz2
 share/doc/HTML/pt_BR/sonnet/index.docbook
@@ -1342,6 +1345,7 @@ share/locale/pt_BR/LC_MESSAGES/kio_floppy.mo
 share/locale/pt_BR/LC_MESSAGES/kio_groupwise.mo
 share/locale/pt_BR/LC_MESSAGES/kio_help4.mo
 share/locale/pt_BR/LC_MESSAGES/kio_imap4.mo
+share/locale/pt_BR/LC_MESSAGES/kio_info.mo
 share/locale/pt_BR/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/pt_BR/LC_MESSAGES/kio_ldap.mo
 share/locale/pt_BR/LC_MESSAGES/kio_man.mo
@@ -1655,6 +1659,7 @@ share/locale/pt_BR/entry.desktop
 @dirrm share/doc/HTML/pt_BR/xsldbg
 @dirrm share/doc/HTML/pt_BR/umbrello
 @dirrm share/doc/HTML/pt_BR/sonnet
+@dirrm share/doc/HTML/pt_BR/okular
 @dirrm share/doc/HTML/pt_BR/multisynk
 @dirrm share/doc/HTML/pt_BR/lskat
 @dirrm share/doc/HTML/pt_BR/lokalize

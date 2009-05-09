@@ -193,7 +193,10 @@ share/locale/ro/LC_MESSAGES/kalzium_qt.mo
 share/locale/ro/LC_MESSAGES/kanagram.mo
 share/locale/ro/LC_MESSAGES/kapman.mo
 share/locale/ro/LC_MESSAGES/kappfinder.mo
+share/locale/ro/LC_MESSAGES/kapptemplate.mo
 share/locale/ro/LC_MESSAGES/kate.mo
+share/locale/ro/LC_MESSAGES/kate-ctags-plugin.mo
+share/locale/ro/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ro/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ro/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ro/LC_MESSAGES/katefiletemplates.mo
@@ -372,6 +375,7 @@ share/locale/ro/LC_MESSAGES/kio_fish.mo
 share/locale/ro/LC_MESSAGES/kio_floppy.mo
 share/locale/ro/LC_MESSAGES/kio_groupwise.mo
 share/locale/ro/LC_MESSAGES/kio_help4.mo
+share/locale/ro/LC_MESSAGES/kio_info.mo
 share/locale/ro/LC_MESSAGES/kio_imap4.mo
 share/locale/ro/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/ro/LC_MESSAGES/kio_ldap.mo
@@ -380,6 +384,7 @@ share/locale/ro/LC_MESSAGES/kio_mbox.mo
 share/locale/ro/LC_MESSAGES/kio_nepomuksearch.mo
 share/locale/ro/LC_MESSAGES/kio_nfs.mo
 share/locale/ro/LC_MESSAGES/kio_nntp.mo
+share/locale/ro/LC_MESSAGES/kio_perldoc.mo
 share/locale/ro/LC_MESSAGES/kio_pop3.mo
 share/locale/ro/LC_MESSAGES/kio_remote.mo
 share/locale/ro/LC_MESSAGES/kio_sftp.mo
@@ -437,6 +442,7 @@ share/locale/ro/LC_MESSAGES/kontactinterfaces.mo
 share/locale/ro/LC_MESSAGES/kopete.mo
 share/locale/ro/LC_MESSAGES/korganizer.mo
 share/locale/ro/LC_MESSAGES/kpackage.mo
+share/locale/ro/LC_MESSAGES/kpartloader.mo
 share/locale/ro/LC_MESSAGES/kpartsaver.mo
 share/locale/ro/LC_MESSAGES/kpasswdserver.mo
 share/locale/ro/LC_MESSAGES/kpat.mo
@@ -602,7 +608,9 @@ share/locale/ro/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/ro/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_incomingmsg.mo
+share/locale/ro/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_kolourpicker.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_launcher.mo
