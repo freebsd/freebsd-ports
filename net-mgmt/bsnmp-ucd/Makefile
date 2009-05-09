@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsnmp-ucd
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -23,5 +23,9 @@ MAN8=		bsnmp-ucd.8
 .if ${OSVERSION} < 601000
 IGNORE=	bsnmpd lack of realization on FreeBSD < 6.1
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "s/LOCALBASE/PREFIX/g" \
+		${WRKSRC}/Makefile
 
 .include <bsd.port.post.mk>
