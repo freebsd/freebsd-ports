@@ -25,6 +25,8 @@ RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		${SITE_PERL}/Net/SMTP/SSL.pm:${PORTSDIR}/mail/p5-Net-SMTP-SSL
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
+MAKE_JOBS_SAFE=	yes
+
 MAN1=		git.1 \
 		git-add.1 \
 		git-am.1 \

@@ -19,6 +19,7 @@ LIB_DEPENDS=	pcap.3:${PORTSDIR}/net/libpcap \
 
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
+MAKE_JOBS_SAFE=	yes
 
 # Compilation Options
 #

@@ -17,17 +17,18 @@ COMMENT=	A library for synced document buffers
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		net6:${PORTSDIR}/net/net6
 
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--without-howl
-USE_LDCONFIG=		yes
+MAKE_JOBS_SAFE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-howl
+USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_NLS)
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-USE_GETTEXT=		yes
-PLIST_SUB+=		NLS=""
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:

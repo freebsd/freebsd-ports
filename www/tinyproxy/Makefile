@@ -21,6 +21,7 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 		--with-config=${PREFIX}/etc/tinyproxy.conf \
 		--program-transform-name=""
+MAKE_JOBS_SAFE=	yes
 
 MAN8=		tinyproxy.8
 

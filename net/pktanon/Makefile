@@ -19,6 +19,7 @@ LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
+MAKE_JOBS_SAFE=	yes
 
 post-install:
 	${MKDIR} ${DATADIR}/profiles

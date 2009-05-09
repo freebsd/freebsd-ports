@@ -19,6 +19,7 @@ COMMENT=	A dungeon explorin', slashin', hackin' game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+MAKE_JOBS_SAFE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	GRAPHICS="${GRAPHICS}"
 PLIST_SUB=	HACKNAME="${HACKNAME}" \
@@ -37,6 +38,7 @@ USE_XORG=	xaw xpm
 GRAPHICS=	X11_GRAPHICS
 .else
 .if ${PKGNAMESUFFIX} == "-gnome"
+MAKE_JOBS_UNSAFE=	yes
 CATEGORIES=	games gnome
 USE_GNOME=	gnomelibs
 MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

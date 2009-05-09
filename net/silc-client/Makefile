@@ -30,6 +30,7 @@ COMMENT=	Secure Internet Live Conferencing (SILC) network client
 
 CONFLICTS=	silc-toolkit-1.1.* silc-irssi-plugin-1.1.*
 
+MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib12

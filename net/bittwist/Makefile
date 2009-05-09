@@ -16,6 +16,7 @@ COMMENT=	Libpcap-based Ethernet packet generator, with PCAP editor
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		bittwist.1 bittwistb.1 bittwiste.1
 PLIST_FILES=	bin/bittwist bin/bittwistb bin/bittwiste
