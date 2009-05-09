@@ -197,6 +197,7 @@
     SUBDIR += fyre
     SUBDIR += g2
     SUBDIR += g3dviewer
+    SUBDIR += gambas2-gb-gtk-svg
     SUBDIR += gauche-gl
     SUBDIR += gcolor
     SUBDIR += gcolor2
