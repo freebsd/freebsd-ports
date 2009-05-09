@@ -6,20 +6,27 @@
 #
 
 PORTNAME=	xaric
-PORTVERSION=	0.13.2
+PORTVERSION=	0.13.5
 CATEGORIES=	irc
-MASTER_SITES=	http://rf.cx/software/xaric/releases/
+MASTER_SITES=	http://xaric.org/software/xaric/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC Client similer to BitchX or ircII
 
+USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		xaric.1
+PLIST_FILES=	bin/xaric \
+		%%DATADIR%%/help/copying \
+		%%DATADIR%%/help/help \
+		%%DATADIR%%/help/warranty
+PLIST_DIRS=	%%DATADIR%%/help \
+		%%DATADIR%%
 
 post-patch:
-	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-ggdb3||g' ${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xaric ${PREFIX}/bin
