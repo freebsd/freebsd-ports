@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+lib/gambas2/gb.crypt.so.0
+lib/gambas2/gb.crypt.so
+lib/gambas2/gb.crypt.la
+lib/gambas2/gb.crypt.component
+%%DATADIR%%/info/gb.crypt.info
+%%DATADIR%%/info/gb.crypt.list
+@dirrmtry lib/gambas2
+@dirrmtry %%DATADIR%%/info
+@dirrmtry %%DATADIR%%

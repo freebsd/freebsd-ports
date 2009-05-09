@@ -151,6 +151,7 @@
     SUBDIR += fwlogwatch
     SUBDIR += fwtk
     SUBDIR += gag
+    SUBDIR += gambas2-gb-crypt
     SUBDIR += gcipher
     SUBDIR += gnome-gpg
     SUBDIR += gnome-keyring
