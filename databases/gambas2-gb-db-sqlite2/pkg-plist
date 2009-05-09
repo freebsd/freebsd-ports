@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+lib/gambas2/gb.db.sqlite2.so.0
+lib/gambas2/gb.db.sqlite2.so
+lib/gambas2/gb.db.sqlite2.la
+@dirrmtry lib/gambas2
