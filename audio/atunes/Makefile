@@ -7,6 +7,7 @@
 
 PORTNAME=	atunes
 PORTVERSION=	1.13.0
+PORTREVISION=	1
 CATEGORIES=	audio java
 MASTER_SITES=	SF
 DISTNAME=	aTunes_${PORTVERSION}
@@ -21,20 +22,34 @@ SUB_FILES=	atunes
 
 WRKSRC=		${WRKDIR}/aTunes
 
-OPTIONS=	CDDA2WAV "Ripper:  Enable cdrtools support" on \
+OPTIONS=	MPLAYER "Engine:  Use Mplayer" on \
+		XINE "Engine:  Use Xine" off \
+		CDDA2WAV "Ripper:  Enable cdrtools support" on \
 		LAME "Encoder: Enable lame MP3 encoder" on \
 		VORBIS "Encoder: Enable vorbis OGG encoder" on \
 		FLAC "Encoder: Enable FLAC encoder" off
 
 .include <bsd.port.pre.mk>
 
+pre-everything::
+.if !defined(WITH_MPLAYER) && !defined(WITH_XINE)
+	@${ECHO_MSG} "You need to select at least one engine, mplayer or xine!"
+	@${FALSE}
+.endif
+
+.if defined(WITH_MPLAYER)
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
+.endif
+
+.if defined(WITH_XINE)
+RUN_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
+.endif
 
 .if defined(WITH_CDDA2WAV)
 USE_CDRTOOLS=	yes
 .endif
 
-.if !defined(WITHOUT_LAME)
+.if defined(WITH_LAME)
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
 
@@ -57,6 +72,8 @@ INSTALL_FILES=	aTunes.ico aTunes.jar build.properties changelog.txt \
 		extendedLog.properties license.txt log4j.properties \
 		presets.properties shortcutSpec.xml
 
+PIXMAPS=	atunes125.png
+
 do-install:
 	@${MKDIR} ${DATADIR}
 	@${MKDIR} ${DATADIR}/lib
@@ -64,7 +81,7 @@ do-install:
 	@${MKDIR} ${DATADIR}/translations
 	${INSTALL_SCRIPT} ${WRKDIR}/atunes ${PREFIX}/bin
 .for file in ${INSTALL_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}/${file}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}/${file}
 .endfor
 	cd ${WRKSRC} && ${FIND} translations -type f -exec ${INSTALL_DATA} {} \
 		${DATADIR}/{} \;
@@ -72,5 +89,9 @@ do-install:
 		${DATADIR}/{} \;
 	cd ${WRKSRC} && ${FIND} settings -type f -exec ${INSTALL_DATA} {} \
 		${DATADIR}/{} \;
+	@${MKDIR} ${PREFIX}/share/pixmaps
+.for file in ${PIXMAPS}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/pixmaps
+.endfor
 
 .include <bsd.port.post.mk>
