@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.5.8
+PORTVERSION=	1.5.9
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
 		http://ftp.stack.nl/pub/users/dimitri/
