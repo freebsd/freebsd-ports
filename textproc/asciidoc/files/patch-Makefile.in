@@ -1,17 +1,16 @@
---- Makefile.in.orig	2009-04-24 21:18:33.542877821 +0200
-+++ Makefile.in	2009-04-24 21:19:04.433196893 +0200
-@@ -4,10 +4,6 @@
+--- Makefile.in.orig	2009-05-08 23:41:23.568145042 +0200
++++ Makefile.in	2009-05-08 23:41:57.495396294 +0200
+@@ -4,9 +4,6 @@
  
  .NOTPARALLEL:
  
 -INSTALL = @INSTALL@
 -INSTALL_PROG = @INSTALL_PROGRAM@
 -INSTALL_DATA = @INSTALL_DATA@
--
+ PACKAGE_TARNAME = @PACKAGE_TARNAME@
  SED = @SED@
  
- prefix = @prefix@
-@@ -90,7 +86,7 @@
+@@ -90,7 +87,7 @@
  	$(INSTALL) -d $(DESTDIR)/$($@)
  
  $(PROGTARGETS): % : %dir
@@ -20,7 +19,7 @@
  
  $(DATATARGETS): % : %dir
  	$(INSTALL_DATA) $($@) $(DESTDIR)/$($<)/
-@@ -147,7 +143,7 @@
+@@ -147,7 +144,7 @@
  
  build: fixconfpath
  
