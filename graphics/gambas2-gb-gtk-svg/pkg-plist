@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+lib/gambas2/gb.gtk.svg.component
+lib/gambas2/gb.gtk.svg.so.0
+lib/gambas2/gb.gtk.svg.so
+lib/gambas2/gb.gtk.svg.la
+%%DATADIR%%/info/gb.gtk.svg.info
+%%DATADIR%%/info/gb.gtk.svg.list
+@dirrmtry lib/gambas2
+@dirrmtry %%DATADIR%%/info
+@dirrmtry %%DATADIR%%
