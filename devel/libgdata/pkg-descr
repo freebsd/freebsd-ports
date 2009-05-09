@@ -1,0 +1,8 @@
+libgdata is a GLib-based library for accessing online service APIs using the
+GData protocol - most notably, Google's services. It provides APIs to access
+the common Google services, and has full asynchronous support. 
+
+A link with more information about the GData protocol is available on the 
+website.
+
+WWW: http://live.gnome.org/libgdata
