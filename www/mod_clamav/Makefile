@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_clamav
-PORTVERSION=	0.22
-PORTREVISION=	4
+PORTVERSION=	0.23
 CATEGORIES=	www security
 MASTER_SITES=	http://software.othello.ch/mod_clamav/ \
 		http://www.kommunity.net/download/mod_clamav/
@@ -16,7 +15,7 @@ MAINTAINER=	tmueko@kommunity.net
 COMMENT=	Scans content delivered by the Apache20 proxy module for viruses
 
 USE_AUTOTOOLS=	libtool:15
-USE_APACHE=	2.0
+USE_APACHE=	2.2
 GNU_CONFIGURE=	yes
 
 .if defined(WITH_CLAMAVDEVEL)
@@ -35,6 +34,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib \
 		${PTHREAD_LIBS}
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,REG_EXTENDED,AP_REG_EXTENDED,' \
+		${WRKSRC}/config.c
+	@${REINPLACE_CMD} -e '/^AC_CHECK_HEADERS/ s,regex.h ,,g' \
+		${WRKSRC}/configure.in
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
