@@ -44,6 +44,7 @@
     SUBDIR += automounter
     SUBDIR += autopsy
     SUBDIR += avfs
+    SUBDIR += b43-fwcutter
     SUBDIR += bacula-bat
     SUBDIR += bacula-client
     SUBDIR += bacula-client-devel
