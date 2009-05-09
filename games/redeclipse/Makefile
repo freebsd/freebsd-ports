@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sauerbraten
-PORTVERSION=	20080617
+PORTVERSION=	20090504
 CATEGORIES=	games
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}_2008_06_17_ctf_edition_linux
+DISTNAME=	${PORTNAME}_2009_05_04_trooper_edition_linux
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	First person shooter based on Cube
@@ -22,6 +22,7 @@ CONFIGURE_WRKSRC=	${WRKSRC}/src/enet
 BUILD_WRKSRC=	${WRKSRC}/src
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	libenet
+MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 
