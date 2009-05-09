@@ -6,39 +6,33 @@
 #
 
 PORTNAME=	gsk
-PORTVERSION=	1.0.57
-PORTREVISION=	1
+PORTVERSION=	1.0.63
 CATEGORIES=	net devel
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library for writing servers
 
-USE_GNOME=	glib20 gnomehack gnometarget
-GNU_CONFIGURE=	yes
+USE_GNOME=	glib20 gnomehack
+USE_OPENSSL=	yes
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ARGS=	--disable-gtk-doc
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS+=	--disable-gtk-doc
-
-PORTDOCS=	*
-
-.if defined(WITHOUT_OPENSSL)
-CONFIGURE_ARGS+=	--disable-ssl
-PLIST_SUB+=	OPENSSL="@comment "
-.else
-USE_OPENSSL=	yes
-PLIST_SUB+=	OPENSSL=""
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|^\(HTML_DIR\).*|\1 = ${PREFIX}/share/doc|' \
-		${WRKSRC}/doc/Makefile.in
-	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|programs tests||' \
-		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIRS/s|doc||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIRS/s|programs tests||' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|fread_unlocked|fread|' ${WRKSRC}/src/gsktable-flat.c
 
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|^\(SUBDIRS = \).*|\1 src|' \
-		${WRKSRC}/Makefile.in
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/html/*.css ${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/html/*.html ${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/html/*.png ${DOCSDIR}/html
 .endif
 
 .include <bsd.port.mk>

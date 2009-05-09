@@ -62,6 +62,7 @@ include/gsk-1.0/gsk/gskstreamqueue.h
 include/gsk-1.0/gsk/gskstreamtransferrequest.h
 include/gsk-1.0/gsk/gskstreamwatchdog.h
 include/gsk-1.0/gsk/gskstringmatcher.h
+include/gsk-1.0/gsk/gsktable.h
 include/gsk-1.0/gsk/gskthreadpool.h
 include/gsk-1.0/gsk/gsktree.h
 include/gsk-1.0/gsk/gsktypes.h
@@ -78,9 +79,9 @@ include/gsk-1.0/gsk/mime/gskmimeencodings.h
 include/gsk-1.0/gsk/mime/gskmimemultipartdecoder.h
 include/gsk-1.0/gsk/mime/gskmimemultipartencoder.h
 include/gsk-1.0/gsk/mime/gskmimemultipartpiece.h
-%%OPENSSL%%include/gsk-1.0/gsk/ssl/gskopensslbiostream.h
-%%OPENSSL%%include/gsk-1.0/gsk/ssl/gskstreamlistenerssl.h
-%%OPENSSL%%include/gsk-1.0/gsk/ssl/gskstreamssl.h
+include/gsk-1.0/gsk/ssl/gskopensslbiostream.h
+include/gsk-1.0/gsk/ssl/gskstreamlistenerssl.h
+include/gsk-1.0/gsk/ssl/gskstreamssl.h
 include/gsk-1.0/gsk/store/gskasynccache.h
 include/gsk-1.0/gsk/store/gskfilestreammap.h
 include/gsk-1.0/gsk/store/gskgtypeloader.h
@@ -105,11 +106,106 @@ lib/libgsk-1.0.la
 lib/libgsk-1.0.so
 lib/libgsk-1.0.so.0
 libdata/pkgconfig/gsk-1.0.pc
+%%PORTDOCS%%%%DOCSDIR%%/html/GskHttpClient.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskHttpHeader.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskHttpRequest.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskHttpResponse.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskHttpServer.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskIO.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskMainLoop.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskMainLoopDevPoll.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskMainLoopKqueue.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskMainLoopPoll.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskMainLoopPollBase.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskMainLoopSelect.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskPacketQueue.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskPacketQueueFd.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskSocketAddress.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskStream.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskStreamFd.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskStreamListener.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskStreamListenerSocket.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskUrl.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskUrlTransfer.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GskUrlTransferHttp.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch01.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch02.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch03.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch04.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch05.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch06.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch07.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch08.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch09.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch10.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch11.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch12.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch13.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch14.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch15.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch16.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-GskMimeMultipartDecoder.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-GskStreamExternal.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-GskStreamQueue.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-GskXmlrpcStream.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-GskZlibDeflator.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-GskZlibInflator.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskbase64.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskbuffer.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskbufferstream.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskdate.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskdebug.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskdns.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskdnsclient.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskdnslocalresolver.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskdnsresolver.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskdnsrrcache.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskdnsserver.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskerrno.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskerror.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskfork.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskghelpers.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskhash.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskhook.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskinit.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gsklistmacros.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gsklog.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskmacros.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskmain.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskmemory.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskmempool.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskmimemultipartpiece.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gsknameresolver.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gsknetworkinterface.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskpacket.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskqsortmacro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskrbtreemacros.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskstreamclient.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskstreamconnection.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskstreamssl.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gsktree.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gsktypes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskutils.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskxmlrpc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gsk-gskzlib.html
+%%PORTDOCS%%%%DOCSDIR%%/html/home.png
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/left.png
+%%PORTDOCS%%%%DOCSDIR%%/html/right.png
+%%PORTDOCS%%%%DOCSDIR%%/html/style.css
+%%PORTDOCS%%%%DOCSDIR%%/html/tutorial-client.html
+%%PORTDOCS%%%%DOCSDIR%%/html/tutorial-debugging-hints.html
+%%PORTDOCS%%%%DOCSDIR%%/html/tutorial-httpclient.html
+%%PORTDOCS%%%%DOCSDIR%%/html/tutorial-httpserver.html
+%%PORTDOCS%%%%DOCSDIR%%/html/tutorial-server.html
+%%PORTDOCS%%%%DOCSDIR%%/html/up.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/gsk-1.0/gsk/zlib
 @dirrm include/gsk-1.0/gsk/xmlrpc
 @dirrm include/gsk-1.0/gsk/url
 @dirrm include/gsk-1.0/gsk/store
-%%OPENSSL%%@dirrm include/gsk-1.0/gsk/ssl
+@dirrm include/gsk-1.0/gsk/ssl
 @dirrm include/gsk-1.0/gsk/mime
 @dirrm include/gsk-1.0/gsk/http
 @dirrm include/gsk-1.0/gsk/hash
