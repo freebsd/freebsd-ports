@@ -6,38 +6,42 @@
 #
 
 PORTNAME=	homebank
-PORTVERSION=	4.0.2
+PORTVERSION=	4.0.3
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manage your personal accounts at home
 
-USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gtk20 desktopfileutils librsvg2
+OPTIONS=	OFX "Enable libOFX support" on
+
+USE_GNOME=	desktopfileutils gnomehier gtk20 librsvg2
 USE_GETTEXT=	yes
-INSTALLS_ICONS=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+INSTALLS_ICONS=	yes
 
-DOCS=		AUTHORS COPYING ChangeLog NEWS README
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.if !defined(WITHOUT_OFX)
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_OFX)
+CONFIGURE_ARGS+=--without-ofx
+.else
 LIB_DEPENDS+=	ofx.4:${PORTSDIR}/finance/libofx
 CONFIGURE_ARGS+=--with-ofx
-.else
-CONFIGURE_ARGS+=--without-ofx
 .endif
 
 post-install:
-.ifndef (NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.for file in AUTHORS ChangeLog NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 	@-update-desktop-database
 	@-update-mime-database ${PREFIX}/share/mime
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
