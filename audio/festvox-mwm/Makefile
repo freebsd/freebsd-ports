@@ -20,6 +20,9 @@ COMMENT=	American English male voice for Festival
 
 RESTRICTED=	no-commercial-use
 
+DEPRECATED=	unfulfilled dependencies for 8+ months, no maintainer, no user interest
+EXPIRATION_DATE=2009-06-09
+
 RUN_DEPENDS=	\
 ${PREFIX}/share/festival/lib/ogi_token.scm:${PORTSDIR}/audio/festival+OGI \
 		${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${PORTSDIR}/audio/festlex-poslex \
