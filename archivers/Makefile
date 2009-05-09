@@ -28,6 +28,7 @@
     SUBDIR += freetar
     SUBDIR += freeze
     SUBDIR += gambas2-gb-compress-bzlib2
+    SUBDIR += gambas2-gb-compress-zlib
     SUBDIR += grzip
     SUBDIR += gtar
     SUBDIR += gzip

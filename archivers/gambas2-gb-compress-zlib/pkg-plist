@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+lib/gambas2/gb.compress.zlib.so.0
+lib/gambas2/gb.compress.zlib.so
+lib/gambas2/gb.compress.zlib.la
+@dirrmtry lib/gambas2
