@@ -3,7 +3,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/web/LICENSE
+%%DATADIR%%/web/images/buttons/file_priority_buttons.png
+%%DATADIR%%/web/images/buttons/file_wanted_buttons.png
 %%DATADIR%%/web/images/buttons/info_activity.png
+%%DATADIR%%/web/images/buttons/info_files.png
 %%DATADIR%%/web/images/buttons/info_general.png
 %%DATADIR%%/web/images/buttons/tab_backgrounds.png
 %%DATADIR%%/web/images/buttons/toolbar_buttons.png
@@ -22,7 +25,6 @@
 %%DATADIR%%/web/javascript/common.js
 %%DATADIR%%/web/javascript/dialog.js
 %%DATADIR%%/web/javascript/jquery/jquery.contextmenu.min.js
-%%DATADIR%%/web/javascript/jquery/jquery.dimensions.min.js
 %%DATADIR%%/web/javascript/jquery/jquery.form.min.js
 %%DATADIR%%/web/javascript/jquery/jquery.min.js
 %%DATADIR%%/web/javascript/jquery/jquery.transmenu.min.js

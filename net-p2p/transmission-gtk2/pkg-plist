@@ -11,6 +11,8 @@ share/icons/hicolor/32x32/apps/transmission.png
 share/icons/hicolor/48x48/apps/transmission.png
 share/icons/hicolor/scalable/apps/transmission.svg
 share/locale/ar/LC_MESSAGES/transmission.mo
+share/locale/ast/LC_MESSAGES/transmission.mo
+share/locale/be@latin/LC_MESSAGES/transmission.mo
 share/locale/bg/LC_MESSAGES/transmission.mo
 share/locale/br/LC_MESSAGES/transmission.mo
 share/locale/ca/LC_MESSAGES/transmission.mo
@@ -76,6 +78,10 @@ share/pixmaps/transmission.png
 @dirrmtry share/locale/kk
 @dirrmtry share/locale/ckb/LC_MESSAGES
 @dirrmtry share/locale/ckb
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
