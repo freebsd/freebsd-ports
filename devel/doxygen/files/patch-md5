@@ -14,15 +14,18 @@ diff -ruN src/definition.cpp src/definition.cpp
  #include <md5.h>
  #include <stdio.h>
  #include <stdlib.h>
-@@ -352,10 +353,8 @@
+@@ -363,13 +364,11 @@
  
  bool Definition::_docsAlreadyAdded(const QString &doc)
  {
 -  uchar md5_sig[16];
    QCString sigStr(33);
--  MD5Buffer((const unsigned char *)doc.data(),doc.length(),md5_sig);
+   // to avoid mismatches due to differences in indenting, we first remove
+   // double whitespaces...
+   QCString docStr = doc.simplifyWhiteSpace();
+-  MD5Buffer((const unsigned char *)docStr.data(),docStr.length(),md5_sig);
 -  MD5SigToString(md5_sig,sigStr.data(),33);
-+  MD5Data((const unsigned char*)doc.data(),doc.length(),sigStr.data());
++  MD5Data((const unsigned char*)docStr.data(),docStr.length(),sigStr.data());
    if (m_impl->docSignatures.find(sigStr)==-1) // new docs, add signature to prevent re-adding it
    {
      m_impl->docSignatures+=":"+sigStr;
