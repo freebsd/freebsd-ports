@@ -243,9 +243,9 @@ lib/gnumeric/%%VERSION%%/plugins/uihello/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xbase/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xbase/xbase.la
 lib/gnumeric/%%VERSION%%/plugins/xbase/xbase.so
-lib/goffice/0.7.5/plugins/gnumeric/gnumeric.la
-lib/goffice/0.7.5/plugins/gnumeric/gnumeric.so
-lib/goffice/0.7.5/plugins/gnumeric/plugin.xml
+lib/goffice/0.7.6/plugins/gnumeric/gnumeric.la
+lib/goffice/0.7.6/plugins/gnumeric/gnumeric.so
+lib/goffice/0.7.6/plugins/gnumeric/plugin.xml
 lib/libspreadsheet-%%VERSION%%.so
 lib/libspreadsheet.la
 lib/libspreadsheet.so
