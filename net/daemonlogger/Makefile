@@ -17,6 +17,7 @@ LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	daemonlogger.sh
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/daemonlogger
 

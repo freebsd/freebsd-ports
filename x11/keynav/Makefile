@@ -19,6 +19,7 @@ ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/keynav
 PORTEXAMPLES=	keynavrc
+MAKE_JOBS_SAFE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/keynav ${PREFIX}/bin

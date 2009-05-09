@@ -21,5 +21,6 @@ GNU_CONFIGURE=	yes
 USE_XORG=	xt sm ice xext x11
 MAN1=		xdaliclock.1
 PLIST_FILES=	bin/xdaliclock
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

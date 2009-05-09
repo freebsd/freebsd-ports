@@ -20,6 +20,7 @@ MAKEFILE=	makefile
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	default
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	include/tommath.h include/tommath_class.h \
 		include/tommath_superclass.h lib/libtommath.a

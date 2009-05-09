@@ -19,6 +19,7 @@ LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 		net6-1.3:${PORTSDIR}/net/net6 \
 		obby-0.4:${PORTSDIR}/devel/obby
 
+MAKE_JOBS_SAFE=	yes
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig gtksourceview2

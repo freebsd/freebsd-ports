@@ -16,6 +16,7 @@ COMMENT=	Ubiquitous network traffic capture library
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	build

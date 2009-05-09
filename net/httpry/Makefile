@@ -16,6 +16,7 @@ COMMENT=	Packet sniffer designed for displaying and logging HTTP traffic
 MAN1=		httpry.1
 
 USE_RC_SUBR=	httpry
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	EXTRASCRIPTS "Install additional scripts" Off
 

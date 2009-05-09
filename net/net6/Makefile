@@ -20,6 +20,7 @@ LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
+MAKE_JOBS_SAFE=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

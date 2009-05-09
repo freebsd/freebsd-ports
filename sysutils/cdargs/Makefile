@@ -16,6 +16,7 @@ COMMENT=	Navigate the filesystem using a menu interface or a bookmark system
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-DHAVE_DECL_GETOPT
+MAKE_JOBS_SAFE=	yes
 
 MAN1=	cdargs.1
 

@@ -18,6 +18,7 @@ USE_XORG=	x11 xtst
 ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/xdotool
+MAKE_JOBS_SAFE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xdotool ${PREFIX}/bin

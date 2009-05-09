@@ -30,6 +30,7 @@ COMMENT=	Secure Internet Live Conferencing (SILC) network server
 
 LIB_DEPENDS=	silc-1.1:${PORTSDIR}/devel/silc-toolkit
 
+MAKE_JOBS_SAFE=	yes
 SUB_FILES=	pkg-message pkg-deinstall
 USE_RC_SUBR=	silcd
 USE_BZIP2=	yes
