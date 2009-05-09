@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+lib/gambas2/gb.image.component
+lib/gambas2/gb.image.so.0
+lib/gambas2/gb.image.so
+lib/gambas2/gb.image.la
+%%DATADIR%%/info/gb.image.info
+%%DATADIR%%/info/gb.image.list
+@dirrmtry lib/gambas2
+@dirrmtry %%DATADIR%%/info
+@dirrmtry %%DATADIR%%

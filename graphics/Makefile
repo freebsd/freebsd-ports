@@ -198,6 +198,7 @@
     SUBDIR += g2
     SUBDIR += g3dviewer
     SUBDIR += gambas2-gb-gtk-svg
+    SUBDIR += gambas2-gb-image
     SUBDIR += gauche-gl
     SUBDIR += gcolor
     SUBDIR += gcolor2
