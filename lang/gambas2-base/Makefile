@@ -48,7 +48,7 @@ post-patch:
 	@cd ${WRKSRC} && \
 		${FIND} * -type f -name configure -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 			-e 's|-pipe -Wall -Wno-unused-value -fsigned-char|$$CFLAGS|g' \
-			-e 's|-O0||g' -e 's|-ldl||g'
+			-e 's|-O0||g' -e 's|-ldl||g' -e 's|-lml||g'
 	@cd ${WRKSRC} && \
 		${FIND} -E * -type f -iregex ".*\.(c|h)" -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 			-e 's|#ifdef __GNU_LIBRARY__|#if defined (__GNU_LIBRARY__) \|\| \
