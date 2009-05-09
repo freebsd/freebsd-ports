@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+lib/gambas2/gb.pcre.component
+lib/gambas2/gb.pcre.so.0
+lib/gambas2/gb.pcre.so
+lib/gambas2/gb.pcre.la
+%%DATADIR%%/info/gb.pcre.info
+%%DATADIR%%/info/gb.pcre.list
+@dirrmtry lib/gambas2
+@dirrmtry %%DATADIR%%/info
+@dirrmtry %%DATADIR%%

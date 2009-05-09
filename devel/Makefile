@@ -386,6 +386,7 @@
     SUBDIR += g2c
     SUBDIR += gaa
     SUBDIR += gambas2-gb-corba
+    SUBDIR += gambas2-gb-pcre
     SUBDIR += gamin
     SUBDIR += gaphor
     SUBDIR += gauche-gaunit
