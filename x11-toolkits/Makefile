@@ -38,6 +38,7 @@
     SUBDIR += gal
     SUBDIR += gal2
     SUBDIR += gal2-reference
+    SUBDIR += gambas2-gb-qt
     SUBDIR += gauche-gtk
     SUBDIR += gdl
     SUBDIR += gigi
