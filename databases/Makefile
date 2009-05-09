@@ -76,6 +76,7 @@
     SUBDIR += gadfly
     SUBDIR += gambas2-gb-db-firebird
     SUBDIR += gambas2-gb-db-mysql
+    SUBDIR += gambas2-gb-db-odbc
     SUBDIR += gauche-gdbm
     SUBDIR += gbib
     SUBDIR += gdbm
