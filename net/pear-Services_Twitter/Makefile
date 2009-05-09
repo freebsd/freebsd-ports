@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_Twitter
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	net www pear
 
 MAINTAINER=	wenheping@gmail.com
