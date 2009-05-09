@@ -1,17 +1,34 @@
---- src/Makefile.orig	2008-05-03 20:17:49.000000000 +0400
-+++ src/Makefile	2008-06-24 21:03:00.239785215 +0400
-@@ -1,10 +1,9 @@
--CXXOPTFLAGS= -O3 -fomit-frame-pointer
--INCLUDES= -Ishared -Iengine -Ifpsgame -Irpggame -Ienet/include -I/usr/X11R6/include `sdl-config --cflags`
--CXXFLAGS= -Wall -fsigned-char $(CXXOPTFLAGS) $(INCLUDES)
-+INCLUDES= -Ishared -Iengine -Ifpsgame -Irpggame -Ienet/include -I$(LOCALBASE)/include `$(SDL_CONFIG) --cflags`
-+CXXFLAGS+= -Wall -fsigned-char $(INCLUDES)
+--- src/Makefile.orig	2009-04-22 21:47:44.000000000 +0400
++++ src/Makefile	2009-05-07 19:07:39.000000000 +0400
+@@ -1,8 +1,7 @@
+-CXXFLAGS= -O3 -fomit-frame-pointer
+ override CXXFLAGS+= -Wall -fsigned-char
  
--PLATFORM_PREFIX=native
-+PLATFORM_PREFIX=FreeBSD
+ PLATFORM= $(shell uname -s)
+-PLATFORM_PREFIX= native
++PLATFORM_PREFIX= FreeBSD
  
--CLIENT_LIBS= -Lenet -lenet -L/usr/X11R6/lib `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL -lGLU 
-+CLIENT_LIBS= -Lenet -lenet `$(SDL_CONFIG) --libs` -lSDL_image -lSDL_mixer -lz -L$(LOCALBASE)/lib -lGL -lGLU 
- ifeq ($(shell uname -s),Linux)
- CLIENT_LIBS+= -lrt
+ INCLUDES= -Ishared -Iengine -Ifpsgame -Ienet/include
+ 
+@@ -18,8 +17,8 @@
+ CLIENT_INCLUDES= $(INCLUDES) -Iinclude
+ CLIENT_LIBS= -mwindows -Llib -lSDL -lSDL_image -lSDL_mixer -lzdll -lopengl32 -lenet -lws2_32 -lwinmm
+ else	
+-CLIENT_INCLUDES= $(INCLUDES) -I/usr/X11R6/include `sdl-config --cflags`
+-CLIENT_LIBS= -Lenet -lenet -L/usr/X11R6/lib `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL
++CLIENT_INCLUDES= $(INCLUDES) `${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
++CLIENT_LIBS= -Lenet -lenet `${SDL_CONFIG} --libs` -L${LOCALBASE}/lib -lSDL_image -lSDL_mixer -lz -lGL
  endif
+ ifeq ($(PLATFORM),Linux)
+ CLIENT_LIBS+= -lrt
+@@ -88,8 +87,8 @@
+ SERVER_INCLUDES= -DSTANDALONE $(INCLUDES) -Iinclude
+ SERVER_LIBS= -Llib -lzdll -lenet -lws2_32 -lwinmm
+ else
+-SERVER_INCLUDES= -DSTANDALONE $(INCLUDES)
+-SERVER_LIBS= -Lenet -lenet -lz
++SERVER_INCLUDES= -DSTANDALONE $(INCLUDES) -I${LOCALBASE}/include
++SERVER_LIBS= -Lenet -lenet -lz -L${LOCALBASE}/lib
+ endif
+ SERVER_OBJS= \
+ 	shared/crypto-standalone.o \

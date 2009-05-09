@@ -2,16 +2,19 @@
 %%DEDICATED%%bin/sauer_server
 %%CLIENT%%libexec/sauer_client
 %%DEDICATED%%libexec/sauer_server
+%%DATADIR%%/data/background.png
+%%DATADIR%%/data/background_decal.png
+%%DATADIR%%/data/background_detail.png
 %%DATADIR%%/data/brush.cfg
 %%DATADIR%%/data/chars.png
 %%DATADIR%%/data/crosshair.png
 %%DATADIR%%/data/cube.png
+%%DATADIR%%/data/cube2badge.png
 %%DATADIR%%/data/default_map_models.cfg
 %%DATADIR%%/data/default_map_settings.cfg
 %%DATADIR%%/data/defaults.cfg
 %%DATADIR%%/data/font.cfg
 %%DATADIR%%/data/game_fps.cfg
-%%DATADIR%%/data/game_rpg.cfg
 %%DATADIR%%/data/guicursor.png
 %%DATADIR%%/data/guioverlay.png
 %%DATADIR%%/data/guiskin.png
@@ -19,20 +22,18 @@
 %%DATADIR%%/data/hit.png
 %%DATADIR%%/data/keymap.cfg
 %%DATADIR%%/data/license.txt
+%%DATADIR%%/data/loading_bar.png
+%%DATADIR%%/data/loading_frame.png
+%%DATADIR%%/data/logo.png
+%%DATADIR%%/data/logo_1024.png
+%%DATADIR%%/data/mapshot_frame.png
 %%DATADIR%%/data/menus.cfg
 %%DATADIR%%/data/notexture.png
-%%DATADIR%%/data/sauer_logo_512_256.png
-%%DATADIR%%/data/sauer_logo_512_256a.png
 %%DATADIR%%/data/sounds.cfg
 %%DATADIR%%/data/stdedit.cfg
 %%DATADIR%%/data/stdlib.cfg
 %%DATADIR%%/data/stdshader.cfg
 %%DATADIR%%/data/teammate.png
-%%DATADIR%%/packages/4b/ABCD.jpg
-%%DATADIR%%/packages/4b/EFGH.jpg
-%%DATADIR%%/packages/4b/era.ogg
-%%DATADIR%%/packages/4b/inner.jpg
-%%DATADIR%%/packages/4b/outer.jpg
 %%DATADIR%%/packages/aard/aardfdry256_1.jpg
 %%DATADIR%%/packages/aard/aardmbr16_2.jpg
 %%DATADIR%%/packages/aard/aardmmet32_1.jpg
@@ -99,201 +100,271 @@
 %%DATADIR%%/packages/aftas/tabua_h.jpg
 %%DATADIR%%/packages/aftas/tabua_n.jpg
 %%DATADIR%%/packages/aftas/tabua_s.jpg
-%%DATADIR%%/packages/apd2/hiddenareasign01.png
-%%DATADIR%%/packages/apd2/hiddenareasign02.png
-%%DATADIR%%/packages/apd2/secretcrate01.jpg
-%%DATADIR%%/packages/apd2/secretcrate02.jpg
-%%DATADIR%%/packages/apd2/sm_wood_crate1.jpg
-%%DATADIR%%/packages/apd2/soundtrack-apd2-theancientstone.mid
-%%DATADIR%%/packages/base/4b1.cfg
-%%DATADIR%%/packages/base/4b1.jpg
-%%DATADIR%%/packages/base/4b1.ogz
-%%DATADIR%%/packages/base/4b2.cfg
-%%DATADIR%%/packages/base/4b2.jpg
-%%DATADIR%%/packages/base/4b2.ogz
-%%DATADIR%%/packages/base/4b3.cfg
-%%DATADIR%%/packages/base/4b3.jpg
-%%DATADIR%%/packages/base/4b3.ogz
-%%DATADIR%%/packages/base/4b4.cfg
-%%DATADIR%%/packages/base/4b4.jpg
-%%DATADIR%%/packages/base/4b4.ogz
 %%DATADIR%%/packages/base/DM_BS1.cfg
 %%DATADIR%%/packages/base/DM_BS1.jpg
 %%DATADIR%%/packages/base/DM_BS1.ogz
+%%DATADIR%%/packages/base/DM_BS1.wpt
 %%DATADIR%%/packages/base/DM_BS1_Read_Me.txt
 %%DATADIR%%/packages/base/Frostbyte_Read_Me.txt
-%%DATADIR%%/packages/base/Orgosville.txt
-%%DATADIR%%/packages/base/README_4b.html
 %%DATADIR%%/packages/base/aard3c.cfg
 %%DATADIR%%/packages/base/aard3c.jpg
 %%DATADIR%%/packages/base/aard3c.ogz
+%%DATADIR%%/packages/base/aard3c.wpt
 %%DATADIR%%/packages/base/academy.cfg
 %%DATADIR%%/packages/base/academy.jpg
 %%DATADIR%%/packages/base/academy.ogz
+%%DATADIR%%/packages/base/academy.wpt
 %%DATADIR%%/packages/base/akroseum.cfg
 %%DATADIR%%/packages/base/akroseum.jpg
 %%DATADIR%%/packages/base/akroseum.ogz
+%%DATADIR%%/packages/base/akroseum.wpt
 %%DATADIR%%/packages/base/aqueducts.cfg
 %%DATADIR%%/packages/base/aqueducts.jpg
 %%DATADIR%%/packages/base/aqueducts.ogz
+%%DATADIR%%/packages/base/aqueducts.wpt
+%%DATADIR%%/packages/base/arabic.cfg
+%%DATADIR%%/packages/base/arabic.jpg
+%%DATADIR%%/packages/base/arabic.ogz
+%%DATADIR%%/packages/base/arabic.wpt
 %%DATADIR%%/packages/base/asteroids.cfg
 %%DATADIR%%/packages/base/asteroids.jpg
 %%DATADIR%%/packages/base/asteroids.ogz
 %%DATADIR%%/packages/base/asteroids.txt
+%%DATADIR%%/packages/base/asteroids.wpt
 %%DATADIR%%/packages/base/batlleofthenile.txt
-%%DATADIR%%/packages/base/battleofthenile.jpg
-%%DATADIR%%/packages/base/battleofthenile.ogz
 %%DATADIR%%/packages/base/berlin_wall.cfg
 %%DATADIR%%/packages/base/berlin_wall.jpg
 %%DATADIR%%/packages/base/berlin_wall.ogz
-%%DATADIR%%/packages/base/box_demo.jpg
-%%DATADIR%%/packages/base/box_demo.ogz
+%%DATADIR%%/packages/base/berlin_wall.wpt
 %%DATADIR%%/packages/base/c_egypt.cfg
 %%DATADIR%%/packages/base/c_egypt.jpg
 %%DATADIR%%/packages/base/c_egypt.ogz
+%%DATADIR%%/packages/base/c_egypt.wpt
 %%DATADIR%%/packages/base/c_valley.cfg
 %%DATADIR%%/packages/base/c_valley.jpg
 %%DATADIR%%/packages/base/c_valley.ogz
+%%DATADIR%%/packages/base/c_valley.wpt
+%%DATADIR%%/packages/base/campo.cfg
+%%DATADIR%%/packages/base/campo.jpg
+%%DATADIR%%/packages/base/campo.ogz
+%%DATADIR%%/packages/base/campo.wpt
 %%DATADIR%%/packages/base/canyon.jpg
 %%DATADIR%%/packages/base/canyon.ogz
 %%DATADIR%%/packages/base/capture_night.cfg
 %%DATADIR%%/packages/base/capture_night.jpg
 %%DATADIR%%/packages/base/capture_night.ogz
+%%DATADIR%%/packages/base/capture_night.wpt
 %%DATADIR%%/packages/base/complex.cfg
 %%DATADIR%%/packages/base/complex.jpg
 %%DATADIR%%/packages/base/complex.ogz
+%%DATADIR%%/packages/base/complex.wpt
+%%DATADIR%%/packages/base/core_transfer.cfg
+%%DATADIR%%/packages/base/core_transfer.jpg
+%%DATADIR%%/packages/base/core_transfer.ogz
+%%DATADIR%%/packages/base/core_transfer.txt
+%%DATADIR%%/packages/base/core_transfer.wpt
 %%DATADIR%%/packages/base/corruption.cfg
 %%DATADIR%%/packages/base/corruption.jpg
 %%DATADIR%%/packages/base/corruption.ogz
+%%DATADIR%%/packages/base/corruption.wpt
 %%DATADIR%%/packages/base/curvedm.cfg
 %%DATADIR%%/packages/base/curvedm.jpg
 %%DATADIR%%/packages/base/curvedm.ogz
+%%DATADIR%%/packages/base/curvedm.wpt
+%%DATADIR%%/packages/base/cwcastle.cfg
+%%DATADIR%%/packages/base/cwcastle.jpg
+%%DATADIR%%/packages/base/cwcastle.ogz
+%%DATADIR%%/packages/base/cwcastle.wpt
+%%DATADIR%%/packages/base/damnation.cfg
+%%DATADIR%%/packages/base/damnation.jpg
+%%DATADIR%%/packages/base/damnation.ogz
+%%DATADIR%%/packages/base/damnation.wpt
+%%DATADIR%%/packages/base/damnation_README.txt
 %%DATADIR%%/packages/base/darkdeath.cfg
 %%DATADIR%%/packages/base/darkdeath.jpg
 %%DATADIR%%/packages/base/darkdeath.ogz
+%%DATADIR%%/packages/base/darkdeath.wpt
 %%DATADIR%%/packages/base/deathtek.cfg
 %%DATADIR%%/packages/base/deathtek.jpg
 %%DATADIR%%/packages/base/deathtek.ogz
-%%DATADIR%%/packages/base/demomap.cfg
-%%DATADIR%%/packages/base/demomap.jpg
-%%DATADIR%%/packages/base/demomap.ogz
-%%DATADIR%%/packages/base/door_demo.cfg
-%%DATADIR%%/packages/base/door_demo.jpg
-%%DATADIR%%/packages/base/door_demo.ogz
+%%DATADIR%%/packages/base/deathtek.wpt
+%%DATADIR%%/packages/base/dock.cfg
+%%DATADIR%%/packages/base/dock.jpg
+%%DATADIR%%/packages/base/dock.ogz
+%%DATADIR%%/packages/base/dock.txt
+%%DATADIR%%/packages/base/dock.wpt
 %%DATADIR%%/packages/base/douze.cfg
 %%DATADIR%%/packages/base/douze.jpg
 %%DATADIR%%/packages/base/douze.ogz
+%%DATADIR%%/packages/base/douze.wpt
 %%DATADIR%%/packages/base/douze_readme.txt
 %%DATADIR%%/packages/base/duomo.cfg
 %%DATADIR%%/packages/base/duomo.jpg
 %%DATADIR%%/packages/base/duomo.ogz
+%%DATADIR%%/packages/base/duomo.wpt
+%%DATADIR%%/packages/base/dust2.cfg
+%%DATADIR%%/packages/base/dust2.jpg
+%%DATADIR%%/packages/base/dust2.ogz
+%%DATADIR%%/packages/base/dust2.wpt
+%%DATADIR%%/packages/base/europium.cfg
+%%DATADIR%%/packages/base/europium.jpg
+%%DATADIR%%/packages/base/europium.ogz
+%%DATADIR%%/packages/base/europium.wpt
 %%DATADIR%%/packages/base/face-capture.cfg
 %%DATADIR%%/packages/base/face-capture.jpg
 %%DATADIR%%/packages/base/face-capture.ogz
+%%DATADIR%%/packages/base/face-capture.wpt
 %%DATADIR%%/packages/base/fanatic_castle_trap.cfg
 %%DATADIR%%/packages/base/fanatic_castle_trap.jpg
 %%DATADIR%%/packages/base/fanatic_castle_trap.ogz
 %%DATADIR%%/packages/base/fanatic_castle_trap.txt
-%%DATADIR%%/packages/base/fanatic_caves.cfg
-%%DATADIR%%/packages/base/fanatic_caves.jpg
-%%DATADIR%%/packages/base/fanatic_caves.ogg
-%%DATADIR%%/packages/base/fanatic_caves.ogz
-%%DATADIR%%/packages/base/fanatic_caves.txt
-%%DATADIR%%/packages/base/fanatic_complexities.cfg
-%%DATADIR%%/packages/base/fanatic_complexities.jpg
-%%DATADIR%%/packages/base/fanatic_complexities.ogz
-%%DATADIR%%/packages/base/fanatic_complexities.txt
+%%DATADIR%%/packages/base/fanatic_castle_trap.wpt
 %%DATADIR%%/packages/base/fanatic_quake.cfg
 %%DATADIR%%/packages/base/fanatic_quake.jpg
 %%DATADIR%%/packages/base/fanatic_quake.ogz
 %%DATADIR%%/packages/base/fanatic_quake.txt
+%%DATADIR%%/packages/base/fanatic_quake.wpt
 %%DATADIR%%/packages/base/fb_capture.cfg
 %%DATADIR%%/packages/base/fb_capture.jpg
 %%DATADIR%%/packages/base/fb_capture.ogz
+%%DATADIR%%/packages/base/fb_capture.wpt
 %%DATADIR%%/packages/base/fc3.cfg
 %%DATADIR%%/packages/base/fc3.jpg
 %%DATADIR%%/packages/base/fc3.ogz
 %%DATADIR%%/packages/base/fc3.txt
+%%DATADIR%%/packages/base/fc3.wpt
+%%DATADIR%%/packages/base/fc4.cfg
+%%DATADIR%%/packages/base/fc4.jpg
+%%DATADIR%%/packages/base/fc4.ogz
+%%DATADIR%%/packages/base/fc4.wpt
 %%DATADIR%%/packages/base/firstevermap.jpg
 %%DATADIR%%/packages/base/firstevermap.ogz
+%%DATADIR%%/packages/base/flagstone.cfg
+%%DATADIR%%/packages/base/flagstone.jpg
+%%DATADIR%%/packages/base/flagstone.ogz
+%%DATADIR%%/packages/base/flagstone.wpt
+%%DATADIR%%/packages/base/forge.cfg
+%%DATADIR%%/packages/base/forge.jpg
+%%DATADIR%%/packages/base/forge.ogz
+%%DATADIR%%/packages/base/forge.txt
+%%DATADIR%%/packages/base/forge.wpt
 %%DATADIR%%/packages/base/fragplaza.cfg
 %%DATADIR%%/packages/base/fragplaza.jpg
 %%DATADIR%%/packages/base/fragplaza.ogz
+%%DATADIR%%/packages/base/fragplaza.wpt
 %%DATADIR%%/packages/base/frostbyte.cfg
 %%DATADIR%%/packages/base/frostbyte.jpg
 %%DATADIR%%/packages/base/frostbyte.ogz
-%%DATADIR%%/packages/base/frozenbase.cfg
-%%DATADIR%%/packages/base/frozenbase.jpg
-%%DATADIR%%/packages/base/frozenbase.ogz
+%%DATADIR%%/packages/base/frostbyte.wpt
+%%DATADIR%%/packages/base/frozen.cfg
+%%DATADIR%%/packages/base/frozen.jpg
+%%DATADIR%%/packages/base/frozen.ogz
+%%DATADIR%%/packages/base/frozen.wpt
 %%DATADIR%%/packages/base/guacamole.cfg
 %%DATADIR%%/packages/base/guacamole.jpg
 %%DATADIR%%/packages/base/guacamole.ogz
+%%DATADIR%%/packages/base/guacamole.wpt
 %%DATADIR%%/packages/base/hades.cfg
 %%DATADIR%%/packages/base/hades.jpg
 %%DATADIR%%/packages/base/hades.ogz
+%%DATADIR%%/packages/base/hades.wpt
 %%DATADIR%%/packages/base/hallo.cfg
 %%DATADIR%%/packages/base/hallo.jpg
 %%DATADIR%%/packages/base/hallo.ogz
+%%DATADIR%%/packages/base/hallo.wpt
 %%DATADIR%%/packages/base/hog2.cfg
 %%DATADIR%%/packages/base/hog2.jpg
 %%DATADIR%%/packages/base/hog2.ogz
-%%DATADIR%%/packages/base/id.cfg
-%%DATADIR%%/packages/base/id.jpg
-%%DATADIR%%/packages/base/id.ogz
+%%DATADIR%%/packages/base/hog2.wpt
 %%DATADIR%%/packages/base/island.cfg
 %%DATADIR%%/packages/base/island.jpg
 %%DATADIR%%/packages/base/island.ogz
-%%DATADIR%%/packages/base/k_rpg1.cfg
-%%DATADIR%%/packages/base/k_rpg1.jpg
-%%DATADIR%%/packages/base/k_rpg1.ogz
+%%DATADIR%%/packages/base/island.wpt
 %%DATADIR%%/packages/base/kalking1.cfg
 %%DATADIR%%/packages/base/kalking1.jpg
 %%DATADIR%%/packages/base/kalking1.ogz
+%%DATADIR%%/packages/base/kalking1.wpt
 %%DATADIR%%/packages/base/kalking1_readme.txt
 %%DATADIR%%/packages/base/katrez_d.cfg
 %%DATADIR%%/packages/base/katrez_d.jpg
 %%DATADIR%%/packages/base/katrez_d.ogz
 %%DATADIR%%/packages/base/katrez_d.txt
+%%DATADIR%%/packages/base/katrez_d.wpt
 %%DATADIR%%/packages/base/katrez_d_ReadMe.txt
+%%DATADIR%%/packages/base/kffa.jpg
+%%DATADIR%%/packages/base/kffa.ogz
+%%DATADIR%%/packages/base/kffa.wpt
+%%DATADIR%%/packages/base/killcore3.cfg
+%%DATADIR%%/packages/base/killcore3.jpg
+%%DATADIR%%/packages/base/killcore3.ogz
+%%DATADIR%%/packages/base/killcore3.txt
+%%DATADIR%%/packages/base/killcore3.wpt
 %%DATADIR%%/packages/base/killfactory.cfg
 %%DATADIR%%/packages/base/killfactory.jpg
 %%DATADIR%%/packages/base/killfactory.ogz
+%%DATADIR%%/packages/base/killfactory.wpt
 %%DATADIR%%/packages/base/kmap5.cfg
 %%DATADIR%%/packages/base/kmap5.jpg
 %%DATADIR%%/packages/base/kmap5.ogz
+%%DATADIR%%/packages/base/kmap5.wpt
+%%DATADIR%%/packages/base/konkuri-to.cfg
+%%DATADIR%%/packages/base/konkuri-to.jpg
+%%DATADIR%%/packages/base/konkuri-to.ogz
+%%DATADIR%%/packages/base/konkuri-to.txt
+%%DATADIR%%/packages/base/konkuri-to.wpt
 %%DATADIR%%/packages/base/ksauer1.cfg
 %%DATADIR%%/packages/base/ksauer1.jpg
 %%DATADIR%%/packages/base/ksauer1.ogz
+%%DATADIR%%/packages/base/ksauer1.wpt
 %%DATADIR%%/packages/base/kurt_license.txt
+%%DATADIR%%/packages/base/l_ctf.cfg
+%%DATADIR%%/packages/base/l_ctf.jpg
+%%DATADIR%%/packages/base/l_ctf.ogz
+%%DATADIR%%/packages/base/l_ctf.wpt
 %%DATADIR%%/packages/base/ladder.jpg
 %%DATADIR%%/packages/base/ladder.ogz
 %%DATADIR%%/packages/base/level9.cfg
 %%DATADIR%%/packages/base/level9.jpg
 %%DATADIR%%/packages/base/level9.ogz
+%%DATADIR%%/packages/base/lost.cfg
+%%DATADIR%%/packages/base/lost.jpg
+%%DATADIR%%/packages/base/lost.ogz
 %%DATADIR%%/packages/base/lostinspace.cfg
 %%DATADIR%%/packages/base/lostinspace.jpg
 %%DATADIR%%/packages/base/lostinspace.ogz
+%%DATADIR%%/packages/base/lostinspace.wpt
 %%DATADIR%%/packages/base/mach2.cfg
 %%DATADIR%%/packages/base/mach2.jpg
 %%DATADIR%%/packages/base/mach2.ogz
+%%DATADIR%%/packages/base/mach2.wpt
 %%DATADIR%%/packages/base/mechanic.cfg
 %%DATADIR%%/packages/base/mechanic.jpg
 %%DATADIR%%/packages/base/mechanic.ogz
+%%DATADIR%%/packages/base/mechanic.wpt
+%%DATADIR%%/packages/base/memento.cfg
+%%DATADIR%%/packages/base/memento.jpg
+%%DATADIR%%/packages/base/memento.ogz
+%%DATADIR%%/packages/base/memento.wpt
 %%DATADIR%%/packages/base/metl2.cfg
 %%DATADIR%%/packages/base/metl2.jpg
 %%DATADIR%%/packages/base/metl2.ogz
+%%DATADIR%%/packages/base/metl2.wpt
 %%DATADIR%%/packages/base/metl3.cfg
 %%DATADIR%%/packages/base/metl3.jpg
 %%DATADIR%%/packages/base/metl3.ogz
+%%DATADIR%%/packages/base/metl3.wpt
 %%DATADIR%%/packages/base/metl4.cfg
 %%DATADIR%%/packages/base/metl4.jpg
 %%DATADIR%%/packages/base/metl4.ogz
+%%DATADIR%%/packages/base/metl4.wpt
 %%DATADIR%%/packages/base/monastery.cfg
 %%DATADIR%%/packages/base/monastery.jpg
 %%DATADIR%%/packages/base/monastery.ogz
+%%DATADIR%%/packages/base/monastery.wpt
 %%DATADIR%%/packages/base/moonlite.cfg
 %%DATADIR%%/packages/base/moonlite.jpg
 %%DATADIR%%/packages/base/moonlite.ogz
+%%DATADIR%%/packages/base/moonlite.wpt
 %%DATADIR%%/packages/base/mpsp10.cfg
 %%DATADIR%%/packages/base/mpsp10.jpg
 %%DATADIR%%/packages/base/mpsp10.ogz
@@ -318,167 +389,200 @@
 %%DATADIR%%/packages/base/mpsp9c.cfg
 %%DATADIR%%/packages/base/mpsp9c.jpg
 %%DATADIR%%/packages/base/mpsp9c.ogz
-%%DATADIR%%/packages/base/n_sp1.cfg
-%%DATADIR%%/packages/base/n_sp1.jpg
-%%DATADIR%%/packages/base/n_sp1.ogz
-%%DATADIR%%/packages/base/n_sp2.cfg
-%%DATADIR%%/packages/base/n_sp2.jpg
-%%DATADIR%%/packages/base/n_sp2.ogz
+%%DATADIR%%/packages/base/neondevastation.cfg
+%%DATADIR%%/packages/base/neondevastation.jpg
+%%DATADIR%%/packages/base/neondevastation.ogz
+%%DATADIR%%/packages/base/neondevastation.wpt
 %%DATADIR%%/packages/base/neonpanic.cfg
 %%DATADIR%%/packages/base/neonpanic.jpg
 %%DATADIR%%/packages/base/neonpanic.ogz
+%%DATADIR%%/packages/base/neonpanic.wpt
 %%DATADIR%%/packages/base/nevil_c.cfg
 %%DATADIR%%/packages/base/nevil_c.jpg
 %%DATADIR%%/packages/base/nevil_c.ogz
+%%DATADIR%%/packages/base/nevil_c.wpt
 %%DATADIR%%/packages/base/nmp10.cfg
 %%DATADIR%%/packages/base/nmp10.jpg
 %%DATADIR%%/packages/base/nmp10.ogz
+%%DATADIR%%/packages/base/nmp10.wpt
 %%DATADIR%%/packages/base/nmp4.cfg
 %%DATADIR%%/packages/base/nmp4.jpg
 %%DATADIR%%/packages/base/nmp4.ogz
+%%DATADIR%%/packages/base/nmp4.wpt
 %%DATADIR%%/packages/base/nmp8.cfg
 %%DATADIR%%/packages/base/nmp8.jpg
 %%DATADIR%%/packages/base/nmp8.ogz
+%%DATADIR%%/packages/base/nmp8.wpt
 %%DATADIR%%/packages/base/nmp9.cfg
 %%DATADIR%%/packages/base/nmp9.jpg
 %%DATADIR%%/packages/base/nmp9.ogz
-%%DATADIR%%/packages/base/nod.cfg
-%%DATADIR%%/packages/base/nod.jpg
-%%DATADIR%%/packages/base/nod.ogz
+%%DATADIR%%/packages/base/nmp9.wpt
 %%DATADIR%%/packages/base/oasis.cfg
 %%DATADIR%%/packages/base/oasis.jpg
 %%DATADIR%%/packages/base/oasis.ogz
+%%DATADIR%%/packages/base/oasis.wpt
 %%DATADIR%%/packages/base/oddworld.cfg
 %%DATADIR%%/packages/base/oddworld.jpg
 %%DATADIR%%/packages/base/oddworld.ogz
+%%DATADIR%%/packages/base/oddworld.wpt
 %%DATADIR%%/packages/base/ogrosupply.cfg
 %%DATADIR%%/packages/base/ogrosupply.jpg
 %%DATADIR%%/packages/base/ogrosupply.ogz
 %%DATADIR%%/packages/base/ogrosupply.txt
-%%DATADIR%%/packages/base/ogrowaystation.cfg
-%%DATADIR%%/packages/base/ogrowaystation.jpg
-%%DATADIR%%/packages/base/ogrowaystation.ogz
+%%DATADIR%%/packages/base/ogrosupply.wpt
 %%DATADIR%%/packages/base/orbe.cfg
 %%DATADIR%%/packages/base/orbe.jpg
 %%DATADIR%%/packages/base/orbe.ogz
-%%DATADIR%%/packages/base/orgosville.cfg
-%%DATADIR%%/packages/base/orgosville.jpg
-%%DATADIR%%/packages/base/orgosville.ogz
+%%DATADIR%%/packages/base/orbe.wpt
 %%DATADIR%%/packages/base/orion.cfg
 %%DATADIR%%/packages/base/orion.jpg
 %%DATADIR%%/packages/base/orion.ogz
+%%DATADIR%%/packages/base/orion.wpt
 %%DATADIR%%/packages/base/ot.cfg
 %%DATADIR%%/packages/base/ot.jpg
 %%DATADIR%%/packages/base/ot.ogz
+%%DATADIR%%/packages/base/ot.wpt
 %%DATADIR%%/packages/base/paradigm.cfg
 %%DATADIR%%/packages/base/paradigm.jpg
 %%DATADIR%%/packages/base/paradigm.ogz
-%%DATADIR%%/packages/base/paradiselost.cfg
-%%DATADIR%%/packages/base/paradiselost.jpg
-%%DATADIR%%/packages/base/paradiselost.ogz
+%%DATADIR%%/packages/base/paradigm.wpt
 %%DATADIR%%/packages/base/pgdm.cfg
 %%DATADIR%%/packages/base/pgdm.jpg
 %%DATADIR%%/packages/base/pgdm.ogz
+%%DATADIR%%/packages/base/pgdm.wpt
 %%DATADIR%%/packages/base/ph-capture.cfg
 %%DATADIR%%/packages/base/ph-capture.jpg
 %%DATADIR%%/packages/base/ph-capture.ogz
+%%DATADIR%%/packages/base/ph-capture.wpt
 %%DATADIR%%/packages/base/phosgene.cfg
 %%DATADIR%%/packages/base/phosgene.jpg
 %%DATADIR%%/packages/base/phosgene.ogz
-%%DATADIR%%/packages/base/platform_demo.jpg
-%%DATADIR%%/packages/base/platform_demo.ogz
+%%DATADIR%%/packages/base/phosgene.wpt
+%%DATADIR%%/packages/base/powerplant.cfg
+%%DATADIR%%/packages/base/powerplant.jpg
+%%DATADIR%%/packages/base/powerplant.ogz
+%%DATADIR%%/packages/base/powerplant.txt
+%%DATADIR%%/packages/base/powerplant.wpt
+%%DATADIR%%/packages/base/readme_fc4.txt
+%%DATADIR%%/packages/base/recovery.cfg
+%%DATADIR%%/packages/base/recovery.jpg
+%%DATADIR%%/packages/base/recovery.ogz
+%%DATADIR%%/packages/base/recovery.wpt
+%%DATADIR%%/packages/base/redemption.cfg
+%%DATADIR%%/packages/base/redemption.jpg
+%%DATADIR%%/packages/base/redemption.ogz
+%%DATADIR%%/packages/base/redemption.wpt
+%%DATADIR%%/packages/base/refuge.cfg
+%%DATADIR%%/packages/base/refuge.jpg
+%%DATADIR%%/packages/base/refuge.ogz
+%%DATADIR%%/packages/base/refuge.wpt
 %%DATADIR%%/packages/base/reissen.cfg
 %%DATADIR%%/packages/base/reissen.jpg
 %%DATADIR%%/packages/base/reissen.ogz
+%%DATADIR%%/packages/base/reissen.wpt
 %%DATADIR%%/packages/base/reissen_readme.txt
 %%DATADIR%%/packages/base/relic.cfg
 %%DATADIR%%/packages/base/relic.jpg
 %%DATADIR%%/packages/base/relic.ogz
+%%DATADIR%%/packages/base/relic.wpt
 %%DATADIR%%/packages/base/river_c.cfg
 %%DATADIR%%/packages/base/river_c.jpg
 %%DATADIR%%/packages/base/river_c.ogz
+%%DATADIR%%/packages/base/river_c.wpt
 %%DATADIR%%/packages/base/roughinery.cfg
 %%DATADIR%%/packages/base/roughinery.jpg
 %%DATADIR%%/packages/base/roughinery.ogz
-%%DATADIR%%/packages/base/rpg.cfg
-%%DATADIR%%/packages/base/rpg.jpg
-%%DATADIR%%/packages/base/rpg.ogz
-%%DATADIR%%/packages/base/rpg_01.cfg
-%%DATADIR%%/packages/base/rpg_01.jpg
-%%DATADIR%%/packages/base/rpg_01.ogz
-%%DATADIR%%/packages/base/rpgtest.cfg
-%%DATADIR%%/packages/base/rpgtest.jpg
-%%DATADIR%%/packages/base/rpgtest.ogz
+%%DATADIR%%/packages/base/roughinery.wpt
 %%DATADIR%%/packages/base/ruby.cfg
 %%DATADIR%%/packages/base/ruby.jpg
 %%DATADIR%%/packages/base/ruby.ogz
+%%DATADIR%%/packages/base/ruby.wpt
+%%DATADIR%%/packages/base/sacrifice.cfg
+%%DATADIR%%/packages/base/sacrifice.jpg
+%%DATADIR%%/packages/base/sacrifice.ogz
+%%DATADIR%%/packages/base/sacrifice.txt
+%%DATADIR%%/packages/base/sacrifice.wpt
 %%DATADIR%%/packages/base/sauerbraten.jpg
 %%DATADIR%%/packages/base/sauerbraten.ogz
+%%DATADIR%%/packages/base/sdm1.cfg
+%%DATADIR%%/packages/base/sdm1.jpg
+%%DATADIR%%/packages/base/sdm1.ogz
+%%DATADIR%%/packages/base/sdm1.wpt
 %%DATADIR%%/packages/base/secondevermap.jpg
 %%DATADIR%%/packages/base/secondevermap.ogz
 %%DATADIR%%/packages/base/serenity.cfg
 %%DATADIR%%/packages/base/serenity.jpg
 %%DATADIR%%/packages/base/serenity.ogz
-%%DATADIR%%/packages/base/serpentine.cfg
-%%DATADIR%%/packages/base/serpentine.jpg
-%%DATADIR%%/packages/base/serpentine.ogz
+%%DATADIR%%/packages/base/serenity.wpt
 %%DATADIR%%/packages/base/shadowed.cfg
 %%DATADIR%%/packages/base/shadowed.jpg
 %%DATADIR%%/packages/base/shadowed.ogz
+%%DATADIR%%/packages/base/shadowed.wpt
 %%DATADIR%%/packages/base/shindou.cfg
 %%DATADIR%%/packages/base/shindou.jpg
 %%DATADIR%%/packages/base/shindou.ogz
 %%DATADIR%%/packages/base/shindou.txt
+%%DATADIR%%/packages/base/shindou.wpt
+%%DATADIR%%/packages/base/shinmei1.cfg
+%%DATADIR%%/packages/base/shinmei1.jpg
+%%DATADIR%%/packages/base/shinmei1.ogz
+%%DATADIR%%/packages/base/shinmei1.wpt
 %%DATADIR%%/packages/base/shipwreck.cfg
 %%DATADIR%%/packages/base/shipwreck.jpg
 %%DATADIR%%/packages/base/shipwreck.ogz
-%%DATADIR%%/packages/base/skycastle.jpg
-%%DATADIR%%/packages/base/skycastle.ogz
-%%DATADIR%%/packages/base/sp2.cfg
-%%DATADIR%%/packages/base/sp2.jpg
-%%DATADIR%%/packages/base/sp2.ogz
-%%DATADIR%%/packages/base/sp3.cfg
-%%DATADIR%%/packages/base/sp3.jpg
-%%DATADIR%%/packages/base/sp3.ogz
+%%DATADIR%%/packages/base/shipwreck.wpt
 %%DATADIR%%/packages/base/spiralz.jpg
 %%DATADIR%%/packages/base/spiralz.ogz
 %%DATADIR%%/packages/base/stemple.cfg
 %%DATADIR%%/packages/base/stemple.jpg
 %%DATADIR%%/packages/base/stemple.ogz
 %%DATADIR%%/packages/base/stemple.txt
-%%DATADIR%%/packages/base/stsp1.jpg
-%%DATADIR%%/packages/base/stsp1.ogz
+%%DATADIR%%/packages/base/stemple.wpt
 %%DATADIR%%/packages/base/tartech.cfg
 %%DATADIR%%/packages/base/tartech.jpg
 %%DATADIR%%/packages/base/tartech.ogz
+%%DATADIR%%/packages/base/tartech.wpt
 %%DATADIR%%/packages/base/tejen.cfg
 %%DATADIR%%/packages/base/tejen.jpg
 %%DATADIR%%/packages/base/tejen.ogz
-%%DATADIR%%/packages/base/theancientstone.cfg
-%%DATADIR%%/packages/base/theancientstone.jpg
-%%DATADIR%%/packages/base/theancientstone.ogz
+%%DATADIR%%/packages/base/tejen.wpt
 %%DATADIR%%/packages/base/thetowers.cfg
 %%DATADIR%%/packages/base/thetowers.jpg
 %%DATADIR%%/packages/base/thetowers.ogz
+%%DATADIR%%/packages/base/thetowers.wpt
 %%DATADIR%%/packages/base/thor.cfg
 %%DATADIR%%/packages/base/thor.jpg
 %%DATADIR%%/packages/base/thor.ogz
+%%DATADIR%%/packages/base/thor.wpt
+%%DATADIR%%/packages/base/torment.cfg
+%%DATADIR%%/packages/base/torment.jpg
+%%DATADIR%%/packages/base/torment.ogz
+%%DATADIR%%/packages/base/torment.wpt
+%%DATADIR%%/packages/base/turbine.cfg
+%%DATADIR%%/packages/base/turbine.jpg
+%%DATADIR%%/packages/base/turbine.ogz
+%%DATADIR%%/packages/base/turbine.wpt
 %%DATADIR%%/packages/base/urban_c.cfg
 %%DATADIR%%/packages/base/urban_c.jpg
 %%DATADIR%%/packages/base/urban_c.ogz
+%%DATADIR%%/packages/base/urban_c.wpt
+%%DATADIR%%/packages/base/valhalla.cfg
+%%DATADIR%%/packages/base/valhalla.jpg
+%%DATADIR%%/packages/base/valhalla.ogz
+%%DATADIR%%/packages/base/valhalla.wpt
 %%DATADIR%%/packages/base/venice.cfg
 %%DATADIR%%/packages/base/venice.jpg
 %%DATADIR%%/packages/base/venice.ogz
-%%DATADIR%%/packages/base/vr.cfg
-%%DATADIR%%/packages/base/vr.jpg
-%%DATADIR%%/packages/base/vr.ogz
+%%DATADIR%%/packages/base/venice.wpt
 %%DATADIR%%/packages/base/wake5.cfg
 %%DATADIR%%/packages/base/wake5.jpg
 %%DATADIR%%/packages/base/wake5.ogz
 %%DATADIR%%/packages/base/wake5.txt
+%%DATADIR%%/packages/base/wake5.wpt
 %%DATADIR%%/packages/base/wdcd.cfg
 %%DATADIR%%/packages/base/wdcd.jpg
 %%DATADIR%%/packages/base/wdcd.ogz
+%%DATADIR%%/packages/base/wdcd.wpt
 %%DATADIR%%/packages/blikjebier/concrete/concrete_001.jpg
 %%DATADIR%%/packages/blikjebier/concrete/concrete_002.jpg
 %%DATADIR%%/packages/blikjebier/concrete/concrete_003.jpg
@@ -493,6 +597,30 @@
 %%DATADIR%%/packages/blikjebier/concrete/concrete_012.jpg
 %%DATADIR%%/packages/blikjebier/concrete/concrete_013.jpg
 %%DATADIR%%/packages/blikjebier/concrete/package.cfg
+%%DATADIR%%/packages/blikjebier/ground/g0bl.jpg
+%%DATADIR%%/packages/blikjebier/ground/g0bm.jpg
+%%DATADIR%%/packages/blikjebier/ground/g0br.jpg
+%%DATADIR%%/packages/blikjebier/ground/g0ml.jpg
+%%DATADIR%%/packages/blikjebier/ground/g0mm.jpg
+%%DATADIR%%/packages/blikjebier/ground/g0mr.jpg
+%%DATADIR%%/packages/blikjebier/ground/g0tl.jpg
+%%DATADIR%%/packages/blikjebier/ground/g0tm.jpg
+%%DATADIR%%/packages/blikjebier/ground/g0tr.jpg
+%%DATADIR%%/packages/blikjebier/ground/g1bl.jpg
+%%DATADIR%%/packages/blikjebier/ground/g1bm.jpg
+%%DATADIR%%/packages/blikjebier/ground/g1br.jpg
+%%DATADIR%%/packages/blikjebier/ground/g1ml.jpg
+%%DATADIR%%/packages/blikjebier/ground/g1mm.jpg
+%%DATADIR%%/packages/blikjebier/ground/g1mr.jpg
+%%DATADIR%%/packages/blikjebier/ground/g1tl.jpg
+%%DATADIR%%/packages/blikjebier/ground/g1tm.jpg
+%%DATADIR%%/packages/blikjebier/ground/g1tr.jpg
+%%DATADIR%%/packages/blikjebier/ground/ground1.jpg
+%%DATADIR%%/packages/blikjebier/ground/ground2.jpg
+%%DATADIR%%/packages/blikjebier/ground/ground3.jpg
+%%DATADIR%%/packages/blikjebier/ground/ground4.jpg
+%%DATADIR%%/packages/blikjebier/ground/ground5.jpg
+%%DATADIR%%/packages/blikjebier/ground/package.cfg
 %%DATADIR%%/packages/blikjebier/metal/metal_001.jpg
 %%DATADIR%%/packages/blikjebier/metal/metal_002.jpg
 %%DATADIR%%/packages/blikjebier/metal/metal_003.jpg
@@ -539,12 +667,69 @@
 %%DATADIR%%/packages/blikjebier/snow/snow_tm.jpg
 %%DATADIR%%/packages/blikjebier/snow/snow_tmp.jpg
 %%DATADIR%%/packages/blikjebier/snow/snow_tr.jpg
+%%DATADIR%%/packages/blindabuser/ba_base_dirt_cc.jpg
+%%DATADIR%%/packages/blindabuser/ba_base_dirt_hm.jpg
+%%DATADIR%%/packages/blindabuser/ba_base_dirt_nm.jpg
+%%DATADIR%%/packages/blindabuser/ba_base_dirt_sc.jpg
+%%DATADIR%%/packages/blindabuser/ba_grass_cc.jpg
+%%DATADIR%%/packages/blindabuser/ba_grass_hm.jpg
+%%DATADIR%%/packages/blindabuser/ba_grass_nm.jpg
+%%DATADIR%%/packages/blindabuser/ba_grass_sc.jpg
+%%DATADIR%%/packages/blindabuser/ba_rock_cc.jpg
+%%DATADIR%%/packages/blindabuser/ba_rock_hm.jpg
+%%DATADIR%%/packages/blindabuser/ba_rock_nm.jpg
+%%DATADIR%%/packages/blindabuser/ba_rock_sc.jpg
+%%DATADIR%%/packages/blindabuser/ba_scroll_cc.jpg
+%%DATADIR%%/packages/blindabuser/ba_scroll_hm.jpg
+%%DATADIR%%/packages/blindabuser/ba_scroll_nm.jpg
+%%DATADIR%%/packages/blindabuser/ba_scroll_sc.jpg
+%%DATADIR%%/packages/blindabuser/ba_wood_cc.jpg
+%%DATADIR%%/packages/blindabuser/ba_wood_hm.jpg
+%%DATADIR%%/packages/blindabuser/ba_wood_nm.jpg
+%%DATADIR%%/packages/blindabuser/ba_wood_sc.jpg
+%%DATADIR%%/packages/blindabuser/blindaclouds.png
+%%DATADIR%%/packages/blindabuser/blindasky2_bk.jpg
+%%DATADIR%%/packages/blindabuser/blindasky2_dn.jpg
+%%DATADIR%%/packages/blindabuser/blindasky2_ft.jpg
+%%DATADIR%%/packages/blindabuser/blindasky2_lf.jpg
+%%DATADIR%%/packages/blindabuser/blindasky2_rt.jpg
+%%DATADIR%%/packages/blindabuser/blindasky2_up.jpg
 %%DATADIR%%/packages/blindabuser/blindasky_bk.jpg
 %%DATADIR%%/packages/blindabuser/blindasky_dn.jpg
 %%DATADIR%%/packages/blindabuser/blindasky_ft.jpg
 %%DATADIR%%/packages/blindabuser/blindasky_lf.jpg
 %%DATADIR%%/packages/blindabuser/blindasky_rt.jpg
 %%DATADIR%%/packages/blindabuser/blindasky_up.jpg
+%%DATADIR%%/packages/blindabuser/blueflag.jpg
+%%DATADIR%%/packages/blindabuser/pk_vitreaux_cc.jpg
+%%DATADIR%%/packages/blindabuser/pk_vitreaux_hm.jpg
+%%DATADIR%%/packages/blindabuser/pk_vitreaux_nm.jpg
+%%DATADIR%%/packages/blindabuser/pk_vitreaux_sc.jpg
+%%DATADIR%%/packages/blindabuser/redflag.jpg
+%%DATADIR%%/packages/brushes/circle_128_hard.png
+%%DATADIR%%/packages/brushes/circle_128_soft.png
+%%DATADIR%%/packages/brushes/circle_128_solid.png
+%%DATADIR%%/packages/brushes/circle_16_hard.png
+%%DATADIR%%/packages/brushes/circle_16_soft.png
+%%DATADIR%%/packages/brushes/circle_16_solid.png
+%%DATADIR%%/packages/brushes/circle_32_hard.png
+%%DATADIR%%/packages/brushes/circle_32_soft.png
+%%DATADIR%%/packages/brushes/circle_32_solid.png
+%%DATADIR%%/packages/brushes/circle_64_hard.png
+%%DATADIR%%/packages/brushes/circle_64_soft.png
+%%DATADIR%%/packages/brushes/circle_64_solid.png
+%%DATADIR%%/packages/brushes/gradient_128.png
+%%DATADIR%%/packages/brushes/gradient_16.png
+%%DATADIR%%/packages/brushes/gradient_32.png
+%%DATADIR%%/packages/brushes/gradient_64.png
+%%DATADIR%%/packages/brushes/noise_128.png
+%%DATADIR%%/packages/brushes/noise_64.png
+%%DATADIR%%/packages/brushes/square_16_hard.png
+%%DATADIR%%/packages/brushes/square_16_solid.png
+%%DATADIR%%/packages/brushes/square_32_hard.png
+%%DATADIR%%/packages/brushes/square_32_solid.png
+%%DATADIR%%/packages/brushes/square_64_hard.png
+%%DATADIR%%/packages/brushes/square_64_solid.png
 %%DATADIR%%/packages/caustics/caust00.png
 %%DATADIR%%/packages/caustics/caust01.png
 %%DATADIR%%/packages/caustics/caust02.png
@@ -677,11 +862,8 @@
 %%DATADIR%%/packages/dg/sup075.jpg
 %%DATADIR%%/packages/dg/sup079.jpg
 %%DATADIR%%/packages/dg/trail.jpg
-%%DATADIR%%/packages/dg/trail_cl.jpg
-%%DATADIR%%/packages/dg/trail_cs.jpg
-%%DATADIR%%/packages/dg/trail_in.jpg
-%%DATADIR%%/packages/dg/trail_lg.jpg
-%%DATADIR%%/packages/dg/trail_sm.jpg
+%%DATADIR%%/packages/drakker/license.txt
+%%DATADIR%%/packages/drakker/no_diving.jpg
 %%DATADIR%%/packages/egyptsoc/032-01a.jpg
 %%DATADIR%%/packages/egyptsoc/032-03a.jpg
 %%DATADIR%%/packages/egyptsoc/032-03c.jpg
@@ -731,6 +913,7 @@
 %%DATADIR%%/packages/egyptsoc/s064-03a.jpg
 %%DATADIR%%/packages/egyptsoc/s064-05c.jpg
 %%DATADIR%%/packages/egyptsoc/s064-05f.jpg
+%%DATADIR%%/packages/egyptsoc/sand1b.jpg
 %%DATADIR%%/packages/egyptsoc/solidgrate1b.jpg
 %%DATADIR%%/packages/egyptsoc/stone01a.jpg
 %%DATADIR%%/packages/egyptsoc/stone01b.jpg
@@ -811,49 +994,14 @@
 %%DATADIR%%/packages/evil_textures/e8_rlight.jpg
 %%DATADIR%%/packages/evil_textures/e8bolttrim.jpg
 %%DATADIR%%/packages/fanatic/1.ogg
-%%DATADIR%%/packages/fanatic/10.ogg
-%%DATADIR%%/packages/fanatic/11.ogg
-%%DATADIR%%/packages/fanatic/12.ogg
-%%DATADIR%%/packages/fanatic/13.ogg
-%%DATADIR%%/packages/fanatic/14.ogg
-%%DATADIR%%/packages/fanatic/15.ogg
-%%DATADIR%%/packages/fanatic/16.ogg
-%%DATADIR%%/packages/fanatic/17.ogg
-%%DATADIR%%/packages/fanatic/18.ogg
-%%DATADIR%%/packages/fanatic/19.ogg
 %%DATADIR%%/packages/fanatic/2.ogg
-%%DATADIR%%/packages/fanatic/20.ogg
-%%DATADIR%%/packages/fanatic/21.ogg
-%%DATADIR%%/packages/fanatic/22.ogg
-%%DATADIR%%/packages/fanatic/23.ogg
-%%DATADIR%%/packages/fanatic/24.ogg
-%%DATADIR%%/packages/fanatic/25.ogg
-%%DATADIR%%/packages/fanatic/26.ogg
-%%DATADIR%%/packages/fanatic/27.ogg
-%%DATADIR%%/packages/fanatic/28.ogg
-%%DATADIR%%/packages/fanatic/29.ogg
 %%DATADIR%%/packages/fanatic/3.ogg
-%%DATADIR%%/packages/fanatic/30.ogg
-%%DATADIR%%/packages/fanatic/31.ogg
-%%DATADIR%%/packages/fanatic/32.ogg
-%%DATADIR%%/packages/fanatic/33.ogg
-%%DATADIR%%/packages/fanatic/34.ogg
-%%DATADIR%%/packages/fanatic/35.ogg
-%%DATADIR%%/packages/fanatic/36.ogg
-%%DATADIR%%/packages/fanatic/37.ogg
-%%DATADIR%%/packages/fanatic/38.ogg
-%%DATADIR%%/packages/fanatic/39.ogg
 %%DATADIR%%/packages/fanatic/4.ogg
-%%DATADIR%%/packages/fanatic/40.ogg
-%%DATADIR%%/packages/fanatic/41.ogg
 %%DATADIR%%/packages/fanatic/5.ogg
 %%DATADIR%%/packages/fanatic/6.ogg
 %%DATADIR%%/packages/fanatic/7.ogg
 %%DATADIR%%/packages/fanatic/8.ogg
-%%DATADIR%%/packages/fanatic/9.ogg
 %%DATADIR%%/packages/fanatic/Track Names.txt
-%%DATADIR%%/packages/fanatic/rpg/02.mid
-%%DATADIR%%/packages/fanatic/rpg/03.mid
 %%DATADIR%%/packages/g_pack/g-bricks02a.jpg
 %%DATADIR%%/packages/g_pack/g-bricks03.jpg
 %%DATADIR%%/packages/g_pack/g-bricks05.jpg
@@ -1210,26 +1358,17 @@
 %%DATADIR%%/packages/gor/MEB_GK_001_nm.jpg
 %%DATADIR%%/packages/gor/MEB_GK_001_sc.jpg
 %%DATADIR%%/packages/gor/ME_GK_002_cc.jpg
-%%DATADIR%%/packages/gor/ME_GK_002_cc_m.jpg
 %%DATADIR%%/packages/gor/ME_GK_002_nm.jpg
-%%DATADIR%%/packages/gor/ME_GK_002_nm_m.jpg
 %%DATADIR%%/packages/gor/ME_GK_002_sc.jpg
-%%DATADIR%%/packages/gor/ME_GK_002_sc_m.jpg
 %%DATADIR%%/packages/gor/ME_GK_003_cc.jpg
-%%DATADIR%%/packages/gor/ME_GK_003_cc_r.jpg
 %%DATADIR%%/packages/gor/ME_GK_003_nm.jpg
-%%DATADIR%%/packages/gor/ME_GK_003_nm_r.jpg
 %%DATADIR%%/packages/gor/ME_GK_003_sc.jpg
-%%DATADIR%%/packages/gor/ME_GK_003_sc_r.jpg
 %%DATADIR%%/packages/gor/ME_GK_004_cc.jpg
 %%DATADIR%%/packages/gor/ME_GK_004_nm.jpg
 %%DATADIR%%/packages/gor/ME_GK_004_sc.jpg
 %%DATADIR%%/packages/gor/ME_GK_005_cc.jpg
-%%DATADIR%%/packages/gor/ME_GK_005_cc_r.jpg
 %%DATADIR%%/packages/gor/ME_GK_005_nm.jpg
-%%DATADIR%%/packages/gor/ME_GK_005_nm_r.jpg
 %%DATADIR%%/packages/gor/ME_GK_005_sc.jpg
-%%DATADIR%%/packages/gor/ME_GK_005_sc_r.jpg
 %%DATADIR%%/packages/gor/ME_GK_006_cc.jpg
 %%DATADIR%%/packages/gor/ME_GK_006_nm.jpg
 %%DATADIR%%/packages/gor/ME_GK_006_sc.jpg
@@ -1421,16 +1560,26 @@
 %%DATADIR%%/packages/gor/WT_GK_017_sc.jpg
 %%DATADIR%%/packages/gor/license.txt
 %%DATADIR%%/packages/gor/package.cfg
+%%DATADIR%%/packages/hazel/green_bk.jpg
+%%DATADIR%%/packages/hazel/green_dn.jpg
+%%DATADIR%%/packages/hazel/green_ft.jpg
+%%DATADIR%%/packages/hazel/green_lf.jpg
+%%DATADIR%%/packages/hazel/green_rt.jpg
+%%DATADIR%%/packages/hazel/green_up.jpg
+%%DATADIR%%/packages/hazel/hazel_skyboxpack1_readme.txt
+%%DATADIR%%/packages/hero/copper.jpg
+%%DATADIR%%/packages/hero/license.txt
 %%DATADIR%%/packages/hud/blip_blue.png
 %%DATADIR%%/packages/hud/blip_blue_flag.png
 %%DATADIR%%/packages/hud/blip_grey.png
 %%DATADIR%%/packages/hud/blip_red.png
 %%DATADIR%%/packages/hud/blip_red_flag.png
-%%DATADIR%%/packages/hud/hbar.png
-%%DATADIR%%/packages/hud/hud_rpg.png
+%%DATADIR%%/packages/hud/damage.png
 %%DATADIR%%/packages/hud/items.png
 %%DATADIR%%/packages/hud/radar.png
 %%DATADIR%%/packages/icons/action.jpg
+%%DATADIR%%/packages/icons/arrow_bw.jpg
+%%DATADIR%%/packages/icons/arrow_fw.jpg
 %%DATADIR%%/packages/icons/brush_1c.png
 %%DATADIR%%/packages/icons/brush_21c.png
 %%DATADIR%%/packages/icons/brush_3s.png
@@ -1442,23 +1591,27 @@
 %%DATADIR%%/packages/icons/checkbox_on.jpg
 %%DATADIR%%/packages/icons/chest.jpg
 %%DATADIR%%/packages/icons/coins.jpg
+%%DATADIR%%/packages/icons/cube.jpg
 %%DATADIR%%/packages/icons/exit.jpg
 %%DATADIR%%/packages/icons/hand.jpg
 %%DATADIR%%/packages/icons/info.jpg
-%%DATADIR%%/packages/icons/ironsnout.jpg
-%%DATADIR%%/packages/icons/ironsnout_blue.jpg
-%%DATADIR%%/packages/icons/ironsnout_red.jpg
 %%DATADIR%%/packages/icons/map.jpg
 %%DATADIR%%/packages/icons/menu.jpg
 %%DATADIR%%/packages/icons/mrfixit.jpg
 %%DATADIR%%/packages/icons/mrfixit_blue.jpg
 %%DATADIR%%/packages/icons/mrfixit_red.jpg
 %%DATADIR%%/packages/icons/ogro.jpg
+%%DATADIR%%/packages/icons/ogro_blue.jpg
+%%DATADIR%%/packages/icons/ogro_red.jpg
 %%DATADIR%%/packages/icons/radio_off.jpg
 %%DATADIR%%/packages/icons/radio_on.jpg
 %%DATADIR%%/packages/icons/readme.txt
 %%DATADIR%%/packages/icons/sauer.jpg
 %%DATADIR%%/packages/icons/server.jpg
+%%DATADIR%%/packages/icons/snoutx10k.jpg
+%%DATADIR%%/packages/icons/snoutx10k_blue.jpg
+%%DATADIR%%/packages/icons/snoutx10k_red.jpg
+%%DATADIR%%/packages/icons/spectator.jpg
 %%DATADIR%%/packages/icons/sword.jpg
 %%DATADIR%%/packages/ik2k/env/iklake_bk.jpg
 %%DATADIR%%/packages/ik2k/env/iklake_dn.jpg
@@ -1579,14 +1732,10 @@
 %%DATADIR%%/packages/kurt/ceil4.jpg
 %%DATADIR%%/packages/kurt/ceil5.jpg
 %%DATADIR%%/packages/kurt/grass01.jpg
-%%DATADIR%%/packages/kurt/grass01_path1.png
-%%DATADIR%%/packages/kurt/grass01_path1to3.png
-%%DATADIR%%/packages/kurt/grass01_path2.png
-%%DATADIR%%/packages/kurt/grass01_path3.png
-%%DATADIR%%/packages/kurt/grass01_path3a.png
 %%DATADIR%%/packages/kurt/logwall01_d.jpg
 %%DATADIR%%/packages/kurt/logwall02_d.jpg
 %%DATADIR%%/packages/kurt/pathdirt.jpg
+%%DATADIR%%/packages/kurt/pathmask.png
 %%DATADIR%%/packages/kurt/rock01.jpg
 %%DATADIR%%/packages/kurt/rock01_height.jpg
 %%DATADIR%%/packages/kurt/rock01_norm.jpg
@@ -2087,25 +2236,11 @@
 %%DATADIR%%/packages/mitaman/mm-woodshutter_normal.jpg
 %%DATADIR%%/packages/mitaman/mm-woodshutter_spec.jpg
 %%DATADIR%%/packages/mitaman/package.cfg
-%%DATADIR%%/packages/models/4b/floppy/gold/floppy.jpg
-%%DATADIR%%/packages/models/4b/floppy/gold/masks.jpg
-%%DATADIR%%/packages/models/4b/floppy/gold/md3.cfg
-%%DATADIR%%/packages/models/4b/floppy/gold/silver/bronze/floppy.jpg
-%%DATADIR%%/packages/models/4b/floppy/gold/silver/bronze/masks.jpg
-%%DATADIR%%/packages/models/4b/floppy/gold/silver/bronze/md3.cfg
-%%DATADIR%%/packages/models/4b/floppy/gold/silver/bronze/patch/floppy.jpg
-%%DATADIR%%/packages/models/4b/floppy/gold/silver/bronze/patch/mak_md3.cfg
-%%DATADIR%%/packages/models/4b/floppy/gold/silver/bronze/patch/masks.jpg
-%%DATADIR%%/packages/models/4b/floppy/gold/silver/bronze/patch/md3.cfg
-%%DATADIR%%/packages/models/4b/floppy/gold/silver/bronze/patch/model/floppy.md3
-%%DATADIR%%/packages/models/4b/floppy/gold/silver/floppy.jpg
-%%DATADIR%%/packages/models/4b/floppy/gold/silver/masks.jpg
-%%DATADIR%%/packages/models/4b/floppy/gold/silver/md3.cfg
-%%DATADIR%%/packages/models/4b/floppy/readme.txt
 %%DATADIR%%/packages/models/aftas/aftasardem licence.txt
-%%DATADIR%%/packages/models/aftas/arvores/arg/tris.md2
-%%DATADIR%%/packages/models/aftas/arvores/arp/tris.md2
-%%DATADIR%%/packages/models/aftas/arvores/md2.cfg
+%%DATADIR%%/packages/models/aftas/arvores/arg/model.obj
+%%DATADIR%%/packages/models/aftas/arvores/arg/obj.cfg
+%%DATADIR%%/packages/models/aftas/arvores/arp/model.obj
+%%DATADIR%%/packages/models/aftas/arvores/arp/obj.cfg
 %%DATADIR%%/packages/models/aftas/arvores/skin.png
 %%DATADIR%%/packages/models/aftas/caixa/md2.cfg
 %%DATADIR%%/packages/models/aftas/caixa/skin.jpg
@@ -2121,18 +2256,23 @@
 %%DATADIR%%/packages/models/aftas/machina/masks.jpg
 %%DATADIR%%/packages/models/aftas/machina/skin.jpg
 %%DATADIR%%/packages/models/ammo/bullets/masks.jpg
+%%DATADIR%%/packages/models/ammo/bullets/md3.cfg
 %%DATADIR%%/packages/models/ammo/bullets/skin.jpg
 %%DATADIR%%/packages/models/ammo/cartridges/masks.jpg
+%%DATADIR%%/packages/models/ammo/cartridges/md3.cfg
 %%DATADIR%%/packages/models/ammo/cartridges/skin.jpg
 %%DATADIR%%/packages/models/ammo/grenades/masks.jpg
+%%DATADIR%%/packages/models/ammo/grenades/md3.cfg
 %%DATADIR%%/packages/models/ammo/grenades/skin.jpg
 %%DATADIR%%/packages/models/ammo/license.txt
-%%DATADIR%%/packages/models/ammo/md3.cfg
 %%DATADIR%%/packages/models/ammo/rockets/masks.jpg
+%%DATADIR%%/packages/models/ammo/rockets/md3.cfg
 %%DATADIR%%/packages/models/ammo/rockets/skin.jpg
 %%DATADIR%%/packages/models/ammo/rrounds/masks.jpg
+%%DATADIR%%/packages/models/ammo/rrounds/md3.cfg
 %%DATADIR%%/packages/models/ammo/rrounds/skin.jpg
 %%DATADIR%%/packages/models/ammo/shells/masks.jpg
+%%DATADIR%%/packages/models/ammo/shells/md3.cfg
 %%DATADIR%%/packages/models/ammo/shells/skin.jpg
 %%DATADIR%%/packages/models/ammo/tris.md3
 %%DATADIR%%/packages/models/armor/armor.txt
@@ -2191,6 +2331,11 @@
 %%DATADIR%%/packages/models/dcp/biotank/md2.cfg
 %%DATADIR%%/packages/models/dcp/biotank/skin.jpg
 %%DATADIR%%/packages/models/dcp/biotank/tris.md2
+%%DATADIR%%/packages/models/dcp/blade_x/fast/obj.cfg
+%%DATADIR%%/packages/models/dcp/blade_x/model.obj
+%%DATADIR%%/packages/models/dcp/blade_x/obj.cfg
+%%DATADIR%%/packages/models/dcp/blade_y/model.obj
+%%DATADIR%%/packages/models/dcp/blade_y/obj.cfg
 %%DATADIR%%/packages/models/dcp/bulb/masks.jpg
 %%DATADIR%%/packages/models/dcp/bulb/md2.cfg
 %%DATADIR%%/packages/models/dcp/bulb/skin.jpg
@@ -2344,6 +2489,7 @@
 %%DATADIR%%/packages/models/debris/debris04/tris.md2
 %%DATADIR%%/packages/models/debris/license.txt
 %%DATADIR%%/packages/models/debris/masks.jpg
+%%DATADIR%%/packages/models/debris/md2.cfg
 %%DATADIR%%/packages/models/debris/skin.jpg
 %%DATADIR%%/packages/models/doors/door_01/md3.cfg
 %%DATADIR%%/packages/models/doors/door_01/skin.jpg
@@ -2383,89 +2529,97 @@
 %%DATADIR%%/packages/models/health/md3.cfg
 %%DATADIR%%/packages/models/health/skin.jpg
 %%DATADIR%%/packages/models/health/tris.md3
-%%DATADIR%%/packages/models/hudguns/chaing/blue/md3.cfg
-%%DATADIR%%/packages/models/hudguns/chaing/chaingun.md3
-%%DATADIR%%/packages/models/hudguns/chaing/chaingztex.jpg
-%%DATADIR%%/packages/models/hudguns/chaing/chainhands.md3
-%%DATADIR%%/packages/models/hudguns/chaing/display.jpg
-%%DATADIR%%/packages/models/hudguns/chaing/mask.jpg
-%%DATADIR%%/packages/models/hudguns/chaing/md3.cfg
-%%DATADIR%%/packages/models/hudguns/chaing/red/md3.cfg
-%%DATADIR%%/packages/models/hudguns/fist/blademask.jpg
-%%DATADIR%%/packages/models/hudguns/fist/blue/md3.cfg
-%%DATADIR%%/packages/models/hudguns/fist/md3.cfg
-%%DATADIR%%/packages/models/hudguns/fist/red/md3.cfg
-%%DATADIR%%/packages/models/hudguns/fist/saw2.jpg
-%%DATADIR%%/packages/models/hudguns/fist/sawfist.jpg
-%%DATADIR%%/packages/models/hudguns/fist/sawfist.md3
-%%DATADIR%%/packages/models/hudguns/fist/sawfistmask.jpg
-%%DATADIR%%/packages/models/hudguns/fist/sparks.jpg
-%%DATADIR%%/packages/models/hudguns/gl/Hand.md3
-%%DATADIR%%/packages/models/hudguns/gl/blue/md3.cfg
-%%DATADIR%%/packages/models/hudguns/gl/gl.md3
-%%DATADIR%%/packages/models/hudguns/gl/glx.jpg
-%%DATADIR%%/packages/models/hudguns/gl/mask.jpg
-%%DATADIR%%/packages/models/hudguns/gl/md3.cfg
-%%DATADIR%%/packages/models/hudguns/gl/red/md3.cfg
-%%DATADIR%%/packages/models/hudguns/hands_blue.jpg
-%%DATADIR%%/packages/models/hudguns/hands_mask.jpg
-%%DATADIR%%/packages/models/hudguns/hands_orange.jpg
-%%DATADIR%%/packages/models/hudguns/pistol/Hands.md3
-%%DATADIR%%/packages/models/hudguns/pistol/blue/md3.cfg
-%%DATADIR%%/packages/models/hudguns/pistol/mask.jpg
-%%DATADIR%%/packages/models/hudguns/pistol/md3.cfg
-%%DATADIR%%/packages/models/hudguns/pistol/pistol.jpg
-%%DATADIR%%/packages/models/hudguns/pistol/pistol.md3
-%%DATADIR%%/packages/models/hudguns/pistol/red/md3.cfg
-%%DATADIR%%/packages/models/hudguns/rifle/blue/md3.cfg
-%%DATADIR%%/packages/models/hudguns/rifle/bow.md3
-%%DATADIR%%/packages/models/hudguns/rifle/bowhands.md3
-%%DATADIR%%/packages/models/hudguns/rifle/display.jpg
-%%DATADIR%%/packages/models/hudguns/rifle/mask.jpg
-%%DATADIR%%/packages/models/hudguns/rifle/md3.cfg
-%%DATADIR%%/packages/models/hudguns/rifle/nebula.jpg
-%%DATADIR%%/packages/models/hudguns/rifle/plasmacross.jpg
-%%DATADIR%%/packages/models/hudguns/rifle/plasmamap.jpg
-%%DATADIR%%/packages/models/hudguns/rifle/red/md3.cfg
-%%DATADIR%%/packages/models/hudguns/rifle/sight.png
-%%DATADIR%%/packages/models/hudguns/rifle/sight_Cube.002.tga
-%%DATADIR%%/packages/models/hudguns/rifle/sightmask.jpg
-%%DATADIR%%/packages/models/hudguns/rocket/blue/md3.cfg
-%%DATADIR%%/packages/models/hudguns/rocket/md3.cfg
-%%DATADIR%%/packages/models/hudguns/rocket/psource.jpg
-%%DATADIR%%/packages/models/hudguns/rocket/red/md3.cfg
-%%DATADIR%%/packages/models/hudguns/rocket/rl.jpg
-%%DATADIR%%/packages/models/hudguns/rocket/rl.md3
-%%DATADIR%%/packages/models/hudguns/rocket/rlmask.jpg
-%%DATADIR%%/packages/models/hudguns/shotg/Hands.md3
-%%DATADIR%%/packages/models/hudguns/shotg/blue/md3.cfg
-%%DATADIR%%/packages/models/hudguns/shotg/md3.cfg
-%%DATADIR%%/packages/models/hudguns/shotg/red/md3.cfg
-%%DATADIR%%/packages/models/hudguns/shotg/shotgun.jpg
-%%DATADIR%%/packages/models/hudguns/shotg/shotgun.md3
-%%DATADIR%%/packages/models/hudguns/shotg/shotgunmask.jpg
-%%DATADIR%%/packages/models/ironsnout/blue/headblue.jpg
-%%DATADIR%%/packages/models/ironsnout/blue/lowerblue.jpg
-%%DATADIR%%/packages/models/ironsnout/blue/md3.cfg
-%%DATADIR%%/packages/models/ironsnout/blue/upperblue.jpg
-%%DATADIR%%/packages/models/ironsnout/head.jpg
-%%DATADIR%%/packages/models/ironsnout/headorange.jpg
-%%DATADIR%%/packages/models/ironsnout/ironhead.md3
-%%DATADIR%%/packages/models/ironsnout/ironlegs.md3
-%%DATADIR%%/packages/models/ironsnout/irontorso.md3
-%%DATADIR%%/packages/models/ironsnout/license.txt
-%%DATADIR%%/packages/models/ironsnout/lower.jpg
-%%DATADIR%%/packages/models/ironsnout/lowerorange.jpg
-%%DATADIR%%/packages/models/ironsnout/maskhead.jpg
-%%DATADIR%%/packages/models/ironsnout/masklower.jpg
-%%DATADIR%%/packages/models/ironsnout/maskupper.jpg
-%%DATADIR%%/packages/models/ironsnout/md3.cfg
-%%DATADIR%%/packages/models/ironsnout/red/headred.jpg
-%%DATADIR%%/packages/models/ironsnout/red/lowerred.jpg
-%%DATADIR%%/packages/models/ironsnout/red/md3.cfg
-%%DATADIR%%/packages/models/ironsnout/red/upperred.jpg
-%%DATADIR%%/packages/models/ironsnout/upper.jpg
-%%DATADIR%%/packages/models/ironsnout/upperorange.jpg
+%%DATADIR%%/packages/models/hudguns/chaing/chaing.md5mesh
+%%DATADIR%%/packages/models/hudguns/chaing/chaing_idle.md5anim
+%%DATADIR%%/packages/models/hudguns/chaing/chaing_shoot.md5anim
+%%DATADIR%%/packages/models/hudguns/chaing/hands_mg_idle.md5anim
+%%DATADIR%%/packages/models/hudguns/chaing/hands_mg_shoot.md5anim
+%%DATADIR%%/packages/models/hudguns/chaing/m134.dds
+%%DATADIR%%/packages/models/hudguns/chaing/m134.png
+%%DATADIR%%/packages/models/hudguns/chaing/m134_mask.dds
+%%DATADIR%%/packages/models/hudguns/chaing/m134_mask.png
+%%DATADIR%%/packages/models/hudguns/chaing/m134_normals.dds
+%%DATADIR%%/packages/models/hudguns/chaing/m134_normals.png
+%%DATADIR%%/packages/models/hudguns/chaing/md5.cfg
+%%DATADIR%%/packages/models/hudguns/fist/chainsaw.dds
+%%DATADIR%%/packages/models/hudguns/fist/chainsaw.md5mesh
+%%DATADIR%%/packages/models/hudguns/fist/chainsaw.png
+%%DATADIR%%/packages/models/hudguns/fist/chainsaw_attack.md5anim
+%%DATADIR%%/packages/models/hudguns/fist/chainsaw_idle.md5anim
+%%DATADIR%%/packages/models/hudguns/fist/chainsaw_mask.dds
+%%DATADIR%%/packages/models/hudguns/fist/chainsaw_mask.png
+%%DATADIR%%/packages/models/hudguns/fist/chainsaw_normals.dds
+%%DATADIR%%/packages/models/hudguns/fist/chainsaw_normals.png
+%%DATADIR%%/packages/models/hudguns/fist/hands_saw_attack.md5anim
+%%DATADIR%%/packages/models/hudguns/fist/hands_saw_idle.md5anim
+%%DATADIR%%/packages/models/hudguns/fist/md5.cfg
+%%DATADIR%%/packages/models/hudguns/gl/gl.dds
+%%DATADIR%%/packages/models/hudguns/gl/gl.md5mesh
+%%DATADIR%%/packages/models/hudguns/gl/gl.png
+%%DATADIR%%/packages/models/hudguns/gl/gl_idle.md5anim
+%%DATADIR%%/packages/models/hudguns/gl/gl_mask.dds
+%%DATADIR%%/packages/models/hudguns/gl/gl_mask.png
+%%DATADIR%%/packages/models/hudguns/gl/gl_normals.dds
+%%DATADIR%%/packages/models/hudguns/gl/gl_normals.png
+%%DATADIR%%/packages/models/hudguns/gl/gl_shoot.md5anim
+%%DATADIR%%/packages/models/hudguns/gl/hands_gl_idle.md5anim
+%%DATADIR%%/packages/models/hudguns/gl/hands_gl_shoot.md5anim
+%%DATADIR%%/packages/models/hudguns/gl/md5.cfg
+%%DATADIR%%/packages/models/hudguns/license.txt
+%%DATADIR%%/packages/models/hudguns/pistol/colt.dds
+%%DATADIR%%/packages/models/hudguns/pistol/colt.png
+%%DATADIR%%/packages/models/hudguns/pistol/colt_mask.dds
+%%DATADIR%%/packages/models/hudguns/pistol/colt_mask.png
+%%DATADIR%%/packages/models/hudguns/pistol/colt_normals.dds
+%%DATADIR%%/packages/models/hudguns/pistol/colt_normals.png
+%%DATADIR%%/packages/models/hudguns/pistol/hands_revolver_idle.md5anim
+%%DATADIR%%/packages/models/hudguns/pistol/hands_revolver_shoot.md5anim
+%%DATADIR%%/packages/models/hudguns/pistol/md5.cfg
+%%DATADIR%%/packages/models/hudguns/pistol/revolver.md5mesh
+%%DATADIR%%/packages/models/hudguns/pistol/revolver_idle.md5anim
+%%DATADIR%%/packages/models/hudguns/pistol/revolver_shoot.md5anim
+%%DATADIR%%/packages/models/hudguns/rifle/hands_rifle_idle.md5anim
+%%DATADIR%%/packages/models/hudguns/rifle/hands_rifle_shoot.md5anim
+%%DATADIR%%/packages/models/hudguns/rifle/md5.cfg
+%%DATADIR%%/packages/models/hudguns/rifle/rifle.md5mesh
+%%DATADIR%%/packages/models/hudguns/rifle/rifle_idle.md5anim
+%%DATADIR%%/packages/models/hudguns/rifle/rifle_shoot.md5anim
+%%DATADIR%%/packages/models/hudguns/rifle/sniper.dds
+%%DATADIR%%/packages/models/hudguns/rifle/sniper.png
+%%DATADIR%%/packages/models/hudguns/rifle/sniper_mask.dds
+%%DATADIR%%/packages/models/hudguns/rifle/sniper_mask.png
+%%DATADIR%%/packages/models/hudguns/rifle/sniper_normals.dds
+%%DATADIR%%/packages/models/hudguns/rifle/sniper_normals.png
+%%DATADIR%%/packages/models/hudguns/rocket/hands_rl_idle.md5anim
+%%DATADIR%%/packages/models/hudguns/rocket/hands_rl_shoot.md5anim
+%%DATADIR%%/packages/models/hudguns/rocket/md5.cfg
+%%DATADIR%%/packages/models/hudguns/rocket/rl.dds
+%%DATADIR%%/packages/models/hudguns/rocket/rl.md5mesh
+%%DATADIR%%/packages/models/hudguns/rocket/rl.png
+%%DATADIR%%/packages/models/hudguns/rocket/rl_idle.md5anim
+%%DATADIR%%/packages/models/hudguns/rocket/rl_mask.dds
+%%DATADIR%%/packages/models/hudguns/rocket/rl_mask.png
+%%DATADIR%%/packages/models/hudguns/rocket/rl_normals.dds
+%%DATADIR%%/packages/models/hudguns/rocket/rl_normals.png
+%%DATADIR%%/packages/models/hudguns/rocket/rl_shoot.md5anim
+%%DATADIR%%/packages/models/hudguns/shotg/hands_shotgun_idle.md5anim
+%%DATADIR%%/packages/models/hudguns/shotg/hands_shotgun_shoot.md5anim
+%%DATADIR%%/packages/models/hudguns/shotg/md5.cfg
+%%DATADIR%%/packages/models/hudguns/shotg/shotgun.dds
+%%DATADIR%%/packages/models/hudguns/shotg/shotgun.md5mesh
+%%DATADIR%%/packages/models/hudguns/shotg/shotgun.png
+%%DATADIR%%/packages/models/hudguns/shotg/shotgun_attack.md5anim
+%%DATADIR%%/packages/models/hudguns/shotg/shotgun_idle.md5anim
+%%DATADIR%%/packages/models/hudguns/shotg/shotgun_mask.dds
+%%DATADIR%%/packages/models/hudguns/shotg/shotgun_mask.png
+%%DATADIR%%/packages/models/hudguns/shotg/shotgun_normals.dds
+%%DATADIR%%/packages/models/hudguns/shotg/shotgun_normals.png
+%%DATADIR%%/packages/models/hudguns/shotg/shotgun_shell.dds
+%%DATADIR%%/packages/models/hudguns/shotg/shotgun_shell.png
+%%DATADIR%%/packages/models/hudguns/shotg/shotgun_shell_mask.dds
+%%DATADIR%%/packages/models/hudguns/shotg/shotgun_shell_mask.png
+%%DATADIR%%/packages/models/hudguns/shotg/shotgun_shell_normals.dds
+%%DATADIR%%/packages/models/hudguns/shotg/shotgun_shell_normals.png
 %%DATADIR%%/packages/models/makke/arch/arch.jpg
 %%DATADIR%%/packages/models/makke/arch/arch_mask.jpg
 %%DATADIR%%/packages/models/makke/arch/md3.cfg
@@ -2512,6 +2666,10 @@
 %%DATADIR%%/packages/models/makke/tricky/sign3/tris.md2
 %%DATADIR%%/packages/models/makke/tricky/sign4/skin.jpg
 %%DATADIR%%/packages/models/makke/tricky/sign4/tris.md2
+%%DATADIR%%/packages/models/mapmodels/nieb/sign_no-exit/masks.png
+%%DATADIR%%/packages/models/mapmodels/nieb/sign_no-exit/model.obj
+%%DATADIR%%/packages/models/mapmodels/nieb/sign_no-exit/obj.cfg
+%%DATADIR%%/packages/models/mapmodels/nieb/sign_no-exit/skin.png
 %%DATADIR%%/packages/models/mitaman/chainlinkfence/chainlinkfence.txt
 %%DATADIR%%/packages/models/mitaman/chainlinkfence/masks.png
 %%DATADIR%%/packages/models/mitaman/chainlinkfence/md2.cfg
@@ -2584,7 +2742,6 @@
 %%DATADIR%%/packages/models/monster/hellpig/readme.txt
 %%DATADIR%%/packages/models/monster/hellpig/skin.jpg
 %%DATADIR%%/packages/models/monster/hellpig/tris.md2
-%%DATADIR%%/packages/models/monster/knight/evil/skin.jpg
 %%DATADIR%%/packages/models/monster/knight/md2.cfg
 %%DATADIR%%/packages/models/monster/knight/readme.txt
 %%DATADIR%%/packages/models/monster/knight/skin.jpg
@@ -2593,24 +2750,6 @@
 %%DATADIR%%/packages/models/monster/knight/vwep/skin.jpg
 %%DATADIR%%/packages/models/monster/knight/vwep/tris.md2
 %%DATADIR%%/packages/models/monster/md2.cfg
-%%DATADIR%%/packages/models/monster/mutant/masks.jpg
-%%DATADIR%%/packages/models/monster/mutant/md3.cfg
-%%DATADIR%%/packages/models/monster/mutant/mutant.md3
-%%DATADIR%%/packages/models/monster/mutant/skin.jpg
-%%DATADIR%%/packages/models/monster/ogro/Ogro.txt
-%%DATADIR%%/packages/models/monster/ogro/blue/masks.jpg
-%%DATADIR%%/packages/models/monster/ogro/blue/md2.cfg
-%%DATADIR%%/packages/models/monster/ogro/blue/skin.jpg
-%%DATADIR%%/packages/models/monster/ogro/md2.cfg
-%%DATADIR%%/packages/models/monster/ogro/red/masks.jpg
-%%DATADIR%%/packages/models/monster/ogro/red/md2.cfg
-%%DATADIR%%/packages/models/monster/ogro/red/skin.jpg
-%%DATADIR%%/packages/models/monster/ogro/skin.jpg
-%%DATADIR%%/packages/models/monster/ogro/tris.md2
-%%DATADIR%%/packages/models/monster/ogro/vwep/masks.jpg
-%%DATADIR%%/packages/models/monster/ogro/vwep/md2.cfg
-%%DATADIR%%/packages/models/monster/ogro/vwep/skin.jpg
-%%DATADIR%%/packages/models/monster/ogro/vwep/tris.md2
 %%DATADIR%%/packages/models/monster/rat/Ratamahatta.txt
 %%DATADIR%%/packages/models/monster/rat/md2.cfg
 %%DATADIR%%/packages/models/monster/rat/skin.jpg
@@ -2635,37 +2774,92 @@
 %%DATADIR%%/packages/models/monster/spider/skin.jpg
 %%DATADIR%%/packages/models/monster/spider/skin2.jpg
 %%DATADIR%%/packages/models/monster/spider/tris.md3
+%%DATADIR%%/packages/models/mrfixit/Body.dds
 %%DATADIR%%/packages/models/mrfixit/Body.png
+%%DATADIR%%/packages/models/mrfixit/Bodyblue.dds
 %%DATADIR%%/packages/models/mrfixit/Bodyblue.png
+%%DATADIR%%/packages/models/mrfixit/Bodyred.dds
 %%DATADIR%%/packages/models/mrfixit/Bodyred.png
+%%DATADIR%%/packages/models/mrfixit/Head.dds
 %%DATADIR%%/packages/models/mrfixit/Head.png
+%%DATADIR%%/packages/models/mrfixit/Headblue.dds
 %%DATADIR%%/packages/models/mrfixit/Headblue.png
+%%DATADIR%%/packages/models/mrfixit/Headred.dds
 %%DATADIR%%/packages/models/mrfixit/Headred.png
+%%DATADIR%%/packages/models/mrfixit/anims.cfg
 %%DATADIR%%/packages/models/mrfixit/armor/blue/md5.cfg
 %%DATADIR%%/packages/models/mrfixit/armor/green/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/armor/saberblue.dds
 %%DATADIR%%/packages/models/mrfixit/armor/saberblue.png
+%%DATADIR%%/packages/models/mrfixit/armor/sabergold.dds
 %%DATADIR%%/packages/models/mrfixit/armor/sabergold.png
+%%DATADIR%%/packages/models/mrfixit/armor/sabergold_NRM.dds
 %%DATADIR%%/packages/models/mrfixit/armor/sabergold_NRM.jpg
+%%DATADIR%%/packages/models/mrfixit/armor/sabergold_SPEC.dds
 %%DATADIR%%/packages/models/mrfixit/armor/sabergold_SPEC.jpg
+%%DATADIR%%/packages/models/mrfixit/armor/saberjade.dds
 %%DATADIR%%/packages/models/mrfixit/armor/saberjade.png
 %%DATADIR%%/packages/models/mrfixit/armor/sabreskull.md5mesh
 %%DATADIR%%/packages/models/mrfixit/armor/yellow/md5.cfg
 %%DATADIR%%/packages/models/mrfixit/backward.md5anim
 %%DATADIR%%/packages/models/mrfixit/blue/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/bodymasks.dds
 %%DATADIR%%/packages/models/mrfixit/bodymasks.png
+%%DATADIR%%/packages/models/mrfixit/bodynorm.dds
 %%DATADIR%%/packages/models/mrfixit/bodynorm.png
+%%DATADIR%%/packages/models/mrfixit/chainsaw_attack.md5anim
+%%DATADIR%%/packages/models/mrfixit/chainsaw_idle.md5anim
 %%DATADIR%%/packages/models/mrfixit/dead.md5anim
 %%DATADIR%%/packages/models/mrfixit/dead2.md5anim
 %%DATADIR%%/packages/models/mrfixit/dying.md5anim
 %%DATADIR%%/packages/models/mrfixit/dying2.md5anim
 %%DATADIR%%/packages/models/mrfixit/edit.md5anim
 %%DATADIR%%/packages/models/mrfixit/forward.md5anim
+%%DATADIR%%/packages/models/mrfixit/gl_idle.md5anim
+%%DATADIR%%/packages/models/mrfixit/gl_shoot.md5anim
+%%DATADIR%%/packages/models/mrfixit/headmasks.dds
 %%DATADIR%%/packages/models/mrfixit/headmasks.png
+%%DATADIR%%/packages/models/mrfixit/headnorm.dds
 %%DATADIR%%/packages/models/mrfixit/headnorm.png
+%%DATADIR%%/packages/models/mrfixit/horns/horns.dds
 %%DATADIR%%/packages/models/mrfixit/horns/horns.jpg
+%%DATADIR%%/packages/models/mrfixit/horns/horns_norms.dds
 %%DATADIR%%/packages/models/mrfixit/horns/horns_norms.jpg
 %%DATADIR%%/packages/models/mrfixit/horns/md5.cfg
 %%DATADIR%%/packages/models/mrfixit/horns/quadhorns.md5mesh
+%%DATADIR%%/packages/models/mrfixit/hudguns/chaing/blue/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/chaing/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/chaing/red/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/fist/blue/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/fist/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/fist/red/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/fixit_hands.dds
+%%DATADIR%%/packages/models/mrfixit/hudguns/fixit_hands.md5mesh
+%%DATADIR%%/packages/models/mrfixit/hudguns/fixit_hands.png
+%%DATADIR%%/packages/models/mrfixit/hudguns/fixit_hands_blue.dds
+%%DATADIR%%/packages/models/mrfixit/hudguns/fixit_hands_blue.png
+%%DATADIR%%/packages/models/mrfixit/hudguns/fixit_hands_mask.dds
+%%DATADIR%%/packages/models/mrfixit/hudguns/fixit_hands_mask.png
+%%DATADIR%%/packages/models/mrfixit/hudguns/fixit_hands_normals.dds
+%%DATADIR%%/packages/models/mrfixit/hudguns/fixit_hands_normals.png
+%%DATADIR%%/packages/models/mrfixit/hudguns/fixit_hands_red.dds
+%%DATADIR%%/packages/models/mrfixit/hudguns/fixit_hands_red.png
+%%DATADIR%%/packages/models/mrfixit/hudguns/gl/blue/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/gl/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/gl/red/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/pistol/blue/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/pistol/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/pistol/red/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/rifle/blue/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/rifle/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/rifle/red/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/rocket/blue/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/rocket/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/rocket/red/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/shotg/blue/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/shotg/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/hudguns/shotg/red/md5.cfg
 %%DATADIR%%/packages/models/mrfixit/idle.md5anim
 %%DATADIR%%/packages/models/mrfixit/jump.md5anim
 %%DATADIR%%/packages/models/mrfixit/lag.md5anim
@@ -2673,14 +2867,24 @@
 %%DATADIR%%/packages/models/mrfixit/license.txt
 %%DATADIR%%/packages/models/mrfixit/lose.md5anim
 %%DATADIR%%/packages/models/mrfixit/md5.cfg
+%%DATADIR%%/packages/models/mrfixit/minigun_idle.md5anim
+%%DATADIR%%/packages/models/mrfixit/minigun_shoot.md5anim
 %%DATADIR%%/packages/models/mrfixit/mrfixit.md5mesh
 %%DATADIR%%/packages/models/mrfixit/pain.md5anim
 %%DATADIR%%/packages/models/mrfixit/pain2.md5anim
+%%DATADIR%%/packages/models/mrfixit/preview.jpg
 %%DATADIR%%/packages/models/mrfixit/punch.md5anim
+%%DATADIR%%/packages/models/mrfixit/ragdoll.cfg
 %%DATADIR%%/packages/models/mrfixit/red/md5.cfg
 %%DATADIR%%/packages/models/mrfixit/right.md5anim
+%%DATADIR%%/packages/models/mrfixit/rl_idle.md5anim
+%%DATADIR%%/packages/models/mrfixit/rl_shoot.md5anim
 %%DATADIR%%/packages/models/mrfixit/shoot.md5anim
+%%DATADIR%%/packages/models/mrfixit/shotgun_idle.md5anim
+%%DATADIR%%/packages/models/mrfixit/shotgun_shoot.md5anim
 %%DATADIR%%/packages/models/mrfixit/sink.md5anim
+%%DATADIR%%/packages/models/mrfixit/sniper_idle.md5anim
+%%DATADIR%%/packages/models/mrfixit/sniper_shoot.md5anim
 %%DATADIR%%/packages/models/mrfixit/swim.md5anim
 %%DATADIR%%/packages/models/mrfixit/taunt.md5anim
 %%DATADIR%%/packages/models/mrfixit/win.md5anim
@@ -2737,11 +2941,11 @@
 %%DATADIR%%/packages/models/objects/sail01/md2.cfg
 %%DATADIR%%/packages/models/objects/sail01/skin.png
 %%DATADIR%%/packages/models/objects/sail01/tris.md2
+%%DATADIR%%/packages/models/objects/sign01/inn/skin.jpg
 %%DATADIR%%/packages/models/objects/sign01/masks.jpg
 %%DATADIR%%/packages/models/objects/sign01/md2.cfg
+%%DATADIR%%/packages/models/objects/sign01/pub/skin.jpg
 %%DATADIR%%/packages/models/objects/sign01/skin.jpg
-%%DATADIR%%/packages/models/objects/sign01/skin_inn.jpg
-%%DATADIR%%/packages/models/objects/sign01/skin_pub.jpg
 %%DATADIR%%/packages/models/objects/sign01/tris.md2
 %%DATADIR%%/packages/models/objects/table01/masks.jpg
 %%DATADIR%%/packages/models/objects/table01/md2.cfg
@@ -2778,6 +2982,24 @@
 %%DATADIR%%/packages/models/objects/woodchop/md2.cfg
 %%DATADIR%%/packages/models/objects/woodchop/skin.jpg
 %%DATADIR%%/packages/models/objects/woodchop/tris.md2
+%%DATADIR%%/packages/models/ogro/Ogro.txt
+%%DATADIR%%/packages/models/ogro/blue/masks.jpg
+%%DATADIR%%/packages/models/ogro/blue/md2.cfg
+%%DATADIR%%/packages/models/ogro/blue/skin.jpg
+%%DATADIR%%/packages/models/ogro/green/masks.jpg
+%%DATADIR%%/packages/models/ogro/green/md2.cfg
+%%DATADIR%%/packages/models/ogro/green/skin.jpg
+%%DATADIR%%/packages/models/ogro/md2.cfg
+%%DATADIR%%/packages/models/ogro/preview.jpg
+%%DATADIR%%/packages/models/ogro/red/masks.jpg
+%%DATADIR%%/packages/models/ogro/red/md2.cfg
+%%DATADIR%%/packages/models/ogro/red/skin.jpg
+%%DATADIR%%/packages/models/ogro/skin.jpg
+%%DATADIR%%/packages/models/ogro/tris.md2
+%%DATADIR%%/packages/models/ogro/vwep/masks.jpg
+%%DATADIR%%/packages/models/ogro/vwep/md2.cfg
+%%DATADIR%%/packages/models/ogro/vwep/skin.jpg
+%%DATADIR%%/packages/models/ogro/vwep/tris.md2
 %%DATADIR%%/packages/models/projectiles/grenade/license.txt
 %%DATADIR%%/packages/models/projectiles/grenade/masks.jpg
 %%DATADIR%%/packages/models/projectiles/grenade/md3.cfg
@@ -2810,67 +3032,6 @@
 %%DATADIR%%/packages/models/quadspheres/md3.cfg
 %%DATADIR%%/packages/models/quadspheres/skin.jpg
 %%DATADIR%%/packages/models/quadspheres/tris.md3
-%%DATADIR%%/packages/models/rpg/characters/dragon/License.txt
-%%DATADIR%%/packages/models/rpg/characters/dragon/lower.md3
-%%DATADIR%%/packages/models/rpg/characters/dragon/md3.cfg
-%%DATADIR%%/packages/models/rpg/characters/dragon/skin.jpg
-%%DATADIR%%/packages/models/rpg/characters/goblin/ghead.jpg
-%%DATADIR%%/packages/models/rpg/characters/goblin/ghead.md3
-%%DATADIR%%/packages/models/rpg/characters/goblin/gtorso.jpg
-%%DATADIR%%/packages/models/rpg/characters/goblin/gtorso.md3
-%%DATADIR%%/packages/models/rpg/characters/goblin/md3.cfg
-%%DATADIR%%/packages/models/rpg/characters/golem/License.txt
-%%DATADIR%%/packages/models/rpg/characters/golem/golem.md3
-%%DATADIR%%/packages/models/rpg/characters/golem/golem.txt
-%%DATADIR%%/packages/models/rpg/characters/golem/golemice.jpg
-%%DATADIR%%/packages/models/rpg/characters/golem/md3.cfg
-%%DATADIR%%/packages/models/rpg/characters/golem/skin.jpg
-%%DATADIR%%/packages/models/rpg/characters/grizzly/License.txt
-%%DATADIR%%/packages/models/rpg/characters/grizzly/bear.md3
-%%DATADIR%%/packages/models/rpg/characters/grizzly/bear.txt
-%%DATADIR%%/packages/models/rpg/characters/grizzly/mask.jpg
-%%DATADIR%%/packages/models/rpg/characters/grizzly/md3.cfg
-%%DATADIR%%/packages/models/rpg/characters/grizzly/skin.jpg
-%%DATADIR%%/packages/models/rpg/characters/horse/License.txt
-%%DATADIR%%/packages/models/rpg/characters/horse/horse.md3
-%%DATADIR%%/packages/models/rpg/characters/horse/horse.txt
-%%DATADIR%%/packages/models/rpg/characters/horse/masks.jpg
-%%DATADIR%%/packages/models/rpg/characters/horse/md3.cfg
-%%DATADIR%%/packages/models/rpg/characters/horse/skin.jpg
-%%DATADIR%%/packages/models/rpg/characters/horse/skin_2.jpg
-%%DATADIR%%/packages/models/rpg/characters/horse/skin_3.jpg
-%%DATADIR%%/packages/models/rpg/characters/mman/License.txt
-%%DATADIR%%/packages/models/rpg/characters/mman/lower.md3
-%%DATADIR%%/packages/models/rpg/characters/mman/man.blend
-%%DATADIR%%/packages/models/rpg/characters/mman/md3.cfg
-%%DATADIR%%/packages/models/rpg/characters/mman/mman.md3
-%%DATADIR%%/packages/models/rpg/characters/mman/skin.png
-%%DATADIR%%/packages/models/rpg/characters/mman/upper.md3
-%%DATADIR%%/packages/models/rpg/characters/npcman/License.txt
-%%DATADIR%%/packages/models/rpg/characters/npcman/gpc.md3
-%%DATADIR%%/packages/models/rpg/characters/npcman/md3.cfg
-%%DATADIR%%/packages/models/rpg/characters/npcman/skin.jpg
-%%DATADIR%%/packages/models/rpg/characters/rat/License.txt
-%%DATADIR%%/packages/models/rpg/characters/rat/lower.md3
-%%DATADIR%%/packages/models/rpg/characters/rat/md3.cfg
-%%DATADIR%%/packages/models/rpg/characters/rat/skin.jpg
-%%DATADIR%%/packages/models/rpg/characters/snagon/dragonc.md3
-%%DATADIR%%/packages/models/rpg/characters/snagon/md3.cfg
-%%DATADIR%%/packages/models/rpg/characters/snagon/tskin.jpg
-%%DATADIR%%/packages/models/rpg/characters/wolf/License.txt
-%%DATADIR%%/packages/models/rpg/characters/wolf/makkEwolf.txt
-%%DATADIR%%/packages/models/rpg/characters/wolf/masks.jpg
-%%DATADIR%%/packages/models/rpg/characters/wolf/md3.cfg
-%%DATADIR%%/packages/models/rpg/characters/wolf/skin.jpg
-%%DATADIR%%/packages/models/rpg/characters/wolf/wolf.md3
-%%DATADIR%%/packages/models/rpg/characters/wolf/wolfskin1.jpg
-%%DATADIR%%/packages/models/rpg/characters/wolf/wolfskin2.jpg
-%%DATADIR%%/packages/models/rpg/characters/wolf/wolfskin3.jpg
-%%DATADIR%%/packages/models/rpg/characters/wolf/wolfskin4.jpg
-%%DATADIR%%/packages/models/rpg/objects/coin/mask.jpg
-%%DATADIR%%/packages/models/rpg/objects/coin/md3.cfg
-%%DATADIR%%/packages/models/rpg/objects/coin/skin.jpg
-%%DATADIR%%/packages/models/rpg/objects/coin/tris.md3
 %%DATADIR%%/packages/models/shield/blue/md3.cfg
 %%DATADIR%%/packages/models/shield/blue/skin.jpg
 %%DATADIR%%/packages/models/shield/green/md3.cfg
@@ -2879,6 +3040,87 @@
 %%DATADIR%%/packages/models/shield/tris.md3
 %%DATADIR%%/packages/models/shield/yellow/md3.cfg
 %%DATADIR%%/packages/models/shield/yellow/skin.jpg
+%%DATADIR%%/packages/models/snoutx10k/armor/blue/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/armor/green/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/armor/shoulder_armor.md5mesh
+%%DATADIR%%/packages/models/snoutx10k/armor/shoulder_armor_b.dds
+%%DATADIR%%/packages/models/snoutx10k/armor/shoulder_armor_b.png
+%%DATADIR%%/packages/models/snoutx10k/armor/shoulder_armor_g.dds
+%%DATADIR%%/packages/models/snoutx10k/armor/shoulder_armor_g.png
+%%DATADIR%%/packages/models/snoutx10k/armor/shoulder_armor_mask.dds
+%%DATADIR%%/packages/models/snoutx10k/armor/shoulder_armor_mask.png
+%%DATADIR%%/packages/models/snoutx10k/armor/shoulder_armor_normals.dds
+%%DATADIR%%/packages/models/snoutx10k/armor/shoulder_armor_normals.png
+%%DATADIR%%/packages/models/snoutx10k/armor/shoulder_armor_y.dds
+%%DATADIR%%/packages/models/snoutx10k/armor/shoulder_armor_y.png
+%%DATADIR%%/packages/models/snoutx10k/armor/yellow/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/blue/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/chaing/blue/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/chaing/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/chaing/red/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/fist/blue/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/fist/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/fist/red/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/gl/blue/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/gl/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/gl/red/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/pistol/blue/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/pistol/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/pistol/red/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/rifle/blue/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/rifle/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/rifle/red/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/rocket/blue/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/rocket/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/rocket/red/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/shotg/blue/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/shotg/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/shotg/red/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/hudguns/snout_hands.dds
+%%DATADIR%%/packages/models/snoutx10k/hudguns/snout_hands.md5mesh
+%%DATADIR%%/packages/models/snoutx10k/hudguns/snout_hands.png
+%%DATADIR%%/packages/models/snoutx10k/hudguns/snout_hands_blue.dds
+%%DATADIR%%/packages/models/snoutx10k/hudguns/snout_hands_blue.png
+%%DATADIR%%/packages/models/snoutx10k/hudguns/snout_hands_mask.dds
+%%DATADIR%%/packages/models/snoutx10k/hudguns/snout_hands_mask.png
+%%DATADIR%%/packages/models/snoutx10k/hudguns/snout_hands_normals.dds
+%%DATADIR%%/packages/models/snoutx10k/hudguns/snout_hands_normals.png
+%%DATADIR%%/packages/models/snoutx10k/hudguns/snout_hands_red.dds
+%%DATADIR%%/packages/models/snoutx10k/hudguns/snout_hands_red.png
+%%DATADIR%%/packages/models/snoutx10k/license.txt
+%%DATADIR%%/packages/models/snoutx10k/lower.dds
+%%DATADIR%%/packages/models/snoutx10k/lower.png
+%%DATADIR%%/packages/models/snoutx10k/lower_b.dds
+%%DATADIR%%/packages/models/snoutx10k/lower_b.png
+%%DATADIR%%/packages/models/snoutx10k/lower_mask.dds
+%%DATADIR%%/packages/models/snoutx10k/lower_mask.png
+%%DATADIR%%/packages/models/snoutx10k/lower_normals.dds
+%%DATADIR%%/packages/models/snoutx10k/lower_normals.png
+%%DATADIR%%/packages/models/snoutx10k/lower_r.dds
+%%DATADIR%%/packages/models/snoutx10k/lower_r.png
+%%DATADIR%%/packages/models/snoutx10k/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/preview.jpg
+%%DATADIR%%/packages/models/snoutx10k/red/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/snoutx10k.md5mesh
+%%DATADIR%%/packages/models/snoutx10k/upper.dds
+%%DATADIR%%/packages/models/snoutx10k/upper.png
+%%DATADIR%%/packages/models/snoutx10k/upper_b.dds
+%%DATADIR%%/packages/models/snoutx10k/upper_b.png
+%%DATADIR%%/packages/models/snoutx10k/upper_mask.dds
+%%DATADIR%%/packages/models/snoutx10k/upper_mask.png
+%%DATADIR%%/packages/models/snoutx10k/upper_normals.dds
+%%DATADIR%%/packages/models/snoutx10k/upper_normals.png
+%%DATADIR%%/packages/models/snoutx10k/upper_r.dds
+%%DATADIR%%/packages/models/snoutx10k/upper_r.png
+%%DATADIR%%/packages/models/snoutx10k/wings/md5.cfg
+%%DATADIR%%/packages/models/snoutx10k/wings/wings.dds
+%%DATADIR%%/packages/models/snoutx10k/wings/wings.md5mesh
+%%DATADIR%%/packages/models/snoutx10k/wings/wings.png
+%%DATADIR%%/packages/models/snoutx10k/wings/wings_mask.dds
+%%DATADIR%%/packages/models/snoutx10k/wings/wings_mask.png
+%%DATADIR%%/packages/models/snoutx10k/wings/wings_normals.dds
+%%DATADIR%%/packages/models/snoutx10k/wings/wings_normals.png
 %%DATADIR%%/packages/models/steve_e/doors/trapdoor/md3.cfg
 %%DATADIR%%/packages/models/steve_e/doors/trapdoor/pigiron.jpg
 %%DATADIR%%/packages/models/steve_e/doors/trapdoor/pigiron_m.jpg
@@ -2987,6 +3229,7 @@
 %%DATADIR%%/packages/models/tentus/magic/masks.jpg
 %%DATADIR%%/packages/models/tentus/magic/md2.cfg
 %%DATADIR%%/packages/models/tentus/magic/skin.jpg
+%%DATADIR%%/packages/models/tentus/magic/spin/md2.cfg
 %%DATADIR%%/packages/models/tentus/magic/tris.md2
 %%DATADIR%%/packages/models/tentus/moneybag/masks.jpg
 %%DATADIR%%/packages/models/tentus/moneybag/md2.cfg
@@ -3060,33 +3303,20 @@
 %%DATADIR%%/packages/models/vegetation/tree12/tris.md3
 %%DATADIR%%/packages/models/vegetation/weeds/md3.cfg
 %%DATADIR%%/packages/models/vegetation/weeds/tris.md3
-%%DATADIR%%/packages/models/vwep/chaing/chaingztex.jpg
-%%DATADIR%%/packages/models/vwep/chaing/md3.cfg
-%%DATADIR%%/packages/models/vwep/chaing/vchaing.md3
-%%DATADIR%%/packages/models/vwep/fist/blademask.jpg
-%%DATADIR%%/packages/models/vwep/fist/md3.cfg
-%%DATADIR%%/packages/models/vwep/fist/saw2.jpg
-%%DATADIR%%/packages/models/vwep/fist/sawfist.jpg
-%%DATADIR%%/packages/models/vwep/fist/sawfistmask.jpg
-%%DATADIR%%/packages/models/vwep/fist/sparks.jpg
-%%DATADIR%%/packages/models/vwep/fist/vfist.md3
-%%DATADIR%%/packages/models/vwep/gl/glx.jpg
-%%DATADIR%%/packages/models/vwep/gl/mask.jpg
-%%DATADIR%%/packages/models/vwep/gl/md3.cfg
-%%DATADIR%%/packages/models/vwep/gl/vgl.md3
-%%DATADIR%%/packages/models/vwep/pistol/md3.cfg
-%%DATADIR%%/packages/models/vwep/pistol/pistol.jpg
-%%DATADIR%%/packages/models/vwep/pistol/vpistol.md3
-%%DATADIR%%/packages/models/vwep/rifle/mask.jpg
-%%DATADIR%%/packages/models/vwep/rifle/md3.cfg
-%%DATADIR%%/packages/models/vwep/rifle/plasmacross.jpg
-%%DATADIR%%/packages/models/vwep/rifle/vrifle.md3
-%%DATADIR%%/packages/models/vwep/rocket/md3.cfg
-%%DATADIR%%/packages/models/vwep/rocket/rl.jpg
-%%DATADIR%%/packages/models/vwep/rocket/vrock.md3
-%%DATADIR%%/packages/models/vwep/shotg/md3.cfg
-%%DATADIR%%/packages/models/vwep/shotg/shotgun.jpg
-%%DATADIR%%/packages/models/vwep/shotg/vshot.md3
+%%DATADIR%%/packages/models/vwep/chaing/md5.cfg
+%%DATADIR%%/packages/models/vwep/chaing/minigun_vwep.md5mesh
+%%DATADIR%%/packages/models/vwep/fist/chainsaw_vwep.md5mesh
+%%DATADIR%%/packages/models/vwep/fist/md5.cfg
+%%DATADIR%%/packages/models/vwep/gl/gl_vwep.md5mesh
+%%DATADIR%%/packages/models/vwep/gl/md5.cfg
+%%DATADIR%%/packages/models/vwep/pistol/md5.cfg
+%%DATADIR%%/packages/models/vwep/pistol/revolver_vwep.md5mesh
+%%DATADIR%%/packages/models/vwep/rifle/md5.cfg
+%%DATADIR%%/packages/models/vwep/rifle/sniper_vwep.md5mesh
+%%DATADIR%%/packages/models/vwep/rocket/md5.cfg
+%%DATADIR%%/packages/models/vwep/rocket/rl_vwep.md5mesh
+%%DATADIR%%/packages/models/vwep/shotg/md5.cfg
+%%DATADIR%%/packages/models/vwep/shotg/shotgun_vwep.md5mesh
 %%DATADIR%%/packages/models/xeno/Xeno permission.txt
 %%DATADIR%%/packages/models/xeno/box1/masks.jpg
 %%DATADIR%%/packages/models/xeno/box1/md2.cfg
@@ -3096,6 +3326,31 @@
 %%DATADIR%%/packages/models/xeno/box2/md2.cfg
 %%DATADIR%%/packages/models/xeno/box2/skin.jpg
 %%DATADIR%%/packages/models/xeno/box2/tris.md2
+%%DATADIR%%/packages/mx/textures/sdm1/Ry.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/dgray.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/floor_01.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/floor_02.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/floor_03.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/floor_04.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/floor_05.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/jumppadScroller.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/jumppadScroller_glow.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/lamp.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/lava.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/light01.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/light01_glow.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/light02.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/light02_glow.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/light03.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/light03_glow.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/notexture.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/plasma.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/violet_1.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/violet_2.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/wall_01.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/wall_02.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/wall_03.jpg
+%%DATADIR%%/packages/mx/textures/sdm1/white.jpg
 %%DATADIR%%/packages/noctua/conc01.jpg
 %%DATADIR%%/packages/noctua/conc01_normal.jpg
 %%DATADIR%%/packages/noctua/conc01_spec.jpg
@@ -3117,22 +3372,78 @@
 %%DATADIR%%/packages/noctua/plast07_normal.jpg
 %%DATADIR%%/packages/noctua/plast07_spec.jpg
 %%DATADIR%%/packages/noctua/stone16.jpg
+%%DATADIR%%/packages/painkillah/PK_readme.txt
+%%DATADIR%%/packages/painkillah/package.cfg
+%%DATADIR%%/packages/painkillah/pk_arabic_rosetonB_cc.jpg
+%%DATADIR%%/packages/painkillah/pk_arabic_rosetonB_hm.jpg
+%%DATADIR%%/packages/painkillah/pk_arabic_rosetonB_nm.jpg
+%%DATADIR%%/packages/painkillah/pk_arabic_rosetonB_sc.jpg
+%%DATADIR%%/packages/painkillah/pk_arabic_rosetonR_cc.jpg
+%%DATADIR%%/packages/painkillah/pk_arabic_rosetonR_hm.jpg
+%%DATADIR%%/packages/painkillah/pk_arabic_rosetonR_nm.jpg
+%%DATADIR%%/packages/painkillah/pk_arabic_rosetonR_sc.jpg
+%%DATADIR%%/packages/painkillah/pk_arabic_rosetonY_cc.jpg
+%%DATADIR%%/packages/painkillah/pk_arabic_rosetonY_hm.jpg
+%%DATADIR%%/packages/painkillah/pk_arabic_rosetonY_nm.jpg
+%%DATADIR%%/packages/painkillah/pk_arabic_rosetonY_sc.jpg
+%%DATADIR%%/packages/painkillah/pk_arlequin_blue_cc.jpg
+%%DATADIR%%/packages/painkillah/pk_arlequin_blue_hm.jpg
+%%DATADIR%%/packages/painkillah/pk_arlequin_blue_nm.jpg
+%%DATADIR%%/packages/painkillah/pk_arlequin_blue_sc.jpg
+%%DATADIR%%/packages/painkillah/pk_arlequin_brown_cc.jpg
+%%DATADIR%%/packages/painkillah/pk_arlequin_brown_hm.jpg
+%%DATADIR%%/packages/painkillah/pk_arlequin_brown_nm.jpg
+%%DATADIR%%/packages/painkillah/pk_arlequin_brown_sc.jpg
+%%DATADIR%%/packages/painkillah/pk_arlequin_cc.jpg
+%%DATADIR%%/packages/painkillah/pk_arlequin_hm.jpg
+%%DATADIR%%/packages/painkillah/pk_arlequin_nm.jpg
+%%DATADIR%%/packages/painkillah/pk_arlequin_sc.jpg
+%%DATADIR%%/packages/painkillah/pk_broken_vitral_cc.jpg
+%%DATADIR%%/packages/painkillah/pk_broken_vitral_hm.jpg
+%%DATADIR%%/packages/painkillah/pk_broken_vitral_nm.jpg
+%%DATADIR%%/packages/painkillah/pk_broken_vitral_sc.jpg
+%%DATADIR%%/packages/painkillah/pk_cotage_cc.jpg
+%%DATADIR%%/packages/painkillah/pk_cotage_color_cc.jpg
+%%DATADIR%%/packages/painkillah/pk_cotage_color_hm.jpg
+%%DATADIR%%/packages/painkillah/pk_cotage_color_nm.jpg
+%%DATADIR%%/packages/painkillah/pk_cotage_color_sc.jpg
+%%DATADIR%%/packages/painkillah/pk_cotage_hm.jpg
+%%DATADIR%%/packages/painkillah/pk_cotage_nm.jpg
+%%DATADIR%%/packages/painkillah/pk_cotage_sc.jpg
+%%DATADIR%%/packages/painkillah/pk_flower_vitral_cc.jpg
+%%DATADIR%%/packages/painkillah/pk_flower_vitral_hm.jpg
+%%DATADIR%%/packages/painkillah/pk_flower_vitral_nm.jpg
+%%DATADIR%%/packages/painkillah/pk_flower_vitral_sc.jpg
+%%DATADIR%%/packages/painkillah/pk_flwh_vitral_cc.jpg
+%%DATADIR%%/packages/painkillah/pk_flwh_vitral_hm.jpg
+%%DATADIR%%/packages/painkillah/pk_flwh_vitral_nm.jpg
+%%DATADIR%%/packages/painkillah/pk_flwh_vitral_sc.jpg
+%%DATADIR%%/packages/painkillah/pk_roseton_vitral_cc.jpg
+%%DATADIR%%/packages/painkillah/pk_roseton_vitral_hm.jpg
+%%DATADIR%%/packages/painkillah/pk_roseton_vitral_nm.jpg
+%%DATADIR%%/packages/painkillah/pk_roseton_vitral_sc.jpg
 %%DATADIR%%/packages/particles/ball1.png
 %%DATADIR%%/packages/particles/ball2.png
 %%DATADIR%%/packages/particles/ball3.png
 %%DATADIR%%/packages/particles/base.png
+%%DATADIR%%/packages/particles/blob.png
 %%DATADIR%%/packages/particles/blood.png
 %%DATADIR%%/packages/particles/bullet.png
 %%DATADIR%%/packages/particles/explosion.jpg
 %%DATADIR%%/packages/particles/fire_exp.png
+%%DATADIR%%/packages/particles/flames.png
 %%DATADIR%%/packages/particles/flare.jpg
 %%DATADIR%%/packages/particles/lensflares.png
 %%DATADIR%%/packages/particles/license.txt
 %%DATADIR%%/packages/particles/lightning.jpg
+%%DATADIR%%/packages/particles/muzzleflash1.jpg
+%%DATADIR%%/packages/particles/muzzleflash2.jpg
+%%DATADIR%%/packages/particles/muzzleflash3.jpg
 %%DATADIR%%/packages/particles/scorch.png
 %%DATADIR%%/packages/particles/smoke.png
 %%DATADIR%%/packages/particles/smoke_exp.png
 %%DATADIR%%/packages/particles/spark.png
+%%DATADIR%%/packages/particles/steam.png
 %%DATADIR%%/packages/payne/Box12b.jpg
 %%DATADIR%%/packages/payne/Box12b_depth.jpg
 %%DATADIR%%/packages/payne/Box12b_normal.jpg
@@ -3146,6 +3457,13 @@
 %%DATADIR%%/packages/payne/Tile41a.jpg
 %%DATADIR%%/packages/payne/package.cfg
 %%DATADIR%%/packages/payne/readme.txt
+%%DATADIR%%/packages/penguins/arid_bk.jpg
+%%DATADIR%%/packages/penguins/arid_dn.jpg
+%%DATADIR%%/packages/penguins/arid_ft.jpg
+%%DATADIR%%/packages/penguins/arid_lf.jpg
+%%DATADIR%%/packages/penguins/arid_rt.jpg
+%%DATADIR%%/packages/penguins/arid_up.jpg
+%%DATADIR%%/packages/penguins/readme.txt
 %%DATADIR%%/packages/philipk/package.cfg
 %%DATADIR%%/packages/philipk/pk01_door01_add.jpg
 %%DATADIR%%/packages/philipk/pk01_door01_local.jpg
@@ -3201,6 +3519,8 @@
 %%DATADIR%%/packages/philipk/pk01_panel_small01_d.jpg
 %%DATADIR%%/packages/philipk/pk01_panel_small01_local.jpg
 %%DATADIR%%/packages/philipk/pk01_panel_small01_s.jpg
+%%DATADIR%%/packages/philipk/pk01_panel_small01red_add.jpg
+%%DATADIR%%/packages/philipk/pk01_panel_small01red_d.jpg
 %%DATADIR%%/packages/philipk/pk01_panel_small02_add.jpg
 %%DATADIR%%/packages/philipk/pk01_panel_small02_d.jpg
 %%DATADIR%%/packages/philipk/pk01_panel_small02_local.jpg
@@ -3267,7 +3587,6 @@
 %%DATADIR%%/packages/philipk/pk01_wall03a_d.jpg
 %%DATADIR%%/packages/philipk/pk01_wall03b_d.jpg
 %%DATADIR%%/packages/philipk/readme.txt
-%%DATADIR%%/packages/philipk/texture.cfg
 %%DATADIR%%/packages/ratboy/katrez/rb_light.jpg
 %%DATADIR%%/packages/ratboy/katrez/rb_metal_01.jpg
 %%DATADIR%%/packages/ratboy/katrez/rb_metal_02.jpg
@@ -3288,6 +3607,18 @@
 %%DATADIR%%/packages/ratboy/skyboxes/coward_rt.jpg
 %%DATADIR%%/packages/ratboy/skyboxes/coward_up.jpg
 %%DATADIR%%/packages/readme.txt
+%%DATADIR%%/packages/redon/red_sp1/checkbox_off.png
+%%DATADIR%%/packages/redon/red_sp1/checkbox_on.png
+%%DATADIR%%/packages/redon/red_sp1/computerscreen.png
+%%DATADIR%%/packages/redon/red_sp1/cubecolor1.png
+%%DATADIR%%/packages/redon/red_sp1/cubecolor2.png
+%%DATADIR%%/packages/redon/red_sp1/cubecolor3.png
+%%DATADIR%%/packages/redon/red_sp1/textures.cfg
+%%DATADIR%%/packages/redon/red_sp1/volt1_d.jpg
+%%DATADIR%%/packages/redon/red_sp1/volt2_d.jpg
+%%DATADIR%%/packages/redon/red_sp1/volt_h.jpg
+%%DATADIR%%/packages/redon/red_sp1/volt_local.jpg
+%%DATADIR%%/packages/redon/red_sp1/volt_s.jpg
 %%DATADIR%%/packages/rorschach/128_ivbr_trim02.jpg
 %%DATADIR%%/packages/rorschach/128_ivbr_trim02_hm.jpg
 %%DATADIR%%/packages/rorschach/128_ivbr_trim02_nm.jpg
@@ -3630,10 +3961,6 @@
 %%DATADIR%%/packages/satan/sr_light_grn_832_g.jpg
 %%DATADIR%%/packages/schwenz/dt_tile_check.01.jpg
 %%DATADIR%%/packages/schwenz/readme.txt
-%%DATADIR%%/packages/sds/corkboard.jpg
-%%DATADIR%%/packages/sds/infirmarysign.jpg
-%%DATADIR%%/packages/sds/station3asign.jpg
-%%DATADIR%%/packages/sds/stationivucsign.jpg
 %%DATADIR%%/packages/shmutzwurst/brd.jpg
 %%DATADIR%%/packages/shmutzwurst/ddr.jpg
 %%DATADIR%%/packages/shmutzwurst/dedicat.jpg
@@ -3746,14 +4073,6 @@
 %%DATADIR%%/packages/sounds/aard/pain5.wav
 %%DATADIR%%/packages/sounds/aard/pain6.wav
 %%DATADIR%%/packages/sounds/aard/tak.wav
-%%DATADIR%%/packages/sounds/aard/voice/base_captured.wav
-%%DATADIR%%/packages/sounds/aard/voice/base_lost.wav
-%%DATADIR%%/packages/sounds/aard/voice/fight.wav
-%%DATADIR%%/packages/sounds/aard/voice/health_boost.wav
-%%DATADIR%%/packages/sounds/aard/voice/health_boost_in_10_seconds.wav
-%%DATADIR%%/packages/sounds/aard/voice/quad_damage.wav
-%%DATADIR%%/packages/sounds/aard/voice/quad_damage_in_10_seconds.wav
-%%DATADIR%%/packages/sounds/aard/voice/respawnpoint.wav
 %%DATADIR%%/packages/sounds/aard/weapload.wav
 %%DATADIR%%/packages/sounds/ambience/authors.txt
 %%DATADIR%%/packages/sounds/ambience/cavedrip.ogg
@@ -3784,10 +4103,22 @@
 %%DATADIR%%/packages/sounds/awesund/rifle.wav
 %%DATADIR%%/packages/sounds/awesund/rlaunch.wav
 %%DATADIR%%/packages/sounds/awesund/shotgun.wav
+%%DATADIR%%/packages/sounds/blindabuser/base_captured.ogg
+%%DATADIR%%/packages/sounds/blindabuser/base_lost.ogg
+%%DATADIR%%/packages/sounds/blindabuser/fight.ogg
+%%DATADIR%%/packages/sounds/blindabuser/health_boost.ogg
+%%DATADIR%%/packages/sounds/blindabuser/health_boost_in_10_seconds.ogg
+%%DATADIR%%/packages/sounds/blindabuser/lets_fight.ogg
+%%DATADIR%%/packages/sounds/blindabuser/quad_damage.ogg
+%%DATADIR%%/packages/sounds/blindabuser/quad_damage_in_10_seconds.ogg
+%%DATADIR%%/packages/sounds/blindabuser/rain.ogg
+%%DATADIR%%/packages/sounds/blindabuser/respawn_point_set.ogg
 %%DATADIR%%/packages/sounds/ctf/flagdrop.wav
 %%DATADIR%%/packages/sounds/ctf/flagpickup.wav
 %%DATADIR%%/packages/sounds/ctf/flagreturn.wav
 %%DATADIR%%/packages/sounds/ctf/flagscore.wav
+%%DATADIR%%/packages/sounds/drakker/license.txt
+%%DATADIR%%/packages/sounds/drakker/machine_needs_oil.ogg
 %%DATADIR%%/packages/sounds/fanatic/feeding_room_high.wav
 %%DATADIR%%/packages/sounds/fanatic/feeding_room_low.wav
 %%DATADIR%%/packages/sounds/fanatic/forest.wav
@@ -3804,6 +4135,7 @@
 %%DATADIR%%/packages/sounds/free/chaingun.wav
 %%DATADIR%%/packages/sounds/free/chaingun_once.wav
 %%DATADIR%%/packages/sounds/free/explode.wav
+%%DATADIR%%/packages/sounds/free/hit.ogg
 %%DATADIR%%/packages/sounds/free/itemback.wav
 %%DATADIR%%/packages/sounds/free/itempick.wav
 %%DATADIR%%/packages/sounds/free/launch1.wav
@@ -3848,6 +4180,8 @@
 %%DATADIR%%/packages/sounds/ppm/slimeball.wav
 %%DATADIR%%/packages/sounds/readme.txt
 %%DATADIR%%/packages/sounds/soundsnap/burn.ogg
+%%DATADIR%%/packages/sounds/soundsnap/chainsaw_attack.ogg
+%%DATADIR%%/packages/sounds/soundsnap/chainsaw_idle.ogg
 %%DATADIR%%/packages/sounds/soundsnap/readme.txt
 %%DATADIR%%/packages/staffy/staffy_bk.jpg
 %%DATADIR%%/packages/staffy/staffy_dn.jpg
@@ -3883,6 +4217,7 @@
 %%DATADIR%%/packages/tech1soc/032-15a.jpg
 %%DATADIR%%/packages/tech1soc/032-15b.jpg
 %%DATADIR%%/packages/tech1soc/032lig10bb.jpg
+%%DATADIR%%/packages/tech1soc/032lig11b_glow.jpg
 %%DATADIR%%/packages/tech1soc/032lig11bb.jpg
 %%DATADIR%%/packages/tech1soc/032lig11rb.jpg
 %%DATADIR%%/packages/tech1soc/032lig12bb.jpg
@@ -4003,6 +4338,26 @@
 %%DATADIR%%/packages/than_ind/trlight06_g.jpg
 %%DATADIR%%/packages/than_ind/trlight06_n.jpg
 %%DATADIR%%/packages/than_ind/trlight06_s.jpg
+%%DATADIR%%/packages/tomek/license.txt
+%%DATADIR%%/packages/tomek/package.cfg
+%%DATADIR%%/packages/tomek/snow10_d.jpg
+%%DATADIR%%/packages/tomek/snow10_h.jpg
+%%DATADIR%%/packages/tomek/snow10_local.jpg
+%%DATADIR%%/packages/tomek/snow10_s.jpg
+%%DATADIR%%/packages/tomek/snow2_d.jpg
+%%DATADIR%%/packages/tomek/snow2_h.jpg
+%%DATADIR%%/packages/tomek/snow2_local.jpg
+%%DATADIR%%/packages/tomek/snow2_s.jpg
+%%DATADIR%%/packages/tomek/snow7_d.jpg
+%%DATADIR%%/packages/tomek/snow7_h.jpg
+%%DATADIR%%/packages/tomek/snow7_local.jpg
+%%DATADIR%%/packages/tomek/snow7_s.jpg
+%%DATADIR%%/packages/tomek/snow8_d.jpg
+%%DATADIR%%/packages/tomek/snow8_h.jpg
+%%DATADIR%%/packages/tomek/snow8_local.jpg
+%%DATADIR%%/packages/tomek/snow8_s.jpg
+%%DATADIR%%/packages/tomek/snow_local.jpg
+@dirrm %%DATADIR%%/packages/tomek
 @dirrm %%DATADIR%%/packages/than_ind
 @dirrm %%DATADIR%%/packages/textures
 @dirrm %%DATADIR%%/packages/tech1soc
@@ -4014,26 +4369,33 @@
 @dirrm %%DATADIR%%/packages/sounds/kaiser
 @dirrm %%DATADIR%%/packages/sounds/free
 @dirrm %%DATADIR%%/packages/sounds/fanatic
+@dirrm %%DATADIR%%/packages/sounds/drakker
 @dirrm %%DATADIR%%/packages/sounds/ctf
+@dirrm %%DATADIR%%/packages/sounds/blindabuser
 @dirrm %%DATADIR%%/packages/sounds/awesund
 @dirrm %%DATADIR%%/packages/sounds/ambience
-@dirrm %%DATADIR%%/packages/sounds/aard/voice
 @dirrm %%DATADIR%%/packages/sounds/aard
 @dirrm %%DATADIR%%/packages/sounds
 @dirrm %%DATADIR%%/packages/socksky
 @dirrm %%DATADIR%%/packages/skyboxes
 @dirrm %%DATADIR%%/packages/shmutzwurst
-@dirrm %%DATADIR%%/packages/sds
 @dirrm %%DATADIR%%/packages/schwenz
 @dirrm %%DATADIR%%/packages/satan
 @dirrm %%DATADIR%%/packages/rorschach
+@dirrm %%DATADIR%%/packages/redon/red_sp1
+@dirrm %%DATADIR%%/packages/redon
 @dirrm %%DATADIR%%/packages/ratboy/skyboxes
 @dirrm %%DATADIR%%/packages/ratboy/katrez
 @dirrm %%DATADIR%%/packages/ratboy
 @dirrm %%DATADIR%%/packages/philipk
+@dirrm %%DATADIR%%/packages/penguins
 @dirrm %%DATADIR%%/packages/payne
 @dirrm %%DATADIR%%/packages/particles
+@dirrm %%DATADIR%%/packages/painkillah
 @dirrm %%DATADIR%%/packages/noctua
+@dirrm %%DATADIR%%/packages/mx/textures/sdm1
+@dirrm %%DATADIR%%/packages/mx/textures
+@dirrm %%DATADIR%%/packages/mx
 @dirrm %%DATADIR%%/packages/models/xeno/box2
 @dirrm %%DATADIR%%/packages/models/xeno/box1
 @dirrm %%DATADIR%%/packages/models/xeno
@@ -4070,6 +4432,7 @@
 @dirrm %%DATADIR%%/packages/models/tentus/redshield
 @dirrm %%DATADIR%%/packages/models/tentus/pot1
 @dirrm %%DATADIR%%/packages/models/tentus/moneybag
+@dirrm %%DATADIR%%/packages/models/tentus/magic/spin
 @dirrm %%DATADIR%%/packages/models/tentus/magic
 @dirrm %%DATADIR%%/packages/models/tentus/ladder
 @dirrm %%DATADIR%%/packages/models/tentus/key
@@ -4105,24 +4468,40 @@
 @dirrm %%DATADIR%%/packages/models/steve_e/doors/trapdoor
 @dirrm %%DATADIR%%/packages/models/steve_e/doors
 @dirrm %%DATADIR%%/packages/models/steve_e
+@dirrm %%DATADIR%%/packages/models/snoutx10k/wings
+@dirrm %%DATADIR%%/packages/models/snoutx10k/red
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/shotg/red
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/shotg/blue
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/shotg
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/rocket/red
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/rocket/blue
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/rocket
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/rifle/red
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/rifle/blue
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/rifle
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/pistol/red
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/pistol/blue
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/pistol
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/gl/red
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/gl/blue
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/gl
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/fist/red
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/fist/blue
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/fist
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/chaing/red
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/chaing/blue
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns/chaing
+@dirrm %%DATADIR%%/packages/models/snoutx10k/hudguns
+@dirrm %%DATADIR%%/packages/models/snoutx10k/blue
+@dirrm %%DATADIR%%/packages/models/snoutx10k/armor/yellow
+@dirrm %%DATADIR%%/packages/models/snoutx10k/armor/green
+@dirrm %%DATADIR%%/packages/models/snoutx10k/armor/blue
+@dirrm %%DATADIR%%/packages/models/snoutx10k/armor
+@dirrm %%DATADIR%%/packages/models/snoutx10k
 @dirrm %%DATADIR%%/packages/models/shield/yellow
 @dirrm %%DATADIR%%/packages/models/shield/green
 @dirrm %%DATADIR%%/packages/models/shield/blue
 @dirrm %%DATADIR%%/packages/models/shield
-@dirrm %%DATADIR%%/packages/models/rpg/objects/coin
-@dirrm %%DATADIR%%/packages/models/rpg/objects
-@dirrm %%DATADIR%%/packages/models/rpg/characters/wolf
-@dirrm %%DATADIR%%/packages/models/rpg/characters/snagon
-@dirrm %%DATADIR%%/packages/models/rpg/characters/rat
-@dirrm %%DATADIR%%/packages/models/rpg/characters/npcman
-@dirrm %%DATADIR%%/packages/models/rpg/characters/mman
-@dirrm %%DATADIR%%/packages/models/rpg/characters/horse
-@dirrm %%DATADIR%%/packages/models/rpg/characters/grizzly
-@dirrm %%DATADIR%%/packages/models/rpg/characters/golem
-@dirrm %%DATADIR%%/packages/models/rpg/characters/goblin
-@dirrm %%DATADIR%%/packages/models/rpg/characters/dragon
-@dirrm %%DATADIR%%/packages/models/rpg/characters
-@dirrm %%DATADIR%%/packages/models/rpg
 @dirrm %%DATADIR%%/packages/models/quadspheres
 @dirrm %%DATADIR%%/packages/models/quadrings
 @dirrm %%DATADIR%%/packages/models/quad
@@ -4132,6 +4511,11 @@
 @dirrm %%DATADIR%%/packages/models/projectiles/rocket
 @dirrm %%DATADIR%%/packages/models/projectiles/grenade
 @dirrm %%DATADIR%%/packages/models/projectiles
+@dirrm %%DATADIR%%/packages/models/ogro/vwep
+@dirrm %%DATADIR%%/packages/models/ogro/red
+@dirrm %%DATADIR%%/packages/models/ogro/green
+@dirrm %%DATADIR%%/packages/models/ogro/blue
+@dirrm %%DATADIR%%/packages/models/ogro
 @dirrm %%DATADIR%%/packages/models/objects/woodchop
 @dirrm %%DATADIR%%/packages/models/objects/window02/window02_2
 @dirrm %%DATADIR%%/packages/models/objects/window02/window02_1
@@ -4142,6 +4526,8 @@
 @dirrm %%DATADIR%%/packages/models/objects/torch_cold
 @dirrm %%DATADIR%%/packages/models/objects/torch
 @dirrm %%DATADIR%%/packages/models/objects/table01
+@dirrm %%DATADIR%%/packages/models/objects/sign01/pub
+@dirrm %%DATADIR%%/packages/models/objects/sign01/inn
 @dirrm %%DATADIR%%/packages/models/objects/sign01
 @dirrm %%DATADIR%%/packages/models/objects/sail01
 @dirrm %%DATADIR%%/packages/models/objects/oillamp
@@ -4159,6 +4545,28 @@
 @dirrm %%DATADIR%%/packages/models/objects/axe
 @dirrm %%DATADIR%%/packages/models/objects
 @dirrm %%DATADIR%%/packages/models/mrfixit/red
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/shotg/red
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/shotg/blue
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/shotg
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/rocket/red
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/rocket/blue
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/rocket
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/rifle/red
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/rifle/blue
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/rifle
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/pistol/red
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/pistol/blue
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/pistol
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/gl/red
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/gl/blue
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/gl
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/fist/red
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/fist/blue
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/fist
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/chaing/red
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/chaing/blue
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns/chaing
+@dirrm %%DATADIR%%/packages/models/mrfixit/hudguns
 @dirrm %%DATADIR%%/packages/models/mrfixit/horns
 @dirrm %%DATADIR%%/packages/models/mrfixit/blue
 @dirrm %%DATADIR%%/packages/models/mrfixit/armor/yellow
@@ -4172,13 +4580,7 @@
 @dirrm %%DATADIR%%/packages/models/monster/rhino
 @dirrm %%DATADIR%%/packages/models/monster/rat/vwep
 @dirrm %%DATADIR%%/packages/models/monster/rat
-@dirrm %%DATADIR%%/packages/models/monster/ogro/vwep
-@dirrm %%DATADIR%%/packages/models/monster/ogro/red
-@dirrm %%DATADIR%%/packages/models/monster/ogro/blue
-@dirrm %%DATADIR%%/packages/models/monster/ogro
-@dirrm %%DATADIR%%/packages/models/monster/mutant
 @dirrm %%DATADIR%%/packages/models/monster/knight/vwep
-@dirrm %%DATADIR%%/packages/models/monster/knight/evil
 @dirrm %%DATADIR%%/packages/models/monster/knight
 @dirrm %%DATADIR%%/packages/models/monster/hellpig
 @dirrm %%DATADIR%%/packages/models/monster/goblin/vwep
@@ -4200,6 +4602,9 @@
 @dirrm %%DATADIR%%/packages/models/mitaman/door_06
 @dirrm %%DATADIR%%/packages/models/mitaman/chainlinkfence
 @dirrm %%DATADIR%%/packages/models/mitaman
+@dirrm %%DATADIR%%/packages/models/mapmodels/nieb/sign_no-exit
+@dirrm %%DATADIR%%/packages/models/mapmodels/nieb
+@dirrm %%DATADIR%%/packages/models/mapmodels
 @dirrm %%DATADIR%%/packages/models/makke/tricky/sign4
 @dirrm %%DATADIR%%/packages/models/makke/tricky/sign3
 @dirrm %%DATADIR%%/packages/models/makke/tricky/sign2
@@ -4217,29 +4622,12 @@
 @dirrm %%DATADIR%%/packages/models/makke/fork
 @dirrm %%DATADIR%%/packages/models/makke/arch
 @dirrm %%DATADIR%%/packages/models/makke
-@dirrm %%DATADIR%%/packages/models/ironsnout/red
-@dirrm %%DATADIR%%/packages/models/ironsnout/blue
-@dirrm %%DATADIR%%/packages/models/ironsnout
-@dirrm %%DATADIR%%/packages/models/hudguns/shotg/red
-@dirrm %%DATADIR%%/packages/models/hudguns/shotg/blue
 @dirrm %%DATADIR%%/packages/models/hudguns/shotg
-@dirrm %%DATADIR%%/packages/models/hudguns/rocket/red
-@dirrm %%DATADIR%%/packages/models/hudguns/rocket/blue
 @dirrm %%DATADIR%%/packages/models/hudguns/rocket
-@dirrm %%DATADIR%%/packages/models/hudguns/rifle/red
-@dirrm %%DATADIR%%/packages/models/hudguns/rifle/blue
 @dirrm %%DATADIR%%/packages/models/hudguns/rifle
-@dirrm %%DATADIR%%/packages/models/hudguns/pistol/red
-@dirrm %%DATADIR%%/packages/models/hudguns/pistol/blue
 @dirrm %%DATADIR%%/packages/models/hudguns/pistol
-@dirrm %%DATADIR%%/packages/models/hudguns/gl/red
-@dirrm %%DATADIR%%/packages/models/hudguns/gl/blue
 @dirrm %%DATADIR%%/packages/models/hudguns/gl
-@dirrm %%DATADIR%%/packages/models/hudguns/fist/red
-@dirrm %%DATADIR%%/packages/models/hudguns/fist/blue
 @dirrm %%DATADIR%%/packages/models/hudguns/fist
-@dirrm %%DATADIR%%/packages/models/hudguns/chaing/red
-@dirrm %%DATADIR%%/packages/models/hudguns/chaing/blue
 @dirrm %%DATADIR%%/packages/models/hudguns/chaing
 @dirrm %%DATADIR%%/packages/models/hudguns
 @dirrm %%DATADIR%%/packages/models/health
@@ -4295,6 +4683,9 @@
 @dirrm %%DATADIR%%/packages/models/dcp/cart
 @dirrm %%DATADIR%%/packages/models/dcp/candle
 @dirrm %%DATADIR%%/packages/models/dcp/bulb
+@dirrm %%DATADIR%%/packages/models/dcp/blade_y
+@dirrm %%DATADIR%%/packages/models/dcp/blade_x/fast
+@dirrm %%DATADIR%%/packages/models/dcp/blade_x
 @dirrm %%DATADIR%%/packages/models/dcp/biotank
 @dirrm %%DATADIR%%/packages/models/dcp/bin
 @dirrm %%DATADIR%%/packages/models/dcp/bench
@@ -4331,13 +4722,6 @@
 @dirrm %%DATADIR%%/packages/models/aftas/arvores/arg
 @dirrm %%DATADIR%%/packages/models/aftas/arvores
 @dirrm %%DATADIR%%/packages/models/aftas
-@dirrm %%DATADIR%%/packages/models/4b/floppy/gold/silver/bronze/patch/model
-@dirrm %%DATADIR%%/packages/models/4b/floppy/gold/silver/bronze/patch
-@dirrm %%DATADIR%%/packages/models/4b/floppy/gold/silver/bronze
-@dirrm %%DATADIR%%/packages/models/4b/floppy/gold/silver
-@dirrm %%DATADIR%%/packages/models/4b/floppy/gold
-@dirrm %%DATADIR%%/packages/models/4b/floppy
-@dirrm %%DATADIR%%/packages/models/4b
 @dirrm %%DATADIR%%/packages/models
 @dirrm %%DATADIR%%/packages/mitaman
 @dirrm %%DATADIR%%/packages/mayhem
@@ -4353,33 +4737,35 @@
 @dirrm %%DATADIR%%/packages/ik2k
 @dirrm %%DATADIR%%/packages/icons
 @dirrm %%DATADIR%%/packages/hud
+@dirrm %%DATADIR%%/packages/hero
+@dirrm %%DATADIR%%/packages/hazel
 @dirrm %%DATADIR%%/packages/gor
 @dirrm %%DATADIR%%/packages/golgotha
 @dirrm %%DATADIR%%/packages/gibbie
 @dirrm %%DATADIR%%/packages/g_pack
-@dirrm %%DATADIR%%/packages/fanatic/rpg
 @dirrm %%DATADIR%%/packages/fanatic
 @dirrm %%DATADIR%%/packages/evil_textures
 @dirrm %%DATADIR%%/packages/egyptsoc
+@dirrm %%DATADIR%%/packages/drakker
 @dirrm %%DATADIR%%/packages/dg
 @dirrm %%DATADIR%%/packages/dash
 @dirrm %%DATADIR%%/packages/darc
 @dirrm %%DATADIR%%/packages/cube
 @dirrm %%DATADIR%%/packages/cloward
 @dirrm %%DATADIR%%/packages/caustics
+@dirrm %%DATADIR%%/packages/brushes
 @dirrm %%DATADIR%%/packages/blindabuser
 @dirrm %%DATADIR%%/packages/blikjebier/snow
 @dirrm %%DATADIR%%/packages/blikjebier/skybox
 @dirrm %%DATADIR%%/packages/blikjebier/metal
+@dirrm %%DATADIR%%/packages/blikjebier/ground
 @dirrm %%DATADIR%%/packages/blikjebier/concrete
 @dirrm %%DATADIR%%/packages/blikjebier
 @dirrm %%DATADIR%%/packages/base
-@dirrm %%DATADIR%%/packages/apd2
 @dirrm %%DATADIR%%/packages/aftas/sky
 @dirrm %%DATADIR%%/packages/aftas
 @dirrm %%DATADIR%%/packages/aard/boxtex
 @dirrm %%DATADIR%%/packages/aard
-@dirrm %%DATADIR%%/packages/4b
 @dirrm %%DATADIR%%/packages
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
