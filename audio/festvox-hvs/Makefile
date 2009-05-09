@@ -26,6 +26,9 @@ WRKSRC=		${WRKDIR}/festival
 
 RESTRICTED=	no-commercial-use
 
+DEPRECATED=	unfulfilled dependencies for 8+ months, no user interest.
+EXPIRATION_DATE=	2009-06-09
+
 NO_BUILD=	yes
 
 FHOME=		${PREFIX}/share/festival
