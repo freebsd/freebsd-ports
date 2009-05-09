@@ -1,0 +1,17 @@
+@comment $FreeBSD$
+lib/gambas2/gb.gtk.component
+lib/gambas2/gb.gtk.so.0
+lib/gambas2/gb.gtk.so
+lib/gambas2/gb.gtk.la
+lib/gambas2/gb.gtk.ext.component
+lib/gambas2/gb.gtk.ext.so.0
+lib/gambas2/gb.gtk.ext.so
+lib/gambas2/gb.gtk.ext.la
+lib/gambas2/gb.gtk.gambas
+%%DATADIR%%/info/gb.gtk.info
+%%DATADIR%%/info/gb.gtk.ext.info
+%%DATADIR%%/info/gb.gtk.list
+%%DATADIR%%/info/gb.gtk.ext.list
+@dirrmtry lib/gambas2
+@dirrmtry %%DATADIR%%/info
+@dirrmtry %%DATADIR%%
