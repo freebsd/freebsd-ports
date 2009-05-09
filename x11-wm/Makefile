@@ -64,6 +64,7 @@
     SUBDIR += genmenu
     SUBDIR += golem
     SUBDIR += hackedbox
+    SUBDIR += i3
     SUBDIR += icewm
     SUBDIR += ion
     SUBDIR += ion-2
