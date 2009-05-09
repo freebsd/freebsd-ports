@@ -1,0 +1,18 @@
+###############################################################################
+
+The gambas2 object language and development environment was installed
+
+1) IDE option will install a visual development environment for the gambas2 
+   programming.
+
+2) If you want to install some gambas2 examples, you should install:
+
+   * lang/gambas2-examples
+
+3) All examples gambas projects will be stored at:
+
+   * %%EXAMPLESDIR%%
+
+4) Enjoy it :)
+
+###############################################################################
