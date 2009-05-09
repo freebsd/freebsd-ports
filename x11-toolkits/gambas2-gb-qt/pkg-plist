@@ -1,0 +1,23 @@
+@comment $FreeBSD$
+lib/gambas2/gb.qt.component
+lib/gambas2/gb.qt.so.0
+lib/gambas2/gb.qt.so
+lib/gambas2/gb.qt.la
+lib/gambas2/gb.qt.ext.component
+lib/gambas2/gb.qt.ext.so.0
+lib/gambas2/gb.qt.ext.so
+lib/gambas2/gb.qt.ext.la
+lib/gambas2/gb.qt.opengl.component
+lib/gambas2/gb.qt.opengl.so.0
+lib/gambas2/gb.qt.opengl.so
+lib/gambas2/gb.qt.opengl.la
+lib/gambas2/gb.qt.gambas
+%%DATADIR%%/info/gb.qt.info
+%%DATADIR%%/info/gb.qt.list
+%%DATADIR%%/info/gb.qt.ext.info
+%%DATADIR%%/info/gb.qt.ext.list
+%%DATADIR%%/info/gb.qt.opengl.info
+%%DATADIR%%/info/gb.qt.opengl.list
+@dirrmtry lib/gambas2
+@dirrmtry %%DATADIR%%/info
+@dirrmtry %%DATADIR%%
