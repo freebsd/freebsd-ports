@@ -22,7 +22,7 @@ LIB_DEPENDS=	GiGi.0:${PORTSDIR}/x11-toolkits/gigi \
 RUN_DEPENDS=	${LOCALBASE}/lib/libbulletmath.a:${PORTSDIR}/devel/bullet
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbulletmath.a:${PORTSDIR}/devel/bullet
 
-USE_GCC=	4.3
+USE_GCC=	4.3+
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_SCONS=	yes
