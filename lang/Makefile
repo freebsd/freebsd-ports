@@ -82,6 +82,7 @@
     SUBDIR += gambas2
     SUBDIR += gambas2-base
     SUBDIR += gambas2-components
+    SUBDIR += gambas2-examples
     SUBDIR += gambit-c
     SUBDIR += gauche
     SUBDIR += gawk

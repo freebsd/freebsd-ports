@@ -1,0 +1,802 @@
+@comment $FreeBSD$
+%%EXAMPLESDIR%%/Misc/Console/.lang/fr.po
+%%EXAMPLESDIR%%/Misc/Console/FConsole.class
+%%EXAMPLESDIR%%/Misc/Console/FConsole.form
+%%EXAMPLESDIR%%/Misc/Console/konsole.png
+%%EXAMPLESDIR%%/Misc/Console/.directory
+%%EXAMPLESDIR%%/Misc/Console/.project
+%%EXAMPLESDIR%%/Misc/Console/.icon.png
+%%EXAMPLESDIR%%/Misc/PDFViewer/.lang/es.mo
+%%EXAMPLESDIR%%/Misc/PDFViewer/.lang/es.po
+%%EXAMPLESDIR%%/Misc/PDFViewer/Fabout.class
+%%EXAMPLESDIR%%/Misc/PDFViewer/FMain.form
+%%EXAMPLESDIR%%/Misc/PDFViewer/FMain.class
+%%EXAMPLESDIR%%/Misc/PDFViewer/.directory
+%%EXAMPLESDIR%%/Misc/PDFViewer/Fabout.form
+%%EXAMPLESDIR%%/Misc/PDFViewer/.project
+%%EXAMPLESDIR%%/Misc/PDFViewer/.icon.png
+%%EXAMPLESDIR%%/Misc/PDFViewer/pdf.png
+%%EXAMPLESDIR%%/Misc/Evaluator/.lang/ca.mo
+%%EXAMPLESDIR%%/Misc/Evaluator/.lang/ca.po
+%%EXAMPLESDIR%%/Misc/Evaluator/.lang/es.mo
+%%EXAMPLESDIR%%/Misc/Evaluator/.lang/es.po
+%%EXAMPLESDIR%%/Misc/Evaluator/FEval.form
+%%EXAMPLESDIR%%/Misc/Evaluator/FEval.class
+%%EXAMPLESDIR%%/Misc/Evaluator/.directory
+%%EXAMPLESDIR%%/Misc/Evaluator/calculator.png
+%%EXAMPLESDIR%%/Misc/Evaluator/.project
+%%EXAMPLESDIR%%/Misc/Evaluator/.icon.png
+%%EXAMPLESDIR%%/Misc/Explorer/.lang/ca.mo
+%%EXAMPLESDIR%%/Misc/Explorer/.lang/ca.po
+%%EXAMPLESDIR%%/Misc/Explorer/.lang/es.mo
+%%EXAMPLESDIR%%/Misc/Explorer/.lang/es.po
+%%EXAMPLESDIR%%/Misc/Explorer/FExplorer.class
+%%EXAMPLESDIR%%/Misc/Explorer/FExplorer.form
+%%EXAMPLESDIR%%/Misc/Explorer/.directory
+%%EXAMPLESDIR%%/Misc/Explorer/folder.png
+%%EXAMPLESDIR%%/Misc/Explorer/.project
+%%EXAMPLESDIR%%/Misc/Explorer/.icon.png
+%%EXAMPLESDIR%%/Misc/Notepad/.lang/ca.mo
+%%EXAMPLESDIR%%/Misc/Notepad/.lang/ca.po
+%%EXAMPLESDIR%%/Misc/Notepad/.lang/es.mo
+%%EXAMPLESDIR%%/Misc/Notepad/.lang/es.po
+%%EXAMPLESDIR%%/Misc/Notepad/FNotepad.form
+%%EXAMPLESDIR%%/Misc/Notepad/FAbout.form
+%%EXAMPLESDIR%%/Misc/Notepad/.directory
+%%EXAMPLESDIR%%/Misc/Notepad/notepad.png
+%%EXAMPLESDIR%%/Misc/Notepad/.project
+%%EXAMPLESDIR%%/Misc/Notepad/.icon.png
+%%EXAMPLESDIR%%/Misc/Notepad/FNotepad.class
+%%EXAMPLESDIR%%/Misc/Notepad/FAbout.class
+%%EXAMPLESDIR%%/Basic/Timer/.lang/ca.mo
+%%EXAMPLESDIR%%/Basic/Timer/.lang/ca.po
+%%EXAMPLESDIR%%/Basic/Timer/.lang/es.mo
+%%EXAMPLESDIR%%/Basic/Timer/.lang/es.po
+%%EXAMPLESDIR%%/Basic/Timer/timer.png
+%%EXAMPLESDIR%%/Basic/Timer/FTimer.class
+%%EXAMPLESDIR%%/Basic/Timer/.directory
+%%EXAMPLESDIR%%/Basic/Timer/FOtherTimer.class
+%%EXAMPLESDIR%%/Basic/Timer/FTimer.form
+%%EXAMPLESDIR%%/Basic/Timer/FOtherTimer.form
+%%EXAMPLESDIR%%/Basic/Timer/.project
+%%EXAMPLESDIR%%/Basic/Timer/.icon.png
+%%EXAMPLESDIR%%/Basic/Object/.lang/ca.mo
+%%EXAMPLESDIR%%/Basic/Object/.lang/ca.po
+%%EXAMPLESDIR%%/Basic/Object/.lang/es.mo
+%%EXAMPLESDIR%%/Basic/Object/.lang/es.po
+%%EXAMPLESDIR%%/Basic/Object/CThing.class
+%%EXAMPLESDIR%%/Basic/Object/.directory
+%%EXAMPLESDIR%%/Basic/Object/object.png
+%%EXAMPLESDIR%%/Basic/Object/FStart.form
+%%EXAMPLESDIR%%/Basic/Object/.project
+%%EXAMPLESDIR%%/Basic/Object/.icon.png
+%%EXAMPLESDIR%%/Basic/Object/FStart.class
+%%EXAMPLESDIR%%/Basic/Blights/.lang/es.mo
+%%EXAMPLESDIR%%/Basic/Blights/.lang/es.po
+%%EXAMPLESDIR%%/Basic/Blights/.lang/fr.po
+%%EXAMPLESDIR%%/Basic/Blights/ampoule.png
+%%EXAMPLESDIR%%/Basic/Blights/win1.form
+%%EXAMPLESDIR%%/Basic/Blights/.directory
+%%EXAMPLESDIR%%/Basic/Blights/blon.xpm
+%%EXAMPLESDIR%%/Basic/Blights/win1.class
+%%EXAMPLESDIR%%/Basic/Blights/.project
+%%EXAMPLESDIR%%/Basic/Blights/.icon.png
+%%EXAMPLESDIR%%/Basic/Blights/bloff.xpm
+%%EXAMPLESDIR%%/Basic/DragNDrop/happy.png
+%%EXAMPLESDIR%%/Basic/DragNDrop/france.png
+%%EXAMPLESDIR%%/Basic/DragNDrop/.directory
+%%EXAMPLESDIR%%/Basic/DragNDrop/eye.png
+%%EXAMPLESDIR%%/Basic/DragNDrop/loupe.png
+%%EXAMPLESDIR%%/Basic/DragNDrop/FDragNDrop.form
+%%EXAMPLESDIR%%/Basic/DragNDrop/drop.png
+%%EXAMPLESDIR%%/Basic/DragNDrop/BulletHole.xpm
+%%EXAMPLESDIR%%/Basic/DragNDrop/.project
+%%EXAMPLESDIR%%/Basic/DragNDrop/.icon.png
+%%EXAMPLESDIR%%/Basic/DragNDrop/bicycle.png
+%%EXAMPLESDIR%%/Basic/DragNDrop/pen.png
+%%EXAMPLESDIR%%/Basic/DragNDrop/FDragNDrop.class
+%%EXAMPLESDIR%%/Basic/Collection/.lang/ca.mo
+%%EXAMPLESDIR%%/Basic/Collection/.lang/ca.po
+%%EXAMPLESDIR%%/Basic/Collection/.lang/es.mo
+%%EXAMPLESDIR%%/Basic/Collection/.lang/es.po
+%%EXAMPLESDIR%%/Basic/Collection/CThing.class
+%%EXAMPLESDIR%%/Basic/Collection/collection.png
+%%EXAMPLESDIR%%/Basic/Collection/.directory
+%%EXAMPLESDIR%%/Basic/Collection/FStart.form
+%%EXAMPLESDIR%%/Basic/Collection/.project
+%%EXAMPLESDIR%%/Basic/Collection/.icon.png
+%%EXAMPLESDIR%%/Basic/Collection/FStart.class
+%%EXAMPLESDIR%%/Games/Snake/apple.png
+%%EXAMPLESDIR%%/Games/Snake/eat.wav
+%%EXAMPLESDIR%%/Games/Snake/.directory
+%%EXAMPLESDIR%%/Games/Snake/dead.wav
+%%EXAMPLESDIR%%/Games/Snake/.project
+%%EXAMPLESDIR%%/Games/Snake/.icon.png
+%%EXAMPLESDIR%%/Games/Snake/body.png
+%%EXAMPLESDIR%%/Games/Snake/start.wav
+%%EXAMPLESDIR%%/Games/Snake/head.png
+%%EXAMPLESDIR%%/Games/Snake/FrmMain.class
+%%EXAMPLESDIR%%/Games/Snake/FrmMain.form
+%%EXAMPLESDIR%%/Games/DeepSpace/doc/.html_files/eg3.gif
+%%EXAMPLESDIR%%/Games/DeepSpace/doc/.html_files/eg3b.gif
+%%EXAMPLESDIR%%/Games/DeepSpace/doc/coordinates.html
+%%EXAMPLESDIR%%/Games/DeepSpace/doc/howto.txt
+%%EXAMPLESDIR%%/Games/DeepSpace/doc/todo.txt
+%%EXAMPLESDIR%%/Games/DeepSpace/.lang/ca.mo
+%%EXAMPLESDIR%%/Games/DeepSpace/.lang/ca.po
+%%EXAMPLESDIR%%/Games/DeepSpace/.lang/es.mo
+%%EXAMPLESDIR%%/Games/DeepSpace/.lang/es.po
+%%EXAMPLESDIR%%/Games/DeepSpace/MMain.module
+%%EXAMPLESDIR%%/Games/DeepSpace/FMain.form
+%%EXAMPLESDIR%%/Games/DeepSpace/FMain.class
+%%EXAMPLESDIR%%/Games/DeepSpace/FAbout.form
+%%EXAMPLESDIR%%/Games/DeepSpace/.directory
+%%EXAMPLESDIR%%/Games/DeepSpace/images/deepspace.png
+%%EXAMPLESDIR%%/Games/DeepSpace/CObject.class
+%%EXAMPLESDIR%%/Games/DeepSpace/object.data/ship.2do
+%%EXAMPLESDIR%%/Games/DeepSpace/object.data/main.lst
+%%EXAMPLESDIR%%/Games/DeepSpace/object.data/kite.2do
+%%EXAMPLESDIR%%/Games/DeepSpace/object.data/triangle.2do
+%%EXAMPLESDIR%%/Games/DeepSpace/object.data/x-wing.2do
+%%EXAMPLESDIR%%/Games/DeepSpace/.project
+%%EXAMPLESDIR%%/Games/DeepSpace/.icon.png
+%%EXAMPLESDIR%%/Games/DeepSpace/CBullet.class
+%%EXAMPLESDIR%%/Games/DeepSpace/FAbout.class
+%%EXAMPLESDIR%%/Games/DeepSpace/MMath.module
+%%EXAMPLESDIR%%/Games/GameOfLife/.settings
+%%EXAMPLESDIR%%/Games/GameOfLife/FMain.form
+%%EXAMPLESDIR%%/Games/GameOfLife/FMain.class
+%%EXAMPLESDIR%%/Games/GameOfLife/.directory
+%%EXAMPLESDIR%%/Games/GameOfLife/.project
+%%EXAMPLESDIR%%/Games/GameOfLife/.icon.png
+%%EXAMPLESDIR%%/Games/GameOfLife/glob2-icon-48x48.png
+%%EXAMPLESDIR%%/Games/GameOfLife/.debug
+%%EXAMPLESDIR%%/Games/GameOfLife/CGameField.class
+%%EXAMPLESDIR%%/Games/Concent/.icon/16.png
+%%EXAMPLESDIR%%/Games/Concent/.icon/32.png
+%%EXAMPLESDIR%%/Games/Concent/.icon/48.png
+%%EXAMPLESDIR%%/Games/Concent/.lang/ca.mo
+%%EXAMPLESDIR%%/Games/Concent/.lang/ca.po
+%%EXAMPLESDIR%%/Games/Concent/.lang/en.mo
+%%EXAMPLESDIR%%/Games/Concent/.lang/en.po
+%%EXAMPLESDIR%%/Games/Concent/.lang/es.mo
+%%EXAMPLESDIR%%/Games/Concent/.lang/es.po
+%%EXAMPLESDIR%%/Games/Concent/.lang/fr.mo
+%%EXAMPLESDIR%%/Games/Concent/.lang/fr.po
+%%EXAMPLESDIR%%/Games/Concent/principal.class
+%%EXAMPLESDIR%%/Games/Concent/.settings
+%%EXAMPLESDIR%%/Games/Concent/frmAcerca.form
+%%EXAMPLESDIR%%/Games/Concent/Setup.wav
+%%EXAMPLESDIR%%/Games/Concent/Blockhit.wav
+%%EXAMPLESDIR%%/Games/Concent/fotos.form
+%%EXAMPLESDIR%%/Games/Concent/shuffle.wav
+%%EXAMPLESDIR%%/Games/Concent/Missed.wav
+%%EXAMPLESDIR%%/Games/Concent/.directory
+%%EXAMPLESDIR%%/Games/Concent/Paddle.wav
+%%EXAMPLESDIR%%/Games/Concent/fotos.class
+%%EXAMPLESDIR%%/Games/Concent/CHANGELOG
+%%EXAMPLESDIR%%/Games/Concent/frmAcerca.class
+%%EXAMPLESDIR%%/Games/Concent/move.wav
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an10.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an11.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an12.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an13.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an14.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an15.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an16.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an17.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an18.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an19.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an20.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an21.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an22.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an23.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an24.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an25.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an26.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an27.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an28.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an29.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an30.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an31.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an32.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an33.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an34.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an35.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an36.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an37.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an38.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an39.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an40.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/colombia.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/ok.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an1.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an2.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an3.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an4.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an5.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an6.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an7.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an8.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/an9.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/logo.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/logo.png
+%%EXAMPLESDIR%%/Games/Concent/imagenes/tierra.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/tierra3.jpg
+%%EXAMPLESDIR%%/Games/Concent/imagenes/inter.gif
+%%EXAMPLESDIR%%/Games/Concent/imagenes/inter.jpg
+%%EXAMPLESDIR%%/Games/Concent/frmInstrucciones.class
+%%EXAMPLESDIR%%/Games/Concent/.project
+%%EXAMPLESDIR%%/Games/Concent/.icon.png
+%%EXAMPLESDIR%%/Games/Concent/funciones.module
+%%EXAMPLESDIR%%/Games/Concent/frmInstrucciones.form
+%%EXAMPLESDIR%%/Games/Concent/principal.form
+%%EXAMPLESDIR%%/Games/Concent/Wallhit.wav
+%%EXAMPLESDIR%%/Games/Concent/applause.wav
+%%EXAMPLESDIR%%/Games/Concent/Newlevel.wav
+%%EXAMPLESDIR%%/Games/RobotFindsKitten/Frfk.class
+%%EXAMPLESDIR%%/Games/RobotFindsKitten/.lang/ca.mo
+%%EXAMPLESDIR%%/Games/RobotFindsKitten/.lang/ca.po
+%%EXAMPLESDIR%%/Games/RobotFindsKitten/.lang/es.mo
+%%EXAMPLESDIR%%/Games/RobotFindsKitten/.lang/es.po
+%%EXAMPLESDIR%%/Games/RobotFindsKitten/Frfk.form
+%%EXAMPLESDIR%%/Games/RobotFindsKitten/heart.png
+%%EXAMPLESDIR%%/Games/RobotFindsKitten/.directory
+%%EXAMPLESDIR%%/Games/RobotFindsKitten/nkis.txt
+%%EXAMPLESDIR%%/Games/RobotFindsKitten/readme.txt
+%%EXAMPLESDIR%%/Games/RobotFindsKitten/.project
+%%EXAMPLESDIR%%/Games/RobotFindsKitten/.icon.png
+%%EXAMPLESDIR%%/Games/RobotFindsKitten/COPYING
+%%EXAMPLESDIR%%/Games/Solitaire/Global.class
+%%EXAMPLESDIR%%/Games/Solitaire/undo.png
+%%EXAMPLESDIR%%/Games/Solitaire/.lang/ca.mo
+%%EXAMPLESDIR%%/Games/Solitaire/.lang/ca.po
+%%EXAMPLESDIR%%/Games/Solitaire/.lang/es.mo
+%%EXAMPLESDIR%%/Games/Solitaire/.lang/es.po
+%%EXAMPLESDIR%%/Games/Solitaire/FBoardSelect.class
+%%EXAMPLESDIR%%/Games/Solitaire/MBoards.module
+%%EXAMPLESDIR%%/Games/Solitaire/FGameArea.form
+%%EXAMPLESDIR%%/Games/Solitaire/.directory
+%%EXAMPLESDIR%%/Games/Solitaire/CBoardDesign.class
+%%EXAMPLESDIR%%/Games/Solitaire/FBoardSelect.form
+%%EXAMPLESDIR%%/Games/Solitaire/new.png
+%%EXAMPLESDIR%%/Games/Solitaire/CMove.class
+%%EXAMPLESDIR%%/Games/Solitaire/.project
+%%EXAMPLESDIR%%/Games/Solitaire/.icon.png
+%%EXAMPLESDIR%%/Games/Solitaire/quit.png
+%%EXAMPLESDIR%%/Games/Solitaire/ball.png
+%%EXAMPLESDIR%%/Games/Solitaire/redo.png
+%%EXAMPLESDIR%%/Games/Solitaire/FGameArea.class
+%%EXAMPLESDIR%%/Games/BeastScroll/b-title.mod
+%%EXAMPLESDIR%%/Games/BeastScroll/MMain.module
+%%EXAMPLESDIR%%/Games/BeastScroll/.directory
+%%EXAMPLESDIR%%/Games/BeastScroll/fireworks.png
+%%EXAMPLESDIR%%/Games/BeastScroll/bgd1_ciel.png
+%%EXAMPLESDIR%%/Games/BeastScroll/bgd3_sol1.png
+%%EXAMPLESDIR%%/Games/BeastScroll/.dir_icon.png
+%%EXAMPLESDIR%%/Games/BeastScroll/sprite_arbre.png
+%%EXAMPLESDIR%%/Games/BeastScroll/.project
+%%EXAMPLESDIR%%/Games/BeastScroll/.icon.png
+%%EXAMPLESDIR%%/Games/BeastScroll/scrolltext.png
+%%EXAMPLESDIR%%/Games/BeastScroll/bgd4_sol2.png
+%%EXAMPLESDIR%%/Games/BeastScroll/logo.png
+%%EXAMPLESDIR%%/Games/BeastScroll/bgd2_montagnes.png
+%%EXAMPLESDIR%%/Games/BeastScroll/sprite_nuages1.png
+%%EXAMPLESDIR%%/Games/BeastScroll/sprite_nuages2.png
+%%EXAMPLESDIR%%/Games/BeastScroll/sprite_nuages3.png
+%%EXAMPLESDIR%%/Games/BeastScroll/sprite_nuages4.png
+%%EXAMPLESDIR%%/Games/BeastScroll/sprite_barriere.png
+%%EXAMPLESDIR%%/Games/BeastScroll/bgd5_sol3.png
+%%EXAMPLESDIR%%/Sound/CDPlayer/Fcdplayer.form
+%%EXAMPLESDIR%%/Sound/CDPlayer/.lang/ca.mo
+%%EXAMPLESDIR%%/Sound/CDPlayer/.lang/ca.po
+%%EXAMPLESDIR%%/Sound/CDPlayer/.lang/es.mo
+%%EXAMPLESDIR%%/Sound/CDPlayer/.lang/es.po
+%%EXAMPLESDIR%%/Sound/CDPlayer/.directory
+%%EXAMPLESDIR%%/Sound/CDPlayer/cd.png
+%%EXAMPLESDIR%%/Sound/CDPlayer/Fcdplayer.class
+%%EXAMPLESDIR%%/Sound/CDPlayer/.project
+%%EXAMPLESDIR%%/Sound/CDPlayer/.icon.png
+%%EXAMPLESDIR%%/Sound/MusicPlayer/FSoundPlayer.form
+%%EXAMPLESDIR%%/Sound/MusicPlayer/.icon/16.png
+%%EXAMPLESDIR%%/Sound/MusicPlayer/.icon/32.png
+%%EXAMPLESDIR%%/Sound/MusicPlayer/.icon/48.png
+%%EXAMPLESDIR%%/Sound/MusicPlayer/.lang/ca.mo
+%%EXAMPLESDIR%%/Sound/MusicPlayer/.lang/ca.po
+%%EXAMPLESDIR%%/Sound/MusicPlayer/.lang/es.mo
+%%EXAMPLESDIR%%/Sound/MusicPlayer/.lang/es.po
+%%EXAMPLESDIR%%/Sound/MusicPlayer/.lang/fr.po
+%%EXAMPLESDIR%%/Sound/MusicPlayer/FSoundPlayer.class
+%%EXAMPLESDIR%%/Sound/MusicPlayer/.directory
+%%EXAMPLESDIR%%/Sound/MusicPlayer/sound.png
+%%EXAMPLESDIR%%/Sound/MusicPlayer/.project
+%%EXAMPLESDIR%%/Sound/MusicPlayer/.icon.png
+%%EXAMPLESDIR%%/Video/MoviePlayer/video.png
+%%EXAMPLESDIR%%/Video/MoviePlayer/.lang/ca.mo
+%%EXAMPLESDIR%%/Video/MoviePlayer/.lang/ca.po
+%%EXAMPLESDIR%%/Video/MoviePlayer/.lang/es.mo
+%%EXAMPLESDIR%%/Video/MoviePlayer/.lang/es.po
+%%EXAMPLESDIR%%/Video/MoviePlayer/.directory
+%%EXAMPLESDIR%%/Video/MoviePlayer/pause.png
+%%EXAMPLESDIR%%/Video/MoviePlayer/.project
+%%EXAMPLESDIR%%/Video/MoviePlayer/.icon.png
+%%EXAMPLESDIR%%/Video/MoviePlayer/open.png
+%%EXAMPLESDIR%%/Video/MoviePlayer/FMoviePlayer.form
+%%EXAMPLESDIR%%/Video/MoviePlayer/play.png
+%%EXAMPLESDIR%%/Video/MoviePlayer/stop.png
+%%EXAMPLESDIR%%/Video/MoviePlayer/FMoviePlayer.class
+%%EXAMPLESDIR%%/Video/MyWebCam/.lang/ca.mo
+%%EXAMPLESDIR%%/Video/MyWebCam/.lang/ca.po
+%%EXAMPLESDIR%%/Video/MyWebCam/.lang/es.mo
+%%EXAMPLESDIR%%/Video/MyWebCam/.lang/es.po
+%%EXAMPLESDIR%%/Video/MyWebCam/Form1.class
+%%EXAMPLESDIR%%/Video/MyWebCam/.directory
+%%EXAMPLESDIR%%/Video/MyWebCam/.project
+%%EXAMPLESDIR%%/Video/MyWebCam/.icon.png
+%%EXAMPLESDIR%%/Video/MyWebCam/Form1.form
+%%EXAMPLESDIR%%/Video/MyWebCam/Module1.module
+%%EXAMPLESDIR%%/Video/MyWebCam/camera.png
+%%EXAMPLESDIR%%/OpenGL/GambasGears/.directory
+%%EXAMPLESDIR%%/OpenGL/GambasGears/.project
+%%EXAMPLESDIR%%/OpenGL/GambasGears/.icon.png
+%%EXAMPLESDIR%%/OpenGL/GambasGears/gears.png
+%%EXAMPLESDIR%%/OpenGL/GambasGears/Module1.module
+%%EXAMPLESDIR%%/OpenGL/PDFPresentation/CpdfPresentation.class
+%%EXAMPLESDIR%%/OpenGL/PDFPresentation/.settings
+%%EXAMPLESDIR%%/OpenGL/PDFPresentation/MMain.module
+%%EXAMPLESDIR%%/OpenGL/PDFPresentation/FMain.form
+%%EXAMPLESDIR%%/OpenGL/PDFPresentation/FMain.class
+%%EXAMPLESDIR%%/OpenGL/PDFPresentation/icon.png
+%%EXAMPLESDIR%%/OpenGL/PDFPresentation/.directory
+%%EXAMPLESDIR%%/OpenGL/PDFPresentation/music.xm
+%%EXAMPLESDIR%%/OpenGL/PDFPresentation/.project
+%%EXAMPLESDIR%%/OpenGL/PDFPresentation/.icon.png
+%%EXAMPLESDIR%%/OpenGL/PDFPresentation/logo.png
+%%EXAMPLESDIR%%/OpenGL/PDFPresentation/Clogo.class
+%%EXAMPLESDIR%%/OpenGL/3DWebCam/webcam.png
+%%EXAMPLESDIR%%/OpenGL/3DWebCam/.directory
+%%EXAMPLESDIR%%/OpenGL/3DWebCam/Mmain.module
+%%EXAMPLESDIR%%/OpenGL/3DWebCam/.project
+%%EXAMPLESDIR%%/OpenGL/3DWebCam/.icon.png
+%%EXAMPLESDIR%%/Automation/KateBrowser/.icon/16.png
+%%EXAMPLESDIR%%/Automation/KateBrowser/.icon/32.png
+%%EXAMPLESDIR%%/Automation/KateBrowser/.icon/48.png
+%%EXAMPLESDIR%%/Automation/KateBrowser/.lang/ca.mo
+%%EXAMPLESDIR%%/Automation/KateBrowser/.lang/ca.po
+%%EXAMPLESDIR%%/Automation/KateBrowser/.lang/es.mo
+%%EXAMPLESDIR%%/Automation/KateBrowser/.lang/es.po
+%%EXAMPLESDIR%%/Automation/KateBrowser/kate.png
+%%EXAMPLESDIR%%/Automation/KateBrowser/.directory
+%%EXAMPLESDIR%%/Automation/KateBrowser/FBrowser.form
+%%EXAMPLESDIR%%/Automation/KateBrowser/CHANGELOG
+%%EXAMPLESDIR%%/Automation/KateBrowser/FBrowser.class
+%%EXAMPLESDIR%%/Automation/KateBrowser/.project
+%%EXAMPLESDIR%%/Automation/KateBrowser/.icon.png
+%%EXAMPLESDIR%%/Automation/KateBrowser/arrow.png
+%%EXAMPLESDIR%%/Automation/Scripting/FScript.form
+%%EXAMPLESDIR%%/Automation/Scripting/background.png
+%%EXAMPLESDIR%%/Automation/Scripting/.lang/ca.mo
+%%EXAMPLESDIR%%/Automation/Scripting/.lang/ca.po
+%%EXAMPLESDIR%%/Automation/Scripting/.lang/es.mo
+%%EXAMPLESDIR%%/Automation/Scripting/.lang/es.po
+%%EXAMPLESDIR%%/Automation/Scripting/FScript.class
+%%EXAMPLESDIR%%/Automation/Scripting/.directory
+%%EXAMPLESDIR%%/Automation/Scripting/.project
+%%EXAMPLESDIR%%/Automation/Scripting/.icon.png
+%%EXAMPLESDIR%%/Control/TextEdit/edit.png
+%%EXAMPLESDIR%%/Control/TextEdit/.lang/ca.mo
+%%EXAMPLESDIR%%/Control/TextEdit/.lang/ca.po
+%%EXAMPLESDIR%%/Control/TextEdit/.lang/es.mo
+%%EXAMPLESDIR%%/Control/TextEdit/.lang/es.po
+%%EXAMPLESDIR%%/Control/TextEdit/.lang/fr.po
+%%EXAMPLESDIR%%/Control/TextEdit/FMain.form
+%%EXAMPLESDIR%%/Control/TextEdit/FMain.class
+%%EXAMPLESDIR%%/Control/TextEdit/.directory
+%%EXAMPLESDIR%%/Control/TextEdit/text.html
+%%EXAMPLESDIR%%/Control/TextEdit/.project
+%%EXAMPLESDIR%%/Control/TextEdit/.icon.png
+%%EXAMPLESDIR%%/Control/TextEdit/frmShowHtml.class
+%%EXAMPLESDIR%%/Control/TextEdit/frmShowHtml.form
+%%EXAMPLESDIR%%/Control/TreeView/.lang/ca.mo
+%%EXAMPLESDIR%%/Control/TreeView/.lang/ca.po
+%%EXAMPLESDIR%%/Control/TreeView/.lang/es.mo
+%%EXAMPLESDIR%%/Control/TreeView/.lang/es.po
+%%EXAMPLESDIR%%/Control/TreeView/Male.png
+%%EXAMPLESDIR%%/Control/TreeView/Female.png
+%%EXAMPLESDIR%%/Control/TreeView/.directory
+%%EXAMPLESDIR%%/Control/TreeView/.project
+%%EXAMPLESDIR%%/Control/TreeView/.icon.png
+%%EXAMPLESDIR%%/Control/TreeView/TreeViewExample.form
+%%EXAMPLESDIR%%/Control/TreeView/treeview.png
+%%EXAMPLESDIR%%/Control/TreeView/TreeViewExample.class
+%%EXAMPLESDIR%%/Control/HighlightEditor/.lang/ca.mo
+%%EXAMPLESDIR%%/Control/HighlightEditor/.lang/ca.po
+%%EXAMPLESDIR%%/Control/HighlightEditor/.lang/es.mo
+%%EXAMPLESDIR%%/Control/HighlightEditor/.lang/es.po
+%%EXAMPLESDIR%%/Control/HighlightEditor/FEditor.form
+%%EXAMPLESDIR%%/Control/HighlightEditor/.directory
+%%EXAMPLESDIR%%/Control/HighlightEditor/download.html
+%%EXAMPLESDIR%%/Control/HighlightEditor/.project
+%%EXAMPLESDIR%%/Control/HighlightEditor/.icon.png
+%%EXAMPLESDIR%%/Control/HighlightEditor/editor.png
+%%EXAMPLESDIR%%/Control/HighlightEditor/FEditor.class
+%%EXAMPLESDIR%%/Control/Embedder/.lang/ca.mo
+%%EXAMPLESDIR%%/Control/Embedder/.lang/ca.po
+%%EXAMPLESDIR%%/Control/Embedder/.lang/es.mo
+%%EXAMPLESDIR%%/Control/Embedder/.lang/es.po
+%%EXAMPLESDIR%%/Control/Embedder/.settings
+%%EXAMPLESDIR%%/Control/Embedder/FMain.form
+%%EXAMPLESDIR%%/Control/Embedder/FMain.class
+%%EXAMPLESDIR%%/Control/Embedder/.directory
+%%EXAMPLESDIR%%/Control/Embedder/.project
+%%EXAMPLESDIR%%/Control/Embedder/.icon.png
+%%EXAMPLESDIR%%/Control/Embedder/embedder.png
+%%EXAMPLESDIR%%/Printing/Printing/ReadMe.txt
+%%EXAMPLESDIR%%/Printing/Printing/.lang/ca.mo
+%%EXAMPLESDIR%%/Printing/Printing/.lang/ca.po
+%%EXAMPLESDIR%%/Printing/Printing/.lang/es.mo
+%%EXAMPLESDIR%%/Printing/Printing/.lang/es.po
+%%EXAMPLESDIR%%/Printing/Printing/ModulePrintImage.module
+%%EXAMPLESDIR%%/Printing/Printing/ModulePrintTwoImgWordWrap.module
+%%EXAMPLESDIR%%/Printing/Printing/Images/document-print.png
+%%EXAMPLESDIR%%/Printing/Printing/Images/fonts.png
+%%EXAMPLESDIR%%/Printing/Printing/Images/document-open.png
+%%EXAMPLESDIR%%/Printing/Printing/Images/image-x-generic.png
+%%EXAMPLESDIR%%/Printing/Printing/Images/usergreenbeard1.png
+%%EXAMPLESDIR%%/Printing/Printing/Images/.dir_icon.png
+%%EXAMPLESDIR%%/Printing/Printing/Images/image-gallery.png
+%%EXAMPLESDIR%%/Printing/Printing/Images/colors.png
+%%EXAMPLESDIR%%/Printing/Printing/Images/document-save.png
+%%EXAMPLESDIR%%/Printing/Printing/Images/text-x-generic.png
+%%EXAMPLESDIR%%/Printing/Printing/ModulePrintText.module
+%%EXAMPLESDIR%%/Printing/Printing/.directory
+%%EXAMPLESDIR%%/Printing/Printing/.project
+%%EXAMPLESDIR%%/Printing/Printing/.icon.png
+%%EXAMPLESDIR%%/Printing/Printing/FormPrinting.class
+%%EXAMPLESDIR%%/Printing/Printing/ModulePrintDrawing.module
+%%EXAMPLESDIR%%/Printing/Printing/ModulePrintTwoImages.module
+%%EXAMPLESDIR%%/Printing/Printing/FormPrinting.form
+%%EXAMPLESDIR%%/Drawing/Barcode/.settings
+%%EXAMPLESDIR%%/Drawing/Barcode/FMain.form
+%%EXAMPLESDIR%%/Drawing/Barcode/FMain.class
+%%EXAMPLESDIR%%/Drawing/Barcode/.directory
+%%EXAMPLESDIR%%/Drawing/Barcode/.project
+%%EXAMPLESDIR%%/Drawing/Barcode/.icon.png
+%%EXAMPLESDIR%%/Drawing/Barcode/modCrBcode.module
+%%EXAMPLESDIR%%/Drawing/Barcode/barcode.png
+%%EXAMPLESDIR%%/Drawing/Chart/.lang/ca.mo
+%%EXAMPLESDIR%%/Drawing/Chart/.lang/ca.po
+%%EXAMPLESDIR%%/Drawing/Chart/.lang/es.mo
+%%EXAMPLESDIR%%/Drawing/Chart/.lang/es.po
+%%EXAMPLESDIR%%/Drawing/Chart/FormChart.form
+%%EXAMPLESDIR%%/Drawing/Chart/FormChart.class
+%%EXAMPLESDIR%%/Drawing/Chart/.directory
+%%EXAMPLESDIR%%/Drawing/Chart/FormData.class
+%%EXAMPLESDIR%%/Drawing/Chart/graph.png
+%%EXAMPLESDIR%%/Drawing/Chart/.project
+%%EXAMPLESDIR%%/Drawing/Chart/.icon.png
+%%EXAMPLESDIR%%/Drawing/Chart/FormData.form
+%%EXAMPLESDIR%%/Drawing/Clock/img/clock_bg_big1.png
+%%EXAMPLESDIR%%/Drawing/Clock/img/clock_bg_big2.png
+%%EXAMPLESDIR%%/Drawing/Clock/img/clock_bg_big3.png
+%%EXAMPLESDIR%%/Drawing/Clock/img/clock_bg_big4.png
+%%EXAMPLESDIR%%/Drawing/Clock/img/arrow_sec.png
+%%EXAMPLESDIR%%/Drawing/Clock/img/arrow_hour.png
+%%EXAMPLESDIR%%/Drawing/Clock/img/arrow_min.png
+%%EXAMPLESDIR%%/Drawing/Clock/.icon/16.png
+%%EXAMPLESDIR%%/Drawing/Clock/.icon/32.png
+%%EXAMPLESDIR%%/Drawing/Clock/.icon/48.png
+%%EXAMPLESDIR%%/Drawing/Clock/.lang/ca.mo
+%%EXAMPLESDIR%%/Drawing/Clock/.lang/ca.po
+%%EXAMPLESDIR%%/Drawing/Clock/.lang/es.mo
+%%EXAMPLESDIR%%/Drawing/Clock/.lang/es.po
+%%EXAMPLESDIR%%/Drawing/Clock/.directory
+%%EXAMPLESDIR%%/Drawing/Clock/FClock.class
+%%EXAMPLESDIR%%/Drawing/Clock/.project
+%%EXAMPLESDIR%%/Drawing/Clock/.icon.png
+%%EXAMPLESDIR%%/Drawing/Clock/FClock.form
+%%EXAMPLESDIR%%/Drawing/Sensor/FSensor.form
+%%EXAMPLESDIR%%/Drawing/Sensor/.lang/es.mo
+%%EXAMPLESDIR%%/Drawing/Sensor/.lang/es.po
+%%EXAMPLESDIR%%/Drawing/Sensor/.lang/fr.mo
+%%EXAMPLESDIR%%/Drawing/Sensor/.lang/fr.po
+%%EXAMPLESDIR%%/Drawing/Sensor/red.png
+%%EXAMPLESDIR%%/Drawing/Sensor/thermo.png
+%%EXAMPLESDIR%%/Drawing/Sensor/.directory
+%%EXAMPLESDIR%%/Drawing/Sensor/FSensor.class
+%%EXAMPLESDIR%%/Drawing/Sensor/orange.png
+%%EXAMPLESDIR%%/Drawing/Sensor/thermo-void.png
+%%EXAMPLESDIR%%/Drawing/Sensor/Main.module
+%%EXAMPLESDIR%%/Drawing/Sensor/.project
+%%EXAMPLESDIR%%/Drawing/Sensor/.icon.png
+%%EXAMPLESDIR%%/Drawing/Sensor/thermometre.png
+%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/FOnScreenDisplay.class
+%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/.lang/ca.mo
+%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/.lang/ca.po
+%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/.lang/es.mo
+%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/.lang/es.po
+%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/FOnScreenDisplay.form
+%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/icon.png
+%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/.directory
+%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/.project
+%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/.icon.png
+%%EXAMPLESDIR%%/Drawing/AnalogWatch/timer.png
+%%EXAMPLESDIR%%/Drawing/AnalogWatch/FrmClock.form
+%%EXAMPLESDIR%%/Drawing/AnalogWatch/.directory
+%%EXAMPLESDIR%%/Drawing/AnalogWatch/.project
+%%EXAMPLESDIR%%/Drawing/AnalogWatch/.icon.png
+%%EXAMPLESDIR%%/Drawing/AnalogWatch/FrmClock.class
+%%EXAMPLESDIR%%/Drawing/ImageViewer/.lang/ca.mo
+%%EXAMPLESDIR%%/Drawing/ImageViewer/.lang/ca.po
+%%EXAMPLESDIR%%/Drawing/ImageViewer/.lang/es.mo
+%%EXAMPLESDIR%%/Drawing/ImageViewer/.lang/es.po
+%%EXAMPLESDIR%%/Drawing/ImageViewer/FViewer.form
+%%EXAMPLESDIR%%/Drawing/ImageViewer/.directory
+%%EXAMPLESDIR%%/Drawing/ImageViewer/image.png
+%%EXAMPLESDIR%%/Drawing/ImageViewer/.project
+%%EXAMPLESDIR%%/Drawing/ImageViewer/.icon.png
+%%EXAMPLESDIR%%/Drawing/ImageViewer/FViewer.class
+%%EXAMPLESDIR%%/Drawing/Gravity/.lang/ca.mo
+%%EXAMPLESDIR%%/Drawing/Gravity/.lang/ca.po
+%%EXAMPLESDIR%%/Drawing/Gravity/.lang/es.mo
+%%EXAMPLESDIR%%/Drawing/Gravity/.lang/es.po
+%%EXAMPLESDIR%%/Drawing/Gravity/cBall.class
+%%EXAMPLESDIR%%/Drawing/Gravity/FMain.form
+%%EXAMPLESDIR%%/Drawing/Gravity/FMain.class
+%%EXAMPLESDIR%%/Drawing/Gravity/FAbout.form
+%%EXAMPLESDIR%%/Drawing/Gravity/.directory
+%%EXAMPLESDIR%%/Drawing/Gravity/.project
+%%EXAMPLESDIR%%/Drawing/Gravity/.icon.png
+%%EXAMPLESDIR%%/Drawing/Gravity/FAbout.class
+%%EXAMPLESDIR%%/Drawing/Gravity/gravity.png
+%%EXAMPLESDIR%%/Networking/DnsClient/.lang/ca.mo
+%%EXAMPLESDIR%%/Networking/DnsClient/.lang/ca.po
+%%EXAMPLESDIR%%/Networking/DnsClient/.lang/es.mo
+%%EXAMPLESDIR%%/Networking/DnsClient/.lang/es.po
+%%EXAMPLESDIR%%/Networking/DnsClient/FMain.form
+%%EXAMPLESDIR%%/Networking/DnsClient/FMain.class
+%%EXAMPLESDIR%%/Networking/DnsClient/.directory
+%%EXAMPLESDIR%%/Networking/DnsClient/.project
+%%EXAMPLESDIR%%/Networking/DnsClient/.icon.png
+%%EXAMPLESDIR%%/Networking/DnsClient/dnsclient.png
+%%EXAMPLESDIR%%/Networking/ClientSocket/.lang/ca.mo
+%%EXAMPLESDIR%%/Networking/ClientSocket/.lang/ca.po
+%%EXAMPLESDIR%%/Networking/ClientSocket/.lang/es.mo
+%%EXAMPLESDIR%%/Networking/ClientSocket/.lang/es.po
+%%EXAMPLESDIR%%/Networking/ClientSocket/.directory
+%%EXAMPLESDIR%%/Networking/ClientSocket/socket.png
+%%EXAMPLESDIR%%/Networking/ClientSocket/.project
+%%EXAMPLESDIR%%/Networking/ClientSocket/.icon.png
+%%EXAMPLESDIR%%/Networking/ClientSocket/FrmMain.class
+%%EXAMPLESDIR%%/Networking/ClientSocket/FrmMain.form
+%%EXAMPLESDIR%%/Networking/WebBrowser/.lang/ca.mo
+%%EXAMPLESDIR%%/Networking/WebBrowser/.lang/ca.po
+%%EXAMPLESDIR%%/Networking/WebBrowser/webbrowser.png
+%%EXAMPLESDIR%%/Networking/WebBrowser/.directory
+%%EXAMPLESDIR%%/Networking/WebBrowser/FBrowser.form
+%%EXAMPLESDIR%%/Networking/WebBrowser/FBrowser.class
+%%EXAMPLESDIR%%/Networking/WebBrowser/.project
+%%EXAMPLESDIR%%/Networking/WebBrowser/.icon.png
+%%EXAMPLESDIR%%/Networking/SerialPort/serialport.png
+%%EXAMPLESDIR%%/Networking/SerialPort/.lang/ca.mo
+%%EXAMPLESDIR%%/Networking/SerialPort/.lang/ca.po
+%%EXAMPLESDIR%%/Networking/SerialPort/.lang/es.mo
+%%EXAMPLESDIR%%/Networking/SerialPort/.lang/es.po
+%%EXAMPLESDIR%%/Networking/SerialPort/FSerialPort.class
+%%EXAMPLESDIR%%/Networking/SerialPort/.directory
+%%EXAMPLESDIR%%/Networking/SerialPort/FSerialPort.form
+%%EXAMPLESDIR%%/Networking/SerialPort/.project
+%%EXAMPLESDIR%%/Networking/SerialPort/.icon.png
+%%EXAMPLESDIR%%/Networking/ServerSocket/.lang/ca.mo
+%%EXAMPLESDIR%%/Networking/ServerSocket/.lang/ca.po
+%%EXAMPLESDIR%%/Networking/ServerSocket/.lang/es.mo
+%%EXAMPLESDIR%%/Networking/ServerSocket/.lang/es.po
+%%EXAMPLESDIR%%/Networking/ServerSocket/.directory
+%%EXAMPLESDIR%%/Networking/ServerSocket/.project
+%%EXAMPLESDIR%%/Networking/ServerSocket/.icon.png
+%%EXAMPLESDIR%%/Networking/ServerSocket/serversocket.png
+%%EXAMPLESDIR%%/Networking/ServerSocket/FrmMain.class
+%%EXAMPLESDIR%%/Networking/ServerSocket/FrmMain.form
+%%EXAMPLESDIR%%/Networking/HTTPGet/.lang/ca.mo
+%%EXAMPLESDIR%%/Networking/HTTPGet/.lang/ca.po
+%%EXAMPLESDIR%%/Networking/HTTPGet/.lang/es.mo
+%%EXAMPLESDIR%%/Networking/HTTPGet/.lang/es.po
+%%EXAMPLESDIR%%/Networking/HTTPGet/ClsParams.class
+%%EXAMPLESDIR%%/Networking/HTTPGet/.directory
+%%EXAMPLESDIR%%/Networking/HTTPGet/httpclient.png
+%%EXAMPLESDIR%%/Networking/HTTPGet/.project
+%%EXAMPLESDIR%%/Networking/HTTPGet/.icon.png
+%%EXAMPLESDIR%%/Networking/HTTPGet/FConfig.class
+%%EXAMPLESDIR%%/Networking/HTTPGet/F.class
+%%EXAMPLESDIR%%/Networking/HTTPGet/FConfig.form
+%%EXAMPLESDIR%%/Networking/HTTPGet/F.form
+%%EXAMPLESDIR%%/Networking/HTTPPost/.lang/ca.mo
+%%EXAMPLESDIR%%/Networking/HTTPPost/.lang/ca.po
+%%EXAMPLESDIR%%/Networking/HTTPPost/.lang/es.mo
+%%EXAMPLESDIR%%/Networking/HTTPPost/.lang/es.po
+%%EXAMPLESDIR%%/Networking/HTTPPost/.directory
+%%EXAMPLESDIR%%/Networking/HTTPPost/httpclient.png
+%%EXAMPLESDIR%%/Networking/HTTPPost/.project
+%%EXAMPLESDIR%%/Networking/HTTPPost/.icon.png
+%%EXAMPLESDIR%%/Networking/HTTPPost/F.class
+%%EXAMPLESDIR%%/Networking/HTTPPost/F.form
+%%EXAMPLESDIR%%/Networking/UDPServerClient/FrmServer.class
+%%EXAMPLESDIR%%/Networking/UDPServerClient/.lang/ca.mo
+%%EXAMPLESDIR%%/Networking/UDPServerClient/.lang/ca.po
+%%EXAMPLESDIR%%/Networking/UDPServerClient/.lang/es.mo
+%%EXAMPLESDIR%%/Networking/UDPServerClient/.lang/es.po
+%%EXAMPLESDIR%%/Networking/UDPServerClient/.directory
+%%EXAMPLESDIR%%/Networking/UDPServerClient/FrmClient.class
+%%EXAMPLESDIR%%/Networking/UDPServerClient/udpsocket.png
+%%EXAMPLESDIR%%/Networking/UDPServerClient/.project
+%%EXAMPLESDIR%%/Networking/UDPServerClient/.icon.png
+%%EXAMPLESDIR%%/Networking/UDPServerClient/FrmClient.form
+%%EXAMPLESDIR%%/Networking/UDPServerClient/FrmServer.form
+%%EXAMPLESDIR%%/Database/PictureDatabase/ModuleDatabase.module
+%%EXAMPLESDIR%%/Database/PictureDatabase/.lang/ca.mo
+%%EXAMPLESDIR%%/Database/PictureDatabase/.lang/ca.po
+%%EXAMPLESDIR%%/Database/PictureDatabase/.lang/es.mo
+%%EXAMPLESDIR%%/Database/PictureDatabase/.lang/es.po
+%%EXAMPLESDIR%%/Database/PictureDatabase/Images/document-save-as.png
+%%EXAMPLESDIR%%/Database/PictureDatabase/Images/image-x-generic.png
+%%EXAMPLESDIR%%/Database/PictureDatabase/Images/document-save.png
+%%EXAMPLESDIR%%/Database/PictureDatabase/Images/list-add.png
+%%EXAMPLESDIR%%/Database/PictureDatabase/Images/list-remove.png
+%%EXAMPLESDIR%%/Database/PictureDatabase/.directory
+%%EXAMPLESDIR%%/Database/PictureDatabase/FormPictureDatabase.form
+%%EXAMPLESDIR%%/Database/PictureDatabase/FormPictureDatabase.class
+%%EXAMPLESDIR%%/Database/PictureDatabase/.project
+%%EXAMPLESDIR%%/Database/PictureDatabase/.icon.png
+%%EXAMPLESDIR%%/Database/Database/.lang/ca.mo
+%%EXAMPLESDIR%%/Database/Database/.lang/ca.po
+%%EXAMPLESDIR%%/Database/Database/.lang/es.mo
+%%EXAMPLESDIR%%/Database/Database/.lang/es.po
+%%EXAMPLESDIR%%/Database/Database/FRequest.class
+%%EXAMPLESDIR%%/Database/Database/FMain.form
+%%EXAMPLESDIR%%/Database/Database/FTest.form
+%%EXAMPLESDIR%%/Database/Database/FRequest.form
+%%EXAMPLESDIR%%/Database/Database/FMain.class
+%%EXAMPLESDIR%%/Database/Database/FTest.class
+%%EXAMPLESDIR%%/Database/Database/.directory
+%%EXAMPLESDIR%%/Database/Database/.project
+%%EXAMPLESDIR%%/Database/Database/.icon.png
+%%EXAMPLESDIR%%/Database/Database/database.png
+%%EXAMPLESDIR%%/Database/DataReportExample/pic/ksmiletris.png
+%%EXAMPLESDIR%%/Database/DataReportExample/pic/button_cance.png
+%%EXAMPLESDIR%%/Database/DataReportExample/pic/looknfeel.png
+%%EXAMPLESDIR%%/Database/DataReportExample/pic/kjobviewer.png
+%%EXAMPLESDIR%%/Database/DataReportExample/pic/button_ok.png
+%%EXAMPLESDIR%%/Database/DataReportExample/pic/empty.png
+%%EXAMPLESDIR%%/Database/DataReportExample/.lang/ca.mo
+%%EXAMPLESDIR%%/Database/DataReportExample/.lang/ca.po
+%%EXAMPLESDIR%%/Database/DataReportExample/.lang/es.mo
+%%EXAMPLESDIR%%/Database/DataReportExample/.lang/es.po
+%%EXAMPLESDIR%%/Database/DataReportExample/Fpreview.class
+%%EXAMPLESDIR%%/Database/DataReportExample/Fabout.class
+%%EXAMPLESDIR%%/Database/DataReportExample/Mglobal.module
+%%EXAMPLESDIR%%/Database/DataReportExample/.directory
+%%EXAMPLESDIR%%/Database/DataReportExample/Fmain.class
+%%EXAMPLESDIR%%/Database/DataReportExample/Fabout.form
+%%EXAMPLESDIR%%/Database/DataReportExample/Fmain.form
+%%EXAMPLESDIR%%/Database/DataReportExample/.project
+%%EXAMPLESDIR%%/Database/DataReportExample/.icon.png
+%%EXAMPLESDIR%%/Database/DataReportExample/Fconn.class
+%%EXAMPLESDIR%%/Database/DataReportExample/Fpreview.form
+%%EXAMPLESDIR%%/Database/DataReportExample/Fconn.form
+@dirrm %%EXAMPLESDIR%%/Video/MyWebCam/.lang
+@dirrm %%EXAMPLESDIR%%/Video/MyWebCam
+@dirrm %%EXAMPLESDIR%%/Video/MoviePlayer/.lang
+@dirrm %%EXAMPLESDIR%%/Video/MoviePlayer
+@dirrm %%EXAMPLESDIR%%/Video
+@dirrm %%EXAMPLESDIR%%/Sound/MusicPlayer/.lang
+@dirrm %%EXAMPLESDIR%%/Sound/MusicPlayer/.icon
+@dirrm %%EXAMPLESDIR%%/Sound/MusicPlayer
+@dirrm %%EXAMPLESDIR%%/Sound/CDPlayer/.lang
+@dirrm %%EXAMPLESDIR%%/Sound/CDPlayer
+@dirrm %%EXAMPLESDIR%%/Sound
+@dirrm %%EXAMPLESDIR%%/Printing/Printing/Images
+@dirrm %%EXAMPLESDIR%%/Printing/Printing/.lang
+@dirrm %%EXAMPLESDIR%%/Printing/Printing
+@dirrm %%EXAMPLESDIR%%/Printing
+@dirrm %%EXAMPLESDIR%%/OpenGL/PDFPresentation
+@dirrm %%EXAMPLESDIR%%/OpenGL/GambasGears
+@dirrm %%EXAMPLESDIR%%/OpenGL/3DWebCam
+@dirrm %%EXAMPLESDIR%%/OpenGL
+@dirrm %%EXAMPLESDIR%%/Networking/WebBrowser/.lang
+@dirrm %%EXAMPLESDIR%%/Networking/WebBrowser
+@dirrm %%EXAMPLESDIR%%/Networking/UDPServerClient/.lang
+@dirrm %%EXAMPLESDIR%%/Networking/UDPServerClient
+@dirrm %%EXAMPLESDIR%%/Networking/ServerSocket/.lang
+@dirrm %%EXAMPLESDIR%%/Networking/ServerSocket
+@dirrm %%EXAMPLESDIR%%/Networking/SerialPort/.lang
+@dirrm %%EXAMPLESDIR%%/Networking/SerialPort
+@dirrm %%EXAMPLESDIR%%/Networking/HTTPPost/.lang
+@dirrm %%EXAMPLESDIR%%/Networking/HTTPPost
+@dirrm %%EXAMPLESDIR%%/Networking/HTTPGet/.lang
+@dirrm %%EXAMPLESDIR%%/Networking/HTTPGet
+@dirrm %%EXAMPLESDIR%%/Networking/DnsClient/.lang
+@dirrm %%EXAMPLESDIR%%/Networking/DnsClient
+@dirrm %%EXAMPLESDIR%%/Networking/ClientSocket/.lang
+@dirrm %%EXAMPLESDIR%%/Networking/ClientSocket
+@dirrm %%EXAMPLESDIR%%/Networking
+@dirrm %%EXAMPLESDIR%%/Misc/PDFViewer/.lang
+@dirrm %%EXAMPLESDIR%%/Misc/PDFViewer
+@dirrm %%EXAMPLESDIR%%/Misc/Notepad/.lang
+@dirrm %%EXAMPLESDIR%%/Misc/Notepad
+@dirrm %%EXAMPLESDIR%%/Misc/Explorer/.lang
+@dirrm %%EXAMPLESDIR%%/Misc/Explorer
+@dirrm %%EXAMPLESDIR%%/Misc/Evaluator/.lang
+@dirrm %%EXAMPLESDIR%%/Misc/Evaluator
+@dirrm %%EXAMPLESDIR%%/Misc/Console/.lang
+@dirrm %%EXAMPLESDIR%%/Misc/Console
+@dirrm %%EXAMPLESDIR%%/Misc
+@dirrm %%EXAMPLESDIR%%/Games/Solitaire/.lang
+@dirrm %%EXAMPLESDIR%%/Games/Solitaire
+@dirrm %%EXAMPLESDIR%%/Games/Snake
+@dirrm %%EXAMPLESDIR%%/Games/RobotFindsKitten/.lang
+@dirrm %%EXAMPLESDIR%%/Games/RobotFindsKitten
+@dirrm %%EXAMPLESDIR%%/Games/GameOfLife
+@dirrm %%EXAMPLESDIR%%/Games/DeepSpace/object.data
+@dirrm %%EXAMPLESDIR%%/Games/DeepSpace/images
+@dirrm %%EXAMPLESDIR%%/Games/DeepSpace/doc/.html_files
+@dirrm %%EXAMPLESDIR%%/Games/DeepSpace/doc
+@dirrm %%EXAMPLESDIR%%/Games/DeepSpace/.lang
+@dirrm %%EXAMPLESDIR%%/Games/DeepSpace
+@dirrm %%EXAMPLESDIR%%/Games/Concent/imagenes
+@dirrm %%EXAMPLESDIR%%/Games/Concent/.lang
+@dirrm %%EXAMPLESDIR%%/Games/Concent/.icon
+@dirrm %%EXAMPLESDIR%%/Games/Concent
+@dirrm %%EXAMPLESDIR%%/Games/BeastScroll
+@dirrm %%EXAMPLESDIR%%/Games
+@dirrm %%EXAMPLESDIR%%/Drawing/Sensor/.lang
+@dirrm %%EXAMPLESDIR%%/Drawing/Sensor
+@dirrm %%EXAMPLESDIR%%/Drawing/OnScreenDisplay/.lang
+@dirrm %%EXAMPLESDIR%%/Drawing/OnScreenDisplay
+@dirrm %%EXAMPLESDIR%%/Drawing/ImageViewer/.lang
+@dirrm %%EXAMPLESDIR%%/Drawing/ImageViewer
+@dirrm %%EXAMPLESDIR%%/Drawing/Gravity/.lang
+@dirrm %%EXAMPLESDIR%%/Drawing/Gravity
+@dirrm %%EXAMPLESDIR%%/Drawing/Chart/.lang
+@dirrm %%EXAMPLESDIR%%/Drawing/Chart
+@dirrm %%EXAMPLESDIR%%/Drawing/Clock/img
+@dirrm %%EXAMPLESDIR%%/Drawing/Clock/.lang
+@dirrm %%EXAMPLESDIR%%/Drawing/Clock/.icon
+@dirrm %%EXAMPLESDIR%%/Drawing/Clock
+@dirrm %%EXAMPLESDIR%%/Drawing/Barcode
+@dirrm %%EXAMPLESDIR%%/Drawing/AnalogWatch
+@dirrm %%EXAMPLESDIR%%/Drawing
+@dirrm %%EXAMPLESDIR%%/Database/PictureDatabase/Images
+@dirrm %%EXAMPLESDIR%%/Database/PictureDatabase/.lang
+@dirrm %%EXAMPLESDIR%%/Database/PictureDatabase
+@dirrm %%EXAMPLESDIR%%/Database/Database/.lang
+@dirrm %%EXAMPLESDIR%%/Database/Database
+@dirrm %%EXAMPLESDIR%%/Database/DataReportExample/pic
+@dirrm %%EXAMPLESDIR%%/Database/DataReportExample/.lang
+@dirrm %%EXAMPLESDIR%%/Database/DataReportExample
+@dirrm %%EXAMPLESDIR%%/Database
+@dirrm %%EXAMPLESDIR%%/Control/TreeView/.lang
+@dirrm %%EXAMPLESDIR%%/Control/TreeView
+@dirrm %%EXAMPLESDIR%%/Control/TextEdit/.lang
+@dirrm %%EXAMPLESDIR%%/Control/TextEdit
+@dirrm %%EXAMPLESDIR%%/Control/HighlightEditor/.lang
+@dirrm %%EXAMPLESDIR%%/Control/HighlightEditor
+@dirrm %%EXAMPLESDIR%%/Control/Embedder/.lang
+@dirrm %%EXAMPLESDIR%%/Control/Embedder
+@dirrm %%EXAMPLESDIR%%/Control
+@dirrm %%EXAMPLESDIR%%/Basic/Timer/.lang
+@dirrm %%EXAMPLESDIR%%/Basic/Timer
+@dirrm %%EXAMPLESDIR%%/Basic/Object/.lang
+@dirrm %%EXAMPLESDIR%%/Basic/Object
+@dirrm %%EXAMPLESDIR%%/Basic/DragNDrop
+@dirrm %%EXAMPLESDIR%%/Basic/Collection/.lang
+@dirrm %%EXAMPLESDIR%%/Basic/Collection
+@dirrm %%EXAMPLESDIR%%/Basic/Blights/.lang
+@dirrm %%EXAMPLESDIR%%/Basic/Blights
+@dirrm %%EXAMPLESDIR%%/Basic
+@dirrm %%EXAMPLESDIR%%/Automation/Scripting/.lang
+@dirrm %%EXAMPLESDIR%%/Automation/Scripting
+@dirrm %%EXAMPLESDIR%%/Automation/KateBrowser/.lang
+@dirrm %%EXAMPLESDIR%%/Automation/KateBrowser/.icon
+@dirrm %%EXAMPLESDIR%%/Automation/KateBrowser
+@dirrm %%EXAMPLESDIR%%/Automation
+@dirrm %%EXAMPLESDIR%%
