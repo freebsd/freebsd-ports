@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdlmess
-PORTVERSION=	0.130
+PORTVERSION=	0.131
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.arcadebsd.org/pub/FreeBSD/ports/distfiles/ \
 		http://rbelmont.mameworld.info/
@@ -31,9 +31,7 @@ OPTIONS=	DEBUG "Build sdlmess debugger" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DEBUG)
-EXTRA_PATCHES+=		${FILESDIR}/sdl.mak.patch-debug
-.else
+.if !defined(WITH_DEBUG)
 USE_GNOME=		#
 EXTRA_PATCHES+=		${FILESDIR}/sdl.mak.patch
 .endif
