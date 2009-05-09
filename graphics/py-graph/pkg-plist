@@ -1,5 +1,5 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-@dirrm %%PYTHON_SITELIBDIR%%/graph
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/critical.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draw.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/drawhyper.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex1.py
@@ -20,6 +20,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/graph-module.html
 %%PORTDOCS%%%%DOCSDIR%%/graph.algorithms-module.html
 %%PORTDOCS%%%%DOCSDIR%%/graph.algorithms.accessibility-module.html
+%%PORTDOCS%%%%DOCSDIR%%/graph.algorithms.critical-module.html
 %%PORTDOCS%%%%DOCSDIR%%/graph.algorithms.cycles-module.html
 %%PORTDOCS%%%%DOCSDIR%%/graph.algorithms.exceptions-module.html
 %%PORTDOCS%%%%DOCSDIR%%/graph.algorithms.exceptions.python_graph_exception-class.html

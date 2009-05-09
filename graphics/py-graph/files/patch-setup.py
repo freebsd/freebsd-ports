@@ -1,6 +1,19 @@
---- setup.py.orig	2009-02-23 22:14:56.000000000 +0800
-+++ setup.py	2009-02-23 22:14:38.000000000 +0800
-@@ -37,8 +37,8 @@
+--- setup.py.orig
++++ setup.py
+@@ -4,11 +4,7 @@
+ import os
+ import logging
+ 
+-try:
+-    from setuptools import setup, find_packages
+-except ImportError, ie:
+-    import ez_setup
+-    ez_setup.use_setuptools()
++from setuptools import setup, find_packages
+ 
+ # Startup
+ appname = "python-graph"
+@@ -37,8 +33,8 @@
          name = appname,
          version = appversion,
          packages = ['graph', 'graph.algorithms', 'graph.algorithms.filters', 'graph.algorithms.heuristics', 'graph.classes'],
