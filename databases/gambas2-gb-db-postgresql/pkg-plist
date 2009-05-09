@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+lib/gambas2/gb.db.postgresql.so.0
+lib/gambas2/gb.db.postgresql.so
+lib/gambas2/gb.db.postgresql.la
+@dirrmtry lib/gambas2

@@ -77,6 +77,7 @@
     SUBDIR += gambas2-gb-db-firebird
     SUBDIR += gambas2-gb-db-mysql
     SUBDIR += gambas2-gb-db-odbc
+    SUBDIR += gambas2-gb-db-postgresql
     SUBDIR += gambas2-gb-db-sqlite2
     SUBDIR += gambas2-gb-db-sqlite3
     SUBDIR += gauche-gdbm
