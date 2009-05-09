@@ -1,0 +1,12 @@
+--- Makefile.orig	2009-05-09 09:08:04.000000000 +0200
++++ Makefile	2009-04-29 06:31:39.000000000 +0200
+@@ -1,7 +1,8 @@
++PREFIX?=/usr/X11R6
+ CFLAGS?=-Wall -g
+ 
+ all:
+-	$(CC) $(CFLAGS) -lc -lm -lX11 -o musca musca.c
++	$(CC) $(CFLAGS) -I$(PREFIX)/include -L$(PREFIX)/lib -lc -lm -lX11 -o musca musca.c
+ 
+ clean:
+ 	rm -f musca
