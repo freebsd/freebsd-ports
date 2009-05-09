@@ -7783,6 +7783,7 @@ linux-divx4linux                ports/multimedia/linux-divx4linux
 linux-divx4linux4               ports/multimedia/linux-divx4linux4
 linux-doom3                     ports/games/linux-doom3
 linux-doom3-demo                ports/games/linux-doom3-demo
+linux-dri74                     ports/graphics/linux-dri74
 linux-ePSXe                     ports/emulators/linux-ePSXe
 linux-eagle                     ports/cad/linux-eagle
 linux-edonkey-core              ports/net-p2p/linux-edonkey-core
@@ -8124,6 +8125,7 @@ lua-gettext                     ports/devel/lua-gettext
 lua-mode.el                     ports/lang/lua-mode.el
 lua-posix                       ports/devel/lua-posix
 lua-pty                         ports/devel/lua-pty
+lua-sysctl                      ports/devel/lua-sysctl
 lua4                            ports/lang/lua4
 lua50                           ports/lang/lua50
 lua50-app                       ports/devel/lua50-app
@@ -9845,7 +9847,6 @@ osg-devel                       ports/graphics/osg-devel
 osgg                            ports/games/osgg
 osh                             ports/shells/osh
 osiris                          ports/security/osiris
-oskit                           ports/devel/oskit
 osmose                          ports/emulators/osmose
 osrtspproxy                     ports/net/osrtspproxy
 oss                             ports/audio/oss
@@ -13083,7 +13084,7 @@ p5-WWW-Mediawiki-Client         ports/www/p5-WWW-Mediawiki-Client
 p5-WWW-Mixi                     ports/www/p5-WWW-Mixi
 p5-WWW-Mixi-Scraper             ports/www/p5-WWW-Mixi-Scraper
 p5-WWW-Myspace                  ports/www/p5-WWW-Myspace
-p5-WWW-Nicovideo-Download       ports/www/p5-WWW-Nicovideo-Download
+p5-WWW-NicoVideo-Download       ports/www/p5-WWW-NicoVideo-Download
 p5-WWW-NioTV                    ports/www/p5-WWW-NioTV
 p5-WWW-OpenSVN                  ports/www/p5-WWW-OpenSVN
 p5-WWW-OpenSearch               ports/www/p5-WWW-OpenSearch
@@ -16582,7 +16583,7 @@ p5-www-mediawiki-client         ports/www/p5-WWW-Mediawiki-Client
 p5-www-mixi                     ports/www/p5-WWW-Mixi
 p5-www-mixi-scraper             ports/www/p5-WWW-Mixi-Scraper
 p5-www-myspace                  ports/www/p5-WWW-Myspace
-p5-www-nicovideo-download       ports/www/p5-WWW-Nicovideo-Download
+p5-www-nicovideo-download       ports/www/p5-WWW-NicoVideo-Download
 p5-www-niotv                    ports/www/p5-WWW-NioTV
 p5-www-opensearch               ports/www/p5-WWW-OpenSearch
 p5-www-opensvn                  ports/www/p5-WWW-OpenSVN
@@ -18017,6 +18018,7 @@ pl-koffice-i18n                 ports/polish/koffice-i18n
 pl-libgadu                      ports/polish/libgadu
 pl-libtlen                      ports/polish/libtlen
 pl-php_doc                      ports/polish/php_doc
+pl-qfaktury                     ports/polish/qfaktury
 pl-qnapi                        ports/polish/qnapi
 pl-sap                          ports/polish/sap
 pl-sms2                         ports/polish/sms2
