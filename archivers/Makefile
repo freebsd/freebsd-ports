@@ -27,6 +27,7 @@
     SUBDIR += fpc-unzip
     SUBDIR += freetar
     SUBDIR += freeze
+    SUBDIR += gambas2-gb-compress-bzlib2
     SUBDIR += grzip
     SUBDIR += gtar
     SUBDIR += gzip
