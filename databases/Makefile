@@ -74,6 +74,7 @@
     SUBDIR += frontbase
     SUBDIR += frontbase-jdbc
     SUBDIR += gadfly
+    SUBDIR += gambas2-gb-db-firebird
     SUBDIR += gauche-gdbm
     SUBDIR += gbib
     SUBDIR += gdbm
