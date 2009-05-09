@@ -22,7 +22,7 @@ NO_MTREE=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
-OPTIONS=	IDE	"IDE for the gambas programming language"	on \
+OPTIONS=	IDE	"IDE for the gambas programming language"	off \
 		COMPRESS_BZLIB2	"The gambas bzlib2 compression component"	on \
 		COMPRESS_ZLIB	"The gambas zlib compression component"	on \
 		CORBA	"The gambas corba component"	on \
