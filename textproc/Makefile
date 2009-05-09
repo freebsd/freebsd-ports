@@ -177,6 +177,7 @@
     SUBDIR += fy-aspell
     SUBDIR += ga-aspell
     SUBDIR += galax
+    SUBDIR += gambas2-gb-xml
     SUBDIR += gastex
     SUBDIR += gd-aspell
     SUBDIR += gdict

@@ -1,0 +1,20 @@
+@comment $FreeBSD$
+lib/gambas2/gb.xml.component
+lib/gambas2/gb.xml.so.0
+lib/gambas2/gb.xml.so
+lib/gambas2/gb.xml.la
+lib/gambas2/gb.xml.rpc.component
+lib/gambas2/gb.xml.rpc.gambas
+lib/gambas2/gb.xml.xslt.component
+lib/gambas2/gb.xml.xslt.so.0
+lib/gambas2/gb.xml.xslt.so
+lib/gambas2/gb.xml.xslt.la
+%%DATADIR%%/info/gb.xml.info
+%%DATADIR%%/info/gb.xml.list
+%%DATADIR%%/info/gb.xml.rpc.info
+%%DATADIR%%/info/gb.xml.rpc.list
+%%DATADIR%%/info/gb.xml.xslt.info
+%%DATADIR%%/info/gb.xml.xslt.list
+@dirrmtry lib/gambas2
+@dirrmtry %%DATADIR%%/info
+@dirrmtry %%DATADIR%%
