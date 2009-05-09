@@ -40,6 +40,10 @@ MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		Does not compile
+.endif
+
 .if !defined(WITH_DEBUG)
 CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include -DNDEBUG"
 .else
@@ -84,7 +88,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '\
 		s,defined(__x86_64__),& || defined(__powerpc__) || defined(__ia64__) || defined(__sparc64__) || defined(__alpha__) || defined(__amd64__),' \
 		${WRKSRC}/OgreMain/include/OgrePlatform.h
-
 
 post-install:
 .if !defined(NOPORTDOCS)
