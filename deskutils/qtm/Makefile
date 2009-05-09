@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qtm
-PORTVERSION=	0.7.4
-PORTREVISION=	1
+PORTVERSION=	0.7.4.1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/catkin
 
@@ -30,7 +29,6 @@ MANCOMPRESSED=	yes
 MAN1=		qtm.1
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/qtm
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in Changelog INSTALL README
