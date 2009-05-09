@@ -29,7 +29,7 @@ COMMENT=	Official AT&T release of KornShell 93
 CONFLICTS=	ksh93-devel-200*
 MANUAL_PACKAGE_BUILD=Doesn't build in tinderbox environment
 
-VERSION=	2008-11-04
+VERSION=	2009-05-05
 RESTRICTED=	Source recipient must acknowledge license
 
 FETCH_ENV=	HTTP_AUTH='basic:*:I accept www.opensource.org/licenses/cpl:.'
