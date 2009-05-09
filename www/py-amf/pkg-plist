@@ -47,6 +47,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._django_db_models_fields-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._django_db_models_query-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._django_db_models_query-pysrc.html
+%%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._django_utils_translation-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._django_utils_translation-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._google_appengine_ext_db-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._google_appengine_ext_db-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/api/pyamf.adapters._google_appengine_ext_db.DataStoreClassAlias-class.html
@@ -172,6 +174,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/toc-pyamf.adapters._django_db_models_base-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/toc-pyamf.adapters._django_db_models_fields-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/toc-pyamf.adapters._django_db_models_query-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/toc-pyamf.adapters._django_utils_translation-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/toc-pyamf.adapters._google_appengine_ext_db-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/toc-pyamf.adapters._sets-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/toc-pyamf.adapters._sqlalchemy-module.html
