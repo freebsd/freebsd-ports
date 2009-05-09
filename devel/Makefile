@@ -385,6 +385,7 @@
     SUBDIR += g-wrap
     SUBDIR += g2c
     SUBDIR += gaa
+    SUBDIR += gambas2-gb-corba
     SUBDIR += gamin
     SUBDIR += gaphor
     SUBDIR += gauche-gaunit
