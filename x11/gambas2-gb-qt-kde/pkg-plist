@@ -1,0 +1,16 @@
+@comment $FreeBSD$
+lib/gambas2/gb.qt.kde.component
+lib/gambas2/gb.qt.kde.so.0
+lib/gambas2/gb.qt.kde.so
+lib/gambas2/gb.qt.kde.la
+lib/gambas2/gb.qt.kde.html.component
+lib/gambas2/gb.qt.kde.html.so.0
+lib/gambas2/gb.qt.kde.html.so
+lib/gambas2/gb.qt.kde.html.la
+%%DATADIR%%/info/gb.qt.kde.info
+%%DATADIR%%/info/gb.qt.kde.list
+%%DATADIR%%/info/gb.qt.kde.html.info
+%%DATADIR%%/info/gb.qt.kde.html.list
+@dirrmtry lib/gambas2
+@dirrmtry %%DATADIR%%/info
+@dirrmtry %%DATADIR%%
