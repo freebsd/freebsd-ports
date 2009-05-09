@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	musca
-PORTVERSION=	0.9.20
+PORTVERSION=	0.9.21
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://aerosuidae.net/ \
 		http://mirror.mcx2.org/
