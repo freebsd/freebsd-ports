@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	WWW-MobileCarrierJP
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	japanese www perl5
 MASTER_SITES=	CPAN
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Scrape Japanese mobile carrier information
 
-BUILD_DEPENDS=	p5-Filter>=0:${PORTSDIR}/devel/p5-Filter \
-		p5-HTML-Selector-XPath>=0:${PORTSDIR}/www/p5-HTML-Selector-XPath \
-		p5-Web-Scraper>=0:${PORTSDIR}/www/p5-Web-Scraper \
+BUILD_DEPENDS=	p5-Moose>=0.60:${PORTSDIR}/devel/p5-Moose \
+		p5-Filter>=0:${PORTSDIR}/devel/p5-Filter \
+		p5-HTML-Selector-XPath>=0.03:${PORTSDIR}/www/p5-HTML-Selector-XPath \
+		p5-Web-Scraper>=0.24:${PORTSDIR}/www/p5-Web-Scraper \
 		p5-CAM-PDF>=0:${PORTSDIR}/textproc/p5-CAM-PDF
 
 PERL_CONFIGURE=	yes
@@ -38,4 +39,8 @@ MAN3=		WWW::MobileCarrierJP::EZWeb::PictogramInfo.3 \
 		WWW::MobileCarrierJP::DoCoMo::HTMLVersion.3 \
 		WWW::MobileCarrierJP.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
+
+.include <bsd.port.post.mk>
