@@ -86,8 +86,10 @@ bin/atunes
 %%DATADIR%%/translations/flag_uk.png
 %%DATADIR%%/translations/flag_zh.png
 %%DATADIR%%/translations/flag_zh_TW.png
+share/pixmaps/atunes125.png
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/settings
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
+@dirrmtry share/pixmaps
