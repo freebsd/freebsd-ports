@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+lib/gambas2/gb.opengl.component
+lib/gambas2/gb.opengl.so.0
+lib/gambas2/gb.opengl.so
+lib/gambas2/gb.opengl.la
+%%DATADIR%%/info/gb.opengl.info
+%%DATADIR%%/info/gb.opengl.list
+@dirrmtry lib/gambas2
+@dirrmtry %%DATADIR%%/info
+@dirrmtry %%DATADIR%%
