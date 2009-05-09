@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+lib/gambas2/gb.net.smtp.component
+lib/gambas2/gb.net.smtp.so.0
+lib/gambas2/gb.net.smtp.so
+lib/gambas2/gb.net.smtp.la
+%%DATADIR%%/info/gb.net.smtp.info
+%%DATADIR%%/info/gb.net.smtp.list
+@dirrmtry lib/gambas2
+@dirrmtry %%DATADIR%%/info
+@dirrmtry %%DATADIR%%
