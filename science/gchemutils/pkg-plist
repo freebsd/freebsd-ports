@@ -43,9 +43,9 @@ lib/gchemutils/%%VER%%/plugins/paint/text.la
 lib/gchemutils/%%VER%%/plugins/paint/text.so
 lib/gchemutils/%%VER%%/plugins/paint/wikipedia.la
 lib/gchemutils/%%VER%%/plugins/paint/wikipedia.so
-lib/goffice/0.7.5/plugins/gchemutils/gchemutils.la
-lib/goffice/0.7.5/plugins/gchemutils/gchemutils.so
-lib/goffice/0.7.5/plugins/gchemutils/plugin.xml
+lib/goffice/0.7.6/plugins/gchemutils/gchemutils.la
+lib/goffice/0.7.6/plugins/gchemutils/gchemutils.so
+lib/goffice/0.7.6/plugins/gchemutils/plugin.xml
 %%XUL%%lib/xulrunner/plugins/libmozgcu.la
 %%XUL%%lib/xulrunner/plugins/libmozgcu.so
 %%XUL%%libexec/chem-viewer
