@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+lib/gambas2/gb.db.odbc.so.0
+lib/gambas2/gb.db.odbc.so
+lib/gambas2/gb.db.odbc.la
+@dirrmtry lib/gambas2
