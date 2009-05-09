@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+lib/gambas2/gb.sdl.sound.so.0
+lib/gambas2/gb.sdl.sound.so
+lib/gambas2/gb.sdl.sound.la
+lib/gambas2/gb.sdl.sound.component
+%%DATADIR%%/info/gb.sdl.sound.info
+%%DATADIR%%/info/gb.sdl.sound.list
+@dirrmtry lib/gambas2
+@dirrmtry %%DATADIR%%/info
+@dirrmtry %%DATADIR%%
