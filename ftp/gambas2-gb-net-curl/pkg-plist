@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+lib/gambas2/gb.net.curl.component
+lib/gambas2/gb.net.curl.so.0
+lib/gambas2/gb.net.curl.so
+lib/gambas2/gb.net.curl.la
+%%DATADIR%%/info/gb.net.curl.info
+%%DATADIR%%/info/gb.net.curl.list
+@dirrmtry lib/gambas2
+@dirrmtry %%DATADIR%%/info
+@dirrmtry %%DATADIR%%
