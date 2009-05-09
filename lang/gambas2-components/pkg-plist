@@ -1,0 +1,40 @@
+@comment $FreeBSD$
+lib/gambas2/gb.chart.component
+lib/gambas2/gb.chart.gambas
+lib/gambas2/gb.db.form.component
+lib/gambas2/gb.db.form.gambas
+lib/gambas2/gb.form.component
+lib/gambas2/gb.form.dialog.component
+lib/gambas2/gb.form.dialog.gambas
+lib/gambas2/gb.form.gambas
+lib/gambas2/gb.form.mdi.component
+lib/gambas2/gb.form.mdi.gambas
+lib/gambas2/gb.info.component
+lib/gambas2/gb.info.gambas
+lib/gambas2/gb.report.component
+lib/gambas2/gb.report.gambas
+lib/gambas2/gb.settings.component
+lib/gambas2/gb.settings.gambas
+lib/gambas2/gb.web.component
+lib/gambas2/gb.web.gambas
+%%DATADIR%%/info/gb.chart.info
+%%DATADIR%%/info/gb.chart.list
+%%DATADIR%%/info/gb.db.form.info
+%%DATADIR%%/info/gb.db.form.list
+%%DATADIR%%/info/gb.form.dialog.info
+%%DATADIR%%/info/gb.form.dialog.list
+%%DATADIR%%/info/gb.form.info
+%%DATADIR%%/info/gb.form.list
+%%DATADIR%%/info/gb.form.mdi.info
+%%DATADIR%%/info/gb.form.mdi.list
+%%DATADIR%%/info/gb.info.info
+%%DATADIR%%/info/gb.info.list
+%%DATADIR%%/info/gb.report.info
+%%DATADIR%%/info/gb.report.list
+%%DATADIR%%/info/gb.settings.info
+%%DATADIR%%/info/gb.settings.list
+%%DATADIR%%/info/gb.web.info
+%%DATADIR%%/info/gb.web.list
+@dirrmtry lib/gambas2
+@dirrmtry %%DATADIR%%/info
+@dirrmtry %%DATADIR%%
