@@ -433,6 +433,9 @@ share/doc/HTML/es/kcontrol/icons/index.docbook
 share/doc/HTML/es/kcontrol/joystick/common
 share/doc/HTML/es/kcontrol/joystick/index.cache.bz2
 share/doc/HTML/es/kcontrol/joystick/index.docbook
+share/doc/HTML/es/kcontrol/kamera/common
+share/doc/HTML/es/kcontrol/kamera/index.cache.bz2
+share/doc/HTML/es/kcontrol/kamera/index.docbook
 share/doc/HTML/es/kcontrol/kcmaccess/common
 share/doc/HTML/es/kcontrol/kcmaccess/index.cache.bz2
 share/doc/HTML/es/kcontrol/kcmaccess/index.docbook
@@ -777,6 +780,12 @@ share/doc/HTML/es/kinfocenter/xserver/index.docbook
 share/doc/HTML/es/kioslave/cgi/common
 share/doc/HTML/es/kioslave/cgi/index.cache.bz2
 share/doc/HTML/es/kioslave/cgi/index.docbook
+share/doc/HTML/es/kioslave/data/common
+share/doc/HTML/es/kioslave/data/index.cache.bz2
+share/doc/HTML/es/kioslave/data/index.docbook
+share/doc/HTML/es/kioslave/file/common
+share/doc/HTML/es/kioslave/file/index.cache.bz2
+share/doc/HTML/es/kioslave/file/index.docbook
 share/doc/HTML/es/kioslave/finger/common
 share/doc/HTML/es/kioslave/finger/index.cache.bz2
 share/doc/HTML/es/kioslave/finger/index.docbook
@@ -786,24 +795,54 @@ share/doc/HTML/es/kioslave/fish/index.docbook
 share/doc/HTML/es/kioslave/floppy/common
 share/doc/HTML/es/kioslave/floppy/index.cache.bz2
 share/doc/HTML/es/kioslave/floppy/index.docbook
+share/doc/HTML/es/kioslave/ftp/common
+share/doc/HTML/es/kioslave/ftp/index.cache.bz2
+share/doc/HTML/es/kioslave/ftp/index.docbook
+share/doc/HTML/es/kioslave/imap/common
+share/doc/HTML/es/kioslave/imap/index.cache.bz2
+share/doc/HTML/es/kioslave/imap/index.docbook
 share/doc/HTML/es/kioslave/info/common
 share/doc/HTML/es/kioslave/info/index.cache.bz2
 share/doc/HTML/es/kioslave/info/index.docbook
+share/doc/HTML/es/kioslave/ldap/common
+share/doc/HTML/es/kioslave/ldap/index.cache.bz2
+share/doc/HTML/es/kioslave/ldap/index.docbook
+share/doc/HTML/es/kioslave/mailto/common
+share/doc/HTML/es/kioslave/mailto/index.cache.bz2
+share/doc/HTML/es/kioslave/mailto/index.docbook
 share/doc/HTML/es/kioslave/man/common
 share/doc/HTML/es/kioslave/man/index.cache.bz2
 share/doc/HTML/es/kioslave/man/index.docbook
+share/doc/HTML/es/kioslave/news/common
+share/doc/HTML/es/kioslave/news/index.cache.bz2
+share/doc/HTML/es/kioslave/news/index.docbook
 share/doc/HTML/es/kioslave/nfs/common
 share/doc/HTML/es/kioslave/nfs/index.cache.bz2
 share/doc/HTML/es/kioslave/nfs/index.docbook
+share/doc/HTML/es/kioslave/nntp/common
+share/doc/HTML/es/kioslave/nntp/index.cache.bz2
+share/doc/HTML/es/kioslave/nntp/index.docbook
+share/doc/HTML/es/kioslave/pop3/common
+share/doc/HTML/es/kioslave/pop3/index.cache.bz2
+share/doc/HTML/es/kioslave/pop3/index.docbook
+share/doc/HTML/es/kioslave/rlogin/common
+share/doc/HTML/es/kioslave/rlogin/index.cache.bz2
+share/doc/HTML/es/kioslave/rlogin/index.docbook
 share/doc/HTML/es/kioslave/sftp/common
 share/doc/HTML/es/kioslave/sftp/index.cache.bz2
 share/doc/HTML/es/kioslave/sftp/index.docbook
 share/doc/HTML/es/kioslave/smb/common
 share/doc/HTML/es/kioslave/smb/index.cache.bz2
 share/doc/HTML/es/kioslave/smb/index.docbook
+share/doc/HTML/es/kioslave/smtp/common
+share/doc/HTML/es/kioslave/smtp/index.cache.bz2
+share/doc/HTML/es/kioslave/smtp/index.docbook
 share/doc/HTML/es/kioslave/tar/common
 share/doc/HTML/es/kioslave/tar/index.cache.bz2
 share/doc/HTML/es/kioslave/tar/index.docbook
+share/doc/HTML/es/kioslave/telnet/common
+share/doc/HTML/es/kioslave/telnet/index.cache.bz2
+share/doc/HTML/es/kioslave/telnet/index.docbook
 share/doc/HTML/es/kiriki/common
 share/doc/HTML/es/kiriki/index.cache.bz2
 share/doc/HTML/es/kiriki/index.docbook
@@ -1876,15 +1915,27 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kjots
 @dirrm share/doc/HTML/es/kiten
 @dirrm share/doc/HTML/es/kiriki
+@dirrm share/doc/HTML/es/kioslave/telnet
 @dirrm share/doc/HTML/es/kioslave/tar
+@dirrm share/doc/HTML/es/kioslave/smtp
 @dirrm share/doc/HTML/es/kioslave/smb
 @dirrm share/doc/HTML/es/kioslave/sftp
+@dirrm share/doc/HTML/es/kioslave/rlogin
+@dirrm share/doc/HTML/es/kioslave/pop3
+@dirrm share/doc/HTML/es/kioslave/nntp
 @dirrm share/doc/HTML/es/kioslave/nfs
+@dirrm share/doc/HTML/es/kioslave/news
 @dirrm share/doc/HTML/es/kioslave/man
+@dirrm share/doc/HTML/es/kioslave/mailto
+@dirrm share/doc/HTML/es/kioslave/ldap
 @dirrm share/doc/HTML/es/kioslave/info
+@dirrm share/doc/HTML/es/kioslave/imap
+@dirrm share/doc/HTML/es/kioslave/ftp
 @dirrm share/doc/HTML/es/kioslave/floppy
 @dirrm share/doc/HTML/es/kioslave/fish
 @dirrm share/doc/HTML/es/kioslave/finger
+@dirrm share/doc/HTML/es/kioslave/file
+@dirrm share/doc/HTML/es/kioslave/data
 @dirrm share/doc/HTML/es/kioslave/cgi
 @dirrm share/doc/HTML/es/kioslave
 @dirrm share/doc/HTML/es/kinfocenter/xserver
@@ -1959,6 +2010,7 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kcontrol/kcmdisplay
 @dirrm share/doc/HTML/es/kcontrol/kcmcss
 @dirrm share/doc/HTML/es/kcontrol/kcmaccess
+@dirrm share/doc/HTML/es/kcontrol/kamera
 @dirrm share/doc/HTML/es/kcontrol/joystick
 @dirrm share/doc/HTML/es/kcontrol/icons
 @dirrm share/doc/HTML/es/kcontrol/helpindex

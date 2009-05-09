@@ -560,6 +560,10 @@
     SUBDIR += kaptain
     SUBDIR += kcachegrind
     SUBDIR += kdbg
+    SUBDIR += kdebindings4
+    SUBDIR += kdebindings4-python
+    SUBDIR += kdebindings4-python-krosspython
+    SUBDIR += kdebindings4-python-pykde4
     SUBDIR += kdesdk3
     SUBDIR += kdesdk4
     SUBDIR += kdesvn

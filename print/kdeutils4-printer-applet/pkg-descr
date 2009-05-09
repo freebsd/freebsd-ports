@@ -1,0 +1,8 @@
+printer-applet is a system tray utility. It shows current print jobs,
+shows printer warnings and errors and shows when printers that have
+been plugged in for the first time are being auto-configured by
+hal-cups-utils.
+
+It replaces kjobviewer in KDE 3.
+
+WWW:	http://www.kde.org

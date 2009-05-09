@@ -24,7 +24,7 @@ USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 QT_COMPONENTS=	opengl gui qmake_build moc_build rcc_build uic_build \
 		porting_build uic3_build
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		xsldbg.1
 

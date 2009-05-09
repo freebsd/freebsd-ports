@@ -1361,6 +1361,7 @@ share/locale/pt/LC_MESSAGES/kio_floppy.mo
 share/locale/pt/LC_MESSAGES/kio_groupwise.mo
 share/locale/pt/LC_MESSAGES/kio_help4.mo
 share/locale/pt/LC_MESSAGES/kio_imap4.mo
+share/locale/pt/LC_MESSAGES/kio_info.mo
 share/locale/pt/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/pt/LC_MESSAGES/kio_ldap.mo
 share/locale/pt/LC_MESSAGES/kio_man.mo

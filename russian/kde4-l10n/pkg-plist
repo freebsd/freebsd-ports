@@ -903,6 +903,7 @@ share/locale/ru/LC_MESSAGES/kcachegrind.mo
 share/locale/ru/LC_MESSAGES/kcalc.mo
 share/locale/ru/LC_MESSAGES/kcertpart.mo
 share/locale/ru/LC_MESSAGES/kcharselect.mo
+share/locale/ru/LC_MESSAGES/kcm_akonadi.mo
 share/locale/ru/LC_MESSAGES/kcm_autostart.mo
 share/locale/ru/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/ru/LC_MESSAGES/kcm_emoticons.mo
@@ -985,6 +986,7 @@ share/locale/ru/LC_MESSAGES/kdesu.mo
 share/locale/ru/LC_MESSAGES/kdesud.mo
 share/locale/ru/LC_MESSAGES/kdf.mo
 share/locale/ru/LC_MESSAGES/kdgantt1.mo
+share/locale/ru/LC_MESSAGES/kdgantt.mo
 share/locale/ru/LC_MESSAGES/kdialog.mo
 share/locale/ru/LC_MESSAGES/kdiamond.mo
 share/locale/ru/LC_MESSAGES/kdmconfig.mo
@@ -1121,12 +1123,14 @@ share/locale/ru/LC_MESSAGES/krdb.mo
 share/locale/ru/LC_MESSAGES/krdc.mo
 share/locale/ru/LC_MESSAGES/kreadconfig.mo
 share/locale/ru/LC_MESSAGES/kres_birthday.mo
+share/locale/ru/LC_MESSAGES/kres_blog.mo
 share/locale/ru/LC_MESSAGES/kres_bugzilla.mo
 share/locale/ru/LC_MESSAGES/kres_featureplan.mo
 share/locale/ru/LC_MESSAGES/kres_groupware.mo
 share/locale/ru/LC_MESSAGES/kres_groupwise.mo
 share/locale/ru/LC_MESSAGES/kres_kolab.mo
 share/locale/ru/LC_MESSAGES/kres_remote.mo
+share/locale/ru/LC_MESSAGES/kres_scalix.mo
 share/locale/ru/LC_MESSAGES/kres_tvanytime.mo
 share/locale/ru/LC_MESSAGES/kres_xmlrpc.mo
 share/locale/ru/LC_MESSAGES/kreversi.mo
@@ -1326,6 +1330,8 @@ share/locale/ru/LC_MESSAGES/solid-powermanagement.mo
 share/locale/ru/LC_MESSAGES/solidcontrol.mo
 share/locale/ru/LC_MESSAGES/soliduiserver.mo
 share/locale/ru/LC_MESSAGES/spy.mo
+share/locale/ru/LC_MESSAGES/step.mo
+share/locale/ru/LC_MESSAGES/step_qt.mo
 share/locale/ru/LC_MESSAGES/strigila_diff.mo
 share/locale/ru/LC_MESSAGES/superkaramba.mo
 share/locale/ru/LC_MESSAGES/svgpart.mo

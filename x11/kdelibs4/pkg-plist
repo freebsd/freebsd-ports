@@ -2641,6 +2641,7 @@ share/apps/ksgmltools2/customization/pl/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/pl/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/pl/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/pl/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/pl/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/pl/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/pl/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/pl/lang.entities

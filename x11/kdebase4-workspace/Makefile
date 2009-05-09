@@ -8,7 +8,6 @@
 
 PORTNAME=	kdebase-workspace
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -50,8 +49,9 @@ CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DWITH_NetworkManager:BOOL=OFF \
 		-DWITH_Xmms:BOOL=OFF \
 		-DWITH_Googlegadgets:BOOL=OFF \
-		-DWITH_QEdje:BOOL=OFF
-#Xmms and Googlegadgets could be enabled,
+		-DWITH_QEdje:BOOL=OFF \
+		-DWITH_PyKDE4:BOOL=OFF
+#PyKDE4, Xmms and Googlegadgets could be enabled,
 #QEdje has not been ported yet.
 
 .include <bsd.port.pre.mk>

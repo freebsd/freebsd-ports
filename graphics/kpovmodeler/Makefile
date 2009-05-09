@@ -7,7 +7,6 @@
 
 PORTNAME=	kpovmodeler
 PORTVERSION=	${APP_VER}.${EXTRA_VER}
-PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${EXTRA_VER}/src/extragear
@@ -25,6 +24,6 @@ USE_CMAKE=	yes
 USE_GETTEXT=	yes
 
 APP_VER=	1.1.3
-EXTRA_VER=	4.2.0
+EXTRA_VER=	4.2.3
 
 .include <bsd.port.mk>

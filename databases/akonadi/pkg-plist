@@ -9,10 +9,10 @@ include/akonadi/private/protocol_p.h
 include/akonadi/private/xdgbasedirs_p.h
 lib/libakonadiprivate.so
 lib/libakonadiprivate.so.1
-lib/libakonadiprivate.so.1.1.1
+lib/libakonadiprivate.so.1.1.2
 lib/libakonadiprotocolinternals.so
 lib/libakonadiprotocolinternals.so.1
-lib/libakonadiprotocolinternals.so.1.1.1
+lib/libakonadiprotocolinternals.so.1.1.2
 libdata/pkgconfig/akonadi.pc
 share/config/akonadi/mysql-global.conf
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml

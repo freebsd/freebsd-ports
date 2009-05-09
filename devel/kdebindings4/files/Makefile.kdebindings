@@ -1,0 +1,69 @@
+# New ports collection makefile for:	kdebindings4
+# Date created:		2008-08-19
+# Whom:			Max Brazhnikov <makc@issp.ac.ru>
+#
+# $FreeBSD$
+#
+
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+PKGNAMEPREFIX?=	${${BINDLANG}_PKGNAMEPREFIX}
+PKGNAMESUFFIX?=	${${BINDLANG}_PKGNAMESUFFIX}
+DIST_SUBDIR=	KDE
+
+COMMENT?=	${${BINDLANG}_COMMENT}
+
+USE_BZIP2=	yes
+USE_CMAKE=	yes
+USE_KDE4+=	kdelibs automoc4 kdehier kdeprefix
+USE_QT_VER=	4
+QT_COMPONENTS+=	corelib qmake_build moc_build uic_build rcc_build
+
+BUILD_WRKSRC?=	${WRKSRC}/${BINDLANG}/${BINDMODULE}
+INSTALL_WRKSRC?=${BUILD_WRKSRC}
+
+# Available languages
+_BINDLANG_ALL=	csharp java php python ruby smoke
+
+# csharp_COMMENT=	C\# bindings for Qt/KDE: ${BINDMODULE} module
+# java_COMMENT=	Java bindings for Qt/KDE: ${BINDMODULE} module
+# php_COMMENT=	PHP bindings for Qt/KDE: ${BINDMODULE} module
+python_COMMENT=	Python bindings for Qt/KDE: ${BINDMODULE} module
+ruby_COMMENT=	Ruby bindings for Qt/KDE: ${BINDMODULE} module
+smoke_COMMENT=	SMOKE bindings for Qt/KDE: ${BINDMODULE} module
+
+python_PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+ruby_PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+
+python_PKGNAMESUFFIX=	-${BINDMODULE}
+ruby_PKGNAMESUFFIX=	-${BINDMODULE}
+smoke_PKGNAMESUFFIX=	-${BINDLANG}-${BINDMODULE}
+
+# Don't extract unnecessary stuff
+DO_NOT_EXTRACT?=${_BINDLANG_ALL:S/${BINDLANG}//}
+
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
+.for dne in ${DO_NOT_EXTRACT}
+EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
+.endfor
+
+#should this be moved to bsd.cmake.mk ?
+CMAKE_ARGS+=	-DDEFAULT_PYTHON_EXECUTABLE=${PYTHON_VERSION}
+
+#keep syncing this with devel/py-sip
+SIPDIR_REL=	share/py-sip
+
+# additional targets
+pre-configure: kdebindings-${BINDLANG}-pre-configure
+
+kdebindings-python-pre-configure:
+	@${DO_NADA}
+
+kdebindings-ruby-pre-configure:
+	@${DO_NADA}
+
+kdebindings-smoke-pre-configure:
+	${CP} ${.CURDIR}/../../devel/kdebindings4-${BINDLANG}/files/CMakeLists.txt \
+		${WRKSRC}/${BINDLANG}
+	${REINPLACE_CMD} -e 's|moduledir|${BINDMODULE}|' \
+		${WRKSRC}/${BINDLANG}/CMakeLists.txt

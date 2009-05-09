@@ -398,6 +398,9 @@ share/locale/sk/LC_MESSAGES/okular_djvu.mo
 share/locale/sk/LC_MESSAGES/okular_dvi.mo
 share/locale/sk/LC_MESSAGES/okular_fictionbook.mo
 share/locale/sk/LC_MESSAGES/okular_ghostview.mo
+share/locale/sk/LC_MESSAGES/okular_comicbook.mo
+share/locale/sk/LC_MESSAGES/okular_epub.mo
+share/locale/sk/LC_MESSAGES/okular_fax.mo
 share/locale/sk/LC_MESSAGES/okular_kimgio.mo
 share/locale/sk/LC_MESSAGES/okular_ooo.mo
 share/locale/sk/LC_MESSAGES/okular_plucker.mo
@@ -476,6 +479,7 @@ share/locale/sk/LC_MESSAGES/superkaramba.mo
 share/locale/sk/LC_MESSAGES/svgpart.mo
 share/locale/sk/LC_MESSAGES/sweeper.mo
 share/locale/sk/LC_MESSAGES/systemsettings.mo
+share/locale/sk/LC_MESSAGES/system-config-printer-kde.mo
 share/locale/sk/LC_MESSAGES/timezones4.mo
 share/locale/sk/LC_MESSAGES/umbrello.mo
 share/locale/sk/LC_MESSAGES/useraccount.mo

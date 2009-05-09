@@ -271,6 +271,7 @@ share/locale/sl/LC_MESSAGES/kcolorchooser.mo
 share/locale/sl/LC_MESSAGES/kcron.mo
 share/locale/sl/LC_MESSAGES/kdat.mo
 share/locale/sl/LC_MESSAGES/kde-menu.mo
+share/locale/sl/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/sl/LC_MESSAGES/kdebugdialog.mo
 share/locale/sl/LC_MESSAGES/kded_phononserver.mo
 share/locale/sl/LC_MESSAGES/kdelibs4.mo
@@ -402,6 +403,7 @@ share/locale/sl/LC_MESSAGES/kolf.mo
 share/locale/sl/LC_MESSAGES/kollision.mo
 share/locale/sl/LC_MESSAGES/kolourpaint.mo
 share/locale/sl/LC_MESSAGES/kompare.mo
+share/locale/sl/LC_MESSAGES/kommander.mo
 share/locale/sl/LC_MESSAGES/konqueror.mo
 share/locale/sl/LC_MESSAGES/konquest.mo
 share/locale/sl/LC_MESSAGES/konsole.mo

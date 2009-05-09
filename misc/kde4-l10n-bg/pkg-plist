@@ -42,6 +42,7 @@ share/locale/bg/LC_MESSAGES/kcm_autostart.mo
 share/locale/bg/LC_MESSAGES/kcm_emoticons.mo
 share/locale/bg/LC_MESSAGES/kcm_krfb.mo
 share/locale/bg/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/bg/LC_MESSAGES/kcm_solid.mo
 share/locale/bg/LC_MESSAGES/kcmaccess.mo
 share/locale/bg/LC_MESSAGES/kcmaudiocd.mo
 share/locale/bg/LC_MESSAGES/kcmbackground.mo
@@ -224,6 +225,7 @@ share/locale/bg/LC_MESSAGES/kopete.mo
 share/locale/bg/LC_MESSAGES/korganizer.mo
 share/locale/bg/LC_MESSAGES/kpackage.mo
 share/locale/bg/LC_MESSAGES/kpartsaver.mo
+share/locale/bg/LC_MESSAGES/kpasswdserver.mo
 share/locale/bg/LC_MESSAGES/kpat.mo
 share/locale/bg/LC_MESSAGES/kpilot.mo
 share/locale/bg/LC_MESSAGES/kppp.mo
@@ -304,6 +306,7 @@ share/locale/bg/LC_MESSAGES/libksieve.mo
 share/locale/bg/LC_MESSAGES/libkworkspace.mo
 share/locale/bg/LC_MESSAGES/libphonon.mo
 share/locale/bg/LC_MESSAGES/libplasma.mo
+share/locale/bg/LC_MESSAGES/libplasmaclock.mo
 share/locale/bg/LC_MESSAGES/libtaskmanager.mo
 share/locale/bg/LC_MESSAGES/lskat.mo
 share/locale/bg/LC_MESSAGES/nepomuk.mo
@@ -324,6 +327,7 @@ share/locale/bg/LC_MESSAGES/okular_xps.mo
 share/locale/bg/LC_MESSAGES/parley.mo
 share/locale/bg/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/bg/LC_MESSAGES/phonon_kde.mo
+share/locale/bg/LC_MESSAGES/plasma-overlay.mo
 share/locale/bg/LC_MESSAGES/plasma.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_binaryclock.mo
@@ -333,9 +337,11 @@ share/locale/bg/LC_MESSAGES/plasma_applet_desktop.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_folderview.mo
+share/locale/bg/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_quicklaunch.mo
+share/locale/bg/LC_MESSAGES/plasma_applet_system-monitor.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_systemtray.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_tasks.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_trash.mo
@@ -353,6 +359,7 @@ share/locale/bg/LC_MESSAGES/spy.mo
 share/locale/bg/LC_MESSAGES/strigila_diff.mo
 share/locale/bg/LC_MESSAGES/superkaramba.mo
 share/locale/bg/LC_MESSAGES/sweeper.mo
+share/locale/bg/LC_MESSAGES/systemsettings.mo
 share/locale/bg/LC_MESSAGES/timezones4.mo
 share/locale/bg/LC_MESSAGES/useraccount.mo
 share/locale/bg/entry.desktop

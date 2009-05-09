@@ -7,7 +7,6 @@
 
 PORTNAME=	skanlite
 PORTVERSION=	${APP_VER}.${EXTRA_VER}
-PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${EXTRA_VER}/src/extragear
@@ -25,7 +24,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 
-APP_VER=	0.2
-EXTRA_VER=	4.2.0
+APP_VER=	0.3
+EXTRA_VER=	4.2.3
 
 .include <bsd.port.mk>
