@@ -15,5 +15,7 @@ At the moment, this includes:
    - SWFC : A tool for creating SWF files from simple script files.
    - SWFExtract : Allows to extract Movieclips, Sounds, Images etc. from SWF
      files.
+   - AS3Compile : A standalone ActionScript 3.0 compiler. Mostly compatible
+     with Flex. 
 
 WWW: http://www.swftools.org/
