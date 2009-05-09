@@ -23,7 +23,7 @@ BADPATCHES=	000 001
 PATCHFILES:=	${PATCHFILES:N6.4.${p}}
 .endfor
 
-MAINTAINER?=	obrien@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Vi "workalike", with many additional features
 
 SLAVEDIRS=	editors/vim-lite
