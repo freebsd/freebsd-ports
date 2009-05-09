@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Convert/Cyrillic.pm
+%%SITE_PERL%%/Convert/Cyrillic/Utils.pm
+%%SITE_PERL%%/Lingua/DetectCharset.pm
+%%SITE_PERL%%/Lingua/DetectCharset/StatKoi.pm
+%%SITE_PERL%%/Lingua/DetectCharset/StatKoi8r.pm
+%%SITE_PERL%%/Lingua/DetectCharset/StatKoi8u.pm
+%%SITE_PERL%%/Lingua/DetectCharset/StatUtf8.pm
+%%SITE_PERL%%/Lingua/DetectCharset/StatWin.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/cyrillic-suite/.packlist
+@dirrm %%SITE_PERL%%/Convert/Cyrillic
+@dirrmtry %%SITE_PERL%%/Convert
+@dirrm %%SITE_PERL%%/Lingua/DetectCharset
+@dirrmtry %%SITE_PERL%%/Lingua
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/cyrillic-suite
