@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bitflu
-PORTVERSION=	0.81
+PORTVERSION=	0.90
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://bitflu.workaround.ch/bitflu/ CENKES
 EXTRACT_SUFX=	.tgz
@@ -15,9 +15,11 @@ MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	BitTorrent client written in Perl
 
 RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-Danga-Socket>=0:${PORTSDIR}/devel/p5-Danga-Socket
 
-PLUGINSDIR=	lib/perl5/Bitflu
+PLUGINSDIR_BASE=lib/perl5
+PLUGINSDIR=	${PLUGINSDIR_BASE}/Bitflu
 USE_PERL5=	yes
 NO_BUILD=	yes
 
@@ -37,7 +39,7 @@ RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|'\''.bitflu.config'\''|"$$ENV{HOME}/.bitflu.config"|; \
-		s|\./plugins|${PREFIX}/${PLUGINSDIR}|; \
+		s|\./plugins|${PREFIX}/${PLUGINSDIR_BASE}|; \
 		s|\./workdir|$$ENV{HOME}/.bitflu.workdir|; \
 		s|--config=\.bitflu.config|--config=~/.bitflu.config|' \
 		${WRKSRC}/bitflu.pl
