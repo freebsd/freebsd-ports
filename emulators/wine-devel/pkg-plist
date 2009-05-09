@@ -641,7 +641,7 @@ lib/wine/d3dx9_41.dll.so
 lib/wine/d3dxof.dll.so
 lib/wine/dbghelp.dll.so
 lib/wine/dciman32.dll.so
-lib/wine/ddeml.dll16
+lib/wine/ddeml.dll16.so
 lib/wine/ddraw.dll.so
 lib/wine/ddrawex.dll.so
 lib/wine/devenum.dll.so
@@ -1009,6 +1009,7 @@ lib/wine/svchost.exe.so
 lib/wine/svrapi.dll.so
 lib/wine/sxs.dll.so
 lib/wine/system.drv16
+lib/wine/t2embed.dll.so
 lib/wine/tapi32.dll.so
 lib/wine/taskmgr.exe.so
 lib/wine/termsv.exe.so
@@ -1039,6 +1040,7 @@ lib/wine/vtdapi.vxd.so
 lib/wine/vwin32.vxd.so
 lib/wine/w32skrnl.dll.so
 lib/wine/w32sys.dll16.so
+lib/wine/wbemprox.dll.so
 lib/wine/win32s16.dll16.so
 lib/wine/win87em.dll16.so
 lib/wine/winaspi.dll16.so
