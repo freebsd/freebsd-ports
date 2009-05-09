@@ -1,5 +1,5 @@
---- platform/gtk-x11/setup.py.orig	2009-03-08 04:21:24.000000000 +0900
-+++ platform/gtk-x11/setup.py	2009-03-09 15:35:56.000000000 +0900
+--- platform/gtk-x11/setup.py.orig	2009-03-31 05:04:54.000000000 +0900
++++ platform/gtk-x11/setup.py	2009-04-14 06:30:46.000000000 +0900
 @@ -111,12 +111,13 @@
  # XPCOM_LIB = "firefox-xpcom"
  # GTKMOZEMBED_LIB = "firefox-gtkmozembed"
@@ -7,9 +7,9 @@
 -XPCOM_LIB = None
 -GTKMOZEMBED_LIB = None
 -XULRUNNER_19 = None
-+XPCOM_LIB = "%%GECKO%%-xpcom"
-+GTKMOZEMBED_LIB = "%%GECKO%%-gtkmozembed"
-+XULRUNNER_19 = False
++XPCOM_LIB = "%%XPCOM_LIB%%"
++GTKMOZEMBED_LIB = "%%GTKMOZEMBED_LIB%%"
++XULRUNNER_19 = %%XULRUNNER_19%%
  
  # The name of the boost library.  Used for building extensions.
  BOOST_LIB = 'boost_python'
