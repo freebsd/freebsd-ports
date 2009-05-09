@@ -6,24 +6,17 @@
 #
 
 PORTNAME=	openjdk6
-PORTVERSION=	b14
+PORTVERSION=	b16
 CATEGORIES=	java devel
-MASTER_SITES=	http://filedb.experts-exchange.com/incoming/2009/02_w07/104611/ \
-		http://filedb.experts-exchange.com/incoming/2009/02_w08/108800/
+MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/
 DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
-DISTFILES=	${DISTNAME}.zip ${CUSTOM_PATCH_NAME}.zip
 
 MAINTAINER=	brian@experts-exchange.com
 COMMENT=	Sun\'s java 6 virtual machine release under the GNUV2 license
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
-PATCHVERSION=	0.2.1
-OPENJDK_BUILDDATE=10-feb-2009
-CUSTOM_PATCHES_PREFIX=	jdk7_bsd_changes_20090203
-CUSTOM_PATCH_NAME=	patch-${PORTNAME}-freebsd-${PATCHVERSION}
-CUSTOM_UNZIPPED_PATCH_NAME=	patch_${PORTNAME}_freebsd_${PATCHVERSION}
-CUSTOM_PATCH_WRKSRC=	${WRKDIR}/${CUSTOM_UNZIPPED_PATCH_NAME}
+OPENJDK_BUILDDATE=24_apr_2009
 
 OPTIONS=	DEBUG   "Enable debugging support"	off \
 		IPV6    "Enable IPv6 support"	off \
@@ -48,34 +41,28 @@ BUILD_DEPENDS+=	${JAVAJARDIR}/jdk-7-icedtea-plugs/jre/lib/rt-closed.jar:${PORTSD
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 700000
-BROKEN=		does not compile, including unistd.h is needed
-.endif
-
 .if defined(WITH_IPV6)
 CATEGORIES+=	ipv6
 .endif
 
-# we set the arch to i586 to simulate linux.
-# there is probably a better way to due this
-.if ${ARCH} == "i386"
-ARCH=	i586
-.endif
+# avoid ARCH in MAKEFLAGS, breaks build
+NOPRECIOUSMAKEVARS= yes
 
-OPENJDK_OSARCH=	bsd-${ARCH}
+OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
 
-ONLY_FOR_ARCHS=	amd64 i586
+ONLY_FOR_ARCHS=	amd64 i386
 
 BOOTSTRAP_JDKS=	${LOCALBASE}/diablo-jdk1.6.0
 
-MAKE_ENV=	LANG=C LC_ALL=C ALT_BOOTDIR=${BOOTSTRAP_JDKS} \
-		ALT_HOTSPOT_IMPORT_PATH=${BOOTSTRAP_JDKS} \
-		ALT_JDK_IMPORT_PATH=${BOOTSTRAP_JDKS} \
+MAKE_ENV=	LANG=C LC_ALL=C \
+		ALT_BOOTDIR=${BOOTSTRAP_JDKS} \
 		ALT_FREETYPE_HEADERS_PATH=${LOCALBASE}/include \
 		ALT_FREETYPE_LIB_PATH=${LOCALBASE}/lib \
 		ALT_X11_PATH=${LOCALBASE} \
+		ALT_PACKAGE_PATH=${LOCALBASE} \
 		ALT_BINARY_PLUGS_PATH=${JAVAJARDIR}/jdk-7-icedtea-plugs \
-		ANT_HOME=${LOCALBASE} NO_DOCS=true ALT_CUPS_HEADERS_PATH=${LOCALBASE}/include
+		ANT_HOME=${LOCALBASE} \
+		NO_DOCS=true
 
 .if !defined(WITH_IPV6)
 MAKE_ENV+=	DONT_ENABLE_IPV6="YES"
@@ -92,7 +79,7 @@ JDK_MAJOR_VERSION=	6
 POLICYFILE=	jce_policy-${JDK_MAJOR_VERSION}.zip
 
 .if defined(WITH_POLICY)
-DISTFILES+=	${POLICYFILE}
+DISTFILES=	${DISTNAME}.tar.gz ${POLICYFILE}
 .endif
 
 .if defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})#{
@@ -110,16 +97,50 @@ pre-fetch:
 	@exit 1
 .endif
 
-pre-patch:
-	(cd ${CUSTOM_PATCH_WRKSRC}/${CUSTOM_PATCHES_PREFIX}.newfiles/ && ${CP} -Rp ./ ${WRKSRC})
-	(cd ${CUSTOM_PATCH_WRKSRC}/${CUSTOM_PATCHES_PREFIX}.linuxfiles/ && ${CP} -Rp ./ ${WRKSRC})
-	(cd ${CUSTOM_PATCH_WRKSRC}/${CUSTOM_PATCHES_PREFIX}.linuxmakefiles/ && ${CP} -Rp ./ ${WRKSRC})
-	# these are expected to fail
-	((cd ${WRKSRC} && ${CAT} ${CUSTOM_PATCH_WRKSRC}/${CUSTOM_PATCHES_PREFIX}.makepatches/*.patch | ${PATCH} -p1) || true)
-	((cd ${WRKSRC} && ${CAT} ${CUSTOM_PATCH_WRKSRC}/${CUSTOM_PATCHES_PREFIX}.linuxpatches/*.patch | ${PATCH} -p1) || true)
-	((cd ${WRKSRC} && ${CAT} ${CUSTOM_PATCH_WRKSRC}/${CUSTOM_PATCHES_PREFIX}.patches/*.patch | ${PATCH} -p1) || true)
-	# these patches should apply cleanly
-	((cd ${WRKSRC} && ${CAT} ${CUSTOM_PATCH_WRKSRC}/custom_patches_${PATCHVERSION}/*.patch | ${PATCH} -p1) || true)
+COPYDIRS= \
+	hotspot/src/os/linux/launcher \
+	hotspot/src/os/linux/vm \
+	hotspot/src/os_cpu/linux_x86/vm \
+	hotspot/build/linux \
+	hotspot/build/linux/makefiles \
+	jdk/src/linux/doc/man
+
+COPYFILES= \
+	corba/make/common/Defs-linux.gmk \
+	corba/make/common/shared/Defs-linux.gmk \
+	jdk/make/common/Defs-linux.gmk \
+	jdk/make/common/shared/Defs-linux.gmk \
+	jdk/make/java/nio/mapfile-linux \
+	jdk/make/netbeans/common/architectures/name-Linux.properties \
+	jdk/make/sun/awt/mapfile-vers-linux \
+	jdk/make/tools/sharing/classlist.linux \
+	jdk/src/solaris/classes/java/lang/UNIXProcess.java.linux \
+	jdk/src/solaris/classes/sun/awt/fontconfigs/linux.fontconfig.properties \
+	jdk/src/solaris/classes/sun/tools/attach/LinuxAttachProvider.java \
+	jdk/src/solaris/hpi/include/largefile_linux.h \
+	jdk/src/solaris/native/java/net/linux_close.c \
+	jdk/src/solaris/native/sun/tools/attach/LinuxVirtualMachine.c
+
+post-extract:
+	@for d in ${COPYDIRS}; do \
+		${MKDIR} `echo ${WRKDIR}/$$d | ${SED} 's/linux/bsd/g;'`; \
+		cd ${WRKDIR}/$$d; \
+		for f in *; do \
+			if [ -f $$f ]; then \
+				t=`echo ${WRKDIR}/$$d/$$f | ${SED} 's/linux/bsd/g;'`; \
+				${SED} 's/linux/bsd/g; s/Linux/Bsd/g' < $$f > $$t; \
+			fi; \
+		done; \
+	done
+	@for f in ${COPYFILES}; do \
+		t=`echo $$f | ${SED} 's/linux/bsd/g; s/Linux/Bsd/g'`; \
+		${SED} 's/linux/bsd/g; s/Linux/Bsd/g' < ${WRKDIR}/$$f > ${WRKDIR}/$$t; \
+	done
+	@${SED} 's/solaris/bsd/g; s/Solaris/Bsd/g' \
+		< ${WRKDIR}/jdk/src/solaris/hpi/native_threads/src/threads_solaris.c \
+		> ${WRKDIR}/jdk/src/solaris/hpi/native_threads/src/threads_bsd.c
+	@${CP} ${WRKDIR}/jdk/src/share/lib/security/java.security \
+		${WRKDIR}/jdk/src/share/lib/security/java.security-openbsd
 
 do-install:
 	${MKDIR} ${PREFIX}/openjdk6/
@@ -130,7 +151,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/jce/*.jar ${PREFIX}/openjdk6/jre/lib/security
 .endif
 	@${FIND} -s ${PREFIX}/openjdk6 -not -type d | \
-	${SED} -e 's#^${PREFIX}/##' >> ${TMPPLIST}
+		${SED} -e 's#^${PREFIX}/##' >> ${TMPPLIST}
+	@${ECHO} "@exec mkdir ${PREFIX}/openjdk6/jre/lib/applet" >> ${TMPPLIST}
 	@${FIND} ${PREFIX}/openjdk6 -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
