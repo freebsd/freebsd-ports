@@ -19,7 +19,7 @@ PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
 PATCHFILES+=	5.8.0${p}
 .endfor
 
-MAINTAINER?=	obrien@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Vi "workalike", with many additional features
 
 .if defined(PACKAGE_BUILDING) && !defined(LITE)
