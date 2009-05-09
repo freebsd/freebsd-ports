@@ -7,9 +7,9 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.4.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	net-snmp
 PKGNAMEPREFIX=	net-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
@@ -17,13 +17,12 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
 
-.if !defined(WITH_TKMIB)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-local:Makefile.in
-.endif
-
-.if defined(WITH_TKMIB)
-RUN_DEPEND=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
-.endif
+OPTIONS=	IPV6 "Build with IPv6 support" on \
+		MFD_REWRITES "Build with 64-bit Interface Counters" off \
+		PERL "Install additional perl modules" on \
+		TKMIB "Install graphical MIB browser" off \
+		DUMMY "Enable dummy values as placeholders" on \
+		DMALLOC "Enable dmalloc debug memory allocator" off
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -31,11 +30,6 @@ GNU_CONFIGURE=	yes
 USE_RC_SUBR=	snmpd.sh snmptrapd.sh
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-.if defined(WITHOUT_PERL)
-USE_PERL5_BUILD=yes
-.else
-USE_PERL5=	yes
-.endif
 
 CONFIGURE_ENV+=	PERLPROG="${PERL}" PSPROG="${PS_CMD}" SED="${SED}"
 CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
@@ -51,32 +45,36 @@ CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 CONFIGURE_ARGS+=--with-defaults
 .endif
 
-.if !defined(WITHOUT_DUMMY_VALUES)
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_DUMMY)
 CONFIGURE_ARGS+=--with-dummy-values
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITHOUT_PERL)
-PLIST_SUB+=	WITH_PERL="@comment "
-CONFIGURE_ARGS+=--disable-embedded-perl --without-perl-modules
+.if !defined(WITH_TKMIB)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-local:Makefile.in
+PLIST_SUB+=	WITH_TKMIB="@comment "
 .else
-CONFIGURE_ARGS+=--enable-embedded-perl --with-perl-modules
-PLIST_SUB+=	WITH_PERL=""
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
+PLIST_SUB+=	WITH_TKMIB=""
 .endif
 
-.if defined(WITH_TKMIB)
-PLIST_SUB+=	WITH_TKMIB=""
+.if defined(WITH_PERL)
+USE_PERL5=	yes
+CONFIGURE_ARGS+=--enable-embedded-perl --with-perl-modules
+PLIST_SUB+=	WITH_PERL=""
 .else
-PLIST_SUB+=	WITH_TKMIB="@comment "
+USE_PERL5_BUILD=yes
+CONFIGURE_ARGS+=--disable-embedded-perl --without-perl-modules
+PLIST_SUB+=	WITH_PERL="@comment "
 .endif
 
 .if defined(WITH_DMALLOC)
-LIB_DEPEND+=	dmalloc:${PORTSDIR}/devel/dmalloc
+LIB_DEPENDS+=	dmalloc:${PORTSDIR}/devel/dmalloc
 CONFIGURE_ARGS+=--with-dmalloc=${LOCALBASE}
 .endif
 
-.if !defined(WITHOUT_IPV6)
+.if defined(WITH_IPV6)
 CONFIGURE_ARGS+=--enable-ipv6
 # --with-transport="UDPIPv6 TCPIPv6" --with-modules=mibII/ipv6"
 PLIST_SUB+=	WITH_IPV6=""
@@ -192,7 +190,7 @@ MAN3=		add_mibdir.3 add_module_replacement.3 \
 		sprint_realloc_variable.3 \
 		unregister_app_config_handler.3 \unregister_config_handler.3
 
-.if !defined(WITHOUT_PERL)
+.if defined(WITH_PERL)
 MAN3PERL=	NetSNMP::ASN.3 NetSNMP::OID.3 NetSNMP::agent.3 \
 		NetSNMP::TrapReceiver.3 \
 		NetSNMP::agent::default_store.3 \
@@ -227,13 +225,6 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "WITH_TKMIB=yes		Install a graphical Perl/Tk/SNMP based mib browser"
-	@${ECHO_MSG} "WITHOUT_DUMMY_VALUES=yes	Provide 'placeholder' dummy values where"
-	@${ECHO_MSG} "				the necessary information is not available."
-	@${ECHO_MSG} "WITHOUT_PERL=yes		Do not install the perl modules along with the rest"
-	@${ECHO_MSG} "				of the net-snmp toolkit."
-	@${ECHO_MSG} "WITHOUT_IPV6=yes		Disable IPv6."
-	@${ECHO_MSG}
 	@${ECHO_MSG} "DEFAULT_SNMP_VERSION=\"3\"	Default version of SNMP to use."
 	@${ECHO_MSG} "NET_SNMP_SYS_CONTACT=\"${NET_SNMP_SYS_CONTACT}\""
 	@${ECHO_MSG} "				Default system contact."
@@ -259,7 +250,7 @@ post-configure:
 	 ${XARGS} ${REINPLACE_CMD} -E -e '/^INSTALL[ 	]+=/s|$$| -m 755|'
 
 post-build:
-.if !defined(WITHOUT_PERL)
+.if defined(WITH_PERL)
 	${FIND} ${WRKSRC}/perl -name Makefile | \
 	${XARGS} ${REINPLACE_CMD} -E -e '\
 		s!^(PREFIX) = .*!\1 = ${PREFIX}!; \
