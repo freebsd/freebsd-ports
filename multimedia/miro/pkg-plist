@@ -793,7 +793,7 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/searchengines/google.xml
 %%DATADIR%%/resources/searchengines/metavid.xml
 %%DATADIR%%/resources/searchengines/revver.xml
-%%DATADIR%%/resources/searchengines/veoh.xml
+%%DATADIR%%/resources/searchengines/veoh.xml.disabled
 %%DATADIR%%/resources/searchengines/yahoosearch.xml
 %%DATADIR%%/resources/searchengines/yahoovideo.xml
 %%DATADIR%%/resources/searchengines/youtube.xml

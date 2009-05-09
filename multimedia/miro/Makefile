@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Miro
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/	\
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
@@ -28,7 +28,7 @@ INSTALL_WRKSRC=	${WRKSRC}/platform/gtk-x11
 
 USE_GCC=	4.3+
 USE_GNOME=	gtk20 pygnomeextras
-USE_GECKO=	firefox seamonkey xulrunner mozilla
+USE_GECKO=	firefox libxul seamonkey xulrunner mozilla
 USE_OPENSSL=	yes
 USE_PYTHON=	yes
 WANT_GSTREAMER=	yes
@@ -50,11 +50,23 @@ DATADIR=	${PREFIX}/share/${PORTNAME:L}
 USE_GSTREAMER+=	python
 .endif
 
+.if defined(GECKO) && ${GECKO:Mlibxul}!=""
+XPCOM_LIB=	${GECKO}
+GTKMOZEMBED_LIB=${GECKO}
+XULRUNNER_19=	True
+.else
+XPCOM_LIB=	${GECKO}-xpcom
+GTKMOZEMBED_LIB=${GECKO}-gtkmozembed
+XULRUNNER_19=	False
+.endif
+
 .SILENT:
 
 post-patch:
 .for file in setup.py plat/resources.py
-	${REINPLACE_CMD} -e 's|%%GECKO%%|${GECKO}|g ; \
+	${REINPLACE_CMD} -e 's|%%XPCOM_LIB%%|${XPCOM_LIB}|g ; \
+		 s|%%GTKMOZEMBED_LIB%%|${GTKMOZEMBED_LIB}|g ; \
+		 s|%%XULRUNNER_19%%|${XULRUNNER_19}|g ; \
 		 s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		 s|%%CC%%|${CC}|g ; \
 		 s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g ; \
