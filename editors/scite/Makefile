@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scite
-PORTVERSION=	1.77
+PORTVERSION=	1.78
 CATEGORIES=	editors gnome
 MASTER_SITES=	SF \
 		http://www.scintilla.org/

@@ -58,6 +58,7 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/matlab.properties
 %%DATADIR%%/metapost.properties
 %%DATADIR%%/mmixal.properties
+%%DATADIR%%/nimrod.properties
 %%DATADIR%%/nncrontab.properties
 %%DATADIR%%/nsis.properties
 %%DATADIR%%/opal.properties
@@ -65,6 +66,7 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/pascal.properties
 %%DATADIR%%/perl.properties
 %%DATADIR%%/pov.properties
+%%DATADIR%%/powerpro.properties
 %%DATADIR%%/powershell.properties
 %%DATADIR%%/ps.properties
 %%DATADIR%%/purebasic.properties
@@ -74,6 +76,7 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/ruby.properties
 %%DATADIR%%/scriptol.properties
 %%DATADIR%%/smalltalk.properties
+%%DATADIR%%/sorcins.properties
 %%DATADIR%%/specman.properties
 %%DATADIR%%/spice.properties
 %%DATADIR%%/sql.properties
