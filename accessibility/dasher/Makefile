@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dasher
-PORTVERSION=	4.10.0
+PORTVERSION=	4.10.1
 PORTEPOCH=	2
 CATEGORIES=	accessibility editors x11 gnome
 MASTER_SITES=	GNOME
