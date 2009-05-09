@@ -70,6 +70,7 @@
     SUBDIR += bpfstat
     SUBDIR += brutecopy
     SUBDIR += bsdproxy
+    SUBDIR += bwi-firmware-kmod
     SUBDIR += bwping
     SUBDIR += c3270
     SUBDIR += callgen323
