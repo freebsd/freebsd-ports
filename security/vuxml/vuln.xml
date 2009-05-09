@@ -34,6 +34,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="defce068-39aa-11de-a493-001b77d09812">
+    <topic>wireshark -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>wireshark</name>
+        <name>wireshark-lite</name>
+        <range><ge>0.99.6</ge><lt>1.0.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Wireshark team reports:</p>
+        <blockquote
+          cite="http://www.wireshark.org/security/wnpa-sec-2009-02.html">
+          <p>Wireshark 1.0.7 fixes the following vulnerabilities:</p>
+          <ul>
+            <li>The PROFINET dissector was vulnerable to a format
+            string overflow. (Bug 3382) Versions affected: 0.99.6 to
+            1.0.6, CVE-2009-1210.</li>
+            <li>The Check Point High-Availability Protocol (CPHAP)
+            dissector could crash. (Bug 3269) Versions affected: 0.9.6
+            to 1.0.6; CVE-2009-1268.</li>
+            <li>Wireshark could crash while loading a Tektronix .rf5
+            file. (Bug 3366) Versions affected: 0.99.6 to 1.0.6,
+            CVE-2009-1269.</li>
+          </ul>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-1210</cvename>
+      <cvename>CVE-2009-1268</cvename>
+      <cvename>CVE-2009-1269</cvename>
+      <bid>34291</bid>
+      <bid>34457</bid>
+      <url>http://www.wireshark.org/security/wnpa-sec-2009-02.html</url>
+    </references>
+    <dates>
+      <discovery>2009-04-06</discovery>
+      <entry>2009-05-09</entry>
+    </dates>
+  </vuln>
   <vuln vid="736e55bc-39bb-11de-a493-001b77d09812">
     <topic>cups -- remote code execution and DNS rebinding</topic>
     <affects>
