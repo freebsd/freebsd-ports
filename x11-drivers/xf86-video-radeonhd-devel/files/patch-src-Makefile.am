@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	2009-05-09 00:44:27.000000000 +0900
++++ src/Makefile.am	2009-05-09 02:01:40.761722699 +0900
+@@ -4,7 +4,7 @@
+ 
+ EXTRA_DIST = Imakefile
+ 
+-AM_CFLAGS = @XORG_CFLAGS@ @DRI_CFLAGS@ @WARN_CFLAGS@
++AM_CFLAGS = @XORG_CFLAGS@ @DRI_CFLAGS@ @WARN_CFLAGS@ @ATOMBIOS_CFLAGS@
+ 
+ driversdir = ${moduledir}/drivers
+ drivers_LTLIBRARIES = radeonhd_drv.la
