@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linphone
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.2
 PORTEPOCH=	1
 CATEGORIES?=	net
 MASTER_SITES=	SAVANNAH/${PORTNAME}/stable/sources
@@ -45,8 +45,8 @@ PLIST_SUB+=	NLS=""
 .endif
 
 .if defined(LINPHONE_GUI)
-BUILD_DEPENDS+=	linphone-base>=3.1.0:${PORTSDIR}/net/linphone-base
-RUN_DEPENDS+=	linphone-base>=3.1.0:${PORTSDIR}/net/linphone-base
+BUILD_DEPENDS+=	linphone-base>=3.1.2:${PORTSDIR}/net/linphone-base
+RUN_DEPENDS+=	linphone-base>=3.1.2:${PORTSDIR}/net/linphone-base
 DESCR=		${PKGDIR}/pkg-descr.gui
 PLIST=		${PKGDIR}/pkg-plist.gui
 USE_GNOME+=	libglade2
@@ -55,7 +55,7 @@ SUBDIRS=	pixmaps gtk-glade
 .else
 PKGNAMESUFFIX=	-base
 CONFIGURE_ARGS+=	--enable-gtk_ui=no
-MAN1=		linphonec.1 sipomatic.1
+MAN1=		linphonec.1 linphonecsh.1 sipomatic.1
 SUBDIRS=	po oRTP mediastreamer2 coreapi console
 .endif
 
@@ -79,6 +79,7 @@ post-install:
 		${PREFIX}/share/applications
 .else
 	${INSTALL_MAN} ${WRKSRC}/share/C/linphonec.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/share/C/linphonecsh.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/share/C/sipomatic.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/share/linphone.pc ${PREFIX}/libdata/pkgconfig
 	@${MKDIR} ${DATADIR}/sounds
