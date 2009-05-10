@@ -246,6 +246,8 @@ freqship/*		sysutils/freqsdwn	License agreement is required
 fretsonfire/FretsOnFire-*-linux* games/fretsonfire-data	Only Unreal Voodoo
 						site is allowed to distribute
 						the music
+fsharp/*		lang/fsharp		Microsoft Research Shared Source
+						License Agreement
 ftree-*			misc/ftree		Cannot distribute commercially
 fwtk/*			security/fwtk		No redistribution allowed
 XFrisk-*		games/xfrisk		Copyright/trademark violation?
