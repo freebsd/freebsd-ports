@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	PyBookReader-${PORTVERSION}
 
-MAINTAINER=	valeri_ufo@web.de
+MAINTAINER=	ufo@februality.com
 COMMENT=	Program for reading e-books
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
