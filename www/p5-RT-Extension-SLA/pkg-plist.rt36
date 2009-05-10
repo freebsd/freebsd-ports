@@ -11,12 +11,10 @@
 %%RTHOME%%/local/lib/RT/Queue_SLA.pm
 %%RTHOME%%/local/man/auto/RT/Extension/SLA/.packlist
 @dirrm %%RTHOME%%/local/etc/Extension-SLA
-@dirrmtry %%RTHOME%%/local/etc
 @dirrmtry %%RTHOME%%/local/lib/RT/Extension
 @dirrmtry %%RTHOME%%/local/lib/RT/Condition
 @dirrmtry %%RTHOME%%/local/lib/RT/Action
 @dirrmtry %%RTHOME%%/local/lib/RT
-@dirrmtry %%RTHOME%%/local/lib
 @dirrmtry %%RTHOME%%/local/man/man3
 @dirrm %%RTHOME%%/local/man/auto/RT/Extension/SLA
 @dirrmtry %%RTHOME%%/local/man/auto/RT/Extension

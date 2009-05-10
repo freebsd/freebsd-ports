@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	RT-Extension-SLA
-PORTVERSION=	0.02
-PORTREVISION=	1
+PORTVERSION=	0.03
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,12 +21,16 @@ OPTIONS=	RT36 "Install for rt-3.6.x (default rt-3.8.x)" off
 
 PERL_CONFIGURE=	yes
 
-MAN3=		RT::Action::SLA_SetDefault.3				 \
-		RT::Condition::SLA_RequireDueSet.3 RT::Condition::SLA.3	 \
-		RT::Condition::SLA_RequireDefault.3 RT::Extension::SLA.3 \
-		RT::Condition::SLA_RequireStartsSet.3 RT::Queue_SLA.3	 \
-		RT::Action::SLA_SetStarts.3 RT::Action::SLA.3 \
-		RT::Action::SLA_SetDue.3
+MAN3=		RT::Action::SLA.3                     \
+		RT::Action::SLA_SetDefault.3          \
+		RT::Action::SLA_SetDue.3              \
+		RT::Action::SLA_SetStarts.3           \
+		RT::Condition::SLA.3                  \
+		RT::Condition::SLA_RequireDefault.3   \
+		RT::Condition::SLA_RequireDueSet.3    \
+		RT::Condition::SLA_RequireStartsSet.3 \
+		RT::Extension::SLA.3                  \
+		RT::Queue_SLA.3
 
 PLIST_SUB+=	RTHOME=${RTHOME}
 
