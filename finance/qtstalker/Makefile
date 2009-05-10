@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qtstalker
-PORTVERSION=	0.28
-PORTREVISION=	3
+PORTVERSION=	0.36
 CATEGORIES=	finance kde
 MASTER_SITES=	SF
 
@@ -15,14 +14,17 @@ MAINTAINER=	corky1951@comcast.net
 COMMENT=	Commodity and stock market charting and technical analysis
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-LIB_DEPENDS=	db2:${PORTSDIR}/databases/db2
+LIB_DEPENDS=	db-4.3:${PORTSDIR}/databases/db43 \
+		ta_lib:${PORTSDIR}/devel/ta-lib
+
+MAKE_JOBS_UNSAFE=yes
 
 USE_QT_VER=3
 USE_LDCONFIG=	yes
 
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+#WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 QMAKE?=		${LOCALBASE}/bin/qmake
 # XXX - this test is too simple but it is a good start
@@ -32,16 +34,21 @@ QMAKESPEC?=	freebsd-icc
 QMAKESPEC?=	freebsd-g++
 .endif
 
-VERSION_PLUGIN=	0.27
+VERSION_PLUGIN=	0.36
 
 # docs
 DOC_FILES=	\
 		BUGS \
-		CHANGELOG \
+		CHANGELOG-${PORTVERSION} \
 		TODO
 
 .ifndef(NOPORTDOCS)
 PORTDOCS+=	\
+		*
+.endif
+
+.ifndef(NOPORTEXAMPLES)
+PORTEXAMPLES+=	\
 		*
 .endif
 
@@ -53,30 +60,34 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*pro" | \
 		${XARGS} -x -n 5 \
 		${REINPLACE_CMD} -E \
-		-e 's|/usr/lib/qtstalker/|${PREFIX}/lib/${PORTNAME}/|'
+		-e 's|${LOCALBASE}/lib/qtstalker/|${PREFIX}/lib/${PORTNAME}/|'
 # where to find plugins
 	@${REINPLACE_CMD} -E \
-		-e 's|/usr/lib/qtstalker/|${PREFIX}/lib/${PORTNAME}/|' \
+		-e 's|${LOCALBASE}/lib/qtstalker/|${PREFIX}/lib/${PORTNAME}/|' \
 		${WRKSRC}/lib/Config.cpp \
 # where to both find and install docs
 	@${REINPLACE_CMD} -E \
-		-e 's|/usr/share/doc/qtstalker/html|${DOCSDIR}|' \
+		-e 's|${LOCALBASE}/share/doc/qtstalker/html|${DOCSDIR}/html|' \
 		${WRKSRC}/lib/Config.cpp \
+		${WRKSRC}/docs/docs.pro
+# where to find examples
+	@${REINPLACE_CMD} -e \
+		's|${LOCALBASE}/share/qtstalker/indicator|${EXAMPLESDIR}/indicator|' \
 		${WRKSRC}/docs/docs.pro
 # where to install program
 	@${REINPLACE_CMD} -E \
-		-e 's|/usr/bin|${PREFIX}/bin|' \
+		-e 's|${LOCALBASE}/bin|${PREFIX}/bin|' \
 		${WRKSRC}/src/src.pro
 # where to install libs
 	@${REINPLACE_CMD} -E \
-		-e 's|/usr/lib|${PREFIX}/lib|' \
+		-e 's|${LOCALBASE}/lib|${PREFIX}/lib|' \
 		${WRKSRC}/lib/lib.pro
-# correctly use database/db2
+# correctly use database/db43
 	@${REINPLACE_CMD} -E \
-		-e 's|<db.h>|<db2/db.h>|' \
+		-e 's|<db.h>|<db43/db.h>|' \
 		${WRKSRC}/lib/DbPlugin.h
 	@${REINPLACE_CMD} -E \
-		-e 's|-ldb$$|-ldb2|' \
+		-e 's|-ldb$$|-ldb-4.3|' \
 		${WRKSRC}/lib/lib.pro
 
 do-configure:
@@ -98,14 +109,20 @@ pre-install:
 	@${REINPLACE_CMD} -E \
 		-e 's|\(INSTALL_FILE\)|(BSD_INSTALL_PROGRAM)|' \
 		${WRKSRC}/src/${MAKEFILE}
-.ifdef(NOPORTDOCS)
+.if defined(NOPORTDOCS)
 # disable docs installation
 	@${REINPLACE_CMD} -E \
 		-e 's|^.+cd[[:space:]]+docs[[:space:]]+.+$$|#|' \
-		${WRKSRC}/${MAKEFILE}
+		${WRKSRC}/Makefile
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${REINPLACE_CMD} -e '37,46d' ${WRKSRC}/docs/docs.pro
 .endif
 
 post-install:
+# install minimal rcfile with helpfiles path needed by help window
+	@${MKDIR} ${PREFIX}/share/qt/etc
+	@${INSTALL_DATA} ${FILESDIR}/qtstalkerrc ${PREFIX}/share/qt/etc
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 # additional docs
