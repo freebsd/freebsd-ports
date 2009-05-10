@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	it-festival
 DISTNAME=	Italian-FESTIVAL
 DIST_SUBDIR=	festival
 
-MAINTAINER=	saturnero@gufi.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Italian support for Festival
 
 RUN_DEPENDS=	${LOCALBASE}/share/festival/lib/ogi_token.scm:${PORTSDIR}/audio/festival+OGI
