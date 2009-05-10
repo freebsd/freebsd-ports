@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	zope210
-PORTVERSION=	2.10.6
+PORTVERSION=	2.10.8
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-final
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	zope
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nakaji@jp.FreeBSD.org
 COMMENT=	An object-based web application platform
 
 USE_PYTHON=	2.4
