@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	sugarcrm
-PORTVERSION=	5.2.0a
+PORTVERSION=	5.2.0d
 CATEGORIES=	deskutils www
 MASTER_SITES=	SF
-MASTER_SITES_SUBDIR=	sugarcrm
 DISTNAME=	SugarCE-${PORTVERSION}
 
 MAINTAINER=	nick@foobar.org

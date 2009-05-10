@@ -3,17 +3,18 @@
 Notes:
 
 1.  Sugar Community Edition requires that you increase the default PHP
-    memory limit from 8Mb to 32Mb in the php.ini file.  You should edit this
-    file and ensure that the memory_limit parameter should be set to 40Mb or
+    memory limit from 8Mb to 64Mb in the php.ini file.  You should edit this
+    file and ensure that the memory_limit parameter should be set to 64Mb or
     greater:
 
-memory_limit = 40M	; Maximum amount of memory a script may consume 
+memory_limit = 64M	; Maximum amount of memory a script may consume 
 
-2.  Sugar Community Edition requires the following two parameters to be set
+2.  Sugar Community Edition requires the following three parameters to be set
     in your php.ini.
 
 allow_call_time_pass_reference = Off
 safe_mode = Off		; disable "safe mode"
+session.save_path = "/tmp"
 
     While Sugar Community Edition will work (albeit inefficiently) with
     allow_call_time_pass_reference enabled, safe_mode must be disabled to

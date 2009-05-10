@@ -19,6 +19,9 @@
 %%WWWDIR%%/themes/default/images/icon_Connectors.gif
 %%WWWDIR%%/themes/default/images/icon_SugarFeed.gif
 %%WWWDIR%%/themes/default/images/icon_SugarFeed_32.gif
+%%WWWDIR%%/themes/default/images/icon_SugarNews_32.gif 
+%%WWWDIR%%/themes/default/images/icon_email_assign.gif 
+%%WWWDIR%%/themes/default/images/icon_email_mark.gif   
 %%WWWDIR%%/themes/default/images/yellow_camp.gif
 %%WWWDIR%%/themes/default/images/xls_image_inline.gif
 %%WWWDIR%%/themes/default/images/txt_image_inline.gif
@@ -2911,6 +2914,9 @@
 %%WWWDIR%%/modules/iFrames/Dashlets/iFrameDashlet/configure.tpl
 %%WWWDIR%%/modules/iFrames/Dashlets/iFrameDashlet/iFrameDashlet.meta.php
 %%WWWDIR%%/modules/iFrames/Dashlets/iFrameDashlet/iFrameDashlet.php
+%%WWWDIR%%/modules/iFrames/Dashlets/SugarNewsDashlet/SugarNewsDashlet.php
+%%WWWDIR%%/modules/iFrames/Dashlets/SugarNewsDashlet/SugarNewsDashlet.meta.php
+%%WWWDIR%%/modules/iFrames/Dashlets/SugarNewsDashlet/configure.tpl
 %%WWWDIR%%/modules/iFrames/vardefs.php
 %%WWWDIR%%/modules/iFrames/language/en_us.lang.php
 %%WWWDIR%%/modules/iFrames/language/en_us.help.index.html
@@ -3012,7 +3018,6 @@
 %%WWWDIR%%/modules/UpgradeWizard/preflightJson.php
 %%WWWDIR%%/modules/UpgradeWizard/preflight.php
 %%WWWDIR%%/modules/UpgradeWizard/populateColumns.php
-%%WWWDIR%%/modules/UpgradeWizard/license_fiveO.php
 %%WWWDIR%%/modules/UpgradeWizard/language/en_us.lang.php
 %%WWWDIR%%/modules/UpgradeWizard/language/en_us.help.index.html
 %%WWWDIR%%/modules/UpgradeWizard/index.php
@@ -4633,8 +4638,8 @@
 %%WWWDIR%%/modules/Administration/index.html
 %%WWWDIR%%/modules/Administration/expandDatabase.php
 %%WWWDIR%%/modules/Administration/clear_chart_cache.php
-%%WWWDIR%%/modules/Administration/cleanup50.php
 %%WWWDIR%%/modules/Administration/callJSRepair.php
+%%WWWDIR%%/modules/Administration/repairUniSearch.php
 %%WWWDIR%%/modules/Administration/UpgradeWizard_prepare.php
 %%WWWDIR%%/modules/Administration/UpgradeWizard_commit.php
 %%WWWDIR%%/modules/Administration/UpgradeWizardCommon.php
@@ -4649,6 +4654,7 @@
 %%WWWDIR%%/modules/Administration/SupportPortal.php
 %%WWWDIR%%/modules/Administration/SaveTabs.php
 %%WWWDIR%%/modules/Administration/Save.php
+%%WWWDIR%%/modules/Administration/RepairFieldCasing.php
 %%WWWDIR%%/modules/Administration/RepairXSS.php
 %%WWWDIR%%/modules/Administration/RepairSeedUsers.php
 %%WWWDIR%%/modules/Administration/RepairJSFile.php
@@ -5221,6 +5227,7 @@
 %%WWWDIR%%/include/utils/external_cache/SugarCache_Base.php
 %%WWWDIR%%/include/utils/external_cache/SugarCache_APC.php
 %%WWWDIR%%/include/utils/external_cache/SugarCache.php
+%%WWWDIR%%/include/utils/external_cache/SugarCache_sMash.php
 %%WWWDIR%%/include/utils/external_cache.php
 %%WWWDIR%%/include/utils/encryption_utils.php
 %%WWWDIR%%/include/utils/db_utils.php
@@ -6116,6 +6123,8 @@
 %%WWWDIR%%/include/contextMenus/contextMenu.php
 %%WWWDIR%%/include/connectors/ConnectorFactory.php
 %%WWWDIR%%/include/connectors/component.php
+%%WWWDIR%%/include/connectors/filters/default/filter.php
+%%WWWDIR%%/include/connectors/filters/FilterFactory.php
 %%WWWDIR%%/include/connectors/formatters/FormatterFactory.php
 %%WWWDIR%%/include/connectors/formatters/default/company_detail.js
 %%WWWDIR%%/include/connectors/formatters/default/formatter.php
@@ -6745,6 +6754,7 @@
 @dirrm %%WWWDIR%%/soap
 @dirrm %%WWWDIR%%/modules/vCals
 @dirrm %%WWWDIR%%/modules/iFrames/Dashlets/iFrameDashlet
+@dirrm %%WWWDIR%%/modules/iFrames/Dashlets/SugarNewsDashlet
 @dirrm %%WWWDIR%%/modules/iFrames/Dashlets
 @dirrm %%WWWDIR%%/modules/iFrames/language
 @dirrm %%WWWDIR%%/modules/iFrames
@@ -6974,6 +6984,10 @@
 @dirrm %%WWWDIR%%/modules/Contacts/Dashlets/MyContactsDashlet
 @dirrm %%WWWDIR%%/modules/Contacts/Dashlets
 @dirrm %%WWWDIR%%/modules/Contacts
+@dirrm %%WWWDIR%%/modules/Connectors/connectors/filters/ext/soap
+@dirrm %%WWWDIR%%/modules/Connectors/connectors/filters/ext/rest
+@dirrm %%WWWDIR%%/modules/Connectors/connectors/filters/ext
+@dirrm %%WWWDIR%%/modules/Connectors/connectors/filters
 @dirrm %%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest/linkedin/tpls
 @dirrm %%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest/linkedin
 @dirrm %%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest
@@ -7316,6 +7330,8 @@
 @dirrm %%WWWDIR%%/include/domit
 @dirrm %%WWWDIR%%/include/database
 @dirrm %%WWWDIR%%/include/connectors/utils
+@dirrm %%WWWDIR%%/include/connectors/filters/default
+@dirrm %%WWWDIR%%/include/connectors/filters
 @dirrm %%WWWDIR%%/include/connectors/formatters/default
 @dirrm %%WWWDIR%%/include/connectors/formatters/ext/rest/tpls
 @dirrm %%WWWDIR%%/include/connectors/formatters/ext/rest
