@@ -54,10 +54,6 @@ DHCP_PORTREVISION=	${PORTREVISION_SERVER}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800056 && defined(WITH_DHCP_JAIL)
-BROKEN=		does not build
-.endif
-
 .if ${SUBSYS} == server && defined(WITH_DHCP_LDAP)
 # Based on patch from Brian Masney :
 PATCH_SITES=	http://www.newwave.net/~masneyb/:ldap \
