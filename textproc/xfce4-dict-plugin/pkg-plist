@@ -16,20 +16,21 @@ share/locale/hu/LC_MESSAGES/xfce4-dict.mo
 share/locale/id/LC_MESSAGES/xfce4-dict.mo
 share/locale/ja/LC_MESSAGES/xfce4-dict.mo
 share/locale/lv/LC_MESSAGES/xfce4-dict.mo
-share/locale/nb_NO/LC_MESSAGES/xfce4-dict.mo
+share/locale/nb/LC_MESSAGES/xfce4-dict.mo
 share/locale/nl/LC_MESSAGES/xfce4-dict.mo
 share/locale/pl/LC_MESSAGES/xfce4-dict.mo
+share/locale/pt/LC_MESSAGES/xfce4-dict.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-dict.mo
-share/locale/pt_PT/LC_MESSAGES/xfce4-dict.mo
+share/locale/sv/LC_MESSAGES/xfce4-dict.mo
+share/locale/tr/LC_MESSAGES/xfce4-dict.mo
 share/locale/uk/LC_MESSAGES/xfce4-dict.mo
 share/locale/ur/LC_MESSAGES/xfce4-dict.mo
+share/locale/zh_CN/LC_MESSAGES/xfce4-dict.mo
 share/xfce4/panel-plugins/xfce4-dict-plugin.desktop
 @dirrmtry share/xfce4/panel-plugins
 @dirrmtry share/xfce4
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO
 @dirrmtry share/applications
 @dirrmtry libexec/xfce4/panel-plugins
 @dirrmtry libexec/xfce4
