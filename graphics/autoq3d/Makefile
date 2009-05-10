@@ -7,7 +7,7 @@
 
 PORTNAME=	autoq3d
 DISTVERSION=	1.36
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	AutoQ3DGPL${PORTVERSION:C/\./-/}qt4source
@@ -17,7 +17,7 @@ COMMENT=	A complete QT quick 3d model editor program
 
 USE_ZIP=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake corelib moc gui opengl
+QT_COMPONENTS=	qmake_build corelib moc_build gui opengl
 
 PORTDOCS=	3DQformat.txt ChangeLog.txt Install.txt license.txt
 
