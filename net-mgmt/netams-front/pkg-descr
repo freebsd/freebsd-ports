@@ -1,0 +1,17 @@
+NetAms Front - is an alternative to builtin web interface for NeTAMS software.
+One of the main advantages of this interface is use of PHP for generation of
+dynamic page allowing highly configurable web statistic available for system
+administrator with NeTAMS.
+
+Features:
+
+- View traffic for all the configured networks and peers
+
+- Manage accounting policies with web interface
+
+- Manage NeTAMS peers: clusters, networks, groups, hosts and users with web
+  interface
+
+- NeTAMS database service
+
+WWW: http://netams.it2k.ru

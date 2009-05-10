@@ -1,0 +1,28 @@
+*******************************************************************************
+
+NetAms Front has been installed into:
+
+    %%WWWDIR%%
+
+You can edit config.php to adjust some parameters to your network
+configuration.
+
+To access NetAms Front from web you may want to add the following configuration
+to httpd.conf:
+
+    Alias /netams-front/ "%%WWWDIR%%/"
+
+    <Directory "%%WWWDIR%%/">
+	Options none
+	AllowOverride Limit
+	
+	Order Deny,Allow
+	Deny from all
+	Allow from 127.0.0.1 .example.com
+    </Directory>
+
+Try yet another NeTAMS web interface by pointing your browser to
+
+    http://localhost/netams-front/
+
+*******************************************************************************
