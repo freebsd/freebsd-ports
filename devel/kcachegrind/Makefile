@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	kcachegrind
-PORTVERSION=	0.4.5
-PORTREVISION=	4
+PORTVERSION=	0.4.6
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kcachegrind
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Profiling Visualization Tool
 
 RUN_DEPENDS=	callgrind:${PORTSDIR}/devel/callgrind
@@ -23,6 +22,8 @@ CONFLICTS=	kdesdk3-[0-9]*
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
+INSTALLS_ICONS=	yes
+USE_GETTEXT=	yes
 
 OPTIONS=	DOT "Use GraphViz/dot to render call graphs" on
 
