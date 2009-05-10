@@ -1,8 +1,10 @@
-bin/dprof2calltree
-bin/hotshot2calltree
+bin/dprof2cg
+bin/hotshot2cg
 bin/kcachegrind
-bin/op2calltree
-bin/pprof2calltree
+bin/memprof2cg
+bin/op2cg
+bin/pfmon2cg
+bin/pprof2cg
 share/applnk/Development/kcachegrind.desktop
 share/apps/kcachegrind/icons/hicolor/16x16/actions/fromrec.png
 share/apps/kcachegrind/icons/hicolor/16x16/actions/percent.png
@@ -20,8 +22,6 @@ share/icons/hicolor/48x48/apps/kcachegrind.png
 share/icons/locolor/16x16/apps/kcachegrind.png
 share/icons/locolor/32x32/apps/kcachegrind.png
 share/locale/de/LC_MESSAGES/kcachegrind.mo
-share/locale/fr/LC_MESSAGES/kcachegrind.mo
-share/locale/it/LC_MESSAGES/kcachegrind.mo
 share/mimelnk/application/x-kcachegrind.desktop
 @dirrm share/apps/kcachegrind/icons/hicolor/32x32/actions
 @dirrm share/apps/kcachegrind/icons/hicolor/32x32
