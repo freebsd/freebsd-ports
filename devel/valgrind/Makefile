@@ -64,7 +64,7 @@ IGNORE=	needs a running procfs, which is not\n\
 
 pre-patch:
 .ifdef(NOPORTDOCS)
-	${FIND} ${WRKSRC} -name "Makefile.in" -exec \
+	${FIND} ${WRKSRC} -name "Makefile.am" -exec \
 		${REINPLACE_CMD} -e "s/docs//g" {} \;
 .endif
 
