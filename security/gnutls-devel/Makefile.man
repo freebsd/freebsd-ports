@@ -405,6 +405,7 @@ MAN3=	\
 	gnutls_x509_crl_get_signature_algorithm.3 \
 	gnutls_x509_crt_get_subject_alt_othername_oid.3 \
 	gnutls_x509_crl_get_this_update.3 \
+	gnutls_x509_crt_get_verify_algorithm.3 \
 	gnutls_x509_crl_get_version.3 \
 	gnutls_x509_crl_import.3 \
 	gnutls_x509_crl_init.3 \
@@ -420,6 +421,7 @@ MAN3=	\
 	gnutls_x509_crl_sign.3 \
 	gnutls_x509_crl_sign2.3 \
 	gnutls_x509_crl_verify.3 \
+	gnutls_x509_crt_verify_hash.3 \
 	gnutls_x509_crq_deinit.3 \
 	gnutls_x509_crq_export.3 \
 	gnutls_x509_crq_get_attribute_by_oid.3 \
