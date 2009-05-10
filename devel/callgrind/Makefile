@@ -31,4 +31,10 @@ RUN_DEPENDS=	valgrind:${PORTSDIR}/devel/valgrind
 BUILD_DEPENDS=	valgrind:${PORTSDIR}/devel/valgrind
 .endif
 
+pre-patch:
+.ifdef(NOPORTDOCS)
+	${FIND} ${WRKSRC} -name "Makefile.in" -exec \
+	${REINPLACE_CMD} -e "s/docs//g" {} \;
+.endif
+
 .include <bsd.port.post.mk>
