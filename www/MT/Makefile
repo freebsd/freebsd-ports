@@ -79,7 +79,7 @@ pre-everything::
 	@${ECHO_CMD} "WITH_MYSQL"
 	@${ECHO_CMD} "		- Use MySQL as database backend"
 .endif
-.if !defined(WITH_MYSQL)
+.if !defined(WITH_POSTGRES)
 	@${ECHO_CMD} "WITH_POSTGRES"
 	@${ECHO_CMD} "		- Use PostgreSQL as database backend"
 .endif
