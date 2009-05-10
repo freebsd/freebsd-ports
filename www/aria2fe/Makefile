@@ -7,7 +7,7 @@
 
 PORTNAME=	aria2fe
 DISTVERSION=	0.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SFE
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	aria2c:${PORTSDIR}/www/aria2 \
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui qmake uic moc rcc
+QT_COMPONENTS=	gui qmake_build uic_build moc_build rcc_build
 PLIST_FILES=	bin/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/src
 
