@@ -10,6 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.9.9a
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -100,7 +101,7 @@ BROKEN=	Does not compile with perl ${PERL_VERSION}
 
 .if !defined(WITHOUT_QT4)
 USE_QT_VER+=	4
-QT_COMPONENTS+=	gui corelib moc rcc uic
+QT_COMPONENTS+=	gui corelib moc_build rcc_build uic_build
 CONFIGURE_ARGS+=--enable-qt4
 .else
 CONFIGURE_ARGS+=--disable-qt4
