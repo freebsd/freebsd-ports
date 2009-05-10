@@ -1,15 +1,9 @@
-%%SITE_PERL%%/NetPacket/LACP.pm
 %%SITE_PERL%%/NetPacket/IGMP.pm
 %%SITE_PERL%%/NetPacket/IP.pm
-%%SITE_PERL%%/NetPacket/SpanningTree.pm
 %%SITE_PERL%%/NetPacket/Ethernet.pm
 %%SITE_PERL%%/NetPacket/ICMP.pm
 %%SITE_PERL%%/NetPacket/ARP.pm
-%%SITE_PERL%%/NetPacket/LLC.pm
 %%SITE_PERL%%/NetPacket.pm
 %%SITE_PERL%%/NetPacket/UDP.pm
-%%SITE_PERL%%/NetPacket/IP.pm.orig
 %%SITE_PERL%%/NetPacket/TCP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetPacket/.packlist
 @dirrm %%SITE_PERL%%/NetPacket
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetPacket
