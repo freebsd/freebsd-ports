@@ -1,13 +1,3 @@
-lib/RT/Action/SLA.pm
-lib/RT/Action/SLA_SetDefault.pm
-lib/RT/Action/SLA_SetDue.pm
-lib/RT/Action/SLA_SetStarts.pm
-lib/RT/Condition/SLA.pm
-lib/RT/Condition/SLA_RequireDefault.pm
-lib/RT/Condition/SLA_RequireDueSet.pm
-lib/RT/Condition/SLA_RequireStartsSet.pm
-lib/RT/Extension/SLA.pm
-lib/RT/Queue_SLA.pm
 man/auto/RT/Extension/SLA/.packlist
 %%RTHOME%%/plugins/RT-Extension-SLA/etc/initialdata
 %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Action/SLA.pm
@@ -31,7 +21,3 @@ man/auto/RT/Extension/SLA/.packlist
 @dirrmtry man/auto/RT/Extension
 @dirrmtry man/auto/RT
 @dirrmtry man/auto
-@dirrmtry lib/RT/Extension
-@dirrmtry lib/RT/Condition
-@dirrmtry lib/RT/Action
-@dirrmtry lib/RT
