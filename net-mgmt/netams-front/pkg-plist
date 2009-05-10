@@ -1,0 +1,81 @@
+%%WWWDIR%%/admin.php
+%%WWWDIR%%/changelog.txt
+%%WWWDIR%%/images/add.gif
+%%WWWDIR%%/images/adv_url.gif
+%%WWWDIR%%/images/arr_left.gif
+%%WWWDIR%%/images/arr_rigth.gif
+%%WWWDIR%%/images/big_cluster.gif
+%%WWWDIR%%/images/big_group.gif
+%%WWWDIR%%/images/big_host.gif
+%%WWWDIR%%/images/big_net.gif
+%%WWWDIR%%/images/big_user.gif
+%%WWWDIR%%/images/calendar.gif
+%%WWWDIR%%/images/delete.gif
+%%WWWDIR%%/images/down.gif
+%%WWWDIR%%/images/folder.gif
+%%WWWDIR%%/images/mini_admin.gif
+%%WWWDIR%%/images/mini_backup.gif
+%%WWWDIR%%/images/mini_cluster.gif
+%%WWWDIR%%/images/mini_configuration.gif
+%%WWWDIR%%/images/mini_database.gif
+%%WWWDIR%%/images/mini_endyear.gif
+%%WWWDIR%%/images/mini_group.gif
+%%WWWDIR%%/images/mini_host.gif
+%%WWWDIR%%/images/mini_net.gif
+%%WWWDIR%%/images/mini_policy.gif
+%%WWWDIR%%/images/mini_server.gif
+%%WWWDIR%%/images/mini_stat.gif
+%%WWWDIR%%/images/mini_user.gif
+%%WWWDIR%%/images/proto/dns.gif
+%%WWWDIR%%/images/proto/ftp.gif
+%%WWWDIR%%/images/proto/icq.gif
+%%WWWDIR%%/images/proto/ip.gif
+%%WWWDIR%%/images/proto/local.gif
+%%WWWDIR%%/images/proto/mail.gif
+%%WWWDIR%%/images/proto/other.gif
+%%WWWDIR%%/images/proto/other_tcp.gif
+%%WWWDIR%%/images/proto/other_udp.gif
+%%WWWDIR%%/images/proto/ping.gif
+%%WWWDIR%%/images/proto/rdesktop.gif
+%%WWWDIR%%/images/proto/samba.gif
+%%WWWDIR%%/images/proto/ssh.gif
+%%WWWDIR%%/images/proto/urls.gif
+%%WWWDIR%%/images/proto/vnc.gif
+%%WWWDIR%%/images/proto/www.gif
+%%WWWDIR%%/images/quota/disabled.gif
+%%WWWDIR%%/images/quota/enabled.gif
+%%WWWDIR%%/images/quota/notset.gif
+%%WWWDIR%%/images/space.gif
+%%WWWDIR%%/images/table/sort_down.gif
+%%WWWDIR%%/images/table/sort_no.gif
+%%WWWDIR%%/images/table/sort_up.gif
+%%WWWDIR%%/images/up.gif
+%%WWWDIR%%/include/class-calendar.php
+%%WWWDIR%%/include/class-ctree.php
+%%WWWDIR%%/include/class-netams-client.php
+%%WWWDIR%%/include/class-table.php
+%%WWWDIR%%/include/db.php
+%%WWWDIR%%/include/functions.js
+%%WWWDIR%%/include/style.css
+%%WWWDIR%%/index.php
+%%WWWDIR%%/kernel.php
+%%WWWDIR%%/modules/mod.base.php
+%%WWWDIR%%/modules/mod.configuration.php
+%%WWWDIR%%/modules/mod.database.php
+%%WWWDIR%%/modules/mod.policy.php
+%%WWWDIR%%/modules/mod.units.php
+%%WWWDIR%%/netams-client.php
+%%WWWDIR%%/quota.php
+%%WWWDIR%%/stat.php
+%%WWWDIR%%/urls.php
+@unexec if cmp -s %D/%%EXAMPLESDIR%%/config.php %D/%%WWWDIR%%/config.php; then rm %D/%%WWWDIR%%/config.php; fi
+%%EXAMPLESDIR%%/config.php
+@exec if ! test -f %D/%%WWWDIR%%/%f; then cp -p %D/%F %D/%%WWWDIR%%/%f; fi
+@dirrm %%WWWDIR%%/modules
+@dirrm %%WWWDIR%%/include
+@dirrm %%WWWDIR%%/images/table
+@dirrm %%WWWDIR%%/images/quota
+@dirrm %%WWWDIR%%/images/proto
+@dirrm %%WWWDIR%%/images
+@dirrmtry %%WWWDIR%%
+@dirrmtry %%EXAMPLESDIR%%

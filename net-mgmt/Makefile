@@ -132,6 +132,7 @@
     SUBDIR += net-snmp4
     SUBDIR += net-snmp53
     SUBDIR += netams
+    SUBDIR += netams-front
     SUBDIR += netdisco
     SUBDIR += netleak
     SUBDIR += netmask

@@ -1,0 +1,15 @@
+--- www/config.php.simple.orig	2009-04-06 16:24:21.000000000 +0400
++++ www/config.php.simple	2009-05-10 19:30:54.000000000 +0400
+@@ -12,0 +13,2 @@
++header("Content-Type: text/html; charset=utf-8");
++
+@@ -67 +69 @@
+-$data_base[$i]['netamsclient'] = "ctl";
++$data_base[$i]['netamsclient'] = "telnet";
+@@ -95 +97 @@
+-$data_base[$i]['adv_users'] = "127.0.0.1 192.168.0.1 192.168.0.2";
++$data_base[$i]['adv_users'] = $cfg['admins_ip'] . "127.0.0.1 192.168.0.1 192.168.0.2";
+@@ -101 +103 @@
+-?>
+\ No newline at end of file
++?>
