@@ -10,6 +10,7 @@
     SUBDIR += R-cran-Zelig
     SUBDIR += R-cran-car
     SUBDIR += R-cran-gpclib
+    SUBDIR += R-cran-igraph
     SUBDIR += R-cran-sm
     SUBDIR += R-sp
     SUBDIR += aamath
