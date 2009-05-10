@@ -15,14 +15,13 @@ COMMENT=	Apache module which dynamically limits a site's slot usage
 
 USE_APACHE=	1.3
 AP_FAST_BUILD=	yes
-AP_GENPLIST=	yes
 
-PORTDOCS=		AUTHORS Changelog docs
+DOCS=		AUTHORS Changelog
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/
-.for f in ${PORTDOCS}
+.for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 	@${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}/
