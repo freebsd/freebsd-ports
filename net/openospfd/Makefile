@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	openospfd
-PORTVERSION=	4.2
+PORTVERSION=	4.3
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.dkuug.dk/pub/OpenBSD/OpenBGPD/:openbsd \
+MASTER_SITES=	${MASTER_SITE_OPENBSD:S/$/:openbsd/g} \
 		${MASTER_SITE_LOCAL:S/$/:freebsd/g}
-MASTER_SITE_SUBDIR=	flz/openospfd/:freebsd
+MASTER_SITE_SUBDIR=	flz/openospfd/:freebsd OpenBGPD/:openbsd
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz:openbsd \
-		if_media.h:freebsd hash.h:freebsd
+		if_media.h:freebsd
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rea-fbsd@codelabs.ru
 COMMENT=	Free implementation of the Open Shortest Path First Protocol
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
@@ -43,10 +43,8 @@ SUBDIRS=	ospfd \
 
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/if_media.h ${WRKSRC}/ospfctl/
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/hash.h ${WRKSRC}/ospfd/
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|sys/hash.h|hash.h|" ${WRKSRC}/ospfd/lsupdate.c
 	@${REINPLACE_CMD} -e "s|<net/if_media.h>|\"if_media.h\"|" ${WRKSRC}/ospfctl/ospfctl.c
 	@${REINPLACE_CMD} -e "/rc.conf.local/d" ${WRKSRC}/ospfd/ospfd.conf.5
 	@${REINPLACE_CMD} -e "s|SIMPLEQ|STAILQ|" ${WRKSRC}/ospfd/*.[chy]
@@ -54,7 +52,7 @@ post-patch:
 		${WRKSRC}/ospfd/ospfd.h \
 		${WRKSRC}/ospfd/ospfd.8 \
 		${WRKSRC}/ospfd/ospfd.conf.5
-	@${REINPLACE_CMD} -e "s|__dead||"	\
+	@${REINPLACE_CMD} -e "s|__dead|__dead2|" \
 		${WRKSRC}/ospfd/log.h \
 		${WRKSRC}/ospfd/ospfd.c \
 		${WRKSRC}/ospfctl/ospfctl.c

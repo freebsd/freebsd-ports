@@ -1,6 +1,6 @@
---- ospfd/parse.y.orig	2008-02-07 18:34:22.000000000 +0300
-+++ ospfd/parse.y	2008-02-07 18:37:46.000000000 +0300
-@@ -485,6 +485,11 @@
+--- ospfd/parse.y.orig	2008-02-26 13:09:58.000000000 +0300
++++ ospfd/parse.y	2008-12-19 17:52:39.000000000 +0300
+@@ -503,6 +503,11 @@
  
  areaoptsl	: interface
  		| DEMOTE STRING	demotecount {
@@ -9,10 +9,10 @@
 +			free($2);
 +			YYERROR;
 +#else
- 			if ($3 > 255) {
- 				yyerror("demote count too big: max 255");
+ 			if ($3 < 1 || $3 > 255) {
+ 				yyerror("demote count out of range (1-255)");
  				free($2);
-@@ -505,6 +510,7 @@
+@@ -523,6 +528,7 @@
  				    area->demote_group);
  				YYERROR;
  			}
@@ -20,7 +20,7 @@
  		}
  		| defaults
  		;
-@@ -581,6 +587,11 @@
+@@ -599,6 +605,11 @@
  
  interfaceoptsl	: PASSIVE		{ iface->passive = 1; }
  		| DEMOTE STRING		{
@@ -32,7 +32,7 @@
  			if (strlcpy(iface->demote_group, $2,
  			    sizeof(iface->demote_group)) >=
  			    sizeof(iface->demote_group)) {
-@@ -595,6 +606,7 @@
+@@ -613,6 +624,7 @@
  				    iface->demote_group);
  				YYERROR;
  			}
