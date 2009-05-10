@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geoserver
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 CATEGORIES=	graphics geography java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
@@ -28,19 +28,8 @@ PLIST_SUB=	G="${GEOSERVERDIR:S,^${PREFIX}/,,}"
 SUB_LIST=	GEOSERVERDIR="${GEOSERVERDIR}" JAVA="${JAVA}"
 SUB_FILES=	pkg-message
 
-pre-patch:
-	@${RM} ${WRKSRC}/webapps/geoserver/editarea/images/Thumbs.db
-.for dir in ${GEODIRS}
-	@(cd ${WRKSRC};${FIND} -E ${dir} -type f -iregex ".*(keystore|\.(xml|properties))") \
-		| while read a; do \
-			${MV} ${WRKSRC}/$$a ${WRKSRC}/$$a.sample; \
-			if [ ! -e "${GEOSERVERDIR}/$$a" ]; then \
-				${CP} ${WRKSRC}/$$a.sample ${WRKSRC}/$$a; \
-			fi; \
-		done
-.endfor
-
 post-patch:
+	@${RM} ${WRKSRC}/webapps/geoserver/editarea/images/Thumbs.db
 	@${REINPLACE_CMD} -e 's|$$GEOSERVER_HOME|${GEOSERVERDIR}|g' \
 		-e 's|%%JAVA%%|${JAVA}|g' \
 		${WRKSRC}/bin/startup.sh ${WRKSRC}/bin/shutdown.sh
@@ -52,6 +41,13 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${GEOSERVERDIR}
 .endfor
 .for dir in ${GEODIRS}
+	@(cd ${WRKSRC};${FIND} -E ${dir} -type f -iregex ".*(keystore|\.(xml|properties))") \
+		| while read a; do \
+			${MV} ${WRKSRC}/$$a ${WRKSRC}/$$a.sample; \
+			if [ ! -e "${GEOSERVERDIR}/$$a" ]; then \
+				${CP} ${WRKSRC}/$$a.sample ${WRKSRC}/$$a; \
+			fi; \
+		done
 	@cd ${WRKSRC} && \
 		${FIND} ${dir} -type d -exec \
 			${MKDIR} "${GEOSERVERDIR}/{}" \; && \
