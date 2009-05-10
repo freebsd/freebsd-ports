@@ -1,0 +1,58 @@
+openjump/bin/openjump
+openjump/bin/workbench-properties.xml
+openjump/bin/default-plugins.xml
+openjump/bin/log4j.xml
+openjump/lib/bsh-2.0b4.jar
+openjump/lib/Jama-1.0.1.jar
+openjump/lib/jdom.jar
+openjump/lib/jts-1.10.jar
+openjump/lib/xercesImpl.jar
+openjump/lib/xml-apis.jar
+openjump/lib/Buoy.jar
+openjump/lib/batik-all.jar
+openjump/lib/ermapper.jar
+openjump/lib/jai_codec.jar
+openjump/lib/jai_core.jar
+openjump/lib/jmatharray-20070905.jar
+openjump/lib/jython.jar
+openjump/lib/log4j-1.2.8.jar
+openjump/lib/openjump-api-1.3.jar
+openjump/lib/openjump-workbench-1.3.jar
+openjump/lib/postgis_1_0_0.jar
+openjump/lib/postgresql-8.3-603.jdbc3.jar
+openjump/lib/xml-apis-ext.jar
+openjump/lib/ext/BeanTools/0-Help.bsh
+openjump/lib/ext/BeanTools/1-HelloWorld.bsh
+openjump/lib/ext/BeanTools/2-NewLayer.bsh
+openjump/lib/ext/BeanTools/3-Populate.bsh
+openjump/lib/ext/BeanTools/4-AddAttribute.bsh
+openjump/lib/ext/BeanTools/5-ChangeAttributeValue.bsh
+openjump/lib/ext/BeanTools/6-PushPinPoints.bsh
+openjump/lib/ext/BeanTools/7-AddXYAsAttributes.bsh
+openjump/lib/ext/BeanTools/RefreshScriptsMenu.bsh
+openjump/lib/ext/jython/AlignSelected.py
+openjump/lib/ext/jython/ArcTool.py
+openjump/lib/ext/jython/CircleTool.py
+openjump/lib/ext/jython/DistributeSelected.py
+openjump/lib/ext/jython/OvalTool.py
+openjump/lib/ext/jython/RightAngleTool.py
+openjump/lib/ext/jython/RoadTool.py
+openjump/lib/ext/jython/RotatedRectangleTool.py
+openjump/lib/ext/jython/SetASHSLabel.py
+openjump/lib/ext/jython/UnionSelected.py
+openjump/lib/ext/jython/images/DrawArc.gif
+openjump/lib/ext/jython/images/DrawCircle.gif
+openjump/lib/ext/jython/images/DrawCorner.gif
+openjump/lib/ext/jython/images/DrawOval.gif
+openjump/lib/ext/jython/images/DrawPoint.gif
+openjump/lib/ext/jython/images/DrawRoad.gif
+openjump/lib/ext/jython/images/DrawRotRect.gif
+openjump/lib/ext/jython/startup.py
+openjump/lib/ext/readme.txt
+@dirrm openjump/lib/ext/jython/images
+@dirrm openjump/lib/ext/jython
+@dirrm openjump/lib/ext/BeanTools
+@dirrm openjump/lib/ext
+@dirrm openjump/lib
+@dirrm openjump/bin
+@dirrm openjump
