@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	echinus
-PORTVERSION=	0.3.2.1
+PORTVERSION=	0.3.3.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://rootshell.be/~polachok/code/
 
