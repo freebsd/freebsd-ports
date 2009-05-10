@@ -77,7 +77,7 @@ sub ustart
 	if (/^\+\+\+\s+(\S+)\s+/) {
 		$state = \&body;
 		$out = $1;
-		$out =~ s|/|_|g;
+		$out =~ s|/|__|g;
 		$out = "patch-$out";
 		if (open OUT, "> $out") {
 			print OUT $fl;
