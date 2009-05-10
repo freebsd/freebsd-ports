@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_tsunami
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://bertrand.demiddelaer.org/mod_tsunami/
 
