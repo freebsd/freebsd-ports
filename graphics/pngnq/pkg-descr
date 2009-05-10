@@ -1,0 +1,10 @@
+Pngnq is a tool for quantizing PNG images in RGBA format.
+
+Pngnq is an adaptation by Stuart Coyle of Greg Roelf's pnqquant using
+Anthony Dekker's neuquant algorithm.
+
+The neuquant algorithm uses a neural network to optimise the color map
+selection. This is fast and quite accurate, giving good results on many
+types of images.
+
+WWW: http://pngnq.sourceforge.net/

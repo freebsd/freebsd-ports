@@ -668,6 +668,7 @@
     SUBDIR += png2ico
     SUBDIR += pngcheck
     SUBDIR += pngcrush
+    SUBDIR += pngnq
     SUBDIR += pngquant
     SUBDIR += pngrewrite
     SUBDIR += pngwriter
