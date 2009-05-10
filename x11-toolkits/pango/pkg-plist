@@ -1,5 +1,5 @@
 bin/pango-querymodules
-%%X11%%bin/pango-view
+bin/pango-view
 etc/pango/pango.modules
 %%X11%%etc/pango/pangox.aliases
 include/pango-1.0/pango/pango-attributes.h
