@@ -1,0 +1,18 @@
+F# developed as a research programming language to provide the much
+sought-after combination of type safety, succinctness, performance,
+expressivity and scripting, with all the advantages of running on a
+high-quality, well-supported modern runtime system.  This combination
+has been so successful that the language is now being transitioned
+towards a fully supported language on the .NET platform.
+
+F# was developed as a pragmatically-oriented variant of ML that shares a
+core language with OCaml.  Unlike other scripting languages it executes
+at or near the speed of C# and C++, making use of the performance that
+comes through strong typing.  Unlike many type-inferred,
+statically-typed languages it also supports many dynamic language
+techniques, such as property discovery and reflection where needed.  F#
+includes extensions for working across languages and for object-oriented
+programming, and it works seamlessly with other .NET programming
+languages and tools.
+
+WWW: http://research.microsoft.com/fsharp/fsharp.aspx

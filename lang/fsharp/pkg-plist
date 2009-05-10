@@ -1,0 +1,94 @@
+@comment $FreeBSD$
+@unexec gacutil -u FSharp.Build
+@unexec gacutil -u FSharp.Compiler.CodeDom
+@unexec gacutil -u FSharp.Compiler.Interactive.Settings
+@unexec gacutil -u FSharp.Compiler.Server.Shared
+@unexec gacutil -u FSharp.Compiler
+@unexec gacutil -u FSharp.Core
+@unexec gacutil -u FSharp.LanguageService
+@unexec gacutil -u FSharp.PowerPack.Linq
+@unexec gacutil -u FSharp.PowerPack.Math.Providers
+@unexec gacutil -u FSharp.PowerPack.Plot.Excel
+@unexec gacutil -u FSharp.PowerPack.Plot.Neutral
+@unexec gacutil -u FSharp.PowerPack.Plot.XCeed
+@unexec gacutil -u FSharp.PowerPack.Plot
+@unexec gacutil -u FSharp.PowerPack
+@unexec gacutil -u FSharp.ProjectSystem.Base
+@unexec gacutil -u FSharp.ProjectSystem.FSharp
+@unexec gacutil -u FSharp.ProjectSystem.PropertyPages
+@unexec gacutil -u FSharp.VS.FSI
+bin/fsi
+bin/fsc
+bin/fslex
+bin/fsyacc
+%%RMLIC%%%%DOCSDIR%%/LICENSE-fsharp.txt
+%%RMLIC%%@dirrm %%DOCSDIR%%
+%%SUBDIR%%/bin/FSharp.Build.dll
+%%SUBDIR%%/bin/FSharp.Compiler.CodeDom.dll
+%%SUBDIR%%/bin/FSharp.Compiler.CodeDom.xml
+%%SUBDIR%%/bin/FSharp.Compiler.Interactive.Settings.dll
+%%SUBDIR%%/bin/FSharp.Compiler.Server.Shared.dll
+%%SUBDIR%%/bin/FSharp.Compiler.dll
+%%SUBDIR%%/bin/FSharp.Core.dll
+%%SUBDIR%%/bin/FSharp.Core.pdb
+%%SUBDIR%%/bin/FSharp.Core.xml
+%%SUBDIR%%/bin/FSharp.LanguageService.dll
+%%SUBDIR%%/bin/FSharp.PowerPack.Linq.dll
+%%SUBDIR%%/bin/FSharp.PowerPack.Linq.pdb
+%%SUBDIR%%/bin/FSharp.PowerPack.Linq.xml
+%%SUBDIR%%/bin/FSharp.PowerPack.Math.Providers.dll
+%%SUBDIR%%/bin/FSharp.PowerPack.Plot.Excel.dll
+%%SUBDIR%%/bin/FSharp.PowerPack.Plot.Neutral.dll
+%%SUBDIR%%/bin/FSharp.PowerPack.Plot.XCeed.dll
+%%SUBDIR%%/bin/FSharp.PowerPack.Plot.dll
+%%SUBDIR%%/bin/FSharp.PowerPack.dll
+%%SUBDIR%%/bin/FSharp.PowerPack.pdb
+%%SUBDIR%%/bin/FSharp.PowerPack.targets
+%%SUBDIR%%/bin/FSharp.PowerPack.xml
+%%SUBDIR%%/bin/FSharp.ProjectSystem.Base.dll
+%%SUBDIR%%/bin/FSharp.ProjectSystem.FSharp.dll
+%%SUBDIR%%/bin/FSharp.ProjectSystem.PropertyPages.dll
+%%SUBDIR%%/bin/FSharp.VS.FSI.dll
+%%SUBDIR%%/bin/Microsoft.FSharp.targets
+%%SUBDIR%%/bin/Microsoft.VC90.CRT.manifest
+%%SUBDIR%%/bin/absilsuppc.dll
+%%SUBDIR%%/bin/fsc.exe
+%%SUBDIR%%/bin/fsi.exe
+%%SUBDIR%%/bin/fslex.exe
+%%SUBDIR%%/bin/fsyacc.exe
+%%SUBDIR%%/bin/gac/FSharp.Compiler.CodeDom.dll
+%%SUBDIR%%/bin/gac/FSharp.Compiler.CodeDom.pdb
+%%SUBDIR%%/bin/gac/FSharp.Compiler.CodeDom.xml
+%%SUBDIR%%/bin/gac/FSharp.Compiler.Server.Shared.dll
+%%SUBDIR%%/bin/gac/FSharp.Compiler.dll
+%%SUBDIR%%/bin/gac/FSharp.Core.dll
+%%SUBDIR%%/bin/gac/FSharp.Core.pdb
+%%SUBDIR%%/bin/gac/FSharp.Core.xml
+%%SUBDIR%%/bin/gac/FSharp.LanguageService.dll
+%%SUBDIR%%/bin/gac/FSharp.PowerPack.Linq.dll
+%%SUBDIR%%/bin/gac/FSharp.PowerPack.Linq.pdb
+%%SUBDIR%%/bin/gac/FSharp.PowerPack.Linq.xml
+%%SUBDIR%%/bin/gac/FSharp.PowerPack.dll
+%%SUBDIR%%/bin/gac/FSharp.PowerPack.pdb
+%%SUBDIR%%/bin/gac/FSharp.PowerPack.xml
+%%SUBDIR%%/bin/gac/FSharp.ProjectSystem.Base.dll
+%%SUBDIR%%/bin/gac/FSharp.ProjectSystem.FSharp.dll
+%%SUBDIR%%/bin/gac/FSharp.ProjectSystem.PropertyPages.dll
+%%SUBDIR%%/bin/gac/FSharp.VS.FSI.dll
+%%SUBDIR%%/bin/gac/policy.1.9.FSharp.Compiler.CodeDom.dll
+%%SUBDIR%%/bin/gac/policy.1.9.FSharp.Compiler.CodeDom.dll.config
+%%SUBDIR%%/bin/gac/policy.1.9.FSharp.Core.dll
+%%SUBDIR%%/bin/gac/policy.1.9.FSharp.Core.dll.config
+%%SUBDIR%%/bin/gac/policy.1.9.FSharp.PowerPack.Linq.dll
+%%SUBDIR%%/bin/gac/policy.1.9.FSharp.PowerPack.Linq.dll.config
+%%SUBDIR%%/bin/gac/policy.1.9.FSharp.PowerPack.dll
+%%SUBDIR%%/bin/gac/policy.1.9.FSharp.PowerPack.dll.config
+%%SUBDIR%%/bin/msvcm90.dll
+%%SUBDIR%%/bin/msvcp90.dll
+%%SUBDIR%%/bin/msvcr90.dll
+@dirrm %%SUBDIR%%/bin/gac
+@dirrm %%SUBDIR%%/bin
+%%SUBDIR%%/setup/cordir.exe
+%%SUBDIR%%/setup/gac.exe
+@dirrm %%SUBDIR%%/setup
+@dirrm %%SUBDIR%%
