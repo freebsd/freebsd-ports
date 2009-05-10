@@ -177,6 +177,9 @@ bin/psychopy_post_inst.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/screensAndWindows.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/screensAndWindows.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/screensAndWindows.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/shapes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/shapes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/shapes.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/soundStimuli.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/soundStimuli.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/soundStimuli.pyo
