@@ -6,38 +6,37 @@
 #
 
 PORTNAME=	reportlab2
-PORTVERSION=	2.1
+PORTVERSION=	2.3
 CATEGORIES=	print python
 MASTER_SITES=	http://www.reportlab.org/ftp/ \
-		ftp://ftp.reportlab.org/ \
-		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/:accel
+		ftp://ftp.reportlab.org/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	ReportLab_${PORTVERSION:S/./_/}.tgz \
-		rl_accel-3242.tgz:accel
+DISTNAME=	ReportLab_${PORTVERSION:S/./_/}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Library to create PDF documents using the Python language
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging
 
 CONFLICTS=	py2[0-9]-reportlab-[0-9]*
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	Reportlab
+PYDISTUTILS_PKGNAME=	reportlab
 
-WRKSRC=		${WRKDIR}/reportlab_${PORTVERSION:S/./_/}/reportlab
 MAKE_ENV=	PACKAGE_PATH="${REPORTLABDIR}"
 
 REPORTLABDIR=	${PYTHONPREFIX_SITELIBDIR}/reportlab
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-DOCS=	RML_UserGuide.pdf graphguide.pdf graphics_reference.pdf reference.pdf userguide.pdf
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/rl_config.py
+DOCS=		reportlab-graphics-reference.pdf \
+		reportlab-reference.pdf \
+		reportlab-userguide.pdf
 
 .include <bsd.port.pre.mk>
 
 post-install:
 .if !defined(NOPORTDOCS)
+	@cd ${WRKSRC}/docs && ${PYTHON_CMD} genAll.py
 	${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
 	${CP} ${WRKSRC}/docs/${i} ${DOCSDIR}

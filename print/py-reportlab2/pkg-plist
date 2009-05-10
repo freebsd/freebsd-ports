@@ -1,67 +1,17 @@
 %%PYTHON_SITELIBDIR%%/_rl_accel.so
-@unexec rm -f %D/%%PYTHON_SITELIBDIR%%/reportlab/fonts/*.fastmap
+%%PYTHON_SITELIBDIR%%/_renderPM.so
+%%PYTHON_SITELIBDIR%%/sgmlop.so
 %%PYTHON_SITELIBDIR%%/pyHnj.so
-%%PYTHON_SITELIBDIR%%/reportlab/README
 %%PYTHON_SITELIBDIR%%/reportlab/__init__.py
 %%PYTHON_SITELIBDIR%%/reportlab/__init__.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/__init__.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/changes
-%%PYTHON_SITELIBDIR%%/reportlab/demos/colors/colortest.py
-%%PYTHON_SITELIBDIR%%/reportlab/demos/gadflypaper/00readme.txt
-%%PYTHON_SITELIBDIR%%/reportlab/demos/gadflypaper/gfe.py
-%%PYTHON_SITELIBDIR%%/reportlab/demos/odyssey/00readme.txt
-%%PYTHON_SITELIBDIR%%/reportlab/demos/odyssey/dodyssey.py
-%%PYTHON_SITELIBDIR%%/reportlab/demos/odyssey/fodyssey.py
-%%PYTHON_SITELIBDIR%%/reportlab/demos/odyssey/odyssey.py
-%%PYTHON_SITELIBDIR%%/reportlab/demos/odyssey/odyssey.txt
-%%PYTHON_SITELIBDIR%%/reportlab/demos/rlzope/readme.txt
-%%PYTHON_SITELIBDIR%%/reportlab/demos/rlzope/rlzope.py
-%%PYTHON_SITELIBDIR%%/reportlab/demos/stdfonts/00readme.txt
-%%PYTHON_SITELIBDIR%%/reportlab/demos/stdfonts/stdfonts.py
-%%PYTHON_SITELIBDIR%%/reportlab/demos/tests/testdemos.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/00readme.txt
-%%PYTHON_SITELIBDIR%%/reportlab/docs/genAll.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/graphguide/ch1_intro.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/graphguide/ch2_concepts.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/graphguide/ch3_shapes.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/graphguide/ch4_widgets.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/graphguide/ch5_charts.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/graphguide/gengraphguide.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/images/Edit_Prefs.gif
-%%PYTHON_SITELIBDIR%%/reportlab/docs/images/Python_21.gif
-%%PYTHON_SITELIBDIR%%/reportlab/docs/images/Python_21_HINT.gif
-%%PYTHON_SITELIBDIR%%/reportlab/docs/images/fileExchange.gif
-%%PYTHON_SITELIBDIR%%/reportlab/docs/images/jpn.gif
-%%PYTHON_SITELIBDIR%%/reportlab/docs/images/jpnchars.jpg
-%%PYTHON_SITELIBDIR%%/reportlab/docs/images/lj8100.jpg
-%%PYTHON_SITELIBDIR%%/reportlab/docs/images/replogo.a85
-%%PYTHON_SITELIBDIR%%/reportlab/docs/images/replogo.gif
-%%PYTHON_SITELIBDIR%%/reportlab/docs/reference/build.bat
-%%PYTHON_SITELIBDIR%%/reportlab/docs/reference/genreference.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/reference/reference.yml
-%%PYTHON_SITELIBDIR%%/reportlab/docs/userguide/app_demos.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/userguide/ch1_intro.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/userguide/ch2_graphics.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/userguide/ch2a_fonts.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/userguide/ch3_pdffeatures.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/userguide/ch4_platypus_concepts.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/userguide/ch5_paragraphs.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/userguide/ch6_tables.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/userguide/ch7_custom.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/userguide/ch9_future.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/userguide/genuserguide.py
-%%PYTHON_SITELIBDIR%%/reportlab/docs/userguide/testfile.txt
-%%PYTHON_SITELIBDIR%%/reportlab/extensions/README
-%%PYTHON_SITELIBDIR%%/reportlab/extensions/__init__.py
-%%PYTHON_SITELIBDIR%%/reportlab/extensions/__init__.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/extensions/__init__.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/fonts/00readme.txt
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/LeERC___.AFM
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/LeERC___.PFB
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/luxiserif.ttf
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/luxiserif_license.txt
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/rina.ttf
-%%PYTHON_SITELIBDIR%%/reportlab/fonts/rina_license.txt
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/DarkGarden-copying-gpl.txt
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/DarkGarden-copying.txt
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/DarkGarden-readme.txt
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/DarkGarden.sfd
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/DarkGardenMK.afm
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/DarkGardenMK.pfb
 %%PYTHON_SITELIBDIR%%/reportlab/fonts/Vera.ttf
 %%PYTHON_SITELIBDIR%%/reportlab/fonts/VeraBI.ttf
 %%PYTHON_SITELIBDIR%%/reportlab/fonts/VeraBd.ttf
@@ -91,6 +41,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/fourstate.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/fourstate.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/fourstate.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/lto.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/lto.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/lto.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/test.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/test.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/test.pyo
@@ -256,15 +209,15 @@
 %%PYTHON_SITELIBDIR%%/reportlab/lib/abag.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/abag.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/abag.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/lib/arciv.py
+%%PYTHON_SITELIBDIR%%/reportlab/lib/arciv.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/lib/arciv.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/lib/attrmap.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/attrmap.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/attrmap.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/lib/boxstuff.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/boxstuff.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/boxstuff.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/lib/fontfinder.py
-%%PYTHON_SITELIBDIR%%/reportlab/lib/fontfinder.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/lib/fontfinder.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/lib/codecharts.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/codecharts.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/codecharts.pyo
@@ -280,12 +233,19 @@
 %%PYTHON_SITELIBDIR%%/reportlab/lib/extformat.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/extformat.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/extformat.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/lib/fontfinder.py
+%%PYTHON_SITELIBDIR%%/reportlab/lib/fontfinder.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/lib/fontfinder.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/lib/fonts.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/fonts.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/fonts.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/lib/formatters.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/formatters.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/formatters.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/lib/geomutils.py
+%%PYTHON_SITELIBDIR%%/reportlab/lib/geomutils.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/lib/geomutils.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/lib/hyphen.mashed
 %%PYTHON_SITELIBDIR%%/reportlab/lib/logger.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/logger.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/logger.pyo
@@ -295,6 +255,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/lib/pagesizes.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/pagesizes.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/pagesizes.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/lib/pdfencrypt.py
+%%PYTHON_SITELIBDIR%%/reportlab/lib/pdfencrypt.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/lib/pdfencrypt.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/lib/randomtext.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/randomtext.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/randomtext.pyo
@@ -313,12 +276,12 @@
 %%PYTHON_SITELIBDIR%%/reportlab/lib/styles.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/styles.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/styles.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/lib/testutils.py
+%%PYTHON_SITELIBDIR%%/reportlab/lib/testutils.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/lib/testutils.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/lib/textsplit.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/textsplit.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/textsplit.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/lib/tocindex.py
-%%PYTHON_SITELIBDIR%%/reportlab/lib/tocindex.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/lib/tocindex.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/lib/units.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/units.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/units.pyo
@@ -334,7 +297,6 @@
 %%PYTHON_SITELIBDIR%%/reportlab/lib/yaml.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/yaml.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/yaml.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/license.txt
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/__init__.py
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/__init__.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/__init__.pyo
@@ -428,302 +390,18 @@
 %%PYTHON_SITELIBDIR%%/reportlab/rl_config.py
 %%PYTHON_SITELIBDIR%%/reportlab/rl_config.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/rl_config.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/__init__.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/__init__.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/__init__.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/pythonpowered.gif
-%%PYTHON_SITELIBDIR%%/reportlab/test/runAll.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/runAll.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/runAll.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_charts_textlabels.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_charts_textlabels.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_charts_textlabels.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_docs_build.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_docs_build.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_docs_build.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_docstrings.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_docstrings.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_docstrings.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_extra.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_extra.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_extra.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_charts.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_charts.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_charts.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_images.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_images.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_images.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_layout.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_layout.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_layout.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_speed.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_speed.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_graphics_speed.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_hello.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_hello.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_hello.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_images.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_images.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_images.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_invariant.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_invariant.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_invariant.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_lib_colors.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_lib_colors.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_lib_colors.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_lib_sequencer.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_lib_sequencer.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_lib_sequencer.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_lib_utils.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_lib_utils.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_lib_utils.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_lib_validators.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_lib_validators.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_lib_validators.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_multibyte_chs.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_multibyte_chs.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_multibyte_chs.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_multibyte_cht.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_multibyte_cht.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_multibyte_cht.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_multibyte_jpn.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_multibyte_jpn.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_multibyte_jpn.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_multibyte_kor.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_multibyte_kor.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_multibyte_kor.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_paragraphs.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_paragraphs.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_paragraphs.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_encodings.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_encodings.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_encodings.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_fontembed.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_fontembed.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_fontembed.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_pdfmetrics.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_pdfmetrics.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_pdfmetrics.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_pdfutils.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_pdfutils.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_pdfutils.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_postscript.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_postscript.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_postscript.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_ttfonts.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_ttfonts.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfbase_ttfonts.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_callback.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_callback.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_callback.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_general.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_general.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_general.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_links.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_links.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_links.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_pagemodes.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_pagemodes.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_pagemodes.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_pycanvas.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_pycanvas.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_pycanvas.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_breaking.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_breaking.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_breaking.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_general.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_general.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_general.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_indents.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_indents.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_indents.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_leftright.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_leftright.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_leftright.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_paragraphs.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_paragraphs.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_paragraphs.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_paraparser.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_paraparser.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_paraparser.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_tables.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_tables.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_tables.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_toc.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_toc.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_toc.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_xref.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_xref.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_xref.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_pleaseturnover.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_pleaseturnover.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_pleaseturnover.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pyfiles.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pyfiles.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_pyfiles.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_renderSVG.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_renderSVG.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_renderSVG.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_rl_accel.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_rl_accel.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_rl_accel.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_source_chars.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_source_chars.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_source_chars.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_table_layout.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_table_layout.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_table_layout.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_tools_pythonpoint.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_tools_pythonpoint.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_tools_pythonpoint.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_utils.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_utils.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_utils.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_widgetbase_tpc.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_widgetbase_tpc.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_widgetbase_tpc.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_widgets_grids.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_widgets_grids.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_widgets_grids.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/unittest.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/unittest.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/unittest.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/utils.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/utils.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/utils.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/README
-%%PYTHON_SITELIBDIR%%/reportlab/tools/__init__.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/__init__.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/__init__.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/README
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/__init__.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/__init__.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/__init__.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/codegrab.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/codegrab.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/codegrab.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/docpy.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/docpy.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/docpy.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/examples.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/examples.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/examples.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/graphdocpy.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/graphdocpy.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/graphdocpy.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/rl_doc_utils.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/rl_doc_utils.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/rl_doc_utils.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/rltemplate.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/rltemplate.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/rltemplate.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/stylesheet.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/stylesheet.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/stylesheet.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/t_parse.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/t_parse.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/t_parse.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/yaml.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/yaml.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/yaml.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/yaml2pdf.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/yaml2pdf.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/docco/yaml2pdf.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/py2pdf/README
-%%PYTHON_SITELIBDIR%%/reportlab/tools/py2pdf/__init__.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/py2pdf/__init__.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/py2pdf/__init__.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/py2pdf/demo-config.txt
-%%PYTHON_SITELIBDIR%%/reportlab/tools/py2pdf/demo.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/py2pdf/demo.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/py2pdf/demo.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/py2pdf/idle_print.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/py2pdf/idle_print.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/py2pdf/idle_print.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/py2pdf/py2pdf.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/py2pdf/py2pdf.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/py2pdf/py2pdf.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/py2pdf/vertpython.jpg
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/README
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/__init__.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/__init__.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/__init__.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/customshapes.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/customshapes.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/customshapes.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/LeERC___.AFM
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/LeERC___.PFB
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/htu.xml
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/leftlogo.a85
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/leftlogo.gif
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/lj8100.jpg
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/monterey.xml
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/outline.gif
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/pplogo.gif
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/python.gif
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/pythonpoint.xml
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/spectrum.png
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos/vertpython.gif
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/pythonpoint.dtd
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/pythonpoint.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/pythonpoint.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/pythonpoint.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/stdparser.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/stdparser.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/stdparser.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/__init__.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/__init__.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/__init__.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/horrible.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/horrible.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/horrible.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/htu.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/htu.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/htu.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/modern.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/modern.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/modern.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/projection.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/projection.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/projection.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/standard.py
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/standard.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/standard.pyo
-%%PYTHON_SITELIBDIR%%/sgmlop.so
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/tools/py2pdf
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/tools/docco
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/tools
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/test
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/platypus
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/pdfgen
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/pdfbase
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/lib
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics/samples
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/fonts
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/extensions
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/docs/userguide
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/docs/reference
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/docs/images
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/docs/graphguide
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/docs
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/demos/tests
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/demos/stdfonts
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/demos/rlzope
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/demos/odyssey
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/demos/gadflypaper
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/demos/colors
-@dirrm %%PYTHON_SITELIBDIR%%/reportlab/demos
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics/samples
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/lib
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/pdfbase
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/pdfgen
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/platypus
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab
-%%PORTDOCS%%%%DOCSDIR%%/RML_UserGuide.pdf
-%%PORTDOCS%%%%DOCSDIR%%/graphguide.pdf
-%%PORTDOCS%%%%DOCSDIR%%/graphics_reference.pdf
-%%PORTDOCS%%%%DOCSDIR%%/reference.pdf
-%%PORTDOCS%%%%DOCSDIR%%/userguide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/reportlab-graphics-reference.pdf
+%%PORTDOCS%%%%DOCSDIR%%/reportlab-reference.pdf
+%%PORTDOCS%%%%DOCSDIR%%/reportlab-userguide.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
