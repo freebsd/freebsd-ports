@@ -14,13 +14,16 @@ MASTER_SITE_SUBDIR=	it-festival
 DISTNAME=	Italian-FESTIVAL
 DIST_SUBDIR=	festival
 
-MAINTAINER=	saturnero@gufi.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Italian male voice for Festival
 
 RUN_DEPENDS=	\
 		${LOCALBASE}/share/festival/lib/ogi_token.scm:${PORTSDIR}/audio/festival+OGI \
 		${LOCALBASE}/share/festival/lib/dicts/ifd/lex.out:${PORTSDIR}/audio/festlex-ifd \
 		${LOCALBASE}/share/festival/lib/italian_scm/ifd_diph_ds_dur.scm:${PORTSDIR}/audio/festogi-italian
+
+DEPRECATED=	unfulfilled dependencies for 8+ months, no active maintainer, no user interest
+EXPIRATION_DATE=2009-06-10
 
 NO_BUILD=	yes
 USE_ZIP=	YES
