@@ -1,0 +1,12 @@
+bin/parcellite
+etc/xdg/autostart/parcellite-startup.desktop
+%%NLS%%share/locale/de/LC_MESSAGES/parcellite.mo
+%%NLS%%share/locale/es/LC_MESSAGES/parcellite.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/parcellite.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/parcellite.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/parcellite.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/parcellite.mo
+share/applications/parcellite.desktop
+@dirrmtry share/applications
+@dirrmtry etc/xdg/autostart/
+@dirrmtry etc/xdg/
