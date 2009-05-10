@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MDB2
-PORTVERSION=	2.4.1
+DISTVERSION=	2.5.0b2
 CATEGORIES=	databases www pear
 
 MAINTAINER=	miwi@FreeBSD.org
