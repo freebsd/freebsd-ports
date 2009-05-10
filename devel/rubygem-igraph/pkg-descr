@@ -1,0 +1,5 @@
+rubygem-igraph is a Ruby extension for using the igraph library.
+igraph is a library for creating and manipulating graphs with a
+particular emphasis on network analysis functions.
+
+WWW:	http://rubyforge.org/projects/igraph/
