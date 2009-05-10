@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_Template_Flexy
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.9
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
