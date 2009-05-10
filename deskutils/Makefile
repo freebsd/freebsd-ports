@@ -193,6 +193,7 @@
     SUBDIR += p5-Goo
     SUBDIR += p5-ZConf-Runner
     SUBDIR += pal
+    SUBDIR += parcellite
     SUBDIR += phpgroupware
     SUBDIR += phpicalendar
     SUBDIR += phprojekt
