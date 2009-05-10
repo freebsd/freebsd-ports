@@ -1,0 +1,15 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Trac/.packlist
+%%SITE_PERL%%/Net/Trac.pm
+%%SITE_PERL%%/Net/Trac/Connection.pm
+%%SITE_PERL%%/Net/Trac/Mechanize.pm
+%%SITE_PERL%%/Net/Trac/Ticket.pm
+%%SITE_PERL%%/Net/Trac/TicketAttachment.pm
+%%SITE_PERL%%/Net/Trac/TicketHistory.pm
+%%SITE_PERL%%/Net/Trac/TicketHistoryEntry.pm
+%%SITE_PERL%%/Net/Trac/TicketPropChange.pm
+%%SITE_PERL%%/Net/Trac/TicketSearch.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Trac
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/Trac
+@dirrmtry %%SITE_PERL%%/Net
