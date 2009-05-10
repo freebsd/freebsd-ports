@@ -10,12 +10,19 @@ libdata/pkgconfig/link-grammar.pc
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/MAINTAINERS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/de/4.0.affix
+%%DATADIR%%/de/4.0.dict
 %%DATADIR%%/en/4.0.affix
 %%DATADIR%%/en/4.0.batch
+%%DATADIR%%/en/4.0.biolg.batch
 %%DATADIR%%/en/4.0.constituent-knowledge
 %%DATADIR%%/en/4.0.dict
+%%DATADIR%%/en/4.0.fixes.batch
 %%DATADIR%%/en/4.0.knowledge
+%%DATADIR%%/en/4.0.regex
 %%DATADIR%%/en/tiny.dict
+%%DATADIR%%/en/words/currency
+%%DATADIR%%/en/words/currency.p
 %%DATADIR%%/en/words/entities.given-bisex.sing
 %%DATADIR%%/en/words/entities.given-female.sing
 %%DATADIR%%/en/words/entities.given-male.sing
@@ -23,12 +30,11 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/en/words/entities.national.sing
 %%DATADIR%%/en/words/entities.organizations.sing
 %%DATADIR%%/en/words/entities.us-states.sing
-%%DATADIR%%/en/words/words-medical.adj.2
-%%DATADIR%%/en/words/words-medical.adj.3
+%%DATADIR%%/en/words/units.1
+%%DATADIR%%/en/words/units.2
+%%DATADIR%%/en/words/units.3
 %%DATADIR%%/en/words/words-medical.adv.1
 %%DATADIR%%/en/words/words-medical.prep.1
-%%DATADIR%%/en/words/words-medical.v.1.1
-%%DATADIR%%/en/words/words-medical.v.2.1
 %%DATADIR%%/en/words/words-medical.v.4.1
 %%DATADIR%%/en/words/words-medical.v.4.2
 %%DATADIR%%/en/words/words-medical.v.4.3
@@ -41,9 +47,11 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/en/words/words.adv.3
 %%DATADIR%%/en/words/words.n.1
 %%DATADIR%%/en/words/words.n.2.s
+%%DATADIR%%/en/words/words.n.2.s.biolg
 %%DATADIR%%/en/words/words.n.2.x
 %%DATADIR%%/en/words/words.n.3
 %%DATADIR%%/en/words/words.n.4
+%%DATADIR%%/en/words/words.n.4.biolg
 %%DATADIR%%/en/words/words.n.t
 %%DATADIR%%/en/words/words.v.1.1
 %%DATADIR%%/en/words/words.v.1.2
@@ -86,6 +94,7 @@ libdata/pkgconfig/link-grammar.pc
 @dirrm %%DATADIR%%/lt
 @dirrm %%DATADIR%%/en/words
 @dirrm %%DATADIR%%/en
+@dirrm %%DATADIR%%/de
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/link-grammar
