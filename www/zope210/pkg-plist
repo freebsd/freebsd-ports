@@ -1706,6 +1706,8 @@
 %%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/help/standard.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/module_access_examples.py
 %%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/module_access_examples.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/patches.py
+%%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/patches.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/standard.py
 %%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/standard.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/tests/__init__.py
