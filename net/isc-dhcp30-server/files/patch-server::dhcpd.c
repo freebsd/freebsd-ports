@@ -1,5 +1,5 @@
---- server/dhcpd.c.orig	Thu Jun 10 19:59:52 2004
-+++ server/dhcpd.c	Fri Jun 25 15:49:09 2004
+--- server/dhcpd.c.orig	2008-05-14 22:54:24.000000000 +0200
++++ server/dhcpd.c	2009-03-21 18:59:04.000000000 +0100
 @@ -47,6 +47,22 @@
  #include "version.h"
  #include <omapip/omapip_p.h>
@@ -22,8 +22,8 @@
 +
  static void usage PROTO ((void));
  
- TIME cur_time;
-@@ -195,6 +211,35 @@
+ struct iaddr server_identifier;
+@@ -193,6 +209,51 @@
  	omapi_object_dereference (&listener, MDL);
  }
  
@@ -44,22 +44,38 @@
 +#if defined (JAIL)
 +static void setup_jail (char *chroot_dir, char *hostname, u_int32_t ip_number)
 +{
-+      struct jail j;
++	struct jail j;
 +
-+      j.version = 0;
-+      j.path = chroot_dir;
-+      j.hostname = hostname;
-+      j.ip_number = ip_number;
++/* The jail struct was updated, and the JAIL_API_VERSION macro introduced, in
++ * r185435 for 8-CURRENT (OS version 800056), and in r188281 for 7-STABLE (OS
++ * version 701103). */
++#if __FreeBSD_version < 701103 || (__FreeBSD_version >= 800000 && __FreeBSD_version < 800056)
 +
-+      if (jail (&j) < 0)
-+              log_fatal ("jail(%s, %s): %m", chroot_dir, hostname);
++	j.version = 0;
++	j.path = chroot_dir;
++	j.hostname = hostname;
++	j.ip_number = ip_number;
++#else
++	struct in_addr ip4[1];
++
++	memset (&j, 0, sizeof j);
++	j.version = JAIL_API_VERSION;
++	j.path = chroot_dir;
++	j.hostname = hostname;
++	j.ip4s = 1;
++	ip4[0].s_addr = ip_number;
++	j.ip4 = ip4;
++#endif
++
++	if (jail (&j) < 0)
++		log_fatal ("jail(%s, %s): %m", chroot_dir, hostname);
 +}
 +#endif /* JAIL */
 +
  int main (argc, argv, envp)
  	int argc;
  	char **argv, **envp;
-@@ -227,6 +272,25 @@
+@@ -224,6 +285,25 @@
  	char *traceinfile = (char *)0;
  	char *traceoutfile = (char *)0;
  #endif
@@ -85,7 +101,7 @@
  
  	/* Make sure we have stdin, stdout and stderr. */
  	status = open ("/dev/null", O_RDWR);
-@@ -289,6 +353,39 @@
+@@ -286,6 +366,39 @@
  			if (++i == argc)
  				usage ();
  			server = argv [i];
@@ -125,7 +141,7 @@
  		} else if (!strcmp (argv [i], "-cf")) {
  			if (++i == argc)
  				usage ();
-@@ -366,6 +463,28 @@
+@@ -363,6 +476,28 @@
  	if (!no_dhcpd_pid && (s = getenv ("PATH_DHCPD_PID"))) {
  		path_dhcpd_pid = s;
  	}
@@ -154,7 +170,7 @@
  
  	if (!quiet) {
  		log_info ("%s %s", message, DHCP_VERSION);
-@@ -388,6 +507,57 @@
+@@ -389,6 +524,57 @@
  					     trace_seed_stop, MDL);
  #endif
  
@@ -212,7 +228,7 @@
  	/* Default to the DHCP/BOOTP port. */
  	if (!local_port)
  	{
-@@ -462,6 +632,9 @@
+@@ -463,6 +649,9 @@
  #endif
  
  	/* Initialize icmp support... */
@@ -222,7 +238,7 @@
  	if (!cftest && !lftest)
  		icmp_startup (1, lease_pinged);
  
-@@ -491,6 +664,14 @@
+@@ -492,6 +681,14 @@
  
  	postconf_initialization (quiet);
  
@@ -237,7 +253,7 @@
          /* test option should cause an early exit */
   	if (cftest && !lftest) 
   		exit(0);
-@@ -533,7 +714,22 @@
+@@ -534,7 +731,22 @@
  		else if (pid)
  			exit (0);
  	}
@@ -259,8 +275,8 @@
 +  
  	/* Read previous pid file. */
  	if ((i = open (path_dhcpd_pid, O_RDONLY)) >= 0) {
- 		status = read (i, pbuf, (sizeof pbuf) - 1);
-@@ -877,8 +1073,24 @@
+ 		status = read(i, pbuf, (sizeof pbuf) - 1);
+@@ -865,8 +1077,24 @@
  	log_info (copyright);
  	log_info (arr);
  
