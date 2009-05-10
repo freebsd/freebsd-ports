@@ -2,7 +2,7 @@
 # specified in workers.properties.
 #
 <IfModule mod_jk.c>
-	JkWorkersFile %%APACHE_CONF%%/workers.properties
+	JkWorkersFile %%APACHEETCDIR%%/workers.properties
 	JkLogFile  /var/log/jk.log
 	JkShmFile  /var/log/jk-runtime-status
 	JkLogLevel error
