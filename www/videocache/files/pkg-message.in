@@ -1,0 +1,3 @@
+See the following sample file to configure your ACL's on squid.conf:
+
+	%%EXAMPLESDIR%%/squid.conf
