@@ -74,8 +74,6 @@ bin/qpsmtpd-prefork
 %%DATADIR%%/plugins/virus/sophie
 %%DATADIR%%/plugins/virus/uvscan
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.authentication
-%%PORTDOCS%%%%DOCSDIR%%/README.logging
 %%PORTDOCS%%%%DOCSDIR%%/README.plugins
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/IP
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/badhelo
