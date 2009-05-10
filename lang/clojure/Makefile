@@ -7,7 +7,8 @@
 #
 
 PORTNAME=	clojure
-PORTVERSION=	20090320
+PORTVERSION=	1.0.0
+PORTEPOCH=	2
 CATEGORIES=	lang lisp java
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -34,8 +35,8 @@ SUB_LIST+=	CLOJURE_JLINE_RUNNER=${CLOJURE_JLINE_RUNNER}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/clojure-bin ${PREFIX}/bin/clojure
-	${INSTALL_DATA} ${WRKSRC}/clojure/clojure.jar ${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/clojure-${PORTVERSION}.jar ${JAVAJARDIR}/clojure.jar
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/clojure/src/clj/clojure/main.clj ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/src/clj/clojure/main.clj ${DATADIR}
 
 .include <bsd.port.post.mk>
