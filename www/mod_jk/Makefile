@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_jk
-PORTVERSION=	1.2.26
+PORTVERSION=	1.2.27
 PORTREVISION=	0
 PORTEPOCH?=	1
 CATEGORIES=	www
@@ -34,17 +34,15 @@ USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
 
-PLIST_SUB=	APACHEETCDIR=${APACHEETCDIR} APACHEMODDIR=${APACHEMODDIR}
+SUB_FILES+=	mod_jk.conf.sample pkg-message
 
 do-install:
 	${APXS} -i -n jk ${WRKSRC}/apache-${APACHE_VER}/mod_jk.so
 	- ${APXS} -e -A -n jk ${WRKSRC}/apache-${APACHE_VER}/mod_jk.so
-	${SED} -e "s#%%APACHE_CONF%%#${APACHEETCDIR}#g" ${FILESDIR}/mod_jk.conf.sample \
-		 > ${WRKDIR}/mod_jk.conf.sample
-	${INSTALL_DATA} ${WRKDIR}/mod_jk.conf.sample ${PREFIX}/${APACHEETCDIR}
-	${INSTALL_DATA} ${FILESDIR}/workers.properties.sample ${PREFIX}/${APACHEETCDIR}
+	${INSTALL_DATA} ${WRKDIR}/mod_jk.conf.sample ${LOCALBASE}/${APACHEETCDIR}
+	${INSTALL_DATA} ${FILESDIR}/workers.properties.sample ${LOCALBASE}/${APACHEETCDIR}
 
 post-install:
-	${CAT} ${PKGMESSAGE} | ${SED} "s|%%APACHEETCDIR%%|${PREFIX}/${APACHEETCDIR}|g;"
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
