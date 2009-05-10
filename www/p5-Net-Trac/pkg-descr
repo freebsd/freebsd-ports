@@ -1,0 +1,7 @@
+Net::Trac is simple client library for a remote Trac instance. Because
+Trac doesn't provide a web services API, this module currently "fakes"
+an RPC interface around Trac's webforms and the feeds it exports.
+Because of this, it's somewhat more brittle than a true RPC client
+would be.
+
+WWW:	http://search.cpan.org/dist/Net-Trac/
