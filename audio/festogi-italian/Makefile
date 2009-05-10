@@ -19,6 +19,9 @@ COMMENT=	Italian support for Festival
 
 RUN_DEPENDS=	${LOCALBASE}/share/festival/lib/ogi_token.scm:${PORTSDIR}/audio/festival+OGI
 
+DEPRECATED=	unfulfilled dependencies for 8+ months, no active maintainer, no user interest
+EXPIRATION_DATE=2009-06-10
+
 NO_BUILD=	yes
 USE_ZIP=yes
 
