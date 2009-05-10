@@ -21,12 +21,3 @@
  	/*alsadev let the user use custom alsa device within linphone*/
  	devid=lp_config_get_string(lc->config,"sound","alsadev",NULL);
  	if (devid){
-@@ -2108,7 +2106,7 @@
- 	if (olddev!=NULL && olddev!=lc->video_conf.device){
- 		toggle_video_preview(lc,FALSE);/*restart the video local preview*/
- 	}
--	if (lc->ready){
-+	if (lc->ready && lc->video_conf.device){
- 		vd=ms_web_cam_get_string_id(lc->video_conf.device);
- 		if (vd && strstr(vd,"Static picture")!=NULL){
- 			vd=NULL;

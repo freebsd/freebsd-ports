@@ -15,6 +15,7 @@ share/applications/linphone.desktop
 %%DATADIR%%/password.glade
 %%DATADIR%%/sip_account.glade
 %%DATADIR%%/stock_people.png
+%%DATADIR%%/waiting.glade
 share/pixmaps/linphone/linphone.png
 share/pixmaps/linphone/linphone2.png
 share/pixmaps/linphone/linphone2.xpm
