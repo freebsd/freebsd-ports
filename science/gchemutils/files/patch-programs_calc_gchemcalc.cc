@@ -1,5 +1,5 @@
 --- programs/calc/gchemcalc.cc.orig	2009-01-05 14:09:59.000000000 -0500
-+++ programs/calc/gchemcalc.cc	2009-05-05 01:04:35.000000000 -0400
++++ programs/calc/gchemcalc.cc	2009-05-10 15:08:02.000000000 -0400
 @@ -56,11 +56,11 @@
  #include <goffice/gtk/goffice-gtk.h>
  #include <goffice/graph/gog-axis.h>
@@ -15,7 +15,16 @@
  #include <goffice/utils/go-locale.h>
  #include <goffice/utils/go-image.h>
  #include <goffice/utils/go-line.h>
-@@ -736,7 +736,7 @@
+@@ -512,7 +512,7 @@ static void on_get_data (GtkClipboard *c
+ 			go_locale_untranslated_booleans ();
+ 		
+ 			xout = gsf_xml_out_new (output);
+-			gog_object_write_xml_sax (GOG_OBJECT (graph), xout);
++			gog_object_write_xml_sax (GOG_OBJECT (graph), xout, NULL);
+ 			g_object_unref (xout);
+ 		
+ 			/* go_setlocale restores bools to locale translation */
+@@ -736,7 +736,7 @@ int main (int argc, char *argv[])
  	App = new GChemCalc ();
  	
  	/* Initialize plugins manager */
@@ -24,7 +33,7 @@
  
  	GladeXML *xml =  glade_xml_new (GLADEDIR"/gchemcalc.glade", "gchemcalc", NULL);
  	App->window = GTK_WINDOW (glade_xml_get_widget (xml, "gchemcalc"));
-@@ -808,7 +808,7 @@
+@@ -808,7 +808,7 @@ int main (int argc, char *argv[])
  	// Create a series for the plot and populate it with some simple data
  	App->series = gog_plot_new_series (App->plot);
  	gog_object_add_by_name (GOG_OBJECT (App->series), "Vertical drop lines", NULL);

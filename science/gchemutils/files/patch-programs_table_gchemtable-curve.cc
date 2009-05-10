@@ -1,5 +1,5 @@
 --- programs/table/gchemtable-curve.cc.orig	2009-01-05 14:10:00.000000000 -0500
-+++ programs/table/gchemtable-curve.cc	2009-05-05 01:11:15.000000000 -0400
++++ programs/table/gchemtable-curve.cc	2009-05-10 15:08:23.000000000 -0400
 @@ -37,11 +37,9 @@
  #include <goffice/graph/gog-data-set.h>
  #include <goffice/graph/gog-guru.h>
@@ -13,6 +13,15 @@
  #include <goffice/math/go-math.h>
  #include <goffice/utils/go-locale.h>
  #include <goffice/utils/go-line.h>
+@@ -95,7 +93,7 @@ static void on_get_data (GtkClipboard *c
+ 			go_locale_untranslated_booleans ();
+ 		
+ 			xout = gsf_xml_out_new (output);
+-			gog_object_write_xml_sax (GOG_OBJECT (graph), xout);
++			gog_object_write_xml_sax (GOG_OBJECT (graph), xout, NULL);
+ 			g_object_unref (xout);
+ 		
+ 			/* go_setlocale restores bools to locale translation */
 @@ -332,7 +330,7 @@ GChemTableCurve::GChemTableCurve (GChemT
  		obj = gog_object_get_child_by_role (GOG_OBJECT (chart),
  				gog_object_find_role_by_name (GOG_OBJECT (chart), "Y-Axis"));
