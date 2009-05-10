@@ -1,41 +1,44 @@
 bin/qtpfsgui
 share/applications/qtpfsgui.desktop
 share/pixmaps/qtpfsgui.png
-share/icons/hicolor/48x48/apps/qtpfsgui.png
+share/icons/hicolor/32x32/apps/qtpfsgui.png
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%DOCSDIR%%/html/dcraw.html
-%%DOCSDIR%%/html/faq.html
-%%DOCSDIR%%/html/hints.html
-%%DOCSDIR%%/html/images/batch-1.jpg
-%%DOCSDIR%%/html/images/copy_exif.jpeg
-%%DOCSDIR%%/html/images/mainwin.jpeg
-%%DOCSDIR%%/html/images/projectiveTransformationDialog.jpeg
-%%DOCSDIR%%/html/images/raw_conversion.jpg
-%%DOCSDIR%%/html/images/resize.jpeg
-%%DOCSDIR%%/html/images/snap-qt4_4.jpeg
-%%DOCSDIR%%/html/images/snap-qt4_5.jpeg
-%%DOCSDIR%%/html/images/snap-qt4_6.jpeg
-%%DOCSDIR%%/html/images/tonemapdialog.jpeg
-%%DOCSDIR%%/html/index.html
-%%DOCSDIR%%/html/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dcraw.html
+%%PORTDOCS%%%%DOCSDIR%%/html/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/html/hints.html
+%%PORTDOCS%%%%DOCSDIR%%/html/images/batch-1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/copy_exif.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/mainwin.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/projectiveTransformationDialog.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/raw_conversion.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/resize.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/snap-qt4_4.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/snap-qt4_5.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/snap-qt4_6.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tonemapdialog.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual.html
+%%DATADIR%%/LICENSE
 %%DATADIR%%/i18n/lang_cs.qm
 %%DATADIR%%/i18n/lang_de.qm
 %%DATADIR%%/i18n/lang_es.qm
 %%DATADIR%%/i18n/lang_fr.qm
+%%DATADIR%%/i18n/lang_hu.qm
+%%DATADIR%%/i18n/lang_id.qm
 %%DATADIR%%/i18n/lang_it.qm
 %%DATADIR%%/i18n/lang_pl.qm
 %%DATADIR%%/i18n/lang_ru.qm
 %%DATADIR%%/i18n/lang_tr.qm
 @dirrm %%DATADIR%%/i18n
 @dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrm %%DOCSDIR%%/html/images
-@dirrm %%DOCSDIR%%/html
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
