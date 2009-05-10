@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	link-grammar
-PORTVERSION=	4.3.9
+PORTVERSION=	4.5.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 
@@ -18,7 +18,8 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}
-CONFIGURE_ARGS=	--enable-pthreads
+CONFIGURE_ARGS=	--enable-pthreads \
+		--disable-java-bindings
 
 DOCS=		AUTHORS LICENSE MAINTAINERS README
 MAN1=		link-parser.1
