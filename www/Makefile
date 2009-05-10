@@ -1689,6 +1689,7 @@
     SUBDIR += xpi-pencil
     SUBDIR += xpi-permatabs
     SUBDIR += xpi-preferential
+    SUBDIR += xpi-prism
     SUBDIR += xpi-quick-locale-switcher
     SUBDIR += xpi-quickproxy
     SUBDIR += xpi-resurrectpages
