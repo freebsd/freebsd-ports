@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clive
-PORTVERSION=	2.1.10
+PORTVERSION=	2.1.12
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
@@ -33,7 +33,6 @@ NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_RUN=	5.8.2+
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
