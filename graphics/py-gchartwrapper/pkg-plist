@@ -20,46 +20,133 @@
 %%PYTHON_SITELIBDIR%%/GChartWrapper/encoding.py
 %%PYTHON_SITELIBDIR%%/GChartWrapper/encoding.pyc
 %%PYTHON_SITELIBDIR%%/GChartWrapper/encoding.pyo
-%%PYTHON_SITELIBDIR%%/GChartWrapper/testing.py
-%%PYTHON_SITELIBDIR%%/GChartWrapper/testing.pyc
-%%PYTHON_SITELIBDIR%%/GChartWrapper/testing.pyo
 %%PYTHON_SITELIBDIR%%/GChartWrapper/tests.py
 %%PYTHON_SITELIBDIR%%/GChartWrapper/tests.pyc
 %%PYTHON_SITELIBDIR%%/GChartWrapper/tests.pyo
+%%PORTDOCS%%%%DOCSDIR%%/.svn/all-wcprops
+%%PORTDOCS%%%%DOCSDIR%%/.svn/dir-prop-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/entries
+%%PORTDOCS%%%%DOCSDIR%%/.svn/format
+%%PORTDOCS%%%%DOCSDIR%%/.svn/prop-base/crarr.png.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper-pysrc.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.Bubble-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.GChart'-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.GChart'-pysrc.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.GChart'.Axes-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.GChart'._AbstractGChart-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.GChart-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.HorizontalBarGroup-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.HorizontalBarStack-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.Line-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.LineXY-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.Map-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.Meter-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.Note-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.Pie-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.Pie3D-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.PieC-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.Pin-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.QRCode-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.Radar-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.RadarSpline-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.Scatter-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.Sparkline-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.Text-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.Venn-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.VerticalBarGroup-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.VerticalBarStack-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.charts-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.charts-pysrc.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.charts.templatetags-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.charts.templatetags-pysrc.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.charts.templatetags.charts-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.charts.templatetags.charts-pysrc.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.charts.templatetags.charts.BubbleNode-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.charts.templatetags.charts.ChartNode-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.charts.templatetags.charts.FancyNode-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.charts.templatetags.charts.GenericNode-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.charts.templatetags.charts.NoteNode-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.charts.templatetags.charts.PinNode-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.charts.templatetags.charts.TextNode-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.charts.views-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.charts.views-pysrc.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.constants-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.constants-pysrc.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.encoding-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.encoding-pysrc.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.encoding.Encoder-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.jinja2-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.jinja2-pysrc.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.jinja2.ChartExtension-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.mako-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.mako-pysrc.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.testing-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.testing-pysrc.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.testing.TestClass-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.tests-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.tests-pysrc.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/GChartWrapper.tests.TestChartTypes-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/api-objects.txt.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/class-tree.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/crarr.png.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/epydoc.css.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/epydoc.js.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/exceptions.AssertionError-class.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/frames.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/help.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/identifier-index.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/index.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/module-tree.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/redirect.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/toc-GChartWrapper-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/toc-GChartWrapper.GChart'-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/toc-GChartWrapper.charts-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/toc-GChartWrapper.charts.templatetags-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/toc-GChartWrapper.charts.templatetags.charts-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/toc-GChartWrapper.charts.views-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/toc-GChartWrapper.constants-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/toc-GChartWrapper.encoding-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/toc-GChartWrapper.jinja2-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/toc-GChartWrapper.mako-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/toc-GChartWrapper.testing-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/toc-GChartWrapper.tests-module.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/toc-everything.html.svn-base
+%%PORTDOCS%%%%DOCSDIR%%/.svn/text-base/toc.html.svn-base
 %%PORTDOCS%%%%DOCSDIR%%/GChartWrapper-module.html
 %%PORTDOCS%%%%DOCSDIR%%/GChartWrapper-pysrc.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.Bubble-class.html
 %%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'-module.html
 %%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.Axes-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.Bubble-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.Dict-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.GChart-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.HorizontalBarGroup-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.HorizontalBarStack-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.Line-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.LineXY-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.Map-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.Meter-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.Note-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.Pie-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.Pie3D-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.PieC-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.Pin-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.QRCode-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.Radar-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.Scatter-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.Sparkline-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.Text-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.Venn-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.VerticalBarGroup-class.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'.VerticalBarStack-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart'._AbstractGChart-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.GChart-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.HorizontalBarGroup-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.HorizontalBarStack-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.Line-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.LineXY-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.Map-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.Meter-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.Note-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.Pie-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.Pie3D-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.PieC-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.Pin-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.QRCode-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.Radar-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.RadarSpline-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.Scatter-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.Sparkline-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.Text-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.Venn-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.VerticalBarGroup-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.VerticalBarStack-class.html
 %%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.charts-module.html
 %%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.charts-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.charts.templatetags-module.html
 %%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.charts.templatetags-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.charts.templatetags.charts-module.html
 %%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.charts.templatetags.charts-pysrc.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.charts.templatetags.charts.AttrNode-class.html
 %%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.charts.templatetags.charts.BubbleNode-class.html
 %%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.charts.templatetags.charts.ChartNode-class.html
 %%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.charts.templatetags.charts.FancyNode-class.html
@@ -84,8 +171,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.testing.TestClass-class.html
 %%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.tests-module.html
 %%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.tests-pysrc.html
-%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.tests.ChartsTest-class.html
-%%PORTDOCS%%%%DOCSDIR%%/UserDict.UserDict-class.html
+%%PORTDOCS%%%%DOCSDIR%%/GChartWrapper.tests.TestChartTypes-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api-objects.txt
 %%PORTDOCS%%%%DOCSDIR%%/class-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/crarr.png
@@ -111,19 +197,24 @@
 %%PORTDOCS%%%%DOCSDIR%%/toc-GChartWrapper.testing-module.html
 %%PORTDOCS%%%%DOCSDIR%%/toc-GChartWrapper.tests-module.html
 %%PORTDOCS%%%%DOCSDIR%%/toc-everything.html
-%%PORTDOCS%%%%DOCSDIR%%/toc-urllib-module.html
 %%PORTDOCS%%%%DOCSDIR%%/toc.html
-%%PORTDOCS%%%%DOCSDIR%%/urllib-module.html
-%%PORTDOCS%%%%DOCSDIR%%/urllib-pysrc.html
-%%PORTDOCS%%%%DOCSDIR%%/urllib.ContentTooShortError-class.html
-%%PORTDOCS%%%%DOCSDIR%%/urllib.FancyURLopener-class.html
-%%PORTDOCS%%%%DOCSDIR%%/urllib.URLopener-class.html
-%%PORTDOCS%%%%DOCSDIR%%/urllib.addbase-class.html
-%%PORTDOCS%%%%DOCSDIR%%/urllib.addclosehook-class.html
-%%PORTDOCS%%%%DOCSDIR%%/urllib.addinfo-class.html
-%%PORTDOCS%%%%DOCSDIR%%/urllib.addinfourl-class.html
-%%PORTDOCS%%%%DOCSDIR%%/urllib.ftpwrapper-class.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.svn/all-wcprops
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.svn/dir-prop-base
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.svn/entries
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.svn/format
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.svn/text-base/cheetah_templates.py.svn-base
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.svn/text-base/jinja_templates.py.svn-base
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.svn/text-base/mako_templates.py.svn-base
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cheetah_templates.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/djangoproj/.svn/all-wcprops
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/djangoproj/.svn/dir-prop-base
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/djangoproj/.svn/entries
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/djangoproj/.svn/format
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/djangoproj/.svn/text-base/__init__.py.svn-base
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/djangoproj/.svn/text-base/manage.py.svn-base
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/djangoproj/.svn/text-base/settings.py.svn-base
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/djangoproj/.svn/text-base/urls.py.svn-base
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/djangoproj/.svn/text-base/views.py.svn-base
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/djangoproj/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/djangoproj/manage.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/djangoproj/settings.py
@@ -137,11 +228,41 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/djangoproj/views.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/jinja_templates.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mako_templates.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/djangoproj/templates/.svn/tmp/text-base
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/djangoproj/templates/.svn/tmp/props
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/djangoproj/templates/.svn/tmp/prop-base
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/djangoproj/templates/.svn/tmp
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/djangoproj/templates/.svn/text-base
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/djangoproj/templates/.svn/props
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/djangoproj/templates/.svn/prop-base
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/djangoproj/templates/.svn
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/djangoproj/templates
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/djangoproj/.svn/tmp/text-base
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/djangoproj/.svn/tmp/props
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/djangoproj/.svn/tmp/prop-base
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/djangoproj/.svn/tmp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/djangoproj/.svn/text-base
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/djangoproj/.svn/props
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/djangoproj/.svn/prop-base
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/djangoproj/.svn
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/djangoproj
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/.svn/tmp/text-base
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/.svn/tmp/props
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/.svn/tmp/prop-base
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/.svn/tmp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/.svn/text-base
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/.svn/props
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/.svn/prop-base
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/.svn
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/.svn/tmp/text-base
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/.svn/tmp/props
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/.svn/tmp/prop-base
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/.svn/tmp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/.svn/text-base
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/.svn/props
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/.svn/prop-base
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/.svn
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/GChartWrapper/charts/templatetags
 @dirrm %%PYTHON_SITELIBDIR%%/GChartWrapper/charts
