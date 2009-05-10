@@ -530,6 +530,7 @@
     SUBDIR += openexr_ctl
     SUBDIR += opengl-man
     SUBDIR += openjpeg
+    SUBDIR += openjump
     SUBDIR += openrm
     SUBDIR += ophoto
     SUBDIR += optar

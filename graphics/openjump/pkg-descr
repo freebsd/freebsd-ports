@@ -1,0 +1,18 @@
+OpenJUMP is an open source GIS software written in Java. It is based on
+JUMP GIS by Vivid Solutions. It's features include:
+    * It is a Vector GIS that can read rasters as well.
+    * OpenJUMP is known to work on Windows, Linux and Mac platforms, but
+should work on any operating system that runs Java 1.5 or later.
+    * It is not just another free demo viewer, but you can edit, save,
+analyze etc. with JUMP / OpenJUMP.
+    * It works, even with medium size datasets, and with professional
+touch.
+    * It provides a GIS API with a flexible plugin structure, so that
+new features are relatively easy to develope around the sound mapping
+platform.
+    * It utilises standards like GML, WMS and WFS.
+    * It is already translated in English, Finnish, French, German,
+Italian, Portugese and Spanish. The translation in other languages is in
+progress.
+
+WWW: http://www.openjump.org/
