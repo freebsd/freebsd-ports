@@ -12,12 +12,16 @@ bin/pulseaudio
 bin/start-pulseaudio-x11
 @unexec if cmp -s %D/etc/pulse/client.conf %D/etc/pulse/client.conf-dist; then rm -f %D/etc/pulse/client.conf; fi
 etc/pulse/client.conf-dist
+@exec [ -f %B/client.conf ] || cp %B/%f %B/client.conf
 @unexec if cmp -s %D/etc/pulse/daemon.conf %D/etc/pulse/daemon.conf-dist; then rm -f %D/etc/pulse/daemon.conf; fi
 etc/pulse/daemon.conf-dist
+@exec [ -f %B/daemon.conf ] || cp %B/%f %B/daemon.conf
 @unexec if cmp -s %D/etc/pulse/default.pa %D/etc/pulse/default.pa-dist; then rm -f %D/etc/pulse/default.pa; fi
 etc/pulse/default.pa-dist
+@exec [ -f %B/default.pa ] || cp %B/%f %B/default.pa
 @unexec if cmp -s %D/etc/pulse/system.pa %D/etc/pulse/system.pa-dist; then rm -f %D/etc/pulse/system.pa; fi
 etc/pulse/system.pa-dist
+@exec [ -f %B/system.pa ] || cp %B/%f %B/system.pa
 etc/xdg/autostart/pulseaudio.desktop
 %%AVAHI%%include/pulse/browser.h
 include/pulse/cdecl.h
