@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.codef00.com/projects/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	utisoft@gmail.com
 COMMENT=	A portable QT4 based GMail notifier
 
 USE_QT_VER=	4
