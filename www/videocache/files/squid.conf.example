@@ -1,0 +1,32 @@
+==============================================================================
+
+Add the following sample lines to your squid.conf:
+
+# --BEGIN-- videocache config for squid
+url_rewrite_program %%PREFIX%%/bin/python %%DATADIR%%/videocache/videocache.py
+url_rewrite_children 7
+acl videocache_allow_url url_regex -i \.youtube\.com\/get_video\?
+acl videocache_allow_url url_regex -i \.googlevideo\.com\/videoplayback \.googlevideo\.com\/videoplay \.googlevideo\.com\/get_video\?
+acl videocache_allow_url url_regex -i \.google\.com\/videoplayback \.google\.com\/videoplay \.google\.com\/get_video\?
+acl videocache_allow_url url_regex -i \.google\.[a-z][a-z]\/videoplayback \.google\.[a-z][a-z]\/videoplay \.google\.[a-z][a-z]\/get_video\?
+acl videocache_allow_url url_regex -i (25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/videoplayback\?
+acl videocache_allow_url url_regex -i (25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/videoplay\?
+acl videocache_allow_url url_regex -i (25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/get_video\?
+acl videocache_allow_url url_regex -i proxy[a-z0-9\-][a-z0-9][a-z0-9][a-z0-9]?\.dailymotion\.com\/
+acl videocache_allow_url url_regex -i vid\.akm\.dailymotion\.com\/
+acl videocache_allow_url url_regex -i [a-z0-9][0-9a-z][0-9a-z]?[0-9a-z]?[0-9a-z]?\.xtube\.com\/(.*)flv
+acl videocache_allow_url url_regex -i bitcast\.vimeo\.com\/vimeo\/videos\/
+acl videocache_allow_url url_regex -i va\.wrzuta\.pl\/wa[0-9][0-9][0-9][0-9]?
+acl videocache_allow_url url_regex -i \.files\.youporn\.com\/(.*)\/flv\/
+acl videocache_allow_url url_regex -i \.msn\.com\.edgesuite\.net\/(.*)\.flv
+acl videocache_allow_url url_regex -i media[a-z0-9]?[a-z0-9]?[a-z0-9]?\.tube8\.com\/ mobile[a-z0-9]?[a-z0-9]?[a-z0-9]?\.ta-z0-9]?[a-z0-9]?\.blip\.tv\/(.*)\.(flv|avi|mov|mp3|m4v|mp4|wmv|rm|ram)
+acl videocache_allow_url url_regex -i video\.break\.com\/(.*)\.(flv|mp4)
+acl videocache_allow_dom dstdomain .mccont.com dl.redtube.com .cdn.dailymotion.com
+acl videocache_deny_url url_regex -i http:\/\/[a-z][a-z]\.youtube\.com http:\/\/www\.youtube\.com
+url_rewrite_access deny videocache_deny_url
+url_rewrite_access allow videocache_allow_url
+url_rewrite_access allow videocache_allow_dom
+redirector_bypass on
+# --END-- videocache config for squid
+
+==============================================================================

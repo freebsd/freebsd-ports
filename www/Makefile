@@ -1551,6 +1551,7 @@
     SUBDIR += validator
     SUBDIR += varnish
     SUBDIR += vee
+    SUBDIR += videocache
     SUBDIR += visitors
     SUBDIR += vtiger
     SUBDIR += vtiger-customerportal

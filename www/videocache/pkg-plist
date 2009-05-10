@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+bin/update-vc
+@unexec if cmp -s %D/etc/videocache.conf %D/etc/videocache.conf.default; then rm -f %D/etc/videocache.conf; fi
+etc/videocache.conf.default
+@exec [ -f %B/videocache.conf ] || cp %B/%f %B/videocache.conf
+%%DATADIR%%/Errors.py
+%%DATADIR%%/__init__.py
+%%DATADIR%%/config.py
+%%DATADIR%%/parser.py
+%%DATADIR%%/videocache.py
+@dirrm %%DATADIR%%
