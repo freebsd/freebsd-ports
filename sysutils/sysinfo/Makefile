@@ -18,12 +18,17 @@ COMMENT=	Utility used to gather system configuration information
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	DMIDECODE "Include information from the dmidecode tool" Off
+OPTIONS=	DMIDECODE "Include information from the dmidecode tool" Off \
+		PORTAUDIT "Include information from the portaudit tool" Off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DMIDECODE)
 RUN_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode
+.endif
+
+.if defined(WITH_PORTAUDIT)
+RUN_DEPENDS+=	portaudit:${PORTSDIR}/ports-mgmt/portaudit
 .endif
 
 post-patch:
