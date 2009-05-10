@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oauth
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.4
 CATEGORIES=	net rubygems
 MASTER_SITES=	RF/oauth
 
