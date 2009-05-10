@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	sakai
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.4
 CATEGORIES=	www java
-MASTER_SITES=	http://source.sakaiproject.org/release/${PORTVERSION}/sakai-2-5-3/
+MASTER_SITES=	http://source.sakaiproject.org/release/${PORTVERSION}/artifacts/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
@@ -28,6 +28,7 @@ WEBAPPDIR=	${PREFIX}/tomcat5.5/webapps
 SYSTEM_DIR=	common components licenses server shared
 TOMCAT_DIR=	${PREFIX}/tomcat5.5
 LIC_DOC=	ECLv1.txt
+PLIST_SUB+=	SAKAI_VER="${PORTVERSION}"
 
 do-install:
 	cd ${WRKSRC}/webapps && ${FIND} . -type f -exec ${INSTALL} -g \
