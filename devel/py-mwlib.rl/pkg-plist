@@ -1,0 +1,273 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fonts/ttf-dejavu/DejaVuSans-Bold.ttf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fonts/ttf-dejavu/DejaVuSans-BoldOblique.ttf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fonts/ttf-dejavu/DejaVuSans-Oblique.ttf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fonts/ttf-dejavu/DejaVuSans.ttf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fonts/ttf-dejavu/DejaVuSansMono-Bold.ttf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fonts/ttf-dejavu/DejaVuSansMono-BoldOblique.ttf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fonts/ttf-dejavu/DejaVuSansMono-Oblique.ttf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fonts/ttf-dejavu/DejaVuSansMono.ttf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fonts/ttf-dejavu/DejaVuSerif-Bold.ttf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fonts/ttf-dejavu/DejaVuSerif-BoldItalic.ttf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fonts/ttf-dejavu/DejaVuSerif-Italic.ttf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fonts/ttf-dejavu/DejaVuSerif.ttf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fonts/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fonts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fonts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/_version.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/_version.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/_version.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/create_collection.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/create_collection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/create_collection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/customflowables.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/customflowables.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/customflowables.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/debughelper.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/debughelper.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/debughelper.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/fontconfig.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/fontconfig.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/fontconfig.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/af/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/af/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/arz/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/arz/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/el/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/el/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/gsw/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/gsw/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ia/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ia/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/pt_BR/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/pt_BR/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/sl/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/sl/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/su/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/su/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/sv/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/sv/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/te/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/te/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/vi/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/vi/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/de/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/de/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/en/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/en/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/fr/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/fr/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/hu/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/hu/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/it/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/it/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/pl/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/pl/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/pt/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/pt/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ar/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ar/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/bg/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/bg/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/br/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/br/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/bs/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/bs/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/dsb/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/dsb/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/eo/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/eo/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/es/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/es/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/eu/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/eu/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/fi/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/fi/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/gl/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/gl/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/he/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/he/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/hsb/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/hsb/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ja/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ja/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/km/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/km/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ko/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ko/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ksh/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ksh/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/lb/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/lb/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/nl/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/nl/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/nn/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/nn/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/oc/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/oc/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/qqq/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/qqq/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ru/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ru/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/sk/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/sk/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/tl/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/tl/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/tr/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/tr/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/uk/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/uk/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/vo/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/vo/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/zh-hans/LC_MESSAGES/mwlib.rl.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/zh-hans/LC_MESSAGES/mwlib.rl.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/toc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/toc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/toc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/pdfmessages.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/pdfmessages.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/pdfmessages.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/pagetemplates.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/pagetemplates.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/pagetemplates.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/pdfstyles.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/pdfstyles.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/pdfstyles.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/rlsourceformatter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/rlsourceformatter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/rlsourceformatter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/rltables.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/rltables.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/rltables.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/rlwriter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/rlwriter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/rlwriter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/wikipedia_logo.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tests/renderhelper.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tests/renderhelper.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tests/renderhelper.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tests/test_advanced.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tests/test_advanced.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tests/test_advanced.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tests/test_basicnodes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tests/test_basicnodes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tests/test_basicnodes.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tests/test_snippets.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tests/test_snippets.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tests/test_snippets.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fonts/ttf-dejavu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fonts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/af/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/af
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/arz/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/arz
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/el/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/el
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/gsw/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/gsw
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ia/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ia
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/sl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/sl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/su/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/su
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/sv/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/sv
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/te/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/te
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/vi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/vi
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/de
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/en/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/en
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/hu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/hu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/it
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/pl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/pl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/pt/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/pt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ar/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ar
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/bg/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/bg
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/br/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/br
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/bs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/bs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/dsb/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/dsb
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/eo/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/eo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/es
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/eu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/eu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/fi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/fi
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/gl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/gl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/he/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/he
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/hsb/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/hsb
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ja/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ja
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/km/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/km
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ko/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ko
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ksh/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ksh
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/lb/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/lb
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/nl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/nl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/nn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/nn
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/oc/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/oc
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/qqq/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/qqq
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/ru
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/sk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/sk
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/tl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/tl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/tr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/tr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/uk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/uk
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/vo/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/vo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/zh-hans/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale/zh-hans
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl/locale
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/rl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/

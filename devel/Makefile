@@ -2326,6 +2326,7 @@
     SUBDIR += py-mez_xml
     SUBDIR += py-mwlib
     SUBDIR += py-mwlib.ext
+    SUBDIR += py-mwlib.rl
     SUBDIR += py-mx-experimental
     SUBDIR += py-myghtyutils
     SUBDIR += py-ncurses
