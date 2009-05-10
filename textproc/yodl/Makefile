@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yodl
-PORTVERSION=	2.14.2
+PORTVERSION=	2.14.3
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -70,12 +70,6 @@ post-patch:
 		${WRKSRC}/macros/rawmacros/separator.pl \
 		${WRKSRC}/macros/rawmacros/startdoc.pl \
 		${WRKSRC}/contrib/build.pl
-	@${REINPLACE_CMD} -e 's|@STD_INCLUDE@|tmp/install@STD_INCLUDE@|' \
-		${WRKSRC}/macros/in/html.in \
-		${WRKSRC}/macros/in/latex.in \
-		${WRKSRC}/macros/in/man.in \
-		${WRKSRC}/macros/in/txt.in \
-		${WRKSRC}/macros/in/xml.in
 	@${REINPLACE_CMD} -e 's|../../yodl/|../../../${PORTNAME}-${PORTVERSION}/|' \
 		${WRKSRC}/manual/yo/manual.yo
 
