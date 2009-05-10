@@ -2581,6 +2581,7 @@
     SUBDIR += rubygem-highline
     SUBDIR += rubygem-hoe
     SUBDIR += rubygem-icalendar
+    SUBDIR += rubygem-igraph
     SUBDIR += rubygem-inline
     SUBDIR += rubygem-json
     SUBDIR += rubygem-json_pure
