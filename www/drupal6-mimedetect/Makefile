@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mimedetect
-DISTVERSION=	6.x-1.1
+DISTVERSION=	6.x-1.2
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
