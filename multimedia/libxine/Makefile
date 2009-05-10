@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.1.16.2
-PORTREVISION=	1
+PORTVERSION=	1.1.16.3
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	lib
@@ -30,6 +29,10 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		theora.0:${PORTSDIR}/multimedia/libtheora \
 		mad.2:${PORTSDIR}/audio/libmad \
 		dca.0:${PORTSDIR}/multimedia/libdca
+
+.if !defined(PACKAGE_BUILDING)
+LIB_DEPENDS+= dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
+.endif
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -72,7 +75,11 @@ MAN1=	xine-config.1 xine-list-1.1.1
 MAN5=	xine.5
 
 DOCSDIR=	${PREFIX}/share/doc/xine-lib
-PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/1.25"
+PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/1.26"
+
+# DVDCSS version hardcoded in src/input/input_dvd.c misc/cdda_server.c
+# and src/input/libdvdnav/dvd_input.c (dlopen'ed)
+DVDCSS_LIBVERSION= 3
 
 .include <bsd.port.pre.mk>
 
@@ -207,6 +214,12 @@ post-patch:
 		/freebsd-elf)/,/;;/ s|versuffix="\.$$current"|versuffix="$$major"|' \
 		${WRKSRC}/${f}
 .endfor
+	@${REINPLACE_CMD} -E -e 's|(libdvdcss.so)\.2|\1.${DVDCSS_LIBVERSION}|' \
+		${WRKSRC}/src/input/input_dvd.c
+	@${REINPLACE_CMD} -E -e 's|(libdvdcss.so)\.2|\1.${DVDCSS_LIBVERSION}|' \
+		${WRKSRC}/misc/cdda_server.c
+	@${REINPLACE_CMD} -E -e 's|(libdvdcss.so)\.2|\1.${DVDCSS_LIBVERSION}|' \
+		${WRKSRC}/src/input/libdvdnav/dvd_input.c
 
 pre-configure:
 	@${REINPLACE_CMD} -e \

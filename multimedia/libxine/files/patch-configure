@@ -1,6 +1,6 @@
---- configure.orig	2009-02-11 03:35:05.000000000 +0900
-+++ configure	2009-02-22 18:37:34.000000000 +0900
-@@ -10363,6 +10363,12 @@
+--- configure.orig	2009-05-06 22:57:51.000000000 +0900
++++ configure	2009-05-06 23:03:23.000000000 +0900
+@@ -10918,6 +10918,12 @@
        fi
        ;;
  
@@ -13,7 +13,7 @@
      netbsd* | netbsdelf*-gnu)
        if echo __ELF__ | $CC -E - | $GREP __ELF__ >/dev/null; then
  	archive_cmds='$LD -Bshareable $libobjs $deplibs $linker_flags -o $lib'
-@@ -13853,7 +13859,7 @@
+@@ -14450,7 +14456,7 @@
                      if test -z "$haveit"; then
                        LIBICONV="${LIBICONV}${LIBICONV:+ }-L$found_dir"
                      fi
@@ -22,39 +22,39 @@
                                                                                          LIBICONV="${LIBICONV}${LIBICONV:+ }$found_so"
                      else
                                                                                                                                                                                  LIBICONV="${LIBICONV}${LIBICONV:+ }-l$name"
-@@ -26519,12 +26525,12 @@
+@@ -27953,12 +27959,12 @@
          pkg_cv_CACA_CFLAGS="$CACA_CFLAGS"
      else
          if test -n "$PKG_CONFIG" && \
--    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"caca >= 0.99beta14 cucul >= 0.99beta14 \"") >&5
+-    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"caca >= 0.99beta14 cucul >= 0.99beta14 \"") >&5
 -  ($PKG_CONFIG --exists --print-errors "caca >= 0.99beta14 cucul >= 0.99beta14 ") 2>&5
-+    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"caca >= 0.99beta13 cucul >= 0.99beta13 \"") >&5
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"caca >= 0.99beta13 cucul >= 0.99beta13 \"") >&5
 +  ($PKG_CONFIG --exists --print-errors "caca >= 0.99beta13 cucul >= 0.99beta13 ") 2>&5
    ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; then
 -  pkg_cv_CACA_CFLAGS=`$PKG_CONFIG --cflags "caca >= 0.99beta14 cucul >= 0.99beta14 " 2>/dev/null`
 +  pkg_cv_CACA_CFLAGS=`$PKG_CONFIG --cflags "caca >= 0.99beta13 cucul >= 0.99beta13 " 2>/dev/null`
  else
    pkg_failed=yes
  fi
-@@ -26537,12 +26543,12 @@
+@@ -27971,12 +27977,12 @@
          pkg_cv_CACA_LIBS="$CACA_LIBS"
      else
          if test -n "$PKG_CONFIG" && \
--    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"caca >= 0.99beta14 cucul >= 0.99beta14 \"") >&5
+-    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"caca >= 0.99beta14 cucul >= 0.99beta14 \"") >&5
 -  ($PKG_CONFIG --exists --print-errors "caca >= 0.99beta14 cucul >= 0.99beta14 ") 2>&5
-+    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"caca >= 0.99beta13 cucul >= 0.99beta13 \"") >&5
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"caca >= 0.99beta13 cucul >= 0.99beta13 \"") >&5
 +  ($PKG_CONFIG --exists --print-errors "caca >= 0.99beta13 cucul >= 0.99beta13 ") 2>&5
    ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; then
 -  pkg_cv_CACA_LIBS=`$PKG_CONFIG --libs "caca >= 0.99beta14 cucul >= 0.99beta14 " 2>/dev/null`
 +  pkg_cv_CACA_LIBS=`$PKG_CONFIG --libs "caca >= 0.99beta13 cucul >= 0.99beta13 " 2>/dev/null`
  else
    pkg_failed=yes
  fi
-@@ -26561,9 +26567,9 @@
+@@ -27995,9 +28001,9 @@
          _pkg_short_errors_supported=no
  fi
          if test $_pkg_short_errors_supported = yes; then
@@ -66,7 +66,7 @@
          fi
  	# Put the nasty error message in config.log where it belongs
  	echo "$CACA_PKG_ERRORS" >&5
-@@ -29191,6 +29197,8 @@
+@@ -30662,6 +30668,8 @@
        fi
         CFLAGS="$ac_save_CFLAGS"
         LIBS="$ac_save_LIBS"
@@ -75,7 +75,7 @@
    fi
  
    if test "x$no_libFLAC" = "x" ; then
-@@ -42228,7 +42236,7 @@
+@@ -43882,7 +43890,7 @@
  
  xinelibdir='${libdir}/xine'
  xinedatadir='${datadir}/xine'
