@@ -15,6 +15,9 @@ DISTNAME=	ApacheJServ-${PORTVERSION}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Loadable servlet module for apache
 
+DEPRECATED=	superceeded by tomcat
+EXPIRATION_DATE=	2009-06-09
+
 USE_JAVA=	yes
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apachectl:${PORTSDIR}/${APACHE_PORT}\
