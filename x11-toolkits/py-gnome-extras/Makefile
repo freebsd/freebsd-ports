@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome
 PORTVERSION=	2.25.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gnome-python-extras/${PORTVERSION:C/..$//}
@@ -46,7 +46,7 @@ DOCSDIR=	${WRKSRC}/share/doc/py-gnome-extras
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
 .if defined(GECKO) && ${GECKO:Mlibxul}!=""
-CONFIGURE_ARGS+=	--with-gtkmozembed=xulrunner
+CONFIGURE_ARGS+=	--with-gtkmozembed=mozilla
 .else
 CONFIGURE_ARGS+=	--with-gtkmozembed=${GECKO}
 .endif
