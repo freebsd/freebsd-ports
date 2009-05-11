@@ -1,0 +1,13 @@
+Index: portstools/tinderbox/webui/inc_tinderbox.php.dist
+diff -u portstools/tinderbox/webui/inc_tinderbox.php.dist:1.10.2.2 portstools/tinderbox/webui/inc_tinderbox.php.dist:1.10.2.3
+--- portstools/tinderbox/webui/inc_tinderbox.php.dist:1.10.2.2	Wed Dec 10 18:03:28 2008
++++ portstools/tinderbox/webui/inc_tinderbox.php.dist	Wed May  6 15:48:32 2009
+@@ -13,6 +13,8 @@
+ # reload interval for "Current And Latest Builds" page while a port is building
+ # in miliseconds
+ $reload_interval_current='60000';
++# Define number of shown ports per page
++#$list_limit_nr='1000';
+ 
+ $wwwrootdir	 = dirname( __FILE__ );
+ $rootdir	 = realpath( $wwwrootdir . '/../..' );

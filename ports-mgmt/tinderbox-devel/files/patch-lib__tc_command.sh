@@ -1,13 +1,13 @@
 Index: portstools/tinderbox/lib/tc_command.sh
-diff -u portstools/tinderbox/lib/tc_command.sh:1.101.2.14 portstools/tinderbox/lib/tc_command.sh:1.101.2.16
+diff -u portstools/tinderbox/lib/tc_command.sh:1.101.2.14 portstools/tinderbox/lib/tc_command.sh:1.101.2.18
 --- portstools/tinderbox/lib/tc_command.sh:1.101.2.14	Sun Feb 15 12:22:28 2009
-+++ portstools/tinderbox/lib/tc_command.sh	Sat Mar 28 13:24:33 2009
++++ portstools/tinderbox/lib/tc_command.sh	Sun May 10 14:02:34 2009
 @@ -24,10 +24,10 @@
  # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  # SUCH DAMAGE.
  #
 -# $MCom: portstools/tinderbox/lib/tc_command.sh,v 1.101.2.14 2009/02/15 17:22:28 marcus Exp $
-+# $MCom: portstools/tinderbox/lib/tc_command.sh,v 1.101.2.16 2009/03/28 17:24:33 marcus Exp $
++# $MCom: portstools/tinderbox/lib/tc_command.sh,v 1.101.2.18 2009/05/10 18:02:34 marcus Exp $
  #
  
 -export _defaultUpdateHost="cvsup12.FreeBSD.org"
@@ -15,7 +15,38 @@ diff -u portstools/tinderbox/lib/tc_command.sh:1.101.2.14 portstools/tinderbox/l
  export _defaultUpdateType="CSUP"
  
  #---------------------------------------------------------------------------
-@@ -247,8 +247,9 @@
+@@ -160,16 +160,11 @@
+ 
+     if [ ! -x ${dir}/update.sh ]; then
+ 	echo "updateTree: ${what} ${name}: missing update script!"
+-	exit 1
++	return 1
+     fi
+ 
+     echo "${name}: updating ${what} with ${updateCmd}"
+ 
+-    if ! requestMount -t ${what} ${flag} ${name}; then
+-	echo "updateTree: ${what} ${name}: mount failed"
+-	exit 1
+-    fi
+-
+     if [ "${updateCmd}" = "USER" ]; then
+         eval ${dir}/update.sh ${name} > ${dir}/update.log 2>&1
+     else
+@@ -178,11 +173,8 @@
+     if [ $? -ne 0 ]; then
+ 	echo "updateTree: ${what} ${name}: update failed"
+ 	echo "    see ${dir}/update.log for more details"
+-	cleanupMounts -t ${what} ${flag} ${name}
+-	exit 1
++	return 1
+     fi
+-
+-    cleanupMounts -t ${what} ${flag} ${name}
+ }
+ 
+ #---------------------------------------------------------------------------
+@@ -247,8 +239,9 @@
      do_load=0
      db_driver=$(getDbDriver)
      dbinfo=$(getDbInfo ${db_driver})
@@ -26,3 +57,50 @@ diff -u portstools/tinderbox/lib/tc_command.sh:1.101.2.14 portstools/tinderbox/l
          db_admin_host_name=${dbinfo%:*}
  	db_admin_host=${db_admin_host_name%:*}
          db_name=${db_admin_host_name##*:}
+@@ -575,9 +568,20 @@
+ 	echo "updateJail: hook preJailUpdate failed. Terminating."
+ 	return 1
+     fi
++    if ! requestMount -t jail -j ${jailName}; then
++	echo "updateJail: ${jailName}: mount failed"
++	exit 1
++    fi
+     updateTree jail ${jailName} -j $(tinderLoc jail ${jailName})
+     rc=$?
+     execute_hook "postJailUpdate" "JAIL=${jailName} RC=${rc} PB=${pb}"
++
++    cleanupMounts -t jail -j ${jailName}
++
++    if [ ${rc} -ne 0 ]; then
++	exit ${rc}
++    fi
++
+     return 0
+ }
+ 
+@@ -925,10 +929,25 @@
+ 	echo "${portsTreeName}: hook prePortsTreeUpdate failed. Terminating."
+ 	return 1
+     fi
++    if ! requestMount -t portstree -p ${portsTreeName}; then
++	echo "updatePortsTree: ${portsTreeName}: mount failed"
++	exit 1
++    fi
+     updateTree portstree ${portsTreeName} \
+ 	       -p $(tinderLoc portstree ${portsTreeName})
+     rc=$?
+     execute_hook "postPortsTreeUpdate" "PORTSTREE=${portsTreeName} \"UPDATE_CMD=${updateCmd}\" PB=${pb} RC=${rc}"
++    if [ $? -ne 0 ]; then
++	echo "updatePortsTree: ${portsTreeName}: hook postPortsTreeUpdate failed. Terminating."
++        cleanupMounts -t portstree -p ${portsTreeName}
++	return 1
++    fi
++
++    cleanupMounts -t portstree -p ${portsTreeName}
++
++    if [ ${rc} -ne 0 ]; then
++	exit ${rc}
++    fi
+ 
+     # Update the last-built time
+     ${tc} updatePortsTreeLastBuilt -p ${portsTreeName}
