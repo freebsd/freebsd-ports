@@ -324,7 +324,9 @@ share/gnucash/accounts/de_DE/acctchrt_otherasset.gnucash-xea
 share/gnucash/accounts/de_DE/acctchrt_otherloan.gnucash-xea
 share/gnucash/accounts/de_DE/acctchrt_skr03.gnucash-xea
 share/gnucash/accounts/de_DE/acctchrt_skr04.gnucash-xea
+share/gnucash/accounts/de_DE/acctchrt_skr49.gnucash-xea
 share/gnucash/accounts/de_DE/acctchrt_studium.gnucash-xea
+share/gnucash/accounts/de_DE/acctchrt_wohnungsw.gnucash-xea
 share/gnucash/accounts/el_GR/acctchrt_brokerage.gnucash-xea
 share/gnucash/accounts/el_GR/acctchrt_carloan.gnucash-xea
 share/gnucash/accounts/el_GR/acctchrt_common.gnucash-xea
@@ -375,6 +377,8 @@ share/gnucash/accounts/es_MX/acctchrt_renter.gnucash-xea
 share/gnucash/accounts/es_MX/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/es_MX/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/es_MX/acctchrt_spouseretire.gnucash-xea
+share/gnucash/accounts/fi_FI/acctchrt_common.gnucash-xea
+share/gnucash/accounts/fi_FI/acctchrt_ry.gnucash-xea
 share/gnucash/accounts/fr_CA/acctchrt_actifsfixes.gnucash-xea
 share/gnucash/accounts/fr_CA/acctchrt_automobile.gnucash-xea
 share/gnucash/accounts/fr_CA/acctchrt_basecommune.gnucash-xea
@@ -438,6 +442,7 @@ share/gnucash/accounts/hu_HU/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/hu_HU/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/hu_HU/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/it/acctchrt_brokerage.gnucash-xea
+share/gnucash/accounts/it/acctchrt_business.gnucash-xea
 share/gnucash/accounts/it/acctchrt_carloan.gnucash-xea
 share/gnucash/accounts/it/acctchrt_checkbook.gnucash-xea
 share/gnucash/accounts/it/acctchrt_childcare.gnucash-xea
@@ -483,6 +488,7 @@ share/gnucash/accounts/nb/acctchrt_renter.gnucash-xea
 share/gnucash/accounts/nb/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/nb/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/nb/acctchrt_spouseretire.gnucash-xea
+share/gnucash/accounts/nl/acctchrt_full.gnucash-xea
 share/gnucash/accounts/pt_BR/acctchrt_brokerage.gnucash-xea
 share/gnucash/accounts/pt_BR/acctchrt_carloan.gnucash-xea
 share/gnucash/accounts/pt_BR/acctchrt_cdmoneymkt.gnucash-xea
@@ -575,6 +581,7 @@ share/gnucash/doc/NEWS
 share/gnucash/doc/README
 share/gnucash/doc/README-de.win32-bin.txt
 share/gnucash/doc/README-fr.win32-bin.txt
+share/gnucash/doc/README-it.win32-bin.txt
 share/gnucash/doc/README.dependencies
 share/gnucash/doc/README.francais
 share/gnucash/doc/README.german
@@ -912,6 +919,7 @@ share/xml/gnucash/xsl/vcard-gnccustomer.pl
 @dirrm share/gnucash/accounts/ru
 @dirrm share/gnucash/accounts/pt_PT
 @dirrm share/gnucash/accounts/pt_BR
+@dirrm share/gnucash/accounts/nl
 @dirrm share/gnucash/accounts/nb
 @dirrm share/gnucash/accounts/ja
 @dirrm share/gnucash/accounts/it
@@ -919,6 +927,7 @@ share/xml/gnucash/xsl/vcard-gnccustomer.pl
 @dirrm share/gnucash/accounts/fr_FR
 @dirrm share/gnucash/accounts/fr_CH
 @dirrm share/gnucash/accounts/fr_CA
+@dirrm share/gnucash/accounts/fi_FI
 @dirrm share/gnucash/accounts/es_MX
 @dirrm share/gnucash/accounts/es_ES
 @dirrm share/gnucash/accounts/en_GB
