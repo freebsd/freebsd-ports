@@ -5,7 +5,7 @@
  
  install-data-hook: 
 -@ENABLE_UPDATE_MIMEDB_TRUE@	$(DESTDIR)"$(bindir)/update-mime-database" -V "$(DESTDIR)$(datadir)/mime"
-+@ENABLE_UPDATE_MIMEDB_TRUE@	for mdir in /usr/local/share/mime  /usr/local/gnome2/shared-mime-info/share/mime; do \
++@ENABLE_UPDATE_MIMEDB_TRUE@	for mdir in %%MIMEDIRS%%; do \
 +@ENABLE_UPDATE_MIMEDB_TRUE@		if [ -d $${mdir} ]; then \
 +@ENABLE_UPDATE_MIMEDB_TRUE@			$(DESTDIR)"$(bindir)/update-mime-database" "$${mdir}" ; \
 +@ENABLE_UPDATE_MIMEDB_TRUE@		fi; \
