@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gchemutils
-PORTVERSION=	0.10.3
-PORTREVISION=	4
+PORTVERSION=	0.10.4
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/0.10
@@ -23,6 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:${PORTSDIR}/science/bodr \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:${PORTSDIR}/science/chemical-mime-data
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:${PORTSDIR}/science/bodr \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:${PORTSDIR}/science/chemical-mime-data
+
+BROKEN=		does not compile with goffice-0.7.6
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack intlhack libglade2 gnomedocutils
