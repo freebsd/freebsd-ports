@@ -6,26 +6,31 @@
 #
 
 PORTNAME=	gwenhywfar
-PORTVERSION=	2.6.2
-PORTREVISION=	2
+PORTVERSION=	3.6.0
 CATEGORIES=	devel net security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www2.aquamaniac.de/sites/download/
+DISTFILES=	download.php\?package=01\&release=17\&file=01\&dummy=gwenhywfar-3.6.0.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-platform helper library for networking and security applications
+
+LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
 
 OPTIONS=	MEMDEBUG "Enable memory debugger statistic" off \
 		PORTDOCS "Install documentation (requires doxygen)" off
 
 USE_AUTOTOOLS=	libtool:15
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	${PREFIX}/lib \
-		${PREFIX}/lib/gwenhywfar/plugins/38/crypttoken \
-		${PREFIX}/lib/gwenhywfar/plugins/38/dbio \
-		${PREFIX}/lib/gwenhywfar/plugins/38/storage
+		${PREFIX}/lib/gwenhywfar/plugins/47/ct \
+		${PREFIX}/lib/gwenhywfar/plugins/47/dbio \
+		${PREFIX}/lib/gwenhywfar/plugins/47/configmgr
+CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(NOPORTEXAMPLES)
 # Examples to be installed from ${WRKSRC}/doc
