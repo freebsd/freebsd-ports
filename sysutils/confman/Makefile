@@ -7,6 +7,7 @@
 
 PORTNAME=	confman
 PORTVERSION=	1.9.0b
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.timesinks.net/distfiles/
 
@@ -18,6 +19,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		sudo:${PORTSDIR}/security/sudo
 
 GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS+=	--localstatedir=/var
 
 MAN5=		confman.conf.5
 MAN8=		confadmin.8 confaudit.8 confexport.8 confman.8 confsync.8
