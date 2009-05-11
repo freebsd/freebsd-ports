@@ -1,41 +1,41 @@
-share/doc/webglimpse/confarc.html
-share/doc/webglimpse/install_1.6.html
-share/doc/webglimpse/sample.wgsiteconf
+%%PORTDOCS%%%%DOCSDIR%%/confarc.html
+%%PORTDOCS%%%%DOCSDIR%%/install_1.6.html
+%%PORTDOCS%%%%DOCSDIR%%/sample.wgsiteconf
 www/cgi-bin/mfs
 www/cgi-bin/webglimpse
 www/cgi-bin/webglimpse-fullsearch
-www/webglimpse/.archives
-www/webglimpse/.wgsiteconf
-www/webglimpse/Makefile
-www/webglimpse/addsearch
-www/webglimpse/confarc
-www/webglimpse/dist/glimpse-eye.jpg
-www/webglimpse/dist/glimpse_filters
-www/webglimpse/dist/wgall.html
-www/webglimpse/dist/wgbox.html
-www/webglimpse/dist/wgfilter-box
-www/webglimpse/dist/wgfilter-index
-www/webglimpse/dist/wgindex.html
-www/webglimpse/getfile
-www/webglimpse/lib/OutputTool.pm
-www/webglimpse/lib/URL.pl
-www/webglimpse/lib/config.pl
-www/webglimpse/lib/ftplib.pl
-www/webglimpse/lib/html2txt
-www/webglimpse/lib/html2txt.c
-www/webglimpse/lib/httpget
-www/webglimpse/lib/httpget.c
-www/webglimpse/lib/httpget.pl
-www/webglimpse/lib/siteconf.pl
-www/webglimpse/lib/url_get
-www/webglimpse/lib/url_get.pl
-www/webglimpse/lib/utils.h
-www/webglimpse/lib/webgutils.pl
-www/webglimpse/lib/wgserver.pl
-www/webglimpse/makecron
-www/webglimpse/makenh
-www/webglimpse/rmarc
-@dirrm www/webglimpse/dist
-@dirrm www/webglimpse/lib
-@dirrm www/webglimpse
-@dirrm share/doc/webglimpse
+%%WWWDIR%%/.archives
+%%WWWDIR%%/.wgsiteconf
+%%WWWDIR%%/Makefile
+%%WWWDIR%%/addsearch
+%%WWWDIR%%/confarc
+%%WWWDIR%%/dist/glimpse-eye.jpg
+%%WWWDIR%%/dist/glimpse_filters
+%%WWWDIR%%/dist/wgall.html
+%%WWWDIR%%/dist/wgbox.html
+%%WWWDIR%%/dist/wgfilter-box
+%%WWWDIR%%/dist/wgfilter-index
+%%WWWDIR%%/dist/wgindex.html
+%%WWWDIR%%/getfile
+%%WWWDIR%%/lib/OutputTool.pm
+%%WWWDIR%%/lib/URL.pl
+%%WWWDIR%%/lib/config.pl
+%%WWWDIR%%/lib/ftplib.pl
+%%WWWDIR%%/lib/html2txt
+%%WWWDIR%%/lib/html2txt.c
+%%WWWDIR%%/lib/httpget
+%%WWWDIR%%/lib/httpget.c
+%%WWWDIR%%/lib/httpget.pl
+%%WWWDIR%%/lib/siteconf.pl
+%%WWWDIR%%/lib/url_get
+%%WWWDIR%%/lib/url_get.pl
+%%WWWDIR%%/lib/utils.h
+%%WWWDIR%%/lib/webgutils.pl
+%%WWWDIR%%/lib/wgserver.pl
+%%WWWDIR%%/makecron
+%%WWWDIR%%/makenh
+%%WWWDIR%%/rmarc
+@dirrm %%WWWDIR%%/dist
+@dirrm %%WWWDIR%%/lib
+@dirrm %%WWWDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
