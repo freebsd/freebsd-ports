@@ -1,12 +1,11 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/native_libs.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/zip-safe
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/__init__.pyo
@@ -44,6 +43,18 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template/_ast24.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template/_ast24.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template/_ast24.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template/ast24.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template/ast24.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template/ast24.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template/astgae.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template/astgae.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template/astgae.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template/astutil.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template/astutil.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template/astutil.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template/base.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template/base.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template/base.pyo
@@ -71,99 +82,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/util.pyo
+%%PORTDOCS%%%%DOCSDIR%%/2000ft.graffle
 %%PORTDOCS%%%%DOCSDIR%%/2000ft.png
-%%PORTDOCS%%%%DOCSDIR%%/api/api-objects.txt
-%%PORTDOCS%%%%DOCSDIR%%/api/class-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/api/crarr.png
-%%PORTDOCS%%%%DOCSDIR%%/api/epydoc.css
-%%PORTDOCS%%%%DOCSDIR%%/api/epydoc.js
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.builder-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.builder.Element-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.builder.ElementFactory-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.builder.Fragment-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.core-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.core.Attrs-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.core.Markup-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.core.Namespace-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.core.QName-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.core.Stream-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.filters-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.filters.html-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.filters.html.HTMLFormFiller-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.filters.html.HTMLSanitizer-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.filters.i18n-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.filters.i18n.Translator-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.filters.transform-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.filters.transform.InjectorTransformation-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.filters.transform.StreamBuffer-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.filters.transform.Transformer-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.input-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.input.HTMLParser-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.input.ParseError-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.input.XMLParser-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.output-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.output.DocType-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.output.HTMLSerializer-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.output.TextSerializer-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.output.XHTMLSerializer-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.output.XMLSerializer-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.path-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.path.Path-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.path.PathSyntaxError-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.base-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.base.BadDirectiveError-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.base.Context-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.base.Template-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.base.TemplateError-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.base.TemplateMeta-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.base.TemplateRuntimeError-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.base.TemplateSyntaxError-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.directives-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.directives.AttrsDirective-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.directives.ChooseDirective-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.directives.ContentDirective-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.directives.DefDirective-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.directives.DirectiveMeta-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.directives.ForDirective-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.directives.IfDirective-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.directives.MatchDirective-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.directives.OtherwiseDirective-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.directives.ReplaceDirective-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.directives.StripDirective-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.directives.WhenDirective-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.directives.WithDirective-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.eval-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.eval.Code-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.eval.Expression-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.eval.LenientLookup-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.eval.StrictLookup-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.eval.Suite-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.eval.Undefined-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.eval.UndefinedError-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.interpolation-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.loader-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.loader.TemplateLoader-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.loader.TemplateNotFound-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.markup-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.markup.MarkupTemplate-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.plugin-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.plugin.AbstractTemplateEnginePlugin-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.plugin.ConfigurationError-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.plugin.MarkupTemplateEnginePlugin-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.plugin.TextTemplateEnginePlugin-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.text-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.text.NewTextTemplate-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.text.OldTextTemplate-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.util-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.util.LRUCache-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/help.html
-%%PORTDOCS%%%%DOCSDIR%%/api/identifier-index.html
-%%PORTDOCS%%%%DOCSDIR%%/api/index.html
-%%PORTDOCS%%%%DOCSDIR%%/api/module-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/api/redirect.html
-%%PORTDOCS%%%%DOCSDIR%%/api/since-index.html
 %%PORTDOCS%%%%DOCSDIR%%/common/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/common/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/common/conf/docutils.ini
@@ -178,29 +98,19 @@
 %%PORTDOCS%%%%DOCSDIR%%/common/style/shadow.gif
 %%PORTDOCS%%%%DOCSDIR%%/common/style/vertbars.png
 %%PORTDOCS%%%%DOCSDIR%%/common/template.html
-%%PORTDOCS%%%%DOCSDIR%%/filters.html
 %%PORTDOCS%%%%DOCSDIR%%/filters.txt
-%%PORTDOCS%%%%DOCSDIR%%/i18n.html
 %%PORTDOCS%%%%DOCSDIR%%/i18n.txt
-%%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/index.txt
-%%PORTDOCS%%%%DOCSDIR%%/install.html
 %%PORTDOCS%%%%DOCSDIR%%/install.txt
 %%PORTDOCS%%%%DOCSDIR%%/logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/logo.lineform/data
 %%PORTDOCS%%%%DOCSDIR%%/logo.png
-%%PORTDOCS%%%%DOCSDIR%%/plugin.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin.txt
-%%PORTDOCS%%%%DOCSDIR%%/streams.html
 %%PORTDOCS%%%%DOCSDIR%%/streams.txt
-%%PORTDOCS%%%%DOCSDIR%%/templates.html
 %%PORTDOCS%%%%DOCSDIR%%/templates.txt
-%%PORTDOCS%%%%DOCSDIR%%/text-templates.html
 %%PORTDOCS%%%%DOCSDIR%%/text-templates.txt
-%%PORTDOCS%%%%DOCSDIR%%/upgrade.html
 %%PORTDOCS%%%%DOCSDIR%%/upgrade.txt
-%%PORTDOCS%%%%DOCSDIR%%/xml-templates.html
 %%PORTDOCS%%%%DOCSDIR%%/xml-templates.txt
-%%PORTDOCS%%%%DOCSDIR%%/xpath.html
 %%PORTDOCS%%%%DOCSDIR%%/xpath.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/kidrun.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/layout.html
@@ -234,30 +144,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/myghty/template.myt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/simpletal/base.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/simpletal/template.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/dev.cfg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/config/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/config/app.cfg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/config/log.cfg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/controllers.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/json.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/model.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/release.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/static/images/favicon.ico
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/static/images/tg_under_the_hood.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/templates/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/templates/login.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/templates/master.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/templates/plain.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/templates/sitetemplate.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/templates/welcome.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/tests/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/tests/test_controllers.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/tests/test_model.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/sample-prod.cfg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/setup.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/start-genshitest.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/xpath.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/controller.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/form.py
@@ -277,22 +164,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/templates/info.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/templates/layout.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/templates/submit.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/webpy/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/webpy/hello.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/webpy/hello.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/webpy
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial/geddit/templates
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial/geddit/static
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial/geddit/lib
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial/geddit
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/tests
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/templates
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/static/images
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/static
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/config
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/simpletal
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/myghty
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/mako
@@ -307,10 +183,10 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/basic
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/logo.lineform
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/common/style
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/common/conf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/common
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/template
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/genshi/filters
