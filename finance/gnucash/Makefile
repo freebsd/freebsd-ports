@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	2.2.7
-PORTREVISION=	2
+PORTVERSION=	2.2.9
 CATEGORIES=	finance gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/
@@ -38,6 +37,7 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_XORG=	xpm x11
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_PERL5=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix libgsf_gnome libglade2 \
