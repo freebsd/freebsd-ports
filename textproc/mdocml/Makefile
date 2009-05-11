@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mdocml
-PORTVERSION=	1.7.7
+PORTVERSION=	1.7.13
 CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
   		https://www.spoerlein.net/pub/mdocml/
