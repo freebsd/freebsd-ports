@@ -1,16 +1,26 @@
 
 $FreeBSD$
 
---- Makefile.orig	Thu Oct 13 00:09:50 2005
-+++ Makefile	Thu Oct 13 00:10:03 2005
-@@ -12,8 +12,8 @@
- 
- headers = $(objects:.o=.h)
+--- Makefile.orig
++++ Makefile
+@@ -23,8 +23,8 @@
+ hasnoheader = main.h dos.h
+ sourcefiles = $(filter-out $(hasnoheader),$(allfiles)) device.h mem.h roms.h types.h
  
 -CC = g++
--cflags = -O3 -finline -frerun-loop-opt -Winline `sdl-config --cflags`
+-cflags = -O3 -finline -frerun-loop-opt -Winline -fomit-frame-pointer `sdl-config --cflags`
 +CC = $(CXX)
-+cflags = $(CFLAGS) -finline -frerun-loop-opt -Winline `sdl-config --cflags`
++cflags = $(CFLAGS) -finline -frerun-loop-opt -Winline -fomit-frame-pointer `sdl-config --cflags`
  libs = `sdl-config --libs` 
  
  #SDL_CFLAGS := $(shell sdl-config --cflags)
+@@ -72,6 +72,9 @@
+ prg.o : prg.cpp prg.h
+ 	$(CC) $(cflags) -c $< 
+ 
++serial.o : serial.cpp serial.h
++	$(CC) $(cflags) -c $< 
++
+ sound.o : sound.cpp sound.h
+ 	$(CC) $(cflags) -c $< 
+ 

@@ -7,8 +7,8 @@ $FreeBSD$
  #ifndef _SOUND_H
  #define _SOUND_H
  
--#include "SDL/SDL.h"
-+#include "SDL.h"
+-#include <SDL/SDL.h>
++#include <SDL.h>
+ #include "types.h"
  
- 
- class MEM;
+ extern void init_audio(unsigned int sampleFrq = 48000);

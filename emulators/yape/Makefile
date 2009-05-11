@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	yape
-PORTVERSION=	0.32.4
-PORTREVISION=	3
+PORTVERSION=	0.32.5
 CATEGORIES=	emulators
 MASTER_SITES=	http://yape.homeserver.hu/download/
 DISTNAME=	${PORTNAME}SDL-${PORTVERSION}
@@ -22,14 +21,6 @@ ALL_TARGET=	yape
 
 PLIST_FILES=	bin/yape
 PORTDOCS=	*
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile with GCC 4.2
-.endif
-.endif
 
 post-extract:
 	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(c|cpp|h|txt)" -print0 | \
@@ -49,4 +40,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README.SDL ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
