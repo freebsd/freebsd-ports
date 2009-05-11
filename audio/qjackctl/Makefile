@@ -7,6 +7,7 @@
 
 PORTNAME=	qjackctl
 DISTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qjackctl
@@ -19,7 +20,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake moc uic rcc gui xml linguist
+QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build gui xml linguist_build
 CFLAGS+=	${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
 CONFIGURE_ARGS+=ac_cv_path_ac_moc=${LOCALBASE}/bin/moc-qt4 \
 		ac_cv_path_ac_uic=${LOCALBASE}/bin/uic-qt4 \
