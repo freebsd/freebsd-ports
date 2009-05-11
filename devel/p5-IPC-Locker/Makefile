@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	IPC-Locker
-PORTVERSION=	1.483
+PORTVERSION=	1.484
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provide a server for locks and clients to access that server
