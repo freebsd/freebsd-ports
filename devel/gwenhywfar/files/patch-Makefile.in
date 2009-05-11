@@ -1,9 +1,9 @@
---- Makefile.in.orig	Mon Oct 15 21:42:31 2007
-+++ Makefile.in	Fri Jan 18 06:10:00 2008
-@@ -293,7 +293,7 @@
+--- Makefile.in.orig	2008-11-08 02:02:08.000000000 -0800
++++ Makefile.in	2008-12-08 11:54:41.000000000 -0800
+@@ -319,7 +319,7 @@
  dist_M4_DATA = gwenhywfar.m4
  ACLOCAL_AMFLAGS = -I m4
- BUILT_SOURCES = gwenhywfar/version.h gwenhywfar/types.h gwenhywfar/system.h
+ BUILT_SOURCES = gwenhywfar3/gwenhywfar/version.h gwenhywfar3/gwenhywfar/types.h gwenhywfar3/gwenhywfar/system.h
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(libdir)/../libdata/pkgconfig
  pkgconfig_DATA = gwenhywfar.pc
