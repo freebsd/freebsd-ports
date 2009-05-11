@@ -1613,6 +1613,7 @@
     SUBDIR += p5-MooseX-StrictConstructor
     SUBDIR += p5-MooseX-Types
     SUBDIR += p5-MooseX-Types-Path-Class
+    SUBDIR += p5-MooseX-Types-Structured
     SUBDIR += p5-Mouse
     SUBDIR += p5-MouseX-AttributeHelpers
     SUBDIR += p5-MouseX-ConfigFromFile
