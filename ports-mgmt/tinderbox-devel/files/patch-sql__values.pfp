@@ -1,30 +1,58 @@
 Index: portstools/tinderbox/sql/values.pfp
-diff -u /dev/null portstools/tinderbox/sql/values.pfp:1.3.2.1
---- /dev/null	Sun Apr 12 03:14:53 2009
+diff -u portstools/tinderbox/sql/values.pfp:1.3 portstools/tinderbox/sql/values.pfp:1.3.2.1
+--- portstools/tinderbox/sql/values.pfp:1.3	Fri Aug 15 13:18:23 2008
 +++ portstools/tinderbox/sql/values.pfp	Sat Mar 28 15:10:24 2009
-@@ -0,0 +1,71 @@
-+/*
-+ Port failure patterns.  Port error logs are searched for matches to these
-+ patterns in an attempt to put a simple reason behind why a port failed
-+ to build correctly.  Order is important here.  The order number field
-+ is the first field, and there should be a difference of 100 between
-+ patterns.  Changes here require a micro version bump to __DSVERSION__.
-+*/
-+
-+INSERT INTO port_fail_patterns VALUES (0, '.*', '__parent__', 0);
-+INSERT INTO port_fail_patterns VALUES (100, '(Error: mtree file ./etc/mtree/BSD.local.dist. is missing|error in pkg_delete|filesystem was touched prior to .make install|list of extra files and directories|list of files present before this port was installed|list of filesystem changes from before and after)', 'mtree', 0);
-+INSERT INTO port_fail_patterns VALUES (200, 'Configuration .* not supported', 'arch', 0);
-+INSERT INTO port_fail_patterns VALUES (300, '(configure: error:|Script.*configure.*failed unexpectedly|script.*failed: here are the contents of)', '__parent__', 0);
-+INSERT INTO port_fail_patterns VALUES (400, 'configure: error: cpu .* not supported', 'arch', 300);
-+INSERT INTO port_fail_patterns VALUES (500, 'configure: error: [Pp]erl (5.* required|version too old)', 'perl', 300);
-+INSERT INTO port_fail_patterns VALUES (600, '.*', 'configure_error', 300);
-+INSERT INTO port_fail_patterns VALUES (700, 'Couldn.t fetch it - please try', 'fetch', 0);
-+INSERT INTO port_fail_patterns VALUES (800, 'Error: shared library ".*" does not exist', 'LIB_DEPENDS', 0);
-+INSERT INTO port_fail_patterns VALUES (900, '\\.(c|cc|cxx|cpp|h|y)[1-9:]+ .+\\.h: No such file', '__parent__', 0);
-+INSERT INTO port_fail_patterns VALUES (1000, '(X11/.*|Xosdefs)\\.h: No such file', '__parent__', 900);
-+INSERT INTO port_fail_patterns VALUES (1100, 'XFree86-.*\\.tgz', 'missing_header', 1000);
-+INSERT INTO port_fail_patterns VALUES (1200, '.*', 'USE_XLIB', 1000);
-+INSERT INTO port_fail_patterns VALUES (1300, '.*', 'missing_header', 900);
+@@ -20,51 +20,52 @@
+ INSERT INTO port_fail_patterns VALUES (1100, 'XFree86-.*\\.tgz', 'missing_header', 1000);
+ INSERT INTO port_fail_patterns VALUES (1200, '.*', 'USE_XLIB', 1000);
+ INSERT INTO port_fail_patterns VALUES (1300, '.*', 'missing_header', 900);
+-INSERT INTO port_fail_patterns VALUES (1400, '(parse error|too (many|few) arguments to|argument.*doesn.*prototype|incompatible type for argument|conflicting types for|undeclared \\(first use (in |)this function\\)|incorrect number of parameters|has incomplete type and cannot be initialized|error: storage size.* isn.t known)', 'compiler_error', 0);
+-INSERT INTO port_fail_patterns VALUES (1500, '(ANSI C.. forbids|is a contravariance violation|changed for new ANSI .for. scoping|[0-9]: passing .* changes signedness|lacks a cast|redeclared as different kind of symbol|invalid type .* for default argument to|wrong type argument to unary exclamation mark|duplicate explicit instantiation of|incompatible types in assignment|assuming . on overloaded member function|call of overloaded .* is ambiguous|declaration of C function .* conflicts with|initialization of non-const reference type|using typedef-name .* after|[0-9]: size of array .* is too large|fixed or forbidden register .* for class|assignment of read-only variable|error: label at end of compound statement|error:.*(has no|is not a) member|error:.*is (private|protected)|error: uninitialized member|error: unrecognized command line option)', 'new_compiler_error', 0);
+-INSERT INTO port_fail_patterns VALUES (1600, '(syntax error before|friend declaration|no matching function for call to|.main. must return .int.|invalid conversion from|cannot be used as a macro name as it is an operator in C\\+\\+|is not a member of type|after previous specification in|no class template named|because worst conversion for the former|better than worst conversion|no match for.*operator|no match for call to|undeclared in namespace|is used as a type. but is not|error: array bound forbidden|error: class definition|error: expected constructor|error: there are no arguments|error:.*cast.*loses precision|ISO C\\+\\+ does not support)', 'bad_C++_code', 0);
+-INSERT INTO port_fail_patterns VALUES (1700, 'error: (array type has incomplete element type|extra qualification .* on member|invalid cast from type .* to type|invalid lvalue in (assignment|decrement|increment|unary)|invalid storage class for function|static declaration of.*follows non-static declaration|two or more data types in declaration specifiers|.* was not declared in this scope)', 'gcc4_error', 0);
+-INSERT INTO port_fail_patterns VALUES (1800, '(/usr/libexec/elf/ld: cannot find|undefined reference to|cannot open -l.*: No such file)', 'linker_error', 0);
+-INSERT INTO port_fail_patterns VALUES (1900, 'install: .*: No such file', 'install_error', 0);
+-INSERT INTO port_fail_patterns VALUES (2000, '(conflicts with installed package|is already installed - perhaps an older version|You may wish to ..make deinstall.. and install this port again)', 'depend_object', 0);
+-INSERT INTO port_fail_patterns VALUES (2100, 'core dumped', 'coredump', 0);
+-INSERT INTO port_fail_patterns VALUES (2200, '(.s: Assembler messages:|Cannot (determine .* target|find the byte order) for this architecture|^cc1: bad value.*for -mcpu.*switch|could not read symbols: File in wrong format|[Ee]rror: [Uu]nknown opcode|error.*Unsupported architecture|ENDIAN must be defined 0 or 1|failed to merge target-specific data|(file not recognized|failed to set dynamic section sizes): File format not recognized|impossible register constraint|inconsistent operand constraints in an .asm|Invalid configuration.*unknown.*machine.*unknown not recognized|invalid lvalue in asm statement|is only for.*. and you are running|not a valid 64 bit base/index expression|relocation R_X86_64_32.*can not be used when making a shared object|relocation truncated to fit: |shminit failed: Function not implemented|The target cpu. .*. is not currently supported.|This architecture seems to be neither big endian nor little endian|unknown register name|Unable to correct byte order|Unsupported platform. sorry|won.t run on this architecture)', 'arch', 0);
+-INSERT INTO port_fail_patterns VALUES (2300, 'autoconf([0-9\\-\\.]*): (not found|No such file or directory)', 'autoconf', 0);
+-INSERT INTO port_fail_patterns VALUES (2400, 'autoheader: not found', 'autoheader', 0);
+-INSERT INTO port_fail_patterns VALUES (2500, 'automake(.*): not found', 'automake', 0);
+-INSERT INTO port_fail_patterns VALUES (2600, 'Checksum mismatch', 'checksum', 0);
+-INSERT INTO port_fail_patterns VALUES (2700, 'chown:.*[Ii]nvalid argument', 'chown', 0);
+-INSERT INTO port_fail_patterns VALUES (2800, 'Shared object \\"libc.so.6\\" not found, required by', 'compat6x', 0);
+-INSERT INTO port_fail_patterns VALUES (2900, 'error in dependency .*, exiting', 'depend_package', 0);
+-INSERT INTO port_fail_patterns VALUES (3000, 'pkg_(add|create):.*(can.t find enough temporary space|projected size of .* exceeds available free space)', 'disk_full', 0);
+-INSERT INTO port_fail_patterns VALUES (3100, '((Can.t|unable to) open display|Cannot open /dev/tty for read|RuntimeError: cannot open display|You must run this program under the X-Window System)', 'DISPLAY', 0);
+-INSERT INTO port_fail_patterns VALUES (3200, '(No checksum recorded for|(Maybe|Either) .* is out of date. or)', 'distinfo_update', 0);
+-INSERT INTO port_fail_patterns VALUES (3300, 'Member name contains .\\.\\./', 'fetch', 0);
+-INSERT INTO port_fail_patterns VALUES (3400, '(pnohang: killing make checksum|fetch: transfer timed out)', 'fetch_timeout', 0);
+-INSERT INTO port_fail_patterns VALUES (3500, '(f77: not found|f77:No such file or directory|Unable to find a fortran compiler)', 'f77', 0);
+-INSERT INTO port_fail_patterns VALUES (3600, 'See <URL:http://gcc.gnu.org/bugs.html> for instructions.', 'gcc_bug', 0);
+-INSERT INTO port_fail_patterns VALUES (3700, '(Run-time system build failed for some reason|tar: Error opening archive: Failed to open.*No such file or directory)', 'install_error', 0);
+-INSERT INTO port_fail_patterns VALUES (3800, '(cc: .*libintl.*: No such file or directory|cc: ndbm\\.so: No such file or directory|error: The X11 shared library could not be loaded|libtool: link: cannot find the library|relocation against dynamic symbol|Shared object.*not found. required by)', 'linker_error', 0);
+-INSERT INTO port_fail_patterns VALUES (3900, 'Could not create Makefile', 'makefile', 0);
+-INSERT INTO port_fail_patterns VALUES (4000, 'make.*(cannot open [Mm]akefile|don.t know how to make|fatal errors encountered|No rule to make target|built-in)(?!\\s*regression-test.continuing)', 'makefile', 0);
+-INSERT INTO port_fail_patterns VALUES (4100, '/usr/.*/man/.*: No such file or directory', 'manpage', 0);
+-INSERT INTO port_fail_patterns VALUES (4200, 'out of .* hunks .*--saving rejects to', 'patch', 0);
+-INSERT INTO port_fail_patterns VALUES (4300, '(/usr/local/bin/(perl|perl5.6.1):.*(not found|No such file or directory)|cp:.*site_perl: No such file or directory|perl(.*): Perl is not installed. try .pkg_add -r perl|Perl .* required--this is only version)', 'perl', 0);
+-INSERT INTO port_fail_patterns VALUES (4400, 'BEGIN failed--compilation aborted at ..Makefile.PL line', 'perl', 0);
+-INSERT INTO port_fail_patterns VALUES (4500, '(Abort trap|Bus error|Signal 1[01])', 'process_failed', 0);
+-INSERT INTO port_fail_patterns VALUES (4600, 'python: not found', 'python', 0);
+-INSERT INTO port_fail_patterns VALUES (4700, '(USER   PID  PPID  PGID.*JOBC STAT  TT       TIME COMMAND|pnohang: killing make package)', 'runaway_process', 0);
+-INSERT INTO port_fail_patterns VALUES (4800, 'Segmentation fault', 'segfault', 0);
+-INSERT INTO port_fail_patterns VALUES (4900, 'initializer element is not constant', 'stdio', 0);
+-INSERT INTO port_fail_patterns VALUES (5000, 'structure has no member named', 'struct_changes', 0);
+-INSERT INTO port_fail_patterns VALUES (5100, 'shminit failed: Permission denied', 'sysvipc', 0);
+-INSERT INTO port_fail_patterns VALUES (5200, '(/usr/bin/ld: cannot find -l(pthread|XThrStub)|cannot find -lc_r|checking for.*lc_r\\.\\.\\. no|Error: pthreads are required to build this package|Please install/update your POSIX threads (pthreads) library|requires.*thread support|: The -pthread option is deprecated)', 'threads', 0);
+-INSERT INTO port_fail_patterns VALUES (5300, '<varargs.h> is obsolete with this version of GCC', 'varargs', 0);
+-INSERT INTO port_fail_patterns VALUES (5400, '[Rr]ead-[Oo]nly [Ff]ile [Ss]ystem', 'WRKDIR', 0);
+-INSERT INTO port_fail_patterns VALUES (5500, 'cc1.*warnings being treated as errors', 'compiler_error', 0);
+-INSERT INTO port_fail_patterns VALUES (5600, 'pkg_create: make_dist: tar command failed with code', 'PLIST', 0);
+-INSERT INTO port_fail_patterns VALUES (5700, 'Cannot stat: ', 'configure_error', 0);
+-INSERT INTO port_fail_patterns VALUES (5800, '/usr/bin/ld: cannot find -l', 'linker_error', 0);
+-INSERT INTO port_fail_patterns VALUES (5900, 'cd: can.t cd to', 'NFS', 0);
+-INSERT INTO port_fail_patterns VALUES (6000, 'tar: Error exit delayed from previous errors', 'install_error', 0);
 +INSERT INTO port_fail_patterns VALUES (1400, '(nested function.*declared but never defined|warning: nested extern declaration)', 'nested_declaration', 0);
 +INSERT INTO port_fail_patterns VALUES (1500, '(parse error|too (many|few) arguments to|argument.*doesn.*prototype|incompatible type for argument|conflicting types for|undeclared \\(first use (in |)this function\\)|incorrect number of parameters|has incomplete type and cannot be initialized|error: storage size.* isn.t known)', 'compiler_error', 0);
 +INSERT INTO port_fail_patterns VALUES (1600, '(ANSI C.. forbids|is a contravariance violation|changed for new ANSI .for. scoping|[0-9]: passing .* changes signedness|lacks a cast|redeclared as different kind of symbol|invalid type .* for default argument to|wrong type argument to unary exclamation mark|duplicate explicit instantiation of|incompatible types in assignment|assuming . on overloaded member function|call of overloaded .* is ambiguous|declaration of C function .* conflicts with|initialization of non-const reference type|using typedef-name .* after|[0-9]: size of array .* is too large|fixed or forbidden register .* for class|assignment of read-only variable|error: label at end of compound statement|error:.*(has no|is not a) member|error:.*is (private|protected)|error: uninitialized member|error: unrecognized command line option)', 'new_compiler_error', 0);
@@ -73,4 +101,4 @@ diff -u /dev/null portstools/tinderbox/sql/values.pfp:1.3.2.1
 +INSERT INTO port_fail_patterns VALUES (5900, '/usr/bin/ld: cannot find -l', 'linker_error', 0);
 +INSERT INTO port_fail_patterns VALUES (6000, 'cd: can.t cd to', 'NFS', 0);
 +INSERT INTO port_fail_patterns VALUES (6100, 'tar: Error exit delayed from previous errors', 'install_error', 0);
-+INSERT INTO port_fail_patterns VALUES (2147483647, '.*', '???', 0);
+ INSERT INTO port_fail_patterns VALUES (2147483647, '.*', '???', 0);

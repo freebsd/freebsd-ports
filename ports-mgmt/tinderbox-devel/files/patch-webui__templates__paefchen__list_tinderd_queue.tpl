@@ -1,7 +1,7 @@
 Index: portstools/tinderbox/webui/templates/paefchen/list_tinderd_queue.tpl
-diff -u portstools/tinderbox/webui/templates/paefchen/list_tinderd_queue.tpl:1.6 portstools/tinderbox/webui/templates/paefchen/list_tinderd_queue.tpl:1.7
---- portstools/tinderbox/webui/templates/paefchen/list_tinderd_queue.tpl:1.6	Wed Feb 11 03:39:26 2009
-+++ portstools/tinderbox/webui/templates/paefchen/list_tinderd_queue.tpl	Sun Apr  5 17:35:38 2009
+diff -u portstools/tinderbox/webui/templates/paefchen/list_tinderd_queue.tpl:1.2.2.4 portstools/tinderbox/webui/templates/paefchen/list_tinderd_queue.tpl:1.2.2.6
+--- portstools/tinderbox/webui/templates/paefchen/list_tinderd_queue.tpl:1.2.2.4	Wed Feb 11 03:41:22 2009
++++ portstools/tinderbox/webui/templates/paefchen/list_tinderd_queue.tpl	Wed May  6 15:07:02 2009
 @@ -4,12 +4,13 @@
  ?>
  <!-- $Paefchen: FreeBSD/tinderbox/webui/templates/paefchen/list_tinderd_queue.tpl,v 1.1 2008/01/05 12:25:17 as Exp $ //-->
@@ -70,14 +70,17 @@ diff -u portstools/tinderbox/webui/templates/paefchen/list_tinderd_queue.tpl:1.6
  <table>
  	<tr>
  		<th>Build</th>
-@@ -52,6 +66,7 @@
+@@ -52,8 +66,9 @@
  		<th>&nbsp;</th>
  	</tr>
  	<form method="post" action="index.php">
 +	<fieldset>
  	<input type="hidden" name="action" value="add_tinderd_queue" />
- 	<input type="hidden" name="entry_id" value="<?php echo $row['entry_id']?>" />
+-	<input type="hidden" name="entry_id" value="<?php echo $row['entry_id']?>" />
++	<input type="hidden" name="entry_id" value="<?php if(!empty($row['entry_id']))echo $row['entry_id']?>" />
  	<input type="hidden" name="filter_build_id" value="<?php echo $build_id?>" />
+ 	<tr>
+ 		<td>
 @@ -78,11 +93,13 @@
  		</td>
  		<td colspan="3"><input type="submit" name="add_tinderd_queue" value="add" /></td>

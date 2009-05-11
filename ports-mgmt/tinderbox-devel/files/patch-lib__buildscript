@@ -1,0 +1,28 @@
+Index: portstools/tinderbox/lib/buildscript
+diff -u portstools/tinderbox/lib/buildscript:1.51.2.2 portstools/tinderbox/lib/buildscript:1.51.2.3
+--- portstools/tinderbox/lib/buildscript:1.51.2.2	Fri Dec 26 19:52:59 2008
++++ portstools/tinderbox/lib/buildscript	Sat May  9 14:42:30 2009
+@@ -156,6 +156,7 @@
+ ./etc/rc.conf
+ ./work/*
+ ./compat/linux/proc
++./proc
+ ./usr/share/man/cat*/*
+ ./${L}/etc/apache
+ ./${L}/etc/apache2
+@@ -221,6 +222,7 @@
+ ./tmp/*
+ ./work/*
+ ./compat/linux/proc
++./proc
+ ./root/*
+ ./var/mail/*
+ ./var/tmp/*
+@@ -293,6 +295,7 @@
+ ./etc/rc.conf
+ ./work/*
+ ./compat/linux/proc
++./proc
+ EOF
+   mtree -X /tmp/mtree.exclude -xcn -k uid,gid,mode -p / > /tmp/mtree
+ 
