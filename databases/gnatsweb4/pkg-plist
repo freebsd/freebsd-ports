@@ -1,20 +1,11 @@
-@comment $FreeBSD$
-@unexec if cmp -s %D/etc/gnatsweb/gnatsweb-site.pl %D/etc/gnatsweb/gnatsweb-site.pl.default; then rm -f %D/etc/gnatsweb/gnatsweb-site.pl; fi
-etc/gnatsweb/gnatsweb-site.pl.default
+@unexec if cmp -s %%ETCDIR%%/gnatsweb-site.pl %%ETCDIR%%/gnatsweb-site.pl.default; then rm -f %%ETCDIR%%/gnatsweb-site.pl; fi
+%%ETCDIR%%/gnatsweb-site.pl.default
 @exec [ -f %B/gnatsweb-site.pl ] || cp %B/%f %B/gnatsweb-site.pl
-@dirrmtry etc/gnatsweb
 %%CGI_DIR%%/gnatsweb.pl
 %%CGI_DIR%%/gnatsweb-site.pl
 %%CGI_DIR%%/gnatsweb.html
-%%PORTDOCS%%%%DOCSDIR%%/CUSTOMIZE
-%%PORTDOCS%%%%DOCSDIR%%/CUSTOMIZE.cb
-%%PORTDOCS%%%%DOCSDIR%%/CUSTOMIZE.vars
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TROUBLESHOOTING
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%%%EXAMPLESDIR%%/gnatsweb-site-example.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%ETCDIR%%/gnatsweb-site.pl
 @dirrmtry %%CGI_DIR%%
+@dirrmtry %%ETCDIR%%
+@dirrm %%WWWDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
