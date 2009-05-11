@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Truncate
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,8 +21,5 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	5.8.0+
 
 MAN3=		HTML::Truncate.3
-
-post-patch:
-	${REINPLACE_CMD} -e 's,Yesh.pm,HTML/Truncate.pm,' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
