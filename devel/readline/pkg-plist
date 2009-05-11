@@ -8,8 +8,8 @@ include/readline/rlconf.h
 include/readline/rltypedefs.h
 lib/libreadline.a
 lib/libhistory.a
-lib/libhistory.so.5
+lib/libhistory.so.6
 lib/libhistory.so
-lib/libreadline.so.5
+lib/libreadline.so.6
 lib/libreadline.so
 @dirrm include/readline
