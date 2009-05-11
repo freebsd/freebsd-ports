@@ -8,7 +8,7 @@
 PORTNAME=	manencode
 PORTVERSION=	1.0
 PORTREVISION=	1
-CATEGORIES=	multimedia kde
+CATEGORIES=	multimedia
 MASTER_SITES=	http://csgib36.ifrance.com/Manencode/
 
 MAINTAINER=	trebestie@gmail.com
@@ -19,7 +19,10 @@ RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder  \
 
 USE_GMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc rcc uic qmake corelib
+QT_COMPONENTS=	gui moc_build rcc_build uic_build qmake_build
+
+BROKEN=		master sites disappeared, project abandoned
+EXPIRATION_DATE=2009-06-11
 
 MANENCODEDIR=	${PREFIX}/share/${PORTNAME}
 TRANSLATION=	_en
@@ -33,9 +36,6 @@ INTERFACE=	DVD.png DVDOK.png bt_play.png bt_stop.png \
 		son.png sstitres.png toolbar.PNG toolbar_2.PNG \
 		uk.png window.png
 
-MAKE_ENV?=	QTDIR=${QT_PREFIX}
-QMAKE?=	${LOCALBASE}/bin/qmake-qt4
-QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
 WRKSRC=	${WRKDIR}/Manencode-${DISTVERSION}
 
 DESKTOP_ENTRIES=	"Manencode" \
@@ -47,7 +47,7 @@ DESKTOP_ENTRIES=	"Manencode" \
 
 do-configure:
 	@cd ${WRKSRC} \
-	&&  ${SETENV} ${MAKE_ENV} ${QMAKE} -spec ${QMAKESPEC} \
+	&&  ${SETENV} ${CONFIGURE_ENV} ${QMAKE} -spec ${QMAKESPEC} \
 	INCLUDEPATH+=${LOCALBASE}/include
 
 pre-install:
