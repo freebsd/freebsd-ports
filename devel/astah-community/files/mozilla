@@ -1,10 +1,16 @@
 #!/bin/sh
 
-# eliminate own path from PATH (without this, cause a inifinite loop)
+# eliminate own path from PATH (without this, may cause a inifinite loop)
 PATH=${PATH#$(dirname $0)}
 
-# add your favorite browser in the top of the list
-for browser in mozilla linux-mozilla firefox3 firefox linux-firefox firebird opera linux-opera
+# set your favorite browser to JUDE_BROWSER environmental variable
+for browser in \
+${JUDE_BROWSER} \
+firefox-devel linux-firefox-devel \
+firefox3 \
+firefox linux-firefox \
+seamonkey-devel linux-seamonkey-devel seamonkey linux-seamonkey \
+opera-devel opera linux-opera
 do
     type $browser > /dev/null 2>&1 && exec $browser "$@"
 done

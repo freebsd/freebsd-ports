@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jude-community
-PORTVERSION=	5.4.1
+PORTVERSION=	5.5
 CATEGORIES=	devel java
 MASTER_SITES=	# you have to register yourself as a member to download
 DISTNAME=	${PORTNAME}-${PORTVERSION:S!.!_!g}
@@ -16,21 +16,13 @@ COMMENT=	A Java/UML Object-Oriented Design Tool
 
 USE_ZIP=	yes
 
-# Export HTML function can be used with JDK 1.4 only.
-# (But it can work with JDK 1.5 + copying JDK 1.4 tools.jar to ${DATADIR})
-OPTIONS=	EXPORT_HTML "Enable Exporting HTML function (needs JDK1.4)" Off
-
 .include <bsd.port.pre.mk>
 
-# In case you are going to use JDK1.5+ in Japanese environment, make sure
+# In case you are going to use JDK1.5 in Japanese environment, make sure
 # you have prepared following command to avoid from font problem:
 # ln -s ${LOCALBASE}/lib/X11/fonts/TrueType \
 #     ${LOCALBASE}/diablo-jdk1.5.0/jre/lib/fonts/fallback
-.if defined(WITH_EXPORT_HTML)
-JAVA_VERSION=	1.4
-.else
-JAVA_VERSION=	1.4+
-.endif
+JAVA_VERSION=	1.5+
 
 USE_JAVA=	yes
 JAVA_OS=	native
@@ -54,15 +46,14 @@ PLIST_FILES=	bin/jude
 PORTDATA=	${PORTNAME}.jar jude-api.jar jude-gui_en.properties_org \
 		jude.ico jude-doc.ico Welcome.jude Welcome_ja.jude \
 		template \
-		mozilla
-.endif
-.if defined(WITH_EXPORT_HTML)
-PORTDATA+=	tools.jar
+		mozilla \
+		tools.jar
 .endif
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ReleaseNote-e.html ReleaseNote.html \
 		ProductInformation.txt \
+		README-e.txt README.txt \
 		API_sample_program_license_agreement-e.txt \
 		API_sample_program_license_agreement.txt
 .endif
@@ -78,12 +69,10 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/jude ${PREFIX}/bin
 .if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA:Nmozilla}" ${DATADIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA:Nmozilla:Ntools.jar}" ${DATADIR})
 	${INSTALL_SCRIPT} ${FILESDIR}/mozilla ${DATADIR}
-.if defined(WITH_EXPORT_HTML)
-	# ExportHTML needs lib/tools.jar of JDK1.4
+	# ExportHTML needs lib/tools.jar of JDK1.5/1.6
 	${LN} -s ${JAVA_HOME}/lib/tools.jar ${DATADIR}
-.endif
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
