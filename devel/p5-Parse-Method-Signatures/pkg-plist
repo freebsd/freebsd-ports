@@ -1,0 +1,22 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Method/Signatures/.packlist
+%%SITE_PERL%%/Parse/Method/Signatures.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Param.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Param/Bindable.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Param/Named.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Param/Placeholder.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Param/Positional.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Param/Unpacked.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Param/Unpacked/Array.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Param/Unpacked/Hash.pm
+%%SITE_PERL%%/Parse/Method/Signatures/ParamCollection.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Sig.pm
+%%SITE_PERL%%/Parse/Method/Signatures/TypeConstraint.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Types.pm
+@dirrm %%SITE_PERL%%/Parse/Method/Signatures/Param/Unpacked
+@dirrm %%SITE_PERL%%/Parse/Method/Signatures/Param
+@dirrm %%SITE_PERL%%/Parse/Method/Signatures
+@dirrmtry %%SITE_PERL%%/Parse/Method
+@dirrmtry %%SITE_PERL%%/Parse
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Method/Signatures
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Method
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse
