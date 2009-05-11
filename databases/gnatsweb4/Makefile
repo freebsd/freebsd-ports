@@ -7,6 +7,7 @@
 
 PORTNAME=		gnatsweb
 PORTVERSION=		4.00
+PORTREVISION=	1
 CATEGORIES=		databases devel www
 MASTER_SITES=		GNU
 
