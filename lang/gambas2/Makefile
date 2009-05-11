@@ -7,6 +7,7 @@
 
 PORTNAME=	gambas2
 PORTVERSION=	2.12
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -22,7 +23,7 @@ NO_MTREE=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
-OPTIONS=	IDE	"IDE for the gambas programming language"	off \
+OPTIONS=	IDE	"IDE for the gambas programming language"	on \
 		COMPRESS_BZLIB2	"The gambas bzlib2 compression component"	on \
 		COMPRESS_ZLIB	"The gambas zlib compression component"	on \
 		CORBA	"The gambas corba component"	on \
