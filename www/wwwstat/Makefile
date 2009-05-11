@@ -7,7 +7,7 @@
 
 PORTNAME=	wwwstat
 PORTVERSION=	2.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.ics.uci.edu/pub/websoft/wwwstat/ \
 		ftp://ftp.gwdg.de/pub/misc/www-stat/websoft/wwwstat/
@@ -16,35 +16,29 @@ DISTNAME=	${PORTNAME}-2.0
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	patch-2.01.txt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Webserver logfile analysis package
 
-RUN_DEPENDS=	${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/${APACHE_PORT}
-
+USE_APACHE=	1.3
 USE_PERL5=	yes
-APACHE_COMPAT=	yes
 MAKE_ENV+=	PERL5=${PERL5}
-DIST_SUBDIR=	wwwstat
-MAN1=		wwwstat.1 splitlog.1
-SITEPERL=	${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}
+
+MAN1=	wwwstat.1 splitlog.1
 
 do-install:
-	@if [ ! -d ${SITEPERL} ]; then \
-		${MKDIR} ${SITEPERL}; \
-	fi
 	@${INSTALL_SCRIPT} ${WRKSRC}/wwwstat    ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/splitlog   ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/monthly    ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/wwwerrs    ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/oldlog2new ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/wwwstat.rc  	${SITEPERL}
-	@${INSTALL_DATA} ${WRKSRC}/splitlog.rc 	${SITEPERL}
-	@${INSTALL_DATA} ${WRKSRC}/domains.pl 	${SITEPERL}
 	@${INSTALL_MAN} ${WRKSRC}/wwwstat.1  ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/splitlog.1 ${PREFIX}/man/man1
+	@${INSTALL_DATA} ${WRKSRC}/wwwstat.rc  	${SITE_PERL}
+	@${INSTALL_DATA} ${WRKSRC}/splitlog.rc 	${SITE_PERL}
+	@${INSTALL_DATA} ${WRKSRC}/domains.pl 	${SITE_PERL}
 	@${ECHO_MSG} "Edit the wwwstat.rc and splitlog.rc file ..."
 	@${ECHO_MSG} "If needed, edit wwwstat and splitlog directly ..."
 	@${ECHO_MSG} "These files are located in:"
-	@${ECHO_MSG} "	${SITEPERL}"
+	@${ECHO_MSG} "	${SITE_PERL}"
 
 .include <bsd.port.mk>
