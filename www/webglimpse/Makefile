@@ -12,18 +12,17 @@ CATEGORIES=	www textproc
 MASTER_SITES=	ftp://ftp.deva.net/pub/sources/ir/glimpse/
 DISTNAME=	${PKGNAME}.src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	WWW interface to Glimpse search engine
 
-RUN_DEPENDS+=	${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/${APACHE_PORT}
-RUN_DEPENDS+=	glimpse:${PORTSDIR}/textproc/glimpse
+RUN_DEPENDS=	glimpse:${PORTSDIR}/textproc/glimpse
 
-WRKSRC=		${WRKDIR}/webglimpse-1.6.edu
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.edu
 
-NO_CDROM=	depends on glimpse
 USE_PERL5=	yes
+USE_APACHE=	1.3
+NO_CDROM=	depends on glimpse
 NO_BUILD=	yes
-APACHE_COMPAT=	yes
 
 pre-configure:
 .for i in wginstall wginstall.pl
@@ -32,14 +31,14 @@ pre-configure:
 .endfor
 
 do-install:
-	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
-		${PREFIX}/www/webglimpse
+	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 ${WWWDIR}/
 .if defined(PACKAGE_BUILDING)
-	${INSTALL_DATA} ${FILESDIR}/.wgsiteconf ${PREFIX}/www/webglimpse
+	${INSTALL_DATA} ${FILESDIR}/.wgsiteconf ${WWWDIR}/
 .endif
 	cd ${WRKSRC}; ./wginstall
-	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
-		${PREFIX}/share/doc/webglimpse
-	cd ${WRKSRC}/docs && ${INSTALL_DATA} * ${PREFIX}/share/doc/webglimpse
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/docs && ${INSTALL_DATA} * ${DOCSDIR}/
+.endif
 
 .include <bsd.port.mk>
