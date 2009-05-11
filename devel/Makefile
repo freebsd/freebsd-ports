@@ -1289,6 +1289,7 @@
     SUBDIR += p5-Devel-NYTProf
     SUBDIR += p5-Devel-ObjectTracker
     SUBDIR += p5-Devel-PPPort
+    SUBDIR += p5-Devel-PartialDump
     SUBDIR += p5-Devel-Pointer
     SUBDIR += p5-Devel-Profile
     SUBDIR += p5-Devel-Profiler

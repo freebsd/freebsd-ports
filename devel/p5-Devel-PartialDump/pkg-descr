@@ -1,0 +1,13 @@
+Devel::PartialDump is a data dumper optimized for logging of arbitrary
+parameters.
+
+It attempts to truncate overly verbose data, in a way that is hopefully
+more useful for diagnostics warnings than
+
+	warn Dumper(@stuff);
+
+Unlike other data dumping modules there are no attempts at correctness
+or cross referencing, this is only meant to provide a slightly deeper
+look into the data in question.
+
+WWW: http://search.cpan.org/dist/Devel-PartialDump/
