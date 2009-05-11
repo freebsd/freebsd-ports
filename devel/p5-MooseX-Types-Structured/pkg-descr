@@ -1,0 +1,15 @@
+A structured type constraint is a standard container Moose type
+constraint, such as an ArrayRef or HashRef, which has been enhanced to
+allow you to explicitly name all the allowed type constraints inside the
+structure.  The generalized form is:
+
+	TypeConstraint[@TypeParameters or %TypeParameters]
+
+Where 'TypeParameters' is an array reference or hash references of
+Moose::Meta::TypeConstraint objects.
+
+This type library enables structured type constraints.  It is built on
+top of the MooseX::Types library system, so you should review the
+documentation for that if you are not familiar with it.
+
+WWW: http://search.cpan.org/dist/MooseX-Types-Structured/
