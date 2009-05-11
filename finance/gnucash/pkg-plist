@@ -222,8 +222,8 @@ lib/gnucash/libgncmod-gnome-search.la
 lib/gnucash/libgncmod-gnome-search.so
 lib/gnucash/libgncmod-gnome-utils.la
 lib/gnucash/libgncmod-gnome-utils.so
-%%AQBANKING%%lib/gnucash/libgncmod-hbci.la
-%%AQBANKING%%lib/gnucash/libgncmod-hbci.so
+%%AQBANKING%%lib/gnucash/libgncmod-aqbanking.la
+%%AQBANKING%%lib/gnucash/libgncmod-aqbanking.so
 lib/gnucash/libgncmod-ledger-core.la
 lib/gnucash/libgncmod-ledger-core.so
 lib/gnucash/libgncmod-locale-reports-us.la
@@ -637,9 +637,7 @@ share/gnucash/glade/fincalc.glade
 share/gnucash/glade/generic-import.glade
 share/gnucash/glade/gnc-date-format.glade
 share/gnucash/glade/gnc-gui-query.glade
-%%AQBANKING%%share/gnucash/glade/hbci.glade
-%%AQBANKING%%share/gnucash/glade/hbcipass.glade
-%%AQBANKING%%share/gnucash/glade/hbciprefs.glade
+%%AQBANKING%%share/gnucash/glade/aqbanking.glade
 share/gnucash/glade/import-provider-format.glade
 share/gnucash/glade/invoice.glade
 share/gnucash/glade/job.glade
@@ -818,7 +816,7 @@ share/gnucash/ui/gnc-plugin-basic-commands-ui.xml
 share/gnucash/ui/gnc-plugin-budget-ui.xml
 share/gnucash/ui/gnc-plugin-business-ui.xml
 share/gnucash/ui/gnc-plugin-file-history-ui.xml
-%%AQBANKING%%share/gnucash/ui/gnc-plugin-hbci-ui.xml
+%%AQBANKING%%share/gnucash/ui/gnc-plugin-aqbanking-ui.xml
 share/gnucash/ui/gnc-plugin-log-replay-ui.xml
 %%OFX%%share/gnucash/ui/gnc-plugin-ofx-ui.xml
 share/gnucash/ui/gnc-plugin-page-account-tree-ui.xml
