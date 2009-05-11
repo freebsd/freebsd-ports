@@ -6,20 +6,23 @@
 #
 
 PORTNAME=	HTML-Truncate
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	truncate HTML by character count while preserving well-formedness
+COMMENT=	Truncate HTML by character count while preserving well-formedness
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/TokeParser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-HTML-Parser>=2:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTML-Tagset>=3:${PORTSDIR}/www/p5-HTML-Tagset
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
 
-MAN3=	HTML::Truncate.3
+MAN3=		HTML::Truncate.3
+
+post-patch:
+	${REINPLACE_CMD} -e 's,Yesh.pm,HTML/Truncate.pm,' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
