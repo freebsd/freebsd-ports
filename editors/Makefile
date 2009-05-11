@@ -56,6 +56,7 @@
     SUBDIR += flim-xemacs21-mule
     SUBDIR += fpc-ide
     SUBDIR += fte
+    SUBDIR += gambas2-ide
     SUBDIR += gate
     SUBDIR += gedit
     SUBDIR += gedit-plugins

@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+bin/gambas2
+bin/gambas2-database-manager.gambas
+bin/gambas2.gambas
+bin/gbs2.gambas
+bin/gbs2
