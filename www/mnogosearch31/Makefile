@@ -16,6 +16,9 @@ COMMENT=	Full featured SQL-based hypertext search engine
 
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 
+DEPRECATED=	Use www/mnogosearch instead, this version is ancient
+EXPIRATION_DATE=	2009-05-20
+
 MAN1=		indexer.1
 MAN5=		indexer.conf.5
 
