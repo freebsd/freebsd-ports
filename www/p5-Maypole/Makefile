@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/T/TE/TEEJAY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	MVC web application framework
 
 BUILD_DEPENDS=	p5-CGI-Simple>0:${PORTSDIR}/www/p5-CGI-Simple \
@@ -46,10 +46,10 @@ PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MODPERL)
+.if defined(WITH_MODPERL2)
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
 .endif
-.if defined(WITH_MODPERL2)
+.if defined(WITH_MODPERL)
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
 .endif
 
