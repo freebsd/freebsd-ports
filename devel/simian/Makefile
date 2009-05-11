@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.redhillconsulting.com.au/products/simian/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Similarity analyser for source and other text files
 
 .if defined(WITHOUT_JAVA) && !defined(WITH_MONO)

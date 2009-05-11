@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/aifftools
 DISTNAME=	libaiff-5.0-release
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Read and write AIFF files
 
 GNU_CONFIGURE=	yes
