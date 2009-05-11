@@ -889,6 +889,7 @@
     SUBDIR += py-expat
     SUBDIR += py-feedparser
     SUBDIR += py-genshi
+    SUBDIR += py-genshi-devel
     SUBDIR += py-html2text
     SUBDIR += py-hyperestraier
     SUBDIR += py-hyperestraier-python
