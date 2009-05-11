@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Inline-Files
-PORTVERSION=	0.62
+PORTVERSION=	0.63
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,12 +15,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Multiple virtual files at the end of your code
 
-BUILD_DEPENDS=	p5-Filter>=0:${PORTSDIR}/devel/p5-Filter
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_CONFIGURE=	yes
 
 MAN3=	Inline::Files.3 \
 	Inline::Files::Virtual.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+BUILD_DEPENDS+=	p5-Filter>=0:${PORTSDIR}/devel/p5-Filter
+RUN_DEPENDS+=	p5-Filter>=0:${PORTSDIR}/devel/p5-Filter
+.endif
+
+.include <bsd.port.post.mk>
