@@ -7,6 +7,7 @@
 
 PORTNAME=	jackit
 PORTVERSION=	0.116.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://jackaudio.org/downloads/
 DISTNAME=	jack-audio-connection-kit-${PORTVERSION}
@@ -18,8 +19,6 @@ LIB_DEPENDS=	portaudio.0:${PORTSDIR}/audio/portaudio \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		celt.0:${PORTSDIR}/audio/celt
-
-OPTIONS=	DOCS "Build HTML documentation. Requires doxygen/TeX." off
 
 LATEST_LINK=	jack
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}" LDFLAGS="-L${LOCALBASE}/lib" \
@@ -36,30 +35,14 @@ MAN1=		jackd.1 jackstart.1
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/bin/doxygen) && !defined(WITH_GNOKII)
-DOCS_OVERRIDE=	yes
-WITH_DOCS=	yes
-.endif
-
-.if defined(WITH_DOCS) || defined(PACKAGE_BUILDING)
+.if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-PLIST_SUB+=	DOCS=""
 .else
 CONFIGURE_ENV+=	ac_cv_prog_HAVE_DOXYGEN="false"
-PLIST_SUB+=	DOCS="@comment "
 .endif
 
 .if exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
-.endif
-
-pre-everything::
-.if defined(DOCS_OVERRIDE)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "**********************************************************"
-	@${ECHO_MSG} "* Doxygen has been detected, documentation will be built *"
-	@${ECHO_MSG} "**********************************************************"
-	@${ECHO_MSG}
 .endif
 
 post-patch:
@@ -76,6 +59,7 @@ post-patch:
 		${WRKSRC}/example-clients/Makefile.in
 	@${REINPLACE_CMD} -e 's|md5sum|md5 -q|g' \
 		${WRKSRC}/jackd/Makefile.in
+	@${RM} -f ${WRKSRC}/doc/reference/html/*
 
 post-build:
 	@${RM} -f ${WRKSRC}/doc/reference/html/dir__2F*
