@@ -204,6 +204,7 @@ R-cran-RSvgDevice               ports/math/R-cran-RSvgDevice
 R-cran-Zelig                    ports/math/R-cran-Zelig
 R-cran-car                      ports/math/R-cran-car
 R-cran-gpclib                   ports/math/R-cran-gpclib
+R-cran-igraph                   ports/math/R-cran-igraph
 R-cran-sm                       ports/math/R-cran-sm
 R-sp                            ports/math/R-sp
 STk                             ports/lang/STk
@@ -827,6 +828,7 @@ azureus                         ports/net-p2p/azureus
 azureus2                        ports/net-p2p/azureus2
 b2bua                           ports/net/b2bua
 b2evolution                     ports/www/b2evolution
+b43-fwcutter                    ports/sysutils/b43-fwcutter
 babel                           ports/biology/babel
 babl                            ports/x11/babl
 babytrans                       ports/deskutils/babytrans
@@ -1236,6 +1238,7 @@ buttonbox                       ports/x11/buttonbox
 buzhug                          ports/databases/buzhug
 bvi                             ports/editors/bvi
 bwbasic                         ports/lang/bwbasic
+bwi-firmware-kmod               ports/net/bwi-firmware-kmod
 bwidget                         ports/x11-toolkits/bwidget
 bwm-ng                          ports/net-mgmt/bwm-ng
 bwping                          ports/net/bwping
@@ -3700,6 +3703,7 @@ frozenbubble                    ports/games/frozenbubble
 fruity                          ports/net-mgmt/fruity
 fsbackup                        ports/sysutils/fsbackup
 fsh                             ports/security/fsh
+fsharp                          ports/lang/fsharp
 fslsfonts                       ports/x11-fonts/fslsfonts
 fsmgenerator                    ports/devel/fsmgenerator
 fspclient                       ports/net/fspclient
@@ -4277,6 +4281,7 @@ gmime24-sharp                   ports/mail/gmime24-sharp
 gmimms                          ports/multimedia/gmimms
 gmines                          ports/games/gmines
 gmixer                          ports/audio/gmixer
+gml                             ports/mail/gml
 gmm                             ports/audio/gmm
 gmm++                           ports/math/gmm++
 gmp-ecm                         ports/math/gmp-ecm
@@ -6564,6 +6569,10 @@ kdebase3                        ports/x11/kdebase3
 kdebase4                        ports/x11/kdebase4
 kdebase4-runtime                ports/x11/kdebase4-runtime
 kdebase4-workspace              ports/x11/kdebase4-workspace
+kdebindings4                    ports/devel/kdebindings4
+kdebindings4-python             ports/devel/kdebindings4-python
+kdebindings4-python-krosspython  ports/devel/kdebindings4-python-krosspython
+kdebindings4-python-pykde4      ports/devel/kdebindings4-python-pykde4
 kdedict                         ports/www/kdedict
 kdeedu3                         ports/misc/kdeedu3
 kdeedu4                         ports/misc/kdeedu4
@@ -6593,6 +6602,7 @@ kdetoys3                        ports/x11-clocks/kdetoys3
 kdetoys4                        ports/x11-clocks/kdetoys4
 kdeutils3                       ports/misc/kdeutils3
 kdeutils4                       ports/misc/kdeutils4
+kdeutils4-printer-applet        ports/print/kdeutils4-printer-applet
 kdevelop                        ports/devel/kdevelop
 kdewebdev                       ports/www/kdewebdev
 kdewebdev4                      ports/www/kdewebdev4
@@ -7276,6 +7286,7 @@ libgda4-mysql                   ports/databases/libgda4-mysql
 libgda4-postgresql              ports/databases/libgda4-postgresql
 libgda4-reference               ports/databases/libgda4-reference
 libgdamm                        ports/databases/libgdamm
+libgdata                        ports/devel/libgdata
 libgdiplus                      ports/x11-toolkits/libgdiplus
 libgeda                         ports/cad/libgeda
 libgenome                       ports/biology/libgenome
@@ -9761,6 +9772,7 @@ openjazz                        ports/games/openjazz
 openjdk6                        ports/java/openjdk6
 openjit                         ports/java/openjit
 openjpeg                        ports/graphics/openjpeg
+openjump                        ports/graphics/openjump
 openldap23-client               ports/net/openldap23-client
 openldap23-sasl-client          ports/net/openldap23-sasl-client
 openldap23-server               ports/net/openldap23-server
@@ -11344,6 +11356,7 @@ p5-HTML-Macro                   ports/www/p5-HTML-Macro
 p5-HTML-Mason                   ports/www/p5-HTML-Mason
 p5-HTML-Pager                   ports/www/p5-HTML-Pager
 p5-HTML-Parser                  ports/www/p5-HTML-Parser
+p5-HTML-Perlinfo                ports/www/p5-HTML-Perlinfo
 p5-HTML-PrettyPrinter           ports/www/p5-HTML-PrettyPrinter
 p5-HTML-Prototype               ports/www/p5-HTML-Prototype
 p5-HTML-QuickCheck              ports/www/p5-HTML-QuickCheck
@@ -12121,6 +12134,7 @@ p5-Net-Telnet                   ports/net/p5-Net-Telnet
 p5-Net-Telnet-Cisco-IOS         ports/net-mgmt/p5-Net-Telnet-Cisco-IOS
 p5-Net-Telnet-Netscreen         ports/net/p5-Net-Telnet-Netscreen
 p5-Net-TiVo                     ports/net/p5-Net-TiVo
+p5-Net-Trac                     ports/www/p5-Net-Trac
 p5-Net-Traceroute               ports/net/p5-Net-Traceroute
 p5-Net-Traceroute6              ports/net/p5-Net-Traceroute6
 p5-Net-Trackback                ports/net/p5-Net-Trackback
@@ -14788,6 +14802,7 @@ p5-html-macro                   ports/www/p5-HTML-Macro
 p5-html-mason                   ports/www/p5-HTML-Mason
 p5-html-pager                   ports/www/p5-HTML-Pager
 p5-html-parser                  ports/www/p5-HTML-Parser
+p5-html-perlinfo                ports/www/p5-HTML-Perlinfo
 p5-html-prettyprinter           ports/www/p5-HTML-PrettyPrinter
 p5-html-prototype               ports/www/p5-HTML-Prototype
 p5-html-quickcheck              ports/www/p5-HTML-QuickCheck
@@ -15563,6 +15578,7 @@ p5-net-telnet                   ports/net/p5-Net-Telnet
 p5-net-telnet-cisco-ios         ports/net-mgmt/p5-Net-Telnet-Cisco-IOS
 p5-net-telnet-netscreen         ports/net/p5-Net-Telnet-Netscreen
 p5-net-tivo                     ports/net/p5-Net-TiVo
+p5-net-trac                     ports/www/p5-Net-Trac
 p5-net-traceroute               ports/net/p5-Net-Traceroute
 p5-net-traceroute6              ports/net/p5-Net-Traceroute6
 p5-net-trackback                ports/net/p5-Net-Trackback
@@ -18864,6 +18880,7 @@ py-musicbrainz2                 ports/audio/py-musicbrainz2
 py-mutagen                      ports/audio/py-mutagen
 py-mwlib                        ports/devel/py-mwlib
 py-mwlib.ext                    ports/devel/py-mwlib.ext
+py-mwlib.rl                     ports/devel/py-mwlib.rl
 py-mx-base                      ports/lang/py-mx-base
 py-mx-experimental              ports/devel/py-mx-experimental
 py-myghtyutils                  ports/devel/py-myghtyutils
@@ -19581,6 +19598,7 @@ qwtplot3d-qt4                   ports/math/qwtplot3d-qt4
 r                               ports/math/R
 r-cran-car                      ports/math/R-cran-car
 r-cran-gpclib                   ports/math/R-cran-gpclib
+r-cran-igraph                   ports/math/R-cran-igraph
 r-cran-rsvgdevice               ports/math/R-cran-RSvgDevice
 r-cran-sm                       ports/math/R-cran-sm
 r-cran-zelig                    ports/math/R-cran-Zelig
@@ -20284,6 +20302,7 @@ rubygem-htmltools               ports/textproc/rubygem-htmltools
 rubygem-httparty                ports/www/rubygem-httparty
 rubygem-httpclient              ports/www/rubygem-httpclient
 rubygem-icalendar               ports/devel/rubygem-icalendar
+rubygem-igraph                  ports/devel/rubygem-igraph
 rubygem-ini                     ports/textproc/rubygem-ini
 rubygem-inline                  ports/devel/rubygem-inline
 rubygem-jdbc-mysql              ports/databases/rubygem-jdbc-mysql
@@ -21455,6 +21474,7 @@ syslog-ng2                      ports/sysutils/syslog-ng2
 syslogger                       ports/sysutils/syslogger
 sysmon                          ports/net-mgmt/sysmon
 system-config-printer           ports/print/system-config-printer
+system-config-printer-kde       ports/print/system-config-printer-kde
 system-tools-backends           ports/sysutils/system-tools-backends
 systemc                         ports/cad/systemc
 systempreferences               ports/deskutils/systempreferences
@@ -23721,6 +23741,7 @@ xpi-pdf_download                ports/www/xpi-pdf_download
 xpi-pencil                      ports/www/xpi-pencil
 xpi-permatabs                   ports/www/xpi-permatabs
 xpi-preferential                ports/www/xpi-preferential
+xpi-prism                       ports/www/xpi-prism
 xpi-quick-locale-switcher       ports/www/xpi-quick-locale-switcher
 xpi-quickproxy                  ports/www/xpi-quickproxy
 xpi-resurrectpages              ports/www/xpi-resurrectpages
