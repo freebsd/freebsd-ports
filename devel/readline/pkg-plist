@@ -12,4 +12,16 @@ lib/libhistory.so.6
 lib/libhistory.so
 lib/libreadline.so.6
 lib/libreadline.so
+%%DATADIR%%/excallback.c
+%%DATADIR%%/fileman.c
+%%DATADIR%%/histexamp.c
+%%DATADIR%%/manexamp.c
+%%DATADIR%%/rl-fgets.c
+%%DATADIR%%/rl.c
+%%DATADIR%%/rlcat.c
+%%DATADIR%%/rlevent.c
+%%DATADIR%%/rlptytest.c
+%%DATADIR%%/rltest.c
+%%DATADIR%%/rlversion.c
 @dirrm include/readline
+@dirrm %%DATADIR%%
