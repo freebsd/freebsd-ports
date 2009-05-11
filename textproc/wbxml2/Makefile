@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wbxml2
-PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTVERSION=	0.10.6
 CATEGORIES=	textproc devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	libwbxml
@@ -24,6 +23,9 @@ USE_CMAKE=	YES
 WRKSRC=		${WRKDIR}/libwbxml-${PORTVERSION}/build
 CMAKE_SOURCE_PATH=..
 PATCH_WRKSRC=	${WRKDIR}/libwbxml-${PORTVERSION}
+.if defined(NOPORTDOCS)
+EXTRA_PATCHES=	${FILESDIR}/noportdocs-CMakeLists.txt.diff
+.endif
 
 pre-patch:
 	@cd ${PATCH_WRKSRC}
