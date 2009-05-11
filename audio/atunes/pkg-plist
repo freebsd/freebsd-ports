@@ -92,4 +92,3 @@ share/pixmaps/atunes125.png
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrmtry share/pixmaps
