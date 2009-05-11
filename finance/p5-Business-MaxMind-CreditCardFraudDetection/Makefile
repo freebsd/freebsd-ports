@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Business-MaxMind-CreditCardFraudDetection
-PORTVERSION=	1.48
+PORTVERSION=	1.49
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/B/BO/BORISZ
