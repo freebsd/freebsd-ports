@@ -1,0 +1,16 @@
+--- src/plugins/backends/aqhbci/ui/qt3/libs/dialogs/Makefile.in.orig	2008-11-08 06:18:14.000000000 -0800
++++ src/plugins/backends/aqhbci/ui/qt3/libs/dialogs/Makefile.in	2008-12-08 23:17:28.000000000 -0800
+@@ -393,10 +393,11 @@
+ with_aqhbci = @with_aqhbci@
+ with_qbanking = @with_qbanking@
+ SUBDIRS = wizard
+-INCLUDES = $(gwenhywfar_includes) $(qt3_includes) \
++INCLUDES = \
+   -I$(top_builddir)/headers \
+   -I$(srcdir)/.. -I$(srcdir)/wizard \
+-  -I.. -Iwizard
++  -I.. -Iwizard \
++  $(gwenhywfar_includes) $(qt3_includes)
+ 
+ UI_FILES = \
+  cfgtabpageuserhbci.ui \

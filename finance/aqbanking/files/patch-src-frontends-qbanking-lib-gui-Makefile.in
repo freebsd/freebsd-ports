@@ -1,0 +1,14 @@
+--- src/frontends/qbanking/lib/gui/Makefile.in.orig	2008-11-08 06:18:10.000000000 -0800
++++ src/frontends/qbanking/lib/gui/Makefile.in	2008-12-08 22:07:51.000000000 -0800
+@@ -393,8 +393,9 @@
+ with_aqhbci = @with_aqhbci@
+ with_qbanking = @with_qbanking@
+ INCLUDES = \
+- $(gwenhywfar_includes) $(qt3_includes) -I$(top_builddir)/headers \
+- -I../dialogs -I.. -I$(top_srcdir)/src/libs/aqbanking
++ -I$(top_builddir)/headers \
++ -I../dialogs -I.. -I$(top_srcdir)/src/libs/aqbanking \
++ $(gwenhywfar_includes) $(qt3_includes)
+ 
+ AM_CPPFLAGS = @visibility_cflags@
+ UI_FILES = \

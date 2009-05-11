@@ -1,0 +1,38 @@
+--- configure.orig	2008-11-08 06:18:24.000000000 -0800
++++ configure	2008-12-08 11:12:03.000000000 -0800
+@@ -22414,7 +22414,7 @@
+ fi
+ 
+ 
+-if test "$aqbanking_backends" == "all"; then
++if test "$aqbanking_backends" = "all"; then
+   aqbanking_backends="aqhbci aqnone aqofxconnect"
+ fi
+ 
+@@ -22490,7 +22490,7 @@
+ fi
+ 
+ 
+-if test "$aqbanking_imexporters" == "all"; then
++if test "$aqbanking_imexporters" = "all"; then
+   aqbanking_imexporters="csv dtaus eri2 ofx openhbci1 swift xmldb yellownet sepa"
+ fi
+ 
+@@ -22605,7 +22605,7 @@
+ fi
+ 
+ 
+-if test "$aqbanking_parsers" == "all"; then
++if test "$aqbanking_parsers" = "all"; then
+   aqbanking_parsers="dtaus swift"
+ fi
+ 
+@@ -22657,7 +22657,7 @@
+ fi
+ 
+ 
+-if test "$aqbanking_bankinfos" == "all"; then
++if test "$aqbanking_bankinfos" = "all"; then
+   aqbanking_bankinfos="at ca ch de us"
+ fi
+ 

@@ -1,0 +1,19 @@
+************************************************************************
+
+** IMPORTANT **
+
+If you are upgrading from aqbanking-2.X or earlier, please note that the
+per-user bank data directory has changed from ~/.banking to ~/.aqbanking.
+
+Copy your existing online banking data to the new directory before
+starting aqbanking or packages that use it, such as gnucash:
+
+    cp -a ${HOME}/.banking ${HOME}/.aqbanking
+
+Connections to some online-banking sites (e.g., Discover) with the
+new aqbanking-3 may fail until you force use of SSLv3 with them:
+gnucash users can use "Tools>Online Banking Setup" to edit the
+specific "user" (i.e., institution) OFX configuration to set the
+"Force SSLv3" flag.
+
+************************************************************************

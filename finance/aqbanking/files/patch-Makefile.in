@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Oct 15 21:48:21 2007
-+++ Makefile.in	Thu Jan 24 22:00:17 2008
-@@ -502,7 +502,7 @@
+--- Makefile.in.orig	2008-11-08 06:18:22.000000000 -0800
++++ Makefile.in	2008-12-08 10:37:41.000000000 -0800
+@@ -429,7 +429,7 @@
  
  CLEANFILES = aqbanking-config aqbanking-config.in $(am__append_1) \
  	$(BUILT_SOURCES)
