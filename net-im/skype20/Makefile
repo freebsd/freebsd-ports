@@ -22,7 +22,7 @@ COMMENT=	P2P VoIP software
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 USE_LINUX_APPS+=xorglibs
 .else
-USE_GL=	linux
+USE_LINUX_APPS+=dri
 .endif
 
 USE_BZIP2=	yes
