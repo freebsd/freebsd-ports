@@ -1,9 +1,10 @@
-# New ports collection makefile for:	mod_auth_kerb
-# Date created:				19 October 2001
-# Whom:					wollman
+# New ports collection makefile for:    mod_auth_kerb
+# Date created:             19 October 2001
+# Whom:                 wollman
 #
 # $FreeBSD$
 #
+
 
 # Shamelessly stolen from will's mod_auth_any port.
 
@@ -16,27 +17,13 @@ MASTER_SITE_SUBDIR=modauthkerb
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module for authenticating users with Kerberos v5
 
-LATEST_LINK=	mod_auth_kerb2
-#
-# This module allows users to send their Kerberos password in
-# plain text; it should only be used over an encrypted connection
-# (i.e., HTTP over SSL/TLS).  Thus, we require as a dependency
-# a version of Apache which can do this.
-#
+LATEST_LINK=   mod_auth_kerb2
+
 USE_APACHE=	2.0+
 USE_GMAKE=	yes
-# Don't fsck with CFLAGS
-CFLAGS:=
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if exists(${PREFIX}/sbin/apxs)
-APACHE_MODULE_DIR!=${PREFIX}/sbin/apxs -q LIBEXECDIR
-.else
-APACHE_MODULE_DIR=libexec/apache
-.endif
-PLIST_SUB+=	APMODDIR=${APACHE_MODULE_DIR:S/^${PREFIX}\///}
+PORTSCOUT=	limit:^5.3
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a)
 CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME} --without-krb4
@@ -49,4 +36,4 @@ LIB_DEPENDS+=	krb5:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE} --without-krb4
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
