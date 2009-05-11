@@ -14,8 +14,6 @@ DISTNAME=	jack-audio-connection-kit-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A low-latency audio server
 
-BROKEN=		bad plist
-
 LIB_DEPENDS=	portaudio.0:${PORTSDIR}/audio/portaudio \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
