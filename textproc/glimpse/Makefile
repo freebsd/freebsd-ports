@@ -15,9 +15,11 @@ MASTER_SITES=	ftp://ftp.polito.it/pub/tools/unix/harvest/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text search engine
 
+MAKE_JOBS_UNSAFE=	yes
+
 PORTDOCS=	README COPYRIGHT
 
-NO_CDROM=	Restrictive copyright (don't sell for profit)
+NO_CDROM=	Restrictive copyright (don not sell for profit)
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -DISO_CHAR_SET=1 -D__STRICT_ANSI__"
 MAN1=		glimpse.1 glimpseindex.1 glimpseserver.1 agrep.1
