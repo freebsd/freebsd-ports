@@ -33,6 +33,12 @@ CONFIGURE_ARGS+=-without-wlex-compat -without-wlex
 
 ALL_TARGET=	all opt
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		segfaults during build
+.endif
+
 # to avoid a conflict with PACKAGES in bsd.port.mk
 post-extract:
 	${FIND} ${WRKSRC} -name "Makefile*" | ${XARGS} ${REINPLACE_CMD} -e 's/PACKAGES/PXP_PACKAGES/'
@@ -43,4 +49,4 @@ post-install:
 	@${FIND} ${PREFIX}/lib/ocaml/site-lib/ -type d -name 'pxp*' | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
