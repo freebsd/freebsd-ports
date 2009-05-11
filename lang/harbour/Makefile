@@ -6,63 +6,50 @@
 #
 
 PORTNAME=	harbour
-PORTVERSION=	0.44.0
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.jsd0.com/public/harbour/dgh/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	${PORTNAME}-project
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	An open source Clipper-compatible compiler
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-BROKEN=		does not build
-
-# Not 64-bit clean
-ONLY_FOR_ARCHS=	i386
-WRKSRC=		${WRKDIR}
 USE_BISON=	build
 USE_GMAKE=	yes
-NO_INSTALL_MANPAGES=yes
-NOPRECIOUSMAKEVARS=yes
 
-HB_DIR=		${WRKDIR}/${PORTNAME}
+HB_WITHOUT_X11=	yes
+HB_ARCHITECTURE=	bsd
+HB_COMPILER=		gcc
+HB_GT_LIB=			gtsln
 
-post-install:
-	${INSTALL_PROGRAM} ${HB_DIR}/bin/harbour ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${HB_DIR}/bin/hbdoc ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${HB_DIR}/bin/hbmake ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${HB_DIR}/bin/hbpp ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${HB_DIR}/bin/hbrun ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${HB_DIR}/bin/hbtest ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${HB_DIR}/bin/hbverfix ${PREFIX}/bin
-	${INSTALL_DATA} ${HB_DIR}/include/hb* ${PREFIX}/include
-	${INSTALL_DATA} ${HB_DIR}/lib/*.a ${PREFIX}/lib
+HB_BIN_INSTALL=	${LOCALBASE}/bin
+HB_DOC_INSTALL=	${DOCSDIR}
+HB_LIB_INSTALL=	${LOCALBASE}/lib
+HB_INC_INSTALL= ${LOCALBASE}/include
+
+MAKE_ENV+=	HB_ARCHITECTURE=${HB_ARCHITECTURE} \
+			HB_COMPILER=${HB_COMPILER} \
+			HB_GT_LIB=${HB_GT_LIB} \
+			HB_BIN_INSTALL=${HB_BIN_INSTALL} \
+			HB_LIB_INSTALL=${HB_LIB_INSTALL} \
+			HB_INC_INSTALL=${HB_INC_INSTALL} \
+			HB_WITHOUT_X11=${HB_WITHOUT_X11}
+
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${HB_DIR}/doc/*.txt ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/en
-	${INSTALL_MAN} ${HB_DIR}/doc/en/*.txt ${DOCSDIR}/en
-	${MKDIR} ${DOCSDIR}/es
-	${INSTALL_MAN} ${HB_DIR}/doc/es/*.txt ${DOCSDIR}/es
+MAKE_ENV+= HB_DOC_INSTALL=${HB_DOC_INSTALL} 
 .endif
-	-@${ECHO}
-	-@${ECHO} @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-	-@${ECHO} @
-	-@${ECHO} @ Executable files are installed in ${PREFIX}/bin.
-	-@${ECHO} @
-	-@${ECHO} @ Header files are installed in ${PREFIX}/include.
-	-@${ECHO} @
-	-@${ECHO} @ Library files are installed in ${PREFIX}/lib.
-	-@${ECHO} @
+
+PORTDOCS= *.txt genhtm.bat genhtm.lnk genhtm.rsp
+
+do-build:
+	(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${SH} ./make_gnu.sh)
+
+pre-install:
 .if !defined(NOPORTDOCS)
-	-@${ECHO} @ Documentation files are installed in ${DOCSDIR},
-	-@${ECHO} @ ${DOCSDIR}/en, and ${DOCSDIR}/es.
-	-@${ECHO} @
+	${MKDIR} ${DOCSDIR}/
 .endif
-	-@${ECHO} @ See pkg-plist for a list of all installed files.
-	-@${ECHO} @
-	-@${ECHO} @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-	-@${ECHO}
 
 .include <bsd.port.mk>
