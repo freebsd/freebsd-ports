@@ -7,15 +7,13 @@
 
 PORTNAME=	Module-Load-Conditional
 PORTVERSION=	0.30
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Looking up Perl modules information/loading at runtime
-
-RUN_DEPENDS=	p5-Module-Load>=0.11:${PORTSDIR}/devel/p5-Module-Load
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -31,6 +29,10 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-Module-Load>=0.11:${PORTSDIR}/devel/p5-Module-Load
+.endif
 
 .if ${PERL_LEVEL} < 500905
 RUN_DEPENDS+=	p5-Locale-Maketext-Simple>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
