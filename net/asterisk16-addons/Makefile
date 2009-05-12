@@ -8,10 +8,8 @@
 PORTNAME=	asterisk16-addons
 PORTVERSION=	1.6.0.1
 CATEGORIES=	net
-MASTER_SITES=	http://downloads.digium.com/pub/asterisk/ \
-		http://downloads.digium.com/pub/asterisk/old-releases/ \
-		http://ftp.digium.com/pub/asterisk/ \
-		http://ftp.digium.com/pub/asterisk/old-releases/
+MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
+		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
 DISTNAME=	asterisk-addons-${DISTVERSION}
 
 MAINTAINER=	flo@kasimir.com

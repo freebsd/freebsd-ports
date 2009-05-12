@@ -9,10 +9,8 @@ PORTNAME=	asterisk
 PORTVERSION=	1.6.0.9
 PKGNAMESUFFIX=	16
 CATEGORIES=	net
-MASTER_SITES=	http://downloads.digium.com/pub/asterisk/ \
-		http://downloads.digium.com/pub/asterisk/old-releases/ \
-		http://ftp.digium.com/pub/asterisk/ \
-		http://ftp.digium.com/pub/asterisk/old-releases/
+MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
+		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit

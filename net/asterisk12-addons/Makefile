@@ -9,10 +9,8 @@ PORTNAME=	asterisk-addons
 PORTVERSION=	1.2.3
 PORTREVISION=	5
 CATEGORIES=	net
-MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
-		http://ftp.digium.com/pub/asterisk/old-releases/ \
-		ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
-		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
+MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
+		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
 PKGNAMESUFFIX=	12
 
 MAINTAINER=	ports@FreeBSD.org

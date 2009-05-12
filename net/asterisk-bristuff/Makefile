@@ -9,8 +9,8 @@ PORTNAME=	asterisk
 PORTVERSION=	1.2.13
 PORTREVISION=	9
 CATEGORIES=	net
-MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
-		http://ftp.digium.com/pub/asterisk/old-releases/
+MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
+		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
 
 PKGNAMESUFFIX=	-bristuff
 PATCHFILES=	${PORTNAME}-${PORTVERSION}-${BRIVER}.patch.gz
