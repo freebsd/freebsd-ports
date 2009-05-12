@@ -17,8 +17,6 @@ DIST_SUBDIR=	rpm
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Motif toolkit Linux libraries
 
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
-
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs
