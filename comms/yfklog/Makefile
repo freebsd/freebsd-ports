@@ -23,7 +23,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses \
 		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/${PERL_ARCH}/Hamlib.pm:${PORTSDIR}/comms/hamlib \
-		${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net-FTP-File
+		${SITE_PERL}/Net/FTP/File.pm:${PORTSDIR}/net/p5-Net-FTP-File
 
 USE_PERL5=	yes
 NO_BUILD=	yes
