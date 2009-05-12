@@ -59,8 +59,7 @@ PLIST_SUB+=	GPS="@comment "
 PATCH_SITES=	http://www.parknation.com/gmap/files/
 PATCHFILES=	gpsmap-gmap-0.1.tgz
 PLIST_SUB+=	GMAP=""
-.ifndef(NOPORTDOC)
-SUB_LIST+=	DOCSDIR=${DOCSDIR}
+.ifndef(NOPORTDOCS)
 SUB_FILES+=	pkg-message
 .endif
 GMAP=		gpsmap-gmap
