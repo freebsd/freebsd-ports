@@ -1,2 +1,2 @@
+@stopdaemon expiretable
 sbin/expiretable
-@unexec %%RC_DIR%%/etc/rc.d/expiretable%%RC_SUFX%% stop 2>&1 >/dev/null || true
