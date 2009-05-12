@@ -36,6 +36,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 #CFLAGS+=	-DSOURCE_MODIFIED
 SUB_FILES=	pkg-message
+MAKE_JOBS_UNSAFE=	yes
 
 .if defined(WITH_RSCSI)
 PKGINSTALL=	${PKGDIR}/pkg-install.rscsi

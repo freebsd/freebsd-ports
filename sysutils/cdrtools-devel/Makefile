@@ -61,6 +61,7 @@ USE_GMAKE=	yes
 #CFLAGS+=	-DSOURCE_MODIFIED
 WRKSRC=		${WRKDIR}/${DISTNAME:C/a(.+)$//}
 SUB_FILES=	pkg-message
+MAKE_JOBS_UNSAFE=	yes
 
 .if defined(WITH_RSCSI)
 MAN1+=		rscsi.1
