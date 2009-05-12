@@ -11,7 +11,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://www.mcstas.org/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	Joerg.Pulz@frm2.tum.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A neutron ray-trace simulation package
 
 BUILD_DEPENDS=	pgxwin_server:${PORTSDIR}/graphics/pgplot
