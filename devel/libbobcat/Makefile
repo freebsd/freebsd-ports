@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.orig.tar.gz
 MAINTAINER=	pgj@FreeBSD.org
 COMMENT=	Brokken's Own Base Classes And Templates
 
-BROKEN=		does not compile
-
 BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
 		${LOCALBASE}/include/X11/Xlib.h:${PORTSDIR}/x11/libX11 \
 		yodl>=2.0:${PORTSDIR}/textproc/yodl
