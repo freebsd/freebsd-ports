@@ -1,5 +1,6 @@
 bin/ding
 %%DATADIR%%/ding.png
 %%DATADIR%%/ding.desktop
+%%DATADIR%%/de_ch-en.txt
 %%DATADIR%%/de-en.txt
 @dirrm share/ding
