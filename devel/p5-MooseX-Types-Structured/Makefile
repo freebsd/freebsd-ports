@@ -26,4 +26,7 @@ MAN3=		MooseX::Meta::TypeCoercion::Structured.3 \
 		MooseX::Meta::TypeConstraint::Structured.3 \
 		MooseX::Types::Structured.3
 
+post-patch:
+	@${REINPLACE_CMD} -e '/auto_install/d' ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>
