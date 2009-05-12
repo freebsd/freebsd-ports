@@ -7,6 +7,7 @@
 
 PORTNAME=	awesome
 DISTVERSION=	3.3-rc2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/ \
 		http://redundancy.redundancy.org/mirror/
@@ -73,5 +74,8 @@ pre-configure:
 		-e 's/"install port docs" ON/\"install port docs" OFF/g' \
 		${WRKSRC}/awesomeConfig.cmake
 .endif
+
+post-patch:
+	@${RM} ${WRKSRC}/lib/awful/util.lua.in.orig
 
 .include <bsd.port.post.mk>
