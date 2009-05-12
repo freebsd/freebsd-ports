@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openh323
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src
 
-MAINTAINER=	Joerg.Pulz@frm2.tum.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenMCU hosts a conference call for H323 Video Conferencing users
 
 LIB_DEPENDS=	h323_r.1:${PORTSDIR}/net/openh323

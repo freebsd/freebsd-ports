@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/g}
 
-MAINTAINER=	Joerg.Pulz@frm2.tum.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows user authentication based on libsasl2 mechanisms on apache 2.2
 
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2

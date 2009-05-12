@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openh323gk
 DISTNAME=	gnugk-${DISTVERSION}
 
-MAINTAINER=	Joerg.Pulz@frm2.tum.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GnuGK is GPL Gate Keeper for OhPhone, GnomeMeeting, NetMeeting and H323
 
 LIB_DEPENDS=	h323_r.1:${PORTSDIR}/net/openh323

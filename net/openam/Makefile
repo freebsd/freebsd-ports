@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.voxgratia.org/releases/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src-
 EXTRACT_SUFX=	tar.gz
 
-MAINTAINER=	Joerg.Pulz@frm2.tum.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H323 Answer Machine
 
 LIB_DEPENDS=	h323_r.1:${PORTSDIR}/net/openh323

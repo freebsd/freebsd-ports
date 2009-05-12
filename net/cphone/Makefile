@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/distfiles/
 
-MAINTAINER=	Joerg.Pulz@frm2.tum.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H323 Video Conferencing Program which uses QT
 
 LIB_DEPENDS=	h323_r.1:${PORTSDIR}/net/openh323
