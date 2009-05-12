@@ -15,6 +15,7 @@ share/locale/ast/LC_MESSAGES/transmission.mo
 share/locale/be@latin/LC_MESSAGES/transmission.mo
 share/locale/bg/LC_MESSAGES/transmission.mo
 share/locale/br/LC_MESSAGES/transmission.mo
+share/locale/bs/LC_MESSAGES/transmission.mo
 share/locale/ca/LC_MESSAGES/transmission.mo
 share/locale/ckb/LC_MESSAGES/transmission.mo
 share/locale/cs/LC_MESSAGES/transmission.mo
@@ -64,6 +65,7 @@ share/locale/sq/LC_MESSAGES/transmission.mo
 share/locale/sr/LC_MESSAGES/transmission.mo
 share/locale/sv/LC_MESSAGES/transmission.mo
 share/locale/te/LC_MESSAGES/transmission.mo
+share/locale/th/LC_MESSAGES/transmission.mo
 share/locale/tr/LC_MESSAGES/transmission.mo
 share/locale/uk/LC_MESSAGES/transmission.mo
 share/locale/vi/LC_MESSAGES/transmission.mo
