@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	peg-e
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/peg-e/ \
 		http://mirror.amdmi3.ru/
@@ -17,11 +17,10 @@ COMMENT=	Peg elimination game
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
-
-QT_COMPONENTS=	corelib gui moc_build opengl qmake_build rcc_build xml
 QT_COMPONENTS=	corelib gui moc_build qmake_build rcc_build
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
+MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
