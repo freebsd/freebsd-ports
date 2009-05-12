@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	linuxlibertine
-PORTVERSION=	4.1.8
+PORTVERSION=	4.4.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF
 DISTNAME=	LinLibertineFont-${PORTVERSION}
@@ -29,13 +29,15 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Bugs ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/GPL.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENCE.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/OFL.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Readme ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Readme-TEX.txt ${DOCSDIR}
 .endif
 
 post-install:
-	${ECHO_MSG} "===> Running fc-cache"
+	@${ECHO_MSG} "===> Running fc-cache"
 	-${X11BASE}/bin/fc-cache -f -v ${FONTSDIR}
 
 .include <bsd.port.mk>
