@@ -9,8 +9,23 @@ bin/mp3info2
 %%SITE_PERL%%/MP3/Tag/ID3v2.pm
 %%SITE_PERL%%/MP3/Tag/LastResort.pm
 %%SITE_PERL%%/MP3/Tag/Inf.pm
-%%SITE_PERL%%/MP3/ID3v2-Data.pod
+%%SITE_PERL%%/MP3/Tag/Cue.pm
+%%SITE_PERL%%/MP3/Tag/ID3v2-Data.pod
+%%SITE_PERL%%/MP3/Tag/ImageSize.pm
+%%SITE_PERL%%/Normalize/Text/Music_Fields/L_van_Beethoven.comp
+%%SITE_PERL%%/Normalize/Text/Music_Fields/Music_Fields-rus.lst
+%%SITE_PERL%%/Normalize/Text/Music_Fields/J_Brahms.comp
+%%SITE_PERL%%/Normalize/Text/Music_Fields/A_Schnittke.comp
+%%SITE_PERL%%/Normalize/Text/Music_Fields/G_Gershwin.comp
+%%SITE_PERL%%/Normalize/Text/Music_Fields/A_Dvor_k.comp
+%%SITE_PERL%%/Normalize/Text/Music_Fields/D_Shostakovich.comp
+%%SITE_PERL%%/Normalize/Text/Music_Fields.pm
+%%SITE_PERL%%/Encode/transliterate_win1251.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag/.packlist
+@dirrm %%SITE_PERL%%/Normalize/Text/Music_Fields
+@dirrm %%SITE_PERL%%/Normalize/Text
+@dirrm %%SITE_PERL%%/Normalize
+@dirrm %%SITE_PERL%%/Encode
 @dirrm %%SITE_PERL%%/MP3/Tag
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3
