@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.villainy.com/downloads/ \
 		http://www.ranner.jawa.at/stuff/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	mranner@inode.at
+MAINTAINER=	michael@ranner.eu
 COMMENT=	Formular processing tool written in perl
 
 CGI_UID?=	www

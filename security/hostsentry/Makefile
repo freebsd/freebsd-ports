@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.netsys.com/len/ \
 		${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	UNIX/IDS
 
-MAINTAINER=	mranner@inode.at
+MAINTAINER=	michael@ranner.eu
 COMMENT=	A Login Anomaly Detector
 
 RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
