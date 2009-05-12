@@ -9,10 +9,8 @@ PORTNAME=	asterisk
 PORTVERSION=	1.2.32
 PKGNAMESUFFIX=	12
 CATEGORIES=	net
-MASTER_SITES=	http://downloads.digium.com/pub/asterisk/ \
-		http://downloads.digium.com/pub/asterisk/old-releases/ \
-		http://ftp.digium.com/pub/asterisk/ \
-		http://ftp.digium.com/pub/asterisk/old-releases/
+MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
+		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
 
 PATCHFILES=	asterisk-1.2.26.1-codec-negotiation-20080118.diff.gz
 PATCH_SITES=	http://b2bua.org/chrome/site/
