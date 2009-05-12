@@ -1,0 +1,13 @@
+This module lets you defer actions at run-time that will take place when
+the control flow returns into an upper scope.  Currently, you can:
+
+* hook an upper scope end with "reap" ;
+
+* localize variables, array/hash values or deletions of elements in
+higher contexts with respectively "localize", "localize_elem" and
+"localize_delete" ;
+
+* return values immediately to an upper level with "unwind", and know
+which context was in use then with "want_at".
+
+WWW: http://search.cpan.org/dist/Scope-Upper/

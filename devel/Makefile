@@ -1767,6 +1767,7 @@
     SUBDIR += p5-Scalar-String
     SUBDIR += p5-Scalar-Util-Clone
     SUBDIR += p5-Scope-Guard
+    SUBDIR += p5-Scope-Upper
     SUBDIR += p5-Search-Binary
     SUBDIR += p5-Set-Array
     SUBDIR += p5-Set-ConsistentHash
