@@ -1,7 +1,7 @@
 
-Please note that you have just installed qmail-sf on
+Please note that you have just installed softfail on
 
-	%%QMAIL_PREFIX%%/bin/qmail-sf
+	%%QMAIL_PREFIX%%/bin/softfail
 
 Before using it you need to properly create the MySQL database. A customized
 SQL sample was installed on

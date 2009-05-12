@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	softfail
-PORTVERSION=	1.20
+PORTVERSION=	2.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail-smtpextfork/ \
 		${MASTER_SITE_LOCAL}
@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}_fbsdbrasil-${PORTVERSION}
 
 MAINTAINER=	eksffa@freebsdbrasil.com.br
 COMMENT=	Enhaced greylisting system for qmail w/ SMTPEXTFORK patch
+
+LIB_DEPENDS+=	spf2.3:${PORTSDIR}/mail/libspf2
 
 SUB_FILES=	pkg-message
 SUB_LIST=	QMAIL_PREFIX=${QMAIL_PREFIX}
