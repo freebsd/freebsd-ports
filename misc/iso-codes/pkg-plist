@@ -1,5 +1,4 @@
 libdata/pkgconfig/iso-codes.pc
-%%DATADIR%%/iso_639.tab
 share/locale/af/LC_MESSAGES/iso_3166.mo
 share/locale/af/LC_MESSAGES/iso_639.mo
 share/locale/af/LC_MESSAGES/iso_639_3.mo
@@ -178,6 +177,7 @@ share/locale/lt/LC_MESSAGES/iso_3166_2.mo
 share/locale/lt/LC_MESSAGES/iso_4217.mo
 share/locale/lt/LC_MESSAGES/iso_639.mo
 share/locale/lt/LC_MESSAGES/iso_639_3.mo
+share/locale/lv/LC_MESSAGES/iso_15924.mo
 share/locale/lv/LC_MESSAGES/iso_3166.mo
 share/locale/lv/LC_MESSAGES/iso_3166_2.mo
 share/locale/lv/LC_MESSAGES/iso_639.mo
@@ -205,6 +205,7 @@ share/locale/mt/LC_MESSAGES/iso_639.mo
 share/locale/mt/LC_MESSAGES/iso_639_3.mo
 share/locale/nb/LC_MESSAGES/iso_15924.mo
 share/locale/nb/LC_MESSAGES/iso_3166.mo
+share/locale/nb/LC_MESSAGES/iso_4217.mo
 share/locale/nb/LC_MESSAGES/iso_639.mo
 share/locale/nb/LC_MESSAGES/iso_639_3.mo
 share/locale/ne/LC_MESSAGES/iso_3166.mo
@@ -485,4 +486,3 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/aa/LC_MESSAGES
 @dirrmtry share/locale/aa
-@dirrm %%DATADIR%%
