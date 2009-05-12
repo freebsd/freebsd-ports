@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4b172278-3f46-11de-becb-001cc0377035">
+    <topic>pango -- integer overflow</topic>
+    <affects>
+      <package>
+        <name>pango</name>
+        <name>linux-pango</name>
+        <name>linux-f8-pango</name>
+        <range><lt>1.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>oCERT reports:</p>
+        <blockquote cite="http://www.ocert.org/advisories/ocert-2009-001.html">
+          <p>Pango suffers from a multiplicative integer overflow which
+	    may lead to a potentially exploitable, heap overflow depending
+	    on the calling conditions.</p>
+	  <p>For example, this vulnerability is remotely reachable in Firefox
+	    by creating an overly large document.location value but only results
+	    in a process-terminating, allocation error (denial of service).</p>
+	  <p>The affected function is pango_glyph_string_set_size. An overflow
+	    check when doubling the size neglects the overflow possible on the
+	    subsequent allocation.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-1194</cvename>
+      <bid>34870</bid>
+    </references>
+    <dates>
+      <discovery>2009-02-22</discovery>
+      <entry>2009-05-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="defce068-39aa-11de-a493-001b77d09812">
     <topic>wireshark -- multiple vulnerabilities</topic>
     <affects>
