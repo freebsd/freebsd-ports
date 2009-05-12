@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	isc-
 PKGNAMESUFFIX=	31-${SUBSYS}
 DISTNAME=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}
 
-MAINTAINER=	Joerg.Pulz@frm2.tum.de
+MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
 BROKEN=		Not yet integrated and tested
