@@ -1135,6 +1135,7 @@
     SUBDIR += p5-Config-Tiny
     SUBDIR += p5-ConfigReader
     SUBDIR += p5-ConfigReader-Simple
+    SUBDIR += p5-Context-Preserve
     SUBDIR += p5-Contextual-Return
     SUBDIR += p5-Coro
     SUBDIR += p5-Curses
