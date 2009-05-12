@@ -7,7 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	4.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math cad parallel
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz
@@ -48,8 +48,8 @@ CONFIGURE_ENV+=	PVM_ROOT=${LOCALBASE}/lib/pvm
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libreadline.so.5)
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.if exists(${LOCALBASE}/lib/libreadline.so.6)
+LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 .endif
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)

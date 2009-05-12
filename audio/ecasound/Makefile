@@ -7,6 +7,7 @@
 
 PORTNAME=	ecasound
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
@@ -38,8 +39,8 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libreadline.so.5)
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.if exists(${LOCALBASE}/lib/libreadline.so.6)
+LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 .endif
 
 .if defined(WITH_ARTS)

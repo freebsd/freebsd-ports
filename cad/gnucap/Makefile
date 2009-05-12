@@ -8,6 +8,7 @@
 
 PORTNAME=	gnucap
 PORTVERSION=	2008.06.08
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.gnucap.org/devel/ \
 		http://www.gnucap.org/devel/archive/
@@ -26,8 +27,8 @@ MAN1=		gnucap.1 gnucap-ibis.1
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_READLINE) || exists(${LOCALBASE}/lib/libreadline.so.5)
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.if !defined(WITHOUT_READLINE) || exists(${LOCALBASE}/lib/libreadline.so.6)
+LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 .endif
 
 .include <bsd.port.post.mk>

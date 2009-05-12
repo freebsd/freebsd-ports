@@ -6,7 +6,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	6.8.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot \
@@ -45,8 +45,8 @@ OPTIONS+=	DOCS "Install HTML documentation" on
 .undef		WITH_DOCS
 .endif
 
-.if exists(${LOCALBASE}/lib/libreadline.so.5)
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.if exists(${LOCALBASE}/lib/libreadline.so.6)
+LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 .endif
 
 .if ${ARCH} == "i386"

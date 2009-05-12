@@ -6,7 +6,7 @@
 
 PORTNAME=	haddock
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/haddock/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -17,8 +17,8 @@ COMMENT=	A documentation tool for Haskell
 .if !defined(SLAVE)
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
-.if exists(${LOCALBASE}/lib/libreadline.so.5)
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.if exists(${LOCALBASE}/lib/libreadline.so.6)
+LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 .endif
 
 .else

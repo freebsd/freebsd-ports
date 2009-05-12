@@ -7,7 +7,7 @@
 
 PORTNAME=	jackit
 PORTVERSION=	0.116.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://jackaudio.org/downloads/
 DISTNAME=	jack-audio-connection-kit-${PORTVERSION}
@@ -41,8 +41,8 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 CONFIGURE_ENV+=	ac_cv_prog_HAVE_DOXYGEN="false"
 .endif
 
-.if exists(${LOCALBASE}/lib/libreadline.so.5)
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.if exists(${LOCALBASE}/lib/libreadline.so.6)
+LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 .endif
 
 post-patch:

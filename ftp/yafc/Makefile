@@ -7,6 +7,7 @@
 
 PORTNAME=	yafc
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,8 +29,8 @@ PLIST_DIRS=	%%EXAMPLESDIR%%
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libreadline.so.5)
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.if exists(${LOCALBASE}/lib/libreadline.so.6)
+LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 .endif
 
 post-install:

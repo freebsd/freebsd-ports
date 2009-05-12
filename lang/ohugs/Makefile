@@ -6,7 +6,7 @@
 
 PORTNAME=	ohugs
 PORTVERSION=	0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.math.chalmers.se/~nordland/ohugs/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Interpreter for Haskell with object-oriented features
 
-LIB_DEPENDS=	readline.5:${PORTSDIR}/devel/readline
+LIB_DEPENDS=	readline.6:${PORTSDIR}/devel/readline
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS+=	tix8184:${PORTSDIR}/x11-toolkits/tix
 .endif
