@@ -212,8 +212,8 @@ include/fxt/comb/num2perm.h
 include/fxt/comb/paren-gray.h
 include/fxt/comb/paren.h
 include/fxt/comb/paren-pref.h
-include/fxt/comb/partition-rec.h
 include/fxt/comb/partition.h
+include/fxt/comb/partition-gen.h
 include/fxt/comb/perm-colex.h
 include/fxt/comb/perm-derange.h
 include/fxt/comb/perm-gray-ffact.h
@@ -762,8 +762,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/paren-pref-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/partition-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/partition-out.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/partition-rec-demo.cc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/partition-rec-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/partition-gen-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/partition-gen-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/pascal-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/pascal-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/pellgen-gray-demo.cc
@@ -826,6 +826,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-st-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-star-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-star-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-star-inv-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-star-inv-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-star-swaps-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-star-swaps-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-trotter-demo.cc
