@@ -1,6 +1,12 @@
 include/LASi.h
-lib/libLASi.a
-lib/libLASi.la
 lib/libLASi.so
 lib/libLASi.so.0
 libdata/pkgconfig/lasi.pc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MissingGlyphExample.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SimpleLASiExample.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ComplexTextLayoutExample.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Example_1_Result.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Example_2_Result.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
