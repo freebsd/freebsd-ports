@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ember
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		http://amber.worldforge.org/ember/releases/stable/
@@ -37,6 +37,7 @@ USE_LUA=	5.1
 USE_GNOME=	gnomehack
 USE_BZIP2=	YES
 CPPFLAGS=	-DBR_NO_MACROS
+MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '\
@@ -60,7 +61,7 @@ post-patch:
 		${WRKSRC}/src/components/ogre/Makefile.in
 
 post-install:
-	(cd ${WRKDIR}/${PORTNAME}-media-${PORTVERSION} && ${FIND} . -type f -print | \
+	(cd ${WRKDIR}/media-${PORTVERSION} && ${FIND} . -type f -print | \
 		${CPIO} -pdmu -R${SHAREOWN}:${SHAREGRP} ${DATADIR}/media)
 	${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
 	${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644

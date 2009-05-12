@@ -18,20 +18,4 @@
  #if [ "$fullpath" = "" ]; then
  if [ "$test" = "." ]; then
  	path=${PWD}
-@@ -95,7 +96,7 @@
- 
- if [ ! -d $media_dir ] ; then
- 	echo "Copying dynamic data to user directory"
--	cp -dpR $media_user_dir $media_dir
-+	cp -pR $media_user_dir $media_dir
- fi
- 
- #Let's write the version number so that we can do some useful thing with it in the future. (Like remove old media dirs.)
-@@ -104,4 +105,6 @@
- # Execute real ember binary
- echo "Starting Ember...."
- #we have to do the LD_PRELOAD thing, because else at least I get an error: libnvidia-tls.so.1: cannot handle TLS data /ehj
--LD_PRELOAD=libGL.so.1 $bindir/ember.bin --home $homedata
-+[ ! -f $homedata/plugins.cfg ] && cp $etcdir/plugins.cfg $homedata/
-+[ ! -f $homedata/resources.cfg ] && cp $etcdir/resources.cfg $homedata/
-++LD_PRELOAD=libGL.so.1 $bindir/ember.bin
+
