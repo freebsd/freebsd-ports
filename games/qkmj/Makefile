@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-freebsd
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	clive@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QKMJ - QK Ma2Jong4 client
 
 RUN_DEPENDS=	compat4x-i386>=0:${PORTSDIR}/misc/compat4x \

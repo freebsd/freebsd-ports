@@ -13,7 +13,7 @@ MASTER_SITES=	http://untroubled.org/nullmailer/ \
 		http://untroubled.org/nullmailer/archive/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
-MAINTAINER=	clive@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MTA for hosts which relay to a fixed set of smart relays
 
 HAS_CONFIGURE=	yes

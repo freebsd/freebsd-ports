@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://ghs.tongi.org/ \
 		http://micro.ee.nthu.edu.tw/~tomcat/Xphotohunter/
 
-MAINTAINER=	clive@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game looking for the difference between two pictures
 
 USE_GETTEXT=	yes
