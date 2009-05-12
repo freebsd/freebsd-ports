@@ -1,15 +1,30 @@
 %%PYTHON_SITELIBDIR%%/atom/__init__.py
 %%PYTHON_SITELIBDIR%%/atom/__init__.pyc
 %%PYTHON_SITELIBDIR%%/atom/__init__.pyo
+%%PYTHON_SITELIBDIR%%/atom/auth.py
+%%PYTHON_SITELIBDIR%%/atom/auth.pyc
+%%PYTHON_SITELIBDIR%%/atom/auth.pyo
+%%PYTHON_SITELIBDIR%%/atom/client.py
+%%PYTHON_SITELIBDIR%%/atom/client.pyc
+%%PYTHON_SITELIBDIR%%/atom/client.pyo
+%%PYTHON_SITELIBDIR%%/atom/core.py
+%%PYTHON_SITELIBDIR%%/atom/core.pyc
+%%PYTHON_SITELIBDIR%%/atom/core.pyo
 %%PYTHON_SITELIBDIR%%/atom/http.py
 %%PYTHON_SITELIBDIR%%/atom/http.pyc
 %%PYTHON_SITELIBDIR%%/atom/http.pyo
+%%PYTHON_SITELIBDIR%%/atom/http_core.py
+%%PYTHON_SITELIBDIR%%/atom/http_core.pyc
+%%PYTHON_SITELIBDIR%%/atom/http_core.pyo
 %%PYTHON_SITELIBDIR%%/atom/http_interface.py
 %%PYTHON_SITELIBDIR%%/atom/http_interface.pyc
 %%PYTHON_SITELIBDIR%%/atom/http_interface.pyo
 %%PYTHON_SITELIBDIR%%/atom/mock_http.py
 %%PYTHON_SITELIBDIR%%/atom/mock_http.pyc
 %%PYTHON_SITELIBDIR%%/atom/mock_http.pyo
+%%PYTHON_SITELIBDIR%%/atom/mock_http_core.py
+%%PYTHON_SITELIBDIR%%/atom/mock_http_core.pyc
+%%PYTHON_SITELIBDIR%%/atom/mock_http_core.pyo
 %%PYTHON_SITELIBDIR%%/atom/mock_service.py
 %%PYTHON_SITELIBDIR%%/atom/mock_service.pyc
 %%PYTHON_SITELIBDIR%%/atom/mock_service.pyo
@@ -22,6 +37,69 @@
 %%PYTHON_SITELIBDIR%%/atom/url.py
 %%PYTHON_SITELIBDIR%%/atom/url.pyc
 %%PYTHON_SITELIBDIR%%/atom/url.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Cipher/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Cipher/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Cipher/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Hash/HMAC.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Hash/HMAC.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Hash/HMAC.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Hash/MD5.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Hash/MD5.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Hash/MD5.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Hash/SHA.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Hash/SHA.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Hash/SHA.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Hash/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Hash/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Hash/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Protocol/AllOrNothing.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Protocol/AllOrNothing.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Protocol/AllOrNothing.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Protocol/Chaffing.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Protocol/Chaffing.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Protocol/Chaffing.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Protocol/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Protocol/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Protocol/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey/DSA.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey/DSA.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey/DSA.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey/ElGamal.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey/ElGamal.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey/ElGamal.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey/RSA.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey/RSA.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey/RSA.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey/pubkey.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey/pubkey.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey/pubkey.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey/qNEW.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey/qNEW.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey/qNEW.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Util/RFC1751.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Util/RFC1751.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Util/RFC1751.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Util/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Util/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Util/number.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Util/number.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Util/number.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Util/randpool.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Util/randpool.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Util/randpool.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Util/test.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Util/test.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/Util/test.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/test.py
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/test.pyc
+%%PYTHON_SITELIBDIR%%/gdata/Crypto/test.pyo
 %%PYTHON_SITELIBDIR%%/gdata/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/__init__.pyo
@@ -34,21 +112,27 @@
 %%PYTHON_SITELIBDIR%%/gdata/apps/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gdata/apps/service.py
-%%PYTHON_SITELIBDIR%%/gdata/apps/service.pyc
-%%PYTHON_SITELIBDIR%%/gdata/apps/service.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/__init__.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/service.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/groups/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/groups/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/groups/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/groups/service.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/groups/service.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/groups/service.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/migration/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/migration/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/migration/__init__.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/migration/service.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/migration/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/migration/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/service.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/service.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/service.pyo
 %%PYTHON_SITELIBDIR%%/gdata/auth.py
 %%PYTHON_SITELIBDIR%%/gdata/auth.pyc
 %%PYTHON_SITELIBDIR%%/gdata/auth.pyo
@@ -85,6 +169,9 @@
 %%PYTHON_SITELIBDIR%%/gdata/contacts/service.py
 %%PYTHON_SITELIBDIR%%/gdata/contacts/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/contacts/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/data.py
+%%PYTHON_SITELIBDIR%%/gdata/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/docs/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/docs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/docs/__init__.pyo
@@ -94,12 +181,27 @@
 %%PYTHON_SITELIBDIR%%/gdata/exif/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/exif/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/exif/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/gauth.py
+%%PYTHON_SITELIBDIR%%/gdata/gauth.pyc
+%%PYTHON_SITELIBDIR%%/gdata/gauth.pyo
 %%PYTHON_SITELIBDIR%%/gdata/geo/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/geo/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/geo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/health/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/health/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/health/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/health/service.py
+%%PYTHON_SITELIBDIR%%/gdata/health/service.pyc
+%%PYTHON_SITELIBDIR%%/gdata/health/service.pyo
 %%PYTHON_SITELIBDIR%%/gdata/media/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/media/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/media/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/oauth/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/oauth/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/oauth/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/oauth/rsa.py
+%%PYTHON_SITELIBDIR%%/gdata/oauth/rsa.pyc
+%%PYTHON_SITELIBDIR%%/gdata/oauth/rsa.pyo
 %%PYTHON_SITELIBDIR%%/gdata/photos/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/photos/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/photos/__init__.pyo
@@ -118,29 +220,220 @@
 %%PYTHON_SITELIBDIR%%/gdata/spreadsheet/text_db.py
 %%PYTHON_SITELIBDIR%%/gdata/spreadsheet/text_db.pyc
 %%PYTHON_SITELIBDIR%%/gdata/spreadsheet/text_db.pyo
+%%PYTHON_SITELIBDIR%%/gdata/test_config.py
+%%PYTHON_SITELIBDIR%%/gdata/test_config.pyc
+%%PYTHON_SITELIBDIR%%/gdata/test_config.pyo
+%%PYTHON_SITELIBDIR%%/gdata/test_config_template.py
+%%PYTHON_SITELIBDIR%%/gdata/test_config_template.pyc
+%%PYTHON_SITELIBDIR%%/gdata/test_config_template.pyo
 %%PYTHON_SITELIBDIR%%/gdata/test_data.py
 %%PYTHON_SITELIBDIR%%/gdata/test_data.pyc
 %%PYTHON_SITELIBDIR%%/gdata/test_data.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/BaseDB.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/BaseDB.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/BaseDB.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/Checker.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/Checker.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/Checker.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/FileObject.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/FileObject.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/FileObject.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/HandshakeSettings.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/HandshakeSettings.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/HandshakeSettings.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/Session.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/Session.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/Session.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/SessionCache.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/SessionCache.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/SessionCache.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/SharedKeyDB.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/SharedKeyDB.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/SharedKeyDB.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/TLSConnection.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/TLSConnection.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/TLSConnection.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/TLSRecordLayer.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/TLSRecordLayer.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/TLSRecordLayer.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/VerifierDB.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/VerifierDB.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/VerifierDB.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/X509.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/X509.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/X509.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/X509CertChain.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/X509CertChain.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/X509CertChain.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/api.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/api.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/api.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/constants.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/constants.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/constants.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/errors.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/errors.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/errors.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/AsyncStateMachine.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/AsyncStateMachine.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/AsyncStateMachine.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/ClientHelper.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/ClientHelper.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/ClientHelper.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/HTTPTLSConnection.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/HTTPTLSConnection.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/HTTPTLSConnection.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/IMAP4_TLS.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/IMAP4_TLS.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/IMAP4_TLS.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/IntegrationHelper.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/IntegrationHelper.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/IntegrationHelper.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/POP3_TLS.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/POP3_TLS.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/POP3_TLS.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/SMTP_TLS.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/SMTP_TLS.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/SMTP_TLS.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/TLSAsyncDispatcherMixIn.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/TLSAsyncDispatcherMixIn.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/TLSAsyncDispatcherMixIn.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/TLSSocketServerMixIn.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/TLSSocketServerMixIn.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/TLSSocketServerMixIn.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/TLSTwistedProtocolWrapper.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/TLSTwistedProtocolWrapper.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/TLSTwistedProtocolWrapper.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/XMLRPCTransport.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/XMLRPCTransport.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/XMLRPCTransport.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/integration/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/mathtls.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/mathtls.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/mathtls.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/messages.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/messages.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/messages.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/AES.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/AES.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/AES.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/ASN1Parser.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/ASN1Parser.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/ASN1Parser.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/Cryptlib_AES.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/Cryptlib_AES.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/Cryptlib_AES.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/Cryptlib_RC4.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/Cryptlib_RC4.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/Cryptlib_RC4.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/Cryptlib_TripleDES.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/Cryptlib_TripleDES.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/Cryptlib_TripleDES.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/OpenSSL_AES.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/OpenSSL_AES.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/OpenSSL_AES.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/OpenSSL_RC4.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/OpenSSL_RC4.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/OpenSSL_RC4.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/OpenSSL_RSAKey.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/OpenSSL_RSAKey.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/OpenSSL_RSAKey.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/OpenSSL_TripleDES.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/OpenSSL_TripleDES.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/OpenSSL_TripleDES.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/PyCrypto_AES.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/PyCrypto_AES.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/PyCrypto_AES.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/PyCrypto_RC4.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/PyCrypto_RC4.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/PyCrypto_RC4.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/PyCrypto_RSAKey.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/PyCrypto_RSAKey.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/PyCrypto_RSAKey.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/PyCrypto_TripleDES.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/PyCrypto_TripleDES.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/PyCrypto_TripleDES.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/Python_AES.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/Python_AES.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/Python_AES.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/Python_RC4.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/Python_RC4.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/Python_RC4.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/Python_RSAKey.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/Python_RSAKey.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/Python_RSAKey.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/RC4.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/RC4.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/RC4.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/RSAKey.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/RSAKey.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/RSAKey.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/TripleDES.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/TripleDES.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/TripleDES.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/cipherfactory.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/cipherfactory.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/cipherfactory.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/codec.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/codec.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/codec.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/compat.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/compat.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/compat.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/cryptomath.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/cryptomath.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/cryptomath.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/dateFuncs.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/dateFuncs.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/dateFuncs.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/hmac.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/hmac.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/hmac.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/jython_compat.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/jython_compat.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/jython_compat.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/keyfactory.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/keyfactory.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/keyfactory.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/rijndael.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/rijndael.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/rijndael.pyo
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/xmltools.py
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/xmltools.pyc
+%%PYTHON_SITELIBDIR%%/gdata/tlslite/utils/xmltools.pyo
 %%PYTHON_SITELIBDIR%%/gdata/urlfetch.py
 %%PYTHON_SITELIBDIR%%/gdata/urlfetch.pyc
 %%PYTHON_SITELIBDIR%%/gdata/urlfetch.pyo
-%%PYTHON_SITELIBDIR%%/gdata/youtube/__init__.py
-%%PYTHON_SITELIBDIR%%/gdata/youtube/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gdata/youtube/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gdata/youtube/service.py
-%%PYTHON_SITELIBDIR%%/gdata/youtube/service.pyc
-%%PYTHON_SITELIBDIR%%/gdata/youtube/service.pyo
 %%PYTHON_SITELIBDIR%%/gdata/webmastertools/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/webmastertools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/webmastertools/__init__.pyo
 %%PYTHON_SITELIBDIR%%/gdata/webmastertools/service.py
 %%PYTHON_SITELIBDIR%%/gdata/webmastertools/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/webmastertools/service.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/webmastertools
+%%PYTHON_SITELIBDIR%%/gdata/youtube/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/youtube/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/youtube/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/youtube/service.py
+%%PYTHON_SITELIBDIR%%/gdata/youtube/service.pyc
+%%PYTHON_SITELIBDIR%%/gdata/youtube/service.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/youtube
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/webmastertools
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/tlslite/utils
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/tlslite/integration
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/tlslite
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/spreadsheet
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/photos
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/oauth
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/media
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/health
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/geo
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/exif
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/docs
@@ -149,12 +442,20 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/calendar
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/blogger
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/base
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/migration
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/groups
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/alt
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/Util
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/Protocol
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/Hash
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/Cipher
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto
 @dirrm %%PYTHON_SITELIBDIR%%/gdata
 @dirrm %%PYTHON_SITELIBDIR%%/atom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/authsub/secure_authsub.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/base/baseQueryExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/base/dryRunInsert.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/BloggerExample.py
@@ -162,16 +463,19 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contacts/contacts_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/docs/docs_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mashups/birthdaySample.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/oauth_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spreadsheets/spreadsheetExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webmastertools/AddDeleteExampleDotCom.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webmastertools/SitemapsFeedSummary.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webmastertools/SitesFeedSummary.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/webmastertools
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/spreadsheets
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mashups
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/docs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contacts
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blogger
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/base
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/authsub
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

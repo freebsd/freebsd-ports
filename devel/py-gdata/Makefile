@@ -6,23 +6,25 @@
 #
 
 PORTNAME=	gdata
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	gdata.py-${PORTVERSION}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	GData Python Client Library
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
-
 PROJECTHOST=	gdata-python-client
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	gdata.py
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 250
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
+.endif
 
 .if !defined(NOPORTEXAMPLES)
 post-install:
@@ -30,4 +32,4 @@ post-install:
 	${CP} -R ${WRKSRC}/samples/ ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
