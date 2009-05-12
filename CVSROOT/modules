@@ -3870,6 +3870,7 @@ gambas2-gb-qt-kde               ports/x11/gambas2-gb-qt-kde
 gambas2-gb-sdl                  ports/devel/gambas2-gb-sdl
 gambas2-gb-sdl-sound            ports/audio/gambas2-gb-sdl-sound
 gambas2-gb-xml                  ports/textproc/gambas2-gb-xml
+gambas2-ide                     ports/editors/gambas2-ide
 gambit                          ports/math/gambit
 gambit-c                        ports/lang/gambit-c
 games_crimson                   ports/games/crimson
@@ -9229,6 +9230,7 @@ net_mpd                         ports/net/mpd
 net_tftp-hpa                    ports/net/tftp-hpa
 net_ttt                         ports/net/ttt
 netams                          ports/net-mgmt/netams
+netams-front                    ports/net-mgmt/netams-front
 netatalk                        ports/net/netatalk
 netbeans                        ports/java/netbeans
 netbeans-devel                  ports/java/netbeans-devel
@@ -13148,6 +13150,7 @@ p5-WWW-Search-Google            ports/www/p5-WWW-Search-Google
 p5-WWW-Search-MSN               ports/www/p5-WWW-Search-MSN
 p5-WWW-Shorten                  ports/www/p5-WWW-Shorten
 p5-WWW-Shorten-0rz              ports/www/p5-WWW-Shorten-0rz
+p5-WWW-Shorten-Bitly            ports/www/p5-WWW-Shorten-Bitly
 p5-WWW-Shorten-KUSO             ports/www/p5-WWW-Shorten-KUSO
 p5-WWW-SourceForge              ports/www/p5-WWW-SourceForge
 p5-WWW-Spinn3r                  ports/www/p5-WWW-Spinn3r
@@ -16649,6 +16652,7 @@ p5-www-search-google            ports/www/p5-WWW-Search-Google
 p5-www-search-msn               ports/www/p5-WWW-Search-MSN
 p5-www-shorten                  ports/www/p5-WWW-Shorten
 p5-www-shorten-0rz              ports/www/p5-WWW-Shorten-0rz
+p5-www-shorten-bitly            ports/www/p5-WWW-Shorten-Bitly
 p5-www-shorten-kuso             ports/www/p5-WWW-Shorten-KUSO
 p5-www-sourceforge              ports/www/p5-WWW-SourceForge
 p5-www-spinn3r                  ports/www/p5-WWW-Spinn3r
@@ -16882,6 +16886,7 @@ paragui                         ports/x11-toolkits/paragui
 paragui-devel                   ports/x11-toolkits/paragui-devel
 parano                          ports/security/parano
 paraview                        ports/science/paraview
+parcellite                      ports/deskutils/parcellite
 parchive                        ports/archivers/parchive
 pardiff                         ports/textproc/pardiff
 pari                            ports/math/pari
@@ -18145,6 +18150,7 @@ png2html                        ports/graphics/png2html
 png2ico                         ports/graphics/png2ico
 pngcheck                        ports/graphics/pngcheck
 pngcrush                        ports/graphics/pngcrush
+pngnq                           ports/graphics/pngnq
 pngquant                        ports/graphics/pngquant
 pngrewrite                      ports/graphics/pngrewrite
 pngwriter                       ports/graphics/pngwriter
@@ -22498,6 +22504,7 @@ vicq                            ports/net-im/vicq
 vid                             ports/graphics/vid
 vida                            ports/security/vida
 vidalia                         ports/net-mgmt/vidalia
+videocache                      ports/www/videocache
 videogen                        ports/sysutils/videogen
 videoproto                      ports/x11/videoproto
 videotext                       ports/misc/videotext
