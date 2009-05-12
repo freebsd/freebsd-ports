@@ -262,7 +262,9 @@ share/varkon/mdf/swedish/x11.MDF
 %%PORTDOCS%%%%DOCSDIR%%/relnotes/rn_1.18B.htm
 %%PORTDOCS%%%%DOCSDIR%%/relnotes/rn_1.19B.htm
 %%PORTDOCS%%%%DOCSDIR%%/relnotes/rn_1.19C.htm
+%%PORTDOCS%%%%DOCSDIR%%/relnotes/rn_1.19D.htm
 %%PORTDOCS%%%%DOCSDIR%%/relnotes/rn_htmdoc.htm
+%%PORTDOCS%%%%DOCSDIR%%/relnotes/rn_next.htm
 %%PORTDOCS%%%%DOCSDIR%%/relnotes/Swheel1.jpg
 %%PORTDOCS%%%%DOCSDIR%%/relnotes/Swheel2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/relnotes/attributes.jpg
@@ -324,6 +326,7 @@ share/varkon/mdf/swedish/x11.MDF
 %%PORTDOCS%%%%DOCSDIR%%/GUI/f010.htm
 %%PORTDOCS%%%%DOCSDIR%%/GUI/f011.htm
 %%PORTDOCS%%%%DOCSDIR%%/GUI/f012.htm
+%%PORTDOCS%%%%DOCSDIR%%/GUI/f016.htm
 %%PORTDOCS%%%%DOCSDIR%%/GUI/f019.htm
 %%PORTDOCS%%%%DOCSDIR%%/GUI/f021.htm
 %%PORTDOCS%%%%DOCSDIR%%/GUI/f022.htm
@@ -591,6 +594,7 @@ share/varkon/mdf/swedish/x11.MDF
 %%PORTDOCS%%%%DOCSDIR%%/MBS/cre_win.htm
 %%PORTDOCS%%%%DOCSDIR%%/MBS/csys_1p.htm
 %%PORTDOCS%%%%DOCSDIR%%/MBS/csys_3p.htm
+%%PORTDOCS%%%%DOCSDIR%%/MBS/csys_usrdef.htm
 %%PORTDOCS%%%%DOCSDIR%%/MBS/cur_appr.htm
 %%PORTDOCS%%%%DOCSDIR%%/MBS/cur_comp.htm
 %%PORTDOCS%%%%DOCSDIR%%/MBS/cur_comparr.htm
@@ -759,6 +763,7 @@ share/varkon/mdf/swedish/x11.MDF
 %%PORTDOCS%%%%DOCSDIR%%/MBS/outstr.htm
 %%PORTDOCS%%%%DOCSDIR%%/MBS/pardecl.htm
 %%PORTDOCS%%%%DOCSDIR%%/MBS/part.htm
+%%PORTDOCS%%%%DOCSDIR%%/MBS/pca.htm
 %%PORTDOCS%%%%DOCSDIR%%/MBS/per_view.htm
 %%PORTDOCS%%%%DOCSDIR%%/MBS/pinc.htm
 %%PORTDOCS%%%%DOCSDIR%%/MBS/plot_win.htm
@@ -892,6 +897,7 @@ share/varkon/mdf/swedish/x11.MDF
 %%PORTDOCS%%%%DOCSDIR%%/MBS/tfont3.gif
 %%PORTDOCS%%%%DOCSDIR%%/MBS/tfont4.gif
 %%PORTDOCS%%%%DOCSDIR%%/MBS/tfont5.gif
+%%PORTDOCS%%%%DOCSDIR%%/MBS/images/Csys_Usrded3.png
 %%PORTDOCS%%%%DOCSDIR%%/MBS/images/Splines-new.png
 %%PORTDOCS%%%%DOCSDIR%%/MBS/images/coor_sys_1.png
 %%PORTDOCS%%%%DOCSDIR%%/MBS/images/coor_sys_2.png
