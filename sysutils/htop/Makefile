@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	tshadwick@oss-solutions.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A better top(1) - interactive process viewer
 
 NOT_FOR_ARCHS=	sparc64
