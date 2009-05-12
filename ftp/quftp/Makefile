@@ -7,7 +7,7 @@
 
 PORTNAME=	quftp
 PORTVERSION=	1.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	quftp
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	quftp
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scriptable FTP client
 
-LIB_DEPENDS=	readline.5:${PORTSDIR}/devel/readline
+LIB_DEPENDS=	readline.6:${PORTSDIR}/devel/readline
 
 GNU_CONFIGURE=	yes
 

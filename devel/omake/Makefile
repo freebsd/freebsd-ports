@@ -8,7 +8,7 @@
 
 PORTNAME=	omake
 PORTVERSION=	0.9.8.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://omake.metaprl.org/downloads/
 DISTNAME=	omake-0.9.8.5-3
@@ -28,8 +28,8 @@ INFO=		omake-doc
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libreadline.so.5)
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.if exists(${LOCALBASE}/lib/libreadline.so.6)
+LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif

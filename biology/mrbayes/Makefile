@@ -7,6 +7,7 @@
 
 PORTNAME=	mrbayes
 PORTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	SF
 
@@ -15,7 +16,7 @@ COMMENT=	Bayesian inference of phylogeny
 
 USE_GMAKE=	yes
 
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 
 PLIST_FILES=	bin/mb
 

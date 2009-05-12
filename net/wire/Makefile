@@ -7,6 +7,7 @@
 
 PORTNAME=	wire
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.zankasoftware.com/dist/ \
 		${MASTER_SITE_LOCAL}
@@ -25,8 +26,8 @@ MAN1=		wire.1
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libreadline.so.5)
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.if exists(${LOCALBASE}/lib/libreadline.so.6)
+LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 .endif
 
 .include <bsd.port.post.mk>

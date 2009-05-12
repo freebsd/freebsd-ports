@@ -7,6 +7,7 @@
 
 PORTNAME=	osiris
 PORTVERSION=	4.2.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://osiris.shmoo.com/data/ \
 		http://redundancy.redundancy.org/mirror/
@@ -24,8 +25,8 @@ USE_RC_SUBR=	yes
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libreadline.so.5)
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.if exists(${LOCALBASE}/lib/libreadline.so.6)
+LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 .endif
 
 .if defined(WITH_OSIRISMD)

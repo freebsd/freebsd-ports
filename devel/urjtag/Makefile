@@ -7,7 +7,7 @@
 
 PORTNAME=	urjtag
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -51,8 +51,8 @@ CONFIGURE_ARGS+=	--with-libftdi
 LIB_DEPENDS+=	ftdi.15:${PORTSDIR}/devel/libftdi
 .endif
 
-.if exists(${LOCALBASE}/lib/libreadline.so.5)
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.if exists(${LOCALBASE}/lib/libreadline.so.6)
+LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 .endif
 
 .include <bsd.port.post.mk>
