@@ -42,8 +42,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/pythondoc-elementtree.SimpleXMLWriter.html
 %%PORTDOCS%%%%DOCSDIR%%/pythondoc-elementtree.TidyTools.html
 %%PORTDOCS%%%%DOCSDIR%%/pythondoc-elementtree.XMLTreeBuilder.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple-ns.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-ns.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple.xml
 @dirrm %%PYTHON_SITELIBDIR%%/elementtree
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
