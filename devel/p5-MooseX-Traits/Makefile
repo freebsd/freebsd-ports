@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Moose eXtenstion to automatically apply roles at object creation time
 
-BUILD_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Mouse
+BUILD_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
