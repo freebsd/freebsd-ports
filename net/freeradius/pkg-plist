@@ -306,6 +306,10 @@ lib/rlm_sql_log.so
 %%PGSQL%%lib/rlm_sql_postgresql.a
 %%PGSQL%%lib/rlm_sql_postgresql.la
 %%PGSQL%%lib/rlm_sql_postgresql.so
+%%UNIXODBC%%lib/rlm_sql_unixodbc-%%PORTVERSION%%.so
+%%UNIXODBC%%lib/rlm_sql_unixodbc.a
+%%UNIXODBC%%lib/rlm_sql_unixodbc.la
+%%UNIXODBC%%lib/rlm_sql_unixodbc.so
 lib/rlm_sqlcounter-%%PORTVERSION%%.la
 lib/rlm_sqlcounter-%%PORTVERSION%%.so
 lib/rlm_sqlcounter.a

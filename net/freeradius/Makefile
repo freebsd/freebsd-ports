@@ -53,6 +53,7 @@ OPTIONS=	KERBEROS	"With Kerberos support" off \
 OPTIONS+=	MYSQL		"With MySQL database support" off
 .endif
 OPTIONS+=	PGSQL		"With PostgreSQL database support" off \
+		UNIXODBC	"With unixODBC database support" off \
 		FIREBIRD	"With Firebird database support (EXPERIMENTAL)" off \
 		SNMP		"With SNMP support" off \
 		EDIR		"With Novell eDirectory support" off \
@@ -91,8 +92,7 @@ CONFIGURE_ARGS+=--without-rlm_sql_db2 \
 		--without-rlm_sql_freetds \
 		--without-rlm_sql_iodbc \
 		--without-rlm_sql_oracle \
-		--without-rlm_sql_sybase \
-		--without-rlm_sql_unixodbc
+		--without-rlm_sql_sybase
 
 .if ${ARCH} == amd64
 CONFIGURE_ARGS+=	--with-pic
@@ -152,6 +152,15 @@ _REQUIRE+=	postgresql
 .else
 CONFIGURE_ARGS+=--without-rlm_sql_postgresql
 PLIST_SUB+=	PGSQL="@comment "
+.endif
+
+.ifdef(WITH_UNIXODBC)
+CONFIGURE_ARGS+=--with-rlm_sql_unixodbc
+PLIST_SUB+=	UNIXODBC=""
+LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+.else
+CONFIGURE_ARGS+=--without-rlm_sql_unixodbc
+PLIST_SUB+=	UNIXODBC="@comment "
 .endif
 
 .ifdef(WITH_FIREBIRD)
