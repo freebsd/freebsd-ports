@@ -89,12 +89,6 @@ SUEXEC_MAN=
 
 .endif  # !SUEXEC
 
-.if !defined(NOPORTDOC)
-PLIST_SUB+=	NODOCS=""
-.else
-PLIST_SUB+=	NODOCS="@comment "
-.endif
-
 HAS_CONFIGURE=	yes
 # += for child ports
 CONFIGURE_ARGS+=	\
@@ -149,7 +143,7 @@ MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 \
 		${SUEXEC_MAN}
 
 post-patch:
-.if defined(NOPORTDOC)
+.if defined(NOPORTDOCS)
 	@(cd ${WRKSRC} ; ${PATCH} < ${FILESDIR}/no_port_doc)
 .endif
 
