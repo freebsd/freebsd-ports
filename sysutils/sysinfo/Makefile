@@ -7,6 +7,7 @@
 
 PORTNAME=	sysinfo
 PORTVERSION=	0.8.7
+PORTREVISON=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://danger.rulez.sk/projects/sysinfo/
@@ -51,10 +52,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENCE ${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_BIN} modules ${DATADIR})
 
-.if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/doc/sysinfo.conf.5 ${MANPREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/doc/sysinfo.8 ${MANPREFIX}/man/man8
-.endif
 
 	@if [ ! -f ${PREFIX}/etc/sysinfo.conf ]; then \
 		${CP} -p ${PREFIX}/etc/sysinfo.conf.sample ${PREFIX}/etc/sysinfo.conf ; \
