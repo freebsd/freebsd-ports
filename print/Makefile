@@ -25,6 +25,7 @@
     SUBDIR += auctex
     SUBDIR += axpoint
     SUBDIR += bibcursed
+    SUBDIR += biblio-py
     SUBDIR += bibview
     SUBDIR += bjfilter360
     SUBDIR += bjfilter850

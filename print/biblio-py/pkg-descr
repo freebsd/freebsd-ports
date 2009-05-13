@@ -1,0 +1,8 @@
+Biblio-py is a package to manage bibliography written in python.
+Currently it contains two subpackages:
+    * yapbib: Yet Another Python BIBliography manager tool,
+mainly for Bibtex files.
+    * query_ads: A simple python tool that permits to query
+Harvard Database
+
+WWW: http://cabcat2.cnea.gov.ar/staff/fiol/biblio-py.html
