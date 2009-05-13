@@ -7,7 +7,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.4.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	net-snmp
@@ -20,6 +20,7 @@ COMMENT=	An extendable SNMP implementation
 OPTIONS=	IPV6 "Build with IPv6 support" on \
 		MFD_REWRITES "Build with 64-bit Interface Counters" off \
 		PERL "Install additional perl modules" on \
+		PERL_EMBEDDED "Build embedded perl" on \
 		TKMIB "Install graphical MIB browser" off \
 		DUMMY "Enable dummy values as placeholders" on \
 		DMALLOC "Enable dmalloc debug memory allocator" off
@@ -61,7 +62,12 @@ PLIST_SUB+=	WITH_TKMIB=""
 
 .if defined(WITH_PERL)
 USE_PERL5=	yes
-CONFIGURE_ARGS+=--enable-embedded-perl --with-perl-modules
+CONFIGURE_ARGS+=--with-perl-modules
+.if defined(WITHOUT_PERL_EMBEDDED)
+CONFIGURE_ARGS+=--disable-embedded-perl
+.else
+CONFIGURE_ARGS+=--enable-embedded-perl
+.endif
 PLIST_SUB+=	WITH_PERL=""
 .else
 USE_PERL5_BUILD=yes
