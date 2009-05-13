@@ -1603,6 +1603,7 @@
     SUBDIR += p5-MooseX-Clone
     SUBDIR += p5-MooseX-ConfigFromFile
     SUBDIR += p5-MooseX-Daemonize
+    SUBDIR += p5-MooseX-Declare
     SUBDIR += p5-MooseX-Getopt
     SUBDIR += p5-MooseX-IOC
     SUBDIR += p5-MooseX-Log-Log4perl

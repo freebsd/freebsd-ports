@@ -1,0 +1,28 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Declare/.packlist
+%%SITE_PERL%%/MooseX/Declare.pm
+%%SITE_PERL%%/MooseX/Declare/Context.pm
+%%SITE_PERL%%/MooseX/Declare/Context/Namespaced.pm
+%%SITE_PERL%%/MooseX/Declare/Context/WithOptions.pm
+%%SITE_PERL%%/MooseX/Declare/StackItem.pm
+%%SITE_PERL%%/MooseX/Declare/Syntax/EmptyBlockIfMissing.pm
+%%SITE_PERL%%/MooseX/Declare/Syntax/Extending.pm
+%%SITE_PERL%%/MooseX/Declare/Syntax/InnerSyntaxHandling.pm
+%%SITE_PERL%%/MooseX/Declare/Syntax/Keyword/Class.pm
+%%SITE_PERL%%/MooseX/Declare/Syntax/Keyword/Clean.pm
+%%SITE_PERL%%/MooseX/Declare/Syntax/Keyword/Method.pm
+%%SITE_PERL%%/MooseX/Declare/Syntax/Keyword/MethodModifier.pm
+%%SITE_PERL%%/MooseX/Declare/Syntax/Keyword/Role.pm
+%%SITE_PERL%%/MooseX/Declare/Syntax/KeywordHandling.pm
+%%SITE_PERL%%/MooseX/Declare/Syntax/MethodDeclaration.pm
+%%SITE_PERL%%/MooseX/Declare/Syntax/MooseSetup.pm
+%%SITE_PERL%%/MooseX/Declare/Syntax/NamespaceHandling.pm
+%%SITE_PERL%%/MooseX/Declare/Syntax/OptionHandling.pm
+%%SITE_PERL%%/MooseX/Declare/Syntax/RoleApplication.pm
+%%SITE_PERL%%/MooseX/Declare/Util.pm
+@dirrm %%SITE_PERL%%/MooseX/Declare/Syntax/Keyword
+@dirrm %%SITE_PERL%%/MooseX/Declare/Syntax
+@dirrm %%SITE_PERL%%/MooseX/Declare/Context
+@dirrm %%SITE_PERL%%/MooseX/Declare
+@dirrmtry %%SITE_PERL%%/MooseX
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Declare
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
