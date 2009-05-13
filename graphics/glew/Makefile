@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	glew
-PORTVERSION=	1.4.0
-PORTREVISION=	2
+PORTVERSION=	1.5.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 EXTRACT_SUFX=	-src.tgz
@@ -19,6 +18,7 @@ USE_XORG=	x11 xext xi xmu
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_LDCONFIG=	yes
+USE_DOS2UNIX=	config/config.guess config/Makefile.freebsd Makefile
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
