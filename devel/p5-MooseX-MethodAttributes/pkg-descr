@@ -1,0 +1,4 @@
+MooseX::MethodAttributes allows code attributes of methods to be
+introspected using Moose meta method objects.
+
+WWW: http://search.cpan.org/dist/MooseX-MethodAttributes/

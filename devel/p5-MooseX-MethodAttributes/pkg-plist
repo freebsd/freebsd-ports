@@ -1,0 +1,17 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MethodAttributes/.packlist
+%%SITE_PERL%%/MooseX/MethodAttributes.pm
+%%SITE_PERL%%/MooseX/MethodAttributes/Inheritable.pm
+%%SITE_PERL%%/MooseX/MethodAttributes/Role/AttrContainer.pm
+%%SITE_PERL%%/MooseX/MethodAttributes/Role/AttrContainer/Inheritable.pm
+%%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Class.pm
+%%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Method.pm
+%%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Method/MaybeWrapped.pm
+%%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Method/Wrapped.pm
+@dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Method
+@dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta
+@dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/AttrContainer
+@dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role
+@dirrm %%SITE_PERL%%/MooseX/MethodAttributes
+@dirrmtry %%SITE_PERL%%/MooseX
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MethodAttributes
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
