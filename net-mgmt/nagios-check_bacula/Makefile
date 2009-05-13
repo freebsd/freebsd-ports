@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	check_bacula
-PORTVERSION=	2.4.4
+PORTVERSION=	3.0.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF
+MASTER_SITES=	SF/bacula
 PKGNAMEPREFIX=	nagios-
 DISTNAME=	bacula-${PORTVERSION}
 
@@ -17,8 +17,11 @@ COMMENT=	Nagios plugin for Bacula
 
 WRKSRC=		${WRKDIR}/bacula-${PORTVERSION}
 CONFIGURE_ARGS=	--enable-client-only \
+		--disable-build-dird \
+		--disable-build-stored \
 		--disable-nls
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -30,7 +33,9 @@ post-build:
 
 do-install:
 	@${MKDIR} ${PREFIX}/libexec/nagios
-	${INSTALL_PROGRAM} ${WRKSRC}/src/check_bacula/check_bacula \
+	${INSTALL_PROGRAM} ${WRKSRC}/src/check_bacula/.libs/check_bacula \
 		${PREFIX}/libexec/nagios/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/lib/.libs/libbac.so.1 \
+		${PREFIX}/lib
 
 .include <bsd.port.post.mk>
