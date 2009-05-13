@@ -61,12 +61,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CVE-2009-1194</cvename>
       <bid>34870</bid>
+      <cvename>CVE-2009-1194</cvename>
+      <url>http://secunia.com/advisories/35021/</url>
     </references>
     <dates>
       <discovery>2009-02-22</discovery>
       <entry>2009-05-13</entry>
+      <modified>2009-05-13</modified>
     </dates>
   </vuln>
 
