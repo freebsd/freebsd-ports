@@ -8,6 +8,8 @@
 @dirrm %%SITE_PERL%%/MooseX/Emulate/Class/Accessor/Fast
 @dirrm %%SITE_PERL%%/MooseX/Emulate/Class/Accessor
 @dirrm %%SITE_PERL%%/MooseX/Emulate/Class
+@dirrm %%SITE_PERL%%/MooseX/Adopt/Class/Accessor
+@dirrm %%SITE_PERL%%/MooseX/Adopt/Class
 @dirrmtry %%SITE_PERL%%/MooseX/Emulate
 @dirrmtry %%SITE_PERL%%/MooseX/Adopt
 @dirrmtry %%SITE_PERL%%/MooseX
