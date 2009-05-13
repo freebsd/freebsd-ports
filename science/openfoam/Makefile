@@ -7,7 +7,7 @@
 
 PORTNAME=	${REALNAME:L}
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	foam
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	micod:${PORTSDIR}/devel/mico						\
 		${LOCALBASE}/lib/X11/fonts/freefont-ttf/FreeSans.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
 #		${LOCALBASE}/lib/parmetis/libmetis.a:${PORTSDIR}/math/parmetis
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo	\
-		readline.5:${PORTSDIR}/devel/readline
+		readline.6:${PORTSDIR}/devel/readline
 # OpenFOAM requires metis-5.0, not yet in the ports tree
 #		metis.1:${PORTSDIR}/math/metis
 #		CGAL.0:${PORTSDIR}/math/cgal
