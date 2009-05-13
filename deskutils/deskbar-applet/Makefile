@@ -8,6 +8,7 @@
 
 PORTNAME=	deskbar-applet
 PORTVERSION=	2.26.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -15,10 +16,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Omnipresent versatile search interface
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree \
-		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree \
-		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/simplejson-2.0.9-py${PYTHON_VER}-${OPSYS:L}-${_OSRELEASE}-${ARCH}.egg:${PORTSDIR}/devel/py-simplejson
 
 USE_BZIP2=	yes
@@ -47,6 +46,11 @@ PLIST_SUB+=	EVO=""
 .else
 CONFIGURE_ARGS+=--disable-evolution
 PLIST_SUB+=	EVO="@comment "
+.endif
+
+.if ${PYTHON_REL} < 250
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
 .endif
 
 post-patch:
