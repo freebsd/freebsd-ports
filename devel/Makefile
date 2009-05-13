@@ -2437,6 +2437,7 @@
     SUBDIR += py-xdg
     SUBDIR += py-xoltar-toolkit
     SUBDIR += py-yaml
+    SUBDIR += py-ydbf
     SUBDIR += py-zconfig
     SUBDIR += py-zopeInterface
     SUBDIR += py-zopetesting
