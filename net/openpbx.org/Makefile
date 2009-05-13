@@ -8,14 +8,14 @@
 PORTNAME=	openpbx.org
 PORTVERSION=	1.2
 DISTVERSION=	1.2_rc3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.openpbx.org/releases/
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
 
-LIB_DEPENDS=	spandsp.0:${PORTSDIR}/comms/spandsp-devel
+LIB_DEPENDS=	spandsp.2:${PORTSDIR}/comms/spandsp-devel
 
 BROKEN=		Unfetchable
 
