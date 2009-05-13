@@ -6,28 +6,28 @@
 #
 
 PORTNAME=	data
-PORTVERSION=	20080805
+PORTVERSION=	20090215
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vdrift
 PKGNAMEPREFIX=	vdrift-
-DISTNAME=	${PKGNAMEPREFIX}2008-08-05-src
+DISTNAME=	${PKGNAMEPREFIX}2009-02-15-src
 DIST_SUBDIR=	vdrift
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Vdrift driving simulation data files
 
 USE_BZIP2=	yes
+NO_PACKAGE=	Package will be 450MB, set FORCE_PACKAGE if you really want it
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/vdrift
 PLIST=		${WRKDIR}/pkg-plist
-WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}08-05-08
+WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}2009-02-15
 
 post-extract:
 	@cd ${WRKSRC}/data && \
-		${FIND} * -name SConscript -print0 | ${XARGS} -0 ${RM}
-.for DIRE in settings/replays settings/screenshots carparts/turbo carparts/transmission \
-		carparts/suspension carparts/other carparts/exhaust carparts/engine
+		${FIND} * -name "SConscript*" -print0 | ${XARGS} -0 ${RM}
+.for DIRE in music
 	@${RMDIR} ${WRKSRC}/data/${DIRE}
 .endfor
 

@@ -1,20 +1,38 @@
---- src/SConscript	2009-01-16 00:05:24.000000000 -0500
-+++ src/SConscript	2009-01-16 00:06:11.000000000 -0500
-@@ -61,7 +61,7 @@
+--- src/SConscript	2009-05-12 21:55:12.000000000 -0500
++++ src/SConscript	2009-05-12 21:56:45.000000000 -0500
+@@ -11,8 +11,9 @@
+ #vamosobjs = SConscript('vamos/SConscript', exports=['env', 'src_dir'])
+ #guiobjs = SConscript('gui/SConscript', exports=['env', 'src_dir'])
+ 
+-def addbulletpath( val ):
+-    return "../bullet-2.73/src/"+val
++if (sys.platform != 'freebsd6') and (sys.platform != 'freebsd7') and (sys.platform != 'freebsd8'):
++  def addbulletpath( val ):
++      return "../bullet-2.73/src/"+val
+ 
+ #---------#
+ # Sources #
+@@ -164,9 +165,10 @@
+ 		BulletCollision/BroadphaseCollision/btBroadphaseProxy.cpp
+ 		BulletCollision/BroadphaseCollision/btOverlappingPairCache.cpp""")
+ 
+-bullet_src = map(addbulletpath, bullet_src)
+ 
+-src.extend(bullet_src)
++if (sys.platform != 'freebsd6') and (sys.platform != 'freebsd7') and (sys.platform != 'freebsd8'):
++   bullet_src = map(addbulletpath, bullet_src)
++   src.extend(bullet_src)
+ 
  #------------------------#
  # Copy Build Environment #
- #------------------------#
--local_env = env.Copy()
-+local_env = env.Clone()
- SConsignFile()
+@@ -181,6 +183,10 @@
+ vdrift_install = None
+ common_libs = ['SDL_image', 'SDL_net', 'SDL_gfx', 'vorbisfile']
  
- #--------------------------#
-@@ -152,7 +152,7 @@
- 
- if not ( 'win32' == sys.platform or 'cygwin' == sys.platform ):
-     #for now this seems to break windows build so disabling for win
--    wrapper_build_env = local_env.Copy()
-+    wrapper_build_env = local_env.Clone()
- 
-     pybase = 'python%s' % sys.version[0:3]
-     wrapper_build_env.Append(CPPPATH=[os.path.join(sys.prefix, 'include', pybase)],
++if (sys.platform == 'freebsd6') or (sys.platform == 'freebsd7') or (sys.platform == 'freebsd8'):
++  common_libs.append('libbulletcollision')
++  common_libs.append('libbulletmath')
++
+ #check to see how bullet was built
+ #if ( FindFile('libLinearMath.a', '#bullet-2.73/src/LinearMath') == None):
+ #    common_libs.append('libbulletcollision')
