@@ -63,7 +63,7 @@ post-patch:
 .else
 	@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am:|' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} 's|install-data-am: install-apidocDATA install-dist_docDATA|install-data-am:|' \
+	@${REINPLACE_CMD} 's|install-data-am: install-dist_apidocDATA install-dist_docDATA|install-data-am:|' \
 		${WRKSRC}/doc/Makefile.in
 .endif
 
