@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	1.1.7
-PORTREVISION?=	2
+PORTVERSION=	1.2.0
+PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	SF
 
 MAINTAINER?=	matthias.andree@gmx.de
 COMMENT=	Fast, teachable, learning spam detector
 
-# cannot switch to USE_BDB here, as we want slave ports
-# to override this easily
-LIB_DEPENDS?=	db-4.3:${PORTSDIR}/databases/db43
+.if !defined(MASTERDIR) || ${MASTERDIR} == ${.CURDIR}
+# building master port
+USE_BDB=	41+
+.endif
 
 OPTIONS=	GSL     "Link with system-wide GSL dynamically (recommended)" on
 OPTIONS+=	UNICODE "Normalize tokens to Unicode (UTF-8)" on
@@ -27,15 +28,12 @@ USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 PATCH_STRIP=	-p1
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Fails to install on sparc64
-.endif
-
-BF_LIBS?=		-ldb-4.3
-BF_CPPFLAGS?=		-I${LOCALBASE}/include/db43 -I${LOCALBASE}/include
+BF_LIBS?=		-l${BDB_LIB_NAME}
+BF_CPPFLAGS?=		-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 .if !defined(WITHOUT_UNICODE)
 CONFIGURE_ARGS+=	--enable-unicode
