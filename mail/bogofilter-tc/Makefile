@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	bogofilter
-PORTREVISION=	5
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-tc
 

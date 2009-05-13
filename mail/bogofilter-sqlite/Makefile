@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-sqlite
 
 MAINTAINER=	matthias.andree@gmx.de
 
-LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+USE_SQLITE=	3
 
 CONFLICTS=	bogofilter-[0-9]* bogofilter-qdbm-[0-9]* bogofilter-tc-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
 
