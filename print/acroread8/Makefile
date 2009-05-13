@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	acroread8
-PORTVERSION=	8.1.4
-PORTREVISION=	1
+PORTVERSION=	8.1.5
 CATEGORIES?=	print linux
 MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/8.x/${PORTVERSION}/${ADOBE_LANG:L}/ \
 		ftp://ftp.adobe.com/pub/adobe/reader/unix/8.x/${PORTVERSION}/${ADOBE_LANG:L}/
@@ -22,7 +21,7 @@ RUN_DEPENDS=	acroreadwrapper>=0.0.20080906:${PORTSDIR}/print/acroreadwrapper
 RESTRICTED=	Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
-USE_LINUX_APPS=	gtk2 pango scimgtk webauth
+USE_LINUX_APPS=	gtk2 pango webauth
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 #USE_GNOME=	desktopfileutils
