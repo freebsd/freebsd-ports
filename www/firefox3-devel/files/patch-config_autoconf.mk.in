@@ -1,5 +1,5 @@
---- config/autoconf.mk.in.orig	2009-04-28 10:03:50.583691270 +0000
-+++ config/autoconf.mk.in	2009-04-28 10:05:25.152703253 +0000
+--- config/autoconf.mk.in.orig	2009-04-24 03:46:37.000000000 +0200
++++ config/autoconf.mk.in	2009-05-11 15:03:26.000000000 +0200
 @@ -57,14 +57,14 @@
  prefix		= @prefix@
  exec_prefix	= @exec_prefix@
@@ -19,3 +19,12 @@
  
  DIST		= $(DEPTH)/dist
  LIBXUL_SDK      = @LIBXUL_SDK@
+@@ -275,7 +275,7 @@
+ OS_CPPFLAGS	= @CPPFLAGS@
+ OS_CFLAGS	= $(OS_CPPFLAGS) @CFLAGS@
+ OS_CXXFLAGS	= $(OS_CPPFLAGS) @CXXFLAGS@
+-OS_LDFLAGS	= @LDFLAGS@
++OS_LDFLAGS	= @LDFLAGS@ -lc
+ 
+ OS_COMPILE_CFLAGS = $(OS_CPPFLAGS) @COMPILE_CFLAGS@
+ OS_COMPILE_CXXFLAGS = $(OS_CPPFLAGS) @COMPILE_CXXFLAGS@
