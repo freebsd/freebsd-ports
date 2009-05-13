@@ -243,7 +243,7 @@ post-patch:
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 # Create Cyrus user and group
-pre-install:
+pre-su-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
