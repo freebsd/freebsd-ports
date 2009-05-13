@@ -7,7 +7,7 @@
 
 PORTNAME=	gnudatalanguage
 DISTVERSION=	0.9pre6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	science lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,7 +34,7 @@ COMMENT?=	GDL, a free IDL compatible incremental compiler
 LIB_DEPENDS+=	plplotd.11:${PORTSDIR}/math/plplot	\
 		gsl.13:${PORTSDIR}/math/gsl		\
 		dps.0:${PORTSDIR}/x11/dgs		\
-		readline.5:${PORTSDIR}/devel/readline
+		readline.6:${PORTSDIR}/devel/readline
 
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/ImageMagick"	\
