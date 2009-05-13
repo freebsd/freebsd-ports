@@ -44,6 +44,10 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=	doesn't build: relocation R_X86_64_32 can not be used when making a shared object; recompile with -fPIC
+.endif
+
 .if ${ARCH} == "i386"
 JBIGI_BUILD_JCPUID=	yes
 .endif
