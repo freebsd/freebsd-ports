@@ -35,7 +35,7 @@ LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
 .endif
 
 .if defined (WITH_GMP)
-LIB_DEPENDS+=	gmp.4:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
 .endif
 
 .include <bsd.port.mk>

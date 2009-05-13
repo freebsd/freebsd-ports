@@ -6,7 +6,7 @@
 
 PORTNAME=	opengl
 PORTVERSION=	2.2.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${GHC_VERSION}/
 PKGNAMEPREFIX=	hs-
@@ -32,7 +32,7 @@ PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} \
 .include <bsd.port.pre.mk>
 
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 
 # 'owned' by lang/ghc:

@@ -7,7 +7,7 @@
 
 PORTNAME=	mpz
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	${PYTHON_MASTER_SITES}
@@ -18,7 +18,7 @@ DISTFILES=	${PYTHON_DISTFILE}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python bindings to the GNU Multiple Precision library
 
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/mpz.so
 DIST_SUBDIR=	python

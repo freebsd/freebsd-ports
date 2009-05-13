@@ -7,6 +7,7 @@
 
 PORTNAME=	mpfr
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.mpfr.org/mpfr-current/
 DIST_SUBDIR=	mpfr
@@ -14,7 +15,7 @@ DIST_SUBDIR=	mpfr
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A library for multiple-precision floating-point computations
 
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

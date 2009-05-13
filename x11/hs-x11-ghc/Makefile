@@ -6,6 +6,7 @@
 
 PORTNAME=	x11
 PORTVERSION=	1.4.5
+PORTREVISION=	1
 CATEGORIES=	x11 haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/X11/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -29,7 +30,7 @@ OPTIONS=	XINERAMA "Build with Xinerama support" off
 .include <bsd.port.pre.mk>
 
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 
 USE_XORG=	x11 xext sm

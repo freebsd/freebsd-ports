@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=--enable-hub
 # enable RC4 crypt (server to server connection)
 .if defined(WITH_ENCRYPTION)
 CONFIGURE_ARGS+=--enable-encryption
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
 .endif
 
 # log to file instead of syslog

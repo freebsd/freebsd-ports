@@ -7,6 +7,7 @@
 
 PORTNAME=	c2hs
 PORTVERSION=	0.16.0
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -17,7 +18,7 @@ COMMENT=	C->Haskell, an Interface Generator for Haskell
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		hs-language-c-ghc>=0.3.1.1:${PORTSDIR}/devel/hs-language-c-ghc
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 .include <bsd.port.pre.mk>
 

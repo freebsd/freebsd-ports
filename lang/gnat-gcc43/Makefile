@@ -9,7 +9,7 @@
 
 PORTNAME=		gnat-gcc
 PORTVERSION=		4.3.2
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		lang
 MASTER_SITES=		GCC/releases/gcc-${PORTVERSION} \
 			CENKES:boot \
@@ -22,7 +22,7 @@ DISTFILES=		gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=		karel@lovetemple.net
 COMMENT=		The GNU Ada Compiler system
 
-LIB_DEPENDS=		gmp.7:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=		gmp.8:${PORTSDIR}/math/libgmp4 \
 			mpfr.3:${PORTSDIR}/math/mpfr
 
 ONLY_FOR_ARCHS=		i386

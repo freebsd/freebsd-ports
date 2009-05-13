@@ -6,7 +6,7 @@
 
 PORTNAME=	zlib
 PORTVERSION=	0.5.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/ \
 		http://kerneled.org/tmp/
@@ -16,7 +16,7 @@ MAINTAINER=	sbahra@kerneled.org
 COMMENT=	Pure Haskell interface to the C zlib library
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 CABAL=		${LOCALBASE}/bin/runghc Setup.hs
 GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`

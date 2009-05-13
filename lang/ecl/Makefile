@@ -7,6 +7,7 @@
 
 PORTNAME=	ecl
 PORTVERSION=	0.9l
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ecls
@@ -15,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ANSI Common Lisp implementation
 
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 gc.1:${PORTSDIR}/devel/boehm-gc
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 gc.1:${PORTSDIR}/devel/boehm-gc
 
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes

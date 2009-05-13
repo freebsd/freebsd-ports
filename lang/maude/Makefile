@@ -7,6 +7,7 @@
 
 PORTNAME=	maude
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://maude.cs.uiuc.edu/versions/${PORTVERSION}/
 DISTNAME=	Maude-${PORTVERSION}

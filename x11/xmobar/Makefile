@@ -6,7 +6,7 @@
 
 PORTNAME=	xmobar
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/xmobar/${PORTVERSION}/ \
 		http://carte.kerneled.org/mirror/
@@ -16,7 +16,7 @@ COMMENT=	Xmobar is a minimalistic text based status bar
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		hs-x11-ghc>=1.4.1:${PORTSDIR}/x11/hs-x11-ghc
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 USE_XORG=	x11
 

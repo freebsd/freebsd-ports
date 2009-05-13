@@ -7,7 +7,7 @@
 
 PORTNAME=	cgal
 PORTVERSION=	3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://gforge.inria.fr/frs/download.php/15692/
 DISTNAME=	CGAL-${PORTVERSION}
@@ -22,7 +22,7 @@ COMMENT=	A computational geometry library
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost
 RUN_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost
 LIB_DEPENDS=	GLU.1:${PORTSDIR}/graphics/libGLU \
-		gmp.7:${PORTSDIR}/math/libgmp4 \
+		gmp.8:${PORTSDIR}/math/libgmp4 \
 		mpfr.3:${PORTSDIR}/math/mpfr
 
 USE_LDCONFIG=		yes

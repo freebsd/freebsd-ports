@@ -6,7 +6,7 @@
 
 PORTNAME=	stringsearch
 PORTVERSION=	0.2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/stringsearch/${PORTVERSION}/ \
 		http://kerneled.org/tmp/
@@ -16,7 +16,7 @@ MAINTAINER=	sbahra@kerneled.org
 COMMENT=	Boyer-Moore/Knuth-Morris-Pratt string search library
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 CABAL=		${LOCALBASE}/bin/runghc Setup.lhs
 GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`

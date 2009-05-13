@@ -7,13 +7,14 @@
 
 PORTNAME=	sfslite
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://dist.okws.org/dist/
 
 MAINTAINER=	ports@okws.org
 COMMENT=	Standard version of the sfslite library
 
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}
 

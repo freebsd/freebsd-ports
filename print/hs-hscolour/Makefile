@@ -7,6 +7,7 @@
 
 PORTNAME=	hscolour
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	print haskell
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/contrib/ \
 		http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
@@ -15,7 +16,7 @@ PKGNAMEPREFIX=	hs-
 MAINTAINER=	jacula@gmail.com
 COMMENT=	Colourise Haskell code
 
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
 
 .if !defined(SLAVE)
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc

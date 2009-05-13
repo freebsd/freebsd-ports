@@ -7,6 +7,7 @@
 
 PORTNAME=	libjbigi
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	math java
 MASTER_SITES=	http://mirror.i2p2.de/ \
 		${MASTER_SITE_GOOGLE_CODE}

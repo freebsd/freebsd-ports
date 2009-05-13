@@ -7,7 +7,7 @@
 
 PORTNAME=	whitespace
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://compsoc.dur.ac.uk/whitespace/downloads/
 DISTNAME=	wspace-${PORTVERSION}
@@ -17,7 +17,7 @@ MAINTAINER=	llwang@infor.org
 COMMENT=	An interpreter for the Whitespace programming language
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 WRKSRC=	${WRKDIR}/WSpace
 USE_GMAKE=	yes

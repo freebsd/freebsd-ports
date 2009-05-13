@@ -7,6 +7,7 @@
 
 PORTNAME?=	libYGP
 PORTVERSION=	0.9.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/libymp
 DISTNAME=	libYGP-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	libYGP-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another General Purpose library
 
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

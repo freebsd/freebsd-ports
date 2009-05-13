@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=--disable-setuid
 
 .ifdef(WITH_GPSMAP)
 PLIST_SUB+=	GPS=""
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4 \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		Magick++.2:${PORTSDIR}/graphics/ImageMagick
 BUILD_DEPENDS+=	wget:${PORTSDIR}/ftp/wget

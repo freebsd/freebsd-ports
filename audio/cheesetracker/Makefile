@@ -8,7 +8,7 @@
 
 PORTNAME=	cheesetracker
 PORTVERSION=	0.9.15.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -37,7 +37,7 @@ BROKEN=		Does not compile on alpha
 .endif
 
 .if ${ARCH} != "i386"
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
 .endif
 
 post-patch:

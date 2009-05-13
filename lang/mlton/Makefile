@@ -12,7 +12,7 @@
 
 PORTNAME=	mlton
 PORTVERSION=	20070826
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://mlton.org/pages/Download/attachments/ \
 		http://mlton.org/pages/Experimental/attachments/ \
@@ -24,7 +24,7 @@ EXTRACT_ONLY=	${SRC_DIST}
 MAINTAINER=	jesper.louis.andersen@gmail.com
 COMMENT=	An optimizing Standard ML compiler
 
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 

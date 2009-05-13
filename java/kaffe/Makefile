@@ -7,7 +7,7 @@
 
 PORTNAME=	kaffe
 PORTVERSION=	1.1.7.r1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	java devel
 #MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/v1.1.x-development/
 MASTER_SITES=	http://www.kaffe.org/~robilad/
@@ -19,7 +19,7 @@ COMMENT=	Multi-platform Java virtual machine with JIT compiler and AWT package
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
-		gmp.7:${PORTSDIR}/math/libgmp4
+		gmp.8:${PORTSDIR}/math/libgmp4
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		jikes:${PORTSDIR}/java/jikes
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
