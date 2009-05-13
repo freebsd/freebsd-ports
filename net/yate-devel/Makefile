@@ -8,7 +8,7 @@
 PORTNAME=	yate
 PORTVERSION=	1.3.0.p2
 DISTVERSION=	${PORTVERSION:S/.p/-/}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net comms
 MASTER_SITES=	http://cto.homelinux.net/pub/FreeBSD/ports/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -113,7 +113,7 @@ PLIST_SUB+=	WITH_ZAPTEL="@comment "
 .endif
 
 .if !defined(WITHOUT_FAX)
-LIB_DEPENDS+=	spandsp.0:${PORTSDIR}/comms/spandsp-devel
+LIB_DEPENDS+=	spandsp.2:${PORTSDIR}/comms/spandsp-devel
 MAKE_ENV+=	WITH_FAX=1
 PLIST_SUB+=	WITH_FAX=""
 .else
