@@ -19,6 +19,8 @@ COMMENT=	An Eclipse plug-in that provides Subversion support
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
+BROKEN=		does not fetch
+
 CONNECTORS=	Subversive-connectors-2.1.0.I20090416-1900.zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
