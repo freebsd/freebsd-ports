@@ -7,7 +7,7 @@
 
 PORTNAME=	fish
 PORTVERSION=	1.22.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	shells
 MASTER_SITES=	http://www.fishshell.org/files/1.22.3/ \
 		http://roo.no-ip.org/fish/files/1.22.3/ \

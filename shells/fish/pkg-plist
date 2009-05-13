@@ -12,6 +12,7 @@ etc/fish/fish_inputrc
 %%DOCSDIR%%/commands.html
 %%DOCSDIR%%/design.html
 %%DOCSDIR%%/doc_8h-source.html
+%%DOCSDIR%%/doc_8h_source.html
 %%DOCSDIR%%/doxygen.css
 %%DOCSDIR%%/doxygen.png
 %%DOCSDIR%%/faq.html
