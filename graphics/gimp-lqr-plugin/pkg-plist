@@ -1,5 +1,6 @@
 %%PLUGIN_DIR%%/gimp-lqr-plugin
 %%PLUGIN_DIR%%/plug_in_lqr_iter
+share/gimp/scripts/batch-gimp-lqr.scm
 %%DATADIR%%/help/en/gimp-help.xml
 %%DATADIR%%/help/en/index.html
 %%DATADIR%%/help/images/wilber.png
@@ -8,14 +9,18 @@
 %%DATADIR%%/help/ru/gimp-help.xml
 %%DATADIR%%/help/ru/index.html
 %%DATADIR%%/help/images/dialog1.jpg
-%%DATADIR%%/help/images/dialog2.jpg
-%%DATADIR%%/help/images/dialog3.jpg
 %%DATADIR%%/help/images/dialog1_it.jpg
-%%DATADIR%%/help/images/dialog2_it.jpg
-%%DATADIR%%/help/images/dialog3_it.jpg
 %%DATADIR%%/help/images/dialog1_ru.jpg
+%%DATADIR%%/help/images/dialog2.jpg
+%%DATADIR%%/help/images/dialog2_it.jpg
 %%DATADIR%%/help/images/dialog2_ru.jpg
+%%DATADIR%%/help/images/dialog3.jpg
+%%DATADIR%%/help/images/dialog3_it.jpg
 %%DATADIR%%/help/images/dialog3_ru.jpg
+%%DATADIR%%/help/images/dialog4.jpg
+%%DATADIR%%/help/images/dialog4_it.jpg
+%%DATADIR%%/help/images/dialog_interactive.jpg
+%%DATADIR%%/help/images/dialog_interactive_it.jpg
 share/locale/de/LC_MESSAGES/gimp20-lqr-plugin.mo
 share/locale/es_AR/LC_MESSAGES/gimp20-lqr-plugin.mo
 share/locale/es_ES/LC_MESSAGES/gimp20-lqr-plugin.mo
@@ -34,8 +39,6 @@ share/locale/zh_TW/LC_MESSAGES/gimp20-lqr-plugin.mo
 @dirrmtry share/locale/sr
 @dirrmtry share/locale/ro_RO/LC_MESSAGES
 @dirrmtry share/locale/ro_RO
-@dirrmtry share/locale/pt_BR/LC_MESSAGES
-@dirrmtry share/locale/pt_BR
 @dirrmtry share/locale/nb_NO/LC_MESSAGES
 @dirrmtry share/locale/nb_NO
 @dirrmtry share/locale/eu_ES/LC_MESSAGES
