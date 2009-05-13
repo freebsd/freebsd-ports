@@ -5,7 +5,6 @@ share/locale/hu/LC_MESSAGES/linsmith.mo
 share/locale/it/LC_MESSAGES/linsmith.mo
 share/locale/sv/LC_MESSAGES/linsmith.mo
 share/locale/zh/LC_MESSAGES/linsmith.mo
-share/pixmaps/linsmith/Makefile.am~
 share/pixmaps/linsmith/smith4.png
 share/pixmaps/linsmith/smithent.png
 @dirrm share/pixmaps/linsmith

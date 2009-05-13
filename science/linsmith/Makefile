@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	linsmith
-PORTVERSION=	0.99.11
+PORTVERSION=	0.99.12
 CATEGORIES=	science hamradio
 MASTER_SITES=	SF
 
