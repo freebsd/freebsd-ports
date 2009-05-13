@@ -76,9 +76,13 @@ Note:  Please add new entries to the beginning of this file.
     <topic>wireshark -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>wireshark</name>
-        <name>wireshark-lite</name>
-        <range><ge>0.99.6</ge><lt>1.0.7</lt></range>
+        <name>ethereal</name>
+	<name>ethereal-lite</name>
+	<name>tethereal</name>
+	<name>tethereal-lite</name>
+	<name>wireshark</name>
+	<name>wireshark-lite</name>
+        <range><lt>1.0.7</lt></range>
       </package>
     </affects>
     <description>
@@ -89,31 +93,34 @@ Note:  Please add new entries to the beginning of this file.
           <p>Wireshark 1.0.7 fixes the following vulnerabilities:</p>
           <ul>
             <li>The PROFINET dissector was vulnerable to a format
-            string overflow. (Bug 3382) Versions affected: 0.99.6 to
-            1.0.6, CVE-2009-1210.</li>
+              string overflow. (Bug 3382) Versions affected: 0.99.6 to
+              1.0.6, CVE-2009-1210.</li>
             <li>The Check Point High-Availability Protocol (CPHAP)
-            dissector could crash. (Bug 3269) Versions affected: 0.9.6
-            to 1.0.6; CVE-2009-1268.</li>
+              dissector could crash. (Bug 3269) Versions affected: 0.9.6
+              to 1.0.6; CVE-2009-1268.</li>
             <li>Wireshark could crash while loading a Tektronix .rf5
-            file. (Bug 3366) Versions affected: 0.99.6 to 1.0.6,
-            CVE-2009-1269.</li>
+              file. (Bug 3366) Versions affected: 0.99.6 to 1.0.6,
+              CVE-2009-1269.</li>
           </ul>
         </blockquote>
       </body>
     </description>
     <references>
+      <bid>34291</bid>
+      <bid>34457</bid>
       <cvename>CVE-2009-1210</cvename>
       <cvename>CVE-2009-1268</cvename>
       <cvename>CVE-2009-1269</cvename>
-      <bid>34291</bid>
-      <bid>34457</bid>
       <url>http://www.wireshark.org/security/wnpa-sec-2009-02.html</url>
+      <url>http://secunia.com/advisories/34542</url>
     </references>
     <dates>
       <discovery>2009-04-06</discovery>
       <entry>2009-05-09</entry>
+      <modified>2009-05-13</modified>
     </dates>
   </vuln>
+
   <vuln vid="736e55bc-39bb-11de-a493-001b77d09812">
     <topic>cups -- remote code execution and DNS rebinding</topic>
     <affects>
@@ -130,39 +137,40 @@ Note:  Please add new entries to the beginning of this file.
           <p>The following issues were reported in CUPS:</p>
           <ul>
             <li>iDefense reported an integer overflow in the
-            _cupsImageReadTIFF() function in the "imagetops" filter,
-            leading to a heap-based buffer overflow (CVE-2009-0163).</li>
+              _cupsImageReadTIFF() function in the "imagetops" filter,
+              leading to a heap-based buffer overflow (CVE-2009-0163).</li>
             <li>Aaron Siegel of Apple Product Security reported that the
-            CUPS web interface does not verify the content of the "Host"
-            HTTP header properly (CVE-2009-0164).</li>
+              CUPS web interface does not verify the content of the "Host"
+              HTTP header properly (CVE-2009-0164).</li>
             <li>Braden Thomas and Drew Yao of Apple Product Security
-            reported that CUPS is vulnerable to CVE-2009-0146,
-            CVE-2009-0147 and CVE-2009-0166, found earlier in xpdf and
-            poppler.</li>
+              reported that CUPS is vulnerable to CVE-2009-0146,
+              CVE-2009-0147 and CVE-2009-0166, found earlier in xpdf and
+              poppler.</li>
           </ul>
           <p>A remote attacker might send or entice a user to send a
-          specially crafted print job to CUPS, possibly resulting in the
-          execution of arbitrary code with the privileges of the
-          configured CUPS user -- by default this is "lp", or a Denial
-          of Service. Furthermore, the web interface could be used to
-          conduct DNS rebinding attacks.</p>
+            specially crafted print job to CUPS, possibly resulting in the
+            execution of arbitrary code with the privileges of the
+            configured CUPS user -- by default this is "lp", or a Denial
+            of Service. Furthermore, the web interface could be used to
+            conduct DNS rebinding attacks.</p>
         </blockquote>
       </body>
     </description>
     <references>
+      <bid>34571</bid>
+      <bid>34665</bid>
+      <bid>34568</bid>
       <cvename>CVE-2009-0163</cvename>
       <cvename>CVE-2009-0164</cvename>
       <cvename>CVE-2009-0146</cvename>
       <cvename>CVE-2009-0147</cvename>
       <cvename>CVE-2009-0166</cvename>
-      <bid>34571</bid>
-      <bid>34665</bid>
-      <bid>34568</bid>
       <url>http://www.cups.org/articles.php?L582</url>
     </references>
     <dates>
       <discovery>2009-05-05</discovery>
       <entry>2009-05-07</entry>
+      <modified>2009-05-13</modified>
     </dates>
   </vuln>
 
@@ -180,18 +188,18 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <h1>Problem Description</h1>
-        <p>The function ASN1_STRING_print_ex does not properly validate
-        the lengths of BMPString or UniversalString objects before
-        attempting to print them.</p>
+          <p>The function ASN1_STRING_print_ex does not properly validate
+            the lengths of BMPString or UniversalString objects before
+            attempting to print them.</p>
         <h1>Impact</h1>
-        <p>An application which attempts to print a BMPString or
-        UniversalString which has an invalid length will crash as a
-        result of OpenSSL accessing invalid memory locations.  This
-        could be used by an attacker to crash a remote application.</p>
+          <p>An application which attempts to print a BMPString or
+            UniversalString which has an invalid length will crash as a
+            result of OpenSSL accessing invalid memory locations.  This
+            could be used by an attacker to crash a remote application.</p>
         <h1>Workaround</h1>
-        <p>No workaround is available, but applications which do not use
-        the ASN1_STRING_print_ex function (either directly or
-        indirectly) are not affected.</p>
+          <p>No workaround is available, but applications which do not use
+          the ASN1_STRING_print_ex function (either directly or
+          indirectly) are not affected.</p>
       </body>
     </description>
     <references>
@@ -201,6 +209,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-03-25</discovery>
       <entry>2009-05-07</entry>
+      <modified>2009-05-13</modified>
     </dates>
   </vuln>
 
@@ -240,21 +249,21 @@ Note:  Please add new entries to the beginning of this file.
     <topic>openfire -- Openfire No Password Changes Security Bypass</topic>
     <affects>
       <package>
-	<name>openfire</name>
-	<range><lt>3.6.4</lt></range>
+        <name>openfire</name>
+        <range><lt>3.6.4</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <p>Secunia reports:</p>
-	<blockquote cite="http://secunia.com/advisories/34984/">
-	  <p>A vulnerability has been reported in Openfire which can
-	    be exploited by malicious users to bypass certain security
-	    restrictions. The vulnerability is caused due to Openfire
-	    not properly respecting the no password changes setting which
-	    can be exploited to change passwords by sending jabber:iq:auth
-	    passwd_change requests to the server.</p>
-	</blockquote>
+        <blockquote cite="http://secunia.com/advisories/34984/">
+          <p>A vulnerability has been reported in Openfire which can
+            be exploited by malicious users to bypass certain security
+            restrictions. The vulnerability is caused due to Openfire
+            not properly respecting the no password changes setting which
+            can be exploited to change passwords by sending jabber:iq:auth
+            passwd_change requests to the server.</p>
+        </blockquote>
       </body>
     </description>
     <references>
@@ -265,7 +274,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-05-04</discovery>
       <entry>2009-05-04</entry>
-      <modified>2009-05-04</modified>
+      <modified>2009-05-13</modified>
     </dates>
   </vuln>
 
