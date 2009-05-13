@@ -351,6 +351,7 @@
     SUBDIR += p5-Math-Units
     SUBDIR += p5-Math-Vec
     SUBDIR += p5-Math-VecStat
+    SUBDIR += p5-Math-VectorReal
     SUBDIR += p5-MatrixReal
     SUBDIR += p5-NetCDF
     SUBDIR += p5-Number-Compare

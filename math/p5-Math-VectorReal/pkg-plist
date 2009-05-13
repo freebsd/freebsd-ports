@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Math/synopsis.pl
+%%SITE_PERL%%/Math/VectorReal.pm
+%%SITE_PERL%%/Math/vector_test.pl
+%%SITE_PERL%%/Math/matrix_test.pl
+%%SITE_PERL%%//%%PERL_ARCH%%/auto/Math/VectorReal/.packlist
+@dirrmtry %%SITE_PERL%%/Math
+@dirrm %%SITE_PERL%%//%%PERL_ARCH%%/auto/Math/VectorReal
+@dirrmtry %%SITE_PERL%%//%%PERL_ARCH%%/auto/Math
