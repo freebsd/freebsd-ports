@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drood
-PORTVERSION=	1.41
+PORTVERSION=	1.42
 CATEGORIES=	www
 MASTER_SITES=	http://www.mammothcheese.ca/
 
