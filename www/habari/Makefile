@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	habari
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.1
 CATEGORIES=	www
 MASTER_SITES=	http://habariproject.org/dist/ \
 		http://habari.jp/dist/
@@ -44,13 +44,13 @@ IGNORE=	please choose the type of database
 do-install:
 	@${MKDIR} ${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/index.php ${WWWDIR}
-.for file in 3rdparty scripts system user
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${file} ${WWWDIR})
+.for f in 3rdparty scripts system user
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${WWWDIR})
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in LICENSE NOTICE doc/MIT.txt doc/Tiddlywiki_License.txt
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in LICENCE NOTICE doc/MIT.txt doc/Tiddlywiki_License.txt
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} manual ${DOCSDIR})
 .endif
