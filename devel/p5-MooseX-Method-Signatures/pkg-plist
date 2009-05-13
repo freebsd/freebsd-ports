@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Method/Signatures/.packlist
+%%SITE_PERL%%/MooseX/Method/Signatures.pm
+%%SITE_PERL%%/MooseX/Method/Signatures/Meta/Method.pm
+@dirrm %%SITE_PERL%%/MooseX/Method/Signatures/Meta
+@dirrm %%SITE_PERL%%/MooseX/Method/Signatures
+@dirrmtry %%SITE_PERL%%/MooseX/Method
+@dirrmtry %%SITE_PERL%%/MooseX
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Method/Signatures
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Method
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
