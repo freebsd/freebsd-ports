@@ -18,6 +18,8 @@ PATCH_DEPENDS=	GraphicsMagick-config:${PORTSDIR}/graphics/GraphicsMagick
 LIB_DEPENDS=	GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick \
 		ungif:${PORTSDIR}/graphics/libungif
 
+BROKEN=		does not compile
+
 USE_AUTOTOOLS=	libtool:15
 USE_KDELIBS_VER=3
 USE_LDCONFIG=	yes
