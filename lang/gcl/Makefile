@@ -7,7 +7,7 @@
 
 PORTNAME=	gcl
 PORTVERSION=	2.6.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang tcl tk
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gcl
@@ -16,7 +16,7 @@ MAINTAINER=	markm@freebsd.org
 COMMENT=	GNU Common Lisp
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
-		gmp.7:${PORTSDIR}/math/libgmp4
+		gmp.8:${PORTSDIR}/math/libgmp4
 
 ONLY_FOR_ARCHS=	i386
 

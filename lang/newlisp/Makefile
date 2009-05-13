@@ -45,7 +45,7 @@ IGNORE=	you should select only one MySQL version
 .endif
 
 .if defined(WITH_GMP)
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
 MODULES+=	gmp
 PLIST_SUB+=	GMP=""
 .else

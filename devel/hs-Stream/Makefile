@@ -6,6 +6,7 @@
 
 PORTNAME=	Stream
 PORTVERSION=	0.2.6
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/ \
 		http://carte.kerneled.org/mirror/
@@ -15,7 +16,7 @@ MAINTAINER=	sbahra@kerneled.org
 COMMENT=	A Haskell library for manipulating infinite lists
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 CABAL=		${LOCALBASE}/bin/runghc Setup.lhs
 GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`

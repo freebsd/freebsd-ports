@@ -7,7 +7,7 @@
 
 PORTNAME=	pike72
 PORTVERSION=	7.2.570
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.oav.net/pike/7.2/unofficial/ \
 		ftp://ftp.us.caudium.net/pub/pike/7.2/unofficial/ 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		mird.1:${PORTSDIR}/databases/mird \
-		gmp.7:${PORTSDIR}/math/libgmp4
+		gmp.8:${PORTSDIR}/math/libgmp4
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 

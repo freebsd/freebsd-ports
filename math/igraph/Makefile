@@ -7,13 +7,14 @@
 
 PORTNAME=	igraph
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://cneurocvs.rmki.kfki.hu/igraph/download/
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Package For Manipulating Undirected And Directed Graphs
 
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

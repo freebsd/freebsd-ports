@@ -6,6 +6,7 @@
 
 PORTNAME=	bytestring-csv
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/ \
 		http://carte.kerneled.org/mirror/
@@ -16,7 +17,7 @@ COMMENT=	Parse CSV formatted data efficiently with Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc		\
 		hs-dlist>=0.4.1:${PORTSDIR}/devel/hs-dlist
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 CABAL=		${LOCALBASE}/bin/runghc Setup.lhs
 GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`

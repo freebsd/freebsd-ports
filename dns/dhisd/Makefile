@@ -7,14 +7,14 @@
 
 PORTNAME=	dhisd
 PORTVERSION=	5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns
 MASTER_SITES=	ftp://ftp.dhis.org/pub/dhis/
 
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	DHIS server for dynamic updates on the server using specific engines
 
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 CFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib

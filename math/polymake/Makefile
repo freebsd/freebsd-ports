@@ -7,6 +7,7 @@
 
 PORTNAME=	polymake
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.math.tu-berlin.de/pub/combi/polymake/
 
@@ -16,7 +17,7 @@ PATCHFILES=	${PORTNAME}-${PORTVERSION}-install.diff
 MAINTAINER=	gawrilow@math.tu-berlin.de
 COMMENT=	A framework for experimental discrete geometry
 
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes

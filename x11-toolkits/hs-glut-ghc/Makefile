@@ -6,6 +6,7 @@
 
 PORTNAME=	glut
 PORTVERSION=	2.1.1.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/GLUT/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -29,7 +30,7 @@ PORTDOCS=	LICENSE html
 
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
 		${LOCALBASE}/lib/ghc-${GHC_VERSION}/cabal/opengl-register.sh:${PORTSDIR}/x11-toolkits/hs-opengl-ghc
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS+=	${LOCALBASE}/lib/ghc-${GHC_VERSION}/cabal/opengl-register.sh:${PORTSDIR}/x11-toolkits/hs-opengl-ghc
 
 # 'owned' by lang/ghc:

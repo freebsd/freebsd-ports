@@ -7,6 +7,7 @@
 
 PORTNAME=	parrot
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/P/PA/PARTICLE
@@ -17,7 +18,7 @@ COMMENT=	Parrot - virtual machine for dynamic languages
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		bison:${PORTSDIR}/devel/bison \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
 		icudata:${PORTSDIR}/devel/icu
 
 USE_BISON=	build

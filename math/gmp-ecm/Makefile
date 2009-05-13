@@ -7,6 +7,7 @@
 
 PORTNAME=	gmp-ecm
 PORTVERSION=	6.2.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://gforge.inria.fr/frs/download.php/4663/
 DISTNAME=	ecm-${PORTVERSION}

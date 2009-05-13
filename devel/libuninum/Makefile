@@ -7,13 +7,14 @@
 
 PORTNAME=	libuninum
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Library for converting Unicode strings to numbers
 
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"

@@ -7,6 +7,7 @@
 
 PORTNAME=	stklos
 PORTVERSION=	0.98
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.stklos.org/download/ \
 		ftp://kaolin.essi.fr/pub/STklos/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://www.stklos.org/download/ \
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	The successor of the STk Scheme interpreter
 
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		ffi.5:${PORTSDIR}/devel/libffi \
 		gc.1:${PORTSDIR}/devel/boehm-gc

@@ -36,7 +36,7 @@ BROKEN=		Does not compile with GCC 4.2
 .endif
 
 .if defined(WITH_GMP)
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
 CONFIGURE_ARGS+=	--with-numlib=gmp
 PLIST_SUB+=	GMP="" NOGMP="@comment "
 CPPFLAGS+=	-I${LOCALBASE}/include

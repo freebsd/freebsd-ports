@@ -20,7 +20,7 @@ DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 MAINTAINER?=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.2
 
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
 		mpfr.3:${PORTSDIR}/math/mpfr
 
 SUFFIX=		42

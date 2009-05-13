@@ -7,7 +7,7 @@
 
 PORTNAME=	mozart
 PORTVERSION=	1.3.1.20040616
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang tk parallel
 MASTER_SITES=	http://www.mozart-oz.org/download/mozart-ftp/store/1.3.1-2004-06-16/
 DISTFILES=	${DISTNAME}-src.tar.gz
@@ -18,10 +18,9 @@ DISTFILES+=	${MOZART_DOCS}
 MAINTAINER=	mathiasp@virtual-earth.de
 COMMENT=	A distributed language with constraint-based inference
 
-BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs \
-		${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
+BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
-		gmp.7:${PORTSDIR}/math/libgmp4 \
+		gmp.8:${PORTSDIR}/math/libgmp4 \
 		tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 MOZART_DOCS=	mozart-${PORTVERSION}-doc.tar.gz

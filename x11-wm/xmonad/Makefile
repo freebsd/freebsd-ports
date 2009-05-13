@@ -7,6 +7,7 @@
 
 PORTNAME=	xmonad
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/xmonad/${PORTVERSION}/
 
@@ -15,7 +16,7 @@ COMMENT=	Xmonad is a minimalist and tiling window manager for X
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		hs-x11-ghc>=1.4.1:${PORTSDIR}/x11/hs-x11-ghc
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 USE_XORG=	x11
 

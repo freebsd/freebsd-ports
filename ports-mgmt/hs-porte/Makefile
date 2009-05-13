@@ -6,6 +6,7 @@
 
 PORTNAME=	porte
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt haskell
 MASTER_SITES=	http://carte.repnop.org/releases/
 
@@ -14,7 +15,7 @@ COMMENT=	FreeBSD ports index search and statistical analysis tool
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc					\
 		hs-stringsearch>=0.2.1.1:${PORTSDIR}/textproc/hs-stringsearch
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 CABAL=		${LOCALBASE}/bin/runghc Setup.hs
 GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`
