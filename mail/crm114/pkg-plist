@@ -9,13 +9,17 @@ bin/osbf-util
 %%PORTDOCS%%%%DOCSDIR%%/INTRO.txt
 %%PORTDOCS%%%%DOCSDIR%%/QUICKREF.txt
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/classify_details.txt
+%%PORTDOCS%%%%DOCSDIR%%/CLASSIFY_DETAILS.txt
 %%PORTDOCS%%%%DOCSDIR%%/inoc_passwd.txt
 %%PORTDOCS%%%%DOCSDIR%%/COLOPHON.txt
-%%PORTDOCS%%%%DOCSDIR%%/knownbugs.txt
-%%PORTDOCS%%%%DOCSDIR%%/things_to_do.txt
+%%PORTDOCS%%%%DOCSDIR%%/KNOWNBUGS.txt
+%%PORTDOCS%%%%DOCSDIR%%/THINGS_TO_DO.txt
+%%PORTDOCS%%%%DOCSDIR%%/Alice_In_Wonderland_Chap_1_And_2.txt
+%%PORTDOCS%%%%DOCSDIR%%/Hound_of_the_Baskervilles_first_500_lines.txt
+%%PORTDOCS%%%%DOCSDIR%%/Macbeth_Act_IV.txt
+%%PORTDOCS%%%%DOCSDIR%%/The_Wind_in_the_Willows_Chap_1.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/procmailrc.recipe
+%%EXAMPLESDIR%%/reto_procmailrc.recipe
 %%EXAMPLESDIR%%/mailfilter.crm
 %%EXAMPLESDIR%%/mailfilter.cf
 %%EXAMPLESDIR%%/mailreaver.crm
