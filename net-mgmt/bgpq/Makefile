@@ -10,7 +10,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Bgpq - lightweight access-list generator for cisco routers
 
 MAN8=		bgpq.8
