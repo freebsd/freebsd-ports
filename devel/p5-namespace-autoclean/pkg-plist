@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/namespace/autoclean/.packlist
+%%SITE_PERL%%/namespace/autoclean.pm
+@dirrmtry %%SITE_PERL%%/namespace
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/namespace/autoclean
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/namespace
