@@ -1,0 +1,18 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Emulate/Class/Accessor/Fast/.packlist
+%%SITE_PERL%%/MooseX/Adopt/Class/Accessor/Fast.pm
+%%SITE_PERL%%/MooseX/Emulate/Class/Accessor/Fast.pm
+%%SITE_PERL%%/MooseX/Emulate/Class/Accessor/Fast/Meta/Accessor.pm
+%%SITE_PERL%%/MooseX/Emulate/Class/Accessor/Fast/Meta/Role/Attribute.pm
+@dirrm %%SITE_PERL%%/MooseX/Emulate/Class/Accessor/Fast/Meta/Role
+@dirrm %%SITE_PERL%%/MooseX/Emulate/Class/Accessor/Fast/Meta
+@dirrm %%SITE_PERL%%/MooseX/Emulate/Class/Accessor/Fast
+@dirrm %%SITE_PERL%%/MooseX/Emulate/Class/Accessor
+@dirrm %%SITE_PERL%%/MooseX/Emulate/Class
+@dirrmtry %%SITE_PERL%%/MooseX/Emulate
+@dirrmtry %%SITE_PERL%%/MooseX/Adopt
+@dirrmtry %%SITE_PERL%%/MooseX
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Emulate/Class/Accessor/Fast
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Emulate/Class/Accessor
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Emulate/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Emulate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX

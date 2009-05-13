@@ -1,0 +1,8 @@
+MooseX::Emulate::Class::Accessor::Fast attempts to emulate the behavior
+of Class::Accessor::Fast as accurately as possible using the Moose
+attribute system.  The public API of Class::Accessor::Fast is wholly
+supported, but the private methods are not.  If you are only using the
+public methods (as you should) migration should be a matter of switching
+your "use base" line to a "with" line.
+
+WWW: http://search.cpan.org/dist/MooseX-Emulate-Class-Accessor-Fast/
