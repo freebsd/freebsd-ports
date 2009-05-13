@@ -34,6 +34,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fc4d0ae8-3fa3-11de-a3fd-0030843d3802">
+    <topic>moinmoin -- multiple cross site scripting vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>moinmoin</name>
+	<range><lt>1.8.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/33593/">
+	  <p>Some vulnerabilities have been reported in MoinMoin, which can be
+	    exploited by malicious people to conduct cross-site scripting attacks.</p>
+	  <p>Input passed to multiple parameters in action/AttachFile.py is not
+	    properly sanitised before being returned to the user. This can be
+	    exploited to execute arbitrary HTML and script code in a user's
+	    browser session in the context of an affected site.</p>
+	  <p>Certain input passed to security/antispam.py is not properly
+	    sanitised before being returned to the user. This can be exploited to
+	    execute arbitrary HTML and script code in a user's browser session in
+	    the context of an affected site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-0260</cvename>
+      <cvename>CVE-2009-0312</cvename>
+      <url>http://moinmo.in/SecurityFixes</url>
+      <url>http://secunia.com/advisories/33593</url>
+    </references>
+    <dates>
+      <discovery>2009-01-21</discovery>
+      <entry>2009-05-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f0f97b94-3f95-11de-a3fd-0030843d3802">
     <topic>ghostscript -- buffer overflow vulnerability</topic>
     <affects>
