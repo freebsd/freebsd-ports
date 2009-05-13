@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	acroread9
-PORTVERSION=	9.1.0
-PORTREVISION=	2
+PORTVERSION=	9.1.1
 CATEGORIES?=	print linux
-MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/9.x/${PORTVERSION:S,.0$,,}/${ADOBE_LANG:L}/ \
-		ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/${PORTVERSION:S,.0$,,}/${ADOBE_LANG:L}/
+MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/9.x/${PORTVERSION}/${ADOBE_LANG:L}/ \
+		ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/${PORTVERSION}/${ADOBE_LANG:L}/
 DISTNAME=	AdbeRdr${PORTVERSION}-1_i486linux_${ADOBE_LANG:L}
 DIST_SUBDIR=	acroread
 
@@ -23,7 +22,7 @@ RESTRICTED=	Must fill out redistribution form at http://www.adobe.com/products/a
 ONLY_FOR_ARCHS=	amd64 i386
 USE_BZIP2=	yes
 USE_LINUX=	yes
-USE_LINUX_APPS=	gdkpixbuf gtk2 libxml2 pango scimgtk webauth
+USE_LINUX_APPS=	gdkpixbuf gtk2 libxml2 pango webauth
 USE_LDCONFIG=	yes
 #USE_GNOME=	desktopfileutils
 NO_BUILD=	yes
