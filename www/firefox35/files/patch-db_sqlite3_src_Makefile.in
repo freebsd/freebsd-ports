@@ -5,7 +5,7 @@
  include $(DEPTH)/config/autoconf.mk
  
 +OS_CFLAGS	 = -I../../../dist/include/sqlite3
-+OS_LIBS		 = %%PTHREAD_LIBS%%
++OS_LIBS		 = %%PTHREAD_LIBS%% -lc
  MODULE           = sqlite3
  LIBRARY_NAME     = sqlite3
  FORCE_SHARED_LIB = 1

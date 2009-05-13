@@ -21,7 +21,6 @@ BUILD_DEPENDS=	nspr>=4.7:${PORTSDIR}/devel/nspr
 USE_AUTOTOOLS=	autoconf:213:run
 LATEST_LINK=	firefox3-devel
 USE_GECKO=	gecko
-CONFLICTS=	firefox-3.0.*
 MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	-png -nss -dbm -jpeg -xft
 MOZILLA_NAME=	Firefox${MOZILLA_SUFX}
@@ -41,6 +40,7 @@ HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 NO_MOZPKGINSTALL=yes
+CONFLICTS=      firefox-3.0.*
 
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png
@@ -59,8 +59,12 @@ OPTIONS=	DBUS "Enable D-BUS support" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700042
-BROKEN=		does not build on 6.x.
+
+.if ${OSVERSION} < 700000
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+EXTRA_PATCHES=	${FILESDIR}/releng6_pulseaudio
+.else
+EXTRA_PATCHES=	${FILESDIR}/libsydney_oss
 .endif
 
 WRKSRC:=	${WRKSRC}-1.9.1
