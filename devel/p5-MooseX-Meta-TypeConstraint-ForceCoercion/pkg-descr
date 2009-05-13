@@ -1,0 +1,5 @@
+MooseX::Meta::TypeConstraint::ForceCoercion allows to wrap any
+Moose::Meta::TypeConstraint in a way that will force coercion of the
+value when checking or validating a value against it.
+
+WWW: http://search.cpan.org/dist/MooseX-Meta-TypeConstraint-ForceCoercion/

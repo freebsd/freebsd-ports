@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Meta/TypeConstraint/ForceCoercion/.packlist
+%%SITE_PERL%%/MooseX/Meta/TypeConstraint/ForceCoercion.pm
+@dirrmtry %%SITE_PERL%%/MooseX/Meta/TypeConstraint
+@dirrmtry %%SITE_PERL%%/MooseX/Meta
+@dirrmtry %%SITE_PERL%%/MooseX
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Meta/TypeConstraint/ForceCoercion
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Meta/TypeConstraint
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Meta
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
