@@ -1,2 +1,3 @@
 libexec/nagios/check_bacula
+lib/libbac.so.1
 @dirrmtry libexec/nagios

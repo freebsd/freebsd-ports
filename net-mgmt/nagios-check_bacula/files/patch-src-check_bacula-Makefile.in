@@ -1,0 +1,62 @@
+--- src/check_bacula/Makefile.in_org	2005-05-23 08:33:05.000000000 +0200
++++ src/check_bacula/Makefile.in	2009-05-13 09:10:54.000000000 +0200
+@@ -20,14 +20,14 @@
+ dummy:
+ 
+ #
+-MONITORSRCS = check_bacula.c authenticate.c
+-MONITOROBJS = check_bacula.o authenticate.o
++CHECKSRCS = check_bacula.c authenticate.c
++CHECKOBJS = check_bacula.o authenticate.o
+ 
+ # these are the objects that are changed by the .configure process
+ EXTRAOBJS = @OBJLIST@
+ 
+-MONITOR_CPPFLAGS=@TRAY_MONITOR_CPPFLAGS@
+-MONITOR_LDFLAGS=@TRAY_MONITOR_LDFLAGS@ @X_LIBS@
++CHECK_CPPFLAGS=
++CHECK_LDFLAGS=
+ 
+ .SUFFIXES:	.c .o
+ .PHONY:
+@@ -35,21 +35,26 @@
+ 
+ # inference rules
+ .c.o:
+-	$(CXX) $(DEFS) $(DEBUG) -c $(CPPFLAGS) $(MONITOR_CPPFLAGS) -I$(srcdir) -I$(basedir) $(DINCLUDE) $(CFLAGS) $<
++	@echo "Compiling $<"
++	$(NO_ECHO) $(CXX) $(DEFS) $(DEBUG) -c $(CPPFLAGS) $(CHECK_CPPFLAGS) \
++ -I$(srcdir) -I$(basedir) $(DINCLUDE) $(CFLAGS) $<
+ #-------------------------------------------------------------------------
+-all: Makefile check_bacula @STATIC_CONS@
++all: Makefile check_bacula
+ 	@echo "==== Make of check_bacula is good ===="
+ 	@echo " "
+ 
+-check_bacula: $(MONITOROBJS) ../lib/libbac.a
+-	$(CXX) $(LDFLAGS) $(MONITOR_LDFLAGS) -L../lib -L../cats -o $@ $(MONITOROBJS) \
+-	      $(DLIB) -lbac -lm $(LIBS) 
++check_bacula: Makefile $(CHECKOBJS) ../lib/libbac$(DEFAULT_ARCHIVE_TYPE)
++	$(LIBTOOL_LINK) $(CXX) $(LDFLAGS) $(CHECK_LDFLAGS) -L../lib -o $@ \
++	  $(CHECKOBJS) $(DLIB) -lbac -lm $(LIBS) $(OPENSSL_LIBS)
+ 
+ 
+ Makefile: $(srcdir)/Makefile.in $(topdir)/config.status
+ 	cd $(topdir) \
+ 	  && CONFIG_FILES=$(thisdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
+ 
++libtool-clean:
++	$(RMF) -r .libs _libs
++
+ clean:
+ 	@$(RMF) check_bacula core core.* a.out *.o *.bak *~ *.intpro *.extpro 1 2 3
+ 
+@@ -81,7 +86,7 @@
+ 	@$(MV) Makefile Makefile.bak
+ 	@$(SED) "/^# DO NOT DELETE:/,$$ d" Makefile.bak > Makefile
+ 	@$(ECHO) "# DO NOT DELETE: nice dependency list follows" >> Makefile
+-	@$(CXX) -S -M $(CPPFLAGS) $(MONITOR_CPPFLAGS) -I$(srcdir) -I$(basedir) *.c >> Makefile
++	@$(CXX) -S -M $(CPPFLAGS) $(CHECK_CPPFLAGS) -I$(srcdir) -I$(basedir) *.c >> Makefile
+ 	@if test -f Makefile ; then \
+ 	    $(RMF) Makefile.bak; \
+ 	else \
