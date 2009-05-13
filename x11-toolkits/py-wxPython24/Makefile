@@ -30,10 +30,13 @@ PYDISTUTILS_NOEGGINFO=	yes
 USE_WX=		2.4
 DEMO_DIR=	${PYTHONPREFIX_SITELIBDIR}/wxPython/demo
 
+post-extract:
+	@${RM} ${WRKSRC}/demo/dllwidget/test_dll.so
+
 post-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/demo
 .if !defined(DEBUG_FLAGS)
-	@${FIND} ${WRKSRC} -name "*.so" | ${XARGS} strip
+	@${FIND} ${WRKSRC} -name "*.so" | ${XARGS} ${STRIP_CMD}
 .endif
 
 post-install:
@@ -49,10 +52,6 @@ post-install:
 .endfor
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		Does not build on 64-bit architectures
-.endif
 
 CONFIGURE_ARGS+=	--enable-gtk2
 PYDISTUTILS_BUILDARGS+=	WXPORT=gtk2
