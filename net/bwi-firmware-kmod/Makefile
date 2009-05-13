@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-kmod
 DISTFILES=	${FWFILE} b43-fwcutter-freebsd.tar.bz2:fwcutter
 EXTRACT_ONLY=	b43-fwcutter-freebsd.tar.bz2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Broadcom AirForce IEEE 802.11 Firmware Kernel Module
 
 FIRMWARES=	ucode ucode11 ucode2 ucode4 ucode5 \
