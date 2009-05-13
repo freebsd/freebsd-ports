@@ -19,14 +19,11 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	lynx:${PORTSDIR}/www/lynx \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
-PLIST_SUB=	WML_ARCH=${ARCH}-freebsd
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-perl=${PERL5} --with-catdir=man \
 		--prefix=${PREFIX}
-
-BROKEN=	does not build with perl 5.8.9
 
 MAN1=	wmd.1 wmd_missing.1 wmk.1 wml.1 wmb.1 wmu.1 \
 	wml_aux_freetable.1 wml_aux_htmlclean.1 wml_aux_htmlinfo.1 wml_aux_iselect.1 \
@@ -58,6 +55,11 @@ MAN7=	wml_barebone.7 \
 	wml_std_html401.7 wml_std_wai10.7 wml_std_xhtml10.7 \
 	wml_intro.7 wml_macros.7 wml_tutorial.7 wml_faq.7 wml_tags.7
 
+.include <bsd.port.pre.mk>
+
+PERL_ARCHNAME!=	${PERL} -V:archname 2>/dev/null || true
+PLIST_SUB=	LOCAL_PERL_ARCH=${PERL_ARCHNAME:S/archname='//:S/';//}
+
 do-configure:
 	@[ -f ${CONFIGURE_COOKIE}] || (cd ${WRKSRC} && ./configure ${CONFIGURE_ARGS})
 
@@ -67,4 +69,4 @@ post-build:
 test:
 	@cd ${WRKSRC} && ${GMAKE} test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
