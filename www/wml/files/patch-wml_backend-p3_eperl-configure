@@ -1,0 +1,11 @@
+--- wml_backend/p3_eperl/configure	2008-04-16 20:36:43.000000000 +0200
++++ wml_backend/p3_eperl/configure	2009-03-15 17:40:27.000000000 +0100
+@@ -1876,7 +1876,7 @@
+ #define HAVE_PERL_DYNALOADER 1
+ _ACEOF
+ 
+-        if $perlprog -e 'exit(! ($] > 5.009))' ; then
++        if $perlprog -e 'exit(! ($] >= 5.008009))' ; then
+             perl_dla=
+         else
+             perl_dla="$perl_archlib/auto/DynaLoader/DynaLoader.a"

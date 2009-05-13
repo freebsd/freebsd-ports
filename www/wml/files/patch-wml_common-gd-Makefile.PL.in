@@ -1,0 +1,10 @@
+--- wml_common/gd/Makefile.PL.in	2009-03-15 17:17:56.000000000 +0100
++++ wml_common/gd/Makefile.PL.in	2009-03-15 17:18:29.000000000 +0100
+@@ -3,6 +3,7 @@
+ # the contents of the Makefile that is written.
+ WriteMakefile(
+     'NAME'	=> 'WML::GD',
++    'MAKE'	=> 'gmake',
+     'VERSION_FROM'	=> 'GD.pm',
+     'PM'	=> {'GD.pm' => '$(INST_LIBDIR)/GD.pm'},
+     'MYEXTLIB'  => 'libgd/libgd$(LIB_EXT)',

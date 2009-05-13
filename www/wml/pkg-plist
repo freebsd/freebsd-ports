@@ -105,52 +105,52 @@ lib/wml/include/sys/all.wml
 lib/wml/include/sys/bootp3.wml
 lib/wml/include/sys/bootp4.wml
 lib/wml/include/sys/compat1.wml
-lib/wml/perl/lib/%%WML_ARCH%%/auto/Bit/Vector/Vector.so
-lib/wml/perl/lib/%%WML_ARCH%%/auto/Bit/Vector/Vector.bs
-lib/wml/perl/lib/%%WML_ARCH%%/auto/Bit/Vector/.packlist
-lib/wml/perl/lib/%%WML_ARCH%%/auto/File/PathConvert/.packlist
-lib/wml/perl/lib/%%WML_ARCH%%/auto/WML/GD/GD.so
-lib/wml/perl/lib/%%WML_ARCH%%/auto/WML/GD/GD.bs
-lib/wml/perl/lib/%%WML_ARCH%%/auto/WML/GD/autosplit.ix
-lib/wml/perl/lib/%%WML_ARCH%%/auto/WML/GD/.packlist
-lib/wml/perl/lib/%%WML_ARCH%%/auto/Getopt/Long/.packlist
-lib/wml/perl/lib/%%WML_ARCH%%/auto/HTML/Clean/.packlist
-lib/wml/perl/lib/%%WML_ARCH%%/auto/Image/Size/.packlist
-lib/wml/perl/lib/%%WML_ARCH%%/auto/IO/IO.so
-lib/wml/perl/lib/%%WML_ARCH%%/auto/IO/IO.bs
-lib/wml/perl/lib/%%WML_ARCH%%/auto/IO/.packlist
-lib/wml/perl/lib/%%WML_ARCH%%/auto/Term/ReadKey/ReadKey.so
-lib/wml/perl/lib/%%WML_ARCH%%/auto/Term/ReadKey/ReadKey.bs
-lib/wml/perl/lib/%%WML_ARCH%%/auto/Term/ReadKey/autosplit.ix
-lib/wml/perl/lib/%%WML_ARCH%%/auto/Term/ReadKey/.packlist
-lib/wml/perl/lib/%%WML_ARCH%%/Bit/Vector.pm
-lib/wml/perl/lib/%%WML_ARCH%%/WML/GD.pm
-lib/wml/perl/lib/%%WML_ARCH%%/IO.pm
-lib/wml/perl/lib/%%WML_ARCH%%/IO/Handle.pm
-lib/wml/perl/lib/%%WML_ARCH%%/IO/Poll.pm
-lib/wml/perl/lib/%%WML_ARCH%%/IO/Seekable.pm
-lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket.pm
-lib/wml/perl/lib/%%WML_ARCH%%/IO/Dir.pm
-lib/wml/perl/lib/%%WML_ARCH%%/IO/Pipe.pm
-lib/wml/perl/lib/%%WML_ARCH%%/IO/Select.pm
-lib/wml/perl/lib/%%WML_ARCH%%/IO/File.pm
-lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket/UNIX.pm
-lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket/INET.pm
-lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket/.svn/entries
-lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket/.svn/format
-lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket/.svn/text-base/INET.pm.svn-base
-lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket/.svn/text-base/UNIX.pm.svn-base
-lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/format
-lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/entries
-lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/text-base/Pipe.pm.svn-base
-lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/text-base/Socket.pm.svn-base
-lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/text-base/Seekable.pm.svn-base
-lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/text-base/File.pm.svn-base
-lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/text-base/Poll.pm.svn-base
-lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/text-base/Dir.pm.svn-base
-lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/text-base/Handle.pm.svn-base
-lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/text-base/Select.pm.svn-base
-lib/wml/perl/lib/%%WML_ARCH%%/Term/ReadKey.pm
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/Bit/Vector/Vector.so
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/Bit/Vector/Vector.bs
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/Bit/Vector/.packlist
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/File/PathConvert/.packlist
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/WML/GD/GD.so
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/WML/GD/GD.bs
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/WML/GD/autosplit.ix
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/WML/GD/.packlist
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/Getopt/Long/.packlist
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/HTML/Clean/.packlist
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/Image/Size/.packlist
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/IO/IO.so
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/IO/IO.bs
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/IO/.packlist
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/Term/ReadKey/ReadKey.so
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/Term/ReadKey/ReadKey.bs
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/Term/ReadKey/autosplit.ix
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/Term/ReadKey/.packlist
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/Bit/Vector.pm
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/WML/GD.pm
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO.pm
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/Handle.pm
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/Poll.pm
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/Seekable.pm
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/Socket.pm
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/Dir.pm
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/Pipe.pm
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/Select.pm
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/File.pm
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/Socket/UNIX.pm
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/Socket/INET.pm
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/Socket/.svn/entries
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/Socket/.svn/format
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/Socket/.svn/text-base/INET.pm.svn-base
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/Socket/.svn/text-base/UNIX.pm.svn-base
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/.svn/format
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/.svn/entries
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/.svn/text-base/Pipe.pm.svn-base
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/.svn/text-base/Socket.pm.svn-base
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/.svn/text-base/Seekable.pm.svn-base
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/.svn/text-base/File.pm.svn-base
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/.svn/text-base/Poll.pm.svn-base
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/.svn/text-base/Dir.pm.svn-base
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/.svn/text-base/Handle.pm.svn-base
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/.svn/text-base/Select.pm.svn-base
+lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/Term/ReadKey.pm
 lib/wml/perl/lib/File/PathConvert.pm
 lib/wml/perl/lib/Getopt/Long.pm
 lib/wml/perl/lib/auto/Getopt/Long/GetOptions.al
@@ -173,32 +173,32 @@ lib/wml/perl/lib/auto/Image/Size/swfsize.al
 lib/wml/perl/lib/auto/Image/Size/autosplit.ix
 lib/wml/perl/lib/HTML/Clean.pm
 lib/wml/perl/lib/Image/Size.pm
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/WML/GD
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/WML
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/Term/ReadKey
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/Term
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/Image/Size
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/Image
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/IO
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/HTML/Clean
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/HTML
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/Getopt/Long
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/Getopt
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/File/PathConvert
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/File
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/Bit/Vector
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/Bit
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/WML
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/Term
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket/.svn/text-base
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket/.svn
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/text-base
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/IO
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%/Bit
-@dirrm lib/wml/perl/lib/%%WML_ARCH%%
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/WML/GD
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/WML
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/Term/ReadKey
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/Term
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/Image/Size
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/Image
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/IO
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/HTML/Clean
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/HTML
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/Getopt/Long
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/Getopt
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/File/PathConvert
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/File
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/Bit/Vector
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto/Bit
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/auto
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/WML
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/Term
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/Socket/.svn/text-base
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/Socket/.svn
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/Socket
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/.svn/text-base
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO/.svn
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/IO
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%/Bit
+@dirrm lib/wml/perl/lib/%%LOCAL_PERL_ARCH%%
 @dirrm lib/wml/perl/lib/auto/Image/Size
 @dirrm lib/wml/perl/lib/auto/Image
 @dirrm lib/wml/perl/lib/auto/HTML/Clean
