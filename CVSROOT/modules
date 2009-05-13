@@ -10593,6 +10593,7 @@ p5-Config-Std                   ports/devel/p5-Config-Std
 p5-Config-Tiny                  ports/devel/p5-Config-Tiny
 p5-ConfigReader                 ports/devel/p5-ConfigReader
 p5-ConfigReader-Simple          ports/devel/p5-ConfigReader-Simple
+p5-Context-Preserve             ports/devel/p5-Context-Preserve
 p5-Contextual-Return            ports/devel/p5-Contextual-Return
 p5-Continuity                   ports/www/p5-Continuity
 p5-Convert-ASCII-Armour         ports/converters/p5-Convert-ASCII-Armour
@@ -10948,6 +10949,7 @@ p5-Devel-Modlist                ports/devel/p5-Devel-Modlist
 p5-Devel-NYTProf                ports/devel/p5-Devel-NYTProf
 p5-Devel-ObjectTracker          ports/devel/p5-Devel-ObjectTracker
 p5-Devel-PPPort                 ports/devel/p5-Devel-PPPort
+p5-Devel-PartialDump            ports/devel/p5-Devel-PartialDump
 p5-Devel-Pointer                ports/devel/p5-Devel-Pointer
 p5-Devel-Profile                ports/devel/p5-Devel-Profile
 p5-Devel-Profiler               ports/devel/p5-Devel-Profiler
@@ -11938,8 +11940,10 @@ p5-MooseX-SimpleConfig          ports/devel/p5-MooseX-SimpleConfig
 p5-MooseX-Singleton             ports/devel/p5-MooseX-Singleton
 p5-MooseX-Storage               ports/devel/p5-MooseX-Storage
 p5-MooseX-StrictConstructor     ports/devel/p5-MooseX-StrictConstructor
+p5-MooseX-Traits                ports/devel/p5-MooseX-Traits
 p5-MooseX-Types                 ports/devel/p5-MooseX-Types
 p5-MooseX-Types-Path-Class      ports/devel/p5-MooseX-Types-Path-Class
+p5-MooseX-Types-Structured      ports/devel/p5-MooseX-Types-Structured
 p5-Mouse                        ports/devel/p5-Mouse
 p5-MouseX-AttributeHelpers      ports/devel/p5-MouseX-AttributeHelpers
 p5-MouseX-ConfigFromFile        ports/devel/p5-MouseX-ConfigFromFile
@@ -12328,6 +12332,7 @@ p5-Parse-ErrorString-Perl       ports/devel/p5-Parse-ErrorString-Perl
 p5-Parse-FixedLength            ports/textproc/p5-Parse-FixedLength
 p5-Parse-Flex                   ports/textproc/p5-Parse-Flex
 p5-Parse-IRC                    ports/irc/p5-Parse-IRC
+p5-Parse-Method-Signatures      ports/devel/p5-Parse-Method-Signatures
 p5-Parse-PerlConfig             ports/devel/p5-Parse-PerlConfig
 p5-Parse-PhoneNumber            ports/textproc/p5-Parse-PhoneNumber
 p5-Parse-RecDescent             ports/devel/p5-Parse-RecDescent
@@ -12550,6 +12555,7 @@ p5-Schedule-Cron                ports/sysutils/p5-Schedule-Cron
 p5-Schedule-Load                ports/sysutils/p5-Schedule-Load
 p5-Schedule-Match               ports/sysutils/p5-Schedule-Match
 p5-Scope-Guard                  ports/devel/p5-Scope-Guard
+p5-Scope-Upper                  ports/devel/p5-Scope-Upper
 p5-Search-Binary                ports/devel/p5-Search-Binary
 p5-Search-Estraier              ports/textproc/p5-Search-Estraier
 p5-Search-InvertedIndex         ports/databases/p5-Search-InvertedIndex
@@ -13999,6 +14005,7 @@ p5-config-tiny                  ports/devel/p5-Config-Tiny
 p5-configreader                 ports/devel/p5-ConfigReader
 p5-configreader-simple          ports/devel/p5-ConfigReader-Simple
 p5-constant-lexical             ports/devel/p5-constant-lexical
+p5-context-preserve             ports/devel/p5-Context-Preserve
 p5-contextual-return            ports/devel/p5-Contextual-Return
 p5-continuity                   ports/www/p5-Continuity
 p5-convert-ascii-armour         ports/converters/p5-Convert-ASCII-Armour
@@ -14362,6 +14369,7 @@ p5-devel-messenger              ports/devel/p5-Devel-Messenger
 p5-devel-modlist                ports/devel/p5-Devel-Modlist
 p5-devel-nytprof                ports/devel/p5-Devel-NYTProf
 p5-devel-objecttracker          ports/devel/p5-Devel-ObjectTracker
+p5-devel-partialdump            ports/devel/p5-Devel-PartialDump
 p5-devel-pointer                ports/devel/p5-Devel-Pointer
 p5-devel-ppport                 ports/devel/p5-Devel-PPPort
 p5-devel-profile                ports/devel/p5-Devel-Profile
@@ -15375,8 +15383,10 @@ p5-moosex-simpleconfig          ports/devel/p5-MooseX-SimpleConfig
 p5-moosex-singleton             ports/devel/p5-MooseX-Singleton
 p5-moosex-storage               ports/devel/p5-MooseX-Storage
 p5-moosex-strictconstructor     ports/devel/p5-MooseX-StrictConstructor
+p5-moosex-traits                ports/devel/p5-MooseX-Traits
 p5-moosex-types                 ports/devel/p5-MooseX-Types
 p5-moosex-types-path-class      ports/devel/p5-MooseX-Types-Path-Class
+p5-moosex-types-structured      ports/devel/p5-MooseX-Types-Structured
 p5-mouse                        ports/devel/p5-Mouse
 p5-mousex-attributehelpers      ports/devel/p5-MouseX-AttributeHelpers
 p5-mousex-configfromfile        ports/devel/p5-MouseX-ConfigFromFile
@@ -15689,6 +15699,7 @@ p5-parse-errorstring-perl       ports/devel/p5-Parse-ErrorString-Perl
 p5-parse-fixedlength            ports/textproc/p5-Parse-FixedLength
 p5-parse-flex                   ports/textproc/p5-Parse-Flex
 p5-parse-irc                    ports/irc/p5-Parse-IRC
+p5-parse-method-signatures      ports/devel/p5-Parse-Method-Signatures
 p5-parse-perlconfig             ports/devel/p5-Parse-PerlConfig
 p5-parse-phonenumber            ports/textproc/p5-Parse-PhoneNumber
 p5-parse-recdescent             ports/devel/p5-Parse-RecDescent
@@ -15954,6 +15965,7 @@ p5-schedule-cron                ports/sysutils/p5-Schedule-Cron
 p5-schedule-load                ports/sysutils/p5-Schedule-Load
 p5-schedule-match               ports/sysutils/p5-Schedule-Match
 p5-scope-guard                  ports/devel/p5-Scope-Guard
+p5-scope-upper                  ports/devel/p5-Scope-Upper
 p5-sdl                          ports/devel/p5-SDL
 p5-search-binary                ports/devel/p5-Search-Binary
 p5-search-estraier              ports/textproc/p5-Search-Estraier
@@ -18752,6 +18764,7 @@ py-gdchart                      ports/graphics/py-gdchart
 py-gdchart2                     ports/graphics/py-gdchart2
 py-generate                     ports/devel/py-generate
 py-genshi                       ports/textproc/py-genshi
+py-genshi-devel                 ports/textproc/py-genshi-devel
 py-geoip                        ports/net/py-GeoIP
 py-geojson                      ports/devel/py-geojson
 py-geotypes                     ports/devel/py-geotypes
