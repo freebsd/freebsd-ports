@@ -1610,6 +1610,7 @@
     SUBDIR += p5-MooseX-Log-Log4perl
     SUBDIR += p5-MooseX-Meta-TypeConstraint-ForceCoercion
     SUBDIR += p5-MooseX-Method-Signatures
+    SUBDIR += p5-MooseX-MethodAttributes
     SUBDIR += p5-MooseX-POE
     SUBDIR += p5-MooseX-Policy-SemiAffordanceAccessor
     SUBDIR += p5-MooseX-SimpleConfig
