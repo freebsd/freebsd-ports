@@ -1,24 +1,15 @@
---- examples/Makefile.orig	2007-12-21 18:02:50.000000000 +0300
-+++ examples/Makefile	2008-01-30 05:43:08.000000000 +0300
-@@ -23,6 +23,8 @@
- 
- 
- # collect flags for the compiler for lqr library
-+CXX ?= g++
-+
- LQR_CFLAGS = `pkg-config --cflags lqr-1`
- 
- LQR_LIBS = `pkg-config --libs lqr-1`
-@@ -59,17 +61,17 @@
+--- examples/Makefile.orig	2009-05-09 20:41:30.000000000 +0400
++++ examples/Makefile	2009-05-12 20:52:42.000000000 +0400
+@@ -63,17 +63,17 @@
  
  # linking
  $(tt1out) : $(tt1obj)
 -	g++ $(LINKING_FLAGS) -o $(tt1out) $(tt1obj)
-+	$(CXX) $(tt1obj) $(LINKING_FLAGS) -o $(tt1out)
++	$(CXX) $(LINKING_FLAGS) -o $(tt1out) $(tt1obj)
  
  $(tt2out) : $(tt2obj)
 -	g++ $(LINKING_FLAGS) -o $(tt2out) $(tt2obj)
-+	$(CXX) $(tt2obj) $(LINKING_FLAGS) -o $(tt2out)
++	$(CXX) $(LINKING_FLAGS) -o $(tt2out) $(tt2obj)
  
  # object building
  $(tt1).o : $(tt1).cpp $(tt1).h

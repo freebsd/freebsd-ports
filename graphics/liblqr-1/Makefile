@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liblqr-1
-DISTVERSION=	0.2.1
+DISTVERSION=	0.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://liblqr.wdfiles.com/local--files/en:download-page/ \
 		http://mirror.amdmi3.ru/
@@ -18,9 +18,7 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 pkgconfig
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/^([0-9.]+)-([0-9]+)$/\1/}
-
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)
@@ -40,7 +38,7 @@ PKGMESSAGE=	${WRKDIR}/pkg_message
 
 post-patch:
 .if ${OSVERSION} < 700042
-	@${REINPLACE_CMD} -e 's|-fvisibility=hidden||' ${WRKSRC}/lqr/Makefile.in
+	@${REINPLACE_CMD} -e 's|FVISIBILITY_FLAG=".*"|FVISIBILITY_FLAG=""|' ${WRKSRC}/configure
 .endif
 	@${REINPLACE_CMD} -e '/^lqr_pkgconfigdir/ s|$$(libdir)|$${exec_prefix}/libdata|' \
 		${WRKSRC}/Makefile.in

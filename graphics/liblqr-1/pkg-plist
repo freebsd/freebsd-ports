@@ -2,16 +2,18 @@ include/lqr-1/lqr.h
 include/lqr-1/lqr/lqr_base.h
 include/lqr-1/lqr/lqr_carver_bias_pub.h
 include/lqr-1/lqr/lqr_carver_list_pub.h
-include/lqr-1/lqr/lqr_carver_rigmask_pub.h
 include/lqr-1/lqr/lqr_carver_pub.h
+include/lqr-1/lqr/lqr_carver_rigmask_pub.h
 include/lqr-1/lqr/lqr_cursor_pub.h
+include/lqr-1/lqr/lqr_energy_pub.h
 include/lqr-1/lqr/lqr_gradient_pub.h
 include/lqr-1/lqr/lqr_progress_pub.h
+include/lqr-1/lqr/lqr_rwindow_pub.h
 include/lqr-1/lqr/lqr_vmap_list_pub.h
 include/lqr-1/lqr/lqr_vmap_pub.h
 lib/liblqr-1.la
 lib/liblqr-1.so
-lib/liblqr-1.so.1
+lib/liblqr-1.so.3
 libdata/pkgconfig/lqr-1.pc
 @dirrm include/lqr-1/lqr
 @dirrm include/lqr-1
