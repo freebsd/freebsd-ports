@@ -1,0 +1,32 @@
+bin/bibextract.py
+bin/bibmanage.py
+bin/get_papers.py
+%%PYTHON_SITELIBDIR%%/query_ads/__init__.py
+%%PYTHON_SITELIBDIR%%/query_ads/__init__.pyc
+%%PYTHON_SITELIBDIR%%/query_ads/__init__.pyo
+%%PYTHON_SITELIBDIR%%/query_ads/query_ads.py
+%%PYTHON_SITELIBDIR%%/query_ads/query_ads.pyc
+%%PYTHON_SITELIBDIR%%/query_ads/query_ads.pyo
+%%PYTHON_SITELIBDIR%%/yapbib/__init__.py
+%%PYTHON_SITELIBDIR%%/yapbib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/yapbib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/yapbib/adsparse.py
+%%PYTHON_SITELIBDIR%%/yapbib/adsparse.pyc
+%%PYTHON_SITELIBDIR%%/yapbib/adsparse.pyo
+%%PYTHON_SITELIBDIR%%/yapbib/bibitem.py
+%%PYTHON_SITELIBDIR%%/yapbib/bibitem.pyc
+%%PYTHON_SITELIBDIR%%/yapbib/bibitem.pyo
+%%PYTHON_SITELIBDIR%%/yapbib/biblist.py
+%%PYTHON_SITELIBDIR%%/yapbib/biblist.pyc
+%%PYTHON_SITELIBDIR%%/yapbib/biblist.pyo
+%%PYTHON_SITELIBDIR%%/yapbib/bibparse.py
+%%PYTHON_SITELIBDIR%%/yapbib/bibparse.pyc
+%%PYTHON_SITELIBDIR%%/yapbib/bibparse.pyo
+%%PYTHON_SITELIBDIR%%/yapbib/helper.py
+%%PYTHON_SITELIBDIR%%/yapbib/helper.pyc
+%%PYTHON_SITELIBDIR%%/yapbib/helper.pyo
+%%PYTHON_SITELIBDIR%%/yapbib/latex.py
+%%PYTHON_SITELIBDIR%%/yapbib/latex.pyc
+%%PYTHON_SITELIBDIR%%/yapbib/latex.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/yapbib
+@dirrm %%PYTHON_SITELIBDIR%%/query_ads
