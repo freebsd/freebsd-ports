@@ -47,21 +47,15 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^CFLAGS =.*|& $${SDL_CFLAGS} -I${LOCALBASE}/include|g' \
 		${WRKSRC}/src/framework/Makefile.in
-	@${REINPLACE_CMD} -e 's|<SDL/|<|g' \
-		${WRKSRC}/src/framework/scrap.c
-	@${REINPLACE_CMD} -e 's|<SDL/|<|g; \
-		s|sighandler_t|sig_t|g; \
-		s|_NSIG|NSIG|g' \
+	@${REINPLACE_CMD} -e 's|sighandler_t|sig_t|g' \
 		${WRKSRC}/src/components/ogre/OgreSetup.cpp
-	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
-		${WRKSRC}/src/components/ogre/SceneManagers/EmberPagingSceneManager/src/filetutils.cpp
 	@${REINPLACE_CMD} -e 's|	install-dist_docDATA |	|g'  ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$(sysconfdir)/ember/|$$(sysconfdir)/ember|g' \
 		${WRKSRC}/Makefile.in \
 		${WRKSRC}/src/components/ogre/Makefile.in
 
 post-install:
-	(cd ${WRKDIR}/media-${PORTVERSION} && ${FIND} . -type f -print | \
+	(cd ${WRKDIR}/media-${PORTVERSION}/media && ${FIND} . -type f -print | \
 		${CPIO} -pdmu -R${SHAREOWN}:${SHAREGRP} ${DATADIR}/media)
 	${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
 	${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644
