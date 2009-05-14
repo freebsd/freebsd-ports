@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Data/Remember.pm
+%%SITE_PERL%%/Data/Remember/DBM.pm
+%%SITE_PERL%%/Data/Remember/Hybrid.pm
+%%SITE_PERL%%/Data/Remember/Memory.pm
+%%SITE_PERL%%/Data/Remember/POE.pm
+%%SITE_PERL%%/Data/Remember/YAML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Remember/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Remember
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/Data/Remember
+@dirrmtry %%SITE_PERL%%/Data
