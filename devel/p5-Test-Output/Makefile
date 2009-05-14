@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Output
-PORTVERSION=	0.13
+PORTVERSION=	0.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,6 @@ RUN_DEPENDS=	p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Test::Output::Tie.3 Test::Output.3
+MAN3=		Test::Output.3
 
 .include <bsd.port.mk>
