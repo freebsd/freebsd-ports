@@ -1,0 +1,52 @@
+bin/moonshine
+lib/browser_plugins/moonshine/libmoonshine-plugin.la
+lib/browser_plugins/moonshine/libmoonshine-plugin.so
+share/applications/moonshine.desktop
+%%DATADIR%%/application.ini
+%%DATADIR%%/chrome/chrome.manifest
+%%DATADIR%%/chrome/content/moon-utilities.js
+%%DATADIR%%/chrome/content/player-shell.js
+%%DATADIR%%/chrome/content/player-shell.xul
+%%DATADIR%%/chrome/content/player/moonshine-full-screen-button.js
+%%DATADIR%%/chrome/content/player/moonshine-play-pause-button.js
+%%DATADIR%%/chrome/content/player/moonshine-player.js
+%%DATADIR%%/chrome/content/player/moonshine-plugin-player.js
+%%DATADIR%%/chrome/content/player/moonshine-seek-bar.js
+%%DATADIR%%/chrome/content/player/moonshine-volume-bar.js
+%%DATADIR%%/chrome/content/player/moonshine-wmp-controls.js
+%%DATADIR%%/chrome/content/player/mtk/mtk-box.js
+%%DATADIR%%/chrome/content/player/mtk/mtk-button.js
+%%DATADIR%%/chrome/content/player/mtk/mtk-color.js
+%%DATADIR%%/chrome/content/player/mtk/mtk-console.js
+%%DATADIR%%/chrome/content/player/mtk/mtk-container.js
+%%DATADIR%%/chrome/content/player/mtk/mtk-label.js
+%%DATADIR%%/chrome/content/player/mtk/mtk-media-element.js
+%%DATADIR%%/chrome/content/player/mtk/mtk-object.js
+%%DATADIR%%/chrome/content/player/mtk/mtk-popup.js
+%%DATADIR%%/chrome/content/player/mtk/mtk-screen.js
+%%DATADIR%%/chrome/content/player/mtk/mtk-slider.js
+%%DATADIR%%/chrome/content/player/mtk/mtk-style.js
+%%DATADIR%%/chrome/content/player/mtk/mtk-toolbar.js
+%%DATADIR%%/chrome/content/player/mtk/mtk-widget.js
+%%DATADIR%%/chrome/content/player/mtk/mtk-window.js
+%%DATADIR%%/chrome/content/player/mtk/mtk-xaml.js
+%%DATADIR%%/chrome/icons/default/moonshine-window.png
+%%DATADIR%%/chrome/locale/en-US/player-shell.dtd
+%%DATADIR%%/chrome/locale/en-US/version.dtd
+%%DATADIR%%/chrome/skin/dialog-error.png
+%%DATADIR%%/chrome/skin/player-shell.css
+%%DATADIR%%/defaults/preferences/prefs.js
+@dirrm %%DATADIR%%/defaults/preferences
+@dirrm %%DATADIR%%/defaults
+@dirrm %%DATADIR%%/chrome/skin
+@dirrm %%DATADIR%%/chrome/locale/en-US
+@dirrm %%DATADIR%%/chrome/locale
+@dirrm %%DATADIR%%/chrome/icons/default
+@dirrm %%DATADIR%%/chrome/icons
+@dirrm %%DATADIR%%/chrome/content/player/mtk
+@dirrm %%DATADIR%%/chrome/content/player
+@dirrm %%DATADIR%%/chrome/content
+@dirrm %%DATADIR%%/chrome
+@dirrm %%DATADIR%%
+@dirrm lib/browser_plugins/moonshine
+@dirrm lib/browser_plugins
