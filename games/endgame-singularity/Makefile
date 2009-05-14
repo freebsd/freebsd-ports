@@ -6,23 +6,30 @@
 #
 
 PORTNAME=	singularity
-DISTVERSION=	0.27
+PORTVERSION=	0.30
 CATEGORIES=	games
 MASTER_SITES=	http://emhsoft.com/singularity/ CENKES
 PKGNAMEPREFIX=	endgame-
-DISTNAME=	${PORTNAME}_${DISTVERSION}
+EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-ports@sslash.org.ua
 COMMENT=	Simulates the life of a true AI
 
-RUN_DEPENDS=	py*-game>=1.7.1:${PORTSDIR}/devel/py-game
+RUN_DEPENDS=	py*-game>=1.8:${PORTSDIR}/devel/py-game \
+		${PYNUMPY}
 
 USE_PYDISTUTILS=yes
 USE_PYTHON=	yes
 USE_SDL=	image mixer
-PYDISTUTILS_PKGVERSION=	${DISTVERSION}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 PORTDOCS=	AUTHORS Changelog README.txt TODO
+
+OPTIONS=	MUSIC "Install original music pack" on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_MUSIC)
+RUN_DEPENDS+=	endgame-singularity-music>=006:${PORTSDIR}/games/endgame-singularity-music
+.endif
 
 post-extract:
 	@${FIND} ${WRKSRC} -name '*.pyc' -delete
@@ -31,10 +38,28 @@ post-extract:
 	@${TOUCH} ${WRKSRC}/data/music/.keep_me
 
 post-patch:
-	@${REINPLACE_CMD} -e '/py2exe/d;s|console.*|packages=["${PORTNAME}"],|;\
-		/name=/s|=.*|="${PORTNAME}",|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e '5,16d;25,31d;\
+		/app=/s|app=.*|packages=["singularity","singularity/graphics","singularity/screens"],|;\
+		/name=/s|".*"|"singularity"|' \
+		${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e '/import cPickle/s|cPickle|pickle as cPickle|' \
+		${WRKSRC}/${PORTNAME}/g.py
 	@${REINPLACE_CMD} -e '/data_loc = /s|=.*|= "${DATADIR}/"|;\
 		/data_loc.*music/s|, ".."||' ${WRKSRC}/${PORTNAME}/g.py
+	@${REINPLACE_CMD} -e '/ code\.[a-z]/s|code|singularity|' \
+		${WRKSRC}/${PORTNAME}/graphics/button.py \
+		${WRKSRC}/${PORTNAME}/graphics/dialog.py \
+		${WRKSRC}/${PORTNAME}/graphics/g.py \
+		${WRKSRC}/${PORTNAME}/screens/base.py \
+		${WRKSRC}/${PORTNAME}/screens/finance.py \
+		${WRKSRC}/${PORTNAME}/screens/main_menu.py \
+		${WRKSRC}/${PORTNAME}/screens/options.py
+	@${REINPLACE_CMD} -e '/ code/s|code|singularity|' \
+		${WRKSRC}/${PORTNAME}/screens/knowledge.py \
+		${WRKSRC}/${PORTNAME}/screens/location.py \
+		${WRKSRC}/${PORTNAME}/screens/research.py
+	@${REINPLACE_CMD} -e '/ code[ \.]/s|code|singularity|' \
+		${WRKSRC}/${PORTNAME}/screens/map.py
 
 post-build:
 	@${ECHO_CMD} '#!${PYTHON_CMD}' > ${WRKSRC}/${PORTNAME}.py
@@ -48,4 +73,4 @@ post-install:
 	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
