@@ -11,3 +11,12 @@
  milter.chdir:   /var/tmp
  milter.timeout: 7210
  milter.loglevel:   0
+@@ -16,7 +16,7 @@
+
+ ## Syslog ##
+ syslog.ident:       enma
+-syslog.facility:    local4
++syslog.facility:    mail
+ syslog.logmask:     info
+
+

@@ -33,15 +33,10 @@ rcvar=`set_rcvar`
 
 load_rc_config $name
 
-if [ -f "${milterenma_cfgfile}" ];then
-    milterenma_cfgfile="-c ${milterenma_cfgfile}"
-else
-    echo "milterenma_cfgfile is not correctly set"
-    exit 1
-fi
 pidfile=${milterenma_pid}
-command="%%PREFIX%%/bin/enma"
-command_args="${milterenma_cfgfile}"
+required_files=${milterenma_cfgfile}
+command="%%PREFIX%%/libexec/enma"
+command_args="-c ${milterenma_cfgfile}"
 start_precmd="enma_precmd"
 stop_postcmd="enma_postcmd"
 _piddir=$(dirname ${pidfile})
