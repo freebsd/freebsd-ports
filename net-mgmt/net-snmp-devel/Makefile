@@ -14,10 +14,7 @@ MASTER_SITE_SUBDIR=	net-snmp
 PKGNAMEPREFIX=	net-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	kuriyama@FreeBSD.org
-# Call for new maintainer.  Feel free to take maintainership of this port.
-# I'm just here only I don't like to assign this port to
-# ports@FreeBSD.org as unmaintained.
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
 
 OPTIONS=	IPV6 "Build with IPv6 support" on \
