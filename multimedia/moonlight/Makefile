@@ -7,7 +7,7 @@
 
 PORTNAME=	moonlight
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia www
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/moon/
 DISTNAME=	moon-${PORTVERSION}
@@ -47,7 +47,7 @@ IGNORE=		does not build: not yet ported to sparc64
 IGNORE=		does not build: requires posix_memalign(3)
 .endif
 
-.if defined(WITHOUT_PULSEAUDIO)
+.if !defined(WITHOUT_PULSEAUDIO)
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=--with-pulseaudio=yes
 .else
