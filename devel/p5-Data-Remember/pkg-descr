@@ -1,0 +1,18 @@
+The author got really tired of statements that looked like:
+
+$heap->{job}{$job} = {
+    source  => $source,
+    dest    => $destination,
+    options => $options,
+};
+
+and later:
+
+if ($heap->{job}{$job}{options}{wibble} eq $something_else) {
+    # do something...
+}
+
+This module is meant to simplify this sort of things, with
+optional persistence as a bonus.
+
+WWW: http://search.cpan.org/dist/Data-Remember/
