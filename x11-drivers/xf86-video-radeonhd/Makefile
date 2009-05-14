@@ -7,7 +7,7 @@
 
 PORTNAME=	xf86-video-radeonhd
 PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -16,7 +16,7 @@ COMMENT=	X.Org ati RadeonHD display driver
 OPTIONS=	UTILS "Install rhd_conntest and rhd_dump utilities" off
 
 XORG_CAT=	driver
-USE_XORG=	damageproto videoproto xextproto xf86driproto
+USE_XORG=	damageproto glproto videoproto xextproto xf86driproto
 CONFIGURE_ARGS=	--enable-exa
 
 CONFLICTS=	xf86-video-radeonhd-devel-[0-9]*
