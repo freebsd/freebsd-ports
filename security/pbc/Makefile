@@ -7,13 +7,14 @@
 
 PORTNAME=	pbc
 PORTVERSION=	0.4.19
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://crypto.stanford.edu/pbc/files/
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Library of pairing-based cryptosystems
 
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
 
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
