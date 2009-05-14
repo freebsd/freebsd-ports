@@ -18,8 +18,6 @@ COMMENT=	High performance graph data structures and algorithms
 BUILD_DEPENDS=	${LOCALBASE}/lib/libigraph.so:${PORTSDIR}/math/igraph
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
-BROKEN=		checksum mismatch
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
