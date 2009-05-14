@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Scalar-List-Utils
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 PORTEPOCH=	1
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
@@ -17,6 +17,6 @@ COMMENT=	Perl subroutines that would be nice to have in the perl core
 
 PERL_CONFIGURE=	yes
 
-MAN3=		List::Util.3 Scalar::Util.3
+MAN3=		List::Util.3 Scalar::Util.3 List::Util::XS.3
 
 .include <bsd.port.mk>
