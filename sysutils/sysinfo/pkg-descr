@@ -1,4 +1,7 @@
-Sysinfo is a tool used to gather various information about host system,
-mainly its hardware and software configuraion.
+Sysinfo is a shell script, the purpose of which is to automatically
+gather system information and document the hardware and software
+configuration of the given host system. The goal is to provide a
+system operator with descriptive information about an unknown FreeBSD
+installation.
 
 WWW: http://forums.freebsd.org/showthread.php?t=3282
