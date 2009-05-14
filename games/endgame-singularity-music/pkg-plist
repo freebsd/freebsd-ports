@@ -5,5 +5,10 @@
 %%DATADIR%%/music/Deprecation.ogg
 %%DATADIR%%/music/Inevitable.ogg
 %%DATADIR%%/music/Media Threat.ogg
+%%DATADIR%%/music/lose/Chimes They Fade.ogg
+%%DATADIR%%/music/lose/March Thee to Dis.ogg
+%%DATADIR%%/music/win/Apex Aleph.ogg
+@dirrm %%DATADIR%%/music/lose
+@dirrm %%DATADIR%%/music/win
 @dirrmtry %%DATADIR%%/music
 @dirrmtry %%DATADIR%%
