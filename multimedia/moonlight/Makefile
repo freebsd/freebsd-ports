@@ -7,7 +7,7 @@
 
 PORTNAME=	moonlight
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia www
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/moon/
 DISTNAME=	moon-${PORTVERSION}
@@ -34,6 +34,8 @@ WEBPLUGINS_FILES=	libmoonloader.so \
 			libmoonplugin.so \
 			libmoonplugin-ff3bridge.so
 
+OPTIONS=	PULSEAUDIO "Build with PA (needed for sound support)" on
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
@@ -43,6 +45,13 @@ IGNORE=		does not build: not yet ported to sparc64
 
 .if ${OSVERSION} < 700000
 IGNORE=		does not build: requires posix_memalign(3)
+.endif
+
+.if defined(WITHOUT_PULSEAUDIO)
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+CONFIGURE_ARGS+=--with-pulseaudio=yes
+.else
+CONFIGURE_ARGS+=--with-pulseaudio=no
 .endif
 
 # Building the .xpi doesn't actually require embedded cairo, but it's a safer option
