@@ -20,9 +20,9 @@ GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 
 MAN1=			teredo-mire.1
-MAN5=			miredo-server.conf.5 miredo.conf.5 isatapd.conf.5
-MAN8=			miredo-server.8 miredo.8 isatapd.8 miredo-checkconf.8
-USE_RC_SUBR=		miredo_server miredo isatapd
+MAN5=			miredo-server.conf.5 miredo.conf.5
+MAN8=			miredo-server.8 miredo.8 miredo-checkconf.8
+USE_RC_SUBR=		miredo_server miredo
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=		yes
