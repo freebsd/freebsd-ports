@@ -1,0 +1,9 @@
+Moonshine leverages the Windows Media capabilities from Silverlight,
+provided by the Moonlight browser plugin, and the Firefox web
+browser framework to enable the playback of embedded Windows Media
+content on the web and local files on a user's desktop.
+
+WWW: http://abock.org/moonshine/
+
+- Florent Thoumie
+flz@FreeBSD.org

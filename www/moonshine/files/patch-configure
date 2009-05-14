@@ -1,0 +1,10 @@
+--- configure.orig	2009-04-15 21:26:53.000000000 +0100
++++ configure	2009-04-15 21:28:20.000000000 +0100
+@@ -11543,6 +11543,7 @@
+ 
+ case "$target_os" in
+ 	*linux*) TARGET_PLATFORM="Linux" ;;
++	*freebsd*) TARGET_PLATFORM="FreeBSD" ;;
+ 	*) { { $as_echo "$as_me:$LINENO: error: Target os $target_os is not supported" >&5
+ $as_echo "$as_me: error: Target os $target_os is not supported" >&2;}
+    { (exit 1); exit 1; }; } ;;

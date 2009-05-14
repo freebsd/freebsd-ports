@@ -517,6 +517,7 @@
     SUBDIR += momspider
     SUBDIR += monkey
     SUBDIR += moodle
+    SUBDIR += moonshine
     SUBDIR += mozex
     SUBDIR += mozilla
     SUBDIR += mozplugger
