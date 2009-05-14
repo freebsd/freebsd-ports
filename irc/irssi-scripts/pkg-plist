@@ -18,6 +18,7 @@ share/irssi/scripts/ascii.pl
 share/irssi/scripts/auto_away.pl
 share/irssi/scripts/auto_whois.pl
 share/irssi/scripts/autoaway.pl
+share/irssi/scripts/autochannel.pl
 share/irssi/scripts/autocycle.pl
 share/irssi/scripts/autolimit.pl
 share/irssi/scripts/autoopper.pl
@@ -27,6 +28,7 @@ share/irssi/scripts/autoreminder.pl
 share/irssi/scripts/autoversion.pl
 share/irssi/scripts/autovoice.pl
 share/irssi/scripts/autowhois.pl
+share/irssi/scripts/autowrap.pl
 share/irssi/scripts/away.pl
 share/irssi/scripts/away2web.pl
 share/irssi/scripts/away_hilight_notice.pl
@@ -64,7 +66,6 @@ share/irssi/scripts/chansearch.pl
 share/irssi/scripts/chanshare.pl
 share/irssi/scripts/chansort.pl
 share/irssi/scripts/chansync.pl
-share/irssi/scripts/charsetwars.pl
 share/irssi/scripts/chops.pl
 share/irssi/scripts/cleanpublic.pl
 share/irssi/scripts/clipboard.pl
@@ -76,7 +77,6 @@ share/irssi/scripts/connectcmd.pl
 share/irssi/scripts/countdown.pl
 share/irssi/scripts/country.pl
 share/irssi/scripts/cp1250_kick.pl
-share/irssi/scripts/cp2iso.pl
 share/irssi/scripts/crapbuster.pl
 share/irssi/scripts/cron.pl
 share/irssi/scripts/cwho.pl
@@ -97,7 +97,6 @@ share/irssi/scripts/doublefilter.pl
 share/irssi/scripts/eliza.pl
 share/irssi/scripts/emaildb1.0.pl
 share/irssi/scripts/eng_no_translate_dpryo.pl
-share/irssi/scripts/euro.pl
 share/irssi/scripts/events.pl
 share/irssi/scripts/exec_clean.pl
 share/irssi/scripts/fakectcp.pl
@@ -130,6 +129,7 @@ share/irssi/scripts/hideauth.pl
 share/irssi/scripts/highlite.pl
 share/irssi/scripts/hignore.pl
 share/irssi/scripts/hilightwin.pl
+share/irssi/scripts/history_search.pl
 share/irssi/scripts/hl.pl
 share/irssi/scripts/hlbot.pl
 share/irssi/scripts/hostname.pl
@@ -189,6 +189,7 @@ share/irssi/scripts/modelist-r.pl
 share/irssi/scripts/modelist.pl
 share/irssi/scripts/mood.pl
 share/irssi/scripts/morse.pl
+share/irssi/scripts/mouse_soliton.pl
 share/irssi/scripts/mpg123.pl
 share/irssi/scripts/multipaste.pl
 share/irssi/scripts/my_beep.pl
@@ -253,11 +254,9 @@ share/irssi/scripts/quizmaster.pl
 share/irssi/scripts/rainbow.pl
 share/irssi/scripts/randaway.pl
 share/irssi/scripts/randname.pl
-share/irssi/scripts/recode.pl
 share/irssi/scripts/relm.pl
 share/irssi/scripts/remote.pl
 share/irssi/scripts/repeat.pl
-share/irssi/scripts/replace.pl
 share/irssi/scripts/resize_split.pl
 share/irssi/scripts/rk.pl
 share/irssi/scripts/romaji.pl
@@ -322,6 +321,7 @@ share/irssi/scripts/verstats.pl
 share/irssi/scripts/vowels.pl
 share/irssi/scripts/washnicks.pl
 share/irssi/scripts/watch.pl
+share/irssi/scripts/warnkick.pl
 share/irssi/scripts/whitelist.pl
 share/irssi/scripts/whois.pl
 share/irssi/scripts/whos.pl
