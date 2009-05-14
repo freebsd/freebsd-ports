@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cgit
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.2.1
 CATEGORIES=	devel www
 MASTER_SITES= 	http://hjemli.net/git/cgit/snapshot/:cgit \
 		http://www.kernel.org/pub/software/scm/git/:git
