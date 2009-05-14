@@ -1,6 +1,0 @@
-@comment $FreeBSD$
-bin/g95
-bin/f95
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/G95Manual.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
