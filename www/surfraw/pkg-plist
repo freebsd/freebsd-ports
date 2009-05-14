@@ -20,6 +20,7 @@ lib/surfraw/cia
 lib/surfraw/cite
 lib/surfraw/cnn
 lib/surfraw/codesearch
+lib/surfraw/comlaw
 lib/surfraw/ctan
 lib/surfraw/currency
 lib/surfraw/cve
@@ -67,7 +68,6 @@ lib/surfraw/pubmed
 lib/surfraw/rae
 lib/surfraw/rfc
 lib/surfraw/rhyme
-lib/surfraw/scaleplus
 lib/surfraw/scholar
 lib/surfraw/scicom
 lib/surfraw/scpan
@@ -107,6 +107,7 @@ man/man1/cite.1sr.gz
 man/man1/cia.1sr.gz
 man/man1/cnn.1sr.gz
 man/man1/codesearch.1sr.gz
+man/man1/comlaw.1sr.gz
 man/man1/ctan.1sr.gz
 man/man1/currency.1sr.gz
 man/man1/cve.1sr.gz
@@ -153,7 +154,6 @@ man/man1/pubmed.1sr.gz
 man/man1/rae.1sr.gz
 man/man1/rfc.1sr.gz
 man/man1/rhyme.1sr.gz
-man/man1/scaleplus.1sr.gz
 man/man1/scholar.1sr.gz
 man/man1/scpan.1sr.gz
 man/man1/scicom.1sr.gz
