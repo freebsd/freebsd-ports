@@ -63,7 +63,7 @@ PLIST_FILES=	${WEBPLUGINS_DIR}/${PKGNAME}-freebsd-${OSREL}.xpi
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^TEST_SUBDIR/d' \
+	@${REINPLACE_CMD} -e '/TEST_SUBDIR =/d' \
 			${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/<malloc.h>/d' \
 			${WRKSRC}/src/animation.cpp \
