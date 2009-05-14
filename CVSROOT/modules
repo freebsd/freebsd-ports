@@ -959,6 +959,7 @@ bibletime-devel                 ports/misc/bibletime-devel
 bibletime-kde3                  ports/misc/bibletime-kde3
 bibletime-kde4                  ports/misc/bibletime-kde4
 biblical-curse                  ports/misc/biblical-curse
+biblio-py                       ports/print/biblio-py
 bibtex2html                     ports/textproc/bibtex2html
 bibtool                         ports/textproc/bibtool
 bibview                         ports/print/bibview
@@ -2107,7 +2108,6 @@ de-staroffice5                  ports/german/staroffice5
 de-staroffice52                 ports/german/staroffice52
 de-staroffice70                 ports/german/staroffice70
 de-steak                        ports/german/steak
-de-swissgerman-ding             ports/german/swissgerman-ding
 de-tipp10                       ports/german/tipp10
 de-unix-connect                 ports/german/unix-connect
 de-vtiger                       ports/german/vtiger
@@ -11862,6 +11862,7 @@ p5-Math-TrulyRandom             ports/math/p5-Math-TrulyRandom
 p5-Math-Units                   ports/math/p5-Math-Units
 p5-Math-Vec                     ports/math/p5-Math-Vec
 p5-Math-VecStat                 ports/math/p5-Math-VecStat
+p5-Math-VectorReal              ports/math/p5-Math-VectorReal
 p5-MathML-Entities              ports/textproc/p5-MathML-Entities
 p5-MatrixReal                   ports/math/p5-MatrixReal
 p5-Maypole                      ports/www/p5-Maypole
@@ -11931,9 +11932,14 @@ p5-MooseX-ClassAttribute        ports/devel/p5-MooseX-ClassAttribute
 p5-MooseX-Clone                 ports/devel/p5-MooseX-Clone
 p5-MooseX-ConfigFromFile        ports/devel/p5-MooseX-ConfigFromFile
 p5-MooseX-Daemonize             ports/devel/p5-MooseX-Daemonize
+p5-MooseX-Declare               ports/devel/p5-MooseX-Declare
+p5-MooseX-Emulate-Class-Accessor-Fast  ports/devel/p5-MooseX-Emulate-Class-Accessor-Fast
 p5-MooseX-Getopt                ports/devel/p5-MooseX-Getopt
 p5-MooseX-IOC                   ports/devel/p5-MooseX-IOC
 p5-MooseX-Log-Log4perl          ports/devel/p5-MooseX-Log-Log4perl
+p5-MooseX-Meta-TypeConstraint-ForceCoercion  ports/devel/p5-MooseX-Meta-TypeConstraint-ForceCoercion
+p5-MooseX-Method-Signatures     ports/devel/p5-MooseX-Method-Signatures
+p5-MooseX-MethodAttributes      ports/devel/p5-MooseX-MethodAttributes
 p5-MooseX-POE                   ports/devel/p5-MooseX-POE
 p5-MooseX-Policy-SemiAffordanceAccessor  ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
 p5-MooseX-SimpleConfig          ports/devel/p5-MooseX-SimpleConfig
@@ -15284,6 +15290,7 @@ p5-math-trulyrandom             ports/math/p5-Math-TrulyRandom
 p5-math-units                   ports/math/p5-Math-Units
 p5-math-vec                     ports/math/p5-Math-Vec
 p5-math-vecstat                 ports/math/p5-Math-VecStat
+p5-math-vectorreal              ports/math/p5-Math-VectorReal
 p5-mathml-entities              ports/textproc/p5-MathML-Entities
 p5-matrixreal                   ports/math/p5-MatrixReal
 p5-maypole                      ports/www/p5-Maypole
@@ -15374,9 +15381,14 @@ p5-moosex-classattribute        ports/devel/p5-MooseX-ClassAttribute
 p5-moosex-clone                 ports/devel/p5-MooseX-Clone
 p5-moosex-configfromfile        ports/devel/p5-MooseX-ConfigFromFile
 p5-moosex-daemonize             ports/devel/p5-MooseX-Daemonize
+p5-moosex-declare               ports/devel/p5-MooseX-Declare
+p5-moosex-emulate-class-accessor-fast  ports/devel/p5-MooseX-Emulate-Class-Accessor-Fast
 p5-moosex-getopt                ports/devel/p5-MooseX-Getopt
 p5-moosex-ioc                   ports/devel/p5-MooseX-IOC
 p5-moosex-log-log4perl          ports/devel/p5-MooseX-Log-Log4perl
+p5-moosex-meta-typeconstraint-forcecoercion  ports/devel/p5-MooseX-Meta-TypeConstraint-ForceCoercion
+p5-moosex-method-signatures     ports/devel/p5-MooseX-Method-Signatures
+p5-moosex-methodattributes      ports/devel/p5-MooseX-MethodAttributes
 p5-moosex-poe                   ports/devel/p5-MooseX-POE
 p5-moosex-policy-semiaffordanceaccessor  ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
 p5-moosex-simpleconfig          ports/devel/p5-MooseX-SimpleConfig
@@ -15411,6 +15423,7 @@ p5-mysql-diff                   ports/databases/p5-Mysql-Diff
 p5-mysql-genocide               ports/databases/p5-mysql-genocide
 p5-nagios-plugin                ports/net-mgmt/p5-Nagios-Plugin
 p5-nagios-plugins-memcached     ports/net-mgmt/p5-Nagios-Plugins-Memcached
+p5-namespace-autoclean          ports/devel/p5-namespace-autoclean
 p5-namespace-clean              ports/devel/p5-namespace-clean
 p5-net                          ports/net/p5-Net
 p5-net-abuse-utils              ports/net-mgmt/p5-Net-Abuse-Utils
@@ -19268,6 +19281,7 @@ py-yabt                         ports/misc/py-YABT
 py-yadis                        ports/net/py-yadis
 py-yaml                         ports/devel/py-yaml
 py-yapsnmp                      ports/net-mgmt/py-yapsnmp
+py-ydbf                         ports/devel/py-ydbf
 py-yenc                         ports/news/py-yenc
 py-yolk                         ports/misc/py-yolk
 py-zconfig                      ports/devel/py-zconfig
