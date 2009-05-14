@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	net-snmp
 PKGNAMEPREFIX=	net-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
 
 .if !defined(WITH_TKMIB)
@@ -25,6 +25,8 @@ RUN_DEPEND=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 .endif
 PATCH_DEPENDS=	${LIBTOOL_DEPENDS}
 
+DEPRECATED=	Use net-mgmt/net-snmp port instead
+EXPIRATION_DATE=2009-07-01
 USE_AUTOTOOLS=	autoconf:262 libtool:15
 USE_RC_SUBR=	snmpd.sh snmptrapd.sh
 USE_OPENSSL=	yes
