@@ -42,6 +42,7 @@ OPTIONS=	ISISD		"Enable experimental ISIS daemon"	off \
 
 .include <bsd.port.pre.mk>
 
+CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include --enable-exampledir=${PREFIX}/share/examples/quagga --enable-pidfile-mask=0644
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
