@@ -7,6 +7,7 @@
 
 PORTNAME=	aqbanking
 PORTVERSION=	3.8.1
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
@@ -15,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Online banking interface and financial data framework
 
 LIB_DEPENDS=	gwenhywfar.53:${PORTSDIR}/devel/gwenhywfar \
-		gmp.7:${PORTSDIR}/math/libgmp4
+		gmp.8:${PORTSDIR}/math/libgmp4
 
 OPTIONS=	KTOBLZCHECK	"KtoBlzCheck support"	off
 
