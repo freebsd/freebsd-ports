@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	net-snmp
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
 
+DEPRECATED=	Use net-mgmt/net-snmp port instead
+EXPIRATION_DATE=2009-07-01
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
