@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	endgame-singularity-music
-PORTVERSION=	005
+PORTVERSION=	006
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE CENKES
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-ports@sslash.org.ua
 COMMENT=	Music pack for endgame-singularity
 
 PROJECTHOST=	endgame-singularity
