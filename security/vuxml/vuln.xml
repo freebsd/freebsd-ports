@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="14ab174c-40ef-11de-9fd5-001bd3385381">
+    <topic>cyrus-sasl -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>cyrus-sasl</name>
+	<range><lt>2.1.23</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>US-CERT reports:</p>
+	<blockquote cite="http://www.kb.cert.org/vuls/id/238019">
+	  <p>The sasl_encode64() function converts a string into
+	    base64. The Cyrus SASL library contains buffer overflows
+	    that occur because of unsafe use of the sasl_encode64()
+	    function. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-0688</cvename>
+      <url>http://www.kb.cert.org/vuls/id/238019</url>
+    </references>
+    <dates>
+      <discovery>2009-04-08</discovery>
+      <entry>2009-05-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fc4d0ae8-3fa3-11de-a3fd-0030843d3802">
     <topic>moinmoin -- multiple cross site scripting vulnerabilities</topic>
     <affects>
