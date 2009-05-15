@@ -14,6 +14,7 @@ libexec/git-core/git-apply
 libexec/git-core/git-archimport
 libexec/git-core/git-archive
 libexec/git-core/git-bisect
+libexec/git-core/git-bisect--helper
 libexec/git-core/git-blame
 libexec/git-core/git-branch
 libexec/git-core/git-bundle
@@ -39,6 +40,8 @@ libexec/git-core/git-describe
 libexec/git-core/git-diff
 libexec/git-core/git-diff-files
 libexec/git-core/git-diff-index
+libexec/git-core/git-difftool
+libexec/git-core/git-difftool--helper
 libexec/git-core/git-diff-tree
 libexec/git-core/git-fast-export
 libexec/git-core/git-fast-import
@@ -82,6 +85,7 @@ libexec/git-core/git-merge-ours
 libexec/git-core/git-merge-recursive
 libexec/git-core/git-merge-resolve
 libexec/git-core/git-merge-subtree
+libexec/git-core/git-mergetool--lib
 libexec/git-core/git-merge-tree
 libexec/git-core/git-mergetool
 libexec/git-core/git-mktag
@@ -219,6 +223,7 @@ share/git-core/templates/info/exclude
 %%GUI%%share/gitk/lib/msgs/es.msg
 %%GUI%%share/gitk/lib/msgs/de.msg
 %%GUI%%share/gitk/lib/msgs/it.msg
+%%GUI%%share/gitk/lib/msgs/ru.msg
 %%GUI%%share/gitk/lib/msgs/sv.msg
 %%HTMLDOCS%%%%DOCSDIR%%/mailmap.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-citool.txt
@@ -531,6 +536,8 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.2.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.2.4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.2.5.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.3.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.3.1.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/INSTALL
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/README
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/git-favicon.png
