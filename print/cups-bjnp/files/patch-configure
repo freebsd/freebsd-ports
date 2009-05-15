@@ -1,0 +1,20 @@
+--- configure.orig	2009-03-12 13:15:28.000000000 -0700
++++ configure	2009-04-28 17:25:40.000000000 -0700
+@@ -3671,14 +3671,14 @@
+ 
+ else
+ 
+-    dirs="/usr/lib/cups/backend /usr/local/lib/cups/backend /opt/lib/cups/backend"
++    dirs="/usr/lib/cups/backend /usr/local/lib/cups/backend /opt/lib/cups/backend /usr/local/libexec/cups/backend"
+     cupsbackenddir=""
+     for dir in $dirs; do
+-      if test -d $dir -a -n "cupsbackenddir"; then
++      if test -d $dir -a -z "$cupsbackenddir"; then
+         cupsbackenddir=$dir
+       fi
+     done
+-    if test -n $cupsbackenddir; then
++    if test -n "$cupsbackenddir"; then
+       echo found Cups backend directory $cupsbackenddir
+           else
+       { { $as_echo "$as_me:$LINENO: error: Cups backend directory not specified and auto-detection failed!" >&5
