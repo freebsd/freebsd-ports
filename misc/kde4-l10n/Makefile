@@ -16,7 +16,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for KDE
 
 NO_BUILD=	yes
-NO_INSTALL=	yes
+# NO_INSTALL=	yes
 USE_KDE4=	kdeprefix
 
 KDE4_LANG_ALL=	ar bg bn_IN ca cs csb da de el en_GB eo es et eu fi fr \
@@ -59,5 +59,8 @@ OPTIONS+=	${lang} "${${lang}_NAME} localization" off
 RUN_DEPENDS+=	${${lang}_DETECT}:${PORTSDIR}/${${lang}_PORT}
 .endif
 .endfor
+
+do-install:
+	${DO_NADA}
 
 .include <bsd.port.post.mk>

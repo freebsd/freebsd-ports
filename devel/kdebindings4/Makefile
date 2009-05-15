@@ -16,7 +16,7 @@ COMMENT=	KDE bindings meta port
 
 USE_KDE4=	kdeprefix
 NO_BUILD=	yes
-NO_INSTALL=	yes
+# NO_INSTALL=	yes
 
 # OPTIONS+=	CSHARP "C# bindings" on
 # OPTIONS+=	JAVA "Java bindings" on
@@ -45,5 +45,8 @@ RUN_DEPENDS+=	kdebindings-python>=4.1.0:${PORTSDIR}/devel/kdebindings4-python
 # .if !defined(WITHOUT_RUBY)
 # RUN_DEPENDS+=	kdebindings-ruby>=4.1.0:${PORTSDIR}/devel/kdebindings4-ruby
 # .endif
+
+do-install:
+	${DO_NADA}
 
 .include <bsd.port.post.mk>

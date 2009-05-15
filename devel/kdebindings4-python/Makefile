@@ -17,7 +17,7 @@ COMMENT=	Meta port of Python bindings for KDE
 
 USE_KDE4=	kdeprefix
 NO_BUILD=	yes
-NO_INSTALL=	yes
+# NO_INSTALL=	yes
 
 OPTIONS+=	KROSSPYTHON "Kross Python scripting library" on
 OPTIONS+=	PYKDE4 "Kde bindings" on
@@ -31,5 +31,8 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/krosspython.so:${PORTSDIR}/devel/kdebindin
 .if !defined(WITHOUT_PYKDE4)
 RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/kpythonpluginfactory.so:${PORTSDIR}/devel/kdebindings4-python-pykde4
 .endif
+
+do-install:
+	${DO_NADA}
 
 .include <bsd.port.post.mk>
