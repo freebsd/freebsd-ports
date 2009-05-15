@@ -1,0 +1,6 @@
+CUPS backend for the canon proprietary USB over IP network printing
+protocol, BJNP. This backend is based on reverse engineering using
+TCP/IP. It can be used with CUPS 1.2 and 1.3. This backend allows Cups
+to connect over the network to a Canon printers
+
+WWW: http://cups-bjnp.sourceforge.net/
