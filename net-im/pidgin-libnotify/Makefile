@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libnotify
-PORTVERSION=	0.13
-PORTREVISION=	6
+PORTVERSION=	0.14
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	gaim-libnotify
@@ -24,6 +23,7 @@ LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gtk20
 
 .if defined(WITHOUT_NLS)
