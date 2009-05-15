@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	WWW-TV
-PORTVERSION=	0.10
+PORTVERSION=	0.14
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tolid@plab.ku.dk
+MAINTAINER=	tolid@tolid.eu.org
 COMMENT=	Perl interface to the database of series/episodes at TV.com
 
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
