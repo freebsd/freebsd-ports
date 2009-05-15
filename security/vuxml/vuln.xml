@@ -34,6 +34,53 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a6605f4b-4067-11de-b444-001372fd0af2">
+    <topic>drupal -- cross-site scripting</topic>
+    <affects>
+      <package>
+	<name>drupal5</name>
+	<range><lt>5.18</lt></range>
+      </package>
+      <package>
+	<name>drupal6</name>
+	<range><lt>6.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Project reports:</p>
+	<blockquote cite="http://drupal.org/node/461886">
+	  <p>When outputting user-supplied data Drupal strips potentially
+	  dangerous HTML attributes and tags or escapes characters which
+	  have a special meaning in HTML. This output filtering secures the
+	  site against cross site scripting attacks via user input.</p>
+	  <p>Certain byte sequences that are valid in the UTF-8 specification
+	  are potentially dangerous when interpreted as UTF-7. Internet
+	  Explorer 6 and 7 may decode these characters as UTF-7 if they
+	  appear before the &lt;meta http-equiv="Content-Type" /&gt; tag that
+	  specifies the page content as UTF-8, despite the fact that Drupal
+	  also sends a real HTTP header specifying the content as UTF-8.
+	  This enables attackers to execute cross site scripting attacks
+	  with UTF-7. SA-CORE-2009-005 - Drupal core - Cross site scripting
+	  contained an incomplete fix for the issue. HTML exports of books
+	  are still vulnerable, which means that anyone with edit
+	  permissions for pages in outlines is able to insert arbitrary HTML
+	  and script code in these exports.</p>
+	  <p>Additionally, the taxonomy module allows users with the
+	  'administer taxonomy' permission to inject arbitrary HTML and
+	  script code in the help text of any vocabulary. </p>
+	</blockquote>
+     </body>
+   </description>
+   <references>
+      <url>http://drupal.org/node/461886</url>
+    </references>
+    <dates>
+      <discovery>2009-05-13</discovery>
+      <entry>2009-05-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="14ab174c-40ef-11de-9fd5-001bd3385381">
     <topic>cyrus-sasl -- buffer overflow vulnerability</topic>
     <affects>
