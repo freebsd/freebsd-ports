@@ -76,8 +76,8 @@ BUILD_DEPENDS+=	${SCONS_BIN}:${SCONS_PORT}
 .if !target(do-build)
 do-build:
 	@cd ${BUILD_WRKSRC} && \
-	${SETENV} ${SCONS_BUILDENV} ${SCONS_BIN} ${SCONS_ENV} ${SCONS_ARGS} \
-	${SCONS_TARGET}
+	${SETENV} ${SCONS_BUILDENV} ${SCONS_BIN} ${SCONS_ENV} ${_MAKE_JOBS} \
+	${SCONS_ARGS} ${SCONS_TARGET}
 .endif
 
 .if !target(do-install)
