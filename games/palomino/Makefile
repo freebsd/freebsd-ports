@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	palomino
-PORTVERSION=	20081229
-PORTREVISION=	2
+PORTVERSION=	20090511
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}-sim \
 		ftp://ftp.palomino3d.org/sim/
@@ -27,9 +26,10 @@ USE_GL=		gl
 USE_CMAKE=	yes
 USE_LUA=	5.1
 LUA_COMPS=	lua:build
+MAKE_JOBS_SAFE=	yes
 
 MISC_VER=	20081206
-MODELS_VER=	20081229
+MODELS_VER=	20090511
 SOUNDS_VER=	20080704
 TERRAIN_VER=	20080206
 
@@ -70,7 +70,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE(FLTK/ d' ${WRKSRC}/CMakeLists.txt
 .endif
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE(OSSIM/ d' ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|ENV||' ${WRKSRC}/build/program/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|string sDataDir|&="${DATADIR}/data/"|'\
 	       	${WRKSRC}/src/base/conf.cc
 	@${REINPLACE_CMD} -e '/LUABIND_SCRIPTS_DIR/ s|"scripts"|"${DATADIR}/scripts"|' \

@@ -14,6 +14,7 @@ bin/palomino
 %%DOCSDIR%%/images/sprite1.png
 %%DOCSDIR%%/images/sprite2.png
 %%DOCSDIR%%/images/sprite3.png
+%%DOCSDIR%%/issues.html
 %%DOCSDIR%%/lua_scripts.html
 %%DOCSDIR%%/manual.css
 %%DOCSDIR%%/manual.html
@@ -35,6 +36,7 @@ bin/palomino
 %%DOCSDIR%%/module_object.html
 %%DOCSDIR%%/module_physics.html
 %%DOCSDIR%%/module_program.html
+%%DOCSDIR%%/module_shader.html
 %%DOCSDIR%%/module_sky.html
 %%DOCSDIR%%/module_sound.html
 %%DOCSDIR%%/module_view.html
@@ -106,13 +108,13 @@ bin/palomino
 %%DATADIR%%/data/models/f15c/F15CNose.png
 %%DATADIR%%/data/models/f15c/F15CRudder.png
 %%DATADIR%%/data/models/f15c/F15CSide.png
-%%DATADIR%%/data/models/f15c/f15c.ac.gz
+%%DATADIR%%/data/models/f15c/f15c.osg.gz
 %%DATADIR%%/data/models/f16/README.txt
-%%DATADIR%%/data/models/f16/f16.ac.gz
+%%DATADIR%%/data/models/f16/f16.osg.gz
 %%DATADIR%%/data/models/f16/f16.png
 %%DATADIR%%/data/models/f16/f16trans.png
 %%DATADIR%%/data/models/f16/sidewinder.ac
-%%DATADIR%%/data/models/f18/f18.ac.gz
+%%DATADIR%%/data/models/f18/f18.osg.gz
 %%DATADIR%%/data/models/f18/f18cockpit.png
 %%DATADIR%%/data/models/f18/f18tail.png
 %%DATADIR%%/data/models/f18/f18top.png
@@ -329,7 +331,7 @@ bin/palomino
 %%DATADIR%%/data/models/spitfire/seafire-tx-03.png
 %%DATADIR%%/data/models/spitfire/seafire-tx-04.png
 %%DATADIR%%/data/models/spitfire/seafire-tx-05.png
-%%DATADIR%%/data/models/spitfire/seafireIIIc.ac.gz
+%%DATADIR%%/data/models/spitfire/seafireIIIc.osg.gz
 %%DATADIR%%/data/models/spitfire/spitfire-asi.png
 %%DATADIR%%/data/models/spitfire/spitfire-attitude.png
 %%DATADIR%%/data/models/spitfire/spitfire-boost.png
@@ -344,7 +346,6 @@ bin/palomino
 %%DATADIR%%/data/models/spitfire/spitfire-tx-04.png
 %%DATADIR%%/data/models/spitfire/spitfire-tx-05.png
 %%DATADIR%%/data/models/spitfire/spitfire-vsi.png
-%%DATADIR%%/data/models/spitfire/spitfireIIa.ac
 %%DATADIR%%/data/models/spitfire/starter.ac
 %%DATADIR%%/data/models/spitfire/switch.png
 %%DATADIR%%/data/models/spitfire/throttle.ac
@@ -372,7 +373,7 @@ bin/palomino
 %%DATADIR%%/data/models/su37/SU-37-reheat.png
 %%DATADIR%%/data/models/su37/SU-37-top.png
 %%DATADIR%%/data/models/su37/Trajectory-Marker.ac
-%%DATADIR%%/data/models/su37/su37.ac.gz
+%%DATADIR%%/data/models/su37/su37.osg.gz
 %%DATADIR%%/data/palomino.conf
 %%DATADIR%%/data/physics_a4.conf
 %%DATADIR%%/data/physics_corsair.conf
@@ -390,6 +391,27 @@ bin/palomino
 %%DATADIR%%/data/physics_su37.conf
 %%DATADIR%%/data/replays/replayTakeoffFrontSlot.dat.gz
 %%DATADIR%%/data/replays/replayTakeoffRearSlot.dat.gz
+%%DATADIR%%/data/shaders/aircraft_alphaForce_frag.glsl
+%%DATADIR%%/data/shaders/aircraft_alphaForce_vert.glsl
+%%DATADIR%%/data/shaders/aircraft_alphaTex_frag.glsl
+%%DATADIR%%/data/shaders/aircraft_alphaTex_vert.glsl
+%%DATADIR%%/data/shaders/aircraft_frag.glsl
+%%DATADIR%%/data/shaders/aircraft_highSpecular_frag.glsl
+%%DATADIR%%/data/shaders/aircraft_highSpecular_vert.glsl
+%%DATADIR%%/data/shaders/aircraft_material_frag.glsl
+%%DATADIR%%/data/shaders/aircraft_material_vert.glsl
+%%DATADIR%%/data/shaders/aircraft_vert.glsl
+%%DATADIR%%/data/shaders/color_frag.glsl
+%%DATADIR%%/data/shaders/color_vert.glsl
+%%DATADIR%%/data/shaders/default_frag.glsl
+%%DATADIR%%/data/shaders/default_vert.glsl
+%%DATADIR%%/data/shaders/inc_ComputeDiffuseSpecular.glsl
+%%DATADIR%%/data/shaders/inc_aircraft_frag.glsl
+%%DATADIR%%/data/shaders/inc_brightness_frag.glsl
+%%DATADIR%%/data/shaders/inc_fog_frag.glsl
+%%DATADIR%%/data/shaders/inc_frag.glsl
+%%DATADIR%%/data/shaders/inc_vert.glsl
+%%DATADIR%%/data/shaders/module.txt
 %%DATADIR%%/data/sounds/README.txt
 %%DATADIR%%/data/sounds/beep1.wav.gz
 %%DATADIR%%/data/sounds/beep2.wav.gz
@@ -456,6 +478,7 @@ bin/palomino
 @dirrm %%DATADIR%%/data/textures
 @dirrm %%DATADIR%%/data/terrain
 @dirrm %%DATADIR%%/data/sounds
+@dirrm %%DATADIR%%/data/shaders
 @dirrm %%DATADIR%%/data/replays
 @dirrm %%DATADIR%%/data/models/su37
 @dirrm %%DATADIR%%/data/models/sr71
