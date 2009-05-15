@@ -32,6 +32,14 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		ark.1
 
+OPTIONS=	PRINTER_APPLET "Install printer system tray utility" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PRINTER_APPLET)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/printer-applet:${PORTSDIR}/print/kdeutils4-printer-applet
+.endif
+
 post-extract:
 	${MKDIR} ${WRKSRC}
 
@@ -40,4 +48,4 @@ post-patch:
 	${REINPLACE_CMD} -e '/add_subdirectory.*printer-applet/d' \
 		${WRKSRC}/../CMakeLists.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
