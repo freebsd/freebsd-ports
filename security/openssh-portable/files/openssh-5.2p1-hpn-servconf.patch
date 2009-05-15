@@ -1,0 +1,32 @@
+--- servconf.c.orig	2009-05-02 18:22:38.000000000 +0400
++++ servconf.c	2009-05-02 18:24:15.000000000 +0400
+@@ -127,12 +127,21 @@
+ 	options->num_permitted_opens = -1;
+ 	options->adm_forced_command = NULL;
+ 	options->chroot_directory = NULL;
++ 	options->none_enabled = -1;
++ 	options->tcp_rcv_buf_poll = -1;
++ 	options->hpn_disabled = -1;
++ 	options->hpn_buffer_size = -1;
+ 	options->zero_knowledge_password_authentication = -1;
+ }
+ 
+ void
+ fill_default_server_options(ServerOptions *options)
+ {
++ 	/* needed for hpn socket tests */
++ 	int sock;
++ 	int socksize;
++ 	int socksizelen = sizeof(int);
++ 
+ 	/* Portable-specific options */
+ 	if (options->use_pam == -1)
+ 		options->use_pam = 1;
+@@ -345,6 +354,7 @@
+ 	sGssAuthentication, sGssCleanupCreds, sAcceptEnv, sPermitTunnel,
+ 	sMatch, sPermitOpen, sForceCommand, sChrootDirectory,
+ 	sUsePrivilegeSeparation, sAllowAgentForwarding,
++ 	sNoneEnabled, sTcpRcvBufPoll, sHPNDisabled, sHPNBufferSize,
+ 	sZeroKnowledgePasswordAuthentication,
+ 	sDeprecated, sUnsupported
+ } ServerOpCodes;

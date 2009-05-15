@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssh
-DISTVERSION=	5.1p1
+DISTVERSION=	5.2p1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 .if defined(OPENSSH_SNAPSHOT)
@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	OpenSSH/portable
 PKGNAMESUFFIX=	${PORTABLE_SUFFIX}${GSSAPI_SUFFIX}${BASE_SUFFIX}
 DISTNAME=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dindin@dindin.ru
 COMMENT=	The portable version of OpenBSD's OpenSSH
 
 .if defined(OPENSSH_SNAPSHOT)
@@ -72,7 +72,10 @@ OPTIONS=	PAM		"Enable pam(3) support"				on \
 BROKEN=		does not compile
 .endif
 
-# Preserve deprecated OPENSSH_OVERWRITE_BASE settings
+.if defined(WITH_X509) && ( defined(WITH_HPN) || defined(WITH_LPK))
+BROKEN=		X509 patch incompatible with HPN and LPK patches
+.endif
+
 .if defined(OPENSSH_OVERWRITE_BASE)
 WITH_OVERWRITE_BASE=	yes
 .endif
@@ -96,6 +99,7 @@ CONFIGURE_ARGS+=	--disable-suid-ssh
 .if !defined(WITHOUT_KERBEROS)
 .if defined(KRB5_HOME) && exists(${KRB5_HOME}) || defined(WITH_GSSAPI)
 .if defined(WITH_KERB_GSSAPI)
+BROKEN=			KERB_GSSAPI patch incompatible with ${PORTNAME}-5.2p1
 PATCH_DIST_STRIP=	-p0
 PATCH_SITES+=		http://www.sxw.org.uk/computing/patches/
 PATCHFILES+=		openssh-5.0p1-gsskex-20080404.patch
@@ -136,19 +140,13 @@ CONFIGURE_ARGS+=	--with-opensc=${LOCALBASE}
 EXTRA_PATCHES+=		${FILESDIR}/scardpin.patch
 .endif
 
-.if defined(WITH_HPN) && defined(WITH_LPK)
-BROKEN=			HPN and LPK patches are incompatible
-.endif
-
 .if defined(WITH_HPN)
-PATCH_DIST_STRIP=	-p1
-PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
-PATCHFILES+=		openssh-5.1p1-hpn13v5.diff.gz
+EXTRA_PATCHES+=	${FILESDIR}/openssh-5.2p1-hpn.patch
 .endif
 
 # See http://dev.inversepath.com/trac/openssh-lpk
 .if defined(WITH_LPK)
-EXTRA_PATCHES=		${FILESDIR}/openssh-lpk-5.0p1-0.3.9.patch
+EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk-5.0p1-0.3.9.patch
 .if ${ARCH} == "amd64"
 EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk-5.0p1-64bit.patch
 .endif
@@ -158,11 +156,21 @@ CONFIGURE_ARGS+=	--with-libs='-lldap' --with-ldflags='-L${LOCALBASE}/lib' \
 			--with-cppflags='-I${LOCALBASE}/include -DWITH_LDAP_PUBKEY'
 .endif
 
+# resolve some patches incompatibility between LPK and HPN patches
+
+.if defined(WITH_HPN) && defined(WITH_LPK)
+EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk+hpn-servconf.patch
+.elif defined(WITH_HPN) && !defined(WITH_LPK)
+EXTRA_PATCHES+=		${FILESDIR}/openssh-5.2p1-hpn-servconf.patch
+.elif defined(WITH_LPK) && !defined(WITH_HPN)
+EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk-5.0p1-0.3.9-servconv.patch
+.endif
+
 # See http://www.roumenpetrov.info/openssh/
 .if defined(WITH_X509)
 PATCH_DIST_STRIP=	-p1
-PATCH_SITES+=		http://www.roumenpetrov.info/openssh/x509-6.1.1/
-PATCHFILES+=		openssh-5.1p1+x509-6.1.1.diff.gz
+PATCH_SITES+=		http://www.roumenpetrov.info/openssh/x509-6.2/
+PATCHFILES+=		openssh-5.2p1+x509-6.2.diff.gz
 .endif
 
 .if defined(WITH_OVERWRITE_BASE)
