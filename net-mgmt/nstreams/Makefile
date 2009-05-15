@@ -8,7 +8,9 @@
 PORTNAME=	nstreams
 PORTVERSION=	1.0.4
 CATEGORIES=	net-mgmt
-MASTER_SITES=	ftp://ftp.nessus.org/pub/nstreams/
+MASTER_SITES=	ftp://ftp.nessus.org/pub/nstreams/ \
+		http://www.hsc.fr/ressources/outils/nstreams/download/ \
+		http://falafel.200ok.org/distfiles/nstreams/
 
 MAINTAINER=	ecu@ipv42.net
 COMMENT=	Analyses network traffic and produces ipfw rules to allow it
@@ -18,6 +20,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 
 MAN1=		nstreams.1
+
+PLIST_FILES=	bin/nstreams \
+		etc/nstreams-networks.sample \
+		etc/nstreams-services
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/nstreams ${PREFIX}/bin
