@@ -47,10 +47,10 @@ CFLAGS+=	-DPATH_INIT=256
 CFLAGS+=	-DSTATIC_CACHE_CAPACITY=8192
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|test-samefile||g' \
-	-e 's|test-samelink||g' \
-	-e 's|test-samearchive||g' \
-	-e 's|test-samearchive-lite||g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/^install/s|test-samefile||g' \
+	-e '/^install/s|test-samelink||g' \
+	-e '/^install/s|test-samearchive-lite||g' \
+	-e '/^install/s|test-samearchive||g' ${WRKSRC}/Makefile
 
 post-install:
 	${CHMOD} 770 ${WRKSRC}/test*
