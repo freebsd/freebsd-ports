@@ -1,0 +1,2196 @@
+diff -urN HPN-README HPN-README
+--- HPN-README	1970-01-01 03:00:00.000000000 +0300
++++ HPN-README	2009-05-02 17:38:18.000000000 +0400
+@@ -0,0 +1,128 @@
++Notes:
++
++MULTI-THREADED CIPHER:
++The AES cipher in CTR mode has been multithreaded (MTR-AES-CTR). This will allow ssh installations
++on hosts with multiple cores to use more than one processing core during encryption. 
++Tests have show significant throughput performance increases when using MTR-AES-CTR up 
++to and including a full gigabit per second on quad core systems. It should be possible to 
++achieve full line rate on dual core systems but OS and data management overhead makes this
++more difficult to achieve. The cipher stream from MTR-AES-CTR is entirely compatible with single 
++thread AES-CTR (ST-AES-CTR) implementations and should be 100% backward compatible. Optimal 
++performance requires the MTR-AES-CTR mode be enabled on both ends of the connection. 
++The MTR-AES-CTR replaces ST-AES-CTR and is used in exactly the same way with the same
++nomenclature. 
++Use examples: 	ssh -caes128-ctr you@host.com
++		scp -oCipher=aes256-ctr file you@host.com:~/file
++
++NONE CIPHER:
++To use the NONE option you must have the NoneEnabled switch set on the server and
++you *must* have *both* NoneEnabled and NoneSwitch set to yes on the client. The NONE
++feature works with ALL ssh subsystems (as far as we can tell) *AS LONG AS* a tty is not 
++spawned. If a user uses the -T switch to prevent a tty being created the NONE cipher will
++be disabled. 
++
++The performance increase will only be as good as the network and TCP stack tuning
++on the reciever side of the connection allows. As a rule of thumb a user will need 
++at least 10Mb/s connection with a 100ms RTT to see a doubling of performance. The
++HPN-SSH home page describes this in greater detail. 
++
++http://www.psc.edu/networking/projects/hpn-ssh
++
++BUFFER SIZES:
++
++If HPN is disabled the receive buffer size will be set to the 
++OpenSSH default of 64K.
++
++If an HPN system connects to a nonHPN system the receive buffer will
++be set to the HPNBufferSize value. The default is 2MB but user adjustable.
++
++If an HPN to HPN connection is established a number of different things might
++happen based on the user options and conditions. 
++
++Conditions: HPNBufferSize NOT Set, TCPRcvBufPoll enabled, TCPRcvBuf NOT Set 
++HPN Buffer Size = up to 64MB 
++This is the default state. The HPN buffer size will grow to a maximum of 64MB 
++as the TCP receive buffer grows. The maximum HPN Buffer size of 64MB is 
++geared towards 10GigE transcontinental connections. 
++
++Conditions: HPNBufferSize NOT Set, TCPRcvBufPoll disabled, TCPRcvBuf NOT Set
++HPN Buffer Size = TCP receive buffer value. 
++Users on non-autotuning systesm should disable TCPRcvBufPoll in the 
++ssh_cofig and sshd_config
++
++Conditions: HPNBufferSize SET, TCPRcvBufPoll disabled, TCPRcvBuf NOT Set
++HPN Buffer Size = minmum of TCP receive buffer and HPNBufferSize. 
++This would be the system defined TCP receive buffer (RWIN).
++
++Conditions: HPNBufferSize SET, TCPRcvBufPoll disabled, TCPRcvBuf SET
++HPN Buffer Size = minmum of TCPRcvBuf and HPNBufferSize. 
++Generally there is no need to set both.
++
++Conditions: HPNBufferSize SET, TCPRcvBufPoll enabled, TCPRcvBuf NOT Set
++HPN Buffer Size = grows to HPNBufferSize
++The buffer will grow up to the maximum size specified here. 
++
++Conditions: HPNBufferSize SET, TCPRcvBufPoll enabled, TCPRcvBuf SET
++HPN Buffer Size = minmum of TCPRcvBuf and HPNBufferSize. 
++Generally there is no need to set both of these, especially on autotuning 
++systems. However, if the users wishes to override the autotuning this would be 
++one way to do it.
++
++Conditions: HPNBufferSize NOT Set, TCPRcvBufPoll enabled, TCPRcvBuf SET
++HPN Buffer Size = TCPRcvBuf. 
++This will override autotuning and set the TCP recieve buffer to the user defined 
++value.
++
++
++HPN Specific Configuration options
++
++TcpRcvBuf=[int]KB client
++      set the TCP socket receive buffer to n Kilobytes. It can be set up to the 
++maximum socket size allowed by the system. This is useful in situations where 
++the tcp receive window is set low but the maximum buffer size is set 
++higher (as is typical). This works on a per TCP connection basis. You can also 
++use this to artifically limit the transfer rate of the connection. In these 
++cases the throughput will be no more than n/RTT. The minimum buffer size is 1KB. 
++Default is the current system wide tcp receive buffer size.
++
++TcpRcvBufPoll=[yes/no] client/server
++      enable of disable the polling of the tcp receive buffer through the life 
++of the connection. You would want to make sure that this option is enabled 
++for systems making use of autotuning kernels (linux 2.4.24+, 2.6, MS Vista) 
++default is yes.
++
++NoneEnabled=[yes/no] client/server
++      enable or disable the use of the None cipher. Care must always be used 
++when enabling this as it will allow users to send data in the clear. However, 
++it is important to note that authentication information remains encrypted 
++even if this option is enabled. Set to no by default.
++
++NoneSwitch=[yes/no] client
++     Switch the encryption cipher being used to the None cipher after
++authentication takes place. NoneEnabled must be enabled on both the client
++and server side of the connection. When the connection switches to the NONE
++cipher a warning is sent to STDERR. The connection attempt will fail with an
++error if a client requests a NoneSwitch from the server that does not explicitly
++have NoneEnabled set to yes. Note: The NONE cipher cannot be used in
++interactive (shell) sessions and it will fail silently. Set to no by default.
++
++HPNDisabled=[yes/no] client/server
++     In some situations, such as transfers on a local area network, the impact 
++of the HPN code produces a net decrease in performance. In these cases it is 
++helpful to disable the HPN functionality. By default HPNDisabled is set to no. 
++
++HPNBufferSize=[int]KB client/server
++     This is the default buffer size the HPN functionality uses when interacting
++with nonHPN SSH installations. Conceptually this is similar to the TcpRcvBuf
++option as applied to the internal SSH flow control. This value can range from 
++1KB to 64MB (1-65536). Use of oversized or undersized buffers can cause performance
++problems depending on the length of the network path. The default size of this buffer
++is 2MB.
++
++
++Credits: This patch was conceived, designed, and led by Chris Rapier (rapier@psc.edu)
++         The majority of the actual coding for versions up to HPN12v1 was performed
++         by Michael Stevens (mstevens@andrew.cmu.edu). The MT-AES-CTR cipher was 
++	 implemented by Ben Bennet (ben@psc.edu). This work was financed, in part,
++         by Cisco System, Inc., the National Library of Medicine, 
++	 and the National Science Foundation. 
+diff -urN Makefile.in Makefile.in
+--- Makefile.in	2009-05-02 17:37:11.000000000 +0400
++++ Makefile.in	2009-05-02 17:38:18.000000000 +0400
+@@ -43,7 +43,7 @@
+ LD=@LD@
+ CFLAGS=@CFLAGS@
+ CPPFLAGS=-I. -I$(srcdir) @CPPFLAGS@ $(PATHS) @DEFS@
+-LIBS=@LIBS@
++LIBS=@LIBS@ -lpthread
+ SSHDLIBS=@SSHDLIBS@
+ LIBEDIT=@LIBEDIT@
+ AR=@AR@
+@@ -64,7 +64,7 @@
+ 
+ LIBSSH_OBJS=acss.o authfd.o authfile.o bufaux.o bufbn.o buffer.o \
+ 	canohost.o channels.o cipher.o cipher-acss.o cipher-aes.o \
+-	cipher-bf1.o cipher-ctr.o cipher-3des1.o cleanup.o \
++	cipher-bf1.o cipher-ctr.o cipher-ctr-mt.o cipher-3des1.o cleanup.o \
+ 	compat.o compress.o crc32.o deattack.o fatal.o hostfile.o \
+ 	log.o match.o md-sha256.o moduli.o nchan.o packet.o \
+ 	readpass.o rsa.o ttymodes.o xmalloc.o addrmatch.o \
+diff -urN auth2.c auth2.c
+--- auth2.c	2009-05-02 17:37:11.000000000 +0400
++++ auth2.c	2009-05-02 17:38:18.000000000 +0400
+@@ -50,6 +50,7 @@
+ #include "dispatch.h"
+ #include "pathnames.h"
+ #include "buffer.h"
++#include "canohost.h"
+ 
+ #ifdef GSSAPI
+ #include "ssh-gss.h"
+@@ -76,6 +77,9 @@
+ extern Authmethod method_jpake;
+ #endif
+ 
++static int log_flag = 0;
++
++
+ Authmethod *authmethods[] = {
+ 	&method_none,
+ 	&method_pubkey,
+@@ -233,6 +237,11 @@
+ 	service = packet_get_string(NULL);
+ 	method = packet_get_string(NULL);
+ 	debug("userauth-request for user %s service %s method %s", user, service, method);
++	if (!log_flag) {
++		logit("SSH: Server;Ltype: Authname;Remote: %s-%d;Name: %s", 
++		      get_remote_ipaddr(), get_remote_port(), user);
++		log_flag = 1;
++	}
+ 	debug("attempt %d failures %d", authctxt->attempt, authctxt->failures);
+ 
+ 	if ((style = strchr(user, ':')) != NULL)
+diff -urN buffer.c buffer.c
+--- buffer.c	2006-08-05 06:39:39.000000000 +0400
++++ buffer.c	2009-05-02 17:38:18.000000000 +0400
+@@ -127,7 +127,7 @@
+ 
+ 	/* Increase the size of the buffer and retry. */
+ 	newlen = roundup(buffer->alloc + len, BUFFER_ALLOCSZ);
+-	if (newlen > BUFFER_MAX_LEN)
++	if (newlen > BUFFER_MAX_LEN_HPN)
+ 		fatal("buffer_append_space: alloc %u not supported",
+ 		    newlen);
+ 	buffer->buf = xrealloc(buffer->buf, 1, newlen);
+diff -urN buffer.h buffer.h
+--- buffer.h	2008-05-19 08:59:37.000000000 +0400
++++ buffer.h	2009-05-02 17:38:18.000000000 +0400
+@@ -16,6 +16,9 @@
+ #ifndef BUFFER_H
+ #define BUFFER_H
+ 
++/* move the following to a more appropriate place and name */
++#define BUFFER_MAX_LEN_HPN          0x4000000  /* 64MB */
++
+ typedef struct {
+ 	u_char	*buf;		/* Buffer for data. */
+ 	u_int	 alloc;		/* Number of bytes allocated for data. */
+diff -urN channels.c channels.c
+--- channels.c	2009-02-14 08:28:21.000000000 +0300
++++ channels.c	2009-05-02 17:41:46.000000000 +0400
+@@ -169,8 +169,14 @@
+ static int connect_next(struct channel_connect *);
+ static void channel_connect_ctx_free(struct channel_connect *);
+ 
++
++static int hpn_disabled = 0;
++static int hpn_buffer_size = 2 * 1024 * 1024;
++
+ /* -- channel core */
+ 
++
++
+ Channel *
+ channel_by_id(int id)
+ {
+@@ -308,6 +314,7 @@
+ 	c->local_window_max = window;
+ 	c->local_consumed = 0;
+ 	c->local_maxpacket = maxpack;
++	c->dynamic_window = 0;
+ 	c->remote_id = -1;
+ 	c->remote_name = xstrdup(remote_name);
+ 	c->remote_window = 0;
+@@ -798,11 +805,35 @@
+ 		FD_SET(c->sock, writeset);
+ }
+ 
++int channel_tcpwinsz () {
++        u_int32_t tcpwinsz = 0;
++        socklen_t optsz = sizeof(tcpwinsz);
++	int ret = -1;
++
++	/* if we aren't on a socket return 128KB*/
++	if(!packet_connection_is_on_socket()) 
++	    return(128*1024);
++	ret = getsockopt(packet_get_connection_in(),
++			 SOL_SOCKET, SO_RCVBUF, &tcpwinsz, &optsz);
++	/* return no more than 64MB */
++	if ((ret == 0) && tcpwinsz > BUFFER_MAX_LEN_HPN)
++	    tcpwinsz = BUFFER_MAX_LEN_HPN;
++	debug2("tcpwinsz: %d for connection: %d", tcpwinsz, 
++	       packet_get_connection_in());
++	return(tcpwinsz);
++}
++
+ static void
+ channel_pre_open(Channel *c, fd_set *readset, fd_set *writeset)
+ {
+ 	u_int limit = compat20 ? c->remote_window : packet_get_maxsize();
+ 
++        /* check buffer limits */
++	if ((!c->tcpwinsz) || (c->dynamic_window > 0))
++    	    c->tcpwinsz = channel_tcpwinsz();
++	
++	limit = MIN(limit, 2 * c->tcpwinsz);
++	
+ 	if (c->istate == CHAN_INPUT_OPEN &&
+ 	    limit > 0 &&
+ 	    buffer_len(&c->input) < limit &&
+@@ -1759,14 +1790,21 @@
+ 	    c->local_maxpacket*3) ||
+ 	    c->local_window < c->local_window_max/2) &&
+ 	    c->local_consumed > 0) {
++		u_int addition = 0;
++		/* adjust max window size if we are in a dynamic environment */
++		if (c->dynamic_window && (c->tcpwinsz > c->local_window_max)) {
++			/* grow the window somewhat aggressively to maintain pressure */
++			addition = 1.5*(c->tcpwinsz - c->local_window_max);
++			c->local_window_max += addition;
++		}
+ 		packet_start(SSH2_MSG_CHANNEL_WINDOW_ADJUST);
+ 		packet_put_int(c->remote_id);
+-		packet_put_int(c->local_consumed);
++		packet_put_int(c->local_consumed + addition);
+ 		packet_send();
+ 		debug2("channel %d: window %d sent adjust %d",
+ 		    c->self, c->local_window,
+ 		    c->local_consumed);
+-		c->local_window += c->local_consumed;
++		c->local_window += c->local_consumed + addition;
+ 		c->local_consumed = 0;
+ 	}
+ 	return 1;
+@@ -1969,11 +2007,12 @@
+ 
+ 
+ /* If there is data to send to the connection, enqueue some of it now. */
+-void
++int
+ channel_output_poll(void)
+ {
+ 	Channel *c;
+ 	u_int i, len;
++	int packet_length = 0;
+ 
+ 	for (i = 0; i < channels_alloc; i++) {
+ 		c = channels[i];
+@@ -2013,7 +2052,7 @@
+ 					packet_start(SSH2_MSG_CHANNEL_DATA);
+ 					packet_put_int(c->remote_id);
+ 					packet_put_string(data, dlen);
+-					packet_send();
++					packet_length = packet_send();
+ 					c->remote_window -= dlen + 4;
+ 					xfree(data);
+ 				}
+@@ -2043,7 +2082,7 @@
+ 				    SSH2_MSG_CHANNEL_DATA : SSH_MSG_CHANNEL_DATA);
+ 				packet_put_int(c->remote_id);
+ 				packet_put_string(buffer_ptr(&c->input), len);
+-				packet_send();
++				packet_length = packet_send();
+ 				buffer_consume(&c->input, len);
+ 				c->remote_window -= len;
+ 			}
+@@ -2078,12 +2117,13 @@
+ 			packet_put_int(c->remote_id);
+ 			packet_put_int(SSH2_EXTENDED_DATA_STDERR);
+ 			packet_put_string(buffer_ptr(&c->extended), len);
+-			packet_send();
++			packet_length = packet_send();
+ 			buffer_consume(&c->extended, len);
+ 			c->remote_window -= len;
+ 			debug2("channel %d: sent ext data %d", c->self, len);
+ 		}
+ 	}
++	return (packet_length);
+ }
+ 
+ 
+@@ -2459,6 +2499,15 @@
+ 	IPv4or6 = af;
+ }
+ 
++
++void 
++channel_set_hpn(int external_hpn_disabled, int external_hpn_buffer_size)
++{
++      	hpn_disabled = external_hpn_disabled;
++	hpn_buffer_size = external_hpn_buffer_size;
++	debug("HPN Disabled: %d, HPN Buffer Size: %d", hpn_disabled, hpn_buffer_size);
++}
++
+ static int
+ channel_setup_fwd_listener(int type, const char *listen_addr,
+     u_short listen_port, int *allocated_listen_port,
+@@ -2610,9 +2659,15 @@
+ 		}
+ 
+ 		/* Allocate a channel number for the socket. */
++ 		/* explicitly test for hpn disabled option. if true use smaller window size */
++ 		if (hpn_disabled)
+ 		c = channel_new("port listener", type, sock, sock, -1,
+ 		    CHAN_TCP_WINDOW_DEFAULT, CHAN_TCP_PACKET_DEFAULT,
+ 		    0, "port listener", 1);
++ 		else
++ 			c = channel_new("port listener", type, sock, sock, -1,
++ 		    	  hpn_buffer_size, CHAN_TCP_PACKET_DEFAULT,
++ 		    	  0, "port listener", 1); 
+ 		c->path = xstrdup(host);
+ 		c->host_port = port_to_connect;
+ 		c->listening_port = listen_port;
+@@ -3151,10 +3206,17 @@
+ 	*chanids = xcalloc(num_socks + 1, sizeof(**chanids));
+ 	for (n = 0; n < num_socks; n++) {
+ 		sock = socks[n];
++		/* Is this really necassary? */
++		if (hpn_disabled) 
+ 		nc = channel_new("x11 listener",
+ 		    SSH_CHANNEL_X11_LISTENER, sock, sock, -1,
+ 		    CHAN_X11_WINDOW_DEFAULT, CHAN_X11_PACKET_DEFAULT,
+ 		    0, "X11 inet listener", 1);
++		else 
++			nc = channel_new("x11 listener",
++			    SSH_CHANNEL_X11_LISTENER, sock, sock, -1,
++			    hpn_buffer_size, CHAN_X11_PACKET_DEFAULT,
++			    0, "X11 inet listener", 1);
+ 		nc->single_connection = single_connection;
+ 		(*chanids)[n] = nc->self;
+ 	}
+diff -urN channels.h channels.h
+--- channels.h	2009-02-14 08:28:21.000000000 +0300
++++ channels.h	2009-05-02 17:38:18.000000000 +0400
+@@ -115,8 +115,10 @@
+ 	u_int	local_window_max;
+ 	u_int	local_consumed;
+ 	u_int	local_maxpacket;
++	int	dynamic_window;
+ 	int     extended_usage;
+ 	int	single_connection;
++	u_int 	tcpwinsz;	
+ 
+ 	char   *ctype;		/* type */
+ 
+@@ -146,9 +148,11 @@
+ 
+ /* default window/packet sizes for tcp/x11-fwd-channel */
+ #define CHAN_SES_PACKET_DEFAULT	(32*1024)
+-#define CHAN_SES_WINDOW_DEFAULT	(64*CHAN_SES_PACKET_DEFAULT)
++#define CHAN_SES_WINDOW_DEFAULT	(4*CHAN_SES_PACKET_DEFAULT)
++
+ #define CHAN_TCP_PACKET_DEFAULT	(32*1024)
+-#define CHAN_TCP_WINDOW_DEFAULT	(64*CHAN_TCP_PACKET_DEFAULT)
++#define CHAN_TCP_WINDOW_DEFAULT	(4*CHAN_TCP_PACKET_DEFAULT)
++
+ #define CHAN_X11_PACKET_DEFAULT	(16*1024)
+ #define CHAN_X11_WINDOW_DEFAULT	(4*CHAN_X11_PACKET_DEFAULT)
+ 
+@@ -221,7 +225,7 @@
+ 
+ void	 channel_prepare_select(fd_set **, fd_set **, int *, u_int*, int);
+ void     channel_after_select(fd_set *, fd_set *);
+-void     channel_output_poll(void);
++int      channel_output_poll(void);
+ 
+ int      channel_not_very_much_buffered_data(void);
+ void     channel_close_all(void);
+@@ -277,4 +281,7 @@
+ void	 chan_write_failed(Channel *);
+ void	 chan_obuf_empty(Channel *);
+ 
++/* hpn handler */
++void     channel_set_hpn(int, int);
++
+ #endif
+diff -urN cipher-ctr-mt.c cipher-ctr-mt.c
+--- cipher-ctr-mt.c	1970-01-01 03:00:00.000000000 +0300
++++ cipher-ctr-mt.c	2009-05-02 17:38:18.000000000 +0400
+@@ -0,0 +1,473 @@
++/*
++ * OpenSSH Multi-threaded AES-CTR Cipher
++ *
++ * Author: Benjamin Bennett <ben@psc.edu>
++ * Copyright (c) 2008 Pittsburgh Supercomputing Center. All rights reserved.
++ *
++ * Based on original OpenSSH AES-CTR cipher. Small portions remain unchanged,
++ * Copyright (c) 2003 Markus Friedl <markus@openbsd.org>
++ *
++ * Permission to use, copy, modify, and distribute this software for any
++ * purpose with or without fee is hereby granted, provided that the above
++ * copyright notice and this permission notice appear in all copies.
++ *
++ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
++ * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
++ * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
++ * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
++ * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
++ * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
++ * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
++ */
++#include "includes.h"
++
++#include <sys/types.h>
++
++#include <stdarg.h>
++#include <string.h>
++
++#include <openssl/evp.h>
++
++#include "xmalloc.h"
++#include "log.h"
++
++/* compatibility with old or broken OpenSSL versions */
++#include "openbsd-compat/openssl-compat.h"
++
++#ifndef USE_BUILTIN_RIJNDAEL
++#include <openssl/aes.h>
++#endif
++
++#include <pthread.h>
++
++/*-------------------- TUNABLES --------------------*/
++/* Number of pregen threads to use */
++#define CIPHER_THREADS	2
++
++/* Number of keystream queues */
++#define NUMKQ		(CIPHER_THREADS + 2)
++
++/* Length of a keystream queue */
++#define KQLEN		4096
++
++/* Processor cacheline length */
++#define CACHELINE_LEN	64
++
++/* Collect thread stats and print at cancellation when in debug mode */
++/* #define CIPHER_THREAD_STATS */
++
++/* Use single-byte XOR instead of 8-byte XOR */
++/* #define CIPHER_BYTE_XOR */
++/*-------------------- END TUNABLES --------------------*/
++
++
++const EVP_CIPHER *evp_aes_ctr_mt(void);
++
++#ifdef CIPHER_THREAD_STATS
++/*
++ * Struct to collect thread stats
++ */
++struct thread_stats {
++	u_int	fills;
++	u_int	skips;
++	u_int	waits;
++	u_int	drains;
++};
++
++/*
++ * Debug print the thread stats
++ * Use with pthread_cleanup_push for displaying at thread cancellation
++ */
++static void
++thread_loop_stats(void *x)
++{
++	struct thread_stats *s = x;
++
++	debug("tid %lu - %u fills, %u skips, %u waits", pthread_self(),
++			s->fills, s->skips, s->waits);
++}
++
++ #define STATS_STRUCT(s)	struct thread_stats s
++ #define STATS_INIT(s)		{ memset(&s, 0, sizeof(s)); }
++ #define STATS_FILL(s)		{ s.fills++; }
++ #define STATS_SKIP(s)		{ s.skips++; }
++ #define STATS_WAIT(s)		{ s.waits++; }
++ #define STATS_DRAIN(s)		{ s.drains++; }
++#else
++ #define STATS_STRUCT(s)
++ #define STATS_INIT(s)
++ #define STATS_FILL(s)
++ #define STATS_SKIP(s)
++ #define STATS_WAIT(s)
++ #define STATS_DRAIN(s)
++#endif
++
++/* Keystream Queue state */
++enum {
++	KQINIT,
++	KQEMPTY,
++	KQFILLING,
++	KQFULL,
++	KQDRAINING
++};
++
++/* Keystream Queue struct */
++struct kq {
++	u_char		keys[KQLEN][AES_BLOCK_SIZE];
++	u_char		ctr[AES_BLOCK_SIZE];
++	u_char		pad0[CACHELINE_LEN];
++	volatile int	qstate;
++	pthread_mutex_t	lock;
++	pthread_cond_t	cond;
++	u_char		pad1[CACHELINE_LEN];
++};
++
++/* Context struct */
++struct ssh_aes_ctr_ctx
++{
++	struct kq	q[NUMKQ];
++	AES_KEY		aes_ctx;
++	STATS_STRUCT(stats);
++	u_char		aes_counter[AES_BLOCK_SIZE];
++	pthread_t	tid[CIPHER_THREADS];
++	int		state;
++	int		qidx;
++	int		ridx;
++};
++
++/* <friedl>
++ * increment counter 'ctr',
++ * the counter is of size 'len' bytes and stored in network-byte-order.
++ * (LSB at ctr[len-1], MSB at ctr[0])
++ */
++static void
++ssh_ctr_inc(u_char *ctr, u_int len)
++{
++	int i;
++
++	for (i = len - 1; i >= 0; i--)
++		if (++ctr[i])	/* continue on overflow */
++			return;
++}
++
++/*
++ * Add num to counter 'ctr'
++ */
++static void
++ssh_ctr_add(u_char *ctr, uint32_t num, u_int len)
++{
++	int i;
++	uint16_t n;
++
++	for (n = 0, i = len - 1; i >= 0 && (num || n); i--) {
++		n = ctr[i] + (num & 0xff) + n;
++		num >>= 8;
++		ctr[i] = n & 0xff;
++		n >>= 8;
++	}
++}
++
++/*
++ * Threads may be cancelled in a pthread_cond_wait, we must free the mutex
++ */
++static void
++thread_loop_cleanup(void *x)
++{
++	pthread_mutex_unlock((pthread_mutex_t *)x);
++}
++
++/*
++ * The life of a pregen thread:
++ *    Find empty keystream queues and fill them using their counter.
++ *    When done, update counter for the next fill.
++ */
++static void *
++thread_loop(void *x)
++{
++	AES_KEY key;
++	STATS_STRUCT(stats);
++	struct ssh_aes_ctr_ctx *c = x;
++	struct kq *q;
++	int i;
++	int qidx;
++
++	/* Threads stats on cancellation */
++	STATS_INIT(stats);
++#ifdef CIPHER_THREAD_STATS
++	pthread_cleanup_push(thread_loop_stats, &stats);
++#endif
++
++	/* Thread local copy of AES key */
++	memcpy(&key, &c->aes_ctx, sizeof(key));
++
++	/*
++	 * Handle the special case of startup, one thread must fill
++ 	 * the first KQ then mark it as draining. Lock held throughout.
++ 	 */
++	if (pthread_equal(pthread_self(), c->tid[0])) {
++		q = &c->q[0];
++		pthread_mutex_lock(&q->lock);
++		if (q->qstate == KQINIT) {
++			for (i = 0; i < KQLEN; i++) {
++				AES_encrypt(q->ctr, q->keys[i], &key);
++				ssh_ctr_inc(q->ctr, AES_BLOCK_SIZE);
++			}
++			ssh_ctr_add(q->ctr, KQLEN * (NUMKQ - 1), AES_BLOCK_SIZE);
++			q->qstate = KQDRAINING;
++			STATS_FILL(stats);
++			pthread_cond_broadcast(&q->cond);
++		}
++		pthread_mutex_unlock(&q->lock);
++	}
++	else 
++		STATS_SKIP(stats);
++
++	/*
++ 	 * Normal case is to find empty queues and fill them, skipping over
++ 	 * queues already filled by other threads and stopping to wait for
++ 	 * a draining queue to become empty.
++ 	 *
++ 	 * Multiple threads may be waiting on a draining queue and awoken
++ 	 * when empty.  The first thread to wake will mark it as filling,
++ 	 * others will move on to fill, skip, or wait on the next queue.
++ 	 */
++	for (qidx = 1;; qidx = (qidx + 1) % NUMKQ) {
++		/* Check if I was cancelled, also checked in cond_wait */
++		pthread_testcancel();
++
++		/* Lock queue and block if its draining */
++		q = &c->q[qidx];
++		pthread_mutex_lock(&q->lock);
++		pthread_cleanup_push(thread_loop_cleanup, &q->lock);
++		while (q->qstate == KQDRAINING || q->qstate == KQINIT) {
++			STATS_WAIT(stats);
++			pthread_cond_wait(&q->cond, &q->lock);
++		}
++		pthread_cleanup_pop(0);
++
++		/* If filling or full, somebody else got it, skip */
++		if (q->qstate != KQEMPTY) {
++			pthread_mutex_unlock(&q->lock);
++			STATS_SKIP(stats);
++			continue;
++		}
++
++		/*
++ 		 * Empty, let's fill it.
++ 		 * Queue lock is relinquished while we do this so others
++ 		 * can see that it's being filled.
++ 		 */
++		q->qstate = KQFILLING;
++		pthread_mutex_unlock(&q->lock);
++		for (i = 0; i < KQLEN; i++) {
++			AES_encrypt(q->ctr, q->keys[i], &key);
++			ssh_ctr_inc(q->ctr, AES_BLOCK_SIZE);
++		}
++
++		/* Re-lock, mark full and signal consumer */
++		pthread_mutex_lock(&q->lock);
++		ssh_ctr_add(q->ctr, KQLEN * (NUMKQ - 1), AES_BLOCK_SIZE);
++		q->qstate = KQFULL;
++		STATS_FILL(stats);
++		pthread_cond_signal(&q->cond);
++		pthread_mutex_unlock(&q->lock);
++	}
++
++#ifdef CIPHER_THREAD_STATS
++	/* Stats */
++	pthread_cleanup_pop(1);
++#endif
++
++	return NULL;
++}
++
++static int
++ssh_aes_ctr(EVP_CIPHER_CTX *ctx, u_char *dest, const u_char *src,
++    u_int len)
++{
++	struct ssh_aes_ctr_ctx *c;
++	struct kq *q, *oldq;
++	int ridx;
++	u_char *buf;
++
++	if (len == 0)
++		return (1);
++	if ((c = EVP_CIPHER_CTX_get_app_data(ctx)) == NULL)
++		return (0);
++
++	q = &c->q[c->qidx];
++	ridx = c->ridx;
++
++	/* src already padded to block multiple */
++	while (len > 0) {
++		buf = q->keys[ridx];
++
++#ifdef CIPHER_BYTE_XOR
++		dest[0] = src[0] ^ buf[0];
++		dest[1] = src[1] ^ buf[1];
++		dest[2] = src[2] ^ buf[2];
++		dest[3] = src[3] ^ buf[3];
++		dest[4] = src[4] ^ buf[4];
++		dest[5] = src[5] ^ buf[5];
++		dest[6] = src[6] ^ buf[6];
++		dest[7] = src[7] ^ buf[7];
++		dest[8] = src[8] ^ buf[8];
++		dest[9] = src[9] ^ buf[9];
++		dest[10] = src[10] ^ buf[10];
++		dest[11] = src[11] ^ buf[11];
++		dest[12] = src[12] ^ buf[12];
++		dest[13] = src[13] ^ buf[13];
++		dest[14] = src[14] ^ buf[14];
++		dest[15] = src[15] ^ buf[15];
++#else
++		*(uint64_t *)dest = *(uint64_t *)src ^ *(uint64_t *)buf;
++		*(uint64_t *)(dest + 8) = *(uint64_t *)(src + 8) ^
++						*(uint64_t *)(buf + 8);
++#endif
++
++		dest += 16;
++		src += 16;
++		len -= 16;
++		ssh_ctr_inc(ctx->iv, AES_BLOCK_SIZE);
++
++		/* Increment read index, switch queues on rollover */
++		if ((ridx = (ridx + 1) % KQLEN) == 0) {
++			oldq = q;
++
++			/* Mark next queue draining, may need to wait */
++			c->qidx = (c->qidx + 1) % NUMKQ;
++			q = &c->q[c->qidx];
++			pthread_mutex_lock(&q->lock);
++			while (q->qstate != KQFULL) {
++				STATS_WAIT(c->stats);
++				pthread_cond_wait(&q->cond, &q->lock);
++			}
++			q->qstate = KQDRAINING;
++			pthread_mutex_unlock(&q->lock);
++
++			/* Mark consumed queue empty and signal producers */
++			pthread_mutex_lock(&oldq->lock);
++			oldq->qstate = KQEMPTY;
++			STATS_DRAIN(c->stats);
++			pthread_cond_broadcast(&oldq->cond);
++			pthread_mutex_unlock(&oldq->lock);
++		}
++	}
++	c->ridx = ridx;
++	return (1);
++}
++
++#define HAVE_NONE       0
++#define HAVE_KEY        1
++#define HAVE_IV         2
++static int
++ssh_aes_ctr_init(EVP_CIPHER_CTX *ctx, const u_char *key, const u_char *iv,
++    int enc)
++{
++	struct ssh_aes_ctr_ctx *c;
++	int i;
++
++	if ((c = EVP_CIPHER_CTX_get_app_data(ctx)) == NULL) {
++		c = xmalloc(sizeof(*c));
++
++		c->state = HAVE_NONE;
++		for (i = 0; i < NUMKQ; i++) {
++			pthread_mutex_init(&c->q[i].lock, NULL);
++			pthread_cond_init(&c->q[i].cond, NULL);
++		}
++
++		STATS_INIT(c->stats);
++		
++		EVP_CIPHER_CTX_set_app_data(ctx, c);
++	}
++
++	if (c->state == (HAVE_KEY | HAVE_IV)) {
++		/* Cancel pregen threads */
++		for (i = 0; i < CIPHER_THREADS; i++)
++			pthread_cancel(c->tid[i]);
++		for (i = 0; i < CIPHER_THREADS; i++)
++			pthread_join(c->tid[i], NULL);
++		/* Start over getting key & iv */
++		c->state = HAVE_NONE;
++	}
++
++	if (key != NULL) {
++		AES_set_encrypt_key(key, EVP_CIPHER_CTX_key_length(ctx) * 8,
++		    &c->aes_ctx);
++		c->state |= HAVE_KEY;
++	}
++
++	if (iv != NULL) {
++		memcpy(ctx->iv, iv, AES_BLOCK_SIZE);
++		c->state |= HAVE_IV;
++	}
++
++	if (c->state == (HAVE_KEY | HAVE_IV)) {
++		/* Clear queues */
++		memcpy(c->q[0].ctr, ctx->iv, AES_BLOCK_SIZE);
++		c->q[0].qstate = KQINIT;
++		for (i = 1; i < NUMKQ; i++) {
++			memcpy(c->q[i].ctr, ctx->iv, AES_BLOCK_SIZE);
++			ssh_ctr_add(c->q[i].ctr, i * KQLEN, AES_BLOCK_SIZE);
++			c->q[i].qstate = KQEMPTY;
++		}
++		c->qidx = 0;
++		c->ridx = 0;
++
++		/* Start threads */
++		for (i = 0; i < CIPHER_THREADS; i++) {
++			pthread_create(&c->tid[i], NULL, thread_loop, c);
++		}
++		pthread_mutex_lock(&c->q[0].lock);
++		while (c->q[0].qstate != KQDRAINING)
++			pthread_cond_wait(&c->q[0].cond, &c->q[0].lock);
++		pthread_mutex_unlock(&c->q[0].lock);
++		
++	}
++	return (1);
++}
++
++static int
++ssh_aes_ctr_cleanup(EVP_CIPHER_CTX *ctx)
++{
++	struct ssh_aes_ctr_ctx *c;
++	int i;
++
++	if ((c = EVP_CIPHER_CTX_get_app_data(ctx)) != NULL) {
++#ifdef CIPHER_THREAD_STATS
++		debug("main thread: %u drains, %u waits", c->stats.drains,
++				c->stats.waits);
++#endif
++		/* Cancel pregen threads */
++		for (i = 0; i < CIPHER_THREADS; i++)
++			pthread_cancel(c->tid[i]);
++		for (i = 0; i < CIPHER_THREADS; i++)
++			pthread_join(c->tid[i], NULL);
++
++		memset(c, 0, sizeof(*c));
++		xfree(c);
++		EVP_CIPHER_CTX_set_app_data(ctx, NULL);
++	}
++	return (1);
++}
++
++/* <friedl> */
++const EVP_CIPHER *
++evp_aes_ctr_mt(void)
++{
++	static EVP_CIPHER aes_ctr;
++
++	memset(&aes_ctr, 0, sizeof(EVP_CIPHER));
++	aes_ctr.nid = NID_undef;
++	aes_ctr.block_size = AES_BLOCK_SIZE;
++	aes_ctr.iv_len = AES_BLOCK_SIZE;
++	aes_ctr.key_len = 16;
++	aes_ctr.init = ssh_aes_ctr_init;
++	aes_ctr.cleanup = ssh_aes_ctr_cleanup;
++	aes_ctr.do_cipher = ssh_aes_ctr;
++#ifndef SSH_OLD_EVP
++	aes_ctr.flags = EVP_CIPH_CBC_MODE | EVP_CIPH_VARIABLE_LENGTH |
++	    EVP_CIPH_ALWAYS_CALL_INIT | EVP_CIPH_CUSTOM_IV;
++#endif
++	return (&aes_ctr);
++}
+diff -urN cipher.c cipher.c
+--- cipher.c	2009-01-28 08:38:41.000000000 +0300
++++ cipher.c	2009-05-02 17:43:11.000000000 +0400
+@@ -55,6 +55,7 @@
+ extern const EVP_CIPHER *evp_ssh1_3des(void);
+ extern void ssh1_3des_iv(EVP_CIPHER_CTX *, int, u_char *, int);
+ extern const EVP_CIPHER *evp_aes_128_ctr(void);
++extern const EVP_CIPHER *evp_aes_ctr_mt(void);
+ extern void ssh_aes_ctr_iv(EVP_CIPHER_CTX *, int, u_char *, u_int);
+ 
+ struct Cipher {
+@@ -82,9 +83,9 @@
+ 	{ "aes256-cbc",		SSH_CIPHER_SSH2, 16, 32, 0, 1, EVP_aes_256_cbc },
+ 	{ "rijndael-cbc@lysator.liu.se",
+ 				SSH_CIPHER_SSH2, 16, 32, 0, 1, EVP_aes_256_cbc },
+-	{ "aes128-ctr",		SSH_CIPHER_SSH2, 16, 16, 0, 0, evp_aes_128_ctr },
+-	{ "aes192-ctr",		SSH_CIPHER_SSH2, 16, 24, 0, 0, evp_aes_128_ctr },
+-	{ "aes256-ctr",		SSH_CIPHER_SSH2, 16, 32, 0, 0, evp_aes_128_ctr },
++ 	{ "aes128-ctr",		SSH_CIPHER_SSH2, 16, 16, 0, evp_aes_ctr_mt },
++ 	{ "aes192-ctr",		SSH_CIPHER_SSH2, 16, 24, 0, evp_aes_ctr_mt },
++ 	{ "aes256-ctr",		SSH_CIPHER_SSH2, 16, 32, 0, evp_aes_ctr_mt },
+ #ifdef USE_CIPHER_ACSS
+ 	{ "acss@openssh.org",	SSH_CIPHER_SSH2, 16, 5, 0, 0, EVP_acss },
+ #endif
+@@ -163,7 +164,8 @@
+ 	for ((p = strsep(&cp, CIPHER_SEP)); p && *p != '\0';
+ 	    (p = strsep(&cp, CIPHER_SEP))) {
+ 		c = cipher_by_name(p);
+-		if (c == NULL || c->number != SSH_CIPHER_SSH2) {
++		if (c == NULL || (c->number != SSH_CIPHER_SSH2 && 
++c->number != SSH_CIPHER_NONE)) {
+ 			debug("bad cipher %s [%s]", p, names);
+ 			xfree(cipher_list);
+ 			return 0;
+@@ -337,6 +339,7 @@
+ 	int evplen;
+ 
+ 	switch (c->number) {
++	case SSH_CIPHER_NONE:
+ 	case SSH_CIPHER_SSH2:
+ 	case SSH_CIPHER_DES:
+ 	case SSH_CIPHER_BLOWFISH:
+@@ -371,6 +374,7 @@
+ 	int evplen = 0;
+ 
+ 	switch (c->number) {
++	case SSH_CIPHER_NONE:
+ 	case SSH_CIPHER_SSH2:
+ 	case SSH_CIPHER_DES:
+ 	case SSH_CIPHER_BLOWFISH:
+diff -urN clientloop.c clientloop.c
+--- clientloop.c	2009-02-14 08:28:21.000000000 +0300
++++ clientloop.c	2009-05-02 17:38:18.000000000 +0400
+@@ -1688,9 +1688,15 @@
+ 	sock = x11_connect_display();
+ 	if (sock < 0)
+ 		return NULL;
++	/* again is this really necessary for X11? */
++	if (options.hpn_disabled) 
+ 	c = channel_new("x11",
+ 	    SSH_CHANNEL_X11_OPEN, sock, sock, -1,
+ 	    CHAN_TCP_WINDOW_DEFAULT, CHAN_X11_PACKET_DEFAULT, 0, "x11", 1);
++	else 
++		c = channel_new("x11",
++		    SSH_CHANNEL_X11_OPEN, sock, sock, -1,
++		    options.hpn_buffer_size, CHAN_X11_PACKET_DEFAULT, 0, "x11", 1);
+ 	c->force_drain = 1;
+ 	return c;
+ }
+@@ -1710,9 +1716,15 @@
+ 	sock = ssh_get_authentication_socket();
+ 	if (sock < 0)
+ 		return NULL;
++	if (options.hpn_disabled) 
+ 	c = channel_new("authentication agent connection",
+ 	    SSH_CHANNEL_OPEN, sock, sock, -1,
+-	    CHAN_X11_WINDOW_DEFAULT, CHAN_TCP_PACKET_DEFAULT, 0,
++		    CHAN_X11_WINDOW_DEFAULT, CHAN_TCP_WINDOW_DEFAULT, 0,
++		    "authentication agent connection", 1);
++       else
++	c = channel_new("authentication agent connection",
++	    SSH_CHANNEL_OPEN, sock, sock, -1,
++                   options.hpn_buffer_size, options.hpn_buffer_size, 0,
+ 	    "authentication agent connection", 1);
+ 	c->force_drain = 1;
+ 	return c;
+@@ -1740,10 +1752,18 @@
+ 		return -1;
+ 	}
+ 
++	if(options.hpn_disabled)
++	c = channel_new("tun", SSH_CHANNEL_OPENING, fd, fd, -1,
++				CHAN_TCP_WINDOW_DEFAULT, CHAN_TCP_PACKET_DEFAULT,
++				0, "tun", 1);
++	else
+ 	c = channel_new("tun", SSH_CHANNEL_OPENING, fd, fd, -1,
+-	    CHAN_TCP_WINDOW_DEFAULT, CHAN_TCP_PACKET_DEFAULT, 0, "tun", 1);
++				options.hpn_buffer_size, CHAN_TCP_PACKET_DEFAULT,
++				0, "tun", 1);
+ 	c->datagram = 1;
+ 
++
++
+ #if defined(SSH_TUN_FILTER)
+ 	if (options.tun_open == SSH_TUNMODE_POINTOPOINT)
+ 		channel_register_filter(c->self, sys_tun_infilter,
+diff -urN compat.c compat.c
+--- compat.c	2008-11-03 11:20:14.000000000 +0300
++++ compat.c	2009-05-02 17:38:18.000000000 +0400
+@@ -170,6 +170,15 @@
+ 		    strlen(check[i].pat), 0) == 1) {
+ 			debug("match: %s pat %s", version, check[i].pat);
+ 			datafellows = check[i].bugs;
++			/* Check to see if the remote side is OpenSSH and not HPN */
++			if(strstr(version,"OpenSSH") != NULL)
++			{
++				if (strstr(version,"hpn") == NULL)
++				{
++					datafellows |= SSH_BUG_LARGEWINDOW;
++					debug("Remote is NON-HPN aware");
++				}
++			}
+ 			return;
+ 		}
+ 	}
+diff -urN compat.h compat.h
+--- compat.h	2008-11-03 11:20:14.000000000 +0300
++++ compat.h	2009-05-02 17:40:04.000000000 +0400
+@@ -58,6 +58,7 @@
+ #define SSH_OLD_FORWARD_ADDR	0x01000000
+ #define SSH_BUG_RFWD_ADDR	0x02000000
+ #define SSH_NEW_OPENSSH		0x04000000
++#define SSH_BUG_LARGEWINDOW     0x08000000
+ 
+ void     enable_compat13(void);
+ void     enable_compat20(void);
+diff -urN kex.c kex.c
+--- kex.c	2008-11-03 11:19:12.000000000 +0300
++++ kex.c	2009-05-02 17:38:18.000000000 +0400
+@@ -48,6 +48,7 @@
+ #include "match.h"
+ #include "dispatch.h"
+ #include "monitor.h"
++#include "canohost.h"
+ 
+ #define KEX_COOKIE_LEN	16
+ 
+@@ -64,7 +65,8 @@
+ static void kex_choose_conf(Kex *);
+ 
+ /* put algorithm proposal into buffer */
+-static void
++/* used in sshconnect.c as well as kex.c */
++void
+ kex_prop2buf(Buffer *b, char *proposal[PROPOSAL_MAX])
+ {
+ 	u_int i;
+@@ -376,6 +378,13 @@
+ 	int nenc, nmac, ncomp;
+ 	u_int mode, ctos, need;
+ 	int first_kex_follows, type;
++	int log_flag = 0;
++
++	int auth_flag;
++
++	auth_flag = packet_authentication_state();
++
++	debug ("AUTH STATE IS %d", auth_flag);
+ 
+ 	my   = kex_buf2prop(&kex->my, NULL);
+ 	peer = kex_buf2prop(&kex->peer, &first_kex_follows);
+@@ -400,11 +409,34 @@
+ 		choose_enc (&newkeys->enc,  cprop[nenc],  sprop[nenc]);
+ 		choose_mac (&newkeys->mac,  cprop[nmac],  sprop[nmac]);
+ 		choose_comp(&newkeys->comp, cprop[ncomp], sprop[ncomp]);
++		debug("REQUESTED ENC.NAME is '%s'", newkeys->enc.name);
++		if (strcmp(newkeys->enc.name, "none") == 0) {
++				debug("Requesting NONE. Authflag is %d", auth_flag);			
++			if (auth_flag == 1) {
++				debug("None requested post authentication.");
++			} else {
++				fatal("Pre-authentication none cipher requests are not allowed.");
++			}
++		} 
+ 		debug("kex: %s %s %s %s",
+ 		    ctos ? "client->server" : "server->client",
+ 		    newkeys->enc.name,
+ 		    newkeys->mac.name,
+ 		    newkeys->comp.name);
++		/* client starts withctos = 0 && log flag = 0 and no log*/
++		/* 2nd client pass ctos=1 and flag = 1 so no log*/
++		/* server starts with ctos =1 && log_flag = 0 so log */
++		/* 2nd sever pass ctos = 1 && log flag = 1 so no log*/
++		/* -cjr*/
++		if (ctos && !log_flag) {
++			logit("SSH: Server;Ltype: Kex;Remote: %s-%d;Enc: %s;MAC: %s;Comp: %s",
++			      get_remote_ipaddr(),
++			      get_remote_port(),
++			      newkeys->enc.name,
++			      newkeys->mac.name,
++			      newkeys->comp.name);
++		}
++		log_flag = 1;
+ 	}
+ 	choose_kex(kex, cprop[PROPOSAL_KEX_ALGS], sprop[PROPOSAL_KEX_ALGS]);
+ 	choose_hostkeyalg(kex, cprop[PROPOSAL_SERVER_HOST_KEY_ALGS],
+diff -urN kex.h kex.h
+--- kex.h	2007-06-11 08:01:42.000000000 +0400
++++ kex.h	2009-05-02 17:38:18.000000000 +0400
+@@ -127,6 +127,8 @@
+ 	void	(*kex[KEX_MAX])(Kex *);
+ };
+ 
++void kex_prop2buf(Buffer *, char *proposal[PROPOSAL_MAX]);
++
+ Kex	*kex_setup(char *[PROPOSAL_MAX]);
+ void	 kex_finish(Kex *);
+ 
+diff -urN myproposal.h myproposal.h
+--- myproposal.h	2009-01-28 08:33:31.000000000 +0300
++++ myproposal.h	2009-05-02 17:45:01.000000000 +0400
+@@ -47,6 +47,8 @@
+ 	"arcfour256,arcfour128," \
+ 	"aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc," \
+ 	"aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se"
++#define KEX_ENCRYPT_INCLUDE_NONE KEX_DEFAULT_ENCRYPT \
++ 	",none"
+ #define	KEX_DEFAULT_MAC \
+ 	"hmac-md5,hmac-sha1,umac-64@openssh.com,hmac-ripemd160," \
+ 	"hmac-ripemd160@openssh.com," \
+diff -urN packet.c packet.c
+--- packet.c	2009-02-14 08:35:01.000000000 +0300
++++ packet.c	2009-05-02 17:38:18.000000000 +0400
+@@ -775,7 +775,7 @@
+ /*
+  * Finalize packet in SSH2 format (compress, mac, encrypt, enqueue)
+  */
+-static void
++static int
+ packet_send2_wrapped(void)
+ {
+ 	u_char type, *cp, *macbuf = NULL;
+@@ -888,11 +888,13 @@
+ 		set_newkeys(MODE_OUT);
+ 	else if (type == SSH2_MSG_USERAUTH_SUCCESS && server_side)
+ 		packet_enable_delayed_compress();
++	return(packet_length);
+ }
+ 
+-static void
++static int
+ packet_send2(void)
+ {
++        static int packet_length = 0;
+ 	static int rekeying = 0;
+ 	struct packet *p;
+ 	u_char type, *cp;
+@@ -910,7 +912,7 @@
+ 			memcpy(&p->payload, &outgoing_packet, sizeof(Buffer));
+ 			buffer_init(&outgoing_packet);
+ 			TAILQ_INSERT_TAIL(&outgoing, p, next);
+-			return;
++			return(sizeof(Buffer));
+ 		}
+ 	}
+ 
+@@ -918,7 +920,7 @@
+ 	if (type == SSH2_MSG_KEXINIT)
+ 		rekeying = 1;
+ 
+-	packet_send2_wrapped();
++	packet_length = packet_send2_wrapped();
+ 
+ 	/* after a NEWKEYS message we can send the complete queue */
+ 	if (type == SSH2_MSG_NEWKEYS) {
+@@ -931,19 +933,22 @@
+ 			    sizeof(Buffer));
+ 			TAILQ_REMOVE(&outgoing, p, next);
+ 			xfree(p);
+-			packet_send2_wrapped();
++			packet_length += packet_send2_wrapped();
+ 		}
+ 	}
++	return(packet_length);
+ }
+ 
+-void
++int
+ packet_send(void)
+ {
++  int packet_len = 0;
+ 	if (compat20)
+-		packet_send2();
++		packet_len = packet_send2();
+ 	else
+ 		packet_send1();
+ 	DBG(debug("packet_send done"));
++	return(packet_len);
+ }
+ 
+ /*
+@@ -1544,23 +1549,25 @@
+ 
+ /* Checks if there is any buffered output, and tries to write some of the output. */
+ 
+-void
++int
+ packet_write_poll(void)
+ {
+-	int len = buffer_len(&output);
++	int len = 0;
++	len = buffer_len(&output);
+ 
+ 	if (len > 0) {
+ 		len = write(connection_out, buffer_ptr(&output), len);
+ 		if (len == -1) {
+ 			if (errno == EINTR || errno == EAGAIN ||
+ 			    errno == EWOULDBLOCK)
+-				return;
++				return (0);
+ 			fatal("Write failed: %.100s", strerror(errno));
+ 		}
+ 		if (len == 0)
+ 			fatal("Write connection closed");
+ 		buffer_consume(&output, len);
+ 	}
++	return(len);
+ }
+ 
+ 
+@@ -1569,16 +1576,17 @@
+  * written.
+  */
+ 
+-void
++int
+ packet_write_wait(void)
+ {
+ 	fd_set *setp;
+ 	int ret, ms_remain;
+ 	struct timeval start, timeout, *timeoutp = NULL;
++	u_int bytes_sent = 0;
+ 
+ 	setp = (fd_set *)xcalloc(howmany(connection_out + 1, NFDBITS),
+ 	    sizeof(fd_mask));
+-	packet_write_poll();
++	bytes_sent += packet_write_poll();
+ 	while (packet_have_data_to_write()) {
+ 		memset(setp, 0, howmany(connection_out + 1, NFDBITS) *
+ 		    sizeof(fd_mask));
+@@ -1612,7 +1620,7 @@
+ 			    "waiting to write", get_remote_ipaddr());
+ 			cleanup_exit(255);
+ 		}
+-		packet_write_poll();
++		bytes_sent += packet_write_poll();
+ 	}
+ 	xfree(setp);
+ }
+@@ -1736,12 +1744,24 @@
+ 	}
+ }
+ 
++int rekey_requested = 0;
++void
++packet_request_rekeying(void)
++{
++	rekey_requested = 1;
++}
++
+ #define MAX_PACKETS	(1U<<31)
+ int
+ packet_need_rekeying(void)
+ {
+ 	if (datafellows & SSH_BUG_NOREKEY)
+ 		return 0;
++	if (rekey_requested == 1)
++	{
++		rekey_requested = 0;
++		return 1;
++	}
+ 	return
+ 	    (p_send.packets > MAX_PACKETS) ||
+ 	    (p_read.packets > MAX_PACKETS) ||
+@@ -1766,3 +1786,9 @@
+ {
+ 	after_authentication = 1;
+ }
++
++int
++packet_authentication_state(void)
++{
++	return(after_authentication);
++}
+diff -urN packet.h packet.h
+--- packet.h	2008-07-11 11:36:48.000000000 +0400
++++ packet.h	2009-05-02 17:38:18.000000000 +0400
+@@ -20,6 +20,9 @@
+ 
+ #include <openssl/bn.h>
+ 
++void
++packet_request_rekeying(void);
++
+ void     packet_set_connection(int, int);
+ void     packet_set_timeout(int, int);
+ void     packet_set_nonblocking(void);
+@@ -35,6 +38,7 @@
+ int      packet_is_interactive(void);
+ void     packet_set_server(void);
+ void     packet_set_authenticated(void);
++int	 packet_authentication_state(void);
+ 
+ void     packet_start(u_char);
+ void     packet_put_char(int ch);
+@@ -44,7 +48,7 @@
+ void     packet_put_string(const void *buf, u_int len);
+ void     packet_put_cstring(const char *str);
+ void     packet_put_raw(const void *buf, u_int len);
+-void     packet_send(void);
++int      packet_send(void);
+ 
+ int      packet_read(void);
+ void     packet_read_expect(int type);
+@@ -73,8 +77,8 @@
+ int	 packet_get_ssh1_cipher(void);
+ void	 packet_set_iv(int, u_char *);
+ 
+-void     packet_write_poll(void);
+-void     packet_write_wait(void);
++int      packet_write_poll(void);
++int      packet_write_wait(void);
+ int      packet_have_data_to_write(void);
+ int      packet_not_very_much_data_to_write(void);
+ 
+diff -urN progressmeter.c progressmeter.c
+--- progressmeter.c	2006-08-05 06:39:40.000000000 +0400
++++ progressmeter.c	2009-05-02 17:38:18.000000000 +0400
+@@ -68,6 +68,8 @@
+ static char *file;		/* name of the file being transferred */
+ static off_t end_pos;		/* ending position of transfer */
+ static off_t cur_pos;		/* transfer position as of last refresh */
++static off_t last_pos;
++static off_t max_delta_pos = 0;
+ static volatile off_t *counter;	/* progress counter */
+ static long stalled;		/* how long we have been stalled */
+ static int bytes_per_second;	/* current speed in bytes per second */
+@@ -128,12 +130,17 @@
+ 	int hours, minutes, seconds;
+ 	int i, len;
+ 	int file_len;
++	off_t delta_pos;
+ 
+ 	transferred = *counter - cur_pos;
+ 	cur_pos = *counter;
+ 	now = time(NULL);
+ 	bytes_left = end_pos - cur_pos;
+ 
++	delta_pos = cur_pos - last_pos;
++	if (delta_pos > max_delta_pos) 
++		max_delta_pos = delta_pos;
++
+ 	if (bytes_left > 0)
+ 		elapsed = now - last_update;
+ 	else {
+@@ -158,7 +165,7 @@
+ 
+ 	/* filename */
+ 	buf[0] = '\0';
+-	file_len = win_size - 35;
++	file_len = win_size - 45;
+ 	if (file_len > 0) {
+ 		len = snprintf(buf, file_len + 1, "\r%s", file);
+ 		if (len < 0)
+@@ -175,7 +182,8 @@
+ 		percent = ((float)cur_pos / end_pos) * 100;
+ 	else
+ 		percent = 100;
+-	snprintf(buf + strlen(buf), win_size - strlen(buf),
++
++	snprintf(buf + strlen(buf), win_size - strlen(buf-8),
+ 	    " %3d%% ", percent);
+ 
+ 	/* amount transferred */
+@@ -188,6 +196,15 @@
+ 	    (off_t)bytes_per_second);
+ 	strlcat(buf, "/s ", win_size);
+ 
++	/* instantaneous rate */
++	if (bytes_left > 0)
++		format_rate(buf + strlen(buf), win_size - strlen(buf),
++			    delta_pos);
++	else
++		format_rate(buf + strlen(buf), win_size - strlen(buf),
++			    max_delta_pos);
++	strlcat(buf, "/s ", win_size);
++
+ 	/* ETA */
+ 	if (!transferred)
+ 		stalled += elapsed;
+@@ -224,6 +241,7 @@
+ 
+ 	atomicio(vwrite, STDOUT_FILENO, buf, win_size - 1);
+ 	last_update = now;
++	last_pos = cur_pos;
+ }
+ 
+ /*ARGSUSED*/
+diff -urN readconf.c readconf.c
+--- readconf.c	2009-05-02 17:37:11.000000000 +0400
++++ readconf.c	2009-05-02 17:47:56.000000000 +0400
+@@ -131,6 +131,8 @@
+ 	oSendEnv, oControlPath, oControlMaster, oHashKnownHosts,
+ 	oTunnel, oTunnelDevice, oLocalCommand, oPermitLocalCommand,
+ 	oVisualHostKey, oZeroKnowledgePasswordAuthentication,
++ 	oNoneEnabled, oTcpRcvBufPoll, oTcpRcvBuf, oNoneSwitch, oHPNDisabled,
++ 	oHPNBufferSize,
+ 	oDeprecated, oUnsupported
+ } OpCodes;
+ 
+@@ -228,6 +230,12 @@
+ 	{ "localcommand", oLocalCommand },
+ 	{ "permitlocalcommand", oPermitLocalCommand },
+ 	{ "visualhostkey", oVisualHostKey },
++ 	{ "noneenabled", oNoneEnabled },
++ 	{ "tcprcvbufpoll", oTcpRcvBufPoll },
++ 	{ "tcprcvbuf", oTcpRcvBuf },
++ 	{ "noneswitch", oNoneSwitch },
++ 	{ "hpndisabled", oHPNDisabled },
++ 	{ "hpnbuffersize", oHPNBufferSize },
+ #ifdef JPAKE
+ 	{ "zeroknowledgepasswordauthentication",
+ 	    oZeroKnowledgePasswordAuthentication },
+@@ -465,6 +473,37 @@
+ 		intptr = &options->check_host_ip;
+ 		goto parse_flag;
+ 
++	case oNoneEnabled:
++		intptr = &options->none_enabled;
++		goto parse_flag;
++ 
++	/* we check to see if the command comes from the */
++	/* command line or not. If it does then enable it */
++	/* otherwise fail. NONE should never be a default configuration */
++	case oNoneSwitch:
++		if(strcmp(filename,"command-line")==0)
++		{		
++		    intptr = &options->none_switch;
++		    goto parse_flag;
++		} else {
++		    error("NoneSwitch is found in %.200s.\nYou may only use this configuration option from the command line", filename);
++		    error("Continuing...");
++		    debug("NoneSwitch directive found in %.200s.", filename);
++		    return 0;
++	        }
++
++	case oHPNDisabled:
++		intptr = &options->hpn_disabled;
++		goto parse_flag;
++
++	case oHPNBufferSize:
++		intptr = &options->hpn_buffer_size;
++		goto parse_int;
++
++	case oTcpRcvBufPoll:
++		intptr = &options->tcp_rcv_buf_poll;
++		goto parse_flag;
++
+ 	case oVerifyHostKeyDNS:
+ 		intptr = &options->verify_host_key_dns;
+ 		goto parse_yesnoask;
+@@ -643,6 +682,10 @@
+ 		intptr = &options->connection_attempts;
+ 		goto parse_int;
+ 
++	case oTcpRcvBuf:
++		intptr = &options->tcp_rcv_buf;
++		goto parse_int;
++
+ 	case oCipher:
+ 		intptr = &options->cipher;
+ 		arg = strdelim(&s);
+@@ -1065,6 +1108,12 @@
+ 	options->permit_local_command = -1;
+ 	options->visual_host_key = -1;
+ 	options->zero_knowledge_password_authentication = -1;
++ 	options->none_switch = -1;
++ 	options->none_enabled = -1;
++ 	options->hpn_disabled = -1;
++ 	options->hpn_buffer_size = -1;
++ 	options->tcp_rcv_buf_poll = -1;
++ 	options->tcp_rcv_buf = -1;
+ }
+ 
+ /*
+@@ -1187,6 +1236,29 @@
+ 		options->server_alive_interval = 0;
+ 	if (options->server_alive_count_max == -1)
+ 		options->server_alive_count_max = 3;
++	if (options->none_switch == -1)
++	        options->none_switch = 0;
++	if (options->hpn_disabled == -1)
++	        options->hpn_disabled = 0;
++	if (options->hpn_buffer_size > -1)
++	{
++	  /* if a user tries to set the size to 0 set it to 1KB */
++		if (options->hpn_buffer_size == 0)
++		options->hpn_buffer_size = 1024;
++		/*limit the buffer to 64MB*/
++		if (options->hpn_buffer_size > 65536)
++		{
++			options->hpn_buffer_size = 65536*1024;
++			debug("User requested buffer larger than 64MB. Request reverted to 64MB");
++		}
++		debug("hpn_buffer_size set to %d", options->hpn_buffer_size);
++	}
++	if (options->tcp_rcv_buf == 0)
++		options->tcp_rcv_buf = 1;
++	if (options->tcp_rcv_buf > -1) 
++		options->tcp_rcv_buf *=1024;
++	if (options->tcp_rcv_buf_poll == -1)
++		options->tcp_rcv_buf_poll = 1;
+ 	if (options->control_master == -1)
+ 		options->control_master = 0;
+ 	if (options->hash_known_hosts == -1)
+diff -urN readconf.h readconf.h
+--- readconf.h	2009-02-14 08:28:21.000000000 +0300
++++ readconf.h	2009-05-02 17:38:19.000000000 +0400
+@@ -57,6 +57,11 @@
+ 	int     compression_level;	/* Compression level 1 (fast) to 9
+ 					 * (best). */
+ 	int     tcp_keep_alive;	/* Set SO_KEEPALIVE. */
++        int     tcp_rcv_buf; /* user switch to set tcp recv buffer */
++	int	tcp_rcv_buf_poll; /* Option to poll recv buf every window transfer */
++	int 	hpn_disabled; 	 /* Switch to disable HPN buffer management */
++	int	hpn_buffer_size; /* User definable size for HPN buffer window */
++
+ 	LogLevel log_level;	/* Level for logging. */
+ 
+ 	int     port;		/* Port to connect. */
+@@ -102,6 +107,8 @@
+ 
+ 	int	enable_ssh_keysign;
+ 	int64_t rekey_limit;
++	int     none_switch;    /* Use none cipher */
++	int     none_enabled;   /* Allow none to be used */
+ 	int	no_host_authentication_for_localhost;
+ 	int	identities_only;
+ 	int	server_alive_interval;
+diff -urN scp.c scp.c
+--- scp.c	2008-11-03 11:23:45.000000000 +0300
++++ scp.c	2009-05-02 17:38:19.000000000 +0400
+@@ -632,7 +632,7 @@
+ 	off_t i, statbytes;
+ 	size_t amt;
+ 	int fd = -1, haderr, indx;
+-	char *last, *name, buf[2048], encname[MAXPATHLEN];
++	char *last, *name, buf[16384], encname[MAXPATHLEN];
+ 	int len;
+ 
+ 	for (indx = 0; indx < argc; ++indx) {
+@@ -868,7 +868,7 @@
+ 	mode_t mode, omode, mask;
+ 	off_t size, statbytes;
+ 	int setimes, targisdir, wrerrno = 0;
+-	char ch, *cp, *np, *targ, *why, *vect[1], buf[2048];
++	char ch, *cp, *np, *targ, *why, *vect[1], buf[16384];
+ 	struct timeval tv[2];
+ 
+ #define	atime	tv[0]
+diff -urN servconf.c servconf.c
+--- servconf.c	2009-05-02 17:37:11.000000000 +0400
++++ servconf.c	2009-05-02 17:38:19.000000000 +0400
+@@ -266,6 +266,42 @@
+ 	if (options->zero_knowledge_password_authentication == -1)
+ 		options->zero_knowledge_password_authentication = 0;
+ 
++	if (options->hpn_disabled == -1) 
++		options->hpn_disabled = 0;
++
++	if (options->hpn_buffer_size == -1) {
++		/* option not explicitly set. Now we have to figure out */
++		/* what value to use */
++		if (options->hpn_disabled == 1) {
++			options->hpn_buffer_size = CHAN_SES_WINDOW_DEFAULT;
++		} else {
++			/* get the current RCV size and set it to that */
++			/*create a socket but don't connect it */
++			/* we use that the get the rcv socket size */
++			sock = socket(AF_INET, SOCK_STREAM, 0);
++			getsockopt(sock, SOL_SOCKET, SO_RCVBUF, 
++				   &socksize, &socksizelen);
++			close(sock);
++			options->hpn_buffer_size = socksize;
++			debug ("HPN Buffer Size: %d", options->hpn_buffer_size);
++			
++		} 
++	} else {
++		/* we have to do this incase the user sets both values in a contradictory */
++		/* manner. hpn_disabled overrrides hpn_buffer_size*/
++		if (options->hpn_disabled <= 0) {
++			if (options->hpn_buffer_size == 0)
++				options->hpn_buffer_size = 1;
++			/* limit the maximum buffer to 64MB */
++			if (options->hpn_buffer_size > 64*1024) {
++				options->hpn_buffer_size = 64*1024*1024;
++			} else {
++				options->hpn_buffer_size *= 1024;
++			}
++		} else
++			options->hpn_buffer_size = CHAN_TCP_WINDOW_DEFAULT;
++	}
++
+ 	/* Turn privilege separation on by default */
+ 	if (use_privsep == -1)
+ 		use_privsep = 1;
+@@ -428,6 +464,10 @@
+ 	{ "permitopen", sPermitOpen, SSHCFG_ALL },
+ 	{ "forcecommand", sForceCommand, SSHCFG_ALL },
+ 	{ "chrootdirectory", sChrootDirectory, SSHCFG_ALL },
++	{ "noneenabled", sNoneEnabled },
++	{ "hpndisabled", sHPNDisabled },
++	{ "hpnbuffersize", sHPNBufferSize },
++	{ "tcprcvbufpoll", sTcpRcvBufPoll },
+ 	{ NULL, sBadOption, 0 }
+ };
+ 
+@@ -454,6 +494,7 @@
+ 
+ 	for (i = 0; keywords[i].name; i++)
+ 		if (strcasecmp(cp, keywords[i].name) == 0) {
++		        debug ("Config token is %s", keywords[i].name);
+ 			*flags = keywords[i].flags;
+ 			return keywords[i].opcode;
+ 		}
+@@ -851,6 +892,22 @@
+ 			*intptr = value;
+ 		break;
+ 
++	case sNoneEnabled:
++		intptr = &options->none_enabled;
++		goto parse_flag;
++
++	case sTcpRcvBufPoll:
++		intptr = &options->tcp_rcv_buf_poll;
++		goto parse_flag;
++
++	case sHPNDisabled:
++		intptr = &options->hpn_disabled;
++		goto parse_flag;
++
++	case sHPNBufferSize:
++		intptr = &options->hpn_buffer_size;
++		goto parse_int;
++
+ 	case sIgnoreUserKnownHosts:
+ 		intptr = &options->ignore_user_known_hosts;
+ 		goto parse_flag;
+diff -urN servconf.h servconf.h
+--- servconf.h	2009-01-28 08:31:23.000000000 +0300
++++ servconf.h	2009-05-02 17:38:19.000000000 +0400
+@@ -145,6 +145,10 @@
+ 	char   *adm_forced_command;
+ 
+ 	int	use_pam;		/* Enable auth via PAM */
++        int     none_enabled;           /* enable NONE cipher switch */
++        int     tcp_rcv_buf_poll;       /* poll tcp rcv window in autotuning kernels*/
++	int	hpn_disabled;		/* disable hpn functionality. false by default */
++	int	hpn_buffer_size;	/* set the hpn buffer size - default 3MB */
+ 
+ 	int	permit_tun;
+ 
+diff -urN serverloop.c serverloop.c
+--- serverloop.c	2009-02-14 08:33:09.000000000 +0300
++++ serverloop.c	2009-05-02 17:38:19.000000000 +0400
+@@ -93,10 +93,10 @@
+ static int fdout;		/* Descriptor for stdout (for reading);
+ 				   May be same number as fdin. */
+ static int fderr;		/* Descriptor for stderr.  May be -1. */
+-static long stdin_bytes = 0;	/* Number of bytes written to stdin. */
+-static long stdout_bytes = 0;	/* Number of stdout bytes sent to client. */
+-static long stderr_bytes = 0;	/* Number of stderr bytes sent to client. */
+-static long fdout_bytes = 0;	/* Number of stdout bytes read from program. */
++static u_long stdin_bytes = 0;	/* Number of bytes written to stdin. */
++static u_long stdout_bytes = 0;	/* Number of stdout bytes sent to client. */
++static u_long stderr_bytes = 0;	/* Number of stderr bytes sent to client. */
++static u_long fdout_bytes = 0;	/* Number of stdout bytes read from program. */
+ static int stdin_eof = 0;	/* EOF message received from client. */
+ static int fdout_eof = 0;	/* EOF encountered reading from fdout. */
+ static int fderr_eof = 0;	/* EOF encountered readung from fderr. */
+@@ -121,6 +121,20 @@
+ static void server_init_dispatch(void);
+ 
+ /*
++ * Returns current time in seconds from Jan 1, 1970 with the maximum
++ * available resolution.
++ */
++
++static double
++get_current_time(void)
++{
++	struct timeval tv;
++	gettimeofday(&tv, NULL);
++	return (double) tv.tv_sec + (double) tv.tv_usec / 1000000.0;
++}
++
++
++/*
+  * we write to this pipe if a SIGCHLD is caught in order to avoid
+  * the race between select() and child_terminated
+  */
+@@ -410,6 +424,7 @@
+ 		} else {
+ 			/* Buffer any received data. */
+ 			packet_process_incoming(buf, len);
++			fdout_bytes += len;
+ 		}
+ 	}
+ 	if (compat20)
+@@ -432,6 +447,7 @@
+ 		} else {
+ 			buffer_append(&stdout_buffer, buf, len);
+ 			fdout_bytes += len;
++			debug ("FD out now: %ld", fdout_bytes);
+ 		}
+ 	}
+ 	/* Read and buffer any available stderr data from the program. */
+@@ -499,7 +515,7 @@
+ 	}
+ 	/* Send any buffered packet data to the client. */
+ 	if (FD_ISSET(connection_out, writeset))
+-		packet_write_poll();
++		stdin_bytes += packet_write_poll();
+ }
+ 
+ /*
+@@ -816,8 +832,10 @@
+ {
+ 	fd_set *readset = NULL, *writeset = NULL;
+ 	int rekeying = 0, max_fd, nalloc = 0;
++	double start_time, total_time;
+ 
+ 	debug("Entering interactive session for SSH2.");
++	start_time = get_current_time();
+ 
+ 	mysignal(SIGCHLD, sigchld_handler);
+ 	child_terminated = 0;
+@@ -879,6 +897,11 @@
+ 
+ 	/* free remaining sessions, e.g. remove wtmp entries */
+ 	session_destroy_all(NULL);
++	total_time = get_current_time() - start_time;
++	logit("SSH: Server;LType: Throughput;Remote: %s-%d;IN: %lu;OUT: %lu;Duration: %.1f;tPut_in: %.1f;tPut_out: %.1f",
++	      get_remote_ipaddr(), get_remote_port(),
++	      stdin_bytes, fdout_bytes, total_time, stdin_bytes / total_time, 
++	      fdout_bytes / total_time);
+ }
+ 
+ static void
+@@ -994,8 +1017,12 @@
+ 	sock = tun_open(tun, mode);
+ 	if (sock < 0)
+ 		goto done;
++	if (options.hpn_disabled)
+ 	c = channel_new("tun", SSH_CHANNEL_OPEN, sock, sock, -1,
+ 	    CHAN_TCP_WINDOW_DEFAULT, CHAN_TCP_PACKET_DEFAULT, 0, "tun", 1);
++	else
++		c = channel_new("tun", SSH_CHANNEL_OPEN, sock, sock, -1,
++		    options.hpn_buffer_size, CHAN_TCP_PACKET_DEFAULT, 0, "tun", 1);
+ 	c->datagram = 1;
+ #if defined(SSH_TUN_FILTER)
+ 	if (mode == SSH_TUNMODE_POINTOPOINT)
+@@ -1031,6 +1058,8 @@
+ 	c = channel_new("session", SSH_CHANNEL_LARVAL,
+ 	    -1, -1, -1, /*window size*/0, CHAN_SES_PACKET_DEFAULT,
+ 	    0, "server-session", 1);
++	if ((options.tcp_rcv_buf_poll) && (!options.hpn_disabled))
++		c->dynamic_window = 1;
+ 	if (session_open(the_authctxt, c->self) != 1) {
+ 		debug("session open failed, free channel %d", c->self);
+ 		channel_free(c);
+diff -urN session.c session.c
+--- session.c	2009-05-02 17:37:11.000000000 +0400
++++ session.c	2009-05-02 17:38:19.000000000 +0400
+@@ -230,6 +230,7 @@
+ 	}
+ 
+ 	/* Allocate a channel for the authentication agent socket. */
++	/* this shouldn't matter if its hpn or not - cjr */
+ 	nc = channel_new("auth socket",
+ 	    SSH_CHANNEL_AUTH_SOCKET, sock, sock, -1,
+ 	    CHAN_X11_WINDOW_DEFAULT, CHAN_X11_PACKET_DEFAULT,
+@@ -2351,10 +2352,16 @@
+ 	 */
+ 	if (s->chanid == -1)
+ 		fatal("no channel for session %d", s->self);
++	if (options.hpn_disabled)
+ 	channel_set_fds(s->chanid,
+ 	    fdout, fdin, fderr,
+ 	    fderr == -1 ? CHAN_EXTENDED_IGNORE : CHAN_EXTENDED_READ,
+ 	    1, is_tty, CHAN_SES_WINDOW_DEFAULT);
++	else 
++		channel_set_fds(s->chanid,
++		    fdout, fdin, fderr,
++	            fderr == -1 ? CHAN_EXTENDED_IGNORE : CHAN_EXTENDED_READ,
++		    1, is_tty, options.hpn_buffer_size);
+ }
+ 
+ /*
+diff -urN sftp.1 sftp.1
+--- sftp.1	2009-01-28 08:14:09.000000000 +0300
++++ sftp.1	2009-05-02 17:38:19.000000000 +0400
+@@ -203,7 +203,8 @@
+ Specify how many requests may be outstanding at any one time.
+ Increasing this may slightly improve file transfer speed
+ but will increase memory usage.
+-The default is 64 outstanding requests.
++The default is 256 outstanding requests providing for 8MB 
++of outstanding data with a 32KB buffer.
+ .It Fl S Ar program
+ Name of the
+ .Ar program
+diff -urN sftp.c sftp.c
+--- sftp.c	2009-02-14 08:26:19.000000000 +0300
++++ sftp.c	2009-05-02 17:38:19.000000000 +0400
+@@ -75,7 +75,7 @@
+ size_t copy_buffer_len = 32768;
+ 
+ /* Number of concurrent outstanding requests */
+-size_t num_requests = 64;
++size_t num_requests = 256;
+ 
+ /* PID of ssh transport process */
+ static pid_t sshpid = -1;
+diff -urN ssh.c ssh.c
+--- ssh.c	2009-05-02 17:37:11.000000000 +0400
++++ ssh.c	2009-05-02 17:38:19.000000000 +0400
+@@ -492,9 +492,6 @@
+ 			no_shell_flag = 1;
+ 			no_tty_flag = 1;
+ 			break;
+-		case 'T':
+-			no_tty_flag = 1;
+-			break;
+ 		case 'o':
+ 			dummy = 1;
+ 			line = xstrdup(optarg);
+@@ -503,6 +500,13 @@
+ 				exit(255);
+ 			xfree(line);
+ 			break;
++		case 'T':
++			no_tty_flag = 1;
++			/* ensure that the user doesn't try to backdoor a */
++			/* null cipher switch on an interactive session */
++			/* so explicitly disable it no matter what */
++			options.none_switch=0;
++			break;
+ 		case 's':
+ 			subsystem_flag = 1;
+ 			break;
+@@ -1159,6 +1163,9 @@
+ {
+ 	Channel *c;
+ 	int window, packetmax, in, out, err;
++	int sock;
++	int socksize;
++	int socksizelen = sizeof(int);
+ 
+ 	if (stdin_null_flag) {
+ 		in = open(_PATH_DEVNULL, O_RDONLY);
+@@ -1179,9 +1186,75 @@
+ 	if (!isatty(err))
+ 		set_nonblock(err);
+ 
+-	window = CHAN_SES_WINDOW_DEFAULT;
++	/* we need to check to see if what they want to do about buffer */
++	/* sizes here. In a hpn to nonhpn connection we want to limit */
++	/* the window size to something reasonable in case the far side */
++	/* has the large window bug. In hpn to hpn connection we want to */
++	/* use the max window size but allow the user to override it */
++	/* lastly if they disabled hpn then use the ssh std window size */
++
++	/* so why don't we just do a getsockopt() here and set the */
++	/* ssh window to that? In the case of a autotuning receive */
++	/* window the window would get stuck at the initial buffer */
++	/* size generally less than 96k. Therefore we need to set the */
++	/* maximum ssh window size to the maximum hpn buffer size */
++	/* unless the user has specifically set the tcprcvbufpoll */
++	/* to no. In which case we *can* just set the window to the */
++	/* minimum of the hpn buffer size and tcp receive buffer size */
++	
++	if (tty_flag)
++		options.hpn_buffer_size = CHAN_SES_WINDOW_DEFAULT;
++	else
++		options.hpn_buffer_size = 2*1024*1024;
++
++	if (datafellows & SSH_BUG_LARGEWINDOW) 
++	{
++		debug("HPN to Non-HPN Connection");
++	} 
++	else 
++	{
++		if (options.tcp_rcv_buf_poll <= 0) 
++		{
++			sock = socket(AF_INET, SOCK_STREAM, 0);
++			getsockopt(sock, SOL_SOCKET, SO_RCVBUF, 
++				   &socksize, &socksizelen);
++			close(sock);
++			debug("socksize %d", socksize);
++			options.hpn_buffer_size = socksize;
++			debug ("HPNBufferSize set to TCP RWIN: %d", options.hpn_buffer_size);
++		} 
++		else
++		{
++			if (options.tcp_rcv_buf > 0) 
++			{
++				/*create a socket but don't connect it */
++				/* we use that the get the rcv socket size */
++				sock = socket(AF_INET, SOCK_STREAM, 0);
++				/* if they are using the tcp_rcv_buf option */
++				/* attempt to set the buffer size to that */
++				if (options.tcp_rcv_buf) 
++					setsockopt(sock, SOL_SOCKET, SO_RCVBUF, (void *)&options.tcp_rcv_buf, 
++						   sizeof(options.tcp_rcv_buf));
++				getsockopt(sock, SOL_SOCKET, SO_RCVBUF, 
++					   &socksize, &socksizelen);
++				close(sock);
++				debug("socksize %d", socksize);
++				options.hpn_buffer_size = socksize;
++				debug ("HPNBufferSize set to user TCPRcvBuf: %d", options.hpn_buffer_size);
++			}
++ 		}
++		
++	}
++
++	debug("Final hpn_buffer_size = %d", options.hpn_buffer_size);
++
++	window = options.hpn_buffer_size;
++
++	channel_set_hpn(options.hpn_disabled, options.hpn_buffer_size);
++
+ 	packetmax = CHAN_SES_PACKET_DEFAULT;
+ 	if (tty_flag) {
++		window = 4*CHAN_SES_PACKET_DEFAULT;
+ 		window >>= 1;
+ 		packetmax >>= 1;
+ 	}
+@@ -1189,7 +1262,10 @@
+ 	    "session", SSH_CHANNEL_OPENING, in, out, err,
+ 	    window, packetmax, CHAN_EXTENDED_WRITE,
+ 	    "client-session", /*nonblock*/0);
+-
++	if ((options.tcp_rcv_buf_poll > 0) && (!options.hpn_disabled)) {
++		c->dynamic_window = 1;
++		debug ("Enabled Dynamic Window Scaling\n");
++	}
+ 	debug3("ssh_session2_open: channel_new: %d", c->self);
+ 
+ 	channel_send_open(c->self);
+diff -urN sshconnect.c sshconnect.c
+--- sshconnect.c	2009-02-01 14:19:54.000000000 +0300
++++ sshconnect.c	2009-05-02 17:38:19.000000000 +0400
+@@ -165,6 +165,31 @@
+ }
+ 
+ /*
++ * Set TCP receive buffer if requested.
++ * Note: tuning needs to happen after the socket is
++ * created but before the connection happens
++ * so winscale is negotiated properly -cjr
++ */
++static void
++ssh_set_socket_recvbuf(int sock)
++{
++	void *buf = (void *)&options.tcp_rcv_buf;
++	int sz = sizeof(options.tcp_rcv_buf);
++	int socksize;
++	int socksizelen = sizeof(int);
++
++	debug("setsockopt Attempting to set SO_RCVBUF to %d", options.tcp_rcv_buf);
++	if (setsockopt(sock, SOL_SOCKET, SO_RCVBUF, buf, sz) >= 0) {
++	  getsockopt(sock, SOL_SOCKET, SO_RCVBUF, &socksize, &socksizelen);
++	  debug("setsockopt SO_RCVBUF: %.100s %d", strerror(errno), socksize);
++	}
++	else
++		error("Couldn't set socket receive buffer to %d: %.100s",
++		    options.tcp_rcv_buf, strerror(errno));
++}
++
++
++/*
+  * Creates a (possibly privileged) socket for use as the ssh connection.
+  */
+ static int
+@@ -187,12 +212,18 @@
+ 			    strerror(errno));
+ 		else
+ 			debug("Allocated local port %d.", p);
++
++		if (options.tcp_rcv_buf > 0)
++			ssh_set_socket_recvbuf(sock);		
+ 		return sock;
+ 	}
+ 	sock = socket(ai->ai_family, ai->ai_socktype, ai->ai_protocol);
+ 	if (sock < 0)
+ 		error("socket: %.100s", strerror(errno));
+ 
++	if (options.tcp_rcv_buf > 0)
++		ssh_set_socket_recvbuf(sock);
++	
+ 	/* Bind the socket to an alternative local IP address */
+ 	if (options.bind_address == NULL)
+ 		return sock;
+@@ -536,7 +567,7 @@
+ 	snprintf(buf, sizeof buf, "SSH-%d.%d-%.100s%s",
+ 	    compat20 ? PROTOCOL_MAJOR_2 : PROTOCOL_MAJOR_1,
+ 	    compat20 ? PROTOCOL_MINOR_2 : minor1,
+-	    SSH_VERSION, compat20 ? "\r\n" : "\n");
++	    SSH_RELEASE, compat20 ? "\r\n" : "\n");
+ 	if (atomicio(vwrite, connection_out, buf, strlen(buf)) != strlen(buf))
+ 		fatal("write: %.100s", strerror(errno));
+ 	client_version_string = xstrdup(buf);
+diff -urN sshconnect2.c sshconnect2.c
+--- sshconnect2.c	2008-11-05 08:20:47.000000000 +0300
++++ sshconnect2.c	2009-05-02 17:38:19.000000000 +0400
+@@ -78,6 +78,12 @@
+ extern char *client_version_string;
+ extern char *server_version_string;
+ extern Options options;
++extern Kex *xxx_kex;
++
++/* tty_flag is set in ssh.c. use this in ssh_userauth2 */
++/* if it is set then prevent the switch to the null cipher */
++
++extern int tty_flag;
+ 
+ /*
+  * SSH2 key exchange
+@@ -350,6 +356,28 @@
+ 	pubkey_cleanup(&authctxt);
+ 	dispatch_range(SSH2_MSG_USERAUTH_MIN, SSH2_MSG_USERAUTH_MAX, NULL);
+ 
++	/* if the user wants to use the none cipher do it */
++	/* post authentication and only if the right conditions are met */
++	/* both of the NONE commands must be true and there must be no */
++	/* tty allocated */
++	if ((options.none_switch == 1) && (options.none_enabled == 1)) 
++	{
++		if (!tty_flag) /* no null on tty sessions */
++		{
++			debug("Requesting none rekeying...");
++			myproposal[PROPOSAL_ENC_ALGS_STOC] = "none";
++			myproposal[PROPOSAL_ENC_ALGS_CTOS] = "none";
++			kex_prop2buf(&xxx_kex->my,myproposal);
++			packet_request_rekeying();
++			fprintf(stderr, "WARNING: ENABLED NONE CIPHER\n");
++		}
++		else
++		{
++			/* requested NONE cipher when in a tty */
++			debug("Cannot switch to NONE cipher with tty allocated");
++			fprintf(stderr, "NONE cipher switch disabled when a TTY is allocated\n");
++		}
++	}
+ 	debug("Authentication succeeded (%s).", authctxt.method->name);
+ }
+ 
+diff -urN sshd.c sshd.c
+--- sshd.c	2009-05-02 17:37:11.000000000 +0400
++++ sshd.c	2009-05-02 17:38:19.000000000 +0400
+@@ -143,6 +143,9 @@
+ #define REEXEC_CONFIG_PASS_FD		(STDERR_FILENO + 3)
+ #define REEXEC_MIN_FREE_FD		(STDERR_FILENO + 4)
+ 
++int myflag = 0;
++
++
+ extern char *__progname;
+ 
+ /* Server configuration options. */
+@@ -422,7 +425,7 @@
+ 		minor = PROTOCOL_MINOR_1;
+ 	}
+ 	snprintf(buf, sizeof buf, "SSH-%d.%d-%.100s%s", major, minor,
+-	    SSH_VERSION, newline);
++	    SSH_RELEASE, newline);
+ 	server_version_string = xstrdup(buf);
+ 
+ 	/* Send our protocol version identification. */
+@@ -473,6 +476,9 @@
+ 	}
+ 	debug("Client protocol version %d.%d; client software version %.100s",
+ 	    remote_major, remote_minor, remote_version);
++	logit("SSH: Server;Ltype: Version;Remote: %s-%d;Protocol: %d.%d;Client: %.100s",
++	      get_remote_ipaddr(), get_remote_port(),
++	    remote_major, remote_minor, remote_version);
+ 
+ 	compat_datafellows(remote_version);
+ 
+@@ -951,6 +957,8 @@
+ 	int ret, listen_sock, on = 1;
+ 	struct addrinfo *ai;
+ 	char ntop[NI_MAXHOST], strport[NI_MAXSERV];
++	int socksize;
++	int socksizelen = sizeof(int);
+ 
+ 	for (ai = options.listen_addrs; ai; ai = ai->ai_next) {
+ 		if (ai->ai_family != AF_INET && ai->ai_family != AF_INET6)
+@@ -997,6 +1005,11 @@
+ 
+ 		debug("Bind to port %s on %s.", strport, ntop);
+ 
++		getsockopt(listen_sock, SOL_SOCKET, SO_RCVBUF, 
++				   &socksize, &socksizelen);
++		debug("Server TCP RWIN socket size: %d", socksize);
++		debug("HPN Buffer Size: %d", options.hpn_buffer_size);
++
+ 		/* Bind the socket to the desired port. */
+ 		if (bind(listen_sock, ai->ai_addr, ai->ai_addrlen) < 0) {
+ 			error("Bind to port %s on %s failed: %.200s.",
+@@ -1847,6 +1860,9 @@
+ 	/* Log the connection. */
+ 	verbose("Connection from %.500s port %d", remote_ip, remote_port);
+ 
++	/* set the HPN options for the child */
++	channel_set_hpn(options.hpn_disabled, options.hpn_buffer_size);
++
+ 	/*
+ 	 * We don't want to listen forever unless the other side
+ 	 * successfully authenticates itself.  So we set up an alarm which is
+@@ -2201,9 +2217,15 @@
+ {
+ 	Kex *kex;
+ 
++	myflag++;
++	debug ("MYFLAG IS %d", myflag);
+ 	if (options.ciphers != NULL) {
+ 		myproposal[PROPOSAL_ENC_ALGS_CTOS] =
+ 		myproposal[PROPOSAL_ENC_ALGS_STOC] = options.ciphers;
++	} else if (options.none_enabled == 1) {
++		debug ("WARNING: None cipher enabled");
++		myproposal[PROPOSAL_ENC_ALGS_CTOS] =
++		myproposal[PROPOSAL_ENC_ALGS_STOC] = KEX_ENCRYPT_INCLUDE_NONE;
+ 	}
+ 	myproposal[PROPOSAL_ENC_ALGS_CTOS] =
+ 	    compat_cipher_proposal(myproposal[PROPOSAL_ENC_ALGS_CTOS]);
+diff -urN sshd_config sshd_config
+--- sshd_config	2009-05-02 17:37:11.000000000 +0400
++++ sshd_config	2009-05-02 17:38:19.000000000 +0400
+@@ -112,6 +112,20 @@
+ # override default of no subsystems
+ Subsystem	sftp	/usr/libexec/sftp-server
+ 
++# the following are HPN related configuration options
++# tcp receive buffer polling. disable in non autotuning kernels
++#TcpRcvBufPoll yes
++ 
++# allow the use of the none cipher
++#NoneEnabled no
++
++# disable hpn performance boosts. 
++#HPNDisabled no
++
++# buffer size for hpn to non-hpn connections
++#HPNBufferSize 2048
++
++
+ # Example of overriding settings on a per-user basis
+ #Match User anoncvs
+ #	X11Forwarding no
+--- version.h.orig      2009-02-23 03:09:26.000000000 +0300
++++ version.h   2009-05-02 18:53:20.000000000 +0400
+@@ -3,4 +3,5 @@
+ #define SSH_VERSION    "OpenSSH_5.2"
+ 
+ #define SSH_PORTABLE   "p1"
+-#define SSH_RELEASE    SSH_VERSION SSH_PORTABLE
++#define SSH_HPN         "-hpn13v5"
++#define SSH_RELEASE    SSH_VERSION SSH_PORTABLE SSH_HPN
