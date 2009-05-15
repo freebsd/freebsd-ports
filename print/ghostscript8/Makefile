@@ -42,6 +42,7 @@ CONFIGURE_ENV=	${MAKE_ENV} \
 		CPPFLAGS="-DUPD_SIGNAL=0 -I. -I${WRKSRC}/jasper/src/libjasper/include -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-compile-inits \
+		--disable-cups \
 		--enable-contrib \
 		--enable-dynamic \
 		--with-ijs \
