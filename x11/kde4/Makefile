@@ -38,46 +38,46 @@ NO_BUILD=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_KDEACCESSIBILITY)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kmag:${PORTSDIR}/accessibility/kdeaccessibility4
+RUN_DEPENDS+=	kdeaccessibility>=4:${PORTSDIR}/accessibility/kdeaccessibility4
 .endif
 .if !defined(WITHOUT_KDEADMIN)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kuser:${PORTSDIR}/sysutils/kdeadmin4
+RUN_DEPENDS+=	kdeadmin>=4:${PORTSDIR}/sysutils/kdeadmin4
 .endif
 .if !defined(WITHOUT_KDEARTWORK)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kbanner.kss:${PORTSDIR}/x11-themes/kdeartwork4
+RUN_DEPENDS+=	kdeartwork>=4:${PORTSDIR}/x11-themes/kdeartwork4
 .endif
 .if !defined(WITHOUT_KDEGAMES)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kjumpingcube:${PORTSDIR}/games/kdegames4
+RUN_DEPENDS+=	kdegames>=4:${PORTSDIR}/games/kdegames4
 .endif
 .if !defined(WITHOUT_KDEEDU)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/khangman:${PORTSDIR}/misc/kdeedu4
+RUN_DEPENDS+=	kdeedu>=4:${PORTSDIR}/misc/kdeedu4
 .endif
 .if !defined(WITHOUT_KDEGRAPHICS)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/gwenview:${PORTSDIR}/graphics/kdegraphics4
+RUN_DEPENDS+=	kdegraphics>=4:${PORTSDIR}/graphics/kdegraphics4
 .endif
 .if !defined(WITHOUT_KDENETWORK)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kppp:${PORTSDIR}/net/kdenetwork4
+RUN_DEPENDS+=	kdenetwork>=4:${PORTSDIR}/net/kdenetwork4
 .endif
 .if !defined(WITHOUT_KDEMULTIMEDIA)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kmix:${PORTSDIR}/multimedia/kdemultimedia4
+RUN_DEPENDS+=	kdemultimedia>=4:${PORTSDIR}/multimedia/kdemultimedia4
 .endif
 .if !defined(WITHOUT_KDEPIM)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/korganizer:${PORTSDIR}/deskutils/kdepim4
+RUN_DEPENDS+=	kdepim>=4:${PORTSDIR}/deskutils/kdepim4
 .endif
 .if !defined(WITHOUT_KDEPLASMA)
 RUN_DEPENDS+=	kdeplasma-addons>=4:${PORTSDIR}/deskutils/kdeplasma-addons
 .endif
 .if !defined(WITHOUT_KDETOYS)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/amor:${PORTSDIR}/x11-clocks/kdetoys4
+RUN_DEPENDS+=	kdetoys>=4:${PORTSDIR}/x11-clocks/kdetoys4
 .endif
 .if !defined(WITHOUT_KDESDK)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/cervisia:${PORTSDIR}/devel/kdesdk4
+RUN_DEPENDS+=	kdesdk>=4:${PORTSDIR}/devel/kdesdk4
 .endif
 .if !defined(WITHOUT_KDEUTILS)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kdessh:${PORTSDIR}/misc/kdeutils4
+RUN_DEPENDS+=	kdeutils>=4:${PORTSDIR}/misc/kdeutils4
 .endif
 .if !defined(WITHOUT_KDEWEBDEV)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kommander:${PORTSDIR}/www/kdewebdev4
+RUN_DEPENDS+=	kdewebdev>=4:${PORTSDIR}/www/kdewebdev4
 .endif
 .if !defined(WITHOUT_XINE)
 RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/plugins/phonon_backend/phonon_xine.so:${PORTSDIR}/multimedia/phonon-xine
