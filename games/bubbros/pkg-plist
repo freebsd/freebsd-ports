@@ -177,6 +177,7 @@ bin/bubbros
 %%DATADIR%%/bubbob/images/bonus_9.ppm
 %%DATADIR%%/bubbob/images/bubble.ppm
 %%DATADIR%%/bubbob/images/buildcolors.py
+%%DATADIR%%/bubbob/images/butterfly.ppm
 %%DATADIR%%/bubbob/images/cream_pie_big.ppm
 %%DATADIR%%/bubbob/images/diamond_big_blue.ppm
 %%DATADIR%%/bubbob/images/diamond_big_purple.ppm
@@ -224,6 +225,16 @@ bin/bubbros
 %%DATADIR%%/bubbob/images/extra8.ppm
 %%DATADIR%%/bubbob/images/fire_drop.ppm
 %%DATADIR%%/bubbob/images/fire_surface.ppm
+%%DATADIR%%/bubbob/images/fish_0.ppm
+%%DATADIR%%/bubbob/images/fish_1.ppm
+%%DATADIR%%/bubbob/images/fish_2.ppm
+%%DATADIR%%/bubbob/images/fish_3.ppm
+%%DATADIR%%/bubbob/images/fish_4.ppm
+%%DATADIR%%/bubbob/images/fish_5.ppm
+%%DATADIR%%/bubbob/images/fish_6.ppm
+%%DATADIR%%/bubbob/images/fish_7.ppm
+%%DATADIR%%/bubbob/images/fish_8.ppm
+%%DATADIR%%/bubbob/images/fish_9.ppm
 %%DATADIR%%/bubbob/images/flappy.ppm
 %%DATADIR%%/bubbob/images/flapy_angry.ppm
 %%DATADIR%%/bubbob/images/game_over_0.ppm
@@ -257,6 +268,7 @@ bin/bubbros
 %%DATADIR%%/bubbob/images/nasty_angry.ppm
 %%DATADIR%%/bubbob/images/orcy.ppm
 %%DATADIR%%/bubbob/images/orcy_angry.ppm
+%%DATADIR%%/bubbob/images/palettes.dat
 %%DATADIR%%/bubbob/images/pastec_big.ppm
 %%DATADIR%%/bubbob/images/peach_big.ppm
 %%DATADIR%%/bubbob/images/point_0.ppm
@@ -270,6 +282,7 @@ bin/bubbros
 %%DATADIR%%/bubbob/images/point_8.ppm
 %%DATADIR%%/bubbob/images/point_9.ppm
 %%DATADIR%%/bubbob/images/red_Hurry_up.ppm
+%%DATADIR%%/bubbob/images/sheep.ppm
 %%DATADIR%%/bubbob/images/shot.ppm
 %%DATADIR%%/bubbob/images/spinning_drop.ppm
 %%DATADIR%%/bubbob/images/springy.ppm
@@ -318,6 +331,7 @@ bin/bubbros
 %%DATADIR%%/bubbob/statesaver.c
 %%DATADIR%%/bubbob/statesaver.so
 %%DATADIR%%/bubbob/test_rnglevel.py
+%%DATADIR%%/bubbob/save_rnglevel.py
 %%DATADIR%%/bubbob/tmp/pat00.ppm
 %%DATADIR%%/bubbob/tmp/pat01.ppm
 %%DATADIR%%/bubbob/tmp/pat02.ppm
@@ -428,6 +442,8 @@ bin/bubbros
 %%DATADIR%%/metaserver/metaclient.py
 %%DATADIR%%/metaserver/metaserver.py
 %%DATADIR%%/metaserver/metastruct.py
+%%DATADIR%%/metaserver/pipelayer.py
+%%DATADIR%%/metaserver/socketoverudp.py
 @dirrm %%DATADIR%%/bubbob/doc/images
 @dirrm %%DATADIR%%/bubbob/doc
 @dirrm %%DATADIR%%/bubbob/ext1
