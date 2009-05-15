@@ -7,6 +7,7 @@
 
 PORTNAME=	check_bacula
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/bacula
 PKGNAMEPREFIX=	nagios-
