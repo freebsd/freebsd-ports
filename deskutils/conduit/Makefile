@@ -7,6 +7,7 @@
 
 PORTNAME=	conduit
 PORTVERSION=	0.3.15
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
@@ -14,14 +15,12 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Synchronization application for GNOME
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas \
-		${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree \
 		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23 \
 		xmlproc_parse:${PORTSDIR}/textproc/py-xml \
 		py*-vobject>=0.4.8:${PORTSDIR}/deskutils/py-vobject \
 		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas \
-		${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree \
 		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23 \
 		xmlproc_parse:${PORTSDIR}/textproc/py-xml \
 		py*-vobject>=0.4.8:${PORTSDIR}/deskutils/py-vobject \
@@ -52,6 +51,11 @@ CONFIGURE_ARGS+=	--enable-nautilus-extension
 BUILD_DEPENDS+=	eog:${PORTSDIR}/graphics/eog
 RUN_DEPENDS+=	eog:${PORTSDIR}/graphics/eog
 CONFIGURE_ARGS+=	--enable-eog-plugin
+.endif
+
+.if ${PYTHON_REL} < 250
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
 .endif
 
 post-patch:
