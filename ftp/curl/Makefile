@@ -53,6 +53,7 @@ PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	CARES "Asynchronous DNS resolution via c-ares" off \
 		CURL_DEBUG "Enable curl diagnostic output" off \
