@@ -7,7 +7,7 @@
 
 PORTNAME=	fftw3
 PORTVERSION=	3.1.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://ftp.fftw.org/pub/fftw/old/
@@ -22,6 +22,7 @@ FFTW3_FLAVOR?=	default
 FFTW3_SUFX=
 
 GNU_CONFIGURE=	yes
+USE_FORTRAN=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_PERL5_BUILD=yes
 USE_LDCONFIG=	yes
