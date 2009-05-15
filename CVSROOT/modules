@@ -8803,6 +8803,7 @@ moodriver                       ports/net-p2p/moodriver
 moon-buggy                      ports/games/moon-buggy
 moonlander                      ports/games/moonlander
 moonlight                       ports/multimedia/moonlight
+moonshine                       ports/www/moonshine
 mooseekd                        ports/net-p2p/mooseekd
 mopac                           ports/biology/mopac
 mopd                            ports/net/mopd
@@ -10823,6 +10824,7 @@ p5-Data-Password                ports/security/p5-Data-Password
 p5-Data-Postponed               ports/devel/p5-Data-Postponed
 p5-Data-Properties              ports/devel/p5-Data-Properties
 p5-Data-Random                  ports/devel/p5-Data-Random
+p5-Data-Remember                ports/devel/p5-Data-Remember
 p5-Data-Report                  ports/textproc/p5-Data-Report
 p5-Data-RoundRobin              ports/devel/p5-Data-RoundRobin
 p5-Data-Serializer              ports/devel/p5-Data-Serializer
@@ -14171,6 +14173,7 @@ p5-data-password                ports/security/p5-Data-Password
 p5-data-postponed               ports/devel/p5-Data-Postponed
 p5-data-properties              ports/devel/p5-Data-Properties
 p5-data-random                  ports/devel/p5-Data-Random
+p5-data-remember                ports/devel/p5-Data-Remember
 p5-data-report                  ports/textproc/p5-Data-Report
 p5-data-roundrobin              ports/devel/p5-Data-RoundRobin
 p5-data-serializer              ports/devel/p5-Data-Serializer
