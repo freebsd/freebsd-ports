@@ -47,10 +47,13 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/formats/wav.py
 %%PYTHON_SITELIBDIR%%/picard/formats/mutagenext/__init__.py
 %%PYTHON_SITELIBDIR%%/picard/formats/mutagenext/compatid3.py
+%%PYTHON_SITELIBDIR%%/picard/formats/mutagenext/tak.py
 %%PYTHON_SITELIBDIR%%/picard/formats/mutagenext/__init__.pyc
 %%PYTHON_SITELIBDIR%%/picard/formats/mutagenext/compatid3.pyc
+%%PYTHON_SITELIBDIR%%/picard/formats/mutagenext/tak.pyc
 %%PYTHON_SITELIBDIR%%/picard/formats/mutagenext/__init__.pyo
 %%PYTHON_SITELIBDIR%%/picard/formats/mutagenext/compatid3.pyo
+%%PYTHON_SITELIBDIR%%/picard/formats/mutagenext/tak.pyo
 %%PYTHON_SITELIBDIR%%/picard/formats/__init__.pyc
 %%PYTHON_SITELIBDIR%%/picard/formats/apev2.pyc
 %%PYTHON_SITELIBDIR%%/picard/formats/asf.pyc
@@ -74,6 +77,7 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/logview.py
 %%PYTHON_SITELIBDIR%%/picard/ui/mainwindow.py
 %%PYTHON_SITELIBDIR%%/picard/ui/metadatabox.py
+%%PYTHON_SITELIBDIR%%/picard/ui/passworddialog.py
 %%PYTHON_SITELIBDIR%%/picard/ui/puidsubmit.py
 %%PYTHON_SITELIBDIR%%/picard/ui/tageditor.py
 %%PYTHON_SITELIBDIR%%/picard/ui/tagsfromfilenames.py
@@ -83,9 +87,9 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_about.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_cdlookup.py
-%%PYTHON_SITELIBDIR%%/picard/ui/ui_options_cover.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_tageditor.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_cdlookup_win32.py
+%%PYTHON_SITELIBDIR%%/picard/ui/ui_options_cover.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_folksonomy.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_general.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_interface.py
@@ -96,6 +100,7 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_proxy.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_script.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_tags.py
+%%PYTHON_SITELIBDIR%%/picard/ui/ui_passworddialog.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_puidsubmit.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_tagsfromfilenames.py
 %%PYTHON_SITELIBDIR%%/picard/ui/util.py
@@ -156,6 +161,7 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/logview.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/mainwindow.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/metadatabox.pyc
+%%PYTHON_SITELIBDIR%%/picard/ui/passworddialog.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/puidsubmit.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/tageditor.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/tagsfromfilenames.pyc
@@ -165,9 +171,9 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_about.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_cdlookup.pyc
-%%PYTHON_SITELIBDIR%%/picard/ui/ui_options_cover.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_tageditor.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_cdlookup_win32.pyc
+%%PYTHON_SITELIBDIR%%/picard/ui/ui_options_cover.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_folksonomy.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_general.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_interface.pyc
@@ -178,6 +184,7 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_proxy.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_script.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_tags.pyc
+%%PYTHON_SITELIBDIR%%/picard/ui/ui_passworddialog.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_puidsubmit.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_tagsfromfilenames.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/util.pyc
@@ -190,6 +197,7 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/logview.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/mainwindow.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/metadatabox.pyo
+%%PYTHON_SITELIBDIR%%/picard/ui/passworddialog.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/puidsubmit.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/tageditor.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/tagsfromfilenames.pyo
@@ -199,9 +207,9 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_about.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_cdlookup.pyo
-%%PYTHON_SITELIBDIR%%/picard/ui/ui_options_cover.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_tageditor.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_cdlookup_win32.pyo
+%%PYTHON_SITELIBDIR%%/picard/ui/ui_options_cover.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_folksonomy.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_general.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_interface.pyo
@@ -212,6 +220,7 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_proxy.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_script.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_tags.pyo
+%%PYTHON_SITELIBDIR%%/picard/ui/ui_passworddialog.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_puidsubmit.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_tagsfromfilenames.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/util.pyo
@@ -281,8 +290,9 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/tagger.pyo
 %%PYTHON_SITELIBDIR%%/picard/track.pyo
 %%PYTHON_SITELIBDIR%%/picard/webservice.pyo
-%%PYTHON_SITELIBDIR%%/picard-0.10-py2.5.egg-info
+share/locale/ca/LC_MESSAGES/picard.mo
 share/locale/cs/LC_MESSAGES/picard.mo
+share/locale/cy/LC_MESSAGES/picard.mo
 share/locale/da/LC_MESSAGES/picard.mo
 share/locale/de/LC_MESSAGES/picard.mo
 share/locale/en/LC_MESSAGES/picard.mo
@@ -296,6 +306,7 @@ share/locale/he/LC_MESSAGES/picard.mo
 share/locale/hu/LC_MESSAGES/picard.mo
 share/locale/is/LC_MESSAGES/picard.mo
 share/locale/it/LC_MESSAGES/picard.mo
+share/locale/kn/LC_MESSAGES/picard.mo
 share/locale/ko/LC_MESSAGES/picard.mo
 share/locale/lt/LC_MESSAGES/picard.mo
 share/locale/nb/LC_MESSAGES/picard.mo
@@ -310,8 +321,16 @@ share/locale/sl/LC_MESSAGES/picard.mo
 share/locale/sv/LC_MESSAGES/picard.mo
 share/locale/zh_CN/LC_MESSAGES/picard.mo
 share/locale/fy/LC_MESSAGES/picard.mo
+share/locale/sco/LC_MESSAGES/picard.mo
+share/icons/picard-16.png
+share/icons/picard-32.png
+share/applications/picard.desktop
+@dirrmtry share/locale/sco/LC_MESSAGES
+@dirrmtry share/locale/sco
 @dirrmtry share/locale/fy/LC_MESSAGES
 @dirrmtry share/locale/fy
+@dirrmtry share/icons
+@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/picard/util
 @dirrm %%PYTHON_SITELIBDIR%%/picard/ui/options
 @dirrm %%PYTHON_SITELIBDIR%%/picard/ui
