@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ro
-PORTVERSION=	3.8.1
+PORTVERSION=	3.9
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	pyro
@@ -23,10 +23,6 @@ PYDISTUTILS_PKGNAME=	Pyro
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
-
-post-patch:
-	${ECHO} -e 'install-scripts=${PREFIX}/bin\n' \
-		'\n[install-options]\nunattended=1' >> ${WRKSRC}/setup.cfg
 
 post-install:
 .if !defined(NOPORTDOCS)

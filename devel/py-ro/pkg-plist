@@ -95,6 +95,7 @@ bin/pyro-xnsc
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/PyroManual.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/pyro-large.png
 %%PORTDOCS%%%%DOCSDIR%%/pyromanual.css
 %%PORTDOCS%%%%DOCSDIR%%/pyromanual_print.css
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
@@ -224,6 +225,15 @@ bin/pyro-xnsc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/maxclients/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/maxclients/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/maxclients/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobilehierarchy/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobilehierarchy/clientmodule1.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobilehierarchy/clientmodule2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobilehierarchy/clientmodule3.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobilehierarchy/readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobilehierarchy/server/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobilehierarchy/server/servermodule1.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobilehierarchy/server/servermodule2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobilehierarchy/server/servermodule3.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multithread/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multithread/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multithread/server.py
@@ -248,6 +258,15 @@ bin/pyro-xnsc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstart/object.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstart/pyrorun
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstart/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sessions/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sessions/auth_client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sessions/auth_server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sessions/basic_client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sessions/basic_client2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sessions/basic_server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sessions/storage_client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sessions/storage_server_caller.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sessions/storage_server_tls.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/server.py
@@ -259,9 +278,11 @@ bin/pyro-xnsc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssl/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssl/server.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stockquotes/Client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stockquotes/Client_noNS.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stockquotes/MClient.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stockquotes/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stockquotes/Server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stockquotes/Server_noNS.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stresstest/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stresstest/consumer.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stresstest/naming.py
@@ -342,6 +363,7 @@ bin/pyro-xnsc
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ssl/certs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ssl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sessions
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/quickstart-noNS
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/quickstart
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/proxysharing
@@ -349,6 +371,8 @@ bin/pyro-xnsc
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/noNS
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/naming
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/multithread
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mobilehierarchy/server
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mobilehierarchy
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/maxclients
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/logging
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/inheritance
