@@ -19,4 +19,10 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/lexxia
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		does not compile: toString(long unsigned int) cannot be overloaded
+.endif
+
+.include <bsd.port.post.mk>
