@@ -10,7 +10,7 @@ libexec/sdlmame-devel/testkeys
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/config.txt
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
-%%PORTDOCS%%%%DOCSDIR%%/whatsnew_0131u1.txt
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew_0131u2.txt
 %%DATADIR%%/ui.bdf
 %%DATADIR%%/keymaps/km-be.txt
 %%DATADIR%%/keymaps/km-ch.txt
