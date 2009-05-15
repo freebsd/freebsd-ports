@@ -1,3 +1,5 @@
+%%NLS%%share/locale/bg/LC_MESSAGES/pidgin-libnotify.mo
+%%NLS%%share/locale/de/LC_MESSAGES/pidgin-libnotify.mo
 %%NLS%%share/locale/es/LC_MESSAGES/pidgin-libnotify.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/pidgin-libnotify.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/pidgin-libnotify.mo
@@ -10,6 +12,7 @@
 %%NLS%%share/locale/ro/LC_MESSAGES/pidgin-libnotify.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pidgin-libnotify.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/pidgin-libnotify.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/pidgin-libnotify.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pidgin-libnotify.mo
 lib/purple-2/pidgin-libnotify.so
 lib/purple-2/pidgin-libnotify.la
