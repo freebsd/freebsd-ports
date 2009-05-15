@@ -31,10 +31,6 @@ FPIC=	-fPIC
 FPIC=	-fpic
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Fails to link
-.endif
-
 MANSRC=${WRKDIR}/lapack-3.2.0
 WRKSRC_SHARED=${WRKSRC}_shared
 FFLAGS_SHARED=${FPIC}
