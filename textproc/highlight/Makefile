@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	highlight
-PORTVERSION=	2.6.14
+PORTVERSION=	2.8
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
@@ -45,14 +45,10 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${MAN1}.gz ${MANPREFIX}/man/man1
 	@${MKDIR} ${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/filetypes.conf ${ETCDIR}
-	@${MKDIR} ${DATADIR}/helpmsg
-	${INSTALL_DATA} ${WRKSRC}/helpmsg/*.help ${DATADIR}/helpmsg
-	@${MKDIR} ${DATADIR}/indentSchemes
-	${INSTALL_DATA} ${WRKSRC}/indentSchemes/*.indent ${DATADIR}/indentSchemes
-	@${MKDIR} ${DATADIR}/langDefs
-	${INSTALL_DATA} ${WRKSRC}/langDefs/*.lang ${DATADIR}/langDefs
-	@${MKDIR} ${DATADIR}/themes
-	${INSTALL_DATA} ${WRKSRC}/themes/*.style ${DATADIR}/themes
+.for d in helpmsg indentSchemes langDefs themes
+	@${MKDIR} ${DATADIR}/$d
+	${INSTALL_DATA} ${WRKSRC}/$d/* ${DATADIR}/$d
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
