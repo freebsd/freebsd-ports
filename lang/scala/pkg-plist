@@ -1,0 +1,149 @@
+%%PORTDOCS%%%%DOCSDIR%%/sbaz-setup/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/sbaz/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/sbaz/manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+bin/fsc
+bin/sbaz
+bin/sbaz-setup
+bin/scala
+bin/scalac
+bin/scaladoc
+share/%%PORTNAME%%-%%PORTVERSION%%/bin/fsc
+share/%%PORTNAME%%-%%PORTVERSION%%/bin/sbaz
+share/%%PORTNAME%%-%%PORTVERSION%%/bin/sbaz-setup
+share/%%PORTNAME%%-%%PORTVERSION%%/bin/scala
+share/%%PORTNAME%%-%%PORTVERSION%%/bin/scalac
+share/%%PORTNAME%%-%%PORTVERSION%%/bin/scaladoc
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/sbaz-tests.jar
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/sbaz.jar
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/scala-compiler.jar
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/scala-dbc.jar
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/scala-library.jar
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/scala-swing.jar
+share/%%PORTNAME%%-%%PORTVERSION%%/meta/available
+share/%%PORTNAME%%-%%PORTVERSION%%/meta/description
+share/%%PORTNAME%%-%%PORTVERSION%%/meta/installed
+share/%%PORTNAME%%-%%PORTVERSION%%/meta/universe
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz-testall/tests/sbaz
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz/descriptors/README
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz/descriptors/lamp-rc
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz/descriptors/scala-dev
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz/scala-library.jar
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/a2ps/README
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/a2ps/scala.ssh
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/bluefish/README
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/bluefish/highlighting
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/AUTHORS
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/FUTURE
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/Makefile
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/README
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/contrib/README
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/contrib/dot-ctags
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/scala-mode-auto.el
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/scala-mode-constants.el
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/scala-mode-feature-electric.el
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/scala-mode-feature-speedbar.el
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/scala-mode-feature-tags.el
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/scala-mode-feature.el
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/scala-mode-fontlock.el
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/scala-mode-indent.el
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/scala-mode-inf.el
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/scala-mode-lib.el
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/scala-mode-navigation.el
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/scala-mode-ui.el
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/scala-mode-variables.el
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/scala-mode.el
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/enscript/README
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/enscript/scala.st
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/gedit/README
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/gedit/scala.lang
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/geshi/scala-alt.php
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/geshi/scala.php
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/intellij/README
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/intellij/scala.xml
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/jedit/console/README
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/jedit/console/commando/scala.xml
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/jedit/console/commando/scalac.xml
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/jedit/modes/README
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/jedit/modes/scala.xml
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/kate/README
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/kate/scala.xml
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/latex/scaladefs.sty
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/latex/scaladoc.sty
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/latex/scalatex.scm
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/latex/tweaklist.sty
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/latex/verbfilterScala.java
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/notepad-plus/README
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/notepad-plus/userDefineLang.xml
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/scite/README
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/scite/scala.properties
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit/Documentation.webloc
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit/Scala.mode/Contents/Info.plist
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit/Scala.mode/Contents/Resources/AutocompleteAdditions.txt
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit/Scala.mode/Contents/Resources/English.lproj/InfoPlist.strings
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit/Scala.mode/Contents/Resources/English.lproj/Localizable.strings
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit/Scala.mode/Contents/Resources/ModeSettings.xml
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit/Scala.mode/Contents/Resources/RegexSymbols.xml
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit/Scala.mode/Contents/Resources/Scripts/Rot13.scpt
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit/Scala.mode/Contents/Resources/SyntaxDefinition.xml
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit/Scala.mode/Contents/Resources/mytemplate.scala
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit/artwork/SymbolM.psd
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit/artwork/readme.txt
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/textmate/Bundles/Scala.tmbundle.zip
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/textwrangler/README
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/textwrangler/Scala_Configuration.plist
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/vim/README
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/vim/ftdetect/scala.vim
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/vim/indent/scala.vim
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/vim/plugin/31-create-scala.vim
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/vim/syntax/scala.vim
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/xcode/README
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/xcode/Specifications/Scala.pbfilespec
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/xcode/Specifications/Scala.pblangspec
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/xcode/Specifications
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/xcode
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/vim/syntax
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/vim/plugin
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/vim/indent
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/vim/ftdetect
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/vim
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/textwrangler
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/textmate/Bundles
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/textmate
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit/artwork
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit/Scala.mode/Contents/Resources/Scripts
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit/Scala.mode/Contents/Resources/English.lproj
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit/Scala.mode/Contents/Resources
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit/Scala.mode/Contents
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit/Scala.mode
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/subethaedit
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/scite
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/notepad-plus
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/latex
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/kate
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/jedit/modes
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/jedit/console/commando
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/jedit/console
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/jedit
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/intellij
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/geshi
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/gedit
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/enscript
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/contrib
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/bluefish
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/a2ps
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz/descriptors
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz-testall/tests
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz-testall
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/meta
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/bin
+@dirrmtry share/%%PORTNAME%%-%%PORTVERSION%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sbaz-setup
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sbaz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -299,6 +299,7 @@
     SUBDIR += sather-specification
     SUBDIR += sather-tutorial
     SUBDIR += sbcl
+    SUBDIR += scala
     SUBDIR += scheme48
     SUBDIR += schemetoc
     SUBDIR += scm
