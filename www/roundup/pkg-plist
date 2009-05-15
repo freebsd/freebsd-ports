@@ -10,6 +10,15 @@ bin/roundup-xmlrpc-server
 %%PYTHON_SITELIBDIR%%/roundup/admin.py
 %%PYTHON_SITELIBDIR%%/roundup/admin.pyc
 %%PYTHON_SITELIBDIR%%/roundup/admin.pyo
+%%PYTHON_SITELIBDIR%%/roundup/anypy/__init__.py
+%%PYTHON_SITELIBDIR%%/roundup/anypy/__init__.pyc
+%%PYTHON_SITELIBDIR%%/roundup/anypy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/roundup/anypy/hashlib_.py
+%%PYTHON_SITELIBDIR%%/roundup/anypy/hashlib_.pyc
+%%PYTHON_SITELIBDIR%%/roundup/anypy/hashlib_.pyo
+%%PYTHON_SITELIBDIR%%/roundup/anypy/sets_.py
+%%PYTHON_SITELIBDIR%%/roundup/anypy/sets_.pyc
+%%PYTHON_SITELIBDIR%%/roundup/anypy/sets_.pyo
 %%PYTHON_SITELIBDIR%%/roundup/backends/__init__.py
 %%PYTHON_SITELIBDIR%%/roundup/backends/__init__.pyc
 %%PYTHON_SITELIBDIR%%/roundup/backends/__init__.pyo
@@ -172,6 +181,9 @@ bin/roundup-xmlrpc-server
 %%PYTHON_SITELIBDIR%%/roundup/configuration.py
 %%PYTHON_SITELIBDIR%%/roundup/configuration.pyc
 %%PYTHON_SITELIBDIR%%/roundup/configuration.pyo
+%%PYTHON_SITELIBDIR%%/roundup/actions.py
+%%PYTHON_SITELIBDIR%%/roundup/actions.pyc
+%%PYTHON_SITELIBDIR%%/roundup/actions.pyo
 %%PYTHON_SITELIBDIR%%/roundup/date.py
 %%PYTHON_SITELIBDIR%%/roundup/date.pyc
 %%PYTHON_SITELIBDIR%%/roundup/date.pyo
@@ -340,6 +352,7 @@ share/locale/zh_TW/LC_MESSAGES/roundup.mo
 @dirrm %%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates
 @dirrm %%PYTHON_SITELIBDIR%%/roundup/cgi
 @dirrm %%PYTHON_SITELIBDIR%%/roundup/backends
+@dirrm %%PYTHON_SITELIBDIR%%/roundup/anypy
 @dirrm %%PYTHON_SITELIBDIR%%/roundup
 @dirrmtry share/locale/es_AR/LC_MESSAGES
 @dirrmtry share/locale/es_AR

@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	roundup
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.8
 CATEGORIES=	www python
-MASTER_SITES=	${MASTER_SITE_CHEESESHOP} \
-		http://dryice.name/computer/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	source/r/${PORTNAME}
+MASTER_SITES=	CHEESESHOP
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sbrabez@gmail.com
 COMMENT=	An Issue-Tracking System for Knowledge Workers
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 USE_GETTEXT=	yes
 
 OPTIONS=	SQLITE	"Support Sqlite as backend" on
@@ -41,7 +39,19 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopgmodule.so:${PORTSDIR}/databases/py-psy
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
+.if !defined(NO_INSTALL_MANPAGES)
 MAN1=		roundup-admin.1 roundup-demo.1 roundup-mailgw.1 \
 		roundup-server.1
+MANCOMPRESSED=	no
+.endif
+
+SCRIPTS=	roundup-admin roundup-demo roundup-gettext roundup-mailgw \
+		roundup-server roundup-xmlrpc-server
+
+post-install:
+	@${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/build/scripts-2.5/,} ${PREFIX}/bin
+.if !defined(NO_INSTALL_MANPAGES)
+	@${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/share/man/man1/,} ${MAN1PREFIX}/man/man1
+.endif
 
 .include <bsd.port.post.mk>
