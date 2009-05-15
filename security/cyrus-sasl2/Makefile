@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	2.1.22
-PORTREVISION=	2
+PORTVERSION=	2.1.23
+#PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
