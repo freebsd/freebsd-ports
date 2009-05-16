@@ -8,7 +8,7 @@
 
 PORTNAME=	gdm
 PORTVERSION=	2.26.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -36,7 +36,7 @@ USE_GNOME=	gnomehack intlhack gnomehier libgnomeui librsvg2 gnomedocutils \
 GCONF_SCHEMAS=	gdm-simple-greeter.schemas
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-working-directory=${PREFIX}/etc/gdm/home
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAS_SA_LEN" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GTKDOC="false"
 
@@ -47,7 +47,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 GNOME_LOCALSTATEDIR=	/var
 
-OPTIONS=	IPV6 "Enable IPv6 support" on \
+OPTIONS=	IPV6 "Enable IPv6 support" off \
 		KEYRING "Enable GnomeKeyring/PAM integration" on
 
 .include <bsd.port.pre.mk>
@@ -59,7 +59,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/pam_gnome_keyring.so:${PORTSDIR}/security/gnome-k
 SUB_LIST+=	PAM_KEYRING=
 .endif
 
-.if !defined(WITHOUT_IPV6)
+.if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
