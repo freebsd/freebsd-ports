@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	misc devel
 PKGNAMESUFFIX=	-libuuid
 
@@ -38,14 +38,17 @@ PKGDIR=		${.CURDIR}
 post-patch::
 	${REINPLACE_CMD} -e 's,/var/lib/libuuid,/var/run/libuuid,g' \
 	    -e 's,/usr/sbin/uuidd,${PREFIX}/sbin/uuidd,' \
-	    ${WRKSRC}/lib/uuid/uuidd.h
+	    ${WRKSRC}/lib/uuid/*.[ch]
 
 pre-build:
 	${MKDIR} ${WRKSRC}/lib/uuid/elfshared
 
+# ulimit guards against runaway tests
+# failure to launch uuidd is fine (one might be running, or we may lack
+# privileges); if it works, it'll quit after 50 seconds
 post-build:
 	cd ${WRKSRC}/misc && ${MAKE} uuidgen uuidgen.1 uuidd uuidd.8
-	cd ${INSTALL_WRKSRC} && ${MAKE} check
+	( ulimit -t 5 ; cd ${INSTALL_WRKSRC} && { ../../misc/uuidd -T50 || true ; ${MAKE} check ; } )
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/misc/uuidgen ${PREFIX}/bin/

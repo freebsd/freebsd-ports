@@ -1,0 +1,109 @@
+--- /dev/null
++++ b/lib/read_all.h
+@@ -0,0 +1,32 @@
++/*
++ * read_all - a read variant that masks EAGAIN and EINTR.
++ * This function tries hard to make sure to read the complete requested
++ * length, and if it hits EOF while reading, it returns 0.
++ *
++ * Originally written by Theodore Y. Ts'o.
++ * Factored out from misc/uuidd.c and lib/uuid/gen_uuid.c
++ * and bugfixed by Matthias Andree, 2009.
++ */
++
++ssize_t read_all(int fd, char *buf, size_t count)
++{
++	ssize_t ret;
++	ssize_t c = 0;
++
++	memset(buf, 0, count);
++	while (count > 0) {
++		ret = read(fd, buf, count);
++		if (ret == -1) {
++			if ((errno == EAGAIN) || (errno == EINTR))
++				continue;
++			return -1;
++		}
++		if (ret == 0) {
++			return c;
++		}
++		count -= ret;
++		buf += ret;
++		c += ret;
++	}
++	return c;
++}
+--- a/lib/uuid/Makefile.in
++++ b/lib/uuid/Makefile.in
+@@ -190,7 +190,7 @@ clear.o: $(srcdir)/clear.c $(srcdir)/uuidP.h $(srcdir)/uuid.h
+ compare.o: $(srcdir)/compare.c $(srcdir)/uuidP.h $(srcdir)/uuid.h
+ copy.o: $(srcdir)/copy.c $(srcdir)/uuidP.h $(srcdir)/uuid.h
+ gen_uuid.o: $(srcdir)/gen_uuid.c $(srcdir)/uuidP.h $(srcdir)/uuid.h \
+- $(srcdir)/uuidd.h
++ $(srcdir)/uuidd.h $(top_srcdir)/lib/read_all.h
+ isnull.o: $(srcdir)/isnull.c $(srcdir)/uuidP.h $(srcdir)/uuid.h
+ pack.o: $(srcdir)/pack.c $(srcdir)/uuidP.h $(srcdir)/uuid.h
+ parse.o: $(srcdir)/parse.c $(srcdir)/uuidP.h $(srcdir)/uuid.h
+--- a/lib/uuid/gen_uuid.c
++++ b/lib/uuid/gen_uuid.c
+@@ -415,25 +415,11 @@ try_again:
+ 	return 0;
+ }
+ 
+-static ssize_t read_all(int fd, char *buf, size_t count)
+-{
+-	ssize_t ret;
+-	ssize_t c = 0;
+-
+-	memset(buf, 0, count);
+-	while (count > 0) {
+-		ret = read(fd, buf, count);
+-		if (ret < 0) {
+-			if ((errno == EAGAIN) || (errno == EINTR))
+-				continue;
+-			return -1;
+-		}
+-		count -= ret;
+-		buf += ret;
+-		c += ret;
+-	}
+-	return c;
+-}
++/*
++ * Import read_all function and make it static.
++ */
++static
++#include "read_all.h"
+ 
+ /*
+  * Close all file descriptors
+--- a/misc/uuidd.c
++++ b/misc/uuidd.c
+@@ -85,25 +85,8 @@ static void create_daemon(void)
+ 		die("setreuid");
+ }
+ 
+-static int read_all(int fd, char *buf, size_t count)
+-{
+-	ssize_t ret;
+-	int c = 0;
+-
+-	memset(buf, 0, count);
+-	while (count > 0) {
+-		ret = read(fd, buf, count);
+-		if (ret < 0) {
+-			if ((errno == EAGAIN) || (errno == EINTR))
+-				continue;
+-			return -1;
+-		}
+-		count -= ret;
+-		buf += ret;
+-		c += ret;
+-	}
+-	return c;
+-}
++static
++#include "read_all.h"
+ 
+ static int write_all(int fd, char *buf, size_t count)
+ {
