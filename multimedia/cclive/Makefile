@@ -7,6 +7,7 @@
 
 PORTNAME=	cclive
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	multimedia net
 MASTER_SITES=	GOOGLE_CODE
 
@@ -33,11 +34,16 @@ USE_GNOME=	pkgconfig
 .if defined(WITH_PERL)
 CONFIGURE_ARGS+=--with-perl
 USE_PERL5=	5.8.2+
+BUILD_DEPENDS+=	p5-HTML-Parser>=3.59:${PORTSDIR}/www/p5-HTML-Parser
 RUN_DEPENDS+=	p5-HTML-Parser>=3.59:${PORTSDIR}/www/p5-HTML-Parser
+.else
+CONFIGURE_ARGS+=--without-perl
 .endif
 
 .if defined(WITH_SIGWINCH)
-CONFIGURE_ARGS+=	--enable-sigwinch
+CONFIGURE_ARGS+=--enable-sigwinch
+.else
+CONFIGURE_ARGS+=--disable-sigwinch
 .endif
 
 .include <bsd.port.post.mk>
