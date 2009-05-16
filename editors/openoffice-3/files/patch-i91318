@@ -1,16 +1,11 @@
-Index: hunspell/hunspell-1.1.12.patch
-===================================================================
-RCS file: /cvs/external/hunspell/hunspell-1.1.12.patch,v
-retrieving revision 1.12
-diff -u -r1.12 hunspell-1.1.12.patch
---- hunspell/hunspell-1.1.12.patch	2 Jul 2008 09:46:59 -0000	1.12
-+++ hunspell/hunspell-1.1.12.patch	10 Aug 2008 01:02:29 -0000
-@@ -487,3 +487,11 @@
-  i68568utf.test \
-  1706659.test \
-  digits_in_words.test \
-+--- misc/hunspell-1.1.12/tests/test.sh	2007-07-15 22:33:13.000000000 +0900
-++++ misc/build/hunspell-1.1.12/tests/test.sh	2008-08-10 10:00:33.000000000 +0900
+--- hunspell/hunspell-1.2.8.patch~	2009-02-21 08:52:35.000000000 +0900
++++ hunspell/hunspell-1.2.8.patch	2009-03-05 09:30:33.000000000 +0900
+@@ -619,3 +619,11 @@
+              p++;
+          }
+          if (i > 0 && buf[i - 1] == '\n') {
++--- misc/hunspell-1.2.8/tests/test.sh	2007-07-15 22:33:13.000000000 +0900
+++++ misc/build/hunspell-1.2.8/tests/test.sh	2008-08-10 10:00:33.000000000 +0900
 +@@ -1,4 +1,4 @@
 +-#!/bin/bash
 ++#!/usr/bin/env bash

@@ -1,0 +1,11 @@
+--- openssl/makefile.mk~	2009-04-25 09:42:18.000000000 +0900
++++ openssl/makefile.mk	2009-04-25 13:00:45.000000000 +0900
+@@ -65,7 +65,7 @@
+ OUT2LIB += libcrypto.*
+ OUT2INC += include/openssl/*
+ 
+-.IF "$(OS)" == "LINUX"
++.IF "$(OS)" == "LINUX" || "$(OS)" == "FREEBSD"
+ 	PATCH_FILE_NAME=openssllnx.patch
+ 	ADDITIONAL_FILES:= \
+ 		libcrypto_OOo_0_9_8k.map \

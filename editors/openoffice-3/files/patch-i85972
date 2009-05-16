@@ -31,23 +31,19 @@ diff -u -r1.4 lp_solve_5.5.patch
 ++fi
 ++
 ++rm *.o 2>/dev/null
-Index: lpsolve/makefile.mk
-===================================================================
-RCS file: /cvs/external/lpsolve/makefile.mk,v
-retrieving revision 1.5
-diff -u -r1.5 makefile.mk
---- lpsolve/makefile.mk	11 Apr 2008 07:18:41 -0000	1.5
-+++ lpsolve/makefile.mk	3 Jul 2008 00:20:53 -0000
+
+--- lpsolve/makefile.mk.orig	2008-12-24 09:40:11.000000000 +0900
++++ lpsolve/makefile.mk	2008-12-24 12:09:06.000000000 +0900
 @@ -46,7 +46,7 @@
  PATCH_FILE_NAME=lp_solve_5.5-windows.patch
  .ELSE
  PATCH_FILE_NAME=lp_solve_5.5.patch
--ADDITIONAL_FILES=lpsolve55$/ccc.solaris
-+ADDITIONAL_FILES=lpsolve55$/ccc.solaris lpsolve55$/ccc.freebsd
+-ADDITIONAL_FILES=lpsolve55$/ccc.solaris lpsolve55$/ccc.os2
++ADDITIONAL_FILES=lpsolve55$/ccc.solaris lpsolve55$/ccc.os2 lpsolve55$/ccc.freebsd
  .ENDIF
  
  CONFIGURE_DIR=
-@@ -70,11 +70,16 @@
+@@ -73,11 +73,16 @@
  .IF "$(COMNAME)"=="sunpro5"
  BUILD_ACTION=sh ccc.solaris
  .ELSE

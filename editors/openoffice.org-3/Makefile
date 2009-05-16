@@ -31,7 +31,7 @@ DISTFILES+=	${CWSARCHIVE}:cws
 .endif
 CWSARCHIVE=	${WITH_CWS}.tar.gz
 
-OOOVERSION=	3.0.1
+OOOVERSION=	3.1.0
 NO_LATEST_LINK=	yes
 USE_GNOME=	desktopfileutils gtk20
 MOZILLA_VERSION=	1.7.5
@@ -72,8 +72,8 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-MILESTONE?=		15
-OOOTAG?=		OOO300_m${MILESTONE}
+MILESTONE?=		11
+OOOTAG?=		OOO310_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOVERSION}
@@ -132,7 +132,6 @@ LIB_DEPENDS+=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 USE_BISON=	build
 GNU_CONFIGURE=	yes
 WRKSRC?=		${WRKDIR}/${OOOTAG}
-CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 MAXPROCESSES?=	1
@@ -176,7 +175,13 @@ pre-everything::
 	@${TOUCH} ${BUILD_COOKIE}
 .endif
 
+#issue XXXXXX not raised yet...
+CRLFFILES=curl/curl*patch neon/neon*patch
+
 post-extract:
+	for i in ${CRLFFILES};  do \
+		cd ${WRKSRC} ; ${REINPLACE_CMD} -e 's###g' $$i ; \
+	done
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
 .if defined(WITH_CWS)
 	cd ${WRKSRC} ; ${TAR} xvfz ${DISTDIR}/${DIST_SUBDIR}/${CWSARCHIVE}
@@ -189,6 +194,7 @@ post-extract:
 .if !defined(WITHOUT_MOZILLA)
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_SOURCE} ${WRKSRC}/moz/download
 .endif
+
 pre-configure:
 #Workaround for gperf. #i85469#
 	@${LN} -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/solenv/bin/gperf
