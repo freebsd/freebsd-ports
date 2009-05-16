@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="48aab1d0-4252-11de-b67a-0030843d3802">
+    <topic>libwmf -- integer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>libwmf</name>
+	<range><lt>0.2.8.4_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/20921">
+	  <p>infamous41md has reported a vulnerability in libwmf, which
+	    potentially can be exploited by malicious people to compromise an
+	    application using the vulnerable library.</p>
+	  <p>The vulnerability is caused due to an integer overflow error when
+	    allocating memory based on a value taken directly from a WMF file
+	    without performing any checks. This can be exploited to cause a
+	    heap-based buffer overflow when a specially crafted WMF file is
+	    processed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>18751</bid>
+      <cvename>CVE-2006-3376</cvename>
+      <url>http://secunia.com/advisories/20921/</url>
+    </references>
+    <dates>
+      <discovery>2006-07-03</discovery>
+      <entry>2009-05-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bfe218a5-4218-11de-b67a-0030843d3802">
     <topic>moinmoin -- cross-site scripting vulnerabilities</topic>
     <affects>
