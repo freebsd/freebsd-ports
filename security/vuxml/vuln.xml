@@ -51,24 +51,24 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The Drupal Project reports:</p>
 	<blockquote cite="http://drupal.org/node/461886">
 	  <p>When outputting user-supplied data Drupal strips potentially
-	  dangerous HTML attributes and tags or escapes characters which
-	  have a special meaning in HTML. This output filtering secures the
-	  site against cross site scripting attacks via user input.</p>
+	    dangerous HTML attributes and tags or escapes characters which
+	    have a special meaning in HTML. This output filtering secures the
+	    site against cross site scripting attacks via user input.</p>
 	  <p>Certain byte sequences that are valid in the UTF-8 specification
-	  are potentially dangerous when interpreted as UTF-7. Internet
-	  Explorer 6 and 7 may decode these characters as UTF-7 if they
-	  appear before the &lt;meta http-equiv="Content-Type" /&gt; tag that
-	  specifies the page content as UTF-8, despite the fact that Drupal
-	  also sends a real HTTP header specifying the content as UTF-8.
-	  This enables attackers to execute cross site scripting attacks
-	  with UTF-7. SA-CORE-2009-005 - Drupal core - Cross site scripting
-	  contained an incomplete fix for the issue. HTML exports of books
-	  are still vulnerable, which means that anyone with edit
-	  permissions for pages in outlines is able to insert arbitrary HTML
-	  and script code in these exports.</p>
+	    are potentially dangerous when interpreted as UTF-7. Internet
+	    Explorer 6 and 7 may decode these characters as UTF-7 if they
+	    appear before the &lt;meta http-equiv="Content-Type" /&gt; tag that
+	    specifies the page content as UTF-8, despite the fact that Drupal
+	    also sends a real HTTP header specifying the content as UTF-8.
+	    This enables attackers to execute cross site scripting attacks
+	    with UTF-7. SA-CORE-2009-005 - Drupal core - Cross site scripting
+	    contained an incomplete fix for the issue. HTML exports of books
+	    are still vulnerable, which means that anyone with edit
+	    permissions for pages in outlines is able to insert arbitrary HTML
+	    and script code in these exports.</p>
 	  <p>Additionally, the taxonomy module allows users with the
-	  'administer taxonomy' permission to inject arbitrary HTML and
-	  script code in the help text of any vocabulary. </p>
+	    'administer taxonomy' permission to inject arbitrary HTML and
+	    script code in the help text of any vocabulary. </p>
 	</blockquote>
      </body>
    </description>
@@ -96,7 +96,7 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>The sasl_encode64() function converts a string into
 	    base64. The Cyrus SASL library contains buffer overflows
 	    that occur because of unsafe use of the sasl_encode64()
-	    function. </p>
+	    function.</p>
 	</blockquote>
       </body>
     </description>
