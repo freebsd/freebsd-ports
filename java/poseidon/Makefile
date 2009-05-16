@@ -8,9 +8,8 @@
 PORTNAME=	poseidon
 PORTVERSION=	6.0.2
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.gentleware.biz/ \
-		ftp://88.198.45.102/ \
-		http://88.198.45.102:81/
+MASTER_SITES=	http://download.gentleware.com/ \
+		ftp://gentleware.com/
 DISTNAME=	${PORTNAME}${EDITION}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
