@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4a638895-41b7-11de-b1cc-00219b0fc4d8">
+    <topic>mod_perl -- cross site scripting in Apache::Status</topic>
+    <affects>
+      <package>
+	<name>mod_perl</name>
+	<range><lt>1.31</lt></range>
+      </package>
+      <package>
+	<name>mod_perl2</name>
+	<range><lt>2.05</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>US Cert reports:</p>
+        <blockquote
+          cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0796">
+	  <p>Cross-site scripting (XSS) vulnerability in Status.pm in
+            Apache::Status and Apache2::Status in mod_perl1 and mod_perl2 for
+            the Apache HTTP Server, when /perl-status is accessible, allows
+            remote attackers to inject arbitrary web script or HTML via the URI.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/34597</url>
+    </references>
+    <dates>
+      <discovery>2009-02-28</discovery>
+      <entry>2009-05-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a6605f4b-4067-11de-b444-001372fd0af2">
     <topic>drupal -- cross-site scripting</topic>
     <affects>
