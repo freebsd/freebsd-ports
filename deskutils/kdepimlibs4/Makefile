@@ -30,6 +30,8 @@ QT_COMPONENTS=	corelib opengl dbus qt3support \
 USE_OPENLDAP=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+.include <bsd.port.pre.mk>
+
 .if exists(${LOCALBASE}/lib/libgpgme-pth.so)
 PLIST_SUB+=	WITH_PTH=''
 .else
@@ -41,4 +43,4 @@ post-extract:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/../cmake/modules/*.cmake
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
