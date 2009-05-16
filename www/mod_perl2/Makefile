@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_perl
 PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
@@ -100,6 +100,7 @@ pre-fetch:
 
 pre-configure:
 	${RM} ${WRKSRC}/lib/ModPerl/BuildMM.pm.orig
+	${RM} ${WRKSRC}/lib/Apache2/Status.pm.orig
 
 post-install:
 	${MKDIR} ${PREFIX}/${APACHEINCLUDEDIR}/modules/perl
