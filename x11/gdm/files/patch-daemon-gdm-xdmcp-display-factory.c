@@ -1,5 +1,5 @@
 --- daemon/gdm-xdmcp-display-factory.c.orig	2009-03-16 16:12:08.000000000 -0400
-+++ daemon/gdm-xdmcp-display-factory.c	2009-05-11 02:35:37.000000000 -0400
++++ daemon/gdm-xdmcp-display-factory.c	2009-05-16 18:17:26.000000000 -0400
 @@ -35,6 +35,7 @@
  #include <netdb.h>
  #include <arpa/inet.h>
@@ -8,6 +8,15 @@
  #ifdef HAVE_SYS_SOCKIO_H
  #include <sys/sockio.h>
  #endif
+@@ -76,7 +77,7 @@ int deny_severity = LOG_WARNING;
+ #define DEFAULT_USE_MULTICAST         FALSE
+ #define DEFAULT_MULTICAST_ADDRESS     "ff02::1"
+ #define DEFAULT_HONOR_INDIRECT        TRUE
+-#define DEFAULT_MAX_DISPLAYS_PER_HOST 1
++#define DEFAULT_MAX_DISPLAYS_PER_HOST 2
+ #define DEFAULT_MAX_DISPLAYS          16
+ #define DEFAULT_MAX_PENDING_DISPLAYS  4
+ #define DEFAULT_MAX_WAIT              30
 @@ -404,6 +405,11 @@ static int
  create_socket (struct addrinfo *ai)
  {
