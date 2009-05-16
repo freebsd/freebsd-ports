@@ -1871,6 +1871,7 @@ cuneiform                       ports/graphics/cuneiform
 cunit                           ports/devel/cunit
 cups                            ports/print/cups
 cups-base                       ports/print/cups-base
+cups-bjnp                       ports/print/cups-bjnp
 cups-client                     ports/print/cups-client
 cups-magicolor                  ports/print/cups-magicolor
 cups-pdf                        ports/print/cups-pdf
@@ -20547,6 +20548,7 @@ sbniconfig                      ports/sysutils/sbniconfig
 sbox-dtc                        ports/www/sbox-dtc
 sc                              ports/math/sc
 sc-aspell                       ports/textproc/sc-aspell
+scala                           ports/lang/scala
 scalapack                       ports/math/scalapack
 scale2x                         ports/graphics/scale2x
 scamp                           ports/security/scamp
