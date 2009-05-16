@@ -7,6 +7,7 @@
 
 PORTNAME=	Inline
 PORTVERSION=	0.44
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Write Perl subroutines in other programming languages
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Parse-RecDescent>=1.8:${PORTSDIR}/devel/p5-Parse-RecDescent
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -24,4 +24,10 @@ MAN3=		Inline-API.3 Inline-FAQ.3 Inline-Support.3 Inline.3 \
 		Inline::C-Cookbook.3 Inline::C.3 \
 		Inline::C::ParseRecDescent.3 Inline::C::ParseRegExp.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Digest-MD5>=2.09:${PORTSDIR}/security/p5-Digest-MD5
+.endif
+
+.include <bsd.port.post.mk>
