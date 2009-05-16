@@ -18,6 +18,8 @@ COMMENT=	A "lightweight programmer's editor" with syntax highlighting
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

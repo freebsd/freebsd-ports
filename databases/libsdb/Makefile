@@ -16,6 +16,8 @@ DISTNAME=	sdb-${PORTVERSION}
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Simple database library
 
+MAKE_JOBS_UNSAFE=	yes
+
 HAS_CONFIGURE=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}" CC="${CC}" CFLAGS="${CFLAGS}"
 USE_LDCONFIG=	yes
