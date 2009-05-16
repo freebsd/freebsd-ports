@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	mapnik
-PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	${MASTER_SITE_BERLIOS}/${PORTNAME}/
-DISTNAME=	mapnik_src-${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Free Toolkit For Developing Mapping Applications
@@ -20,10 +18,16 @@ LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
 		ltdl:${PORTSDIR}/devel/libltdl15 \
 		png:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff \
+		cairo.2:${PORTSDIR}/graphics/cairo \
 		iconv:${PORTSDIR}/converters/libiconv
 BUILD_DEPENDS=	${LOCALBASE}/bin/freetype-config:${PORTSDIR}/print/freetype2 \
+		${PYTHON_PKGNAMEPREFIX}icu>=0.8.1:${PORTSDIR}/devel/py-icu \
+		${PYTHON_PKGNAMEPREFIX}cairo>=1.8.2:${PORTSDIR}/graphics/py-cairo \
+		${LOCALBASE}/include/cairomm-1.0/cairomm/cairomm.h:${PORTSDIR}/graphics/cairomm \
 		${LOCALBASE}/include/boost/python.hpp:${PORTSDIR}/devel/boost-python
 
+USE_PGSQL=	yes
+USE_BZIP2=	yes
 NO_BUILD=	yes
 USE_PYTHON=	2.4+
 USE_LDCONFIG=	yes
