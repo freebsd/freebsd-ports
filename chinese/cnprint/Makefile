@@ -16,7 +16,7 @@ DISTFILES=	cnprint330b.c cnprint330b.readme ttfb330b.c cnprint330b.hlp \
 		mshei.ttf.gz mshei.htf cc48s.hbf cc48.sym.gz cc48s.1.gz \
 		cc48s.2.gz hbf.tar.gz ntu_kai48.hbf ntu_kai48.bin.gz
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Print CJK text (or convert to PostScript)
 
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
