@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6a245f31-4254-11de-b67a-0030843d3802">
+    <topic>libwmf -- embedded GD library Use-After-Free vulnerability</topic>
+    <affects>
+      <package>
+	<name>libwmf</name>
+	<range><lt>0.2.8.4_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/34901">
+	  <p>A vulnerability has been reported in libwmf, which can be exploited
+	    by malicious people to cause a DoS (Denial of Service) or compromise
+	    an application using the library.</p>
+	  <p>The vulnerability is caused due to a use-after-free error within the
+	    embedded GD library, which can be exploited to cause a crash or
+	    potentially to execute arbitrary code via a specially crafted WMF
+	    file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>34792</bid>
+      <cvename>CVE-2009-1364</cvename>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=496864</url>
+      <url>https://rhn.redhat.com/errata/RHSA-2009-0457.html</url>
+      <url>http://secunia.com/advisories/34901/</url>
+    </references>
+    <dates>
+      <discovery>2009-05-05</discovery>
+      <entry>2009-05-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="48aab1d0-4252-11de-b67a-0030843d3802">
     <topic>libwmf -- integer overflow vulnerability</topic>
     <affects>
