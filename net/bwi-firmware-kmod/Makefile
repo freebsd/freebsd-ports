@@ -9,13 +9,15 @@ PORTNAME=	bwi-firmware
 PORTVERSION=	${FWVERSION}
 CATEGORIES=	net kld
 MASTER_SITES=	http://downloads.openwrt.org/sources/ \
-		http://people.freebsd.org/~thompsa/:fwcutter
+		http://mirror2.openwrt.org/sources/
 PKGNAMESUFFIX=	-kmod
-DISTFILES=	${FWFILE} b43-fwcutter-freebsd.tar.bz2:fwcutter
-EXTRACT_ONLY=	b43-fwcutter-freebsd.tar.bz2
+DISTFILES=	${FWFILE}
+EXTRACT_ONLY=	
 
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Broadcom AirForce IEEE 802.11 Firmware Kernel Module
+
+BUILD_DEPENDS=	b43-fwcutter:${PORTSDIR}/sysutils/b43-fwcutter
 
 FIRMWARES=	ucode ucode11 ucode2 ucode4 ucode5 \
 		a0g0bsinitvals2 a0g0bsinitvals5 a0g0initvals2 \
@@ -38,10 +40,7 @@ NO_PACKAGE=	this is a modified version of a restricted firmware
 
 do-build:
 	cd ${WRKSRC} &&  \
-	${CC} ${CFLAGS} -DFWCUTTER_VERSION_=008 -c fwcutter.c && \
-	${CC} ${CFLAGS} -DFWCUTTER_VERSION_=008 -c md5.c && \
-	${CC} ${CFLAGS} -o b43-fwcutter fwcutter.o md5.o
-	${WRKSRC}/b43-fwcutter -w ${WRKSRC} ${DISTDIR}/${FWFILE}
+	b43-fwcutter -w ${WRKSRC} ${DISTDIR}/${FWFILE}
 	${TOUCH} ${WRKSRC}/v3/ucode.fw
 
 	@${ECHO_CMD} "KMOD= ${KMODNAME}" > ${WRKSRC}/v3/Makefile
