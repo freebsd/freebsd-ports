@@ -1,5 +1,5 @@
---- common/gdm-address.c.orig	2008-04-17 23:29:27.000000000 -0400
-+++ common/gdm-address.c	2008-05-02 14:36:15.000000000 -0400
+--- common/gdm-address.c.orig	2009-02-19 21:45:13.000000000 -0500
++++ common/gdm-address.c	2009-05-11 02:38:17.000000000 -0400
 @@ -29,6 +29,8 @@
  #include <stropts.h>
  #endif
@@ -25,3 +25,21 @@
  
  #include <glib-object.h>
  
+@@ -206,7 +208,7 @@ gdm_address_get_hostname (GdmAddress *ad
+ 
+         host [0] = '\0';
+         res = getnameinfo ((const struct sockaddr *)address->ss,
+-                           sizeof (struct sockaddr_storage),
++                           gdm_sockaddr_len (address->ss),
+                            host, sizeof (host),
+                            NULL, 0,
+                            0);
+@@ -245,7 +247,7 @@ gdm_address_get_numeric_info (GdmAddress
+         host [0] = '\0';
+         serv [0] = '\0';
+         res = getnameinfo ((const struct sockaddr *)address->ss,
+-                           sizeof (struct sockaddr_storage),
++                           gdm_sockaddr_len (address->ss),
+                            host, sizeof (host),
+                            serv, sizeof (serv),
+                            NI_NUMERICHOST | NI_NUMERICSERV);
