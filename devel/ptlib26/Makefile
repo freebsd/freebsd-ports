@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	ptlib
-PORTVERSION=	2.4.4
+PORTVERSION=	2.6.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/ptlib/2.4
+MASTER_SITE_SUBDIR=	sources/ptlib/2.6
 DISTNAME=	ptlib-${PORTVERSION}
 
-MAINTAINER=	d9364104@mail.nchu.edu.tw
-COMMENT=	A cross platform C++ library, used by OpenH323
+MAINTAINER=	melifaro@ipfw.ru
+COMMENT=	A cross platform C++ library, used by OPAL
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
@@ -28,18 +28,12 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800059
-BROKEN=		does not build
-.endif
-
 CONFIGURE_ENV=	\
 		OPENSSL_CFLAGS="-I/usr/include" \
 		OPENSSL_LIBS="-lssl"
 CONFIGURE_ARGS+=	\
-		--disable-atomicity \
 		--with-expat-dir="${LOCALBASE}" \
-		--enable-oss \
-		--disable-odbc
+		--enable-oss
 ALL_TARGET=	optshared
 
 # if explicitely asked for, depend upon it
@@ -49,6 +43,14 @@ CONFIGURE_ENV+=	SDL_CFLAGS="`sdl-config --cflags`" \
 		SDL_LIBS="`sdl-config --libs`"
 MAKE_ENV+=	SDL_CFLAGS="`sdl-config --cflags`" \
 		SDL_LIBS="`sdl-config --libs`"
+.endif
+
+.if defined(WITH_ODBC)
+CONFIGURE_ARGS+=	--enable-odbc
+LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+#BUILD_DEPENDS+=         unixODBC>=2.2.12:${PORTSDIR}/databases/unixODBC
+.else
+CONFIGURE_ARGS+=	--disable-odbc
 .endif
 
 # if explicitely disabled, do not depend upon it
@@ -73,12 +75,11 @@ CONFIGURE_ARGS+=	--disable-sdl
 CONFIGURE_ARGS+=	--enable-plugins
 .endif
 
-#disable OpenLDAP support in PWLIB
-.if defined(WITHOUT_LDAP)
-CONFIGURE_ARGS+=	--disable-openldap
-.else
+.if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--enable-openldap --with-ldap-dir="${LOCALBASE}"
+.else
+CONFIGURE_ARGS+=	--disable-openldap
 .endif
 
 # ONLY FOR THE BRAVE!
@@ -133,8 +134,10 @@ PLIST_SUB+=	V4L="@comment "
 
 post-patch:
 .if ${ARCH} == sparc64 && ${OSVERSION} <= 700003
-	@${REINPLACE_CMD} -e 's|P_PTHREADS_XPG6|0|' \
-		${WRKSRC}/src/ptlib/unix/tlibthrd.cxx
+	@${REINPLACE_CMD} -e 's|P_PTHREADS_XPG6|0|' ${WRKSRC}/src/ptlib/unix/tlibthrd.cxx
+.endif
+.if ${OSVERSION} >= 800059
+	@${REINPLACE_CMD} -e 's/RTF_WASCLONED/0x20000/' ${WRKSRC}/src/ptlib/unix/socket.cxx
 .endif
 
 .include <bsd.port.post.mk>
