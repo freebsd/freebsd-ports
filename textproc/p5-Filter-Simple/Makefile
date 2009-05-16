@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Simplified source filtering
 
+MAKE_JOBS_SAFE=  yes
+
 PERL_CONFIGURE=	yes
 
 MAN3=	Filter::Simple.3

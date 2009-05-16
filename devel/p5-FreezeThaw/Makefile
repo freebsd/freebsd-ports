@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A module for converting Perl structures to strings and back
 
+MAKE_JOBS_SAFE=  yes
+
 PERL_CONFIGURE=	YES
 
 MAN3=		FreezeThaw.3

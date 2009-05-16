@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Test.pm wrapper with helpers for testing Apache
 
+MAKE_JOBS_SAFE=  yes
+
 ## XXX: Need to fix this, www/mod_perl2 currently @2.0.3 contains A-T 1.29,
 ## XXX: but
 ## XXX: A-T has released 1.30

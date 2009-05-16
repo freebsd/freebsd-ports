@@ -22,6 +22,8 @@ BUILD_DEPENDS+=	${SITE_PERL}/Nagios/Plugin.pm:${PORTSDIR}/net-mgmt/p5-Nagios-Plu
 		${SITE_PERL}/Carp/Clan.pm:${PORTSDIR}/devel/p5-Carp-Clan
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
+MAKE_JOBS_SAFE=  yes
+
 MAN3=		Nagios::Plugins::Memcached.3
 PORTDOCS=	Changes README
 

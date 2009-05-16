@@ -19,6 +19,8 @@ BUILD_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 		p5-HTML-SimpleLinkExtor>0:${PORTSDIR}/www/p5-HTML-SimpleLinkExtor
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+MAKE_JOBS_SAFE=  yes
+
 MAN3=	HTTP::Size.3
 
 PERL_CONFIGURE=	yes

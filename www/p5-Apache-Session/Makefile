@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A persistence framework for session data
 
+MAKE_JOBS_SAFE=  yes
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::Session.3 \

@@ -13,6 +13,8 @@ MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/44050/
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Web-based Version Control Repository Browsing
 
+MAKE_JOBS_SAFE=  yes
+
 OPTIONS=	SUBVERSION 	"use svn binding" 			on \
 		APACHE2 	"use Apache as webserver" 		on \
 		LIGHTTPD 	"use Lighttp as webserver" 		off \

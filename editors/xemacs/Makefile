@@ -104,6 +104,8 @@ WITH_DIALOGS=	--with-dialogs=athena
 WITH_WIDGETS=	--with-widgets=athena
 .if defined(WITH_XAW3D)
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+
+MAKE_JOBS_SAFE=  yes
 CONFIGURE_ARGS+=	--with-athena=3d
 .endif
 .endif

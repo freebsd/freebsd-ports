@@ -19,6 +19,8 @@ COMMENT=	Clamd - Connect to a local clamd service and send commands
 RUN_DEPENDS=	clamd:${PORTSDIR}/security/clamav
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+MAKE_JOBS_SAFE=  yes
+
 MAN3=	Clamd.3
 
 PERL_CONFIGURE=	yes

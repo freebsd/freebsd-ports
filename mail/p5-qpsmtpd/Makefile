@@ -18,6 +18,8 @@ COMMENT=	A flexible SMTP daemon written in Perl and featuring a plugin API
 RUN_DEPENDS=	spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
   mod_perl2>=0:${PORTSDIR}/www/mod_perl2
 
+MAKE_JOBS_SAFE=  yes
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 PERL_CONFIGURE=	yes
 

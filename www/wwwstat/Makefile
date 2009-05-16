@@ -19,6 +19,8 @@ PATCHFILES=	patch-2.01.txt
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Webserver logfile analysis package
 
+MAKE_JOBS_SAFE=	yes
+
 USE_APACHE=	1.3+
 USE_PERL5=	yes
 MAKE_ENV+=	PERL5=${PERL5}

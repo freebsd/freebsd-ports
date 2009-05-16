@@ -18,6 +18,8 @@ COMMENT=	Epsilon is a set of Python utility modules used by DivMod projects
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
 
+MAKE_JOBS_SAFE=  yes
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Epsilon

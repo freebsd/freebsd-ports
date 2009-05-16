@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A package of programs for computing population parameters
 
+MAKE_JOBS_SAFE=  yes
+
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 

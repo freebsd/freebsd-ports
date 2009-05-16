@@ -18,6 +18,8 @@ LIB_DEPENDS=	spandsp.0:${PORTSDIR}/comms/spandsp
 BUILD_DEPENDS=	${LOCALBASE}/lib/libeps.a:${PORTSDIR}/mail/eps
 RUN_DEPENDS=	${LOCALBASE}/sbin/asterisk:${PORTSDIR}/net/asterisk
 
+MAKE_JOBS_SAFE=  yes
+
 PORTDOCS=	README testfax.eml testfax.tif
 
 MAKE_ENV+=	DEFS="${CFLAGS}"

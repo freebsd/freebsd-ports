@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Authen/Simple.pm:${PORTSDIR}/security/p5-Authen-Simp
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+MAKE_JOBS_SAFE=  yes
+
 MAN3=	Authen::Simple::HTTP.3
 
 PERL_MODBUILD=	5.8.0+

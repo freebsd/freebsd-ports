@@ -15,6 +15,8 @@ COMMENT=	A simple console menu program
 
 LIB_DEPENDS=   slang.2:${PORTSDIR}/devel/libslang2
 
+MAKE_JOBS_SAFE=  yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GNOME=	gnometarget

@@ -14,6 +14,8 @@ MASTER_SITES=	SF/aria-rpm
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Yet another download tool
 
+MAKE_JOBS_SAFE=  yes
+
 USE_BZIP2=	yes
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

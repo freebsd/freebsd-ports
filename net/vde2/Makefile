@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	vde
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	User-mode virtual ethernet infrastructure
 
+MAKE_JOBS_SAFE=  yes
+
 CONFLICTS=	vde-[0-9]*
 
 USE_GMAKE=	yes

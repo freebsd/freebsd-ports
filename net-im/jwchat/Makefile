@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S,.b,beta,}
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Full featured, web-based Jabber client
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	1.3
 
 NO_BUILD=	yes

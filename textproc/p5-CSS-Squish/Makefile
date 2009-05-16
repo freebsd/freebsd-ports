@@ -16,6 +16,8 @@ COMMENT=	Compact many CSS files into one big file
 
 BUILD_DEPENDS=	p5-Test-LongString>0:${PORTSDIR}/devel/p5-Test-LongString
 
+MAKE_JOBS_SAFE=  yes
+
 MAN3=	CSS::Squish.3
 
 PERL_CONFIGURE=	yes

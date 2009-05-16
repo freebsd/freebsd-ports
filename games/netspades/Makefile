@@ -16,6 +16,8 @@ COMMENT=	Very popular card game for 1-4 players over a network
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 
+MAKE_JOBS_SAFE=  yes
+
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

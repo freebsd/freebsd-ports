@@ -17,6 +17,8 @@ COMMENT=	A module that tracks what's being transferred in a DBI database
 BUILD_DEPENDS=	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI \
 		${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 
+MAKE_JOBS_SAFE=  yes
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::DBILogger.3

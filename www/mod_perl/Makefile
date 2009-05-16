@@ -17,6 +17,8 @@ COMMENT=	Embeds a Perl interpreter in the Apache server
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+MAKE_JOBS_SAFE=  yes
+
 PORTSCOUT=	limit:^1
 
 USE_APACHE=	1.3

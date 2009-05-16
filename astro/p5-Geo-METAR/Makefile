@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A perl module that processes METAR information from NOAA sources
 
+MAKE_JOBS_SAFE=  yes
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Geo::METAR.3

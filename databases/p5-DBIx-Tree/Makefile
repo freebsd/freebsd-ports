@@ -17,6 +17,8 @@ COMMENT=	Perl module for generating a tree from a self-referential table
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 
+MAKE_JOBS_SAFE=  yes
+
 PERL_CONFIGURE=	yes
 
 MAN3=		DBIx::Tree.3

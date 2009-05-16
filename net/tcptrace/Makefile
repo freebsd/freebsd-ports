@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.tcptrace.org/download/
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A TCP dump file analysis tool
 
+MAKE_JOBS_SAFE=  yes
+
 GNU_CONFIGURE=	yes
 ALL_TARGET=	tcptrace
 

@@ -17,6 +17,8 @@ COMMENT=	Serf HTTP client library
 
 LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr
 
+MAKE_JOBS_SAFE=  yes
+
 PROJECTHOST=	serf
 USE_BZIP2=	yes
 USE_GMAKE=	yes

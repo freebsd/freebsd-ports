@@ -13,6 +13,8 @@ MASTER_SITES=	SF
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A feature-filled tagfile generator for vi and emacs clones
 
+MAKE_JOBS_SAFE=  yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-macro-patterns --with-readlib
 

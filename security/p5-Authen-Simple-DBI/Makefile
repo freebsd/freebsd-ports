@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Authen/Simple.pm:${PORTSDIR}/security/p5-Authen-Simp
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+MAKE_JOBS_SAFE=  yes
+
 MAN3=	Authen::Simple::DBI.3
 
 PERL_MODBUILD=	5.8.0+

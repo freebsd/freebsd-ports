@@ -14,6 +14,8 @@ PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	 scans log files and bans IP that makes too many password failures. 
 
+MAKE_JOBS_SAFE=  yes
+
 USE_BZIP2=	yes
 
 USE_PYTHON=	yes
