@@ -10,6 +10,8 @@ PKGNAMESUFFIX=	-mp1
 
 COMMENT=	DBI persistent connection, authentication and authorization (mp1)	
 
+MAKE_JOBS_SAFE=  yes
+
 MASTERDIR=	${.CURDIR}/../p5-Apache-DBI
 
 .if defined(WITH_MODPERL2) || defined(WITHOUT_MODPERL)

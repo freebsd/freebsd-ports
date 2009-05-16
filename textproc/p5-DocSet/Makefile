@@ -18,6 +18,8 @@ COMMENT=	Dcumentation projects builder in HTML, PS and PDF formats
 BUILD_DEPENDS=	${SITE_PERL}/Pod/POM.pm:${PORTSDIR}/textproc/p5-Pod-POM \
 				${SITE_PERL}/${PERL_ARCH}/Template/Toolkit.pod:${PORTSDIR}/www/p5-Template-Toolkit
 
+MAKE_JOBS_SAFE=  yes
+
 MAN1=	docset_build.1
 
 MAN3=	DocSet.3 \

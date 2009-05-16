@@ -18,6 +18,8 @@ COMMENT=	Continuous Integration Server For Rails Applications
 RUN_DEPENDS=	rubygem-mongrel>=1.0.1:${PORTSDIR}/www/rubygem-mongrel \
 		svn:${PORTSDIR}/devel/subversion
 
+MAKE_JOBS_SAFE=  yes
+
 USE_RC_SUBR=	cruisecontrolrb
 
 NO_BUILD=	yes

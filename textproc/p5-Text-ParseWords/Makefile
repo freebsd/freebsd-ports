@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	parse text into an array of tokens or array of arrays
 
+MAKE_JOBS_SAFE=  yes
+
 USE_ZIP=	yes
 PERL_CONFIGURE=	yes
 

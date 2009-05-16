@@ -17,6 +17,8 @@ COMMENT=	Load Apache configuration files
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/FnMatch.pm:${PORTSDIR}/devel/p5-File-FnMatch \
 		${SITE_PERL}/Tree/DAG_Node.pm:${PORTSDIR}/devel/p5-Tree-DAG_Node
 
+MAKE_JOBS_SAFE=  yes
+
 MAN3=	Apache::ConfigParser.3 Apache::ConfigParser::Directive.3
 
 PERL_CONFIGURE=	yes

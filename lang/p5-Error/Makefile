@@ -22,6 +22,8 @@ MAN3=		Error.3 Error::Simple.3
 
 .if ${PERL_LEVEL} < 500703
 RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
+
+MAKE_JOBS_SAFE=  yes
 .endif
 
 .include <bsd.port.post.mk>

@@ -18,6 +18,8 @@ COMMENT=	S-Lang System Monitor
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
 		slang.2:${PORTSDIR}/devel/libslang2
 
+MAKE_JOBS_SAFE=  yes
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

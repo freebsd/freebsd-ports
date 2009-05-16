@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.enderunix.org/checkdns/ \
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A domain name server analysis and reporting tool
 
+MAKE_JOBS_SAFE=  yes
+
 SUB_FILES=	pkg-message
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README THANKS TODO

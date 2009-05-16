@@ -17,6 +17,8 @@ COMMENT=	A generic archive extracting mechanism
 RUN_DEPENDS=	p5-IPC-Cmd>=0.42:${PORTSDIR}/devel/p5-IPC-Cmd
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+MAKE_JOBS_SAFE=  yes
+
 MAN3=	Archive::Extract.3
 
 PERL_CONFIGURE=	yes

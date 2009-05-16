@@ -14,6 +14,8 @@ MASTER_SITES=	http://openscep.othello.ch/download/
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Open source scep server
 
+MAKE_JOBS_SAFE=  yes
+
 USE_AUTOTOOLS=	libtool:15
 USE_OPENSSL=	yes
 USE_OPENLDAP=	yes

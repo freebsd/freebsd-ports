@@ -14,6 +14,8 @@ MASTER_SITES=	SF
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A build tool alternative to make
 
+MAKE_JOBS_SAFE=  yes
+
 .if !defined (NO_INSTALL_MANPAGES)
 MAN1=		scons.1 sconsign.1 scons-time.1
 .endif

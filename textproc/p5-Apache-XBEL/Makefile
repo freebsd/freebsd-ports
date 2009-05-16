@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache.pm:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/Memoize.pm:${PORTSDIR}/devel/p5-Memoize
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+MAKE_JOBS_SAFE=  yes
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::XBEL.3

@@ -20,6 +20,8 @@ COMMENT=	GNU Data Base Manager (gdbm) interface
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
+MAKE_JOBS_SAFE=  yes
+
 USE_BZIP2=	yes
 PERL_CONFIGURE=	5.8.0+
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${DISTNAME}/ext/GDBM_File

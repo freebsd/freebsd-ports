@@ -20,6 +20,8 @@ SLAVEDIRS=  www/p5-Apache-DBI-mp1 www/p5-Apache-DBI-mp2
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 
+MAKE_JOBS_SAFE=  yes
+
 MAN3=		Apache::DBI.3 Apache::AuthDBI.3
 
 PERL_CONFIGURE=	yes

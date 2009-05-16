@@ -17,6 +17,8 @@ COMMENT=	Perl extension for Apache-1.3.X to avoid gzip compression for known bug
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/Constants.pm:${PORTSDIR}/www/mod_perl
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+MAKE_JOBS_SAFE=  yes
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::CompressClientFixup.3

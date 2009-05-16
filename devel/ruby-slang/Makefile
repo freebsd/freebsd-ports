@@ -18,6 +18,8 @@ COMMENT=	S-Lang extension module for Ruby
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
 
+MAKE_JOBS_SAFE=  yes
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 

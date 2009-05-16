@@ -33,6 +33,8 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/py-subversion
 
 .if defined(WITH_GIT)
 RUN_DEPENDS+=	${LOCALBASE}/bin/git:${PORTSDIR}/devel/git
+
+MAKE_JOBS_SAFE=  yes
 .endif
 
 MAN1=		cvs2svn.1

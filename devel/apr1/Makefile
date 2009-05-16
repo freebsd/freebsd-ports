@@ -17,6 +17,8 @@ COMMENT=	Apache Portability Library
 
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 
+MAKE_JOBS_SAFE=  yes
+
 OPTIONS=	THREADS "Enable Threads in apr"						on  \
 			IPV6	"Enable IPV6 Support in apr"				off \
 			GDBM	"Enable GNU dbm support in apr-util"		on  \

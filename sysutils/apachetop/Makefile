@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.webta.org/apachetop/
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Apache RealTime log stats
 
+MAKE_JOBS_SAFE=  yes
+
 USE_AUTOTOOLS=	autoconf:262:env
 GNU_CONFIGURE=	yes
 

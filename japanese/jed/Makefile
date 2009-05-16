@@ -47,6 +47,8 @@ CONFIGURE_ARGS+=	--with-canna=no
 .else
 CONFIGURE_ARGS+=	--with-canna=yes
 LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/canna-lib
+
+MAKE_JOBS_SAFE=  yes
 .endif
 
 .if defined(WITHOUT_X11)

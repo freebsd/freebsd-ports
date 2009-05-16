@@ -13,6 +13,8 @@ MASTER_SITES=	SF
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A modern implementation of DBM
 
+MAKE_JOBS_SAFE=  yes
+
 CONFIGURE_ARGS=	--enable-off64
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

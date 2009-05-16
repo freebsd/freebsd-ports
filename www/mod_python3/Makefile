@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Apache module that embeds the Python interpreter within the server
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	2.0+
 USE_PYTHON=	yes
 

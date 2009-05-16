@@ -13,6 +13,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Simple yet powerful HTML attribute rewriting
 
+MAKE_JOBS_SAFE=  yes
+
 MAN3=	HTML::RewriteAttributes::Resources.3 \
   		HTML::RewriteAttributes::Links.3 \
 		HTML::RewriteAttributes.3

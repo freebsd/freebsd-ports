@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Easy-to-use greylist milter for sendmail (development)
 
+MAKE_JOBS_SAFE=  yes
+
 MAN5=		greylist.conf.5
 MAN8=		milter-greylist.8
 

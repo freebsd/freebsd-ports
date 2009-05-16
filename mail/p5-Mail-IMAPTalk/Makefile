@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	IMAP client interface with lots of features
 
+MAKE_JOBS_SAFE=  yes
+
 MAN3=	Mail::IMAPTalk.3
 
 PERL_CONFIGURE=	yes

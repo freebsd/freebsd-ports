@@ -15,6 +15,8 @@ EXTRACT_ONLY=	#none
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Benchmarking tool for analysing TCP and UDP performance
 
+MAKE_JOBS_SAFE=  yes
+
 NO_WRKSUBDIR=	yes
 DIST_SUBDIR=	${PORTNAME}
 MAN1=		ttcp.1

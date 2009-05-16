@@ -17,6 +17,8 @@ COMMENT=		Free UCS Outline Fonts
 BUILD_DEPENDS=		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
 			mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
+MAKE_JOBS_SAFE=  yes
+
 WRKSRC=			${WRKDIR}/freefont-${PORTVERSION}
 INSTALLDIR=		${PREFIX}/lib/X11/fonts/${PORTNAME}
 

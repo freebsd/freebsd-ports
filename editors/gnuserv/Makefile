@@ -15,6 +15,8 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A standalone release of gnuserv for GNU Emacs
 
+MAKE_JOBS_SAFE=  yes
+
 GNU_CONFIGURE=	yes
 
 BINSUFFIX?=	-emacs

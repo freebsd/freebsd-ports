@@ -12,6 +12,8 @@ CATEGORIES=	japanese
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Slang interface for TiMidity++ with Japanese support
 
+MAKE_JOBS_SAFE=  yes
+
 MASTERDIR=	${.CURDIR}/../../audio/timidity++
 
 JAPANESE=	yes
