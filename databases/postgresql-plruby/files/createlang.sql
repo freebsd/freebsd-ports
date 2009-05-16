@@ -4,11 +4,11 @@
 -- $FreeBSD$
 --
 
-CREATE FUNCTION plruby_call_handler() RETURNS OPAQUE
+CREATE FUNCTION plruby_call_handler() RETURNS language_handler
 	AS '!!PLRUBY_SO!!'
 	LANGUAGE 'C';
 
-CREATE TRUSTED PROCEDURAL LANGUAGE 'plruby'
+CREATE TRUSTED LANGUAGE 'plruby'
 	HANDLER plruby_call_handler
 	LANCOMPILER 'PL/Ruby';
 

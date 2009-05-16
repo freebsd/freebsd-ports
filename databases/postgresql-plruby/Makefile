@@ -6,11 +6,10 @@ ftp://moulon.inra.fr/pub/ruby/# New ports collection makefile for:	PL/Ruby
 #
 
 PORTNAME=	plruby
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.5.3
 CATEGORIES=	databases ruby
-MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	ruby
 
