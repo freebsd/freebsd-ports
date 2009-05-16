@@ -11,7 +11,7 @@ upgrades.
   AUTHOR: dinoex@FreeBSD.org
 
   print/cups has been splitten in mutiple ports. If upgrading
-  from 1.9.10 abd below you must remove the installed version first.
+  from 1.9.10 and below you must remove the installed version first.
 
 20090412:
   AFFECTS: users of sysutils/bacula-server
