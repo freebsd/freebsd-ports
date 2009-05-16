@@ -437,6 +437,7 @@
     SUBDIR += lookupd_ldap
     SUBDIR += lsof
     SUBDIR += ltrace
+    SUBDIR += luckybackup
     SUBDIR += lugtools
     SUBDIR += luma
     SUBDIR += lxsplit
