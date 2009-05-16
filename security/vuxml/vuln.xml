@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1e8031be-4258-11de-b67a-0030843d3802">
+    <topic>php -- ini database truncation inside dba_replace() function</topic>
+    <affects>
+      <package>
+	<name>php4-dba</name>
+	<range><lt>4.4.9_1</lt></range>
+      </package>
+      <package>
+        <name>php5-dba</name>
+	<range><lt>5.2.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>securityfocus research reports:</p>
+	<blockquote cite="http://www.securityfocus.com/archive/1/498746/30/0/threaded">
+	  <p>A bug that leads to the emptying of the INI file contents if
+	    the database key was not found exists in PHP dba extension in
+	    versions 5.2.6, 4.4.9 and earlier.</p>
+	  <p>Function dba_replace() are not filtering strings key and value.
+	    There is a possibility for the destruction of the file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.securityfocus.com/archive/1/498746/30/0/threaded</url>
+      <url>http://securityreason.com/achievement_securityalert/58</url>
+    </references>
+    <dates>
+      <discovery>2009-11-28</discovery>
+      <entry>2009-05-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6a245f31-4254-11de-b67a-0030843d3802">
     <topic>libwmf -- embedded GD library Use-After-Free vulnerability</topic>
     <affects>
