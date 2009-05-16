@@ -7,6 +7,7 @@
 
 PORTNAME=	playwolf
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	plasma-applet-
@@ -36,5 +37,8 @@ post-patch:
 .for i in ${ADD_NEWLINE_TO}
 	${ECHO_CMD} >> ${WRKSRC}/${i}
 .endfor
+
+	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|usr|${KDE4_PREFIX}|g' \
+		infomanager.cpp wolflabel.cpp
 
 .include <bsd.port.post.mk>
