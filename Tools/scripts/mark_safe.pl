@@ -177,6 +177,8 @@ sub ports_get {
     close $fh or die "Can't close [$index] b/c [$!]";
   }
 
+  @ports = grep { !/^rubygem-// } @ports;
+
   return \@ports;
 }
 
