@@ -63,7 +63,7 @@ PLIST_SUB+=	WITH_PORTAUDIO="@comment "
 .endif
 
 .if !defined(WITHOUT_CUPS)
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
 PLIST_SUB+=	WITH_CUPS=""
 .else
 PLIST_SUB+=	WITH_CUPS="@comment "
