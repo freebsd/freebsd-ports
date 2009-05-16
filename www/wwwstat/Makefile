@@ -7,7 +7,7 @@
 
 PORTNAME=	wwwstat
 PORTVERSION=	2.01
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.ics.uci.edu/pub/websoft/wwwstat/ \
 		ftp://ftp.gwdg.de/pub/misc/www-stat/websoft/wwwstat/
@@ -19,7 +19,7 @@ PATCHFILES=	patch-2.01.txt
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Webserver logfile analysis package
 
-USE_APACHE=	1.3
+USE_APACHE=	1.3+
 USE_PERL5=	yes
 MAKE_ENV+=	PERL5=${PERL5}
 
