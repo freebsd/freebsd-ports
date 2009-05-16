@@ -17,7 +17,7 @@ devfs_system_ruleset="system"
 3) Restart devfs: /etc/rc.d/devfs restart
 
 If your system supports 'devd' you can copy
-$PREFIX/share/examples/lpt-cupsd.conf to $PREFIX/etc/devd/
+$PREFIX/share/examples/cups/lpt-cupsd.conf to $PREFIX/etc/devd/
 
 To enable printing under Gimp and MS-Windows clients do the following:
 
