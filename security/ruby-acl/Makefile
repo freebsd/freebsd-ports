@@ -12,7 +12,7 @@ MASTER_SITES=	http://www2a.biglobe.ne.jp/~seki/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ufo@februality.com
 COMMENT=	Ruby module to provide Access Control List checks
 
 USE_RUBY=	yes
