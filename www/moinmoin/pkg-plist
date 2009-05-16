@@ -789,6 +789,12 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080100.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080100.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080100.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080200.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080200.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080200.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080300.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080300.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080300.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyo
@@ -1041,6 +1047,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/theme/modernized.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/theme/modernized.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/theme/modernized.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/modernized_cms.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/modernized_cms.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/modernized_cms.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/theme/rightsidebar.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/theme/rightsidebar.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/theme/rightsidebar.pyo
@@ -1623,6 +1632,7 @@ bin/moin
 %%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/hi.js
 %%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/hr.js
 %%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/hu.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/is.js
 %%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/it.js
 %%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/ja.js
 %%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/km.js
@@ -1717,6 +1727,9 @@ bin/moin
 %%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/images/toolbar.expand.gif
 %%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/images/toolbar.separator.gif
 %%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/images/toolbar.start.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/wsc/ciframe.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/wsc/tmpFrameset.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/wsc/w.html
 %%DATADIR%%/htdocs/applets/FCKeditor/fckconfig.js
 %%DATADIR%%/htdocs/applets/FCKeditor/fckeditor.afp
 %%DATADIR%%/htdocs/applets/FCKeditor/fckeditor.asp
@@ -2053,6 +2066,7 @@ bin/moin
 %%DATADIR%%/server/mointwisted.py
 %%DATADIR%%/server/test.wsgi
 %%DATADIR%%/server/wikiserver.py
+%%DATADIR%%/server/wikiserverconfig.py
 %%DATADIR%%/underlay/pages/AbandonedPages/current
 %%DATADIR%%/underlay/pages/AbandonedPages/revisions/00000001
 %%DATADIR%%/underlay/pages/AutoAdminGroup/current
@@ -2115,7 +2129,6 @@ bin/moin
 %%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip3b.png
 %%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip5.png
 %%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip6.png
-%%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip6b.png
 %%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip7.png
 %%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/current
 %%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/revisions/00000001
@@ -2927,6 +2940,7 @@ bin/moin
 @dirrm %%DATADIR%%/htdocs/applets/moinFCKplugins/macro
 @dirrm %%DATADIR%%/htdocs/applets/moinFCKplugins
 @dirrm %%DATADIR%%/htdocs/applets/TWikiDrawPlugin
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/wsc
 @dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/images
 @dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver
 @dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/images
