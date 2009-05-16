@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	sledge/2451
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A Sledge plug-in that invokes html2hdml for EZweb WAP/1.0 clients
 
 BUILD_DEPENDS=	${PM_DEPENDS}

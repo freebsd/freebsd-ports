@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	sledge/2369
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A Sledge extension that uses HTML::Template::Expr as template engine
 
 BUILD_DEPENDS=	${PM_DEPENDS}
