@@ -177,7 +177,13 @@ pre-everything::
 	@${TOUCH} ${BUILD_COOKIE}
 .endif
 
+#issue XXXXXX not raised yet...
+CRLFFILES=curl/curl*patch neon/neon*patch
+
 post-extract:
+	for i in ${CRLFFILES};  do \
+		cd ${WRKSRC} ; ${REINPLACE_CMD} -e 's###g' $$i ; \
+	done
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
 .if defined(WITH_CWS)
 	cd ${WRKSRC} ; ${TAR} xvfz ${DISTDIR}/${DIST_SUBDIR}/${CWSARCHIVE}
@@ -190,6 +196,7 @@ post-extract:
 .if !defined(WITHOUT_MOZILLA)
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_SOURCE} ${WRKSRC}/moz/download
 .endif
+
 pre-configure:
 #Workaround for gperf. #i85469#
 	@${LN} -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/solenv/bin/gperf
