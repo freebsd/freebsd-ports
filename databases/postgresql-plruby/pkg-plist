@@ -12,6 +12,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_bitstring/test.expected.80
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_bitstring/test.expected.81
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_bitstring/test.expected.82
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_bitstring/test.expected.83
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_bitstring/test.out
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_bitstring/test_mklang.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_bitstring/test_queries.orig
@@ -23,6 +24,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_geometry/test.expected.80
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_geometry/test.expected.81
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_geometry/test.expected.82
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_geometry/test.expected.83
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_geometry/test.out
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_geometry/test_mklang.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_geometry/test_queries.orig
@@ -34,6 +36,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_network/test.expected.80
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_network/test.expected.81
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_network/test.expected.82
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_network/test.expected.83
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_network/test.out
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_network/test_mklang.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_network/test_queries.orig
@@ -47,6 +50,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.80
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.81
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.82
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.83
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.out
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test_mklang.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test_queries.sql
@@ -60,6 +64,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.80
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.81
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.82
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.83
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.out
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_mklang.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_queries.sql
@@ -76,6 +81,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test.expected.80
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test.expected.81
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test.expected.82
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test.expected.83
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test.out
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test_mklang.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test_queries.orig
