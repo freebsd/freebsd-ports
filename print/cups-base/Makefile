@@ -8,7 +8,7 @@
 PORTNAME=	cups
 PORTVERSION=	1.3.10
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
 PKGNAMESUFFIX=	${CUPS_SUFFIX}${PKGNAMESUFFIX2}
@@ -45,6 +45,7 @@ OPTIONS?=	GNUTLS		"Build with GNUTLS library" on \
 		PAM		"Build with PAM support" off \
 		LDAP		"Build with LDAP support" off \
 		DBUS		"Build with DBUS support" off \
+		GHOSTSCRIPT	"Build pdftps with GHOSTSCRIPT" on \
 		XDG_OPEN	"Build with XDG_OPEN as browser" off
 
 CUPS_ETCDIR=	${PREFIX}/etc/cups
@@ -66,25 +67,21 @@ PLIST=		${MASTERDIR}/pkg-plist.client
 USE_LDCONFIG=	yes
 .elif defined(CUPS_IMAGE)
 CUPS_SUFFIX=	-image
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client
+		tiff.4:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	--disable-pdftops
 INSTALL_WRKSRC=	${WRKSRC}/filter
 PLIST=		${MASTERDIR}/pkg-plist.image
 USE_LDCONFIG=	yes
 .else
 CUPS_SUFFIX=	-base
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
+		cupsimage.2:${PORTSDIR}/${PKGCATEGORY}/cups-image
 # force build if old cups is installed.
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcups.a:${PORTSDIR}/${PKGCATEGORY}/cups-client
-USE_GHOSTSCRIPT=	yes
 USE_RC_SUBR=	cupsd
-CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=gs
 .endif
 
 .if defined(CUPS_OVERWRITE_BASE)
@@ -101,7 +98,7 @@ CONFIGURE_ARGS+=	--disable-gnutls --enable-openssl
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
 
-.if defined(WITH_PHP)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_PHP)
 CONFIGURE_ARGS+=	--with-php
 USE_PHP=		yes
 USE_PHP_BUILD=		yes
@@ -111,18 +108,26 @@ CONFIGURE_ARGS+=	--without-php
 PLIST_SUB+=		PHP="@comment "
 .endif
 
-.if defined(WITH_PYTHON)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_GHOSTSCRIPT)
+USE_GHOSTSCRIPT=	yes
+CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=gs
+PLIST_SUB+=		WITH_GHOSTSCRIPT=""
+.else
+PLIST_SUB+=		WITH_GHOSTSCRIPT="@comment "
+.endif
+
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_PYTHON)
 CONFIGURE_ARGS+=	--with-python
 USE_PYTHON=		yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 .endif
 
-.if defined(WITH_LIBPAPER)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_LIBPAPER)
 CONFIGURE_ARGS+=	--enable-libpaper
 LIB_DEPENDS+=		paper.2:${PORTSDIR}/print/libpaper
 .endif
 
-.if defined(WITH_DNSSD)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_DNSSD)
 CONFIGURE_ARGS+=	--enable-dnssd \
 			--with-dnssd-libs=${LOCALBASE}/lib/ \
 			--with-dnssd-includes=${LOCALBASE}/include/avahi-compat-libdns_sd/
@@ -131,7 +136,7 @@ LIB_DEPENDS+=		dns_sd:${PORTSDIR}/net/avahi-libdns
 CONFIGURE_ARGS+=	--disable-dnssd
 .endif
 
-.if defined(WITH_PAM)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_PAM)
 CONFIGURE_ARGS+=	--enable-pam
 PLIST_SUB+=		WITH_PAMD=""
 .else
@@ -139,21 +144,21 @@ CONFIGURE_ARGS+=	--disable-pam
 PLIST_SUB+=		WITH_PAMD="@comment "
 .endif
 
-.if defined(WITH_LDAP)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_LDAP)
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--enable-ldap
 .else
 CONFIGURE_ARGS+=	--disable-ldap
 .endif
 
-.if defined(WITH_DBUS)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_DBUS)
 LIB_DEPENDS+=		dbus-1.3:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--enable-dbus
 .else
 CONFIGURE_ARGS+=	--disable-dbus
 .endif
 
-.if defined(WITH_XDG_OPEN)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_XDG_OPEN)
 RUN_DEPENDS+=		xdg-open:${PORTSDIR}/devel/xdg-utils
 .endif
 
@@ -225,7 +230,7 @@ post-patch:
 		-e 's|notifier scheduler systemv test ||' \
 		-e 's|$$.PHPDIR. ||' \
 		-e 's|conf data doc $$.FONTS.ppd templates||' \
-		-e '/share/s|/usr/share|${PREFIX}/share|g' \
+		-e 's|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/Makefile
 .elif defined(CUPS_IMAGE)
 	@${REINPLACE_CMD} \
@@ -233,13 +238,14 @@ post-patch:
 		-e 's|notifier scheduler systemv test ||' \
 		-e 's|$$.PHPDIR. ||' \
 		-e 's|conf data doc $$.FONTS.ppd templates||' \
-		-e '/share/s|/usr/share|${PREFIX}/share|g' \
+		-e 's|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/Makefile
 .else
 	@${REINPLACE_CMD} \
-		-e 's|cups backend|backend|' \
+		-e 's|cups backend|backend|' -e 's|filter ||' \
 		-e 's|$$.INSTALL_SCRIPT. cups-config|echo skip: cups-config|' \
-		-e '/share/s|/usr/share|${PREFIX}/share|g' \
+		-e 's|/usr/share|${PREFIX}/share|g' \
+		-e 's|installhdrs$$||' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} \
 		-e 's|cups-config.$$.MAN1EXT. ||' \
@@ -251,9 +257,16 @@ pre-build:
 	${CP} -p ${LOCALBASE}/lib/libcups.a ${WRKSRC}/cups/
 	${CP} -p ${LOCALBASE}/lib/libcups.so ${WRKSRC}/cups/
 	${CP} -p ${LOCALBASE}/lib/libcups.so.2 ${WRKSRC}/cups/
+.if !defined(CUPS_IMAGE)
+	${CP} -p ${LOCALBASE}/lib/libcupsimage.so ${WRKSRC}/filter/
+	${CP} -p ${LOCALBASE}/lib/libcupsimage.so.2 ${WRKSRC}/filter/
+.endif
 .endif
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE)
+post-build:
+	cd ${WRKSRC}/filter && ${MAKE} pdftops
+
 pre-su-install:
 	@${INSTALL} -d ${DESKTOPDIR}/
 	if ! pw groupshow ${CUPSGRP}; then pw groupadd ${CUPSGRP} -g 193; fi
@@ -268,6 +281,9 @@ pre-su-install:
 .endif
 
 post-install:
+.if defined(WITH_GHOSTSCRIPT)
+	${INSTALL_PROGRAM} ${WRKSRC}/filter/pdftops ${PREFIX}/libexec/cups/filter/
+.endif
 	${INSTALL} -d ${CUPS_ETCDIR}/
 	${CP} -p ${WRKSRC}/conf/snmp.conf ${WRKSRC}/conf/snmp.conf.N
 .for f in cupsd.conf mime.convs mime.types snmp.conf
@@ -283,7 +299,7 @@ post-install:
 	${CHOWN} root:${CUPSGRP} /var/cache/cups/
 .endif
 
-.if defined(CUPS_CLIENT) && !defined(CUPS_IMAGE)
+.if defined(CUPS_CLIENT)
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cups-config ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/cups/libcups.a ${PREFIX}/lib/
