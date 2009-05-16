@@ -48,7 +48,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>The Drupal Project reports:</p>
+	<p>The Drupal Security Team reports:</p>
 	<blockquote cite="http://drupal.org/node/461886">
 	  <p>When outputting user-supplied data Drupal strips potentially
 	    dangerous HTML attributes and tags or escapes characters which
@@ -68,16 +68,18 @@ Note:  Please add new entries to the beginning of this file.
 	    and script code in these exports.</p>
 	  <p>Additionally, the taxonomy module allows users with the
 	    'administer taxonomy' permission to inject arbitrary HTML and
-	    script code in the help text of any vocabulary. </p>
+	    script code in the help text of any vocabulary.</p>
 	</blockquote>
      </body>
    </description>
    <references>
       <url>http://drupal.org/node/461886</url>
+      <url>http://secunia.com/advisories/35045</url>
     </references>
     <dates>
       <discovery>2009-05-13</discovery>
       <entry>2009-05-14</entry>
+      <modified>2009-05-16</modified>
     </dates>
   </vuln>
 
@@ -345,8 +347,8 @@ Note:  Please add new entries to the beginning of this file.
             could be used by an attacker to crash a remote application.</p>
         <h1>Workaround</h1>
           <p>No workaround is available, but applications which do not use
-          the ASN1_STRING_print_ex function (either directly or
-          indirectly) are not affected.</p>
+            the ASN1_STRING_print_ex function (either directly or indirectly)
+            are not affected.</p>
       </body>
     </description>
     <references>
