@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	sledge/2361
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A Sledge plug-in that automatically calls Data::Dumper
 
 BUILD_DEPENDS=	${PM_DEPENDS}

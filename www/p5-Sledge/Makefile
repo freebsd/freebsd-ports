@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	sledge/8401
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A pure perl, pluggable, lightweight web application framework
 
 BUILD_DEPENDS=	${PM_DEPENDS}
