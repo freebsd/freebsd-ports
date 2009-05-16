@@ -1,20 +1,15 @@
-                            PDF::API2
+After much time, effort, and with well received results,
+Alfred Reibenschuh is abandoning PDF::API2.
 
-There seem to be a growing plethora of Perl modules for creating and
-manipulating PDF files.
+However we have seen great progress in moving towards paperless methods.
 
-This module is 'The Next Generation' of Text::PDF::API which initially
-provided a nice API around the Text::PDF::* modules created by Martin Hosken.
+Furthermore the PDF specification is now an ISO standard.
 
-FEATURES
+Now is the time to really push forward with the development of an even
+better perl pdf solution.
 
-        .  Works with more than one PDF file open at once
-        .  It presents a object-oriented API to the user
-        .  Supports the 14 base PDF Core Fonts
-        .  Supports TrueType fonts
-        .  Supports Adobe-Type1 Fonts (pfb/pfa/afm)
-        .  Supports native Embedding of bitmap images (jpeg,ppm,png,gif)
-        .  Supports modification of existing pdfs
-                and import/cloning of pages
+This is a beginning toward that goal.
 
-WWW: http://search.cpan.org/dist/PDF-API2/
+This version starts with PDF::API2 0.73, creating a new one of PDF::API3.
+
+WWW: http://search.cpan.org/dist/PDF-API3/
