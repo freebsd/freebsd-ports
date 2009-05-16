@@ -15,17 +15,18 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gtk interface to cups
 
-LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOME=	gnometarget gtk20
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+USE_AUTOTOOLS=	automake:19:env
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
 
 MAN1=		gtklp.1 gtklpq.1
 
