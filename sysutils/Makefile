@@ -660,6 +660,7 @@
     SUBDIR += rsyslog4-mysql
     SUBDIR += rsyslog4-pgsql
     SUBDIR += rsyslog4-relp
+    SUBDIR += rsyslog4-rfc3195
     SUBDIR += rsyslog4-snmp
     SUBDIR += rtty
     SUBDIR += ruby-log4r
