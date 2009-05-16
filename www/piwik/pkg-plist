@@ -40,7 +40,6 @@
 %%WWWDIR%%/core/DataTable/Filter/ColumnCallbackAddMetadata.php
 %%WWWDIR%%/core/DataTable/Filter/ColumnCallbackDeleteRow.php
 %%WWWDIR%%/core/DataTable/Filter/ColumnCallbackReplace.php
-%%WWWDIR%%/core/DataTable/Filter/ExactMatch.php
 %%WWWDIR%%/core/DataTable/Filter/ExcludeLowPopulation.php
 %%WWWDIR%%/core/DataTable/Filter/Limit.php
 %%WWWDIR%%/core/DataTable/Filter/MetadataCallbackAddMetadata.php
@@ -125,6 +124,8 @@
 %%WWWDIR%%/core/Updates/0.2.32.php
 %%WWWDIR%%/core/Updates/0.2.33.php
 %%WWWDIR%%/core/Updates/0.2.34.php
+%%WWWDIR%%/core/Updates/0.2.35.php
+%%WWWDIR%%/core/Updates/0.2.37.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
@@ -144,7 +145,6 @@
 %%WWWDIR%%/core/ViewDataTable/Sparkline.php
 %%WWWDIR%%/core/Visualization/Chart.php
 %%WWWDIR%%/core/Visualization/Cloud.php
-%%WWWDIR%%/core/Visualization/OpenFlashChart.php
 %%WWWDIR%%/core/Visualization/Sparkline.php
 %%WWWDIR%%/core/Visualization/Chart/Evolution.php
 %%WWWDIR%%/core/Visualization/Chart/Pie.php
@@ -485,11 +485,13 @@
 %%WWWDIR%%/libs/Zend/Validate/StringLength.php
 %%WWWDIR%%/libs/Zend/Version.php
 %%WWWDIR%%/libs/javascript/sprintf.js
+%%WWWDIR%%/libs/javascript/json2.js
 %%WWWDIR%%/libs/jquery/fdd2div-modified.js
 %%WWWDIR%%/libs/jquery/jquery-calendar.css
 %%WWWDIR%%/libs/jquery/jquery-calendar.js
 %%WWWDIR%%/libs/jquery/jquery.blockUI.js
 %%WWWDIR%%/libs/jquery/jquery.dimensions.js
+%%WWWDIR%%/libs/jquery/jquery.history.js
 %%WWWDIR%%/libs/jquery/jquery.js
 %%WWWDIR%%/libs/jquery/jquery.scrollTo-min.js
 %%WWWDIR%%/libs/jquery/jquery.scrollTo.js
@@ -497,6 +499,7 @@
 %%WWWDIR%%/libs/jquery/original lib/jquery-calendar.js
 %%WWWDIR%%/libs/jquery/original lib/jquery.blockUI.js
 %%WWWDIR%%/libs/jquery/original lib/jquery.dimensions.js
+%%WWWDIR%%/libs/jquery/original lib/jquery.history.js
 %%WWWDIR%%/libs/jquery/original lib/jquery.js
 %%WWWDIR%%/libs/jquery/original lib/jquery.scrollTo.js
 %%WWWDIR%%/libs/jquery/original lib/ui.mouse.js
@@ -524,6 +527,47 @@
 %%WWWDIR%%/libs/json/json.js
 %%WWWDIR%%/libs/open-flash-chart/README.txt
 %%WWWDIR%%/libs/open-flash-chart/open-flash-chart.swf
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_x_axis_labels.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/open-flash-chart.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_area_base.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_bar.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_scatter_line.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_bar_sketch.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_upload_image.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_hbar.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_pie.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_radar_spoke_labels.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_y_axis_base.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_sugar.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_x_axis_label.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_y_legend.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/dot_base.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_line_hollow.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/json_format.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_bar_3d.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_x_axis.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_line_dot.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_bar_base.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_menu.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_scatter.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_line_style.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_radar_axis_labels.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_y_axis_right.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_radar_axis.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_title.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/open-flash-chart-object.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_area_line.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_line_base.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_bar_filled.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_x_legend.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_line.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_bar_stack.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_area_hollow.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_tooltip.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_bar_glass.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_y_axis.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/ofc_shape.php
+%%WWWDIR%%/libs/open-flash-chart/php-ofc-library/README.txt
 %%WWWDIR%%/libs/sparkline/CHANGES
 %%WWWDIR%%/libs/sparkline/DESIGN
 %%WWWDIR%%/libs/sparkline/LICENSE
@@ -534,6 +578,7 @@
 %%WWWDIR%%/libs/sparkline/lib/Sparkline_Line.php
 %%WWWDIR%%/libs/swfobject/README.txt
 %%WWWDIR%%/libs/swfobject/swfobject.js
+%%WWWDIR%%/libs/swfobject/expressInstall.swf
 %%WWWDIR%%/libs/upgradephp/README
 %%WWWDIR%%/libs/upgradephp/upgrade.php
 %%WWWDIR%%/misc/.htaccess_to_use_later
@@ -583,6 +628,7 @@
 %%WWWDIR%%/plugins/CoreAdminHome/templates/styles.css
 %%WWWDIR%%/plugins/CoreHome/Controller.php
 %%WWWDIR%%/plugins/CoreHome/CoreHome.php
+%%WWWDIR%%/plugins/CoreHome/templates/broadcast.js
 %%WWWDIR%%/plugins/CoreHome/templates/calendar.js
 %%WWWDIR%%/plugins/CoreHome/templates/cloud.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/datatable.css
@@ -644,19 +690,32 @@
 %%WWWDIR%%/plugins/Dashboard/templates/dashboard.css
 %%WWWDIR%%/plugins/Dashboard/templates/header.tpl
 %%WWWDIR%%/plugins/Dashboard/templates/index.tpl
+%%WWWDIR%%/plugins/Dashboard/templates/standalone.tpl
 %%WWWDIR%%/plugins/Dashboard/templates/widgetMenu.js
 %%WWWDIR%%/plugins/ExampleAPI/API.php
 %%WWWDIR%%/plugins/ExampleAPI/ExampleAPI.php
 %%WWWDIR%%/plugins/ExampleFeedburner/ExampleFeedburner.php
-%%WWWDIR%%/plugins/ExampleFeedburner/feedburner.tpl
+%%WWWDIR%%/plugins/ExampleFeedburner/templates/feedburner.tpl
 %%WWWDIR%%/plugins/ExamplePlugin/lang/en.php
 %%WWWDIR%%/plugins/ExamplePlugin/ExamplePlugin.php
+%%WWWDIR%%/plugins/ExampleRssWidget/templates/styles.css
 %%WWWDIR%%/plugins/ExampleRssWidget/ExampleRssWidget.php
-%%WWWDIR%%/plugins/ExampleRssWidget/styles.css
+%%WWWDIR%%/plugins/ExampleUI/images/icons-planet/saturn.png
+%%WWWDIR%%/plugins/ExampleUI/images/icons-planet/uranus.png
+%%WWWDIR%%/plugins/ExampleUI/images/icons-planet/neptune.png
+%%WWWDIR%%/plugins/ExampleUI/images/icons-planet/LICENSE
+%%WWWDIR%%/plugins/ExampleUI/images/icons-planet/venus.png
+%%WWWDIR%%/plugins/ExampleUI/images/icons-planet/jupiter.png
+%%WWWDIR%%/plugins/ExampleUI/images/icons-planet/mars.png
+%%WWWDIR%%/plugins/ExampleUI/images/icons-planet/earth.png
+%%WWWDIR%%/plugins/ExampleUI/images/icons-planet/mercury.png
+%%WWWDIR%%/plugins/ExampleUI/API.php
+%%WWWDIR%%/plugins/ExampleUI/ExampleUI.php
+%%WWWDIR%%/plugins/ExampleUI/Controller.php
+%%WWWDIR%%/plugins/Feedback/templates/index.tpl
+%%WWWDIR%%/plugins/Feedback/templates/sent.tpl
 %%WWWDIR%%/plugins/Feedback/Controller.php
 %%WWWDIR%%/plugins/Feedback/Feedback.php
-%%WWWDIR%%/plugins/Feedback/index.tpl
-%%WWWDIR%%/plugins/Feedback/sent.tpl
 %%WWWDIR%%/plugins/Goals/API.php
 %%WWWDIR%%/plugins/Goals/Controller.php
 %%WWWDIR%%/plugins/Goals/Goals.php
@@ -1111,12 +1170,13 @@
 %%WWWDIR%%/plugins/UserCountry/flags/zr.png
 %%WWWDIR%%/plugins/UserCountry/flags/zw.png
 %%WWWDIR%%/plugins/UserCountry/functions.php
-%%WWWDIR%%/plugins/UserCountry/index.tpl
+%%WWWDIR%%/plugins/UserCountry/templates/index.tpl
 %%WWWDIR%%/plugins/UserSettings/API.php
 %%WWWDIR%%/plugins/UserSettings/Controller.php
 %%WWWDIR%%/plugins/UserSettings/UserSettings.php
 %%WWWDIR%%/plugins/UserSettings/functions.php
 %%WWWDIR%%/plugins/UserSettings/images/browsers/AM.gif
+%%WWWDIR%%/plugins/UserSettings/images/browsers/AR.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/AV.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/AW.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/BB.gif
@@ -1175,13 +1235,12 @@
 %%WWWDIR%%/plugins/UserSettings/images/plugins/flash.gif
 %%WWWDIR%%/plugins/UserSettings/images/plugins/java.gif
 %%WWWDIR%%/plugins/UserSettings/images/plugins/pdf.gif
-%%WWWDIR%%/plugins/UserSettings/images/plugins/quicktime.gif
 %%WWWDIR%%/plugins/UserSettings/images/plugins/realplayer.gif
 %%WWWDIR%%/plugins/UserSettings/images/plugins/windowsmedia.gif
 %%WWWDIR%%/plugins/UserSettings/images/screens/dual.gif
 %%WWWDIR%%/plugins/UserSettings/images/screens/normal.gif
 %%WWWDIR%%/plugins/UserSettings/images/screens/wide.gif
-%%WWWDIR%%/plugins/UserSettings/index.tpl
+%%WWWDIR%%/plugins/UserSettings/templates/index.tpl
 %%WWWDIR%%/plugins/UsersManager/API.php
 %%WWWDIR%%/plugins/UsersManager/Controller.php
 %%WWWDIR%%/plugins/UsersManager/UsersManager.php
@@ -1194,24 +1253,25 @@
 %%WWWDIR%%/plugins/UsersManager/images/valid.png
 %%WWWDIR%%/plugins/UsersManager/templates/UsersManager.js
 %%WWWDIR%%/plugins/UsersManager/templates/UsersManager.tpl
+%%WWWDIR%%/plugins/VisitFrequency/templates/index.tpl
+%%WWWDIR%%/plugins/VisitFrequency/templates/sparklines.tpl
 %%WWWDIR%%/plugins/VisitFrequency/API.php
 %%WWWDIR%%/plugins/VisitFrequency/Controller.php
 %%WWWDIR%%/plugins/VisitFrequency/VisitFrequency.php
-%%WWWDIR%%/plugins/VisitFrequency/index.tpl
-%%WWWDIR%%/plugins/VisitFrequency/sparklines.tpl
 %%WWWDIR%%/plugins/VisitTime/API.php
 %%WWWDIR%%/plugins/VisitTime/Controller.php
 %%WWWDIR%%/plugins/VisitTime/VisitTime.php
-%%WWWDIR%%/plugins/VisitTime/index.tpl
+%%WWWDIR%%/plugins/VisitTime/templates/index.tpl
 %%WWWDIR%%/plugins/VisitorInterest/API.php
 %%WWWDIR%%/plugins/VisitorInterest/Controller.php
 %%WWWDIR%%/plugins/VisitorInterest/VisitorInterest.php
-%%WWWDIR%%/plugins/VisitorInterest/index.tpl
+%%WWWDIR%%/plugins/VisitorInterest/templates/index.tpl
+%%WWWDIR%%/plugins/VisitsSummary/templates/index.tpl
+%%WWWDIR%%/plugins/VisitsSummary/templates/sparklines.tpl
+%%WWWDIR%%/plugins/VisitsSummary/templates/index.tpl
 %%WWWDIR%%/plugins/VisitsSummary/API.php
 %%WWWDIR%%/plugins/VisitsSummary/Controller.php
 %%WWWDIR%%/plugins/VisitsSummary/VisitsSummary.php
-%%WWWDIR%%/plugins/VisitsSummary/index.tpl
-%%WWWDIR%%/plugins/VisitsSummary/sparklines.tpl
 %%WWWDIR%%/plugins/Widgetize/Controller.php
 %%WWWDIR%%/plugins/Widgetize/Widgetize.php
 %%WWWDIR%%/plugins/Widgetize/templates/iframe.tpl
@@ -1236,6 +1296,8 @@
 %%WWWDIR%%/themes/default/images/export.png
 %%WWWDIR%%/themes/default/images/feed.png
 %%WWWDIR%%/themes/default/images/goal.png
+%%WWWDIR%%/themes/default/images/icon-calendar.gif
+%%WWWDIR%%/themes/default/images/image.png
 %%WWWDIR%%/themes/default/images/link.gif
 %%WWWDIR%%/themes/default/images/loading-blue.gif
 %%WWWDIR%%/themes/default/images/minus.png
@@ -1262,9 +1324,13 @@
 @dirrm %%WWWDIR%%/tests
 @dirrm %%WWWDIR%%/plugins/Widgetize/templates
 @dirrm %%WWWDIR%%/plugins/Widgetize
+@dirrm %%WWWDIR%%/plugins/VisitsSummary/templates/
 @dirrm %%WWWDIR%%/plugins/VisitsSummary
+@dirrm %%WWWDIR%%/plugins/VisitorInterest/templates
 @dirrm %%WWWDIR%%/plugins/VisitorInterest
+@dirrm %%WWWDIR%%/plugins/VisitTime/templates
 @dirrm %%WWWDIR%%/plugins/VisitTime
+@dirrm %%WWWDIR%%/plugins/VisitFrequency/templates
 @dirrm %%WWWDIR%%/plugins/VisitFrequency
 @dirrm %%WWWDIR%%/plugins/UsersManager/templates
 @dirrm %%WWWDIR%%/plugins/UsersManager/images
@@ -1274,8 +1340,10 @@
 @dirrm %%WWWDIR%%/plugins/UserSettings/images/os
 @dirrm %%WWWDIR%%/plugins/UserSettings/images/browsers
 @dirrm %%WWWDIR%%/plugins/UserSettings/images
+@dirrm %%WWWDIR%%/plugins/UserSettings/templates
 @dirrm %%WWWDIR%%/plugins/UserSettings
 @dirrm %%WWWDIR%%/plugins/UserCountry/flags
+@dirrm %%WWWDIR%%/plugins/UserCountry/templates
 @dirrm %%WWWDIR%%/plugins/UserCountry
 @dirrm %%WWWDIR%%/plugins/SitesManager/templates
 @dirrm %%WWWDIR%%/plugins/SitesManager
@@ -1296,10 +1364,16 @@
 @dirrm %%WWWDIR%%/plugins/Installation
 @dirrm %%WWWDIR%%/plugins/Goals/templates
 @dirrm %%WWWDIR%%/plugins/Goals
+@dirrm %%WWWDIR%%/plugins/Feedback/templates
 @dirrm %%WWWDIR%%/plugins/Feedback
+@dirrm %%WWWDIR%%/plugins/ExampleUI/images/icons-planet
+@dirrm %%WWWDIR%%/plugins/ExampleUI/images
+@dirrm %%WWWDIR%%/plugins/ExampleUI
+@dirrm %%WWWDIR%%/plugins/ExampleRssWidget/templates
 @dirrm %%WWWDIR%%/plugins/ExampleRssWidget
 @dirrm %%WWWDIR%%/plugins/ExamplePlugin/lang
 @dirrm %%WWWDIR%%/plugins/ExamplePlugin
+@dirrm %%WWWDIR%%/plugins/ExampleFeedburner/templates
 @dirrm %%WWWDIR%%/plugins/ExampleFeedburner
 @dirrm %%WWWDIR%%/plugins/ExampleAPI
 @dirrm %%WWWDIR%%/plugins/Dashboard/templates
@@ -1328,6 +1402,7 @@
 @dirrm %%WWWDIR%%/libs/swfobject
 @dirrm %%WWWDIR%%/libs/sparkline/lib
 @dirrm %%WWWDIR%%/libs/sparkline
+@dirrm %%WWWDIR%%/libs/open-flash-chart/php-ofc-library
 @dirrm %%WWWDIR%%/libs/open-flash-chart
 @dirrm %%WWWDIR%%/libs/json
 @dirrm %%WWWDIR%%/libs/jquery/truncate
