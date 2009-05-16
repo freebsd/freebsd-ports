@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	moodle
-PORTVERSION=	1.9.4
-PORTREVISION=	1
+PORTVERSION=	1.9.5
 CATEGORIES=	www
 MASTER_SITES=	http://download.moodle.org/stable19/ \
 		http://download2.moodle.org/stable19/ \
