@@ -1,0 +1,8 @@
+Chemistr-Mol is a toolkit includes basic objects and methods to
+describe molecules. It consists of several modules: Chemistry::Mol,
+Chemistry::Atom, Chemistry::Bond, and Chemistry::File.
+
+They are the core modules of the PerlMol toolkit, see:
+http://www.perlmol.org/.
+
+WWW: http://search.cpan.org/dist/Chemistry-Mol/

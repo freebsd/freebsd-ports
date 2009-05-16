@@ -1,0 +1,13 @@
+%%SITE_PERL%%/Chemistry/Atom.pm
+%%SITE_PERL%%/Chemistry/Bond.pm
+%%SITE_PERL%%/Chemistry/Obj.pm
+%%SITE_PERL%%/Chemistry/File.pm
+%%SITE_PERL%%/Chemistry/Tutorial.pod
+%%SITE_PERL%%/Chemistry/Mol.pm
+%%SITE_PERL%%/Chemistry/File/Dumper.pm
+%%SITE_PERL%%/Chemistry/File/Formula.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Mol/.packlist
+@dirrm %%SITE_PERL%%/Chemistry/File
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Mol
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry
+@dirrmtry %%SITE_PERL%%/Chemistry

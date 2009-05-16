@@ -97,6 +97,7 @@
     SUBDIR += ovt
     SUBDIR += p5-Algorithm-SVMLight
     SUBDIR += p5-Chemistry-Elements
+    SUBDIR += p5-Chemistry-Mol
     SUBDIR += p5-Geo-ReadGRIB
     SUBDIR += paje
     SUBDIR += paraview
