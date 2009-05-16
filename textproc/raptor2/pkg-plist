@@ -7,6 +7,9 @@ lib/libraptor.so
 lib/libraptor.so.2
 libdata/pkgconfig/raptor.pc
 @exec mkdir -p %D/share/gtk-doc/html/raptor
+share/gtk-doc/html/raptor/parser-rdfa.html
+share/gtk-doc/html/raptor/serializer-json.html
+share/gtk-doc/html/raptor/raptor-section-sax2.html
 share/gtk-doc/html/raptor/home.png
 share/gtk-doc/html/raptor/index.html
 share/gtk-doc/html/raptor/index.sgml
