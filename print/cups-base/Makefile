@@ -65,6 +65,7 @@ CUPS_SUFFIX=	-client
 INSTALL_WRKSRC=	${WRKSRC}/cups
 PLIST=		${MASTERDIR}/pkg-plist.client
 USE_LDCONFIG=	yes
+PKGMESSAGE=	${NONEXISTENT}
 .elif defined(CUPS_IMAGE)
 CUPS_SUFFIX=	-image
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
@@ -75,6 +76,7 @@ CONFIGURE_ARGS+=	--disable-pdftops
 INSTALL_WRKSRC=	${WRKSRC}/filter
 PLIST=		${MASTERDIR}/pkg-plist.image
 USE_LDCONFIG=	yes
+PKGMESSAGE=	${NONEXISTENT}
 .else
 CUPS_SUFFIX=	-base
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
