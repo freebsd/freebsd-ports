@@ -1,0 +1,27 @@
+*******************************************************************************
+
+Access multiple repositories inside one Trac project
+----------------------------------------------------
+
+Make sure the following is somewhere in <trac-env>/conf/trac.ini, adding all
+the desired repositories to the [repositories] section. For example:
+
+[components]
+tracext.hg.* = enabled
+
+[repositories]
+my_repo_a.dir = <path_to_a_repository>
+my_repo_b.dir = <path_to_another_repository>
+my_repo_c.dir = <path_to_yet_another_repository>
+my_repo_c.type = direct-svnfs
+
+[trac]
+repository_dir = <path_to_default_repository>
+repository_type = hg
+
+
+Consult any instructions at:
+
+	http://trac.edgewall.org/wiki/MultipleRepositorySupport
+
+*******************************************************************************
