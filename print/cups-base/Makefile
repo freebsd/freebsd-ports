@@ -60,21 +60,31 @@ CUPSSYSGRP=	wheel
 .include <bsd.port.pre.mk>
 
 .if defined(CUPS_CLIENT)
-USE_LDCONFIG=	yes
 CUPS_SUFFIX=	-client
-PLIST=		${MASTERDIR}/pkg-plist.client
 INSTALL_WRKSRC=	${WRKSRC}/cups
+PLIST=		${MASTERDIR}/pkg-plist.client
+USE_LDCONFIG=	yes
+.elif defined(CUPS_IMAGE)
+CUPS_SUFFIX=	-image
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client
+CONFIGURE_ARGS+=	--disable-pdftops
+INSTALL_WRKSRC=	${WRKSRC}/filter
+PLIST=		${MASTERDIR}/pkg-plist.image
+USE_LDCONFIG=	yes
 .else
 CUPS_SUFFIX=	-base
-USE_RC_SUBR=	cupsd
-USE_GHOSTSCRIPT=	yes
-CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=gs
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client
 # force build if old cups is installed.
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcups.a:${PORTSDIR}/${PKGCATEGORY}/cups-client
+USE_GHOSTSCRIPT=	yes
+USE_RC_SUBR=	cupsd
+CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=gs
 .endif
 
 .if defined(CUPS_OVERWRITE_BASE)
@@ -149,6 +159,7 @@ RUN_DEPENDS+=		xdg-open:${PORTSDIR}/devel/xdg-utils
 
 .if defined(CUPS_CLIENT)
 MAN1=	cups-config.1
+.elif defined(CUPS_IMAGE)
 .else
 MAN1=	cancel.1 \
 	cupstestdsc.1 \
@@ -216,6 +227,14 @@ post-patch:
 		-e 's|conf data doc $$.FONTS.ppd templates||' \
 		-e '/share/s|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/Makefile
+.elif defined(CUPS_IMAGE)
+	@${REINPLACE_CMD} \
+		-e 's|cups backend berkeley cgi-bin filter locale man monitor |filter |' \
+		-e 's|notifier scheduler systemv test ||' \
+		-e 's|$$.PHPDIR. ||' \
+		-e 's|conf data doc $$.FONTS.ppd templates||' \
+		-e '/share/s|/usr/share|${PREFIX}/share|g' \
+		${WRKSRC}/Makefile
 .else
 	@${REINPLACE_CMD} \
 		-e 's|cups backend|backend|' \
@@ -234,7 +253,7 @@ pre-build:
 	${CP} -p ${LOCALBASE}/lib/libcups.so.2 ${WRKSRC}/cups/
 .endif
 
-.if !defined(CUPS_CLIENT)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE)
 pre-su-install:
 	@${INSTALL} -d ${DESKTOPDIR}/
 	if ! pw groupshow ${CUPSGRP}; then pw groupadd ${CUPSGRP} -g 193; fi
@@ -264,7 +283,7 @@ post-install:
 	${CHOWN} root:${CUPSGRP} /var/cache/cups/
 .endif
 
-.if defined(CUPS_CLIENT)
+.if defined(CUPS_CLIENT) && !defined(CUPS_IMAGE)
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cups-config ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/cups/libcups.a ${PREFIX}/lib/
