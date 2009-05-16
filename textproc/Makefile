@@ -487,6 +487,7 @@
     SUBDIR += p5-Number-Format
     SUBDIR += p5-Number-Spell
     SUBDIR += p5-PDF-API2
+    SUBDIR += p5-PDF-API3
     SUBDIR += p5-PDF-Create
     SUBDIR += p5-PDF-FromHTML
     SUBDIR += p5-PDF-Writer
