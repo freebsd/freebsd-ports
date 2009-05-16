@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_perl
-PORTVERSION=	1.30
+PORTVERSION=	1.31
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	ModPerl/GOZER
@@ -41,21 +41,19 @@ MAN3=		Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
 		Apache::PerlSections.3 Apache::fork.3 cgi_to_mod_perl.3 \
 		mod_perl_cvs.3 mod_perl_method_handlers.3 mod_perl_traps.3 \
 		mod_perl_tuning.3
-.if defined(APACHE_PORT)
-.   if ${APACHE_PORT:Mipv6} != ""
-WITH_APACHE_IPV6=	YES
-.   endif
-.endif
 
-.if defined(WITH_APACHE_IPV6)
+.if defined(APACHE_PORT)
+.  if ${APACHE_PORT:Mipv6} != ""
+WITH_APACHE_IPV6=	YES
 CFLAGS+=	-DAPACHE6
+.  endif
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/include/apache/modules/perl
+	${MKDIR} ${LOCALBASE}/${APACHEINCLUDEDIR}/modules/perl
 	${INSTALL_DATA} ${WRKSRC}/src/modules/perl/*.h \
-	    ${PREFIX}/include/apache/modules/perl
-	${INSTALL_PROGRAM} ${WRKSRC}/apaci/libperl.so ${PREFIX}/libexec/apache
+	    ${LOCALBASE}/${APACHEINCLUDEDIR}/modules/perl
+	${INSTALL_PROGRAM} ${WRKSRC}/apaci/libperl.so ${LOCALBASE}/${APACHEMODDIR}/
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 post-deinstall:
