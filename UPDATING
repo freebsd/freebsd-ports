@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090516:
+  AFFECTS: users of print/cups-base and portupgrade
+  AUTHOR: dinoex@FreeBSD.org
+
+  print/cups has been splitten in mutiple ports. If upgrading
+  from 1.9.10 abd below you must remove the installed version first.
+
 20090412:
   AFFECTS: users of sysutils/bacula-server
   AUTHOR: wxs@FreeBSD.org
