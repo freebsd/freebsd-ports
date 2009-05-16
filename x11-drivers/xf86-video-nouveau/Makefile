@@ -8,7 +8,6 @@
 PORTNAME=	xf86-video-nouveau
 PORTVERSION=	0.0.10.${SNAPDATE}
 DISTVERSIONSUFFIX=.${SNAPREV}
-PORTREVISION=	1
 CATEGORIES=	x11-drivers
 MASTER_SITES=	ftp://ftp.lissyara.su/users/Guest/distfiles/
 
@@ -21,18 +20,18 @@ MAN4=		nouveau.4x
 
 MAKE_JOBS_SAFE=	yes
 
-SNAPDATE=	20090408
-SNAPREV=	d8545e6
+SNAPDATE=	20090514
+SNAPREV=	9656762
 
 post-configure:
 	${REINPLACE_CMD} '/NV_DRIVER_DATE/s/".*"/"${SNAPDATE}.${SNAPREV}"/' ${WRKSRC}/config.h
 
 GIT_WORK=	${WRKDIR}/${PORTNAME}.git-clone
-GIT_REV=	$$(echo $$(date -ur$$(git log --pretty=format:%ct -1 \
-			) +%Y%m%d).$$(git log --pretty=format:%h -1))
+GIT_REV=	$$(date -ur$$(git log --pretty=format:%ct -1 \
+			) +%Y%m%d).$$(git log --pretty=format:%h -1)
 
 maint-gen-distfile:
-	git clone git://anongit.freedesktop.org/git/nouveau/xf86-video-nouveau \
+	git clone git://anongit.freedesktop.org/nouveau/xf86-video-nouveau \
 		${GIT_WORK}
 
 	( cd ${GIT_WORK}; \
