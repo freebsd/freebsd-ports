@@ -7,6 +7,7 @@
 
 PORTNAME=	Auth
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	security pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -28,7 +29,6 @@ OPTIONS=	PEAR_LOG "PEAR::Log support" off \
 		PEAR_SOAP "PEAR::SOAP support" off \
 		PEAR_NET_VPOPMAILD "PEAR::Net_Vpopmaild support" off
 
-CATEGORY=	Auth
 FILES=		Auth.php Auth.php.bak Auth/Anonymous.php Auth/Auth.php \
 		Auth/Controller.php Container.php Container/Array.php \
 		Container/DB.php Container/DBLite.php Container/File.php \
