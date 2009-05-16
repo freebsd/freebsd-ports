@@ -6,25 +6,24 @@
 
 PORTNAME=	mysqlman
 PORTVERSION=	1.09
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases www
 MASTER_SITES=	http://www.gossamer-threads.com/scripts/source/
-DISTNAME=	mysqlman
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	MySQLMan is a web based MySQL database manager written in perl
 
-RUN_DEPENDS=	${WWW_DIR}:${PORTSDIR}/${APACHE_PORT} \
-		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RESTRICTED=	not redistributable, license agreement required
 
-WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION}
-RESTRICTED=	"not redistributable, license agreement required"
 USE_PERL5=	yes
-NO_BUILD=	yes
-APACHE_COMPAT=	yes
+USE_APACHE=	1.3
+USE_MYSQL=	yes
 
-# to determine whether apache installed
-WWW_DIR=	${LOCALBASE}/www/
+NO_BUILD=	yes
+
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 #install dir of mysqlman
 MYMANDIR=	www/mysqlman-${PORTVERSION}
 
@@ -35,7 +34,7 @@ PLIST_SUB+=	MYMANDIR=${MYMANDIR}
 f="mysql.cgi"
 
 #Web user
-WEBUSER?=	www:www
+WEBUSER?=	${WWWOWN}:${WWWGRP}
 
 .include <bsd.port.pre.mk>
 
