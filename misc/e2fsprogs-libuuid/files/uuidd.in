@@ -1,9 +1,13 @@
 #!/bin/sh
 #
 # rcNG script to start uuidd at boot-time on rcNG-enabled systems,
-# such as FreeBSD.
+# such as FreeBSD.  Note: Starting uuidd at boot-time is not strictly 
+# necessary, the library will - as of 1.41.5 - silently launch an 
+# instance of uuidd that exits after 300 seconds; for most accurate 
+# time-based uuids generated from unprivileged user accounts it may be 
+# useful to run it system-wide.
 #
-# (C) 2008 by Matthias Andree.
+# (C) 2008, 2009 by Matthias Andree.
 # Licensed under the modified (= 2-clause) BSD license.
 
 # PROVIDE: uuidd
