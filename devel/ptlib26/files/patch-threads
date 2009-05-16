@@ -1,0 +1,76 @@
+--- include/ptlib/unix/ptlib/contain.h.orig	2009-04-25 21:59:44.000000000 +0400
++++ include/ptlib/unix/ptlib/contain.h	2009-04-25 22:01:14.000000000 +0400
+@@ -81,9 +81,11 @@
+ #ifdef P_64BIT
+ typedef long          INT;
+ typedef unsigned long UINT;
++#define _hptr(x)        (PINDEX)(unsigned long)(x)
+ #else
+ typedef int           INT;
+ typedef unsigned int  UINT;
++#define _hptr(x)        (unsigned)(x)
+ #endif
+ 
+ // Create "Windows" style definitions.
+--- src/ptlib/unix/tlib.cxx	2009-03-18 06:43:30.000000000 +0300
++++ src/ptlib/unix/tlib.cxx	2009-04-25 22:03:56.000000000 +0400
+@@ -400,7 +404,7 @@
+ {
+   if (PProcessInstance != NULL) {
+     PWaitAndSignal m(PProcessInstance->activeThreadMutex);
+-    PThread & thread = PProcessInstance->activeThreads[(unsigned)id];
++    PThread & thread = PProcessInstance->activeThreads[_hptr(id)];
+     return thread.GetThreadName();
+   }
+   return psprintf("%08x", id);
+--- src/ptlib/unix/tlibthrd.cxx	2009-03-18 06:43:30.000000000 +0300
++++ src/ptlib/unix/tlibthrd.cxx	2009-04-25 22:03:45.000000000 +0400
+@@ -240,7 +240,7 @@
+ {
+   PWaitAndSignal m(activeThreadMutex);
+ 
+-  if (!activeThreads.Contains((unsigned)id)) 
++  if (!activeThreads.Contains(_hptr(id))) 
+     return PFalse;
+ 
+   return pthread_kill(id, sig) == 0;
+@@ -249,8 +249,8 @@
+ void PProcess::PXSetThread(pthread_t id, PThread * thread)
+ {
+   activeThreadMutex.Wait();
+-  PThread * currentThread = activeThreads.GetAt((PINDEX)id);
+-  activeThreads.SetAt((PINDEX)id, thread);
++  PThread * currentThread = activeThreads.GetAt(_hptr(id));
++  activeThreads.SetAt(_hptr(id), thread);
+   activeThreadMutex.Signal();
+ 
+   if (currentThread != NULL) 
+@@ -891,7 +891,7 @@
+   }
+ 
+   // remove this thread from the active thread list
+-  process.activeThreads.SetAt((unsigned)id, NULL);
++  process.activeThreads.SetAt(_hptr(id), NULL);
+ 
+   bool deleteThread = thread->autoDelete; // Get flag before releasing lock
+ 
+--- src/ptlib/common/osutils.cxx	2009-03-18 06:43:33.000000000 +0300
++++ src/ptlib/common/osutils.cxx	2009-04-25 22:03:35.000000000 +0400
+@@ -1548,7 +1551,7 @@
+   , m_library(false)
+ {
+   activeThreads.DisallowDeleteObjects();
+-  activeThreads.SetAt((PINDEX)GetCurrentThreadId(), this);
++  activeThreads.SetAt(_hptr(GetCurrentThreadId()), this);
+ 
+   PProcessInstance = this;
+ 
+@@ -1912,7 +1915,7 @@
+   PProcess & process = PProcess::Current();
+ 
+   process.activeThreadMutex.Wait();
+-  PThread * thread = process.activeThreads.GetAt((unsigned)GetCurrentThreadId());
++  PThread * thread = process.activeThreads.GetAt(_hptr(GetCurrentThreadId()));
+   process.activeThreadMutex.Signal();
+ 
+   if (thread == NULL)

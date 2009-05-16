@@ -23,6 +23,7 @@ include/ptclib/modem.h
 include/ptclib/paec.h
 include/ptclib/pasn.h
 include/ptclib/pdns.h
+include/ptclib/pffvdev.h
 include/ptclib/pils.h
 include/ptclib/pldap.h
 include/ptclib/pnat.h
@@ -66,7 +67,6 @@ include/ptlib/config.h
 include/ptlib/contain.h
 include/ptlib/contain.inl
 include/ptlib/critsec.h
-include/ptlib/devplugin.h
 include/ptlib/dict.h
 include/ptlib/dynalink.h
 include/ptlib/ethsock.h
@@ -154,7 +154,6 @@ include/ptlib/unix/ptlib/timeint.h
 include/ptlib/unix/ptlib/timer.h
 include/ptlib/unix/ptlib/udpsock.h
 include/ptlib/unix/ptlib/video.h
-include/ptlib/unix/ptlib/videoio.h
 include/ptlib/vconvert.h
 include/ptlib/video.h
 include/ptlib/videoio.h
@@ -162,23 +161,23 @@ include/ptlib/videoio1394dc.h
 lib/libpt.so
 lib/libpt.so.2
 lib/libpt_s.a
+lib/ptlib-2.6.1/devices/sound/oss_pwplugin.so
+lib/ptlib-2.6.1/devices/videoinput/bsdvideo_pwplugin.so
 libdata/pkgconfig/ptlib.pc
-share/ptlib/make/common.mak
-share/ptlib/make/lib.mak
-share/ptlib/make/plugins.mak
-share/ptlib/make/ptbuildopts.mak
-share/ptlib/make/ptlib-config
-share/ptlib/make/ptlib.mak
-share/ptlib/make/unix.mak
-%%BSDVIDEO%%lib/ptlib-2.4.4/devices/videoinput/bsdvideo_pwplugin.so
-%%BSDVIDEO%%lib/ptlib-2.4.4/devices/sound/oss_pwplugin.so
-@dirrm share/ptlib/make
-@dirrm share/ptlib
+%%DATADIR%%/make/common.mak
+%%DATADIR%%/make/lib.mak
+%%DATADIR%%/make/plugins.mak
+%%DATADIR%%/make/ptbuildopts.mak
+%%DATADIR%%/make/ptlib-config
+%%DATADIR%%/make/ptlib.mak
+%%DATADIR%%/make/unix.mak
+@dirrm %%DATADIR%%/make
+@dirrm %%DATADIR%%
+@dirrm lib/ptlib-2.6.1/devices/videoinput
+@dirrm lib/ptlib-2.6.1/devices/sound
+@dirrm lib/ptlib-2.6.1/devices
+@dirrm lib/ptlib-2.6.1
 @dirrm include/ptlib/unix/ptlib
 @dirrm include/ptlib/unix
 @dirrm include/ptlib
 @dirrm include/ptclib
-%%BSDVIDEO%%@dirrm lib/ptlib-2.4.4/devices/videoinput
-%%BSDVIDEO%%@dirrm lib/ptlib-2.4.4/devices/sound
-%%BSDVIDEO%%@dirrm lib/ptlib-2.4.4/devices
-%%BSDVIDEO%%@dirrm lib/ptlib-2.4.4
