@@ -1479,6 +1479,7 @@
     SUBDIR += trac-macropost
     SUBDIR += trac-mastertickets
     SUBDIR += trac-mercurial
+    SUBDIR += trac-multirepos
     SUBDIR += trac-nav
     SUBDIR += trac-navadd
     SUBDIR += trac-pagelist
