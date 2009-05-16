@@ -35,7 +35,7 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="4a638895-41b7-11de-b1cc-00219b0fc4d8">
-    <topic>mod_perl -- cross site scripting in Apache::Status</topic>
+    <topic>mod_perl -- cross site scripting</topic>
     <affects>
       <package>
 	<name>mod_perl</name>
@@ -48,22 +48,24 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>US Cert reports:</p>
+	<p>secunia reports:</p>
         <blockquote
-          cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0796">
-	  <p>Cross-site scripting (XSS) vulnerability in Status.pm in
-            Apache::Status and Apache2::Status in mod_perl1 and mod_perl2 for
-            the Apache HTTP Server, when /perl-status is accessible, allows
-            remote attackers to inject arbitrary web script or HTML via the URI.</p>
+          cite="http://secunia.com/advisories/3459796">
+	  <p>Certain input passed to the "Apache::Status" and "Apache2::Status"
+	    modules is not properly sanitised before being returned to the user.
+	    This can be exploited to execute arbitrary HTML and script code in a
+	    user's browser session in context of an affected website.</p>
 	</blockquote>
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-0796</cvename>
       <url>http://secunia.com/advisories/34597</url>
     </references>
     <dates>
       <discovery>2009-02-28</discovery>
       <entry>2009-05-16</entry>
+      <modified>2009-05-16</modified>
     </dates>
   </vuln>
 
