@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libapreq2
-PORTVERSION=	2.08
-PORTREVISION=	3
+PORTVERSION=	2.12
 CATEGORIES=	www devel
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=libapreq
@@ -16,6 +15,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Generic Apache2 Request Library
 
 USE_APACHE=	2.0+
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf:262 libtool:15
 CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS} --with-expat=${LOCALBASE}
@@ -59,9 +59,9 @@ PLIST_SUB+=	WITH_MODPERL2="@comment "
 .include <bsd.port.pre.mk>
 
 .if ${APACHE_VERSION} == 20
-SHLIB_MAJOR=	8
-.else
 SHLIB_MAJOR=	9
+.else
+SHLIB_MAJOR=	10
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,11 +1,11 @@
---- module/Makefile.in.orig	Tue Aug  8 21:29:05 2006
-+++ module/Makefile.in	Thu Aug 10 01:45:23 2006
-@@ -47,7 +47,7 @@
- mkinstalldirs = $(install_sh) -d
+--- ./module/Makefile.in.orig	2009-04-13 06:36:59.000000000 +0000
++++ ./module/Makefile.in	2009-04-13 06:35:59.000000000 +0000
+@@ -128,7 +128,7 @@
  CONFIG_HEADER = $(top_builddir)/include/apreq_config.h
  CONFIG_CLEAN_FILES =
+ noinst_PROGRAMS = test_cgi$(EXEEXT)
 -PROGRAMS = $(noinst_PROGRAMS)
-+PROGRAMS =
++PROGRAMS = 
+ 
  test_cgi_SOURCES = test_cgi.c
  test_cgi_OBJECTS = test_cgi.$(OBJEXT)
- test_cgi_LDADD = $(LDADD)
