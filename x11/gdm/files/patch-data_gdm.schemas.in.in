@@ -1,0 +1,11 @@
+--- data/gdm.schemas.in.in.orig	2009-05-16 18:17:53.000000000 -0400
++++ data/gdm.schemas.in.in	2009-05-16 18:18:01.000000000 -0400
+@@ -77,7 +77,7 @@
+     <schema>
+       <key>xdmcp/DisplaysPerHost</key>
+       <signature>i</signature>
+-      <default>1</default>
++      <default>2</default>
+     </schema>
+     <schema>
+       <key>xdmcp/Port</key>
