@@ -33,7 +33,7 @@ PLIST_SUB=	INSTDIR=${INSTDIR}
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_APACHE2) && !defined(WITH_LIGHTTPD)
+.if !defined(WITH_APACHE) && !defined(WITH_LIGHTTPD)
 USE_RC_SUBR=	viewvc
 .endif
 
