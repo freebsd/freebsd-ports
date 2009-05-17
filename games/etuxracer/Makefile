@@ -7,7 +7,7 @@
 
 PORTNAME=	tuxracer
 PORTVERSION=	0.61
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	SF/tuxracer
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3d penguin racing game using OpenGL
 
-LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
+LIB_DEPENDS=	tcl85:${PORTSDIR}/lang/tcl85
 
 USE_SDL=	mixer sdl
 USE_GL=		gl
@@ -26,7 +26,7 @@ USE_AUTOTOOLS=	automake:14 autoconf:262
 AUTOMAKE_ARGS=	-a
 CONFIGURE_ENV=	THREAD_LIB="${PTHREAD_LIBS}"
 MAKE_ENV=	${CONFIGURE_ENV}
-CONFIGURE_ARGS=	--with-tcl-inc="${LOCALBASE}/include/tcl8.3" \
+CONFIGURE_ARGS=	--with-tcl-inc="${LOCALBASE}/include/tcl8.5" \
 		--with-tcl-libs="${LOCALBASE}/lib" \
 		--with-gl-libs="${LOCALBASE}/lib" \
 		--with-gl-inc="${LOCALBASE}/include" \
