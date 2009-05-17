@@ -79,39 +79,34 @@ MAKEINFO=		makeinfo --no-split --no-validate
 MAKEINFO_EMACS=		${EMACS_CMD} -no-site-file -no-init-file -batch
 MAKEINFO_EMACS_FLAGS=	-e texinfo-format-buffer -f save-buffer
 
-pre-build:
 .if defined(EMACS_PACKAGESDIR) && defined(XEMACS_PKGNAME)
-	@${MAKE} pkg-el-copy
+pre-build: pkg-el-copy
 .endif
 
-post-build:
 .if defined(BUILD_INFO_BY_EMACS) && (${BUILD_INFO_BY_EMACS} == "YES")
-	@${MAKE} info-build-by-emacs
+post-build: info-build-by-emacs
 .else
-	@${MAKE} info-build
+post-build: info-build
 .endif
 
-pre-install:
 .if defined(EMACS_PACKAGESDIR) && defined(EMACS_PACKAGES_SUBDIRS)
-	@${MAKE} mkdir-site-packages
+pre-install: mkdir-site-packages
 .endif
 .if defined(EMACS_PACKAGESDIR) && defined(XEMACS_PKGNAME)
-	@${MAKE} pkg-el-install
+pre-install: pkg-el-install
 .endif
 
-post-install:
-# install package-cookie
-	@${MKDIR} ${LOCALBASE}/share/flim
-	@${TOUCH} ${LOCALBASE}/share/flim/${FLIM_COOKIE}
+POST_INSTALL_TARGET=	pkgcookie-install
 .if defined(EMACS_PACKAGESDIR) && defined(MANIFEST)
-	@${MAKE} info-package-install
-	@${MAKE} manifest-install
+POST_INSTALL_TARGET+=	info-package-install manifest-install
 .else
-	@${MAKE} info-install
+POST_INSTALL_TARGET+=	info-install
 .endif
 .if !defined(NOPORTDOCS)
-	@${MAKE} doc-install
+POST_INSTALL_TARGET+=	doc-install
 .endif
+
+post-install: ${POST_INSTALL_TARGET}
 
 ###############################################################################
 #
@@ -201,5 +196,10 @@ manifest-install:
 		${SED} -e "s;^%%EMACS_PACKAGESDIR%%/;;" > ${WRKDIR}/${MANIFEST}
 	@${INSTALL_DATA} ${WRKDIR}/${MANIFEST} \
 		${LOCALBASE}/${EMACS_PACKAGESDIR}/pkginfo/
+
+pkgcookie-install:
+# install package-cookie
+	@${MKDIR} ${LOCALBASE}/share/flim
+	@${TOUCH} ${LOCALBASE}/share/flim/${FLIM_COOKIE}
 
 .include <bsd.port.post.mk>
