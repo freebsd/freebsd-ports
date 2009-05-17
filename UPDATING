@@ -7,6 +7,14 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20090516:
+  AFFECTS: users of devel/viewvc 
+  AUTHOR: pgollucci@FreeBSD.org
+
+  OPTION APACHE2 has been changed to APACHE (WITH_APACHE)
+  WITH_APACHE2 is deprecated and is being removed.
+  APACHE_PORT will be pulled in when WITH_APACHE is selected
+
+20090516:
   AFFECTS: users of print/cups-base and portupgrade
   AUTHOR: dinoex@FreeBSD.org
 
