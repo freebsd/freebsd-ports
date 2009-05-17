@@ -7,6 +7,7 @@
 
 PORTNAME=	${APP_TITLE:L}
 PORTVERSION=	5.0.0.GA
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -57,7 +58,7 @@ JAVA_MAIN=	org.jboss.Main
 MAN1=		${CONTROL_SCRIPT_NAME}.1
 
 JBOSSOUTPUT=	${WRKSRC}/build/output/${PORTNAME}-${PORTVERSION}
-APP_HOME_FILES=	bin client lib server
+APP_HOME_FILES=	bin client lib server common
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
