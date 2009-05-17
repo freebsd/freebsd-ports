@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	The Spread Group Communication System, a network toolkit
 
+MAKE_JOBS_UNSAFE=	yes
+
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	spread.sh
