@@ -5,20 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gtk-murrine-engine
-PORTVERSION=	0.52
-PORTREVISION=	2
+PORTNAME=	murrine
+PORTVERSION=	0.90.3
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://cimi.netsons.org/media/download_gallery/murrie/
-DISTNAME=	murrine-${PORTVERSION}
+MASTER_SITES=	GNOME
+PKGNAMEPREFIX=	gtk-
+PKGNAMESUFFIX=	-engine
 
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	Murrine GTK+ 2.x cairo based engine
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
-
-FETCH_CMD=	/usr/bin/fetch
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

@@ -1,2 +1,3 @@
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libmurrine.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libmurrine.so
+share/gtk-engines/murrine.xml
