@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clive-utils
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.6
 CATEGORIES=	multimedia net perl5
 MASTER_SITES=	GOOGLE_CODE
 DIST_SUBDIR=	clive
@@ -18,7 +18,6 @@ NO_BUILD=	yes
 USE_PERL5_RUN=	5.8.2+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 RUN_DEPENDS+=	clive>=2.0:${PORTSDIR}/multimedia/clive \
 		p5-Crypt-PasswdMD5>=1.3:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
