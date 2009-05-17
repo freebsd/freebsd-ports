@@ -2433,6 +2433,7 @@
     SUBDIR += py-uuid
     SUBDIR += py-virtualenv
     SUBDIR += py-vmaps
+    SUBDIR += py-waf
     SUBDIR += py-wsgi_xmlrpc
     SUBDIR += py-wsgiutils
     SUBDIR += py-xattr
