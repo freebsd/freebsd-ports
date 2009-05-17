@@ -130,6 +130,7 @@
     SUBDIR += py-xmpppy-irc
     SUBDIR += py-xmpppy-yahoo
     SUBDIR += pymsn
+    SUBDIR += qq
     SUBDIR += qutim
     SUBDIR += qwit
     SUBDIR += rubygem-xmpp4r
