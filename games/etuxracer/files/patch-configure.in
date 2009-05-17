@@ -1,5 +1,5 @@
---- configure.in.orig	Tue Jan 16 07:26:29 2001
-+++ configure.in	Thu Jul  4 00:47:06 2002
+--- configure.in.orig	2001-01-16 16:26:29.000000000 +0100
++++ configure.in	2009-04-27 03:06:12.000000000 +0200
 @@ -43,16 +43,10 @@
  dnl General options
  dnl --------------------------------------------------------------------------
@@ -19,7 +19,39 @@
  AC_ARG_ENABLE(debug,     [  --enable-debug          Produce an executable with debugging symbols], 
  			 [TR_CFLAGS="-g -Wall"; TR_CXXFLAGS="-g -Wall"],
  			 [TR_CPPFLAGS="$TR_CPPFLAGS -DTUXRACER_NO_ASSERT=1"])
-@@ -303,6 +297,10 @@
+@@ -137,6 +131,10 @@
+ if test "x$have_tcl_lib" = "xno" -a "x$with_tcl_lib_name" = "x" ; then
+ 
+     TCL_LIB_LIST=`grep -v -E "^$TCL_LIB_NAME\$" <<EOF 
++tcl8.5
++tcl85
++tcl8.4
++tcl84
+ tcl8.3
+ tcl83
+ tcl8.2
+@@ -191,6 +189,10 @@
+ 
+         TCL_HEADER_LIST=`grep -v -E "^$TCL_HEADER\$" <<EOF 
+ tcl.h
++tcl8.5.h
++tcl85.h
++tcl8.4.h
++tcl84.h
+ tcl8.3.h
+ tcl83.h
+ tcl8.2.h
+@@ -219,7 +221,8 @@
+ FIND_TCL_H
+ 
+ if test "x$have_tcl_h" = "xno" -a "x$with_tcl_inc" = "x"; then
+-    TCL_INC_LIST="/usr/include/tcl8.3 /usr/include/tcl8.2 \
++    TCL_INC_LIST="/usr/include/tcl8.5 /usr/include/tcl8.4 \
++                 /usr/include/tcl8.3 /usr/include/tcl8.2 \
+                  /usr/include/tcl8.0 /usr/include/tcl"
+ 
+     for TCL_INC in $TCL_INC_LIST ; do
+@@ -303,6 +306,10 @@
  
  saved_LIBS="$LIBS"
  
@@ -30,7 +62,7 @@
  AC_DEFUN( CHECK_FOR_GL_LIB, [
      AC_MSG_CHECKING([for $GL_LIB_NAME library])
      LIBS="$saved_LIBS $TR_LIBS $GL_LDOPTS -l$GL_LIB_NAME"
-@@ -313,15 +311,15 @@
+@@ -313,15 +320,15 @@
  	TR_LIBS="$TR_LIBS $GL_LDOPTS -l$GL_LIB_NAME"
  
      else
@@ -49,7 +81,7 @@
  	fi
      fi
  ])
-@@ -466,7 +464,7 @@
+@@ -466,7 +473,7 @@
      if test "x$have_glx_h" = "xno" ; then
  	AC_MSG_ERROR([Cannot find GL/glx.h])
      fi
