@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	wv2
-PORTVERSION=	0.2.3
-PORTREVISION=	2
+PORTVERSION=	0.3.1
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	wvware
+MASTER_SITES=	SF/wvware
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library providing routines to access Microsoft Word files
