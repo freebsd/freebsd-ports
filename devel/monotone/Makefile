@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.43
+PORTVERSION=	0.44
 CATEGORIES=	devel
 MASTER_SITES=	http://monotone.ca/downloads/${PORTVERSION}/
 
