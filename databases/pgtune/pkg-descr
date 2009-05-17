@@ -1,0 +1,5 @@
+pgtune takes the wimpy default postgresql.conf and expands
+the database server to be as powerful as the hardware it's
+being deployed on.
+
+WWW: http://pgfoundry.org/projects/pgtune/

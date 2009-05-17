@@ -1,0 +1,5 @@
+bin/pgtune
+share/pgtune/settings/pg_settings-8.4-32
+share/pgtune/settings/pg_settings-8.4-64
+@dirrm share/pgtune/settings
+@dirrm share/pgtune
