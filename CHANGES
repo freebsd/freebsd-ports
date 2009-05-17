@@ -10,6 +10,18 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20090516:
+AUTHOR: pgollucci@FreeBSD.org
+   * APACHE_COMPAT is dead!
+
+   * USE_APACHE=yes is dead!
+
+   * WITH_APACHE2 is dead!
+
+   You should set USE_APACHE=13|20|22+.  WITH_APACHE option can
+   be used to coniditional include support for ANY version of 
+   apache baesd on APACHE_PORT.  Currently www/apache13
+
 20090207:
 AUTHOR: pgollucci@FreeBSD.org
 
