@@ -440,6 +440,7 @@
     SUBDIR += pgpoolAdmin
     SUBDIR += pgtcl
     SUBDIR += pgtop
+    SUBDIR += pgtune
     SUBDIR += pgworksheet
     SUBDIR += php-adodb-ext
     SUBDIR += php-sqlite3
