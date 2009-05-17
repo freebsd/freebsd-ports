@@ -1873,6 +1873,7 @@ cups                            ports/print/cups
 cups-base                       ports/print/cups-base
 cups-bjnp                       ports/print/cups-bjnp
 cups-client                     ports/print/cups-client
+cups-image                      ports/print/cups-image
 cups-magicolor                  ports/print/cups-magicolor
 cups-pdf                        ports/print/cups-pdf
 cups-pstoraster                 ports/print/cups-pstoraster
