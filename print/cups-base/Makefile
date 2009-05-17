@@ -14,7 +14,7 @@ MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
 PKGNAMESUFFIX=	${CUPS_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	Common UNIX Printing System
+COMMENT=	Common UNIX Printing System: ${COMMENT2}
 
 CONFLICTS=	LPRng-[0-9]*
 
@@ -62,6 +62,7 @@ CUPSSYSGRP=	wheel
 
 .if defined(CUPS_CLIENT)
 CUPS_SUFFIX=	-client
+COMMENT2=	Library cupsimage
 INSTALL_WRKSRC=	${WRKSRC}/cups
 PLIST=		${MASTERDIR}/pkg-plist.client
 USE_LDCONFIG=	yes
@@ -72,6 +73,7 @@ LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
+COMMENT2=	Library cups
 CONFIGURE_ARGS+=	--disable-pdftops
 INSTALL_WRKSRC=	${WRKSRC}/filter
 PLIST=		${MASTERDIR}/pkg-plist.image
@@ -83,6 +85,7 @@ LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
 		cupsimage.2:${PORTSDIR}/${PKGCATEGORY}/cups-image
 # force build if old cups is installed.
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcups.a:${PORTSDIR}/${PKGCATEGORY}/cups-client
+COMMENT2=	Server
 USE_RC_SUBR=	cupsd
 .endif
 
