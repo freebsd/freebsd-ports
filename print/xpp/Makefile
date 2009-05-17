@@ -16,8 +16,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11-based printer manager for CUPS
 
-LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base \
+LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
+BUILD_DEPENDS=	cupsd:${PORTSDIR}/print/cups-base
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
