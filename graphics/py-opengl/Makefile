@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	opengl
-PORTVERSION=	3.0.0.b8
-PORTREVISION=	2
+PORTVERSION=	3.0.0
 CATEGORIES=	graphics python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	py${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyOpenGL-${PORTVERSION:S/.b/b/}
+DISTNAME=	PyOpenGL-${PORTVERSION}
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	An OpenGL (and related library) interface for Python
@@ -43,6 +42,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc\.h>|<stdlib.h>|g'
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
+	${REINPLACE_CMD} -e 's|posix |posix|g' ${WRKSRC}/OpenGL/__init__.py
 
 post-install:
 	@${FIND} ${PYTHON_SITELIBDIR}/OpenGL -type f | \
