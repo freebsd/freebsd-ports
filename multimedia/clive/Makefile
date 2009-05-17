@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	clive
-PORTVERSION=	2.1.12
+PORTVERSION=	2.1.13
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	legatvs@gmail.com
 COMMENT=	Video extraction utility for YouTube, GoogleVideo, and others
 
-RUN_DEPENDS=	p5-BerkeleyDB>=0.36:${PORTSDIR}/databases/p5-BerkeleyDB \
-		p5-Config-Tiny>=2.12:${PORTSDIR}/devel/p5-Config-Tiny \
+RUN_DEPENDS=	p5-Config-Tiny>=2.12:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA \
 		p5-HTML-Parser>=3.59:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-WWW-Curl>=4.05:${PORTSDIR}/www/p5-WWW-Curl
@@ -23,6 +22,7 @@ RUN_DEPENDS=	p5-BerkeleyDB>=0.36:${PORTSDIR}/databases/p5-BerkeleyDB \
 CONFLICTS=	clive-[0-1]* ljclive-[0-9]*
 
 OPTIONS=	PASTE   "Enable pasting from X clipboard" off \
+		CACHE	"Enable cache" off \
 		PAGER   "Enable pager for viewing cache entries" off \
 		EXPECT  "Enable clivepass interface" off \
 		MANPAGE "Install manual page" on
@@ -38,6 +38,10 @@ USE_PERL5_RUN=	5.8.2+
 
 .if defined(WITH_PASTE)
 RUN_DEPENDS+=	p5-Clipboard>=0.09:${PORTSDIR}/x11/p5-Clipboard
+.endif
+
+.if defined(WITH_CACHE)
+RUN_DEPENDS+=	p5-BerkeleyDB>=0.36:${PORTSDIR}/databases/p5-BerkeleyDB
 .endif
 
 .if defined(WITH_PAGER)
