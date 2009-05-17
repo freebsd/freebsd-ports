@@ -18,7 +18,10 @@ include/ttutil.h
 lib/libtokyotyrant.a
 lib/libtokyotyrant.so
 lib/libtokyotyrant.so.3
-lib/libtokyotyrant.so.3.6.0
+lib/libtokyotyrant.so.3.9.0
+lib/ttskeldir.so
+lib/ttskelmock.so
+lib/ttskelproxy.so
 libdata/pkgconfig/tokyotyrant.pc
 sbin/ttservctl
 @dirrmtry libdata/pkgconfig
