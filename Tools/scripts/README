@@ -28,6 +28,7 @@ getpr   - downloads a problem report from GNATS and attempts to extract
           this probably needs to be checked for potential security problems.
 gnomedepends - Analyse pkg/PLIST and give an advice as to which GNOME ports
                should be listes in {RUN,LIB}_DEPENDS for this port
+mark_safe.pl - utility to set subsets of ports to MAKE_JOBS_(UN)SAFE=yes
 neededlibs.sh - Extract direct library dependencies from binaries.
 plist - automate (mostly, at least) pkg-plist generation
 prpatch - just does `patch $1 < pr-patch' (pr-patch is created by getpr)
