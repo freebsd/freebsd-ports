@@ -697,6 +697,7 @@
     SUBDIR += p5-CSS-DOM
     SUBDIR += p5-Catalyst-Action-REST
     SUBDIR += p5-Catalyst-Action-RenderView
+    SUBDIR += p5-Catalyst-Authentication-Credential-HTTP
     SUBDIR += p5-Catalyst-Authentication-Store-DBIx-Class
     SUBDIR += p5-Catalyst-Authentication-Store-LDAP
     SUBDIR += p5-Catalyst-Component-ACCEPT_CONTEXT
