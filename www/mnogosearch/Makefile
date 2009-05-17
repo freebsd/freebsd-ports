@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mnogosearch
-PORTVERSION=	3.3.7
+PORTVERSION=	3.3.8
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Full featured SQL-based hypertext search engine
 
 MAN1=		indexer.1
@@ -30,14 +30,17 @@ MAKE_ENV+=	MKDIRPROG="${MKDIR}"
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 SHLIB_VER=	1
 
-OPTIONS=	MNOGO_THREADS "Enable pthreads"			on \
-		MNOGO_SSL     "Enable SSL"			on  \
-		MNOGO_ASIAN   "Enable asian charsets"		off \
-		MNOGO_SYSLOG  "Send logs to syslog"             on  \
-		MNOGO_PGSQL   "Use PGSQL"			off \
-		MNOGO_MSQL    "Use MSQL"			off \
-		MNOGO_MYSQL   "Use MySQL"			off \
-		MNOGO_SQLITE  "Use SQLite 2.x"			on
+SUB_FILES+=	pkg-message
+
+OPTIONS= \
+		THREADS "Enable pthreads"		on  \
+		SSL     "Enable SSL"			on  \
+		ASIAN   "Enable asian charsets"	off \
+		SYSLOG  "Send logs to syslog"   on  \
+		PGSQL   "Use PGSQL"				off \
+		MSQL    "Use MSQL"				off \
+		MYSQL   "Use MySQL"				off \
+		SQLITE  "Use SQLite 2.x"		on
 
 .if !defined(NO_OPENSSL)
 USE_OPENSSL=	yes
@@ -45,7 +48,7 @@ USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
 
-.ifdef WITHOUT_MNOGO_THREADS
+.ifdef WITHOUT_THREADS
 CONFIGURE_ARGS+=	--disable-pthreads
 CFLAGS+=	-DCONSOLE
 .else
@@ -54,58 +57,67 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
 .endif
 
-.if !defined(WITHOUT_MNOGO_SSL) || !defined(NO_OPENSSL)
+.if !defined(WITHOUT_SSL) || !defined(NO_OPENSSL)
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 
-.ifdef WITH_MNOGO_ASIAN
+.ifdef WITH_ASIAN
 CONFIGURE_ARGS+=	--with-extra-charsets=all
 .endif
 
-.ifdef WITHOUT_MNOGO_SYSLOG
+.ifdef WITHOUT_SYSLOG
 CONFIGURE_ARGS+=	--disable-syslog
 .endif
 
-.ifdef WITH_MNOGO_PGSQL
+.ifdef WITH_PGSQL
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
 .endif
 
-.ifdef WITH_MNOGO_MSQL
+.ifdef WITH_MSQL
 LIB_DEPENDS+=		msql.1:${PORTSDIR}/databases/msql
 CONFIGURE_ARGS+=	--with-msql=${LOCALBASE}
 .endif
 
-.ifdef WITH_MNOGO_MYSQL
-LIB_DEPENDS+=		mysqlclient:${PORTSDIR}/databases/mysql41-client
+.ifdef WITH_MYSQL
+USE_MYSQL=	yes
+WANT_MYSQL_VER=	41
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 .endif
 
-.ifndef WITHOUT_MNOGO_SQLITE
-LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
+.ifndef WITHOUT_SQLITE
+USE_SQLITE=	2
 CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 .endif
 
-.if defined(WITHOUT_MNOGO_SQLITE) && !defined(WITH_MNOGO_MYSQL) && \
-    !defined(WITH_MNOGO_MSQL) && !defined(WITH_MNOGO_PGSQL)
+.if defined(WITHOUT_SQLITE) && !defined(WITH_MYSQL) && \
+    !defined(WITH_MSQL) && !defined(WITH_PGSQL)
 BROKEN=	needs at least one database driver
 .endif
+
+DOCS=	INSTALL ChangeLog
+PORTEXAMPLES=	README *.conf
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure
 
 pre-install:
-	@${MKDIR} ${PREFIX}/share/mnogosearch
+	@${MKDIR} ${DATADIR}/
 
 post-install:
 	${LN} -sf libmnogosearch.so \
 		${PREFIX}/lib/libmnogosearch-${PORTVERSION:R}.so.${SHLIB_VER}
 	${CHMOD} 700 /var/mnogosearch/cache
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} /var/mnogosearch
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/samples/* ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/INSTALL ${WRKSRC}/ChangeLog ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/samples/* ${EXAMPLESDIR}/
+.endif
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 

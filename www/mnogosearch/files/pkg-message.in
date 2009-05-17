@@ -1,6 +1,6 @@
 mnoGoSearch is successfully installed.
 Now, to use mnoGoSearch you need to create the appropriate *sql database
-manually: Please read INSTALL file located in ${PREFIX}/share/doc/mnogosearch.
+manually: Please read INSTALL file located in %%DOCSDIR%%.
 
 For more information on how to use mnoGoSearch, please refer to their
 web site at http://www.mnogosearch.org/
