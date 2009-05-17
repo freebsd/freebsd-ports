@@ -10,6 +10,7 @@ lib/kadu/modules/libdsp_sound.so
 lib/kadu/modules/libencryption.so
 lib/kadu/modules/libhints.so
 lib/kadu/modules/libhistory.so
+lib/kadu/modules/libidle.so
 lib/kadu/modules/libnotify.so
 lib/kadu/modules/libsms.so
 lib/kadu/modules/libsound.so
@@ -44,6 +45,20 @@ lib/kadu/modules/libwindow_notify.so
 %%ASPELL_MOD%%%%DATADIR%%/modules/configuration/spellchecker.ui
 %%TABS_MOD%%%%DATADIR%%/modules/configuration/tabs.ui
 %%DATADIR%%/modules/configuration/voice.ui
+%%DATADIR%%/modules/data/config_wizard/joi/brak.jpg
+%%DATADIR%%/modules/data/config_wizard/ronk2/Blocking.png
+%%DATADIR%%/modules/data/config_wizard/ronk2/Busy (d.).png
+%%DATADIR%%/modules/data/config_wizard/ronk2/Busy.png
+%%DATADIR%%/modules/data/config_wizard/ronk2/Invisible (d.).png
+%%DATADIR%%/modules/data/config_wizard/ronk2/Invisible.png
+%%DATADIR%%/modules/data/config_wizard/ronk2/Offline (d.).png
+%%DATADIR%%/modules/data/config_wizard/ronk2/Offline.png
+%%DATADIR%%/modules/data/config_wizard/ronk2/Online (d.).png
+%%DATADIR%%/modules/data/config_wizard/ronk2/Online.png
+%%DATADIR%%/modules/data/config_wizard/ronk2/message.png
+%%DATADIR%%/modules/data/config_wizard/ronk2/mobile.png
+%%DATADIR%%/modules/data/config_wizard/ronk2/tlo.jpg
+%%DATADIR%%/modules/data/config_wizard/ronk2/tux.png
 %%DATADIR%%/modules/dcc.desc
 %%DATADIR%%/modules/default_sms.desc
 %%DATADIR%%/modules/docking.desc
@@ -51,6 +66,7 @@ lib/kadu/modules/libwindow_notify.so
 %%DATADIR%%/modules/encryption.desc
 %%DATADIR%%/modules/hints.desc
 %%DATADIR%%/modules/history.desc
+%%DATADIR%%/modules/idle.desc
 %%DATADIR%%/modules/notify.desc
 %%DATADIR%%/modules/qt4_docking.desc
 %%DATADIR%%/modules/sms.desc
@@ -125,12 +141,18 @@ lib/kadu/modules/libwindow_notify.so
 %%DATADIR%%/modules/translations/window_notify_pl.qm
 %%DATADIR%%/modules/voice.desc
 %%DATADIR%%/modules/window_notify.desc
+%%DATADIR%%/syntax/chat/Adi1981.syntax
+%%DATADIR%%/syntax/chat/Arvenil.syntax
+%%DATADIR%%/syntax/chat/aqq2_by_maddox84.syntax
+%%DATADIR%%/syntax/chat/c34_white_gradient_compact.syntax
 %%DATADIR%%/syntax/chat/cheester.syntax
 %%DATADIR%%/syntax/chat/filozof.syntax
 %%DATADIR%%/syntax/chat/fuku.syntax
 %%DATADIR%%/syntax/chat/hapi.syntax
 %%DATADIR%%/syntax/chat/irc.syntax
 %%DATADIR%%/syntax/chat/kadu.syntax
+%%DATADIR%%/syntax/chat/skp_by_dam.syntax
+%%DATADIR%%/syntax/chat/skype_by_dorr.syntax
 %%DATADIR%%/syntax/infopanel/Arvenil.syntax
 %%DATADIR%%/syntax/infopanel/ciuciu.syntax
 %%DATADIR%%/syntax/infopanel/default.syntax
@@ -1021,6 +1043,8 @@ share/icons/hicolor/128x128/apps/kadu.png
 @dirrm %%DATADIR%%/syntax/chat
 @dirrm %%DATADIR%%/syntax
 @dirrm %%DATADIR%%/modules/translations
+@dirrm %%DATADIR%%/modules/data/config_wizard/ronk2
+@dirrm %%DATADIR%%/modules/data/config_wizard/joi
 @dirrm %%DATADIR%%/modules/data/config_wizard
 @dirrm %%DATADIR%%/modules/data
 @dirrm %%DATADIR%%/modules/configuration
