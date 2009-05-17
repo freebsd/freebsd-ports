@@ -41,7 +41,7 @@ USE_PYTHON=	yes
 USE_RUBY=	yes
 USE_PGSQL=	yes
 USE_GNOME=	libxml2 libxslt
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
