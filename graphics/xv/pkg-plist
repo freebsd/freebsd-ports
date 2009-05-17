@@ -5,7 +5,8 @@ bin/xcmap
 bin/xvpictoppm
 lib/X11/xv_mgcsfx.sample
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.PNG
+%%PORTDOCS%%%%DOCSDIR%%/README.jumbo
+%%PORTDOCS%%%%DOCSDIR%%/README.pcd
 %%PORTDOCS%%%%DOCSDIR%%/epsf.ps
 %%PORTDOCS%%%%DOCSDIR%%/xpm.ps
 %%PORTDOCS%%%%DOCSDIR%%/xvdocs.ps
@@ -16,8 +17,4 @@ lib/X11/xv_mgcsfx.sample
 %%PORTDOCS%%%%DOCSDIR%%/gif.aspect
 %%PORTDOCS%%%%DOCSDIR%%/gif87.doc
 %%PORTDOCS%%%%DOCSDIR%%/gif89.doc
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.jp-ext
-%%PORTDOCS%%%%DOCSDIR%%/README.PhotoCD
-%%PORTDOCS%%%%DOCSDIR%%/README.xv310a-ext-5.3.3.ja
-%%PORTDOCS%%%%DOCSDIR%%/magic.add
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
