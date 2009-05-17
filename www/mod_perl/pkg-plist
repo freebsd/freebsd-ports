@@ -77,4 +77,4 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Bundle
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache/Constants
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Apache
-@dirrmtry etc/apache
+@dirrmtry %%APACHEETCDIR%%
