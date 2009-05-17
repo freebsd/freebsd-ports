@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Escape/.packlist
+%%SITE_PERL%%/String/Escape.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Escape
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
+@dirrmtry %%SITE_PERL%%/String
