@@ -1,4 +1,4 @@
-libexec/apache2/mod_layout.so
+%%APACHEMODDIR%%/mod_layout.so
 @exec %D/sbin/apxs -e -A -n layout %D/%f
 @unexec %D/sbin/apxs -e -A -n layout %D/%f
 @unexec echo "===>  If you do not plan on reinstalling mod_layout, you must manually remove"; echo "===>  references to it in httpd.conf."

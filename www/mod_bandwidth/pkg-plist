@@ -1,4 +1,4 @@
-libexec/apache/mod_bandwidth.so
+%%APACHEMODDIR%%/mod_bandwidth.so
 @exec %D/sbin/apxs -e -A -n bandwidth %D/%f
 sbin/cleanlink.pl
 @unexec echo "===>  If you do not plan on reinstalling mod_bandwidth, you must manually remove"; echo "===>  references to it in httpd.conf."
