@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		kadu
-PORTVERSION=		0.6.5.1
-PORTREVISION=	1
+PORTVERSION=		0.6.5.2
 PORTEPOCH=		1
 CATEGORIES=		polish net-im
 MASTER_SITES=		http://www.kadu.net/download/stable/:kadu \
@@ -23,8 +22,10 @@ MAINTAINER=		mwisnicki+freebsd@gmail.com
 COMMENT=		QT Gadu-Gadu client
 
 BUILD_DEPENDS=		bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=		gadu.3:${PORTSDIR}/polish/libgadu\
+LIB_DEPENDS=		gadu.3:${PORTSDIR}/polish/libgadu \
+			qca.2:${PORTSDIR}/devel/qca \
 			sndfile.1:${PORTSDIR}/audio/libsndfile
+RUN_DEPENDS=		qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 # TODO enable devel/libexecinfo
 
 TABS_MOD_DISTFILE=	kadu-tabs-1.2.3.tar.bz2
@@ -35,11 +36,8 @@ GG7_EMOTS_DISTFILE=	dodatkowe_emoty_GG7.tar.gz
 
 USE_BZIP2=		yes
 USE_CMAKE=		yes
-# remove option with typo when they fix it
-CMAKE_ARGS=		-DENABLE_AUTDOWNLOAD:BOOL=OFF \
-			-DENABLE_AUTODOWNLOAD:BOOL=OFF
+CMAKE_ARGS=		-DENABLE_AUTODOWNLOAD:BOOL=OFF
 CMAKE_USE_PTHREAD=	yes
-USE_OPENSSL=		yes
 
 USE_QT_VER=		4
 QT_COMPONENTS=		gui dbus linguist network qt3support webkit xml \
