@@ -20,31 +20,44 @@ USE_AUTOTOOLS=	autoconf:262
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-lua
+USE_PYTHON=	yes
+USE_RUBY=	yes
+USE_GETTEXT=	yes
 
 MAN1=	weechat-curses.1
 
-.if defined(WITH_DEBUG)
+OPTIONS=	RUBY "Ruby scripting support." off \
+		PYTHON "Python scripting support." off \
+		PERL "Perl scripting support." off \
+		CHARSET "Charset support." on \
+		DEBUG "Debugging." off \
+		ASPELL "Spell checking." off \
+		GNUTLS "GNU TLS." off \
+		NLS "NLS support" on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_DEBUG)
 CONFIGURE_ARGS+=	--with-debug=2
 .else
 CONFIGURE_ARGS+=	--with-debug=0
 .endif
 
-.if defined(WITHOUT_CHARSET)
+.if !defined(WITHOUT_CHARSET)
 CONFIGURE_ARGS+=	--disable-charset
 PLIST_SUBS+=	CHARSET="@comment"
 .else
 PLIST_SUB+=	CHARSET=""
 .endif
 
-.if defined(WITHOUT_NLS)
+.if !defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
-USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
-.if defined(WITH_ASPELL)
+.if !defined(WITHOUT_ASPELL)
 CONFIGURE_ARGS+=	--enable-aspell
 BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 PLIST_SUB+=	ASPELL=""
@@ -53,32 +66,30 @@ CONFIGURE_ARGS+=	--disable-aspell
 PLIST_SUB+=	ASPELL="@comment "
 .endif
 
-.if defined(WITH_PYTHON)
+.if !defined(WITHOUT_PYTHON)
 CONFIGURE_ARGS+=	--enable-python
-USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON=""
 .else
 CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.if defined(WITH_RUBY)
+.if !defined(WITHOUT_RUBY)
 CONFIGURE_ARGS+=	--enable-ruby
-USE_RUBY=	yes
 PLIST_SUB+=	RUBY=""
 .else
 CONFIGURE_ARGS+=	--disable-ruby
 PLIST_SUB+=	RUBY="@comment "
 .endif
 
-.if defined(WITH_GNUTLS)
+.if !defined(WITHOUT_GNUTLS)
 CONFIGURE_ARGS+=	--enable-gnutls
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
 .else
-CONFIGURE_ARGS+=	--disable-gnu-tls
+CONFIGURE_ARGS+=	--disable-gnutls
 .endif
 
-.if defined(WITH_PERL)
+.if !defined(WITHOUT_PERL)
 CONFIGURE_ARGS+=	--enable-perl
 USE_PERL5=	yes
 PLIST_SUB+=	PERL=""
@@ -90,4 +101,4 @@ PLIST_SUB+=	PERL="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
