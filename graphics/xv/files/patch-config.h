@@ -1,19 +1,11 @@
 --- config.h.orig	Thu Aug 27 04:50:47 1998
 +++ config.h	Thu Aug 27 04:51:05 1998
-@@ -13,7 +13,7 @@
-  * definition appropriately. (use 'which gunzip' to find if you have gunzip, 
-  * and where it lives)
-  */
--#undef USE_GUNZIP
-+#define USE_GUNZIP
- 
- #ifdef USE_GUNZIP
- #  ifdef VMS
-@@ -103,9 +103,9 @@
+@@ -103,10 +103,9 @@
   * should not need to be changed
   */
  
 -/* #define GS_PATH "/usr/local/bin/gs" */
+-#define GS_PATH "gs"
 -/* #define GS_LIB  "."                 */
 -/* #define GS_DEV  "ppmraw"            */
 +#define GS_PATH "%%LOCALBASE%%/bin/gs"

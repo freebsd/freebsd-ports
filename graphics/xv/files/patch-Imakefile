@@ -1,5 +1,5 @@
---- Imakefile.orig	Mon Nov 15 10:27:12 2004
-+++ Imakefile	Mon Nov 15 10:28:32 2004
+--- Imakefile.orig	2009-05-17 15:02:50.000000000 +0200
++++ Imakefile	2009-05-17 15:05:52.000000000 +0200
 @@ -6,13 +6,15 @@
  /* if, for whatever reason, you're unable to get the JPEG library to compile
   * on your machine, *COMMENT OUT* the following line
@@ -18,7 +18,7 @@
  
  
  /* if, for whatever reason, you're unable to get the PDS/VICAR support
-@@ -124,16 +126,30 @@
+@@ -124,20 +126,48 @@
  JPEG = -DDOJPEG
  JPEGDIR = jpeg
  LIBJPEG = $(JPEGDIR)/libjpeg.a
@@ -41,7 +41,7 @@
  #endif
  
 +#ifdef UseInstalledTiff
-+TIFF = -DDOTIFF
++TIFF = -DDOTIFF -DUSE_TILED_TIFF_BOTLEFT_FIX
 +LIBTIFF = -L${LOCALBASE}/lib -ltiff
 +TIFFINCLUDE = -I${LOCALBASE}/include
 +#endif
@@ -49,23 +49,65 @@
  #ifdef HavePDS
  PDS = -DDOPDS
  #endif
-@@ -149,12 +165,12 @@
+ 
++PNG    = -DDOPNG
++PNGINC = -I${LOCALBASE}/include
++PNGLIB = -L${LOCALBASE}/lib -lpng
++
++JP2K    = -DDOJP2K
++JP2KINC = -I${LOCALBASE}/include
++JP2KLIB = -L${LOCALBASE}/lib -ljasper
++
++ZLIBDIR = /usr
++ZLIBINC = -I$(ZLIBDIR)/include
++ZLIBLIB = -L$(ZLIBDIR)/lib -lz
++
++DOCDIR = -L${PREFIX}/share/doc/xv
++SYSCONFDIR = ${PREFIX}/etc/
+ 
+ #if defined(SCOArchitecture)
+ SCO= -Dsco -DPOSIX -DNO_RANDOM 
+@@ -149,14 +179,17 @@
  #endif
  
  
 -DEPLIBS = $(LIBJPEG) $(LIBTIFF)
 -LOCAL_LIBRARIES = $(XLIB) $(DEPLIBS)
 +DEPLIBS = $(DEPLIBJPEG) $(DEPLIBTIFF)
-+LOCAL_LIBRARIES = $(XLIB) $(LIBJPEG) $(LIBTIFF)
++LOCAL_LIBRARIES = $(XLIB) $(LIBJPEG) $(LIBTIFF) ${PNGLIB} ${JP2KLIB} ${ZLIBLIB}
  
  DEFINES= $(SCO) $(UNIX) $(NODIRENT) $(VPRINTF) $(TIMERS) \
  	$(HPUX7) $(JPEG) $(TIFF) $(PDS) $(DXWM) $(RAND) \
 -	$(BACKING_STORE) $(BSDTYPES) $(SGI) $(MGCSFX)
++	${PNG} ${JP2K} $(TVL10N) \
++	-DDOCDIR=\"$(DOCDIR)\" \
++	-DSYSCONFDIR=\"$(SYSCONFDIR)\" \
 +	$(BACKING_STORE) $(BSDTYPES) $(SGI) $(MGCSFX) $(LOCALE_EXTENSION)
  
- INCLUDES = $(JPEGINCLUDE) $(TIFFINCLUDE)
+-INCLUDES = $(JPEGINCLUDE) $(TIFFINCLUDE)
++INCLUDES = $(JPEGINCLUDE) $(TIFFINCLUDE) ${PNGINC} ${JP2KINC} ${ZLIBINC}
  
-@@ -271,11 +287,11 @@
+ SRCS1 =	xv.c xvevent.c xvroot.c xvmisc.c xvimage.c xvcolor.c xvsmooth.c \
+ 	xv24to8.c xvgif.c xvpm.c xvinfo.c xvctrl.c xvscrl.c xvalg.c \
+@@ -166,7 +199,7 @@
+ 	xvbrowse.c xvtext.c xvpcx.c xviff.c xvtarga.c xvxpm.c xvcut.c \
+ 	xvxwd.c xvfits.c xvpng.c xvzx.c xvwbmp.c xvpcd.c \
+ 	xvmag.c xvpic.c xvmaki.c xvpi.c xvpic2.c xvvd.c xvmgcsfx.c \
+-	xvml.c
++	xvml.c xvjp2k.c xvhips.c
+ 
+ OBJS1 =	xv.o xvevent.o xvroot.o xvmisc.o xvimage.o xvcolor.o xvsmooth.o \
+ 	xv24to8.o xvgif.o xvpm.o xvinfo.o xvctrl.o xvscrl.o xvalg.o \
+@@ -176,7 +209,7 @@
+ 	xvbrowse.o xvtext.o xvpcx.o xviff.o xvtarga.o xvxpm.o xvcut.o \
+ 	xvxwd.o xvfits.o xvpng.o xvzx.o xvwbmp.o xvpcd.o \
+ 	xvmag.o xvpic.o xvmaki.o xvpi.o xvpic2.o xvvd.o xvmgcsfx.o \
+-	xvml.o
++	xvml.o xvjp2k.o xvhips.o
+ 
+ SRCS2=	bggen.c
+ OBJS2=	bggen.o
+@@ -271,11 +304,11 @@
  #endif
  
   
