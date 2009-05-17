@@ -62,6 +62,7 @@ lib/X11/app-defaults/Gnuplot
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/glass.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnuplot.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnuplot.rot
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/heatmaps.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hemisphr.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hexa.fnc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hidden.dem
@@ -81,6 +82,7 @@ lib/X11/app-defaults/Gnuplot
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lcdemo.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/line.fnc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/macros.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/margins.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mgr.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/molecule.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/moli3.dat
