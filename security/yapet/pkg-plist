@@ -4,9 +4,16 @@ share/applications/yapet.desktop
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/DESIGN
 %%DOCSDIR%%/README
-%%DOCSDIR%%/html/yapet.html
 %%DOCSDIR%%/html/DESIGN.html
 %%DOCSDIR%%/html/README.html
+%%DOCSDIR%%/html/yapet.html
+%%NLS%%share/locale/de_AT/LC_MESSAGES/yapet.mo
+%%NLS%%share/locale/de_CH/LC_MESSAGES/yapet.mo
+%%NLS%%share/locale/de_DE/LC_MESSAGES/yapet.mo
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
+@dirrmtry share/locale/de_CH/LC_MESSAGES
+@dirrmtry share/locale/de_CH
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
 @dirrmtry share/applications
