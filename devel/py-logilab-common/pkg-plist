@@ -108,6 +108,9 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/shellutils.py
 %%PYTHON_SITELIBDIR%%/logilab/common/shellutils.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/shellutils.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/sphinxutils.py
+%%PYTHON_SITELIBDIR%%/logilab/common/sphinxutils.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/sphinxutils.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/sqlgen.py
 %%PYTHON_SITELIBDIR%%/logilab/common/sqlgen.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/sqlgen.pyo
