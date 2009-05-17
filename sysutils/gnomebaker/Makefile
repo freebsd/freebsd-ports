@@ -28,6 +28,9 @@ INSTALLS_ICONS=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -export-dynamic"
 
+ONLY_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	Coredump on amd64, see PR: ports/130972 
+
 .include <bsd.port.pre.mk>
 
 RUN_DEPENDS+=		cdrdao:${PORTSDIR}/sysutils/cdrdao
