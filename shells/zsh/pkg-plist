@@ -14,6 +14,7 @@ bin/zsh-%%ZSH_VER%%
 %%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/computil.so
 %%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/curses.so
 %%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/datetime.so
+%%GDBM%%%%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/db/gdbm.so
 %%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/deltochar.so
 %%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/example.so
 %%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/files.so
@@ -39,6 +40,7 @@ bin/zsh-%%ZSH_VER%%
 %%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/zpty.so
 %%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/zselect.so
 %%SHARED%%lib/zsh/%%ZSH_VER%%/zsh/zutil.so
+%%GDBM%%%%SHARED%%@dirrm lib/zsh/%%ZSH_VER%%/zsh/db
 %%SHARED%%@dirrm lib/zsh/%%ZSH_VER%%/zsh/net
 %%SHARED%%@dirrm lib/zsh/%%ZSH_VER%%/zsh
 %%SHARED%%@dirrm lib/zsh/%%ZSH_VER%%

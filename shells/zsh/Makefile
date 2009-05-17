@@ -7,7 +7,7 @@
 
 PORTNAME=	zsh
 PORTVERSION=	4.3.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	shells
 MASTER_SITES=	SF
 .if !defined(NOPORTDOCS)
@@ -32,7 +32,8 @@ CONFIGURE_ARGS=	--with-term-lib="ncursesw ncurses" --with-tcsetpgrp \
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
 
-OPTIONS=	ZSH_MEM		"Enable zsh-mem and zsh-secure-free options" on \
+OPTIONS=	ZSH_GDBM	"Enable GDBM support" off \
+		ZSH_MEM		"Enable zsh-mem and zsh-secure-free options" on \
 		ZSH_MAILDIR	"Enable support for Maildirs in MAIL(PATH)" on \
 		ZSH_MULTIBYTE	"Enable multibyte character support" on \
 		ZSH_PCRE	"Enable PCRE support" off \
@@ -51,6 +52,14 @@ PORTEXAMPLES=	zlogin zshenv zshrc
 SHELLS=		/etc/shells
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_ZSH_GDBM)
+LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
+PLIST_SUB+=		GDBM=""
+.else
+CONFIGURE_ARGS+=	--disable-gdbm
+PLIST_SUB+=		GDBM="@comment "
+.endif
 
 .if defined(WITH_ZSH_PCRE)
 CONFIGURE_ARGS+=	--enable-pcre
