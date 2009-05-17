@@ -19,7 +19,7 @@
 #  Length  |		|                   Length                   |
 
 A52			ATSC A/52 audio decoding (used in most DVDs)
-APACHE2			Use www/apache2 port
+APACHE          Include support for APACHE_PORT
 ARTS			aRts support via the KDE sound daemon
 ASPELL			Use textproc/aspell for spell checking
 AVIFILE			Adds support for AVI multimedia
