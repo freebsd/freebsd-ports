@@ -34,6 +34,83 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="48e14d86-42f1-11de-ad22-000e35248ad7">
+    <topic>libxine -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libxine</name>
+	<range><lt>1.1.16.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>xine developers report:</p>
+	<blockquote cite="http://sourceforge.net/project/shownotes.php?group_id=9655&amp;release_id=673233">
+	  <ul>
+	    <li>Fix another possible int overflow in the 4XM demuxer.
+	    (ref. TKADV2009-004, CVE-2009-0385)</li>
+	    <li>Fix an integer overflow in the Quicktime demuxer.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-0385</cvename>
+      <cvename>CVE-2009-1274</cvename>
+      <url>http://trapkit.de/advisories/TKADV2009-004.txt</url>
+      <url>http://trapkit.de/advisories/TKADV2009-005.txt</url>
+      <url>http://sourceforge.net/project/shownotes.php?release_id=660071</url>
+    </references>
+    <dates>
+      <discovery>2009-04-04</discovery>
+      <entry>2009-05-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="51d1d428-42f0-11de-ad22-000e35248ad7">
+    <topic>libxine -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libxine</name>
+	<range><lt>1.1.16.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Multiple vulnerabilities were fixed in libxine 1.1.16.2.</p>
+	<p>Tobias Klein reports:</p>
+	<blockquote cite="http://trapkit.de/advisories/TKADV2009-004.txt">
+	  <p>FFmpeg contains a type conversion vulnerability while
+	    parsing malformed 4X movie files. The vulnerability may be
+	    exploited by a (remote) attacker to execute arbitrary code in
+	    the context of FFmpeg or an application using the FFmpeg
+	    library.</p>
+	  <p>Note: A similar issue also affects xine-lib &lt; version
+	    1.1.16.2.</p>
+	</blockquote>
+        <p>xine developers report:</p>
+        <blockquote cite="http://sourceforge.net/project/shownotes.php?group_id=9655&amp;release_id=660071">
+          <ul>
+            <li>Fix broken size checks in various input plugins (ref. 
+	      CVE-2008-5239).</li>
+            <li>More malloc checking (ref. CVE-2008-5240).</li>
+          </ul>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-0698</cvename>
+      <cvename>CVE-2008-5234</cvename>
+      <cvename>CVE-2008-5240</cvename>
+      <url>http://trapkit.de/advisories/TKADV2009-004.txt</url>
+      <url>http://sourceforge.net/project/shownotes.php?release_id=660071</url>
+    </references>
+    <dates>
+      <discovery>2009-02-15</discovery>
+      <entry>2009-05-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1e8031be-4258-11de-b67a-0030843d3802">
     <topic>php -- ini database truncation inside dba_replace() function</topic>
     <affects>
