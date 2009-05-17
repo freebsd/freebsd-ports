@@ -1,0 +1,12 @@
+--- wscript.orig	2009-04-19 14:05:12.000000000 +0200
++++ wscript	2009-04-28 20:08:11.000000000 +0200
+@@ -314,7 +314,8 @@
+ 		if val != True and val != "y": sys.exit(1)
+ 		create_waf()
+ 
+-	dir = os.path.join('lib', 'waf-%s-%s' % (VERSION, REVISION), 'wafadmin')
++	dir = os.path.join('lib', 'python%s' % sys.version[:3],
++				'site-packages' ,'wafadmin')
+ 
+ 	wafadmin = bld.new_task_gen('py')
+ 	wafadmin.find_sources_in_dirs('wafadmin', exts=['.py'])
