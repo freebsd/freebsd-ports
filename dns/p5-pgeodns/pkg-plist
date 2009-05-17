@@ -1,0 +1,6 @@
+bin/pgeodns.pl
+%%SITE_PERL%%/Countries.pm
+%%SITE_PERL%%/GeoDNS.pm
+%%SITE_PERL%%/pgeodns.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/pgeodns/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/pgeodns/

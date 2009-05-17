@@ -104,6 +104,7 @@
     SUBDIR += p5-POE-Component-Server-DNS
     SUBDIR += p5-Stanford-DNSserver
     SUBDIR += p5-Tie-DNS
+    SUBDIR += p5-pgeodns
     SUBDIR += pdnsd
     SUBDIR += pear-File_DNS
     SUBDIR += pear-Net_DNS
