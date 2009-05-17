@@ -2,6 +2,7 @@ lib/pidgin/birthday_reminder.so
 lib/pidgin/birthday_reminder.la
 lib/pidgin/birthday_reminder.a
 share/locale/de/LC_MESSAGES/birthday_reminder.mo
+share/locale/ru/LC_MESSAGES/birthday_reminder.mo
 share/pixmaps/pidgin/birthday_reminder/birthday0.png
 share/pixmaps/pidgin/birthday_reminder/birthday1.png
 share/pixmaps/pidgin/birthday_reminder/birthday2.png
