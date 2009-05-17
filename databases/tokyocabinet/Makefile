@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	tokyocabinet
-PORTVERSION=	1.4.17
+PORTVERSION=	1.4.20
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A modern implementation of DBM
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--enable-off64
 GNU_CONFIGURE=	yes
@@ -40,6 +40,7 @@ OPTIONS=	DEBUG "Debugging support" off \
 		SWAB "Swapping byte-orders build" off \
 		UYIELD "Detecting race conditions" off \
 		ZLIB "Disable ZLIB compression" off \
+		BZIP2 "BZIP2 compression" on \
 		PTHREAD "Disable POSIX thread support" off
 
 .include <bsd.port.pre.mk>
@@ -72,6 +73,9 @@ CONFIGURE_ARGS+=	--enable-uyield
 .if defined(WITH_ZLIB)
 CONFIGURE_ARGS+=	--disable-zlib
 .endif
+.if defined(WITHOUT_BZIP2)
+CONFIGURE_ARGS+=	--disable-bzip
+.endif
 .if defined(WITH_PTHREAD)
 CONFIGURE_ARGS+=	--disable-pthread
 .endif
@@ -79,7 +83,7 @@ CONFIGURE_ARGS+=	--disable-pthread
 CONFIGURE_ARGS+=	--disable-shared
 .endif
 
-SHLIB_VER=	8.8.0
+SHLIB_VER=	8.11.0
 SHLIB_VER_MAJ=	8
 
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
