@@ -13,6 +13,8 @@ MASTER_SITES=	http://download.tangent.org/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to launch triggers if certain actions occur
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	1.3
 
 AP_FAST_BUILD=	yes

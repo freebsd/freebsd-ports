@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.giuseppetanzilli.it/mod_auth_pgsql2/dist/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use PostgreSQL databases for user authentication
 
+MAKE_JOBS_SAFE=  yes
+
 USE_PGSQL=	yes
 USE_APACHE=	20+
 

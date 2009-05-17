@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.unixpapa.com/software/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A unix group access control module for Apache 2.1 and later
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	22+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES

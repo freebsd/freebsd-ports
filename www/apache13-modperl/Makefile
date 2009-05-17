@@ -21,6 +21,8 @@ LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+MAKE_JOBS_SAFE=  yes
+
 CONFLICTS=	apache-1.* apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.* \
 		apache+mod_ssl+mod_snmp+ipv6-1.* apache+mod_ssl+mod_accel-1.* \
 		apache+mod_ssl+mod_snmp+mod_accel-1.* \

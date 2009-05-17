@@ -13,6 +13,8 @@ MASTER_SITES=	http://MeepZor.Com/packages/mod_access_identd/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to supply access control based on ident reply
 
+MAKE_JOBS_SAFE=  yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_APACHE=	13
 AP_FAST_BUILD=	YES

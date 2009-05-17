@@ -21,6 +21,8 @@ PATCH_DIST_STRIP=	-l
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Provides access control based on Referer HTTP header for Apache
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	13
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES

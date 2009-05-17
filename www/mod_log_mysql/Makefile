@@ -17,6 +17,8 @@ COMMENT=	Allows Apache 2 to log to a MySQL database
 
 RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_log_config-st.so:${PORTSDIR}/www/mod_log_config-st
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	20+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES

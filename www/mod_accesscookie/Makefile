@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Supply access control based cookies stored in a MySQL database
 
+MAKE_JOBS_SAFE=  yes
+
 USE_MYSQL=	YES
 USE_APACHE=	13
 AP_FAST_BUILD=	YES

@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.outoforder.cc/downloads/${PORTNAME}/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows Apache to log to a MySQL database
 
+MAKE_JOBS_SAFE=  yes
+
 LATEST_LINK=	mod_log_sql2
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

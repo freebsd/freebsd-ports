@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.cri.ensmp.fr/~coelho/mod_macro/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for use macros in config files
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	13
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES

@@ -16,6 +16,8 @@ DIST_SUBDIR=	apache
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Bandwidth management module for the Apache webserver
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	1.3
 USE_PERL5=	YES
 

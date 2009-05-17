@@ -14,6 +14,8 @@ MASTER_SITES=	http://download.tangent.org/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to allow MP3 streaming
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	1.3
 HAS_CONFIGURE=	yes
 MAKE_ARGS+=	APXS="${APXS}"

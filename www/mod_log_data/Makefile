@@ -14,6 +14,8 @@ MASTER_SITES=	http://loghttp.sourceforge.net/files/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Module for Apache 2.0 which logs incoming and outgoing data
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	2.0
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

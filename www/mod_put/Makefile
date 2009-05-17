@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that provides PUT and DELETE methods
 
+MAKE_JOBS_SAFE=  yes
+
 CONFLICTS=	apache-contrib-1.*
 
 USE_APACHE=	1.3

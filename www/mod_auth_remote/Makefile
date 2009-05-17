@@ -16,6 +16,8 @@ DIST_SUBDIR=	apache
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to authenticate on a remote web server
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	20
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES

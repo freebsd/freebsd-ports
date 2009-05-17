@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.fastcgi.com/dist/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A fast-cgi module for Apache
 
+MAKE_JOBS_SAFE=  yes
+
 CONFLICTS=	apache-contrib-1.*
 USE_APACHE=	1.3+
 AP_FAST_BUILD=	yes

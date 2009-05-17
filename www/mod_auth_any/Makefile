@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.itlab.musc.edu/webNIS/dist/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to use any command line program to authenticate a user
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	13+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

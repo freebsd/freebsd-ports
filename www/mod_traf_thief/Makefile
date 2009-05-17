@@ -15,6 +15,8 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows you to redirect part of the traffic to your url
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	2.0
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

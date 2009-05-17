@@ -17,6 +17,8 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A per-virtualhost bandwidth limiter module for Apache 2
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	20+
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-apxs=${APXS}

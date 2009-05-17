@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.giuseppetanzilli.it/${PORTNAME}/dist/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use PostgreSQL databases for user authentication
 
+MAKE_JOBS_SAFE=  yes
+
 USE_DOS2UNIX=	${PORTNAME}.html
 
 USE_PGSQL=	yes

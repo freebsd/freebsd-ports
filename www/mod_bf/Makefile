@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	modbf
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A brainf*ck module for Apache
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	13
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

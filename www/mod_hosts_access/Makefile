@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.klomp.org/mod_hosts_access/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module that makes Apache respect hosts.allow and hosts.deny
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	1.3
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

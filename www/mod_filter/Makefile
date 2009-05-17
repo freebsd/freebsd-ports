@@ -14,6 +14,8 @@ MASTER_SITES=		http://download.tangent.org/
 MAINTAINER=		apache@FreeBSD.org
 COMMENT=	Filter output from other modules inside of Apache
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=		1.3
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

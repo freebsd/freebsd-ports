@@ -14,6 +14,8 @@ DIST_SUBDIR=	apache
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows mass virtual hosting using a MySQL backend with Apache 2.0.x
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	20+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES

@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.rudedog.org/auth_ldap/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to authenticate against an LDAP directory
 
+MAKE_JOBS_SAFE=  yes
+
 USE_OPENLDAP=	yes
 USE_APACHE=	13
 GNU_CONFIGURE=	yes

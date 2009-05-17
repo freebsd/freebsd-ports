@@ -14,6 +14,8 @@ DIST_SUBDIR=	apache
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module to provide authentication via an IMAP mail server
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	13
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES

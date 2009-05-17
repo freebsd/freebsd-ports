@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	petef
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A module that makes Apache CVS aware
 
+MAKE_JOBS_SAFE=  yes
+
 CONFLICTS=	apache-contrib-1.*
 
 USE_APACHE=	1.3
