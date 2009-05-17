@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	birthday_reminder
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	net-im
-MASTER_SITES=	http://freakazoid.teamblind.de/wp-content/uploads/
+MASTER_SITES=	SF/pidgin-birthday
 PKGNAMEPREFIX=	pidgin-
 
 MAINTAINER=	ports@logvinov.com
