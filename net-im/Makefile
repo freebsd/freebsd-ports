@@ -118,6 +118,7 @@
     SUBDIR += pidgin-msn-pecan
     SUBDIR += pidgin-pidgimpd
     SUBDIR += pidgin-rhythmbox
+    SUBDIR += pidgin-sipe
     SUBDIR += pidgin-twitter
     SUBDIR += pork
     SUBDIR += psi
