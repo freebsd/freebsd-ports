@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opencart
-PORTVERSION=	0.7.7
+PORTVERSION=	1.2.6
 CATEGORIES=	www misc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
@@ -14,10 +14,10 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	An open source PHP-based online shopping cart system
 
-PROJECTHOST=	open-cart
+#PROJECTHOST=	open-cart
 USE_ZIP=	yes
 USE_PHP=	mysql gd session pcre
-WRKSRC=		${WRKDIR}/upload
+WRKSRC=		${WRKDIR}/${DISTNAME}/upload
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
@@ -29,20 +29,20 @@ do-install:
 	@${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
 		>> ${TMPPLIST}
-	@${CHMOD} -R 0777 ${WWWDIR}/image/
-	@${ECHO_CMD} '@exec ${CHMOD} -R 0777 ${WWWDIR}/image/' \
+	@${CHMOD} -R 0755 ${WWWDIR}/image/
+	@${ECHO_CMD} '@exec ${CHMOD} -R 0755 ${WWWDIR}/image/' \
 		>> ${TMPPLIST}
-	@${CHMOD} -R 0777 ${WWWDIR}/cache/
-	@${ECHO_CMD} '@exec ${CHMOD} -R 0777 ${WWWDIR}/cache/' \
+	@${CHMOD} -R 0755 ${WWWDIR}/cache/
+	@${ECHO_CMD} '@exec ${CHMOD} -R 0755 ${WWWDIR}/cache/' \
 		>> ${TMPPLIST}
-	@${CHMOD} -R 0777 ${WWWDIR}/download/
-	@${ECHO_CMD} '@exec ${CHMOD} -R 0777 ${WWWDIR}/download/' \
+	@${CHMOD} -R 0755 ${WWWDIR}/download/
+	@${ECHO_CMD} '@exec ${CHMOD} -R 0755 ${WWWDIR}/download/' \
 		>> ${TMPPLIST}
-	@${CHMOD} 0777 ${WWWDIR}/config.php
-	@${ECHO_CMD} '@exec ${CHMOD} 0777 ${WWWDIR}/config.php' \
+	@${CHMOD} 0755 ${WWWDIR}/config.php
+	@${ECHO_CMD} '@exec ${CHMOD} 0755 ${WWWDIR}/config.php' \
 		>> ${TMPPLIST}
-	@${CHMOD} 0777 ${WWWDIR}/admin/config.php
-	@${ECHO_CMD} '@exec ${CHMOD} 0777 ${WWWDIR}/admin/config.php' \
+	@${CHMOD} 0755 ${WWWDIR}/admin/config.php
+	@${ECHO_CMD} '@exec ${CHMOD} 0755 ${WWWDIR}/admin/config.php' \
 		>> ${TMPPLIST}
 
 post-install:
