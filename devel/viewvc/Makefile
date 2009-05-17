@@ -7,18 +7,20 @@
 
 PORTNAME=	viewvc
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/44050/
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Web-based Version Control Repository Browsing
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	SUBVERSION 	"use svn binding" 			on \
-		APACHE2 	"use Apache as webserver" 		on \
-		LIGHTTPD 	"use Lighttp as webserver" 		off \
-		MODPYTHON3 	"enable mod_python3 support" 		off \
+OPTIONS=\
+		SUBVERSION 	"use svn binding" 						on \
+		APACHE 		"use ${APACHE_PORT} as webserver"		on \
+		LIGHTTPD 	"use Lighttp as webserver" 				off \
+		MODPYTHON3 	"enable mod_python3 support" 			off \
 		MYSQL 		"enable experimental MYSQL support" 	off
 
 NO_BUILD=	yes
@@ -41,7 +43,7 @@ USE_RC_SUBR=	viewvc
 RUN_DEPENDS+=	${PYTHON_LIBDIR}/site-packages/svn/__init__.py:${PORTSDIR}/devel/py-subversion
 .endif
 
-.if defined (WITH_APACHE2)
+.if defined (WITH_APACHE)
 USE_APACHE=	2.0+
 .endif
 
@@ -61,15 +63,15 @@ RUN_DEPENDS+=	${PYTHON_LIBDIR}/site-packages/_mysql.so:${PORTSDIR}/databases/py-
 .endif
 
 pre-everything::
-.if defined(WITH_APACHE2) && defined(WITH_LIGHTTPD)
+.if defined(WITH_APACHE) && defined(WITH_LIGHTTPD)
 	@${ECHO_CMD} "It doesn't make sense to depend on Apache *and* LighHTTPD choose only one."
 	@${FALSE}
 .endif
 
-.if defined(WITH_MODPYTHON3) && !defined(WITH_APACHE2) && defined(WITH_LIGHTTPD)
+.if defined(WITH_MODPYTHON3) && !defined(WITH_APACHE) && defined(WITH_LIGHTTPD)
 	@${ECHO_CMD} "mod_python3 needs Apache, please select Apache and deselect LighHTTPD"
 	@${FALSE}
-.elif defined(WITH_MODPYTHON3) && !defined(WITH_APACHE2)
+.elif defined(WITH_MODPYTHON3) && !defined(WITH_APACHE)
 	@${ECHO_CMD} "mod_python3 needs Apache, please select Apache"
 	@${FALSE}
 .endif
