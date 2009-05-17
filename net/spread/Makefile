@@ -11,7 +11,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	http://www.edu-linux.org/down/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	The Spread Group Communication System, a network toolkit
 
 GNU_CONFIGURE=	yes
