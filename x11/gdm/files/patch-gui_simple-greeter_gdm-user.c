@@ -1,5 +1,5 @@
 --- gui/simple-greeter/gdm-user.c.orig	2009-05-16 17:52:57.000000000 -0400
-+++ gsimple-greeter/dm-user.c	2009-05-16 18:08:08.000000000 -0400
++++ gui/simple-greeter/gdm-user.c	2009-05-16 18:08:08.000000000 -0400
 @@ -412,6 +412,7 @@ _gdm_user_update (GdmUser             *u
          /* Display Name */
          if (pwent->pw_gecos && pwent->pw_gecos[0] != '\0') {
