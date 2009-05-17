@@ -20,8 +20,9 @@ lib/gtk-2.0/immodules/im-gcin.so
 %%QT_IM_MODULE%%lib/qt4/plugins/inputmethods/im-gcin.so
 lib/gcin1.so
 lib/gcin2.so
+lib/gtk_bug_fix.so
 lib/libgcin-im-client.so
-lib/libgcin-im-client.so.1.1.0
+lib/libgcin-im-client.so.1.2.0
 lib/libgcin-im-client.so.1
 %%DATADIR%%/script/gcin-user-setup
 %%DATADIR%%/script/gtab.append_prepare
