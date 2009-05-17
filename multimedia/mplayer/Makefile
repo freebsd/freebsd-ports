@@ -24,6 +24,7 @@ OPTIONS+=	X11DGA "X11 video drivers: DGA" on
 OPTIONS+=	X11GL "X11 video drivers: OpenGL" on
 OPTIONS+=	X11XIN "X11 video drivers: Xinerama" on
 OPTIONS+=	X11VM "X11 VidMode support" on
+OPTIONS+=	X11XVMC "Enable XvMC acceleration" off
 OPTIONS+=	GUI "Enable GTK2 graphical user interface with X11" on
 OPTIONS+=	SDL "Enable SDL video output" off
 OPTIONS+=	VIDIX "Enable VIDIX video output on supported archs" on
@@ -149,6 +150,10 @@ CONFIGURE_ARGS+=--disable-xinerama
 USE_XORG+=	xxf86vm
 .else
 CONFIGURE_ARGS+=--disable-vm
+.endif
+.if defined(WITH_X11XVMC)
+USE_XORG+=	xvmc
+CONFIGURE_ARGS+=--enable-xvmc --with-xvmclib=XvMCW
 .endif
 .else				#WITHOUT_X11
 CONFIGURE_ARGS+=--disable-x11 \
