@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Credential/HTTP/.packlist
+%%SITE_PERL%%/Catalyst/Authentication/Credential/HTTP.pm
+@dirrmtry %%SITE_PERL%%/Catalyst/Authentication/Credential
+@dirrmtry %%SITE_PERL%%/Catalyst/Authentication
+@dirrmtry %%SITE_PERL%%/Catalyst
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Credential/HTTP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Credential
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
