@@ -1,0 +1,8 @@
+Chemistry-MacroMol is a toolkit includes basic objects and methods to
+describe macromolecules, a macromolecule is just a molecule that
+consists of several "domains". For example, a protein consists
+of aminoacid residues, or a nucleic acid consists of bases. Therefore
+Chemistry::MacroMol is derived from Chemistry::Mol, with additional
+methods to handle the domains.
+
+WWW: http://search.cpan.org/dist/Chemistry-MacroMol/
