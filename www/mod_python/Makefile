@@ -17,7 +17,7 @@ MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Apache 1.3 module for integrating Python
 
 .if defined(PACKAGE_BUILDING)
-IGNORE=	Requires pythong WITHOUT_THREADS
+IGNORE=	Requires python WITHOUT_THREADS
 .endif
 
 USE_APACHE=	13
