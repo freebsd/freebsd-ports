@@ -1,0 +1,5 @@
+p5-Chemistry-File-PDB reads and writes PDB files. The PDB file format
+is commonly used to describe proteins, particularly those stored in the
+Protein Data Bank(<http://www.rcsb.org/pdb/>).
+
+WWW: http://search.cpan.org/dist/Chemistry-File-PDB/

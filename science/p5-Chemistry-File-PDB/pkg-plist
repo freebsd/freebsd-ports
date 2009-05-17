@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Chemistry/File/PDB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File/PDB/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File/PDB
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry
+@dirrmtry %%SITE_PERL%%/Chemistry/File
+@dirrmtry %%SITE_PERL%%/Chemistry
