@@ -16,7 +16,9 @@ COMMENT=	A fast, lightweight source control management system
 USE_GETTEXT=	yes
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=yes
-PYDISTUTILS_NOEGGINFO=  yes
+PYDISTUTILS_PKGNAME=    ${PORTNAME}
+PYDISTUTILS_PKGVERSION= ${PORTVERSION}
+PYDISTUTILS_EGGINFO=    ${PORTNAME}-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-info
 
 CONTRIB_FILES=	bash_completion \
 		convert-repo \
