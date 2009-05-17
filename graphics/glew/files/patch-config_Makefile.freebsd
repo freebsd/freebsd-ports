@@ -16,7 +16,7 @@
  LDFLAGS.STATIC = -Wl,-Bstatic
  LDFLAGS.DYNAMIC = -Wl,-Bdynamic
 -CFLAGS.EXTRA += -I/usr/X11R6/include
-+CFLAGS.EXTRA += -I${LOCALBASE}/include
++CFLAGS.EXTRA += -I${LOCALBASE}/include -fPIC
  NAME = GLEW
  WARN = -Wall -W
  POPT = -O2
