@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	contrib/modules/1.3
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Third-party modules contributed to the Apache HTTP server project
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	13
 
 .include <bsd.port.pre.mk>

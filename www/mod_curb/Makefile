@@ -15,6 +15,8 @@ DIST_SUBDIR=	apache
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A per-server bandwidth limiter module for Apache 1.3
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	13
 
 AP_FAST_BUILD=	YES

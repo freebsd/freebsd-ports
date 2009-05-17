@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for a digitally signed ticket in URL
 
+MAKE_JOBS_SAFE=  yes
+
 CONFLICTS=	apache-contrib-1.*
 
 USE_APACHE=	1.3

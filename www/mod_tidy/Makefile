@@ -17,6 +17,8 @@ COMMENT=	Validates the HTML output of your apache2 webserver
 
 LIB_DEPENDS=	tidy:${PORTSDIR}/www/tidy-lib
 
+MAKE_JOBS_SAFE=  yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 USE_APACHE=	20+
 AP_FAST_BUILD=	YES

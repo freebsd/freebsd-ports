@@ -13,6 +13,8 @@ MASTER_SITES=	http://download.tangent.org/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to wrap served pages with a header and/or footer
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	13
 
 CONFLICTS=	mod_layout-4.* mod_layout-5.* apache-contrib-1.*

@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for server-side decompression of bzip2 files
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	1.3
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

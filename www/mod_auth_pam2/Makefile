@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-2.0-${PORTVERSION}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use PAM modules for user authentication
 
+MAKE_JOBS_SAFE=  yes
+
 LATEST_LINK=	mod_auth_pam2
 
 USE_APACHE=	20+

@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1.3.6
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that provides DAV capabilities
 
+MAKE_JOBS_SAFE=  yes
+
 OPTIONS=	SYMLINK_PATCH	"Follow Symlinks" off \
 			APACHE_EXPAT	"Use Bundled expat library" on
 

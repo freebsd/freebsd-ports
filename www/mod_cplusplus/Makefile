@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	modcplusplus
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for loading C++ objects as handlers
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	2.0+
 USE_AUTOTOOLS=	autoconf:262 autoheader:262 libtool:15 automake:19 aclocal:19
 

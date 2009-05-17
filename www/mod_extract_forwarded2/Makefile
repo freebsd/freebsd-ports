@@ -15,6 +15,8 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that can make proxied requests appear with client IP
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	20+
 SHORTMODNAME=	extract_forwarded
 AP_FAST_BUILD=	YES

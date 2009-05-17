@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for rejecting and logging chunked requests
 
+MAKE_JOBS_SAFE=  yes
+
 OPTIONS=	BLOWCHUNK_LOG	"Log chunked requests"	off
 
 USE_APACHE=	1.3

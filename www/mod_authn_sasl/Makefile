@@ -16,6 +16,8 @@ COMMENT=	Allows user authentication based on libsasl2 mechanisms on apache 2.2
 
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 
+MAKE_JOBS_SAFE=  yes
+
 FETCH_BEFORE_ARGS=	-v -v
 
 USE_APACHE=	22

@@ -14,6 +14,8 @@ MASTER_SITES=	http://resare.com/noa/mod_cvs/dist/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A module that makes Apache 2 CVS aware
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	2.0+
 
 LATEST_LINK=	mod_cvs2

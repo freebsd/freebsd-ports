@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.klomp.org/mod_roaming/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that works as a Netscape Roaming Access server
 
+MAKE_JOBS_SAFE=  yes
+
 CONFLICTS=	apache-contrib-1.*
 PORTSCOUT=	limit:^1
 

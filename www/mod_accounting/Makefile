@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	mod-acct
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that records traffic statistics into a database
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	13
 MAKE_ARGS+=	APXS="${APXS}"
 

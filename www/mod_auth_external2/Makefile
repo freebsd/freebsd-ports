@@ -13,6 +13,8 @@ DIST_SUBDIR=	apache20
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users authentication based on external mechanisms
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	20
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES

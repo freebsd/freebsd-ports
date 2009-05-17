@@ -16,6 +16,8 @@ COMMENT=	Allows users to use MySQL databases for user authentication
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${PORTSDIR}/${APACHE_PORT}
 
+MAKE_JOBS_SAFE=  yes
+
 USE_MYSQL=	yes
 
 USE_APACHE=	13

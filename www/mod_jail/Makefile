@@ -14,6 +14,8 @@ MASTER_SITES=	http://igorpopov.newmail.ru/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache 1.3.x/2.0.xx module to enable an easy alternative to mod_chroot
 
+MAKE_JOBS_SAFE=  yes
+
 WRKSRC=		${WRKDIR}/mod_jail
 USE_APACHE=	1.3+
 AP_FAST_BUILD=	YES

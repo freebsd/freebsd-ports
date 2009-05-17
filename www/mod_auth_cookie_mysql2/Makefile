@@ -14,6 +14,8 @@ DIST_SUBDIR=	apache20
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows authentication against a MySQL database via a secure cookie
 
+MAKE_JOBS_SAFE=  yes
+
 USE_MYSQL=	YES
 USE_APACHE=	20+
 
