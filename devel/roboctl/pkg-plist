@@ -1,12 +1,13 @@
+bin/lego_bluetooth_config
 bin/legoctl
-bin/vexctl
 bin/nxtremote
+bin/vexctl
 include/roboctl/rct_machdep.h
 include/roboctl/rct_nxt.h
 include/roboctl/rct_nxt_output.h
+include/roboctl/rct_pic.h
 include/roboctl/rct_protos.h
 include/roboctl/rct_rcx.h
 include/roboctl/roboctl.h
-include/roboctl/rct_pic.h
 lib/libroboctl.a
 @dirrm include/roboctl
