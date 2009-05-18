@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript8
 PORTVERSION=	8.64
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs/} \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${PORTVERSION:S/.//}/:gs_srcs \
@@ -22,7 +22,8 @@ MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Ghostscript 8.x PostScript interpreter
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png \
+		cupsimage.2:${PORTSDIR}/print/cups-image
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME:S,8,,}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
 CONFLICTS=	gambc-[0-9]* ghostscript7-[0-9]* ghostscript7-*-[0-9]*
@@ -42,7 +43,6 @@ CONFIGURE_ENV=	${MAKE_ENV} \
 		CPPFLAGS="-DUPD_SIGNAL=0 -I. -I${WRKSRC}/jasper/src/libjasper/include -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-compile-inits \
-		--disable-cups \
 		--enable-contrib \
 		--enable-dynamic \
 		--with-ijs \
