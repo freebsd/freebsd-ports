@@ -1,4 +1,4 @@
-libexec/apache/mod_tsunami.so
+%%APACHEMODDIR%%/mod_tsunami.so
 @exec %D/sbin/apxs -e -A -n tsunami %D/%F
 @unexec %D/sbin/apxs -e -A -n tsunami %D/%F
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS

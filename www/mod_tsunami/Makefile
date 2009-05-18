@@ -14,6 +14,8 @@ MASTER_SITES=	http://bertrand.demiddelaer.org/mod_tsunami/
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Apache module which dynamically limits a site's slot usage
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	1.3
 AP_FAST_BUILD=	yes
 
