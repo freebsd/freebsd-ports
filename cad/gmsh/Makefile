@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=	--disable-gmm
 
 # For FourierModel
 .if defined(WITH_FFTW3)
-LIB_DEPENDS+=		fftw3.4:${PORTSDIR}/math/fftw3
+LIB_DEPENDS+=		fftw3.5:${PORTSDIR}/math/fftw3
 CONFIGURE_ARGS+=	--enable-fftw3 --with-fftw3-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--disable-fftw3

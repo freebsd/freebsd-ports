@@ -97,8 +97,8 @@ CONFIGURE_ARGS+=--with-python=no
 WITH_FFTW3=	yes
 .endif
 .if defined(WITH_FFTW3)
-LIB_DEPENDS+=	fftw3.4:${PORTSDIR}/math/fftw3		\
-		fftw3f.4:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS+=	fftw3.5:${PORTSDIR}/math/fftw3		\
+		fftw3f.5:${PORTSDIR}/math/fftw3-float
 CONFIGURE_ARGS+=--with-fftw=${LOCALBASE}
 .endif
 

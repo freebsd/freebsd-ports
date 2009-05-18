@@ -20,7 +20,7 @@ COMMENT=	A powerful script-based vector graphics language
 LIB_DEPENDS+=	gsl.13:${PORTSDIR}/math/gsl
 .endif
 .if defined(WITH_FFTW)
-LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3
 .endif
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \

@@ -323,7 +323,7 @@ PLIST_SUB+=	KARAOKE="@comment "
 .endif
 
 .if defined(WITH_VOCODER)
-LIB_DEPENDS+=	fftw3f.4:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS+=	fftw3f.5:${PORTSDIR}/math/fftw3-float
 LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 PLIST_SUB+=	VOCODER=""
 .else

@@ -35,7 +35,7 @@ MAN1=		pfstmo_pattanaik00.1 \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FFTW3F)
-LIB_DEPENDS+=	fftw3f.4:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS+=	fftw3f.5:${PORTSDIR}/math/fftw3-float
 .endif
 
 .include <bsd.port.post.mk>

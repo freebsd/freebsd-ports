@@ -7,6 +7,7 @@
 
 PORTNAME=	libsamplerate
 PORTVERSION=	0.1.7
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/SRC/
 
@@ -14,7 +15,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Secret Rabbit Code: a Sample Rate Converter for audio
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
-		fftw3.4:${PORTSDIR}/math/fftw3
+		fftw3.5:${PORTSDIR}/math/fftw3
 
 USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libtool:15

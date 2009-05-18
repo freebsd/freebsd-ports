@@ -7,7 +7,7 @@
 
 PORTNAME=	zynaddsubfx
 PORTVERSION=	2.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	zynaddsubfx
@@ -21,7 +21,7 @@ MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	A realtime software synthesizer
 
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
-		fftw3.4:${PORTSDIR}/math/fftw3 \
+		fftw3.5:${PORTSDIR}/math/fftw3 \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		jack.0:${PORTSDIR}/audio/jack

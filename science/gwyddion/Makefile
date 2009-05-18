@@ -7,7 +7,7 @@
 
 PORTNAME=	gwyddion
 PORTVERSION=	2.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,7 @@ COMMENT=	A gtk2 based SPM data visualization and analysis tool
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
-		fftw3.4:${PORTSDIR}/math/fftw3
+		fftw3.5:${PORTSDIR}/math/fftw3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

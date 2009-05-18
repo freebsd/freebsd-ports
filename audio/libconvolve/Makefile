@@ -7,6 +7,7 @@
 
 PORTNAME=	libconvolve
 PORTVERSION=	0.0.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://tapas.affenbande.org/jack_convolve/
 EXTRACT_SUFX=	.tgz
@@ -14,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Simple C library for partitioned convolution
 
-LIB_DEPENDS=	fftw3f.4:${PORTSDIR}/math/fftw3-float \
+LIB_DEPENDS=	fftw3f.5:${PORTSDIR}/math/fftw3-float \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		sndfile.1:${PORTSDIR}/audio/libsndfile
 
