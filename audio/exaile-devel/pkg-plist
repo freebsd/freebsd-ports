@@ -1,4 +1,197 @@
 bin/exaile
+lib/exaile/exaile.py
+lib/exaile/lib/__init__.py
+lib/exaile/lib/__init__.pyc
+lib/exaile/lib/__init__.pyo
+lib/exaile/lib/feedparser.py
+lib/exaile/lib/feedparser.pyc
+lib/exaile/lib/feedparser.pyo
+lib/exaile/xl/__init__.py
+lib/exaile/xl/__init__.pyc
+lib/exaile/xl/__init__.pyo
+lib/exaile/xl/collection.py
+lib/exaile/xl/collection.pyc
+lib/exaile/xl/collection.pyo
+lib/exaile/xl/common.py
+lib/exaile/xl/common.pyc
+lib/exaile/xl/common.pyo
+lib/exaile/xl/cover.py
+lib/exaile/xl/cover.pyc
+lib/exaile/xl/cover.pyo
+lib/exaile/xl/devices.py
+lib/exaile/xl/devices.pyc
+lib/exaile/xl/devices.pyo
+lib/exaile/xl/dynamic.py
+lib/exaile/xl/dynamic.pyc
+lib/exaile/xl/dynamic.pyo
+lib/exaile/xl/event.py
+lib/exaile/xl/event.pyc
+lib/exaile/xl/event.pyo
+lib/exaile/xl/hal.py
+lib/exaile/xl/hal.pyc
+lib/exaile/xl/hal.pyo
+lib/exaile/xl/lyrics.py
+lib/exaile/xl/lyrics.pyc
+lib/exaile/xl/lyrics.pyo
+lib/exaile/xl/main.py
+lib/exaile/xl/main.pyc
+lib/exaile/xl/main.pyo
+lib/exaile/xl/metadata/__init__.py
+lib/exaile/xl/metadata/__init__.pyc
+lib/exaile/xl/metadata/__init__.pyo
+lib/exaile/xl/metadata/_apev2.py
+lib/exaile/xl/metadata/_apev2.pyc
+lib/exaile/xl/metadata/_apev2.pyo
+lib/exaile/xl/metadata/_base.py
+lib/exaile/xl/metadata/_base.pyc
+lib/exaile/xl/metadata/_base.pyo
+lib/exaile/xl/metadata/_id3.py
+lib/exaile/xl/metadata/_id3.pyc
+lib/exaile/xl/metadata/_id3.pyo
+lib/exaile/xl/metadata/asf.py
+lib/exaile/xl/metadata/asf.pyc
+lib/exaile/xl/metadata/asf.pyo
+lib/exaile/xl/metadata/flac.py
+lib/exaile/xl/metadata/flac.pyc
+lib/exaile/xl/metadata/flac.pyo
+lib/exaile/xl/metadata/mod.py
+lib/exaile/xl/metadata/mod.pyc
+lib/exaile/xl/metadata/mod.pyo
+lib/exaile/xl/metadata/mp3.py
+lib/exaile/xl/metadata/mp3.pyc
+lib/exaile/xl/metadata/mp3.pyo
+lib/exaile/xl/metadata/mp4.py
+lib/exaile/xl/metadata/mp4.pyc
+lib/exaile/xl/metadata/mp4.pyo
+lib/exaile/xl/metadata/mpc.py
+lib/exaile/xl/metadata/mpc.pyc
+lib/exaile/xl/metadata/mpc.pyo
+lib/exaile/xl/metadata/ogg.py
+lib/exaile/xl/metadata/ogg.pyc
+lib/exaile/xl/metadata/ogg.pyo
+lib/exaile/xl/metadata/sid.py
+lib/exaile/xl/metadata/sid.pyc
+lib/exaile/xl/metadata/sid.pyo
+lib/exaile/xl/metadata/speex.py
+lib/exaile/xl/metadata/speex.pyc
+lib/exaile/xl/metadata/speex.pyo
+lib/exaile/xl/metadata/tta.py
+lib/exaile/xl/metadata/tta.pyc
+lib/exaile/xl/metadata/tta.pyo
+lib/exaile/xl/metadata/wav.py
+lib/exaile/xl/metadata/wav.pyc
+lib/exaile/xl/metadata/wav.pyo
+lib/exaile/xl/metadata/wv.py
+lib/exaile/xl/metadata/wv.pyc
+lib/exaile/xl/metadata/wv.pyo
+lib/exaile/xl/nls.py
+lib/exaile/xl/nls.pyc
+lib/exaile/xl/nls.pyo
+lib/exaile/xl/player.py
+lib/exaile/xl/player.pyc
+lib/exaile/xl/player.pyo
+lib/exaile/xl/playlist.py
+lib/exaile/xl/playlist.pyc
+lib/exaile/xl/playlist.pyo
+lib/exaile/xl/plugins.py
+lib/exaile/xl/plugins.pyc
+lib/exaile/xl/plugins.pyo
+lib/exaile/xl/providers.py
+lib/exaile/xl/providers.pyc
+lib/exaile/xl/providers.pyo
+lib/exaile/xl/radio.py
+lib/exaile/xl/radio.pyc
+lib/exaile/xl/radio.pyo
+lib/exaile/xl/settings.py
+lib/exaile/xl/settings.pyc
+lib/exaile/xl/settings.pyo
+lib/exaile/xl/track.py
+lib/exaile/xl/track.pyc
+lib/exaile/xl/track.pyo
+lib/exaile/xl/trackdb.py
+lib/exaile/xl/trackdb.pyc
+lib/exaile/xl/trackdb.pyo
+lib/exaile/xl/transcoder.py
+lib/exaile/xl/transcoder.pyc
+lib/exaile/xl/transcoder.pyo
+lib/exaile/xl/xdg.py
+lib/exaile/xl/xdg.pyc
+lib/exaile/xl/xdg.pyo
+lib/exaile/xl/xldbus.py
+lib/exaile/xl/xldbus.pyc
+lib/exaile/xl/xldbus.pyo
+lib/exaile/xlgui/__init__.py
+lib/exaile/xlgui/__init__.pyc
+lib/exaile/xlgui/__init__.pyo
+lib/exaile/xlgui/collection.py
+lib/exaile/xlgui/collection.pyc
+lib/exaile/xlgui/collection.pyo
+lib/exaile/xlgui/commondialogs.py
+lib/exaile/xlgui/commondialogs.pyc
+lib/exaile/xlgui/commondialogs.pyo
+lib/exaile/xlgui/cover.py
+lib/exaile/xlgui/cover.pyc
+lib/exaile/xlgui/cover.pyo
+lib/exaile/xlgui/filtergui.py
+lib/exaile/xlgui/filtergui.pyc
+lib/exaile/xlgui/filtergui.pyo
+lib/exaile/xlgui/guiutil.py
+lib/exaile/xlgui/guiutil.pyc
+lib/exaile/xlgui/guiutil.pyo
+lib/exaile/xlgui/main.py
+lib/exaile/xlgui/main.pyc
+lib/exaile/xlgui/main.pyo
+lib/exaile/xlgui/menu.py
+lib/exaile/xlgui/menu.pyc
+lib/exaile/xlgui/menu.pyo
+lib/exaile/xlgui/osd.py
+lib/exaile/xlgui/osd.pyc
+lib/exaile/xlgui/osd.pyo
+lib/exaile/xlgui/panel/__init__.py
+lib/exaile/xlgui/panel/__init__.pyc
+lib/exaile/xlgui/panel/__init__.pyo
+lib/exaile/xlgui/panel/collection.py
+lib/exaile/xlgui/panel/collection.pyc
+lib/exaile/xlgui/panel/collection.pyo
+lib/exaile/xlgui/panel/files.py
+lib/exaile/xlgui/panel/files.pyc
+lib/exaile/xlgui/panel/files.pyo
+lib/exaile/xlgui/panel/playlists.py
+lib/exaile/xlgui/panel/playlists.pyc
+lib/exaile/xlgui/panel/playlists.pyo
+lib/exaile/xlgui/panel/radio.py
+lib/exaile/xlgui/panel/radio.pyc
+lib/exaile/xlgui/panel/radio.pyo
+lib/exaile/xlgui/playlist.py
+lib/exaile/xlgui/playlist.pyc
+lib/exaile/xlgui/playlist.pyo
+lib/exaile/xlgui/plcolumns.py
+lib/exaile/xlgui/plcolumns.pyc
+lib/exaile/xlgui/plcolumns.pyo
+lib/exaile/xlgui/plugins.py
+lib/exaile/xlgui/plugins.pyc
+lib/exaile/xlgui/plugins.pyo
+lib/exaile/xlgui/prefs/__init__.py
+lib/exaile/xlgui/prefs/__init__.pyc
+lib/exaile/xlgui/prefs/__init__.pyo
+lib/exaile/xlgui/prefs/cover_prefs.py
+lib/exaile/xlgui/prefs/cover_prefs.pyc
+lib/exaile/xlgui/prefs/cover_prefs.pyo
+lib/exaile/xlgui/prefs/general_prefs.py
+lib/exaile/xlgui/prefs/general_prefs.pyc
+lib/exaile/xlgui/prefs/general_prefs.pyo
+lib/exaile/xlgui/prefs/osd_prefs.py
+lib/exaile/xlgui/prefs/osd_prefs.pyc
+lib/exaile/xlgui/prefs/osd_prefs.pyo
+lib/exaile/xlgui/prefs/widgets.py
+lib/exaile/xlgui/prefs/widgets.pyc
+lib/exaile/xlgui/prefs/widgets.pyo
+lib/exaile/xlgui/progress.py
+lib/exaile/xlgui/progress.pyc
+lib/exaile/xlgui/progress.pyo
+lib/exaile/xlgui/tray.py
+lib/exaile/xlgui/tray.pyc
+lib/exaile/xlgui/tray.pyo
 share/applications/exaile.desktop
 %%DATADIR%%/data/glade/about_dialog.glade
 %%DATADIR%%/data/glade/collection_manager.glade
@@ -30,13 +223,6 @@ share/applications/exaile.desktop
 %%DATADIR%%/data/images/track.png
 %%DATADIR%%/data/images/trayicon.png
 %%DATADIR%%/data/images/year.png
-%%DATADIR%%/exaile.py
-%%DATADIR%%/lib/__init__.py
-%%DATADIR%%/lib/__init__.pyc
-%%DATADIR%%/lib/__init__.pyo
-%%DATADIR%%/lib/feedparser.py
-%%DATADIR%%/lib/feedparser.pyc
-%%DATADIR%%/lib/feedparser.pyo
 %%DATADIR%%/plugins/amazoncovers/PLUGININFO
 %%DATADIR%%/plugins/amazoncovers/__init__.py
 %%DATADIR%%/plugins/amazoncovers/__init__.pyc
@@ -137,192 +323,6 @@ share/applications/exaile.desktop
 %%DATADIR%%/plugins/shoutcast/test.py
 %%DATADIR%%/plugins/shoutcast/test.pyc
 %%DATADIR%%/plugins/shoutcast/test.pyo
-%%DATADIR%%/xl/__init__.py
-%%DATADIR%%/xl/__init__.pyc
-%%DATADIR%%/xl/__init__.pyo
-%%DATADIR%%/xl/collection.py
-%%DATADIR%%/xl/collection.pyc
-%%DATADIR%%/xl/collection.pyo
-%%DATADIR%%/xl/common.py
-%%DATADIR%%/xl/common.pyc
-%%DATADIR%%/xl/common.pyo
-%%DATADIR%%/xl/cover.py
-%%DATADIR%%/xl/cover.pyc
-%%DATADIR%%/xl/cover.pyo
-%%DATADIR%%/xl/devices.py
-%%DATADIR%%/xl/devices.pyc
-%%DATADIR%%/xl/devices.pyo
-%%DATADIR%%/xl/dynamic.py
-%%DATADIR%%/xl/dynamic.pyc
-%%DATADIR%%/xl/dynamic.pyo
-%%DATADIR%%/xl/event.py
-%%DATADIR%%/xl/event.pyc
-%%DATADIR%%/xl/event.pyo
-%%DATADIR%%/xl/hal.py
-%%DATADIR%%/xl/hal.pyc
-%%DATADIR%%/xl/hal.pyo
-%%DATADIR%%/xl/lyrics.py
-%%DATADIR%%/xl/lyrics.pyc
-%%DATADIR%%/xl/lyrics.pyo
-%%DATADIR%%/xl/main.py
-%%DATADIR%%/xl/main.pyc
-%%DATADIR%%/xl/main.pyo
-%%DATADIR%%/xl/metadata/__init__.py
-%%DATADIR%%/xl/metadata/__init__.pyc
-%%DATADIR%%/xl/metadata/__init__.pyo
-%%DATADIR%%/xl/metadata/_apev2.py
-%%DATADIR%%/xl/metadata/_apev2.pyc
-%%DATADIR%%/xl/metadata/_apev2.pyo
-%%DATADIR%%/xl/metadata/_base.py
-%%DATADIR%%/xl/metadata/_base.pyc
-%%DATADIR%%/xl/metadata/_base.pyo
-%%DATADIR%%/xl/metadata/_id3.py
-%%DATADIR%%/xl/metadata/_id3.pyc
-%%DATADIR%%/xl/metadata/_id3.pyo
-%%DATADIR%%/xl/metadata/asf.py
-%%DATADIR%%/xl/metadata/asf.pyc
-%%DATADIR%%/xl/metadata/asf.pyo
-%%DATADIR%%/xl/metadata/flac.py
-%%DATADIR%%/xl/metadata/flac.pyc
-%%DATADIR%%/xl/metadata/flac.pyo
-%%DATADIR%%/xl/metadata/mod.py
-%%DATADIR%%/xl/metadata/mod.pyc
-%%DATADIR%%/xl/metadata/mod.pyo
-%%DATADIR%%/xl/metadata/mp3.py
-%%DATADIR%%/xl/metadata/mp3.pyc
-%%DATADIR%%/xl/metadata/mp3.pyo
-%%DATADIR%%/xl/metadata/mp4.py
-%%DATADIR%%/xl/metadata/mp4.pyc
-%%DATADIR%%/xl/metadata/mp4.pyo
-%%DATADIR%%/xl/metadata/mpc.py
-%%DATADIR%%/xl/metadata/mpc.pyc
-%%DATADIR%%/xl/metadata/mpc.pyo
-%%DATADIR%%/xl/metadata/ogg.py
-%%DATADIR%%/xl/metadata/ogg.pyc
-%%DATADIR%%/xl/metadata/ogg.pyo
-%%DATADIR%%/xl/metadata/sid.py
-%%DATADIR%%/xl/metadata/sid.pyc
-%%DATADIR%%/xl/metadata/sid.pyo
-%%DATADIR%%/xl/metadata/speex.py
-%%DATADIR%%/xl/metadata/speex.pyc
-%%DATADIR%%/xl/metadata/speex.pyo
-%%DATADIR%%/xl/metadata/tta.py
-%%DATADIR%%/xl/metadata/tta.pyc
-%%DATADIR%%/xl/metadata/tta.pyo
-%%DATADIR%%/xl/metadata/wav.py
-%%DATADIR%%/xl/metadata/wav.pyc
-%%DATADIR%%/xl/metadata/wav.pyo
-%%DATADIR%%/xl/metadata/wv.py
-%%DATADIR%%/xl/metadata/wv.pyc
-%%DATADIR%%/xl/metadata/wv.pyo
-%%DATADIR%%/xl/nls.py
-%%DATADIR%%/xl/nls.pyc
-%%DATADIR%%/xl/nls.pyo
-%%DATADIR%%/xl/player.py
-%%DATADIR%%/xl/player.pyc
-%%DATADIR%%/xl/player.pyo
-%%DATADIR%%/xl/playlist.py
-%%DATADIR%%/xl/playlist.pyc
-%%DATADIR%%/xl/playlist.pyo
-%%DATADIR%%/xl/plugins.py
-%%DATADIR%%/xl/plugins.pyc
-%%DATADIR%%/xl/plugins.pyo
-%%DATADIR%%/xl/providers.py
-%%DATADIR%%/xl/providers.pyc
-%%DATADIR%%/xl/providers.pyo
-%%DATADIR%%/xl/radio.py
-%%DATADIR%%/xl/radio.pyc
-%%DATADIR%%/xl/radio.pyo
-%%DATADIR%%/xl/settings.py
-%%DATADIR%%/xl/settings.pyc
-%%DATADIR%%/xl/settings.pyo
-%%DATADIR%%/xl/track.py
-%%DATADIR%%/xl/track.pyc
-%%DATADIR%%/xl/track.pyo
-%%DATADIR%%/xl/trackdb.py
-%%DATADIR%%/xl/trackdb.pyc
-%%DATADIR%%/xl/trackdb.pyo
-%%DATADIR%%/xl/transcoder.py
-%%DATADIR%%/xl/transcoder.pyc
-%%DATADIR%%/xl/transcoder.pyo
-%%DATADIR%%/xl/xdg.py
-%%DATADIR%%/xl/xdg.pyc
-%%DATADIR%%/xl/xdg.pyo
-%%DATADIR%%/xl/xldbus.py
-%%DATADIR%%/xl/xldbus.pyc
-%%DATADIR%%/xl/xldbus.pyo
-%%DATADIR%%/xlgui/__init__.py
-%%DATADIR%%/xlgui/__init__.pyc
-%%DATADIR%%/xlgui/__init__.pyo
-%%DATADIR%%/xlgui/collection.py
-%%DATADIR%%/xlgui/collection.pyc
-%%DATADIR%%/xlgui/collection.pyo
-%%DATADIR%%/xlgui/commondialogs.py
-%%DATADIR%%/xlgui/commondialogs.pyc
-%%DATADIR%%/xlgui/commondialogs.pyo
-%%DATADIR%%/xlgui/cover.py
-%%DATADIR%%/xlgui/cover.pyc
-%%DATADIR%%/xlgui/cover.pyo
-%%DATADIR%%/xlgui/filtergui.py
-%%DATADIR%%/xlgui/filtergui.pyc
-%%DATADIR%%/xlgui/filtergui.pyo
-%%DATADIR%%/xlgui/guiutil.py
-%%DATADIR%%/xlgui/guiutil.pyc
-%%DATADIR%%/xlgui/guiutil.pyo
-%%DATADIR%%/xlgui/main.py
-%%DATADIR%%/xlgui/main.pyc
-%%DATADIR%%/xlgui/main.pyo
-%%DATADIR%%/xlgui/menu.py
-%%DATADIR%%/xlgui/menu.pyc
-%%DATADIR%%/xlgui/menu.pyo
-%%DATADIR%%/xlgui/osd.py
-%%DATADIR%%/xlgui/osd.pyc
-%%DATADIR%%/xlgui/osd.pyo
-%%DATADIR%%/xlgui/panel/__init__.py
-%%DATADIR%%/xlgui/panel/__init__.pyc
-%%DATADIR%%/xlgui/panel/__init__.pyo
-%%DATADIR%%/xlgui/panel/collection.py
-%%DATADIR%%/xlgui/panel/collection.pyc
-%%DATADIR%%/xlgui/panel/collection.pyo
-%%DATADIR%%/xlgui/panel/files.py
-%%DATADIR%%/xlgui/panel/files.pyc
-%%DATADIR%%/xlgui/panel/files.pyo
-%%DATADIR%%/xlgui/panel/playlists.py
-%%DATADIR%%/xlgui/panel/playlists.pyc
-%%DATADIR%%/xlgui/panel/playlists.pyo
-%%DATADIR%%/xlgui/panel/radio.py
-%%DATADIR%%/xlgui/panel/radio.pyc
-%%DATADIR%%/xlgui/panel/radio.pyo
-%%DATADIR%%/xlgui/playlist.py
-%%DATADIR%%/xlgui/playlist.pyc
-%%DATADIR%%/xlgui/playlist.pyo
-%%DATADIR%%/xlgui/plcolumns.py
-%%DATADIR%%/xlgui/plcolumns.pyc
-%%DATADIR%%/xlgui/plcolumns.pyo
-%%DATADIR%%/xlgui/plugins.py
-%%DATADIR%%/xlgui/plugins.pyc
-%%DATADIR%%/xlgui/plugins.pyo
-%%DATADIR%%/xlgui/prefs/__init__.py
-%%DATADIR%%/xlgui/prefs/__init__.pyc
-%%DATADIR%%/xlgui/prefs/__init__.pyo
-%%DATADIR%%/xlgui/prefs/cover_prefs.py
-%%DATADIR%%/xlgui/prefs/cover_prefs.pyc
-%%DATADIR%%/xlgui/prefs/cover_prefs.pyo
-%%DATADIR%%/xlgui/prefs/general_prefs.py
-%%DATADIR%%/xlgui/prefs/general_prefs.pyc
-%%DATADIR%%/xlgui/prefs/general_prefs.pyo
-%%DATADIR%%/xlgui/prefs/osd_prefs.py
-%%DATADIR%%/xlgui/prefs/osd_prefs.pyc
-%%DATADIR%%/xlgui/prefs/osd_prefs.pyo
-%%DATADIR%%/xlgui/prefs/widgets.py
-%%DATADIR%%/xlgui/prefs/widgets.pyc
-%%DATADIR%%/xlgui/prefs/widgets.pyo
-%%DATADIR%%/xlgui/progress.py
-%%DATADIR%%/xlgui/progress.pyc
-%%DATADIR%%/xlgui/progress.pyo
-%%DATADIR%%/xlgui/tray.py
-%%DATADIR%%/xlgui/tray.pyc
-%%DATADIR%%/xlgui/tray.pyo
 %%NLS%%share/locale/an/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/exaile.mo
@@ -376,25 +376,20 @@ share/applications/exaile.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/exaile.mo
 share/pixmaps/exaile.png
-@dirrmtry share/locale/tl/LC_MESSAGES
-@dirrmtry share/locale/tl
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/frp/LC_MESSAGES
-@dirrmtry share/locale/frp
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an
-@dirrm %%DATADIR%%/xlgui/prefs
-@dirrm %%DATADIR%%/xlgui/panel
-@dirrm %%DATADIR%%/xlgui
-@dirrm %%DATADIR%%/xl/metadata
-@dirrm %%DATADIR%%/xl
+%%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tl
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
+%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/oc
+%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/mr
+%%NLS%%@dirrmtry share/locale/frp/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/frp
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+%%NLS%%@dirrmtry share/locale/an/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/an
 @dirrm %%DATADIR%%/plugins/shoutcast
 @dirrm %%DATADIR%%/plugins/notify
 @dirrm %%DATADIR%%/plugins/lyricwiki
@@ -406,9 +401,15 @@ share/pixmaps/exaile.png
 @dirrm %%DATADIR%%/plugins/audioscrobbler
 @dirrm %%DATADIR%%/plugins/amazoncovers
 @dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/data/images
 @dirrm %%DATADIR%%/data/glade
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
+@dirrm lib/exaile/xlgui/prefs
+@dirrm lib/exaile/xlgui/panel
+@dirrm lib/exaile/xlgui
+@dirrm lib/exaile/xl/metadata
+@dirrm lib/exaile/xl
+@dirrm lib/exaile/lib
+@dirrm lib/exaile
 @dirrmtry share/applications

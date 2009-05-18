@@ -7,41 +7,69 @@
 
 PORTNAME=	exaile
 DISTVERSION=	0.2.99.1
+PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.exaile.org/files/
+MASTER_SITES=	http://www.exaile.org/files/ \
+		http://wickedmachine.net/~jsa/FreeBSD/distfiles/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}_0.3.0a1
 
 MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	AmaroK replacement for GTK+ (developmental series)
 
-RUN_DEPENDS=	py*-dbus>=0.82.1:${PORTSDIR}/devel/py-dbus \
-		py*-notify>=0.1.1:${PORTSDIR}/devel/py-notify \
-		py*-elementtree>=1.2.6:${PORTSDIR}/devel/py-elementtree \
-		py*-mutagen>=1.11:${PORTSDIR}/audio/py-mutagen \
-		py*-sexy>=0.1.9:${PORTSDIR}/x11-toolkits/py-sexy \
-		py*-cddb>=1.4:${PORTSDIR}/audio/py-cddb
+RUN_DEPENDS=	py*-mutagen>=1.11:${PORTSDIR}/audio/py-mutagen
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
-USE_GNOME=	pygtk2 pygnomeextras
-USE_GSTREAMER=	python gnomevfs
+USE_GNOME=	pygtk2
+USE_GSTREAMER=	python good
 USE_PYTHON=	2.5+
 
 CONFLICTS=	exaile-0.2.[0-9][0-8]* exaile-0.3.*
 
+# The reality with these options is that they all will be autodetected and used
+# if already installed. These just force Exaile to bring them in as well.
+OPTIONS=	BAD "Install bad gstreamer plugins" On\
+		CDDB "Lookup CD information within Exaile" On \
+		DBUS "Rely on Python D-Bus bindings" On \
+		HAL "Force depend on HAL" On \
+		NOTIFY "Enable desktop event notification" On \
+		NLS "Native Language Support" On \
+		SEXY "UI enhancements"  On
+
+.if !defined(WITHOUT_BAD)
+USE_GSTREAMER+=	bad
+.endif
+
+.if !defined(WITHOUT_CDDB)
+RUN_DEPENDS+=	py*-cddb>=1.4:${PORTSDIR}/audio/py-cddb
+.endif
+
+.if !defined(WITHOUT_DBUS)
+RUN_DEPENDS+=	py*-dbus>=0.82.1:${PORTSDIR}/devel/py-dbus
+.endif
+
+.if !defined(WITHOUT_HAL)
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+.endif
+
+.if !defined(WITHOUT_NOTIFY)
+RUN_DEPENDS+=	py*-notify>=0.1.1:${PORTSDIR}/devel/py-notify
+.endif
+
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=		yes
-PLIST_SUB+=		NLS=""
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
 .else
-PLIST_SUB+=		NLS="@comment "
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if !defined(WITHOUT_SEXY)
+RUN_DEPENDS+=	py*-sexy>=0.1.9:${PORTSDIR}/x11-toolkits/py-sexy
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/createpot/d;s|/bin/echo|echo|;\
-	s|$$[(]PREFIX[)]/share/exaile|${DATADIR}|;/install.*mmkeys/d;\
-	s|$$[(]PREFIX[)]$$[(]LIBDIR[)]/exaile|${DATADIR}|;/mkdir.*LIBDIR/d;\
-	s|$$[(]PREFIX[)]/share/man/man1|${MAN1PREFIX}/man/man1|'\
+	@${REINPLACE_CMD} -e 's|PREFIX \?=|PREFIX =|;s|LIBDIR \?=|LIBDIR =|' \
 		${WRKSRC}/Makefile
 .if defined(WITHOUT_NLS)
 	@${REINPLACE_CMD} -e 's|exaile\.mo|SKIP_NLS_HACK|' ${WRKSRC}/Makefile
