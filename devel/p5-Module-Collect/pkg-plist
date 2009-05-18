@@ -4,3 +4,4 @@
 @dirrm %%SITE_PERL%%/Module/Collect
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Collect
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
+@dirrmtry %%SITE_PERL%%/Module
