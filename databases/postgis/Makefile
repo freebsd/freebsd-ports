@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgis
-DISTVERSION=	1.3.5
+DISTVERSION=	1.3.6
 CATEGORIES=	databases geography
 MASTER_SITES=	http://postgis.refractions.net/download/
 
