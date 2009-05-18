@@ -7,6 +7,7 @@
 
 PORTNAME=	cnprint
 PORTVERSION=	3.30b
+PORTREVISION=	1
 CATEGORIES=	chinese print
 MASTER_SITES=	http://ftp.wustl.edu/pub/FreeBSD/distfiles/${PORTNAME}-${PORTVERSION}/ \
 		http://ftp.yz.yamagata-u.ac.jp/pub/FreeBSD/distfiles/${PORTNAME}-${PORTVERSION}/ \
@@ -22,6 +23,10 @@ COMMENT=	Print CJK text (or convert to PostScript)
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 FILES=		${WRKSRC}/*.sym ${WRKSRC}/*.htf ${WRKSRC}/*.hbf \
 		${WRKSRC}/*.bin ${WRKSRC}/*.ttf
+
+OPTIONS=	A4SIZE  "Set A4 (not Letter) as a default paper size" on
+
+.include <bsd.port.pre.mk>
 
 do-extract:
 	${MKDIR} ${WRKSRC}
@@ -39,6 +44,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/\(DEFAULT_JIS_FONT\):.*$$/\1: kanji48.hbf/; \
 		s/\(DEFAULT_BIG5FONT\):.*$$/\1: ntu_kai48.hbf/; \
 		s/\(DEFAULT_ENCODING\):.*$$/\1: BIG5/' ${WRKSRC}/cnprint33.cmd
+.if defined(WITH_A4SIZE)
+	@${REINPLACE_CMD} -e 's/\(DEFAULT_PAPERSIZE\):.*$$/\1: 8.27 11.69/' \
+		${WRKSRC}/cnprint33.cmd
+.endif
 
 do-build:
 	cd ${WRKSRC} ; \
@@ -50,4 +59,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}33.cmd  ${DATADIR}/${PORTNAME}.cmd
 	${INSTALL_DATA} ${FILES} ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
