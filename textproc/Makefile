@@ -1006,6 +1006,7 @@
     SUBDIR += rubygem-htmltools
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-markaby
+    SUBDIR += rubygem-nokogiri
     SUBDIR += rubygem-rak
     SUBDIR += rubygem-rdiscount
     SUBDIR += rubygem-spreadsheet
