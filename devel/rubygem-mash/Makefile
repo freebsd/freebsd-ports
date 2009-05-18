@@ -12,7 +12,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	mash-hash
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Mocking Hash library for Ruby
 
 BUILD_DEPENDS=	rubygem-hoe>=1.5.1:${PORTSDIR}/devel/rubygem-hoe
