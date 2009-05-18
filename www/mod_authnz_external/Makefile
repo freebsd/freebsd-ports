@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.unixpapa.com/software/
 DIST_SUBDIR=	apache22
 
-MAINTAINER=	jjuanino@gmail.com
+MAINTAINER=	eg@fbsd.lt
 COMMENT=	Allows users authentication based on external mechanisms on apache 2.2
 
 USE_APACHE=	22
