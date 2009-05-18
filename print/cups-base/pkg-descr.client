@@ -1,0 +1,5 @@
+This provides libcups for applications to access CUPS.
+
+LICENSE: LGPL2 only with exception to link with OpenSSL
+
+WWW: http://www.cups.org/
