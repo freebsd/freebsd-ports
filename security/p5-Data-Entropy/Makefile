@@ -18,7 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/Rijndael.pm:${PORTSDIR}/security/p5
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Math/BigInt.pm:${PORTSDIR}/math/p5-Math-BigInt \
 		${SITE_PERL}/Math/BigRat.pm:${PORTSDIR}/math/p5-Math-BigRat \
-		${SITE_PERL}/Params/Classify.pm:${PORTSDIR}/devel/p5-Params-Classify \
+		${SITE_PERL}/${PERL_ARCH}/Params/Classify.pm:${PORTSDIR}/devel/p5-Params-Classify \
 		p5-Data-Float>=0.002:${PORTSDIR}/math/p5-Data-Float
 
 PERL_MODBUILD=	yes

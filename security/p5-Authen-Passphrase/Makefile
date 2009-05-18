@@ -28,7 +28,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Authen/DecHpwd.pm:${PORTSDIR}/security/
 		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/Module/Runtime.pm:${PORTSDIR}/devel/p5-Module-Runtime \
-		${SITE_PERL}/Params/Classify.pm:${PORTSDIR}/devel/p5-Params-Classify
+		${SITE_PERL}/${PERL_ARCH}/Params/Classify.pm:${PORTSDIR}/devel/p5-Params-Classify
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
