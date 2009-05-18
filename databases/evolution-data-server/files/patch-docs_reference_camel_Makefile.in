@@ -9,21 +9,3 @@
  ICONV_CFLAGS = @ICONV_CFLAGS@
  ICONV_LIBS = @ICONV_LIBS@
  IDL_INCLUDES = @IDL_INCLUDES@
-@@ -730,7 +730,7 @@ install-data-local:
- 	    mv -f $${installdir}/$(DOC_MODULE).devhelp \
- 	      $${installdir}/$(DOC_MODULE)-$(DOC_MODULE_VERSION).devhelp; \
- 	  fi; \
--	  gtkdoc-rebase --relative --dest-dir=$(DESTDIR) --html-dir=$${installdir}; \
-+#	  gtkdoc-rebase --relative --dest-dir=$(DESTDIR) --html-dir=$${installdir}; \
- 	fi
- 
- uninstall-local:
-@@ -759,7 +759,7 @@ dist-hook: dist-check-gtkdoc dist-hook-l
- 	-cp $(srcdir)/$(DOC_MODULE).types $(distdir)/
- 	-cp $(srcdir)/$(DOC_MODULE)-sections.txt $(distdir)/
- 	cd $(distdir) && rm -f $(DISTCLEANFILES)
--	gtkdoc-rebase --online --relative --html-dir=$(distdir)/html
-+#	gtkdoc-rebase --online --relative --html-dir=$(distdir)/html
- 
- .PHONY : dist-hook-local docs
- 
