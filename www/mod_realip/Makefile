@@ -13,6 +13,8 @@ MASTER_SITES=	http://sysoev.ru/mod_realip/
 MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Apache module to fix IP addresses in proxied requests
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	1.3
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
