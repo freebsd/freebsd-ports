@@ -56,7 +56,7 @@ OPTIONS=	CUPS "Enable printing support (requires CUPS)" off \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_CUPS) || defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	cupsd:${PORTSDIR}/print/cups-base
+BUILD_DEPENDS+=	cupsd:${PORTSDIR}/print/cups-client
 CUPS=	-cups -L${LOCALBASE}/lib -I. -I../../include/Qt -I../../include -I${LOCALBASE}/include
 .elif defined(WITHOUT_CUPS)
 CUPS=
