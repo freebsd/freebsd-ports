@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	climm
-PORTVERSION=	0.6.4
+PORTVERSION=	0.7
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.climm.org/source/ \
 		http://http.bg.climm.org/source/
@@ -74,7 +74,7 @@ CONFIGURE_ARGS+=	--disable-remote
 .if defined(WITHOUT_XMPP)
 CONFIGURE_ARGS+=	--disable-xmpp
 .else
-LIB_DEPENDS+=		gloox:${PORTSDIR}/net-im/gloox
+LIB_DEPENDS+=		iksemel:${PORTSDIR}/textproc/iksemel
 CONFIGURE_ARGS+=	--enable-xmpp
 .endif
 
