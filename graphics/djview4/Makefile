@@ -7,7 +7,7 @@
 
 PORTNAME=	djview
 PORTVERSION=	4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/djvu
 DISTNAME=	${PORTNAME}4-${PORTVERSION}
@@ -20,7 +20,7 @@ LIB_DEPENDS=	djvulibre.21:${PORTSDIR}/graphics/djvulibre-nox11
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig gnometarget
 USE_QT_VER=	4
-QT_COMPONENTS=	gui network rcc uic moc qmake
+QT_COMPONENTS=	gui network rcc_build uic_build moc_build qmake_build
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV=	QMAKE="${LOCALBASE}/bin/qmake-qt4" \
 		QMAKESPEC="${QMAKESPEC}" \
