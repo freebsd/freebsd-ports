@@ -246,6 +246,7 @@
     SUBDIR += php_doc
     SUBDIR += pike72
     SUBDIR += pike76
+    SUBDIR += pike78
     SUBDIR += plt-scheme
     SUBDIR += pm3-base
     SUBDIR += pm3-forms
