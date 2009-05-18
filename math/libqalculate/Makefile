@@ -7,15 +7,14 @@
 
 PORTNAME=	libqalculate
 PORTVERSION=	0.9.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	SF/qalculate
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A a multi-purpose desktop calculator (backend library)
 
-LIB_DEPENDS=	cln.5:${PORTSDIR}/math/cln \
-    		gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	cln.5:${PORTSDIR}/math/cln
 
 USE_GNOME=	glib20 gnomehack gnometarget intlhack libxml2
 USE_GETTEXT=	yes
