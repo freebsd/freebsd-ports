@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	2.5.6
+PORTVERSION=	2.6.0
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -19,11 +19,10 @@ MASTER_SITE_SUBDIR=	. old related/postfix
 DISTNAME=	postfix-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-# blanket approval for version updates: mnag@FreeBSD.org
-MAINTAINER=	vivek@khera.org
+MAINTAINER=	sahil@tandon.net
 COMMENT=	A secure alternative to widely-used Sendmail
 
-CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-46-9].* postfix-current-2.* \
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-57-9].* postfix-current-2.* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 
 USE_SUBMAKE=	yes
@@ -58,13 +57,13 @@ OPTIONS=	PCRE		"Perl Compatible Regular Expressions"			on \
 		TEST		"SMTP/LMTP test server and generator"			${STATUS_Test}
 
 MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
-	postlock.1 postlog.1 postmap.1 postqueue.1 postsuper.1 sendmail.1 \
-	qshape.1
+	postlock.1 postlog.1 postmap.1 postmulti.1 postqueue.1 postsuper.1 \
+	sendmail.1 qshape.1
 
 MAN5=	access.5 aliases.5 bounce.5 canonical.5 cidr_table.5 generic.5 \
 	header_checks.5 ldap_table.5 master.5 mysql_table.5 nisplus_table.5 \
-	pcre_table.5 pgsql_table.5 postconf.5 regexp_table.5 relocated.5 \
-	tcp_table.5 transport.5 virtual.5
+	pcre_table.5 pgsql_table.5 postconf.5 postfix-wrapper.5 regexp_table.5 \
+	relocated.5 tcp_table.5 transport.5 virtual.5
 
 MAN8=	anvil.8 bounce.8 cleanup.8 discard.8 error.8 flush.8 local.8 master.8 \
 	oqmgr.8 pickup.8 pipe.8 proxymap.8 qmgr.8 qmqpd.8 scache.8 showq.8 \
@@ -184,6 +183,7 @@ _REQUIRE+=		ypserv
 .endif
 
 .if defined(WITH_VDA)
+IGNORE=			wait for a new VDA patch that works with 2.6.0
 PATCH_SITES+=		http://vda.sourceforge.net/VDA/
 PATCHFILES+=		postfix-2.5.6-vda-ng.patch.gz
 PATCH_DIST_STRIP=	-p1
@@ -298,8 +298,8 @@ do-install:
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 # Fix compressed man pages
-	@${REINPLACE_CMD} -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${PREFIX}/etc/postfix/postfix-files
-	@${RM} -f ${PREFIX}/etc/postfix/postfix-files.bak
+	@${REINPLACE_CMD} -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${PREFIX}/libexec/postfix/postfix-files
+	@${RM} -f ${PREFIX}/libexec/postfix/postfix-files.bak
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
