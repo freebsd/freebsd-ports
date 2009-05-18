@@ -7,6 +7,7 @@
 
 PORTNAME=	freefem++
 DISTVERSION=	3.0-5
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
@@ -14,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of a language dedicated to the finite element method
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads		\
-		fftw3.4:${PORTSDIR}/math/fftw3				\
+		fftw3.5:${PORTSDIR}/math/fftw3				\
 		umfpack.1:${PORTSDIR}/math/suitesparse			\
 		arpack.1:${PORTSDIR}/math/arpack			\
 		gsl.13:${PORTSDIR}/math/gsl

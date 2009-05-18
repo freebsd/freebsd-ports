@@ -7,6 +7,7 @@
 
 PORTNAME=	qtpfsgui
 PORTVERSION=	1.9.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -18,7 +19,7 @@ LIB_DEPENDS=	exiv2.7:${PORTSDIR}/graphics/exiv2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		fftw3f.4:${PORTSDIR}/math/fftw3-float
+		fftw3f.5:${PORTSDIR}/math/fftw3-float
 
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui imageformats \

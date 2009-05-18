@@ -7,7 +7,7 @@
 
 PORTNAME=		FreeMat
 PORTVERSION=		3.6
-PORTREVISION=	3
+PORTREVISION=		4
 CATEGORIES=		math science
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -43,8 +43,8 @@ SLAVEDIRS=	math/freemat-mpi
 DATADIR+=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 
 .if !defined(WITHOUT_FFTW)
-LIB_DEPENDS+=	fftw3.4:${PORTSDIR}/math/fftw3		\
-		fftw3f.4:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS+=	fftw3.5:${PORTSDIR}/math/fftw3		\
+		fftw3f.5:${PORTSDIR}/math/fftw3-float
 .endif
 
 .if !defined(WITHOUT_ARPACK)

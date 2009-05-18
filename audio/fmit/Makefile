@@ -7,7 +7,7 @@
 
 PORTNAME=	fmit
 PORTVERSION=	0.97.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/fmit/
 
@@ -15,7 +15,7 @@ MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Free Music Instrument Tuner
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
-		fftw3.4:${PORTSDIR}/math/fftw3
+		fftw3.5:${PORTSDIR}/math/fftw3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-alsa bnv_cv_qt_test_result=yes
