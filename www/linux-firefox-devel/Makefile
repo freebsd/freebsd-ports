@@ -17,7 +17,7 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 
 USE_BZIP2=	yes
 
-FORBIDDEN=	Security issus http://www.vuxml.org/freebsd/f29fea8f-b19f-11dd-a55e-00163e000016.html 
+FORBIDDEN=	Security issues http://www.vuxml.org/freebsd/f29fea8f-b19f-11dd-a55e-00163e000016.html 
 
 .include "${.CURDIR}/../linux-seamonkey/Makefile.common"
 .include <bsd.port.mk>
