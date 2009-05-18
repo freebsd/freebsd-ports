@@ -64,7 +64,7 @@ CONFIGURE_ARGS+=	--enable-debug=yes
 
 .if (defined(WITH_CUPS) || exists(${LOCALBASE}/lib/libcups.so)) && \
 	!defined(WITHOUT_CUPS)
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
 CONFIGURE_ARGS+=--enable-cups=auto
 PLIST_SUB+=	CUPS:=""
 .else
