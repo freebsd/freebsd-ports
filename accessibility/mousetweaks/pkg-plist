@@ -49,6 +49,21 @@ share/gnome/help/mousetweaks/el/figures/mouse-a11y-ssc-checkbox.png
 share/gnome/help/mousetweaks/el/figures/mouse-a11y-ssc-delay-slider.png
 share/gnome/help/mousetweaks/el/figures/mouse-a11y-tab.png
 share/gnome/help/mousetweaks/el/mousetweaks.xml
+share/gnome/help/mousetweaks/en_GB/figures/mouse-a11y-dwell-checkbox.png
+share/gnome/help/mousetweaks/en_GB/figures/mouse-a11y-dwell-click-type-applet.png
+share/gnome/help/mousetweaks/en_GB/figures/mouse-a11y-dwell-click-type-window.png
+share/gnome/help/mousetweaks/en_GB/figures/mouse-a11y-dwell-ctw-checkbox.png
+share/gnome/help/mousetweaks/en_GB/figures/mouse-a11y-dwell-delay-slider.png
+share/gnome/help/mousetweaks/en_GB/figures/mouse-a11y-dwell-gesture-mapping.png
+share/gnome/help/mousetweaks/en_GB/figures/mouse-a11y-dwell-mode-choice.png
+share/gnome/help/mousetweaks/en_GB/figures/mouse-a11y-dwell-motion-treshold.png
+share/gnome/help/mousetweaks/en_GB/figures/mouse-a11y-pointer-capture-context-menu.png
+share/gnome/help/mousetweaks/en_GB/figures/mouse-a11y-pointer-capture-locked.png
+share/gnome/help/mousetweaks/en_GB/figures/mouse-a11y-pointer-capture-preferences.png
+share/gnome/help/mousetweaks/en_GB/figures/mouse-a11y-ssc-checkbox.png
+share/gnome/help/mousetweaks/en_GB/figures/mouse-a11y-ssc-delay-slider.png
+share/gnome/help/mousetweaks/en_GB/figures/mouse-a11y-tab.png
+share/gnome/help/mousetweaks/en_GB/mousetweaks.xml
 share/gnome/help/mousetweaks/es/figures/mouse-a11y-dwell-checkbox.png
 share/gnome/help/mousetweaks/es/figures/mouse-a11y-dwell-click-type-applet.png
 share/gnome/help/mousetweaks/es/figures/mouse-a11y-dwell-click-type-window.png
@@ -64,6 +79,21 @@ share/gnome/help/mousetweaks/es/figures/mouse-a11y-ssc-checkbox.png
 share/gnome/help/mousetweaks/es/figures/mouse-a11y-ssc-delay-slider.png
 share/gnome/help/mousetweaks/es/figures/mouse-a11y-tab.png
 share/gnome/help/mousetweaks/es/mousetweaks.xml
+share/gnome/help/mousetweaks/fr/figures/mouse-a11y-dwell-checkbox.png
+share/gnome/help/mousetweaks/fr/figures/mouse-a11y-dwell-click-type-applet.png
+share/gnome/help/mousetweaks/fr/figures/mouse-a11y-dwell-click-type-window.png
+share/gnome/help/mousetweaks/fr/figures/mouse-a11y-dwell-ctw-checkbox.png
+share/gnome/help/mousetweaks/fr/figures/mouse-a11y-dwell-delay-slider.png
+share/gnome/help/mousetweaks/fr/figures/mouse-a11y-dwell-gesture-mapping.png
+share/gnome/help/mousetweaks/fr/figures/mouse-a11y-dwell-mode-choice.png
+share/gnome/help/mousetweaks/fr/figures/mouse-a11y-dwell-motion-treshold.png
+share/gnome/help/mousetweaks/fr/figures/mouse-a11y-pointer-capture-context-menu.png
+share/gnome/help/mousetweaks/fr/figures/mouse-a11y-pointer-capture-locked.png
+share/gnome/help/mousetweaks/fr/figures/mouse-a11y-pointer-capture-preferences.png
+share/gnome/help/mousetweaks/fr/figures/mouse-a11y-ssc-checkbox.png
+share/gnome/help/mousetweaks/fr/figures/mouse-a11y-ssc-delay-slider.png
+share/gnome/help/mousetweaks/fr/figures/mouse-a11y-tab.png
+share/gnome/help/mousetweaks/fr/mousetweaks.xml
 share/gnome/help/mousetweaks/it/figures/mouse-a11y-dwell-checkbox.png
 share/gnome/help/mousetweaks/it/figures/mouse-a11y-dwell-click-type-applet.png
 share/gnome/help/mousetweaks/it/figures/mouse-a11y-dwell-click-type-window.png
@@ -131,6 +161,7 @@ share/locale/hi/LC_MESSAGES/mousetweaks.mo
 share/locale/hu/LC_MESSAGES/mousetweaks.mo
 share/locale/it/LC_MESSAGES/mousetweaks.mo
 share/locale/ja/LC_MESSAGES/mousetweaks.mo
+share/locale/kn/LC_MESSAGES/mousetweaks.mo
 share/locale/ko/LC_MESSAGES/mousetweaks.mo
 share/locale/lt/LC_MESSAGES/mousetweaks.mo
 share/locale/mk/LC_MESSAGES/mousetweaks.mo
@@ -171,7 +202,9 @@ share/locale/zh_TW/LC_MESSAGES/mousetweaks.mo
 share/omf/mousetweaks/mousetweaks-C.omf
 share/omf/mousetweaks/mousetweaks-de.omf
 share/omf/mousetweaks/mousetweaks-el.omf
+share/omf/mousetweaks/mousetweaks-en_GB.omf
 share/omf/mousetweaks/mousetweaks-es.omf
+share/omf/mousetweaks/mousetweaks-fr.omf
 share/omf/mousetweaks/mousetweaks-it.omf
 share/omf/mousetweaks/mousetweaks-oc.omf
 share/omf/mousetweaks/mousetweaks-sv.omf
@@ -183,8 +216,12 @@ share/omf/mousetweaks/mousetweaks-sv.omf
 @dirrm share/gnome/help/mousetweaks/oc
 @dirrm share/gnome/help/mousetweaks/it/figures
 @dirrm share/gnome/help/mousetweaks/it
+@dirrm share/gnome/help/mousetweaks/fr/figures
+@dirrm share/gnome/help/mousetweaks/fr
 @dirrm share/gnome/help/mousetweaks/es/figures
 @dirrm share/gnome/help/mousetweaks/es
+@dirrm share/gnome/help/mousetweaks/en_GB/figures
+@dirrm share/gnome/help/mousetweaks/en_GB
 @dirrm share/gnome/help/mousetweaks/el/figures
 @dirrm share/gnome/help/mousetweaks/el
 @dirrm share/gnome/help/mousetweaks/de/figures
@@ -200,6 +237,8 @@ share/omf/mousetweaks/mousetweaks-sv.omf
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/kn/LC_MESSAGES
+@dirrmtry share/locale/kn
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/as/LC_MESSAGES

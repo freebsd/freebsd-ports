@@ -226,6 +226,9 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome_segv2.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome_segv2.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome_segv2.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gtk-window-decorator.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gtk-window-decorator.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gtk-window-decorator.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/liferea.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/liferea.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/liferea.pyo
