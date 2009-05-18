@@ -11,8 +11,8 @@
 
 **** You may specify the following make variables:
 
-	NET_SNMP_SYS_CONTACT="kuriyama@FreeBSD.org"
-	NET_SNMP_SYS_LOCATION="Tokyo, Japan"
+	NET_SNMP_SYS_CONTACT="pgollucci@FreeBSD.org"
+	NET_SNMP_SYS_LOCATION="Maryland, USA"
 	DEFAULT_SNMP_VERSION=3
 	NET_SNMP_MIB_MODULES="host smux mibII/mta_sendmail ucd-snmp/diskio"
 	NET_SNMP_LOGFILE=/var/log/snmpd.log
