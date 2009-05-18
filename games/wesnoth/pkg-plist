@@ -1988,7 +1988,6 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/editor/terrain-groups.cfg
 %%DATADIR%%/data/core/editor/time-of-day.cfg
 %%DATADIR%%/data/core/editor/tool-hints.cfg
-%%DATADIR%%/data/core/fonts.cfg
 %%DATADIR%%/data/core/help.cfg
 %%DATADIR%%/data/core/hotkeys.cfg
 %%DATADIR%%/data/core/images/attacks/axe-crude.png
@@ -2376,6 +2375,10 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/portraits/drakes/clasher.png
 %%DATADIR%%/data/core/images/portraits/drakes/fighter.png
 %%DATADIR%%/data/core/images/portraits/drakes/glider.png
+%%DATADIR%%/data/core/images/portraits/drakes/transparent/burner.png
+%%DATADIR%%/data/core/images/portraits/drakes/transparent/clasher.png
+%%DATADIR%%/data/core/images/portraits/drakes/transparent/fighter.png
+%%DATADIR%%/data/core/images/portraits/drakes/transparent/glider.png
 %%DATADIR%%/data/core/images/portraits/dwarves/dragonguard.png
 %%DATADIR%%/data/core/images/portraits/dwarves/fighter.png
 %%DATADIR%%/data/core/images/portraits/dwarves/gryphon-rider.png
@@ -2446,6 +2449,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/portraits/humans/heavy-infantry.png
 %%DATADIR%%/data/core/images/portraits/humans/highwayman.png
 %%DATADIR%%/data/core/images/portraits/humans/horseman.png
+%%DATADIR%%/data/core/images/portraits/humans/huntsman.png
 %%DATADIR%%/data/core/images/portraits/humans/iron-mauler.png
 %%DATADIR%%/data/core/images/portraits/humans/javelineer.png
 %%DATADIR%%/data/core/images/portraits/humans/knight.png
@@ -2488,6 +2492,7 @@ share/pixmaps/wesnoth_editor-icon.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/general.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/halberdier.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/heavy-infantry.png
+%%DATADIR%%/data/core/images/portraits/humans/transparent/huntsman.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/iron-mauler.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/javelineer.png
 %%DATADIR%%/data/core/images/portraits/humans/transparent/lieutenant.png
@@ -9562,6 +9567,7 @@ share/pixmaps/wesnoth_editor-icon.png
 @dirrm %%DATADIR%%/data/core/images/items
 @dirrm %%DATADIR%%/data/core/images/maps
 @dirrm %%DATADIR%%/data/core/images/misc
+@dirrm %%DATADIR%%/data/core/images/portraits/drakes/transparent
 @dirrm %%DATADIR%%/data/core/images/portraits/drakes
 @dirrm %%DATADIR%%/data/core/images/portraits/dwarves/transparent
 @dirrm %%DATADIR%%/data/core/images/portraits/dwarves
