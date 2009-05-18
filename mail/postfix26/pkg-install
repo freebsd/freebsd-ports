@@ -119,7 +119,7 @@ if [ x"$2" = xPOST-INSTALL ]; then
 		done
 	fi
 
-	/bin/sh ${PKG_PREFIX}/etc/postfix/post-install tempdir=/tmp \
+	/bin/sh ${PKG_PREFIX}/libexec/postfix/post-install tempdir=/tmp \
 	config_directory=${PKG_PREFIX}/etc/postfix \
 	data_directory=/var/db/postfix \
 	daemon_directory=${PKG_PREFIX}/libexec/postfix \
