@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	extmail
-PORTVERSION=	1.0.9
+PORTVERSION=	1.1.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.chifeng.name/dist/extmail/ \
 		http://mirror3.extmail.net/dist/
@@ -31,11 +31,12 @@ SUB_FILES=	pkg-message
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 .if defined(WITH_LDAP)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/LDAP.pm:${PORTSDIR}/databases/p5-DBD-LDAP
+RUN_DEPENDS+=	${SITE_PERL}/DBD/LDAP.pm:${PORTSDIR}/databases/p5-DBD-LDAP
 .endif
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_BIN} . ${WWWDIR}
+	@${MKDIR} ${WWWDIR}
+	@cd ${WRKSRC} && ${CP} -Rfp * ${WWWDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
