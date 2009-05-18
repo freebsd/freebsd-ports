@@ -6,8 +6,8 @@
 #    $MCom: ports-experimental/math/fftw3/Makefile,v 1.1 2006/03/28 00:08:57 ahze Exp $
 
 PORTNAME=	fftw3
-PORTVERSION=	3.1.3
-PORTREVISION?=	1
+PORTVERSION=	3.2
+PORTREVISION?=	0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://ftp.fftw.org/pub/fftw/old/
@@ -22,7 +22,6 @@ FFTW3_FLAVOR?=	default
 FFTW3_SUFX=
 
 GNU_CONFIGURE=	yes
-USE_FORTRAN=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_PERL5_BUILD=yes
 USE_LDCONFIG=	yes
@@ -39,7 +38,14 @@ MAN1=	fftw${FFTW3_SUFX}-wisdom.1
 INSTALL_TARGET=	install-pkgconfigDATA install-libLTLIBRARIES install-exec
 .endif
 
-OPTIONS=	OPTIMIZED_CFLAGS "Enable optimized CFLAGS" off
+OPTIONS=	OPTIMIZED_CFLAGS "Enable optimized CFLAGS" off \
+		FORTRAN "Build Fortran shims (needs gcc from port)" on
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_FORTRAN)
+USE_FORTRAN=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 
