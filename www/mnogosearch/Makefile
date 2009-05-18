@@ -7,6 +7,7 @@
 
 PORTNAME=	mnogosearch
 PORTVERSION=	3.3.9
+PORTREVISION=	1
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/
 
@@ -81,7 +82,6 @@ CONFIGURE_ARGS+=	--with-msql=${LOCALBASE}
 
 .ifdef WITH_MYSQL
 USE_MYSQL=	yes
-WANT_MYSQL_VER=	41
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 .endif
 
