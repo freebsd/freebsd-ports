@@ -1,0 +1,9 @@
+* XPath support for document searching
+* CSS3 selector support for document searching
+* XML/HTML builder
+* Drop in replacement for Hpricot (though not bug for bug)
+
+Nokogiri parses and searches XML/HTML very quickly, and also has 
+correctly implemented CSS3 selector support as well as XPath support. 
+
+WWW:	http://nokogiri.rubyforge.org/nokogiri/
