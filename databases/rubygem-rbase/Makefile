@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rbase
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RF
 
