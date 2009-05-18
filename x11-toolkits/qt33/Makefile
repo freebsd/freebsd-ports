@@ -111,7 +111,7 @@ CONFIGURE_ARGS+=-disable-opengl
 .endif # WITHOUT_OPENGL
 
 .if !defined(WITHOUT_CUPS)
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
 CUPS=	-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include
 .elif defined(WITHOUT_CUPS)
 CUPS=
