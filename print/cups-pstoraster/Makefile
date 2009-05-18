@@ -17,7 +17,7 @@ DIST_SUBDIR=	ghostscript
 MAINTAINER=	rea-fbsd@codelabs.ru
 COMMENT=	Postscript interpreter for CUPS printing to non-PS printers
 
-LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS=	cupsimage.2:${PORTSDIR}/print/cups-image
 
 .if defined(WITH_CJK)
 RUN_DEPENDS+=	${LOCALBASE}/share/fonts/TrueType/ipag.ttf:${PORTSDIR}/japanese/ipa-ttfonts \
