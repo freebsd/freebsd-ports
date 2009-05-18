@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	beanstalkd
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://xph.us/dist/beanstalkd/ \
