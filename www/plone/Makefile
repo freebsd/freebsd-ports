@@ -8,7 +8,7 @@
 PORTNAME=	plone
 PORTVERSION=	2.5.5
 CATEGORIES=	www zope
-MASTER_SITES=	https://launchpad.net/plone/${PORTVERSION:R}/${PORTVERSION}/+download/
+MASTER_SITES=	https://launchpadlibrarian.net/10741323/
 DISTFILES=	Plone-${PORTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	zope
 
