@@ -18,7 +18,6 @@ that use these filters. This software is available in the cups-pstoraster
 port.
 
 LICENSE: GPL2 only with exception to link with OpenSSL
-LICENSE: LGPL2 only with exception to link with OpenSSL (inlcudes, librarys)
 
 WWW: http://www.cups.org/
 [original text by greid@ukug.uk.freebsd.org]

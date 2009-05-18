@@ -62,23 +62,25 @@ CUPSSYSGRP=	wheel
 
 .if defined(CUPS_CLIENT)
 CUPS_SUFFIX=	-client
-COMMENT2=	Library cupsimage
+COMMENT2=	Library cups
 INSTALL_WRKSRC=	${WRKSRC}/cups
 PLIST=		${MASTERDIR}/pkg-plist.client
 USE_LDCONFIG=	yes
 PKGMESSAGE=	${NONEXISTENT}
+DESCR=		${MASTERDIR}/pkg-descr.client
 .elif defined(CUPS_IMAGE)
 CUPS_SUFFIX=	-image
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
-COMMENT2=	Library cups
+COMMENT2=	Library cupsimage
 CONFIGURE_ARGS+=	--disable-pdftops
 INSTALL_WRKSRC=	${WRKSRC}/filter
 PLIST=		${MASTERDIR}/pkg-plist.image
 USE_LDCONFIG=	yes
 PKGMESSAGE=	${NONEXISTENT}
+DESCR=		${MASTERDIR}/pkg-descr.image
 .else
 CUPS_SUFFIX=	-base
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
