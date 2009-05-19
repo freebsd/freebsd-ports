@@ -83,7 +83,7 @@ post-build:
 	@cd ${WRKSRC}/doc && make plaintext html_chunked
 .endif
 
-pre-install:
+pre-su-install:
 	@${MKDIR} ${KMODDIR}
 
 post-install:
