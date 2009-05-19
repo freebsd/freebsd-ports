@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nsd
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -19,20 +19,13 @@ CONFLICTS=	nsd-[0-2]*
 USE_RC_SUBR=	nsd
 
 NSDUSER?=	bind
-NSDDBDIR?=	/var/db/nsd
-NSDDBFILE?=	${NSDDBDIR}/nsd.db
-NSDDIFFFILE?=	${NSDDBDIR}/ixfr.db
-NSDXFRDFILE?=	${NSDDBDIR}/xfrd.state
+NSD_LSD=	/var
 NSDMAX_INT?=	512
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-user=${NSDUSER} \
 		--with-configdir=${PREFIX}/etc/nsd \
-		--with-pidfile=/var/run/nsd.pid \
-		--with-dbfile=${NSDDBFILE} \
-		--with-difffile=${NSDDIFFFILE} \
-		--with-xfrdfile=${NSDXFRDFILE} \
-		--with-libwrap
+		--localstatedir=${NSD_LSD}
 
 USE_OPENSSL=	yes
 
@@ -116,8 +109,6 @@ pre-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/nsd.conf.sample \
 		${PREFIX}/etc/nsd/nsd.conf.sample
-	@${MKDIR} ${NSDDBDIR}
-	@${CHOWN} -R ${NSDUSER} ${NSDDBDIR}
 
 .if exists(${PREFIX}/etc/nsd/nsd.conf)
 	@${ECHO_MSG} "Upgrading to new ixfr.db format if needed"
