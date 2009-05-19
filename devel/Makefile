@@ -775,6 +775,7 @@
     SUBDIR += lion
     SUBDIR += llvm
     SUBDIR += llvm-devel
+    SUBDIR += lmdbg
     SUBDIR += lndir
     SUBDIR += log4c
     SUBDIR += log4cplus

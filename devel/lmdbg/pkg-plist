@@ -1,0 +1,14 @@
+lib/liblmdbg.a
+lib/liblmdbg.la
+lib/liblmdbg.so.0
+lib/liblmdbg.so
+bin/lmdbg-run
+bin/lmdbg-sym
+bin/lmdbg-leaks
+bin/lmdbg-sysleaks
+bin/lmdbg-leak-check
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
