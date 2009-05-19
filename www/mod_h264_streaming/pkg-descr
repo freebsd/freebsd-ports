@@ -1,0 +1,9 @@
+The H264 Streaming Module is a plugin for your existing Apache
+webserver. Its features are as follows:
+
+  * Timeshifting seek
+  * Virtual video clips
+  * Network efficiency
+  * Encoding
+
+WWW: http://h264.code-shop.com/trac/wiki/Mod-H264-Streaming-Apache-Version2
