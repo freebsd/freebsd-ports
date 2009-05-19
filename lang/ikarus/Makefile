@@ -24,16 +24,13 @@ CONFIGURE_ARGS+=\
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 ONLY_FOR_ARCHS=	i386
+NO_PACKAGE=	Pointyhat cluster CPUs do not support required SSE instruction set
 
 .include <bsd.port.pre.mk>
 
 .if defined(NOPORTDOCS)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile.in \
 		${FILESDIR}/extra-patch-doc__Makefile.in
-.endif
-
-.if ${OSVERSION} < 700000
-NO_PACKAGE=	Pointyhat cluster CPUs do not support required SSE instruction set
 .endif
 
 .if ${OSVERSION} < 700042
