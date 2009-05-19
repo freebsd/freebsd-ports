@@ -2,7 +2,9 @@
 #
 # $FreeBSD$
 #
-
+# PROVIDE: sshblock
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable sshblock:
 # sshblock_enable (bool):	Set to "NO" by default.
