@@ -437,6 +437,7 @@
     SUBDIR += rascal
     SUBDIR += reed-solomon
     SUBDIR += rkward
+    SUBDIR += rkward-kde4
     SUBDIR += rngstreams
     SUBDIR += rpc
     SUBDIR += rpy
