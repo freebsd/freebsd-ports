@@ -1,274 +1,274 @@
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/EGG-INFO/PKG-INFO
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/EGG-INFO/SOURCES.txt
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/EGG-INFO/dependency_links.txt
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/EGG-INFO/entry_points.txt
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/EGG-INFO/not-zip-safe
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/EGG-INFO/requires.txt
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/EGG-INFO/top_level.txt
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/__init__.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/__init__.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/__init__.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/commands.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/commands.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/commands.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/config.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/config.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/config.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/configuration.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/configuration.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/configuration.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/controllers/__init__.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/controllers/__init__.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/controllers/__init__.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/controllers/core.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/controllers/core.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/controllers/core.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/controllers/util.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/controllers/util.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/controllers/util.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/controllers/xmlrpc.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/controllers/xmlrpc.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/controllers/xmlrpc.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/database.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/database.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/database.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorator.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorator.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorator.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorators/__init__.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorators/__init__.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorators/__init__.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorators/_decorator.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorators/_decorator.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorators/_decorator.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorators/cache.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorators/cache.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorators/cache.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorators/rest.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorators/rest.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorators/rest.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorators/secure.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorators/secure.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorators/secure.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/error.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/error.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/error.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/helpers.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/helpers.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/helpers.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/i18n/__init__.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/i18n/__init__.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/i18n/__init__.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/i18n/translation.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/i18n/translation.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/i18n/translation.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/legacy.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/legacy.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/legacy.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/log.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/log.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/log.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/._bar-bg.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/._bg.jpg
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/._hatch-yellow.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/._header.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/._highlight.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/._icon-16.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/._logo.gif
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/._main-nav-bg-on.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/._main-nav-bg.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/._plus.jpg
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/._tab-brown.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/._tab-white.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/._tab-yellow-highlight.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/._tab-yellow.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/._warning.gif
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/bar-bg.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/bg.jpg
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/hatch-yellow.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/header.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/highlight.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/icon-16.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/logo.gif
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/main-nav-bg-on.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/main-nav-bg.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/plus.jpg
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/tab-brown.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/tab-white.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/tab-yellow-highlight.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/tab-yellow.png
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img/warning.gif
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/style/._orange.css
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/style/orange.css
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/middleware.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/middleware.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/middleware.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/._controller.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/._restcontroller.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/._test_controller.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/__init__.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/__init__.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/__init__.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/controller.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+egg+.egg-info/._paste_deploy_config.ini_tmpl_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+egg+.egg-info/paste_deploy_config.ini_tmpl_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/.___init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/._websetup.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/__init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/config/.___init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/config/._environment.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/config/._middleware.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/config/._routing.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/config/__init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/config/environment.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/config/middleware.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/config/routing.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/controllers/.___init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/controllers/._error.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/controllers/._template.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/controllers/__init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/controllers/error.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/controllers/template.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/lib/.___init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/lib/._app_globals.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/lib/._base.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/lib/._helpers.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/lib/__init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/lib/app_globals.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/lib/base.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/lib/helpers.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/model/.___init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/model/__init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/public/._index.html_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/public/index.html_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/templates/._.distutils_placeholder
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/templates/.distutils_placeholder
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/tests/.___init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/tests/._test_models.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/tests/__init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/tests/functional/.___init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/tests/functional/__init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/tests/test_models.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/websetup.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/._MANIFEST.in_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/._README.txt_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/._development.ini_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/._setup.cfg_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/._setup.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/._test.ini_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/MANIFEST.in_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/README.txt_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/development.ini_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/docs/._index.txt_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/docs/index.txt_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/setup.cfg_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/setup.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/test.ini_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+egg+.egg-info/._paste_deploy_config.ini_tmpl_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+egg+.egg-info/paste_deploy_config.ini_tmpl_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/.___init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/._helpers.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/._routing.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/._wsgiapp.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/__init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/controllers/.___init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/controllers/__init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/helpers.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/public/._index.html_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/public/index.html_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/routing.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/templates/._.distutils_placeholder
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/templates/.distutils_placeholder
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/tests/.___init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/tests/__init__.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/wsgiapp.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/._MANIFEST.in_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/._README.txt_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/._development.ini_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/._setup.cfg_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/._setup.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/._test.ini_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/MANIFEST.in_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/README.txt_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/development.ini_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/setup.cfg_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/setup.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/test.ini_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/restcontroller.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/test_controller.py_tmpl
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templating.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templating.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templating.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/test.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/test.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/test.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/util.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/util.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/util.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/wsgiapp.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/wsgiapp.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/wsgiapp.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/__init__.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/__init__.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/__init__.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/conftest.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/conftest.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/conftest.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/__init__.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/__init__.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/__init__.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_controller.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_controller.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_controller.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_decorator_authenticate_form.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_decorator_authenticate_form.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_decorator_authenticate_form.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_decorator_cache.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_decorator_cache.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_decorator_cache.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_decorator_https.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_decorator_https.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_decorator_https.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_decorator_jsonify.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_decorator_jsonify.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_decorator_jsonify.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_decorator_validate.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_decorator_validate.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_decorator_validate.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_deprecated.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_deprecated.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_deprecated.pyo
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_xmlrpc.py
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_xmlrpc.pyc
-lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units/test_xmlrpc.pyo
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests/test_units
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/tests
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/tests
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/templates
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/public
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+/controllers
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+package+
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project/+egg+.egg-info
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/minimal_project
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/docs
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/tests/functional
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/tests
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/templates
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/public
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/model
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/lib
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/controllers
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+/config
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+package+
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project/+egg+.egg-info
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates/default_project
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/templates
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/style
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media/img
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/media
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/i18n
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/decorators
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons/controllers
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/pylons
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg/EGG-INFO
-@dirrm lib/python2.5/site-packages/Pylons-0.9.6.2-py2.5.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/commands.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/commands.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/commands.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/configuration.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/configuration.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/configuration.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/controllers/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/controllers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/controllers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/controllers/core.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/controllers/core.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/controllers/core.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/controllers/util.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/controllers/util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/controllers/util.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/controllers/xmlrpc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/controllers/xmlrpc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/controllers/xmlrpc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/database.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/database.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/database.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorator.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorator.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorator.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/_decorator.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/_decorator.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/_decorator.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/cache.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/cache.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/cache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/rest.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/rest.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/rest.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/secure.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/secure.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators/secure.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/error.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/error.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/error.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/helpers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/helpers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/helpers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/i18n/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/i18n/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/i18n/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/i18n/translation.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/i18n/translation.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/i18n/translation.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/legacy.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/legacy.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/legacy.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/log.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/log.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/log.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._bar-bg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._bg.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._hatch-yellow.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._header.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._highlight.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._icon-16.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._logo.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._main-nav-bg-on.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._main-nav-bg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._plus.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._tab-brown.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._tab-white.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._tab-yellow-highlight.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._tab-yellow.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/._warning.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/bar-bg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/bg.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/hatch-yellow.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/header.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/highlight.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/icon-16.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/logo.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/main-nav-bg-on.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/main-nav-bg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/plus.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/tab-brown.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/tab-white.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/tab-yellow-highlight.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/tab-yellow.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img/warning.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/style/._orange.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/style/orange.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/middleware.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/middleware.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/middleware.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/._controller.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/._restcontroller.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/._test_controller.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/controller.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+egg+.egg-info/._paste_deploy_config.ini_tmpl_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+egg+.egg-info/paste_deploy_config.ini_tmpl_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/.___init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/._websetup.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/__init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config/.___init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config/._environment.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config/._middleware.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config/._routing.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config/__init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config/environment.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config/middleware.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config/routing.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/controllers/.___init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/controllers/._error.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/controllers/._template.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/controllers/__init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/controllers/error.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/controllers/template.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib/.___init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib/._app_globals.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib/._base.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib/._helpers.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib/__init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib/app_globals.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib/base.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib/helpers.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/model/.___init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/model/__init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/public/._index.html_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/public/index.html_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/templates/._.distutils_placeholder
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/templates/.distutils_placeholder
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/tests/.___init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/tests/._test_models.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/tests/__init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/tests/functional/.___init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/tests/functional/__init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/tests/test_models.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/websetup.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/._MANIFEST.in_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/._README.txt_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/._development.ini_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/._setup.cfg_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/._setup.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/._test.ini_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/MANIFEST.in_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/README.txt_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/development.ini_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/docs/._index.txt_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/docs/index.txt_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/setup.cfg_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/setup.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/test.ini_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+egg+.egg-info/._paste_deploy_config.ini_tmpl_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+egg+.egg-info/paste_deploy_config.ini_tmpl_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/.___init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/._helpers.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/._routing.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/._wsgiapp.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/__init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/controllers/.___init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/controllers/__init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/helpers.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/public/._index.html_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/public/index.html_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/routing.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/templates/._.distutils_placeholder
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/templates/.distutils_placeholder
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/tests/.___init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/tests/__init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/wsgiapp.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/._MANIFEST.in_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/._README.txt_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/._development.ini_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/._setup.cfg_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/._setup.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/._test.ini_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/MANIFEST.in_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/README.txt_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/development.ini_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/setup.cfg_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/setup.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/test.ini_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/restcontroller.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/test_controller.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templating.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templating.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templating.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/test.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/test.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/test.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/util.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/util.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/wsgiapp.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/wsgiapp.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/wsgiapp.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/conftest.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/conftest.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/conftest.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_controller.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_controller.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_controller.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_authenticate_form.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_authenticate_form.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_authenticate_form.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_cache.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_cache.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_cache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_https.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_https.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_https.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_jsonify.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_jsonify.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_jsonify.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_validate.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_validate.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_decorator_validate.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_deprecated.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_deprecated.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_deprecated.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_xmlrpc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_xmlrpc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units/test_xmlrpc.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_units
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/public
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+/controllers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+package+
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project/+egg+.egg-info
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/minimal_project
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/docs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/tests/functional
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/public
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/model
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/lib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/controllers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+/config
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+package+
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project/+egg+.egg-info
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates/default_project
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/style
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media/img
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/media
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/i18n
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/decorators
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons/controllers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pylons
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
