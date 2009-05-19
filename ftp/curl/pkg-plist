@@ -111,6 +111,8 @@ libdata/pkgconfig/libcurl.pc
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_setopt.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_socket.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_socket.pdf
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_socket_action.html
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_socket_action.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_strerror.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_strerror.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_timeout.html
