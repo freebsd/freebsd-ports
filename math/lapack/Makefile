@@ -41,7 +41,7 @@ SVERSION=4
 BLAS=	-L${LOCALBASE}/lib -lblas
 
 pre-fetch:
-	@${ECHO} "You can override FC and FFLAGS on the command line."
+	@${ECHO} "You can override F77 and FFLAGS on the command line."
 
 .include "${FILESDIR}/manpages"
 
