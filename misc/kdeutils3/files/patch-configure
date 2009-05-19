@@ -1,6 +1,6 @@
---- configure.orig	2007-10-08 10:31:38.000000000 -0400
-+++ configure	2008-08-14 10:17:24.000000000 -0400
-@@ -22642,10 +22642,10 @@
+--- ./configure.orig	2008-08-20 19:53:06.000000000 +0400
++++ ./configure	2009-05-19 21:14:00.000000000 +0400
+@@ -22643,10 +22643,10 @@
  
  
  # This can be used to rebuild libtool when needed
@@ -13,7 +13,7 @@
  
  # Prevent multiple expansion
  
-@@ -35082,153 +35082,7 @@
+@@ -35228,153 +35228,7 @@
    fi
  
  
@@ -168,7 +168,7 @@
  
  if test "xyes" = "x$have_l_funcs" ; then
  
-@@ -35789,89 +35643,6 @@
+@@ -35935,89 +35789,6 @@
    fi
  
  
@@ -258,3 +258,16 @@
  LIBGMP=
  
     kde_safe_cppflags=$CPPFLAGS
+@@ -38739,10 +38510,10 @@
+ 
+ 
+ 
+-if test -z ""2.5""; then
++if test -z ""%%PYTHON_VER%%""; then
+   version="1.5"
+ else
+-  version=""2.5""
++  version=""%%PYTHON_VER%%""
+ fi
+ 
+ { echo "$as_me:$LINENO: checking for Python$version" >&5
