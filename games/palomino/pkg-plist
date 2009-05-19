@@ -37,6 +37,7 @@ bin/palomino
 %%DOCSDIR%%/module_physics.html
 %%DOCSDIR%%/module_program.html
 %%DOCSDIR%%/module_shader.html
+%%DOCSDIR%%/module_shadows.html
 %%DOCSDIR%%/module_sky.html
 %%DOCSDIR%%/module_sound.html
 %%DOCSDIR%%/module_view.html
@@ -96,7 +97,6 @@ bin/palomino
 %%DATADIR%%/data/models/f14/README.txt
 %%DATADIR%%/data/models/f14/common.png
 %%DATADIR%%/data/models/f14/common2.png
-%%DATADIR%%/data/models/f14/f14-fx.ac.gz
 %%DATADIR%%/data/models/f14/f14b.osg.gz
 %%DATADIR%%/data/models/f14/grip.png
 %%DATADIR%%/data/models/f14/pilot-handle.png
@@ -104,11 +104,11 @@ bin/palomino
 %%DATADIR%%/data/models/f14/side2.png
 %%DATADIR%%/data/models/f14/topbottom1.png
 %%DATADIR%%/data/models/f14/topbottom2.png
-%%DATADIR%%/data/models/f15c/F15CCockpit.png
-%%DATADIR%%/data/models/f15c/F15CNose.png
-%%DATADIR%%/data/models/f15c/F15CRudder.png
-%%DATADIR%%/data/models/f15c/F15CSide.png
-%%DATADIR%%/data/models/f15c/f15c.osg.gz
+%%DATADIR%%/data/models/f15/F15CCockpit.png
+%%DATADIR%%/data/models/f15/F15CNose.png
+%%DATADIR%%/data/models/f15/F15CRudder.png
+%%DATADIR%%/data/models/f15/F15CSide.png
+%%DATADIR%%/data/models/f15/f15c.osg.gz
 %%DATADIR%%/data/models/f16/README.txt
 %%DATADIR%%/data/models/f16/f16.osg.gz
 %%DATADIR%%/data/models/f16/f16.png
@@ -128,7 +128,7 @@ bin/palomino
 %%DATADIR%%/data/models/f86/transparent.ac
 %%DATADIR%%/data/models/kc135/kc135.ac.gz
 %%DATADIR%%/data/models/kc135/kc135.png
-%%DATADIR%%/data/models/mirage2000/mirage2000.ac.gz
+%%DATADIR%%/data/models/mirage2000/mirage2000.osg.gz
 %%DATADIR%%/data/models/mirage2000/mirage2000.png
 %%DATADIR%%/data/models/mirage2000/mirage2000bottom.png
 %%DATADIR%%/data/models/misc/aim9.ac.gz
@@ -366,7 +366,7 @@ bin/palomino
 %%DATADIR%%/data/models/sr71/glass.png
 %%DATADIR%%/data/models/sr71/grey-blue-flood.png
 %%DATADIR%%/data/models/sr71/parachut.png
-%%DATADIR%%/data/models/sr71/sr71.ac.gz
+%%DATADIR%%/data/models/sr71/sr71.osg.gz
 %%DATADIR%%/data/models/sr71/wheels.png
 %%DATADIR%%/data/models/su37/SU-37-Intake-Screen.png
 %%DATADIR%%/data/models/su37/SU-37-Petal.png
@@ -391,25 +391,26 @@ bin/palomino
 %%DATADIR%%/data/physics_su37.conf
 %%DATADIR%%/data/replays/replayTakeoffFrontSlot.dat.gz
 %%DATADIR%%/data/replays/replayTakeoffRearSlot.dat.gz
-%%DATADIR%%/data/shaders/aircraft_alphaForce_frag.glsl
-%%DATADIR%%/data/shaders/aircraft_alphaForce_vert.glsl
-%%DATADIR%%/data/shaders/aircraft_alphaTex_frag.glsl
-%%DATADIR%%/data/shaders/aircraft_alphaTex_vert.glsl
 %%DATADIR%%/data/shaders/aircraft_frag.glsl
 %%DATADIR%%/data/shaders/aircraft_highSpecular_frag.glsl
 %%DATADIR%%/data/shaders/aircraft_highSpecular_vert.glsl
-%%DATADIR%%/data/shaders/aircraft_material_frag.glsl
-%%DATADIR%%/data/shaders/aircraft_material_vert.glsl
 %%DATADIR%%/data/shaders/aircraft_vert.glsl
 %%DATADIR%%/data/shaders/color_frag.glsl
 %%DATADIR%%/data/shaders/color_vert.glsl
 %%DATADIR%%/data/shaders/default_frag.glsl
 %%DATADIR%%/data/shaders/default_vert.glsl
 %%DATADIR%%/data/shaders/inc_ComputeDiffuseSpecular.glsl
+%%DATADIR%%/data/shaders/inc_ComputeDiffuseSpecular_vert.glsl
+%%DATADIR%%/data/shaders/inc_DirectionalLight_vert.glsl
+%%DATADIR%%/data/shaders/inc_PointLight_vert.glsl
+%%DATADIR%%/data/shaders/inc_SpotLight_vert.glsl
 %%DATADIR%%/data/shaders/inc_aircraft_frag.glsl
 %%DATADIR%%/data/shaders/inc_brightness_frag.glsl
+%%DATADIR%%/data/shaders/inc_color_vert.glsl
 %%DATADIR%%/data/shaders/inc_fog_frag.glsl
 %%DATADIR%%/data/shaders/inc_frag.glsl
+%%DATADIR%%/data/shaders/inc_shadow_frag.glsl
+%%DATADIR%%/data/shaders/inc_shadow_vert.glsl
 %%DATADIR%%/data/shaders/inc_vert.glsl
 %%DATADIR%%/data/shaders/module.txt
 %%DATADIR%%/data/sounds/README.txt
@@ -493,7 +494,7 @@ bin/palomino
 @dirrm %%DATADIR%%/data/models/f86
 @dirrm %%DATADIR%%/data/models/f18
 @dirrm %%DATADIR%%/data/models/f16
-@dirrm %%DATADIR%%/data/models/f15c
+@dirrm %%DATADIR%%/data/models/f15
 @dirrm %%DATADIR%%/data/models/f14
 @dirrm %%DATADIR%%/data/models/corsair
 @dirrm %%DATADIR%%/data/models/a4
