@@ -29,7 +29,7 @@ DISTFILES+=	gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
 
-SUFFIX=		${PORTVERSION:C/([0-9]).([0-9]).*/\1\2/}
+SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
 NOT_FOR_ARCHS=	alpha ia64 powerpc
 USE_BISON=	build
@@ -41,7 +41,7 @@ MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
-CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
+CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 
 .include <bsd.port.pre.mk>
 
