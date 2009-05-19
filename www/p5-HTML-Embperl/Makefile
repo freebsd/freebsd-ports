@@ -23,13 +23,13 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 #		${SITE_PERL}/Apache/SessionX.pm:${PORTSDIR}/www/p5-Apache-SessionX
 .endif
 
-BROKEN=		does not compile
+BROKEN=		does not compile; infinite loops
 
 PERL_CONFIGURE=	yes
 
 .if !defined(WITHOUT_APACHE)
-CONFIGURE_ENV=	EPHTTPD="${LOCALBASE}/sbin/httpd" EPMODDIR="${LOCALBASE}/libexec/apache"
-CONFIGURE_ARGS=	${LOCALBASE}/include/apache
+CONFIGURE_ENV=	EPHTTPD="${LOCALBASE}/sbin/httpd" EPMODDIR="${LOCALBASE}/${APACHEMODDIR}"
+CONFIGURE_ARGS=	${LOCALBASE}/${APACHEINCLUDEDIR}
 .else
 CONFIGURE_ENV=	NOAPACHE=true
 .endif
