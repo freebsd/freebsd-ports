@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=	--with-debug=0
 
 .if !defined(WITHOUT_CHARSET)
 CONFIGURE_ARGS+=	--disable-charset
-PLIST_SUB+=	CHARSET="@comment"
+PLIST_SUB+=	CHARSET="@comment "
 .else
 PLIST_SUB+=	CHARSET=""
 .endif
