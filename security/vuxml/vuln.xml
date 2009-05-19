@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="37a8603d-4494-11de-bea7-000c29a67389">
+    <topic>nsd -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>nsd</name>
+	<range><lt>3.2.2</lt></range>
+      </package>
+      <package>
+	<name>nsd2</name>
+	<range><lt>2.3.7_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NLnet Labs:</p>
+	<blockquote cite="http://www.nlnetlabs.nl/publications/NSD_vulnerability_announcement.html">
+	  <p>A one-byte buffer over flow has been reported in NSD. The
+	    problem affects all versions 2.0.0 to 3.2.1. The bug allows
+	    a carefully crafted exploit to bring down your DNS server. It
+	    is highly unlikely that this one byte overflow can lead to
+	    other (system) exploits.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.nlnetlabs.nl/publications/NSD_vulnerability_announcement.html</url>
+    </references>
+    <dates>
+      <discovery>2009-05-19</discovery>
+      <entry>2009-05-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="48e14d86-42f1-11de-ad22-000e35248ad7">
     <topic>libxine -- multiple vulnerabilities</topic>
     <affects>
