@@ -15,9 +15,7 @@ DISTNAME=	Pylons-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Pylons Web Framework
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools \
-		${PYTHON_PKGNAMEPREFIX}Paste>=1.3:${PORTSDIR}/www/py-paste \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Paste>=1.3:${PORTSDIR}/www/py-paste \
 		${PYTHON_PKGNAMEPREFIX}PasteDeploy>=1.3:${PORTSDIR}/www/py-pastedeploy \
 		${PYTHON_PKGNAMEPREFIX}PasteScript>=1.3.2:${PORTSDIR}/www/py-pastescript \
 		${PYTHON_PKGNAMEPREFIX}beaker>=0.6.3:${PORTSDIR}/www/py-beaker \
