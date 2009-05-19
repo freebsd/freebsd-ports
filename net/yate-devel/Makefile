@@ -8,7 +8,7 @@
 PORTNAME=	yate
 PORTVERSION=	1.3.0.p2
 DISTVERSION=	${PORTVERSION:S/.p/-/}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net comms
 MASTER_SITES=	http://cto.homelinux.net/pub/FreeBSD/ports/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -44,7 +44,7 @@ OPTIONS=	X11 "Build GUI client; yate-gtk2" on \
 		PGSQL "PostgreSQL Database support" on \
 		H323 "H323 software channel/protocol support" on \
 		ZAPTEL "Zaptel hardware channel/driver support" on \
-		FAX "Fax software channel/driver support" on
+		FAX "Fax software channel/driver support" off
 
 DOCSDIR=	${LOCALBASE}/share/doc/yate
 PORTDOCS=	${DOCSDIR}/*
@@ -113,6 +113,7 @@ PLIST_SUB+=	WITH_ZAPTEL="@comment "
 .endif
 
 .if !defined(WITHOUT_FAX)
+BROKEN=		does not compile
 LIB_DEPENDS+=	spandsp.2:${PORTSDIR}/comms/spandsp-devel
 MAKE_ENV+=	WITH_FAX=1
 PLIST_SUB+=	WITH_FAX=""
