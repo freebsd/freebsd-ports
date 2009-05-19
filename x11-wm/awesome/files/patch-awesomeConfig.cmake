@@ -1,7 +1,7 @@
---- awesomeConfig.cmake.orig	2009-01-08 12:04:44.000000000 +0200
-+++ awesomeConfig.cmake	2009-02-01 00:11:33.000000000 +0200
-@@ -14,8 +14,9 @@
- set(CURSES_NEED_NCURSES true)
+--- awesomeConfig.cmake.orig
++++ awesomeConfig.cmake
+@@ -12,8 +12,9 @@
+ set(CMAKE_BUILD_TYPE RELEASE)
  
  option(WITH_DBUS "build with D-BUS" ON)
 +option(INSTALL_PORTDOCS "install port docs" ON)
@@ -11,7 +11,16 @@
  
  link_directories(/usr/local/lib)
  
-@@ -248,7 +249,7 @@
+@@ -61,7 +62,7 @@
+ # theme graphics
+ a_find_program(CONVERT_EXECUTABLE convert TRUE)
+ # doxygen
+-include(FindDoxygen)
++#include(FindDoxygen)
+ # pkg-config
+ include(FindPkgConfig)
+ # lua 5.1
+@@ -244,7 +245,7 @@
  if(DEFINED AWESOME_MAN_PATH)
     set(AWESOME_MAN_PATH ${AWESOME_MAN_PATH} CACHE PATH "awesome manpage directory")
  else()
