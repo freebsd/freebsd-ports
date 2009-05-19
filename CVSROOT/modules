@@ -13176,6 +13176,7 @@ p5-WWW-Shorten                  ports/www/p5-WWW-Shorten
 p5-WWW-Shorten-0rz              ports/www/p5-WWW-Shorten-0rz
 p5-WWW-Shorten-Bitly            ports/www/p5-WWW-Shorten-Bitly
 p5-WWW-Shorten-KUSO             ports/www/p5-WWW-Shorten-KUSO
+p5-WWW-Shorten-isgd		ports/www/p5-WWW-Shorten-isgd
 p5-WWW-SourceForge              ports/www/p5-WWW-SourceForge
 p5-WWW-Spinn3r                  ports/www/p5-WWW-Spinn3r
 p5-WWW-TV                       ports/www/p5-WWW-TV
