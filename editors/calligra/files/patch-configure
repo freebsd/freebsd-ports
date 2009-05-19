@@ -1,14 +1,6 @@
-One solution proposed on the ports mailing list was to uninstall the ImageMagick port, rebuild editors/koffice-kde3 and then reinstall ImageMagick, while this works it is unacceptable to have to uninstall a port to get another port to build.
-
-The correct solution is to patch the source configure script to skip the detection of ImageMagick when GraphicsMagick is installed.  see attached patch:
-
-Patch attached with submission follows:
-
---- configure.orig	2007-05-30 16:56:35.000000000 -0500
-+++ configure	2008-07-10 05:51:45.898085206 -0500
-@@ -33900,8 +33900,10 @@
- 
- # Check for ImageMagick...
+--- ./configure.orig	2007-05-31 01:56:35.000000000 +0400
++++ ./configure	2009-05-20 01:27:42.000000000 +0400
+@@ -33902,6 +33902,8 @@
  
  have_imagemagick=no
  
@@ -17,7 +9,7 @@ Patch attached with submission follows:
     { echo "$as_me:$LINENO: checking for Magick-config" >&5
  echo $ECHO_N "checking for Magick-config... $ECHO_C" >&6; }
     if test -n "$MAGICK_CONFIG"; then
-@@ -34014,7 +34017,7 @@
+@@ -34014,7 +34016,7 @@
      LIBMAGICK_RPATH=
  fi
  
@@ -26,5 +18,29 @@ Patch attached with submission follows:
  
  
  
-
-
+@@ -38922,10 +38924,10 @@
+ 
+ 
+ 
+-if test -z ""2.5""; then
++if test -z ""%%PYTHON_VER%%""; then
+   version="1.5"
+ else
+-  version=""2.5""
++  version=""%%PYTHON_VER%%""
+ fi
+ 
+ { echo "$as_me:$LINENO: checking for Python$version" >&5
+@@ -51126,10 +51128,10 @@
+ 
+ 
+ 
+-if test -z ""2.5""; then
++if test -z ""%%PYTHON_VER%%""; then
+   version="1.5"
+ else
+-  version=""2.5""
++  version=""%%PYTHON_VER%%""
+ fi
+ 
+ { echo "$as_me:$LINENO: checking for Python$version" >&5
