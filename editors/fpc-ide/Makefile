@@ -12,8 +12,8 @@ PKGNAMESUFFIX=	-ide
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal integrated IDE/compiler
 
-USE_FPC=	fcl-async gdbint graph ibase hash mysql odbc oracle pasjpeg \
-		paszlib pthreads postgres regexpr sqlite fcl-base fv
+USE_FPC=	chm fcl-async fcl-base fv gdbint graph ibase hash mysql odbc \
+		oracle pasjpeg paszlib pthreads postgres regexpr sqlite
 
 UNITPREFIX=	# none
 MASTERDIR=	${.CURDIR}/../../lang/fpc
