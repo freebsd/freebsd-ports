@@ -19,7 +19,6 @@ lib/libgdl-1.la
 lib/libgdl-1.so
 lib/libgdl-1.so.0
 libdata/pkgconfig/gdl-1.0.pc
-%%DOCSDIR%%/GdlComboButton.html
 %%DOCSDIR%%/GdlDock.html
 %%DOCSDIR%%/GdlDockBar.html
 %%DOCSDIR%%/GdlDockItem.html
@@ -47,8 +46,10 @@ share/locale/am/LC_MESSAGES/gdl-1.mo
 share/locale/ar/LC_MESSAGES/gdl-1.mo
 share/locale/ast/LC_MESSAGES/gdl-1.mo
 share/locale/az/LC_MESSAGES/gdl-1.mo
+share/locale/be/LC_MESSAGES/gdl-1.mo
 share/locale/bg/LC_MESSAGES/gdl-1.mo
 share/locale/ca/LC_MESSAGES/gdl-1.mo
+share/locale/ca@valencia/LC_MESSAGES/gdl-1.mo
 share/locale/cs/LC_MESSAGES/gdl-1.mo
 share/locale/da/LC_MESSAGES/gdl-1.mo
 share/locale/de/LC_MESSAGES/gdl-1.mo
@@ -127,5 +128,9 @@ share/locale/zh_TW/LC_MESSAGES/gdl-1.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
