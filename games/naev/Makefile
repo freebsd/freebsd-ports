@@ -30,6 +30,10 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == i386
+BROKEN=		does not build
+.endif
+
 .if !defined(NOPORTDOCS)
 PLIST_FILES+=	%%DOCSDIR%%/conf.example
 PLIST_DIRS=	%%DOCSDIR%%
