@@ -11,8 +11,8 @@ MASTER_SITES=	http://www.akruijff.dds.nl/samesame/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dhn
 
-MAINTAINER=	freebsd@akruijff.dds.nl
-COMMENT=	Find files with identical contents and replaces them with links
+MAINTAINER=	samesame@akruijff.dds.nl
+COMMENT=	Find identical files and optionally link them together
 
 CONFLICTS=	samefile-[0-9]*
 

@@ -1,12 +1,16 @@
-These applications find identical / duplicate files and hard- or symlink
-them to save space. This port was inspired by the application samefile
-written by Jens Schweikhardt. It has a own version of samefile that is
-noticeable faster and is able to process very large file list.
+Samesame is a collection of tools that fall in to the categorie of file
+management software. These tools will prevent that you need to delete
+files or buy more disk space. Instead they solve low disk space problems
+by linking identical files together and thus free up waisted disk space.
+
+This collaction was inspired by the application samefile written by Jens
+Schweikhardt. The collection comes with its own version of samefile that
+is noticeable faster and is able to process a much larger file list.
 
 This port contains the applications: samefile, samelink and samearchive.
 The latter does the same as samefile but for file-based archives. The
 port also contains a version that uses just 10% of the resources compared
-to samearchive. The application samelink (hard) links files for you.
+to samearchive. The application samelink hard link identical files for you.
 
 Typical usage would be:
 
@@ -14,3 +18,5 @@ Typical usage would be:
 
 This would search for identical files and clean up wasted disk space by
 linking them together. Add the option -n after samelink for a dry-run.
+
+WWW: http://www.akruijff.dds.nl/samesame/
