@@ -9,7 +9,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 
 MAINTAINER=		jille@quis.cx
 
@@ -21,7 +21,7 @@ EXTRA_PATCHES+=		${.CURDIR}/files/httpd-2.2.3-peruser-0.3.0-dc2.patch
 WITH_MPM=		${SLAVE_PORT_MPM}
 SLAVE_DESIGNED_FOR=	2.2.11	# 2.2.3 to be honest, but works fine on 2.2.11
 
-LATEST_LINK=	${PORTNAME}
+LATEST_LINK=	apache22-peruser-mpm
 DESCR=			${.CURDIR}/pkg-descr
 
 .include "${MASTERDIR}/Makefile"
