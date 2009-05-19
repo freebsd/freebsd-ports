@@ -22,4 +22,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+BROKEN=		does not install: twitter requires oauth (= 0.3.2, runtime)
+
 .include <bsd.port.mk>
