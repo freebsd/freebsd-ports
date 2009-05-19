@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	awesome
-DISTVERSION=	3.3-rc2
-PORTREVISION=	2
+DISTVERSION=	3.3-rc3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/ \
 		http://redundancy.redundancy.org/mirror/
@@ -16,6 +15,7 @@ MAINTAINER=	ntarmos@cs.uoi.gr
 COMMENT=	A highly configurable, next generation framework window manager
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
+		convert:${PORTSDIR}/graphics/ImageMagick \
 		gperf>=3.0.3:${PORTSDIR}/devel/gperf \
 		pango>=1.19.3:${PORTSDIR}/x11-toolkits/pango \
 		xmlto:${PORTSDIR}/textproc/xmlto \
@@ -74,8 +74,5 @@ pre-configure:
 		-e 's/"install port docs" ON/\"install port docs" OFF/g' \
 		${WRKSRC}/awesomeConfig.cmake
 .endif
-
-post-patch:
-	@${RM} ${WRKSRC}/lib/awful/util.lua.in.orig
 
 .include <bsd.port.post.mk>
