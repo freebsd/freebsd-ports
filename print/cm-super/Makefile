@@ -57,6 +57,7 @@ MAPFILES=	cm-super-t1.map \
 
 do-build:
 .if !defined(WITHOUT_X11)
+	${TOUCH} ${WRKSRC}/pfb/fonts.dir
 	(cd ${WRKSRC}/pfb; ${LOCALBASE}/bin/type1inst -nolog -quiet)
 .else
 	@${DO_NADA}
