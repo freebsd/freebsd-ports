@@ -34,6 +34,8 @@ MAN1=		jed.1 rgrep.1
 INFO=		jed
 .endif
 
+MAKE_JOBS_UNSAFE=  yes
+
 JED_ROOT=	${DATADIR}
 BINSTUFF=	jed rgrep
 
@@ -47,8 +49,6 @@ CONFIGURE_ARGS+=	--with-canna=no
 .else
 CONFIGURE_ARGS+=	--with-canna=yes
 LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/canna-lib
-
-MAKE_JOBS_SAFE=  yes
 .endif
 
 .if defined(WITHOUT_X11)
