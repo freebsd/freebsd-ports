@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.19.4
+PORTVERSION=	7.19.5
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -37,6 +37,7 @@ MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 \
 		curl_multi_fdset.3 curl_multi_info_read.3 curl_multi_init.3 \
 		curl_multi_perform.3 curl_multi_remove_handle.3 \
 		curl_multi_setopt.3 curl_multi_socket.3 \
+		curl_multi_socket_action.3 \
 		curl_multi_strerror.3 curl_multi_timeout.3 \
 		curl_share_cleanup.3 curl_share_init.3 \
 		curl_share_setopt.3 curl_share_strerror.3 curl_slist_append.3 \
