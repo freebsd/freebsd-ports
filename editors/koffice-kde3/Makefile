@@ -50,4 +50,7 @@ CONFIGURE_ARGS+=--with-pgsqlincdir=${LOCALBASE}/include \
 		--with-pqxx-includes=${LOCALBASE}/include \
 		--with-pqxx-libraries=${LOCALBASE}/lib
 
+post-patch:
+	${REINPLACE_CMD} -e 's|%%PYTHON_VER%%|${PYTHON_VER}|g' ${WRKSRC}/configure
+
 .include <bsd.port.mk>
