@@ -148,9 +148,6 @@ EXTRA_PATCHES+=	${FILESDIR}/openssh-5.2p1-hpn.patch
 # See http://dev.inversepath.com/trac/openssh-lpk
 .if defined(WITH_LPK)
 EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk-5.0p1-0.3.9.patch
-.if ${ARCH} == "amd64"
-EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk-5.0p1-64bit.patch
-.endif
 USE_OPENLDAP=		yes
 CPPFLAGS+=		"-I${LOCALBASE}/include -DWITH_LDAP_PUBKEY"
 CONFIGURE_ARGS+=	--with-libs='-lldap' --with-ldflags='-L${LOCALBASE}/lib' \
@@ -165,6 +162,10 @@ EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk+hpn-servconf.patch
 EXTRA_PATCHES+=		${FILESDIR}/openssh-5.2p1-hpn-servconf.patch
 .elif defined(WITH_LPK) && !defined(WITH_HPN)
 EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk-5.0p1-0.3.9-servconv.patch
+.endif
+
+.if defined(WITH_LPK) && ${ARCH} == "amd64"
+EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk-5.0p1-64bit.patch
 .endif
 
 # See http://www.roumenpetrov.info/openssh/
