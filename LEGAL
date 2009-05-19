@@ -751,3 +751,4 @@ TW-*.ttf		chinese/CNS11643-font	No redistribution or
 festlex-ogi		audio/festlex-ogi	No commercial use
 festvox-abc		audio/festvox-abc	No commercial use
 festvox-hvs		audio/festvox-hvs	No commercial use
+apache2/mod_h264_streaming-*	www/mod_h264_streaming	No commercial use
