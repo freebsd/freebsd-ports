@@ -8087,6 +8087,7 @@ lm-solve                        ports/games/lm-solve
 lmarbles                        ports/games/lmarbles
 lmbench                         ports/benchmarks/lmbench
 lmclock                         ports/x11-clocks/lmclock
+lmdbg				ports/devel/lmdbg
 lmmon                           ports/sysutils/lmmon
 lmms                            ports/audio/lmms
 lmon                            ports/sysutils/lmon
