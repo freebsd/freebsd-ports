@@ -7,5 +7,3 @@ sbin/nsd-xfer
 sbin/nsdc
 sbin/zonec
 @dirrm etc/nsd
-@cwd /
-@dirrm var/db/nsd
