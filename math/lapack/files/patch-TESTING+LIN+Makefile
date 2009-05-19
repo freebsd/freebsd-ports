@@ -1,0 +1,70 @@
+--- TESTING/LIN/Makefile.orig	2009-02-11 02:23:05.000000000 +0900
++++ TESTING/LIN/Makefile	2009-05-20 06:11:11.000000000 +0900
+@@ -71,13 +71,13 @@
+    strt02.o strt03.o strt05.o strt06.o \
+    stzt01.o stzt02.o sgennd.o
+ 
+-ifdef USEXBLAS
++.ifdef USEXBLAS
+ SLINTST += serrvxx.o sdrvgex.o sdrvsyx.o serrgex.o sdrvgbx.o sdrvpox.o \
+ 	sebchvxx.o serrsyx.o serrpox.o
+-else
++.else
+ SLINTST += serrvx.o sdrvge.o sdrvsy.o serrge.o sdrvgb.o sdrvpo.o \
+ 	serrsy.o serrpo.o
+-endif
++.endif
+ 
+ CLINTST = cchkaa.o \
+    cchkeq.o cchkgb.o cchkge.o cchkgt.o \
+@@ -111,13 +111,13 @@
+    ctrt02.o ctrt03.o ctrt05.o ctrt06.o \
+    ctzt01.o ctzt02.o sget06.o cgennd.o
+ 
+-ifdef USEXBLAS
++.ifdef USEXBLAS
+ CLINTST += cerrvxx.o cdrvgex.o cdrvsyx.o cdrvgbx.o cerrgex.o cdrvpox.o cdrvhex.o \
+ 	cerrpox.o cebchvxx.o cerrsyx.o cerrhex.o
+-else
++.else
+ CLINTST += cerrvx.o cdrvge.o cdrvsy.o cdrvgb.o cerrge.o cdrvpo.o cdrvhe.o \
+ 	cerrpo.o cerrsy.o cerrhe.o
+-endif
++.endif
+ 
+ DLINTST = dchkaa.o \
+    dchkeq.o dchkgb.o dchkge.o dchkgt.o \
+@@ -148,13 +148,13 @@
+    dtrt02.o dtrt03.o dtrt05.o dtrt06.o \
+    dtzt01.o dtzt02.o dgennd.o
+ 
+-ifdef USEXBLAS
++.ifdef USEXBLAS
+ DLINTST += derrvxx.o ddrvgex.o ddrvsyx.o ddrvgbx.o derrgex.o ddrvpox.o derrpox.o \
+ 	debchvxx.o derrsyx.o
+-else
++.else
+ DLINTST += derrvx.o ddrvge.o ddrvsy.o ddrvgb.o derrge.o ddrvpo.o derrpo.o \
+ 	derrsy.o
+-endif
++.endif
+ 
+ ZLINTST = zchkaa.o \
+    zchkeq.o zchkgb.o zchkge.o zchkgt.o \
+@@ -188,13 +188,13 @@
+    ztrt02.o ztrt03.o ztrt05.o ztrt06.o \
+    ztzt01.o ztzt02.o dget06.o zgennd.o
+ 
+-ifdef USEXBLAS
++.ifdef USEXBLAS
+ ZLINTST += zerrvxx.o zdrvgex.o zdrvsyx.o zdrvgbx.o zerrgex.o zdrvpox.o zdrvhex.o \
+ 	zerrpox.o zebchvxx.o zerrsyx.o zerrhex.o
+-else
++.else
+ ZLINTST += zerrvx.o zdrvge.o zdrvsy.o zdrvgb.o zerrge.o zdrvpo.o zdrvhe.o \
+ 	zerrpo.o zerrsy.o zerrhe.o
+-endif
++.endif
+ 
+ DSLINTST = dchkab.o \
+ 	ddrvab.o ddrvac.o derrab.o derrac.o dget08.o          \
