@@ -7,11 +7,12 @@
 
 PORTNAME=	nsd
 PORTVERSION=	2.3.7
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
 
-MAINTAINER=	oli@isnic.is
+MAINTAINER=	osvaldsson@icelandic.net
 COMMENT=	An authoritative only non-recursive name server
 
 CONFLICTS=	nsd-[3-9]*

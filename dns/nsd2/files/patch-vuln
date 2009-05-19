@@ -1,0 +1,13 @@
+--- query.c
++++ query.c
+@@ -239,8 +239,8 @@
+ 		 * MAXDOMAINLEN ...
+ 		 */
+ 		if ((*src & 0xc0) ||
+-		    (src + *src + 1 > buffer_end(query->packet)) || 
+-		    (src + *src + 1 > query_name + MAXDOMAINLEN))
++		    (src + *src + 2 > buffer_end(query->packet)) || 
++		    (src + *src + 2 > query_name + MAXDOMAINLEN))
+ 		{
+ 			return 0;
+ 		}
