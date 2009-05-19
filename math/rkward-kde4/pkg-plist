@@ -1,6 +1,7 @@
 bin/rkward
 bin/rkward.bin
-share/applications/kde/rkward.desktop
+share/applications/kde4/rkward.desktop
+share/apps/katepart/syntax/r.xml
 share/apps/katepart/syntax/rkward.xml
 share/apps/rkward/00saveload/import/import_csv.php
 share/apps/rkward/00saveload/import/import_csv.rkh
@@ -48,6 +49,45 @@ share/apps/rkward/analysis/crosstab.xml
 share/apps/rkward/analysis/crosstab_multi.php
 share/apps/rkward/analysis/crosstab_multi.rkh
 share/apps/rkward/analysis/crosstab_multi.xml
+share/apps/rkward/analysis/irt/dichotomous/par_est_2pl.php
+share/apps/rkward/analysis/irt/dichotomous/par_est_2pl.rkh
+share/apps/rkward/analysis/irt/dichotomous/par_est_2pl.xml
+share/apps/rkward/analysis/irt/dichotomous/par_est_3pl.php
+share/apps/rkward/analysis/irt/dichotomous/par_est_3pl.rkh
+share/apps/rkward/analysis/irt/dichotomous/par_est_3pl.xml
+share/apps/rkward/analysis/irt/dichotomous/par_est_lltm.php
+share/apps/rkward/analysis/irt/dichotomous/par_est_lltm.rkh
+share/apps/rkward/analysis/irt/dichotomous/par_est_lltm.xml
+share/apps/rkward/analysis/irt/dichotomous/par_est_rasch.php
+share/apps/rkward/analysis/irt/dichotomous/par_est_rasch.rkh
+share/apps/rkward/analysis/irt/dichotomous/par_est_rasch.xml
+share/apps/rkward/analysis/irt/polytomous/par_est_grm.php
+share/apps/rkward/analysis/irt/polytomous/par_est_grm.rkh
+share/apps/rkward/analysis/irt/polytomous/par_est_grm.xml
+share/apps/rkward/analysis/irt/polytomous/par_est_lpcm.php
+share/apps/rkward/analysis/irt/polytomous/par_est_lpcm.rkh
+share/apps/rkward/analysis/irt/polytomous/par_est_lpcm.xml
+share/apps/rkward/analysis/irt/polytomous/par_est_lrsm.php
+share/apps/rkward/analysis/irt/polytomous/par_est_lrsm.rkh
+share/apps/rkward/analysis/irt/polytomous/par_est_lrsm.xml
+share/apps/rkward/analysis/irt/polytomous/par_est_pcm.php
+share/apps/rkward/analysis/irt/polytomous/par_est_pcm.rkh
+share/apps/rkward/analysis/irt/polytomous/par_est_pcm.xml
+share/apps/rkward/analysis/irt/polytomous/par_est_rsm.php
+share/apps/rkward/analysis/irt/polytomous/par_est_rsm.rkh
+share/apps/rkward/analysis/irt/polytomous/par_est_rsm.xml
+share/apps/rkward/analysis/irt/tests/eRm_waldtest.php
+share/apps/rkward/analysis/irt/tests/eRm_waldtest.xml
+share/apps/rkward/analysis/irt/tests/ltm_cronbach_alpha.php
+share/apps/rkward/analysis/irt/tests/ltm_cronbach_alpha.xml
+share/apps/rkward/analysis/irt/tests/ltm_gof_rasch.php
+share/apps/rkward/analysis/irt/tests/ltm_gof_rasch.xml
+share/apps/rkward/analysis/irt/tests/ltm_item_fit.php
+share/apps/rkward/analysis/irt/tests/ltm_item_fit.xml
+share/apps/rkward/analysis/irt/tests/ltm_person_fit.php
+share/apps/rkward/analysis/irt/tests/ltm_person_fit.xml
+share/apps/rkward/analysis/irt/tests/ltm_unidimensional.php
+share/apps/rkward/analysis/irt/tests/ltm_unidimensional.xml
 share/apps/rkward/analysis/moments/agostino_test.php
 share/apps/rkward/analysis/moments/agostino_test.rkh
 share/apps/rkward/analysis/moments/agostino_test.xml
@@ -322,8 +362,14 @@ share/apps/rkward/distributions/wilcoxon_probabilities.xml
 share/apps/rkward/distributions/wilcoxon_quantiles.php
 share/apps/rkward/distributions/wilcoxon_quantiles.xml
 share/apps/rkward/embedded.pluginmap
+share/apps/rkward/icons/data-factor.png
+share/apps/rkward/icons/data-logical.png
+share/apps/rkward/icons/data-numeric.png
 share/apps/rkward/icons/function.png
 share/apps/rkward/icons/list.png
+share/apps/rkward/icons/matrix.png
+share/apps/rkward/icons/paste_inside_selection.png
+share/apps/rkward/icons/paste_inside_table.png
 share/apps/rkward/icons/rkward_logo.png
 share/apps/rkward/icons/run_all.png
 share/apps/rkward/icons/run_line.png
@@ -331,6 +377,7 @@ share/apps/rkward/icons/run_selection.png
 share/apps/rkward/icons/window_back.png
 share/apps/rkward/icons/window_forward.png
 share/apps/rkward/import_export.pluginmap
+share/apps/rkward/irt.pluginmap
 share/apps/rkward/pages/rkward_console.rkh
 share/apps/rkward/pages/rkward_for_new_users.rkh
 share/apps/rkward/pages/rkward_for_r_users.rkh
@@ -372,6 +419,20 @@ share/apps/rkward/plots/histogram.xml
 share/apps/rkward/plots/histogram_options.php
 share/apps/rkward/plots/histogram_options.rkh
 share/apps/rkward/plots/histogram_options.xml
+share/apps/rkward/plots/irt/dichotomous/plot_ltm.php
+share/apps/rkward/plots/irt/dichotomous/plot_ltm.xml
+share/apps/rkward/plots/irt/dichotomous/plot_rasch.php
+share/apps/rkward/plots/irt/dichotomous/plot_rasch.xml
+share/apps/rkward/plots/irt/dichotomous/plot_tpm.php
+share/apps/rkward/plots/irt/dichotomous/plot_tpm.xml
+share/apps/rkward/plots/irt/polytomous/plot_grm.php
+share/apps/rkward/plots/irt/polytomous/plot_grm.xml
+share/apps/rkward/plots/irt/polytomous/plot_pcm.php
+share/apps/rkward/plots/irt/polytomous/plot_pcm.xml
+share/apps/rkward/plots/irt/polytomous/plot_rsm.php
+share/apps/rkward/plots/irt/polytomous/plot_rsm.xml
+share/apps/rkward/plots/irt/tests/eRm_plotLR.php
+share/apps/rkward/plots/irt/tests/eRm_plotLR.xml
 share/apps/rkward/plots/pareto.php
 share/apps/rkward/plots/pareto.rkh
 share/apps/rkward/plots/pareto.xml
@@ -392,6 +453,9 @@ share/apps/rkward/plots/scatterplot.xml
 share/apps/rkward/plots/scatterplot_matrix.php
 share/apps/rkward/plots/scatterplot_matrix.rkh
 share/apps/rkward/plots/scatterplot_matrix.xml
+share/apps/rkward/plots/sieve_plot.php
+share/apps/rkward/plots/sieve_plot.rkh
+share/apps/rkward/plots/sieve_plot.xml
 share/apps/rkward/plots/stem.php
 share/apps/rkward/plots/stem.rkh
 share/apps/rkward/plots/stem.xml
@@ -401,6 +465,7 @@ share/apps/rkward/rkcatchedx11windowpart.rc
 share/apps/rkward/rkcommandeditorwindowpart.rc
 share/apps/rkward/rkcommandlogpart.rc
 share/apps/rkward/rkconsolepart.rc
+share/apps/rkward/rkdummypart.rc
 share/apps/rkward/rkeditordataframepart.rc
 share/apps/rkward/rkhelpwindow.rc
 share/apps/rkward/rkoutputwindow.rc
@@ -424,15 +489,15 @@ share/apps/rkward/x11device/grid.xml
 %%PORTDOCS%%%%DOCSDIR%%/menu_hierarchy_example.png
 %%PORTDOCS%%%%DOCSDIR%%/t_test_plugin_example.png
 %%PORTDOCS%%%%DOCSDIR%%/writing_plugins_introduction.docbook
-share/icons/crystalsvg/128x128/apps/rkward.png
-share/icons/crystalsvg/16x16/apps/rkward.png
-share/icons/crystalsvg/22x22/apps/rkward.png
-share/icons/crystalsvg/32x32/apps/rkward.png
-share/icons/crystalsvg/48x48/apps/rkward.png
-share/icons/crystalsvg/64x64/apps/rkward.png
-share/icons/locolor/16x16/apps/rkward.png
-share/icons/locolor/32x32/apps/rkward.png
+share/icons/hicolor/128x128/apps/rkward.png
+share/icons/hicolor/16x16/apps/rkward.png
+share/icons/hicolor/22x22/apps/rkward.png
+share/icons/hicolor/32x32/apps/rkward.png
+share/icons/hicolor/48x48/apps/rkward.png
+share/icons/hicolor/64x64/apps/rkward.png
+share/icons/hicolor/scalable/apps/rkward.svgz
 %%NLS%%share/locale/ca/LC_MESSAGES/rkward.mo
+%%NLS%%share/locale/da/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/de/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/el/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/es/LC_MESSAGES/rkward.mo
@@ -442,10 +507,16 @@ share/icons/locolor/32x32/apps/rkward.png
 %%NLS%%share/locale/tr/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/rkward.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry share/doc/HTML/en
+%%PORTDOCS%%@dirrmtry share/doc/HTML
 @dirrm share/apps/rkward/x11device
 @dirrm share/apps/rkward/uni1.2
 @dirrm share/apps/rkward/simple_anova
 @dirrm share/apps/rkward/pages
+@dirrm share/apps/rkward/plots/irt/tests
+@dirrm share/apps/rkward/plots/irt/polytomous
+@dirrm share/apps/rkward/plots/irt/dichotomous
+@dirrm share/apps/rkward/plots/irt
 @dirrm share/apps/rkward/plots
 @dirrm share/apps/rkward/phpfiles
 @dirrm share/apps/rkward/icons
@@ -459,6 +530,10 @@ share/icons/locolor/32x32/apps/rkward.png
 @dirrm share/apps/rkward/analysis/regression
 @dirrm share/apps/rkward/analysis/outliers
 @dirrm share/apps/rkward/analysis/moments
+@dirrm share/apps/rkward/analysis/irt/tests
+@dirrm share/apps/rkward/analysis/irt/polytomous
+@dirrm share/apps/rkward/analysis/irt/dichotomous
+@dirrm share/apps/rkward/analysis/irt
 @dirrm share/apps/rkward/analysis/ansari_bradley
 @dirrm share/apps/rkward/analysis/TESTS
 @dirrm share/apps/rkward/analysis
@@ -471,6 +546,9 @@ share/icons/locolor/32x32/apps/rkward.png
 @dirrm share/apps/rkward
 @dirrmtry share/apps/katepart/syntax
 @dirrmtry share/apps/katepart
+@dirrmtry share/apps
+@dirrmtry share/applications/kde4
+@dirrmtry share/applications
 @cwd %%LOCALBASE%%
 lib/R/library/rkward/CONTENTS
 lib/R/library/rkward/DESCRIPTION

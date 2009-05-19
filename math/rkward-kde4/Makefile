@@ -6,30 +6,30 @@
 #
 
 PORTNAME=	rkward
-DISTVERSION=	0.4.9a
-PORTREVISION=	3
-PORTEPOCH=	3
+DISTVERSION=	0.5.0d
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	-kde4
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	IDE/GUI for the R-project
 
 LIB_DEPENDS=	R.0:${PORTSDIR}/math/R
 
-USE_KDELIBS_VER=3
+CONFLICTS=	rkward-0.4.*
+
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
+USE_KDE4=	automoc4 kdelibs
 USE_PHP=	yes
 WANT_PHP_CLI=	yes
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--disable-fast-perl
+USE_CMAKE=	yes
 INSTALLS_ICONS=	yes
 
-USE_FORTRAN=	yes
-FORTRANLIBDIR2=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``/../../../
+#USE_FORTRAN=	yes
+#FORTRANLIBDIR2=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``/../../../
 
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/rkward
 
@@ -40,21 +40,20 @@ NLS=		""
 .endif
 PLIST_SUB+=	NLS=${NLS}
 
-PHP2FIX=	rkward/plugins/makemakefileam.php	\
-		rkward/settings/rksettingsmodulephp.cpp
+PHP2FIX=	rkward/settings/rksettingsmodulephp.cpp
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/bin/php|${LOCALBASE}/bin/php|'	\
 		${PHP2FIX:S|^|${WRKSRC}/|}
-	${REINPLACE_CMD} -e 's|-lgfortran|-L${FORTRANLIBDIR2} -lgfortran|'	\
-		${WRKSRC}/${CONFIGURE_SCRIPT}
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|'	\
+		${WRKSRC}/rkward/rkward.sh.template
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's|rkward po doc|rkward po|'	\
-		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|ADD_SUBDIRECTORY(doc)|#ADD_SUBDIRECTORY(doc)|'	\
+		${WRKSRC}/CMakeLists.txt
 .endif
 .if defined(WITHOUT_NLS)
-	${REINPLACE_CMD} -e 's|SUBDIRS = rkward po|SUBDIRS = rkward|'	\
-		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|ADD_SUBDIRECTORY(po)|#ADD_SUBDIRECTORY(po)|'	\
+		${WRKSRC}/CMakeLists.txt
 .endif
 
 .include <bsd.port.mk>
