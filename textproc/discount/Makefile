@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	discount
-PORTVERSION=	1.3.5
+PORTVERSION=	1.4.0
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/markdown/
 
@@ -15,22 +15,27 @@ COMMENT=	A C implementation of the Markdown markup language
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=configure.sh
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--mandir=${MANPREFIX}/man
+MAKE_JOBS_SAFE=	yes
 INSTALL_TARGET=	install install.man
 
 MAN1=		markdown.1
-MAN3=		mkd-functions.3 \
-		markdown.3 \
-		mkd_text.3 \
-		mkd_in.3 \
-		mkd_string.3 \
-		mkd_compile.3 \
-		mkd_style.3 \
-		mkd_generatehtml.3 \
+MAN3=		markdown.3 \
+		mkd-functions.3 \
+		mkd-line.3 \
 		mkd_cleanup.3 \
-		mkd_doc_title.3 \
+		mkd_compile.3 \
+		mkd_css.3 \
 		mkd_doc_author.3 \
-		mkd_doc_date.3
+		mkd_doc_date.3 \
+		mkd_doc_title.3 \
+		mkd_generatecss.3 \
+		mkd_generatehtml.3 \
+		mkd_generateline.3 \
+		mkd_in.3 \
+		mkd_line.3 \
+		mkd_string.3
 MAN7=		markdown.7 \
 		mkd-extensions.7
 PLIST_FILES=	bin/markdown \
