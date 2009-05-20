@@ -339,6 +339,7 @@ share/pixmaps/vnterm.xpm
 @dirrm share/gnome/help/fdl/fr
 @dirrm share/gnome/help/fdl/eu
 @dirrm share/gnome/help/fdl/es
+@dirrm share/gnome/help/fdl/el
 @dirrm share/gnome/help/fdl/de
 @dirrm share/gnome/help/fdl/ar
 @dirrm share/gnome-about/headers
