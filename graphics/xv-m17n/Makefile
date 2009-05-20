@@ -7,15 +7,15 @@
 
 PKGNAMESUFFIX=	-m17n
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An X11 program that displays images of various formats with multilingualization
 
-MASTERDIR=	${.CURDIR}/../../graphics/xv
+MASTERDIR=	${.CURDIR}/../xv
 PKGDIR=		${.CURDIR}
 
 MAKE_ENV=	LOCALE_EXTENSION=-DTV_MULTILINGUAL
 
-RUN_DEPENDS=	xv:${.CURDIR}/../../graphics/xv
+RUN_DEPENDS=	xv:${.CURDIR}/../xv
 
 NOMAN=		yes
 
