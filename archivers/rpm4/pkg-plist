@@ -162,3 +162,5 @@ share/locale/zh_CN.GB2312/LC_MESSAGES/rpm.mo
 @dirrmtry src
 @dirrmtry share/locale/en_RN/LC_MESSAGES
 @dirrmtry share/locale/en_RN
+@dirrmtry share/locale/eu_ES/LC_MESSAGES
+@dirrmtry share/locale/eu_ES
