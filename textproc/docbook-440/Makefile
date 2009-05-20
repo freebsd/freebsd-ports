@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/${ISOCAT}:${PORTSDIR}/textproc/iso8879 \
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-LATEST_LINK=	${PORTNAME}-450
+LATEST_LINK=	${PORTNAME}-440
 PLIST=		${WRKSRC}/pkg-plist
 
 SGMLCATBASE=	share/sgml
@@ -40,8 +40,6 @@ DTD_FILES=	calstblx.dtd catalog.xml dbcentx.mod dbgenent.mod \
 		dbhierx.mod dbnotnx.mod dbpoolx.mod docbook.cat docbook.dcl \
 		docbook.dtd docbookx.dtd htmltblx.mod soextblx.dtd catalog
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}/${PORTVERSION}
-
-LATEST_LINK=	docbook-440
 
 post-extract:
 	${CP} ${WRKSRC}/docbook.cat ${WRKSRC}/catalog
