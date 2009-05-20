@@ -101,8 +101,7 @@ include/mapnik/comparison.hpp
 include/mapnik/proj_transform.hpp
 include/mapnik/distance.hpp
 lib/libmapnik.so
-lib/libmapnik.so.0.6
-lib/libmapnik.so.0.6.0
+lib/libmapnik.so.0
 lib/mapnik/input/postgis.input
 lib/mapnik/input/raster.input
 lib/mapnik/input/shape.input
