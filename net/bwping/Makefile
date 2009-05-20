@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	bwping
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	net
-MASTER_SITES=	http://tclmon.vsi.ru/files/
+MASTER_SITES=	SF
 
-MAINTAINER=	oleg@vsi.ru
+MAINTAINER=	oleg.derevenetz@gmail.com
 COMMENT=	A tool to measure bandwidth and RTT between two hosts using ICMP
 
 PLIST_FILES=	sbin/bwping
