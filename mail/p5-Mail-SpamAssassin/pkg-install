@@ -31,6 +31,11 @@ if [ "$2" = "POST-INSTALL" ];then
 
    if yesno "Do you wish to run sa-update to fetch new rules" "N";then
        ${PKG_PREFIX}/bin/sa-update
+       if [ $? -eq 4 ];then
+          # rc=4 means host not found, might be old mirrors.
+          rm -rf /var/db/spamassassin/3*/updates_spamassassin_org/MIRRORED.BY
+          ${PKG_PREFIX}/bin/sa-update
+       fi
    fi
    grep '^load.*Rule2XSBody' ${PKG_PREFIX}/etc/mail/spamassassin/v320.pre > /dev/null
    if [ $? -eq 0 ];then
