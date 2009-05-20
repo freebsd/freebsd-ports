@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	libntlm
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jochen@daten-chaos.de
 COMMENT=	A library that implement Microsoft's NTLM authentication
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
