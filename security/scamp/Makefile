@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	scamp
-PORTVERSION=	5.2b
+PORTVERSION=	5.2c
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ COMMENT=	Download & Install additional definition files for Clamav
 RUN_DEPENDS+=	bash>=3.2.48_1:${PORTSDIR}/shells/bash3 \
 		clamav>=0.95.1:${PORTSDIR}/security/clamav \
 		gnupg>=2.0.11:${PORTSDIR}/security/gnupg \
-		rsync>=3.0.5:${PORTSDIR}/net/rsync
+		rsync>=3.0.6:${PORTSDIR}/net/rsync
 
 .if exists (${LOCALBASE}/bin/wget) && ! exists (${LOCALBASE}/bin/curl)
 RUN_DEPENDS+=	wget>=1.11.4:${PORTSDIR}/ftp/wget
@@ -31,8 +31,8 @@ MAN1=		scamp.1
 MANCOMPRESSED=	no
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|SIG_DB=$${SIG_DB:-""}|SIG_DB=$${SIG_DB:-"/var/db/clamav"}|g' ${WRKSRC}/${PORTNAME}.sh
-	@${REINPLACE_CMD} -e 's|CONFIG_DIR="/etc/scamp"|CONFIG_DIR="${PREFIX}/etc/scamp"|g' ${WRKSRC}/${PORTNAME}.sh
+	@${REINPLACE_CMD} -e 's|SIG_DB=$${SIG_DB:-""}|SIG_DB=$${SIG_DB:-/var/db/clamav}|g' ${WRKSRC}/${PORTNAME}.sh
+	@${REINPLACE_CMD} -e 's|CONFIG_DIR=$${CONFIG_DIR:-"/etc/scamp"}|CONFIG_DIR=$${CONFIG_DIR:-${PREFIX}/etc/scamp}|g' ${WRKSRC}/${PORTNAME}.sh
 
 post-install:
 	@if [ ! -d ${PREFIX}/etc/scamp ]; then \
