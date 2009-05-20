@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iroffer
-PORTVERSION=	3.13
+PORTVERSION=	3.14
 CATEGORIES=	irc
 MASTER_SITES=	http://iroffer.dinoex.net/
 PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
@@ -45,6 +45,10 @@ USE_RUBY=	yes
 CONFIGURE_ARGS+=	-ruby
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
 .endif
+
+do-patch:
+	${REINPLACE_CMD} -e 's|int a;|int a=1;|' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${PREFIX}/bin/
