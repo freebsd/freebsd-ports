@@ -1,6 +1,6 @@
---- makefile.orig	Sat Jan 13 01:22:03 2007
-+++ makefile	Mon Mar 26 09:16:22 2007
-@@ -32,8 +32,8 @@
+--- makefile.orig	2009-03-01 20:30:50.000000000 +0800
++++ makefile	2009-05-20 15:47:02.000000000 +0800
+@@ -37,8 +37,8 @@
  THRLIBS=
  SUFF=
  else
@@ -11,7 +11,7 @@
  SUFF=_r
  endif
  
-@@ -62,21 +62,22 @@
+@@ -67,21 +67,21 @@
  
  WEB_EXAMPLES = cgistub bugdb clidb
  
@@ -19,14 +19,14 @@
 +CC = ${CXX}
  
  # DEFS macro is deprecatred, edit config.h file instead
- DEFS = 
+ DEFS = -Wno-invalid-offsetof
  
  #CFLAGS = $(TFLAGS) -Iinc -c -Wall -O5 -g  -fPIC $(DEFS) 
 -CFLAGS = -c -Iinc -Wall -O0 -g -fPIC $(DEFS) $(TFLAGS)
 +CFLAGS = -c -Iinc ${CXXFLAGS} -fPIC $(DEFS) $(TFLAGS)
  #CFLAGS = -c -Iinc -Wall -O0 -fPIC -DFASTDB_DEBUG=DEBUG_TRACE -g $(DEFS) $(TFLAGS)
  
- #SHFLAGS=-shared -Wl,-soname,$@
+-#SHFLAGS=-shared -Wl,-soname,$@
 -SHFLAGS=-shared
 +SHFLAGS=-shared -Wl,-soname,$@
 +#SHFLAGS=-shared
@@ -38,7 +38,7 @@
  
  AR = ar
  ARFLAGS = -cru
-@@ -386,24 +387,20 @@
+@@ -389,24 +389,20 @@
  
  install: subsql cleanupsem installlib
  	mkdir -p $(BINSPATH)
