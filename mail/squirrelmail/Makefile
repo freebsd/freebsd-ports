@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	squirrelmail
-PORTVERSION=	1.4.17
+PORTVERSION=	1.4.18
 CATEGORIES=	mail www
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 
 .ifdef WITH_DATABASE
-RUN_DEPENDS+=	${PREFIX}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
+RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 .endif
 
 .ifdef WITH_LDAP
@@ -56,7 +56,13 @@ pre-everything::
 
 post-patch:
 .ifndef PATCH_DEBUG
-	@${RM} -f ${WRKSRC}/config/config_default.php.orig ${WRKSRC}/functions/global.php.orig ${WRKSRC}/src/compose.php.orig ${WRKSRC}/src/addrbook_search_html.php.orig
+	@${RM} -f \
+		${WRKSRC}/class/deliver/Deliver.class.php.orig \
+		${WRKSRC}/config/config_default.php.orig \
+		${WRKSRC}/functions/global.php.orig \
+		${WRKSRC}/functions/i18n.php.orig \
+		${WRKSRC}/src/addrbook_search_html.php.orig \
+		${WRKSRC}/src/compose.php.orig
 .endif
 	@${REINPLACE_CMD} -e 's|ispell|${LOCALBASE}/bin/ispell|g' \
 		${WRKSRC}/plugins/squirrelspell/sqspell_config.php
@@ -67,10 +73,6 @@ post-patch:
 
 # Rearrange the documentation
 do-build:
-.for file in AUTHORS ChangeLog COPYING INSTALL README UPGRADE
-	@${MV} ${WRKSRC}/${file} ${WRKSRC}/doc/
-.endfor
-	@${MV} ${WRKSRC}/ReleaseNotes ${WRKSRC}/doc/ReleaseNotes-${PORTVERSION}.txt
 	@${MV} ${WRKSRC}/themes/README.themes ${WRKSRC}/doc/
 	@cd ${WRKSRC} ; for f in `find plugins -name "README*" -or \
 		-name INSTALL -or -name CHANGES -or -name HISTORY`; \
