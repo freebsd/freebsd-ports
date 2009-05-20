@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=--disable-cups
 PLIST=		${.CURDIR}/../kdelibs3-nocups/pkg-plist
 .else
 CONFLICTS+=	kdelibs-nocups-[0-9]*
-LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-base
 .endif
 
 USE_BZIP2=	yes
