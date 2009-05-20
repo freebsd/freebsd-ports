@@ -15,12 +15,14 @@ share/gnome/help/gnome-nettool/ca/gnome-nettool.xml
 share/gnome/help/gnome-nettool/cs/gnome-nettool.xml
 share/gnome/help/gnome-nettool/da/gnome-nettool.xml
 share/gnome/help/gnome-nettool/de/gnome-nettool.xml
+share/gnome/help/gnome-nettool/el/gnome-nettool.xml
 share/gnome/help/gnome-nettool/en_GB/gnome-nettool.xml
 share/gnome/help/gnome-nettool/es/gnome-nettool.xml
 share/gnome/help/gnome-nettool/fr/gnome-nettool.xml
 share/gnome/help/gnome-nettool/oc/gnome-nettool.xml
 share/gnome/help/gnome-nettool/pa/gnome-nettool.xml
 share/gnome/help/gnome-nettool/pt_BR/gnome-nettool.xml
+share/gnome/help/gnome-nettool/ru/gnome-nettool.xml
 share/gnome/help/gnome-nettool/sv/gnome-nettool.xml
 share/gnome/help/gnome-nettool/uk/gnome-nettool.xml
 share/gnome/help/gnome-nettool/vi/gnome-nettool.xml
@@ -115,12 +117,14 @@ share/omf/gnome-nettool/gnome-nettool-ca.omf
 share/omf/gnome-nettool/gnome-nettool-cs.omf
 share/omf/gnome-nettool/gnome-nettool-da.omf
 share/omf/gnome-nettool/gnome-nettool-de.omf
+share/omf/gnome-nettool/gnome-nettool-el.omf
 share/omf/gnome-nettool/gnome-nettool-en_GB.omf
 share/omf/gnome-nettool/gnome-nettool-es.omf
 share/omf/gnome-nettool/gnome-nettool-fr.omf
 share/omf/gnome-nettool/gnome-nettool-oc.omf
 share/omf/gnome-nettool/gnome-nettool-pa.omf
 share/omf/gnome-nettool/gnome-nettool-pt_BR.omf
+share/omf/gnome-nettool/gnome-nettool-ru.omf
 share/omf/gnome-nettool/gnome-nettool-sv.omf
 share/omf/gnome-nettool/gnome-nettool-uk.omf
 share/omf/gnome-nettool/gnome-nettool-vi.omf
@@ -131,12 +135,14 @@ share/pixmaps/gnome-nettool.png
 @dirrm share/gnome/help/gnome-nettool/vi
 @dirrm share/gnome/help/gnome-nettool/uk
 @dirrm share/gnome/help/gnome-nettool/sv
+@dirrm share/gnome/help/gnome-nettool/ru
 @dirrm share/gnome/help/gnome-nettool/pt_BR
 @dirrm share/gnome/help/gnome-nettool/pa
 @dirrm share/gnome/help/gnome-nettool/oc
 @dirrm share/gnome/help/gnome-nettool/fr
 @dirrm share/gnome/help/gnome-nettool/es
 @dirrm share/gnome/help/gnome-nettool/en_GB
+@dirrm share/gnome/help/gnome-nettool/el
 @dirrm share/gnome/help/gnome-nettool/de
 @dirrm share/gnome/help/gnome-nettool/da
 @dirrm share/gnome/help/gnome-nettool/cs
