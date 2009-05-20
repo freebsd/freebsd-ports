@@ -70,6 +70,7 @@ CONFIGURE_ARGS+=	--with-xshm=yes
 .endif
 #
 .if defined(WITH_CUPS)
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
 CONFIGURE_ARGS+=	--enable-cups
 .else
 CONFIGURE_ARGS+=	--disable-cups
