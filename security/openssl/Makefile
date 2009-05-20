@@ -7,13 +7,15 @@
 
 PORTNAME=	openssl
 PORTVERSION=	0.9.8k
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/openssl/%SUBDIR%/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source
+PATCH_SITES=	http://sctp.fh-muenster.de/dtls/
+PATCHFILES=	dtls-bugs.patch
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -24,6 +26,11 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 .ifdef USE_OPENSSL
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
+
+OPTIONS=	I386	"Use optimzed assembler for 80386" off \
+		SSE2	"Use runtime SSE2 detection" on \
+		ZLIB	"Build with zlib compression" on \
+		SCTP	"Build with SCTP support" off \
 
 EXTRACONFIGURE+=	enable-camellia
 
@@ -849,11 +856,13 @@ OPENSSL_SHLIBVER_BASE=	${OPENSSL_BASE_SONAME:E}
 OPENSSL_BASE_SOPATH=	${OPENSSL_BASE_SONAME:H}
 OPENSSL_SHLIBVER?=	5
 
+.if !defined(WITHOUT_SSE2)
 # disable runtime SSE2 detection
-.if defined(WITHOUT_OPENSSL_SSE2)
 EXTRACONFIGURE+=	no-sse2
 .endif
+.if !defined(WITH_FIPS)
 EXTRACONFIGURE+=	no-fips
+.endif
 .if defined(NOSHARED)
 PLIST_SUB+=	SHARED="@comment "
 .else
@@ -864,8 +873,18 @@ PLIST_SUB+=	SHLIBVER=${OPENSSL_SHLIBVER}
 USE_LDCONFIG=	yes
 .endif
 
-.if defined(WITH_OPENSSL_COMPRESSION)
+.if !defined(WITHOUT_ZLIB)
 EXTRACONFIGURE+=	zlib
+.endif
+
+.if defined(WITH_SCTP)
+.if ${OSVERSION} >= 700000
+PATCHFILES+=	tls-extractor.patch \
+		abbreviated-renegotiation.patch \
+		dtls-sctp.patch
+#		freebsd-compatibility.patch
+CFLAGS+=	-DSCTP
+.endif
 .endif
 
 .if ${OPENSSL_SHLIBVER_BASE} > ${OPENSSL_SHLIBVER}
@@ -881,21 +900,30 @@ pre-everything::
 OPENSSLDIR=	${PREFIX}/openssl
 MANPREFIX=	${PREFIX}
 
-.if defined(BATCH) || defined(OPENSSL_WITH_386)
+.if defined(WITH_I386)
 .if ${ARCH} == "i386"
 EXTRACONFIGURE+=	386
 .endif
 .endif
 
 do-configure:
+.if !defined(WITH_FIPS)
 	${RM} -rf ${WRKSRC}/fips
 	${RM} -f ${WRKSRC}/include/openssl/fips.h
 	${RM} -f ${WRKSRC}/include/openssl/fips_rand.h
+.endif
 	cd ${WRKSRC} \
 	&& ${SETENV} CC="${CC}" FREEBSDCC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
-	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
+		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
-	-L${PREFIX}/lib ${EXTRACONFIGURE}
+		-L${PREFIX}/lib ${EXTRACONFIGURE}
+.if defined(WITH_FIPS)
+	@${REINPLACE_CMD} \
+		-e 's|^MANDIR=.*$$|MANDIR=$$(MANPREFIX)/man|' \
+		-e 's|lib/pkgconfig|libdata/pkgconfig|g' \
+		-e 's|LIBVERSION=[^ ]* |LIBVERSION=$(OPENSSL_SHLIBVER) |' \
+		${WRKSRC}/Makefile
+.else
 	@${REINPLACE_CMD} \
 		-e 's|^MANDIR=.*$$|MANDIR=$$(MANPREFIX)/man|' \
 		-e 's|lib/pkgconfig|libdata/pkgconfig|g' \
@@ -920,6 +948,7 @@ do-configure:
 		-e 's|$$(FIPS_RNGVS)$$(EXE_EXT)||' \
 		-e 's|$$(FIPS_TEST_SUITE)$$(EXE_EXT)||' \
 		${WRKSRC}/test/Makefile
+.endif
 	@(cd ${BUILD_WRKSRC}/${i} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} depend)
 
 post-install:
