@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	chartdirector
-PORTVERSION=	4.1
-PORTREVISION=	1
+PORTVERSION=	5.0
 CATEGORIES?=	graphics
-MASTER_SITES=	http://download2.advsofteng.com/
+MASTER_SITES=	http://download.advsofteng.com/ \
+		http://download2.advsofteng.com/
 PKGNAMEPREFIX?=	php5-
 
 MAINTAINER=	swhetzel@gmail.com
@@ -47,45 +47,45 @@ PHP_CHARTDIRECTOR=	${PREFIX}/lib/php/${PHP_EXT_DIR}
 
 .if !defined(NOPORTEXAMPLES)
 post-patch:
-	(cd ${WRKSRC}/phpdemo ; \
+	@(cd ${WRKSRC}/phpdemo ; \
 	 for f in *.php ; do \
 		${REINPLACE_CMD} -e 's@../lib/@${PHP_CHARTDIRECTOR}/@' $${f} ; \
 	 done)
 .endif
 
 do-install:
-	@${MKDIR} ${PHP_CHARTDIRECTOR}
-	@${MKDIR} ${PHP_CHARTDIRECTOR}/fonts
-	(cd ${WRKSRC}/lib ; \
+	@${INSTALL} -d ${PHP_CHARTDIRECTOR}
+	@${INSTALL} -d ${PHP_CHARTDIRECTOR}/fonts
+	@(cd ${WRKSRC}/lib ; \
 	 for f in *.so *.php ${PHP_CHARTDIR_DLL} ${PHP_CHARTDIR_MT_DLL} ; do \
 		${INSTALL_SCRIPT} $${f} ${PHP_CHARTDIRECTOR}/ ; \
 	 done)
-	(cd ${WRKSRC}/lib/fonts ; \
+	@(cd ${WRKSRC}/lib/fonts ; \
 	 for f in * ; do \
 		${INSTALL_DATA} $${f} ${PHP_CHARTDIRECTOR}/fonts/ ; \
 	 done)
-	@${MKDIR} ${PREFIX}/etc/php
+	@${INSTALL} -d ${PREFIX}/etc/php
 	@${ECHO_CMD} extension=${PHP_CHARTDIR_DLL} \
 		>> ${PREFIX}/etc/php/extensions.ini
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${INSTALL} -d ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/LICENSE.TXT ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README.TXT ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/cdphpdoc
-	@${MKDIR} ${DOCSDIR}/cdphpdoc/images
+	@${INSTALL} -d ${DOCSDIR}/cdphpdoc
+	@${INSTALL} -d ${DOCSDIR}/cdphpdoc/images
 	@${INSTALL_DATA} ${WRKSRC}/doc/cdphp.htm ${DOCSDIR}
-	(cd ${WRKSRC}/doc/cdphpdoc ; \
+	@(cd ${WRKSRC}/doc/cdphpdoc ; \
 	 for f in *.htm *.gif *.css ; do \
 		${INSTALL_DATA} $${f} ${DOCSDIR}/cdphpdoc/ ; \
 	 done)
-	(cd ${WRKSRC}/doc/cdphpdoc/images ; \
+	@(cd ${WRKSRC}/doc/cdphpdoc/images ; \
 	 for f in * ; do \
 		 ${INSTALL_DATA} $${f} ${DOCSDIR}/cdphpdoc/images/ ; \
 	 done)
 .endif
 .if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/phpdemo ; \
+	@${INSTALL} -d ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/phpdemo ; \
 	 for f in *.cur *.gif *.js *.php *.png *.sql; do \
 		${INSTALL_DATA} $${f} ${EXAMPLESDIR}/ ; \
 	 done)
