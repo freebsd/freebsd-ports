@@ -507,6 +507,8 @@ share/applications/filezilla.desktop
 @dirrmtry share/locale/fr_CA
 @dirrmtry share/locale/fi_FI/LC_MESSAGES
 @dirrmtry share/locale/fi_FI
+@dirrmtry share/locale/eu_ES/LC_MESSAGES
+@dirrmtry share/locale/eu_ES
 @dirrmtry share/locale/et_EE/LC_MESSAGES
 @dirrmtry share/locale/et_EE
 @dirrmtry share/locale/da_DK/LC_MESSAGES
