@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmemcached
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://download.tangent.org/
@@ -27,8 +27,15 @@ post-patch:
 
 .if !defined(NO_INSTALL_MANPAGES)
 USE_PERL5_BUILD=yes # pod2man
-MAN1=		memcat.1 memcp.1 memerror.1 memflush.1 memrm.1 memslap.1 memstat.1
+MAN1=		memcat.1 \
+		memcp.1 \
+		memerror.1 \
+		memflush.1 \
+		memrm.1 \
+		memslap.1 \
+		memstat.1
 MAN3=		libmemcached.3 \
+		libmemcachedutil.3 \
 		libmemcached_examples.3 \
 		memcached_add.3 \
 		memcached_add_by_key.3 \
@@ -44,6 +51,7 @@ MAN3=		libmemcached.3 \
 		memcached_clone.3 \
 		memcached_create.3 \
 		memcached_decrement.3 \
+		memcached_decrement_with_initial.3 \
 		memcached_delete.3 \
 		memcached_delete_by_key.3 \
 		memcached_fetch.3 \
@@ -55,9 +63,14 @@ MAN3=		libmemcached.3 \
 		memcached_get.3 \
 		memcached_get_by_key.3 \
 		memcached_increment.3 \
+		memcached_increment_with_initial.3 \
 		memcached_lib_version.3 \
 		memcached_mget.3 \
 		memcached_mget_by_key.3 \
+		memcached_pool_create.3 \
+		memcached_pool_destroy.3 \
+		memcached_pool_pop.3 \
+		memcached_pool_push.3 \
 		memcached_prepend.3 \
 		memcached_prepend_by_key.3 \
 		memcached_quit.3 \

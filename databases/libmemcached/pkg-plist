@@ -5,20 +5,25 @@ bin/memflush
 bin/memrm
 bin/memslap
 bin/memstat
-include/libmemcached/libmemcached_config.h
 include/libmemcached/memcached.h
 include/libmemcached/memcached.hh
 include/libmemcached/memcached_constants.h
 include/libmemcached/memcached_get.h
+include/libmemcached/memcached_pool.h
 include/libmemcached/memcached_result.h
 include/libmemcached/memcached_server.h
 include/libmemcached/memcached_storage.h
 include/libmemcached/memcached_string.h
 include/libmemcached/memcached_types.h
 include/libmemcached/memcached_watchpoint.h
+include/libmemcached/memcached_util.h
 lib/libmemcached.a
 lib/libmemcached.la
 lib/libmemcached.so
 lib/libmemcached.so.2
+lib/libmemcachedutil.a
+lib/libmemcachedutil.la
+lib/libmemcachedutil.so
+lib/libmemcachedutil.so.0
 libdata/pkgconfig/libmemcached.pc
 @dirrmtry include/libmemcached
