@@ -6,7 +6,7 @@
 
 PORTNAME=	eigen
 DISTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://download.tuxfamily.org/eigen/
 
@@ -15,5 +15,7 @@ COMMENT=	Lightweight library for vector and matrix math
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
+
+LATEST_LINK=	${PORTNAME}2
 
 .include <bsd.port.mk>
