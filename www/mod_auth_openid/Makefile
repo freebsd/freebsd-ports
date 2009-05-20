@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_auth_openid
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.4
 CATEGORIES=	www
 MASTER_SITES=	http://butterfat.net/releases/mod_auth_openid/
 
@@ -18,6 +17,8 @@ BUILD_DEPENDS=	apr-1-config:${PORTSDIR}/devel/apr
 LIB_DEPENDS=	opkele:${PORTSDIR}/devel/libopkele \
 		sqlite3:${PORTSDIR}/databases/sqlite34
 
+MAKE_JOBS_SAFE=  yes
+
 PLIST_FILES=	${APACHEMODDIR}/mod_auth_openid.so
 
 USE_APACHE=	2.0+
@@ -25,7 +26,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pcre=${LOCALBASE}
 
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -I/usr/include/openssl
 
 .include <bsd.port.pre.mk>
 
