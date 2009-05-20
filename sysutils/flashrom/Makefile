@@ -7,6 +7,7 @@
 
 PORTNAME=	flashrom
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://qa.coreboot.org/releases/
 
@@ -21,8 +22,16 @@ USE_GMAKE=	yes
 PORTDOCS=	COPYING README
 PLIST_FILES=	bin/${PORTNAME}
 
+.if !defined(NO_INSTALL_MANPAGES)
+MAN8=		${PORTNAME}.8
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+.if !defined(NO_INSTALL_MANPAGES)
+	${MKDIR} ${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${MANPREFIX}/man/man8
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
