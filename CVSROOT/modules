@@ -8087,7 +8087,7 @@ lm-solve                        ports/games/lm-solve
 lmarbles                        ports/games/lmarbles
 lmbench                         ports/benchmarks/lmbench
 lmclock                         ports/x11-clocks/lmclock
-lmdbg				ports/devel/lmdbg
+lmdbg                           ports/devel/lmdbg
 lmmon                           ports/sysutils/lmmon
 lmms                            ports/audio/lmms
 lmon                            ports/sysutils/lmon
@@ -8705,6 +8705,7 @@ mod_geoip                       ports/www/mod_geoip
 mod_geoip2                      ports/www/mod_geoip2
 mod_gzip                        ports/www/mod_gzip
 mod_gzip2                       ports/www/mod_gzip2
+mod_h264_streaming              ports/www/mod_h264_streaming
 mod_hosts_access                ports/www/mod_hosts_access
 mod_index_rss                   ports/www/mod_index_rss
 mod_jail                        ports/www/mod_jail
@@ -13176,7 +13177,7 @@ p5-WWW-Shorten                  ports/www/p5-WWW-Shorten
 p5-WWW-Shorten-0rz              ports/www/p5-WWW-Shorten-0rz
 p5-WWW-Shorten-Bitly            ports/www/p5-WWW-Shorten-Bitly
 p5-WWW-Shorten-KUSO             ports/www/p5-WWW-Shorten-KUSO
-p5-WWW-Shorten-isgd		ports/www/p5-WWW-Shorten-isgd
+p5-WWW-Shorten-isgd             ports/www/p5-WWW-Shorten-isgd
 p5-WWW-SourceForge              ports/www/p5-WWW-SourceForge
 p5-WWW-Spinn3r                  ports/www/p5-WWW-Spinn3r
 p5-WWW-TV                       ports/www/p5-WWW-TV
@@ -16699,6 +16700,7 @@ p5-www-search-msn               ports/www/p5-WWW-Search-MSN
 p5-www-shorten                  ports/www/p5-WWW-Shorten
 p5-www-shorten-0rz              ports/www/p5-WWW-Shorten-0rz
 p5-www-shorten-bitly            ports/www/p5-WWW-Shorten-Bitly
+p5-www-shorten-isgd             ports/www/p5-WWW-Shorten-isgd
 p5-www-shorten-kuso             ports/www/p5-WWW-Shorten-KUSO
 p5-www-sourceforge              ports/www/p5-WWW-SourceForge
 p5-www-spinn3r                  ports/www/p5-WWW-Spinn3r
@@ -18002,6 +18004,7 @@ pigz                            ports/archivers/pigz
 pikdev                          ports/devel/pikdev
 pike72                          ports/lang/pike72
 pike76                          ports/lang/pike76
+pike78                          ports/lang/pike78
 piklab                          ports/devel/piklab
 pilot-link                      ports/palm/pilot-link
 pilot_makedoc                   ports/palm/pilot_makedoc
@@ -19859,6 +19862,7 @@ ristretto                       ports/graphics/ristretto
 rkhunter                        ports/security/rkhunter
 rkive                           ports/news/rkive
 rkward                          ports/math/rkward
+rkward-kde4                     ports/math/rkward-kde4
 rl                              ports/textproc/rl
 rlog                            ports/devel/rlog
 rlpr                            ports/print/rlpr
@@ -20396,6 +20400,7 @@ rubygem-net-ssh                 ports/security/rubygem-net-ssh
 rubygem-net-ssh-gateway         ports/security/rubygem-net-ssh-gateway
 rubygem-nicovideo               ports/www/rubygem-nicovideo
 rubygem-nmap-parser             ports/security/rubygem-nmap-parser
+rubygem-nokogiri                ports/textproc/rubygem-nokogiri
 rubygem-oauth                   ports/net/rubygem-oauth
 rubygem-objectdetect            ports/graphics/rubygem-objectdetect
 rubygem-open4                   ports/devel/rubygem-open4
