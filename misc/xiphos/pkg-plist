@@ -61,6 +61,102 @@ share/gnome/help/xiphos/C/search.xml
 share/gnome/help/xiphos/C/start.xml
 share/gnome/help/xiphos/C/studypad.xml
 share/gnome/help/xiphos/C/xiphos.xml
+share/gnome/help/xiphos/de/authors.xml
+share/gnome/help/xiphos/de/figures/first_start.png
+share/gnome/help/xiphos/de/figures/gtkhtml3-vs-mozembed.png
+share/gnome/help/xiphos/de/figures/interface.png
+share/gnome/help/xiphos/de/figures/interface_biblepane-options.png
+share/gnome/help/xiphos/de/figures/interface_biblepane.png
+share/gnome/help/xiphos/de/figures/interface_commentarypane.png
+share/gnome/help/xiphos/de/figures/interface_dictionary.png
+share/gnome/help/xiphos/de/figures/interface_menubar-view.png
+share/gnome/help/xiphos/de/figures/interface_menubar.png
+share/gnome/help/xiphos/de/figures/interface_parallel-separate.png
+share/gnome/help/xiphos/de/figures/interface_parallel.png
+share/gnome/help/xiphos/de/figures/interface_searchpane.png
+share/gnome/help/xiphos/de/figures/interface_shortcut.png
+share/gnome/help/xiphos/de/figures/interface_sidepane.png
+share/gnome/help/xiphos/de/figures/interface_toolbar.png
+share/gnome/help/xiphos/de/figures/interface_viewer.png
+share/gnome/help/xiphos/de/figures/journal.png
+share/gnome/help/xiphos/de/figures/module.png
+share/gnome/help/xiphos/de/figures/personal.png
+share/gnome/help/xiphos/de/figures/preferences.png
+share/gnome/help/xiphos/de/figures/preferences_fonts-color.png
+share/gnome/help/xiphos/de/figures/preferences_fonts-misc.png
+share/gnome/help/xiphos/de/figures/preferences_general-misc.png
+share/gnome/help/xiphos/de/figures/preferences_general-tabs.png
+share/gnome/help/xiphos/de/figures/preferences_modules-main.png
+share/gnome/help/xiphos/de/figures/preferences_modules-misc.png
+share/gnome/help/xiphos/de/figures/preferences_modules-parallel.png
+share/gnome/help/xiphos/de/figures/search_search.png
+share/gnome/help/xiphos/de/figures/studypad.png
+share/gnome/help/xiphos/de/figures/sword3.png
+share/gnome/help/xiphos/de/figures/sword_config.png
+share/gnome/help/xiphos/de/figures/sword_install.png
+share/gnome/help/xiphos/de/figures/sword_remove.png
+share/gnome/help/xiphos/de/figures/sword_sources.png
+share/gnome/help/xiphos/de/interface.xml
+share/gnome/help/xiphos/de/introduction.xml
+share/gnome/help/xiphos/de/journals.xml
+share/gnome/help/xiphos/de/license.xml
+share/gnome/help/xiphos/de/modules.xml
+share/gnome/help/xiphos/de/onlinehelp.xml
+share/gnome/help/xiphos/de/originallanguage.xml
+share/gnome/help/xiphos/de/personal.xml
+share/gnome/help/xiphos/de/preferences.xml
+share/gnome/help/xiphos/de/search.xml
+share/gnome/help/xiphos/de/start.xml
+share/gnome/help/xiphos/de/studypad.xml
+share/gnome/help/xiphos/de/xiphos.xml
+share/gnome/help/xiphos/fa/authors.xml
+share/gnome/help/xiphos/fa/figures/first_start.png
+share/gnome/help/xiphos/fa/figures/gtkhtml3-vs-mozembed.png
+share/gnome/help/xiphos/fa/figures/interface.png
+share/gnome/help/xiphos/fa/figures/interface_biblepane-options.png
+share/gnome/help/xiphos/fa/figures/interface_biblepane.png
+share/gnome/help/xiphos/fa/figures/interface_commentarypane.png
+share/gnome/help/xiphos/fa/figures/interface_dictionary.png
+share/gnome/help/xiphos/fa/figures/interface_menubar-view.png
+share/gnome/help/xiphos/fa/figures/interface_menubar.png
+share/gnome/help/xiphos/fa/figures/interface_parallel-separate.png
+share/gnome/help/xiphos/fa/figures/interface_parallel.png
+share/gnome/help/xiphos/fa/figures/interface_searchpane.png
+share/gnome/help/xiphos/fa/figures/interface_shortcut.png
+share/gnome/help/xiphos/fa/figures/interface_sidepane.png
+share/gnome/help/xiphos/fa/figures/interface_toolbar.png
+share/gnome/help/xiphos/fa/figures/interface_viewer.png
+share/gnome/help/xiphos/fa/figures/journal.png
+share/gnome/help/xiphos/fa/figures/module.png
+share/gnome/help/xiphos/fa/figures/personal.png
+share/gnome/help/xiphos/fa/figures/preferences.png
+share/gnome/help/xiphos/fa/figures/preferences_fonts-color.png
+share/gnome/help/xiphos/fa/figures/preferences_fonts-misc.png
+share/gnome/help/xiphos/fa/figures/preferences_general-misc.png
+share/gnome/help/xiphos/fa/figures/preferences_general-tabs.png
+share/gnome/help/xiphos/fa/figures/preferences_modules-main.png
+share/gnome/help/xiphos/fa/figures/preferences_modules-misc.png
+share/gnome/help/xiphos/fa/figures/preferences_modules-parallel.png
+share/gnome/help/xiphos/fa/figures/search_search.png
+share/gnome/help/xiphos/fa/figures/studypad.png
+share/gnome/help/xiphos/fa/figures/sword3.png
+share/gnome/help/xiphos/fa/figures/sword_config.png
+share/gnome/help/xiphos/fa/figures/sword_install.png
+share/gnome/help/xiphos/fa/figures/sword_remove.png
+share/gnome/help/xiphos/fa/figures/sword_sources.png
+share/gnome/help/xiphos/fa/interface.xml
+share/gnome/help/xiphos/fa/introduction.xml
+share/gnome/help/xiphos/fa/journals.xml
+share/gnome/help/xiphos/fa/license.xml
+share/gnome/help/xiphos/fa/modules.xml
+share/gnome/help/xiphos/fa/onlinehelp.xml
+share/gnome/help/xiphos/fa/originallanguage.xml
+share/gnome/help/xiphos/fa/personal.xml
+share/gnome/help/xiphos/fa/preferences.xml
+share/gnome/help/xiphos/fa/search.xml
+share/gnome/help/xiphos/fa/start.xml
+share/gnome/help/xiphos/fa/studypad.xml
+share/gnome/help/xiphos/fa/xiphos.xml
 share/gnome/help/xiphos/fr/authors.xml
 share/gnome/help/xiphos/fr/figures/first_start.png
 share/gnome/help/xiphos/fr/figures/gtkhtml3-vs-mozembed.png
@@ -110,12 +206,14 @@ share/gnome/help/xiphos/fr/start.xml
 share/gnome/help/xiphos/fr/studypad.xml
 share/gnome/help/xiphos/fr/xiphos.xml
 share/locale/cs/LC_MESSAGES/xiphos.mo
+share/locale/cy/LC_MESSAGES/xiphos.mo
 share/locale/de/LC_MESSAGES/xiphos.mo
 share/locale/en_GB/LC_MESSAGES/xiphos.mo
 share/locale/fa/LC_MESSAGES/xiphos.mo
 share/locale/fi/LC_MESSAGES/xiphos.mo
 share/locale/fr/LC_MESSAGES/xiphos.mo
 share/locale/he_IL/LC_MESSAGES/xiphos.mo
+share/locale/nb_NO/LC_MESSAGES/xiphos.mo
 share/locale/nl/LC_MESSAGES/xiphos.mo
 share/locale/pt/LC_MESSAGES/xiphos.mo
 share/locale/pt_PT/LC_MESSAGES/xiphos.mo
@@ -150,9 +248,21 @@ share/pixmaps/xiphos/sword3.png
 share/pixmaps/xiphos/sword_icon-16.png
 share/pixmaps/xiphos/translation_icon-16.png
 share/pixmaps/xiphos/tt.png
+share/pixmaps/xiphos/window-close.png
 share/pixmaps/xiphos/xiphos-x-16.png
 share/pixmaps/xiphos/xiphos.svg
 share/pixmaps/xiphos/xiphos.xpm
+share/xiphos/chat_icon-16.png
+share/xiphos/dlg-un-16.png
+share/xiphos/epiphany-bookmarks.png
+share/xiphos/gnome-sound-properties.png
+share/xiphos/mailing_list_icon-16.png
+share/xiphos/new_tab_button.png
+share/xiphos/silk-edit-bookmarks.png
+share/xiphos/sword_icon-16.png
+share/xiphos/translation_icon-16.png
+share/xiphos/xi-menus.glade
+share/xiphos/xiphos-x-16.png
 %%DATADIR%%/arrow_down.png
 %%DATADIR%%/arrow_down_box.png
 %%DATADIR%%/arrow_up.png
@@ -172,10 +282,16 @@ share/pixmaps/xiphos/xiphos.xpm
 @dirrm share/pixmaps/xiphos
 @dirrm share/locale/sv_SE/LC_MESSAGES
 @dirrm share/locale/sv_SE
+@dirrm share/locale/nb_NO/LC_MESSAGES
+@dirrm share/locale/nb_NO
 @dirrm share/locale/he_IL/LC_MESSAGES
 @dirrm share/locale/he_IL
 @dirrm share/gnome/help/xiphos/fr/figures
 @dirrm share/gnome/help/xiphos/fr
+@dirrm share/gnome/help/xiphos/fa/figures
+@dirrm share/gnome/help/xiphos/fa
+@dirrm share/gnome/help/xiphos/de/figures
+@dirrm share/gnome/help/xiphos/de
 @dirrm share/gnome/help/xiphos/C/figures
 @dirrm share/gnome/help/xiphos/C
 @dirrm share/gnome/help/xiphos
