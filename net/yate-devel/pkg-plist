@@ -176,6 +176,7 @@ share/doc/yate/COPYING
 share/doc/yate/ChangeLog
 share/doc/yate/README
 share/doc/yate/README.too
+@dirrm share/doc/yate
 @dirrmtry etc/yate
 @dirrm include/yate
 %%WITH_X11%%@dirrmtry lib/menu
