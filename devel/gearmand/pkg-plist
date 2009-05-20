@@ -23,7 +23,7 @@ include/libgearman/worker.h
 lib/libgearman.a
 lib/libgearman.la
 lib/libgearman.so
-lib/libgearman.so.0
+lib/libgearman.so.1
 libdata/pkgconfig/gearmand.pc
 sbin/gearmand
 @dirrmtry libdata/pkgconfig
