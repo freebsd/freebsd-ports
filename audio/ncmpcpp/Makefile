@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncmpcpp
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	audio
 MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
@@ -24,6 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lpthread"
 
 MAN1=	ncmpcpp.1
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	CURL "Enable fetching lyrics from the Internet" on \
 		CLOCK "Enable clock-screen support" on \
