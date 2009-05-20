@@ -3,6 +3,7 @@ bin/make_tpl_varnames_h
 bin/template-converter
 include/google/per_expand_data.h
 include/google/template.h
+include/google/template_annotator.h
 include/google/template_dictionary.h
 include/google/template_dictionary_interface.h
 include/google/template_enums.h
