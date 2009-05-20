@@ -7,6 +7,7 @@
 
 PORTNAME=	naev
 PORTVERSION=	0.3.9
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DIST_SUBDIR=	${PORTNAME}
@@ -30,10 +31,6 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386
-BROKEN=		does not build
-.endif
-
 .if !defined(NOPORTDOCS)
 PLIST_FILES+=	%%DOCSDIR%%/conf.example
 PLIST_DIRS=	%%DOCSDIR%%
@@ -41,6 +38,7 @@ PLIST_DIRS=	%%DOCSDIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|%%DATADIR%%|${DATADIR}|g' -e 's|%%PORTVERSION%%|${PORTVERSION}|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -i "" -e 's|CFLAGS +=|CFLAGS ?=|g' ${WRKSRC}/build/Makefile.posix
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
