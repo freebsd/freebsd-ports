@@ -47,7 +47,6 @@ OPTIONS=	X11 "Build GUI client; yate-gtk2" on \
 		FAX "Fax software channel/driver support" off
 
 DOCSDIR=	${LOCALBASE}/share/doc/yate
-PORTDOCS=	${DOCSDIR}/*
 PLIST_SUB=	BRISTUFF="@comment "
 PLIST_SUB+=	VERSION=${PORTVERSION:S/.p2//}
 SUB_FILES=	pkg-message
