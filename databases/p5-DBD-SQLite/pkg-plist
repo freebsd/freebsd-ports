@@ -1,7 +1,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/SQLite.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/DBD/SQLite/Cookbook.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite/SQLite.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite/SQLite.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD/SQLite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD
