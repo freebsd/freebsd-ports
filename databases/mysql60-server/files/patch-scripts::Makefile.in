@@ -1,13 +1,12 @@
---- scripts/Makefile.in.orig	Tue May  8 11:42:25 2007
-+++ scripts/Makefile.in	Thu May 17 09:30:48 2007
-@@ -399,21 +399,7 @@
+--- scripts/Makefile.in.orig	2009-05-11 15:02:29.000000000 +0200
++++ scripts/Makefile.in	2009-05-19 07:51:39.000000000 +0200
+@@ -424,20 +424,7 @@
  BUILT_SOURCES = mysql_fix_privilege_tables.sql \
  		mysql_fix_privilege_tables_sql.c
  
 -bin_SCRIPTS = @server_scripts@ \
 -			msql2mysql \
 -			mysql_config \
--			mysql_fix_privilege_tables \
 -			mysql_fix_extensions \
 -			mysql_setpermission \
 -			mysql_secure_installation \
@@ -23,7 +22,7 @@
  
  noinst_SCRIPTS = make_binary_distribution \
  			make_sharedlib_distribution
-@@ -445,11 +431,7 @@
+@@ -471,11 +458,7 @@
  			mysql_system_tables_fix.sql \
  			CMakeLists.txt
  
