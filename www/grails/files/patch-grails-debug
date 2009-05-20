@@ -1,0 +1,9 @@
+diff -ruN /tmp/grails-1.1.1/bin/grails-debug ./bin/grails-debug
+--- /tmp/grails-1.1.1/bin/grails-debug	2009-05-14 21:30:43.000000000 +1200
++++ ./bin/grails-debug	2009-05-19 08:42:54.000000000 +1200
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ DIRNAME=`dirname "$0"`
+ . "$DIRNAME/startGrails"
