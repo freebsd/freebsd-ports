@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gearmand
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gearmand/trunk/${PORTVERSION}/+download/
 
@@ -113,6 +113,10 @@ MAN3=		gearman_bugreport.3 \
 		gearman_packet_set_options.3 \
 		gearman_packet_take_data.3 \
 		gearman_packet_unpack_header.3 \
+		gearman_queue_fn_arg.3 \
+		gearman_queue_libdrizzle_deinit.3 \
+		gearman_queue_libdrizzle_init.3 \
+		gearman_queue_libdrizzle_usage.3 \
 		gearman_server_client_add.3 \
 		gearman_server_client_create.3 \
 		gearman_server_client_free.3 \
@@ -153,7 +157,9 @@ MAN3=		gearman_bugreport.3 \
 		gearman_server_packet_free.3 \
 		gearman_server_proc_packet_add.3 \
 		gearman_server_proc_packet_remove.3 \
+		gearman_server_queue_replay.3 \
 		gearman_server_run_command.3 \
+		gearman_server_set_log.3 \
 		gearman_server_shutdown_graceful.3 \
 		gearman_server_thread_create.3 \
 		gearman_server_thread_errno.3 \
@@ -169,6 +175,11 @@ MAN3=		gearman_bugreport.3 \
 		gearman_set_event_watch.3 \
 		gearman_set_log.3 \
 		gearman_set_options.3 \
+		gearman_set_queue_add.3 \
+		gearman_set_queue_done.3 \
+		gearman_set_queue_flush.3 \
+		gearman_set_queue_fn_arg.3 \
+		gearman_set_queue_replay.3 \
 		gearman_set_task_fn_arg_free.3 \
 		gearman_set_workload_free.3 \
 		gearman_set_workload_malloc.3 \
@@ -210,11 +221,12 @@ MAN3=		gearman_bugreport.3 \
 		gearmand_con_watch.3 \
 		gearmand_create.3 \
 		gearmand_free.3 \
+		gearmand_queue_libdrizzle_deinit.3 \
+		gearmand_queue_libdrizzle_init.3 \
 		gearmand_run.3 \
 		gearmand_set_backlog.3 \
 		gearmand_set_log.3 \
 		gearmand_set_threads.3 \
-		gearmand_set_verbose.3 \
 		gearmand_thread_create.3 \
 		gearmand_thread_free.3 \
 		gearmand_thread_run.3 \
