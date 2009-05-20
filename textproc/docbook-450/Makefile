@@ -41,6 +41,8 @@ DTD_FILES=	calstblx.dtd catalog.xml dbcentx.mod dbgenent.mod \
 		docbook.dtd docbookx.dtd htmltblx.mod soextblx.dtd catalog
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}/${PORTVERSION}
 
+LATEST_LINK=	docbook-450
+
 post-extract:
 	${CP} ${WRKSRC}/docbook.cat ${WRKSRC}/catalog
 
