@@ -452,6 +452,7 @@
     SUBDIR += mcweject
     SUBDIR += mdcp
     SUBDIR += mdf2iso
+    SUBDIR += megacli
     SUBDIR += megarc
     SUBDIR += memdump
     SUBDIR += memfetch
