@@ -1,0 +1,34 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Shakan/.packlist
+%%SITE_PERL%%/HTML/Shakan.pm
+%%SITE_PERL%%/HTML/Shakan/Declare.pm
+%%SITE_PERL%%/HTML/Shakan/Doc.ja.pod
+%%SITE_PERL%%/HTML/Shakan/Field.pm
+%%SITE_PERL%%/HTML/Shakan/Field/Choice.pm
+%%SITE_PERL%%/HTML/Shakan/Field/Date.pm
+%%SITE_PERL%%/HTML/Shakan/Field/File.pm
+%%SITE_PERL%%/HTML/Shakan/Field/Input.pm
+%%SITE_PERL%%/HTML/Shakan/Fields.pm
+%%SITE_PERL%%/HTML/Shakan/Filter/HTMLScrubber.pm
+%%SITE_PERL%%/HTML/Shakan/Filter/Hiragana.pm
+%%SITE_PERL%%/HTML/Shakan/Filter/KatakanaZ.pm
+%%SITE_PERL%%/HTML/Shakan/Filter/WhiteSpace.pm
+%%SITE_PERL%%/HTML/Shakan/Filters.pm
+%%SITE_PERL%%/HTML/Shakan/Inflator/DateTime.pm
+%%SITE_PERL%%/HTML/Shakan/Model/DataModel.pm
+%%SITE_PERL%%/HTML/Shakan/Renderer/HTML.pm
+%%SITE_PERL%%/HTML/Shakan/Role/Filter.pm
+%%SITE_PERL%%/HTML/Shakan/Role/Model.pm
+%%SITE_PERL%%/HTML/Shakan/Utils.pm
+%%SITE_PERL%%/HTML/Shakan/Widgets/Simple.pm
+%%SITE_PERL%%/HTML/Shakan/Widgets/jQueryUI.pm
+@dirrm %%SITE_PERL%%/HTML/Shakan/Widgets
+@dirrm %%SITE_PERL%%/HTML/Shakan/Role
+@dirrm %%SITE_PERL%%/HTML/Shakan/Renderer
+@dirrm %%SITE_PERL%%/HTML/Shakan/Model
+@dirrm %%SITE_PERL%%/HTML/Shakan/Inflator
+@dirrm %%SITE_PERL%%/HTML/Shakan/Filter
+@dirrm %%SITE_PERL%%/HTML/Shakan/Field
+@dirrm %%SITE_PERL%%/HTML/Shakan
+@dirrmtry %%SITE_PERL%%/HTML
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Shakan
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
