@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p4v
-PORTVERSION=	2008.2.193639
+PORTVERSION=	2008.2.200026
 CATEGORIES=	devel
 MASTER_SITES=	\
 	http://filehost.perforce.com/perforce/r08.2/bin.freebsd60x86${MACHINE_ARCH:Mamd64:S/^amd/_/}/
