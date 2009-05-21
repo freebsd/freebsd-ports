@@ -1,11 +1,12 @@
-lib/pidgin/libsipe.so
 lib/pidgin/libsipe.la
+lib/pidgin/libsipe.so
 share/locale/da/LC_MESSAGES/pidgin-sipe.mo
 share/locale/de/LC_MESSAGES/pidgin-sipe.mo
 share/locale/es/LC_MESSAGES/pidgin-sipe.mo
 share/locale/fr/LC_MESSAGES/pidgin-sipe.mo
 share/locale/hi/LC_MESSAGES/pidgin-sipe.mo
 share/locale/ta/LC_MESSAGES/pidgin-sipe.mo
+share/locale/zh_CN/LC_MESSAGES/pidgin-sipe.mo
 share/pixmaps/pidgin/protocols/16/sipe.png
 share/pixmaps/pidgin/protocols/22/sipe.png
 share/pixmaps/pidgin/protocols/48/sipe.png

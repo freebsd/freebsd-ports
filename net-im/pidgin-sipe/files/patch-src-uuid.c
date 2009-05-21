@@ -1,5 +1,5 @@
-*** src/uuid.c.orig	Mon Apr 13 09:48:29 2009
---- src/uuid.c	Thu May  7 12:40:23 2009
+*** src/uuid.c.orig	Sun May 17 19:09:00 2009
+--- src/uuid.c	Mon May 18 13:43:53 2009
 ***************
 *** 28,34 ****
 --- 28,38 ----
@@ -15,8 +15,8 @@
   #ifdef _DLL
   #define _WS2TCPIP_H_
 ***************
-*** 135,141 ****
---- 139,149 ----
+*** 133,139 ****
+--- 137,147 ----
           strcpy(ifr.ifr_name, IFR->ifr_name);
           if (ioctl(s, SIOCGIFFLAGS, &ifr) == 0) {
               if (! (ifr.ifr_flags & IFF_LOOPBACK)) {
@@ -29,8 +29,8 @@
                       break;
                   }
 ***************
-*** 145,151 ****
---- 153,163 ----
+*** 143,149 ****
+--- 151,161 ----
   
       close(s);
       if (ok) {
