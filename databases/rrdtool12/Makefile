@@ -17,6 +17,8 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
 		png.5:${PORTSDIR}/graphics/png
 
+LATEST_LINK=	${PORTNAME}12
+
 CONFLICTS=	rrdtool-1.0* rrdtool-1.3*
 
 USE_AUTOTOOLS=	libtool:15
