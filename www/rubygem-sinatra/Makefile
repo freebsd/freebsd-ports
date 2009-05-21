@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	sinatra
-PORTVERSION=	0.9.1.1
+PORTVERSION=	0.9.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 
@@ -14,8 +14,6 @@ COMMENT=	A classy web development framework in ruby
 
 BUILD_DEPENDS=	rubygem-rack>=0.9.1:${PORTSDIR}/www/rubygem-rack
 RUN_DEPENDS=	rubygem-rack>=0.9.1:${PORTSDIR}/www/rubygem-rack
-
-BROKEN=		does not install: sinatra requires rack (>= 0.9.1, < 1.0, runtime)
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
