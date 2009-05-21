@@ -1,4 +1,3 @@
-%%ARTSPLUGIN%%bin/audacious-arts-helper
 lib/audacious/Container/m3u.so
 lib/audacious/Container/pls.so
 %%XSPFPLUGIN%%lib/audacious/Container/xspf.so
@@ -15,14 +14,17 @@ lib/audacious/General/alarm.so
 lib/audacious/General/hotkey.so
 %%LIRCPLUGIN%%lib/audacious/General/lirc.so
 %%CURLPLUGIN%%lib/audacious/General/scrobbler.so
+lib/audacious/General/skins.so
 lib/audacious/General/song_change.so
-lib/audacious/General/statusicon.so
+%%STATUSICONPLUGIN%%lib/audacious/General/statusicon.so
+lib/audacious/General/streambrowser.so
+lib/audacious/General/vfstrace.so
 %%AACPLUGIN%%lib/audacious/Input/aac.so
 %%ADPLUGPLUGIN%%lib/audacious/Input/adplug.so
 lib/audacious/Input/alac.so
 %%CDAUDIOPLUGIN%%lib/audacious/Input/cdaudio-ng.so
+lib/audacious/Input/cuesheet_ng.so
 lib/audacious/Input/console.so
-lib/audacious/Input/cuesheet.so
 lib/audacious/Input/demac.so
 %%FLACPLUGIN%%lib/audacious/Input/flacng.so
 %%MP3PLUGIN%%lib/audacious/Input/madplug.so
@@ -30,8 +32,10 @@ lib/audacious/Input/metronom.so
 %%MODPLUG%%lib/audacious/Input/modplug.so
 %%MTPPLUGIN%%lib/audacious/General/mtp_up.so
 %%MPCPLUGIN%%lib/audacious/Input/musepack.so
+lib/audacious/Input/psf2.so
 lib/audacious/Input/sexypsf.so
 %%SIDPLUGIN%%lib/audacious/Input/sid.so
+%%SNDFILEPLUGIN%%lib/audacious/Input/sndfile.so
 %%TIMIDITYPLUGIN%%lib/audacious/Input/timidity.so
 lib/audacious/Input/tonegen.so
 %%TTAPLUGIN%%lib/audacious/Input/tta.so
@@ -39,16 +43,18 @@ lib/audacious/Input/tonegen.so
 lib/audacious/Input/vtx.so
 %%WAVPACKPLUGIN%%lib/audacious/Input/wavpack.so
 %%WMAPLUGIN%%lib/audacious/Input/wma.so
+lib/audacious/Input/xsf.so
 %%OSSPLUGIN%%lib/audacious/Output/OSS.so
 %%OSS4PLUGIN%%lib/audacious/Output/OSS4.so
 %%ESDPLUGIN%%lib/audacious/Output/ESD.so
-%%ARTSPLUGIN%%lib/audacious/Output/arts.so
+lib/audacious/Output/crossfade.so
 lib/audacious/Output/filewriter.so
 %%JACKPLUGIN%%lib/audacious/Output/jackout.so
 lib/audacious/Output/null.so
+lib/audacious/Transport/gio.so
 %%CURLPLUGIN%%lib/audacious/Transport/lastfm.so
+%%MMSPLUGIN%%lib/audacious/Transport/mms.so
 %%NEONPLUGIN%%lib/audacious/Transport/neon.so
-lib/audacious/Transport/stdio.so
 lib/audacious/Visualization/blur_scope.so
 %%PARANORMALPLUGIN%%lib/audacious/Visualization/paranormal.so
 %%ROCKLIGHTPLUGIN%%lib/audacious/Visualization/rocklight.so
@@ -88,6 +94,13 @@ lib/audacious/Visualization/spectrum.so
 %%PARANORMALPLUGIN%%share/audacious/paranormal/Presets/nenolod_-_worms.pnv
 %%PARANORMALPLUGIN%%share/audacious/paranormal/Presets/ticpu_-_colored_beat-o-scope.pnv
 %%PARANORMALPLUGIN%%share/audacious/paranormal/Presets/aerdan_-_bloody_vortex.pnv
+%%CURLPLUGIN%%share/audacious/images/audioscrobbler.png
+%%CURLPLUGIN%%share/audacious/images/audioscrobbler_badge.png
+share/audacious/images/bookmarks.png
+share/audacious/images/shoutcast.png
+share/audacious/images/streambrowser-16x16.png
+share/audacious/images/streambrowser-64x64.png
+share/audacious/images/xiph.png
 %%NLS%%share/locale/ca/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/cy/LC_MESSAGES/audacious-plugins.mo
@@ -109,4 +122,5 @@ lib/audacious/Visualization/spectrum.so
 @dirrmtry lib/audacious
 %%PARANORMALPLUGIN%%@dirrm share/audacious/paranormal/Presets
 %%PARANORMALPLUGIN%%@dirrm share/audacious/paranormal
+@dirrmtry share/audacious/images
 @dirrmtry share/audacious

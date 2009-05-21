@@ -7,6 +7,7 @@
 
 PORTNAME=	conky
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,7 +35,7 @@ PORTDOCS=	README AUTHORS ChangeLog TODO NEWS \
 		docs.html variables.html config_settings.html
 
 .if defined(WITH_AUDACIOUS)
-LIB_DEPENDS+=		audclient.1:${PORTSDIR}/multimedia/audacious
+LIB_DEPENDS+=		audclient.2:${PORTSDIR}/multimedia/audacious
 CONFIGURE_ARGS+=	--enable-audacious
 .else
 CONFIGURE_ARGS+=	--disable-audacious

@@ -1,19 +1,22 @@
-bin/audacious
-%%WITH_DBUS%%bin/audtool
+bin/audacious2
+%%WITH_DBUS%%bin/audtool2
 %%WITH_DBUS%%include/audacious/audctrl.h
 include/audacious/audconfig.h
 include/audacious/auddrct.h
+include/audacious/audutil.h
 include/audacious/configdb.h
 include/audacious/custom_uri.h
 include/audacious/dbus.h
 include/audacious/dbus-service.h
 include/audacious/discovery.h
+include/audacious/equalizer_preset.h
 include/audacious/eventqueue.h
 include/audacious/flow.h
 include/audacious/hook.h
 include/audacious/i18n.h
 include/audacious/id3tag.h
 include/audacious/input.h
+include/audacious/interface.h
 include/audacious/main.h
 include/audacious/mime.h
 include/audacious/output.h
@@ -21,30 +24,40 @@ include/audacious/playback.h
 include/audacious/playlist.h
 include/audacious/playlist_container.h
 include/audacious/plugin.h
+include/audacious/preferences.h
 include/audacious/rcfile.h
-include/audacious/strings.h
-include/audacious/tuple.h
-include/audacious/tuple_compiler.h
-include/audacious/tuple_formatter.h
 include/audacious/ui_fileinfopopup.h
 include/audacious/ui_plugin_menu.h
 include/audacious/ui_preferences.h
 include/audacious/util.h
-include/audacious/vfs.h
-include/audacious/vfs_buffer.h
-include/audacious/vfs_buffered_file.h
 include/libSAD/libSAD.h
 include/libSAD/common.h
 include/libSAD/dither.h
+include/libaudcore/audstrings.h
+include/libaudcore/tuple.h
+include/libaudcore/tuple_compiler.h
+include/libaudcore/tuple_formatter.h
+include/libaudcore/vfs.h
+include/libaudcore/vfs_buffer.h
+include/libaudcore/vfs_buffered_file.h
 %%WITH_DBUS%%lib/libaudclient.so
-%%WITH_DBUS%%lib/libaudclient.so.1
-%%WITH_DBUS%%lib/libaudclient.so.1.0.0
+%%WITH_DBUS%%lib/libaudclient.so.2
+%%WITH_DBUS%%lib/libaudclient.so.2.0.0
+lib/libaudcore.so
+lib/libaudcore.so.1
+lib/libaudcore.so.1.0.0
 lib/libaudid3tag.so
-lib/libaudid3tag.so.1
-lib/libaudid3tag.so.1.0.0
+lib/libaudid3tag.so.2
+lib/libaudid3tag.so.2.0.0
+lib/libaudutil.so
+lib/libaudutil.so.1
+lib/libaudutil.so.1.0.0
+lib/libSAD.so
+lib/libSAD.so.2
+lib/libSAD.so.2.0.0
 libdata/pkgconfig/audacious.pc
 libdata/pkgconfig/audclient.pc
-share/applications/audacious.desktop
+share/applications/audacious2.desktop
 %%DATADIR%%/Skins/Classic/balance.png
 %%DATADIR%%/Skins/Classic/cbuttons.png
 %%DATADIR%%/Skins/Classic/eq_ex.png
@@ -265,6 +278,7 @@ share/applications/audacious.desktop
 %%DATADIR%%/images/appearance.png
 %%DATADIR%%/images/audacious_player.xpm
 %%DATADIR%%/images/audio.png
+%%DATADIR%%/images/blue.png
 %%DATADIR%%/images/connectivity.png
 %%DATADIR%%/images/menu_playlist.png
 %%DATADIR%%/images/menu_plugin.png
@@ -278,6 +292,7 @@ share/applications/audacious.desktop
 %%DATADIR%%/ui/carbon-menubar.ui
 %%DATADIR%%/ui/equalizer.ui
 %%DATADIR%%/ui/mainwin.ui
+%%DATADIR%%/ui/player.ui
 %%DATADIR%%/ui/playlist.ui
 %%NLS%%share/locale/bg/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/br/LC_MESSAGES/audacious.mo
@@ -288,6 +303,7 @@ share/applications/audacious.desktop
 %%NLS%%share/locale/el/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/es/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/et/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/hi/LC_MESSAGES/audacious.mo
@@ -312,7 +328,7 @@ share/applications/audacious.desktop
 %%NLS%%share/locale/uk/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/audacious.mo
-share/pixmaps/audacious.png
+share/pixmaps/audacious2.png
 @dirrm %%DATADIR%%/Skins/Classic
 @dirrm %%DATADIR%%/Skins/Classic1.3
 @dirrm %%DATADIR%%/Skins/Default/gtk-2.0/Arrows
@@ -344,5 +360,6 @@ share/pixmaps/audacious.png
 @dirrmtry %%DATADIR%%
 @dirrm include/audacious
 @dirrm include/libSAD
+@dirrm include/libaudcore
 @dirrmtry lib/audacious
 @dirrmtry share/applications

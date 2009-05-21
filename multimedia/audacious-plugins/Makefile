@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	1.5.1
-PORTREVISION=	2
+PORTVERSION=	2.0.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -15,8 +14,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Plugins needed for audacious
 
-BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
-		
+BUILD_DEPENDS=	audacious2:${PORTSDIR}/multimedia/audacious
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
@@ -55,7 +54,6 @@ OPTIONS=	DBUS		"Enable dbus support"			on  \
 		MPC		"Enable musepack input plugin"		off \
 		WMA		"Enable wma plugin"			on  \
 		JACK		"Enable jack output plugin"		off \
-		ARTS		"Enable arts output plugin"		off \
 		SID		"Enable sid input plugin"		off \
 		OSS		"Enable OSS output plugin"		on  \
 		OSS4		"Enable OSS4 output plugin"		off \
@@ -68,13 +66,13 @@ OPTIONS=	DBUS		"Enable dbus support"			on  \
 		XSPF		"Enable XSPF support"			on  \
 		TTA		"Enable TrueAudio plugin"		on  \
 		GNOME		"Build with gnomevfs/gconf support"	off \
-		NLS		"Native Language Support"		on \
+		NLS		"Native Language Support"		on  \
 		CURL		"curl for lastfm/scrobbler support"	off
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_DBUS)
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=--enable-dbus --enable-gnomeshortcuts
 PLIST_SUB+=	DBUS=""
 .else
@@ -98,10 +96,10 @@ PLIST_SUB+=	ESDPLUGIN="@comment "
 
 .if !defined(WITHOUT_MP3)
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
-CONFIGURE_ARGS+=--enable-mad
+CONFIGURE_ARGS+=--enable-libmad
 PLIST_SUB+=	MP3PLUGIN=""
 .else
-CONFIGURE_ARGS+=--disable-mad
+CONFIGURE_ARGS+=--disable-libmad
 PLIST_SUB+=	MP3PLUGIN="@comment "
 .endif
 
@@ -248,15 +246,8 @@ CONFIGURE_ARGS+=--disable-jack
 PLIST_SUB+=	JACKPLUGIN="@comment "
 .endif
 
-.if defined(WITH_ARTS)
-LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
-CONFIGURE_ARGS+=--enable-arts
-PLIST_SUB+=	ARTSPLUGIN=""
-.else
-CONFIGURE_ARGS+=--disable-arts
-PLIST_SUB+=	ARTSPLUGIN="@comment "
-.endif
-
+#OSS4 only works with recent changed in HEAD
+.if ${OSVERSION} >= 800061
 .if !defined(WITHOUT_OSS)
 PLIST_SUB+=	OSSPLUGIN=""
 CONFIGURE_ARGS+=--enable-oss
@@ -272,6 +263,17 @@ CONFIGURE_ARGS+=--enable-oss4
 PLIST_SUB+=	OSS4PLUGIN="@comment "
 CONFIGURE_ARGS+=--disable-oss4
 .endif
+.else
+PLIST_SUB+=     OSS4PLUGIN="@comment "
+CONFIGURE_ARGS+=--disable-oss4
+.if defined(WITH_OSS) || defined(WITH_OSS4)
+PLIST_SUB+=     OSSPLUGIN=""
+CONFIGURE_ARGS+=--enable-oss
+.else
+PLIST_SUB+=     OSSPLUGIN="@comment "
+CONFIGURE_ARGS+=--disable-oss
+.endif
+.endif
 
 .if defined(WITH_SID)
 LIB_DEPENDS+=	sidplay.1:${PORTSDIR}/audio/libsidplay
@@ -283,7 +285,7 @@ CONFIGURE_ARGS+=--disable-sid
 .endif
 
 .if !defined(WITHOUT_TIMIDITY)
-RUN_DEPENDS+=	timidity:${PORTSDIR}/audio/timidity 
+RUN_DEPENDS+=	timidity:${PORTSDIR}/audio/timidity
 CONFIGURE_ARGS+=--enable-timidity
 PLIST_SUB+=	TIMIDITYPLUGIN=""
 .else
@@ -364,7 +366,7 @@ CONFIGURE_ARGS+=--enable-gnome-vfs --enable-gconf
 .endif
 
 .if !defined(WITHOUT_CURL) || exists(${LOCALBASE}/lib/libcurl.so)
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
 PLIST_SUB+=     CURLPLUGIN=""
 .else
 PLIST_SUB+=     CURLPLUGIN="@comment "

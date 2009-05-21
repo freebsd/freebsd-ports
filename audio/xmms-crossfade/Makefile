@@ -7,7 +7,7 @@
 
 PORTNAME=	crossfade
 PORTVERSION=	0.3.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.eisenlohr.org/xmms-crossfade/ CENKES
 PKGNAMEPREFIX=	${APP}-
@@ -39,7 +39,8 @@ CONFIGURE_ARGS+=--enable-samplerate
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/objformat=/s|aout|elf|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/objformat=/s|aout|elf|; \
+		s|dummy audacious|&2|g' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/.libs/libcrossfade.so ${PREFIX}/${PLUGDIR}/

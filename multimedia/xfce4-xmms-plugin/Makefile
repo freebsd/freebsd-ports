@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-xmms-plugin
 PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
@@ -37,7 +37,7 @@ RUN_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
 .endif
 
 .if defined(WITH_AUDACIOUS)
-RUN_DEPENDS+=	audacious:${PORTSDIR}/multimedia/audacious
+RUN_DEPENDS+=	audacious2:${PORTSDIR}/multimedia/audacious
 .endif
 
 post-patch:

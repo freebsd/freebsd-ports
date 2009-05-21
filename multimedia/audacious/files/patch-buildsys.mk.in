@@ -1,11 +1,11 @@
---- buildsys.mk.in.orig	2008-03-16 15:37:56.000000000 +0100
-+++ buildsys.mk.in	2008-03-16 15:38:43.000000000 +0100
-@@ -100,7 +100,7 @@
+--- buildsys.mk.in.orig	2009-05-14 11:22:45.000000000 +0200
++++ buildsys.mk.in	2009-05-14 11:23:14.000000000 +0200
+@@ -123,7 +123,7 @@
+ 	done; \
+ 	if test x"$$regen" = x"1" -a x"$$deps" != "x"; then \
  		${DEPEND_STATUS}; \
- 		rm -f .deps; \
- 		if ${MAKE} ${MFLAGS} ${DEPS}; then \
--			cat ${DEPS} >.deps; \
-+			sed 's|/[^ ]*/include/audacious/dbus.h||g' ${DEPS} >.deps; \
- 			rm -f ${DEPS}; \
+-		if ${MAKE} ${MFLAGS} $$deps && cat $$deps >.deps; then \
++		if ${MAKE} ${MFLAGS} $$deps && sed 's|/[^ ]*/include/audacious/dbus.h||g' $$deps >.deps; then \
+ 			rm -f $$deps; \
  			${DEPEND_OK}; \
  		else \

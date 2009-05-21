@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	1.5.1
-PORTREVISION=	3
+PORTVERSION=	2.0.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 MASTER_SITE_SUBDIR=oliver
@@ -25,19 +24,19 @@ CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-MAN1=		audacious.1 audtool.1
+MAN1=		audacious2.1 audtool2.1
 
 LIB_DEPENDS=	mcs.1:${PORTSDIR}/devel/libmcs \
 		mowgli.2:${PORTSDIR}/devel/libmowgli
 
 PORTDOCS=	README AUTHORS NEWS
 
-OPTIONS=	CHARSET	"Build with automatic charset detection" off \
-		DBUS	"Build with dbus support" on \
-		GNOME	"Build with gconf support" off \
-		NLS	"Native Language Support" on \
-		XML	"Build with xml support" on \
-		EXECINFO "Build with libexecinfo support" off
+OPTIONS=	CHARSET	"Build with automatic charset detection"	off \
+		DBUS	"Build with dbus support"			on  \
+		GNOME	"Build with gconf support"			off \
+		NLS	"Native Language Support"			on  \
+		XML	"Build with xml support"			on  \
+		EXECINFO "Build with libexecinfo support"		on
 
 .include <bsd.port.pre.mk>
 
@@ -83,9 +82,13 @@ post-patch:
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's|+= $${LIB_CPPFLAGS} -I..|= -I.. $${LIB_CPPFLAGS}|' \
 		${WRKSRC}/src/libid3tag/Makefile
-	@${REINPLACE_CMD} 's|FMT_FIXED32,|FMT_FIXED32|' ${WRKSRC}/src/audacious/plugin.h
+	@${REINPLACE_CMD} 's|FMT_FIXED32,|FMT_FIXED32|g; \
+		s|OUTPUT_PLUGIN_INIT_FOUND_DEVICES,|OUTPUT_PLUGIN_INIT_FOUND_DEVICES|g' \
+		${WRKSRC}/src/audacious/plugin.h
+	@${REINPLACE_CMD} 's|WIDGET_FONT_BTN,|WIDGET_FONT_BTN|g' \
+		${WRKSRC}/src/audacious/preferences.h
 .if defined(WITH_EXECINFO) || exists(${LOCALBASE}/lib/libexecinfo.so)
-	@${REINPLACE_CMD} 's|$${REGEX_LIBS}$$|& -L${LOCALBASE}/lib -lexecinfo|' \
+	@${REINPLACE_CMD} 's|$${REGEX_LIBS}|& -L${LOCALBASE}/lib -lexecinfo|' \
 		${WRKSRC}/src/audacious/Makefile
 .endif
 

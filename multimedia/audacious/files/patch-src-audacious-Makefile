@@ -1,6 +1,6 @@
---- src/audacious/Makefile.orig	2008-05-24 00:00:34.000000000 +0200
-+++ src/audacious/Makefile	2008-05-28 19:12:10.000000000 +0200
-@@ -150,15 +150,8 @@
+--- src/audacious/Makefile.bak	2009-05-13 10:10:30.000000000 +0200
++++ src/audacious/Makefile	2009-05-14 11:12:49.000000000 +0200
+@@ -125,15 +125,8 @@
  
  include ../../buildsys.mk
  
@@ -13,26 +13,29 @@
 -pre-depend: ${DBUS_BINDINGS}
 -
 -CPPFLAGS += -DHAVE_CONFIG_H		\
-+CPPFLAGS = -I.. -I../..			\
-+		-DHAVE_CONFIG_H			\
++CPPFLAGS = -I.. -I../.. \
++		-DHAVE_CONFIG_H		\
  		${MOWGLI_CFLAGS}		\
  		${GLIB_CFLAGS}			\
  		${GTHREAD_CFLAGS}		\
-@@ -173,10 +166,9 @@
+@@ -147,13 +140,12 @@
+ 		${SIMD_CFLAGS}			\
  		-D_AUDACIOUS_CORE		\
- 		-I../libSAD				\
  		${EGGSM_CFLAGS}			\
 -		-I.. -I../..			\
- 		-I./intl
+ 		-I./intl			\
+ 		-I.				\
+ 		-I../libSAD			\
+ 		-I../libaudcore
  
 -LIBS += ${LDADD}						\
 +LIBS = ${LDADD}						\
  		${LIBINTL}						\
  		${SAMPLERATE_LIBS}				\
  		../libguess/libguess.a			\
-@@ -190,6 +182,14 @@
- 		${LIBMCS_LIBS}					\
- 		${REGEX_LIBS}
+@@ -168,6 +160,14 @@
+ 		${REGEX_LIBS}					\
+ 		-L../libaudcore -laudcore
  
 +ifeq ($(USE_DBUS),yes)
 +CPPFLAGS += -I../libaudclient
@@ -42,6 +45,6 @@
 +
 +pre-depend: ${DBUS_BINDINGS}
 +
- LDFLAGS += ${PROG_IMPLIB_LDFLAGS}
+ LDFLAGS += ${PROG_IMPLIB_LDFLAGS} ${AUDLDFLAGS}
  
- build_stamp.c: 
+ build_stamp.c:
