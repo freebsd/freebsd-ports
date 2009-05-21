@@ -7,7 +7,7 @@
 
 PORTNAME=	tunapie
 PORTVERSION=	2.1.14
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,.r,rc,}
@@ -71,7 +71,7 @@ RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 # default AUDIOPLAYER
 .if defined(WITH_AUDACIOUS)
-RUN_DEPENDS+=	${PREFIX}/lib/audacious/Container/libpls.so:${PORTSDIR}/multimedia/audacious-plugins
+RUN_DEPENDS+=	${PREFIX}/lib/audacious/Container/pls.so:${PORTSDIR}/multimedia/audacious-plugins
 .elifdef(WITH_BEEP_MEDIA_PLAYER)
 RUN_DEPENDS+=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
 .else

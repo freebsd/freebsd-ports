@@ -7,7 +7,7 @@
 
 PORTNAME=	audacious-dumb
 PORTVERSION=	0.57
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.netswarm.net/misc/ \
 		CRITICAL
@@ -15,8 +15,8 @@ MASTER_SITES=	http://www.netswarm.net/misc/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Audacious plugin that support the IT, XM, S3M or MOD formats
 
-RUN_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
-BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious \
+RUN_DEPENDS=	audacious2:${PORTSDIR}/multimedia/audacious
+BUILD_DEPENDS=	audacious2:${PORTSDIR}/multimedia/audacious \
 		${LOCALBASE}/lib/libdumb.a:${PORTSDIR}/audio/dumb
 
 USE_GMAKE=	yes

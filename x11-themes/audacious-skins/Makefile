@@ -7,13 +7,14 @@
 
 PORTNAME=	audacious-skins
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A collection of audacious skins
 
-BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
+BUILD_DEPENDS=	audacious2:${PORTSDIR}/multimedia/audacious
 
 NO_BUILD=	yes
 
