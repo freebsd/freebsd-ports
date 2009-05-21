@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Crypt-Eksblowfish
-PORTVERSION=	0.005
+PORTVERSION=	0.007
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	Perl module for the Eksblowfish block cipher
+
+RUN_DEPENDS=	${SITE_PERL}/Class/Mix.pm:${PORTSDIR}/devel/p5-Class-Mix \
+		${SITE_PERL}/parent.pm:${PORTSDIR}/devel/p5-parent
 
 PERL_MODBUILD=	yes
 
