@@ -39,3 +39,5 @@ CONFIGURE_ARGS= --enable-png \
 
 WANT_GNOME=	yes
 WANT_SDL=	yes
+
+MAKE_JOBS_UNSAFE=	yes

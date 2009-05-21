@@ -25,6 +25,7 @@ HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 ALL_TARGET=	world.opt
 STRIP=
+MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS=	-prefix ${PREFIX}
 OPTIONS=	X11	"Build with X11 support" on \

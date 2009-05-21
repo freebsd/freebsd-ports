@@ -19,6 +19,7 @@ COMMENT=	General-purpose multi-platform x86 and x86-64 assembler
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install install_rdf
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		nasm.1 ndisasm.1 \
 		ldrdf.1 rdf2bin.1 rdf2com.1 rdfdump.1 rdflib.1 rdx.1

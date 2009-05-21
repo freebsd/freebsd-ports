@@ -24,6 +24,7 @@ _PATCH=	9
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/security/nss
 
+MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/nss
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
