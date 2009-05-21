@@ -7,7 +7,7 @@
 
 PORTNAME=	aMule
 PORTVERSION=	2.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/amule
 
@@ -45,7 +45,8 @@ OPTIONS=	OPTIMIZE "Build with optimization" on \
 		ALC "Compile aMule Link Creator (+GUI)" on \
 		AMULEDAEMON "Compile aMule daemon version - EXPERIMENTAL" off \
 		WXUNICODE "Enable Unicode support" on \
-		GEOIP "Enable GeoIP IP2Country support" off
+		GEOIP "Enable GeoIP IP2Country support" off \
+		UPNP "Enable Universal Plug and Play support" off
 
 DOCSDIR=	${PREFIX}/share/doc/aMule-${PORTVERSION}
 PORTDOCS=	ABOUT-NLS Changelog EC_Protocol.txt \
@@ -121,6 +122,13 @@ CONFIGURE_ARGS+=	--enable-geoip
 LIB_DEPENDS+=		GeoIP.5:${PORTSDIR}/net/GeoIP
 .else
 CONFIGURE_ARGS+=	--disable-geoip
+.endif
+
+.if defined(WITH_UPNP)
+CONFIGURE_ARGS+=	--with-libupnp-prefix=${LOCALBASE}
+LIB_DEPENDS+=		upnp.3:${PORTSDIR}/devel/upnp
+.else
+CONFIGURE_ARGS+=	--disable-upnp
 .endif
 
 .if !defined(WITHOUT_WXUNICODE)
