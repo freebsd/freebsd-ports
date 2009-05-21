@@ -8,6 +8,15 @@
    return -1;
  }
  
+@@ -525,7 +524,7 @@
+     return -1;
+   }
+
+-  if ((ccb->ccb_h.status & CAM_STATUS_MASK) != CAM_REQ_CMP) {
++  if (((ccb->ccb_h.status & CAM_STATUS_MASK) != CAM_REQ_CMP) && ((ccb->ccb_h.status & CAM_STATUS_MASK) != CAM_SCSI_STATUS_ERROR)) {
+  #if __FreeBSD_version > 500000
+     cam_error_print(cam_dev,ccb,CAM_ESF_ALL,CAM_EPF_ALL,stderr);
+  #endif
 @@ -924,6 +923,7 @@
  static const char * fbsd_dev_prefix = "/dev/";
  static const char * fbsd_dev_ata_disk_prefix = "ad";

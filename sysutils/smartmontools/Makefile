@@ -7,7 +7,7 @@
 
 PORTNAME=	smartmontools
 PORTVERSION=	5.38
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,6 +24,8 @@ USE_RC_SUBR=	smartd
 
 MAN5=		smartd.conf.5
 MAN8=		smartd.8 smartctl.8
+
+CFLAGS:=	${CFLAGS:S/-O2/-O/}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| install-initdDATA | |' ${WRKSRC}/Makefile.in
