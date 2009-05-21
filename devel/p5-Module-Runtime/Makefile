@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Module-Runtime
-PORTVERSION=	0.005
+PORTVERSION=	0.006
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	Perl module for runtime module handling
+
+BUILD_DEPENDS=	${SITE_PERL}/parent.pm:${PORTSDIR}/devel/p5-parent
+RUN_DEPENDS=	${SITE_PERL}/parent.pm:${PORTSDIR}/devel/p5-parent
 
 PERL_MODBUILD=	yes
 
