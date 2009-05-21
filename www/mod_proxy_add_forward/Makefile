@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Apache module that adds a client IP header to outgoing proxy requests
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	1.3
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.outoforder.cc/downloads/${PORTNAME}/
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Allows Apache to log to a MySQL database
 
+MAKE_JOBS_SAFE=  yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_MYSQL=	yes

@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An Internet Content Acceleration module for Apache
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	1.3
 MAKE_ENV+=	"APXS=${APXS}"
 ALL_TARGET=	build

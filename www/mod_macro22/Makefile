@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.cri.ensmp.fr/~coelho/mod_macro/
 MAINTAINER=	lukasz@wasikowski.net
 COMMENT=	Apache 2.2.x module for use macros in config files
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	22
 LATEST_LINK=	mod_macro22
 AP_FAST_BUILD=	YES

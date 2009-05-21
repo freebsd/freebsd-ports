@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	dsl@bitwizards.com.au
 COMMENT=	Apache module for rewriting HTML links in proxied content
 
+MAKE_JOBS_SAFE=  yes
+
 SUB_FILES=	pkg-message
 USE_APACHE=	2.0+
 AP_FAST_BUILD=	YES

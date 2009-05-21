@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME:S/_//:S/21//}-apache_${PORTVERSION}
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	An intrusion detection and prevention engine
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	2.0+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

@@ -14,6 +14,8 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A http IRIs module for Apache 2
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	20+
 PLIST_SUB=	APACHE_DIR=${APACHEMODDIR}
 

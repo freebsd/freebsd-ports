@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	modntlm
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	NTLM authentication module for the Apache webserver
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	1.3
 MAKE_ENV=	APXS=${APXS}
 

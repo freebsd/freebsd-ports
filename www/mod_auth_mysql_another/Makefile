@@ -15,6 +15,8 @@ PKGNAMESUFFIX=	_another
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Allows users to use MySQL databases for user authentication
 
+MAKE_JOBS_SAFE=  yes
+
 USE_MYSQL=	YES
 
 SHORTMODNAME=   mysql_auth

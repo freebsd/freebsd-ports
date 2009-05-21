@@ -14,6 +14,8 @@ MASTER_SITES=	http://dominia.org/djao/limit/
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Limit the number of simultaneous connections from a single IP address
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	1.3
 PLIST_FILES=	${APACHEMODDIR}/mod_limitipconn.so
 

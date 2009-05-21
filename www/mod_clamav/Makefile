@@ -14,6 +14,8 @@ MASTER_SITES=	http://software.othello.ch/mod_clamav/ \
 MAINTAINER=	tmueko@kommunity.net
 COMMENT=	Scans content delivered by the Apache20 proxy module for viruses
 
+MAKE_JOBS_SAFE=  yes
+
 USE_AUTOTOOLS=	libtool:15
 USE_APACHE=	2.2
 GNU_CONFIGURE=	yes

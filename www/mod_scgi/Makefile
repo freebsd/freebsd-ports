@@ -16,6 +16,8 @@ DISTNAME=	scgi-${PORTVERSION:S/.a/a/}
 MAINTAINER=	dryice@dryice.name
 COMMENT=	Apache module that implements the client side of the SCGI protocol
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	1.3+
 WRKSRC=		${WRKDIR}/${DISTNAME}/${SCGI_DIR}
 

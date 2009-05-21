@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.outoforder.cc/downloads/mod_transform/
 MAINTAINER=	stan@stormier.net
 COMMENT=	An XSLT and XIncludes Filter module for Apache 2.0
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	2.0
 USE_AUTOTOOLS=	libtool:15
 HAS_CONFIGURE=	yes

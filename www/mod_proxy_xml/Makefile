@@ -15,6 +15,8 @@ DISTFILES=	xmlns.h mod_proxy_xml.c
 MAINTAINER=	dom@helenmarks.co.uk
 COMMENT=	Apache module for rewriting URI references in XML
 
+MAKE_JOBS_SAFE=  yes
+
 USE_GNOME=	libxml2
 USE_APACHE=	2.0+
 

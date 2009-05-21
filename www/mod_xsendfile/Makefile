@@ -13,6 +13,8 @@ MASTER_SITES=	http://celebnamer.celebworld.ws/stuff/mod_xsendfile/
 MAINTAINER=	potatosaladx@gmail.com
 COMMENT=	An Apache2 module that processes X-SENDFILE headers
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	2.0+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

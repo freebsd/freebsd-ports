@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.lexa.ru/pub/apache-rus/contrib/
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A module issuing the "correct" cookies for counting the site visitors
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	1.3+
 
 PORTDOCS=	README.html

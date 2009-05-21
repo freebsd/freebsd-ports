@@ -16,6 +16,8 @@ DISTFILES=	mod_line_edit.c
 MAINTAINER=	dom@helenmarks.co.uk
 COMMENT=	Apache module for simple text rewriting
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	2.0+
 
 do-extract:

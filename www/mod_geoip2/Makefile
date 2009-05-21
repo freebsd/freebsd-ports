@@ -17,6 +17,8 @@ COMMENT=	An Apache module that provides the country code of the client's IP
 BUILD_DEPENDS=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
 RUN_DEPENDS=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
 
+MAKE_JOBS_SAFE=  yes
+
 CONFLICTS=	mod_geoip-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}

@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Apache module to build the extremely lightweight Weblog environment
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	1.3
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

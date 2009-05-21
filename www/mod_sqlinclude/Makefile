@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	An Apache module implementing config inclusion from MySQL databases
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	1.3
 USE_MYSQL=	yes
 

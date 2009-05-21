@@ -14,6 +14,8 @@ DISTFILES=	${PORTNAME}.c readme.txt
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Log the time between request and the first byte of the response served
 
+MAKE_JOBS_SAFE=  yes
+
 PROJECTHOST=	mod-log-firstbyte
 USE_APACHE=	2.0+
 MOD=		mod_log_firstbyte

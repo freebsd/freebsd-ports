@@ -15,6 +15,8 @@ MASTER_SITES=	http://pam.sourceforge.net/mod_auth_pam/dist/ \
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Allows users to use PAM modules for user authentication
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	1.3
 
 AP_FAST_BUILD=	yes
