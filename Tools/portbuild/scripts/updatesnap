@@ -32,12 +32,12 @@ umask 002
 
 #cvsup -g /root/cvs-supfile || finish 1
 
-cd $base/ports
-fulldate=$(date)
-cvs -Rq -d ${prepo} update -PdA -D "${fulldate}"
-echo ${fulldate} > cvsdone
-snapdate=$(stamp ${fulldate})
-zfs snapshot ${zbase}/ports@${snapdate}
+#cd $base/ports
+#fulldate=$(date)
+#cvs -Rq -d ${prepo} update -PdA -D "${fulldate}"
+#echo ${fulldate} > cvsdone
+#snapdate=$(stamp ${fulldate})
+#zfs snapshot ${zbase}/ports@${snapdate}
 
 cd $base/src-HEAD
 fulldate=$(date)
