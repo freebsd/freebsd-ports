@@ -22,6 +22,9 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 CONFLICTS=	cantus-1*
+
+LATEST_LINK=	${PORTNAME}3
+
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade2 glib20
