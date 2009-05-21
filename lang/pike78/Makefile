@@ -7,6 +7,7 @@
 
 PORTNAME=	pike78
 PORTVERSION=	7.8.116
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		http://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
@@ -70,7 +71,6 @@ CONFIGURE_ARGS+=	--without-debug \
 		 --without-msql \
 		 --without-odbc \
 		 --without-sane \
-		 --without-ssleay \
 		 --without-svg \
 		 --without-sybase \
 		 --prefix=${PREFIX}
@@ -131,8 +131,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| -lgmp| -L${LOCALBASE}/lib -lgmp|' \
 		${WRKSRC}/src/modules/Gmp/configure ${WRKSRC}/src/modules/_Image_XFace/configure
 	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|' \
-		${WRKSRC}/src/configure
-	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
+		-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
+		-e 's|,-Bshareable|& -shared|' \
 		${WRKSRC}/src/configure
 	@${REINPLACE_CMD} -e '/install.*MANDIR/s|^|//|' \
 		${WRKSRC}/bin/install.pike
