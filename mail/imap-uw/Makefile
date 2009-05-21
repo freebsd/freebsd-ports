@@ -34,6 +34,7 @@ OPTIONS=	SSL "Compile with SSL support" on \
 LIB_DEPENDS=	c-client4.9:${PORTSDIR}/mail/cclient
 .if defined(WITH_DRAC)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
+MAKE_ARGS+=	WITH_DRAC=yes
 .endif
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
