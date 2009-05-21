@@ -13,24 +13,20 @@
 #
 # options are:
 #   -daemon : poll repeatedly
-#   -queue  : update queue entries (XXX racy)
 
 #
 # TODO:
 # XXX qmgr notification of new/removed machines
-# XXX log state changes in daemon mode
-# XXX clean up inactive builds
-# XXX test thread shutdown
-# XXX needed an explicit way to request setup?
-# XXX signal handler
+# XXX counter before declaring a machine as dead
+# Declares a machine as online if it reports 0 data from infoseek?
 
 # * Deal with machines change OS/kernel version
 #     - ACL list might change!
 #          - take machine offline, update ACL/arch/etc, reboot, bring online
 
 import sys, threading, socket
-from popen2 import *
 from time import sleep
+import os, subprocess, logging
 
 if len(sys.argv) < 1:
     print "Usage: %s <arch> [<arch> ...]" % sys.argv[0]
@@ -39,14 +35,9 @@ if len(sys.argv) < 1:
 arches=set()
 mlist={}
 polldelay=0
-queue=0
 for i in sys.argv[1:]:
     if i == "-daemon":
-        polldelay = 30
-        continue
-
-    if i == "-queue":
-        queue = 1
+        polldelay = 180
         continue
 
     if "/" in i:
@@ -82,9 +73,6 @@ class MachinePoll(threading.Thread):
     host = None
     port = 414
 
-    # Should we update queue entry?
-    queue = None
-
     timeout = None	# How often to poll
     shutdown = False # Exit at next poll wakeup
 
@@ -94,17 +82,21 @@ class MachinePoll(threading.Thread):
     # Dictionary of variables reported by the client
     vars = None
 
-    def __init__(self, mach, arch, timeout, host, port, queue):
+    def __init__(self, mach, arch, timeout, host, port):
         super(MachinePoll, self).__init__()
         self.mach = mach
         self.arch = arch
         self.timeout = timeout
         self.host = host
         self.port = port
-        self.queue = queue
+
+        # How many times the connection timed out since last success
+        self.timeouts = 0 
 
         self.vars = {}
     
+        self.setDaemon(True)
+
     def run(self):
         while True:
             if self.shutdown:
@@ -124,63 +116,104 @@ class MachinePoll(threading.Thread):
         lines = []
         try:
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            s.settimeout(60)
             s.connect((self.host, self.port))
-            f = s.makefile()
-        
-            lines = f.readlines()
+
+            data = ""
+            while len(data) < 65536:
+                chunk = s.recv(8192)
+                if not chunk:
+                    break
+                data += chunk
+
             nowonline = True
+            self.timeouts = 0
+            lines = data.split("\n")
+        except socket.timeout:
+            if self.online:
+                logging.info("[%s] Connection timeout" % self.mach)
+            self.timeouts += 1
+            if self.timeouts < 3:
+                nowonline = self.online
         except:
             pass
-        finally:
+	finally:
             try:
                 s.close()
             except:
                 pass
 
         if nowonline != self.online:
-            print "State change: %s %s -> %s" % (self.mach, self.online, nowonline)
+            logging.info("[%s] Now %s" % (self.mach, "online" if nowonline else "OFFLINE"))
             self.online = nowonline
+	    if self.online:
+		self.timeouts = 0
             # XXX inform qmgr of state change
 
-        if self.online and not lines:
+        if self.online and not lines and not self.timeouts:
             # reportload script is missing
             dosetup=1
         else:
             dosetup=0
 
         for line in lines:
+            if line == "":
+                continue
             line=line.rstrip()
             part=line.partition('=')
             if part[1] != '=' or not part[0]:
 #                if "No such file or directory" in line:
 #                    # Client may require setting up post-boot
 #                    dosetup=1
-                print "Bad input from %s: %s" % (self.mach, line)
+                logging.info("[%s] Bad input: %s" % (self.mach, line))
                 # Assume client needs setting up
                 dosetup=1
-
             try:
                 old = self.vars[part[0]]
             except KeyError:
                 old = ""
             if old != part[2]:
                 self.vars[part[0]] = part[2]
-#                print "%s@%s: \"%s\" -> \"%s\"" % (part[0], self.mach, old, part[2])
+#                logging.info("%s@%s: \"%s\" -> \"%s\"" % (part[0], self.mach, old, part[2]))
                 # XXX update qmgr
 
+        try:
+            envs = self.vars['buildenvs']
+            for e in envs.split():
+                (arch, branch, buildid) = e.split("/")
+                f = "/var/portbuild/%s/%s/builds/%s/.active" % \
+                    (arch, branch, buildid)
+                if os.path.exists(f):
+                    continue
+                # Clean up a stale buildenv
+                logging.info("[%s] Cleaning up stale build: %s" % (self.mach, e))
+                (err, out) = self.setup(branch, buildid, "-nocopy -full")
+                if err:
+                    logging.info("[%s] Error from cleanup" % (self.mach))
+                for l in out.split("\n"):
+                    if l == "":
+                        continue
+                    logging.info("[%s] %s" % (self.mach, l))
+
+        except KeyError:
+            pass
+
         if dosetup:
-            print "Setting up %s" % (self.mach)
-            (err, out) = self.setup()
+            logging.info("[%s] Setting up machine" % (self.mach))
+            (err, out) = self.setup("-", "-")
             if err:
-                print "Error from setup of %s:" % (self.mach)
-                print out
-            print "Setup of %s complete" % (self.mach)
-            return
+                logging.info("[%s] Error from setup" % (self.mach))
+                for l in out.split("\n"):
+                    if l == "":
+                        continue
+                    logging.info("[%s] %s" % (self.mach, l))
+            logging.info("[%s] Setup complete" % (self.mach))
                             
         # Validate that arch has not changed (e.g. i386 -> amd64)
         try:
             if self.arch != self.vars['arch']:
-                print "Machine %s reporting unexpected arch: %s -> %s" % (self.mach, self.arch, self.vars['arch'])
+                logging.info("[%s] Unexpected arch: %s -> %s" % \
+                    (self.mach, self.arch, self.vars['arch']))
         except KeyError:
             pass
 
@@ -195,23 +228,26 @@ class MachinePoll(threading.Thread):
             pass
         f.close()
 
-        if self.queue:
-            try:
-                f = file("%s/%s/queue/%s" % (pb, self.arch, self.mach), "w")
-            except:
-                return
-
-            try:
-                f.write("%s\n" % self.vars['jobs'])
-            except:
-                pass
-            f.close()
-
-    def setup(self):
-        child = Popen4("su ports-%s -c \"/var/portbuild/scripts/dosetupnode %s - - %s\"" % (self.arch, self.arch, self.mach), 0)
+    def setup(self, branch, buildid, args = ""):
+        cmd = "su ports-%s -c \"/var/portbuild/scripts/dosetupnode %s %s %s %s %s\""\
+            % (self.arch, self.arch, branch, buildid, self.mach, args)
+        child = subprocess.Popen(cmd, shell=True, stderr = subprocess.STDOUT,
+                                 stdout = subprocess.PIPE)
         err = child.wait()
-        out = "".join(child.fromchild.readlines())
+        out = "".join(child.stdout.readlines())
         return (err, out)
+
+logging.basicConfig(level=logging.INFO,
+                    format='[%(asctime)s] %(message)s',
+                    datefmt='%d %b %Y %H:%M:%S',
+                    filename='/var/log/pollmachine.log', filemode='w') 
+
+log_console = logging.StreamHandler()
+log_console.setLevel(logging.INFO)
+formatter = logging.Formatter('[%(asctime)s] %(message)s',
+                              datefmt = '%d %b %Y %H:%M:%S')
+log_console.setFormatter(formatter) 
+logging.getLogger('').addHandler(log_console) 
 
 while True:
     for arch in arches:
@@ -233,28 +269,30 @@ while True:
         machines[arch]=now
 
         for mach in gone:
-            print "Removing machine %s" % mach
+            logging.info("Removing machine %s/%s" % (arch, mach))
             # XXX disable from qmgr
             pollthreads[mach].shutdown=True
             del pollthreads[mach]
 
         for mach in new:
-            print "Adding machine %s" % mach
+            logging.info("Adding machine %s/%s" % (arch, mach))
             # XXX set up qmgr
 
             pc="%s/%s/portbuild.conf" % (pb, arch)
             pch="%s/%s/portbuild.%s" % (pb, arch, mach)
-            config = Popen4("test -f %s && . %s; test -f %s && . %s; echo $infoseek_host; echo $infoseek_port" % (pc, pc, pch, pch))
-            host=config.fromchild.readline().rstrip()
+            cmd = "test -f %s && . %s; test -f %s && . %s; echo $infoseek_host; echo $infoseek_port" % (pc, pc, pch, pch)
+            config = subprocess.Popen(cmd, shell = True,
+                                      stdout = subprocess.PIPE)
+            host=config.stdout.readline().rstrip()
             if not host:
                 host = mach
-            port=config.fromchild.readline().rstrip()
+            port=config.stdout.readline().rstrip()
             try:
                 port = int(port)
             except (TypeError, ValueError):
                 port = 414
 
-            pollthreads[mach] = MachinePoll(mach, arch, polldelay, host, port, queue)
+            pollthreads[mach] = MachinePoll(mach, arch, polldelay, host, port)
             pollthreads[mach].start()
 
     if not polldelay:

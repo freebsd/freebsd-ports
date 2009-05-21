@@ -94,7 +94,7 @@ do_clone() {
 
     if [ -d ${newbuilddir} ]; then
 	if [ ! -f ${pbab}/builds/previous/.keep ]; then
-	    build destroy ${arch} ${branch} previous
+	    /var/portbuild/scripts/build destroy ${arch} ${branch} previous
 	fi
         rm -f ${pbab}/builds/previous
 	mv ${pbab}/builds/latest ${pbab}/builds/previous
@@ -111,13 +111,22 @@ do_portsupdate() {
     buildid=$3
     builddir=$4
     shift 4
+    if [ $# -gt 0 ]; then
+	arg=$1
+	shift
+    fi
 
     portsfs=a/portbuild/${arch}/${buildid}/ports
+
+    destroy_fs a/portbuild/${arch} ${buildid} /ports || exit 1
+
+    if [ "${arg}" = "-umount" ]; then
+	return
+    fi
 
     echo "================================================"
     echo "Reimaging ZFS ports tree on ${builddir}/ports"
     echo "================================================"
-    destroy_fs a/portbuild/${arch} ${buildid} /ports || exit 1
     
     now=$(now)
     zfs snapshot a/snap/ports@${now}
@@ -132,15 +141,24 @@ do_srcupdate() {
     buildid=$3
     builddir=$4
     shift 4
+    if [ $# -gt 0 ]; then
+	arg=$1
+	shift
+    fi
 
     srcfs=a/portbuild/${arch}/${buildid}/src
+
+    destroy_fs a/portbuild/${arch} ${buildid} /src || exit 1
+
+    if [ "${arg}" = "-umount" ]; then
+	return
+    fi
 
     echo "================================================"
     echo "Reimaging ZFS src tree on ${builddir}/src"
     echo "================================================"
     
-    destroy_fs a/portbuild/${arch} ${buildid} /src || exit 1
-    
+
     case ${branch} in
 	8|8-exp)
 	    srcbranch=HEAD
@@ -173,11 +191,8 @@ cleanup_client() {
     test -f ${pb}/${arch}/portbuild.${mach} && . ${pb}/${arch}/portbuild.${mach}
 
     # Kill off builds and clean up chroot
-    ${pb}/scripts/dosetupnode ${arch} ${branch} ${buildid} ${mach} -nocopy -queue
-    
-    if [ "${arg}" = "-full" ]; then
-	${ssh_cmd} ${client_user}@${mach} ${sudo_cmd} rm -rf ${pb}/${arch}/${branch}/builds/${buildid}/.ready ${pb}/${arch}/${branch}/builds/${buildid} /tmp/.setup-${buildid}
-    fi
+    ${pb}/scripts/dosetupnode ${arch} ${branch} ${buildid} ${mach} -nocopy -queue -full
+
     echo "Finished cleaning up ${arch}/${branch} build ID ${buildid} on ${mach}"
 
 }
@@ -211,7 +226,7 @@ do_upload() {
 test_fs() {
     local fs=$1
 
-    zfs list -Ht filesystem | awk '{print $1}' | grep -q "$fs"
+    zfs list -Ht filesystem ${fs} > /dev/null 2>&1
 
 }
 
@@ -286,22 +301,22 @@ destroy_fs() {
 	# We might have snapshots on the target filesystem, e.g. if it
 	# is both the head and tail of its clone tree.  They should be
 	# unreferenced.
-	(zfs list -H -o name | grep "^${fullfs}@" | xargs -n 1 zfs destroy) || return 1
+	# We have to grep because zfs list -H returns an error instead of
+	# a null list if no snapshots exist
+	if ! (zfs list -r -H -o name -t snapshot ${fullfs} | grep "^${fullfs}@" | xargs -n 1 zfs destroy); then
+	    return 1
+	fi
 
 	# The target filesystem should now be unreferenced
-	zfs destroy -f "${fullfs}" || return 1
-
-	# Clean up the initial snapshot(s) that were promoted onto a
-        # cloned filesystem.  It could have been propagated several
-        # times so we don't know where it ended up.  Therefore we
-        # can't match for the ${buildid} part of ${fullfs}.
-	#
-	# XXX might be doing a substring match of subfs but we can't
-	# prepend / because a null subfs will not match
+	if ! zfs destroy -f "${fullfs}"; then
+	    return 1
+	fi
 
 	# Destroy the origin snapshot, which should be unreferenced
 	if [ ! -z "${parent}" ]; then
-	    zfs destroy -f ${parent} || return 1
+	    if ! zfs destroy -f ${parent}; then
+		return 1
+	    fi
 	fi
     fi
 }	
@@ -374,7 +389,7 @@ proxy_user() {
 	eval "do_${cmd} ${arch} ${branch} ${buildid} \"${builddir}\" ${args}"
 	error=$?
     else
-	su ports-${arch} -c "build ${cmd} ${arch} ${branch} ${buildid} \"${builddir}\" ${args}"
+	su ports-${arch} -c "/var/portbuild/scripts/build ${cmd} ${arch} ${branch} ${buildid} \"${builddir}\" ${args}"
 	error=$?
     fi
 

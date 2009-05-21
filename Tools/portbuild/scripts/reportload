@@ -16,7 +16,7 @@ fi
 error=
 for i in squid disk; do
   if [ -f ${scratchdir}/.${i} ]; then
-    error=${i} "${error}"
+    error="${i} ${error}"
   fi
 done
 

@@ -5,8 +5,6 @@
 
 # -norsync|-nocopy : Don't copy files, just clean up builds
 #
-# -queue : update queue once we finish setting up
-#
 # -force : force file copying/extraction even if it appears it is
 #          up-to-date
 #
@@ -99,9 +97,16 @@ setup() {
     ${client_setup} post-copy ${args} || (echo "post-copy for ${node} failed"; return 1)
 
     if [ "${queue}" -eq 1 ]; then
-	lockf -k ${pb}/${arch}/queue/.lock \
-	    ${pb}/scripts/pollmachine ${arch}/${node} -queue
+	jobs=$(python /var/portbuild/evil/qmanager/qclient jobs | grep "${node}" | grep "${arch}/${branch}/${buildid} package" | awk '{print $1}' | tail +1)
+	for j in ${jobs}; do
+	    python /var/portbuild/evil/qmanager/qclient release $j
+	done
     fi
+
+    if [ "${full}" -eq 1 ]; then
+	${ssh_cmd} ${client_user}@${node} ${sudo_cmd} rm -rf ${pb}/${arch}/${branch}/builds/${buildid}/.ready ${pb}/${arch}/${branch}/builds/${buildid} /tmp/.setup-${buildid}
+    fi
+
     echo "setting up of $node ended at $(date)"
 }
 
@@ -109,6 +114,7 @@ pbab=${pb}/${arch}/${branch}
 
 norsync=0
 queue=0
+full=0
 
 while [ $# -ge 1 ]; do
     case $1 in
@@ -121,6 +127,9 @@ while [ $# -ge 1 ]; do
 	    ;;
 	-force)
 	    force=-force
+	    ;;
+	-full)
+	    full=1
 	    ;;
     esac
     shift

@@ -10,511 +10,571 @@
 # where the entire cluster waits for a deep part of the tree to
 # build on a small number of machines
 #
-# Other advantages are that this system is easily customizable and
-# will let us customize things like the matching policy of jobs to
-# machines.
+# We can dynamically respond to changes in build machine availability,
+# since the queue manager will block jobs that cannot be immediately
+# satisfied and will unblock us when a job slot becomes available.
+#
+# When a package build fails, it is requeued with a lower priority
+# such that it will rebuild again as soon as no "phase 1" packages
+# are available to build.  This prevents the cluster staying idle
+# until the last phase 1 package builds.
+#
+# Other advantages are that this system is easily customizable and in
+# the future will let us customize things like the matching policy of
+# jobs to machines.  For example, we could avoid dispatching multiple
+# openoffice builds to the same system.
 #
 # TODO:
-# * External queue manager
-# * Mark completed packages instead of deleting them
+# * Combine build prep stages?
+#    - initial check for file up-to-date
 # * check mtime for package staleness (cf make)
-# * Check for parent mtimes after finishing child
+# * option to skip phase 2
 
-import os, sys, threading, time, subprocess, fcntl, operator
-#from itertools import ifilter, imap
-from random import choice
+from qmanagerclient import *
 
-def parseindex(indexfile):
+import os, sys, threading, time, subprocess
+#import random
+from itertools import chain
+#import gc
+from stat import *
 
-    tmp={}
-    pkghash={}
-    for i in file(indexfile):
-        line=i.rstrip().split("|")
-        pkg = line[0]
-        tmp[pkg] = line[1:]
+from Queue import Queue
+from heapq import *
 
-        # XXX hash category names too
+categories = {}
+ports = {}
 
-        # Trick python into storing package names by reference instead of copying strings and wasting 60MB
-        pkghash[pkg] = pkg
+# When a build fails we requeue it with a lower priority such that it
+# will never preempt a phase 1 build but will build when spare
+# capacity is available.
+PHASE2_BASE_PRIO=1000
 
-    index=dict.fromkeys(tmp.keys())
-    for pkg in tmp.iterkeys():
-        line = tmp[pkg]
-        data={'name': pkg, 'path':line[0],
-                #'prefix':line[1],
-                #'comment':line[2],
-                #'descr':line[3],
-                #'maintainer':line[4],
-                'categories':line[5], # XXX duplicates strings
-                'bdep':[pkghash[i] for i in line[6].split(None)],
-                'rdep':[pkghash[i] for i in line[7].split(None)],
-                #'www':line[8],
-                'edep':[pkghash[i] for i in line[9].split(None)],
-                'pdep':[pkghash[i] for i in line[10].split(None)],
-                'fdep':[pkghash[i] for i in line[11].split(None)],
-                'height':None}
-        if index[pkg] is None:
-            index[pkg] = data
-        else:
-            index[pkg].update(data)
-        if not index[pkg].has_key('parents'):
-            index[pkg]['parents'] = []
+# Process success quickly so other jobs are started
+SUCCESS_PRIO = -1000
 
-        # XXX iter?
-        deps=set()
-        for j in ['bdep','rdep','edep','fdep','pdep']:
-            deps.update(set(index[pkg][j]))
-        index[pkg]['deps'] = [pkghash[i] for i in deps]
+# Failure should be a less common event :)
+FAILURE_PRIO = -900
 
-        for j in deps:
-            # This grossness is needed to avoid a second pass through
-            # the index, because we might be about to refer to
-            # packages that have not yet been processed
-            if index[j] is not None:
-                if index[j].has_key('parents'):
-                    index[j]['parents'].append(pkghash[pkg])
-                else:
-                    index[j]['parents'] = [pkghash[pkg]]
+# Port status codes
+PENDING = 1 # Yet to build
+PHASE2 = 2  # Failed once
+
+class PriorityQueue(Queue):
+    """Variant of Queue that retrieves open entries in
+    priority order (lowest first).
+    Entries are typically tuples of the form:  (priority number,
+    data)
+    This class can be found at: Python-2.6a3/Lib/Queue.py
+    """
+    maxsize = 0
+
+    def _init(self, maxsize):
+        self.queue = []
+
+    def _qsize(self, len=len):
+        return len(self.queue)
+
+    def _put(self, item, heappush=heappush):
+        heappush(self.queue, item)
+
+    def _get(self, heappop=heappop):
+        return heappop(self.queue) 
+
+class Index(object):
+
+    def __init__(self, indexfile):
+        self.indexfile = indexfile
+
+    def parse(self, targets = None):
+
+        print "[MASTER] Read index"
+        f = file(self.indexfile)
+        index = f.readlines()
+        f.close()
+        f = None
+        del f
+
+        lines=[]
+        print "[MASTER] Phase 1"
+        for i in index:
+            (name, path, prefix, comment, descr, maintainer, categories, bdep,
+             rdep, www, edep, pdep, fdep) = i.rstrip().split("|")
+
+            if targets is None or name in targets:
+                lines.append((name, bdep, rdep, edep, pdep, fdep))
+
+                Port(name, path, "", "", "", "",
+                     categories, "")
+        index = None
+        del index
+
+        print "[MASTER] Phase 2"
+        for (name, bdep, rdep, edep, pdep, fdep) in lines:
+            ports[name].setdeps(bdep, rdep, edep, pdep, fdep)
+
+        lines = None
+        del lines
+        print "[MASTER] Done"
+
+def depthindex(targets):
+    """ Initial population of depth tree """
+
+    for i in targets:
+        i.depth_recursive()
+
+class Port(object):
+
+    def __init__(self, name, path, prefix, comment, descr, maintainer,
+                 cats, www):
+
+        __slots__ = ["name", "path", "prefix", "comment", "descr",
+                     "maintainer", "www", "bdep", "rdep", "edep", "pdep",
+                     "fdep", "alldep", "parents",  "depth", "categories"]
+
+        self.name = name
+        self.path = path
+        self.prefix = prefix
+        self.comment = comment
+        self.descr = descr
+        self.maintainer = maintainer
+        self.www = www
+
+        # Populated later
+        self.bdep = []
+        self.rdep = []
+        self.edep = []
+        self.pdep = []
+        self.fdep = []
+
+        self.alldep = []
+        self.parents = []
+        self.id = None # XXX
+
+        self.status = PENDING
+
+        # Whether the package build has completed and is hanging around
+        # to resolve dependencies for others XXX use status
+        self.done = False
+
+        # Depth is the maximum length of the dependency chain of this port
+        self.depth = None
+
+        self.categories=[]
+        scats = cats.split()
+        if len(scats) != len(set(scats)):
+            print "[MASTER] Warning: port %s includes duplicated categories: %s" % (name, cats)
+
+        for c in set(scats):
+            try:
+                cat = categories[c]
+            except KeyError:
+                cat = Category(c)
+
+            self.categories.append(cat)
+            cat.add(self)
+
+        ports[name] = self
+
+    def remove(self):
+        """ Clean ourselves up but don't touch references in other objects;
+they still need to know about us as dependencies etc """
+
+        self.fdep = None
+        self.edep = None
+        self.pdep = None
+        self.bdep = None
+        self.rdep = None
+        self.alldep = None
+        self.parents = None
+
+        for cat in self.categories:
+            cat.remove(self)
+
+        ports[self.name] = None
+        del ports[self.name]
+        del self
+        
+    def destroy(self):
+        """ Remove a package and all references to it """
+
+        for pkg in self.alldep:
+            if pkg.parents is not None:
+                # Already removed but not destroyed
+                try:
+                    pkg.parents.remove(self)
+                except ValueError:
+                    continue
+        
+        for pkg in self.parents:
+            try:
+                pkg.fdep.remove(self)
+            except ValueError:
+                pass
+            try:
+                pkg.edep.remove(self)
+            except ValueError:
+                pass
+            try:
+                pkg.pdep.remove(self)
+            except ValueError:
+                pass
+            try:
+                pkg.bdep.remove(self)
+            except ValueError:
+                pass
+            try:
+                pkg.rdep.remove(self)
+            except ValueError:
+                pass
+            pkg.alldep.remove(self)
+
+        sys.exc_clear()
+
+        self.remove()
+
+    def setdeps(self, bdep, rdep, edep, pdep, fdep):
+        self.fdep = [ports[p] for p in fdep.split()]
+        self.edep = [ports[p] for p in edep.split()]
+        self.pdep = [ports[p] for p in pdep.split()]
+        self.bdep = [ports[p] for p in bdep.split()]
+        self.rdep = [ports[p] for p in rdep.split()]
+
+        self.alldep = list(set(chain(self.fdep, self.edep, self.pdep,
+                                     self.bdep, self.rdep)))
+
+        for p in self.alldep:
+            p.parents.append(self)
+
+    def depth_recursive(self):
+
+        """
+        Recursively populate the depth tree up from a given package
+        through dependencies, assuming empty values on entries not yet
+        visited
+        """
+
+        if self.depth is None:
+            if len(self.parents) > 0:
+                max = 0
+                for i in self.parents:
+                    w = i.depth_recursive()
+                    if w > max:
+                        max = w
+                self.depth = max + 1
             else:
-                index[j] = {'parents':[pkghash[pkg]]}
+                self.depth = 1
+                for port in ["openoffice", "kde-3"]:
+                    if self.name.startswith(port):
+                        # Artificial boost to try and get it building earlier
+                        self.depth = 100
+        return self.depth
 
-    return index
+    def destroy_recursive(self):
+        """ Remove a port and everything that depends on it """
 
-def gettargets(index, targets):
-    """ split command line arguments into list of packages to build.  Returns set or iterable """
-    # XXX make this return the full recursive list and use this later for processing wqueue
+        parents=set([self])
+
+        while len(parents) > 0:
+            pkg = parents.pop()
+            assert pkg.depth is not None
+            parents.update(pkg.parents)
+            pkg.destroy()
+
+    def success(self):
+        """ Build succeeded and possibly uncovered some new leaves """
+
+        parents = self.parents[:]
+        self.done = True
+        self.remove()
+
+        newleafs = [p for p in parents if all(c.done for c in p.alldep)]
+        return newleafs
+
+    def failure(self):
+        """ Build failed """
+
+        self.destroy_recursive()
+
+    def packagename(self, arch, branch, buildid):
+        """ Return the path where a package may be found"""
+
+        return "/var/portbuild/%s/%s/builds/%s/packages/All/%s.tbz" \
+            % (arch, branch, buildid, self.name)
+
+    def is_stale(self, arch, branch, buildid):
+        """ Does a package need to be (re)-built?
+
+        Returns: False: if it exists and has newer mtime than all of
+        its dependencies.
+        True: otherwise
+        """
+
+        my_pkgname = self.packagename(arch, branch, buildid)
+        pkg_exists = os.path.exists(my_pkgname)
+
+        if pkg_exists:
+            my_mtime = os.stat(my_pkgname)[ST_MTIME]
+
+        dep_packages = [pkg.packagename(arch, branch, buildid)
+                        for pkg in self.alldep]
+        deps_exist = all(os.path.exists(pkg) for pkg in dep_packages)
+        return not (pkg_exists and deps_exist and
+                all(os.stat(pkg)[ST_MTIME] <= my_mtime
+                    for pkg in dep_packages))
+
+class Category(object):
+    def __init__(self, name):
+        self.name = name
+        self.ports = {}
+        categories[name] = self
+
+    def add(self, port):
+        self.ports[port] = port
+
+    def remove(self, port):
+        self.ports[port]=None
+        del self.ports[port]
+
+def gettargets(targets):
+    """ split command line arguments into list of packages to build.
+    Returns set or iterable of all ports that will be built including
+    dependencies """
 
     plist = set()
     if len(targets) == 0:
         targets = ["all"]
     for i in targets:
         if i == "all":
-            plist = index.iterkeys()
-            break
+            return ports.itervalues()
+
         if i.endswith("-all"):
             cat = i.rpartition("-")[0]
-            plist.update(j for j in index.iterkeys() if cat in index[j]['categories'])
-        elif i.rstrip(".tbz") in index.iterkeys():
-            plist.update([i.rstrip(".tbz")])
-
-    return plist
-
-def heightindex(index, targets):
-    """ Initial population of height tree """
-
-    for i in targets:
-        heightdown(index, i)
-
-def heightdown(index, pkgname):
-    """
-    Recursively populate the height tree down from a given package,
-    assuming empty values on entries not yet visited
-    """
-
-    pkg=index[pkgname]
-    if pkg['height'] is None:
-        if len(pkg['deps']) > 0:
-            max = 0
-            for i in pkg['deps']:
-                w = heightdown(index, i)
-                if w > max:
-                    max = w
-            pkg['height'] = max + 1
+            plist.update(p.name for p in categories[cat].ports)
+        elif i.rstrip(".tbz") in ports:
+            plist.update([ports[i.rstrip(".tbz")].name])
         else:
-            pkg['height'] = 1
-    return pkg['height']
+            raise KeyError, i
 
-def heightup(index, pkgname):
-    """ Recalculate the height tree going upwards from a package """
+    # Compute transitive closure of all dependencies
+    pleft=plist.copy()
+    while len(pleft) > 0:
+        pkg = pleft.pop()
+        new = [p.name for p in ports[pkg].alldep]
+        plist.update(new)
+        pleft.update(new)
 
-    if not index.has_key(pkgname):
-        raise KeyError
+    for p in set(ports.keys()).difference(plist):
+        ports[p].destroy()
 
-    parents=set(index[pkgname]['parents'])
+    return [ports[p] for p in plist]
 
-    while len(parents) > 0:
-        # XXX use a deque?
-        pkgname = parents.pop()
-        if not index.has_key(pkgname):
-            # XXX can this happen?
-            continue
-        pkg=index[pkgname]
-        oldheight=pkg['height']
-        if oldheight is None:
-            # Parent is in our build target list
-            continue
-        if len(pkg['deps']) == 0:
-            newheight = 1
-        else:
-            newheight=max(index[j]['height'] for j in pkg['deps']) + 1
-        if newheight > oldheight:
-            print "%s height increasing: %d -> %d", pkg, oldheight, newheight
-            assert(False)
-        if newheight != oldheight:
-            pkg['height'] = newheight
-            parents.update(pkg['parents'])
-
-def deleteup(index, pkgname):
-    if not index.has_key(pkgname):
-        raise KeyError
-
-    parents=set([pkgname])
-
-    children=[]
-    removed=[]
-    while len(parents) > 0:
-        pkgname = parents.pop()
-        if not index.has_key(pkgname):
-            # Parent was already deleted via another path
-            # XXX can happen?
-            print "YYYYYYYYYYYYYYYYYYYYYY %s deleted" % pkgname
-            continue
-        if index[pkgname]['height'] is None:
-            # parent is not in our list of build targets
-            continue
-        pkg=index[pkgname]
-
-        children.extend(pkg['deps'])
-        parents.update(pkg['parents'])
-        removed.append(pkgname)
-        del index[pkgname]
-
-    removed = set(removed)
-    children = set(children)
-#    print "Removed %d packages, touching %d children" % (len(removed), len(children))
-
-    for i in children.difference(removed):
-        par=index[i]['parents']
-        index[i]['parents'] = list(set(par).difference(removed))
-
-# XXX return an iter
-def selectheights(index, level):
-    return [i for i in index.iterkeys() if index[i]['height'] == level]
-
-def rank(index, ready, sortd, max = None):
-    """ rank the list of ready packages according to those listed as
-    dependencies in successive entries of the sorted list """
-
-    input=set(ready)
-    output = []
-    count = 0
-    print "Working on depth ",
-    for i in sortd:
-        deps = set(index[i]['deps'])
-        both = deps.intersection(input)
-        if len(both) > 0:
-            print "%d " % index[i]['height'],
-            input.difference_update(both)
-            output.extend(list(both))
-            if len(input) == 0:
-                break
-        if max:
-            count+=len(both)
-            if count > max:
-                return output
-    print
-    output.extend(list(input))
-
-    return output
-
-def jobsuccess(index, job):
-
-    pkg = index[job]
-    # Build succeeded
-    for i in pkg['parents']:
-        index[i]['deps'].remove(job)
-
-    # deps/parents tree now partially inconsistent but this is
-    # what we need to avoid counting the height of the entry
-    # we are about to remove (which would make it a NOP)
-    heightup(index, job)
-
-    del index[job]
-
-def jobfailure(index, job):
-
-    # Build failed
-    deleteup(index, job)
-    
 class worker(threading.Thread):
 
+    # Protects threads
     lock = threading.Lock()
 
-    # List of running threads
-    tlist = []
+    # Running threads, used for collecting status
+    threads = {}
 
-    # List of running jobs
-    running = []
-
-    # Used to signal dispatcher when we finish a job
-    event = threading.Event()
-
-    def __init__(self, mach, job, queue, arch, branch):
+    def __init__(self, mach, job, arch, branch, buildid, queue):
         threading.Thread.__init__(self) 
+        self.machine = mach
         self.job = job
-        self.mach = mach
-        self.queue = queue
         self.arch = arch
         self.branch = branch
+        self.buildid = buildid
+        self.queue = queue
+
+        self.setDaemon(True)
 
     def run(self): 
-        global index
+        pkg = self.job
 
-        pkg = index[self.job]
-
-        if len(pkg['deps']) != 0:
-            print "Running job with non-empty deps: %s" % pkg
-            assert(False)
-
-        print "Running job %s" % (self.job)
-        while True:
-            retcode = subprocess.call(["/usr/bin/env", "FD=%s" % " ".join(["%s.tbz" % i for i in pkg['fdep']]), "ED=%s" % " ".join(["%s.tbz" % i for i in pkg['edep']]), "PD=%s" % " ".join(["%s.tbz" % i for i in pkg['pdep']]), "BD=%s" % " ".join(["%s.tbz" % i for i in pkg['bdep']]), "RD=%s" % " ".join(["%s.tbz" % i for i in pkg['rdep']]), "/var/portbuild/scripts/pdispatch2", self.mach, self.arch, self.branch, "/var/portbuild/scripts/portbuild", "%s.tbz" % self.job, pkg['path']])
-            self.queue.release(self.mach)
-            if retcode != 254:
-                break
-
-            # Failed to obtain job slot
-            time.sleep(15)
-            (self.mach, dummy) = self.queue.pick()
-            print "Retrying on %s" % self.mach
-
-        print "Finished job %s" % self.job,
-
-        if retcode == 0:
-            status = True
+        print "[MASTER] Running job %s" % (pkg.name),
+        if pkg.status == PHASE2:
+            print " (phase 2)"
+        else:
             print
-        else:
-            status = False
-            print " with status %d" % retcode
+        try:
+            build = subprocess.Popen(
+                ["/bin/sh", "/var/portbuild/scripts/pdispatch",
+                 self.arch, self.branch, self.buildid, self.machine,
+                 "/var/portbuild/scripts/portbuild", "%s.tbz" % pkg.name,
+                 pkg.path],
+                env={'HOME':"/root",
+                     'PATH':'/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/var/portbuild/scripts',
+                     'FD':" ".join(["%s.tbz" % p.name for p in pkg.fdep]),
+                     'ED':" ".join(["%s.tbz" % p.name for p in pkg.edep]),
+                     'PD':" ".join(["%s.tbz" % p.name for p in pkg.pdep]),
+                     'BD':" ".join(["%s.tbz" % p.name for p in pkg.bdep]),
+                     'RD':" ".join(["%s.tbz" % p.name for p in pkg.rdep])},
+                stderr=subprocess.STDOUT, stdout=subprocess.PIPE, bufsize=0)
+        except OSError, e:
+            print >>sys.stderr, "[%s:%s]: Execution failed: %s" % \
+                (pkg.id, pkg.name, e)
+        while True:
+            try:
+                line = build.stdout.readline()
+            except:
+                print "[%s:%s]: Failed reading from build script" % \
+                    (pkg.id, pkg.name)
+                break
+            if line == "":
+                break
+            print "[%s:%s] %s" % (pkg.id, pkg.name, line.rstrip())
 
+        retcode = build.wait()
+        
+#        time.sleep(random.randint(0,60))
+#
+#        r = random.random()
+#        if r < 0.1:
+#            retcode = 1
+#        elif r < 0.15:
+#            retcode = 254
+#        else:
+#            retcode = 0
+
+        conn = QManagerClientConn(stderr = sys.stderr)
+        try:
+            (code, vars) = conn.command("release", {'id':pkg.id})
+        except RequestError, e:
+            print "[MASTER] Error releasing job %s (%s): %s" % (pkg.name, pkg.id, e.value)
+
+        if retcode == 254:
+            # Requeue soft failure at original priority
+            # XXX exponential backoff?
+            time.sleep(60)
+#            print "Requeueing %s" % pkg.id
+            self.queue.put((-pkg.depth, pkg))
+        elif retcode == 253:
+            # setting up a machine, we should immediately retry
+            self.queue.put((-pkg.depth, pkg))
+        elif retcode == 0:
+            self.queue.put((SUCCESS_PRIO, pkg))
+        else:
+            self.queue.put((FAILURE_PRIO, pkg))
+
+        # Clean up
         worker.lock.acquire()
-        worker.running.remove(self.job)
-        worker.tlist.remove(self)
-        if status == True:
-            jobsuccess(index, self.job)
-        else:
-            jobfailure(index, self.job)
-
-        # Wake up dispatcher in case it was blocked
-        worker.event.set()
-        worker.event.clear()
-
+        worker.threads[self]=None
+        del worker.threads[self]
         worker.lock.release()
 
     @staticmethod
-    def dispatch(mach, job, queue, arch, branch):
+    def dispatch(mach, job, arch, branch, buildid, queue):
+        wrk = worker(mach, job, arch, branch, buildid, queue)
+
         worker.lock.acquire()
-        wrk = worker(mach, job, queue, arch, branch)
-        worker.tlist.append(wrk)
+        worker.threads[wrk] = wrk
         worker.lock.release()
+
         wrk.start()
 
-class machqueue(object):
-    path = '';
-    fd = -1;
-
-    # fcntl locks are per-process, so the fcntl lock acquisition will
-    # succeed if another thread already holds it.  We need the fcntl
-    # lock for external visibility between processes but also need an
-    # internal lock for protecting against out own threads.
-    ilock = threading.Lock()
-
-    def __init__(self, path):
-        super(machqueue, self).__init__()
-        self.path = path
-        self.fd = os.open("%s.lock" % self.path, os.O_RDWR|os.O_CREAT)
-        
-#        print "Initializing with %s %d" % (self.path, self.fd)
-
-    def lock(self):
-        print "Locking...",
-#        ret = fcntl.lockf(self.fd, fcntl.LOCK_EX)
-        self.ilock.acquire()
-        print "success"
-
-    def unlock(self):
-        print "Unlocking fd"
-        self.ilock.release()
-#        ret = fcntl.lockf(self.fd, fcntl.LOCK_UN)
-
-    def poll(self):
-        """ Return currently available machines """
-
-        mfile = file(self.path + "../mlist", "r")
-        mlist = mfile.readlines()
-        mfile.close()
-        mlist = [i.rstrip() for i in mlist] # Chop \n
-
-        list = os.listdir(self.path)
-        special = []
-        machines = []
-        for i in list:
-            if i.startswith('.'):
-                special.append(i)
-            else:
-                if i in mlist:
-                    machines.append(i)
-                else:
-                    os.unlink(self.path + i)
-
-        print "Found machines %s" % machines
-        return (machines, special)
-
-    def pick(self):
-        """ Choose a random machine from the queue """
-
-        min = 999
-        while min == 999:
-            while True:
-                self.lock()
-                (machines, special) = self.poll()
-                if len(machines):
-                    break
-                else:
-                    self.unlock()
-                    time.sleep(15)
-                    # XXX Use kqueue to monitor for changes
-
-            list = []
-            # XXX Choose as fraction of capacity
-            for i in machines:
-                f = file(self.path + i, "r")
-                out = f.readline().rstrip()
-                try:
-                    load = int(out)
-                except ValueError:
-                    print "Bad value for %s: %s" % (i, out)
-                    load = 999
-                f.close()
-                if load < min:
-                    min = load
-                    list=[]
-                if load == min:
-                    list.append(i)
-            print "(%s, %d)" % (list, load)
-
-            if min == 999:
-                print "Bad queue length for %s" % list
-                self.unlock()
-
-        machine = choice(list)
-        # XXX hook up config files
-        if min == 2:
-            # Queue full
-            os.unlink(self.path + machine)
-        else:
-            f = file(self.path + machine, "w")
-            f.write("%d\n" % (min + 1))
-            f.flush()
-            f.close()
-
-        self.unlock()
-        return (machine, special)
-
-    def release(self, mach):
-        self.lock()
-        print "Releasing %s" % mach,
-        if os.path.exists(self.path + mach):
-            f = file(self.path + mach, "r+")
-            out = f.readline().rstrip()
-            try:
-                load = int(out)
-            except ValueError:
-                print "Queue error on release of %s: %s" % (mach, out)
-                load = 3 #XXX
-        else:
-            f = file(self.path + mach, "w")
-            load = 3 #XXX
-
-#        f.truncate(0)
-        f.write("%d\n" % (load - 1))
-        print "...now %d" % (load - 1)
-        f.flush()
-        f.close()
-        self.unlock()
-
-def main(arch, branch, args):
+def main(arch, branch, buildid, args):
     global index
 
-    basedir="/var/portbuild/"+arch+"/"+branch
+    basedir="/var/portbuild/"+arch+"/"+branch+"/builds/"+buildid
     portsdir=basedir+"/ports"
-    indexfile=portsdir+"/INDEX-"+branch
-    indexfile="/var/portbuild/i386/7-exp/ports/INDEX-7"
 
-    qlen = 100
+    indexfile=portsdir+"/INDEX-"+branch[0]
 
-    q = machqueue("/var/portbuild/%s/queue/" % arch)
+    print "[MASTER] parseindex..."
+    index = Index(indexfile)
+    index.parse()
+    print "[MASTER] length = %s" % len(ports)
 
-    print "parseindex..."
-    index=parseindex(indexfile)
-    print "length = %s" % len(index)
+    print "[MASTER] Finding targets..."
+    targets = gettargets(args)
 
-    targets = gettargets(index, args)
+    print "[MASTER] Calculating depth..."
+    depthindex(targets)
 
-    print "heightindex..."
-    heightindex(index, targets)
+    print "[MASTER] Pruning duds..."
+    dudsfile=basedir+"/duds"
+    for line in file(dudsfile):
+        try:
+            dud = ports[line.rstrip()]
+        except KeyError:
+            continue
+        print "[MASTER] Skipping %s (duds)" % dud.name
+        dud.destroy_recursive()
 
-    sortd = sorted(((key, val["height"]) for (key, val) in index.iteritems() if val["height"] is not None), key=operator.itemgetter(1), reverse=True)
-    wqueue = rank(index, selectheights(index, 1), (i[0] for i in sortd), qlen)
+    queue = PriorityQueue()
+    # XXX can do this while parsing index if we prune targets/duds
+    # first
+    for pkg in ports.itervalues():
+        if len(pkg.alldep) == 0:
+            queue.put((-pkg.depth, pkg))
+
+    # XXX check osversion, pool
+    mdl=["arch = %s" % arch]
 
     # Main work loop
-    while len(sortd) > 0:
-        worker.lock.acquire()
-        print "Remaining %s" % len(sortd)
-        while len(wqueue) > 0:
-            job = wqueue.pop(0)
+    while len(ports) > 0:
+        print "[MASTER] Ports remaining=%s, Queue length=%s" % (len(ports), queue.qsize())
 
-            if os.path.exists("/var/portbuild/%s/%s/packages/All/%s.tbz" % (arch, branch, job)):
-                print "Skipping %s since it already exists" % job
-                jobsuccess(index, job)
+        if len(ports) < 10:
+            print "[MASTER] Remaining ports: %s" % ports.keys()
+
+        (prio, job) = queue.get()
+        if prio == SUCCESS_PRIO:
+            print "[MASTER] Job %s succeeded" % job.name
+            for new in job.success():
+                queue.put((-new.depth, new))
+            continue
+        elif prio == FAILURE_PRIO:
+            if job.status == PHASE2:
+                print "[MASTER] Job %s failed" % job.name
+                job.failure()
+                continue
             else:
-                worker.running.append(job) # Protect against a queue
-                                           # rebalance adding this
-                                           # back during build
-                worker.lock.release()
-                (machine, specials) = q.pick()
-                worker.dispatch(machine, job, q, arch, branch)
-                worker.lock.acquire()
+                # Requeue at low priority
+                print "[MASTER] Job %s failed (requeued for phase 2)" % job.name
+                job.status = PHASE2
+                queue.put((PHASE2_BASE_PRIO-job.depth, job))
+                continue
+        elif job.status == PHASE2:
+            depth = -(prio - PHASE2_BASE_PRIO)
+        else:
+            depth = -prio
 
-        if len(wqueue) == 0:
-            if len(sortd) == 0:
-                # All jobs in progress, wait for children to exit
-                break
-            print "Rebalancing queue...",
-            sortd = sorted(((key, val["height"]) for (key, val) in index.iteritems() if val["height"] is not None), key=operator.itemgetter(1), reverse=True)
-            if len(sortd) == 0:
-                break
+        print "[MASTER] Working on job %s, depth %d" % (job.name, depth)
+        if job.is_stale(arch, branch, buildid):
+            conn = QManagerClientConn(stderr = sys.stderr)
+            (code, vars) = conn.command("acquire",
+                                        {"name":job.name,
+                                         "type":"%s/%s/%s package" % \
+                                             (arch, branch, buildid),
+                                         "priority":10, "mdl":mdl})
 
-            print sortd[0:3]
-            if sortd[0][0] == 1:
-                # Everything left is depth 1, no need to waste time rebalancing further
-                qlen = len(index)
+            if code[0] == "2":
+                machine=vars['machine']
+                job.id=vars['id']
+#                print "Got ID %s" % job.id
 
-            # Don't add too many deps at once (e.g. after we build a
-            # package like gmake), or we will switch to buildinglots
-            # of shallow packages
-            ready = [i for i in selectheights(index, 1) if i not in worker.running]
-            wqueue = rank(index, ready, (i[0] for i in sortd), qlen)[:2*qlen]
-            print "now %s (%s ready)" % (wqueue, len(ready))
+                worker.dispatch(machine, job, arch, branch, buildid, queue)
+            else:
+                print "[MASTER] Error acquiring job %s: %s" % (pkg.name, code)
+        else:
+            print "[MASTER] Skipping %s since it already exists" % job.name
+            for new in job.success():
+                queue.put((-new.depth, new))
 
-        worker.lock.release()
+    print "[MASTER] Waiting for threads"
+    threads = worker.threads.copy()
 
-        if len(wqueue) == 0:
-            # Ran out of work, wait for workers to free up some more
-            print "No work to do, sleeping on workers"
-            worker.event.wait()
+    for t in threads:
+        print "[MASTER] Outstanding thread: %s" % t.job.name
 
-    for i in worker.tlist:
-        i.join()
+    for t in threads:
+        print "[MASTER] Waiting for thread %s" % t.job.name
+        t.join()
 
-    print "Finished"
+    print "[MASTER] Finished"
 
 if __name__ == "__main__":
 #    from guppy import hpy; h = hpy()
 
-    main(sys.argv[1], sys.argv[2], sys.argv[3:])
-
-#    index = parseindex("/var/portbuild/i386/7-exp/ports/INDEX-7")
-#    print index['gmake-3.81_2']
+    main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4:])
 

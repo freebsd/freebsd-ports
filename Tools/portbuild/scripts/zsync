@@ -1,0 +1,38 @@
+#!/bin/sh
+
+base=/a/cache
+zbase=a/cache
+
+fs=$1
+
+rsnap=$(zclient list | grep "^$fs " | tail -1 | awk '{print $2}')
+if [ -z "$rsnap" ]; then
+	echo "No such filesystem $fs"
+	exit 1
+fi
+
+lsnap=$(zfs list -Ht snapshot | grep "^$zbase/$fs@" | tail -1 | sed -e "s,^$zbase/$fs@,," | awk '{print $1}')
+if [ -z "$lsnap" ]; then
+	echo "No local snapshot found"
+	dofull=1
+else
+	if [ "$lsnap" = "$rsnap" ]; then
+		exit 0
+	fi
+	# Check for remotve snapshot
+	if ! (zclient list | grep "^$fs $lsnap " > /dev/null); then
+		echo "Local snapshot not found, removing and resyncing"
+		zfs destroy $zbase/$fs@$lsnap
+		dofull=0
+	else
+		dofull=1
+	fi
+fi
+
+if [ "$dofull" = "1" ]; then
+	zfs destroy -r ${zbase}/${fs}
+	zclient get ${fs} ${rsnap} | zcat | zfs receive ${zbase}/${fs}
+else
+	zclient diff ${fs} ${lsnap} ${rsnap} | zcat | zfs receive -F ${zbase}/${fs}
+fi
+	

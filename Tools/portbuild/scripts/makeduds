@@ -40,9 +40,14 @@ export PKG_DBDIR=/nonexistentpkg
 export PORT_DBDIR=/nonexistentport
 
 cd ${PORTSDIR}
-make -j${DUDSJOBS} ignorelist ECHO_MSG=true > ${duds} || exit 1
-sort ${duds} > ${duds}.tmp
-mv -f ${duds}.tmp ${duds}
+make -j${DUDSJOBS} ignorelist-verbose ECHO_MSG=true > ${duds}.verbose 2> /dev/null || exit 1
+sort ${duds}.verbose > ${duds}.verbose.tmp
+mv -f ${duds}.verbose.tmp ${duds}.verbose
+cut -f 1 -d \| ${duds}.verbose > ${duds}
 
 cp ${duds} ${duds}.orig
 grep -Ff ${duds}.orig ${index} | cut -f 1 -d \| > ${duds}.full
+
+cat ${duds} ${duds}.full | sort | uniq -u | sed -e "s@\$@|IGNORE: dependent port@" > ${duds}.full.verbose.tmp
+cat ${duds}.verbose ${duds}.full.verbose.tmp | sort > ${duds}.full.verbose
+rm ${duds}.full.verbose.tmp

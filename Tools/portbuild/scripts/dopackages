@@ -71,12 +71,14 @@ mailexit () {
 }
 
 srctar() {
-    tar cfCj ${builddir}/src-${buildid}.tbz ${builddir} src/
+    rm -f ${builddir}/src-2*.tbz*
+    tar cfCj ${builddir}/src-${buildid}.tbz ${builddir} src/ 2>/dev/null
     md5 ${builddir}/src-${buildid}.tbz > ${builddir}/src-${buildid}.tbz.md5
 }
 
 portstar() {
-    tar cfCj ${builddir}/ports-${buildid}.tbz ${builddir} ports/
+    rm -f ${builddir}/ports-2*.tbz*
+    tar cfCj ${builddir}/ports-${buildid}.tbz ${builddir} ports/ 2>/dev/null
     md5 ${builddir}/ports-${buildid}.tbz > ${builddir}/ports-${buildid}.tbz.md5
 }
 
@@ -204,24 +206,16 @@ dobuild() {
     arch=$2
     branch=$3
     builddir=$4
-    phase=$5
-    
-    count=0
-    for i in `cat ${pb}/${arch}/mlist`; do
-	. ${pb}/${arch}/portbuild.conf
-	test -f ${pb}/${arch}/portbuild.${i} && . ${pb}/${arch}/portbuild.${i}
-	count=$((${count}+${maxjobs}))
-    done
-    
+        
     echo "================================================"
-    echo "building packages (phase ${phase})"
+    echo "building packages"
     echo "================================================"
     echo "started at $(date)"
-    phasestart=$(date +%s)
-    make -k -j${count} quickports all > ${builddir}/make.${phase} 2>&1 </dev/null
+    start=$(date +%s)
+    /var/portbuild/evil/qmanager/packagebuild ${arch} ${branch} ${buildid} > ${builddir}/make 2>&1 < /dev/null
     echo "ended at $(date)"
-    phaseend=$(date +%s)
-    echo "phase ${phase} took $(date -u -j -r $(($phaseend - $phasestart)) | awk '{print $4}')"
+    end=$(date +%s)
+    echo "Build took $(date -u -j -r $((end - start)) | awk '{print $4}')"
     echo $(echo $(ls -1 ${builddir}/packages/All | wc -l) - 2 | bc) "packages built"
     
     echo $(wc -l ${PORTSDIR}/${INDEXFILE} | awk '{print $1}') "lines in INDEX"
@@ -230,9 +224,9 @@ dobuild() {
     echo $(echo $(du -sk ${builddir}/distfiles | awk '{print $1}') / 1024 | bc) "MB of distfiles"
     
     cd ${builddir}
-    if grep -qE '(ptimeout|pnohang): killing' make.${phase}; then
+    if grep -qE '(ptimeout|pnohang): killing' make; then
 	echo "The following port(s) timed out:"
-	grep -E '(ptimeout|pnohang): killing' make.${phase} | sed -e 's/^.*ptimeout:/ptimeout:/' -e 's/^.*pnohang:/pnohang:/'
+	grep -E '(ptimeout|pnohang): killing' make | sed -e 's/^.*ptimeout:/ptimeout:/' -e 's/^.*pnohang:/pnohang:/'
     fi
     
 }
@@ -259,7 +253,7 @@ restart=0
 cont=0
 finish=0
 nofinish=0
-dodistfiles=1
+nodistfiles=0
 fetch_orig=0
 trybroken=0
 incremental=0
@@ -300,7 +294,7 @@ while [ $# -gt 0 ]; do
 	    noplistcheck=1
 	    ;;
 	x-nodistfiles)
-	    dodistfiles=0
+	    nodistfiles=1
 	    ;;
 	x-fetch-original)
 	    fetch_orig=1
@@ -349,9 +343,8 @@ fi
 
 echo | mail -s "$(basename $0) started for ${arch}-${branch} ${buildid} at $(date)" ${mailto}
 
-if [ "$dodistfiles" = 1 ]; then
-    # XXX flip default to always collect
-    export WANT_DISTFILES=1
+if [ "$nodistfiles" = 1 ]; then
+    export NO_DISTFILES=1
 fi
 
 if [ "$noplistcheck" = 1 ]; then
@@ -383,6 +376,11 @@ builddir=${pbab}/builds/${buildid}
 df -k | grep ${buildid}
 # Set up our environment variables
 buildenv ${pb} ${arch} ${branch} ${builddir}
+
+# bomb out if build clone failed
+if [ ! -d ${builddir} ]; then
+    mailexit 1
+fi
 
 if [ "${keep}" -eq 1 ]; then
     touch ${builddir}/.keep
@@ -498,8 +496,6 @@ if [ "$skipstart" = 0 ]; then
 	cdromlist ${pb} ${arch} ${branch} ${builddir} &
     fi
     
-    ${pb}/scripts/makeparallel ${arch} ${branch} ${buildid} &
-    
     cd ${builddir}
     mv distfiles/ .distfiles~
     rm -rf .distfiles~ &
@@ -518,7 +514,7 @@ if [ "$skipstart" = 0 ]; then
     
     # Create new log directories for archival
     rm -rf ${newerrors}
-    mkdir -p ${newerrors}/old-errors
+    mkdir -p ${newerrors}
     ln -sf ${newerrors} ${builddir}/errors
     rm -rf ${newlogs}
     mkdir -p ${newlogs}
@@ -533,6 +529,10 @@ if [ "$skipstart" = 0 ]; then
     fi
     cp -p ${builddir}/duds ${newerrors}/duds
     cp -p ${builddir}/duds ${newlogs}/duds
+    if [ -f "${builddir}/duds.verbose" ]; then
+	cp -p ${builddir}/duds.verbose ${newerrors}/duds.verbose
+	cp -p ${builddir}/duds.verbose ${newlogs}/duds.verbose
+    fi
     cp -p ${builddir}/ports/${INDEXFILE} ${newerrors}/INDEX
     cp -p ${builddir}/ports/${INDEXFILE} ${newlogs}/INDEX
     
@@ -594,24 +594,7 @@ if [ "$nobuild" = 0 ]; then
 	cp duds.orig duds
     fi
     
-    cd ${builddir}/packages/All
-    ln -sf ../../Makefile .
-    
-    dobuild ${pb} ${arch} ${branch} ${builddir} 1
-    
-    ls -asFlrt ${builddir}/packages/All > ${builddir}/logs/ls-lrt
-    
-    cd ${builddir}/errors/
-    find . -name '*.log' -depth 1 | cpio -dumpl ${builddir}/errors/old-errors
-
-    # Clean up the clients
-    ${pb}/scripts/build cleanup ${arch} ${branch} ${buildid}
-
-    wait
-    echo "setting up of nodes ended at $(date)"
-    
-    cd ${builddir}/packages/All
-    dobuild ${pb} ${arch} ${branch} ${builddir} 2
+    dobuild ${pb} ${arch} ${branch} ${builddir}
     
 fi
 
@@ -666,7 +649,7 @@ if [ "$nofinish" = 0 ]; then
     ${pb}/scripts/chopindex ${builddir}/ports/${INDEXFILE} ${builddir}/packages > ${builddir}/packages/INDEX
 
     ls -asFlrt ${builddir}/packages/All > ${builddir}/logs/ls-lrt
-    cp -p ${builddir}/make.[12] ${builddir}/logs
+    cp -p ${builddir}/make ${builddir}/logs
 
     echo "================================================"
     echo "copying distfiles"

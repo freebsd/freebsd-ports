@@ -1,16 +1,16 @@
 #!/bin/sh
 #
-# pdispatch <arch> <branch> <buildid> <command> <package.tbz> [<args> ...]
+# pdispatch <arch> <branch> <buildid> <host> <command> <package.tbz> [<args> ...]
 #
-# Choose a random machine from ${buildroot}/ulist and dispatch the
-# job to it via the ptimeout script.
+# Dispatch the job to a host via the ptimeout script.
 
 pb=/var/portbuild
 arch=$1
 branch=$2
 buildid=$3
-command=$4
-shift 4
+host=$4
+command=$5
+shift 5
 
 pbab=${pb}/${arch}/${branch}
 
@@ -23,13 +23,19 @@ timeout=360000
 loglength=1000
 hdrlength=6
 
+buildid=$(resolve ${pb} ${arch} ${branch} ${buildid})
+if [ -z "${buildid}" ]; then
+    echo "Invalid build ID ${buildid}"
+    exit 1
+fi
+
 builddir=${pbab}/builds/${buildid}
 buildenv ${pb} ${arch} ${branch} ${builddir}
 
-# ssh -x doesn't work on some machines
+# XXX needed still?
 unset DISPLAY
 
-# Use HPN-SSH for performance
+# Allow override by HPN-SSH for performance
 if [ -z "${ssh_cmd}" ]; then
     ssh_cmd=ssh
 fi
@@ -38,11 +44,6 @@ if [ -z "${scp_cmd}" ]; then
 fi
 
 pkgname=$(basename $1 ${PKGSUFFIX})
-
-if grep -qxF ${pkgname} ${builddir}/duds; then
-    echo "skipping ${pkgname}"
-    exit 1
-fi
 
 if [ -z "${pkgname}" ]; then
     echo "null packagename"
@@ -62,7 +63,7 @@ fi
 if [ "x$NOPLISTCHECK" != "x" ]; then
     flags="${flags} -noplistcheck"
 fi
-if [ "x$WANT_DISTFILES" != "x" ]; then
+if [ "x$NO_DISTFILES" = "x" ]; then
     flags="${flags} -distfiles"
 fi
 if [ "x$FETCH_ORIGINAL" != "x" ]; then
@@ -72,140 +73,123 @@ if [ "x$TRYBROKEN" != "x" ]; then
     flags="${flags} -trybroken"
 fi
 
-while `true`; do
-    host=
-    chroot=
-    while [ -z "${host}" -o -z "${chroot}" ]; do
-	chroot=
-	host=$(lockf -k ${pb}/${arch}/queue/.lock ${pb}/scripts/getmachine ${pb} ${arch} ${branch})
-        # If ulist is empty, then all build machines are busy, so try
-        # again in 15 seconds.
-	if [ -z "${host}" ]; then
-	    sleep 15
-	else
-	    . ${pb}/${arch}/portbuild.conf
-	    test -f ${pb}/${arch}/portbuild.${host} && . ${pb}/${arch}/portbuild.${host}
-	    chrootdata=$(${ssh_cmd} -a -n ${client_user}@${host} ${sudo_cmd} ${pb}/scripts/claim-chroot ${arch} ${branch} ${buildid} ${pkgname} 2>&1)
-	    if [ -z "${chrootdata}" ]; then
-		echo "Failed to claim chroot on ${host}"
-	    fi
+chroot=
+. ${pb}/${arch}/portbuild.conf
+test -f ${pb}/${arch}/portbuild.${host} && . ${pb}/${arch}/portbuild.${host}
+chrootdata=$(${ssh_cmd} -a -n ${client_user}@${host} ${sudo_cmd} ${pb}/scripts/claim-chroot ${arch} ${branch} ${buildid} ${pkgname} 2>&1)
+if [ -z "${chrootdata}" ]; then
+    echo "Failed to claim chroot on ${host}"
+    exit 254
+fi
 
-	    case "${chrootdata}" in
-		*/var/portbuild/scripts/claim-chroot*)
-		    # Error executing script, assume system is booting
-		    chrootdata="wait boot"
-		    ;;
-	    esac
+case "${chrootdata}" in
+    */var/portbuild/scripts/claim-chroot*)
+	# Error executing script, assume system is booting
+	chrootdata="wait boot"
+	;;
+esac
 
-	    echo "Got ${chrootdata} from ${host}"
+#    echo "Got ${chrootdata} from ${host}"
 
-	    set -- ${chrootdata}
-	    if [ $# -ge 2 ]; then
-		case $1 in
-		    chroot)
-			chroot=$2
-			;;
-		    setup)
-			echo "Setting up ${arch}/${branch} build ID ${buildid} on ${host}"
+set -- ${chrootdata}
+if [ $# -ge 2 ]; then
+    case $1 in
+	chroot)
+	    chroot=$2
+	    ;;
+	setup)
+	    echo "Setting up ${arch}/${branch} build ID ${buildid} on ${host}"
 
-			# Run in the background so we can potentially
-			# claim a slot on another machine.  In
-			# practise I think we often end up trying
-			# again on the same machine though.
+	    # Run in the background so we can potentially
+	    # claim a slot on another machine.  In
+	    # practise I think we often end up trying
+	    # again on the same machine though.
+		    
+	    # Make sure to close stdin/stderr in the child
+	    # or make will hang until the child process
+	    # exits
+	    ${pb}/scripts/dosetupnode ${arch} ${branch} ${buildid} ${host} > /tmp/setupnode.$$ 2>&1 &
+	    exit 253
+	    ;;
+	error)
+	    echo "Error reported by ${host}: $2"
+	    ;;
+	wait)
+	    echo "Waiting for setup of ${host} to finish"
+	    ;;
+    esac
+    shift 2
+fi
+	
+if [ -z "${chroot}" ]; then
+    exit 254
+fi
 
-			# Make sure to close stdin/stderr in the child
-			# or make will hang until the child process
-			# exits
-			# XXX Revert to >&- once this is confirmed as working
-			${pb}/scripts/dosetupnode ${arch} ${branch} ${buildid} ${host} >/tmp/setupnode.$$ 2>&1 &
-			;;
-		    error)
-			echo "Error reported by ${host}: $2"
-			sleep 60
-			;;
-		    wait)
-			echo "Waiting for setup to finish"
-			sleep 60
-			;;
-		esac
-		shift 2
-	    fi
-
-	    if [ -z "${chroot}" ]; then
-		lockf -k ${pb}/${arch}/queue/.lock ${pb}/scripts/releasemachine ${arch} ${host}
-	    fi
-	fi
-    done
+. ${pb}/${arch}/portbuild.conf
+test -f ${pb}/${arch}/portbuild.${host} && . ${pb}/${arch}/portbuild.${host}
     
-    . ${pb}/${arch}/portbuild.conf
-    test -f ${pb}/${arch}/portbuild.${host} && . ${pb}/${arch}/portbuild.${host}
+rm -f ${builddir}/logs/${pkgname}.log ${builddir}/logs/${pkgname}.log.bz2
+rm -f ${builddir}/errors/${pkgname}.log ${builddir}/errors/${pkgname}.log.bz2
     
-    rm -f ${builddir}/logs/${pkgname}.log ${builddir}/logs/${pkgname}.log.bz2
-    rm -f ${builddir}/errors/${pkgname}.log ${builddir}/errors/${pkgname}.log.bz2
+${pb}/scripts/ptimeout.host $timeout ${ssh_cmd} -a -n ${client_user}@${host} ${sudo_cmd} ${command} ${arch} ${branch} ${buildid} ${chroot} ${flags} \"$ED\" \"$PD\" \"$FD\" \"$BD\" \"$RD\" ${args} 2>&1
+error=$?
+        
+# Pull in the results of the build from the client
     
-    echo "dispatching: ${ssh_cmd} -a -t -n ${client_user}@${host} ${sudo_cmd} ${command} ${arch} ${branch} ${buildid} ${chroot} ${flags} \"$ED\" \"$PD\" \"$FD\" \"$BD\" \"$RD\" ${args}"
-    ${pb}/scripts/ptimeout.host $timeout ${ssh_cmd} -a -t -n ${client_user}@${host} ${sudo_cmd} ${command} ${arch} ${branch} ${buildid} ${chroot} ${flags} \"$ED\" \"$PD\" \"$FD\" \"$BD\" \"$RD\" ${args} 2>&1
-    error=$?
+${scp_cmd} ${client_user}@${host}:${chroot}/tmp/${pkgname}.log ${builddir}/logs/${pkgname}.log
+(${ssh_cmd} -a -n ${client_user}@${host} test -f ${chroot}/tmp/work.tbz ) && ${scp_cmd} ${client_user}@${host}:${chroot}/tmp/work.tbz ${builddir}/wrkdirs/${pkgname}.tbz
     
-  #if grep -q " failed unexpectedly on " ${builddir}/logs/${pkgname}.pre.log; then
-  #  cat ${builddir}/logs/${pkgname}.pre.log | mail -s "${pkgname} failed uncleanly on ${arch} ${branch}" ${mailto}
-  #else
-  #  rm ${builddir}/logs/${pkgname}.pre.log
-  #fi
+# XXX Set dirty flag if any of the scp's fail
     
-    # Pull in the results of the build from the client
-    
-    ${scp_cmd} ${client_user}@${host}:${chroot}/tmp/${pkgname}.log ${builddir}/logs/${pkgname}.log
-    (${ssh_cmd} -a -n ${client_user}@${host} test -f ${chroot}/tmp/work.tbz ) && ${scp_cmd} ${client_user}@${host}:${chroot}/tmp/work.tbz ${builddir}/wrkdirs/${pkgname}.tbz
-    
-    # XXX Set dirty flag if any of the scp's fail
-    
-    mkdir -p ${builddir}/distfiles/.pbtmp/${pkgname}
-    ${ssh_cmd} -a -n ${client_user}@${host} tar -C ${chroot}/tmp/distfiles -cf - . | \
-	tar --unlink -C ${builddir}/distfiles/.pbtmp/${pkgname} -xvf -
+mkdir -p ${builddir}/distfiles/.pbtmp/${pkgname}
+${ssh_cmd} -a -n ${client_user}@${host} tar -C ${chroot}/tmp/distfiles -cf - . | \
+    tar --unlink -C ${builddir}/distfiles/.pbtmp/${pkgname} -xvf - && \
     touch ${builddir}/distfiles/.pbtmp/${pkgname}/.done
     
-    if [ "${error}" = 0 ]; then
-	${ssh_cmd} -a -n ${client_user}@${host} tar -C ${chroot}/tmp -cf - packages | \
-	    tar --unlink -C ${builddir} -xvf -
-	test -f ${builddir}/packages/All/${pkgname}${PKGSUFFIX} && \
-	    touch ${builddir}/packages/All/${pkgname}${PKGSUFFIX}
-	rm -f ${builddir}/errors/${pkgname}.log && \
-	    touch ${builddir}/errors/.force
-	lockf -k ${pbab}/failure.lock ${pb}/scripts/buildsuccess ${arch} ${branch} ${buildid} ${pkgname}
-	log=${builddir}/logs/$pkgname.log
-	if grep -q "even though it is marked BROKEN" ${log}; then
-	    echo | mail -s "${pkgname} BROKEN but built on ${arch} ${branch}" ${mailto}
-	fi
-	if grep -q "^list of .*file" ${log}; then
-	    buildlogdir=$(realpath ${builddir}/logs/)
-	    baselogdir=$(basename ${buildlogdir})
-	    (sed -e '/^build started/,$d' $log;echo;echo "For the full build log, see"; echo; echo "  http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;sed -e '1,/^=== Checking filesystem state/d' $log) | mail -s "${pkgname} pkg-plist errors on ${arch} ${branch}" ${mailto}
-	fi
-    else
-	log=${builddir}/errors/${pkgname}.log
-	${scp_cmd} ${client_user}@${host}:${chroot}/tmp/${pkgname}.log ${log} || (echo ${chroot}@${host}; ${ssh_cmd} -a -n ${client_user}@${host} ls -laR ${chroot}/tmp) | mail -s "${pkgname} logfile not found" ${mailto}
-	if ! grep -q "even though it is marked BROKEN" ${log}; then
-	    buildlogdir=$(realpath ${builddir}/logs/)
-	    baselogdir=$(basename ${buildlogdir})
-	    if [ `wc -l ${log} | awk '{print $1}'` -le `expr ${loglength} + ${hdrlength}` ]; then
-		(echo "You can also find this build log at"; echo; echo "  http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;cat ${log}) | mail -s "${pkgname} failed on ${arch} ${branch}" ${mailto}
-	    else
-		(echo "Excerpt from the build log at"; echo; echo "  http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;sed -e '/^build started/,$d' $log;echo;echo "  [... lines trimmed ...]";echo;tail -${loglength} ${log}) | mail -s "${pkgname} failed on ${arch} ${branch}" ${mailto}
-	    fi
-	fi
-	lockf -k ${pbab}/failure.lock ${pb}/scripts/buildfailure ${arch} ${branch} ${buildid} ${pkgname}
+if [ "${error}" = 0 ]; then
+    ${ssh_cmd} -a -n ${client_user}@${host} tar -C ${chroot}/tmp -cf - packages | \
+	tar --unlink -C ${builddir} -xvf -
+
+    # XXX why is this needed? 
+    test -f ${builddir}/packages/All/${pkgname}${PKGSUFFIX} && \
+	touch ${builddir}/packages/All/${pkgname}${PKGSUFFIX}
+
+    if [ -f ${builddir}/errors/${pkgname}.log ]; then
+	rm -f ${builddir}/errors/${pkgname}.log
+	# Force rebuild of html page to remove this package from list
+	touch ${builddir}/errors/.force
     fi
-    
-    ${ssh_cmd} -a -n ${client_user}@${host} ${sudo_cmd} ${pb}/scripts/clean-chroot ${arch} ${branch} ${buildid} ${chroot} ${clean}
-    
-    lockf -k ${pb}/${arch}/queue/.lock ${pb}/scripts/releasemachine ${arch} ${host}
-    
+    lockf -k ${pbab}/failure.lock ${pb}/scripts/buildsuccess ${arch} ${branch} ${buildid} ${pkgname}
+    log=${builddir}/logs/$pkgname.log
+    if grep -q "even though it is marked BROKEN" ${log}; then
+	echo | mail -s "${pkgname} BROKEN but built on ${arch} ${branch}" ${mailto}
+    fi
+    if grep -q "^list of .*file" ${log}; then
+	buildlogdir=$(realpath ${builddir}/logs/)
+	baselogdir=$(basename ${buildlogdir})
+	(sed -e '/^build started/,$d' $log;echo;echo "For the full build log, see"; echo; echo "  http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;sed -e '1,/^=== Checking filesystem state/d' $log) | mail -s "${pkgname} pkg-plist errors on ${arch} ${branch}" ${mailto}
+    fi
+else
+    log=${builddir}/errors/${pkgname}.log
+    ${scp_cmd} ${client_user}@${host}:${chroot}/tmp/${pkgname}.log ${log} || (echo ${chroot}@${host}; ${ssh_cmd} -a -n ${client_user}@${host} ls -laR ${chroot}/tmp) | mail -s "${pkgname} logfile not found" ${mailto}
+    if ! grep -q "even though it is marked BROKEN" ${log}; then
+	buildlogdir=$(realpath ${builddir}/logs/)
+	baselogdir=$(basename ${buildlogdir})
+	if [ $(wc -l ${log} | awk '{print $1}') -le $((loglength + hdrlength)) ]; then
+	    (echo "You can also find this build log at"; echo; echo "  http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;cat ${log}) | mail -s "${pkgname} failed on ${arch} ${branch}" ${mailto}
+	else
+	    (echo "Excerpt from the build log at"; echo; echo "  http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;sed -e '/^build started/,$d' $log;echo;echo "  [... lines trimmed ...]";echo;tail -${loglength} ${log}) | mail -s "${pkgname} failed on ${arch} ${branch}" ${mailto}
+	fi
+    fi
+    lockf -k ${pbab}/failure.lock ${pb}/scripts/buildfailure ${arch} ${branch} ${buildid} ${pkgname}
+fi
+
+${ssh_cmd} -a -n ${client_user}@${host} ${sudo_cmd} ${pb}/scripts/clean-chroot ${arch} ${branch} ${buildid} ${chroot} ${clean}
+
   # XXX Set a dirty variable earlier and check here
-    if grep -q "^build of .*ended at" ${builddir}/logs/${pkgname}.log; then
-	exit ${error}
-    else
-	echo "Build of ${pkgname} in ${host}:/${chroot} failed uncleanly, rebuilding"
-	sleep 120
-    fi
-done
+if grep -q "^build of .*ended at" ${builddir}/logs/${pkgname}.log; then
+    exit ${error}
+else
+    echo "Build of ${pkgname} in ${host}:/${chroot} failed uncleanly"
+    exit 254
+fi
