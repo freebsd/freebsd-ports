@@ -26,7 +26,7 @@ def getpdispatch():
 		pid = fields[0]
 		arch = fields[3]
 		branch = fields[4]
-		port = fields[7].replace('/usr/ports/','')
+		port = fields[9].replace('/usr/ports/','')
 		line = ' '.join(fields)
 
 		if len(arch) > archwidth:

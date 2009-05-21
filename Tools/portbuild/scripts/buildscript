@@ -126,11 +126,15 @@ restr=$(make -V RESTRICTED)
 # Keep restricted distfiles in a subdirectory for extra protection
 # against leakage
 if [ ! -z "$restr" ]; then
+  echo "DISTDIR=${DISTDIR}"
   export DISTDIR=${DISTDIR}/RESTRICTED
+  echo "DISTDIR=${DISTDIR}"
+  mkdir -p ${DISTDIR}
 fi
 
 if [ $phase = 1 ]; then
 
+  # note: if you change this header, also change processonelog and processlogs2
   cd $dir || exit 1
   echo "building for: $(uname -mr)"
   echo "maintained by: $(make maintainer)"

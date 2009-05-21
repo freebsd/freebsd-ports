@@ -16,7 +16,7 @@ backuplist=["a", "a/nfs", "a/src", "a/local", "a/ports", "a/portbuild",
 backupdir="/dumpster/pointyhat/backup"
 
 # How many days between full backups
-fullinterval=14
+fullinterval=3
 
 def validate():
     fslist = zfs.getallfs()

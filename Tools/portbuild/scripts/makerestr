@@ -22,7 +22,8 @@ builddir=${pb}/${arch}/${branch}/builds/${buildid}
 
 buildenv ${pb} ${arch} ${branch} ${builddir}
 
-duds=${builddir}/duds
+# XXX MCL 20080908 test removal of this
+#duds=${builddir}/duds
 
 unset DISPLAY
 

@@ -47,7 +47,7 @@ main(int argc, char *argv[])
 		    /*printf("exited child is %d, status is %d\n", child, status);*/
 		    if (pid1 = child) {
 			/*printf("killing process %d\n", pid2);*/
-			kill(pid2, SIGTERM);
+			kill(pid2, SIGKILL);
 		    } else {
 			/*printf("killing process %d\n", pid1);*/
 			kill(pid1, SIGTERM);

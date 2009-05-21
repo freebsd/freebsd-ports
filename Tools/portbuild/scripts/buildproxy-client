@@ -25,8 +25,18 @@ try:
     s.close()
 
     sys.exit(int(code))
-except:
-    raise # XXX debug
+except Exception, e:
+    print "buildproxy-client: exception:"
+    print e
+    try:
+        if code == None:
+            print "buildproxy-client: error: code was None"
+        else:
+            print "buildproxy-client: error: code was '" + code + "'"
+    except Exception, e2:
+        print "buildproxy-client: exception 2:"
+        print e2
+    raise e  # XXX debug
     sys.exit(254)
 
 

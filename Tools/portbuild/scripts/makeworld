@@ -23,6 +23,8 @@ builddir=${pb}/${arch}/${branch}/builds/${buildid}
 # confuses cross-builds
 
 export TARGET_ARCH=${arch}
+# Workaround needed for zfs - 20090321 erwin
+export NO_FSCHG=1
 
 case "$branch" in
     6*)
