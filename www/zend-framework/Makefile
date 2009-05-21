@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZendFramework
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	www
 MASTER_SITES=	http://framework.zend.com/releases/${DISTNAME}/ \
 		GENTOO/distfiles
@@ -47,7 +47,8 @@ INSTALL_DIRS=	library extras/library
 
 .if defined(WITH_EDOJO)
 DOJO=		""
-INSTALL_DIRS+=	externals
+INSTALL_DIRS+=	externals/dojo/dijit externals/dojo/dojo \
+		externals/dojo/dojox externals/dojo/util
 CONFLICTS+=	dojo-1.*
 .else
 DOJO=		"@comment "

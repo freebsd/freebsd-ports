@@ -1,1217 +1,32 @@
 bin/zf
 bin/zf.php
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/README
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/README
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/demo.css
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/demo.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/demo.profile.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/13.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/1984.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/25.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/25_over.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/26.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/26_over.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/27.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/27_over.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/cinema.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/clicks.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/closterkeller.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/colony5.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/deinelakaien.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/genesis.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/godsbow.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/made.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/main.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/nightspirit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/pati.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/redmprez.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/sieben.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/soon.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/images/thy.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/castle/src.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/README
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/demo.css
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/demo.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/demo.profile.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/images/alarm.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/images/bg.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/images/board.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/images/bubble.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/images/correct.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/images/incorrect.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/images/questions.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/images/remaining.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/images/slow.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/images/teacher_body.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/images/teacher_eyes_closed.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/images/teacher_mouth_angry.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/images/try_again.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/src.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/src/MathFlashCard.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/src/MathFlashCard.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/src/Teacher.css
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/src/Teacher.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/src/Teacher.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/flashCards/src/tests/test_Teacher.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/fonts/charts.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/fonts/comic.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/fonts/demo.css
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/fonts/demo.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/fonts/img/comicstrip.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/fonts/resources/bookplate.svg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/fonts/resources/digistrip.svg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/fonts/resources/eurostyle.svg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/fonts/src.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/fonts/src/charts.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/fonts/src/comic.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/fonts/src/news.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/fonts/src/pie.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/form/README
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/form/demo.css
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/form/demo.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/form/demo.profile.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/form/src.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/form/states.json
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/i18n/README
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/i18n/continents.json
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/i18n/demo.css
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/i18n/demo.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/i18n/demo.profile.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/i18n/flags.css
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/i18n/flags.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/i18n/languages.json
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/i18n/languages.sh
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/i18n/model.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/i18n/normalizeJson.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/i18n/sprite.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/i18n/src.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mail/README
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mail/contacts.php
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mail/demo.css
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mail/demo.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mail/demo.profile.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mail/icons.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mail/icons.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mail/mail.json
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mail/src.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mojo/README
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mojo/demo.css
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mojo/demo.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mojo/demo.profile.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mojo/images/background.jpg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mojo/images/download.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mojo/images/downloadnow.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mojo/images/logo.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mojo/images/logo.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mojo/images/shot3.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mojo/images/shot3.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mojo/src.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mojo/src/download.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/mojo/src/drop.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/nihao/README
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/nihao/demo.css
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/nihao/demo.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/nihao/demo.profile.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/nihao/nls/en/helloworld.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/nihao/nls/fr/helloworld.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/nihao/nls/helloworld.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/nihao/nls/zh/helloworld.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/LICENSE
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/accept.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/anchor.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_cascade.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_double.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_form.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_form_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_form_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_form_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_form_magnify.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_get.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_home.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_lightning.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_osx.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_osx_terminal.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_put.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_side_boxes.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_side_contract.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_side_expand.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_side_list.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_side_tree.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_split.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_tile_horizontal.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_tile_vertical.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_view_columns.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_view_detail.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_view_gallery.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_view_icons.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_view_list.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_view_tile.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_xp.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/application_xp_terminal.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_branch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_divide.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_down.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_in.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_inout.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_join.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_merge.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_out.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_redo.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_refresh.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_refresh_small.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_rotate_anticlockwise.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_rotate_clockwise.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_switch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_turn_left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_turn_right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_undo.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/arrow_up.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/asterisk_orange.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/asterisk_yellow.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/attach.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/award_star_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/award_star_bronze_1.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/award_star_bronze_2.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/award_star_bronze_3.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/award_star_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/award_star_gold_1.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/award_star_gold_2.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/award_star_gold_3.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/award_star_silver_1.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/award_star_silver_2.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/award_star_silver_3.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/basket.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/basket_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/basket_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/basket_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/basket_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/basket_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/basket_put.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/basket_remove.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bell.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bell_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bell_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bell_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bell_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bell_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bin.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bin_closed.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bin_empty.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bomb.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/book.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/book_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/book_addresses.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/book_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/book_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/book_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/book_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/book_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/book_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/book_next.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/book_open.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/book_previous.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/box.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/brick.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/brick_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/brick_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/brick_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/brick_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/brick_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/brick_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bricks.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/briefcase.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bug.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bug_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bug_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bug_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bug_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bug_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bug_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/building.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/building_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/building_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/building_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/building_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/building_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/building_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/building_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_arrow_bottom.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_arrow_down.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_arrow_top.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_arrow_up.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_black.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_blue.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_disk.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_feed.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_green.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_orange.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_picture.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_pink.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_purple.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_red.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_star.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_toggle_minus.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_toggle_plus.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_white.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_wrench.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/bullet_yellow.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cake.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/calculator.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/calculator_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/calculator_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/calculator_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/calculator_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/calculator_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/calendar.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/calendar_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/calendar_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/calendar_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/calendar_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/calendar_view_day.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/calendar_view_month.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/calendar_view_week.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/camera.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/camera_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/camera_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/camera_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/camera_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/camera_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/camera_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/camera_small.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cancel.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/car.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/car_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/car_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cart.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cart_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cart_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cart_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cart_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cart_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cart_put.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cart_remove.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cd.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cd_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cd_burn.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cd_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cd_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cd_eject.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cd_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_bar.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_bar_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_bar_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_bar_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_bar_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_bar_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_curve.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_curve_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_curve_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_curve_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_curve_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_curve_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_curve_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_line.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_line_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_line_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_line_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_line_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_line_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_organisation.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_organisation_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_organisation_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_pie.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_pie_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_pie_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_pie_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_pie_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/chart_pie_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/clock.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/clock_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/clock_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/clock_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/clock_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/clock_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/clock_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/clock_pause.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/clock_play.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/clock_red.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/clock_stop.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cog.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cog_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cog_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cog_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cog_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cog_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/coins.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/coins_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/coins_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/color_swatch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/color_wheel.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/comment.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/comment_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/comment_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/comment_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/comments.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/comments_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/comments_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/compress.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/computer.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/computer_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/computer_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/computer_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/computer_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/computer_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/computer_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/computer_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/connect.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/contrast.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/contrast_decrease.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/contrast_high.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/contrast_increase.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/contrast_low.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_eject.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_eject_blue.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_end.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_end_blue.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_equalizer.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_equalizer_blue.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_fastforward.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_fastforward_blue.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_pause.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_pause_blue.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_play.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_play_blue.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_repeat.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_repeat_blue.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_rewind.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_rewind_blue.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_start.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_start_blue.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_stop.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/control_stop_blue.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/controller.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/controller_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/controller_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/controller_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/creditcards.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cross.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/css.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/css_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/css_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/css_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/css_valid.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cup.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cup_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cup_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cup_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cup_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cup_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cup_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cup_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cursor.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cut.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/cut_red.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/database.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/database_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/database_connect.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/database_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/database_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/database_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/database_gear.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/database_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/database_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/database_lightning.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/database_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/database_refresh.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/database_save.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/database_table.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/date.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/date_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/date_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/date_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/date_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/date_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/date_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/date_magnify.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/date_next.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/date_previous.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/disconnect.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/disk.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/disk_multiple.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/door.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/door_in.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/door_open.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/door_out.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drink.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drink_empty.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drive.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drive_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drive_burn.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drive_cd.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drive_cd_empty.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drive_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drive_disk.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drive_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drive_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drive_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drive_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drive_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drive_magnify.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drive_network.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drive_rename.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drive_user.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/drive_web.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/dvd.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/dvd_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/dvd_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/dvd_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/dvd_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/dvd_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/dvd_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/dvd_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/email.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/email_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/email_attach.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/email_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/email_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/email_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/email_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/email_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/email_open.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/email_open_image.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/emoticon_evilgrin.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/emoticon_grin.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/emoticon_happy.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/emoticon_smile.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/emoticon_surprised.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/emoticon_tongue.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/emoticon_unhappy.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/emoticon_waii.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/emoticon_wink.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/error_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/error_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/error_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/exclamation.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/eye.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/feed.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/feed_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/feed_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/feed_disk.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/feed_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/feed_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/feed_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/feed_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/feed_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/feed_magnify.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/female.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/film.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/film_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/film_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/film_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/film_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/film_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/film_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/film_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/film_save.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/find.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/flag_blue.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/flag_green.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/flag_orange.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/flag_pink.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/flag_purple.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/flag_red.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/flag_yellow.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_bell.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_brick.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_bug.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_camera.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_database.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_explore.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_feed.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_find.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_heart.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_image.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_lightbulb.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_magnify.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_page.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_page_white.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_palette.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_picture.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_star.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_table.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_user.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/folder_wrench.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/font.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/font_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/font_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/font_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/group.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/group_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/group_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/group_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/group_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/group_gear.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/group_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/group_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/group_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/heart.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/heart_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/heart_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/help.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/hourglass.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/hourglass_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/hourglass_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/hourglass_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/hourglass_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/house.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/house_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/house_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/html.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/html_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/html_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/html_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/html_valid.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/image.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/image_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/image_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/image_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/image_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/images.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/information.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/ipod.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/ipod_cast.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/ipod_cast_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/ipod_cast_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/ipod_sound.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/joystick.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/joystick_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/joystick_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/joystick_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/key_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/key_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/key_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/keyboard.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/keyboard_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/keyboard_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/keyboard_magnify.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/layers.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/layout.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/layout_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/layout_content.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/layout_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/layout_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/layout_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/layout_header.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/layout_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/layout_sidebar.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lightbulb.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lightbulb_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lightbulb_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lightbulb_off.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lightning.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lightning_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lightning_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lightning_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/link_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/link_break.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/link_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/link_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/link_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/link_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lock.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lock_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lock_break.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lock_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lock_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lock_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lock_open.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lorry.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lorry_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lorry_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lorry_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lorry_flatbed.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lorry_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/lorry_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/magifier_zoom_out.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/magnifier.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/magnifier_zoom_in.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/male.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/map.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/map_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/map_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/map_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/map_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/map_magnify.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/medal_bronze_1.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/medal_bronze_2.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/medal_bronze_3.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/medal_bronze_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/medal_bronze_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/medal_gold_1.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/medal_gold_2.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/medal_gold_3.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/medal_gold_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/medal_gold_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/medal_silver_1.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/medal_silver_2.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/medal_silver_3.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/medal_silver_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/medal_silver_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/money.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/money_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/money_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/money_dollar.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/money_euro.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/money_pound.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/money_yen.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/monitor.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/monitor_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/monitor_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/monitor_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/monitor_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/monitor_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/monitor_lightning.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/monitor_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/mouse.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/mouse_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/mouse_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/mouse_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/music.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/new.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/newspaper.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/newspaper_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/newspaper_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/newspaper_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/newspaper_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/note.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/note_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/note_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/note_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/note_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/note_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/overlays.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/package.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/package_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/package_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/package_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/package_green.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/package_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_attach.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_code.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_copy.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_excel.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_find.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_gear.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_green.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_lightning.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_paintbrush.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_paste.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_red.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_refresh.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_save.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_acrobat.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_actionscript.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_c.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_camera.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_cd.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_code.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_code_red.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_coldfusion.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_compressed.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_copy.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_cplusplus.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_csharp.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_cup.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_database.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_dvd.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_excel.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_find.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_flash.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_freehand.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_gear.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_get.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_h.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_horizontal.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_lightning.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_magnify.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_medal.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_office.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_paint.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_paintbrush.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_paste.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_php.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_picture.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_powerpoint.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_put.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_ruby.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_stack.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_star.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_swoosh.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_text.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_text_width.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_tux.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_vector.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_visualstudio.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_width.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_word.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_world.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_wrench.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_white_zip.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_word.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/page_world.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/paintbrush.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/paintcan.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/palette.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/paste_plain.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/paste_word.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/pencil.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/pencil_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/pencil_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/pencil_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/phone.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/phone_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/phone_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/phone_sound.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/photo.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/photo_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/photo_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/photo_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/photos.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/picture.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/picture_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/picture_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/picture_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/picture_empty.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/picture_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/picture_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/picture_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/picture_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/picture_save.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/pictures.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/pilcrow.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/pill.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/pill_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/pill_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/pill_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/plugin.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/plugin_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/plugin_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/plugin_disabled.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/plugin_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/plugin_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/plugin_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/plugin_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/printer.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/printer_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/printer_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/printer_empty.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/printer_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/rainbow.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/report.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/report_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/report_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/report_disk.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/report_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/report_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/report_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/report_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/report_magnify.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/report_picture.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/report_user.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/report_word.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/resultset_first.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/resultset_last.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/resultset_next.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/resultset_previous.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/rosette.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/rss.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/rss_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/rss_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/rss_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/rss_valid.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/ruby.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/ruby_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/ruby_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/ruby_gear.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/ruby_get.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/ruby_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/ruby_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/ruby_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/ruby_put.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/script.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/script_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/script_code.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/script_code_red.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/script_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/script_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/script_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/script_gear.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/script_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/script_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/script_lightning.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/script_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/script_palette.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/script_save.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/server.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/server_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/server_chart.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/server_compressed.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/server_connect.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/server_database.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/server_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/server_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/server_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/server_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/server_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/server_lightning.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/server_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/server_uncompressed.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shading.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_align_bottom.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_align_center.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_align_left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_align_middle.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_align_right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_align_top.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_flip_horizontal.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_flip_vertical.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_group.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_handles.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_move_back.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_move_backwards.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_move_forwards.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_move_front.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_rotate_anticlockwise.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_rotate_clockwise.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_square.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_square_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_square_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_square_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_square_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_square_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_square_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_square_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shape_ungroup.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shield.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shield_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shield_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/shield_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/sitemap.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/sitemap_color.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/sound.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/sound_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/sound_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/sound_low.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/sound_mute.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/sound_none.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/spellcheck.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/sport_8ball.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/sport_basketball.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/sport_football.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/sport_golf.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/sport_raquet.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/sport_shuttlecock.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/sport_soccer.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/sport_tennis.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/star.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/status_away.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/status_busy.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/status_offline.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/status_online.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/stop.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/style.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/style_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/style_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/style_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/style_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/sum.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/tab.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/tab_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/tab_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/tab_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/tab_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/table.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/table_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/table_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/table_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/table_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/table_gear.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/table_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/table_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/table_lightning.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/table_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/table_multiple.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/table_refresh.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/table_relationship.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/table_row_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/table_row_insert.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/table_save.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/table_sort.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/tag.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/tag_blue.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/tag_blue_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/tag_blue_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/tag_blue_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/tag_green.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/tag_orange.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/tag_pink.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/tag_purple.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/tag_red.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/tag_yellow.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/telephone.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/telephone_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/telephone_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/telephone_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/telephone_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/telephone_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/telephone_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/telephone_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/television.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/television_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/television_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_align_center.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_align_justify.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_align_left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_align_right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_allcaps.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_bold.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_columns.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_dropcaps.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_heading_1.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_heading_2.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_heading_3.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_heading_4.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_heading_5.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_heading_6.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_horizontalrule.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_indent.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_indent_remove.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_italic.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_kerning.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_letter_omega.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_letterspacing.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_linespacing.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_list_bullets.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_list_numbers.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_lowercase.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_padding_bottom.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_padding_left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_padding_right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_padding_top.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_replace.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_signature.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_smallcaps.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_strikethrough.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_subscript.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_superscript.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_underline.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/text_uppercase.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/textfield.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/textfield_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/textfield_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/textfield_key.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/textfield_rename.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/thumb_down.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/thumb_up.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/tick.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/time.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/time_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/time_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/time_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/timeline_marker.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/transmit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/transmit_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/transmit_blue.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/transmit_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/transmit_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/transmit_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/transmit_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/tux.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/user.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/user_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/user_comment.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/user_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/user_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/user_female.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/user_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/user_gray.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/user_green.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/user_orange.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/user_red.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/user_suit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/vcard.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/vcard_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/vcard_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/vcard_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/vector.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/vector_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/vector_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/wand.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/weather_clouds.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/weather_cloudy.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/weather_lightning.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/weather_rain.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/weather_snow.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/weather_sun.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/webcam.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/webcam_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/webcam_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/webcam_error.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/world.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/world_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/world_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/world_edit.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/world_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/world_link.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/wrench.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/wrench_orange.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/xhtml.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/xhtml_add.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/xhtml_delete.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/xhtml_go.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/xhtml_valid.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/zoom.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/zoom_in.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/icons/zoom_out.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/readme.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/silk/readme.txt
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/resources/users.json
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/README
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/buildDemo.sh
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/demo.css
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/demo.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/demo.profile.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/imageReflect.php
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/bg01.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/info.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/loading.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/logo.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/round.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/square.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/alex.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/becka11y.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/bforbes.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/blowery.jpg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/blowery.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/bradn.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/dante.jpg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/dante.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/davidb.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/dmachi.jpg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/dmachi.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/dylanks.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/eugene.jpg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/gregw.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/heng.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/itorrey.jpg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/itorrey.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/jared_j.jpg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/kris.jpg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/mccain.jpg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/nonken.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/ntoone.jpg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/pottedmeat.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/rcoup.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/sfoster.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/ttrenka.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/images/users/wildbill.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/src.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/src/Image.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/skew/src/image-lib.php
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/uploader/README
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/uploader/UploadFile.php
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/uploader/buildDemo.sh
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/uploader/cLOG.php
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/uploader/demo.css
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/uploader/demo.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/uploader/demo.profile.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/uploader/src.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/README
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/buildDemo.sh
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/demo.css
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/demo.html
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/demo.profile.js
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/images/blkBk.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/images/playerIcons
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/images/volBack.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/images/volBackOver.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/images/volMask.png
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/items.json
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/media/Clayman_01.flv
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/media/Clayman_02.flv
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/media/Clayman_03.flv
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/media/Grog.flv
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/media/Manager.flv
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/media/OldMan.flv
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/media/TapDance.flv
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/media/Walkin.flv
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/media/thumbs/Clayman_01.jpg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/media/thumbs/Clayman_02.jpg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/media/thumbs/Clayman_03.jpg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/media/thumbs/Grog.jpg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/media/thumbs/Manager.jpg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/media/thumbs/OldMan.jpg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/media/thumbs/TapDance.jpg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/media/thumbs/Walkin.jpg
-%%DOJO%%%%DATADIR%%/externals/dojo/demos/video/src.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/CheckedMenuItem.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/ColorPalette.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/Declaration.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/Dialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/DialogUnderlay.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/Editor.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/InlineEditBox.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/LICENSE
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/Menu.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/MenuBar.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/MenuBarItem.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/MenuItem.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/MenuSeparator.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/PopupMenuBarItem.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/PopupMenuItem.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/ProgressBar.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/TitlePane.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/Toolbar.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/ToolbarSeparator.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/Tooltip.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/TooltipDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/Tree.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_Calendar.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/_Contained.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_Container.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/_DialogMixin.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/_KeyNavContainer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_Templated.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_TimePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_Widget.js
@@ -1321,31 +136,41 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/plugins/ToggleDir.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/range.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/selection.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/_tree/Node.html
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/_tree/Tree.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_tree/dndContainer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_tree/dndSelector.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_tree/dndSource.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/_tree/model.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/dijit-all.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/dijit.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/Button.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/CheckBox.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/ComboBox.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/ComboButton.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/CurrencyTextBox.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/DateTextBox.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/DropDownButton.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/FilteringSelect.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/Form.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/HorizontalRule.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/HorizontalRuleLabels.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/HorizontalSlider.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/MappedTextBox.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/MultiSelect.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/NumberSpinner.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/NumberTextBox.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/RadioButton.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/RangeBoundTextBox.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/SimpleTextarea.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/Slider.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/TextBox.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/Textarea.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/TimeTextBox.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/ToggleButton.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/ValidationTextBox.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/VerticalRule.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/VerticalRuleLabels.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/VerticalSlider.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/_DateTimeTextBox.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/_FormMixin.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/_FormWidget.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/_Spinner.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/ComboBox.js
@@ -1443,15 +268,18 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/templates/ValidationTextBox.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/templates/VerticalSlider.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/AccordionContainer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/AccordionPane.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/BorderContainer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/ContentPane.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/LayoutContainer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/LinkPane.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/SplitContainer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/StackContainer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/StackController.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/TabContainer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/TabController.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/_LayoutWidget.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/templates/AccordionPane.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/templates/AccordionButton.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/templates/TabContainer.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/templates/_TabButton.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/nls/ar/common.js
@@ -1514,14 +342,22 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/robot.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/robotx.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/templates/Calendar.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/templates/CheckedMenuItem.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/templates/ColorPalette.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/templates/Dialog.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/templates/InlineEditBox.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/templates/Menu.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/templates/MenuBar.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/templates/MenuBarItem.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/templates/MenuItem.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/templates/MenuSeparator.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/templates/ProgressBar.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/templates/TimePicker.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/templates/TitlePane.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/templates/Tooltip.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/templates/TooltipDialog.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/templates/Tree.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/templates/TreeNode.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/tests/_data/countries.json
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/tests/_testCommon.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/a11y/README.txt
@@ -1630,6 +466,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/images/tooltipConnectorUp.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/images/tooltipConnectorUp.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/images/treeExpand_loading.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/images/treeHover.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/images/treeI.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/images/treeI_half.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/images/treeI_half_rtl.gif
@@ -1843,6 +680,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/images/tooltipConnectorUp.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/images/tooltipConnectorUp.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/images/treeExpand_loading.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/images/treeHover.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/images/treeI.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/images/treeI_half.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/images/treeI_half_rtl.gif
@@ -2001,6 +839,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/images/treeExpand_mius.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/images/treeExpand_plus.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/images/treeExpand_plus_rtl.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/images/treeHover.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/images/validationInputBg.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/images/validationInputBg.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/images/warning.png
@@ -2011,6 +850,9 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/layout/TabContainer.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/layout/TabContainer_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/tundra.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/tree/ForestStoreModel.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/tree/TreeStoreModel.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/tree/model.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/AdapterRegistry.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/DeferredList.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/LICENSE
@@ -2023,6 +865,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/_base/NodeList.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/_base/_loader/bootstrap.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/_base/_loader/hostenv_browser.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/_base/_loader/hostenv_ff_ext.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/_base/_loader/hostenv_rhino.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/_base/_loader/hostenv_spidermonkey.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/_base/_loader/loader.js
@@ -2037,6 +880,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/_base/html.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/_base/json.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/_base/lang.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/_base/query-sizzle.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/_base/query.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/_base/window.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/_base/xhr.js
@@ -2055,11 +899,28 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/LICENSE
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/monetary.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ar/currency.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ar/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ar/islamic-civil.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ar/islamic.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ar/number.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ca/currency.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ca/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ca/number.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/cs/currency.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/cs/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/cs/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/currency.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/da/currency.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/da/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/da/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/de-de/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/de/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/de/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/de/number.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/el/currency.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/el/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/el/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/en-au/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/en-au/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/en-au/number.js
@@ -2077,10 +938,23 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/es/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/es/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/es/number.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/fi/currency.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/fi/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/fi/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/fr/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/fr/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/fr/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/he/currency.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/he/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/he/hebrew.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/he/number.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/hebrew.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/hu/currency.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/hu/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/hu/number.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/islamic-civil.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/islamic.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/it-it/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/it/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/it/gregorian.js
@@ -2094,11 +968,40 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ko/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ko/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ko/number.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/nb/currency.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/nb/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/nb/number.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/nl/currency.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/nl/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/nl/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/number.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/pl/currency.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/pl/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/pl/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/pt-br/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/pt-pt/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/pt-pt/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/pt/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/pt/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/pt/number.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ru/currency.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ru/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ru/number.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/sk/currency.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/sk/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/sk/number.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/sl/currency.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/sl/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/sl/number.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/sv/currency.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/sv/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/sv/number.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/th/currency.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/th/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/th/number.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/tr/currency.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/tr/gregorian.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/tr/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/zh-cn/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/zh-cn/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/zh-tw/currency.js
@@ -2137,6 +1040,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/dnd/move.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/dojo.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/fx.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/fx/Toggler.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/fx/easing.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/gears.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/html.js
@@ -2208,9 +1112,126 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/analytics/plugins/window.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/analytics/profiles/analytics.profile.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/analytics/profiles/analyticsInBase.profile.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/README
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/io/Connection.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/io/model.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/FeedViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ar/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ar/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ar/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ar/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/cs/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/cs/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/cs/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/cs/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/da/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/da/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/da/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/da/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/de/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/de/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/de/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/de/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/el/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/el/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/el/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/el/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/es/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/es/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/es/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/es/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/fi/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/fi/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/fi/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/fi/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/fr/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/fr/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/fr/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/fr/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/he/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/he/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/he/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/he/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/hu/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/hu/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/hu/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/hu/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/it/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/it/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/it/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/it/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ja/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ja/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ja/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ja/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ko/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ko/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ko/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ko/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/nb/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/nb/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/nb/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/nb/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/nl/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/nl/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/nl/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/nl/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pl/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pl/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pl/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pl/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt-pt/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt-pt/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt-pt/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt-pt/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ru/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ru/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ru/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ru/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sv/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sv/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sv/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sv/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/tr/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/tr/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/tr/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/tr/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/zh-tw/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/zh-tw/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/zh-tw/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/zh-tw/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/zh/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/zh/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/zh/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/zh/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/templates/EntryHeader.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/templates/FeedEntryEditor.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/templates/FeedEntryViewer.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/templates/FeedViewer.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/templates/FeedViewerEntry.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/templates/FeedViewerGrouping.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/templates/PeopleEditor.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/templates/css/EntryHeader.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/templates/css/HtmlFeedEntryEditor.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/templates/css/HtmlFeedEntryViewer.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/templates/css/HtmlFeedViewer.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/templates/css/HtmlFeedViewerEntry.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/templates/css/HtmlFeedViewerGrouping.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/av/FLAudio.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/av/FLVideo.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/av/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/av/_Media.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/av/resources/audio.swf
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/av/resources/version.mov
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/av/resources/video.swf
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/av/widget/PlayButton.js
@@ -2234,6 +1255,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/av/widget/resources/images/sliderHandleSprite.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/Chart2D.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/Chart3D.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/DataChart.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/Element.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/Series.js
@@ -2319,7 +1341,6 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/collections/_base.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/color.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/color/Colorspace.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/color/Generator.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/color/Palette.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/color/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/color/_base.js
@@ -2328,6 +1349,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/cometd/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/cometd/RestChannels.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/cometd/_base.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/cometd/ack.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/cometd/callbackPollTransport.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/cometd/longPollTransport.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/cometd/longPollTransportFormEncoded.js
@@ -2336,6 +1358,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/cometd/timesync.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/AndOrReadStore.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/AndOrWriteStore.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/AppStore.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/AtomReadStore.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/ClientFilter.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/CouchDBRestStore.js
@@ -2349,16 +1372,21 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/GoogleSearchStore.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/HtmlStore.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/HtmlTableStore.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/ItemExplorer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/JsonQueryRestStore.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/JsonRestStore.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/KeyValueStore.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/OpenSearchStore.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/OpmlStore.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/PersevereStore.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/PicasaStore.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/QueryReadStore.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/README
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/RailsStore.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/S3Store.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/ServiceStore.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/SnapLogicStore.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/StoreExplorer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/WikipediaStore.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/XmlStore.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/css.js
@@ -2367,21 +1395,30 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/restListener.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/s3/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/s3/proxy.example-php
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/util/JsonQuery.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/date/HebrewDate.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/date/HebrewLocale.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/date/HebrewNumerals.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/date/IslamicDate.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/date/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/date/php.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/date/posix.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/Context.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/DomInline.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/HtmlInline.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/Inline.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/README
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/_DomTemplated.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/_HtmlTemplated.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/_Templated.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/_base.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/contrib/data.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/contrib/dijit.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/contrib/dom.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/contrib/html.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/contrib/objects.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/dom.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/ext-dojo/NodeList.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/filter/dates.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/filter/htmlstrings.js
@@ -2391,6 +1428,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/filter/misc.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/filter/strings.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/html.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/render/dom.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/render/html.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/tag/date.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/tag/loader.js
@@ -2402,6 +1440,29 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/TablePlugins.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/UploadImage.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ar/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/cs/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/da/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/de/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/el/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/es/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/fi/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/fr/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/he/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/hu/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/it/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ja/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ko/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/nb/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/nl/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pl/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt-pt/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/sv/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/tr/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh-tw/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/editorPlugins.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/busy.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/cellpad.png
@@ -2425,8 +1486,10 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/encoding/compression/lzw.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/encoding/compression/splay.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/encoding/crypto/Blowfish.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/encoding/crypto/SimpleAES.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/encoding/crypto/_base.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/encoding/digests/MD5.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/encoding/digests/SHA1.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/encoding/digests/_base.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/encoding/easy64.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/flash.js
@@ -2443,6 +1506,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/FileInputAuto.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/FilePickerTextBox.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/FileUploader.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/Manager.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/MultiComboBox.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/PasswordValidator.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/README
@@ -2453,6 +1517,13 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/_FormSelectWidget.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/_HasDropDown.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/_SelectStackMixin.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/manager/_ClassMixin.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/manager/_DisplayMixin.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/manager/_EnableMixin.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/manager/_FormMixin.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/manager/_Mixin.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/manager/_NodeMixin.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/manager/_ValueMixin.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/nls/PasswordValidator.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/nls/ar/PasswordValidator.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/nls/ca/PasswordValidator.js
@@ -2568,6 +1639,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/Selection.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/VirtualGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/_Builder.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/_EditManager.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/_Events.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/_FocusManager.js
@@ -2727,15 +1799,18 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/html/_base.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/html/metrics.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/html/styles.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/image.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/image/Badge.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/image/FlickrBadge.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/image/Gallery.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/image/Lightbox.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/image/LightboxNano.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/image/Magnifier.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/image/MagnifierLite.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/image/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/image/SlideShow.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/image/ThumbnailPicker.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/image/_base.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/image/resources/Badge.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/image/resources/Gallery.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/image/resources/Gallery.html
@@ -2758,6 +1833,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/image/resources/images/right.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/image/resources/images/right.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/image/resources/images/warning.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/io/OAuth.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/io/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/io/httpParse.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/io/proxy/README
@@ -2770,6 +1846,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/io/windowName.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/io/xhrMultiPart.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/io/xhrPlugins.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/io/xhrScriptPlugin.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/io/xhrWindowNamePlugin.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/json/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/json/query.js
@@ -2805,8 +1882,14 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/functional/tailrec.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/functional/util.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/functional/zip.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/mix.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/observable.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/oo/Decorator.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/oo/Filter.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/oo/aop.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/oo/declare.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/oo/general.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/oo/mixin.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/oo/rearrange.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/utils.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/BorderContainer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/ContentPane.js
@@ -2822,6 +1905,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/ToggleSplitter.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/dnd/Avatar.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/dnd/PlottedDnd.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/ext-dijit/layout/StackContainer-touch.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/nls/GridContainer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/nls/en/GridContainer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/nls/fr/GridContainer.js
@@ -2847,6 +1931,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/math/_base.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/math/curves.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/math/matrix.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/math/round.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/off.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/off/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/off/_common.js
@@ -2864,21 +1949,9 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/off/resources/roller.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/off/sync.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/off/ui.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/presentation.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/presentation/README
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/presentation/_base.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/presentation/resources/Show.css
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/presentation/resources/Show.html
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/presentation/resources/Slide.html
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/presentation/resources/icons/down.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/presentation/resources/icons/next.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/presentation/resources/icons/prev.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/presentation/resources/icons/up.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/resources/README.template
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/resources/_modules.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/resources/explore.php
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/resources/manualTests.html
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/resources/manualTests.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/robot/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/robot/recorder.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/rpc/Client.js
@@ -2949,6 +2022,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/timing/Streamer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/timing/ThreadPool.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/timing/_base.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/timing/doLater.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/uuid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/uuid/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/uuid/Uuid.js
@@ -2965,13 +2039,17 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/validate/regexp.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/validate/us.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/validate/web.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/AnalogGauge.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/BarGauge.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/Calendar.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/Calendar/Calendar.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/Calendar/Calendar.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/Calendar/CalendarDay.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/Calendar/CalendarMonth.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/Calendar/CalendarMonthYear.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/Calendar/CalendarYear.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/CalendarFx.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/CalendarViews.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/ColorPicker/ColorPicker.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/ColorPicker/ColorPicker.html
@@ -3014,43 +2092,79 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/Roller.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/RollingList.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/RollingList/RollingList.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/RollingList/RollingList.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/SortList.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/SortList/SortList.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/SortList/SortList.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/Standby.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/Standby/Standby.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/Standby/Standby.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/Standby/images/loading.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/Toaster.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/Toaster/Toaster.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/Wizard/Wizard.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/Wizard/Wizard.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/gauge/AnalogArcIndicator.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/gauge/AnalogArrowIndicator.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/gauge/AnalogNeedleIndicator.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/gauge/BarIndicator.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/gauge/_Gauge.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/gauge/_Gauge.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/gauge/_Gauge.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/gauge/_Indicator.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/RollingList.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ar/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ar/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ca/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/cs/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/cs/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/da/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/da/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/de/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/de/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/el/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/el/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/es/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/es/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/fi/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/fi/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/fr/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/fr/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/he/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/he/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/hu/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/hu/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/it/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/it/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ja/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ja/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ko/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ko/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/nb/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/nb/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/nl/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/nl/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pl/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pl/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pt-pt/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pt-pt/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pt/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pt/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ru/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ru/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sk/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sl/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sv/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sv/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/th/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/tr/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/tr/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/zh-tw/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/zh-tw/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/zh/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/zh/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/wire.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/wire/CompositeWire.js
@@ -3091,7 +2205,6 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/build.bat
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/build.js
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/build.sh
-%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/build_mini.sh
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/build_notice.txt
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/build_release.sh
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cdnBuild.txt
@@ -3112,12 +2225,11 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/lib/APL-2.0.html
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/lib/LICENSE
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/lib/MPL-1.0.html
-%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/lib/MPL-1.1.html
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/lib/ant-apache-bsf.jar
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/lib/bsf.jar
-%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/lib/js.jar
+%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/lib/commons-logging-1.1.1.jar
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/lib/resolver.jar
-%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/lib/saxon8.jar
+%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/lib/saxon9.jar
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/number.xsl
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/specialLocale.js
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/util.xsl
@@ -3158,18 +2270,16 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/tests/profiles/nestedNls.profile.js
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild.html
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild.php
-%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/builder_ui.html
-%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/dojo.js.html
-%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/helma/apps.properties
-%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/helma/apps/builder/Global/download.skin
-%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/helma/apps/builder/Global/global.js
-%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/helma/apps/builder/Root/main.hac
-%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/helma/apps/builder/app.properties
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/index.html
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/makeWebBuildModuleList.js
-%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/topIndex.html
-%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/webbuild.js
-%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/webbuild.sh
+%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/build.xml
+%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/js/build.js
+%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/lib/js.jar
+%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/lib/shrinksafe.jar
+%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/src/org/dtk/BuilderContextAction.java
+%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/src/org/dtk/BuilderServlet.java
+%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/src/org/dtk/FileUtil.java
+%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/web/WEB-INF/web.xml
 %%DOJO%%%%DATADIR%%/externals/dojo/util/doh/LICENSE
 %%DOJO%%%%DATADIR%%/externals/dojo/util/doh/README
 %%DOJO%%%%DATADIR%%/externals/dojo/util/doh/Robot.html
@@ -3189,18 +2299,20 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/util/doh/runner.sh
 %%DOJO%%%%DATADIR%%/externals/dojo/util/doh/small_logo.png
 %%DOJO%%%%DATADIR%%/externals/dojo/util/doh/tests/robot.html
-%%DOJO%%%%DATADIR%%/externals/dojo/util/maven/README.txt
-%%DOJO%%%%DATADIR%%/externals/dojo/util/maven/dojo-war/pom.xml
-%%DOJO%%%%DATADIR%%/externals/dojo/util/maven/dojo-war/src/main/java/org/dojotoolkit/DojoFilter.java
-%%DOJO%%%%DATADIR%%/externals/dojo/util/maven/dojo-war/src/main/webapp/WEB-INF/web.xml
-%%DOJO%%%%DATADIR%%/externals/dojo/util/maven/dojo/pom.xml
-%%DOJO%%%%DATADIR%%/externals/dojo/util/maven/dojo/src/main/assembly/dojo.xml
-%%DOJO%%%%DATADIR%%/externals/dojo/util/maven/pom.xml
-%%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/BUILD
 %%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/LICENSE
 %%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/MPL-1.1.html
-%%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/custom_rhino.diff
-%%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/custom_rhino.jar
+%%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/README
+%%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/build.sh
+%%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/js.jar
+%%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/shrinksafe.jar
+%%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/src/manifest
+%%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/src/org/dojotoolkit/shrinksafe/Compressor.java
+%%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/src/org/dojotoolkit/shrinksafe/Main.java
+%%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/src/org/dojotoolkit/shrinksafe/TokenMapper.java
+%%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/src/org/dojotoolkit/shrinksafe/resources/Messages.properties
+%%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/tests/5303.js
+%%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/tests/module.js
+%%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/tests/runner.sh
 %%DATADIR%%/extras/library/ZendX/Console/Exception.php
 %%DATADIR%%/extras/library/ZendX/Console/Process/Exception.php
 %%DATADIR%%/extras/library/ZendX/Console/Process/Unix.php
@@ -3254,6 +2366,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Acl/Role/Interface.php
 %%DATADIR%%/library/Zend/Acl/Role/Registry.php
 %%DATADIR%%/library/Zend/Acl/Role/Registry/Exception.php
+%%DATADIR%%/library/Zend/Amf/Adobe/Introspector.php
 %%DATADIR%%/library/Zend/Amf/Constants.php
 %%DATADIR%%/library/Zend/Amf/Exception.php
 %%DATADIR%%/library/Zend/Amf/Parse/Amf0/Deserializer.php
@@ -5155,6 +4268,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Tool/Project/Context/Zf/LogsDirectory.php
 %%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ModelFile.php
 %%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ModelsDirectory.php
+%%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ModuleDirectory.php
 %%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ModulesDirectory.php
 %%DATADIR%%/library/Zend/Tool/Project/Context/Zf/ProjectProviderFile.php
 %%DATADIR%%/library/Zend/Tool/Project/Context/Zf/PublicDirectory.php
@@ -5188,7 +4302,8 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Tool/Project/Profile/Exception.php
 %%DATADIR%%/library/Zend/Tool/Project/Profile/FileParser/Interface.php
 %%DATADIR%%/library/Zend/Tool/Project/Profile/FileParser/Xml.php
-%%DATADIR%%/library/Zend/Tool/Project/Profile/Iterator/EnabledResource.php
+%%DATADIR%%/library/Zend/Tool/Project/Profile/Iterator/ContextFilter.php
+%%DATADIR%%/library/Zend/Tool/Project/Profile/Iterator/EnabledResourceFilter.php
 %%DATADIR%%/library/Zend/Tool/Project/Profile/Resource.php
 %%DATADIR%%/library/Zend/Tool/Project/Profile/Resource/Container.php
 %%DATADIR%%/library/Zend/Tool/Project/Profile/Resource/SearchConstraints.php
@@ -5199,6 +4314,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Tool/Project/Provider/Form.php
 %%DATADIR%%/library/Zend/Tool/Project/Provider/Manifest.php
 %%DATADIR%%/library/Zend/Tool/Project/Provider/Model.php
+%%DATADIR%%/library/Zend/Tool/Project/Provider/Module.php
 %%DATADIR%%/library/Zend/Tool/Project/Provider/Profile.php
 %%DATADIR%%/library/Zend/Tool/Project/Provider/Project.php
 %%DATADIR%%/library/Zend/Tool/Project/Provider/ProjectProvider.php
@@ -5657,6 +4773,9 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/TestHelper.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/AclTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/IntrospectorTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/_files/ZendAmfAdobeIntrospectorTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/_files/ZendAmfAdobeIntrospectorTestType.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Contact.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Request/bytearray.bin
@@ -5746,6 +4865,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/bar/controllers/.placeholder
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/baz/controllers/.placeholder
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/default/Bootstrap.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/foo-bar/Bootstrap.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/foo/Bootstrap.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/foo/controllers/.placeholder
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/zfappbootstrap/controllers/ErrorController.php
@@ -7967,6 +7087,7 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/zfappbootstrap/controllers
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/zfappbootstrap
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/foo/controllers
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/foo-bar
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/foo
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/default
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/baz/controllers
@@ -7985,6 +7106,8 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Response
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Request/mock
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Request
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Adobe
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests
@@ -8408,6 +7531,7 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Amf/Parse/Amf3
 @dirrm %%DATADIR%%/library/Zend/Amf/Parse/Amf0
 @dirrm %%DATADIR%%/library/Zend/Amf/Parse
+@dirrm %%DATADIR%%/library/Zend/Amf/Adobe
 @dirrm %%DATADIR%%/library/Zend/Amf
 @dirrm %%DATADIR%%/library/Zend/Acl/Role/Registry
 @dirrm %%DATADIR%%/library/Zend/Acl/Role
@@ -8436,29 +7560,25 @@ bin/zf.php
 @dirrm %%DATADIR%%/extras/library/ZendX
 @dirrm %%DATADIR%%/extras/library
 @dirrm %%DATADIR%%/extras
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/shrinksafe/tests
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/shrinksafe/src/org/dojotoolkit/shrinksafe/resources
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/shrinksafe/src/org/dojotoolkit/shrinksafe
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/shrinksafe/src/org/dojotoolkit
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/shrinksafe/src/org
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/shrinksafe/src
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/shrinksafe
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/maven/dojo/src/main/assembly
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/maven/dojo/src/main
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/maven/dojo/src
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/maven/dojo-war/src/main/webapp/WEB-INF
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/maven/dojo-war/src/main/webapp
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/maven/dojo-war/src/main/java/org/dojotoolkit
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/maven/dojo-war/src/main/java/org
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/maven/dojo-war/src/main/java
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/maven/dojo-war/src/main
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/maven/dojo-war/src
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/maven/dojo-war
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/maven/dojo
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/maven
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/doh/tests
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/doh/robot
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/doh/_sounds
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/doh
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/helma/apps/builder/Root
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/helma/apps/builder/Global
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/helma/apps/builder
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/helma/apps
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/helma
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/web/WEB-INF
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/web
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/src/org/dtk
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/src/org
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/src
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/lib
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/js
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/buildscripts/webbuild
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/buildscripts/tests/profiles
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/buildscripts/tests/foo/page
@@ -8506,8 +7626,11 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/nls/ca
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/nls/ar
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/nls
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/gauge
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/Wizard
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/Toaster
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/Standby/images
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/Standby
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/SortList
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/RollingList
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/Pager/images
@@ -8539,9 +7662,6 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/rpc
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/robot
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/resources
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/presentation/resources/icons
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/presentation/resources
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/presentation
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/off/resources
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/off/docs
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/off
@@ -8551,8 +7671,11 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/layout/nls/fr
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/layout/nls/en
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/layout/nls
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/layout/ext-dijit/layout
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/layout/ext-dijit
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/layout/dnd
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/layout
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/lang/oo
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/lang/functional
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/lang/aspect
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/lang
@@ -8620,6 +7743,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form/nls/ca
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form/nls/ar
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form/nls
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form/manager
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/flash
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/encoding/digests
@@ -8631,6 +7755,29 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/embed
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh-tw
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/tr
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/sv
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt-pt
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pl
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/nl
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/nb
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ko
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ja
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/it
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/hu
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/he
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/fr
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/fi
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/es
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/el
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/de
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/da
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/cs
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ar
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor
@@ -8642,6 +7789,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/dtl/contrib
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/dtl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/date
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/data/util
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/data/s3
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/data
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/cometd
@@ -8662,6 +7810,35 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/av/widget
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/av/resources
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/av
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/templates/css
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/templates
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/zh-tw
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/zh
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/tr
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sv
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ru
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt-pt
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pl
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/nl
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/nb
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ko
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ja
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/it
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/hu
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/he
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/fr
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/fi
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/es
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/el
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/de
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/da
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/cs
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ar
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/io
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/analytics/profiles
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/analytics/plugins
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/analytics/logger/logs
@@ -8709,15 +7886,28 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/zh-tw
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/zh-cn
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/zh
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/tr
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/th
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/sv
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/sl
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/sk
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/ru
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/pt-pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/pt-br
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/pt
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/pl
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/nl
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/nb
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/ko-kr
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/ko
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/ja-jp
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/ja
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/it-it
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/it
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/hu
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/he
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/fr
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/fi
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/es-es
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/es
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/en-us
@@ -8725,14 +7915,20 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/en-ca
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/en-au
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/en
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/el
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/de-de
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/de
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/da
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/cs
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/ca
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/ar
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/_firebug
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/_base/_loader
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/_base
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/tree
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/tundra/layout
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/tundra/images
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/tundra/form
@@ -8847,42 +8043,6 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/_editor
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/_base
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/video/media/thumbs
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/video/media
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/video/images
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/video
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/uploader/UploadedFiles
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/uploader
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/skew/src
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/skew/images/users
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/skew/images
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/skew/cache
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/skew
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/resources/silk/icons
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/resources/silk
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/resources
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/nihao/nls/zh
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/nihao/nls/fr
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/nihao/nls/en
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/nihao/nls
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/nihao
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/mojo/src
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/mojo/images
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/mojo
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/mail
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/i18n
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/form
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/fonts/src
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/fonts/resources
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/fonts/img
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/fonts
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/flashCards/src/tests
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/flashCards/src
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/flashCards/images
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/flashCards
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/castle/images
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos/castle
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/demos
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo
 %%DOJO%%@dirrm %%DATADIR%%/externals
 @dirrm %%DATADIR%%
@@ -8908,5 +8068,3 @@ bin/zf.php
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Config/Writer/temp
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/OpenId/_files
 %%DOJO%%@exec mkdir -p %D/%%DATADIR%%/externals/dojo/dojox/analytics/logger/logs
-%%DOJO%%@exec mkdir -p %D/%%DATADIR%%/externals/dojo/demos/uploader/UploadedFiles
-%%DOJO%%@exec mkdir -p %D/%%DATADIR%%/externals/dojo/demos/skew/cache
