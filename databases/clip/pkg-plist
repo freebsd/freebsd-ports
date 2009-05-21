@@ -34,6 +34,7 @@ clip/bin/bdbf
 clip/bin/bdbf.hlp
 clip/bin/bdbfr.hlp
 clip/bin/bdbfs.hlp
+clip/bin/cleanxmo.sh
 clip/bin/clip
 clip/bin/clip_bl
 clip/bin/clip_blank
@@ -60,8 +61,10 @@ clip/bin/clipar
 clip/bin/cliphash
 clip/bin/cobra_clnt1
 clip/bin/cobra_serv
+clip/bin/codb
 clip/bin/codb_ab
 clip/bin/codb_addobj
+clip/bin/codb_arename
 clip/bin/codb_export
 clip/bin/codb_load
 clip/bin/codb_make
@@ -74,6 +77,7 @@ clip/bin/ftosgml
 clip/bin/gen_tbl
 clip/bin/joinlib.sh
 clip/bin/lowname
+clip/bin/ocmng
 clip/bin/po_compat
 clip/bin/po_extr
 clip/bin/po_subst
@@ -83,6 +87,7 @@ clip/bin/tconv
 clip/bin/wcl2prg
 clip/bin/www_clip
 clip/bin/xclip
+clip/bin/xml2xmo
 clip/charsets/7bit.uni
 clip/charsets/8859-1.uni
 clip/charsets/8859-2.tbl
@@ -315,50 +320,8 @@ clip/doc/example/clip-com/Makefile
 clip/doc/example/clip-com/com.prg
 clip/doc/example/clip-crypto/Makefile
 clip/doc/example/clip-crypto/crypto.prg
-clip/doc/example/clip-cti/Makefile
-clip/doc/example/clip-cti/browsecombo.prg
-clip/doc/example/clip-cti/ctifd.prg
-clip/doc/example/clip-cti/ctitest.prg
-clip/doc/example/clip-cti/test.dbf
 clip/doc/example/clip-fcgi/Makefile
 clip/doc/example/clip-fcgi/clip_echo.fcgi.prg
-clip/doc/example/clip-fw/.clipcharset
-clip/doc/example/clip-fw/Makefile
-clip/doc/example/clip-fw/atest.prg
-clip/doc/example/clip-fw/bitmaps/calc.bmp
-clip/doc/example/clip-fw/bitmaps/calendar.bmp
-clip/doc/example/clip-fw/bitmaps/cara.bmp
-clip/doc/example/clip-fw/bitmaps/clipboar.bmp
-clip/doc/example/clip-fw/bitmaps/copy.bmp
-clip/doc/example/clip-fw/bitmaps/cut.bmp
-clip/doc/example/clip-fw/bitmaps/end.bmp
-clip/doc/example/clip-fw/bitmaps/exit.bmp
-clip/doc/example/clip-fw/bitmaps/fivewin.bmp
-clip/doc/example/clip-fw/bitmaps/fivewin1.bmp
-clip/doc/example/clip-fw/bitmaps/help.bmp
-clip/doc/example/clip-fw/bitmaps/info.bmp
-clip/doc/example/clip-fw/bitmaps/openprj.bmp
-clip/doc/example/clip-fw/bitmaps/paste.bmp
-clip/doc/example/clip-fw/bitmaps/plus.bmp
-clip/doc/example/clip-fw/bitmaps/saveprj.bmp
-clip/doc/example/clip-fw/bmp.prg
-clip/doc/example/clip-fw/combos.prg
-clip/doc/example/clip-fw/customer.prg
-clip/doc/example/clip-fw/data/custlast.ntx
-clip/doc/example/clip-fw/data/custname.ntx
-clip/doc/example/clip-fw/data/customer.dbf
-clip/doc/example/clip-fw/data/sales.dbf
-clip/doc/example/clip-fw/dlgtest.prg
-clip/doc/example/clip-fw/gettest.prg
-clip/doc/example/clip-fw/lines.prg
-clip/doc/example/clip-fw/t.prg
-clip/doc/example/clip-fw/test.prg
-clip/doc/example/clip-fw/testbar.prg
-clip/doc/example/clip-fw/testbrw.prg
-clip/doc/example/clip-fw/testlbx.prg
-clip/doc/example/clip-fw/testscrl.prg
-clip/doc/example/clip-fw/testwsty.prg
-clip/doc/example/clip-fw/tooltip.prg
 clip/doc/example/clip-gd/Makefile
 clip/doc/example/clip-gd/gr.prg
 clip/doc/example/clip-gtk/Makefile
@@ -428,6 +391,7 @@ clip/doc/example/clip-ui/icons/eas-logo.xpm
 clip/doc/example/clip-ui/icons/journal_bank_pp.xpm
 clip/doc/example/clip-ui/icons/reference_partner.xpm
 clip/doc/example/clip-ui/icons/tick.xpm
+clip/doc/example/clip-ui/selection.xfl
 clip/doc/example/clip-ui/testWindow.xfl
 clip/doc/example/clip-ui/test_ui.prg
 clip/doc/example/clip-xml/Makefile
@@ -451,57 +415,10 @@ clip/doc/example/tcpserv.prg
 clip/doc/example/test.dbf.orig
 clip/doc/example/test_dbf.prg
 clip/doc/example/testlock.prg
-clip/etc/.calendar
 clip/etc/.macro
 clip/etc/.templ
 clip/etc/environment
-clip/etc/printers.ini
 clip/etc/termcap
-clip/etc/terminfo/a/ansi
-clip/etc/terminfo/c/cons25
-clip/etc/terminfo/c/cons25-iso-m
-clip/etc/terminfo/c/cons25-iso8859
-clip/etc/terminfo/c/cons25-koi8-r
-clip/etc/terminfo/c/cons25r
-clip/etc/terminfo/c/cygwin
-clip/etc/terminfo/c/cygwinB19
-clip/etc/terminfo/c/cygwinDBG
-clip/etc/terminfo/d/dumb
-clip/etc/terminfo/l/linux
-clip/etc/terminfo/l/linux-c
-clip/etc/terminfo/l/linux-c-nc
-clip/etc/terminfo/l/linux-console
-clip/etc/terminfo/l/linux-koi8
-clip/etc/terminfo/l/linux-koi8r
-clip/etc/terminfo/l/linux-lat
-clip/etc/terminfo/l/linux-m
-clip/etc/terminfo/l/linux-nic
-clip/etc/terminfo/l/linux-stelnet
-clip/etc/terminfo/l/linux-trans
-clip/etc/terminfo/m/mach
-clip/etc/terminfo/m/mach-bold
-clip/etc/terminfo/m/mach-color
-clip/etc/terminfo/p/pc3
-clip/etc/terminfo/p/pc3am
-clip/etc/terminfo/p/pc3c
-clip/etc/terminfo/p/pc3r
-clip/etc/terminfo/p/pc3r-m
-clip/etc/terminfo/p/pcansi
-clip/etc/terminfo/r/rxvt
-clip/etc/terminfo/r/rxvt-m
-clip/etc/terminfo/s/screen
-clip/etc/terminfo/s/screen-w
-clip/etc/terminfo/s/sun
-clip/etc/terminfo/v/vt100
-clip/etc/terminfo/v/vt102
-clip/etc/terminfo/v/vt220
-clip/etc/terminfo/v/vt52
-clip/etc/terminfo/x/xterm
-clip/etc/terminfo/x/xterm-color
-clip/etc/terminfo/x/xterm-debian
-clip/etc/terminfo/x/xterm-fssh
-clip/etc/terminfo/x/xterm-mono
-clip/etc/terminfo/x/xterm-xfree86
 clip/include/Makefile.inc
 clip/include/Makefile.tdoc
 clip/include/_win32.h
@@ -538,39 +455,6 @@ clip/include/config.ch
 clip/include/ct.ch
 clip/include/ctdisk.ch
 clip/include/ctdrv.ch
-clip/include/cti.ch
-clip/include/cti/clipcti.ch
-clip/include/cti/cti.ch
-clip/include/cti/ctiapp.ch
-clip/include/cti/ctibin.ch
-clip/include/cti/ctibox.ch
-clip/include/cti/ctibrowsecombo.ch
-clip/include/cti/cticheckbox.ch
-clip/include/cti/cticontainer.ch
-clip/include/cti/cticontrol.ch
-clip/include/cti/ctientry.ch
-clip/include/cti/ctievents.ch
-clip/include/cti/ctihbox.ch
-clip/include/cti/ctilabel.ch
-clip/include/cti/ctilayout.ch
-clip/include/cti/ctilist.ch
-clip/include/cti/ctimenu.ch
-clip/include/cti/ctimenubar.ch
-clip/include/cti/ctimenuitem.ch
-clip/include/cti/ctimenushell.ch
-clip/include/cti/ctiobject.ch
-clip/include/cti/ctioptionmenu.ch
-clip/include/cti/ctipopupmenu.ch
-clip/include/cti/ctipushbutton.ch
-clip/include/cti/ctiradiobutton.ch
-clip/include/cti/ctiradiogroup.ch
-clip/include/cti/ctisignal.ch
-clip/include/cti/ctistatusbar.ch
-clip/include/cti/ctitbrowse.ch
-clip/include/cti/ctivbox.ch
-clip/include/cti/ctiwidget.ch
-clip/include/cti/ctiwindow.ch
-clip/include/cti/ctizorder.ch
 clip/include/ctkbd.ch
 clip/include/ctmisc.ch
 clip/include/ctnnet.ch
@@ -599,49 +483,6 @@ clip/include/fox.ch
 clip/include/foxsql.ch
 clip/include/frmdef.ch
 clip/include/func_ref.ch
-clip/include/fwin/clipapi.h
-clip/include/fwin/colors.ch
-clip/include/fwin/column.ch
-clip/include/fwin/comm.ch
-clip/include/fwin/constant.ch
-clip/include/fwin/database.ch
-clip/include/fwin/dbf.ch
-clip/include/fwin/dbm.ch
-clip/include/fwin/dbms.ch
-clip/include/fwin/dde.ch
-clip/include/fwin/dialog.ch
-clip/include/fwin/dict.ch
-clip/include/fwin/dll.ch
-clip/include/fwin/fivewin.ch
-clip/include/fwin/folder.ch
-clip/include/fwin/font.ch
-clip/include/fwin/fwini.ch
-clip/include/fwin/fwmsgs.h
-clip/include/fwin/fwstd.ch
-clip/include/fwin/info-unz.h
-clip/include/fwin/ini.ch
-clip/include/fwin/itk.ch
-clip/include/fwin/mail.ch
-clip/include/fwin/menu.ch
-clip/include/fwin/msgxpm.ch
-clip/include/fwin/obendcls.ch
-clip/include/fwin/objects.ch
-clip/include/fwin/objerror.ch
-clip/include/fwin/objinsp.ch
-clip/include/fwin/odbc.ch
-clip/include/fwin/print.ch
-clip/include/fwin/profiler.ch
-clip/include/fwin/redefcls.ch
-clip/include/fwin/report.ch
-clip/include/fwin/sql.ch
-clip/include/fwin/sysmetrics.ch
-clip/include/fwin/tcbrowse.ch
-clip/include/fwin/tree.ch
-clip/include/fwin/video.ch
-clip/include/fwin/vkey.ch
-clip/include/fwin/winapi.ch
-clip/include/fwin/winten.h
-clip/include/fwin/yacc.ch
 clip/include/gdinfo.ch
 clip/include/getexit.ch
 clip/include/gtk2-stock.ch
@@ -752,18 +593,10 @@ clip/lib/libclip-crypto.a
 clip/lib/libclip-crypto.ex
 clip/lib/libclip-crypto.nm
 clip/lib/libclip-crypto.so
-clip/lib/libclip-cti.a
-clip/lib/libclip-cti.ex
-clip/lib/libclip-cti.nm
-clip/lib/libclip-cti.so
 clip/lib/libclip-fcgi.a
 clip/lib/libclip-fcgi.ex
 clip/lib/libclip-fcgi.nm
 clip/lib/libclip-fcgi.so
-clip/lib/libclip-fw.a
-clip/lib/libclip-fw.ex
-clip/lib/libclip-fw.nm
-clip/lib/libclip-fw.so
 clip/lib/libclip-gd.a
 clip/lib/libclip-gd.ex
 clip/lib/libclip-gd.nm
@@ -815,10 +648,12 @@ clip/lib/libclip.a
 clip/lib/libclip.ex
 clip/lib/libclip.nm
 clip/lib/libclip.so
+clip/lib/libcodb-query.a
+clip/lib/libcodb-query.ex
+clip/lib/libcodb-query.nm
+clip/lib/libcodb-query.so
 clip/lib/libgd.a
 clip/locale.mo/es_ES.8859-1/bdbfs.mo
-clip/locale.mo/es_ES.8859-1/clip-cti.mo
-clip/locale.mo/es_ES.8859-1/clip-fw.mo
 clip/locale.mo/es_ES.8859-1/clip-gtk.mo
 clip/locale.mo/es_ES.8859-1/clip-gtk2.mo
 clip/locale.mo/es_ES.8859-1/clip-r2d2.mo
@@ -829,12 +664,11 @@ clip/locale.mo/es_ES.8859-1/cobra_serv.mo
 clip/locale.mo/es_ES.8859-1/codb.mo
 clip/locale.mo/es_ES.8859-1/debug.mo
 clip/locale.mo/es_ES.8859-1/mod-ini.mo
+clip/locale.mo/es_ES.8859-1/ocmng.mo
 clip/locale.mo/es_ES.8859-1/pp.mo
 clip/locale.mo/es_ES.8859-1/sys.mo
 clip/locale.mo/es_ES.8859-1/udb.mo
 clip/locale.mo/es_ES.ISO01/bdbfs.mo
-clip/locale.mo/es_ES.ISO01/clip-cti.mo
-clip/locale.mo/es_ES.ISO01/clip-fw.mo
 clip/locale.mo/es_ES.ISO01/clip-gtk.mo
 clip/locale.mo/es_ES.ISO01/clip-gtk2.mo
 clip/locale.mo/es_ES.ISO01/clip-r2d2.mo
@@ -845,14 +679,28 @@ clip/locale.mo/es_ES.ISO01/cobra_serv.mo
 clip/locale.mo/es_ES.ISO01/codb.mo
 clip/locale.mo/es_ES.ISO01/debug.mo
 clip/locale.mo/es_ES.ISO01/mod-ini.mo
+clip/locale.mo/es_ES.ISO01/ocmng.mo
 clip/locale.mo/es_ES.ISO01/pp.mo
 clip/locale.mo/es_ES.ISO01/sys.mo
 clip/locale.mo/es_ES.ISO01/udb.mo
+clip/locale.mo/pt_BR.8859-1/bdbfs.mo
+clip/locale.mo/pt_BR.8859-1/clip-gtk.mo
+clip/locale.mo/pt_BR.8859-1/clip-gtk2.mo
+clip/locale.mo/pt_BR.8859-1/clip-r2d2.mo
+clip/locale.mo/pt_BR.8859-1/clip.mo
+clip/locale.mo/pt_BR.8859-1/cliprt.mo
+clip/locale.mo/pt_BR.8859-1/cobra_clnt.mo
+clip/locale.mo/pt_BR.8859-1/cobra_serv.mo
+clip/locale.mo/pt_BR.8859-1/codb.mo
+clip/locale.mo/pt_BR.8859-1/debug.mo
+clip/locale.mo/pt_BR.8859-1/mod-ini.mo
+clip/locale.mo/pt_BR.8859-1/ocmng.mo
+clip/locale.mo/pt_BR.8859-1/pp.mo
+clip/locale.mo/pt_BR.8859-1/sys.mo
+clip/locale.mo/pt_BR.8859-1/udb.mo
 clip/locale.mo/ru_RU.KOI8-R/bdbfs.mo
 clip/locale.mo/ru_RU.KOI8-R/brow.mo
 clip/locale.mo/ru_RU.KOI8-R/ca_dbu.mo
-clip/locale.mo/ru_RU.KOI8-R/clip-cti.mo
-clip/locale.mo/ru_RU.KOI8-R/clip-fw.mo
 clip/locale.mo/ru_RU.KOI8-R/clip-gtk.mo
 clip/locale.mo/ru_RU.KOI8-R/clip-gtk2.mo
 clip/locale.mo/ru_RU.KOI8-R/clip-r2d2.mo
@@ -863,13 +711,12 @@ clip/locale.mo/ru_RU.KOI8-R/cobra_serv.mo
 clip/locale.mo/ru_RU.KOI8-R/codb.mo
 clip/locale.mo/ru_RU.KOI8-R/debug.mo
 clip/locale.mo/ru_RU.KOI8-R/mod-ini.mo
+clip/locale.mo/ru_RU.KOI8-R/ocmng.mo
 clip/locale.mo/ru_RU.KOI8-R/pp.mo
 clip/locale.mo/ru_RU.KOI8-R/sys.mo
 clip/locale.mo/ru_RU.KOI8-R/udb.mo
 clip/locale.mo/ru_RU.KOI8-R/udbx.mo
 clip/locale.po/es_ES.8859-1/bdbfs.po
-clip/locale.po/es_ES.8859-1/clip-cti.po
-clip/locale.po/es_ES.8859-1/clip-fw.po
 clip/locale.po/es_ES.8859-1/clip-gtk.po
 clip/locale.po/es_ES.8859-1/clip-gtk2.po
 clip/locale.po/es_ES.8859-1/clip-r2d2.po
@@ -880,12 +727,11 @@ clip/locale.po/es_ES.8859-1/cobra_serv.po
 clip/locale.po/es_ES.8859-1/codb.po
 clip/locale.po/es_ES.8859-1/debug.po
 clip/locale.po/es_ES.8859-1/mod-ini.po
+clip/locale.po/es_ES.8859-1/ocmng.po
 clip/locale.po/es_ES.8859-1/pp.po
 clip/locale.po/es_ES.8859-1/sys.po
 clip/locale.po/es_ES.8859-1/udb.po
 clip/locale.po/es_ES.ISO01/bdbfs.po
-clip/locale.po/es_ES.ISO01/clip-cti.po
-clip/locale.po/es_ES.ISO01/clip-fw.po
 clip/locale.po/es_ES.ISO01/clip-gtk.po
 clip/locale.po/es_ES.ISO01/clip-gtk2.po
 clip/locale.po/es_ES.ISO01/clip-r2d2.po
@@ -896,14 +742,28 @@ clip/locale.po/es_ES.ISO01/cobra_serv.po
 clip/locale.po/es_ES.ISO01/codb.po
 clip/locale.po/es_ES.ISO01/debug.po
 clip/locale.po/es_ES.ISO01/mod-ini.po
+clip/locale.po/es_ES.ISO01/ocmng.po
 clip/locale.po/es_ES.ISO01/pp.po
 clip/locale.po/es_ES.ISO01/sys.po
 clip/locale.po/es_ES.ISO01/udb.po
+clip/locale.po/pt_BR.8859-1/bdbfs.po
+clip/locale.po/pt_BR.8859-1/clip-gtk.po
+clip/locale.po/pt_BR.8859-1/clip-gtk2.po
+clip/locale.po/pt_BR.8859-1/clip-r2d2.po
+clip/locale.po/pt_BR.8859-1/clip.po
+clip/locale.po/pt_BR.8859-1/cliprt.po
+clip/locale.po/pt_BR.8859-1/cobra_clnt.po
+clip/locale.po/pt_BR.8859-1/cobra_serv.po
+clip/locale.po/pt_BR.8859-1/codb.po
+clip/locale.po/pt_BR.8859-1/debug.po
+clip/locale.po/pt_BR.8859-1/mod-ini.po
+clip/locale.po/pt_BR.8859-1/ocmng.po
+clip/locale.po/pt_BR.8859-1/pp.po
+clip/locale.po/pt_BR.8859-1/sys.po
+clip/locale.po/pt_BR.8859-1/udb.po
 clip/locale.po/ru_RU.KOI8-R/bdbfs.po
 clip/locale.po/ru_RU.KOI8-R/brow.po
 clip/locale.po/ru_RU.KOI8-R/ca_dbu.po
-clip/locale.po/ru_RU.KOI8-R/clip-cti.po
-clip/locale.po/ru_RU.KOI8-R/clip-fw.po
 clip/locale.po/ru_RU.KOI8-R/clip-gtk.po
 clip/locale.po/ru_RU.KOI8-R/clip-gtk2.po
 clip/locale.po/ru_RU.KOI8-R/clip-r2d2.po
@@ -914,6 +774,7 @@ clip/locale.po/ru_RU.KOI8-R/cobra_serv.po
 clip/locale.po/ru_RU.KOI8-R/codb.po
 clip/locale.po/ru_RU.KOI8-R/debug.po
 clip/locale.po/ru_RU.KOI8-R/mod-ini.po
+clip/locale.po/ru_RU.KOI8-R/ocmng.po
 clip/locale.po/ru_RU.KOI8-R/pp.po
 clip/locale.po/ru_RU.KOI8-R/sys.po
 clip/locale.po/ru_RU.KOI8-R/udb.po
@@ -921,27 +782,16 @@ clip/locale.po/ru_RU.KOI8-R/udbx.po
 clip/locale.pot/bdbfs/_.pot
 clip/locale.pot/bdbfs/aktions.pot
 clip/locale.pot/bdbfs/bdbf.pot
-clip/locale.pot/bdbfs/cliplib.pot
 clip/locale.pot/bdbfs/common.pot
 clip/locale.pot/bdbfs/config.pot
 clip/locale.pot/bdbfs/editor.pot
 clip/locale.pot/bdbfs/errorsys.pot
-clip/locale.pot/bdbfs/filer.pot
 clip/locale.pot/bdbfs/getsys.pot
-clip/locale.pot/bdbfs/help.pot
 clip/locale.pot/bdbfs/mainmenu.pot
-clip/locale.pot/bdbfs/mdbedit.pot
 clip/locale.pot/bdbfs/modistru.pot
 clip/locale.pot/bdbfs/print.pot
 clip/locale.pot/bdbfs/tb2html.pot
 clip/locale.pot/bdbfs/viewer.pot
-clip/locale.pot/clip-cti/_.pot
-clip/locale.pot/clip-cti/cticalendar.pot
-clip/locale.pot/clip-cti/ctifiled.pot
-clip/locale.pot/clip-fw/_.pot
-clip/locale.pot/clip-fw/fw_msg.pot
-clip/locale.pot/clip-fw/fw_syscti.pot
-clip/locale.pot/clip-fw/fw_sysgtk.pot
 clip/locale.pot/clip-gtk/_.pot
 clip/locale.pot/clip-gtk/gtkermsg.pot
 clip/locale.pot/clip-gtk2/_.pot
@@ -977,6 +827,14 @@ clip/locale.pot/debug/viewali.pot
 clip/locale.pot/debug/viewset.pot
 clip/locale.pot/mod-ini/_.pot
 clip/locale.pot/mod-ini/cobra_codb.pot
+clip/locale.pot/ocmng/_.pot
+clip/locale.pot/ocmng/funcs_c.pot
+clip/locale.pot/ocmng/funcs_i.pot
+clip/locale.pot/ocmng/funcs_r.pot
+clip/locale.pot/ocmng/funcs_w.pot
+clip/locale.pot/ocmng/funcs_x.pot
+clip/locale.pot/ocmng/ocmng.pot
+clip/locale.pot/ocmng/xml2xmo.pot
 clip/locale.pot/pp/_.pot
 clip/locale.pot/pp/pp.pot
 clip/locale.pot/sys/_.pot
@@ -1025,6 +883,7 @@ clip/locale.pot/udb/attr.pot
 clip/locale.pot/udb/class.pot
 clip/locale.pot/udb/codb_ab.pot
 clip/locale.pot/udb/codb_addobj.pot
+clip/locale.pot/udb/codb_arename.pot
 clip/locale.pot/udb/codb_export.pot
 clip/locale.pot/udb/codb_load.pot
 clip/locale.pot/udb/codb_make.pot
@@ -1057,6 +916,7 @@ clip/term/pcansi
 @dirrm clip/locale.pot/udb
 @dirrm clip/locale.pot/sys
 @dirrm clip/locale.pot/pp
+@dirrm clip/locale.pot/ocmng
 @dirrm clip/locale.pot/mod-ini
 @dirrm clip/locale.pot/debug
 @dirrm clip/locale.pot/codb
@@ -1065,15 +925,15 @@ clip/term/pcansi
 @dirrm clip/locale.pot/clip-r2d2
 @dirrm clip/locale.pot/clip-gtk2
 @dirrm clip/locale.pot/clip-gtk
-@dirrm clip/locale.pot/clip-fw
-@dirrm clip/locale.pot/clip-cti
 @dirrm clip/locale.pot/bdbfs
 @dirrm clip/locale.pot
 @dirrm clip/locale.po/ru_RU.KOI8-R
+@dirrm clip/locale.po/pt_BR.8859-1
 @dirrm clip/locale.po/es_ES.ISO01
 @dirrm clip/locale.po/es_ES.8859-1
 @dirrm clip/locale.po
 @dirrm clip/locale.mo/ru_RU.KOI8-R
+@dirrm clip/locale.mo/pt_BR.8859-1
 @dirrm clip/locale.mo/es_ES.ISO01
 @dirrm clip/locale.mo/es_ES.8859-1
 @dirrm clip/locale.mo
@@ -1087,20 +947,7 @@ clip/term/pcansi
 @dirrm clip/include/screen
 @dirrm clip/include/netto
 @dirrm clip/include/nanfor
-@dirrm clip/include/fwin
-@dirrm clip/include/cti
 @dirrm clip/include
-@dirrm clip/etc/terminfo/x
-@dirrm clip/etc/terminfo/v
-@dirrm clip/etc/terminfo/s
-@dirrm clip/etc/terminfo/r
-@dirrm clip/etc/terminfo/p
-@dirrm clip/etc/terminfo/m
-@dirrm clip/etc/terminfo/l
-@dirrm clip/etc/terminfo/d
-@dirrm clip/etc/terminfo/c
-@dirrm clip/etc/terminfo/a
-@dirrm clip/etc/terminfo
 @dirrm clip/etc
 @dirrm clip/doc/example/clip-xml
 @dirrm clip/doc/example/clip-ui/icons
@@ -1115,11 +962,7 @@ clip/term/pcansi
 @dirrm clip/doc/example/clip-gtk2
 @dirrm clip/doc/example/clip-gtk
 @dirrm clip/doc/example/clip-gd
-@dirrm clip/doc/example/clip-fw/data
-@dirrm clip/doc/example/clip-fw/bitmaps
-@dirrm clip/doc/example/clip-fw
 @dirrm clip/doc/example/clip-fcgi
-@dirrm clip/doc/example/clip-cti
 @dirrm clip/doc/example/clip-crypto
 @dirrm clip/doc/example/clip-com
 @dirrm clip/doc/example/clip-bzip2
