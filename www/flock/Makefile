@@ -7,7 +7,7 @@
 
 PORTNAME=	flock
 DISTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.osuosl.org/pub/${PORTNAME}/releases/${PORTVERSION}/ \
 		http://flock.vo.llnwd.net/o23/archive/${PORTNAME}/releases/${PORTVERSION}/
@@ -86,7 +86,7 @@ IGNORE=	does not run, update to 6.2-RELEASE or newer
 MOZ_OPTIONS+=	--enable-svg --enable-svg-renderer=cairo
 
 post-extract::
-	@${SED} -e 's|@FLOCK_ICON@|${FLOCK_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \
+	@${SED} -e 's|@FLOCK_ICON@|${FLOCK_ICON}|' -e 's|@MOZILLA@|${MOZILLA}-browser|' \
 		-e 's|@MOZILLA_NAME@|${MOZILLA_NAME}|' \
 		<${FILESDIR}/flock.desktop.in >${WRKDIR}/${MOZILLA}.desktop
 
