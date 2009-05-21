@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pidgin-sipe
-PORTVERSION=	1.3.4
+PORTVERSION=	1.4.0
 CATEGORIES=	net-im
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sipe
+MASTER_SITES=	SF/sipe
 
 MAINTAINER=	john.c.prather@gmail.com
 COMMENT=	A plugin for Pidgin to provide LCS/OCS connectivity
@@ -27,9 +26,9 @@ USE_GETTEXT=	yes
 CFLAGS+=	"-I/${LOCALBASE}/include"
 LIBS+=		"-L/${LOCALBASE}/lib"
 
-CONFIGURE_ENV += 	CFLAGS="${CFLAGS}" \
-			LIBS="${LIBS}" \
-			COM_ERR_CFLAGS="-I/usr/include" \
-			COM_ERR_LIBS="-L/usr/include -lcom_err"
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
+		LIBS="${LIBS}" \
+		COM_ERR_CFLAGS="-I/usr/include" \
+		COM_ERR_LIBS="-L/usr/lib -lcom_err"
 
 .include <bsd.port.mk>
