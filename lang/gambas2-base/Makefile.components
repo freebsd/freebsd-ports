@@ -1,8 +1,11 @@
 PLIST=			${.CURDIR}/pkg-plist
 PATCHDIR=		${.CURDIR}/files
+EXTRA_PATCHES+=		${.CURDIR}/../../lang/gambas2-base/files/patch-main-share_gb_common.h
 
 GAMBAS_COMPONENT?=	${PKGNAMESUFFIX:S/-/./g:S/^.//g}
 GAMBAS_COMPDIRE=	${LOCALBASE}/lib/gambas2
+
+GBI2_CMD=		${LOCALBASE}/bin/gbi2
 
 CONFIGURE_WRKSRC=	${WRKSRC}/${GAMBAS_COMPONENT}
 BUILD_WRKSRC=		${WRKSRC}/${GAMBAS_COMPONENT}
@@ -159,19 +162,18 @@ USE_QT_VER=	3
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 37,39d ${WRKSRC}/main/share/gb_common.h
 	@cd ${WRKSRC} && \
 		${FIND} * -type f -name configure -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 			-e 's|-pipe -Wall -Wno-unused-value -fsigned-char|$$CFLAGS|g' \
+			-e 's|-pipe -Wall -fno-exceptions -Wno-unused-value -fsigned-char|$$CXXFLAGS|g' \
 			-e 's|-O0||g'
 	@cd ${WRKSRC} && \
-		${FIND} -E * -type f -iregex ".*\.(c|h)" -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
-			-e 's|#ifdef __GNU_LIBRARY__|#if defined (__GNU_LIBRARY__) \|\| \
-				defined (__FreeBSD__)|g'
+		${FIND} * -type f -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
+			-e 's|(GAMBAS_VERSION) -r|(GAMBAS_VERSION) -p -r|g'
 
 pre-install:
-.if exists(${LOCALBASE}/bin/gbi2)
-	@${LOCALBASE}/bin/gbi2 -r ${PREFIX}
+.if exists(${GBI2_CMD})
+	@${GBI2_CMD} -p -r ${PREFIX}
 .endif
 
 security-check: gambas2-check-install

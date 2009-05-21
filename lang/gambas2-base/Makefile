@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gambas2
-PORTVERSION=	2.12
+PORTVERSION=	2.13.0
 CATEGORIES?=	lang kde
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME:S/2//g}
@@ -44,15 +44,17 @@ USE_KDELIBS_VER=	3
 .include <${PORTSDIR}/Mk/bsd.kde.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 37,39d ${WRKSRC}/main/share/gb_common.h
 	@cd ${WRKSRC} && \
 		${FIND} * -type f -name configure -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 			-e 's|-pipe -Wall -Wno-unused-value -fsigned-char|$$CFLAGS|g' \
-			-e 's|-O0||g' -e 's|-ldl||g' -e 's|-lml||g'
+			-e 's|-pipe -Wall -fno-exceptions -Wno-unused-value -fsigned-char|$$CXXFLAGS|g' \
+			-e 's|-O0||g'
 	@cd ${WRKSRC} && \
 		${FIND} -E * -type f -iregex ".*\.(c|h)" -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
-			-e 's|#ifdef __GNU_LIBRARY__|#if defined (__GNU_LIBRARY__) \|\| \
-				defined (__FreeBSD__)|g' -e 's|.so.4|.so|g' -e 's|.so.3|.so|g'
+			-e 's|.so.4|.so|g' -e 's|.so.3|.so|g'
+	@cd ${WRKSRC} && \
+		${FIND} * -type f -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
+			-e 's|(GAMBAS_VERSION) -r|(GAMBAS_VERSION) -p -r|g'
 .else
 .include "${MASTERDIR}/Makefile.components"
 .endif
