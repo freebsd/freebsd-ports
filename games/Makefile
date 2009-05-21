@@ -783,6 +783,7 @@
     SUBDIR += spacehulk
     SUBDIR += speak
     SUBDIR += species
+    SUBDIR += spellathon
     SUBDIR += spellcast
     SUBDIR += speyes
     SUBDIR += spicetrade
