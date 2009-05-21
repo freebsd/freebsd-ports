@@ -17,6 +17,7 @@ LIB_DEPENDS=		Judy.1:${PORTSDIR}/devel/judy
 
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--localstatedir=/var
 USE_LDCONFIG=		yes
 
 MAN1=			teredo-mire.1
@@ -24,24 +25,18 @@ MAN5=			miredo-server.conf.5 miredo.conf.5
 MAN8=			miredo-server.8 miredo.8 miredo-checkconf.8
 USE_RC_SUBR=		miredo_server miredo
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=		yes
-USE_ICONV=		yes
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			CFLAGS="${PTHREAD_CFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=		yes
+USE_ICONV=		yes
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB=		NLS=""
 .else
-CONFIGURE_ENV+=		LDFLAGS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB=		NLS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == sparc64
-BROKEN=		Does not compile on sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
