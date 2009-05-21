@@ -26,6 +26,7 @@ lib/oxim/tables/default.phr
 lib/oxim/tables/symbol.list
 share/applications/oxim-setup.desktop
 share/pixmaps/oxim-setup.png
+@dirrmtry share/applications
 @dirrm etc/oxim
 @dirrm lib/oxim/immodules
 @dirrm lib/oxim/modules
