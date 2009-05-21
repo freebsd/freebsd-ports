@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	Connector-J
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	MySQL Connector/J: JDBC interface for MySQL
 
+CONFLICTS=	mysql-connector-java*-5.0.*
+
 RUN_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j
 
 USE_JAVA=	yes
@@ -30,7 +32,7 @@ JDCLASSPATH=	${SRCDIR}:${SRCDIR}/lib/jdbc2_0-stdext.jar:${SRCDIR}/lib/jta-spec1_
 
 PLIST_FILES=	%%JAVAJARDIR%%/jdbc2_0-stdext.jar \
 		%%JAVAJARDIR%%/jta-spec1_0_1.jar  \
-		%%JAVAJARDIR%%/mysql-connector-java.jar
+		%%JAVAJARDIR%%/${DESTJARFILE}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
