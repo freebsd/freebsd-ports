@@ -1,0 +1,17 @@
+Petite Chez Scheme is a complete Scheme system that is fully compatible
+with Chez Scheme but uses high-speed threaded interpreter technology in
+place of Chez Scheme's incremental native-code compiler. Programs written
+for Chez Scheme run unchanged in Petite Chez Scheme, as long as they do
+not depend specifically on the compiler. In fact, Petite Chez Scheme is
+built from the same sources as Chez Scheme, with all but the compiler
+sources included.
+
+Petite Chez Scheme was conceived as a freely distributable run-time
+environment for compiled Chez Scheme applications. To serve this purpose,
+it needed to have a complete run-time environment, including, for many
+applications, a working evaluator. The result is a system that is useful
+not only to our customers for the applications they distribute, but also
+to people who want to use a top-quality Scheme system and can't justify
+purchasing Chez Scheme.
+
+WWW: http://www.scheme.com/petitechezscheme.html
