@@ -17,6 +17,8 @@ DISTNAME=	tomcat-connectors-${PORTVERSION}-src
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	Apache JK module for connecting to Tomcat using AJP1X
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE?=	1.3+
 
 .include <bsd.port.pre.mk>

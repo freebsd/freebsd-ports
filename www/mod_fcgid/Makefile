@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	hemi@puresimplicity.net
 COMMENT=	An alternative FastCGI module for Apache2
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	2.0+
 
 SUB_FILES=	pkg-message

@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME:S/_//:S/2//}-apache_${PORTVERSION}
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	An intrusion detection and prevention engine
 
+MAKE_JOBS_SAFE=  yes
+
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre \
 		apr-1.3:${PORTSDIR}/devel/apr
 

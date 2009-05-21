@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.outoforder.cc/downloads/mod_auth_xradius/
 MAINTAINER=	mwlucas@FreeBSD.org
 COMMENT=	Enables RADIUS authentication
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	2.0+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

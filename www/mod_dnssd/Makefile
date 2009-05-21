@@ -16,6 +16,8 @@ COMMENT=	An Apache module that provides DNS-SD capabilities
 
 LIB_DEPENDS=	avahi-client.3:${PORTSDIR}/net/avahi-app
 
+MAKE_JOBS_SAFE=  yes
+
 USE_GMAKE=	yes
 USE_APACHE=	2.2+
 GNU_CONFIGURE=	yes

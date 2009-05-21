@@ -15,6 +15,8 @@ DISTFILES=	xmlns.h mod_xmlns.c
 MAINTAINER=	dom@helenmarks.co.uk
 COMMENT=	Apache module for XML namespaces
 
+MAKE_JOBS_SAFE=  yes
+
 USE_GNOME=	libxml2
 USE_APACHE=	2.0+
 

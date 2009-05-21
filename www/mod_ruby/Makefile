@@ -16,6 +16,8 @@ COMMENT=	An Apache module that embeds Ruby interpreter within
 
 LIB_DEPENDS=	eruby.10:${PORTSDIR}/textproc/eruby
 
+MAKE_JOBS_SAFE=  yes
+
 USE_APACHE=	1.3+
 USE_RUBY=	yes
 USE_PERL5_BUILD=	yes

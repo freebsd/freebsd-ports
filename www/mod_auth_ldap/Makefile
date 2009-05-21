@@ -17,6 +17,8 @@ DISTNAME=	modauthldap_apache2
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Apache module to authenticate against an LDAP directory
 
+MAKE_JOBS_SAFE=  yes
+
 USE_OPENLDAP=	yes
 USE_APACHE=	2.0+
 AP_FAST_BUILD=	yes

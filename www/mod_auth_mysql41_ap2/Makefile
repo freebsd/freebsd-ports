@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	maske@maske.org
 COMMENT=	MySQL 4.1 and Apache 2 port of mod_auth_mysql
 
+MAKE_JOBS_SAFE=  yes
+
 USE_MYSQL=	YES
 WANT_MYSQL_VER=	41
 

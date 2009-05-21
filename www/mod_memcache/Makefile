@@ -15,6 +15,8 @@ COMMENT=	Apache 2.2.x module to manage apr_memcache connections
 
 LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr
 
+MAKE_JOBS_SAFE=  yes
+
 GNU_CONFIGURE=	yes
 PROJECTHOST=	modmemcache
 USE_APACHE=	2.2+

@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Python WSGI adapter module for Apache
 
+MAKE_JOBS_SAFE=  yes
+
 PROJECTHOST=	modwsgi
 
 USE_APACHE=	1.3+

@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	net@arrishq.net
 COMMENT=	MySQL based form authentication module for Apache 2.x
 
+MAKE_JOBS_SAFE=  yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_MYSQL=	YES
