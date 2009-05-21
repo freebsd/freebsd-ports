@@ -1,26 +1,20 @@
-# New ports collection makefile for:	clip
-# Date created:			Dec 23, 2001
-# Whom:				ijliao
+# New ports collection makefile for:    clip
+# Date created:                 Dec 23, 2001
+# Whom:                         ijliao
 #
 # $FreeBSD$
 #
 
 PORTNAME=	clip
-DISTVERSION=	1.1.16-1
-PORTREVISION=	6
+DISTVERSION=	1.2.0-0
 CATEGORIES=	databases lang
-MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/	\
-		ftp://www.cis.by/pub/clip/pub/clip/	\
-		http://clip.cis.by/mirror/pub/clip/	\
-		ftp://ftp.itk.ru/pub/clip/		\
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	x-clip
+MASTER_SITES=	SF/x-clip
 DISTNAME=	${PORTNAME}-prg-${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	clip
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	xBase and Clipper language compatible compiler
+MAINTAINER=	dk.diklab@gmail.com
+COMMENT=	Object oriented, xBase and Clipper language compatible compiler
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash			\
 		wget:${PORTSDIR}/ftp/wget			\
@@ -62,6 +56,10 @@ BROKEN=		Does not compile on !i386
 # Not currently built: clip-oracle
 
 # Either IODBC or UNIXODBC
+.if defined(WITH_IODBC) && defined(WITH_UNIXODBC)
+IGNORE=		selected mutually exclusive options: WITH_IODBC and WITH_UNIXODBC
+.endif
+
 .if defined(WITH_IODBC)
 LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
 PLIST_SUB=	ODBC=""
@@ -91,7 +89,7 @@ PLIST_SUB+=	PGSQL="@comment "
 .endif
 
 .if defined(WITH_FIREBIRD)
-LIB_DEPENDS+=	gds.1:${PORTSDIR}/${FIREBIRD_PORT}
+USE_FIREBIRD=	yes
 PLIST_SUB+=	IBASE=""
 OPT_CLIPLIBS+=clip-interbase
 .else
@@ -116,8 +114,6 @@ MAKE_ENV=		HOME="${WRKDIR}" \
 			PTHREAD_LIBS="${PTHREAD_LIBS}" \
 			WITH_IODBC="${WITH_IODBC}" \
 			CLIP_CONFIGURE_FLAGS="-l"
-
-FIREBIRD_PORT?=	databases/firebird-client
 
 BIN2STRIP=	bdbf clip clip_bl clip_blank clip_cld clip_conv clip_dbf2txt	\
 		clip_dbg clip_fl clip_hashextract clip_hindex clip_hseek	\
