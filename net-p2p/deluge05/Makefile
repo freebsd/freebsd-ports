@@ -20,6 +20,11 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify \
 		${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
 
+DEPRECIATED=	use net-p2p/deluge instead
+EXPIRATION_DATE=	2009-06-01
+
+LATEST_LINK=	${PORTNAME}05
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-torrent-${PORTVERSION}
 USE_GNOME=	pygtk2 desktopfileutils librsvg2
 USE_GETTEXT=	yes
