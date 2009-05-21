@@ -8410,6 +8410,7 @@ mediawiki16                     ports/www/mediawiki16
 medit                           ports/science/medit
 mednafen                        ports/emulators/mednafen
 medusa                          ports/security/medusa
+megacli                         ports/sysutils/megacli
 megapov                         ports/graphics/megapov
 megarc                          ports/sysutils/megarc
 meld                            ports/textproc/meld
