@@ -1,0 +1,4 @@
+bin/spellathon
+bin/spellathon-cl
+%%DATADIR%%/words.txt
+@dirrmtry %%DATADIR%%
