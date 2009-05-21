@@ -1,16 +1,13 @@
---- Makefile.orig	2008-03-31 09:24:00.000000000 +0200
-+++ Makefile	2008-11-30 14:57:08.000000000 +0100
-@@ -221,11 +221,13 @@
- 	$(INSTALL) -m644 stdarg.h stddef.h stdbool.h float.h varargs.h \
-                    tcclib.h "$(tccdir)/include"
+--- Makefile.orig	2009-05-18 16:27:06.000000000 +0200
++++ Makefile	2009-05-21 06:39:33.000000000 +0200
+@@ -210,8 +210,10 @@
+ 	$(INSTALL) -m644 $(BCHECK_O) "$(tccdir)"
  endif
+ 	$(INSTALL) -m644 $(addprefix include/,$(TCC_INCLUDES)) "$(tccdir)/include"
 +ifndef NOPORTSDOC
  	mkdir -p "$(docdir)"
  	$(INSTALL) -m644 tcc-doc.html "$(docdir)"
- ifdef CONFIG_WIN32
- 	$(INSTALL) -m644 win32/readme.txt "$(docdir)"
- endif
 +endif
- 
- clean:
- 	rm -f *~ *.o *.a tcc tcct tcc_g tcctest.ref *.bin *.i ex2 \
+ 	mkdir -p "$(libdir)"
+ 	$(INSTALL) -m644 libtcc.a "$(libdir)"
+ 	mkdir -p "$(includedir)"
