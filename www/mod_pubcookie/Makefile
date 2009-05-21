@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-3.3.0a
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	A single sign-on system for websites (apache module)
 
+MAKE_JOBS_UNSAFE=	yes
+
 CONFLICTS=	pubcookie-login-server-[0-9]*
 
 FILESDIR=	${.CURDIR}/../pubcookie-login-server/files
