@@ -39,7 +39,7 @@ if [ "$2" = "POST-INSTALL" ];then
    fi
    grep '^load.*Rule2XSBody' ${PKG_PREFIX}/etc/mail/spamassassin/v320.pre > /dev/null
    if [ $? -eq 0 ];then
-     if yesno "Do you with to compile rules with re2c (will take a long time)" "N";then
+     if yesno "Do you wish to compile rules with re2c (will take a long time)" "N";then
        ${PKG_PREFIX}/bin/sa-compile
      fi
    fi
