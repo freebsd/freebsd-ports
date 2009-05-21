@@ -19,6 +19,8 @@ COMMENT=	A mod_perl interface into HTML::Clean
 BUILD_DEPENDS=	mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 		p5-HTML-Clean>=0.8:${PORTSDIR}/www/p5-HTML-Clean
 
+LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}2
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::Clean.3
