@@ -10,23 +10,29 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20090521:
+AUTHOR: portmgr@FreeBSD.org
+
+  * bsd.port.options.mk is now clear to be widely used.
+
 20090516:
 AUTHOR: pgollucci@FreeBSD.org
-   * APACHE_COMPAT is dead!
 
-   * USE_APACHE=yes is dead!
+  * APACHE_COMPAT is dead!
 
-   * WITH_APACHE2 is dead!
+  * USE_APACHE=yes is dead!
 
-   You should set USE_APACHE=13|20|22+.  WITH_APACHE option can
-   be used to coniditional include support for ANY version of 
-   apache baesd on APACHE_PORT.  Currently www/apache13
+  * WITH_APACHE2 is dead!
+
+    You should set USE_APACHE=13|20|22+.  WITH_APACHE option can
+    be used to conditional include support for ANY version of
+    Apache based on APACHE_PORT.  Currently www/apache13
 
 20090207:
 AUTHOR: pgollucci@FreeBSD.org
 
   * devel/libslang dropped in favor of devel/libslang2
-  
+
   * WITH_SLANG2 has been removed.  WITH_SLANG now implies
     devel/libslang2.
 
