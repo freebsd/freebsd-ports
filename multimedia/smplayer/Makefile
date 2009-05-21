@@ -22,6 +22,7 @@ QT_COMPONENTS=	corelib gui qmake_build moc_build rcc_build uic_build \
 
 ALL_TARGET=	src/smplayer
 
+MAKE_JOBS_UNSAFE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes

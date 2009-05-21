@@ -21,6 +21,7 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS=	libart-[0-9]*
 
