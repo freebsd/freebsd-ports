@@ -62,6 +62,7 @@ CONFIGURE_ARGS+=	--without-debug \
 		 --without-fftw \
 		 --without-glade \
 		 --without-gnome \
+		 --without-gssapi \
 		 --without-java \
 		 --without-libglade-config \
 		 --without-libpdf --without-libpanda \
