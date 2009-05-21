@@ -1,0 +1,30 @@
+bin/petite
+lib/csv%%CHEZ_VERSION%%/%%CHEZ_MACHTYPE%%/petite.boot
+lib/csv%%CHEZ_VERSION%%/%%CHEZ_MACHTYPE%%/scheme.h
+lib/csv%%CHEZ_VERSION%%/lib/Makefile
+lib/csv%%CHEZ_VERSION%%/lib/compat.ss
+lib/csv%%CHEZ_VERSION%%/lib/csocket.c
+lib/csv%%CHEZ_VERSION%%/lib/def.ss
+lib/csv%%CHEZ_VERSION%%/lib/edit.ss
+lib/csv%%CHEZ_VERSION%%/lib/fact.ss
+lib/csv%%CHEZ_VERSION%%/lib/fatfib.ss
+lib/csv%%CHEZ_VERSION%%/lib/fft.ss
+lib/csv%%CHEZ_VERSION%%/lib/fib.ss
+lib/csv%%CHEZ_VERSION%%/lib/foreign.ss
+lib/csv%%CHEZ_VERSION%%/lib/freq.ss
+lib/csv%%CHEZ_VERSION%%/lib/interpret.ss
+lib/csv%%CHEZ_VERSION%%/lib/m4.ss
+lib/csv%%CHEZ_VERSION%%/lib/macro.ss
+lib/csv%%CHEZ_VERSION%%/lib/matrix.ss
+lib/csv%%CHEZ_VERSION%%/lib/object.ss
+lib/csv%%CHEZ_VERSION%%/lib/power.ss
+lib/csv%%CHEZ_VERSION%%/lib/queue.ss
+lib/csv%%CHEZ_VERSION%%/lib/rabbit.ss
+lib/csv%%CHEZ_VERSION%%/lib/rsa.ss
+lib/csv%%CHEZ_VERSION%%/lib/scons.ss
+lib/csv%%CHEZ_VERSION%%/lib/setof.ss
+lib/csv%%CHEZ_VERSION%%/lib/socket.ss
+lib/csv%%CHEZ_VERSION%%/lib/unify.ss
+@dirrm lib/csv%%CHEZ_VERSION%%/lib
+@dirrm lib/csv%%CHEZ_VERSION%%/%%CHEZ_MACHTYPE%%
+@dirrm lib/csv%%CHEZ_VERSION%%
