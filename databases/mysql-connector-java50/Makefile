@@ -5,17 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mysql-connector-java
+PORTNAME=	mysql-connector-java50
 PORTVERSION=	5.0.8
 PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	Connector-J
+DISTNAME=	${PORTNAME:S/50//}-${DISTVERSION}
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	MySQL Connector/J: JDBC interface for MySQL
 
 RUN_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j
+
+CONFLICTS=	mysql-connector-java-5.1.*
 
 .if !defined(WITHOUT_COMPILE)
 
@@ -40,7 +43,7 @@ BUILDDIR=	${WRKDIR}/${DISTNAME}
 APIDOCSDIR=	${DOCSDIR}/javadoc
 SRCDIR=		${WRKDIR}/${DISTNAME}/src
 JAVADOCDIR=	${WRKDIR}/${DISTNAME}/javadoc
-DESTJARFILE=	${PORTNAME}.jar
+DESTJARFILE=	${PORTNAME:S/50//}.jar
 EXTRAJARS=	jdbc2_0-stdext.jar jta-spec1_0_1.jar
 EXTRADOCS=	README CHANGES docs/connector-j.html docs/connector-j.pdf
 JARFILE=	${DISTNAME}-bin.jar
@@ -48,7 +51,7 @@ JDCLASSPATH=	${SRCDIR}:${SRCDIR}/lib/jdbc2_0-stdext.jar:${SRCDIR}/lib/jta-spec1_
 
 PLIST_FILES=	%%JAVAJARDIR%%/jdbc2_0-stdext.jar \
 		%%JAVAJARDIR%%/jta-spec1_0_1.jar  \
-		%%JAVAJARDIR%%/mysql-connector-java.jar
+		%%JAVAJARDIR%%/${DESTJARFILE}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
