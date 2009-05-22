@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pgpool-II
-PORTVERSION=	2.2
+PORTVERSION=	2.2.2
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/2108/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/2191/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A connection pool server for PostgreSQL
