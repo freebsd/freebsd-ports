@@ -73,6 +73,9 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup
 .endif
 
 .if defined(WITH_DOCS)
+.	if defined(NOPORTDOCS)
+IGNORE=	you cannot build documentation while setting NOPORTDOCS
+.	endif
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx
 PORTDOCS=	*
 .endif
