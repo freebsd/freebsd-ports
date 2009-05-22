@@ -19,6 +19,9 @@ bin/rdiffdir
 %%PYTHON_SITELIBDIR%%/duplicity/backends/botobackend.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/botobackend.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/botobackend.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/backends/cloudfilesbackend.py
+%%PYTHON_SITELIBDIR%%/duplicity/backends/cloudfilesbackend.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/backends/cloudfilesbackend.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/backends/ftpbackend.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/ftpbackend.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/ftpbackend.pyo
@@ -37,6 +40,9 @@ bin/rdiffdir
 %%PYTHON_SITELIBDIR%%/duplicity/backends/sshbackend.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/sshbackend.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/sshbackend.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/backends/tahoebackend.py
+%%PYTHON_SITELIBDIR%%/duplicity/backends/tahoebackend.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/backends/tahoebackend.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/backends/webdavbackend.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/webdavbackend.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/webdavbackend.pyo

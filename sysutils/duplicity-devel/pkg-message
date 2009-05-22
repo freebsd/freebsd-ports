@@ -1,0 +1,11 @@
+*************************************************************************
+* The following two backends are supported by duplicity itself,         *
+* but will require manual installation of their respective dependencies *
+* because they are not yet available in the ports tree:                 *
+*                                                                       *
+*   - The CloudFiles backend (for RackSpace's CloudFiles).              *
+*   - The tahoe backend for Tahoe-LAFS.                                 *
+*                                                                       *
+* Please refer to upstream duplicity documentation for information on   *
+* the use of these backends.                                            *
+*************************************************************************
