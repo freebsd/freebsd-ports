@@ -1,0 +1,7 @@
+p5-Astro is a set of assorted astronomical routines.
+
+Astro::Time, Astro::Coord and Astro::Misc provide a collection of
+useful astronomical routines written entirely in Perl (so no
+hassling about installing external libraries is required).
+
+WWW: http://search.cpan.org/dist/Astro/
