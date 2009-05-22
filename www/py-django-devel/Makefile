@@ -39,7 +39,7 @@ OPTIONS=	MOD_PYTHON3	"Install Apache2 with mod_python3"	off \
 		MYSQL	"MySQL support"	off \
 		SQLITE	"SQLite support"	off \
 		FASTCGI	"FastCGI support"	off \
-		DOCS	"Install HTML documentation (requires Sphinx)"	on
+		DOCS	"Install HTML documentation (requires Sphinx)"	off
 
 MAN1=		daily_cleanup.1 django-admin.1 gather_profile_stats.1
 
