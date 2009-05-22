@@ -189,7 +189,7 @@ sortConfiguration () {
                         JAVAVM=
                         continue
                         ;;
-                    diablo-jre*|jdk*)
+                    diablo-jre*|openjdk*)
                         case "${_VM}" in
                             diablo*)
                                 _JAVAVMS="${_JAVAVMS}:${_JAVAVM}"
@@ -202,9 +202,22 @@ sortConfiguration () {
                                 ;;
                         esac
                         ;;
+                    jdk*)
+                        case "${_VM}" in
+                            diablo*|open*)
+                                _JAVAVMS="${_JAVAVMS}:${_JAVAVM}"
+                                continue
+                                ;;
+                            *)
+                                _JAVAVMS="${_JAVAVMS}:${JAVAVM}:${_JAVAVM}"
+                                JAVAVM=
+                                continue
+                                ;;
+                        esac
+                        ;;
                     jre*|linux-sun-jdk*)
                         case "${_VM}" in
-                            diablo*|j*)
+                            diablo*|open*|j*)
                                 _JAVAVMS="${_JAVAVMS}:${_JAVAVM}"
                                 continue
                                 ;;
@@ -217,7 +230,7 @@ sortConfiguration () {
                         ;;
                     linux-sun-jre*|linux-blackdown-jdk*)
                         case "${_VM}" in
-                            diablo*|j*|linux-sun*)
+                            diablo*|open*|j*|linux-sun*)
                                 _JAVAVMS="${_JAVAVMS}:${_JAVAVM}"
                                 continue
                                 ;;
@@ -230,7 +243,7 @@ sortConfiguration () {
                         ;;
                     linux-blackdown-jre*|linux-ibm-jdk*)
                         case "${_VM}" in
-                            diablo*|j*|linux-sun*|linux-blackdown*)
+                            diablo*|open*|j*|linux-sun*|linux-blackdown*)
                                 _JAVAVMS="${_JAVAVMS}:${_JAVAVM}"
                                 continue
                                 ;;
@@ -588,17 +601,20 @@ setJavaHome() {
         if [ -n "${JAVA_VENDOR}" ]; then
             _JAVAVM_VENDOR=
             case "${_JAVAVM_VM}" in
+                linux-blackdown*)
+                    _JAVAVM_VENDOR=blackdown
+                    ;;
                 diablo*)
                     _JAVAVM_VENDOR=freebsd
                     ;;
                 j*)
                     _JAVAVM_VENDOR=bsdjava
                     ;;
-                linux-blackdown*)
-                    _JAVAVM_VENDOR=blackdown
-                    ;;
                 linux-ibm*)
                     _JAVAVM_VENDOR=ibm
+                    ;;
+                openjdk*)
+                    _JAVAVM_VENDOR=openjdk
                     ;;
                 linux-sun*)
                     _JAVAVM_VENDOR=sun
