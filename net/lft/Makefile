@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	lft
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	GENTOO/distfiles
+MASTER_SITES=	http://ftp.iasi.roedu.net/mirrors/openwrt.org/sources/ \
+		http://trd.no.distfiles.macports.org/lft/ \
+		http://mirror2.openwrt.org/sources/
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Layer 4 Traceroute program
