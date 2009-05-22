@@ -1,0 +1,9 @@
+i3lock improves slock by making it fork() and therefore combinable with
+commands to suspend your computer. Additionally, instead of turning off
+your screen via DPMS and/or displaying a black screen, i3lock displays a
+white screen so you can see if your computer failed to resume from suspend
+or if your screen is just locked. Also, when entering a wrong password,
+i3lock does not call XBell(). This is important because i3lock/slock think
+you have entered a password when resuming from suspend, at least sometimes.
+
+i3lock was forked from slock-0.9
