@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enlightenment
-DISTVERSION=	0.16.8.15-${E16_SNAPSHOT}
+DISTVERSION=	0.16.8.15.${E16_SNAPSHOT}
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 DISTNAME=	e16-${DISTVERSION}
@@ -15,9 +15,11 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A very artistic X window manager
 
 DATADIR=	${PREFIX}/share/e16
-E16_SNAPSHOT=	0.01
+DOCSDIR=	${PREFIX}/share/doc/e16
+E16_SNAPSHOT=	002
 
-USE_XORG=	xbitmaps xft x11
+USE_XORG=	compositeproto damageproto xextproto x11 xbitmaps xcomposite xdamage \
+		xext xfixes xft xinerama xrandr xrender xxf86vm
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_EFL=	imlib2
@@ -41,6 +43,13 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto
+CONFIGURE_ARGS+=--enable-docs=yes
+.else
+CONFIGURE_ARGS+=--enable-docs=no
 .endif
 
 .include <bsd.port.mk>
