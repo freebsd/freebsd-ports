@@ -11,8 +11,8 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/
 DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
 
-MAINTAINER=	brian@experts-exchange.com
-COMMENT=	Sun\'s java 6 virtual machine release under the GNUV2 license
+MAINTAINER=	java@FreeBSD.org
+COMMENT=	Sun\'s java 6 virtual machine release under the GPL v2
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
@@ -26,9 +26,6 @@ OPTIONS=	DEBUG   "Enable debugging support"	off \
 WRKSRC=	${WRKDIR}
 
 USE_GMAKE=	yes
-USE_JAVA=	yes
-JAVA_VENDOR=	freebsd bsdjava
-JAVA_VERSION=	1.6
 USE_MOTIF=	yes
 USE_XORG=	xtst xi xt x11
 
