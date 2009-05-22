@@ -5,6 +5,7 @@
 
     SUBDIR += FSViewer
     SUBDIR += asfiles
+    SUBDIR += catseye-fm
     SUBDIR += cfm
     SUBDIR += dfm
     SUBDIR += dolphin
