@@ -41,7 +41,7 @@
  #endif
  
 +#ifdef UseInstalledTiff
-+TIFF = -DDOTIFF -DUSE_TILED_TIFF_BOTLEFT_FIX
++TIFF = -DDOTIFF -DUSE_TILED_TIFF_BOTLEFT_FIX -DOG3
 +LIBTIFF = -L${LOCALBASE}/lib -ltiff
 +TIFFINCLUDE = -I${LOCALBASE}/include
 +#endif
