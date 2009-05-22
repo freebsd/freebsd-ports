@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Brackup
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRADFITZ
@@ -37,6 +37,7 @@ MAN3=		Brackup.3 \
 		Brackup::Root.3 \
 		Brackup::Target.3 \
 		Brackup::Target::Amazon.3 \
+		Brackup::Target::CloudFiles.3 \
 		Brackup::Target::Filesystem.3 \
 		Brackup::Target::Ftp.3 \
 		Brackup::Target::Sftp.3
