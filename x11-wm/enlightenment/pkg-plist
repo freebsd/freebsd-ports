@@ -490,3 +490,4 @@ share/xsessions/e16-kde.desktop
 @dirrmtry etc/X11/dm
 @dirrmtry etc/X11
 @dirrmtry share/xsessions
+@dirrmtry share/applications
