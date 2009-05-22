@@ -271,9 +271,6 @@ nightly script to invoke
 .I rebuildspamdb.pl
 and
 .IR freshclam.sh .
-.SH BUGS
-.I ASSP
-currently has no IPv6 support.
 .SH "SEE ALSO"
 .IR procmail (1),
 .IR assplog (8),
