@@ -1,0 +1,13 @@
+**************************************************
+To complete the installation, please add:
+
+[components]
+wikinotification.* = enabled
+
+to your trac.ini to enable the plugin.
+
+Next, visit:
+http://wikinotification.ufsoft.org/wiki/Documentation/0.2.x
+
+for additional configuration instructions.
+**************************************************

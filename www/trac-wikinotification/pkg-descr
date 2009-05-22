@@ -1,5 +1,5 @@
-Trac Wiki Notification is a plugin that allows users (even anonymous, as long
-as email is set) to select wiki pages that they wish to be notified (by email)
-when a change occurs on it.
+Trac Wiki Notification is a plugin that allows users (even anonymous,
+as long as email is set) to select wiki pages that they wish to be
+notified (by email) when a change occurs on it.
 
 WWW: http://trac-hacks.org/wiki/WikiNotificationPlugin
