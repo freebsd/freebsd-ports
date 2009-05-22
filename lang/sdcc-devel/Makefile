@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.8.5.2008.12.05
+PORTVERSION=	2.9.1.2009.05.18
 CATEGORIES=	lang
 MASTER_SITES=	http://sdcc.sourceforge.net/snapshots/sdcc-src/ \
 		http://tijl.ulyssis.be/mirror/
-DISTNAME=	${PORTNAME}-src-20081205-5276
+DISTNAME=	${PORTNAME}-src-20090518-5457
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	Small Device C Compiler
@@ -36,7 +36,7 @@ OPTIONS=	MCS51   "Intel 8051 port" on \
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--docdir=${DOCSDIR} \
 		include_dir_suffix=include \
@@ -45,8 +45,7 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-CFLAGS+=	-O0
-CXXFLAGS+=	-O0
+USE_GCC=	4.3+
 BROKEN=		Does not compile on sparc64
 .endif
 
