@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-GSL
-PORTVERSION=	0.18
+PORTVERSION=	0.20
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,7 @@ PERL_CONFIGURE=	yes
 PERL_MODBUILD=	yes
 MAKE_ENV=	INC="-I${LOCALBASE}/include"
 
+MAN1=	smolder_smoke_signal.1
 MAN3=	Math::GSL.3 Math::GSL::Histogram2D.3 Math::GSL::QRNG.3 \
 	Math::GSL::BLAS.3 Math::GSL::Integration.3 Math::GSL::RNG.3 \
 	Math::GSL::BSpline.3 Math::GSL::Interp.3 Math::GSL::Randist.3 \
