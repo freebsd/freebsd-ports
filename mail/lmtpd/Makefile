@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	lmtpd
-PORTVERSION=	0.10.4
-PORTREVISION=	1
+PORTVERSION=	0.10.6
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} ftp://ftp.oav.net/pll/
-MASTER_SITE_SUBDIR=	pll
+MASTER_SITES=	ftp://ftp.oav.net/pll/ SF/pll
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	LMTP server compliant with RFC 2033 and Maildir++
