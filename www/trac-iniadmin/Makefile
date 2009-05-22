@@ -12,7 +12,7 @@ MASTER_SITES=	http://people.freebsd.org/~mm/trac/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Edit all trac.ini option via the WebAdminPlugin
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
