@@ -115,9 +115,6 @@ include/eigen2/Eigen/src/Sparse/SuperLUSupport.h
 include/eigen2/Eigen/src/Sparse/TaucsSupport.h
 include/eigen2/Eigen/src/Sparse/TriangularSolver.h
 include/eigen2/Eigen/src/Sparse/UmfPackSupport.h
-include/eigen2/Eigen/src/StdVector/StdVector.h
-include/eigen2/Eigen/src/StdVector/UnalignedType.h
-@dirrm include/eigen2/Eigen/src/StdVector
 @dirrm include/eigen2/Eigen/src/Sparse
 @dirrm include/eigen2/Eigen/src/SVD
 @dirrm include/eigen2/Eigen/src/QR
