@@ -1,0 +1,10 @@
+--- src/kmk/Makefile.kmk.orig	2009-05-22 11:10:08.000000000 +0200
++++ src/kmk/Makefile.kmk	2009-05-22 11:10:01.000000000 +0200
+@@ -219,6 +219,7 @@
+ #kmk_DEFS.solaris += HAVE_MALLINFO
+ 
+ kmk_LIBS.freebsd.amd64 = pthread
++kmk_LIBS.freebsd.sparc64 = pthread
+ kmk_DEFS.freebsd.x86 = CONFIG_WITHOUT_THREADS
+ 
+ #
