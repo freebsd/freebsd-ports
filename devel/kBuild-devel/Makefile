@@ -7,14 +7,13 @@
 
 PORTNAME=	kBuild
 DISTVERSION=	0.1.5-p1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Makefile framework
-
-BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 USE_AUTOTOOLS=	automake:19 autoconf:262
 USE_GMAKE=	yes
@@ -36,7 +35,6 @@ PORTDOCS=	QuickReference-kmk.html \
 
 post-patch:
 	${REINPLACE_CMD} -e '11269d;11274d' ${WRKSRC}/src/sed/configure
-	${REINPLACE_CMD} -e '11268,11273s|sed|gsed|' ${WRKSRC}/src/sed/configure
 
 # Override autotools
 run-autotools:
