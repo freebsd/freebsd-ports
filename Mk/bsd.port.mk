@@ -2030,6 +2030,10 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .include "${PORTSDIR}/Mk/bsd.autotools.mk"
 .endif
 
+.if defined(USE_FPC) || defined(WANT_FPC_BASE) || defined(WANT_FPC_ALL)
+.include "${PORTSDIR}/Mk/bsd.fpc.mk"
+.endif
+
 .if defined(WANT_GECKO) || defined(USE_GECKO)
 .include "${PORTSDIR}/Mk/bsd.gecko.mk"
 .endif
