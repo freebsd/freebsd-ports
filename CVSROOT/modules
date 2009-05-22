@@ -10532,6 +10532,7 @@ p5-Class-Method-Modifiers       ports/devel/p5-Class-Method-Modifiers
 p5-Class-Method-Modifiers-Fast  ports/devel/p5-Class-Method-Modifiers-Fast
 p5-Class-MethodMaker            ports/devel/p5-Class-MethodMaker
 p5-Class-MethodMapper           ports/devel/p5-Class-MethodMapper
+p5-Class-Mix                    ports/devel/p5-Class-Mix
 p5-Class-MixinFactory           ports/devel/p5-Class-MixinFactory
 p5-Class-Multimethods           ports/devel/p5-Class-Multimethods
 p5-Class-Multimethods-Pure      ports/devel/p5-Class-Multimethods-Pure
@@ -11385,6 +11386,7 @@ p5-HTML-Sanitizer               ports/www/p5-HTML-Sanitizer
 p5-HTML-Scrubber                ports/www/p5-HTML-Scrubber
 p5-HTML-Seamstress              ports/www/p5-HTML-Seamstress
 p5-HTML-Selector-XPath          ports/www/p5-HTML-Selector-XPath
+p5-HTML-Shakan                  ports/www/p5-HTML-Shakan
 p5-HTML-SimpleLinkExtor         ports/www/p5-HTML-SimpleLinkExtor
 p5-HTML-SimpleParse             ports/www/p5-HTML-SimpleParse
 p5-HTML-StickyQuery             ports/www/p5-HTML-StickyQuery
@@ -13955,6 +13957,7 @@ p5-class-method-modifiers       ports/devel/p5-Class-Method-Modifiers
 p5-class-method-modifiers-fast  ports/devel/p5-Class-Method-Modifiers-Fast
 p5-class-methodmaker            ports/devel/p5-Class-MethodMaker
 p5-class-methodmapper           ports/devel/p5-Class-MethodMapper
+p5-class-mix                    ports/devel/p5-Class-Mix
 p5-class-mixinfactory           ports/devel/p5-Class-MixinFactory
 p5-class-mop                    ports/devel/p5-Class-MOP
 p5-class-multimethods           ports/devel/p5-Class-Multimethods
@@ -14852,6 +14855,7 @@ p5-html-sbc                     ports/textproc/p5-HTML-SBC
 p5-html-scrubber                ports/www/p5-HTML-Scrubber
 p5-html-seamstress              ports/www/p5-HTML-Seamstress
 p5-html-selector-xpath          ports/www/p5-HTML-Selector-XPath
+p5-html-shakan                  ports/www/p5-HTML-Shakan
 p5-html-simplelinkextor         ports/www/p5-HTML-SimpleLinkExtor
 p5-html-simpleparse             ports/www/p5-HTML-SimpleParse
 p5-html-stickyquery             ports/www/p5-HTML-StickyQuery
@@ -21154,6 +21158,7 @@ speedbar                        ports/editors/speedbar
 speedcrunch                     ports/math/speedcrunch
 speex                           ports/audio/speex
 spegla                          ports/ftp/spegla
+spellathon                      ports/games/spellathon
 spellcast                       ports/games/spellcast
 spellutils                      ports/textproc/spellutils
 speyes                          ports/games/speyes
