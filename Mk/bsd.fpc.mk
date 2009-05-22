@@ -23,7 +23,7 @@
 #
 #
 
-.if !defined(_POSTMKINCLUDED) && !defined(_FPCMKINCLUDED)
+.if !defined(_FPCMKINCLUDED)
 
 _FPCMKINCLUDED=	yes
 
@@ -86,6 +86,7 @@ IGNORE=	unknown value, please use "yes" instead of
 IGNORE= cannot install: unknown FPC unit ${UNITS}
 .		endif
 .	endfor
+.endif
 
 # Base units
 gdbint_UNIT=	devel/fpc-gdbint
@@ -155,6 +156,10 @@ x11_UNIT=	x11/fpc-x11
 xforms_UNIT=	x11-toolkits/fpc-xforms
 zlib_UNIT=	devel/fpc-zlib
 
+.endif
+
+.if defined(_POSTMKINCLUDED) && defined(USE_FPC)
+
 .	for UNITS in ${USE_FPC}
 .		if ${_FPC_ALL_UNITS:M${UNITS}}!=""
 BUILD_DEPENDS+=	${UNITSDIR}/${UNITS}/Package.fpc:${PORTSDIR}/${${UNITS:S/-/_/}_UNIT}
@@ -164,5 +169,5 @@ security-check: fpc-check-install
 .	endfor
 .endif
 
-.endif
+#.endif
 # End of bsd.fpc.mk file
