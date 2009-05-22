@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	libhome
-PORTVERSION=	0.10.1
-PORTREVISION=	1
+PORTVERSION=	0.10.2
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	pll
+MASTER_SITES=	ftp://ftp.oav.net/pll/ SF/pll
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Library providing a getpwname() emulation
@@ -25,11 +23,11 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget
 USE_LDCONFIG=	yes
 
+.include <bsd.port.pre.mk>
+
 .if defined(LIBHOME_WITH_BDB_VER)
 WITH_BDB_VER=	${LIBHOME_WITH_BDB_VER}
 .endif
-
-.include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--with-proxy --with-nss
 
