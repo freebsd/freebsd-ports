@@ -52,10 +52,25 @@ OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-BOOTSTRAP_JDKS=	${LOCALBASE}/diablo-jdk1.6.0
+BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk6 \
+		${LOCALBASE}/jdk1.6.0 \
+		${LOCALBASE}/diablo-jdk1.6.0
+
+# do we have valid native jdk installed?
+.for CJDK in ${BOOTSTRAP_JDKS}
+.  if !defined(BOOTSTRAPJDKDIR) && exists(${CJDK}/bin/javac)
+BOOTSTRAPJDKDIR=	${CJDK}
+.  endif
+.endfor
+
+# if no valid jdk found, set dependency
+.if !defined(BOOTSTRAPJDKDIR)
+BOOTSTRAPJDKDIR?=	${LOCALBASE}/diablo-jdk1.6.0
+BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/diablo-jdk16
+.endif
 
 MAKE_ENV=	LANG=C LC_ALL=C \
-		ALT_BOOTDIR=${BOOTSTRAP_JDKS} \
+		ALT_BOOTDIR=${BOOTSTRAPJDKDIR} \
 		ALT_FREETYPE_HEADERS_PATH=${LOCALBASE}/include \
 		ALT_FREETYPE_LIB_PATH=${LOCALBASE}/lib \
 		ALT_X11_PATH=${LOCALBASE} \
