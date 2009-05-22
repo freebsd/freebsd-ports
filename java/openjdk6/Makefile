@@ -7,6 +7,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b16
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/
 DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
@@ -34,7 +35,6 @@ LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
-BUILD_DEPENDS+=	${JAVAJARDIR}/jdk-7-icedtea-plugs/jre/lib/rt-closed.jar:${PORTSDIR}/java/icedtea6-stubs
 
 .include <bsd.port.pre.mk>
 
@@ -44,8 +44,6 @@ CATEGORIES+=	ipv6
 
 # avoid ARCH in MAKEFLAGS, breaks build
 NOPRECIOUSMAKEVARS= yes
-
-OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -72,7 +70,6 @@ MAKE_ENV=	LANG=C LC_ALL=C \
 		ALT_FREETYPE_LIB_PATH=${LOCALBASE}/lib \
 		ALT_X11_PATH=${LOCALBASE} \
 		ALT_PACKAGE_PATH=${LOCALBASE} \
-		ALT_BINARY_PLUGS_PATH=${JAVAJARDIR}/jdk-7-icedtea-plugs \
 		ANT_HOME=${LOCALBASE} \
 		NO_DOCS=true
 
@@ -81,7 +78,10 @@ MAKE_ENV+=	DONT_ENABLE_IPV6="YES"
 .endif
 
 .if defined(WITH_DEBUG)
-MAKE_ENV+=	SKIP_DEBUG_BUILD="false"
+ALL_TARGET=	debug_build
+OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}-debug
+.else
+OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
 .endif
 
 # perhaps we could check to see how many processors are availble and set this equivelent to that
@@ -115,11 +115,20 @@ COPYDIRS= \
 	hotspot/src/os_cpu/linux_x86/vm \
 	hotspot/build/linux \
 	hotspot/build/linux/makefiles \
+	hotspot/agent/src/os/linux \
+	hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/linux \
+	hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/linux/amd64 \
+	hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/linux/x86 \
+	hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/linux \
+	hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/linux_amd64 \
+	hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/linux_x86 \
 	jdk/src/linux/doc/man
 
 COPYFILES= \
 	corba/make/common/Defs-linux.gmk \
 	corba/make/common/shared/Defs-linux.gmk \
+	hotspot/agent/src/share/classes/sun/jvm/hotspot/LinuxVtblAccess.java \
+	jdk/make/com/sun/tools/attach/mapfile-linux \
 	jdk/make/common/Defs-linux.gmk \
 	jdk/make/common/shared/Defs-linux.gmk \
 	jdk/make/java/nio/mapfile-linux \
@@ -129,6 +138,7 @@ COPYFILES= \
 	jdk/src/solaris/classes/java/lang/UNIXProcess.java.linux \
 	jdk/src/solaris/classes/sun/awt/fontconfigs/linux.fontconfig.properties \
 	jdk/src/solaris/classes/sun/tools/attach/LinuxAttachProvider.java \
+	jdk/src/solaris/classes/sun/tools/attach/LinuxVirtualMachine.java \
 	jdk/src/solaris/hpi/include/largefile_linux.h \
 	jdk/src/solaris/native/java/net/linux_close.c \
 	jdk/src/solaris/native/sun/tools/attach/LinuxVirtualMachine.c
@@ -139,7 +149,7 @@ post-extract:
 		cd ${WRKDIR}/$$d; \
 		for f in *; do \
 			if [ -f $$f ]; then \
-				t=`echo ${WRKDIR}/$$d/$$f | ${SED} 's/linux/bsd/g;'`; \
+				t=`echo ${WRKDIR}/$$d/$$f | ${SED} 's/linux/bsd/g; s/Linux/Bsd/g'`; \
 				${SED} 's/linux/bsd/g; s/Linux/Bsd/g' < $$f > $$t; \
 			fi; \
 		done; \
