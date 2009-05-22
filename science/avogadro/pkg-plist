@@ -1,0 +1,342 @@
+bin/avogadro
+include/avogadro/animation.h
+include/avogadro/atom.h
+include/avogadro/bond.h
+include/avogadro/camera.h
+include/avogadro/color.h
+include/avogadro/colorbutton.h
+include/avogadro/cube.h
+include/avogadro/elementtranslator.h
+include/avogadro/engine.h
+include/avogadro/extension.h
+include/avogadro/filetreeitem.h
+include/avogadro/fragment.h
+include/avogadro/glgraphicsview.h
+include/avogadro/global.h
+include/avogadro/glwidget.h
+include/avogadro/idlist.h
+include/avogadro/line.h
+include/avogadro/mesh.h
+include/avogadro/meshgenerator.h
+include/avogadro/molecule.h
+include/avogadro/navigate.h
+include/avogadro/neighborlist.h
+include/avogadro/painter.h
+include/avogadro/painterdevice.h
+include/avogadro/periodictableview.h
+include/avogadro/plotaxis.h
+include/avogadro/plotobject.h
+include/avogadro/plotpoint.h
+include/avogadro/plotwidget.h
+include/avogadro/plugin.h
+include/avogadro/pluginmanager.h
+include/avogadro/point.h
+include/avogadro/primitive.h
+include/avogadro/primitiveitemmodel.h
+include/avogadro/primitivelist.h
+include/avogadro/protein.h
+include/avogadro/pythonerror.h
+include/avogadro/pythoninterpreter.h
+include/avogadro/pythonscript.h
+include/avogadro/residue.h
+include/avogadro/tool.h
+include/avogadro/toolgroup.h
+include/avogadro/undosequence.h
+include/avogadro/zmatrix.h
+lib/avogadro/AvogadroBuildSettings.cmake
+lib/avogadro/AvogadroConfig.cmake
+lib/avogadro/AvogadroLibraryDeps.cmake
+lib/avogadro/AvogadroUse.cmake
+lib/avogadro/cmake/FindEigen2.cmake
+lib/avogadro/cmake/FindGLEW.cmake
+lib/avogadro/colors/chargecolor.so
+lib/avogadro/colors/distancecolor.so
+lib/avogadro/colors/indexcolor.so
+lib/avogadro/colors/residuecolor.so
+lib/avogadro/engines/axesengine.so
+lib/avogadro/engines/cartoonengine.so
+lib/avogadro/engines/dipoleengine.so
+lib/avogadro/engines/forceengine.so
+lib/avogadro/engines/hbondengine.so
+lib/avogadro/engines/labelengine.so
+lib/avogadro/engines/orbitalengine.so
+lib/avogadro/engines/overlayengine.so
+lib/avogadro/engines/polygonengine.so
+lib/avogadro/engines/ribbonengine.so
+lib/avogadro/engines/ringengine.so
+lib/avogadro/engines/simplewireengine.so
+lib/avogadro/engines/sphereengine.so
+lib/avogadro/engines/stickengine.so
+lib/avogadro/engines/surfaceengine.so
+lib/avogadro/engines/wireengine.so
+lib/avogadro/extensions/animationextension.so
+lib/avogadro/extensions/fileimportextension.so
+lib/avogadro/extensions/forcefieldextension.so
+lib/avogadro/extensions/gamessextension.so
+lib/avogadro/extensions/gaussianextension.so
+lib/avogadro/extensions/h2methylextension.so
+lib/avogadro/extensions/hydrogenextension.so
+lib/avogadro/extensions/networkfetchextension.so
+lib/avogadro/extensions/orbitalextension.so
+lib/avogadro/extensions/povrayextension.so
+lib/avogadro/extensions/propextension.so
+lib/avogadro/extensions/pythonterminal.so
+lib/avogadro/extensions/selectextension.so
+lib/avogadro/extensions/spectraextension.so
+lib/avogadro/extensions/supercellextension.so
+lib/avogadro/extensions/unitcellextension.so
+lib/avogadro/extensions/vibrationextension.so
+lib/avogadro/tools/aligntool.so
+lib/avogadro/tools/autoopttool.so
+lib/avogadro/tools/autorotatetool.so
+lib/avogadro/tools/bondcentrictool.so
+lib/avogadro/tools/clickmeasuretool.so
+lib/avogadro/tools/drawtool.so
+lib/avogadro/tools/manipulatetool.so
+lib/avogadro/tools/navigatetool.so
+lib/avogadro/tools/selectrotatetool.so
+lib/libavogadro.so
+lib/libavogadro.so.0
+lib/libavogadro.so.0.9.4
+%%PYTHON_SITELIBDIR%%/Avogadro.so
+%%DATADIR%%/fragments/alcohols/ethanol.cml
+%%DATADIR%%/fragments/alcohols/methanol.cml
+%%DATADIR%%/fragments/alcohols/propan-1-ol.cml
+%%DATADIR%%/fragments/alcohols/propan-2-ol.cml
+%%DATADIR%%/fragments/aldehydes/acetaldehyde.cml
+%%DATADIR%%/fragments/aldehydes/formaldehyde.cml
+%%DATADIR%%/fragments/alkanes/2-methylpropane.cml
+%%DATADIR%%/fragments/alkanes/ethane.cml
+%%DATADIR%%/fragments/alkanes/methane.cml
+%%DATADIR%%/fragments/alkanes/propane.cml
+%%DATADIR%%/fragments/alkenes/but-1-ene.cml
+%%DATADIR%%/fragments/alkenes/ethene.cml
+%%DATADIR%%/fragments/alkynes/acetylene.cml
+%%DATADIR%%/fragments/alkynes/propyne.cml
+%%DATADIR%%/fragments/amides/N_N-dimethylacetamide.cml
+%%DATADIR%%/fragments/amides/N_N-dimethylformamide.cml
+%%DATADIR%%/fragments/amides/acetamide.cml
+%%DATADIR%%/fragments/amides/ethyl_carbamate.cml
+%%DATADIR%%/fragments/amides/oxamide.cml
+%%DATADIR%%/fragments/amines/ammonia.cml
+%%DATADIR%%/fragments/amines/azepane.cml
+%%DATADIR%%/fragments/amines/ethylamine.cml
+%%DATADIR%%/fragments/amines/methylamine.cml
+%%DATADIR%%/fragments/amino_acids/D-alanine.cml
+%%DATADIR%%/fragments/amino_acids/D-allo-threonine.cml
+%%DATADIR%%/fragments/amino_acids/D-arginine.cml
+%%DATADIR%%/fragments/amino_acids/D-asparagine.cml
+%%DATADIR%%/fragments/amino_acids/D-aspartic_acid.cml
+%%DATADIR%%/fragments/amino_acids/D-cysteine.cml
+%%DATADIR%%/fragments/amino_acids/D-glutamic_acid.cml
+%%DATADIR%%/fragments/amino_acids/D-glutamine.cml
+%%DATADIR%%/fragments/amino_acids/D-histidine.cml
+%%DATADIR%%/fragments/amino_acids/D-isoleucine.cml
+%%DATADIR%%/fragments/amino_acids/D-leucine.cml
+%%DATADIR%%/fragments/amino_acids/D-lysine.cml
+%%DATADIR%%/fragments/amino_acids/D-methionine.cml
+%%DATADIR%%/fragments/amino_acids/D-phenylalanine.cml
+%%DATADIR%%/fragments/amino_acids/D-proline.cml
+%%DATADIR%%/fragments/amino_acids/D-serine.cml
+%%DATADIR%%/fragments/amino_acids/D-threonine.cml
+%%DATADIR%%/fragments/amino_acids/D-tryptophan.cml
+%%DATADIR%%/fragments/amino_acids/D-tyrosine.cml
+%%DATADIR%%/fragments/amino_acids/D-valine.cml
+%%DATADIR%%/fragments/amino_acids/L-4-nitrophenylalanine.cml
+%%DATADIR%%/fragments/amino_acids/L-alanine.cml
+%%DATADIR%%/fragments/amino_acids/L-allo-isoleucine.cml
+%%DATADIR%%/fragments/amino_acids/L-arginine.cml
+%%DATADIR%%/fragments/amino_acids/L-asparagine.cml
+%%DATADIR%%/fragments/amino_acids/L-aspartic_acid.cml
+%%DATADIR%%/fragments/amino_acids/L-cysteine.cml
+%%DATADIR%%/fragments/amino_acids/L-glutamic_acid.cml
+%%DATADIR%%/fragments/amino_acids/L-glutamine.cml
+%%DATADIR%%/fragments/amino_acids/L-histidine.cml
+%%DATADIR%%/fragments/amino_acids/L-isoleucine.cml
+%%DATADIR%%/fragments/amino_acids/L-leucine.cml
+%%DATADIR%%/fragments/amino_acids/L-lysine.cml
+%%DATADIR%%/fragments/amino_acids/L-methionine.cml
+%%DATADIR%%/fragments/amino_acids/L-phenylalanine.cml
+%%DATADIR%%/fragments/amino_acids/L-proline.cml
+%%DATADIR%%/fragments/amino_acids/L-serine.cml
+%%DATADIR%%/fragments/amino_acids/L-threonine.cml
+%%DATADIR%%/fragments/amino_acids/L-tryptophan.cml
+%%DATADIR%%/fragments/amino_acids/L-tyrosine.cml
+%%DATADIR%%/fragments/amino_acids/L-valine.cml
+%%DATADIR%%/fragments/amino_acids/glycine.cml
+%%DATADIR%%/fragments/aromatics/1H-indene.cml
+%%DATADIR%%/fragments/aromatics/aniline.cml
+%%DATADIR%%/fragments/aromatics/anisole.cml
+%%DATADIR%%/fragments/aromatics/anthracene.cml
+%%DATADIR%%/fragments/aromatics/benzaldehyde.cml
+%%DATADIR%%/fragments/aromatics/benzene.cml
+%%DATADIR%%/fragments/aromatics/benzoic_acid.cml
+%%DATADIR%%/fragments/aromatics/benzoyl_chloride.cml
+%%DATADIR%%/fragments/aromatics/caffeine.cml
+%%DATADIR%%/fragments/aromatics/naphthalene.cml
+%%DATADIR%%/fragments/aromatics/nitrobenzene.cml
+%%DATADIR%%/fragments/aromatics/phenol.cml
+%%DATADIR%%/fragments/aromatics/toluene.cml
+%%DATADIR%%/fragments/buckminsterfullerene.cml
+%%DATADIR%%/fragments/carbamides/urea.cml
+%%DATADIR%%/fragments/carbohydrates/d-allose.cml
+%%DATADIR%%/fragments/carbohydrates/d-altrose.cml
+%%DATADIR%%/fragments/carbohydrates/d-arabinose.cml
+%%DATADIR%%/fragments/carbohydrates/d-erythrose.cml
+%%DATADIR%%/fragments/carbohydrates/d-erythrulose.cml
+%%DATADIR%%/fragments/carbohydrates/d-fructose.cml
+%%DATADIR%%/fragments/carbohydrates/d-galactose.cml
+%%DATADIR%%/fragments/carbohydrates/d-glucose.cml
+%%DATADIR%%/fragments/carbohydrates/d-glyceraldehyde.cml
+%%DATADIR%%/fragments/carbohydrates/d-gulose.cml
+%%DATADIR%%/fragments/carbohydrates/d-idose.cml
+%%DATADIR%%/fragments/carbohydrates/d-lyxose.cml
+%%DATADIR%%/fragments/carbohydrates/d-mannose.cml
+%%DATADIR%%/fragments/carbohydrates/d-psicose.cml
+%%DATADIR%%/fragments/carbohydrates/d-ribose.cml
+%%DATADIR%%/fragments/carbohydrates/d-ribulose.cml
+%%DATADIR%%/fragments/carbohydrates/d-sorbose.cml
+%%DATADIR%%/fragments/carbohydrates/d-tagatose.cml
+%%DATADIR%%/fragments/carbohydrates/d-talose.cml
+%%DATADIR%%/fragments/carbohydrates/d-threose.cml
+%%DATADIR%%/fragments/carbohydrates/d-xylose.cml
+%%DATADIR%%/fragments/carbohydrates/d-xylulose.cml
+%%DATADIR%%/fragments/carbohydrates/dihydroxyacetone.cml
+%%DATADIR%%/fragments/carboxylic_acids/2_2-dichloroacetic_acid.cml
+%%DATADIR%%/fragments/carboxylic_acids/2_2_2-trichloroacetic_acid.cml
+%%DATADIR%%/fragments/carboxylic_acids/2_2_2-trifluoroacetic_acid.cml
+%%DATADIR%%/fragments/carboxylic_acids/D-lactic_acid.cml
+%%DATADIR%%/fragments/carboxylic_acids/D-malic_acid.cml
+%%DATADIR%%/fragments/carboxylic_acids/D-tartaric_acid.cml
+%%DATADIR%%/fragments/carboxylic_acids/L-ascorbic_acid.cml
+%%DATADIR%%/fragments/carboxylic_acids/L-lactic_acid.cml
+%%DATADIR%%/fragments/carboxylic_acids/L-malic_acid.cml
+%%DATADIR%%/fragments/carboxylic_acids/L-tartaric_acid.cml
+%%DATADIR%%/fragments/carboxylic_acids/acetic_acid.cml
+%%DATADIR%%/fragments/carboxylic_acids/butanoic_acid.cml
+%%DATADIR%%/fragments/carboxylic_acids/citric_acid.cml
+%%DATADIR%%/fragments/carboxylic_acids/formic_acid.cml
+%%DATADIR%%/fragments/carboxylic_acids/isobutyric_acid.cml
+%%DATADIR%%/fragments/carboxylic_acids/oxalic_acid.cml
+%%DATADIR%%/fragments/carboxylic_acids/propanoic_acid.cml
+%%DATADIR%%/fragments/coordination/3-trigonal-planar.cml
+%%DATADIR%%/fragments/coordination/3-trigonal-pyramidal.cml
+%%DATADIR%%/fragments/coordination/4-planar.cml
+%%DATADIR%%/fragments/coordination/4-tetrahedral.cml
+%%DATADIR%%/fragments/coordination/5-square-pyramidal.cml
+%%DATADIR%%/fragments/coordination/5-trigonal-bipyramidal.cml
+%%DATADIR%%/fragments/coordination/6-octahedral.cml
+%%DATADIR%%/fragments/cyclic alkanes/adamantane.cml
+%%DATADIR%%/fragments/cyclic alkanes/cubane.cml
+%%DATADIR%%/fragments/cyclic alkanes/cyclobutane.cml
+%%DATADIR%%/fragments/cyclic alkanes/cycloheptane.cml
+%%DATADIR%%/fragments/cyclic alkanes/cyclohexane.cml
+%%DATADIR%%/fragments/cyclic alkanes/cyclopentane.cml
+%%DATADIR%%/fragments/cyclic alkanes/cyclopropane.cml
+%%DATADIR%%/fragments/cyclic alkanes/norbornane.cml
+%%DATADIR%%/fragments/ethers/di-tert-butylether.cml
+%%DATADIR%%/fragments/ethers/dibutylether.cml
+%%DATADIR%%/fragments/ethers/diethylether.cml
+%%DATADIR%%/fragments/ethers/diisopropylether.cml
+%%DATADIR%%/fragments/ethers/dimethylether.cml
+%%DATADIR%%/fragments/ethers/dipropylether.cml
+%%DATADIR%%/fragments/ethers/ethylmethylether.cml
+%%DATADIR%%/fragments/ethers/tetrahydrofuran.cml
+%%DATADIR%%/fragments/fatty acids/decanoic_acid.cml
+%%DATADIR%%/fragments/fatty acids/hexanoic_acid.cml
+%%DATADIR%%/fragments/fatty acids/lauric_acid.cml
+%%DATADIR%%/fragments/fatty acids/linoleic_acid.cml
+%%DATADIR%%/fragments/fatty acids/octanoic_acid.cml
+%%DATADIR%%/fragments/fatty acids/oleic_acid.cml
+%%DATADIR%%/fragments/fatty acids/palmitic_acid.cml
+%%DATADIR%%/fragments/fatty acids/stearic_acid.cml
+%%DATADIR%%/fragments/heteroaromatics/1H-indole.cml
+%%DATADIR%%/fragments/heteroaromatics/1H-pyrazole.cml
+%%DATADIR%%/fragments/heteroaromatics/1H-pyrrole.cml
+%%DATADIR%%/fragments/heteroaromatics/1_2-oxazole.cml
+%%DATADIR%%/fragments/heteroaromatics/1_2-thiazole.cml
+%%DATADIR%%/fragments/heteroaromatics/1_3-oxazole.cml
+%%DATADIR%%/fragments/heteroaromatics/1_3-thiazole.cml
+%%DATADIR%%/fragments/heteroaromatics/benzofuran.cml
+%%DATADIR%%/fragments/heteroaromatics/benzothiophene.cml
+%%DATADIR%%/fragments/heteroaromatics/furan.cml
+%%DATADIR%%/fragments/heteroaromatics/pyridine.cml
+%%DATADIR%%/fragments/heteroaromatics/thiophene.cml
+%%DATADIR%%/fragments/ketones/acetone.cml
+%%DATADIR%%/fragments/ketones/butanone.cml
+%%DATADIR%%/fragments/macrocycles/porphin.cml
+%%DATADIR%%/fragments/nucleobases/adenine.cml
+%%DATADIR%%/fragments/nucleobases/cytosine.cml
+%%DATADIR%%/fragments/nucleobases/guanine.cml
+%%DATADIR%%/fragments/nucleobases/thymine.cml
+%%DATADIR%%/fragments/nucleobases/uracil.cml
+%%DATADIR%%/fragments/steroids/cholesterol.cml
+%%DATADIR%%/fragments/steroids/estradiol.cml
+%%DATADIR%%/fragments/steroids/testosterone.cml
+%%DATADIR%%/fragments/sulfoxides/dimethyl_sulfoxide.cml
+%%DATADIR%%/fragments/thiols/ethanethiol.cml
+%%DATADIR%%/fragments/thiols/methanethiol.cml
+%%DATADIR%%/fragments/thiols/pentane-1-thiol.cml
+%%DATADIR%%/fragments/water.cml
+%%DATADIR%%/i18n/avogadro_ar.qm
+%%DATADIR%%/i18n/avogadro_ca.qm
+%%DATADIR%%/i18n/avogadro_cs.qm
+%%DATADIR%%/i18n/avogadro_de.qm
+%%DATADIR%%/i18n/avogadro_en_GB.qm
+%%DATADIR%%/i18n/avogadro_es.qm
+%%DATADIR%%/i18n/avogadro_fi.qm
+%%DATADIR%%/i18n/avogadro_fr.qm
+%%DATADIR%%/i18n/avogadro_it.qm
+%%DATADIR%%/i18n/avogadro_ja.qm
+%%DATADIR%%/i18n/avogadro_ko.qm
+%%DATADIR%%/i18n/avogadro_nb.qm
+%%DATADIR%%/i18n/avogadro_nl.qm
+%%DATADIR%%/i18n/avogadro_pl.qm
+%%DATADIR%%/i18n/avogadro_pt.qm
+%%DATADIR%%/i18n/avogadro_pt_BR.qm
+%%DATADIR%%/i18n/avogadro_ru.qm
+%%DATADIR%%/i18n/avogadro_sv.qm
+%%DATADIR%%/i18n/avogadro_tr.qm
+%%DATADIR%%/i18n/avogadro_uk.qm
+%%DATADIR%%/i18n/avogadro_zh_CN.qm
+%%DATADIR%%/i18n/avogadro_zh_TW.qm
+share/libavogadro/engineScripts/wireframe.py
+share/libavogadro/extensionScripts/example.py
+share/libavogadro/toolScripts/template.py
+@dirrm share/libavogadro/toolScripts
+@dirrm share/libavogadro/extensionScripts
+@dirrm share/libavogadro/engineScripts
+@dirrm share/libavogadro
+@dirrm %%DATADIR%%/i18n
+@dirrm %%DATADIR%%/fragments/thiols
+@dirrm %%DATADIR%%/fragments/sulfoxides
+@dirrm %%DATADIR%%/fragments/steroids
+@dirrm %%DATADIR%%/fragments/nucleobases
+@dirrm %%DATADIR%%/fragments/macrocycles
+@dirrm %%DATADIR%%/fragments/ketones
+@dirrm %%DATADIR%%/fragments/heteroaromatics
+@dirrm %%DATADIR%%/fragments/fatty acids
+@dirrm %%DATADIR%%/fragments/ethers
+@dirrm %%DATADIR%%/fragments/cyclic alkanes
+@dirrm %%DATADIR%%/fragments/coordination
+@dirrm %%DATADIR%%/fragments/carboxylic_acids
+@dirrm %%DATADIR%%/fragments/carbohydrates
+@dirrm %%DATADIR%%/fragments/carbamides
+@dirrm %%DATADIR%%/fragments/aromatics
+@dirrm %%DATADIR%%/fragments/amino_acids
+@dirrm %%DATADIR%%/fragments/amines
+@dirrm %%DATADIR%%/fragments/amides
+@dirrm %%DATADIR%%/fragments/alkynes
+@dirrm %%DATADIR%%/fragments/alkenes
+@dirrm %%DATADIR%%/fragments/alkanes
+@dirrm %%DATADIR%%/fragments/aldehydes
+@dirrm %%DATADIR%%/fragments/alcohols
+@dirrm %%DATADIR%%/fragments
+@dirrm %%DATADIR%%
+@dirrm lib/avogadro/tools
+@dirrm lib/avogadro/extensions
+@dirrm lib/avogadro/engines
+@dirrm lib/avogadro/colors
+@dirrm lib/avogadro/cmake
+@dirrm lib/avogadro
+@dirrm include/avogadro

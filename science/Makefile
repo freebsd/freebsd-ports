@@ -9,6 +9,7 @@
     SUBDIR += abinit
     SUBDIR += afni
     SUBDIR += at
+    SUBDIR += avogadro
     SUBDIR += bblimage
     SUBDIR += bft
     SUBDIR += bodr
