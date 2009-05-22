@@ -200,6 +200,7 @@
     SUBDIR += rezlooks
     SUBDIR += sapphire-themes
     SUBDIR += sawfish-themes
+    SUBDIR += slim-themes
     SUBDIR += thewidgetfactory
     SUBDIR += thinice
     SUBDIR += ubuntulooks
