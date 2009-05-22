@@ -165,10 +165,12 @@ SUB_LIST+=		JAVA_OS="${JAVA_OS}"
 __JAVA_VERSION_LIST=	1.3 1.4 1.5 1.6
 _JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/} 1.1+ 1.2+
 _JAVA_OS_LIST=			native linux
-_JAVA_VENDOR_LIST=		freebsd bsdjava sun blackdown
+_JAVA_VENDOR_LIST=		freebsd bsdjava sun blackdown openjdk
 
 # Set all meta-information about JDK ports:
 # port location, corresponding JAVA_HOME, JDK version, OS, vendor
+_JAVA_PORT_NATIVE_OPENJDK_JDK_1_6_INFO=		PORT=java/openjdk6			HOME=${LOCALBASE}/openjdk6 \
+											VERSION=1.6.0	OS=native	VENDOR=openjdk
 _JAVA_PORT_NATIVE_FREEBSD_JDK_1_6_INFO=		PORT=java/diablo-jdk16			HOME=${LOCALBASE}/diablo-jdk1.6.0 \
 											VERSION=1.6.0	OS=native	VENDOR=freebsd
 _JAVA_PORT_NATIVE_FREEBSD_JDK_1_5_INFO=		PORT=java/diablo-jdk15			HOME=${LOCALBASE}/diablo-jdk1.5.0 \
@@ -195,6 +197,7 @@ _JAVA_PORT_LINUX_SUN_JDK_1_6_INFO=			PORT=java/linux-sun-jdk16		HOME=${LOCALBASE
 # Verbose description for each VENDOR
 _JAVA_VENDOR_freebsd=		"FreeBSD Foundation"
 _JAVA_VENDOR_bsdjava=		"BSD Java Porting Team"
+_JAVA_VENDOR_openjdk=		"OpenJDK BSD Porting Team"
 _JAVA_VENDOR_blackdown=		Blackdown
 _JAVA_VENDOR_sun=			Sun
 
@@ -212,6 +215,7 @@ _JAVA_PREFERRED_PORTS+=	JAVA_PORT_NATIVE_BSDJAVA_JDK_1_6
 # List all JDK ports
 __JAVA_PORTS_ALL=	JAVA_PORT_NATIVE_FREEBSD_JDK_1_6 \
 					JAVA_PORT_NATIVE_FREEBSD_JDK_1_5 \
+					JAVA_PORT_NATIVE_OPENJDK_JDK_1_6 \
 					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_6 \
 					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_5 \
 					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4 \
