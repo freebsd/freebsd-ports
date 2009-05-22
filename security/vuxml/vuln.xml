@@ -79,7 +79,7 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>NLnet Labs:</p>
 	<blockquote cite="http://www.nlnetlabs.nl/publications/NSD_vulnerability_announcement.html">
-	  <p>A one-byte buffer over flow has been reported in NSD. The
+	  <p>A one-byte buffer overflow has been reported in NSD. The
 	    problem affects all versions 2.0.0 to 3.2.1. The bug allows
 	    a carefully crafted exploit to bring down your DNS server. It
 	    is highly unlikely that this one byte overflow can lead to
@@ -88,6 +88,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-1755</cvename>
       <url>http://www.nlnetlabs.nl/publications/NSD_vulnerability_announcement.html</url>
     </references>
     <dates>
