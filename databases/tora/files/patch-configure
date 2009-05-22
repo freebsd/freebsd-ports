@@ -1,0 +1,14 @@
+--- configure.orig	2008-11-03 21:33:32.000000000 +0100
++++ configure	2009-05-07 19:58:09.238375523 +0200
+@@ -25140,6 +25140,11 @@
+         ora_cflags="$ora_cflags -I$dir"
+         echo "adding -I$dir" >&5
+       fi
++      echo "trying ociextp.h $dir/ociextp.h" >&5
++      if test -r $dir/ociextp.h; then
++        ora_cflags="$ora_cflags -I$dir"
++        echo "adding -I$dir" >&5
++      fi
+     done
+ 
+     ora_check_lib="
