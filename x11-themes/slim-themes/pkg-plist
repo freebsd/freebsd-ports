@@ -1,0 +1,85 @@
+%%GENTOO_SIMPLE%%%%THEMEDIR%%/gentoo-simple/background.png
+%%GENTOO_SIMPLE%%%%THEMEDIR%%/gentoo-simple/panel.png
+%%GENTOO_SIMPLE%%%%THEMEDIR%%/gentoo-simple/preview.png
+%%GENTOO_SIMPLE%%%%THEMEDIR%%/gentoo-simple/preview2.png
+%%GENTOO_SIMPLE%%%%THEMEDIR%%/gentoo-simple/slim.theme
+%%GENTOO_SIMPLE%%@dirrmtry %%THEMEDIR%%/gentoo-simple
+%%ARCHLINUX_SIMPLE%%%%THEMEDIR%%/archlinux-simple/background.png
+%%ARCHLINUX_SIMPLE%%%%THEMEDIR%%/archlinux-simple/preview.png
+%%ARCHLINUX_SIMPLE%%%%THEMEDIR%%/archlinux-simple/panel.png
+%%ARCHLINUX_SIMPLE%%%%THEMEDIR%%/archlinux-simple/slim.theme
+%%ARCHLINUX_SIMPLE%%@dirrmtry %%THEMEDIR%%/archlinux-simple
+%%DEBIAN_MOREBLUE%%%%THEMEDIR%%/debian-moreblue/background.png
+%%DEBIAN_MOREBLUE%%%%THEMEDIR%%/debian-moreblue/panel.png
+%%DEBIAN_MOREBLUE%%%%THEMEDIR%%/debian-moreblue/COPYRIGHT.background
+%%DEBIAN_MOREBLUE%%%%THEMEDIR%%/debian-moreblue/COPYRIGHT.panel
+%%DEBIAN_MOREBLUE%%%%THEMEDIR%%/debian-moreblue/COPYING
+%%DEBIAN_MOREBLUE%%%%THEMEDIR%%/debian-moreblue/slim.theme
+%%DEBIAN_MOREBLUE%%@dirrmtry %%THEMEDIR%%/debian-moreblue
+%%FINGERPRINT%%%%THEMEDIR%%/fingerprint/background.png
+%%FINGERPRINT%%%%THEMEDIR%%/fingerprint/panel.png
+%%FINGERPRINT%%%%THEMEDIR%%/fingerprint/screenshot.png
+%%FINGERPRINT%%%%THEMEDIR%%/fingerprint/slim.theme
+%%FINGERPRINT%%@dirrmtry %%THEMEDIR%%/fingerprint
+%%FLAT%%%%THEMEDIR%%/flat/background.jpg
+%%FLAT%%%%THEMEDIR%%/flat/panel.png
+%%FLAT%%%%THEMEDIR%%/flat/slim.theme
+%%FLAT%%@dirrmtry %%THEMEDIR%%/flat
+%%LAKE%%%%THEMEDIR%%/lake/background.jpg
+%%LAKE%%%%THEMEDIR%%/lake/slim.theme
+%%LAKE%%%%THEMEDIR%%/lake/panel.png
+%%LAKE%%@dirrmtry %%THEMEDIR%%/lake
+%%RAINBOW%%%%THEMEDIR%%/rainbow/background.jpg
+%%RAINBOW%%%%THEMEDIR%%/rainbow/slim.theme
+%%RAINBOW%%%%THEMEDIR%%/rainbow/panel.png
+%%RAINBOW%%@dirrmtry %%THEMEDIR%%/rainbow
+%%REAR_WINDOW%%%%THEMEDIR%%/rear-window/background.png
+%%REAR_WINDOW%%%%THEMEDIR%%/rear-window/slim.theme
+%%REAR_WINDOW%%%%THEMEDIR%%/rear-window/panel.png
+%%REAR_WINDOW%%@dirrmtry %%THEMEDIR%%/rear-window
+%%SCOTLAND_ROAD%%%%THEMEDIR%%/scotland-road/background.jpg
+%%SCOTLAND_ROAD%%%%THEMEDIR%%/scotland-road/slim.theme
+%%SCOTLAND_ROAD%%%%THEMEDIR%%/scotland-road/panel.png
+%%SCOTLAND_ROAD%%@dirrmtry %%THEMEDIR%%/scotland-road
+%%SUBWAY%%%%THEMEDIR%%/subway/background.jpg
+%%SUBWAY%%%%THEMEDIR%%/subway/slim.theme
+%%SUBWAY%%%%THEMEDIR%%/subway/README
+%%SUBWAY%%%%THEMEDIR%%/subway/panel.png
+%%SUBWAY%%@dirrmtry %%THEMEDIR%%/subway
+%%WAVE%%%%THEMEDIR%%/wave/background.jpg
+%%WAVE%%%%THEMEDIR%%/wave/slim.theme
+%%WAVE%%%%THEMEDIR%%/wave/panel.png
+%%WAVE%%@dirrmtry %%THEMEDIR%%/wave
+%%LUNAR_LINUX%%%%THEMEDIR%%/lunar/slim.theme
+%%LUNAR_LINUX%%%%THEMEDIR%%/lunar/panel.png
+%%LUNAR_LINUX%%%%THEMEDIR%%/lunar/background.jpg
+%%LUNAR_LINUX%%@dirrmtry %%THEMEDIR%%/lunar
+%%ZENWALK%%%%THEMEDIR%%/zenwalk/background.jpg
+%%ZENWALK%%%%THEMEDIR%%/zenwalk/slim.theme
+%%ZENWALK%%%%THEMEDIR%%/zenwalk/README
+%%ZENWALK%%%%THEMEDIR%%/zenwalk/panel.png
+%%ZENWALK%%@dirrmtry %%THEMEDIR%%/zenwalk
+%%PARALLEL_DIMS%%%%THEMEDIR%%/parallel-dimensions/panel.png
+%%PARALLEL_DIMS%%%%THEMEDIR%%/parallel-dimensions/background.jpg
+%%PARALLEL_DIMS%%%%THEMEDIR%%/parallel-dimensions/slim.theme
+%%PARALLEL_DIMS%%%%THEMEDIR%%/parallel-dimensions/COPYRIGHT.panel
+%%PARALLEL_DIMS%%%%THEMEDIR%%/parallel-dimensions/LICENSE.panel
+%%PARALLEL_DIMS%%%%THEMEDIR%%/parallel-dimensions/COPYRIGHT.background
+%%PARALLEL_DIMS%%@dirrmtry %%THEMEDIR%%/parallel-dimensions
+%%CAPERNOITED%%%%THEMEDIR%%/capernoited/panel.png
+%%CAPERNOITED%%%%THEMEDIR%%/capernoited/background.jpg
+%%CAPERNOITED%%%%THEMEDIR%%/capernoited/README
+%%CAPERNOITED%%%%THEMEDIR%%/capernoited/slim.theme
+%%CAPERNOITED%%@dirrmtry %%THEMEDIR%%/capernoited
+%%MINDLOCK%%%%THEMEDIR%%/mindlock/background.jpg
+%%MINDLOCK%%%%THEMEDIR%%/mindlock/panel.png
+%%MINDLOCK%%%%THEMEDIR%%/mindlock/slim.theme
+%%MINDLOCK%%%%THEMEDIR%%/mindlock/README
+%%MINDLOCK%%@dirrmtry %%THEMEDIR%%/mindlock
+%%FLOWER2%%%%THEMEDIR%%/flower2/README
+%%FLOWER2%%%%THEMEDIR%%/flower2/panel.png
+%%FLOWER2%%%%THEMEDIR%%/flower2/background.jpg
+%%FLOWER2%%%%THEMEDIR%%/flower2/slim.theme
+%%FLOWER2%%@dirrmtry %%THEMEDIR%%/flower2
+@dirrmtry share/slim/themes
+@dirrmtry share/slim
