@@ -1,55 +1,67 @@
 etc/periodic/daily/510.assp
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
-lib/assp/addservice.pl
-lib/assp/assp.pl
-lib/assp/files/URIBLCCTLDS.txt
-lib/assp/files/bombre.txt
-lib/assp/files/invalidptr.txt
-lib/assp/files/ipnp.txt
-lib/assp/files/nodelay.txt
-lib/assp/files/redre.txt
-lib/assp/images/Thumbs.db
-lib/assp/images/assp.css
-lib/assp/images/dropShadow.gif
-lib/assp/images/editor.css
-lib/assp/images/favicon.ico
-lib/assp/images/info.png
-lib/assp/images/logo.jpg
-lib/assp/images/minusIcon.png
-lib/assp/images/noIcon.png
-lib/assp/images/opensource-logo.gif
-lib/assp/images/plusIcon.png
-lib/assp/images/project-support.jpg
-lib/assp/images/shutdown.css
-lib/assp/images/sourceforge-logo.gif
-lib/assp/images/valid-xhtml10.gif
-lib/assp/images/village.gif
-lib/assp/images/xml-pill.gif
-lib/assp/move2num.pl
-lib/assp/rebuildspamdb.pl
-lib/assp/reports/analyzereport.txt
-lib/assp/reports/helpreport.txt
-lib/assp/reports/notspamreport.txt
-lib/assp/reports/redremovereport.txt
-lib/assp/reports/redreport.txt
-lib/assp/reports/spamreport.txt
-lib/assp/reports/virusreport.txt
-lib/assp/reports/whiteremovereport.txt
-lib/assp/reports/whitereport.txt
-lib/assp/stat.pl
-lib/assp/stats.sh
-@dirrm lib/assp/reports
-@dirrm lib/assp/images
-@dirrm lib/assp/files
-@dirrm lib/assp
+%%DATADIR%%/assp.pl
+%%DATADIR%%/files/URIBLCCTLDS.txt
+%%DATADIR%%/files/blackre.txt 
+%%DATADIR%%/files/blockreportuser.txt
+%%DATADIR%%/files/bombre.txt
+%%DATADIR%%/files/denyalways.txt
+%%DATADIR%%/files/droplist.txt
+%%DATADIR%%/files/invalidhelo.txt
+%%DATADIR%%/files/invalidptr.txt
+%%DATADIR%%/files/ipnp.txt
+%%DATADIR%%/files/nodelay.txt
+%%DATADIR%%/files/redre.txt
+%%DATADIR%%/files/strictspf.txt
+%%DATADIR%%/files/validptr.txt
+%%DATADIR%%/files/whiteorg.txt
+%%DATADIR%%/images/assp.css
+%%DATADIR%%/images/dropShadow.gif
+%%DATADIR%%/images/editor.css
+%%DATADIR%%/images/favicon.ico
+%%DATADIR%%/images/info.png
+%%DATADIR%%/images/logo.jpg
+%%DATADIR%%/images/minusIcon.png
+%%DATADIR%%/images/noIcon.png
+%%DATADIR%%/images/opensource-logo.gif
+%%DATADIR%%/images/plusIcon.png
+%%DATADIR%%/images/project-support.jpg
+%%DATADIR%%/images/shutdown.css
+%%DATADIR%%/images/sourceforge-logo.gif
+%%DATADIR%%/images/valid-xhtml10.gif
+%%DATADIR%%/images/village.gif
+%%DATADIR%%/images/xml-pill.gif
+%%DATADIR%%/move2num.pl
+%%DATADIR%%/rebuildspamdb.pl
+%%DATADIR%%/reports/analyzereport.txt
+%%DATADIR%%/reports/blockreport_html.txt
+%%DATADIR%%/reports/blockreport_sub.txt
+%%DATADIR%%/reports/blockreport_text.txt
+%%DATADIR%%/reports/helpreport.txt
+%%DATADIR%%/reports/notspamreport.txt
+%%DATADIR%%/reports/redremovereport.txt
+%%DATADIR%%/reports/redreport.txt
+%%DATADIR%%/reports/spamreport.txt
+%%DATADIR%%/reports/virusreport.txt
+%%DATADIR%%/reports/whiteremovereport.txt
+%%DATADIR%%/reports/whitereport.txt
+%%DATADIR%%/stat.pl
+@dirrm %%DATADIR%%/reports
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/files
+@dirrm %%DATADIR%%
 sbin/assp
 sbin/assplog
 %%PORTDOCS%%%%DOCSDIR%%/Legacy - ASSP Documentation.htm
 %%PORTDOCS%%%%DOCSDIR%%/Regular Expression Tutorial.htm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rm %%ASSP_HOME%%/log
 @unexec rm %%ASSP_HOME%%/reports
 @unexec rm %%ASSP_HOME%%/images
 @unexec rm %%ASSP_HOME%%/files
 @unexec rmdir %%ASSP_HOME%% 2>/dev/null || true
 @unexec if [ -d %%ASSP_HOME%% ]; then echo "If you are deinstalling ASSP completely, remove the %%ASSP_HOME%% directory."; fi
+@unexec rmdir %%ASSP_LOG%% 2>/dev/null || true
+@unexec if [ -d %%ASSP_LOG%% ]; then echo "If you are deinstalling ASSP completely, remove the %%ASSP_LOG%% directory."; fi
+@unexec echo "If you are deinstalling ASSP completely, delete the ASSP user and group."

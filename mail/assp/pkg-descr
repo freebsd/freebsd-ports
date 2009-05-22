@@ -4,7 +4,8 @@ regular SMTP server (sendmail, postfix, qmail, etc).
 ASSP performs a number of configurable spam checks, and on detecting a spam
 message, provides an immediate 5xx SMTP error code back to the client.
 Non-spam messages are passed to your regular SMTP server for further
-processing and delivery.
+processing and delivery.  ASSP includes SSL and IPv6 support.  It is a single
+script with a web-based configuration tool.
 
 ASSP offers:
 	- a whitelist of known good senders
@@ -14,8 +15,9 @@ ASSP offers:
 	- HELO checking
 	- SPF (Sender Policy Framework) checking
 	- DNSBL (DNS Block List) checking using many DNSBL services
+	- various SMTP error modes detection
 	- Virus detection
-
-ASSP is a single script with a web-based configuration tool.
+and many other spam detection techniques.
 
 WWW: http://assp.sourceforge.net/
+WWW: http://opal.com/jr/freebsd/ports/mail/assp/

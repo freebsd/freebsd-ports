@@ -2,30 +2,19 @@
 #
 # $FreeBSD$
 #
-# Update ASSP Spam and ClamAV databases
+# Run ASSP's nightly housekeeping script, rebuildspamdb.pl
+# Delete old ASSP log files
 
 cd %%ASSP_HOME%%
 
-if [ ! -f %%PREFIX%%/lib/assp/rebuildspamdb.pl ]
+if [ ! -f %%DATADIR%%/rebuildspamdb.pl ]
 then
-	echo "%%PREFIX%%/lib/assp/rebuildspamdb.pl does not exist"
+	echo "%%DATADIR%%/rebuildspamdb.pl does not exist"
 	rc_spamdb=2
 else
 	echo ""
 	echo "Running ASSP rebuildspamdb.pl:"
-	%%PERL%% %%PREFIX%%/lib/assp/rebuildspamdb.pl && rc_spamdb=0 || rc_spamdb=3
-fi
-
-if [ ! -f %%PREFIX%%/lib/assp/freshclam.sh ]
-then
-	# existence of freshclam.sh is optional, dependent
-	# on the WITH_CLAMAV setting, so not an error if not there
-	rc_clamav=0
-else
-	echo ""
-	echo "Fetching ASSP ClamAV virus database updates:"
-	export PATH=$PATH:%%LOCALBASE%%/bin
-	sh %%PREFIX%%/lib/assp/freshclam.sh && rc_clamav=0 || rc_clamav=3
+	%%PERL%% %%DATADIR%%/rebuildspamdb.pl && rc_spamdb=0 || rc_spamdb=3
 fi
 
 . %%RC_SUBR%%
@@ -36,6 +25,6 @@ load_rc_config $name
 
 echo ""
 echo "Removing old ASSP log files:"
-find . -name '*.maillog.txt' -mtime +$assp_logexpire -exec ls -l {} \; -exec rm {} \;
+find -L . -name '*.maillog.txt' -mtime +$assp_logexpire -exec ls -l {} \; -exec rm {} \;
 
-exit $(($rc_spamdb|$rc_clamav))
+exit $rc_spamdb

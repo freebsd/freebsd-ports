@@ -1,6 +1,6 @@
 .TH assplog 8 "May 16, 2005" "" "ASSP"
 .SH NAME
-assplog \- display colorized ASSP log
+assplog \- ASSP log pretty-printer
 .SH SYNOPSIS
 assplog
 .SH DESCRIPTION
@@ -8,7 +8,14 @@ assplog
 uses
 .B "tail -f"
 to monitor the ASSP Anti-Spam SMTP Proxy log and then displays
-logged messages using ANSI color sequences for easy reading.
+logged messages using ANSI color sequences and reformatted to
+a consistent layout for easy reading.
+.PP
+.I assplog
+works best on terminal windows of around 120 columns or wider.
+It also assumes a black background as whitelisted messages are
+displayed colored white.  If you normally use a white background,
+use Ctrl-MiddleButton and select Enable Reverse Video.
 .PP
 The colors have the following meaning:
 .PP
@@ -25,6 +32,9 @@ Message passed all checks and was delivered
 2. Messages that were blocked
 .RS
 .TP
+Cyan
+Message was delayed (sending MTA should retry later)
+.TP
 Blue
 Recipient unknown (failed flat list or LDAP check)
 .TP
@@ -38,86 +48,18 @@ Message failed Bayesian spam check
 3. Administrative messages
 .RS
 .TP
-Cyan
-Message to assp{notspam,spam,white}@ address
-.TP
 Yellow
 Admin change from web interface
 .TP
 Grey
-Messages about ASSP's operation
+Messages about ASSP's operation, including messages to
+assp{notspam,spam,white}@ address
 .RE
-.PP
-Entries from the log are reformatted to a consistent format and
-classified with one of the following tags:
-.TP
-BA
-Bad attachement rejected
-.TP
-BL
-DNSBL check failed
-.TP
-BS
-Bayesian spam check failed
-.TP
-DL
-Message from unknown sender delayed, sender requested to retry later
-.TP
-EM
-message to ASSP's email interface (e.g., spam/notspam report, redlist addition)
-.TP
-HL
-Bad HELO greeting
-.TP
-IO
-Invalid sender for internal recipient - internal-only recipient
-.TP
-IR
-Invalid recipient, failed LDAP or flat list test
-.TP
-IS
-Invalid sender
-.TP
-LW
-Local or Whitelisted emails
-.TP
-MA
-Malformed RFC822 recipient address
-.TP
-ME
-Maximum number of other errors exceeded
-.TP
-NP
-Email that passed without being processed
-.TP
-OK
-Email that fully passed all tests
-.TP
-PB
-Penalty Box counter was incremented
-.TP
-RB
-Blocked Relay attempt
-.TP
-SP
-SPF check failed
-.TP
-VI
-Virus detected
-.TP
-W+
-Whitelist addition by local user
-.TP
-W-
-Whitelist deletion by local user
-.TP
-WC
-Whitelist addition of address CC'd in whitelisted email
 .SH BUGS
 Note that
 .I assplog
-suppresses many of the messages in the log (those that appear
-to duplicate information in other messages).
+suppresses some of the message lines from the in actual log (those that report
+penalty scoring and some socket level information, for example).
 Unknown/new log messages are not colorized.
 FOR A COMPLETE AND ACCURATE VIEW OF
 THE LOG, USE

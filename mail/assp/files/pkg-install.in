@@ -1,8 +1,0 @@
-#!/bin/sh
-
-if [ "$2" = "POST-INSTALL" ]; then
-    install -d -m 0700 -o %%ASSP_USER%% -g %%ASSP_GROUP%% %%ASSP_HOME%%
-    ln -s $PKG_PREFIX/lib/assp/files %%ASSP_HOME%%
-    ln -s $PKG_PREFIX/lib/assp/images %%ASSP_HOME%%
-    ln -s $PKG_PREFIX/lib/assp/reports %%ASSP_HOME%%
-fi
