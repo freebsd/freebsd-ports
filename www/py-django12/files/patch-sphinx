@@ -1,0 +1,130 @@
+--- ./docs/_ext/djangodocs.py.orig	2008-11-19 13:44:34.000000000 +0800
++++ ./docs/_ext/djangodocs.py	2009-05-21 23:41:11.495238717 +0800
+@@ -6,10 +6,16 @@
+ import docutils.transforms
+ import sphinx
+ import sphinx.addnodes
+-import sphinx.builder
++try:
++    from sphinx import builders
++except ImportError:
++    import sphinx.builder as builders
+ import sphinx.directives
+ import sphinx.environment
+-import sphinx.htmlwriter
++try:
++    import sphinx.writers.html as sphinx_htmlwriter
++except ImportError:
++    import sphinx.htmlwriter as sphinx_htmlwriter
+ 
+ def setup(app):
+     app.add_crossref_type(
+@@ -42,7 +48,7 @@
+         directivename = "django-admin-option",
+         rolename      = "djadminopt",
+         indextemplate = "pair: %s; django-admin command-line option",
+-        parse_node    = lambda env, sig, signode: sphinx.directives.parse_option_desc(signode, sig),
++        parse_node    = parse_django_adminopt_node,
+     )
+     app.add_transform(SuppressBlockquotes)
+     
+@@ -71,7 +77,7 @@
+             if len(node.children) == 1 and isinstance(node.children[0], self.suppress_blockquote_child_nodes):
+                 node.replace_self(node.children[0])
+ 
+-class DjangoHTMLTranslator(sphinx.htmlwriter.SmartyPantsHTMLTranslator):
++class DjangoHTMLTranslator(sphinx_htmlwriter.SmartyPantsHTMLTranslator):
+     """
+     Django-specific reST to HTML tweaks.
+     """
+@@ -94,10 +100,10 @@
+     #
+     def visit_literal_block(self, node):
+         self.no_smarty += 1
+-        sphinx.htmlwriter.SmartyPantsHTMLTranslator.visit_literal_block(self, node)
++        sphinx_htmlwriter.SmartyPantsHTMLTranslator.visit_literal_block(self, node)
+         
+     def depart_literal_block(self, node):
+-        sphinx.htmlwriter.SmartyPantsHTMLTranslator.depart_literal_block(self, node) 
++        sphinx_htmlwriter.SmartyPantsHTMLTranslator.depart_literal_block(self, node) 
+         self.no_smarty -= 1
+         
+     #
+@@ -132,7 +138,7 @@
+     # This is different on docutils 0.5 vs. 0.4...
+     
+     # The docutils 0.4 override.
+-    if hasattr(sphinx.htmlwriter.SmartyPantsHTMLTranslator, 'start_tag_with_title'):
++    if hasattr(sphinx_htmlwriter.SmartyPantsHTMLTranslator, 'start_tag_with_title'):
+         def start_tag_with_title(self, node, tagname, **atts):
+             node = {
+                 'classes': node.get('classes', []), 
+@@ -145,7 +151,7 @@
+         def visit_section(self, node):
+             old_ids = node.get('ids', [])
+             node['ids'] = ['s-' + i for i in old_ids]
+-            sphinx.htmlwriter.SmartyPantsHTMLTranslator.visit_section(self, node)
++            sphinx_htmlwriter.SmartyPantsHTMLTranslator.visit_section(self, node)
+             node['ids'] = old_ids
+ 
+ def parse_django_admin_node(env, sig, signode):
+@@ -155,6 +161,25 @@
+     signode += sphinx.addnodes.desc_name(title, title)
+     return sig
+ 
++def parse_django_adminopt_node(env, sig, signode):
++    """A copy of sphinx.directives.CmdoptionDesc.parse_signature()"""
++    from sphinx import addnodes
++    from sphinx.directives.desc import option_desc_re
++    count = 0
++    firstname = ''
++    for m in option_desc_re.finditer(sig):
++        optname, args = m.groups()
++        if count:
++            signode += addnodes.desc_addname(', ', ', ')
++        signode += addnodes.desc_name(optname, optname)
++        signode += addnodes.desc_addname(args, args)
++        if not count:
++            firstname = optname
++        count += 1
++    if not firstname:
++        raise ValueError
++    return firstname
++
+ def monkeypatch_pickle_builder():
+     import shutil
+     from os import path
+@@ -183,12 +208,12 @@
+ 
+         # copy the environment file from the doctree dir to the output dir
+         # as needed by the web app
+-        shutil.copyfile(path.join(self.doctreedir, sphinx.builder.ENV_PICKLE_FILENAME),
+-                        path.join(self.outdir, sphinx.builder.ENV_PICKLE_FILENAME))
++        shutil.copyfile(path.join(self.doctreedir, builders.ENV_PICKLE_FILENAME),
++                        path.join(self.outdir, builders.ENV_PICKLE_FILENAME))
+ 
+         # touch 'last build' file, used by the web application to determine
+         # when to reload its environment and clear the cache
+-        open(path.join(self.outdir, sphinx.builder.LAST_BUILD_FILENAME), 'w').close()
++        open(path.join(self.outdir, builders.LAST_BUILD_FILENAME), 'w').close()
+ 
+-    sphinx.builder.PickleHTMLBuilder.handle_finish = handle_finish
++    builders.PickleHTMLBuilder.handle_finish = handle_finish
+     
+--- ./docs/_templates/layout.html.orig	2008-11-19 13:44:33.000000000 +0800
++++ ./docs/_templates/layout.html	2009-05-21 23:41:17.886376469 +0800
+@@ -1,6 +1,6 @@
+ {% extends "!layout.html" %}
+ 
+-{%- macro secondnav %}
++{%- macro secondnav() %}
+   {%- if prev %}
+     &laquo; <a href="{{ prev.link|e }}" title="{{ prev.title|e }}">previous</a> 
+     {{ reldelim2 }}
+@@ -84,4 +84,4 @@
+ {% block relbar2 %}{% endblock %}
+ {% block sidebar1 %}{% endblock %}
+ {% block sidebar2 %}{% endblock %}
+-{% block footer %}{% endblock %}
+\ No newline at end of file
++{% block footer %}{% endblock %}
