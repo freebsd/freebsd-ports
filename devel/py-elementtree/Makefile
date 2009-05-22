@@ -33,10 +33,4 @@ post-install:
 	${CP} -R ${WRKSRC}/samples/ ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 250
-IGNORE=	this comes with the Python package
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
