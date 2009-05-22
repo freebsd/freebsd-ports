@@ -878,7 +878,7 @@ EXTRACONFIGURE+=	zlib
 .endif
 
 .if defined(WITH_SCTP)
-.if ${OSVERSION} >= 700000
+.if ${OSVERSION} >= 702000
 PATCHFILES+=	tls-extractor.patch \
 		abbreviated-renegotiation.patch \
 		dtls-sctp.patch
