@@ -1,0 +1,16 @@
+This is Cat'sEyE (catseye-fm), a filesystem browser using gtk+2.
+Main goals: clear view, powerfull, no icons, fast.
+
+Cat'sEyE gots its power by the configuration file where the user can
+(but not has to) 'create' dialogs and build complicated commandlines
+which Cat'sEyE calls to the Shell.
+You can define how the items are called to some program: each item
+(e.g. for viewing some pictures), all items (e.g. for listen to
+some music) or processed in a list, calling one item after each
+other waiting for the previouse item to finish.
+
+FileShelfs help you keep track of your data spread out
+over the whole filesystem, but also belonging together such as
+configfiles.
+
+WWW: http://catseye-fm-temp.sourceforge.net/
