@@ -6,20 +6,17 @@
 #
 
 PORTNAME=	wikinotificationplugin
-PORTVERSION=	0.1.0p4
-PORTREVISION=	2
+PORTVERSION=	0.2.1
 CATEGORIES=	www devel python
-MASTER_SITES=	http://www.gerritbeine.de/download/trac/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	brooks
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/rc/}
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Allow email notifications on wiki page changes
 
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
-		${PYTHON_SITELIBDIR}/TracCtxtnavAdd-1.1_r1-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-ctxtnavadd
-
-BROKEN=		bad depobj
+RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PYTHON=	2.3+
