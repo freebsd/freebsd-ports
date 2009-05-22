@@ -39,7 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>imap-uw</name>
-	<range><eq>2007d</eq></range>
+	<range><lt>2007e</lt></range>
       </package>
     </affects>
     <description>
@@ -55,11 +55,11 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
      <bid>33795</bid>
-     <url>http://www.securityfocus.com/bid/33795</url>
     </references>
     <dates>
       <discovery>2009-02-17</discovery>
       <entry>2009-05-21</entry>
+      <modified>2009-05-22</modified>
     </dates>
   </vuln>
 
