@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	1.1.14
+PORTVERSION=	1.1.15
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/1.1/
 
@@ -142,7 +142,7 @@ CONFIGURE_ARGS+=	--without-vpopmail
 ## BDB Support
 #
 .if defined(WITH_BDB) && !defined(WITHOUT_BDB)
-USE_BDB=		yes
+USE_BDB=		42+
 CONFIGURE_ARGS+=	--with-db
 CFLAGS+=		-I${BDB_INCLUDE_DIR} -L${BDB_LIB_DIR}
 PLIST_SUB+=		BDB=""
