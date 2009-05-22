@@ -1,6 +1,6 @@
---- configure.ac.orig	2008-03-09 21:03:43.000000000 +0100
-+++ configure.ac	2008-04-05 14:34:02.000000000 +0200
-@@ -53,6 +53,9 @@
+--- configure.ac.orig	2008-09-14 23:54:41.000000000 +0200
++++ configure.ac	2009-05-07 19:16:01.329388208 +0200
+@@ -54,6 +54,9 @@
  AX_PATH_LIB_PCRE
  AM_PATH_CPPUNIT([1.10.2], found_cppunit=yes)
  AM_CONDITIONAL([CPPUNIT], [test "x$found_cppunit" = "xyes"])
@@ -9,5 +9,4 @@
 +AC_SUBST(LIBCOMPAT)
  
  # Makefile.am uses these
- AM_CONDITIONAL(ENABLE_MONO, test "$enable_mono" = yes)
-
+ AM_CONDITIONAL(HAVE_ORACLE, test "$enable_oracle" = yes)

@@ -1,20 +1,11 @@
---- ./src/Makefile.am.orig	2008-03-09 21:03:09.000000000 +0100
-+++ ./src/Makefile.am	2008-03-27 22:11:51.000000000 +0100
-@@ -16,7 +16,7 @@
- 
- AM_CPPFLAGS = -I$(top_srcdir)/ext/otl -I$(LOKIDIR_INC) $(KDE_INCLUDES) $(QT_INCLUDES) $(LTDLINCL)
- AM_CPPFLAGS += $(PCRE_CFLAGS) \
--	-DDEFAULT_PLUGIN_DIR=\"$(libdir)\" \
-+	-DDEFAULT_PLUGIN_DIR=\"$(docdir)\" \
- 	-DTOVERSION=\"$(PACKAGE_VERSION)\" \
- 	$(ORACLE_CXXFLAGS) \
- 	$(QSCINTILLA_CXXFLAGS)
-@@ -42,7 +42,7 @@
+--- src/Makefile.am.orig	2008-11-03 21:32:20.000000000 +0100
++++ src/Makefile.am	2009-05-07 19:59:17.554226281 +0200
+@@ -35,7 +35,7 @@
  # fix for annoying automake naming problems.
  tora_CXXFLAGS  = $(AM_CXXFLAGS)
  
--tora_LDADD = $(ORACLE_LIBS) $(@TORA_LINK_OTHERS@)
-+tora_LDADD = $(ORACLE_LIBS) $(@TORA_LINK_OTHERS@) $(LIBCOMPAT)
+-tora_LDADD = $(ORACLE_LIBS) $(PQ_LIBS) $(@TORA_LINK_OTHERS@)
++tora_LDADD = $(ORACLE_LIBS) $(PQ_LIBS) $(@TORA_LINK_OTHERS@) $(LIBCOMPAT)
  
  if HAVE_ORACLE
- EXTRA_ORACLE_MONO_SOURCE = tooracleconnection.cpp \
+ EXTRA_ORACLE_MONO_SOURCE = tooracleconnection.cpp tooraclesetting.h \
