@@ -1,0 +1,4 @@
+%%PYTHON_SITELIBDIR%%/gts.py
+%%PYTHON_SITELIBDIR%%/gts.pyc
+%%PYTHON_SITELIBDIR%%/gts.pyo
+%%PYTHON_SITELIBDIR%%/_gts.so

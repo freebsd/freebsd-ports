@@ -727,6 +727,7 @@
     SUBDIR += py-rabbyt
     SUBDIR += py-soya3d
     SUBDIR += py-visual
+    SUBDIR += pygts
     SUBDIR += pyro
     SUBDIR += q-graph
     SUBDIR += qcamview
