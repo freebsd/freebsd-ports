@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	django
-PORTVERSION=	${SNAPSHOT}
+PORTVERSION=	${REVISION}
+PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	lwhsu/django
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
-DISTNAME=	Django-${PORTVERSION}
+DISTNAME=	Django-r${REVISION}
 DIST_SUBDIR=	python
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-level Python Web framework
 
-SNAPSHOT=	20081015
+REVISION=	10834
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -27,7 +28,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 PYDISTUTILS_PKGNAME=	Django
-PYDISTUTILS_PKGVERSION=	1.1.pre-alpha
+PYDISTUTILS_PKGVERSION=	1.1_beta_1
 
 CONFLICTS=	py2[0-9]-django-[0-9]*
 
@@ -38,12 +39,12 @@ OPTIONS=	MOD_PYTHON3	"Install Apache2 with mod_python3"	off \
 		MYSQL	"MySQL support"	off \
 		SQLITE	"SQLite support"	off \
 		FASTCGI	"FastCGI support"	off \
-		DOCS	"Install HTML documentation (requires Sphinx)"	off
+		DOCS	"Install HTML documentation (requires Sphinx)"	on
 
 MAN1=		daily_cleanup.1 django-admin.1 gather_profile_stats.1
 
 # bypass infrastructure bug
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}-devel/options
 
 .include <bsd.port.pre.mk>
 

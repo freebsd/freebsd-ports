@@ -1,0 +1,109 @@
+Index: docs/_templates/layout.html
+===================================================================
+--- docs/_templates/layout.html	(revision 10461)
++++ docs/_templates/layout.html	(working copy)
+@@ -1,6 +1,6 @@
+ {% extends "!layout.html" %}
+ 
+-{%- macro secondnav %}
++{%- macro secondnav() %}
+   {%- if prev %}
+     &laquo; <a href="{{ prev.link|e }}" title="{{ prev.title|e }}">previous</a> 
+     {{ reldelim2 }}
+Index: docs/_ext/djangodocs.py
+===================================================================
+--- docs/_ext/djangodocs.py	(revision 10461)
++++ docs/_ext/djangodocs.py	(working copy)
+@@ -2,6 +2,7 @@
+ Sphinx plugins for Django documentation.
+ """
+ 
++import re
+ import docutils.nodes
+ import docutils.transforms
+ import sphinx
+@@ -9,7 +10,7 @@
+ import sphinx.builder
+ import sphinx.directives
+ import sphinx.environment
+-import sphinx.htmlwriter
++import sphinx.writers.html
+ import sphinx.roles
+ from docutils import nodes
+ 
+@@ -44,7 +45,7 @@
+         directivename = "django-admin-option",
+         rolename      = "djadminopt",
+         indextemplate = "pair: %s; django-admin command-line option",
+-        parse_node    = lambda env, sig, signode: sphinx.directives.parse_option_desc(signode, sig),
++        parse_node    = lambda env, sig, signode: parse_option_desc(signode, sig),
+     )
+     app.add_config_value('django_next_version', '0.0', True)
+     app.add_directive('versionadded', parse_version_directive, 1, (1, 1, 1))
+@@ -55,6 +56,26 @@
+     if sphinx.__version__ == '0.4.2':
+         monkeypatch_pickle_builder()
+ 
++option_desc_re = re.compile(
++    r'((?:/|-|--)[-_a-zA-Z0-9]+)(\s*.*?)(?=,\s+(?:/|-|--)|$)')
++
++def parse_option_desc(signode, sig):
++    """Transform an option description into RST nodes."""
++    count = 0
++    firstname = ''
++    for m in option_desc_re.finditer(sig):
++        optname, args = m.groups()
++        if count:
++            signode += sphinx.addnodes.desc_addname(', ', ', ')
++        signode += sphinx.addnodes.desc_name(optname, optname)
++        signode += sphinx.addnodes.desc_addname(args, args)
++        if not count:
++            firstname = optname
++        count += 1
++    if not firstname:
++        raise ValueError
++    return firstname
++
+ def parse_version_directive(name, arguments, options, content, lineno,
+                       content_offset, block_text, state, state_machine):
+     env = state.document.settings.env
+@@ -102,7 +123,7 @@
+             if len(node.children) == 1 and isinstance(node.children[0], self.suppress_blockquote_child_nodes):
+                 node.replace_self(node.children[0])
+ 
+-class DjangoHTMLTranslator(sphinx.htmlwriter.SmartyPantsHTMLTranslator):
++class DjangoHTMLTranslator(sphinx.writers.html.SmartyPantsHTMLTranslator):
+     """
+     Django-specific reST to HTML tweaks.
+     """
+@@ -125,10 +146,10 @@
+     #
+     def visit_literal_block(self, node):
+         self.no_smarty += 1
+-        sphinx.htmlwriter.SmartyPantsHTMLTranslator.visit_literal_block(self, node)
++        sphinx.writers.html.SmartyPantsHTMLTranslator.visit_literal_block(self, node)
+         
+     def depart_literal_block(self, node):
+-        sphinx.htmlwriter.SmartyPantsHTMLTranslator.depart_literal_block(self, node) 
++        sphinx.writers.html.SmartyPantsHTMLTranslator.depart_literal_block(self, node) 
+         self.no_smarty -= 1
+         
+     #
+@@ -162,7 +183,7 @@
+     # Give each section a unique ID -- nice for custom CSS hooks
+     # This is different on docutils 0.5 vs. 0.4...
+ 
+-    if hasattr(sphinx.htmlwriter.SmartyPantsHTMLTranslator, 'start_tag_with_title') and sphinx.__version__ == '0.4.2':
++    if hasattr(sphinx.writers.html.SmartyPantsHTMLTranslator, 'start_tag_with_title') and sphinx.__version__ == '0.4.2':
+         def start_tag_with_title(self, node, tagname, **atts):
+             node = {
+                 'classes': node.get('classes', []), 
+@@ -176,7 +197,7 @@
+             node['ids'] = ['s-' + i for i in old_ids]
+             if sphinx.__version__ != '0.4.2':
+                 node['ids'].extend(old_ids)
+-            sphinx.htmlwriter.SmartyPantsHTMLTranslator.visit_section(self, node)
++            sphinx.writers.html.SmartyPantsHTMLTranslator.visit_section(self, node)
+             node['ids'] = old_ids
+ 
+ def parse_django_admin_node(env, sig, signode):
