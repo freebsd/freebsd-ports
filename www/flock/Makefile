@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	flock
-DISTVERSION=	2.0
-PORTREVISION=	2
+DISTVERSION=	2.5
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.osuosl.org/pub/${PORTNAME}/releases/${PORTVERSION}/ \
 		http://flock.vo.llnwd.net/o23/archive/${PORTNAME}/releases/${PORTVERSION}/
@@ -24,7 +23,7 @@ MOZILLA_NAME=	Flock
 USE_MOZILLA=	-png -nss -dbm -jpeg
 MOZ_TOOLKIT=	cairo-gtk2
 
-WRKSRC?=	${WRKDIR}/source-svn-export-2.0/mozilla
+WRKSRC?=	${WRKDIR}/source-svn-export-${DISTVERSION}/mozilla
 WANT_GNOME=	yes
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
