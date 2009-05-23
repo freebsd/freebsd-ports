@@ -85,6 +85,7 @@
     SUBDIR += p5-WAP-wbxml
     SUBDIR += p5-XML-WBXML
     SUBDIR += pdf2djvu
+    SUBDIR += pear-Services_JSON
     SUBDIR += pecl-fribidi
     SUBDIR += php4-iconv
     SUBDIR += php4-mbstring
