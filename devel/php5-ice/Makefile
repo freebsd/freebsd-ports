@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Ice
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.zeroc.com/download/Ice/3.2/ \
+MASTER_SITES=	http://www.zeroc.com/download/Ice/3.3/ \
 		http://www.dirk.sh/dirk/Ice/
 PKGNAMEPREFIX=	php5-
 DISTNAME=	Ice-${PORTVERSION}
@@ -27,7 +27,7 @@ USE_PHP_BUILD=	yes
 BUILD_WRKSRC=	${WRKSRC}/php
 INSTALL_WRKSRC=	${WRKSRC}/php
 
-LIB_VRS=	${PORTVERSION:S|.||g:C|0$||}
+LIB_VRS=	${PORTVERSION:S|.||g:C|1$||}
 PHP_MODNAME?=	IcePHP
 
 CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT ${PTHREAD_CFLAGS}
@@ -60,6 +60,7 @@ post-install:
 	@${MKDIR} ${PREFIX}/etc/php
 	@${ECHO_CMD} extension=${PHP_MODNAME}.so \
 		>> ${PREFIX}/etc/php/extensions.ini
+	@${CAT} ${PKGMESSAGE}
 
 add-plist-info:
 	@${ECHO_CMD} "@exec mkdir -p %D/etc/php" \
