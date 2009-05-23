@@ -35,7 +35,7 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
    <vuln vid="4175c811-f690-4898-87c5-755b3cf1bac6">
-     <topic>ntp -- Stack-based buffer overflow in ntpd crypto_recv function</topic>
+     <topic>ntp -- stack-based buffer overflow</topic>
      <affects>
        <package>
          <name>ntp</name>
@@ -46,7 +46,9 @@ Note:  Please add new entries to the beginning of this file.
        <body xmlns="http://www.w3.org/1999/xhtml">
          <p>US-CERT reports:</p>
          <blockquote cite="http://www.kb.cert.org/vuls/id/853097">
-           <p>ntpd contains a stack buffer overflow which may allow a remote unauthenticated attacker to execute arbitrary code on a vulnerable system or create a denial of service. </p>
+           <p>ntpd contains a stack buffer overflow which may allow a remote
+             unauthenticated attacker to execute arbitrary code on a vulnerable
+             system or create a denial of service.</p>
          </blockquote>
        </body>
      </description>
