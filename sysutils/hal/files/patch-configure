@@ -325,7 +325,7 @@
 +if test $ac_cv_lib_usb_libusb20_dev_get_info = yes; then
 +  USE_LIBUSB=yes
 +else
-+  USE_LIBUSB=np
++  USE_LIBUSB=no
 +fi
 +
 +fi

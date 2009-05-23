@@ -18,7 +18,7 @@
 +    AC_CHECK_LIB([usb20], [libusb20_dev_get_info], [USE_LIBUSB20=yes], [USE_LIBUSB20=no])
 +fi
 +if test "x$USE_LIBUSB20" = "xno"; then
-+    AC_CHECK_LIB([usb], [libusb20_dev_get_info], [USE_LIBUSB=yes], [USE_LIBUSB=np])
++    AC_CHECK_LIB([usb], [libusb20_dev_get_info], [USE_LIBUSB=yes], [USE_LIBUSB=no])
 +fi
 +AM_CONDITIONAL([HAVE_LIBUSB20],[test "x$USE_LIBUSB20" = "xyes"])
 +AM_CONDITIONAL([HAVE_LIBUSB20],[test "x$USE_LIBUSB" = "xyes"])
