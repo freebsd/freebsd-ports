@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xnee
-PORTVERSION=	3.02
+PORTVERSION=	3.03
 CATEGORIES=	x11
 MASTER_SITES=	GNU
 
@@ -17,7 +17,7 @@ OPTIONS=	GNEE "Build the GUI frontend" off \
 		PNEE "Build the Gnome Panel frontend" off
 
 USE_XORG=	xtst
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-cli --disable-doc
@@ -25,12 +25,12 @@ CONFIGURE_ARGS=	--enable-cli --disable-doc
 MAN1=		cnee.1 xnee.1
 INFO=		xnee
 PLIST_FILES=	bin/cnee \
+		share/pixmaps/xnee.png \
+		share/pixmaps/xnee.xpm \
 		%%DATADIR%%/example1.xns \
-		%%DATADIR%%/pixmaps/xnee.png \
-		%%DATADIR%%/pixmaps/xnee.xpm \
 		%%DATADIR%%/simple_bash.sh \
 		%%DATADIR%%/xnee.sh
-PLIST_DIRS=	%%DATADIR%%/pixmaps %%DATADIR%%
+PLIST_DIRS=	${PNEE_DIR} %%DATADIR%%
 
 .include <bsd.port.pre.mk>
 
@@ -51,6 +51,7 @@ PLIST_FILES+=	libdata/bonobo/servers/pnee.server \
 		%%DATADIR%%/pixmaps/pnee-replay.png \
 		%%DATADIR%%/pixmaps/pnee-stop-mini.png \
 		%%DATADIR%%/pixmaps/pnee-stop.png
+PNEE_DIR=	%%DATADIR%%/pixmaps
 .else
 CONFIGURE_ARGS+=	--disable-gnome-applet
 .endif
@@ -59,7 +60,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$${libdir}/gnome-panel|$${prefix}/libexec|g ; \
 		 s|$${libdir}/bonobo/|$${prefix}/libdata/bonobo/|g ; \
-		 s|CCC||g' ${WRKSRC}/configure
+		 s|"CCC"|""|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|@PIXMAP_DIR@|pixmap|g ; \
 		 s|@DOC_DIR@||g' ${WRKSRC}/Makefile.in
@@ -68,9 +69,15 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|: install-docDATA|:|g' ${WRKSRC}/cnee/src/Makefile.in
 	@${REINPLACE_CMD} -e \
+		's|src test|src|g' ${WRKSRC}/libxnee/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|ap=NULL;|ap;|g' ${WRKSRC}/libxnee/src/feedback.c
+	@${REINPLACE_CMD} -e \
 		's|cp pnee|$$(INSTALL_DATA) pnee|g' ${WRKSRC}/pnee/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|cp $$(PNEE)|$$(INSTALL_PROGRAM) $$(PNEE)|g' ${WRKSRC}/pnee/src/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/<gnome.h>/d' ${WRKSRC}/pnee/src/pnee_impl.h
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/xnee.info ${PREFIX}/${INFO_PATH}
