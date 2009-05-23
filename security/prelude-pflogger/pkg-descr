@@ -1,0 +1,7 @@
+Prelude is a new innovative hybrid Intrusion Detection system designed
+to be very modular, distributed, rock solid and fast.
+
+Prelude-PFlogger Listens at OpenBSD PF redirect logged packet, and
+send alerts to the Prelude Manager.
+
+WWW: http://www.prelude-ids.org/

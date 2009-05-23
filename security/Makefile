@@ -631,6 +631,7 @@
     SUBDIR += ppgen
     SUBDIR += prelude-lml
     SUBDIR += prelude-manager
+    SUBDIR += prelude-pflogger
     SUBDIR += proxycheck
     SUBDIR += proxytunnel
     SUBDIR += pscan
