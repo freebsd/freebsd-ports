@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 share/games/fortune/rus/advert
 share/games/fortune/rus/advert.dat
 share/games/fortune/rus/auto
@@ -77,6 +76,10 @@ share/games/fortune/rus/verse
 share/games/fortune/rus/verse.dat
 share/games/fortune/rus/stishki
 share/games/fortune/rus/stishki.dat
+share/games/fortune/rus/matilda
+share/games/fortune/rus/matilda.dat
+share/games/fortune/rus/house-md
+share/games/fortune/rus/house-md.dat
 @dirrm share/games/fortune/rus
 @dirrmtry share/games/fortune
 @dirrmtry share/games
