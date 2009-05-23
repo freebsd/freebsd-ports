@@ -3813,7 +3813,6 @@ net-mgmt/nfsen-devel||2009-02-13|Has expired: no separate development version ex
 www/ocaml-wdialog||2009-02-13|Has expired: has been broken for more than 6 months
 news/sabnzbd||2009-02-13|Has expired: no longer developed, use news/sabnzbdplus instead
 devel/erlslang||2009-02-14|Broken with libslang2; no upstream development
-net/ntp-rc|net/ntp|2009-02-14|NTP is no longer in release candidate status. Use net/ntp instead.
 mail/py-pyclamd|security/py-pyclamd|2009-02-14|Category change
 deskutils/zbgset|deskutils/p5-ZConf-BGSet|2009-02-15|Integrated into deskutils/p5-ZConf-BGSet.
 deskutils/zbgset-admin|deskutils/p5-ZConf-BGSet|2009-02-15|Integrated into deskutils/p5-ZConf-BGSet.
@@ -3959,3 +3958,4 @@ www/phpsurveyor|www/limesurvey|2009-05-05|Project was renamed
 devel/oskit||2009-05-07|Has expired: does not work with current versions of GCC, needs gcc295 which has been failing to build for months, no active maintainer
 www/p5-WWW-Nicovideo-Download|www/p5-WWW-NicoVideo-Download|2009-05-07|directory renamed
 german/swissgerman-ding|german/ding|2009-05-12|integrated into german/ding
+net/ntp-rc|net/ntp|2009-05-22|NTP is no longer in release candidate status. Use net/ntp instead.
