@@ -1,0 +1,3 @@
+bin/prelude-pflogger
+%%ETCDIR%%/prelude-pflogger.conf
+@dirrm %%ETCDIR%%

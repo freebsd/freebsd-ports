@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: prelude_pflogger
+# REQUIRE: NETWORKING SERVERS
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# prelude_pflogger_enable (bool):   Set to NO by default.
+#                              Set it to YES to enable Prelude PFLogger.
+# prelude_pflogger_flags  (flags):  Set arguments to use with Prelude PFLogger
+#
+
+. %%RC_SUBR%%
+
+name="prelude_pflogger"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/bin/prelude-pflogger
+pidfile=/var/run/prelude-pflogger.pid
+
+load_rc_config $name
+
+: ${prelude_pflogger_enable="NO"}
+: ${prelude_pflogger_flags="-d -P ${pidfile}"}
+
+run_rc_command "$1"
