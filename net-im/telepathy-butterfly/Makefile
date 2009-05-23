@@ -22,5 +22,6 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pymsn/__init__.py:${PORTSDIR}/net-im/pymsn \
 
 USE_PYTHON=	2.4+
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=--prefix=${PREFIX}
 
 .include <bsd.port.mk>
