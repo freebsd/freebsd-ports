@@ -29,10 +29,8 @@ bin/bximage
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/biossums.txt
 %%PORTDOCS%%%%DOCSDIR%%/bochsrc-sample.txt
-%%PORTDOCS%%%%DOCSDIR%%/cvs-structure.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/Linux.html
+%%PORTDOCS%%%%DOCSDIR%%/enh_dbg_user_man.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/cosimulation.html
-%%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/memory.txt
 %%PORTDOCS%%%%DOCSDIR%%/random.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
