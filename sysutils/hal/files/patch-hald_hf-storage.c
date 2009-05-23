@@ -1,5 +1,5 @@
 --- hald/freebsd/hf-storage.c.orig	2008-05-07 19:23:57.000000000 -0400
-+++ hald/freebsd/hf-storage.c	2009-02-25 16:38:35.000000000 -0500
++++ hald/freebsd/hf-storage.c	2009-05-23 17:07:00.000000000 -0400
 @@ -30,6 +30,7 @@
  #include <limits.h>
  #include <inttypes.h>
@@ -50,15 +50,7 @@
  
    return FALSE;
  }
-@@ -146,6 +152,7 @@ hf_storage_geom_is_swap (const Geom_Obje
- 
-   return (! strcmp(geom_obj->class, "BSD") && geom_obj->type == FS_SWAP)
- 	|| ((! strcmp(geom_obj->class, "MBR") ||
-+	     ! strcmp(geom_obj->class, "PART") ||
-              ! strcmp(geom_obj->class, "MBREXT"))
- 	&& (geom_obj->type == 0x18		/* AST Windows swapfile */
- 	    || geom_obj->type == 0x42		/* SFS or Linux swap */
-@@ -294,7 +301,7 @@ hf_storage_device_probe (HalDevice *devi
+@@ -294,7 +300,7 @@ hf_storage_device_probe (HalDevice *devi
  {
    g_return_if_fail(HAL_IS_DEVICE(device));
  
@@ -67,12 +59,13 @@
  
    if (hf_runner_run_sync(device, 0, "hald-probe-storage",
  			 "HF_HAS_CHILDREN", HF_BOOL_TO_STRING(hf_storage_device_has_partitions(device)),
-@@ -433,6 +440,29 @@ hf_storage_parse_conftxt (const char *co
+@@ -433,11 +439,42 @@ hf_storage_parse_conftxt (const char *co
                if (! strcmp (geom_obj->class, "GPT") ||
                    ! strcmp (geom_obj->class, "APPLE"))
                  geom_obj->str_type = g_strdup(fields[10]);
 +	      else if (! strcmp (geom_obj->class, "PART"))
 +                {
++		  geom_obj->str_type = g_strdup(fields[10]);
 +                  if (g_strv_length(fields) >= 15)
 +                    {
 +                      if (! strcmp(fields[13], "xt"))
@@ -97,7 +90,19 @@
  	      else
                  geom_obj->type = atoi(fields[10]);
  	    }
-@@ -541,15 +571,20 @@ hf_storage_device_rescan_real (HalDevice
+ 	}
+ 
++      if (g_hash_table_lookup(table, GUINT_TO_POINTER(hash)) != NULL)
++	{
++          hf_storage_geom_free(geom_obj);
++	  curr_depth = depth;
++	  continue;
++	}
++
+       g_hash_table_insert (table, GUINT_TO_POINTER(hash), geom_obj);
+ 
+       if (depth > curr_depth)
+@@ -541,15 +578,20 @@ hf_storage_device_rescan_real (HalDevice
  }
  
  static gboolean
@@ -121,7 +126,7 @@
  
    conftxt = hf_get_string_sysctl(NULL, "kern.geom.conftxt");
    new_disks = hf_storage_parse_conftxt(conftxt);
-@@ -572,6 +607,7 @@ hf_storage_conftxt_timeout_cb (gpointer 
+@@ -572,6 +614,7 @@ hf_storage_conftxt_timeout_cb (gpointer 
  	  if (! hf_storage_find_disk(disks, disk->name))
  	    {
  	      osspec_probe();	/* catch new disk(s) */
@@ -129,7 +134,7 @@
  	      break;
  	    }
  	}
-@@ -593,7 +629,10 @@ hf_storage_conftxt_timeout_cb (gpointer 
+@@ -593,7 +636,10 @@ hf_storage_conftxt_timeout_cb (gpointer 
  		  device = hf_devtree_find_from_name(hald_get_gdl(), disk->name);
  		  if (device && hal_device_has_capability(device, "storage") &&
  		      ! hf_storage_device_has_addon(device))
@@ -141,7 +146,7 @@
  		}
  	    }
  	  else
-@@ -601,7 +640,10 @@ hf_storage_conftxt_timeout_cb (gpointer 
+@@ -601,7 +647,10 @@ hf_storage_conftxt_timeout_cb (gpointer 
  	      /* disk removed */
  	      device = hf_devtree_find_from_name(hald_get_gdl(), disk->name);
  	      if (device && hal_device_has_capability(device, "storage"))
@@ -153,7 +158,7 @@
  	    }
  	}
      }
-@@ -610,17 +652,30 @@ hf_storage_conftxt_timeout_cb (gpointer 
+@@ -610,17 +659,30 @@ hf_storage_conftxt_timeout_cb (gpointer 
    g_slist_free(disks);
    disks = new_disks;
  
@@ -186,7 +191,7 @@
      return;
  
    conftxt = hf_get_string_sysctl(NULL, "kern.geom.conftxt");
-@@ -636,8 +691,10 @@ hf_storage_init_geom (void)
+@@ -636,8 +698,10 @@ hf_storage_init_geom (void)
  static void
  hf_storage_init (void)
  {
@@ -198,7 +203,7 @@
  }
  
  void
-@@ -720,8 +777,6 @@ hf_storage_device_add (HalDevice *device
+@@ -720,8 +784,6 @@ hf_storage_device_add (HalDevice *device
  {
    g_return_if_fail(HAL_IS_DEVICE(device));
  
@@ -207,7 +212,7 @@
    if (hf_device_preprobe(device))
      {
        hf_storage_device_probe(device, FALSE);
-@@ -739,7 +794,7 @@ hf_storage_get_geoms (const char *devnam
+@@ -739,7 +801,7 @@ hf_storage_get_geoms (const char *devnam
  
    g_return_val_if_fail(devname != NULL, NULL);
  
@@ -216,7 +221,7 @@
  
    hash = g_str_hash(devname);
    node = g_node_find(hf_storage_geom_tree, G_PRE_ORDER, G_TRAVERSE_ALL,
-@@ -802,3 +857,7 @@ HFHandler hf_storage_handler = {
+@@ -802,3 +864,7 @@ HFHandler hf_storage_handler = {
    .probe =		hf_storage_probe,
    .device_rescan =	hf_storage_device_rescan
  };
