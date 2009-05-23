@@ -475,6 +475,7 @@ include/wine/windows/tlhelp32.h
 include/wine/windows/tmschema.h
 include/wine/windows/tom.h
 include/wine/windows/tom.idl
+include/wine/windows/traffic.h
 include/wine/windows/twain.h
 include/wine/windows/unknwn.h
 include/wine/windows/unknwn.idl
@@ -912,7 +913,7 @@ lib/wine/msvcrt40.dll.so
 lib/wine/msvcrtd.dll.so
 lib/wine/msvfw32.dll.so
 lib/wine/msvidc32.dll.so
-lib/wine/msvideo.dll16
+lib/wine/msvideo.dll16.so
 lib/wine/mswsock.dll.so
 lib/wine/msxml3.dll.so
 lib/wine/nddeapi.dll.so
