@@ -290,7 +290,7 @@ include/libtorrent/xml_parse.hpp
 lib/libtorrent-rasterbar.a
 lib/libtorrent-rasterbar.la
 lib/libtorrent-rasterbar.so
-lib/libtorrent-rasterbar.so.2
+lib/libtorrent-rasterbar.so.3
 libdata/pkgconfig/libtorrent-rasterbar.pc
 @dirrm include/libtorrent/kademlia
 @dirrm include/libtorrent/extensions
