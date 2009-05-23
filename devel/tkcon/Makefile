@@ -6,32 +6,29 @@
 #
 
 PORTNAME=	tkcon
-PORTVERSION=	2.4
-PORTREVISION=	1
+PORTVERSION=	2.5
 CATEGORIES=	devel tcl tk
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tk console for Tcl
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
-
 NO_BUILD=	yes
-REINPLACE_ARGS=	-i.bak -E
+USE_TK_WRAPPER=	yes
+
+PORTDOCS=	*
+PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's,docs\s+"([^"]+)",docs	"file:${PREFIX}/share/doc/tkcon/index.html\\n\1",' ${WRKSRC}/tkcon.tcl
+	@${REINPLACE_CMD} -e \
+		's|%%DOCSDIR%%|${DOCSDIR}|g' ${WRKSRC}/${PORTNAME}.tcl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/tkcon.tcl ${PREFIX}/bin/tkcon
-
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.tcl ${PREFIX}/bin/${PORTNAME}
 .if !defined(NOPORTDOCS)
-post-install:
-	${MKDIR} ${PREFIX}/share/doc/tkcon
-	${INSTALL_DATA} ${WRKSRC}/README.txt $(PREFIX)/share/doc/tkcon/README.tkcon
-	${INSTALL_DATA} ${WRKSRC}/docs/* $(PREFIX)/share/doc/tkcon
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}/README.${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
