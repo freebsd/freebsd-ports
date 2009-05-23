@@ -421,6 +421,7 @@
     SUBDIR += py-probstat
     SUBDIR += py-pymc
     SUBDIR += py-scientific
+    SUBDIR += py-svgmath
     SUBDIR += py-symeig
     SUBDIR += py-sympy
     SUBDIR += qalculate
