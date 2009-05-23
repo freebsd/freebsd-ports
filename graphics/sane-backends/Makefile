@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	sane-backends
-PORTVERSION=	1.0.19
-PORTREVISION=	1
+PORTVERSION=	1.0.20
 CATEGORIES=	graphics
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/2318/ \
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/3026/ \
 		ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://ftp2.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://ftp3.sane-project.org/pub/sane/%SUBDIR%/ \
@@ -25,14 +24,16 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 OPTIONS=	USB "USB support" on \
 		NLS "NLS support" on \
-		GPHOTO2 "gPhoto2 support" off
+		GPHOTO2 "gPhoto2 support" off \
+		AVAHI "Avahi support" off \
+		IEEE1284 "libieee1284 support" off
 
-USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} \
+		--disable-latex \
 		--disable-locking
 
 MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}
@@ -59,15 +60,27 @@ PLIST_SUB+=		NLS=""
 
 .if defined(WITH_GPHOTO2)
 LIB_DEPENDS+=		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
+MAN5+=			sane-gphoto2.5
 PLIST_SUB+=		GPHOTO2=""
 .else
 CONFIGURE_ARGS+=	--with-gphoto2=no
 PLIST_SUB+=		GPHOTO2="@comment "
 .endif
 
+.if defined(WITH_AVAHI)
+LIB_DEPENDS+=		avahi-client.3:${PORTSDIR}/net/avahi-app
+CONFIGURE_ARGS+=	--enable-avahi
+.endif
+
+.if defined(WITH_IEEE1284)
+LIB_DEPENDS+=		ieee1284.5:${PORTSDIR}/sysutils/libieee1284
+PLIST_SUB+=		IEEE1284=""
+.else
+CONFIGURE_ENV+=		sane_cv_use_libieee1284=no
+PLIST_SUB+=		IEEE1284="@comment "
+.endif
+
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|= \.\./libtool|= @LIBTOOL@|g'
 	@${REINPLACE_CMD} -e '/^for ac_header in/s|libc.h||g ; \
 		 s|} -D_REENT|} ${PTHREAD_CFLAGS} -D_REENT|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure

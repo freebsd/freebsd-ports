@@ -11,9 +11,12 @@ bin/scanimage
 @unexec if cmp -s %D/etc/sane.d/bh.conf %D/etc/sane.d/dist/bh.conf; then rm -f %D/etc/sane.d/bh.conf; fi
 @unexec if cmp -s %D/etc/sane.d/canon.conf %D/etc/sane.d/dist/canon.conf; then rm -f %D/etc/sane.d/canon.conf; fi
 @unexec if cmp -s %D/etc/sane.d/canon630u.conf %D/etc/sane.d/dist/canon630u.conf; then rm -f %D/etc/sane.d/canon630u.conf; fi
+%%IEEE1284%%@unexec if cmp -s %D/etc/sane.d/canon_pp.conf %D/etc/sane.d/dist/canon_pp.conf; then rm -f %D/etc/sane.d/canon_pp.conf; fi
+@unexec if cmp -s %D/etc/sane.d/canon_dr.conf %D/etc/sane.d/dist/canon_dr.conf; then rm -f %D/etc/sane.d/canon_dr.conf; fi
 @unexec if cmp -s %D/etc/sane.d/cardscan.conf %D/etc/sane.d/dist/cardscan.conf; then rm -f %D/etc/sane.d/cardscan.conf; fi
 @unexec if cmp -s %D/etc/sane.d/coolscan.conf %D/etc/sane.d/dist/coolscan.conf; then rm -f %D/etc/sane.d/coolscan.conf; fi
 @unexec if cmp -s %D/etc/sane.d/coolscan2.conf %D/etc/sane.d/dist/coolscan2.conf; then rm -f %D/etc/sane.d/coolscan2.conf; fi
+@unexec if cmp -s %D/etc/sane.d/coolscan3.conf %D/etc/sane.d/dist/coolscan3.conf; then rm -f %D/etc/sane.d/coolscan3.conf; fi
 @unexec if cmp -s %D/etc/sane.d/dc210.conf %D/etc/sane.d/dist/dc210.conf; then rm -f %D/etc/sane.d/dc210.conf; fi
 @unexec if cmp -s %D/etc/sane.d/dc240.conf %D/etc/sane.d/dist/dc240.conf; then rm -f %D/etc/sane.d/dc240.conf; fi
 @unexec if cmp -s %D/etc/sane.d/dc25.conf %D/etc/sane.d/dist/dc25.conf; then rm -f %D/etc/sane.d/dc25.conf; fi
@@ -31,6 +34,7 @@ bin/scanimage
 @unexec if cmp -s %D/etc/sane.d/hp3900.conf %D/etc/sane.d/dist/hp3900.conf; then rm -f %D/etc/sane.d/hp3900.conf; fi
 @unexec if cmp -s %D/etc/sane.d/hp4200.conf %D/etc/sane.d/dist/hp4200.conf; then rm -f %D/etc/sane.d/hp4200.conf; fi
 @unexec if cmp -s %D/etc/sane.d/hp5400.conf %D/etc/sane.d/dist/hp5400.conf; then rm -f %D/etc/sane.d/hp5400.conf; fi
+%%IEEE1284%%@unexec if cmp -s %D/etc/sane.d/hpsj5s.conf %D/etc/sane.d/dist/hpsj5s.conf; then rm -f %D/etc/sane.d/hpsj5s.conf; fi
 @unexec if cmp -s %D/etc/sane.d/hs2p.conf %D/etc/sane.d/dist/hs2p.conf; then rm -f %D/etc/sane.d/hs2p.conf; fi
 @unexec if cmp -s %D/etc/sane.d/ibm.conf %D/etc/sane.d/dist/ibm.conf; then rm -f %D/etc/sane.d/ibm.conf; fi
 @unexec if cmp -s %D/etc/sane.d/leo.conf %D/etc/sane.d/dist/leo.conf; then rm -f %D/etc/sane.d/leo.conf; fi
@@ -40,13 +44,16 @@ bin/scanimage
 @unexec if cmp -s %D/etc/sane.d/microtek.conf %D/etc/sane.d/dist/microtek.conf; then rm -f %D/etc/sane.d/microtek.conf; fi
 @unexec if cmp -s %D/etc/sane.d/microtek2.conf %D/etc/sane.d/dist/microtek2.conf; then rm -f %D/etc/sane.d/microtek2.conf; fi
 @unexec if cmp -s %D/etc/sane.d/mustek.conf %D/etc/sane.d/dist/mustek.conf; then rm -f %D/etc/sane.d/mustek.conf; fi
+%%IEEE1284%%@unexec if cmp -s %D/etc/sane.d/mustek_pp.conf %D/etc/sane.d/dist/mustek_pp.conf; then rm -f %D/etc/sane.d/mustek_pp.conf; fi
 @unexec if cmp -s %D/etc/sane.d/mustek_usb.conf %D/etc/sane.d/dist/mustek_usb.conf; then rm -f %D/etc/sane.d/mustek_usb.conf; fi
 @unexec if cmp -s %D/etc/sane.d/nec.conf %D/etc/sane.d/dist/nec.conf; then rm -f %D/etc/sane.d/nec.conf; fi
 @unexec if cmp -s %D/etc/sane.d/net.conf %D/etc/sane.d/dist/net.conf; then rm -f %D/etc/sane.d/net.conf; fi
 @unexec if cmp -s %D/etc/sane.d/pie.conf %D/etc/sane.d/dist/pie.conf; then rm -f %D/etc/sane.d/pie.conf; fi
+@unexec if cmp -s %D/etc/sane.d/pixma.conf %D/etc/sane.d/dist/pixma.conf; then rm -f %D/etc/sane.d/pixma.conf; fi
 @unexec if cmp -s %D/etc/sane.d/plustek.conf %D/etc/sane.d/dist/plustek.conf; then rm -f %D/etc/sane.d/plustek.conf; fi
 @unexec if cmp -s %D/etc/sane.d/plustek_pp.conf %D/etc/sane.d/dist/plustek_pp.conf; then rm -f %D/etc/sane.d/plustek_pp.conf; fi
 @unexec if cmp -s %D/etc/sane.d/ricoh.conf %D/etc/sane.d/dist/ricoh.conf; then rm -f %D/etc/sane.d/ricoh.conf; fi
+@unexec if cmp -s %D/etc/sane.d/rts8891.conf %D/etc/sane.d/dist/rts8891.conf; then rm -f %D/etc/sane.d/rts8891.conf; fi
 @unexec if cmp -s %D/etc/sane.d/s9036.conf %D/etc/sane.d/dist/s9036.conf; then rm -f %D/etc/sane.d/s9036.conf; fi
 @unexec if cmp -s %D/etc/sane.d/saned.conf %D/etc/sane.d/dist/saned.conf; then rm -f %D/etc/sane.d/saned.conf; fi
 @unexec if cmp -s %D/etc/sane.d/sceptre.conf %D/etc/sane.d/dist/sceptre.conf; then rm -f %D/etc/sane.d/sceptre.conf; fi
@@ -65,6 +72,7 @@ bin/scanimage
 @unexec if cmp -s %D/etc/sane.d/umax.conf %D/etc/sane.d/dist/umax.conf; then rm -f %D/etc/sane.d/umax.conf; fi
 @unexec if cmp -s %D/etc/sane.d/umax1220u.conf %D/etc/sane.d/dist/umax1220u.conf; then rm -f %D/etc/sane.d/umax1220u.conf; fi
 @unexec if cmp -s %D/etc/sane.d/umax_pp.conf %D/etc/sane.d/dist/umax_pp.conf; then rm -f %D/etc/sane.d/umax_pp.conf; fi
+@unexec if cmp -s %D/etc/sane.d/xerox_mfp.conf %D/etc/sane.d/dist/xerox_mfp.conf; then rm -f %D/etc/sane.d/xerox_mfp.conf; fi
 etc/sane.d/dist/abaton.conf
 etc/sane.d/dist/agfafocus.conf
 etc/sane.d/dist/apple.conf
@@ -74,9 +82,12 @@ etc/sane.d/dist/avision.conf
 etc/sane.d/dist/bh.conf
 etc/sane.d/dist/canon.conf
 etc/sane.d/dist/canon630u.conf
+etc/sane.d/dist/canon_dr.conf
+%%IEEE1284%%etc/sane.d/dist/canon_pp.conf
 etc/sane.d/dist/cardscan.conf
 etc/sane.d/dist/coolscan.conf
 etc/sane.d/dist/coolscan2.conf
+etc/sane.d/dist/coolscan3.conf
 etc/sane.d/dist/dc210.conf
 etc/sane.d/dist/dc240.conf
 etc/sane.d/dist/dc25.conf
@@ -95,6 +106,7 @@ etc/sane.d/dist/hp.conf
 etc/sane.d/dist/hp3900.conf
 etc/sane.d/dist/hp4200.conf
 etc/sane.d/dist/hp5400.conf
+%%IEEE1284%%etc/sane.d/dist/hpsj5s.conf
 etc/sane.d/dist/hs2p.conf
 etc/sane.d/dist/ibm.conf
 etc/sane.d/dist/leo.conf
@@ -104,13 +116,16 @@ etc/sane.d/dist/matsushita.conf
 etc/sane.d/dist/microtek.conf
 etc/sane.d/dist/microtek2.conf
 etc/sane.d/dist/mustek.conf
+%%IEEE1284%%etc/sane.d/dist/mustek_pp.conf
 etc/sane.d/dist/mustek_usb.conf
 etc/sane.d/dist/nec.conf
 etc/sane.d/dist/net.conf
 etc/sane.d/dist/pie.conf
+etc/sane.d/dist/pixma.conf
 etc/sane.d/dist/plustek.conf
 etc/sane.d/dist/plustek_pp.conf
 etc/sane.d/dist/ricoh.conf
+etc/sane.d/dist/rts8891.conf
 etc/sane.d/dist/s9036.conf
 etc/sane.d/dist/saned.conf
 etc/sane.d/dist/sceptre.conf
@@ -129,6 +144,7 @@ etc/sane.d/dist/u12.conf
 etc/sane.d/dist/umax.conf
 etc/sane.d/dist/umax1220u.conf
 etc/sane.d/dist/umax_pp.conf
+etc/sane.d/dist/xerox_mfp.conf
 include/sane/sane.h
 include/sane/saneopts.h
 lib/libsane.la
@@ -164,6 +180,12 @@ lib/sane/libsane-canon.so.1
 lib/sane/libsane-canon630u.la
 lib/sane/libsane-canon630u.so
 lib/sane/libsane-canon630u.so.1
+lib/sane/libsane-canon_dr.la
+lib/sane/libsane-canon_dr.so
+lib/sane/libsane-canon_dr.so.1
+%%IEEE1284%%lib/sane/libsane-canon_pp.la
+%%IEEE1284%%lib/sane/libsane-canon_pp.so
+%%IEEE1284%%lib/sane/libsane-canon_pp.so.1
 lib/sane/libsane-cardscan.la
 lib/sane/libsane-cardscan.so
 lib/sane/libsane-cardscan.so.1
@@ -173,6 +195,9 @@ lib/sane/libsane-coolscan.so.1
 lib/sane/libsane-coolscan2.la
 lib/sane/libsane-coolscan2.so
 lib/sane/libsane-coolscan2.so.1
+lib/sane/libsane-coolscan3.la
+lib/sane/libsane-coolscan3.so
+lib/sane/libsane-coolscan3.so.1
 lib/sane/libsane-dc210.la
 lib/sane/libsane-dc210.so
 lib/sane/libsane-dc210.so.1
@@ -233,6 +258,9 @@ lib/sane/libsane-hp5590.so.1
 lib/sane/libsane-hpljm1005.la
 lib/sane/libsane-hpljm1005.so
 lib/sane/libsane-hpljm1005.so.1
+%%IEEE1284%%lib/sane/libsane-hpsj5s.la
+%%IEEE1284%%lib/sane/libsane-hpsj5s.so
+%%IEEE1284%%lib/sane/libsane-hpsj5s.so.1
 lib/sane/libsane-hs2p.la
 lib/sane/libsane-hs2p.so
 lib/sane/libsane-hs2p.so.1
@@ -260,6 +288,9 @@ lib/sane/libsane-microtek2.so.1
 lib/sane/libsane-mustek.la
 lib/sane/libsane-mustek.so
 lib/sane/libsane-mustek.so.1
+%%IEEE1284%%lib/sane/libsane-mustek_pp.la
+%%IEEE1284%%lib/sane/libsane-mustek_pp.so
+%%IEEE1284%%lib/sane/libsane-mustek_pp.so.1
 lib/sane/libsane-mustek_usb.la
 lib/sane/libsane-mustek_usb.so
 lib/sane/libsane-mustek_usb.so.1
@@ -290,6 +321,9 @@ lib/sane/libsane-plustek_pp.so.1
 lib/sane/libsane-ricoh.la
 lib/sane/libsane-ricoh.so
 lib/sane/libsane-ricoh.so.1
+lib/sane/libsane-rts8891.la
+lib/sane/libsane-rts8891.so
+lib/sane/libsane-rts8891.so.1
 lib/sane/libsane-s9036.la
 lib/sane/libsane-s9036.so
 lib/sane/libsane-s9036.so.1
@@ -344,6 +378,9 @@ lib/sane/libsane-umax1220u.so.1
 lib/sane/libsane-umax_pp.la
 lib/sane/libsane-umax_pp.so
 lib/sane/libsane-umax_pp.so.1
+lib/sane/libsane-xerox_mfp.la
+lib/sane/libsane-xerox_mfp.so
+lib/sane/libsane-xerox_mfp.so.1
 sbin/saned
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -367,6 +404,7 @@ sbin/saned
 %%PORTDOCS%%%%DOCSDIR%%/README.unixware7
 %%PORTDOCS%%%%DOCSDIR%%/README.windows
 %%PORTDOCS%%%%DOCSDIR%%/README.zeta
+%%PORTDOCS%%%%DOCSDIR%%/backend-writing.txt
 %%PORTDOCS%%%%DOCSDIR%%/canon/canon.changes
 %%PORTDOCS%%%%DOCSDIR%%/canon/canon.install2700F.txt
 %%PORTDOCS%%%%DOCSDIR%%/gt68xx/gt68xx.CHANGES
@@ -430,6 +468,7 @@ sbin/saned
 %%NLS%%share/locale/cs/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/da/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/de/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/es/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/sane-backends.mo
@@ -441,6 +480,7 @@ sbin/saned
 %%NLS%%share/locale/pt/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sane-backends.mo
+@exec mkdir %D/etc/sane.d/dll.d
 @exec mkdir %D/share/sane
 @exec mkdir %D/share/sane/artec_eplus48u
 @exec mkdir %D/share/sane/epjitsu
@@ -467,5 +507,6 @@ sbin/saned
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/sane
 @dirrm include/sane
+@dirrmtry etc/sane.d/dll.d
 @dirrm etc/sane.d/dist
 @dirrmtry etc/sane.d

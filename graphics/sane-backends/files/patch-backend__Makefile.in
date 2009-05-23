@@ -1,11 +1,19 @@
---- ./backend/Makefile.in.orig	Sun Feb 19 18:30:27 2006
-+++ ./backend/Makefile.in	Sun Feb 19 18:32:47 2006
-@@ -244,6 +244,8 @@
- 	    $(INSTALL_DATA) $(srcdir)/$${cfg} $(DESTDIR)$(configdir)/$${cfg} \
-               || exit 1; \
+--- backend/Makefile.in.orig	2009-04-30 22:41:18.000000000 +0900
++++ backend/Makefile.in	2009-05-13 15:25:25.000000000 +0900
+@@ -4432,7 +4433,7 @@
+ 	@# installed library in $(sanelibdir) to $(sanelibdir)/libsane.*.  
+ 	@# Having two libsane's can cause issues so get rid of it.
+ 	-rm -f $(DESTDIR)$(sanelibdir)/libsane.*
+-	test -z "$(configdir)" || $(MKDIR_P) "$(DESTDIR)$(configdir)"
++	test -z "$(configdir)/dist" || $(MKDIR_P) "$(DESTDIR)$(configdir)/dist"
+ 	test -z "$(configdir)/dll.d" || $(MKDIR_P) "$(DESTDIR)$(configdir)/dll.d"
+ 	@list="$(BACKEND_CONFS_ENABLED) saned.conf dll.conf"; for cfg in $$list; do \
+ 	  if test ! -r $${cfg}; then continue; fi; \
+@@ -4443,6 +4444,7 @@
+ 	  $(INSTALL_DATA) $${cfg} $(DESTDIR)$(configdir)/$${cfg} \
+ 	  || exit 1; \
  	  fi; \
-+	  if test ! -d $(DESTDIR)$(configdir)/dist; then $(MKDIR) $(DESTDIR)$(configdir)/dist; fi; \
-+	  $(INSTALL_DATA) $(srcdir)/$${cfg} $(DESTDIR)$(configdir)/dist/$${cfg} ; \
- 	done
- 	for dir in $(FIRMWARE_DIRS) ; do \
- 	   $(MKDIR) $(DESTDIR)$(datadir)/sane/$${dir} ; \
++	  $(INSTALL_DATA) $${cfg} $(DESTDIR)$(configdir)/dist/$${cfg}; \
+ 	  done
+ 
+ install-firmware-path:

@@ -1,0 +1,45 @@
+--- Makefile.in.orig	2009-04-30 22:41:20.000000000 +0900
++++ Makefile.in	2009-05-05 01:23:45.000000000 +0900
+@@ -64,7 +64,6 @@
+     *) f=$$p;; \
+   esac;
+ am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
+-am__installdirs = "$(DESTDIR)$(docdir)"
+ dist_docDATA_INSTALL = $(INSTALL_DATA)
+ DATA = $(dist_doc_DATA)
+ RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
+@@ -246,7 +245,7 @@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = include lib sanei backend frontend tools doc po
+ DIST_SUBDIRS = include lib sanei backend frontend tools doc po japi testsuite
+-dist_doc_DATA = AUTHORS ChangeLog COPYING LICENSE NEWS PROBLEMS PROJECTS \
++dist_doc_DATA = AUTHORS ChangeLog LICENSE NEWS PROBLEMS PROJECTS \
+  README README.aix README.beos README.darwin README.djpeg README.freebsd \
+  README.hp-ux README.linux README.netbsd README.openbsd README.os2 \
+  README.solaris README.unixware2 README.unixware7 README.windows \
+@@ -327,6 +326,7 @@
+ distclean-libtool:
+ 	-rm -f libtool
+ install-dist_docDATA: $(dist_doc_DATA)
++ifndef NOPORTDOCS
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
+ 	@list='$(dist_doc_DATA)'; for p in $$list; do \
+@@ -335,6 +335,7 @@
+ 	  echo " $(dist_docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
+ 	  $(dist_docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
+ 	done
++endif
+ 
+ uninstall-dist_docDATA:
+ 	@$(NORMAL_UNINSTALL)
+@@ -627,9 +628,6 @@
+ all-am: Makefile $(DATA)
+ installdirs: installdirs-recursive
+ installdirs-am:
+-	for dir in "$(DESTDIR)$(docdir)"; do \
+-	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+-	done
+ install: install-recursive
+ install-exec: install-exec-recursive
+ install-data: install-data-recursive
