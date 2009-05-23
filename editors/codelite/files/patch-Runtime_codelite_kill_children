@@ -1,0 +1,10 @@
+--- Runtime/codelite_kill_children.orig	2009-05-23 13:23:08.000000000 +0200
++++ Runtime/codelite_kill_children	2009-05-23 13:41:35.000000000 +0200
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ 
+-procs=`ps --ppid $1 | grep -v PID | awk '{print $1;}'`
++procs=`ps -A -o ppid,pid | grep -v PPID | awk '{print $1" "$2}' | grep "^$1 " | awk '{print $2}' | xargs`
+ for p in $procs
+ do
+ 	kill -9 $p
