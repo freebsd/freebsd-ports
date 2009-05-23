@@ -181,7 +181,7 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.upgradeschema-text.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/hdrcmds.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/help.html
-%%PORTDOCS%%%%DOCSDIR%%/adminguide/i11846.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/i13365.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/index.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/listenpaths.html
@@ -194,6 +194,7 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/noslonik.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/partitioning.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/plainpaths.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/raceconditions.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/releasechecklist.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/requirements.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/reshape.html
@@ -211,6 +212,8 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/slonyintro.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/slonylistenercosts.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/slonyupgrade.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/stmtclonefinish.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/stmtcloneprepare.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/stmtcreateset.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/stmtddlscript.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/stmtdefine.html
@@ -268,6 +271,7 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/table.sl-table.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/table.sl-trigger.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/testbed.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/triggers.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/usingslonik.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/versionupgrade.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/view.sl-seqlastvalue.html
