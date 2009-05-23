@@ -1,0 +1,11 @@
+--- frontend/Makefile.in.orig	2009-04-30 22:41:19.000000000 +0900
++++ frontend/Makefile.in	2009-05-13 15:21:53.000000000 +0900
+@@ -254,7 +254,7 @@
+ scanimage_LDADD = ../lib/liblib.la ../lib/libfelib.la ../backend/libsane.la
+ saned_SOURCES = saned.c
+ saned_LDADD = ../sanei/libsanei.la ../lib/liblib.la ../lib/libfelib.la \
+-  ../backend/libsane.la @SYSLOG_LIBS@
++  ../backend/libsane.la @SYSLOG_LIBS@ @AVAHI_LIBS@
+ 
+ test_SOURCES = test.c
+ test_LDADD = ../lib/liblib.la ../lib/libfelib.la ../backend/libsane.la

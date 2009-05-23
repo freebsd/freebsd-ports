@@ -1,41 +1,60 @@
---- doc/Makefile.in.orig	Sat Jul 16 06:19:07 2005
-+++ doc/Makefile.in	Mon Aug  8 03:19:18 2005
-@@ -56,7 +56,7 @@
- SECT7   = sane.7
- SECT8	= saned.8
- MANPAGES = $(SECT1) $(SECT5) $(SECT7) $(SECT8)
--READMES = README AUTHORS COPYING ChangeLog LICENSE NEWS PROBLEMS \
-+READMES = README AUTHORS ChangeLog LICENSE NEWS PROBLEMS \
-           PROJECTS README README.aix README.beos README.darwin README.freebsd \
- 	  README.djpeg \
-           README.hp-ux README.linux README.netbsd README.openbsd README.os2 \
-@@ -78,7 +78,7 @@
- ifeq (@USE_LATEX@,no)
- STANDARD =
- else
--STANDARD = sane.ps
-+STANDARD =
- endif
- 
- SUBDIRS = $(BACKDIRS) icons figs descriptions descriptions-external
-@@ -139,6 +139,7 @@
- 	  echo installing $${page} in $(mandir)/man8/$${page}...; \
- 	  $(INSTALL_DATA) $${page} $(DESTDIR)$(mandir)/man8/$${page} || exit 1; \
+--- doc/Makefile.in.orig	2009-04-30 22:41:18.000000000 +0900
++++ doc/Makefile.in	2009-05-05 01:22:08.000000000 +0900
+@@ -49,8 +49,7 @@
+ DIST_SOURCES =
+ man1dir = $(mandir)/man1
+ am__installdirs = "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man7dir)" \
+-	"$(DESTDIR)$(man8dir)" "$(DESTDIR)$(docdir)" \
+-	"$(DESTDIR)$(docdir)" "$(DESTDIR)$(docdir)"
++	"$(DESTDIR)$(man8dir)"
+ man7dir = $(mandir)/man7
+ man8dir = $(mandir)/man8
+ NROFF = nroff
+@@ -573,6 +572,7 @@
+ 	  rm -f "$(DESTDIR)$(man8dir)/$$inst"; \
  	done
+ install-dist_docDATA: $(dist_doc_DATA)
 +ifndef NOPORTDOCS
- 	$(MKDIR) $(DESTDIR)$(docdir)
- 	@for readme in $(READMES); do \
- 	  echo installing $${readme} in $(docdir)/$${readme}...; \
-@@ -155,10 +156,11 @@
- 	    fi \
- 	  done \
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
+ 	@list='$(dist_doc_DATA)'; for p in $$list; do \
+@@ -581,6 +581,7 @@
+ 	  echo " $(dist_docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
+ 	  $(dist_docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
  	done
--	@-for doc in $(DOCS) $(HTML_PAGES); do \
-+	@-for doc in $(HTML_PAGES); do \
- 	    echo installing $${doc} in $(docdir)/$${doc}...; \
- 	    $(INSTALL_DATA) $${doc} $(DESTDIR)$(docdir)/$${doc}; \
- 	  done
 +endif
  
- uninstall:
- 	@for page in $(SECT1); do \
+ uninstall-dist_docDATA:
+ 	@$(NORMAL_UNINSTALL)
+@@ -590,6 +591,7 @@
+ 	  rm -f "$(DESTDIR)$(docdir)/$$f"; \
+ 	done
+ install-docDATA: $(doc_DATA)
++ifndef NOPORTDOCS
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
+ 	@list='$(doc_DATA)'; for p in $$list; do \
+@@ -598,6 +600,7 @@
+ 	  echo " $(docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
+ 	  $(docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
+ 	done
++endif
+ 
+ uninstall-docDATA:
+ 	@$(NORMAL_UNINSTALL)
+@@ -607,6 +610,7 @@
+ 	  rm -f "$(DESTDIR)$(docdir)/$$f"; \
+ 	done
+ install-nobase_dist_docDATA: $(nobase_dist_doc_DATA)
++ifndef NOPORTDOCS
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
+ 	@$(am__vpath_adj_setup) \
+@@ -616,6 +620,7 @@
+ 	  echo " $(nobase_dist_docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
+ 	  $(nobase_dist_docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
+ 	done
++endif
+ 
+ uninstall-nobase_dist_docDATA:
+ 	@$(NORMAL_UNINSTALL)
