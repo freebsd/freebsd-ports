@@ -1322,6 +1322,7 @@
     SUBDIR += quickie
     SUBDIR += quixote
     SUBDIR += red5
+    SUBDIR += redmine
     SUBDIR += rejik
     SUBDIR += reportmagic
     SUBDIR += resin2
