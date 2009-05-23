@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libtorrent
-PORTVERSION=	0.14.2
-PORTREVISION=	2
+PORTVERSION=	0.14.3
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	rb
@@ -32,7 +31,8 @@ CONFIGURE_ARGS=	--disable-debug \
 		--with-boost-thread=boost_thread \
 		--with-boost-regex=boost_regex \
 		--with-boost-program-options=boost_program_options \
-		--with-asio=shipped
+		--with-asio=shipped \
+		--with-zlib=system
 USE_LDCONFIG=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
