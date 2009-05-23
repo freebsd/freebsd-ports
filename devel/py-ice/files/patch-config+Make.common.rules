@@ -1,13 +1,13 @@
---- config/Make.common.rules.orig	2008-05-17 01:24:00.000000000 +0800
-+++ config/Make.common.rules	2008-08-14 17:48:05.000000000 +0800
-@@ -307,24 +307,24 @@
- 	    $(call mkdir,$(prefix)) ; \
+--- config/Make.common.rules.orig	2009-04-13 22:41:24.000000000 +0800
++++ config/Make.common.rules	2009-04-13 22:43:01.000000000 +0800
+@@ -309,24 +309,24 @@
+ 	    $(call mkdir,$(prefix), -p) ; \
  	fi
  
 -	@if test ! -d $(install_slicedir) ; \
 -	then \
 -	    echo "Creating $(install_slicedir)..." ; \
--	    $(call mkdir,$(install_slicedir)) ; \
+-	    $(call mkdir, $(install_slicedir)) ; \
 -	    cd $(top_srcdir)/../slice ; \
 -	    for subdir in * ; \
 -	    do \
@@ -18,7 +18,7 @@
 +#	@if test ! -d $(install_slicedir) ; \
 +#	then \
 +#	    echo "Creating $(install_slicedir)..." ; \
-+#	    $(call mkdir,$(install_slicedir)) ; \
++#	    $(call mkdir, $(install_slicedir)) ; \
 +#	    cd $(top_srcdir)/../slice ; \
 +#	    for subdir in * ; \
 +#	    do \

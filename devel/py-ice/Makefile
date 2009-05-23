@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Ice
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.zeroc.com/download/Ice/3.3/ \
 		http://www.dirk.sh/dirk/Ice/
@@ -24,7 +24,7 @@ USE_PYTHON=	yes
 BUILD_WRKSRC=	${WRKSRC}/py
 INSTALL_WRKSRC=	${WRKSRC}/py
 
-LIB_VRS=	${PORTVERSION:S|.||g:C|0$||}
+LIB_VRS=	${PORTVERSION:S|.||g:C|1$||}
 PLIST_SUB=	LIB_VERSION="${PORTVERSION}" LIB_VRS="${LIB_VRS}"
 
 CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT ${PTHREAD_CFLAGS}
