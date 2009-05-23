@@ -104,6 +104,7 @@
     SUBDIR += japaneseAFM
     SUBDIR += jargon-fpw
     SUBDIR += jcode.pl
+    SUBDIR += jd
     SUBDIR += jed
     SUBDIR += jhd
     SUBDIR += jishyo
