@@ -17690,6 +17690,7 @@ perltidy                        ports/devel/perltidy
 permute                         ports/textproc/permute
 personality                     ports/sysutils/personality
 pessulus                        ports/sysutils/pessulus
+petite-chez                     ports/lang/petite-chez
 pets                            ports/games/pets
 petsc                           ports/math/petsc
 petsc-mpich                     ports/math/petsc-mpich
