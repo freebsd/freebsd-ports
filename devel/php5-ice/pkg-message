@@ -1,0 +1,20 @@
+
+----------------------------------------------------------------------------
+                      Attention for FreeBSD-i386 user 
+----------------------------------------------------------------------------
+
+If the php fails with:
+
+	terminate called after throwing an instance of 'IceUtil::ThreadSyscallException'
+	  what():  RecMutex.cpp:96: IceUtil::ThreadSyscallException:
+	...
+
+Try to start it with:
+
+	$ LD_PRELOAD=/usr/lib/libc_r.so php
+
+or for FreeBSD version 7 and above:
+
+	$ LD_PRELOAD=/usr/lib/libpthread.so php
+
+----------------------------------------------------------------------------
