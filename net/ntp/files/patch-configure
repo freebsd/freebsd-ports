@@ -12,13 +12,3 @@
  esac
  done
  
-@@ -25384,6 +25389,9 @@
-   ans=no
-     case "$host" in
-      *-*-linux*)
-+        ans=yes
-+        ;;
-+    *-*-freebsd*)
-         ans=yes
-         ;;
-     esac
