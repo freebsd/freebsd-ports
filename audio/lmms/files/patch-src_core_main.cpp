@@ -1,20 +1,21 @@
---- src/core/main.cpp.orig	Mon Dec  4 15:22:34 2006
-+++ src/core/main.cpp	Wed Dec  6 11:52:51 2006
-@@ -49,6 +49,9 @@
- #include <sched.h>
- #endif
+--- src/core/main.cpp.orig	2009-02-24 07:34:26.000000000 +0900
++++ src/core/main.cpp	2009-04-09 03:42:57.000000000 +0900
+@@ -38,6 +38,9 @@
+ #include <QtGui/QPainter>
+ #include <QtGui/QSplashScreen>
  
 +#include <sys/types.h>
 +#include <unistd.h>
 +
- 
- #include "main_window.h"
- #include "embed.h"
-@@ -89,6 +92,7 @@
- 		printf( "could not set realtime priority.\n" );
- 	}
+ #ifdef LMMS_HAVE_SCHED_H
+ #include <sched.h>
  #endif
+@@ -101,6 +104,8 @@
+ 		}
+ 	}
+ 
 +	setuid(getuid());	// drop root privileges
- 
- 	QApplication app( argc, argv );
- 
++
+ 	QCoreApplication * app = core_only ?
+ 			new QCoreApplication( argc, argv ) :
+ 					new QApplication( argc, argv ) ;
