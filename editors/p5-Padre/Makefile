@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Padre
-PORTVERSION=	0.32
+PORTVERSION=	0.35
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/S/SZ/SZABGAB
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	cm@therek.net
@@ -85,6 +84,7 @@ MAN3=		Padre.3 \
 		Padre::Config::Constants.3 \
 		Padre::Config::Host.3 \
 		Padre::Config::Human.3 \
+		Padre::Current.3 \
 		Padre::DB.3 \
 		Padre::DB::Bookmark.3 \
 		Padre::DB::History.3 \
@@ -92,15 +92,18 @@ MAN3=		Padre.3 \
 		Padre::DB::LastPositionInFile.3 \
 		Padre::DB::Plugin.3 \
 		Padre::DB::Session.3 \
+		Padre::DB::SessionFile.3 \
 		Padre::DB::Snippets.3 \
 		Padre::DocBrowser.3 \
 		Padre::Document.3 \
 		Padre::Document::Perl::Beginner.3 \
 		Padre::Locale.3 \
+		Padre::Log.3 \
 		Padre::Manual.3 \
 		Padre::Manual::Hacking.3 \
 		Padre::Plugin.3 \
 		Padre::Plugin::Devel.3 \
+		Padre::Plugin::My.3 \
 		Padre::Plugin::Perl5.3 \
 		Padre::Plugin::PopularityContest.3 \
 		Padre::PluginBuilder.3 \
@@ -121,7 +124,9 @@ MAN3=		Padre.3 \
 		Padre::Wx::App.3 \
 		Padre::Wx::CPAN.3 \
 		Padre::Wx::Dialog.3 \
-		Padre::Wx::Dialog::PluginManager3.3 \
+		Padre::Wx::Dialog::PluginManager.3 \
+		Padre::Wx::Dialog::SessionManager.3 \
+		Padre::Wx::Dialog::SessionSave.3 \
 		Padre::Wx::DocBrowser.3 \
 		Padre::Wx::HtmlWindow.3 \
 		Padre::Wx::Main.3 \
@@ -129,8 +134,5 @@ MAN3=		Padre.3 \
 		Wx::Perl::Dialog.3 \
 		Wx::Perl::Dialog::Simple.3 \
 		Wx::Perl::Dialog::SingleChoice.3
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|use File::Spec.*$$||' ${WRKSRC}/lib/Padre/Config/Human.pm
 
 .include <bsd.port.post.mk>
