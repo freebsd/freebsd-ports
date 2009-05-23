@@ -1,5 +1,5 @@
---- py/config/Make.rules.orig	2008-05-17 01:24:03.000000000 +0800
-+++ py/config/Make.rules	2008-08-02 09:05:42.000000000 +0800
+--- py/config/Make.rules.orig	2009-04-14 21:17:37.000000000 +0800
++++ py/config/Make.rules	2009-04-14 21:19:57.000000000 +0800
 @@ -12,7 +12,9 @@
  # if it does not exist.
  #
@@ -11,24 +11,7 @@
  
  #
  # The "root directory" for runpath embedded in executables. Can be unset
-@@ -63,13 +65,13 @@
-     # version used for building the Ice extension, then set PYTHON_VERSION
-     # to "python2.3" or "python2.4".
-     #
--    PYTHON_VERSION	?= $(word 1,$(notdir $(wildcard /usr/include/python2.[345]*)))
-+    PYTHON_VERSION	?= $(word 1,$(notdir $(wildcard %%LOCALBASE%%/include/python2.[345]*)))
-     ifeq ($(PYTHON_VERSION),)
-       python_darwin_home = /System/Library/Frameworks/Python.framework/Versions/Current
-       PYTHON_VERSION 	= $(word 1,$(notdir $(wildcard $(python_darwin_home)/include/python2.[345]*)))
-     endif
--    PYTHON_INCLUDE_DIR	= /usr/include/$(PYTHON_VERSION)
--    PYTHON_LIB_DIR	= /usr/lib/$(PYTHON_VERSION)/config
-+    PYTHON_INCLUDE_DIR	= %%LOCALBASE%%/include/$(PYTHON_VERSION)
-+    PYTHON_LIB_DIR	= %%LOCALBASE%%/lib/$(PYTHON_VERSION)/config
- endif
- 
- ifeq ($(PYTHON_VERSION),)
-@@ -102,8 +104,8 @@
+@@ -72,8 +74,8 @@
  endif
  
  libdir			= $(top_srcdir)/python
@@ -39,7 +22,7 @@
  
  #
  # Platform specific definitions
-@@ -128,7 +130,7 @@
+@@ -97,7 +99,7 @@
      ICE_LIB_DIR = -L$(ice_dir)/$(libsubdir)
      ICE_FLAGS	= -I$(ice_dir)/include
  endif
