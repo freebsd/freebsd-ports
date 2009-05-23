@@ -1,5 +1,5 @@
---- hald/freebsd/hf-storage.c.orig	2008-05-07 19:23:57.000000000 -0400
-+++ hald/freebsd/hf-storage.c	2009-05-23 17:07:00.000000000 -0400
+--- hald/freebsd/hf-storage.c.orig	2008-08-10 09:50:10.000000000 -0400
++++ hald/freebsd/hf-storage.c	2009-05-23 18:52:52.000000000 -0400
 @@ -30,6 +30,7 @@
  #include <limits.h>
  #include <inttypes.h>
@@ -59,7 +59,30 @@
  
    if (hf_runner_run_sync(device, 0, "hald-probe-storage",
  			 "HF_HAS_CHILDREN", HF_BOOL_TO_STRING(hf_storage_device_has_partitions(device)),
-@@ -433,11 +439,42 @@ hf_storage_parse_conftxt (const char *co
+@@ -403,13 +409,20 @@ hf_storage_parse_conftxt (const char *co
+           continue;
+ 	}
+ 
++      depth = atoi(fields[0]);
++      hash = g_str_hash(fields[2]);
++      if (g_hash_table_lookup(table, GUINT_TO_POINTER(hash)) != NULL)
++        {
++          g_strfreev(fields);
++	  curr_depth = depth;
++	  continue;
++	}
++
+       geom_obj = g_new0(Geom_Object, 1);
+ 
+-      depth = atoi(fields[0]);
+       geom_obj->class = g_strdup(fields[1]);
+       geom_obj->dev = g_strdup(fields[2]);
+       geom_obj->type = -1;	/* We use -1 here to denote a missing type. */
+-      hash = g_str_hash(geom_obj->dev);
+       geom_obj->hash = hash;
+ 
+       if (g_strv_length(fields) >= 5)
+@@ -433,6 +446,30 @@ hf_storage_parse_conftxt (const char *co
                if (! strcmp (geom_obj->class, "GPT") ||
                    ! strcmp (geom_obj->class, "APPLE"))
                  geom_obj->str_type = g_strdup(fields[10]);
@@ -90,18 +113,6 @@
  	      else
                  geom_obj->type = atoi(fields[10]);
  	    }
- 	}
- 
-+      if (g_hash_table_lookup(table, GUINT_TO_POINTER(hash)) != NULL)
-+	{
-+          hf_storage_geom_free(geom_obj);
-+	  curr_depth = depth;
-+	  continue;
-+	}
-+
-       g_hash_table_insert (table, GUINT_TO_POINTER(hash), geom_obj);
- 
-       if (depth > curr_depth)
 @@ -541,15 +578,20 @@ hf_storage_device_rescan_real (HalDevice
  }
  
