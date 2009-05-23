@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	anki
-PORTVERSION=	0.9.9.7.7
+PORTVERSION=	0.9.9.7.9b
 CATEGORIES=	games
 MASTER_SITES=	http://ichi2.net/anki/download/files/
 EXTRACT_SUFX=	.tgz
