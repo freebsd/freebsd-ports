@@ -316,6 +316,7 @@ lib/pd/stdout/stdout.pd_linux
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/acoustics-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/acoustics~-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/adc~_dac~-help.pd
+%%PORTDOCS%%%%DOCSDIR%%/5.reference/abs~-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/append-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/bag-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/bang-help.pd
@@ -480,6 +481,7 @@ lib/pd/stdout/stdout.pd_linux
 %%PORTDOCS%%%%DOCSDIR%%/7.stuff/tools/latency.pd
 %%PORTDOCS%%%%DOCSDIR%%/7.stuff/tools/load-meter.pd
 %%PORTDOCS%%%%DOCSDIR%%/7.stuff/tools/testtone.pd
+%%PORTDOCS%%%%DOCSDIR%%/7.stuff/tools/testtone16.pd
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/sound/bell.aiff
