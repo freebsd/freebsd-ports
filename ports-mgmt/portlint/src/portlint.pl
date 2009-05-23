@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.174 2009/04/13 01:54:37 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.178 2009/05/23 19:05:39 marcus Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 11;
-my $micro = 1;
+my $micro = 2;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1190,6 +1190,14 @@ sub check_depends_syntax {
 					"\${X11BASE} instead.");
 			}
 
+			# Check for direct dependency on apache.
+			if ($m{'dep'} =~ /apache/i) {
+				&perror("FATAL", $file, -1, "do not depend on any apache ".
+					"port in *_DEPENDS directly.  ".
+					"Instead use USE_APACHE=VERSION, where VERSION can be ".
+					"found in \${PORTSDIR}/Mk/bsd.apache.mk.");
+			}
+
 			# check port dir existence
 			$k = $m{'dir'};
 			$k =~ s/\${PORTSDIR}/$ENV{'PORTSDIR'}/;
@@ -1643,6 +1651,7 @@ sub checkmakefile {
 			USE_MESA		=> 'USE_GL',
 			USE_RCORDER		=> 'USE_RC_SUBR',
 			INSTALLS_SHLIB  => 'USE_LDCONFIG',
+			APACHE_COMPAT   => 'USE_APACHE',
 	);
 
 	@deplist = (\%autotools_deprecated, \%deprecated);
@@ -1897,6 +1906,24 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 	if ($use_ant && $whole =~ /^USE_GMAKE[?:]?=\s*(.*)$/m) {
 		&perror("WARN", $file, -1, "a port shall not define both USE_ANT ".
 			"and USE_GMAKE");
+	}
+
+	#
+	# whole file: check for USE_APACHE=yes
+	#
+	if ($whole =~ /^USE_APACHE[?:]?=\s*(yes)$/m) {
+		&perror("WARN", $file, -1, "Use USE_APACHE=VERSION ".
+			"(where version can be found in \${PORTSDIR}/Mk/bsd.apache.mk) ".
+			"instead of yes");
+	}
+
+	#
+	# whole file: check for WITH_APACHE2
+	#
+	if ($whole =~ /^WITH_APACHE2[?:]?=/m) {
+		&perror("WARN", $file, -1, "Use WITH_APACHE=VERSION (where VERSION ".
+			"can be found in \${PORTSDIR}/Mk/bsd.apache.mk) instead to pull ".
+			"in APACHE_PORT");
 	}
 
 	#
@@ -2375,7 +2402,8 @@ DIST_SUBDIR EXTRACT_ONLY
 		print "OK: checking CONFLICTS.\n" if ($verbose);
 		foreach my $conflict (split ' ', $makevar{CONFLICTS}) {
 			my $selfconflict;
-			if ($makevar{PKGINSTALLVER} >= 20040125) {
+			if ($makevar{PKGINSTALLVER} ne "" &&
+				$makevar{PKGINSTALLVER} >= 20040125) {
 				$selfconflict = !system($pkg_version, '-T',
 					$makevar{PKGNAME}, $conflict);
 			} else {
@@ -2780,7 +2808,7 @@ FETCH_DEPENDS DEPENDS_TARGET
 	print "OK: checking INFO.\n" if ($verbose);
 	if ($autoinfo && $tmp =~ /\nINFO=\s*([^\n]*)\n/) {
 		my @minfo = grep($_ !~ /^\s*$/, split(/\s+/, $1));
-		if ($tmp =~ /\binstall-info\b/) {
+		if ($tmp =~ /[\/|\s]install-info\s/) {
 			&perror("FATAL", $file, -1, "install-info is automatically run ".
 				"when INFO is defined.");
 		}
@@ -2790,7 +2818,7 @@ FETCH_DEPENDS DEPENDS_TARGET
 					"on files listed in the INFO macro.");
 			}
 		}
-	} elsif ($autoinfo && $tmp =~ /\binstall-info\b/) {
+	} elsif ($autoinfo && $tmp =~ /[\/|\s]install-info\s/) {
 		&perror("WARN", $file, -1, "do not call install-info directly.  Use the ".
 			"INFO macro instead.");
 	}
