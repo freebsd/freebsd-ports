@@ -61,7 +61,7 @@ Note:  Please add new entries to the beginning of this file.
        <entry>2009-05-20</entry>
      </dates>
    </vuln>
-<vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+
   <vuln vid="5ed2f96b-33b7-4863-8c6b-540d22344424">
     <topic>imap-uw -- University of Washington IMAP c-client Remote Format String Vulnerability</topic>
     <affects>
