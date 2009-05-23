@@ -1,15 +1,6 @@
---- Jamrules.orig	Wed Jan 19 19:36:30 2005
-+++ Jamrules	Sun Nov  5 09:33:26 2006
-@@ -9,7 +9,7 @@
- KEEPOBJS = true ;
- 
- # where to install the .hpp files
--INCDIR = /usr/local/include ;
-+#INCDIR = /usr/local/include ;
- 
- # override the built-in EXEMODE
- EXEMODE = 755 ;
-@@ -30,6 +30,10 @@
+--- Jamrules.orig	2008-03-12 00:48:21.000000000 +0900
++++ Jamrules	2009-05-08 23:57:05.000000000 +0900
+@@ -33,6 +33,10 @@
        case CYGWIN :
           LINKLIBS += -lstdc++ ;
  
@@ -20,12 +11,21 @@
        case LINUX :
           LINKLIBS += -lstdc++ ;
           CCSHARE_FLAGS = -fPIC ;
-@@ -81,7 +85,7 @@
- # fix does this need to be forward/backslash independent? darn windows.
-    BINDIR = [ FDirName $(PREFIX) bin ] ;
-    LIBDIR = [ FDirName $(PREFIX) lib ] ;
--   INCDIR = [ FDirName $(PREFIX) include ] ;
-+   INCDIR = [ FDirName $(PREFIX) include gpstk ] ;
+@@ -115,7 +119,7 @@
+ # compiler specific stuff - this is probably actually pretty clumsy
+ if ( $(CC) != gcc )
+ {
+-   NEED_GETOPT = true ;
++   #NEED_GETOPT = true ;
  }
  
- # debug - edit this as needed.
+ if $(PREFIX)
+@@ -215,7 +219,7 @@
+    if $(UNIX) && $(OS) != CYGWIN && $(OS) != MACOSX
+    {
+       soname = $(LIBPREFIX)$(<:S=$(SUFLIBSHR)).$(GPSTK_SO_VERSION) ;
+-      shlib = $(LIBPREFIX)$(<:S=$(SUFLIBSHR).$(GPSTK_SO_VERSION).0) ;
++      shlib = $(LIBPREFIX)$(<:S=$(SUFLIBSHR)).$(GPSTK_SO_VERSION) ;
+       shrobjs = $(>:S=$(SUFOBJ2)) ;
+       ObjectCcFlags $(shrobjs) : $(CCSHARE_FLAGS) ;
+       ObjectC++Flags $(shrobjs) : $(CCSHARE_FLAGS) ;
