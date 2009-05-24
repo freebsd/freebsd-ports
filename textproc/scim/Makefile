@@ -7,7 +7,7 @@
 
 PORTNAME=	scim
 PORTVERSION=	1.4.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -32,12 +32,12 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 post-patch:
-	${REINPLACE_CMD} -e '/^scim_setup_LDFLAGS/s|=|= ${PTHREAD_LIBS}|' \
-			${WRKSRC}/extras/setup/Makefile.in
+	${REINPLACE_CMD} -e '/^libscim@SCIM_EPOCH@_la_LDFLAGS/s|=|= ${PTHREAD_LIBS}|' \
+		${WRKSRC}/src/Makefile.in
 
 post-install:
 	@gtk-query-immodules-2.0 > ${LOCALBASE}/etc/gtk-2.0/gtk.immodules
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO} To display this message again, type pkg_info -D ${PKGNAME}
+	@${ECHO} To display this message again, type ${PKG_INFO} -D ${PKGNAME}
 
 .include <bsd.port.post.mk>
