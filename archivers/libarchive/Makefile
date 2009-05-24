@@ -6,6 +6,7 @@
 
 PORTNAME=	libarchive
 PORTVERSION=	2.7.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -30,6 +31,7 @@ MAN1=		bsdcpio.1 \
 		bsdtar.1
 MAN3=		archive_entry.3 \
 		archive_read.3 \
+		archive_read_disk.3 \
 		archive_util.3 \
 		archive_write.3 \
 		archive_write_disk.3 \
