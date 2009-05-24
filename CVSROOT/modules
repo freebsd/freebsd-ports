@@ -799,6 +799,7 @@ avifonts                        ports/x11-fonts/avifonts
 avinfo                          ports/multimedia/avinfo
 avis                            ports/java/avis
 avltree                         ports/devel/avltree
+avogadro                        ports/science/avogadro
 avr-binutils                    ports/devel/avr-binutils
 avr-gcc                         ports/devel/avr-gcc
 avr-gcc-3                       ports/devel/avr-gcc-3
@@ -1323,6 +1324,7 @@ castpodder                      ports/multimedia/castpodder
 catapult                        ports/emulators/catapult
 catdoc                          ports/textproc/catdoc
 catdvi                          ports/print/catdvi
+catseye-fm                      ports/x11-fm/catseye-fm
 caudium12                       ports/www/caudium12
 cave                            ports/misc/cave
 cave9                           ports/games/cave9
@@ -5317,6 +5319,7 @@ i3                              ports/x11-wm/i3
 i386-rtems-binutils             ports/devel/i386-rtems-binutils
 i386-rtems-gcc                  ports/devel/i386-rtems-gcc
 i386-rtems-gdb                  ports/devel/i386-rtems-gdb
+i3lock                          ports/x11/i3lock
 i855vidctl10                    ports/sysutils/i855vidctl10
 iSiloXC                         ports/palm/iSiloXC
 ia-aspell                       ports/textproc/ia-aspell
@@ -5771,6 +5774,7 @@ ja-japaneseAFM                  ports/japanese/japaneseAFM
 ja-japaneseafm                  ports/japanese/japaneseAFM
 ja-jargon-fpw                   ports/japanese/jargon-fpw
 ja-jcode.pl                     ports/japanese/jcode.pl
+ja-jd                           ports/japanese/jd
 ja-jed                          ports/japanese/jed
 ja-jhd                          ports/japanese/jhd
 ja-jishyo                       ports/japanese/jishyo
@@ -9468,7 +9472,6 @@ ntl                             ports/math/ntl
 ntlmaps                         ports/net/ntlmaps
 ntop                            ports/net/ntop
 ntp-devel                       ports/net/ntp-devel
-ntp-rc                          ports/net/ntp-rc
 ntraceroute                     ports/net/ntraceroute
 nttcp                           ports/benchmarks/nttcp
 nuclearchess                    ports/games/nuclearchess
@@ -10071,6 +10074,7 @@ p5-Array-RefElem                ports/misc/p5-Array-RefElem
 p5-Array-Window                 ports/devel/p5-Array-Window
 p5-AsciiDB-TagFile              ports/databases/p5-AsciiDB-TagFile
 p5-Asterisk                     ports/misc/p5-Asterisk
+p5-Astro                        ports/astro/p5-Astro
 p5-Astro-ADS                    ports/astro/p5-Astro-ADS
 p5-Astro-Catalog                ports/astro/p5-Astro-Catalog
 p5-Astro-DSS                    ports/astro/p5-Astro-DSS
@@ -13501,6 +13505,7 @@ p5-array-refelem                ports/misc/p5-Array-RefElem
 p5-array-window                 ports/devel/p5-Array-Window
 p5-asciidb-tagfile              ports/databases/p5-AsciiDB-TagFile
 p5-asterisk                     ports/misc/p5-Asterisk
+p5-astro                        ports/astro/p5-Astro
 p5-astro-ads                    ports/astro/p5-Astro-ADS
 p5-astro-catalog                ports/astro/p5-Astro-Catalog
 p5-astro-dss                    ports/astro/p5-Astro-DSS
@@ -17234,6 +17239,7 @@ pear-Services_Digg              ports/www/pear-Services_Digg
 pear-Services_Facebook          ports/www/pear-Services_Facebook
 pear-Services_GeoNames          ports/www/pear-Services_GeoNames
 pear-Services_Google            ports/www/pear-Services_Google
+pear-Services_JSON              ports/converters/pear-Services_JSON
 pear-Services_OpenSearch        ports/www/pear-Services_OpenSearch
 pear-Services_Pingback          ports/net/pear-Services_Pingback
 pear-Services_SharedBook        ports/www/pear-Services_SharedBook
@@ -17509,6 +17515,7 @@ pear-services_digg              ports/www/pear-Services_Digg
 pear-services_facebook          ports/www/pear-Services_Facebook
 pear-services_geonames          ports/www/pear-Services_GeoNames
 pear-services_google            ports/www/pear-Services_Google
+pear-services_json              ports/converters/pear-Services_JSON
 pear-services_opensearch        ports/www/pear-Services_OpenSearch
 pear-services_pingback          ports/net/pear-Services_Pingback
 pear-services_sharedbook        ports/www/pear-Services_SharedBook
@@ -18459,6 +18466,7 @@ preferences.app                 ports/deskutils/preferences.app
 preferential                    ports/www/preferential
 prelude-lml                     ports/security/prelude-lml
 prelude-manager                 ports/security/prelude-manager
+prelude-pflogger                ports/security/prelude-pflogger
 premail                         ports/mail/premail
 premake                         ports/devel/premake
 prepflog                        ports/mail/prepflog
@@ -19187,6 +19195,7 @@ py-subversion                   ports/devel/py-subversion
 py-supybot                      ports/irc/py-supybot
 py-supybot-plugins              ports/irc/py-supybot-plugins
 py-svglib                       ports/converters/py-svglib
+py-svgmath                      ports/math/py-svgmath
 py-sybase                       ports/databases/py-sybase
 py-syck                         ports/textproc/py-syck
 py-symeig                       ports/math/py-symeig
@@ -19348,6 +19357,7 @@ pydf                            ports/sysutils/pydf
 pyephem                         ports/astro/pyephem
 pygmy                           ports/mail/pygmy
 pygopherd                       ports/net/pygopherd
+pygts                           ports/graphics/pygts
 pyjamas                         ports/www/pyjamas
 pykawari                        ports/games/pykawari
 pyla                            ports/comms/pyla
@@ -19779,6 +19789,7 @@ redir                           ports/net/redir
 redland                         ports/textproc/redland
 redland-bindings                ports/textproc/redland-bindings
 redland-bindings-python         ports/textproc/redland-bindings-python
+redmine                         ports/www/redmine
 ree                             ports/misc/ree
 reed                            ports/sysutils/reed
 reed-solomon                    ports/math/reed-solomon
@@ -20964,6 +20975,7 @@ sliderule                       ports/deskutils/sliderule
 slides                          ports/textproc/slides
 slige                           ports/games/slige
 slim                            ports/x11/slim
+slim-themes                     ports/x11-themes/slim-themes
 slime                           ports/editors/slime
 slimserver                      ports/audio/slimserver
 slimserver-dynamicplaylist      ports/audio/slimserver-dynamicplaylist
@@ -21219,6 +21231,7 @@ sqlite2                         ports/databases/sqlite2
 sqlite3                         ports/databases/sqlite3
 sqlite34                        ports/databases/sqlite34
 sqlitejdbc                      ports/java/sqlitejdbc
+sqliteman                       ports/databases/sqliteman
 sqlitemanager                   ports/databases/sqlitemanager
 sqlmap                          ports/security/sqlmap
 sqlninja                        ports/security/sqlninja
