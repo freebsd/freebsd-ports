@@ -70,11 +70,11 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-MILESTONE?=		47
+MILESTONE?=		48
 OOOTAG?=		DEV300_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20090520
+SNAPDATE=		20090525
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 .if defined(WITH_CWS)
@@ -130,7 +130,6 @@ LIB_DEPENDS+=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 
 USE_BISON=	build
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262 #i101480#
 WRKSRC?=		${WRKDIR}/${OOOTAG}
 TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
