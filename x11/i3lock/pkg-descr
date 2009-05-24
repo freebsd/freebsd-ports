@@ -7,3 +7,5 @@ i3lock does not call XBell(). This is important because i3lock/slock think
 you have entered a password when resuming from suspend, at least sometimes.
 
 i3lock was forked from slock-0.9
+
+WWW:	http://i3.zekjur.net/i3lock/
