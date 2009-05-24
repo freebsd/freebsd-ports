@@ -1,14 +1,0 @@
---- gnome-canvas.defs.orig	Thu Mar 18 15:02:22 2004
-+++ gnome-canvas.defs	Thu Mar 18 15:02:26 2004
-@@ -295,11 +295,6 @@
- 
- ;; GnomeCanvasGroup
- 
--(define-func gnome_canvas_group_child_bounds
--  none
--  ((GnomeCanvasGroup group)
--   (GnomeCanvasItem item)))
--
- 
- ;; gnome-canvas-util
- 
