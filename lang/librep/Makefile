@@ -12,7 +12,7 @@ CATEGORIES=	lang elisp gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	librep
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	anray@FreeBSD.org
 COMMENT=	An Emacs Lisp like runtime library
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \

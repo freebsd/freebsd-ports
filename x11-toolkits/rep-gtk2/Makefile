@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/2$//}
 DISTNAME=	rep-gtk-${PORTVERSION}
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	anray@FreeBSD.org
 COMMENT=	GTK+-2 binding for rep Lisp interpreter
 
 LIB_DEPENDS=	rep.13:${PORTSDIR}/lang/librep
