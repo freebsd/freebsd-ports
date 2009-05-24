@@ -30,4 +30,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
 
 MAN1=		gtklp.1 gtklpq.1
 
+BROKEN=		does not build
+
 .include <bsd.port.mk>
