@@ -65,7 +65,7 @@ JABBER_REQUIRE?=        ejabberd
 JABBER_USER?=           ejabberd
 JABBER_PIDDIR?=         /var/jabberd/pid
 JABBER_SPOOLDIR?=       /var/spool/jabber
-RUN_DEPENDS+=           ejabberd:${PORTSDIR}/net-im/ejabberd
+RUN_DEPENDS+=           ejabberd:${PORTSDIR}/net-im/ejabberdctl
 .else
 JABBER_REQUIRE?=        DAEMON
 JABBER_USER?=           nobody
