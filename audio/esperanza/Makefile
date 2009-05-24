@@ -6,28 +6,24 @@
 #
 
 PORTNAME=	esperanza
-PORTVERSION=	0.3
-PORTREVISION=	2
+PORTVERSION=	0.4.0
 CATEGORIES=	audio
-MASTER_SITES=	http://xmms2.xmms.se/~tru/esperanza/0.3/
+MASTER_SITES=	http://exodus.xmms.se/~tru/esperanza/0.4/
 
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Advanced QT4 XMMS2 client
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.3:${PORTSDIR}/audio/cpp-xmms2
-RUN_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.3:${PORTSDIR}/audio/cpp-xmms2
-
-BROKEN=		does not build
+LIB_DEPENDS=	xmmsclient++.3:${PORTSDIR}/audio/cpp-xmms2
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc qmake rcc uic xml network imageformats
+QT_COMPONENTS=	gui xml network imageformats_run \
+		qmake_build moc_build rcc_build uic_build
 HAS_CONFIGURE=	yes
+QT_NONSTANDARD=	yes
 USE_GMAKE=	yes
+CONFIGURE_ARGS+=--prefix=${PREFIX} --disable-growl
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/esperanza
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} -unix PREFIX=${PREFIX} esperanza.pro
 
 .include <bsd.port.mk>
