@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kBuild
-DISTVERSION=	0.1.5-p1
+DISTVERSION=	${KBUILD_VERSION}-p1
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/
@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
+KBUILD_VERSION=	0.1.5
 KBUILD_ARCH=	${MACHINE_ARCH:S/i386/x86/}
 KBUILD_ENV=	ACLOCAL=${ACLOCAL} \
 		AUTOMAKE=${AUTOMAKE} \
@@ -55,7 +56,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release${PREFIX}/share/doc/${PKGNAME:S/.p1//}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release${PREFIX}/share/doc/${PORTNAME}-${KBUILD_VERSION}/${doc} ${DOCSDIR}
 .endfor
 .endif
 
