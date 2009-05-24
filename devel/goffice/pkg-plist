@@ -88,6 +88,7 @@ include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-action-combo-color.h
 include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-action-combo-pixmaps.h
 include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-action-combo-stack.h
 include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-action-combo-text.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-calendar-button.h
 include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-charmap-sel.h
 include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-color-group.h
 include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-color-palette.h
